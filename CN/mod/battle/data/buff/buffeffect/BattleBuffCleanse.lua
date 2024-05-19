@@ -1,32 +1,36 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("BattleBuffCleanse", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffCleanse = slot1
-slot1.__name = "BattleBuffCleanse"
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+local var_0_1 = class("BattleBuffCleanse", var_0_0.Battle.BattleBuffEffect)
+
+var_0_0.Battle.BattleBuffCleanse = var_0_1
+var_0_1.__name = "BattleBuffCleanse"
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot1.SetArgs(slot0, slot1, slot2)
-	slot0._buffIDList = slot0._tempData.arg_list.buff_id_list
-	slot0._check_target = slot0._tempData.arg_list.check_target
-	slot0._minTargetNumber = slot0._tempData.arg_list.minTargetNumber or 0
-	slot0._maxTargetNumber = slot0._tempData.arg_list.maxTargetNumber or 10000
+function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0._buffIDList = arg_2_0._tempData.arg_list.buff_id_list
+	arg_2_0._check_target = arg_2_0._tempData.arg_list.check_target
+	arg_2_0._minTargetNumber = arg_2_0._tempData.arg_list.minTargetNumber or 0
+	arg_2_0._maxTargetNumber = arg_2_0._tempData.arg_list.maxTargetNumber or 10000
 end
 
-function slot1.onTrigger(slot0, slot1, slot2, slot3)
-	uv0.super.onTrigger(slot0, slot1, slot2, slot3)
+function var_0_1.onTrigger(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	var_0_1.super.onTrigger(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
 
-	if slot0._check_target then
-		if slot0._minTargetNumber <= #slot0:getTargetList(slot1, slot0._check_target, slot0._tempData.arg_list, slot3) and slot5 <= slot0._maxTargetNumber then
-			for slot9, slot10 in ipairs(slot0._buffIDList) do
-				slot1:RemoveBuff(slot10)
+	if arg_3_0._check_target then
+		local var_3_0 = #arg_3_0:getTargetList(arg_3_1, arg_3_0._check_target, arg_3_0._tempData.arg_list, arg_3_3)
+
+		if var_3_0 >= arg_3_0._minTargetNumber and var_3_0 <= arg_3_0._maxTargetNumber then
+			for iter_3_0, iter_3_1 in ipairs(arg_3_0._buffIDList) do
+				arg_3_1:RemoveBuff(iter_3_1)
 			end
 		end
 	else
-		for slot7, slot8 in ipairs(slot0._buffIDList) do
-			slot1:RemoveBuff(slot8)
+		for iter_3_2, iter_3_3 in ipairs(arg_3_0._buffIDList) do
+			arg_3_1:RemoveBuff(iter_3_3)
 		end
 	end
 end

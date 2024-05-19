@@ -1,71 +1,77 @@
-slot0 = class("SkillInfoMediator", import("..base.ContextMediator"))
-slot0.WARP_TO_TACTIC = "SkillInfoMediator:WARP_TO_TACTIC"
-slot0.WARP_TO_META_TACTICS = "SkillInfoMediator:WARP_TO_METATASK"
+﻿local var_0_0 = class("SkillInfoMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.WARP_TO_TACTIC, function (slot0)
-		slot1 = getProxy(NavalAcademyProxy)
-		slot4 = 0
+var_0_0.WARP_TO_TACTIC = "SkillInfoMediator:WARP_TO_TACTIC"
+var_0_0.WARP_TO_META_TACTICS = "SkillInfoMediator:WARP_TO_METATASK"
 
-		for slot9 = 1, slot1.MAX_SKILL_CLASS_NUM do
-			if slot1:getStudents()[slot9] then
-				slot3 = 0 + 1
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.WARP_TO_TACTIC, function(arg_2_0)
+		local var_2_0 = getProxy(NavalAcademyProxy)
+		local var_2_1 = var_2_0:getStudents()
+		local var_2_2 = 0
+		local var_2_3 = 0
+		local var_2_4 = var_2_0.MAX_SKILL_CLASS_NUM
+
+		for iter_2_0 = 1, var_2_4 do
+			if var_2_1[iter_2_0] then
+				var_2_2 = var_2_2 + 1
 			else
-				slot4 = slot9
+				var_2_3 = iter_2_0
 
 				break
 			end
 		end
 
-		if slot1:getSkillClassNum() <= slot3 then
+		if var_2_2 >= var_2_0:getSkillClassNum() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("tactics_lesson_full"))
-			uv0.viewComponent:close()
+			arg_1_0.viewComponent:close()
 
 			return
 		end
 
-		if table.getCount(getProxy(BagProxy):getItemsByType(Item.LESSON_TYPE) or {}) <= 0 then
+		local var_2_5 = getProxy(BagProxy):getItemsByType(Item.LESSON_TYPE)
+
+		if table.getCount(var_2_5 or {}) <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("tactics_no_lesson"))
-			uv0.viewComponent:close()
+			arg_1_0.viewComponent:close()
 
 			return
 		end
 
-		for slot12, slot13 in pairs(slot2) do
-			if slot13.shipId == uv0.contextData.shipId then
+		for iter_2_1, iter_2_2 in pairs(var_2_1) do
+			if iter_2_2.shipId == arg_1_0.contextData.shipId then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("tactics_lesson_repeated"))
-				uv0.viewComponent:close()
+				arg_1_0.viewComponent:close()
 
 				return
 			end
 		end
 
-		uv0.viewComponent:close()
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.NAVALACADEMYSCENE, {
+		arg_1_0.viewComponent:close()
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.NAVALACADEMYSCENE, {
 			warp = NavalAcademyScene.WARP_TO_TACTIC,
 			shipToLesson = {
-				shipId = uv0.contextData.shipId,
-				skillIndex = uv0.contextData.index,
-				index = slot4
+				shipId = arg_1_0.contextData.shipId,
+				skillIndex = arg_1_0.contextData.index,
+				index = var_2_3
 			}
 		})
 	end)
-	slot0:bind(uv0.WARP_TO_META_TACTICS, function (slot0, slot1)
-		uv0.viewComponent:close()
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.METACHARACTER, {
+	arg_1_0:bind(var_0_0.WARP_TO_META_TACTICS, function(arg_3_0, arg_3_1)
+		arg_1_0.viewComponent:close()
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.METACHARACTER, {
 			autoOpenTactics = true,
-			autoOpenShipConfigID = slot1
+			autoOpenShipConfigID = arg_3_1
 		})
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_4_0)
 	return {}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot2 = slot1:getName()
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
 end
 
-return slot0
+return var_0_0

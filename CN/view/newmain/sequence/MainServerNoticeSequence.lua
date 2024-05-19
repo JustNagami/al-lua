@@ -1,15 +1,17 @@
-slot0 = class("MainServerNoticeSequence", import(".MainSublayerSequence"))
+﻿local var_0_0 = class("MainServerNoticeSequence", import(".MainSublayerSequence"))
 
-function slot0.Execute(slot0, slot1)
-	if #getProxy(ServerNoticeProxy):getServerNotices(false) > 0 and slot2:needAutoOpen() then
-		slot0:AddSubLayers(Context.New({
+function var_0_0.Execute(arg_1_0, arg_1_1)
+	local var_1_0 = getProxy(ServerNoticeProxy)
+
+	if #var_1_0:getServerNotices(false) > 0 and var_1_0:needAutoOpen() then
+		arg_1_0:AddSubLayers(Context.New({
 			mediator = NewBulletinBoardMediator,
 			viewComponent = NewBulletinBoardLayer,
-			onRemoved = slot1
+			onRemoved = arg_1_1
 		}))
 	else
-		slot1()
+		arg_1_1()
 	end
 end
 
-return slot0
+return var_0_0

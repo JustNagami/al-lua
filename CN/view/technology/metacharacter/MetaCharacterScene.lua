@@ -1,858 +1,1015 @@
-slot0 = class("MetaCharacterScene", import("...base.BaseUI"))
-slot0.PAGES = {
+﻿local var_0_0 = class("MetaCharacterScene", import("...base.BaseUI"))
+
+var_0_0.PAGES = {
 	REPAIR = 3,
 	ENERGY = 1,
 	TACTICS = 2,
 	SYN = 4
 }
-slot0.PAGES_EVENTS = {
+var_0_0.PAGES_EVENTS = {
 	MetaCharacterMediator.ON_ENERGY,
 	MetaCharacterMediator.ON_TACTICS,
 	MetaCharacterMediator.ON_REPAIR,
 	MetaCharacterMediator.ON_SYN
 }
-slot0.SCALE_ON_PITCH = {
+var_0_0.SCALE_ON_PITCH = {
 	x = 1.7,
 	y = 1.7
 }
-slot0.ON_SKILL = "MetaCharacterScene:ON_SKILL"
+var_0_0.ON_SKILL = "MetaCharacterScene:ON_SKILL"
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "MetaCharacterUI"
 end
 
-function slot0.init(slot0)
+function var_0_0.init(arg_2_0)
 	Input.multiTouchEnabled = false
 
-	slot0:initUITextTips()
-	slot0:initData()
-	slot0:findUI()
-	slot0:addListener()
-	slot0:initMetaProgressList()
-	slot0:initBannerList()
+	arg_2_0:initUITextTips()
+	arg_2_0:initData()
+	arg_2_0:findUI()
+	arg_2_0:addListener()
+	arg_2_0:initMetaProgressList()
+	arg_2_0:initBannerList()
 end
 
-function slot0.didEnter(slot0)
-	slot0:overLayPanel(true)
-	slot0:updateStart()
-	slot0:autoOpenFunc()
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0:overLayPanel(true)
+	arg_3_0:updateStart()
+	arg_3_0:autoOpenFunc()
 end
 
-function slot0.willExit(slot0)
+function var_0_0.willExit(arg_4_0)
 	Input.multiTouchEnabled = true
 
-	slot0:overLayPanel(false)
+	arg_4_0:overLayPanel(false)
 end
 
-function slot0.initUITextTips(slot0)
-	slot1 = slot0:findTF("HidePanel/ScrollPanel/ListPanel/BannerTpl/ForScale")
+function var_0_0.initUITextTips(arg_5_0)
+	local var_5_0 = arg_5_0:findTF("HidePanel/ScrollPanel/ListPanel/BannerTpl/ForScale")
+	local var_5_1 = arg_5_0:findTF("Empty/ActType/TipText", var_5_0)
+	local var_5_2 = arg_5_0:findTF("Empty/BuildType/TipText", var_5_0)
+	local var_5_3 = arg_5_0:findTF("Active/ActType/Text", var_5_0)
+	local var_5_4 = arg_5_0:findTF("Active/BuildType/Text", var_5_0)
 
-	setText(slot0:findTF("Empty/ActType/TipText", slot1), i18n("meta_syn_rate"))
-	setText(slot0:findTF("Empty/BuildType/TipText", slot1), i18n("meta_build"))
-	setText(slot0:findTF("Active/ActType/Text", slot1), i18n("meta_repair_rate"))
-	setText(slot0:findTF("Active/BuildType/Text", slot1), i18n("meta_build"))
-	setText(slot0:findTF("HidePanel/PTPanel/Progress/Story/TipText1"), i18n("meta_story_tip_1"))
-	setText(slot0:findTF("HidePanel/PTPanel/Progress/Story/TipText2"), i18n("meta_story_tip_2"))
-	setText(slot0:findTF("HidePanel/ActTimeTip/Tip"), i18n("meta_acttime_limit"))
+	setText(var_5_1, i18n("meta_syn_rate"))
+	setText(var_5_2, i18n("meta_build"))
+	setText(var_5_3, i18n("meta_repair_rate"))
+	setText(var_5_4, i18n("meta_build"))
+
+	local var_5_5 = arg_5_0:findTF("HidePanel/PTPanel/Progress/Story/TipText1")
+	local var_5_6 = arg_5_0:findTF("HidePanel/PTPanel/Progress/Story/TipText2")
+
+	setText(var_5_5, i18n("meta_story_tip_1"))
+	setText(var_5_6, i18n("meta_story_tip_2"))
+
+	local var_5_7 = arg_5_0:findTF("HidePanel/ActTimeTip/Tip")
+
+	setText(var_5_7, i18n("meta_acttime_limit"))
 end
 
-function slot0.initData(slot0)
-	slot0.metaProgressVOList = {}
-	slot0.curMetaGroupID = nil
-	slot0.curMetaProgress = nil
-	slot0.toggleList = {}
-	slot0.bannerTFList = {}
-	slot0.curPageIndex = nil
-	slot0.curMetaIndex = nil
-	slot0.metaCharacterProxy = getProxy(MetaCharacterProxy)
-	slot0.bayProxy = getProxy(BayProxy)
-	slot0.indexDatas = {}
+function var_0_0.initData(arg_6_0)
+	arg_6_0.metaProgressVOList = {}
+	arg_6_0.curMetaGroupID = nil
+	arg_6_0.curMetaProgress = nil
+	arg_6_0.toggleList = {}
+	arg_6_0.bannerTFList = {}
+	arg_6_0.curPageIndex = nil
+	arg_6_0.curMetaIndex = nil
+	arg_6_0.metaCharacterProxy = getProxy(MetaCharacterProxy)
+	arg_6_0.bayProxy = getProxy(BayProxy)
+	arg_6_0.indexDatas = {}
 end
 
-function slot0.findUI(slot0)
-	slot0.shipImg = slot0:findTF("HidePanel/ShipImg")
-	slot0.shipNameImg = slot0:findTF("HidePanel/NameImg")
-	slot0.noCharTF = slot0:findTF("BG/NoCharacter")
-	slot0.indexBtn = slot0:findTF("blur_panel/adapt/top/index")
-	slot0.hidePanel = slot0:findTF("HidePanel")
-	slot0.scrollPanel = slot0:findTF("ScrollPanel", slot0.hidePanel)
-	slot0.bannerListPanel = slot0:findTF("ListPanel", slot0.scrollPanel)
-	slot0.bannerContainer = slot0:findTF("Container", slot0.bannerListPanel)
-	slot0.bannerTpl = slot0:findTF("BannerTpl", slot0.bannerListPanel)
-	slot0.actTimePanel = slot0:findTF("ActTimeTip", slot0.hidePanel)
-	slot0.actTimeText = slot0:findTF("Text", slot0.actTimePanel)
-	slot0.menuPanel = slot0:findTF("MenuPanel", slot0.hidePanel)
-	slot0.energyBtn = slot0:findTF("EnergyBtn", slot0.menuPanel)
-	slot0.repairBtn = slot0:findTF("RepairBtn", slot0.menuPanel)
-	slot0.tacticsBtn = slot0:findTF("TacticsBtn", slot0.menuPanel)
-	slot0.synBtn = slot0:findTF("SynBtn", slot0.menuPanel)
-	slot0.synDecorateTF = slot0:findTF("SynDecorate", slot0.menuPanel)
-	slot0.synBtnLimitTimeTF = slot0:findTF("Limit", slot0.synBtn)
-	slot0.synBtnLock = slot0:findTF("LockMask", slot0.synBtn)
-	slot0.ptPanel = slot0:findTF("PTPanel", slot0.hidePanel)
-	slot0.ptRedBarImg = slot0:findTF("RedBar", slot0.ptPanel)
-	slot0.ptPreviewBtn = slot0:findTF("PreviewBtn", slot0.ptPanel)
-	slot0.ptGetBtn = slot0:findTF("SynBtn", slot0.ptPanel)
-	slot0.ptGetBtnTag = slot0:findTF("Tag", slot0.ptGetBtn)
-	slot0.ptShowWayBtn = slot0:findTF("ShowWayBtn", slot0.ptPanel)
-	slot1 = slot0:findTF("Progress", slot0.ptPanel)
-	slot0.ptProgressImg = slot0:findTF("CircleProgress/ProgressImg", slot1)
-	slot0.ptProgressScaleLine = slot0:findTF("CircleProgress/ScaleLine", slot1)
-	slot0.ptInfoPanel = slot0:findTF("PT", slot1)
-	slot0.ptProgressRedRightNumText = slot0:findTF("ProgressTextBG/PointRedText/RightNumText", slot0.ptInfoPanel)
-	slot0.ptProgressRedLeftNumText = slot0:findTF("ProgressTextBG/PointRedText/LeftNumText", slot0.ptInfoPanel)
-	slot0.ptProgressWhiteRightNumText = slot0:findTF("ProgressTextBG/PointText/RightNumText", slot0.ptInfoPanel)
-	slot0.ptProgressWhiteLeftNumText = slot0:findTF("ProgressTextBG/PointText/LeftNumText", slot0.ptInfoPanel)
-	slot0.ptIcon = slot0:findTF("PTProgressText/PTIcon", slot0.ptInfoPanel)
-	slot0.ptProgressRedText = slot0:findTF("PTProgressRedText", slot0.ptInfoPanel)
-	slot0.ptProgressWhiteText = slot0:findTF("PTProgressText", slot0.ptInfoPanel)
-	slot0.storyInfoPanel = slot0:findTF("Story", slot1)
-	slot2 = slot0:findTF("TipText1", slot0.storyInfoPanel)
-	slot3 = slot0:findTF("TipText2", slot0.storyInfoPanel)
-	slot0.storyNameText = slot0:findTF("StroyNameText", slot0.storyInfoPanel)
-	slot0.getShipBtn = slot0:findTF("FinishBtn", slot1)
-	slot0.goGetPanel = slot0:findTF("GoGetPanel", slot0.hidePanel)
-	slot0.goGetBtn = slot0:findTF("GoGetBtn", slot0.goGetPanel)
-	slot0.blurPanel = slot0:findTF("blur_panel")
-	slot4 = slot0:findTF("adapt", slot0.blurPanel)
-	slot0.backBtn = slot0:findTF("top/back", slot4)
-	slot0.helpBtn = slot0:findTF("top/help", slot4)
-	slot0.toggleBtnsTF = slot0:findTF("left/Btns", slot4)
-	slot0.toggleList[1] = slot0:findTF("Energy", slot0.toggleBtnsTF)
-	slot0.toggleList[2] = slot0:findTF("Tactics", slot0.toggleBtnsTF)
-	slot0.toggleList[3] = slot0:findTF("Repair", slot0.toggleBtnsTF)
-	slot0.toggleList[4] = slot0:findTF("Syn", slot0.toggleBtnsTF)
-	slot0.synToggleLock = slot0:findTF("SynLock", slot0.toggleBtnsTF)
+function var_0_0.findUI(arg_7_0)
+	arg_7_0.shipImg = arg_7_0:findTF("HidePanel/ShipImg")
+	arg_7_0.shipNameImg = arg_7_0:findTF("HidePanel/NameImg")
+	arg_7_0.noCharTF = arg_7_0:findTF("BG/NoCharacter")
+	arg_7_0.indexBtn = arg_7_0:findTF("blur_panel/adapt/top/index")
+	arg_7_0.hidePanel = arg_7_0:findTF("HidePanel")
+	arg_7_0.scrollPanel = arg_7_0:findTF("ScrollPanel", arg_7_0.hidePanel)
+	arg_7_0.bannerListPanel = arg_7_0:findTF("ListPanel", arg_7_0.scrollPanel)
+	arg_7_0.bannerContainer = arg_7_0:findTF("Container", arg_7_0.bannerListPanel)
+	arg_7_0.bannerTpl = arg_7_0:findTF("BannerTpl", arg_7_0.bannerListPanel)
+	arg_7_0.actTimePanel = arg_7_0:findTF("ActTimeTip", arg_7_0.hidePanel)
+	arg_7_0.actTimeText = arg_7_0:findTF("Text", arg_7_0.actTimePanel)
+	arg_7_0.menuPanel = arg_7_0:findTF("MenuPanel", arg_7_0.hidePanel)
+	arg_7_0.energyBtn = arg_7_0:findTF("EnergyBtn", arg_7_0.menuPanel)
+	arg_7_0.repairBtn = arg_7_0:findTF("RepairBtn", arg_7_0.menuPanel)
+	arg_7_0.tacticsBtn = arg_7_0:findTF("TacticsBtn", arg_7_0.menuPanel)
+	arg_7_0.synBtn = arg_7_0:findTF("SynBtn", arg_7_0.menuPanel)
+	arg_7_0.synDecorateTF = arg_7_0:findTF("SynDecorate", arg_7_0.menuPanel)
+	arg_7_0.synBtnLimitTimeTF = arg_7_0:findTF("Limit", arg_7_0.synBtn)
+	arg_7_0.synBtnLock = arg_7_0:findTF("LockMask", arg_7_0.synBtn)
+	arg_7_0.ptPanel = arg_7_0:findTF("PTPanel", arg_7_0.hidePanel)
+	arg_7_0.ptRedBarImg = arg_7_0:findTF("RedBar", arg_7_0.ptPanel)
+	arg_7_0.ptPreviewBtn = arg_7_0:findTF("PreviewBtn", arg_7_0.ptPanel)
+	arg_7_0.ptGetBtn = arg_7_0:findTF("SynBtn", arg_7_0.ptPanel)
+	arg_7_0.ptGetBtnTag = arg_7_0:findTF("Tag", arg_7_0.ptGetBtn)
+	arg_7_0.ptShowWayBtn = arg_7_0:findTF("ShowWayBtn", arg_7_0.ptPanel)
+
+	local var_7_0 = arg_7_0:findTF("Progress", arg_7_0.ptPanel)
+
+	arg_7_0.ptProgressImg = arg_7_0:findTF("CircleProgress/ProgressImg", var_7_0)
+	arg_7_0.ptProgressScaleLine = arg_7_0:findTF("CircleProgress/ScaleLine", var_7_0)
+	arg_7_0.ptInfoPanel = arg_7_0:findTF("PT", var_7_0)
+	arg_7_0.ptProgressRedRightNumText = arg_7_0:findTF("ProgressTextBG/PointRedText/RightNumText", arg_7_0.ptInfoPanel)
+	arg_7_0.ptProgressRedLeftNumText = arg_7_0:findTF("ProgressTextBG/PointRedText/LeftNumText", arg_7_0.ptInfoPanel)
+	arg_7_0.ptProgressWhiteRightNumText = arg_7_0:findTF("ProgressTextBG/PointText/RightNumText", arg_7_0.ptInfoPanel)
+	arg_7_0.ptProgressWhiteLeftNumText = arg_7_0:findTF("ProgressTextBG/PointText/LeftNumText", arg_7_0.ptInfoPanel)
+	arg_7_0.ptIcon = arg_7_0:findTF("PTProgressText/PTIcon", arg_7_0.ptInfoPanel)
+	arg_7_0.ptProgressRedText = arg_7_0:findTF("PTProgressRedText", arg_7_0.ptInfoPanel)
+	arg_7_0.ptProgressWhiteText = arg_7_0:findTF("PTProgressText", arg_7_0.ptInfoPanel)
+	arg_7_0.storyInfoPanel = arg_7_0:findTF("Story", var_7_0)
+
+	local var_7_1 = arg_7_0:findTF("TipText1", arg_7_0.storyInfoPanel)
+	local var_7_2 = arg_7_0:findTF("TipText2", arg_7_0.storyInfoPanel)
+
+	arg_7_0.storyNameText = arg_7_0:findTF("StroyNameText", arg_7_0.storyInfoPanel)
+	arg_7_0.getShipBtn = arg_7_0:findTF("FinishBtn", var_7_0)
+	arg_7_0.goGetPanel = arg_7_0:findTF("GoGetPanel", arg_7_0.hidePanel)
+	arg_7_0.goGetBtn = arg_7_0:findTF("GoGetBtn", arg_7_0.goGetPanel)
+	arg_7_0.blurPanel = arg_7_0:findTF("blur_panel")
+
+	local var_7_3 = arg_7_0:findTF("adapt", arg_7_0.blurPanel)
+
+	arg_7_0.backBtn = arg_7_0:findTF("top/back", var_7_3)
+	arg_7_0.helpBtn = arg_7_0:findTF("top/help", var_7_3)
+	arg_7_0.toggleBtnsTF = arg_7_0:findTF("left/Btns", var_7_3)
+	arg_7_0.toggleList[1] = arg_7_0:findTF("Energy", arg_7_0.toggleBtnsTF)
+	arg_7_0.toggleList[2] = arg_7_0:findTF("Tactics", arg_7_0.toggleBtnsTF)
+	arg_7_0.toggleList[3] = arg_7_0:findTF("Repair", arg_7_0.toggleBtnsTF)
+	arg_7_0.toggleList[4] = arg_7_0:findTF("Syn", arg_7_0.toggleBtnsTF)
+	arg_7_0.synToggleLock = arg_7_0:findTF("SynLock", arg_7_0.toggleBtnsTF)
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		if uv0.curPageIndex then
-			uv0:enterMenuPage(false)
-			uv0:emit(uv1.PAGES_EVENTS[uv0.curPageIndex], nil, false)
+function var_0_0.addListener(arg_8_0)
+	onButton(arg_8_0, arg_8_0.backBtn, function()
+		local var_9_0 = arg_8_0.curPageIndex
 
-			if slot0 == uv1.PAGES.REPAIR then
-				uv0:backFromRepair()
+		if var_9_0 then
+			arg_8_0:enterMenuPage(false)
+			arg_8_0:emit(var_0_0.PAGES_EVENTS[arg_8_0.curPageIndex], nil, false)
+
+			if var_9_0 == var_0_0.PAGES.REPAIR then
+				arg_8_0:backFromRepair()
 			else
-				uv0:backFromNotRepair()
+				arg_8_0:backFromNotRepair()
 			end
 		else
-			uv0:closeView()
+			arg_8_0:closeView()
 		end
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_8_0, arg_8_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.meta_help.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.indexBtn, function ()
-		uv0:openIndexLayer()
+	onButton(arg_8_0, arg_8_0.indexBtn, function()
+		arg_8_0:openIndexLayer()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.goGetBtn, function ()
-		slot0 = uv0:getCurMetaProgressVO()
-		slot2 = slot0:isBuildType()
+	onButton(arg_8_0, arg_8_0.goGetBtn, function()
+		local var_12_0 = arg_8_0:getCurMetaProgressVO()
+		local var_12_1 = var_12_0:isPassType()
+		local var_12_2 = var_12_0:isBuildType()
 
-		if slot0:isPassType() then
+		if var_12_1 then
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CRUSING)
-		elseif slot2 then
+		elseif var_12_2 then
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.GETBOAT, {
 				page = BuildShipScene.PAGE_BUILD,
 				projectName = BuildShipScene.PROJECTS.ACTIVITY
 			})
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.ptPreviewBtn, function ()
-		uv0:emit(MetaCharacterMediator.OPEN_PT_PREVIEW_LAYER, uv0:getCurMetaProgressVO())
+	onButton(arg_8_0, arg_8_0.ptPreviewBtn, function()
+		arg_8_0:emit(MetaCharacterMediator.OPEN_PT_PREVIEW_LAYER, arg_8_0:getCurMetaProgressVO())
 	end, SFX_PANEL)
-	onButton(slot0, slot0.ptGetBtn, function ()
-		if uv0:getCurMetaProgressVO():getMetaProgressPTState() == MetaProgress.STATE_CAN_AWARD then
-			slot2, slot3 = uv0:getOneStepPTAwardLevelAndCount()
+	onButton(arg_8_0, arg_8_0.ptGetBtn, function()
+		local var_14_0 = arg_8_0:getCurMetaProgressVO()
+		local var_14_1 = var_14_0:getMetaProgressPTState()
+
+		if var_14_1 == MetaProgress.STATE_CAN_AWARD then
+			local var_14_2, var_14_3 = arg_8_0:getOneStepPTAwardLevelAndCount()
 
 			pg.m02:sendNotification(GAME.GET_META_PT_AWARD, {
-				groupID = slot0.id,
-				targetCount = slot3
+				groupID = var_14_0.id,
+				targetCount = var_14_3
 			})
-		elseif slot1 == MetaProgress.STATE_LESS_PT then
-			slot2 = false
+		elseif var_14_1 == MetaProgress.STATE_LESS_PT then
+			local var_14_4 = false
+			local var_14_5 = nowWorld()
 
-			if nowWorld() then
-				slot2 = slot3:IsSystemOpen(WorldConst.SystemWorldBoss)
+			if var_14_5 then
+				var_14_4 = var_14_5:IsSystemOpen(WorldConst.SystemWorldBoss)
 			end
 
-			pg.TipsMgr.GetInstance():ShowTips(i18n(slot2 and "meta_pt_notenough" or "meta_boss_unlock"))
-		elseif slot1 == MetaProgress.STATE_LESS_STORY then
+			local var_14_6 = var_14_4 and "meta_pt_notenough" or "meta_boss_unlock"
+
+			pg.TipsMgr.GetInstance():ShowTips(i18n(var_14_6))
+		elseif var_14_1 == MetaProgress.STATE_LESS_STORY then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("meta_story_lock"))
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.ptShowWayBtn, function ()
-		slot0 = false
+	onButton(arg_8_0, arg_8_0.ptShowWayBtn, function()
+		local var_15_0 = false
+		local var_15_1 = nowWorld()
 
-		if nowWorld() then
-			slot0 = slot1:IsSystemOpen(WorldConst.SystemWorldBoss)
+		if var_15_1 then
+			var_15_0 = var_15_1:IsSystemOpen(WorldConst.SystemWorldBoss)
 		end
 
-		pg.TipsMgr.GetInstance():ShowTips(i18n(slot0 and "meta_pt_notenough" or "meta_boss_unlock"))
+		local var_15_2 = var_15_0 and "meta_pt_notenough" or "meta_boss_unlock"
+
+		pg.TipsMgr.GetInstance():ShowTips(i18n(var_15_2))
 	end, SFX_PANEL)
-	onButton(slot0, slot0.getShipBtn, function ()
-		slot0 = uv0:getCurMetaProgressVO()
-		slot1, slot2 = slot0.metaPtData:GetResProgress()
+	onButton(arg_8_0, arg_8_0.getShipBtn, function()
+		local var_16_0 = arg_8_0:getCurMetaProgressVO()
+		local var_16_1, var_16_2 = var_16_0.metaPtData:GetResProgress()
 
 		pg.m02:sendNotification(GAME.GET_META_PT_AWARD, {
-			groupID = slot0.id,
-			targetCount = slot2
+			groupID = var_16_0.id,
+			targetCount = var_16_2
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.synToggleLock, function ()
+	onButton(arg_8_0, arg_8_0.synToggleLock, function()
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 	end, SFX_PANEL)
-	onButton(slot0, slot0.synBtnLock, function ()
+	onButton(arg_8_0, arg_8_0.synBtnLock, function()
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 	end)
-	onButton(slot0, slot0:findTF("RepairBtn", slot0.repairBtn), function ()
-		uv0:switchPage(uv1.PAGES.REPAIR)
+	onButton(arg_8_0, arg_8_0:findTF("RepairBtn", arg_8_0.repairBtn), function()
+		arg_8_0:switchPage(var_0_0.PAGES.REPAIR)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.energyBtn, function ()
-		uv0.isMainOpenLayerTag = true
+	onButton(arg_8_0, arg_8_0.energyBtn, function()
+		arg_8_0.isMainOpenLayerTag = true
 
-		uv0:switchPage(uv1.PAGES.ENERGY)
+		arg_8_0:switchPage(var_0_0.PAGES.ENERGY)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.tacticsBtn, function ()
-		uv0.isMainOpenLayerTag = true
+	onButton(arg_8_0, arg_8_0.tacticsBtn, function()
+		arg_8_0.isMainOpenLayerTag = true
 
-		uv0:switchPage(uv1.PAGES.TACTICS)
+		arg_8_0:switchPage(var_0_0.PAGES.TACTICS)
 	end, SFX_PANEL)
+	onButton(arg_8_0, arg_8_0.synBtn, function()
+		if not isActive(arg_8_0.synBtnLock) then
+			arg_8_0.isMainOpenLayerTag = true
 
-	function slot4()
-		if not isActive(uv0.synBtnLock) then
-			uv0.isMainOpenLayerTag = true
-
-			uv0:switchPage(uv1.PAGES.SYN)
+			arg_8_0:switchPage(var_0_0.PAGES.SYN)
 		end
-	end
+	end, SFX_PANEL)
 
-	slot5 = SFX_PANEL
-
-	onButton(slot0, slot0.synBtn, slot4, slot5)
-
-	for slot4, slot5 in ipairs(slot0.toggleList) do
-		onToggle(slot0, slot5, function (slot0)
-			if uv0.curPageIndex == uv1 and slot0 == true then
+	for iter_8_0, iter_8_1 in ipairs(arg_8_0.toggleList) do
+		onToggle(arg_8_0, iter_8_1, function(arg_23_0)
+			if arg_8_0.curPageIndex == iter_8_0 and arg_23_0 == true then
 				return
 			end
 
-			if uv0.curPageIndex == uv1 and slot0 == false then
-				uv0:enterMenuPage(false)
-				uv0:emit(uv2.PAGES_EVENTS[uv1], uv0:getCurMetaProgressVO():getShip().id, false)
+			local var_23_0 = arg_8_0:getCurMetaProgressVO():getShip()
+
+			if arg_8_0.curPageIndex == iter_8_0 and arg_23_0 == false then
+				arg_8_0:enterMenuPage(false)
+				arg_8_0:emit(var_0_0.PAGES_EVENTS[iter_8_0], var_23_0.id, false)
 			end
 
-			if uv0.curPageIndex ~= uv1 and slot0 == true then
-				uv0:enterMenuPage(true)
+			if arg_8_0.curPageIndex ~= iter_8_0 and arg_23_0 == true then
+				arg_8_0:enterMenuPage(true)
 
-				uv0.curPageIndex = uv1
+				arg_8_0.curPageIndex = iter_8_0
 
-				uv0:emit(uv2.PAGES_EVENTS[uv1], slot2.id, true)
+				arg_8_0:emit(var_0_0.PAGES_EVENTS[iter_8_0], var_23_0.id, true)
 			end
 		end)
 	end
 end
 
-function slot0.resetToggleList(slot0)
-	for slot4, slot5 in ipairs(slot0.toggleList) do
-		setActive(slot0:findTF("On", slot5), false)
-		setActive(slot0:findTF("Off", slot5), true)
+function var_0_0.resetToggleList(arg_24_0)
+	for iter_24_0, iter_24_1 in ipairs(arg_24_0.toggleList) do
+		setActive(arg_24_0:findTF("On", iter_24_1), false)
+		setActive(arg_24_0:findTF("Off", iter_24_1), true)
 	end
 end
 
-function slot0.initMetaProgressList(slot0)
-	slot0.metaProgressVOList = slot0:getMetaProgressListForShow()
+function var_0_0.initMetaProgressList(arg_25_0)
+	arg_25_0.metaProgressVOList = arg_25_0:getMetaProgressListForShow()
 
-	slot0:fillMetaProgressList()
+	arg_25_0:fillMetaProgressList()
 end
 
-function slot0.fillMetaProgressList(slot0)
-	if #slot0.metaProgressVOList < 5 then
-		for slot4 = #slot0.metaProgressVOList + 1, 5 do
-			table.insert(slot0.metaProgressVOList, false)
+function var_0_0.fillMetaProgressList(arg_26_0)
+	if #arg_26_0.metaProgressVOList < 5 then
+		for iter_26_0 = #arg_26_0.metaProgressVOList + 1, 5 do
+			table.insert(arg_26_0.metaProgressVOList, false)
 		end
 	end
 end
 
-function slot0.initBannerList(slot0)
-	slot0.scrollUIItemList = UIItemList.New(slot0.bannerContainer, slot0.bannerTpl)
+function var_0_0.initBannerList(arg_27_0)
+	arg_27_0.scrollUIItemList = UIItemList.New(arg_27_0.bannerContainer, arg_27_0.bannerTpl)
 
-	slot0.scrollUIItemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			table.insert(uv0.bannerTFList, slot2)
-			uv0:updateBannerTF(uv0.metaProgressVOList[slot1 + 1], slot2, slot1 + 1)
+	arg_27_0.scrollUIItemList:make(function(arg_28_0, arg_28_1, arg_28_2)
+		if arg_28_0 == UIItemList.EventUpdate then
+			table.insert(arg_27_0.bannerTFList, arg_28_2)
+
+			local var_28_0 = arg_27_0.metaProgressVOList[arg_28_1 + 1]
+
+			arg_27_0:updateBannerTF(var_28_0, arg_28_2, arg_28_1 + 1)
 		end
 	end)
 end
 
-function slot0.updateBannerTF(slot0, slot1, slot2, slot3)
-	slot4 = slot2
-	slot5 = slot0:findTF("ForScale", slot2)
-	slot6 = slot0:findTF("WillCome", slot5)
-	slot7 = slot0:findTF("Empty", slot5)
-	slot8 = slot0:findTF("Active", slot5)
+function var_0_0.updateBannerTF(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
+	local var_29_0 = arg_29_2
+	local var_29_1 = arg_29_0:findTF("ForScale", arg_29_2)
+	local var_29_2 = arg_29_0:findTF("WillCome", var_29_1)
+	local var_29_3 = arg_29_0:findTF("Empty", var_29_1)
+	local var_29_4 = arg_29_0:findTF("Active", var_29_1)
 
-	if slot1 then
-		slot9 = slot1:isInAct()
+	if arg_29_1 then
+		local var_29_5 = arg_29_1:isInAct()
+		local var_29_6 = arg_29_0:findTF("ActType/Tag", var_29_3)
+		local var_29_7 = arg_29_0:findTF("BuildType/Tag", var_29_3)
+		local var_29_8 = arg_29_0:findTF("ActType/Tag", var_29_4)
+		local var_29_9 = arg_29_0:findTF("BuildType/Tag", var_29_4)
 
-		setActive(slot0:findTF("ActType/Tag", slot7), slot9)
-		setActive(slot0:findTF("BuildType/Tag", slot7), slot9)
-		setActive(slot0:findTF("ActType/Tag", slot8), slot9)
-		setActive(slot0:findTF("BuildType/Tag", slot8), slot9)
+		setActive(var_29_6, var_29_5)
+		setActive(var_29_7, var_29_5)
+		setActive(var_29_8, var_29_5)
+		setActive(var_29_9, var_29_5)
 	end
 
-	if slot1 then
-		slot10 = Ship.New({
-			configId = tonumber(slot1.configId .. 1)
+	if arg_29_1 then
+		local var_29_10 = Ship.New({
+			configId = tonumber(arg_29_1.configId .. 1)
 		}):getName()
-		slot11 = nil
-		slot11 = slot0:findTF("Empty/ActType/ShipNameMask/ShipNameText", slot5)
+		local var_29_11
+		local var_29_12 = arg_29_0:findTF("Empty/ActType/ShipNameMask/ShipNameText", var_29_1)
 
-		setText(slot11, slot10)
-		setScrollText(slot11, slot10)
-		setActive(slot11, true)
+		setText(var_29_12, var_29_10)
+		setScrollText(var_29_12, var_29_10)
+		setActive(var_29_12, true)
 
-		slot11 = slot0:findTF("Empty/BuildType/ShipNameMask/ShipNameText", slot5)
+		local var_29_13 = arg_29_0:findTF("Empty/BuildType/ShipNameMask/ShipNameText", var_29_1)
 
-		setText(slot11, slot10)
-		setScrollText(slot11, slot10)
-		setActive(slot11, true)
+		setText(var_29_13, var_29_10)
+		setScrollText(var_29_13, var_29_10)
+		setActive(var_29_13, true)
 
-		slot11 = slot0:findTF("Empty/PassType/ShipNameMask/ShipNameText", slot5)
+		local var_29_14 = arg_29_0:findTF("Empty/PassType/ShipNameMask/ShipNameText", var_29_1)
 
-		setText(slot11, slot10)
-		setScrollText(slot11, slot10)
-		setActive(slot11, true)
+		setText(var_29_14, var_29_10)
+		setScrollText(var_29_14, var_29_10)
+		setActive(var_29_14, true)
 
-		slot11 = slot0:findTF("Active/ActType/ShipNameMask/ShipNameText", slot5)
+		local var_29_15 = arg_29_0:findTF("Active/ActType/ShipNameMask/ShipNameText", var_29_1)
 
-		setText(slot11, slot10)
-		setScrollText(slot11, slot10)
-		setActive(slot11, true)
+		setText(var_29_15, var_29_10)
+		setScrollText(var_29_15, var_29_10)
+		setActive(var_29_15, true)
 
-		slot11 = slot0:findTF("Active/BuildType/ShipNameMask/ShipNameText", slot5)
+		local var_29_16 = arg_29_0:findTF("Active/BuildType/ShipNameMask/ShipNameText", var_29_1)
 
-		setText(slot11, slot10)
-		setScrollText(slot11, slot10)
-		setActive(slot11, true)
+		setText(var_29_16, var_29_10)
+		setScrollText(var_29_16, var_29_10)
+		setActive(var_29_16, true)
 
-		slot11 = slot0:findTF("Active/PassType/ShipNameMask/ShipNameText", slot5)
+		local var_29_17 = arg_29_0:findTF("Active/PassType/ShipNameMask/ShipNameText", var_29_1)
 
-		setText(slot11, slot10)
-		setScrollText(slot11, slot10)
-		setActive(slot11, true)
+		setText(var_29_17, var_29_10)
+		setScrollText(var_29_17, var_29_10)
+		setActive(var_29_17, true)
 	end
 
-	if slot1 == false then
-		setActive(slot6, true)
-		setActive(slot7, false)
-		setActive(slot8, false)
+	if arg_29_1 == false then
+		setActive(var_29_2, true)
+		setActive(var_29_3, false)
+		setActive(var_29_4, false)
 	else
-		setActive(slot6, false)
+		setActive(var_29_2, false)
 
-		slot9 = slot1:isUnlocked()
+		local var_29_18 = arg_29_1:isUnlocked()
 
-		setActive(slot7, not slot9)
-		setActive(slot8, slot9)
+		setActive(var_29_3, not var_29_18)
+		setActive(var_29_4, var_29_18)
 
-		slot10 = slot1:isPtType()
+		local var_29_19 = arg_29_1:isPtType()
+		local var_29_20 = arg_29_1:isPassType()
+		local var_29_21 = arg_29_1:isBuildType()
 
-		if not slot9 then
-			slot13 = slot0:findTF("Empty/ActType", slot5)
-			slot14 = slot0:findTF("Empty/BuildType", slot5)
-			slot15 = slot0:findTF("Empty/PassType", slot5)
+		if not var_29_18 then
+			local var_29_22 = arg_29_0:findTF("Empty/ActType", var_29_1)
+			local var_29_23 = arg_29_0:findTF("Empty/BuildType", var_29_1)
+			local var_29_24 = arg_29_0:findTF("Empty/PassType", var_29_1)
 
-			setActive(slot13, slot10)
-			setActive(slot14, slot1:isBuildType())
-			setActive(slot15, slot1:isPassType())
+			setActive(var_29_22, var_29_19)
+			setActive(var_29_23, var_29_21)
+			setActive(var_29_24, var_29_20)
 
-			slot16, slot17 = slot1:getBannerPathAndName()
-			slot18 = LoadSprite(slot16, slot17)
+			local var_29_25, var_29_26 = arg_29_1:getBannerPathAndName()
+			local var_29_27 = LoadSprite(var_29_25, var_29_26)
 
-			setImageSprite(slot13, slot18)
-			setImageSprite(slot14, slot18)
-			setImageSprite(slot15, slot18)
+			setImageSprite(var_29_22, var_29_27)
+			setImageSprite(var_29_23, var_29_27)
+			setImageSprite(var_29_24, var_29_27)
 
-			if slot10 then
-				setText(slot0:findTF("NumText", slot13), string.format("%d", slot1:getSynRate() * 100) .. "%")
+			if var_29_19 then
+				local var_29_28 = arg_29_0:findTF("NumText", var_29_22)
+				local var_29_29 = string.format("%d", arg_29_1:getSynRate() * 100) .. "%"
 
-				slot21 = slot0:findTF("Slider", slot13)
+				setText(var_29_28, var_29_29)
 
-				setSlider(slot21, 0, 1, slot1:getSynRate())
-				setActive(slot21, false)
+				local var_29_30 = arg_29_0:findTF("Slider", var_29_22)
+
+				setSlider(var_29_30, 0, 1, arg_29_1:getSynRate())
+				setActive(var_29_30, false)
 			end
 
-			slot20 = Ship.New({
-				configId = pg.ship_strengthen_meta[slot1.configId].ship_id
+			local var_29_31 = pg.ship_strengthen_meta[arg_29_1.configId].ship_id
+			local var_29_32 = Ship.New({
+				configId = var_29_31
 			})
-			slot22 = slot20:getStar()
-			slot25 = UIItemList.New(slot0:findTF("Empty/Stars", slot5), slot0:findTF("Empty/StarTpl", slot5))
+			local var_29_33 = var_29_32:getMaxStar()
+			local var_29_34 = var_29_32:getStar()
+			local var_29_35 = arg_29_0:findTF("Empty/StarTpl", var_29_1)
+			local var_29_36 = arg_29_0:findTF("Empty/Stars", var_29_1)
+			local var_29_37 = UIItemList.New(var_29_36, var_29_35)
 
-			slot25:make(function (slot0, slot1, slot2)
-				if slot0 == UIItemList.EventUpdate then
-					setActive(uv0:findTF("On", slot2), slot1 + 1 <= uv1)
+			var_29_37:make(function(arg_30_0, arg_30_1, arg_30_2)
+				if arg_30_0 == UIItemList.EventUpdate then
+					arg_30_1 = arg_30_1 + 1
+
+					local var_30_0 = arg_29_0:findTF("On", arg_30_2)
+
+					setActive(var_30_0, arg_30_1 <= var_29_34)
 				end
 			end)
-			slot25:align(slot20:getMaxStar())
+			var_29_37:align(var_29_33)
 		else
-			setActive(slot0:findTF("Active/ActType", slot5), slot10)
-			setActive(slot0:findTF("Active/BuildType", slot5), slot12)
-			setActive(slot0:findTF("Active/PassType", slot5), slot11)
+			local var_29_38 = arg_29_0:findTF("Active/ActType", var_29_1)
+			local var_29_39 = arg_29_0:findTF("Active/BuildType", var_29_1)
+			local var_29_40 = arg_29_0:findTF("Active/PassType", var_29_1)
 
-			slot16, slot17 = slot1:getBannerPathAndName()
-			slot18 = LoadSprite(slot16, slot17)
+			setActive(var_29_38, var_29_19)
+			setActive(var_29_39, var_29_21)
+			setActive(var_29_40, var_29_20)
 
-			setImageSprite(slot0:findTF("Active", slot5), LoadSprite(slot16, slot17))
+			local var_29_41, var_29_42 = arg_29_1:getBannerPathAndName()
+			local var_29_43 = LoadSprite(var_29_41, var_29_42)
 
-			slot20 = slot1:getShip():getMetaCharacter()
+			setImageSprite(arg_29_0:findTF("Active", var_29_1), LoadSprite(var_29_41, var_29_42))
 
-			if slot10 then
-				setText(slot0:findTF("NumText", slot13), string.format("%d", slot20:getRepairRate() * 100) .. "%")
+			local var_29_44 = arg_29_1:getShip()
+			local var_29_45 = var_29_44:getMetaCharacter()
 
-				slot23 = slot0:findTF("Slider", slot13)
+			if var_29_19 then
+				local var_29_46 = arg_29_0:findTF("NumText", var_29_38)
+				local var_29_47 = string.format("%d", var_29_45:getRepairRate() * 100) .. "%"
 
-				setSlider(slot23, 0, 1, slot20:getRepairRate())
-				setActive(slot23, false)
+				setText(var_29_46, var_29_47)
+
+				local var_29_48 = arg_29_0:findTF("Slider", var_29_38)
+
+				setSlider(var_29_48, 0, 1, var_29_45:getRepairRate())
+				setActive(var_29_48, false)
 			end
 
-			slot22 = slot19:getStar()
-			slot25 = UIItemList.New(slot0:findTF("Active/Stars", slot5), slot0:findTF("Active/StarTpl", slot5))
+			local var_29_49 = var_29_44:getMaxStar()
+			local var_29_50 = var_29_44:getStar()
+			local var_29_51 = arg_29_0:findTF("Active/StarTpl", var_29_1)
+			local var_29_52 = arg_29_0:findTF("Active/Stars", var_29_1)
+			local var_29_53 = UIItemList.New(var_29_52, var_29_51)
 
-			slot25:make(function (slot0, slot1, slot2)
-				if slot0 == UIItemList.EventUpdate then
-					setActive(uv0:findTF("On", slot2), slot1 + 1 <= uv1)
+			var_29_53:make(function(arg_31_0, arg_31_1, arg_31_2)
+				if arg_31_0 == UIItemList.EventUpdate then
+					arg_31_1 = arg_31_1 + 1
+
+					local var_31_0 = arg_29_0:findTF("On", arg_31_2)
+
+					setActive(var_31_0, arg_31_1 <= var_29_50)
 				end
 			end)
-			slot25:align(slot19:getMaxStar())
+			var_29_53:align(var_29_49)
 		end
 	end
 
-	onButton(slot0, slot4, function ()
-		if uv0.curMetaIndex ~= uv1 then
-			if uv0.curMetaIndex and uv0.curMetaIndex > 0 then
-				uv0:changeBannerOnClick(uv0.bannerTFList[uv0.curMetaIndex], false)
+	onButton(arg_29_0, var_29_0, function()
+		if arg_29_0.curMetaIndex ~= arg_29_3 then
+			if arg_29_0.curMetaIndex and arg_29_0.curMetaIndex > 0 then
+				arg_29_0:changeBannerOnClick(arg_29_0.bannerTFList[arg_29_0.curMetaIndex], false)
 			end
 
-			uv0.curMetaIndex = uv1
+			arg_29_0.curMetaIndex = arg_29_3
 
-			uv0:changeBannerOnClick(uv2, true)
-			uv0:updateMain()
+			arg_29_0:changeBannerOnClick(var_29_0, true)
+			arg_29_0:updateMain()
 		end
 	end, SFX_PANEL)
 
-	if slot1 == false then
-		setButtonEnabled(slot4, false)
+	if arg_29_1 == false then
+		setButtonEnabled(var_29_0, false)
 	else
-		setButtonEnabled(slot4, true)
+		setButtonEnabled(var_29_0, true)
 	end
 end
 
-function slot0.changeBannerOnClick(slot0, slot1, slot2)
-	slot3 = slot1:GetComponent("LayoutElement")
+function var_0_0.changeBannerOnClick(arg_33_0, arg_33_1, arg_33_2)
+	local var_33_0 = arg_33_1:GetComponent("LayoutElement")
+	local var_33_1 = arg_33_0:findTF("ForScale", arg_33_1)
 
-	if slot2 == true then
-		setLocalScale(slot0:findTF("ForScale", slot1), uv0.SCALE_ON_PITCH)
+	if arg_33_2 == true then
+		setLocalScale(var_33_1, var_0_0.SCALE_ON_PITCH)
 
-		slot3.preferredWidth = 338.3
-		slot3.preferredHeight = 102
+		var_33_0.preferredWidth = 338.3
+		var_33_0.preferredHeight = 102
 	else
-		setLocalScale(slot4, Vector2.one)
+		setLocalScale(var_33_1, Vector2.one)
 
-		slot3.preferredWidth = 199
-		slot3.preferredHeight = 60
+		var_33_0.preferredWidth = 199
+		var_33_0.preferredHeight = 60
 	end
 
-	setActive(slot0:findTF("SelectedTag", slot4), slot2)
+	local var_33_2 = arg_33_0:findTF("SelectedTag", var_33_1)
+
+	setActive(var_33_2, arg_33_2)
 end
 
-function slot0.updateBannerShipName(slot0, slot1)
-	slot2 = slot0:findTF("ForScale", slot1)
-	slot4 = isActive(slot0:findTF("SelectedTag", slot2))
-	slot5 = nil
+function var_0_0.updateBannerShipName(arg_34_0, arg_34_1)
+	local var_34_0 = arg_34_0:findTF("ForScale", arg_34_1)
+	local var_34_1 = arg_34_0:findTF("SelectedTag", var_34_0)
+	local var_34_2 = isActive(var_34_1)
+	local var_34_3
+	local var_34_4 = arg_34_0:findTF("Empty/ActType/ShipNameText", var_34_0)
 
-	setActive(slot0:findTF("Empty/ActType/ShipNameText", slot2), slot4)
-	setActive(slot0:findTF("Empty/BuildType/ShipNameText", slot2), slot4)
-	setActive(slot0:findTF("Active/ActType/ShipNameText", slot2), slot4)
-	setActive(slot0:findTF("Active/BuildType/ShipNameText", slot2), slot4)
+	setActive(var_34_4, var_34_2)
 
-	slot6 = nil
+	local var_34_5 = arg_34_0:findTF("Empty/BuildType/ShipNameText", var_34_0)
 
-	setActive(slot0:findTF("Empty/ActType/TipText", slot2), not slot4)
-	setActive(slot0:findTF("Empty/BuildType/TipText", slot2), not slot4)
-	setActive(slot0:findTF("Active/ActType/Text", slot2), not slot4)
-	setActive(slot0:findTF("Active/BuildType/Text", slot2), not slot4)
+	setActive(var_34_5, var_34_2)
+
+	local var_34_6 = arg_34_0:findTF("Active/ActType/ShipNameText", var_34_0)
+
+	setActive(var_34_6, var_34_2)
+
+	local var_34_7 = arg_34_0:findTF("Active/BuildType/ShipNameText", var_34_0)
+
+	setActive(var_34_7, var_34_2)
+
+	local var_34_8
+	local var_34_9 = arg_34_0:findTF("Empty/ActType/TipText", var_34_0)
+
+	setActive(var_34_9, not var_34_2)
+
+	local var_34_10 = arg_34_0:findTF("Empty/BuildType/TipText", var_34_0)
+
+	setActive(var_34_10, not var_34_2)
+
+	local var_34_11 = arg_34_0:findTF("Active/ActType/Text", var_34_0)
+
+	setActive(var_34_11, not var_34_2)
+
+	local var_34_12 = arg_34_0:findTF("Active/BuildType/Text", var_34_0)
+
+	setActive(var_34_12, not var_34_2)
 end
 
-function slot0.updateBannerUIList(slot0)
-	slot0.bannerTFList = {}
+function var_0_0.updateBannerUIList(arg_35_0)
+	arg_35_0.bannerTFList = {}
 
-	slot0.scrollUIItemList:align(#slot0.metaProgressVOList)
+	arg_35_0.scrollUIItemList:align(#arg_35_0.metaProgressVOList)
 end
 
-function slot0.updateStart(slot0)
-	slot1 = false
+function var_0_0.updateStart(arg_36_0)
+	local var_36_0 = false
 
-	for slot5, slot6 in ipairs(slot0.metaProgressVOList) do
-		if slot6 ~= false then
-			slot1 = true
+	for iter_36_0, iter_36_1 in ipairs(arg_36_0.metaProgressVOList) do
+		if iter_36_1 ~= false then
+			var_36_0 = true
 
 			break
 		end
 	end
 
-	setActive(slot0:findTF("On", slot0.indexBtn), not slot0:isDefaultStatus())
-	setActive(slot0.noCharTF, not slot1)
-	setActive(slot0.hidePanel, slot1)
+	local var_36_1 = arg_36_0:findTF("On", arg_36_0.indexBtn)
 
-	if not slot1 then
+	setActive(var_36_1, not arg_36_0:isDefaultStatus())
+	setActive(arg_36_0.noCharTF, not var_36_0)
+	setActive(arg_36_0.hidePanel, var_36_0)
+
+	if not var_36_0 then
 		return
 	end
 
-	slot0:resetBannerListScale()
-	slot0:updateBannerUIList()
+	arg_36_0:resetBannerListScale()
+	arg_36_0:updateBannerUIList()
 
-	slot0.curMetaIndex = nil
+	arg_36_0.curMetaIndex = nil
 
-	if slot1 then
-		triggerButton(slot0.bannerTFList[1])
+	if var_36_0 then
+		triggerButton(arg_36_0.bannerTFList[1])
 	end
 end
 
-function slot0.resetBannerListScale(slot0)
-	for slot4, slot5 in ipairs(slot0.bannerTFList) do
-		slot6 = slot5:GetComponent("LayoutElement")
+function var_0_0.resetBannerListScale(arg_37_0)
+	for iter_37_0, iter_37_1 in ipairs(arg_37_0.bannerTFList) do
+		local var_37_0 = iter_37_1:GetComponent("LayoutElement")
+		local var_37_1 = arg_37_0:findTF("ForScale", iter_37_1)
 
-		setLocalScale(slot0:findTF("ForScale", slot5), Vector2.one)
+		setLocalScale(var_37_1, Vector2.one)
 
-		slot6.preferredWidth = 199
-		slot6.preferredHeight = 60
+		var_37_0.preferredWidth = 199
+		var_37_0.preferredHeight = 60
 	end
 end
 
-function slot0.updateMain(slot0, slot1)
-	slot3 = slot0:getCurMetaProgressVO():isUnlocked()
+function var_0_0.updateMain(arg_38_0, arg_38_1)
+	local var_38_0 = arg_38_0:getCurMetaProgressVO()
+	local var_38_1 = var_38_0:isUnlocked()
 
-	setActive(slot0.menuPanel, slot3)
-	setActive(slot0.ptPanel, not slot3)
-	setActive(slot0.goGetPanel, not slot3)
-	slot0:updateActTimePanel()
+	setActive(arg_38_0.menuPanel, var_38_1)
+	setActive(arg_38_0.ptPanel, not var_38_1)
+	setActive(arg_38_0.goGetPanel, not var_38_1)
+	arg_38_0:updateActTimePanel()
 
-	if not slot3 then
-		setActive(slot0.ptPanel, slot2:isPtType())
-		setActive(slot0.goGetPanel, slot2:isPassType() or slot2:isBuildType())
+	if not var_38_1 then
+		local var_38_2 = var_38_0:isPtType()
+		local var_38_3 = var_38_0:isPassType()
+		local var_38_4 = var_38_0:isBuildType()
 
-		if slot4 then
-			slot0:updatePTPanel(slot1)
+		setActive(arg_38_0.ptPanel, var_38_2)
+		setActive(arg_38_0.goGetPanel, var_38_3 or var_38_4)
+
+		if var_38_2 then
+			arg_38_0:updatePTPanel(arg_38_1)
 		end
 	else
-		slot0:TryPlayGuide()
+		arg_38_0:TryPlayGuide()
 	end
 
-	slot0:updateRedPoints()
+	arg_38_0:updateRedPoints()
 
-	slot4, slot5 = slot2:getPaintPathAndName()
+	local var_38_5, var_38_6 = var_38_0:getPaintPathAndName()
 
-	setImageSprite(slot0.shipImg, LoadSprite(slot4, slot5), true)
+	setImageSprite(arg_38_0.shipImg, LoadSprite(var_38_5, var_38_6), true)
 
-	slot6, slot7 = slot2:getBGNamePathAndName()
+	local var_38_7, var_38_8 = var_38_0:getBGNamePathAndName()
 
-	setImageSprite(slot0.shipNameImg, LoadSprite(slot6, slot7), true)
+	setImageSprite(arg_38_0.shipNameImg, LoadSprite(var_38_7, var_38_8), true)
 
-	slot7 = MetaCharacterConst.UIConfig[slot2.id]
+	local var_38_9 = var_38_0.id
+	local var_38_10 = MetaCharacterConst.UIConfig[var_38_9]
 
-	setLocalPosition(slot0.shipImg, {
-		x = slot7[1],
-		y = slot7[2]
+	setLocalPosition(arg_38_0.shipImg, {
+		x = var_38_10[1],
+		y = var_38_10[2]
 	})
-	setLocalScale(slot0.shipImg, {
-		x = slot7[3],
-		y = slot7[4]
+	setLocalScale(arg_38_0.shipImg, {
+		x = var_38_10[3],
+		y = var_38_10[4]
 	})
 end
 
-function slot0.TryPlayGuide(slot0)
+function var_0_0.TryPlayGuide(arg_39_0)
 	pg.SystemGuideMgr.GetInstance():PlayByGuideId("NG0024")
 end
 
-function slot0.updateActTimePanel(slot0)
-	slot1 = slot0:getCurMetaProgressVO()
-	slot3 = slot1:isInAct()
+function var_0_0.updateActTimePanel(arg_40_0)
+	local var_40_0 = arg_40_0:getCurMetaProgressVO()
+	local var_40_1 = var_40_0:isUnlocked()
+	local var_40_2 = var_40_0:isInAct()
 
-	setActive(slot0.actTimePanel, not slot1:isUnlocked() and slot3)
-	setActive(slot0.synBtnLimitTimeTF, slot3)
+	setActive(arg_40_0.actTimePanel, not var_40_1 and var_40_2)
+	setActive(arg_40_0.synBtnLimitTimeTF, var_40_2)
 
-	if slot3 then
-		slot4 = slot1.timeConfig[1][1]
-		slot5 = slot1.timeConfig[2][1]
+	if var_40_2 then
+		local var_40_3 = var_40_0.timeConfig[1][1]
+		local var_40_4 = var_40_0.timeConfig[2][1]
+		local var_40_5 = "%d.%d.%d-%d.%d.%d"
+		local var_40_6 = string.format(var_40_5, var_40_3[1], var_40_3[2], var_40_3[3], var_40_4[1], var_40_4[2], var_40_4[3])
 
-		setText(slot0.actTimeText, string.format("%d.%d.%d-%d.%d.%d", slot4[1], slot4[2], slot4[3], slot5[1], slot5[2], slot5[3]))
-		setText(slot0:findTF("Text", slot0.synBtnLimitTimeTF), i18n("meta_pt_left", pg.TimeMgr.GetInstance():DiffDay(pg.TimeMgr.GetInstance():GetServerTime(), pg.TimeMgr.GetInstance():parseTimeFromConfig(slot1.timeConfig[2]))))
+		setText(arg_40_0.actTimeText, var_40_6)
+
+		local var_40_7 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var_40_0.timeConfig[2])
+		local var_40_8 = pg.TimeMgr.GetInstance():GetServerTime()
+		local var_40_9 = pg.TimeMgr.GetInstance():DiffDay(var_40_8, var_40_7)
+		local var_40_10 = arg_40_0:findTF("Text", arg_40_0.synBtnLimitTimeTF)
+
+		setText(var_40_10, i18n("meta_pt_left", var_40_9))
 	end
 end
 
-function slot0.updatePTPanel(slot0, slot1)
-	slot2 = slot0:getCurMetaProgressVO()
-	slot3 = slot2:getSynRate()
-	slot4 = tonumber(tostring(slot3 * 100))
+function var_0_0.updatePTPanel(arg_41_0, arg_41_1)
+	local var_41_0 = arg_41_0:getCurMetaProgressVO()
+	local var_41_1 = var_41_0:getSynRate()
+	local var_41_2 = var_41_1 * 100
+	local var_41_3 = tonumber(tostring(var_41_2))
 
-	setImageSprite(slot0.ptIcon, LoadSprite(slot2:getPtIconPath()))
-	setFillAmount(slot0.ptProgressImg, slot3)
-	setActive(slot0.ptProgressScaleLine, slot3 < 1)
+	setImageSprite(arg_41_0.ptIcon, LoadSprite(var_41_0:getPtIconPath()))
+	setFillAmount(arg_41_0.ptProgressImg, var_41_1)
+	setActive(arg_41_0.ptProgressScaleLine, var_41_1 < 1)
 
-	slot0.ptProgressScaleLine.localEulerAngles = Vector3(0, 0, -360 * slot3)
-	slot5 = string.format("%d", slot4)
-	slot7 = string.format("%2d", (slot4 - math.floor(slot4)) * 100)
-	slot7 = (slot4 - math.floor(slot4)) * 100 == 0 and slot7 .. "0%" or slot7 .. "%"
+	arg_41_0.ptProgressScaleLine.localEulerAngles = Vector3(0, 0, -360 * var_41_1)
 
-	setText(slot0.ptProgressRedLeftNumText, slot5)
-	setText(slot0.ptProgressWhiteLeftNumText, slot5)
-	setText(slot0.ptProgressRedRightNumText, slot7)
-	setText(slot0.ptProgressWhiteRightNumText, slot7)
+	local var_41_4 = string.format("%d", var_41_3)
+	local var_41_5 = (var_41_3 - math.floor(var_41_3)) * 100 == 0
+	local var_41_6 = string.format("%2d", (var_41_3 - math.floor(var_41_3)) * 100)
 
-	slot8, slot9, slot10 = slot2.metaPtData:GetResProgress()
+	var_41_6 = var_41_5 and var_41_6 .. "0%" or var_41_6 .. "%"
 
-	setText(slot0.ptProgressRedText, (slot10 >= 1 and setColorStr(slot8, COLOR_GREEN) or setColorStr(slot8, COLOR_RED)) .. "/" .. slot9)
-	setText(slot0.ptProgressWhiteText, (slot10 >= 1 and setColorStr(slot8, COLOR_GREEN) or setColorStr(slot8, COLOR_RED)) .. "/" .. slot9)
+	setText(arg_41_0.ptProgressRedLeftNumText, var_41_4)
+	setText(arg_41_0.ptProgressWhiteLeftNumText, var_41_4)
+	setText(arg_41_0.ptProgressRedRightNumText, var_41_6)
+	setText(arg_41_0.ptProgressWhiteRightNumText, var_41_6)
 
-	if slot2:getMetaProgressPTState() == MetaProgress.STATE_CAN_FINISH then
-		setActive(slot0.ptRedBarImg, true)
-		setActive(slot0.ptPreviewBtn, false)
-		setActive(slot0.ptGetBtn, false)
-		setActive(slot0.ptShowWayBtn, false)
-		setActive(slot0.ptInfoPanel, false)
-		setActive(slot0.storyInfoPanel, false)
-		setActive(slot0.getShipBtn, true)
-	elseif slot11 == MetaProgress.STATE_CAN_AWARD then
-		setActive(slot0.ptRedBarImg, false)
-		setActive(slot0.ptPreviewBtn, true)
-		setActive(slot0.ptGetBtn, true)
-		setActive(slot0.ptShowWayBtn, false)
-		setActive(slot0.ptGetBtnTag, true)
-		setActive(slot0.ptInfoPanel, true)
-		setActive(slot0.storyInfoPanel, false)
-		setActive(slot0.getShipBtn, false)
-		setImageAlpha(slot0.ptPreviewBtn, 0)
-		setImageAlpha(slot0.ptGetBtn, 0)
-		setImageAlpha(slot0.ptGetBtnTag, 0)
-		setImageAlpha(slot0.ptShowWayBtn, 0)
-	elseif slot11 == MetaProgress.STATE_LESS_STORY then
-		setActive(slot0.ptRedBarImg, true)
-		setActive(slot0.ptPreviewBtn, true)
-		setActive(slot0.ptGetBtn, true)
-		setActive(slot0.ptShowWayBtn, false)
-		setActive(slot0.ptGetBtnTag, false)
-		setActive(slot0.ptInfoPanel, false)
-		setActive(slot0.storyInfoPanel, true)
-		setActive(slot0.getShipBtn, false)
-		setText(slot0.storyNameText, slot2:getCurLevelStoryName())
-	elseif slot11 == MetaProgress.STATE_LESS_PT then
-		setActive(slot0.ptRedBarImg, false)
-		setActive(slot0.ptPreviewBtn, true)
-		setActive(slot0.ptGetBtn, false)
-		setActive(slot0.ptShowWayBtn, true)
-		setActive(slot0.ptGetBtnTag, false)
-		setActive(slot0.ptInfoPanel, true)
-		setActive(slot0.storyInfoPanel, false)
-		setActive(slot0.getShipBtn, false)
-		setImageAlpha(slot0.ptPreviewBtn, 0)
-		setImageAlpha(slot0.ptGetBtn, 0)
-		setImageAlpha(slot0.ptShowWayBtn, 0)
+	local var_41_7, var_41_8, var_41_9 = var_41_0.metaPtData:GetResProgress()
+
+	setText(arg_41_0.ptProgressRedText, (var_41_9 >= 1 and setColorStr(var_41_7, COLOR_GREEN) or setColorStr(var_41_7, COLOR_RED)) .. "/" .. var_41_8)
+	setText(arg_41_0.ptProgressWhiteText, (var_41_9 >= 1 and setColorStr(var_41_7, COLOR_GREEN) or setColorStr(var_41_7, COLOR_RED)) .. "/" .. var_41_8)
+
+	local var_41_10 = var_41_0:getMetaProgressPTState()
+
+	if var_41_10 == MetaProgress.STATE_CAN_FINISH then
+		setActive(arg_41_0.ptRedBarImg, true)
+		setActive(arg_41_0.ptPreviewBtn, false)
+		setActive(arg_41_0.ptGetBtn, false)
+		setActive(arg_41_0.ptShowWayBtn, false)
+		setActive(arg_41_0.ptInfoPanel, false)
+		setActive(arg_41_0.storyInfoPanel, false)
+		setActive(arg_41_0.getShipBtn, true)
+	elseif var_41_10 == MetaProgress.STATE_CAN_AWARD then
+		setActive(arg_41_0.ptRedBarImg, false)
+		setActive(arg_41_0.ptPreviewBtn, true)
+		setActive(arg_41_0.ptGetBtn, true)
+		setActive(arg_41_0.ptShowWayBtn, false)
+		setActive(arg_41_0.ptGetBtnTag, true)
+		setActive(arg_41_0.ptInfoPanel, true)
+		setActive(arg_41_0.storyInfoPanel, false)
+		setActive(arg_41_0.getShipBtn, false)
+		setImageAlpha(arg_41_0.ptPreviewBtn, 0)
+		setImageAlpha(arg_41_0.ptGetBtn, 0)
+		setImageAlpha(arg_41_0.ptGetBtnTag, 0)
+		setImageAlpha(arg_41_0.ptShowWayBtn, 0)
+	elseif var_41_10 == MetaProgress.STATE_LESS_STORY then
+		setActive(arg_41_0.ptRedBarImg, true)
+		setActive(arg_41_0.ptPreviewBtn, true)
+		setActive(arg_41_0.ptGetBtn, true)
+		setActive(arg_41_0.ptShowWayBtn, false)
+		setActive(arg_41_0.ptGetBtnTag, false)
+		setActive(arg_41_0.ptInfoPanel, false)
+		setActive(arg_41_0.storyInfoPanel, true)
+		setActive(arg_41_0.getShipBtn, false)
+
+		local var_41_11 = var_41_0:getCurLevelStoryName()
+
+		setText(arg_41_0.storyNameText, var_41_11)
+	elseif var_41_10 == MetaProgress.STATE_LESS_PT then
+		setActive(arg_41_0.ptRedBarImg, false)
+		setActive(arg_41_0.ptPreviewBtn, true)
+		setActive(arg_41_0.ptGetBtn, false)
+		setActive(arg_41_0.ptShowWayBtn, true)
+		setActive(arg_41_0.ptGetBtnTag, false)
+		setActive(arg_41_0.ptInfoPanel, true)
+		setActive(arg_41_0.storyInfoPanel, false)
+		setActive(arg_41_0.getShipBtn, false)
+		setImageAlpha(arg_41_0.ptPreviewBtn, 0)
+		setImageAlpha(arg_41_0.ptGetBtn, 0)
+		setImageAlpha(arg_41_0.ptShowWayBtn, 0)
 	end
 
-	if slot3 > 0 and not slot1 then
-		if slot11 == MetaProgress.STATE_CAN_AWARD or slot11 == MetaProgress.STATE_LESS_PT then
-			slot0:managedTween(LeanTween.value, nil, go(slot0.ptPanel), 0, slot3, math.min(slot3, 1)):setOnUpdate(System.Action_float(function (slot0)
-				setFillAmount(uv0.ptProgressImg, slot0)
-				setActive(uv0.ptProgressScaleLine, slot0 < 1)
+	if var_41_1 > 0 and not arg_41_1 then
+		if var_41_10 == MetaProgress.STATE_CAN_AWARD or var_41_10 == MetaProgress.STATE_LESS_PT then
+			local var_41_12 = math.min(var_41_1, 1)
 
-				uv0.ptProgressScaleLine.localEulerAngles = Vector3(0, 0, -360 * slot0)
-				slot1 = slot0 * 100
-				slot2 = string.format("%d", slot1)
-				slot4 = string.format("%2d", (slot1 - math.floor(slot1)) * 100)
-				slot4 = (slot1 - math.floor(slot1)) * 100 == 0 and slot4 .. "0%" or slot4 .. "%"
+			arg_41_0:managedTween(LeanTween.value, nil, go(arg_41_0.ptPanel), 0, var_41_1, var_41_12):setOnUpdate(System.Action_float(function(arg_42_0)
+				setFillAmount(arg_41_0.ptProgressImg, arg_42_0)
+				setActive(arg_41_0.ptProgressScaleLine, arg_42_0 < 1)
 
-				setText(uv0.ptProgressRedLeftNumText, slot2)
-				setText(uv0.ptProgressWhiteLeftNumText, slot2)
-				setText(uv0.ptProgressRedRightNumText, slot4)
-				setText(uv0.ptProgressWhiteRightNumText, slot4)
-			end)):setOnComplete(System.Action(function ()
-				setFillAmount(uv0.ptProgressImg, uv1)
-				setActive(uv0.ptProgressScaleLine, uv1 < 1)
+				arg_41_0.ptProgressScaleLine.localEulerAngles = Vector3(0, 0, -360 * arg_42_0)
 
-				uv0.ptProgressScaleLine.localEulerAngles = Vector3(0, 0, -360 * uv1)
-				slot0 = string.format("%d", uv2)
-				slot2 = string.format("%2d", (uv2 - math.floor(uv2)) * 100)
-				slot2 = (uv2 - math.floor(uv2)) * 100 == 0 and slot2 .. "0%" or slot2 .. "%"
+				local var_42_0 = arg_42_0 * 100
+				local var_42_1 = string.format("%d", var_42_0)
+				local var_42_2 = (var_42_0 - math.floor(var_42_0)) * 100 == 0
+				local var_42_3 = string.format("%2d", (var_42_0 - math.floor(var_42_0)) * 100)
 
-				setText(uv0.ptProgressRedLeftNumText, slot0)
-				setText(uv0.ptProgressWhiteLeftNumText, slot0)
-				setText(uv0.ptProgressRedRightNumText, slot2)
-				setText(uv0.ptProgressWhiteRightNumText, slot2)
-				uv0:managedTween(LeanTween.value, nil, go(uv0.ptPanel), 0, 1, uv3 / 2):setOnUpdate(System.Action_float(function (slot0)
-					setImageAlpha(uv0.ptPreviewBtn, slot0)
-					setImageAlpha(uv0.ptGetBtn, slot0)
-					setImageAlpha(uv0.ptGetBtnTag, slot0)
-					setImageAlpha(uv0.ptShowWayBtn, slot0)
-				end)):setOnComplete(System.Action(function ()
-					setImageAlpha(uv0.ptPreviewBtn, 1)
-					setImageAlpha(uv0.ptGetBtn, 1)
-					setImageAlpha(uv0.ptGetBtnTag, 1)
-					setImageAlpha(uv0.ptShowWayBtn, 1)
+				var_42_3 = var_42_2 and var_42_3 .. "0%" or var_42_3 .. "%"
+
+				setText(arg_41_0.ptProgressRedLeftNumText, var_42_1)
+				setText(arg_41_0.ptProgressWhiteLeftNumText, var_42_1)
+				setText(arg_41_0.ptProgressRedRightNumText, var_42_3)
+				setText(arg_41_0.ptProgressWhiteRightNumText, var_42_3)
+			end)):setOnComplete(System.Action(function()
+				setFillAmount(arg_41_0.ptProgressImg, var_41_1)
+				setActive(arg_41_0.ptProgressScaleLine, var_41_1 < 1)
+
+				arg_41_0.ptProgressScaleLine.localEulerAngles = Vector3(0, 0, -360 * var_41_1)
+
+				local var_43_0 = string.format("%d", var_41_3)
+				local var_43_1 = (var_41_3 - math.floor(var_41_3)) * 100 == 0
+				local var_43_2 = string.format("%2d", (var_41_3 - math.floor(var_41_3)) * 100)
+
+				var_43_2 = var_43_1 and var_43_2 .. "0%" or var_43_2 .. "%"
+
+				setText(arg_41_0.ptProgressRedLeftNumText, var_43_0)
+				setText(arg_41_0.ptProgressWhiteLeftNumText, var_43_0)
+				setText(arg_41_0.ptProgressRedRightNumText, var_43_2)
+				setText(arg_41_0.ptProgressWhiteRightNumText, var_43_2)
+				arg_41_0:managedTween(LeanTween.value, nil, go(arg_41_0.ptPanel), 0, 1, var_41_12 / 2):setOnUpdate(System.Action_float(function(arg_44_0)
+					setImageAlpha(arg_41_0.ptPreviewBtn, arg_44_0)
+					setImageAlpha(arg_41_0.ptGetBtn, arg_44_0)
+					setImageAlpha(arg_41_0.ptGetBtnTag, arg_44_0)
+					setImageAlpha(arg_41_0.ptShowWayBtn, arg_44_0)
+				end)):setOnComplete(System.Action(function()
+					setImageAlpha(arg_41_0.ptPreviewBtn, 1)
+					setImageAlpha(arg_41_0.ptGetBtn, 1)
+					setImageAlpha(arg_41_0.ptGetBtnTag, 1)
+					setImageAlpha(arg_41_0.ptShowWayBtn, 1)
 				end))
 			end))
 		end
 	else
-		setImageAlpha(slot0.ptPreviewBtn, 1)
-		setImageAlpha(slot0.ptGetBtn, 1)
-		setImageAlpha(slot0.ptGetBtnTag, 1)
-		setImageAlpha(slot0.ptShowWayBtn, 1)
+		setImageAlpha(arg_41_0.ptPreviewBtn, 1)
+		setImageAlpha(arg_41_0.ptGetBtn, 1)
+		setImageAlpha(arg_41_0.ptGetBtnTag, 1)
+		setImageAlpha(arg_41_0.ptShowWayBtn, 1)
 	end
 end
 
-function slot0.updateRedPoints(slot0)
-	slot1 = slot0:getCurMetaProgressVO()
-	slot2 = slot1.id
+function var_0_0.updateRedPoints(arg_46_0)
+	local var_46_0 = arg_46_0:getCurMetaProgressVO()
+	local var_46_1 = var_46_0.id
+	local var_46_2 = MetaCharacterConst.isMetaRepairRedTag(var_46_1)
 
-	setActive(slot0:findTF("RepairBtn/Tag", slot0.repairBtn), MetaCharacterConst.isMetaRepairRedTag(slot2))
-	setActive(slot0:findTF("Finish", slot0.repairBtn), not MetaCharacterConst.filteMetaRepairAble(slot1))
-	setActive(slot0:findTF("Tag", slot0.energyBtn), MetaCharacterConst.isMetaEnergyRedTag(slot2))
-	setActive(slot0:findTF("Finish", slot0.energyBtn), not MetaCharacterConst.filteMetaEnergyAble(slot1))
-	setActive(slot0:findTF("Finish", slot0.tacticsBtn), not MetaCharacterConst.filteMetaTacticsAble(slot1))
+	setActive(arg_46_0:findTF("RepairBtn/Tag", arg_46_0.repairBtn), var_46_2)
 
-	if slot1.metaShipVO then
-		setActive(slot0:findTF("Tag", slot0.tacticsBtn), false)
-		setActive(slot0:findTF("Learnable", slot0.tacticsBtn), slot0.metaCharacterProxy:getMetaTacticsInfoByShipID(slot9.id):getTacticsStateForShow() == MetaTacticsInfo.States.LearnAble)
-		setActive(slot0:findTF("Learning", slot0.tacticsBtn), slot10 == MetaTacticsInfo.States.Learning)
-		setActive(slot0:findTF("LearnFinish", slot0.tacticsBtn), slot10 == MetaTacticsInfo.States.LearnFinished and MetaCharacterConst.isMetaTacticsRedTag(slot2))
+	local var_46_3 = not MetaCharacterConst.filteMetaRepairAble(var_46_0)
+
+	setActive(arg_46_0:findTF("Finish", arg_46_0.repairBtn), var_46_3)
+
+	local var_46_4 = MetaCharacterConst.isMetaEnergyRedTag(var_46_1)
+
+	setActive(arg_46_0:findTF("Tag", arg_46_0.energyBtn), var_46_4)
+
+	local var_46_5 = not MetaCharacterConst.filteMetaEnergyAble(var_46_0)
+
+	setActive(arg_46_0:findTF("Finish", arg_46_0.energyBtn), var_46_5)
+
+	local var_46_6 = not MetaCharacterConst.filteMetaTacticsAble(var_46_0)
+
+	setActive(arg_46_0:findTF("Finish", arg_46_0.tacticsBtn), var_46_6)
+
+	local var_46_7 = MetaCharacterConst.isMetaTacticsRedTag(var_46_1)
+	local var_46_8 = var_46_0.metaShipVO
+
+	if var_46_8 then
+		local var_46_9 = arg_46_0.metaCharacterProxy:getMetaTacticsInfoByShipID(var_46_8.id):getTacticsStateForShow()
+
+		setActive(arg_46_0:findTF("Tag", arg_46_0.tacticsBtn), false)
+		setActive(arg_46_0:findTF("Learnable", arg_46_0.tacticsBtn), var_46_9 == MetaTacticsInfo.States.LearnAble)
+		setActive(arg_46_0:findTF("Learning", arg_46_0.tacticsBtn), var_46_9 == MetaTacticsInfo.States.Learning)
+		setActive(arg_46_0:findTF("LearnFinish", arg_46_0.tacticsBtn), var_46_9 == MetaTacticsInfo.States.LearnFinished and var_46_7)
 	else
-		setActive(slot0:findTF("Tag", slot0.tacticsBtn), false)
-		setActive(slot0:findTF("Learnable", slot0.tacticsBtn), false)
-		setActive(slot0:findTF("Learning", slot0.tacticsBtn), false)
-		setActive(slot0:findTF("LearnFinish", slot0.tacticsBtn), false)
+		setActive(arg_46_0:findTF("Tag", arg_46_0.tacticsBtn), false)
+		setActive(arg_46_0:findTF("Learnable", arg_46_0.tacticsBtn), false)
+		setActive(arg_46_0:findTF("Learning", arg_46_0.tacticsBtn), false)
+		setActive(arg_46_0:findTF("LearnFinish", arg_46_0.tacticsBtn), false)
 	end
 
-	slot10 = slot1:isPtType()
-	slot11 = slot1:isInAct()
-	slot12 = slot1:isInArchive()
+	local var_46_10 = var_46_0:isPtType()
+	local var_46_11 = var_46_0:isInAct()
+	local var_46_12 = var_46_0:isInArchive()
+	local var_46_13 = var_46_10
 
-	setActive(slot0.synDecorateTF, slot10)
-	setActive(slot0.synBtn, slot10)
-	setActive(slot0.synBtnLock, slot10 and not slot11 and not slot12)
-	setActive(slot0.toggleList[4], slot10)
-	setActive(slot0.synToggleLock, slot10 and not slot11 and not slot12)
+	setActive(arg_46_0.synDecorateTF, var_46_13)
+	setActive(arg_46_0.synBtn, var_46_10)
+	setActive(arg_46_0.synBtnLock, var_46_10 and not var_46_11 and not var_46_12)
+	setActive(arg_46_0.toggleList[4], var_46_10)
+	setActive(arg_46_0.synToggleLock, var_46_10 and not var_46_11 and not var_46_12)
 
-	slot14 = nil
+	local var_46_14
 
-	if slot13 then
-		setActive(slot0:findTF("Tag", slot0.synBtn), MetaCharacterConst.isMetaSynRedTag(slot2))
+	if var_46_13 then
+		var_46_14 = MetaCharacterConst.isMetaSynRedTag(var_46_1)
+
+		setActive(arg_46_0:findTF("Tag", arg_46_0.synBtn), var_46_14)
 	end
 
-	setActive(slot0:findTF("Finish", slot0.synBtn), not MetaCharacterConst.filteMetaSynAble(slot1))
-	setActive(slot0:findTF("Tip", slot0.toggleList[uv0.PAGES.REPAIR]), slot3)
-	setActive(slot0:findTF("Tip", slot0.toggleList[uv0.PAGES.ENERGY]), slot5)
-	setActive(slot0:findTF("Tip", slot0.toggleList[uv0.PAGES.TACTICS]), slot8)
+	local var_46_15 = not MetaCharacterConst.filteMetaSynAble(var_46_0)
 
-	slot19 = "Tip"
-	slot20 = slot0.toggleList[uv0.PAGES.SYN]
+	setActive(arg_46_0:findTF("Finish", arg_46_0.synBtn), var_46_15)
+	setActive(arg_46_0:findTF("Tip", arg_46_0.toggleList[var_0_0.PAGES.REPAIR]), var_46_2)
+	setActive(arg_46_0:findTF("Tip", arg_46_0.toggleList[var_0_0.PAGES.ENERGY]), var_46_4)
+	setActive(arg_46_0:findTF("Tip", arg_46_0.toggleList[var_0_0.PAGES.TACTICS]), var_46_7)
+	setActive(arg_46_0:findTF("Tip", arg_46_0.toggleList[var_0_0.PAGES.SYN]), var_46_14)
 
-	setActive(slot0:findTF(slot19, slot20), slot14)
+	for iter_46_0, iter_46_1 in ipairs(arg_46_0.metaProgressVOList) do
+		local var_46_16 = arg_46_0.bannerTFList[iter_46_0]
+		local var_46_17 = arg_46_0:findTF("ForScale/RedPoint", var_46_16)
 
-	for slot19, slot20 in ipairs(slot0.metaProgressVOList) do
-		if slot20 then
-			setActive(slot0:findTF("ForScale/RedPoint", slot0.bannerTFList[slot19]), MetaCharacterConst.isMetaBannerRedPoint(slot20.id))
+		if iter_46_1 then
+			setActive(var_46_17, MetaCharacterConst.isMetaBannerRedPoint(iter_46_1.id))
 		else
-			setActive(slot22, false)
+			setActive(var_46_17, false)
 		end
 	end
 end
 
-function slot0.getCurMetaProgressVO(slot0)
-	return slot0.metaProgressVOList[slot0.curMetaIndex]
+function var_0_0.getCurMetaProgressVO(arg_47_0)
+	local var_47_0 = arg_47_0.curMetaIndex
+
+	return arg_47_0.metaProgressVOList[var_47_0]
 end
 
-function slot0.refreshBannerTF(slot0)
-	slot0:updateBannerTF(slot0:getCurMetaProgressVO(), slot0.bannerTFList[slot0.curMetaIndex], slot0.curMetaIndex)
+function var_0_0.refreshBannerTF(arg_48_0)
+	local var_48_0 = arg_48_0:getCurMetaProgressVO()
+	local var_48_1 = arg_48_0.bannerTFList[arg_48_0.curMetaIndex]
+
+	arg_48_0:updateBannerTF(var_48_0, var_48_1, arg_48_0.curMetaIndex)
 end
 
-function slot0.enterMenuPage(slot0, slot1)
-	setActive(slot0.hidePanel, not slot1)
-	setActive(slot0.indexBtn, not slot1)
-	setActive(slot0.toggleBtnsTF, slot1)
+function var_0_0.enterMenuPage(arg_49_0, arg_49_1)
+	setActive(arg_49_0.hidePanel, not arg_49_1)
+	setActive(arg_49_0.indexBtn, not arg_49_1)
+	setActive(arg_49_0.toggleBtnsTF, arg_49_1)
 end
 
-function slot0.switchPage(slot0, slot1)
-	if not slot0.curPageIndex then
-		triggerToggle(slot0.toggleList[slot1], true)
+function var_0_0.switchPage(arg_50_0, arg_50_1)
+	if not arg_50_0.curPageIndex then
+		triggerToggle(arg_50_0.toggleList[arg_50_1], true)
 	end
 end
 
-function slot0.backFromRepair(slot0)
-	setActive(slot0.menuPanel, false)
-	slot0:managedTween(LeanTween.alpha, nil, slot0.shipImg, 1, 0.3):setFrom(0):setOnComplete(System.Action(function ()
-		setActive(uv0.menuPanel, true)
-		setActive(uv0.hidePanel, true)
+function var_0_0.backFromRepair(arg_51_0)
+	setActive(arg_51_0.menuPanel, false)
+	arg_51_0:managedTween(LeanTween.alpha, nil, arg_51_0.shipImg, 1, 0.3):setFrom(0):setOnComplete(System.Action(function()
+		setActive(arg_51_0.menuPanel, true)
+		setActive(arg_51_0.hidePanel, true)
 	end))
 end
 
-function slot0.backFromNotRepair(slot0)
-	setActive(slot0.menuPanel, false)
-	slot0:managedTween(LeanTween.moveX, nil, rtf(slot0.shipImg), MetaCharacterConst.UIConfig[slot0:getCurMetaProgressVO().id][1], 0.3):setFrom(-250):setOnComplete(System.Action(function ()
-		setActive(uv0.menuPanel, true)
-		setActive(uv0.hidePanel, true)
+function var_0_0.backFromNotRepair(arg_53_0)
+	local var_53_0 = arg_53_0:getCurMetaProgressVO().id
+	local var_53_1 = MetaCharacterConst.UIConfig[var_53_0]
+
+	setActive(arg_53_0.menuPanel, false)
+
+	local var_53_2 = -250
+	local var_53_3 = var_53_1[1]
+
+	arg_53_0:managedTween(LeanTween.moveX, nil, rtf(arg_53_0.shipImg), var_53_3, 0.3):setFrom(var_53_2):setOnComplete(System.Action(function()
+		setActive(arg_53_0.menuPanel, true)
+		setActive(arg_53_0.hidePanel, true)
 	end))
 end
 
-function slot0.autoOpenFunc(slot0)
-	if slot0.contextData.autoOpenShipConfigID then
-		slot3 = 0
+function var_0_0.autoOpenFunc(arg_55_0)
+	if arg_55_0.contextData.autoOpenShipConfigID then
+		local var_55_0 = MetaCharacterConst.GetMetaShipGroupIDByConfigID(arg_55_0.contextData.autoOpenShipConfigID)
+		local var_55_1 = arg_55_0:getMetaProgressListForShow()
+		local var_55_2 = 0
 
-		for slot7, slot8 in ipairs(slot0:getMetaProgressListForShow()) do
-			if slot8 and slot8.id == MetaCharacterConst.GetMetaShipGroupIDByConfigID(slot0.contextData.autoOpenShipConfigID) then
-				triggerButton(slot0.bannerTFList[slot7])
+		for iter_55_0, iter_55_1 in ipairs(var_55_1) do
+			if iter_55_1 and iter_55_1.id == var_55_0 then
+				triggerButton(arg_55_0.bannerTFList[iter_55_0])
 
-				slot0.contextData.autoOpenShipConfigID = nil
+				arg_55_0.contextData.autoOpenShipConfigID = nil
 			end
 		end
 	end
 
-	if slot0.contextData.autoOpenTactics then
-		triggerButton(slot0.tacticsBtn)
+	if arg_55_0.contextData.autoOpenTactics then
+		triggerButton(arg_55_0.tacticsBtn)
 
-		slot0.contextData.autoOpenTactics = nil
+		arg_55_0.contextData.autoOpenTactics = nil
 	end
 
-	if slot0.contextData.autoOpenEnergy then
-		triggerButton(slot0.energyBtn)
+	if arg_55_0.contextData.autoOpenEnergy then
+		triggerButton(arg_55_0.energyBtn)
 
-		slot0.contextData.autoOpenEnergy = nil
+		arg_55_0.contextData.autoOpenEnergy = nil
 	end
 
-	if slot0.contextData.autoOpenSyn then
-		if slot0:getCurMetaProgressVO():isUnlocked() then
-			triggerButton(slot0.synBtn)
+	if arg_55_0.contextData.autoOpenSyn then
+		if arg_55_0:getCurMetaProgressVO():isUnlocked() then
+			triggerButton(arg_55_0.synBtn)
 		end
 
-		slot0.contextData.autoOpenSyn = nil
+		arg_55_0.contextData.autoOpenSyn = nil
 	end
 
-	if slot0.contextData.lastPageIndex then
-		triggerToggle(slot0.toggleList[slot0.contextData.lastPageIndex], true)
+	if arg_55_0.contextData.lastPageIndex then
+		triggerToggle(arg_55_0.toggleList[arg_55_0.contextData.lastPageIndex], true)
 
-		slot0.contextData.lastPageIndex = nil
+		arg_55_0.contextData.lastPageIndex = nil
 	end
 end
 
-function slot0.openIndexLayer(slot0)
-	if not slot0.indexDatas then
-		slot0.indexDatas = {}
+function var_0_0.openIndexLayer(arg_56_0)
+	if not arg_56_0.indexDatas then
+		arg_56_0.indexDatas = {}
 	end
 
-	slot0:emit(MetaCharacterMediator.OPEN_INDEX_LAYER, {
-		indexDatas = Clone(slot0.indexDatas),
+	local var_56_0 = {
+		indexDatas = Clone(arg_56_0.indexDatas),
 		customPanels = {
 			minHeight = 650,
 			typeIndex = {
@@ -897,109 +1054,127 @@ function slot0.openIndexLayer(slot0)
 				}
 			}
 		},
-		callback = function (slot0)
-			if not isActive(uv0._tf) then
+		callback = function(arg_57_0)
+			if not isActive(arg_56_0._tf) then
 				return
 			end
 
-			uv0.indexDatas.typeIndex = slot0.typeIndex
-			uv0.indexDatas.rarityIndex = slot0.rarityIndex
-			uv0.indexDatas.extraIndex = slot0.extraIndex
-			uv0.metaProgressVOList = uv0:getMetaProgressListForShow()
+			arg_56_0.indexDatas.typeIndex = arg_57_0.typeIndex
+			arg_56_0.indexDatas.rarityIndex = arg_57_0.rarityIndex
+			arg_56_0.indexDatas.extraIndex = arg_57_0.extraIndex
+			arg_56_0.metaProgressVOList = arg_56_0:getMetaProgressListForShow()
 
-			uv0:fillMetaProgressList()
-			uv0:updateStart()
+			arg_56_0:fillMetaProgressList()
+			arg_56_0:updateStart()
 		end
-	})
+	}
+
+	arg_56_0:emit(MetaCharacterMediator.OPEN_INDEX_LAYER, var_56_0)
 end
 
-function slot0.isDefaultStatus(slot0)
-	return (not slot0.indexDatas.typeIndex or slot0.indexDatas.typeIndex == ShipIndexConst.TypeAll) and (not slot0.indexDatas.rarityIndex or slot0.indexDatas.rarityIndex == ShipIndexConst.RarityAll) and (not slot0.indexDatas.extraIndex or slot0.indexDatas.extraIndex == ShipIndexConst.MetaExtraAll)
+function var_0_0.isDefaultStatus(arg_58_0)
+	return (not arg_58_0.indexDatas.typeIndex or arg_58_0.indexDatas.typeIndex == ShipIndexConst.TypeAll) and (not arg_58_0.indexDatas.rarityIndex or arg_58_0.indexDatas.rarityIndex == ShipIndexConst.RarityAll) and (not arg_58_0.indexDatas.extraIndex or arg_58_0.indexDatas.extraIndex == ShipIndexConst.MetaExtraAll)
 end
 
-function slot0.overLayPanel(slot0, slot1)
-	if slot1 == true then
-		pg.UIMgr.GetInstance():OverlayPanel(slot0.blurPanel, {
+function var_0_0.overLayPanel(arg_59_0, arg_59_1)
+	if arg_59_1 == true then
+		pg.UIMgr.GetInstance():OverlayPanel(arg_59_0.blurPanel, {
 			groupName = LayerWeightConst.GROUP_META
 		})
-	elseif slot1 == false then
-		pg.UIMgr.GetInstance():UnOverlayPanel(slot0.blurPanel, slot0._tf)
+	elseif arg_59_1 == false then
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_59_0.blurPanel, arg_59_0._tf)
 	end
 end
 
-function slot0.getMetaProgressListForShow(slot0)
-	slot1 = {}
-	slot3, slot4, slot5 = nil
+function var_0_0.getMetaProgressListForShow(arg_60_0)
+	local var_60_0 = {}
+	local var_60_1 = arg_60_0.metaCharacterProxy:getMetaProgressVOList()
+	local var_60_2
+	local var_60_3
+	local var_60_4
 
-	for slot9, slot10 in ipairs(slot0.metaCharacterProxy:getMetaProgressVOList()) do
-		if MetaCharacterConst.filteMetaByType(slot10, slot0.indexDatas.typeIndex) and MetaCharacterConst.filteMetaByRarity(slot10, slot0.indexDatas.rarityIndex) and MetaCharacterConst.filteMetaExtra(slot10, slot0.indexDatas.extraIndex) and slot10:isShow() then
-			if slot10:isPtType() and slot10:isInAct() then
-				slot3 = slot10
-			elseif slot10:isPassType() and slot10:isInAct() then
-				slot4 = slot10
-			elseif slot10:isBuildType() and slot10:isInAct() then
-				slot5 = slot10
+	for iter_60_0, iter_60_1 in ipairs(var_60_1) do
+		local var_60_5 = MetaCharacterConst.filteMetaByType(iter_60_1, arg_60_0.indexDatas.typeIndex)
+		local var_60_6 = MetaCharacterConst.filteMetaByRarity(iter_60_1, arg_60_0.indexDatas.rarityIndex)
+		local var_60_7 = MetaCharacterConst.filteMetaExtra(iter_60_1, arg_60_0.indexDatas.extraIndex)
+
+		if var_60_5 and var_60_6 and var_60_7 and iter_60_1:isShow() then
+			if iter_60_1:isPtType() and iter_60_1:isInAct() then
+				var_60_2 = iter_60_1
+			elseif iter_60_1:isPassType() and iter_60_1:isInAct() then
+				var_60_3 = iter_60_1
+			elseif iter_60_1:isBuildType() and iter_60_1:isInAct() then
+				var_60_4 = iter_60_1
 			else
-				table.insert(slot1, slot10)
+				table.insert(var_60_0, iter_60_1)
 			end
 		end
 	end
 
-	if slot5 then
-		table.insert(slot1, 1, slot5)
+	if var_60_4 then
+		table.insert(var_60_0, 1, var_60_4)
 	end
 
-	if slot4 then
-		table.insert(slot1, 1, slot4)
+	if var_60_3 then
+		table.insert(var_60_0, 1, var_60_3)
 	end
 
-	if slot3 then
-		table.insert(slot1, 1, slot3)
+	if var_60_2 then
+		table.insert(var_60_0, 1, var_60_2)
 	end
 
-	return slot1
+	return var_60_0
 end
 
-function slot0.filteMetaProgressList(slot0)
-	slot2 = {}
+function var_0_0.filteMetaProgressList(arg_61_0)
+	local var_61_0 = arg_61_0:getMetaProgressListForShow()
+	local var_61_1 = {}
 
-	for slot6, slot7 in ipairs(slot0:getMetaProgressListForShow()) do
-		if MetaCharacterConst.filteMetaByType(slot7, slot0.indexDatas.typeIndex) and MetaCharacterConst.filteMetaByRarity(slot7, slot0.indexDatas.rarityIndex) and MetaCharacterConst.filteMetaExtra(slot7, slot0.indexDatas.extraIndex) then
-			table.insert(slot2, slot7)
+	for iter_61_0, iter_61_1 in ipairs(var_61_0) do
+		local var_61_2 = MetaCharacterConst.filteMetaByType(iter_61_1, arg_61_0.indexDatas.typeIndex)
+		local var_61_3 = MetaCharacterConst.filteMetaByRarity(iter_61_1, arg_61_0.indexDatas.rarityIndex)
+		local var_61_4 = MetaCharacterConst.filteMetaExtra(iter_61_1, arg_61_0.indexDatas.extraIndex)
+
+		if var_61_2 and var_61_3 and var_61_4 then
+			table.insert(var_61_1, iter_61_1)
 		end
 	end
 
-	return slot2
+	return var_61_1
 end
 
-function slot0.getOneStepPTAwardLevelAndCount(slot0)
-	slot1 = slot0:getCurMetaProgressVO()
-	slot3 = slot1.metaPtData.targets
-	slot4 = slot1:getStoryIndexList()
-	slot6 = 0
+function var_0_0.getOneStepPTAwardLevelAndCount(arg_62_0)
+	local var_62_0 = arg_62_0:getCurMetaProgressVO()
+	local var_62_1 = var_62_0.metaPtData:GetResProgress()
+	local var_62_2 = var_62_0.metaPtData.targets
+	local var_62_3 = var_62_0:getStoryIndexList()
+	local var_62_4 = var_62_0.unlockPTLevel
+	local var_62_5 = 0
 
-	for slot10 = 1, slot1.unlockPTLevel - 1 do
-		slot11 = false
-		slot12 = false
+	for iter_62_0 = 1, var_62_4 - 1 do
+		local var_62_6 = false
+		local var_62_7 = false
 
-		if slot3[slot10] <= slot1.metaPtData:GetResProgress() then
-			slot11 = true
+		if var_62_1 >= var_62_2[iter_62_0] then
+			var_62_6 = true
 		end
 
-		if slot4[slot10] == 0 then
-			slot12 = true
-		elseif pg.NewStoryMgr.GetInstance():IsPlayed(slot14) then
-			slot12 = true
+		local var_62_8 = var_62_3[iter_62_0]
+
+		if var_62_8 == 0 then
+			var_62_7 = true
+		elseif pg.NewStoryMgr.GetInstance():IsPlayed(var_62_8) then
+			var_62_7 = true
 		end
 
-		if slot11 and slot12 then
-			slot6 = slot10
+		if var_62_6 and var_62_7 then
+			var_62_5 = iter_62_0
 		else
 			break
 		end
 	end
 
-	return slot6, slot3[slot6]
+	return var_62_5, var_62_2[var_62_5]
 end
 
-return slot0
+return var_0_0

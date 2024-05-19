@@ -1,71 +1,73 @@
-slot1 = ys.Battle.BattleEvent
-slot2 = ys.Battle.BattleFormulas
-slot3 = ys.Battle.BattleConst
-slot4 = ys.Battle.BattleConfig
-slot5 = ys.Battle.BattleDataFunction
-slot6 = ys.Battle.BattleAttr
-slot7 = ys.Battle.BattleVariable
+﻿local var_0_0 = ys.Battle.BattleDataProxy
+local var_0_1 = ys.Battle.BattleEvent
+local var_0_2 = ys.Battle.BattleFormulas
+local var_0_3 = ys.Battle.BattleConst
+local var_0_4 = ys.Battle.BattleConfig
+local var_0_5 = ys.Battle.BattleDataFunction
+local var_0_6 = ys.Battle.BattleAttr
+local var_0_7 = ys.Battle.BattleVariable
 
-function ys.Battle.BattleDataProxy.__debug__BlockCldUpdate__(slot0, slot1)
-	slot0:UpdateCountDown(slot1)
+function var_0_0.__debug__BlockCldUpdate__(arg_1_0, arg_1_1)
+	arg_1_0:UpdateCountDown(arg_1_1)
 
-	for slot5, slot6 in pairs(slot0._fleetList) do
-		slot6:UpdateMotion()
+	for iter_1_0, iter_1_1 in pairs(arg_1_0._fleetList) do
+		iter_1_1:UpdateMotion()
 	end
 
-	for slot5, slot6 in pairs(slot0._unitList) do
-		slot6:Update(slot1)
+	for iter_1_2, iter_1_3 in pairs(arg_1_0._unitList) do
+		iter_1_3:Update(arg_1_1)
 	end
 
-	for slot5, slot6 in pairs(slot0._bulletList) do
-		slot7 = slot6:GetSpeed()
+	for iter_1_4, iter_1_5 in pairs(arg_1_0._bulletList) do
+		local var_1_0 = iter_1_5:GetSpeed()
+		local var_1_1 = iter_1_5:GetPosition()
 
-		if slot0._bulletRightBound < slot6:GetPosition().x and slot7.x > 0 or slot8.z < slot0._bulletLowerBound and slot7.z < 0 then
-			slot0:RemoveBulletUnit(slot6:GetUniqueID())
-		elseif slot8.x < slot0._bulletLeftBound and slot7.x < 0 and slot6:GetType() ~= uv0.BulletType.BOMB then
-			slot0:RemoveBulletUnit(slot6:GetUniqueID())
+		if var_1_1.x > arg_1_0._bulletRightBound and var_1_0.x > 0 or var_1_1.z < arg_1_0._bulletLowerBound and var_1_0.z < 0 then
+			arg_1_0:RemoveBulletUnit(iter_1_5:GetUniqueID())
+		elseif var_1_1.x < arg_1_0._bulletLeftBound and var_1_0.x < 0 and iter_1_5:GetType() ~= var_0_3.BulletType.BOMB then
+			arg_1_0:RemoveBulletUnit(iter_1_5:GetUniqueID())
 		else
-			slot6:Update(slot1)
+			iter_1_5:Update(arg_1_1)
 
-			if slot0._bulletUpperBound < slot8.z and slot7.z > 0 or slot6:IsOutRange(slot1) then
-				slot6:OutRange()
+			if var_1_1.z > arg_1_0._bulletUpperBound and var_1_0.z > 0 or iter_1_5:IsOutRange(arg_1_1) then
+				iter_1_5:OutRange()
 			end
 		end
 	end
 
-	for slot5, slot6 in pairs(slot0._aircraftList) do
-		slot6:Update(slot1)
+	for iter_1_6, iter_1_7 in pairs(arg_1_0._aircraftList) do
+		iter_1_7:Update(arg_1_1)
 
-		slot7, slot8 = slot6:GetIFF()
+		local var_1_2, var_1_3 = iter_1_7:GetIFF()
 
-		if slot7 == uv1.FRIENDLY_CODE then
-			slot8 = slot0._totalRightBound
-		elseif slot7 == uv1.FOE_CODE then
-			slot8 = slot0._totalLeftBound
+		if var_1_2 == var_0_4.FRIENDLY_CODE then
+			var_1_3 = arg_1_0._totalRightBound
+		elseif var_1_2 == var_0_4.FOE_CODE then
+			var_1_3 = arg_1_0._totalLeftBound
 		end
 
-		if math.abs(slot8) < slot6:GetPosition().x * slot7 and slot6:GetSpeed().x * slot7 > 0 then
-			slot6:OutBound()
+		if iter_1_7:GetPosition().x * var_1_2 > math.abs(var_1_3) and iter_1_7:GetSpeed().x * var_1_2 > 0 then
+			iter_1_7:OutBound()
 		end
 
-		if not slot6:IsAlive() then
-			slot0:KillAircraft(slot6:GetUniqueID())
-		end
-	end
-
-	for slot5, slot6 in pairs(slot0._AOEList) do
-		slot6:Settle()
-
-		if slot6:GetActiveFlag() == false then
-			slot0:RemoveAreaOfEffect(slot6:GetUniqueID())
+		if not iter_1_7:IsAlive() then
+			arg_1_0:KillAircraft(iter_1_7:GetUniqueID())
 		end
 	end
 
-	for slot5, slot6 in pairs(slot0._foeShipList) do
-		if slot6:GetPosition().x + slot6:GetBoxSize().x < slot0._leftZoneLeftBound then
-			slot6:DeadAction()
-			slot0:KillUnit(slot6:GetUniqueID())
-			slot0:HandleShipMissDamage(slot6, slot0._fleetList[uv1.FRIENDLY_CODE])
+	for iter_1_8, iter_1_9 in pairs(arg_1_0._AOEList) do
+		iter_1_9:Settle()
+
+		if iter_1_9:GetActiveFlag() == false then
+			arg_1_0:RemoveAreaOfEffect(iter_1_9:GetUniqueID())
+		end
+	end
+
+	for iter_1_10, iter_1_11 in pairs(arg_1_0._foeShipList) do
+		if iter_1_11:GetPosition().x + iter_1_11:GetBoxSize().x < arg_1_0._leftZoneLeftBound then
+			iter_1_11:DeadAction()
+			arg_1_0:KillUnit(iter_1_11:GetUniqueID())
+			arg_1_0:HandleShipMissDamage(iter_1_11, arg_1_0._fleetList[var_0_4.FRIENDLY_CODE])
 		end
 	end
 end

@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				time = 10,
+				target = "TargetSelf",
+				skill_id = 31102
+			}
+		}
+	},
 	{
 		desc = "每隔10秒，释放1次技能弹幕",
 		effect_list = {
@@ -23,18 +36,5 @@ return {
 	stack = 1,
 	id = 31102,
 	icon = 31102,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				time = 10,
-				target = "TargetSelf",
-				skill_id = 31102
-			}
-		}
-	}
+	last_effect = ""
 }

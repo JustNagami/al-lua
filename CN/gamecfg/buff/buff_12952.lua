@@ -1,23 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	time = 0,
-	name = "格罗斯特2",
-	init_effect = "",
-	picture = "",
-	desc = "炮击属性提升",
-	stack = 1,
-	id = 12952,
-	icon = 12950,
-	last_effect = "",
+﻿return {
 	blink = {
 		1,
 		0,
@@ -46,5 +27,24 @@ return {
 				number = 500
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	time = 0,
+	name = "格罗斯特2",
+	init_effect = "",
+	picture = "",
+	desc = "炮击属性提升",
+	stack = 1,
+	id = 12952,
+	icon = 12950,
+	last_effect = ""
 }

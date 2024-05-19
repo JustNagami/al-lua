@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.honormedal_goods_list = {
 	{
 		price = 2,

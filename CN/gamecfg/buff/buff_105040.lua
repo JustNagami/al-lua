@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "比大海更深邃的天空下",
-	time = 0,
-	color = "blue",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 105040,
-	icon = 105040,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffField",
@@ -44,5 +24,25 @@ return {
 				time = 20
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "比大海更深邃的天空下",
+	time = 0,
+	color = "blue",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 105040,
+	icon = 105040,
+	last_effect = ""
 }

@@ -1,97 +1,104 @@
-slot0 = class("CastleGameJoyStick")
+﻿local var_0_0 = class("CastleGameJoyStick")
 
-function slot0.Ctor(slot0, slot1)
-	slot0._tf = slot1
-	slot0.smoothX = 0.02
-	slot0.smoothY = 0.02
-	slot0.maxDistance = 120
-	slot0.minDeadNum = 0.1
-	slot0.maxDeadNum = 0.9
-	slot0.currentPos = Vector2(0, 0)
-	slot0.targetPos = Vector2(0, 0)
-	slot0.currentX = 0
-	slot0.currentY = 0
-	slot0.currentXSmooth = 0
-	slot0.currentYSmooth = 0
-	slot0.active = false
-	slot0.startPos = Vector2(0, 0)
-	slot0.dragPos = Vector2(0, 0)
-	slot0.uiCam = GameObject.Find("UICamera"):GetComponent("Camera")
-	slot0._controlTf = findTF(slot0._tf, "control")
-	slot0._joyTf = findTF(slot0._tf, "control/joy")
-	slot0._eventTriggerListener = GetComponent(slot0._controlTf, typeof(EventTriggerListener))
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._tf = arg_1_1
+	arg_1_0.smoothX = 0.02
+	arg_1_0.smoothY = 0.02
+	arg_1_0.maxDistance = 120
+	arg_1_0.minDeadNum = 0.1
+	arg_1_0.maxDeadNum = 0.9
+	arg_1_0.currentPos = Vector2(0, 0)
+	arg_1_0.targetPos = Vector2(0, 0)
+	arg_1_0.currentX = 0
+	arg_1_0.currentY = 0
+	arg_1_0.currentXSmooth = 0
+	arg_1_0.currentYSmooth = 0
+	arg_1_0.active = false
+	arg_1_0.startPos = Vector2(0, 0)
+	arg_1_0.dragPos = Vector2(0, 0)
+	arg_1_0.uiCam = GameObject.Find("UICamera"):GetComponent("Camera")
+	arg_1_0._controlTf = findTF(arg_1_0._tf, "control")
+	arg_1_0._joyTf = findTF(arg_1_0._tf, "control/joy")
+	arg_1_0._eventTriggerListener = GetComponent(arg_1_0._controlTf, typeof(EventTriggerListener))
 
-	slot0._eventTriggerListener:AddPointDownFunc(function (slot0, slot1)
-		uv0.active = true
-		uv0.startPos = Vector2(0, 0)
+	arg_1_0._eventTriggerListener:AddPointDownFunc(function(arg_2_0, arg_2_1)
+		arg_1_0.active = true
+		arg_1_0.startPos = Vector2(0, 0)
 	end)
-	slot0._eventTriggerListener:AddDragFunc(function (slot0, slot1)
-		uv0.dragPos = uv0._controlTf:InverseTransformPoint(uv0.uiCam:ScreenToWorldPoint(slot1.position))
+	arg_1_0._eventTriggerListener:AddDragFunc(function(arg_3_0, arg_3_1)
+		local var_3_0 = arg_1_0.uiCam:ScreenToWorldPoint(arg_3_1.position)
 
-		uv0:setTargetPos(uv0:getOffset(uv0.dragPos, uv0.startPos))
-	end)
-	slot0._eventTriggerListener:AddPointUpFunc(function (slot0, slot1)
-		uv0.active = false
+		arg_1_0.dragPos = arg_1_0._controlTf:InverseTransformPoint(var_3_0)
 
-		uv0:setTargetPos(Vector2(0, 0))
+		arg_1_0:setTargetPos(arg_1_0:getOffset(arg_1_0.dragPos, arg_1_0.startPos))
 	end)
-	slot0:setTargetPos(Vector2(0, 0))
+	arg_1_0._eventTriggerListener:AddPointUpFunc(function(arg_4_0, arg_4_1)
+		arg_1_0.active = false
+
+		arg_1_0:setTargetPos(Vector2(0, 0))
+	end)
+	arg_1_0:setTargetPos(Vector2(0, 0))
 end
 
-function slot0.setTargetPos(slot0, slot1)
-	slot2 = slot0.startPos
+function var_0_0.setTargetPos(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_0.startPos
 
-	if slot0.maxDistance < math.sqrt(math.pow(slot1.x - slot2.x, 2) + math.pow(slot1.y - slot2.y, 2)) then
-		slot4 = math.atan(math.abs(slot1.y - slot2.y) / math.abs(slot1.x - slot2.x))
-		slot0.targetPos.x = math.cos(slot4) * (slot2.x < slot1.x and 1 or -1) * slot0.maxDistance
-		slot0.targetPos.y = math.sin(slot4) * (slot2.y < slot1.y and 1 or -1) * slot0.maxDistance
+	if math.sqrt(math.pow(arg_5_1.x - var_5_0.x, 2) + math.pow(arg_5_1.y - var_5_0.y, 2)) > arg_5_0.maxDistance then
+		local var_5_1 = math.atan(math.abs(arg_5_1.y - var_5_0.y) / math.abs(arg_5_1.x - var_5_0.x))
+		local var_5_2 = arg_5_1.x > var_5_0.x and 1 or -1
+		local var_5_3 = arg_5_1.y > var_5_0.y and 1 or -1
+		local var_5_4 = math.cos(var_5_1) * var_5_2 * arg_5_0.maxDistance
+		local var_5_5 = math.sin(var_5_1) * var_5_3 * arg_5_0.maxDistance
+
+		arg_5_0.targetPos.x = var_5_4
+		arg_5_0.targetPos.y = var_5_5
 	else
-		slot0.targetPos = slot1
+		arg_5_0.targetPos = arg_5_1
 	end
 end
 
-function slot0.getOffset(slot0, slot1, slot2)
-	return Vector2(slot1.x - slot2.x, slot1.y - slot2.y)
+function var_0_0.getOffset(arg_6_0, arg_6_1, arg_6_2)
+	return Vector2(arg_6_1.x - arg_6_2.x, arg_6_1.y - arg_6_2.y)
 end
 
-function slot0.show(slot0, slot1)
-	setActive(slot0._tf, slot1)
+function var_0_0.show(arg_7_0, arg_7_1)
+	setActive(arg_7_0._tf, arg_7_1)
 end
 
-function slot0.step(slot0)
-	slot0.currentPos = slot0._joyTf.anchoredPosition
-	slot0.currentX, slot0.currentXSmooth = Mathf.SmoothDamp(slot0.currentPos.x, slot0.targetPos.x, slot0.currentXSmooth, slot0.smoothX)
-	slot0.currentY, slot0.currentYSmooth = Mathf.SmoothDamp(slot0.currentPos.y, slot0.targetPos.y, slot0.currentYSmooth, slot0.smoothY)
-	slot0.currentPos.x = slot0.currentX
-	slot0.currentPos.y = slot0.currentY
-	slot0._joyTf.anchoredPosition = slot0.currentPos
-	slot0.distanceRate = math.sqrt(math.pow(slot0.currentX - slot0.startPos.x, 2) + math.pow(slot0.currentY - slot0.startPos.y, 2)) / slot0.maxDistance
-	slot0.angle = math.atan(math.abs(slot0.currentY - slot0.startPos.y) / math.abs(slot0.currentX - slot0.startPos.x))
-	slot0.offsetX = slot0.currentPos.x / slot0.maxDistance
-	slot0.offsetY = slot0.currentPos.y / slot0.maxDistance
+function var_0_0.step(arg_8_0)
+	arg_8_0.currentPos = arg_8_0._joyTf.anchoredPosition
+	arg_8_0.currentX, arg_8_0.currentXSmooth = Mathf.SmoothDamp(arg_8_0.currentPos.x, arg_8_0.targetPos.x, arg_8_0.currentXSmooth, arg_8_0.smoothX)
+	arg_8_0.currentY, arg_8_0.currentYSmooth = Mathf.SmoothDamp(arg_8_0.currentPos.y, arg_8_0.targetPos.y, arg_8_0.currentYSmooth, arg_8_0.smoothY)
+	arg_8_0.currentPos.x = arg_8_0.currentX
+	arg_8_0.currentPos.y = arg_8_0.currentY
+	arg_8_0._joyTf.anchoredPosition = arg_8_0.currentPos
+	arg_8_0.distanceRate = math.sqrt(math.pow(arg_8_0.currentX - arg_8_0.startPos.x, 2) + math.pow(arg_8_0.currentY - arg_8_0.startPos.y, 2)) / arg_8_0.maxDistance
+	arg_8_0.angle = math.atan(math.abs(arg_8_0.currentY - arg_8_0.startPos.y) / math.abs(arg_8_0.currentX - arg_8_0.startPos.x))
+	arg_8_0.offsetX = arg_8_0.currentPos.x / arg_8_0.maxDistance
+	arg_8_0.offsetY = arg_8_0.currentPos.y / arg_8_0.maxDistance
 
-	if slot0.callback then
-		slot0.callback(slot0:getValue())
+	if arg_8_0.callback then
+		arg_8_0.callback(arg_8_0:getValue())
 	end
 end
 
-function slot0.setDirectTarget(slot0, slot1)
-	if not slot0.active then
-		slot0:setTargetPos(Vector2(slot1.x * 1000, slot1.y * 1000))
+function var_0_0.setDirectTarget(arg_9_0, arg_9_1)
+	if not arg_9_0.active then
+		arg_9_0:setTargetPos(Vector2(arg_9_1.x * 1000, arg_9_1.y * 1000))
 	end
 end
 
-function slot0.setValueCallback(slot0, slot1)
-	slot0.callback = slot1
+function var_0_0.setValueCallback(arg_10_0, arg_10_1)
+	arg_10_0.callback = arg_10_1
 end
 
-function slot0.getValue(slot0)
+function var_0_0.getValue(arg_11_0)
 	return {
-		angle = slot0.angle,
-		rate = slot0.distanceRate,
-		x = slot0.offsetX,
-		y = slot0.offsetY
+		angle = arg_11_0.angle,
+		rate = arg_11_0.distanceRate,
+		x = arg_11_0.offsetX,
+		y = arg_11_0.offsetY
 	}
 end
 
-return slot0
+return var_0_0

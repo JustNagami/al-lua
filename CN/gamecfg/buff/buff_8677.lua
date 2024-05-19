@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "",
 	name = "构建者护盾",
 	time = 20,
@@ -35,13 +35,13 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
-					slot1 = slot0 * 3
+				centerPosFun = function(arg_1_0)
+					local var_1_0 = arg_1_0 * 3
 
-					return Vector3(math.sin(slot1) * 4, -0.5, math.cos(slot1) * 4 + 5)
+					return Vector3(math.sin(var_1_0) * 4, -0.5, math.cos(var_1_0) * 4 + 5)
 				end,
-				rotationFun = function (slot0)
-					return Vector3(0, slot0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 90, 0)
+				rotationFun = function(arg_2_0)
+					return Vector3(0, arg_2_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 90, 0)
 				end
 			}
 		},
@@ -71,13 +71,13 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
-					slot1 = slot0 * 3 + ys.Battle.BattleConfig.SHIELD_CENTER_CONST
+				centerPosFun = function(arg_3_0)
+					local var_3_0 = arg_3_0 * 3 + ys.Battle.BattleConfig.SHIELD_CENTER_CONST
 
-					return Vector3(math.sin(slot1) * 4, -0.5, math.cos(slot1) * 4 + 5)
+					return Vector3(math.sin(var_3_0) * 4, -0.5, math.cos(var_3_0) * 4 + 5)
 				end,
-				rotationFun = function (slot0)
-					return Vector3(0, slot0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST - 90, 0)
+				rotationFun = function(arg_4_0)
+					return Vector3(0, arg_4_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST - 90, 0)
 				end
 			}
 		},
@@ -107,13 +107,13 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
-					slot1 = slot0 * 3
+				centerPosFun = function(arg_5_0)
+					local var_5_0 = arg_5_0 * 3
 
-					return Vector3(math.cos(slot1) * 6, -0.5, math.sin(slot1) * 6 + 5)
+					return Vector3(math.cos(var_5_0) * 6, -0.5, math.sin(var_5_0) * 6 + 5)
 				end,
-				rotationFun = function (slot0)
-					return Vector3(0, -slot0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 180, 0)
+				rotationFun = function(arg_6_0)
+					return Vector3(0, -arg_6_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 180, 0)
 				end
 			}
 		},
@@ -143,13 +143,13 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
-					slot1 = slot0 * 3 + ys.Battle.BattleConfig.SHIELD_CENTER_CONST
+				centerPosFun = function(arg_7_0)
+					local var_7_0 = arg_7_0 * 3 + ys.Battle.BattleConfig.SHIELD_CENTER_CONST
 
-					return Vector3(math.cos(slot1) * 6, -0.5, math.sin(slot1) * 6 + 5)
+					return Vector3(math.cos(var_7_0) * 6, -0.5, math.sin(var_7_0) * 6 + 5)
 				end,
-				rotationFun = function (slot0)
-					return Vector3(0, -slot0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 0, 0)
+				rotationFun = function(arg_8_0)
+					return Vector3(0, -arg_8_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 0, 0)
 				end
 			}
 		}

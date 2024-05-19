@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.battlepass_event_pt = {
 	[7001] = {
 		convert_resource_type = 0,

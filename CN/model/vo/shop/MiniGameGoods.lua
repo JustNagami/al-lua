@@ -1,73 +1,73 @@
-slot0 = class("MiniGameGoods", import("model.vo.BaseVO"))
+﻿local var_0_0 = class("MiniGameGoods", import("model.vo.BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.configId = slot1.id
-	slot0.id = slot1.id
-	slot0.count = slot0:GetLimit()
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.configId = arg_1_1.id
+	arg_1_0.id = arg_1_1.id
+	arg_1_0.count = arg_1_0:GetLimit()
 end
 
-function slot0.getId(slot0)
-	return slot0.id
+function var_0_0.getId(arg_2_0)
+	return arg_2_0.id
 end
 
-function slot0.UpdateCnt(slot0, slot1)
-	slot0.count = slot0.count - slot1
+function var_0_0.UpdateCnt(arg_3_0, arg_3_1)
+	arg_3_0.count = arg_3_0.count - arg_3_1
 
-	if slot0.count < 0 then
-		slot0.count = 0
+	if arg_3_0.count < 0 then
+		arg_3_0.count = 0
 	end
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_4_0)
 	return pg.gameroom_shop_template
 end
 
-function slot0.CanPurchase(slot0)
-	if slot0:getConfig("drop_type") == DROP_TYPE_SKIN and getProxy(ShipSkinProxy):getSkinById(slot0:getConfig("goods")[1]) then
+function var_0_0.CanPurchase(arg_5_0)
+	if arg_5_0:getConfig("drop_type") == DROP_TYPE_SKIN and getProxy(ShipSkinProxy):getSkinById(arg_5_0:getConfig("goods")[1]) then
 		return false
 	end
 
-	return slot0.count > 0
+	return arg_5_0.count > 0
 end
 
-function slot0.GetPrice(slot0)
-	return slot0:getConfig("price")
+function var_0_0.GetPrice(arg_6_0)
+	return arg_6_0:getConfig("price")
 end
 
-function slot0.Selectable(slot0)
-	return slot0:getConfig("goods_type") == 2
+function var_0_0.Selectable(arg_7_0)
+	return arg_7_0:getConfig("goods_type") == 2
 end
 
-function slot0.Single(slot0)
-	return slot0:getConfig("goods_type") == 1
+function var_0_0.Single(arg_8_0)
+	return arg_8_0:getConfig("goods_type") == 1
 end
 
-function slot0.GetFirstDropId(slot0)
-	return slot0:getConfig("goods")
+function var_0_0.GetFirstDropId(arg_9_0)
+	return arg_9_0:getConfig("goods")
 end
 
-function slot0.GetMaxCnt(slot0)
-	if slot0:CanPurchase() then
-		return slot0.count
+function var_0_0.GetMaxCnt(arg_10_0)
+	if arg_10_0:CanPurchase() then
+		return arg_10_0.count
 	else
 		return 0
 	end
 end
 
-function slot0.CanPurchaseCnt(slot0, slot1)
-	return slot1 <= slot0.count
+function var_0_0.CanPurchaseCnt(arg_11_0, arg_11_1)
+	return arg_11_1 <= arg_11_0.count
 end
 
-function slot0.GetLimit(slot0)
-	return slot0:getConfig("goods_purchase_limit")
+function var_0_0.GetLimit(arg_12_0)
+	return arg_12_0:getConfig("goods_purchase_limit")
 end
 
-function slot0.GetDropInfo(slot0)
+function var_0_0.GetDropInfo(arg_13_0)
 	return Drop.New({
-		type = slot0:getConfig("drop_type"),
-		id = slot0:getConfig("goods")[1],
-		count = slot0:getConfig("num")
+		type = arg_13_0:getConfig("drop_type"),
+		id = arg_13_0:getConfig("goods")[1],
+		count = arg_13_0:getConfig("num")
 	})
 end
 
-return slot0
+return var_0_0

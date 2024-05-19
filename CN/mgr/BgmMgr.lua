@@ -1,70 +1,74 @@
-pg = pg or {}
-slot0 = pg
-slot0.BgmMgr = singletonClass("BgmMgr")
-slot1 = slot0.BgmMgr
+﻿pg = pg or {}
 
-function slot1.Ctor(slot0)
+local var_0_0 = pg
+
+var_0_0.BgmMgr = singletonClass("BgmMgr")
+
+local var_0_1 = var_0_0.BgmMgr
+
+function var_0_1.Ctor(arg_1_0)
+	return
 end
 
-function slot1.Init(slot0, slot1)
+function var_0_1.Init(arg_2_0, arg_2_1)
 	print("initializing bgm manager...")
-	slot0:Clear()
-	slot1()
+	arg_2_0:Clear()
+	arg_2_1()
 end
 
-function slot1.Clear(slot0)
-	slot0._stack = {}
-	slot0._dictionary = {}
+function var_0_1.Clear(arg_3_0)
+	arg_3_0._stack = {}
+	arg_3_0._dictionary = {}
 end
 
-function slot1.CheckPlay(slot0)
-	if #slot0._stack == 0 then
+function var_0_1.CheckPlay(arg_4_0)
+	if #arg_4_0._stack == 0 then
 		return
 	end
 
-	slot1 = slot0._dictionary[slot0._stack[#slot0._stack]]
+	local var_4_0 = arg_4_0._dictionary[arg_4_0._stack[#arg_4_0._stack]]
 
-	if slot0.isDirty or slot0._now ~= slot1 then
-		slot0._now = slot1
+	if arg_4_0.isDirty or arg_4_0._now ~= var_4_0 then
+		arg_4_0._now = var_4_0
 
-		slot0:ContinuePlay()
+		arg_4_0:ContinuePlay()
 	end
 end
 
-function slot1.Push(slot0, slot1, slot2)
-	if not slot0._dictionary[slot1] then
-		table.insert(slot0._stack, slot1)
+function var_0_1.Push(arg_5_0, arg_5_1, arg_5_2)
+	if not arg_5_0._dictionary[arg_5_1] then
+		table.insert(arg_5_0._stack, arg_5_1)
 	end
 
-	slot0._dictionary[slot1] = slot2
+	arg_5_0._dictionary[arg_5_1] = arg_5_2
 
-	slot0:CheckPlay()
+	arg_5_0:CheckPlay()
 end
 
-function slot1.Pop(slot0, slot1)
-	if slot0._dictionary[slot1] then
-		table.removebyvalue(slot0._stack, slot1)
+function var_0_1.Pop(arg_6_0, arg_6_1)
+	if arg_6_0._dictionary[arg_6_1] then
+		table.removebyvalue(arg_6_0._stack, arg_6_1)
 
-		slot0._dictionary[slot1] = nil
+		arg_6_0._dictionary[arg_6_1] = nil
 
-		slot0:CheckPlay()
+		arg_6_0:CheckPlay()
 	end
 end
 
-function slot1.ContinuePlay(slot0)
-	slot0.isDirty = false
+function var_0_1.ContinuePlay(arg_7_0)
+	arg_7_0.isDirty = false
 
-	uv0.CriMgr.GetInstance():PlayBGM(slot0._now)
+	var_0_0.CriMgr.GetInstance():PlayBGM(arg_7_0._now)
 end
 
-function slot1.TempPlay(slot0, slot1)
-	slot0.isDirty = true
+function var_0_1.TempPlay(arg_8_0, arg_8_1)
+	arg_8_0.isDirty = true
 
-	uv0.CriMgr.GetInstance():PlayBGM(slot1)
+	var_0_0.CriMgr.GetInstance():PlayBGM(arg_8_1)
 end
 
-function slot1.StopPlay(slot0)
-	slot0.isDirty = true
+function var_0_1.StopPlay(arg_9_0)
+	arg_9_0.isDirty = true
 
-	uv0.CriMgr.GetInstance():StopBGM()
+	var_0_0.CriMgr.GetInstance():StopBGM()
 end

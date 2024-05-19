@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行15次攻击，触发专属弹幕-33I"
-	},
-	desc_get = "主炮每进行15次攻击，触发专属弹幕-33I",
-	name = "专属弹幕-33I",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行15次攻击，触发专属弹幕-33I",
-	stack = 1,
-	id = 29301,
-	icon = 29300,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -38,5 +24,19 @@ return {
 				countType = 29300
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行15次攻击，触发专属弹幕-33I"
+	},
+	desc_get = "主炮每进行15次攻击，触发专属弹幕-33I",
+	name = "专属弹幕-33I",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行15次攻击，触发专属弹幕-33I",
+	stack = 1,
+	id = 29301,
+	icon = 29300,
+	last_effect = ""
 }

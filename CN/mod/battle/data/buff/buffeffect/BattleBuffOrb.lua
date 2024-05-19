@@ -1,36 +1,41 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("BattleBuffOrb", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffOrb = slot1
-slot1.__name = "BattleBuffOrb"
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+local var_0_1 = class("BattleBuffOrb", var_0_0.Battle.BattleBuffEffect)
+
+var_0_0.Battle.BattleBuffOrb = var_0_1
+var_0_1.__name = "BattleBuffOrb"
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot1.SetArgs(slot0, slot1, slot2)
-	slot3 = slot0._tempData.arg_list
-	slot0._buffID = slot3.buff_id
-	slot0._rant = slot3.rant or 10000
-	slot0._level = slot3.level or 1
-	slot0._type = slot3.type
+function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = arg_2_0._tempData.arg_list
+
+	arg_2_0._buffID = var_2_0.buff_id
+	arg_2_0._rant = var_2_0.rant or 10000
+	arg_2_0._level = var_2_0.level or 1
+	arg_2_0._type = var_2_0.type
 end
 
-function slot1.onTrigger(slot0, slot1, slot2, slot3)
-	slot4 = slot3._bullet
+function var_0_1.onTrigger(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	local var_3_0 = arg_3_3._bullet
 
-	if slot0._type and slot4:GetTemplate().type ~= slot0._type then
+	if arg_3_0._type and var_3_0:GetTemplate().type ~= arg_3_0._type then
 		return
 	end
 
-	slot0:attachOrb(slot4)
-	uv0.super.onTrigger(slot0, slot1, slot2, slot3)
+	arg_3_0:attachOrb(var_3_0)
+	var_0_1.super.onTrigger(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
 end
 
-function slot1.attachOrb(slot0, slot1)
-	slot1:AppendAttachBuff({
-		buff_id = slot0._buffID,
-		rant = slot0._rant,
-		level = slot0._level
-	})
+function var_0_1.attachOrb(arg_4_0, arg_4_1)
+	local var_4_0 = {
+		buff_id = arg_4_0._buffID,
+		rant = arg_4_0._rant,
+		level = arg_4_0._level
+	}
+
+	arg_4_1:AppendAttachBuff(var_4_0)
 end

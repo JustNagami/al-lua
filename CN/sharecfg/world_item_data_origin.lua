@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.world_item_data_origin = {
 	{
 		origin_text = "缺省配置提醒"

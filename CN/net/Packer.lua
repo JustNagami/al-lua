@@ -1,67 +1,78 @@
-pg = pg or {}
-slot0 = pg
-slot0.Packer = singletonClass("Packer")
-slot1 = slot0.Packer
-slot1.ps = nil
+﻿pg = pg or {}
 
-function slot1.Ctor(slot0)
-	slot0._protocols = {}
-	uv0.ps = PackStream.New()
-	slot0.defaultBuffSize = 8192
+local var_0_0 = pg
+
+var_0_0.Packer = singletonClass("Packer")
+
+local var_0_1 = var_0_0.Packer
+
+var_0_1.ps = nil
+
+function var_0_1.Ctor(arg_1_0)
+	arg_1_0._protocols = {}
+	var_0_1.ps = PackStream.New()
+	arg_1_0.defaultBuffSize = 8192
 end
 
-function slot1.Pack(slot0, slot1, slot2, slot3)
-	slot5 = ""
-	slot6 = slot0.ps
+function var_0_1.Pack(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	local var_2_0 = arg_2_3:SerializeToString()
+	local var_2_1 = ""
+	local var_2_2 = arg_2_0.ps
 
-	if #slot3:SerializeToString() > slot0.defaultBuffSize - 7 then
-		slot6 = PackStream.New(#slot4 + 7)
+	if #var_2_0 > arg_2_0.defaultBuffSize - 7 then
+		var_2_2 = PackStream.New(#var_2_0 + 7)
 	end
 
-	if slot6.Length ~= 0 then
+	if var_2_2.Length ~= 0 then
 		print("### pack string error !!!!!!!!!!!")
 	end
 
-	if #slot4 == 0 then
-		slot6:WriteUint16(6)
+	if #var_2_0 == 0 then
+		var_2_2:WriteUint16(6)
 	else
-		slot6:WriteUint16(5 + #slot4)
+		var_2_2:WriteUint16(5 + #var_2_0)
 	end
 
-	slot6:WriteUint8(0)
-	slot6:WriteUint16(slot2)
-	slot6:WriteUint16(slot1)
-	slot6:WriteBuffer(slot4)
+	var_2_2:WriteUint8(0)
+	var_2_2:WriteUint16(arg_2_2)
+	var_2_2:WriteUint16(arg_2_1)
+	var_2_2:WriteBuffer(var_2_0)
 
-	return slot6:ToArray()
+	return var_2_2:ToArray()
 end
 
-function slot1.Unpack(slot0, slot1, slot2)
-	if uv0.GetInstance():GetProtocolWithName("sc_" .. slot1) ~= nil then
-		slot4 = slot3._object[slot3._name]()
+function var_0_1.Unpack(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = var_0_1.GetInstance():GetProtocolWithName("sc_" .. arg_3_1)
 
-		slot4:ParseFromString(slot2)
+	if var_3_0 ~= nil then
+		local var_3_1 = var_3_0._object[var_3_0._name]()
 
-		return slot4
+		var_3_1:ParseFromString(arg_3_2)
+
+		return var_3_1
 	end
 end
 
-function slot1.GetProtocolWithName(slot0, slot1)
-	if slot0._protocols[slot1] ~= nil then
-		return slot0._protocols[slot1]
+function var_0_1.GetProtocolWithName(arg_4_0, arg_4_1)
+	if arg_4_0._protocols[arg_4_1] ~= nil then
+		return arg_4_0._protocols[arg_4_1]
 	end
 
-	slot3 = "Net/Protocol/"
+	local var_4_0 = string.sub(arg_4_1, 4, #arg_4_1)
+	local var_4_1 = "Net/Protocol/"
+	local var_4_2 = "p" .. string.sub(var_4_0, 1, 2) .. "_pb"
+	local var_4_3
 
-	pcall(function ()
-		uv0 = require(uv1 .. uv2)
+	pcall(function()
+		var_4_3 = require(var_4_1 .. var_4_2)
 	end)
 
-	if nil then
-		slot6 = uv0.Protocol.New(slot2, slot1, package.loaded["p" .. string.sub(string.sub(slot1, 4, #slot1), 1, 2) .. "_pb"])
-		slot0._protocols[slot1] = slot6
+	if var_4_3 then
+		local var_4_4 = var_0_0.Protocol.New(var_4_0, arg_4_1, package.loaded[var_4_2])
 
-		return slot6
+		arg_4_0._protocols[arg_4_1] = var_4_4
+
+		return var_4_4
 	else
 		return nil
 	end

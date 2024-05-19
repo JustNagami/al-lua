@@ -1,148 +1,162 @@
-slot0 = class("MilitaryShopPage", import(".BaseShopPage"))
+﻿local var_0_0 = class("MilitaryShopPage", import(".BaseShopPage"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "MilitaryShop"
 end
 
-function slot0.GetPaintingCommodityUpdateVoice(slot0)
+function var_0_0.GetPaintingCommodityUpdateVoice(arg_2_0)
+	return
 end
 
-function slot0.CanOpen(slot0, slot1, slot2)
-	return pg.SystemOpenMgr.GetInstance():isOpenSystem(slot2.level, "MilitaryExerciseMediator")
+function var_0_0.CanOpen(arg_3_0, arg_3_1, arg_3_2)
+	return pg.SystemOpenMgr.GetInstance():isOpenSystem(arg_3_2.level, "MilitaryExerciseMediator")
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.exploitTF = slot0:findTF("res_exploit/bg/Text"):GetComponent(typeof(Text))
-	slot0.timerTF = slot0:findTF("timer_bg/Text"):GetComponent(typeof(Text))
-	slot0.refreshBtn = slot0:findTF("refresh_btn")
+function var_0_0.OnLoaded(arg_4_0)
+	arg_4_0.exploitTF = arg_4_0:findTF("res_exploit/bg/Text"):GetComponent(typeof(Text))
+	arg_4_0.timerTF = arg_4_0:findTF("timer_bg/Text"):GetComponent(typeof(Text))
+	arg_4_0.refreshBtn = arg_4_0:findTF("refresh_btn")
 end
 
-function slot0.OnInit(slot0)
-	slot1 = pg.arena_data_shop[1]
+function var_0_0.OnInit(arg_5_0)
+	local var_5_0 = pg.arena_data_shop[1]
 
-	onButton(slot0, slot0.refreshBtn, function ()
-		if uv0.shop.refreshCount - 1 >= #uv1.refresh_price then
+	onButton(arg_5_0, arg_5_0.refreshBtn, function()
+		if arg_5_0.shop.refreshCount - 1 >= #var_5_0.refresh_price then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("shopStreet_refresh_max_count"))
 
 			return
 		end
 
+		local var_6_0 = var_5_0.refresh_price[arg_5_0.shop.refreshCount] or var_5_0.refresh_price[#var_5_0.refresh_price]
+
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("refresh_shopStreet_question", i18n("word_gem_icon"), uv1.refresh_price[uv0.shop.refreshCount] or uv1.refresh_price[#uv1.refresh_price], uv0.shop.refreshCount - 1),
-			onYes = function ()
-				if uv0.player:getTotalGem() < uv1 then
+			content = i18n("refresh_shopStreet_question", i18n("word_gem_icon"), var_6_0, arg_5_0.shop.refreshCount - 1),
+			onYes = function()
+				if arg_5_0.player:getTotalGem() < var_6_0 then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 					return
 				else
-					uv0:emit(NewShopsMediator.REFRESH_MILITARY_SHOP, true)
+					arg_5_0:emit(NewShopsMediator.REFRESH_MILITARY_SHOP, true)
 				end
 			end
 		})
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdatePlayer(slot0)
-	slot0.exploitTF.text = slot0.player.exploit
+function var_0_0.OnUpdatePlayer(arg_8_0)
+	local var_8_0 = arg_8_0.player
+
+	arg_8_0.exploitTF.text = var_8_0.exploit
 end
 
-function slot0.OnSetUp(slot0)
-	slot0:RemoveTimer()
-	slot0:AddTimer()
+function var_0_0.OnSetUp(arg_9_0)
+	arg_9_0:RemoveTimer()
+	arg_9_0:AddTimer()
 end
 
-function slot0.OnUpdateAll(slot0)
-	slot0:InitCommodities()
-	slot0:OnSetUp()
+function var_0_0.OnUpdateAll(arg_10_0)
+	arg_10_0:InitCommodities()
+	arg_10_0:OnSetUp()
 end
 
-function slot0.OnUpdateCommodity(slot0, slot1)
-	slot2 = nil
+function var_0_0.OnUpdateCommodity(arg_11_0, arg_11_1)
+	local var_11_0
 
-	for slot6, slot7 in pairs(slot0.cards) do
-		if slot7.goodsVO.id == slot1.id then
-			slot2 = slot7
+	for iter_11_0, iter_11_1 in pairs(arg_11_0.cards) do
+		if iter_11_1.goodsVO.id == arg_11_1.id then
+			var_11_0 = iter_11_1
 
 			break
 		end
 	end
 
-	if slot2 then
-		slot2:update(slot1)
+	if var_11_0 then
+		var_11_0:update(arg_11_1)
 	end
 end
 
-function slot0.OnInitItem(slot0, slot1)
-	slot2 = GoodsCard.New(slot1)
+function var_0_0.OnInitItem(arg_12_0, arg_12_1)
+	local var_12_0 = GoodsCard.New(arg_12_1)
 
-	onButton(slot0, slot2.go, function ()
-		if not uv0.goodsVO:canPurchase() then
+	onButton(arg_12_0, var_12_0.go, function()
+		if not var_12_0.goodsVO:canPurchase() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 
 			return
 		end
 
-		uv1:OnClickCommodity(uv0.goodsVO)
+		arg_12_0:OnClickCommodity(var_12_0.goodsVO)
 	end, SFX_PANEL)
 
-	slot0.cards[slot1] = slot2
+	arg_12_0.cards[arg_12_1] = var_12_0
 end
 
-function slot0.OnUpdateItem(slot0, slot1, slot2)
-	if not slot0.cards[slot2] then
-		slot0:OnInitItem(slot2)
+function var_0_0.OnUpdateItem(arg_14_0, arg_14_1, arg_14_2)
+	local var_14_0 = arg_14_0.cards[arg_14_2]
 
-		slot3 = slot0.cards[slot2]
+	if not var_14_0 then
+		arg_14_0:OnInitItem(arg_14_2)
+
+		var_14_0 = arg_14_0.cards[arg_14_2]
 	end
 
-	slot3:update(slot0.displays[slot1 + 1])
+	local var_14_1 = arg_14_0.displays[arg_14_1 + 1]
+
+	var_14_0:update(var_14_1)
 end
 
-function slot0.OnClickCommodity(slot0, slot1)
-	slot2 = slot1
+function var_0_0.OnClickCommodity(arg_15_0, arg_15_1)
+	local var_15_0 = arg_15_1
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		yesText = "text_exchange",
 		type = MSGBOX_TYPE_SINGLE_ITEM,
 		drop = {
-			id = slot2:getConfig("effect_args")[1],
-			type = slot2:getConfig("type")
+			id = var_15_0:getConfig("effect_args")[1],
+			type = var_15_0:getConfig("type")
 		},
-		onYes = function ()
-			uv0:emit(NewShopsMediator.ON_SHOPPING, uv1.id, 1)
+		onYes = function()
+			arg_15_0:emit(NewShopsMediator.ON_SHOPPING, var_15_0.id, 1)
 		end
 	})
 end
 
-function slot0.AddTimer(slot0)
-	slot1 = slot0.shop.nextTime + 1
-	slot0.timer = Timer.New(function ()
-		if uv0 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
-			uv1:RemoveTimer()
-			uv1:OnTimeOut()
+function var_0_0.AddTimer(arg_17_0)
+	local var_17_0 = arg_17_0.shop.nextTime + 1
+
+	arg_17_0.timer = Timer.New(function()
+		local var_18_0 = var_17_0 - pg.TimeMgr.GetInstance():GetServerTime()
+
+		if var_18_0 <= 0 then
+			arg_17_0:RemoveTimer()
+			arg_17_0:OnTimeOut()
 		else
-			uv1.timerTF.text = pg.TimeMgr.GetInstance():DescCDTime(slot0)
+			local var_18_1 = pg.TimeMgr.GetInstance():DescCDTime(var_18_0)
+
+			arg_17_0.timerTF.text = var_18_1
 		end
 	end, 1, -1)
 
-	slot0.timer:Start()
-	slot0.timer.func()
+	arg_17_0.timer:Start()
+	arg_17_0.timer.func()
 end
 
-function slot0.OnTimeOut(slot0)
-	slot0:emit(NewShopsMediator.REFRESH_MILITARY_SHOP)
+function var_0_0.OnTimeOut(arg_19_0)
+	arg_19_0:emit(NewShopsMediator.REFRESH_MILITARY_SHOP)
 end
 
-function slot0.RemoveTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.RemoveTimer(arg_20_0)
+	if arg_20_0.timer then
+		arg_20_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_20_0.timer = nil
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:RemoveTimer()
+function var_0_0.OnDestroy(arg_21_0)
+	arg_21_0:RemoveTimer()
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,44 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 15700
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				minTargetNumber = 2,
+				skill_id = 15701,
+				nationality = 2,
+				check_target = {
+					"TargetAllHelp",
+					"TargetNationality"
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 15702,
+				minWeaponNumber = 1,
+				check_weapon = true,
+				label = {
+					"HMS"
+				}
+			}
+		}
+	},
 	{
 		shipInfoScene = {
 			equip = {
@@ -158,45 +198,5 @@ return {
 	stack = 1,
 	id = 15700,
 	icon = 15700,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 15700
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				minTargetNumber = 2,
-				skill_id = 15701,
-				nationality = 2,
-				check_target = {
-					"TargetAllHelp",
-					"TargetNationality"
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 15702,
-				minWeaponNumber = 1,
-				check_weapon = true,
-				label = {
-					"HMS"
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

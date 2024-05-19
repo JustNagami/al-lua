@@ -1,28 +1,30 @@
-slot0 = class("WorldAchieveCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("WorldAchieveCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	pg.ConnectionMgr.GetInstance():Send(33602, slot1:getBody(), 33603, function (slot0)
-		if slot0.result == 0 then
-			slot1 = PlayerConst.addTranDrop(slot0.drops)
-			slot2 = nowWorld()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-			for slot6, slot7 in ipairs(uv0.list) do
-				slot8 = slot2:GetMap(slot7.id)
+	pg.ConnectionMgr.GetInstance():Send(33602, var_1_0, 33603, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.drops)
+			local var_2_1 = nowWorld()
 
-				for slot12, slot13 in ipairs(slot7.star_list) do
-					slot2:SetAchieveSuccess(slot7.id, slot13)
+			for iter_2_0, iter_2_1 in ipairs(var_1_0.list) do
+				local var_2_2 = var_2_1:GetMap(iter_2_1.id)
+
+				for iter_2_2, iter_2_3 in ipairs(iter_2_1.star_list) do
+					var_2_1:SetAchieveSuccess(iter_2_1.id, iter_2_3)
 				end
 			end
 
-			slot2:DispatchEvent(World.EventAchieved)
-			uv1:sendNotification(GAME.WORLD_ACHIEVE_DONE, {
-				list = uv0.list,
-				drops = slot1
+			var_2_1:DispatchEvent(World.EventAchieved)
+			arg_1_0:sendNotification(GAME.WORLD_ACHIEVE_DONE, {
+				list = var_1_0.list,
+				drops = var_2_0
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("world_achieve_error_", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("world_achieve_error_", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

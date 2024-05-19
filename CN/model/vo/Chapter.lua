@@ -1,746 +1,826 @@
-slot0 = class("Chapter", import(".BaseVO"))
-slot0.SelectFleet = 1
-slot0.CustomFleet = 2
-slot0.CHAPTER_STATE = {
+﻿local var_0_0 = class("Chapter", import(".BaseVO"))
+
+var_0_0.SelectFleet = 1
+var_0_0.CustomFleet = 2
+var_0_0.CHAPTER_STATE = {
 	i18n("level_chapter_state_high_risk"),
 	i18n("level_chapter_state_risk"),
 	i18n("level_chapter_state_low_risk"),
 	i18n("level_chapter_state_safety")
 }
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_1_0)
 	return pg.chapter_template
 end
 
-function slot0.Ctor(slot0, slot1)
-	slot0.configId = slot1.id
-	slot0.id = slot0.configId
-	slot0.active = false
-	slot0.progress = defaultValue(slot1.progress, 0)
-	slot0.defeatCount = slot1.defeat_count or 0
-	slot0.passCount = slot1.pass_count or 0
-	slot0.todayDefeatCount = slot1.today_defeat_count or 0
-	slot0.achieves = {}
+function var_0_0.Ctor(arg_2_0, arg_2_1)
+	arg_2_0.configId = arg_2_1.id
+	arg_2_0.id = arg_2_0.configId
+	arg_2_0.active = false
+	arg_2_0.progress = defaultValue(arg_2_1.progress, 0)
+	arg_2_0.defeatCount = arg_2_1.defeat_count or 0
+	arg_2_0.passCount = arg_2_1.pass_count or 0
+	arg_2_0.todayDefeatCount = arg_2_1.today_defeat_count or 0
 
-	for slot6 = 1, 3 do
-		if slot0:getConfig("star_require_" .. slot6) > 0 then
-			table.insert(slot0.achieves, {
-				type = slot7,
-				config = slot0:getConfig("num_" .. slot6),
-				count = ({
-					defaultValue(slot1.kill_boss_count, 0),
-					defaultValue(slot1.kill_enemy_count, 0),
-					defaultValue(slot1.take_box_count, 0)
-				})[slot6]
+	local var_2_0 = {
+		defaultValue(arg_2_1.kill_boss_count, 0),
+		defaultValue(arg_2_1.kill_enemy_count, 0),
+		defaultValue(arg_2_1.take_box_count, 0)
+	}
+
+	arg_2_0.achieves = {}
+
+	for iter_2_0 = 1, 3 do
+		local var_2_1 = arg_2_0:getConfig("star_require_" .. iter_2_0)
+
+		if var_2_1 > 0 then
+			table.insert(arg_2_0.achieves, {
+				type = var_2_1,
+				config = arg_2_0:getConfig("num_" .. iter_2_0),
+				count = var_2_0[iter_2_0]
 			})
 		end
 	end
 
-	slot0.dropShipIdList = {}
-	slot0.eliteFleetList = {
+	arg_2_0.dropShipIdList = {}
+	arg_2_0.eliteFleetList = {
 		{},
 		{},
 		{}
 	}
-	slot0.eliteCommanderList = {
+	arg_2_0.eliteCommanderList = {
 		{},
 		{},
 		{}
 	}
-	slot0.supportFleet = {}
-	slot0.loopFlag = 0
+	arg_2_0.supportFleet = {}
+	arg_2_0.loopFlag = 0
 end
 
-function slot0.BuildEliteFleetList(slot0)
-	slot1 = {
+function var_0_0.BuildEliteFleetList(arg_3_0)
+	local var_3_0 = {
 		{},
 		{},
 		{}
 	}
-	slot2 = {
+	local var_3_1 = {
 		{},
 		{},
 		{}
 	}
-	slot3 = {
+	local var_3_2 = {
 		{}
 	}
 
-	for slot7, slot8 in ipairs(slot0 or {}) do
-		slot9 = {}
+	for iter_3_0, iter_3_1 in ipairs(arg_3_0 or {}) do
+		local var_3_3 = {}
 
-		for slot13, slot14 in ipairs(slot8.main_id) do
-			slot9[#slot9 + 1] = slot14
+		for iter_3_2, iter_3_3 in ipairs(iter_3_1.main_id) do
+			var_3_3[#var_3_3 + 1] = iter_3_3
 		end
 
-		if slot7 == 4 then
-			slot3[1] = slot9
+		if iter_3_0 == 4 then
+			var_3_2[1] = var_3_3
 		else
-			slot1[slot7] = slot9
+			var_3_0[iter_3_0] = var_3_3
 		end
 
-		for slot14, slot15 in ipairs(slot8.commanders) do
-			if getProxy(CommanderProxy):getCommanderById(slot15.id) and Commander.canEquipToFleetList(slot2, slot7, slot15.pos, slot16) then
-				-- Nothing
+		local var_3_4 = {}
+
+		for iter_3_4, iter_3_5 in ipairs(iter_3_1.commanders) do
+			local var_3_5 = iter_3_5.id
+			local var_3_6 = iter_3_5.pos
+
+			if getProxy(CommanderProxy):getCommanderById(var_3_5) and Commander.canEquipToFleetList(var_3_1, iter_3_0, var_3_6, var_3_5) then
+				var_3_4[var_3_6] = var_3_5
 			end
 		end
 
-		slot2[slot7] = {
-			[slot17] = slot16
-		}
+		var_3_1[iter_3_0] = var_3_4
 	end
 
-	return slot1, slot2, slot3
+	return var_3_0, var_3_1, var_3_2
 end
 
-function slot0.getMaxCount(slot0)
-	if #slot0:getConfig("risk_levels") == 0 then
+function var_0_0.getMaxCount(arg_4_0)
+	local var_4_0 = arg_4_0:getConfig("risk_levels")
+
+	if #var_4_0 == 0 then
 		return 0
 	end
 
-	return slot1[1][1]
+	return var_4_0[1][1]
 end
 
-function slot0.hasMitigation(slot0)
+function var_0_0.hasMitigation(arg_5_0)
 	if not LOCK_MITIGATION then
-		return slot0:getConfig("mitigation_level") > 0
+		return arg_5_0:getConfig("mitigation_level") > 0
 	else
 		return false
 	end
 end
 
-function slot0.getRemainPassCount(slot0)
-	return math.max(slot0:getMaxCount() - slot0.passCount, 0)
+function var_0_0.getRemainPassCount(arg_6_0)
+	local var_6_0 = arg_6_0:getMaxCount()
+
+	return math.max(var_6_0 - arg_6_0.passCount, 0)
 end
 
-function slot0.getRiskLevel(slot0)
-	slot1 = slot0:getRemainPassCount()
+function var_0_0.getRiskLevel(arg_7_0)
+	local var_7_0 = arg_7_0:getRemainPassCount()
+	local var_7_1 = arg_7_0:getConfig("risk_levels")
 
-	for slot6, slot7 in ipairs(slot0:getConfig("risk_levels")) do
-		if slot1 <= slot7[1] and slot7[2] <= slot1 then
-			return slot6
+	for iter_7_0, iter_7_1 in ipairs(var_7_1) do
+		if var_7_0 <= iter_7_1[1] and var_7_0 >= iter_7_1[2] then
+			return iter_7_0
 		end
 	end
 
 	assert(false, "index can not be nil")
 end
 
-function slot0.getMitigationRate(slot0)
-	return math.min(slot0.passCount, slot0:getMaxCount()) * (LOCK_MITIGATION and 0 or slot0:getConfig("mitigation_rate"))
+function var_0_0.getMitigationRate(arg_8_0)
+	local var_8_0 = arg_8_0:getMaxCount()
+	local var_8_1 = LOCK_MITIGATION and 0 or arg_8_0:getConfig("mitigation_rate")
+
+	return math.min(arg_8_0.passCount, var_8_0) * var_8_1
 end
 
-function slot0.getRepressInfo(slot0)
+function var_0_0.getRepressInfo(arg_9_0)
 	return {
-		repressMax = slot0:getMaxCount(),
-		repressCount = slot0.passCount,
-		repressReduce = slot0:getMitigationRate(),
-		repressLevel = LOCK_MITIGATION and 0 or slot0:getRemainPassCount() > 0 and 0 or slot0:getConfig("mitigation_level") or 0,
-		repressEnemyHpRant = 1 - slot0:getStageCell(slot0.fleet.line.row, slot0.fleet.line.column).data / 10000
+		repressMax = arg_9_0:getMaxCount(),
+		repressCount = arg_9_0.passCount,
+		repressReduce = arg_9_0:getMitigationRate(),
+		repressLevel = LOCK_MITIGATION and 0 or arg_9_0:getRemainPassCount() > 0 and 0 or arg_9_0:getConfig("mitigation_level") or 0,
+		repressEnemyHpRant = 1 - arg_9_0:getStageCell(arg_9_0.fleet.line.row, arg_9_0.fleet.line.column).data / 10000
 	}
 end
 
-function slot0.getChapterState(slot0)
-	slot1 = slot0:getRiskLevel()
+function var_0_0.getChapterState(arg_10_0)
+	local var_10_0 = arg_10_0:getRiskLevel()
 
-	assert(uv0.CHAPTER_STATE[slot1], "state desc is nil")
+	assert(var_0_0.CHAPTER_STATE[var_10_0], "state desc is nil")
 
-	return uv0.CHAPTER_STATE[slot1]
+	return var_0_0.CHAPTER_STATE[var_10_0]
 end
 
-function slot0.getPlayType(slot0)
-	return slot0:getConfig("model")
+function var_0_0.getPlayType(arg_11_0)
+	return arg_11_0:getConfig("model")
 end
 
-function slot0.isTypeDefence(slot0)
-	return slot0:getPlayType() == ChapterConst.TypeDefence
+function var_0_0.isTypeDefence(arg_12_0)
+	return arg_12_0:getPlayType() == ChapterConst.TypeDefence
 end
 
-function slot0.IsSpChapter(slot0)
-	return getProxy(ChapterProxy):getMapById(slot0:getConfig("map")):getMapType() == Map.ACT_EXTRA and slot0:getPlayType() == ChapterConst.TypeRange
+function var_0_0.IsSpChapter(arg_13_0)
+	return getProxy(ChapterProxy):getMapById(arg_13_0:getConfig("map")):getMapType() == Map.ACT_EXTRA and arg_13_0:getPlayType() == ChapterConst.TypeRange
 end
 
-function slot0.getConfig(slot0, slot1)
-	if slot0:isLoop() then
-		slot2 = pg.chapter_template_loop[slot0.id]
+function var_0_0.getConfig(arg_14_0, arg_14_1)
+	if arg_14_0:isLoop() then
+		local var_14_0 = pg.chapter_template_loop[arg_14_0.id]
 
-		assert(slot2, "chapter_template_loop not exist: " .. slot0.id)
+		assert(var_14_0, "chapter_template_loop not exist: " .. arg_14_0.id)
 
-		if slot2[slot1] ~= nil and slot2[slot1] ~= "&&" then
-			return slot2[slot1]
+		if var_14_0[arg_14_1] ~= nil and var_14_0[arg_14_1] ~= "&&" then
+			return var_14_0[arg_14_1]
 		end
 
-		if (slot1 == "air_dominance" or slot1 == "best_air_dominance") and slot2.air_dominance_loop_rate ~= nil then
-			return math.floor(slot0:getConfigTable()[slot1] * slot2.air_dominance_loop_rate * 0.01)
+		if (arg_14_1 == "air_dominance" or arg_14_1 == "best_air_dominance") and var_14_0.air_dominance_loop_rate ~= nil then
+			local var_14_1 = arg_14_0:getConfigTable()
+			local var_14_2 = var_14_0.air_dominance_loop_rate * 0.01
+
+			return math.floor(var_14_1[arg_14_1] * var_14_2)
 		end
 	end
 
-	return uv0.super.getConfig(slot0, slot1)
+	return var_0_0.super.getConfig(arg_14_0, arg_14_1)
 end
 
-function slot0.existLoop(slot0)
-	return pg.chapter_template_loop[slot0.id] ~= nil
+function var_0_0.existLoop(arg_15_0)
+	return pg.chapter_template_loop[arg_15_0.id] ~= nil
 end
 
-function slot0.canActivateLoop(slot0)
-	return slot0.progress == 100
+function var_0_0.canActivateLoop(arg_16_0)
+	return arg_16_0.progress == 100
 end
 
-function slot0.isLoop(slot0)
-	return slot0.loopFlag == 1
+function var_0_0.isLoop(arg_17_0)
+	return arg_17_0.loopFlag == 1
 end
 
-function slot0.existAmbush(slot0)
-	return slot0:getConfig("is_ambush") == 1 or slot0:getConfig("is_air_attack") == 1
+function var_0_0.existAmbush(arg_18_0)
+	return arg_18_0:getConfig("is_ambush") == 1 or arg_18_0:getConfig("is_air_attack") == 1
 end
 
-function slot0.isUnlock(slot0)
-	return slot0:IsCleanPrevChapter() and slot0:IsCleanPrevStory()
+function var_0_0.isUnlock(arg_19_0)
+	return arg_19_0:IsCleanPrevChapter() and arg_19_0:IsCleanPrevStory()
 end
 
-function slot0.IsCleanPrevChapter(slot0)
-	if slot0:getConfig("pre_chapter") == 0 then
+function var_0_0.IsCleanPrevChapter(arg_20_0)
+	local var_20_0 = arg_20_0:getConfig("pre_chapter")
+
+	if var_20_0 == 0 then
 		return true
 	end
 
-	return getProxy(ChapterProxy):GetChapterItemById(slot1):isClear()
+	return getProxy(ChapterProxy):GetChapterItemById(var_20_0):isClear()
 end
 
-function slot0.IsCleanPrevStory(slot0)
-	if slot0:getConfig("pre_story") == 0 then
+function var_0_0.IsCleanPrevStory(arg_21_0)
+	local var_21_0 = arg_21_0:getConfig("pre_story")
+
+	if var_21_0 == 0 then
 		return true
 	end
 
-	return getProxy(ChapterProxy):GetChapterItemById(slot1):isClear()
+	return getProxy(ChapterProxy):GetChapterItemById(var_21_0):isClear()
 end
 
-function slot0.isPlayerLVUnlock(slot0)
-	return slot0:getConfig("unlocklevel") <= getProxy(PlayerProxy):getRawData().level
+function var_0_0.isPlayerLVUnlock(arg_22_0)
+	return getProxy(PlayerProxy):getRawData().level >= arg_22_0:getConfig("unlocklevel")
 end
 
-function slot0.isClear(slot0)
-	return slot0.progress >= 100
+function var_0_0.isClear(arg_23_0)
+	return arg_23_0.progress >= 100
 end
 
-function slot0.ifNeedHide(slot0)
-	if table.contains(pg.chapter_setting.all, slot0.id) and pg.chapter_setting[slot0.id].hide == 1 then
-		return slot0:isClear()
+function var_0_0.ifNeedHide(arg_24_0)
+	if table.contains(pg.chapter_setting.all, arg_24_0.id) and pg.chapter_setting[arg_24_0.id].hide == 1 then
+		return arg_24_0:isClear()
 	end
 end
 
-function slot0.existAchieve(slot0)
-	return #slot0.achieves > 0
+function var_0_0.existAchieve(arg_25_0)
+	return #arg_25_0.achieves > 0
 end
 
-function slot0.isAllAchieve(slot0)
-	return _.all(slot0.achieves, function (slot0)
-		return ChapterConst.IsAchieved(slot0)
+function var_0_0.isAllAchieve(arg_26_0)
+	return _.all(arg_26_0.achieves, function(arg_27_0)
+		return ChapterConst.IsAchieved(arg_27_0)
 	end)
 end
 
-function slot0.clearEliterFleetByIndex(slot0, slot1)
-	if slot1 > #slot0.eliteFleetList then
+function var_0_0.clearEliterFleetByIndex(arg_28_0, arg_28_1)
+	if arg_28_1 > #arg_28_0.eliteFleetList then
 		return
 	end
 
-	slot0.eliteFleetList[slot1] = {}
+	arg_28_0.eliteFleetList[arg_28_1] = {}
 end
 
-function slot0.wrapEliteFleet(slot0, slot1)
-	slot2 = {}
-	slot3 = slot1 > 2 and FleetType.Submarine or FleetType.Normal
-	slot4 = _.flatten(slot0:getEliteFleetList()[slot1])
+function var_0_0.wrapEliteFleet(arg_29_0, arg_29_1)
+	local var_29_0 = {}
+	local var_29_1 = arg_29_1 > 2 and FleetType.Submarine or FleetType.Normal
+	local var_29_2 = _.flatten(arg_29_0:getEliteFleetList()[arg_29_1])
 
-	for slot8, slot9 in pairs(slot0:getEliteFleetCommanders()[slot1]) do
-		table.insert(slot2, {
-			pos = slot8,
-			id = slot9
+	for iter_29_0, iter_29_1 in pairs(arg_29_0:getEliteFleetCommanders()[arg_29_1]) do
+		table.insert(var_29_0, {
+			pos = iter_29_0,
+			id = iter_29_1
 		})
 	end
 
 	return TypedFleet.New({
-		id = slot1,
-		fleetType = slot3,
-		ship_list = slot4,
-		commanders = slot2
+		id = arg_29_1,
+		fleetType = var_29_1,
+		ship_list = var_29_2,
+		commanders = var_29_0
 	})
 end
 
-function slot0.setEliteCommanders(slot0, slot1)
-	slot0.eliteCommanderList = slot1
+function var_0_0.setEliteCommanders(arg_30_0, arg_30_1)
+	arg_30_0.eliteCommanderList = arg_30_1
 end
 
-function slot0.getEliteFleetCommanders(slot0)
-	return slot0.eliteCommanderList
+function var_0_0.getEliteFleetCommanders(arg_31_0)
+	return arg_31_0.eliteCommanderList
 end
 
-function slot0.updateCommander(slot0, slot1, slot2, slot3)
-	slot0.eliteCommanderList[slot1][slot2] = slot3
+function var_0_0.updateCommander(arg_32_0, arg_32_1, arg_32_2, arg_32_3)
+	arg_32_0.eliteCommanderList[arg_32_1][arg_32_2] = arg_32_3
 end
 
-function slot0.getEliteFleetList(slot0)
-	slot0:EliteShipTypeFilter()
+function var_0_0.getEliteFleetList(arg_33_0)
+	arg_33_0:EliteShipTypeFilter()
 
-	return slot0.eliteFleetList
+	return arg_33_0.eliteFleetList
 end
 
-function slot0.setEliteFleetList(slot0, slot1)
-	slot0.eliteFleetList = slot1
+function var_0_0.setEliteFleetList(arg_34_0, arg_34_1)
+	arg_34_0.eliteFleetList = arg_34_1
 end
 
-function slot0.IsEliteFleetLegal(slot0)
-	slot1 = 0
-	slot2 = 0
-	slot4 = 0
-	slot5, slot6 = nil
+function var_0_0.IsEliteFleetLegal(arg_35_0)
+	local var_35_0 = 0
+	local var_35_1 = 0
+	local var_35_2 = 0
+	local var_35_3 = 0
+	local var_35_4
+	local var_35_5
 
-	for slot10 = 1, #slot0.eliteFleetList do
-		slot11, slot12 = slot0:singleEliteFleetVertify(slot10)
+	for iter_35_0 = 1, #arg_35_0.eliteFleetList do
+		local var_35_6, var_35_7 = arg_35_0:singleEliteFleetVertify(iter_35_0)
 
-		if not slot11 then
-			if not slot12 then
-				if slot10 >= 3 then
-					slot3 = 0 + 1
+		if not var_35_6 then
+			if not var_35_7 then
+				if iter_35_0 >= 3 then
+					var_35_2 = var_35_2 + 1
 				else
-					slot1 = slot1 + 1
+					var_35_0 = var_35_0 + 1
 				end
 			else
-				slot5 = slot12
-				slot6 = slot10
+				var_35_4 = var_35_7
+				var_35_5 = iter_35_0
 			end
-		elseif slot10 >= 3 then
-			slot4 = slot4 + 1
+		elseif iter_35_0 >= 3 then
+			var_35_3 = var_35_3 + 1
 		else
-			slot2 = slot2 + 1
+			var_35_1 = var_35_1 + 1
 		end
 	end
 
-	if slot1 == 2 then
+	if var_35_0 == 2 then
 		return false, i18n("elite_disable_no_fleet")
-	elseif slot2 == 0 then
-		return false, slot5
-	elseif slot3 + slot4 < slot0:getConfig("submarine_num") then
-		return false, slot5
+	elseif var_35_1 == 0 then
+		return false, var_35_4
+	elseif var_35_2 + var_35_3 < arg_35_0:getConfig("submarine_num") then
+		return false, var_35_4
 	end
 
-	for slot12, slot13 in ipairs(slot0:IsPropertyLimitationSatisfy()) do
-		slot8 = 1 * slot13
+	local var_35_8 = arg_35_0:IsPropertyLimitationSatisfy()
+	local var_35_9 = 1
+
+	for iter_35_1, iter_35_2 in ipairs(var_35_8) do
+		var_35_9 = var_35_9 * iter_35_2
 	end
 
-	if slot8 ~= 1 then
+	if var_35_9 ~= 1 then
 		return false, i18n("elite_disable_property_unsatisfied")
 	end
 
-	return true, slot6
+	return true, var_35_5
 end
 
-function slot0.IsPropertyLimitationSatisfy(slot0)
-	slot1 = getProxy(BayProxy):getRawData()
-	slot3 = {
-		[slot8[1]] = 0
-	}
+function var_0_0.IsPropertyLimitationSatisfy(arg_36_0)
+	local var_36_0 = getProxy(BayProxy):getRawData()
+	local var_36_1 = arg_36_0:getConfig("property_limitation")
+	local var_36_2 = {}
 
-	for slot7, slot8 in ipairs(slot0:getConfig("property_limitation")) do
-		-- Nothing
+	for iter_36_0, iter_36_1 in ipairs(var_36_1) do
+		var_36_2[iter_36_1[1]] = 0
 	end
 
-	slot4 = slot0:getEliteFleetList()
-	slot5 = 0
+	local var_36_3 = arg_36_0:getEliteFleetList()
+	local var_36_4 = 0
 
-	for slot9 = 1, 2 do
-		if slot0:singleEliteFleetVertify(slot9) then
-			slot10 = {
-				[slot17] = 0
-			}
+	for iter_36_2 = 1, 2 do
+		if not arg_36_0:singleEliteFleetVertify(iter_36_2) then
+			-- block empty
+		else
+			local var_36_5 = {}
+			local var_36_6 = {}
 
-			for slot15, slot16 in ipairs(slot2) do
-				slot17, slot18, slot19, ({})[slot17] = unpack(slot16)
+			for iter_36_3, iter_36_4 in ipairs(var_36_1) do
+				local var_36_7, var_36_8, var_36_9, var_36_10 = unpack(iter_36_4)
 
-				if string.sub(slot17, 1, 5) == "fleet" then
-					-- Nothing
+				if string.sub(var_36_7, 1, 5) == "fleet" then
+					var_36_5[var_36_7] = 0
+					var_36_6[var_36_7] = var_36_10
 				end
 			end
 
-			for slot16, slot17 in ipairs(slot4[slot9]) do
-				slot5 = slot5 + 1
-				slot19 = intProperties(slot1[slot17]:getProperties())
+			local var_36_11 = var_36_3[iter_36_2]
 
-				for slot23, slot24 in pairs(slot3) do
-					if string.sub(slot23, 1, 5) == "fleet" then
-						if slot23 == "fleet_totle_level" then
-							slot10[slot23] = slot10[slot23] + slot18.level
+			for iter_36_5, iter_36_6 in ipairs(var_36_11) do
+				local var_36_12 = var_36_0[iter_36_6]
+
+				var_36_4 = var_36_4 + 1
+
+				local var_36_13 = intProperties(var_36_12:getProperties())
+
+				for iter_36_7, iter_36_8 in pairs(var_36_2) do
+					if string.sub(iter_36_7, 1, 5) == "fleet" then
+						if iter_36_7 == "fleet_totle_level" then
+							var_36_5[iter_36_7] = var_36_5[iter_36_7] + var_36_12.level
 						end
-					elseif slot23 == "level" then
-						slot3[slot23] = slot24 + slot18.level
+					elseif iter_36_7 == "level" then
+						var_36_2[iter_36_7] = iter_36_8 + var_36_12.level
 					else
-						slot3[slot23] = slot24 + slot19[slot23]
+						var_36_2[iter_36_7] = iter_36_8 + var_36_13[iter_36_7]
 					end
 				end
 			end
 
-			for slot16, slot17 in pairs(slot10) do
-				if slot16 == "fleet_totle_level" and slot11[slot16] < slot17 then
-					slot3[slot16] = slot3[slot16] + 1
+			for iter_36_9, iter_36_10 in pairs(var_36_5) do
+				if iter_36_9 == "fleet_totle_level" and iter_36_10 > var_36_6[iter_36_9] then
+					var_36_2[iter_36_9] = var_36_2[iter_36_9] + 1
 				end
 			end
 		end
 	end
 
-	slot6 = {}
+	local var_36_14 = {}
 
-	for slot10, slot11 in ipairs(slot2) do
-		slot12, slot13, slot14 = unpack(slot11)
+	for iter_36_11, iter_36_12 in ipairs(var_36_1) do
+		local var_36_15, var_36_16, var_36_17 = unpack(iter_36_12)
 
-		if slot12 == "level" and slot5 > 0 then
-			slot3[slot12] = math.ceil(slot3[slot12] / slot5)
+		if var_36_15 == "level" and var_36_4 > 0 then
+			var_36_2[var_36_15] = math.ceil(var_36_2[var_36_15] / var_36_4)
 		end
 
-		slot6[slot10] = AttributeType.EliteConditionCompare(slot13, slot3[slot12], slot14) and 1 or 0
+		var_36_14[iter_36_11] = AttributeType.EliteConditionCompare(var_36_16, var_36_2[var_36_15], var_36_17) and 1 or 0
 	end
 
-	return slot6, slot3
+	return var_36_14, var_36_2
 end
 
-function slot0.GetNomralFleetMaxCount(slot0)
-	return slot0:getConfig("group_num")
+function var_0_0.GetNomralFleetMaxCount(arg_37_0)
+	return arg_37_0:getConfig("group_num")
 end
 
-function slot0.GetSubmarineFleetMaxCount(slot0)
-	return slot0:getConfig("submarine_num")
+function var_0_0.GetSubmarineFleetMaxCount(arg_38_0)
+	return arg_38_0:getConfig("submarine_num")
 end
 
-function slot0.GetSupportFleetMaxCount(slot0)
-	return slot0:getConfig("support_group_num")
+function var_0_0.GetSupportFleetMaxCount(arg_39_0)
+	return arg_39_0:getConfig("support_group_num")
 end
 
-function slot0.EliteShipTypeFilter(slot0)
-	if slot0:getConfig("type") == Chapter.SelectFleet then
-		for slot5, slot6 in ipairs({
+function var_0_0.EliteShipTypeFilter(arg_40_0)
+	if arg_40_0:getConfig("type") == Chapter.SelectFleet then
+		local var_40_0 = {
 			1,
 			2,
 			3
-		}) do
-			table.clear(slot0.eliteFleetList[slot6])
-			table.clear(slot0.eliteCommanderList[slot6])
+		}
+
+		for iter_40_0, iter_40_1 in ipairs(var_40_0) do
+			table.clear(arg_40_0.eliteFleetList[iter_40_1])
+			table.clear(arg_40_0.eliteCommanderList[iter_40_1])
 		end
 	else
-		for slot4 = slot0:GetNomralFleetMaxCount() + 1, 2 do
-			table.clear(slot0.eliteFleetList[slot4])
-			table.clear(slot0.eliteCommanderList[slot4])
+		for iter_40_2 = arg_40_0:GetNomralFleetMaxCount() + 1, 2 do
+			table.clear(arg_40_0.eliteFleetList[iter_40_2])
+			table.clear(arg_40_0.eliteCommanderList[iter_40_2])
 		end
 
-		for slot4 = slot0:GetSubmarineFleetMaxCount() + 2 + 1, 3 do
-			table.clear(slot0.eliteFleetList[slot4])
-			table.clear(slot0.eliteCommanderList[slot4])
+		for iter_40_3 = arg_40_0:GetSubmarineFleetMaxCount() + 2 + 1, 3 do
+			table.clear(arg_40_0.eliteFleetList[iter_40_3])
+			table.clear(arg_40_0.eliteCommanderList[iter_40_3])
 		end
 	end
 
-	slot1 = getProxy(BayProxy):getRawData()
+	local var_40_1 = getProxy(BayProxy):getRawData()
 
-	for slot5, slot6 in ipairs(slot0.eliteFleetList) do
-		for slot10 = #slot6, 1, -1 do
-			if slot1[slot6[slot10]] == nil then
-				table.remove(slot6, slot10)
+	for iter_40_4, iter_40_5 in ipairs(arg_40_0.eliteFleetList) do
+		for iter_40_6 = #iter_40_5, 1, -1 do
+			if var_40_1[iter_40_5[iter_40_6]] == nil then
+				table.remove(iter_40_5, iter_40_6)
 			end
 		end
 	end
 
-	function slot2(slot0, slot1, slot2)
-		ChapterProxy.SortRecommendLimitation(Clone(slot1))
+	local function var_40_2(arg_41_0, arg_41_1, arg_41_2)
+		arg_41_1 = Clone(arg_41_1)
 
-		for slot6, slot7 in ipairs(slot2) do
-			slot8 = nil
+		ChapterProxy.SortRecommendLimitation(arg_41_1)
 
-			for slot13, slot14 in ipairs(slot1) do
-				if ShipType.ContainInLimitBundle(slot14, uv0[slot7]:getShipType()) then
-					slot8 = slot13
+		for iter_41_0, iter_41_1 in ipairs(arg_41_2) do
+			local var_41_0
+			local var_41_1 = var_40_1[iter_41_1]:getShipType()
+
+			for iter_41_2, iter_41_3 in ipairs(arg_41_1) do
+				if ShipType.ContainInLimitBundle(iter_41_3, var_41_1) then
+					var_41_0 = iter_41_2
 
 					break
 				end
 			end
 
-			if slot8 then
-				table.remove(slot1, slot8)
+			if var_41_0 then
+				table.remove(arg_41_1, var_41_0)
 			else
-				table.removebyvalue(slot0, slot7)
+				table.removebyvalue(arg_41_0, iter_41_1)
 			end
 		end
 	end
 
-	slot6 = "limitation"
+	for iter_40_7, iter_40_8 in ipairs(arg_40_0:getConfig("limitation")) do
+		local var_40_3 = arg_40_0.eliteFleetList[iter_40_7]
+		local var_40_4 = {}
+		local var_40_5 = {}
+		local var_40_6 = {}
 
-	for slot6, slot7 in ipairs(slot0:getConfig(slot6)) do
-		slot9 = {}
-		slot10 = {}
-		slot11 = {}
+		for iter_40_9, iter_40_10 in ipairs(var_40_3) do
+			local var_40_7 = var_40_1[iter_40_10]:getTeamType()
 
-		for slot15, slot16 in ipairs(slot0.eliteFleetList[slot6]) do
-			if slot1[slot16]:getTeamType() == TeamType.Main then
-				table.insert(slot9, slot16)
-			elseif slot18 == TeamType.Vanguard then
-				table.insert(slot10, slot16)
-			elseif slot18 == TeamType.Submarine then
-				table.insert(slot11, slot16)
+			if var_40_7 == TeamType.Main then
+				table.insert(var_40_4, iter_40_10)
+			elseif var_40_7 == TeamType.Vanguard then
+				table.insert(var_40_5, iter_40_10)
+			elseif var_40_7 == TeamType.Submarine then
+				table.insert(var_40_6, iter_40_10)
 			end
 		end
 
-		slot2(slot8, slot7[1], slot9)
-		slot2(slot8, slot7[2], slot10)
-		slot2(slot8, {
+		var_40_2(var_40_3, iter_40_8[1], var_40_4)
+		var_40_2(var_40_3, iter_40_8[2], var_40_5)
+		var_40_2(var_40_3, {
 			0,
 			0,
 			0
-		}, slot11)
+		}, var_40_6)
 	end
 end
 
-function slot0.singleEliteFleetVertify(slot0, slot1)
-	slot2 = getProxy(BayProxy):getRawData()
+function var_0_0.singleEliteFleetVertify(arg_42_0, arg_42_1)
+	local var_42_0 = getProxy(BayProxy):getRawData()
+	local var_42_1 = arg_42_0:getEliteFleetList()[arg_42_1]
 
-	if not slot0:getEliteFleetList()[slot1] or #slot3 == 0 then
+	if not var_42_1 or #var_42_1 == 0 then
 		return false
 	end
 
-	if slot1 >= 3 then
+	if arg_42_1 >= 3 then
 		return true
 	end
 
-	if slot0:getConfig("type") ~= Chapter.CustomFleet then
+	if arg_42_0:getConfig("type") ~= Chapter.CustomFleet then
 		return true
 	end
 
-	slot4 = 0
-	slot5 = 0
-	slot6 = {}
+	local var_42_2 = 0
+	local var_42_3 = 0
+	local var_42_4 = {}
 
-	for slot10, slot11 in ipairs(slot3) do
-		if slot2[slot11] then
-			if slot12:getFlag("inEvent") then
+	for iter_42_0, iter_42_1 in ipairs(var_42_1) do
+		local var_42_5 = var_42_0[iter_42_1]
+
+		if var_42_5 then
+			if var_42_5:getFlag("inEvent") then
 				return false, i18n("elite_disable_ship_escort")
 			end
 
-			if slot12:getTeamType() == TeamType.Main then
-				slot4 = slot4 + 1
-			elseif slot13 == TeamType.Vanguard then
-				slot5 = slot5 + 1
+			local var_42_6 = var_42_5:getTeamType()
+
+			if var_42_6 == TeamType.Main then
+				var_42_2 = var_42_2 + 1
+			elseif var_42_6 == TeamType.Vanguard then
+				var_42_3 = var_42_3 + 1
 			end
 
-			slot6[#slot6 + 1] = slot12:getShipType()
+			var_42_4[#var_42_4 + 1] = var_42_5:getShipType()
 		end
 	end
 
-	if slot4 * slot5 == 0 and slot4 + slot5 ~= 0 then
+	if var_42_2 * var_42_3 == 0 and var_42_2 + var_42_3 ~= 0 then
 		return false
 	end
 
-	slot8 = 1
+	local var_42_7 = checkExist(arg_42_0:getConfig("limitation"), {
+		arg_42_1
+	})
+	local var_42_8 = 1
 
-	for slot12, slot13 in ipairs(checkExist(slot0:getConfig("limitation"), {
-		slot1
-	}) or {}) do
-		slot15 = 0
+	for iter_42_2, iter_42_3 in ipairs(var_42_7 or {}) do
+		local var_42_9 = 0
+		local var_42_10 = 0
 
-		for slot19, slot20 in ipairs(slot13) do
-			if slot20 ~= 0 then
-				slot14 = 0 + 1
+		for iter_42_4, iter_42_5 in ipairs(iter_42_3) do
+			if iter_42_5 ~= 0 then
+				var_42_9 = var_42_9 + 1
 
-				if underscore.any(slot6, function (slot0)
-					return ShipType.ContainInLimitBundle(uv0, slot0)
+				if underscore.any(var_42_4, function(arg_43_0)
+					return ShipType.ContainInLimitBundle(iter_42_5, arg_43_0)
 				end) then
-					slot15 = 1
+					var_42_10 = 1
 
 					break
 				end
 			end
 		end
 
-		if slot14 == 0 then
-			slot15 = 1
+		if var_42_9 == 0 then
+			var_42_10 = 1
 		end
 
-		slot8 = slot8 * slot15
+		var_42_8 = var_42_8 * var_42_10
 	end
 
-	if slot8 == 0 then
+	if var_42_8 == 0 then
 		return false, i18n("elite_disable_formation_unsatisfied")
 	end
 
 	return true
 end
 
-function slot0.ClearSupportFleetList(slot0, slot1)
-	slot0.supportFleet = {}
+function var_0_0.ClearSupportFleetList(arg_44_0, arg_44_1)
+	arg_44_0.supportFleet = {}
 end
 
-function slot0.setSupportFleetList(slot0, slot1)
-	slot0.supportFleet = slot1[1]
+function var_0_0.setSupportFleetList(arg_45_0, arg_45_1)
+	arg_45_0.supportFleet = arg_45_1[1]
 end
 
-function slot0.getSupportFleet(slot0)
-	slot0:SupportShipTypeFilter()
+function var_0_0.getSupportFleet(arg_46_0)
+	arg_46_0:SupportShipTypeFilter()
 
-	return slot0.supportFleet
+	return arg_46_0.supportFleet
 end
 
-function slot0.SupportShipTypeFilter(slot0)
-	if slot0:GetSupportFleetMaxCount() < 1 then
-		table.clear(slot0.supportFleet)
+function var_0_0.SupportShipTypeFilter(arg_47_0)
+	if arg_47_0:GetSupportFleetMaxCount() < 1 then
+		table.clear(arg_47_0.supportFleet)
 	end
 
-	for slot6 = #slot0.supportFleet, 1, -1 do
-		if getProxy(BayProxy):getRawData()[slot2[slot6]] == nil then
-			table.remove(slot2, slot6)
+	local var_47_0 = getProxy(BayProxy):getRawData()
+	local var_47_1 = arg_47_0.supportFleet
+
+	for iter_47_0 = #var_47_1, 1, -1 do
+		if var_47_0[var_47_1[iter_47_0]] == nil then
+			table.remove(var_47_1, iter_47_0)
 		end
 	end
 end
 
-function slot0.activeAlways(slot0)
-	if getProxy(ChapterProxy):getMapById(slot0:getConfig("map")):isActivity() and type(pg.activity_template[slot0:GetBindActID()].config_client) == "table" then
-		return table.contains(slot3.config_client.prevs or {}, slot0.id)
+function var_0_0.activeAlways(arg_48_0)
+	if getProxy(ChapterProxy):getMapById(arg_48_0:getConfig("map")):isActivity() then
+		local var_48_0 = arg_48_0:GetBindActID()
+		local var_48_1 = pg.activity_template[var_48_0]
+
+		if type(var_48_1.config_client) == "table" then
+			local var_48_2 = var_48_1.config_client.prevs or {}
+
+			return table.contains(var_48_2, arg_48_0.id)
+		end
 	end
 
 	return false
 end
 
-function slot0.getPrevChapterName(slot0)
-	slot1 = ""
+function var_0_0.getPrevChapterName(arg_49_0)
+	local var_49_0 = ""
+	local var_49_1 = arg_49_0:getConfig("pre_chapter")
 
-	if slot0:getConfig("pre_chapter") ~= 0 then
-		slot1 = slot0:bindConfigTable()[slot2].chapter_name
+	if var_49_1 ~= 0 then
+		var_49_0 = arg_49_0:bindConfigTable()[var_49_1].chapter_name
 	end
 
-	return slot1
+	return var_49_0
 end
 
-function slot0.CanQuickPlay(slot0)
-	return pg.chapter_setting[slot0.id] and slot1.expedite > 0
+function var_0_0.CanQuickPlay(arg_50_0)
+	local var_50_0 = pg.chapter_setting[arg_50_0.id]
+
+	return var_50_0 and var_50_0.expedite > 0
 end
 
-function slot0.GetQuickPlayFlag(slot0)
-	return PlayerPrefs.GetInt("chapter_quickPlay_flag_" .. slot0.id, 0) == 1
+function var_0_0.GetQuickPlayFlag(arg_51_0)
+	return PlayerPrefs.GetInt("chapter_quickPlay_flag_" .. arg_51_0.id, 0) == 1
 end
 
-function slot0.writeDrops(slot0, slot1)
-	_.each(slot1, function (slot0)
-		if slot0.type == DROP_TYPE_SHIP and not table.contains(uv0.dropShipIdList, slot0.id) then
-			table.insert(uv0.dropShipIdList, slot0.id)
+function var_0_0.writeDrops(arg_52_0, arg_52_1)
+	_.each(arg_52_1, function(arg_53_0)
+		if arg_53_0.type == DROP_TYPE_SHIP and not table.contains(arg_52_0.dropShipIdList, arg_53_0.id) then
+			table.insert(arg_52_0.dropShipIdList, arg_53_0.id)
 		end
 	end)
 end
 
-function slot0.UpdateDropShipList(slot0, slot1)
-	for slot5, slot6 in ipairs(slot1) do
-		if not table.contains(slot0.dropShipIdList, slot6) then
-			table.insert(slot0.dropShipIdList, slot6)
+function var_0_0.UpdateDropShipList(arg_54_0, arg_54_1)
+	for iter_54_0, iter_54_1 in ipairs(arg_54_1) do
+		if not table.contains(arg_54_0.dropShipIdList, iter_54_1) then
+			table.insert(arg_54_0.dropShipIdList, iter_54_1)
 		end
 	end
 end
 
-function slot0.GetDropShipList(slot0)
-	return slot0.dropShipIdList
+function var_0_0.GetDropShipList(arg_55_0)
+	return arg_55_0.dropShipIdList
 end
 
-function slot0.getOniChapterInfo(slot0)
-	return pg.chapter_capture[slot0.id]
+function var_0_0.getOniChapterInfo(arg_56_0)
+	return pg.chapter_capture[arg_56_0.id]
 end
 
-function slot0.getBombChapterInfo(slot0)
-	return pg.chapter_boom[slot0.id]
+function var_0_0.getBombChapterInfo(arg_57_0)
+	return pg.chapter_boom[arg_57_0.id]
 end
 
-function slot0.getNpcShipByType(slot0, slot1)
-	slot2 = {}
-	slot3 = getProxy(TaskProxy)
-	slot8 = "npc_data"
+function var_0_0.getNpcShipByType(arg_58_0, arg_58_1)
+	local var_58_0 = {}
+	local var_58_1 = getProxy(TaskProxy)
 
-	for slot8, slot9 in ipairs(slot0:getConfig(slot8)) do
-		slot10 = pg.npc_squad_template[slot9]
+	local function var_58_2(arg_59_0)
+		if arg_59_0 == 0 then
+			return true
+		end
 
-		if not slot1 or slot1 == slot10.type and function (slot0)
-			if slot0 == 0 then
-				return true
-			end
+		local var_59_0 = var_58_1:getTaskVO(arg_59_0)
 
-			return uv0:getTaskVO(slot0) and not slot1:isFinish()
-		end(slot10.task_id) then
-			for slot14, slot15 in ipairs({
+		return var_59_0 and not var_59_0:isFinish()
+	end
+
+	for iter_58_0, iter_58_1 in ipairs(arg_58_0:getConfig("npc_data")) do
+		local var_58_3 = pg.npc_squad_template[iter_58_1]
+
+		if not arg_58_1 or arg_58_1 == var_58_3.type and var_58_2(var_58_3.task_id) then
+			for iter_58_2, iter_58_3 in ipairs({
 				"vanguard_list",
 				"main_list"
 			}) do
-				for slot19, slot20 in ipairs(slot10[slot15]) do
-					table.insert(slot2, NpcShip.New({
-						id = slot20[1],
-						configId = slot20[1],
-						level = slot20[2]
+				for iter_58_4, iter_58_5 in ipairs(var_58_3[iter_58_3]) do
+					table.insert(var_58_0, NpcShip.New({
+						id = iter_58_5[1],
+						configId = iter_58_5[1],
+						level = iter_58_5[2]
 					}))
 				end
 			end
 		end
 	end
 
-	return slot2
+	return var_58_0
 end
 
-function slot0.getTodayDefeatCount(slot0)
-	return getProxy(DailyLevelProxy):getChapterDefeatCount(slot0.configId)
+function var_0_0.getTodayDefeatCount(arg_60_0)
+	return getProxy(DailyLevelProxy):getChapterDefeatCount(arg_60_0.configId)
 end
 
-function slot0.isTriesLimit(slot0)
-	return slot0:getConfig("count") and slot1 > 0
+function var_0_0.isTriesLimit(arg_61_0)
+	local var_61_0 = arg_61_0:getConfig("count")
+
+	return var_61_0 and var_61_0 > 0
 end
 
-function slot0.updateTodayDefeatCount(slot0)
-	getProxy(DailyLevelProxy):updateChapterDefeatCount(slot0.configId)
+function var_0_0.updateTodayDefeatCount(arg_62_0)
+	getProxy(DailyLevelProxy):updateChapterDefeatCount(arg_62_0.configId)
 end
 
-function slot0.enoughTimes2Start(slot0)
-	if slot0:isTriesLimit() then
-		return slot0:getTodayDefeatCount() < slot0:getConfig("count")
+function var_0_0.enoughTimes2Start(arg_63_0)
+	if arg_63_0:isTriesLimit() then
+		return arg_63_0:getTodayDefeatCount() < arg_63_0:getConfig("count")
 	else
 		return true
 	end
 end
 
-function slot0.GetRestDailyBonus(slot0)
-	if slot0:IsRemaster() then
-		return 0
+function var_0_0.GetRestDailyBonus(arg_64_0)
+	local var_64_0 = 0
+
+	if arg_64_0:IsRemaster() then
+		return var_64_0
 	end
 
-	for slot6, slot7 in ipairs(slot0:getConfig("boss_expedition_id")) do
-		slot1 = math.max(slot1, pg.expedition_activity_template[slot7] and slot8.bonus_time or 0)
+	local var_64_1 = arg_64_0:getConfig("boss_expedition_id")
+
+	for iter_64_0, iter_64_1 in ipairs(var_64_1) do
+		local var_64_2 = pg.expedition_activity_template[iter_64_1]
+
+		var_64_0 = math.max(var_64_0, var_64_2 and var_64_2.bonus_time or 0)
 	end
 
-	if pg.chapter_defense[slot0.id] then
-		slot1 = math.max(slot1, slot3.bonus_time or 0)
+	local var_64_3 = pg.chapter_defense[arg_64_0.id]
+
+	if var_64_3 then
+		var_64_0 = math.max(var_64_0, var_64_3.bonus_time or 0)
 	end
 
-	return math.max(slot1 - slot0.todayDefeatCount, 0)
+	return (math.max(var_64_0 - arg_64_0.todayDefeatCount, 0))
 end
 
-function slot0.GetDailyBonusQuota(slot0)
-	return slot0:GetRestDailyBonus() > 0
+function var_0_0.GetDailyBonusQuota(arg_65_0)
+	return arg_65_0:GetRestDailyBonus() > 0
 end
 
-slot0.OPERATION_BUFF_TYPE_COST = "more_oil"
-slot0.OPERATION_BUFF_TYPE_REWARD = "extra_drop"
-slot0.OPERATION_BUFF_TYPE_EXP = "chapter_up"
-slot0.OPERATION_BUFF_TYPE_DESC = "desc"
+var_0_0.OPERATION_BUFF_TYPE_COST = "more_oil"
+var_0_0.OPERATION_BUFF_TYPE_REWARD = "extra_drop"
+var_0_0.OPERATION_BUFF_TYPE_EXP = "chapter_up"
+var_0_0.OPERATION_BUFF_TYPE_DESC = "desc"
 
-function slot0.GetSPOperationItemCacheKey(slot0)
-	return "specialOPItem_" .. slot0
+function var_0_0.GetSPOperationItemCacheKey(arg_66_0)
+	return "specialOPItem_" .. arg_66_0
 end
 
-function slot0.GetSpItems(slot0)
-	slot2 = getProxy(BagProxy):getItemsByType(Item.SPECIAL_OPERATION_TICKET)
+function var_0_0.GetSpItems(arg_67_0)
+	local var_67_0 = {}
+	local var_67_1 = getProxy(BagProxy):getItemsByType(Item.SPECIAL_OPERATION_TICKET)
+	local var_67_2 = arg_67_0:getConfig("special_operation_list")
 
-	if slot0:getConfig("special_operation_list") and #slot3 == 0 then
-		return {}
+	if var_67_2 and #var_67_2 == 0 then
+		return var_67_0
 	end
 
-	for slot7, slot8 in ipairs(pg.benefit_buff_template.all) do
-		if pg.benefit_buff_template[slot8].benefit_type == Chapter.OPERATION_BUFF_TYPE_DESC and table.contains(slot3, slot9.id) then
-			for slot14, slot15 in ipairs(slot2) do
-				if tonumber(slot9.benefit_condition) == slot15.configId then
-					table.insert(slot1, slot15)
+	for iter_67_0, iter_67_1 in ipairs(pg.benefit_buff_template.all) do
+		local var_67_3 = pg.benefit_buff_template[iter_67_1]
+
+		if var_67_3.benefit_type == Chapter.OPERATION_BUFF_TYPE_DESC and table.contains(var_67_2, var_67_3.id) then
+			local var_67_4 = tonumber(var_67_3.benefit_condition)
+
+			for iter_67_2, iter_67_3 in ipairs(var_67_1) do
+				if var_67_4 == iter_67_3.configId then
+					table.insert(var_67_0, iter_67_3)
 
 					break
 				end
@@ -748,63 +828,94 @@ function slot0.GetSpItems(slot0)
 		end
 	end
 
-	return slot1
+	return var_67_0
 end
 
-function slot0.GetSPBuffByItem(slot0)
-	for slot4, slot5 in ipairs(pg.benefit_buff_template.all) do
-		buffConfig = pg.benefit_buff_template[slot5]
+function var_0_0.GetSPBuffByItem(arg_68_0)
+	for iter_68_0, iter_68_1 in ipairs(pg.benefit_buff_template.all) do
+		buffConfig = pg.benefit_buff_template[iter_68_1]
 
-		if buffConfig.benefit_type == Chapter.OPERATION_BUFF_TYPE_DESC and tonumber(buffConfig.benefit_condition) == slot0 then
+		if buffConfig.benefit_type == Chapter.OPERATION_BUFF_TYPE_DESC and tonumber(buffConfig.benefit_condition) == arg_68_0 then
 			return buffConfig.id
 		end
 	end
 end
 
-function slot0.GetActiveSPItemID(slot0)
-	if PlayerPrefs.GetInt(Chapter.GetSPOperationItemCacheKey(slot0.id), 0) == 0 then
+function var_0_0.GetActiveSPItemID(arg_69_0)
+	local var_69_0 = Chapter.GetSPOperationItemCacheKey(arg_69_0.id)
+	local var_69_1 = PlayerPrefs.GetInt(var_69_0, 0)
+
+	if var_69_1 == 0 then
 		return 0
 	end
 
-	if slot0:GetRestDailyBonus() > 0 then
+	if arg_69_0:GetRestDailyBonus() > 0 then
 		return 0
 	end
 
-	if _.detect(slot0:GetSpItems(), function (slot0)
-		return slot0:GetConfigID() == uv0
+	local var_69_2 = arg_69_0:GetSpItems()
+
+	if _.detect(var_69_2, function(arg_70_0)
+		return arg_70_0:GetConfigID() == var_69_1
 	end) then
-		return slot2
+		return var_69_1
 	end
 
 	return 0
 end
 
-function slot0.GetLimitOilCost(slot0, slot1, slot2)
-	if not slot0:isLoop() then
+function var_0_0.GetLimitOilCost(arg_71_0, arg_71_1, arg_71_2)
+	if not arg_71_0:isLoop() then
 		return 9999
 	end
 
-	slot3 = nil
+	local var_71_0
+	local var_71_1
 
-	return slot0:getConfig("use_oil_limit")[slot1 and 3 or (pg.expedition_data_template[slot2].type == ChapterConst.ExpeditionTypeBoss or slot4.type == ChapterConst.ExpeditionTypeMulBoss) and 2 or 1] or 9999
-end
+	if arg_71_1 then
+		var_71_1 = 3
+	else
+		local var_71_2 = pg.expedition_data_template[arg_71_2]
 
-function slot0.IsRemaster(slot0)
-	return getProxy(ChapterProxy):getMapById(slot0:getConfig("map")) and slot1:isRemaster()
-end
-
-function slot0.GetBindActID(slot0)
-	return slot0:getConfig("act_id")
-end
-
-function slot0.GetMaxBattleCount(slot0)
-	slot1 = 0
-
-	if slot0:isTriesLimit() then
-		slot1 = math.clamp((getProxy(ChapterProxy):getMapById(slot0:getConfig("map")):getMapType() ~= Map.ELITE or math.clamp(pg.gameset.hard_level_multiple_sorties_times.key_value, 0, getProxy(DailyLevelProxy):GetRestEliteCount())) and (not slot2:isRemaster() or math.clamp(pg.gameset.archives_level_multiple_sorties_times.key_value, 0, getProxy(ChapterProxy).remasterTickets)) and (not slot2:isActivity() or pg.gameset.activity_level_multiple_sorties_times.key_value) and pg.gameset.main_level_multiple_sorties_times.key_value, 0, slot0:getConfig("count") - slot0:getTodayDefeatCount())
+		var_71_1 = (var_71_2.type == ChapterConst.ExpeditionTypeBoss or var_71_2.type == ChapterConst.ExpeditionTypeMulBoss) and 2 or 1
 	end
 
-	return slot1
+	return arg_71_0:getConfig("use_oil_limit")[var_71_1] or 9999
 end
 
-return slot0
+function var_0_0.IsRemaster(arg_72_0)
+	local var_72_0 = getProxy(ChapterProxy):getMapById(arg_72_0:getConfig("map"))
+
+	return var_72_0 and var_72_0:isRemaster()
+end
+
+function var_0_0.GetBindActID(arg_73_0)
+	return arg_73_0:getConfig("act_id")
+end
+
+function var_0_0.GetMaxBattleCount(arg_74_0)
+	local var_74_0 = 0
+	local var_74_1 = getProxy(ChapterProxy):getMapById(arg_74_0:getConfig("map"))
+
+	if var_74_1:getMapType() == Map.ELITE then
+		var_74_0 = pg.gameset.hard_level_multiple_sorties_times.key_value
+		var_74_0 = math.clamp(var_74_0, 0, getProxy(DailyLevelProxy):GetRestEliteCount())
+	elseif var_74_1:isRemaster() then
+		var_74_0 = pg.gameset.archives_level_multiple_sorties_times.key_value
+		var_74_0 = math.clamp(var_74_0, 0, getProxy(ChapterProxy).remasterTickets)
+	elseif var_74_1:isActivity() then
+		var_74_0 = pg.gameset.activity_level_multiple_sorties_times.key_value
+	else
+		var_74_0 = pg.gameset.main_level_multiple_sorties_times.key_value
+	end
+
+	if arg_74_0:isTriesLimit() then
+		local var_74_2 = arg_74_0:getConfig("count") - arg_74_0:getTodayDefeatCount()
+
+		var_74_0 = math.clamp(var_74_0, 0, var_74_2)
+	end
+
+	return var_74_0
+end
+
+return var_0_0

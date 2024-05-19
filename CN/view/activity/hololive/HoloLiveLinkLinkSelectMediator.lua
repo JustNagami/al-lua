@@ -1,54 +1,65 @@
-slot0 = class("HoloLiveLinkLinkSelectMediator", import("view.base.ContextMediator"))
-slot0.HUB_ID = 3
+﻿local var_0_0 = class("HoloLiveLinkLinkSelectMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:BindEvent()
-	slot0:requestDataFromServer()
+var_0_0.HUB_ID = 3
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:BindEvent()
+	arg_1_0:requestDataFromServer()
 end
 
-function slot0.requestDataFromServer(slot0)
+function var_0_0.requestDataFromServer(arg_2_0)
 	pg.ConnectionMgr.GetInstance():Send(26101, {
 		type = MiniGameRequestCommand.REQUEST_HUB_DATA
-	}, 26102, function (slot0)
-		for slot5, slot6 in ipairs(slot0.hubs) do
-			if slot6.id == uv0.HUB_ID then
-				getProxy(MiniGameProxy):UpdataHubData(slot6)
+	}, 26102, function(arg_3_0)
+		local var_3_0 = getProxy(MiniGameProxy)
+
+		for iter_3_0, iter_3_1 in ipairs(arg_3_0.hubs) do
+			if iter_3_1.id == var_0_0.HUB_ID then
+				var_3_0:UpdataHubData(iter_3_1)
 			end
 		end
 	end)
 end
 
-function slot0.BindEvent(slot0)
+function var_0_0.BindEvent(arg_4_0)
+	return
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_5_0)
 	return {
 		MiniGameProxy.ON_HUB_DATA_UPDATE,
 		GAME.SEND_MINI_GAME_OP_DONE
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	if slot1:getName() == MiniGameProxy.ON_HUB_DATA_UPDATE then
-		if slot1:getBody().id == HoloLiveLinkLinkSelectScene.HOLOLIVE_LINKGAME_HUB_ID then
-			slot0.viewComponent:updateData()
-			slot0.viewComponent:updateUI()
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1:getName()
+	local var_6_1 = arg_6_1:getBody()
+
+	if var_6_0 == MiniGameProxy.ON_HUB_DATA_UPDATE then
+		if var_6_1.id == HoloLiveLinkLinkSelectScene.HOLOLIVE_LINKGAME_HUB_ID then
+			arg_6_0.viewComponent:updateData()
+			arg_6_0.viewComponent:updateUI()
 		end
-	elseif slot2 == GAME.SEND_MINI_GAME_OP_DONE and slot3.cmd == MiniGameOPCommand.CMD_ULTIMATE then
-		seriesAsync({
-			function (slot0)
-				if #uv0.awards > 0 then
-					uv1.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1, slot0)
+	elseif var_6_0 == GAME.SEND_MINI_GAME_OP_DONE and var_6_1.cmd == MiniGameOPCommand.CMD_ULTIMATE then
+		local var_6_2 = {
+			function(arg_7_0)
+				local var_7_0 = var_6_1.awards
+
+				if #var_7_0 > 0 then
+					arg_6_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_7_0, arg_7_0)
 				else
-					slot0()
+					arg_7_0()
 				end
 			end,
-			function (slot0)
-				uv0.viewComponent:updateData()
-				uv0.viewComponent:updateUI()
+			function(arg_8_0)
+				arg_6_0.viewComponent:updateData()
+				arg_6_0.viewComponent:updateUI()
 			end
-		})
+		}
+
+		seriesAsync(var_6_2)
 	end
 end
 
-return slot0
+return var_0_0

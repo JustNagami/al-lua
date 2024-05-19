@@ -1,74 +1,80 @@
-slot0 = class("FeastShip", import("model.vo.Ship"))
-slot0.BUBBLE_TYPE_EMPTY = 0
-slot0.BUBBLE_TYPE_GREET = 1
-slot0.BUBBLE_TYPE_DRINK = 2
-slot0.BUBBLE_TYPE_EAT = 3
-slot0.BUBBLE_TYPE_DANCE = 4
-slot0.BUBBLE_TYPE_SLEEP = 5
-slot0.CHAT_BUBBLE_TYPE_EMPTY = 0
-slot0.CHAT_BUBBLE_TYPE_1 = 1
-slot0.CHAT_BUBBLE_TYPE_2 = 2
+﻿local var_0_0 = class("FeastShip", import("model.vo.Ship"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.tid = slot1.tid
+var_0_0.BUBBLE_TYPE_EMPTY = 0
+var_0_0.BUBBLE_TYPE_GREET = 1
+var_0_0.BUBBLE_TYPE_DRINK = 2
+var_0_0.BUBBLE_TYPE_EAT = 3
+var_0_0.BUBBLE_TYPE_DANCE = 4
+var_0_0.BUBBLE_TYPE_SLEEP = 5
+var_0_0.CHAT_BUBBLE_TYPE_EMPTY = 0
+var_0_0.CHAT_BUBBLE_TYPE_1 = 1
+var_0_0.CHAT_BUBBLE_TYPE_2 = 2
 
-	uv0.super.Ctor(slot0, {
-		id = slot0.tid,
-		configId = ShipGroup.getDefaultShipConfig(slot0.tid).id,
-		skin_id = slot0:FilterSkinId(ShipGroup.getSkinList(slot0.tid))
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.tid = arg_1_1.tid
+
+	local var_1_0 = ShipGroup.getDefaultShipConfig(arg_1_0.tid)
+	local var_1_1 = arg_1_0:FilterSkinId(ShipGroup.getSkinList(arg_1_0.tid))
+
+	var_0_0.super.Ctor(arg_1_0, {
+		id = arg_1_0.tid,
+		configId = var_1_0.id,
+		skin_id = var_1_1
 	})
 
-	slot0.bubble = slot1.bubble or 0
-	slot0.speechBubble = slot1.speech_bubble or 0
-	slot0.isSpecial = false
+	arg_1_0.bubble = arg_1_1.bubble or 0
+	arg_1_0.speechBubble = arg_1_1.speech_bubble or 0
+	arg_1_0.isSpecial = false
 end
 
-function slot0.SetSkinId(slot0, slot1)
-	slot0.skinId = slot1
+function var_0_0.SetSkinId(arg_2_0, arg_2_1)
+	arg_2_0.skinId = arg_2_1
 
-	slot0:SetIsSpecial(true)
+	arg_2_0:SetIsSpecial(true)
 end
 
-function slot0.FilterSkinId(slot0, slot1)
-	for slot6, slot7 in ipairs(slot1) do
-		if ShipSkin.GetShopTypeIdBySkinId(slot7.id, {}) == 7 then
-			return slot7.id
+function var_0_0.FilterSkinId(arg_3_0, arg_3_1)
+	local var_3_0 = {}
+
+	for iter_3_0, iter_3_1 in ipairs(arg_3_1) do
+		if ShipSkin.GetShopTypeIdBySkinId(iter_3_1.id, var_3_0) == 7 then
+			return iter_3_1.id
 		end
 	end
 
-	if #slot1 > 0 then
-		return slot1[math.random(1, #slot1)].id
+	if #arg_3_1 > 0 then
+		return arg_3_1[math.random(1, #arg_3_1)].id
 	else
 		return 0
 	end
 end
 
-function slot0.UpdateBubble(slot0, slot1)
-	slot0.bubble = slot1
+function var_0_0.UpdateBubble(arg_4_0, arg_4_1)
+	arg_4_0.bubble = arg_4_1
 end
 
-function slot0.ClearBubble(slot0)
-	slot0.bubble = 0
+function var_0_0.ClearBubble(arg_5_0)
+	arg_5_0.bubble = 0
 end
 
-function slot0.GetBubble(slot0)
-	return slot0.bubble
+function var_0_0.GetBubble(arg_6_0)
+	return arg_6_0.bubble
 end
 
-function slot0.HasBubble(slot0)
-	return slot0.bubble ~= 0
+function var_0_0.HasBubble(arg_7_0)
+	return arg_7_0.bubble ~= 0
 end
 
-function slot0.UpdateSpeechBubble(slot0, slot1)
-	slot0.speechBubble = slot1
+function var_0_0.UpdateSpeechBubble(arg_8_0, arg_8_1)
+	arg_8_0.speechBubble = arg_8_1
 end
 
-function slot0.SetIsSpecial(slot0, slot1)
-	slot0.isSpecial = slot1
+function var_0_0.SetIsSpecial(arg_9_0, arg_9_1)
+	arg_9_0.isSpecial = arg_9_1
 end
 
-function slot0.IsSpecial(slot0)
-	return slot0.isSpecial
+function var_0_0.IsSpecial(arg_10_0)
+	return arg_10_0.isSpecial
 end
 
-return slot0
+return var_0_0

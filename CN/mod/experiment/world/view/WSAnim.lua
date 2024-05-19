@@ -1,34 +1,35 @@
-slot0 = class("WSAnim", import("...BaseEntity"))
-slot0.Fields = {
+﻿local var_0_0 = class("WSAnim", import("...BaseEntity"))
+
+var_0_0.Fields = {
 	caches = "table"
 }
 
-function slot0.Setup(slot0)
-	slot0.caches = {}
+function var_0_0.Setup(arg_1_0)
+	arg_1_0.caches = {}
 end
 
-function slot0.Dispose(slot0)
-	for slot4, slot5 in pairs(slot0.caches) do
-		slot5:Dispose()
+function var_0_0.Dispose(arg_2_0)
+	for iter_2_0, iter_2_1 in pairs(arg_2_0.caches) do
+		iter_2_1:Dispose()
 	end
 
-	slot0:Clear()
+	arg_2_0:Clear()
 end
 
-function slot0.GetAnim(slot0, slot1)
-	return slot0.caches[slot1]
+function var_0_0.GetAnim(arg_3_0, arg_3_1)
+	return arg_3_0.caches[arg_3_1]
 end
 
-function slot0.SetAnim(slot0, slot1, slot2)
-	slot0.caches[slot1] = slot2
+function var_0_0.SetAnim(arg_4_0, arg_4_1, arg_4_2)
+	arg_4_0.caches[arg_4_1] = arg_4_2
 end
 
-function slot0.Stop(slot0)
-	for slot4, slot5 in pairs(slot0.caches) do
-		if slot5.playing then
-			slot5:Stop()
+function var_0_0.Stop(arg_5_0)
+	for iter_5_0, iter_5_1 in pairs(arg_5_0.caches) do
+		if iter_5_1.playing then
+			iter_5_1:Stop()
 		end
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,1 +1,1 @@
-return class("BackYardThemTemplateFurnitureCard", import("...Shop.cards.BackYardFurnitureCard"))
+﻿return (class("BackYardThemTemplateFurnitureCard", import("...Shop.cards.BackYardFurnitureCard")))

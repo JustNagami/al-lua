@@ -1,62 +1,64 @@
-slot0 = class("CommanderBoxesPage", import("...base.BaseSubView"))
+﻿local var_0_0 = class("CommanderBoxesPage", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CommanderBoxesUI"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.boxCards = {}
-	slot0.startBtn = slot0._tf:Find("frame/boxes/start_btn")
-	slot0.finishBtn = slot0._tf:Find("frame/boxes/finish_btn")
-	slot0.quicklyFinishAllBtn = slot0._tf:Find("frame/boxes/quick_all")
-	slot0.settingsBtn = slot0._tf:Find("frame/boxes/setting_btn")
-	slot0.closeBtn = slot0._tf:Find("frame/close_btn")
-	slot0.boxesList = UIItemList.New(slot0._tf:Find("frame/boxes/mask/content"), slot0._tf:Find("frame/boxes/mask/content/frame"))
-	slot0.scrollRect = slot0._tf:Find("frame/boxes/mask")
-	slot0.traningCnt = slot0._tf:Find("frame/boxes/statistics/traning"):GetComponent(typeof(Text))
-	slot0.waitCnt = slot0._tf:Find("frame/boxes/statistics/wait"):GetComponent(typeof(Text))
-	slot0.itemCnt = slot0._tf:Find("frame/item/Text"):GetComponent(typeof(Text))
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.boxCards = {}
+	arg_2_0.startBtn = arg_2_0._tf:Find("frame/boxes/start_btn")
+	arg_2_0.finishBtn = arg_2_0._tf:Find("frame/boxes/finish_btn")
+	arg_2_0.quicklyFinishAllBtn = arg_2_0._tf:Find("frame/boxes/quick_all")
+	arg_2_0.settingsBtn = arg_2_0._tf:Find("frame/boxes/setting_btn")
+	arg_2_0.closeBtn = arg_2_0._tf:Find("frame/close_btn")
+	arg_2_0.boxesList = UIItemList.New(arg_2_0._tf:Find("frame/boxes/mask/content"), arg_2_0._tf:Find("frame/boxes/mask/content/frame"))
+	arg_2_0.scrollRect = arg_2_0._tf:Find("frame/boxes/mask")
+	arg_2_0.traningCnt = arg_2_0._tf:Find("frame/boxes/statistics/traning"):GetComponent(typeof(Text))
+	arg_2_0.waitCnt = arg_2_0._tf:Find("frame/boxes/statistics/wait"):GetComponent(typeof(Text))
+	arg_2_0.itemCnt = arg_2_0._tf:Find("frame/item/Text"):GetComponent(typeof(Text))
 
-	setActive(slot0._tf:Find("frame/item"), not LOCK_CATTERY)
+	setActive(arg_2_0._tf:Find("frame/item"), not LOCK_CATTERY)
 
-	slot0.mask = slot0._tf:Find("mask")
+	arg_2_0.mask = arg_2_0._tf:Find("mask")
 
-	setActive(slot0.mask, false)
+	setActive(arg_2_0.mask, false)
 
-	slot0.buildPoolPanel = CommanderBuildPoolPanel.New(slot0._tf, slot0.event, slot0.contextData)
-	slot0.quicklyToolPage = CommanderQuicklyToolPage.New(slot0._tf, slot0.event)
-	slot0.quicklyToolMsgbox = CommanderQuicklyFinishBoxMsgBoxPage.New(slot0._tf, slot0.event)
-	slot0.lockFlagSettingPage = CommanderLockFlagSettingPage.New(slot0._tf, slot0.event, slot0.contextData)
-	slot0.buildResultPage = GetCommanderResultPage.New(slot0._tf, slot0.event)
+	arg_2_0.buildPoolPanel = CommanderBuildPoolPanel.New(arg_2_0._tf, arg_2_0.event, arg_2_0.contextData)
+	arg_2_0.quicklyToolPage = CommanderQuicklyToolPage.New(arg_2_0._tf, arg_2_0.event)
+	arg_2_0.quicklyToolMsgbox = CommanderQuicklyFinishBoxMsgBoxPage.New(arg_2_0._tf, arg_2_0.event)
+	arg_2_0.lockFlagSettingPage = CommanderLockFlagSettingPage.New(arg_2_0._tf, arg_2_0.event, arg_2_0.contextData)
+	arg_2_0.buildResultPage = GetCommanderResultPage.New(arg_2_0._tf, arg_2_0.event)
 
-	setActive(slot0._tf:Find("frame"), true)
+	setActive(arg_2_0._tf:Find("frame"), true)
 end
 
-function slot0.OnInit(slot0)
-	slot0:RegisterEvent()
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	arg_3_0:RegisterEvent()
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.startBtn, function ()
-		for slot4, slot5 in ipairs(uv0.boxes) do
-			if slot5:getState() == CommanderBox.STATE_EMPTY then
-				slot0 = 0 + 1
+	onButton(arg_3_0, arg_3_0.startBtn, function()
+		local var_6_0 = 0
+
+		for iter_6_0, iter_6_1 in ipairs(arg_3_0.boxes) do
+			if iter_6_1:getState() == CommanderBox.STATE_EMPTY then
+				var_6_0 = var_6_0 + 1
 			end
 		end
 
-		if slot0 == 0 then
+		if var_6_0 == 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_build_solt_deficiency"))
 
 			return
 		end
 
-		uv0.buildPoolPanel:ExecuteAction("Show", uv0.pools, slot0)
+		arg_3_0.buildPoolPanel:ExecuteAction("Show", arg_3_0.pools, var_6_0)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.finishBtn, function ()
-		if #uv0.boxes <= 0 then
+	onButton(arg_3_0, arg_3_0.finishBtn, function()
+		if #arg_3_0.boxes <= 0 then
 			return
 		end
 
@@ -70,189 +72,203 @@ function slot0.OnInit(slot0)
 			return
 		end
 
-		scrollTo(uv0.scrollRect, nil, 1)
-		uv0:emit(CommanderCatMediator.BATCH_GET, uv0.boxes)
+		scrollTo(arg_3_0.scrollRect, nil, 1)
+		arg_3_0:emit(CommanderCatMediator.BATCH_GET, arg_3_0.boxes)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.settingsBtn, function ()
-		uv0.lockFlagSettingPage:ExecuteAction("Show")
+	onButton(arg_3_0, arg_3_0.settingsBtn, function()
+		arg_3_0.lockFlagSettingPage:ExecuteAction("Show")
 	end, SFX_PANEL)
-	setActive(slot0.settingsBtn, false)
-	onButton(slot0, slot0.quicklyFinishAllBtn, function ()
-		if getProxy(BagProxy):getItemCountById(Item.COMMANDER_QUICKLY_TOOL_ID) <= 0 then
+	setActive(arg_3_0.settingsBtn, false)
+	onButton(arg_3_0, arg_3_0.quicklyFinishAllBtn, function()
+		local var_9_0 = Item.COMMANDER_QUICKLY_TOOL_ID
+
+		if getProxy(BagProxy):getItemCountById(var_9_0) <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("cat_accelfrate_notenough"))
 
 			return
 		end
 
-		slot2, slot3, slot4, slot5 = getProxy(CommanderProxy):CalcQuickItemUsageCnt()
+		local var_9_1, var_9_2, var_9_3, var_9_4 = getProxy(CommanderProxy):CalcQuickItemUsageCnt()
 
-		if slot2 <= 0 then
+		if var_9_1 <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("noacceleration_tips"))
 
 			return
 		end
 
-		uv0.contextData.msgBox:ExecuteAction("Show", {
-			content = i18n("acceleration_tips_1", slot2, slot3),
-			content1 = i18n("acceleration_tips_2", slot5[1], slot5[2], slot5[3]),
-			onYes = function ()
-				uv0:emit(CommanderCatMediator.ONE_KEY, uv1, uv2, uv3)
+		arg_3_0.contextData.msgBox:ExecuteAction("Show", {
+			content = i18n("acceleration_tips_1", var_9_1, var_9_2),
+			content1 = i18n("acceleration_tips_2", var_9_4[1], var_9_4[2], var_9_4[3]),
+			onYes = function()
+				arg_3_0:emit(CommanderCatMediator.ONE_KEY, var_9_1, var_9_2, var_9_3)
 			end
 		})
 	end, SFX_PANEL)
 end
 
-function slot0.RegisterEvent(slot0)
-	slot0:bind(CommanderCatScene.MSG_QUICKLY_FINISH_TOOL_ERROR, function (slot0)
+function var_0_0.RegisterEvent(arg_11_0)
+	arg_11_0:bind(CommanderCatScene.MSG_QUICKLY_FINISH_TOOL_ERROR, function(arg_12_0)
 		pg.TipsMgr.GetInstance():ShowTips(i18n("comander_tool_cnt_is_reclac"))
-		triggerButton(uv0.quicklyFinishAllBtn)
+		triggerButton(arg_11_0.quicklyFinishAllBtn)
 	end)
-	slot0:bind(CommanderCatScene.MSG_BUILD, function (slot0)
-		uv0:Flush()
+	arg_11_0:bind(CommanderCatScene.MSG_BUILD, function(arg_13_0)
+		arg_11_0:Flush()
 	end)
-	slot0:bind(CommanderCatScene.MSG_BATCH_BUILD, function (slot0, slot1)
-		print(#slot1)
+	arg_11_0:bind(CommanderCatScene.MSG_BATCH_BUILD, function(arg_14_0, arg_14_1)
+		print(#arg_14_1)
 
-		if slot1 and #slot1 > 0 then
-			uv0.buildResultPage:ExecuteAction("Show", slot1)
+		if arg_14_1 and #arg_14_1 > 0 then
+			arg_11_0.buildResultPage:ExecuteAction("Show", arg_14_1)
 		end
 	end)
-	slot0:bind(CommanderCatScene.EVENT_QUICKLY_TOOL, function (slot0, slot1)
-		uv0.quicklyToolPage:ExecuteAction("Show", slot1, Item.COMMANDER_QUICKLY_TOOL_ID)
+	arg_11_0:bind(CommanderCatScene.EVENT_QUICKLY_TOOL, function(arg_15_0, arg_15_1)
+		local var_15_0 = Item.COMMANDER_QUICKLY_TOOL_ID
+
+		arg_11_0.quicklyToolPage:ExecuteAction("Show", arg_15_1, var_15_0)
 	end)
-	slot0:bind(CommanderCatScene.MSG_OPEN_BOX, function (slot0, slot1, slot2)
-		uv0:PlayAnimation(slot1, slot2)
+	arg_11_0:bind(CommanderCatScene.MSG_OPEN_BOX, function(arg_16_0, arg_16_1, arg_16_2)
+		arg_11_0:PlayAnimation(arg_16_1, arg_16_2)
 	end)
 end
 
-function slot0.Update(slot0)
-	slot0:Show()
-	slot0:Flush()
+function var_0_0.Update(arg_17_0)
+	arg_17_0:Show()
+	arg_17_0:Flush()
 end
 
-function slot0.Flush(slot0)
-	slot0.boxes = getProxy(CommanderProxy):getBoxes()
-	slot0.pools = getProxy(CommanderProxy):getPools()
+function var_0_0.Flush(arg_18_0)
+	arg_18_0.boxes = getProxy(CommanderProxy):getBoxes()
+	arg_18_0.pools = getProxy(CommanderProxy):getPools()
 
-	slot0:UpdateList()
-	slot0:UpdateItem()
-	slot0:updateCntLabel()
+	arg_18_0:UpdateList()
+	arg_18_0:UpdateItem()
+	arg_18_0:updateCntLabel()
 end
 
-function slot0.UpdateList(slot0)
-	slot1 = _.map(slot0.boxes, function (slot0)
-		slot0.state = slot0:getState()
+function var_0_0.UpdateList(arg_19_0)
+	local var_19_0 = _.map(arg_19_0.boxes, function(arg_20_0)
+		arg_20_0.state = arg_20_0:getState()
 
-		return slot0
+		return arg_20_0
 	end)
 
-	table.sort(slot1, function (slot0, slot1)
-		if slot0.state == slot1.state then
-			return slot0.index < slot1.index
+	table.sort(var_19_0, function(arg_21_0, arg_21_1)
+		local var_21_0 = arg_21_0.state
+		local var_21_1 = arg_21_1.state
+
+		if var_21_0 == var_21_1 then
+			return arg_21_0.index < arg_21_1.index
 		else
-			return slot3 < slot2
+			return var_21_1 < var_21_0
 		end
 	end)
-	slot0.boxesList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
+	arg_19_0.boxesList:make(function(arg_22_0, arg_22_1, arg_22_2)
+		if arg_22_0 == UIItemList.EventUpdate then
+			local var_22_0 = var_19_0[arg_22_1 + 1]
+			local var_22_1 = arg_19_0.boxCards[arg_22_1]
 
-			if not uv1.boxCards[slot1] then
-				uv1.boxCards[slot1] = CommanderBoxCard.New(uv1, slot2)
+			if not var_22_1 then
+				var_22_1 = CommanderBoxCard.New(arg_19_0, arg_22_2)
+				arg_19_0.boxCards[arg_22_1] = var_22_1
 			end
 
-			if not (slot1 > 3 and slot3.state == CommanderBox.STATE_EMPTY) then
-				slot4:Update(slot3)
+			local var_22_2 = arg_22_1 > 3 and var_22_0.state == CommanderBox.STATE_EMPTY
+
+			if not var_22_2 then
+				var_22_1:Update(var_22_0)
 			else
-				slot4:Clear()
+				var_22_1:Clear()
 			end
 
-			setActive(slot2, not slot5)
+			setActive(arg_22_2, not var_22_2)
 		end
 	end)
-	slot0.boxesList:align(#slot1)
+	arg_19_0.boxesList:align(#var_19_0)
 end
 
-function slot0.updateCntLabel(slot0)
-	_.each(slot0.boxes, function (slot0)
-		slot0.state = slot0:getState()
+function var_0_0.updateCntLabel(arg_23_0)
+	local var_23_0 = 0
+	local var_23_1 = 0
 
-		if slot0.state == CommanderBox.STATE_WAITING then
-			uv0 = uv0 + 1
-		elseif slot0.state == CommanderBox.STATE_STARTING then
-			uv1 = uv1 + 1
+	_.each(arg_23_0.boxes, function(arg_24_0)
+		arg_24_0.state = arg_24_0:getState()
+
+		if arg_24_0.state == CommanderBox.STATE_WAITING then
+			var_23_1 = var_23_1 + 1
+		elseif arg_24_0.state == CommanderBox.STATE_STARTING then
+			var_23_0 = var_23_0 + 1
 		end
 	end)
 
-	slot0.traningCnt.text = 0 .. "/" .. CommanderProxy.MAX_WORK_COUNT
-	slot0.waitCnt.text = 0 .. "/" .. CommanderProxy.MAX_SLOT - CommanderProxy.MAX_WORK_COUNT
+	arg_23_0.traningCnt.text = var_23_0 .. "/" .. CommanderProxy.MAX_WORK_COUNT
+	arg_23_0.waitCnt.text = var_23_1 .. "/" .. CommanderProxy.MAX_SLOT - CommanderProxy.MAX_WORK_COUNT
 end
 
-function slot0.Show(slot0)
-	slot0.activation = true
+function var_0_0.Show(arg_25_0)
+	arg_25_0.activation = true
 
-	setActive(slot0._go, true)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
+	setActive(arg_25_0._go, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_25_0._tf, false, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 end
 
-function slot0.Hide(slot0)
-	slot0.activation = false
+function var_0_0.Hide(arg_26_0)
+	arg_26_0.activation = false
 
-	setActive(slot0._go, false)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
+	setActive(arg_26_0._go, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_26_0._tf, arg_26_0._parentTf)
 end
 
-function slot0.isShow(slot0)
-	return slot0.activation
+function var_0_0.isShow(arg_27_0)
+	return arg_27_0.activation
 end
 
-function slot0.PlayAnimation(slot0, slot1, slot2)
-	slot3 = nil
+function var_0_0.PlayAnimation(arg_28_0, arg_28_1, arg_28_2)
+	local var_28_0
 
-	for slot7, slot8 in pairs(slot0.boxCards) do
-		if slot8.boxVO and slot8.boxVO.id == slot1 then
-			slot3 = slot8
+	for iter_28_0, iter_28_1 in pairs(arg_28_0.boxCards) do
+		if iter_28_1.boxVO and iter_28_1.boxVO.id == arg_28_1 then
+			var_28_0 = iter_28_1
 
 			break
 		end
 	end
 
-	if slot3 then
-		slot3:playAnim(slot2)
+	if var_28_0 then
+		var_28_0:playAnim(arg_28_2)
 	else
-		slot2()
+		arg_28_2()
 	end
 end
 
-function slot0.CanBack(slot0)
-	if slot0.buildPoolPanel and slot0.buildPoolPanel:GetLoaded() and slot0.buildPoolPanel:isShowing() then
-		slot0.buildPoolPanel:Hide()
+function var_0_0.CanBack(arg_29_0)
+	if arg_29_0.buildPoolPanel and arg_29_0.buildPoolPanel:GetLoaded() and arg_29_0.buildPoolPanel:isShowing() then
+		arg_29_0.buildPoolPanel:Hide()
 
 		return false
 	end
 
-	if slot0.quicklyToolPage and slot0.quicklyToolPage:GetLoaded() and slot0.quicklyToolPage:isShowing() then
-		slot0.quicklyToolPage:Hide()
+	if arg_29_0.quicklyToolPage and arg_29_0.quicklyToolPage:GetLoaded() and arg_29_0.quicklyToolPage:isShowing() then
+		arg_29_0.quicklyToolPage:Hide()
 
 		return false
 	end
 
-	if slot0.quicklyToolMsgbox and slot0.quicklyToolMsgbox:GetLoaded() and slot0.quicklyToolMsgbox:isShowing() then
-		slot0.quicklyToolMsgbox:Hide()
+	if arg_29_0.quicklyToolMsgbox and arg_29_0.quicklyToolMsgbox:GetLoaded() and arg_29_0.quicklyToolMsgbox:isShowing() then
+		arg_29_0.quicklyToolMsgbox:Hide()
 
 		return false
 	end
 
-	if slot0.lockFlagSettingPage and slot0.lockFlagSettingPage:GetLoaded() and slot0.lockFlagSettingPage:isShowing() then
-		slot0.lockFlagSettingPage:Hide()
+	if arg_29_0.lockFlagSettingPage and arg_29_0.lockFlagSettingPage:GetLoaded() and arg_29_0.lockFlagSettingPage:isShowing() then
+		arg_29_0.lockFlagSettingPage:Hide()
 
 		return false
 	end
 
-	if slot0.buildResultPage and slot0.buildResultPage:GetLoaded() and slot0.buildResultPage:isShowing() then
-		slot0.buildResultPage:Hide()
+	if arg_29_0.buildResultPage and arg_29_0.buildResultPage:GetLoaded() and arg_29_0.buildResultPage:isShowing() then
+		arg_29_0.buildResultPage:Hide()
 
 		return false
 	end
@@ -260,36 +276,36 @@ function slot0.CanBack(slot0)
 	return true
 end
 
-function slot0.UpdateItem(slot0)
-	slot0.itemCnt.text = getProxy(BagProxy):getItemCountById(Item.COMMANDER_QUICKLY_TOOL_ID)
+function var_0_0.UpdateItem(arg_30_0)
+	arg_30_0.itemCnt.text = getProxy(BagProxy):getItemCountById(Item.COMMANDER_QUICKLY_TOOL_ID)
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:Hide()
+function var_0_0.OnDestroy(arg_31_0)
+	arg_31_0:Hide()
 
-	for slot4, slot5 in pairs(slot0.boxCards or {}) do
-		slot5:Destroy()
+	for iter_31_0, iter_31_1 in pairs(arg_31_0.boxCards or {}) do
+		iter_31_1:Destroy()
 	end
 
-	slot0.boxCards = {}
+	arg_31_0.boxCards = {}
 
-	if slot0.quicklyToolMsgbox then
-		slot0.quicklyToolMsgbox:Destroy()
+	if arg_31_0.quicklyToolMsgbox then
+		arg_31_0.quicklyToolMsgbox:Destroy()
 
-		slot0.quicklyToolMsgbox = nil
+		arg_31_0.quicklyToolMsgbox = nil
 	end
 
-	if slot0.lockFlagSettingPage then
-		slot0.lockFlagSettingPage:Destroy()
+	if arg_31_0.lockFlagSettingPage then
+		arg_31_0.lockFlagSettingPage:Destroy()
 
-		slot0.lockFlagSettingPage = nil
+		arg_31_0.lockFlagSettingPage = nil
 	end
 
-	if slot0.buildResultPage then
-		slot0.buildResultPage:Destroy()
+	if arg_31_0.buildResultPage then
+		arg_31_0.buildResultPage:Destroy()
 
-		slot0.buildResultPage = nil
+		arg_31_0.buildResultPage = nil
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,26 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffShield",
+			trigger = {
+				"onStack",
+				"onTakeDamage"
+			},
+			arg_list = {
+				casterMaxHPRatio = 0.05
+			}
+		},
+		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				tag = "LaffeyIIshield"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -247,27 +269,5 @@ return {
 	stack = 1,
 	id = 17323,
 	icon = 17320,
-	last_effect = "Shield",
-	effect_list = {
-		{
-			type = "BattleBuffShield",
-			trigger = {
-				"onStack",
-				"onTakeDamage"
-			},
-			arg_list = {
-				casterMaxHPRatio = 0.05
-			}
-		},
-		{
-			type = "BattleBuffAddTag",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				tag = "LaffeyIIshield"
-			}
-		}
-	}
+	last_effect = "Shield"
 }

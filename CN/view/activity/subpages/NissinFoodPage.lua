@@ -1,52 +1,57 @@
-slot0 = class("NissinFoodPage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("NissinFoodPage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.helpBtn = slot0:findTF("help_btn", slot0.bg)
-	slot0.startBtn = slot0:findTF("start_btn", slot0.bg)
-	slot0.cupList = slot0:findTF("cup_list", slot0.bg)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.helpBtn = arg_1_0:findTF("help_btn", arg_1_0.bg)
+	arg_1_0.startBtn = arg_1_0:findTF("start_btn", arg_1_0.bg)
+	arg_1_0.cupList = arg_1_0:findTF("cup_list", arg_1_0.bg)
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot0.hubID = slot0.activity:getConfig("config_id")
-	slot0.drop_list = slot0.activity:getConfig("config_client")
+function var_0_0.OnFirstFlush(arg_2_0)
+	arg_2_0.hubID = arg_2_0.activity:getConfig("config_id")
+	arg_2_0.drop_list = arg_2_0.activity:getConfig("config_client")
 
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_2_0, arg_2_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("chazi_tips")
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.startBtn, function ()
+	onButton(arg_2_0, arg_2_0.startBtn, function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 29)
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	eachChild(slot0.cupList, function (slot0)
-		setActive(uv0:findTF("lock", slot0), tonumber(slot0.name) > uv1.count + uv1.usedtime)
-		setActive(uv0:findTF("got", slot0), slot1 <= uv1.usedtime)
+function var_0_0.OnUpdateFlush(arg_5_0)
+	local var_5_0 = getProxy(MiniGameProxy):GetHubByHubId(arg_5_0.hubID)
 
-		slot2 = uv0:findTF("mask/award", slot0)
-		slot3 = uv0.drop_list[slot1]
+	eachChild(arg_5_0.cupList, function(arg_6_0)
+		local var_6_0 = tonumber(arg_6_0.name)
 
-		updateDrop(slot2, {
-			type = slot3[1],
-			id = slot3[2],
-			count = slot3[3]
-		})
-		onButton(uv0, slot2, function ()
-			uv0:emit(BaseUI.ON_DROP, uv1)
+		setActive(arg_5_0:findTF("lock", arg_6_0), var_6_0 > var_5_0.count + var_5_0.usedtime)
+		setActive(arg_5_0:findTF("got", arg_6_0), var_6_0 <= var_5_0.usedtime)
+
+		local var_6_1 = arg_5_0:findTF("mask/award", arg_6_0)
+		local var_6_2 = arg_5_0.drop_list[var_6_0]
+		local var_6_3 = {
+			type = var_6_2[1],
+			id = var_6_2[2],
+			count = var_6_2[3]
+		}
+
+		updateDrop(var_6_1, var_6_3)
+		onButton(arg_5_0, var_6_1, function()
+			arg_5_0:emit(BaseUI.ON_DROP, var_6_3)
 		end, SFX_PANEL)
 	end)
 
-	if getProxy(MiniGameProxy):GetHubByHubId(slot0.hubID).ultimate == 0 and slot2:getConfig("reward_need") <= slot2.usedtime then
+	if var_5_0.ultimate == 0 and var_5_0.usedtime >= var_5_0:getConfig("reward_need") then
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = slot2.id,
+			hubid = var_5_0.id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 3,
-	color = "yellow",
-	picture = "",
-	desc = "",
-	stack = 4,
-	id = 17002,
-	icon = 17000,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -43,5 +23,25 @@ return {
 				target = "TargetSelf"
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 3,
+	color = "yellow",
+	picture = "",
+	desc = "",
+	stack = 4,
+	id = 17002,
+	icon = 17000,
+	last_effect = ""
 }

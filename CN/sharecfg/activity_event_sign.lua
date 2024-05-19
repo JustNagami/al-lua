@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_event_sign = {
 	[5082] = {
 		drop_display = {

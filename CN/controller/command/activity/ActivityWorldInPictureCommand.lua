@@ -1,56 +1,57 @@
-slot0 = class("ActivityWorldInPictureCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ActivityWorldInPictureCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORLDINPICTURE)
 
-	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORLDINPICTURE) or slot3:isEnd() then
+	if not var_1_1 or var_1_1:isEnd() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(11202, {
-		activity_id = slot3.id,
-		cmd = slot2.cmd,
-		arg1 = slot2.cmd == ActivityConst.WORLDINPICTURE_OP_DRAW and slot2.index or slot2.arg1,
-		arg2 = slot2.arg2,
+		activity_id = var_1_1.id,
+		cmd = var_1_0.cmd,
+		arg1 = var_1_0.cmd == ActivityConst.WORLDINPICTURE_OP_DRAW and var_1_0.index or var_1_0.arg1,
+		arg2 = var_1_0.arg2,
 		arg_list = {}
-	}, 11203, function (slot0)
-		if slot0.result == 0 then
-			slot1 = PlayerConst.addTranDrop(slot0.award_list)
+	}, 11203, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.award_list)
 
-			if uv0.cmd == ActivityConst.WORLDINPICTURE_OP_TURN then
-				uv1.data2 = uv1.data2 - 1
+			if var_1_0.cmd == ActivityConst.WORLDINPICTURE_OP_TURN then
+				var_1_1.data2 = var_1_1.data2 - 1
 
-				table.insert(uv1.data1_list, uv0.index)
-			elseif uv0.cmd == ActivityConst.WORLDINPICTURE_OP_DRAW then
-				uv1.data3 = uv1.data3 - 1
+				table.insert(var_1_1.data1_list, var_1_0.index)
+			elseif var_1_0.cmd == ActivityConst.WORLDINPICTURE_OP_DRAW then
+				var_1_1.data3 = var_1_1.data3 - 1
 
-				table.insert(uv1.data2_list, uv0.index)
+				table.insert(var_1_1.data2_list, var_1_0.index)
 			end
 
-			getProxy(ActivityProxy):updateActivity(uv1)
-			uv2:sendNotification(GAME.WORLDIN_PICTURE_OP_DONE, {
-				activity = uv1,
-				cmd = uv0.cmd,
-				arg1 = uv0.arg1,
-				arg2 = uv0.arg2,
-				auto = uv0.auto,
-				awards = slot1
+			getProxy(ActivityProxy):updateActivity(var_1_1)
+			arg_1_0:sendNotification(GAME.WORLDIN_PICTURE_OP_DONE, {
+				activity = var_1_1,
+				cmd = var_1_0.cmd,
+				arg1 = var_1_0.arg1,
+				arg2 = var_1_0.arg2,
+				auto = var_1_0.auto,
+				awards = var_2_0
 			})
 		else
-			if slot0.result == 3 or slot0.result == 4 then
+			if arg_2_0.result == 3 or arg_2_0.result == 4 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("activity_op_error", slot0.result))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("activity_op_error", arg_2_0.result))
 			end
 
-			uv2:sendNotification(GAME.WORLDIN_PICTURE_OP_ERRO, {
-				cmd = uv0.cmd,
-				auto = uv0.auto
+			arg_1_0:sendNotification(GAME.WORLDIN_PICTURE_OP_ERRO, {
+				cmd = var_1_0.cmd,
+				auto = var_1_0.auto
 			})
 		end
 	end)
 end
 
-return slot0
+return var_0_0

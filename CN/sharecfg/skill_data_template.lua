@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.skill_data_template = setmetatable({
 	__name = "skill_data_template",
 	all = {
@@ -6291,7 +6291,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身氧气存量额外提高$1点",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -6354,7 +6354,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身氧气不足浮上水面后，水面作战的持续时间增加$1秒",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -6417,7 +6417,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "鱼雷移动速度降低1，伤害提高$1",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -6480,7 +6480,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "对轻巡洋舰伤害提升$1",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -6543,7 +6543,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "对重巡、超巡伤害提升$1",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -6606,7 +6606,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "对航空母舰伤害提升$1",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -6669,7 +6669,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "出击时，编队中每有一个铁血阵营潜艇角色，自身雷击、命中、装填属性上升$1",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -6732,7 +6732,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "战斗中，若制空状态不为制空权劣势或制空权丧失，提升自身炮击、雷击、装填$1",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -6795,7 +6795,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身氧气存量额外提高$1点；在潜艇编队中时，在该编队的狩猎范围外，可以进行一次战斗内潜艇支援",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -8290,7 +8290,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "",
 		system_transform = {
-			[51.0] = 4176
+			[51] = 4176
 		},
 		world_death_mark = {
 			1
@@ -10367,7 +10367,7 @@ pg.base.skill_data_template = {
 		max_level = 0,
 		desc = "【演习特效】旗舰角色装备时，提高双方航母、轻母10%的伤害，降低双方战列、战巡10%的伤害（带有演习特效的装备只能同时装备一种）",
 		system_transform = {
-			[3.0] = 6741
+			[3] = 6741
 		},
 		world_death_mark = {
 			1
@@ -10397,7 +10397,7 @@ pg.base.skill_data_template = {
 		max_level = 0,
 		desc = "【演习特效】旗舰角色装备时，降低双方伤害15%（带有演习特效的装备只能同时装备一种）",
 		system_transform = {
-			[3.0] = 6761
+			[3] = 6761
 		},
 		world_death_mark = {
 			1
@@ -13753,7 +13753,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "每20秒，有$1概率触发专属技能弹幕(依据技能等级)",
 		system_transform = {
-			[3.0] = 10131
+			[3] = 10131
 		},
 		world_death_mark = {
 			1
@@ -14852,7 +14852,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "主炮开火时，有$1概率朝自己前方发射一轮专属弹幕(威力依据技能等级)，所有主力舰队角色装填提高$2，持续8秒",
 		system_transform = {
-			[3.0] = 10291
+			[3] = 10291
 		},
 		world_death_mark = {
 			1
@@ -20405,7 +20405,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "每20秒，有$1概率发射强力弹幕",
 		system_transform = {
-			[3.0] = 11001
+			[3] = 11001
 		},
 		world_death_mark = {
 			1
@@ -22615,7 +22615,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "对战列舰伤害提高$1；主炮开火时，有$2概率发射一轮三式弹弹幕(弹幕样式、强度依据技能等级)",
 		system_transform = {
-			[3.0] = 11271
+			[3] = 11271
 		},
 		world_death_mark = {
 			1
@@ -23443,7 +23443,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入战斗8秒后，发射一轮穿透鱼雷$1(威力和样式依据技能等级)，穿透鱼雷可以对一名敌方造成伤害后，穿透并继续前进，仍可对第二个敌方造成伤害",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -23501,7 +23501,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "对重巡、超巡伤害提高$1；从战场撤离时，发射一轮鱼雷攻击(威力和样式依据技能等级)",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -23564,7 +23564,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "对航母造成的伤害提高$2；鱼雷击中敌方时，有$1概率使其在24秒内进水，每3秒受到一次伤害(伤害依据雷击属性)，不可叠加，持续时间内触发将刷新时间",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -23733,7 +23733,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身机动提高$2；出击时，编队中每有一个铁血阵营潜艇角色，自身雷击、装填、命中属性上升$1",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -23963,7 +23963,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "鱼雷命中敌人后，若在5秒内自身鱼雷再次对该敌人造成伤害，造成的伤害提高$1",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -24177,7 +24177,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入关卡时，若潜艇编队仅有自身一名角色，自身对战列舰(不包括战巡、航战)造成的伤害提高$1、狩猎范围等级+1、携带弹药量+2",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -24240,7 +24240,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入关卡时，若潜艇编队仅有自身一名角色，自身对战列舰(不包括战巡、航战)造成的伤害提高$1、狩猎范围等级+1、携带弹药量+2",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -25941,7 +25941,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "潜艇氧气不足上浮及从战场撤离时，各发射一组的技能鱼雷$1(威力随技能等级提升)，技能鱼雷有70%概率对命中的敌人造成点燃(点燃伤害依据雷击属性)",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -25990,7 +25990,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "对驱逐舰、轻巡洋舰、航空母舰的伤害提升$1",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -27235,7 +27235,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "主炮开火时，有$1概率朝自己前方发射一轮专属弹幕(威力依据技能等级)",
 		system_transform = {
-			[3.0] = 11811
+			[3] = 11811
 		},
 		world_death_mark = {
 			1
@@ -29043,7 +29043,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身进场时，放飞一架彩云舰载机。接下来的10秒内，主力舰队造成的伤害提升$1",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -29820,7 +29820,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "作为旗舰出击时，自身主炮射击有$1概率触发一轮弹幕，铁血航母造成的伤害提升$2",
 		system_transform = {
-			[3.0] = 12135
+			[3] = 12135
 		},
 		world_death_mark = {
 			1
@@ -30079,7 +30079,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "战斗中，每24秒有$3概率触发弹幕；装备四联装356mm主炮时，自身首轮主炮装填时间减少$1，主炮暴击率提升$2，主炮散布减少2点并强化弹幕样式",
 		system_transform = {
-			[3.0] = 12170
+			[3] = 12170
 		},
 		world_death_mark = {
 			1
@@ -30338,7 +30338,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身在场时，若有队友受到伤害导致耐久低于20%，立即触发一轮鱼雷弹幕(每场战斗只能触发1次)；若此时队友中有{namecode:435}，弹幕样式强化",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -31866,7 +31866,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身进场时，放飞一架零式小型水上侦察机进行攻击(威力依据雷击属性和技能等级)，本场战斗中队伍中所有潜艇、潜母的命中提高$1",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -31929,7 +31929,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身氧气不足上浮时，发射一轮炮击弹幕(威力依据技能等级)；该弹幕及自身炮击命中时有$1概率降低被命中敌人的装填、命中$2，持续15秒",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -32037,7 +32037,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "对航母造成的伤害提高$1；战斗中，自身氧气不足上浮时，发射一轮必定暴击的鱼雷弹幕(威力和样式依据技能等级)",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -32100,7 +32100,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "战斗中，自身命中属性提高$1；位于潜艇编队僚舰位时，开始战斗后向前移动，18秒后，开始撤退回原位",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -32163,7 +32163,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "出击时，编队中铁血阵营潜艇角色回避率提高$1，对驱逐、轻巡伤害提高$1；出击时，编队中每有一个铁血阵营潜艇角色，自身雷击、装填属性上升$2",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -32378,7 +32378,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "战斗中，自身机动提高$1点，自身受到来自雷击属性的伤害降低$2；每20秒，有$3概率触发一轮强力弹幕(威力和样式依据技能等级)",
 		system_transform = {
-			[3.0] = 12435
+			[3] = 12435
 		},
 		world_death_mark = {
 			1
@@ -32637,7 +32637,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "我方潜艇、潜母在战斗中受到的伤害降低$1，从战场撤离时回复$2自身耐久",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -32745,7 +32745,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "对航母造成的伤害提高$1；战斗中，自身氧气不足上浮及从战场撤离时，发射一轮鱼雷弹幕$2(威力和样式依据技能等级)，与大青花鱼在同一编队时，技能鱼雷伤害提高$3",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -34109,7 +34109,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "主炮开火时，有$1概率触发一轮专属弹幕(威力依据技能等级)；自身装备【三联装381mm主炮Model1934】时，增强弹幕样式并提升弹幕触发概率10%",
 		system_transform = {
-			[3.0] = 12605
+			[3] = 12605
 		},
 		world_death_mark = {
 			1
@@ -35988,7 +35988,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "战斗中每20秒，有$1概率触发一轮弹幕(威力依据技能等级)；演习战斗时，强化该弹幕样式",
 		system_transform = {
-			[3.0] = 12800
+			[3] = 12800
 		},
 		world_death_mark = {
 			1
@@ -38011,7 +38011,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "主炮开火时，有$1概率触发一轮专属弹幕(威力依据技能等级)",
 		system_transform = {
-			[3.0] = 13025
+			[3] = 13025
 		},
 		world_death_mark = {
 			1
@@ -39373,7 +39373,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身对驱逐舰、轻巡洋舰的伤害提高$1",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -39436,7 +39436,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "主炮开火时，有$1概率发射一轮覆盖范围不受站位影响的特殊弹幕$2(威力依据技能等级)",
 		system_transform = {
-			[3.0] = 13165
+			[3] = 13165
 		},
 		world_death_mark = {
 			1
@@ -40092,7 +40092,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "13220支援效果占位",
 		system_transform = {
-			[51.0] = 13225
+			[51] = 13225
 		},
 		world_death_mark = {
 			1
@@ -40320,7 +40320,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "主炮开火时，有$1概率触发一轮专属弹幕$2(威力依据技能等级)，专属弹幕命中敌方单位时，有70%概率造成特殊点燃效果（每次结算造成119点伤害）,并在特殊点燃持续期间降低其炮击、雷击、航空属性5%，持续30秒",
 		system_transform = {
-			[3.0] = 13255
+			[3] = 13255
 		},
 		world_death_mark = {
 			1
@@ -43009,7 +43009,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "支援效果ID占位",
 		system_transform = {
-			[51.0] = 13545
+			[51] = 13545
 		},
 		world_death_mark = {
 			1
@@ -43025,7 +43025,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "战斗中，自身发射的鱼雷暴击率提高$1；进入战斗时，发射一轮技能鱼雷弹幕$2（威力和弹幕样式依据技能等级）",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -43124,7 +43124,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "出击时，编队中铁血阵营潜艇角色命中提高$1、暴击伤害提高$2；出击时，编队中每有一个铁血阵营潜艇角色，自身命中、装填、机动提高$3",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -43584,7 +43584,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "战斗开始后每20秒，有$1概率发射一轮特殊弹幕$2(弹幕威力及样式依据技能等级)",
 		system_transform = {
-			[3.0] = 13615
+			[3] = 13615
 		},
 		world_death_mark = {
 			1
@@ -44459,7 +44459,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "守护之樱全图支援效果",
 		system_transform = {
-			[51.0] = 13705
+			[51] = 13705
 		},
 		world_death_mark = {
 			1
@@ -45761,7 +45761,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身氧气存量额外提高$1点；自身氧气不足上浮时，发射一组有70%概率对命中的敌人造成破甲的技能鱼雷$2；自身从战场撤离时，发射一组有70%概率对命中的敌人造成点燃的技能鱼雷$2(威力随技能等级提升)",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -46494,7 +46494,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身氧气存量额外提高$1点；自身对轻型护甲敌人造成的伤害提高$2，自身氧气不足上浮时，发射一组特殊弹幕$3(弹幕威力依据技能等级)",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -46638,7 +46638,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身航速提升3，装填提高$1；出击时，编队中每有一个铁血阵营潜艇角色，自身雷击、命中、机动提高$2",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -48609,7 +48609,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "对轻巡造成的伤害提高$1；战斗中，自身氧气不足上浮时，发射一轮鱼雷弹幕$2(威力依据技能等级)",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -48823,7 +48823,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "主炮开火时，有$1概率触发一轮专属弹幕$2(威力依据技能等级)，弹幕触发失败时，自身防空提升50%，增益效果持续至下一次自身主炮齐射为止",
 		system_transform = {
-			[3.0] = 14155
+			[3] = 14155
 		},
 		world_death_mark = {
 			1
@@ -52147,7 +52147,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "对驱逐舰造成的伤害提高$1；自身氧气不足浮上水面时，自身受到伤害降低$2，并发射一组特殊弹幕$3(威力依据技能等级)",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -52598,11 +52598,7 @@ pg.base.skill_data_template = {
 		id = 14500,
 		type = 1,
 		max_level = 10,
-		desc = [[
-自身空中支援准备完毕时有$1的概率随机发动以下三种效果中的一种：
-①接下来的6秒内造成双倍伤害
-②自身回避所有伤害持续5秒
-③在场敌方单位在4秒内减速$2]],
+		desc = "自身空中支援准备完毕时有$1的概率随机发动以下三种效果中的一种：\n①接下来的6秒内造成双倍伤害\n②自身回避所有伤害持续5秒\n③在场敌方单位在4秒内减速$2",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -53765,7 +53761,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身对重型护甲敌人造成的伤害提高$1，与其他白鹰潜艇共同出击时，队伍中白鹰阵营潜艇暴击伤害提高$2，雷击、命中属性提高$3",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -53918,7 +53914,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身氧气存量额外提高$1；战斗中，自身氧气不足上浮及从战场撤离时，发射一轮鱼雷弹幕$2(威力和样式依据技能等级)",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -55298,11 +55294,7 @@ pg.base.skill_data_template = {
 		id = 14720,
 		type = 1,
 		max_level = 10,
-		desc = [[
-战斗开始后每20秒召唤特殊兵装，持续10秒，战斗开始后3秒额外召唤一次，并获得以下效果：
-①生成两面可阻挡10枚子弹的护盾，持续5秒，并发射一轮弹幕$1(技能弹幕威力依据技能等级)
-②召唤时先锋舰队中耐久百分比最低的角色在未来的10秒内，每3秒恢复自身0.5%的耐久
-③特殊兵装存在期间，全队防空提高$2]],
+		desc = "战斗开始后每20秒召唤特殊兵装，持续10秒，战斗开始后3秒额外召唤一次，并获得以下效果：\n①生成两面可阻挡10枚子弹的护盾，持续5秒，并发射一轮弹幕$1(技能弹幕威力依据技能等级)\n②召唤时先锋舰队中耐久百分比最低的角色在未来的10秒内，每3秒恢复自身0.5%的耐久\n③特殊兵装存在期间，全队防空提高$2",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -55507,7 +55499,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "开始战斗后鹦鹉螺向前移动一段距离，然后上浮一段时间并发射一轮特殊弹幕Ⅰ$1(威力根据技能等级)，期间受到的伤害减少$2，之后下潜撤退回原位，并触发一轮特殊弹幕Ⅱ$1(威力根据技能等级)。",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -55606,7 +55598,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "对鹦鹉螺号造成伤害的敌方单位受到的伤害上升$1，持续3秒；若该敌方单位为驱逐舰，则额外减速该敌方单位$2，持续5秒",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -58395,7 +58387,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "在一次关卡出击中，自身所在编队每击破一个敌方编队，战斗中自身造成的伤害提高$1（最多叠加4次):\n战斗中每击破一个敌舰，自身命中、机动属性上升$2（最多叠加4次）",
 		system_transform = {
-			[51.0] = 14985
+			[51] = 14985
 		},
 		world_death_mark = {
 			1
@@ -58503,7 +58495,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "在一次关卡出击中，自身所在编队每击破一个敌方编队，战斗中自身造成的伤害提高$1（最多叠加4次):\n战斗中每击破一个敌舰，自身命中、机动属性上升$2（最多叠加4次）",
 		system_transform = {
-			[51.0] = 14985
+			[51] = 14985
 		},
 		world_death_mark = {
 			1
@@ -62994,11 +62986,7 @@ pg.base.skill_data_template = {
 		id = 15370,
 		type = 1,
 		max_level = 10,
-		desc = [[
-自身航空属性提升$5；
-战斗开始后每20秒，有$1概率根据自身1号武器栏位舰载机种类触发一轮航空弹幕攻击$2（威力与样式依据技能等级）；
-1号武器栏位装备战斗机时，自身发动首轮空袭时间缩短$3；
-1号武器栏位装备轰炸机时，自身第二轮空袭装填完毕后造成的伤害提升$4，持续5秒]],
+		desc = "自身航空属性提升$5；\n战斗开始后每20秒，有$1概率根据自身1号武器栏位舰载机种类触发一轮航空弹幕攻击$2（威力与样式依据技能等级）；\n1号武器栏位装备战斗机时，自身发动首轮空袭时间缩短$3；\n1号武器栏位装备轰炸机时，自身第二轮空袭装填完毕后造成的伤害提升$4，持续5秒",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -63230,12 +63218,7 @@ pg.base.skill_data_template = {
 		id = 15380,
 		type = 3,
 		max_level = 10,
-		desc = [[
-自身造成的伤害提升$2；
-战斗开始10秒及随后每20秒，主力编队中存在耐久百分比大于20%且小于90%的角色时触发，
-①若自身当前耐久百分比是主力编队中最高且主力编队中存在其他角色，扣除自身$1耐久，并回复主力编队中除自身以外的耐久百分比最低的角色相同数值耐久，
-②若自身当前耐久百分比不是主力编队中最高，扣除主力编队中耐久百分比最高的角色$1耐久，并回复自身相同数值耐久；
-被回复角色机动提升$2，持续5秒，若该角色属于撒丁帝国阵营，额外回复183耐久值]],
+		desc = "自身造成的伤害提升$2；\n战斗开始10秒及随后每20秒，主力编队中存在耐久百分比大于20%且小于90%的角色时触发，\n①若自身当前耐久百分比是主力编队中最高且主力编队中存在其他角色，扣除自身$1耐久，并回复主力编队中除自身以外的耐久百分比最低的角色相同数值耐久，\n②若自身当前耐久百分比不是主力编队中最高，扣除主力编队中耐久百分比最高的角色$1耐久，并回复自身相同数值耐久；\n被回复角色机动提升$2，持续5秒，若该角色属于撒丁帝国阵营，额外回复183耐久值",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -67776,7 +67759,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "战斗中，自身雷击、命中属性提升$2，对轻型护甲敌人造成的伤害提高$1，若自身装备撒丁帝国阵营装备，自身雷击、命中属性提升$2",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -67884,7 +67867,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "入场后3秒，自身停止移动并召唤“小袋鼠”号微型机器人，“小袋鼠”会向前移动一段距离进行攻击并放置水雷，触发水雷的敌方单位会受到进水持续伤害（伤害依据雷击属性）进水效果不可叠加，持续24秒，之后“小袋鼠”退回达芬奇所在位置。达芬奇完成回收后，重新开始移动并触发一轮特殊弹幕$1（弹幕威力依据技能等级）",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -70195,11 +70178,7 @@ pg.base.skill_data_template = {
 		id = 15980,
 		type = 2,
 		max_level = 10,
-		desc = [[
-自身受到的雷击伤害降低$1；进入战斗时和之后每20秒触发：
-①若自身当前耐久百分比不高于25%，恢复总耐久度$2的耐久，该效果每场战斗仅可触发一次；
-②若自身当前耐久高于25%，自身暴击率提升$3，持续15秒，并触发一轮特殊弹幕$4（威力与样式依据技能等级）；
-③若自身已击破至少3艘敌舰，自身受到的伤害降低$1，持续15秒]],
+		desc = "自身受到的雷击伤害降低$1；进入战斗时和之后每20秒触发：\n①若自身当前耐久百分比不高于25%，恢复总耐久度$2的耐久，该效果每场战斗仅可触发一次；\n②若自身当前耐久高于25%，自身暴击率提升$3，持续15秒，并触发一轮特殊弹幕$4（威力与样式依据技能等级）；\n③若自身已击破至少3艘敌舰，自身受到的伤害降低$1，持续15秒",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -70778,7 +70757,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "战斗中受到伤害时有$2概率触发，触发一轮弹幕$3，并回复全体先锋舰队成员1%耐久，效果每18秒最多触发1次，进入战斗时额外触发一次；【非演习效果】：被击沉时恢复全队其他角色耐久$1；【演习效果】：受到致命伤害时不会阵亡，恢复全队角色耐久$1，每场战斗一次（优先于【白鹰精英损管】触发）",
 		system_transform = {
-			[3.0] = 16025
+			[3] = 16025
 		},
 		world_death_mark = {
 			1
@@ -71215,7 +71194,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入战斗时，若自身不处于旗舰位置，或制空状态不为制空权劣势或丧失时，降低自身受到的伤害$1；战斗中{namecode:84}自身耐久大于40%时，自身以外的主力舰队成员获得【岚之护】状态，不再受到触底攻击，处于【岚之护】状态的队友进入暴露状态时，若自身处于隐匿状态，将强制进入暴露状态，当{namecode:84}与处于【岚之护】状态的角色同时成为敌人攻击的有效目标时，敌人将优先攻击{namecode:84}（【岚之护】相关效果演习中不生效）；关卡海域内其他编队进入战斗时，若自身存活，战斗开始后15秒及35秒时，各发动一轮支援弹幕$2（威力依据技能等级）；",
 		system_transform = {
-			[3.0] = 16056
+			[3] = 16056
 		},
 		world_death_mark = {
 			1
@@ -72413,7 +72392,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入战斗时及进入战斗后每20秒，进行一次特殊攻击$1（威力依据技能等级），被特殊攻击命中的角色6秒内航速降低40%；进入战斗后的前30秒，自身造成的伤害提高$2",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -72521,7 +72500,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "战斗中，自身受到的伤害降低$1，自身炮击属性提高$2；进入战斗后，恢复自身$3耐久，自身在战斗中受到伤害，导致耐久首次低于50%后5秒，或自身参加作战超过60秒后，撤退并离开战斗",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -72674,7 +72653,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "16190实际撤退效果实现用",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			0
@@ -72972,11 +72951,7 @@ pg.base.skill_data_template = {
 		id = 16230,
 		type = 3,
 		max_level = 10,
-		desc = [[
-自身发动空袭时，会分别使队伍中约克城级和其他埃塞克斯级航母当前空袭加载所需时间减少$1和$2（每轮空袭加载所需时间只能被该效果减少一次）；
-战斗中，队伍中的约克城级和埃塞克斯级航母获得以下效果：
-①造成的伤害提升$1
-②发动空袭时，会额外触发一轮迎击舰载机$3（威力和样式依据技能等级）]],
+		desc = "自身发动空袭时，会分别使队伍中约克城级和其他埃塞克斯级航母当前空袭加载所需时间减少$1和$2（每轮空袭加载所需时间只能被该效果减少一次）；\n战斗中，队伍中的约克城级和埃塞克斯级航母获得以下效果：\n①造成的伤害提升$1\n②发动空袭时，会额外触发一轮迎击舰载机$3（威力和样式依据技能等级）",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -75720,11 +75695,7 @@ pg.base.skill_data_template = {
 		id = 16450,
 		type = 1,
 		max_level = 10,
-		desc = [[
-自身发动空袭时有$1的概率使在场的所有敌方单位2秒内缓慢减速至航速为0，航速为0效果持续2秒，之后在2秒内缓慢恢复至原航速，并在6秒内降低一个敌方单位机动属性$2，该效果优先对精英目标生效；关卡海域内其他编队进入该编队的第1、2、3场战斗，旗舰第一轮主炮射击或第一轮发动空袭时消耗所有【怨仇】，2秒后根据消耗的【怨仇】层数获得以下效果：
-①3-5层，在场的敌方单位2秒内减速20%
-②6-8层，在场的敌方单位2秒内减速60%
-③9层，在场的敌方单位2秒内航速变为0]],
+		desc = "自身发动空袭时有$1的概率使在场的所有敌方单位2秒内缓慢减速至航速为0，航速为0效果持续2秒，之后在2秒内缓慢恢复至原航速，并在6秒内降低一个敌方单位机动属性$2，该效果优先对精英目标生效；关卡海域内其他编队进入该编队的第1、2、3场战斗，旗舰第一轮主炮射击或第一轮发动空袭时消耗所有【怨仇】，2秒后根据消耗的【怨仇】层数获得以下效果：\n①3-5层，在场的敌方单位2秒内减速20%\n②6-8层，在场的敌方单位2秒内减速60%\n③9层，在场的敌方单位2秒内航速变为0",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -75830,12 +75801,7 @@ pg.base.skill_data_template = {
 		id = 16460,
 		type = 1,
 		max_level = 10,
-		desc = [[
-自身所在编队进入战斗或关卡海域内其他编队进入该编队的第1、2、3场战斗，若自身存活，舰队成员受到伤害时，叠加一层【怨仇】，最多叠加9层；
-自身发动空袭时消耗所有【怨仇】触发一轮航空弹幕$1（威力依据技能等级），根据消耗的【怨仇】层数获得以下效果：
-①大于等于3层，自身伤害提高$2，持续5秒
-②大于等于6层，本轮航空弹幕不会增加被侦测条
-③9层，本轮航空弹幕必定暴击]],
+		desc = "自身所在编队进入战斗或关卡海域内其他编队进入该编队的第1、2、3场战斗，若自身存活，舰队成员受到伤害时，叠加一层【怨仇】，最多叠加9层；\n自身发动空袭时消耗所有【怨仇】触发一轮航空弹幕$1（威力依据技能等级），根据消耗的【怨仇】层数获得以下效果：\n①大于等于3层，自身伤害提高$2，持续5秒\n②大于等于6层，本轮航空弹幕不会增加被侦测条\n③9层，本轮航空弹幕必定暴击",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -77357,7 +77323,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入战斗后每15秒，召唤2艘“Flea”号袖珍潜艇进行鱼雷攻击$1，“Flea”号的攻击有70%的概率对命中的敌人附加特殊进水效果，持续10秒（“Flea”号造成的伤害依据雷击属性和技能等级）“Flea”号战斗10秒后会脱离战斗",
 		system_transform = {
-			[3.0] = 16605
+			[3] = 16605
 		},
 		world_death_mark = {
 			1
@@ -79341,11 +79307,7 @@ pg.base.skill_data_template = {
 		id = 16760,
 		type = 3,
 		max_level = 10,
-		desc = [[
-使用特殊战斗兵装【革律翁】进行战斗，革律翁拥有以下两种战斗形态：
-①嵌载结合模式：降低{namecode:514}受到的伤害$1，并在下次触发技能【绯暗寂灭之息】时，强化特殊弹幕的威力和形态；
-②舰装分离模式：革律翁继承部分属性，单独部署并使用专属武器进行攻击（继承属性百分比随技能等级提高），部署完成时，进行一次特殊攻击$2；
-革律翁的战斗形态会在每次主炮开火后进行切换，进入战斗时，默认为嵌载结合模式]],
+		desc = "使用特殊战斗兵装【革律翁】进行战斗，革律翁拥有以下两种战斗形态：\n①嵌载结合模式：降低{namecode:514}受到的伤害$1，并在下次触发技能【绯暗寂灭之息】时，强化特殊弹幕的威力和形态；\n②舰装分离模式：革律翁继承部分属性，单独部署并使用专属武器进行攻击（继承属性百分比随技能等级提高），部署完成时，进行一次特殊攻击$2；\n革律翁的战斗形态会在每次主炮开火后进行切换，进入战斗时，默认为嵌载结合模式",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -83889,7 +83851,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "战斗中，自身造成的伤害提高$1；自身受到攻击时，有$2概率进入【暗影】状态，【暗影】状态持续5秒，持续期间自身回避率提高$3，结束后发射一轮特殊弹幕$4（弹幕威力依据技能等级），【暗影】状态触发后进入15秒冷却",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -84078,7 +84040,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入战斗后，自身炮击属性提高$1，恢复自身25%耐久；战斗中，因自身技能效果导致回避率上升时，恢复自身$2耐久；在战斗中受到伤害导致自身耐久首次低于40%后5秒，或自身参加作战超过60秒后，召唤一个继承自身部分属性的【幽灵船】（幽灵船不会攻击、继承属性的百分比随技能等级提高)，【幽灵船】持续存在时间5秒，召唤【幽灵船】的同时自身撤退并离开战斗",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -84186,7 +84148,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			0
@@ -84450,7 +84412,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入战斗时及进入战斗后每10秒，进行一次特殊攻击$1（威力依据技能等级）",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -84504,7 +84466,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入战斗后，自身炮击属性提高$1并在五秒内每秒回复自身$2耐久；自身在战斗中受到伤害，导致耐久首次低于30%后5秒，或自身参加作战超过45秒后，撤退并离开战斗",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -84612,7 +84574,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			0
@@ -85282,7 +85244,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身炮击，雷击属性提升$1；战斗开始时和进入战斗后每20秒，召唤两架特殊战斗兵装【兔兔打击者】进行战斗，【兔兔打击者】继承部分属性，单独部署并使用专属武器进行攻击（继承属性百分比随技能等级提高），最多持续15秒；战斗中每12秒，有70%概率发动进行一次雷达标记，标记三名敌方单位，使其防空和航空属性降低$2，并触发一轮特殊弹幕$3（威力与样式依据技能等级），此时每存在一架【兔兔打击者】，自身获得一层【战意】；自身每有一层【战意】造成的伤害提升2%，雷达标记触发概率提升6%，【战意】最多叠加五层",
 		system_transform = {
-			[3.0] = 17445
+			[3] = 17445
 		},
 		world_death_mark = {
 			1
@@ -86385,7 +86347,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "敌方单位被自身鱼雷武器命中时触发以下效果（对于同一敌人，10秒内最多触发1次）：①接下来的4秒内航速降低$1，期间若自身鱼雷武器再次命中该敌人，发射一轮特殊弹幕$2(弹幕威力依据技能等级,特殊弹幕触发后进入10秒冷却)；②有50%概率使松鲷自身在接下来的10秒内对该敌方单位造成的伤害提高$3",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -86529,7 +86491,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "狩猎范围等级+1；进入关卡时，自身鱼雷暴击率提高$1，自身对轻型护甲的敌人造成的伤害提高$2，若自身处于潜艇编队旗舰，或队伍中有其他猫鲨级潜艇，所有猫鲨级潜艇的雷击、命中属性提高$3。",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -92252,7 +92214,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "主炮开火时，有$1的概率朝自己前方发射一轮专属弹幕.改(威力和弹幕样式依据技能等级)",
 		system_transform = {
-			[3.0] = 18071
+			[3] = 18071
 		},
 		world_death_mark = {
 			1
@@ -95162,7 +95124,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "主炮开火时，有$1概率朝自己前方发射一轮专属弹幕(威力和弹幕样式依据技能等级)，命中敌人造成减速$2，持续6秒",
 		system_transform = {
-			[3.0] = 19031
+			[3] = 19031
 		},
 		world_death_mark = {
 			1
@@ -96168,7 +96130,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "主炮开火时，有$1的概率触发一轮特殊弹幕(该弹幕必定暴击，威力依据技能等级)",
 		system_transform = {
-			[3.0] = 19161
+			[3] = 19161
 		},
 		world_death_mark = {
 			1
@@ -96698,7 +96660,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "当自身受到伤害，或敌方进入防卫射程时，触发一轮无视装甲类型的副炮弹幕$1(威力随技能等级提升)，触发后进入15秒冷却",
 		system_transform = {
-			[3.0] = 19221
+			[3] = 19221
 		},
 		world_death_mark = {
 			1
@@ -97070,7 +97032,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "每次主炮射击均可独立瞄准，手动进行瞄准时，手动发射带来的跨射伤害增幅效果提高到$2；战斗开始后每20秒，有$1概率发射强力弹幕(威力随技能等级提升)",
 		system_transform = {
-			[3.0] = 19261
+			[3] = 19261
 		},
 		world_death_mark = {
 			1
@@ -99607,7 +99569,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身受到弹药匮乏状态的影响降低（弹药匮乏状态时造成的伤害提升$1）；自身主炮开火时，有$2概率朝自己前方发射一轮特殊弹幕(威力和弹幕样式依据技能等级)，弹幕触发失败时，回复自身耐久5%",
 		system_transform = {
-			[3.0] = 19495
+			[3] = 19495
 		},
 		world_death_mark = {
 			1
@@ -107278,7 +107240,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "氧气不足浮上水面时，触发专属弹幕-絮库夫I",
 		system_transform = {
-			[11.0] = 29323
+			[11] = 29323
 		},
 		world_death_mark = {
 			1
@@ -107294,7 +107256,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "氧气不足浮上水面时，触发专属弹幕-絮库夫II",
 		system_transform = {
-			[11.0] = 29324
+			[11] = 29324
 		},
 		world_death_mark = {
 			1
@@ -107996,7 +107958,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "氧气不足浮上水面时，触发专属弹幕-{namecode:473}I",
 		system_transform = {
-			[11.0] = 29593
+			[11] = 29593
 		},
 		world_death_mark = {
 			1
@@ -108012,7 +107974,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "氧气不足浮上水面时，触发专属弹幕-{namecode:473}II",
 		system_transform = {
-			[11.0] = 29594
+			[11] = 29594
 		},
 		world_death_mark = {
 			1
@@ -113085,7 +113047,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身氧气存量降低$1，进入战斗后20秒内，自身造成伤害提高$2；撤退时，航速提升100%",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -113193,7 +113155,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入战斗时，为在场所有我方角色提供一个随机增益$1；队伍中的hololive阵营角色获得1.5倍增益效果",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -113247,7 +113209,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入战斗时，触发一轮必定暴击的特殊弹幕$1；若队伍中hololive阵营角色大于2，增强该弹幕样式",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -114359,7 +114321,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身主炮武器开火时，使随机2名舰队成员回复5%耐久，并有$1概率触发一次特殊弹幕$2（弹幕威力依据技能等级）",
 		system_transform = {
-			[3.0] = 106045
+			[3] = 106045
 		},
 		world_death_mark = {
 			1
@@ -115817,7 +115779,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身主炮武器开火时，使随机2名舰队成员回复5%耐久，并有$1概率触发一次特殊弹幕$2（弹幕子弹强化、威力依据技能等级）",
 		system_transform = {
-			[3.0] = 106215
+			[3] = 106215
 		},
 		world_death_mark = {
 			1
@@ -118456,7 +118418,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入战斗时，随机使一名先锋舰队成员在一秒内航速降低1，一秒后，回复该角色100点耐久并提高该角色机动$1，持续20秒",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -118519,7 +118481,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入战斗时，触发一轮特殊弹幕$1（威力及样式根据技能等级）",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -118582,7 +118544,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入战斗时，随机使一名主力舰队成员在一秒内航速降低1，一秒后，回复该角色100点耐久并提高该角色命中$1，持续20秒",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -118645,7 +118607,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入战斗时，触发一轮特殊弹幕$1（威力及样式根据技能等级）",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -119026,7 +118988,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身主炮武器开火时，有$1概率触发一轮特殊攻击$2（爆炸威力根据技能等级）",
 		system_transform = {
-			[3.0] = 108045
+			[3] = 108045
 		},
 		world_death_mark = {
 			1
@@ -120258,7 +120220,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身主炮武器开火时，有$1概率触发一轮特殊攻击$2（爆炸威力根据技能等级并获得额外强化）",
 		system_transform = {
-			[3.0] = 108225
+			[3] = 108225
 		},
 		world_death_mark = {
 			1
@@ -124915,7 +124877,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "氧气不足浮上水面时，发动一次特殊弹幕I$1(威力依据技能等级)，并对被命中的敌方单位造成特殊点燃效果（特殊点燃威力依据雷击属性，持续6秒）",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -124978,7 +124940,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "战斗中，自身雷击属性提高$1，从战场撤离时，触发一轮特殊弹幕II$2（威力及样式依据技能等级），并清除我方单位受到的普通点燃状态",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -125086,7 +125048,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入战斗后5秒，浮上水面并发动秘传忍法「魁」$1(威力依据技能等级)，并对被命中的敌方单位造成特殊点燃效果（特殊点燃威力依据雷击属性，持续20秒），攻击期间自身受到的前3次伤害变为1，攻击结束后重新下潜，水上期间每秒恢复10点氧气，场上有处于本技能造成的特殊点燃状态的角色时，自身暴击伤害提高$2",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -125699,7 +125661,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "战斗中，自身炮击、命中属性提升$1，主炮开火时，有$2概率触发一轮特殊弹幕$3（威力依据技能等级），被特殊弹幕命中5次的敌方单位将受到特殊破甲效果，受到的航空伤害提高5%，持续至战斗结束",
 		system_transform = {
-			[3.0] = 110143
+			[3] = 110143
 		},
 		world_death_mark = {
 			1
@@ -125852,7 +125814,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "战斗中，自身炮击、命中属性提升$1，主炮开火时，有$2概率发动秘传忍法「紫冰连牙」$3（威力依据技能等级），被特殊弹幕命中5次的敌方单位将受到特殊破甲效果，受到的航空伤害提高5%，持续至战斗结束",
 		system_transform = {
-			[3.0] = 110153
+			[3] = 110153
 		},
 		world_death_mark = {
 			1
@@ -127308,7 +127270,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高3%",
 		system_transform = {
-			[51.0] = 800075
+			[51] = 800075
 		},
 		world_death_mark = {
 			1
@@ -127324,7 +127286,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高8%",
 		system_transform = {
-			[51.0] = 800077
+			[51] = 800077
 		},
 		world_death_mark = {
 			1
@@ -127340,7 +127302,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高3%",
 		system_transform = {
-			[51.0] = 800075
+			[51] = 800075
 		},
 		world_death_mark = {
 			1
@@ -127356,7 +127318,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高8%",
 		system_transform = {
-			[51.0] = 800077
+			[51] = 800077
 		},
 		world_death_mark = {
 			1
@@ -127372,7 +127334,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，先锋舰队受到的伤害降低3%",
 		system_transform = {
-			[51.0] = 800085
+			[51] = 800085
 		},
 		world_death_mark = {
 			1
@@ -127388,7 +127350,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，先锋舰队受到的伤害降低8%",
 		system_transform = {
-			[51.0] = 800087
+			[51] = 800087
 		},
 		world_death_mark = {
 			1
@@ -127404,7 +127366,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，先锋舰队受到的伤害降低3%",
 		system_transform = {
-			[51.0] = 800085
+			[51] = 800085
 		},
 		world_death_mark = {
 			1
@@ -127420,7 +127382,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，先锋舰队受到的伤害降低8%",
 		system_transform = {
-			[51.0] = 800087
+			[51] = 800087
 		},
 		world_death_mark = {
 			1
@@ -127745,7 +127707,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行15次攻击，触发一轮特殊弹幕I",
 		system_transform = {
-			[51.0] = 800125
+			[51] = 800125
 		},
 		world_death_mark = {
 			1
@@ -127761,7 +127723,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行10次攻击，触发一轮特殊弹幕II",
 		system_transform = {
-			[51.0] = 800127
+			[51] = 800127
 		},
 		world_death_mark = {
 			1
@@ -127777,7 +127739,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，先锋舰队成员造成的所有伤害提高3%",
 		system_transform = {
-			[51.0] = 800125
+			[51] = 800125
 		},
 		world_death_mark = {
 			1
@@ -127793,7 +127755,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，先锋舰队成员造成的所有伤害提高5%",
 		system_transform = {
-			[51.0] = 800127
+			[51] = 800127
 		},
 		world_death_mark = {
 			1
@@ -128019,7 +127981,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n自身命中属性提高3%，与精英舰队或BOSS舰队交战时，自身命中、航空属性额外提高3%",
 		system_transform = {
-			[51.0] = 800165
+			[51] = 800165
 		},
 		world_death_mark = {
 			1
@@ -128035,7 +127997,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n自身命中属性提高5%，与精英舰队或BOSS舰队交战时，自身命中、航空属性额外提高5%",
 		system_transform = {
-			[51.0] = 800167
+			[51] = 800167
 		},
 		world_death_mark = {
 			1
@@ -128051,7 +128013,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n自身命中属性提高3%，与精英舰队或BOSS舰队交战时，自身命中、航空属性额外提高3%",
 		system_transform = {
-			[51.0] = 800165
+			[51] = 800165
 		},
 		world_death_mark = {
 			1
@@ -128067,7 +128029,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n自身命中属性提高5%，与精英舰队或BOSS舰队交战时，自身命中、航空属性额外提高5%",
 		system_transform = {
-			[51.0] = 800167
+			[51] = 800167
 		},
 		world_death_mark = {
 			1
@@ -128293,7 +128255,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，先锋舰队受到的伤害降低2%",
 		system_transform = {
-			[51.0] = 800205
+			[51] = 800205
 		},
 		world_death_mark = {
 			1
@@ -128309,7 +128271,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，先锋舰队受到的伤害降低6%",
 		system_transform = {
-			[51.0] = 800207
+			[51] = 800207
 		},
 		world_death_mark = {
 			1
@@ -128325,7 +128287,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，先锋舰队受到的伤害降低2%",
 		system_transform = {
-			[51.0] = 800205
+			[51] = 800205
 		},
 		world_death_mark = {
 			1
@@ -128341,7 +128303,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，先锋舰队受到的伤害降低6%",
 		system_transform = {
-			[51.0] = 800207
+			[51] = 800207
 		},
 		world_death_mark = {
 			1
@@ -128545,7 +128507,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		system_transform = {
-			[51.0] = 800255
+			[51] = 800255
 		},
 		world_death_mark = {
 			1
@@ -128561,7 +128523,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		system_transform = {
-			[51.0] = 800257
+			[51] = 800257
 		},
 		world_death_mark = {
 			1
@@ -128577,7 +128539,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		system_transform = {
-			[51.0] = 800255
+			[51] = 800255
 		},
 		world_death_mark = {
 			1
@@ -128593,7 +128555,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		system_transform = {
-			[51.0] = 800257
+			[51] = 800257
 		},
 		world_death_mark = {
 			1
@@ -128927,7 +128889,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身暴击伤害提高5%",
 		system_transform = {
-			[51.0] = 800295
+			[51] = 800295
 		},
 		world_death_mark = {
 			1
@@ -128943,7 +128905,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身暴击伤害提高8%",
 		system_transform = {
-			[51.0] = 800297
+			[51] = 800297
 		},
 		world_death_mark = {
 			1
@@ -128959,7 +128921,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身暴击伤害提高5%",
 		system_transform = {
-			[51.0] = 800295
+			[51] = 800295
 		},
 		world_death_mark = {
 			1
@@ -128975,7 +128937,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身暴击伤害提高8%",
 		system_transform = {
-			[51.0] = 800297
+			[51] = 800297
 		},
 		world_death_mark = {
 			1
@@ -129165,7 +129127,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		system_transform = {
-			[51.0] = 800335
+			[51] = 800335
 		},
 		world_death_mark = {
 			1
@@ -129181,7 +129143,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		system_transform = {
-			[51.0] = 800337
+			[51] = 800337
 		},
 		world_death_mark = {
 			1
@@ -129197,7 +129159,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		system_transform = {
-			[51.0] = 800335
+			[51] = 800335
 		},
 		world_death_mark = {
 			1
@@ -129213,7 +129175,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		system_transform = {
-			[51.0] = 800337
+			[51] = 800337
 		},
 		world_death_mark = {
 			1
@@ -129439,7 +129401,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身炮击、命中属性提高5%",
 		system_transform = {
-			[51.0] = 800375
+			[51] = 800375
 		},
 		world_death_mark = {
 			1
@@ -129455,7 +129417,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身炮击、命中属性提高8%",
 		system_transform = {
-			[51.0] = 800377
+			[51] = 800377
 		},
 		world_death_mark = {
 			1
@@ -129471,7 +129433,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身炮击、命中属性提高5%",
 		system_transform = {
-			[51.0] = 800375
+			[51] = 800375
 		},
 		world_death_mark = {
 			1
@@ -129487,7 +129449,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身炮击、命中属性提高8%",
 		system_transform = {
-			[51.0] = 800377
+			[51] = 800377
 		},
 		world_death_mark = {
 			1
@@ -129686,7 +129648,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		system_transform = {
-			[51.0] = 800415
+			[51] = 800415
 		},
 		world_death_mark = {
 			1
@@ -129702,7 +129664,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		system_transform = {
-			[51.0] = 800417
+			[51] = 800417
 		},
 		world_death_mark = {
 			1
@@ -129718,7 +129680,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		system_transform = {
-			[51.0] = 800415
+			[51] = 800415
 		},
 		world_death_mark = {
 			1
@@ -129734,7 +129696,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		system_transform = {
-			[51.0] = 800417
+			[51] = 800417
 		},
 		world_death_mark = {
 			1
@@ -129978,7 +129940,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行12次攻击，触发一轮特殊弹幕I",
 		system_transform = {
-			[51.0] = 800455
+			[51] = 800455
 		},
 		world_death_mark = {
 			1
@@ -129994,7 +129956,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行8次攻击，触发一轮特殊弹幕II",
 		system_transform = {
-			[51.0] = 800457
+			[51] = 800457
 		},
 		world_death_mark = {
 			1
@@ -130010,7 +129972,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发一轮特殊弹幕 ，与精英舰队或BOSS舰队交战时，META角色受到的伤害降低2%",
 		system_transform = {
-			[51.0] = 800455
+			[51] = 800455
 		},
 		world_death_mark = {
 			1
@@ -130026,7 +129988,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕 ，与精英舰队或BOSS舰队交战时，META角色受到的伤害降低5%",
 		system_transform = {
-			[51.0] = 800457
+			[51] = 800457
 		},
 		world_death_mark = {
 			1
@@ -130396,7 +130358,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身炮击、装填属性提高5%",
 		system_transform = {
-			[51.0] = 800495
+			[51] = 800495
 		},
 		world_death_mark = {
 			1
@@ -130412,7 +130374,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身炮击、装填属性提高8%",
 		system_transform = {
-			[51.0] = 800497
+			[51] = 800497
 		},
 		world_death_mark = {
 			1
@@ -130428,7 +130390,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身炮击、装填属性提高5%",
 		system_transform = {
-			[51.0] = 800495
+			[51] = 800495
 		},
 		world_death_mark = {
 			1
@@ -130444,7 +130406,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身炮击、装填属性提高8%",
 		system_transform = {
-			[51.0] = 800497
+			[51] = 800497
 		},
 		world_death_mark = {
 			1
@@ -130778,7 +130740,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行9次攻击，触发一轮特殊弹幕I",
 		system_transform = {
-			[51.0] = 800535
+			[51] = 800535
 		},
 		world_death_mark = {
 			1
@@ -130794,7 +130756,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行6次攻击，触发一轮特殊弹幕II",
 		system_transform = {
-			[51.0] = 800537
+			[51] = 800537
 		},
 		world_death_mark = {
 			1
@@ -130810,7 +130772,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行9次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		system_transform = {
-			[51.0] = 800535
+			[51] = 800535
 		},
 		world_death_mark = {
 			1
@@ -130826,7 +130788,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行6次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		system_transform = {
-			[51.0] = 800537
+			[51] = 800537
 		},
 		world_death_mark = {
 			1
@@ -131061,7 +131023,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身炮击、防空属性提高5%",
 		system_transform = {
-			[51.0] = 800575
+			[51] = 800575
 		},
 		world_death_mark = {
 			1
@@ -131077,7 +131039,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身炮击、防空属性提高8%",
 		system_transform = {
-			[51.0] = 800577
+			[51] = 800577
 		},
 		world_death_mark = {
 			1
@@ -131093,7 +131055,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身炮击、防空属性提高5%",
 		system_transform = {
-			[51.0] = 800575
+			[51] = 800575
 		},
 		world_death_mark = {
 			1
@@ -131109,7 +131071,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身炮击、防空属性提高8%",
 		system_transform = {
-			[51.0] = 800577
+			[51] = 800577
 		},
 		world_death_mark = {
 			1
@@ -131328,7 +131290,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行15次攻击，触发一轮特殊弹幕I",
 		system_transform = {
-			[51.0] = 800605
+			[51] = 800605
 		},
 		world_death_mark = {
 			1
@@ -131344,7 +131306,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行10次攻击，触发一轮特殊弹幕II",
 		system_transform = {
-			[51.0] = 800607
+			[51] = 800607
 		},
 		world_death_mark = {
 			1
@@ -131360,7 +131322,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕，与精英舰队或BOSS舰队交战时，自身造成的伤害提高2%",
 		system_transform = {
-			[51.0] = 800605
+			[51] = 800605
 		},
 		world_death_mark = {
 			1
@@ -131376,7 +131338,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕，与精英舰队或BOSS舰队交战时，自身造成的伤害提高6%",
 		system_transform = {
-			[51.0] = 800607
+			[51] = 800607
 		},
 		world_death_mark = {
 			1
@@ -131586,7 +131548,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行15次攻击，触发一轮特殊弹幕I",
 		system_transform = {
-			[51.0] = 800635
+			[51] = 800635
 		},
 		world_death_mark = {
 			1
@@ -131602,7 +131564,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行10次攻击，触发一轮特殊弹幕II",
 		system_transform = {
-			[51.0] = 800637
+			[51] = 800637
 		},
 		world_death_mark = {
 			1
@@ -131618,7 +131580,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕，与精英舰队或BOSS舰队交战时，自身造成的伤害提高2%",
 		system_transform = {
-			[51.0] = 800635
+			[51] = 800635
 		},
 		world_death_mark = {
 			1
@@ -131634,7 +131596,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕，与精英舰队或BOSS舰队交战时，自身造成的伤害提高6%",
 		system_transform = {
-			[51.0] = 800637
+			[51] = 800637
 		},
 		world_death_mark = {
 			1
@@ -131959,7 +131921,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身受到的伤害降低3%",
 		system_transform = {
-			[51.0] = 800675
+			[51] = 800675
 		},
 		world_death_mark = {
 			1
@@ -131975,7 +131937,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身受到的伤害降低8%",
 		system_transform = {
-			[51.0] = 800677
+			[51] = 800677
 		},
 		world_death_mark = {
 			1
@@ -131991,7 +131953,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身受到的伤害降低3%",
 		system_transform = {
-			[51.0] = 800675
+			[51] = 800675
 		},
 		world_death_mark = {
 			1
@@ -132007,7 +131969,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身受到的伤害降低8%",
 		system_transform = {
-			[51.0] = 800677
+			[51] = 800677
 		},
 		world_death_mark = {
 			1
@@ -132226,7 +132188,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行12次攻击，触发一轮特殊弹幕I",
 		system_transform = {
-			[51.0] = 800705
+			[51] = 800705
 		},
 		world_death_mark = {
 			1
@@ -132242,7 +132204,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行8次攻击，触发一轮特殊弹幕II",
 		system_transform = {
-			[51.0] = 800707
+			[51] = 800707
 		},
 		world_death_mark = {
 			1
@@ -132258,7 +132220,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发一轮特殊弹幕 ，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		system_transform = {
-			[51.0] = 800705
+			[51] = 800705
 		},
 		world_death_mark = {
 			1
@@ -132274,7 +132236,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕 ，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		system_transform = {
-			[51.0] = 800707
+			[51] = 800707
 		},
 		world_death_mark = {
 			1
@@ -132653,7 +132615,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身暴击伤害提高5%",
 		system_transform = {
-			[51.0] = 800745
+			[51] = 800745
 		},
 		world_death_mark = {
 			1
@@ -132669,7 +132631,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身暴击伤害提高8%",
 		system_transform = {
-			[51.0] = 800747
+			[51] = 800747
 		},
 		world_death_mark = {
 			1
@@ -132685,7 +132647,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身暴击伤害提高5%",
 		system_transform = {
-			[51.0] = 800745
+			[51] = 800745
 		},
 		world_death_mark = {
 			1
@@ -132701,7 +132663,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身暴击伤害提高8%",
 		system_transform = {
-			[51.0] = 800747
+			[51] = 800747
 		},
 		world_death_mark = {
 			1
@@ -132965,7 +132927,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行12次攻击，触发一轮特殊弹幕I",
 		system_transform = {
-			[51.0] = 800775
+			[51] = 800775
 		},
 		world_death_mark = {
 			1
@@ -132981,7 +132943,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行8次攻击，触发一轮特殊弹幕II",
 		system_transform = {
-			[51.0] = 800777
+			[51] = 800777
 		},
 		world_death_mark = {
 			1
@@ -132997,7 +132959,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发一轮特殊弹幕 ，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		system_transform = {
-			[51.0] = 800775
+			[51] = 800775
 		},
 		world_death_mark = {
 			1
@@ -133013,7 +132975,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕 ，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		system_transform = {
-			[51.0] = 800777
+			[51] = 800777
 		},
 		world_death_mark = {
 			1
@@ -133029,7 +132991,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身鱼雷暴击率提高$1，对轻甲护甲敌人造成伤害提高$2；进入战斗时，造成的伤害提高$3，自身受到的伤害提高10%，持续至自身从战场撤退",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -133182,7 +133144,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "狩猎范围等级+1；进入战斗时，若潜艇舰队有其他潜艇角色，自身雷击提高$1；氧气不足上浮时发射一轮鱼雷弹幕$2（威力依据技能等级)并回复自身500点耐久",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -133281,7 +133243,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身在场时，队伍中角色受到伤害时有$1概率触发，发射一颗特殊鱼雷$2（威力依据技能等级)，若发动时自身耐久高于20%，扣减自身20点耐久，触发后进入1秒冷却；自身装备【约定的证明】或队友中有{namecode:435}时，发射特殊鱼雷不会扣减耐久，且战斗开始时提升$3机动",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -133434,7 +133396,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "进入战斗时，触发一轮特殊弹幕I",
 		system_transform = {
-			[51.0] = 800815
+			[51] = 800815
 		},
 		world_death_mark = {
 			1
@@ -133450,7 +133412,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "进入战斗时，触发一轮特殊弹幕II",
 		system_transform = {
-			[51.0] = 800817
+			[51] = 800817
 		},
 		world_death_mark = {
 			1
@@ -133466,7 +133428,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n进入战斗时，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		system_transform = {
-			[51.0] = 800815
+			[51] = 800815
 		},
 		world_death_mark = {
 			1
@@ -133482,7 +133444,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n进入战斗时，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		system_transform = {
-			[51.0] = 800817
+			[51] = 800817
 		},
 		world_death_mark = {
 			1
@@ -133710,7 +133672,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，战斗开始后35秒，回复所有舰队成员2%耐久",
 		system_transform = {
-			[51.0] = 800845
+			[51] = 800845
 		},
 		world_death_mark = {
 			1
@@ -133726,7 +133688,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，战斗开始后35秒，回复所有舰队成员6%耐久",
 		system_transform = {
-			[51.0] = 800847
+			[51] = 800847
 		},
 		world_death_mark = {
 			1
@@ -133742,7 +133704,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，战斗开始后35秒，回复所有舰队成员2%耐久",
 		system_transform = {
-			[51.0] = 800845
+			[51] = 800845
 		},
 		world_death_mark = {
 			1
@@ -133758,7 +133720,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，战斗开始后35秒，回复所有舰队成员6%耐久",
 		system_transform = {
-			[51.0] = 800847
+			[51] = 800847
 		},
 		world_death_mark = {
 			1
@@ -134083,7 +134045,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行9次攻击，触发一轮特殊弹幕I",
 		system_transform = {
-			[51.0] = 800885
+			[51] = 800885
 		},
 		world_death_mark = {
 			1
@@ -134099,7 +134061,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行6次攻击，触发一轮特殊弹幕II",
 		system_transform = {
-			[51.0] = 800887
+			[51] = 800887
 		},
 		world_death_mark = {
 			1
@@ -134115,7 +134077,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行9次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低3%",
 		system_transform = {
-			[51.0] = 800885
+			[51] = 800885
 		},
 		world_death_mark = {
 			1
@@ -134131,7 +134093,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行6次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低8%",
 		system_transform = {
-			[51.0] = 800887
+			[51] = 800887
 		},
 		world_death_mark = {
 			1
@@ -134350,7 +134312,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行15次攻击，触发一轮特殊弹幕I",
 		system_transform = {
-			[51.0] = 800915
+			[51] = 800915
 		},
 		world_death_mark = {
 			1
@@ -134366,7 +134328,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行10次攻击，触发一轮特殊弹幕II",
 		system_transform = {
-			[51.0] = 800917
+			[51] = 800917
 		},
 		world_death_mark = {
 			1
@@ -134382,7 +134344,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低2%",
 		system_transform = {
-			[51.0] = 800915
+			[51] = 800915
 		},
 		world_death_mark = {
 			1
@@ -134398,7 +134360,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低6%",
 		system_transform = {
-			[51.0] = 800917
+			[51] = 800917
 		},
 		world_death_mark = {
 			1
@@ -134777,7 +134739,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行12次攻击，触发一轮特殊弹幕I",
 		system_transform = {
-			[51.0] = 800955
+			[51] = 800955
 		},
 		world_death_mark = {
 			1
@@ -134793,7 +134755,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行8次攻击，触发一轮特殊弹幕II",
 		system_transform = {
-			[51.0] = 800957
+			[51] = 800957
 		},
 		world_death_mark = {
 			1
@@ -134809,7 +134771,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，队伍中META角色受到的所有伤害降低5%",
 		system_transform = {
-			[51.0] = 800955
+			[51] = 800955
 		},
 		world_death_mark = {
 			1
@@ -134825,7 +134787,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，队伍中META角色受到的所有伤害降低8%",
 		system_transform = {
-			[51.0] = 800957
+			[51] = 800957
 		},
 		world_death_mark = {
 			1
@@ -135134,7 +135096,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		system_transform = {
-			[51.0] = 800985
+			[51] = 800985
 		},
 		world_death_mark = {
 			1
@@ -135150,7 +135112,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		system_transform = {
-			[51.0] = 800987
+			[51] = 800987
 		},
 		world_death_mark = {
 			1
@@ -135166,7 +135128,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		system_transform = {
-			[51.0] = 800985
+			[51] = 800985
 		},
 		world_death_mark = {
 			1
@@ -135182,7 +135144,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		system_transform = {
-			[51.0] = 800987
+			[51] = 800987
 		},
 		world_death_mark = {
 			1
@@ -135446,7 +135408,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身暴击伤害提高5%",
 		system_transform = {
-			[51.0] = 801015
+			[51] = 801015
 		},
 		world_death_mark = {
 			1
@@ -135462,7 +135424,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身暴击伤害提高8%",
 		system_transform = {
-			[51.0] = 801017
+			[51] = 801017
 		},
 		world_death_mark = {
 			1
@@ -135478,7 +135440,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身暴击伤害提高5%",
 		system_transform = {
-			[51.0] = 801015
+			[51] = 801015
 		},
 		world_death_mark = {
 			1
@@ -135494,7 +135456,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身暴击伤害提高8%",
 		system_transform = {
-			[51.0] = 801017
+			[51] = 801017
 		},
 		world_death_mark = {
 			1
@@ -135765,7 +135727,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行12次攻击，触发一轮特殊弹幕I",
 		system_transform = {
-			[51.0] = 801055
+			[51] = 801055
 		},
 		world_death_mark = {
 			1
@@ -135781,7 +135743,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行8次攻击，触发一轮特殊弹幕II",
 		system_transform = {
-			[51.0] = 801057
+			[51] = 801057
 		},
 		world_death_mark = {
 			1
@@ -135797,7 +135759,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高3%",
 		system_transform = {
-			[51.0] = 801055
+			[51] = 801055
 		},
 		world_death_mark = {
 			1
@@ -135813,7 +135775,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高5%",
 		system_transform = {
-			[51.0] = 801057
+			[51] = 801057
 		},
 		world_death_mark = {
 			1
@@ -136113,7 +136075,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行15次攻击，触发一轮特殊弹幕I",
 		system_transform = {
-			[51.0] = 801085
+			[51] = 801085
 		},
 		world_death_mark = {
 			1
@@ -136129,7 +136091,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行10次攻击，触发一轮特殊弹幕II",
 		system_transform = {
-			[51.0] = 801087
+			[51] = 801087
 		},
 		world_death_mark = {
 			1
@@ -136145,7 +136107,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕，与精英舰队或BOSS舰队交战时，自身造成的伤害提高2%",
 		system_transform = {
-			[51.0] = 801085
+			[51] = 801085
 		},
 		world_death_mark = {
 			1
@@ -136161,7 +136123,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕，与精英舰队或BOSS舰队交战时，自身造成的伤害提高6%",
 		system_transform = {
-			[51.0] = 801087
+			[51] = 801087
 		},
 		world_death_mark = {
 			1
@@ -136441,7 +136403,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行12次攻击，触发一轮特殊弹幕I，自身处于【旧日荣光】状态时，特殊弹幕强化",
 		system_transform = {
-			[51.0] = 801125
+			[51] = 801125
 		},
 		world_death_mark = {
 			1
@@ -136457,7 +136419,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行8次攻击，触发一轮特殊弹幕II，自身处于【旧日荣光】状态时，特殊弹幕强化",
 		system_transform = {
-			[51.0] = 801127
+			[51] = 801127
 		},
 		world_death_mark = {
 			1
@@ -136473,7 +136435,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发一轮特殊弹幕I，自身处于【旧日荣光】状态时，特殊弹幕强化；与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高3%",
 		system_transform = {
-			[51.0] = 801125
+			[51] = 801125
 		},
 		world_death_mark = {
 			1
@@ -136489,7 +136451,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕II，自身处于【旧日荣光】状态时，特殊弹幕强化；与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高5%",
 		system_transform = {
-			[51.0] = 801127
+			[51] = 801127
 		},
 		world_death_mark = {
 			1
@@ -136760,7 +136722,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高5%",
 		system_transform = {
-			[51.0] = 801165
+			[51] = 801165
 		},
 		world_death_mark = {
 			1
@@ -136776,7 +136738,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高8%",
 		system_transform = {
-			[51.0] = 801167
+			[51] = 801167
 		},
 		world_death_mark = {
 			1
@@ -136792,7 +136754,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高5%",
 		system_transform = {
-			[51.0] = 801165
+			[51] = 801165
 		},
 		world_death_mark = {
 			1
@@ -136808,7 +136770,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高8%",
 		system_transform = {
-			[51.0] = 801167
+			[51] = 801167
 		},
 		world_death_mark = {
 			1
@@ -137027,7 +136989,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行15次攻击，触发一轮特殊弹幕I",
 		system_transform = {
-			[51.0] = 801195
+			[51] = 801195
 		},
 		world_death_mark = {
 			1
@@ -137043,7 +137005,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "主炮每进行10次攻击，触发一轮特殊弹幕II",
 		system_transform = {
-			[51.0] = 801197
+			[51] = 801197
 		},
 		world_death_mark = {
 			1
@@ -137059,7 +137021,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕，与精英舰队或BOSS舰队交战时，自身造成的伤害提高2%",
 		system_transform = {
-			[51.0] = 801195
+			[51] = 801195
 		},
 		world_death_mark = {
 			1
@@ -137075,7 +137037,7 @@ pg.base.skill_data_template = {
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕，与精英舰队或BOSS舰队交战时，自身造成的伤害提高6%",
 		system_transform = {
-			[51.0] = 801197
+			[51] = 801197
 		},
 		world_death_mark = {
 			1
@@ -137469,7 +137431,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "当队友受到伤害导致耐久低于20%时，回复其耐久的$1，并触发一轮特殊弹幕（威力依据技能等级），每场战斗仅能触发一次；主炮射击时有50%概率恢复先锋部队$2耐久——“这次，一定要保护好大家”",
 		system_transform = {
-			[3.0] = 1010145
+			[3] = 1010145
 		},
 		world_death_mark = {
 			1
@@ -138420,7 +138382,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身到达就位位置时，编队中重樱阵营潜艇、潜母角色的雷击、命中提高$2，对重巡、超巡伤害提高$1；从战场撤离时，发射一轮鱼雷攻击(威力和样式依据技能等级)；",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -139409,7 +139371,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "主炮开火时，有$1概率朝自己前方发射一轮专属弹幕+（弹幕子弹强化，威力依据技能等级），所有主力舰队角色装填提高$2，持续8秒",
 		system_transform = {
-			[3.0] = 1010291
+			[3] = 1010291
 		},
 		world_death_mark = {
 			1
@@ -139517,7 +139479,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "潜艇进入战斗后5秒、氧气不足上浮及从战场撤离时，各发射一组技能鱼雷$1(形态、威力强化，随技能等级提升)，技能鱼雷会对命中的敌人造成点燃(点燃伤害依据雷击属性)",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -140734,7 +140696,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "主炮开火时，有$1概率触发一轮专属弹幕(威力依据技能等级、弹幕样式强化)",
 		system_transform = {
-			[3.0] = 1012602
+			[3] = 1012602
 		},
 		world_death_mark = {
 			1
@@ -141444,7 +141406,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "鱼雷命中敌人后，若在5秒内自身鱼雷再次对该敌人造成伤害，造成的伤害提高$1；自身氧气不足上浮时，受到的伤害降低15%，并额外发射一组特殊弹幕$2（威力依据技能等级）",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -141694,7 +141656,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "战斗中，自身造成的伤害提高$1；自身受到攻击时，有$2概率进入【暗影】状态，【暗影】状态持续5秒，持续期间自身回避率提高$3，结束后随机选定一名敌人使自身在接下来5秒对其造成的伤害提高15%，同时发射一轮必定暴击的特殊弹幕$4（弹幕威力依据技能等级），【暗影】状态触发后进入15秒冷却",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -142228,7 +142190,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "进入战斗时及进入战斗后每10秒，进行一次特殊攻击$1（威力依据技能等级），任意被特殊攻击命中的单位存活时，维达号自身受到的所有伤害降低$2",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -142812,7 +142774,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "战斗中，自身雷击、命中属性提高$2；进入战斗8秒后，发射一轮穿透鱼雷$1(威力和样式依据技能等级)，穿透鱼雷可以对一名敌方造成伤害后，穿透并继续前进，仍可对第二个敌方造成伤害；从战场撤退时，发射一轮特殊弹幕$1（威力依据雷击属性及技能等级）",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -144090,7 +144052,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "出击时，编队中每有一个铁血阵营潜艇角色，自身雷击、命中、装填属性上升$1，从战场撤退时，根据本次战斗中使用鱼雷武器命中的颗数发射一轮特殊弹幕$2（威力依据技能等级）",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -145528,7 +145490,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "自身氧气不足浮上水面后，水面作战的持续时间增加$1秒；自身舰炮开火时，触发一轮特殊弹幕$2（威力依据技能等级）",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1

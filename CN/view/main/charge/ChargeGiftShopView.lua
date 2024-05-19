@@ -1,397 +1,465 @@
-slot0 = class("ChargeGiftShopView", import("...base.BaseSubView"))
+﻿local var_0_0 = class("ChargeGiftShopView", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ChargeGiftShopUI"
 end
 
-function slot0.OnInit(slot0)
-	slot0:initData()
-	slot0:initUI()
-	slot0:Show()
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0:initData()
+	arg_2_0:initUI()
+	arg_2_0:Show()
 end
 
-function slot0.OnDestroy(slot0)
-	for slot4, slot5 in pairs(slot0.chargeCardTable or {}) do
-		slot5:destoryTimer()
+function var_0_0.OnDestroy(arg_3_0)
+	for iter_3_0, iter_3_1 in pairs(arg_3_0.chargeCardTable or {}) do
+		iter_3_1:destoryTimer()
 	end
 
-	slot0:removeUpdateTimer()
+	arg_3_0:removeUpdateTimer()
 end
 
-function slot0.initData(slot0)
-	slot0.giftGoodsVOList = {}
-	slot0.giftGoodsVOListForShow = {}
-	slot0.updateTime = nil
-	slot0.updateTimer = nil
-	slot0.player = getProxy(PlayerProxy):getData()
+function var_0_0.initData(arg_4_0)
+	arg_4_0.giftGoodsVOList = {}
+	arg_4_0.giftGoodsVOListForShow = {}
+	arg_4_0.updateTime = nil
+	arg_4_0.updateTimer = nil
+	arg_4_0.player = getProxy(PlayerProxy):getData()
 
-	slot0:updateData()
+	arg_4_0:updateData()
 end
 
-function slot0.initUI(slot0)
-	slot0.lScrollRect = GetComponent(slot0._tf, "LScrollRect")
-	slot0.chargeCardTable = {}
+function var_0_0.initUI(arg_5_0)
+	arg_5_0.lScrollRect = GetComponent(arg_5_0._tf, "LScrollRect")
+	arg_5_0.chargeCardTable = {}
 
-	slot0:initScrollRect()
-	slot0:updateScrollRect()
+	arg_5_0:initScrollRect()
+	arg_5_0:updateScrollRect()
 end
 
-function slot0.initScrollRect(slot0, slot1, slot2, slot3)
-	slot0.chargeCardTable = {}
+function var_0_0.initScrollRect(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+	arg_6_0.chargeCardTable = {}
 
-	function slot0.lScrollRect.onInitItem(slot0)
-		slot1 = ChargeCard.New(slot0)
+	local function var_6_0(arg_7_0)
+		local var_7_0 = ChargeCard.New(arg_7_0)
 
-		onButton(uv0, slot1.tr, function ()
-			if uv0.goods:isChargeType() and uv0.goods:isTecShipShowGift() then
-				uv1:emit(ChargeMediator.OPEN_TEC_SHIP_GIFT_SELL_LAYER, uv0.goods, uv1.chargedList)
+		onButton(arg_6_0, var_7_0.tr, function()
+			if var_7_0.goods:isChargeType() and var_7_0.goods:isTecShipShowGift() then
+				arg_6_0:emit(ChargeMediator.OPEN_TEC_SHIP_GIFT_SELL_LAYER, var_7_0.goods, arg_6_0.chargedList)
 			else
-				uv1:confirm(uv0.goods)
+				arg_6_0:confirm(var_7_0.goods)
 			end
 		end, SFX_PANEL)
-		onButton(uv0, slot1.viewBtn, function ()
-			if not uv0.goods:isChargeType() then
+		onButton(arg_6_0, var_7_0.viewBtn, function()
+			if not var_7_0.goods:isChargeType() then
 				return
 			end
 
-			slot0 = uv0.goods:GetSkinProbability()
+			local var_9_0 = var_7_0.goods:GetSkinProbability()
+			local var_9_1 = getProxy(ShipSkinProxy):GetProbabilitySkins(var_9_0)
 
-			if #slot0 <= 0 or #slot0 ~= #getProxy(ShipSkinProxy):GetProbabilitySkins(slot0) then
-				uv1:emit(BaseUI.ON_DROP, uv0.goods:GetSkinProbabilityItem())
+			if #var_9_0 <= 0 or #var_9_0 ~= #var_9_1 then
+				local var_9_2 = var_7_0.goods:GetSkinProbabilityItem()
+
+				arg_6_0:emit(BaseUI.ON_DROP, var_9_2)
 			else
-				uv1:emit(ChargeMediator.VIEW_SKIN_PROBABILITY, uv0.goods.id)
+				arg_6_0:emit(ChargeMediator.VIEW_SKIN_PROBABILITY, var_7_0.goods.id)
 			end
 		end, SFX_PANEL)
 
-		uv0.chargeCardTable[slot0] = slot1
+		arg_6_0.chargeCardTable[arg_7_0] = var_7_0
 	end
 
-	function slot0.lScrollRect.onUpdateItem(slot0, slot1)
-		if not uv0.chargeCardTable[slot1] then
-			uv1(slot1)
+	local function var_6_1(arg_10_0, arg_10_1)
+		local var_10_0 = arg_6_0.chargeCardTable[arg_10_1]
 
-			slot2 = uv0.chargeCardTable[slot1]
+		if not var_10_0 then
+			var_6_0(arg_10_1)
+
+			var_10_0 = arg_6_0.chargeCardTable[arg_10_1]
 		end
 
-		if uv0.giftGoodsVOListForShow[slot0 + 1] then
-			slot2:update(slot3, uv0.player, uv0.firstChargeIds)
+		local var_10_1 = arg_6_0.giftGoodsVOListForShow[arg_10_0 + 1]
+
+		if var_10_1 then
+			var_10_0:update(var_10_1, arg_6_0.player, arg_6_0.firstChargeIds)
 		end
 	end
+
+	arg_6_0.lScrollRect.onInitItem = var_6_0
+	arg_6_0.lScrollRect.onUpdateItem = var_6_1
 end
 
-function slot0.updateScrollRect(slot0)
-	slot0.lScrollRect:SetTotalCount(#slot0.giftGoodsVOListForShow, slot0.lScrollRect.value)
+function var_0_0.updateScrollRect(arg_11_0)
+	arg_11_0.lScrollRect:SetTotalCount(#arg_11_0.giftGoodsVOListForShow, arg_11_0.lScrollRect.value)
 end
 
-function slot0.confirm(slot0, slot1)
-	if not slot1 then
+function var_0_0.confirm(arg_12_0, arg_12_1)
+	if not arg_12_1 then
 		return
 	end
 
-	if Clone(slot1):isChargeType() then
-		slot4 = (table.contains(slot0.firstChargeIds, slot1.id) or slot1:firstPayDouble()) and 4 or slot1:getConfig("tag")
+	arg_12_1 = Clone(arg_12_1)
 
-		if slot1:isMonthCard() or slot1:isGiftBox() or slot1:isItemBox() or slot1:isPassItem() then
-			slot5 = underscore.map(slot1:getConfig("extra_service_item"), function (slot0)
-				return Drop.Create(slot0)
+	if arg_12_1:isChargeType() then
+		local var_12_0 = not table.contains(arg_12_0.firstChargeIds, arg_12_1.id) and arg_12_1:firstPayDouble()
+		local var_12_1 = var_12_0 and 4 or arg_12_1:getConfig("tag")
+
+		if arg_12_1:isMonthCard() or arg_12_1:isGiftBox() or arg_12_1:isItemBox() or arg_12_1:isPassItem() then
+			local var_12_2 = underscore.map(arg_12_1:getConfig("extra_service_item"), function(arg_13_0)
+				return Drop.Create(arg_13_0)
 			end)
-			slot6 = nil
+			local var_12_3
 
-			if slot1:isPassItem() then
-				slot7 = slot1:getConfig("sub_display")
-				slot8 = slot7[1]
-				slot9 = pg.battlepass_event_pt[slot8].pt
-				slot6 = Drop.New({
+			if arg_12_1:isPassItem() then
+				local var_12_4 = arg_12_1:getConfig("sub_display")
+				local var_12_5 = var_12_4[1]
+				local var_12_6 = pg.battlepass_event_pt[var_12_5].pt
+
+				var_12_3 = Drop.New({
 					type = DROP_TYPE_RESOURCE,
-					id = pg.battlepass_event_pt[slot8].pt,
-					count = slot7[2]
+					id = pg.battlepass_event_pt[var_12_5].pt,
+					count = var_12_4[2]
 				})
-				slot5 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[slot8].drop_client_pay, function (slot0)
-					return Drop.Create(slot0)
+				var_12_2 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[var_12_5].drop_client_pay, function(arg_14_0)
+					return Drop.Create(arg_14_0)
 				end))
 			end
 
-			slot8 = nil
+			local var_12_7 = arg_12_1:getConfig("gem") + arg_12_1:getConfig("extra_gem")
+			local var_12_8
 
-			if slot1:isMonthCard() then
-				slot8 = Drop.New({
+			if arg_12_1:isMonthCard() then
+				var_12_8 = Drop.New({
 					type = DROP_TYPE_RESOURCE,
 					id = PlayerConst.ResDiamond,
-					count = slot1:getConfig("gem") + slot1:getConfig("extra_gem")
+					count = var_12_7
 				})
-			elseif slot7 > 0 then
-				table.insert(slot5, Drop.New({
+			elseif var_12_7 > 0 then
+				table.insert(var_12_2, Drop.New({
 					type = DROP_TYPE_RESOURCE,
 					id = PlayerConst.ResDiamond,
-					count = slot7
+					count = var_12_7
 				}))
 			end
 
-			slot9, slot10 = nil
+			local var_12_9
+			local var_12_10
 
-			if slot1:isPassItem() then
-				slot9 = i18n("battlepass_pay_tip")
-			elseif slot1:isMonthCard() then
-				slot9 = i18n("charge_title_getitem_month")
-				slot10 = i18n("charge_title_getitem_soon")
+			if arg_12_1:isPassItem() then
+				var_12_9 = i18n("battlepass_pay_tip")
+			elseif arg_12_1:isMonthCard() then
+				var_12_9 = i18n("charge_title_getitem_month")
+				var_12_10 = i18n("charge_title_getitem_soon")
 			else
-				slot9 = i18n("charge_title_getitem")
+				var_12_9 = i18n("charge_title_getitem")
 			end
 
-			slot0:emit(ChargeMediator.OPEN_CHARGE_ITEM_PANEL, {
+			local var_12_11 = {
 				isChargeType = true,
-				icon = "chargeicon/" .. slot1:getConfig("picture"),
-				name = slot1:getConfig("name_display"),
-				tipExtra = slot9,
-				extraItems = slot5,
-				price = slot1:getConfig("money"),
-				isLocalPrice = slot1:IsLocalPrice(),
-				tagType = slot4,
-				isMonthCard = slot1:isMonthCard(),
-				tipBonus = slot10,
-				bonusItem = slot8,
-				extraDrop = slot6,
-				descExtra = slot1:getConfig("descrip_extra"),
-				limitArgs = slot1:getConfig("limit_args"),
-				onYes = function ()
+				icon = "chargeicon/" .. arg_12_1:getConfig("picture"),
+				name = arg_12_1:getConfig("name_display"),
+				tipExtra = var_12_9,
+				extraItems = var_12_2,
+				price = arg_12_1:getConfig("money"),
+				isLocalPrice = arg_12_1:IsLocalPrice(),
+				tagType = var_12_1,
+				isMonthCard = arg_12_1:isMonthCard(),
+				tipBonus = var_12_10,
+				bonusItem = var_12_8,
+				extraDrop = var_12_3,
+				descExtra = arg_12_1:getConfig("descrip_extra"),
+				limitArgs = arg_12_1:getConfig("limit_args"),
+				onYes = function()
 					if ChargeConst.isNeedSetBirth() then
-						uv0:emit(ChargeMediator.OPEN_CHARGE_BIRTHDAY)
+						arg_12_0:emit(ChargeMediator.OPEN_CHARGE_BIRTHDAY)
 					else
-						uv0:emit(ChargeMediator.CHARGE, uv1.id)
+						arg_12_0:emit(ChargeMediator.CHARGE, arg_12_1.id)
 					end
 				end
-			})
-		elseif slot1:isGem() then
-			slot6 = slot1:getConfig("gem")
+			}
 
-			slot0:emit(ChargeMediator.OPEN_CHARGE_ITEM_BOX, {
+			arg_12_0:emit(ChargeMediator.OPEN_CHARGE_ITEM_PANEL, var_12_11)
+		elseif arg_12_1:isGem() then
+			local var_12_12 = arg_12_1:getConfig("money")
+			local var_12_13 = arg_12_1:getConfig("gem")
+
+			if var_12_0 then
+				var_12_13 = var_12_13 + arg_12_1:getConfig("gem")
+			else
+				var_12_13 = var_12_13 + arg_12_1:getConfig("extra_gem")
+			end
+
+			local var_12_14 = {
 				isChargeType = true,
-				icon = "chargeicon/" .. slot1:getConfig("picture"),
-				name = slot1:getConfig("name_display"),
-				price = slot1:getConfig("money"),
-				isLocalPrice = slot1:IsLocalPrice(),
-				tagType = slot4,
-				normalTip = i18n("charge_start_tip", slot1:getConfig("money"), slot3 and slot6 + slot1:getConfig("gem") or slot6 + slot1:getConfig("extra_gem")),
-				onYes = function ()
+				icon = "chargeicon/" .. arg_12_1:getConfig("picture"),
+				name = arg_12_1:getConfig("name_display"),
+				price = arg_12_1:getConfig("money"),
+				isLocalPrice = arg_12_1:IsLocalPrice(),
+				tagType = var_12_1,
+				normalTip = i18n("charge_start_tip", var_12_12, var_12_13),
+				onYes = function()
 					if ChargeConst.isNeedSetBirth() then
-						uv0:emit(ChargeMediator.OPEN_CHARGE_BIRTHDAY)
+						arg_12_0:emit(ChargeMediator.OPEN_CHARGE_BIRTHDAY)
 					else
-						uv0:emit(ChargeMediator.CHARGE, uv1.id)
+						arg_12_0:emit(ChargeMediator.CHARGE, arg_12_1.id)
 					end
 				end
-			})
+			}
+
+			arg_12_0:emit(ChargeMediator.OPEN_CHARGE_ITEM_BOX, var_12_14)
 		end
 	else
-		slot2 = {}
+		local var_12_15 = {}
+		local var_12_16 = arg_12_1:getConfig("effect_args")
+		local var_12_17 = Item.getConfigData(var_12_16[1])
+		local var_12_18 = var_12_17.display_icon
 
-		if type(Item.getConfigData(slot1:getConfig("effect_args")[1]).display_icon) == "table" then
-			for slot9, slot10 in ipairs(slot5) do
-				table.insert(slot2, {
-					type = slot10[1],
-					id = slot10[2],
-					count = slot10[3]
+		if type(var_12_18) == "table" then
+			for iter_12_0, iter_12_1 in ipairs(var_12_18) do
+				table.insert(var_12_15, {
+					type = iter_12_1[1],
+					id = iter_12_1[2],
+					count = iter_12_1[3]
 				})
 			end
 		end
 
-		slot0:emit(ChargeMediator.OPEN_CHARGE_ITEM_PANEL, {
+		local var_12_19 = {
 			isMonthCard = false,
 			isChargeType = false,
 			isLocalPrice = false,
-			icon = slot4.icon,
-			name = slot4.name,
+			icon = var_12_17.icon,
+			name = var_12_17.name,
 			tipExtra = i18n("charge_title_getitem"),
-			extraItems = slot2,
-			price = slot1:getConfig("resource_num"),
-			tagType = slot1:getConfig("tag"),
-			onYes = function ()
+			extraItems = var_12_15,
+			price = arg_12_1:getConfig("resource_num"),
+			tagType = arg_12_1:getConfig("tag"),
+			onYes = function()
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
-					content = i18n("charge_scene_buy_confirm", uv0:getConfig("resource_num"), uv1.name),
-					onYes = function ()
-						uv0:emit(ChargeMediator.BUY_ITEM, uv1.id, 1)
+					content = i18n("charge_scene_buy_confirm", arg_12_1:getConfig("resource_num"), var_12_17.name),
+					onYes = function()
+						arg_12_0:emit(ChargeMediator.BUY_ITEM, arg_12_1.id, 1)
 					end
 				})
 			end
-		})
+		}
+
+		arg_12_0:emit(ChargeMediator.OPEN_CHARGE_ITEM_PANEL, var_12_19)
 	end
 end
 
-function slot0.updateGiftGoodsVOList(slot0)
-	slot0.giftGoodsVOList = {}
+function var_0_0.updateGiftGoodsVOList(arg_19_0)
+	arg_19_0.giftGoodsVOList = {}
 
-	for slot6, slot7 in pairs(pg.pay_data_display.all) do
-		if not table.contains(RefluxShopView.getAllRefluxPackID(), slot7) and (slot2[slot7].extra_service == Goods.ITEM_BOX or slot9 == Goods.PASS_ITEM) then
-			if Goods.Create({
-				shop_id = slot7
-			}, Goods.TYPE_CHARGE):isTecShipGift() then
-				if slot10:isTecShipShowGift() and slot0:fliteTecShipGift(slot10) then
-					table.insert(slot0.giftGoodsVOList, slot10)
+	local var_19_0 = RefluxShopView.getAllRefluxPackID()
+	local var_19_1 = pg.pay_data_display
+
+	for iter_19_0, iter_19_1 in pairs(var_19_1.all) do
+		if not table.contains(var_19_0, iter_19_1) then
+			local var_19_2 = var_19_1[iter_19_1].extra_service
+
+			if var_19_2 == Goods.ITEM_BOX or var_19_2 == Goods.PASS_ITEM then
+				local var_19_3 = Goods.Create({
+					shop_id = iter_19_1
+				}, Goods.TYPE_CHARGE)
+
+				if var_19_3:isTecShipGift() then
+					if var_19_3:isTecShipShowGift() and arg_19_0:fliteTecShipGift(var_19_3) then
+						table.insert(arg_19_0.giftGoodsVOList, var_19_3)
+					end
+				else
+					table.insert(arg_19_0.giftGoodsVOList, var_19_3)
 				end
-			else
-				table.insert(slot0.giftGoodsVOList, slot10)
 			end
 		end
 	end
 
-	for slot6, slot7 in pairs(pg.shop_template.get_id_list_by_genre.gift_package) do
-		if not table.contains(slot1, slot7) then
-			table.insert(slot0.giftGoodsVOList, Goods.Create({
-				shop_id = slot7
-			}, Goods.TYPE_GIFT_PACKAGE))
+	for iter_19_2, iter_19_3 in pairs(pg.shop_template.get_id_list_by_genre.gift_package) do
+		if not table.contains(var_19_0, iter_19_3) then
+			local var_19_4 = Goods.Create({
+				shop_id = iter_19_3
+			}, Goods.TYPE_GIFT_PACKAGE)
+
+			table.insert(arg_19_0.giftGoodsVOList, var_19_4)
 		end
 	end
 end
 
-function slot0.sortGiftGoodsVOList(slot0)
-	slot0.giftGoodsVOListForShow = {}
+function var_0_0.sortGiftGoodsVOList(arg_20_0)
+	arg_20_0.giftGoodsVOListForShow = {}
 
-	for slot4, slot5 in ipairs(slot0.giftGoodsVOList) do
-		if slot5:isChargeType() then
-			slot5:updateBuyCount(ChargeConst.getBuyCount(slot0.chargedList, slot5.id))
+	for iter_20_0, iter_20_1 in ipairs(arg_20_0.giftGoodsVOList) do
+		if iter_20_1:isChargeType() then
+			local var_20_0 = ChargeConst.getBuyCount(arg_20_0.chargedList, iter_20_1.id)
 
-			if slot5:canPurchase() and slot5:inTime() then
-				table.insert(slot0.giftGoodsVOListForShow, slot5)
+			iter_20_1:updateBuyCount(var_20_0)
+
+			if iter_20_1:canPurchase() and iter_20_1:inTime() then
+				table.insert(arg_20_0.giftGoodsVOListForShow, iter_20_1)
 			end
-		elseif not slot5:isLevelLimit(slot0.player.level, true) then
-			slot5:updateBuyCount(ChargeConst.getBuyCount(slot0.normalList, slot5.id))
+		elseif not iter_20_1:isLevelLimit(arg_20_0.player.level, true) then
+			local var_20_1 = ChargeConst.getBuyCount(arg_20_0.normalList, iter_20_1.id)
 
-			slot8 = false
+			iter_20_1:updateBuyCount(var_20_1)
 
-			if (slot5:getConfig("group") or 0) > 0 then
-				slot5:updateGroupCount(ChargeConst.getGroupLimit(slot0.normalGroupList, slot7))
+			local var_20_2 = iter_20_1:getConfig("group") or 0
+			local var_20_3 = false
 
-				slot8 = slot5:getConfig("group_limit") > 0 and slot9 <= slot10
+			if var_20_2 > 0 then
+				local var_20_4 = iter_20_1:getConfig("group_limit")
+				local var_20_5 = ChargeConst.getGroupLimit(arg_20_0.normalGroupList, var_20_2)
+
+				iter_20_1:updateGroupCount(var_20_5)
+
+				var_20_3 = var_20_4 > 0 and var_20_4 <= var_20_5
 			end
 
-			slot9, slot10 = pg.TimeMgr.GetInstance():inTime(slot5:getConfig("time"))
+			local var_20_6, var_20_7 = pg.TimeMgr.GetInstance():inTime(iter_20_1:getConfig("time"))
 
-			if slot10 then
-				slot0:addUpdateTimer(slot10)
+			if var_20_7 then
+				arg_20_0:addUpdateTimer(var_20_7)
 			end
 
-			if slot9 and slot5:canPurchase() and not slot8 then
-				table.insert(slot0.giftGoodsVOListForShow, slot5)
+			if var_20_6 and iter_20_1:canPurchase() and not var_20_3 then
+				table.insert(arg_20_0.giftGoodsVOListForShow, iter_20_1)
 			end
 		end
 	end
 
-	function slot1(slot0)
-		slot2 = 0
+	local function var_20_8(arg_21_0)
+		local var_21_0 = arg_21_0:getConfig("time")
+		local var_21_1 = 0
 
-		return type(slot0:getConfig("time")) == "string" and slot2 + 999999999999.0 or type(slot1) == "table" and (pg.TimeMgr.GetInstance():parseTimeFromConfig(slot1[2]) - pg.TimeMgr.GetInstance():GetServerTime() > 0 and slot2 or 999999999999.0) or slot2 + 999999999999.0
+		if type(var_21_0) == "string" then
+			var_21_1 = var_21_1 + 999999999999
+		elseif type(var_21_0) == "table" then
+			var_21_1 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var_21_0[2]) - pg.TimeMgr.GetInstance():GetServerTime()
+			var_21_1 = var_21_1 > 0 and var_21_1 or 999999999999
+		else
+			var_21_1 = var_21_1 + 999999999999
+		end
+
+		return var_21_1
 	end
 
-	slot2 = {}
-	slot7 = ActivityConst.ACTIVITY_TYPE_GIFT_UP
+	local var_20_9 = {}
+	local var_20_10 = getProxy(ActivityProxy)
 
-	for slot7, slot8 in ipairs(getProxy(ActivityProxy):getActivitiesByType(slot7)) do
-		if slot3:IsActivityNotEnd(slot8.id) then
-			underscore(slot8:getConfig("config_client").gifts):chain():flatten():map(function (slot0)
-				uv0[slot0] = true
+	for iter_20_2, iter_20_3 in ipairs(var_20_10:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_GIFT_UP)) do
+		if var_20_10:IsActivityNotEnd(iter_20_3.id) then
+			underscore(iter_20_3:getConfig("config_client").gifts):chain():flatten():map(function(arg_22_0)
+				var_20_9[arg_22_0] = true
 			end)
 		end
 	end
 
-	table.sort(slot0.giftGoodsVOListForShow, CompareFuncs({
-		function (slot0)
-			return uv0[slot0.id] and 0 or 1
+	table.sort(arg_20_0.giftGoodsVOListForShow, CompareFuncs({
+		function(arg_23_0)
+			return var_20_9[arg_23_0.id] and 0 or 1
 		end,
-		function (slot0)
-			return (slot0:getConfig("type_order") - 1) % 1000
+		function(arg_24_0)
+			return (arg_24_0:getConfig("type_order") - 1) % 1000
 		end,
-		function (slot0)
-			return uv0(slot0)
+		function(arg_25_0)
+			return var_20_8(arg_25_0)
 		end,
-		function (slot0)
-			return -slot0:getConfig("tag")
+		function(arg_26_0)
+			return -arg_26_0:getConfig("tag")
 		end,
-		function (slot0)
-			return slot0:getConfig("order") or 999
+		function(arg_27_0)
+			return arg_27_0:getConfig("order") or 999
 		end,
-		function (slot0)
-			return slot0.id
+		function(arg_28_0)
+			return arg_28_0.id
 		end
 	}))
 end
 
-function slot0.updateGoodsData(slot0)
-	slot0.firstChargeIds = slot0.contextData.firstChargeIds
-	slot0.chargedList = slot0.contextData.chargedList
-	slot0.normalList = slot0.contextData.normalList
-	slot0.normalGroupList = slot0.contextData.normalGroupList
+function var_0_0.updateGoodsData(arg_29_0)
+	arg_29_0.firstChargeIds = arg_29_0.contextData.firstChargeIds
+	arg_29_0.chargedList = arg_29_0.contextData.chargedList
+	arg_29_0.normalList = arg_29_0.contextData.normalList
+	arg_29_0.normalGroupList = arg_29_0.contextData.normalGroupList
 end
 
-function slot0.setGoodData(slot0, slot1, slot2, slot3, slot4)
-	slot0.firstChargeIds = slot1
-	slot0.chargedList = slot2
-	slot0.normalList = slot3
-	slot0.normalGroupList = slot4
+function var_0_0.setGoodData(arg_30_0, arg_30_1, arg_30_2, arg_30_3, arg_30_4)
+	arg_30_0.firstChargeIds = arg_30_1
+	arg_30_0.chargedList = arg_30_2
+	arg_30_0.normalList = arg_30_3
+	arg_30_0.normalGroupList = arg_30_4
 end
 
-function slot0.updateData(slot0)
-	slot0.player = getProxy(PlayerProxy):getData()
+function var_0_0.updateData(arg_31_0)
+	arg_31_0.player = getProxy(PlayerProxy):getData()
 
-	slot0:updateGiftGoodsVOList()
-	slot0:sortGiftGoodsVOList()
+	arg_31_0:updateGiftGoodsVOList()
+	arg_31_0:sortGiftGoodsVOList()
 end
 
-function slot0.addUpdateTimer(slot0, slot1)
-	if slot0.updateTime and slot2:Table2ServerTime(slot0.updateTime) < pg.TimeMgr.GetInstance():Table2ServerTime(slot1) then
+function var_0_0.addUpdateTimer(arg_32_0, arg_32_1)
+	local var_32_0 = pg.TimeMgr.GetInstance()
+	local var_32_1 = var_32_0:Table2ServerTime(arg_32_1)
+
+	if arg_32_0.updateTime and var_32_1 > var_32_0:Table2ServerTime(arg_32_0.updateTime) then
 		return
 	end
 
-	slot0.updateTime = slot1
+	arg_32_0.updateTime = arg_32_1
 
-	slot0:removeUpdateTimer()
+	arg_32_0:removeUpdateTimer()
 
-	slot0.updateTimer = Timer.New(function ()
-		if uv1 < uv0:GetServerTime() then
-			uv2:removeUpdateTimer()
-			uv2:reUpdateAll()
+	arg_32_0.updateTimer = Timer.New(function()
+		if var_32_0:GetServerTime() > var_32_1 then
+			arg_32_0:removeUpdateTimer()
+			arg_32_0:reUpdateAll()
 		end
 	end, 1, -1)
 
-	slot0.updateTimer:Start()
-	slot0.updateTimer.func()
+	arg_32_0.updateTimer:Start()
+	arg_32_0.updateTimer.func()
 end
 
-function slot0.removeUpdateTimer(slot0)
-	if slot0.updateTimer then
-		slot0.updateTimer:Stop()
+function var_0_0.removeUpdateTimer(arg_34_0)
+	if arg_34_0.updateTimer then
+		arg_34_0.updateTimer:Stop()
 
-		slot0.updateTimer = nil
+		arg_34_0.updateTimer = nil
 	end
 end
 
-function slot0.reUpdateAll(slot0)
-	slot0:updateData()
-	slot0:updateScrollRect()
+function var_0_0.reUpdateAll(arg_35_0)
+	arg_35_0:updateData()
+	arg_35_0:updateScrollRect()
 end
 
-function slot0.fliteTecShipGift(slot0, slot1)
-	if slot1:isChargeType() and slot1:isTecShipShowGift() then
-		if slot1:isLevelLimit(slot0.player.level, true) then
+function var_0_0.fliteTecShipGift(arg_36_0, arg_36_1)
+	if arg_36_1:isChargeType() and arg_36_1:isTecShipShowGift() then
+		if arg_36_1:isLevelLimit(arg_36_0.player.level, true) then
 			return false
 		end
 
-		slot3, slot4, slot5 = nil
+		local var_36_0 = arg_36_1:getSameGroupTecShipGift()
+		local var_36_1
+		local var_36_2
+		local var_36_3
 
-		for slot9, slot10 in ipairs(slot1:getSameGroupTecShipGift()) do
-			if slot10:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.Normal then
-				slot3 = slot10
-			elseif slot10:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.High then
-				slot4 = slot10
-			elseif slot10:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.Up then
-				slot5 = slot10
+		for iter_36_0, iter_36_1 in ipairs(var_36_0) do
+			if iter_36_1:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.Normal then
+				var_36_1 = iter_36_1
+			elseif iter_36_1:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.High then
+				var_36_2 = iter_36_1
+			elseif iter_36_1:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.Up then
+				var_36_3 = iter_36_1
 			end
 		end
 
-		slot6 = ChargeConst.getBuyCount(slot0.chargedList, slot3.id)
-		slot8 = ChargeConst.getBuyCount(slot0.chargedList, slot5.id)
+		local var_36_4 = ChargeConst.getBuyCount(arg_36_0.chargedList, var_36_1.id)
+		local var_36_5 = ChargeConst.getBuyCount(arg_36_0.chargedList, var_36_2.id)
+		local var_36_6 = ChargeConst.getBuyCount(arg_36_0.chargedList, var_36_3.id)
 
-		if ChargeConst.getBuyCount(slot0.chargedList, slot4.id) > 0 then
+		if var_36_5 > 0 then
 			return false
-		elseif slot6 > 0 and slot8 > 0 then
+		elseif var_36_4 > 0 and var_36_6 > 0 then
 			return false
 		else
 			return true
@@ -401,4 +469,4 @@ function slot0.fliteTecShipGift(slot0, slot1)
 	end
 end
 
-return slot0
+return var_0_0

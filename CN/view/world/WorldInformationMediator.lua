@@ -1,48 +1,50 @@
-slot0 = class("WorldInformationMediator", import("..base.ContextMediator"))
-slot0.OnTriggerTask = "WorldInformationMediator.OnTriggerTask"
-slot0.OnSubmitTask = "WorldInformationMediator.OnSubmitTask"
-slot0.OnTaskGoto = "WorldInformationMediator.OnTaskGoto"
-slot0.OnOpenDailyTaskPanel = "WorldInformationMediator.OnOpenDailyTaskPanel"
+﻿local var_0_0 = class("WorldInformationMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.OnTaskGoto, function (slot0, slot1)
-		uv0:sendNotification(WorldMediator.OnTriggerTaskGo, {
-			taskId = slot1
+var_0_0.OnTriggerTask = "WorldInformationMediator.OnTriggerTask"
+var_0_0.OnSubmitTask = "WorldInformationMediator.OnSubmitTask"
+var_0_0.OnTaskGoto = "WorldInformationMediator.OnTaskGoto"
+var_0_0.OnOpenDailyTaskPanel = "WorldInformationMediator.OnOpenDailyTaskPanel"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.OnTaskGoto, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(WorldMediator.OnTriggerTaskGo, {
+			taskId = arg_2_1
 		})
 	end)
-	slot0:bind(uv0.OnTriggerTask, function (slot0, slot1)
-		uv0:sendNotification(GAME.WORLD_TRIGGER_TASK, {
-			taskId = slot1
+	arg_1_0:bind(var_0_0.OnTriggerTask, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.WORLD_TRIGGER_TASK, {
+			taskId = arg_3_1
 		})
 	end)
-	slot0:bind(uv0.OnSubmitTask, function (slot0, slot1)
-		uv0:sendNotification(GAME.WORLD_SUMBMIT_TASK, {
-			taskId = slot1.id
+	arg_1_0:bind(var_0_0.OnSubmitTask, function(arg_4_0, arg_4_1)
+		arg_1_0:sendNotification(GAME.WORLD_SUMBMIT_TASK, {
+			taskId = arg_4_1.id
 		})
 	end)
-	slot0:bind(uv0.OnOpenDailyTaskPanel, function (slot0)
-		nowWorld():GetTaskProxy():checkDailyTask(function ()
-			uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OnOpenDailyTaskPanel, function(arg_5_0)
+		nowWorld():GetTaskProxy():checkDailyTask(function()
+			arg_1_0:addSubLayers(Context.New({
 				mediator = WorldDailyTaskMediator,
 				viewComponent = WorldDailyTaskLayer
 			}))
 		end)
 	end)
-	slot0.viewComponent:setWorldTaskProxy(nowWorld():GetTaskProxy())
+	arg_1_0.viewComponent:setWorldTaskProxy(nowWorld():GetTaskProxy())
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_7_0)
 	return {
 		WorldCollectionMediator.ON_MAP
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_1:getName()
+	local var_8_1 = arg_8_1:getBody()
 
-	if slot1:getName() == WorldCollectionMediator.ON_MAP then
-		slot0.viewComponent:closeView()
+	if var_8_0 == WorldCollectionMediator.ON_MAP then
+		arg_8_0.viewComponent:closeView()
 	end
 end
 
-return slot0
+return var_0_0

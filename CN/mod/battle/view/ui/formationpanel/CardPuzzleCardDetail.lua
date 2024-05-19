@@ -1,62 +1,80 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConfig
-slot2 = slot0.Battle.BattleDataFunction
-slot0.Battle.CardPuzzleCardDetail = class("CardPuzzleCardDetail")
-slot3 = slot0.Battle.CardPuzzleCardDetail
-slot3.__name = "CardPuzzleCardDetail"
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0, slot1)
-	slot0._go = slot1
-	slot0._tf = slot0._go.transform
-	slot0._desc = slot0._tf:Find("Desc")
-	slot0._affixList = slot0._tf:Find("affixList")
-	slot0._affixContainer = slot0._affixList:Find("container")
-	slot0._affixTpl = slot0._tf:Find("tpl")
-	slot0._affixViewList = {}
-	slot0._bound = 960 - rtf(slot0._tf).rect.width * 0.5
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConfig
+local var_0_2 = var_0_0.Battle.BattleDataFunction
+
+var_0_0.Battle.CardPuzzleCardDetail = class("CardPuzzleCardDetail")
+
+local var_0_3 = var_0_0.Battle.CardPuzzleCardDetail
+
+var_0_3.__name = "CardPuzzleCardDetail"
+
+function var_0_3.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._go = arg_1_1
+	arg_1_0._tf = arg_1_0._go.transform
+	arg_1_0._desc = arg_1_0._tf:Find("Desc")
+	arg_1_0._affixList = arg_1_0._tf:Find("affixList")
+	arg_1_0._affixContainer = arg_1_0._affixList:Find("container")
+	arg_1_0._affixTpl = arg_1_0._tf:Find("tpl")
+	arg_1_0._affixViewList = {}
+	arg_1_0._bound = 960 - rtf(arg_1_0._tf).rect.width * 0.5
 end
 
-function slot3.Dispose(slot0)
-	slot0._affixList = nil
-	slot0._affixContainer = nil
-	slot0._affixTpl = nil
-	slot0._desc = nil
-	slot0._tf = nil
-	slot0._go = nil
+function var_0_3.Dispose(arg_2_0)
+	arg_2_0._affixList = nil
+	arg_2_0._affixContainer = nil
+	arg_2_0._affixTpl = nil
+	arg_2_0._desc = nil
+	arg_2_0._tf = nil
+	arg_2_0._go = nil
 end
 
-function slot3.Active(slot0, slot1)
-	setActive(slot0._go, slot1)
+function var_0_3.Active(arg_3_0, arg_3_1)
+	setActive(arg_3_0._go, arg_3_1)
 end
 
-function slot3.SetReferenceCard(slot0, slot1)
-	slot3 = uv0.GetPuzzleCardDataTemplate(slot1:GetCardInfo():GetCardID())
+function var_0_3.SetReferenceCard(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:GetCardInfo():GetCardID()
+	local var_4_1 = var_0_2.GetPuzzleCardDataTemplate(var_4_0)
 
-	setText(slot0._desc, slot3.discript)
+	setText(arg_4_0._desc, var_4_1.discript)
 
-	slot5 = 0
+	local var_4_2 = #var_4_1.label
+	local var_4_3 = 0
 
-	while #slot3.label > slot5 do
-		if slot0._affixViewList[slot5 + 1] == nil then
-			table.insert(slot0._affixViewList, uv1.Battle.CardPuzzleCardDetailAffix.New(cloneTplTo(slot0._affixTpl, slot0._affixContainer)))
+	while var_4_3 < var_4_2 do
+		var_4_3 = var_4_3 + 1
+
+		local var_4_4 = arg_4_0._affixViewList[var_4_3]
+
+		if var_4_4 == nil then
+			local var_4_5 = cloneTplTo(arg_4_0._affixTpl, arg_4_0._affixContainer)
+
+			var_4_4 = var_0_0.Battle.CardPuzzleCardDetailAffix.New(var_4_5)
+
+			table.insert(arg_4_0._affixViewList, var_4_4)
 		end
 
-		slot6:SetAffixID(slot3.label[slot5])
+		var_4_4:SetAffixID(var_4_1.label[var_4_3])
 	end
 
-	for slot9, slot10 in ipairs(slot0._affixViewList) do
-		slot10:SetActive(slot9 <= slot5)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0._affixViewList) do
+		local var_4_6 = iter_4_0 <= var_4_3
+
+		iter_4_1:SetActive(var_4_6)
 	end
 
-	slot0._pos = slot0._pos or Vector3.New(0, 0, 0)
+	arg_4_0._pos = arg_4_0._pos or Vector3.New(0, 0, 0)
 
-	if slot0._bound < slot1:GetUIPos().x then
-		slot0._pos.x = slot0._bound
+	local var_4_7 = arg_4_1:GetUIPos()
+
+	if var_4_7.x > arg_4_0._bound then
+		arg_4_0._pos.x = arg_4_0._bound
 	else
-		slot0._pos.x = slot6.x
+		arg_4_0._pos.x = var_4_7.x
 	end
 
-	slot0._pos.y = slot6.y + 130
-	slot0._tf.anchoredPosition = slot0._pos
+	arg_4_0._pos.y = var_4_7.y + 130
+	arg_4_0._tf.anchoredPosition = arg_4_0._pos
 end

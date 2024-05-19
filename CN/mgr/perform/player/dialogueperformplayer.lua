@@ -1,154 +1,163 @@
-slot0 = class("DialoguePerformPlayer", import(".BasePerformPlayer"))
-slot0.TYPEWRITE_SPEED = 0.05
+﻿local var_0_0 = class("DialoguePerformPlayer", import(".BasePerformPlayer"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+var_0_0.TYPEWRITE_SPEED = 0.05
 
-	slot0.eventTipBig = slot0:findTF("event_tip", slot0._tf)
-	slot0.content = slot0:findTF("content", slot0._tf)
-	slot0.image = slot0:findTF("Image", slot0.content)
-	slot0.nameTF = slot0:findTF("name_bg", slot0.content)
-	slot0.nameText = slot0:findTF("name", slot0.nameTF)
-	slot0.next = slot0:findTF("next", slot0.content)
-	slot0.eventTipSmall = slot0:findTF("event_tip", slot0.content)
-	slot0.text = slot0:findTF("Text", slot0.content)
-	slot0.text2 = slot0:findTF("Text2", slot0.content)
-	slot0.resultTF = slot0:findTF("result", slot0.content)
-	slot0.resultTpl = slot0:findTF("tpl", slot0.content)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
+
+	arg_1_0.eventTipBig = arg_1_0:findTF("event_tip", arg_1_0._tf)
+	arg_1_0.content = arg_1_0:findTF("content", arg_1_0._tf)
+	arg_1_0.image = arg_1_0:findTF("Image", arg_1_0.content)
+	arg_1_0.nameTF = arg_1_0:findTF("name_bg", arg_1_0.content)
+	arg_1_0.nameText = arg_1_0:findTF("name", arg_1_0.nameTF)
+	arg_1_0.next = arg_1_0:findTF("next", arg_1_0.content)
+	arg_1_0.eventTipSmall = arg_1_0:findTF("event_tip", arg_1_0.content)
+	arg_1_0.text = arg_1_0:findTF("Text", arg_1_0.content)
+	arg_1_0.text2 = arg_1_0:findTF("Text2", arg_1_0.content)
+	arg_1_0.resultTF = arg_1_0:findTF("result", arg_1_0.content)
+	arg_1_0.resultTpl = arg_1_0:findTF("tpl", arg_1_0.content)
 end
 
-function slot0.Play(slot0, slot1, slot2)
-	slot0:checkName()
-	slot0:Show()
+function var_0_0.Play(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0:checkName()
+	arg_2_0:Show()
 
-	slot3 = slot1.param[1]
+	local var_2_0 = arg_2_1.param[1]
+	local var_2_1 = pg.child_word[var_2_0]
 
-	assert(slot3 and pg.child_word[slot3], "child_word not exist id: " .. slot3)
-	setActive(slot0.eventTipBig, slot1.show_event == 1)
+	assert(var_2_0 and var_2_1, "child_word not exist id: " .. var_2_0)
+	setActive(arg_2_0.eventTipBig, arg_2_1.show_event == 1)
 
-	if slot1.show_event == 1 then
-		onDelayTick(function ()
-			if uv0._anim then
-				uv0._anim:Play()
+	if arg_2_1.show_event == 1 then
+		onDelayTick(function()
+			if arg_2_0._anim then
+				arg_2_0._anim:Play()
 			end
 
-			uv0:_play(uv1, uv2, uv3)
+			arg_2_0:_play(arg_2_1, var_2_1, arg_2_2)
 		end, 0.66)
 	else
-		setActive(slot0.eventTipBig, false)
+		setActive(arg_2_0.eventTipBig, false)
 
-		if slot0._anim then
-			slot0._anim:Play()
+		if arg_2_0._anim then
+			arg_2_0._anim:Play()
 		end
 
-		slot0:_play(slot1, slot4, slot2)
+		arg_2_0:_play(arg_2_1, var_2_1, arg_2_2)
 	end
 end
 
-function slot0._play(slot0, slot1, slot2, slot3)
-	setActive(slot0.eventTipSmall, slot1.show_event == 1)
-	setActive(slot0.next, slot1.show_next == 1)
+function var_0_0._play(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	setActive(arg_4_0.eventTipSmall, arg_4_1.show_event == 1)
+	setActive(arg_4_0.next, arg_4_1.show_next == 1)
 
-	slot0.drops = slot1.show_drops == 1 and slot1.drops or {}
-	slot4 = slot2.char_type ~= EducateConst.WORD_TYPE_CHILD
-	slot5 = slot0.text
+	arg_4_0.drops = arg_4_1.show_drops == 1 and arg_4_1.drops or {}
 
-	setActive(slot0.text, not slot4)
-	setActive(slot0.text2, slot4)
-	setActive(slot0.image, not slot4)
+	local var_4_0 = arg_4_2.char_type ~= EducateConst.WORD_TYPE_CHILD
+	local var_4_1 = arg_4_0.text
 
-	if not slot4 then
-		setImageSprite(slot0.image, LoadSprite("storyicon/" .. getProxy(EducateProxy):GetCharData():GetPaintingName()), true)
+	setActive(arg_4_0.text, not var_4_0)
+	setActive(arg_4_0.text2, var_4_0)
+	setActive(arg_4_0.image, not var_4_0)
+
+	if not var_4_0 then
+		local var_4_2 = getProxy(EducateProxy):GetCharData():GetPaintingName()
+
+		setImageSprite(arg_4_0.image, LoadSprite("storyicon/" .. var_4_2), true)
 	end
 
-	slot5 = slot4 and slot0.text2 or slot0.text
+	local var_4_3 = var_4_0 and arg_4_0.text2 or arg_4_0.text
+	local var_4_4 = arg_4_2.word
+	local var_4_5 = string.gsub(var_4_4, "$1", arg_4_0.callName)
 
-	setText(slot5, string.gsub(slot2.word, "$1", slot0.callName))
+	setText(var_4_3, var_4_5)
 
-	slot7 = GetComponent(slot5, typeof(Typewriter))
+	local var_4_6 = GetComponent(var_4_3, typeof(Typewriter))
 
-	if slot2.char_type == EducateConst.WORD_TYPE_ASIDE then
-		setActive(slot0.nameTF, false)
+	if arg_4_2.char_type == EducateConst.WORD_TYPE_ASIDE then
+		setActive(arg_4_0.nameTF, false)
 	else
-		setActive(slot0.nameTF, true)
+		setActive(arg_4_0.nameTF, true)
 
-		slot8 = ""
+		local var_4_7 = ""
 
-		if slot2.char_type == EducateConst.WORD_TYPE_CHILD then
-			slot8 = slot0.name
-		elseif slot2.char_type == EducateConst.WORD_TYPE_PLAYER then
-			slot8 = slot0.playerName
+		if arg_4_2.char_type == EducateConst.WORD_TYPE_CHILD then
+			var_4_7 = arg_4_0.name
+		elseif arg_4_2.char_type == EducateConst.WORD_TYPE_PLAYER then
+			var_4_7 = arg_4_0.playerName
 		end
 
-		setText(slot0.nameText, slot8)
+		setText(arg_4_0.nameText, var_4_7)
 	end
 
-	function slot7.endFunc()
-		setActive(uv0.resultTF, true)
+	function var_4_6.endFunc()
+		setActive(arg_4_0.resultTF, true)
 
-		slot0 = {}
+		local var_5_0 = {}
 
-		for slot4 = 1, #uv0.drops do
-			table.insert(slot0, function (slot0)
-				uv0.resultTF = uv0:findTF("result", uv0.content)
-				uv0.resultTpl = uv0:findTF("tpl", uv0.content)
-				slot2 = uv1 < uv0.resultTF.childCount and uv0.resultTF:GetChild(uv1 - 1) or cloneTplTo(uv0.resultTpl, uv0.resultTF)
+		for iter_5_0 = 1, #arg_4_0.drops do
+			table.insert(var_5_0, function(arg_6_0)
+				arg_4_0.resultTF = arg_4_0:findTF("result", arg_4_0.content)
+				arg_4_0.resultTpl = arg_4_0:findTF("tpl", arg_4_0.content)
 
-				if uv0.drops[uv1].type == EducateConst.DROP_TYPE_BUFF then
-					setActive(uv0:findTF("icon", slot2), false)
-					setText(uv0:findTF("name", slot2), pg.child_buff[slot1.id].name)
-					setText(uv0:findTF("value", slot2), "")
+				local var_6_0 = arg_4_0.drops[iter_5_0]
+				local var_6_1 = iter_5_0 < arg_4_0.resultTF.childCount and arg_4_0.resultTF:GetChild(iter_5_0 - 1) or cloneTplTo(arg_4_0.resultTpl, arg_4_0.resultTF)
+
+				if var_6_0.type == EducateConst.DROP_TYPE_BUFF then
+					setActive(arg_4_0:findTF("icon", var_6_1), false)
+					setText(arg_4_0:findTF("name", var_6_1), pg.child_buff[var_6_0.id].name)
+					setText(arg_4_0:findTF("value", var_6_1), "")
 				else
-					setActive(uv0:findTF("icon", slot2), true)
-					EducateHelper.UpdateDropShowForAttr(slot2, slot1)
+					setActive(arg_4_0:findTF("icon", var_6_1), true)
+					EducateHelper.UpdateDropShowForAttr(var_6_1, var_6_0)
 				end
 
-				setActive(slot2, true)
-				slot2:GetComponent(typeof(Animation)):Play("anim_educate_attr_in")
-				onDelayTick(function ()
-					uv0()
+				setActive(var_6_1, true)
+				var_6_1:GetComponent(typeof(Animation)):Play("anim_educate_attr_in")
+				onDelayTick(function()
+					arg_6_0()
 				end, 0.033)
 			end)
 		end
 
-		seriesAsync(slot0, function ()
-			onDelayTick(function ()
-				setActive(uv0.resultTF, false)
-				eachChild(uv0.resultTF, function (slot0)
-					setActive(slot0, false)
+		seriesAsync(var_5_0, function()
+			onDelayTick(function()
+				setActive(arg_4_0.resultTF, false)
+				eachChild(arg_4_0.resultTF, function(arg_10_0)
+					setActive(arg_10_0, false)
 				end)
 
-				if uv1 then
-					uv1()
+				if arg_4_3 then
+					arg_4_3()
 				end
 			end, 1)
 		end)
 	end
 
-	slot7:setSpeed(uv0.TYPEWRITE_SPEED)
-	slot7:Play()
+	var_4_6:setSpeed(var_0_0.TYPEWRITE_SPEED)
+	var_4_6:Play()
 end
 
-function slot0.checkName(slot0)
-	if not slot0.callName then
-		slot0.callName = getProxy(EducateProxy):GetCharData():GetCallName()
+function var_0_0.checkName(arg_11_0)
+	if not arg_11_0.callName then
+		arg_11_0.callName = getProxy(EducateProxy):GetCharData():GetCallName()
 	end
 
-	if not slot0.name then
-		slot0.name = getProxy(EducateProxy):GetCharData():GetName()
+	if not arg_11_0.name then
+		arg_11_0.name = getProxy(EducateProxy):GetCharData():GetName()
 	end
 
-	if not slot0.playerName then
-		slot0.playerName = getProxy(PlayerProxy):getRawData():GetName()
+	if not arg_11_0.playerName then
+		arg_11_0.playerName = getProxy(PlayerProxy):getRawData():GetName()
 	end
 end
 
-function slot0.Clear(slot0)
-	setText(slot0.text, "")
-	setText(slot0.text2, "")
-	setActive(slot0.eventTipBig, false)
-	setActive(slot0.eventTipSmall, false)
-	slot0:Hide()
+function var_0_0.Clear(arg_12_0)
+	setText(arg_12_0.text, "")
+	setText(arg_12_0.text2, "")
+	setActive(arg_12_0.eventTipBig, false)
+	setActive(arg_12_0.eventTipSmall, false)
+	arg_12_0:Hide()
 end
 
-return slot0
+return var_0_0

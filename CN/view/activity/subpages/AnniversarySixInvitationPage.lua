@@ -1,69 +1,81 @@
-slot0 = class("AnniversarySixInvitationPage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("AnniversarySixInvitationPage", import("...base.BaseActivityPage"))
 
-function slot0.OnDataSetting(slot0)
-	if slot0.ptData then
-		slot0.ptData:Update(slot0.activity)
+function var_0_0.OnDataSetting(arg_1_0)
+	if arg_1_0.ptData then
+		arg_1_0.ptData:Update(arg_1_0.activity)
 	else
-		slot0.ptData = ActivityPtData.New(slot0.activity)
+		arg_1_0.ptData = ActivityPtData.New(arg_1_0.activity)
 	end
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot0.rtMarks = slot0._tf:Find("AD/progress")
-	slot0.rtFinish = slot0._tf:Find("AD/award")
-	slot1 = slot0._tf:Find("AD/btn_list")
+function var_0_0.OnFirstFlush(arg_2_0)
+	arg_2_0.rtMarks = arg_2_0._tf:Find("AD/progress")
+	arg_2_0.rtFinish = arg_2_0._tf:Find("AD/award")
 
-	onButton(slot0, slot1:Find("go"), function ()
-		slot1 = getProxy(ActivityProxy)
+	local var_2_0 = arg_2_0._tf:Find("AD/btn_list")
 
-		if not underscore.detect(slot1:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function (slot0)
-			return slot0:getConfig("config_id") == 3
-		end) or slot0:isEnd() then
+	onButton(arg_2_0, var_2_0:Find("go"), function()
+		local var_3_0 = underscore.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function(arg_4_0)
+			return arg_4_0:getConfig("config_id") == 3
+		end)
+
+		if not var_3_0 or var_3_0:isEnd() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
 
 			return
 		end
 
-		if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND) and not slot1:isEnd() then
-			uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.ANNIVERSARY_ISLAND_SEA, {
+		local var_3_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND)
+
+		if var_3_1 and not var_3_1:isEnd() then
+			arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.ANNIVERSARY_ISLAND_SEA, {
 				wraps = SixthAnniversaryIslandScene.SHOP
 			})
 		else
-			uv0:emit(ActivityMediator.OPEN_LAYER, Context.New({
+			arg_2_0:emit(ActivityMediator.OPEN_LAYER, Context.New({
 				mediator = SixthAnniversaryIslandShopMediator,
 				viewComponent = SixthAnniversaryIslandShopLayer
 			}))
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot1:Find("get"), function ()
-		slot0, slot1 = uv0.ptData:GetResProgress()
+	onButton(arg_2_0, var_2_0:Find("get"), function()
+		local var_5_0, var_5_1 = arg_2_0.ptData:GetResProgress()
 
-		uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+		arg_2_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
 			cmd = 1,
-			activity_id = uv0.ptData:GetId(),
-			arg1 = slot1
+			activity_id = arg_2_0.ptData:GetId(),
+			arg1 = var_5_1
 		})
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot1, slot2 = slot0.ptData:GetResProgress()
-	slot3 = slot0.ptData:CanGetAward()
-	slot5 = slot0._tf:Find("AD/btn_list")
+function var_0_0.OnUpdateFlush(arg_6_0)
+	local var_6_0, var_6_1 = arg_6_0.ptData:GetResProgress()
+	local var_6_2 = arg_6_0.ptData:CanGetAward()
+	local var_6_3 = arg_6_0.ptData:CanGetNextAward()
+	local var_6_4 = arg_6_0._tf:Find("AD/btn_list")
 
-	setActive(slot5:Find("get"), slot3)
-	setActive(slot5:Find("got"), not slot0.ptData:CanGetNextAward())
-	setActive(slot5:Find("go"), not slot3 and slot4)
+	setActive(var_6_4:Find("get"), var_6_2)
+	setActive(var_6_4:Find("got"), not var_6_3)
+	setActive(var_6_4:Find("go"), not var_6_2 and var_6_3)
 
-	slot1 = (not slot4 or math.min(slot1, slot2)) and slot2 + 1
-
-	for slot10 = 1, slot0.rtMarks.childCount do
-		setActive(slot0.rtMarks:GetChild(slot10 - 1):Find("mark"), slot10 < slot1)
-		setActive(slot11:Find("icon"), slot10 == slot1)
+	if var_6_3 then
+		var_6_0 = math.min(var_6_0, var_6_1)
+	else
+		var_6_0 = var_6_1 + 1
 	end
 
-	setGray(slot0.rtFinish:Find("Image"), not slot4)
-	setActive(slot0.rtFinish:Find("got"), not slot4)
+	local var_6_5 = arg_6_0.rtMarks.childCount
+
+	for iter_6_0 = 1, var_6_5 do
+		local var_6_6 = arg_6_0.rtMarks:GetChild(iter_6_0 - 1)
+
+		setActive(var_6_6:Find("mark"), iter_6_0 < var_6_0)
+		setActive(var_6_6:Find("icon"), iter_6_0 == var_6_0)
+	end
+
+	setGray(arg_6_0.rtFinish:Find("Image"), not var_6_3)
+	setActive(arg_6_0.rtFinish:Find("got"), not var_6_3)
 end
 
-return slot0
+return var_0_0

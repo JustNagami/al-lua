@@ -1,17 +1,4 @@
-return {
-	{
-		desc = "主炮每进行9次攻击，触发全弹发射-罗恩级I"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行9次攻击，触发全弹发射-罗恩级I",
-	stack = 1,
-	id = 23241,
-	icon = 20200,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -37,5 +24,18 @@ return {
 				countType = 23240
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行9次攻击，触发全弹发射-罗恩级I"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行9次攻击，触发全弹发射-罗恩级I",
+	stack = 1,
+	id = 23241,
+	icon = 20200,
+	last_effect = ""
 }

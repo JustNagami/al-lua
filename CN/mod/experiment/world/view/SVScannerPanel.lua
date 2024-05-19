@@ -1,271 +1,304 @@
-slot0 = class("SVScannerPanel", import("view.base.BaseSubView"))
-slot0.ShowView = "SVScannerPanel.ShowView"
-slot0.HideView = "SVScannerPanel.HideView"
-slot0.HideGoing = "SVScannerPanel.HideGoing"
+﻿local var_0_0 = class("SVScannerPanel", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+var_0_0.ShowView = "SVScannerPanel.ShowView"
+var_0_0.HideView = "SVScannerPanel.HideView"
+var_0_0.HideGoing = "SVScannerPanel.HideGoing"
+
+function var_0_0.getUIName(arg_1_0)
 	return "SVScannerPanel"
 end
 
-function slot0.getBGM(slot0)
+function var_0_0.getBGM(arg_2_0)
 	return "echo-loop"
 end
 
-function slot0.OnLoaded(slot0)
+function var_0_0.OnLoaded(arg_3_0)
+	return
 end
 
-function slot0.OnInit(slot0)
-	slot0.camera = GameObject.Find("OverlayCamera"):GetComponent(typeof(Camera))
-	slot1 = slot0._tf
-	slot0.canvas = GetOrAddComponent(slot1, "CanvasGroup")
-	slot0.rtExit = slot1:Find("adapt/exit")
-	slot0.rtPanel = slot1:Find("adapt/selected_panel")
+function var_0_0.OnInit(arg_4_0)
+	arg_4_0.camera = GameObject.Find("OverlayCamera"):GetComponent(typeof(Camera))
 
-	setActive(slot0.rtPanel, false)
+	local var_4_0 = arg_4_0._tf
 
-	slot0.rtWindow = slot0.rtPanel:Find("window")
-	slot0.rtTitle = slot0.rtWindow:Find("base_info/title")
-	slot0.rtMark = slot0.rtWindow:Find("base_info/mark")
-	slot0.rtBuffContent = slot0.rtWindow:Find("base_info/content")
-	slot0.rtMapBuffContent = slot0.rtWindow:Find("base_info/map_buffs")
-	slot0.rtInfo = slot0.rtWindow:Find("base_info/info")
-	slot0.rtWeaknessContent = slot0.rtWindow:Find("weakness_info/content")
-	slot0.rtRadiation = slot0.rtWindow:Find("radiation_info")
-	slot0.rtAnim = slot1:Find("adapt/anim")
-	slot0.rtClick = slot0.rtPanel:Find("click")
-	slot0.buffUIItemList = UIItemList.New(slot0.rtBuffContent, slot0.rtBuffContent:Find("buff"))
+	arg_4_0.canvas = GetOrAddComponent(var_4_0, "CanvasGroup")
+	arg_4_0.rtExit = var_4_0:Find("adapt/exit")
+	arg_4_0.rtPanel = var_4_0:Find("adapt/selected_panel")
 
-	slot0.buffUIItemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			if #uv0.buffList[slot1 + 1].config.icon > 0 then
-				GetImageSpriteFromAtlasAsync("world/buff/" .. slot3.config.icon, "", slot2:Find("icon"))
+	setActive(arg_4_0.rtPanel, false)
+
+	arg_4_0.rtWindow = arg_4_0.rtPanel:Find("window")
+	arg_4_0.rtTitle = arg_4_0.rtWindow:Find("base_info/title")
+	arg_4_0.rtMark = arg_4_0.rtWindow:Find("base_info/mark")
+	arg_4_0.rtBuffContent = arg_4_0.rtWindow:Find("base_info/content")
+	arg_4_0.rtMapBuffContent = arg_4_0.rtWindow:Find("base_info/map_buffs")
+	arg_4_0.rtInfo = arg_4_0.rtWindow:Find("base_info/info")
+	arg_4_0.rtWeaknessContent = arg_4_0.rtWindow:Find("weakness_info/content")
+	arg_4_0.rtRadiation = arg_4_0.rtWindow:Find("radiation_info")
+	arg_4_0.rtAnim = var_4_0:Find("adapt/anim")
+	arg_4_0.rtClick = arg_4_0.rtPanel:Find("click")
+	arg_4_0.buffUIItemList = UIItemList.New(arg_4_0.rtBuffContent, arg_4_0.rtBuffContent:Find("buff"))
+
+	arg_4_0.buffUIItemList:make(function(arg_5_0, arg_5_1, arg_5_2)
+		arg_5_1 = arg_5_1 + 1
+
+		if arg_5_0 == UIItemList.EventUpdate then
+			local var_5_0 = arg_4_0.buffList[arg_5_1]
+
+			if #var_5_0.config.icon > 0 then
+				GetImageSpriteFromAtlasAsync("world/buff/" .. var_5_0.config.icon, "", arg_5_2:Find("icon"))
 			else
-				setImageSprite(slot2:Find("icon"), nil)
+				setImageSprite(arg_5_2:Find("icon"), nil)
 			end
 
-			setText(slot2:Find("Text"), slot3.config.desc)
+			setText(arg_5_2:Find("Text"), var_5_0.config.desc)
 		end
 	end)
 
-	slot0.mapBuffItemList = UIItemList.New(slot0.rtMapBuffContent, slot0.rtMapBuffContent:Find("buff"))
+	arg_4_0.mapBuffItemList = UIItemList.New(arg_4_0.rtMapBuffContent, arg_4_0.rtMapBuffContent:Find("buff"))
 
-	slot0.mapBuffItemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			if #uv0.mapBuffList[slot1 + 1].config.icon > 0 then
-				GetImageSpriteFromAtlasAsync("world/buff/" .. slot3.config.icon, "", slot2:Find("icon"))
+	arg_4_0.mapBuffItemList:make(function(arg_6_0, arg_6_1, arg_6_2)
+		arg_6_1 = arg_6_1 + 1
+
+		if arg_6_0 == UIItemList.EventUpdate then
+			local var_6_0 = arg_4_0.mapBuffList[arg_6_1]
+
+			if #var_6_0.config.icon > 0 then
+				GetImageSpriteFromAtlasAsync("world/buff/" .. var_6_0.config.icon, "", arg_6_2:Find("icon"))
 			else
-				setImageSprite(slot2:Find("icon"), nil)
+				setImageSprite(arg_6_2:Find("icon"), nil)
 			end
 
-			setText(slot2:Find("Text"), slot3.config.desc)
+			setText(arg_6_2:Find("Text"), var_6_0.config.desc)
 		end
 	end)
 
-	slot0.weaknessUIItemList = UIItemList.New(slot0.rtWeaknessContent, slot0.rtWeaknessContent:Find("buff"))
+	arg_4_0.weaknessUIItemList = UIItemList.New(arg_4_0.rtWeaknessContent, arg_4_0.rtWeaknessContent:Find("buff"))
 
-	slot0.weaknessUIItemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			setText(slot2:Find("Text"), uv0.weaknessList[slot1 + 1].config.desc)
+	arg_4_0.weaknessUIItemList:make(function(arg_7_0, arg_7_1, arg_7_2)
+		arg_7_1 = arg_7_1 + 1
+
+		if arg_7_0 == UIItemList.EventUpdate then
+			local var_7_0 = arg_4_0.weaknessList[arg_7_1]
+
+			setText(arg_7_2:Find("Text"), var_7_0.config.desc)
 		end
 	end)
-	onButton(slot0, slot0.rtExit, function ()
-		uv0:Hide()
+	onButton(arg_4_0, arg_4_0.rtExit, function()
+		arg_4_0:Hide()
 	end, SFX_UI_CANCEL)
-	onButton(slot0, slot0.rtClick:Find("enemy"), function ()
-		uv0:Hide(true)
+	onButton(arg_4_0, arg_4_0.rtClick:Find("enemy"), function()
+		arg_4_0:Hide(true)
 	end, SFX_CONFIRM)
-	onButton(slot0, slot0.rtClick:Find("other"), function ()
-		uv0:Hide(true)
+	onButton(arg_4_0, arg_4_0.rtClick:Find("other"), function()
+		arg_4_0:Hide(true)
 	end, SFX_CONFIRM)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_11_0)
+	return
 end
 
-function slot0.Show(slot0, slot1, slot2)
-	slot0:emit(uv0.ShowView)
+function var_0_0.Show(arg_12_0, arg_12_1, arg_12_2)
+	arg_12_0:emit(var_0_0.ShowView)
 
-	if slot1 then
-		slot0:DisplayWindow(slot1, slot2)
+	if arg_12_1 then
+		arg_12_0:DisplayWindow(arg_12_1, arg_12_2)
 	else
-		slot0:HideWindow()
+		arg_12_0:HideWindow()
 	end
 
-	function slot0.wsDragProxy.onDragFunction()
-		if isActive(uv0.rtPanel) then
-			uv0:HideWindow()
+	function arg_12_0.wsDragProxy.onDragFunction()
+		if isActive(arg_12_0.rtPanel) then
+			arg_12_0:HideWindow()
 		end
 	end
 
-	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf)
-	setActive(slot0._tf, true)
-	slot0:EaseInOut(true)
-	uv0.super.Show(slot0)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_12_0._tf)
+	setActive(arg_12_0._tf, true)
+	arg_12_0:EaseInOut(true)
+	var_0_0.super.Show(arg_12_0)
 end
 
-function slot0.Hide(slot0, slot1)
-	if LeanTween.isTweening(slot0.alphaLT) then
+function var_0_0.Hide(arg_14_0, arg_14_1)
+	if LeanTween.isTweening(arg_14_0.alphaLT) then
 		return
 	end
 
-	slot2 = {}
+	local var_14_0 = {}
 
-	if not slot1 then
-		table.insert(slot2, function (slot0)
-			uv0:EaseInOut(false, slot0)
+	if not arg_14_1 then
+		table.insert(var_14_0, function(arg_15_0)
+			arg_14_0:EaseInOut(false, arg_15_0)
 		end)
 	end
 
-	seriesAsync(slot2, function ()
-		uv0.wsDragProxy.onDragFunction = nil
+	seriesAsync(var_14_0, function()
+		arg_14_0.wsDragProxy.onDragFunction = nil
 
-		pg.UIMgr.GetInstance():UnOverlayPanel(uv0._tf, uv0._parentTf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_14_0._tf, arg_14_0._parentTf)
 
-		if uv1 then
-			uv0:emit(uv2.HideGoing, uv0.attachment.row, uv0.attachment.column)
+		if arg_14_1 then
+			arg_14_0:emit(var_0_0.HideGoing, arg_14_0.attachment.row, arg_14_0.attachment.column)
 		else
-			uv0:emit(uv2.HideView)
+			arg_14_0:emit(var_0_0.HideView)
 		end
 
-		uv2.super.Hide(uv0)
+		var_0_0.super.Hide(arg_14_0)
 	end)
 end
 
-function slot0.Setup(slot0, slot1, slot2)
-	slot0.map = slot1
-	slot0.wsDragProxy = slot2
+function var_0_0.Setup(arg_17_0, arg_17_1, arg_17_2)
+	arg_17_0.map = arg_17_1
+	arg_17_0.wsDragProxy = arg_17_2
 end
 
-function slot0.DisplayWindow(slot0, slot1, slot2)
-	if isActive(slot0.rtPanel) and slot0.attachment == slot1 then
-		slot0:HideWindow()
+function var_0_0.DisplayWindow(arg_18_0, arg_18_1, arg_18_2)
+	if isActive(arg_18_0.rtPanel) and arg_18_0.attachment == arg_18_1 then
+		arg_18_0:HideWindow()
 	else
-		slot0:Update(slot1)
+		arg_18_0:Update(arg_18_1)
 
-		slot0.rtPanel.position = slot0.camera:ScreenToWorldPoint(slot2)
-		slot0.rtPanel.anchoredPosition3D = Vector3.New(slot0.rtPanel.anchoredPosition.x, slot0.rtPanel.anchoredPosition.y, 0)
-		slot0.rtAnim.anchoredPosition = slot0.rtPanel.anchoredPosition
-		slot0.rtWindow.anchorMin = Vector2.New(slot0.rtPanel.anchoredPosition.x > 0 and 0 or 1, slot0.rtPanel.anchoredPosition.y > 0 and 1 or 0)
-		slot0.rtWindow.anchorMax = slot0.rtWindow.anchorMin
-		slot0.rtWindow.pivot = Vector2.New(slot0.rtPanel.anchoredPosition.x > 0 and 1 or 0, slot0.rtPanel.anchoredPosition.y > 0 and 1 or 0)
-		slot0.rtWindow.anchoredPosition = Vector2.zero
-		slot0.rtClick.anchorMin = Vector2.New(slot0.rtPanel.anchoredPosition.x > 0 and 1 or 0, 0)
-		slot0.rtClick.anchorMax = slot0.rtClick.anchorMin
-		slot0.rtWindow.anchoredPosition = Vector2.zero
-		slot3 = WorldMapAttachment.IsEnemyType(slot1.type) or slot1:GetSpEventType() == WorldMapAttachment.SpEventEnemy
+		arg_18_0.rtPanel.position = arg_18_0.camera:ScreenToWorldPoint(arg_18_2)
+		arg_18_0.rtPanel.anchoredPosition3D = Vector3.New(arg_18_0.rtPanel.anchoredPosition.x, arg_18_0.rtPanel.anchoredPosition.y, 0)
+		arg_18_0.rtAnim.anchoredPosition = arg_18_0.rtPanel.anchoredPosition
+		arg_18_0.rtWindow.anchorMin = Vector2.New(arg_18_0.rtPanel.anchoredPosition.x > 0 and 0 or 1, arg_18_0.rtPanel.anchoredPosition.y > 0 and 1 or 0)
+		arg_18_0.rtWindow.anchorMax = arg_18_0.rtWindow.anchorMin
+		arg_18_0.rtWindow.pivot = Vector2.New(arg_18_0.rtPanel.anchoredPosition.x > 0 and 1 or 0, arg_18_0.rtPanel.anchoredPosition.y > 0 and 1 or 0)
+		arg_18_0.rtWindow.anchoredPosition = Vector2.zero
+		arg_18_0.rtClick.anchorMin = Vector2.New(arg_18_0.rtPanel.anchoredPosition.x > 0 and 1 or 0, 0)
+		arg_18_0.rtClick.anchorMax = arg_18_0.rtClick.anchorMin
+		arg_18_0.rtWindow.anchoredPosition = Vector2.zero
 
-		setActive(slot0.rtClick:Find("enemy"), slot3)
-		setActive(slot0.rtClick:Find("other"), not slot3)
-		setActive(slot0.rtPanel, true)
+		local var_18_0 = WorldMapAttachment.IsEnemyType(arg_18_1.type) or arg_18_1:GetSpEventType() == WorldMapAttachment.SpEventEnemy
+
+		setActive(arg_18_0.rtClick:Find("enemy"), var_18_0)
+		setActive(arg_18_0.rtClick:Find("other"), not var_18_0)
+		setActive(arg_18_0.rtPanel, true)
 	end
 end
 
-function slot0.HideWindow(slot0)
-	setAnchoredPosition(slot0.rtAnim, Vector2.zero)
-	setActive(slot0.rtPanel, false)
+function var_0_0.HideWindow(arg_19_0)
+	setAnchoredPosition(arg_19_0.rtAnim, Vector2.zero)
+	setActive(arg_19_0.rtPanel, false)
 end
 
-function slot0.EaseInOut(slot0, slot1, slot2)
-	if slot0.alphaLT then
-		LeanTween.cancel(slot0.alphaLT)
+function var_0_0.EaseInOut(arg_20_0, arg_20_1, arg_20_2)
+	if arg_20_0.alphaLT then
+		LeanTween.cancel(arg_20_0.alphaLT)
 	end
 
-	slot0.canvas.alpha = slot1 and 0 or 1
-	slot0.alphaLT = LeanTween.alphaCanvas(slot0.canvas, slot1 and 1 or 0, 1):setOnComplete(System.Action(slot2 or function ()
+	arg_20_0.canvas.alpha = arg_20_1 and 0 or 1
+	arg_20_0.alphaLT = LeanTween.alphaCanvas(arg_20_0.canvas, arg_20_1 and 1 or 0, 1):setOnComplete(System.Action(arg_20_2 or function()
+		return
 	end)).uniqueId
 end
 
-function slot0.Update(slot0, slot1)
-	if slot0.attachment ~= slot1 then
-		slot0.attachment = slot1
+function var_0_0.Update(arg_22_0, arg_22_1)
+	if arg_22_0.attachment ~= arg_22_1 then
+		arg_22_0.attachment = arg_22_1
 
-		slot0:OnUpdate()
+		arg_22_0:OnUpdate()
 	end
 end
 
-function slot0.OnUpdate(slot0)
-	slot1 = slot0.map
-	slot3 = slot0.rtTitle:Find("Text")
-	slot4 = {}
-	slot5 = {}
-	slot6 = false
-	slot7 = false
+function var_0_0.OnUpdate(arg_23_0)
+	local var_23_0 = arg_23_0.map
+	local var_23_1 = arg_23_0.attachment
+	local var_23_2 = arg_23_0.rtTitle:Find("Text")
+	local var_23_3 = {}
+	local var_23_4 = {}
+	local var_23_5 = false
+	local var_23_6 = false
+	local var_23_7 = var_23_1.config.name or ""
 
-	if WorldMapAttachment.IsEnemyType(slot2.type) then
-		slot6 = true
-		slot7 = false
-		slot4 = slot2:GetBuffList()
-		slot5 = slot1:GetBuffList(WorldMap.FactionEnemy, slot2)
+	if WorldMapAttachment.IsEnemyType(var_23_1.type) then
+		var_23_5 = true
+		var_23_6 = false
+		var_23_3 = var_23_1:GetBuffList()
+		var_23_4 = var_23_0:GetBuffList(WorldMap.FactionEnemy, var_23_1)
 
-		if slot2.config.difficulty == ys.Battle.BattleConst.Difficulty.WORLD then
-			slot8 = (slot0.attachment.config.name or "") .. " LV." .. WorldConst.WorldLevelCorrect(slot1.config.expedition_level, slot2.config.type)
+		if var_23_1.config.difficulty == ys.Battle.BattleConst.Difficulty.WORLD then
+			var_23_7 = var_23_7 .. " LV." .. WorldConst.WorldLevelCorrect(var_23_0.config.expedition_level, var_23_1.config.type)
 		else
-			slot8 = slot8 .. " LV." .. slot2.config.level
+			var_23_7 = var_23_7 .. " LV." .. var_23_1.config.level
 		end
-	elseif slot2.type == WorldMapAttachment.TypeEvent then
-		slot4 = slot2:GetBuffList()
-		slot5 = slot1:GetBuffList(WorldMap.FactionEnemy, slot2)
+	elseif var_23_1.type == WorldMapAttachment.TypeEvent then
+		var_23_3 = var_23_1:GetBuffList()
+		var_23_4 = var_23_0:GetBuffList(WorldMap.FactionEnemy, var_23_1)
 
-		if slot2.config.is_scanevent == 1 or slot9 == 3 then
-			slot6 = slot9 == 3
-			slot7 = true
+		local var_23_8 = var_23_1.config.is_scanevent
 
-			setActive(slot0.rtInfo:Find("Image"), false)
-			setText(slot0.rtInfo:Find("Text"), slot2.config.scan_desc)
-		elseif slot9 == 2 or slot9 == 4 then
-			slot6 = slot9 == 4
-			slot7 = true
+		if var_23_8 == 1 or var_23_8 == 3 then
+			var_23_5 = var_23_8 == 3
+			var_23_6 = true
 
-			setActive(slot0.rtInfo:Find("Image"), true)
-			GetImageSpriteFromAtlasAsync("icondesc/" .. slot2.config.icon, "", slot0.rtInfo:Find("Image"))
-			setText(slot0.rtInfo:Find("Text"), slot2.config.scan_desc)
+			setActive(arg_23_0.rtInfo:Find("Image"), false)
+			setText(arg_23_0.rtInfo:Find("Text"), var_23_1.config.scan_desc)
+		elseif var_23_8 == 2 or var_23_8 == 4 then
+			var_23_5 = var_23_8 == 4
+			var_23_6 = true
+
+			setActive(arg_23_0.rtInfo:Find("Image"), true)
+			GetImageSpriteFromAtlasAsync("icondesc/" .. var_23_1.config.icon, "", arg_23_0.rtInfo:Find("Image"))
+			setText(arg_23_0.rtInfo:Find("Text"), var_23_1.config.scan_desc)
 		end
-	elseif slot2.type == WorldMapAttachment.TypeTrap then
-		slot6 = true
-		slot7 = true
+	elseif var_23_1.type == WorldMapAttachment.TypeTrap then
+		var_23_5 = true
+		var_23_6 = true
 
-		setActive(slot0.rtInfo:Find("Image"), true)
-		GetImageSpriteFromAtlasAsync("world/buff/" .. WorldBuff.GetTemplate(slot2.config.buff_id).icon, "", slot0.rtInfo:Find("Image"))
-		setText(slot0.rtInfo:Find("Text"), slot2.config.desc)
-	elseif slot2.type == WorldMapAttachment.TypePort then
-		slot6 = slot2.config.port_camp > 0 and slot9 ~= nowWorld():GetRealm()
-		slot7 = true
+		setActive(arg_23_0.rtInfo:Find("Image"), true)
 
-		setActive(slot0.rtInfo:Find("Image"), false)
-		setText(slot0.rtInfo:Find("Text"), slot2.config.scan_desc)
+		local var_23_9 = WorldBuff.GetTemplate(var_23_1.config.buff_id)
+
+		GetImageSpriteFromAtlasAsync("world/buff/" .. var_23_9.icon, "", arg_23_0.rtInfo:Find("Image"))
+		setText(arg_23_0.rtInfo:Find("Text"), var_23_1.config.desc)
+	elseif var_23_1.type == WorldMapAttachment.TypePort then
+		local var_23_10 = var_23_1.config.port_camp
+
+		var_23_5 = var_23_10 > 0 and var_23_10 ~= nowWorld():GetRealm()
+		var_23_6 = true
+
+		setActive(arg_23_0.rtInfo:Find("Image"), false)
+		setText(arg_23_0.rtInfo:Find("Text"), var_23_1.config.scan_desc)
 	end
 
-	setText(slot3, slot8)
+	setText(var_23_2, var_23_7)
 
-	slot0.buffList = {}
-	slot0.weaknessList = {}
+	local var_23_11 = var_23_1:GetWeaknessBuffId()
 
-	for slot13, slot14 in ipairs(slot4) do
-		if slot14.id == slot2:GetWeaknessBuffId() then
-			table.insert(slot0.weaknessList, slot14)
+	arg_23_0.buffList = {}
+	arg_23_0.weaknessList = {}
+
+	for iter_23_0, iter_23_1 in ipairs(var_23_3) do
+		if iter_23_1.id == var_23_11 then
+			table.insert(arg_23_0.weaknessList, iter_23_1)
 		else
-			table.insert(slot0.buffList, slot14)
+			table.insert(arg_23_0.buffList, iter_23_1)
 		end
 	end
 
-	slot0.buffUIItemList:align(#slot0.buffList)
-	slot0.weaknessUIItemList:align(#slot0.weaknessList)
+	arg_23_0.buffUIItemList:align(#arg_23_0.buffList)
+	arg_23_0.weaknessUIItemList:align(#arg_23_0.weaknessList)
 
-	slot0.mapBuffList = slot5
+	arg_23_0.mapBuffList = var_23_4
 
-	slot0.mapBuffItemList:align(#slot0.mapBuffList)
-	setActive(slot0.rtInfo, slot7)
-	setActive(slot0.rtMark, slot7 and slot6)
-	setActive(slot0.rtTitle:Find("red"), slot6)
-	setActive(slot0.rtTitle:Find("yellow"), not slot6)
-	setActive(slot0.rtRadiation, #slot2:GetRadiationBuffs() > 0)
+	arg_23_0.mapBuffItemList:align(#arg_23_0.mapBuffList)
+	setActive(arg_23_0.rtInfo, var_23_6)
+	setActive(arg_23_0.rtMark, var_23_6 and var_23_5)
+	setActive(arg_23_0.rtTitle:Find("red"), var_23_5)
+	setActive(arg_23_0.rtTitle:Find("yellow"), not var_23_5)
 
-	if #slot10 > 0 then
-		slot11, slot12, slot13 = unpack(slot10[1])
+	local var_23_12 = var_23_1:GetRadiationBuffs()
 
-		GetImageSpriteFromAtlasAsync("world/mapbuff/" .. pg.world_SLGbuff_data[slot12].icon, "", slot0.rtRadiation:Find("info/map_buff/Image"))
-		setText(slot0.rtRadiation:Find("info/Text"), i18n("world_mapbuff_tip"))
+	setActive(arg_23_0.rtRadiation, #var_23_12 > 0)
+
+	if #var_23_12 > 0 then
+		local var_23_13, var_23_14, var_23_15 = unpack(var_23_12[1])
+
+		GetImageSpriteFromAtlasAsync("world/mapbuff/" .. pg.world_SLGbuff_data[var_23_14].icon, "", arg_23_0.rtRadiation:Find("info/map_buff/Image"))
+		setText(arg_23_0.rtRadiation:Find("info/Text"), i18n("world_mapbuff_tip"))
 	end
 end
 
-return slot0
+return var_0_0

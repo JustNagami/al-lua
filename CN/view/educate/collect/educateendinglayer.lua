@@ -1,80 +1,102 @@
-slot0 = class("EducateEndingLayer", import(".EducateCollectLayerTemplate"))
+﻿local var_0_0 = class("EducateEndingLayer", import(".EducateCollectLayerTemplate"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "EducateEndingUI"
 end
 
-function slot0.initConfig(slot0)
-	slot0.config = pg.child_ending
+function var_0_0.initConfig(arg_2_0)
+	arg_2_0.config = pg.child_ending
 end
 
-function slot0.didEnter(slot0)
-	setText(slot0:findTF("review_btn/Text", slot0.performTF), i18n("child_btn_review"))
+function var_0_0.didEnter(arg_3_0)
+	setText(arg_3_0:findTF("review_btn/Text", arg_3_0.performTF), i18n("child_btn_review"))
 
-	slot0.endings = getProxy(EducateProxy):GetFinishEndings()
-	slot0.char = getProxy(EducateProxy):GetCharData()
-	slot0.tpl = slot0:findTF("condition_tpl", slot0.windowTF)
+	arg_3_0.endings = getProxy(EducateProxy):GetFinishEndings()
+	arg_3_0.char = getProxy(EducateProxy):GetCharData()
+	arg_3_0.tpl = arg_3_0:findTF("condition_tpl", arg_3_0.windowTF)
 
-	setText(slot0.curCntTF, #slot0.endings)
-	setText(slot0.allCntTF, "/" .. #slot0.config.all)
-	slot0:updatePage()
+	setText(arg_3_0.curCntTF, #arg_3_0.endings)
+	setText(arg_3_0.allCntTF, "/" .. #arg_3_0.config.all)
+	arg_3_0:updatePage()
 end
 
-function slot0.updateItem(slot0, slot1, slot2)
-	if table.contains(slot0.endings, slot1.id) then
-		LoadImageSpriteAsync("bg/" .. slot1.pic, slot0:findTF("unlock/mask/Image", slot2))
-		setText(slot0:findTF("unlock/name", slot2), slot1.name)
-		onButton(slot0, slot2, function ()
-			uv0:showPerformWindow(uv1)
+function var_0_0.updateItem(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = table.contains(arg_4_0.endings, arg_4_1.id)
+
+	if var_4_0 then
+		LoadImageSpriteAsync("bg/" .. arg_4_1.pic, arg_4_0:findTF("unlock/mask/Image", arg_4_2))
+		setText(arg_4_0:findTF("unlock/name", arg_4_2), arg_4_1.name)
+		onButton(arg_4_0, arg_4_2, function()
+			arg_4_0:showPerformWindow(arg_4_1)
 		end, SFX_PANEL)
 	else
-		removeOnButton(slot2)
-		slot0:updateConditions(slot1.condition, slot0:findTF("lock/conditions", slot2))
+		removeOnButton(arg_4_2)
+
+		local var_4_1 = arg_4_0:findTF("lock/conditions", arg_4_2)
+		local var_4_2 = arg_4_1.condition
+
+		arg_4_0:updateConditions(var_4_2, var_4_1)
 	end
 
-	setActive(slot0:findTF("unlock", slot2), slot3)
-	setActive(slot0:findTF("lock", slot2), not slot3)
+	setActive(arg_4_0:findTF("unlock", arg_4_2), var_4_0)
+	setActive(arg_4_0:findTF("lock", arg_4_2), not var_4_0)
 end
 
-function slot0.updateConditions(slot0, slot1, slot2)
-	for slot7 = 1, #slot1 do
-		if slot1[slot7][1] == EducateConst.DROP_TYPE_ATTR then
-			slot3 = 0 + 1
-			slot9 = slot7 <= slot2.childCount and slot2:GetChild(slot7 - 1) or cloneTplTo(slot0.tpl, slot2)
-			slot10 = false
-			slot11 = ""
+function var_0_0.updateConditions(arg_6_0, arg_6_1, arg_6_2)
+	local var_6_0 = 0
 
-			setActive(slot0:findTF("icon/unlock", slot9), slot10)
-			setTextColor(slot0:findTF("Text", slot9), Color.NewHex(slot10 and "F59F48" or "888888"))
-			setText(slot0:findTF("Text", slot9), slot8[3] and pg.child_attr[slot8[2]].name .. " > " .. slot8[3] or i18n("child_nature_title") .. pg.child_attr[slot8[2]].name)
+	for iter_6_0 = 1, #arg_6_1 do
+		local var_6_1 = arg_6_1[iter_6_0]
+
+		if var_6_1[1] == EducateConst.DROP_TYPE_ATTR then
+			var_6_0 = var_6_0 + 1
+
+			local var_6_2 = iter_6_0 <= arg_6_2.childCount and arg_6_2:GetChild(iter_6_0 - 1) or cloneTplTo(arg_6_0.tpl, arg_6_2)
+			local var_6_3 = false
+			local var_6_4 = ""
+
+			if var_6_1[3] then
+				var_6_3 = arg_6_0.char:GetAttrById(var_6_1[2]) >= var_6_1[3]
+				var_6_4 = pg.child_attr[var_6_1[2]].name .. " > " .. var_6_1[3]
+			else
+				var_6_3 = arg_6_0.char:GetPersonalityId() == var_6_1[2]
+				var_6_4 = i18n("child_nature_title") .. pg.child_attr[var_6_1[2]].name
+			end
+
+			setActive(arg_6_0:findTF("icon/unlock", var_6_2), var_6_3)
+
+			local var_6_5 = var_6_3 and "F59F48" or "888888"
+
+			setTextColor(arg_6_0:findTF("Text", var_6_2), Color.NewHex(var_6_5))
+			setText(arg_6_0:findTF("Text", var_6_2), var_6_4)
 		end
 	end
 
-	for slot7 = 1, slot2.childCount do
-		setActive(slot2:GetChild(slot7 - 1), slot7 <= slot3)
+	for iter_6_1 = 1, arg_6_2.childCount do
+		setActive(arg_6_2:GetChild(iter_6_1 - 1), iter_6_1 <= var_6_0)
 	end
 end
 
-function slot0.showPerformWindow(slot0, slot1)
-	slot2 = slot0:findTF("Image", slot0.performTF)
+function var_0_0.showPerformWindow(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_0:findTF("Image", arg_7_0.performTF)
 
-	LoadImageSpriteAsync("bg/" .. slot1.pic, slot2)
-	setActive(slot0.performTF, true)
-	onButton(slot0, slot2, function ()
-		setActive(uv0.performTF, false)
+	LoadImageSpriteAsync("bg/" .. arg_7_1.pic, var_7_0)
+	setActive(arg_7_0.performTF, true)
+	onButton(arg_7_0, var_7_0, function()
+		setActive(arg_7_0.performTF, false)
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("review_btn", slot0.performTF), function ()
-		pg.PerformMgr.GetInstance():PlayGroup(uv0.performance)
+	onButton(arg_7_0, arg_7_0:findTF("review_btn", arg_7_0.performTF), function()
+		pg.PerformMgr.GetInstance():PlayGroup(arg_7_1.performance)
 	end, SFX_PANEL)
 end
 
-function slot0.playAnimChange(slot0)
-	slot0.anim:Stop()
-	slot0.anim:Play("anim_educate_ending_change")
+function var_0_0.playAnimChange(arg_10_0)
+	arg_10_0.anim:Stop()
+	arg_10_0.anim:Play("anim_educate_ending_change")
 end
 
-function slot0.playAnimClose(slot0)
-	slot0.anim:Play("anim_educate_ending_out")
+function var_0_0.playAnimClose(arg_11_0)
+	arg_11_0.anim:Play("anim_educate_ending_out")
 end
 
-return slot0
+return var_0_0

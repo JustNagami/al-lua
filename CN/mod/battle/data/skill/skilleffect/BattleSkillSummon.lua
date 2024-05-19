@@ -1,30 +1,36 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst
-slot0.Battle.BattleSkillSummon = class("BattleSkillSummon", slot0.Battle.BattleSkillEffect)
-slot0.Battle.BattleSkillSummon.__name = "BattleSkillSummon"
-slot2 = slot0.Battle.BattleSkillSummon
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1, lv)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst
 
-	slot0._spawnData = slot0._tempData.arg_list.spawnData
+var_0_0.Battle.BattleSkillSummon = class("BattleSkillSummon", var_0_0.Battle.BattleSkillEffect)
+var_0_0.Battle.BattleSkillSummon.__name = "BattleSkillSummon"
+
+local var_0_2 = var_0_0.Battle.BattleSkillSummon
+
+function var_0_2.Ctor(arg_1_0, arg_1_1)
+	var_0_2.super.Ctor(arg_1_0, arg_1_1, lv)
+
+	arg_1_0._spawnData = arg_1_0._tempData.arg_list.spawnData
 end
 
-function slot2.DoDataEffectWithoutTarget(slot0, slot1, slot2)
-	slot0:DoSummon(slot1, slot2)
+function var_0_2.DoDataEffectWithoutTarget(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0:DoSummon(arg_2_1, arg_2_2)
 end
 
-function slot2.DoDataEffect(slot0, slot1, slot2, slot3)
-	slot0:DoSummon(slot1, slot3)
+function var_0_2.DoDataEffect(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	arg_3_0:DoSummon(arg_3_1, arg_3_3)
 end
 
-function slot2.DoSummon(slot0, slot1, slot2)
-	slot4 = slot1:GetIFF()
+function var_0_2.DoSummon(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = var_0_0.Battle.BattleDataProxy.GetInstance()
+	local var_4_1 = arg_4_1:GetIFF()
 
-	if slot1:GetUnitType() == uv1.UnitType.PLAYER_UNIT then
-		slot5 = uv0.Battle.BattleDataProxy.GetInstance():SpawnNPC(slot0._spawnData, slot1)
+	if arg_4_1:GetUnitType() == var_0_1.UnitType.PLAYER_UNIT then
+		local var_4_2 = var_4_0:SpawnNPC(arg_4_0._spawnData, arg_4_1)
 	else
-		slot3:SpawnMonster(slot0._spawnData, slot1:GetWaveIndex(), uv1.UnitType.ENEMY_UNIT, slot4):SetMaster(slot1)
+		local var_4_3 = arg_4_1:GetWaveIndex()
+
+		var_4_0:SpawnMonster(arg_4_0._spawnData, var_4_3, var_0_1.UnitType.ENEMY_UNIT, var_4_1):SetMaster(arg_4_1)
 	end
 end

@@ -1,75 +1,78 @@
-slot0 = class("PutFurnitureCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("PutFurnitureCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = slot2.furnsPos
-	slot4 = slot2.tip
-	slot5 = slot2.callback
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.furnsPos
+	local var_1_2 = var_1_0.tip
+	local var_1_3 = var_1_0.callback
+	local var_1_4 = getProxy(DormProxy)
 
-	if not getProxy(DormProxy) then
+	if not var_1_4 then
 		return
 	end
 
-	assert(slot2.floor or slot6.floor, "floor should exist")
+	local var_1_5 = var_1_0.floor or var_1_4.floor
 
-	slot8 = slot6:getRawData()
-	slot9 = slot8.level
-	slot10, slot11 = CourtYardRawDataChecker.Check(slot3, slot8:GetMapSize())
+	assert(var_1_5, "floor should exist")
 
-	if not slot10 then
-		if slot5 then
-			slot5(false, slot11)
+	local var_1_6 = var_1_4:getRawData()
+	local var_1_7 = var_1_6.level
+	local var_1_8, var_1_9 = CourtYardRawDataChecker.Check(var_1_1, var_1_6:GetMapSize())
+
+	if not var_1_8 then
+		if var_1_3 then
+			var_1_3(false, var_1_9)
 
 			return
 		end
 
-		pg.TipsMgr.GetInstance():ShowTips(slot11)
+		pg.TipsMgr.GetInstance():ShowTips(var_1_9)
 
 		return
 	end
 
-	slot12 = {}
+	local var_1_10 = {}
 
-	for slot16, slot17 in pairs(slot3) do
-		slot18 = {}
+	for iter_1_0, iter_1_1 in pairs(var_1_1) do
+		local var_1_11 = {}
 
-		for slot22, slot23 in pairs(slot17.child) do
-			table.insert(slot18, {
-				id = tostring(slot22),
-				x = slot23.x,
-				y = slot23.y
+		for iter_1_2, iter_1_3 in pairs(iter_1_1.child) do
+			table.insert(var_1_11, {
+				id = tostring(iter_1_2),
+				x = iter_1_3.x,
+				y = iter_1_3.y
 			})
 		end
 
-		table.insert(slot12, {
+		table.insert(var_1_10, {
 			shipId = 1,
-			id = tostring(slot17.configId),
-			x = slot17.x,
-			y = slot17.y,
-			dir = slot17.dir,
-			child = slot18,
-			parent = slot17.parent
+			id = tostring(iter_1_1.configId),
+			x = iter_1_1.x,
+			y = iter_1_1.y,
+			dir = iter_1_1.dir,
+			child = var_1_11,
+			parent = iter_1_1.parent
 		})
 	end
 
-	slot6:getRawData():SetTheme(slot7, BackYardSelfThemeTemplate.New({
+	var_1_4:getRawData():SetTheme(var_1_5, BackYardSelfThemeTemplate.New({
 		id = -1,
-		furniture_put_list = slot12
-	}, slot7))
+		furniture_put_list = var_1_10
+	}, var_1_5))
 	pg.ConnectionMgr.GetInstance():Send(19008, {
-		floor = slot7,
-		furniture_put_list = slot12
+		floor = var_1_5,
+		furniture_put_list = var_1_10
 	})
 
-	if slot4 then
+	if var_1_2 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_putFurniture_ok"))
 	end
 
-	slot0:sendNotification(GAME.PUT_FURNITURE_DONE)
+	arg_1_0:sendNotification(GAME.PUT_FURNITURE_DONE)
 
-	if slot5 then
-		slot5(true)
+	if var_1_3 then
+		var_1_3(true)
 	end
 end
 
-return slot0
+return var_0_0

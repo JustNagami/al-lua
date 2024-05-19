@@ -1,33 +1,36 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleUnitEvent
-slot2 = class("BattleDisposableTorpedoUnit", slot0.Battle.BattleManualTorpedoUnit)
-slot0.Battle.BattleDisposableTorpedoUnit = slot2
-slot2.__name = "BattleDisposableTorpedoUnit"
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleUnitEvent
+local var_0_2 = class("BattleDisposableTorpedoUnit", var_0_0.Battle.BattleManualTorpedoUnit)
+
+var_0_0.Battle.BattleDisposableTorpedoUnit = var_0_2
+var_0_2.__name = "BattleDisposableTorpedoUnit"
+
+function var_0_2.Ctor(arg_1_0)
+	var_0_2.super.Ctor(arg_1_0)
 end
 
-function slot2.EnterCoolDown(slot0)
+function var_0_2.EnterCoolDown(arg_2_0)
+	return
 end
 
-function slot2.Fire(slot0)
-	uv0.super.Fire(slot0)
-	slot0._playerTorpedoVO:Deduct(slot0)
-	slot0._playerTorpedoVO:DispatchOverLoadChange()
+function var_0_2.Fire(arg_3_0)
+	var_0_2.super.Fire(arg_3_0)
+	arg_3_0._playerTorpedoVO:Deduct(arg_3_0)
+	arg_3_0._playerTorpedoVO:DispatchOverLoadChange()
 
 	return true
 end
 
-function slot2.OverHeat(slot0)
-	slot0._currentState = slot0.STATE_OVER_HEAT
+function var_0_2.OverHeat(arg_4_0)
+	arg_4_0._currentState = arg_4_0.STATE_OVER_HEAT
 end
 
-function slot2.GetType(slot0)
-	return uv0.Battle.BattleConst.EquipmentType.DISPOSABLE_TORPEDO
+function var_0_2.GetType(arg_5_0)
+	return var_0_0.Battle.BattleConst.EquipmentType.DISPOSABLE_TORPEDO
 end
 
-function slot2.createMajorEmitter(slot0, slot1, slot2, slot3, slot4, slot5)
-	return uv0.super.createMajorEmitter(slot0, 1, slot2, slot3, slot4, slot5)
+function var_0_2.createMajorEmitter(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4, arg_6_5)
+	return var_0_2.super.createMajorEmitter(arg_6_0, 1, arg_6_2, arg_6_3, arg_6_4, arg_6_5)
 end

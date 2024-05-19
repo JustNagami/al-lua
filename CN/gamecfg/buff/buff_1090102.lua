@@ -1,4 +1,21 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffOrb",
+			trigger = {
+				"onBulletCreate"
+			},
+			arg_list = {
+				buff_id = 1090104,
+				rant = 100,
+				level = 1,
+				type = 1,
+				index = {
+					1
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -197,22 +214,5 @@ return {
 	stack = 1,
 	id = 1090102,
 	icon = 1090100,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffOrb",
-			trigger = {
-				"onBulletCreate"
-			},
-			arg_list = {
-				buff_id = 1090104,
-				rant = 100,
-				level = 1,
-				type = 1,
-				index = {
-					1
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

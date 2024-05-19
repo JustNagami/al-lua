@@ -1,272 +1,323 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleDataFunction
-slot2 = slot0.Battle.BattleConst
-slot3 = slot0.Battle.BattleConfig
-slot4 = require("Mgr/Pool/PoolUtil")
-slot5 = singletonClass("BattleResourceManager")
-slot0.Battle.BattleResourceManager = slot5
-slot5.__name = "BattleResourceManager"
+﻿ys = ys or {}
 
-function slot5.Ctor(slot0)
-	slot0.rotateScriptMap = setmetatable({}, {
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleDataFunction
+local var_0_2 = var_0_0.Battle.BattleConst
+local var_0_3 = var_0_0.Battle.BattleConfig
+local var_0_4 = require("Mgr/Pool/PoolUtil")
+local var_0_5 = singletonClass("BattleResourceManager")
+
+var_0_0.Battle.BattleResourceManager = var_0_5
+var_0_5.__name = "BattleResourceManager"
+
+function var_0_5.Ctor(arg_1_0)
+	arg_1_0.rotateScriptMap = setmetatable({}, {
 		__mode = "kv"
 	})
 end
 
-function slot5.Init(slot0)
-	slot0._preloadList = {}
-	slot0._resCacheList = {}
-	slot0._allPool = {}
-	slot0._ob2Pool = {}
-	slot1 = GameObject()
+function var_0_5.Init(arg_2_0)
+	arg_2_0._preloadList = {}
+	arg_2_0._resCacheList = {}
+	arg_2_0._allPool = {}
+	arg_2_0._ob2Pool = {}
 
-	slot1:SetActive(false)
+	local var_2_0 = GameObject()
 
-	slot1.name = "PoolRoot"
-	slot1.transform.position = Vector3(-10000, -10000, 0)
-	slot0._poolRoot = slot1
-	slot0._bulletContainer = GameObject("BulletContainer")
-	slot0._battleCVList = {}
+	var_2_0:SetActive(false)
+
+	var_2_0.name = "PoolRoot"
+	var_2_0.transform.position = Vector3(-10000, -10000, 0)
+	arg_2_0._poolRoot = var_2_0
+	arg_2_0._bulletContainer = GameObject("BulletContainer")
+	arg_2_0._battleCVList = {}
 end
 
-function slot5.Clear(slot0)
-	for slot4, slot5 in pairs(slot0._allPool) do
-		slot5:Dispose()
+function var_0_5.Clear(arg_3_0)
+	for iter_3_0, iter_3_1 in pairs(arg_3_0._allPool) do
+		iter_3_1:Dispose()
 	end
 
-	for slot4, slot5 in pairs(slot0._resCacheList) do
-		if string.find(slot4, "Char/") then
-			uv0.ClearCharRes(slot4, slot5)
-		elseif string.find(slot4, "painting/") then
-			uv0.ClearPaintingRes(slot4, slot5)
+	for iter_3_2, iter_3_3 in pairs(arg_3_0._resCacheList) do
+		if string.find(iter_3_2, "Char/") then
+			var_0_5.ClearCharRes(iter_3_2, iter_3_3)
+		elseif string.find(iter_3_2, "painting/") then
+			var_0_5.ClearPaintingRes(iter_3_2, iter_3_3)
 		else
-			uv1.Destroy(slot5)
+			var_0_4.Destroy(iter_3_3)
 		end
 	end
 
-	slot0._resCacheList = {}
-	slot0._ob2Pool = {}
-	slot0._allPool = {}
+	arg_3_0._resCacheList = {}
+	arg_3_0._ob2Pool = {}
+	arg_3_0._allPool = {}
 
-	Object.Destroy(slot0._poolRoot)
+	Object.Destroy(arg_3_0._poolRoot)
 
-	slot0._poolRoot = nil
+	arg_3_0._poolRoot = nil
 
-	Object.Destroy(slot0._bulletContainer)
+	Object.Destroy(arg_3_0._bulletContainer)
 
-	slot0._bulletContainer = nil
-	slot0.rotateScriptMap = setmetatable({}, {
+	arg_3_0._bulletContainer = nil
+	arg_3_0.rotateScriptMap = setmetatable({}, {
 		__mode = "kv"
 	})
 
-	for slot4, slot5 in pairs(slot0._battleCVList) do
-		pg.CriMgr.UnloadCVBank(slot5)
+	for iter_3_4, iter_3_5 in pairs(arg_3_0._battleCVList) do
+		pg.CriMgr.UnloadCVBank(iter_3_5)
 	end
 
-	slot0._battleCVList = {}
+	arg_3_0._battleCVList = {}
 
-	uv2.Battle.BattleDataFunction.ClearConvertedBarrage()
+	var_0_0.Battle.BattleDataFunction.ClearConvertedBarrage()
 end
 
-function slot5.GetBulletPath(slot0)
-	return "Item/" .. slot0
+function var_0_5.GetBulletPath(arg_4_0)
+	return "Item/" .. arg_4_0
 end
 
-function slot5.GetOrbitPath(slot0)
-	return "orbit/" .. slot0
+function var_0_5.GetOrbitPath(arg_5_0)
+	return "orbit/" .. arg_5_0
 end
 
-function slot5.GetCharacterPath(slot0)
-	return "Char/" .. slot0
+function var_0_5.GetCharacterPath(arg_6_0)
+	return "Char/" .. arg_6_0
 end
 
-function slot5.GetCharacterGoPath(slot0)
-	return "chargo/" .. slot0
+function var_0_5.GetCharacterGoPath(arg_7_0)
+	return "chargo/" .. arg_7_0
 end
 
-function slot5.GetAircraftIconPath(slot0)
-	return "AircraftIcon/" .. slot0
+function var_0_5.GetAircraftIconPath(arg_8_0)
+	return "AircraftIcon/" .. arg_8_0
 end
 
-function slot5.GetFXPath(slot0)
-	return "Effect/" .. slot0
+function var_0_5.GetFXPath(arg_9_0)
+	return "Effect/" .. arg_9_0
 end
 
-function slot5.GetPaintingPath(slot0)
-	return "painting/" .. slot0
+function var_0_5.GetPaintingPath(arg_10_0)
+	return "painting/" .. arg_10_0
 end
 
-function slot5.GetHrzIcon(slot0)
-	return "herohrzicon/" .. slot0
+function var_0_5.GetHrzIcon(arg_11_0)
+	return "herohrzicon/" .. arg_11_0
 end
 
-function slot5.GetSquareIcon(slot0)
-	return "squareicon/" .. slot0
+function var_0_5.GetSquareIcon(arg_12_0)
+	return "squareicon/" .. arg_12_0
 end
 
-function slot5.GetQIcon(slot0)
-	return "qicon/" .. slot0
+function var_0_5.GetQIcon(arg_13_0)
+	return "qicon/" .. arg_13_0
 end
 
-function slot5.GetCommanderHrzIconPath(slot0)
-	return "commanderhrz/" .. slot0
+function var_0_5.GetCommanderHrzIconPath(arg_14_0)
+	return "commanderhrz/" .. arg_14_0
 end
 
-function slot5.GetShipTypeIconPath(slot0)
-	return "shiptype/" .. slot0
+function var_0_5.GetShipTypeIconPath(arg_15_0)
+	return "shiptype/" .. arg_15_0
 end
 
-function slot5.GetMapPath(slot0)
-	return "Map/" .. slot0
+function var_0_5.GetMapPath(arg_16_0)
+	return "Map/" .. arg_16_0
 end
 
-function slot5.GetUIPath(slot0)
-	return "UI/" .. slot0
+function var_0_5.GetUIPath(arg_17_0)
+	return "UI/" .. arg_17_0
 end
 
-function slot5.GetResName(slot0)
-	slot2 = string.find(slot0, "%/")
+function var_0_5.GetResName(arg_18_0)
+	local var_18_0 = arg_18_0
+	local var_18_1 = string.find(var_18_0, "%/")
 
-	while slot2 do
-		slot2 = string.find(string.sub(slot1, slot2 + 1), "%/")
+	while var_18_1 do
+		var_18_0 = string.sub(var_18_0, var_18_1 + 1)
+		var_18_1 = string.find(var_18_0, "%/")
 	end
 
-	return slot1
+	return var_18_0
 end
 
-function slot5.ClearCharRes(slot0, slot1)
-	slot3 = slot1:GetComponent("SkeletonRenderer").skeletonDataAsset
+function var_0_5.ClearCharRes(arg_19_0, arg_19_1)
+	local var_19_0 = var_0_5.GetResName(arg_19_0)
+	local var_19_1 = arg_19_1:GetComponent("SkeletonRenderer").skeletonDataAsset
 
-	if not PoolMgr.GetInstance():IsSpineSkelCached(uv0.GetResName(slot0)) then
-		UIUtil.ClearSharedMaterial(slot1)
+	if not PoolMgr.GetInstance():IsSpineSkelCached(var_19_0) then
+		UIUtil.ClearSharedMaterial(arg_19_1)
 	end
 
-	uv1.Destroy(slot1)
+	var_0_4.Destroy(arg_19_1)
 end
 
-function slot5.ClearPaintingRes(slot0, slot1)
-	PoolMgr.GetInstance():ReturnPainting(uv0.GetResName(slot0), slot1)
+function var_0_5.ClearPaintingRes(arg_20_0, arg_20_1)
+	local var_20_0 = var_0_5.GetResName(arg_20_0)
+
+	PoolMgr.GetInstance():ReturnPainting(var_20_0, arg_20_1)
 end
 
-function slot5.DestroyOb(slot0, slot1)
-	if slot0._ob2Pool[slot1] then
-		slot2:Recycle(slot1)
+function var_0_5.DestroyOb(arg_21_0, arg_21_1)
+	local var_21_0 = arg_21_0._ob2Pool[arg_21_1]
+
+	if var_21_0 then
+		var_21_0:Recycle(arg_21_1)
 	else
-		uv0.Destroy(slot1)
+		var_0_4.Destroy(arg_21_1)
 	end
 end
 
-function slot5.popPool(slot0, slot1, slot2)
-	slot3 = slot1:GetObject()
+function var_0_5.popPool(arg_22_0, arg_22_1, arg_22_2)
+	local var_22_0 = arg_22_1:GetObject()
 
-	if not slot2 then
-		slot3.transform.parent = nil
+	if not arg_22_2 then
+		var_22_0.transform.parent = nil
 	end
 
-	slot0._ob2Pool[slot3] = slot1
+	arg_22_0._ob2Pool[var_22_0] = arg_22_1
 
-	return slot3
+	return var_22_0
 end
 
-function slot5.InstCharacter(slot0, slot1, slot2)
-	if slot0._allPool[slot0.GetCharacterPath(slot1)] then
-		slot2(slot0:popPool(slot4))
-	elseif slot0._resCacheList[slot3] ~= nil then
-		slot0:InitPool(slot3, slot0._resCacheList[slot3])
-		slot2(slot0:popPool(slot0._allPool[slot3]))
+function var_0_5.InstCharacter(arg_23_0, arg_23_1, arg_23_2)
+	local var_23_0 = arg_23_0.GetCharacterPath(arg_23_1)
+	local var_23_1 = arg_23_0._allPool[var_23_0]
+
+	if var_23_1 then
+		local var_23_2 = arg_23_0:popPool(var_23_1)
+
+		arg_23_2(var_23_2)
+	elseif arg_23_0._resCacheList[var_23_0] ~= nil then
+		arg_23_0:InitPool(var_23_0, arg_23_0._resCacheList[var_23_0])
+
+		var_23_1 = arg_23_0._allPool[var_23_0]
+
+		local var_23_3 = arg_23_0:popPool(var_23_1)
+
+		arg_23_2(var_23_3)
 	else
-		slot0:LoadSpineAsset(slot1, function (slot0)
-			if not uv0._poolRoot then
-				uv1.ClearCharRes(uv2, slot0)
+		arg_23_0:LoadSpineAsset(arg_23_1, function(arg_24_0)
+			if not arg_23_0._poolRoot then
+				var_0_5.ClearCharRes(var_23_0, arg_24_0)
 
 				return
 			end
 
-			assert(slot0, "角色资源加载失败：" .. uv3)
+			assert(arg_24_0, "角色资源加载失败：" .. arg_23_1)
 
-			slot1 = SpineAnim.AnimChar(uv3, slot0)
+			local var_24_0 = SpineAnim.AnimChar(arg_23_1, arg_24_0)
 
-			slot1:SetActive(false)
-			uv0:InitPool(uv2, slot1)
+			var_24_0:SetActive(false)
+			arg_23_0:InitPool(var_23_0, var_24_0)
 
-			uv4 = uv0._allPool[uv2]
+			var_23_1 = arg_23_0._allPool[var_23_0]
 
-			uv5(uv0:popPool(uv4))
+			local var_24_1 = arg_23_0:popPool(var_23_1)
+
+			arg_23_2(var_24_1)
 		end)
 	end
 end
 
-function slot5.LoadSpineAsset(slot0, slot1, slot2)
-	if not PoolMgr.GetInstance():IsSpineSkelCached(slot1) then
-		ResourceMgr.Inst:getAssetAsync(slot0.GetCharacterPath(slot1), slot1 .. "_SkeletonData", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-			uv0(slot0)
+function var_0_5.LoadSpineAsset(arg_25_0, arg_25_1, arg_25_2)
+	local var_25_0 = arg_25_0.GetCharacterPath(arg_25_1)
+
+	if not PoolMgr.GetInstance():IsSpineSkelCached(arg_25_1) then
+		ResourceMgr.Inst:getAssetAsync(var_25_0, arg_25_1 .. "_SkeletonData", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_26_0)
+			arg_25_2(arg_26_0)
 		end), true, true)
 	else
-		PoolMgr.GetInstance():GetSpineSkel(slot1, true, slot2)
+		PoolMgr.GetInstance():GetSpineSkel(arg_25_1, true, arg_25_2)
 	end
 end
 
-function slot5.InstAirCharacter(slot0, slot1, slot2)
-	if slot0._allPool[slot0.GetCharacterGoPath(slot1)] then
-		slot2(slot0:popPool(slot4))
-	elseif slot0._resCacheList[slot3] ~= nil then
-		slot0:InitPool(slot3, slot0._resCacheList[slot3])
-		slot2(slot0:popPool(slot0._allPool[slot3]))
+function var_0_5.InstAirCharacter(arg_27_0, arg_27_1, arg_27_2)
+	local var_27_0 = arg_27_0.GetCharacterGoPath(arg_27_1)
+	local var_27_1 = arg_27_0._allPool[var_27_0]
+
+	if var_27_1 then
+		local var_27_2 = arg_27_0:popPool(var_27_1)
+
+		arg_27_2(var_27_2)
+	elseif arg_27_0._resCacheList[var_27_0] ~= nil then
+		arg_27_0:InitPool(var_27_0, arg_27_0._resCacheList[var_27_0])
+
+		var_27_1 = arg_27_0._allPool[var_27_0]
+
+		local var_27_3 = arg_27_0:popPool(var_27_1)
+
+		arg_27_2(var_27_3)
 	else
-		ResourceMgr.Inst:getAssetAsync(slot3, slot1, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-			if not uv0._poolRoot then
-				uv1.Destroy(slot0)
+		ResourceMgr.Inst:getAssetAsync(var_27_0, arg_27_1, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_28_0)
+			if not arg_27_0._poolRoot then
+				var_0_4.Destroy(arg_28_0)
 
 				return
 			else
-				assert(slot0, "飞机资源加载失败：" .. uv2)
-				uv0:InitPool(uv3, slot0)
+				assert(arg_28_0, "飞机资源加载失败：" .. arg_27_1)
+				arg_27_0:InitPool(var_27_0, arg_28_0)
 
-				uv4 = uv0._allPool[uv3]
+				var_27_1 = arg_27_0._allPool[var_27_0]
 
-				uv5(uv0:popPool(uv4))
+				local var_28_0 = arg_27_0:popPool(var_27_1)
+
+				arg_27_2(var_28_0)
 			end
 		end), true, true)
 	end
 end
 
-function slot5.InstBullet(slot0, slot1, slot2)
-	if slot0._allPool[slot0.GetBulletPath(slot1)] then
-		slot5 = slot0:popPool(slot4, true)
+function var_0_5.InstBullet(arg_29_0, arg_29_1, arg_29_2)
+	local var_29_0 = arg_29_0.GetBulletPath(arg_29_1)
+	local var_29_1 = arg_29_0._allPool[var_29_0]
 
-		if string.find(slot1, "_trail") and slot5:GetComponentInChildren(typeof(UnityEngine.TrailRenderer)) then
-			slot6:Clear()
+	if var_29_1 then
+		local var_29_2 = arg_29_0:popPool(var_29_1, true)
+
+		if string.find(arg_29_1, "_trail") then
+			local var_29_3 = var_29_2:GetComponentInChildren(typeof(UnityEngine.TrailRenderer))
+
+			if var_29_3 then
+				var_29_3:Clear()
+			end
 		end
 
-		slot2(slot5)
+		arg_29_2(var_29_2)
 
 		return true
-	elseif slot0._resCacheList[slot3] ~= nil then
-		slot0:InitPool(slot3, slot0._resCacheList[slot3])
+	elseif arg_29_0._resCacheList[var_29_0] ~= nil then
+		arg_29_0:InitPool(var_29_0, arg_29_0._resCacheList[var_29_0])
 
-		slot5 = slot0:popPool(slot0._allPool[slot3], true)
+		var_29_1 = arg_29_0._allPool[var_29_0]
 
-		if string.find(slot1, "_trail") and slot5:GetComponentInChildren(typeof(UnityEngine.TrailRenderer)) then
-			slot6:Clear()
+		local var_29_4 = arg_29_0:popPool(var_29_1, true)
+
+		if string.find(arg_29_1, "_trail") then
+			local var_29_5 = var_29_4:GetComponentInChildren(typeof(UnityEngine.TrailRenderer))
+
+			if var_29_5 then
+				var_29_5:Clear()
+			end
 		end
 
-		slot2(slot5)
+		arg_29_2(var_29_4)
 
 		return true
 	else
-		ResourceMgr.Inst:getAssetAsync(slot3, slot1, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-			if uv0._poolRoot then
-				uv1.Destroy(slot0)
+		ResourceMgr.Inst:getAssetAsync(var_29_0, arg_29_1, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_30_0)
+			if arg_29_0._poolRoot then
+				var_0_4.Destroy(arg_30_0)
 
 				return
 			else
-				assert(slot0, "子弹资源加载失败：" .. uv2)
-				uv0:InitPool(uv3, slot0)
+				assert(arg_30_0, "子弹资源加载失败：" .. arg_29_1)
+				arg_29_0:InitPool(var_29_0, arg_30_0)
 
-				uv4 = uv0._allPool[uv3]
+				var_29_1 = arg_29_0._allPool[var_29_0]
 
-				uv5(uv0:popPool(uv4, true))
+				local var_30_0 = arg_29_0:popPool(var_29_1, true)
+
+				arg_29_2(var_30_0)
 			end
 		end), true, true)
 
@@ -274,1046 +325,1205 @@ function slot5.InstBullet(slot0, slot1, slot2)
 	end
 end
 
-function slot5.InstFX(slot0, slot1, slot2)
-	slot4 = nil
+function var_0_5.InstFX(arg_31_0, arg_31_1, arg_31_2)
+	local var_31_0 = arg_31_0.GetFXPath(arg_31_1)
+	local var_31_1
+	local var_31_2 = arg_31_0._allPool[var_31_0]
 
-	if slot0._allPool[slot0.GetFXPath(slot1)] then
-		slot4 = slot0:popPool(slot5, slot2)
-	elseif slot0._resCacheList[slot3] ~= nil then
-		slot0:InitPool(slot3, slot0._resCacheList[slot3])
+	if var_31_2 then
+		var_31_1 = arg_31_0:popPool(var_31_2, arg_31_2)
+	elseif arg_31_0._resCacheList[var_31_0] ~= nil then
+		arg_31_0:InitPool(var_31_0, arg_31_0._resCacheList[var_31_0])
 
-		slot4 = slot0:popPool(slot0._allPool[slot3], slot2)
+		local var_31_3 = arg_31_0._allPool[var_31_0]
+
+		var_31_1 = arg_31_0:popPool(var_31_3, arg_31_2)
 	else
-		ResourceMgr.Inst:getAssetAsync(slot3, slot1, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-			if not uv0._poolRoot then
-				uv1.Destroy(slot0)
+		ResourceMgr.Inst:getAssetAsync(var_31_0, arg_31_1, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_32_0)
+			if not arg_31_0._poolRoot then
+				var_0_4.Destroy(arg_32_0)
 
 				return
 			else
-				assert(slot0, "特效资源加载失败：" .. uv2)
-				uv0:InitPool(uv3, slot0)
+				assert(arg_32_0, "特效资源加载失败：" .. arg_31_1)
+				arg_31_0:InitPool(var_31_0, arg_32_0)
 			end
 		end), true, true)
 
-		slot4 = GameObject(slot1 .. "临时假obj")
+		var_31_1 = GameObject(arg_31_1 .. "临时假obj")
 
-		slot4:SetActive(false)
+		var_31_1:SetActive(false)
 
-		slot0._resCacheList[slot3] = slot4
+		arg_31_0._resCacheList[var_31_0] = var_31_1
 	end
 
-	return slot4
+	return var_31_1
 end
 
-function slot5.InstOrbit(slot0, slot1)
-	slot3 = nil
+function var_0_5.InstOrbit(arg_33_0, arg_33_1)
+	local var_33_0 = arg_33_0.GetOrbitPath(arg_33_1)
+	local var_33_1
+	local var_33_2 = arg_33_0._allPool[var_33_0]
 
-	if slot0._allPool[slot0.GetOrbitPath(slot1)] then
-		slot3 = slot0:popPool(slot4)
-	elseif slot0._resCacheList[slot2] ~= nil then
-		slot0:InitPool(slot2, slot0._resCacheList[slot2])
+	if var_33_2 then
+		var_33_1 = arg_33_0:popPool(var_33_2)
+	elseif arg_33_0._resCacheList[var_33_0] ~= nil then
+		arg_33_0:InitPool(var_33_0, arg_33_0._resCacheList[var_33_0])
 
-		slot3 = slot0:popPool(slot0._allPool[slot2])
+		local var_33_3 = arg_33_0._allPool[var_33_0]
+
+		var_33_1 = arg_33_0:popPool(var_33_3)
 	else
-		ResourceMgr.Inst:getAssetAsync(slot2, slot1, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-			if not uv0._poolRoot then
-				uv1.Destroy(slot0)
+		ResourceMgr.Inst:getAssetAsync(var_33_0, arg_33_1, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_34_0)
+			if not arg_33_0._poolRoot then
+				var_0_4.Destroy(arg_34_0)
 
 				return
 			else
-				assert(slot0, "特效资源加载失败：" .. uv2)
-				uv0:InitPool(uv3, slot0)
+				assert(arg_34_0, "特效资源加载失败：" .. arg_33_1)
+				arg_33_0:InitPool(var_33_0, arg_34_0)
 			end
 		end), true, true)
 
-		slot3 = GameObject(slot1 .. "临时假obj")
+		var_33_1 = GameObject(arg_33_1 .. "临时假obj")
 
-		slot3:SetActive(false)
+		var_33_1:SetActive(false)
 
-		slot0._resCacheList[slot2] = slot3
+		arg_33_0._resCacheList[var_33_0] = var_33_1
 	end
 
-	return slot3
+	return var_33_1
 end
 
-function slot5.InstSkillPaintingUI(slot0)
-	slot1 = slot0._allPool["UI/SkillPainting"]
-	slot2 = slot1:GetObject()
-	slot0._ob2Pool[slot2] = slot1
+function var_0_5.InstSkillPaintingUI(arg_35_0)
+	local var_35_0 = arg_35_0._allPool["UI/SkillPainting"]
+	local var_35_1 = var_35_0:GetObject()
 
-	return slot2
+	arg_35_0._ob2Pool[var_35_1] = var_35_0
+
+	return var_35_1
 end
 
-function slot5.InstBossWarningUI(slot0)
-	slot1 = slot0._allPool["UI/MonsterAppearUI"]
-	slot2 = slot1:GetObject()
-	slot0._ob2Pool[slot2] = slot1
+function var_0_5.InstBossWarningUI(arg_36_0)
+	local var_36_0 = arg_36_0._allPool["UI/MonsterAppearUI"]
+	local var_36_1 = var_36_0:GetObject()
 
-	return slot2
+	arg_36_0._ob2Pool[var_36_1] = var_36_0
+
+	return var_36_1
 end
 
-function slot5.InstGridmanSkillUI(slot0)
-	slot1 = slot0._allPool["UI/combatgridmanskillfloat"]
-	slot2 = slot1:GetObject()
-	slot0._ob2Pool[slot2] = slot1
+function var_0_5.InstGridmanSkillUI(arg_37_0)
+	local var_37_0 = arg_37_0._allPool["UI/combatgridmanskillfloat"]
+	local var_37_1 = var_37_0:GetObject()
 
-	return slot2
+	arg_37_0._ob2Pool[var_37_1] = var_37_0
+
+	return var_37_1
 end
 
-function slot5.InstPainting(slot0, slot1)
-	slot3 = nil
+function var_0_5.InstPainting(arg_38_0, arg_38_1)
+	local var_38_0 = arg_38_0.GetPaintingPath(arg_38_1)
+	local var_38_1
+	local var_38_2 = arg_38_0._allPool[var_38_0]
 
-	if slot0._allPool[slot0.GetPaintingPath(slot1)] then
-		slot0._ob2Pool[slot4:GetObject()] = slot4
-	elseif slot0._resCacheList[slot2] ~= nil then
-		Object.Instantiate(slot0._resCacheList[slot2]):SetActive(true)
+	if var_38_2 then
+		var_38_1 = var_38_2:GetObject()
+		arg_38_0._ob2Pool[var_38_1] = var_38_2
+	elseif arg_38_0._resCacheList[var_38_0] ~= nil then
+		var_38_1 = Object.Instantiate(arg_38_0._resCacheList[var_38_0])
+
+		var_38_1:SetActive(true)
 	end
 
-	return slot3
+	return var_38_1
 end
 
-function slot5.InstMap(slot0, slot1)
-	slot3 = nil
+function var_0_5.InstMap(arg_39_0, arg_39_1)
+	local var_39_0 = arg_39_0.GetMapPath(arg_39_1)
+	local var_39_1
+	local var_39_2 = arg_39_0._allPool[var_39_0]
 
-	if slot0._allPool[slot0.GetMapPath(slot1)] then
-		slot0._ob2Pool[slot4:GetObject()] = slot4
-	elseif slot0._resCacheList[slot2] ~= nil then
-		slot3 = Object.Instantiate(slot0._resCacheList[slot2])
+	if var_39_2 then
+		var_39_1 = var_39_2:GetObject()
+		arg_39_0._ob2Pool[var_39_1] = var_39_2
+	elseif arg_39_0._resCacheList[var_39_0] ~= nil then
+		var_39_1 = Object.Instantiate(arg_39_0._resCacheList[var_39_0])
 	else
-		assert(false, "地图资源没有预加载：" .. slot1)
+		assert(false, "地图资源没有预加载：" .. arg_39_1)
 	end
 
-	slot3:SetActive(true)
+	var_39_1:SetActive(true)
 
-	return slot3
+	return var_39_1
 end
 
-function slot5.InstCardPuzzleCard(slot0)
-	slot1 = slot0._allPool["UI/CardTowerCardCombat"]
-	slot2 = slot1:GetObject()
-	slot0._ob2Pool[slot2] = slot1
+function var_0_5.InstCardPuzzleCard(arg_40_0)
+	local var_40_0 = arg_40_0._allPool["UI/CardTowerCardCombat"]
+	local var_40_1 = var_40_0:GetObject()
 
-	return slot2
+	arg_40_0._ob2Pool[var_40_1] = var_40_0
+
+	return var_40_1
 end
 
-function slot5.GetCharacterIcon(slot0, slot1)
-	return slot0._resCacheList[uv0.GetHrzIcon(slot1)]
+function var_0_5.GetCharacterIcon(arg_41_0, arg_41_1)
+	return arg_41_0._resCacheList[var_0_5.GetHrzIcon(arg_41_1)]
 end
 
-function slot5.GetCharacterSquareIcon(slot0, slot1)
-	return slot0._resCacheList[uv0.GetSquareIcon(slot1)]
+function var_0_5.GetCharacterSquareIcon(arg_42_0, arg_42_1)
+	return arg_42_0._resCacheList[var_0_5.GetSquareIcon(arg_42_1)]
 end
 
-function slot5.GetCharacterQIcon(slot0, slot1)
-	return slot0._resCacheList[uv0.GetQIcon(slot1)]
+function var_0_5.GetCharacterQIcon(arg_43_0, arg_43_1)
+	return arg_43_0._resCacheList[var_0_5.GetQIcon(arg_43_1)]
 end
 
-function slot5.GetAircraftIcon(slot0, slot1)
-	return slot0._resCacheList[uv0.GetAircraftIconPath(slot1)]
+function var_0_5.GetAircraftIcon(arg_44_0, arg_44_1)
+	return arg_44_0._resCacheList[var_0_5.GetAircraftIconPath(arg_44_1)]
 end
 
-function slot5.GetShipTypeIcon(slot0, slot1)
-	return slot0._resCacheList[uv0.GetShipTypeIconPath(slot1)]
+function var_0_5.GetShipTypeIcon(arg_45_0, arg_45_1)
+	return arg_45_0._resCacheList[var_0_5.GetShipTypeIconPath(arg_45_1)]
 end
 
-function slot5.GetCommanderHrzIcon(slot0, slot1)
-	return slot0._resCacheList[uv0.GetCommanderHrzIconPath(slot1)]
+function var_0_5.GetCommanderHrzIcon(arg_46_0, arg_46_1)
+	return arg_46_0._resCacheList[var_0_5.GetCommanderHrzIconPath(arg_46_1)]
 end
 
-function slot5.GetShader(slot0, slot1)
-	return pg.ShaderMgr.GetInstance():GetShader(uv0.BATTLE_SHADER[slot1])
+function var_0_5.GetShader(arg_47_0, arg_47_1)
+	return (pg.ShaderMgr.GetInstance():GetShader(var_0_3.BATTLE_SHADER[arg_47_1]))
 end
 
-function slot5.AddPreloadResource(slot0, slot1)
-	if type(slot1) == "string" then
-		slot0._preloadList[slot1] = false
-	elseif type(slot1) == "table" then
-		for slot5, slot6 in ipairs(slot1) do
-			slot0._preloadList[slot6] = false
+function var_0_5.AddPreloadResource(arg_48_0, arg_48_1)
+	if type(arg_48_1) == "string" then
+		arg_48_0._preloadList[arg_48_1] = false
+	elseif type(arg_48_1) == "table" then
+		for iter_48_0, iter_48_1 in ipairs(arg_48_1) do
+			arg_48_0._preloadList[iter_48_1] = false
 		end
 	end
 end
 
-function slot5.AddPreloadCV(slot0, slot1)
-	if ShipWordHelper.RawGetCVKey(slot1) > 0 then
-		slot0._battleCVList[slot2] = pg.CriMgr.GetBattleCVBankName(slot2)
+function var_0_5.AddPreloadCV(arg_49_0, arg_49_1)
+	local var_49_0 = ShipWordHelper.RawGetCVKey(arg_49_1)
+
+	if var_49_0 > 0 then
+		arg_49_0._battleCVList[var_49_0] = pg.CriMgr.GetBattleCVBankName(var_49_0)
 	end
 end
 
-function slot5.StartPreload(slot0, slot1, slot2)
-	slot3 = 0
+function var_0_5.StartPreload(arg_50_0, arg_50_1, arg_50_2)
+	local var_50_0 = 0
+	local var_50_1 = 0
 
-	for slot8, slot9 in pairs(slot0._preloadList) do
-		slot4 = 0 + 1
+	for iter_50_0, iter_50_1 in pairs(arg_50_0._preloadList) do
+		var_50_1 = var_50_1 + 1
 	end
 
-	for slot8, slot9 in pairs(slot0._battleCVList) do
-		slot4 = slot4 + 1
+	for iter_50_2, iter_50_3 in pairs(arg_50_0._battleCVList) do
+		var_50_1 = var_50_1 + 1
 	end
 
-	for slot9, slot10 in pairs(slot0._battleCVList) do
-		pg.CriMgr.GetInstance():LoadBattleCV(slot9, function ()
-			if not uv0._poolRoot then
-				return
-			end
+	local function var_50_2()
+		if not arg_50_0._poolRoot then
+			return
+		end
 
-			uv1 = uv1 + 1
+		var_50_0 = var_50_0 + 1
 
-			if uv2 < uv1 then
-				return
-			end
+		if var_50_0 > var_50_1 then
+			return
+		end
 
-			if uv3 then
-				uv3(uv1)
-			end
+		if arg_50_2 then
+			arg_50_2(var_50_0)
+		end
 
-			if uv1 == uv2 then
-				uv0._preloadList = nil
+		if var_50_0 == var_50_1 then
+			arg_50_0._preloadList = nil
 
-				uv4()
-			end
-		end)
+			arg_50_1()
+		end
 	end
 
-	for slot9, slot10 in pairs(slot0._preloadList) do
-		if slot0.GetResName(slot9) == "" or slot0._resCacheList[slot9] ~= nil then
-			slot5()
-		elseif string.find(slot9, "herohrzicon/") or string.find(slot9, "qicon/") or string.find(slot9, "squareicon/") or string.find(slot9, "commanderhrz/") or string.find(slot9, "AircraftIcon/") then
-			slot12, slot13 = HXSet.autoHxShiftPath(slot9, slot11)
+	for iter_50_4, iter_50_5 in pairs(arg_50_0._battleCVList) do
+		pg.CriMgr.GetInstance():LoadBattleCV(iter_50_4, var_50_2)
+	end
 
-			ResourceMgr.Inst:getAssetAsync(slot12, "", typeof(Sprite), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-				if slot0 == nil then
-					originalPrint("资源预加载失败，检查以下目录：>>" .. uv0 .. "<<")
+	for iter_50_6, iter_50_7 in pairs(arg_50_0._preloadList) do
+		local var_50_3 = arg_50_0.GetResName(iter_50_6)
+
+		if var_50_3 == "" or arg_50_0._resCacheList[iter_50_6] ~= nil then
+			var_50_2()
+		elseif string.find(iter_50_6, "herohrzicon/") or string.find(iter_50_6, "qicon/") or string.find(iter_50_6, "squareicon/") or string.find(iter_50_6, "commanderhrz/") or string.find(iter_50_6, "AircraftIcon/") then
+			local var_50_4, var_50_5 = HXSet.autoHxShiftPath(iter_50_6, var_50_3)
+
+			ResourceMgr.Inst:getAssetAsync(var_50_4, "", typeof(Sprite), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_52_0)
+				if arg_52_0 == nil then
+					originalPrint("资源预加载失败，检查以下目录：>>" .. iter_50_6 .. "<<")
 				else
-					if not uv1._poolRoot then
-						uv2.Destroy(slot0)
+					if not arg_50_0._poolRoot then
+						var_0_4.Destroy(arg_52_0)
 
 						return
 					end
 
-					if uv1._resCacheList then
-						uv1._resCacheList[uv0] = slot0
+					if arg_50_0._resCacheList then
+						arg_50_0._resCacheList[iter_50_6] = arg_52_0
 					end
 				end
 
-				uv3()
+				var_50_2()
 			end), true, true)
-		elseif string.find(slot9, "shiptype/") then
-			ResourceMgr.Inst:getAssetAsync("shiptype", string.split(slot9, "/")[2], typeof(Sprite), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-				if slot0 == nil then
-					originalPrint("资源预加载失败，检查以下目录：>>" .. uv0 .. "<<")
+		elseif string.find(iter_50_6, "shiptype/") then
+			local var_50_6 = string.split(iter_50_6, "/")[2]
+
+			ResourceMgr.Inst:getAssetAsync("shiptype", var_50_6, typeof(Sprite), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_53_0)
+				if arg_53_0 == nil then
+					originalPrint("资源预加载失败，检查以下目录：>>" .. iter_50_6 .. "<<")
 				else
-					if not uv1._poolRoot then
-						uv2.Destroy(slot0)
+					if not arg_50_0._poolRoot then
+						var_0_4.Destroy(arg_53_0)
 
 						return
 					end
 
-					if uv1._resCacheList then
-						uv1._resCacheList[uv0] = slot0
+					if arg_50_0._resCacheList then
+						arg_50_0._resCacheList[iter_50_6] = arg_53_0
 					end
 				end
 
-				uv3()
+				var_50_2()
 			end), true, true)
-		elseif string.find(slot9, "painting/") then
-			slot12 = false
+		elseif string.find(iter_50_6, "painting/") then
+			local var_50_7 = false
 
-			PoolMgr.GetInstance():GetPainting(slot11 .. ((PlayerPrefs.GetInt(BATTLE_HIDE_BG, 1) <= 0 or PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. slot11 .. "_n"))) and PlayerPrefs.GetInt("paint_hide_other_obj_" .. slot11, 0) ~= 0 and "_n" or ""), true, function (slot0)
-				if slot0 == nil then
-					originalPrint("资源预加载失败，检查以下目录：>>" .. uv0 .. "<<")
+			if PlayerPrefs.GetInt(BATTLE_HIDE_BG, 1) > 0 then
+				var_50_7 = PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_50_3 .. "_n"))
+			else
+				var_50_7 = PlayerPrefs.GetInt("paint_hide_other_obj_" .. var_50_3, 0) ~= 0
+			end
+
+			PoolMgr.GetInstance():GetPainting(var_50_3 .. (var_50_7 and "_n" or ""), true, function(arg_54_0)
+				if arg_54_0 == nil then
+					originalPrint("资源预加载失败，检查以下目录：>>" .. iter_50_6 .. "<<")
 				else
-					if not uv1._poolRoot then
-						uv2.ClearPaintingRes(uv0, slot0)
+					if not arg_50_0._poolRoot then
+						var_0_5.ClearPaintingRes(iter_50_6, arg_54_0)
 
 						return
 					end
 
-					ShipExpressionHelper.SetExpression(slot0, uv3)
-					slot0:SetActive(false)
+					ShipExpressionHelper.SetExpression(arg_54_0, var_50_3)
+					arg_54_0:SetActive(false)
 
-					if uv1._resCacheList then
-						uv1._resCacheList[uv0] = slot0
+					if arg_50_0._resCacheList then
+						arg_50_0._resCacheList[iter_50_6] = arg_54_0
 					end
 				end
 
-				uv4()
+				var_50_2()
 			end)
-		elseif string.find(slot9, "Char/") then
-			slot0:LoadSpineAsset(slot11, function (slot0)
-				if slot0 == nil then
-					originalPrint("资源预加载失败，检查以下目录：>>" .. uv0 .. "<<")
+		elseif string.find(iter_50_6, "Char/") then
+			arg_50_0:LoadSpineAsset(var_50_3, function(arg_55_0)
+				if arg_55_0 == nil then
+					originalPrint("资源预加载失败，检查以下目录：>>" .. iter_50_6 .. "<<")
 				else
-					slot0 = SpineAnim.AnimChar(uv1, slot0)
+					arg_55_0 = SpineAnim.AnimChar(var_50_3, arg_55_0)
 
-					if not uv2._poolRoot then
-						uv3.ClearCharRes(uv0, slot0)
+					if not arg_50_0._poolRoot then
+						var_0_5.ClearCharRes(iter_50_6, arg_55_0)
 
 						return
 					end
 
-					slot0:SetActive(false)
+					arg_55_0:SetActive(false)
 
-					if uv2._resCacheList then
-						uv2._resCacheList[uv0] = slot0
+					if arg_50_0._resCacheList then
+						arg_50_0._resCacheList[iter_50_6] = arg_55_0
 					end
 				end
 
-				uv2:InitPool(uv0, slot0)
-				uv4()
+				arg_50_0:InitPool(iter_50_6, arg_55_0)
+				var_50_2()
 			end)
-		elseif string.find(slot9, "UI/") then
-			LoadAndInstantiateAsync("UI", slot11, function (slot0)
-				if slot0 == nil then
-					originalPrint("资源预加载失败，检查以下目录：>>" .. uv0 .. "<<")
+		elseif string.find(iter_50_6, "UI/") then
+			LoadAndInstantiateAsync("UI", var_50_3, function(arg_56_0)
+				if arg_56_0 == nil then
+					originalPrint("资源预加载失败，检查以下目录：>>" .. iter_50_6 .. "<<")
 				else
-					if not uv1._poolRoot then
-						uv2.Destroy(slot0)
+					if not arg_50_0._poolRoot then
+						var_0_4.Destroy(arg_56_0)
 
 						return
 					end
 
-					slot0:SetActive(false)
+					arg_56_0:SetActive(false)
 
-					if uv1._resCacheList then
-						uv1._resCacheList[uv0] = slot0
+					if arg_50_0._resCacheList then
+						arg_50_0._resCacheList[iter_50_6] = arg_56_0
 					end
 				end
 
-				uv1:InitPool(uv0, slot0)
-				uv3()
+				arg_50_0:InitPool(iter_50_6, arg_56_0)
+				var_50_2()
 			end, true, true)
 		else
-			ResourceMgr.Inst:getAssetAsync(slot9, slot11, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-				if slot0 == nil then
-					originalPrint("资源预加载失败，检查以下目录：>>" .. uv0 .. "<<")
+			ResourceMgr.Inst:getAssetAsync(iter_50_6, var_50_3, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_57_0)
+				if arg_57_0 == nil then
+					originalPrint("资源预加载失败，检查以下目录：>>" .. iter_50_6 .. "<<")
 				else
-					if not uv1._poolRoot then
-						uv2.Destroy(slot0)
+					if not arg_50_0._poolRoot then
+						var_0_4.Destroy(arg_57_0)
 
 						return
 					end
 
-					if uv1._resCacheList then
-						uv1._resCacheList[uv0] = slot0
+					if arg_50_0._resCacheList then
+						arg_50_0._resCacheList[iter_50_6] = arg_57_0
 					end
 				end
 
-				uv1:InitPool(uv0, slot0)
-				uv3()
+				arg_50_0:InitPool(iter_50_6, arg_57_0)
+				var_50_2()
 			end), true, true)
 		end
 	end
 
-	return slot4
+	return var_50_1
 end
 
-slot6 = Vector3(0, 10000, 0)
+local var_0_6 = Vector3(0, 10000, 0)
 
-function slot5.HideBullet(slot0)
-	slot0.transform.position = uv0
+function var_0_5.HideBullet(arg_58_0)
+	arg_58_0.transform.position = var_0_6
 end
 
-function slot5.InitParticleSystemCB(slot0)
-	pg.EffectMgr.GetInstance():CommonEffectEvent(slot0)
+function var_0_5.InitParticleSystemCB(arg_59_0)
+	pg.EffectMgr.GetInstance():CommonEffectEvent(arg_59_0)
 end
 
-function slot5.InitPool(slot0, slot1, slot2)
-	slot3 = slot0._poolRoot.transform
+function var_0_5.InitPool(arg_60_0, arg_60_1, arg_60_2)
+	local var_60_0 = arg_60_0._poolRoot.transform
 
-	if string.find(slot1, "Item/") then
-		if slot2:GetComponentInChildren(typeof(UnityEngine.TrailRenderer)) ~= nil or slot2:GetComponentInChildren(typeof(ParticleSystem)) ~= nil then
-			slot0._allPool[slot1] = pg.Pool.New(slot0._bulletContainer.transform, slot2, 15, 20, true, false):InitSize()
+	if string.find(arg_60_1, "Item/") then
+		if arg_60_2:GetComponentInChildren(typeof(UnityEngine.TrailRenderer)) ~= nil or arg_60_2:GetComponentInChildren(typeof(ParticleSystem)) ~= nil then
+			arg_60_0._allPool[arg_60_1] = pg.Pool.New(arg_60_0._bulletContainer.transform, arg_60_2, 15, 20, true, false):InitSize()
 		else
-			slot4 = pg.Pool.New(slot0._bulletContainer.transform, slot2, 20, 20, true, true)
+			local var_60_1 = pg.Pool.New(arg_60_0._bulletContainer.transform, arg_60_2, 20, 20, true, true)
 
-			slot4:SetRecycleFuncs(uv0.HideBullet)
-			slot4:InitSize()
+			var_60_1:SetRecycleFuncs(var_0_5.HideBullet)
+			var_60_1:InitSize()
 
-			slot0._allPool[slot1] = slot4
+			arg_60_0._allPool[arg_60_1] = var_60_1
 		end
-	elseif string.find(slot1, "Effect/") then
-		if slot2:GetComponent(typeof(UnityEngine.ParticleSystem)) then
-			slot4 = 5
+	elseif string.find(arg_60_1, "Effect/") then
+		if arg_60_2:GetComponent(typeof(UnityEngine.ParticleSystem)) then
+			local var_60_2 = 5
 
-			if string.find(slot1, "smoke") and not string.find(slot1, "smokeboom") then
-				slot4 = 30
-			elseif string.find(slot1, "feijiyingzi") then
-				slot4 = 1
+			if string.find(arg_60_1, "smoke") and not string.find(arg_60_1, "smokeboom") then
+				var_60_2 = 30
+			elseif string.find(arg_60_1, "feijiyingzi") then
+				var_60_2 = 1
 			end
 
-			slot5 = pg.Pool.New(slot3, slot2, slot4, 20, false, false)
+			local var_60_3 = pg.Pool.New(var_60_0, arg_60_2, var_60_2, 20, false, false)
 
-			slot5:SetInitFuncs(uv0.InitParticleSystemCB)
-			slot5:InitSize()
+			var_60_3:SetInitFuncs(var_0_5.InitParticleSystemCB)
+			var_60_3:InitSize()
 
-			slot0._allPool[slot1] = slot5
+			arg_60_0._allPool[arg_60_1] = var_60_3
 		else
-			slot4 = 8
+			local var_60_4 = 8
 
-			if string.find(slot1, "AntiAirArea") or string.find(slot1, "AntiSubArea") then
-				slot4 = 1
+			if string.find(arg_60_1, "AntiAirArea") or string.find(arg_60_1, "AntiSubArea") then
+				var_60_4 = 1
 			end
 
-			GetOrAddComponent(slot2, typeof(ParticleSystemEvent))
+			GetOrAddComponent(arg_60_2, typeof(ParticleSystemEvent))
 
-			slot5 = pg.Pool.New(slot3, slot2, slot4, 20, false, false)
+			local var_60_5 = pg.Pool.New(var_60_0, arg_60_2, var_60_4, 20, false, false)
 
-			slot5:InitSize()
+			var_60_5:InitSize()
 
-			slot0._allPool[slot1] = slot5
+			arg_60_0._allPool[arg_60_1] = var_60_5
 		end
-	elseif string.find(slot1, "Char/") then
-		slot4 = 1
+	elseif string.find(arg_60_1, "Char/") then
+		local var_60_6 = 1
 
-		if string.find(slot1, "danchuan") then
-			slot4 = 3
+		if string.find(arg_60_1, "danchuan") then
+			var_60_6 = 3
 		end
 
-		slot5 = pg.Pool.New(slot3, slot2, slot4, 20, false, false):InitSize()
+		local var_60_7 = pg.Pool.New(var_60_0, arg_60_2, var_60_6, 20, false, false):InitSize()
 
-		slot5:SetRecycleFuncs(uv0.ResetSpineAction)
+		var_60_7:SetRecycleFuncs(var_0_5.ResetSpineAction)
 
-		slot0._allPool[slot1] = slot5
-	elseif string.find(slot1, "chargo/") then
-		slot0._allPool[slot1] = pg.Pool.New(slot3, slot2, 3, 20, false, false):InitSize()
-	elseif string.find(slot1, "orbit/") then
-		slot0._allPool[slot1] = pg.Pool.New(slot3, slot2, 2, 20, false, false):InitSize()
-	elseif slot1 == "UI/SkillPainting" then
-		slot0._allPool[slot1] = pg.Pool.New(slot3, slot2, 1, 20, false, false):InitSize()
-	elseif slot1 == "UI/MonsterAppearUI" then
-		slot0._allPool[slot1] = pg.Pool.New(slot3, slot2, 1, 20, false, false):InitSize()
-	elseif slot1 == "UI/CardTowerCardCombat" then
-		slot0._allPool[slot1] = pg.Pool.New(slot3, slot2, 7, 20, false, false):InitSize()
-	elseif slot1 == "UI/combatgridmanskillfloat" then
-		slot0._allPool[slot1] = pg.Pool.New(slot3, slot2, 1, 20, false, false):InitSize()
-	elseif slot1 == "UI/CombatHPBar" then
-		uv1.Battle.BattleHPBarManager.GetInstance():Init(slot2, slot3)
-	elseif slot1 == "UI/CombatHPPop" then
-		uv1.Battle.BattlePopNumManager.GetInstance():Init(slot2, slot3)
+		arg_60_0._allPool[arg_60_1] = var_60_7
+	elseif string.find(arg_60_1, "chargo/") then
+		arg_60_0._allPool[arg_60_1] = pg.Pool.New(var_60_0, arg_60_2, 3, 20, false, false):InitSize()
+	elseif string.find(arg_60_1, "orbit/") then
+		arg_60_0._allPool[arg_60_1] = pg.Pool.New(var_60_0, arg_60_2, 2, 20, false, false):InitSize()
+	elseif arg_60_1 == "UI/SkillPainting" then
+		arg_60_0._allPool[arg_60_1] = pg.Pool.New(var_60_0, arg_60_2, 1, 20, false, false):InitSize()
+	elseif arg_60_1 == "UI/MonsterAppearUI" then
+		arg_60_0._allPool[arg_60_1] = pg.Pool.New(var_60_0, arg_60_2, 1, 20, false, false):InitSize()
+	elseif arg_60_1 == "UI/CardTowerCardCombat" then
+		arg_60_0._allPool[arg_60_1] = pg.Pool.New(var_60_0, arg_60_2, 7, 20, false, false):InitSize()
+	elseif arg_60_1 == "UI/combatgridmanskillfloat" then
+		arg_60_0._allPool[arg_60_1] = pg.Pool.New(var_60_0, arg_60_2, 1, 20, false, false):InitSize()
+	elseif arg_60_1 == "UI/CombatHPBar" then
+		var_0_0.Battle.BattleHPBarManager.GetInstance():Init(arg_60_2, var_60_0)
+	elseif arg_60_1 == "UI/CombatHPPop" then
+		var_0_0.Battle.BattlePopNumManager.GetInstance():Init(arg_60_2, var_60_0)
 	end
 end
 
-function slot5.GetRotateScript(slot0, slot1, slot2)
-	if slot0.rotateScriptMap[slot1] then
-		return slot3[slot1]
+function var_0_5.GetRotateScript(arg_61_0, arg_61_1, arg_61_2)
+	local var_61_0 = arg_61_0.rotateScriptMap
+
+	if var_61_0[arg_61_1] then
+		return var_61_0[arg_61_1]
 	end
 
-	slot4 = GetOrAddComponent(slot1, "BulletRotation")
-	slot3[slot1] = slot4
+	local var_61_1 = GetOrAddComponent(arg_61_1, "BulletRotation")
 
-	return slot4
+	var_61_0[arg_61_1] = var_61_1
+
+	return var_61_1
 end
 
-function slot5.GetCommonResource()
+function var_0_5.GetCommonResource()
 	return {
-		uv0.GetMapPath("visionLine"),
-		uv0.GetMapPath("exposeLine"),
-		uv0.GetFXPath(uv1.Battle.BattleCharacterFactory.MOVE_WAVE_FX_NAME),
-		uv0.GetFXPath(uv1.Battle.BattleCharacterFactory.BOMB_FX_NAME),
-		uv0.GetFXPath(uv1.Battle.BattleBossCharacterFactory.BOMB_FX_NAME),
-		uv0.GetFXPath(uv1.Battle.BattleAircraftCharacterFactory.BOMB_FX_NAME),
-		uv0.GetFXPath("AlertArea"),
-		uv0.GetFXPath("TorAlert"),
-		uv0.GetFXPath("SquareAlert"),
-		uv0.GetFXPath("AntiAirArea"),
-		uv0.GetFXPath("AntiSubArea"),
-		uv0.GetFXPath("AimBiasArea"),
-		uv0.GetFXPath("shock"),
-		uv0.GetFXPath("qianting_chushui"),
-		uv0.GetFXPath(uv2.PLAYER_SUB_BUBBLE_FX),
-		uv0.GetFXPath("weaponrange"),
-		uv0.GetUIPath("SkillPainting"),
-		uv0.GetUIPath("MonsterAppearUI"),
-		uv0.GetUIPath("CombatHPBar"),
-		uv0.GetUIPath("CombatHPPop")
+		var_0_5.GetMapPath("visionLine"),
+		var_0_5.GetMapPath("exposeLine"),
+		var_0_5.GetFXPath(var_0_0.Battle.BattleCharacterFactory.MOVE_WAVE_FX_NAME),
+		var_0_5.GetFXPath(var_0_0.Battle.BattleCharacterFactory.BOMB_FX_NAME),
+		var_0_5.GetFXPath(var_0_0.Battle.BattleBossCharacterFactory.BOMB_FX_NAME),
+		var_0_5.GetFXPath(var_0_0.Battle.BattleAircraftCharacterFactory.BOMB_FX_NAME),
+		var_0_5.GetFXPath("AlertArea"),
+		var_0_5.GetFXPath("TorAlert"),
+		var_0_5.GetFXPath("SquareAlert"),
+		var_0_5.GetFXPath("AntiAirArea"),
+		var_0_5.GetFXPath("AntiSubArea"),
+		var_0_5.GetFXPath("AimBiasArea"),
+		var_0_5.GetFXPath("shock"),
+		var_0_5.GetFXPath("qianting_chushui"),
+		var_0_5.GetFXPath(var_0_3.PLAYER_SUB_BUBBLE_FX),
+		var_0_5.GetFXPath("weaponrange"),
+		var_0_5.GetUIPath("SkillPainting"),
+		var_0_5.GetUIPath("MonsterAppearUI"),
+		var_0_5.GetUIPath("CombatHPBar"),
+		var_0_5.GetUIPath("CombatHPPop")
 	}
 end
 
-function slot5.GetDisplayCommonResource()
+function var_0_5.GetDisplayCommonResource()
 	return {
-		uv0.GetFXPath(uv1.Battle.BattleCharacterFactory.MOVE_WAVE_FX_NAME),
-		uv0.GetFXPath(uv1.Battle.BattleCharacterFactory.BOMB_FX_NAME),
-		uv0.GetFXPath(uv1.Battle.BattleCharacterFactory.DANCHUAN_MOVE_WAVE_FX_NAME)
+		var_0_5.GetFXPath(var_0_0.Battle.BattleCharacterFactory.MOVE_WAVE_FX_NAME),
+		var_0_5.GetFXPath(var_0_0.Battle.BattleCharacterFactory.BOMB_FX_NAME),
+		var_0_5.GetFXPath(var_0_0.Battle.BattleCharacterFactory.DANCHUAN_MOVE_WAVE_FX_NAME)
 	}
 end
 
-function slot5.GetMapResource(slot0)
-	slot1 = {}
+function var_0_5.GetMapResource(arg_64_0)
+	local var_64_0 = {}
+	local var_64_1 = var_0_0.Battle.BattleMap
 
-	for slot6, slot7 in ipairs(uv0.Battle.BattleMap.LAYERS) do
-		for slot12, slot13 in ipairs(slot2.GetMapResNames(slot0, slot7)) do
-			slot1[#slot1 + 1] = uv1.GetMapPath(slot13)
+	for iter_64_0, iter_64_1 in ipairs(var_64_1.LAYERS) do
+		local var_64_2 = var_64_1.GetMapResNames(arg_64_0, iter_64_1)
+
+		for iter_64_2, iter_64_3 in ipairs(var_64_2) do
+			var_64_0[#var_64_0 + 1] = var_0_5.GetMapPath(iter_64_3)
 		end
 	end
 
-	return slot1
+	return var_64_0
 end
 
-function slot5.GetBuffResource()
-	slot0 = {}
+function var_0_5.GetBuffResource()
+	local var_65_0 = {}
+	local var_65_1 = require("buffFXPreloadList")
 
-	for slot5, slot6 in ipairs(require("buffFXPreloadList")) do
-		slot0[#slot0 + 1] = uv0.GetFXPath(slot6)
+	for iter_65_0, iter_65_1 in ipairs(var_65_1) do
+		var_65_0[#var_65_0 + 1] = var_0_5.GetFXPath(iter_65_1)
 	end
 
-	return slot0
+	return var_65_0
 end
 
-function slot5.GetShipResource(slot0, slot1, slot2)
-	slot3 = {}
-	slot4 = uv0.GetPlayerShipTmpDataFromID(slot0)
+function var_0_5.GetShipResource(arg_66_0, arg_66_1, arg_66_2)
+	local var_66_0 = {}
+	local var_66_1 = var_0_1.GetPlayerShipTmpDataFromID(arg_66_0)
 
-	if slot1 == nil or slot1 == 0 then
-		slot1 = slot4.skin_id
+	if arg_66_1 == nil or arg_66_1 == 0 then
+		arg_66_1 = var_66_1.skin_id
 	end
 
-	slot5 = uv0.GetPlayerShipSkinDataFromID(slot1)
-	slot3[#slot3 + 1] = uv1.GetCharacterPath(slot5.prefab)
-	slot3[#slot3 + 1] = uv1.GetHrzIcon(slot5.painting)
-	slot3[#slot3 + 1] = uv1.GetQIcon(slot5.painting)
-	slot3[#slot3 + 1] = uv1.GetSquareIcon(slot5.painting)
+	local var_66_2 = var_0_1.GetPlayerShipSkinDataFromID(arg_66_1)
 
-	if slot2 and uv0.GetShipTypeTmp(slot4.type).team_type == TeamType.Main then
-		slot3[#slot3 + 1] = uv1.GetPaintingPath(slot5.painting)
+	var_66_0[#var_66_0 + 1] = var_0_5.GetCharacterPath(var_66_2.prefab)
+	var_66_0[#var_66_0 + 1] = var_0_5.GetHrzIcon(var_66_2.painting)
+	var_66_0[#var_66_0 + 1] = var_0_5.GetQIcon(var_66_2.painting)
+	var_66_0[#var_66_0 + 1] = var_0_5.GetSquareIcon(var_66_2.painting)
+
+	if arg_66_2 and var_0_1.GetShipTypeTmp(var_66_1.type).team_type == TeamType.Main then
+		var_66_0[#var_66_0 + 1] = var_0_5.GetPaintingPath(var_66_2.painting)
 	end
 
-	return slot3
+	return var_66_0
 end
 
-function slot5.GetEnemyResource(slot0)
-	slot1 = {}
-	slot3 = slot0.bossData ~= nil
-	slot4 = slot0.buffList or {}
-	slot5 = slot0.phase or {}
-	slot6 = uv0.GetMonsterTmpDataFromID(slot0.monsterTemplateID)
-	slot1[#slot1 + 1] = uv1.GetCharacterPath(slot6.prefab)
-	slot1[#slot1 + 1] = uv1.GetFXPath(slot6.wave_fx)
+function var_0_5.GetEnemyResource(arg_67_0)
+	local var_67_0 = {}
+	local var_67_1 = arg_67_0.monsterTemplateID
+	local var_67_2 = arg_67_0.bossData ~= nil
+	local var_67_3 = arg_67_0.buffList or {}
+	local var_67_4 = arg_67_0.phase or {}
+	local var_67_5 = var_0_1.GetMonsterTmpDataFromID(var_67_1)
 
-	if slot6.fog_fx then
-		slot1[#slot1 + 1] = uv1.GetFXPath(slot6.fog_fx)
+	var_67_0[#var_67_0 + 1] = var_0_5.GetCharacterPath(var_67_5.prefab)
+	var_67_0[#var_67_0 + 1] = var_0_5.GetFXPath(var_67_5.wave_fx)
+
+	if var_67_5.fog_fx then
+		var_67_0[#var_67_0 + 1] = var_0_5.GetFXPath(var_67_5.fog_fx)
 	end
 
-	for slot10, slot11 in ipairs(slot6.appear_fx) do
-		slot1[#slot1 + 1] = uv1.GetFXPath(slot11)
+	for iter_67_0, iter_67_1 in ipairs(var_67_5.appear_fx) do
+		var_67_0[#var_67_0 + 1] = var_0_5.GetFXPath(iter_67_1)
 	end
 
-	for slot10, slot11 in ipairs(slot6.smoke) do
-		for slot16, slot17 in ipairs(slot11[2]) do
-			slot1[#slot1 + 1] = uv1.GetFXPath(slot17[1])
+	for iter_67_2, iter_67_3 in ipairs(var_67_5.smoke) do
+		local var_67_6 = iter_67_3[2]
+
+		for iter_67_4, iter_67_5 in ipairs(var_67_6) do
+			var_67_0[#var_67_0 + 1] = var_0_5.GetFXPath(iter_67_5[1])
 		end
 	end
 
-	if slot0.deadFX then
-		slot1[#slot1 + 1] = uv1.GetFXPath(slot0.deadFX)
+	if arg_67_0.deadFX then
+		var_67_0[#var_67_0 + 1] = var_0_5.GetFXPath(arg_67_0.deadFX)
 	end
 
-	if type(slot6.bubble_fx) == "table" then
-		slot1[#slot1 + 1] = uv1.GetFXPath(slot6.bubble_fx[1])
+	if type(var_67_5.bubble_fx) == "table" then
+		var_67_0[#var_67_0 + 1] = var_0_5.GetFXPath(var_67_5.bubble_fx[1])
 	end
 
-	for slot11, slot12 in ipairs(slot4) do
-		function (slot0)
-			for slot5, slot6 in pairs(uv0.Battle.BattleDataFunction.GetBuffTemplate(slot0, 1).effect_list) do
-				if slot6.arg_list.skill_id then
-					if uv0.Battle.BattleDataFunction.GetSkillTemplate(slot7).painting == 1 then
-						uv1[#uv1 + 1] = uv2.GetHrzIcon(uv3.icon)
-					elseif type(slot9) == "string" then
-						uv1[#uv1 + 1] = uv2.GetHrzIcon(slot9)
+	local function var_67_7(arg_68_0)
+		local var_68_0 = var_0_0.Battle.BattleDataFunction.GetBuffTemplate(arg_68_0, 1)
+
+		for iter_68_0, iter_68_1 in pairs(var_68_0.effect_list) do
+			local var_68_1 = iter_68_1.arg_list.skill_id
+
+			if var_68_1 then
+				local var_68_2 = var_0_0.Battle.BattleDataFunction.GetSkillTemplate(var_68_1).painting
+
+				if var_68_2 == 1 then
+					var_67_0[#var_67_0 + 1] = var_0_5.GetHrzIcon(var_67_5.icon)
+				elseif type(var_68_2) == "string" then
+					var_67_0[#var_67_0 + 1] = var_0_5.GetHrzIcon(var_68_2)
+				end
+			end
+
+			local var_68_3 = iter_68_1.arg_list.buff_id
+
+			if var_68_3 then
+				var_67_7(var_68_3)
+			end
+		end
+	end
+
+	for iter_67_6, iter_67_7 in ipairs(var_67_3) do
+		var_67_7(iter_67_7)
+	end
+
+	for iter_67_8, iter_67_9 in ipairs(var_67_4) do
+		if iter_67_9.addBuff then
+			for iter_67_10, iter_67_11 in ipairs(iter_67_9.addBuff) do
+				var_67_7(iter_67_11)
+			end
+		end
+	end
+
+	if var_67_2 then
+		var_67_0[#var_67_0 + 1] = var_0_5.GetSquareIcon(var_67_5.icon)
+	end
+
+	return var_67_0
+end
+
+function var_0_5.GetWeaponResource(arg_69_0, arg_69_1)
+	local var_69_0 = {}
+
+	if arg_69_0 == -1 then
+		return var_69_0
+	end
+
+	local var_69_1 = var_0_1.GetWeaponPropertyDataFromID(arg_69_0)
+
+	if var_69_1.type == var_0_2.EquipmentType.MAIN_CANNON or var_69_1.type == var_0_2.EquipmentType.SUB_CANNON or var_69_1.type == var_0_2.EquipmentType.TORPEDO or var_69_1.type == var_0_2.EquipmentType.ANTI_AIR or var_69_1.type == var_0_2.EquipmentType.ANTI_SEA or var_69_1.type == var_0_2.EquipmentType.POINT_HIT_AND_LOCK or var_69_1.type == var_0_2.EquipmentType.MANUAL_METEOR or var_69_1.type == var_0_2.EquipmentType.BOMBER_PRE_CAST_ALERT or var_69_1.type == var_0_2.EquipmentType.DEPTH_CHARGE or var_69_1.type == var_0_2.EquipmentType.MANUAL_TORPEDO or var_69_1.type == var_0_2.EquipmentType.DISPOSABLE_TORPEDO or var_69_1.type == var_0_2.EquipmentType.MANUAL_AAMISSILE or var_69_1.type == var_0_2.EquipmentType.BEAM or var_69_1.type == var_0_2.EquipmentType.SPACE_LASER or var_69_1.type == var_0_2.EquipmentType.FLEET_RANGE_ANTI_AIR or var_69_1.type == var_0_2.EquipmentType.MANUAL_MISSILE or var_69_1.type == var_0_2.EquipmentType.AUTO_MISSILE or var_69_1.type == var_0_2.EquipmentType.MISSILE then
+		for iter_69_0, iter_69_1 in ipairs(var_69_1.bullet_ID) do
+			local var_69_2 = var_0_5.GetBulletResource(iter_69_1, arg_69_1)
+
+			for iter_69_2, iter_69_3 in ipairs(var_69_2) do
+				var_69_0[#var_69_0 + 1] = iter_69_3
+			end
+		end
+	elseif var_69_1.type == var_0_2.EquipmentType.INTERCEPT_AIRCRAFT or var_69_1.type == var_0_2.EquipmentType.STRIKE_AIRCRAFT then
+		var_69_0 = var_0_5.GetAircraftResource(arg_69_0, nil, arg_69_1)
+	elseif var_69_1.type == var_0_2.EquipmentType.PREVIEW_ARICRAFT then
+		for iter_69_4, iter_69_5 in ipairs(var_69_1.bullet_ID) do
+			var_69_0 = var_0_5.GetAircraftResource(iter_69_5, nil, arg_69_1)
+		end
+	end
+
+	if var_69_1.type == var_0_2.EquipmentType.FLEET_RANGE_ANTI_AIR then
+		local var_69_3 = var_0_5.GetBulletResource(var_0_3.AntiAirConfig.RangeBulletID)
+
+		for iter_69_6, iter_69_7 in ipairs(var_69_3) do
+			var_69_0[#var_69_0 + 1] = iter_69_7
+		end
+	end
+
+	local var_69_4
+
+	if arg_69_1 and arg_69_1 ~= 0 then
+		var_69_4 = var_0_0.Battle.BattleDataFunction.GetEquipSkinDataFromID(arg_69_1)
+	end
+
+	if var_69_4 and var_69_4.fire_fx_name ~= "" then
+		var_69_0[#var_69_0 + 1] = var_0_5.GetFXPath(var_69_4.fire_fx_name)
+	else
+		var_69_0[#var_69_0 + 1] = var_0_5.GetFXPath(var_69_1.fire_fx)
+	end
+
+	if var_69_1.precast_param.fx then
+		var_69_0[#var_69_0 + 1] = var_0_5.GetFXPath(var_69_1.precast_param.fx)
+	end
+
+	if var_69_4 then
+		local var_69_5 = var_69_4.orbit_combat
+
+		if var_69_5 ~= "" then
+			var_69_0[#var_69_0 + 1] = var_0_5.GetOrbitPath(var_69_5)
+		end
+	end
+
+	return var_69_0
+end
+
+function var_0_5.GetEquipResource(arg_70_0, arg_70_1, arg_70_2)
+	local var_70_0 = {}
+
+	if arg_70_1 ~= 0 then
+		local var_70_1 = var_0_0.Battle.BattleDataFunction.GetEquipSkinDataFromID(arg_70_1)
+		local var_70_2 = var_70_1.ship_skin_id
+
+		if var_70_2 ~= 0 then
+			local var_70_3 = var_0_0.Battle.BattleDataFunction.GetPlayerShipSkinDataFromID(var_70_2)
+
+			var_70_0[#var_70_0 + 1] = var_0_5.GetCharacterPath(var_70_3.prefab)
+		end
+
+		local var_70_4 = var_70_1.orbit_combat
+
+		if var_70_4 ~= "" then
+			var_70_0[#var_70_0 + 1] = var_0_5.GetOrbitPath(var_70_4)
+		end
+	end
+
+	local var_70_5 = var_0_0.Battle.BattleDataFunction.GetWeaponDataFromID(arg_70_0)
+	local var_70_6 = var_70_5.weapon_id
+
+	for iter_70_0, iter_70_1 in ipairs(var_70_6) do
+		local var_70_7 = var_0_5.GetWeaponResource(iter_70_1)
+
+		for iter_70_2, iter_70_3 in ipairs(var_70_7) do
+			var_70_0[#var_70_0 + 1] = iter_70_3
+		end
+	end
+
+	local var_70_8 = var_70_5.skill_id
+
+	for iter_70_4, iter_70_5 in ipairs(var_70_8) do
+		iter_70_5 = arg_70_2 and var_0_0.Battle.BattleDataFunction.SkillTranform(arg_70_2, iter_70_5) or iter_70_5
+
+		local var_70_9 = var_0_0.Battle.BattleDataFunction.GetResFromBuff(iter_70_5, 1, {})
+
+		for iter_70_6, iter_70_7 in ipairs(var_70_9) do
+			var_70_0[#var_70_0 + 1] = iter_70_7
+		end
+	end
+
+	return var_70_0
+end
+
+function var_0_5.GetBulletResource(arg_71_0, arg_71_1)
+	local var_71_0 = {}
+	local var_71_1
+
+	if arg_71_1 ~= nil and arg_71_1 ~= 0 then
+		var_71_1 = var_0_1.GetEquipSkinDataFromID(arg_71_1)
+	end
+
+	local var_71_2 = var_0_1.GetBulletTmpDataFromID(arg_71_0)
+	local var_71_3
+
+	if var_71_1 then
+		var_71_3 = var_71_1.bullet_name
+
+		if var_71_1.mirror == 1 then
+			var_71_0[#var_71_0 + 1] = var_0_5.GetBulletPath(var_71_3 .. var_0_0.Battle.BattleBulletUnit.MIRROR_RES)
+		end
+	else
+		var_71_3 = var_71_2.modle_ID
+	end
+
+	if var_71_2.type == var_0_2.BulletType.BEAM or var_71_2.type == var_0_2.BulletType.SPACE_LASER or var_71_2.type == var_0_2.BulletType.MISSILE or var_71_2.type == var_0_2.BulletType.ELECTRIC_ARC then
+		var_71_0[#var_71_0 + 1] = var_0_5.GetFXPath(var_71_2.modle_ID)
+	else
+		var_71_0[#var_71_0 + 1] = var_0_5.GetBulletPath(var_71_3)
+	end
+
+	if var_71_2.extra_param.mirror then
+		var_71_0[#var_71_0 + 1] = var_0_5.GetBulletPath(var_71_3 .. var_0_0.Battle.BattleBulletUnit.MIRROR_RES)
+	end
+
+	local var_71_4
+
+	if var_71_1 and var_71_1.hit_fx_name ~= "" then
+		var_71_4 = var_71_1.hit_fx_name
+	else
+		var_71_4 = var_71_2.hit_fx
+	end
+
+	var_71_0[#var_71_0 + 1] = var_0_5.GetFXPath(var_71_4)
+	var_71_0[#var_71_0 + 1] = var_0_5.GetFXPath(var_71_2.miss_fx)
+	var_71_0[#var_71_0 + 1] = var_0_5.GetFXPath(var_71_2.alert_fx)
+
+	if var_71_2.extra_param.area_FX then
+		var_71_0[#var_71_0 + 1] = var_0_5.GetFXPath(var_71_2.extra_param.area_FX)
+	end
+
+	if var_71_2.extra_param.shrapnel then
+		for iter_71_0, iter_71_1 in ipairs(var_71_2.extra_param.shrapnel) do
+			local var_71_5 = var_0_5.GetBulletResource(iter_71_1.bullet_ID)
+
+			for iter_71_2, iter_71_3 in ipairs(var_71_5) do
+				var_71_0[#var_71_0 + 1] = iter_71_3
+			end
+		end
+	end
+
+	for iter_71_4, iter_71_5 in ipairs(var_71_2.attach_buff) do
+		if iter_71_5.effect_id then
+			var_71_0[#var_71_0 + 1] = var_0_5.GetFXPath(iter_71_5.effect_id)
+		end
+
+		if iter_71_5.buff_id then
+			local var_71_6 = var_0_0.Battle.BattleDataFunction.GetResFromBuff(iter_71_5.buff_id, 1, {})
+
+			for iter_71_6, iter_71_7 in ipairs(var_71_6) do
+				var_71_0[#var_71_0 + 1] = iter_71_7
+			end
+		end
+	end
+
+	return var_71_0
+end
+
+function var_0_5.GetAircraftResource(arg_72_0, arg_72_1, arg_72_2)
+	local var_72_0 = {}
+
+	arg_72_2 = arg_72_2 or 0
+
+	local var_72_1 = var_0_1.GetAircraftTmpDataFromID(arg_72_0)
+	local var_72_2
+	local var_72_3
+	local var_72_4
+	local var_72_5
+
+	if arg_72_2 ~= 0 then
+		local var_72_6, var_72_7, var_72_8
+
+		var_72_2, var_72_6, var_72_7, var_72_8 = var_0_1.GetEquipSkin(arg_72_2)
+
+		if var_72_6 ~= "" then
+			var_72_0[#var_72_0 + 1] = var_0_5.GetBulletPath(var_72_6)
+		end
+
+		if var_72_7 ~= "" then
+			var_72_0[#var_72_0 + 1] = var_0_5.GetBulletPath(var_72_7)
+		end
+
+		if var_72_8 ~= "" then
+			var_72_0[#var_72_0 + 1] = var_0_5.GetBulletPath(var_72_8)
+		end
+	else
+		var_72_2 = var_72_1.model_ID
+	end
+
+	var_72_0[#var_72_0 + 1] = var_0_5.GetCharacterGoPath(var_72_2)
+	var_72_0[#var_72_0 + 1] = var_0_5.GetAircraftIconPath(var_72_1.model_ID)
+
+	local var_72_9 = arg_72_1 or var_72_1.weapon_ID
+
+	if type(var_72_9) == "table" then
+		for iter_72_0, iter_72_1 in ipairs(var_72_9) do
+			local var_72_10 = var_0_5.GetWeaponResource(iter_72_1)
+
+			for iter_72_2, iter_72_3 in ipairs(var_72_10) do
+				var_72_0[#var_72_0 + 1] = iter_72_3
+			end
+		end
+	else
+		local var_72_11 = var_0_5.GetWeaponResource(var_72_9)
+
+		for iter_72_4, iter_72_5 in ipairs(var_72_11) do
+			var_72_0[#var_72_0 + 1] = iter_72_5
+		end
+	end
+
+	return var_72_0
+end
+
+function var_0_5.GetCommanderResource(arg_73_0)
+	local var_73_0 = {}
+	local var_73_1 = arg_73_0[1]
+
+	var_73_0[#var_73_0 + 1] = var_0_5.GetCommanderHrzIconPath(var_73_1:getPainting())
+
+	local var_73_2 = var_73_1:getSkills()[1]:getLevel()
+
+	for iter_73_0, iter_73_1 in ipairs(arg_73_0[2]) do
+		local var_73_3 = var_0_0.Battle.BattleDataFunction.GetResFromBuff(iter_73_1, var_73_2, {})
+
+		for iter_73_2, iter_73_3 in ipairs(var_73_3) do
+			var_73_0[#var_73_0 + 1] = iter_73_3
+		end
+	end
+
+	return var_73_0
+end
+
+function var_0_5.GetStageResource(arg_74_0)
+	local var_74_0 = var_0_0.Battle.BattleDataFunction.GetDungeonTmpDataByID(arg_74_0)
+	local var_74_1 = {}
+	local var_74_2 = {}
+
+	for iter_74_0, iter_74_1 in ipairs(var_74_0.stages) do
+		for iter_74_2, iter_74_3 in ipairs(iter_74_1.waves) do
+			if iter_74_3.triggerType == var_0_0.Battle.BattleConst.WaveTriggerType.NORMAL then
+				for iter_74_4, iter_74_5 in ipairs(iter_74_3.spawn) do
+					local var_74_3 = var_0_5.GetMonsterRes(iter_74_5)
+
+					for iter_74_6, iter_74_7 in ipairs(var_74_3) do
+						table.insert(var_74_1, iter_74_7)
 					end
 				end
 
-				if slot6.arg_list.buff_id then
-					uv4(slot8)
-				end
-			end
-		end(slot12)
-	end
+				if iter_74_3.reinforcement then
+					for iter_74_8, iter_74_9 in ipairs(iter_74_3.reinforcement) do
+						local var_74_4 = var_0_5.GetMonsterRes(iter_74_9)
 
-	for slot11, slot12 in ipairs(slot5) do
-		if slot12.addBuff then
-			for slot16, slot17 in ipairs(slot12.addBuff) do
-				slot7(slot17)
-			end
-		end
-	end
-
-	if slot3 then
-		slot1[#slot1 + 1] = uv1.GetSquareIcon(slot6.icon)
-	end
-
-	return slot1
-end
-
-function slot5.GetWeaponResource(slot0, slot1)
-	if slot0 == -1 then
-		return {}
-	end
-
-	if uv0.GetWeaponPropertyDataFromID(slot0).type == uv1.EquipmentType.MAIN_CANNON or slot3.type == uv1.EquipmentType.SUB_CANNON or slot3.type == uv1.EquipmentType.TORPEDO or slot3.type == uv1.EquipmentType.ANTI_AIR or slot3.type == uv1.EquipmentType.ANTI_SEA or slot3.type == uv1.EquipmentType.POINT_HIT_AND_LOCK or slot3.type == uv1.EquipmentType.MANUAL_METEOR or slot3.type == uv1.EquipmentType.BOMBER_PRE_CAST_ALERT or slot3.type == uv1.EquipmentType.DEPTH_CHARGE or slot3.type == uv1.EquipmentType.MANUAL_TORPEDO or slot3.type == uv1.EquipmentType.DISPOSABLE_TORPEDO or slot3.type == uv1.EquipmentType.MANUAL_AAMISSILE or slot3.type == uv1.EquipmentType.BEAM or slot3.type == uv1.EquipmentType.SPACE_LASER or slot3.type == uv1.EquipmentType.FLEET_RANGE_ANTI_AIR or slot3.type == uv1.EquipmentType.MANUAL_MISSILE or slot3.type == uv1.EquipmentType.AUTO_MISSILE or slot3.type == uv1.EquipmentType.MISSILE then
-		for slot7, slot8 in ipairs(slot3.bullet_ID) do
-			for slot13, slot14 in ipairs(uv2.GetBulletResource(slot8, slot1)) do
-				slot2[#slot2 + 1] = slot14
-			end
-		end
-	elseif slot3.type == uv1.EquipmentType.INTERCEPT_AIRCRAFT or slot3.type == uv1.EquipmentType.STRIKE_AIRCRAFT then
-		slot2 = uv2.GetAircraftResource(slot0, nil, slot1)
-	elseif slot3.type == uv1.EquipmentType.PREVIEW_ARICRAFT then
-		for slot7, slot8 in ipairs(slot3.bullet_ID) do
-			slot2 = uv2.GetAircraftResource(slot8, nil, slot1)
-		end
-	end
-
-	if slot3.type == uv1.EquipmentType.FLEET_RANGE_ANTI_AIR then
-		for slot8, slot9 in ipairs(uv2.GetBulletResource(uv3.AntiAirConfig.RangeBulletID)) do
-			slot2[#slot2 + 1] = slot9
-		end
-	end
-
-	slot4 = nil
-
-	if slot1 and slot1 ~= 0 then
-		slot4 = uv4.Battle.BattleDataFunction.GetEquipSkinDataFromID(slot1)
-	end
-
-	if slot4 and slot4.fire_fx_name ~= "" then
-		slot2[#slot2 + 1] = uv2.GetFXPath(slot4.fire_fx_name)
-	else
-		slot2[#slot2 + 1] = uv2.GetFXPath(slot3.fire_fx)
-	end
-
-	if slot3.precast_param.fx then
-		slot2[#slot2 + 1] = uv2.GetFXPath(slot3.precast_param.fx)
-	end
-
-	if slot4 and slot4.orbit_combat ~= "" then
-		slot2[#slot2 + 1] = uv2.GetOrbitPath(slot5)
-	end
-
-	return slot2
-end
-
-function slot5.GetEquipResource(slot0, slot1, slot2)
-	slot3 = {}
-
-	if slot1 ~= 0 then
-		if uv0.Battle.BattleDataFunction.GetEquipSkinDataFromID(slot1).ship_skin_id ~= 0 then
-			slot3[#slot3 + 1] = uv1.GetCharacterPath(uv0.Battle.BattleDataFunction.GetPlayerShipSkinDataFromID(slot5).prefab)
-		end
-
-		if slot4.orbit_combat ~= "" then
-			slot3[#slot3 + 1] = uv1.GetOrbitPath(slot6)
-		end
-	end
-
-	for slot9, slot10 in ipairs(uv0.Battle.BattleDataFunction.GetWeaponDataFromID(slot0).weapon_id) do
-		for slot15, slot16 in ipairs(uv1.GetWeaponResource(slot10)) do
-			slot3[#slot3 + 1] = slot16
-		end
-	end
-
-	for slot10, slot11 in ipairs(slot4.skill_id) do
-		if slot2 then
-			slot11 = uv0.Battle.BattleDataFunction.SkillTranform(slot2, slot11) or slot11
-		end
-
-		for slot16, slot17 in ipairs(uv0.Battle.BattleDataFunction.GetResFromBuff(slot11, 1, {})) do
-			slot3[#slot3 + 1] = slot17
-		end
-	end
-
-	return slot3
-end
-
-function slot5.GetBulletResource(slot0, slot1)
-	slot2 = {}
-	slot3 = nil
-
-	if slot1 ~= nil and slot1 ~= 0 then
-		slot3 = uv0.GetEquipSkinDataFromID(slot1)
-	end
-
-	slot4 = uv0.GetBulletTmpDataFromID(slot0)
-	slot5 = nil
-
-	if slot3 then
-		if slot3.mirror == 1 then
-			slot2[#slot2 + 1] = uv1.GetBulletPath(slot3.bullet_name .. uv2.Battle.BattleBulletUnit.MIRROR_RES)
-		end
-	else
-		slot5 = slot4.modle_ID
-	end
-
-	if slot4.type == uv3.BulletType.BEAM or slot4.type == uv3.BulletType.SPACE_LASER or slot4.type == uv3.BulletType.MISSILE or slot4.type == uv3.BulletType.ELECTRIC_ARC then
-		slot2[#slot2 + 1] = uv1.GetFXPath(slot4.modle_ID)
-	else
-		slot2[#slot2 + 1] = uv1.GetBulletPath(slot5)
-	end
-
-	if slot4.extra_param.mirror then
-		slot2[#slot2 + 1] = uv1.GetBulletPath(slot5 .. uv2.Battle.BattleBulletUnit.MIRROR_RES)
-	end
-
-	slot6 = nil
-	slot2[#slot2 + 1] = uv1.GetFXPath((not slot3 or slot3.hit_fx_name == "" or slot3.hit_fx_name) and slot4.hit_fx)
-	slot2[#slot2 + 1] = uv1.GetFXPath(slot4.miss_fx)
-	slot2[#slot2 + 1] = uv1.GetFXPath(slot4.alert_fx)
-
-	if slot4.extra_param.area_FX then
-		slot2[#slot2 + 1] = uv1.GetFXPath(slot4.extra_param.area_FX)
-	end
-
-	if slot4.extra_param.shrapnel then
-		for slot10, slot11 in ipairs(slot4.extra_param.shrapnel) do
-			for slot16, slot17 in ipairs(uv1.GetBulletResource(slot11.bullet_ID)) do
-				slot2[#slot2 + 1] = slot17
-			end
-		end
-	end
-
-	for slot10, slot11 in ipairs(slot4.attach_buff) do
-		if slot11.effect_id then
-			slot2[#slot2 + 1] = uv1.GetFXPath(slot11.effect_id)
-		end
-
-		if slot11.buff_id then
-			for slot16, slot17 in ipairs(uv2.Battle.BattleDataFunction.GetResFromBuff(slot11.buff_id, 1, {})) do
-				slot2[#slot2 + 1] = slot17
-			end
-		end
-	end
-
-	return slot2
-end
-
-function slot5.GetAircraftResource(slot0, slot1, slot2)
-	slot3 = {}
-	slot4 = uv0.GetAircraftTmpDataFromID(slot0)
-	slot5, slot6, slot7, slot8 = nil
-
-	if (slot2 or 0) ~= 0 then
-		slot5, slot10, slot7, slot8 = uv0.GetEquipSkin(slot2)
-
-		if slot10 ~= "" then
-			slot3[#slot3 + 1] = uv1.GetBulletPath(slot6)
-		end
-
-		if slot7 ~= "" then
-			slot3[#slot3 + 1] = uv1.GetBulletPath(slot7)
-		end
-
-		if slot8 ~= "" then
-			slot3[#slot3 + 1] = uv1.GetBulletPath(slot8)
-		end
-	else
-		slot5 = slot4.model_ID
-	end
-
-	slot3[#slot3 + 1] = uv1.GetCharacterGoPath(slot5)
-	slot3[#slot3 + 1] = uv1.GetAircraftIconPath(slot4.model_ID)
-
-	if type(slot1 or slot4.weapon_ID) == "table" then
-		for slot13, slot14 in ipairs(slot9) do
-			for slot19, slot20 in ipairs(uv1.GetWeaponResource(slot14)) do
-				slot3[#slot3 + 1] = slot20
-			end
-		end
-	else
-		for slot14, slot15 in ipairs(uv1.GetWeaponResource(slot9)) do
-			slot3[#slot3 + 1] = slot15
-		end
-	end
-
-	return slot3
-end
-
-function slot5.GetCommanderResource(slot0)
-	slot1 = {}
-	slot2 = slot0[1]
-	slot1[#slot1 + 1] = uv0.GetCommanderHrzIconPath(slot2:getPainting())
-	slot3 = slot2:getSkills()[1]:getLevel()
-
-	for slot7, slot8 in ipairs(slot0[2]) do
-		for slot13, slot14 in ipairs(uv1.Battle.BattleDataFunction.GetResFromBuff(slot8, slot3, {})) do
-			slot1[#slot1 + 1] = slot14
-		end
-	end
-
-	return slot1
-end
-
-function slot5.GetStageResource(slot0)
-	slot2 = {}
-	slot3 = {}
-
-	for slot7, slot8 in ipairs(uv0.Battle.BattleDataFunction.GetDungeonTmpDataByID(slot0).stages) do
-		for slot12, slot13 in ipairs(slot8.waves) do
-			if slot13.triggerType == uv0.Battle.BattleConst.WaveTriggerType.NORMAL then
-				for slot17, slot18 in ipairs(slot13.spawn) do
-					for slot23, slot24 in ipairs(uv1.GetMonsterRes(slot18)) do
-						table.insert(slot2, slot24)
-					end
-				end
-
-				if slot13.reinforcement then
-					for slot17, slot18 in ipairs(slot13.reinforcement) do
-						for slot23, slot24 in ipairs(uv1.GetMonsterRes(slot18)) do
-							table.insert(slot2, slot24)
+						for iter_74_10, iter_74_11 in ipairs(var_74_4) do
+							table.insert(var_74_1, iter_74_11)
 						end
 					end
 				end
-			elseif slot13.triggerType == uv0.Battle.BattleConst.WaveTriggerType.AID then
-				slot15 = slot13.triggerParams.main_unitList
-				slot16 = slot13.triggerParams.sub_unitList
+			elseif iter_74_3.triggerType == var_0_0.Battle.BattleConst.WaveTriggerType.AID then
+				local var_74_5 = iter_74_3.triggerParams.vanguard_unitList
+				local var_74_6 = iter_74_3.triggerParams.main_unitList
+				local var_74_7 = iter_74_3.triggerParams.sub_unitList
 
-				if slot13.triggerParams.vanguard_unitList then
-					function (slot0)
-						for slot5, slot6 in ipairs(uv0.GetAidUnitsRes(slot0)) do
-							table.insert(uv1, slot6)
-						end
+				local function var_74_8(arg_75_0)
+					local var_75_0 = var_0_5.GetAidUnitsRes(arg_75_0)
 
-						for slot5, slot6 in ipairs(slot0) do
-							uv2[#uv2 + 1] = slot6.skinId
-						end
-					end(slot14)
+					for iter_75_0, iter_75_1 in ipairs(var_75_0) do
+						table.insert(var_74_1, iter_75_1)
+					end
+
+					for iter_75_2, iter_75_3 in ipairs(arg_75_0) do
+						var_74_2[#var_74_2 + 1] = iter_75_3.skinId
+					end
 				end
 
-				if slot15 then
-					slot17(slot15)
+				if var_74_5 then
+					var_74_8(var_74_5)
 				end
 
-				if slot16 then
-					slot17(slot16)
+				if var_74_6 then
+					var_74_8(var_74_6)
 				end
-			elseif slot13.triggerType == uv0.Battle.BattleConst.WaveTriggerType.ENVIRONMENT then
-				for slot17, slot18 in ipairs(slot13.spawn) do
-					uv1.GetEnvironmentRes(slot2, slot18)
+
+				if var_74_7 then
+					var_74_8(var_74_7)
 				end
-			elseif slot13.triggerType == uv0.Battle.BattleConst.WaveTriggerType.CARD_PUZZLE then
-				for slot18, slot19 in ipairs(uv0.Battle.BattleDataFunction.GetCardRes(slot13.triggerParams.card_id)) do
-					table.insert(slot2, slot19)
+			elseif iter_74_3.triggerType == var_0_0.Battle.BattleConst.WaveTriggerType.ENVIRONMENT then
+				for iter_74_12, iter_74_13 in ipairs(iter_74_3.spawn) do
+					var_0_5.GetEnvironmentRes(var_74_1, iter_74_13)
+				end
+			elseif iter_74_3.triggerType == var_0_0.Battle.BattleConst.WaveTriggerType.CARD_PUZZLE then
+				local var_74_9 = var_0_0.Battle.BattleDataFunction.GetCardRes(iter_74_3.triggerParams.card_id)
+
+				for iter_74_14, iter_74_15 in ipairs(var_74_9) do
+					table.insert(var_74_1, iter_74_15)
 				end
 			end
 
-			if slot13.airFighter ~= nil then
-				for slot17, slot18 in pairs(slot13.airFighter) do
-					for slot23, slot24 in ipairs(uv1.GetAircraftResource(slot18.templateID, slot18.weaponID)) do
-						slot2[#slot2 + 1] = slot24
+			if iter_74_3.airFighter ~= nil then
+				for iter_74_16, iter_74_17 in pairs(iter_74_3.airFighter) do
+					local var_74_10 = var_0_5.GetAircraftResource(iter_74_17.templateID, iter_74_17.weaponID)
+
+					for iter_74_18, iter_74_19 in ipairs(var_74_10) do
+						var_74_1[#var_74_1 + 1] = iter_74_19
 					end
 				end
 			end
 		end
 	end
 
-	return slot2, slot3
+	return var_74_1, var_74_2
 end
 
-function slot5.GetEnvironmentRes(slot0, slot1)
-	table.insert(slot0, slot1.prefab and uv0.GetFXPath(slot1.prefab))
+function var_0_5.GetEnvironmentRes(arg_76_0, arg_76_1)
+	table.insert(arg_76_0, arg_76_1.prefab and var_0_5.GetFXPath(arg_76_1.prefab))
 
-	for slot7, slot8 in ipairs(uv1.Battle.BattleDataFunction.GetEnvironmentBehaviour(slot1.behaviours).behaviour_list) do
-		if slot8.type == uv1.Battle.BattleConst.EnviroumentBehaviour.BUFF then
-			for slot14, slot15 in ipairs(uv1.Battle.BattleDataFunction.GetResFromBuff(slot8.buff_id, 1, {})) do
-				slot0[#slot0 + 1] = slot15
+	local var_76_0 = arg_76_1.behaviours
+	local var_76_1 = var_0_0.Battle.BattleDataFunction.GetEnvironmentBehaviour(var_76_0).behaviour_list
+
+	for iter_76_0, iter_76_1 in ipairs(var_76_1) do
+		local var_76_2 = iter_76_1.type
+
+		if var_76_2 == var_0_0.Battle.BattleConst.EnviroumentBehaviour.BUFF then
+			local var_76_3 = var_0_0.Battle.BattleDataFunction.GetResFromBuff(iter_76_1.buff_id, 1, {})
+
+			for iter_76_2, iter_76_3 in ipairs(var_76_3) do
+				arg_76_0[#arg_76_0 + 1] = iter_76_3
 			end
-		elseif slot9 == uv1.Battle.BattleConst.EnviroumentBehaviour.SPAWN then
-			slot10 = slot8.content and slot8.content.alert and slot8.content.alert.alert_fx
+		elseif var_76_2 == var_0_0.Battle.BattleConst.EnviroumentBehaviour.SPAWN then
+			local var_76_4 = iter_76_1.content and iter_76_1.content.alert and iter_76_1.content.alert.alert_fx
 
-			table.insert(slot0, slot10 and uv0.GetFXPath(slot10))
+			table.insert(arg_76_0, var_76_4 and var_0_5.GetFXPath(var_76_4))
 
-			if slot8.content and slot8.content.child_prefab then
-				uv0.GetEnvironmentRes(slot0, slot11)
+			local var_76_5 = iter_76_1.content and iter_76_1.content.child_prefab
+
+			if var_76_5 then
+				var_0_5.GetEnvironmentRes(arg_76_0, var_76_5)
 			end
-		elseif slot9 == uv1.Battle.BattleConst.EnviroumentBehaviour.PLAY_FX then
-			slot0[#slot0 + 1] = uv0.GetFXPath(slot8.FX_ID)
+		elseif var_76_2 == var_0_0.Battle.BattleConst.EnviroumentBehaviour.PLAY_FX then
+			arg_76_0[#arg_76_0 + 1] = var_0_5.GetFXPath(iter_76_1.FX_ID)
 		end
 	end
 end
 
-function slot5.GetMonsterRes(slot0)
-	slot1 = {}
+function var_0_5.GetMonsterRes(arg_77_0)
+	local var_77_0 = {}
+	local var_77_1 = var_0_5.GetEnemyResource(arg_77_0)
 
-	for slot6, slot7 in ipairs(uv0.GetEnemyResource(slot0)) do
-		slot1[#slot1 + 1] = slot7
+	for iter_77_0, iter_77_1 in ipairs(var_77_1) do
+		var_77_0[#var_77_0 + 1] = iter_77_1
 	end
 
-	slot3 = uv1.Battle.BattleDataFunction.GetMonsterTmpDataFromID(slot0.monsterTemplateID)
-	slot4 = Clone(slot3.equipment_list)
-	slot5 = slot3.buff_list
-	slot6 = Clone(slot0.buffList) or {}
+	local var_77_2 = var_0_0.Battle.BattleDataFunction.GetMonsterTmpDataFromID(arg_77_0.monsterTemplateID)
+	local var_77_3 = Clone(var_77_2.equipment_list)
+	local var_77_4 = var_77_2.buff_list
+	local var_77_5 = Clone(arg_77_0.buffList) or {}
 
-	if slot0.phase then
-		for slot10, slot11 in ipairs(slot0.phase) do
-			if slot11.addWeapon then
-				for slot15, slot16 in ipairs(slot11.addWeapon) do
-					slot4[#slot4 + 1] = slot16
+	if arg_77_0.phase then
+		for iter_77_2, iter_77_3 in ipairs(arg_77_0.phase) do
+			if iter_77_3.addWeapon then
+				for iter_77_4, iter_77_5 in ipairs(iter_77_3.addWeapon) do
+					var_77_3[#var_77_3 + 1] = iter_77_5
 				end
 			end
 
-			if slot11.addRandomWeapon then
-				for slot15, slot16 in ipairs(slot11.addRandomWeapon) do
-					for slot20, slot21 in ipairs(slot16) do
-						slot4[#slot4 + 1] = slot21
+			if iter_77_3.addRandomWeapon then
+				for iter_77_6, iter_77_7 in ipairs(iter_77_3.addRandomWeapon) do
+					for iter_77_8, iter_77_9 in ipairs(iter_77_7) do
+						var_77_3[#var_77_3 + 1] = iter_77_9
 					end
 				end
 			end
 
-			if slot11.addBuff then
-				for slot15, slot16 in ipairs(slot11.addBuff) do
-					slot6[#slot6 + 1] = slot16
+			if iter_77_3.addBuff then
+				for iter_77_10, iter_77_11 in ipairs(iter_77_3.addBuff) do
+					var_77_5[#var_77_5 + 1] = iter_77_11
 				end
 			end
 		end
 	end
 
-	for slot10, slot11 in ipairs(slot5) do
-		for slot16, slot17 in ipairs(uv1.Battle.BattleDataFunction.GetResFromBuff(slot11.ID, slot11.LV, {})) do
-			slot1[#slot1 + 1] = slot17
+	for iter_77_12, iter_77_13 in ipairs(var_77_4) do
+		local var_77_6 = var_0_0.Battle.BattleDataFunction.GetResFromBuff(iter_77_13.ID, iter_77_13.LV, {})
+
+		for iter_77_14, iter_77_15 in ipairs(var_77_6) do
+			var_77_0[#var_77_0 + 1] = iter_77_15
 		end
 	end
 
-	for slot10, slot11 in ipairs(slot6) do
-		for slot16, slot17 in ipairs(uv1.Battle.BattleDataFunction.GetResFromBuff(slot11, 1, {})) do
-			slot1[#slot1 + 1] = slot17
+	for iter_77_16, iter_77_17 in ipairs(var_77_5) do
+		local var_77_7 = var_0_0.Battle.BattleDataFunction.GetResFromBuff(iter_77_17, 1, {})
+
+		for iter_77_18, iter_77_19 in ipairs(var_77_7) do
+			var_77_0[#var_77_0 + 1] = iter_77_19
 		end
 
-		for slot17, slot18 in pairs(uv1.Battle.BattleDataFunction.GetBuffTemplate(slot11, 1).effect_list) do
-			if slot18.arg_list.skill_id and uv1.Battle.BattleDataFunction.NeedSkillPainting(slot19) then
-				slot1[#slot1 + 1] = uv0.GetPaintingPath(uv2.GetMonsterTmpDataFromID(slot0.monsterTemplateID).icon)
+		local var_77_8 = var_0_0.Battle.BattleDataFunction.GetBuffTemplate(iter_77_17, 1)
+
+		for iter_77_20, iter_77_21 in pairs(var_77_8.effect_list) do
+			local var_77_9 = iter_77_21.arg_list.skill_id
+
+			if var_77_9 and var_0_0.Battle.BattleDataFunction.NeedSkillPainting(var_77_9) then
+				var_77_0[#var_77_0 + 1] = var_0_5.GetPaintingPath(var_0_1.GetMonsterTmpDataFromID(arg_77_0.monsterTemplateID).icon)
 
 				break
 			end
 		end
 	end
 
-	for slot10, slot11 in ipairs(slot4) do
-		for slot16, slot17 in ipairs(uv0.GetWeaponResource(slot11)) do
-			slot1[#slot1 + 1] = slot17
+	for iter_77_22, iter_77_23 in ipairs(var_77_3) do
+		local var_77_10 = var_0_5.GetWeaponResource(iter_77_23)
+
+		for iter_77_24, iter_77_25 in ipairs(var_77_10) do
+			var_77_0[#var_77_0 + 1] = iter_77_25
 		end
 	end
 
-	return slot1
+	return var_77_0
 end
 
-function slot5.GetEquipSkinPreviewRes(slot0)
-	slot1 = {}
+function var_0_5.GetEquipSkinPreviewRes(arg_78_0)
+	local var_78_0 = {}
+	local var_78_1 = var_0_1.GetEquipSkinDataFromID(arg_78_0)
 
-	for slot6, slot7 in ipairs(uv0.GetEquipSkinDataFromID(slot0).weapon_ids) do
-		for slot12, slot13 in ipairs(uv1.GetWeaponResource(slot7)) do
-			slot1[#slot1 + 1] = slot13
+	for iter_78_0, iter_78_1 in ipairs(var_78_1.weapon_ids) do
+		local var_78_2 = var_0_5.GetWeaponResource(iter_78_1)
+
+		for iter_78_2, iter_78_3 in ipairs(var_78_2) do
+			var_78_0[#var_78_0 + 1] = iter_78_3
 		end
 	end
 
-	function slot3(slot0)
-		if slot0 ~= "" then
-			uv0[#uv0 + 1] = uv1.GetBulletPath(slot0)
+	local function var_78_3(arg_79_0)
+		if arg_79_0 ~= "" then
+			var_78_0[#var_78_0 + 1] = var_0_5.GetBulletPath(arg_79_0)
 		end
 	end
 
-	slot4, slot5, slot6, slot7, slot8, slot9 = uv0.GetEquipSkin(slot0)
+	local var_78_4, var_78_5, var_78_6, var_78_7, var_78_8, var_78_9 = var_0_1.GetEquipSkin(arg_78_0)
 
-	if _.any(EquipType.AirProtoEquipTypes, function (slot0)
-		return table.contains(uv0.equip_type, slot0)
+	if _.any(EquipType.AirProtoEquipTypes, function(arg_80_0)
+		return table.contains(var_78_1.equip_type, arg_80_0)
 	end) then
-		slot1[#slot1 + 1] = uv1.GetCharacterGoPath(slot4)
+		var_78_0[#var_78_0 + 1] = var_0_5.GetCharacterGoPath(var_78_4)
 	else
-		slot1[#slot1 + 1] = uv1.GetBulletPath(slot4)
+		var_78_0[#var_78_0 + 1] = var_0_5.GetBulletPath(var_78_4)
 	end
 
-	slot3(slot5)
-	slot3(slot6)
-	slot3(slot7)
+	var_78_3(var_78_5)
+	var_78_3(var_78_6)
+	var_78_3(var_78_7)
 
-	if slot8 and slot8 ~= "" then
-		slot1[#slot1 + 1] = uv1.GetFXPath(slot8)
+	if var_78_8 and var_78_8 ~= "" then
+		var_78_0[#var_78_0 + 1] = var_0_5.GetFXPath(var_78_8)
 	end
 
-	if slot9 and slot9 ~= "" then
-		slot1[#slot1 + 1] = uv1.GetFXPath(slot9)
+	if var_78_9 and var_78_9 ~= "" then
+		var_78_0[#var_78_0 + 1] = var_0_5.GetFXPath(var_78_9)
 	end
 
-	return slot1
+	return var_78_0
 end
 
-function slot5.GetEquipSkinBulletRes(slot0)
-	slot1 = {}
-	slot2, slot3, slot4, slot5 = uv0.GetEquipSkin(slot0)
+function var_0_5.GetEquipSkinBulletRes(arg_81_0)
+	local var_81_0 = {}
+	local var_81_1, var_81_2, var_81_3, var_81_4 = var_0_1.GetEquipSkin(arg_81_0)
 
-	function slot6(slot0)
-		if slot0 ~= "" then
-			uv0[#uv0 + 1] = uv1.GetBulletPath(slot0)
+	local function var_81_5(arg_82_0)
+		if arg_82_0 ~= "" then
+			var_81_0[#var_81_0 + 1] = var_0_5.GetBulletPath(arg_82_0)
 		end
 	end
 
-	slot8 = false
+	local var_81_6 = var_0_1.GetEquipSkinDataFromID(arg_81_0)
+	local var_81_7 = false
 
-	for slot12, slot13 in ipairs(uv0.GetEquipSkinDataFromID(slot0).equip_type) do
-		if table.contains(EquipType.AircraftSkinType, slot13) then
-			slot8 = true
+	for iter_81_0, iter_81_1 in ipairs(var_81_6.equip_type) do
+		if table.contains(EquipType.AircraftSkinType, iter_81_1) then
+			var_81_7 = true
 		end
 	end
 
-	if slot8 then
-		if slot2 ~= "" then
-			slot1[#slot1 + 1] = uv1.GetCharacterGoPath(slot2)
+	if var_81_7 then
+		if var_81_1 ~= "" then
+			var_81_0[#var_81_0 + 1] = var_0_5.GetCharacterGoPath(var_81_1)
 		end
 	else
-		slot6(slot2)
+		var_81_5(var_81_1)
 
-		if uv0.GetEquipSkinDataFromID(slot0).mirror == 1 then
-			slot1[#slot1 + 1] = uv1.GetBulletPath(slot2 .. uv2.Battle.BattleBulletUnit.MIRROR_RES)
+		if var_0_1.GetEquipSkinDataFromID(arg_81_0).mirror == 1 then
+			var_81_0[#var_81_0 + 1] = var_0_5.GetBulletPath(var_81_1 .. var_0_0.Battle.BattleBulletUnit.MIRROR_RES)
 		end
 	end
 
-	slot6(slot3)
-	slot6(slot4)
-	slot6(slot5)
+	var_81_5(var_81_2)
+	var_81_5(var_81_3)
+	var_81_5(var_81_4)
 
-	return slot1
+	return var_81_0
 end
 
-function slot5.GetAidUnitsRes(slot0)
-	slot1 = {}
+function var_0_5.GetAidUnitsRes(arg_83_0)
+	local var_83_0 = {}
 
-	for slot5, slot6 in ipairs(slot0) do
-		slot7 = uv0.GetShipResource(slot6.tmpID, nil, true)
+	for iter_83_0, iter_83_1 in ipairs(arg_83_0) do
+		local var_83_1 = var_0_5.GetShipResource(iter_83_1.tmpID, nil, true)
 
-		for slot11, slot12 in ipairs(slot6.equipment) do
-			if slot12 ~= 0 then
-				if slot11 <= Ship.WEAPON_COUNT then
-					for slot17, slot18 in ipairs(uv1.GetWeaponDataFromID(slot12).weapon_id) do
-						for slot23, slot24 in ipairs(uv0.GetWeaponResource(slot18)) do
-							table.insert(slot7, slot24)
+		for iter_83_2, iter_83_3 in ipairs(iter_83_1.equipment) do
+			if iter_83_3 ~= 0 then
+				if iter_83_2 <= Ship.WEAPON_COUNT then
+					local var_83_2 = var_0_1.GetWeaponDataFromID(iter_83_3).weapon_id
+
+					for iter_83_4, iter_83_5 in ipairs(var_83_2) do
+						local var_83_3 = var_0_5.GetWeaponResource(iter_83_5)
+
+						for iter_83_6, iter_83_7 in ipairs(var_83_3) do
+							table.insert(var_83_1, iter_83_7)
 						end
 					end
 				else
-					for slot17, slot18 in ipairs(uv0.GetEquipResource(slot12)) do
-						table.insert(slot7, slot18)
+					local var_83_4 = var_0_5.GetEquipResource(iter_83_3)
+
+					for iter_83_8, iter_83_9 in ipairs(var_83_4) do
+						table.insert(var_83_1, iter_83_9)
 					end
 				end
 			end
 		end
 
-		for slot11, slot12 in ipairs(slot7) do
-			table.insert(slot1, slot12)
+		for iter_83_10, iter_83_11 in ipairs(var_83_1) do
+			table.insert(var_83_0, iter_83_11)
 		end
 	end
 
-	return slot1
+	return var_83_0
 end
 
-function slot5.GetSpWeaponResource(slot0, slot1)
-	slot2 = {}
+function var_0_5.GetSpWeaponResource(arg_84_0, arg_84_1)
+	local var_84_0 = {}
+	local var_84_1 = var_0_0.Battle.BattleDataFunction.GetSpWeaponDataFromID(arg_84_0).effect_id
 
-	if uv0.Battle.BattleDataFunction.GetSpWeaponDataFromID(slot0).effect_id ~= 0 then
-		if slot1 then
-			slot4 = uv0.Battle.BattleDataFunction.SkillTranform(slot1, slot4) or slot4
-		end
+	if var_84_1 ~= 0 then
+		var_84_1 = arg_84_1 and var_0_0.Battle.BattleDataFunction.SkillTranform(arg_84_1, var_84_1) or var_84_1
 
-		for slot9, slot10 in ipairs(uv0.Battle.BattleDataFunction.GetResFromBuff(slot4, 1, {})) do
-			slot2[#slot2 + 1] = slot10
+		local var_84_2 = var_0_0.Battle.BattleDataFunction.GetResFromBuff(var_84_1, 1, {})
+
+		for iter_84_0, iter_84_1 in ipairs(var_84_2) do
+			var_84_0[#var_84_0 + 1] = iter_84_1
 		end
 	end
 
-	return slot2
+	return var_84_0
 end

@@ -1,63 +1,64 @@
-slot0 = class("FavoriteCard")
+﻿local var_0_0 = class("FavoriteCard")
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.go = slot1
-	slot0.tr = tf(slot1)
-	slot0.charTpl = slot2
-	slot0.charContainer = slot0.tr:Find("char_list")
-	slot0.isInitChar = false
-	slot0.maxStar = 0
-	slot0.nameTF = slot0.tr:Find("bonus/name_bg/Text"):GetComponent(typeof(Text))
-	slot0.unfinish = slot0.tr:Find("bonus/item_tpl/unfinish")
-	slot0.get = slot0.tr:Find("bonus/item_tpl/get")
-	slot0.got = slot0.tr:Find("bonus/item_tpl/got")
-	slot0.lock = slot0.tr:Find("bonus/item_tpl/lock")
-	slot0.tip = slot0.tr:Find("bonus/item_tpl/tip")
-	slot0.starCount = slot0.tr:Find("bonus/process"):GetComponent(typeof(Text))
-	slot0.awardTF = slot0.tr:Find("bonus/item_tpl")
-	slot0.iconTF = slot0.awardTF:Find("icon_bg")
-	slot0.box = slot0.tr:Find("box")
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.go = arg_1_1
+	arg_1_0.tr = tf(arg_1_1)
+	arg_1_0.charTpl = arg_1_2
+	arg_1_0.charContainer = arg_1_0.tr:Find("char_list")
+	arg_1_0.isInitChar = false
+	arg_1_0.maxStar = 0
+	arg_1_0.nameTF = arg_1_0.tr:Find("bonus/name_bg/Text"):GetComponent(typeof(Text))
+	arg_1_0.unfinish = arg_1_0.tr:Find("bonus/item_tpl/unfinish")
+	arg_1_0.get = arg_1_0.tr:Find("bonus/item_tpl/get")
+	arg_1_0.got = arg_1_0.tr:Find("bonus/item_tpl/got")
+	arg_1_0.lock = arg_1_0.tr:Find("bonus/item_tpl/lock")
+	arg_1_0.tip = arg_1_0.tr:Find("bonus/item_tpl/tip")
+	arg_1_0.starCount = arg_1_0.tr:Find("bonus/process"):GetComponent(typeof(Text))
+	arg_1_0.awardTF = arg_1_0.tr:Find("bonus/item_tpl")
+	arg_1_0.iconTF = arg_1_0.awardTF:Find("icon_bg")
+	arg_1_0.box = arg_1_0.tr:Find("box")
 end
 
-function slot1(slot0)
-	slot1 = {
-		go = slot0,
-		tr = tf(slot0)
+local function var_0_1(arg_2_0)
+	local var_2_0 = {
+		go = arg_2_0,
+		tr = tf(arg_2_0)
 	}
-	slot1.icon = slot1.tr:Find("icon")
-	slot1.iconImg = slot1.icon:GetComponent(typeof(Image))
-	slot1.stars = findTF(slot1.tr, "stars")
-	slot1.starTpl = findTF(slot1.stars, "star")
-	slot1.name = findTF(slot1.tr, "name"):GetComponent(typeof(Text))
-	slot1.unkonwn = findTF(slot1.tr, "unkonwn")
 
-	function slot1.update(slot0, slot1, slot2)
-		uv0.name.text = slot1:getConfig("name")
+	var_2_0.icon = var_2_0.tr:Find("icon")
+	var_2_0.iconImg = var_2_0.icon:GetComponent(typeof(Image))
+	var_2_0.stars = findTF(var_2_0.tr, "stars")
+	var_2_0.starTpl = findTF(var_2_0.stars, "star")
+	var_2_0.name = findTF(var_2_0.tr, "name"):GetComponent(typeof(Text))
+	var_2_0.unkonwn = findTF(var_2_0.tr, "unkonwn")
 
-		LoadSpriteAsync("shipmodels/" .. Ship.getPaintingName(slot1.configId), function (slot0)
-			if slot0 then
-				rtf(uv0.icon).pivot = getSpritePivot(slot0)
-				uv1.iconImg.sprite = slot0
+	function var_2_0.update(arg_3_0, arg_3_1, arg_3_2)
+		var_2_0.name.text = arg_3_1:getConfig("name")
 
-				uv1.iconImg:SetNativeSize()
+		LoadSpriteAsync("shipmodels/" .. Ship.getPaintingName(arg_3_1.configId), function(arg_4_0)
+			if arg_4_0 then
+				rtf(arg_3_0.icon).pivot = getSpritePivot(arg_4_0)
+				var_2_0.iconImg.sprite = arg_4_0
 
-				uv0.icon.localPosition = Vector3(0, -85, 0)
+				var_2_0.iconImg:SetNativeSize()
 
-				setActive(uv1.iconImg, true)
+				arg_3_0.icon.localPosition = Vector3(0, -85, 0)
+
+				setActive(var_2_0.iconImg, true)
 			end
 		end)
-		setActive(uv0.stars, slot2)
+		setActive(var_2_0.stars, arg_3_2)
 
-		if slot2 then
-			slot7 = 1
+		if arg_3_2 then
+			setImageColor(arg_3_0.icon, Color.New(1, 1, 1, 1))
 
-			setImageColor(slot0.icon, Color.New(1, slot7, 1, 1))
+			local var_3_0 = arg_3_1:getMaxStar()
 
-			for slot7 = uv0.stars.childCount + 1, slot1:getMaxStar() do
-				cloneTplTo(uv0.starTpl, uv0.stars)
+			for iter_3_0 = var_2_0.stars.childCount + 1, var_3_0 do
+				cloneTplTo(var_2_0.starTpl, var_2_0.stars)
 			end
 
-			slot4 = {
+			local var_3_1 = {
 				[4] = {
 					1,
 					2,
@@ -81,74 +82,97 @@ function slot1(slot0)
 				}
 			}
 
-			for slot8 = 1, 6 do
-				setActive(findTF(uv0.stars, "star_" .. slot8), slot8 <= slot3)
-				setActive(slot9:Find("startpl"), false)
+			for iter_3_1 = 1, 6 do
+				local var_3_2 = findTF(var_2_0.stars, "star_" .. iter_3_1)
+
+				setActive(var_3_2, iter_3_1 <= var_3_0)
+				setActive(var_3_2:Find("startpl"), false)
 			end
 
-			for slot9 = 1, slot3 do
-				setActive(findTF(uv0.stars, "star_" .. slot4[slot3][slot9]):Find("startpl"), slot9 <= slot2.star)
+			local var_3_3 = var_3_1[var_3_0]
+
+			for iter_3_2 = 1, var_3_0 do
+				local var_3_4 = findTF(var_2_0.stars, "star_" .. var_3_3[iter_3_2])
+
+				setActive(var_3_4:Find("startpl"), iter_3_2 <= arg_3_2.star)
 			end
 		else
-			setImageColor(slot0.icon, Color.New(0, 0, 0, 0.7))
+			setImageColor(arg_3_0.icon, Color.New(0, 0, 0, 0.7))
 		end
 
-		setActive(uv0.unkonwn, not slot2)
+		setActive(var_2_0.unkonwn, not arg_3_2)
 	end
 
-	return slot1
+	return var_2_0
 end
 
-function slot0.update(slot0, slot1, slot2, slot3)
-	slot0.favoriteVO = slot1
-	slot0.shipGroups = slot2
-	slot0.awards = slot3
-	slot4 = {}
+function var_0_0.update(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	arg_5_0.favoriteVO = arg_5_1
+	arg_5_0.shipGroups = arg_5_2
+	arg_5_0.awards = arg_5_3
 
-	for slot9 = slot0.charContainer.childCount, #slot1:getConfig("char_list") - 1 do
-		cloneTplTo(slot0.charTpl, slot0.charContainer)
+	local var_5_0 = {}
+	local var_5_1 = arg_5_1:getConfig("char_list")
+
+	for iter_5_0 = arg_5_0.charContainer.childCount, #var_5_1 - 1 do
+		cloneTplTo(arg_5_0.charTpl, arg_5_0.charContainer)
 	end
 
-	for slot9 = 0, slot0.charContainer.childCount - 1 do
-		setActive(slot0.charContainer:GetChild(slot9), slot9 < #slot5)
+	for iter_5_1 = 0, arg_5_0.charContainer.childCount - 1 do
+		local var_5_2 = arg_5_0.charContainer:GetChild(iter_5_1)
 
-		if slot9 < #slot5 then
-			slot4[slot5[slot9 + 1]] = uv0(slot10)
+		setActive(var_5_2, iter_5_1 < #var_5_1)
+
+		local var_5_3 = var_5_1[iter_5_1 + 1]
+
+		if iter_5_1 < #var_5_1 then
+			var_5_0[var_5_3] = var_0_1(var_5_2)
 		end
 	end
 
-	for slot11, slot12 in pairs(slot4) do
-		slot12:update(Ship.New({
-			configId = slot11 * 10 + 1
-		}), slot2[slot11])
+	local var_5_4 = 0
+	local var_5_5 = 0
 
-		slot6 = 0 + (slot2[slot11] and slot2[slot11].star or 0)
-		slot7 = 0 + slot14:getMaxStar()
+	for iter_5_2, iter_5_3 in pairs(var_5_0) do
+		local var_5_6 = iter_5_2 * 10 + 1
+		local var_5_7 = Ship.New({
+			configId = var_5_6
+		})
+
+		iter_5_3:update(var_5_7, arg_5_2[iter_5_2])
+
+		var_5_4 = var_5_4 + (arg_5_2[iter_5_2] and arg_5_2[iter_5_2].star or 0)
+		var_5_5 = var_5_5 + var_5_7:getMaxStar()
 	end
 
-	slot0.nameTF.text = slot1:getConfig("name")
+	arg_5_0.nameTF.text = arg_5_1:getConfig("name")
 
-	slot0:updateBound()
+	arg_5_0:updateBound()
 end
 
-function slot0.updateBound(slot0)
-	slot0.state = slot0.favoriteVO:getState(slot0.shipGroups, slot0.awards)
+function var_0_0.updateBound(arg_6_0)
+	arg_6_0.state = arg_6_0.favoriteVO:getState(arg_6_0.shipGroups, arg_6_0.awards)
 
-	setActive(slot0.unfinish, slot0.state == Favorite.STATE_WAIT)
-	setActive(slot0.get, slot0.state == Favorite.STATE_AWARD)
-	setActive(slot0.got, slot0.state == Favorite.STATE_FETCHED)
-	setActive(slot0.lock, slot0.state == Favorite.STATE_LOCK)
-	setActive(slot0.tip, slot0.state == Favorite.STATE_AWARD)
+	setActive(arg_6_0.unfinish, arg_6_0.state == Favorite.STATE_WAIT)
+	setActive(arg_6_0.get, arg_6_0.state == Favorite.STATE_AWARD)
+	setActive(arg_6_0.got, arg_6_0.state == Favorite.STATE_FETCHED)
+	setActive(arg_6_0.lock, arg_6_0.state == Favorite.STATE_LOCK)
+	setActive(arg_6_0.tip, arg_6_0.state == Favorite.STATE_AWARD)
 
-	slot3 = slot0.favoriteVO:getConfig("award_display")[slot0.favoriteVO:getNextAwardIndex(slot0.awards)] and slot2[slot1] or slot2[#slot2]
+	local var_6_0 = arg_6_0.favoriteVO:getNextAwardIndex(arg_6_0.awards)
+	local var_6_1 = arg_6_0.favoriteVO:getConfig("award_display")
+	local var_6_2 = var_6_1[var_6_0] and var_6_1[var_6_0] or var_6_1[#var_6_1]
 
-	updateDrop(slot0.awardTF, {
-		type = slot3[1],
-		id = slot3[2],
-		count = slot3[3]
+	updateDrop(arg_6_0.awardTF, {
+		type = var_6_2[1],
+		id = var_6_2[2],
+		count = var_6_2[3]
 	})
 
-	slot0.starCount.text = slot0.favoriteVO:getStarCount(slot0.shipGroups) .. "/" .. (slot0.favoriteVO:getConfig("level")[slot1] or slot4[#slot4])
+	local var_6_3 = arg_6_0.favoriteVO:getConfig("level")
+	local var_6_4 = arg_6_0.favoriteVO:getStarCount(arg_6_0.shipGroups)
+
+	arg_6_0.starCount.text = var_6_4 .. "/" .. (var_6_3[var_6_0] or var_6_3[#var_6_3])
 end
 
-return slot0
+return var_0_0

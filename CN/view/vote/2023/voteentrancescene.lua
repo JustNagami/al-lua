@@ -1,233 +1,259 @@
-slot0 = class("VoteEntranceScene", import("view.base.BaseUI"))
-slot0.MAIN_STAGE_CLOSE = 0
-slot0.MAIN_STAGE_OPEN = 1
-slot0.MAIN_STAGE_FINAL = 2
-slot0.MAIN_STAGE_END = 3
-slot0.SUB_STAGE_CLOSE = 0
-slot0.SUB_STAGE_META = 1
-slot0.SUB_STAGE_KID = 2
-slot0.SUB_STAGE_SIREN = 3
-slot0.EXCHANGE_STAGE_CLOSE = 0
-slot0.EXCHANGE_STAGE_OPEN = 1
-slot0.BILLBOARD_STAGE_NORMAL = 0
-slot0.BILLBOARD_STAGE_FINAL = 1
+﻿local var_0_0 = class("VoteEntranceScene", import("view.base.BaseUI"))
 
-function slot0.getUIName(slot0)
+var_0_0.MAIN_STAGE_CLOSE = 0
+var_0_0.MAIN_STAGE_OPEN = 1
+var_0_0.MAIN_STAGE_FINAL = 2
+var_0_0.MAIN_STAGE_END = 3
+var_0_0.SUB_STAGE_CLOSE = 0
+var_0_0.SUB_STAGE_META = 1
+var_0_0.SUB_STAGE_KID = 2
+var_0_0.SUB_STAGE_SIREN = 3
+var_0_0.EXCHANGE_STAGE_CLOSE = 0
+var_0_0.EXCHANGE_STAGE_OPEN = 1
+var_0_0.BILLBOARD_STAGE_NORMAL = 0
+var_0_0.BILLBOARD_STAGE_FINAL = 1
+
+function var_0_0.getUIName(arg_1_0)
 	return "VoteEntranceUI"
 end
 
-function slot0.init(slot0)
-	slot0.backBtn = slot0:findTF("frame/back")
-	slot0.homeBtn = slot0:findTF("frame/home")
-	slot0.helpBtn = slot0:findTF("frame/help")
-	slot0.votesTr = slot0:findTF("frame/votes")
-	slot0.votesTxt = slot0:findTF("frame/votes/Text"):GetComponent(typeof(Text))
-	slot0.scheduleTr = slot0:findTF("frame/schedule")
-	slot0.scheduleTxt = slot0.scheduleTr:Find("Text"):GetComponent(typeof(Text))
-	slot0.scheduleImg = slot0.scheduleTr:GetComponent(typeof(Image))
-	slot0.awardBtn = slot0:findTF("frame/award")
-	slot0.mainTr = slot0:findTF("bg/main"):GetComponent(typeof(Image))
-	slot0.mainTip = slot0.mainTr.gameObject.transform:Find("tip")
-	slot0.mainTitle = slot0.mainTr.gameObject.transform:Find("title")
-	slot0.awardItem = slot0:findTF("bg/main/item")
-	slot0.dropTr = slot0.awardItem:Find("Award")
-	slot0.dropGetTr = slot0.awardItem:Find("get")
-	slot0.dropGotTr = slot0.awardItem:Find("got")
-	slot0.subTr = slot0:findTF("bg/sub"):GetComponent(typeof(Image))
-	slot0.subTip = slot0.subTr.gameObject.transform:Find("tip")
-	slot0.subTitle = slot0.subTr.gameObject.transform:Find("title")
-	slot0.exchangeTr = slot0:findTF("bg/exchange"):GetComponent(typeof(Image))
-	slot0.exchangeTip = slot0.exchangeTr.gameObject.transform:Find("tip")
-	slot0.exchangeTitle = slot0.exchangeTr.gameObject.transform:Find("title")
-	slot0.billboardTr = slot0:findTF("bg/billboard"):GetComponent(typeof(Image))
-	slot0.billboardTip = slot0.billboardTr.gameObject.transform:Find("tip")
-	slot0.honorTr = slot0:findTF("bg/honor"):GetComponent(typeof(Image))
-	slot0.honorTip = slot0.honorTr.gameObject.transform:Find("tip")
-	slot0.awardWindowPage = VoteAwardWindowPage.New(slot0._tf, slot0.event)
+function var_0_0.init(arg_2_0)
+	arg_2_0.backBtn = arg_2_0:findTF("frame/back")
+	arg_2_0.homeBtn = arg_2_0:findTF("frame/home")
+	arg_2_0.helpBtn = arg_2_0:findTF("frame/help")
+	arg_2_0.votesTr = arg_2_0:findTF("frame/votes")
+	arg_2_0.votesTxt = arg_2_0:findTF("frame/votes/Text"):GetComponent(typeof(Text))
+	arg_2_0.scheduleTr = arg_2_0:findTF("frame/schedule")
+	arg_2_0.scheduleTxt = arg_2_0.scheduleTr:Find("Text"):GetComponent(typeof(Text))
+	arg_2_0.scheduleImg = arg_2_0.scheduleTr:GetComponent(typeof(Image))
+	arg_2_0.awardBtn = arg_2_0:findTF("frame/award")
+	arg_2_0.mainTr = arg_2_0:findTF("bg/main"):GetComponent(typeof(Image))
+	arg_2_0.mainTip = arg_2_0.mainTr.gameObject.transform:Find("tip")
+	arg_2_0.mainTitle = arg_2_0.mainTr.gameObject.transform:Find("title")
+	arg_2_0.awardItem = arg_2_0:findTF("bg/main/item")
+	arg_2_0.dropTr = arg_2_0.awardItem:Find("Award")
+	arg_2_0.dropGetTr = arg_2_0.awardItem:Find("get")
+	arg_2_0.dropGotTr = arg_2_0.awardItem:Find("got")
+	arg_2_0.subTr = arg_2_0:findTF("bg/sub"):GetComponent(typeof(Image))
+	arg_2_0.subTip = arg_2_0.subTr.gameObject.transform:Find("tip")
+	arg_2_0.subTitle = arg_2_0.subTr.gameObject.transform:Find("title")
+	arg_2_0.exchangeTr = arg_2_0:findTF("bg/exchange"):GetComponent(typeof(Image))
+	arg_2_0.exchangeTip = arg_2_0.exchangeTr.gameObject.transform:Find("tip")
+	arg_2_0.exchangeTitle = arg_2_0.exchangeTr.gameObject.transform:Find("title")
+	arg_2_0.billboardTr = arg_2_0:findTF("bg/billboard"):GetComponent(typeof(Image))
+	arg_2_0.billboardTip = arg_2_0.billboardTr.gameObject.transform:Find("tip")
+	arg_2_0.honorTr = arg_2_0:findTF("bg/honor"):GetComponent(typeof(Image))
+	arg_2_0.honorTip = arg_2_0.honorTr.gameObject.transform:Find("tip")
+	arg_2_0.awardWindowPage = VoteAwardWindowPage.New(arg_2_0._tf, arg_2_0.event)
 
 	VoteStoryUtil.Notify(VoteStoryUtil.ENTER_SCENE)
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:emit(uv1.ON_BACK)
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0.backBtn, function()
+		arg_3_0:emit(var_0_0.ON_BACK)
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.homeBtn, function ()
-		uv0:emit(uv1.ON_HOME)
+	onButton(arg_3_0, arg_3_0.homeBtn, function()
+		arg_3_0:emit(var_0_0.ON_HOME)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_3_0, arg_3_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.vote_help_2023.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.awardBtn, function ()
-		uv0.awardWindowPage:ExecuteAction("Show")
+	onButton(arg_3_0, arg_3_0.awardBtn, function()
+		arg_3_0.awardWindowPage:ExecuteAction("Show")
 	end, SFX_PANEL)
 
-	slot0.voteActivity = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VOTE)
+	arg_3_0.voteActivity = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VOTE)
 
-	slot0:FlushAll()
+	arg_3_0:FlushAll()
 end
 
-function slot0.FlushAll(slot0)
-	slot0.allPreheatStoriesPlayed = VoteStoryUtil.AllPreheatStoriesPlayed()
+function var_0_0.FlushAll(arg_8_0)
+	arg_8_0.allPreheatStoriesPlayed = VoteStoryUtil.AllPreheatStoriesPlayed()
 
-	slot0:UpdateSchedule()
-	slot0:UpdateVotes()
-	slot0:UpdateMainEntrance()
-	slot0:UpdateSubEntrance()
-	slot0:UpdateExchangeEntrance()
-	slot0:UpdateBillboardEntrance()
-	slot0:UpdateHonorEntrance()
+	arg_8_0:UpdateSchedule()
+	arg_8_0:UpdateVotes()
+	arg_8_0:UpdateMainEntrance()
+	arg_8_0:UpdateSubEntrance()
+	arg_8_0:UpdateExchangeEntrance()
+	arg_8_0:UpdateBillboardEntrance()
+	arg_8_0:UpdateHonorEntrance()
 end
 
-function slot0.UpdateSchedule(slot0)
-	if not slot0.allPreheatStoriesPlayed then
-		setActive(slot0.scheduleTr, false)
+function var_0_0.UpdateSchedule(arg_9_0)
+	if not arg_9_0.allPreheatStoriesPlayed then
+		setActive(arg_9_0.scheduleTr, false)
 
 		return
 	end
 
-	slot1 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup() or getProxy(VoteProxy):GetOpeningFunVoteGroup()
+	local var_9_0 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup() or getProxy(VoteProxy):GetOpeningFunVoteGroup()
 
-	setActive(slot0.scheduleTr, slot1 ~= nil)
+	setActive(arg_9_0.scheduleTr, var_9_0 ~= nil)
 
-	if slot1 then
-		slot0.scheduleTxt.text = slot1:getConfig("name")
+	if var_9_0 then
+		arg_9_0.scheduleTxt.text = var_9_0:getConfig("name")
 	end
 
-	slot2 = "schedule_bg"
+	local var_9_1 = "schedule_bg"
 
-	if slot1 and slot1:isFinalsRace() then
-		slot2 = "schedule_bg_finals"
-	elseif slot1 and slot1:isResurrectionRace() then
-		slot2 = "schedule_bg_resurrection"
-	elseif slot1 and slot1:IsFunMetaRace() then
-		slot2 = "schedule_bg_meta"
-	elseif slot1 and slot1:IsFunSireRace() then
-		slot2 = "schedule_bg_sire"
-	elseif slot1 and slot1:IsFunKidRace() then
-		slot2 = "schedule_bg_kid"
+	if var_9_0 and var_9_0:isFinalsRace() then
+		var_9_1 = "schedule_bg_finals"
+	elseif var_9_0 and var_9_0:isResurrectionRace() then
+		var_9_1 = "schedule_bg_resurrection"
+	elseif var_9_0 and var_9_0:IsFunMetaRace() then
+		var_9_1 = "schedule_bg_meta"
+	elseif var_9_0 and var_9_0:IsFunSireRace() then
+		var_9_1 = "schedule_bg_sire"
+	elseif var_9_0 and var_9_0:IsFunKidRace() then
+		var_9_1 = "schedule_bg_kid"
 	end
 
-	slot0.scheduleImg.sprite = GetSpriteFromAtlas("ui/Vote2023MainUI_atlas", slot2)
+	arg_9_0.scheduleImg.sprite = GetSpriteFromAtlas("ui/Vote2023MainUI_atlas", var_9_1)
 end
 
-function slot0.UpdateVotes(slot0)
-	if not slot0.allPreheatStoriesPlayed then
-		setActive(slot0.votesTr, false)
-		setActive(slot0.awardBtn, false)
+function var_0_0.UpdateVotes(arg_10_0)
+	if not arg_10_0.allPreheatStoriesPlayed then
+		setActive(arg_10_0.votesTr, false)
+		setActive(arg_10_0.awardBtn, false)
 
 		return
 	end
 
-	setActive(slot0.awardBtn, not getProxy(VoteProxy):IsAllRaceEnd())
+	setActive(arg_10_0.awardBtn, not getProxy(VoteProxy):IsAllRaceEnd())
 
-	slot1 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup() or getProxy(VoteProxy):GetOpeningFunVoteGroup()
+	local var_10_0 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup() or getProxy(VoteProxy):GetOpeningFunVoteGroup()
 
-	setActive(slot0.votesTr, slot1 ~= nil)
+	setActive(arg_10_0.votesTr, var_10_0 ~= nil)
 
-	if slot1 and slot1:IsFunRace() then
-		slot0.votesTxt.text = slot0:GetSubVotes()
+	if var_10_0 and var_10_0:IsFunRace() then
+		arg_10_0.votesTxt.text = arg_10_0:GetSubVotes()
 	else
-		slot0.votesTxt.text = slot0:GetVotes()
+		arg_10_0.votesTxt.text = arg_10_0:GetVotes()
 	end
 end
 
-function slot0.UpdateMainEntrance(slot0)
-	slot0.mainTr.sprite = GetSpriteFromAtlas("ui/Vote2023MainUI_atlas", "icon_main_" .. slot0:GetMainStageState())
+function var_0_0.UpdateMainEntrance(arg_11_0)
+	local var_11_0 = arg_11_0:GetMainStageState()
+	local var_11_1 = GetSpriteFromAtlas("ui/Vote2023MainUI_atlas", "icon_main_" .. var_11_0)
 
-	onButton(slot0, slot0.mainTr.gameObject, function ()
+	arg_11_0.mainTr.sprite = var_11_1
+
+	onButton(arg_11_0, arg_11_0.mainTr.gameObject, function()
+		local var_12_0 = arg_11_0:ShouldPlayMainStory()
+
 		VoteStoryUtil.Notify(VoteStoryUtil.ENTER_MAIN_STAGE)
 
-		if uv0:ShouldPlayMainStory() then
+		if var_12_0 then
 			return
 		end
 
-		if not uv0:CheckPreheatStories() then
+		if not arg_11_0:CheckPreheatStories() then
 			return
 		end
 
-		uv0:MarkMainRaceNonNew()
+		arg_11_0:MarkMainRaceNonNew()
 
-		if uv0:ExistMainStageAward() then
-			uv0:emit(VoteEntranceMediator.SUBMIT_TASK)
+		if arg_11_0:ExistMainStageAward() then
+			arg_11_0:emit(VoteEntranceMediator.SUBMIT_TASK)
 
 			return
 		end
 
-		uv0:emit(VoteEntranceMediator.ON_VOTE)
+		arg_11_0:emit(VoteEntranceMediator.ON_VOTE)
 	end, SFX_PANEL)
-	slot0:UpdateMainAward()
-	setGray(slot0.mainTitle, not (getProxy(VoteProxy):GetOpeningNonFunVoteGroup() and slot3:IsOpening() or slot0:ExistMainStageAward() or slot0:ShouldPlayMainStory()), true)
-	slot0:UpdateMainStageTip()
+	arg_11_0:UpdateMainAward()
+
+	local var_11_2 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup()
+	local var_11_3 = var_11_2 and var_11_2:IsOpening() or arg_11_0:ExistMainStageAward() or arg_11_0:ShouldPlayMainStory()
+
+	setGray(arg_11_0.mainTitle, not var_11_3, true)
+	arg_11_0:UpdateMainStageTip()
 end
 
-function slot0.UpdateMainAward(slot0)
-	slot3 = false
+function var_0_0.UpdateMainAward(arg_13_0)
+	local var_13_0 = arg_13_0:GetMainStageState() == var_0_0.MAIN_STAGE_END
+	local var_13_1 = false
 
-	if slot0:GetMainStageState() == uv0.MAIN_STAGE_END then
-		slot5 = getProxy(ActivityProxy):getActivityById(ActivityConst.VOTE_ENTRANCE_ACT_ID):getConfig("config_client")[2] or -1
-		slot7 = pg.task_data_template[slot5].award_display
+	if var_13_0 then
+		local var_13_2 = getProxy(ActivityProxy):getActivityById(ActivityConst.VOTE_ENTRANCE_ACT_ID):getConfig("config_client")[2] or -1
+		local var_13_3 = pg.task_data_template[var_13_2].award_display
 
-		updateDrop(slot0.dropTr, {
-			type = slot7[1][1],
-			id = slot7[1][2],
-			count = slot7[1][3]
+		updateDrop(arg_13_0.dropTr, {
+			type = var_13_3[1][1],
+			id = var_13_3[1][2],
+			count = var_13_3[1][3]
 		})
 
-		slot8 = getProxy(TaskProxy):getTaskById(slot5) or getProxy(TaskProxy):getFinishTaskById(slot5)
-		slot3 = slot8 and slot8:isFinish()
+		local var_13_4 = getProxy(TaskProxy):getTaskById(var_13_2) or getProxy(TaskProxy):getFinishTaskById(var_13_2)
 
-		setActive(slot0.dropGetTr, slot8 and slot8:isFinish() and not slot8:isReceive())
-		setActive(slot0.dropGotTr, slot8 and slot8:isFinish() and slot8:isReceive())
+		var_13_1 = var_13_4 and var_13_4:isFinish()
+
+		setActive(arg_13_0.dropGetTr, var_13_4 and var_13_4:isFinish() and not var_13_4:isReceive())
+		setActive(arg_13_0.dropGotTr, var_13_4 and var_13_4:isFinish() and var_13_4:isReceive())
 	end
 
-	setActive(slot0.awardItem, slot2 and slot3)
+	setActive(arg_13_0.awardItem, var_13_0 and var_13_1)
 end
 
-function slot0.UpdateMainStageTip(slot0)
-	setActive(slot0.mainTip, slot0:ShouldTipMainStage())
+function var_0_0.UpdateMainStageTip(arg_14_0)
+	setActive(arg_14_0.mainTip, arg_14_0:ShouldTipMainStage())
 end
 
-function slot0.UpdateSubEntrance(slot0)
-	slot0.subTr.sprite = GetSpriteFromAtlas("ui/Vote2023MainUI_atlas", "icon_sub_" .. slot0:GetSubStageState())
+function var_0_0.UpdateSubEntrance(arg_15_0)
+	local var_15_0 = arg_15_0:GetSubStageState()
+	local var_15_1 = GetSpriteFromAtlas("ui/Vote2023MainUI_atlas", "icon_sub_" .. var_15_0)
 
-	slot0:UpdateSubStageTip()
-	onButton(slot0, slot0.subTr.gameObject, function ()
+	arg_15_0.subTr.sprite = var_15_1
+
+	arg_15_0:UpdateSubStageTip()
+	onButton(arg_15_0, arg_15_0.subTr.gameObject, function()
+		local var_16_0 = arg_15_0:ShouldPlaySubStory()
+
 		VoteStoryUtil.Notify(VoteStoryUtil.ENTER_SUB_STAGE)
 
-		if uv0:ShouldPlaySubStory() then
+		if var_16_0 then
 			return
 		end
 
-		if not uv0:CheckPreheatStories() then
+		if not arg_15_0:CheckPreheatStories() then
 			return
 		end
 
-		uv0:MarkSubRaceNonNew()
-		uv0:emit(VoteEntranceMediator.ON_FUN_VOTE)
+		arg_15_0:MarkSubRaceNonNew()
+		arg_15_0:emit(VoteEntranceMediator.ON_FUN_VOTE)
 	end, SFX_PANEL)
-	setGray(slot0.subTitle, not (getProxy(VoteProxy):GetOpeningFunVoteGroup() and slot3:IsOpening() or slot0:ShouldPlaySubStory()), true)
+
+	local var_15_2 = getProxy(VoteProxy):GetOpeningFunVoteGroup()
+	local var_15_3 = var_15_2 and var_15_2:IsOpening() or arg_15_0:ShouldPlaySubStory()
+
+	setGray(arg_15_0.subTitle, not var_15_3, true)
 end
 
-function slot0.UpdateSubStageTip(slot0)
-	setActive(slot0.subTip, slot0:ShouldTipSubStage())
+function var_0_0.UpdateSubStageTip(arg_17_0)
+	setActive(arg_17_0.subTip, arg_17_0:ShouldTipSubStage())
 end
 
-function slot0.UpdateExchangeEntrance(slot0)
-	slot0.exchangeTr.sprite = GetSpriteFromAtlas("ui/Vote2023MainUI_atlas", "icon_exchange_" .. slot0:GetExchangeState())
+function var_0_0.UpdateExchangeEntrance(arg_18_0)
+	local var_18_0 = arg_18_0:GetExchangeState()
+	local var_18_1 = GetSpriteFromAtlas("ui/Vote2023MainUI_atlas", "icon_exchange_" .. var_18_0)
 
-	slot0:UpdateExchangeTip()
-	onButton(slot0, slot0.exchangeTr.gameObject, function ()
+	arg_18_0.exchangeTr.sprite = var_18_1
+
+	arg_18_0:UpdateExchangeTip()
+	onButton(arg_18_0, arg_18_0.exchangeTr.gameObject, function()
+		local var_19_0 = arg_18_0:ShouldPlayExchangeStory()
+
 		VoteStoryUtil.Notify(VoteStoryUtil.ENTER_EXCHANGE)
 
-		if uv0:ShouldPlayExchangeStory() then
+		if var_19_0 then
 			return
 		end
 
-		if not uv0:CheckPreheatStories() then
+		if not arg_18_0:CheckPreheatStories() then
 			return
 		end
 
@@ -237,240 +263,281 @@ function slot0.UpdateExchangeEntrance(slot0)
 			return
 		end
 
-		uv0:emit(VoteEntranceMediator.ON_EXCHANGE)
+		arg_18_0:emit(VoteEntranceMediator.ON_EXCHANGE)
 	end, SFX_PANEL)
-	setGray(slot0.exchangeTitle, not (getProxy(VoteProxy):GetOpeningNonFunVoteGroup() and slot3:IsOpening() or slot0:ShouldPlayExchangeStory()), true)
+
+	local var_18_2 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup()
+	local var_18_3 = var_18_2 and var_18_2:IsOpening() or arg_18_0:ShouldPlayExchangeStory()
+
+	setGray(arg_18_0.exchangeTitle, not var_18_3, true)
 end
 
-function slot0.UpdateExchangeTip(slot0)
-	setActive(slot0.exchangeTip, slot0:ShouldTipExchange())
+function var_0_0.UpdateExchangeTip(arg_20_0)
+	setActive(arg_20_0.exchangeTip, arg_20_0:ShouldTipExchange())
 end
 
-function slot0.UpdateBillboardEntrance(slot0)
-	slot0.billboardTr.sprite = GetSpriteFromAtlas("ui/Vote2023MainUI_atlas", "icon_billboard_" .. slot0:GetBillboardState())
+function var_0_0.UpdateBillboardEntrance(arg_21_0)
+	local var_21_0 = arg_21_0:GetBillboardState()
+	local var_21_1 = GetSpriteFromAtlas("ui/Vote2023MainUI_atlas", "icon_billboard_" .. var_21_0)
 
-	slot0:UpdateBillboardTip()
-	onButton(slot0, slot0.billboardTr.gameObject, function ()
+	arg_21_0.billboardTr.sprite = var_21_1
+
+	arg_21_0:UpdateBillboardTip()
+	onButton(arg_21_0, arg_21_0.billboardTr.gameObject, function()
+		local var_22_0 = arg_21_0:ShouldPlayBillboardStory()
+
 		VoteStoryUtil.Notify(VoteStoryUtil.ENTER_SCHEDULE)
 
-		if uv0:ShouldPlayBillboardStory() then
+		if var_22_0 then
 			return
 		end
 
-		if not uv0:CheckPreheatStories() then
+		if not arg_21_0:CheckPreheatStories() then
 			return
 		end
 
-		uv0:emit(VoteEntranceMediator.ON_SCHEDULE)
+		arg_21_0:emit(VoteEntranceMediator.ON_SCHEDULE)
 	end, SFX_PANEL)
 end
 
-function slot0.UpdateBillboardTip(slot0)
-	setActive(slot0.billboardTip, slot0:ShouldTipBillboard())
+function var_0_0.UpdateBillboardTip(arg_23_0)
+	setActive(arg_23_0.billboardTip, arg_23_0:ShouldTipBillboard())
 end
 
-function slot0.UpdateHonorEntrance(slot0)
-	slot0:UpdateHonorTip()
-	onButton(slot0, slot0.honorTr.gameObject, function ()
+function var_0_0.UpdateHonorEntrance(arg_24_0)
+	arg_24_0:UpdateHonorTip()
+	onButton(arg_24_0, arg_24_0.honorTr.gameObject, function()
+		local var_25_0 = arg_24_0:ShouldPlayHonorStory()
+
 		VoteStoryUtil.Notify(VoteStoryUtil.ENTER_HALL)
 
-		if uv0:ShouldPlayHonorStory() then
+		if var_25_0 then
 			return
 		end
 
-		if not uv0:CheckPreheatStories() then
+		if not arg_24_0:CheckPreheatStories() then
 			return
 		end
 
-		uv0:emit(VoteEntranceMediator.GO_HALL)
+		arg_24_0:emit(VoteEntranceMediator.GO_HALL)
 	end, SFX_PANEL)
 end
 
-function slot0.UpdateHonorTip(slot0)
-	setActive(slot0.honorTip, slot0:ShouldTipHonor())
+function var_0_0.UpdateHonorTip(arg_26_0)
+	setActive(arg_26_0.honorTip, arg_26_0:ShouldTipHonor())
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.awardWindowPage and slot0.awardWindowPage:GetLoaded() and slot0.awardWindowPage:isShowing() then
-		slot0.awardWindowPage:Hide()
+function var_0_0.onBackPressed(arg_27_0)
+	if arg_27_0.awardWindowPage and arg_27_0.awardWindowPage:GetLoaded() and arg_27_0.awardWindowPage:isShowing() then
+		arg_27_0.awardWindowPage:Hide()
 
 		return
 	end
 
-	uv0.super.onBackPressed(slot0)
+	var_0_0.super.onBackPressed(arg_27_0)
 end
 
-function slot0.willExit(slot0)
-	if slot0.awardWindowPage then
-		slot0.awardWindowPage:Destroy()
+function var_0_0.willExit(arg_28_0)
+	if arg_28_0.awardWindowPage then
+		arg_28_0.awardWindowPage:Destroy()
 
-		slot0.awardWindowPage = nil
+		arg_28_0.awardWindowPage = nil
 	end
 end
 
-function slot0.ExistMainStageAward(slot0)
-	slot1 = getProxy(TaskProxy)
+function var_0_0.ExistMainStageAward(arg_29_0)
+	local var_29_0 = getProxy(TaskProxy)
+	local var_29_1 = getProxy(ActivityProxy):getActivityById(ActivityConst.VOTE_ENTRANCE_ACT_ID)
 
-	if not getProxy(ActivityProxy):getActivityById(ActivityConst.VOTE_ENTRANCE_ACT_ID) or slot2:isEnd() then
+	if not var_29_1 or var_29_1:isEnd() then
 		return false
 	end
 
-	slot3 = slot2:getConfig("config_client")[2] or -1
-	slot4 = slot1:getTaskById(slot3) or slot1:getFinishTaskById(slot3)
+	local var_29_2 = var_29_1:getConfig("config_client")[2] or -1
+	local var_29_3 = var_29_0:getTaskById(var_29_2) or var_29_0:getFinishTaskById(var_29_2)
 
-	return slot4 and slot4:isFinish() and not slot4:isReceive()
+	return var_29_3 and var_29_3:isFinish() and not var_29_3:isReceive()
 end
 
-function slot0.GetMainStageState(slot0)
-	if not slot0.allPreheatStoriesPlayed then
-		return uv0.MAIN_STAGE_CLOSE
+function var_0_0.GetMainStageState(arg_30_0)
+	if not arg_30_0.allPreheatStoriesPlayed then
+		return var_0_0.MAIN_STAGE_CLOSE
 	end
 
-	slot2 = not getProxy(VoteProxy):GetOpeningNonFunVoteGroup()
+	local var_30_0 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup()
+	local var_30_1 = not var_30_0
 
 	if getProxy(VoteProxy):IsAllRaceEnd() then
-		return uv0.MAIN_STAGE_END
-	elseif slot1 then
-		if slot1:isFinalsRace() then
-			return uv0.MAIN_STAGE_FINAL
+		return var_0_0.MAIN_STAGE_END
+	elseif var_30_0 then
+		if var_30_0:isFinalsRace() then
+			return var_0_0.MAIN_STAGE_FINAL
 		else
-			return uv0.MAIN_STAGE_OPEN
+			return var_0_0.MAIN_STAGE_OPEN
 		end
 	else
-		return uv0.MAIN_STAGE_CLOSE
+		return var_0_0.MAIN_STAGE_CLOSE
 	end
 end
 
-function slot0.ShouldTipMainStage(slot0)
-	if not slot0.allPreheatStoriesPlayed then
-		return slot0:ShouldPlayMainStory()
+function var_0_0.ShouldTipMainStage(arg_31_0)
+	if not arg_31_0.allPreheatStoriesPlayed then
+		return arg_31_0:ShouldPlayMainStory()
 	else
-		return slot0:GetVotes() > 0 or slot0:IsNewMainRace() or slot0:ShouldPlayMainStory() or isActive(slot0.dropGetTr)
+		return arg_31_0:GetVotes() > 0 or arg_31_0:IsNewMainRace() or arg_31_0:ShouldPlayMainStory() or isActive(arg_31_0.dropGetTr)
 	end
 end
 
-function slot0.ShouldPlayMainStory(slot0)
-	return slot0.voteActivity and not slot0.voteActivity:isEnd() and not pg.NewStoryMgr.GetInstance():IsPlayed(VoteStoryUtil.GetStoryNameByType(VoteStoryUtil.ENTER_MAIN_STAGE))
+function var_0_0.ShouldPlayMainStory(arg_32_0)
+	local var_32_0 = VoteStoryUtil.GetStoryNameByType(VoteStoryUtil.ENTER_MAIN_STAGE)
+
+	return arg_32_0.voteActivity and not arg_32_0.voteActivity:isEnd() and not pg.NewStoryMgr.GetInstance():IsPlayed(var_32_0)
 end
 
-function slot0.IsNewMainRace(slot0)
-	return getProxy(VoteProxy):IsNewRace(getProxy(VoteProxy):GetOpeningNonFunVoteGroup())
+function var_0_0.IsNewMainRace(arg_33_0)
+	local var_33_0 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup()
+
+	return getProxy(VoteProxy):IsNewRace(var_33_0)
 end
 
-function slot0.MarkMainRaceNonNew(slot0)
-	getProxy(VoteProxy):MarkRaceNonNew(getProxy(VoteProxy):GetOpeningNonFunVoteGroup())
+function var_0_0.MarkMainRaceNonNew(arg_34_0)
+	local var_34_0 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup()
+
+	getProxy(VoteProxy):MarkRaceNonNew(var_34_0)
 end
 
-function slot0.GetSubStageState(slot0)
-	if not slot0.allPreheatStoriesPlayed then
-		return uv0.SUB_STAGE_CLOSE
+function var_0_0.GetSubStageState(arg_35_0)
+	if not arg_35_0.allPreheatStoriesPlayed then
+		return var_0_0.SUB_STAGE_CLOSE
 	end
 
-	if getProxy(VoteProxy):GetOpeningFunVoteGroup() then
-		if slot1:IsFunSireRace() then
-			return uv0.SUB_STAGE_SIREN
-		elseif slot1:IsFunMetaRace() then
-			return uv0.SUB_STAGE_META
-		elseif slot1:IsFunKidRace() then
-			return uv0.SUB_STAGE_KID
+	local var_35_0 = getProxy(VoteProxy):GetOpeningFunVoteGroup()
+
+	if var_35_0 then
+		if var_35_0:IsFunSireRace() then
+			return var_0_0.SUB_STAGE_SIREN
+		elseif var_35_0:IsFunMetaRace() then
+			return var_0_0.SUB_STAGE_META
+		elseif var_35_0:IsFunKidRace() then
+			return var_0_0.SUB_STAGE_KID
 		else
 			assert(false)
 		end
 	else
-		return uv0.SUB_STAGE_CLOSE
+		return var_0_0.SUB_STAGE_CLOSE
 	end
 end
 
-function slot0.ShouldTipSubStage(slot0)
-	if not slot0.allPreheatStoriesPlayed then
-		return slot0:ShouldPlaySubStory()
+function var_0_0.ShouldTipSubStage(arg_36_0)
+	if not arg_36_0.allPreheatStoriesPlayed then
+		return arg_36_0:ShouldPlaySubStory()
 	else
-		return slot0:GetSubVotes() > 0 or slot0:IsNewSubRace() or slot0:ShouldPlaySubStory()
+		return arg_36_0:GetSubVotes() > 0 or arg_36_0:IsNewSubRace() or arg_36_0:ShouldPlaySubStory()
 	end
 end
 
-function slot0.ShouldPlaySubStory(slot0)
-	return slot0.voteActivity and not slot0.voteActivity:isEnd() and not pg.NewStoryMgr.GetInstance():IsPlayed(VoteStoryUtil.GetStoryNameByType(VoteStoryUtil.ENTER_SUB_STAGE))
+function var_0_0.ShouldPlaySubStory(arg_37_0)
+	local var_37_0 = VoteStoryUtil.GetStoryNameByType(VoteStoryUtil.ENTER_SUB_STAGE)
+
+	return arg_37_0.voteActivity and not arg_37_0.voteActivity:isEnd() and not pg.NewStoryMgr.GetInstance():IsPlayed(var_37_0)
 end
 
-function slot0.IsNewSubRace(slot0)
-	return getProxy(VoteProxy):IsNewRace(getProxy(VoteProxy):GetOpeningFunVoteGroup())
+function var_0_0.IsNewSubRace(arg_38_0)
+	local var_38_0 = getProxy(VoteProxy):GetOpeningFunVoteGroup()
+
+	return getProxy(VoteProxy):IsNewRace(var_38_0)
 end
 
-function slot0.MarkSubRaceNonNew(slot0)
-	getProxy(VoteProxy):MarkRaceNonNew(getProxy(VoteProxy):GetOpeningFunVoteGroup())
+function var_0_0.MarkSubRaceNonNew(arg_39_0)
+	local var_39_0 = getProxy(VoteProxy):GetOpeningFunVoteGroup()
+
+	getProxy(VoteProxy):MarkRaceNonNew(var_39_0)
 end
 
-function slot0.GetExchangeState(slot0)
-	if not slot0.allPreheatStoriesPlayed then
-		return uv0.EXCHANGE_STAGE_CLOSE
+function var_0_0.GetExchangeState(arg_40_0)
+	if not arg_40_0.allPreheatStoriesPlayed then
+		return var_0_0.EXCHANGE_STAGE_CLOSE
 	end
 
 	if getProxy(VoteProxy):GetOpeningNonFunVoteGroup() then
-		return uv0.EXCHANGE_STAGE_OPEN
+		return var_0_0.EXCHANGE_STAGE_OPEN
 	else
-		return uv0.EXCHANGE_STAGE_CLOSE
+		return var_0_0.EXCHANGE_STAGE_CLOSE
 	end
 end
 
-function slot0.ShouldTipExchange(slot0)
-	return slot0:ShouldPlayExchangeStory()
+function var_0_0.ShouldTipExchange(arg_41_0)
+	return arg_41_0:ShouldPlayExchangeStory()
 end
 
-function slot0.ShouldPlayExchangeStory(slot0)
-	return slot0.voteActivity and not slot0.voteActivity:isEnd() and not pg.NewStoryMgr.GetInstance():IsPlayed(VoteStoryUtil.GetStoryNameByType(VoteStoryUtil.ENTER_EXCHANGE))
+function var_0_0.ShouldPlayExchangeStory(arg_42_0)
+	local var_42_0 = VoteStoryUtil.GetStoryNameByType(VoteStoryUtil.ENTER_EXCHANGE)
+
+	return arg_42_0.voteActivity and not arg_42_0.voteActivity:isEnd() and not pg.NewStoryMgr.GetInstance():IsPlayed(var_42_0)
 end
 
-function slot0.GetBillboardState(slot0)
-	if not slot0.allPreheatStoriesPlayed then
-		return uv0.BILLBOARD_STAGE_NORMAL
+function var_0_0.GetBillboardState(arg_43_0)
+	if not arg_43_0.allPreheatStoriesPlayed then
+		return var_0_0.BILLBOARD_STAGE_NORMAL
 	end
 
-	if getProxy(VoteProxy):GetOpeningNonFunVoteGroup() and slot1:isFinalsRace() then
-		return uv0.BILLBOARD_STAGE_FINAL
+	local var_43_0 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup()
+
+	if var_43_0 and var_43_0:isFinalsRace() then
+		return var_0_0.BILLBOARD_STAGE_FINAL
 	else
-		return uv0.BILLBOARD_STAGE_NORMAL
+		return var_0_0.BILLBOARD_STAGE_NORMAL
 	end
 end
 
-function slot0.ShouldTipBillboard(slot0)
-	return slot0:ShouldPlayBillboardStory()
+function var_0_0.ShouldTipBillboard(arg_44_0)
+	return arg_44_0:ShouldPlayBillboardStory()
 end
 
-function slot0.ShouldPlayBillboardStory(slot0)
-	return slot0.voteActivity and not slot0.voteActivity:isEnd() and not pg.NewStoryMgr.GetInstance():IsPlayed(VoteStoryUtil.GetStoryNameByType(VoteStoryUtil.ENTER_SCHEDULE))
+function var_0_0.ShouldPlayBillboardStory(arg_45_0)
+	local var_45_0 = VoteStoryUtil.GetStoryNameByType(VoteStoryUtil.ENTER_SCHEDULE)
+
+	return arg_45_0.voteActivity and not arg_45_0.voteActivity:isEnd() and not pg.NewStoryMgr.GetInstance():IsPlayed(var_45_0)
 end
 
-function slot0.ShouldTipHonor(slot0)
-	if not slot0.allPreheatStoriesPlayed then
-		return slot0:ShouldPlayHonorStory()
+function var_0_0.ShouldTipHonor(arg_46_0)
+	if not arg_46_0.allPreheatStoriesPlayed then
+		return arg_46_0:ShouldPlayHonorStory()
 	else
-		return getProxy(VoteProxy):ExistPastVoteAward() or slot0:ShouldPlayHonorStory()
+		return getProxy(VoteProxy):ExistPastVoteAward() or arg_46_0:ShouldPlayHonorStory()
 	end
 end
 
-function slot0.ShouldPlayHonorStory(slot0)
-	return slot0.voteActivity and not slot0.voteActivity:isEnd() and not pg.NewStoryMgr.GetInstance():IsPlayed(VoteStoryUtil.GetStoryNameByType(VoteStoryUtil.ENTER_HALL))
+function var_0_0.ShouldPlayHonorStory(arg_47_0)
+	local var_47_0 = VoteStoryUtil.GetStoryNameByType(VoteStoryUtil.ENTER_HALL)
+
+	return arg_47_0.voteActivity and not arg_47_0.voteActivity:isEnd() and not pg.NewStoryMgr.GetInstance():IsPlayed(var_47_0)
 end
 
-function slot0.GetVotes(slot0)
-	if slot0:GetMainStageState() == uv0.MAIN_STAGE_OPEN or slot1 == uv0.MAIN_STAGE_FINAL then
-		return getProxy(VoteProxy):GetOpeningNonFunVoteGroup() and getProxy(VoteProxy):GetVotesByConfigId(slot2.configId) or 0
+function var_0_0.GetVotes(arg_48_0)
+	local var_48_0 = arg_48_0:GetMainStageState()
+
+	if var_48_0 == var_0_0.MAIN_STAGE_OPEN or var_48_0 == var_0_0.MAIN_STAGE_FINAL then
+		local var_48_1 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup()
+
+		return var_48_1 and getProxy(VoteProxy):GetVotesByConfigId(var_48_1.configId) or 0
 	end
 
 	return 0
 end
 
-function slot0.GetSubVotes(slot0)
-	if uv0.SUB_STAGE_CLOSE ~= slot0:GetSubStageState() then
-		return getProxy(VoteProxy):GetOpeningFunVoteGroup() and getProxy(VoteProxy):GetVotesByConfigId(slot1.configId) or 0
+function var_0_0.GetSubVotes(arg_49_0)
+	if var_0_0.SUB_STAGE_CLOSE ~= arg_49_0:GetSubStageState() then
+		local var_49_0 = getProxy(VoteProxy):GetOpeningFunVoteGroup()
+
+		return var_49_0 and getProxy(VoteProxy):GetVotesByConfigId(var_49_0.configId) or 0
 	else
 		return 0
 	end
 end
 
-function slot0.CheckPreheatStories(slot0)
-	if not slot0.allPreheatStoriesPlayed then
+function var_0_0.CheckPreheatStories(arg_50_0)
+	if not arg_50_0.allPreheatStoriesPlayed then
 		pg.NewGuideMgr.GetInstance():Play("NG0043")
 
 		return false
@@ -479,4 +546,4 @@ function slot0.CheckPreheatStories(slot0)
 	return true
 end
 
-return slot0
+return var_0_0

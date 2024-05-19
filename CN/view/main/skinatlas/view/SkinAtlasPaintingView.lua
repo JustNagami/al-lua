@@ -1,68 +1,72 @@
-slot0 = class("SkinAtlasPaintingView")
+﻿local var_0_0 = class("SkinAtlasPaintingView")
 
-function slot0.Ctor(slot0, slot1)
-	slot0._go = slot1
-	slot0._tf = slot1.transform
-	slot0.parentTF = slot0._tf.parent
-	slot0.hideGos = {
-		slot0.parentTF:Find("main/right"),
-		slot0.parentTF:Find("main/left")
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._go = arg_1_1
+	arg_1_0._tf = arg_1_1.transform
+	arg_1_0.parentTF = arg_1_0._tf.parent
+	arg_1_0.hideGos = {
+		arg_1_0.parentTF:Find("main/right"),
+		arg_1_0.parentTF:Find("main/left")
 	}
-	slot0.zoom = GetOrAddComponent(slot0.parentTF, typeof(PinchZoom))
-	slot0.event = GetOrAddComponent(slot0.parentTF, typeof(EventTriggerListener))
-	slot0.zoom.enabled = false
-	slot0.event.enabled = false
-	slot0.lpos = slot0._tf.localPosition
-	slot0.scale = slot0._tf.localScale
-	slot0.isEnter = false
+	arg_1_0.zoom = GetOrAddComponent(arg_1_0.parentTF, typeof(PinchZoom))
+	arg_1_0.event = GetOrAddComponent(arg_1_0.parentTF, typeof(EventTriggerListener))
+	arg_1_0.zoom.enabled = false
+	arg_1_0.event.enabled = false
+	arg_1_0.lpos = arg_1_0._tf.localPosition
+	arg_1_0.scale = arg_1_0._tf.localScale
+	arg_1_0.isEnter = false
 end
 
-function slot0.IsEnter(slot0)
-	return slot0.isEnter
+function var_0_0.IsEnter(arg_2_0)
+	return arg_2_0.isEnter
 end
 
-function slot0.Enter(slot0)
-	slot0.isEnter = true
+function var_0_0.Enter(arg_3_0)
+	arg_3_0.isEnter = true
 
-	slot0:ShowOrHideGo(false)
-	slot0:EnableDragAndZoom()
+	arg_3_0:ShowOrHideGo(false)
+	arg_3_0:EnableDragAndZoom()
 end
 
-function slot0.ShowOrHideGo(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.hideGos) do
-		setActive(slot6, slot1)
+function var_0_0.ShowOrHideGo(arg_4_0, arg_4_1)
+	for iter_4_0, iter_4_1 in pairs(arg_4_0.hideGos) do
+		setActive(iter_4_1, arg_4_1)
 	end
 end
 
-function slot0.EnableDragAndZoom(slot0)
-	slot0.isEnableDrag = true
-	slot1 = slot0.parentTF.gameObject
-	slot3 = slot0.event
-	slot4 = Vector3(0, 0, 0)
+function var_0_0.EnableDragAndZoom(arg_5_0)
+	arg_5_0.isEnableDrag = true
 
-	slot3:AddBeginDragFunc(function (slot0, slot1)
+	local var_5_0 = arg_5_0.parentTF.gameObject
+	local var_5_1 = arg_5_0.zoom
+	local var_5_2 = arg_5_0.event
+	local var_5_3 = Vector3(0, 0, 0)
+
+	var_5_2:AddBeginDragFunc(function(arg_6_0, arg_6_1)
 		if Application.isEditor and Input.GetMouseButton(2) then
 			return
 		end
 
-		if uv0.processing then
+		if var_5_1.processing then
 			return
 		end
 
-		setButtonEnabled(uv1, false)
+		setButtonEnabled(var_5_0, false)
 
 		if Input.touchCount > 1 then
 			return
 		end
 
-		uv3 = uv4._tf.localPosition - uv2.Screen2Local(uv1.transform.parent, slot1.position)
+		local var_6_0 = var_0_0.Screen2Local(var_5_0.transform.parent, arg_6_1.position)
+
+		var_5_3 = arg_5_0._tf.localPosition - var_6_0
 	end)
-	slot3:AddDragFunc(function (slot0, slot1)
+	var_5_2:AddDragFunc(function(arg_7_0, arg_7_1)
 		if Application.isEditor and Input.GetMouseButton(2) then
 			return
 		end
 
-		if uv0.processing then
+		if var_5_1.processing then
 			return
 		end
 
@@ -70,59 +74,62 @@ function slot0.EnableDragAndZoom(slot0)
 			return
 		end
 
-		slot2 = uv1.Screen2Local(uv2.transform.parent, slot1.position)
-		uv3._tf.localPosition = uv3:IslimitYPos() and Vector3(slot2.x, uv2.transform.localPosition.y, 0) + Vector3(uv4.x, 0, 0) or Vector3(slot2.x, slot2.y, 0) + uv4
+		local var_7_0 = var_0_0.Screen2Local(var_5_0.transform.parent, arg_7_1.position)
+
+		arg_5_0._tf.localPosition = arg_5_0:IslimitYPos() and Vector3(var_7_0.x, var_5_0.transform.localPosition.y, 0) + Vector3(var_5_3.x, 0, 0) or Vector3(var_7_0.x, var_7_0.y, 0) + var_5_3
 	end)
-	slot3:AddDragEndFunc(function ()
-		setButtonEnabled(uv0, true)
+	var_5_2:AddDragEndFunc(function()
+		setButtonEnabled(var_5_0, true)
 	end)
 
-	if not slot0:IslimitYPos() then
-		slot0.zoom.enabled = true
+	if not arg_5_0:IslimitYPos() then
+		var_5_1.enabled = true
 	end
 
-	slot3.enabled = true
+	var_5_2.enabled = true
 	Input.multiTouchEnabled = true
 end
 
-function slot0.IslimitYPos(slot0)
+function var_0_0.IslimitYPos(arg_9_0)
 	return false
 end
 
-function slot0.Exit(slot0)
-	if slot0.isEnter then
-		slot0.isEnter = false
+function var_0_0.Exit(arg_10_0)
+	if arg_10_0.isEnter then
+		arg_10_0.isEnter = false
 
-		slot0:ShowOrHideGo(true)
-		slot0:DisableDragAndZoom()
+		arg_10_0:ShowOrHideGo(true)
+		arg_10_0:DisableDragAndZoom()
 
-		slot0._tf.localPosition = slot0.lpos
-		slot0._tf.localScale = slot0.scale
+		arg_10_0._tf.localPosition = arg_10_0.lpos
+		arg_10_0._tf.localScale = arg_10_0.scale
 	end
 end
 
-function slot0.DisableDragAndZoom(slot0)
-	if slot0.isEnableDrag then
-		slot1 = slot0.event
+function var_0_0.DisableDragAndZoom(arg_11_0)
+	if arg_11_0.isEnableDrag then
+		local var_11_0 = arg_11_0.event
 
-		ClearEventTrigger(slot1)
+		ClearEventTrigger(var_11_0)
 
-		slot1.enabled = false
-		slot0.zoom.enabled = false
-		slot0.isEnableDrag = false
+		var_11_0.enabled = false
+		arg_11_0.zoom.enabled = false
+		arg_11_0.isEnableDrag = false
 	end
 end
 
-function slot0.Dispose(slot0)
-	if slot0.isEnter then
-		slot0:Exit()
+function var_0_0.Dispose(arg_12_0)
+	if arg_12_0.isEnter then
+		arg_12_0:Exit()
 	end
 end
 
-function slot0.Screen2Local(slot0, slot1)
-	slot4 = LuaHelper.ScreenToLocal(slot0:GetComponent("RectTransform"), slot1, GameObject.Find("UICamera"):GetComponent("Camera"))
+function var_0_0.Screen2Local(arg_13_0, arg_13_1)
+	local var_13_0 = GameObject.Find("UICamera"):GetComponent("Camera")
+	local var_13_1 = arg_13_0:GetComponent("RectTransform")
+	local var_13_2 = LuaHelper.ScreenToLocal(var_13_1, arg_13_1, var_13_0)
 
-	return Vector3(slot4.x, slot4.y, 0)
+	return Vector3(var_13_2.x, var_13_2.y, 0)
 end
 
-return slot0
+return var_0_0

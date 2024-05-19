@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_shop_extra = {
 	{
 		commodity_id = 106011,

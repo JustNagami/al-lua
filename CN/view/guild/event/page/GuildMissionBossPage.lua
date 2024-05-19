@@ -1,265 +1,287 @@
-slot0 = class("GuildMissionBossPage", import("....base.BaseSubView"))
+﻿local var_0_0 = class("GuildMissionBossPage", import("....base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "GuildMissionBossPage"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.hp = slot0:findTF("hp/bar")
-	slot0.hpProgress = slot0:findTF("hp/bar/Text"):GetComponent(typeof(Text))
-	slot0.hpL = slot0.hp.rect.width
-	slot0.titleTxt = slot0:findTF("title"):GetComponent(typeof(Text))
-	slot0.assaultBtn = slot0:findTF("btn_a_formation")
-	slot0.battleBtn = slot0:findTF("btn_go")
-	slot0.reportBtn = slot0:findTF("btn_report")
-	slot0.reportTip = slot0:findTF("btn_report/tip")
-	slot0.reportTipTxt = slot0:findTF("btn_report/tip/Text"):GetComponent(typeof(Text))
-	slot0.cntTxt = slot0:findTF("btn_go/cnt/Text"):GetComponent(typeof(Text))
-	slot0.rankList = UIItemList.New(slot0:findTF("rank/content"), slot0:findTF("rank/content/tpl"))
-	slot0.paintingTF = slot0:findTF("painting")
-	slot0.prefabTF = slot0:findTF("prefab")
-	slot0.viewAllBtn = slot0:findTF("rank/view_all")
-	slot0.allRankPage = GuildBossRankPage.New(slot0._parentTf, slot0.event)
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.hp = arg_2_0:findTF("hp/bar")
+	arg_2_0.hpProgress = arg_2_0:findTF("hp/bar/Text"):GetComponent(typeof(Text))
+	arg_2_0.hpL = arg_2_0.hp.rect.width
+	arg_2_0.titleTxt = arg_2_0:findTF("title"):GetComponent(typeof(Text))
+	arg_2_0.assaultBtn = arg_2_0:findTF("btn_a_formation")
+	arg_2_0.battleBtn = arg_2_0:findTF("btn_go")
+	arg_2_0.reportBtn = arg_2_0:findTF("btn_report")
+	arg_2_0.reportTip = arg_2_0:findTF("btn_report/tip")
+	arg_2_0.reportTipTxt = arg_2_0:findTF("btn_report/tip/Text"):GetComponent(typeof(Text))
+	arg_2_0.cntTxt = arg_2_0:findTF("btn_go/cnt/Text"):GetComponent(typeof(Text))
+	arg_2_0.rankList = UIItemList.New(arg_2_0:findTF("rank/content"), arg_2_0:findTF("rank/content/tpl"))
+	arg_2_0.paintingTF = arg_2_0:findTF("painting")
+	arg_2_0.prefabTF = arg_2_0:findTF("prefab")
+	arg_2_0.viewAllBtn = arg_2_0:findTF("rank/view_all")
+	arg_2_0.allRankPage = GuildBossRankPage.New(arg_2_0._parentTf, arg_2_0.event)
 
-	setActive(slot0.viewAllBtn, PLATFORM_CODE ~= PLATFORM_JP)
+	setActive(arg_2_0.viewAllBtn, PLATFORM_CODE ~= PLATFORM_JP)
 
-	slot0.eventTimerTxt = slot0:findTF("timer/Text"):GetComponent(typeof(Text))
+	arg_2_0.eventTimerTxt = arg_2_0:findTF("timer/Text"):GetComponent(typeof(Text))
 
-	setText(slot0:findTF("timer/label"), i18n("guild_time_remaining_tip"))
+	setText(arg_2_0:findTF("timer/label"), i18n("guild_time_remaining_tip"))
 
-	slot0.timeView = GuildEventTimerView.New()
+	arg_2_0.timeView = GuildEventTimerView.New()
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.assaultBtn, function ()
-		uv0:emit(GuildEventLayer.OPEN_BOSS_ASSULT)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.assaultBtn, function()
+		arg_3_0:emit(GuildEventLayer.OPEN_BOSS_ASSULT)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.battleBtn, function ()
-		if not uv0:ExistActiveEvent() then
+	onButton(arg_3_0, arg_3_0.battleBtn, function()
+		if not arg_3_0:ExistActiveEvent() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_battle_is_end"))
 
 			return
 		end
 
-		if uv0.bossMission:IsReachDailyCnt() then
+		if arg_3_0.bossMission:IsReachDailyCnt() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_boss_cnt_no_enough"))
 
 			return
 		end
 
-		if uv0.bossMission:IsDeath() then
+		if arg_3_0.bossMission:IsDeath() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_battle_is_end"))
 
 			return
 		end
 
-		uv0:emit(GuildEventLayer.ON_OPEN_BOSS_FORMATION, uv0.bossMission)
+		arg_3_0:emit(GuildEventLayer.ON_OPEN_BOSS_FORMATION, arg_3_0.bossMission)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.reportBtn, function ()
-		uv0:emit(GuildEventMediator.ON_OPEN_REPORT)
+	onButton(arg_3_0, arg_3_0.reportBtn, function()
+		arg_3_0:emit(GuildEventMediator.ON_OPEN_REPORT)
 	end, SFX_PANEL)
 end
 
-function slot0.UpdateMission(slot0, slot1)
-	slot0.bossMission = slot1
+function var_0_0.UpdateMission(arg_7_0, arg_7_1)
+	arg_7_0.bossMission = arg_7_1
 end
 
-function slot0.OnReportUpdated(slot0)
-	setActive(slot0.reportTip, #_.select(_.values(getProxy(GuildProxy):GetReports()), function (slot0)
-		return slot0:CanSubmit()
-	end) > 0)
+function var_0_0.OnReportUpdated(arg_8_0)
+	local var_8_0 = getProxy(GuildProxy):GetReports()
+	local var_8_1 = _.select(_.values(var_8_0), function(arg_9_0)
+		return arg_9_0:CanSubmit()
+	end)
 
-	if #slot2 > 0 then
-		slot0.reportTipTxt.text = #slot2
+	setActive(arg_8_0.reportTip, #var_8_1 > 0)
+
+	if #var_8_1 > 0 then
+		arg_8_0.reportTipTxt.text = #var_8_1
 	end
 end
 
-function slot0.Show(slot0, slot1)
-	slot0:UpdateMission(slot1)
-	slot0:InitRanks()
-	slot0:UpdateView()
-	slot0:UpdatePainting()
+function var_0_0.Show(arg_10_0, arg_10_1)
+	arg_10_0:UpdateMission(arg_10_1)
+	arg_10_0:InitRanks()
+	arg_10_0:UpdateView()
+	arg_10_0:UpdatePainting()
 
-	if slot0.contextData.editBossFleet then
-		triggerButton(slot0.battleBtn)
+	if arg_10_0.contextData.editBossFleet then
+		triggerButton(arg_10_0.battleBtn)
 	end
 
-	setActive(slot0.battleBtn:Find("selected"), slot1:IsReachDailyCnt())
-	slot0:OnReportUpdated()
+	local var_10_0 = arg_10_1:IsReachDailyCnt()
 
-	slot0.titleTxt.text = slot1:getConfig("name")
+	setActive(arg_10_0.battleBtn:Find("selected"), var_10_0)
+	arg_10_0:OnReportUpdated()
 
-	slot0:CheckFleetShipState()
-	slot0.timeView:Flush(slot0.eventTimerTxt, getProxy(GuildProxy):getRawData():GetActiveEvent())
+	arg_10_0.titleTxt.text = arg_10_1:getConfig("name")
+
+	arg_10_0:CheckFleetShipState()
+	arg_10_0.timeView:Flush(arg_10_0.eventTimerTxt, getProxy(GuildProxy):getRawData():GetActiveEvent())
 end
 
-function slot0.CheckFleetShipState(slot0)
-	slot1 = slot0.bossMission
-	slot3 = {}
+function var_0_0.CheckFleetShipState(arg_11_0)
+	local var_11_0 = arg_11_0.bossMission
+	local var_11_1 = {
+		var_11_0:GetMainFleet(),
+		var_11_0:GetSubFleet()
+	}
+	local var_11_2 = {}
 
-	for slot7, slot8 in ipairs({
-		slot1:GetMainFleet(),
-		slot1:GetSubFleet()
-	}) do
-		if slot8:ExistInvailShips() or slot8:ExistInvaildCommanders() then
-			table.insert(slot3, slot8)
+	for iter_11_0, iter_11_1 in ipairs(var_11_1) do
+		if iter_11_1:ExistInvailShips() or iter_11_1:ExistInvaildCommanders() then
+			table.insert(var_11_2, iter_11_1)
 		end
 	end
 
-	if #slot3 > 0 then
-		slot8 = "guild_boss_formation_exist_invaild_ship"
-		slot7 = i18n(slot8)
-
+	if #var_11_2 > 0 then
 		pg.MsgboxMgr:GetInstance():ShowMsgBox({
 			hideNo = true,
-			content = slot7
+			content = i18n("guild_boss_formation_exist_invaild_ship")
 		})
 
-		slot0.contextData.editBossFleet = {}
+		arg_11_0.contextData.editBossFleet = {}
 
-		for slot7, slot8 in ipairs(slot3) do
-			slot0.contextData.editBossFleet[slot8.id] = slot8
+		for iter_11_2, iter_11_3 in ipairs(var_11_2) do
+			arg_11_0.contextData.editBossFleet[iter_11_3.id] = iter_11_3
 		end
 
-		slot0:emit(GuildEventMediator.ON_CLEAR_BOSS_FLEET_INVAILD_SHIP)
+		arg_11_0:emit(GuildEventMediator.ON_CLEAR_BOSS_FLEET_INVAILD_SHIP)
 	end
 end
 
-function slot0.UpdateView(slot0)
+function var_0_0.UpdateView(arg_12_0)
 	if getProxy(GuildProxy):ShouldRefreshBoss() then
-		slot0:emit(GuildEventMediator.ON_GET_BOSS_INFO)
+		arg_12_0:emit(GuildEventMediator.ON_GET_BOSS_INFO)
 	else
-		slot0:UpdateBossInfo()
-		slot0:AddBossTimer()
-		uv0.super.Show(slot0)
+		arg_12_0:UpdateBossInfo()
+		arg_12_0:AddBossTimer()
+		var_0_0.super.Show(arg_12_0)
 	end
 end
 
-function slot0.UpdatePainting(slot0)
-	if slot0.bossMission:GetPainting() and slot2 ~= "" then
-		setGuildPaintingPrefab(slot0.paintingTF, slot2, "chuanwu", nil)
-	else
-		slot4 = slot1:GetEmenyId()
+function var_0_0.UpdatePainting(arg_13_0)
+	local var_13_0 = arg_13_0.bossMission
+	local var_13_1 = var_13_0:GetPainting()
+	local var_13_2 = var_13_1 and var_13_1 ~= ""
 
-		LoadSpriteAsync("guildboss/" .. slot4, function (slot0)
-			if uv0:CheckState(BaseSubView.STATES.DESTROY) then
+	if var_13_2 then
+		setGuildPaintingPrefab(arg_13_0.paintingTF, var_13_1, "chuanwu", nil)
+	else
+		local var_13_3 = var_13_0:GetEmenyId()
+
+		LoadSpriteAsync("guildboss/" .. var_13_3, function(arg_14_0)
+			if arg_13_0:CheckState(BaseSubView.STATES.DESTROY) then
 				return
 			end
 
-			if slot0 then
-				slot1 = GetOrAddComponent(uv0.prefabTF:Find("frame/model"), "Image")
-				slot1.sprite = slot0
+			if arg_14_0 then
+				local var_14_0 = GetOrAddComponent(arg_13_0.prefabTF:Find("frame/model"), "Image")
 
-				slot1:SetNativeSize()
+				var_14_0.sprite = arg_14_0
+
+				var_14_0:SetNativeSize()
 			end
 		end)
 
-		slot5 = slot0:findTF("name/Image", slot0.prefabTF):GetComponent(typeof(Image))
-		slot5.sprite = GetSpriteFromAtlas("guildboss/name_" .. slot4, "")
+		local var_13_4 = arg_13_0:findTF("name/Image", arg_13_0.prefabTF):GetComponent(typeof(Image))
 
-		slot5:SetNativeSize()
+		var_13_4.sprite = GetSpriteFromAtlas("guildboss/name_" .. var_13_3, "")
+
+		var_13_4:SetNativeSize()
 	end
 
-	setActive(slot0.paintingTF, slot3)
-	setActive(slot0.prefabTF, not slot3)
+	setActive(arg_13_0.paintingTF, var_13_2)
+	setActive(arg_13_0.prefabTF, not var_13_2)
 end
 
-function slot0.UpdateBossInfo(slot0)
-	slot1 = slot0.bossMission
-	slot4 = slot1:GetHp() / math.max(slot1:GetTotalHp(), 1)
-	slot6 = tf(slot0.hp)
-	slot6.sizeDelta = Vector2(slot0.hpL * slot4, slot6.sizeDelta.y)
-	slot4 = slot4 * 100
-	slot0.hpProgress.text = math.max(slot4 - slot4 % 0.1, 1) .. "%"
-	slot0.cntTxt.text = "<color=" .. (slot1:GetCanUsageCnt() > 0 and COLOR_GREEN or COLOR_RED) .. ">" .. slot7 .. "</color>/" .. GuildConst.MISSION_BOSS_MAX_CNT()
+function var_0_0.UpdateBossInfo(arg_15_0)
+	local var_15_0 = arg_15_0.bossMission
+	local var_15_1 = var_15_0:GetHp()
+	local var_15_2 = var_15_0:GetTotalHp()
+	local var_15_3 = var_15_1 / math.max(var_15_2, 1)
+	local var_15_4 = arg_15_0.hpL * var_15_3
+	local var_15_5 = tf(arg_15_0.hp)
+
+	var_15_5.sizeDelta = Vector2(var_15_4, var_15_5.sizeDelta.y)
+
+	local var_15_6 = var_15_3 * 100
+
+	arg_15_0.hpProgress.text = math.max(var_15_6 - var_15_6 % 0.1, 1) .. "%"
+
+	local var_15_7 = var_15_0:GetCanUsageCnt()
+	local var_15_8 = var_15_7 > 0 and COLOR_GREEN or COLOR_RED
+
+	arg_15_0.cntTxt.text = "<color=" .. var_15_8 .. ">" .. var_15_7 .. "</color>/" .. GuildConst.MISSION_BOSS_MAX_CNT()
 end
 
-function slot0.InitRanks(slot0)
+function var_0_0.InitRanks(arg_16_0)
 	if getProxy(GuildProxy):ShouldRefreshBossRank() then
-		slot0:emit(GuildEventMediator.ON_REFRESH_BOSS_RANK)
+		arg_16_0:emit(GuildEventMediator.ON_REFRESH_BOSS_RANK)
 	else
-		slot0:UpdateRank()
-		slot0:AddRankTimer()
+		arg_16_0:UpdateRank()
+		arg_16_0:AddRankTimer()
 	end
 end
 
-function slot0.UpdateRank(slot0)
-	slot1 = getProxy(GuildProxy):GetBossRank()
+function var_0_0.UpdateRank(arg_17_0)
+	local var_17_0 = getProxy(GuildProxy):GetBossRank()
 
-	table.sort(slot1, function (slot0, slot1)
-		return slot1.damage < slot0.damage
+	table.sort(var_17_0, function(arg_18_0, arg_18_1)
+		return arg_18_0.damage > arg_18_1.damage
 	end)
-	slot0.rankList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
+	arg_17_0.rankList:make(function(arg_19_0, arg_19_1, arg_19_2)
+		if arg_19_0 == UIItemList.EventUpdate then
+			local var_19_0 = var_17_0[arg_19_1 + 1]
 
-			setText(slot2:Find("no"), slot1 + 1)
-			setText(slot2:Find("name"), slot3.name)
-			setText(slot2:Find("Text"), slot3.damage)
+			setText(arg_19_2:Find("no"), arg_19_1 + 1)
+			setText(arg_19_2:Find("name"), var_19_0.name)
+			setText(arg_19_2:Find("Text"), var_19_0.damage)
 		end
 	end)
-	slot0.rankList:align(math.min(3, #slot1))
-	onButton(slot0, slot0.viewAllBtn, function ()
-		uv0.allRankPage:ExecuteAction("Show", uv1)
+	arg_17_0.rankList:align(math.min(3, #var_17_0))
+	onButton(arg_17_0, arg_17_0.viewAllBtn, function()
+		arg_17_0.allRankPage:ExecuteAction("Show", var_17_0)
 	end, SFX_PANEL)
 end
 
-function slot0.ExistActiveEvent(slot0)
-	return getProxy(GuildProxy):getRawData():GetActiveEvent() and not slot1:IsExpired()
+function var_0_0.ExistActiveEvent(arg_21_0)
+	local var_21_0 = getProxy(GuildProxy):getRawData():GetActiveEvent()
+
+	return var_21_0 and not var_21_0:IsExpired()
 end
 
-function slot0.AddRankTimer(slot0)
-	if not slot0:ExistActiveEvent() then
+function var_0_0.AddRankTimer(arg_22_0)
+	if not arg_22_0:ExistActiveEvent() then
 		return
 	end
 
-	if slot0.rankTimer then
-		slot0.rankTimer:Stop()
+	if arg_22_0.rankTimer then
+		arg_22_0.rankTimer:Stop()
 
-		slot0.rankTimer = nil
+		arg_22_0.rankTimer = nil
 	end
 
-	slot1 = slot0.bossMission
-	slot0.rankTimer = Timer.New(function ()
-		uv0:emit(GuildEventMediator.ON_REFRESH_BOSS_RANK)
+	local var_22_0 = arg_22_0.bossMission
+
+	arg_22_0.rankTimer = Timer.New(function()
+		arg_22_0:emit(GuildEventMediator.ON_REFRESH_BOSS_RANK)
 	end, GuildConst.FORCE_REFRESH_MISSION_BOSS_RANK_TIME, 1)
 
-	slot0.rankTimer:Start()
+	arg_22_0.rankTimer:Start()
 end
 
-function slot0.AddBossTimer(slot0)
-	if not slot0:ExistActiveEvent() then
+function var_0_0.AddBossTimer(arg_24_0)
+	if not arg_24_0:ExistActiveEvent() then
 		return
 	end
 
-	if slot0.bossTimer then
-		slot0.bossTimer:Stop()
+	if arg_24_0.bossTimer then
+		arg_24_0.bossTimer:Stop()
 
-		slot0.bossTimer = nil
+		arg_24_0.bossTimer = nil
 	end
 
-	slot0.bossTimer = Timer.New(function ()
-		uv0:emit(GuildEventMediator.ON_GET_BOSS_INFO)
+	arg_24_0.bossTimer = Timer.New(function()
+		arg_24_0:emit(GuildEventMediator.ON_GET_BOSS_INFO)
 	end, GuildConst.FORCE_REFRESH_BOSS_TIME, 1)
 
-	slot0.bossTimer:Start()
+	arg_24_0.bossTimer:Start()
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.rankTimer then
-		slot0.rankTimer:Stop()
+function var_0_0.OnDestroy(arg_26_0)
+	if arg_26_0.rankTimer then
+		arg_26_0.rankTimer:Stop()
 
-		slot0.rankTimer = nil
+		arg_26_0.rankTimer = nil
 	end
 
-	if slot0.bossTimer then
-		slot0.bossTimer:Stop()
+	if arg_26_0.bossTimer then
+		arg_26_0.bossTimer:Stop()
 
-		slot0.bossTimer = nil
+		arg_26_0.bossTimer = nil
 	end
 
-	slot0.allRankPage:Destroy()
-	slot0.timeView:Dispose()
+	arg_26_0.allRankPage:Destroy()
+	arg_26_0.timeView:Dispose()
 end
 
-return slot0
+return var_0_0

@@ -1,53 +1,55 @@
-slot0 = class("NavalAcademyBuilding")
+﻿local var_0_0 = class("NavalAcademyBuilding")
 
-function slot0.Ctor(slot0, slot1)
-	pg.DelegateInfo.New(slot0)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	pg.DelegateInfo.New(arg_1_0)
 
-	slot0.parent = slot1
-	slot0._tf = slot1:findTF("academyMap/map/" .. slot0:GetGameObjectName())
-	slot0.nameTxt = findTF(slot0._tf, "name/Text"):GetComponent(typeof(Text))
-	slot0.tip = findTF(slot0._tf, "tip")
+	arg_1_0.parent = arg_1_1
+	arg_1_0._tf = arg_1_1:findTF("academyMap/map/" .. arg_1_0:GetGameObjectName())
+	arg_1_0.nameTxt = findTF(arg_1_0._tf, "name/Text"):GetComponent(typeof(Text))
+	arg_1_0.tip = findTF(arg_1_0._tf, "tip")
 end
 
-function slot0.Init(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:OnClick()
+function var_0_0.Init(arg_2_0)
+	onButton(arg_2_0, arg_2_0._tf, function()
+		arg_2_0:OnClick()
 	end, SFX_PANEL)
 
-	slot0.nameTxt.text = slot0:GetTitle()
+	arg_2_0.nameTxt.text = arg_2_0:GetTitle()
 
-	slot0:RefreshTip()
-	slot0:OnInit()
+	arg_2_0:RefreshTip()
+	arg_2_0:OnInit()
 end
 
-function slot0.RefreshTip(slot0)
-	setActive(slot0.tip, slot0:IsTip())
+function var_0_0.RefreshTip(arg_4_0)
+	setActive(arg_4_0.tip, arg_4_0:IsTip())
 end
 
-function slot0.OnInit(slot0)
+function var_0_0.OnInit(arg_5_0)
+	return
 end
 
-function slot0.OnClick(slot0)
+function var_0_0.OnClick(arg_6_0)
+	return
 end
 
-function slot0.IsTip(slot0)
+function var_0_0.IsTip(arg_7_0)
 	return false
 end
 
-function slot0.GetTitle(slot0)
+function var_0_0.GetTitle(arg_8_0)
 	return ""
 end
 
-function slot0.GetGameObjectName(slot0)
+function var_0_0.GetGameObjectName(arg_9_0)
 	assert(false)
 end
 
-function slot0.emit(slot0, ...)
-	slot0.parent:emit(...)
+function var_0_0.emit(arg_10_0, ...)
+	arg_10_0.parent:emit(...)
 end
 
-function slot0.Dispose(slot0)
-	pg.DelegateInfo.Dispose(slot0)
+function var_0_0.Dispose(arg_11_0)
+	pg.DelegateInfo.Dispose(arg_11_0)
 end
 
-return slot0
+return var_0_0

@@ -1,36 +1,39 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConfig
-slot2 = slot0.Battle.BattleVariable
-slot0.Battle.BattleCameraFocusChar = class("BattleCameraFocusChar")
-slot0.Battle.BattleCameraFocusChar.__name = "BattleCameraFocusChar"
-slot3 = slot0.Battle.BattleCameraFocusChar
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0)
-	slot0._point = Vector3.zero
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConfig
+local var_0_2 = var_0_0.Battle.BattleVariable
+
+var_0_0.Battle.BattleCameraFocusChar = class("BattleCameraFocusChar")
+var_0_0.Battle.BattleCameraFocusChar.__name = "BattleCameraFocusChar"
+
+local var_0_3 = var_0_0.Battle.BattleCameraFocusChar
+
+function var_0_3.Ctor(arg_1_0)
+	arg_1_0._point = Vector3.zero
 end
 
-function slot3.SetUnit(slot0, slot1)
-	slot0._unit = slot1
+function var_0_3.SetUnit(arg_2_0, arg_2_1)
+	arg_2_0._unit = arg_2_1
 end
 
-function slot3.GetCameraPos(slot0)
-	slot1 = slot0._unit:GetPosition()
+function var_0_3.GetCameraPos(arg_3_0)
+	local var_3_0 = arg_3_0._unit:GetPosition()
 
-	slot0._point:Set(slot1.x, slot1.y, slot1.z)
+	arg_3_0._point:Set(var_3_0.x, var_3_0.y, var_3_0.z)
 
-	slot0._point.y = slot0._point.y + uv0.CameraFocusHeight
-	slot0._point.z = slot0._point.z - slot0._point.y / uv0._camera_radian_x_tan
+	arg_3_0._point.y = arg_3_0._point.y + var_0_2.CameraFocusHeight
+	arg_3_0._point.z = arg_3_0._point.z - arg_3_0._point.y / var_0_2._camera_radian_x_tan
 
-	if slot0._unit:GetIFF() == uv1.FOE_CODE then
-		slot0._point.x = slot0._point.x + 7
+	if arg_3_0._unit:GetIFF() == var_0_1.FOE_CODE then
+		arg_3_0._point.x = arg_3_0._point.x + 7
 	else
-		slot0._point.x = slot0._point.x - 7
+		arg_3_0._point.x = arg_3_0._point.x - 7
 	end
 
-	return slot0._point
+	return arg_3_0._point
 end
 
-function slot3.Dispose(slot0)
-	slot0._unit = nil
+function var_0_3.Dispose(arg_4_0)
+	arg_4_0._unit = nil
 end

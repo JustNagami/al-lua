@@ -1,48 +1,54 @@
-slot0 = class("NewServerShopPurchasePanel", import(".GuildShopPurchasePanel"))
+﻿local var_0_0 = class("NewServerShopPurchasePanel", import(".GuildShopPurchasePanel"))
 
-function slot0.Show(slot0, slot1)
-	slot0.commodity = slot1
+function var_0_0.Show(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:GetConsume()
+	local var_1_1 = {
+		id = arg_1_1.id,
+		count = arg_1_1:GetCanPurchaseCnt(),
+		type = arg_1_1:GetDropType(),
+		price = var_1_0.count,
+		displays = arg_1_1:GetSelectableGoods()
+	}
 
-	uv0.super.Show(slot0, {
-		id = slot1.id,
-		count = slot1:GetCanPurchaseCnt(),
-		type = slot1:GetDropType(),
-		price = slot1:GetConsume().count,
-		displays = slot1:GetSelectableGoods()
-	})
+	arg_1_0.commodity = arg_1_1
 
-	slot0.limitOnePurchase = slot1:LimitPurchaseSubGoods()
-	slot0.descTxt.text = slot0.limitOnePurchase and i18n("new_server_shop_sel_goods_tip") or ""
+	var_0_0.super.Show(arg_1_0, var_1_1)
 
-	GetImageSpriteFromAtlasAsync(slot2:getConfig("icon"), "", slot0.resIcon)
+	arg_1_0.limitOnePurchase = arg_1_1:LimitPurchaseSubGoods()
+	arg_1_0.descTxt.text = arg_1_0.limitOnePurchase and i18n("new_server_shop_sel_goods_tip") or ""
+
+	GetImageSpriteFromAtlasAsync(var_1_0:getConfig("icon"), "", arg_1_0.resIcon)
 end
 
-function slot0.UpdateItem(slot0, slot1, slot2, slot3)
-	uv0.super.UpdateItem(slot0, slot1, slot2, slot3)
-	setActive(slot3:Find("mask"), not slot0.commodity:CanPurchaseSubGoods(slot2))
+function var_0_0.UpdateItem(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	var_0_0.super.UpdateItem(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+
+	local var_2_0 = arg_2_3:Find("mask")
+
+	setActive(var_2_0, not arg_2_0.commodity:CanPurchaseSubGoods(arg_2_2))
 end
 
-function slot0.ClickItem(slot0, slot1, slot2)
-	if slot0.limitOnePurchase and not slot0.commodity:CanPurchaseSubGoods(slot2) then
+function var_0_0.ClickItem(arg_3_0, arg_3_1, arg_3_2)
+	if arg_3_0.limitOnePurchase and not arg_3_0.commodity:CanPurchaseSubGoods(arg_3_2) then
 		return
 	end
 
-	uv0.super.ClickItem(slot0, slot1, slot2)
+	var_0_0.super.ClickItem(arg_3_0, arg_3_1, arg_3_2)
 end
 
-function slot0.PressAddBtn(slot0, slot1, slot2)
-	if slot0.limitOnePurchase and table.contains(slot0.selectedList, slot2) then
+function var_0_0.PressAddBtn(arg_4_0, arg_4_1, arg_4_2)
+	if arg_4_0.limitOnePurchase and table.contains(arg_4_0.selectedList, arg_4_2) then
 		return
 	end
 
-	uv0.super.PressAddBtn(slot0, slot1, slot2)
+	var_0_0.super.PressAddBtn(arg_4_0, arg_4_1, arg_4_2)
 end
 
-function slot0.OnConfirm(slot0)
+function var_0_0.OnConfirm(arg_5_0)
 	pg.m02:sendNotification(GAME.NEW_SERVER_SHOP_SHOPPING, {
-		id = slot0.commodity.id,
-		selectedList = slot0.selectedList
+		id = arg_5_0.commodity.id,
+		selectedList = arg_5_0.selectedList
 	})
 end
 
-return slot0
+return var_0_0

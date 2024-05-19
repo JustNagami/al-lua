@@ -1,133 +1,155 @@
-slot0 = class("GuildTechnology", import("..BaseVO"))
-slot0.UPGRADE_TYPE_SELF = 1
-slot0.UPGRADE_TYPE_PUBLIC = 2
+﻿local var_0_0 = class("GuildTechnology", import("..BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0:Update(slot0:bindConfigTable().get_id_list_by_group[slot1.id][1], slot1)
+var_0_0.UPGRADE_TYPE_SELF = 1
+var_0_0.UPGRADE_TYPE_PUBLIC = 2
+
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_0:bindConfigTable().get_id_list_by_group[arg_1_1.id][1]
+
+	arg_1_0:Update(var_1_0, arg_1_1)
 end
 
-function slot0.Update(slot0, slot1, slot2)
-	slot0.group = slot2
+function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0.group = arg_2_2
 
-	if slot0.group:GuildMemberCntType() then
-		slot0.id = slot0.group.pid
+	if arg_2_0.group:GuildMemberCntType() then
+		arg_2_0.id = arg_2_0.group.pid
 	else
-		slot0.id = slot1
+		arg_2_0.id = arg_2_1
 	end
 
-	slot0.configId = slot0.id
-	slot0.level = slot0:getConfig("level")
+	arg_2_0.configId = arg_2_0.id
+	arg_2_0.level = arg_2_0:getConfig("level")
 end
 
-function slot0.GetShipAttrAddition(slot0, slot1, slot2)
-	slot3 = slot0:getConfig("effect_args")
+function var_0_0.GetShipAttrAddition(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = arg_3_0:getConfig("effect_args")
+	local var_3_1 = var_3_0[1]
+	local var_3_2 = var_3_0[2]
 
-	if slot3[1] == slot1 and table.contains(slot3[2], slot2) then
-		return slot0:getConfig("num")
+	if var_3_1 == arg_3_1 and table.contains(var_3_2, arg_3_2) then
+		return arg_3_0:getConfig("num")
 	else
 		return 0
 	end
 end
 
-function slot0.GetTargetLivness(slot0)
-	if slot0:GetNextLevelId() == 0 then
+function var_0_0.GetTargetLivness(arg_4_0)
+	local var_4_0 = arg_4_0:GetNextLevelId()
+
+	if var_4_0 == 0 then
 		return 0
 	else
-		return pg.guild_technology_template[slot1].need_guild_active
+		return pg.guild_technology_template[var_4_0].need_guild_active
 	end
 end
 
-function slot0.ReachTargetLiveness(slot0, slot1)
-	return slot0:GetTargetLivness() <= slot1:GetLiveness()
+function var_0_0.ReachTargetLiveness(arg_5_0, arg_5_1)
+	return arg_5_1:GetLiveness() >= arg_5_0:GetTargetLivness()
 end
 
-function slot0._ReachTargetLiveness_(slot0)
-	return slot0:ReachTargetLiveness(getProxy(GuildProxy):getRawData():getMemberById(getProxy(PlayerProxy):getRawData().id))
+function var_0_0._ReachTargetLiveness_(arg_6_0)
+	local var_6_0 = getProxy(PlayerProxy):getRawData().id
+	local var_6_1 = getProxy(GuildProxy):getRawData():getMemberById(var_6_0)
+
+	return arg_6_0:ReachTargetLiveness(var_6_1)
 end
 
-function slot0.levelUp(slot0)
-	if slot0:GetNextLevelId() ~= 0 then
-		slot0:Update(slot1, slot0.group)
+function var_0_0.levelUp(arg_7_0)
+	local var_7_0 = arg_7_0:GetNextLevelId()
+
+	if var_7_0 ~= 0 then
+		arg_7_0:Update(var_7_0, arg_7_0.group)
 	end
 end
 
-function slot0.GetNextLevelId(slot0)
-	return slot0:getConfig("next_tech")
+function var_0_0.GetNextLevelId(arg_8_0)
+	return arg_8_0:getConfig("next_tech")
 end
 
-function slot0.GetLevel(slot0)
-	return slot0.level
+function var_0_0.GetLevel(arg_9_0)
+	return arg_9_0.level
 end
 
-function slot0.isMaxLevel(slot0)
-	return slot0:GetMaxLevel() <= slot0:GetLevel()
+function var_0_0.isMaxLevel(arg_10_0)
+	return arg_10_0:GetLevel() >= arg_10_0:GetMaxLevel()
 end
 
-function slot0.CanUpgradeBySelf(slot0)
-	slot1 = slot0:_ReachTargetLiveness_()
-	slot2 = slot0:GetLevel() < slot0:GetMaxLevel()
+function var_0_0.CanUpgradeBySelf(arg_11_0)
+	local var_11_0 = arg_11_0:_ReachTargetLiveness_()
+	local var_11_1 = arg_11_0:GetLevel() < arg_11_0:GetMaxLevel()
 
-	return slot1 and slot2, slot1, slot2
+	return var_11_0 and var_11_1, var_11_0, var_11_1
 end
 
-function slot0.GetLivenessOffset(slot0)
-	return slot0:GetTargetLivness() - getProxy(GuildProxy):getRawData():getMemberById(getProxy(PlayerProxy):getRawData().id):GetLiveness()
+function var_0_0.GetLivenessOffset(arg_12_0)
+	local var_12_0 = getProxy(PlayerProxy):getRawData().id
+	local var_12_1 = getProxy(GuildProxy):getRawData():getMemberById(var_12_0)
+
+	return arg_12_0:GetTargetLivness() - var_12_1:GetLiveness()
 end
 
-function slot0.GetUpgradeType(slot0)
-	if slot0:CanUpgradeBySelf() then
-		return uv0.UPGRADE_TYPE_SELF
+function var_0_0.GetUpgradeType(arg_13_0)
+	if arg_13_0:CanUpgradeBySelf() then
+		return var_0_0.UPGRADE_TYPE_SELF
 	else
-		slot2 = slot0:GetMaxLevel()
+		local var_13_0 = arg_13_0.group:GetFakeLevel()
+		local var_13_1 = arg_13_0:GetMaxLevel()
 
-		if slot0:GetLevel() < slot0.group:GetFakeLevel() then
-			return uv0.UPGRADE_TYPE_PUBLIC
+		if var_13_0 > arg_13_0:GetLevel() then
+			return var_0_0.UPGRADE_TYPE_PUBLIC
 		end
 	end
 
 	return false
 end
 
-function slot0.CanUpgrade(slot0)
-	return slot0:GetUpgradeType() ~= false
+function var_0_0.CanUpgrade(arg_14_0)
+	return arg_14_0:GetUpgradeType() ~= false
 end
 
-function slot0.GetMaxLevel(slot0)
-	return slot0.group:GetLevel()
+function var_0_0.GetMaxLevel(arg_15_0)
+	return arg_15_0.group:GetLevel()
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_16_0)
 	return pg.guild_technology_template
 end
 
-function slot0.GetDesc(slot0)
-	return GuildConst.GET_TECHNOLOGY_DESC(slot0:getConfig("effect_args"), slot0:getConfig("num"))
+function var_0_0.GetDesc(arg_17_0)
+	local var_17_0 = arg_17_0:getConfig("effect_args")
+	local var_17_1 = arg_17_0:getConfig("num")
+
+	return GuildConst.GET_TECHNOLOGY_DESC(var_17_0, var_17_1)
 end
 
-function slot0.getAddition(slot0)
-	if slot0:GetLevel() > 0 then
-		return slot0:getConfig("num")
+function var_0_0.getAddition(arg_18_0)
+	if arg_18_0:GetLevel() > 0 then
+		return arg_18_0:getConfig("num")
 	else
 		return 0
 	end
 end
 
-function slot0.GetConsume(slot0)
-	if slot0:IsRiseInPrice() then
-		slot3 = slot0:getConfig("contribution_multiple")
+function var_0_0.GetConsume(arg_19_0)
+	local var_19_0 = arg_19_0:getConfig("contribution_consume")
+	local var_19_1 = arg_19_0:getConfig("gold_consume")
 
-		return slot0:getConfig("contribution_consume") * slot3, slot0:getConfig("gold_consume") * slot3
+	if arg_19_0:IsRiseInPrice() then
+		local var_19_2 = arg_19_0:getConfig("contribution_multiple")
+
+		return var_19_0 * var_19_2, var_19_1 * var_19_2
 	else
-		return slot1, slot2
+		return var_19_0, var_19_1
 	end
 end
 
-function slot0.IsRiseInPrice(slot0)
-	return slot0:GetUpgradeType() == uv0.UPGRADE_TYPE_PUBLIC
+function var_0_0.IsRiseInPrice(arg_20_0)
+	return arg_20_0:GetUpgradeType() == var_0_0.UPGRADE_TYPE_PUBLIC
 end
 
-function slot0.IsGuildMember(slot0)
-	return slot0:getConfig("group") == 1
+function var_0_0.IsGuildMember(arg_21_0)
+	return arg_21_0:getConfig("group") == 1
 end
 
-return slot0
+return var_0_0

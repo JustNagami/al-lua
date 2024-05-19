@@ -1,99 +1,111 @@
-slot0 = class("SailBoatBgControl")
-slot1 = nil
+﻿local var_0_0 = class("SailBoatBgControl")
+local var_0_1
 
-function slot0.Ctor(slot0, slot1, slot2)
-	uv0 = SailBoatGameVo
-	slot0._tf = slot1
-	slot0._event = slot2
-	slot0._followTarget = nil
-	slot0._backGrounds = {}
-	slot0._bgs = {}
-	slot0._bgPool = {}
-	slot0._bgMoveSpeed = Vector2(0, 0)
-	slot0._bgMoveAmount = Vector2(0, 0)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_1 = SailBoatGameVo
+	arg_1_0._tf = arg_1_1
+	arg_1_0._event = arg_1_2
+	arg_1_0._followTarget = nil
+	arg_1_0._backGrounds = {}
+	arg_1_0._bgs = {}
+	arg_1_0._bgPool = {}
+	arg_1_0._bgMoveSpeed = Vector2(0, 0)
+	arg_1_0._bgMoveAmount = Vector2(0, 0)
 end
 
-function slot0.start(slot0)
-	for slot4 = #slot0._bgs, 1, -1 do
-		slot5 = table.remove(slot0._bgs, slot4)
+function var_0_0.start(arg_2_0)
+	for iter_2_0 = #arg_2_0._bgs, 1, -1 do
+		local var_2_0 = table.remove(arg_2_0._bgs, iter_2_0)
 
-		slot5:clear()
-		table.insert(slot0._bgPool, slot5)
+		var_2_0:clear()
+		table.insert(arg_2_0._bgPool, var_2_0)
 	end
 
-	slot0._bgMoveAmount = Vector2(0, 0)
+	arg_2_0._bgMoveAmount = Vector2(0, 0)
 
-	slot0:initBgRound()
+	arg_2_0:initBgRound()
 
-	for slot4 = 1, #slot0._bgs do
-		slot0._bgs[slot4]:start()
+	for iter_2_1 = 1, #arg_2_0._bgs do
+		arg_2_0._bgs[iter_2_1]:start()
 	end
 
-	slot0._bgMoveSpeed.x = uv0.moveAmount.x
-	slot0._bgMoveSpeed.y = uv0.moveAmount.y
+	arg_2_0._bgMoveSpeed.x = var_0_1.moveAmount.x
+	arg_2_0._bgMoveSpeed.y = var_0_1.moveAmount.y
 
-	uv0.SetGameBgs(slot0._bgs)
+	var_0_1.SetGameBgs(arg_2_0._bgs)
 end
 
-function slot0.step(slot0, slot1)
-	slot2 = uv0.GetSceneSpeed()
-	slot0._bgMoveAmount.x = slot0._bgMoveAmount.x + slot2.x
-	slot0._bgMoveAmount.y = slot0._bgMoveAmount.y + slot2.y
+function var_0_0.step(arg_3_0, arg_3_1)
+	local var_3_0 = var_0_1.GetSceneSpeed()
 
-	for slot6 = 1, #slot0._bgs do
-		slot0._bgs[slot6]:setMoveAmount(slot0._bgMoveAmount)
-		slot0._bgs[slot6]:step()
+	arg_3_0._bgMoveAmount.x = arg_3_0._bgMoveAmount.x + var_3_0.x
+	arg_3_0._bgMoveAmount.y = arg_3_0._bgMoveAmount.y + var_3_0.y
+
+	for iter_3_0 = 1, #arg_3_0._bgs do
+		arg_3_0._bgs[iter_3_0]:setMoveAmount(arg_3_0._bgMoveAmount)
+		arg_3_0._bgs[iter_3_0]:step()
 	end
 end
 
-function slot0.setTarget(slot0, slot1)
-	slot0._followTarget = slot1
+function var_0_0.setTarget(arg_4_0, arg_4_1)
+	arg_4_0._followTarget = arg_4_1
 end
 
-function slot0.setBackGround(slot0, slot1)
+function var_0_0.setBackGround(arg_5_0, arg_5_1)
+	return
 end
 
-function slot0.clear(slot0)
+function var_0_0.clear(arg_6_0)
+	return
 end
 
-function slot0.getBgRoundData(slot0, slot1)
-	for slot5 = 1, #SailBoatGameConst.game_bg_round do
-		if SailBoatGameConst.game_bg_round[slot5].round == slot1 then
-			return Clone(slot6)
+function var_0_0.getBgRoundData(arg_7_0, arg_7_1)
+	for iter_7_0 = 1, #SailBoatGameConst.game_bg_round do
+		local var_7_0 = SailBoatGameConst.game_bg_round[iter_7_0]
+
+		if var_7_0.round == arg_7_1 then
+			return Clone(var_7_0)
 		end
 	end
 
 	return nil
 end
 
-function slot0.initBgRound(slot0)
-	if not uv0.GetRoundData() then
+function var_0_0.initBgRound(arg_8_0)
+	local var_8_0 = var_0_1.GetRoundData()
+
+	if not var_8_0 then
 		return
 	end
 
-	for slot5 = 1, #slot1.bg_rule do
-		table.insert(slot0._bgs, slot0:createAndInitBg(SailBoatGameConst.bg_rule[slot1.bg_rule[slot5]]))
+	for iter_8_0 = 1, #var_8_0.bg_rule do
+		local var_8_1 = SailBoatGameConst.bg_rule[var_8_0.bg_rule[iter_8_0]]
+		local var_8_2 = arg_8_0:createAndInitBg(var_8_1)
+
+		table.insert(arg_8_0._bgs, var_8_2)
 	end
 end
 
-function slot0.createAndInitBg(slot0, slot1)
-	slot2 = nil
+function var_0_0.createAndInitBg(arg_9_0, arg_9_1)
+	local var_9_0
 
-	if slot0._bgPool and #slot0._bgPool > 0 then
-		slot2 = table.remove(slot0._bgPool, 1)
+	if arg_9_0._bgPool and #arg_9_0._bgPool > 0 then
+		var_9_0 = table.remove(arg_9_0._bgPool, 1)
 	end
 
-	slot2 = slot2 or SailBoatBg.New(slot0._tf, slot0._event)
+	var_9_0 = var_9_0 or SailBoatBg.New(arg_9_0._tf, arg_9_0._event)
 
-	slot2:setRuleData(slot1)
+	var_9_0:setRuleData(arg_9_1)
 
-	return slot2
+	return var_9_0
 end
 
-function slot0.useTestBgMove(slot0)
+function var_0_0.useTestBgMove(arg_10_0)
+	return
 end
 
-function slot0.dispose(slot0)
+function var_0_0.dispose(arg_11_0)
+	return
 end
 
-return slot0
+return var_0_0

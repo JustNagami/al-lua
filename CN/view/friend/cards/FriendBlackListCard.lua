@@ -1,13 +1,13 @@
-slot0 = class("FriendBlackListCard", import(".FriendCard"))
+﻿local var_0_0 = class("FriendBlackListCard", import(".FriendCard"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.btn = slot0.tf:Find("frame/occupy_btn")
+	arg_1_0.btn = arg_1_0.tf:Find("frame/occupy_btn")
 end
 
-function slot0.update(slot0, slot1)
-	uv0.super.update(slot0, slot1)
+function var_0_0.update(arg_2_0, arg_2_1)
+	var_0_0.super.update(arg_2_0, arg_2_1)
 end
 
-return slot0
+return var_0_0

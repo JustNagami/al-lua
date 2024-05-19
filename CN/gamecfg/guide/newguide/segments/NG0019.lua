@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"点击这里可以对一键退役的条件进行设置",
 	"上方选择优先级可以对稀有度优先级进行设置",
 	"下方可以对拥有或未拥有满星舰船时的选择条件进行设置",
@@ -15,7 +15,7 @@ return {
 				mode = 1,
 				posY = -285,
 				posX = -302,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/blur_panel/adapt/left_length/frame/setting",
@@ -38,7 +38,7 @@ return {
 				mode = 1,
 				posY = 101.6,
 				posX = -56.2,
-				text = slot0[2]
+				text = var_0_0[2]
 			}
 		},
 		{
@@ -48,7 +48,7 @@ return {
 				mode = 1,
 				posY = -159.6,
 				posX = 13.3,
-				text = slot0[3]
+				text = var_0_0[3]
 			}
 		},
 		{
@@ -58,7 +58,7 @@ return {
 				mode = 1,
 				posY = 150.7,
 				posX = 224.01,
-				text = slot0[4]
+				text = var_0_0[4]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/DockyardQuickSelectSettingUI(Clone)/window/top/bg/obtain/title/title_en/info",

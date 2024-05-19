@@ -1,67 +1,67 @@
-slot0 = class("BackYardFormationCard", import("view.ship.FormationCard"))
+﻿local var_0_0 = class("BackYardFormationCard", import("view.ship.FormationCard"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.propsTr1 = slot0.detailTF:Find("info1")
-	slot0.nameTr = slot0.detailTF:Find("name_mask")
-	slot0.startTr = slot0.content:Find("front/stars")
+	arg_1_0.propsTr1 = arg_1_0.detailTF:Find("info1")
+	arg_1_0.nameTr = arg_1_0.detailTF:Find("name_mask")
+	arg_1_0.startTr = arg_1_0.content:Find("front/stars")
 end
 
-function slot0.updateProps(slot0, slot1)
-	for slot5 = 0, 4 do
-		slot6 = slot0.propsTr:GetChild(slot5)
+function var_0_0.updateProps(arg_2_0, arg_2_1)
+	for iter_2_0 = 0, 4 do
+		local var_2_0 = arg_2_0.propsTr:GetChild(iter_2_0)
 
-		if slot5 < #slot1 then
-			slot6.gameObject:SetActive(true)
+		if iter_2_0 < #arg_2_1 then
+			var_2_0.gameObject:SetActive(true)
 
-			slot6:GetChild(0):GetComponent("Text").text = slot1[slot5 + 1][1]
-			slot6:GetChild(1):GetComponent("Text").text = slot1[slot5 + 1][2]
+			var_2_0:GetChild(0):GetComponent("Text").text = arg_2_1[iter_2_0 + 1][1]
+			var_2_0:GetChild(1):GetComponent("Text").text = arg_2_1[iter_2_0 + 1][2]
 		else
-			slot6.gameObject:SetActive(false)
+			var_2_0.gameObject:SetActive(false)
 		end
 	end
 
-	setAnchoredPosition(slot0.nameTr, {
+	setAnchoredPosition(arg_2_0.nameTr, {
 		y = 270
 	})
-	setAnchoredPosition(slot0.shipState, {
+	setAnchoredPosition(arg_2_0.shipState, {
 		y = 32
 	})
-	setAnchoredPosition(slot0.startTr, {
+	setAnchoredPosition(arg_2_0.startTr, {
 		y = -14
 	})
-	setAnchoredPosition(slot0.proposeMark, {
+	setAnchoredPosition(arg_2_0.proposeMark, {
 		y = 3.2
 	})
 end
 
-function slot0.updateProps1(slot0, slot1)
-	for slot5 = 0, 2 do
-		slot6 = slot0.propsTr1:GetChild(slot5)
+function var_0_0.updateProps1(arg_3_0, arg_3_1)
+	for iter_3_0 = 0, 2 do
+		local var_3_0 = arg_3_0.propsTr1:GetChild(iter_3_0)
 
-		if slot5 < #slot1 then
-			slot6.gameObject:SetActive(true)
+		if iter_3_0 < #arg_3_1 then
+			var_3_0.gameObject:SetActive(true)
 
-			slot6:GetChild(0):GetComponent("Text").text = slot1[slot5 + 1][1]
-			slot6:GetChild(1):GetComponent("Text").text = slot1[slot5 + 1][2]
+			var_3_0:GetChild(0):GetComponent("Text").text = arg_3_1[iter_3_0 + 1][1]
+			var_3_0:GetChild(1):GetComponent("Text").text = arg_3_1[iter_3_0 + 1][2]
 		else
-			slot6.gameObject:SetActive(false)
+			var_3_0.gameObject:SetActive(false)
 		end
 	end
 
-	setAnchoredPosition(slot0.nameTr, {
+	setAnchoredPosition(arg_3_0.nameTr, {
 		y = 174
 	})
-	setAnchoredPosition(slot0.shipState, {
+	setAnchoredPosition(arg_3_0.shipState, {
 		y = -64
 	})
-	setAnchoredPosition(slot0.startTr, {
+	setAnchoredPosition(arg_3_0.startTr, {
 		y = -110
 	})
-	setAnchoredPosition(slot0.proposeMark, {
+	setAnchoredPosition(arg_3_0.proposeMark, {
 		y = -92.8
 	})
 end
 
-return slot0
+return var_0_0

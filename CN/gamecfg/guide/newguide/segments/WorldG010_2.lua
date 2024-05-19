@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "WorldG010_2",
 	events = {
 		{

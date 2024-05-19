@@ -1,79 +1,86 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConfig
-slot2 = slot0.Battle.BattleVariable
-slot0.Battle.BattleSubmarineFuncVO = class("BattleSubmarineFuncVO")
-slot0.Battle.BattleSubmarineFuncVO.__name = "BattleSubmarineFuncVO"
-slot3 = slot0.Battle.BattleSubmarineFuncVO
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0, slot1)
-	uv0.EventDispatcher.AttachEventDispatcher(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConfig
+local var_0_2 = var_0_0.Battle.BattleVariable
 
-	slot0._current = slot1
-	slot0._defaultMax = slot1
-	slot0._active = true
+var_0_0.Battle.BattleSubmarineFuncVO = class("BattleSubmarineFuncVO")
+var_0_0.Battle.BattleSubmarineFuncVO.__name = "BattleSubmarineFuncVO"
 
-	slot0:ResetMax()
+local var_0_3 = var_0_0.Battle.BattleSubmarineFuncVO
+
+function var_0_3.Ctor(arg_1_0, arg_1_1)
+	var_0_0.EventDispatcher.AttachEventDispatcher(arg_1_0)
+
+	arg_1_0._current = arg_1_1
+	arg_1_0._defaultMax = arg_1_1
+	arg_1_0._active = true
+
+	arg_1_0:ResetMax()
 end
 
-function slot3.Update(slot0, slot1)
-	if slot0._active and slot0._current < slot0._max then
-		if slot0._max <= slot1 - slot0._reloadStartTime then
-			slot0:ResetMax()
+function var_0_3.Update(arg_2_0, arg_2_1)
+	if arg_2_0._active and arg_2_0._current < arg_2_0._max then
+		local var_2_0 = arg_2_1 - arg_2_0._reloadStartTime
 
-			slot0._current = slot0._max
-			slot0._reloadStartTime = nil
+		if var_2_0 >= arg_2_0._max then
+			arg_2_0:ResetMax()
 
-			slot0:DispatchOverLoadChange()
+			arg_2_0._current = arg_2_0._max
+			arg_2_0._reloadStartTime = nil
+
+			arg_2_0:DispatchOverLoadChange()
 		else
-			slot0._current = slot2
+			arg_2_0._current = var_2_0
 		end
 	end
 end
 
-function slot3.SetActive(slot0, slot1)
-	slot0._active = slot1
+function var_0_3.SetActive(arg_3_0, arg_3_1)
+	arg_3_0._active = arg_3_1
 end
 
-function slot3.ResetCurrent(slot0)
-	slot0._current = 0
-	slot0._reloadStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
+function var_0_3.ResetCurrent(arg_4_0)
+	arg_4_0._current = 0
+	arg_4_0._reloadStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
 
-	slot0:DispatchOverLoadChange()
+	arg_4_0:DispatchOverLoadChange()
 end
 
-function slot3.ResetMax(slot0)
-	slot0._max = slot0._defaultMax
+function var_0_3.ResetMax(arg_5_0)
+	arg_5_0._max = arg_5_0._defaultMax
 end
 
-function slot3.SetMax(slot0, slot1)
-	slot0._max = slot1
+function var_0_3.SetMax(arg_6_0, arg_6_1)
+	arg_6_0._max = arg_6_1
 end
 
-function slot3.GetMax(slot0)
-	return slot0._max
+function var_0_3.GetMax(arg_7_0)
+	return arg_7_0._max
 end
 
-function slot3.GetTotal(slot0)
+function var_0_3.GetTotal(arg_8_0)
 	return 0
 end
 
-function slot3.GetCurrent(slot0)
-	return slot0._current
+function var_0_3.GetCurrent(arg_9_0)
+	return arg_9_0._current
 end
 
-function slot3.IsOverLoad(slot0)
-	return slot0._current < slot0._max
+function var_0_3.IsOverLoad(arg_10_0)
+	return arg_10_0._current < arg_10_0._max
 end
 
-function slot3.DispatchOverLoadChange(slot0)
-	slot0:DispatchEvent(uv0.Event.New(uv0.Battle.BattleEvent.OVER_LOAD_CHANGE))
+function var_0_3.DispatchOverLoadChange(arg_11_0)
+	local var_11_0 = var_0_0.Event.New(var_0_0.Battle.BattleEvent.OVER_LOAD_CHANGE)
+
+	arg_11_0:DispatchEvent(var_11_0)
 end
 
-function slot3.Dispose(slot0)
-	pg.TimeMgr.GetInstance():RemoveBattleTimer(slot0._focusTimer)
+function var_0_3.Dispose(arg_12_0)
+	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_12_0._focusTimer)
 
-	slot0._focusTimer = nil
+	arg_12_0._focusTimer = nil
 
-	uv0.EventDispatcher.DetachEventDispatcher(slot0)
+	var_0_0.EventDispatcher.DetachEventDispatcher(arg_12_0)
 end

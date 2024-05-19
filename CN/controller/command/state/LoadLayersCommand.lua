@@ -1,15 +1,16 @@
-slot0 = class("LoadLayersCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("LoadLayersCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot2.type = LOAD_TYPE_LAYER
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-	slot2.context:extendData({
+	var_1_0.type = LOAD_TYPE_LAYER
+
+	var_1_0.context:extendData({
 		isLayer = true
 	})
-	SCENE.CheckPreloadData(slot2, function ()
-		uv0:sendNotification(GAME.LOAD_CONTEXT, uv1)
+	SCENE.CheckPreloadData(var_1_0, function()
+		arg_1_0:sendNotification(GAME.LOAD_CONTEXT, var_1_0)
 	end)
 end
 
-return slot0
+return var_0_0

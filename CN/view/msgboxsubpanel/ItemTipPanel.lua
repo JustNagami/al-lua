@@ -1,87 +1,99 @@
-slot0 = class("ItemTipPanel", import(".MsgboxSubPanel"))
-slot0.DetailConfig = {}
+﻿local var_0_0 = class("ItemTipPanel", import(".MsgboxSubPanel"))
 
-function slot0.ShowItemTip(slot0, slot1, slot2, slot3)
-	if not uv0.GetDropLackConfig(Drop.New({
-		type = slot0,
-		id = slot1
-	})) then
+var_0_0.DetailConfig = {}
+
+function var_0_0.ShowItemTip(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	local var_1_0 = var_0_0.GetDropLackConfig(Drop.New({
+		type = arg_1_0,
+		id = arg_1_1
+	}))
+
+	if not var_1_0 then
 		return
 	end
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		type = MSGBOX_TYPE_ITEMTIP,
 		drop = Drop.New({
-			type = slot0,
-			id = slot1
+			type = arg_1_0,
+			id = arg_1_1
 		}),
-		descriptions = slot4.description,
-		msgTitle = slot2,
-		goSceneCallack = slot3,
+		descriptions = var_1_0.description,
+		msgTitle = arg_1_2,
+		goSceneCallack = arg_1_3,
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 
 	return true
 end
 
-function slot0.GetDropLackConfig(slot0)
-	if slot0.type == DROP_TYPE_RESOURCE then
-		slot0 = Drop.New({
+function var_0_0.GetDropLackConfig(arg_2_0)
+	if arg_2_0.type == DROP_TYPE_RESOURCE then
+		arg_2_0 = Drop.New({
 			type = DROP_TYPE_ITEM,
-			id = id2ItemId(slot0.id)
+			id = id2ItemId(arg_2_0.id)
 		})
 	end
 
-	if not uv0.DetailConfig[slot0.type] then
-		uv0.DetailConfig[slot0.type] = {}
+	if not var_0_0.DetailConfig[arg_2_0.type] then
+		var_0_0.DetailConfig[arg_2_0.type] = {}
 
-		for slot4, slot5 in ipairs(pg.item_lack.get_id_list_by_drop_type[slot0.type] or {}) do
-			for slot10, slot11 in ipairs(pg.item_lack[slot5].itemids) do
-				uv0.DetailConfig[slot0.type][slot11] = slot6
+		for iter_2_0, iter_2_1 in ipairs(pg.item_lack.get_id_list_by_drop_type[arg_2_0.type] or {}) do
+			local var_2_0 = pg.item_lack[iter_2_1]
+
+			for iter_2_2, iter_2_3 in ipairs(var_2_0.itemids) do
+				var_0_0.DetailConfig[arg_2_0.type][iter_2_3] = var_2_0
 			end
 		end
 	end
 
-	return uv0.DetailConfig[slot0.type][slot0.id]
+	return var_0_0.DetailConfig[arg_2_0.type][arg_2_0.id]
 end
 
-function slot0.ShowItemTipbyID(...)
-	return uv0.ShowItemTip(DROP_TYPE_ITEM, ...)
+function var_0_0.ShowItemTipbyID(...)
+	return var_0_0.ShowItemTip(DROP_TYPE_ITEM, ...)
 end
 
-function slot0.CanShowTip(slot0)
-	return tobool(uv0.DetailConfig[slot0])
+function var_0_0.CanShowTip(arg_4_0)
+	return tobool(var_0_0.DetailConfig[arg_4_0])
 end
 
-function slot0.ShowRingBuyTip()
+function var_0_0.ShowRingBuyTip()
 	GoShoppingMsgBox(i18n("switch_to_shop_tip_2", string.format("<color=#92FC63FF>%s</color>", Item.getConfigData(ITEM_ID_FOR_PROPOSE).name)), ChargeScene.TYPE_ITEM)
 end
 
-function slot0.ShowGoldBuyTip(slot0)
+function var_0_0.ShowGoldBuyTip(arg_6_0)
+	local var_6_0 = getProxy(PlayerProxy):getRawData()
+
 	GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
 		{
 			59001,
-			slot0 - getProxy(PlayerProxy):getRawData()[id2res(1)],
-			slot0
+			arg_6_0 - var_6_0[id2res(1)],
+			arg_6_0
 		}
 	})
 end
 
-function slot0.ShowOilBuyTip(slot0, slot1)
-	if not ShoppingStreet.getRiseShopId(ShopArgs.BuyOil, getProxy(PlayerProxy):getRawData().buyOilCount) then
+function var_0_0.ShowOilBuyTip(arg_7_0, arg_7_1)
+	local var_7_0 = getProxy(PlayerProxy):getRawData()
+	local var_7_1 = ShoppingStreet.getRiseShopId(ShopArgs.BuyOil, var_7_0.buyOilCount)
+
+	if not var_7_1 then
 		return
 	end
 
-	slot4 = pg.shop_template[slot3]
-	slot5 = slot4.num
+	local var_7_2 = pg.shop_template[var_7_1]
+	local var_7_3 = var_7_2.num
 
-	if slot4.num == -1 and slot4.genre == ShopArgs.BuyOil then
-		slot5 = ShopArgs.getOilByLevel(slot2.level)
+	if var_7_2.num == -1 and var_7_2.genre == ShopArgs.BuyOil then
+		var_7_3 = ShopArgs.getOilByLevel(var_7_0.level)
 	end
 
-	if pg.gameset.buy_oil_limit.key_value <= slot2.buyOilCount then
+	if pg.gameset.buy_oil_limit.key_value <= var_7_0.buyOilCount then
 		return
 	end
+
+	arg_7_1 = arg_7_1 or "oil_buy_tip_2"
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		yseBtnLetf = true,
@@ -89,17 +101,17 @@ function slot0.ShowOilBuyTip(slot0, slot1)
 		windowSize = {
 			y = 570
 		},
-		content = i18n(slot1 or "oil_buy_tip_2", slot4.resource_num, slot5, slot2.buyOilCount, slot0 - slot2[id2res(2)]),
+		content = i18n(arg_7_1, var_7_2.resource_num, var_7_3, var_7_0.buyOilCount, arg_7_0 - var_7_0[id2res(2)]),
 		drop = {
 			id = 2,
 			type = DROP_TYPE_RESOURCE,
-			count = slot5
+			count = var_7_3
 		},
-		onYes = function ()
+		onYes = function()
 			pg.m02:sendNotification(GAME.SHOPPING, {
 				isQuickShopping = true,
 				count = 1,
-				id = uv0
+				id = var_7_1
 			})
 		end,
 		weight = LayerWeightConst.TOP_LAYER
@@ -108,102 +120,109 @@ function slot0.ShowOilBuyTip(slot0, slot1)
 	return true
 end
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_9_0)
 	return "Msgbox4ItemGo"
 end
 
-function slot0.OnInit(slot0)
-	slot0.list = slot0:findTF("skipable_list")
-	slot0.tpl = slot0:findTF("tpl", slot0.list)
-	slot0.title = slot0:findTF("name")
+function var_0_0.OnInit(arg_10_0)
+	arg_10_0.list = arg_10_0:findTF("skipable_list")
+	arg_10_0.tpl = arg_10_0:findTF("tpl", arg_10_0.list)
+	arg_10_0.title = arg_10_0:findTF("name")
 end
 
-function slot0.OnRefresh(slot0, slot1)
-	setActive(slot0.viewParent._btnContainer, false)
+function var_0_0.OnRefresh(arg_11_0, arg_11_1)
+	setActive(arg_11_0.viewParent._btnContainer, false)
 
-	slot2 = slot1.drop:getName()
+	local var_11_0 = arg_11_1.drop:getName()
+	local var_11_1 = arg_11_1.descriptions
 
-	setText(slot0.title, slot1.msgTitle or i18n("item_lack_title", slot2, slot2))
-	UIItemList.StaticAlign(slot0.list, slot0.tpl, #slot1.descriptions, function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot4, slot5, slot6 = unpack(uv0[slot1 + 1])
-			slot7, slot8 = unpack(slot5)
+	setText(arg_11_0.title, arg_11_1.msgTitle or i18n("item_lack_title", var_11_0, var_11_0))
+	UIItemList.StaticAlign(arg_11_0.list, arg_11_0.tpl, #var_11_1, function(arg_12_0, arg_12_1, arg_12_2)
+		if arg_12_0 == UIItemList.EventUpdate then
+			local var_12_0 = var_11_1[arg_12_1 + 1]
+			local var_12_1, var_12_2, var_12_3 = unpack(var_12_0)
+			local var_12_4, var_12_5 = unpack(var_12_2)
+			local var_12_6 = #var_12_4 > 0
 
-			if slot6 and slot6 ~= 0 then
-				slot9 = #slot7 > 0 and getProxy(ActivityProxy):IsActivityNotEnd(slot6)
+			if var_12_3 and var_12_3 ~= 0 then
+				var_12_6 = var_12_6 and getProxy(ActivityProxy):IsActivityNotEnd(var_12_3)
 			end
 
-			slot10 = slot2:Find("skip_btn")
+			local var_12_7 = arg_12_2:Find("skip_btn")
 
-			setActive(slot10, slot9)
-			onButton(uv1, slot10, function ()
-				uv0.ConfigGoScene(uv1, uv2, function ()
-					if uv0.goSceneCallack then
-						uv0.goSceneCallack()
+			setActive(var_12_7, var_12_6)
+			onButton(arg_11_0, var_12_7, function()
+				var_0_0.ConfigGoScene(var_12_4, var_12_5, function()
+					if arg_11_1.goSceneCallack then
+						arg_11_1.goSceneCallack()
 					end
 
-					uv1.viewParent:hide()
+					arg_11_0.viewParent:hide()
 				end)
 			end, SFX_PANEL)
 			Canvas.ForceUpdateCanvases()
-			changeToScrollText(slot2:Find("title"), slot4)
+			changeToScrollText(arg_12_2:Find("title"), var_12_1)
 		end
 	end)
 end
 
-function slot0.ConfigGoScene(slot0, slot1, slot2)
-	if slot0 == SCENE.SHOP and (slot1 or {}).warp == "supplies" and not pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "MilitaryExerciseMediator") then
+function var_0_0.ConfigGoScene(arg_15_0, arg_15_1, arg_15_2)
+	arg_15_1 = arg_15_1 or {}
+
+	if arg_15_0 == SCENE.SHOP and arg_15_1.warp == "supplies" and not pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "MilitaryExerciseMediator") then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("military_shop_no_open_tip"))
 
 		return
-	elseif slot0 == SCENE.LEVEL then
-		slot3 = getProxy(ChapterProxy)
-		slot4 = getProxy(PlayerProxy):getRawData()
+	elseif arg_15_0 == SCENE.LEVEL then
+		local var_15_0 = getProxy(ChapterProxy)
+		local var_15_1 = getProxy(PlayerProxy):getRawData()
 
-		if slot1.leastChapterId then
-			if not slot3:getMapById(slot3:getChapterById(slot1.leastChapterId):getConfig("map")) then
+		if arg_15_1.leastChapterId then
+			local var_15_2 = arg_15_1.leastChapterId
+			local var_15_3 = var_15_0:getChapterById(var_15_2)
+			local var_15_4 = var_15_0:getMapById(var_15_3:getConfig("map"))
+
+			if not var_15_4 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("target_chapter_is_lock"))
 
 				return
-			elseif not slot6:isUnlock() or slot7:getMapType() == Map.ELITE and not slot7:isEliteEnabled() or slot4.level < slot6:getConfig("unlocklevel") then
+			elseif not var_15_3:isUnlock() or var_15_4:getMapType() == Map.ELITE and not var_15_4:isEliteEnabled() or var_15_3:getConfig("unlocklevel") > var_15_1.level then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("target_chapter_is_lock"))
 
 				return
 			end
 		end
 
-		if slot1.eliteDefault and not getProxy(DailyLevelProxy):IsEliteEnabled() then
+		if arg_15_1.eliteDefault and not getProxy(DailyLevelProxy):IsEliteEnabled() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_elite_no_quota"))
 
 			return
 		end
 
-		if slot1.lastDigit then
-			slot5 = 0
-			slot6 = {}
+		if arg_15_1.lastDigit then
+			local var_15_5 = 0
+			local var_15_6 = {}
 
-			if slot1.mapType then
-				slot6 = slot3:getMapsByType(slot1.mapType)
+			if arg_15_1.mapType then
+				var_15_6 = var_15_0:getMapsByType(arg_15_1.mapType)
 			else
-				for slot10, slot11 in ipairs({
+				for iter_15_0, iter_15_1 in ipairs({
 					Map.SCENARIO,
 					Map.ELITE
 				}) do
-					slot15 = slot11
-
-					for slot15, slot16 in ipairs(slot3:getMapsByType(slot15)) do
-						table.insert(slot6, slot16)
+					for iter_15_2, iter_15_3 in ipairs(var_15_0:getMapsByType(iter_15_1)) do
+						table.insert(var_15_6, iter_15_3)
 					end
 				end
 			end
 
-			for slot10, slot11 in ipairs(slot6) do
-				if slot11:isUnlock() and (slot1.mapType ~= Map.ELITE or slot11:isEliteEnabled()) and slot5 < slot11.id then
-					for slot15, slot16 in pairs(slot11:getChapters()) do
-						if math.fmod(slot16.id, 10) == slot1.lastDigit and slot16:isUnlock() and slot16:getConfig("unlocklevel") <= slot4.level then
-							slot1.chapterId = slot16.id
-							slot5 = slot11.id
-							slot1.mapIdx = slot11.id
+			for iter_15_4, iter_15_5 in ipairs(var_15_6) do
+				if iter_15_5:isUnlock() and (arg_15_1.mapType ~= Map.ELITE or iter_15_5:isEliteEnabled()) and var_15_5 < iter_15_5.id then
+					for iter_15_6, iter_15_7 in pairs(iter_15_5:getChapters()) do
+						if math.fmod(iter_15_7.id, 10) == arg_15_1.lastDigit and iter_15_7:isUnlock() and iter_15_7:getConfig("unlocklevel") <= var_15_1.level then
+							arg_15_1.chapterId = iter_15_7.id
+							var_15_5 = iter_15_5.id
+							arg_15_1.mapIdx = iter_15_5.id
 
 							break
 						end
@@ -212,20 +231,24 @@ function slot0.ConfigGoScene(slot0, slot1, slot2)
 			end
 		end
 
-		if slot1.chapterId then
-			if slot3:getMapById(slot3:getChapterById(slot1.chapterId):getConfig("map")) and slot7:getMapType() == Map.ELITE and not getProxy(DailyLevelProxy):IsEliteEnabled() then
+		if arg_15_1.chapterId then
+			local var_15_7 = arg_15_1.chapterId
+			local var_15_8 = var_15_0:getChapterById(var_15_7)
+			local var_15_9 = var_15_0:getMapById(var_15_8:getConfig("map"))
+
+			if var_15_9 and var_15_9:getMapType() == Map.ELITE and not getProxy(DailyLevelProxy):IsEliteEnabled() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_elite_no_quota"))
 
 				return
 			end
 
-			if slot6:isUnlock() then
-				if slot6.active then
-					slot1.mapIdx = slot6:getConfig("map")
-				elseif slot3:getActiveChapter() then
+			if var_15_8:isUnlock() then
+				if var_15_8.active then
+					arg_15_1.mapIdx = var_15_8:getConfig("map")
+				elseif var_15_0:getActiveChapter() then
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
 						content = i18n("collect_chapter_is_activation"),
-						onYes = function ()
+						onYes = function()
 							pg.m02:sendNotification(GAME.CHAPTER_OP, {
 								type = ChapterConst.OpRetreat
 							})
@@ -234,67 +257,68 @@ function slot0.ConfigGoScene(slot0, slot1, slot2)
 
 					return
 				else
-					slot1.mapIdx = slot6:getConfig("map")
-					slot1.openChapterId = slot5
+					arg_15_1.mapIdx = var_15_8:getConfig("map")
+					arg_15_1.openChapterId = var_15_7
 				end
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("target_chapter_is_lock"))
 			end
 		end
-	elseif slot0 == SCENE.TASK and slot1.awards then
-		for slot7, slot8 in ipairs(slot1.awards) do
-			-- Nothing
+	elseif arg_15_0 == SCENE.TASK and arg_15_1.awards then
+		local var_15_10 = {}
+
+		for iter_15_8, iter_15_9 in ipairs(arg_15_1.awards) do
+			var_15_10[iter_15_9] = true
 		end
 
-		slot4 = nil
+		local var_15_11
 
-		if next({
-			[slot8] = true
-		}) then
-			for slot10, slot11 in pairs(getProxy(TaskProxy):getRawData()) do
-				slot12 = false
-				slot16 = "award_display"
+		if next(var_15_10) then
+			local var_15_12 = getProxy(TaskProxy):getRawData()
 
-				for slot16, slot17 in ipairs(slot11:getConfig(slot16)) do
-					if slot3[slot17[2]] then
-						slot4 = slot11.id
-						slot12 = true
+			for iter_15_10, iter_15_11 in pairs(var_15_12) do
+				local var_15_13 = false
+
+				for iter_15_12, iter_15_13 in ipairs(iter_15_11:getConfig("award_display")) do
+					if var_15_10[iter_15_13[2]] then
+						var_15_11 = iter_15_11.id
+						var_15_13 = true
 
 						break
 					end
 				end
 
-				if slot12 then
+				if var_15_13 then
 					break
 				end
 			end
 		end
 
-		if not slot4 then
+		if not var_15_11 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("task_has_finished"))
 
 			return
 		end
 
-		slot1.targetId = slot4
-	elseif slot0 == SCENE.COLLECTSHIP then
-		slot1.toggle = 2
-	elseif slot0 == SCENE.DAILYLEVEL and slot1.dailyLevelId then
-		slot3, slot4 = DailyLevelScene.CanOpenDailyLevel(slot1.dailyLevelId)
+		arg_15_1.targetId = var_15_11
+	elseif arg_15_0 == SCENE.COLLECTSHIP then
+		arg_15_1.toggle = 2
+	elseif arg_15_0 == SCENE.DAILYLEVEL and arg_15_1.dailyLevelId then
+		local var_15_14, var_15_15 = DailyLevelScene.CanOpenDailyLevel(arg_15_1.dailyLevelId)
 
-		if not slot3 then
-			pg.TipsMgr.GetInstance():ShowTips(slot4)
+		if not var_15_14 then
+			pg.TipsMgr.GetInstance():ShowTips(var_15_15)
 
 			return
 		end
-	elseif slot0 == SCENE.MILITARYEXERCISE and not getProxy(MilitaryExerciseProxy):getSeasonInfo():canExercise() then
+	elseif arg_15_0 == SCENE.MILITARYEXERCISE and not getProxy(MilitaryExerciseProxy):getSeasonInfo():canExercise() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("exercise_count_insufficient"))
 
 		return
 	end
 
-	existCall(slot2)
-	pg.m02:sendNotification(GAME.GO_SCENE, slot0, slot1)
+	existCall(arg_15_2)
+	pg.m02:sendNotification(GAME.GO_SCENE, arg_15_0, arg_15_1)
 end
 
-return slot0
+return var_0_0

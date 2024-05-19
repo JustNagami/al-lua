@@ -1,119 +1,127 @@
-slot2 = class("StaticEggCellView", DecorateClass(import(".StaticCellView"), import(".EggCellView")))
+﻿local var_0_0 = import(".StaticCellView")
+local var_0_1 = import(".EggCellView")
+local var_0_2 = class("StaticEggCellView", DecorateClass(var_0_0, var_0_1))
 
-function slot2.Ctor(slot0, slot1)
-	uv0.Ctor(slot0, slot1)
-	uv1.Ctor(slot0)
+function var_0_2.Ctor(arg_1_0, arg_1_1)
+	var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_1.Ctor(arg_1_0)
 
-	slot0.config = nil
-	slot0.chapter = nil
-	slot0.tweenId = nil
-	slot0.buffer = FuncBuffer.New()
+	arg_1_0.config = nil
+	arg_1_0.chapter = nil
+	arg_1_0.tweenId = nil
+	arg_1_0.buffer = FuncBuffer.New()
 end
 
-function slot2.GetOrder(slot0)
+function var_0_2.GetOrder(arg_2_0)
 	return ChapterConst.CellPriorityEnemy
 end
 
-function slot2.Update(slot0)
-	slot2 = slot0.config
-	slot3 = slot0.info.trait ~= ChapterConst.TraitLurk
+function var_0_2.Update(arg_3_0)
+	local var_3_0 = arg_3_0.info
+	local var_3_1 = arg_3_0.config
+	local var_3_2 = var_3_0.trait ~= ChapterConst.TraitLurk
 
-	if ChapterConst.IsEnemyAttach(slot1.attachment) and slot1.flag == ChapterConst.CellFlagActive and slot0.chapter:existFleet(FleetType.Transport, slot1.row, slot1.column) then
-		slot3 = false
+	if ChapterConst.IsEnemyAttach(var_3_0.attachment) and var_3_0.flag == ChapterConst.CellFlagActive and arg_3_0.chapter:existFleet(FleetType.Transport, var_3_0.row, var_3_0.column) then
+		var_3_2 = false
 	end
 
-	if not IsNil(slot0.go) then
-		setActive(slot0.go, slot3)
+	if not IsNil(arg_3_0.go) then
+		setActive(arg_3_0.go, var_3_2)
 	end
 
-	if not slot3 then
+	if not var_3_2 then
 		return
 	end
 
-	if IsNil(slot0.go) then
-		slot0:GetLoader():GetPrefab("leveluiview/Tpl_Enemy", "Tpl_Enemy", function (slot0)
-			slot0.name = "enemy_" .. uv0.attachmentId
-			uv1.go = slot0
-			uv1.tf = tf(slot0)
+	if IsNil(arg_3_0.go) then
+		arg_3_0:GetLoader():GetPrefab("leveluiview/Tpl_Enemy", "Tpl_Enemy", function(arg_4_0)
+			arg_4_0.name = "enemy_" .. var_3_0.attachmentId
+			arg_3_0.go = arg_4_0
+			arg_3_0.tf = tf(arg_4_0)
 
-			setParent(slot0, uv1.parent)
-			uv2.InitEggCellTransform(uv1)
-			uv1:OverrideCanvas()
-			uv1:ResetCanvasOrder()
-			setAnchoredPosition(uv1.tf, Vector2.zero)
-			uv2.StartEggCellView(uv1, uv3)
-			uv1.buffer:SetNotifier(uv1)
-			uv1.buffer:ExcuteAll()
-			uv1:Update()
+			setParent(arg_4_0, arg_3_0.parent)
+			var_0_1.InitEggCellTransform(arg_3_0)
+			arg_3_0:OverrideCanvas()
+			arg_3_0:ResetCanvasOrder()
+			setAnchoredPosition(arg_3_0.tf, Vector2.zero)
+			var_0_1.StartEggCellView(arg_3_0, var_3_1)
+			arg_3_0.buffer:SetNotifier(arg_3_0)
+			arg_3_0.buffer:ExcuteAll()
+			arg_3_0:Update()
 		end, "Main")
 
 		return
 	end
 
-	uv0.UpdateEggCell(slot0, slot0.chapter, slot0.info, slot0.config)
+	var_0_1.UpdateEggCell(arg_3_0, arg_3_0.chapter, arg_3_0.info, arg_3_0.config)
 
-	if slot0.viewParent:isHuntingRangeVisible() and _.any(slot0.chapter.fleets, function (slot0)
-		return slot0:getFleetType() == FleetType.Submarine and slot0:isValid() and slot0:inHuntingRange(uv0.row, uv0.column)
+	if arg_3_0.viewParent:isHuntingRangeVisible() and _.any(arg_3_0.chapter.fleets, function(arg_5_0)
+		return arg_5_0:getFleetType() == FleetType.Submarine and arg_5_0:isValid() and arg_5_0:inHuntingRange(var_3_0.row, var_3_0.column)
 	end) then
-		slot0:TweenBlink()
+		arg_3_0:TweenBlink()
 	else
-		slot0:StopTween()
+		arg_3_0:StopTween()
 	end
 end
 
-function slot2.TweenBlink(slot0)
-	slot0:StopTween()
+function var_0_2.TweenBlink(arg_6_0)
+	arg_6_0:StopTween()
 
-	slot1 = findTF(slot0.go, "icon")
-	slot2 = slot1:GetComponent("Image")
-	slot0.tweenId = LeanTween.color(tf(slot1), Color.New(1, 0.6, 0.6), 1):setFromColor(Color.white):setEase(LeanTweenType.easeInOutSine):setLoopPingPong():setOnComplete(System.Action(function ()
-		if IsNil(uv0) then
+	local var_6_0 = findTF(arg_6_0.go, "icon")
+	local var_6_1 = var_6_0:GetComponent("Image")
+
+	arg_6_0.tweenId = LeanTween.color(tf(var_6_0), Color.New(1, 0.6, 0.6), 1):setFromColor(Color.white):setEase(LeanTweenType.easeInOutSine):setLoopPingPong():setOnComplete(System.Action(function()
+		if IsNil(var_6_1) then
 			return
 		end
 
-		uv0.color = Color.white
+		var_6_1.color = Color.white
 	end)).uniqueId
 end
 
-function slot2.TweenShining(slot0, slot1)
-	slot0:StopTween()
+function var_0_2.TweenShining(arg_8_0, arg_8_1)
+	arg_8_0:StopTween()
 
-	slot2 = findTF(slot0.go, "icon")
-	slot2:GetComponent("Image").material = Material.New(pg.ShaderMgr.GetInstance():GetShader("Spine/SkeletonGraphic (Additive)"))
-	slot0.tweenId = LeanTween.value(go(slot2), 0, 1, 0.5):setEase(LeanTweenType.easeInOutSine):setLoopPingPong(slot1):setOnUpdate(System.Action_float(function (slot0)
-		uv0:SetColor("_Color", Color.Lerp(Color.black, Color.gray, slot0))
-	end)):setOnComplete(System.Action(function ()
-		if IsNil(uv0) then
+	local var_8_0 = findTF(arg_8_0.go, "icon")
+	local var_8_1 = var_8_0:GetComponent("Image")
+	local var_8_2 = pg.ShaderMgr.GetInstance():GetShader("Spine/SkeletonGraphic (Additive)")
+	local var_8_3 = Material.New(var_8_2)
+
+	var_8_1.material = var_8_3
+	arg_8_0.tweenId = LeanTween.value(go(var_8_0), 0, 1, 0.5):setEase(LeanTweenType.easeInOutSine):setLoopPingPong(arg_8_1):setOnUpdate(System.Action_float(function(arg_9_0)
+		var_8_3:SetColor("_Color", Color.Lerp(Color.black, Color.gray, arg_9_0))
+	end)):setOnComplete(System.Action(function()
+		if IsNil(var_8_1) then
 			return
 		end
 
-		uv0.material = nil
-		uv0.color = Color.white
+		var_8_1.material = nil
+		var_8_1.color = Color.white
 
-		onNextTick(function ()
-			uv0:Update()
+		onNextTick(function()
+			arg_8_0:Update()
 		end)
 	end)).uniqueId
 end
 
-function slot2.StopTween(slot0)
-	if not slot0.tweenId then
+function var_0_2.StopTween(arg_12_0)
+	if not arg_12_0.tweenId then
 		return
 	end
 
-	LeanTween.cancel(slot0.tweenId, true)
+	LeanTween.cancel(arg_12_0.tweenId, true)
 
-	slot0.tweenId = nil
+	arg_12_0.tweenId = nil
 end
 
-function slot2.Clear(slot0)
-	slot0:StopTween()
-	slot0.buffer:Clear()
+function var_0_2.Clear(arg_13_0)
+	arg_13_0:StopTween()
+	arg_13_0.buffer:Clear()
 
-	slot0.chapter = nil
+	arg_13_0.chapter = nil
 
-	uv0.Clear(slot0)
-	uv1.Clear(slot0)
+	var_0_1.Clear(arg_13_0)
+	var_0_0.Clear(arg_13_0)
 end
 
-return slot2
+return var_0_2

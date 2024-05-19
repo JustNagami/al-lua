@@ -1,42 +1,50 @@
-slot0 = class("MetaCharacterTacticsRequestCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("MetaCharacterTacticsRequestCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().id
+
 	print("63313 request tactics info")
 	pg.ConnectionMgr.GetInstance():Send(63313, {
-		ship_id = slot1:getBody().id
-	}, 63314, function (slot0)
+		ship_id = var_1_0
+	}, 63314, function(arg_2_0)
 		print("63314 requset success")
 
-		slot1 = {}
+		local var_2_0 = {}
 
-		for slot5, slot6 in ipairs(slot0.tasks or {}) do
-			if not slot1[slot6.skill_id] then
-				slot1[slot7] = {}
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.tasks or {}) do
+			local var_2_1 = iter_2_1.skill_id
+
+			if not var_2_0[var_2_1] then
+				var_2_0[var_2_1] = {}
 			end
 
-			table.insert(slot1[slot7], {
-				taskID = slot6.task_id,
-				finishCount = slot6.finish_cnt
+			table.insert(var_2_0[var_2_1], {
+				taskID = iter_2_1.task_id,
+				finishCount = iter_2_1.finish_cnt
 			})
 		end
 
-		for slot6, slot7 in ipairs(slot0.skill_exp or {}) do
-			print("skill", slot7.skill_id, slot7.exp)
+		local var_2_2 = {}
+
+		for iter_2_2, iter_2_3 in ipairs(arg_2_0.skill_exp or {}) do
+			var_2_2[iter_2_3.skill_id] = iter_2_3.exp
+
+			print("skill", iter_2_3.skill_id, iter_2_3.exp)
 		end
 
-		getProxy(MetaCharacterProxy):setMetaTacticsInfo(slot0)
-		uv0:sendNotification(GAME.TACTICS_META_INFO_REQUEST_DONE, {
-			shipID = slot0.ship_id,
-			doubleExp = slot0.double_exp,
-			normalExp = slot0.exp,
-			curSkillID = slot0.skill_id or 0,
-			switchCount = slot0.switch_cnt,
-			taskInfoTable = slot1,
-			skillExpTable = {
-				[slot7.skill_id] = slot7.exp
-			}
-		})
+		local var_2_3 = {
+			shipID = arg_2_0.ship_id,
+			doubleExp = arg_2_0.double_exp,
+			normalExp = arg_2_0.exp,
+			curSkillID = arg_2_0.skill_id or 0,
+			switchCount = arg_2_0.switch_cnt,
+			taskInfoTable = var_2_0,
+			skillExpTable = var_2_2
+		}
+
+		getProxy(MetaCharacterProxy):setMetaTacticsInfo(arg_2_0)
+		arg_1_0:sendNotification(GAME.TACTICS_META_INFO_REQUEST_DONE, var_2_3)
 	end)
 end
 
-return slot0
+return var_0_0

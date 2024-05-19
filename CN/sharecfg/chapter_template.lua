@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.chapter_template = setmetatable({
 	__name = "chapter_template",
 	all = {

@@ -1,61 +1,69 @@
-slot0 = class("SpWeaponDesignMediator", import("view.base.ContextMediator"))
-slot0.ON_COMPOSITE = "SpWeaponDesignMediator:ON_COMPOSITE"
-slot0.OPEN_EQUIPMENTDESIGN_INDEX = "SpWeaponDesignMediator:OPEN_EQUIPMENTDESIGN_INDEX"
+﻿local var_0_0 = class("SpWeaponDesignMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:BindEvent()
-	slot0.viewComponent:setItems(getProxy(BagProxy):getRawData())
+var_0_0.ON_COMPOSITE = "SpWeaponDesignMediator:ON_COMPOSITE"
+var_0_0.OPEN_EQUIPMENTDESIGN_INDEX = "SpWeaponDesignMediator:OPEN_EQUIPMENTDESIGN_INDEX"
 
-	slot1 = getProxy(EquipmentProxy)
+function var_0_0.register(arg_1_0)
+	arg_1_0:BindEvent()
+	arg_1_0.viewComponent:setItems(getProxy(BagProxy):getRawData())
 
-	_.each(SpWeapon.bindConfigTable().all, function (slot0)
-		if SpWeapon.New({
-			id = slot0
-		}):IsCraftable() then
-			table.insert(uv0, slot1)
+	local var_1_0 = getProxy(EquipmentProxy)
+	local var_1_1 = {}
+
+	_.each(SpWeapon.bindConfigTable().all, function(arg_2_0)
+		local var_2_0 = SpWeapon.New({
+			id = arg_2_0
+		})
+
+		if var_2_0:IsCraftable() then
+			table.insert(var_1_1, var_2_0)
 		end
 	end)
-	slot0.viewComponent:SetCraftList({})
-	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getRawData())
+	arg_1_0.viewComponent:SetCraftList(var_1_1)
 
-	slot5 = slot0:getFacade():retrieveMediator(EquipmentMediator.__cname):getViewComponent()
+	local var_1_2 = getProxy(PlayerProxy):getRawData()
 
-	slot0.viewComponent:SetParentTF(slot5._tf)
-	slot0.viewComponent:SetTopContainer(slot5.topPanel)
-	slot0.viewComponent:SetTopItems(slot5.topItems)
-	slot0:UpdateSpWeapons()
+	arg_1_0.viewComponent:setPlayer(var_1_2)
+
+	local var_1_3 = arg_1_0:getFacade():retrieveMediator(EquipmentMediator.__cname):getViewComponent()
+
+	arg_1_0.viewComponent:SetParentTF(var_1_3._tf)
+	arg_1_0.viewComponent:SetTopContainer(var_1_3.topPanel)
+	arg_1_0.viewComponent:SetTopItems(var_1_3.topItems)
+	arg_1_0:UpdateSpWeapons()
 end
 
-function slot0.BindEvent(slot0)
-	slot0:bind(uv0.ON_COMPOSITE, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+function var_0_0.BindEvent(arg_3_0)
+	arg_3_0:bind(var_0_0.ON_COMPOSITE, function(arg_4_0, arg_4_1)
+		arg_3_0:addSubLayers(Context.New({
 			mediator = SpWeaponUpgradeMediator,
 			viewComponent = SpWeaponUpgradeLayer,
 			data = {
-				spWeaponConfigId = slot1
+				spWeaponConfigId = arg_4_1
 			}
 		}))
 	end)
-	slot0:bind(uv0.OPEN_EQUIPMENTDESIGN_INDEX, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_3_0:bind(var_0_0.OPEN_EQUIPMENTDESIGN_INDEX, function(arg_5_0, arg_5_1)
+		arg_3_0:addSubLayers(Context.New({
 			viewComponent = CustomIndexLayer,
 			mediator = CustomIndexMediator,
-			data = slot1
+			data = arg_5_1
 		}))
 	end)
 end
 
-function slot0.UpdateSpWeapons(slot0)
-	slot1 = getProxy(BayProxy):GetSpWeaponsInShips()
+function var_0_0.UpdateSpWeapons(arg_6_0)
+	local var_6_0 = getProxy(BayProxy):GetSpWeaponsInShips()
+	local var_6_1 = _.values(getProxy(EquipmentProxy):GetSpWeapons())
 
-	for slot6, slot7 in ipairs(_.values(getProxy(EquipmentProxy):GetSpWeapons())) do
-		table.insert(slot1, slot7)
+	for iter_6_0, iter_6_1 in ipairs(var_6_1) do
+		table.insert(var_6_0, iter_6_1)
 	end
 
-	slot0.viewComponent:SetSpWeapons(slot1)
+	arg_6_0.viewComponent:SetSpWeapons(var_6_0)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_7_0)
 	return {
 		BagProxy.ITEM_UPDATED,
 		PlayerProxy.UPDATED,
@@ -65,23 +73,26 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_1:getName()
+	local var_8_1 = arg_8_1:getBody()
 
-	if slot1:getName() == BagProxy.ITEM_UPDATED then
-		slot0.viewComponent:setItems(getProxy(BagProxy):getRawData())
-	elseif slot2 == PlayerProxy.UPDATED then
-		slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getRawData())
-	elseif slot2 == GAME.COMPOSITE_SPWEAPON_DONE then
-		if getProxy(ContextProxy):getContextByMediator(EquipmentMediator):getContextByMediator(SpWeaponUpgradeMediator) then
-			slot0:sendNotification(GAME.REMOVE_LAYERS, {
-				context = slot5
+	if var_8_0 == BagProxy.ITEM_UPDATED then
+		arg_8_0.viewComponent:setItems(getProxy(BagProxy):getRawData())
+	elseif var_8_0 == PlayerProxy.UPDATED then
+		arg_8_0.viewComponent:setPlayer(getProxy(PlayerProxy):getRawData())
+	elseif var_8_0 == GAME.COMPOSITE_SPWEAPON_DONE then
+		local var_8_2 = getProxy(ContextProxy):getContextByMediator(EquipmentMediator):getContextByMediator(SpWeaponUpgradeMediator)
+
+		if var_8_2 then
+			arg_8_0:sendNotification(GAME.REMOVE_LAYERS, {
+				context = var_8_2
 			})
 		end
-	elseif slot2 == GAME.EQUIP_SPWEAPON_TO_SHIP_DONE or slot2 == EquipmentProxy.SPWEAPONS_UPDATED then
-		slot0:UpdateSpWeapons()
-		slot0.viewComponent:filter()
+	elseif var_8_0 == GAME.EQUIP_SPWEAPON_TO_SHIP_DONE or var_8_0 == EquipmentProxy.SPWEAPONS_UPDATED then
+		arg_8_0:UpdateSpWeapons()
+		arg_8_0.viewComponent:filter()
 	end
 end
 
-return slot0
+return var_0_0

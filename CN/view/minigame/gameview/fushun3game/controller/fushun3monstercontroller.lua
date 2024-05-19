@@ -1,156 +1,174 @@
-slot0 = class("Fushun3MonsterController")
+﻿local var_0_0 = class("Fushun3MonsterController")
 
-function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
-	slot0._tpl = slot1
-	slot0._parent = slot2
-	slot0._event = slot4
-	slot0._sceneTf = slot3
-	slot0.monsterDatas = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
+	arg_1_0._tpl = arg_1_1
+	arg_1_0._parent = arg_1_2
+	arg_1_0._event = arg_1_4
+	arg_1_0._sceneTf = arg_1_3
+	arg_1_0.monsterDatas = {}
 
-	for slot8 = 1, #Fushun3GameConst.monster_data do
-		table.insert(slot0.monsterDatas, Clone(Fushun3GameConst.monster_data[slot8]))
+	for iter_1_0 = 1, #Fushun3GameConst.monster_data do
+		table.insert(arg_1_0.monsterDatas, Clone(Fushun3GameConst.monster_data[iter_1_0]))
 	end
 
-	slot0.monsters = {}
-	slot0.monsterPool = {}
+	arg_1_0.monsters = {}
+	arg_1_0.monsterPool = {}
 end
 
-function slot0.setDiff(slot0, slot1)
+function var_0_0.setDiff(arg_2_0, arg_2_1)
+	return
 end
 
-function slot0.start(slot0)
-	slot0:clearMonster()
+function var_0_0.start(arg_3_0)
+	arg_3_0:clearMonster()
 end
 
-function slot0.step(slot0)
-	for slot4 = 1, #slot0.monsters do
-		if not slot0.monsters[slot4].damage then
-			slot0.monsters[slot4].rect:step()
+function var_0_0.step(arg_4_0)
+	for iter_4_0 = 1, #arg_4_0.monsters do
+		if not arg_4_0.monsters[iter_4_0].damage then
+			arg_4_0.monsters[iter_4_0].rect:step()
 		end
 	end
 
-	slot0:removeOutMonster()
+	arg_4_0:removeOutMonster()
 end
 
-function slot0.removeOutMonster(slot0)
-	for slot4 = #slot0.monsters, 1, -1 do
-		if slot0.monsters[slot4].tf.anchoredPosition.x <= math.abs(slot0._sceneTf.anchoredPosition.x) - 1920 then
-			slot0:returnMonsterToPool(table.remove(slot0.monsters, slot4))
+function var_0_0.removeOutMonster(arg_5_0)
+	for iter_5_0 = #arg_5_0.monsters, 1, -1 do
+		if arg_5_0.monsters[iter_5_0].tf.anchoredPosition.x <= math.abs(arg_5_0._sceneTf.anchoredPosition.x) - 1920 then
+			arg_5_0:returnMonsterToPool(table.remove(arg_5_0.monsters, iter_5_0))
 		end
 	end
 end
 
-function slot0.createMonster(slot0, slot1)
-	if slot0:getOrCreateMonster(slot0.monsterDatas[math.random(1, #slot0.monsterDatas)].id) then
-		slot3.damage = false
+function var_0_0.createMonster(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_0.monsterDatas[math.random(1, #arg_6_0.monsterDatas)]
+	local var_6_1 = arg_6_0:getOrCreateMonster(var_6_0.id)
 
-		setActive(slot3.tf, true)
+	if var_6_1 then
+		var_6_1.damage = false
 
-		slot3.tf.position = slot1
+		setActive(var_6_1.tf, true)
+
+		var_6_1.tf.position = arg_6_1
 	end
 end
 
-function slot0.getOrCreateMonster(slot0, slot1)
-	slot2 = nil
+function var_0_0.getOrCreateMonster(arg_7_0, arg_7_1)
+	local var_7_0
 
-	for slot6 = 1, #slot0.monsterPool do
-		if slot0.monsterPool[slot6].data.id == slot1 then
-			slot2 = table.remove(slot0.monsterPool, slot6)
+	for iter_7_0 = 1, #arg_7_0.monsterPool do
+		if arg_7_0.monsterPool[iter_7_0].data.id == arg_7_1 then
+			var_7_0 = table.remove(arg_7_0.monsterPool, iter_7_0)
 
-			table.insert(slot0.monsters, slot2)
+			table.insert(arg_7_0.monsters, var_7_0)
 
-			return slot2
+			return var_7_0
 		end
 	end
 
-	slot3 = nil
+	local var_7_1
 
-	for slot7 = 1, #slot0.monsterDatas do
-		if slot0.monsterDatas[slot7].id == slot1 then
-			slot3 = slot0.monsterDatas[slot7]
+	for iter_7_1 = 1, #arg_7_0.monsterDatas do
+		if arg_7_0.monsterDatas[iter_7_1].id == arg_7_1 then
+			var_7_1 = arg_7_0.monsterDatas[iter_7_1]
 		end
 	end
 
-	if slot3 then
-		slot5 = tf(instantiate(findTF(slot0._tpl, slot3.name)))
-		slot5.localScale = Fushun3GameConst.game_scale_v3
-		slot6 = RectCollider.New(slot5, {}, slot0._event)
+	if var_7_1 then
+		local var_7_2 = var_7_1.name
+		local var_7_3 = tf(instantiate(findTF(arg_7_0._tpl, var_7_2)))
 
-		slot6:addScript(FuShunMonsterScript.New())
+		var_7_3.localScale = Fushun3GameConst.game_scale_v3
 
-		slot6:getCollisionInfo().config.moveSpeed = math.random(Fushun3GameConst.monster_speed[1], Fushun3GameConst.monster_speed[2])
+		local var_7_4 = RectCollider.New(var_7_3, {}, arg_7_0._event)
 
-		setParent(slot5, slot0._parent)
-		GetComponent(findTF(slot5, "anim"), typeof(DftAniEvent)):SetEndEvent(function ()
-			uv0:removeMonster(uv1)
+		var_7_4:addScript(FuShunMonsterScript.New())
+
+		var_7_4:getCollisionInfo().config.moveSpeed = math.random(Fushun3GameConst.monster_speed[1], Fushun3GameConst.monster_speed[2])
+
+		local var_7_5 = GetComponent(findTF(var_7_3, "anim"), typeof(Animator))
+
+		setParent(var_7_3, arg_7_0._parent)
+
+		local var_7_6 = GetComponent(findTF(var_7_3, "collider"), typeof(BoxCollider2D))
+
+		var_7_0 = {
+			tf = var_7_3,
+			data = var_7_1,
+			rect = var_7_4,
+			animator = var_7_5,
+			collider = var_7_6
+		}
+
+		GetComponent(findTF(var_7_3, "anim"), typeof(DftAniEvent)):SetEndEvent(function()
+			arg_7_0:removeMonster(var_7_0)
 		end)
-		table.insert(slot0.monsters, {
-			tf = slot5,
-			data = slot3,
-			rect = slot6,
-			animator = GetComponent(findTF(slot5, "anim"), typeof(Animator)),
-			collider = GetComponent(findTF(slot5, "collider"), typeof(BoxCollider2D))
-		})
+		table.insert(arg_7_0.monsters, var_7_0)
 	end
 
-	return slot2
+	return var_7_0
 end
 
-function slot0.checkPlayerDamage(slot0, slot1, slot2)
-	for slot6 = 1, #slot0.monsters do
-		if slot0.monsters[slot6].tf == slot1 and slot7.damage then
-			slot2(true)
+function var_0_0.checkPlayerDamage(arg_9_0, arg_9_1, arg_9_2)
+	for iter_9_0 = 1, #arg_9_0.monsters do
+		local var_9_0 = arg_9_0.monsters[iter_9_0]
+
+		if var_9_0.tf == arg_9_1 and var_9_0.damage then
+			arg_9_2(true)
 
 			return
 		end
 	end
 
-	slot2(false)
+	arg_9_2(false)
 end
 
-function slot0.checkMonsterDamage(slot0, slot1, slot2, slot3)
-	slot4 = slot1.bounds
+function var_0_0.checkMonsterDamage(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
+	local var_10_0 = arg_10_1.bounds
 
-	for slot8 = 1, #slot0.monsters do
-		slot9 = slot0.monsters[slot8]
-		slot10 = slot9.collider.bounds
+	for iter_10_0 = 1, #arg_10_0.monsters do
+		local var_10_1 = arg_10_0.monsters[iter_10_0]
+		local var_10_2 = var_10_1.collider.bounds
 
-		if not slot9.damage and Fushun3GameConst.CheckBoxCollider(slot4.min, slot10.min, slot4.size, slot10.size) then
-			slot0:damageMonster(slot9.tf, slot3)
+		if not var_10_1.damage and Fushun3GameConst.CheckBoxCollider(var_10_0.min, var_10_2.min, var_10_0.size, var_10_2.size) then
+			arg_10_0:damageMonster(var_10_1.tf, arg_10_3)
 
-			if slot2 then
-				slot2(true)
+			if arg_10_2 then
+				arg_10_2(true)
 			end
 
 			return
 		end
 	end
 
-	if slot2 then
-		slot2(false)
+	if arg_10_2 then
+		arg_10_2(false)
 	end
 end
 
-function slot0.damageMonster(slot0, slot1, slot2, slot3)
-	for slot7 = #slot0.monsters, 1, -1 do
-		if slot0.monsters[slot7].tf == slot1 then
-			if not slot0.monsters[slot7].damage then
-				slot8.damage = true
+function var_0_0.damageMonster(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
+	for iter_11_0 = #arg_11_0.monsters, 1, -1 do
+		if arg_11_0.monsters[iter_11_0].tf == arg_11_1 then
+			local var_11_0 = arg_11_0.monsters[iter_11_0]
 
-				if slot2 == Fushun3GameEvent.power_damage_monster_call then
-					slot8.animator:SetTrigger("dmg_ex")
-				elseif slot2 == Fushun3GameEvent.shot_damage_monster_call then
-					slot8.animator:SetTrigger("dmg_la")
-				elseif slot2 == Fushun3GameEvent.kick_damage_monster_call then
-					slot8.animator:SetTrigger("dmg_jump")
-				elseif slot2 == Fushun3GameEvent.attack_damdage_monster_call then
-					slot8.animator:SetTrigger("dmg_attack")
+			if not var_11_0.damage then
+				var_11_0.damage = true
+
+				if arg_11_2 == Fushun3GameEvent.power_damage_monster_call then
+					var_11_0.animator:SetTrigger("dmg_ex")
+				elseif arg_11_2 == Fushun3GameEvent.shot_damage_monster_call then
+					var_11_0.animator:SetTrigger("dmg_la")
+				elseif arg_11_2 == Fushun3GameEvent.kick_damage_monster_call then
+					var_11_0.animator:SetTrigger("dmg_jump")
+				elseif arg_11_2 == Fushun3GameEvent.attack_damdage_monster_call then
+					var_11_0.animator:SetTrigger("dmg_attack")
 				end
 
-				slot0._event:emit(Fushun3GameEvent.add_monster_score_call)
+				arg_11_0._event:emit(Fushun3GameEvent.add_monster_score_call)
 
-				if slot3 then
-					slot3(true)
+				if arg_11_3 then
+					arg_11_3(true)
 				end
 			end
 
@@ -158,30 +176,30 @@ function slot0.damageMonster(slot0, slot1, slot2, slot3)
 		end
 	end
 
-	if slot3 then
-		slot3(false)
+	if arg_11_3 then
+		arg_11_3(false)
 	end
 end
 
-function slot0.removeMonster(slot0, slot1)
-	for slot5 = 1, #slot0.monsters do
-		if slot0.monsters[slot5] == slot1 then
-			slot0:returnMonsterToPool(table.remove(slot0.monsters, slot5))
+function var_0_0.removeMonster(arg_12_0, arg_12_1)
+	for iter_12_0 = 1, #arg_12_0.monsters do
+		if arg_12_0.monsters[iter_12_0] == arg_12_1 then
+			arg_12_0:returnMonsterToPool(table.remove(arg_12_0.monsters, iter_12_0))
 
 			return
 		end
 	end
 end
 
-function slot0.returnMonsterToPool(slot0, slot1)
-	setActive(slot1.tf, false)
-	table.insert(slot0.monsterPool, slot1)
+function var_0_0.returnMonsterToPool(arg_13_0, arg_13_1)
+	setActive(arg_13_1.tf, false)
+	table.insert(arg_13_0.monsterPool, arg_13_1)
 end
 
-function slot0.clearMonster(slot0)
-	for slot4 = #slot0.monsters, 1, -1 do
-		slot0:returnMonsterToPool(table.remove(slot0.monsters, slot4))
+function var_0_0.clearMonster(arg_14_0)
+	for iter_14_0 = #arg_14_0.monsters, 1, -1 do
+		arg_14_0:returnMonsterToPool(table.remove(arg_14_0.monsters, iter_14_0))
 	end
 end
 
-return slot0
+return var_0_0

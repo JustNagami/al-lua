@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.skill_need_exp = {
 	{
 		exp = 100,

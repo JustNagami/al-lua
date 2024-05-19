@@ -1,5 +1,6 @@
-slot0 = class("LaunchBallGameMenuUI")
-slot0.player_item = {
+﻿local var_0_0 = class("LaunchBallGameMenuUI")
+
+var_0_0.player_item = {
 	{
 		skill_1_desc = "launch_ball_hatsuduki_skill_1_desc",
 		name = "Hatsuduki",
@@ -33,241 +34,267 @@ slot0.player_item = {
 		skill_2_desc = "launch_ball_shimakaze_skill_2_desc"
 	}
 }
-slot0.skill_detail_desc = "launch_ball_skill_desc"
+var_0_0.skill_detail_desc = "launch_ball_skill_desc"
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0._tf = slot1
-	slot0._event = slot2
-	slot0.menuUI = findTF(slot0._tf, "ui/menuUI")
-	slot0.battleScrollRect = GetComponent(findTF(slot0.menuUI, "battList"), typeof(ScrollRect))
-	slot0.totalTimes = LaunchBallGameVo.total_times
-	slot0.battleItems = {}
-	slot0.dropItems = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0._tf = arg_1_1
+	arg_1_0._event = arg_1_2
+	arg_1_0.menuUI = findTF(arg_1_0._tf, "ui/menuUI")
+	arg_1_0.battleScrollRect = GetComponent(findTF(arg_1_0.menuUI, "battList"), typeof(ScrollRect))
+	arg_1_0.totalTimes = LaunchBallGameVo.total_times
+	arg_1_0.battleItems = {}
+	arg_1_0.dropItems = {}
 
-	onButton(slot0._event, findTF(slot0.menuUI, "rightPanelBg/arrowUp"), function ()
-		if uv0.battleScrollRect.normalizedPosition.y + 1 / (uv0.totalTimes - 4) > 1 then
-			slot0 = 1
+	onButton(arg_1_0._event, findTF(arg_1_0.menuUI, "rightPanelBg/arrowUp"), function()
+		local var_2_0 = arg_1_0.battleScrollRect.normalizedPosition.y + 1 / (arg_1_0.totalTimes - 4)
+
+		if var_2_0 > 1 then
+			var_2_0 = 1
 		end
 
-		scrollTo(uv0.battleScrollRect, 0, slot0)
+		scrollTo(arg_1_0.battleScrollRect, 0, var_2_0)
 	end, SFX_CANCEL)
-	onButton(slot0._event, findTF(slot0.menuUI, "rightPanelBg/arrowDown"), function ()
-		if uv0.battleScrollRect.normalizedPosition.y - 1 / (uv0.totalTimes - 4) < 0 then
-			slot0 = 0
+	onButton(arg_1_0._event, findTF(arg_1_0.menuUI, "rightPanelBg/arrowDown"), function()
+		local var_3_0 = arg_1_0.battleScrollRect.normalizedPosition.y - 1 / (arg_1_0.totalTimes - 4)
+
+		if var_3_0 < 0 then
+			var_3_0 = 0
 		end
 
-		scrollTo(uv0.battleScrollRect, 0, slot0)
+		scrollTo(arg_1_0.battleScrollRect, 0, var_3_0)
 	end, SFX_CANCEL)
-	onButton(slot0._event, findTF(slot0.menuUI, "btnBack"), function ()
-		uv0._event:emit(BeachGuardGameView.CLOSE_GAME)
+	onButton(arg_1_0._event, findTF(arg_1_0.menuUI, "btnBack"), function()
+		arg_1_0._event:emit(BeachGuardGameView.CLOSE_GAME)
 	end, SFX_CANCEL)
-	onButton(slot0._event, findTF(slot0.menuUI, "btnRule"), function ()
-		uv0._event:emit(BeachGuardGameView.SHOW_RULE)
+	onButton(arg_1_0._event, findTF(arg_1_0.menuUI, "btnRule"), function()
+		arg_1_0._event:emit(BeachGuardGameView.SHOW_RULE)
 	end, SFX_CANCEL)
 
-	slot0.btnStart = findTF(slot0.menuUI, "btnStart")
-	slot7 = SFX_CANCEL
+	arg_1_0.btnStart = findTF(arg_1_0.menuUI, "btnStart")
 
-	onButton(slot0._event, findTF(slot0.menuUI, "btnStart"), function ()
-		if uv0.playerId == nil then
+	onButton(arg_1_0._event, findTF(arg_1_0.menuUI, "btnStart"), function()
+		if arg_1_0.playerId == nil then
 			return
 		end
 
-		uv0._event:emit(BeachGuardGameView.READY_START)
-	end, slot7)
+		arg_1_0._event:emit(BeachGuardGameView.READY_START)
+	end, SFX_CANCEL)
 
-	for slot7 = 1, 7 do
-		slot8 = tf(instantiate(findTF(slot0.menuUI, "tplBattleItem")))
-		slot8.name = "battleItem_" .. slot7
+	local var_1_0 = findTF(arg_1_0.menuUI, "tplBattleItem")
 
-		setParent(slot8, findTF(slot0.menuUI, "battList/Viewport/Content"))
+	for iter_1_0 = 1, 7 do
+		local var_1_1 = tf(instantiate(var_1_0))
 
-		slot9 = slot7
-		slot10 = findTF(slot8, "icon")
+		var_1_1.name = "battleItem_" .. iter_1_0
 
-		onButton(slot0._event, slot10, function ()
+		setParent(var_1_1, findTF(arg_1_0.menuUI, "battList/Viewport/Content"))
+
+		local var_1_2 = iter_1_0
+		local var_1_3 = findTF(var_1_1, "icon")
+
+		onButton(arg_1_0._event, var_1_3, function()
+			return
 		end, SFX_PANEL)
-		table.insert(slot0.dropItems, slot10)
-		setActive(slot8, true)
-		table.insert(slot0.battleItems, slot8)
+		table.insert(arg_1_0.dropItems, var_1_3)
+		setActive(var_1_1, true)
+		table.insert(arg_1_0.battleItems, var_1_1)
 	end
 
-	slot0.players = {}
+	arg_1_0.players = {}
 
-	for slot7 = 1, #uv0.player_item do
-		slot8 = uv0.player_item[slot7]
-		slot9 = findTF(slot0.menuUI, "player/" .. slot8.name)
-		slot11 = false
+	for iter_1_1 = 1, #var_0_0.player_item do
+		local var_1_4 = var_0_0.player_item[iter_1_1]
+		local var_1_5 = findTF(arg_1_0.menuUI, "player/" .. var_1_4.name)
+		local var_1_6 = LaunchBallActivityMgr.GetPlayerZhuanshuIndex(var_1_4.id)
+		local var_1_7 = false
 
-		setActive(findTF(slot9, "ad/mask"), not ((not LaunchBallActivityMgr.GetPlayerZhuanshuIndex(slot8.id) or LaunchBallActivityMgr.CheckZhuanShuAble(ActivityConst.MINIGAME_ZUMA, slot10)) and true))
-		setScrollText(findTF(slot9, "ad/skillPanel/skill1/text"), i18n(slot8.skill_1))
-		setScrollText(findTF(slot9, "ad/skillPanel/skill2/text"), i18n(slot8.skill_2))
-		setText(findTF(slot9, "ad/skillPanel/detail/img"), i18n(uv0.skill_detail_desc))
-		onButton(slot0._event, findTF(slot9, "ad/click"), function ()
-			if not uv0 then
+		if var_1_6 then
+			var_1_7 = LaunchBallActivityMgr.CheckZhuanShuAble(ActivityConst.MINIGAME_ZUMA, var_1_6)
+		else
+			var_1_7 = true
+		end
+
+		setActive(findTF(var_1_5, "ad/mask"), not var_1_7)
+		setScrollText(findTF(var_1_5, "ad/skillPanel/skill1/text"), i18n(var_1_4.skill_1))
+		setScrollText(findTF(var_1_5, "ad/skillPanel/skill2/text"), i18n(var_1_4.skill_2))
+		setText(findTF(var_1_5, "ad/skillPanel/detail/img"), i18n(var_0_0.skill_detail_desc))
+
+		local var_1_8 = GetComponent(findTF(var_1_5, "ad/icon"), typeof(Animator))
+
+		onButton(arg_1_0._event, findTF(var_1_5, "ad/click"), function()
+			if not var_1_7 then
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.ZUMA_PT_SHOP)
 
 				return
 			end
 
-			if uv1.playerId == uv2.id then
-				uv1:selectPlayer(nil)
+			if arg_1_0.playerId == var_1_4.id then
+				arg_1_0:selectPlayer(nil)
 			else
-				uv1:selectPlayer(uv2.id)
+				arg_1_0:selectPlayer(var_1_4.id)
 			end
 		end, SFX_CONFIRM)
-		onButton(slot0._event, findTF(slot9, "ad/skillPanel"), function ()
-			uv0:showSkillPanel(uv1)
-			setActive(uv0.skillDetailPanel, true)
+		onButton(arg_1_0._event, findTF(var_1_5, "ad/skillPanel"), function()
+			arg_1_0:showSkillPanel(var_1_4)
+			setActive(arg_1_0.skillDetailPanel, true)
 		end, SFX_CONFIRM)
-		table.insert(slot0.players, {
-			tf = slot9,
-			data = slot8,
-			anim = GetComponent(findTF(slot9, "ad/icon"), typeof(Animator))
+		table.insert(arg_1_0.players, {
+			tf = var_1_5,
+			data = var_1_4,
+			anim = var_1_8
 		})
 	end
 
-	slot0.skillDetailPanel = findTF(slot0.menuUI, "skillDetail")
+	arg_1_0.skillDetailPanel = findTF(arg_1_0.menuUI, "skillDetail")
 
-	setActive(slot0.skillDetailPanel, false)
-	onButton(slot0._event, findTF(slot0.skillDetailPanel, "ad"), function ()
-		setActive(uv0.skillDetailPanel, false)
+	setActive(arg_1_0.skillDetailPanel, false)
+	onButton(arg_1_0._event, findTF(arg_1_0.skillDetailPanel, "ad"), function()
+		setActive(arg_1_0.skillDetailPanel, false)
 	end, SFX_CANCEL)
-	onButton(slot0._event, findTF(slot0.skillDetailPanel, "ad/btnOk"), function ()
-		setActive(uv0.skillDetailPanel, false)
+	onButton(arg_1_0._event, findTF(arg_1_0.skillDetailPanel, "ad/btnOk"), function()
+		setActive(arg_1_0.skillDetailPanel, false)
 	end, SFX_CANCEL)
 
-	slot0.selectMask = findTF(slot0.menuUI, "selectMask")
+	arg_1_0.selectMask = findTF(arg_1_0.menuUI, "selectMask")
 
-	setText(findTF(slot0.menuUI, "select"), i18n(LaunchBallGameVo.launchball_minigame_select))
-	setText(findTF(slot0.menuUI, "selectMask/unSelect"), i18n(LaunchBallGameVo.launchball_minigame_un_select))
-	slot0:selectPlayer(nil)
+	setText(findTF(arg_1_0.menuUI, "select"), i18n(LaunchBallGameVo.launchball_minigame_select))
+	setText(findTF(arg_1_0.menuUI, "selectMask/unSelect"), i18n(LaunchBallGameVo.launchball_minigame_un_select))
+	arg_1_0:selectPlayer(nil)
 end
 
-function slot0.selectPlayer(slot0, slot1)
-	for slot5 = 1, #slot0.players do
-		if slot0.players[slot5].data.id == slot1 then
-			setActive(findTF(slot0.players[slot5].tf, "ad/select"), true)
-			slot0.players[slot5].anim:Play("Attack")
+function var_0_0.selectPlayer(arg_12_0, arg_12_1)
+	for iter_12_0 = 1, #arg_12_0.players do
+		if arg_12_0.players[iter_12_0].data.id == arg_12_1 then
+			setActive(findTF(arg_12_0.players[iter_12_0].tf, "ad/select"), true)
+			arg_12_0.players[iter_12_0].anim:Play("Attack")
 		else
-			setActive(findTF(slot0.players[slot5].tf, "ad/select"), false)
-			slot0.players[slot5].anim:Play("Idle")
+			setActive(findTF(arg_12_0.players[iter_12_0].tf, "ad/select"), false)
+			arg_12_0.players[iter_12_0].anim:Play("Idle")
 		end
 	end
 
-	slot0.playerId = slot1
+	arg_12_0.playerId = arg_12_1
 
-	LaunchBallGameVo.SetPlayer(slot0.playerId)
+	LaunchBallGameVo.SetPlayer(arg_12_0.playerId)
 
-	if slot0.playerId == nil then
-		setActive(slot0.btnStart, false)
-		setActive(slot0.selectMask, false)
-		setActive(findTF(slot0.menuUI, "select"), true)
+	if arg_12_0.playerId == nil then
+		setActive(arg_12_0.btnStart, false)
+		setActive(arg_12_0.selectMask, false)
+		setActive(findTF(arg_12_0.menuUI, "select"), true)
 	else
-		setActive(slot0.btnStart, true)
-		setActive(slot0.selectMask, true)
-		setActive(findTF(slot0.menuUI, "select"), false)
+		setActive(arg_12_0.btnStart, true)
+		setActive(arg_12_0.selectMask, true)
+		setActive(findTF(arg_12_0.menuUI, "select"), false)
 	end
 end
 
-function slot0.showSkillPanel(slot0, slot1)
-	slot4 = i18n(slot1.skill_2)
-	slot5 = i18n(slot1.skill_2_desc)
+function var_0_0.showSkillPanel(arg_13_0, arg_13_1)
+	local var_13_0 = i18n(arg_13_1.skill_1)
+	local var_13_1 = i18n(arg_13_1.skill_1_desc)
+	local var_13_2 = i18n(arg_13_1.skill_2)
+	local var_13_3 = i18n(arg_13_1.skill_2_desc)
 
-	if i18n(slot1.skill_1) then
-		setText(findTF(slot0.skillDetailPanel, "ad/skill1Bg/skill1Name"), slot2)
-		setText(findTF(slot0.skillDetailPanel, "ad/skill1Desc"), i18n(slot1.skill_1_desc))
-		setActive(findTF(slot0.skillDetailPanel, "ad/skill1Desc"), true)
-		setActive(findTF(slot0.skillDetailPanel, "ad/skill1Bg"), true)
+	if var_13_0 then
+		setText(findTF(arg_13_0.skillDetailPanel, "ad/skill1Bg/skill1Name"), var_13_0)
+		setText(findTF(arg_13_0.skillDetailPanel, "ad/skill1Desc"), var_13_1)
+		setActive(findTF(arg_13_0.skillDetailPanel, "ad/skill1Desc"), true)
+		setActive(findTF(arg_13_0.skillDetailPanel, "ad/skill1Bg"), true)
 	else
-		setActive(findTF(slot0.skillDetailPanel, "ad/skill1Desc"), false)
-		setActive(findTF(slot0.skillDetailPanel, "ad/skill1Bg"), false)
+		setActive(findTF(arg_13_0.skillDetailPanel, "ad/skill1Desc"), false)
+		setActive(findTF(arg_13_0.skillDetailPanel, "ad/skill1Bg"), false)
 	end
 
-	if slot4 then
-		setText(findTF(slot0.skillDetailPanel, "ad/skill2Bg/skill2Name"), slot4)
-		setText(findTF(slot0.skillDetailPanel, "ad/skill2Desc"), slot5)
-		setActive(findTF(slot0.skillDetailPanel, "ad/skill2Desc"), true)
-		setActive(findTF(slot0.skillDetailPanel, "ad/skill2Bg"), true)
+	if var_13_2 then
+		setText(findTF(arg_13_0.skillDetailPanel, "ad/skill2Bg/skill2Name"), var_13_2)
+		setText(findTF(arg_13_0.skillDetailPanel, "ad/skill2Desc"), var_13_3)
+		setActive(findTF(arg_13_0.skillDetailPanel, "ad/skill2Desc"), true)
+		setActive(findTF(arg_13_0.skillDetailPanel, "ad/skill2Bg"), true)
 	else
-		setActive(findTF(slot0.skillDetailPanel, "ad/skill2Desc"), false)
-		setActive(findTF(slot0.skillDetailPanel, "ad/skill2Bg"), false)
+		setActive(findTF(arg_13_0.skillDetailPanel, "ad/skill2Desc"), false)
+		setActive(findTF(arg_13_0.skillDetailPanel, "ad/skill2Bg"), false)
 	end
 end
 
-function slot0.show(slot0, slot1)
-	setActive(slot0.menuUI, slot1)
+function var_0_0.show(arg_14_0, arg_14_1)
+	setActive(arg_14_0.menuUI, arg_14_1)
 end
 
-function slot0.update(slot0, slot1)
-	slot0.mgHubData = slot1
-	slot2 = slot0:getGameUsedTimes(slot1)
-	slot3 = slot0:getGameTimes(slot1)
+function var_0_0.update(arg_15_0, arg_15_1)
+	arg_15_0.mgHubData = arg_15_1
 
-	for slot7 = 1, #slot0.battleItems do
-		setActive(findTF(slot0.battleItems[slot7], "state_open"), false)
-		setActive(findTF(slot0.battleItems[slot7], "state_closed"), false)
-		setActive(findTF(slot0.battleItems[slot7], "state_clear"), false)
-		setActive(findTF(slot0.battleItems[slot7], "state_current"), false)
+	local var_15_0 = arg_15_0:getGameUsedTimes(arg_15_1)
+	local var_15_1 = arg_15_0:getGameTimes(arg_15_1)
 
-		if slot7 <= slot2 then
-			SetParent(slot0.dropItems[slot7], findTF(slot0.battleItems[slot7], "state_clear/icon"))
-			setActive(slot0.dropItems[slot7], true)
-			setActive(findTF(slot0.battleItems[slot7], "state_clear"), true)
-		elseif slot7 == slot2 + 1 and slot3 >= 1 then
-			setActive(findTF(slot0.battleItems[slot7], "state_current"), true)
-			SetParent(slot0.dropItems[slot7], findTF(slot0.battleItems[slot7], "state_current/icon"))
-			setActive(slot0.dropItems[slot7], true)
-		elseif slot2 < slot7 and slot7 <= slot2 + slot3 then
-			setActive(findTF(slot0.battleItems[slot7], "state_open"), true)
-			SetParent(slot0.dropItems[slot7], findTF(slot0.battleItems[slot7], "state_open/icon"))
-			setActive(slot0.dropItems[slot7], true)
+	for iter_15_0 = 1, #arg_15_0.battleItems do
+		setActive(findTF(arg_15_0.battleItems[iter_15_0], "state_open"), false)
+		setActive(findTF(arg_15_0.battleItems[iter_15_0], "state_closed"), false)
+		setActive(findTF(arg_15_0.battleItems[iter_15_0], "state_clear"), false)
+		setActive(findTF(arg_15_0.battleItems[iter_15_0], "state_current"), false)
+
+		if iter_15_0 <= var_15_0 then
+			SetParent(arg_15_0.dropItems[iter_15_0], findTF(arg_15_0.battleItems[iter_15_0], "state_clear/icon"))
+			setActive(arg_15_0.dropItems[iter_15_0], true)
+			setActive(findTF(arg_15_0.battleItems[iter_15_0], "state_clear"), true)
+		elseif iter_15_0 == var_15_0 + 1 and var_15_1 >= 1 then
+			setActive(findTF(arg_15_0.battleItems[iter_15_0], "state_current"), true)
+			SetParent(arg_15_0.dropItems[iter_15_0], findTF(arg_15_0.battleItems[iter_15_0], "state_current/icon"))
+			setActive(arg_15_0.dropItems[iter_15_0], true)
+		elseif var_15_0 < iter_15_0 and iter_15_0 <= var_15_0 + var_15_1 then
+			setActive(findTF(arg_15_0.battleItems[iter_15_0], "state_open"), true)
+			SetParent(arg_15_0.dropItems[iter_15_0], findTF(arg_15_0.battleItems[iter_15_0], "state_open/icon"))
+			setActive(arg_15_0.dropItems[iter_15_0], true)
 		else
-			setActive(findTF(slot0.battleItems[slot7], "state_closed"), true)
-			SetParent(slot0.dropItems[slot7], findTF(slot0.battleItems[slot7], "state_closed/icon"))
-			setActive(slot0.dropItems[slot7], true)
+			setActive(findTF(arg_15_0.battleItems[iter_15_0], "state_closed"), true)
+			SetParent(arg_15_0.dropItems[iter_15_0], findTF(arg_15_0.battleItems[iter_15_0], "state_closed/icon"))
+			setActive(arg_15_0.dropItems[iter_15_0], true)
 		end
 	end
 
-	if 1 - (slot2 - 3 < 0 and 0 or slot2 - 3) / (slot0.totalTimes - 4) > 1 then
-		slot5 = 1
+	local var_15_2 = 1 - (var_15_0 - 3 < 0 and 0 or var_15_0 - 3) / (arg_15_0.totalTimes - 4)
+
+	if var_15_2 > 1 then
+		var_15_2 = 1
 	end
 
-	scrollTo(slot0.battleScrollRect, 0, slot5)
-	setActive(findTF(slot0.menuUI, "btnStart/tip"), slot3 > 0)
+	scrollTo(arg_15_0.battleScrollRect, 0, var_15_2)
+	setActive(findTF(arg_15_0.menuUI, "btnStart/tip"), var_15_1 > 0)
 end
 
-function slot0.CheckGet(slot0)
-	setActive(findTF(slot0.menuUI, "got"), false)
+function var_0_0.CheckGet(arg_16_0)
+	local var_16_0 = arg_16_0.mgHubData
 
-	if slot0:getUltimate(slot0.mgHubData) and slot2 ~= 0 then
-		setActive(findTF(slot0.menuUI, "got"), true)
+	setActive(findTF(arg_16_0.menuUI, "got"), false)
+
+	local var_16_1 = arg_16_0:getUltimate(var_16_0)
+
+	if var_16_1 and var_16_1 ~= 0 then
+		setActive(findTF(arg_16_0.menuUI, "got"), true)
 	end
 
-	if slot2 == 0 then
-		if slot0:getGameUsedTimes(slot1) < LaunchBallGameVo.total_times then
+	if var_16_1 == 0 then
+		if LaunchBallGameVo.total_times > arg_16_0:getGameUsedTimes(var_16_0) then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = slot1.id,
+			hubid = var_16_0.id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
-		setActive(findTF(slot0.menuUI, "got"), true)
+		setActive(findTF(arg_16_0.menuUI, "got"), true)
 	end
 end
 
-function slot0.getGameTimes(slot0, slot1)
-	return slot1.count
+function var_0_0.getGameTimes(arg_17_0, arg_17_1)
+	return arg_17_1.count
 end
 
-function slot0.getGameUsedTimes(slot0, slot1)
-	return slot1.usedtime
+function var_0_0.getGameUsedTimes(arg_18_0, arg_18_1)
+	return arg_18_1.usedtime
 end
 
-function slot0.getUltimate(slot0, slot1)
-	return slot1.ultimate
+function var_0_0.getUltimate(arg_19_0, arg_19_1)
+	return arg_19_1.ultimate
 end
 
-return slot0
+return var_0_0

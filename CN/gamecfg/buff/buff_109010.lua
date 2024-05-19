@@ -1,4 +1,18 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBulletHit"
+			},
+			arg_list = {
+				skill_id = 109011,
+				index = {
+					109
+				}
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -18,19 +32,5 @@ return {
 	stack = 1,
 	id = 109010,
 	icon = 109010,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBulletHit"
-			},
-			arg_list = {
-				skill_id = 109011,
-				index = {
-					109
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

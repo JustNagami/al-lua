@@ -1,38 +1,42 @@
-slot0 = class("GuildActiveEventCommand", import(".GuildEventBaseCommand"))
+﻿local var_0_0 = class("GuildActiveEventCommand", import(".GuildEventBaseCommand"))
 
-function slot0.execute(slot0, slot1)
-	slot3 = getProxy(GuildProxy)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(GuildProxy)
+	local var_1_2 = var_1_0.eventId
 
-	if not slot0:ExistEvent(slot1:getBody().eventId) then
+	if not arg_1_0:ExistEvent(var_1_2) then
 		return
 	end
 
-	if not slot0:NotExistActiveEvent() then
+	if not arg_1_0:NotExistActiveEvent() then
 		return
 	end
 
-	if not slot0:IsAnim() then
+	if not arg_1_0:IsAnim() then
 		return
 	end
 
-	slot6 = slot3:getData():GetEventById(slot4)
+	local var_1_3 = var_1_1:getData()
+	local var_1_4 = var_1_3:GetEventById(var_1_2)
+	local var_1_5 = var_1_4:GetConsume()
 
-	if not slot0:CheckCapital(slot6, slot6:GetConsume()) then
+	if not arg_1_0:CheckCapital(var_1_4, var_1_5) then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(61001, {
-		chapter_id = slot4
-	}, 61002, function (slot0)
-		if slot0.result == 0 then
-			uv0:IncActiveEventCnt()
-			uv0:consumeCapital(uv1)
-			uv2:updateGuild(uv0)
-			uv3:sendNotification(GAME.GUILD_ACTIVE_EVENT_DONE)
+		chapter_id = var_1_2
+	}, 61002, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			var_1_3:IncActiveEventCnt()
+			var_1_3:consumeCapital(var_1_5)
+			var_1_1:updateGuild(var_1_3)
+			arg_1_0:sendNotification(GAME.GUILD_ACTIVE_EVENT_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

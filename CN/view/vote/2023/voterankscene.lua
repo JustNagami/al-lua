@@ -1,16 +1,16 @@
-slot0 = class("VoteRankScene", import("..VoteScene"))
+﻿local var_0_0 = class("VoteRankScene", import("..VoteScene"))
 
-function slot0.init(slot0)
-	uv0.super.init(slot0)
-	setActive(slot0:findTF("blur_panel/adapt/top/title_rank"), true)
-	setActive(slot0:findTF("blur_panel/adapt/top/title"), false)
-	setActive(slot0:findTF("main/right_panel/filter_bg"), false)
-	setActive(slot0:findTF("main/right_panel/title/help"), false)
-	setActive(slot0:findTF("main/right_panel/title/schedule"), false)
-	setActive(slot0:findTF("main/right_panel/title/Text"), false)
+function var_0_0.init(arg_1_0)
+	var_0_0.super.init(arg_1_0)
+	setActive(arg_1_0:findTF("blur_panel/adapt/top/title_rank"), true)
+	setActive(arg_1_0:findTF("blur_panel/adapt/top/title"), false)
+	setActive(arg_1_0:findTF("main/right_panel/filter_bg"), false)
+	setActive(arg_1_0:findTF("main/right_panel/title/help"), false)
+	setActive(arg_1_0:findTF("main/right_panel/title/schedule"), false)
+	setActive(arg_1_0:findTF("main/right_panel/title/Text"), false)
 end
 
-function slot0.GetPageMap(slot0)
+function var_0_0.GetPageMap(arg_2_0)
 	return {
 		[VoteConst.RACE_TYPE_PRE] = {
 			VotePreRaceShipPage,
@@ -39,15 +39,19 @@ function slot0.GetPageMap(slot0)
 	}
 end
 
-function slot0.initShips(slot0)
-	slot0.displays = {}
-	slot2 = getInputText(slot0.search)
+function var_0_0.initShips(arg_3_0)
+	arg_3_0.displays = {}
 
-	for slot6, slot7 in ipairs(slot0.contextData.voteGroup:GetRankList()) do
-		table.insert(slot0.displays, slot7)
+	local var_3_0 = arg_3_0.contextData.voteGroup:GetRankList()
+	local var_3_1 = getInputText(arg_3_0.search)
+
+	for iter_3_0, iter_3_1 in ipairs(var_3_0) do
+		table.insert(arg_3_0.displays, iter_3_1)
 	end
 
-	slot0.shipsPage:ExecuteAction("Update", slot0.contextData.voteGroup, slot0.displays, slot0:GetVotes())
+	local var_3_2 = arg_3_0:GetVotes()
+
+	arg_3_0.shipsPage:ExecuteAction("Update", arg_3_0.contextData.voteGroup, arg_3_0.displays, var_3_2)
 end
 
-return slot0
+return var_0_0

@@ -1,34 +1,35 @@
-slot0 = class("BuildShipRemindMediator", import("...base.ContextMediator"))
-slot0.SHOW_NEW_SHIP = "BuildShipRemindMediator.SHOW_NEW_SHIP"
-slot0.ON_LOCK = "BuildShipRemindMediator.ON_LOCK"
+﻿local var_0_0 = class("BuildShipRemindMediator", import("...base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.SHOW_NEW_SHIP, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+var_0_0.SHOW_NEW_SHIP = "BuildShipRemindMediator.SHOW_NEW_SHIP"
+var_0_0.ON_LOCK = "BuildShipRemindMediator.ON_LOCK"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.SHOW_NEW_SHIP, function(arg_2_0, arg_2_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = NewShipMediator,
 			viewComponent = NewShipLayer,
 			data = {
-				ship = slot1
+				ship = arg_2_1
 			}
 		}))
 	end)
-	slot0:bind(uv0.ON_LOCK, function (slot0, slot1, slot2, slot3)
-		uv0:sendNotification(GAME.UPDATE_LOCK, {
-			ship_id_list = slot1,
-			is_locked = slot2,
-			callback = slot3
+	arg_1_0:bind(var_0_0.ON_LOCK, function(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+		arg_1_0:sendNotification(GAME.UPDATE_LOCK, {
+			ship_id_list = arg_3_1,
+			is_locked = arg_3_2,
+			callback = arg_3_3
 		})
 	end)
-	slot0.viewComponent:setShips(slot0.contextData.ships)
+	arg_1_0.viewComponent:setShips(arg_1_0.contextData.ships)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_4_0)
 	return {}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot2 = slot1:getName()
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
 end
 
-return slot0
+return var_0_0

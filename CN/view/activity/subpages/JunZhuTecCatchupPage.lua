@@ -1,44 +1,50 @@
-slot0 = class("JunZhuTecCatchupPage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("JunZhuTecCatchupPage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.itemTF = slot0:findTF("Award", slot0.bg)
-	slot0.sliderTF = slot0:findTF("Slider", slot0.bg)
-	slot0.progressText = slot0:findTF("Progress", slot0.bg)
-	slot0.goBtn = slot0:findTF("GoBtn", slot0.bg)
-	slot0.finishBtn = slot0:findTF("FinishBtn", slot0.bg)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.itemTF = arg_1_0:findTF("Award", arg_1_0.bg)
+	arg_1_0.sliderTF = arg_1_0:findTF("Slider", arg_1_0.bg)
+	arg_1_0.progressText = arg_1_0:findTF("Progress", arg_1_0.bg)
+	arg_1_0.goBtn = arg_1_0:findTF("GoBtn", arg_1_0.bg)
+	arg_1_0.finishBtn = arg_1_0:findTF("FinishBtn", arg_1_0.bg)
 end
 
-function slot0.OnDataSetting(slot0)
-	slot0.curCount = slot0.activity.data1
-	slot0.maxCount = pg.activity_event_blueprint_catchup[slot0.activity:getConfig("config_id")].obtain_max
-	slot0.itemID = slot0.activity:getConfig("config_client").itemid
+function var_0_0.OnDataSetting(arg_2_0)
+	arg_2_0.curCount = arg_2_0.activity.data1
+
+	local var_2_0 = arg_2_0.activity:getConfig("config_id")
+
+	arg_2_0.maxCount = pg.activity_event_blueprint_catchup[var_2_0].obtain_max
+	arg_2_0.itemID = arg_2_0.activity:getConfig("config_client").itemid
 end
 
-function slot0.OnFirstFlush(slot0)
-	updateDrop(slot0.itemTF, {
+function var_0_0.OnFirstFlush(arg_3_0)
+	local var_3_0 = {
 		count = 1,
 		type = DROP_TYPE_ITEM,
-		id = slot0.itemID
-	})
-	onButton(slot0, slot0.itemTF, function ()
-		uv0:emit(BaseUI.ON_DROP, uv1)
+		id = arg_3_0.itemID
+	}
+
+	updateDrop(arg_3_0.itemTF, var_3_0)
+	onButton(arg_3_0, arg_3_0.itemTF, function()
+		arg_3_0:emit(BaseUI.ON_DROP, var_3_0)
 	end, SFX_PANEL)
-	setSlider(slot0.sliderTF, 0, slot0.maxCount, slot0.curCount)
-	setText(slot0.progressText, slot0.curCount .. "/" .. slot0.maxCount)
-	onButton(slot0, slot0.goBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TECHNOLOGY)
+	setSlider(arg_3_0.sliderTF, 0, arg_3_0.maxCount, arg_3_0.curCount)
+	setText(arg_3_0.progressText, arg_3_0.curCount .. "/" .. arg_3_0.maxCount)
+	onButton(arg_3_0, arg_3_0.goBtn, function()
+		arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TECHNOLOGY)
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot1 = slot0.maxCount <= slot0.curCount
+function var_0_0.OnUpdateFlush(arg_6_0)
+	local var_6_0 = arg_6_0.curCount >= arg_6_0.maxCount
 
-	setActive(slot0.goBtn, not slot1)
-	setActive(slot0.finishBtn, slot1)
+	setActive(arg_6_0.goBtn, not var_6_0)
+	setActive(arg_6_0.finishBtn, var_6_0)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_7_0)
+	return
 end
 
-return slot0
+return var_0_0

@@ -1,183 +1,214 @@
-slot0 = class("HoloLiveLinkLinkSelectScene", import("view.base.BaseUI"))
-slot0.HOLOLIVE_LINKGAME_HUB_ID = 3
-slot0.HOLOLIVE_LINKGAME_ID = 7
+﻿local var_0_0 = class("HoloLiveLinkLinkSelectScene", import("view.base.BaseUI"))
 
-function slot0.getUIName(slot0)
+var_0_0.HOLOLIVE_LINKGAME_HUB_ID = 3
+var_0_0.HOLOLIVE_LINKGAME_ID = 7
+
+function var_0_0.getUIName(arg_1_0)
 	return "HoloLiveLinkGameSelectUI"
 end
 
-function slot0.init(slot0)
-	slot0:initData()
-	slot0:findUI()
-	slot0:initUI()
-	slot0:addListener()
+function var_0_0.init(arg_2_0)
+	arg_2_0:initData()
+	arg_2_0:findUI()
+	arg_2_0:initUI()
+	arg_2_0:addListener()
 end
 
-function slot0.didEnter(slot0)
-	slot0:updateProgressBar()
-	slot0:updateAwardPanel()
-	slot0:updateEntranceList()
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0:updateProgressBar()
+	arg_3_0:updateAwardPanel()
+	arg_3_0:updateEntranceList()
 end
 
-function slot0.willExit(slot0)
+function var_0_0.willExit(arg_4_0)
+	return
 end
 
-function slot0.initData(slot0)
-	slot0.lightPointTFList = {}
-	slot0.lightLineTFList = {}
-	slot0.entranceTFList = {}
+function var_0_0.initData(arg_5_0)
+	arg_5_0.lightPointTFList = {}
+	arg_5_0.lightLineTFList = {}
+	arg_5_0.entranceTFList = {}
 
-	slot0:updateData()
+	arg_5_0:updateData()
 end
 
-function slot0.findUI(slot0)
-	slot0.forNotchPanel = slot0:findTF("ForNotchPanel")
-	slot0.backBtn = slot0:findTF("BackBtn", slot0.forNotchPanel)
-	slot0.helpBtn = slot0:findTF("HelpBtn", slot0.forNotchPanel)
-	slot0.awardMask = slot0:findTF("AwardImg/Mask", slot0.forNotchPanel)
-	slot0.progressText = slot0:findTF("AwardImg/ProgressText", slot0.forNotchPanel)
-	slot0.getAwardBtn = slot0:findTF("AwardImg/GetBtn", slot0.forNotchPanel)
-	slot0.gotAwardBtn = slot0:findTF("AwardImg/GotBtn", slot0.forNotchPanel)
-	slot0.progressPanel = slot0:findTF("Progress", slot0.forNotchPanel)
-	slot0.lightPointContainer = slot0:findTF("Light", slot0.progressPanel)
-	slot0.lightLineContainer = slot0:findTF("LightLine", slot0.progressPanel)
-	slot0.entranceContainer = slot0:findTF("EntranceContainer")
+function var_0_0.findUI(arg_6_0)
+	arg_6_0.forNotchPanel = arg_6_0:findTF("ForNotchPanel")
+	arg_6_0.backBtn = arg_6_0:findTF("BackBtn", arg_6_0.forNotchPanel)
+	arg_6_0.helpBtn = arg_6_0:findTF("HelpBtn", arg_6_0.forNotchPanel)
+	arg_6_0.awardMask = arg_6_0:findTF("AwardImg/Mask", arg_6_0.forNotchPanel)
+	arg_6_0.progressText = arg_6_0:findTF("AwardImg/ProgressText", arg_6_0.forNotchPanel)
+	arg_6_0.getAwardBtn = arg_6_0:findTF("AwardImg/GetBtn", arg_6_0.forNotchPanel)
+	arg_6_0.gotAwardBtn = arg_6_0:findTF("AwardImg/GotBtn", arg_6_0.forNotchPanel)
+	arg_6_0.progressPanel = arg_6_0:findTF("Progress", arg_6_0.forNotchPanel)
+	arg_6_0.lightPointContainer = arg_6_0:findTF("Light", arg_6_0.progressPanel)
+	arg_6_0.lightLineContainer = arg_6_0:findTF("LightLine", arg_6_0.progressPanel)
+	arg_6_0.entranceContainer = arg_6_0:findTF("EntranceContainer")
 end
 
-function slot0.initUI(slot0)
-	setActive(slot0.getAwardBtn, false)
-	setActive(slot0.gotAwardBtn, false)
-	eachChild(slot0.lightPointContainer, function (slot0)
-		table.insert(uv0.lightPointTFList, 1, slot0)
-		setActive(slot0, false)
-		setActive(uv0:findTF("Point", slot0), false)
+function var_0_0.initUI(arg_7_0)
+	setActive(arg_7_0.getAwardBtn, false)
+	setActive(arg_7_0.gotAwardBtn, false)
+	eachChild(arg_7_0.lightPointContainer, function(arg_8_0)
+		table.insert(arg_7_0.lightPointTFList, 1, arg_8_0)
+
+		local var_8_0 = arg_7_0:findTF("Point", arg_8_0)
+
+		setActive(arg_8_0, false)
+		setActive(var_8_0, false)
 	end)
-	eachChild(slot0.lightLineContainer, function (slot0)
-		table.insert(uv0.lightLineTFList, 1, slot0)
-		setActive(slot0, false)
+	eachChild(arg_7_0.lightLineContainer, function(arg_9_0)
+		table.insert(arg_7_0.lightLineTFList, 1, arg_9_0)
+		setActive(arg_9_0, false)
 	end)
 
-	for slot4 = 0, 7 do
-		slot5 = slot0.entranceContainer:GetChild(slot4)
+	for iter_7_0 = 0, 7 do
+		local var_7_0 = arg_7_0.entranceContainer:GetChild(iter_7_0)
 
-		table.insert(slot0.entranceTFList, slot5)
-		setActive(slot0:findTF("Mask", slot5), true)
-		setActive(slot0:findTF("GotImg", slot5), false)
-		setActive(slot0:findTF("LockText", slot5), true)
+		table.insert(arg_7_0.entranceTFList, var_7_0)
+
+		local var_7_1 = arg_7_0:findTF("Mask", var_7_0)
+		local var_7_2 = arg_7_0:findTF("GotImg", var_7_0)
+		local var_7_3 = arg_7_0:findTF("LockText", var_7_0)
+
+		setActive(var_7_1, true)
+		setActive(var_7_2, false)
+		setActive(var_7_3, true)
 	end
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:closeView()
+function var_0_0.addListener(arg_10_0)
+	onButton(arg_10_0, arg_10_0.backBtn, function()
+		arg_10_0:closeView()
 	end, SFX_CANCEL)
-
-	function slot4()
+	onButton(arg_10_0, arg_10_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.hololive_lianliankan.tip
 		})
-	end
+	end, SFX_PANEL)
 
-	slot5 = SFX_PANEL
+	for iter_10_0, iter_10_1 in ipairs(arg_10_0.entranceTFList) do
+		local var_10_0 = arg_10_0:findTF("EntranceBtn", iter_10_1)
 
-	onButton(slot0, slot0.helpBtn, slot4, slot5)
-
-	for slot4, slot5 in ipairs(slot0.entranceTFList) do
-		onButton(slot0, slot0:findTF("EntranceBtn", slot5), function ()
-			uv0.linkGameData:SetRuntimeData("curLinkGameID", uv1)
-			pg.m02:sendNotification(GAME.GO_MINI_GAME, uv2.HOLOLIVE_LINKGAME_ID)
+		onButton(arg_10_0, var_10_0, function()
+			arg_10_0.linkGameData:SetRuntimeData("curLinkGameID", iter_10_0)
+			pg.m02:sendNotification(GAME.GO_MINI_GAME, var_0_0.HOLOLIVE_LINKGAME_ID)
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.updateProgressBar(slot0)
-	if math.min(slot0.linkGameHub.usedtime, 7) > 0 then
-		for slot5 = 1, slot1 do
-			setActive(slot0.lightPointTFList[slot5], true)
+function var_0_0.updateProgressBar(arg_14_0)
+	local var_14_0 = arg_14_0.linkGameHub.usedtime
+	local var_14_1 = math.min(var_14_0, 7)
+
+	if var_14_1 > 0 then
+		for iter_14_0 = 1, var_14_1 do
+			local var_14_2 = arg_14_0.lightPointTFList[iter_14_0]
+
+			setActive(var_14_2, true)
 		end
 
-		setActive(slot0:findTF("Point", slot0.lightPointTFList[slot1]), true)
+		local var_14_3 = arg_14_0.lightPointTFList[var_14_1]
+		local var_14_4 = arg_14_0:findTF("Point", var_14_3)
+
+		setActive(var_14_4, true)
 	end
 
-	if slot1 > 1 then
-		for slot6 = 1, slot1 - 1 do
-			setActive(slot0.lightLineTFList[slot6], true)
+	if var_14_1 > 1 then
+		local var_14_5 = var_14_1 - 1
+
+		for iter_14_1 = 1, var_14_5 do
+			local var_14_6 = arg_14_0.lightLineTFList[iter_14_1]
+
+			setActive(var_14_6, true)
 		end
 	end
 end
 
-function slot0.updateAwardPanel(slot0)
-	setText(slot0.progressText, slot0.linkGameHub.usedtime > 7 and 7 or slot1)
+function var_0_0.updateAwardPanel(arg_15_0)
+	local var_15_0 = arg_15_0.linkGameHub.usedtime
 
-	if slot0.linkGameHub.ultimate > 0 then
-		setActive(slot0.getAwardBtn, false)
-		setActive(slot0.gotAwardBtn, true)
-		setActive(slot0.awardMask, true)
-	elseif slot0.linkGameHub:getConfig("reward_need") <= slot1 then
-		setActive(slot0.getAwardBtn, true)
-		setActive(slot0.gotAwardBtn, false)
-		setActive(slot0.awardMask, true)
-		onButton(slot0, slot0.getAwardBtn, function ()
+	setText(arg_15_0.progressText, var_15_0 > 7 and 7 or var_15_0)
+
+	if arg_15_0.linkGameHub.ultimate > 0 then
+		setActive(arg_15_0.getAwardBtn, false)
+		setActive(arg_15_0.gotAwardBtn, true)
+		setActive(arg_15_0.awardMask, true)
+	elseif var_15_0 >= arg_15_0.linkGameHub:getConfig("reward_need") then
+		setActive(arg_15_0.getAwardBtn, true)
+		setActive(arg_15_0.gotAwardBtn, false)
+		setActive(arg_15_0.awardMask, true)
+		onButton(arg_15_0, arg_15_0.getAwardBtn, function()
 			pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-				hubid = uv0.linkGameHub.id,
+				hubid = arg_15_0.linkGameHub.id,
 				cmd = MiniGameOPCommand.CMD_ULTIMATE,
 				args1 = {}
 			})
 		end, SFX_PANEL)
 	else
-		setActive(slot0.getAwardBtn, false)
-		setActive(slot0.gotAwardBtn, false)
-		setActive(slot0.awardMask, false)
+		setActive(arg_15_0.getAwardBtn, false)
+		setActive(arg_15_0.gotAwardBtn, false)
+		setActive(arg_15_0.awardMask, false)
 	end
 end
 
-function slot0.updateEntranceList(slot0)
-	for slot5 = 1, 8 do
-		slot6 = slot0.entranceTFList[slot5]
+function var_0_0.updateEntranceList(arg_17_0)
+	local var_17_0 = arg_17_0.linkGameHub.usedtime
 
-		setText(slot0:findTF("LockText", slot6), slot0.linkGameData:GetConfigCsvLine(slot5).unlock_txt)
+	for iter_17_0 = 1, 8 do
+		local var_17_1 = arg_17_0.entranceTFList[iter_17_0]
+		local var_17_2 = arg_17_0:findTF("Mask", var_17_1)
+		local var_17_3 = arg_17_0:findTF("GotImg", var_17_1)
+		local var_17_4 = arg_17_0:findTF("LockText", var_17_1)
+		local var_17_5 = arg_17_0.linkGameData:GetConfigCsvLine(iter_17_0).unlock_txt
 
-		if slot5 <= slot0.linkGameHub.usedtime then
-			setActive(slot0:findTF("Mask", slot6), false)
-			setActive(slot0:findTF("GotImg", slot6), true)
-			setActive(slot9, false)
-		elseif slot5 == slot1 + 1 then
-			if slot0.linkGameHub.count == 0 then
-				setActive(slot7, true)
-				setActive(slot8, false)
-				setActive(slot9, true)
-			elseif slot11 > 0 then
-				setActive(slot7, false)
-				setActive(slot8, false)
-				setActive(slot9, false)
+		setText(var_17_4, var_17_5)
+
+		if iter_17_0 <= var_17_0 then
+			setActive(var_17_2, false)
+			setActive(var_17_3, true)
+			setActive(var_17_4, false)
+		elseif iter_17_0 == var_17_0 + 1 then
+			local var_17_6 = arg_17_0.linkGameHub.count
+
+			if var_17_6 == 0 then
+				setActive(var_17_2, true)
+				setActive(var_17_3, false)
+				setActive(var_17_4, true)
+			elseif var_17_6 > 0 then
+				setActive(var_17_2, false)
+				setActive(var_17_3, false)
+				setActive(var_17_4, false)
 			end
-		elseif slot5 > slot1 + 1 then
-			setActive(slot7, true)
-			setActive(slot8, false)
-			setActive(slot9, true)
+		elseif iter_17_0 > var_17_0 + 1 then
+			setActive(var_17_2, true)
+			setActive(var_17_3, false)
+			setActive(var_17_4, true)
 		end
 	end
 end
 
-function slot0.updateData(slot0)
-	slot0.miniGameProxy = getProxy(MiniGameProxy)
-	slot0.linkGameHub = slot0.miniGameProxy:GetHubByHubId(uv0.HOLOLIVE_LINKGAME_HUB_ID)
-	slot0.linkGameData = slot0.miniGameProxy:GetMiniGameData(uv0.HOLOLIVE_LINKGAME_ID)
+function var_0_0.updateData(arg_18_0)
+	arg_18_0.miniGameProxy = getProxy(MiniGameProxy)
+	arg_18_0.linkGameHub = arg_18_0.miniGameProxy:GetHubByHubId(var_0_0.HOLOLIVE_LINKGAME_HUB_ID)
+	arg_18_0.linkGameData = arg_18_0.miniGameProxy:GetMiniGameData(var_0_0.HOLOLIVE_LINKGAME_ID)
 end
 
-function slot0.updateUI(slot0)
-	slot0:updateProgressBar()
-	slot0:updateAwardPanel()
-	slot0:updateEntranceList()
+function var_0_0.updateUI(arg_19_0)
+	arg_19_0:updateProgressBar()
+	arg_19_0:updateAwardPanel()
+	arg_19_0:updateEntranceList()
 end
 
-function slot0.isTip()
-	if getProxy(MiniGameProxy):GetHubByHubId(uv0.HOLOLIVE_LINKGAME_HUB_ID).ultimate == 0 and slot1.usedtime >= 7 then
+function var_0_0.isTip()
+	local var_20_0 = getProxy(MiniGameProxy):GetHubByHubId(var_0_0.HOLOLIVE_LINKGAME_HUB_ID)
+
+	if var_20_0.ultimate == 0 and var_20_0.usedtime >= 7 then
 		return true
-	elseif slot1.count > 0 then
+	elseif var_20_0.count > 0 then
 		return true
 	end
 end
 
-return slot0
+return var_0_0

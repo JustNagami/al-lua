@@ -1,17 +1,4 @@
-return {
-	{
-		desc = "主炮每进行15次攻击，触发全弹发射-G级I"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行15次攻击，触发全弹发射-G级I",
-	stack = 1,
-	id = 21051,
-	icon = 20000,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -37,5 +24,18 @@ return {
 				countType = 21050
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行15次攻击，触发全弹发射-G级I"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行15次攻击，触发全弹发射-G级I",
+	stack = 1,
+	id = 21051,
+	icon = 20000,
+	last_effect = ""
 }

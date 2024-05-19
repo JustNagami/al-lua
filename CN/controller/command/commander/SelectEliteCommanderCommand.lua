@@ -1,29 +1,32 @@
-slot0 = class("SelectEliteCommanderCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("SelectEliteCommanderCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.index
-	slot5 = slot2.pos
-	slot7 = slot2.callback
-	slot9 = getProxy(ChapterProxy):getChapterById(slot2.chapterId)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.chapterId
+	local var_1_2 = var_1_0.index
+	local var_1_3 = var_1_0.pos
+	local var_1_4 = var_1_0.commanderId
+	local var_1_5 = var_1_0.callback
+	local var_1_6 = getProxy(ChapterProxy)
+	local var_1_7 = var_1_6:getChapterById(var_1_1)
 
-	if slot2.commanderId then
-		slot10, slot11 = Commander.canEquipToEliteChapter(slot3, slot4, slot5, slot6)
+	if var_1_4 then
+		local var_1_8, var_1_9 = Commander.canEquipToEliteChapter(var_1_1, var_1_2, var_1_3, var_1_4)
 
-		if not slot10 then
-			pg.TipsMgr.GetInstance():ShowTips(slot11)
+		if not var_1_8 then
+			pg.TipsMgr.GetInstance():ShowTips(var_1_9)
 
 			return
 		end
 	end
 
-	slot9:updateCommander(slot4, slot5, slot6)
-	slot8:updateChapter(slot9)
-	slot8:duplicateEliteFleet(slot9)
+	var_1_7:updateCommander(var_1_2, var_1_3, var_1_4)
+	var_1_6:updateChapter(var_1_7)
+	var_1_6:duplicateEliteFleet(var_1_7)
 
-	if slot7 then
-		slot7()
+	if var_1_5 then
+		var_1_5()
 	end
 end
 
-return slot0
+return var_0_0

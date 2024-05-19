@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行10次攻击，触发专属弹幕-拉菲ⅡII"
-	},
-	desc_get = "主炮每进行10次攻击，触发专属弹幕-拉菲ⅡII",
-	name = "专属弹幕-拉菲ⅡII",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行10次攻击，触发专属弹幕-拉菲ⅡII",
-	stack = 1,
-	id = 30172,
-	icon = 30170,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -39,5 +25,19 @@ return {
 				countType = 30170
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行10次攻击，触发专属弹幕-拉菲ⅡII"
+	},
+	desc_get = "主炮每进行10次攻击，触发专属弹幕-拉菲ⅡII",
+	name = "专属弹幕-拉菲ⅡII",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行10次攻击，触发专属弹幕-拉菲ⅡII",
+	stack = 1,
+	id = 30172,
+	icon = 30170,
+	last_effect = ""
 }

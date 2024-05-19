@@ -1,19 +1,19 @@
-slot0 = class("GuildAssaultShip", import(".CheckCustomNameShip"))
+﻿local var_0_0 = class("GuildAssaultShip", import(".CheckCustomNameShip"))
 
-function slot0.IsOwner(slot0)
-	return tonumber(GuildAssaultFleet.GetUserId(slot0.id)) == getProxy(PlayerProxy):getRawData().id
+function var_0_0.IsOwner(arg_1_0)
+	return tonumber(GuildAssaultFleet.GetUserId(arg_1_0.id)) == getProxy(PlayerProxy):getRawData().id
 end
 
-function slot0.GetUniqueId(slot0)
-	return GuildAssaultFleet.GetRealId(slot0.id)
+function var_0_0.GetUniqueId(arg_2_0)
+	return GuildAssaultFleet.GetRealId(arg_2_0.id)
 end
 
-function slot0.ConverteFromShip(slot0)
+function var_0_0.ConverteFromShip(arg_3_0)
 	return setmetatable({}, {
-		__index = function (slot0, slot1)
-			return uv0[slot1] and uv0[slot1] or uv1[slot1]
+		__index = function(arg_4_0, arg_4_1)
+			return var_0_0[arg_4_1] and var_0_0[arg_4_1] or arg_3_0[arg_4_1]
 		end
 	})
 end
 
-return slot0
+return var_0_0

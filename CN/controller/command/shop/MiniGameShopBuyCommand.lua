@@ -1,22 +1,33 @@
-slot0 = class("MiniGameShopBuyCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("MiniGameShopBuyCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody() and slot2.callback
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1
 
-	for slot12, slot13 in ipairs(slot2.list) do
-		slot14 = slot13.id
-		slot15 = slot13.num
-		slot8 = 0 + slot15
-		slot7 = 0 + pg.gameroom_shop_template[slot2.id].price * slot15
+	var_1_1 = var_1_0 and var_1_0.callback
+
+	local var_1_2 = var_1_0.id
+	local var_1_3 = var_1_0.list
+	local var_1_4 = pg.gameroom_shop_template[var_1_2]
+	local var_1_5 = 0
+	local var_1_6 = 0
+
+	for iter_1_0, iter_1_1 in ipairs(var_1_3) do
+		local var_1_7 = iter_1_1.id
+		local var_1_8 = iter_1_1.num
+
+		var_1_6 = var_1_6 + var_1_8
+		var_1_5 = var_1_5 + var_1_4.price * var_1_8
 	end
 
-	if getProxy(GameRoomProxy):getTicket() < slot7 then
+	if var_1_5 > getProxy(GameRoomProxy):getTicket() then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("game_ticket_notenough"),
-			onYes = function ()
-				uv0:sendNotification(GAME.GO_SCENE, SCENE.GAME_HALL)
+			onYes = function()
+				arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.GAME_HALL)
 			end,
-			onNo = function ()
+			onNo = function()
+				return
 			end
 		})
 
@@ -24,27 +35,32 @@ function slot0.execute(slot0, slot1)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(26152, {
-		goodsid = slot4,
-		selected = slot5
-	}, 26153, function (slot0)
-		slot1 = nil
+		goodsid = var_1_2,
+		selected = var_1_3
+	}, 26153, function(arg_4_0)
+		local var_4_0
 
-		if slot0.result == 0 then
+		if arg_4_0.result == 0 then
+			local var_4_1 = id2res(GameRoomProxy.ticket_res_id)
+
 			getProxy(PlayerProxy):getRawData():consume({
-				[id2res(GameRoomProxy.ticket_res_id)] = uv0 or 0
+				[var_4_1] = var_1_5 or 0
 			})
 
-			slot3 = getProxy(ShopsProxy):getMiniShop()
+			local var_4_2 = getProxy(ShopsProxy):getMiniShop()
 
-			slot3:consume(uv1, uv2)
-			getProxy(ShopsProxy):setMiniShop(slot3)
-			uv3:sendNotification(GAME.MINI_GAME_SHOP_BUY_DONE, {
-				list = PlayerConst.addTranDrop(slot0.drop_list)
+			var_4_2:consume(var_1_2, var_1_6)
+			getProxy(ShopsProxy):setMiniShop(var_4_2)
+
+			local var_4_3 = PlayerConst.addTranDrop(arg_4_0.drop_list)
+
+			arg_1_0:sendNotification(GAME.MINI_GAME_SHOP_BUY_DONE, {
+				list = var_4_3
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_4_0.result] .. arg_4_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

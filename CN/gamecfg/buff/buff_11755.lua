@@ -1,23 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "蛮啾,猫猫,小枭!触发技能效果",
-	time = 8,
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 11755,
-	icon = 11750,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -49,5 +30,24 @@ return {
 				target = "TargetSelf"
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "蛮啾,猫猫,小枭!触发技能效果",
+	time = 8,
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 11755,
+	icon = 11750,
+	last_effect = ""
 }

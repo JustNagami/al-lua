@@ -1,51 +1,53 @@
-slot0 = class("NewCardPuzzleResultGradePage", import("..NewBattleResultGradePage"))
+﻿local var_0_0 = class("NewCardPuzzleResultGradePage", import("..NewBattleResultGradePage"))
 
-function slot0.LoadBG(slot0, slot1)
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. "CommonBg", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		if uv0.exited or IsNil(slot0) then
-			if uv1 then
-				uv1()
+function var_0_0.LoadBG(arg_1_0, arg_1_1)
+	local var_1_0 = "CommonBg"
+
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. var_1_0, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_2_0)
+		if arg_1_0.exited or IsNil(arg_2_0) then
+			if arg_1_1 then
+				arg_1_1()
 			end
 
 			return
 		end
 
-		Object.Instantiate(slot0, uv0.bgTr).transform:SetAsFirstSibling()
+		Object.Instantiate(arg_2_0, arg_1_0.bgTr).transform:SetAsFirstSibling()
 
-		if uv1 then
-			uv1()
+		if arg_1_1 then
+			arg_1_1()
 		end
 	end), false, false)
 end
 
-function slot0.LoadGrade(slot0, slot1)
-	slot2, slot3 = NewBattleResultUtil.Score2Grade(slot0.contextData.score)
+function var_0_0.LoadGrade(arg_3_0, arg_3_1)
+	local var_3_0, var_3_1 = NewBattleResultUtil.Score2Grade(arg_3_0.contextData.score)
 
-	LoadImageSpriteAsync(slot2, slot0.gradeIcon, true)
-	LoadImageSpriteAsync(slot3, slot0.gradeTxt, true)
+	LoadImageSpriteAsync(var_3_0, arg_3_0.gradeIcon, true)
+	LoadImageSpriteAsync(var_3_1, arg_3_0.gradeTxt, true)
 
-	if slot1 then
-		slot1()
+	if arg_3_1 then
+		arg_3_1()
 	end
 end
 
-function slot0.SetUp(slot0, slot1)
-	slot0:Show()
+function var_0_0.SetUp(arg_4_0, arg_4_1)
+	arg_4_0:Show()
 	seriesAsync({
-		function (slot0)
-			uv0:LoadBGAndGrade(slot0)
+		function(arg_5_0)
+			arg_4_0:LoadBGAndGrade(arg_5_0)
 		end,
-		function (slot0)
-			uv0:PlayEnterAnimation(slot0)
+		function(arg_6_0)
+			arg_4_0:PlayEnterAnimation(arg_6_0)
 		end,
-		function (slot0)
-			uv0:RegisterEvent(slot0)
+		function(arg_7_0)
+			arg_4_0:RegisterEvent(arg_7_0)
 		end
-	}, function ()
-		uv0:Clear()
-		uv0:Destroy()
-		uv1()
+	}, function()
+		arg_4_0:Clear()
+		arg_4_0:Destroy()
+		arg_4_1()
 	end)
 end
 
-return slot0
+return var_0_0

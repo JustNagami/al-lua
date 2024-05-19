@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.puzzle_relics_effect = {
 	{
 		id = 1,

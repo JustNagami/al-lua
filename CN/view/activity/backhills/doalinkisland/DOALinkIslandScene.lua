@@ -1,150 +1,182 @@
-slot0 = class("DOALinkIslandScene", import("..TemplateMV.BackHillTemplate"))
+﻿local var_0_0 = class("DOALinkIslandScene", import("..TemplateMV.BackHillTemplate"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "DOALinkIslandUI"
 end
 
-slot0.edge2area = {
+var_0_0.edge2area = {
 	default = "map_middle",
 	["2_2"] = "map_bridge"
 }
 
-function slot0.init(slot0)
-	slot0.top = slot0:findTF("top")
-	slot0._map = slot0:findTF("map")
+function var_0_0.init(arg_2_0)
+	arg_2_0.top = arg_2_0:findTF("top")
+	arg_2_0._map = arg_2_0:findTF("map")
 
-	for slot4 = 0, slot0._map.childCount - 1 do
-		slot5 = slot0._map:GetChild(slot4)
-		slot0["map_" .. go(slot5).name] = slot5
+	for iter_2_0 = 0, arg_2_0._map.childCount - 1 do
+		local var_2_0 = arg_2_0._map:GetChild(iter_2_0)
+		local var_2_1 = go(var_2_0).name
+
+		arg_2_0["map_" .. var_2_1] = var_2_0
 	end
 
-	slot0._shipTpl = slot0._map:Find("ship")
-	slot0._upper = slot0:findTF("upper")
+	arg_2_0._shipTpl = arg_2_0._map:Find("ship")
+	arg_2_0._upper = arg_2_0:findTF("upper")
 
-	for slot4 = 0, slot0._upper.childCount - 1 do
-		slot5 = slot0._upper:GetChild(slot4)
-		slot0["upper_" .. go(slot5).name] = slot5
+	for iter_2_1 = 0, arg_2_0._upper.childCount - 1 do
+		local var_2_2 = arg_2_0._upper:GetChild(iter_2_1)
+		local var_2_3 = go(var_2_2).name
+
+		arg_2_0["upper_" .. var_2_3] = var_2_2
 	end
 
-	slot0.containers = {
-		slot0.map_middle
+	arg_2_0.containers = {
+		arg_2_0.map_middle
 	}
-	slot0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.DOAIslandGraph"))
-	slot2 = slot0._tf:GetComponentInParent(typeof(UnityEngine.Canvas)) and slot1.sortingOrder
-	slot0._map:GetComponent(typeof(UnityEngine.Canvas)).sortingOrder = slot2 - 3
-	slot0.map_tebiezuozhan:GetComponent(typeof(UnityEngine.Canvas)).sortingOrder = slot2 - 1
-	slot0.map_bridge:GetComponent(typeof(UnityEngine.Canvas)).sortingOrder = slot2 - 1
+	arg_2_0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.DOAIslandGraph"))
 
-	for slot7 = 1, 1 do
-		slot9 = tf(Instantiate(GetComponent(slot0._map, "ItemList").prefabItem[slot7 - 1]))
+	local var_2_4 = arg_2_0._tf:GetComponentInParent(typeof(UnityEngine.Canvas))
+	local var_2_5 = var_2_4 and var_2_4.sortingOrder
 
-		pg.ViewUtils.SetSortingOrder(slot9, slot2 - 2)
-		setParent(slot9, slot0._map)
+	arg_2_0._map:GetComponent(typeof(UnityEngine.Canvas)).sortingOrder = var_2_5 - 3
+	arg_2_0.map_tebiezuozhan:GetComponent(typeof(UnityEngine.Canvas)).sortingOrder = var_2_5 - 1
+	arg_2_0.map_bridge:GetComponent(typeof(UnityEngine.Canvas)).sortingOrder = var_2_5 - 1
+
+	local var_2_6 = GetComponent(arg_2_0._map, "ItemList")
+
+	for iter_2_2 = 1, 1 do
+		local var_2_7 = var_2_6.prefabItem[iter_2_2 - 1]
+		local var_2_8 = tf(Instantiate(var_2_7))
+
+		pg.ViewUtils.SetSortingOrder(var_2_8, var_2_5 - 2)
+		setParent(var_2_8, arg_2_0._map)
 	end
 
-	slot0.loader = AutoLoader.New()
+	arg_2_0.loader = AutoLoader.New()
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0:findTF("top/return_btn"), function ()
-		uv0:emit(uv1.ON_BACK)
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0:findTF("top/return_btn"), function()
+		arg_3_0:emit(var_0_0.ON_BACK)
 	end)
-	onButton(slot0, slot0:findTF("top/return_main_btn"), function ()
-		uv0:emit(uv1.ON_HOME)
+	onButton(arg_3_0, arg_3_0:findTF("top/return_main_btn"), function()
+		arg_3_0:emit(var_0_0.ON_HOME)
 	end)
-	onButton(slot0, slot0:findTF("top/help_btn"), function ()
+	onButton(arg_3_0, arg_3_0:findTF("top/help_btn"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.doa_main.tip
 		})
 	end)
-	slot0:InitStudents(ActivityConst.MINIGAME_VOLLEYBALL, 2, 3)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "shatanpaiqiu", function ()
+	arg_3_0:InitStudents(ActivityConst.MINIGAME_VOLLEYBALL, 2, 3)
+	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "shatanpaiqiu", function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 17)
 	end)
-	onButton(slot0, slot0._upper:Find("pengpengdong"), function ()
+	onButton(arg_3_0, arg_3_0._upper:Find("pengpengdong"), function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 51)
 	end, SFX_PANEL)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "daoyvjianshe", function ()
-		uv0:emit(DOALinkIslandMediator.GO_SCENE, SCENE.ACTIVITY, {
+	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "daoyvjianshe", function()
+		arg_3_0:emit(DOALinkIslandMediator.GO_SCENE, SCENE.ACTIVITY, {
 			id = ActivityConst.DOA_PT_ID
 		})
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "bujishangdian", function ()
-		uv0:emit(DOALinkIslandMediator.GO_SCENE, SCENE.SHOP, {
+	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "bujishangdian", function()
+		arg_3_0:emit(DOALinkIslandMediator.GO_SCENE, SCENE.SHOP, {
 			warp = NewShopsScene.TYPE_ACTIVITY
 		})
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "huanzhuangshangdian", function ()
-		uv0:emit(DOALinkIslandMediator.GO_SCENE, SCENE.SKINSHOP)
+	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "huanzhuangshangdian", function()
+		arg_3_0:emit(DOALinkIslandMediator.GO_SCENE, SCENE.SKINSHOP)
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "xianshijianzao", function ()
-		uv0:emit(DOALinkIslandMediator.GO_SCENE, SCENE.GETBOAT, {
+	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "xianshijianzao", function()
+		arg_3_0:emit(DOALinkIslandMediator.GO_SCENE, SCENE.GETBOAT, {
 			projectName = "new",
 			page = 1
 		})
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "jinianzhang", function ()
-		uv0:emit(DOALinkIslandMediator.GO_SCENE, SCENE.DOA2_MEDAL_COLLECTION_SCENE)
+	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "jinianzhang", function()
+		arg_3_0:emit(DOALinkIslandMediator.GO_SCENE, SCENE.DOA2_MEDAL_COLLECTION_SCENE)
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "tebiezuozhan", function ()
-		slot1, slot2 = getProxy(ChapterProxy):getLastMapForActivity()
+	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "tebiezuozhan", function()
+		local var_14_0 = getProxy(ChapterProxy)
+		local var_14_1, var_14_2 = var_14_0:getLastMapForActivity()
 
-		if not slot1 or not slot0:getMapById(slot1):isUnlock() then
+		if not var_14_1 or not var_14_0:getMapById(var_14_1):isUnlock() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 		else
-			uv0:emit(DOALinkIslandMediator.GO_SCENE, SCENE.LEVEL, {
-				chapterId = slot2,
-				mapIdx = slot1
+			arg_3_0:emit(DOALinkIslandMediator.GO_SCENE, SCENE.LEVEL, {
+				chapterId = var_14_2,
+				mapIdx = var_14_1
 			})
 		end
 	end)
-	slot0:UpdateView()
+	arg_3_0:UpdateView()
 end
 
-function slot0.UpdateView(slot0)
-	slot2 = nil
+function var_0_0.UpdateView(arg_15_0)
+	local var_15_0 = getProxy(ActivityProxy)
+	local var_15_1
 
-	setActive(slot0.upper_shatanpaiqiu:Find("tip"), uv0.IsMiniActNeedTip(ActivityConst.MINIGAME_VOLLEYBALL))
-	setActive(slot0.upper_pengpengdong:Find("tip"), uv0.IsMiniActNeedTip(ActivityConst.MINIGAME_PENGPENGDONG))
+	setActive(arg_15_0.upper_shatanpaiqiu:Find("tip"), var_0_0.IsMiniActNeedTip(ActivityConst.MINIGAME_VOLLEYBALL))
+	setActive(arg_15_0.upper_pengpengdong:Find("tip"), var_0_0.IsMiniActNeedTip(ActivityConst.MINIGAME_PENGPENGDONG))
 
-	slot3 = getProxy(ActivityProxy):getActivityById(ActivityConst.MINIGAME_VOLLEYBALL)
+	local var_15_2 = var_15_0:getActivityById(ActivityConst.MINIGAME_VOLLEYBALL)
 
-	assert(slot3)
+	assert(var_15_2)
 
-	slot4 = getProxy(MiniGameProxy):GetHubByHubId(slot3:getConfig("config_id"))
+	local var_15_3 = getProxy(MiniGameProxy):GetHubByHubId(var_15_2:getConfig("config_id"))
 
-	assert(slot4)
-	slot0.loader:GetSpriteQuiet("ui/DOALinkIslandUI_atlas", tostring(slot4.usedtime or 0), slot0.map_shatanpaiqiu:Find("Digit"), true)
+	assert(var_15_3)
+	arg_15_0.loader:GetSpriteQuiet("ui/DOALinkIslandUI_atlas", tostring(var_15_3.usedtime or 0), arg_15_0.map_shatanpaiqiu:Find("Digit"), true)
 
-	slot5 = slot1:getActivityById(ActivityConst.DOA_PT_ID)
+	local var_15_4 = var_15_0:getActivityById(ActivityConst.DOA_PT_ID)
 
-	assert(slot5)
-	setActive(slot0.upper_daoyvjianshe:Find("tip"), slot5 and slot5:readyToAchieve())
-	setActive(slot0.upper_jinianzhang:Find("tip"), uv0.MedalTip())
+	assert(var_15_4)
+
+	local var_15_5 = arg_15_0.upper_daoyvjianshe:Find("tip")
+	local var_15_6 = var_15_4 and var_15_4:readyToAchieve()
+
+	setActive(var_15_5, var_15_6)
+
+	local var_15_7 = arg_15_0.upper_jinianzhang:Find("tip")
+	local var_15_8 = var_0_0.MedalTip()
+
+	setActive(var_15_7, var_15_8)
 end
 
-function slot0.willExit(slot0)
-	slot0:clearStudents()
-	uv0.super.willExit(slot0)
+function var_0_0.willExit(arg_16_0)
+	arg_16_0:clearStudents()
+	var_0_0.super.willExit(arg_16_0)
 end
 
-function slot0.MedalTip()
-	return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA))
+function var_0_0.MedalTip()
+	local var_17_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA)
+
+	return Activity.IsActivityReady(var_17_0)
 end
 
-function slot0.IsShowMainTip(slot0)
-	if slot0 and not slot0:isEnd() then
-		slot2 = getProxy(ActivityProxy)
+function var_0_0.IsShowMainTip(arg_18_0)
+	if arg_18_0 and not arg_18_0:isEnd() then
+		local var_18_0 = getProxy(ActivityProxy)
 
-		return function ()
-			return uv0:getActivityById(ActivityConst.DOA_PT_ID) and not slot0:isEnd() and slot0:readyToAchieve()
-		end() or uv0.MedalTip() or function ()
-			return uv0.IsMiniActNeedTip(ActivityConst.MINIGAME_VOLLEYBALL)
-		end() or function ()
-			return uv0.IsMiniActNeedTip(ActivityConst.MINIGAME_PENGPENGDONG)
-		end()
+		local function var_18_1()
+			local var_19_0 = var_18_0:getActivityById(ActivityConst.DOA_PT_ID)
+
+			return var_19_0 and not var_19_0:isEnd() and var_19_0:readyToAchieve()
+		end
+
+		local var_18_2 = var_0_0.MedalTip
+
+		local function var_18_3()
+			return var_0_0.IsMiniActNeedTip(ActivityConst.MINIGAME_VOLLEYBALL)
+		end
+
+		local function var_18_4()
+			return var_0_0.IsMiniActNeedTip(ActivityConst.MINIGAME_PENGPENGDONG)
+		end
+
+		return var_18_1() or var_18_2() or var_18_3() or var_18_4()
 	end
 end
 
-return slot0
+return var_0_0

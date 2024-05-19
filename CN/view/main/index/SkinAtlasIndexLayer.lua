@@ -1,23 +1,24 @@
-slot0 = class("SkinAtlasIndexLayer", import("...common.CustomIndexLayer"))
-slot0.ExtraL2D = bit.lshift(1, 0)
-slot0.ExtraDBG = bit.lshift(1, 1)
-slot0.ExtraBG = bit.lshift(1, 2)
-slot0.ExtraBGM = bit.lshift(1, 3)
-slot0.ExtraCANTUSE = bit.lshift(1, 4)
-slot0.ExtraUNUSE = bit.lshift(1, 5)
-slot0.ExtraIndexs = {
-	slot0.ExtraL2D,
-	slot0.ExtraDBG,
-	slot0.ExtraBG,
-	slot0.ExtraBGM,
-	slot0.ExtraCANTUSE,
-	slot0.ExtraUNUSE
+﻿local var_0_0 = class("SkinAtlasIndexLayer", import("...common.CustomIndexLayer"))
+
+var_0_0.ExtraL2D = bit.lshift(1, 0)
+var_0_0.ExtraDBG = bit.lshift(1, 1)
+var_0_0.ExtraBG = bit.lshift(1, 2)
+var_0_0.ExtraBGM = bit.lshift(1, 3)
+var_0_0.ExtraCANTUSE = bit.lshift(1, 4)
+var_0_0.ExtraUNUSE = bit.lshift(1, 5)
+var_0_0.ExtraIndexs = {
+	var_0_0.ExtraL2D,
+	var_0_0.ExtraDBG,
+	var_0_0.ExtraBG,
+	var_0_0.ExtraBGM,
+	var_0_0.ExtraCANTUSE,
+	var_0_0.ExtraUNUSE
 }
-slot0.ExtraALL = IndexConst.BitAll(slot0.ExtraIndexs)
+var_0_0.ExtraALL = IndexConst.BitAll(var_0_0.ExtraIndexs)
 
-table.insert(slot0.ExtraIndexs, 1, slot0.ExtraALL)
+table.insert(var_0_0.ExtraIndexs, 1, var_0_0.ExtraALL)
 
-slot0.ExtraNames = {
+var_0_0.ExtraNames = {
 	"index_all",
 	"index_L2D",
 	"index_DBG",
@@ -26,37 +27,40 @@ slot0.ExtraNames = {
 	"index_CANTUSE",
 	"index_UNUSE"
 }
-slot1 = {
-	function ()
+
+local var_0_1 = {
+	function()
 		return true
 	end,
-	function (slot0)
-		return slot0:IsLive2d()
+	function(arg_2_0)
+		return arg_2_0:IsLive2d()
 	end,
-	function (slot0)
-		return slot0:IsDbg()
+	function(arg_3_0)
+		return arg_3_0:IsDbg()
 	end,
-	function (slot0)
-		return slot0:IsBG()
+	function(arg_4_0)
+		return arg_4_0:IsBG()
 	end,
-	function (slot0)
-		return slot0:isBgm()
+	function(arg_5_0)
+		return arg_5_0:isBgm()
 	end,
-	function (slot0)
-		return slot0:CantUse()
+	function(arg_6_0)
+		return arg_6_0:CantUse()
 	end,
-	function (slot0)
-		return slot0:WithoutUse()
+	function(arg_7_0)
+		return arg_7_0:WithoutUse()
 	end
 }
 
-function slot0.filterByExtra(slot0, slot1)
-	if not slot1 or slot1 == uv0.ExtraALL then
+function var_0_0.filterByExtra(arg_8_0, arg_8_1)
+	if not arg_8_1 or arg_8_1 == var_0_0.ExtraALL then
 		return true
 	end
 
-	for slot5 = 2, #uv1 do
-		if bit.band(bit.lshift(1, slot5 - 2), slot1) > 0 and uv1[slot5](slot0) then
+	for iter_8_0 = 2, #var_0_1 do
+		local var_8_0 = bit.lshift(1, iter_8_0 - 2)
+
+		if bit.band(var_8_0, arg_8_1) > 0 and var_0_1[iter_8_0](arg_8_0) then
 			return true
 		end
 	end
@@ -64,29 +68,30 @@ function slot0.filterByExtra(slot0, slot1)
 	return false
 end
 
-function slot0.init(slot0)
-	uv0.super.init(slot0)
+function var_0_0.init(arg_9_0)
+	var_0_0.super.init(arg_9_0)
 
-	slot1 = slot0.contextData
-	slot0.OnFilter = slot1.OnFilter
-	slot0.indexDatas = slot1.defaultIndex or {}
+	local var_9_0 = arg_9_0.contextData
+
+	arg_9_0.OnFilter = var_9_0.OnFilter
+	arg_9_0.indexDatas = var_9_0.defaultIndex or {}
 end
 
-function slot0.BlurPanel(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
+function var_0_0.BlurPanel(arg_10_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_10_0._tf, false, {
 		weight = LayerWeightConst.SECOND_LAYER + 1
 	})
 end
 
-function slot0.didEnter(slot0)
-	slot0.contextData = slot0:InitData()
+function var_0_0.didEnter(arg_11_0)
+	arg_11_0.contextData = arg_11_0:InitData()
 
-	uv0.super.didEnter(slot0)
+	var_0_0.super.didEnter(arg_11_0)
 end
 
-function slot0.InitData(slot0)
+function var_0_0.InitData(arg_12_0)
 	return {
-		indexDatas = Clone(slot0.indexDatas),
+		indexDatas = Clone(arg_12_0.indexDatas),
 		customPanels = {
 			minHeight = 650,
 			typeIndex = {
@@ -110,8 +115,8 @@ function slot0.InitData(slot0)
 			extraIndex = {
 				blueSeleted = true,
 				mode = CustomIndexLayer.Mode.AND,
-				options = uv0.ExtraIndexs,
-				names = uv0.ExtraNames
+				options = var_0_0.ExtraIndexs,
+				names = var_0_0.ExtraNames
 			},
 			layoutPos = Vector2(0, -25)
 		},
@@ -149,10 +154,10 @@ function slot0.InitData(slot0)
 				}
 			}
 		},
-		callback = function (slot0)
-			uv0.OnFilter(slot0)
+		callback = function(arg_13_0)
+			arg_12_0.OnFilter(arg_13_0)
 		end
 	}
 end
 
-return slot0
+return var_0_0

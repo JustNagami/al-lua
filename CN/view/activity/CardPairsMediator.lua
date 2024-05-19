@@ -1,15 +1,16 @@
-slot0 = class("CardPairsMediator", import("..base.ContextMediator"))
-slot0.EVENT_OPERATION = "event operation"
+﻿local var_0_0 = class("CardPairsMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.EVENT_OPERATION, function (slot0, slot1)
-		uv0:sendNotification(GAME.ACTIVITY_OPERATION, slot1)
+var_0_0.EVENT_OPERATION = "event operation"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.EVENT_OPERATION, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.ACTIVITY_OPERATION, arg_2_1)
 	end)
-	slot0:setActivityData()
-	slot0:setPlayerData()
+	arg_1_0:setActivityData()
+	arg_1_0:setPlayerData()
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_3_0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		PlayerProxy.UPDATED,
@@ -18,24 +19,31 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED then
-		slot0.viewComponent:setActivityData(slot1:getBody())
-	elseif slot2 == PlayerProxy.UPDATED then
-		slot0.viewComponent:setPlayerData(slot3)
-	elseif slot2 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, slot3.callback)
-	elseif slot2 == ActivityProxy.ACTIVITY_OPERATION_DONE then
-		slot0.viewComponent:checkActivityEnd()
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getName()
+	local var_4_1 = arg_4_1:getBody()
+
+	if var_4_0 == ActivityProxy.ACTIVITY_UPDATED then
+		arg_4_0.viewComponent:setActivityData(var_4_1)
+	elseif var_4_0 == PlayerProxy.UPDATED then
+		arg_4_0.viewComponent:setPlayerData(var_4_1)
+	elseif var_4_0 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
+		arg_4_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_4_1.awards, var_4_1.callback)
+	elseif var_4_0 == ActivityProxy.ACTIVITY_OPERATION_DONE then
+		arg_4_0.viewComponent:checkActivityEnd()
 	end
 end
 
-function slot0.setPlayerData(slot0)
-	slot0.viewComponent:setPlayerData(getProxy(PlayerProxy):getData())
+function var_0_0.setPlayerData(arg_5_0)
+	local var_5_0 = getProxy(PlayerProxy):getData()
+
+	arg_5_0.viewComponent:setPlayerData(var_5_0)
 end
 
-function slot0.setActivityData(slot0)
-	slot0.viewComponent:setActivityData(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CARD_PAIRS))
+function var_0_0.setActivityData(arg_6_0)
+	local var_6_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CARD_PAIRS)
+
+	arg_6_0.viewComponent:setActivityData(var_6_0)
 end
 
-return slot0
+return var_0_0

@@ -1,98 +1,110 @@
-slot0 = setmetatable
-slot1 = xpcall
-slot2 = pcall
-slot3 = assert
-slot4 = rawget
-slot5 = error
-slot6 = print
-slot7 = tolua.traceback
-slot8 = ilist
-slot9 = {
-	__call = function (slot0, ...)
+﻿local var_0_0 = setmetatable
+local var_0_1 = xpcall
+local var_0_2 = pcall
+local var_0_3 = assert
+local var_0_4 = rawget
+local var_0_5 = error
+local var_0_6 = print
+local var_0_7 = tolua.traceback
+local var_0_8 = ilist
+local var_0_9 = {
+	__call = function(arg_1_0, ...)
 		if jit then
-			if slot0.obj == nil then
-				return uv0(slot0.func, uv1, ...)
+			if arg_1_0.obj == nil then
+				return var_0_1(arg_1_0.func, var_0_7, ...)
 			else
-				return uv0(slot0.func, uv1, slot0.obj, ...)
+				return var_0_1(arg_1_0.func, var_0_7, arg_1_0.obj, ...)
 			end
 		else
-			slot1 = packEx(...)
+			local var_1_0 = packEx(...)
 
-			if slot0.obj == nil then
-				return uv0(function ()
-					uv0.func(unpackEx(uv1))
-				end, uv1)
+			if arg_1_0.obj == nil then
+				local function var_1_1()
+					arg_1_0.func(unpackEx(var_1_0))
+				end
+
+				return var_0_1(var_1_1, var_0_7)
 			else
-				return uv0(function ()
-					uv0.func(uv0.obj, unpackEx(uv1))
-				end, uv1)
+				local function var_1_2()
+					arg_1_0.func(arg_1_0.obj, unpackEx(var_1_0))
+				end
+
+				return var_0_1(var_1_2, var_0_7)
 			end
 		end
 	end,
-	__eq = function (slot0, slot1)
-		return slot0.func == slot1.func and slot0.obj == slot1.obj
+	__eq = function(arg_4_0, arg_4_1)
+		return arg_4_0.func == arg_4_1.func and arg_4_0.obj == arg_4_1.obj
 	end
 }
 
-function slot10(slot0, slot1)
-	return uv0({
-		func = slot0,
-		obj = slot1
-	}, uv1)
+local function var_0_10(arg_5_0, arg_5_1)
+	return var_0_0({
+		func = arg_5_0,
+		obj = arg_5_1
+	}, var_0_9)
 end
 
-slot11 = {
-	__call = function (slot0, ...)
-		if slot0.obj == nil then
-			return uv0(slot0.func, ...)
+local var_0_11 = {
+	__call = function(arg_6_0, ...)
+		if arg_6_0.obj == nil then
+			return var_0_2(arg_6_0.func, ...)
 		else
-			return uv0(slot0.func, slot0.obj, ...)
+			return var_0_2(arg_6_0.func, arg_6_0.obj, ...)
 		end
 	end,
-	__eq = function (slot0, slot1)
-		return slot0.func == slot1.func and slot0.obj == slot1.obj
+	__eq = function(arg_7_0, arg_7_1)
+		return arg_7_0.func == arg_7_1.func and arg_7_0.obj == arg_7_1.obj
 	end
 }
 
-function slot12(slot0, slot1)
-	return uv0({
-		func = slot0,
-		obj = slot1
-	}, uv1)
+local function var_0_12(arg_8_0, arg_8_1)
+	return var_0_0({
+		func = arg_8_0,
+		obj = arg_8_1
+	}, var_0_11)
 end
 
-slot13 = {
-	__index = slot13
-}
+local var_0_13 = {}
 
-function slot13.Add(slot0, slot1, slot2)
-	uv0(slot1)
+var_0_13.__index = var_0_13
 
-	if slot0.lock then
-		table.insert(slot0.opList, function ()
-			uv0.list:pushnode(uv1)
-		end)
+function var_0_13.Add(arg_9_0, arg_9_1, arg_9_2)
+	var_0_3(arg_9_1)
 
-		return {
+	if arg_9_0.keepSafe then
+		arg_9_1 = var_0_10(arg_9_1, arg_9_2)
+	else
+		arg_9_1 = var_0_12(arg_9_1, arg_9_2)
+	end
+
+	if arg_9_0.lock then
+		local var_9_0 = {
 			_prev = 0,
 			_next = 0,
 			removed = true,
-			value = (not slot0.keepSafe or uv1(slot1, slot2)) and uv2(uv1(slot1, slot2), slot2)
+			value = arg_9_1
 		}
+
+		table.insert(arg_9_0.opList, function()
+			arg_9_0.list:pushnode(var_9_0)
+		end)
+
+		return var_9_0
 	else
-		return slot0.list:push(slot1)
+		return arg_9_0.list:push(arg_9_1)
 	end
 end
 
-function slot13.Remove(slot0, slot1, slot2)
-	for slot6, slot7 in uv0(slot0.list) do
-		if slot7.func == slot1 and slot7.obj == slot2 then
-			if slot0.lock then
-				table.insert(slot0.opList, function ()
-					uv0.list:remove(uv1)
+function var_0_13.Remove(arg_11_0, arg_11_1, arg_11_2)
+	for iter_11_0, iter_11_1 in var_0_8(arg_11_0.list) do
+		if iter_11_1.func == arg_11_1 and iter_11_1.obj == arg_11_2 then
+			if arg_11_0.lock then
+				table.insert(arg_11_0.opList, function()
+					arg_11_0.list:remove(iter_11_0)
 				end)
 			else
-				slot0.list:remove(slot6)
+				arg_11_0.list:remove(iter_11_0)
 			end
 
 			break
@@ -100,130 +112,144 @@ function slot13.Remove(slot0, slot1, slot2)
 	end
 end
 
-function slot13.CreateListener(slot0, slot1, slot2)
+function var_0_13.CreateListener(arg_13_0, arg_13_1, arg_13_2)
+	if arg_13_0.keepSafe then
+		arg_13_1 = var_0_10(arg_13_1, arg_13_2)
+	else
+		arg_13_1 = var_0_12(arg_13_1, arg_13_2)
+	end
+
 	return {
 		_prev = 0,
 		_next = 0,
 		removed = true,
-		value = (not slot0.keepSafe or uv0(slot1, slot2)) and uv1(uv0(slot1, slot2), slot2)
+		value = arg_13_1
 	}
 end
 
-function slot13.AddListener(slot0, slot1)
-	uv0(slot1)
+function var_0_13.AddListener(arg_14_0, arg_14_1)
+	var_0_3(arg_14_1)
 
-	if slot0.lock then
-		table.insert(slot0.opList, function ()
-			uv0.list:pushnode(uv1)
+	if arg_14_0.lock then
+		table.insert(arg_14_0.opList, function()
+			arg_14_0.list:pushnode(arg_14_1)
 		end)
 	else
-		slot0.list:pushnode(slot1)
+		arg_14_0.list:pushnode(arg_14_1)
 	end
 end
 
-function slot13.RemoveListener(slot0, slot1)
-	uv0(slot1)
+function var_0_13.RemoveListener(arg_16_0, arg_16_1)
+	var_0_3(arg_16_1)
 
-	if slot0.lock then
-		table.insert(slot0.opList, function ()
-			uv0.list:remove(uv1)
+	if arg_16_0.lock then
+		table.insert(arg_16_0.opList, function()
+			arg_16_0.list:remove(arg_16_1)
 		end)
 	else
-		slot0.list:remove(slot1)
+		arg_16_0.list:remove(arg_16_1)
 	end
 end
 
-function slot13.Count(slot0)
-	return slot0.list.length
+function var_0_13.Count(arg_18_0)
+	return arg_18_0.list.length
 end
 
-function slot13.Clear(slot0)
-	slot0.list:clear()
+function var_0_13.Clear(arg_19_0)
+	arg_19_0.list:clear()
 
-	slot0.opList = {}
-	slot0.lock = false
-	slot0.keepSafe = false
-	slot0.current = nil
+	arg_19_0.opList = {}
+	arg_19_0.lock = false
+	arg_19_0.keepSafe = false
+	arg_19_0.current = nil
 end
 
-function slot13.Dump(slot0)
-	slot1 = 0
+function var_0_13.Dump(arg_20_0)
+	local var_20_0 = 0
 
-	for slot5, slot6 in uv0(slot0.list) do
-		if slot6.obj then
-			uv1("update function:", slot6.func, "object name:", slot6.obj.name)
+	for iter_20_0, iter_20_1 in var_0_8(arg_20_0.list) do
+		if iter_20_1.obj then
+			var_0_6("update function:", iter_20_1.func, "object name:", iter_20_1.obj.name)
 		else
-			uv1("update function: ", slot6.func)
+			var_0_6("update function: ", iter_20_1.func)
 		end
 
-		slot1 = slot1 + 1
+		var_20_0 = var_20_0 + 1
 	end
 
-	uv1("all function is:", slot1)
+	var_0_6("all function is:", var_20_0)
 end
 
-function slot13.__call(slot0, ...)
-	slot0.lock = true
+function var_0_13.__call(arg_21_0, ...)
+	local var_21_0 = arg_21_0.list
 
-	for slot6, slot7 in uv0(slot0.list) do
-		slot0.current = slot6
-		slot8, slot9 = slot7(...)
+	arg_21_0.lock = true
 
-		if not slot8 then
-			slot1:remove(slot6)
+	for iter_21_0, iter_21_1 in var_0_8(var_21_0) do
+		arg_21_0.current = iter_21_0
 
-			slot0.lock = false
+		local var_21_1, var_21_2 = iter_21_1(...)
 
-			uv1(slot9)
+		if not var_21_1 then
+			var_21_0:remove(iter_21_0)
+
+			arg_21_0.lock = false
+
+			var_0_5(var_21_2)
 		end
 	end
 
-	slot0.lock = false
+	local var_21_3 = arg_21_0.opList
 
-	for slot7, slot8 in ipairs(slot0.opList) do
-		slot8()
+	arg_21_0.lock = false
 
-		slot3[slot7] = nil
+	for iter_21_2, iter_21_3 in ipairs(var_21_3) do
+		iter_21_3()
+
+		var_21_3[iter_21_2] = nil
 	end
 end
 
-function event(slot0, slot1)
-	return uv0({
+function event(arg_22_0, arg_22_1)
+	arg_22_1 = arg_22_1 or false
+
+	return var_0_0({
 		lock = false,
-		name = slot0,
-		keepSafe = slot1 or false,
+		name = arg_22_0,
+		keepSafe = arg_22_1,
 		opList = {},
 		list = list:new()
-	}, uv1)
+	}, var_0_13)
 end
 
 UpdateBeat = event("Update", true)
 LateUpdateBeat = event("LateUpdate", true)
 FixedUpdateBeat = event("FixedUpdate", true)
 CoUpdateBeat = event("CoUpdate")
-slot14 = Time
-slot15 = UpdateBeat
-slot16 = LateUpdateBeat
-slot17 = FixedUpdateBeat
-slot18 = CoUpdateBeat
 
-function Update(slot0, slot1)
-	uv0:SetDeltaTime(slot0, slot1)
-	uv1()
+local var_0_14 = Time
+local var_0_15 = UpdateBeat
+local var_0_16 = LateUpdateBeat
+local var_0_17 = FixedUpdateBeat
+local var_0_18 = CoUpdateBeat
+
+function Update(arg_23_0, arg_23_1)
+	var_0_14:SetDeltaTime(arg_23_0, arg_23_1)
+	var_0_15()
 end
 
 function LateUpdate()
-	uv0()
-	uv1()
-	uv2:SetFrameCount()
+	var_0_16()
+	var_0_18()
+	var_0_14:SetFrameCount()
 end
 
-function FixedUpdate(slot0)
-	uv0:SetFixedDelta(slot0)
-	uv1()
+function FixedUpdate(arg_25_0)
+	var_0_14:SetFixedDelta(arg_25_0)
+	var_0_17()
 end
 
 function PrintEvents()
-	uv0:Dump()
-	uv1:Dump()
+	var_0_15:Dump()
+	var_0_17:Dump()
 end

@@ -1,23 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "meta扶桑烬火之咒",
-	time = 10.2,
-	picture = "",
-	desc = "持续伤害",
-	stack = 1,
-	id = 441,
-	icon = 441,
-	last_effect = "hudie_debuff",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffDOT",
@@ -85,5 +66,24 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "meta扶桑烬火之咒",
+	time = 10.2,
+	picture = "",
+	desc = "持续伤害",
+	stack = 1,
+	id = 441,
+	icon = 441,
+	last_effect = "hudie_debuff"
 }

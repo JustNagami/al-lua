@@ -1,54 +1,72 @@
-slot0 = class("MapEventStoryObstacleCellView", import("view.level.cell.StaticCellView"))
+﻿local var_0_0 = class("MapEventStoryObstacleCellView", import("view.level.cell.StaticCellView"))
 
-function slot0.GetOrder(slot0)
+function var_0_0.GetOrder(arg_1_0)
 	return ChapterConst.CellPriorityAttachment
 end
 
-function slot0.Update(slot0)
-	slot1 = slot0.info
+function var_0_0.Update(arg_2_0)
+	local var_2_0 = arg_2_0.info
 
-	if IsNil(slot0.go) then
-		slot0:PrepareBase("story_" .. slot1.row .. "_" .. slot1.column .. "_" .. slot1.attachmentId)
+	if IsNil(arg_2_0.go) then
+		local var_2_1 = var_2_0.row
+		local var_2_2 = var_2_0.column
+		local var_2_3 = "story_" .. var_2_1 .. "_" .. var_2_2 .. "_" .. var_2_0.attachmentId
+
+		arg_2_0:PrepareBase(var_2_3)
 	end
 
-	if slot0.assetName ~= ItemCell.TransformItemAsset(slot0.chapter, pg.map_event_template[slot1.attachmentId].icon and #slot3 > 0 and slot3 .. "_2" or nil) then
-		if slot3 == nil then
-			slot0:GetLoader():ClearRequest("ItemAsset")
+	local var_2_4 = pg.map_event_template[var_2_0.attachmentId].icon
+	local var_2_5
 
-			slot0.assetName = slot3
+	var_2_5 = var_2_4 and #var_2_4 > 0 and var_2_4 .. "_2" or nil
+
+	local var_2_6 = ItemCell.TransformItemAsset(arg_2_0.chapter, var_2_5)
+
+	if arg_2_0.assetName ~= var_2_6 then
+		if var_2_6 == nil then
+			arg_2_0:GetLoader():ClearRequest("ItemAsset")
+
+			arg_2_0.assetName = var_2_6
 		else
-			slot0:GetLoader():GetPrefab("ui/" .. slot3, slot3, function (slot0)
-				setParent(slot0, uv0.tf)
-				uv0:ResetCanvasOrder()
+			arg_2_0:GetLoader():GetPrefab("ui/" .. var_2_6, var_2_6, function(arg_3_0)
+				setParent(arg_3_0, arg_2_0.tf)
+				arg_2_0:ResetCanvasOrder()
 
-				uv0.assetName = uv1
+				arg_2_0.assetName = var_2_6
 			end, "ItemAsset")
 		end
 	end
 
-	slot5 = pg.map_event_template[slot1.attachmentId]
+	local var_2_7 = var_2_0.flag == ChapterConst.CellFlagTriggerActive
+	local var_2_8 = pg.map_event_template[var_2_0.attachmentId]
 
-	if not (slot1.flag == ChapterConst.CellFlagTriggerActive) and slot5 and slot5.animation and not slot0.disappearAnim and slot5.animation and #slot6 > 0 then
-		slot0:GetLoader():GetPrefab("ui/" .. slot6, slot6, function (slot0)
-			setParent(slot0.transform, uv0.tf, false)
-			uv0:ResetCanvasOrder()
+	if not var_2_7 and var_2_8 and var_2_8.animation and not arg_2_0.disappearAnim then
+		local var_2_9 = var_2_8.animation
 
-			if not IsNil(slot0:GetComponent(typeof(ParticleSystemEvent))) then
-				slot1:SetEndEvent(function ()
-					uv0:GetLoader():ClearRequest("DisapperAnim")
+		if var_2_9 and #var_2_9 > 0 then
+			arg_2_0:GetLoader():GetPrefab("ui/" .. var_2_9, var_2_9, function(arg_4_0)
+				setParent(arg_4_0.transform, arg_2_0.tf, false)
+				arg_2_0:ResetCanvasOrder()
 
-					uv0.playingAnim = false
+				local var_4_0 = arg_4_0:GetComponent(typeof(ParticleSystemEvent))
 
-					uv0:Update()
-				end)
-			end
-		end, "DisapperAnim")
+				if not IsNil(var_4_0) then
+					var_4_0:SetEndEvent(function()
+						arg_2_0:GetLoader():ClearRequest("DisapperAnim")
 
-		slot0.disappearAnim = true
-		slot0.playingAnim = true
+						arg_2_0.playingAnim = false
+
+						arg_2_0:Update()
+					end)
+				end
+			end, "DisapperAnim")
+
+			arg_2_0.disappearAnim = true
+			arg_2_0.playingAnim = true
+		end
 	end
 
-	setActive(slot0.tf, slot4 or slot0.playingAnim)
+	setActive(arg_2_0.tf, var_2_7 or arg_2_0.playingAnim)
 end
 
-return slot0
+return var_0_0

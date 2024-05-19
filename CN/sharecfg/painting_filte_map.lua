@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.painting_filte_map = {
 	["22"] = {
 		key = "22",

@@ -1,92 +1,99 @@
-slot0 = class("SnapshotShipCard")
-slot0.TypeCard = 1
-slot0.TypeTrans = 2
-slot1 = pg.ship_data_group
+﻿local var_0_0 = class("SnapshotShipCard")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.go = slot1
-	slot0.tr = slot1.transform
-	slot0.btn = GetOrAddComponent(slot1, "Button")
-	slot0.content = findTF(slot0.tr, "content").gameObject
+var_0_0.TypeCard = 1
+var_0_0.TypeTrans = 2
 
-	setActive(findTF(slot0.content, "dockyard"), false)
-	setActive(findTF(slot0.content, "collection"), true)
+local var_0_1 = pg.ship_data_group
 
-	slot0.shipFrameImg = findTF(slot0.content, "front/frame")
-	slot0.iconShip = findTF(slot0.content, "ship_icon"):GetComponent(typeof(Image))
-	slot0.imageBg = findTF(slot0.content, "bg"):GetComponent(typeof(Image))
-	slot0.labelName = findTF(slot0.content, "info/name_mask/name")
-	slot0.iconType = findTF(slot0.content, "info/top/type"):GetComponent(typeof(Image))
-	slot0.ringTF = findTF(slot0.content, "front/ring")
-	slot0.maskTF = findTF(slot0.content, "collection/mask")
-	slot0.heart = findTF(slot0.content, "collection/heart")
-	slot0.labelHeart = findTF(slot0.heart, "heart"):GetComponent(typeof(Text))
-	slot0.labelHeartIcon = findTF(slot0.heart, "icon"):GetComponent(typeof(Image))
-	slot0.labelHeartPlus = findTF(slot0.heart, "heart+"):GetComponent(typeof(Text))
-	slot0.imageUnknown = findTF(slot0.tr, "unknown"):GetComponent(typeof(Image))
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.go = arg_1_1
+	arg_1_0.tr = arg_1_1.transform
+	arg_1_0.btn = GetOrAddComponent(arg_1_1, "Button")
+	arg_1_0.content = findTF(arg_1_0.tr, "content").gameObject
 
-	ClearTweenItemAlphaAndWhite(slot0.go)
+	setActive(findTF(arg_1_0.content, "dockyard"), false)
+	setActive(findTF(arg_1_0.content, "collection"), true)
+
+	arg_1_0.shipFrameImg = findTF(arg_1_0.content, "front/frame")
+	arg_1_0.iconShip = findTF(arg_1_0.content, "ship_icon"):GetComponent(typeof(Image))
+	arg_1_0.imageBg = findTF(arg_1_0.content, "bg"):GetComponent(typeof(Image))
+	arg_1_0.labelName = findTF(arg_1_0.content, "info/name_mask/name")
+	arg_1_0.iconType = findTF(arg_1_0.content, "info/top/type"):GetComponent(typeof(Image))
+	arg_1_0.ringTF = findTF(arg_1_0.content, "front/ring")
+	arg_1_0.maskTF = findTF(arg_1_0.content, "collection/mask")
+	arg_1_0.heart = findTF(arg_1_0.content, "collection/heart")
+	arg_1_0.labelHeart = findTF(arg_1_0.heart, "heart"):GetComponent(typeof(Text))
+	arg_1_0.labelHeartIcon = findTF(arg_1_0.heart, "icon"):GetComponent(typeof(Image))
+	arg_1_0.labelHeartPlus = findTF(arg_1_0.heart, "heart+"):GetComponent(typeof(Text))
+	arg_1_0.imageUnknown = findTF(arg_1_0.tr, "unknown"):GetComponent(typeof(Image))
+
+	ClearTweenItemAlphaAndWhite(arg_1_0.go)
 end
 
-function slot0.update(slot0, slot1, slot2, slot3, slot4, slot5)
-	TweenItemAlphaAndWhite(slot0.go)
+function var_0_0.update(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5)
+	TweenItemAlphaAndWhite(arg_2_0.go)
 
-	slot6 = ShipGroup.getState(slot5, slot2, slot3)
+	local var_2_0 = ShipGroup.getState(arg_2_5, arg_2_2, arg_2_3)
 
-	if slot0.code ~= slot1 or slot0.shipGroup ~= slot2 or slot0.showTrans ~= slot3 or slot0.propose ~= slot4 or slot0.state ~= slot6 then
-		slot0.code = slot1
-		slot0.shipGroup = slot2
-		slot0.showTrans = slot3
-		slot0.propose = slot4
-		slot0.state = slot6
-		slot0.config = uv0[slot5]
+	if arg_2_0.code ~= arg_2_1 or arg_2_0.shipGroup ~= arg_2_2 or arg_2_0.showTrans ~= arg_2_3 or arg_2_0.propose ~= arg_2_4 or arg_2_0.state ~= var_2_0 then
+		arg_2_0.code = arg_2_1
+		arg_2_0.shipGroup = arg_2_2
+		arg_2_0.showTrans = arg_2_3
+		arg_2_0.propose = arg_2_4
+		arg_2_0.state = var_2_0
+		arg_2_0.config = var_0_1[arg_2_5]
 
-		slot0:flush()
+		arg_2_0:flush()
 	end
 end
 
-function slot0.flush(slot0)
-	if slot0.shipGroup then
-		GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. slot1:rarity2bgPrint(slot0.showTrans), "", slot0.imageBg)
+function var_0_0.flush(arg_3_0)
+	local var_3_0 = arg_3_0.shipGroup
 
-		slot0.iconShip.sprite = GetSpriteFromAtlas("shipYardIcon/unknown", "")
+	if var_3_0 then
+		local var_3_1 = var_3_0:rarity2bgPrint(arg_3_0.showTrans)
+		local var_3_2 = var_3_0:getPainting(arg_3_0.showTrans)
 
-		LoadSpriteAsync("shipYardIcon/" .. slot1:getPainting(slot0.showTrans), function (slot0)
-			if uv0.go then
-				uv0.iconShip.sprite = slot0
+		GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. var_3_1, "", arg_3_0.imageBg)
+
+		arg_3_0.iconShip.sprite = GetSpriteFromAtlas("shipYardIcon/unknown", "")
+
+		LoadSpriteAsync("shipYardIcon/" .. var_3_2, function(arg_4_0)
+			if arg_3_0.go then
+				arg_3_0.iconShip.sprite = arg_4_0
 			end
 		end)
 
-		slot0.iconType.sprite = GetSpriteFromAtlas("shiptype", shipType2print(slot1:getShipType(slot0.showTrans)))
+		arg_3_0.iconType.sprite = GetSpriteFromAtlas("shiptype", shipType2print(var_3_0:getShipType(arg_3_0.showTrans)))
 
-		setScrollText(slot0.labelName, slot1:getName(slot0.showTrans))
+		setScrollText(arg_3_0.labelName, var_3_0:getName(arg_3_0.showTrans))
 
-		slot0.labelHeart.text = slot1.hearts > 999 and "999" or tostring(slot1.hearts)
+		arg_3_0.labelHeart.text = var_3_0.hearts > 999 and "999" or tostring(var_3_0.hearts)
 
-		setActive(slot0.labelHeartPlus, slot1.hearts > 999)
+		setActive(arg_3_0.labelHeartPlus, var_3_0.hearts > 999)
 
-		slot0.labelHeart.color = slot1.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
-		slot0.labelHeartIcon.color = slot1.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
-		slot0.labelHeartPlus.color = slot1.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
+		arg_3_0.labelHeart.color = var_3_0.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
+		arg_3_0.labelHeartIcon.color = var_3_0.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
+		arg_3_0.labelHeartPlus.color = var_3_0.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
 
-		setShipCardFrame(slot0.shipFrameImg, slot2)
+		setShipCardFrame(arg_3_0.shipFrameImg, var_3_1)
 	end
 
-	slot0.content:SetActive(tobool(slot1))
-	slot0.imageUnknown.gameObject:SetActive(not slot1)
+	arg_3_0.content:SetActive(tobool(var_3_0))
+	arg_3_0.imageUnknown.gameObject:SetActive(not var_3_0)
 
-	slot0.btn.targetGraphic = slot1 and slot0.imageFrame or slot0.imageUnknown
+	arg_3_0.btn.targetGraphic = var_3_0 and arg_3_0.imageFrame or arg_3_0.imageUnknown
 
-	setActive(slot0.ringTF, slot0.propose)
+	setActive(arg_3_0.ringTF, arg_3_0.propose)
 end
 
-function slot0.clear(slot0)
-	ClearTweenItemAlphaAndWhite(slot0.go)
+function var_0_0.clear(arg_5_0)
+	ClearTweenItemAlphaAndWhite(arg_5_0.go)
 
-	slot0.shipGroup = nil
-	slot0.showTrans = nil
-	slot0.propose = nil
-	slot0.code = nil
+	arg_5_0.shipGroup = nil
+	arg_5_0.showTrans = nil
+	arg_5_0.propose = nil
+	arg_5_0.code = nil
 end
 
-return slot0
+return var_0_0

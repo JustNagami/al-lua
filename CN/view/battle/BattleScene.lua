@@ -1,9 +1,10 @@
-slot0 = class("BattleScene", import("..base.BaseUI"))
-slot0.IN_VIEW_FRIEND_SKILL_OFFSET = Vector3(-5, 0, 6)
-slot0.IN_VIEW_FOE_SKILL_OFFSET = Vector3(-15, 0, 6)
-slot0.FOE_SIDE_X_OFFSET = 250
-slot0.SKILL_FLOAT_SCALE = Vector3(1.5, 1.5, 0)
-slot0.SIDE_ALIGNMENT = {
+﻿local var_0_0 = class("BattleScene", import("..base.BaseUI"))
+
+var_0_0.IN_VIEW_FRIEND_SKILL_OFFSET = Vector3(-5, 0, 6)
+var_0_0.IN_VIEW_FOE_SKILL_OFFSET = Vector3(-15, 0, 6)
+var_0_0.FOE_SIDE_X_OFFSET = 250
+var_0_0.SKILL_FLOAT_SCALE = Vector3(1.5, 1.5, 0)
+var_0_0.SIDE_ALIGNMENT = {
 	{
 		-120,
 		-7.5,
@@ -20,391 +21,463 @@ slot0.SIDE_ALIGNMENT = {
 		-570
 	}
 }
-slot1 = nil
 
-function slot0.getUIName(slot0)
+local var_0_1
+
+function var_0_0.getUIName(arg_1_0)
 	return "CombatUI"
 end
 
-function slot0.getBGM(slot0)
-	table.insert({}, slot0.contextData.system == SYSTEM_WORLD and checkExist(pg.world_expedition_data[slot0.contextData.stageId], {
+function var_0_0.getBGM(arg_2_0)
+	local var_2_0 = {}
+
+	table.insert(var_2_0, arg_2_0.contextData.system == SYSTEM_WORLD and checkExist(pg.world_expedition_data[arg_2_0.contextData.stageId], {
 		"bgm"
 	}) or "")
-	table.insert(slot1, pg.expedition_data_template[slot0.contextData.stageId].bgm)
+	table.insert(var_2_0, pg.expedition_data_template[arg_2_0.contextData.stageId].bgm)
 
-	for slot5, slot6 in ipairs(slot1) do
-		if slot6 ~= "" then
-			return slot6
+	for iter_2_0, iter_2_1 in ipairs(var_2_0) do
+		if iter_2_1 ~= "" then
+			return iter_2_1
 		end
 	end
 
-	return uv0.super.getBGM(slot0)
+	return var_0_0.super.getBGM(arg_2_0)
 end
 
-function slot0.init(slot0)
-	uv0 = ys.Battle.BattleVariable
-	slot1 = pg.UIMgr.GetInstance():GetMainCamera()
-	slot0.uiCanvas = findTF(GameObject.Find("UICamera"), "Canvas/UIMain")
-	slot0.skillTips = slot0:findTF("Skill_Activation")
-	slot0.skillRoot = slot0:findTF("Skill_Activation/Root")
-	slot0.skillTpl = slot0:findTF("Skill_Activation/mask").gameObject
-	slot0._skillFloatPool = pg.Pool.New(slot0.skillRoot, slot0.skillTpl, 15, 10, true, false):InitSize()
-	slot0.skillCMDRoot = slot0:findTF("Skill_Activation/Root_cmd")
-	slot0.skillCMDTpl = slot0:findTF("Skill_Activation/mask_cmd").gameObject
-	slot0._skillFloatCMDPool = pg.Pool.New(slot0.skillCMDRoot, slot0.skillCMDTpl, 2, 4, true, false):InitSize()
-	slot0.popupTpl = slot0:getTpl("popup")
+function var_0_0.init(arg_3_0)
+	var_0_1 = ys.Battle.BattleVariable
 
-	SetActive(slot0._go, false)
+	local var_3_0 = pg.UIMgr.GetInstance():GetMainCamera()
+	local var_3_1 = GameObject.Find("UICamera")
 
-	slot0._skillPaintings = {}
-	slot0._skillFloat = true
-	slot0._cacheSkill = {}
-	slot0._commanderSkillList = {}
-	slot0._sideSkillFloatStateList = {
-		[ys.Battle.BattleConfig.FRIENDLY_CODE] = {
-			{},
-			{},
-			{}
-		},
-		[ys.Battle.BattleConfig.FOE_CODE] = {
-			{},
-			{},
-			{}
-		}
+	arg_3_0.uiCanvas = findTF(var_3_1, "Canvas/UIMain")
+	arg_3_0.skillTips = arg_3_0:findTF("Skill_Activation")
+	arg_3_0.skillRoot = arg_3_0:findTF("Skill_Activation/Root")
+	arg_3_0.skillTpl = arg_3_0:findTF("Skill_Activation/mask").gameObject
+	arg_3_0._skillFloatPool = pg.Pool.New(arg_3_0.skillRoot, arg_3_0.skillTpl, 15, 10, true, false):InitSize()
+	arg_3_0.skillCMDRoot = arg_3_0:findTF("Skill_Activation/Root_cmd")
+	arg_3_0.skillCMDTpl = arg_3_0:findTF("Skill_Activation/mask_cmd").gameObject
+	arg_3_0._skillFloatCMDPool = pg.Pool.New(arg_3_0.skillCMDRoot, arg_3_0.skillCMDTpl, 2, 4, true, false):InitSize()
+	arg_3_0.popupTpl = arg_3_0:getTpl("popup")
+
+	SetActive(arg_3_0._go, false)
+
+	arg_3_0._skillPaintings = {}
+	arg_3_0._skillFloat = true
+	arg_3_0._cacheSkill = {}
+	arg_3_0._commanderSkillList = {}
+	arg_3_0._sideSkillFloatStateList = {}
+	arg_3_0._sideSkillFloatStateList[ys.Battle.BattleConfig.FRIENDLY_CODE] = {
+		{},
+		{},
+		{}
+	}
+	arg_3_0._sideSkillFloatStateList[ys.Battle.BattleConfig.FOE_CODE] = {
+		{},
+		{},
+		{}
 	}
 
-	slot0:initPainting()
+	arg_3_0:initPainting()
 
-	slot0._fxContainerUpper = slot0._tf:Find("FXContainerUpper")
-	slot0._fxContainerBottom = slot0._tf:Find("FXContainerBottom")
-	slot0._canvasOrder = slot0._tf:GetComponentInParent(typeof(UnityEngine.Canvas)) and slot3.sortingOrder or 0
-	slot0._ratioFitter = GetComponent(slot0._tf, typeof(AspectRatioFitter))
+	arg_3_0._fxContainerUpper = arg_3_0._tf:Find("FXContainerUpper")
+	arg_3_0._fxContainerBottom = arg_3_0._tf:Find("FXContainerBottom")
+
+	local var_3_2 = arg_3_0._tf:GetComponentInParent(typeof(UnityEngine.Canvas))
+
+	arg_3_0._canvasOrder = var_3_2 and var_3_2.sortingOrder or 0
+	arg_3_0._ratioFitter = GetComponent(arg_3_0._tf, typeof(AspectRatioFitter))
 end
 
-function slot0.initPainting(slot0)
-	slot2 = ys.Battle.BattleResourceManager.GetInstance():InstSkillPaintingUI()
+function var_0_0.initPainting(arg_4_0)
+	local var_4_0 = ys.Battle.BattleResourceManager.GetInstance():InstSkillPaintingUI()
 
-	setParent(slot2, slot0.uiCanvas, false)
+	setParent(var_4_0, arg_4_0.uiCanvas, false)
 
-	slot0._paintingUI = slot2
-	slot0._paintingAnimator = slot2:GetComponent(typeof(Animator))
-	slot0._paintingAnimator.enabled = false
-	slot0._paintingParticleContainer = findTF(slot2, "particleContainer")
-	slot0._paintingParticles = findTF(slot0._paintingParticleContainer, "effect")
-	slot0._paintingParticleSystem = slot0._paintingParticles:GetComponent(typeof(ParticleSystem))
+	arg_4_0._paintingUI = var_4_0
+	arg_4_0._paintingAnimator = var_4_0:GetComponent(typeof(Animator))
+	arg_4_0._paintingAnimator.enabled = false
+	arg_4_0._paintingParticleContainer = findTF(var_4_0, "particleContainer")
+	arg_4_0._paintingParticles = findTF(arg_4_0._paintingParticleContainer, "effect")
+	arg_4_0._paintingParticleSystem = arg_4_0._paintingParticles:GetComponent(typeof(ParticleSystem))
 
-	slot0._paintingParticleSystem:Stop(true)
+	arg_4_0._paintingParticleSystem:Stop(true)
 
-	slot0._paintingFitter = findTF(slot2, "hero/fitter")
+	arg_4_0._paintingFitter = findTF(var_4_0, "hero/fitter")
 
-	removeAllChildren(slot0._paintingFitter)
+	removeAllChildren(arg_4_0._paintingFitter)
 
-	slot3 = GetOrAddComponent(slot0._paintingFitter, "PaintingScaler")
-	slot3.FrameName = "lihuisha"
-	slot3.Tween = 1
+	local var_4_1 = GetOrAddComponent(arg_4_0._paintingFitter, "PaintingScaler")
 
-	slot2:GetComponent(typeof(DftAniEvent)):SetEndEvent(function (slot0)
-		if uv0._currentPainting then
-			setActive(uv0._currentPainting, false)
+	var_4_1.FrameName = "lihuisha"
+	var_4_1.Tween = 1
 
-			uv0._currentPainting = nil
+	var_4_0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_5_0)
+		if arg_4_0._currentPainting then
+			setActive(arg_4_0._currentPainting, false)
+
+			arg_4_0._currentPainting = nil
 		end
 	end)
 end
 
-function slot0.EnableSkillFloat(slot0, slot1)
-	if slot1 == slot0._skillFloat then
+function var_0_0.EnableSkillFloat(arg_6_0, arg_6_1)
+	if arg_6_1 == arg_6_0._skillFloat then
 		return
 	end
 
-	slot0._skillFloat = slot1
+	arg_6_0._skillFloat = arg_6_1
 
-	if slot0._skillFloat then
-		for slot5, slot6 in ipairs(slot0._cacheSkill) do
-			slot0:SkillHrzPop(slot6.skillName, slot6.caster, slot6.commander, slot6.hrzIcon)
+	if arg_6_0._skillFloat then
+		for iter_6_0, iter_6_1 in ipairs(arg_6_0._cacheSkill) do
+			arg_6_0:SkillHrzPop(iter_6_1.skillName, iter_6_1.caster, iter_6_1.commander, iter_6_1.hrzIcon)
 		end
 
-		slot0._cacheSkill = {}
+		arg_6_0._cacheSkill = {}
 	else
-		slot0._skillFloatPool:AllRecycle()
-		slot0._skillFloatCMDPool:AllRecycle()
+		arg_6_0._skillFloatPool:AllRecycle()
+		arg_6_0._skillFloatCMDPool:AllRecycle()
 
-		slot0._preCommanderSkillTF = nil
-		slot0._preSkillTF = nil
+		arg_6_0._preCommanderSkillTF = nil
+		arg_6_0._preSkillTF = nil
 	end
 
-	SetActive(slot0.skillTips, slot1)
+	SetActive(arg_6_0.skillTips, arg_6_1)
 end
 
-function slot0.SkillHrzPop(slot0, slot1, slot2, slot3, slot4)
-	if not slot0._skillFloat then
-		table.insert(slot0._cacheSkill, {
-			skillName = slot1,
-			caster = slot2,
-			commander = slot3,
-			hrzIcon = slot4
+function var_0_0.SkillHrzPop(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4)
+	if not arg_7_0._skillFloat then
+		table.insert(arg_7_0._cacheSkill, {
+			skillName = arg_7_1,
+			caster = arg_7_2,
+			commander = arg_7_3,
+			hrzIcon = arg_7_4
 		})
 
 		return
 	end
 
-	slot5 = ys.Battle.BattleResourceManager.GetInstance()
-	slot6, slot7 = nil
+	local var_7_0 = ys.Battle.BattleResourceManager.GetInstance()
+	local var_7_1
+	local var_7_2
 
-	if slot3 then
-		if slot0._commanderSkillList[slot3] and slot0._commanderSkillList[slot3][slot1] then
+	if arg_7_3 then
+		if arg_7_0._commanderSkillList[arg_7_3] and arg_7_0._commanderSkillList[arg_7_3][arg_7_1] then
 			return
 		end
 
-		slot6 = slot0._skillFloatCMDPool
-		slot7 = slot5:GetCommanderHrzIcon(slot3)
+		var_7_1 = arg_7_0._skillFloatCMDPool
+		var_7_2 = var_7_0:GetCommanderHrzIcon(arg_7_3)
 	else
-		slot6 = slot0._skillFloatPool
-		slot7 = (slot2:GetUnitType() ~= ys.Battle.BattleConst.UnitType.PLAYER_UNIT or slot5:GetCharacterIcon(slot4 or slot2:GetTemplate().painting)) and slot5:GetCharacterIcon(pg.enemy_data_statistics[slot2:GetTemplateID()].icon)
+		var_7_1 = arg_7_0._skillFloatPool
+
+		if arg_7_2:GetUnitType() == ys.Battle.BattleConst.UnitType.PLAYER_UNIT then
+			local var_7_3 = arg_7_4 or arg_7_2:GetTemplate().painting
+
+			var_7_2 = var_7_0:GetCharacterIcon(var_7_3)
+		else
+			var_7_2 = var_7_0:GetCharacterIcon(pg.enemy_data_statistics[arg_7_2:GetTemplateID()].icon)
+		end
 	end
 
-	slot9 = slot6:GetObject().transform
-	slot9.localScale = uv0.SKILL_FLOAT_SCALE
+	local var_7_4 = var_7_1:GetObject()
+	local var_7_5 = var_7_4.transform
 
-	setText(findTF(slot9, "skill/skill_name/Text"), HXSet.hxLan(slot1))
+	var_7_5.localScale = var_0_0.SKILL_FLOAT_SCALE
 
-	findTF(slot9, "skill/icon"):GetComponent(typeof(Image)).sprite = slot7
-	slot12, slot13 = slot2:GetIFF()
-	slot13 = (slot2:GetIFF() ~= ys.Battle.BattleConfig.FRIENDLY_CODE or Color.New(1, 1, 1, 1)) and Color.New(1, 0.33, 0.33, 1)
-	findTF(slot9, "skill/skill_name"):GetComponent(typeof(Image)).color = slot13
-	findTF(slot9, "skill"):GetComponent(typeof(Image)).color = slot13
+	setText(findTF(var_7_5, "skill/skill_name/Text"), HXSet.hxLan(arg_7_1))
 
-	if slot3 then
-		slot0:commanderSkillFloat(slot3, slot1, slot8)
+	local var_7_6 = findTF(var_7_5, "skill/icon")
+	local var_7_7 = findTF(var_7_5, "skill/skill_name")
+
+	var_7_6:GetComponent(typeof(Image)).sprite = var_7_2
+
+	local var_7_8, var_7_9 = arg_7_2:GetIFF()
+
+	if arg_7_2:GetIFF() == ys.Battle.BattleConfig.FRIENDLY_CODE then
+		var_7_9 = Color.New(1, 1, 1, 1)
 	else
-		slot17 = slot2:GetMainUnitIndex()
+		var_7_9 = Color.New(1, 0.33, 0.33, 1)
+	end
 
-		if ys.Battle.BattleCameraUtil.GetInstance():GetCharacterArrowBarPosition(uv1.CameraPosToUICamera(slot2:GetPosition():Clone())) == nil or slot15 == nil and table.contains(TeamType.SubShipType, slot2:GetTemplate().type) and not slot2:IsMainFleetUnit() then
-			slot14 = (slot12 ~= ys.Battle.BattleConfig.FRIENDLY_CODE or uv1.CameraPosToUICamera(slot2:GetPosition():Clone():Add(uv0.IN_VIEW_FRIEND_SKILL_OFFSET))) and uv1.CameraPosToUICamera(slot2:GetPosition():Clone():Add(uv0.IN_VIEW_FOE_SKILL_OFFSET))
-			slot9.position = Vector3(slot14.x, slot14.y, -2)
+	var_7_7:GetComponent(typeof(Image)).color = var_7_9
+	findTF(var_7_5, "skill"):GetComponent(typeof(Image)).color = var_7_9
 
-			if Screen.width * 0.5 < rtf(slot9).rect.width * 0.5 + slot9.anchoredPosition.x then
-				slot19.x = slot20 - rtf(slot9).rect.width
-				slot9.anchoredPosition = slot19
+	if arg_7_3 then
+		arg_7_0:commanderSkillFloat(arg_7_3, arg_7_1, var_7_4)
+	else
+		local var_7_10 = var_0_1.CameraPosToUICamera(arg_7_2:GetPosition():Clone())
+		local var_7_11 = ys.Battle.BattleCameraUtil.GetInstance():GetCharacterArrowBarPosition(var_7_10)
+		local var_7_12 = table.contains(TeamType.SubShipType, arg_7_2:GetTemplate().type)
+		local var_7_13 = arg_7_2:GetMainUnitIndex()
+
+		if var_7_11 == nil or var_7_11 == nil and var_7_12 and not arg_7_2:IsMainFleetUnit() then
+			if var_7_8 == ys.Battle.BattleConfig.FRIENDLY_CODE then
+				var_7_10 = var_0_1.CameraPosToUICamera(arg_7_2:GetPosition():Clone():Add(var_0_0.IN_VIEW_FRIEND_SKILL_OFFSET))
+			else
+				var_7_10 = var_0_1.CameraPosToUICamera(arg_7_2:GetPosition():Clone():Add(var_0_0.IN_VIEW_FOE_SKILL_OFFSET))
 			end
 
-			if slot0._preSkillTF then
-				slot0.handleSkillFloatCld(slot0._preSkillTF, slot9)
+			var_7_5.position = Vector3(var_7_10.x, var_7_10.y, -2)
+
+			local var_7_14 = rtf(var_7_5).rect.width * 0.5
+			local var_7_15 = var_7_5.anchoredPosition
+			local var_7_16 = var_7_15.x
+
+			if Screen.width * 0.5 < var_7_14 + var_7_16 then
+				var_7_15.x = var_7_16 - rtf(var_7_5).rect.width
+				var_7_5.anchoredPosition = var_7_15
 			end
 
-			slot0._preSkillTF = slot9
+			if arg_7_0._preSkillTF then
+				arg_7_0.handleSkillFloatCld(arg_7_0._preSkillTF, var_7_5)
+			end
 
-			slot9:GetComponent(typeof(DftAniEvent)):SetEndEvent(function (slot0)
-				uv0._preSkillTF = nil
+			arg_7_0._preSkillTF = var_7_5
 
-				uv1:Recycle(uv2)
+			var_7_5:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_8_0)
+				arg_7_0._preSkillTF = nil
+
+				var_7_1:Recycle(var_7_4)
 			end)
 		else
-			slot18 = nil
-			slot19 = uv0.SIDE_ALIGNMENT[slot17]
+			local var_7_17
+			local var_7_18 = var_0_0.SIDE_ALIGNMENT[var_7_13]
+			local var_7_19 = arg_7_0._sideSkillFloatStateList[var_7_8][var_7_13]
 
-			for slot24 = 1, #slot0._sideSkillFloatStateList[slot12][slot17] do
-				if slot20[slot24] then
-					slot18 = slot24
+			for iter_7_0 = 1, #var_7_19 do
+				if var_7_19[iter_7_0] then
+					var_7_17 = iter_7_0
 
 					break
 				end
 			end
 
-			if slot18 == nil then
-				slot18 = #slot20 + 1
+			if var_7_17 == nil then
+				var_7_17 = #var_7_19 + 1
 			end
 
-			slot20[slot18] = false
-			slot9.position = slot15
-			slot9.anchoredPosition.y = slot19[slot18]
+			var_7_19[var_7_17] = false
+			var_7_5.position = var_7_11
 
-			if slot12 == ys.Battle.BattleConfig.FOE_CODE then
-				slot21.x = uv0.FOE_SIDE_X_OFFSET
+			local var_7_20 = var_7_5.anchoredPosition
+
+			var_7_20.y = var_7_18[var_7_17]
+
+			if var_7_8 == ys.Battle.BattleConfig.FOE_CODE then
+				var_7_20.x = var_0_0.FOE_SIDE_X_OFFSET
 			end
 
-			slot9.anchoredPosition = slot21
+			var_7_5.anchoredPosition = var_7_20
 
-			slot9:GetComponent(typeof(DftAniEvent)):SetEndEvent(function (slot0)
-				uv0[uv1] = true
+			var_7_5:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_9_0)
+				var_7_19[var_7_17] = true
 
-				uv2:Recycle(uv3)
+				var_7_1:Recycle(var_7_4)
 			end)
 		end
 	end
 end
 
-function slot0.SkillHrzPopCover(slot0, slot1, slot2, slot3)
-	slot0:SkillHrzPop(slot1, slot2, nil, slot3)
+function var_0_0.SkillHrzPopCover(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
+	arg_10_0:SkillHrzPop(arg_10_1, arg_10_2, nil, arg_10_3)
 end
 
-function slot0.handleSkillFloatCld(slot0, slot1)
-	if math.floor(math.abs(slot1.anchoredPosition.y - slot0.anchoredPosition.y)) <= 112.5 then
-		slot2.y = slot3 + 112.5
-		slot1.anchoredPosition = slot2
+function var_0_0.handleSkillFloatCld(arg_11_0, arg_11_1)
+	local var_11_0 = arg_11_1.anchoredPosition
+	local var_11_1 = arg_11_0.anchoredPosition.y
+
+	if math.floor(math.abs(var_11_0.y - var_11_1)) <= 112.5 then
+		var_11_0.y = var_11_1 + 112.5
+		arg_11_1.anchoredPosition = var_11_0
 	end
 end
 
-function slot0.handleSkillSinkCld(slot0, slot1)
+function var_0_0.handleSkillSinkCld(arg_12_0, arg_12_1)
+	return
 end
 
-function slot0.commanderSkillFloat(slot0, slot1, slot2, slot3)
-	slot0._commanderSkillList[slot1] = slot0._commanderSkillList[slot1] or {}
-	slot0._commanderSkillList[slot1][slot2] = true
-	slot4 = slot3.transform
-	slot5 = slot4.anchoredPosition
-	slot5.x = 0
-	slot5.y = 0
-	slot4.anchoredPosition = slot5
+function var_0_0.commanderSkillFloat(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
+	arg_13_0._commanderSkillList[arg_13_1] = arg_13_0._commanderSkillList[arg_13_1] or {}
+	arg_13_0._commanderSkillList[arg_13_1][arg_13_2] = true
 
-	if slot0._preCommanderSkillTF and math.floor(math.abs(slot5.y - slot0._preCommanderSkillTF.anchoredPosition.y)) <= 97.5 then
-		slot5.y = slot6 - 97.5
+	local var_13_0 = arg_13_3.transform
+	local var_13_1 = var_13_0.anchoredPosition
+
+	var_13_1.x = 0
+	var_13_1.y = 0
+	var_13_0.anchoredPosition = var_13_1
+
+	if arg_13_0._preCommanderSkillTF then
+		local var_13_2 = arg_13_0._preCommanderSkillTF.anchoredPosition.y
+
+		if math.floor(math.abs(var_13_1.y - var_13_2)) <= 97.5 then
+			var_13_1.y = var_13_2 - 97.5
+		end
 	end
 
-	slot4.anchoredPosition = slot5
-	slot0._preCommanderSkillTF = slot4
+	var_13_0.anchoredPosition = var_13_1
+	arg_13_0._preCommanderSkillTF = var_13_0
 
-	slot4:GetComponent(typeof(DftAniEvent)):SetEndEvent(function (slot0)
-		uv0._commanderSkillList[uv1][uv2] = nil
-		uv0._preCommanderSkillTF = nil
+	var_13_0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_14_0)
+		arg_13_0._commanderSkillList[arg_13_1][arg_13_2] = nil
+		arg_13_0._preCommanderSkillTF = nil
 
-		uv0._skillFloatCMDPool:Recycle(uv3)
+		arg_13_0._skillFloatCMDPool:Recycle(arg_13_3)
 	end)
 end
 
-function slot0.CutInPainting(slot0, slot1, slot2, slot3, slot4)
-	if slot0._currentPainting then
-		slot0._paintingAnimator.enabled = false
+function var_0_0.CutInPainting(arg_15_0, arg_15_1, arg_15_2, arg_15_3, arg_15_4)
+	if arg_15_0._currentPainting then
+		arg_15_0._paintingAnimator.enabled = false
 
-		setActive(slot0._currentPainting, false)
+		setActive(arg_15_0._currentPainting, false)
 	end
 
-	if slot0._skillPaintings[slot4 or slot1.painting or slot1.prefab] == nil then
-		slot6 = ys.Battle.BattleResourceManager.GetInstance():InstPainting(slot5)
-		slot0._skillPaintings[slot5] = slot6
+	local var_15_0 = arg_15_4 or arg_15_1.painting or arg_15_1.prefab
 
-		setParent(slot6, slot0._paintingFitter, false)
+	if arg_15_0._skillPaintings[var_15_0] == nil then
+		local var_15_1 = ys.Battle.BattleResourceManager.GetInstance():InstPainting(var_15_0)
+
+		arg_15_0._skillPaintings[var_15_0] = var_15_1
+
+		setParent(var_15_1, arg_15_0._paintingFitter, false)
 	end
 
-	slot0._currentPainting = slot0._skillPaintings[slot5]
+	arg_15_0._currentPainting = arg_15_0._skillPaintings[var_15_0]
 
-	setActive(slot0._currentPainting, true)
-	LuaHelper.SetParticleSpeed(slot0._paintingUI, slot2)
+	setActive(arg_15_0._currentPainting, true)
+	LuaHelper.SetParticleSpeed(arg_15_0._paintingUI, arg_15_2)
 
-	slot6 = Vector3(slot3, 1, 1)
-	slot0._paintingUI.transform.localScale = slot6
-	slot0._paintingParticleContainer.transform.localScale = slot6
-	slot0._paintingParticles.transform.localEulerAngles = Vector3(0, 90 * slot3, 0)
+	local var_15_2 = Vector3(arg_15_3, 1, 1)
 
-	slot0._paintingParticleSystem:Play(true)
+	arg_15_0._paintingUI.transform.localScale = var_15_2
+	arg_15_0._paintingParticleContainer.transform.localScale = var_15_2
+	arg_15_0._paintingParticles.transform.localEulerAngles = Vector3(0, 90 * arg_15_3, 0)
 
-	slot0._paintingAnimator.speed = slot2
-	slot0._paintingAnimator.enabled = true
+	arg_15_0._paintingParticleSystem:Play(true)
 
-	slot0._paintingAnimator:Play("skill_painting", -1, 0)
+	arg_15_0._paintingAnimator.speed = arg_15_2
+	arg_15_0._paintingAnimator.enabled = true
+
+	arg_15_0._paintingAnimator:Play("skill_painting", -1, 0)
 end
 
-function slot0.didEnter(slot0)
-	setActive(slot0._tf, false)
+function var_0_0.didEnter(arg_16_0)
+	setActive(arg_16_0._tf, false)
 
-	slot0._ratioFitter.enabled = true
-	slot0._ratioFitter.aspectRatio = pg.CameraFixMgr.GetInstance():GetBattleUIRatio()
-	slot0.camEventId = pg.CameraFixMgr.GetInstance():bind(pg.CameraFixMgr.ASPECT_RATIO_UPDATE, function (slot0, slot1)
-		uv0._ratioFitter.aspectRatio = pg.CameraFixMgr.GetInstance():GetBattleUIRatio()
+	arg_16_0._ratioFitter.enabled = true
+	arg_16_0._ratioFitter.aspectRatio = pg.CameraFixMgr.GetInstance():GetBattleUIRatio()
+	arg_16_0.camEventId = pg.CameraFixMgr.GetInstance():bind(pg.CameraFixMgr.ASPECT_RATIO_UPDATE, function(arg_17_0, arg_17_1)
+		arg_16_0._ratioFitter.aspectRatio = pg.CameraFixMgr.GetInstance():GetBattleUIRatio()
 	end)
-	slot1 = ys.Battle.BattleState.GetInstance()
 
-	slot1:SetBattleUI(slot0)
-	onButton(slot0, slot0:findTF("PauseBtn"), function ()
-		uv0:emit(BattleMediator.ON_PAUSE)
+	local var_16_0 = ys.Battle.BattleState.GetInstance()
+
+	var_16_0:SetBattleUI(arg_16_0)
+	onButton(arg_16_0, arg_16_0:findTF("PauseBtn"), function()
+		arg_16_0:emit(BattleMediator.ON_PAUSE)
 	end, SFX_CONFIRM)
-	onButton(slot0, slot0:findTF("chatBtn"), function ()
-		uv0:emit(BattleMediator.ON_CHAT, uv0:findTF("chatContainer"))
-		setActive(uv1, false)
-	end)
-	onToggle(slot0, slot0:findTF("AutoBtn"), function (slot0)
-		slot1 = uv0:GetBattleType()
 
-		uv1:emit(BattleMediator.ON_AUTO, {
-			isOn = not slot0,
-			toggle = uv1:findTF("AutoBtn"),
-			system = slot1
+	local var_16_1 = arg_16_0:findTF("chatBtn")
+
+	onButton(arg_16_0, var_16_1, function()
+		arg_16_0:emit(BattleMediator.ON_CHAT, arg_16_0:findTF("chatContainer"))
+		setActive(var_16_1, false)
+	end)
+	onToggle(arg_16_0, arg_16_0:findTF("AutoBtn"), function(arg_20_0)
+		local var_20_0 = var_16_0:GetBattleType()
+
+		arg_16_0:emit(BattleMediator.ON_AUTO, {
+			isOn = not arg_20_0,
+			toggle = arg_16_0:findTF("AutoBtn"),
+			system = var_20_0
 		})
-		uv0:ActiveBot(ys.Battle.BattleState.IsAutoBotActive(slot1))
-		setActive(uv2, uv0:ChatUseable())
+		var_16_0:ActiveBot(ys.Battle.BattleState.IsAutoBotActive(var_20_0))
+		setActive(var_16_1, var_16_0:ChatUseable())
 	end, SFX_PANEL, SFX_PANEL)
-	onButton(slot0, slot0:findTF("CardPuzzleConsole/relic/bg"), function ()
-		uv1:emit(BattleMediator.ON_PUZZLE_RELIC, {
-			relicList = uv0:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE):GetCardPuzzleComponent():GetRelicList()
-		})
-	end, SFX_CONFIRM)
-	onButton(slot0, slot0:findTF("CardPuzzleConsole/deck/bg"), function ()
-		slot2 = uv0:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE):GetCardPuzzleComponent()
+	onButton(arg_16_0, arg_16_0:findTF("CardPuzzleConsole/relic/bg"), function()
+		local var_21_0 = var_16_0:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE):GetCardPuzzleComponent():GetRelicList()
 
-		uv1:emit(BattleMediator.ON_PUZZLE_CARD, {
-			card = slot2:GetDeck():GetCardList(),
-			hand = slot2:GetHand():GetCardList()
+		arg_16_0:emit(BattleMediator.ON_PUZZLE_RELIC, {
+			relicList = var_21_0
 		})
 	end, SFX_CONFIRM)
-	slot1:ConfigBattleEndFunc(function (slot0)
-		uv0:clear()
-		uv0:emit(BattleMediator.ON_BATTLE_RESULT, slot0)
+	onButton(arg_16_0, arg_16_0:findTF("CardPuzzleConsole/deck/bg"), function()
+		local var_22_0 = var_16_0:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE):GetCardPuzzleComponent()
+		local var_22_1 = var_22_0:GetDeck():GetCardList()
+		local var_22_2 = var_22_0:GetHand():GetCardList()
+
+		arg_16_0:emit(BattleMediator.ON_PUZZLE_CARD, {
+			card = var_22_1,
+			hand = var_22_2
+		})
+	end, SFX_CONFIRM)
+	var_16_0:ConfigBattleEndFunc(function(arg_23_0)
+		arg_16_0:clear()
+		arg_16_0:emit(BattleMediator.ON_BATTLE_RESULT, arg_23_0)
 	end)
 
-	slot3 = ys.Battle.BattleConst.BuffEffectType
-	slot4 = {
-		slot3.ON_START_GAME,
-		slot3.ON_FLAG_SHIP,
-		slot3.ON_CONSORT,
-		slot3.ON_LEADER,
-		slot3.ON_REAR,
-		slot3.ON_SUB_LEADER,
-		slot3.ON_SUB_CONSORT
+	local var_16_2 = ys.Battle.BattleConst.BuffEffectType
+	local var_16_3 = {
+		var_16_2.ON_START_GAME,
+		var_16_2.ON_FLAG_SHIP,
+		var_16_2.ON_CONSORT,
+		var_16_2.ON_LEADER,
+		var_16_2.ON_REAR,
+		var_16_2.ON_SUB_LEADER,
+		var_16_2.ON_SUB_CONSORT
 	}
+	local var_16_4 = 0
 
-	function slot6(slot0)
-		for slot5, slot6 in ipairs(slot0) do
-			slot1 = 0 + ys.Battle.BattleDataFunction.GetShipSkillTriggerCount(slot6, uv0)
+	local function var_16_5(arg_24_0)
+		local var_24_0 = 0
+
+		for iter_24_0, iter_24_1 in ipairs(arg_24_0) do
+			var_24_0 = var_24_0 + ys.Battle.BattleDataFunction.GetShipSkillTriggerCount(iter_24_1, var_16_3)
 		end
 
-		return slot1
+		return var_24_0
 	end
 
-	slot0._skillFloatPool = pg.Pool.New(slot0.skillRoot, slot0.skillTpl, 0 + slot6(slot0.contextData.battleData.MainUnitList) + slot6(slot0.contextData.battleData.VanguardUnitList) + slot6(slot0.contextData.battleData.SubUnitList) + 4, 10, true, false):InitSize()
+	local var_16_6 = var_16_4 + var_16_5(arg_16_0.contextData.battleData.MainUnitList) + var_16_5(arg_16_0.contextData.battleData.VanguardUnitList) + var_16_5(arg_16_0.contextData.battleData.SubUnitList) + 4
 
-	slot0:emit(BattleMediator.ENTER)
-	slot0:initPauseWindow()
+	arg_16_0._skillFloatPool = pg.Pool.New(arg_16_0.skillRoot, arg_16_0.skillTpl, var_16_6, 10, true, false):InitSize()
 
-	if slot0.contextData.prePause then
-		triggerButton(slot0:findTF("PauseBtn"))
+	arg_16_0:emit(BattleMediator.ENTER)
+	arg_16_0:initPauseWindow()
+
+	if arg_16_0.contextData.prePause then
+		triggerButton(arg_16_0:findTF("PauseBtn"))
 	end
 
-	setActive(slot2, slot1:ChatUseable())
+	setActive(var_16_1, var_16_0:ChatUseable())
 end
 
-function slot0.onBackPressed(slot0)
-	if isActive(slot0.pauseWindow) then
+function var_0_0.onBackPressed(arg_25_0)
+	if isActive(arg_25_0.pauseWindow) then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-		triggerButton(slot0.continueBtn)
+		triggerButton(arg_25_0.continueBtn)
 	end
 end
 
-function slot0.activeBotHelp(slot0, slot1)
-	slot2 = getProxy(PlayerProxy)
+function var_0_0.activeBotHelp(arg_26_0, arg_26_1)
+	local var_26_0 = getProxy(PlayerProxy)
 
-	if not slot1 then
-		if slot0.autoBotHelp then
+	if not arg_26_1 then
+		if arg_26_0.autoBotHelp then
 			pg.MsgboxMgr.GetInstance():hide()
 		end
 
 		return
 	end
 
-	if slot2.botHelp then
+	if var_26_0.botHelp then
 		return
 	end
 
-	slot0.autoBotHelp = true
+	arg_26_0.autoBotHelp = true
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		type = MSGBOX_TYPE_HELP,
@@ -415,114 +488,133 @@ function slot0.activeBotHelp(slot0, slot1)
 				sound = SFX_CANCEL
 			}
 		},
-		onClose = function ()
-			uv0.autoBotHelp = false
+		onClose = function()
+			arg_26_0.autoBotHelp = false
 		end
 	})
 
-	slot2.botHelp = true
+	var_26_0.botHelp = true
 end
 
-function slot0.exitBattle(slot0, slot1)
-	if not slot1 then
-		slot0:emit(BattleMediator.ON_QUIT_BATTLE_MANUALLY)
-		slot0:emit(BattleMediator.ON_BACK_PRE_SCENE)
-	elseif slot1 == "kick" then
-		-- Nothing
+function var_0_0.exitBattle(arg_28_0, arg_28_1)
+	if not arg_28_1 then
+		arg_28_0:emit(BattleMediator.ON_QUIT_BATTLE_MANUALLY)
+		arg_28_0:emit(BattleMediator.ON_BACK_PRE_SCENE)
+	elseif arg_28_1 == "kick" then
+		-- block empty
 	end
 end
 
-function slot0.setChapter(slot0, slot1)
-	slot0._chapter = slot1
+function var_0_0.setChapter(arg_29_0, arg_29_1)
+	arg_29_0._chapter = arg_29_1
 end
 
-function slot0.setFleet(slot0, slot1, slot2)
-	slot0._mainShipVOs = slot1
-	slot0._vanShipVOs = slot2
+function var_0_0.setFleet(arg_30_0, arg_30_1, arg_30_2)
+	arg_30_0._mainShipVOs = arg_30_1
+	arg_30_0._vanShipVOs = arg_30_2
 end
 
-function slot0.initPauseWindow(slot0)
-	slot0.pauseWindow = slot0:findTF("Msgbox")
-	slot0.LeftTimeContainer = slot0:findTF("window/LeftTime", slot0.pauseWindow)
-	slot0.LeftTime = slot0:findTF("window/LeftTime/Text", slot0.pauseWindow)
-	slot0.mainTFs = {}
-	slot0.vanTFs = {}
+function var_0_0.initPauseWindow(arg_31_0)
+	arg_31_0.pauseWindow = arg_31_0:findTF("Msgbox")
+	arg_31_0.LeftTimeContainer = arg_31_0:findTF("window/LeftTime", arg_31_0.pauseWindow)
+	arg_31_0.LeftTime = arg_31_0:findTF("window/LeftTime/Text", arg_31_0.pauseWindow)
+	arg_31_0.mainTFs = {}
+	arg_31_0.vanTFs = {}
 
-	function slot1(slot0, slot1, slot2)
-		for slot6 = 1, 3 do
-			setActive(slot1:Find("ship_" .. slot6), slot2 and slot6 <= #slot2)
+	local function var_31_0(arg_32_0, arg_32_1, arg_32_2)
+		for iter_32_0 = 1, 3 do
+			local var_32_0 = arg_32_1:Find("ship_" .. iter_32_0)
 
-			if slot2 and slot6 <= #slot2 then
-				updateShip(slot7, slot2[slot6])
+			setActive(var_32_0, arg_32_2 and iter_32_0 <= #arg_32_2)
+
+			if arg_32_2 and iter_32_0 <= #arg_32_2 then
+				updateShip(var_32_0, arg_32_2[iter_32_0])
 			end
 
-			table.insert(slot0 and uv0.mainTFs or uv0.vanTFs, slot7)
+			table.insert(arg_32_0 and arg_31_0.mainTFs or arg_31_0.vanTFs, var_32_0)
 		end
 
-		if slot2 then
-			for slot7, slot8 in ipairs(slot2) do
-				slot3 = 0 + slot8:getShipCombatPower()
+		if arg_32_2 then
+			local var_32_1 = 0
+
+			for iter_32_1, iter_32_2 in ipairs(arg_32_2) do
+				var_32_1 = var_32_1 + iter_32_2:getShipCombatPower()
 			end
 
-			setText(slot1:Find("power/value"), slot3)
+			setText(arg_32_1:Find("power/value"), var_32_1)
 		end
 	end
 
-	if slot0._mainShipVOs then
-		slot1(true, slot0:findTF("window/main", slot0.pauseWindow), slot0._mainShipVOs)
-		slot1(false, slot0:findTF("window/van", slot0.pauseWindow), slot0._vanShipVOs)
+	if arg_31_0._mainShipVOs then
+		var_31_0(true, arg_31_0:findTF("window/main", arg_31_0.pauseWindow), arg_31_0._mainShipVOs)
+		var_31_0(false, arg_31_0:findTF("window/van", arg_31_0.pauseWindow), arg_31_0._vanShipVOs)
 	end
 
-	slot0.continueBtn = slot0:findTF("window/button_container/continue", slot0.pauseWindow)
-	slot0.leaveBtn = slot0:findTF("window/button_container/leave", slot0.pauseWindow)
+	local var_31_1 = ys.Battle.BattleState.GetInstance()
+	local var_31_2 = findTF(arg_31_0.pauseWindow, "window/Chapter")
+	local var_31_3 = findTF(arg_31_0.pauseWindow, "window/Chapter/Text")
 
-	if ys.Battle.BattleState.GetInstance():GetBattleType() == SYSTEM_SCENARIO then
-		slot6 = slot0._chapter:getConfigTable()
+	arg_31_0.continueBtn = arg_31_0:findTF("window/button_container/continue", arg_31_0.pauseWindow)
+	arg_31_0.leaveBtn = arg_31_0:findTF("window/button_container/leave", arg_31_0.pauseWindow)
 
-		setText(findTF(slot0.pauseWindow, "window/Chapter"), slot6.chapter_name)
-		setText(findTF(slot0.pauseWindow, "window/Chapter/Text"), string.split(slot6.name, "|")[1])
-	elseif slot5 == SYSTEM_ROUTINE or slot5 == SYSTEM_DUEL or slot5 == SYSTEM_HP_SHARE_ACT_BOSS or slot5 == SYSTEM_BOSS_EXPERIMENT or slot5 == SYSTEM_ACT_BOSS or slot5 == SYSTEM_ACT_BOSS_SP or slot5 == SYSTEM_BOSS_RUSH or slot5 == SYSTEM_BOSS_RUSH_EX or slot5 == SYSTEM_LIMIT_CHALLENGE or slot5 == SYSTEM_BOSS_SINGLE then
-		setText(slot3, "SP")
-		setText(slot4, pg.expedition_data_template[slot2:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetInitData().StageTmpId].name)
-	elseif slot5 == SYSTEM_DEBUG then
-		setText(slot3, "??")
-		setText(slot4, "碧蓝梦境")
-	elseif slot5 == SYSTEM_CHALLENGE then
-		setText(slot3, "SP")
-		setText(slot4, slot0._chapter:getNextExpedition().chapter_name[2])
-		setActive(slot0.LeftTimeContainer, true)
-	elseif slot5 == SYSTEM_WORLD_BOSS or slot5 == SYSTEM_WORLD then
-		setText(slot3, i18n("world_battle_pause"))
-		setText(slot4, i18n("world_battle_pause2"))
+	local var_31_4 = var_31_1:GetBattleType()
 
-		if slot5 == SYSTEM_WORLD_BOSS then
-			setActive(slot0.leaveBtn, false)
+	if var_31_4 == SYSTEM_SCENARIO then
+		local var_31_5 = arg_31_0._chapter:getConfigTable()
+
+		setText(var_31_2, var_31_5.chapter_name)
+		setText(var_31_3, string.split(var_31_5.name, "|")[1])
+	elseif var_31_4 == SYSTEM_ROUTINE or var_31_4 == SYSTEM_DUEL or var_31_4 == SYSTEM_HP_SHARE_ACT_BOSS or var_31_4 == SYSTEM_BOSS_EXPERIMENT or var_31_4 == SYSTEM_ACT_BOSS or var_31_4 == SYSTEM_ACT_BOSS_SP or var_31_4 == SYSTEM_BOSS_RUSH or var_31_4 == SYSTEM_BOSS_RUSH_EX or var_31_4 == SYSTEM_LIMIT_CHALLENGE or var_31_4 == SYSTEM_BOSS_SINGLE then
+		setText(var_31_2, "SP")
+
+		local var_31_6 = var_31_1:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetInitData().StageTmpId
+		local var_31_7 = pg.expedition_data_template[var_31_6]
+
+		setText(var_31_3, var_31_7.name)
+	elseif var_31_4 == SYSTEM_DEBUG then
+		setText(var_31_2, "??")
+		setText(var_31_3, "碧蓝梦境")
+	elseif var_31_4 == SYSTEM_CHALLENGE then
+		local var_31_8 = arg_31_0._chapter:getNextExpedition()
+
+		setText(var_31_2, "SP")
+		setText(var_31_3, var_31_8.chapter_name[2])
+		setActive(arg_31_0.LeftTimeContainer, true)
+	elseif var_31_4 == SYSTEM_WORLD_BOSS or var_31_4 == SYSTEM_WORLD then
+		setText(var_31_2, i18n("world_battle_pause"))
+		setText(var_31_3, i18n("world_battle_pause2"))
+
+		if var_31_4 == SYSTEM_WORLD_BOSS then
+			setActive(arg_31_0.leaveBtn, false)
 		end
-	elseif slot5 == SYSTEM_GUILD then
-		setText(slot3, "BOSS")
-		setText(slot4, pg.guild_boss_event[slot2:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetInitData().ActID] and slot7.name or "")
-	elseif slot5 ~= SYSTEM_TEST and slot5 ~= SYSTEM_SUB_ROUTINE and slot5 ~= SYSTEM_PERFORM and slot5 ~= SYSTEM_PROLOGUE and slot5 ~= SYSTEM_DODGEM and slot5 ~= SYSTEM_SIMULATION and slot5 ~= SYSTEM_SUBMARINE_RUN and slot5 ~= SYSTEM_BOSS_EXPERIMENT and slot5 ~= SYSTEM_REWARD_PERFORM then
-		if slot5 == SYSTEM_AIRFIGHT then
-			-- Nothing
-		elseif slot5 ~= SYSTEM_CARDPUZZLE then
-			assert(false, "System not defined " .. (slot5 or "NIL"))
-		end
+	elseif var_31_4 == SYSTEM_GUILD then
+		local var_31_9 = var_31_1:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetInitData().ActID
+		local var_31_10 = pg.guild_boss_event[var_31_9]
+
+		setText(var_31_2, "BOSS")
+		setText(var_31_3, var_31_10 and var_31_10.name or "")
+	elseif var_31_4 == SYSTEM_TEST or var_31_4 == SYSTEM_SUB_ROUTINE or var_31_4 == SYSTEM_PERFORM or var_31_4 == SYSTEM_PROLOGUE or var_31_4 == SYSTEM_DODGEM or var_31_4 == SYSTEM_SIMULATION or var_31_4 == SYSTEM_SUBMARINE_RUN or var_31_4 == SYSTEM_BOSS_EXPERIMENT or var_31_4 == SYSTEM_REWARD_PERFORM or var_31_4 == SYSTEM_AIRFIGHT then
+		-- block empty
+	elseif var_31_4 == SYSTEM_CARDPUZZLE then
+		-- block empty
+	else
+		assert(false, "System not defined " .. (var_31_4 or "NIL"))
 	end
 
-	onButton(slot0, slot0.leaveBtn, function ()
-		uv0:emit(BattleMediator.ON_LEAVE)
+	onButton(arg_31_0, arg_31_0.leaveBtn, function()
+		arg_31_0:emit(BattleMediator.ON_LEAVE)
 	end)
-	onButton(slot0, slot0.continueBtn, function ()
-		setActive(uv0.pauseWindow, false)
-		pg.UIMgr.GetInstance():UnblurPanel(uv0.pauseWindow, uv0._tf)
-		uv1:Resume()
+	onButton(arg_31_0, arg_31_0.continueBtn, function()
+		setActive(arg_31_0.pauseWindow, false)
+		pg.UIMgr.GetInstance():UnblurPanel(arg_31_0.pauseWindow, arg_31_0._tf)
+		var_31_1:Resume()
 	end)
-	onButton(slot0, slot0:findTF("help", slot0.pauseWindow), function ()
+	onButton(arg_31_0, arg_31_0:findTF("help", arg_31_0.pauseWindow), function()
 		if BATTLE_DEBUG and PLATFORM == 7 then
-			setActive(uv0.pauseWindow, false)
-			pg.UIMgr.GetInstance():UnblurPanel(uv0.pauseWindow, uv0._tf)
-			uv1:Resume()
-			uv1:OpenConsole()
+			setActive(arg_31_0.pauseWindow, false)
+			pg.UIMgr.GetInstance():UnblurPanel(arg_31_0.pauseWindow, arg_31_0._tf)
+			var_31_1:Resume()
+			var_31_1:OpenConsole()
 		else
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_HELP,
@@ -530,84 +622,98 @@ function slot0.initPauseWindow(slot0)
 			})
 		end
 	end)
-	onButton(slot0, slot0:findTF("window/top/btnBack", slot0.pauseWindow), function ()
-		triggerButton(uv0.continueBtn)
+	onButton(arg_31_0, arg_31_0:findTF("window/top/btnBack", arg_31_0.pauseWindow), function()
+		triggerButton(arg_31_0.continueBtn)
 	end)
-	onButton(slot0, slot0.pauseWindow, function ()
-		triggerButton(uv0.continueBtn)
+	onButton(arg_31_0, arg_31_0.pauseWindow, function()
+		triggerButton(arg_31_0.continueBtn)
 	end)
-	setActive(slot0.pauseWindow, false)
+	setActive(arg_31_0.pauseWindow, false)
 end
 
-function slot0.updatePauseWindow(slot0)
-	if not slot0.pauseWindow then
+function var_0_0.updatePauseWindow(arg_38_0)
+	if not arg_38_0.pauseWindow then
 		return
 	end
 
-	setActive(slot0.pauseWindow, true)
-	pg.UIMgr.GetInstance():BlurPanel(slot0.pauseWindow, nil, {
+	setActive(arg_38_0.pauseWindow, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_38_0.pauseWindow, nil, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 
-	slot2 = ys.Battle.BattleState.GetInstance():GetProxyByName(ys.Battle.BattleDataProxy.__name)
-	slot3 = slot2:GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE)
+	local var_38_0 = ys.Battle.BattleState.GetInstance():GetProxyByName(ys.Battle.BattleDataProxy.__name)
+	local var_38_1 = var_38_0:GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE)
+	local var_38_2 = var_38_1:GetMainList()
+	local var_38_3 = var_38_1:GetScoutList()
 
-	function slot6(slot0, slot1, slot2)
-		if not slot0 then
+	local function var_38_4(arg_39_0, arg_39_1, arg_39_2)
+		if not arg_39_0 then
 			return
 		end
 
-		for slot6 = 1, #slot0 do
-			if uv0:GetFreezeShipByID(slot0[slot6].id) then
-				setSlider(slot2[slot6]:Find("blood"), 0, 1, uv0:GetFreezeShipByID(slot7):GetHPRate())
-				SetActive(slot2[slot6]:Find("mask"), false)
-			elseif uv0:GetShipByID(slot7) then
-				setSlider(slot2[slot6]:Find("blood"), 0, 1, uv0:GetShipByID(slot7):GetHPRate())
-				SetActive(slot2[slot6]:Find("mask"), false)
+		for iter_39_0 = 1, #arg_39_0 do
+			local var_39_0 = arg_39_0[iter_39_0].id
+
+			if var_38_1:GetFreezeShipByID(var_39_0) then
+				local var_39_1 = var_38_1:GetFreezeShipByID(var_39_0)
+
+				setSlider(arg_39_2[iter_39_0]:Find("blood"), 0, 1, var_39_1:GetHPRate())
+				SetActive(arg_39_2[iter_39_0]:Find("mask"), false)
+			elseif var_38_1:GetShipByID(var_39_0) then
+				local var_39_2 = var_38_1:GetShipByID(var_39_0)
+
+				setSlider(arg_39_2[iter_39_0]:Find("blood"), 0, 1, var_39_2:GetHPRate())
+				SetActive(arg_39_2[iter_39_0]:Find("mask"), false)
 			else
-				setSlider(slot2[slot6]:Find("blood"), 0, 1, 0)
-				SetActive(slot2[slot6]:Find("mask"), true)
+				setSlider(arg_39_2[iter_39_0]:Find("blood"), 0, 1, 0)
+				SetActive(arg_39_2[iter_39_0]:Find("mask"), true)
 			end
 		end
 	end
 
-	slot6(slot0._mainShipVOs, slot3:GetMainList(), slot0.mainTFs)
-	slot6(slot0._vanShipVOs, slot3:GetScoutList(), slot0.vanTFs)
-	setText(slot0.LeftTime, ys.Battle.BattleTimerView.formatTime(math.floor(slot2:GetCountDown())))
+	var_38_4(arg_38_0._mainShipVOs, var_38_2, arg_38_0.mainTFs)
+	var_38_4(arg_38_0._vanShipVOs, var_38_3, arg_38_0.vanTFs)
+	setText(arg_38_0.LeftTime, ys.Battle.BattleTimerView.formatTime(math.floor(var_38_0:GetCountDown())))
 end
 
-function slot0.AddUIFX(slot0, slot1, slot2)
-	slot2 = slot2 or 1
-	slot1 = tf(slot1)
-	slot4 = slot2 > 0 and slot0._fxContainerUpper or slot0._fxContainerBottom
+function var_0_0.AddUIFX(arg_40_0, arg_40_1, arg_40_2)
+	arg_40_2 = arg_40_2 or 1
 
-	slot1:SetParent(slot4)
-	pg.ViewUtils.SetSortingOrder(slot1, slot0._canvasOrder + slot2)
-	pg.ViewUtils.SetLayer(slot1, Layer.UI)
+	local var_40_0 = arg_40_2 > 0
 
-	return slot4.localScale
+	arg_40_1 = tf(arg_40_1)
+
+	local var_40_1 = var_40_0 and arg_40_0._fxContainerUpper or arg_40_0._fxContainerBottom
+
+	arg_40_1:SetParent(var_40_1)
+	pg.ViewUtils.SetSortingOrder(arg_40_1, arg_40_0._canvasOrder + arg_40_2)
+	pg.ViewUtils.SetLayer(arg_40_1, Layer.UI)
+
+	return var_40_1.localScale
 end
 
-function slot0.OnCloseChat(slot0)
-	setActive(slot0:findTF("chatBtn"), ys.Battle.BattleState.GetInstance():IsBotActive())
+function var_0_0.OnCloseChat(arg_41_0)
+	local var_41_0 = arg_41_0:findTF("chatBtn")
+
+	setActive(var_41_0, ys.Battle.BattleState.GetInstance():IsBotActive())
 end
 
-function slot0.clear(slot0)
-	slot0._preSkillTF = nil
-	slot0._preCommanderSkillTF = nil
-	slot0._commanderSkillList = nil
-	slot0._skillPaintings = nil
-	slot0._currentPainting = nil
+function var_0_0.clear(arg_42_0)
+	arg_42_0._preSkillTF = nil
+	arg_42_0._preCommanderSkillTF = nil
+	arg_42_0._commanderSkillList = nil
+	arg_42_0._skillPaintings = nil
+	arg_42_0._currentPainting = nil
 
-	Destroy(slot0._paintingUI)
+	Destroy(arg_42_0._paintingUI)
 end
 
-function slot0.willExit(slot0)
-	slot0._skillFloatPool:Dispose()
-	slot0._skillFloatCMDPool:Dispose()
+function var_0_0.willExit(arg_43_0)
+	arg_43_0._skillFloatPool:Dispose()
+	arg_43_0._skillFloatCMDPool:Dispose()
 	ys.Battle.BattleState.GetInstance():ExitBattle()
-	pg.UIMgr.GetInstance():UnblurPanel(slot0.pauseWindow, slot0._tf)
-	pg.CameraFixMgr.GetInstance():disconnect(slot0.camEventId)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_43_0.pauseWindow, arg_43_0._tf)
+	pg.CameraFixMgr.GetInstance():disconnect(arg_43_0.camEventId)
 end
 
-return slot0
+return var_0_0

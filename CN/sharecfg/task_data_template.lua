@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.task_data_template = setmetatable({
 	__name = "task_data_template",
 	all = {

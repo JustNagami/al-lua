@@ -1,50 +1,65 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("BattleBuffAddProficiency", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffAddProficiency = slot1
-slot1.__name = "BattleBuffAddProficiency"
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+local var_0_1 = class("BattleBuffAddProficiency", var_0_0.Battle.BattleBuffEffect)
+
+var_0_0.Battle.BattleBuffAddProficiency = var_0_1
+var_0_1.__name = "BattleBuffAddProficiency"
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot1.SetArgs(slot0, slot1, slot2)
-	slot0._group = slot0._tempData.arg_list.group or slot2:GetID()
-	slot0._weaponLabelList = slot0._tempData.arg_list.label or {}
-	slot0._weaponIndexList = slot0._tempData.arg_list.index
-	slot0._number = slot0._tempData.arg_list.number
+function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0._group = arg_2_0._tempData.arg_list.group or arg_2_2:GetID()
+	arg_2_0._weaponLabelList = arg_2_0._tempData.arg_list.label or {}
+	arg_2_0._weaponIndexList = arg_2_0._tempData.arg_list.index
+	arg_2_0._number = arg_2_0._tempData.arg_list.number
 end
 
-function slot1.onAttach(slot0, slot1, slot2)
-	slot0:calcEnhancement(slot1:GetAllWeapon(), true)
+function var_0_1.onAttach(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = arg_3_1:GetAllWeapon()
+
+	arg_3_0:calcEnhancement(var_3_0, true)
 end
 
-function slot1.onRemove(slot0, slot1, slot2)
-	slot0:calcEnhancement(slot1:GetAllWeapon(), false)
+function var_0_1.onRemove(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = arg_4_1:GetAllWeapon()
+
+	arg_4_0:calcEnhancement(var_4_0, false)
 end
 
-function slot1.calcEnhancement(slot0, slot1, slot2)
-	if not slot2 then
-		slot3 = slot0._number * -1
+function var_0_1.calcEnhancement(arg_5_0, arg_5_1, arg_5_2)
+	local var_5_0 = arg_5_0._number
+
+	if not arg_5_2 then
+		var_5_0 = var_5_0 * -1
 	end
 
-	for slot7, slot8 in ipairs(slot1) do
-		slot9 = 1
+	for iter_5_0, iter_5_1 in ipairs(arg_5_1) do
+		local var_5_1 = 1
+		local var_5_2 = iter_5_1:GetEquipmentLabel()
 
-		for slot14, slot15 in ipairs(slot0._weaponLabelList) do
-			if not table.contains(slot8:GetEquipmentLabel(), slot15) then
-				slot9 = 0
+		for iter_5_2, iter_5_3 in ipairs(arg_5_0._weaponLabelList) do
+			if not table.contains(var_5_2, iter_5_3) then
+				var_5_1 = 0
 
 				break
 			end
 		end
 
-		if slot0._weaponIndexList and not table.contains(slot0._weaponIndexList, slot8:GetEquipmentIndex()) then
-			slot9 = slot9 * 0
+		if arg_5_0._weaponIndexList then
+			local var_5_3 = iter_5_1:GetEquipmentIndex()
+
+			if not table.contains(arg_5_0._weaponIndexList, var_5_3) then
+				var_5_1 = var_5_1 * 0
+			end
 		end
 
-		if slot9 == 1 then
-			slot8:SetPotentialFactor(slot8:GetPotential() + slot3)
+		if var_5_1 == 1 then
+			local var_5_4 = iter_5_1:GetPotential() + var_5_0
+
+			iter_5_1:SetPotentialFactor(var_5_4)
 		end
 	end
 end

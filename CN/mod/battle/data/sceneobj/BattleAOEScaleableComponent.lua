@@ -1,80 +1,90 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst
-slot2 = slot0.Battle.BattleConfig
-slot3 = class("BattleAOEScaleableComponent")
-slot0.Battle.BattleAOEScaleableComponent = slot3
-slot3.__name = "BattleAOEScaleableComponent"
-slot3.FILL = 1
-slot3.EXPEND = 2
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0, slot1)
-	slot0._area = slot1
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst
+local var_0_2 = var_0_0.Battle.BattleConfig
+local var_0_3 = class("BattleAOEScaleableComponent")
 
-	slot0._area:AppendComponent(slot0)
+var_0_0.Battle.BattleAOEScaleableComponent = var_0_3
+var_0_3.__name = "BattleAOEScaleableComponent"
+var_0_3.FILL = 1
+var_0_3.EXPEND = 2
 
-	slot2 = slot0._area.Settle
+function var_0_3.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._area = arg_1_1
 
-	function slot0._area.Settle()
-		uv0:updateScale()
-		uv1(uv0._area)
+	arg_1_0._area:AppendComponent(arg_1_0)
+
+	local var_1_0 = arg_1_0._area.Settle
+
+	function arg_1_0._area.Settle()
+		arg_1_0:updateScale()
+		var_1_0(arg_1_0._area)
 	end
 end
 
-function slot3.Dispose(slot0)
-	slot0._area = nil
-	slot0._referenceUnit = nil
+function var_0_3.Dispose(arg_3_0)
+	arg_3_0._area = nil
+	arg_3_0._referenceUnit = nil
 end
 
-function slot3.SetReferenceUnit(slot0, slot1)
-	slot0._referenceUnit = slot1
-	slot0._referencePoint = Clone(slot1:GetPosition())
+function var_0_3.SetReferenceUnit(arg_4_0, arg_4_1)
+	arg_4_0._referenceUnit = arg_4_1
+	arg_4_0._referencePoint = Clone(arg_4_1:GetPosition())
 end
 
-function slot3.ConfigData(slot0, slot1, slot2)
-	if slot1 == uv0.FILL then
-		slot0.updateScale = uv0.doFill
-		slot0._upperBound = slot2.upperBound
-		slot0._lowerBound = slot2.lowerBound
-		slot0._rearBound = slot2.rearBound
-		slot0._frontOffset = slot2.frontOffset
-	elseif slot1 == uv0.EXPEND then
-		slot0._area:SetFXStatic(false)
+function var_0_3.ConfigData(arg_5_0, arg_5_1, arg_5_2)
+	if arg_5_1 == var_0_3.FILL then
+		arg_5_0.updateScale = var_0_3.doFill
+		arg_5_0._upperBound = arg_5_2.upperBound
+		arg_5_0._lowerBound = arg_5_2.lowerBound
+		arg_5_0._rearBound = arg_5_2.rearBound
+		arg_5_0._frontOffset = arg_5_2.frontOffset
+	elseif arg_5_1 == var_0_3.EXPEND then
+		arg_5_0._area:SetFXStatic(false)
 
-		slot0.updateScale = uv0.doExpend
-		slot0._expendDuration = slot2.expendDuration
-		slot0._widthExpendSpeed = slot2.widthSpeed
-		slot0._heightExpendSpeed = slot2.heightSpeed
-		slot0._expendStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
-		slot0._lastExpendTime = pg.TimeMgr.GetInstance():GetCombatTime()
+		arg_5_0.updateScale = var_0_3.doExpend
+		arg_5_0._expendDuration = arg_5_2.expendDuration
+		arg_5_0._widthExpendSpeed = arg_5_2.widthSpeed
+		arg_5_0._heightExpendSpeed = arg_5_2.heightSpeed
+		arg_5_0._expendStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
+		arg_5_0._lastExpendTime = pg.TimeMgr.GetInstance():GetCombatTime()
 	end
 end
 
-function slot3.doFill(slot0)
-	slot2 = slot0._area:GetIFF()
-	slot3 = math.abs(slot0._upperBound - slot0._lowerBound)
-	slot4 = slot0._frontOffset * 2
+function var_0_3.doFill(arg_6_0)
+	local var_6_0 = setmetatable({}, {
+		__index = arg_6_0._referenceUnit:GetPosition()
+	})
+	local var_6_1 = arg_6_0._area:GetIFF()
+	local var_6_2 = math.abs(arg_6_0._upperBound - arg_6_0._lowerBound)
+	local var_6_3 = arg_6_0._frontOffset * 2
 
-	slot0._area:SetWidth(slot4)
-	slot0._area:SetHeight(slot3)
-	slot0._area:GetCldComponent():ResetSize(slot4, 5, slot3)
+	arg_6_0._area:SetWidth(var_6_3)
+	arg_6_0._area:SetHeight(var_6_2)
+	arg_6_0._area:GetCldComponent():ResetSize(var_6_3, 5, var_6_2)
 
-	slot0._referencePoint.x = setmetatable({}, {
-		__index = slot0._referenceUnit:GetPosition()
-	}).x
-	slot0._referencePoint.z = slot3 * 0.5 + slot0._lowerBound
+	local var_6_4 = var_6_2 * 0.5 + arg_6_0._lowerBound
+	local var_6_5 = var_6_0.x
 
-	slot0._area:SetPosition(slot0._referencePoint)
+	arg_6_0._referencePoint.x = var_6_5
+	arg_6_0._referencePoint.z = var_6_4
+
+	arg_6_0._area:SetPosition(arg_6_0._referencePoint)
 end
 
-function slot3.doExpend(slot0)
-	if pg.TimeMgr.GetInstance():GetCombatTime() - slot0._expendStartTime < slot0._expendDuration then
-		slot2 = slot0._area:GetWidth()
-		slot3 = slot0._area:GetHeight()
-		slot4 = slot1 - slot0._lastExpendTime
+function var_0_3.doExpend(arg_7_0)
+	local var_7_0 = pg.TimeMgr.GetInstance():GetCombatTime()
 
-		slot0._area:SetWidth(slot2 + slot0._widthExpendSpeed * slot4)
-		slot0._area:SetHeight(slot3 + slot0._heightExpendSpeed * slot4)
-		slot0._area:GetCldComponent():ResetSize(slot2, 5, slot3)
+	if var_7_0 - arg_7_0._expendStartTime < arg_7_0._expendDuration then
+		local var_7_1 = arg_7_0._area:GetWidth()
+		local var_7_2 = arg_7_0._area:GetHeight()
+		local var_7_3 = var_7_0 - arg_7_0._lastExpendTime
+		local var_7_4 = var_7_1 + arg_7_0._widthExpendSpeed * var_7_3
+		local var_7_5 = var_7_2 + arg_7_0._heightExpendSpeed * var_7_3
+
+		arg_7_0._area:SetWidth(var_7_4)
+		arg_7_0._area:SetHeight(var_7_5)
+		arg_7_0._area:GetCldComponent():ResetSize(var_7_1, 5, var_7_2)
 	end
 end

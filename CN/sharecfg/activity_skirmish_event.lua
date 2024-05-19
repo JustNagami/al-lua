@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_skirmish_event = {
 	[101] = {
 		event = "1242017",

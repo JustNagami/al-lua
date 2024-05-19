@@ -1,192 +1,220 @@
-slot0 = class("NenjuuMiniGameView", import("view.miniGame.BaseMiniGameView"))
+﻿local var_0_0 = class("NenjuuMiniGameView", import("view.miniGame.BaseMiniGameView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "NenjuuMiniGameUI"
 end
 
-function slot0.openUI(slot0, slot1)
-	if slot0.status then
-		setActive(slot0.rtTitlePage:Find(slot0.status), false)
+function var_0_0.openUI(arg_2_0, arg_2_1)
+	if arg_2_0.status then
+		setActive(arg_2_0.rtTitlePage:Find(arg_2_0.status), false)
 	end
 
-	if slot1 then
-		setActive(slot0.rtTitlePage:Find(slot1), true)
+	if arg_2_1 then
+		setActive(arg_2_0.rtTitlePage:Find(arg_2_1), true)
 	end
 
-	slot0.status = slot1
+	arg_2_0.status = arg_2_1
 
-	switch(slot1, {
-		main = function ()
-			uv0:updateMainUI()
+	switch(arg_2_1, {
+		main = function()
+			arg_2_0:updateMainUI()
 		end,
-		pause = function ()
-			uv0.gameController:PauseGame()
+		pause = function()
+			arg_2_0.gameController:PauseGame()
 		end,
-		exit = function ()
-			uv0.gameController:PauseGame()
+		exit = function()
+			arg_2_0.gameController:PauseGame()
 		end,
-		result = function ()
-			setActive(uv0.rtTitlePage:Find("result"):Find("window/now/new"), NenjuuGameConfig.ParsingElements(uv0:GetMGData():GetRuntimeData("elements") or {}).high < uv0.gameController.point)
+		result = function()
+			local var_6_0 = NenjuuGameConfig.ParsingElements(arg_2_0:GetMGData():GetRuntimeData("elements") or {})
+			local var_6_1 = arg_2_0.gameController.point
+			local var_6_2 = var_6_0.high
+			local var_6_3 = arg_2_0.rtTitlePage:Find("result")
 
-			if slot2 <= slot1 then
-				slot2 = slot1
-				slot0.high = slot1
+			setActive(var_6_3:Find("window/now/new"), var_6_2 < var_6_1)
+
+			if var_6_2 <= var_6_1 then
+				var_6_2 = var_6_1
+				var_6_0.high = var_6_1
 			end
 
-			slot0.count = slot0.count + slot1
+			var_6_0.count = var_6_0.count + var_6_1
 
-			uv0:SaveDataChange(slot0)
-			setText(slot3:Find("window/high/Text"), slot2)
-			setText(slot3:Find("window/now/Text"), slot1)
+			arg_2_0:SaveDataChange(var_6_0)
+			setText(var_6_3:Find("window/high/Text"), var_6_2)
+			setText(var_6_3:Find("window/now/Text"), var_6_1)
 
-			if uv0.stageIndex == uv0:GetMGHubData().usedtime + 1 and slot4.count > 0 then
-				uv0:SendSuccess(0)
+			local var_6_4 = arg_2_0:GetMGHubData()
+
+			if arg_2_0.stageIndex == var_6_4.usedtime + 1 and var_6_4.count > 0 then
+				arg_2_0:SendSuccess(0)
 			end
 		end
 	})
 end
 
-function slot0.updateMainUI(slot0)
-	slot1 = slot0:GetMGHubData()
-	slot2 = slot1:getConfig("reward_need")
-	slot5 = math.min(slot1.usedtime + 1, slot1.usedtime + slot1.count)
+function var_0_0.updateMainUI(arg_7_0)
+	local var_7_0 = arg_7_0:GetMGHubData()
+	local var_7_1 = var_7_0:getConfig("reward_need")
+	local var_7_2 = var_7_0.usedtime
+	local var_7_3 = var_7_2 + var_7_0.count
+	local var_7_4 = math.min(var_7_0.usedtime + 1, var_7_3)
+	local var_7_5 = arg_7_0.itemList.container
+	local var_7_6 = var_7_5.childCount
 
-	for slot11 = 1, slot0.itemList.container.childCount do
-		slot12 = {
-			finish = true
-		}
+	for iter_7_0 = 1, var_7_6 do
+		local var_7_7 = {}
 
-		if slot11 <= slot3 then
-			-- Nothing
-		elseif slot11 > slot4 then
-			slot12.lock = true
+		if iter_7_0 <= var_7_2 then
+			var_7_7.finish = true
+		elseif iter_7_0 <= var_7_3 then
+			-- block empty
+		else
+			var_7_7.lock = true
 		end
 
-		slot13 = slot6:GetChild(slot11 - 1)
+		local var_7_8 = var_7_5:GetChild(iter_7_0 - 1)
 
-		setActive(slot13:Find("finish"), slot12.finish)
-		setActive(slot13:Find("lock"), slot12.lock)
-		setToggleEnabled(slot13, slot11 <= slot5)
-		triggerToggle(slot13, slot11 == slot5)
+		setActive(var_7_8:Find("finish"), var_7_7.finish)
+		setActive(var_7_8:Find("lock"), var_7_7.lock)
+		setToggleEnabled(var_7_8, iter_7_0 <= var_7_4)
+		triggerToggle(var_7_8, iter_7_0 == var_7_4)
 	end
 
-	slot9 = slot6.rect.height
-	slot10 = slot6:GetComponent(typeof(ScrollRect)).viewport.rect.height
+	local var_7_9 = var_7_5:GetChild(0).anchoredPosition.y - var_7_5:GetChild(var_7_4 - 1).anchoredPosition.y
+	local var_7_10 = var_7_5.rect.height
+	local var_7_11 = var_7_5:GetComponent(typeof(ScrollRect)).viewport.rect.height
+	local var_7_12 = math.clamp(var_7_9, 0, var_7_10 - var_7_11) / (var_7_10 - var_7_11)
 
-	scrollTo(slot6, nil, 1 - math.clamp(slot6:GetChild(0).anchoredPosition.y - slot6:GetChild(slot5 - 1).anchoredPosition.y, 0, slot9 - slot10) / (slot9 - slot10))
-	slot0:checkGet()
+	scrollTo(var_7_5, nil, 1 - var_7_12)
+	arg_7_0:checkGet()
 end
 
-function slot0.checkGet(slot0)
-	if slot0:GetMGHubData().ultimate == 0 then
-		if slot1.usedtime < slot1:getConfig("reward_need") then
+function var_0_0.checkGet(arg_8_0)
+	local var_8_0 = arg_8_0:GetMGHubData()
+
+	if var_8_0.ultimate == 0 then
+		if var_8_0.usedtime < var_8_0:getConfig("reward_need") then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = slot1.id,
+			hubid = var_8_0.id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
 	end
 end
 
-function slot0.initPageUI(slot0)
-	slot0.rtTitlePage = slot0._tf:Find("TitlePage")
-	slot1 = slot0.rtTitlePage:Find("main")
+function var_0_0.initPageUI(arg_9_0)
+	arg_9_0.rtTitlePage = arg_9_0._tf:Find("TitlePage")
 
-	onButton(slot0, slot1:Find("btn_back"), function ()
-		uv0:closeView()
+	local var_9_0 = arg_9_0.rtTitlePage:Find("main")
+
+	onButton(arg_9_0, var_9_0:Find("btn_back"), function()
+		arg_9_0:closeView()
 	end, SFX_CANCEL)
-	onButton(slot0, slot1:Find("btn_help"), function ()
+	onButton(arg_9_0, var_9_0:Find("btn_help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip["2023spring_minigame_help"].tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot1:Find("btn_opreation"), function ()
-		setActive(uv0.rtLevel:Find("Opreation"), true)
-		uv0:UpdateOpreationPage(1)
+	onButton(arg_9_0, var_9_0:Find("btn_opreation"), function()
+		setActive(arg_9_0.rtLevel:Find("Opreation"), true)
+		arg_9_0:UpdateOpreationPage(1)
 	end, SFX_PANEL)
 
-	slot2 = slot0:GetMGData():GetSimpleValue("story")
+	local var_9_1 = arg_9_0:GetMGData():GetSimpleValue("story")
 
-	onButton(slot0, slot1:Find("btn_start"), function ()
-		slot0 = {}
-
-		if checkExist(uv0, {
-			uv1.stageIndex
+	onButton(arg_9_0, var_9_0:Find("btn_start"), function()
+		local var_13_0 = {}
+		local var_13_1 = checkExist(var_9_1, {
+			arg_9_0.stageIndex
 		}, {
 			1
-		}) then
-			table.insert(slot0, function (slot0)
-				pg.NewStoryMgr.GetInstance():Play(uv0, slot0)
+		})
+
+		if var_13_1 then
+			table.insert(var_13_0, function(arg_14_0)
+				pg.NewStoryMgr.GetInstance():Play(var_13_1, arg_14_0)
 			end)
 		end
 
-		seriesAsync(slot0, function ()
-			uv0:openReadyPage()
+		seriesAsync(var_13_0, function()
+			arg_9_0:openReadyPage()
 		end)
 	end, SFX_PANEL)
 
-	slot0.stageIndex = 0
-	slot4 = slot1:Find("side_panel/award/content")
-	slot0.itemList = UIItemList.New(slot4, slot4:GetChild(0))
+	arg_9_0.stageIndex = 0
 
-	slot0.itemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = slot2:Find("IconTpl")
-			slot5, slot6, slot7 = unpack(uv0[slot1 + 1])
+	local var_9_2 = pg.mini_game[arg_9_0:GetMGData().id].simple_config_data.drop
+	local var_9_3 = var_9_0:Find("side_panel/award/content")
 
-			updateDrop(slot3, {
-				count = slot7,
-				id = slot6,
-				type = slot5
-			})
-			onButton(uv1, slot3, function ()
-				uv0:emit(uv1.ON_DROP, uv2)
+	arg_9_0.itemList = UIItemList.New(var_9_3, var_9_3:GetChild(0))
+
+	arg_9_0.itemList:make(function(arg_16_0, arg_16_1, arg_16_2)
+		arg_16_1 = arg_16_1 + 1
+
+		if arg_16_0 == UIItemList.EventUpdate then
+			local var_16_0 = arg_16_2:Find("IconTpl")
+			local var_16_1 = {}
+
+			var_16_1.type, var_16_1.id, var_16_1.count = unpack(var_9_2[arg_16_1])
+
+			updateDrop(var_16_0, var_16_1)
+			onButton(arg_9_0, var_16_0, function()
+				arg_9_0:emit(var_0_0.ON_DROP, var_16_1)
 			end, SFX_PANEL)
-			onToggle(uv1, slot2, function (slot0)
-				if slot0 then
-					uv0.stageIndex = uv1
+			onToggle(arg_9_0, arg_16_2, function(arg_18_0)
+				if arg_18_0 then
+					arg_9_0.stageIndex = arg_16_1
 				end
 			end)
 		end
 	end)
-	slot0.itemList:align(#pg.mini_game[slot0:GetMGData().id].simple_config_data.drop)
-	slot0.rtTitlePage:Find("countdown"):Find("bg/Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
-		uv0:openUI()
-		uv0.gameController:StartGame()
+	arg_9_0.itemList:align(#var_9_2)
+	arg_9_0.rtTitlePage:Find("countdown"):Find("bg/Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		arg_9_0:openUI()
+		arg_9_0.gameController:StartGame()
 	end)
-	onButton(slot0, slot0.rtTitlePage:Find("pause"):Find("window/btn_confirm"), function ()
-		uv0:openUI()
-		uv0.gameController:ResumeGame()
+
+	local var_9_4 = arg_9_0.rtTitlePage:Find("pause")
+
+	onButton(arg_9_0, var_9_4:Find("window/btn_confirm"), function()
+		arg_9_0:openUI()
+		arg_9_0.gameController:ResumeGame()
 	end, SFX_CONFIRM)
 
-	slot7 = slot0.rtTitlePage:Find("exit")
+	local var_9_5 = arg_9_0.rtTitlePage:Find("exit")
 
-	onButton(slot0, slot7:Find("window/btn_cancel"), function ()
-		uv0:openUI()
-		uv0.gameController:ResumeGame()
+	onButton(arg_9_0, var_9_5:Find("window/btn_cancel"), function()
+		arg_9_0:openUI()
+		arg_9_0.gameController:ResumeGame()
 	end, SFX_CANCEL)
-	onButton(slot0, slot7:Find("window/btn_confirm"), function ()
-		uv0:openUI()
-		uv0.gameController:EndGame()
+	onButton(arg_9_0, var_9_5:Find("window/btn_confirm"), function()
+		arg_9_0:openUI()
+		arg_9_0.gameController:EndGame()
 	end, SFX_CONFIRM)
-	onButton(slot0, slot0.rtTitlePage:Find("result"):Find("window/btn_finish"), function ()
-		uv0:openUI("main")
+
+	local var_9_6 = arg_9_0.rtTitlePage:Find("result")
+
+	onButton(arg_9_0, var_9_6:Find("window/btn_finish"), function()
+		arg_9_0:openUI("main")
 	end, SFX_CONFIRM)
 end
 
-function slot0.initLeveUI(slot0)
-	slot0.rtLevel = slot0._tf:Find("LevelPage")
+function var_0_0.initLeveUI(arg_24_0)
+	arg_24_0.rtLevel = arg_24_0._tf:Find("LevelPage")
 
-	onButton(slot0, slot0.rtLevel:Find("Opreation"):Find("btn_back"), function ()
-		setActive(uv0, false)
+	local var_24_0 = arg_24_0.rtLevel:Find("Opreation")
+
+	onButton(arg_24_0, var_24_0:Find("btn_back"), function()
+		setActive(var_24_0, false)
 	end, SFX_CANCEL)
 end
 
-slot1 = {
+local var_0_1 = {
 	bomb = {
 		"2023spring_minigame_item_firecracker"
 	},
@@ -215,93 +243,13 @@ slot1 = {
 	}
 }
 
-function slot0.UpdateOpreationPage(slot0, slot1)
-	slot2 = slot0.rtLevel:Find("Opreation")
+function var_0_0.UpdateOpreationPage(arg_26_0, arg_26_1)
+	local var_26_0 = arg_26_0.rtLevel:Find("Opreation")
+	local var_26_1 = NenjuuGameConfig.ParsingElements(arg_26_0:GetMGData():GetRuntimeData("elements") or {})
 
-	setText(slot2:Find("point/Text"), NenjuuGameConfig.ParsingElements(slot0:GetMGData():GetRuntimeData("elements") or {}).count)
+	setText(var_26_0:Find("point/Text"), var_26_1.count)
 
-	slot5 = nil
-	slot6 = slot2:Find("main/view/content")
-
-	UIItemList.New(slot6, slot6:Find("tpl")):make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
-
-			setActive(slot2:Find("empty"), not slot3)
-			setActive(slot2:Find("info"), slot3)
-
-			if slot3 then
-				slot4 = slot2:Find("info")
-
-				eachChild(slot4:Find("icon"), function (slot0)
-					setActive(slot0, slot0.name == uv0)
-				end)
-
-				slot5 = string.split(i18n(uv1[slot3][1]), "|")
-
-				setText(slot4:Find("name/Text"), slot5[1])
-				setText(slot4:Find("desc"), slot5[2])
-				setActive(slot4:Find("level"), uv1[slot3][2])
-
-				if uv1[slot3][2] then
-					slot6 = string.split(i18n(uv1[slot3][2]), "|")
-
-					for slot10 = 1, 3 do
-						setActive(slot4:Find("level/" .. slot10), slot6[slot10])
-
-						if slot6[slot10] then
-							setTextColor(slot11:Find("Text"), Color.NewHex(uv2.level[slot3] < slot10 and "8D90AFFF" or "535885FF"))
-							changeToScrollText(slot11:Find("info"), setColorStr(slot6[slot10], uv2.level[slot3] < slot10 and "#8D90AFFF" or "#535885FF"))
-						end
-					end
-				end
-
-				eachChild(slot4:Find("status"), function (slot0)
-					setActive(slot0, false)
-				end)
-				onButton(uv3, slot4:Find("status/btn_equip"), function ()
-					uv0.item = uv1
-
-					uv2:SaveDataChange(uv0)
-					uv2:UpdateOpreationPage(uv3)
-				end, SFX_CONFIRM)
-				onButton(uv3, slot4:Find("status/btn_unlock"), function ()
-					uv0.count = uv0.count - NenjuuGameConfig.SKILL_LEVEL_CONFIG[uv1].cost[uv0.level[uv1] + 1]
-					uv0.level[uv1] = uv0.level[uv1] + 1
-
-					if uv0.level[uv1] > 1 then
-						pg.TipsMgr.GetInstance():ShowTips(i18n("2023spring_minigame_tip7", uv2[1]))
-					else
-						pg.TipsMgr.GetInstance():ShowTips(i18n("2023spring_minigame_tip6", uv2[1]))
-					end
-
-					uv3:SaveDataChange(uv0)
-					uv3:UpdateOpreationPage(uv4)
-				end, SFX_CONFIRM)
-
-				if uv2.level[slot3] < #NenjuuGameConfig.SKILL_LEVEL_CONFIG[slot3].cost then
-					if uv2.count < NenjuuGameConfig.SKILL_LEVEL_CONFIG[slot3].cost[uv2.level[slot3] + 1] then
-						setText(slot4:Find("status/btn_lock/point"), slot6)
-						setText(slot4:Find("status/btn_lock/Text"), i18n("2023spring_minigame_tip3"))
-						setActive(slot4:Find("status/btn_lock"), true)
-					else
-						setText(slot4:Find("status/btn_unlock/point"), slot6)
-						setText(slot4:Find("status/btn_unlock/Text"), i18n("2023spring_minigame_tip3"))
-						setActive(slot4:Find("status/btn_unlock"), true)
-					end
-				elseif slot3 == "bomb" or slot3 == "lantern" then
-					setText(slot4:Find("status/btn_equip/Text"), i18n("2023spring_minigame_tip1"))
-					setActive(slot4:Find("status/btn_equip"), uv2.item ~= slot3)
-					setText(slot4:Find("status/btn_in/Text"), i18n("2023spring_minigame_tip2"))
-					setActive(slot4:Find("status/btn_in"), uv2.item == slot3)
-				else
-					setActive(slot4:Find("status/unlock"), true)
-				end
-			end
-		end
-	end)
-
-	for slot11, slot12 in ipairs({
+	local var_26_2 = {
 		{
 			"bomb",
 			"lantern"
@@ -315,168 +263,263 @@ function slot0.UpdateOpreationPage(slot0, slot1)
 			"blessing",
 			"decoy"
 		}
-	}) do
-		onToggle(slot0, slot2:Find("toggles/" .. slot11), function (slot0)
-			uv0 = uv1
-			uv2 = uv3
+	}
+	local var_26_3
+	local var_26_4 = var_26_0:Find("main/view/content")
+	local var_26_5 = UIItemList.New(var_26_4, var_26_4:Find("tpl"))
 
-			uv4:align(4)
-			setActive(uv5:Find("main/tip"), uv1 == 1)
+	var_26_5:make(function(arg_27_0, arg_27_1, arg_27_2)
+		arg_27_1 = arg_27_1 + 1
+
+		if arg_27_0 == UIItemList.EventUpdate then
+			local var_27_0 = var_26_3[arg_27_1]
+
+			setActive(arg_27_2:Find("empty"), not var_27_0)
+			setActive(arg_27_2:Find("info"), var_27_0)
+
+			if var_27_0 then
+				local var_27_1 = arg_27_2:Find("info")
+
+				eachChild(var_27_1:Find("icon"), function(arg_28_0)
+					setActive(arg_28_0, arg_28_0.name == var_27_0)
+				end)
+
+				local var_27_2 = string.split(i18n(var_0_1[var_27_0][1]), "|")
+
+				setText(var_27_1:Find("name/Text"), var_27_2[1])
+				setText(var_27_1:Find("desc"), var_27_2[2])
+				setActive(var_27_1:Find("level"), var_0_1[var_27_0][2])
+
+				if var_0_1[var_27_0][2] then
+					local var_27_3 = string.split(i18n(var_0_1[var_27_0][2]), "|")
+
+					for iter_27_0 = 1, 3 do
+						local var_27_4 = var_27_1:Find("level/" .. iter_27_0)
+
+						setActive(var_27_4, var_27_3[iter_27_0])
+
+						if var_27_3[iter_27_0] then
+							setTextColor(var_27_4:Find("Text"), Color.NewHex(iter_27_0 > var_26_1.level[var_27_0] and "8D90AFFF" or "535885FF"))
+							changeToScrollText(var_27_4:Find("info"), setColorStr(var_27_3[iter_27_0], iter_27_0 > var_26_1.level[var_27_0] and "#8D90AFFF" or "#535885FF"))
+						end
+					end
+				end
+
+				eachChild(var_27_1:Find("status"), function(arg_29_0)
+					setActive(arg_29_0, false)
+				end)
+				onButton(arg_26_0, var_27_1:Find("status/btn_equip"), function()
+					var_26_1.item = var_27_0
+
+					arg_26_0:SaveDataChange(var_26_1)
+					arg_26_0:UpdateOpreationPage(arg_26_1)
+				end, SFX_CONFIRM)
+				onButton(arg_26_0, var_27_1:Find("status/btn_unlock"), function()
+					var_26_1.count = var_26_1.count - NenjuuGameConfig.SKILL_LEVEL_CONFIG[var_27_0].cost[var_26_1.level[var_27_0] + 1]
+					var_26_1.level[var_27_0] = var_26_1.level[var_27_0] + 1
+
+					if var_26_1.level[var_27_0] > 1 then
+						pg.TipsMgr.GetInstance():ShowTips(i18n("2023spring_minigame_tip7", var_27_2[1]))
+					else
+						pg.TipsMgr.GetInstance():ShowTips(i18n("2023spring_minigame_tip6", var_27_2[1]))
+					end
+
+					arg_26_0:SaveDataChange(var_26_1)
+					arg_26_0:UpdateOpreationPage(arg_26_1)
+				end, SFX_CONFIRM)
+
+				if var_26_1.level[var_27_0] < #NenjuuGameConfig.SKILL_LEVEL_CONFIG[var_27_0].cost then
+					local var_27_5 = NenjuuGameConfig.SKILL_LEVEL_CONFIG[var_27_0].cost[var_26_1.level[var_27_0] + 1]
+
+					if var_27_5 > var_26_1.count then
+						setText(var_27_1:Find("status/btn_lock/point"), var_27_5)
+						setText(var_27_1:Find("status/btn_lock/Text"), i18n("2023spring_minigame_tip3"))
+						setActive(var_27_1:Find("status/btn_lock"), true)
+					else
+						setText(var_27_1:Find("status/btn_unlock/point"), var_27_5)
+						setText(var_27_1:Find("status/btn_unlock/Text"), i18n("2023spring_minigame_tip3"))
+						setActive(var_27_1:Find("status/btn_unlock"), true)
+					end
+				elseif var_27_0 == "bomb" or var_27_0 == "lantern" then
+					setText(var_27_1:Find("status/btn_equip/Text"), i18n("2023spring_minigame_tip1"))
+					setActive(var_27_1:Find("status/btn_equip"), var_26_1.item ~= var_27_0)
+					setText(var_27_1:Find("status/btn_in/Text"), i18n("2023spring_minigame_tip2"))
+					setActive(var_27_1:Find("status/btn_in"), var_26_1.item == var_27_0)
+				else
+					setActive(var_27_1:Find("status/unlock"), true)
+				end
+			end
+		end
+	end)
+
+	for iter_26_0, iter_26_1 in ipairs(var_26_2) do
+		onToggle(arg_26_0, var_26_0:Find("toggles/" .. iter_26_0), function(arg_32_0)
+			arg_26_1 = iter_26_0
+			var_26_3 = iter_26_1
+
+			var_26_5:align(4)
+			setActive(var_26_0:Find("main/tip"), iter_26_0 == 1)
 		end, SFX_PANEL)
 	end
 
-	triggerToggle(slot2:Find("toggles/" .. slot1), true)
+	triggerToggle(var_26_0:Find("toggles/" .. arg_26_1), true)
 end
 
-function slot2(slot0, slot1, slot2)
-	for slot6, slot7 in ipairs(NenjuuGameConfig.ABILITY_LIST) do
-		if slot0[slot7] then
-			slot1 = slot1 + slot2[slot7]
+local function var_0_2(arg_33_0, arg_33_1, arg_33_2)
+	for iter_33_0, iter_33_1 in ipairs(NenjuuGameConfig.ABILITY_LIST) do
+		if arg_33_0[iter_33_1] then
+			arg_33_1 = arg_33_1 + arg_33_2[iter_33_1]
 		end
 	end
 
-	return slot1
+	return arg_33_1
 end
 
-function slot0.openReadyPage(slot0)
-	slot1 = NenjuuGameConfig.ParsingElements(slot0:GetMGData():GetRuntimeData("elements") or {})
-	slot2 = NenjuuGameConfig.GetStageConfig("Spring23Level_" .. slot0.stageIndex)
+function var_0_0.openReadyPage(arg_34_0)
+	local var_34_0 = NenjuuGameConfig.ParsingElements(arg_34_0:GetMGData():GetRuntimeData("elements") or {})
+	local var_34_1 = NenjuuGameConfig.GetStageConfig("Spring23Level_" .. arg_34_0.stageIndex)
 
-	if not slot0.abilityCache[slot0.stageIndex] then
-		slot0.abilityCache[slot0.stageIndex] = setmetatable({}, {
-			__index = slot2.ability_config
+	if not arg_34_0.abilityCache[arg_34_0.stageIndex] then
+		arg_34_0.abilityCache[arg_34_0.stageIndex] = setmetatable({}, {
+			__index = var_34_1.ability_config
 		})
 	end
 
-	setActive(slot0.rtLevel:Find("Ready"), true)
-	onButton(slot0, slot0.rtLevel:Find("Ready/bg"), function ()
-		setActive(uv0.rtLevel:Find("Ready"), false)
+	setActive(arg_34_0.rtLevel:Find("Ready"), true)
+	onButton(arg_34_0, arg_34_0.rtLevel:Find("Ready/bg"), function()
+		setActive(arg_34_0.rtLevel:Find("Ready"), false)
 	end, SFX_CANCEL)
 
-	slot3 = slot0.rtLevel:Find("Ready/main")
+	local var_34_2 = arg_34_0.rtLevel:Find("Ready/main")
 
-	eachChild(slot3:Find("title"), function (slot0)
-		setActive(slot0, slot0.name == tostring(uv0.stageIndex))
+	eachChild(var_34_2:Find("title"), function(arg_36_0)
+		setActive(arg_36_0, arg_36_0.name == tostring(arg_34_0.stageIndex))
 	end)
-	setText(slot3:Find("rate/Image/Text"), uv0(slot0.abilityCache[slot0.stageIndex], slot2.base_rate, slot2.ability_rate))
-	setText(slot3:Find("high/Image/Text"), slot1["stage_" .. slot0.stageIndex])
-	setText(slot3:Find("ability_text/Text"), i18n("2023spring_minigame_tip5"))
+	setText(var_34_2:Find("rate/Image/Text"), var_0_2(arg_34_0.abilityCache[arg_34_0.stageIndex], var_34_1.base_rate, var_34_1.ability_rate))
+	setText(var_34_2:Find("high/Image/Text"), var_34_0["stage_" .. arg_34_0.stageIndex])
+	setText(var_34_2:Find("ability_text/Text"), i18n("2023spring_minigame_tip5"))
 
-	slot4 = underscore.filter(NenjuuGameConfig.ABILITY_LIST, function (slot0)
-		return uv0.abilityCache[uv0.stageIndex][slot0]
+	local var_34_3 = underscore.filter(NenjuuGameConfig.ABILITY_LIST, function(arg_37_0)
+		return arg_34_0.abilityCache[arg_34_0.stageIndex][arg_37_0]
 	end)
-	slot5 = UIItemList.New(slot3:Find("abilitys"), slot3:Find("abilitys/tpl"))
+	local var_34_4 = UIItemList.New(var_34_2:Find("abilitys"), var_34_2:Find("abilitys/tpl"))
 
-	slot5:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	var_34_4:make(function(arg_38_0, arg_38_1, arg_38_2)
+		arg_38_1 = arg_38_1 + 1
 
-		if slot0 == UIItemList.EventUpdate then
-			setActive(slot2:Find("empty"), not uv0[slot1])
-			setActive(slot2:Find("enable"), uv0[slot1])
+		if arg_38_0 == UIItemList.EventUpdate then
+			setActive(arg_38_2:Find("empty"), not var_34_3[arg_38_1])
+			setActive(arg_38_2:Find("enable"), var_34_3[arg_38_1])
 
-			if uv0[slot1] then
-				eachChild(slot2:Find("enable"), function (slot0)
-					setActive(slot0, slot0.name == uv0[uv1])
+			if var_34_3[arg_38_1] then
+				eachChild(arg_38_2:Find("enable"), function(arg_39_0)
+					setActive(arg_39_0, arg_39_0.name == var_34_3[arg_38_1])
 				end)
 			end
 		end
 	end)
-	slot5:align(#NenjuuGameConfig.ABILITY_LIST)
-	onButton(slot0, slot3:Find("btn_rate"), function ()
-		setActive(uv0.rtLevel:Find("Ready"), false)
-		uv0:openRatePage()
+	var_34_4:align(#NenjuuGameConfig.ABILITY_LIST)
+	onButton(arg_34_0, var_34_2:Find("btn_rate"), function()
+		setActive(arg_34_0.rtLevel:Find("Ready"), false)
+		arg_34_0:openRatePage()
 	end, SFX_PANEL)
-	onButton(slot0, slot3:Find("btn_continue"), function ()
-		setActive(uv0.rtLevel:Find("Ready"), false)
-		uv0.gameController:ResetGame()
-		uv0.gameController:ReadyGame({
-			index = uv0.stageIndex,
-			FuShun = NenjuuGameConfig.ParsingElements(uv0:GetMGData():GetRuntimeData("elements") or {}),
-			Nenjuu = uv0.abilityCache[uv0.stageIndex],
-			rate = uv1(uv0.abilityCache[uv0.stageIndex], uv2.base_rate, uv2.ability_rate)
+	onButton(arg_34_0, var_34_2:Find("btn_continue"), function()
+		setActive(arg_34_0.rtLevel:Find("Ready"), false)
+		arg_34_0.gameController:ResetGame()
+		arg_34_0.gameController:ReadyGame({
+			index = arg_34_0.stageIndex,
+			FuShun = NenjuuGameConfig.ParsingElements(arg_34_0:GetMGData():GetRuntimeData("elements") or {}),
+			Nenjuu = arg_34_0.abilityCache[arg_34_0.stageIndex],
+			rate = var_0_2(arg_34_0.abilityCache[arg_34_0.stageIndex], var_34_1.base_rate, var_34_1.ability_rate)
 		})
-		uv0:openUI("countdown")
+		arg_34_0:openUI("countdown")
 	end, SFX_CONFIRM)
 end
 
-function slot0.openRatePage(slot0)
-	slot1 = NenjuuGameConfig.ParsingElements(slot0:GetMGData():GetRuntimeData("elements") or {})
-	slot2 = NenjuuGameConfig.GetStageConfig("Spring23Level_" .. slot0.stageIndex)
+function var_0_0.openRatePage(arg_42_0)
+	local var_42_0 = NenjuuGameConfig.ParsingElements(arg_42_0:GetMGData():GetRuntimeData("elements") or {})
+	local var_42_1 = NenjuuGameConfig.GetStageConfig("Spring23Level_" .. arg_42_0.stageIndex)
 
-	if not slot0.abilityCache[slot0.stageIndex] then
-		slot0.abilityCache[slot0.stageIndex] = setmetatable({}, {
-			__index = slot2.ability_config
+	if not arg_42_0.abilityCache[arg_42_0.stageIndex] then
+		arg_42_0.abilityCache[arg_42_0.stageIndex] = setmetatable({}, {
+			__index = var_42_1.ability_config
 		})
 	end
 
-	setActive(slot0.rtLevel:Find("Rate"), true)
-	onButton(slot0, slot0.rtLevel:Find("Rate/bg"), function ()
-		setActive(uv0.rtLevel:Find("Rate"), false)
-		uv0:openReadyPage()
+	setActive(arg_42_0.rtLevel:Find("Rate"), true)
+	onButton(arg_42_0, arg_42_0.rtLevel:Find("Rate/bg"), function()
+		setActive(arg_42_0.rtLevel:Find("Rate"), false)
+		arg_42_0:openReadyPage()
 	end, SFX_CANCEL)
 
-	slot3 = slot0.rtLevel:Find("Rate/main/panel")
+	local var_42_2 = arg_42_0.rtLevel:Find("Rate/main/panel")
+	local var_42_3 = var_0_2(arg_42_0.abilityCache[arg_42_0.stageIndex], var_42_1.base_rate, var_42_1.ability_rate)
 
-	setText(slot3:Find("info/rate/Text"), uv0(slot0.abilityCache[slot0.stageIndex], slot2.base_rate, slot2.ability_rate))
+	setText(var_42_2:Find("info/rate/Text"), var_42_3)
 
-	slot6 = slot3:Find("view/content")
-	slot7 = UIItemList.New(slot6, slot6:Find("tpl"))
+	local var_42_4 = underscore.filter(NenjuuGameConfig.ABILITY_LIST, function(arg_44_0)
+		return arg_42_0.abilityCache[arg_42_0.stageIndex][arg_44_0] ~= nil
+	end)
+	local var_42_5 = var_42_2:Find("view/content")
+	local var_42_6 = UIItemList.New(var_42_5, var_42_5:Find("tpl"))
 
-	slot7:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
+	var_42_6:make(function(arg_45_0, arg_45_1, arg_45_2)
+		arg_45_1 = arg_45_1 + 1
 
-			setActive(slot2:Find("empty"), not slot3)
-			setActive(slot2:Find("enable"), slot3)
+		if arg_45_0 == UIItemList.EventUpdate then
+			local var_45_0 = var_42_4[arg_45_1]
 
-			if slot3 then
-				slot4 = slot2:Find("enable")
+			setActive(arg_45_2:Find("empty"), not var_45_0)
+			setActive(arg_45_2:Find("enable"), var_45_0)
 
-				eachChild(slot4:Find("icon"), function (slot0)
-					setActive(slot0, slot0.name == uv0)
+			if var_45_0 then
+				local var_45_1 = arg_45_2:Find("enable")
+
+				eachChild(var_45_1:Find("icon"), function(arg_46_0)
+					setActive(arg_46_0, arg_46_0.name == var_45_0)
 				end)
 
-				slot5 = string.split(i18n("2023spring_minigame_nenjuu_skill" .. table.indexof(NenjuuGameConfig.ABILITY_LIST, slot3)), "|")
+				local var_45_2 = string.split(i18n("2023spring_minigame_nenjuu_skill" .. table.indexof(NenjuuGameConfig.ABILITY_LIST, var_45_0)), "|")
 
-				setText(slot4:Find("name/Text"), slot5[1])
-				setText(slot4:Find("desc"), slot5[2])
-				onToggle(uv1, slot4:Find("toggle"), function (slot0)
-					uv0.abilityCache[uv0.stageIndex][uv1] = slot0
+				setText(var_45_1:Find("name/Text"), var_45_2[1])
+				setText(var_45_1:Find("desc"), var_45_2[2])
+				onToggle(arg_42_0, var_45_1:Find("toggle"), function(arg_47_0)
+					arg_42_0.abilityCache[arg_42_0.stageIndex][var_45_0] = arg_47_0
 
-					setText(uv5:Find("info/delta"), (uv2(uv0.abilityCache[uv0.stageIndex], uv3.base_rate, uv3.ability_rate) - uv4 < 0 and "" or "+") .. slot1)
+					local var_47_0 = var_0_2(arg_42_0.abilityCache[arg_42_0.stageIndex], var_42_1.base_rate, var_42_1.ability_rate) - var_42_3
+
+					setText(var_42_2:Find("info/delta"), (var_47_0 < 0 and "" or "+") .. var_47_0)
 				end)
-				triggerToggle(slot4:Find("toggle"), uv1.abilityCache[uv1.stageIndex][slot3])
+				triggerToggle(var_45_1:Find("toggle"), arg_42_0.abilityCache[arg_42_0.stageIndex][var_45_0])
 			end
 		end
 	end)
-	slot7:align(math.min(#underscore.filter(NenjuuGameConfig.ABILITY_LIST, function (slot0)
-		return uv0.abilityCache[uv0.stageIndex][slot0] ~= nil
-	end) + 1, #NenjuuGameConfig.ABILITY_LIST))
+	var_42_6:align(math.min(#var_42_4 + 1, #NenjuuGameConfig.ABILITY_LIST))
 end
 
-function slot0.initControllerUI(slot0)
-	slot1 = slot0._tf:Find("Controller/top")
+function var_0_0.initControllerUI(arg_48_0)
+	local var_48_0 = arg_48_0._tf:Find("Controller/top")
 
-	onButton(slot0, slot1:Find("btn_back"), function ()
-		uv0:openUI("exit")
+	onButton(arg_48_0, var_48_0:Find("btn_back"), function()
+		arg_48_0:openUI("exit")
 	end, SFX_PANEL)
-	onButton(slot0, slot1:Find("btn_pause"), function ()
-		uv0:openUI("pause")
+	onButton(arg_48_0, var_48_0:Find("btn_pause"), function()
+		arg_48_0:openUI("pause")
 	end)
 end
 
-function slot0.SaveDataChange(slot0, slot1)
-	slot2 = {}
+function var_0_0.SaveDataChange(arg_51_0, arg_51_1)
+	local var_51_0 = {}
 
-	table.insert(slot2, slot1.high)
-	table.insert(slot2, slot1.count)
-	table.insert(slot2, slot1.item and table.indexof(NenjuuGameConfig.ITEM_LIST, slot1.item) or 0)
+	table.insert(var_51_0, arg_51_1.high)
+	table.insert(var_51_0, arg_51_1.count)
+	table.insert(var_51_0, arg_51_1.item and table.indexof(NenjuuGameConfig.ITEM_LIST, arg_51_1.item) or 0)
 
-	for slot6 = 1, 7 do
-		table.insert(slot2, slot1["stage_" .. slot6])
+	for iter_51_0 = 1, 7 do
+		table.insert(var_51_0, arg_51_1["stage_" .. iter_51_0])
 	end
 
-	for slot6, slot7 in ipairs({
+	for iter_51_1, iter_51_2 in ipairs({
 		"bomb",
 		"lantern",
 		"ice",
@@ -485,65 +528,68 @@ function slot0.SaveDataChange(slot0, slot1)
 		"blessing",
 		"decoy"
 	}) do
-		table.insert(slot2, slot1.level[slot7])
+		table.insert(var_51_0, arg_51_1.level[iter_51_2])
 	end
 
-	slot0:StoreDataToServer(slot2)
+	arg_51_0:StoreDataToServer(var_51_0)
 end
 
-function slot0.didEnter(slot0)
-	slot0:initPageUI()
-	slot0:initLeveUI()
-	slot0:initControllerUI()
+function var_0_0.didEnter(arg_52_0)
+	arg_52_0:initPageUI()
+	arg_52_0:initLeveUI()
+	arg_52_0:initControllerUI()
 
-	slot0.abilityCache = {}
-	slot0.gameController = NenjuuGameController.New(slot0, slot0._tf)
+	arg_52_0.abilityCache = {}
+	arg_52_0.gameController = NenjuuGameController.New(arg_52_0, arg_52_0._tf)
 
-	slot0:openUI("main")
+	arg_52_0:openUI("main")
 end
 
-function slot0.onBackPressed(slot0)
-	switch(slot0.status, {
-		main = function ()
-			if isActive(uv0.rtLevel:Find("Opreation")) then
-				triggerButton(uv0.rtLevel:Find("Opreation/btn_back"))
+function var_0_0.onBackPressed(arg_53_0)
+	switch(arg_53_0.status, {
+		main = function()
+			if isActive(arg_53_0.rtLevel:Find("Opreation")) then
+				triggerButton(arg_53_0.rtLevel:Find("Opreation/btn_back"))
 
 				return
 			end
 
-			if isActive(uv0.rtLevel:Find("Ready")) then
-				triggerButton(uv0.rtLevel:Find("Ready/bg"))
+			if isActive(arg_53_0.rtLevel:Find("Ready")) then
+				triggerButton(arg_53_0.rtLevel:Find("Ready/bg"))
 
 				return
 			end
 
-			if isActive(uv0.rtLevel:Find("Rate")) then
-				triggerButton(uv0.rtLevel:Find("Rate/bg"))
+			if isActive(arg_53_0.rtLevel:Find("Rate")) then
+				triggerButton(arg_53_0.rtLevel:Find("Rate/bg"))
 
 				return
 			end
 
-			uv1.super.onBackPressed(uv0)
+			var_0_0.super.onBackPressed(arg_53_0)
 		end,
-		countdown = function ()
+		countdown = function()
+			return
 		end,
-		pause = function ()
-			uv0:openUI()
-			uv0.gameController:ResumeGame()
+		pause = function()
+			arg_53_0:openUI()
+			arg_53_0.gameController:ResumeGame()
 		end,
-		exit = function ()
-			uv0:openUI()
-			uv0.gameController:ResumeGame()
+		exit = function()
+			arg_53_0:openUI()
+			arg_53_0.gameController:ResumeGame()
 		end,
-		result = function ()
+		result = function()
+			return
 		end
-	}, function ()
-		assert(uv0.gameController.isStart)
-		uv0:openUI("pause")
+	}, function()
+		assert(arg_53_0.gameController.isStart)
+		arg_53_0:openUI("pause")
 	end)
 end
 
-function slot0.willExit(slot0)
+function var_0_0.willExit(arg_60_0)
+	return
 end
 
-return slot0
+return var_0_0

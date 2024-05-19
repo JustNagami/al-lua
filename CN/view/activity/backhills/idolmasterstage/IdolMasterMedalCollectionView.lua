@@ -1,11 +1,12 @@
-slot0 = class("IdolMasterMedalCollectionView", import("view.base.BaseUI"))
-slot0.FADE_OUT_TIME = 1
-slot0.PAGE_NUM = 7
-slot0.MEDAL_NUM_PER_PAGE = 2
-slot0.MEDAL_STATUS_UNACTIVATED = 1
-slot0.MEDAL_STATUS_ACTIVATED = 2
-slot0.MEDAL_STATUS_ACTIVATABLE = 3
-slot0.INDEX_CONVERT = {
+﻿local var_0_0 = class("IdolMasterMedalCollectionView", import("view.base.BaseUI"))
+
+var_0_0.FADE_OUT_TIME = 1
+var_0_0.PAGE_NUM = 7
+var_0_0.MEDAL_NUM_PER_PAGE = 2
+var_0_0.MEDAL_STATUS_UNACTIVATED = 1
+var_0_0.MEDAL_STATUS_ACTIVATED = 2
+var_0_0.MEDAL_STATUS_ACTIVATABLE = 3
+var_0_0.INDEX_CONVERT = {
 	1,
 	2,
 	5,
@@ -15,271 +16,288 @@ slot0.INDEX_CONVERT = {
 	3
 }
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "IdolMasterMedalCollectionUI"
 end
 
-function slot0.init(slot0)
-	slot0:initData()
-	slot0:findUI()
-	slot0:addListener()
+function var_0_0.init(arg_2_0)
+	arg_2_0:initData()
+	arg_2_0:findUI()
+	arg_2_0:addListener()
 end
 
-function slot0.didEnter(slot0)
-	slot0:checkAward()
-	setText(slot0.progressText, setColorStr(tostring(#slot0.activeIDList), "#8CD5FFFF") .. "/" .. #slot0.allIDList)
-	triggerToggle(slot0.switchBtnList[1], true)
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0:checkAward()
+	setText(arg_3_0.progressText, setColorStr(tostring(#arg_3_0.activeIDList), "#8CD5FFFF") .. "/" .. #arg_3_0.allIDList)
+	triggerToggle(arg_3_0.switchBtnList[1], true)
 end
 
-function slot0.willExit(slot0)
-	if LeanTween.isTweening(go(slot0.photo)) then
-		LeanTween.cancel(go(slot0.photo), false)
+function var_0_0.willExit(arg_4_0)
+	if LeanTween.isTweening(go(arg_4_0.photo)) then
+		LeanTween.cancel(go(arg_4_0.photo), false)
 	end
 end
 
-function slot0.initData(slot0)
-	slot0.activityProxy = getProxy(ActivityProxy)
-	slot0.activityData = slot0.activityProxy:getActivityById(ActivityConst.IDOL_MASTER_MEDAL_ID)
-	slot0.allIDList = slot0.activityData:GetPicturePuzzleIds()
-	slot0.pageIDList = {}
+function var_0_0.initData(arg_5_0)
+	arg_5_0.activityProxy = getProxy(ActivityProxy)
+	arg_5_0.activityData = arg_5_0.activityProxy:getActivityById(ActivityConst.IDOL_MASTER_MEDAL_ID)
+	arg_5_0.allIDList = arg_5_0.activityData:GetPicturePuzzleIds()
+	arg_5_0.pageIDList = {}
 
-	for slot4 = 1, uv0.PAGE_NUM do
-		slot0.pageIDList[slot4] = {}
+	for iter_5_0 = 1, var_0_0.PAGE_NUM do
+		local var_5_0 = var_0_0.INDEX_CONVERT[iter_5_0]
 
-		for slot9 = 1, uv0.MEDAL_NUM_PER_PAGE do
-			slot0.pageIDList[slot4][slot9] = slot0.allIDList[(uv0.INDEX_CONVERT[slot4] - 1) * uv0.MEDAL_NUM_PER_PAGE + slot9]
+		arg_5_0.pageIDList[iter_5_0] = {}
+
+		for iter_5_1 = 1, var_0_0.MEDAL_NUM_PER_PAGE do
+			arg_5_0.pageIDList[iter_5_0][iter_5_1] = arg_5_0.allIDList[(var_5_0 - 1) * var_0_0.MEDAL_NUM_PER_PAGE + iter_5_1]
 		end
 	end
 
-	slot0.activatableIDList = slot0.activityData.data1_list
-	slot0.activeIDList = slot0.activityData.data2_list
-	slot0.curPage = nil
-	slot0.newMedalID = nil
+	arg_5_0.activatableIDList = arg_5_0.activityData.data1_list
+	arg_5_0.activeIDList = arg_5_0.activityData.data2_list
+	arg_5_0.curPage = nil
+	arg_5_0.newMedalID = nil
 end
 
-function slot0.findUI(slot0)
-	slot0.bg = slot0:findTF("BG")
-	slot1 = slot0:findTF("NotchAdapt")
-	slot0.backBtn = slot0:findTF("BackBtn", slot1)
-	slot0.progressText = slot0:findTF("ProgressImg/ProgressText", slot1)
-	slot0.helpBtn = slot0:findTF("HelpBtn", slot1)
-	slot0.tplButtom = findTF(slot0:findTF("SwitchBtnList", slot0._tf), "tplButtom")
-	slot6 = slot1
-	slot0.imgGot = slot0:findTF("ProgressImg/got", slot6)
-	slot0.switchBtnList = {}
+function var_0_0.findUI(arg_6_0)
+	arg_6_0.bg = arg_6_0:findTF("BG")
 
-	for slot6 = 1, uv0.PAGE_NUM do
-		slot7 = tf(instantiate(go(slot0.tplButtom)))
+	local var_6_0 = arg_6_0:findTF("NotchAdapt")
 
-		LoadSpriteAtlasAsync("ui/idolmastermedalcollectionui_atlas", "icon" .. slot6, function (slot0)
-			if uv0 then
-				setImageSprite(findTF(uv0, "icon"), slot0, true)
+	arg_6_0.backBtn = arg_6_0:findTF("BackBtn", var_6_0)
+	arg_6_0.progressText = arg_6_0:findTF("ProgressImg/ProgressText", var_6_0)
+	arg_6_0.helpBtn = arg_6_0:findTF("HelpBtn", var_6_0)
+
+	local var_6_1 = arg_6_0:findTF("SwitchBtnList", arg_6_0._tf)
+
+	arg_6_0.tplButtom = findTF(var_6_1, "tplButtom")
+	arg_6_0.imgGot = arg_6_0:findTF("ProgressImg/got", var_6_0)
+	arg_6_0.switchBtnList = {}
+
+	for iter_6_0 = 1, var_0_0.PAGE_NUM do
+		local var_6_2 = tf(instantiate(go(arg_6_0.tplButtom)))
+
+		LoadSpriteAtlasAsync("ui/idolmastermedalcollectionui_atlas", "icon" .. iter_6_0, function(arg_7_0)
+			if var_6_2 then
+				setImageSprite(findTF(var_6_2, "icon"), arg_7_0, true)
 			end
 		end)
-		LoadSpriteAtlasAsync("ui/idolmastermedalcollectionui_atlas", "iconSelect" .. slot6, function (slot0)
-			if uv0 then
-				setImageSprite(findTF(uv0, "iconSelect"), slot0, true)
+		LoadSpriteAtlasAsync("ui/idolmastermedalcollectionui_atlas", "iconSelect" .. iter_6_0, function(arg_8_0)
+			if var_6_2 then
+				setImageSprite(findTF(var_6_2, "iconSelect"), arg_8_0, true)
 			end
 		end)
-		setParent(slot7, slot2)
-		setActive(slot7, true)
-		table.insert(slot0.switchBtnList, slot7)
+		setParent(var_6_2, var_6_1)
+		setActive(var_6_2, true)
+		table.insert(arg_6_0.switchBtnList, var_6_2)
 	end
 
-	slot0.infoNode = slot0:findTF("book/info")
-	slot0.photoNode = slot0:findTF("book/photo")
-	slot0.photo = slot0:findTF("got", slot0.photoNode)
+	arg_6_0.infoNode = arg_6_0:findTF("book/info")
+	arg_6_0.photoNode = arg_6_0:findTF("book/photo")
+	arg_6_0.photo = arg_6_0:findTF("got", arg_6_0.photoNode)
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:closeView()
+function var_0_0.addListener(arg_9_0)
+	onButton(arg_9_0, arg_9_0.backBtn, function()
+		arg_9_0:closeView()
 	end, SFX_CANCEL)
-
-	function slot4()
+	onButton(arg_9_0, arg_9_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.idolmaster_collection.tip
 		})
-	end
+	end, SFX_PANEL)
 
-	slot5 = SFX_PANEL
+	for iter_9_0, iter_9_1 in ipairs(arg_9_0.switchBtnList) do
+		onToggle(arg_9_0, iter_9_1, function(arg_12_0)
+			if arg_12_0 == true then
+				local var_12_0 = arg_9_0.curPage ~= iter_9_0
 
-	onButton(slot0, slot0.helpBtn, slot4, slot5)
+				arg_9_0.curPage = iter_9_0
 
-	for slot4, slot5 in ipairs(slot0.switchBtnList) do
-		onToggle(slot0, slot5, function (slot0)
-			if slot0 == true then
-				uv0.curPage = uv1
-
-				uv0:updateSwitchBtnTF()
-				uv0:updateMedalContainerView(uv1, uv0.curPage ~= uv1)
+				arg_9_0:updateSwitchBtnTF()
+				arg_9_0:updateMedalContainerView(iter_9_0, var_12_0)
 			end
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.UpdateActivity(slot0, slot1)
-	slot0:checkAward()
+function var_0_0.UpdateActivity(arg_13_0, arg_13_1)
+	arg_13_0:checkAward()
 end
 
-function slot0.updateMedalContainerView(slot0, slot1, slot2)
-	slot3 = slot0.pageIDList[slot1]
+function var_0_0.updateMedalContainerView(arg_14_0, arg_14_1, arg_14_2)
+	local var_14_0 = arg_14_0.pageIDList[arg_14_1]
 
-	slot0:updatePhotoNode(slot3[1], slot2)
-	slot0:updateInfoNode(slot3[2])
+	arg_14_0:updatePhotoNode(var_14_0[1], arg_14_2)
+	arg_14_0:updateInfoNode(var_14_0[2])
 end
 
-function slot0.getMedalStatus(slot0, slot1)
-	slot2 = table.contains(slot0.activeIDList, slot1)
-	slot4 = not slot2 and not (table.contains(slot0.activatableIDList, slot1) and not slot2)
+function var_0_0.getMedalStatus(arg_15_0, arg_15_1)
+	local var_15_0 = table.contains(arg_15_0.activeIDList, arg_15_1)
+	local var_15_1 = table.contains(arg_15_0.activatableIDList, arg_15_1) and not var_15_0
+	local var_15_2 = not var_15_0 and not var_15_1
 
-	if slot2 then
-		return uv0.MEDAL_STATUS_ACTIVATED
-	elseif slot3 then
-		return uv0.MEDAL_STATUS_ACTIVATABLE
-	elseif slot4 then
-		return uv0.MEDAL_STATUS_UNACTIVATED
+	if var_15_0 then
+		return var_0_0.MEDAL_STATUS_ACTIVATED
+	elseif var_15_1 then
+		return var_0_0.MEDAL_STATUS_ACTIVATABLE
+	elseif var_15_2 then
+		return var_0_0.MEDAL_STATUS_UNACTIVATED
 	end
 end
 
-function slot0.updatePhotoNode(slot0, slot1, slot2)
-	slot3 = slot0:findTF("task", slot0.photoNode)
-	slot4 = slot0:findTF("get", slot0.photoNode)
-	slot5 = slot0:findTF("got", slot0.photoNode)
+function var_0_0.updatePhotoNode(arg_16_0, arg_16_1, arg_16_2)
+	local var_16_0 = arg_16_0:findTF("task", arg_16_0.photoNode)
+	local var_16_1 = arg_16_0:findTF("get", arg_16_0.photoNode)
+	local var_16_2 = arg_16_0:findTF("got", arg_16_0.photoNode)
+	local var_16_3 = arg_16_0:getMedalStatus(arg_16_1)
+	local var_16_4 = (arg_16_0.curPage - 1) * var_0_0.MEDAL_NUM_PER_PAGE + 1
 
-	if slot0:getMedalStatus(slot1) == uv0.MEDAL_STATUS_UNACTIVATED then
-		LoadSpriteAtlasAsync("ui/idolmastermedalcollectionui_atlas", "task" .. (slot0.curPage - 1) * uv0.MEDAL_NUM_PER_PAGE + 1, function (slot0)
-			setImageSprite(uv0, slot0, true)
-			setActive(uv0, true)
+	if var_16_3 == var_0_0.MEDAL_STATUS_UNACTIVATED then
+		LoadSpriteAtlasAsync("ui/idolmastermedalcollectionui_atlas", "task" .. var_16_4, function(arg_17_0)
+			setImageSprite(var_16_0, arg_17_0, true)
+			setActive(var_16_0, true)
 		end)
 	else
-		setActive(slot3, false)
+		setActive(var_16_0, false)
 	end
 
-	if slot6 == uv0.MEDAL_STATUS_ACTIVATED then
-		if slot2 then
-			setActive(slot0.photo, false)
-			LoadSpriteAtlasAsync("ui/idolmastermedalcollectionui_atlas", "photo" .. slot0.curPage, function (slot0)
-				setImageSprite(uv0.photo, slot0, true)
+	if var_16_3 == var_0_0.MEDAL_STATUS_ACTIVATED then
+		if arg_16_2 then
+			setActive(arg_16_0.photo, false)
+			LoadSpriteAtlasAsync("ui/idolmastermedalcollectionui_atlas", "photo" .. arg_16_0.curPage, function(arg_18_0)
+				setImageSprite(arg_16_0.photo, arg_18_0, true)
 
-				if LeanTween.isTweening(go(uv0.photo)) then
-					LeanTween.cancel(go(uv0.photo), false)
+				if LeanTween.isTweening(go(arg_16_0.photo)) then
+					LeanTween.cancel(go(arg_16_0.photo), false)
 				end
 
-				GetComponent(uv0.photo, typeof(CanvasGroup)).alpha = 0
+				GetComponent(arg_16_0.photo, typeof(CanvasGroup)).alpha = 0
 
-				LeanTween.value(go(uv0.photo), 0, 1, 0.3):setOnUpdate(System.Action_float(function (slot0)
-					GetComponent(uv0.photo, typeof(CanvasGroup)).alpha = slot0
+				LeanTween.value(go(arg_16_0.photo), 0, 1, 0.3):setOnUpdate(System.Action_float(function(arg_19_0)
+					GetComponent(arg_16_0.photo, typeof(CanvasGroup)).alpha = arg_19_0
 				end))
-				setActive(uv0.photo, true)
+				setActive(arg_16_0.photo, true)
 			end)
 		else
-			LoadSpriteAtlasAsync("ui/idolmastermedalcollectionui_atlas", "photo" .. slot0.curPage, function (slot0)
-				setImageSprite(uv0.photo, slot0, true)
-				setActive(uv0.photo, true)
+			LoadSpriteAtlasAsync("ui/idolmastermedalcollectionui_atlas", "photo" .. arg_16_0.curPage, function(arg_20_0)
+				setImageSprite(arg_16_0.photo, arg_20_0, true)
+				setActive(arg_16_0.photo, true)
 			end)
 		end
 	else
-		setActive(slot0.photo, false)
+		setActive(arg_16_0.photo, false)
 	end
 
-	setActive(slot4, slot6 == uv0.MEDAL_STATUS_ACTIVATABLE)
+	setActive(var_16_1, var_16_3 == var_0_0.MEDAL_STATUS_ACTIVATABLE)
 
-	if slot6 == uv0.MEDAL_STATUS_ACTIVATABLE then
-		onButton(slot0, slot0.photoNode, function ()
+	if var_16_3 == var_0_0.MEDAL_STATUS_ACTIVATABLE then
+		onButton(arg_16_0, arg_16_0.photoNode, function()
 			pg.m02:sendNotification(GAME.MEMORYBOOK_UNLOCK, {
-				id = uv0,
-				actId = uv1.activityData.id
+				id = arg_16_1,
+				actId = arg_16_0.activityData.id
 			})
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.updateInfoNode(slot0, slot1)
-	slot2 = slot0:findTF("task", slot0.infoNode)
-	slot3 = slot0:findTF("get", slot0.infoNode)
-	slot4 = slot0:findTF("got", slot0.infoNode)
+function var_0_0.updateInfoNode(arg_22_0, arg_22_1)
+	local var_22_0 = arg_22_0:findTF("task", arg_22_0.infoNode)
+	local var_22_1 = arg_22_0:findTF("get", arg_22_0.infoNode)
+	local var_22_2 = arg_22_0:findTF("got", arg_22_0.infoNode)
+	local var_22_3 = arg_22_0:getMedalStatus(arg_22_1)
+	local var_22_4 = (arg_22_0.curPage - 1) * var_0_0.MEDAL_NUM_PER_PAGE + 2
 
-	if slot0:getMedalStatus(slot1) == uv0.MEDAL_STATUS_UNACTIVATED then
-		LoadSpriteAtlasAsync("ui/idolmastermedalcollectionui_atlas", "task" .. (slot0.curPage - 1) * uv0.MEDAL_NUM_PER_PAGE + 2, function (slot0)
-			setImageSprite(uv0, slot0, true)
-			setActive(uv0, true)
+	if var_22_3 == var_0_0.MEDAL_STATUS_UNACTIVATED then
+		LoadSpriteAtlasAsync("ui/idolmastermedalcollectionui_atlas", "task" .. var_22_4, function(arg_23_0)
+			setImageSprite(var_22_0, arg_23_0, true)
+			setActive(var_22_0, true)
 		end)
 	else
-		setActive(slot2, false)
+		setActive(var_22_0, false)
 	end
 
-	if slot5 == uv0.MEDAL_STATUS_ACTIVATED then
-		LoadSpriteAtlasAsync("ui/idolmastermedalcollectionui_atlas", "info" .. slot0.curPage, function (slot0)
-			setImageSprite(uv0, slot0, true)
-			setActive(uv0, true)
+	if var_22_3 == var_0_0.MEDAL_STATUS_ACTIVATED then
+		LoadSpriteAtlasAsync("ui/idolmastermedalcollectionui_atlas", "info" .. arg_22_0.curPage, function(arg_24_0)
+			setImageSprite(var_22_2, arg_24_0, true)
+			setActive(var_22_2, true)
 		end)
 	else
-		setActive(slot4, false)
+		setActive(var_22_2, false)
 	end
 
-	setActive(slot3, slot5 == uv0.MEDAL_STATUS_ACTIVATABLE)
+	setActive(var_22_1, var_22_3 == var_0_0.MEDAL_STATUS_ACTIVATABLE)
 
-	if slot5 == uv0.MEDAL_STATUS_ACTIVATABLE then
-		onButton(slot0, slot0.infoNode, function ()
+	if var_22_3 == var_0_0.MEDAL_STATUS_ACTIVATABLE then
+		onButton(arg_22_0, arg_22_0.infoNode, function()
 			pg.m02:sendNotification(GAME.MEMORYBOOK_UNLOCK, {
-				id = uv0,
-				actId = uv1.activityData.id
+				id = arg_22_1,
+				actId = arg_22_0.activityData.id
 			})
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.updateSwitchBtnTF(slot0)
-	for slot4, slot5 in ipairs(slot0.switchBtnList) do
-		if slot0:caculateActivatable(slot4) == 0 or slot4 == slot0.curPage then
-			setActive(slot0:findTF("tip", slot5), false)
+function var_0_0.updateSwitchBtnTF(arg_26_0)
+	for iter_26_0, iter_26_1 in ipairs(arg_26_0.switchBtnList) do
+		local var_26_0 = arg_26_0:findTF("tip", iter_26_1)
+		local var_26_1 = arg_26_0:caculateActivatable(iter_26_0)
+
+		if var_26_1 == 0 or iter_26_0 == arg_26_0.curPage then
+			setActive(var_26_0, false)
 		end
 
-		if slot7 > 0 and slot4 ~= slot0.curPage then
-			setActive(slot6, true)
+		if var_26_1 > 0 and iter_26_0 ~= arg_26_0.curPage then
+			setActive(var_26_0, true)
 		end
 
-		slot8 = slot4 == slot0.curPage
+		local var_26_2 = iter_26_0 == arg_26_0.curPage
 
-		setActive(slot0:findTF("icon", slot5), not slot8)
-		setActive(slot0:findTF("iconSelect", slot5), slot8)
+		setActive(arg_26_0:findTF("icon", iter_26_1), not var_26_2)
+		setActive(arg_26_0:findTF("iconSelect", iter_26_1), var_26_2)
 	end
 end
 
-function slot0.updateAfterSubmit(slot0, slot1)
-	slot0.activityProxy = getProxy(ActivityProxy)
-	slot0.activityData = slot0.activityProxy:getActivityById(ActivityConst.IDOL_MASTER_MEDAL_ID)
-	slot0.activatableIDList = slot0.activityData.data1_list
-	slot0.activeIDList = slot0.activityData.data2_list
-	slot0.newMedalID = slot1
+function var_0_0.updateAfterSubmit(arg_27_0, arg_27_1)
+	arg_27_0.activityProxy = getProxy(ActivityProxy)
+	arg_27_0.activityData = arg_27_0.activityProxy:getActivityById(ActivityConst.IDOL_MASTER_MEDAL_ID)
+	arg_27_0.activatableIDList = arg_27_0.activityData.data1_list
+	arg_27_0.activeIDList = arg_27_0.activityData.data2_list
+	arg_27_0.newMedalID = arg_27_1
 
-	triggerToggle(slot0.switchBtnList[slot0.curPage], true)
-	setText(slot0.progressText, setColorStr(tostring(#slot0.activeIDList), COLOR_WHITE) .. "/" .. #slot0.allIDList)
-	slot0:checkAward()
+	triggerToggle(arg_27_0.switchBtnList[arg_27_0.curPage], true)
+	setText(arg_27_0.progressText, setColorStr(tostring(#arg_27_0.activeIDList), COLOR_WHITE) .. "/" .. #arg_27_0.allIDList)
+	arg_27_0:checkAward()
 end
 
-function slot0.caculateActivatable(slot0, slot1)
-	for slot7, slot8 in ipairs(slot0.pageIDList[slot1]) do
-		if not table.contains(slot0.activeIDList, slot8) and table.contains(slot0.activatableIDList, slot8) then
-			slot3 = 0 + 1
+function var_0_0.caculateActivatable(arg_28_0, arg_28_1)
+	local var_28_0 = arg_28_0.pageIDList[arg_28_1]
+	local var_28_1 = 0
+
+	for iter_28_0, iter_28_1 in ipairs(var_28_0) do
+		local var_28_2 = table.contains(arg_28_0.activeIDList, iter_28_1)
+		local var_28_3 = table.contains(arg_28_0.activatableIDList, iter_28_1)
+
+		if not var_28_2 and var_28_3 then
+			var_28_1 = var_28_1 + 1
 		end
 	end
 
-	return slot3
+	return var_28_1
 end
 
-function slot0.checkAward(slot0)
-	setActive(slot0.imgGot, #slot0.activeIDList == #slot0.allIDList and slot0.activityData.data1 == 1)
+function var_0_0.checkAward(arg_29_0)
+	setActive(arg_29_0.imgGot, #arg_29_0.activeIDList == #arg_29_0.allIDList and arg_29_0.activityData.data1 == 1)
 
-	if #slot0.activeIDList == #slot0.allIDList and slot0.activityData.data1 ~= 1 then
+	if #arg_29_0.activeIDList == #arg_29_0.allIDList and arg_29_0.activityData.data1 ~= 1 then
 		pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 1,
 			activity_id = ActivityConst.IDOL_MASTER_MEDAL_ID
 		})
-		setActive(slot0.imgGot, true)
+		setActive(arg_29_0.imgGot, true)
 	end
 end
 
-return slot0
+return var_0_0

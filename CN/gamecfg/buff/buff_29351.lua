@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行16次攻击，触发专属弹幕-圣地亚哥"
-	},
-	desc_get = "主炮每进行16次攻击，触发专属弹幕-圣地亚哥",
-	name = "专属弹幕-圣地亚哥",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行16次攻击，触发专属弹幕-圣地亚哥",
-	stack = 1,
-	id = 29351,
-	icon = 29350,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -38,5 +24,19 @@ return {
 				countType = 29350
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行16次攻击，触发专属弹幕-圣地亚哥"
+	},
+	desc_get = "主炮每进行16次攻击，触发专属弹幕-圣地亚哥",
+	name = "专属弹幕-圣地亚哥",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行16次攻击，触发专属弹幕-圣地亚哥",
+	stack = 1,
+	id = 29351,
+	icon = 29350,
+	last_effect = ""
 }

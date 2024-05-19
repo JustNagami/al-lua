@@ -1,35 +1,50 @@
-slot0 = class("SummaryPage1", import(".SummaryAnimationPage"))
+﻿local var_0_0 = class("SummaryPage1", import(".SummaryAnimationPage"))
 
-function slot0.OnInit(slot0)
-	slot4 = findTF(findTF(slot0._go, "painting"), "mask/painting")
+function var_0_0.OnInit(arg_1_0)
+	local var_1_0 = findTF(arg_1_0._go, "name")
+	local var_1_1 = findTF(var_1_0, "Text")
+	local var_1_2 = findTF(arg_1_0._go, "painting")
+	local var_1_3 = findTF(var_1_2, "mask/painting")
 
-	setText(findTF(findTF(slot0._go, "name"), "Text"), slot0.summaryInfoVO.name)
+	setText(var_1_1, arg_1_0.summaryInfoVO.name)
 
-	slot6 = {}
+	local var_1_4 = findTF(arg_1_0._go, "time_line")
+	local var_1_5 = {}
 
-	for slot10 = 1, findTF(slot0._go, "time_line").childCount do
-		for slot16 = 1, slot5:GetChild(slot10 - 1):Find("texts").childCount do
-			if go(slot12:GetChild(slot16 - 1)).name == "guildName" then
-				if not (not slot0.summaryInfoVO.guildName or slot19 == "") then
-					setText(slot17:Find("text/Text"), "「" .. slot19 .. "」")
+	for iter_1_0 = 1, var_1_4.childCount do
+		local var_1_6 = var_1_4:GetChild(iter_1_0 - 1)
+		local var_1_7 = var_1_6:Find("texts")
+
+		for iter_1_1 = 1, var_1_7.childCount do
+			local var_1_8 = var_1_7:GetChild(iter_1_1 - 1)
+			local var_1_9 = go(var_1_8).name
+
+			if var_1_9 == "guildName" then
+				local var_1_10 = arg_1_0.summaryInfoVO.guildName
+				local var_1_11 = not var_1_10 or var_1_10 == ""
+
+				if not var_1_11 then
+					setText(var_1_8:Find("text/Text"), "「" .. var_1_10 .. "」")
 				end
 
-				setActive(slot17:Find("image"), slot20)
-				setActive(slot17:Find("text"), not slot20)
-			elseif slot18 == "days" or slot18 == "furnitureCount" or slot18 == "furnitureWorth" then
-				setText(slot17:Find("Text"), slot0.summaryInfoVO[slot18])
-			elseif slot18 ~= "label" then
-				setText(slot17:Find("Text"), "「" .. string.gsub(slot0.summaryInfoVO[slot18], "–", "-") .. "」")
+				setActive(var_1_8:Find("image"), var_1_11)
+				setActive(var_1_8:Find("text"), not var_1_11)
+			elseif var_1_9 == "days" or var_1_9 == "furnitureCount" or var_1_9 == "furnitureWorth" then
+				setText(var_1_8:Find("Text"), arg_1_0.summaryInfoVO[var_1_9])
+			elseif var_1_9 ~= "label" then
+				setText(var_1_8:Find("Text"), "「" .. string.gsub(arg_1_0.summaryInfoVO[var_1_9], "–", "-") .. "」")
 			end
 		end
 
-		table.insert(slot6, slot11)
+		table.insert(var_1_5, var_1_6)
 	end
 
-	setPaintingPrefabAsync(slot4, Ship.New({
-		configId = slot0.summaryInfoVO.flagShipId
-	}):getPainting(), "chuanwu")
-	setActive(slot0._go, false)
+	local var_1_12 = Ship.New({
+		configId = arg_1_0.summaryInfoVO.flagShipId
+	}):getPainting()
+
+	setPaintingPrefabAsync(var_1_3, var_1_12, "chuanwu")
+	setActive(arg_1_0._go, false)
 end
 
-return slot0
+return var_0_0

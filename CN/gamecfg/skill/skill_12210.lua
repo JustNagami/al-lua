@@ -1,4 +1,32 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 68391
+			}
+		},
+		{
+			type = "BattleSkillSonar",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				duration = 10
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -406,33 +434,5 @@ return {
 	id = 12210,
 	picture = "0",
 	castCV = "skill",
-	desc = "蜂鸟直升机",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 68391
-			}
-		},
-		{
-			type = "BattleSkillSonar",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				duration = 10
-			}
-		}
-	}
+	desc = "蜂鸟直升机"
 }

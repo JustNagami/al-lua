@@ -1,59 +1,61 @@
-slot0 = class("ActivityCrusingOPCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ActivityCrusingOPCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = slot2.callback
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.callback
+	local var_1_2 = getProxy(ActivityProxy)
+	local var_1_3 = var_1_2:getActivityById(var_1_0.activity_id)
 
-	if not getProxy(ActivityProxy):getActivityById(slot2.activity_id) or slot5:isEnd() then
+	if not var_1_3 or var_1_3:isEnd() then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(11202, {
-		activity_id = slot2.activity_id,
-		cmd = slot2.cmd or 0,
-		arg1 = slot2.arg1 or 0,
-		arg2 = slot2.arg2 or 0,
+		activity_id = var_1_0.activity_id,
+		cmd = var_1_0.cmd or 0,
+		arg1 = var_1_0.arg1 or 0,
+		arg2 = var_1_0.arg2 or 0,
 		arg_list = {}
-	}, 11203, function (slot0)
-		if slot0.result == 0 then
-			slot1 = {}
+	}, 11203, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = {}
 
-			if uv0.cmd == 1 then
-				-- Nothing
-			elseif uv0.cmd == 2 then
-				slot1 = PlayerConst.addTranDrop(slot0.award_list)
+			if var_1_0.cmd == 1 then
+				-- block empty
+			elseif var_1_0.cmd == 2 then
+				var_2_0 = PlayerConst.addTranDrop(arg_2_0.award_list)
 
-				table.insert(uv1.data1_list, uv0.arg1)
-			elseif uv0.cmd == 3 then
-				slot1 = PlayerConst.addTranDrop(slot0.award_list)
+				table.insert(var_1_3.data1_list, var_1_0.arg1)
+			elseif var_1_0.cmd == 3 then
+				var_2_0 = PlayerConst.addTranDrop(arg_2_0.award_list)
 
-				table.insert(uv1.data2_list, uv0.arg1)
-			elseif uv0.cmd == 4 then
-				slot1 = PlayerConst.addTranDrop(slot0.award_list)
-				uv1.data1_list = {}
+				table.insert(var_1_3.data2_list, var_1_0.arg1)
+			elseif var_1_0.cmd == 4 then
+				var_2_0 = PlayerConst.addTranDrop(arg_2_0.award_list)
+				var_1_3.data1_list = {}
 
-				for slot5, slot6 in ipairs(pg.battlepass_event_pt[uv1.id].target) do
-					if slot6 <= uv1.data1 then
-						table.insert(uv1.data1_list, slot6)
+				for iter_2_0, iter_2_1 in ipairs(pg.battlepass_event_pt[var_1_3.id].target) do
+					if iter_2_1 <= var_1_3.data1 then
+						table.insert(var_1_3.data1_list, iter_2_1)
 					else
 						break
 					end
 				end
 
-				if uv1.data2 == 1 then
-					uv1.data2_list = underscore.rest(uv1.data1_list, 1)
+				if var_1_3.data2 == 1 then
+					var_1_3.data2_list = underscore.rest(var_1_3.data1_list, 1)
 				end
 			end
 
-			uv2:updateActivity(uv1)
-			uv3:sendNotification(GAME.CRUSING_CMD_DONE, {
-				awards = slot1,
-				callback = uv4
+			var_1_2:updateActivity(var_1_3)
+			arg_1_0:sendNotification(GAME.CRUSING_CMD_DONE, {
+				awards = var_2_0,
+				callback = var_1_1
 			})
 		else
-			originalPrint(errorTip("", slot0.result))
+			originalPrint(errorTip("", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

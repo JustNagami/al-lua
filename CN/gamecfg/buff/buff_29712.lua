@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行8次攻击，触发专属弹幕-旧金山II"
-	},
-	desc_get = "主炮每进行8次攻击，触发专属弹幕-旧金山II",
-	name = "专属弹幕-旧金山II",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行8次攻击，触发专属弹幕-旧金山II",
-	stack = 1,
-	id = 29712,
-	icon = 29710,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -38,5 +24,19 @@ return {
 				countType = 29710
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行8次攻击，触发专属弹幕-旧金山II"
+	},
+	desc_get = "主炮每进行8次攻击，触发专属弹幕-旧金山II",
+	name = "专属弹幕-旧金山II",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行8次攻击，触发专属弹幕-旧金山II",
+	stack = 1,
+	id = 29712,
+	icon = 29710,
+	last_effect = ""
 }

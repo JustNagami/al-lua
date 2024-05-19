@@ -1,29 +1,31 @@
-slot0 = class("GetOSSArgsCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GetOSSArgsCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.mode
+	local var_1_2 = var_1_0.callback
 
-	if slot2.mode == 1 then
-		slot2.callback({
+	if var_1_1 == 1 then
+		var_1_2({
 			OSS_ENDPOINT,
 			OSS_STS_URL
 		}, 0)
-	elseif slot3 == 2 then
+	elseif var_1_1 == 2 then
 		pg.ConnectionMgr.GetInstance():Send(19103, {
 			typ = 0
-		}, 19104, function (slot0)
-			if slot0.result == 0 then
-				uv0({
+		}, 19104, function(arg_2_0)
+			if arg_2_0.result == 0 then
+				var_1_2({
 					OSS_ENDPOINT,
-					slot0.access_id,
-					slot0.access_secret,
-					slot0.security_token
-				}, slot0.expire_time)
+					arg_2_0.access_id,
+					arg_2_0.access_secret,
+					arg_2_0.security_token
+				}, arg_2_0.expire_time)
 			else
-				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 			end
 		end)
 	end
 end
 
-return slot0
+return var_0_0

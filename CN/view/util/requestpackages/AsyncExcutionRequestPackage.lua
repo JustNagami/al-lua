@@ -1,77 +1,80 @@
-slot0 = class("AsyncExcutionRequestPackage", import(".RequestPackage"))
+﻿local var_0_0 = class("AsyncExcutionRequestPackage", import(".RequestPackage"))
 
-function slot0.__call(slot0, ...)
-	if slot0.stopped then
+function var_0_0.__call(arg_1_0, ...)
+	if arg_1_0.stopped then
 		return
 	end
 
-	if not slot0.funcs or #slot0.funcs == 0 then
+	if not arg_1_0.funcs or #arg_1_0.funcs == 0 then
 		return
 	end
 
-	slot0:Excute(...)
+	arg_1_0:Excute(...)
 end
 
-function slot0.Resume(slot0)
-	slot0.suspended = nil
+function var_0_0.Resume(arg_2_0)
+	arg_2_0.suspended = nil
 
-	if slot0.ready then
-		if slot0.resume then
-			slot1 = slot0.resume
-			slot0.resume = nil
+	if arg_2_0.ready then
+		if arg_2_0.resume then
+			local var_2_0 = arg_2_0.resume
 
-			slot0:Excute(unpack(slot1.params, slot1.paramLength))
+			arg_2_0.resume = nil
+
+			arg_2_0:Excute(unpack(var_2_0.params, var_2_0.paramLength))
 		else
-			slot0:Excute()
+			arg_2_0:Excute()
 		end
 	end
 end
 
-function slot0.Suspend(slot0)
-	slot0.suspended = true
+function var_0_0.Suspend(arg_3_0)
+	arg_3_0.suspended = true
 end
 
-function slot0.Ctor(slot0, slot1)
-	slot0.ready = true
-	slot0.funcs = slot1
-	slot0.suspended = nil
-	slot0.resume = nil
+function var_0_0.Ctor(arg_4_0, arg_4_1)
+	arg_4_0.ready = true
+	arg_4_0.funcs = arg_4_1
+	arg_4_0.suspended = nil
+	arg_4_0.resume = nil
 end
 
-function slot0.Insert(slot0, slot1)
-	table.insert(slot0.funcs, slot1)
+function var_0_0.Insert(arg_5_0, arg_5_1)
+	table.insert(arg_5_0.funcs, arg_5_1)
 end
 
-function slot0.Excute(slot0, ...)
-	assert(slot0.ready)
+function var_0_0.Excute(arg_6_0, ...)
+	assert(arg_6_0.ready)
 
-	if not slot0.ready then
+	if not arg_6_0.ready then
 		return
 	end
 
-	slot1 = nil
+	local var_6_0
 
-	function (...)
-		if uv0.stopped then
+	local function var_6_1(...)
+		if arg_6_0.stopped then
 			return
 		end
 
-		if uv0.suspended or not uv0.funcs or #uv0.funcs <= 0 then
-			uv0.resume = {
+		if arg_6_0.suspended or not arg_6_0.funcs or not (#arg_6_0.funcs > 0) then
+			arg_6_0.resume = {
 				params = {
 					...
 				},
 				paramLength = select("#", ...)
 			}
-			uv0.ready = true
+			arg_6_0.ready = true
 
 			return
 		end
 
-		uv0.ready = nil
+		arg_6_0.ready = nil
 
-		table.remove(uv0.funcs, 1)(uv1, ...)
-	end(...)
+		table.remove(arg_6_0.funcs, 1)(var_6_1, ...)
+	end
+
+	var_6_1(...)
 end
 
-return slot0
+return var_0_0

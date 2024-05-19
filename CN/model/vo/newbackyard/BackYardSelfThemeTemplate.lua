@@ -1,125 +1,140 @@
-slot0 = class("BackYardSelfThemeTemplate", import(".BackYardBaseThemeTemplate"))
+﻿local var_0_0 = class("BackYardSelfThemeTemplate", import(".BackYardBaseThemeTemplate"))
 
-function slot0.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.floor = slot2 or 1
+	arg_1_0.floor = arg_1_2 or 1
 end
 
-function slot0.GetAllFurniture(slot0)
-	if not slot0.furnitruesByIds then
-		slot0.furnitruesByIds = slot0:InitFurnitures({
-			mapSize = slot0:GetMapSize(),
-			floor = slot0.floor,
-			furniture_put_list = slot0:GetRawPutList()
+function var_0_0.GetAllFurniture(arg_2_0)
+	if not arg_2_0.furnitruesByIds then
+		local var_2_0 = arg_2_0:GetRawPutList()
+
+		arg_2_0.furnitruesByIds = arg_2_0:InitFurnitures({
+			mapSize = arg_2_0:GetMapSize(),
+			floor = arg_2_0.floor,
+			furniture_put_list = var_2_0
 		})
 	end
 
-	return slot0.furnitruesByIds
+	return arg_2_0.furnitruesByIds
 end
 
-function slot0.AddFurniture(slot0, slot1, slot2)
-	slot3 = slot0:GetAllFurniture()
+function var_0_0.AddFurniture(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = arg_3_0:GetAllFurniture()
+	local var_3_1 = {}
 
-	for slot8, slot9 in pairs(slot1.child) do
-		-- Nothing
+	for iter_3_0, iter_3_1 in pairs(arg_3_1.child) do
+		var_3_1[iter_3_0] = iter_3_1
 	end
 
-	slot5 = BackyardThemeFurniture.New({
+	local var_3_2 = BackyardThemeFurniture.New({
 		isNewStyle = true,
-		id = slot1.id,
-		configId = slot1.configId,
-		position = Vector2(slot1.x, slot1.y),
-		dir = slot1.dir,
-		child = {
-			[slot8] = slot9
-		},
-		parent = slot1.parent,
-		floor = slot2
+		id = arg_3_1.id,
+		configId = arg_3_1.configId,
+		position = Vector2(arg_3_1.x, arg_3_1.y),
+		dir = arg_3_1.dir,
+		child = var_3_1,
+		parent = arg_3_1.parent,
+		floor = arg_3_2
 	})
-	slot3[slot1.id] = slot5
 
-	return slot5
+	var_3_0[arg_3_1.id] = var_3_2
+
+	return var_3_2
 end
 
-function slot0.DeleteFurniture(slot0, slot1)
-	if slot0:GetAllFurniture()[slot1] then
-		slot2[slot1] = nil
+function var_0_0.DeleteFurniture(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_0:GetAllFurniture()
+
+	if var_4_0[arg_4_1] then
+		var_4_0[arg_4_1] = nil
 	end
 end
 
-function slot0.GetFurniture(slot0, slot1)
-	return slot0:GetAllFurniture()[slot1]
+function var_0_0.GetFurniture(arg_5_0, arg_5_1)
+	return arg_5_0:GetAllFurniture()[arg_5_1]
 end
 
-function slot0.GetType(slot0)
+function var_0_0.GetType(arg_6_0)
 	return BackYardConst.THEME_TEMPLATE_USAGE_TYPE_SELF
 end
 
-function slot0.IsSystem(slot0)
+function var_0_0.IsSystem(arg_7_0)
 	return false
 end
 
-function slot0.IsCollected(slot0)
+function var_0_0.IsCollected(arg_8_0)
 	return true
 end
 
-function slot0.IsLiked(slot0)
+function var_0_0.IsLiked(arg_9_0)
 	return true
 end
 
-function slot0.UnLoad(slot0)
-	slot0.time = 0
+function var_0_0.UnLoad(arg_10_0)
+	arg_10_0.time = 0
 end
 
-function slot0.Upload(slot0)
-	slot0.time = pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.Upload(arg_11_0)
+	arg_11_0.time = pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function slot0.CanDispaly(slot0)
-	return slot0:IsPushed() or not slot1 and slot0:ExistLocalImage()
+function var_0_0.CanDispaly(arg_12_0)
+	local var_12_0 = arg_12_0:IsPushed()
+
+	return var_12_0 or not var_12_0 and arg_12_0:ExistLocalImage()
 end
 
-function slot0.IsUsing(slot0, slot1)
-	if table.getCount(slot1) ~= table.getCount(slot0:GetWarpFurnitures()) then
-		return false, Vector2(slot3, slot4)
+function var_0_0.IsUsing(arg_13_0, arg_13_1)
+	local var_13_0 = arg_13_0:GetWarpFurnitures()
+	local var_13_1 = table.getCount(arg_13_1)
+	local var_13_2 = table.getCount(var_13_0)
+
+	if var_13_1 ~= var_13_2 then
+		return false, Vector2(var_13_1, var_13_2)
 	end
 
-	slot5 = {}
+	local var_13_3 = {}
 
-	for slot9, slot10 in pairs(slot1) do
-		if slot0:IsSystem() and slot10:getConfig("themeId") ~= slot0.id then
+	for iter_13_0, iter_13_1 in pairs(arg_13_1) do
+		if arg_13_0:IsSystem() and iter_13_1:getConfig("themeId") ~= arg_13_0.id then
 			return false, 0
 		end
 
-		if not slot5[slot10:getConfig("id")] then
-			slot5[slot11] = {}
+		local var_13_4 = iter_13_1:getConfig("id")
+
+		if not var_13_3[var_13_4] then
+			var_13_3[var_13_4] = {}
 		end
 
-		table.insert(slot5[slot11], slot10)
+		table.insert(var_13_3[var_13_4], iter_13_1)
 	end
 
-	for slot9, slot10 in pairs(slot2) do
-		if not slot1[slot10.id] then
+	for iter_13_2, iter_13_3 in pairs(var_13_0) do
+		local var_13_5 = arg_13_1[iter_13_3.id]
+
+		if not var_13_5 then
 			return false, 1
 		end
 
-		if not slot11:isPaper() then
-			if not slot11.position then
+		if not var_13_5:isPaper() then
+			if not var_13_5.position then
 				return false, 2
 			end
 
-			slot13 = false
+			local var_13_6 = var_13_3[iter_13_3.id] or {}
+			local var_13_7 = false
 
-			for slot17, slot18 in ipairs(slot5[slot10.id] or {}) do
-				if slot18:isSame(slot10) then
-					slot13 = true
+			for iter_13_4, iter_13_5 in ipairs(var_13_6) do
+				if iter_13_5:isSame(iter_13_3) then
+					var_13_7 = true
 
 					break
 				end
 			end
 
-			if not slot13 then
+			if not var_13_7 then
 				return false, 3
 			end
 		end
@@ -128,54 +143,61 @@ function slot0.IsUsing(slot0, slot1)
 	return true
 end
 
-function slot0.GetMissFurnitures(slot0, slot1)
-	if #slot1 == #slot0:GetWarpFurnitures() then
+function var_0_0.GetMissFurnitures(arg_14_0, arg_14_1)
+	local var_14_0 = arg_14_0:GetWarpFurnitures()
+
+	if #arg_14_1 == #var_14_0 then
 		return
 	end
 
-	function slot4(slot0, slot1)
-		for slot5, slot6 in ipairs(slot0) do
-			if not slot1[slot6.id] then
-				slot1[slot6.id] = 0
+	local var_14_1 = {}
+
+	local function var_14_2(arg_15_0, arg_15_1)
+		for iter_15_0, iter_15_1 in ipairs(arg_15_0) do
+			if not arg_15_1[iter_15_1.id] then
+				arg_15_1[iter_15_1.id] = 0
 			else
-				slot1[slot6.id] = slot1[slot6.id] + 1
+				arg_15_1[iter_15_1.id] = arg_15_1[iter_15_1.id] + 1
 			end
 		end
 	end
 
-	slot5 = {}
+	local var_14_3 = {}
+	local var_14_4 = {}
 
-	slot4(slot2, slot5)
-	slot4(slot1, {})
+	var_14_2(var_14_0, var_14_3)
+	var_14_2(arg_14_1, var_14_4)
 
-	for slot11, slot12 in pairs(slot5) do
-		if not slot6[slot11] then
-			-- Nothing
-		elseif slot6[slot11] and slot6[slot11] < slot12 then
-			if not slot3[slot11] then
-				slot3[slot11] = slot7(slot11)
+	local function var_14_5(arg_16_0)
+		local var_16_0 = pg.furniture_data_template[arg_16_0]
+
+		return {
+			count = 1,
+			name = var_16_0.name
+		}
+	end
+
+	for iter_14_0, iter_14_1 in pairs(var_14_3) do
+		if not var_14_4[iter_14_0] then
+			var_14_1[iter_14_0] = var_14_5(iter_14_0)
+		elseif var_14_4[iter_14_0] and iter_14_1 > var_14_4[iter_14_0] then
+			if not var_14_1[iter_14_0] then
+				var_14_1[iter_14_0] = var_14_5(iter_14_0)
 			end
 
-			slot3[slot11].count = slot12 - slot6[slot11]
+			var_14_1[iter_14_0].count = iter_14_1 - var_14_4[iter_14_0]
 		end
 	end
 
-	return {
-		[slot11] = function (slot0)
-			return {
-				count = 1,
-				name = pg.furniture_data_template[slot0].name
-			}
-		end(slot11)
-	}
+	return var_14_1
 end
 
-function slot0.getName(slot0)
-	return slot0:GetName()
+function var_0_0.getName(arg_17_0)
+	return arg_17_0:GetName()
 end
 
-function slot0.getIcon(slot0)
+function var_0_0.getIcon(arg_18_0)
 	return "themeicon"
 end
 
-return slot0
+return var_0_0

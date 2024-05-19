@@ -1,4 +1,25 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrBloodrage",
+			trigger = {
+				"onAttach",
+				"onHPRatioUpdate"
+			},
+			arg_list = {
+				threshold = 0.3,
+				value = 2,
+				attr = "damageRatioBullet"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -168,26 +189,5 @@ return {
 	stack = 1,
 	id = 10971,
 	icon = 10971,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrBloodrage",
-			trigger = {
-				"onAttach",
-				"onHPRatioUpdate"
-			},
-			arg_list = {
-				threshold = 0.3,
-				value = 2,
-				attr = "damageRatioBullet"
-			}
-		}
-	}
+	last_effect = ""
 }

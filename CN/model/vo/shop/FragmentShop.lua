@@ -1,58 +1,59 @@
-slot0 = class("FragmentShop", import(".MonthlyShop"))
-slot0.GoodsType = Goods.TYPE_FRAGMENT
-slot0.type = ShopArgs.ShopFragment
+﻿local var_0_0 = class("FragmentShop", import(".MonthlyShop"))
 
-function slot0.update(slot0, slot1, slot2, slot3)
-	slot0.id = slot1
-	slot0.configId = slot1
-	slot4 = {
-		[slot9.shop_id] = slot9.pay_count
-	}
+var_0_0.GoodsType = Goods.TYPE_FRAGMENT
+var_0_0.type = ShopArgs.ShopFragment
 
-	for slot8, slot9 in ipairs(slot2) do
-		-- Nothing
+function var_0_0.update(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0.id = arg_1_1
+	arg_1_0.configId = arg_1_1
+
+	local var_1_0 = {}
+
+	for iter_1_0, iter_1_1 in ipairs(arg_1_2) do
+		var_1_0[iter_1_1.shop_id] = iter_1_1.pay_count
 	end
 
-	for slot8, slot9 in ipairs(slot3) do
-		slot4[slot9.shop_id] = slot9.pay_count
+	for iter_1_2, iter_1_3 in ipairs(arg_1_3) do
+		var_1_0[iter_1_3.shop_id] = iter_1_3.pay_count
 	end
 
-	table.clear(slot0.goods)
+	table.clear(arg_1_0.goods)
 
-	if slot0.id and slot0.id > 0 and slot0:getConfigTable() then
-		slot9 = "blueprint_shop_goods"
+	if arg_1_0.id and arg_1_0.id > 0 and arg_1_0:getConfigTable() then
+		local function var_1_1(arg_2_0, arg_2_1)
+			local var_2_0 = var_1_0[arg_2_0] or 0
 
-		for slot9, slot10 in ipairs(slot0:getConfig(slot9)) do
-			function (slot0, slot1)
-				uv1.goods[slot0] = Goods.Create({
-					shop_id = slot0,
-					buy_count = uv0[slot0] or 0
-				}, slot1)
-			end(slot10, Goods.TYPE_FRAGMENT)
+			arg_1_0.goods[arg_2_0] = Goods.Create({
+				shop_id = arg_2_0,
+				buy_count = var_2_0
+			}, arg_2_1)
 		end
 
-		slot9 = "blueprint_shop_limit_goods"
+		for iter_1_4, iter_1_5 in ipairs(arg_1_0:getConfig("blueprint_shop_goods")) do
+			var_1_1(iter_1_5, Goods.TYPE_FRAGMENT)
+		end
 
-		for slot9, slot10 in ipairs(slot0:getConfig(slot9)) do
-			slot5(slot10, Goods.TYPE_FRAGMENT_NORMAL)
+		for iter_1_6, iter_1_7 in ipairs(arg_1_0:getConfig("blueprint_shop_limit_goods")) do
+			var_1_1(iter_1_7, Goods.TYPE_FRAGMENT_NORMAL)
 		end
 	end
 end
 
-function slot0.Reset(slot0, slot1)
-	slot2 = {}
-	slot6 = "blueprint_shop_limit_goods"
+function var_0_0.Reset(arg_3_0, arg_3_1)
+	local var_3_0 = {}
 
-	for slot6, slot7 in ipairs(slot0:getConfig(slot6)) do
-		if slot0.goods[slot7] then
-			table.insert(slot2, {
-				shop_id = slot7,
-				pay_count = slot8.buyCount
+	for iter_3_0, iter_3_1 in ipairs(arg_3_0:getConfig("blueprint_shop_limit_goods")) do
+		local var_3_1 = arg_3_0.goods[iter_3_1]
+
+		if var_3_1 then
+			table.insert(var_3_0, {
+				shop_id = iter_3_1,
+				pay_count = var_3_1.buyCount
 			})
 		end
 	end
 
-	slot0:update(slot1, {}, slot2)
+	arg_3_0:update(arg_3_1, {}, var_3_0)
 end
 
-return slot0
+return var_0_0

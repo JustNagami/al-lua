@@ -1,4 +1,39 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrBloodrage",
+			trigger = {
+				"onAttach",
+				"onHPRatioUpdate"
+			},
+			arg_list = {
+				threshold = 0.8,
+				value = 0.01,
+				attrBound = 30,
+				attr = "cannonPower"
+			}
+		},
+		{
+			type = "BattleBuffAddAttrBloodrage",
+			trigger = {
+				"onAttach",
+				"onHPRatioUpdate"
+			},
+			arg_list = {
+				threshold = 0.8,
+				value = 0.01,
+				attrBound = 30,
+				attr = "torpedoPower"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -308,40 +343,5 @@ return {
 	stack = 1,
 	id = 1012351,
 	icon = 12350,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrBloodrage",
-			trigger = {
-				"onAttach",
-				"onHPRatioUpdate"
-			},
-			arg_list = {
-				threshold = 0.8,
-				value = 0.01,
-				attrBound = 30,
-				attr = "cannonPower"
-			}
-		},
-		{
-			type = "BattleBuffAddAttrBloodrage",
-			trigger = {
-				"onAttach",
-				"onHPRatioUpdate"
-			},
-			arg_list = {
-				threshold = 0.8,
-				value = 0.01,
-				attrBound = 30,
-				attr = "torpedoPower"
-			}
-		}
-	}
+	last_effect = ""
 }

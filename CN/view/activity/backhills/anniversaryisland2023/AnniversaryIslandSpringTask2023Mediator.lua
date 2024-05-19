@@ -1,44 +1,45 @@
-slot0 = class("AnniversaryIslandSpringTask2023Mediator", import("view.base.ContextMediator"))
-slot0.SUBMIT_TASK = "activity submit task "
-slot0.TASK_GO = "activity task go "
-slot0.SHOW_DETAIL = "activity task show detail"
-slot0.SHOW_SUBMIT_WINDOW = "AnniversaryIslandSpringTask2023Mediator:SHOW_SUBMIT_WINDOW"
+﻿local var_0_0 = class("AnniversaryIslandSpringTask2023Mediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.SUBMIT_TASK, function (slot0, slot1)
-		uv0:sendNotification(GAME.AVATAR_FRAME_AWARD, {
-			act_id = slot1.actId,
+var_0_0.SUBMIT_TASK = "activity submit task "
+var_0_0.TASK_GO = "activity task go "
+var_0_0.SHOW_DETAIL = "activity task show detail"
+var_0_0.SHOW_SUBMIT_WINDOW = "AnniversaryIslandSpringTask2023Mediator:SHOW_SUBMIT_WINDOW"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.SUBMIT_TASK, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.AVATAR_FRAME_AWARD, {
+			act_id = arg_2_1.actId,
 			task_ids = {
-				slot1.id
+				arg_2_1.id
 			}
 		})
 	end)
-	slot0:bind(uv0.TASK_GO, function (slot0, slot1)
-		uv0:sendNotification(GAME.TASK_GO, {
-			taskVO = slot1.taskVO
+	arg_1_0:bind(var_0_0.TASK_GO, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.TASK_GO, {
+			taskVO = arg_3_1.taskVO
 		})
 	end)
-	slot0:bind(uv0.SHOW_DETAIL, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.SHOW_DETAIL, function(arg_4_0, arg_4_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = WorkBenchItemDetailMediator,
 			viewComponent = WorkBenchItemDetailLayer,
 			data = {
-				material = slot1
+				material = arg_4_1
 			}
 		}))
 	end)
-	slot0:bind(uv0.SHOW_SUBMIT_WINDOW, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.SHOW_SUBMIT_WINDOW, function(arg_5_0, arg_5_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = AnniversaryIslandSpringTaskSubmitWindowMediator,
 			viewComponent = AnniversaryIslandSpringTaskSubmitWindow,
 			data = {
-				task = slot1
+				task = arg_5_1
 			}
 		}))
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_6_0)
 	return {
 		AnniversaryIslandSpringTask2023Mediator.SUBMIT_TASK,
 		GAME.SUBMIT_AVATAR_TASK_DONE,
@@ -46,31 +47,39 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	if slot1:getName() == AnniversaryIslandSpringTask2023Mediator.SUBMIT_TASK then
-		slot0.viewComponent:emit(AnniversaryIslandSpringTask2023Mediator.SUBMIT_TASK, slot1:getBody())
-	elseif slot2 == GAME.SUBMIT_AVATAR_TASK_DONE then
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, function ()
-			existCall(uv0.callback)
+function var_0_0.handleNotification(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_1:getName()
+	local var_7_1 = arg_7_1:getBody()
 
-			slot0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING_2)
-			slot3 = getProxy(ActivityTaskProxy):getTaskVOsByActId(slot0:GetConfigID())
+	if var_7_0 == AnniversaryIslandSpringTask2023Mediator.SUBMIT_TASK then
+		arg_7_0.viewComponent:emit(AnniversaryIslandSpringTask2023Mediator.SUBMIT_TASK, var_7_1)
+	elseif var_7_0 == GAME.SUBMIT_AVATAR_TASK_DONE then
+		arg_7_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_7_1.awards, function()
+			existCall(var_7_1.callback)
 
-			if _.all(slot0:GetUnlockTaskIds(), function (slot0)
-				return _.detect(uv0, function (slot0)
-					return slot0:GetConfigID() == uv0
-				end) and slot1:isOver()
+			local var_8_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING_2)
+			local var_8_1 = var_8_0:GetUnlockTaskIds()
+			local var_8_2 = var_8_0:GetConfigID()
+			local var_8_3 = getProxy(ActivityTaskProxy):getTaskVOsByActId(var_8_2)
+
+			if _.all(var_8_1, function(arg_9_0)
+				local var_9_0 = _.detect(var_8_3, function(arg_10_0)
+					return arg_10_0:GetConfigID() == arg_9_0
+				end)
+
+				return var_9_0 and var_9_0:isOver()
 			end) then
-				uv1:sendNotification(GAME.CHANGE_SCENE, SCENE.ANNIVERSARY_ISLAND_SPRING)
+				arg_7_0:sendNotification(GAME.CHANGE_SCENE, SCENE.ANNIVERSARY_ISLAND_SPRING)
 			end
 		end)
-	elseif slot2 == ActivityProxy.ACTIVITY_UPDATED then
-		slot0.viewComponent:BuildTaskVOs()
-		slot0.viewComponent:UpdateView()
+	elseif var_7_0 == ActivityProxy.ACTIVITY_UPDATED then
+		arg_7_0.viewComponent:BuildTaskVOs()
+		arg_7_0.viewComponent:UpdateView()
 	end
 end
 
-function slot0.remove(slot0)
+function var_0_0.remove(arg_11_0)
+	return
 end
 
-return slot0
+return var_0_0

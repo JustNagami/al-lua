@@ -1,43 +1,49 @@
-slot0 = class("JPSkirmishHeadFrameRePage", import(".TemplatePage.FrameReTemplatePage"))
+﻿local var_0_0 = class("JPSkirmishHeadFrameRePage", import(".TemplatePage.FrameReTemplatePage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.battleBtn = slot0:findTF("GoBtn", slot0.bg)
-	slot0.getBtn = slot0:findTF("GetBtn", slot0.bg)
-	slot0.gotBtn = slot0:findTF("GotBtn", slot0.bg)
-	slot0.bar = slot0:findTF("Progress", slot0.bg)
-	slot0.progress = slot0:findTF("ProgressText", slot0.bg)
-	slot0.frameGot = slot0:findTF("GotTag", slot0.bg)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.battleBtn = arg_1_0:findTF("GoBtn", arg_1_0.bg)
+	arg_1_0.getBtn = arg_1_0:findTF("GetBtn", arg_1_0.bg)
+	arg_1_0.gotBtn = arg_1_0:findTF("GotBtn", arg_1_0.bg)
+	arg_1_0.bar = arg_1_0:findTF("Progress", arg_1_0.bg)
+	arg_1_0.progress = arg_1_0:findTF("ProgressText", arg_1_0.bg)
+	arg_1_0.frameGot = arg_1_0:findTF("GotTag", arg_1_0.bg)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	if slot0.avatarConfig.target < slot0.activity.data1 then
-		slot1 = slot2 or slot1
-	end
+function var_0_0.OnUpdateFlush(arg_2_0)
+	local var_2_0 = arg_2_0.activity.data1
+	local var_2_1 = arg_2_0.avatarConfig.target
 
-	setText(slot0.progress, (slot1 / slot2 >= 1 and setColorStr(slot1, COLOR_GREEN) or slot1) .. "/" .. slot2)
-	setSlider(slot0.bar, 0, 1, slot3)
+	var_2_0 = var_2_1 < var_2_0 and var_2_1 or var_2_0
 
-	slot4 = slot2 <= slot1
-	slot5 = slot0.activity.data2 >= 1
+	local var_2_2 = var_2_0 / var_2_1
 
-	if slot0.avatarConfig.start_time == "stop" then
-		slot0.inTime = false
+	setText(arg_2_0.progress, (var_2_2 >= 1 and setColorStr(var_2_0, COLOR_GREEN) or var_2_0) .. "/" .. var_2_1)
+	setSlider(arg_2_0.bar, 0, 1, var_2_2)
+
+	local var_2_3 = var_2_1 <= var_2_0
+	local var_2_4 = arg_2_0.activity.data2 >= 1
+	local var_2_5 = arg_2_0.avatarConfig.start_time
+
+	if var_2_5 == "stop" then
+		arg_2_0.inTime = false
 	else
-		slot0.inTime = pg.TimeMgr.GetInstance():GetServerTime() - pg.TimeMgr.GetInstance():Table2ServerTime({
-			year = slot6[1][1],
-			month = slot6[1][2],
-			day = slot6[1][3],
-			hour = slot6[2][1],
-			min = slot6[2][2],
-			sec = slot6[2][3]
-		}) > 0
+		local var_2_6 = pg.TimeMgr.GetInstance():Table2ServerTime({
+			year = var_2_5[1][1],
+			month = var_2_5[1][2],
+			day = var_2_5[1][3],
+			hour = var_2_5[2][1],
+			min = var_2_5[2][2],
+			sec = var_2_5[2][3]
+		})
+
+		arg_2_0.inTime = pg.TimeMgr.GetInstance():GetServerTime() - var_2_6 > 0
 	end
 
-	setActive(slot0.battleBtn, slot0.inTime and not slot4 or false)
-	setActive(slot0.getBtn, not slot5 and slot4)
-	setActive(slot0.gotBtn, slot5)
-	setActive(slot0.frameGot, slot5)
+	setActive(arg_2_0.battleBtn, arg_2_0.inTime and not var_2_3 or false)
+	setActive(arg_2_0.getBtn, not var_2_4 and var_2_3)
+	setActive(arg_2_0.gotBtn, var_2_4)
+	setActive(arg_2_0.frameGot, var_2_4)
 end
 
-return slot0
+return var_0_0

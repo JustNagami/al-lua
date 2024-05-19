@@ -1,1 +1,1 @@
-return class("NewMeixiV4MainPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿return (class("NewMeixiV4MainPage", import(".TemplatePage.PreviewTemplatePage")))

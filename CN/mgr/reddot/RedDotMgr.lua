@@ -1,18 +1,18 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.RedDotMgr = singletonClass("RedDotMgr")
 
 require("Mgr/RedDot/Include")
 
-slot0 = pg.RedDotMgr
-slot1 = true
+local var_0_0 = pg.RedDotMgr
+local var_0_1 = true
 
-function slot2(...)
-	if uv0 then
+local function var_0_2(...)
+	if var_0_1 then
 		originalPrint(...)
 	end
 end
 
-slot0.TYPES = {
+var_0_0.TYPES = {
 	COURTYARD = 1,
 	MEMORY_REVIEW = 19,
 	ACT_RETURN = 16,
@@ -36,203 +36,226 @@ slot0.TYPES = {
 	SCHOOL = 13
 }
 
-function slot0.Init(slot0, slot1)
-	slot0.conditions = {}
-	slot0.nodeList = {}
+function var_0_0.Init(arg_2_0, arg_2_1)
+	arg_2_0.conditions = {}
+	arg_2_0.nodeList = {}
 
-	slot0:BindConditions()
+	arg_2_0:BindConditions()
 
-	if slot1 then
-		slot1()
+	if arg_2_1 then
+		arg_2_1()
 	end
 end
 
-function slot0.BindConditions(slot0)
-	slot0:BindCondition(uv0.TYPES.COURTYARD, function ()
+function var_0_0.BindConditions(arg_3_0)
+	arg_3_0:BindCondition(var_0_0.TYPES.COURTYARD, function()
 		return getProxy(DormProxy):IsShowRedDot()
 	end)
-	slot0:BindCondition(uv0.TYPES.TASK, function ()
+	arg_3_0:BindCondition(var_0_0.TYPES.TASK, function()
 		return getProxy(TaskProxy):getCanReceiveCount() > 0 or getProxy(AvatarFrameProxy):getCanReceiveCount() > 0
 	end)
-	slot0:BindCondition(uv0.TYPES.MAIL, function ()
+	arg_3_0:BindCondition(var_0_0.TYPES.MAIL, function()
 		return getProxy(MailProxy):GetAttachmentCount()
 	end)
-	slot0:BindCondition(uv0.TYPES.BUILD, function ()
+	arg_3_0:BindCondition(var_0_0.TYPES.BUILD, function()
 		return getProxy(BuildShipProxy):getFinishCount() > 0 or tobool(getProxy(ActivityProxy):IsShowFreeBuildMark(true))
 	end)
-	slot0:BindCondition(uv0.TYPES.GUILD, function ()
+	arg_3_0:BindCondition(var_0_0.TYPES.GUILD, function()
 		return getProxy(GuildProxy):ShouldShowTip()
 	end)
-	slot0:BindCondition(uv0.TYPES.ATTIRE, function ()
+	arg_3_0:BindCondition(var_0_0.TYPES.ATTIRE, function()
 		return getProxy(AttireProxy):IsShowRedDot() or getProxy(SettingsProxy):ShouldEducateCharTip()
 	end)
-	slot0:BindCondition(uv0.TYPES.COLLECTION, function ()
+	arg_3_0:BindCondition(var_0_0.TYPES.COLLECTION, function()
 		return getProxy(CollectionProxy):hasFinish() or getProxy(AppreciateProxy):isGalleryHaveNewRes() or getProxy(AppreciateProxy):isMusicHaveNewRes() or getProxy(AppreciateProxy):isMangaHaveNewRes()
 	end)
-	slot0:BindCondition(uv0.TYPES.FRIEND, function ()
+	arg_3_0:BindCondition(var_0_0.TYPES.FRIEND, function()
 		return getProxy(NotificationProxy):getRequestCount() > 0 or getProxy(FriendProxy):getNewMsgCount() > 0
 	end)
-	slot0:BindCondition(uv0.TYPES.COMMISSION, function ()
+	arg_3_0:BindCondition(var_0_0.TYPES.COMMISSION, function()
 		return getProxy(PlayerProxy):IsShowCommssionTip()
 	end)
-	slot0:BindCondition(uv0.TYPES.COMMANDER, function ()
+	arg_3_0:BindCondition(var_0_0.TYPES.COMMANDER, function()
 		if getProxy(PlayerProxy):getRawData().level < 40 then
 			return false
 		end
 
+		local var_13_0 = getProxy(CommanderProxy):IsFinishAllBox()
+
 		if not LOCK_CATTERY then
-			return getProxy(CommanderProxy):IsFinishAllBox() or getProxy(CommanderProxy):AnyCatteryExistOP() or getProxy(CommanderProxy):AnyCatteryCanUse()
+			return var_13_0 or getProxy(CommanderProxy):AnyCatteryExistOP() or getProxy(CommanderProxy):AnyCatteryCanUse()
 		else
-			return slot0
+			return var_13_0
 		end
 	end)
-	slot0:BindCondition(uv0.TYPES.SETTTING, function ()
+	arg_3_0:BindCondition(var_0_0.TYPES.SETTTING, function()
 		return PlayerPrefs.GetFloat("firstIntoOtherPanel") == 0
 	end)
-	slot0:BindCondition(uv0.TYPES.SERVER, function ()
+	arg_3_0:BindCondition(var_0_0.TYPES.SERVER, function()
 		return #getProxy(ServerNoticeProxy):getServerNotices(false) > 0 and getProxy(ServerNoticeProxy):hasNewNotice()
 	end)
-	slot0:BindCondition(uv0.TYPES.SCHOOL, function ()
+	arg_3_0:BindCondition(var_0_0.TYPES.SCHOOL, function()
 		return getProxy(NavalAcademyProxy):IsShowTip()
 	end)
-	slot0:BindCondition(uv0.TYPES.BLUEPRINT, function ()
+	arg_3_0:BindCondition(var_0_0.TYPES.BLUEPRINT, function()
 		return getProxy(TechnologyProxy):IsShowTip()
 	end)
-	slot0:BindCondition(uv0.TYPES.EVENT, function ()
+	arg_3_0:BindCondition(var_0_0.TYPES.EVENT, function()
 		return getProxy(EventProxy):hasFinishState() or LimitChallengeConst.IsShowRedPoint()
 	end)
-	slot0:BindCondition(uv0.TYPES.ACT_RETURN, function ()
-		return RefluxTaskView.isAnyTaskCanGetAward() or RefluxPTView.isAnyPTCanGetAward() or RefluxShopView.isShowRedPot()
-	end)
-	slot0:BindCondition(uv0.TYPES.ACT_NEWBIE, function ()
-		slot0, slot1 = TrainingCampScene.isNormalActOn()
-		slot2, slot3 = TrainingCampScene.isTecActOn()
+	arg_3_0:BindCondition(var_0_0.TYPES.ACT_RETURN, function()
+		local var_19_0 = RefluxTaskView.isAnyTaskCanGetAward()
+		local var_19_1 = RefluxPTView.isAnyPTCanGetAward()
+		local var_19_2 = RefluxShopView.isShowRedPot()
 
-		return slot1 or slot3
+		return var_19_0 or var_19_1 or var_19_2
 	end)
-	slot0:BindCondition(uv0.TYPES.MEMORY_REVIEW, function ()
-		if getProxy(PlayerProxy):getRawData() then
-			slot1 = slot0.id
+	arg_3_0:BindCondition(var_0_0.TYPES.ACT_NEWBIE, function()
+		local var_20_0, var_20_1 = TrainingCampScene.isNormalActOn()
+		local var_20_2, var_20_3 = TrainingCampScene.isTecActOn()
 
-			return _.any(pg.memory_group.all, function (slot0)
-				return PlayerPrefs.GetInt("MEMORY_GROUP_NOTIFICATION" .. uv0 .. " " .. slot0, 0) == 1
-			end)
-		else
-			return false
+		return var_20_1 or var_20_3
+	end)
+	arg_3_0:BindCondition(var_0_0.TYPES.MEMORY_REVIEW, function()
+		local var_21_0 = getProxy(PlayerProxy):getRawData()
+
+		if var_21_0 then
+			local var_21_1 = var_21_0.id
+
+			do return _.any(pg.memory_group.all, function(arg_22_0)
+				return PlayerPrefs.GetInt("MEMORY_GROUP_NOTIFICATION" .. var_21_1 .. " " .. arg_22_0, 0) == 1
+			end) end
+			return
 		end
+
+		return false
 	end)
-	slot0:BindCondition(uv0.TYPES.NEW_SERVER, function ()
+	arg_3_0:BindCondition(var_0_0.TYPES.NEW_SERVER, function()
 		return NewServerCarnivalScene.isTip()
 	end)
-	slot0:BindCondition(uv0.TYPES.RYZA_TASK, function ()
+	arg_3_0:BindCondition(var_0_0.TYPES.RYZA_TASK, function()
 		return getProxy(ActivityTaskProxy):getActTaskTip(ActivityConst.RYZA_TASK)
 	end)
-	slot0:BindCondition(uv0.TYPES.ISLAND, function ()
-		return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND))
+	arg_3_0:BindCondition(var_0_0.TYPES.ISLAND, function()
+		local var_25_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND)
+
+		return Activity.IsActivityReady(var_25_0)
 	end)
 end
 
-function slot0.BindCondition(slot0, slot1, slot2)
-	slot0.conditions[slot1] = slot2
+function var_0_0.BindCondition(arg_26_0, arg_26_1, arg_26_2)
+	arg_26_0.conditions[arg_26_1] = arg_26_2
 end
 
-function slot0.RegisterRedDotNodes(slot0, slot1)
-	for slot5, slot6 in ipairs(slot1) do
-		slot0:RegisterRedDotNode(slot6)
+function var_0_0.RegisterRedDotNodes(arg_27_0, arg_27_1)
+	for iter_27_0, iter_27_1 in ipairs(arg_27_1) do
+		arg_27_0:RegisterRedDotNode(iter_27_1)
 	end
 
-	slot0:_NotifyAll()
+	arg_27_0:_NotifyAll()
 end
 
-function slot0.RegisterRedDotNode(slot0, slot1)
-	for slot6, slot7 in ipairs(slot1:GetTypes()) do
-		if not slot0.nodeList[slot7] then
-			slot0.nodeList[slot7] = {}
+function var_0_0.RegisterRedDotNode(arg_28_0, arg_28_1)
+	local var_28_0 = arg_28_1:GetTypes()
+
+	for iter_28_0, iter_28_1 in ipairs(var_28_0) do
+		if not arg_28_0.nodeList[iter_28_1] then
+			arg_28_0.nodeList[iter_28_1] = {}
 		end
 
-		table.insert(slot0.nodeList[slot7], slot1)
+		table.insert(arg_28_0.nodeList[iter_28_1], arg_28_1)
 	end
 
-	slot1:Init()
+	arg_28_1:Init()
 end
 
-function slot0.UnRegisterRedDotNodes(slot0, slot1)
-	for slot5, slot6 in ipairs(slot1) do
-		slot0:UnRegisterRedDotNode(slot6)
+function var_0_0.UnRegisterRedDotNodes(arg_29_0, arg_29_1)
+	for iter_29_0, iter_29_1 in ipairs(arg_29_1) do
+		arg_29_0:UnRegisterRedDotNode(iter_29_1)
 	end
 
-	uv0.cache = {}
+	var_0_0.cache = {}
 end
 
-function slot0.UnRegisterRedDotNode(slot0, slot1)
-	for slot6, slot7 in ipairs(slot1:GetTypes()) do
-		slot8 = slot0.nodeList[slot7] or {}
+function var_0_0.UnRegisterRedDotNode(arg_30_0, arg_30_1)
+	local var_30_0 = arg_30_1:GetTypes()
 
-		for slot12, slot13 in ipairs(slot8) do
-			if slot13 == slot1 then
-				slot13:Remove()
-				table.remove(slot8, slot12)
+	for iter_30_0, iter_30_1 in ipairs(var_30_0) do
+		local var_30_1 = arg_30_0.nodeList[iter_30_1] or {}
+
+		for iter_30_2, iter_30_3 in ipairs(var_30_1) do
+			if iter_30_3 == arg_30_1 then
+				iter_30_3:Remove()
+				table.remove(var_30_1, iter_30_2)
 			end
 		end
 	end
 end
 
-function slot3(slot0, slot1)
-	for slot5, slot6 in ipairs(slot1) do
-		slot7 = nil
+local function var_0_3(arg_31_0, arg_31_1)
+	for iter_31_0, iter_31_1 in ipairs(arg_31_1) do
+		local var_31_0
 
-		if uv0.cache[slot6] ~= nil then
-			slot7 = uv0.cache[slot6]
+		if var_0_0.cache[iter_31_1] ~= nil then
+			var_31_0 = var_0_0.cache[iter_31_1]
 		else
-			uv0.cache[slot6] = slot0.conditions[slot6]()
+			var_31_0 = arg_31_0.conditions[iter_31_1]()
+			var_0_0.cache[iter_31_1] = var_31_0
 		end
 
-		if slot7 then
-			return slot7
+		if var_31_0 then
+			return var_31_0
 		end
 	end
 
 	return false
 end
 
-function slot0.NotifyAll(slot0, slot1)
-	uv0.cache = {}
+function var_0_0.NotifyAll(arg_32_0, arg_32_1)
+	var_0_0.cache = {}
 
-	for slot5, slot6 in ipairs(slot0.nodeList[slot1] or {}) do
-		slot6:SetData(uv1(slot0, slot6:GetTypes()))
+	for iter_32_0, iter_32_1 in ipairs(arg_32_0.nodeList[arg_32_1] or {}) do
+		local var_32_0 = iter_32_1:GetTypes()
+		local var_32_1 = var_0_3(arg_32_0, var_32_0)
+
+		iter_32_1:SetData(var_32_1)
 	end
 
-	uv0.cache = {}
+	var_0_0.cache = {}
 end
 
-function slot0._NotifyAll(slot0)
-	uv0.cache = {}
-	slot1 = {}
+function var_0_0._NotifyAll(arg_33_0)
+	var_0_0.cache = {}
 
-	function slot2(slot0, slot1)
-		slot0:SetData(uv0(uv1, slot0:GetTypes()))
-		onNextTick(slot1)
+	local var_33_0 = {}
+
+	local function var_33_1(arg_34_0, arg_34_1)
+		local var_34_0 = arg_34_0:GetTypes()
+		local var_34_1 = var_0_3(arg_33_0, var_34_0)
+
+		arg_34_0:SetData(var_34_1)
+		onNextTick(arg_34_1)
 	end
 
-	for slot6, slot7 in pairs(slot0.nodeList) do
-		for slot11, slot12 in ipairs(slot7) do
-			table.insert(slot1, function (slot0)
-				uv0(uv1, slot0)
+	for iter_33_0, iter_33_1 in pairs(arg_33_0.nodeList) do
+		for iter_33_2, iter_33_3 in ipairs(iter_33_1) do
+			table.insert(var_33_0, function(arg_35_0)
+				var_33_1(iter_33_3, arg_35_0)
 			end)
 		end
 	end
 
-	seriesAsync(slot1, function ()
-		uv0.cache = {}
+	seriesAsync(var_33_0, function()
+		var_0_0.cache = {}
 	end)
 end
 
-function slot0.DebugNodes(slot0)
-	for slot4, slot5 in pairs(slot0.nodeList) do
-		uv0("type : ", slot4)
+function var_0_0.DebugNodes(arg_37_0)
+	for iter_37_0, iter_37_1 in pairs(arg_37_0.nodeList) do
+		var_0_2("type : ", iter_37_0)
 
-		for slot9, slot10 in ipairs(slot5) do
-			uv0(" ", slot10:GetName())
+		for iter_37_2, iter_37_3 in ipairs(iter_37_1) do
+			var_0_2(" ", iter_37_3:GetName())
 		end
 	end
 end

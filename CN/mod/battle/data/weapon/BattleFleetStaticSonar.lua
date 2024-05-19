@@ -1,202 +1,228 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleEvent
-slot2 = slot0.Battle.BattleFormulas
-slot3 = slot0.Battle.BattleConst
-slot5 = slot0.Battle.BattleDataFunction
-slot6 = slot0.Battle.BattleAttr
-slot7 = slot0.Battle.BattleVariable
-slot8 = slot0.Battle.BattleTargetChoise
-slot9 = slot0.Battle.BattleConfig.VAN_SONAR_PROPERTY
-slot10 = class("BattleFleetStaticSonar")
-slot0.Battle.BattleFleetStaticSonar = slot10
-slot10.__name = "BattleFleetStaticSonar"
-slot10.STATE_DISABLE = "DISABLE"
-slot10.STATE_READY = "READY"
+﻿ys = ys or {}
 
-function slot10.Ctor(slot0, slot1)
-	slot0:init()
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleEvent
+local var_0_2 = var_0_0.Battle.BattleFormulas
+local var_0_3 = var_0_0.Battle.BattleConst
+local var_0_4 = var_0_0.Battle.BattleConfig
+local var_0_5 = var_0_0.Battle.BattleDataFunction
+local var_0_6 = var_0_0.Battle.BattleAttr
+local var_0_7 = var_0_0.Battle.BattleVariable
+local var_0_8 = var_0_0.Battle.BattleTargetChoise
+local var_0_9 = var_0_4.VAN_SONAR_PROPERTY
+local var_0_10 = class("BattleFleetStaticSonar")
 
-	slot0._fleetVO = slot1
+var_0_0.Battle.BattleFleetStaticSonar = var_0_10
+var_0_10.__name = "BattleFleetStaticSonar"
+var_0_10.STATE_DISABLE = "DISABLE"
+var_0_10.STATE_READY = "READY"
+
+function var_0_10.Ctor(arg_1_0, arg_1_1)
+	arg_1_0:init()
+
+	arg_1_0._fleetVO = arg_1_1
 end
 
-function slot10.GetCurrentState(slot0)
-	return slot0._currentState
+function var_0_10.GetCurrentState(arg_2_0)
+	return arg_2_0._currentState
 end
 
-function slot10.Dispose(slot0)
-	slot0._detectedList = nil
-	slot0._crewUnitList = nil
-	slot0._host = nil
+function var_0_10.Dispose(arg_3_0)
+	arg_3_0._detectedList = nil
+	arg_3_0._crewUnitList = nil
+	arg_3_0._host = nil
 end
 
-function slot10.init(slot0)
-	slot0._crewUnitList = {}
-	slot0._detectedList = {}
-	slot0._skillDiameter = 0
-	slot0._radius = 0
-	slot0._diameter = 0
+function var_0_10.init(arg_4_0)
+	arg_4_0._crewUnitList = {}
+	arg_4_0._detectedList = {}
+	arg_4_0._skillDiameter = 0
+	arg_4_0._radius = 0
+	arg_4_0._diameter = 0
 end
 
-function slot10.AppendExtraSkillRange(slot0, slot1)
-	slot0._skillDiameter = slot0._skillDiameter + slot1
+function var_0_10.AppendExtraSkillRange(arg_5_0, arg_5_1)
+	arg_5_0._skillDiameter = arg_5_0._skillDiameter + arg_5_1
 
-	if slot0._radius ~= 0 then
-		slot0._radius = slot0._radius + slot1 * 0.5
+	if arg_5_0._radius ~= 0 then
+		arg_5_0._radius = arg_5_0._radius + arg_5_1 * 0.5
 	end
 end
 
-function slot10.AppendCrewUnit(slot0, slot1)
-	slot0._crewUnitList[slot1:GetUniqueID()] = slot1
+function var_0_10.AppendCrewUnit(arg_6_0, arg_6_1)
+	arg_6_0._crewUnitList[arg_6_1:GetUniqueID()] = arg_6_1
 
-	slot0:flush()
+	arg_6_0:flush()
 end
 
-function slot10.RemoveCrewUnit(slot0, slot1)
-	if slot0._crewUnitList[slot1:GetUniqueID()] then
-		slot0._crewUnitList[slot2] = nil
+function var_0_10.RemoveCrewUnit(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_1:GetUniqueID()
 
-		slot0:updateSonarState()
+	if arg_7_0._crewUnitList[var_7_0] then
+		arg_7_0._crewUnitList[var_7_0] = nil
 
-		if slot0._currentState == uv0.STATE_DISABLE then
-			slot0:Undetect()
+		arg_7_0:updateSonarState()
+
+		if arg_7_0._currentState == var_0_10.STATE_DISABLE then
+			arg_7_0:Undetect()
 		end
 	end
 end
 
-function slot10.SwitchHost(slot0, slot1)
-	slot0._host = slot1
+function var_0_10.SwitchHost(arg_8_0, arg_8_1)
+	arg_8_0._host = arg_8_1
 end
 
-function slot10.GetRange(slot0)
-	return slot0._diameter
+function var_0_10.GetRange(arg_9_0)
+	return arg_9_0._diameter
 end
 
-function slot10.flush(slot0)
-	slot0._diameter = 0
-	slot1, slot2, slot3 = slot0:calcSonarRange()
+function var_0_10.flush(arg_10_0)
+	arg_10_0._diameter = 0
 
-	if slot1 ~= 0 then
-		slot0._diameter = slot1 + slot3 + slot2
-		slot0._radius = slot0._diameter * 0.5
+	local var_10_0, var_10_1, var_10_2 = arg_10_0:calcSonarRange()
+
+	if var_10_0 ~= 0 then
+		arg_10_0._diameter = var_10_0 + var_10_2 + var_10_1
+		arg_10_0._radius = arg_10_0._diameter * 0.5
 	end
 
-	slot0:updateSonarState()
+	arg_10_0:updateSonarState()
 end
 
-function slot10.calcSonarRange(slot0)
-	slot2 = 0
-	slot3 = 0
+function var_0_10.calcSonarRange(arg_11_0)
+	local var_11_0 = 0
+	local var_11_1 = 0
+	local var_11_2 = 0
 
-	for slot7, slot8 in pairs(slot0._crewUnitList) do
-		slot9, slot10, slot11 = slot0.getSonarProperty(slot8)
+	for iter_11_0, iter_11_1 in pairs(arg_11_0._crewUnitList) do
+		local var_11_3, var_11_4, var_11_5 = arg_11_0.getSonarProperty(iter_11_1)
 
-		if slot9 > 0 then
-			slot1 = math.max(slot9, 0)
+		if var_11_3 > 0 then
+			var_11_0 = math.max(var_11_3, var_11_0)
 		end
 
-		slot2 = slot2 + slot10
-		slot3 = slot3 + slot11
+		var_11_1 = var_11_1 + var_11_4
+		var_11_2 = var_11_2 + var_11_5
 	end
 
-	slot4 = uv0.MAIN_SONAR_PROPERTY
+	local var_11_6 = var_0_4.MAIN_SONAR_PROPERTY
+	local var_11_7 = var_11_2 / var_11_6.a
+	local var_11_8 = Mathf.Clamp(var_11_7, var_11_6.minRange, var_11_6.maxRange)
 
-	return slot1, Mathf.Clamp(slot3 / slot4.a, slot4.minRange, slot4.maxRange), slot2
+	return var_11_0, var_11_8, var_11_1
 end
 
-function slot10.updateSonarState(slot0)
-	for slot5, slot6 in pairs(slot0._crewUnitList) do
-		if slot0.getSonarProperty(slot6) > 0 then
-			slot1 = 0 + 1
+function var_0_10.updateSonarState(arg_12_0)
+	local var_12_0 = 0
+
+	for iter_12_0, iter_12_1 in pairs(arg_12_0._crewUnitList) do
+		if arg_12_0.getSonarProperty(iter_12_1) > 0 then
+			var_12_0 = var_12_0 + 1
 		end
 	end
 
-	if slot1 > 0 then
-		slot0._currentState = uv0.STATE_READY
+	if var_12_0 > 0 then
+		arg_12_0._currentState = var_0_10.STATE_READY
 	else
-		slot0._currentState = uv0.STATE_DISABLE
+		arg_12_0._currentState = var_0_10.STATE_DISABLE
 	end
 
-	slot0._fleetVO:DispatchEvent(uv1.Event.New(uv1.Battle.BattleEvent.SONAR_UPDATE))
+	local var_12_1 = var_0_0.Event.New(var_0_0.Battle.BattleEvent.SONAR_UPDATE)
+
+	arg_12_0._fleetVO:DispatchEvent(var_12_1)
 end
 
-function slot10.getSonarProperty(slot0)
-	slot3 = 0
+function var_0_10.getSonarProperty(arg_13_0)
+	local var_13_0 = arg_13_0:GetTemplate().type
+	local var_13_1 = var_0_9[var_13_0]
+	local var_13_2 = 0
 
-	if uv0[slot0:GetTemplate().type] then
-		slot3 = Mathf.Clamp(slot0:GetAttrByName("baseAntiSubPower") / slot2.a - slot2.b, slot2.minRange, slot2.maxRange)
+	if var_13_1 then
+		local var_13_3 = arg_13_0:GetAttrByName("baseAntiSubPower") / var_13_1.a - var_13_1.b
+
+		var_13_2 = Mathf.Clamp(var_13_3, var_13_1.minRange, var_13_1.maxRange)
 	end
 
-	slot4 = slot0:GetAttrByName("sonarRange")
-	slot5 = 0
+	local var_13_4 = arg_13_0:GetAttrByName("sonarRange")
+	local var_13_5 = 0
 
-	if table.contains(TeamType.MainShipType, slot1) then
-		slot5 = slot0:GetAttrByName("baseAntiSubPower")
+	if table.contains(TeamType.MainShipType, var_13_0) then
+		var_13_5 = arg_13_0:GetAttrByName("baseAntiSubPower")
 	end
 
-	return slot3, slot4, slot5
+	return var_13_2, var_13_4, var_13_5
 end
 
-function slot10.Update(slot0, slot1)
-	if slot0._currentState ~= uv0.STATE_DISABLE then
-		slot0._fleetVO:DispatchSonarScan()
-		slot0:updateDetectedList()
+function var_0_10.Update(arg_14_0, arg_14_1)
+	if arg_14_0._currentState ~= var_0_10.STATE_DISABLE then
+		arg_14_0._fleetVO:DispatchSonarScan()
+		arg_14_0:updateDetectedList()
 	end
 end
 
-function slot10.Undetect(slot0)
-	for slot5, slot6 in ipairs(slot0._detectedList) do
-		if slot6:IsAlive() then
-			slot6:Undetected()
+function var_0_10.Undetect(arg_15_0)
+	local var_15_0 = arg_15_0._detectedList
+
+	for iter_15_0, iter_15_1 in ipairs(var_15_0) do
+		if iter_15_1:IsAlive() then
+			iter_15_1:Undetected()
 		end
 	end
 
-	slot0._detectedList = {}
+	arg_15_0._detectedList = {}
 end
 
-function slot10.updateDetectedList(slot0)
-	slot2 = uv0.TargetDiveState(slot0._host, {
-		diveState = uv1.OXY_STATE.DIVE
-	}, uv0.LegalTarget(slot0._host))
-	slot3 = slot0:FilterRange(slot2)
+function var_0_10.updateDetectedList(arg_16_0)
+	local var_16_0 = var_0_8.LegalTarget(arg_16_0._host)
+	local var_16_1 = var_0_8.TargetDiveState(arg_16_0._host, {
+		diveState = var_0_3.OXY_STATE.DIVE
+	}, var_16_0)
+	local var_16_2 = arg_16_0:FilterRange(var_16_1)
 
-	for slot7, slot8 in ipairs(slot2) do
-		if table.contains(slot0._detectedList, slot8) then
-			if not table.contains(slot3, slot8) then
-				slot8:Undetected()
+	for iter_16_0, iter_16_1 in ipairs(var_16_1) do
+		local var_16_3 = table.contains(var_16_2, iter_16_1)
+		local var_16_4 = table.contains(arg_16_0._detectedList, iter_16_1)
+
+		if var_16_4 then
+			if not var_16_3 then
+				iter_16_1:Undetected()
 			end
-		elseif not slot10 and slot9 then
-			slot8:Detected()
+		elseif not var_16_4 and var_16_3 then
+			iter_16_1:Detected()
 		end
 	end
 
-	slot0._detectedList = slot3
+	arg_16_0._detectedList = var_16_2
 end
 
-function slot10.FilterTarget(slot0)
-	return slot0:FilterRange(uv0.TargetDiveState(slot0._host, {
-		diveState = uv1.OXY_STATE.DIVE
-	}, uv0.LegalTarget(slot0._host)))
+function var_0_10.FilterTarget(arg_17_0)
+	local var_17_0 = var_0_8.LegalTarget(arg_17_0._host)
+	local var_17_1 = var_0_8.TargetDiveState(arg_17_0._host, {
+		diveState = var_0_3.OXY_STATE.DIVE
+	}, var_17_0)
+
+	return (arg_17_0:FilterRange(var_17_1))
 end
 
-function slot10.FilterRange(slot0, slot1)
-	slot2 = {}
+function var_0_10.FilterRange(arg_18_0, arg_18_1)
+	local var_18_0 = {}
 
-	for slot6, slot7 in ipairs(slot1) do
-		if not slot0:isOutOfRange(slot7) then
-			table.insert(slot2, slot7)
+	for iter_18_0, iter_18_1 in ipairs(arg_18_1) do
+		if not arg_18_0:isOutOfRange(iter_18_1) then
+			table.insert(var_18_0, iter_18_1)
 		end
 	end
 
-	return slot2
+	return var_18_0
 end
 
-function slot10.isOutOfRange(slot0, slot1)
-	return slot0._radius < slot0._host:GetDistance(slot1)
+function var_0_10.isOutOfRange(arg_19_0, arg_19_1)
+	return arg_19_0._host:GetDistance(arg_19_1) > arg_19_0._radius
 end
 
-function slot10.GetTotalRangeDetail(slot0)
-	slot1, slot2, slot3 = slot0:calcSonarRange()
+function var_0_10.GetTotalRangeDetail(arg_20_0)
+	local var_20_0, var_20_1, var_20_2 = arg_20_0:calcSonarRange()
 
-	return slot1, slot2, slot3, slot0._skillDiameter
+	return var_20_0, var_20_1, var_20_2, arg_20_0._skillDiameter
 end

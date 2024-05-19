@@ -1,49 +1,56 @@
-slot0 = class("ActivityBossNormalUpdateCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ActivityBossNormalUpdateCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	if not slot1:getBody().stageId then
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.stageId
+
+	if not var_1_1 then
 		return
 	end
 
-	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2) or slot4:isEnd() then
+	local var_1_2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2)
+
+	if not var_1_2 or var_1_2:isEnd() then
 		return
 	end
 
-	if not pg.activity_event_worldboss[slot4:getConfig("config_id")] then
+	local var_1_3 = pg.activity_event_worldboss[var_1_2:getConfig("config_id")]
+
+	if not var_1_3 then
 		return
 	end
 
-	slot6 = {}
+	local var_1_4 = {}
 
-	for slot10, slot11 in pairs(slot5.normal_expedition_drop_num or {}) do
-		for slot15, slot16 in pairs(slot11[1]) do
-			if slot16 == slot3 then
-				for slot20, slot21 in pairs(slot11[1]) do
-					slot6[slot21] = true
+	for iter_1_0, iter_1_1 in pairs(var_1_3.normal_expedition_drop_num or {}) do
+		for iter_1_2, iter_1_3 in pairs(iter_1_1[1]) do
+			if iter_1_3 == var_1_1 then
+				for iter_1_4, iter_1_5 in pairs(iter_1_1[1]) do
+					var_1_4[iter_1_5] = true
 				end
 
 				break
 			end
 		end
 
-		if table.getCount(slot6) > 0 then
+		if table.getCount(var_1_4) > 0 then
 			break
 		end
 	end
 
-	slot7 = slot4.data1KeyValueList
-	slot8 = slot2.num or -1
+	local var_1_5 = var_1_2.data1KeyValueList
+	local var_1_6 = var_1_0.num or -1
 
-	for slot12, slot13 in pairs(slot6) do
-		if slot7[2][slot12] + slot8 >= 0 then
-			slot7[2][slot12] = slot7[2][slot12] + slot8
+	for iter_1_6, iter_1_7 in pairs(var_1_4) do
+		if var_1_5[2][iter_1_6] + var_1_6 >= 0 then
+			var_1_5[2][iter_1_6] = var_1_5[2][iter_1_6] + var_1_6
 		else
-			slot7[1][slot12] = math.max(slot7[1][slot12] + slot8, 0)
+			var_1_5[1][iter_1_6] = math.max(var_1_5[1][iter_1_6] + var_1_6, 0)
 		end
 	end
 
-	slot4:AddStage(slot3)
-	getProxy(ActivityProxy):updateActivity(slot4)
+	var_1_2:AddStage(var_1_1)
+	getProxy(ActivityProxy):updateActivity(var_1_2)
 end
 
-return slot0
+return var_0_0

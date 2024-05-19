@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.ship_data_strengthen = {
 	[10000] = {
 		id = 10000,

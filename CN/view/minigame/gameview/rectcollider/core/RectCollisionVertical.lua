@@ -1,103 +1,131 @@
-slot0 = class("RectCollisionVertical")
-slot0.directUp = Vector3(0, 1, 0)
-slot0.directDown = Vector3(0, -1, 0)
-slot0.directRight = Vector3(1, 0, 0)
-slot0.directLeft = Vector3(-1, 0, 0)
+﻿local var_0_0 = class("RectCollisionVertical")
 
-function slot0.DescendSlope(slot0, slot1, slot2)
-	slot3 = slot2.bottomLeft
-	slot4 = slot2.bottomRight
-	slot5 = Vector3(0, -1, 0)
-	slot6 = Mathf.Abs(slot0.y) + slot2.skinWidth
-	slot7 = slot1.layerMask
-	slot8, slot9 = Physics.Raycast(slot2.bottomLeft, Vector3.down, nil, slot6, slot7)
-	slot10, slot11 = Physics.Raycast(slot2.bottomRight, Vector3.down, nil, slot6, slot7)
+var_0_0.directUp = Vector3(0, 1, 0)
+var_0_0.directDown = Vector3(0, -1, 0)
+var_0_0.directRight = Vector3(1, 0, 0)
+var_0_0.directLeft = Vector3(-1, 0, 0)
 
-	if slot8 or slot10 then
-		slot12 = false
+function var_0_0.DescendSlope(arg_1_0, arg_1_1, arg_1_2)
+	local var_1_0 = arg_1_2.bottomLeft
+	local var_1_1 = arg_1_2.bottomRight
+	local var_1_2 = Vector3(0, -1, 0)
+	local var_1_3 = Mathf.Abs(arg_1_0.y) + arg_1_2.skinWidth
+	local var_1_4 = arg_1_1.layerMask
+	local var_1_5, var_1_6 = Physics.Raycast(arg_1_2.bottomLeft, Vector3.down, nil, var_1_3, var_1_4)
+	local var_1_7, var_1_8 = Physics.Raycast(arg_1_2.bottomRight, Vector3.down, nil, var_1_3, var_1_4)
 
-		if slot8 and not slot10 or not slot8 and slot10 then
-			slot12 = true
-		elseif Vector3.Angle(slot9.normal, Vector3.up) <= slot1.config.maxSlopeAngle and slot1.config.maxSlopeAngle < Vector3.Angle(slot11.normal, Vector3.up) then
-			slot12 = true
-		elseif slot1.config.maxSlopeAngle < slot13 and slot14 <= slot1.config.maxSlopeAngle then
-			slot12 = true
+	if var_1_5 or var_1_7 then
+		local var_1_9 = false
+
+		if var_1_5 and not var_1_7 or not var_1_5 and var_1_7 then
+			var_1_9 = true
+		else
+			local var_1_10 = Vector3.Angle(var_1_6.normal, Vector3.up)
+			local var_1_11 = Vector3.Angle(var_1_8.normal, Vector3.up)
+
+			if var_1_10 <= arg_1_1.config.maxSlopeAngle and var_1_11 > arg_1_1.config.maxSlopeAngle then
+				var_1_9 = true
+			elseif var_1_10 > arg_1_1.config.maxSlopeAngle and var_1_11 <= arg_1_1.config.maxSlopeAngle then
+				var_1_9 = true
+			end
 		end
 
-		if slot12 then
-			uv0.slideDownMaxSlope(slot9, slot0, slot1)
-			uv0.slideDownMaxSlope(slot11, slot0, slot1)
+		if var_1_9 then
+			var_0_0.slideDownMaxSlope(var_1_6, arg_1_0, arg_1_1)
+			var_0_0.slideDownMaxSlope(var_1_8, arg_1_0, arg_1_1)
 		end
 	end
 
-	if not slot1.slidingDownMaxSlope then
-		slot14, slot15 = Physics.Raycast(Mathf.Sign(slot0.x) == -1 and slot2.bottomRight or slot2.bottomLeft, uv0.directDown, nil, Mathf.Infinity, slot7)
+	if not arg_1_1.slidingDownMaxSlope then
+		local var_1_12 = Mathf.Sign(arg_1_0.x)
+		local var_1_13 = var_1_12 == -1 and arg_1_2.bottomRight or arg_1_2.bottomLeft
+		local var_1_14, var_1_15 = Physics.Raycast(var_1_13, var_0_0.directDown, nil, Mathf.Infinity, var_1_4)
 
-		if slot14 and Vector3.Angle(slot15.normal, uv0.directUp) ~= 0 and slot16 <= slot1.config.maxSlopeAngle and Mathf.Sign(slot15.normal.x) == slot12 and slot15.distance - slot2.skinWidth <= Mathf.Tan(slot16 * Mathf.Deg2Rad) * Mathf.Abs(slot0.x) then
-			slot17 = Mathf.Abs(slot0.x)
-			slot0.x = Mathf.Cos(slot16 * Mathf.Deg2Rad) * slot17 * Mathf.Sign(slot0.x)
-			slot0.y = slot0.y - Mathf.Sin(slot16 * Mathf.Deg2Rad) * slot17
-			slot1.slopeAngle = slot16
-			slot1.descendingSlope = true
-			slot1.below = true
-			slot1.slopeNormal = slot15.normal
+		if var_1_14 then
+			local var_1_16 = Vector3.Angle(var_1_15.normal, var_0_0.directUp)
+
+			if var_1_16 ~= 0 and var_1_16 <= arg_1_1.config.maxSlopeAngle and Mathf.Sign(var_1_15.normal.x) == var_1_12 and var_1_15.distance - arg_1_2.skinWidth <= Mathf.Tan(var_1_16 * Mathf.Deg2Rad) * Mathf.Abs(arg_1_0.x) then
+				local var_1_17 = Mathf.Abs(arg_1_0.x)
+				local var_1_18 = Mathf.Sin(var_1_16 * Mathf.Deg2Rad) * var_1_17
+
+				arg_1_0.x = Mathf.Cos(var_1_16 * Mathf.Deg2Rad) * var_1_17 * Mathf.Sign(arg_1_0.x)
+				arg_1_0.y = arg_1_0.y - var_1_18
+				arg_1_1.slopeAngle = var_1_16
+				arg_1_1.descendingSlope = true
+				arg_1_1.below = true
+				arg_1_1.slopeNormal = var_1_15.normal
+			end
 		end
 	end
 end
 
-function slot0.slideDownMaxSlope(slot0, slot1, slot2)
-	if slot0 and slot1.y ~= 0 and slot2.config.maxSlopeAngle < Vector3.Angle(slot0.normal, Vector3.up) then
-		if Mathf.Abs(slot1.y) > slot2.config.downMaxSlopeSpeed * Time.deltaTime then
-			slot1.y = slot2.config.downMaxSlopeSpeed * Time.deltaTime * Mathf.Sign(slot1.y)
-		end
+function var_0_0.slideDownMaxSlope(arg_2_0, arg_2_1, arg_2_2)
+	if arg_2_0 and arg_2_1.y ~= 0 then
+		local var_2_0 = Vector3.Angle(arg_2_0.normal, Vector3.up)
 
-		slot1.x = Mathf.Sign(slot0.normal.x) * (Mathf.Abs(slot1.y) - slot0.distance) / Mathf.Tan(slot3 * Mathf.Deg2Rad)
-		slot2.slopeAngle = slot3
-		slot2.slidingDownMaxSlope = true
-		slot2.slopeNormal = slot0.normal
+		if var_2_0 > arg_2_2.config.maxSlopeAngle then
+			local var_2_1 = Mathf.Sign(arg_2_1.y)
+
+			if Mathf.Abs(arg_2_1.y) > arg_2_2.config.downMaxSlopeSpeed * Time.deltaTime then
+				arg_2_1.y = arg_2_2.config.downMaxSlopeSpeed * Time.deltaTime * var_2_1
+			end
+
+			local var_2_2 = (Mathf.Abs(arg_2_1.y) - arg_2_0.distance) / Mathf.Tan(var_2_0 * Mathf.Deg2Rad)
+
+			arg_2_1.x = Mathf.Sign(arg_2_0.normal.x) * var_2_2
+			arg_2_2.slopeAngle = var_2_0
+			arg_2_2.slidingDownMaxSlope = true
+			arg_2_2.slopeNormal = arg_2_0.normal
+		end
 	end
 end
 
-function slot0.VerticalCollisions(slot0, slot1, slot2)
-	slot6 = Vector3(0, 0, 0)
-	slot7 = slot3 == -1 and slot2.bottomLeft or slot2.topLeft
+function var_0_0.VerticalCollisions(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = Mathf.Sign(arg_3_0.y)
+	local var_3_1 = var_3_0 == 1 and var_0_0.directUp or var_0_0.directDown
+	local var_3_2 = Mathf.Abs(arg_3_0.y) + arg_3_2.skinWidth * 2
+	local var_3_3 = Vector3(0, 0, 0)
+	local var_3_4 = var_3_0 == -1 and arg_3_2.bottomLeft or arg_3_2.topLeft
 
-	for slot11 = 1, slot2.verticalRayCount do
-		slot6.x = slot7.x + slot2.verticalRaySpacing * (slot11 - 1) + slot0.x
-		slot6.y = slot7.y
-		slot6.z = slot7.z
-		slot12, slot13 = Physics.Raycast(slot6, Mathf.Sign(slot0.y) == 1 and uv0.directUp or uv0.directDown, nil, Mathf.Abs(slot0.y) + slot2.skinWidth * 2, slot1.layerMask)
-		slot14 = false
-		slot15 = false
+	for iter_3_0 = 1, arg_3_2.verticalRayCount do
+		var_3_3.x = var_3_4.x + (arg_3_2.verticalRaySpacing * (iter_3_0 - 1) + arg_3_0.x)
+		var_3_3.y = var_3_4.y
+		var_3_3.z = var_3_4.z
 
-		if slot13 then
-			if table.contains(slot1.ignoreLayerMask, go(slot13.transform.parent).layer) then
-				slot15 = true
+		local var_3_5, var_3_6 = Physics.Raycast(var_3_3, var_3_1, nil, var_3_2, arg_3_1.layerMask)
+		local var_3_7 = false
+		local var_3_8 = false
+
+		if var_3_6 then
+			local var_3_9 = var_3_6.transform.parent
+
+			if table.contains(arg_3_1.ignoreLayerMask, go(var_3_9).layer) then
+				var_3_8 = true
 			end
 
-			if slot3 == 1 and not slot1.verticalTopTfs[slot16] then
-				slot1.verticalTopTfs[slot16] = slot16
-			elseif slot3 == -1 and not slot1.verticalBottomTfs[slot16] then
-				slot1.verticalBottomTfs[slot16] = slot16
+			if var_3_0 == 1 and not arg_3_1.verticalTopTfs[var_3_9] then
+				arg_3_1.verticalTopTfs[var_3_9] = var_3_9
+			elseif var_3_0 == -1 and not arg_3_1.verticalBottomTfs[var_3_9] then
+				arg_3_1.verticalBottomTfs[var_3_9] = var_3_9
 			end
 		end
 
-		if not slot15 and slot12 then
-			slot16 = slot13
+		if not var_3_8 and var_3_5 then
+			local var_3_10 = var_3_6
 
-			if not slot14 then
-				slot0.y = (slot13.distance - slot2.skinWidth) * slot3
-				slot5 = slot13.distance
+			if not var_3_7 then
+				arg_3_0.y = (var_3_6.distance - arg_3_2.skinWidth) * var_3_0
+				var_3_2 = var_3_6.distance
 
-				if slot1.climbingSlope then
-					slot0.x = slot0.y / Mathf.Tan(slot1.slopeAngle * Mathf.Deg2Rad) * Mathf.Sign(slot0.x)
+				if arg_3_1.climbingSlope then
+					arg_3_0.x = arg_3_0.y / Mathf.Tan(arg_3_1.slopeAngle * Mathf.Deg2Rad) * Mathf.Sign(arg_3_0.x)
 				end
 
-				slot1.below = slot3 == -1
-				slot1.above = slot3 == 1
+				arg_3_1.below = var_3_0 == -1
+				arg_3_1.above = var_3_0 == 1
 			end
 		end
 	end
 end
 
-return slot0
+return var_0_0

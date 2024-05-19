@@ -1,115 +1,116 @@
-slot0 = class("AttachmentSpineAnimationCell", import(".StaticCellView"))
-slot0.SDPosition = Vector2(0, -15)
-slot0.SDScale = Vector3(0.4, 0.4, 0.4)
+﻿local var_0_0 = class("AttachmentSpineAnimationCell", import(".StaticCellView"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+var_0_0.SDPosition = Vector2(0, -15)
+var_0_0.SDScale = Vector3(0.4, 0.4, 0.4)
 
-	slot0.name = nil
-	slot0.model = nil
-	slot0.anim = nil
-	slot0.AnimIndex = nil
-	slot0.group = {}
-	slot0.timer = nil
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
+
+	arg_1_0.name = nil
+	arg_1_0.model = nil
+	arg_1_0.anim = nil
+	arg_1_0.AnimIndex = nil
+	arg_1_0.group = {}
+	arg_1_0.timer = nil
 end
 
-function slot0.GetOrder(slot0)
+function var_0_0.GetOrder(arg_2_0)
 	return ChapterConst.CellPriorityAttachment
 end
 
-function slot0.Set(slot0, slot1)
-	if slot0.name == slot1 then
+function var_0_0.Set(arg_3_0, arg_3_1)
+	if arg_3_0.name == arg_3_1 then
 		return
 	end
 
-	slot0:ClearLoader()
-	table.clear(slot0.group)
+	arg_3_0:ClearLoader()
+	table.clear(arg_3_0.group)
 
-	slot0.name = slot1
+	arg_3_0.name = arg_3_1
 
-	if IsNil(slot0.go) then
-		slot0:PrepareBase("SD")
-		slot0:OverrideCanvas()
-		slot0:ResetCanvasOrder()
+	if IsNil(arg_3_0.go) then
+		arg_3_0:PrepareBase("SD")
+		arg_3_0:OverrideCanvas()
+		arg_3_0:ResetCanvasOrder()
 	end
 
-	slot0:GetLoader():GetSpine(slot1, function (slot0)
-		uv0.model = slot0
-		uv0.anim = slot0:GetComponent("SpineAnimUI")
+	arg_3_0:GetLoader():GetSpine(arg_3_1, function(arg_4_0)
+		arg_3_0.model = arg_4_0
+		arg_3_0.anim = arg_4_0:GetComponent("SpineAnimUI")
 
-		setParent(slot0, uv0.go)
+		setParent(arg_4_0, arg_3_0.go)
 
-		slot0.transform.anchoredPosition = uv0.SDPosition
-		slot0.transform.localScale = uv0.SDScale
+		arg_4_0.transform.anchoredPosition = arg_3_0.SDPosition
+		arg_4_0.transform.localScale = arg_3_0.SDScale
 
-		uv0:PlayAction(uv0.AnimIndex)
+		arg_3_0:PlayAction(arg_3_0.AnimIndex)
 	end, "SD")
 end
 
-function slot0.SetRoutine(slot0, slot1)
-	table.clear(slot0.group)
+function var_0_0.SetRoutine(arg_5_0, arg_5_1)
+	table.clear(arg_5_0.group)
 
-	slot0.AnimIndex = nil
+	arg_5_0.AnimIndex = nil
 
-	for slot5, slot6 in ipairs(slot1 or {}) do
-		slot0.group[slot5] = slot6
+	for iter_5_0, iter_5_1 in ipairs(arg_5_1 or {}) do
+		arg_5_0.group[iter_5_0] = iter_5_1
 	end
 
-	if #slot0.group < 1 then
-		table.insert(slot0.group, {
+	if #arg_5_0.group < 1 then
+		table.insert(arg_5_0.group, {
 			action = "default",
 			duration = 9999
 		})
 	end
 
-	slot0:PlayAction(math.min(#slot0.group, 1))
+	arg_5_0:PlayAction(math.min(#arg_5_0.group, 1))
 end
 
-function slot0.PlayAction(slot0, slot1)
-	if not slot1 or slot1 <= 0 or slot1 > #slot0.group or slot0.AnimIndexPlaying == slot1 then
+function var_0_0.PlayAction(arg_6_0, arg_6_1)
+	if not arg_6_1 or arg_6_1 <= 0 or arg_6_1 > #arg_6_0.group or arg_6_0.AnimIndexPlaying == arg_6_1 then
 		return
 	end
 
-	slot0.AnimIndex = slot1
+	arg_6_0.AnimIndex = arg_6_1
 
-	if not slot0.loader or slot0.loader:GetLoadingRP("SD") or not slot0.anim then
+	if not arg_6_0.loader or arg_6_0.loader:GetLoadingRP("SD") or not arg_6_0.anim then
 		return
 	end
 
-	slot2 = slot0.group[slot1]
+	local var_6_0 = arg_6_0.group[arg_6_1]
 
-	slot0:ClearTimer()
+	arg_6_0:ClearTimer()
 
-	slot0.timer = Timer.New(function ()
-		uv0 = uv0 + 1
+	arg_6_0.timer = Timer.New(function()
+		arg_6_1 = arg_6_1 + 1
 
-		if uv0 > #uv1.group then
-			uv0 = math.min(#uv1.group, 1)
+		if arg_6_1 > #arg_6_0.group then
+			arg_6_1 = math.min(#arg_6_0.group, 1)
 		end
 
-		uv1:PlayAction(uv0)
-	end, slot2.duration)
+		arg_6_0:PlayAction(arg_6_1)
+	end, var_6_0.duration)
 
-	slot0.anim:SetAction(slot2.action, 0)
-	slot0.timer:Start()
+	arg_6_0.anim:SetAction(var_6_0.action, 0)
+	arg_6_0.timer:Start()
 
-	slot0.AnimIndexPlaying = slot1
+	arg_6_0.AnimIndexPlaying = arg_6_1
 end
 
-function slot0.ClearTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.ClearTimer(arg_8_0)
+	if arg_8_0.timer then
+		arg_8_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_8_0.timer = nil
 	end
 end
 
-function slot0.Clear(slot0)
-	slot0:ClearTimer()
+function var_0_0.Clear(arg_9_0)
+	arg_9_0:ClearTimer()
 
-	slot0.name = nil
+	arg_9_0.name = nil
 
-	uv0.super.Clear(slot0)
+	var_0_0.super.Clear(arg_9_0)
 end
 
-return slot0
+return var_0_0

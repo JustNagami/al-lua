@@ -1,14 +1,4 @@
-return {
-	{},
-	{},
-	init_effect = "",
-	name = "兵装训练 贝法",
-	time = 0,
-	stack = 1,
-	id = 7400,
-	picture = "",
-	last_effect = "",
-	icon = 7400,
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffAddTag",
@@ -49,5 +39,15 @@ return {
 				target = "TargetAllHarm"
 			}
 		}
-	}
+	},
+	{},
+	{},
+	init_effect = "",
+	name = "兵装训练 贝法",
+	time = 0,
+	stack = 1,
+	id = 7400,
+	picture = "",
+	last_effect = "",
+	icon = 7400
 }

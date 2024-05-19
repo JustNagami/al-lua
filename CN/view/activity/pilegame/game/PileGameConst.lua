@@ -1,32 +1,33 @@
-slot0 = class("PileGameConst")
-slot0.INDEX_WIDTH = 150
-slot0.SAFE_INDEX_WIDTH = 45
-slot0.DEATH_INDEX_WIDTH = 87
-slot0.ITEM_PIVOT = Vector2(0.5, 0)
-slot0.GROUND_SIZE = Vector2(1300, 20)
-slot0.GROUND_PIVOT = Vector2(0.5, 1)
-slot0.RATIO = 2
-slot0.START_Y = 150
-slot0.MAX_SLIDE_DISTANCE = slot0.INDEX_WIDTH * slot0.RATIO
-slot0.SAFE_LINE_DISTANCE = slot0.SAFE_INDEX_WIDTH * slot0.RATIO
-slot0.DEATH_LINE_DISTANCE = slot0.DEATH_INDEX_WIDTH * slot0.RATIO
-slot0.SLIDE_SPEED = 150
-slot0.SLIDE_GROWTH = {
+﻿local var_0_0 = class("PileGameConst")
+
+var_0_0.INDEX_WIDTH = 150
+var_0_0.SAFE_INDEX_WIDTH = 45
+var_0_0.DEATH_INDEX_WIDTH = 87
+var_0_0.ITEM_PIVOT = Vector2(0.5, 0)
+var_0_0.GROUND_SIZE = Vector2(1300, 20)
+var_0_0.GROUND_PIVOT = Vector2(0.5, 1)
+var_0_0.RATIO = 2
+var_0_0.START_Y = 150
+var_0_0.MAX_SLIDE_DISTANCE = var_0_0.INDEX_WIDTH * var_0_0.RATIO
+var_0_0.SAFE_LINE_DISTANCE = var_0_0.SAFE_INDEX_WIDTH * var_0_0.RATIO
+var_0_0.DEATH_LINE_DISTANCE = var_0_0.DEATH_INDEX_WIDTH * var_0_0.RATIO
+var_0_0.SLIDE_SPEED = 150
+var_0_0.SLIDE_GROWTH = {
 	10,
 	0.23
 }
-slot0.DROP_SPEED = 600
-slot0.SINK_LEVEL = 4
-slot0.MAX_FAILED_CNT = 3
-slot0.LEVEL_TO_HAPPY_ANIM = 10
-slot0.SINK_TIME = 0.01
-slot0.SHAKE_DIS = 5
-slot0.SHAKE_SPEED = 10
-slot0.SHAKE_DIS_RATIO = 0.02
-slot0.PLAY_SPE_ACTION_TIME = 5
-slot0.BAN_OP_TIME = 1
-slot0.DEBUG = false
-slot0.Prefabs = {
+var_0_0.DROP_SPEED = 600
+var_0_0.SINK_LEVEL = 4
+var_0_0.MAX_FAILED_CNT = 3
+var_0_0.LEVEL_TO_HAPPY_ANIM = 10
+var_0_0.SINK_TIME = 0.01
+var_0_0.SHAKE_DIS = 5
+var_0_0.SHAKE_SPEED = 10
+var_0_0.SHAKE_DIS_RATIO = 0.02
+var_0_0.PLAY_SPE_ACTION_TIME = 5
+var_0_0.BAN_OP_TIME = 1
+var_0_0.DEBUG = false
+var_0_0.Prefabs = {
 	{
 		speActionCount = 1,
 		name = "abercrombie_N",
@@ -308,7 +309,7 @@ slot0.Prefabs = {
 		}
 	}
 }
-slot0.HEAD = {
+var_0_0.HEAD = {
 	speActionCount = 0,
 	name = "abercrombie_N",
 	boundary = {
@@ -323,4 +324,4 @@ slot0.HEAD = {
 	}
 }
 
-return slot0
+return var_0_0

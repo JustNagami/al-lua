@@ -1,8 +1,9 @@
-slot0 = class("MiniGameConst")
-slot0.MG_TYPE_1 = 1
-slot0.MG_TYPE_2 = 2
-slot0.MG_TYPE_3 = 3
-slot0.MG_TYPE_4 = 4
-slot0.MG_TYPE_5 = 5
+﻿local var_0_0 = class("MiniGameConst")
 
-return slot0
+var_0_0.MG_TYPE_1 = 1
+var_0_0.MG_TYPE_2 = 2
+var_0_0.MG_TYPE_3 = 3
+var_0_0.MG_TYPE_4 = 4
+var_0_0.MG_TYPE_5 = 5
+
+return var_0_0

@@ -1,29 +1,30 @@
-slot0 = class("ExpeditionGameMediator", import(".MiniHubMediator"))
+﻿local var_0_0 = class("ExpeditionGameMediator", import(".MiniHubMediator"))
 
-function slot0.listNotificationInterests(slot0)
-	slot1 = {
+function var_0_0.listNotificationInterests(arg_1_0)
+	local var_1_0 = {
 		ActivityProxy.ACTIVITY_UPDATED,
 		ActivityProxy.ACTIVITY_SHOW_AWARDS,
 		GAME.BEGIN_STAGE_DONE
 	}
 
-	table.insertto(slot1, uv0.super.listNotificationInterests(slot0))
+	table.insertto(var_1_0, var_0_0.super.listNotificationInterests(arg_1_0))
 
-	return slot1
+	return var_1_0
 end
 
-function slot0.handleNotification(slot0, slot1)
-	uv0.super.handleNotification(slot0, slot1)
+function var_0_0.handleNotification(arg_2_0, arg_2_1)
+	var_0_0.super.handleNotification(arg_2_0, arg_2_1)
 
-	slot3 = slot1:getBody()
+	local var_2_0 = arg_2_1:getName()
+	local var_2_1 = arg_2_1:getBody()
 
-	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED then
-		slot0.viewComponent:activityUpdate()
-	elseif slot2 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, slot3.callback)
-	elseif slot2 == GAME.BEGIN_STAGE_DONE then
-		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot3)
+	if var_2_0 == ActivityProxy.ACTIVITY_UPDATED then
+		arg_2_0.viewComponent:activityUpdate()
+	elseif var_2_0 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
+		arg_2_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_2_1.awards, var_2_1.callback)
+	elseif var_2_0 == GAME.BEGIN_STAGE_DONE then
+		arg_2_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var_2_1)
 	end
 end
 
-return slot0
+return var_0_0

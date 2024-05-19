@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.commander_attribute_template = {
 	[101] = {
 		rate_durability = 0,

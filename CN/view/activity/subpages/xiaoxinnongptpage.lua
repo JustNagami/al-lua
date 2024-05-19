@@ -1,31 +1,31 @@
-slot0 = class("XiaoXinNongPtPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var_0_0 = class("XiaoXinNongPtPage", import(".TemplatePage.PtTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.hearts = UIItemList.New(slot0:findTF("AD/heart"), slot0:findTF("AD/heart/mark"))
+	arg_1_0.hearts = UIItemList.New(arg_1_0:findTF("AD/heart"), arg_1_0:findTF("AD/heart/mark"))
 end
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
-	onButton(slot0, slot0.battleBtn, function ()
-		uv0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+function var_0_0.OnFirstFlush(arg_2_0)
+	var_0_0.super.OnFirstFlush(arg_2_0)
+	onButton(arg_2_0, arg_2_0.battleBtn, function()
+		arg_2_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_4_0)
+	var_0_0.super.OnUpdateFlush(arg_4_0)
 
-	slot1, slot2, slot3 = slot0.ptData:GetLevelProgress()
-	slot4, slot5, slot6 = slot0.ptData:GetResProgress()
+	local var_4_0, var_4_1, var_4_2 = arg_4_0.ptData:GetLevelProgress()
+	local var_4_3, var_4_4, var_4_5 = arg_4_0.ptData:GetResProgress()
 
-	slot0.hearts:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			setActive(slot2, slot1 < uv0.ptData.level)
+	arg_4_0.hearts:make(function(arg_5_0, arg_5_1, arg_5_2)
+		if arg_5_0 == UIItemList.EventUpdate then
+			setActive(arg_5_2, arg_5_1 < arg_4_0.ptData.level)
 		end
 	end)
-	setText(slot0.progress, setColorStr(slot4, "#7780D3") .. "/" .. setColorStr(slot5, "#ffffff"))
-	slot0.hearts:align(slot2)
+	setText(arg_4_0.progress, setColorStr(var_4_3, "#7780D3") .. "/" .. setColorStr(var_4_4, "#ffffff"))
+	arg_4_0.hearts:align(var_4_1)
 end
 
-return slot0
+return var_0_0

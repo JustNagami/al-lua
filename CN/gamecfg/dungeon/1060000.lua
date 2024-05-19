@@ -1,4 +1,4 @@
-return {
+﻿return {
 	beginStoy = "SANLI00",
 	id = 1060000,
 	stages = {

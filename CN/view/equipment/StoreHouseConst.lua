@@ -1,13 +1,14 @@
-slot0 = class("StoreHouseConst")
-slot0.WARP_TO_DESIGN = "WARP_TO_DESIGN"
-slot0.WARP_TO_MATERIAL = "WARP_TO_MATERIAL"
-slot0.WARP_TO_WEAPON = "WARP_TO_WEAPON"
-slot0.OVERVIEW = "StoreHouseScene_OVERVIEW"
-slot0.DESTROY = "StoreHouseScene_DESTROY"
-slot0.EQUIPMENT = "StoreHouseScene_EQUIPMENT"
-slot0.SKIN = "StoreHouseScene_SKIN"
-slot0.SPWEAPON = "StoreHouseScene_SPWEAPON"
-slot0.EQUIPMENT_INDEX_COMMON = {
+﻿local var_0_0 = class("StoreHouseConst")
+
+var_0_0.WARP_TO_DESIGN = "WARP_TO_DESIGN"
+var_0_0.WARP_TO_MATERIAL = "WARP_TO_MATERIAL"
+var_0_0.WARP_TO_WEAPON = "WARP_TO_WEAPON"
+var_0_0.OVERVIEW = "StoreHouseScene_OVERVIEW"
+var_0_0.DESTROY = "StoreHouseScene_DESTROY"
+var_0_0.EQUIPMENT = "StoreHouseScene_EQUIPMENT"
+var_0_0.SKIN = "StoreHouseScene_SKIN"
+var_0_0.SPWEAPON = "StoreHouseScene_SPWEAPON"
+var_0_0.EQUIPMENT_INDEX_COMMON = {
 	customPanels = {
 		minHeight = 650,
 		typeIndex = {
@@ -136,7 +137,7 @@ slot0.EQUIPMENT_INDEX_COMMON = {
 		}
 	}
 }
-slot0.SPWEAPON_INDEX_COMMON = {
+var_0_0.SPWEAPON_INDEX_COMMON = {
 	customPanels = {
 		typeIndex = {
 			mode = CustomIndexLayer.Mode.OR,
@@ -169,4 +170,4 @@ slot0.SPWEAPON_INDEX_COMMON = {
 	}
 }
 
-return slot0
+return var_0_0

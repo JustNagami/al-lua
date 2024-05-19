@@ -1,16 +1,17 @@
-slot0 = class("GoBackCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GoBackCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = slot1:getType() or 1
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = arg_1_1:getType() or 1
+	local var_1_2 = getProxy(ContextProxy)
 
-	if getProxy(ContextProxy):getContextCount() > 1 then
-		slot5 = slot4:popContext()
-		slot6 = nil
+	if var_1_2:getContextCount() > 1 then
+		local var_1_3 = var_1_2:popContext()
+		local var_1_4
 
-		for slot10 = 1, slot3 do
-			if slot4:getContextCount() > 0 then
-				slot6 = slot4:popContext()
+		for iter_1_0 = 1, var_1_1 do
+			if var_1_2:getContextCount() > 0 then
+				var_1_4 = var_1_2:popContext()
 			else
 				originalPrint("could not pop more context")
 
@@ -18,15 +19,15 @@ function slot0.execute(slot0, slot1)
 			end
 		end
 
-		slot6:extendData(slot2)
-		slot0:sendNotification(GAME.LOAD_SCENE, {
+		var_1_4:extendData(var_1_0)
+		arg_1_0:sendNotification(GAME.LOAD_SCENE, {
 			isBack = true,
-			prevContext = slot5,
-			context = slot6
+			prevContext = var_1_3,
+			context = var_1_4
 		})
 	else
 		originalPrint("no more context in the stack")
 	end
 end
 
-return slot0
+return var_0_0

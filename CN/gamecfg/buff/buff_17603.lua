@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 17603,
-	icon = 17600,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffField",
@@ -46,5 +26,25 @@ return {
 				target = "TargetPlayerMainFleet"
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 17603,
+	icon = 17600,
+	last_effect = ""
 }

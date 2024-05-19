@@ -1,38 +1,45 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst
-slot2 = class("BattleLaserEffect", slot0.Battle.BattleEffectArea)
-slot0.Battle.BattleLaserEffect = slot2
-slot2.__name = "BattleLaserEffect"
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst
+local var_0_2 = class("BattleLaserEffect", var_0_0.Battle.BattleEffectArea)
+
+var_0_0.Battle.BattleLaserEffect = var_0_2
+var_0_2.__name = "BattleLaserEffect"
+
+function var_0_2.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_2.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
 end
 
-function slot2.SetStatic(slot0)
+function var_0_2.SetStatic(arg_2_0)
+	return
 end
 
-function slot2.Init(slot0)
-	slot0._tf = slot0._go.transform
-	slot0._laserScript = GetComponent(slot0._go, "LaserScript")
-	slot0._waveCount = 0
+function var_0_2.Init(arg_3_0)
+	arg_3_0._tf = arg_3_0._go.transform
+	arg_3_0._laserScript = GetComponent(arg_3_0._go, "LaserScript")
+	arg_3_0._waveCount = 0
 
-	slot0:Update()
+	arg_3_0:Update()
 end
 
-function slot2.Update(slot0)
-	slot0:updateLineRenderer()
-	slot0:UpdatePosition()
+function var_0_2.Update(arg_4_0)
+	arg_4_0:updateLineRenderer()
+	arg_4_0:UpdatePosition()
 end
 
-function slot2.updateLineRenderer(slot0)
-	slot0._laserScript.width = slot0._aoeData:GetHeight() + math.cos(slot0._waveCount * math.deg2Rad * 3)
-	slot0._waveCount = slot0._waveCount + 1
-	slot0._laserScript.length = slot0._aoeData:GetWidth()
+function var_0_2.updateLineRenderer(arg_5_0)
+	local var_5_0 = arg_5_0._aoeData:GetHeight()
 
-	if slot0._aoeData:GetIFF() == -1 then
-		slot2 = slot0._aoeData:GetAngle() * math.deg2Rad + math.pi
+	arg_5_0._laserScript.width = var_5_0 + math.cos(arg_5_0._waveCount * math.deg2Rad * 3)
+	arg_5_0._waveCount = arg_5_0._waveCount + 1
+	arg_5_0._laserScript.length = arg_5_0._aoeData:GetWidth()
+
+	local var_5_1 = arg_5_0._aoeData:GetAngle() * math.deg2Rad
+
+	if arg_5_0._aoeData:GetIFF() == -1 then
+		var_5_1 = var_5_1 + math.pi
 	end
 
-	slot0._laserScript.angle = slot2
+	arg_5_0._laserScript.angle = var_5_1
 end

@@ -1,4 +1,61 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "DMG_FROM_TAG_1_Albion",
+				number = 0.01
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "DMG_FROM_TAG_2_Albion",
+				number = 0.01
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "DMG_FROM_TAG_3_Albion",
+				number = 0.01
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "DMG_FROM_TAG_4_Albion",
+				number = 0.01
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "DMG_FROM_TAG_5_Albion",
+				number = 0.01
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -597,62 +654,5 @@ return {
 	stack = 1,
 	id = 15164,
 	icon = 15160,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "DMG_FROM_TAG_1_Albion",
-				number = 0.01
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "DMG_FROM_TAG_2_Albion",
-				number = 0.01
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "DMG_FROM_TAG_3_Albion",
-				number = 0.01
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "DMG_FROM_TAG_4_Albion",
-				number = 0.01
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "DMG_FROM_TAG_5_Albion",
-				number = 0.01
-			}
-		}
-	}
+	last_effect = ""
 }

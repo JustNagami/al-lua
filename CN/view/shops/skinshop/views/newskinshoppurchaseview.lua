@@ -1,95 +1,105 @@
-slot0 = class("NewSkinShopPurchaseView", import("view.base.BaseSubView"))
+﻿local var_0_0 = class("NewSkinShopPurchaseView", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewSkinShopPurchaseUI"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.cancelBtn = slot0:findTF("frame/cancel")
-	slot0.confirmBtn = slot0:findTF("frame/confirm")
-	slot0.toggle = slot0:findTF("frame")
-	slot0.title = slot0:findTF("frame/title")
-	slot0.text = slot0:findTF("frame/bg/Text"):GetComponent(typeof(Text))
-	slot0.textWithGift = slot0:findTF("frame/gift_bg/Text"):GetComponent(typeof(Text))
-	slot0.dropsList = UIItemList.New(slot0:findTF("frame/gift_bg/gift/drops"), slot0:findTF("frame/gift_bg/gift/drops/item"))
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.cancelBtn = arg_2_0:findTF("frame/cancel")
+	arg_2_0.confirmBtn = arg_2_0:findTF("frame/confirm")
+	arg_2_0.toggle = arg_2_0:findTF("frame")
+	arg_2_0.title = arg_2_0:findTF("frame/title")
+	arg_2_0.text = arg_2_0:findTF("frame/bg/Text"):GetComponent(typeof(Text))
+	arg_2_0.textWithGift = arg_2_0:findTF("frame/gift_bg/Text"):GetComponent(typeof(Text))
+	arg_2_0.dropsList = UIItemList.New(arg_2_0:findTF("frame/gift_bg/gift/drops"), arg_2_0:findTF("frame/gift_bg/gift/drops/item"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.cancelBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.confirmBtn, function ()
-		if uv0.commodity then
-			uv0:emit(NewSkinShopMainView.EVT_ON_PURCHASE, uv0.commodity)
+	onButton(arg_3_0, arg_3_0.confirmBtn, function()
+		if arg_3_0.commodity then
+			arg_3_0:emit(NewSkinShopMainView.EVT_ON_PURCHASE, arg_3_0.commodity)
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.Show(slot0, slot1)
-	uv0.super.Show(slot0)
+function var_0_0.Show(arg_7_0, arg_7_1)
+	var_0_0.super.Show(arg_7_0)
 
-	slot0.commodity = slot1
+	arg_7_0.commodity = arg_7_1
 
-	slot0:Flush(slot1)
-	slot0:emit(NewSkinShopMainView.EVT_SHOW_OR_HIDE_PURCHASE_VIEW, true)
+	arg_7_0:Flush(arg_7_1)
+	arg_7_0:emit(NewSkinShopMainView.EVT_SHOW_OR_HIDE_PURCHASE_VIEW, true)
 end
 
-function slot0.GetText(slot0, slot1)
-	return slot1 and slot0.textWithGift or slot0.text
+function var_0_0.GetText(arg_8_0, arg_8_1)
+	return arg_8_1 and arg_8_0.textWithGift or arg_8_0.text
 end
 
-function slot0.Flush(slot0, slot1)
-	slot3 = #slot1:GetGiftList() > 0
+function var_0_0.Flush(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_1:GetGiftList()
+	local var_9_1 = #var_9_0 > 0
 
-	triggerToggle(slot0.toggle, slot3)
-	setAnchoredPosition(slot0.title, {
-		y = slot3 and 460 or 401
+	triggerToggle(arg_9_0.toggle, var_9_1)
+
+	local var_9_2 = arg_9_0:GetText(var_9_1)
+
+	setAnchoredPosition(arg_9_0.title, {
+		y = var_9_1 and 460 or 401
 	})
 
-	slot5 = (tf(pg.playerResUI._go).rect.width - slot0._tf.rect.width) * 0.5
+	local var_9_3 = (tf(pg.playerResUI._go).rect.width - arg_9_0._tf.rect.width) * 0.5
 
-	print(slot5)
+	print(var_9_3)
 	setAnchoredPosition(pg.playerResUI.gemAddBtn, {
-		x = -32 + math.abs(slot5)
+		x = -32 + math.abs(var_9_3)
 	})
 
-	slot0:GetText(slot3).text = i18n("skin_shop_buy_confirm", slot1:GetPrice() <= getProxy(PlayerProxy):getRawData():getChargeGem() and COLOR_GREEN or COLOR_RED, slot6, pg.ship_skin_template[slot1:getSkinId()].name)
+	local var_9_4 = arg_9_1:GetPrice()
+	local var_9_5 = pg.ship_skin_template[arg_9_1:getSkinId()].name
+	local var_9_6 = var_9_4 <= getProxy(PlayerProxy):getRawData():getChargeGem() and COLOR_GREEN or COLOR_RED
 
-	slot0:FlushGift(slot2)
+	var_9_2.text = i18n("skin_shop_buy_confirm", var_9_6, var_9_4, var_9_5)
+
+	arg_9_0:FlushGift(var_9_0)
 end
 
-function slot0.FlushGift(slot0, slot1)
-	slot0.dropsList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
+function var_0_0.FlushGift(arg_10_0, arg_10_1)
+	arg_10_0.dropsList:make(function(arg_11_0, arg_11_1, arg_11_2)
+		if arg_11_0 == UIItemList.EventUpdate then
+			local var_11_0 = arg_10_1[arg_11_1 + 1]
+			local var_11_1 = {
+				type = var_11_0.type,
+				id = var_11_0.id,
+				count = var_11_0.count
+			}
 
-			updateDrop(slot2, {
-				type = slot3.type,
-				id = slot3.id,
-				count = slot3.count
-			})
-			onButton(uv1, slot2, function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+			updateDrop(arg_11_2, var_11_1)
+			onButton(arg_10_0, arg_11_2, function()
+				arg_10_0:emit(BaseUI.ON_DROP, var_11_1)
 			end, SFX_PANEL)
 		end
 	end)
-	slot0.dropsList:align(#slot1)
+	arg_10_0.dropsList:align(#arg_10_1)
 end
 
-function slot0.Hide(slot0)
-	uv0.super.Hide(slot0)
-	slot0:emit(NewSkinShopMainView.EVT_SHOW_OR_HIDE_PURCHASE_VIEW, false)
+function var_0_0.Hide(arg_13_0)
+	var_0_0.super.Hide(arg_13_0)
+	arg_13_0:emit(NewSkinShopMainView.EVT_SHOW_OR_HIDE_PURCHASE_VIEW, false)
 	setAnchoredPosition(pg.playerResUI.gemAddBtn, {
 		x = -155
 	})
 
-	slot0.commodity = nil
+	arg_13_0.commodity = nil
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_14_0)
+	return
 end
 
-return slot0
+return var_0_0

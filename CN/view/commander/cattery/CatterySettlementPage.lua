@@ -1,126 +1,141 @@
-slot0 = class("CatterySettlementPage", import("...base.BaseSubView"))
+﻿local var_0_0 = class("CatterySettlementPage", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CatterySettlementPage"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.painting = slot0:findTF("painting")
-	slot0.uilist = UIItemList.New(slot0:findTF("frame/commanders"), slot0:findTF("frame/commanders/tpl"))
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.painting = arg_2_0:findTF("painting")
+	arg_2_0.uilist = UIItemList.New(arg_2_0:findTF("frame/commanders"), arg_2_0:findTF("frame/commanders/tpl"))
 
-	setText(slot0:findTF("dialogue/label/Text1"), i18n("cattery_settlement_dialogue_1"))
-	setText(slot0:findTF("dialogue/label/Text3"), i18n("cattery_settlement_dialogue_2"))
-	setText(slot0:findTF("dialogue/label1/Text1"), i18n("cattery_settlement_dialogue_3"))
-	setText(slot0:findTF("dialogue/label1/Text3"), i18n("cattery_settlement_dialogue_4"))
+	setText(arg_2_0:findTF("dialogue/label/Text1"), i18n("cattery_settlement_dialogue_1"))
+	setText(arg_2_0:findTF("dialogue/label/Text3"), i18n("cattery_settlement_dialogue_2"))
+	setText(arg_2_0:findTF("dialogue/label1/Text1"), i18n("cattery_settlement_dialogue_3"))
+	setText(arg_2_0:findTF("dialogue/label1/Text3"), i18n("cattery_settlement_dialogue_4"))
 
-	slot0.timeTxt = slot0:findTF("dialogue/label/Text2"):GetComponent(typeof(Text))
-	slot0.expTxt = slot0:findTF("dialogue/label1/Text2"):GetComponent(typeof(Text))
-	slot0.confirmBtn = slot0:findTF("comfirm")
+	arg_2_0.timeTxt = arg_2_0:findTF("dialogue/label/Text2"):GetComponent(typeof(Text))
+	arg_2_0.expTxt = arg_2_0:findTF("dialogue/label1/Text2"):GetComponent(typeof(Text))
+	arg_2_0.confirmBtn = arg_2_0:findTF("comfirm")
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.confirmBtn, function ()
-		uv0:Destroy()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.confirmBtn, function()
+		arg_3_0:Destroy()
 	end, SFX_PANEL)
 
-	slot0.cards = {}
+	arg_3_0.cards = {}
 
-	slot0.uilist:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:UpdateCommander(slot2, uv0.displays[slot1 + 1])
+	arg_3_0.uilist:make(function(arg_5_0, arg_5_1, arg_5_2)
+		if arg_5_0 == UIItemList.EventUpdate then
+			local var_5_0 = arg_3_0.displays[arg_5_1 + 1]
+
+			arg_3_0:UpdateCommander(arg_5_2, var_5_0)
 		end
 	end)
 end
 
-function slot0.Show(slot0, slot1)
-	uv0.super.Show(slot0)
+function var_0_0.Show(arg_6_0, arg_6_1)
+	var_0_0.super.Show(arg_6_0)
 
-	slot0.home = slot1
+	arg_6_0.home = arg_6_1
 
-	slot0:SetPainting()
-	slot0:UpdateCommanders()
-	slot0:UpdateDialogue()
+	arg_6_0:SetPainting()
+	arg_6_0:UpdateCommanders()
+	arg_6_0:UpdateDialogue()
 
-	slot0.UIMgr = pg.UIMgr.GetInstance()
+	arg_6_0.UIMgr = pg.UIMgr.GetInstance()
 
-	slot0.UIMgr:BlurPanel(slot0._tf)
+	arg_6_0.UIMgr:BlurPanel(arg_6_0._tf)
 end
 
-function slot0.Hide(slot0)
-	uv0.super.Hide(slot0)
-	slot0.UIMgr:UnblurPanel(slot0._tf, slot0.UIMgr._normalUIMain)
+function var_0_0.Hide(arg_7_0)
+	var_0_0.super.Hide(arg_7_0)
+	arg_7_0.UIMgr:UnblurPanel(arg_7_0._tf, arg_7_0.UIMgr._normalUIMain)
 end
 
-function slot0.GetCurrentFlagship(slot0)
+function var_0_0.GetCurrentFlagship(arg_8_0)
 	return Ship.New({
 		id = 999,
 		configId = 312011
 	})
 end
 
-function slot0.SetPainting(slot0)
-	slot0:ReturnPainting()
+function var_0_0.SetPainting(arg_9_0)
+	arg_9_0:ReturnPainting()
 
-	slot2 = slot0:GetCurrentFlagship():getPainting()
-	slot0.paintingName = slot2
+	local var_9_0 = arg_9_0:GetCurrentFlagship():getPainting()
 
-	setPaintingPrefabAsync(slot0.painting, slot2, "jiesuan")
+	arg_9_0.paintingName = var_9_0
+
+	setPaintingPrefabAsync(arg_9_0.painting, var_9_0, "jiesuan")
 end
 
-function slot0.UpdateCommanders(slot0)
-	slot0.displays = {}
+function var_0_0.UpdateCommanders(arg_10_0)
+	local var_10_0 = arg_10_0.home:GetCatteries()
 
-	for slot6, slot7 in pairs(slot0.home:GetCatteries()) do
-		table.insert(slot0.displays, slot7)
+	arg_10_0.displays = {}
+
+	for iter_10_0, iter_10_1 in pairs(var_10_0) do
+		table.insert(arg_10_0.displays, iter_10_1)
 	end
 
-	table.sort(slot0.displays, function (slot0, slot1)
-		return slot1:GetCommanderId() < slot0:GetCommanderId()
+	table.sort(arg_10_0.displays, function(arg_11_0, arg_11_1)
+		return arg_11_0:GetCommanderId() > arg_11_1:GetCommanderId()
 	end)
-	slot0.uilist:align(#slot0.displays)
+	arg_10_0.uilist:align(#arg_10_0.displays)
 end
 
-function slot0.UpdateCommander(slot0, slot1, slot2)
-	if not slot0.cards[slot1] then
-		slot0.cards[slot1] = CatterySettlementCard.New(slot1)
+function var_0_0.UpdateCommander(arg_12_0, arg_12_1, arg_12_2)
+	local var_12_0 = arg_12_0.cards[arg_12_1]
+
+	if not var_12_0 then
+		var_12_0 = CatterySettlementCard.New(arg_12_1)
+		arg_12_0.cards[arg_12_1] = var_12_0
 	end
 
-	slot3:Update(slot2, slot2:GetCacheExp())
-	slot3:Action(function ()
+	var_12_0:Update(arg_12_2, arg_12_2:GetCacheExp())
+	var_12_0:Action(function()
+		return
 	end)
 end
 
-function slot0.UpdateDialogue(slot0)
-	for slot8, slot9 in pairs(slot0.home:GetCatteries()) do
-		slot3 = 0 + slot9:GetCacheExp()
+function var_0_0.UpdateDialogue(arg_14_0)
+	local var_14_0 = arg_14_0.home:GetCatteries()
+	local var_14_1 = 0
+	local var_14_2 = 0
 
-		if 0 < slot9:GetCacheExpTime() then
-			slot4 = slot10
+	for iter_14_0, iter_14_1 in pairs(var_14_0) do
+		var_14_1 = var_14_1 + iter_14_1:GetCacheExp()
+
+		local var_14_3 = iter_14_1:GetCacheExpTime()
+
+		if var_14_2 < var_14_3 then
+			var_14_2 = var_14_3
 		end
 	end
 
-	slot0.timeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(slot4)
-	slot0.expTxt.text = slot3
+	arg_14_0.timeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var_14_2)
+	arg_14_0.expTxt.text = var_14_1
 end
 
-function slot0.ReturnPainting(slot0)
-	if slot0.paintingName then
-		retPaintingPrefab(slot0.painting, slot0.paintingName)
+function var_0_0.ReturnPainting(arg_15_0)
+	if arg_15_0.paintingName then
+		retPaintingPrefab(arg_15_0.painting, arg_15_0.paintingName)
 
-		slot0.paintingName = nil
+		arg_15_0.paintingName = nil
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:ReturnPainting()
+function var_0_0.OnDestroy(arg_16_0)
+	arg_16_0:ReturnPainting()
 
-	for slot4, slot5 in pairs(slot0.cards) do
-		slot5:Dispose()
+	for iter_16_0, iter_16_1 in pairs(arg_16_0.cards) do
+		iter_16_1:Dispose()
 	end
 
-	slot0:Hide()
+	arg_16_0:Hide()
 
-	slot0.cards = nil
+	arg_16_0.cards = nil
 end
 
-return slot0
+return var_0_0

@@ -1,25 +1,28 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleBuffActionKeyOffset = class("BattleBuffActionKeyOffset", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffActionKeyOffset.__name = "BattleBuffActionKeyOffset"
-slot1 = slot0.Battle.BattleBuffActionKeyOffset
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+
+var_0_0.Battle.BattleBuffActionKeyOffset = class("BattleBuffActionKeyOffset", var_0_0.Battle.BattleBuffEffect)
+var_0_0.Battle.BattleBuffActionKeyOffset.__name = "BattleBuffActionKeyOffset"
+
+local var_0_1 = var_0_0.Battle.BattleBuffActionKeyOffset
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot1.SetArgs(slot0, slot1, slot2)
-	slot0._actionKey = slot0._tempData.arg_list.key
+function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0._actionKey = arg_2_0._tempData.arg_list.key
 end
 
-function slot1.onAttach(slot0, slot1, slot2)
-	if slot1:ActionKeyOffsetUseable() then
-		slot1:SetActionKeyOffset(slot0._actionKey)
+function var_0_1.onAttach(arg_3_0, arg_3_1, arg_3_2)
+	if arg_3_1:ActionKeyOffsetUseable() then
+		arg_3_1:SetActionKeyOffset(arg_3_0._actionKey)
 	end
 end
 
-function slot1.onRemove(slot0, slot1, slot2)
-	if slot1:ActionKeyOffsetUseable() then
-		slot1:SetActionKeyOffset(nil)
+function var_0_1.onRemove(arg_4_0, arg_4_1, arg_4_2)
+	if arg_4_1:ActionKeyOffsetUseable() then
+		arg_4_1:SetActionKeyOffset(nil)
 	end
 end

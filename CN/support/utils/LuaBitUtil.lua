@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	[0] = "0",
 	"1",
 	"2",
@@ -18,51 +18,60 @@ slot0 = {
 	"G"
 }
 
-function slot1(slot0)
-	for slot4, slot5 in pairs(uv0) do
-		if slot5 == slot0 then
-			return slot4
+local function var_0_1(arg_1_0)
+	for iter_1_0, iter_1_1 in pairs(var_0_0) do
+		if iter_1_1 == arg_1_0 then
+			return iter_1_0
 		end
 	end
 
 	return 0
 end
 
-function slot2(slot0, slot1)
-	slot3 = {}
-
-	function (slot0, slot1)
-		if slot0 < uv0 then
-			table.insert(slot1, slot0)
+local function var_0_2(arg_2_0, arg_2_1)
+	local function var_2_0(arg_3_0, arg_3_1)
+		if arg_3_0 < arg_2_1 then
+			table.insert(arg_3_1, arg_3_0)
 		else
-			uv1(math.floor(slot0 / uv0), slot1)
-			table.insert(slot1, slot0 % uv0)
+			var_2_0(math.floor(arg_3_0 / arg_2_1), arg_3_1)
+			table.insert(arg_3_1, arg_3_0 % arg_2_1)
 		end
-	end(slot0, slot3)
+	end
 
-	return slot3
+	local var_2_1 = {}
+
+	var_2_0(arg_2_0, var_2_1)
+
+	return var_2_1
 end
 
-function ConvertDec2X(slot0, slot1)
-	for slot7, slot8 in ipairs(uv0(slot0, slot1)) do
-		slot3 = "" .. uv1[slot8]
+function ConvertDec2X(arg_4_0, arg_4_1)
+	local var_4_0 = var_0_2(arg_4_0, arg_4_1)
+	local var_4_1 = ""
+
+	for iter_4_0, iter_4_1 in ipairs(var_4_0) do
+		var_4_1 = var_4_1 .. var_0_0[iter_4_1]
 	end
 
-	return slot3
+	return var_4_1
 end
 
-function ConvertStr2Dec(slot0, slot1)
-	slot2 = {}
-	slot4 = string.len(slot0)
+function ConvertStr2Dec(arg_5_0, arg_5_1)
+	local var_5_0 = {}
+	local var_5_1 = string.len(arg_5_0)
 
-	while slot4 > 0 do
-		slot2[#slot2 + 1] = uv0(string.sub(slot0, slot4, slot4))
-		slot4 = slot4 - 1
+	while var_5_1 > 0 do
+		local var_5_2 = string.sub(arg_5_0, var_5_1, var_5_1)
+
+		var_5_0[#var_5_0 + 1] = var_0_1(var_5_2)
+		var_5_1 = var_5_1 - 1
 	end
 
-	for slot9, slot10 in ipairs(slot2) do
-		slot5 = 0 + slot10 * math.pow(slot1, slot9 - 1)
+	local var_5_3 = 0
+
+	for iter_5_0, iter_5_1 in ipairs(var_5_0) do
+		var_5_3 = var_5_3 + iter_5_1 * math.pow(arg_5_1, iter_5_0 - 1)
 	end
 
-	return slot5
+	return var_5_3
 end

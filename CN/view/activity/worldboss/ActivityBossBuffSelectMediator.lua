@@ -1,42 +1,47 @@
-slot0 = class("ActivityBossBuffSelectMediator", import("view.base.ContextMediator"))
-slot0.ON_START = "ActivityBossBuffSelectMediator:ON_START"
-slot0.SHOW_REWARDS = "ActivityBossBuffSelectMediator:SHOW_REWARDS"
+﻿local var_0_0 = class("ActivityBossBuffSelectMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.ON_START, function (slot0, slot1)
-		getProxy(ActivityProxy):GetActivityBossRuntime(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2).id).buffIds = _.map(slot1, function (slot0)
-			return slot0:GetConfigID()
+var_0_0.ON_START = "ActivityBossBuffSelectMediator:ON_START"
+var_0_0.SHOW_REWARDS = "ActivityBossBuffSelectMediator:SHOW_REWARDS"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_START, function(arg_2_0, arg_2_1)
+		local var_2_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2)
+
+		getProxy(ActivityProxy):GetActivityBossRuntime(var_2_0.id).buffIds = _.map(arg_2_1, function(arg_3_0)
+			return arg_3_0:GetConfigID()
 		end)
 
-		uv0:sendNotification(uv1.ON_START)
-		uv0.viewComponent:closeView()
+		arg_1_0:sendNotification(var_0_0.ON_START)
+		arg_1_0.viewComponent:closeView()
 	end)
-	slot0:bind(uv0.SHOW_REWARDS, function (slot0, slot1, slot2, slot3)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.SHOW_REWARDS, function(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = ActivityBossScoreAwardMediator,
 			viewComponent = ActivityBossScoreAwardLayer,
 			data = {
-				awards = slot1,
-				targets = slot2,
-				score = slot3
+				awards = arg_4_1,
+				targets = arg_4_2,
+				score = arg_4_3
 			}
 		}))
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_5_0)
 	return {}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1:getName()
+	local var_6_1 = arg_6_1:getBody()
 
-	if slot1:getName() == nil then
-		-- Nothing
+	if var_6_0 == nil then
+		-- block empty
 	end
 end
 
-function slot0.remove(slot0)
+function var_0_0.remove(arg_7_0)
+	return
 end
 
-return slot0
+return var_0_0

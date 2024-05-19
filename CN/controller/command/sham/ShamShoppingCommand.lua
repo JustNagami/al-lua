@@ -1,29 +1,34 @@
-slot0 = class("ShamShoppingCommand", pm.SimpleCommand)
-slot0.SHAM_SHOP = 1
+﻿local var_0_0 = class("ShamShoppingCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot5 = slot2.type
-	slot7 = getProxy(PlayerProxy):getRawData()
-	slot10 = getProxy(ShopsProxy):getShamShop():getGoodsCfg(slot2.id)
+var_0_0.SHAM_SHOP = 1
 
-	if Drop.New({
-		type = slot10.resource_category,
-		id = slot10.resource_type
-	}):getOwnedCount() < slot10.resource_num * slot2.count then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", slot11:getName()))
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.count
+	local var_1_3 = var_1_0.type
+	local var_1_4 = getProxy(PlayerProxy):getRawData()
+	local var_1_5 = getProxy(ShopsProxy)
+	local var_1_6 = var_1_5:getShamShop():getGoodsCfg(var_1_1)
+	local var_1_7 = Drop.New({
+		type = var_1_6.resource_category,
+		id = var_1_6.resource_type
+	})
+
+	if var_1_7:getOwnedCount() < var_1_6.resource_num * var_1_2 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", var_1_7:getName()))
 
 		return
 	end
 
-	if slot10.commodity_type == 1 then
-		if slot10.commodity_id == 1 and slot7:GoldMax(slot10.num * slot4) then
+	if var_1_6.commodity_type == 1 then
+		if var_1_6.commodity_id == 1 and var_1_4:GoldMax(var_1_6.num * var_1_2) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 			return
 		end
 
-		if slot10.commodity_id == 2 and slot7:OilMax(slot10.num * slot4) then
+		if var_1_6.commodity_id == 2 and var_1_4:OilMax(var_1_6.num * var_1_2) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 			return
@@ -31,28 +36,29 @@ function slot0.execute(slot0, slot1)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(16201, {
-		id = slot3,
-		type = uv0.SHAM_SHOP,
-		count = slot4
-	}, 16202, function (slot0)
-		if slot0.result == 0 then
-			slot2 = uv0:getShamShop()
+		id = var_1_1,
+		type = var_0_0.SHAM_SHOP,
+		count = var_1_2
+	}, 16202, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.drop_list)
+			local var_2_1 = var_1_5:getShamShop()
 
-			slot2:getGoodsById(uv1):addBuyCount(uv2)
-			uv0:updateShamShop(slot2)
+			var_2_1:getGoodsById(var_1_1):addBuyCount(var_1_2)
+			var_1_5:updateShamShop(var_2_1)
 			reducePlayerOwn({
-				type = uv3.resource_category,
-				id = uv3.resource_type,
-				count = uv3.resource_num * uv2
+				type = var_1_6.resource_category,
+				id = var_1_6.resource_type,
+				count = var_1_6.resource_num * var_1_2
 			})
-			uv4:sendNotification(GAME.SHAM_SHOPPING_DONE, {
-				awards = PlayerConst.addTranDrop(slot0.drop_list),
-				id = uv1
+			arg_1_0:sendNotification(GAME.SHAM_SHOPPING_DONE, {
+				awards = var_2_0,
+				id = var_1_1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

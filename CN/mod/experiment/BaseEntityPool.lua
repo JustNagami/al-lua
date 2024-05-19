@@ -1,43 +1,48 @@
-slot0 = class("BaseEntityPool", import(".BaseEntity"))
-slot0.Fields = {
+﻿local var_0_0 = class("BaseEntityPool", import(".BaseEntity"))
+
+var_0_0.Fields = {
 	pools = "table"
 }
 
-function slot0.Build(slot0)
-	slot0.pools = {}
+function var_0_0.Build(arg_1_0)
+	arg_1_0.pools = {}
 end
 
-function slot0.Get(slot0, slot1)
-	slot2[slot1] = slot0.pools[slot1] or {}
+function var_0_0.Get(arg_2_0, arg_2_1)
+	local var_2_0 = arg_2_0.pools
 
-	if #slot2[slot1] == 0 then
-		return slot1.New()
+	var_2_0[arg_2_1] = var_2_0[arg_2_1] or {}
+
+	local var_2_1 = var_2_0[arg_2_1]
+
+	if #var_2_1 == 0 then
+		return arg_2_1.New()
 	else
-		slot3[#slot3]:Build()
+		var_2_1[#var_2_1]:Build()
 
-		return table.remove(slot3, #slot3)
+		return table.remove(var_2_1, #var_2_1)
 	end
 end
 
-function slot0.Return(slot0, slot1, slot2)
-	slot1:Dispose()
+function var_0_0.Return(arg_3_0, arg_3_1, arg_3_2)
+	arg_3_1:Dispose()
 
-	slot2 = slot2 or slot1.class
-	slot0.pools[slot2] = slot0.pools[slot2] or {}
+	arg_3_2 = arg_3_2 or arg_3_1.class
+	arg_3_0.pools[arg_3_2] = arg_3_0.pools[arg_3_2] or {}
 
-	table.insert(slot0.pools[slot2], slot1)
+	table.insert(arg_3_0.pools[arg_3_2], arg_3_1)
 end
 
-function slot0.ReturnArray(slot0, slot1, slot2)
-	for slot6, slot7 in ipairs(slot1) do
-		slot0:Return(slot7, slot2)
+function var_0_0.ReturnArray(arg_4_0, arg_4_1, arg_4_2)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_1) do
+		arg_4_0:Return(iter_4_1, arg_4_2)
 	end
 end
 
-function slot0.ReturnMap(slot0, slot1, slot2)
-	for slot6, slot7 in pairs(slot1) do
-		slot0:Return(slot7, slot2)
+function var_0_0.ReturnMap(arg_5_0, arg_5_1, arg_5_2)
+	for iter_5_0, iter_5_1 in pairs(arg_5_1) do
+		arg_5_0:Return(iter_5_1, arg_5_2)
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,326 +1,360 @@
-slot0 = class("CourtYardFurnitureJob")
-slot1 = 0
-slot2 = 1
-slot3 = 2
+﻿local var_0_0 = class("CourtYardFurnitureJob")
+local var_0_1 = 0
+local var_0_2 = 1
+local var_0_3 = 2
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.poolMgr = slot1
-	slot0.state = uv0
-	slot0.callback = slot2
-	slot0.rollBacks = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.poolMgr = arg_1_1
+	arg_1_0.state = var_0_1
+	arg_1_0.callback = arg_1_2
+	arg_1_0.rollBacks = {}
 end
 
-function slot0.IsWorking(slot0)
-	return slot0.state == uv0
+function var_0_0.IsWorking(arg_2_0)
+	return arg_2_0.state == var_0_2
 end
 
-function slot0.InstantiateObj(slot0, slot1, slot2)
-	slot3 = Object.Instantiate(slot1, slot2)
+function var_0_0.InstantiateObj(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = Object.Instantiate(arg_3_1, arg_3_2)
 
-	table.insert(slot0.rollBacks, slot3)
+	table.insert(arg_3_0.rollBacks, var_3_0)
 
-	return slot3
+	return var_3_0
 end
 
-function slot0.CloneTplTo(slot0, slot1, slot2, slot3)
-	slot4 = Object.Instantiate(slot1, slot2).transform
+function var_0_0.CloneTplTo(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	local var_4_0 = Object.Instantiate(arg_4_1, arg_4_2).transform
 
-	if slot3 then
-		slot4.name = slot3
+	if arg_4_3 then
+		var_4_0.name = arg_4_3
 	end
 
-	return slot4
+	return var_4_0
 end
 
-function slot0.Work(slot0, slot1, slot2)
-	slot0.id = slot2.id
+function var_0_0.Work(arg_5_0, arg_5_1, arg_5_2)
+	arg_5_0.id = arg_5_2.id
 
-	if slot1:IsExit() then
-		slot0:FinishWork(false)
+	if arg_5_1:IsExit() then
+		arg_5_0:FinishWork(false)
 
 		return
 	end
 
-	slot0.state = uv0
-	slot0.module = slot1
-	slot0.rollBacks = {}
+	arg_5_0.state = var_0_2
 
-	if slot2:IsSpine() then
-		slot0:LoadSpine(slot1._tf, slot2, function ()
-			if uv0:IsExit() then
-				uv1:FinishWork(false)
-			else
-				uv0:Init(uv2)
-				uv1:FinishWork(true)
-			end
-		end, function ()
-			uv0:OnIconLoaed()
-		end)
+	local var_5_0 = arg_5_1._tf
+
+	arg_5_0.module = arg_5_1
+
+	local function var_5_1()
+		if arg_5_1:IsExit() then
+			arg_5_0:FinishWork(false)
+		else
+			arg_5_1:Init(var_5_0)
+			arg_5_0:FinishWork(true)
+		end
+	end
+
+	local function var_5_2()
+		arg_5_1:OnIconLoaed()
+	end
+
+	arg_5_0.rollBacks = {}
+
+	if arg_5_2:IsSpine() then
+		arg_5_0:LoadSpine(var_5_0, arg_5_2, var_5_1, var_5_2)
 	else
-		slot0:Load(slot3, slot2, slot4, slot5)
+		arg_5_0:Load(var_5_0, arg_5_2, var_5_1, var_5_2)
 	end
 end
 
-function slot4(slot0, slot1, slot2, slot3)
-	ResourceMgr.Inst:getAssetAsync("furnitrues/" .. slot2:GetPicture(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		if uv0:IsStop() or IsNil(uv1) or IsNil(slot0) then
-			uv0:OnStop()
+local function var_0_4(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
+	ResourceMgr.Inst:getAssetAsync("furnitrues/" .. arg_8_2:GetPicture(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_9_0)
+		if arg_8_0:IsStop() or IsNil(arg_8_1) or IsNil(arg_9_0) then
+			arg_8_0:OnStop()
 
 			return
 		end
 
-		slot1 = uv0:InstantiateObj(slot0, uv1).transform
-		slot1.name = "icon"
+		local var_9_0 = arg_8_0:InstantiateObj(arg_9_0, arg_8_1).transform
 
-		slot1:SetSiblingIndex(1)
+		var_9_0.name = "icon"
 
-		slot1.anchorMin = slot1.pivot
-		slot1.anchorMax = slot1.pivot
+		var_9_0:SetSiblingIndex(1)
 
-		uv0:AdjustModel(uv1, slot1.sizeDelta, slot1.pivot)
-		uv2()
+		var_9_0.anchorMin = var_9_0.pivot
+		var_9_0.anchorMax = var_9_0.pivot
+
+		arg_8_0:AdjustModel(arg_8_1, var_9_0.sizeDelta, var_9_0.pivot)
+		arg_8_3()
 	end), true, true)
 end
 
-function slot5(slot0, slot1, slot2, slot3)
-	slot5 = {}
+local function var_0_5(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
+	local var_10_0 = arg_10_2:GetMaskNames()
+	local var_10_1 = {}
 
-	for slot9, slot10 in pairs(slot2:GetMaskNames()) do
-		table.insert(slot5, function (slot0)
-			ResourceMgr.Inst:getAssetAsync("furnitrues/" .. uv0, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-				if uv0:IsStop() or IsNil(uv1) or IsNil(slot0) then
-					uv0:OnStop()
+	for iter_10_0, iter_10_1 in pairs(var_10_0) do
+		table.insert(var_10_1, function(arg_11_0)
+			ResourceMgr.Inst:getAssetAsync("furnitrues/" .. iter_10_1, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_12_0)
+				if arg_10_0:IsStop() or IsNil(arg_10_1) or IsNil(arg_12_0) then
+					arg_10_0:OnStop()
 
 					return
 				end
 
-				slot1 = uv0:InstantiateObj(slot0, uv1:Find("masks"))
-				slot1.name = "icon_front_" .. uv2
-				slot1.transform.anchorMin = slot1.transform.pivot
-				slot1.transform.anchorMax = slot1.transform.pivot
+				local var_12_0 = arg_10_0:InstantiateObj(arg_12_0, arg_10_1:Find("masks"))
 
-				slot1.transform:SetSiblingIndex(2)
-				setActive(slot1, false)
-				uv3()
+				var_12_0.name = "icon_front_" .. iter_10_0
+				var_12_0.transform.anchorMin = var_12_0.transform.pivot
+				var_12_0.transform.anchorMax = var_12_0.transform.pivot
+
+				var_12_0.transform:SetSiblingIndex(2)
+				setActive(var_12_0, false)
+				arg_11_0()
 			end), true, true)
 		end)
 	end
 
-	seriesAsync(slot5, slot3)
+	seriesAsync(var_10_1, arg_10_3)
 end
 
-function slot6(slot0, slot1, slot2, slot3)
-	for slot9, slot10 in pairs(slot2:GetBodyMasks()) do
-		slot11 = slot0:CloneTplTo(slot0.poolMgr.root:Find("mask"), slot1:Find("interaction"), "body_mask" .. slot9)
-		slot11.anchoredPosition = slot10.offset
-		slot11.sizeDelta = slot10.size
+local function var_0_6(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
+	local var_13_0 = arg_13_2:GetBodyMasks()
+	local var_13_1 = arg_13_0.poolMgr.root:Find("mask")
 
-		if slot10.img then
-			slot11:GetComponent(typeof(Image)).sprite = ResourceMgr.Inst:getAssetSync("furnitrues/" .. slot10.img, "", true, true):GetComponent(typeof(Image)).sprite
+	for iter_13_0, iter_13_1 in pairs(var_13_0) do
+		local var_13_2 = arg_13_0:CloneTplTo(var_13_1, arg_13_1:Find("interaction"), "body_mask" .. iter_13_0)
+
+		var_13_2.anchoredPosition = iter_13_1.offset
+		var_13_2.sizeDelta = iter_13_1.size
+
+		if iter_13_1.img then
+			local var_13_3 = ResourceMgr.Inst:getAssetSync("furnitrues/" .. iter_13_1.img, "", true, true)
+
+			var_13_2:GetComponent(typeof(Image)).sprite = var_13_3:GetComponent(typeof(Image)).sprite
 		end
 	end
 
-	slot3()
+	arg_13_3()
 end
 
-function slot7(slot0, slot1, slot2, slot3)
-	if slot2:GetType() == Furniture.TYPE_ARCH then
-		if not PathMgr.FileExists(PathMgr.getAssetBundle("furnitrues/" .. slot2:GetArchMask())) then
-			slot3()
+local function var_0_7(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
+	if arg_14_2:GetType() == Furniture.TYPE_ARCH then
+		local var_14_0 = arg_14_2:GetArchMask()
+
+		if not PathMgr.FileExists(PathMgr.getAssetBundle("furnitrues/" .. var_14_0)) then
+			arg_14_3()
 
 			return
 		end
 
-		ResourceMgr.Inst:getAssetAsync("furnitrues/" .. slot5, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-			if uv0:IsStop() or IsNil(uv1) or IsNil(slot0) then
-				uv0:OnStop()
+		ResourceMgr.Inst:getAssetAsync("furnitrues/" .. var_14_0, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_15_0)
+			if arg_14_0:IsStop() or IsNil(arg_14_1) or IsNil(arg_15_0) then
+				arg_14_0:OnStop()
 
 				return
 			end
 
-			slot1 = uv0:InstantiateObj(slot0, uv1:Find("masks"))
-			slot1.name = "icon_front_arch"
-			slot1.transform.anchorMin = slot1.transform.pivot
-			slot1.transform.anchorMax = slot1.transform.pivot
+			local var_15_0 = arg_14_0:InstantiateObj(arg_15_0, arg_14_1:Find("masks"))
 
-			uv2()
+			var_15_0.name = "icon_front_arch"
+			var_15_0.transform.anchorMin = var_15_0.transform.pivot
+			var_15_0.transform.anchorMax = var_15_0.transform.pivot
+
+			arg_14_3()
 		end), true, true)
 	else
-		slot3()
+		arg_14_3()
 	end
 end
 
-function slot8(slot0, slot1, slot2, slot3)
-	ResourceMgr.Inst:getAssetAsync("sfurniture/" .. slot2:GetFirstSlot():GetName(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		if uv0:IsStop() or IsNil(uv1) or IsNil(slot0) then
-			uv0:OnStop()
+local function var_0_8(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
+	local var_16_0 = arg_16_2:GetFirstSlot():GetName()
+
+	ResourceMgr.Inst:getAssetAsync("sfurniture/" .. var_16_0, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_17_0)
+		if arg_16_0:IsStop() or IsNil(arg_16_1) or IsNil(arg_17_0) then
+			arg_16_0:OnStop()
 
 			return
 		end
 
-		slot1 = uv0:InstantiateObj(slot0, uv1)
+		local var_17_0 = arg_16_0:InstantiateObj(arg_17_0, arg_16_1)
 
-		uv0:AdjustModel(uv1, slot1.transform.sizeDelta, slot1.transform.pivot)
+		arg_16_0:AdjustModel(arg_16_1, var_17_0.transform.sizeDelta, var_17_0.transform.pivot)
 
-		slot1.name = "spine_icon"
-		slot1.transform.localPosition = Vector3(0, 0, 0)
+		var_17_0.name = "spine_icon"
+		var_17_0.transform.localPosition = Vector3(0, 0, 0)
 
-		slot1.transform:SetSiblingIndex(1)
-		uv2()
+		var_17_0.transform:SetSiblingIndex(1)
+		arg_16_3()
 	end), true, true)
 end
 
-function slot9(slot0, slot1, slot2, slot3)
-	slot5 = {}
+local function var_0_9(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
+	local var_18_0 = arg_18_2:GetMaskNames()
+	local var_18_1 = {}
 
-	for slot9, slot10 in ipairs(slot2:GetMaskNames()) do
-		table.insert(slot5, function (slot0)
-			ResourceMgr.Inst:getAssetAsync("sfurniture/" .. uv0, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-				if uv0:IsStop() or IsNil(uv1) or IsNil(slot0) then
-					uv0:OnStop()
-
-					return
-				end
-
-				slot1 = uv0:InstantiateObj(slot0, uv1:Find("masks"))
-				slot1.name = "icon_front_" .. uv2
-				slot1.transform.localPosition = Vector3(0, 0, 0)
-
-				setActive(slot1, false)
-				uv3()
-			end), true, true)
-		end)
-	end
-
-	seriesAsync(slot5, slot3)
-end
-
-function slot10(slot0, slot1, slot2, slot3)
-	if slot2:GetAnimatorMask() then
-		slot6 = slot0:CloneTplTo(slot0.poolMgr.root:Find("mask"), slot1:Find("interaction"), "animtor_mask")
-		slot6.sizeDelta = slot4.size
-
-		setAnchoredPosition(slot6, slot4.offset)
-	end
-
-	slot5 = {}
-
-	for slot9, slot10 in ipairs(slot2:GetAnimators()) do
-		slot11 = slot10.key
-		slot12 = slot10.value
-
-		table.insert(slot5, function (slot0)
-			ResourceMgr.Inst:getAssetAsync("sfurniture/" .. uv0, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-				if uv0:IsStop() or IsNil(uv1) or IsNil(slot0) then
-					uv0:OnStop()
+	for iter_18_0, iter_18_1 in ipairs(var_18_0) do
+		table.insert(var_18_1, function(arg_19_0)
+			ResourceMgr.Inst:getAssetAsync("sfurniture/" .. iter_18_1, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_20_0)
+				if arg_18_0:IsStop() or IsNil(arg_18_1) or IsNil(arg_20_0) then
+					arg_18_0:OnStop()
 
 					return
 				end
 
-				slot1 = uv1:Find("interaction")
-				slot3 = uv0:InstantiateObj(slot0, uv2 and slot1:Find("animtor_mask") or slot1)
-				slot3.name = "Animator" .. uv3
+				local var_20_0 = arg_18_0:InstantiateObj(arg_20_0, arg_18_1:Find("masks"))
 
-				setActive(slot3, false)
-				uv4()
+				var_20_0.name = "icon_front_" .. iter_18_0
+				var_20_0.transform.localPosition = Vector3(0, 0, 0)
+
+				setActive(var_20_0, false)
+				arg_19_0()
 			end), true, true)
 		end)
 	end
 
-	parallelAsync(slot5, slot3)
+	seriesAsync(var_18_1, arg_18_3)
 end
 
-function slot0.Load(slot0, slot1, slot2, slot3, slot4)
+local function var_0_10(arg_21_0, arg_21_1, arg_21_2, arg_21_3)
+	local var_21_0 = arg_21_2:GetAnimatorMask()
+
+	if var_21_0 then
+		local var_21_1 = arg_21_0.poolMgr.root:Find("mask")
+		local var_21_2 = arg_21_0:CloneTplTo(var_21_1, arg_21_1:Find("interaction"), "animtor_mask")
+
+		var_21_2.sizeDelta = var_21_0.size
+
+		setAnchoredPosition(var_21_2, var_21_0.offset)
+	end
+
+	local var_21_3 = {}
+
+	for iter_21_0, iter_21_1 in ipairs(arg_21_2:GetAnimators()) do
+		local var_21_4 = iter_21_1.key
+		local var_21_5 = iter_21_1.value
+
+		table.insert(var_21_3, function(arg_22_0)
+			ResourceMgr.Inst:getAssetAsync("sfurniture/" .. var_21_5, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_23_0)
+				if arg_21_0:IsStop() or IsNil(arg_21_1) or IsNil(arg_23_0) then
+					arg_21_0:OnStop()
+
+					return
+				end
+
+				local var_23_0 = arg_21_1:Find("interaction")
+				local var_23_1 = var_21_0 and var_23_0:Find("animtor_mask") or var_23_0
+				local var_23_2 = arg_21_0:InstantiateObj(arg_23_0, var_23_1)
+
+				var_23_2.name = "Animator" .. var_21_4
+
+				setActive(var_23_2, false)
+				arg_22_0()
+			end), true, true)
+		end)
+	end
+
+	parallelAsync(var_21_3, arg_21_3)
+end
+
+function var_0_0.Load(arg_24_0, arg_24_1, arg_24_2, arg_24_3, arg_24_4)
 	seriesAsync({
-		function (slot0)
-			uv0(uv1, uv2.transform, uv3, slot0)
+		function(arg_25_0)
+			var_0_6(arg_24_0, arg_24_1.transform, arg_24_2, arg_25_0)
 		end,
-		function (slot0)
-			uv0(uv1, uv2.transform, uv3, function ()
-				uv0()
-				uv1()
+		function(arg_26_0)
+			var_0_4(arg_24_0, arg_24_1.transform, arg_24_2, function()
+				arg_24_4()
+				arg_26_0()
 			end)
 		end,
-		function (slot0)
-			uv0(uv1, uv2.transform, uv3, slot0)
+		function(arg_28_0)
+			var_0_5(arg_24_0, arg_24_1.transform, arg_24_2, arg_28_0)
 		end,
-		function (slot0)
-			uv0(uv1, uv2.transform, uv3, slot0)
+		function(arg_29_0)
+			var_0_7(arg_24_0, arg_24_1.transform, arg_24_2, arg_29_0)
 		end
-	}, slot3)
+	}, arg_24_3)
 end
 
-function slot0.LoadSpine(slot0, slot1, slot2, slot3, slot4)
-	slot0.working = true
+function var_0_0.LoadSpine(arg_30_0, arg_30_1, arg_30_2, arg_30_3, arg_30_4)
+	arg_30_0.working = true
 
 	seriesAsync({
-		function (slot0)
-			uv0(uv1, uv2.transform, uv3, slot0)
+		function(arg_31_0)
+			var_0_6(arg_30_0, arg_30_1.transform, arg_30_2, arg_31_0)
 		end,
-		function (slot0)
-			uv0(uv1, uv2, uv3, function ()
-				uv0()
-				uv1()
+		function(arg_32_0)
+			var_0_8(arg_30_0, arg_30_1, arg_30_2, function()
+				arg_30_4()
+				arg_32_0()
 			end)
 		end,
-		function (slot0)
-			uv0(uv1, uv2, uv3, slot0)
+		function(arg_34_0)
+			var_0_9(arg_30_0, arg_30_1, arg_30_2, arg_34_0)
 		end,
-		function (slot0)
-			uv0(uv1, uv2, uv3, slot0)
+		function(arg_35_0)
+			var_0_10(arg_30_0, arg_30_1, arg_30_2, arg_35_0)
 		end
-	}, slot3)
+	}, arg_30_3)
 end
 
-function slot0.AdjustModel(slot0, slot1, slot2, slot3)
-	slot1.pivot = slot3
-	slot1.sizeDelta = slot2
-	slot1:Find("interaction").pivot = slot3
-	slot1:Find("masks").pivot = slot3
-	slot4 = slot1:Find("childs")
-	slot4.anchorMin = slot3
-	slot4.anchorMax = slot3
+function var_0_0.AdjustModel(arg_36_0, arg_36_1, arg_36_2, arg_36_3)
+	arg_36_1.pivot = arg_36_3
+	arg_36_1.sizeDelta = arg_36_2
+	arg_36_1:Find("interaction").pivot = arg_36_3
+	arg_36_1:Find("masks").pivot = arg_36_3
+
+	local var_36_0 = arg_36_1:Find("childs")
+
+	var_36_0.anchorMin = arg_36_3
+	var_36_0.anchorMax = arg_36_3
 end
 
-function slot0.FinishWork(slot0, slot1)
-	if slot1 then
-		slot0.rollBacks = {}
+function var_0_0.FinishWork(arg_37_0, arg_37_1)
+	if arg_37_1 then
+		arg_37_0.rollBacks = {}
 	else
-		slot0:RollBackLoaded()
+		arg_37_0:RollBackLoaded()
 	end
 
-	slot0.state = uv0
+	arg_37_0.state = var_0_1
 
-	if slot0.callback then
-		slot0.callback()
+	if arg_37_0.callback then
+		arg_37_0.callback()
 	end
 
-	slot0.module = nil
+	arg_37_0.module = nil
 end
 
-function slot0.RollBackLoaded(slot0)
-	for slot4 = #slot0.rollBacks, 1, -1 do
-		if not IsNil(slot0.rollBacks[slot4]) then
-			Object.Destroy(slot5)
+function var_0_0.RollBackLoaded(arg_38_0)
+	for iter_38_0 = #arg_38_0.rollBacks, 1, -1 do
+		local var_38_0 = arg_38_0.rollBacks[iter_38_0]
+
+		if not IsNil(var_38_0) then
+			Object.Destroy(var_38_0)
 		end
 	end
 
-	slot0.rollBacks = {}
+	arg_38_0.rollBacks = {}
 end
 
-function slot0.Stop(slot0)
-	slot0.state = uv0
-	slot0.callback = nil
+function var_0_0.Stop(arg_39_0)
+	arg_39_0.state = var_0_3
+	arg_39_0.callback = nil
 end
 
-function slot0.OnStop(slot0)
-	if slot0.state ~= uv0 then
-		slot0:FinishWork(false)
+function var_0_0.OnStop(arg_40_0)
+	if arg_40_0.state ~= var_0_3 then
+		arg_40_0:FinishWork(false)
 	end
 end
 
-function slot0.IsStop(slot0)
-	return slot0.state == uv0 or slot0.module and slot0.module:IsExit()
+function var_0_0.IsStop(arg_41_0)
+	return arg_41_0.state == var_0_3 or arg_41_0.module and arg_41_0.module:IsExit()
 end
 
-return slot0
+return var_0_0

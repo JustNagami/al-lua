@@ -1,40 +1,47 @@
-slot0 = class("BeatMonsterPage", import("....base.BaseActivityPage"))
+﻿local var_0_0 = class("BeatMonsterPage", import("....base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
 end
 
-function slot0.OnFirstFlush(slot0)
+function var_0_0.OnFirstFlush(arg_2_0)
+	return
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot0:Show()
+function var_0_0.OnUpdateFlush(arg_3_0)
+	arg_3_0:Show()
 
-	if not slot0.controller then
-		slot0.controller = BeatMonsterController.New()
+	local var_3_0 = arg_3_0.activity
+	local var_3_1 = arg_3_0:PacketData(var_3_0)
 
-		slot0.controller.mediator:SetUI(slot0._go)
-		slot0.controller:SetUp(slot0:PacketData(slot0.activity), function (slot0)
-			uv0:emit(ActivityMainScene.LOCK_ACT_MAIN, slot0)
+	if not arg_3_0.controller then
+		arg_3_0.controller = BeatMonsterController.New()
+
+		arg_3_0.controller.mediator:SetUI(arg_3_0._go)
+		arg_3_0.controller:SetUp(var_3_1, function(arg_4_0)
+			arg_3_0:emit(ActivityMainScene.LOCK_ACT_MAIN, arg_4_0)
 		end)
 	else
-		slot0.controller:NetData(slot2)
+		arg_3_0.controller:NetData(var_3_1)
 	end
 end
 
-function slot0.PacketData(slot0, slot1)
-	slot2 = slot1:GetDataConfig("hp")
+function var_0_0.PacketData(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:GetDataConfig("hp")
+	local var_5_1 = var_5_0 - arg_5_1.data3
+	local var_5_2 = arg_5_1:GetCountForHitMonster()
+	local var_5_3 = arg_5_1:GetDataConfig("story")
 
 	return {
-		hp = math.max(slot2 - slot1.data3, 0),
-		maxHp = slot2,
-		leftCount = slot1:GetCountForHitMonster(),
-		storys = slot1:GetDataConfig("story")
+		hp = math.max(var_5_1, 0),
+		maxHp = var_5_0,
+		leftCount = var_5_2,
+		storys = var_5_3
 	}
 end
 
-function slot0.OnDestroy(slot0)
-	slot0.controller:Dispose()
+function var_0_0.OnDestroy(arg_6_0)
+	arg_6_0.controller:Dispose()
 end
 
-return slot0
+return var_0_0

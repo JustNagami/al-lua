@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onAirAssistReady"
+			},
+			arg_list = {
+				buff_id = 13791,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,17 +31,5 @@ return {
 	stack = 1,
 	id = 13790,
 	icon = 13790,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onAirAssistReady"
-			},
-			arg_list = {
-				buff_id = 13791,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,31 +1,33 @@
-slot0 = class("GuildOfficeLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("GuildOfficeLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "GuildEmptyUI"
 end
 
-function slot0.setPlayer(slot0, slot1)
-	slot0.playerVO = slot1
+function var_0_0.setPlayer(arg_2_0, arg_2_1)
+	arg_2_0.playerVO = arg_2_1
 end
 
-function slot0.SetGuild(slot0, slot1)
-	slot0.guild = slot1
-	slot0.isAdmin = GuildMember.IsAdministrator(slot1:getSelfDuty())
+function var_0_0.SetGuild(arg_3_0, arg_3_1)
+	arg_3_0.guild = arg_3_1
+	arg_3_0.isAdmin = GuildMember.IsAdministrator(arg_3_1:getSelfDuty())
 
-	if slot0.taskPage and slot0.taskPage:GetLoaded() then
-		slot0.taskPage:OnUpdateGuild(slot0.guild, slot0.isAdmin)
+	if arg_3_0.taskPage and arg_3_0.taskPage:GetLoaded() then
+		arg_3_0.taskPage:OnUpdateGuild(arg_3_0.guild, arg_3_0.isAdmin)
 	end
 end
 
-function slot0.init(slot0)
-	slot0.taskPage = GuildOfficeTaskPage.New(slot0._tf, slot0.event)
-	slot0.helpBtn = slot0:findTF("frame/help")
+function var_0_0.init(arg_4_0)
+	arg_4_0.taskPage = GuildOfficeTaskPage.New(arg_4_0._tf, arg_4_0.event)
+	arg_4_0.helpBtn = arg_4_0:findTF("frame/help")
 end
 
-function slot0.didEnter(slot0)
-	pg.GuildPaintingMgr:GetInstance():Update(slot0.guild:GetOfficePainting(), Vector3(-737, -171, 0))
-	slot0.taskPage:ExecuteAction("Update", slot0.guild, slot0.isAdmin)
-	onButton(slot0, slot0.helpBtn, function ()
+function var_0_0.didEnter(arg_5_0)
+	local var_5_0 = arg_5_0.guild:GetOfficePainting()
+
+	pg.GuildPaintingMgr:GetInstance():Update(var_5_0, Vector3(-737, -171, 0))
+	arg_5_0.taskPage:ExecuteAction("Update", arg_5_0.guild, arg_5_0.isAdmin)
+	onButton(arg_5_0, arg_5_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.guild_office_tip.tip
@@ -33,35 +35,35 @@ function slot0.didEnter(slot0)
 	end, SFX_PANEL)
 end
 
-function slot0.UpdateContribution(slot0)
-	if slot0.taskPage and slot0.taskPage:GetLoaded() then
-		slot0.taskPage:OnUpdateContribution()
+function var_0_0.UpdateContribution(arg_7_0)
+	if arg_7_0.taskPage and arg_7_0.taskPage:GetLoaded() then
+		arg_7_0.taskPage:OnUpdateContribution()
 	end
 end
 
-function slot0.UpdateSupplyPanel(slot0)
-	if slot0.taskPage and slot0.taskPage:GetLoaded() then
-		slot0.taskPage:OnUpdateSupplyPanel()
+function var_0_0.UpdateSupplyPanel(arg_8_0)
+	if arg_8_0.taskPage and arg_8_0.taskPage:GetLoaded() then
+		arg_8_0.taskPage:OnUpdateSupplyPanel()
 	end
 end
 
-function slot0.UpdateTask(slot0, slot1)
-	if slot0.taskPage and slot0.taskPage:GetLoaded() then
-		slot0.taskPage:OnUpdateTask(slot1)
+function var_0_0.UpdateTask(arg_9_0, arg_9_1)
+	if arg_9_0.taskPage and arg_9_0.taskPage:GetLoaded() then
+		arg_9_0.taskPage:OnUpdateTask(arg_9_1)
 	end
 end
 
-function slot0.onBackPressed(slot0)
+function var_0_0.onBackPressed(arg_10_0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-	slot0:emit(uv0.ON_BACK)
+	arg_10_0:emit(var_0_0.ON_BACK)
 end
 
-function slot0.willExit(slot0)
-	slot0.taskPage:Destroy()
+function var_0_0.willExit(arg_11_0)
+	arg_11_0.taskPage:Destroy()
 
 	if isActive(pg.MsgboxMgr:GetInstance()._go) then
 		triggerButton(pg.MsgboxMgr:GetInstance()._closeBtn)
 	end
 end
 
-return slot0
+return var_0_0

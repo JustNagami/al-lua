@@ -1,4 +1,34 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onFlagShip"
+			},
+			arg_list = {
+				skill_id = 10910
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBeHit"
+			},
+			arg_list = {
+				rant = 450,
+				skill_id = 10911,
+				target = "TargetSelf",
+				time = 0
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -259,35 +289,5 @@ return {
 	stack = 1,
 	id = 10910,
 	icon = 10910,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onFlagShip"
-			},
-			arg_list = {
-				skill_id = 10910
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBeHit"
-			},
-			arg_list = {
-				rant = 450,
-				skill_id = 10911,
-				target = "TargetSelf",
-				time = 0
-			}
-		}
-	}
+	last_effect = ""
 }

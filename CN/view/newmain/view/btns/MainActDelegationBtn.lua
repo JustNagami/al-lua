@@ -1,36 +1,38 @@
-slot0 = class("MainActDelegationBtn", import(".MainBaseSpcailActBtn"))
+﻿local var_0_0 = class("MainActDelegationBtn", import(".MainBaseSpcailActBtn"))
 
-function slot0.InShowTime(slot0)
-	return getProxy(ActivityProxy):getActivityById(ActivityConst.RYZA_TASK) and not slot1:isEnd()
+function var_0_0.InShowTime(arg_1_0)
+	local var_1_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.RYZA_TASK)
+
+	return var_1_0 and not var_1_0:isEnd()
 end
 
-function slot0.GetUIName(slot0)
+function var_0_0.GetUIName(arg_2_0)
 	return "MainActDelegationBtn"
 end
 
-function slot0.OnClick(slot0)
-	slot0.event:emit(NewMainMediator.GO_SCENE, SCENE.RYZA_TASK)
+function var_0_0.OnClick(arg_3_0)
+	arg_3_0.event:emit(NewMainMediator.GO_SCENE, SCENE.RYZA_TASK)
 end
 
-function slot0.OnInit(slot0)
-	setAnchoredPosition(slot0._tf, {
+function var_0_0.OnInit(arg_4_0)
+	setAnchoredPosition(arg_4_0._tf, {
 		x = 200,
 		y = 220
 	})
 end
 
-function slot0.OnRegister(slot0)
-	slot0.redDot = RedDotNode.New(slot0._tf:Find("tip"), {
+function var_0_0.OnRegister(arg_5_0)
+	arg_5_0.redDot = RedDotNode.New(arg_5_0._tf:Find("tip"), {
 		pg.RedDotMgr.TYPES.RYZA_TASK
 	})
 
-	pg.redDotHelper:AddNode(slot0.redDot)
+	pg.redDotHelper:AddNode(arg_5_0.redDot)
 end
 
-function slot0.OnClear(slot0)
-	if slot0.redDot then
-		pg.redDotHelper:RemoveNode(slot0.redDot)
+function var_0_0.OnClear(arg_6_0)
+	if arg_6_0.redDot then
+		pg.redDotHelper:RemoveNode(arg_6_0.redDot)
 	end
 end
 
-return slot0
+return var_0_0

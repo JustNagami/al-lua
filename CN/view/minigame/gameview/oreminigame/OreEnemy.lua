@@ -1,212 +1,237 @@
-slot0 = class("OreEnemy")
-slot0.TYPE_RIGHT_TO_LEFT = 1
-slot0.TYPE_LEFT_TO_RIGHT = 2
-slot0.BORDER_X = 300
-slot0.ROAD_Y = {
+﻿local var_0_0 = class("OreEnemy")
+
+var_0_0.TYPE_RIGHT_TO_LEFT = 1
+var_0_0.TYPE_LEFT_TO_RIGHT = 2
+var_0_0.BORDER_X = 300
+var_0_0.ROAD_Y = {
 	20,
 	-28,
 	-73
 }
-slot0.CLASH_TIME = 0.5
-slot0.OFFSET_Y = {
-	[9.0] = 17,
-	[5.0] = 17
+var_0_0.CLASH_TIME = 0.5
+var_0_0.OFFSET_Y = {
+	[9] = 17,
+	[5] = 17
 }
 
-function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	slot0.binder = slot1
-	slot0._tf = slot2
-	slot0.collisionMgr = slot3
-	slot0.id = slot4
-	slot0.config = OreGameConfig.ENEMY_CONFIG[slot0.id]
-	slot0.type = slot6
-	slot0.roadID = slot5
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5, arg_1_6)
+	arg_1_0.binder = arg_1_1
+	arg_1_0._tf = arg_1_2
+	arg_1_0.collisionMgr = arg_1_3
+	arg_1_0.id = arg_1_4
+	arg_1_0.config = OreGameConfig.ENEMY_CONFIG[arg_1_0.id]
+	arg_1_0.type = arg_1_6
+	arg_1_0.roadID = arg_1_5
 
-	slot0:Init()
+	arg_1_0:Init()
 end
 
-function slot0.AddListener(slot0)
-	slot0.binder:bind(OreGameConfig.EVENT_AKASHI_COLLISION, function (slot0, slot1)
-		if uv0.isDestroy then
+function var_0_0.AddListener(arg_2_0)
+	arg_2_0.binder:bind(OreGameConfig.EVENT_AKASHI_COLLISION, function(arg_3_0, arg_3_1)
+		if arg_2_0.isDestroy then
 			return
 		end
 
-		if uv0 == slot1.b then
-			uv0.binder:emit(OreGameConfig.EVENT_AKASHI_HIT, {
-				dir = uv0.type == uv1.TYPE_RIGHT_TO_LEFT and "W" or "E",
-				class = uv0.config.class,
-				y = uv0._tf.anchoredPosition.x
+		if arg_2_0 == arg_3_1.b then
+			local var_3_0 = arg_2_0.type == var_0_0.TYPE_RIGHT_TO_LEFT and "W" or "E"
+
+			arg_2_0.binder:emit(OreGameConfig.EVENT_AKASHI_HIT, {
+				dir = var_3_0,
+				class = arg_2_0.config.class,
+				y = arg_2_0._tf.anchoredPosition.x
 			})
 		end
 	end)
-	slot0.binder:bind(OreGameConfig.EVENT_ENEMY_COLLISION, function (slot0, slot1)
-		if uv0.isDestroy or uv0.clashTime then
+	arg_2_0.binder:bind(OreGameConfig.EVENT_ENEMY_COLLISION, function(arg_4_0, arg_4_1)
+		if arg_2_0.isDestroy or arg_2_0.clashTime then
 			return
 		end
 
-		uv0:OnEnemyCollison(slot1.a, slot1.b)
+		arg_2_0:OnEnemyCollison(arg_4_1.a, arg_4_1.b)
 	end)
 end
 
-function slot0.AddDftAniEvent(slot0)
-	eachChild(slot0._tf:Find("effect"), function (slot0)
-		slot0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
-			setActive(uv0, false)
+function var_0_0.AddDftAniEvent(arg_5_0)
+	eachChild(arg_5_0._tf:Find("effect"), function(arg_6_0)
+		arg_6_0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+			setActive(arg_6_0, false)
 
-			if uv0.name == "EF_Clash_Heavy" then
-				uv1:Destroy()
+			if arg_6_0.name == "EF_Clash_Heavy" then
+				arg_5_0:Destroy()
 			end
 		end)
 	end)
-	slot0._tf:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
-		uv0:Destroy()
+	arg_5_0._tf:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		arg_5_0:Destroy()
 	end)
 end
 
-function slot0.Init(slot0)
-	slot0:AddListener()
-	slot0:AddDftAniEvent()
+function var_0_0.Init(arg_9_0)
+	arg_9_0:AddListener()
+	arg_9_0:AddDftAniEvent()
 
-	slot0.index = tonumber(slot0._tf.name)
+	arg_9_0.index = tonumber(arg_9_0._tf.name)
 
-	if slot0.type == uv0.TYPE_RIGHT_TO_LEFT then
-		slot0.deltaX = -OreGameConfig.TIME_INTERVAL
+	if arg_9_0.type == var_0_0.TYPE_RIGHT_TO_LEFT then
+		arg_9_0.deltaX = -OreGameConfig.TIME_INTERVAL
 
-		setLocalPosition(slot0._tf, Vector2(uv0.BORDER_X, uv0.ROAD_Y[slot0.roadID]))
-		setLocalEulerAngles(slot0._tf, Vector3(0, 0, 0))
+		setLocalPosition(arg_9_0._tf, Vector2(var_0_0.BORDER_X, var_0_0.ROAD_Y[arg_9_0.roadID]))
+		setLocalEulerAngles(arg_9_0._tf, Vector3(0, 0, 0))
 	else
-		slot0.deltaX = OreGameConfig.TIME_INTERVAL
+		arg_9_0.deltaX = OreGameConfig.TIME_INTERVAL
 
-		setLocalPosition(slot0._tf, Vector2(-uv0.BORDER_X, uv0.ROAD_Y[slot0.roadID]))
-		setLocalEulerAngles(slot0._tf, Vector3(0, 180, 0))
+		setLocalPosition(arg_9_0._tf, Vector2(-var_0_0.BORDER_X, var_0_0.ROAD_Y[arg_9_0.roadID]))
+		setLocalEulerAngles(arg_9_0._tf, Vector3(0, 180, 0))
 	end
 
-	slot0.speed = slot0.config.speed
+	arg_9_0.speed = arg_9_0.config.speed
 
-	slot0.collisionMgr:AddEnemyObject(slot0.roadID, slot0.index, slot0)
+	arg_9_0.collisionMgr:AddEnemyObject(arg_9_0.roadID, arg_9_0.index, arg_9_0)
 
-	slot0.aabbTF = slot0._tf:Find("Image/aabb")
+	arg_9_0.aabbTF = arg_9_0._tf:Find("Image/aabb")
 
-	setActive(slot0.aabbTF, OreGameConfig.SHOW_AABB)
+	setActive(arg_9_0.aabbTF, OreGameConfig.SHOW_AABB)
 
-	slot0.aabb = OreGameHelper.GetAABBWithTF(slot0.aabbTF, slot0.type == uv0.TYPE_LEFT_TO_RIGHT)
+	arg_9_0.aabb = OreGameHelper.GetAABBWithTF(arg_9_0.aabbTF, arg_9_0.type == var_0_0.TYPE_LEFT_TO_RIGHT)
 
-	setActive(slot0._tf:Find("Image"), true)
-	slot0._tf:GetComponent(typeof(Animator)):Play("Initial")
-	slot0._tf:Find("Image"):GetComponent(typeof(Animator)):Play("Move")
-	eachChild(slot0._tf:Find("effect"), function (slot0)
-		setActive(slot0, false)
+	setActive(arg_9_0._tf:Find("Image"), true)
+	arg_9_0._tf:GetComponent(typeof(Animator)):Play("Initial")
+	arg_9_0._tf:Find("Image"):GetComponent(typeof(Animator)):Play("Move")
+	eachChild(arg_9_0._tf:Find("effect"), function(arg_10_0)
+		setActive(arg_10_0, false)
 	end)
 
-	slot0.posY = uv0.ROAD_Y[slot0.roadID] + (uv0.OFFSET_Y[slot0.id] or 0)
+	arg_9_0.posY = var_0_0.ROAD_Y[arg_9_0.roadID] + (var_0_0.OFFSET_Y[arg_9_0.id] or 0)
 end
 
-function slot0.SetSpeed(slot0, slot1)
-	slot0.speed = slot1
+function var_0_0.SetSpeed(arg_11_0, arg_11_1)
+	arg_11_0.speed = arg_11_1
 end
 
-function slot0.OnEnemyCollison(slot0, slot1, slot2)
-	slot4, slot5 = nil
-	slot6 = slot1._tf.anchoredPosition.x
-	slot7 = slot2._tf.anchoredPosition.x
-	slot4 = slot1.type == uv0.TYPE_RIGHT_TO_LEFT and (slot6 < slot7 and slot1 or slot2) or slot7 < slot6 and slot1 or slot2
+function var_0_0.OnEnemyCollison(arg_12_0, arg_12_1, arg_12_2)
+	local var_12_0 = arg_12_1.type
+	local var_12_1
+	local var_12_2
+	local var_12_3 = arg_12_1._tf.anchoredPosition.x
+	local var_12_4 = arg_12_2._tf.anchoredPosition.x
 
-	if slot4.config.class < (slot4 == slot1 and slot2 or slot1).config.class then
-		if slot0 == slot4 then
-			if slot8 <= 3 and slot9 <= 3 and math.abs(slot8 - slot9) <= 1 then
-				slot0:PlayClashLightAnim()
+	if var_12_0 == var_0_0.TYPE_RIGHT_TO_LEFT then
+		var_12_1 = var_12_3 < var_12_4 and arg_12_1 or arg_12_2
+	else
+		var_12_1 = var_12_4 < var_12_3 and arg_12_1 or arg_12_2
+	end
+
+	local var_12_5 = var_12_1 == arg_12_1 and arg_12_2 or arg_12_1
+	local var_12_6 = var_12_1.config.class
+	local var_12_7 = var_12_5.config.class
+
+	if var_12_6 < var_12_7 then
+		if arg_12_0 == var_12_1 then
+			if var_12_6 <= 3 and var_12_7 <= 3 and math.abs(var_12_6 - var_12_7) <= 1 then
+				arg_12_0:PlayClashLightAnim()
 			else
-				slot0:PlayClashHeavyAnim()
+				arg_12_0:PlayClashHeavyAnim()
 			end
 		end
-	elseif slot0 == slot5 then
-		slot0:SetSpeed(slot4.speed)
+	elseif arg_12_0 == var_12_5 then
+		arg_12_0:SetSpeed(var_12_1.speed)
 	end
 end
 
-function slot0.PlayClashLightAnim(slot0)
-	slot0.collisionMgr:RemoveEnemyObject(slot0.roadID, slot0.index, slot0)
-	setActive(slot0._tf:Find("effect/EF_Clash_Light"), true)
-	slot0._tf:Find("Image"):GetComponent(typeof(Animator)):Play("Clash_Light")
+function var_0_0.PlayClashLightAnim(arg_13_0)
+	arg_13_0.collisionMgr:RemoveEnemyObject(arg_13_0.roadID, arg_13_0.index, arg_13_0)
+	setActive(arg_13_0._tf:Find("effect/EF_Clash_Light"), true)
+	arg_13_0._tf:Find("Image"):GetComponent(typeof(Animator)):Play("Clash_Light")
 
-	slot0.clashTime = 0
-	slot0.startPoint = slot0._tf.anchoredPosition
-	slot0.endPoint = Vector2(slot0.startPoint.x + (slot0.type == uv0.TYPE_RIGHT_TO_LEFT and -150 or 150), slot0.startPoint.y)
-	slot0.centerPoint = Vector2((slot0.startPoint.x + slot0.endPoint.x) / 2, slot0.startPoint.y + 50)
+	arg_13_0.clashTime = 0
+	arg_13_0.startPoint = arg_13_0._tf.anchoredPosition
+
+	local var_13_0 = arg_13_0.type == var_0_0.TYPE_RIGHT_TO_LEFT and -150 or 150
+
+	arg_13_0.endPoint = Vector2(arg_13_0.startPoint.x + var_13_0, arg_13_0.startPoint.y)
+	arg_13_0.centerPoint = Vector2((arg_13_0.startPoint.x + arg_13_0.endPoint.x) / 2, arg_13_0.startPoint.y + 50)
 end
 
-function slot0.PlayClashHeavyAnim(slot0)
-	slot0.collisionMgr:RemoveEnemyObject(slot0.roadID, slot0.index, slot0)
-	setActive(slot0._tf:Find("Image"), false)
-	setActive(slot0._tf:Find("effect/EF_Clash_Heavy"), true)
+function var_0_0.PlayClashHeavyAnim(arg_14_0)
+	arg_14_0.collisionMgr:RemoveEnemyObject(arg_14_0.roadID, arg_14_0.index, arg_14_0)
+	setActive(arg_14_0._tf:Find("Image"), false)
+	setActive(arg_14_0._tf:Find("effect/EF_Clash_Heavy"), true)
 end
 
-function slot0.Destroy(slot0)
-	if slot0.isDestroy then
-		return slot0.isDestroy
+function var_0_0.Destroy(arg_15_0)
+	if arg_15_0.isDestroy then
+		return arg_15_0.isDestroy
 	end
 
-	slot0.isDestroy = true
+	arg_15_0.isDestroy = true
 
-	slot0.binder:emit(OreGameConfig.EVENT_ENEMY_DESTROY, {
-		roadID = slot0.roadID,
-		index = slot0.index,
-		id = slot0.id
+	arg_15_0.binder:emit(OreGameConfig.EVENT_ENEMY_DESTROY, {
+		roadID = arg_15_0.roadID,
+		index = arg_15_0.index,
+		id = arg_15_0.id
 	})
-	slot0.collisionMgr:RemoveEnemyObject(slot0.roadID, slot0.index, slot0)
+	arg_15_0.collisionMgr:RemoveEnemyObject(arg_15_0.roadID, arg_15_0.index, arg_15_0)
 end
 
-function slot0.Dispose(slot0)
-	slot0.isDestroy = true
+function var_0_0.Dispose(arg_16_0)
+	arg_16_0.isDestroy = true
 end
 
-function slot0.OnTimer(slot0, slot1)
-	if slot0.clashTime then
-		if slot0.clashTime < uv0.CLASH_TIME then
-			slot0.clashTime = slot0.clashTime + slot1
+function var_0_0.OnTimer(arg_17_0, arg_17_1)
+	if arg_17_0.clashTime then
+		if arg_17_0.clashTime < var_0_0.CLASH_TIME then
+			arg_17_0.clashTime = arg_17_0.clashTime + arg_17_1
 
-			setAnchoredPosition(slot0._tf, OreGameHelper.GetBeziersPoints(slot0.startPoint, slot0.endPoint, slot0.centerPoint, slot0.clashTime))
+			local var_17_0 = OreGameHelper.GetBeziersPoints(arg_17_0.startPoint, arg_17_0.endPoint, arg_17_0.centerPoint, arg_17_0.clashTime)
+
+			setAnchoredPosition(arg_17_0._tf, var_17_0)
 		else
-			slot0._tf:GetComponent(typeof(Animator)):Play("fade_away")
+			arg_17_0._tf:GetComponent(typeof(Animator)):Play("fade_away")
 
-			slot0.clashTime = nil
+			arg_17_0.clashTime = nil
 		end
 
 		return
 	end
 
-	setLocalPosition(slot0._tf, {
-		x = slot0._tf.anchoredPosition.x + slot0.deltaX * slot0.speed,
-		y = slot0.posY
+	setLocalPosition(arg_17_0._tf, {
+		x = arg_17_0._tf.anchoredPosition.x + arg_17_0.deltaX * arg_17_0.speed,
+		y = arg_17_0.posY
 	})
 
-	if (slot0._tf.anchoredPosition.x < -uv0.BORDER_X - 10 or slot0._tf.anchoredPosition.x > uv0.BORDER_X + 10) and not slot0.isDestroy then
-		slot0:Destroy()
+	if (arg_17_0._tf.anchoredPosition.x < -var_0_0.BORDER_X - 10 or arg_17_0._tf.anchoredPosition.x > var_0_0.BORDER_X + 10) and not arg_17_0.isDestroy then
+		arg_17_0:Destroy()
 	end
 end
 
-function slot0.GetAABB(slot0)
-	return slot0.aabb
+function var_0_0.GetAABB(arg_18_0)
+	return arg_18_0.aabb
 end
 
-function slot0.GetCarryTriggerOffset(slot0)
+function var_0_0.GetCarryTriggerOffset(arg_19_0)
 	return {
 		0,
 		10
 	}
 end
 
-function slot0.GetCollisionInfo(slot0)
-	slot1 = 0
+function var_0_0.GetCollisionInfo(arg_20_0)
+	local var_20_0 = 0
+
+	if arg_20_0.type == var_0_0.TYPE_RIGHT_TO_LEFT then
+		var_20_0 = arg_20_0._tf.anchoredPosition.x + arg_20_0.aabbTF.anchoredPosition.x
+	else
+		var_20_0 = arg_20_0._tf.anchoredPosition.x - arg_20_0.aabbTF.anchoredPosition.x
+	end
 
 	return {
 		pos = {
-			x = slot0.type == uv0.TYPE_RIGHT_TO_LEFT and slot0._tf.anchoredPosition.x + slot0.aabbTF.anchoredPosition.x or slot0._tf.anchoredPosition.x - slot0.aabbTF.anchoredPosition.x,
-			y = slot0._tf.anchoredPosition.y + slot0.aabbTF.anchoredPosition.y
+			x = var_20_0,
+			y = arg_20_0._tf.anchoredPosition.y + arg_20_0.aabbTF.anchoredPosition.y
 		},
-		aabb = slot0:GetAABB(),
-		carryOffset = slot0:GetCarryTriggerOffset()
+		aabb = arg_20_0:GetAABB(),
+		carryOffset = arg_20_0:GetCarryTriggerOffset()
 	}
 end
 
-return slot0
+return var_0_0

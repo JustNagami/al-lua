@@ -1,222 +1,241 @@
-slot0 = class("WorldAutoFightRewardLayer", BaseUI)
+﻿local var_0_0 = class("WorldAutoFightRewardLayer", BaseUI)
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "WorldAutoFightRewardUI"
 end
 
-slot1 = 0.1
+local var_0_1 = 0.1
 
-function slot0.init(slot0)
-	slot0.window = slot0._tf:Find("Window")
-	slot0.boxView = slot0.window:Find("Layout/Box/ScrollView")
-	slot0.emptyTip = slot0.window:Find("Layout/Box/EmptyTip")
-	slot0.itemList = slot0.boxView:Find("Content/ItemGrid")
-	slot1 = Instantiate(slot0.itemList:GetComponent(typeof(ItemList)).prefabItem[0])
-	slot1.name = "Icon"
+function var_0_0.init(arg_2_0)
+	arg_2_0.window = arg_2_0._tf:Find("Window")
+	arg_2_0.boxView = arg_2_0.window:Find("Layout/Box/ScrollView")
+	arg_2_0.emptyTip = arg_2_0.window:Find("Layout/Box/EmptyTip")
+	arg_2_0.itemList = arg_2_0.boxView:Find("Content/ItemGrid")
 
-	setParent(slot1, slot0.itemList:Find("GridItem/Shell"))
-	setText(slot0.emptyTip, i18n("autofight_rewards_none"))
-	setText(slot0.window:Find("Fixed/top/bg/obtain/title"), i18n("autofight_rewards"))
-	setText(slot0.boxView:Find("Content/Title/Text"), i18n("battle_end_subtitle1"))
+	local var_2_0 = Instantiate(arg_2_0.itemList:GetComponent(typeof(ItemList)).prefabItem[0])
+
+	var_2_0.name = "Icon"
+
+	setParent(var_2_0, arg_2_0.itemList:Find("GridItem/Shell"))
+	setText(arg_2_0.emptyTip, i18n("autofight_rewards_none"))
+	setText(arg_2_0.window:Find("Fixed/top/bg/obtain/title"), i18n("autofight_rewards"))
+	setText(arg_2_0.boxView:Find("Content/Title/Text"), i18n("battle_end_subtitle1"))
 end
 
-function slot0.didEnter(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	slot0:UpdateView()
+function var_0_0.didEnter(arg_3_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
+	arg_3_0:UpdateView()
 
-	if getProxy(MetaCharacterProxy):getMetaTacticsInfoOnEnd() and #slot1 > 0 then
-		slot0.metaExpView = MetaExpView.New(slot0.window:Find("Layout"), slot0.event, slot0.contextData)
-		slot2 = slot0.metaExpView
+	local var_3_0 = getProxy(MetaCharacterProxy):getMetaTacticsInfoOnEnd()
 
-		slot2:Reset()
-		slot2:Load()
-		slot2:setData(slot1)
-		slot2:ActionInvoke("Show")
+	if var_3_0 and #var_3_0 > 0 then
+		arg_3_0.metaExpView = MetaExpView.New(arg_3_0.window:Find("Layout"), arg_3_0.event, arg_3_0.contextData)
+
+		local var_3_1 = arg_3_0.metaExpView
+
+		var_3_1:Reset()
+		var_3_1:Load()
+		var_3_1:setData(var_3_0)
+		var_3_1:ActionInvoke("Show")
 	end
 end
 
-function slot0.willExit(slot0)
-	slot0:SkipAnim()
+function var_0_0.willExit(arg_4_0)
+	arg_4_0:SkipAnim()
 
-	if slot0.metaExpView then
-		slot0.metaExpView:Destroy()
+	if arg_4_0.metaExpView then
+		arg_4_0.metaExpView:Destroy()
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_4_0._tf)
 end
 
-function slot0.UpdateView(slot0)
-	slot1 = slot0.contextData
+function var_0_0.UpdateView(arg_5_0)
+	local var_5_0 = arg_5_0.contextData
 
-	onButton(slot0, slot0._tf:Find("BG"), function ()
-		if uv0.isRewardAnimating then
-			uv0:SkipAnim()
+	onButton(arg_5_0, arg_5_0._tf:Find("BG"), function()
+		if arg_5_0.isRewardAnimating then
+			arg_5_0:SkipAnim()
 
 			return
 		end
 
-		existCall(uv1.onClose)
-		uv0:closeView()
+		existCall(var_5_0.onClose)
+		arg_5_0:closeView()
 	end)
-	setText(slot0.window:Find("Fixed/ButtonExit/pic"), i18n("autofight_leave"))
-	onButton(slot0, slot0.window:Find("Fixed/ButtonExit"), function ()
-		existCall(uv0.onClose)
-		uv1:closeView()
+	setText(arg_5_0.window:Find("Fixed/ButtonExit/pic"), i18n("autofight_leave"))
+	onButton(arg_5_0, arg_5_0.window:Find("Fixed/ButtonExit"), function()
+		existCall(var_5_0.onClose)
+		arg_5_0:closeView()
 	end, SFX_CANCEL)
 
-	slot2 = nowWorld()
-	slot3 = slot2.autoInfos
+	local var_5_1 = nowWorld()
+	local var_5_2 = var_5_1.autoInfos
 
-	slot2:InitAutoInfos()
-	DropResultIntegration(slot3.drops)
+	var_5_1:InitAutoInfos()
+	DropResultIntegration(var_5_2.drops)
 
-	slot4 = underscore.map(slot3.drops, function (slot0)
-		if slot0.type == DROP_TYPE_WORLD_COLLECTION then
-			assert(WorldCollectionProxy.GetCollectionType(slot0.id) == WorldCollectionProxy.WorldCollectionType.FILE, string.format("collection drop type error#%d", slot0.id))
-			table.insert(uv0.message, i18n("autofight_file", WorldCollectionProxy.GetCollectionTemplate(slot0.id).name))
+	local var_5_3 = underscore.map(var_5_2.drops, function(arg_8_0)
+		if arg_8_0.type == DROP_TYPE_WORLD_COLLECTION then
+			assert(WorldCollectionProxy.GetCollectionType(arg_8_0.id) == WorldCollectionProxy.WorldCollectionType.FILE, string.format("collection drop type error#%d", arg_8_0.id))
+			table.insert(var_5_2.message, i18n("autofight_file", WorldCollectionProxy.GetCollectionTemplate(arg_8_0.id).name))
 		else
 			return {
-				drop = slot0
+				drop = arg_8_0
 			}
 		end
 	end)
 
-	for slot8, slot9 in ipairs(slot3.salvage) do
-		DropResultIntegration(slot9)
-		underscore.each(slot9, function (slot0)
-			table.insert(uv0, {
-				drop = slot0,
-				salvage = uv1
+	for iter_5_0, iter_5_1 in ipairs(var_5_2.salvage) do
+		DropResultIntegration(iter_5_1)
+		underscore.each(iter_5_1, function(arg_9_0)
+			table.insert(var_5_3, {
+				drop = arg_9_0,
+				salvage = iter_5_0
 			})
 		end)
 	end
 
-	slot5 = true
+	local var_5_4 = true
+	local var_5_5 = {}
 
-	setActive(slot0.boxView:Find("Content/Title"), false)
-	setActive(slot0.itemList, false)
+	setActive(arg_5_0.boxView:Find("Content/Title"), false)
+	setActive(arg_5_0.itemList, false)
 
-	slot0.hasRewards = #slot4 > 0
+	arg_5_0.hasRewards = #var_5_3 > 0
 
-	if slot0.hasRewards then
-		slot5 = false
+	if arg_5_0.hasRewards then
+		var_5_4 = false
 
-		table.insert({}, function (slot0)
-			setActive(uv0.boxView:Find("Content/Title"), true)
-			setActive(uv0.itemList, true)
-			slot0()
+		table.insert(var_5_5, function(arg_10_0)
+			setActive(arg_5_0.boxView:Find("Content/Title"), true)
+			setActive(arg_5_0.itemList, true)
+			arg_10_0()
 		end)
 
-		for slot11, slot12 in ipairs(slot4) do
-			slot14 = CustomIndexLayer.Clone2Full(slot0.itemList, #slot4)[slot11]
+		local var_5_6 = CustomIndexLayer.Clone2Full(arg_5_0.itemList, #var_5_3)
 
-			updateDrop(slot14:Find("Shell/Icon"), slot12.drop)
-			onButton(slot0, slot14:Find("Shell/Icon"), function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+		for iter_5_2, iter_5_3 in ipairs(var_5_3) do
+			local var_5_7 = iter_5_3.drop
+			local var_5_8 = var_5_6[iter_5_2]
+
+			updateDrop(var_5_8:Find("Shell/Icon"), var_5_7)
+			onButton(arg_5_0, var_5_8:Find("Shell/Icon"), function()
+				arg_5_0:emit(BaseUI.ON_DROP, var_5_7)
 			end, SFX_PANEL)
-			setActive(slot14:Find("salvage"), slot12.salvage)
+			setActive(var_5_8:Find("salvage"), iter_5_3.salvage)
 
-			if slot12.salvage then
-				eachChild(slot14:Find("salvage"), function (slot0)
-					setActive(slot0, slot0.name == tostring(uv0.salvage))
+			if iter_5_3.salvage then
+				eachChild(var_5_8:Find("salvage"), function(arg_12_0)
+					setActive(arg_12_0, arg_12_0.name == tostring(iter_5_3.salvage))
 				end)
 			end
 		end
 
-		slot0.isRewardAnimating = true
-		slot8 = {}
+		arg_5_0.isRewardAnimating = true
 
-		for slot12 = 1, #slot4 do
-			setActive(slot7[slot12], false)
-			table.insert(slot6, function (slot0)
-				if uv0.exited then
+		local var_5_9 = {}
+
+		for iter_5_4 = 1, #var_5_3 do
+			local var_5_10 = var_5_6[iter_5_4]
+
+			setActive(var_5_10, false)
+			table.insert(var_5_5, function(arg_13_0)
+				if arg_5_0.exited then
 					return
 				end
 
-				setActive(uv1, true)
-				scrollTo(uv0.boxView:Find("Content"), {
+				setActive(var_5_10, true)
+				scrollTo(arg_5_0.boxView:Find("Content"), {
 					y = 0
 				})
 
-				uv0.LTid = LeanTween.delayedCall(uv2, System.Action(slot0)).uniqueId
+				arg_5_0.LTid = LeanTween.delayedCall(var_0_1, System.Action(arg_13_0)).uniqueId
 			end)
 		end
 	end
 
-	setActive(slot0.boxView:Find("Content/TextArea"), false)
+	setActive(arg_5_0.boxView:Find("Content/TextArea"), false)
 
-	slot7 = {}
+	local var_5_11 = {}
 
-	for slot11, slot12 in ipairs(slot3.buffs) do
-		if not slot7[slot12.id] then
-			slot7[slot12.id] = slot12.before
+	for iter_5_5, iter_5_6 in ipairs(var_5_2.buffs) do
+		if var_5_11[iter_5_6.id] then
+			-- block empty
+		else
+			var_5_11[iter_5_6.id] = iter_5_6.before
 		end
 	end
 
-	if underscore.any(underscore.map(pg.gameset.world_mapbuff_list.description, function (slot0)
-		if not uv0[slot0] then
+	local var_5_12 = pg.gameset.world_mapbuff_list.description
+	local var_5_13 = underscore.map(var_5_12, function(arg_14_0)
+		if not var_5_11[arg_14_0] then
 			return 0
 		else
-			return uv1:GetGlobalBuff(slot0):GetFloor() - uv0[slot0]
+			return var_5_1:GetGlobalBuff(arg_14_0):GetFloor() - var_5_11[arg_14_0]
 		end
-	end), function (slot0)
-		return slot0 ~= 0
+	end)
+
+	if underscore.any(var_5_13, function(arg_15_0)
+		return arg_15_0 ~= 0
 	end) then
-		table.insert(slot3.message, i18n("autofight_effect", unpack(slot9)))
+		table.insert(var_5_2.message, i18n("autofight_effect", unpack(var_5_13)))
 	end
 
-	slot0.hasEventMsg = #slot3.message > 0
+	arg_5_0.hasEventMsg = #var_5_2.message > 0
 
-	if slot0.hasEventMsg then
-		slot5 = false
+	if arg_5_0.hasEventMsg then
+		var_5_4 = false
 
-		setText(slot0.boxView:Find("Content/TextArea/Text"), table.concat(slot3.message, "\n"))
-		table.insert(slot6, function (slot0)
-			setActive(uv0.boxView:Find("Content/TextArea"), true)
-			slot0()
+		setText(arg_5_0.boxView:Find("Content/TextArea/Text"), table.concat(var_5_2.message, "\n"))
+		table.insert(var_5_5, function(arg_16_0)
+			setActive(arg_5_0.boxView:Find("Content/TextArea"), true)
+			arg_16_0()
 		end)
 	end
 
-	setActive(slot0.boxView, not slot5)
-	setActive(slot0.emptyTip, slot5)
-	seriesAsync(slot6, function ()
-		uv0:SkipAnim()
+	setActive(arg_5_0.boxView, not var_5_4)
+	setActive(arg_5_0.emptyTip, var_5_4)
+	seriesAsync(var_5_5, function()
+		arg_5_0:SkipAnim()
 	end)
 end
 
-function slot0.CloneIconTpl(slot0, slot1)
-	assert(slot0:GetComponent(typeof(ItemList)), "Need a Itemlist Component for " .. (slot0 and slot0.name or "NIL"))
+function var_0_0.CloneIconTpl(arg_18_0, arg_18_1)
+	local var_18_0 = arg_18_0:GetComponent(typeof(ItemList))
 
-	slot3 = Instantiate(slot2.prefabItem[0])
+	assert(var_18_0, "Need a Itemlist Component for " .. (arg_18_0 and arg_18_0.name or "NIL"))
 
-	if slot1 then
-		slot3.name = slot1
+	local var_18_1 = Instantiate(var_18_0.prefabItem[0])
+
+	if arg_18_1 then
+		var_18_1.name = arg_18_1
 	end
 
-	setParent(slot3, slot0)
+	setParent(var_18_1, arg_18_0)
 
-	return slot3
+	return var_18_1
 end
 
-function slot0.SkipAnim(slot0)
-	if not slot0.isRewardAnimating then
+function var_0_0.SkipAnim(arg_19_0)
+	if not arg_19_0.isRewardAnimating then
 		return
 	end
 
-	slot0.isRewardAnimating = nil
+	arg_19_0.isRewardAnimating = nil
 
-	if slot0.LTid then
-		LeanTween.cancel(slot0.LTid)
+	if arg_19_0.LTid then
+		LeanTween.cancel(arg_19_0.LTid)
 
-		slot0.LTid = nil
+		arg_19_0.LTid = nil
 	end
 
-	eachChild(slot0.itemList, function (slot0)
-		setActive(slot0, true)
+	eachChild(arg_19_0.itemList, function(arg_20_0)
+		setActive(arg_20_0, true)
 	end)
-	setActive(slot0.boxView:Find("Content/Title"), slot0.hasRewards)
-	setActive(slot0.itemList, slot0.hasRewards)
-	setActive(slot0.boxView:Find("Content/TextArea"), slot0.hasEventMsg)
+	setActive(arg_19_0.boxView:Find("Content/Title"), arg_19_0.hasRewards)
+	setActive(arg_19_0.itemList, arg_19_0.hasRewards)
+	setActive(arg_19_0.boxView:Find("Content/TextArea"), arg_19_0.hasEventMsg)
 end
 
-return slot0
+return var_0_0

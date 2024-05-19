@@ -1,4 +1,15 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				tag = "P3_LeaderPosition"
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -18,16 +29,5 @@ return {
 	stack = 1,
 	id = 17753,
 	icon = 17750,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddTag",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				tag = "P3_LeaderPosition"
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,257 +1,275 @@
-slot0 = class("ChapterOpCommand", import(".ChapterOpRoutine"))
+﻿local var_0_0 = class("ChapterOpCommand", import(".ChapterOpRoutine"))
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-	if function ()
-		if uv0.type == ChapterConst.OpRetreat then
+	if (function()
+		if var_1_0.type == ChapterConst.OpRetreat then
 			return
 		end
 
-		if not getProxy(ChapterProxy):getActiveChapter() then
+		local var_2_0 = getProxy(ChapterProxy)
+		local var_2_1 = var_2_0:getActiveChapter()
+
+		if not var_2_1 then
 			return true
 		end
 
-		if uv0.type == ChapterConst.OpSwitch then
-			for slot5, slot6 in ipairs(slot1.fleets) do
-				if slot6.id == uv0.id then
-					slot1.findex = slot5
+		if var_1_0.type == ChapterConst.OpSwitch then
+			for iter_2_0, iter_2_1 in ipairs(var_2_1.fleets) do
+				if iter_2_1.id == var_1_0.id then
+					var_2_1.findex = iter_2_0
 
 					break
 				end
 			end
 
-			slot0:updateChapter(slot1, bit.bor(ChapterConst.DirtyStrategy, ChapterConst.DirtyFleet))
-			uv1:sendNotification(GAME.CHAPTER_OP_DONE, {
-				type = uv0.type
+			var_2_0:updateChapter(var_2_1, bit.bor(ChapterConst.DirtyStrategy, ChapterConst.DirtyFleet))
+			arg_1_0:sendNotification(GAME.CHAPTER_OP_DONE, {
+				type = var_1_0.type
 			})
-			pg.TipsMgr.GetInstance():ShowTips(i18n("formation_switch_success", slot1.fleet.name))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("formation_switch_success", var_2_1.fleet.name))
 
 			return true
 		end
-	end() then
+	end)() then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(13103, {
-		act = slot2.type,
-		group_id = defaultValue(slot2.id, 0),
-		act_arg_1 = slot2.arg1,
-		act_arg_2 = slot2.arg2,
-		act_arg_3 = slot2.arg3,
-		act_arg_4 = slot2.arg4,
-		act_arg_5 = slot2.arg5
-	}, 13104, function (slot0)
-		if slot0.result == 0 then
-			if not getProxy(ChapterProxy):getActiveChapter() then
+		act = var_1_0.type,
+		group_id = defaultValue(var_1_0.id, 0),
+		act_arg_1 = var_1_0.arg1,
+		act_arg_2 = var_1_0.arg2,
+		act_arg_3 = var_1_0.arg3,
+		act_arg_4 = var_1_0.arg4,
+		act_arg_5 = var_1_0.arg5
+	}, 13104, function(arg_3_0)
+		if arg_3_0.result == 0 then
+			local var_3_0 = getProxy(ChapterProxy)
+			local var_3_1 = var_3_0:getActiveChapter()
+
+			if not var_3_1 then
 				return
 			end
 
-			slot3, slot4 = nil
+			local var_3_2
+			local var_3_3
 
-			uv0:initData(uv1, slot0, slot2)
-			uv0:doDropUpdate()
+			arg_1_0:initData(var_1_0, arg_3_0, var_3_1)
+			arg_1_0:doDropUpdate()
 
-			if uv0.chapter then
-				slot5 = uv0.items
+			if arg_1_0.chapter then
+				local var_3_4 = arg_1_0.items
 
-				if uv1.type == ChapterConst.OpMove then
-					uv0:doCollectCommonAction()
-					uv0:doCollectAI()
-					uv0:doMove()
-					uv0:doTeleportByPortal()
-					getProxy(ChapterProxy):SetExtendChapterData(slot2.id, "FleetMoveDistance", #slot0.move_path)
-				elseif uv1.type == ChapterConst.OpBox then
-					uv0:AddBoxAction()
-					uv0:doCollectAI()
+				if var_1_0.type == ChapterConst.OpMove then
+					arg_1_0:doCollectCommonAction()
+					arg_1_0:doCollectAI()
+					arg_1_0:doMove()
+					arg_1_0:doTeleportByPortal()
+					getProxy(ChapterProxy):SetExtendChapterData(var_3_1.id, "FleetMoveDistance", #arg_3_0.move_path)
+				elseif var_1_0.type == ChapterConst.OpBox then
+					arg_1_0:AddBoxAction()
+					arg_1_0:doCollectAI()
 				else
-					uv0:doMapUpdate()
-					uv0:doAIUpdate()
-					uv0:doShipUpdate()
-					uv0:doBuffUpdate()
-					uv0:doCellFlagUpdate()
-					uv0:doExtraFlagUpdate()
+					arg_1_0:doMapUpdate()
+					arg_1_0:doAIUpdate()
+					arg_1_0:doShipUpdate()
+					arg_1_0:doBuffUpdate()
+					arg_1_0:doCellFlagUpdate()
+					arg_1_0:doExtraFlagUpdate()
 
-					if uv1.type == ChapterConst.OpRetreat then
-						if not uv1.id then
-							uv1.win = uv0.chapter:CheckChapterWillWin()
+					if var_1_0.type == ChapterConst.OpRetreat then
+						if not var_1_0.id then
+							var_1_0.win = arg_1_0.chapter:CheckChapterWillWin()
 
-							if uv1.win then
-								uv0.chapter:UpdateProgressOnRetreat()
-								slot1:addRemasterPassCount(uv0.chapter.id)
+							if var_1_0.win then
+								arg_1_0.chapter:UpdateProgressOnRetreat()
+								var_3_0:addRemasterPassCount(arg_1_0.chapter.id)
 							end
 
-							slot6 = pg.TimeMgr.GetInstance()
+							local var_3_5 = pg.TimeMgr.GetInstance()
+							local var_3_6 = var_3_0:getMapById(var_3_1:getConfig("map"))
 
-							if uv1.win and slot1:getMapById(slot2:getConfig("map")):getMapType() == Map.ELITE and slot6:IsSameDay(slot2:getStartTime(), slot6:GetServerTime()) then
+							if var_1_0.win and var_3_6:getMapType() == Map.ELITE and var_3_5:IsSameDay(var_3_1:getStartTime(), var_3_5:GetServerTime()) then
 								getProxy(DailyLevelProxy):EliteCountPlus()
 							end
 
-							if slot5 and #slot5 > 0 then
-								getProxy(ChapterProxy):AddExtendChapterDataArray(uv0.chapter.id, "ResultDrops", slot5)
+							if var_3_4 and #var_3_4 > 0 then
+								getProxy(ChapterProxy):AddExtendChapterDataArray(arg_1_0.chapter.id, "ResultDrops", var_3_4)
 
-								slot5 = nil
+								var_3_4 = nil
 							end
 
-							slot3 = slot1:FinishAutoFight(slot2.id)
+							var_3_2 = var_3_0:FinishAutoFight(var_3_1.id)
 
-							getProxy(ChapterProxy):SetLastFleetIndex(uv0.chapter:GetRegularFleetIds(), true)
+							local var_3_7 = arg_1_0.chapter:GetRegularFleetIds()
+
+							getProxy(ChapterProxy):SetLastFleetIndex(var_3_7, true)
 						end
 
-						uv0:doRetreat()
+						arg_1_0:doRetreat()
 
-						if not uv1.id then
-							slot4 = Clone(uv0.chapter)
+						if not var_1_0.id then
+							var_3_3 = Clone(arg_1_0.chapter)
 
-							uv0.chapter:CleanLevelData()
+							arg_1_0.chapter:CleanLevelData()
 						end
-					elseif uv1.type == ChapterConst.OpStory then
-						uv0:doCollectAI()
-						uv0:doPlayStory()
-					elseif uv1.type == ChapterConst.OpAmbush then
-						uv0:doAmbush()
-					elseif uv1.type == ChapterConst.OpStrategy then
-						uv0:doCollectAI()
-						uv0:doStrategy()
-					elseif uv1.type == ChapterConst.OpRepair then
-						uv0:doRepair()
-					elseif uv1.type == ChapterConst.OpSupply then
-						uv0:doSupply()
-					elseif uv1.type == ChapterConst.OpEnemyRound then
-						uv0:doCollectAI()
-						uv0:doEnemyRound()
-					elseif uv1.type == ChapterConst.OpSubState then
-						uv0:doSubState()
-					elseif uv1.type == ChapterConst.OpBarrier then
-						uv0:doBarrier()
-					elseif uv1.type == ChapterConst.OpRequest then
-						uv0:doRequest()
-					elseif uv1.type == ChapterConst.OpSkipBattle then
-						uv0.chapter:UpdateProgressAfterSkipBattle()
-						uv0:doSkipBattle()
-					elseif uv1.type == ChapterConst.OpPreClear then
-						uv0.chapter:CleanCurrentEnemy()
-						uv0:doSkipBattle()
-					elseif uv1.type == ChapterConst.OpSubTeleport then
-						uv0:doTeleportSub()
-						uv0:doTeleportByPortal()
+					elseif var_1_0.type == ChapterConst.OpStory then
+						arg_1_0:doCollectAI()
+						arg_1_0:doPlayStory()
+					elseif var_1_0.type == ChapterConst.OpAmbush then
+						arg_1_0:doAmbush()
+					elseif var_1_0.type == ChapterConst.OpStrategy then
+						arg_1_0:doCollectAI()
+						arg_1_0:doStrategy()
+					elseif var_1_0.type == ChapterConst.OpRepair then
+						arg_1_0:doRepair()
+					elseif var_1_0.type == ChapterConst.OpSupply then
+						arg_1_0:doSupply()
+					elseif var_1_0.type == ChapterConst.OpEnemyRound then
+						arg_1_0:doCollectAI()
+						arg_1_0:doEnemyRound()
+					elseif var_1_0.type == ChapterConst.OpSubState then
+						arg_1_0:doSubState()
+					elseif var_1_0.type == ChapterConst.OpBarrier then
+						arg_1_0:doBarrier()
+					elseif var_1_0.type == ChapterConst.OpRequest then
+						arg_1_0:doRequest()
+					elseif var_1_0.type == ChapterConst.OpSkipBattle then
+						arg_1_0.chapter:UpdateProgressAfterSkipBattle()
+						arg_1_0:doSkipBattle()
+					elseif var_1_0.type == ChapterConst.OpPreClear then
+						arg_1_0.chapter:CleanCurrentEnemy()
+						arg_1_0:doSkipBattle()
+					elseif var_1_0.type == ChapterConst.OpSubTeleport then
+						arg_1_0:doTeleportSub()
+						arg_1_0:doTeleportByPortal()
 					end
 				end
 
-				if uv1.type == ChapterConst.OpEnemyRound or uv1.type == ChapterConst.OpMove then
-					slot1:updateChapter(uv0.chapter, uv0.flag)
+				if var_1_0.type == ChapterConst.OpEnemyRound or var_1_0.type == ChapterConst.OpMove then
+					var_3_0:updateChapter(arg_1_0.chapter, arg_1_0.flag)
 				else
-					uv0.flag = bit.bor(uv0.flag, uv0.extraFlag)
+					arg_1_0.flag = bit.bor(arg_1_0.flag, arg_1_0.extraFlag)
 
-					slot1:updateChapter(uv0.chapter, uv0.flag)
+					var_3_0:updateChapter(arg_1_0.chapter, arg_1_0.flag)
 				end
 
-				if uv1.type == ChapterConst.OpSkipBattle then
-					uv0:sendNotification(GAME.CHAPTER_BATTLE_RESULT_REQUEST, {
+				if var_1_0.type == ChapterConst.OpSkipBattle then
+					arg_1_0:sendNotification(GAME.CHAPTER_BATTLE_RESULT_REQUEST, {
 						isSkipBattle = true
 					})
 
 					return
 				end
 
-				uv0:sendNotification(GAME.CHAPTER_OP_DONE, {
-					type = uv1.type,
-					id = uv1.id,
-					arg1 = uv1.arg1,
-					arg2 = uv1.arg2,
-					path = slot0.move_path,
-					fullpath = uv0.fullpath,
-					items = slot5,
-					exittype = uv1.exittype or 0,
-					aiActs = uv0.aiActs,
-					extraFlag = uv0.extraFlag,
-					oldLine = uv1.ordLine,
-					win = uv1.win,
-					teleportPaths = uv0.teleportPaths,
-					extendData = slot3,
-					finalChapterLevelData = slot4
+				arg_1_0:sendNotification(GAME.CHAPTER_OP_DONE, {
+					type = var_1_0.type,
+					id = var_1_0.id,
+					arg1 = var_1_0.arg1,
+					arg2 = var_1_0.arg2,
+					path = arg_3_0.move_path,
+					fullpath = arg_1_0.fullpath,
+					items = var_3_4,
+					exittype = var_1_0.exittype or 0,
+					aiActs = arg_1_0.aiActs,
+					extraFlag = arg_1_0.extraFlag,
+					oldLine = var_1_0.ordLine,
+					win = var_1_0.win,
+					teleportPaths = arg_1_0.teleportPaths,
+					extendData = var_3_2,
+					finalChapterLevelData = var_3_3
 				})
 			end
 		else
-			errorMsg(string.format("SLG操作%d 请求失效，重新拉取信息", uv1.type))
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("levelScene_operation", slot0.result))
+			errorMsg(string.format("SLG操作%d 请求失效，重新拉取信息", var_1_0.type))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("levelScene_operation", arg_3_0.result))
 
-			if uv1.type ~= ChapterConst.OpRequest and uv1.type ~= ChapterConst.OpRetreat and uv1.type ~= ChapterConst.OpSubTeleport then
-				uv0:sendNotification(GAME.CHAPTER_OP, {
+			if var_1_0.type ~= ChapterConst.OpRequest and var_1_0.type ~= ChapterConst.OpRetreat and var_1_0.type ~= ChapterConst.OpSubTeleport then
+				arg_1_0:sendNotification(GAME.CHAPTER_OP, {
 					type = ChapterConst.OpRequest,
-					id = uv1.id
+					id = var_1_0.id
 				})
 			end
 		end
 	end)
 end
 
-function slot0.PrepareChapterRetreat(slot0)
+function var_0_0.PrepareChapterRetreat(arg_4_0)
 	seriesAsync({
-		function (slot0)
-			if getProxy(ChapterProxy):getActiveChapter() and slot1:CheckChapterWillWin() and not slot1:IsRemaster() then
-				slot1:UpdateProgressOnRetreat()
+		function(arg_5_0)
+			local var_5_0 = getProxy(ChapterProxy):getActiveChapter()
 
-				slot3 = slot1:getConfig("defeat_story")
-				slot4 = false
+			if var_5_0 and var_5_0:CheckChapterWillWin() and not var_5_0:IsRemaster() then
+				var_5_0:UpdateProgressOnRetreat()
 
-				table.SerialIpairsAsync(slot1:getConfig("defeat_story_count"), function (slot0, slot1, slot2)
-					if uv0.defeatCount < slot1 then
-						slot2()
+				local var_5_1 = var_5_0:getConfig("defeat_story_count")
+				local var_5_2 = var_5_0:getConfig("defeat_story")
+				local var_5_3 = false
 
-						return
-					end
-
-					if not uv1[slot0] or pg.NewStoryMgr.GetInstance():IsPlayed(tostring(slot3)) then
-						slot2()
+				table.SerialIpairsAsync(var_5_1, function(arg_6_0, arg_6_1, arg_6_2)
+					if arg_6_1 > var_5_0.defeatCount then
+						arg_6_2()
 
 						return
 					end
 
-					if type(slot3) == "number" then
+					local var_6_0 = var_5_2[arg_6_0]
+
+					if not var_6_0 or pg.NewStoryMgr.GetInstance():IsPlayed(tostring(var_6_0)) then
+						arg_6_2()
+
+						return
+					end
+
+					if type(var_6_0) == "number" then
 						pg.m02:sendNotification(GAME.BEGIN_STAGE, {
 							system = SYSTEM_PERFORM,
-							stageId = slot3
+							stageId = var_6_0
 						})
-					elseif type(slot3) == "string" then
-						if ChapterOpCommand.PlayChapterStory(slot3, slot2, not uv2 and uv0:IsAutoFight()) then
-							uv2 = true
+					elseif type(var_6_0) == "string" then
+						if ChapterOpCommand.PlayChapterStory(var_6_0, arg_6_2, not var_5_3 and var_5_0:IsAutoFight()) then
+							var_5_3 = true
 						end
 					else
-						slot2()
+						arg_6_2()
 					end
-				end, slot0)
-
-				return
+				end, arg_5_0)
+			else
+				arg_5_0()
 			end
-
-			slot0()
 		end,
-		function (slot0)
+		function(arg_7_0)
 			pg.m02:sendNotification(GAME.CHAPTER_OP, {
 				type = ChapterConst.OpRetreat
 			})
-			slot0()
+			arg_7_0()
 		end
-	}, slot0)
+	}, arg_4_0)
 end
 
-function slot0.PlayChapterStory(slot0, slot1, slot2)
-	pg.NewStoryMgr.GetInstance():Play(slot0, slot1)
+function var_0_0.PlayChapterStory(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0 = pg.NewStoryMgr.GetInstance()
 
-	if not getProxy(SettingsProxy):GetStoryAutoPlayFlag() and slot2 and slot3:IsRunning() then
-		slot3:Puase()
+	var_8_0:Play(arg_8_0, arg_8_1)
+
+	if not getProxy(SettingsProxy):GetStoryAutoPlayFlag() and arg_8_2 and var_8_0:IsRunning() then
+		var_8_0:Puase()
+
+		local function var_8_1()
+			var_8_0:Resume()
+		end
+
 		pg.MsgboxMgr:GetInstance():ShowMsgBox({
 			hideYes = true,
-			parent = rtf(slot3._tf),
+			parent = rtf(var_8_0._tf),
 			type = MSGBOX_TYPE_STORY_CANCEL_TIP,
-			onYes = function ()
-				uv0()
-				uv1:TriggerAutoBtn()
+			onYes = function()
+				var_8_1()
+				var_8_0:TriggerAutoBtn()
 			end,
-			onNo = function ()
-				uv0:Resume()
-			end,
+			onNo = var_8_1,
 			weight = LayerWeightConst.TOP_LAYER
 		})
 
@@ -259,4 +277,4 @@ function slot0.PlayChapterStory(slot0, slot1, slot2)
 	end
 end
 
-return slot0
+return var_0_0

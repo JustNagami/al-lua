@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffHP",
+			pop = {},
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				maxHPRatio = 0.005
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -147,17 +159,5 @@ return {
 	stack = 1,
 	id = 16115,
 	icon = 16115,
-	last_effect = "Health",
-	effect_list = {
-		{
-			type = "BattleBuffHP",
-			pop = {},
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				maxHPRatio = 0.005
-			}
-		}
-	}
+	last_effect = "Health"
 }

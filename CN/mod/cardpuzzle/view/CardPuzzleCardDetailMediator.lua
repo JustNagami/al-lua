@@ -1,25 +1,26 @@
-slot0 = class("CardPuzzleCardDetailMediator", ContextMediator)
-slot0.DISPLAY_CARD_EFFECT = "DISPLAY_CARD_EFFECT"
+﻿local var_0_0 = class("CardPuzzleCardDetailMediator", ContextMediator)
 
-function slot0.register(slot0)
-	slot0:bind(uv0.DISPLAY_CARD_EFFECT, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+var_0_0.DISPLAY_CARD_EFFECT = "DISPLAY_CARD_EFFECT"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.DISPLAY_CARD_EFFECT, function(arg_2_0, arg_2_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = CardTowerCardEffectPreviewMediator,
 			viewComponent = CardTowerCardEffectPreviewWindow,
 			data = {
-				card = slot1
+				card = arg_2_1
 			}
 		}))
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_3_0)
 	return {}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot2 = slot1:getName()
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getName()
+	local var_4_1 = arg_4_1:getBody()
 end
 
-return slot0
+return var_0_0

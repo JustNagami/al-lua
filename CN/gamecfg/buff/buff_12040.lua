@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id = 12041,
+				time = 12,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -18,18 +31,5 @@ return {
 	stack = 1,
 	id = 12040,
 	icon = 12040,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id = 12041,
-				time = 12,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

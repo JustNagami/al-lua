@@ -1,51 +1,62 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleBuffHOT = class("BattleBuffHOT", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffHOT.__name = "BattleBuffHOT"
+﻿ys = ys or {}
 
-function slot0.Battle.BattleBuffHOT.Ctor(slot0, slot1)
-	uv0.Battle.BattleBuffHOT.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+
+var_0_0.Battle.BattleBuffHOT = class("BattleBuffHOT", var_0_0.Battle.BattleBuffEffect)
+var_0_0.Battle.BattleBuffHOT.__name = "BattleBuffHOT"
+
+function var_0_0.Battle.BattleBuffHOT.Ctor(arg_1_0, arg_1_1)
+	var_0_0.Battle.BattleBuffHOT.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot0.Battle.BattleBuffHOT.SetArgs(slot0, slot1, slot2)
-	slot0._number = slot0._tempData.arg_list.number or 0
-	slot0._numberBase = slot0._number
-	slot0._time = slot0._tempData.arg_list.time or 0
-	slot0._nextEffectTime = pg.TimeMgr.GetInstance():GetCombatTime() + slot0._time
-	slot0._maxHPRatio = slot0._tempData.arg_list.maxHPRatio or 0
-	slot0._currentHPRatio = slot0._tempData.arg_list.currentHPRatio or 0
-	slot0._incorruptible = slot0._tempData.arg_list.incorrupt
+function var_0_0.Battle.BattleBuffHOT.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0._number = arg_2_0._tempData.arg_list.number or 0
+	arg_2_0._numberBase = arg_2_0._number
+	arg_2_0._time = arg_2_0._tempData.arg_list.time or 0
+	arg_2_0._nextEffectTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg_2_0._time
+	arg_2_0._maxHPRatio = arg_2_0._tempData.arg_list.maxHPRatio or 0
+	arg_2_0._currentHPRatio = arg_2_0._tempData.arg_list.currentHPRatio or 0
+	arg_2_0._incorruptible = arg_2_0._tempData.arg_list.incorrupt
 end
 
-function slot0.Battle.BattleBuffHOT.onStack(slot0, slot1, slot2)
+function var_0_0.Battle.BattleBuffHOT.onStack(arg_3_0, arg_3_1, arg_3_2)
+	return
 end
 
-function slot0.Battle.BattleBuffHOT.onUpdate(slot0, slot1, slot2, slot3)
-	if slot0._nextEffectTime <= slot3.timeStamp then
-		slot1:UpdateHP(slot0:CalcNumber(slot1, slot2), {
+function var_0_0.Battle.BattleBuffHOT.onUpdate(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	if arg_4_3.timeStamp >= arg_4_0._nextEffectTime then
+		local var_4_0 = arg_4_0:CalcNumber(arg_4_1, arg_4_2)
+		local var_4_1 = {
 			isMiss = false,
 			isCri = false,
 			isHeal = true,
-			incorrupt = slot0._incorruptible
-		})
+			incorrupt = arg_4_0._incorruptible
+		}
 
-		if slot1:IsAlive() then
-			slot0._nextEffectTime = slot0._nextEffectTime + slot0._time
+		arg_4_1:UpdateHP(var_4_0, var_4_1)
+
+		if arg_4_1:IsAlive() then
+			arg_4_0._nextEffectTime = arg_4_0._nextEffectTime + arg_4_0._time
 		end
 	end
 end
 
-function slot0.Battle.BattleBuffHOT.onRemove(slot0, slot1, slot2)
-	slot1:UpdateHP(slot0:CalcNumber(slot1, slot2), {
+function var_0_0.Battle.BattleBuffHOT.onRemove(arg_5_0, arg_5_1, arg_5_2)
+	local var_5_0 = arg_5_0:CalcNumber(arg_5_1, arg_5_2)
+	local var_5_1 = {
 		isMiss = false,
 		isCri = false,
 		isHeal = true,
-		incorrupt = slot0._incorruptible
-	})
+		incorrupt = arg_5_0._incorruptible
+	}
+
+	arg_5_1:UpdateHP(var_5_0, var_5_1)
 end
 
-function slot0.Battle.BattleBuffHOT.CalcNumber(slot0, slot1, slot2)
-	slot3, slot4 = slot1:GetHP()
+function var_0_0.Battle.BattleBuffHOT.CalcNumber(arg_6_0, arg_6_1, arg_6_2)
+	local var_6_0, var_6_1 = arg_6_1:GetHP()
+	local var_6_2 = arg_6_1:GetAttrByName("healingRate")
+	local var_6_3 = math.max(0, var_6_0 * arg_6_0._currentHPRatio + var_6_1 * arg_6_0._maxHPRatio + arg_6_0._number)
 
-	return math.floor(math.max(0, slot3 * slot0._currentHPRatio + slot4 * slot0._maxHPRatio + slot0._number) * slot2._stack * slot1:GetAttrByName("healingRate"))
+	return (math.floor(var_6_3 * arg_6_2._stack * var_6_2))
 end

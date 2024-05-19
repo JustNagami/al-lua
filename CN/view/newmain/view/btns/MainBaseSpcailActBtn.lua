@@ -1,99 +1,104 @@
-slot0 = class("MainBaseSpcailActBtn")
+﻿local var_0_0 = class("MainBaseSpcailActBtn")
 
-function slot0.Ctor(slot0, slot1, slot2)
-	pg.DelegateInfo.New(slot0)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	pg.DelegateInfo.New(arg_1_0)
 
-	slot0.parentTf = slot1
-	slot0.event = slot2
-	slot0.isloading = false
+	arg_1_0.parentTf = arg_1_1
+	arg_1_0.event = arg_1_2
+	arg_1_0.isloading = false
 end
 
-function slot0.Init(slot0, slot1)
-	slot0.isScale = slot1
+function var_0_0.Init(arg_2_0, arg_2_1)
+	arg_2_0.isScale = arg_2_1
 
-	if slot0.isloading then
+	if arg_2_0.isloading then
 		return
 	end
 
-	if not slot0._tf then
-		slot0.isloading = true
+	if not arg_2_0._tf then
+		arg_2_0.isloading = true
 
-		ResourceMgr.Inst:getAssetAsync("ui/" .. slot0:GetUIName(), "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-			uv0.isloading = false
+		ResourceMgr.Inst:getAssetAsync("ui/" .. arg_2_0:GetUIName(), "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_3_0)
+			arg_2_0.isloading = false
 
-			if uv0.exited then
+			if arg_2_0.exited then
 				return
 			end
 
-			uv0._tf = Object.Instantiate(slot0, uv0.parentTf).transform
+			arg_2_0._tf = Object.Instantiate(arg_3_0, arg_2_0.parentTf).transform
 
-			uv0:OnRegister()
-			uv0:OnInit()
-			onButton(uv0, uv0._tf, function ()
-				uv0:OnClick()
+			arg_2_0:OnRegister()
+			arg_2_0:OnInit()
+			onButton(arg_2_0, arg_2_0._tf, function()
+				arg_2_0:OnClick()
 			end, SFX_MAIN)
 
-			if uv0.shouldHide then
-				setActive(uv0._tf, false)
+			if arg_2_0.shouldHide then
+				setActive(arg_2_0._tf, false)
 			end
 		end), true, true)
 	else
-		slot0:OnInit()
+		arg_2_0:OnInit()
 	end
 
-	slot0:CheckHide()
+	arg_2_0:CheckHide()
 end
 
-function slot0.Clear(slot0)
-	if not IsNil(slot0._tf) then
-		Destroy(slot0._tf.gameObject)
+function var_0_0.Clear(arg_5_0)
+	if not IsNil(arg_5_0._tf) then
+		Destroy(arg_5_0._tf.gameObject)
 
-		slot0._tf = nil
+		arg_5_0._tf = nil
 
-		slot0:OnClear()
+		arg_5_0:OnClear()
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0.exited = true
+function var_0_0.Dispose(arg_6_0)
+	arg_6_0.exited = true
 
-	pg.DelegateInfo.Dispose(slot0)
-	slot0:Clear()
+	pg.DelegateInfo.Dispose(arg_6_0)
+	arg_6_0:Clear()
 end
 
-function slot0.Refresh(slot0)
-	slot0:CheckHide()
+function var_0_0.Refresh(arg_7_0)
+	arg_7_0:CheckHide()
 end
 
-function slot0.CheckHide(slot0)
-	if slot0.shouldHide and not IsNil(slot0._tf) then
-		setActive(slot0._tf, true)
+function var_0_0.CheckHide(arg_8_0)
+	if arg_8_0.shouldHide and not IsNil(arg_8_0._tf) then
+		setActive(arg_8_0._tf, true)
 	end
 
-	slot0.shouldHide = false
+	arg_8_0.shouldHide = false
 end
 
-function slot0.Disable(slot0)
-	slot0.shouldHide = true
+function var_0_0.Disable(arg_9_0)
+	arg_9_0.shouldHide = true
 end
 
-function slot0.InShowTime(slot0)
+function var_0_0.InShowTime(arg_10_0)
 	assert("overview me !!!")
 end
 
-function slot0.GetUIName(slot0)
+function var_0_0.GetUIName(arg_11_0)
+	return
 end
 
-function slot0.OnClick(slot0)
+function var_0_0.OnClick(arg_12_0)
+	return
 end
 
-function slot0.OnRegister(slot0)
+function var_0_0.OnRegister(arg_13_0)
+	return
 end
 
-function slot0.OnInit(slot0)
+function var_0_0.OnInit(arg_14_0)
+	return
 end
 
-function slot0.OnClear(slot0)
+function var_0_0.OnClear(arg_15_0)
+	return
 end
 
-return slot0
+return var_0_0

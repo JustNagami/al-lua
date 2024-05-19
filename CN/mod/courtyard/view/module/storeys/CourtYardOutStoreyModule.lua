@@ -1,21 +1,21 @@
-slot0 = class("CourtYardOutStoreyModule", import(".CourtYardStoreyModule"))
-slot1 = true
+﻿local var_0_0 = class("CourtYardOutStoreyModule", import(".CourtYardStoreyModule"))
+local var_0_1 = true
 
-function slot0.OnInit(slot0)
-	slot0.scrollrect = slot0._tf:Find("scrollRect")
-	slot0.scroll = slot0.scrollrect:GetComponent(typeof(ScrollRect))
-	slot0.rectTF = slot0._tf:Find("scrollRect/bg/rect")
-	slot0.gridsTF = slot0.rectTF:Find("grids")
-	slot0.rootTF = slot0._tf:Find("root")
-	slot0.selectedTF = slot0._tf:Find("root/drag")
-	slot0.rotationBtn = slot0.selectedTF:Find("panel/rotation")
-	slot0.removeBtn = slot0.selectedTF:Find("panel/cancel")
-	slot0.confirmBtn = slot0.selectedTF:Find("panel/ok")
-	slot0.dragBtn = CourtYardStoreyDragBtn.New(slot0.selectedTF:Find("panel/animroot"), slot0.rectTF)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.scrollrect = arg_1_0._tf:Find("scrollRect")
+	arg_1_0.scroll = arg_1_0.scrollrect:GetComponent(typeof(ScrollRect))
+	arg_1_0.rectTF = arg_1_0._tf:Find("scrollRect/bg/rect")
+	arg_1_0.gridsTF = arg_1_0.rectTF:Find("grids")
+	arg_1_0.rootTF = arg_1_0._tf:Find("root")
+	arg_1_0.selectedTF = arg_1_0._tf:Find("root/drag")
+	arg_1_0.rotationBtn = arg_1_0.selectedTF:Find("panel/rotation")
+	arg_1_0.removeBtn = arg_1_0.selectedTF:Find("panel/cancel")
+	arg_1_0.confirmBtn = arg_1_0.selectedTF:Find("panel/ok")
+	arg_1_0.dragBtn = CourtYardStoreyDragBtn.New(arg_1_0.selectedTF:Find("panel/animroot"), arg_1_0.rectTF)
 end
 
-function slot0.EnableZoom(slot0, slot1)
-	slot0.scroll.enabled = slot1
+function var_0_0.EnableZoom(arg_2_0, arg_2_1)
+	arg_2_0.scroll.enabled = arg_2_1
 end
 
-return slot0
+return var_0_0

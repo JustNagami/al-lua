@@ -1,152 +1,183 @@
-slot0 = class("SpringFestivalTownScene", import("..TemplateMV.BackHillTemplate"))
+﻿local var_0_0 = class("SpringFestivalTownScene", import("..TemplateMV.BackHillTemplate"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "SpringFestivalTownUI"
 end
 
-function slot0.getBGM(slot0)
+function var_0_0.getBGM(arg_2_0)
 	return "story-china"
 end
 
-slot0.HUB_ID = 5
-slot0.edge2area = {
+var_0_0.HUB_ID = 5
+var_0_0.edge2area = {
 	default = "_middle",
 	["9_9"] = "_bottom",
 	["4_4"] = "_front"
 }
 
-function slot0.init(slot0)
-	slot0.top = slot0:findTF("top")
-	slot0._closeBtn = slot0:findTF("top/return_btn")
-	slot0._homeBtn = slot0:findTF("top/return_main_btn")
-	slot0._helpBtn = slot0:findTF("top/help_btn")
-	slot0._map = slot0:findTF("map")
+function var_0_0.init(arg_3_0)
+	arg_3_0.top = arg_3_0:findTF("top")
+	arg_3_0._closeBtn = arg_3_0:findTF("top/return_btn")
+	arg_3_0._homeBtn = arg_3_0:findTF("top/return_main_btn")
+	arg_3_0._helpBtn = arg_3_0:findTF("top/help_btn")
+	arg_3_0._map = arg_3_0:findTF("map")
 
-	for slot4 = 0, slot0._map.childCount - 1 do
-		slot5 = slot0._map:GetChild(slot4)
-		slot0["_" .. go(slot5).name] = slot5
+	for iter_3_0 = 0, arg_3_0._map.childCount - 1 do
+		local var_3_0 = arg_3_0._map:GetChild(iter_3_0)
+		local var_3_1 = go(var_3_0).name
+
+		arg_3_0["_" .. var_3_1] = var_3_0
 	end
 
-	slot0._front = slot0._map:Find("top")
-	slot0._middle = slot0._map:Find("middle")
-	slot0._bottom = slot0._map:Find("bottom")
-	slot0.containers = {
-		slot0._front,
-		slot0._middle,
-		slot0._bottom
+	arg_3_0._front = arg_3_0._map:Find("top")
+	arg_3_0._middle = arg_3_0._map:Find("middle")
+	arg_3_0._bottom = arg_3_0._map:Find("bottom")
+	arg_3_0.containers = {
+		arg_3_0._front,
+		arg_3_0._middle,
+		arg_3_0._bottom
 	}
-	slot0._shipTpl = slot0._map:Find("ship")
-	slot0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.SpringFestivalTownGraph"))
-	slot0._upper = slot0:findTF("upper")
-	slot0.usableTxt = slot0.top:Find("usable_count/Text"):GetComponent(typeof(Text))
-	slot0.diedieleTF = slot0.top:Find("diediele_count")
-	slot0.diedieleTxt = slot0.diedieleTF:Find("Text"):GetComponent(typeof(Text))
-	slot0.effectReq = LoadPrefabRequestPackage.New("ui/map_donghuangchunjie", "map_donghuangchunjie", function (slot0)
-		setParent(slot0, uv0._map, false)
+	arg_3_0._shipTpl = arg_3_0._map:Find("ship")
+	arg_3_0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.SpringFestivalTownGraph"))
+	arg_3_0._upper = arg_3_0:findTF("upper")
+	arg_3_0.usableTxt = arg_3_0.top:Find("usable_count/Text"):GetComponent(typeof(Text))
+	arg_3_0.diedieleTF = arg_3_0.top:Find("diediele_count")
+	arg_3_0.diedieleTxt = arg_3_0.diedieleTF:Find("Text"):GetComponent(typeof(Text))
+	arg_3_0.effectReq = LoadPrefabRequestPackage.New("ui/map_donghuangchunjie", "map_donghuangchunjie", function(arg_4_0)
+		setParent(arg_4_0, arg_3_0._map, false)
 
-		for slot7 = 0, slot0:GetComponentsInChildren(typeof(Renderer)).Length - 1 do
-			slot3[slot7].sortingOrder = GameObject.Find("UICamera/Canvas"):GetComponent(typeof(Canvas)).sortingOrder + 1
+		local var_4_0 = GameObject.Find("UICamera/Canvas"):GetComponent(typeof(Canvas)).sortingOrder
+		local var_4_1 = arg_4_0:GetComponentsInChildren(typeof(Renderer))
+
+		for iter_4_0 = 0, var_4_1.Length - 1 do
+			var_4_1[iter_4_0].sortingOrder = var_4_0 + 1
 		end
 
-		uv0.mapeffect = slot0
+		arg_3_0.mapeffect = arg_4_0
 	end):Start()
 
-	slot0:managedTween(LeanTween.value, nil, go(slot0._map), System.Action_UnityEngine_Color(function (slot0)
-		go(uv0._map):GetComponent(typeof(Image)).material:SetColor("_Color", slot0)
+	arg_3_0:managedTween(LeanTween.value, nil, go(arg_3_0._map), System.Action_UnityEngine_Color(function(arg_5_0)
+		go(arg_3_0._map):GetComponent(typeof(Image)).material:SetColor("_Color", arg_5_0)
 	end), Color(0, 0, 0, 0), Color(1, 1, 0, 0), 1.5):setLoopPingPong(-1)
 end
 
-function slot0.didEnter(slot0)
-	slot1 = getProxy(MiniGameProxy)
+function var_0_0.didEnter(arg_6_0)
+	local var_6_0 = getProxy(MiniGameProxy)
 
-	onButton(slot0, slot0._closeBtn, function ()
-		uv0:emit(uv1.ON_BACK)
+	onButton(arg_6_0, arg_6_0._closeBtn, function()
+		arg_6_0:emit(var_0_0.ON_BACK)
 	end)
-	onButton(slot0, slot0.diedieleTF, function ()
-		uv0:emit(NewYearFestivalMediator.ON_OPEN_PILE_SIGNED)
+	onButton(arg_6_0, arg_6_0.diedieleTF, function()
+		arg_6_0:emit(NewYearFestivalMediator.ON_OPEN_PILE_SIGNED)
 	end)
-	onButton(slot0, slot0._homeBtn, function ()
-		uv0:emit(uv1.ON_HOME)
+	onButton(arg_6_0, arg_6_0._homeBtn, function()
+		arg_6_0:emit(var_0_0.ON_HOME)
 	end)
-	onButton(slot0, slot0._helpBtn, function ()
+	onButton(arg_6_0, arg_6_0._helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_chunjie_feast.tip
 		})
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "kaihongbao", function ()
-		uv0:emit(NewYearFestivalMediator.GO_SUBLAYER, Context.New({
+	arg_6_0:InitFacilityCross(arg_6_0._map, arg_6_0._upper, "kaihongbao", function()
+		arg_6_0:emit(NewYearFestivalMediator.GO_SUBLAYER, Context.New({
 			mediator = RedPacketMediator,
 			viewComponent = RedPacketLayer,
-			onRemoved = function ()
-				if uv0.mapeffect then
-					setActive(uv0.mapeffect, true)
+			onRemoved = function()
+				if arg_6_0.mapeffect then
+					setActive(arg_6_0.mapeffect, true)
 				end
 			end
-		}), function ()
-			if uv0.mapeffect then
-				setActive(uv0.mapeffect, false)
+		}), function()
+			if arg_6_0.mapeffect then
+				setActive(arg_6_0.mapeffect, false)
 			end
 		end)
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "danianshou", function ()
-		uv0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.ACTIVITY, {
+	arg_6_0:InitFacilityCross(arg_6_0._map, arg_6_0._upper, "danianshou", function()
+		arg_6_0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.ACTIVITY, {
 			id = ActivityConst.BEAT_MONSTER_NIAN_2020
 		})
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "dafuweng", function ()
-		uv0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.ACTIVITY, {
+	arg_6_0:InitFacilityCross(arg_6_0._map, arg_6_0._upper, "dafuweng", function()
+		arg_6_0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.ACTIVITY, {
 			id = ActivityConst.MONOPOLY_2020
 		})
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "diediele", function ()
+	arg_6_0:InitFacilityCross(arg_6_0._map, arg_6_0._upper, "diediele", function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 9)
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "jianzao", function ()
-		uv0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.GETBOAT, {
+	arg_6_0:InitFacilityCross(arg_6_0._map, arg_6_0._upper, "jianzao", function()
+		arg_6_0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.GETBOAT, {
 			projectName = "new",
 			page = 1
 		})
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "sishu", function ()
-		uv0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.COLORING)
+	arg_6_0:InitFacilityCross(arg_6_0._map, arg_6_0._upper, "sishu", function()
+		arg_6_0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.COLORING)
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "pifushangdian", function ()
-		uv0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.SKINSHOP)
+	arg_6_0:InitFacilityCross(arg_6_0._map, arg_6_0._upper, "pifushangdian", function()
+		arg_6_0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.SKINSHOP)
 	end)
-	pg.UIMgr.GetInstance():OverlayPanel(slot0.top, false)
-	slot0:InitStudents(ActivityConst.ACTIVITY_478, 3, 5)
-	slot0:UpdateView()
+	pg.UIMgr.GetInstance():OverlayPanel(arg_6_0.top, false)
+	arg_6_0:InitStudents(ActivityConst.ACTIVITY_478, 3, 5)
+	arg_6_0:UpdateView()
 end
 
-function slot0.UpdateView(slot0)
-	slot1, slot2 = nil
+function var_0_0.UpdateView(arg_20_0)
+	local var_20_0
+	local var_20_1
+	local var_20_2 = getProxy(ActivityProxy)
+	local var_20_3 = getProxy(MiniGameProxy)
+	local var_20_4 = arg_20_0._upper:Find("danianshou/tip")
+	local var_20_5 = var_20_2:getActivityById(ActivityConst.BEAT_MONSTER_NIAN_2020)
 
-	setActive(slot0._upper:Find("danianshou/tip"), getProxy(ActivityProxy):getActivityById(ActivityConst.BEAT_MONSTER_NIAN_2020) and slot2:readyToAchieve())
-	setActive(slot0._upper:Find("dafuweng/tip"), slot3:getActivityById(ActivityConst.MONOPOLY_2020) and slot2:readyToAchieve())
-	setActive(slot0._upper:Find("sishu/tip"), getProxy(ColoringProxy):CheckTodayTip())
-	setActive(slot0._upper:Find("jianzao/tip"), false)
-	setActive(slot0._upper:Find("pifushangdian/tip"), false)
-	setActive(slot0._upper:Find("kaihongbao/tip"), RedPacketLayer.isShowRedPoint())
-	setActive(slot0._upper:Find("diediele/tip"), getProxy(MiniGameProxy):GetHubByHubId(slot0.HUB_ID).count > 0)
-	slot0:UpdateDieDieleCnt(slot5)
+	setActive(var_20_4, var_20_5 and var_20_5:readyToAchieve())
+
+	local var_20_6 = arg_20_0._upper:Find("dafuweng/tip")
+	local var_20_7 = var_20_2:getActivityById(ActivityConst.MONOPOLY_2020)
+
+	setActive(var_20_6, var_20_7 and var_20_7:readyToAchieve())
+
+	local var_20_8 = arg_20_0._upper:Find("sishu/tip")
+
+	setActive(var_20_8, getProxy(ColoringProxy):CheckTodayTip())
+
+	local var_20_9 = arg_20_0._upper:Find("jianzao/tip")
+
+	setActive(var_20_9, false)
+
+	local var_20_10 = arg_20_0._upper:Find("pifushangdian/tip")
+
+	setActive(var_20_10, false)
+
+	local var_20_11 = arg_20_0._upper:Find("kaihongbao/tip")
+
+	setActive(var_20_11, RedPacketLayer.isShowRedPoint())
+
+	local var_20_12 = var_20_3:GetHubByHubId(arg_20_0.HUB_ID)
+	local var_20_13 = arg_20_0._upper:Find("diediele/tip")
+
+	setActive(var_20_13, var_20_12.count > 0)
+	arg_20_0:UpdateDieDieleCnt(var_20_12)
 end
 
-function slot0.UpdateDieDieleCnt(slot0, slot1)
-	slot0.usableTxt.text = "X" .. slot1.count
-	slot0.diedieleTxt.text = slot1.usedtime .. "/" .. slot1:getConfig("reward_need")
+function var_0_0.UpdateDieDieleCnt(arg_21_0, arg_21_1)
+	arg_21_0.usableTxt.text = "X" .. arg_21_1.count
+	arg_21_0.diedieleTxt.text = arg_21_1.usedtime .. "/" .. arg_21_1:getConfig("reward_need")
 end
 
-function slot0.TryPlayStory(slot0)
+function var_0_0.TryPlayStory(arg_22_0)
+	return
 end
 
-function slot0.willExit(slot0)
-	slot0.effectReq:Stop()
+function var_0_0.willExit(arg_23_0)
+	arg_23_0.effectReq:Stop()
 
-	slot0.mapeffect = nil
+	arg_23_0.mapeffect = nil
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.top, slot0._tf)
-	slot0:clearStudents()
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_23_0.top, arg_23_0._tf)
+	arg_23_0:clearStudents()
 end
 
-return slot0
+return var_0_0

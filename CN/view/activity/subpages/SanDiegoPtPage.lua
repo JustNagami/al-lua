@@ -1,11 +1,11 @@
-slot0 = class("SanDiegoPtPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var_0_0 = class("SanDiegoPtPage", import(".TemplatePage.PtTemplatePage"))
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
-	onButton(slot0, slot0.battleBtn, function ()
-		uv0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+function var_0_0.OnFirstFlush(arg_1_0)
+	var_0_0.super.OnFirstFlush(arg_1_0)
+	onButton(arg_1_0, arg_1_0.battleBtn, function()
+		arg_1_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("help_btn", slot0.bg), function ()
+	onButton(arg_1_0, arg_1_0:findTF("help_btn", arg_1_0.bg), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("littleSanDiego_npc")
@@ -13,4 +13,4 @@ function slot0.OnFirstFlush(slot0)
 	end, SFX_PANEL)
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				time = 35,
+				target = "TargetSelf",
+				skill_id = 10550
+			}
+		}
+	},
 	{
 		desc = "每隔35秒，回复全队耐久，回复量为{namecode:98}耐久的1.0%",
 		addition = {
@@ -69,18 +82,5 @@ return {
 	stack = 1,
 	id = 10550,
 	icon = 10550,
-	last_effect = "Health",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				time = 35,
-				target = "TargetSelf",
-				skill_id = 10550
-			}
-		}
-	}
+	last_effect = "Health"
 }

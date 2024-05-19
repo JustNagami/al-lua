@@ -1,116 +1,126 @@
-slot0 = class("SettingsSecondPwLimitedOpPanle", import(".SettingsBasePanel"))
+﻿local var_0_0 = class("SettingsSecondPwLimitedOpPanle", import(".SettingsBasePanel"))
 
-function slot0.GetUIName(slot0)
+function var_0_0.GetUIName(arg_1_0)
 	return "SettingsSecondPwLimitedOp"
 end
 
-function slot0.GetTitle(slot0)
+function var_0_0.GetTitle(arg_2_0)
 	return i18n("Settings_title_Secpwlimop")
 end
 
-function slot0.GetTitleEn(slot0)
+function var_0_0.GetTitleEn(arg_3_0)
 	return "  / PROTECTION LIST"
 end
 
-function slot0.OnInit(slot0)
-	slot0.uiList = UIItemList.New(findTF(slot0._tf, "options"), findTF(slot0._tf, "options/notify_tpl"))
+function var_0_0.OnInit(arg_4_0)
+	arg_4_0.uiList = UIItemList.New(findTF(arg_4_0._tf, "options"), findTF(arg_4_0._tf, "options/notify_tpl"))
 
-	slot0.uiList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:UpdateItem(slot1 + 1, slot2)
+	arg_4_0.uiList:make(function(arg_5_0, arg_5_1, arg_5_2)
+		if arg_5_0 == UIItemList.EventUpdate then
+			arg_4_0:UpdateItem(arg_5_1 + 1, arg_5_2)
 		end
 	end)
-	slot0:SetData()
+	arg_4_0:SetData()
 end
 
-function slot0.SetData(slot0)
-	slot0.rawdata = getProxy(SecondaryPWDProxy):getRawData()
+function var_0_0.SetData(arg_6_0)
+	arg_6_0.rawdata = getProxy(SecondaryPWDProxy):getRawData()
 end
 
-function slot0.UpdateItem(slot0, slot1, slot2)
-	slot3 = slot0.list[slot1]
-	slot4 = slot3.key
+function var_0_0.UpdateItem(arg_7_0, arg_7_1, arg_7_2)
+	local var_7_0 = arg_7_0.list[arg_7_1]
+	local var_7_1 = var_7_0.key
 
-	findTF(slot2, "mask/Text"):GetComponent("ScrollText"):SetText(slot3.title)
+	findTF(arg_7_2, "mask/Text"):GetComponent("ScrollText"):SetText(var_7_0.title)
 
-	slot6 = pg.SecondaryPWDMgr.GetInstance()
+	local var_7_2 = pg.SecondaryPWDMgr.GetInstance()
 
-	onButton(slot0, slot2, function ()
-		slot1 = nil
+	onButton(arg_7_0, arg_7_2, function()
+		local var_8_0 = table.contains(arg_7_0.rawdata.system_list, var_7_1)
+		local var_8_1
 
-		if not table.contains(uv0.rawdata.system_list, uv1) then
-			slot1 = Clone(uv0.rawdata.system_list)
-			slot1[#slot1 + 1] = uv1
+		if not var_8_0 then
+			var_8_1 = Clone(arg_7_0.rawdata.system_list)
+			var_8_1[#var_8_1 + 1] = var_7_1
 
-			table.sort(slot1, function (slot0, slot1)
-				return slot0 < slot1
+			table.sort(var_8_1, function(arg_9_0, arg_9_1)
+				return arg_9_0 < arg_9_1
 			end)
-		elseif slot0 then
-			for slot5 = #Clone(uv0.rawdata.system_list), 1, -1 do
-				if slot1[slot5] == uv1 then
-					table.remove(slot1, slot5)
+		elseif var_8_0 then
+			var_8_1 = Clone(arg_7_0.rawdata.system_list)
+
+			for iter_8_0 = #var_8_1, 1, -1 do
+				if var_8_1[iter_8_0] == var_7_1 then
+					table.remove(var_8_1, iter_8_0)
 				end
 			end
 		end
 
-		uv2:ChangeSetting(slot1, function ()
-			uv0:UpdateBtnsState()
+		var_7_2:ChangeSetting(var_8_1, function()
+			arg_7_0:UpdateBtnsState()
 		end)
 	end, SFX_UI_TAG)
 end
 
-function slot0.UpdateBtnsState(slot0)
-	if not slot0:IsLoaded() then
+function var_0_0.UpdateBtnsState(arg_11_0)
+	if not arg_11_0:IsLoaded() then
 		return
 	end
 
-	function slot1(slot0, slot1)
-		slot3 = table.contains(uv0.rawdata.system_list, slot0.key)
-		slot1:GetComponent(typeof(Button)).interactable = uv0.rawdata.state > 0
+	local function var_11_0(arg_12_0, arg_12_1)
+		local var_12_0 = arg_12_0.key
+		local var_12_1 = table.contains(arg_11_0.rawdata.system_list, var_12_0)
 
-		triggerToggle(slot1:Find("on"), slot3)
-		triggerToggle(slot1:Find("off"), not slot3)
+		arg_12_1:GetComponent(typeof(Button)).interactable = arg_11_0.rawdata.state > 0
+
+		triggerToggle(arg_12_1:Find("on"), var_12_1)
+		triggerToggle(arg_12_1:Find("off"), not var_12_1)
 	end
 
-	slot0.uiList:eachActive(function (slot0, slot1)
-		uv1(uv0.list[slot0 + 1], slot1)
+	arg_11_0.uiList:eachActive(function(arg_13_0, arg_13_1)
+		local var_13_0 = arg_11_0.list[arg_13_0 + 1]
+
+		var_11_0(var_13_0, arg_13_1)
 	end)
 end
 
-function slot0.OnUpdate(slot0)
-	slot0.list = slot0:GetList()
+function var_0_0.OnUpdate(arg_14_0)
+	arg_14_0.list = arg_14_0:GetList()
 
-	slot0.uiList:align(#slot0.list)
-	slot0:UpdateBtnsState()
+	arg_14_0.uiList:align(#arg_14_0.list)
+	arg_14_0:UpdateBtnsState()
 end
 
-function slot0.GetList(slot0)
-	slot1 = pg.SecondaryPWDMgr.GetInstance()
-
-	for slot6 = #{
+function var_0_0.GetList(arg_15_0)
+	local var_15_0 = pg.SecondaryPWDMgr.GetInstance()
+	local var_15_1 = {
 		{
-			key = slot1.UNLOCK_SHIP,
+			key = var_15_0.UNLOCK_SHIP,
 			title = i18n("words_settings_unlock_ship")
 		},
 		{
-			key = slot1.RESOLVE_EQUIPMENT,
+			key = var_15_0.RESOLVE_EQUIPMENT,
 			title = i18n("words_settings_resolve_equip")
 		},
 		{
-			key = slot1.UNLOCK_COMMANDER,
+			key = var_15_0.UNLOCK_COMMANDER,
 			title = i18n("words_settings_unlock_commander")
 		},
 		{
-			key = slot1.CREATE_INHERIT,
+			key = var_15_0.CREATE_INHERIT,
 			title = i18n("words_settings_create_inherit")
 		}
-	}, 1, -1 do
-		if not table.contains(slot1.LIMITED_OPERATION, slot2[slot6].key) then
-			table.remove(slot2, slot6)
+	}
+
+	for iter_15_0 = #var_15_1, 1, -1 do
+		local var_15_2 = var_15_1[iter_15_0]
+
+		if not table.contains(var_15_0.LIMITED_OPERATION, var_15_2.key) then
+			table.remove(var_15_1, iter_15_0)
 		end
 	end
 
-	return slot2
+	return var_15_1
 end
 
-return slot0
+return var_0_0

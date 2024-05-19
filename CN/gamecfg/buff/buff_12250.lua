@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "先锋领舰时自身减伤、小海小圣常驻减伤",
-	name = "未经磨练的骑士",
-	init_effect = "",
-	time = 0,
-	color = "blue",
-	picture = "",
-	desc = "先锋领舰时自身减伤、小海小圣常驻减伤",
-	stack = 1,
-	id = 12250,
-	icon = 12250,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -49,5 +28,26 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "先锋领舰时自身减伤、小海小圣常驻减伤",
+	name = "未经磨练的骑士",
+	init_effect = "",
+	time = 0,
+	color = "blue",
+	picture = "",
+	desc = "先锋领舰时自身减伤、小海小圣常驻减伤",
+	stack = 1,
+	id = 12250,
+	icon = 12250,
+	last_effect = ""
 }

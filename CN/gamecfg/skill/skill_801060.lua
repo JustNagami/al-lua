@@ -1,4 +1,31 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 163941
+			}
+		},
+		{
+			target_choise = "TargetSelf",
+			type = "BattleSkillManualWeaponReloadBoost",
+			arg_list = {
+				value = 1,
+				weaponType = "TorpedoWeapon"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -216,32 +243,5 @@ return {
 	id = 801060,
 	picture = "0",
 	castCV = "skill",
-	desc = "",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 163941
-			}
-		},
-		{
-			target_choise = "TargetSelf",
-			type = "BattleSkillManualWeaponReloadBoost",
-			arg_list = {
-				value = 1,
-				weaponType = "TorpedoWeapon"
-			}
-		}
-	}
+	desc = ""
 }

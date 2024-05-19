@@ -1,1 +1,1 @@
-return class("SNMainPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿return (class("SNMainPage", import(".TemplatePage.PreviewTemplatePage")))

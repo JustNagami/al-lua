@@ -1,5 +1,5 @@
-slot0 = class("GuildOfficeLogPage", import("....base.BaseSubView"))
-slot1 = {
+﻿local var_0_0 = class("GuildOfficeLogPage", import("....base.BaseSubView"))
+local var_0_1 = {
 	{
 		GuildConst.TYPE_SUPPLY,
 		GuildConst.START_BATTLE,
@@ -15,144 +15,151 @@ slot1 = {
 	}
 }
 
-function slot0.Flag2Filter(slot0, slot1)
-	slot2 = {}
+function var_0_0.Flag2Filter(arg_1_0, arg_1_1)
+	local var_1_0 = {}
 
-	for slot6, slot7 in ipairs(uv0) do
-		if bit.band(slot1, bit.lshift(1, slot6)) > 0 then
-			for slot12, slot13 in ipairs(slot7) do
-				table.insert(slot2, slot13)
+	for iter_1_0, iter_1_1 in ipairs(var_0_1) do
+		local var_1_1 = bit.lshift(1, iter_1_0)
+
+		if bit.band(arg_1_1, var_1_1) > 0 then
+			for iter_1_2, iter_1_3 in ipairs(iter_1_1) do
+				table.insert(var_1_0, iter_1_3)
 			end
 		end
 	end
 
-	return slot2
+	return var_1_0
 end
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_2_0)
 	return "GuildOfficeLogPage"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.uilist = UIItemList.New(slot0:findTF("frame/window/sliders/list/content"), slot0:findTF("frame/window/sliders/list/content/tpl"))
+function var_0_0.OnLoaded(arg_3_0)
+	arg_3_0.uilist = UIItemList.New(arg_3_0:findTF("frame/window/sliders/list/content"), arg_3_0:findTF("frame/window/sliders/list/content/tpl"))
 
-	setText(slot0:findTF("frame/window/top/bg/infomation/title"), i18n("guild_log_title"))
+	setText(arg_3_0:findTF("frame/window/top/bg/infomation/title"), i18n("guild_log_title"))
 
-	slot0.btnAll = slot0:findTF("frame/window/sliders/filter/1")
-	slot0.btns = {
-		slot0:findTF("frame/window/sliders/filter/2"),
-		slot0:findTF("frame/window/sliders/filter/3"),
-		slot0:findTF("frame/window/sliders/filter/4")
+	arg_3_0.btnAll = arg_3_0:findTF("frame/window/sliders/filter/1")
+	arg_3_0.btns = {
+		arg_3_0:findTF("frame/window/sliders/filter/2"),
+		arg_3_0:findTF("frame/window/sliders/filter/3"),
+		arg_3_0:findTF("frame/window/sliders/filter/4")
 	}
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0._tf:Find("frame/window/top/btnBack"), function ()
-		uv0:Close()
+function var_0_0.OnInit(arg_4_0)
+	onButton(arg_4_0, arg_4_0._tf:Find("frame/window/top/btnBack"), function()
+		arg_4_0:Close()
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf:Find("frame"), function ()
-		uv0:Close()
+	onButton(arg_4_0, arg_4_0._tf:Find("frame"), function()
+		arg_4_0:Close()
+	end, SFX_PANEL)
+	onButton(arg_4_0, arg_4_0.btnAll, function()
+		arg_4_0:SelectAll()
 	end, SFX_PANEL)
 
-	function slot4()
-		uv0:SelectAll()
-	end
-
-	slot5 = SFX_PANEL
-
-	onButton(slot0, slot0.btnAll, slot4, slot5)
-
-	for slot4, slot5 in ipairs(slot0.btns) do
-		onButton(slot0, slot5, function ()
-			if uv0.allFlags ~= uv0.flags and bit.band(uv0.flags, bit.lshift(1, uv1)) > 0 then
-				uv0:UnSelectFlag(uv1, uv2)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.btns) do
+		onButton(arg_4_0, iter_4_1, function()
+			if arg_4_0.allFlags ~= arg_4_0.flags and bit.band(arg_4_0.flags, bit.lshift(1, iter_4_0)) > 0 then
+				arg_4_0:UnSelectFlag(iter_4_0, iter_4_1)
 			else
-				uv0:SelectFlag(uv1, uv2)
+				arg_4_0:SelectFlag(iter_4_0, iter_4_1)
 			end
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.SelectAll(slot0)
-	slot0.flags = 0
+function var_0_0.SelectAll(arg_9_0)
+	arg_9_0.flags = 0
 
-	for slot4, slot5 in pairs(slot0.btns) do
-		setActive(slot5:Find("sel"), false)
+	for iter_9_0, iter_9_1 in pairs(arg_9_0.btns) do
+		setActive(iter_9_1:Find("sel"), false)
 
-		slot0.flags = bit.bor(slot0.flags, bit.lshift(1, slot4))
+		arg_9_0.flags = bit.bor(arg_9_0.flags, bit.lshift(1, iter_9_0))
 	end
 
-	setActive(slot0.btnAll:Find("sel"), true)
-	slot0:Filter()
+	setActive(arg_9_0.btnAll:Find("sel"), true)
+	arg_9_0:Filter()
 end
 
-function slot0.UnSelectFlag(slot0, slot1, slot2)
-	setActive(slot2:Find("sel"), false)
+function var_0_0.UnSelectFlag(arg_10_0, arg_10_1, arg_10_2)
+	setActive(arg_10_2:Find("sel"), false)
 
-	if bit.bxor(slot0.flags, bit.lshift(1, slot1)) == 0 then
-		slot0:SelectAll()
+	local var_10_0 = bit.bxor(arg_10_0.flags, bit.lshift(1, arg_10_1))
+
+	if var_10_0 == 0 then
+		arg_10_0:SelectAll()
 	else
-		slot0.flags = slot3
+		arg_10_0.flags = var_10_0
 
-		slot0:Filter()
+		arg_10_0:Filter()
 	end
 end
 
-function slot0.SelectFlag(slot0, slot1, slot2)
-	function slot4()
-		setActive(uv0:Find("sel"), true)
-		setActive(uv1.btnAll:Find("sel"), false)
+function var_0_0.SelectFlag(arg_11_0, arg_11_1, arg_11_2)
+	local var_11_0 = arg_11_0.flags
 
-		uv1.flags = bit.bor(uv1.flags, bit.lshift(1, uv2))
+	local function var_11_1()
+		setActive(arg_11_2:Find("sel"), true)
+		setActive(arg_11_0.btnAll:Find("sel"), false)
 
-		uv1:Filter()
+		arg_11_0.flags = bit.bor(arg_11_0.flags, bit.lshift(1, arg_11_1))
+
+		arg_11_0:Filter()
 	end
 
-	if slot0.flags ~= slot0.allFlags and slot0.allFlags == bit.bor(slot0.flags, bit.lshift(1, slot1)) then
-		slot0:SelectAll()
-	elseif slot3 == slot0.allFlags then
-		slot0.flags = 0
+	if var_11_0 ~= arg_11_0.allFlags and arg_11_0.allFlags == bit.bor(arg_11_0.flags, bit.lshift(1, arg_11_1)) then
+		arg_11_0:SelectAll()
+	elseif var_11_0 == arg_11_0.allFlags then
+		arg_11_0.flags = 0
 
-		slot4()
+		var_11_1()
 	else
-		slot4()
+		var_11_1()
 	end
 end
 
-function slot0.Show(slot0, slot1)
-	slot0.guild = slot1
+function var_0_0.Show(arg_13_0, arg_13_1)
+	arg_13_0.guild = arg_13_1
 
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	setActive(slot0._tf, true)
-	triggerButton(slot0.btnAll)
+	pg.UIMgr.GetInstance():BlurPanel(arg_13_0._tf)
+	setActive(arg_13_0._tf, true)
+	triggerButton(arg_13_0.btnAll)
 
-	slot0.allFlags = slot0.flags
+	arg_13_0.allFlags = arg_13_0.flags
 end
 
-function slot0.Filter(slot0)
-	slot0.displays = {}
+function var_0_0.Filter(arg_14_0)
+	local var_14_0 = arg_14_0.guild:getCapitalLogs()
 
-	for slot7, slot8 in ipairs(slot0.guild:getCapitalLogs()) do
-		if slot8:IsSameType(slot0:Flag2Filter(slot0.flags)) then
-			table.insert(slot0.displays, slot8)
+	arg_14_0.displays = {}
+
+	local var_14_1 = arg_14_0:Flag2Filter(arg_14_0.flags)
+
+	for iter_14_0, iter_14_1 in ipairs(var_14_0) do
+		if iter_14_1:IsSameType(var_14_1) then
+			table.insert(arg_14_0.displays, iter_14_1)
 		end
 	end
 
-	slot0.uilist:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			setText(slot2, uv0.displays[slot1 + 1]:getText())
+	arg_14_0.uilist:make(function(arg_15_0, arg_15_1, arg_15_2)
+		if arg_15_0 == UIItemList.EventUpdate then
+			local var_15_0 = arg_14_0.displays[arg_15_1 + 1]
+
+			setText(arg_15_2, var_15_0:getText())
 		end
 	end)
-	slot0.uilist:align(#slot0.displays)
+	arg_14_0.uilist:align(#arg_14_0.displays)
 end
 
-function slot0.Close(slot0)
-	setActive(slot0._tf, false)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
+function var_0_0.Close(arg_16_0)
+	setActive(arg_16_0._tf, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_16_0._tf, arg_16_0._parentTf)
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:Close()
+function var_0_0.OnDestroy(arg_17_0)
+	arg_17_0:Close()
 end
 
-return slot0
+return var_0_0

@@ -1,36 +1,45 @@
-slot0 = class("GameRoomWeekCoinCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GameRoomWeekCoinCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
 	pg.ConnectionMgr.GetInstance():Send(26122, {
 		type = 0
-	}, 26123, function (slot0)
-		slot1 = nil
+	}, 26123, function(arg_2_0)
+		local var_2_0
 
-		if slot0.result == 0 then
-			uv0.coinMax = pg.gameset.game_coin_max.key_value
-			uv0.myCoinCount = getProxy(GameRoomProxy):getCoin()
+		if arg_2_0.result == 0 then
+			arg_1_0.coinMax = pg.gameset.game_coin_max.key_value
+			arg_1_0.myCoinCount = getProxy(GameRoomProxy):getCoin()
 
-			if uv0.coinMax - uv0.myCoinCount < pg.gameset.game_coin_initial.key_value then
-				slot3 = slot2
+			local var_2_1 = arg_1_0.coinMax - arg_1_0.myCoinCount
+			local var_2_2 = pg.gameset.game_coin_initial.key_value
+
+			if var_2_1 < var_2_2 then
+				var_2_2 = var_2_1
 			end
 
+			local var_2_3 = id2res(GameRoomProxy.coin_res_id)
+
 			getProxy(PlayerProxy):getRawData():addResources({
-				[id2res(GameRoomProxy.coin_res_id)] = slot3 or 0
+				[var_2_3] = var_2_2 or 0
 			})
-			getProxy(GameRoomProxy):setWeekly()
-			pg.m02:sendNotification(GAME.GAME_ROOM_AWARD_DONE, {
+
+			local var_2_4 = pg.player_resource[GameRoomProxy.coin_res_id].itemid
+			local var_2_5 = {
 				{
-					id = pg.player_resource[GameRoomProxy.coin_res_id].itemid,
+					id = var_2_4,
 					type = DROP_TYPE_ITEM,
-					count = slot3
+					count = var_2_2
 				}
-			})
+			}
+
+			getProxy(GameRoomProxy):setWeekly()
+			pg.m02:sendNotification(GAME.GAME_ROOM_AWARD_DONE, var_2_5)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

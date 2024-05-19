@@ -1,4 +1,83 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 19691,
+				target = {
+					"TargetAllFoe"
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onStartGame"
+			},
+			pop = {},
+			arg_list = {
+				buff_id = 19694
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 19690,
+				minWeaponNumber = 1,
+				check_weapon = true,
+				label = {
+					"CL",
+					"MG"
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				time = 20,
+				skill_id = 19691,
+				minWeaponNumber = 1,
+				check_weapon = true,
+				label = {
+					"DD",
+					"MG"
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				time = 10,
+				skill_id = 19691,
+				minWeaponNumber = 1,
+				check_weapon = true,
+				label = {
+					"CL",
+					"MG"
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				buff_id = 19696,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		shipInfoScene = {
 			equip = {
@@ -168,84 +247,5 @@ return {
 	stack = 1,
 	id = 19690,
 	icon = 19690,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 19691,
-				target = {
-					"TargetAllFoe"
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onStartGame"
-			},
-			pop = {},
-			arg_list = {
-				buff_id = 19694
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 19690,
-				minWeaponNumber = 1,
-				check_weapon = true,
-				label = {
-					"CL",
-					"MG"
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				time = 20,
-				skill_id = 19691,
-				minWeaponNumber = 1,
-				check_weapon = true,
-				label = {
-					"DD",
-					"MG"
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				time = 10,
-				skill_id = 19691,
-				minWeaponNumber = 1,
-				check_weapon = true,
-				label = {
-					"CL",
-					"MG"
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				buff_id = 19696,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

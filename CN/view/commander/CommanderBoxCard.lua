@@ -1,168 +1,187 @@
-slot0 = class("CommanderBoxCard")
+﻿local var_0_0 = class("CommanderBoxCard")
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0._parent = slot1
-	slot0._tf = slot2
-	slot0._go = go(slot2)
-	slot0.startingTF = slot0._tf:Find("ongoing")
-	slot0.idleTF = slot0._tf:Find("idle")
-	slot0.waitTF = slot0._tf:Find("wait")
-	slot0.timerTxt = slot0.startingTF:Find("time/Text"):GetComponent(typeof(Text))
-	slot0.slider = slot0.startingTF:Find("slider/bar")
-	slot0.boxParent = slot0._tf:Find("char")
-	slot0.titleStarting = slot0.startingTF:Find("title_starting")
-	slot0.titleFinish = slot0.startingTF:Find("title_finish")
-	slot0.quicklyTool = slot0.startingTF:Find("quickly_tool")
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0._parent = arg_1_1
+	arg_1_0._tf = arg_1_2
+	arg_1_0._go = go(arg_1_2)
+	arg_1_0.startingTF = arg_1_0._tf:Find("ongoing")
+	arg_1_0.idleTF = arg_1_0._tf:Find("idle")
+	arg_1_0.waitTF = arg_1_0._tf:Find("wait")
+	arg_1_0.timerTxt = arg_1_0.startingTF:Find("time/Text"):GetComponent(typeof(Text))
+	arg_1_0.slider = arg_1_0.startingTF:Find("slider/bar")
+	arg_1_0.boxParent = arg_1_0._tf:Find("char")
+	arg_1_0.titleStarting = arg_1_0.startingTF:Find("title_starting")
+	arg_1_0.titleFinish = arg_1_0.startingTF:Find("title_finish")
+	arg_1_0.quicklyTool = arg_1_0.startingTF:Find("quickly_tool")
 end
 
-function slot0.Update(slot0, slot1)
-	slot0.boxVO = slot1
+function var_0_0.Update(arg_2_0, arg_2_1)
+	arg_2_0.boxVO = arg_2_1
 
-	slot0:removeTimer()
-	slot0:removeWaitingTimer()
-	removeOnButton(slot0._tf)
+	local var_2_0 = arg_2_1:getState()
 
-	if slot1:getState() == CommanderBox.STATE_EMPTY then
-		-- Nothing
-	elseif slot2 == CommanderBox.STATE_WAITING then
-		slot0.waitTimer = Timer.New(function ()
-			uv0:removeWaitingTimer()
-			uv0:Update(uv1)
-			uv0._parent:updateCntLabel()
-		end, slot1.beginTime - pg.TimeMgr.GetInstance():GetServerTime(), 1)
+	arg_2_0:removeTimer()
+	arg_2_0:removeWaitingTimer()
+	removeOnButton(arg_2_0._tf)
 
-		slot0.waitTimer:Start()
-	elseif slot2 == CommanderBox.STATE_STARTING then
-		slot4 = slot1:getFinishTime() - slot1.beginTime
-		slot0.timer = Timer.New(function ()
-			if uv0 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
-				uv1:removeTimer()
-				uv1:Update(uv2)
+	if var_2_0 == CommanderBox.STATE_EMPTY then
+		-- block empty
+	elseif var_2_0 == CommanderBox.STATE_WAITING then
+		local var_2_1 = arg_2_1.beginTime - pg.TimeMgr.GetInstance():GetServerTime()
+
+		arg_2_0.waitTimer = Timer.New(function()
+			arg_2_0:removeWaitingTimer()
+			arg_2_0:Update(arg_2_1)
+			arg_2_0._parent:updateCntLabel()
+		end, var_2_1, 1)
+
+		arg_2_0.waitTimer:Start()
+	elseif var_2_0 == CommanderBox.STATE_STARTING then
+		local var_2_2 = arg_2_1:getFinishTime()
+		local var_2_3 = var_2_2 - arg_2_1.beginTime
+
+		arg_2_0.timer = Timer.New(function()
+			local var_4_0 = pg.TimeMgr.GetInstance():GetServerTime()
+			local var_4_1 = var_2_2 - var_4_0
+
+			if var_4_1 <= 0 then
+				arg_2_0:removeTimer()
+				arg_2_0:Update(arg_2_1)
 			else
-				uv1.timerTxt.text = pg.TimeMgr.GetInstance():DescCDTime(slot1)
+				arg_2_0.timerTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var_4_1)
 
-				setFillAmount(uv1.slider, 1 - slot1 / uv3)
+				setFillAmount(arg_2_0.slider, 1 - var_4_1 / var_2_3)
 			end
 		end, 1, -1)
 
-		slot0.timer:Start()
-		slot0.timer.func()
-		onButton(slot0._parent, slot0.quicklyTool, function ()
-			uv0._parent:emit(CommanderCatScene.EVENT_QUICKLY_TOOL, uv1.id)
+		arg_2_0.timer:Start()
+		arg_2_0.timer.func()
+		onButton(arg_2_0._parent, arg_2_0.quicklyTool, function()
+			arg_2_0._parent:emit(CommanderCatScene.EVENT_QUICKLY_TOOL, arg_2_1.id)
 		end, SFX_PANEL)
-	elseif slot2 == CommanderBox.STATE_FINISHED then
-		slot0.timerTxt.text = "COMPLETE"
+	elseif var_2_0 == CommanderBox.STATE_FINISHED then
+		arg_2_0.timerTxt.text = "COMPLETE"
 
-		setFillAmount(slot0.slider, 1)
-		onButton(slot0._parent, slot0._tf, function ()
-			if getProxy(PlayerProxy):getData().commanderBagMax <= getProxy(CommanderProxy):getCommanderCnt() then
+		setFillAmount(arg_2_0.slider, 1)
+		onButton(arg_2_0._parent, arg_2_0._tf, function()
+			local var_6_0 = getProxy(CommanderProxy)
+
+			if getProxy(PlayerProxy):getData().commanderBagMax <= var_6_0:getCommanderCnt() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("commander_capcity_is_max"))
 
 				return
 			end
 
-			uv0._parent:emit(CommanderCatMediator.GET, uv1.id)
+			arg_2_0._parent:emit(CommanderCatMediator.GET, arg_2_1.id)
 		end, SFX_PANEL)
 	end
 
-	setActive(slot0.quicklyTool, slot2 == CommanderBox.STATE_STARTING and not LOCK_CATTERY)
-	setActive(slot0.titleStarting, slot2 == CommanderBox.STATE_STARTING)
-	setActive(slot0.titleFinish, slot2 == CommanderBox.STATE_FINISHED)
-	setActive(slot0.startingTF, slot2 == CommanderBox.STATE_STARTING or slot2 == CommanderBox.STATE_FINISHED)
-	setActive(slot0.idleTF, slot2 == CommanderBox.STATE_EMPTY)
-	setActive(slot0.waitTF, slot2 == CommanderBox.STATE_WAITING)
-	slot0:loadBox(slot1:getPrefab(), slot0.boxParent)
+	setActive(arg_2_0.quicklyTool, var_2_0 == CommanderBox.STATE_STARTING and not LOCK_CATTERY)
+	setActive(arg_2_0.titleStarting, var_2_0 == CommanderBox.STATE_STARTING)
+	setActive(arg_2_0.titleFinish, var_2_0 == CommanderBox.STATE_FINISHED)
+	setActive(arg_2_0.startingTF, var_2_0 == CommanderBox.STATE_STARTING or var_2_0 == CommanderBox.STATE_FINISHED)
+	setActive(arg_2_0.idleTF, var_2_0 == CommanderBox.STATE_EMPTY)
+	setActive(arg_2_0.waitTF, var_2_0 == CommanderBox.STATE_WAITING)
+
+	local var_2_4 = arg_2_1:getPrefab()
+
+	arg_2_0:loadBox(var_2_4, arg_2_0.boxParent)
 end
 
-slot1 = true
+local var_0_1 = true
 
-function slot0.playAnim(slot0, slot1)
-	slot0:loadBox(slot0.boxVO:getFetchPrefab(), slot0.boxParent, function (slot0)
-		uv0.spineAnimUI = slot0
+function var_0_0.playAnim(arg_7_0, arg_7_1)
+	arg_7_0:loadBox(arg_7_0.boxVO:getFetchPrefab(), arg_7_0.boxParent, function(arg_8_0)
+		arg_7_0.spineAnimUI = arg_8_0
 
-		slot0:SetActionCallBack(function (slot0)
-			if slot0 == "finish" then
-				uv0:SetActionCallBack(nil)
-				uv1()
+		arg_8_0:SetActionCallBack(function(arg_9_0)
+			if arg_9_0 == "finish" then
+				arg_8_0:SetActionCallBack(nil)
+				arg_7_1()
 			end
 		end)
 	end)
 end
 
-function slot0.loadBox(slot0, slot1, slot2, slot3)
-	if not slot1 then
-		slot0:returnChar()
+function var_0_0.loadBox(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
+	if not arg_10_1 then
+		arg_10_0:returnChar()
 	else
-		if slot0.prefabName == slot1 then
+		if arg_10_0.prefabName == arg_10_1 then
 			return
 		end
 
-		slot0:returnChar()
+		arg_10_0:returnChar()
 
-		slot0.prefabName = slot1
+		arg_10_0.prefabName = arg_10_1
 
-		PoolMgr.GetInstance():GetSpineChar(slot1, true, function (slot0)
-			if uv0.exited or uv1 ~= uv0.prefabName then
-				PoolMgr.GetInstance():ReturnSpineChar(uv1, slot0)
+		local var_10_0 = arg_10_1
+
+		PoolMgr.GetInstance():GetSpineChar(var_10_0, true, function(arg_11_0)
+			if arg_10_0.exited or var_10_0 ~= arg_10_0.prefabName then
+				PoolMgr.GetInstance():ReturnSpineChar(var_10_0, arg_11_0)
 
 				return
 			end
 
-			uv0.modelTf = tf(slot0)
-			uv0.modelTf.localScale = Vector3(0.7, 0.7, 1)
-			uv0.modelTf.localPosition = Vector3(0, -123, 0)
+			arg_10_0.modelTf = tf(arg_11_0)
+			arg_10_0.modelTf.localScale = Vector3(0.7, 0.7, 1)
+			arg_10_0.modelTf.localPosition = Vector3(0, -123, 0)
 
-			pg.ViewUtils.SetLayer(uv0.modelTf, Layer.UI)
-			setParent(uv0.modelTf, uv2)
-			slot0:GetComponent("SpineAnimUI"):SetAction("normal", 0)
+			pg.ViewUtils.SetLayer(arg_10_0.modelTf, Layer.UI)
+			setParent(arg_10_0.modelTf, arg_10_2)
 
-			if uv3 then
-				uv3(slot1)
+			local var_11_0 = arg_11_0:GetComponent("SpineAnimUI")
+
+			var_11_0:SetAction("normal", 0)
+
+			if arg_10_3 then
+				arg_10_3(var_11_0)
 			end
 		end)
 	end
 end
 
-function slot0.removeTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.removeTimer(arg_12_0)
+	if arg_12_0.timer then
+		arg_12_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_12_0.timer = nil
 	end
 end
 
-function slot0.removeWaitingTimer(slot0)
-	if slot0.waitTimer then
-		slot0.waitTimer:Stop()
+function var_0_0.removeWaitingTimer(arg_13_0)
+	if arg_13_0.waitTimer then
+		arg_13_0.waitTimer:Stop()
 
-		slot0.waitTimer = nil
+		arg_13_0.waitTimer = nil
 	end
 end
 
-function slot0.returnChar(slot0)
-	if slot0.modelTf and slot0.prefabName then
-		PoolMgr.GetInstance():ReturnSpineChar(slot0.prefabName, slot0.modelTf.gameObject)
+function var_0_0.returnChar(arg_14_0)
+	if arg_14_0.modelTf and arg_14_0.prefabName then
+		PoolMgr.GetInstance():ReturnSpineChar(arg_14_0.prefabName, arg_14_0.modelTf.gameObject)
 
-		slot0.modelTf = nil
-		slot0.prefabName = nil
+		arg_14_0.modelTf = nil
+		arg_14_0.prefabName = nil
 	end
 end
 
-function slot0.Clear(slot0)
-	slot0:removeTimer()
-	slot0:removeWaitingTimer()
-	removeOnButton(slot0._tf)
+function var_0_0.Clear(arg_15_0)
+	arg_15_0:removeTimer()
+	arg_15_0:removeWaitingTimer()
+	removeOnButton(arg_15_0._tf)
 
-	slot0.boxVO = nil
+	arg_15_0.boxVO = nil
 end
 
-function slot0.Destroy(slot0)
-	slot0:Clear()
-	slot0:returnChar()
+function var_0_0.Destroy(arg_16_0)
+	arg_16_0:Clear()
+	arg_16_0:returnChar()
 
-	slot0.exited = true
-	slot0.boxVO = nil
-	slot0.loading = nil
+	arg_16_0.exited = true
+	arg_16_0.boxVO = nil
+	arg_16_0.loading = nil
 end
 
-return slot0
+return var_0_0

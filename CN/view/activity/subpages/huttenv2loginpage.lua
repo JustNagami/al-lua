@@ -1,1 +1,1 @@
-return class("HuttenV2LoginPage", import(".TemplatePage.LightLoginTemplatePage"))
+﻿return (class("HuttenV2LoginPage", import(".TemplatePage.LightLoginTemplatePage")))

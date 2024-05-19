@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "驱逐回血",
-	init_effect = "",
-	time = 3,
-	color = "yellow",
-	picture = "",
-	desc = "救援塔什干行动",
-	stack = 1,
-	id = 15283,
-	icon = 15283,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -47,5 +26,26 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "驱逐回血",
+	init_effect = "",
+	time = 3,
+	color = "yellow",
+	picture = "",
+	desc = "救援塔什干行动",
+	stack = 1,
+	id = 15283,
+	icon = 15283,
+	last_effect = ""
 }

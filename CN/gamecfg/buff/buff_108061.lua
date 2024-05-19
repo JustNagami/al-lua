@@ -1,4 +1,12 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {},
 	{
 		effect_list = {
 			{
@@ -168,13 +176,5 @@ return {
 	stack = 2,
 	id = 108132,
 	icon = 108130,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {}
+	last_effect = ""
 }

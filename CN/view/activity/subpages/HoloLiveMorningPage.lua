@@ -1,24 +1,24 @@
-slot0 = class("HoloLivePtPage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("HoloLivePtPage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.taskProxy = getProxy(TaskProxy)
-	slot0.activityProxy = getProxy(ActivityProxy)
-	slot0.circleTF = slot0:findTF("CircleImg/Circle")
-	slot0.startBtn = slot0:findTF("CircleImg/StartBtn")
-	slot0.helpBtn1 = slot0:findTF("HelpBtn")
-	slot0.taskPanel = slot0:findTF("AD")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.taskProxy = getProxy(TaskProxy)
+	arg_1_0.activityProxy = getProxy(ActivityProxy)
+	arg_1_0.circleTF = arg_1_0:findTF("CircleImg/Circle")
+	arg_1_0.startBtn = arg_1_0:findTF("CircleImg/StartBtn")
+	arg_1_0.helpBtn1 = arg_1_0:findTF("HelpBtn")
+	arg_1_0.taskPanel = arg_1_0:findTF("AD")
 
-	onButton(slot0, slot0.startBtn, function ()
-		if uv0.isTurning then
+	onButton(arg_1_0, arg_1_0.startBtn, function()
+		if arg_1_0.isTurning then
 			return
 		end
 
-		uv0:emit(ActivityMediator.EVENT_OPERATION, {
+		arg_1_0:emit(ActivityMediator.EVENT_OPERATION, {
 			cmd = 1,
-			activity_id = uv0.activity.id
+			activity_id = arg_1_0.activity.id
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.helpBtn1, function ()
+	onButton(arg_1_0, arg_1_0.helpBtn1, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.hololive_goodmorning.tip
@@ -26,71 +26,74 @@ function slot0.OnInit(slot0)
 	end, SFX_PANEL)
 end
 
-function slot0.OnDataSetting(slot0)
-	slot0.activityStartTime = slot0.activity.data1
-	slot0.isGotFinalAward = slot0.activity.data2
-	slot0.progressStep = slot0.activity.data3
-	slot0.configID = slot0.activity:getConfig("config_id")
-	slot0.configData = pg.activity_event_turning[slot0.configID]
-	slot0.groupNum = slot0.configData.total_num
-	slot0.maxday = math.clamp(pg.TimeMgr.GetInstance():DiffDay(slot0.activityStartTime, pg.TimeMgr.GetInstance():GetServerTime()) + 1, 1, slot0.configData.total_num)
+function var_0_0.OnDataSetting(arg_4_0)
+	arg_4_0.activityStartTime = arg_4_0.activity.data1
+	arg_4_0.isGotFinalAward = arg_4_0.activity.data2
+	arg_4_0.progressStep = arg_4_0.activity.data3
+	arg_4_0.configID = arg_4_0.activity:getConfig("config_id")
+	arg_4_0.configData = pg.activity_event_turning[arg_4_0.configID]
+	arg_4_0.groupNum = arg_4_0.configData.total_num
 
-	print("init data on setting:", tostring(slot0.maxday), tostring(slot0.isGotFinalAward), tostring(slot0.progressStep), tostring(slot0.activity.data4))
+	local var_4_0 = pg.TimeMgr.GetInstance():DiffDay(arg_4_0.activityStartTime, pg.TimeMgr.GetInstance():GetServerTime()) + 1
+
+	arg_4_0.maxday = math.clamp(var_4_0, 1, arg_4_0.configData.total_num)
+
+	print("init data on setting:", tostring(arg_4_0.maxday), tostring(arg_4_0.isGotFinalAward), tostring(arg_4_0.progressStep), tostring(arg_4_0.activity.data4))
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot0.curIndex = slot0.activity.data4
+function var_0_0.OnFirstFlush(arg_5_0)
+	arg_5_0.curIndex = arg_5_0.activity.data4
 
-	if slot0.curIndex ~= 0 then
-		slot0.curShipGroupID = slot0.configData.groupid_list[slot0.curIndex]
-		slot0.curTaskIDList = slot0.configData.task_table[slot0.curIndex]
-		slot0.curStoryID = slot0.configData.story_list[slot0.curIndex]
+	if arg_5_0.curIndex ~= 0 then
+		arg_5_0.curShipGroupID = arg_5_0.configData.groupid_list[arg_5_0.curIndex]
+		arg_5_0.curTaskIDList = arg_5_0.configData.task_table[arg_5_0.curIndex]
+		arg_5_0.curStoryID = arg_5_0.configData.story_list[arg_5_0.curIndex]
 	end
 end
 
-function slot0.OnUpdateFlush(slot0)
-	if slot0.curIndex == 0 and slot0.activity.data4 > 0 then
-		slot0.curIndex = slot0.activity.data4
-		slot0.curShipGroupID = slot0.configData.groupid_list[slot0.curIndex]
-		slot0.curTaskIDList = slot0.configData.task_table[slot0.curIndex]
-		slot0.curStoryID = slot0.configData.story_list[slot0.curIndex]
+function var_0_0.OnUpdateFlush(arg_6_0)
+	if arg_6_0.curIndex == 0 and arg_6_0.activity.data4 > 0 then
+		arg_6_0.curIndex = arg_6_0.activity.data4
+		arg_6_0.curShipGroupID = arg_6_0.configData.groupid_list[arg_6_0.curIndex]
+		arg_6_0.curTaskIDList = arg_6_0.configData.task_table[arg_6_0.curIndex]
+		arg_6_0.curStoryID = arg_6_0.configData.story_list[arg_6_0.curIndex]
 
-		print("before rotate", tostring(slot0.curShipGroupID), tostring(slot0.curIndex), tostring(slot0.curStoryID))
-		slot0:rotate()
-	elseif slot0.activity.data4 > 0 then
-		if slot0.activity.data4 <= slot0.groupNum then
-			slot0.curIndex = slot0.activity.data4
-			slot0.curShipGroupID = slot0.configData.groupid_list[slot0.curIndex]
-			slot0.curTaskIDList = slot0.configData.task_table[slot0.curIndex]
-			slot0.curStoryID = slot0.configData.story_list[slot0.curIndex]
+		print("before rotate", tostring(arg_6_0.curShipGroupID), tostring(arg_6_0.curIndex), tostring(arg_6_0.curStoryID))
+		arg_6_0:rotate()
+	elseif arg_6_0.activity.data4 > 0 then
+		if arg_6_0.activity.data4 <= arg_6_0.groupNum then
+			arg_6_0.curIndex = arg_6_0.activity.data4
+			arg_6_0.curShipGroupID = arg_6_0.configData.groupid_list[arg_6_0.curIndex]
+			arg_6_0.curTaskIDList = arg_6_0.configData.task_table[arg_6_0.curIndex]
+			arg_6_0.curStoryID = arg_6_0.configData.story_list[arg_6_0.curIndex]
 
-			print("direct update", tostring(slot0.curShipGroupID), tostring(slot0.curIndex), tostring(slot0.curStoryID))
-			slot0:updateTaskPanel()
+			print("direct update", tostring(arg_6_0.curShipGroupID), tostring(arg_6_0.curIndex), tostring(arg_6_0.curStoryID))
+			arg_6_0:updateTaskPanel()
 		end
-	elseif slot0.activity.data4 == 0 then
-		slot0.curIndex = 0
-		slot0.curShipGroupID = nil
-		slot0.curTaskIDList = nil
-		slot0.curStoryID = nil
+	elseif arg_6_0.activity.data4 == 0 then
+		arg_6_0.curIndex = 0
+		arg_6_0.curShipGroupID = nil
+		arg_6_0.curTaskIDList = nil
+		arg_6_0.curStoryID = nil
 
-		setActive(slot0.taskPanel, false)
+		setActive(arg_6_0.taskPanel, false)
 
-		if slot0.groupNum < slot0.progressStep then
-			slot0:lockTurnTable()
+		if arg_6_0.progressStep > arg_6_0.groupNum then
+			arg_6_0:lockTurnTable()
 		end
 	end
 
-	slot0:checkAward()
+	arg_6_0:checkAward()
 end
 
-function slot0.onDestroy(slot0)
-	LeanTween.cancel(go(slot0.circleTF))
+function var_0_0.onDestroy(arg_7_0)
+	LeanTween.cancel(go(arg_7_0.circleTF))
 end
 
-function slot0.rotate(slot0)
-	slot0.isTurning = true
-
-	LeanTween.value(go(slot0.circleTF), 0, 360 - 360 / pg.activity_event_turning[slot0.activity:getConfig("config_id")].total_num * ({
+function var_0_0.rotate(arg_8_0)
+	local var_8_0 = arg_8_0.activity:getConfig("config_id")
+	local var_8_1 = pg.activity_event_turning[var_8_0]
+	local var_8_2 = {
 		6,
 		0,
 		4,
@@ -98,128 +101,144 @@ function slot0.rotate(slot0)
 		5,
 		3,
 		1
-	})[slot0.curIndex] + 8 * 360, 4):setEase(LeanTweenType.easeInOutCirc):setOnUpdate(System.Action_float(function (slot0)
-		uv0.circleTF.localEulerAngles = Vector3(0, 0, -slot0)
-	end)):setOnComplete(System.Action(function ()
-		pg.NewStoryMgr.GetInstance():Play(uv0.curStoryID, function ()
-			uv0:updateTaskPanel()
+	}
+	local var_8_3 = 4
+	local var_8_4 = 8
+	local var_8_5 = 360 - 360 / var_8_1.total_num * var_8_2[arg_8_0.curIndex] + var_8_4 * 360
+
+	arg_8_0.isTurning = true
+
+	LeanTween.value(go(arg_8_0.circleTF), 0, var_8_5, var_8_3):setEase(LeanTweenType.easeInOutCirc):setOnUpdate(System.Action_float(function(arg_9_0)
+		arg_8_0.circleTF.localEulerAngles = Vector3(0, 0, -arg_9_0)
+	end)):setOnComplete(System.Action(function()
+		pg.NewStoryMgr.GetInstance():Play(arg_8_0.curStoryID, function()
+			arg_8_0:updateTaskPanel()
 		end, true, true)
 
-		uv0.isTurning = false
+		arg_8_0.isTurning = false
 	end))
 end
 
-function slot0.updateTaskPanel(slot0)
-	slot0.charImg = slot0:findTF("CharImg", slot0.taskPanel)
-	slot0.nameImg = slot0:findTF("NameImg", slot0.charImg)
-	slot0.dayText = slot0:findTF("ProgressImg/day", slot0.taskPanel)
-	slot0.taskItemTpl = slot0:findTF("item", slot0.taskPanel)
-	slot0.taskItemContainer = slot0:findTF("items", slot0.taskPanel)
-	slot0.backBtn = slot0:findTF("BackBtn", slot0.taskPanel)
-	slot0.countText = slot0:findTF("RedPoint/Text", slot0.backBtn)
-	slot0.helpBtn2 = slot0:findTF("HelpBtn", slot0.taskPanel)
+function var_0_0.updateTaskPanel(arg_12_0)
+	arg_12_0.charImg = arg_12_0:findTF("CharImg", arg_12_0.taskPanel)
+	arg_12_0.nameImg = arg_12_0:findTF("NameImg", arg_12_0.charImg)
+	arg_12_0.dayText = arg_12_0:findTF("ProgressImg/day", arg_12_0.taskPanel)
+	arg_12_0.taskItemTpl = arg_12_0:findTF("item", arg_12_0.taskPanel)
+	arg_12_0.taskItemContainer = arg_12_0:findTF("items", arg_12_0.taskPanel)
+	arg_12_0.backBtn = arg_12_0:findTF("BackBtn", arg_12_0.taskPanel)
+	arg_12_0.countText = arg_12_0:findTF("RedPoint/Text", arg_12_0.backBtn)
+	arg_12_0.helpBtn2 = arg_12_0:findTF("HelpBtn", arg_12_0.taskPanel)
 
-	LoadSpriteAtlasAsync("ui/activityuipage/hololivemorningpage", "img_char_" .. slot0.curShipGroupID, function (slot0)
-		if uv0.curShipGroupID == 1050001 then
-			rtf(uv0.charImg).sizeDelta = Vector2(1058, 714)
+	local var_12_0 = "img_char_" .. arg_12_0.curShipGroupID
 
-			setImageSprite(uv0.charImg, slot0)
-		elseif uv0.curShipGroupID == 1050003 then
-			rtf(uv0.charImg).sizeDelta = Vector2(1122, 714)
+	LoadSpriteAtlasAsync("ui/activityuipage/hololivemorningpage", var_12_0, function(arg_13_0)
+		if arg_12_0.curShipGroupID == 1050001 then
+			rtf(arg_12_0.charImg).sizeDelta = Vector2(1058, 714)
 
-			setImageSprite(uv0.charImg, slot0)
-		elseif uv0.curShipGroupID == 1050005 then
-			rtf(uv0.charImg).sizeDelta = Vector2(1044, 714)
+			setImageSprite(arg_12_0.charImg, arg_13_0)
+		elseif arg_12_0.curShipGroupID == 1050003 then
+			rtf(arg_12_0.charImg).sizeDelta = Vector2(1122, 714)
 
-			setImageSprite(uv0.charImg, slot0)
+			setImageSprite(arg_12_0.charImg, arg_13_0)
+		elseif arg_12_0.curShipGroupID == 1050005 then
+			rtf(arg_12_0.charImg).sizeDelta = Vector2(1044, 714)
+
+			setImageSprite(arg_12_0.charImg, arg_13_0)
 		else
-			setImageSprite(uv0.charImg, slot0, true)
+			setImageSprite(arg_12_0.charImg, arg_13_0, true)
 		end
 	end)
-	LoadSpriteAtlasAsync("ui/activityuipage/hololivemorningpage", "img_name_" .. slot0.curShipGroupID, function (slot0)
-		setImageSprite(uv0.nameImg, slot0, true)
+
+	local var_12_1 = "img_name_" .. arg_12_0.curShipGroupID
+
+	LoadSpriteAtlasAsync("ui/activityuipage/hololivemorningpage", var_12_1, function(arg_14_0)
+		setImageSprite(arg_12_0.nameImg, arg_14_0, true)
 	end)
+	setText(arg_12_0.dayText, arg_12_0.progressStep .. "/" .. arg_12_0.configData.total_num)
 
-	slot7 = slot0.configData.total_num
+	arg_12_0.taskUIItemList = UIItemList.New(arg_12_0.taskItemContainer, arg_12_0.taskItemTpl)
 
-	setText(slot0.dayText, slot0.progressStep .. "/" .. slot7)
+	arg_12_0.taskUIItemList:make(function(arg_15_0, arg_15_1, arg_15_2)
+		if arg_15_0 == UIItemList.EventUpdate then
+			local var_15_0 = arg_15_1 + 1
+			local var_15_1 = arg_12_0:findTF("item", arg_15_2)
+			local var_15_2 = arg_12_0.curTaskIDList[var_15_0]
+			local var_15_3 = arg_12_0.taskProxy:getTaskById(var_15_2) or arg_12_0.taskProxy:getFinishTaskById(var_15_2)
 
-	slot0.taskUIItemList = UIItemList.New(slot0.taskItemContainer, slot0.taskItemTpl)
+			assert(var_15_3, "without this task by id: " .. var_15_2)
 
-	slot0.taskUIItemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot4 = uv0:findTF("item", slot2)
-			slot6 = uv0.taskProxy:getTaskById(uv0.curTaskIDList[slot1 + 1]) or uv0.taskProxy:getFinishTaskById(slot5)
+			local var_15_4 = var_15_3:getConfig("award_display")[1]
+			local var_15_5 = {
+				type = var_15_4[1],
+				id = var_15_4[2],
+				count = var_15_4[3]
+			}
 
-			assert(slot6, "without this task by id: " .. slot5)
-
-			slot7 = slot6:getConfig("award_display")[1]
-
-			updateDrop(slot4, {
-				type = slot7[1],
-				id = slot7[2],
-				count = slot7[3]
-			})
-			onButton(uv0, slot4, function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+			updateDrop(var_15_1, var_15_5)
+			onButton(arg_12_0, var_15_1, function()
+				arg_12_0:emit(BaseUI.ON_DROP, var_15_5)
 			end, SFX_PANEL)
 
-			slot9 = slot6:getProgress()
-			slot10 = slot6:getConfig("target_num")
+			local var_15_6 = var_15_3:getProgress()
+			local var_15_7 = var_15_3:getConfig("target_num")
 
-			setText(uv0:findTF("description", slot2), slot6:getConfig("desc") .. "(" .. slot9 .. "/" .. slot10 .. ")")
-			setSlider(uv0:findTF("progress", slot2), 0, slot10, slot9)
+			setText(arg_12_0:findTF("description", arg_15_2), var_15_3:getConfig("desc") .. "(" .. var_15_6 .. "/" .. var_15_7 .. ")")
+			setSlider(arg_12_0:findTF("progress", arg_15_2), 0, var_15_7, var_15_6)
 
-			slot12 = uv0:findTF("get_btn", slot2)
+			local var_15_8 = arg_12_0:findTF("go_btn", arg_15_2)
+			local var_15_9 = arg_12_0:findTF("get_btn", arg_15_2)
+			local var_15_10 = arg_12_0:findTF("got_btn", arg_15_2)
+			local var_15_11 = var_15_3:getTaskStatus()
 
-			setActive(uv0:findTF("go_btn", slot2), slot6:getTaskStatus() == 0)
-			setActive(slot12, slot14 == 1)
-			setActive(uv0:findTF("got_btn", slot2), slot14 == 2)
-			onButton(uv0, slot11, function ()
-				uv0:emit(ActivityMediator.ON_TASK_GO, uv1)
+			setActive(var_15_8, var_15_11 == 0)
+			setActive(var_15_9, var_15_11 == 1)
+			setActive(var_15_10, var_15_11 == 2)
+			onButton(arg_12_0, var_15_8, function()
+				arg_12_0:emit(ActivityMediator.ON_TASK_GO, var_15_3)
 			end, SFX_PANEL)
-			onButton(uv0, slot12, function ()
-				uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv1)
+			onButton(arg_12_0, var_15_9, function()
+				arg_12_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_15_3)
 			end, SFX_PANEL)
 		end
 	end)
-	slot0.taskUIItemList:align(#slot0.curTaskIDList)
+	arg_12_0.taskUIItemList:align(#arg_12_0.curTaskIDList)
 
-	slot3 = true
+	local var_12_2 = true
 
-	for slot7, slot8 in ipairs(slot0.curTaskIDList) do
-		if (slot0.taskProxy:getTaskById(slot8) or slot0.taskProxy:getFinishTaskById(slot8)):getTaskStatus() ~= 2 then
-			slot3 = false
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0.curTaskIDList) do
+		if (arg_12_0.taskProxy:getTaskById(iter_12_1) or arg_12_0.taskProxy:getFinishTaskById(iter_12_1)):getTaskStatus() ~= 2 then
+			var_12_2 = false
 
 			break
 		end
 	end
 
-	if slot3 then
-		slot6 = pg.activity_event_turning[slot0.activity:getConfig("config_id")].story_task[slot0.progressStep][1]
+	if var_12_2 then
+		local var_12_3 = arg_12_0.activity:getConfig("config_id")
+		local var_12_4 = pg.activity_event_turning[var_12_3].story_task[arg_12_0.progressStep][1]
 
-		print("story", tostring(slot6))
+		print("story", tostring(var_12_4))
 
-		if slot6 then
-			pg.NewStoryMgr.GetInstance():Play(slot6, nil)
+		if var_12_4 then
+			pg.NewStoryMgr.GetInstance():Play(var_12_4, nil)
 		end
 	end
 
-	if slot0.maxday <= slot0.progressStep then
-		slot3 = false
+	if arg_12_0.maxday <= arg_12_0.progressStep then
+		var_12_2 = false
 	end
 
-	setActive(slot0.backBtn, slot3)
+	setActive(arg_12_0.backBtn, var_12_2)
 
-	if slot3 then
-		setText(slot0.countText, tostring(slot0.maxday - slot0.progressStep))
+	if var_12_2 then
+		setText(arg_12_0.countText, tostring(arg_12_0.maxday - arg_12_0.progressStep))
 	end
 
-	setActive(slot0.taskPanel, true)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:resetIndex()
+	setActive(arg_12_0.taskPanel, true)
+	onButton(arg_12_0, arg_12_0.backBtn, function()
+		arg_12_0:resetIndex()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.helpBtn2, function ()
+	onButton(arg_12_0, arg_12_0.helpBtn2, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.hololive_goodmorning.tip
@@ -227,51 +246,51 @@ function slot0.updateTaskPanel(slot0)
 	end, SFX_PANEL)
 end
 
-function slot0.checkAward(slot0)
-	if slot0.isGotFinalAward == 0 and slot0.progressStep == slot0.groupNum then
-		if slot0.curTaskIDList then
-			slot1 = true
+function var_0_0.checkAward(arg_21_0)
+	if arg_21_0.isGotFinalAward == 0 and arg_21_0.progressStep == arg_21_0.groupNum then
+		if arg_21_0.curTaskIDList then
+			local var_21_0 = true
 
-			for slot5, slot6 in ipairs(slot0.curTaskIDList) do
-				if (slot0.taskProxy:getTaskById(slot6) or slot0.taskProxy:getFinishTaskById(slot6)):getTaskStatus() ~= 2 then
-					slot1 = false
+			for iter_21_0, iter_21_1 in ipairs(arg_21_0.curTaskIDList) do
+				if (arg_21_0.taskProxy:getTaskById(iter_21_1) or arg_21_0.taskProxy:getFinishTaskById(iter_21_1)):getTaskStatus() ~= 2 then
+					var_21_0 = false
 
 					break
 				end
 			end
 
-			if slot1 and slot0.activity.data4 ~= 0 and slot0.activity.data3 == slot0.groupNum then
-				slot0:emit(ActivityMediator.EVENT_OPERATION, {
+			if var_21_0 and arg_21_0.activity.data4 ~= 0 and arg_21_0.activity.data3 == arg_21_0.groupNum then
+				arg_21_0:emit(ActivityMediator.EVENT_OPERATION, {
 					cmd = 2,
-					activity_id = slot0.activity.id
+					activity_id = arg_21_0.activity.id
 				})
 			end
 		else
-			slot0:emit(ActivityMediator.EVENT_OPERATION, {
+			arg_21_0:emit(ActivityMediator.EVENT_OPERATION, {
 				cmd = 1,
-				activity_id = slot0.activity.id
+				activity_id = arg_21_0.activity.id
 			})
 		end
 	end
 end
 
-function slot0.resetIndex(slot0)
-	slot0:emit(ActivityMediator.EVENT_OPERATION, {
+function var_0_0.resetIndex(arg_22_0)
+	arg_22_0:emit(ActivityMediator.EVENT_OPERATION, {
 		cmd = 2,
-		activity_id = slot0.activity.id
+		activity_id = arg_22_0.activity.id
 	})
 end
 
-function slot0.lockTurnTable(slot0)
-	slot0.finalTip = slot0:findTF("FinalTip")
-	slot0.finalLock = slot0:findTF("CircleImg/FinalLock")
+function var_0_0.lockTurnTable(arg_23_0)
+	arg_23_0.finalTip = arg_23_0:findTF("FinalTip")
+	arg_23_0.finalLock = arg_23_0:findTF("CircleImg/FinalLock")
 
-	setActive(slot0.finalTip, true)
-	setActive(slot0.finalLock, true)
+	setActive(arg_23_0.finalTip, true)
+	setActive(arg_23_0.finalLock, true)
 
-	slot0.tipImg = slot0:findTF("TipImg")
+	arg_23_0.tipImg = arg_23_0:findTF("TipImg")
 
-	setActive(slot0.tipImg, false)
+	setActive(arg_23_0.tipImg, false)
 end
 
-return slot0
+return var_0_0

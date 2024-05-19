@@ -1,104 +1,120 @@
-slot0 = class("ShipAddIntimacyAndMoneyCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ShipAddIntimacyAndMoneyCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = {}
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(DormProxy):getBackYardShips()
+	local var_1_2 = {}
 
-	for slot8, slot9 in pairs(getProxy(DormProxy):getBackYardShips()) do
-		if slot9.state_info_3 > 0 or slot9.state_info_4 > 0 then
-			table.insert(slot4, slot8)
+	for iter_1_0, iter_1_1 in pairs(var_1_1) do
+		if iter_1_1.state_info_3 > 0 or iter_1_1.state_info_4 > 0 then
+			table.insert(var_1_2, iter_1_0)
 		end
 	end
 
-	if #slot4 <= 0 then
+	if #var_1_2 <= 0 then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(19011, {
 		id = 0
-	}, 19012, function (slot0)
-		if slot0.result == 0 then
-			slot2 = {}
-			slot3 = {}
-			slot4 = 0
+	}, 19012, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(BayProxy)
+			local var_2_1 = {}
+			local var_2_2 = {}
+			local var_2_3 = 0
 
-			for slot8, slot9 in ipairs(uv0) do
-				if getProxy(BayProxy):RawGetShipById(slot9).state_info_3 > 0 then
-					table.insert(slot2, slot10)
+			for iter_2_0, iter_2_1 in ipairs(var_1_2) do
+				local var_2_4 = var_2_0:RawGetShipById(iter_2_1)
+
+				if var_2_4.state_info_3 > 0 then
+					table.insert(var_2_1, var_2_4)
 				end
 
-				if slot10.state_info_4 > 0 then
-					slot4 = slot4 + slot10.state_info_4
+				if var_2_4.state_info_4 > 0 then
+					var_2_3 = var_2_3 + var_2_4.state_info_4
 
-					table.insert(slot3, slot10)
+					table.insert(var_2_2, var_2_4)
 				end
 
-				getProxy(DormProxy):clearInimacyAndMoney(slot9)
+				getProxy(DormProxy):clearInimacyAndMoney(iter_2_1)
 			end
 
-			uv1:ShowIntimacyTip(slot2)
-			uv1:ShowMoneyTip(slot3, slot4)
-			uv1:sendNotification(GAME.BACKYARD_ONE_KEY_DONE, {
-				shipIds = uv0
+			arg_1_0:ShowIntimacyTip(var_2_1)
+			arg_1_0:ShowMoneyTip(var_2_2, var_2_3)
+			arg_1_0:sendNotification(GAME.BACKYARD_ONE_KEY_DONE, {
+				shipIds = var_1_2
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-function slot0.ShowIntimacyTip(slot0, slot1)
-	if #slot1 == 0 then
+function var_0_0.ShowIntimacyTip(arg_3_0, arg_3_1)
+	if #arg_3_1 == 0 then
 		return
 	end
 
-	if #slot1 == 1 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddInimacy_ok", slot1[1]:getName()))
+	if #arg_3_1 == 1 then
+		local var_3_0 = arg_3_1[1]
+
+		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddInimacy_ok", var_3_0:getName()))
 
 		return
 	end
 
-	if #slot1 > 1 then
-		table.sort(slot1, function (slot0, slot1)
-			return slot0.groupId < slot1.groupId
+	if #arg_3_1 > 1 then
+		table.sort(arg_3_1, function(arg_4_0, arg_4_1)
+			return arg_4_0.groupId < arg_4_1.groupId
 		end)
 
-		if #slot1 == 2 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddInimacy_ok", table.concat(_.map(_.first(slot1, 2), function (slot0)
-				return slot0:getName()
-			end), "、")))
+		local var_3_1 = _.first(arg_3_1, 2)
+		local var_3_2 = _.map(var_3_1, function(arg_5_0)
+			return arg_5_0:getName()
+		end)
+		local var_3_3 = table.concat(var_3_2, "、")
+
+		if #arg_3_1 == 2 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddInimacy_ok", var_3_3))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddInimacy_ships_ok", slot4))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddInimacy_ships_ok", var_3_3))
 		end
 
 		return
 	end
 end
 
-function slot0.ShowMoneyTip(slot0, slot1, slot2)
-	if #slot1 == 0 then
+function var_0_0.ShowMoneyTip(arg_6_0, arg_6_1, arg_6_2)
+	if #arg_6_1 == 0 then
 		return
 	end
 
-	if #slot1 == 1 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddMoney_ok", slot1[1]:getName(), slot2))
+	if #arg_6_1 == 1 then
+		local var_6_0 = arg_6_1[1]
+
+		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddMoney_ok", var_6_0:getName(), arg_6_2))
 
 		return
 	end
 
-	if #slot1 > 1 then
-		table.sort(slot1, function (slot0, slot1)
-			return slot0.groupId < slot1.groupId
+	if #arg_6_1 > 1 then
+		table.sort(arg_6_1, function(arg_7_0, arg_7_1)
+			return arg_7_0.groupId < arg_7_1.groupId
 		end)
 
-		if #slot1 == 2 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddMoney_ok", table.concat(_.map(_.first(slot1, 2), function (slot0)
-				return slot0:getName()
-			end), "、"), slot2))
+		local var_6_1 = _.first(arg_6_1, 2)
+		local var_6_2 = _.map(var_6_1, function(arg_8_0)
+			return arg_8_0:getName()
+		end)
+		local var_6_3 = table.concat(var_6_2, "、")
+
+		if #arg_6_1 == 2 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddMoney_ok", var_6_3, arg_6_2))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddMoney_ships_ok", slot5, slot2))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddMoney_ships_ok", var_6_3, arg_6_2))
 		end
 	end
 end
 
-return slot0
+return var_0_0

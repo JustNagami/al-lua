@@ -1,39 +1,49 @@
-slot0 = class("NewHpShareActBossResultGradePage", import("..activityBoss.NewActivityBossResultGradePage"))
+﻿local var_0_0 = class("NewHpShareActBossResultGradePage", import("..activityBoss.NewActivityBossResultGradePage"))
 
-function slot0.LoadGrade(slot0, slot1)
-	LoadImageSpriteAsync("battlescore/grade_label_clear", slot0.gradeTxt, true)
+function var_0_0.LoadGrade(arg_1_0, arg_1_1)
+	local var_1_0 = "battlescore/grade_label_clear"
 
-	if slot1 then
-		slot1()
+	LoadImageSpriteAsync(var_1_0, arg_1_0.gradeTxt, true)
+
+	if arg_1_1 then
+		arg_1_1()
 	end
 end
 
-function slot0.GetContributionPoint(slot0)
-	slot1 = slot0.contextData
-	slot4 = 0
+function var_0_0.GetContributionPoint(arg_2_0)
+	local var_2_0 = arg_2_0.contextData
+	local var_2_1 = pg.activity_template[var_2_0.actId]
+	local var_2_2 = pg.activity_event_worldboss[var_2_1.config_id].damage_resource
+	local var_2_3 = 0
 
-	for slot8, slot9 in ipairs(slot1.drops) do
-		if slot9.configId == pg.activity_event_worldboss[pg.activity_template[slot1.actId].config_id].damage_resource then
-			slot4 = slot9.count
+	for iter_2_0, iter_2_1 in ipairs(var_2_0.drops) do
+		if iter_2_1.configId == var_2_2 then
+			var_2_3 = iter_2_1.count
 		end
 	end
 
-	return slot4
+	return var_2_3
 end
 
-function slot0.GetGetObjectives(slot0)
-	slot2 = {}
+function var_0_0.GetGetObjectives(arg_3_0)
+	local var_3_0 = arg_3_0.contextData
+	local var_3_1 = {}
+	local var_3_2 = arg_3_0:GetContributionPoint()
+	local var_3_3 = i18n("battle_result_total_damage")
 
-	table.insert(slot2, {
-		text = setColorStr(i18n("battle_result_total_damage"), "#FFFFFFFF"),
-		value = setColorStr(slot0.contextData.statistics.specificDamage, COLOR_BLUE)
-	})
-	table.insert(slot2, {
-		text = setColorStr(i18n("battle_result_contribution"), "#FFFFFFFF"),
-		value = setColorStr(slot0:GetContributionPoint(), COLOR_YELLOW)
+	table.insert(var_3_1, {
+		text = setColorStr(var_3_3, "#FFFFFFFF"),
+		value = setColorStr(var_3_0.statistics.specificDamage, COLOR_BLUE)
 	})
 
-	return slot2
+	local var_3_4 = i18n("battle_result_contribution")
+
+	table.insert(var_3_1, {
+		text = setColorStr(var_3_4, "#FFFFFFFF"),
+		value = setColorStr(var_3_2, COLOR_YELLOW)
+	})
+
+	return var_3_1
 end
 
-return slot0
+return var_0_0

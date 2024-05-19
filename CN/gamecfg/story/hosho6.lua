@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "HOSHO6",
 	mode = 2,
 	scripts = {

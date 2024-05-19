@@ -1,22 +1,23 @@
-slot0 = class("BuildShipRegularExchangeMediator", import("...base.ContextMediator"))
-slot0.EXCHAGNE_SHIP = "BuildShipRegularExchangeMediator.EXCHAGNE_SHIP"
+﻿local var_0_0 = class("BuildShipRegularExchangeMediator", import("...base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.EXCHAGNE_SHIP, function (slot0, slot1)
-		uv0:sendNotification(GAME.REGULAR_BUILD_POOL_EXCHANGE, {
-			id = slot1
+var_0_0.EXCHAGNE_SHIP = "BuildShipRegularExchangeMediator.EXCHAGNE_SHIP"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.EXCHAGNE_SHIP, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.REGULAR_BUILD_POOL_EXCHANGE, {
+			id = arg_2_1
 		})
 	end)
-	slot0.viewComponent:setCount(getProxy(BuildShipProxy):getRegularExchangeCount())
+	arg_1_0.viewComponent:setCount(getProxy(BuildShipProxy):getRegularExchangeCount())
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_3_0)
 	return {}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot2 = slot1:getName()
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getName()
+	local var_4_1 = arg_4_1:getBody()
 end
 
-return slot0
+return var_0_0

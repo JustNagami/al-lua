@@ -1,13 +1,14 @@
-slot0 = class("BiliTracker")
+﻿local var_0_0 = class("BiliTracker")
 
-function slot0.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	return
 end
 
-function slot0.Tracking(slot0, slot1, slot2, slot3)
-	if slot1 == TRACKING_USER_LEVELUP then
-		originalPrint("tracking lvl:" .. slot3)
+function var_0_0.Tracking(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	if arg_2_1 == TRACKING_USER_LEVELUP then
+		originalPrint("tracking lvl:" .. arg_2_3)
 		pg.SdkMgr.GetInstance():SdkLevelUp()
 	end
 end
 
-return slot0
+return var_0_0

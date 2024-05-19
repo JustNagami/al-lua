@@ -1,28 +1,32 @@
-slot0 = class("GuildRequestMediator", import("..base.ContextMediator"))
-slot0.ACCPET = "GuildRequestMediator:ACCPET"
-slot0.REJECT = "GuildRequestMediator:REJECT"
+﻿local var_0_0 = class("GuildRequestMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot1 = getProxy(GuildProxy)
-	slot0.guild = slot1:getData()
+var_0_0.ACCPET = "GuildRequestMediator:ACCPET"
+var_0_0.REJECT = "GuildRequestMediator:REJECT"
 
-	if not slot1:getSortRequest() or slot1.requestCount > 0 then
-		slot0:sendNotification(GAME.GUILD_GET_REQUEST_LIST, slot0.guild.id)
-		slot1:ResetRequestCount()
+function var_0_0.register(arg_1_0)
+	local var_1_0 = getProxy(GuildProxy)
+
+	arg_1_0.guild = var_1_0:getData()
+
+	local var_1_1 = var_1_0:getSortRequest()
+
+	if not var_1_1 or var_1_0.requestCount > 0 then
+		arg_1_0:sendNotification(GAME.GUILD_GET_REQUEST_LIST, arg_1_0.guild.id)
+		var_1_0:ResetRequestCount()
 	else
-		slot0.viewComponent:setRequest(slot2)
-		slot0.viewComponent:initRequests()
+		arg_1_0.viewComponent:setRequest(var_1_1)
+		arg_1_0.viewComponent:initRequests()
 	end
 
-	slot0:bind(uv0.ACCPET, function (slot0, slot1)
-		uv0:sendNotification(GAME.GUIDL_REQUEST_ACCEPT, slot1)
+	arg_1_0:bind(var_0_0.ACCPET, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.GUIDL_REQUEST_ACCEPT, arg_2_1)
 	end)
-	slot0:bind(uv0.REJECT, function (slot0, slot1)
-		uv0:sendNotification(GAME.GUIDL_REQUEST_REJECT, slot1)
+	arg_1_0:bind(var_0_0.REJECT, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.GUIDL_REQUEST_REJECT, arg_3_1)
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_4_0)
 	return {
 		GuildProxy.REQUEST_DELETED,
 		GAME.GUILD_GET_REQUEST_LIST_DONE,
@@ -30,23 +34,26 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	if slot1:getName() == GuildProxy.REQUEST_DELETED then
-		slot0.viewComponent:deleteRequest(slot1:getBody())
-	elseif slot2 == GAME.GUILD_GET_REQUEST_LIST_DONE then
-		slot0.viewComponent:setRequest(slot3)
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
 
-		if not slot0.viewComponent.isInit then
-			slot0.viewComponent.isInit = true
+	if var_5_0 == GuildProxy.REQUEST_DELETED then
+		arg_5_0.viewComponent:deleteRequest(var_5_1)
+	elseif var_5_0 == GAME.GUILD_GET_REQUEST_LIST_DONE then
+		arg_5_0.viewComponent:setRequest(var_5_1)
 
-			slot0.viewComponent:initRequests()
+		if not arg_5_0.viewComponent.isInit then
+			arg_5_0.viewComponent.isInit = true
+
+			arg_5_0.viewComponent:initRequests()
 		else
-			slot0.viewComponent:SetTotalCount()
+			arg_5_0.viewComponent:SetTotalCount()
 		end
-	elseif slot2 == GuildProxy.REQUEST_COUNT_UPDATED then
-		slot0:sendNotification(GAME.GUILD_GET_REQUEST_LIST, slot0.guild.id)
+	elseif var_5_0 == GuildProxy.REQUEST_COUNT_UPDATED then
+		arg_5_0:sendNotification(GAME.GUILD_GET_REQUEST_LIST, arg_5_0.guild.id)
 		getProxy(GuildProxy):ResetRequestCount()
 	end
 end
 
-return slot0
+return var_0_0

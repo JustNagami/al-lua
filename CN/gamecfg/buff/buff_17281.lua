@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffShield",
+			trigger = {
+				"onStack",
+				"onTakeDamage"
+			},
+			arg_list = {
+				casterMaxHPRatio = 0.035
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -147,17 +159,5 @@ return {
 	stack = 1,
 	id = 17281,
 	icon = 17280,
-	last_effect = "Shield",
-	effect_list = {
-		{
-			type = "BattleBuffShield",
-			trigger = {
-				"onStack",
-				"onTakeDamage"
-			},
-			arg_list = {
-				casterMaxHPRatio = 0.035
-			}
-		}
-	}
+	last_effect = "Shield"
 }

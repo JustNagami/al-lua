@@ -1,42 +1,44 @@
-slot0 = class("resumeLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("resumeLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "resumeUI"
 end
 
-function slot0.setPlayerVO(slot0, slot1)
-	slot0.player = slot1
+function var_0_0.setPlayerVO(arg_2_0, arg_2_1)
+	arg_2_0.player = arg_2_1
 end
 
-function slot0.init(slot0)
-	slot0.frame = slot0:findTF("frame")
-	slot0.resumeIcon = slot0:findTF("frame/window/info/circle/head")
-	slot0.resumeStars = slot0:findTF("frame/window/info/circle/head/stars")
-	slot0.resumeStarTpl = slot0:findTF("frame/window/info/circle/head/star")
-	slot0.resumeLv = slot0:findTF("frame/window/info/player_info/level_bg/level"):GetComponent(typeof(Text))
-	slot0.resumeName = slot0:findTF("frame/window/info/player_info/name_bg/name"):GetComponent(typeof(Text))
-	slot0.resumeInfo = slot0:findTF("frame/window/summary/content")
-	slot0.resumeEmblem = slot0:findTF("frame/window/info/rank_bg/rank/Image")
-	slot0.resumeEmblemLabel = slot0:findTF("frame/window/info/rank_bg/rank/label")
-	slot0.resumeMedalList = slot0:findTF("frame/window/medalList/container")
-	slot0.resumeMedalTpl = slot0:findTF("frame/window/medal_tpl")
-	slot0.closeBtn = slot0:findTF("frame/window/title_bg/close_btn")
-	slot0.circle = slot0:findTF("frame/window/info/circle/head/frame")
-	slot0.titleText = slot0:findTF("frame/title/label_cn/text")
+function var_0_0.init(arg_3_0)
+	arg_3_0.frame = arg_3_0:findTF("frame")
+	arg_3_0.resumeIcon = arg_3_0:findTF("frame/window/info/circle/head")
+	arg_3_0.resumeStars = arg_3_0:findTF("frame/window/info/circle/head/stars")
+	arg_3_0.resumeStarTpl = arg_3_0:findTF("frame/window/info/circle/head/star")
+	arg_3_0.resumeLv = arg_3_0:findTF("frame/window/info/player_info/level_bg/level"):GetComponent(typeof(Text))
+	arg_3_0.resumeName = arg_3_0:findTF("frame/window/info/player_info/name_bg/name"):GetComponent(typeof(Text))
+	arg_3_0.resumeInfo = arg_3_0:findTF("frame/window/summary/content")
+	arg_3_0.resumeEmblem = arg_3_0:findTF("frame/window/info/rank_bg/rank/Image")
+	arg_3_0.resumeEmblemLabel = arg_3_0:findTF("frame/window/info/rank_bg/rank/label")
+	arg_3_0.resumeMedalList = arg_3_0:findTF("frame/window/medalList/container")
+	arg_3_0.resumeMedalTpl = arg_3_0:findTF("frame/window/medal_tpl")
+	arg_3_0.closeBtn = arg_3_0:findTF("frame/window/title_bg/close_btn")
+	arg_3_0.circle = arg_3_0:findTF("frame/window/info/circle/head/frame")
+	arg_3_0.titleText = arg_3_0:findTF("frame/title/label_cn/text")
 
-	if i18n("friend_resume_title_detail") then
-		setText(slot0.titleText, slot1)
+	local var_3_0 = i18n("friend_resume_title_detail")
+
+	if var_3_0 then
+		setText(arg_3_0.titleText, var_3_0)
 	end
 end
 
-function slot0.didEnter(slot0)
-	slot0:display(slot0.player)
-	onButton(slot0, slot0._tf, function ()
-		uv0:emit(uv1.ON_CLOSE)
+function var_0_0.didEnter(arg_4_0)
+	arg_4_0:display(arg_4_0.player)
+	onButton(arg_4_0, arg_4_0._tf, function()
+		arg_4_0:emit(var_0_0.ON_CLOSE)
 	end, SOUND_BACK)
 end
 
-slot1 = {
+local var_0_1 = {
 	{
 		value = "shipCount",
 		type = 1,
@@ -82,94 +84,117 @@ slot1 = {
 	}
 }
 
-function slot0.display(slot0, slot1)
-	if slot0.contextData.parent then
-		setParent(slot0._tf, slot0.contextData.parent)
+function var_0_0.display(arg_6_0, arg_6_1)
+	if arg_6_0.contextData.parent then
+		setParent(arg_6_0._tf, arg_6_0.contextData.parent)
 	else
-		pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
+		pg.UIMgr.GetInstance():BlurPanel(arg_6_0._tf, false, {
 			weight = LayerWeightConst.SECOND_LAYER
 		})
 	end
 
-	slot2 = SeasonInfo.getMilitaryRank(slot1.score, slot1.rank)
-	slot3 = SeasonInfo.getEmblem(slot1.score, slot1.rank)
+	local var_6_0 = SeasonInfo.getMilitaryRank(arg_6_1.score, arg_6_1.rank)
+	local var_6_1 = SeasonInfo.getEmblem(arg_6_1.score, arg_6_1.rank)
 
-	LoadImageSpriteAsync("emblem/" .. slot3, slot0.resumeEmblem)
-	LoadImageSpriteAsync("emblem/n_" .. slot3, slot0.resumeEmblemLabel)
+	LoadImageSpriteAsync("emblem/" .. var_6_1, arg_6_0.resumeEmblem)
+	LoadImageSpriteAsync("emblem/n_" .. var_6_1, arg_6_0.resumeEmblemLabel)
 
-	slot0.resumeName.text = slot1.name
-	slot0.resumeLv.text = "Lv." .. slot1.level
+	arg_6_0.resumeName.text = arg_6_1.name
+	arg_6_0.resumeLv.text = "Lv." .. arg_6_1.level
 
-	LoadSpriteAsync("qicon/" .. slot1:getPainting(), function (slot0)
-		if not IsNil(uv0.resumeIcon) then
-			uv0.resumeIcon:GetComponent(typeof(Image)).color = Color.white
-			slot1.sprite = slot0 or LoadSprite("heroicon/unknown")
+	LoadSpriteAsync("qicon/" .. arg_6_1:getPainting(), function(arg_7_0)
+		if not IsNil(arg_6_0.resumeIcon) then
+			local var_7_0 = arg_6_0.resumeIcon:GetComponent(typeof(Image))
+
+			var_7_0.color = Color.white
+			var_7_0.sprite = arg_7_0 or LoadSprite("heroicon/unknown")
 		end
 	end)
 
-	slot4 = AttireFrame.attireFrameRes(slot1, slot1.id == getProxy(PlayerProxy):getRawData().id, AttireConst.TYPE_ICON_FRAME, slot1.propose)
+	local var_6_2 = AttireFrame.attireFrameRes(arg_6_1, arg_6_1.id == getProxy(PlayerProxy):getRawData().id, AttireConst.TYPE_ICON_FRAME, arg_6_1.propose)
 
-	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. slot4, slot4, true, function (slot0)
-		if IsNil(uv0._tf) then
+	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var_6_2, var_6_2, true, function(arg_8_0)
+		if IsNil(arg_6_0._tf) then
 			return
 		end
 
-		if uv0.circle then
-			slot0.name = uv1
-			findTF(slot0.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
+		if arg_6_0.circle then
+			arg_8_0.name = var_6_2
+			findTF(arg_8_0.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
 
-			setParent(slot0, uv0.circle, false)
+			setParent(arg_8_0, arg_6_0.circle, false)
 		else
-			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. uv1, uv1, slot0)
+			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_6_2, var_6_2, arg_8_0)
 		end
 	end)
 
-	for slot12 = slot0.resumeStars.childCount, Ship.New({
-		configId = pg.ship_data_statistics[slot1.icon].id
-	}):getStar() - 1 do
-		cloneTplTo(slot0.resumeStarTpl, slot0.resumeStars)
+	local var_6_3 = pg.ship_data_statistics[arg_6_1.icon]
+	local var_6_4 = Ship.New({
+		configId = var_6_3.id
+	})
+	local var_6_5 = arg_6_0.resumeStars.childCount
+	local var_6_6 = var_6_4:getStar()
+
+	for iter_6_0 = var_6_5, var_6_6 - 1 do
+		cloneTplTo(arg_6_0.resumeStarTpl, arg_6_0.resumeStars)
 	end
 
-	for slot12 = 0, slot0.resumeStars.childCount - 1 do
-		slot0.resumeStars:GetChild(slot12).gameObject:SetActive(slot12 < slot5.star)
+	local var_6_7 = arg_6_0.resumeStars.childCount
+
+	for iter_6_1 = 0, var_6_7 - 1 do
+		arg_6_0.resumeStars:GetChild(iter_6_1).gameObject:SetActive(iter_6_1 < var_6_3.star)
 	end
 
-	removeAllChildren(slot0.resumeMedalList)
+	removeAllChildren(arg_6_0.resumeMedalList)
 
-	for slot12 = 1, 5 do
-		setActive(slot0:findTF("empty", cloneTplTo(slot0.resumeMedalTpl, slot0.resumeMedalList)), slot12 > #slot1.displayTrophyList)
+	for iter_6_2 = 1, 5 do
+		local var_6_8 = cloneTplTo(arg_6_0.resumeMedalTpl, arg_6_0.resumeMedalList)
 
-		if slot12 <= #slot1.displayTrophyList then
-			setActive(slot0:findTF("icon", slot13), true)
-			LoadImageSpriteAsync("medal/" .. pg.medal_template[slot1.displayTrophyList[slot12]].icon, slot0:findTF("icon", slot13), true)
+		setActive(arg_6_0:findTF("empty", var_6_8), iter_6_2 > #arg_6_1.displayTrophyList)
+
+		if iter_6_2 <= #arg_6_1.displayTrophyList then
+			setActive(arg_6_0:findTF("icon", var_6_8), true)
+
+			local var_6_9 = pg.medal_template[arg_6_1.displayTrophyList[iter_6_2]]
+
+			LoadImageSpriteAsync("medal/" .. var_6_9.icon, arg_6_0:findTF("icon", var_6_8), true)
 		end
 	end
 
-	for slot12, slot13 in ipairs(uv0) do
-		slot14 = slot0.resumeInfo:GetChild(slot12 - 1)
+	for iter_6_3, iter_6_4 in ipairs(var_0_1) do
+		local var_6_10 = arg_6_0.resumeInfo:GetChild(iter_6_3 - 1)
 
-		setText(slot14:Find("tag"), slot13.tag)
+		setText(var_6_10:Find("tag"), iter_6_4.tag)
 
-		if slot13.type == 1 then
-			setText(slot14:Find("value"), slot0.player[slot13.value])
-		elseif slot13.type == 2 then
-			setText(slot15, string.format("%0.2f", math.max(slot0.player[slot13.value[2]], 0) / math.max(slot0.player[slot13.value[1]], 1) * 100) .. "%")
-		elseif slot13.type == 3 then
-			setText(slot15, string.format("%0.2f", (slot0.player[slot13.value[1]] or 1) / getProxy(CollectionProxy):getCollectionTotal() * 100) .. "%")
+		local var_6_11 = var_6_10:Find("value")
+
+		if iter_6_4.type == 1 then
+			setText(var_6_11, arg_6_0.player[iter_6_4.value])
+		elseif iter_6_4.type == 2 then
+			local var_6_12 = math.max(arg_6_0.player[iter_6_4.value[1]], 1)
+			local var_6_13 = math.max(arg_6_0.player[iter_6_4.value[2]], 0)
+
+			setText(var_6_11, string.format("%0.2f", var_6_13 / var_6_12 * 100) .. "%")
+		elseif iter_6_4.type == 3 then
+			local var_6_14 = arg_6_0.player[iter_6_4.value[1]] or 1
+
+			setText(var_6_11, string.format("%0.2f", var_6_14 / getProxy(CollectionProxy):getCollectionTotal() * 100) .. "%")
 		end
 	end
 end
 
-function slot0.willExit(slot0)
-	if not slot0.contextData.parent then
-		pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, pg.UIMgr.GetInstance().UIMain)
+function var_0_0.willExit(arg_9_0)
+	if arg_9_0.contextData.parent then
+		-- block empty
+	else
+		pg.UIMgr.GetInstance():UnblurPanel(arg_9_0._tf, pg.UIMgr.GetInstance().UIMain)
 	end
 
-	if slot0.circle.childCount > 0 then
-		slot1 = slot0.circle:GetChild(0).gameObject
+	if arg_9_0.circle.childCount > 0 then
+		local var_9_0 = arg_9_0.circle:GetChild(0).gameObject
 
-		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. slot1.name, slot1.name, slot1)
+		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_9_0.name, var_9_0.name, var_9_0)
 	end
 end
 
-return slot0
+return var_0_0

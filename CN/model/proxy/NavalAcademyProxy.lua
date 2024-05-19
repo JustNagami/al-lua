@@ -1,381 +1,451 @@
-slot0 = class("NavalAcademyProxy", import(".NetProxy"))
-slot0.COURSE_START = "NavalAcademyProxy:COURSE_START"
-slot0.COURSE_UPDATED = "NavalAcademyProxy:COURSE_UPDATED"
-slot0.COURSE_REWARD = "NavalAcademyProxy:COURSE_REWARD"
-slot0.COURSE_CANCEL = "NavalAcademyProxy:COURSE_CANCEL"
-slot0.RESOURCE_UPGRADE = "NavalAcademyProxy:RESOURCE_UPGRADE"
-slot0.RESOURCE_UPGRADE_DONE = "NavalAcademyProxy:RESOURCE_UPGRADE_DONE"
-slot0.BUILDING_FINISH = "NavalAcademyProxy:BUILDING_FINISH"
-slot0.START_LEARN_TACTICS = "NavalAcademyProxy:START_LEARN_TACTICS"
-slot0.CANCEL_LEARN_TACTICS = "NavalAcademyProxy:CANCEL_LEARN_TACTICS"
-slot0.SKILL_CLASS_POS_UPDATED = "NavalAcademyProxy:SKILL_CLASS_POS_UPDATED"
+﻿local var_0_0 = class("NavalAcademyProxy", import(".NetProxy"))
 
-function slot0.register(slot0)
-	slot0.timers = {}
-	slot0.students = {}
-	slot0.course = AcademyCourse.New()
-	slot0.recentShips = {}
+var_0_0.COURSE_START = "NavalAcademyProxy:COURSE_START"
+var_0_0.COURSE_UPDATED = "NavalAcademyProxy:COURSE_UPDATED"
+var_0_0.COURSE_REWARD = "NavalAcademyProxy:COURSE_REWARD"
+var_0_0.COURSE_CANCEL = "NavalAcademyProxy:COURSE_CANCEL"
+var_0_0.RESOURCE_UPGRADE = "NavalAcademyProxy:RESOURCE_UPGRADE"
+var_0_0.RESOURCE_UPGRADE_DONE = "NavalAcademyProxy:RESOURCE_UPGRADE_DONE"
+var_0_0.BUILDING_FINISH = "NavalAcademyProxy:BUILDING_FINISH"
+var_0_0.START_LEARN_TACTICS = "NavalAcademyProxy:START_LEARN_TACTICS"
+var_0_0.CANCEL_LEARN_TACTICS = "NavalAcademyProxy:CANCEL_LEARN_TACTICS"
+var_0_0.SKILL_CLASS_POS_UPDATED = "NavalAcademyProxy:SKILL_CLASS_POS_UPDATED"
 
-	slot0:on(22001, function (slot0)
-		slot1 = OilResourceField.New()
+function var_0_0.register(arg_1_0)
+	arg_1_0.timers = {}
+	arg_1_0.students = {}
+	arg_1_0.course = AcademyCourse.New()
+	arg_1_0.recentShips = {}
 
-		slot1:SetLevel(slot0.oil_well_level)
-		slot1:SetUpgradeTimeStamp(slot0.oil_well_lv_up_time)
+	arg_1_0:on(22001, function(arg_2_0)
+		local var_2_0 = OilResourceField.New()
 
-		uv0._oilVO = slot1
-		slot2 = GoldResourceField.New()
+		var_2_0:SetLevel(arg_2_0.oil_well_level)
+		var_2_0:SetUpgradeTimeStamp(arg_2_0.oil_well_lv_up_time)
 
-		slot2:SetLevel(slot0.gold_well_level)
-		slot2:SetUpgradeTimeStamp(slot0.gold_well_lv_up_time)
+		arg_1_0._oilVO = var_2_0
 
-		uv0._goldVO = slot2
-		slot3 = ClassResourceField.New()
+		local var_2_1 = GoldResourceField.New()
 
-		slot3:SetLevel(slot0.class_lv)
-		slot3:SetUpgradeTimeStamp(slot0.class_lv_up_time)
+		var_2_1:SetLevel(arg_2_0.gold_well_level)
+		var_2_1:SetUpgradeTimeStamp(arg_2_0.gold_well_lv_up_time)
 
-		uv0._classVO = slot3
+		arg_1_0._goldVO = var_2_1
 
-		uv0.course:update(slot0.class)
+		local var_2_2 = ClassResourceField.New()
 
-		for slot8, slot9 in ipairs(slot0.skill_class_list) do
-			slot10 = Student.New(slot9)
+		var_2_2:SetLevel(arg_2_0.class_lv)
+		var_2_2:SetUpgradeTimeStamp(arg_2_0.class_lv_up_time)
+
+		arg_1_0._classVO = var_2_2
+
+		arg_1_0.course:update(arg_2_0.class)
+
+		local var_2_3 = {}
+
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.skill_class_list) do
+			local var_2_4 = Student.New(iter_2_1)
+
+			var_2_3[var_2_4.id] = var_2_4
 		end
 
-		uv0.skillClassNum = LOCK_CLASSROOM and 2 or slot0.skill_class_num or 2
+		arg_1_0.skillClassNum = LOCK_CLASSROOM and 2 or arg_2_0.skill_class_num or 2
 
-		uv0:setStudents({
-			[slot10.id] = slot10
-		})
+		arg_1_0:setStudents(var_2_3)
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inClass")
-		uv0:CheckResFields()
+		arg_1_0:CheckResFields()
 
-		uv0.dailyFinsihCnt = slot0.daily_finish_buff_cnt or 0
+		arg_1_0.dailyFinsihCnt = arg_2_0.daily_finish_buff_cnt or 0
 	end)
-	slot0:on(22013, function (slot0)
-		uv0.course:SetProficiency(slot0.proficiency)
+	arg_1_0:on(22013, function(arg_3_0)
+		arg_1_0.course:SetProficiency(arg_3_0.proficiency)
 
-		slot1 = getProxy(PlayerProxy):getData()
-		slot1.expField = slot0.exp_in_well
+		local var_3_0 = getProxy(PlayerProxy):getData()
 
-		getProxy(PlayerProxy):updatePlayer(slot1)
-		uv0:sendNotification(uv1.COURSE_UPDATED)
+		var_3_0.expField = arg_3_0.exp_in_well
+
+		getProxy(PlayerProxy):updatePlayer(var_3_0)
+		arg_1_0:sendNotification(var_0_0.COURSE_UPDATED)
 	end)
 end
 
-function slot0.GetRecentShips(slot0)
-	if #slot0.recentShips > 0 then
-		for slot4 = #slot0.recentShips, 1, -1 do
-			if not getProxy(BayProxy):RawGetShipById(slot0.recentShips[slot4]) or _.all(slot6:getSkillList(), function (slot0)
-				return ShipSkill.New(uv0.skills[slot0]):IsMaxLevel()
+function var_0_0.GetRecentShips(arg_4_0)
+	if #arg_4_0.recentShips > 0 then
+		for iter_4_0 = #arg_4_0.recentShips, 1, -1 do
+			local var_4_0 = arg_4_0.recentShips[iter_4_0]
+			local var_4_1 = getProxy(BayProxy):RawGetShipById(var_4_0)
+
+			if not var_4_1 or _.all(var_4_1:getSkillList(), function(arg_5_0)
+				return ShipSkill.New(var_4_1.skills[arg_5_0]):IsMaxLevel()
 			end) then
-				table.remove(slot0.recentShips, slot4)
+				table.remove(arg_4_0.recentShips, iter_4_0)
 			end
 		end
 
-		return slot0.recentShips
+		return arg_4_0.recentShips
 	end
 
-	for slot7, slot8 in ipairs(string.split(PlayerPrefs.GetString("NavTacticsRecentShipId" .. getProxy(PlayerProxy):getRawData().id), "#")) do
-		if (tonumber(slot8) or 0) > 0 then
-			if getProxy(BayProxy):RawGetShipById(slot9) and not table.contains(slot0.recentShips, slot9) and _.any(slot10:getSkillList(), function (slot0)
-				return not ShipSkill.New(uv0.skills[slot0]):IsMaxLevel()
+	local var_4_2 = getProxy(PlayerProxy):getRawData().id
+	local var_4_3 = PlayerPrefs.GetString("NavTacticsRecentShipId" .. var_4_2)
+	local var_4_4 = string.split(var_4_3, "#")
+
+	for iter_4_1, iter_4_2 in ipairs(var_4_4) do
+		local var_4_5 = tonumber(iter_4_2) or 0
+
+		if var_4_5 > 0 then
+			local var_4_6 = getProxy(BayProxy):RawGetShipById(var_4_5)
+
+			if var_4_6 and not table.contains(arg_4_0.recentShips, var_4_5) and _.any(var_4_6:getSkillList(), function(arg_6_0)
+				return not ShipSkill.New(var_4_6.skills[arg_6_0]):IsMaxLevel()
 			end) then
-				table.insert(slot0.recentShips, slot9)
+				table.insert(arg_4_0.recentShips, var_4_5)
 			end
 		end
 	end
 
-	return slot0.recentShips
+	return arg_4_0.recentShips
 end
 
-function slot0.SaveRecentShip(slot0, slot1)
-	if not table.contains(slot0.recentShips, slot1) then
-		table.insert(slot0.recentShips, slot1)
+function var_0_0.SaveRecentShip(arg_7_0, arg_7_1)
+	if not table.contains(arg_7_0.recentShips, arg_7_1) then
+		table.insert(arg_7_0.recentShips, arg_7_1)
 
-		for slot5 = 1, #slot0.recentShips - 11 do
-			table.remove(slot0.recentShips, slot5)
+		for iter_7_0 = 1, #arg_7_0.recentShips - 11 do
+			table.remove(arg_7_0.recentShips, iter_7_0)
 		end
 
-		PlayerPrefs.SetString("NavTacticsRecentShipId" .. getProxy(PlayerProxy):getRawData().id, table.concat(slot0.recentShips, "#"))
+		local var_7_0 = table.concat(arg_7_0.recentShips, "#")
+		local var_7_1 = getProxy(PlayerProxy):getRawData().id
+
+		PlayerPrefs.SetString("NavTacticsRecentShipId" .. var_7_1, var_7_0)
 		PlayerPrefs.Save()
 	end
 end
 
-function slot0.getSkillClassNum(slot0)
-	return slot0.skillClassNum
+function var_0_0.getSkillClassNum(arg_8_0)
+	return arg_8_0.skillClassNum
 end
 
-slot0.MAX_SKILL_CLASS_NUM = 4
+var_0_0.MAX_SKILL_CLASS_NUM = 4
 
-function slot0.inCreaseKillClassNum(slot0)
-	slot0.skillClassNum = math.min(slot0.skillClassNum + 1, uv0.MAX_SKILL_CLASS_NUM)
+function var_0_0.inCreaseKillClassNum(arg_9_0)
+	arg_9_0.skillClassNum = math.min(arg_9_0.skillClassNum + 1, var_0_0.MAX_SKILL_CLASS_NUM)
 
-	slot0:sendNotification(uv0.SKILL_CLASS_POS_UPDATED, slot0.skillClassNum)
+	arg_9_0:sendNotification(var_0_0.SKILL_CLASS_POS_UPDATED, arg_9_0.skillClassNum)
 end
 
-function slot0.onRemove(slot0)
-	for slot4, slot5 in pairs(slot0.timers) do
-		slot5:Stop()
+function var_0_0.onRemove(arg_10_0)
+	for iter_10_0, iter_10_1 in pairs(arg_10_0.timers) do
+		iter_10_1:Stop()
 	end
 
-	slot0.timers = nil
+	arg_10_0.timers = nil
 
-	uv0.super.onRemove(slot0)
+	var_0_0.super.onRemove(arg_10_0)
 end
 
-function slot0.ExistStudent(slot0, slot1)
-	return slot0.students[slot1] ~= nil
+function var_0_0.ExistStudent(arg_11_0, arg_11_1)
+	return arg_11_0.students[arg_11_1] ~= nil
 end
 
-function slot0.getStudentById(slot0, slot1)
-	if slot0.students[slot1] then
-		return slot0.students[slot1]:clone()
+function var_0_0.getStudentById(arg_12_0, arg_12_1)
+	if arg_12_0.students[arg_12_1] then
+		return arg_12_0.students[arg_12_1]:clone()
 	end
 end
 
-function slot0.getStudentIdByShipId(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.students) do
-		if slot6.shipId == slot1 then
-			return slot6.id
+function var_0_0.getStudentIdByShipId(arg_13_0, arg_13_1)
+	for iter_13_0, iter_13_1 in pairs(arg_13_0.students) do
+		if iter_13_1.shipId == arg_13_1 then
+			return iter_13_1.id
 		end
 	end
 end
 
-function slot0.getStudentByShipId(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.students) do
-		if slot6.shipId == slot1 then
-			return slot6
+function var_0_0.getStudentByShipId(arg_14_0, arg_14_1)
+	for iter_14_0, iter_14_1 in pairs(arg_14_0.students) do
+		if iter_14_1.shipId == arg_14_1 then
+			return iter_14_1
 		end
 	end
 end
 
-function slot0.setStudents(slot0, slot1)
-	slot0.students = slot1
+function var_0_0.setStudents(arg_15_0, arg_15_1)
+	arg_15_0.students = arg_15_1
 
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inTactics")
 end
 
-function slot0.getStudents(slot0)
-	return Clone(slot0.students)
+function var_0_0.getStudents(arg_16_0)
+	return Clone(arg_16_0.students)
 end
 
-function slot0.RawGetStudentList(slot0)
-	return slot0.students
+function var_0_0.RawGetStudentList(arg_17_0)
+	return arg_17_0.students
 end
 
-function slot0.addStudent(slot0, slot1)
-	slot0.students[slot1.id] = slot1
+function var_0_0.addStudent(arg_18_0, arg_18_1)
+	arg_18_0.students[arg_18_1.id] = arg_18_1
 
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inTactics")
-	slot0:sendNotification(uv0.START_LEARN_TACTICS, Clone(slot1))
+	arg_18_0:sendNotification(var_0_0.START_LEARN_TACTICS, Clone(arg_18_1))
 end
 
-function slot0.updateStudent(slot0, slot1)
-	slot0.students[slot1.id] = slot1
+function var_0_0.updateStudent(arg_19_0, arg_19_1)
+	arg_19_0.students[arg_19_1.id] = arg_19_1
 
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inTactics")
 end
 
-function slot0.deleteStudent(slot0, slot1)
-	slot0.students[slot1] = nil
+function var_0_0.deleteStudent(arg_20_0, arg_20_1)
+	arg_20_0.students[arg_20_1] = nil
 
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inTactics")
-	slot0:sendNotification(uv0.CANCEL_LEARN_TACTICS, slot1)
+	arg_20_0:sendNotification(var_0_0.CANCEL_LEARN_TACTICS, arg_20_1)
 end
 
-function slot0.GetOilVO(slot0)
-	return slot0._oilVO
+function var_0_0.GetOilVO(arg_21_0)
+	return arg_21_0._oilVO
 end
 
-function slot0.GetGoldVO(slot0)
-	return slot0._goldVO
+function var_0_0.GetGoldVO(arg_22_0)
+	return arg_22_0._goldVO
 end
 
-function slot0.GetClassVO(slot0)
-	return slot0._classVO
+function var_0_0.GetClassVO(arg_23_0)
+	return arg_23_0._classVO
 end
 
-function slot0.getCourse(slot0)
-	return Clone(slot0.course)
+function var_0_0.getCourse(arg_24_0)
+	return Clone(arg_24_0.course)
 end
 
-function slot0.setCourse(slot0, slot1)
-	slot0.course = slot1
+function var_0_0.setCourse(arg_25_0, arg_25_1)
+	arg_25_0.course = arg_25_1
 
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inClass")
 end
 
-function slot0.GetShipIDs(slot0)
+function var_0_0.GetShipIDs(arg_26_0)
 	return {}
 end
 
-function slot0.CheckResFields(slot0)
-	if slot0._oilVO:IsStarting() then
-		slot0:AddResFieldListener(slot0._oilVO)
+function var_0_0.CheckResFields(arg_27_0)
+	if arg_27_0._oilVO:IsStarting() then
+		arg_27_0:AddResFieldListener(arg_27_0._oilVO)
 	end
 
-	if slot0._goldVO:IsStarting() then
-		slot0:AddResFieldListener(slot0._goldVO)
+	if arg_27_0._goldVO:IsStarting() then
+		arg_27_0:AddResFieldListener(arg_27_0._goldVO)
 	end
 
-	if slot0._classVO:IsStarting() then
-		slot0:AddResFieldListener(slot0._classVO)
+	if arg_27_0._classVO:IsStarting() then
+		arg_27_0:AddResFieldListener(arg_27_0._classVO)
 	end
 end
 
-function slot0.StartUpGradeSuccess(slot0, slot1)
-	slot1:SetUpgradeTimeStamp(pg.TimeMgr.GetInstance():GetServerTime() + slot1:bindConfigTable()[slot1:GetLevel()].time)
-	slot0:AddResFieldListener(slot1)
-	slot0.facade:sendNotification(uv0.RESOURCE_UPGRADE, {
-		resVO = slot1
+function var_0_0.StartUpGradeSuccess(arg_28_0, arg_28_1)
+	local var_28_0 = arg_28_1:bindConfigTable()[arg_28_1:GetLevel()].time
+
+	arg_28_1:SetUpgradeTimeStamp(pg.TimeMgr.GetInstance():GetServerTime() + var_28_0)
+	arg_28_0:AddResFieldListener(arg_28_1)
+	arg_28_0.facade:sendNotification(var_0_0.RESOURCE_UPGRADE, {
+		resVO = arg_28_1
 	})
 end
 
-function slot0.AddResFieldListener(slot0, slot1)
-	if slot1._upgradeTimeStamp - pg.TimeMgr.GetInstance():GetServerTime() > 0 then
-		if slot0.timers[slot1:GetUpgradeType()] then
-			slot0.timers[slot3]:Stop()
+function var_0_0.AddResFieldListener(arg_29_0, arg_29_1)
+	local var_29_0 = arg_29_1._upgradeTimeStamp - pg.TimeMgr.GetInstance():GetServerTime()
 
-			slot0.timers[slot3] = nil
+	if var_29_0 > 0 then
+		local var_29_1 = arg_29_1:GetUpgradeType()
+
+		if arg_29_0.timers[var_29_1] then
+			arg_29_0.timers[var_29_1]:Stop()
+
+			arg_29_0.timers[var_29_1] = nil
 		end
 
-		slot0.timers[slot3] = Timer.New(function ()
-			uv0:UpgradeFinish()
-			uv0.timers[uv1]:Stop()
+		arg_29_0.timers[var_29_1] = Timer.New(function()
+			arg_29_0:UpgradeFinish()
+			arg_29_0.timers[var_29_1]:Stop()
 
-			uv0.timers[uv1] = nil
-		end, slot2, 1)
+			arg_29_0.timers[var_29_1] = nil
+		end, var_29_0, 1)
 
-		slot0.timers[slot3]:Start()
+		arg_29_0.timers[var_29_1]:Start()
 	end
 end
 
-function slot0.UpgradeFinish(slot0)
-	if slot0._goldVO:GetDuration() and slot0._goldVO:GetDuration() <= 0 then
-		slot0._goldVO:SetLevel(slot0._goldVO:GetLevel() + 1)
-		slot0._goldVO:SetUpgradeTimeStamp(0)
-		slot0:sendNotification(uv0.RESOURCE_UPGRADE_DONE, {
-			field = slot0._goldVO,
-			value = slot0._goldVO:bindConfigTable()[slot0._goldVO:GetLevel()].store - slot0._goldVO:bindConfigTable()[slot0._goldVO:GetLevel()].store
+function var_0_0.UpgradeFinish(arg_31_0)
+	if arg_31_0._goldVO:GetDuration() and arg_31_0._goldVO:GetDuration() <= 0 then
+		local var_31_0 = arg_31_0._goldVO:bindConfigTable()[arg_31_0._goldVO:GetLevel()].store
+
+		arg_31_0._goldVO:SetLevel(arg_31_0._goldVO:GetLevel() + 1)
+		arg_31_0._goldVO:SetUpgradeTimeStamp(0)
+
+		local var_31_1 = arg_31_0._goldVO:bindConfigTable()[arg_31_0._goldVO:GetLevel()].store
+
+		arg_31_0:sendNotification(var_0_0.RESOURCE_UPGRADE_DONE, {
+			field = arg_31_0._goldVO,
+			value = var_31_1 - var_31_0
 		})
 	end
 
-	if slot0._oilVO:GetDuration() and slot0._oilVO:GetDuration() <= 0 then
-		slot0._oilVO:SetLevel(slot0._oilVO:GetLevel() + 1)
-		slot0._oilVO:SetUpgradeTimeStamp(0)
-		slot0:sendNotification(uv0.RESOURCE_UPGRADE_DONE, {
-			field = slot0._oilVO,
-			value = slot0._oilVO:bindConfigTable()[slot0._oilVO:GetLevel()].store - slot0._oilVO:bindConfigTable()[slot0._oilVO:GetLevel()].store
+	if arg_31_0._oilVO:GetDuration() and arg_31_0._oilVO:GetDuration() <= 0 then
+		local var_31_2 = arg_31_0._oilVO:bindConfigTable()[arg_31_0._oilVO:GetLevel()].store
+
+		arg_31_0._oilVO:SetLevel(arg_31_0._oilVO:GetLevel() + 1)
+		arg_31_0._oilVO:SetUpgradeTimeStamp(0)
+
+		local var_31_3 = arg_31_0._oilVO:bindConfigTable()[arg_31_0._oilVO:GetLevel()].store
+
+		arg_31_0:sendNotification(var_0_0.RESOURCE_UPGRADE_DONE, {
+			field = arg_31_0._oilVO,
+			value = var_31_3 - var_31_2
 		})
 	end
 
-	if slot0._classVO:GetDuration() and slot0._classVO:GetDuration() <= 0 then
-		slot0._classVO:SetLevel(slot0._classVO:GetLevel() + 1)
-		slot0._classVO:SetUpgradeTimeStamp(0)
-		slot0:sendNotification(uv0.RESOURCE_UPGRADE_DONE, {
-			field = slot0._classVO,
-			value = slot0._classVO:bindConfigTable()[slot0._classVO:GetLevel()].store - slot0._classVO:bindConfigTable()[slot0._classVO:GetLevel()].store,
-			rate = slot0._classVO:bindConfigTable()[slot0._classVO:GetLevel()].proficency_get_percent - slot0._classVO:bindConfigTable()[slot0._classVO:GetLevel()].proficency_get_percent,
-			exp = (slot0._classVO:bindConfigTable()[slot0._classVO:GetLevel()].proficency_cost_per_min - slot0._classVO:bindConfigTable()[slot0._classVO:GetLevel()].proficency_cost_per_min) * 60
+	if arg_31_0._classVO:GetDuration() and arg_31_0._classVO:GetDuration() <= 0 then
+		local var_31_4 = arg_31_0._classVO:bindConfigTable()[arg_31_0._classVO:GetLevel()].store
+		local var_31_5 = arg_31_0._classVO:bindConfigTable()[arg_31_0._classVO:GetLevel()].proficency_get_percent
+		local var_31_6 = arg_31_0._classVO:bindConfigTable()[arg_31_0._classVO:GetLevel()].proficency_cost_per_min
+
+		arg_31_0._classVO:SetLevel(arg_31_0._classVO:GetLevel() + 1)
+		arg_31_0._classVO:SetUpgradeTimeStamp(0)
+
+		local var_31_7 = arg_31_0._classVO:bindConfigTable()[arg_31_0._classVO:GetLevel()].store
+		local var_31_8 = arg_31_0._classVO:bindConfigTable()[arg_31_0._classVO:GetLevel()].proficency_get_percent
+		local var_31_9 = arg_31_0._classVO:bindConfigTable()[arg_31_0._classVO:GetLevel()].proficency_cost_per_min
+
+		arg_31_0:sendNotification(var_0_0.RESOURCE_UPGRADE_DONE, {
+			field = arg_31_0._classVO,
+			value = var_31_7 - var_31_4,
+			rate = var_31_8 - var_31_5,
+			exp = (var_31_9 - var_31_6) * 60
 		})
 	end
 end
 
-function slot0.isResourceFieldUpgradeConditionSatisfy(slot0)
-	slot2 = getProxy(PlayerProxy):getData()
+function var_0_0.isResourceFieldUpgradeConditionSatisfy(arg_32_0)
+	local var_32_0 = getProxy(PlayerProxy):getData()
 
-	if slot0:GetOilVO():CanUpgrade(slot2.level, slot2.gold) or slot0:GetGoldVO():CanUpgrade(slot2.level, slot2.gold) or slot0:GetClassVO():CanUpgrade(slot2.level, slot2.gold) then
+	if arg_32_0:GetOilVO():CanUpgrade(var_32_0.level, var_32_0.gold) or arg_32_0:GetGoldVO():CanUpgrade(var_32_0.level, var_32_0.gold) or arg_32_0:GetClassVO():CanUpgrade(var_32_0.level, var_32_0.gold) then
 		return true
 	end
 
 	return false
 end
 
-function slot0.AddCourseProficiency(slot0, slot1)
-	slot2 = slot0:getCourse()
-	slot3 = slot0:GetClassVO()
+function var_0_0.AddCourseProficiency(arg_33_0, arg_33_1)
+	local var_33_0 = arg_33_0:getCourse()
+	local var_33_1 = arg_33_0:GetClassVO()
+	local var_33_2 = var_33_1:GetExp2ProficiencyRatio() * var_33_0:getExtraRate()
+	local var_33_3 = var_33_0:GetProficiency() + math.floor(arg_33_1 * var_33_2 * 0.01)
+	local var_33_4 = math.min(var_33_3, var_33_1:GetMaxProficiency())
 
-	slot2:SetProficiency(math.min(slot2:GetProficiency() + math.floor(slot1 * slot3:GetExp2ProficiencyRatio() * slot2:getExtraRate() * 0.01), slot3:GetMaxProficiency()))
-	slot0:setCourse(slot2)
+	var_33_0:SetProficiency(var_33_4)
+	arg_33_0:setCourse(var_33_0)
 end
 
-function slot0.fillStudens(slot0, slot1)
-	slot3 = {
-		[slot8.groupId] = true
-	}
+function var_0_0.fillStudens(arg_34_0, arg_34_1)
+	local var_34_0 = pg.gameset.academy_random_ship_count.key_value
+	local var_34_1 = {}
 
-	for slot7, slot8 in pairs(slot1) do
-		slot2 = pg.gameset.academy_random_ship_count.key_value - 1
+	for iter_34_0, iter_34_1 in pairs(arg_34_1) do
+		var_34_1[iter_34_1.groupId] = true
+		var_34_0 = var_34_0 - 1
 	end
 
-	if not slot0._timeStamp or pg.gameset.academy_random_ship_coldtime.key_value < os.time() - slot0._timeStamp then
-		slot0._studentsFiller = nil
+	local var_34_2 = pg.gameset.academy_random_ship_coldtime.key_value
+
+	if not arg_34_0._timeStamp or var_34_2 < os.time() - arg_34_0._timeStamp then
+		arg_34_0._studentsFiller = nil
 	end
 
-	if not slot0._studentsFiller then
-		slot2 = math.random(1, slot2)
-		slot0._timeStamp = os.time()
-		slot0._studentsFiller = {}
-		slot7 = getProxy(BayProxy)
-		slot9 = getProxy(ShipSkinProxy):getSkinList()
-		slot10 = {}
+	if not arg_34_0._studentsFiller then
+		local var_34_3 = math.random(1, var_34_0)
 
-		for slot14, slot15 in pairs(getProxy(CollectionProxy):getGroups()) do
-			if not table.contains(slot3, slot14) then
-				slot10[#slot10 + 1] = slot14
+		arg_34_0._timeStamp = os.time()
+		arg_34_0._studentsFiller = {}
+
+		local var_34_4 = getProxy(CollectionProxy):getGroups()
+		local var_34_5 = getProxy(BayProxy)
+		local var_34_6 = getProxy(ShipSkinProxy):getSkinList()
+		local var_34_7 = {}
+
+		for iter_34_2, iter_34_3 in pairs(var_34_4) do
+			if not table.contains(var_34_1, iter_34_2) then
+				var_34_7[#var_34_7 + 1] = iter_34_2
 			end
 		end
 
-		slot11 = #slot10
+		local var_34_8 = #var_34_7
 
-		while slot2 > 0 and slot11 > 0 do
-			slot13 = slot10[math.random(#slot10)]
-			slot14 = slot6[slot13]
-			slot16 = 10000000000.0 + slot13 * 10 + 1
-			slot18 = {}
-			slot19 = nil
-			slot20 = {}
+		while var_34_3 > 0 and var_34_8 > 0 do
+			local var_34_9 = math.random(#var_34_7)
+			local var_34_10 = var_34_7[var_34_9]
+			local var_34_11 = var_34_4[var_34_10]
+			local var_34_12 = var_34_10 * 10 + 1
+			local var_34_13 = 10000000000 + var_34_12
+			local var_34_14 = ShipGroup.getSkinList(var_34_10)
+			local var_34_15 = {}
+			local var_34_16
+			local var_34_17 = {}
 
-			for slot24, slot25 in ipairs(ShipGroup.getSkinList(slot13)) do
-				if slot25.skin_type == ShipSkin.SKIN_TYPE_DEFAULT or table.contains(slot9, slot25.id) or slot26 == ShipSkin.SKIN_TYPE_REMAKE and slot14.trans or slot26 == ShipSkin.SKIN_TYPE_PROPOSE and slot14.married == 1 then
-					slot20[#slot20 + 1] = slot25.id
+			for iter_34_4, iter_34_5 in ipairs(var_34_14) do
+				local var_34_18 = iter_34_5.skin_type
+
+				if var_34_18 == ShipSkin.SKIN_TYPE_DEFAULT or table.contains(var_34_6, iter_34_5.id) or var_34_18 == ShipSkin.SKIN_TYPE_REMAKE and var_34_11.trans or var_34_18 == ShipSkin.SKIN_TYPE_PROPOSE and var_34_11.married == 1 then
+					var_34_17[#var_34_17 + 1] = iter_34_5.id
 				end
 
-				slot19 = slot20[math.random(#slot20)]
+				var_34_16 = var_34_17[math.random(#var_34_17)]
 			end
 
-			table.remove(slot10, slot12)
-
-			slot11 = slot11 - 1
-			slot2 = slot2 - 1
-			slot0._studentsFiller[#slot0._studentsFiller + 1] = {
-				id = slot16,
-				groupId = slot13,
-				configId = slot15,
-				skin_id = slot19
+			local var_34_19 = {
+				id = var_34_13,
+				groupId = var_34_10,
+				configId = var_34_12,
+				skin_id = var_34_16
 			}
+
+			table.remove(var_34_7, var_34_9)
+
+			var_34_8 = var_34_8 - 1
+			var_34_3 = var_34_3 - 1
+			arg_34_0._studentsFiller[#arg_34_0._studentsFiller + 1] = var_34_19
 		end
 	end
 
-	for slot8, slot9 in ipairs(slot0._studentsFiller) do
-		slot1[#slot1 + 1] = Ship.New(slot9)
+	for iter_34_6, iter_34_7 in ipairs(arg_34_0._studentsFiller) do
+		arg_34_1[#arg_34_1 + 1] = Ship.New(iter_34_7)
 	end
 
-	return slot1
+	return arg_34_1
 end
 
-function slot0.IsShowTip(slot0)
-	if getProxy(PlayerProxy) and slot1:getData() and slot0:isResourceFieldUpgradeConditionSatisfy() then
+function var_0_0.IsShowTip(arg_35_0)
+	local var_35_0 = getProxy(PlayerProxy)
+
+	if var_35_0 and var_35_0:getData() and arg_35_0:isResourceFieldUpgradeConditionSatisfy() then
 		return true
 	end
 
-	if getProxy(ShopsProxy) and slot2:getShopStreet() and slot3:isUpdateGoods() then
-		return true
+	local var_35_1 = getProxy(ShopsProxy)
+
+	if var_35_1 then
+		local var_35_2 = var_35_1:getShopStreet()
+
+		if var_35_2 and var_35_2:isUpdateGoods() then
+			return true
+		end
 	end
 
-	for slot7, slot8 in pairs(slot0.students) do
-		if slot8:getFinishTime() <= pg.TimeMgr.GetInstance():GetServerTime() then
+	local var_35_3 = pg.TimeMgr.GetInstance():GetServerTime()
+
+	for iter_35_0, iter_35_1 in pairs(arg_35_0.students) do
+		if var_35_3 >= iter_35_1:getFinishTime() then
 			return true
 		end
 	end
@@ -384,13 +454,15 @@ function slot0.IsShowTip(slot0)
 		return true
 	end
 
-	slot6 = getProxy(TaskProxy)
+	local var_35_4 = getProxy(TaskProxy)
 
-	if _.any(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST), function (slot0)
-		slot2 = slot0:getTaskShip() and uv0:getAcademyTask(slot1.groupId) or nil
-		slot3 = uv0:getTaskById(slot2)
+	if _.any(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST), function(arg_36_0)
+		local var_36_0 = arg_36_0:getTaskShip()
+		local var_36_1 = var_36_0 and var_35_4:getAcademyTask(var_36_0.groupId) or nil
+		local var_36_2 = var_35_4:getTaskById(var_36_1)
+		local var_36_3 = var_35_4:getFinishTaskById(var_36_1)
 
-		return slot1 and (slot2 and not slot3 and not uv0:getFinishTaskById(slot2) or slot3 and slot3:isFinish())
+		return var_36_0 and (var_36_1 and not var_36_2 and not var_36_3 or var_36_2 and var_36_2:isFinish())
 	end) then
 		return true
 	end
@@ -398,18 +470,20 @@ function slot0.IsShowTip(slot0)
 	return false
 end
 
-function slot0.getDailyFinishCnt(slot0)
-	return (_.detect(BuffHelper.GetBuffsByActivityType(ActivityConst.ACTIVITY_TYPE_BUFF), function (slot0)
-		return slot0:getConfig("benefit_type") == "skill_learn_time"
-	end) and tonumber(slot1:getConfig("benefit_effect")) or 0) - slot0.dailyFinsihCnt
+function var_0_0.getDailyFinishCnt(arg_37_0)
+	local var_37_0 = _.detect(BuffHelper.GetBuffsByActivityType(ActivityConst.ACTIVITY_TYPE_BUFF), function(arg_38_0)
+		return arg_38_0:getConfig("benefit_type") == "skill_learn_time"
+	end)
+
+	return (var_37_0 and tonumber(var_37_0:getConfig("benefit_effect")) or 0) - arg_37_0.dailyFinsihCnt
 end
 
-function slot0.updateUsedDailyFinishCnt(slot0)
-	slot0.dailyFinsihCnt = slot0.dailyFinsihCnt + 1
+function var_0_0.updateUsedDailyFinishCnt(arg_39_0)
+	arg_39_0.dailyFinsihCnt = arg_39_0.dailyFinsihCnt + 1
 end
 
-function slot0.resetUsedDailyFinishCnt(slot0)
-	slot0.dailyFinsihCnt = 0
+function var_0_0.resetUsedDailyFinishCnt(arg_40_0)
+	arg_40_0.dailyFinsihCnt = 0
 end
 
-return slot0
+return var_0_0

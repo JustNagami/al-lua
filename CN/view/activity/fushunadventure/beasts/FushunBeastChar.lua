@@ -1,175 +1,175 @@
-slot0 = class("FushunBeastChar")
+﻿local var_0_0 = class("FushunBeastChar")
 
-function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
-	slot0._go = slot1
-	slot0._tf = slot1.transform
-	slot0.index = slot2
-	slot0.template_id = slot3.id
-	slot0.name = slot3.name
-	slot0.dir = -1
-	slot0.maxHp = slot3.hp
-	slot0.hp = slot3.hp
-	slot0.attackDistance = slot3.attackDistance
-	slot0.score = slot3.score
-	slot0.energyScore = slot3.energyScore
-	slot0.escape = false
-	slot0.freeze = false
-	slot0.attacking = false
-	slot0.animator = slot0._go:GetComponent(typeof(Animator))
-	slot0.animatorEvent = slot0._go:GetComponent(typeof(DftAniEvent))
-	slot0.collider2D = slot0._tf:GetComponent(typeof(UnityEngine.Collider2D))
-	slot0.effectCollider2D = slot0._tf:Find("effect"):GetComponent(typeof(UnityEngine.Collider2D))
-	slot0.hpBar = UIItemList.New(slot1.transform:Find("hp"), slot1.transform:Find("hp/tpl"))
-	slot0.fushunLoader = slot4
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
+	arg_1_0._go = arg_1_1
+	arg_1_0._tf = arg_1_1.transform
+	arg_1_0.index = arg_1_2
+	arg_1_0.template_id = arg_1_3.id
+	arg_1_0.name = arg_1_3.name
+	arg_1_0.dir = -1
+	arg_1_0.maxHp = arg_1_3.hp
+	arg_1_0.hp = arg_1_3.hp
+	arg_1_0.attackDistance = arg_1_3.attackDistance
+	arg_1_0.score = arg_1_3.score
+	arg_1_0.energyScore = arg_1_3.energyScore
+	arg_1_0.escape = false
+	arg_1_0.freeze = false
+	arg_1_0.attacking = false
+	arg_1_0.animator = arg_1_0._go:GetComponent(typeof(Animator))
+	arg_1_0.animatorEvent = arg_1_0._go:GetComponent(typeof(DftAniEvent))
+	arg_1_0.collider2D = arg_1_0._tf:GetComponent(typeof(UnityEngine.Collider2D))
+	arg_1_0.effectCollider2D = arg_1_0._tf:Find("effect"):GetComponent(typeof(UnityEngine.Collider2D))
+	arg_1_0.hpBar = UIItemList.New(arg_1_1.transform:Find("hp"), arg_1_1.transform:Find("hp/tpl"))
+	arg_1_0.fushunLoader = arg_1_4
 
-	slot0:MakeHpBar()
+	arg_1_0:MakeHpBar()
 end
 
-function slot0.MakeHpBar(slot0)
-	setActive(slot0.hpBar.container, true)
-	slot0.hpBar:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			setActive(slot2:Find("mark"), slot1 < uv0.hp)
+function var_0_0.MakeHpBar(arg_2_0)
+	setActive(arg_2_0.hpBar.container, true)
+	arg_2_0.hpBar:make(function(arg_3_0, arg_3_1, arg_3_2)
+		if arg_3_0 == UIItemList.EventUpdate then
+			setActive(arg_3_2:Find("mark"), arg_3_1 < arg_2_0.hp)
 		end
 	end)
-	slot0.hpBar:align(slot0.maxHp)
+	arg_2_0.hpBar:align(arg_2_0.maxHp)
 end
 
-function slot0.SetSpeed(slot0, slot1)
-	slot0.speed = slot1
+function var_0_0.SetSpeed(arg_4_0, arg_4_1)
+	arg_4_0.speed = arg_4_1
 end
 
-function slot0.SetPosition(slot0, slot1)
-	slot0._tf.localPosition = slot1
+function var_0_0.SetPosition(arg_5_0, arg_5_1)
+	arg_5_0._tf.localPosition = arg_5_1
 end
 
-function slot0.GetPosition(slot0)
-	return slot0._tf.localPosition
+function var_0_0.GetPosition(arg_6_0)
+	return arg_6_0._tf.localPosition
 end
 
-function slot0.GetAttackPosition(slot0)
-	return slot0._tf.localPosition - Vector3(slot0.attackDistance, 0, 0)
+function var_0_0.GetAttackPosition(arg_7_0)
+	return arg_7_0._tf.localPosition - Vector3(arg_7_0.attackDistance, 0, 0)
 end
 
-function slot0.Move(slot0)
-	if slot0.attacking then
+function var_0_0.Move(arg_8_0)
+	if arg_8_0.attacking then
 		return
 	end
 
-	slot0._tf:Translate(Vector3(-1 * slot0.speed * Time.deltaTime, 0, 0))
-	slot0.animator:SetFloat("speed", slot0.speed)
+	arg_8_0._tf:Translate(Vector3(-1 * arg_8_0.speed * Time.deltaTime, 0, 0))
+	arg_8_0.animator:SetFloat("speed", arg_8_0.speed)
 end
 
-function slot0.Attack(slot0)
-	slot0.animatorEvent:SetEndEvent(nil)
-	slot0.animatorEvent:SetEndEvent(function ()
-		uv0.attacking = false
+function var_0_0.Attack(arg_9_0)
+	arg_9_0.animatorEvent:SetEndEvent(nil)
+	arg_9_0.animatorEvent:SetEndEvent(function()
+		arg_9_0.attacking = false
 
-		uv0:Unfreeze()
-		uv0:Die()
+		arg_9_0:Unfreeze()
+		arg_9_0:Die()
 	end)
-	slot0.animatorEvent:SetTriggerEvent(nil)
-	slot0.animatorEvent:SetTriggerEvent(function ()
-		setActive(uv0.hpBar.container, false)
+	arg_9_0.animatorEvent:SetTriggerEvent(nil)
+	arg_9_0.animatorEvent:SetTriggerEvent(function()
+		setActive(arg_9_0.hpBar.container, false)
 	end)
 
-	slot0.attacking = true
+	arg_9_0.attacking = true
 
-	slot0.animator:SetTrigger("attack")
+	arg_9_0.animator:SetTrigger("attack")
 end
 
-function slot0.OnHit(slot0)
-	slot0.escape = true
+function var_0_0.OnHit(arg_12_0)
+	arg_12_0.escape = true
 
-	slot0:Freeze()
+	arg_12_0:Freeze()
 end
 
-function slot0.IsEscape(slot0)
-	return slot0.escape
+function var_0_0.IsEscape(arg_13_0)
+	return arg_13_0.escape
 end
 
-function slot0.Die(slot0)
-	slot0:UpdateHp(0)
+function var_0_0.Die(arg_14_0)
+	arg_14_0:UpdateHp(0)
 end
 
-function slot0.Hurt(slot0, slot1)
-	if slot0:IsDeath() or slot0:IsEscape() then
+function var_0_0.Hurt(arg_15_0, arg_15_1)
+	if arg_15_0:IsDeath() or arg_15_0:IsEscape() then
 		return
 	end
 
-	slot0:UpdateHp(slot0.hp - slot1)
+	arg_15_0:UpdateHp(arg_15_0.hp - arg_15_1)
 end
 
-function slot0.UpdateHp(slot0, slot1)
-	slot0.hp = math.max(slot1, 0)
+function var_0_0.UpdateHp(arg_16_0, arg_16_1)
+	arg_16_0.hp = math.max(arg_16_1, 0)
 
-	slot0.hpBar:align(slot0.maxHp)
+	arg_16_0.hpBar:align(arg_16_0.maxHp)
 end
 
-function slot0.IsFreeze(slot0)
-	return slot0.freeze
+function var_0_0.IsFreeze(arg_17_0)
+	return arg_17_0.freeze
 end
 
-function slot0.Freeze(slot0)
-	slot0.freeze = true
+function var_0_0.Freeze(arg_18_0)
+	arg_18_0.freeze = true
 end
 
-function slot0.Unfreeze(slot0)
-	slot0.freeze = false
+function var_0_0.Unfreeze(arg_19_0)
+	arg_19_0.freeze = false
 end
 
-function slot0.IsDeath(slot0)
-	return slot0.hp <= 0
+function var_0_0.IsDeath(arg_20_0)
+	return arg_20_0.hp <= 0
 end
 
-function slot0.WillDeath(slot0)
-	return slot0:IsDeath() or slot0:IsEscape()
+function var_0_0.WillDeath(arg_21_0)
+	return arg_21_0:IsDeath() or arg_21_0:IsEscape()
 end
 
-function slot0.GetHp(slot0)
-	return slot0.hp
+function var_0_0.GetHp(arg_22_0)
+	return arg_22_0.hp
 end
 
-function slot0.Vanish(slot0)
-	if slot0.vanish then
+function var_0_0.Vanish(arg_23_0)
+	if arg_23_0.vanish then
 		return
 	end
 
-	if slot0:IsEscape() then
-		slot0:Dispose()
+	if arg_23_0:IsEscape() then
+		arg_23_0:Dispose()
 	else
-		slot0.vanish = true
+		arg_23_0.vanish = true
 
-		slot0.animatorEvent:SetEndEvent(nil)
-		slot0.animatorEvent:SetEndEvent(function ()
-			uv0:Dispose()
+		arg_23_0.animatorEvent:SetEndEvent(nil)
+		arg_23_0.animatorEvent:SetEndEvent(function()
+			arg_23_0:Dispose()
 		end)
-		slot0.animator:SetTrigger("vanish")
+		arg_23_0.animator:SetTrigger("vanish")
 	end
 
-	setActive(slot0.hpBar.container, false)
+	setActive(arg_23_0.hpBar.container, false)
 end
 
-function slot0.GetScore(slot0)
-	return slot0.score
+function var_0_0.GetScore(arg_25_0)
+	return arg_25_0.score
 end
 
-function slot0.GetEnergyScore(slot0)
-	return slot0.energyScore
+function var_0_0.GetEnergyScore(arg_26_0)
+	return arg_26_0.energyScore
 end
 
-function slot0.GetMaxHp(slot0)
-	return slot0.maxHp
+function var_0_0.GetMaxHp(arg_27_0)
+	return arg_27_0.maxHp
 end
 
-function slot0.Dispose(slot0)
-	slot0.animatorEvent:SetTriggerEvent(nil)
-	slot0.animatorEvent:SetEndEvent(nil)
-	slot0.fushunLoader:ReturnPrefab("FushunAdventure/" .. slot0.name, "", slot0._go, false)
+function var_0_0.Dispose(arg_28_0)
+	arg_28_0.animatorEvent:SetTriggerEvent(nil)
+	arg_28_0.animatorEvent:SetEndEvent(nil)
+	arg_28_0.fushunLoader:ReturnPrefab("FushunAdventure/" .. arg_28_0.name, "", arg_28_0._go, false)
 
-	slot0._go = nil
-	slot0._tf = nil
-	slot0.animator = nil
+	arg_28_0._go = nil
+	arg_28_0._tf = nil
+	arg_28_0.animator = nil
 end
 
-return slot0
+return var_0_0

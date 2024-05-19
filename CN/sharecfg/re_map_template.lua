@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.re_map_template = {
 	{
 		memory_group = 108,

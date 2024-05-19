@@ -1,27 +1,29 @@
-slot0 = class("CommanderBuilding", import(".NavalAcademyBuilding"))
+﻿local var_0_0 = class("CommanderBuilding", import(".NavalAcademyBuilding"))
 
-function slot0.GetGameObjectName(slot0)
+function var_0_0.GetGameObjectName(arg_1_0)
 	return "commander"
 end
 
-function slot0.GetTitle(slot0)
+function var_0_0.GetTitle(arg_2_0)
 	return i18n("school_title_zhihuimiao")
 end
 
-function slot0.OnClick(slot0)
-	slot0:emit(NavalAcademyMediator.ON_OPEN_COMMANDER)
+function var_0_0.OnClick(arg_3_0)
+	arg_3_0:emit(NavalAcademyMediator.ON_OPEN_COMMANDER)
 end
 
-function slot0.IsTip(slot0)
+function var_0_0.IsTip(arg_4_0)
 	if getProxy(PlayerProxy):getRawData().level < 40 then
 		return false
 	end
 
+	local var_4_0 = getProxy(CommanderProxy):haveFinishedBox()
+
 	if not LOCK_CATTERY then
-		return getProxy(CommanderProxy):haveFinishedBox() or getProxy(CommanderProxy):AnyCatteryExistOP() or getProxy(CommanderProxy):AnyCatteryCanUse()
+		return var_4_0 or getProxy(CommanderProxy):AnyCatteryExistOP() or getProxy(CommanderProxy):AnyCatteryCanUse()
 	else
-		return slot1
+		return var_4_0
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,62 +1,74 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleEnvironmentWave = class("BattleEnvironmentWave", slot0.Battle.BattleWaveInfo)
-slot0.Battle.BattleEnvironmentWave.__name = "BattleEnvironmentWave"
-slot1 = slot0.Battle.BattleEnvironmentWave
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
 
-	slot0._spawnTimerList = {}
+var_0_0.Battle.BattleEnvironmentWave = class("BattleEnvironmentWave", var_0_0.Battle.BattleWaveInfo)
+var_0_0.Battle.BattleEnvironmentWave.__name = "BattleEnvironmentWave"
+
+local var_0_1 = var_0_0.Battle.BattleEnvironmentWave
+
+function var_0_1.Ctor(arg_1_0)
+	var_0_1.super.Ctor(arg_1_0)
+
+	arg_1_0._spawnTimerList = {}
 end
 
-function slot1.SetWaveData(slot0, slot1)
-	uv0.super.SetWaveData(slot0, slot1)
+function var_0_1.SetWaveData(arg_2_0, arg_2_1)
+	var_0_1.super.SetWaveData(arg_2_0, arg_2_1)
 
-	slot0._sapwnData = slot1.spawn or {}
-	slot0._environWarning = slot1.warning
+	arg_2_0._sapwnData = arg_2_1.spawn or {}
+	arg_2_0._environWarning = arg_2_1.warning
 end
 
-function slot1.DoWave(slot0)
-	uv0.super.DoWave(slot0)
+function var_0_1.DoWave(arg_3_0)
+	var_0_1.super.DoWave(arg_3_0)
 
-	for slot4, slot5 in ipairs(slot0._sapwnData) do
-		if slot5.delay and slot5.delay > 0 then
-			slot0:spawnTimer(slot5)
+	for iter_3_0, iter_3_1 in ipairs(arg_3_0._sapwnData) do
+		if iter_3_1.delay and iter_3_1.delay > 0 then
+			arg_3_0:spawnTimer(iter_3_1)
 		else
-			slot0:doSpawn(slot5)
+			arg_3_0:doSpawn(iter_3_1)
 		end
 	end
 
-	if slot0._environWarning then
-		uv1.Battle.BattleDataProxy.GetInstance():DispatchWarning(true)
+	if arg_3_0._environWarning then
+		var_0_0.Battle.BattleDataProxy.GetInstance():DispatchWarning(true)
 	end
 end
 
-function slot1.doSpawn(slot0, slot1)
-	uv0.Battle.BattleDataProxy.GetInstance():SpawnEnvironment(slot1):ConfigCallback(function ()
-		uv0:doPass()
-	end)
+function var_0_1.doSpawn(arg_4_0, arg_4_1)
+	local var_4_0 = var_0_0.Battle.BattleDataProxy.GetInstance():SpawnEnvironment(arg_4_1)
+
+	local function var_4_1()
+		arg_4_0:doPass()
+	end
+
+	var_4_0:ConfigCallback(var_4_1)
 end
 
-function slot1.doPass(slot0)
-	if slot0._environWarning then
-		uv0.Battle.BattleDataProxy.GetInstance():DispatchWarning(false)
+function var_0_1.doPass(arg_6_0)
+	if arg_6_0._environWarning then
+		var_0_0.Battle.BattleDataProxy.GetInstance():DispatchWarning(false)
 	end
 end
 
-function slot1.spawnTimer(slot0, slot1)
-	slot2 = nil
-	slot0._spawnTimerList[pg.TimeMgr.GetInstance():AddBattleTimer("", 1, slot1.delay, function ()
-		uv0:doSpawn(uv1)
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(uv2)
-	end, true)] = true
-end
+function var_0_1.spawnTimer(arg_7_0, arg_7_1)
+	local var_7_0
+	local var_7_1 = arg_7_1.delay
 
-function slot1.Dispose(slot0)
-	for slot4, slot5 in pairs(slot0._spawnTimerList) do
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(slot4)
+	local function var_7_2()
+		arg_7_0:doSpawn(arg_7_1)
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(var_7_0)
 	end
 
-	slot0._spawnTimerList = nil
+	var_7_0 = pg.TimeMgr.GetInstance():AddBattleTimer("", 1, var_7_1, var_7_2, true)
+	arg_7_0._spawnTimerList[var_7_0] = true
+end
+
+function var_0_1.Dispose(arg_9_0)
+	for iter_9_0, iter_9_1 in pairs(arg_9_0._spawnTimerList) do
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(iter_9_0)
+	end
+
+	arg_9_0._spawnTimerList = nil
 end

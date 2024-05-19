@@ -1,33 +1,33 @@
-slot0 = class("ShipBreakResultLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("ShipBreakResultLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ShipBreakResultUI"
 end
 
-function slot0.init(slot0)
-	slot0.frame = slot0:findTF("frame")
-	slot0.attrPanel = slot0:findTF("right_panel/top/attrs")
-	slot0.rarePanel = slot0:findTF("right_panel/top/rare")
-	slot0.paintContain = slot0:findTF("paint")
-	slot0.qCharaContain = slot0:findTF("right_panel/top/q_chara")
-	slot0._chat = slot0:findTF("chat", slot0.paintContain)
+function var_0_0.init(arg_2_0)
+	arg_2_0.frame = arg_2_0:findTF("frame")
+	arg_2_0.attrPanel = arg_2_0:findTF("right_panel/top/attrs")
+	arg_2_0.rarePanel = arg_2_0:findTF("right_panel/top/rare")
+	arg_2_0.paintContain = arg_2_0:findTF("paint")
+	arg_2_0.qCharaContain = arg_2_0:findTF("right_panel/top/q_chara")
+	arg_2_0._chat = arg_2_0:findTF("chat", arg_2_0.paintContain)
 
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
+	pg.UIMgr.GetInstance():BlurPanel(arg_2_0._tf, false, {
 		weight = LayerWeightConst.TOP_LAYER
 	})
 
-	slot0._shake = slot0:findTF("shake_panel")
-	slot0._bg = slot0:findTF("bg", slot0._shake)
-	slot0._paintingShadowTF = slot0:findTF("shadow")
+	arg_2_0._shake = arg_2_0:findTF("shake_panel")
+	arg_2_0._bg = arg_2_0:findTF("bg", arg_2_0._shake)
+	arg_2_0._paintingShadowTF = arg_2_0:findTF("shadow")
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:emit(uv1.ON_CLOSE)
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CANCEL)
 end
 
-slot1 = {
+local var_0_1 = {
 	"durability",
 	"cannon",
 	"torpedo",
@@ -35,234 +35,259 @@ slot1 = {
 	"air"
 }
 
-function slot0.updateStatistics(slot0)
-	slot3 = intProperties(slot0.contextData.newShip:getShipProperties())
-	slot4 = intProperties(slot0.contextData.oldShip:getShipProperties())
-	slot5 = slot0.attrPanel
+function var_0_0.updateStatistics(arg_5_0)
+	local var_5_0 = arg_5_0.contextData.newShip
+	local var_5_1 = arg_5_0.contextData.oldShip
+	local var_5_2 = intProperties(var_5_0:getShipProperties())
+	local var_5_3 = intProperties(var_5_1:getShipProperties())
+	local var_5_4 = arg_5_0.attrPanel
 
-	for slot9, slot10 in ipairs(uv0) do
-		slot11 = slot5:GetChild(slot9 - 1)
+	for iter_5_0, iter_5_1 in ipairs(var_0_1) do
+		local var_5_5 = var_5_4:GetChild(iter_5_0 - 1)
 
-		setText(slot11:Find("name"), AttributeType.Type2Name(slot10))
-		setText(slot11:Find("value"), slot4[slot10])
-		setText(slot11:Find("value1"), slot3[slot10])
+		setText(var_5_5:Find("name"), AttributeType.Type2Name(iter_5_1))
+		setText(var_5_5:Find("value"), var_5_3[iter_5_1])
+		setText(var_5_5:Find("value1"), var_5_2[iter_5_1])
 
-		if slot3[slot10] - slot4[slot10] == 0 then
-			setActive(slot11:Find("addition"), false)
+		local var_5_6 = var_5_5:Find("addition")
+		local var_5_7 = var_5_2[iter_5_1] - var_5_3[iter_5_1]
+
+		if var_5_7 == 0 then
+			setActive(var_5_6, false)
 		else
-			setText(slot12, "+" .. slot13)
+			setText(var_5_6, "+" .. var_5_7)
 		end
 	end
 
-	slot6 = slot5:GetChild(5)
-	slot7 = slot2:getBattleTotalExpend()
-	slot8 = slot1:getBattleTotalExpend()
+	local var_5_8 = var_5_4:GetChild(5)
+	local var_5_9 = var_5_1:getBattleTotalExpend()
+	local var_5_10 = var_5_0:getBattleTotalExpend()
 
-	setText(slot6:Find("name"), AttributeType.Type2Name(AttributeType.Expend))
-	setText(slot6:Find("value"), slot7)
-	setText(slot6:Find("value1"), slot8)
+	setText(var_5_8:Find("name"), AttributeType.Type2Name(AttributeType.Expend))
+	setText(var_5_8:Find("value"), var_5_9)
+	setText(var_5_8:Find("value1"), var_5_10)
 
-	if math.abs(slot8 - slot7) == 0 then
-		setActive(slot6:Find("addition"), false)
+	local var_5_11 = var_5_8:Find("addition")
+	local var_5_12 = math.abs(var_5_10 - var_5_9)
+
+	if var_5_12 == 0 then
+		setActive(var_5_11, false)
 	else
-		setText(slot9, "+" .. slot10)
+		setText(var_5_11, "+" .. var_5_12)
 	end
 
-	slot11 = slot1:getStar()
-	slot14 = slot0.rarePanel:Find("stars_to")
+	local var_5_13 = var_5_0:getStar()
+	local var_5_14 = var_5_1:getStar()
+	local var_5_15 = arg_5_0.rarePanel:Find("stars_from")
+	local var_5_16 = arg_5_0.rarePanel:Find("stars_to")
 
-	for slot18 = 1, slot2:getStar() do
-		setActive(slot0.rarePanel:Find("stars_from"):GetChild(slot18 - 1), true)
+	for iter_5_2 = 1, var_5_14 do
+		setActive(var_5_15:GetChild(iter_5_2 - 1), true)
 	end
 
-	for slot18 = 1, slot11 do
-		setActive(slot14:GetChild(slot18 - 1), true)
+	for iter_5_3 = 1, var_5_13 do
+		setActive(var_5_16:GetChild(iter_5_3 - 1), true)
 	end
 
-	setPaintingPrefabAsync(slot0.paintContain, slot1:getPainting(), "chuanwu")
-	setPaintingPrefabAsync(slot0._paintingShadowTF, slot1:getPainting(), "chuanwu", function ()
-		slot0 = findTF(uv0._paintingShadowTF, "fitter"):GetChild(0)
-		slot0:GetComponent("Image").color = Color.New(0, 0, 0)
+	setPaintingPrefabAsync(arg_5_0.paintContain, var_5_0:getPainting(), "chuanwu")
+	setPaintingPrefabAsync(arg_5_0._paintingShadowTF, var_5_0:getPainting(), "chuanwu", function()
+		local var_6_0 = findTF(arg_5_0._paintingShadowTF, "fitter"):GetChild(0)
 
-		if not IsNil(findTF(slot0, "layers")) then
-			for slot7 = 1, slot2:GetComponentsInChildren(typeof(Image)).Length do
-				slot3[slot7 - 1].color = Color.New(0, 0, 0)
+		var_6_0:GetComponent("Image").color = Color.New(0, 0, 0)
+
+		local var_6_1 = findTF(var_6_0, "layers")
+
+		if not IsNil(var_6_1) then
+			local var_6_2 = var_6_1:GetComponentsInChildren(typeof(Image))
+
+			for iter_6_0 = 1, var_6_2.Length do
+				var_6_2[iter_6_0 - 1].color = Color.New(0, 0, 0)
 			end
 		end
 
-		if not IsNil(findTF(slot0, "face")) then
-			slot3:GetComponent("Image").color = Color.New(0, 0, 0)
+		local var_6_3 = findTF(var_6_0, "face")
+
+		if not IsNil(var_6_3) then
+			var_6_3:GetComponent("Image").color = Color.New(0, 0, 0)
 		end
 	end)
+
+	local var_5_17 = var_5_0:getPrefab()
+
 	pg.UIMgr.GetInstance():LoadingOn()
-	PoolMgr.GetInstance():GetSpineChar(slot1:getPrefab(), true, function (slot0)
+	PoolMgr.GetInstance():GetSpineChar(var_5_17, true, function(arg_7_0)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		uv0.shipPrefab = uv1
-		uv0.shipModel = slot0
-		tf(slot0).localScale = Vector3(1, 1, 1)
+		arg_5_0.shipPrefab = var_5_17
+		arg_5_0.shipModel = arg_7_0
+		tf(arg_7_0).localScale = Vector3(1, 1, 1)
 
-		slot0:GetComponent("SpineAnimUI"):SetAction("stand", 0)
-		setParent(slot0, uv0.qCharaContain)
+		arg_7_0:GetComponent("SpineAnimUI"):SetAction("stand", 0)
+		setParent(arg_7_0, arg_5_0.qCharaContain)
 	end)
-	GetSpriteFromAtlasAsync("newshipbg/bg_" .. slot1:rarity2bgPrintForGet(), "", function (slot0)
-		setImageSprite(uv0._tf, slot0, false)
+	GetSpriteFromAtlasAsync("newshipbg/bg_" .. var_5_0:rarity2bgPrintForGet(), "", function(arg_8_0)
+		setImageSprite(arg_5_0._tf, arg_8_0, false)
 	end)
 
-	slot17, slot18, slot19 = ShipWordHelper.GetWordAndCV(slot1.skinId, ShipWordHelper.WORD_TYPE_UPGRADE, nil, , slot1:getCVIntimacy())
+	local var_5_18 = var_5_0:getCVIntimacy()
+	local var_5_19, var_5_20, var_5_21 = ShipWordHelper.GetWordAndCV(var_5_0.skinId, ShipWordHelper.WORD_TYPE_UPGRADE, nil, nil, var_5_18)
 
-	setWidgetText(slot0._chat, slot19)
+	setWidgetText(arg_5_0._chat, var_5_21)
 
-	slot20.alignment = CHAT_POP_STR_LEN < #slot0:findTF("Text", slot0._chat):GetComponent(typeof(Text)).text and TextAnchor.MiddleLeft or TextAnchor.MiddleCenter
-	slot0._chat.transform.localScale = Vector3(0, 0, 1)
-	slot0.delayTId = LeanTween.delayedCall(0.6, System.Action(function ()
-		SetActive(uv0._chat, true)
-		LeanTween.scale(rtf(uv0._chat), Vector3.New(1, 1, 1), 0.3):setEase(LeanTweenType.easeOutBack)
-		uv0:voice(uv1)
+	local var_5_22 = arg_5_0:findTF("Text", arg_5_0._chat):GetComponent(typeof(Text))
+
+	var_5_22.alignment = #var_5_22.text > CHAT_POP_STR_LEN and TextAnchor.MiddleLeft or TextAnchor.MiddleCenter
+	arg_5_0._chat.transform.localScale = Vector3(0, 0, 1)
+	arg_5_0.delayTId = LeanTween.delayedCall(0.6, System.Action(function()
+		SetActive(arg_5_0._chat, true)
+		LeanTween.scale(rtf(arg_5_0._chat), Vector3.New(1, 1, 1), 0.3):setEase(LeanTweenType.easeOutBack)
+		arg_5_0:voice(var_5_20)
 	end)).id
-	slot22 = slot1
-	slot24 = slot22:isMetaShip()
 
-	GetSpriteFromAtlasAsync("newshipbg/bg_" .. slot22:rarity2bgPrintForGet(), "", function (slot0)
-		setImageSprite(uv0._bg, slot0)
+	local var_5_23 = var_5_0
+	local var_5_24 = var_5_23:isBluePrintShip()
+	local var_5_25 = var_5_23:isMetaShip()
+
+	GetSpriteFromAtlasAsync("newshipbg/bg_" .. var_5_23:rarity2bgPrintForGet(), "", function(arg_10_0)
+		setImageSprite(arg_5_0._bg, arg_10_0)
 	end)
 
-	if slot22:isBluePrintShip() then
-		if slot0.metaBg then
-			setActive(slot0.metaBg, false)
+	if var_5_24 then
+		if arg_5_0.metaBg then
+			setActive(arg_5_0.metaBg, false)
 		end
 
-		if slot0.designBg and slot0.designName ~= "raritydesign" .. slot22:getRarity() then
-			PoolMgr.GetInstance():ReturnUI(slot0.designName, slot0.designBg)
+		if arg_5_0.designBg and arg_5_0.designName ~= "raritydesign" .. var_5_23:getRarity() then
+			PoolMgr.GetInstance():ReturnUI(arg_5_0.designName, arg_5_0.designBg)
 
-			slot0.designBg = nil
+			arg_5_0.designBg = nil
 		end
 
-		if not slot0.designBg then
-			PoolMgr.GetInstance():GetUI("raritydesign" .. slot22:getRarity(), true, function (slot0)
-				uv0.designBg = slot0
-				uv0.designName = "raritydesign" .. uv1:getRarity()
+		if not arg_5_0.designBg then
+			PoolMgr.GetInstance():GetUI("raritydesign" .. var_5_23:getRarity(), true, function(arg_11_0)
+				arg_5_0.designBg = arg_11_0
+				arg_5_0.designName = "raritydesign" .. var_5_23:getRarity()
 
-				slot0.transform:SetParent(uv0._shake, false)
+				arg_11_0.transform:SetParent(arg_5_0._shake, false)
 
-				slot0.transform.localPosition = Vector3(1, 1, 1)
-				slot0.transform.localScale = Vector3(1, 1, 1)
+				arg_11_0.transform.localPosition = Vector3(1, 1, 1)
+				arg_11_0.transform.localScale = Vector3(1, 1, 1)
 
-				slot0.transform:SetSiblingIndex(1)
-				setActive(slot0, true)
+				arg_11_0.transform:SetSiblingIndex(1)
+				setActive(arg_11_0, true)
 			end)
 		else
-			setActive(slot0.designBg, true)
+			setActive(arg_5_0.designBg, true)
 		end
-	elseif slot24 then
-		if slot0.designBg then
-			setActive(slot0.designBg, false)
-		end
-
-		if slot0.metaBg and slot0.metaName ~= "raritymeta" .. slot22:getRarity() then
-			PoolMgr.GetInstance():ReturnUI(slot0.metaName, slot0.metaBg)
-
-			slot0.metaBg = nil
+	elseif var_5_25 then
+		if arg_5_0.designBg then
+			setActive(arg_5_0.designBg, false)
 		end
 
-		if not slot0.metaBg then
-			PoolMgr.GetInstance():GetUI("raritymeta" .. slot22:getRarity(), true, function (slot0)
-				uv0.metaBg = slot0
-				uv0.metaName = "raritymeta" .. uv1:getRarity()
+		if arg_5_0.metaBg and arg_5_0.metaName ~= "raritymeta" .. var_5_23:getRarity() then
+			PoolMgr.GetInstance():ReturnUI(arg_5_0.metaName, arg_5_0.metaBg)
 
-				slot0.transform:SetParent(uv0._shake, false)
+			arg_5_0.metaBg = nil
+		end
 
-				slot0.transform.localPosition = Vector3(1, 1, 1)
-				slot0.transform.localScale = Vector3(1, 1, 1)
+		if not arg_5_0.metaBg then
+			PoolMgr.GetInstance():GetUI("raritymeta" .. var_5_23:getRarity(), true, function(arg_12_0)
+				arg_5_0.metaBg = arg_12_0
+				arg_5_0.metaName = "raritymeta" .. var_5_23:getRarity()
 
-				slot0.transform:SetSiblingIndex(1)
-				setActive(slot0, true)
+				arg_12_0.transform:SetParent(arg_5_0._shake, false)
+
+				arg_12_0.transform.localPosition = Vector3(1, 1, 1)
+				arg_12_0.transform.localScale = Vector3(1, 1, 1)
+
+				arg_12_0.transform:SetSiblingIndex(1)
+				setActive(arg_12_0, true)
 			end)
 		else
-			setActive(slot0.metaBg, true)
+			setActive(arg_5_0.metaBg, true)
 		end
 	else
-		if slot0.designBg then
-			setActive(slot0.designBg, false)
+		if arg_5_0.designBg then
+			setActive(arg_5_0.designBg, false)
 		end
 
-		if slot0.metaBg then
-			setActive(slot0.metaBg, false)
+		if arg_5_0.metaBg then
+			setActive(arg_5_0.metaBg, false)
 		end
 	end
 
-	PoolMgr.GetInstance():GetUI("tupo_" .. slot22:getRarity(), true, function (slot0)
-		slot0.transform:SetParent(uv0._tf, false)
+	PoolMgr.GetInstance():GetUI("tupo_" .. var_5_23:getRarity(), true, function(arg_13_0)
+		arg_13_0.transform:SetParent(arg_5_0._tf, false)
 
-		slot0.transform.localPosition = Vector3(1, 1, 1)
-		slot0.transform.localScale = Vector3(1, 1, 1)
+		arg_13_0.transform.localPosition = Vector3(1, 1, 1)
+		arg_13_0.transform.localScale = Vector3(1, 1, 1)
 
-		slot0.transform:SetSiblingIndex(4)
-		setActive(slot0, true)
+		arg_13_0.transform:SetSiblingIndex(4)
+		setActive(arg_13_0, true)
 	end)
-	PoolMgr.GetInstance():GetUI(slot22:isMetaShip() and "tupo_meta" or "tupo", true, function (slot0)
-		slot0.transform:SetParent(uv0._tf, false)
+	PoolMgr.GetInstance():GetUI(var_5_23:isMetaShip() and "tupo_meta" or "tupo", true, function(arg_14_0)
+		arg_14_0.transform:SetParent(arg_5_0._tf, false)
 
-		slot0.transform.localPosition = Vector3(1, 1, 1)
-		slot0.transform.localScale = Vector3(1, 1, 1)
+		arg_14_0.transform.localPosition = Vector3(1, 1, 1)
+		arg_14_0.transform.localScale = Vector3(1, 1, 1)
 
-		slot0.transform:SetAsLastSibling()
-		setActive(slot0, true)
+		arg_14_0.transform:SetAsLastSibling()
+		setActive(arg_14_0, true)
 	end)
 end
 
-function slot0.voice(slot0, slot1)
-	if not slot1 then
+function var_0_0.voice(arg_15_0, arg_15_1)
+	if not arg_15_1 then
 		return
 	end
 
-	slot0:stopVoice()
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(slot1)
+	arg_15_0:stopVoice()
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg_15_1)
 
-	slot0._currentVoice = slot1
+	arg_15_0._currentVoice = arg_15_1
 end
 
-function slot0.stopVoice(slot0)
-	if slot0._currentVoice then
-		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(slot0._currentVoice)
+function var_0_0.stopVoice(arg_16_0)
+	if arg_16_0._currentVoice then
+		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(arg_16_0._currentVoice)
 	end
 
-	slot0._currentVoice = nil
+	arg_16_0._currentVoice = nil
 end
 
-function slot0.recycleSpineChar(slot0)
-	if slot0.shipPrefab and slot0.shipModel then
-		PoolMgr.GetInstance():ReturnSpineChar(slot0.shipPrefab, slot0.shipModel)
+function var_0_0.recycleSpineChar(arg_17_0)
+	if arg_17_0.shipPrefab and arg_17_0.shipModel then
+		PoolMgr.GetInstance():ReturnSpineChar(arg_17_0.shipPrefab, arg_17_0.shipModel)
 
-		slot0.shipPrefab = nil
-		slot0.shipModel = nil
+		arg_17_0.shipPrefab = nil
+		arg_17_0.shipModel = nil
 	end
 end
 
-function slot0.willExit(slot0)
-	if slot0.delayTId then
-		LeanTween.cancel(slot0.delayTId)
+function var_0_0.willExit(arg_18_0)
+	if arg_18_0.delayTId then
+		LeanTween.cancel(arg_18_0.delayTId)
 	end
 
-	slot0:recycleSpineChar()
+	arg_18_0:recycleSpineChar()
 
-	if slot0.designBg then
-		PoolMgr.GetInstance():ReturnUI(slot0.designName, slot0.designBg)
+	if arg_18_0.designBg then
+		PoolMgr.GetInstance():ReturnUI(arg_18_0.designName, arg_18_0.designBg)
 	end
 
-	if slot0.metaBg then
-		PoolMgr.GetInstance():ReturnUI(slot0.metaName, slot0.metaBg)
+	if arg_18_0.metaBg then
+		PoolMgr.GetInstance():ReturnUI(arg_18_0.metaName, arg_18_0.metaBg)
 	end
 
-	slot0:stopVoice()
+	arg_18_0:stopVoice()
 
-	if slot0.loadedCVBankName then
-		pg.CriMgr.UnloadCVBank(slot0.loadedCVBankName)
+	if arg_18_0.loadedCVBankName then
+		pg.CriMgr.UnloadCVBank(arg_18_0.loadedCVBankName)
 
-		slot0.loadedCVBankName = nil
+		arg_18_0.loadedCVBankName = nil
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, pg.UIMgr.GetInstance().UIMain)
+	pg.UIMgr.GetInstance():BlurPanel(arg_18_0._tf, pg.UIMgr.GetInstance().UIMain)
 end
 
-return slot0
+return var_0_0

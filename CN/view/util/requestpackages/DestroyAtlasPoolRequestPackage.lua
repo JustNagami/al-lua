@@ -1,23 +1,23 @@
-slot0 = class("DestroyAtlasPoolRequestPackage", import(".RequestPackage"))
+﻿local var_0_0 = class("DestroyAtlasPoolRequestPackage", import(".RequestPackage"))
 
-function slot0.__call(slot0)
-	if slot0.stopped then
+function var_0_0.__call(arg_1_0)
+	if arg_1_0.stopped then
 		return
 	end
 
-	if slot0.callback then
-		slot0.callback(slot0.path)
+	if arg_1_0.callback then
+		arg_1_0.callback(arg_1_0.path)
 	end
 
-	PoolMgr.GetInstance():DestroySprite(slot0.path)
+	PoolMgr.GetInstance():DestroySprite(arg_1_0.path)
 
-	return slot0
+	return arg_1_0
 end
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.path = slot1
-	slot0.name = ""
-	slot0.callback = slot2
+function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0.path = arg_2_1
+	arg_2_0.name = ""
+	arg_2_0.callback = arg_2_2
 end
 
-return slot0
+return var_0_0

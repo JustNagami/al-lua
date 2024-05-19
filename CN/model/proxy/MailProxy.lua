@@ -1,140 +1,141 @@
-slot0 = class("MailProxy", import(".NetProxy"))
-slot0.MAIL_TOTAL = "mail total"
-slot0.MAIL_OPENNED = "mail openned"
-slot0.MAIL_ATTACHMENT_TAKEN = "mail attachment taken"
-slot0.UPDATE_ATTACHMENT_COUNT = "UPDATE_ATTACHMENT_COUNT"
+﻿local var_0_0 = class("MailProxy", import(".NetProxy"))
 
-function slot0.register(slot0)
-	slot0.init = false
-	slot0.dirty = false
-	slot0.unread = 0
-	slot0.total = 0
+var_0_0.MAIL_TOTAL = "mail total"
+var_0_0.MAIL_OPENNED = "mail openned"
+var_0_0.MAIL_ATTACHMENT_TAKEN = "mail attachment taken"
+var_0_0.UPDATE_ATTACHMENT_COUNT = "UPDATE_ATTACHMENT_COUNT"
 
-	slot0:on(30001, function (slot0)
-		if uv0.init then
-			uv0.dirty = true
+function var_0_0.register(arg_1_0)
+	arg_1_0.init = false
+	arg_1_0.dirty = false
+	arg_1_0.unread = 0
+	arg_1_0.total = 0
+
+	arg_1_0:on(30001, function(arg_2_0)
+		if arg_1_0.init then
+			arg_1_0.dirty = true
 		end
 
-		uv0:unpdateExistAttachment(slot0.unread_number)
-		uv0:updateTotal(slot0.total_number)
+		arg_1_0:unpdateExistAttachment(arg_2_0.unread_number)
+		arg_1_0:updateTotal(arg_2_0.total_number)
 	end)
 end
 
-function slot0.resetData(slot0)
-	slot0.data = {}
-	slot0.init = false
-	slot0.dirty = false
+function var_0_0.resetData(arg_3_0)
+	arg_3_0.data = {}
+	arg_3_0.init = false
+	arg_3_0.dirty = false
 end
 
-function slot0.addMail(slot0, slot1)
-	assert(isa(slot1, Mail), "should be an instance of Mail")
-	assert(slot0.data[slot1.id] == nil, "mail already exist")
+function var_0_0.addMail(arg_4_0, arg_4_1)
+	assert(isa(arg_4_1, Mail), "should be an instance of Mail")
+	assert(arg_4_0.data[arg_4_1.id] == nil, "mail already exist")
 
-	slot0.data[slot1.id] = slot1:clone()
+	arg_4_0.data[arg_4_1.id] = arg_4_1:clone()
 
-	slot0.data[slot1.id]:display("added")
+	arg_4_0.data[arg_4_1.id]:display("added")
 end
 
-function slot0.getMails(slot0)
-	slot1 = {}
+function var_0_0.getMails(arg_5_0)
+	local var_5_0 = {}
 
-	for slot5, slot6 in pairs(slot0.data) do
-		table.insert(slot1, slot6)
+	for iter_5_0, iter_5_1 in pairs(arg_5_0.data) do
+		table.insert(var_5_0, iter_5_1)
 	end
 
-	return Clone(slot1)
+	return Clone(var_5_0)
 end
 
-function slot0.getMailById(slot0, slot1)
-	if slot0.data[slot1] ~= nil then
-		return slot0.data[slot1]:clone()
+function var_0_0.getMailById(arg_6_0, arg_6_1)
+	if arg_6_0.data[arg_6_1] ~= nil then
+		return arg_6_0.data[arg_6_1]:clone()
 	end
 end
 
-function slot0.GetAttachmentCount(slot0)
-	return slot0._existAttachmentCount
+function var_0_0.GetAttachmentCount(arg_7_0)
+	return arg_7_0._existAttachmentCount
 end
 
-function slot0.getOldestMail(slot0)
-	slot1 = nil
+function var_0_0.getOldestMail(arg_8_0)
+	local var_8_0
 
-	for slot5, slot6 in pairs(slot0.data) do
-		if not slot1 or slot6.id < slot1.id then
-			slot1 = slot6
+	for iter_8_0, iter_8_1 in pairs(arg_8_0.data) do
+		if not var_8_0 or var_8_0.id > iter_8_1.id then
+			var_8_0 = iter_8_1
 		end
 	end
 
-	return slot1 and slot1:clone()
+	return var_8_0 and var_8_0:clone()
 end
 
-function slot0.getNewestMail(slot0)
-	slot1 = nil
+function var_0_0.getNewestMail(arg_9_0)
+	local var_9_0
 
-	for slot5, slot6 in pairs(slot0.data) do
-		if not slot1 or slot1.id < slot6.id then
-			slot1 = slot6
+	for iter_9_0, iter_9_1 in pairs(arg_9_0.data) do
+		if not var_9_0 or var_9_0.id < iter_9_1.id then
+			var_9_0 = iter_9_1
 		end
 	end
 
-	return slot1 and slot1:clone()
+	return var_9_0 and var_9_0:clone()
 end
 
-function slot0.takeMailAttachment(slot0, slot1)
-	assert(isa(slot1, Mail), "should be an instance of Mail")
+function var_0_0.takeMailAttachment(arg_10_0, arg_10_1)
+	assert(isa(arg_10_1, Mail), "should be an instance of Mail")
 
-	slot1.isTaken = true
+	arg_10_1.isTaken = true
 
-	slot0:updateMail(slot1)
-	slot0.facade:sendNotification(uv0.MAIL_ATTACHMENT_TAKEN, slot1:clone())
+	arg_10_0:updateMail(arg_10_1)
+	arg_10_0.facade:sendNotification(var_0_0.MAIL_ATTACHMENT_TAKEN, arg_10_1:clone())
 end
 
-function slot0.updateMail(slot0, slot1)
-	assert(isa(slot1, Mail), "should be an instance of Mail")
-	assert(slot0.data[slot1.id] ~= nil, "ship should exist")
+function var_0_0.updateMail(arg_11_0, arg_11_1)
+	assert(isa(arg_11_1, Mail), "should be an instance of Mail")
+	assert(arg_11_0.data[arg_11_1.id] ~= nil, "ship should exist")
 
-	slot0.data[slot1.id] = slot1:clone()
+	arg_11_0.data[arg_11_1.id] = arg_11_1:clone()
 
-	slot0.data[slot1.id]:display("updated")
+	arg_11_0.data[arg_11_1.id]:display("updated")
 end
 
-function slot0.removeMail(slot0, slot1)
-	assert(isa(slot1, Mail), "should be an instance of Mail")
-	slot0:removeMailById(slot1.id)
+function var_0_0.removeMail(arg_12_0, arg_12_1)
+	assert(isa(arg_12_1, Mail), "should be an instance of Mail")
+	arg_12_0:removeMailById(arg_12_1.id)
 end
 
-function slot0.removeMailById(slot0, slot1)
-	slot2 = slot0.data[slot1]
+function var_0_0.removeMailById(arg_13_0, arg_13_1)
+	local var_13_0 = arg_13_0.data[arg_13_1]
 
-	assert(slot0.data[slot1] ~= nil, "mail should exist")
-	slot0.data[slot2.id]:display("removed")
+	assert(arg_13_0.data[arg_13_1] ~= nil, "mail should exist")
+	arg_13_0.data[var_13_0.id]:display("removed")
 
-	slot0.data[slot2.id] = nil
+	arg_13_0.data[var_13_0.id] = nil
 
-	slot0:updateTotal(slot0.total - 1)
+	arg_13_0:updateTotal(arg_13_0.total - 1)
 end
 
-function slot0.hasMailById(slot0, slot1)
-	return slot0.data[slot1] ~= nil
+function var_0_0.hasMailById(arg_14_0, arg_14_1)
+	return arg_14_0.data[arg_14_1] ~= nil
 end
 
-function slot0.unpdateExistAttachment(slot0, slot1)
-	slot0._existAttachmentCount = slot1
+function var_0_0.unpdateExistAttachment(arg_15_0, arg_15_1)
+	arg_15_0._existAttachmentCount = arg_15_1
 
-	slot0:sendNotification(uv0.UPDATE_ATTACHMENT_COUNT)
+	arg_15_0:sendNotification(var_0_0.UPDATE_ATTACHMENT_COUNT)
 end
 
-function slot0.updateTotal(slot0, slot1)
-	slot0.total = slot1
+function var_0_0.updateTotal(arg_16_0, arg_16_1)
+	arg_16_0.total = arg_16_1
 
-	slot0:sendNotification(uv0.MAIL_TOTAL, slot0.total)
+	arg_16_0:sendNotification(var_0_0.MAIL_TOTAL, arg_16_0.total)
 end
 
-function slot0.getUnreadCount(slot0)
-	return slot0.unread
+function var_0_0.getUnreadCount(arg_17_0)
+	return arg_17_0.unread
 end
 
-function slot0.GetAttchmentDic(slot0)
-	slot1 = {
+function var_0_0.GetAttchmentDic(arg_18_0)
+	local var_18_0 = {
 		[DROP_TYPE_ITEM] = {},
 		[DROP_TYPE_RESOURCE] = {},
 		[DROP_TYPE_EQUIP] = 0,
@@ -142,69 +143,78 @@ function slot0.GetAttchmentDic(slot0)
 		[DROP_TYPE_WORLD_ITEM] = 0
 	}
 
-	for slot5, slot6 in ipairs(slot0:getMails()) do
-		if slot6.attachFlag == Mail.ATTACHMENT_EXIST then
-			for slot11, slot12 in pairs(slot6:GetAttchmentDic()) do
-				switch(slot11, {
-					[DROP_TYPE_ITEM] = function ()
-						for slot3, slot4 in pairs(uv0) do
-							uv1[uv2][slot3] = defaultValue(uv1[uv2][slot3], 0) + slot4
+	for iter_18_0, iter_18_1 in ipairs(arg_18_0:getMails()) do
+		if iter_18_1.attachFlag == Mail.ATTACHMENT_EXIST then
+			local var_18_1 = iter_18_1:GetAttchmentDic()
+
+			for iter_18_2, iter_18_3 in pairs(var_18_1) do
+				switch(iter_18_2, {
+					[DROP_TYPE_ITEM] = function()
+						for iter_19_0, iter_19_1 in pairs(iter_18_3) do
+							var_18_0[iter_18_2][iter_19_0] = defaultValue(var_18_0[iter_18_2][iter_19_0], 0) + iter_19_1
 						end
 					end,
-					[DROP_TYPE_RESOURCE] = function ()
-						for slot3, slot4 in pairs(uv0) do
-							uv1[uv2][slot3] = defaultValue(uv1[uv2][slot3], 0) + slot4
+					[DROP_TYPE_RESOURCE] = function()
+						for iter_20_0, iter_20_1 in pairs(iter_18_3) do
+							var_18_0[iter_18_2][iter_20_0] = defaultValue(var_18_0[iter_18_2][iter_20_0], 0) + iter_20_1
 						end
 					end,
-					[DROP_TYPE_EQUIP] = function ()
-						uv0[uv1] = uv0[uv1] + uv2
+					[DROP_TYPE_EQUIP] = function()
+						var_18_0[iter_18_2] = var_18_0[iter_18_2] + iter_18_3
 					end,
-					[DROP_TYPE_SHIP] = function ()
-						uv0[uv1] = uv0[uv1] + uv2
+					[DROP_TYPE_SHIP] = function()
+						var_18_0[iter_18_2] = var_18_0[iter_18_2] + iter_18_3
 					end,
-					[DROP_TYPE_WORLD_ITEM] = function ()
-						uv0[uv1] = uv0[uv1] + uv2
+					[DROP_TYPE_WORLD_ITEM] = function()
+						var_18_0[iter_18_2] = var_18_0[iter_18_2] + iter_18_3
 					end
 				})
 			end
 		end
 	end
 
-	return slot1
+	return var_18_0
 end
 
-function slot0.getMailAttachments(slot0)
-	slot1 = {}
+function var_0_0.getMailAttachments(arg_24_0)
+	local var_24_0 = {}
+	local var_24_1 = arg_24_0:getMails()
 
-	for slot6, slot7 in ipairs(slot0:getMails()) do
-		if slot7.attachFlag == Mail.ATTACHMENT_EXIST then
-			table.insert(slot1, slot7)
+	for iter_24_0, iter_24_1 in ipairs(var_24_1) do
+		if iter_24_1.attachFlag == Mail.ATTACHMENT_EXIST then
+			table.insert(var_24_0, iter_24_1)
 		end
 	end
 
-	return slot1
+	return var_24_0
 end
 
-function slot0.getAllAttachment(slot0)
-	slot2 = {}
+function var_0_0.getAllAttachment(arg_25_0)
+	local var_25_0 = {}
+	local var_25_1 = {}
+	local var_25_2 = arg_25_0:getMailAttachments()
 
-	_.each(slot0:getMailAttachments(), function (slot0)
-		_.each(slot0.attachments or {}, function (slot0)
-			if slot0.type == DROP_TYPE_LOVE_LETTER then
-				table.insert(uv0, slot0)
-			elseif uv1[slot0.type .. "_" .. slot0.id] then
-				uv1[slot1].count = uv1[slot1].count + slot0.count
+	_.each(var_25_2, function(arg_26_0)
+		_.each(arg_26_0.attachments or {}, function(arg_27_0)
+			if arg_27_0.type == DROP_TYPE_LOVE_LETTER then
+				table.insert(var_25_1, arg_27_0)
 			else
-				uv1[slot1] = slot0
+				local var_27_0 = arg_27_0.type .. "_" .. arg_27_0.id
+
+				if var_25_0[var_27_0] then
+					var_25_0[var_27_0].count = var_25_0[var_27_0].count + arg_27_0.count
+				else
+					var_25_0[var_27_0] = arg_27_0
+				end
 			end
 		end)
 	end)
 
-	for slot7, slot8 in pairs({}) do
-		table.insert(slot2, slot8)
+	for iter_25_0, iter_25_1 in pairs(var_25_0) do
+		table.insert(var_25_1, iter_25_1)
 	end
 
-	return slot2
+	return var_25_1
 end
 
-return slot0
+return var_0_0

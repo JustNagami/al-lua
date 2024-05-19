@@ -1,4 +1,18 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onFriendlyHpRatioUpdate"
+			},
+			arg_list = {
+				hpUpperBound = 0.2,
+				target = "TargetSelf",
+				skill_id = 10220,
+				quota = 1
+			}
+		}
+	},
 	{
 		desc = "当队友耐久低于20%时，回复其耐久的10.0%，若目标是企业，回复效果提高50%，每场战斗仅能触发1次",
 		addition = {
@@ -69,19 +83,5 @@ return {
 	stack = 1,
 	id = 10220,
 	icon = 10220,
-	last_effect = "Health",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onFriendlyHpRatioUpdate"
-			},
-			arg_list = {
-				hpUpperBound = 0.2,
-				target = "TargetSelf",
-				skill_id = 10220,
-				quota = 1
-			}
-		}
-	}
+	last_effect = "Health"
 }

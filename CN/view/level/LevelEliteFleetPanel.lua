@@ -1,378 +1,418 @@
-slot0 = class("LevelEliteFleetPanel", import("..base.BasePanel"))
-slot1 = {
+﻿local var_0_0 = class("LevelEliteFleetPanel", import("..base.BasePanel"))
+local var_0_1 = {
 	vanguard = 1,
 	submarine = 3,
 	main = 2
 }
 
-function slot0.init(slot0)
-	uv0.super.init(slot0)
+function var_0_0.init(arg_1_0)
+	var_0_0.super.init(arg_1_0)
 
-	slot0.tfShipTpl = slot0:findTF("panel/shiptpl")
-	slot0.tfEmptyTpl = slot0:findTF("panel/emptytpl")
-	slot0.tfFleets = {
+	arg_1_0.tfShipTpl = arg_1_0:findTF("panel/shiptpl")
+	arg_1_0.tfEmptyTpl = arg_1_0:findTF("panel/emptytpl")
+	arg_1_0.tfFleets = {
 		[FleetType.Normal] = {
-			slot0:findTF("panel/fleet/1"),
-			slot0:findTF("panel/fleet/2")
+			arg_1_0:findTF("panel/fleet/1"),
+			arg_1_0:findTF("panel/fleet/2")
 		},
 		[FleetType.Submarine] = {
-			slot0:findTF("panel/sub/1")
+			arg_1_0:findTF("panel/sub/1")
 		}
 	}
-	slot0.tfLimit = slot0:findTF("panel/limit")
-	slot0.tfLimitTips = slot0:findTF("panel/limit_tip")
-	slot0.tfLimitElite = slot0:findTF("panel/limit_elite")
-	slot0.tfLimitContainer = slot0:findTF("panel/limit_elite/limit_list")
-	slot0.tfLimitTpl = slot0:findTF("panel/limit_elite/condition")
-	slot0.btnBack = slot0:findTF("panel/btnBack")
-	slot0.btnGo = slot0:findTF("panel/start_button")
-	slot0.btnAdHelp = slot0:findTF("panel/title/ADvalue/helpbtn")
-	slot0.commanderBtn = slot0:findTF("panel/commander_btn")
-	slot0.toggleMask = slot0:findTF("mask")
+	arg_1_0.tfLimit = arg_1_0:findTF("panel/limit")
+	arg_1_0.tfLimitTips = arg_1_0:findTF("panel/limit_tip")
+	arg_1_0.tfLimitElite = arg_1_0:findTF("panel/limit_elite")
+	arg_1_0.tfLimitContainer = arg_1_0:findTF("panel/limit_elite/limit_list")
+	arg_1_0.tfLimitTpl = arg_1_0:findTF("panel/limit_elite/condition")
+	arg_1_0.btnBack = arg_1_0:findTF("panel/btnBack")
+	arg_1_0.btnGo = arg_1_0:findTF("panel/start_button")
+	arg_1_0.btnAdHelp = arg_1_0:findTF("panel/title/ADvalue/helpbtn")
+	arg_1_0.commanderBtn = arg_1_0:findTF("panel/commander_btn")
+	arg_1_0.toggleMask = arg_1_0:findTF("mask")
 
-	setActive(slot0.tfShipTpl, false)
-	setActive(slot0.tfEmptyTpl, false)
-	setActive(slot0.tfLimitTpl, false)
-	setActive(slot0.toggleMask, false)
+	setActive(arg_1_0.tfShipTpl, false)
+	setActive(arg_1_0.tfEmptyTpl, false)
+	setActive(arg_1_0.tfLimitTpl, false)
+	setActive(arg_1_0.toggleMask, false)
 
-	slot0.onConfirm = nil
-	slot0.onCancel = nil
-	slot0.onClick = nil
-	slot0.onLongPressed = nil
-	slot0.onEliteClear = nil
-	slot0.onEliteRecommend = nil
+	arg_1_0.onConfirm = nil
+	arg_1_0.onCancel = nil
+	arg_1_0.onClick = nil
+	arg_1_0.onLongPressed = nil
+	arg_1_0.onEliteClear = nil
+	arg_1_0.onEliteRecommend = nil
 end
 
-function slot0.set(slot0, slot1)
-	slot0.chapter = slot1
-	slot0.propetyLimitation = slot0.chapter:getConfig("property_limitation")
-	slot0.eliteFleetList = slot0.chapter:getEliteFleetList()
-	slot0.chapterADValue = slot0.chapter:getConfig("air_dominance")
-	slot0.suggestionValue = math.max(slot0.chapter:getConfig("best_air_dominance"), 150)
-	slot0.eliteCommanderList = slot0.chapter:getEliteFleetCommanders()
-	slot0.typeLimitations = slot0.chapter:getConfig("limitation")
+function var_0_0.set(arg_2_0, arg_2_1)
+	arg_2_0.chapter = arg_2_1
+	arg_2_0.propetyLimitation = arg_2_0.chapter:getConfig("property_limitation")
+	arg_2_0.eliteFleetList = arg_2_0.chapter:getEliteFleetList()
+	arg_2_0.chapterADValue = arg_2_0.chapter:getConfig("air_dominance")
+	arg_2_0.suggestionValue = math.max(arg_2_0.chapter:getConfig("best_air_dominance"), 150)
+	arg_2_0.eliteCommanderList = arg_2_0.chapter:getEliteFleetCommanders()
+	arg_2_0.typeLimitations = arg_2_0.chapter:getConfig("limitation")
 
-	onButton(slot0, slot0.btnGo, function ()
-		if uv0.onConfirm then
-			uv0.onConfirm()
+	onButton(arg_2_0, arg_2_0.btnGo, function()
+		if arg_2_0.onConfirm then
+			arg_2_0.onConfirm()
 		end
 	end, SFX_UI_WEIGHANCHOR_GO)
-	onButton(slot0, slot0.btnAdHelp, function ()
+	onButton(arg_2_0, arg_2_0.btnAdHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("help_battle_ac")
 		})
 	end, SFX_UI_CLICK)
-	onButton(slot0, slot0.btnBack, function ()
-		if uv0.onCancel then
-			uv0.onCancel()
+	onButton(arg_2_0, arg_2_0.btnBack, function()
+		if arg_2_0.onCancel then
+			arg_2_0.onCancel()
 		end
 	end, SFX_CANCEL)
-	onButton(slot0, slot0._tf, function ()
-		if uv0.onCancel then
-			uv0.onCancel()
+	onButton(arg_2_0, arg_2_0._tf, function()
+		if arg_2_0.onCancel then
+			arg_2_0.onCancel()
 		end
 	end, SFX_CANCEL)
-	onToggle(slot0, slot0.commanderBtn, function (slot0)
-		uv0.parent.contextData.EditingCommander = slot0
+	onToggle(arg_2_0, arg_2_0.commanderBtn, function(arg_7_0)
+		arg_2_0.parent.contextData.EditingCommander = arg_7_0
 
-		uv0:flush()
+		arg_2_0:flush()
 	end, SFX_PANEL)
-	triggerToggle(slot0.commanderBtn, slot0.parent.contextData.EditingCommander)
-	setActive(slot0.commanderBtn, slot0.parent.openedCommanerSystem)
-	slot0:flush()
+	triggerToggle(arg_2_0.commanderBtn, arg_2_0.parent.contextData.EditingCommander)
+	setActive(arg_2_0.commanderBtn, arg_2_0.parent.openedCommanerSystem)
+	arg_2_0:flush()
 end
 
-function slot0.clear(slot0)
-	triggerToggle(slot0.commanderBtn, false)
+function var_0_0.clear(arg_8_0)
+	triggerToggle(arg_8_0.commanderBtn, false)
 end
 
-function slot0.flush(slot0)
-	slot0:updateLimit()
+function var_0_0.flush(arg_9_0)
+	arg_9_0:updateLimit()
 
-	if OPEN_AIR_DOMINANCE and slot0.chapterADValue > 0 then
-		setActive(slot0:findTF("panel/title/ADvalue"), true)
-		slot0:updateFleetPanelADValue()
+	if OPEN_AIR_DOMINANCE and arg_9_0.chapterADValue > 0 then
+		setActive(arg_9_0:findTF("panel/title/ADvalue"), true)
+		arg_9_0:updateFleetPanelADValue()
 	else
-		setActive(slot0:findTF("panel/title/ADvalue"), false)
+		setActive(arg_9_0:findTF("panel/title/ADvalue"), false)
 	end
 
-	slot0:updateFleets()
+	arg_9_0:updateFleets()
 end
 
-function slot0.updateLimit(slot0)
-	setActive(slot0.toggleMask, false)
-	setActive(slot0.tfLimit, false)
-	setActive(slot0.tfLimitTips, #slot0.propetyLimitation == 0)
-	setActive(slot0.tfLimitElite, #slot0.propetyLimitation > 0)
-	removeAllChildren(slot0.tfLimitContainer)
+function var_0_0.updateLimit(arg_10_0)
+	setActive(arg_10_0.toggleMask, false)
+	setActive(arg_10_0.tfLimit, false)
+	setActive(arg_10_0.tfLimitTips, #arg_10_0.propetyLimitation == 0)
+	setActive(arg_10_0.tfLimitElite, #arg_10_0.propetyLimitation > 0)
+	removeAllChildren(arg_10_0.tfLimitContainer)
 
-	if #slot0.propetyLimitation > 0 then
-		slot1, slot2 = slot0.chapter:IsPropertyLimitationSatisfy()
+	if #arg_10_0.propetyLimitation > 0 then
+		local var_10_0, var_10_1 = arg_10_0.chapter:IsPropertyLimitationSatisfy()
 
-		for slot6, slot7 in ipairs(slot0.propetyLimitation) do
-			slot8, slot9, slot10, slot11 = unpack(slot7)
+		for iter_10_0, iter_10_1 in ipairs(arg_10_0.propetyLimitation) do
+			local var_10_2, var_10_3, var_10_4, var_10_5 = unpack(iter_10_1)
+			local var_10_6 = cloneTplTo(arg_10_0.tfLimitTpl, arg_10_0.tfLimitContainer)
 
-			if slot1[slot6] == 1 then
-				slot0:findTF("Text", cloneTplTo(slot0.tfLimitTpl, slot0.tfLimitContainer)):GetComponent(typeof(Text)).color = Color.New(1, 0.9607843137254902, 0.5019607843137255)
+			if var_10_0[iter_10_0] == 1 then
+				arg_10_0:findTF("Text", var_10_6):GetComponent(typeof(Text)).color = Color.New(1, 0.9607843137254902, 0.5019607843137255)
 			else
-				slot0:findTF("Text", slot12):GetComponent(typeof(Text)).color = Color.New(0.9568627450980393, 0.30196078431372547, 0.30196078431372547)
+				arg_10_0:findTF("Text", var_10_6):GetComponent(typeof(Text)).color = Color.New(0.9568627450980393, 0.30196078431372547, 0.30196078431372547)
 			end
 
-			setActive(slot12, true)
-			setText(slot0:findTF("Text", slot12), AttributeType.EliteCondition2Name(slot8, slot11) .. AttributeType.eliteConditionCompareTip(slot9) .. slot10 .. "（" .. slot2[slot8] .. "）")
+			setActive(var_10_6, true)
+
+			local var_10_7 = (AttributeType.EliteCondition2Name(var_10_2, var_10_5) .. AttributeType.eliteConditionCompareTip(var_10_3) .. var_10_4) .. "（" .. var_10_1[var_10_2] .. "）"
+
+			setText(arg_10_0:findTF("Text", var_10_6), var_10_7)
 		end
 
-		setActive(slot0.tfLimitElite:Find("sub"), slot0.chapter:getConfig("submarine_num") > 0)
+		setActive(arg_10_0.tfLimitElite:Find("sub"), arg_10_0.chapter:getConfig("submarine_num") > 0)
 	end
 end
 
-function slot0.updateFleetPanelADValue(slot0)
-	slot1 = getProxy(BayProxy)
-	slot2 = 0
+function var_0_0.updateFleetPanelADValue(arg_11_0)
+	local var_11_0 = getProxy(BayProxy)
+	local var_11_1 = 0
 
-	for slot6, slot7 in ipairs(slot0.eliteFleetList) do
-		slot8 = {
-			[slot12] = getProxy(CommanderProxy):getCommanderById(slot13)
-		}
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.eliteFleetList) do
+		local var_11_2 = {}
 
-		for slot12, slot13 in pairs(slot0.eliteCommanderList[slot6]) do
-			-- Nothing
+		for iter_11_2, iter_11_3 in pairs(arg_11_0.eliteCommanderList[iter_11_0]) do
+			var_11_2[iter_11_2] = getProxy(CommanderProxy):getCommanderById(iter_11_3)
 		end
 
-		for slot12, slot13 in ipairs(slot7) do
-			slot2 = slot2 + calcAirDominanceValue(slot1:getShipById(slot13), slot8)
+		for iter_11_4, iter_11_5 in ipairs(iter_11_1) do
+			var_11_1 = var_11_1 + calcAirDominanceValue(var_11_0:getShipById(iter_11_5), var_11_2)
 		end
 	end
 
-	slot2 = math.floor(slot2)
-	slot3 = slot0:findTF("panel/title/ADvalue/Text")
+	local var_11_3 = math.floor(var_11_1)
+	local var_11_4 = arg_11_0:findTF("panel/title/ADvalue/Text")
 
-	setText(slot3, i18n("level_scene_title_word_5"))
-	setText(slot0:findTF("Num1", slot3), setColorStr(slot2, slot2 < slot0.suggestionValue and "#f1dc36" or COLOR_WHITE))
-	setText(slot0:findTF("Num2", slot3), slot0.suggestionValue)
+	setText(var_11_4, i18n("level_scene_title_word_5"))
+	setText(arg_11_0:findTF("Num1", var_11_4), setColorStr(var_11_3, var_11_3 < arg_11_0.suggestionValue and "#f1dc36" or COLOR_WHITE))
+	setText(arg_11_0:findTF("Num2", var_11_4), arg_11_0.suggestionValue)
 end
 
-function slot0.initAddButton(slot0, slot1, slot2, slot3, slot4)
-	slot6 = {
-		[slot0.parent.shipVOs[slot12]] = true
-	}
+function var_0_0.initAddButton(arg_12_0, arg_12_1, arg_12_2, arg_12_3, arg_12_4)
+	local var_12_0 = arg_12_0.eliteFleetList[arg_12_4]
+	local var_12_1 = {}
+	local var_12_2 = {}
 
-	for slot11, slot12 in ipairs(slot0.eliteFleetList[slot4]) do
-		if slot2 == slot0.parent.shipVOs[slot12]:getTeamType() then
-			table.insert({}, slot12)
+	for iter_12_0, iter_12_1 in ipairs(var_12_0) do
+		var_12_1[arg_12_0.parent.shipVOs[iter_12_1]] = true
+
+		if arg_12_2 == arg_12_0.parent.shipVOs[iter_12_1]:getTeamType() then
+			table.insert(var_12_2, iter_12_1)
 		end
 	end
 
-	removeAllChildren(findTF(slot1, slot2))
+	local var_12_3 = findTF(arg_12_1, arg_12_2)
 
-	slot9 = 0
-	slot10 = false
-	slot11 = 0
+	removeAllChildren(var_12_3)
 
-	table.sort(Clone(slot3), function (slot0, slot1)
-		if type(slot0) == type(slot1) then
-			return slot3 < slot2
-		elseif slot1 == 0 or slot3 == "string" and slot0 ~= 0 then
+	local var_12_4 = 0
+	local var_12_5 = false
+	local var_12_6 = 0
+
+	arg_12_3 = Clone(arg_12_3)
+
+	table.sort(arg_12_3, function(arg_13_0, arg_13_1)
+		local var_13_0 = type(arg_13_0)
+		local var_13_1 = type(arg_13_1)
+
+		if var_13_0 == var_13_1 then
+			return var_13_1 < var_13_0
+		elseif arg_13_1 == 0 or var_13_1 == "string" and arg_13_0 ~= 0 then
 			return true
 		else
 			return false
 		end
 	end)
 
-	slot12 = {}
-	slot13 = {}
+	local var_12_7 = {}
+	local var_12_8 = {}
 
-	for slot17 = 1, 3 do
-		slot18, slot19, slot20 = nil
+	for iter_12_2 = 1, 3 do
+		local var_12_9
+		local var_12_10
+		local var_12_11
+		local var_12_12 = var_12_2[iter_12_2] and arg_12_0.parent.shipVOs[var_12_2[iter_12_2]] or nil
 
-		if slot7[slot17] and slot0.parent.shipVOs[slot7[slot17]] or nil then
-			for slot25, slot26 in ipairs(slot3) do
-				if ShipType.ContainInLimitBundle(slot26, slot21:getShipType()) then
-					slot19 = slot21
-					slot20 = slot26
+		if var_12_12 then
+			for iter_12_3, iter_12_4 in ipairs(arg_12_3) do
+				if ShipType.ContainInLimitBundle(iter_12_4, var_12_12:getShipType()) then
+					var_12_10 = var_12_12
+					var_12_11 = iter_12_4
 
-					table.remove(slot3, slot25)
-					table.insert(slot12, slot25)
+					table.remove(arg_12_3, iter_12_3)
+					table.insert(var_12_7, iter_12_3)
 
-					slot10 = slot10 or slot26 ~= 0
+					var_12_5 = var_12_5 or iter_12_4 ~= 0
 
 					break
 				end
 			end
 		else
-			slot20 = slot3[1]
+			var_12_11 = arg_12_3[1]
 
-			table.remove(slot3, 1)
-			table.insert(slot12, 1)
+			table.remove(arg_12_3, 1)
+			table.insert(var_12_7, 1)
 		end
 
-		if slot20 == 0 then
-			slot11 = slot11 + 1
+		if var_12_11 == 0 then
+			var_12_6 = var_12_6 + 1
 		end
 
-		slot22 = slot19 and cloneTplTo(slot0.tfShipTpl, slot8) or cloneTplTo(slot0.tfEmptyTpl, slot8)
+		local var_12_13 = var_12_10 and cloneTplTo(arg_12_0.tfShipTpl, var_12_3) or cloneTplTo(arg_12_0.tfEmptyTpl, var_12_3)
 
-		table.insert(slot13, slot22)
-		setActive(slot22, true)
+		table.insert(var_12_8, var_12_13)
+		setActive(var_12_13, true)
 
-		if slot19 then
-			updateShip(slot22, slot19)
-			setActive(slot0:findTF("event_block", slot22), slot19:getFlag("inEvent"))
+		if var_12_10 then
+			updateShip(var_12_13, var_12_10)
+			setActive(arg_12_0:findTF("event_block", var_12_13), var_12_10:getFlag("inEvent"))
 
-			slot6[slot19] = true
+			var_12_1[var_12_10] = true
 		else
-			slot9 = slot9 + 1
+			var_12_4 = var_12_4 + 1
 		end
 
-		slot18 = findTF(slot22, "icon_bg")
+		local var_12_14 = findTF(var_12_13, "icon_bg")
 
-		setActive(slot0:findTF("ship_type", slot22), true)
+		setActive(arg_12_0:findTF("ship_type", var_12_13), true)
 
-		if type(slot20) == "number" then
-			if slot20 ~= 0 then
-				setImageSprite(slot0:findTF("ship_type", slot22), GetSpriteFromAtlas("shiptype", ShipType.Type2CNLabel(slot20)), true)
+		if type(var_12_11) == "number" then
+			if var_12_11 ~= 0 then
+				local var_12_15 = GetSpriteFromAtlas("shiptype", ShipType.Type2CNLabel(var_12_11))
+
+				setImageSprite(arg_12_0:findTF("ship_type", var_12_13), var_12_15, true)
 			else
-				setActive(slot0:findTF("ship_type", slot22), false)
+				setActive(arg_12_0:findTF("ship_type", var_12_13), false)
 			end
-		elseif type(slot20) == "string" then
-			setImageSprite(slot0:findTF("ship_type", slot22), GetSpriteFromAtlas("shiptype", ShipType.BundleType2CNLabel(slot20)), true)
+		elseif type(var_12_11) == "string" then
+			local var_12_16 = GetSpriteFromAtlas("shiptype", ShipType.BundleType2CNLabel(var_12_11))
+
+			setImageSprite(arg_12_0:findTF("ship_type", var_12_13), var_12_16, true)
 		end
 
-		setActive(slot0:findTF("ship_type", slot22), not slot19 and slot20 ~= 0)
-		table.sort(_.map(slot5, function (slot0)
-			return uv0.parent.shipVOs[slot0]
-		end), function (slot0, slot1)
-			return uv0[slot0:getTeamType()] < uv0[slot1:getTeamType()] or uv0[slot0:getTeamType()] == uv0[slot1:getTeamType()] and table.indexof(uv1, slot0.id) < table.indexof(uv1, slot1.id)
+		setActive(arg_12_0:findTF("ship_type", var_12_13), not var_12_10 and var_12_11 ~= 0)
+
+		local var_12_17 = _.map(var_12_0, function(arg_14_0)
+			return arg_12_0.parent.shipVOs[arg_14_0]
 		end)
 
-		slot24 = GetOrAddComponent(slot18, typeof(UILongPressTrigger))
+		table.sort(var_12_17, function(arg_15_0, arg_15_1)
+			return var_0_1[arg_15_0:getTeamType()] < var_0_1[arg_15_1:getTeamType()] or var_0_1[arg_15_0:getTeamType()] == var_0_1[arg_15_1:getTeamType()] and table.indexof(var_12_0, arg_15_0.id) < table.indexof(var_12_0, arg_15_1.id)
+		end)
 
-		slot24.onReleased:RemoveAllListeners()
-		slot24.onLongPressed:RemoveAllListeners()
-		slot24.onReleased:AddListener(function ()
-			uv0.onClick({
-				shipType = uv1,
-				fleet = uv2,
-				chapter = uv0.chapter,
-				shipVO = uv3,
-				fleetIndex = uv4,
-				teamType = uv5
+		local var_12_18 = GetOrAddComponent(var_12_14, typeof(UILongPressTrigger))
+
+		var_12_18.onReleased:RemoveAllListeners()
+		var_12_18.onLongPressed:RemoveAllListeners()
+		var_12_18.onReleased:AddListener(function()
+			arg_12_0.onClick({
+				shipType = var_12_11,
+				fleet = var_12_1,
+				chapter = arg_12_0.chapter,
+				shipVO = var_12_10,
+				fleetIndex = arg_12_4,
+				teamType = arg_12_2
 			})
 		end)
-		slot24.onLongPressed:AddListener(function ()
-			if not uv0 then
-				uv1.onClick({
-					shipType = uv2,
-					fleet = uv3,
-					chapter = uv1.chapter,
-					shipVO = uv0,
-					fleetIndex = uv4,
-					teamType = uv5
+		var_12_18.onLongPressed:AddListener(function()
+			if not var_12_10 then
+				arg_12_0.onClick({
+					shipType = var_12_11,
+					fleet = var_12_1,
+					chapter = arg_12_0.chapter,
+					shipVO = var_12_10,
+					fleetIndex = arg_12_4,
+					teamType = arg_12_2
 				})
 			else
-				uv1.onLongPressed({
-					shipId = uv0.id,
-					shipVOs = uv6,
-					chapter = uv1.chapter
+				arg_12_0.onLongPressed({
+					shipId = var_12_10.id,
+					shipVOs = var_12_17,
+					chapter = arg_12_0.chapter
 				})
 			end
 		end)
 	end
 
-	for slot17 = 3, 1, -1 do
-		slot13[slot17]:SetSiblingIndex(slot12[slot17] - 1)
+	for iter_12_5 = 3, 1, -1 do
+		var_12_8[iter_12_5]:SetSiblingIndex(var_12_7[iter_12_5] - 1)
 	end
 
-	if (slot10 == true or slot11 == 3) and slot9 ~= 3 then
+	if (var_12_5 == true or var_12_6 == 3) and var_12_4 ~= 3 then
 		return true
 	else
 		return false
 	end
 end
 
-function slot0.initCommander(slot0, slot1, slot2, slot3)
-	for slot9 = 1, 2 do
-		slot11 = nil
+function var_0_0.initCommander(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
+	local var_18_0 = arg_18_3:getEliteFleetCommanders()[arg_18_1]
 
-		if slot3:getEliteFleetCommanders()[slot1][slot9] then
-			slot11 = getProxy(CommanderProxy):getCommanderById(slot10)
+	for iter_18_0 = 1, 2 do
+		local var_18_1 = var_18_0[iter_18_0]
+		local var_18_2
+
+		if var_18_1 then
+			var_18_2 = getProxy(CommanderProxy):getCommanderById(var_18_1)
 		end
 
-		slot12 = slot2:Find("pos" .. slot9)
+		local var_18_3 = arg_18_2:Find("pos" .. iter_18_0)
+		local var_18_4 = var_18_3:Find("add")
+		local var_18_5 = var_18_3:Find("info")
 
-		setActive(slot12:Find("add"), not slot11)
-		setActive(slot12:Find("info"), slot11)
+		setActive(var_18_4, not var_18_2)
+		setActive(var_18_5, var_18_2)
 
-		if slot11 then
-			setImageSprite(slot14:Find("frame"), GetSpriteFromAtlas("weaponframes", "commander_" .. Commander.rarity2Frame(slot11:getRarity())))
-			GetImageSpriteFromAtlasAsync("CommanderHrz/" .. slot11:getPainting(), "", slot14:Find("mask/icon"))
+		if var_18_2 then
+			local var_18_6 = Commander.rarity2Frame(var_18_2:getRarity())
+
+			setImageSprite(var_18_5:Find("frame"), GetSpriteFromAtlas("weaponframes", "commander_" .. var_18_6))
+			GetImageSpriteFromAtlasAsync("CommanderHrz/" .. var_18_2:getPainting(), "", var_18_5:Find("mask/icon"))
 		end
 
-		slot15 = slot3:wrapEliteFleet(slot1)
+		local var_18_7 = arg_18_3:wrapEliteFleet(arg_18_1)
 
-		onButton(slot0, slot13, function ()
-			uv0.parent:openCommanderPanel(uv1, uv2.id, uv3)
+		onButton(arg_18_0, var_18_4, function()
+			arg_18_0.parent:openCommanderPanel(var_18_7, arg_18_3.id, arg_18_1)
 		end, SFX_PANEL)
-		onButton(slot0, slot14, function ()
-			uv0.parent:openCommanderPanel(uv1, uv2.id, uv3)
+		onButton(arg_18_0, var_18_5, function()
+			arg_18_0.parent:openCommanderPanel(var_18_7, arg_18_3.id, arg_18_1)
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.updateFleets(slot0)
-	for slot4, slot5 in ipairs(slot0.tfFleets[FleetType.Normal]) do
-		setActive(slot0:findTF("btn_select", slot5), false)
-		setActive(findTF(slot5, "selected"), false)
+function var_0_0.updateFleets(arg_21_0)
+	for iter_21_0, iter_21_1 in ipairs(arg_21_0.tfFleets[FleetType.Normal]) do
+		local var_21_0 = arg_21_0:findTF("btn_clear", iter_21_1)
+		local var_21_1 = arg_21_0:findTF("btn_recom", iter_21_1)
+		local var_21_2 = arg_21_0:findTF("btn_select", iter_21_1)
+		local var_21_3 = arg_21_0:findTF("blank", iter_21_1)
+		local var_21_4 = arg_21_0:findTF("commander", iter_21_1)
 
-		slot11 = slot4 <= slot0.chapter:getConfig("group_num")
+		setActive(var_21_2, false)
+		setActive(findTF(iter_21_1, "selected"), false)
 
-		setActive(findTF(slot5, TeamType.Main), slot11)
-		setActive(findTF(slot5, TeamType.Vanguard), slot11)
-		setActive(slot0:findTF("btn_clear", slot5), slot11 and not slot0.contextData.EditingCommander)
-		setActive(slot0:findTF("btn_recom", slot5), slot11 and not slot0.contextData.EditingCommander)
-		setActive(slot0:findTF("blank", slot5), not slot11)
-		setActive(slot0:findTF("commander", slot5), slot11 and slot0.contextData.EditingCommander)
-		setText(slot0:findTF("bg/name", slot5), slot11 and Fleet.DEFAULT_NAME[slot4] or "")
+		local var_21_5 = iter_21_0 <= arg_21_0.chapter:getConfig("group_num")
 
-		if slot11 then
-			slot12 = slot0.typeLimitations[slot4]
+		setActive(findTF(iter_21_1, TeamType.Main), var_21_5)
+		setActive(findTF(iter_21_1, TeamType.Vanguard), var_21_5)
+		setActive(var_21_0, var_21_5 and not arg_21_0.contextData.EditingCommander)
+		setActive(var_21_1, var_21_5 and not arg_21_0.contextData.EditingCommander)
+		setActive(var_21_3, not var_21_5)
+		setActive(var_21_4, var_21_5 and arg_21_0.contextData.EditingCommander)
+		setText(arg_21_0:findTF("bg/name", iter_21_1), var_21_5 and Fleet.DEFAULT_NAME[iter_21_0] or "")
 
-			slot0:initCommander(slot4, slot10, slot0.chapter)
+		if var_21_5 then
+			local var_21_6 = arg_21_0.typeLimitations[iter_21_0]
+			local var_21_7 = var_21_6[1]
+			local var_21_8 = var_21_6[2]
+			local var_21_9 = arg_21_0:initAddButton(iter_21_1, TeamType.Main, var_21_7, iter_21_0)
+			local var_21_10 = arg_21_0:initAddButton(iter_21_1, TeamType.Vanguard, var_21_8, iter_21_0)
 
-			if slot0:initAddButton(slot5, TeamType.Main, slot12[1], slot4) and slot0:initAddButton(slot5, TeamType.Vanguard, slot12[2], slot4) then
-				setActive(slot0:findTF("selected", slot5), true)
+			arg_21_0:initCommander(iter_21_0, var_21_4, arg_21_0.chapter)
+
+			if var_21_9 and var_21_10 then
+				setActive(arg_21_0:findTF("selected", iter_21_1), true)
 			end
 
-			onButton(slot0, slot6, function ()
-				if #uv0.eliteFleetList[uv1] ~= 0 then
+			onButton(arg_21_0, var_21_0, function()
+				if #arg_21_0.eliteFleetList[iter_21_0] ~= 0 then
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
 						content = i18n("battle_preCombatLayer_clear_confirm"),
-						onYes = function ()
-							uv0.onEliteClear({
-								index = uv1,
-								chapterVO = uv0.chapter
+						onYes = function()
+							arg_21_0.onEliteClear({
+								index = iter_21_0,
+								chapterVO = arg_21_0.chapter
 							})
 						end
 					})
 				end
 			end)
-			onButton(slot0, slot7, function ()
-				if #uv0.eliteFleetList[uv1] ~= 6 then
-					if slot0 ~= 0 then
+			onButton(arg_21_0, var_21_1, function()
+				local var_24_0 = #arg_21_0.eliteFleetList[iter_21_0]
+
+				if var_24_0 ~= 6 then
+					if var_24_0 ~= 0 then
 						pg.MsgboxMgr.GetInstance():ShowMsgBox({
 							content = i18n("battle_preCombatLayer_auto_confirm"),
-							onYes = function ()
-								uv0.onEliteRecommend({
-									index = uv1,
-									chapterVO = uv0.chapter
+							onYes = function()
+								arg_21_0.onEliteRecommend({
+									index = iter_21_0,
+									chapterVO = arg_21_0.chapter
 								})
 							end
 						})
 					else
-						uv0.onEliteRecommend({
-							index = uv1,
-							chapterVO = uv0.chapter
+						arg_21_0.onEliteRecommend({
+							index = iter_21_0,
+							chapterVO = arg_21_0.chapter
 						})
 					end
 				end
@@ -380,57 +420,64 @@ function slot0.updateFleets(slot0)
 		end
 	end
 
-	for slot4, slot5 in ipairs(slot0.tfFleets[FleetType.Submarine]) do
-		slot11 = slot0:findTF("commander", slot5)
+	for iter_21_2, iter_21_3 in ipairs(arg_21_0.tfFleets[FleetType.Submarine]) do
+		local var_21_11 = iter_21_2 + 2
+		local var_21_12 = arg_21_0:findTF("btn_clear", iter_21_3)
+		local var_21_13 = arg_21_0:findTF("btn_recom", iter_21_3)
+		local var_21_14 = arg_21_0:findTF("btn_select", iter_21_3)
+		local var_21_15 = arg_21_0:findTF("blank", iter_21_3)
+		local var_21_16 = arg_21_0:findTF("commander", iter_21_3)
 
-		setActive(slot0:findTF("btn_select", slot5), false)
-		setActive(findTF(slot5, "selected"), false)
-		setActive(findTF(slot5, TeamType.Submarine), slot4 <= slot0.chapter:getConfig("submarine_num"))
-		setActive(slot0:findTF("btn_clear", slot5), slot4 <= slot0.chapter:getConfig("submarine_num") and not slot0.contextData.EditingCommander)
-		setActive(slot0:findTF("btn_recom", slot5), slot4 <= slot0.chapter:getConfig("submarine_num") and not slot0.contextData.EditingCommander)
-		setActive(slot0:findTF("blank", slot5), slot0.chapter:getConfig("submarine_num") < slot4)
-		setActive(slot11, slot4 <= slot0.chapter:getConfig("submarine_num") and slot0.contextData.EditingCommander)
-		setText(slot0:findTF("bg/name", slot5), slot4 <= slot0.chapter:getConfig("submarine_num") and Fleet.DEFAULT_NAME[Fleet.SUBMARINE_FLEET_ID + slot4 - 1] or "")
-		slot0:initCommander(slot4 + 2, slot11, slot0.chapter)
+		setActive(var_21_14, false)
+		setActive(findTF(iter_21_3, "selected"), false)
+		setActive(findTF(iter_21_3, TeamType.Submarine), iter_21_2 <= arg_21_0.chapter:getConfig("submarine_num"))
+		setActive(var_21_12, iter_21_2 <= arg_21_0.chapter:getConfig("submarine_num") and not arg_21_0.contextData.EditingCommander)
+		setActive(var_21_13, iter_21_2 <= arg_21_0.chapter:getConfig("submarine_num") and not arg_21_0.contextData.EditingCommander)
+		setActive(var_21_15, iter_21_2 > arg_21_0.chapter:getConfig("submarine_num"))
+		setActive(var_21_16, iter_21_2 <= arg_21_0.chapter:getConfig("submarine_num") and arg_21_0.contextData.EditingCommander)
+		setText(arg_21_0:findTF("bg/name", iter_21_3), iter_21_2 <= arg_21_0.chapter:getConfig("submarine_num") and Fleet.DEFAULT_NAME[Fleet.SUBMARINE_FLEET_ID + iter_21_2 - 1] or "")
+		arg_21_0:initCommander(var_21_11, var_21_16, arg_21_0.chapter)
 
-		if slot4 <= slot0.chapter:getConfig("submarine_num") then
-			if slot0:initAddButton(slot5, TeamType.Submarine, {
+		if iter_21_2 <= arg_21_0.chapter:getConfig("submarine_num") then
+			if arg_21_0:initAddButton(iter_21_3, TeamType.Submarine, {
 				0,
 				0,
 				0
-			}, slot6) then
-				setActive(slot0:findTF("selected", slot5), true)
+			}, var_21_11) then
+				setActive(arg_21_0:findTF("selected", iter_21_3), true)
 			end
 
-			onButton(slot0, slot7, function ()
-				if #uv0.eliteFleetList[uv1] ~= 0 then
+			onButton(arg_21_0, var_21_12, function()
+				if #arg_21_0.eliteFleetList[var_21_11] ~= 0 then
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
 						content = i18n("battle_preCombatLayer_clear_confirm"),
-						onYes = function ()
-							uv0.onEliteClear({
-								index = uv1,
-								chapterVO = uv0.chapter
+						onYes = function()
+							arg_21_0.onEliteClear({
+								index = var_21_11,
+								chapterVO = arg_21_0.chapter
 							})
 						end
 					})
 				end
 			end)
-			onButton(slot0, slot8, function ()
-				if #uv0.eliteFleetList[uv1] ~= 3 then
-					if slot0 ~= 0 then
+			onButton(arg_21_0, var_21_13, function()
+				local var_28_0 = #arg_21_0.eliteFleetList[var_21_11]
+
+				if var_28_0 ~= 3 then
+					if var_28_0 ~= 0 then
 						pg.MsgboxMgr.GetInstance():ShowMsgBox({
 							content = i18n("battle_preCombatLayer_auto_confirm"),
-							onYes = function ()
-								uv0.onEliteRecommend({
-									index = uv1,
-									chapterVO = uv0.chapter
+							onYes = function()
+								arg_21_0.onEliteRecommend({
+									index = var_21_11,
+									chapterVO = arg_21_0.chapter
 								})
 							end
 						})
 					else
-						uv0.onEliteRecommend({
-							index = uv1,
-							chapterVO = uv0.chapter
+						arg_21_0.onEliteRecommend({
+							index = var_21_11,
+							chapterVO = arg_21_0.chapter
 						})
 					end
 				end
@@ -439,4 +486,4 @@ function slot0.updateFleets(slot0)
 	end
 end
 
-return slot0
+return var_0_0

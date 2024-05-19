@@ -1,100 +1,110 @@
-slot0 = class("BackYardThemeMsgBoxPage", import(".BackYardFurnitureMsgBoxPage"))
+﻿local var_0_0 = class("BackYardThemeMsgBoxPage", import(".BackYardFurnitureMsgBoxPage"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ThemeMsgboxPage"
 end
 
-function slot0.OnLoaded(slot0)
-	uv0.super.OnLoaded(slot0)
+function var_0_0.OnLoaded(arg_2_0)
+	var_0_0.super.OnLoaded(arg_2_0)
 
-	slot0.purchaseTr = slot0:findTF("frame/tip")
-	slot0.purchase = slot0:findTF("frame/tip/Text"):GetComponent(typeof(Text))
+	arg_2_0.purchaseTr = arg_2_0:findTF("frame/tip")
+	arg_2_0.purchase = arg_2_0:findTF("frame/tip/Text"):GetComponent(typeof(Text))
 end
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
-	onButton(slot0, slot0.gemPurchaseBtn, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	var_0_0.super.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.gemPurchaseBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.goldPurchaseBtn, function ()
-		if #uv0:GetAddList() <= 0 then
+	onButton(arg_3_0, arg_3_0.goldPurchaseBtn, function()
+		local var_5_0 = arg_3_0:GetAddList()
+
+		if #var_5_0 <= 0 then
 			return
 		end
 
-		uv0:emit(NewBackYardShopMediator.ON_SHOPPING, _.map(slot0, function (slot0)
-			return slot0.id
-		end), PlayerConst.ResDormMoney)
-		uv0:Hide()
+		local var_5_1 = _.map(var_5_0, function(arg_6_0)
+			return arg_6_0.id
+		end)
+
+		arg_3_0:emit(NewBackYardShopMediator.ON_SHOPPING, var_5_1, PlayerConst.ResDormMoney)
+		arg_3_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.SetUp(slot0, slot1, slot2, slot3)
-	slot0.dorm = slot2
-	slot0.themeVO = slot1
-	slot0.player = slot3
-	slot0.count = 1
-	slot0.maxCount = 1
+function var_0_0.SetUp(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	arg_7_0.dorm = arg_7_2
+	arg_7_0.themeVO = arg_7_1
+	arg_7_0.player = arg_7_3
+	arg_7_0.count = 1
+	arg_7_0.maxCount = 1
 
-	slot0:UpdateMainInfo()
-	slot0:UpdateBtns()
-	slot0:UpdatePrice()
-	slot0:Show()
+	arg_7_0:UpdateMainInfo()
+	arg_7_0:UpdateBtns()
+	arg_7_0:UpdatePrice()
+	arg_7_0:Show()
 
-	slot0.purchase.text = i18n("purchase_backyard_theme_desc_for_onekey")
+	arg_7_0.purchase.text = i18n("purchase_backyard_theme_desc_for_onekey")
 
-	setActive(slot0.purchaseTr, true)
-	setText(slot0.gemPurchaseBtn:Find("content/Text"), i18n("word_buy"))
-	setText(slot0.goldPurchaseBtn:Find("content/Text"), i18n("word_buy"))
+	setActive(arg_7_0.purchaseTr, true)
+	setText(arg_7_0.gemPurchaseBtn:Find("content/Text"), i18n("word_buy"))
+	setText(arg_7_0.goldPurchaseBtn:Find("content/Text"), i18n("word_buy"))
 end
 
-function slot0.UpdateMainInfo(slot0)
-	slot0.nameTxt.text = slot0.themeVO:getConfig("name")
-	slot0.themeTxt.text = ""
-	slot0.descTxt.text = slot0.themeVO:getConfig("desc")
-	slot0.maxCnt.text = ""
-	slot0.icon.sprite = GetSpriteFromAtlas("BackYardTheme/" .. slot0.themeVO.id, "")
-	tf(slot0.icon.gameObject).sizeDelta = Vector2(336, 336)
-	slot0.maxBtnTxt.text = "+" .. slot0.maxCount
+function var_0_0.UpdateMainInfo(arg_8_0)
+	arg_8_0.nameTxt.text = arg_8_0.themeVO:getConfig("name")
+	arg_8_0.themeTxt.text = ""
+	arg_8_0.descTxt.text = arg_8_0.themeVO:getConfig("desc")
+	arg_8_0.maxCnt.text = ""
+	arg_8_0.icon.sprite = GetSpriteFromAtlas("BackYardTheme/" .. arg_8_0.themeVO.id, "")
+	tf(arg_8_0.icon.gameObject).sizeDelta = Vector2(336, 336)
+	arg_8_0.maxBtnTxt.text = "+" .. arg_8_0.maxCount
 end
 
-function slot0.UpdateBtns(slot0)
-	slot1 = true
-	slot2 = false
+function var_0_0.UpdateBtns(arg_9_0)
+	local var_9_0 = true
+	local var_9_1 = false
 
-	setActive(slot0.goldPurchaseBtn, slot1)
-	setActive(slot0.gemPurchaseBtn, slot2)
-	setActive(slot0.gemIcon, slot2)
-	setActive(slot0.gemCount, slot2)
-	setActive(slot0.goldIcon, slot1)
-	setActive(slot0.goldCount, slot1)
-	setActive(slot0.line, slot1 and slot2)
+	setActive(arg_9_0.goldPurchaseBtn, var_9_0)
+	setActive(arg_9_0.gemPurchaseBtn, var_9_1)
+	setActive(arg_9_0.gemIcon, var_9_1)
+	setActive(arg_9_0.gemCount, var_9_1)
+	setActive(arg_9_0.goldIcon, var_9_0)
+	setActive(arg_9_0.goldCount, var_9_0)
+	setActive(arg_9_0.line, var_9_0 and var_9_1)
 end
 
-function slot0.GetAddList(slot0)
-	slot1 = {}
+function var_0_0.GetAddList(arg_10_0)
+	local var_10_0 = {}
+	local var_10_1 = arg_10_0.themeVO:GetFurnitures()
+	local var_10_2 = arg_10_0.dorm:GetPurchasedFurnitures()
 
-	for slot7, slot8 in ipairs(slot0.themeVO:GetFurnitures()) do
-		if not slot0.dorm:GetPurchasedFurnitures()[slot8] then
-			table.insert(slot1, Furniture.New({
-				id = slot8
+	for iter_10_0, iter_10_1 in ipairs(var_10_1) do
+		if not var_10_2[iter_10_1] then
+			table.insert(var_10_0, Furniture.New({
+				id = iter_10_1
 			}))
 		end
 	end
 
-	return slot1
+	return var_10_0
 end
 
-function slot0.UpdatePrice(slot0)
-	slot1 = slot0:GetAddList()
-	slot0.gemCount.text = 0 * slot0.count
-	slot0.goldCount.text = _.reduce(slot1, 0, function (slot0, slot1)
-		return slot0 + slot1:getPrice(PlayerConst.ResDormMoney)
-	end) * slot0.count
+function var_0_0.UpdatePrice(arg_11_0)
+	local var_11_0 = arg_11_0:GetAddList()
+	local var_11_1 = 0
+	local var_11_2 = _.reduce(var_11_0, 0, function(arg_12_0, arg_12_1)
+		return arg_12_0 + arg_12_1:getPrice(PlayerConst.ResDormMoney)
+	end)
 
-	slot0:UpdateEnergy(slot1)
+	arg_11_0.gemCount.text = var_11_1 * arg_11_0.count
+	arg_11_0.goldCount.text = var_11_2 * arg_11_0.count
+
+	arg_11_0:UpdateEnergy(var_11_0)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_13_0)
+	return
 end
 
-return slot0
+return var_0_0

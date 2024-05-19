@@ -1,80 +1,96 @@
-slot0 = class("WorldSubmitTaskCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("WorldSubmitTaskCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot4 = nowWorld()
-	slot5 = slot4:GetInventoryProxy()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().taskId
+	local var_1_1 = nowWorld()
+	local var_1_2 = var_1_1:GetInventoryProxy()
+	local var_1_3 = var_1_1:GetTaskProxy()
+	local var_1_4 = var_1_3:getTaskById(var_1_0)
 
-	if not slot4:GetTaskProxy():getTaskById(slot1:getBody().taskId) then
+	if not var_1_4 then
 		return
 	end
 
-	table.insert({}, function (slot0)
-		slot1, slot2 = uv0:canSubmit()
+	local var_1_5 = {}
 
-		if slot1 then
-			slot0()
+	table.insert(var_1_5, function(arg_2_0)
+		local var_2_0, var_2_1 = var_1_4:canSubmit()
+
+		if var_2_0 then
+			arg_2_0()
 		else
-			pg.TipsMgr.GetInstance():ShowTips(slot2)
+			pg.TipsMgr.GetInstance():ShowTips(var_2_1)
 		end
 	end)
 
-	slot9 = slot7.config.complete_condition == WorldConst.TaskTypeSubmitItem and slot7.config.item_retrieve == 1
+	local var_1_6 = var_1_4.config.complete_condition == WorldConst.TaskTypeSubmitItem and var_1_4.config.item_retrieve == 1
 
-	assert(slot7:IsAutoSubmit(), "auto submit error")
-	seriesAsync(slot8, function ()
+	assert(var_1_4:IsAutoSubmit(), "auto submit error")
+	seriesAsync(var_1_5, function()
 		pg.ConnectionMgr.GetInstance():Send(33207, {
-			taskId = uv0
-		}, 33208, function (slot0)
-			if slot0.result == 0 then
-				slot3 = slot0.exp
+			taskId = var_1_0
+		}, 33208, function(arg_4_0)
+			if arg_4_0.result == 0 then
+				local function var_4_0(arg_5_0, arg_5_1, arg_5_2)
+					local var_5_0 = getProxy(BayProxy)
+					local var_5_1 = {}
+					local var_5_2 = {}
+					local var_5_3 = arg_5_0:GetShipVOs()
 
-				for slot9, slot10 in pairs(uv0:GetFleets()) do
-					if slot3 > 0 then
-						table.insert({}, function (slot0, slot1, slot2)
-							slot3 = getProxy(BayProxy)
-							slot4 = {}
-							slot5 = {}
+					for iter_5_0, iter_5_1 in ipairs(var_5_3) do
+						table.insert(var_5_1, iter_5_1)
 
-							for slot10, slot11 in ipairs(slot0:GetShipVOs()) do
-								table.insert(slot4, slot11)
+						local var_5_4 = var_5_0:getShipById(iter_5_1.id)
 
-								slot12 = slot3:getShipById(slot11.id)
+						var_5_4:setIntimacy(var_5_4:getIntimacy() + arg_5_2)
+						var_5_4:addExp(arg_5_1)
+						var_5_0:updateShip(var_5_4)
 
-								slot12:setIntimacy(slot12:getIntimacy() + slot2)
-								slot12:addExp(slot1)
-								slot3:updateShip(slot12)
-								table.insert(slot5, WorldConst.FetchShipVO(slot11.id))
-							end
+						local var_5_5 = WorldConst.FetchShipVO(iter_5_1.id)
 
-							return {
-								oldships = slot4,
-								newships = slot5
-							}
-						end(slot10, slot3, slot0.intimacy))
+						table.insert(var_5_2, var_5_5)
+					end
+
+					return {
+						oldships = var_5_1,
+						newships = var_5_2
+					}
+				end
+
+				local var_4_1 = {}
+				local var_4_2 = arg_4_0.exp
+				local var_4_3 = arg_4_0.intimacy
+				local var_4_4 = var_1_1:GetFleets()
+
+				for iter_4_0, iter_4_1 in pairs(var_4_4) do
+					local var_4_5 = var_4_0(iter_4_1, var_4_2, var_4_3)
+
+					if var_4_2 > 0 then
+						table.insert(var_4_1, var_4_5)
 					end
 				end
 
-				slot6 = PlayerConst.addTranDrop(slot0.drops)
+				local var_4_6 = PlayerConst.addTranDrop(arg_4_0.drops)
 
-				uv1:commited()
-				uv2:updateTask(uv1)
-				uv2:riseTaskFinishCount()
-				uv0:UpdateProgress(uv1.config.complete_stage)
+				var_1_4:commited()
+				var_1_3:updateTask(var_1_4)
+				var_1_3:riseTaskFinishCount()
+				var_1_1:UpdateProgress(var_1_4.config.complete_stage)
 
-				if uv3 then
-					uv4:RemoveItem(uv1.config.complete_parameter[1], uv1:getMaxProgress())
+				if var_1_6 then
+					var_1_2:RemoveItem(var_1_4.config.complete_parameter[1], var_1_4:getMaxProgress())
 				end
 
-				uv5:sendNotification(GAME.WORLD_AUTO_SUMBMIT_TASK_DONE, {
-					task = uv1,
-					drops = slot6,
-					expfleets = slot2
+				arg_1_0:sendNotification(GAME.WORLD_AUTO_SUMBMIT_TASK_DONE, {
+					task = var_1_4,
+					drops = var_4_6,
+					expfleets = var_4_1
 				})
 			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("task_submitTask", slot0.result))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("task_submitTask", arg_4_0.result))
 			end
 		end)
 	end)
 end
 
-return slot0
+return var_0_0

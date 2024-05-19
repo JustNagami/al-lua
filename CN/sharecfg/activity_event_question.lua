@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_event_question = {
 	[57] = {
 		answer_right = "上升轰炸",

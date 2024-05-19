@@ -1,296 +1,319 @@
-slot0 = class("ActivityFleetPanel", import("..level.LevelEliteFleetPanel"))
-slot0.ON_OPEN_DOCK = "ActivityFleetPanel:ON_OPEN_DOCK"
-slot0.ON_FLEET_RECOMMEND = "ActivityFleetPanel:ON_FLEET_RECOMMEND"
-slot0.ON_FLEET_CLEAR = "ActivityFleetPanel:ON_FLEET_CLEAR"
+﻿local var_0_0 = class("ActivityFleetPanel", import("..level.LevelEliteFleetPanel"))
 
-function slot0.init(slot0)
-	uv0.super.init(slot0)
+var_0_0.ON_OPEN_DOCK = "ActivityFleetPanel:ON_OPEN_DOCK"
+var_0_0.ON_FLEET_RECOMMEND = "ActivityFleetPanel:ON_FLEET_RECOMMEND"
+var_0_0.ON_FLEET_CLEAR = "ActivityFleetPanel:ON_FLEET_CLEAR"
+
+function var_0_0.init(arg_1_0)
+	var_0_0.super.init(arg_1_0)
 end
 
-function slot0.set(slot0, slot1, slot2)
-	slot0.groupNum = slot1
-	slot0.submarineNum = slot2
+function var_0_0.set(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0.groupNum = arg_2_1
+	arg_2_0.submarineNum = arg_2_2
 
-	setActive(slot0.tfLimitElite, false)
-	setActive(slot0.tfLimitTips, false)
-	setActive(slot0.tfLimit, false)
-	onButton(slot0, slot0.btnGo, function ()
-		if uv0.onCombat then
-			uv0.onCombat()
+	setActive(arg_2_0.tfLimitElite, false)
+	setActive(arg_2_0.tfLimitTips, false)
+	setActive(arg_2_0.tfLimit, false)
+	onButton(arg_2_0, arg_2_0.btnGo, function()
+		if arg_2_0.onCombat then
+			arg_2_0.onCombat()
 		end
 	end, SFX_UI_WEIGHANCHOR_GO)
-	onButton(slot0, slot0.btnBack, function ()
-		if uv0.onCancel then
-			uv0.onCancel()
+	onButton(arg_2_0, arg_2_0.btnBack, function()
+		if arg_2_0.onCancel then
+			arg_2_0.onCancel()
 		end
 
-		if uv0.onCommit then
-			uv0.onCommit()
+		if arg_2_0.onCommit then
+			arg_2_0.onCommit()
 		end
 	end, SFX_CANCEL)
-	onButton(slot0, slot0._tf, function ()
-		if uv0.onCancel then
-			uv0.onCancel()
+	onButton(arg_2_0, arg_2_0._tf, function()
+		if arg_2_0.onCancel then
+			arg_2_0.onCancel()
 		end
 
-		if uv0.onCommit then
-			uv0.onCommit()
+		if arg_2_0.onCommit then
+			arg_2_0.onCommit()
 		end
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.toggleMask, function ()
-		uv0:hideToggleMask()
+	onButton(arg_2_0, arg_2_0.toggleMask, function()
+		arg_2_0:hideToggleMask()
 	end, SFX_CANCEL)
-	onToggle(slot0, slot0.commanderBtn, function (slot0)
-		uv0.parent.contextData.showCommander = slot0
+	onToggle(arg_2_0, arg_2_0.commanderBtn, function(arg_7_0)
+		arg_2_0.parent.contextData.showCommander = arg_7_0
 
-		for slot4, slot5 in pairs(uv0.tfFleets) do
-			for slot9 = 1, #slot5 do
-				uv0:updateCommanderBtn(slot4, slot9)
+		for iter_7_0, iter_7_1 in pairs(arg_2_0.tfFleets) do
+			for iter_7_2 = 1, #iter_7_1 do
+				arg_2_0:updateCommanderBtn(iter_7_0, iter_7_2)
 			end
 		end
 	end, SFX_PANEL)
-	triggerToggle(slot0.commanderBtn, slot0.parent.contextData.showCommander)
-	setActive(slot0.commanderBtn, slot0.parent.openedCommanerSystem)
-	slot0:clearFleets()
-	slot0:updateFleets()
+	triggerToggle(arg_2_0.commanderBtn, arg_2_0.parent.contextData.showCommander)
+	setActive(arg_2_0.commanderBtn, arg_2_0.parent.openedCommanerSystem)
+	arg_2_0:clearFleets()
+	arg_2_0:updateFleets()
 end
 
-function slot0.getLimitNums(slot0, slot1)
-	slot2 = 0
+function var_0_0.getLimitNums(arg_8_0, arg_8_1)
+	local var_8_0 = 0
 
-	if slot1 == FleetType.Normal then
-		slot2 = slot0.groupNum
-	elseif slot1 == FleetType.Submarine then
-		slot2 = slot0.submarineNum
+	if arg_8_1 == FleetType.Normal then
+		var_8_0 = arg_8_0.groupNum
+	elseif arg_8_1 == FleetType.Submarine then
+		var_8_0 = arg_8_0.submarineNum
 	end
 
-	return slot2
+	return var_8_0
 end
 
-function slot0.updateFleets(slot0)
-	for slot4, slot5 in pairs(slot0.tfFleets) do
-		for slot9 = 1, #slot5 do
-			slot0:updateFleet(slot4, slot9)
+function var_0_0.updateFleets(arg_9_0)
+	for iter_9_0, iter_9_1 in pairs(arg_9_0.tfFleets) do
+		for iter_9_2 = 1, #iter_9_1 do
+			arg_9_0:updateFleet(iter_9_0, iter_9_2)
 		end
 	end
 end
 
-function slot0.updateLimit(slot0)
+function var_0_0.updateLimit(arg_10_0)
+	return
 end
 
-function slot0.updateCommanderBtn(slot0, slot1, slot2)
-	slot3 = slot2 <= slot0:getLimitNums(slot1)
-	slot4 = slot0.fleets[slot1][slot2]
-	slot5 = slot0.tfFleets[slot1][slot2]
+function var_0_0.updateCommanderBtn(arg_11_0, arg_11_1, arg_11_2)
+	local var_11_0 = arg_11_2 <= arg_11_0:getLimitNums(arg_11_1)
+	local var_11_1 = arg_11_0.fleets[arg_11_1][arg_11_2]
+	local var_11_2 = arg_11_0.tfFleets[arg_11_1][arg_11_2]
+	local var_11_3 = arg_11_0:findTF("btn_select", var_11_2)
+	local var_11_4 = arg_11_0:findTF("btn_clear", var_11_2)
+	local var_11_5 = arg_11_0:findTF("btn_recom", var_11_2)
+	local var_11_6 = arg_11_0:findTF("blank", var_11_2)
+	local var_11_7 = arg_11_0:findTF("commander", var_11_2)
 
-	setActive(slot0:findTF("btn_select", slot5), false)
-	setActive(slot0:findTF("btn_clear", slot5), slot3 and not slot0.parent.contextData.showCommander)
-	setActive(slot0:findTF("btn_recom", slot5), slot3 and not slot0.parent.contextData.showCommander)
-	setActive(slot0:findTF("blank", slot5), not slot3 or slot3 and not slot4 and slot0.parent.contextData.showCommander)
-	setActive(slot0:findTF("commander", slot5), slot0.parent.contextData.showCommander and slot3 and slot4)
+	setActive(var_11_3, false)
+	setActive(var_11_4, var_11_0 and not arg_11_0.parent.contextData.showCommander)
+	setActive(var_11_5, var_11_0 and not arg_11_0.parent.contextData.showCommander)
+	setActive(var_11_6, not var_11_0 or var_11_0 and not var_11_1 and arg_11_0.parent.contextData.showCommander)
+	setActive(var_11_7, arg_11_0.parent.contextData.showCommander and var_11_0 and var_11_1)
 end
 
-function slot0.updateFleet(slot0, slot1, slot2)
-	slot0:updateCommanderBtn(slot1, slot2)
+function var_0_0.updateFleet(arg_12_0, arg_12_1, arg_12_2)
+	arg_12_0:updateCommanderBtn(arg_12_1, arg_12_2)
 
-	slot5 = slot0.tfFleets[slot1][slot2]
-	slot8 = slot0:findTF(TeamType.Vanguard, slot5)
-	slot9 = slot0:findTF(TeamType.Submarine, slot5)
-	slot10 = slot0:findTF("btn_select", slot5)
-	slot11 = slot0:findTF("btn_recom", slot5)
-	slot12 = slot0:findTF("btn_clear", slot5)
-	slot13 = slot0:findTF("blank", slot5)
-	slot15 = slot0:findTF("commander", slot5)
+	local var_12_0 = arg_12_0.fleets[arg_12_1][arg_12_2]
+	local var_12_1 = arg_12_2 <= arg_12_0:getLimitNums(arg_12_1)
+	local var_12_2 = arg_12_0.tfFleets[arg_12_1][arg_12_2]
+	local var_12_3 = findTF(var_12_2, "bg/name")
+	local var_12_4 = arg_12_0:findTF(TeamType.Main, var_12_2)
+	local var_12_5 = arg_12_0:findTF(TeamType.Vanguard, var_12_2)
+	local var_12_6 = arg_12_0:findTF(TeamType.Submarine, var_12_2)
+	local var_12_7 = arg_12_0:findTF("btn_select", var_12_2)
+	local var_12_8 = arg_12_0:findTF("btn_recom", var_12_2)
+	local var_12_9 = arg_12_0:findTF("btn_clear", var_12_2)
+	local var_12_10 = arg_12_0:findTF("blank", var_12_2)
+	local var_12_11 = arg_12_0:findTF("selected", var_12_2)
+	local var_12_12 = arg_12_0:findTF("commander", var_12_2)
 
-	setActive(slot0:findTF("selected", slot5), false)
-	setText(findTF(slot5, "bg/name"), "")
+	setActive(var_12_11, false)
+	setText(var_12_3, "")
 
-	if slot0:findTF(TeamType.Main, slot5) then
-		setActive(slot7, slot2 <= slot0:getLimitNums(slot1) and slot0.fleets[slot1][slot2])
+	if var_12_4 then
+		setActive(var_12_4, var_12_1 and var_12_0)
 	end
 
-	if slot8 then
-		setActive(slot8, slot4 and slot3)
+	if var_12_5 then
+		setActive(var_12_5, var_12_1 and var_12_0)
 	end
 
-	if slot9 then
-		setActive(slot9, slot4 and slot3)
+	if var_12_6 then
+		setActive(var_12_6, var_12_1 and var_12_0)
 	end
 
-	if slot4 then
-		if slot3 then
-			setText(slot6, slot3.name == "" and Fleet.DEFAULT_NAME[slot3.id] or slot3.name)
+	if var_12_1 then
+		if var_12_0 then
+			setText(var_12_3, var_12_0.name == "" and Fleet.DEFAULT_NAME[var_12_0.id] or var_12_0.name)
 
-			if slot1 == FleetType.Submarine then
-				slot0:updateShips(slot9, slot3.subShips, slot3.id, TeamType.Submarine, slot3)
+			if arg_12_1 == FleetType.Submarine then
+				arg_12_0:updateShips(var_12_6, var_12_0.subShips, var_12_0.id, TeamType.Submarine, var_12_0)
 			else
-				slot0:updateShips(slot7, slot3.mainShips, slot3.id, TeamType.Main, slot3)
-				slot0:updateShips(slot8, slot3.vanguardShips, slot3.id, TeamType.Vanguard, slot3)
+				arg_12_0:updateShips(var_12_4, var_12_0.mainShips, var_12_0.id, TeamType.Main, var_12_0)
+				arg_12_0:updateShips(var_12_5, var_12_0.vanguardShips, var_12_0.id, TeamType.Vanguard, var_12_0)
 			end
 
-			slot0:updateCommanders(slot15, slot3)
+			arg_12_0:updateCommanders(var_12_12, var_12_0)
 		end
 
-		onButton(slot0, slot11, function ()
-			uv0.parent:emit(uv1.ON_FLEET_RECOMMEND, uv2.id)
+		onButton(arg_12_0, var_12_8, function()
+			arg_12_0.parent:emit(var_0_0.ON_FLEET_RECOMMEND, var_12_0.id)
 		end)
-		onButton(slot0, slot12, function ()
-			uv0.parent:emit(uv1.ON_FLEET_CLEAR, uv2.id)
+		onButton(arg_12_0, var_12_9, function()
+			arg_12_0.parent:emit(var_0_0.ON_FLEET_CLEAR, var_12_0.id)
 		end, SFX_UI_CLICK)
 	end
 end
 
-function slot0.updateCommanders(slot0, slot1, slot2)
-	for slot6 = 1, 2 do
-		slot7 = slot2:getCommanderByPos(slot6)
-		slot8 = slot1:Find("pos" .. slot6)
+function var_0_0.updateCommanders(arg_15_0, arg_15_1, arg_15_2)
+	for iter_15_0 = 1, 2 do
+		local var_15_0 = arg_15_2:getCommanderByPos(iter_15_0)
+		local var_15_1 = arg_15_1:Find("pos" .. iter_15_0)
+		local var_15_2 = var_15_1:Find("add")
+		local var_15_3 = var_15_1:Find("info")
 
-		setActive(slot8:Find("add"), not slot7)
-		setActive(slot8:Find("info"), slot7)
+		setActive(var_15_2, not var_15_0)
+		setActive(var_15_3, var_15_0)
 
-		if slot7 then
-			setImageSprite(slot10:Find("frame"), GetSpriteFromAtlas("weaponframes", "commander_" .. Commander.rarity2Frame(slot7:getRarity())))
-			GetImageSpriteFromAtlasAsync("CommanderHrz/" .. slot7:getPainting(), "", slot10:Find("mask/icon"))
+		if var_15_0 then
+			local var_15_4 = Commander.rarity2Frame(var_15_0:getRarity())
+
+			setImageSprite(var_15_3:Find("frame"), GetSpriteFromAtlas("weaponframes", "commander_" .. var_15_4))
+			GetImageSpriteFromAtlasAsync("CommanderHrz/" .. var_15_0:getPainting(), "", var_15_3:Find("mask/icon"))
 		end
 
-		onButton(slot0, slot9, function ()
-			uv0.parent:openCommanderPanel(uv1, uv1.id)
+		onButton(arg_15_0, var_15_2, function()
+			arg_15_0.parent:openCommanderPanel(arg_15_2, arg_15_2.id)
 		end, SFX_PANEL)
-		onButton(slot0, slot10, function ()
-			uv0.parent:openCommanderPanel(uv1, uv1.id)
+		onButton(arg_15_0, var_15_3, function()
+			arg_15_0.parent:openCommanderPanel(arg_15_2, arg_15_2.id)
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.updateShips(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot6 = UIItemList.New(slot1, slot0.tfShipTpl)
+function var_0_0.updateShips(arg_18_0, arg_18_1, arg_18_2, arg_18_3, arg_18_4, arg_18_5)
+	local var_18_0 = UIItemList.New(arg_18_1, arg_18_0.tfShipTpl)
 
-	slot6:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			if getProxy(BayProxy):getShipById(uv0[slot1 + 1]) then
-				setActive(slot2:Find("icon_bg"), true)
-				setActive(slot2:Find("empty"), false)
-				updateShip(slot2, slot4)
+	var_18_0:make(function(arg_19_0, arg_19_1, arg_19_2)
+		if arg_19_0 == UIItemList.EventUpdate then
+			local var_19_0 = getProxy(BayProxy)
+			local var_19_1 = var_19_0:getShipById(arg_18_2[arg_19_1 + 1])
+
+			if var_19_1 then
+				setActive(arg_19_2:Find("icon_bg"), true)
+				setActive(arg_19_2:Find("empty"), false)
+				updateShip(arg_19_2, var_19_1)
 			else
-				setActive(slot2:Find("icon_bg"), false)
-				setActive(slot2:Find("empty"), true)
+				setActive(arg_19_2:Find("icon_bg"), false)
+				setActive(arg_19_2:Find("empty"), true)
 			end
 
-			setActive(findTF(slot2, "ship_type"), false)
+			setActive(findTF(arg_19_2, "ship_type"), false)
 
-			slot5 = GetOrAddComponent(slot2, typeof(UILongPressTrigger))
+			local var_19_2 = GetOrAddComponent(arg_19_2, typeof(UILongPressTrigger))
 
-			function slot6()
-				uv0.onCancel()
-				uv0.parent:emit(uv1.ON_OPEN_DOCK, {
+			local function var_19_3()
+				arg_18_0.onCancel()
+				arg_18_0.parent:emit(var_0_0.ON_OPEN_DOCK, {
 					shipType = 0,
-					fleet = uv2,
-					shipVO = uv3,
-					fleetIndex = uv4,
-					teamType = uv5
+					fleet = arg_18_2,
+					shipVO = var_19_1,
+					fleetIndex = arg_18_3,
+					teamType = arg_18_4
 				})
 			end
 
-			slot5.onReleased:RemoveAllListeners()
-			slot5.onLongPressed:RemoveAllListeners()
-			slot5.onReleased:AddListener(function ()
-				uv0()
+			var_19_2.onReleased:RemoveAllListeners()
+			var_19_2.onLongPressed:RemoveAllListeners()
+			var_19_2.onReleased:AddListener(function()
+				var_19_3()
 			end)
-			slot5.onLongPressed:AddListener(function ()
-				if uv0 then
-					uv1.onCancel()
-					uv1.onLongPressShip(uv0.id, _.map(uv2:getShipIds(), function (slot0)
-						return uv0:getShipById(slot0)
+			var_19_2.onLongPressed:AddListener(function()
+				if var_19_1 then
+					arg_18_0.onCancel()
+					arg_18_0.onLongPressShip(var_19_1.id, _.map(arg_18_5:getShipIds(), function(arg_23_0)
+						return var_19_0:getShipById(arg_23_0)
 					end))
 				else
-					uv4()
+					var_19_3()
 				end
 			end)
 		end
 	end)
-	slot6:align(3)
+	var_18_0:align(3)
 end
 
-function slot0.showToggleMask(slot0, slot1, slot2)
-	setActive(slot0.toggleMask, true)
+function var_0_0.showToggleMask(arg_24_0, arg_24_1, arg_24_2)
+	setActive(arg_24_0.toggleMask, true)
 
-	for slot7, slot8 in ipairs(slot0.toggles) do
-		slot9 = _.filter(slot0.fleets, function (slot0)
-			return slot0:getFleetType() == uv0
-		end)[slot7]
+	local var_24_0 = _.filter(arg_24_0.fleets, function(arg_25_0)
+		return arg_25_0:getFleetType() == arg_24_1
+	end)
 
-		setActive(slot8, slot9)
+	for iter_24_0, iter_24_1 in ipairs(arg_24_0.toggles) do
+		local var_24_1 = var_24_0[iter_24_0]
 
-		if slot9 then
-			slot10, slot11 = slot9:isUnlock()
+		setActive(iter_24_1, var_24_1)
 
-			setButtonEnabled(slot8, slot10)
-			setActive(slot8:Find("lock"), not slot10)
+		if var_24_1 then
+			local var_24_2, var_24_3 = var_24_1:isUnlock()
+			local var_24_4 = iter_24_1:Find("lock")
 
-			if slot10 then
-				slot13 = table.contains(slot0.selectIds[slot1], slot9.id)
+			setButtonEnabled(iter_24_1, var_24_2)
+			setActive(var_24_4, not var_24_2)
 
-				setActive(findTF(slot8, "selected"), slot13)
-				setActive(findTF(slot8, "text"), not slot13)
-				setActive(findTF(slot8, "text_selected"), slot13)
-				onButton(slot0, slot8, function ()
-					uv0(uv1.id)
+			if var_24_2 then
+				local var_24_5 = table.contains(arg_24_0.selectIds[arg_24_1], var_24_1.id)
+
+				setActive(findTF(iter_24_1, "selected"), var_24_5)
+				setActive(findTF(iter_24_1, "text"), not var_24_5)
+				setActive(findTF(iter_24_1, "text_selected"), var_24_5)
+				onButton(arg_24_0, iter_24_1, function()
+					arg_24_2(var_24_1.id)
 				end, SFX_UI_TAG)
 			else
-				onButton(slot0, slot12, function ()
-					pg.TipsMgr.GetInstance():ShowTips(uv0)
+				onButton(arg_24_0, var_24_4, function()
+					pg.TipsMgr.GetInstance():ShowTips(var_24_3)
 				end, SFX_UI_CLICK)
 			end
 		end
 	end
 end
 
-function slot0.hideToggleMask(slot0)
-	setActive(slot0.toggleMask, false)
+function var_0_0.hideToggleMask(arg_28_0)
+	setActive(arg_28_0.toggleMask, false)
 end
 
-function slot0.setFleets(slot0, slot1)
-	slot0.fleets = {
+function var_0_0.setFleets(arg_29_0, arg_29_1)
+	arg_29_0.fleets = {
 		[FleetType.Normal] = {},
 		[FleetType.Submarine] = {}
 	}
 
-	for slot5, slot6 in pairs(slot1) do
-		if slot6:isSubmarineFleet() then
-			table.insert(slot0.fleets[FleetType.Submarine], slot6)
+	for iter_29_0, iter_29_1 in pairs(arg_29_1) do
+		if iter_29_1:isSubmarineFleet() then
+			table.insert(arg_29_0.fleets[FleetType.Submarine], iter_29_1)
 		else
-			table.insert(slot0.fleets[FleetType.Normal], slot6)
+			table.insert(arg_29_0.fleets[FleetType.Normal], iter_29_1)
 		end
 	end
 end
 
-function slot0.clearFleets(slot0)
-	for slot4, slot5 in pairs(slot0.tfFleets) do
-		_.each(slot5, function (slot0)
-			uv0:clearFleet(slot0)
+function var_0_0.clearFleets(arg_30_0)
+	for iter_30_0, iter_30_1 in pairs(arg_30_0.tfFleets) do
+		_.each(iter_30_1, function(arg_31_0)
+			arg_30_0:clearFleet(arg_31_0)
 		end)
 	end
 end
 
-function slot0.clearFleet(slot0, slot1)
-	slot3 = slot0:findTF(TeamType.Vanguard, slot1)
-	slot4 = slot0:findTF(TeamType.Submarine, slot1)
+function var_0_0.clearFleet(arg_32_0, arg_32_1)
+	local var_32_0 = arg_32_0:findTF(TeamType.Main, arg_32_1)
+	local var_32_1 = arg_32_0:findTF(TeamType.Vanguard, arg_32_1)
+	local var_32_2 = arg_32_0:findTF(TeamType.Submarine, arg_32_1)
 
-	if slot0:findTF(TeamType.Main, slot1) then
-		removeAllChildren(slot2)
+	if var_32_0 then
+		removeAllChildren(var_32_0)
 	end
 
-	if slot3 then
-		removeAllChildren(slot3)
+	if var_32_1 then
+		removeAllChildren(var_32_1)
 	end
 
-	if slot4 then
-		removeAllChildren(slot4)
+	if var_32_2 then
+		removeAllChildren(var_32_2)
 	end
 end
 
-function slot0.clear(slot0)
-	triggerToggle(slot0.commanderBtn, false)
+function var_0_0.clear(arg_33_0)
+	triggerToggle(arg_33_0.commanderBtn, false)
 end
 
-return slot0
+return var_0_0

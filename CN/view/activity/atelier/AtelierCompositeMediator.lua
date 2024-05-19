@@ -1,49 +1,60 @@
-slot0 = class("AtelierCompositeMediator", import("view.base.ContextMediator"))
-slot0.OPEN_FORMULA = "OPEN_FORMULA"
+﻿local var_0_0 = class("AtelierCompositeMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(GAME.COMPOSITE_ATELIER_RECIPE, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.COMPOSITE_ATELIER_RECIPE, {
-			formulaId = uv0.contextData.formulaId,
-			items = slot1,
-			repeats = slot2
+var_0_0.OPEN_FORMULA = "OPEN_FORMULA"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(GAME.COMPOSITE_ATELIER_RECIPE, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:sendNotification(GAME.COMPOSITE_ATELIER_RECIPE, {
+			formulaId = arg_1_0.contextData.formulaId,
+			items = arg_2_1,
+			repeats = arg_2_2
 		})
 	end)
-	slot0:bind(AtelierMaterialDetailMediator.SHOW_DETAIL, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(AtelierMaterialDetailMediator.SHOW_DETAIL, function(arg_3_0, arg_3_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = AtelierMaterialDetailMediator,
 			viewComponent = AtelierMaterialDetailLayer,
 			data = {
-				material = slot1
+				material = arg_3_1
 			}
 		}))
 	end)
-	slot0.viewComponent:SetEnabled(getProxy(ChapterProxy):getChapterById(1690005, true):isClear())
-	assert(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK) and not slot3:isEnd())
-	slot0.viewComponent:SetActivity(slot3)
+
+	local var_1_0 = getProxy(ChapterProxy):getChapterById(1690005, true):isClear()
+
+	arg_1_0.viewComponent:SetEnabled(var_1_0)
+
+	local var_1_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+
+	assert(var_1_1 and not var_1_1:isEnd())
+	arg_1_0.viewComponent:SetActivity(var_1_1)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_4_0)
 	return {
 		GAME.COMPOSITE_ATELIER_RECIPE_DONE,
 		ActivityProxy.ACTIVITY_UPDATED,
-		uv0.OPEN_FORMULA
+		var_0_0.OPEN_FORMULA
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	if slot1:getName() == GAME.COMPOSITE_ATELIER_RECIPE_DONE then
-		slot0.viewComponent:OnCompositeResult(slot1:getBody())
-	elseif slot2 == ActivityProxy.ACTIVITY_UPDATED then
-		if slot3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_ATELIER_LINK then
-			slot0.viewComponent:SetActivity(slot3)
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
+
+	if var_5_0 == GAME.COMPOSITE_ATELIER_RECIPE_DONE then
+		arg_5_0.viewComponent:OnCompositeResult(var_5_1)
+	elseif var_5_0 == ActivityProxy.ACTIVITY_UPDATED then
+		if var_5_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_ATELIER_LINK then
+			arg_5_0.viewComponent:SetActivity(var_5_1)
 		end
-	elseif slot2 == uv0.OPEN_FORMULA then
-		slot0.viewComponent:OnReceiveFormualRequest(slot3)
+	elseif var_5_0 == var_0_0.OPEN_FORMULA then
+		arg_5_0.viewComponent:OnReceiveFormualRequest(var_5_1)
 	end
 end
 
-function slot0.remove(slot0)
+function var_0_0.remove(arg_6_0)
+	return
 end
 
-return slot0
+return var_0_0

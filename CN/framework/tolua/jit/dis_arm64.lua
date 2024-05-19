@@ -1,126 +1,246 @@
-slot0 = type
-slot1 = string.sub
-slot2 = string.byte
-slot3 = string.format
-slot4 = string.match
-slot5 = string.gmatch
-slot6 = string.gsub
-slot7 = table.concat
-slot8 = require("bit")
-slot9 = slot8.band
-slot10 = slot8.bor
-slot11 = slot8.bxor
-slot12 = slot8.tohex
-slot13 = slot8.lshift
-slot14 = slot8.rshift
-slot15 = slot8.arshift
-slot16 = slot8.ror
-slot17 = {
+﻿local var_0_0 = type
+local var_0_1 = string.sub
+local var_0_2 = string.byte
+local var_0_3 = string.format
+local var_0_4 = string.match
+local var_0_5 = string.gmatch
+local var_0_6 = string.gsub
+local var_0_7 = table.concat
+local var_0_8 = require("bit")
+local var_0_9 = var_0_8.band
+local var_0_10 = var_0_8.bor
+local var_0_11 = var_0_8.bxor
+local var_0_12 = var_0_8.tohex
+local var_0_13 = var_0_8.lshift
+local var_0_14 = var_0_8.rshift
+local var_0_15 = var_0_8.arshift
+local var_0_16 = var_0_8.ror
+local var_0_17 = {
 	[0] = "adrDBx",
 	"adrpDBx",
 	shift = 31,
 	mask = 1
 }
-slot22 = {
-	[0] = slot17,
-	slot17,
-	{
-		[0] = "add|movDNIg",
-		"adds|cmnD0NIg",
-		"subDNIg",
-		"subs|cmpD0NIg",
-		shift = 29,
-		mask = 3
-	},
-	false,
-	{
+local var_0_18 = {
+	[0] = "add|movDNIg",
+	"adds|cmnD0NIg",
+	"subDNIg",
+	"subs|cmpD0NIg",
+	shift = 29,
+	mask = 3
+}
+local var_0_19 = {
+	[0] = {
+		false,
+		shift = 22,
+		mask = 1,
 		[0] = {
-			[0] = {
-				[0] = "andDNig",
-				"orr|movDN0ig",
-				"eorDNig",
-				"ands|tstD0Nig",
-				shift = 29,
-				mask = 3
-			},
-			false,
-			shift = 22,
-			mask = 1
-		},
-		{
 			[0] = "andDNig",
 			"orr|movDN0ig",
 			"eorDNig",
 			"ands|tstD0Nig",
 			shift = 29,
 			mask = 3
-		},
-		shift = 31,
-		mask = 1
+		}
 	},
 	{
+		[0] = "andDNig",
+		"orr|movDN0ig",
+		"eorDNig",
+		"ands|tstD0Nig",
+		shift = 29,
+		mask = 3
+	},
+	shift = 31,
+	mask = 1
+}
+local var_0_20 = {
+	[0] = {
+		false,
+		shift = 22,
+		mask = 1,
 		[0] = {
-			[0] = {
-				[0] = "movnDWRg",
-				false,
-				"movz|movDYRg",
-				"movkDWRg",
-				shift = 29,
-				mask = 3
-			},
-			false,
-			shift = 22,
-			mask = 1
-		},
-		{
 			[0] = "movnDWRg",
 			false,
 			"movz|movDYRg",
 			"movkDWRg",
 			shift = 29,
 			mask = 3
-		},
-		shift = 31,
-		mask = 1
+		}
 	},
 	{
+		[0] = "movnDWRg",
+		false,
+		"movz|movDYRg",
+		"movkDWRg",
+		shift = 29,
+		mask = 3
+	},
+	shift = 31,
+	mask = 1
+}
+local var_0_21 = {
+	[0] = {
+		shift = 22,
+		mask = 1,
 		[0] = {
-			[0] = {
-				[0] = "sbfm|sbfiz|sbfx|asr|sxtw|sxth|sxtbDN12w",
-				"bfm|bfi|bfxilDN13w",
-				"ubfm|ubfiz|ubfx|lsr|lsl|uxth|uxtbDN12w",
-				shift = 29,
-				mask = 3
-			},
-			shift = 22,
-			mask = 1
-		},
+			[0] = "sbfm|sbfiz|sbfx|asr|sxtw|sxth|sxtbDN12w",
+			"bfm|bfi|bfxilDN13w",
+			"ubfm|ubfiz|ubfx|lsr|lsl|uxth|uxtbDN12w",
+			shift = 29,
+			mask = 3
+		}
+	},
+	{
 		{
-			{
-				[0] = "sbfm|sbfiz|sbfx|asr|sxtw|sxth|sxtbDN12x",
-				"bfm|bfi|bfxilDN13x",
-				"ubfm|ubfiz|ubfx|lsr|lsl|uxth|uxtbDN12x",
-				shift = 29,
-				mask = 3
-			},
-			shift = 22,
-			mask = 1
+			[0] = "sbfm|sbfiz|sbfx|asr|sxtw|sxth|sxtbDN12x",
+			"bfm|bfi|bfxilDN13x",
+			"ubfm|ubfiz|ubfx|lsr|lsl|uxth|uxtbDN12x",
+			shift = 29,
+			mask = 3
 		},
-		shift = 31,
+		shift = 22,
 		mask = 1
 	},
+	shift = 31,
+	mask = 1
+}
+local var_0_22 = {
+	[0] = var_0_17,
+	var_0_17,
+	var_0_18,
+	false,
+	var_0_19,
+	var_0_20,
+	var_0_21,
 	{
 		[0] = "extr|rorDNM4w",
 		shift = 15,
-		[65665.0] = "extr|rorDNM4x",
-		[65664.0] = "extr|rorDNM4x",
+		[65665] = "extr|rorDNM4x",
+		[65664] = "extr|rorDNM4x",
 		mask = 114881
 	},
 	shift = 23,
 	mask = 7
 }
-slot24 = {
+local var_0_23 = {
 	[0] = {
+		false,
+		shift = 15,
+		mask = 1,
+		[0] = {
+			[0] = {
+				[0] = "andDNMSg",
+				"bicDNMSg",
+				"andDNMSg",
+				"bicDNMSg",
+				"andDNMSg",
+				"bicDNMSg",
+				"andDNMg",
+				"bicDNMg",
+				shift = 21,
+				mask = 7
+			},
+			{
+				[0] = "orr|movDN0MSg",
+				"orn|mvnDN0MSg",
+				"orr|movDN0MSg",
+				"orn|mvnDN0MSg",
+				"orr|movDN0MSg",
+				"orn|mvnDN0MSg",
+				"orr|movDN0Mg",
+				"orn|mvnDN0Mg",
+				shift = 21,
+				mask = 7
+			},
+			{
+				[0] = "eorDNMSg",
+				"eonDNMSg",
+				"eorDNMSg",
+				"eonDNMSg",
+				"eorDNMSg",
+				"eonDNMSg",
+				"eorDNMg",
+				"eonDNMg",
+				shift = 21,
+				mask = 7
+			},
+			{
+				[0] = "ands|tstD0NMSg",
+				"bicsDNMSg",
+				"ands|tstD0NMSg",
+				"bicsDNMSg",
+				"ands|tstD0NMSg",
+				"bicsDNMSg",
+				"ands|tstD0NMg",
+				"bicsDNMg",
+				shift = 21,
+				mask = 7
+			},
+			shift = 29,
+			mask = 3
+		}
+	},
+	{
+		[0] = {
+			[0] = "andDNMSg",
+			"bicDNMSg",
+			"andDNMSg",
+			"bicDNMSg",
+			"andDNMSg",
+			"bicDNMSg",
+			"andDNMg",
+			"bicDNMg",
+			shift = 21,
+			mask = 7
+		},
+		{
+			[0] = "orr|movDN0MSg",
+			"orn|mvnDN0MSg",
+			"orr|movDN0MSg",
+			"orn|mvnDN0MSg",
+			"orr|movDN0MSg",
+			"orn|mvnDN0MSg",
+			"orr|movDN0Mg",
+			"orn|mvnDN0Mg",
+			shift = 21,
+			mask = 7
+		},
+		{
+			[0] = "eorDNMSg",
+			"eonDNMSg",
+			"eorDNMSg",
+			"eonDNMSg",
+			"eorDNMSg",
+			"eonDNMSg",
+			"eorDNMg",
+			"eonDNMg",
+			shift = 21,
+			mask = 7
+		},
+		{
+			[0] = "ands|tstD0NMSg",
+			"bicsDNMSg",
+			"ands|tstD0NMSg",
+			"bicsDNMSg",
+			"ands|tstD0NMSg",
+			"bicsDNMSg",
+			"ands|tstD0NMg",
+			"bicsDNMg",
+			shift = 21,
+			mask = 7
+		},
+		shift = 29,
+		mask = 3
+	},
+	shift = 31,
+	mask = 1
+}
+local var_0_24 = {
+	[0] = {
+		false,
+		shift = 15,
+		mask = 1,
 		[0] = {
 			[0] = {
 				[0] = "addDNMSg",
@@ -156,10 +276,7 @@ slot24 = {
 			},
 			shift = 29,
 			mask = 3
-		},
-		false,
-		shift = 15,
-		mask = 1
+		}
 	},
 	{
 		[0] = {
@@ -200,20 +317,144 @@ slot24 = {
 	shift = 31,
 	mask = 1
 }
-slot32 = {
+local var_0_25 = {
+	[0] = var_0_24,
+	var_0_24,
+	var_0_24,
+	shift = 22,
+	mask = 3
+}
+local var_0_26 = {
+	shift = 22,
+	mask = 3,
 	[0] = {
+		[0] = "addDNMXg",
+		"adds|cmnD0NMXg",
+		"subDNMXg",
+		"subs|cmpD0NMzXg",
+		shift = 29,
+		mask = 3
+	}
+}
+local var_0_27 = {
+	shift = 10,
+	mask = 63,
+	[0] = {
+		[0] = "adcDNMg",
+		"adcsDNMg",
+		"sbc|ngcDN0Mg",
+		"sbcs|ngcsDN0Mg",
+		shift = 29,
+		mask = 3
+	}
+}
+local var_0_28 = {
+	shift = 4,
+	mask = 1,
+	[0] = {
+		shift = 10,
+		mask = 3,
+		[0] = {
+			"ccmnNMVCg",
+			false,
+			"ccmpNMVCg",
+			shift = 29,
+			mask = 3
+		},
+		[2] = {
+			"ccmnN5VCg",
+			false,
+			"ccmpN5VCg",
+			shift = 29,
+			mask = 3
+		}
+	}
+}
+local var_0_29 = {
+	shift = 11,
+	mask = 1,
+	[0] = {
+		[0] = {
+			[0] = "cselDNMzCg",
+			false,
+			"csinv|cinv|csetmDNMcg",
+			false,
+			shift = 29,
+			mask = 3
+		},
+		{
+			[0] = "csinc|cinc|csetDNMcg",
+			false,
+			"csneg|cnegDNMcg",
+			false,
+			shift = 29,
+			mask = 3
+		},
+		shift = 10,
+		mask = 1
+	}
+}
+local var_0_30 = {
+	shift = 29,
+	mask = 1,
+	[0] = {
+		[0] = {
+			[0] = "rbitDNg",
+			"rev16DNg",
+			"revDNw",
+			false,
+			"clzDNg",
+			"clsDNg",
+			shift = 10,
+			mask = 2047
+		},
+		{
+			[0] = "rbitDNg",
+			"rev16DNg",
+			"rev32DNx",
+			"revDNx",
+			"clzDNg",
+			"clsDNg",
+			shift = 10,
+			mask = 2047
+		},
+		shift = 31,
+		mask = 1
+	}
+}
+local var_0_31 = {
+	shift = 29,
+	mask = 1,
+	[0] = {
+		false,
+		"udivDNMg",
+		"sdivDNMg",
+		false,
+		false,
+		false,
+		false,
+		"lslDNMg",
+		"lsrDNMg",
+		"asrDNMg",
+		"rorDNMg",
+		shift = 10,
+		mask = 63
+	}
+}
+local var_0_32 = {
+	false,
+	false,
+	false,
+	[0] = {
+		shift = 21,
+		mask = 7,
 		[0] = {
 			[0] = "madd|mulDNMA0g",
 			"msub|mnegDNMA0g",
 			shift = 15,
 			mask = 1
-		},
-		shift = 21,
-		mask = 7
+		}
 	},
-	false,
-	false,
-	false,
 	{
 		[0] = {
 			[0] = "madd|mulDNMA0g",
@@ -242,141 +483,12 @@ slot32 = {
 	shift = 29,
 	mask = 7
 }
-slot33 = {
+local var_0_33 = {
 	[0] = {
-		[0] = {
-			[0] = {
-				[0] = {
-					[0] = {
-						[0] = "andDNMSg",
-						"bicDNMSg",
-						"andDNMSg",
-						"bicDNMSg",
-						"andDNMSg",
-						"bicDNMSg",
-						"andDNMg",
-						"bicDNMg",
-						shift = 21,
-						mask = 7
-					},
-					{
-						[0] = "orr|movDN0MSg",
-						"orn|mvnDN0MSg",
-						"orr|movDN0MSg",
-						"orn|mvnDN0MSg",
-						"orr|movDN0MSg",
-						"orn|mvnDN0MSg",
-						"orr|movDN0Mg",
-						"orn|mvnDN0Mg",
-						shift = 21,
-						mask = 7
-					},
-					{
-						[0] = "eorDNMSg",
-						"eonDNMSg",
-						"eorDNMSg",
-						"eonDNMSg",
-						"eorDNMSg",
-						"eonDNMSg",
-						"eorDNMg",
-						"eonDNMg",
-						shift = 21,
-						mask = 7
-					},
-					{
-						[0] = "ands|tstD0NMSg",
-						"bicsDNMSg",
-						"ands|tstD0NMSg",
-						"bicsDNMSg",
-						"ands|tstD0NMSg",
-						"bicsDNMSg",
-						"ands|tstD0NMg",
-						"bicsDNMg",
-						shift = 21,
-						mask = 7
-					},
-					shift = 29,
-					mask = 3
-				},
-				false,
-				shift = 15,
-				mask = 1
-			},
-			{
-				[0] = {
-					[0] = "andDNMSg",
-					"bicDNMSg",
-					"andDNMSg",
-					"bicDNMSg",
-					"andDNMSg",
-					"bicDNMSg",
-					"andDNMg",
-					"bicDNMg",
-					shift = 21,
-					mask = 7
-				},
-				{
-					[0] = "orr|movDN0MSg",
-					"orn|mvnDN0MSg",
-					"orr|movDN0MSg",
-					"orn|mvnDN0MSg",
-					"orr|movDN0MSg",
-					"orn|mvnDN0MSg",
-					"orr|movDN0Mg",
-					"orn|mvnDN0Mg",
-					shift = 21,
-					mask = 7
-				},
-				{
-					[0] = "eorDNMSg",
-					"eonDNMSg",
-					"eorDNMSg",
-					"eonDNMSg",
-					"eorDNMSg",
-					"eonDNMSg",
-					"eorDNMg",
-					"eonDNMg",
-					shift = 21,
-					mask = 7
-				},
-				{
-					[0] = "ands|tstD0NMSg",
-					"bicsDNMSg",
-					"ands|tstD0NMSg",
-					"bicsDNMSg",
-					"ands|tstD0NMSg",
-					"bicsDNMSg",
-					"ands|tstD0NMg",
-					"bicsDNMg",
-					shift = 21,
-					mask = 7
-				},
-				shift = 29,
-				mask = 3
-			},
-			shift = 31,
-			mask = 1
-		},
+		[0] = var_0_23,
 		{
-			[0] = {
-				[0] = slot24,
-				slot24,
-				slot24,
-				shift = 22,
-				mask = 3
-			},
-			{
-				[0] = {
-					[0] = "addDNMXg",
-					"adds|cmnD0NMXg",
-					"subDNMXg",
-					"subs|cmpD0NMzXg",
-					shift = 29,
-					mask = 3
-				},
-				shift = 22,
-				mask = 3
-			},
+			[0] = var_0_25,
+			var_0_26,
 			shift = 21,
 			mask = 1
 		},
@@ -384,135 +496,54 @@ slot33 = {
 		mask = 1
 	},
 	{
-		[0] = {
-			[0] = {
-				[0] = "adcDNMg",
-				"adcsDNMg",
-				"sbc|ngcDN0Mg",
-				"sbcs|ngcsDN0Mg",
-				shift = 29,
-				mask = 3
-			},
-			shift = 10,
-			mask = 63
-		},
+		false,
+		[0] = var_0_27,
+		var_0_28,
+		false,
+		var_0_29,
 		false,
 		{
-			[0] = {
-				[0] = {
-					"ccmnNMVCg",
-					false,
-					"ccmpNMVCg",
-					shift = 29,
-					mask = 3
-				},
-				shift = 10,
-				mask = 3,
-				[2] = {
-					"ccmnN5VCg",
-					false,
-					"ccmpN5VCg",
-					shift = 29,
-					mask = 3
-				}
-			},
-			shift = 4,
-			mask = 1
-		},
-		false,
-		{
-			[0] = {
-				[0] = {
-					[0] = "cselDNMzCg",
-					false,
-					"csinv|cinv|csetmDNMcg",
-					false,
-					shift = 29,
-					mask = 3
-				},
-				{
-					[0] = "csinc|cinc|csetDNMcg",
-					false,
-					"csneg|cnegDNMcg",
-					false,
-					shift = 29,
-					mask = 3
-				},
-				shift = 10,
-				mask = 1
-			},
-			shift = 11,
-			mask = 1
-		},
-		false,
-		{
-			[0] = {
-				[0] = {
-					false,
-					"udivDNMg",
-					"sdivDNMg",
-					false,
-					false,
-					false,
-					false,
-					"lslDNMg",
-					"lsrDNMg",
-					"asrDNMg",
-					"rorDNMg",
-					shift = 10,
-					mask = 63
-				},
-				shift = 29,
-				mask = 1
-			},
-			{
-				[0] = {
-					[0] = {
-						[0] = "rbitDNg",
-						"rev16DNg",
-						"revDNw",
-						false,
-						"clzDNg",
-						"clsDNg",
-						shift = 10,
-						mask = 2047
-					},
-					{
-						[0] = "rbitDNg",
-						"rev16DNg",
-						"rev32DNx",
-						"revDNx",
-						"clzDNg",
-						"clsDNg",
-						shift = 10,
-						mask = 2047
-					},
-					shift = 31,
-					mask = 1
-				},
-				shift = 29,
-				mask = 1
-			},
+			[0] = var_0_31,
+			var_0_30,
 			shift = 30,
 			mask = 1
 		},
 		false,
-		slot32,
-		slot32,
-		slot32,
-		slot32,
-		slot32,
-		slot32,
-		slot32,
-		slot32,
+		var_0_32,
+		var_0_32,
+		var_0_32,
+		var_0_32,
+		var_0_32,
+		var_0_32,
+		var_0_32,
+		var_0_32,
 		shift = 21,
 		mask = 15
 	},
 	shift = 28,
 	mask = 1
 }
-slot35 = {
+local var_0_34 = {
 	[0] = {
+		[0] = "ldrDwB",
+		"ldrDxB",
+		"ldrswDxB",
+		shift = 30,
+		mask = 3
+	},
+	{
+		[0] = "ldrDsB",
+		"ldrDdB",
+		shift = 30,
+		mask = 3
+	},
+	shift = 26,
+	mask = 1
+}
+local var_0_35 = {
+	[0] = {
+		shift = 26,
+		mask = 1,
 		[0] = {
 			[0] = "strbDwzL",
 			"ldrbDwzL",
@@ -520,11 +551,11 @@ slot35 = {
 			"ldrsbDwzL",
 			shift = 22,
 			mask = 3
-		},
-		shift = 26,
-		mask = 1
+		}
 	},
 	{
+		shift = 26,
+		mask = 1,
 		[0] = {
 			[0] = "strhDwzL",
 			"ldrhDwzL",
@@ -532,9 +563,7 @@ slot35 = {
 			"ldrshDwzL",
 			shift = 22,
 			mask = 3
-		},
-		shift = 26,
-		mask = 1
+		}
 	},
 	{
 		[0] = {
@@ -572,7 +601,107 @@ slot35 = {
 	shift = 30,
 	mask = 3
 }
-slot37 = {
+local var_0_36 = {
+	[0] = {
+		[0] = {
+			shift = 26,
+			mask = 1,
+			[0] = {
+				[0] = {
+					[0] = "sturbDwK",
+					"ldurbDwK",
+					shift = 22,
+					mask = 3
+				},
+				{
+					[0] = "sturhDwK",
+					"ldurhDwK",
+					shift = 22,
+					mask = 3
+				},
+				{
+					[0] = "sturDwK",
+					"ldurDwK",
+					shift = 22,
+					mask = 3
+				},
+				{
+					[0] = "sturDxK",
+					"ldurDxK",
+					shift = 22,
+					mask = 3
+				},
+				shift = 30,
+				mask = 3
+			}
+		},
+		var_0_35,
+		false,
+		var_0_35,
+		shift = 10,
+		mask = 3
+	},
+	{
+		shift = 10,
+		mask = 3,
+		[2] = {
+			[0] = {
+				[0] = {
+					[0] = "strbDwO",
+					"ldrbDwO",
+					"ldrsbDxO",
+					"ldrsbDwO",
+					shift = 22,
+					mask = 3
+				},
+				{
+					[0] = "strhDwO",
+					"ldrhDwO",
+					"ldrshDxO",
+					"ldrshDwO",
+					shift = 22,
+					mask = 3
+				},
+				{
+					[0] = "strDwO",
+					"ldrDwO",
+					"ldrswDxO",
+					shift = 22,
+					mask = 3
+				},
+				{
+					[0] = "strDxO",
+					"ldrDxO",
+					shift = 22,
+					mask = 3
+				},
+				shift = 30,
+				mask = 3
+			},
+			{
+				shift = 30,
+				mask = 3,
+				[2] = {
+					[0] = "strDsO",
+					"ldrDsO",
+					shift = 22,
+					mask = 3
+				},
+				[3] = {
+					[0] = "strDdO",
+					"ldrDdO",
+					shift = 22,
+					mask = 3
+				}
+			},
+			shift = 26,
+			mask = 1
+		}
+	},
+	shift = 21,
+	mask = 1
+}
+local var_0_37 = {
 	[0] = {
 		[0] = {
 			[0] = "stpDzAzwP",
@@ -617,137 +746,22 @@ slot37 = {
 	shift = 22,
 	mask = 1
 }
-slot38 = {
+local var_0_38 = {
 	shift = 24,
 	mask = 49,
-	[16] = {
-		[0] = {
-			[0] = "ldrDwB",
-			"ldrDxB",
-			"ldrswDxB",
-			shift = 30,
-			mask = 3
-		},
-		{
-			[0] = "ldrDsB",
-			"ldrDdB",
-			shift = 30,
-			mask = 3
-		},
-		shift = 26,
-		mask = 1
-	},
-	[48] = {
-		[0] = {
-			[0] = {
-				[0] = {
-					[0] = {
-						[0] = "sturbDwK",
-						"ldurbDwK",
-						shift = 22,
-						mask = 3
-					},
-					{
-						[0] = "sturhDwK",
-						"ldurhDwK",
-						shift = 22,
-						mask = 3
-					},
-					{
-						[0] = "sturDwK",
-						"ldurDwK",
-						shift = 22,
-						mask = 3
-					},
-					{
-						[0] = "sturDxK",
-						"ldurDxK",
-						shift = 22,
-						mask = 3
-					},
-					shift = 30,
-					mask = 3
-				},
-				shift = 26,
-				mask = 1
-			},
-			slot35,
-			false,
-			slot35,
-			shift = 10,
-			mask = 3
-		},
-		{
-			shift = 10,
-			mask = 3,
-			[2] = {
-				[0] = {
-					[0] = {
-						[0] = "strbDwO",
-						"ldrbDwO",
-						"ldrsbDxO",
-						"ldrsbDwO",
-						shift = 22,
-						mask = 3
-					},
-					{
-						[0] = "strhDwO",
-						"ldrhDwO",
-						"ldrshDxO",
-						"ldrshDwO",
-						shift = 22,
-						mask = 3
-					},
-					{
-						[0] = "strDwO",
-						"ldrDwO",
-						"ldrswDxO",
-						shift = 22,
-						mask = 3
-					},
-					{
-						[0] = "strDxO",
-						"ldrDxO",
-						shift = 22,
-						mask = 3
-					},
-					shift = 30,
-					mask = 3
-				},
-				{
-					shift = 30,
-					mask = 3,
-					[2] = {
-						[0] = "strDsO",
-						"ldrDsO",
-						shift = 22,
-						mask = 3
-					},
-					[3] = {
-						[0] = "strDdO",
-						"ldrDdO",
-						shift = 22,
-						mask = 3
-					}
-				},
-				shift = 26,
-				mask = 1
-			}
-		},
-		shift = 21,
-		mask = 1
-	},
+	[16] = var_0_34,
+	[48] = var_0_36,
 	[32] = {
-		slot37,
-		slot37,
-		slot37,
+		var_0_37,
+		var_0_37,
+		var_0_37,
 		shift = 23,
 		mask = 3
 	},
 	[33] = {
-		slot37,
-		slot37,
-		slot37,
+		var_0_37,
+		var_0_37,
+		var_0_37,
 		shift = 23,
 		mask = 3
 	},
@@ -800,7 +814,7 @@ slot38 = {
 		mask = 1
 	}
 }
-slot39 = {
+local var_0_39 = {
 	{
 		[0] = {
 			{
@@ -808,74 +822,76 @@ slot39 = {
 					[0] = {
 						[0] = {
 							[0] = {
+								shift = 15,
+								mask = 1,
 								[0] = {
 									[0] = {
-										[57.0] = "fcvtzuDwNs",
-										[121.0] = "fcvtzuDwNd",
-										[104.0] = "fcvtpsDwNd",
-										[112.0] = "fcvtmsDwNd",
-										[96.0] = "fcvtnsDwNd",
-										[97.0] = "fcvtnuDwNd",
-										[113.0] = "fcvtmuDwNd",
-										[33.0] = "fcvtnuDwNs",
-										[39.0] = "fmovDsNw",
-										[120.0] = "fcvtzsDwNd",
-										[38.0] = "fmovDwNs",
-										[40.0] = "fcvtpsDwNs",
-										[56.0] = "fcvtzsDwNs",
-										[49.0] = "fcvtmuDwNs",
-										[32.0] = "fcvtnsDwNs",
+										[57] = "fcvtzuDwNs",
+										[121] = "fcvtzuDwNd",
+										[104] = "fcvtpsDwNd",
+										[112] = "fcvtmsDwNd",
+										[96] = "fcvtnsDwNd",
+										[97] = "fcvtnuDwNd",
+										[113] = "fcvtmuDwNd",
+										[33] = "fcvtnuDwNs",
+										[39] = "fmovDsNw",
+										[120] = "fcvtzsDwNd",
+										[38] = "fmovDwNs",
+										[40] = "fcvtpsDwNs",
+										[56] = "fcvtzsDwNs",
+										[49] = "fcvtmuDwNs",
+										[32] = "fcvtnsDwNs",
 										shift = 16,
-										[36.0] = "fcvtasDwNs",
-										[100.0] = "fcvtasDwNd",
+										[36] = "fcvtasDwNs",
+										[100] = "fcvtasDwNd",
 										mask = 255,
-										[48.0] = "fcvtmsDwNs",
-										[101.0] = "fcvtauDwNd",
-										[35.0] = "ucvtfDsNw",
-										[37.0] = "fcvtauDwNs",
-										[98.0] = "scvtfDdNw",
-										[41.0] = "fcvtpuDwNs",
-										[99.0] = "ucvtfDdNw",
-										[105.0] = "fcvtpuDwNd",
-										[34.0] = "scvtfDsNw"
+										[48] = "fcvtmsDwNs",
+										[101] = "fcvtauDwNd",
+										[35] = "ucvtfDsNw",
+										[37] = "fcvtauDwNs",
+										[98] = "scvtfDdNw",
+										[41] = "fcvtpuDwNs",
+										[99] = "ucvtfDdNw",
+										[105] = "fcvtpuDwNd",
+										[34] = "scvtfDsNw"
 									},
 									{
-										[96.0] = "fcvtnsDxNd",
-										[121.0] = "fcvtzuDxNd",
-										[104.0] = "fcvtpsDxNd",
-										[112.0] = "fcvtmsDxNd",
-										[113.0] = "fcvtmuDxNd",
-										[97.0] = "fcvtnuDxNd",
-										[120.0] = "fcvtzsDxNd",
-										[33.0] = "fcvtnuDxNs",
-										[57.0] = "fcvtzuDxNs",
-										[102.0] = "fmovDxNd",
-										[40.0] = "fcvtpsDxNs",
-										[35.0] = "ucvtfDsNx",
-										[49.0] = "fcvtmuDxNs",
-										[103.0] = "fmovDdNx",
-										[32.0] = "fcvtnsDxNs",
+										[96] = "fcvtnsDxNd",
+										[121] = "fcvtzuDxNd",
+										[104] = "fcvtpsDxNd",
+										[112] = "fcvtmsDxNd",
+										[113] = "fcvtmuDxNd",
+										[97] = "fcvtnuDxNd",
+										[120] = "fcvtzsDxNd",
+										[33] = "fcvtnuDxNs",
+										[57] = "fcvtzuDxNs",
+										[102] = "fmovDxNd",
+										[40] = "fcvtpsDxNs",
+										[35] = "ucvtfDsNx",
+										[49] = "fcvtmuDxNs",
+										[103] = "fmovDdNx",
+										[32] = "fcvtnsDxNs",
 										shift = 16,
-										[36.0] = "fcvtasDxNs",
-										[100.0] = "fcvtasDxNd",
+										[36] = "fcvtasDxNs",
+										[100] = "fcvtasDxNd",
 										mask = 255,
-										[48.0] = "fcvtmsDxNs",
-										[101.0] = "fcvtauDxNd",
-										[56.0] = "fcvtzsDxNs",
-										[37.0] = "fcvtauDxNs",
-										[98.0] = "scvtfDdNx",
-										[41.0] = "fcvtpuDxNs",
-										[99.0] = "ucvtfDdNx",
-										[105.0] = "fcvtpuDxNd",
-										[34.0] = "scvtfDsNx"
+										[48] = "fcvtmsDxNs",
+										[101] = "fcvtauDxNd",
+										[56] = "fcvtzsDxNs",
+										[37] = "fcvtauDxNs",
+										[98] = "scvtfDdNx",
+										[41] = "fcvtpuDxNs",
+										[99] = "ucvtfDdNx",
+										[105] = "fcvtpuDxNd",
+										[34] = "scvtfDsNx"
 									},
 									shift = 31,
 									mask = 1
-								},
-								shift = 15,
-								mask = 1
+								}
 							},
 							{
+								shift = 31,
+								mask = 1,
 								[0] = {
 									[0] = {
 										[0] = "fmovDNf",
@@ -919,64 +935,70 @@ slot39 = {
 									},
 									shift = 22,
 									mask = 3
-								},
-								shift = 31,
-								mask = 1
+								}
 							},
 							shift = 14,
 							mask = 1
 						},
 						{
+							shift = 31,
+							mask = 1,
 							[0] = {
+								shift = 14,
+								mask = 3,
 								[0] = {
+									shift = 23,
+									mask = 1,
 									[0] = {
 										[0] = "fcmpNMf",
-										[24.0] = "fcmpeNZf",
+										[24] = "fcmpeNZf",
 										shift = 0,
-										[16.0] = "fcmpeNMf",
+										[16] = "fcmpeNMf",
 										mask = 31,
-										[8.0] = "fcmpNZf"
-									},
-									shift = 23,
-									mask = 1
-								},
-								shift = 14,
-								mask = 3
-							},
-							shift = 31,
-							mask = 1
+										[8] = "fcmpNZf"
+									}
+								}
+							}
 						},
 						shift = 13,
 						mask = 1
 					},
 					{
-						[0] = {
-							[0] = slot46,
-							shift = 5,
-							mask = 31
-						},
 						shift = 31,
-						mask = 1
+						mask = 1,
+						[0] = {
+							shift = 5,
+							mask = 31,
+							[0] = {
+								[0] = "fmovDFf",
+								shift = 23,
+								mask = 1
+							}
+						}
 					},
 					shift = 12,
 					mask = 1
 				},
 				{
+					shift = 31,
+					mask = 1,
 					[0] = {
+						shift = 23,
+						mask = 1,
 						[0] = {
 							[0] = "fccmpNMVCf",
 							"fccmpeNMVCf",
 							shift = 4,
 							mask = 1
-						},
-						shift = 23,
-						mask = 1
-					},
-					shift = 31,
-					mask = 1
+						}
+					}
 				},
 				{
+					shift = 31,
+					mask = 1,
 					[0] = {
+						shift = 23,
+						mask = 1,
 						[0] = {
 							[0] = "fmulDNMf",
 							"fdivDNMf",
@@ -989,21 +1011,17 @@ slot39 = {
 							"fnmulDNMf",
 							shift = 12,
 							mask = 15
-						},
-						shift = 23,
-						mask = 1
-					},
-					shift = 31,
-					mask = 1
+						}
+					}
 				},
 				{
+					shift = 31,
+					mask = 1,
 					[0] = {
 						[0] = "fcselDNMCf",
 						shift = 23,
 						mask = 1
-					},
-					shift = 31,
-					mask = 1
+					}
 				},
 				shift = 10,
 				mask = 3
@@ -1012,6 +1030,8 @@ slot39 = {
 			mask = 1
 		},
 		{
+			shift = 31,
+			mask = 1,
 			[0] = {
 				[0] = {
 					[0] = "fmaddDNMAf",
@@ -1027,9 +1047,7 @@ slot39 = {
 				},
 				shift = 15,
 				mask = 1
-			},
-			shift = 31,
-			mask = 1
+			}
 		},
 		shift = 24,
 		mask = 1
@@ -1037,12 +1055,7 @@ slot39 = {
 	shift = 28,
 	mask = 7
 }
-slot46 = {
-	[0] = "fmovDFf",
-	shift = 23,
-	mask = 1
-}
-slot40 = {
+local var_0_40 = {
 	[0] = "bB",
 	{
 		[0] = "cbzDBg",
@@ -1053,7 +1066,11 @@ slot40 = {
 		mask = 3
 	},
 	{
+		shift = 24,
+		mask = 3,
 		[0] = {
+			shift = 4,
+			mask = 1,
 			[0] = {
 				[0] = "beqB",
 				"bneB",
@@ -1072,12 +1089,8 @@ slot40 = {
 				"balB",
 				shift = 0,
 				mask = 15
-			},
-			shift = 4,
-			mask = 1
-		},
-		shift = 24,
-		mask = 3
+			}
+		}
 	},
 	false,
 	"blB",
@@ -1092,19 +1105,19 @@ slot40 = {
 	{
 		[0] = {
 			shift = 0,
-			[2097152.0] = "brkW",
+			[2097152] = "brkW",
 			mask = 14680095
 		},
 		{
-			[204831.0] = "nop",
+			[204831] = "nop",
 			shift = 0,
 			mask = 4194303
 		},
 		{
 			mask = 16776223,
-			[4128768.0] = "blrNx",
-			[6225920.0] = "retNx",
-			[2031616.0] = "brNx",
+			[4128768] = "blrNx",
+			[6225920] = "retNx",
+			[2031616] = "brNx",
 			shift = 0
 		},
 		shift = 24,
@@ -1113,45 +1126,46 @@ slot40 = {
 	shift = 29,
 	mask = 7
 }
-slot41 = {
+local var_0_41 = {
 	[0] = false,
 	false,
 	false,
 	false,
-	slot38,
-	slot33,
-	slot38,
-	slot39,
-	slot22,
-	slot22,
-	slot40,
-	slot40,
-	slot38,
-	slot33,
-	slot38,
-	slot39,
+	var_0_38,
+	var_0_33,
+	var_0_38,
+	var_0_39,
+	var_0_22,
+	var_0_22,
+	var_0_40,
+	var_0_40,
+	var_0_38,
+	var_0_33,
+	var_0_38,
+	var_0_39,
 	shift = 25,
 	mask = 15
 }
-slot42 = {
+local var_0_42 = {
 	x = {},
 	w = {},
 	d = {},
 	s = {}
 }
 
-for slot46 = 0, 30 do
-	slot42.x[slot46] = "x" .. slot46
-	slot42.w[slot46] = "w" .. slot46
-	slot42.d[slot46] = "d" .. slot46
-	slot42.s[slot46] = "s" .. slot46
+for iter_0_0 = 0, 30 do
+	var_0_42.x[iter_0_0] = "x" .. iter_0_0
+	var_0_42.w[iter_0_0] = "w" .. iter_0_0
+	var_0_42.d[iter_0_0] = "d" .. iter_0_0
+	var_0_42.s[iter_0_0] = "s" .. iter_0_0
 end
 
-slot42.x[31] = "sp"
-slot42.w[31] = "wsp"
-slot42.d[31] = "d31"
-slot42.s[31] = "s31"
-slot43 = {
+var_0_42.x[31] = "sp"
+var_0_42.w[31] = "wsp"
+var_0_42.d[31] = "d31"
+var_0_42.s[31] = "s31"
+
+local var_0_43 = {
 	[0] = "eq",
 	"ne",
 	"cs",
@@ -1168,12 +1182,12 @@ slot43 = {
 	"le",
 	"al"
 }
-slot44 = {
+local var_0_44 = {
 	[0] = "lsl",
 	"lsr",
 	"asr"
 }
-slot45 = {
+local var_0_45 = {
 	[0] = "uxtb",
 	"uxth",
 	"uxtw",
@@ -1184,42 +1198,46 @@ slot45 = {
 	"sxtx"
 }
 
-function slot46(slot0, slot1, slot2)
-	slot3 = slot0.pos
-	slot4 = ""
+local function var_0_46(arg_1_0, arg_1_1, arg_1_2)
+	local var_1_0 = arg_1_0.pos
+	local var_1_1 = ""
 
-	if slot0.rel and slot0.symtab[slot0.rel] then
-		slot4 = "\t->" .. slot5
+	if arg_1_0.rel then
+		local var_1_2 = arg_1_0.symtab[arg_1_0.rel]
+
+		if var_1_2 then
+			var_1_1 = "\t->" .. var_1_2
+		end
 	end
 
-	if slot0.hexdump > 0 then
-		slot0.out(uv0("%08x  %s  %-5s %s%s\n", slot0.addr + slot3, uv1(slot0.op), slot1, uv2(slot2, ", "), slot4))
+	if arg_1_0.hexdump > 0 then
+		arg_1_0.out(var_0_3("%08x  %s  %-5s %s%s\n", arg_1_0.addr + var_1_0, var_0_12(arg_1_0.op), arg_1_1, var_0_7(arg_1_2, ", "), var_1_1))
 	else
-		slot0.out(uv0("%08x  %-5s %s%s\n", slot0.addr + slot3, slot1, uv2(slot2, ", "), slot4))
+		arg_1_0.out(var_0_3("%08x  %-5s %s%s\n", arg_1_0.addr + var_1_0, arg_1_1, var_0_7(arg_1_2, ", "), var_1_1))
 	end
 
-	slot0.pos = slot3 + 4
+	arg_1_0.pos = var_1_0 + 4
 end
 
-function slot47(slot0)
-	return uv0(slot0, ".long", {
-		"0x" .. uv1(slot0.op)
+local function var_0_47(arg_2_0)
+	return var_0_46(arg_2_0, ".long", {
+		"0x" .. var_0_12(arg_2_0.op)
 	})
 end
 
-function slot48(slot0, slot1, slot2)
-	return uv0[uv1(slot1, slot0 .. "%w-([xwds])")][slot2]
+local function var_0_48(arg_3_0, arg_3_1, arg_3_2)
+	return var_0_42[var_0_4(arg_3_1, arg_3_0 .. "%w-([xwds])")][arg_3_2]
 end
 
-function slot49(slot0)
-	if slot0 < 0 then
-		return uv0(slot0)
+local function var_0_49(arg_4_0)
+	if arg_4_0 < 0 then
+		return var_0_12(arg_4_0)
 	else
-		return uv1("%x", slot0)
+		return var_0_3("%x", arg_4_0)
 	end
 end
 
-slot50 = {
+local var_0_50 = {
 	1431655765,
 	286331153,
 	16843009,
@@ -1227,94 +1245,105 @@ slot50 = {
 	1
 }
 
-function slot51(slot0)
-	slot1 = uv0(uv1(slot0, 10), 63)
-	slot2 = uv0(uv1(slot0, 16), 63)
+local function var_0_51(arg_5_0)
+	local var_5_0 = var_0_9(var_0_14(arg_5_0, 10), 63)
+	local var_5_1 = var_0_9(var_0_14(arg_5_0, 16), 63)
 
-	if uv0(slot0, 4194304) == 0 then
-		slot3 = 5
+	if var_0_9(arg_5_0, 4194304) == 0 then
+		local var_5_2 = 5
 
-		if slot1 >= 56 then
-			if slot1 >= 60 then
-				slot3 = 1
+		if var_5_0 >= 56 then
+			if var_5_0 >= 60 then
+				var_5_2 = 1
 			else
-				slot3 = 2
+				var_5_2 = 2
 			end
-		elseif slot1 >= 48 then
-			slot3 = 3
-		elseif slot1 >= 32 then
-			slot3 = 4
+		elseif var_5_0 >= 48 then
+			var_5_2 = 3
+		elseif var_5_0 >= 32 then
+			var_5_2 = 4
 		end
 
-		slot4 = uv2(1, slot3) - 1
-		slot7 = uv3(uv1(-1, 31 - uv0(slot1, slot4)), uv0(slot2, slot4))
+		local var_5_3 = var_0_13(1, var_5_2) - 1
+		local var_5_4 = var_0_9(var_5_0, var_5_3)
+		local var_5_5 = var_0_9(var_5_1, var_5_3)
+		local var_5_6 = var_0_16(var_0_14(-1, 31 - var_5_4), var_5_5)
 
-		if slot3 ~= 5 then
-			slot7 = uv0(slot7, uv2(1, slot4) - 1) + uv1(slot7, 31 - slot4)
+		if var_5_2 ~= 5 then
+			var_5_6 = var_0_9(var_5_6, var_0_13(1, var_5_3) - 1) + var_0_14(var_5_6, 31 - var_5_3)
 		end
 
-		if uv1(slot0, 31) ~= 0 then
-			return uv5(slot7 * uv4[slot3]) .. uv6(slot7)
+		local var_5_7 = var_5_6 * var_0_50[var_5_2]
+		local var_5_8 = var_0_49(var_5_7)
+
+		if var_0_14(arg_5_0, 31) ~= 0 then
+			return var_5_8 .. var_0_12(var_5_7)
 		else
-			return slot8
+			return var_5_8
 		end
 	else
-		slot3 = -1
-		slot4 = 0
+		local var_5_9 = -1
+		local var_5_10 = 0
 
-		if slot1 < 32 then
-			slot3 = uv1(-1, 31 - slot1)
+		if var_5_0 < 32 then
+			var_5_9 = var_0_14(-1, 31 - var_5_0)
 		else
-			slot4 = uv1(-1, 63 - slot1)
+			var_5_10 = var_0_14(-1, 63 - var_5_0)
 		end
 
-		if slot2 ~= 0 then
-			slot4 = uv3(slot4, slot2)
-			slot3 = uv3(slot3, slot2)
-			slot5 = slot2 == 32 and 0 or uv0(uv7(slot3, slot4), uv2(-1, 32 - slot2))
-			slot4 = uv7(slot4, slot5)
+		if var_5_1 ~= 0 then
+			var_5_9, var_5_10 = var_0_16(var_5_9, var_5_1), var_0_16(var_5_10, var_5_1)
 
-			if slot2 >= 32 then
-				slot4 = uv7(slot3, slot5)
-				slot3 = slot4
+			local var_5_11 = var_5_1 == 32 and 0 or var_0_9(var_0_11(var_5_9, var_5_10), var_0_13(-1, 32 - var_5_1))
+
+			var_5_9, var_5_10 = var_0_11(var_5_9, var_5_11), var_0_11(var_5_10, var_5_11)
+
+			if var_5_1 >= 32 then
+				var_5_9, var_5_10 = var_5_10, var_5_9
 			end
 		end
 
-		if slot4 ~= 0 then
-			return uv5(slot4) .. uv6(slot3)
+		if var_5_10 ~= 0 then
+			return var_0_49(var_5_10) .. var_0_12(var_5_9)
 		else
-			return uv5(slot3)
+			return var_0_49(var_5_9)
 		end
 	end
 end
 
-function slot52(slot0, slot1)
-	if slot1 == "b" or slot1 == "bl" then
-		return uv0(uv1(slot0, 6), 4)
-	elseif slot1 == "adr" or slot1 == "adrp" then
-		return uv4(uv1(uv0(uv1(slot0, 8), 13), 2), uv2(uv3(slot0, 29), 3))
-	elseif slot1 == "tbz" or slot1 == "tbnz" then
-		return uv1(uv0(uv1(slot0, 13), 18), 2)
+local function var_0_52(arg_6_0, arg_6_1)
+	if arg_6_1 == "b" or arg_6_1 == "bl" then
+		return var_0_15(var_0_13(arg_6_0, 6), 4)
+	elseif arg_6_1 == "adr" or arg_6_1 == "adrp" then
+		local var_6_0 = var_0_9(var_0_14(arg_6_0, 29), 3)
+		local var_6_1 = var_0_13(var_0_15(var_0_13(arg_6_0, 8), 13), 2)
+
+		return var_0_10(var_6_1, var_6_0)
+	elseif arg_6_1 == "tbz" or arg_6_1 == "tbnz" then
+		return var_0_13(var_0_15(var_0_13(arg_6_0, 13), 18), 2)
 	else
-		return uv1(uv0(uv1(slot0, 8), 13), 2)
+		return var_0_13(var_0_15(var_0_13(arg_6_0, 8), 13), 2)
 	end
 end
 
-function slot53(slot0)
-	return (uv0(slot0, 1048576) == 0 and 1 or -1) * (16 + uv0(uv2(slot0, 13), 15)) * 2^(uv1(uv2(uv3(uv4(slot0, 12), 5), 24), 128) - 131)
+local function var_0_53(arg_7_0)
+	local var_7_0 = var_0_9(arg_7_0, 1048576) == 0 and 1 or -1
+	local var_7_1 = var_0_11(var_0_14(var_0_15(var_0_13(arg_7_0, 12), 5), 24), 128) - 131
+
+	return var_7_0 * (16 + var_0_9(var_0_14(arg_7_0, 13), 15)) * 2^var_7_1
 end
 
-function slot54(slot0, slot1, slot2, slot3)
-	if slot2 < slot3 or slot2 == 31 or slot2 == 63 then
+local function var_0_54(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
+	if arg_8_2 < arg_8_3 or arg_8_2 == 31 or arg_8_2 == 63 then
 		return false
 	end
 
-	if slot3 == 0 then
-		if slot0 == 0 and (slot2 == 7 or slot2 == 15) then
+	if arg_8_3 == 0 then
+		if arg_8_0 == 0 and (arg_8_2 == 7 or arg_8_2 == 15) then
 			return false
 		end
 
-		if slot0 ~= 0 and slot1 == 0 and (slot2 == 7 or slot2 == 15 or slot2 == 31) then
+		if arg_8_0 ~= 0 and arg_8_1 == 0 and (arg_8_2 == 7 or arg_8_2 == 15 or arg_8_2 == 31) then
 			return false
 		end
 	end
@@ -1322,359 +1351,461 @@ function slot54(slot0, slot1, slot2, slot3)
 	return true
 end
 
-function slot55(slot0)
-	slot1 = slot0.pos
-	slot2, slot3, slot4, slot5 = uv0(slot0.code, slot1 + 1, slot1 + 4)
-	slot6 = uv1(uv2(slot5, 24), uv2(slot4, 16), uv2(slot3, 8), slot2)
-	slot7 = {}
-	slot8 = ""
-	slot9, slot10, slot11, slot12 = nil
-	slot0.op = slot6
-	slot0.rel = nil
-	slot9 = nil
-	slot13 = nil
-	slot13 = uv3[uv4(uv5(slot6, 25), 15)]
+local function var_0_55(arg_9_0)
+	local var_9_0 = arg_9_0.pos
+	local var_9_1, var_9_2, var_9_3, var_9_4 = var_0_2(arg_9_0.code, var_9_0 + 1, var_9_0 + 4)
+	local var_9_5 = var_0_10(var_0_13(var_9_4, 24), var_0_13(var_9_3, 16), var_0_13(var_9_2, 8), var_9_1)
+	local var_9_6 = {}
+	local var_9_7 = ""
+	local var_9_8
+	local var_9_9
+	local var_9_10
+	local var_9_11
 
-	while uv6(slot13) ~= "string" do
-		if not slot13 then
-			return uv7(slot0)
+	arg_9_0.op = var_9_5
+	arg_9_0.rel = nil
+
+	local var_9_12
+	local var_9_13
+	local var_9_14 = var_0_41[var_0_9(var_0_14(var_9_5, 25), 15)]
+
+	while var_0_0(var_9_14) ~= "string" do
+		if not var_9_14 then
+			return var_0_47(arg_9_0)
 		end
 
-		slot13 = slot13[uv4(uv5(slot6, slot13.shift), slot13.mask)] or slot13._
+		var_9_14 = var_9_14[var_0_9(var_0_14(var_9_5, var_9_14.shift), var_9_14.mask)] or var_9_14._
 	end
 
-	slot10, slot15 = uv8(slot13, "^([a-z0-9]*)(.*)")
-	slot14, slot11 = uv8(slot15, "|([a-z0-9_.|]*)(.*)")
+	local var_9_15, var_9_16 = var_0_4(var_9_14, "^([a-z0-9]*)(.*)")
+	local var_9_17, var_9_18 = var_0_4(var_9_16, "|([a-z0-9_.|]*)(.*)")
 
-	if slot14 then
-		-- Nothing
+	if var_9_17 then
+		var_9_16 = var_9_18
 	end
 
-	if uv9(slot11, 1, 1) == "." then
-		slot16, slot11 = uv8(slot11, "^([a-z0-9.]*)(.*)")
-		slot8 = slot8 .. slot16
+	if var_0_1(var_9_16, 1, 1) == "." then
+		local var_9_19, var_9_20 = var_0_4(var_9_16, "^([a-z0-9.]*)(.*)")
+
+		var_9_7 = var_9_7 .. var_9_19
+		var_9_16 = var_9_20
 	end
 
-	if uv8(slot11, "[gf]") then
-		slot12 = slot16 == "g" and (uv4(slot6, 2147483648.0) ~= 0 and uv10.x or uv10.w) or uv4(slot6, 4194304) ~= 0 and uv10.d or uv10.s
+	local var_9_21 = var_0_4(var_9_16, "[gf]")
+
+	if var_9_21 then
+		if var_9_21 == "g" then
+			var_9_11 = var_0_9(var_9_5, 2147483648) ~= 0 and var_0_42.x or var_0_42.w
+		else
+			var_9_11 = var_0_9(var_9_5, 4194304) ~= 0 and var_0_42.d or var_0_42.s
+		end
 	end
 
-	slot17, slot18 = nil
+	local var_9_22
+	local var_9_23
 
-	for slot22 in uv11(slot11, ".") do
-		slot23 = nil
+	for iter_9_0 in var_0_5(var_9_16, ".") do
+		local var_9_24
 
-		if slot22 == "D" then
-			slot24 = uv4(slot6, 31)
-			slot23 = slot16 and slot12[slot24] or uv12(slot22, slot11, slot24)
-		elseif slot22 == "N" then
-			slot24 = uv4(uv5(slot6, 5), 31)
-			slot23 = slot16 and slot12[slot24] or uv12(slot22, slot11, slot24)
-		elseif slot22 == "M" then
-			slot24 = uv4(uv5(slot6, 16), 31)
-			slot23 = slot16 and slot12[slot24] or uv12(slot22, slot11, slot24)
-		elseif slot22 == "A" then
-			slot24 = uv4(uv5(slot6, 10), 31)
-			slot23 = slot16 and slot12[slot24] or uv12(slot22, slot11, slot24)
-		elseif slot22 == "B" then
-			slot24 = slot0.addr + slot1 + uv13(slot6, slot10)
-			slot0.rel = slot24
-			slot23 = "0x" .. uv14(slot24)
-		elseif slot22 == "T" then
-			slot23 = uv1(uv4(uv5(slot6, 26), 32), uv4(uv5(slot6, 19), 31))
-		elseif slot22 == "V" then
-			slot23 = uv4(slot6, 15)
-		elseif slot22 == "C" then
-			slot23 = uv15[uv4(uv5(slot6, 12), 15)]
-		elseif slot22 == "c" then
-			slot24 = uv4(uv5(slot6, 5), 31)
-			slot26 = uv4(uv5(slot6, 12), 15)
-			slot23 = uv15[slot26]
+		if iter_9_0 == "D" then
+			local var_9_25 = var_0_9(var_9_5, 31)
 
-			if slot14 and slot26 ~= 14 and slot26 ~= 15 then
-				slot28, slot29 = uv8(slot14, "([^|]*)|(.*)")
+			var_9_24 = var_9_21 and var_9_11[var_9_25] or var_0_48(iter_9_0, var_9_16, var_9_25)
+		elseif iter_9_0 == "N" then
+			local var_9_26 = var_0_9(var_0_14(var_9_5, 5), 31)
 
-				if slot24 == uv4(uv5(slot6, 16), 31) then
-					slot7[#slot7] = nil
-					slot23 = uv15[uv16(slot26, 1)]
+			var_9_24 = var_9_21 and var_9_11[var_9_26] or var_0_48(iter_9_0, var_9_16, var_9_26)
+		elseif iter_9_0 == "M" then
+			local var_9_27 = var_0_9(var_0_14(var_9_5, 16), 31)
 
-					if slot24 ~= 31 then
-						if slot28 then
-							slot10 = slot28
+			var_9_24 = var_9_21 and var_9_11[var_9_27] or var_0_48(iter_9_0, var_9_16, var_9_27)
+		elseif iter_9_0 == "A" then
+			local var_9_28 = var_0_9(var_0_14(var_9_5, 10), 31)
+
+			var_9_24 = var_9_21 and var_9_11[var_9_28] or var_0_48(iter_9_0, var_9_16, var_9_28)
+		elseif iter_9_0 == "B" then
+			local var_9_29 = arg_9_0.addr + var_9_0 + var_0_52(var_9_5, var_9_15)
+
+			arg_9_0.rel = var_9_29
+			var_9_24 = "0x" .. var_0_12(var_9_29)
+		elseif iter_9_0 == "T" then
+			var_9_24 = var_0_10(var_0_9(var_0_14(var_9_5, 26), 32), var_0_9(var_0_14(var_9_5, 19), 31))
+		elseif iter_9_0 == "V" then
+			var_9_24 = var_0_9(var_9_5, 15)
+		elseif iter_9_0 == "C" then
+			var_9_24 = var_0_43[var_0_9(var_0_14(var_9_5, 12), 15)]
+		elseif iter_9_0 == "c" then
+			local var_9_30 = var_0_9(var_0_14(var_9_5, 5), 31)
+			local var_9_31 = var_0_9(var_0_14(var_9_5, 16), 31)
+			local var_9_32 = var_0_9(var_0_14(var_9_5, 12), 15)
+			local var_9_33 = var_0_11(var_9_32, 1)
+
+			var_9_24 = var_0_43[var_9_32]
+
+			if var_9_17 and var_9_32 ~= 14 and var_9_32 ~= 15 then
+				local var_9_34, var_9_35 = var_0_4(var_9_17, "([^|]*)|(.*)")
+
+				if var_9_30 == var_9_31 then
+					local var_9_36 = #var_9_6
+
+					var_9_6[var_9_36] = nil
+					var_9_24 = var_0_43[var_9_33]
+
+					if var_9_30 ~= 31 then
+						if var_9_34 then
+							var_9_15 = var_9_34
 						else
-							slot10 = slot14
+							var_9_15 = var_9_17
 						end
 					else
-						slot7[slot30 - 1] = nil
-						slot10 = slot29
+						var_9_6[var_9_36 - 1] = nil
+						var_9_15 = var_9_35
 					end
 				end
 			end
-		elseif slot22 == "W" then
-			slot23 = uv4(uv5(slot6, 5), 65535)
-		elseif slot22 == "Y" then
-			if slot14 and (uv4(uv5(slot6, 21), 3) == 0 or uv4(uv5(slot6, 5), 65535) ~= 0) then
-				slot10 = slot14
-			end
-		elseif slot22 == "L" then
-			if uv4(slot6, 2048) ~= 0 then
-				slot23 = "[" .. uv10.x[uv4(uv5(slot6, 5), 31)] .. ", #" .. uv17(uv2(slot6, 11), 23) .. "]!"
-			else
-				slot23 = "[" .. slot24 .. "], #" .. slot25
-			end
-		elseif slot22 == "U" then
-			if uv2(uv17(uv2(slot6, 10), 20), uv4(uv5(slot6, 30), 3)) ~= 0 then
-				slot23 = "[" .. uv10.x[uv4(uv5(slot6, 5), 31)] .. ", #" .. slot26 .. "]"
-			else
-				slot23 = "[" .. slot24 .. "]"
-			end
-		elseif slot22 == "K" then
-			if uv17(uv2(slot6, 11), 23) ~= 0 then
-				slot23 = "[" .. uv10.x[uv4(uv5(slot6, 5), 31)] .. ", #" .. slot25 .. "]"
-			else
-				slot23 = "[" .. slot24 .. "]"
-			end
-		elseif slot22 == "O" then
-			slot25 = nil
-			slot29 = uv4(uv5(slot6, 30), 3)
+		elseif iter_9_0 == "W" then
+			var_9_24 = var_0_9(var_0_14(var_9_5, 5), 65535)
+		elseif iter_9_0 == "Y" then
+			var_9_24 = var_0_9(var_0_14(var_9_5, 5), 65535)
 
-			if uv4(uv5(slot6, 13), 7) == 3 then
-				if uv4(uv5(slot6, 12), 1) == 0 then
-					slot23 = "[" .. uv10.x[uv4(uv5(slot6, 5), 31)] .. ", " .. ((uv4(uv5(slot6, 13), 1) ~= 0 or uv10.w[uv4(uv5(slot6, 16), 31)]) and uv10.x[uv4(uv5(slot6, 16), 31)]) .. "]"
+			local var_9_37 = var_0_9(var_0_14(var_9_5, 21), 3)
+
+			if var_9_17 and (var_9_37 == 0 or var_9_24 ~= 0) then
+				var_9_15 = var_9_17
+			end
+		elseif iter_9_0 == "L" then
+			local var_9_38 = var_0_42.x[var_0_9(var_0_14(var_9_5, 5), 31)]
+			local var_9_39 = var_0_15(var_0_13(var_9_5, 11), 23)
+
+			if var_0_9(var_9_5, 2048) ~= 0 then
+				var_9_24 = "[" .. var_9_38 .. ", #" .. var_9_39 .. "]!"
+			else
+				var_9_24 = "[" .. var_9_38 .. "], #" .. var_9_39
+			end
+		elseif iter_9_0 == "U" then
+			local var_9_40 = var_0_42.x[var_0_9(var_0_14(var_9_5, 5), 31)]
+			local var_9_41 = var_0_9(var_0_14(var_9_5, 30), 3)
+			local var_9_42 = var_0_13(var_0_15(var_0_13(var_9_5, 10), 20), var_9_41)
+
+			if var_9_42 ~= 0 then
+				var_9_24 = "[" .. var_9_40 .. ", #" .. var_9_42 .. "]"
+			else
+				var_9_24 = "[" .. var_9_40 .. "]"
+			end
+		elseif iter_9_0 == "K" then
+			local var_9_43 = var_0_42.x[var_0_9(var_0_14(var_9_5, 5), 31)]
+			local var_9_44 = var_0_15(var_0_13(var_9_5, 11), 23)
+
+			if var_9_44 ~= 0 then
+				var_9_24 = "[" .. var_9_43 .. ", #" .. var_9_44 .. "]"
+			else
+				var_9_24 = "[" .. var_9_43 .. "]"
+			end
+		elseif iter_9_0 == "O" then
+			local var_9_45 = var_0_42.x[var_0_9(var_0_14(var_9_5, 5), 31)]
+			local var_9_46
+
+			if var_0_9(var_0_14(var_9_5, 13), 1) == 0 then
+				var_9_46 = var_0_42.w[var_0_9(var_0_14(var_9_5, 16), 31)]
+			else
+				var_9_46 = var_0_42.x[var_0_9(var_0_14(var_9_5, 16), 31)]
+			end
+
+			var_9_24 = "[" .. var_9_45 .. ", " .. var_9_46
+
+			local var_9_47 = var_0_9(var_0_14(var_9_5, 13), 7)
+			local var_9_48 = var_0_9(var_0_14(var_9_5, 12), 1)
+			local var_9_49 = var_0_9(var_0_14(var_9_5, 30), 3)
+
+			if var_9_47 == 3 then
+				if var_9_48 == 0 then
+					var_9_24 = var_9_24 .. "]"
 				else
-					slot23 = slot23 .. ", lsl #" .. slot29 .. "]"
+					var_9_24 = var_9_24 .. ", lsl #" .. var_9_49 .. "]"
 				end
-			elseif slot27 == 2 or slot27 == 6 or slot27 == 7 then
-				if slot28 == 0 then
-					slot23 = slot23 .. ", " .. uv18[slot27] .. "]"
+			elseif var_9_47 == 2 or var_9_47 == 6 or var_9_47 == 7 then
+				if var_9_48 == 0 then
+					var_9_24 = var_9_24 .. ", " .. var_0_45[var_9_47] .. "]"
 				else
-					slot23 = slot23 .. ", " .. uv18[slot27] .. " #" .. slot29 .. "]"
+					var_9_24 = var_9_24 .. ", " .. var_0_45[var_9_47] .. " #" .. var_9_49 .. "]"
 				end
 			else
-				slot23 = slot23 .. "]"
+				var_9_24 = var_9_24 .. "]"
 			end
-		elseif slot22 == "P" then
-			slot25 = 2
+		elseif iter_9_0 == "P" then
+			local var_9_50 = var_0_14(var_9_5, 26)
+			local var_9_51 = 2
 
-			if uv5(slot6, 26) >= 42 then
-				slot25 = 4
-			elseif slot24 >= 27 then
-				slot25 = 3
+			if var_9_50 >= 42 then
+				var_9_51 = 4
+			elseif var_9_50 >= 27 then
+				var_9_51 = 3
 			end
 
-			if uv4(uv5(slot6, 23), 3) == 1 then
-				slot23 = "[" .. uv10.x[uv4(uv5(slot6, 5), 31)] .. "], #" .. uv2(uv17(uv2(slot6, 10), 25), slot25)
-			elseif slot28 == 2 then
-				if slot26 == 0 then
-					slot23 = "[" .. slot27 .. "]"
+			local var_9_52 = var_0_13(var_0_15(var_0_13(var_9_5, 10), 25), var_9_51)
+			local var_9_53 = var_0_42.x[var_0_9(var_0_14(var_9_5, 5), 31)]
+			local var_9_54 = var_0_9(var_0_14(var_9_5, 23), 3)
+
+			if var_9_54 == 1 then
+				var_9_24 = "[" .. var_9_53 .. "], #" .. var_9_52
+			elseif var_9_54 == 2 then
+				if var_9_52 == 0 then
+					var_9_24 = "[" .. var_9_53 .. "]"
 				else
-					slot23 = "[" .. slot27 .. ", #" .. slot26 .. "]"
+					var_9_24 = "[" .. var_9_53 .. ", #" .. var_9_52 .. "]"
 				end
-			elseif slot28 == 3 then
-				slot23 = "[" .. slot27 .. ", #" .. slot26 .. "]!"
+			elseif var_9_54 == 3 then
+				var_9_24 = "[" .. var_9_53 .. ", #" .. var_9_52 .. "]!"
 			end
-		elseif slot22 == "I" then
-			if slot14 == "mov" and uv4(uv5(slot6, 22), 3) == 0 and uv4(uv5(slot6, 10), 4095) == 0 and (uv4(uv5(slot6, 5), 31) == 31 or uv4(slot6, 31) == 31) then
-				slot10 = slot14
-				slot23 = nil
-			elseif slot24 == 0 then
-				slot23 = slot25
-			elseif slot24 == 1 then
-				slot23 = slot25 .. ", lsl #12"
+		elseif iter_9_0 == "I" then
+			local var_9_55 = var_0_9(var_0_14(var_9_5, 22), 3)
+			local var_9_56 = var_0_9(var_0_14(var_9_5, 10), 4095)
+			local var_9_57 = var_0_9(var_0_14(var_9_5, 5), 31)
+			local var_9_58 = var_0_9(var_9_5, 31)
+
+			if var_9_17 == "mov" and var_9_55 == 0 and var_9_56 == 0 and (var_9_57 == 31 or var_9_58 == 31) then
+				var_9_15 = var_9_17
+				var_9_24 = nil
+			elseif var_9_55 == 0 then
+				var_9_24 = var_9_56
+			elseif var_9_55 == 1 then
+				var_9_24 = var_9_56 .. ", lsl #12"
 			end
-		elseif slot22 == "i" then
-			slot23 = "#0x" .. uv19(slot6)
-		elseif slot22 == "1" then
-			slot23 = uv4(uv5(slot6, 16), 63)
-		elseif slot22 == "2" then
-			slot23 = uv4(uv5(slot6, 10), 63)
+		elseif iter_9_0 == "i" then
+			var_9_24 = "#0x" .. var_0_51(var_9_5)
+		elseif iter_9_0 == "1" then
+			var_9_23 = var_0_9(var_0_14(var_9_5, 16), 63)
+			var_9_24 = var_9_23
+		elseif iter_9_0 == "2" then
+			var_9_24 = var_0_9(var_0_14(var_9_5, 10), 63)
 
-			if slot14 then
-				slot24, slot10, slot26, slot27, slot28, slot29 = uv8(slot14, "([^|]*)|([^|]*)|([^|]*)|([^|]*)|([^|]*)|(.*)")
+			if var_9_17 then
+				local var_9_59, var_9_60, var_9_61, var_9_62, var_9_63, var_9_64 = var_0_4(var_9_17, "([^|]*)|([^|]*)|([^|]*)|([^|]*)|([^|]*)|(.*)")
+				local var_9_65 = var_0_9(var_0_14(var_9_5, 26), 32)
+				local var_9_66 = var_0_9(var_0_14(var_9_5, 30), 1)
 
-				if uv20(uv4(uv5(slot6, 26), 32), uv4(uv5(slot6, 30), 1), slot23, slot18) then
-					slot23 = slot23 - slot18 + 1
-				elseif slot18 == 0 and slot23 == 7 then
-					slot7[#slot7] = nil
+				if var_0_54(var_9_65, var_9_66, var_9_24, var_9_23) then
+					var_9_15 = var_9_60
+					var_9_24 = var_9_24 - var_9_23 + 1
+				elseif var_9_23 == 0 and var_9_24 == 7 then
+					local var_9_67 = #var_9_6
 
-					if slot30 ~= 0 then
-						slot7[slot32 - 1] = uv21(slot7[slot32 - 1], "x", "w")
+					var_9_6[var_9_67] = nil
+
+					if var_9_65 ~= 0 then
+						var_9_6[var_9_67 - 1] = var_0_6(var_9_6[var_9_67 - 1], "x", "w")
 					end
 
-					slot9 = slot7[slot32 - 1]
-					slot10 = slot29
-					slot23 = nil
-				elseif slot18 == 0 and slot23 == 15 then
-					slot7[#slot7] = nil
+					var_9_12 = var_9_6[var_9_67 - 1]
+					var_9_15 = var_9_64
+					var_9_24 = nil
+				elseif var_9_23 == 0 and var_9_24 == 15 then
+					local var_9_68 = #var_9_6
 
-					if slot30 ~= 0 then
-						slot7[slot32 - 1] = uv21(slot7[slot32 - 1], "x", "w")
+					var_9_6[var_9_68] = nil
+
+					if var_9_65 ~= 0 then
+						var_9_6[var_9_68 - 1] = var_0_6(var_9_6[var_9_68 - 1], "x", "w")
 					end
 
-					slot9 = slot7[slot32 - 1]
-					slot10 = slot28
-					slot23 = nil
-				elseif slot23 == 31 or slot23 == 63 then
-					if slot23 == 31 and slot18 == 0 and slot10 == "sbfm" then
-						slot10 = slot27
-						slot7[#slot7] = nil
+					var_9_12 = var_9_6[var_9_68 - 1]
+					var_9_15 = var_9_63
+					var_9_24 = nil
+				elseif var_9_24 == 31 or var_9_24 == 63 then
+					if var_9_24 == 31 and var_9_23 == 0 and var_9_15 == "sbfm" then
+						var_9_15 = var_9_62
 
-						if slot30 ~= 0 then
-							slot7[slot32 - 1] = uv21(slot7[slot32 - 1], "x", "w")
+						local var_9_69 = #var_9_6
+
+						var_9_6[var_9_69] = nil
+
+						if var_9_65 ~= 0 then
+							var_9_6[var_9_69 - 1] = var_0_6(var_9_6[var_9_69 - 1], "x", "w")
 						end
 
-						slot9 = slot7[slot32 - 1]
+						var_9_12 = var_9_6[var_9_69 - 1]
 					else
-						slot10 = slot26
+						var_9_15 = var_9_61
 					end
 
-					slot23 = nil
-				elseif uv4(slot23, 31) ~= 31 and slot18 == slot23 + 1 and slot10 == "ubfm" then
-					slot10 = slot27
-					slot7[#slot7] = "#" .. slot30 + 32 - slot18
-					slot23 = nil
-				elseif slot23 < slot18 then
-					slot10 = slot24
-					slot7[#slot7] = "#" .. slot30 + 32 - slot18
-					slot23 = slot23 + 1
+					var_9_24 = nil
+				elseif var_0_9(var_9_24, 31) ~= 31 and var_9_23 == var_9_24 + 1 and var_9_15 == "ubfm" then
+					var_9_15 = var_9_62
+					var_9_12 = "#" .. var_9_65 + 32 - var_9_23
+					var_9_6[#var_9_6] = var_9_12
+					var_9_24 = nil
+				elseif var_9_24 < var_9_23 then
+					var_9_15 = var_9_59
+					var_9_12 = "#" .. var_9_65 + 32 - var_9_23
+					var_9_6[#var_9_6] = var_9_12
+					var_9_24 = var_9_24 + 1
 				end
 			end
-		elseif slot22 == "3" then
-			slot23 = uv4(uv5(slot6, 10), 63)
+		elseif iter_9_0 == "3" then
+			var_9_24 = var_0_9(var_0_14(var_9_5, 10), 63)
 
-			if slot14 then
-				slot10, slot25 = uv8(slot14, "([^|]*)|(.*)")
+			if var_9_17 then
+				local var_9_70, var_9_71 = var_0_4(var_9_17, "([^|]*)|(.*)")
 
-				if slot23 < slot18 then
-					slot7[#slot7] = "#" .. uv4(uv5(slot6, 26), 32) + 32 - slot18
-					slot23 = slot23 + 1
-				elseif slot18 <= slot23 then
-					slot10 = slot25
-					slot23 = slot23 - slot18 + 1
+				if var_9_24 < var_9_23 then
+					var_9_15 = var_9_70
+
+					local var_9_72 = var_0_9(var_0_14(var_9_5, 26), 32)
+
+					var_9_12 = "#" .. var_9_72 + 32 - var_9_23
+					var_9_6[#var_9_6] = var_9_12
+					var_9_24 = var_9_24 + 1
+				elseif var_9_23 <= var_9_24 then
+					var_9_15 = var_9_71
+					var_9_24 = var_9_24 - var_9_23 + 1
 				end
 			end
-		elseif slot22 == "4" then
-			slot23 = uv4(uv5(slot6, 10), 63)
+		elseif iter_9_0 == "4" then
+			var_9_24 = var_0_9(var_0_14(var_9_5, 10), 63)
 
-			if slot14 and uv4(uv5(slot6, 5), 31) == uv4(uv5(slot6, 16), 31) then
-				slot26 = #slot7
-				slot7[slot26] = nil
-				slot9 = slot7[slot26 - 1]
-				slot10 = slot14
+			local var_9_73 = var_0_9(var_0_14(var_9_5, 5), 31)
+			local var_9_74 = var_0_9(var_0_14(var_9_5, 16), 31)
+
+			if var_9_17 and var_9_73 == var_9_74 then
+				local var_9_75 = #var_9_6
+
+				var_9_6[var_9_75] = nil
+				var_9_12 = var_9_6[var_9_75 - 1]
+				var_9_15 = var_9_17
 			end
-		elseif slot22 == "5" then
-			slot23 = uv4(uv5(slot6, 16), 31)
-		elseif slot22 == "S" then
-			if uv4(uv5(slot6, 10), 63) == 0 then
-				slot23 = nil
+		elseif iter_9_0 == "5" then
+			var_9_24 = var_0_9(var_0_14(var_9_5, 16), 31)
+		elseif iter_9_0 == "S" then
+			var_9_24 = var_0_9(var_0_14(var_9_5, 10), 63)
+
+			if var_9_24 == 0 then
+				var_9_24 = nil
 			else
-				slot23 = uv22[uv4(uv5(slot6, 22), 3)] .. " #" .. slot23
+				var_9_24 = var_0_44[var_0_9(var_0_14(var_9_5, 22), 3)] .. " #" .. var_9_24
 			end
-		elseif slot22 == "X" then
-			if uv4(uv5(slot6, 13), 7) ~= 3 and slot24 ~= 7 then
-				slot7[#slot7] = uv10.w[uv4(uv5(slot6, 16), 31)]
+		elseif iter_9_0 == "X" then
+			local var_9_76 = var_0_9(var_0_14(var_9_5, 13), 7)
+
+			if var_9_76 ~= 3 and var_9_76 ~= 7 then
+				var_9_12 = var_0_42.w[var_0_9(var_0_14(var_9_5, 16), 31)]
+				var_9_6[#var_9_6] = var_9_12
 			end
 
-			if slot24 == 2 + uv4(uv5(slot6, 31), 1) and uv4(uv5(slot6, slot17 and 5 or 0), 31) == 31 then
-				if uv4(uv5(slot6, 10), 7) == 0 then
-					slot23 = nil
+			var_9_24 = var_0_9(var_0_14(var_9_5, 10), 7)
+
+			if var_9_76 == 2 + var_0_9(var_0_14(var_9_5, 31), 1) and var_0_9(var_0_14(var_9_5, var_9_22 and 5 or 0), 31) == 31 then
+				if var_9_24 == 0 then
+					var_9_24 = nil
 				else
-					slot23 = "lsl #" .. slot23
+					var_9_24 = "lsl #" .. var_9_24
 				end
-			elseif slot23 == 0 then
-				slot23 = uv18[uv4(uv5(slot6, 13), 7)]
+			elseif var_9_24 == 0 then
+				var_9_24 = var_0_45[var_0_9(var_0_14(var_9_5, 13), 7)]
 			else
-				slot23 = uv18[uv4(uv5(slot6, 13), 7)] .. " #" .. slot23
+				var_9_24 = var_0_45[var_0_9(var_0_14(var_9_5, 13), 7)] .. " #" .. var_9_24
 			end
-		elseif slot22 == "R" then
-			if uv4(uv5(slot6, 21), 3) == 0 then
-				slot23 = nil
+		elseif iter_9_0 == "R" then
+			var_9_24 = var_0_9(var_0_14(var_9_5, 21), 3)
+
+			if var_9_24 == 0 then
+				var_9_24 = nil
 			else
-				slot23 = "lsl #" .. slot23 * 16
+				var_9_24 = "lsl #" .. var_9_24 * 16
 			end
-		elseif slot22 == "z" then
-			if slot7[#slot7] == "sp" then
-				slot7[slot24] = "xzr"
-			elseif slot7[slot24] == "wsp" then
-				slot7[slot24] = "wzr"
+		elseif iter_9_0 == "z" then
+			local var_9_77 = #var_9_6
+
+			if var_9_6[var_9_77] == "sp" then
+				var_9_6[var_9_77] = "xzr"
+			elseif var_9_6[var_9_77] == "wsp" then
+				var_9_6[var_9_77] = "wzr"
 			end
-		elseif slot22 == "Z" then
-			slot23 = 0
-		elseif slot22 == "F" then
-			slot23 = uv23(slot6)
-		elseif slot22 ~= "g" and slot22 ~= "f" and slot22 ~= "x" and slot22 ~= "w" and slot22 ~= "d" then
-			if slot22 == "s" then
-				-- Nothing
-			elseif slot22 == "0" then
-				if slot9 == "sp" or slot9 == "wsp" then
-					slot24 = #slot7
-					slot7[slot24] = nil
-					slot9 = slot7[slot24 - 1]
+		elseif iter_9_0 == "Z" then
+			var_9_24 = 0
+		elseif iter_9_0 == "F" then
+			var_9_24 = var_0_53(var_9_5)
+		elseif iter_9_0 == "g" or iter_9_0 == "f" or iter_9_0 == "x" or iter_9_0 == "w" or iter_9_0 == "d" or iter_9_0 == "s" then
+			-- block empty
+		elseif iter_9_0 == "0" then
+			if var_9_12 == "sp" or var_9_12 == "wsp" then
+				local var_9_78 = #var_9_6
 
-					if slot14 then
-						slot25, slot26 = uv8(slot14, "([^|]*)|(.*)")
+				var_9_6[var_9_78] = nil
+				var_9_12 = var_9_6[var_9_78 - 1]
 
-						if not slot25 then
-							slot10 = slot14
-						elseif slot17 then
-							slot14 = slot25
-							slot10 = slot26
-						else
-							slot14 = slot26
-							slot10 = slot25
-						end
+				if var_9_17 then
+					local var_9_79, var_9_80 = var_0_4(var_9_17, "([^|]*)|(.*)")
+
+					if not var_9_79 then
+						var_9_15 = var_9_17
+					elseif var_9_22 then
+						var_9_15, var_9_17 = var_9_80, var_9_79
+					else
+						var_9_15, var_9_17 = var_9_79, var_9_80
 					end
 				end
-
-				slot17 = true
-			else
-				assert(false)
 			end
+
+			var_9_22 = true
+		else
+			assert(false)
 		end
 
-		if slot23 then
-			slot9 = slot23
+		if var_9_24 then
+			var_9_12 = var_9_24
 
-			if uv6(slot23) == "number" then
-				slot23 = "#" .. slot23
+			if var_0_0(var_9_24) == "number" then
+				var_9_24 = "#" .. var_9_24
 			end
 
-			slot7[#slot7 + 1] = slot23
+			var_9_6[#var_9_6 + 1] = var_9_24
 		end
 	end
 
-	return uv24(slot0, slot10 .. slot8, slot7)
+	return var_0_46(arg_9_0, var_9_15 .. var_9_7, var_9_6)
 end
 
-function slot56(slot0, slot1, slot2)
-	slot1 = slot1 or 0
-	slot0.pos = slot1
-	slot0.rel = nil
+local function var_0_56(arg_10_0, arg_10_1, arg_10_2)
+	arg_10_1 = arg_10_1 or 0
 
-	while slot0.pos < (slot2 and slot1 + slot2 or #slot0.code) do
-		uv0(slot0)
+	local var_10_0 = arg_10_2 and arg_10_1 + arg_10_2 or #arg_10_0.code
+
+	arg_10_0.pos = arg_10_1
+	arg_10_0.rel = nil
+
+	while var_10_0 > arg_10_0.pos do
+		var_0_55(arg_10_0)
 	end
+end
+
+local function var_0_57(arg_11_0, arg_11_1, arg_11_2)
+	local var_11_0 = {
+		code = arg_11_0,
+		addr = arg_11_1 or 0,
+		out = arg_11_2 or io.write,
+		symtab = {},
+		disass = var_0_56
+	}
+
+	var_11_0.hexdump = 8
+
+	return var_11_0
+end
+
+local function var_0_58(arg_12_0, arg_12_1, arg_12_2)
+	var_0_57(arg_12_0, arg_12_1, arg_12_2):disass()
+end
+
+local function var_0_59(arg_13_0)
+	if arg_13_0 < 32 then
+		return var_0_42.x[arg_13_0]
+	end
+
+	return var_0_42.d[arg_13_0 - 32]
 end
 
 return {
-	create = function (slot0, slot1, slot2)
-		return {
-			code = slot0,
-			addr = slot1 or 0,
-			out = slot2 or io.write,
-			symtab = {},
-			disass = uv0,
-			hexdump = 8
-		}
-	end,
-	disass = function (slot0, slot1, slot2)
-		uv0(slot0, slot1, slot2):disass()
-	end,
-	regname = function (slot0)
-		if slot0 < 32 then
-			return uv0.x[slot0]
-		end
-
-		return uv0.d[slot0 - 32]
-	end
+	create = var_0_57,
+	disass = var_0_58,
+	regname = var_0_59
 }

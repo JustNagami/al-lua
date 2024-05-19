@@ -1,176 +1,200 @@
-slot0 = class("AvatarFrameTask", import(".Task"))
-slot0.type_task_level = "task_level"
-slot0.type_task_ship = "task_ship"
-slot0.fillter_task_type = {
-	slot0.type_task_level,
-	slot0.type_task_ship
+﻿local var_0_0 = class("AvatarFrameTask", import(".Task"))
+
+var_0_0.type_task_level = "task_level"
+var_0_0.type_task_ship = "task_ship"
+var_0_0.fillter_task_type = {
+	var_0_0.type_task_level,
+	var_0_0.type_task_ship
 }
-slot1 = slot0.fillter_task_type
-slot2 = "avatar_task_level"
-slot3 = {
+
+local var_0_1 = var_0_0.fillter_task_type
+local var_0_2 = "avatar_task_level"
+local var_0_3 = {
 	"avatar_upgrad_1",
 	"avatar_upgrad_2",
 	"avatar_upgrad_3"
 }
-slot4 = "avatar_task_ship_1"
-slot5 = "avatar_task_ship_2"
+local var_0_4 = "avatar_task_ship_1"
+local var_0_5 = "avatar_task_ship_2"
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	slot0.actId = slot1
-	slot0.configId = slot2
-	slot0.id = slot3.id
-	slot0.progress = slot3.progress or 0
-	slot0.acceptTime = slot3.accept_time or 0
-	slot0.submitTime = slot3.submit_time or 0
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0.actId = arg_1_1
+	arg_1_0.configId = arg_1_2
+	arg_1_0.id = arg_1_3.id
+	arg_1_0.progress = arg_1_3.progress or 0
+	arg_1_0.acceptTime = arg_1_3.accept_time or 0
+	arg_1_0.submitTime = arg_1_3.submit_time or 0
 end
 
-function slot0.IsActEnd(slot0)
-	return not getProxy(ActivityProxy):getActivityById(pg.activity_event_avatarframe[slot0.configId].link_event) or slot2:isEnd()
+function var_0_0.IsActEnd(arg_2_0)
+	local var_2_0 = pg.activity_event_avatarframe[arg_2_0.configId].link_event
+	local var_2_1 = getProxy(ActivityProxy):getActivityById(var_2_0)
+
+	return not var_2_1 or var_2_1:isEnd()
 end
 
-function slot0.updateProgress(slot0, slot1)
-	slot0.progress = slot1 or 0
+function var_0_0.updateProgress(arg_3_0, arg_3_1)
+	arg_3_0.progress = arg_3_1 or 0
 end
 
-function slot0.isFinish(slot0)
-	return slot0:getConfig("target_num") <= slot0:getProgress()
+function var_0_0.isFinish(arg_4_0)
+	return arg_4_0:getProgress() >= arg_4_0:getConfig("target_num")
 end
 
-function slot0.getProgress(slot0)
-	return slot0.progress or 0
+function var_0_0.getProgress(arg_5_0)
+	return arg_5_0.progress or 0
 end
 
-function slot0.isReceive(slot0)
+function var_0_0.isReceive(arg_6_0)
 	return false
 end
 
-function slot0.getTaskStatus(slot0)
-	if slot0:getConfig("target_num") <= slot0.progress then
+function var_0_0.getTaskStatus(arg_7_0)
+	if arg_7_0.progress >= arg_7_0:getConfig("target_num") then
 		return 1
 	end
 
 	return 0
 end
 
-function slot0.onAdded(slot0)
+function var_0_0.onAdded(arg_8_0)
+	return
 end
 
-function slot0.updateProgress(slot0, slot1)
-	slot0.progress = slot1
+function var_0_0.updateProgress(arg_9_0, arg_9_1)
+	arg_9_0.progress = arg_9_1
 end
 
-function slot0.isSelectable(slot0)
+function var_0_0.isSelectable(arg_10_0)
 	return false
 end
 
-function slot0.judgeOverflow(slot0, slot1, slot2, slot3)
+function var_0_0.judgeOverflow(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
 	return false, false
 end
 
-function slot0.IsUrTask(slot0)
+function var_0_0.IsUrTask(arg_12_0)
 	return false
 end
 
-function slot0.GetRealType(slot0)
+function var_0_0.GetRealType(arg_13_0)
 	return 6
 end
 
-function slot0.IsOverflowShipExpItem(slot0)
+function var_0_0.IsOverflowShipExpItem(arg_14_0)
 	return false
 end
 
-function slot0.ShowOnTaskScene(slot0)
+function var_0_0.ShowOnTaskScene(arg_15_0)
 	return true
 end
 
-function slot0.getConfig(slot0, slot1)
-	if not slot0.configData then
-		if not pg.activity_event_avatarframe[slot0.configId] then
-			print("avatart id = " .. slot0.configId .. " is not found")
+function var_0_0.getConfig(arg_16_0, arg_16_1)
+	if not arg_16_0.configData then
+		local var_16_0 = pg.activity_event_avatarframe[arg_16_0.configId]
+
+		if not var_16_0 then
+			print("avatart id = " .. arg_16_0.configId .. " is not found")
 
 			return
 		end
 
-		if not slot0:getTypeData(slot2, slot0.id) then
+		local var_16_1 = arg_16_0:getTypeData(var_16_0, arg_16_0.id)
+
+		if not var_16_1 then
 			return
 		end
 
-		slot4 = Clone(slot2.award_display)
-		slot4[1][3] = slot3.award_num
-		slot0.configData = {
+		local var_16_2 = Clone(var_16_0.award_display)
+
+		var_16_2[1][3] = var_16_1.award_num
+		arg_16_0.configData = {
 			level = 1,
 			sub_type = 0,
-			item_id = slot2.pt_id,
-			desc = slot3.desc,
-			target_num = slot3.target_num,
-			award_num = slot3.award_num,
-			scene = slot3.scene,
-			award_display = slot4
+			item_id = var_16_0.pt_id,
+			desc = var_16_1.desc,
+			target_num = var_16_1.target_num,
+			award_num = var_16_1.award_num,
+			scene = var_16_1.scene,
+			award_display = var_16_2
 		}
 	end
 
-	return slot0.configData[slot1]
+	return arg_16_0.configData[arg_16_1]
 end
 
-function slot0.getTypeData(slot0, slot1, slot2)
-	for slot6 = 1, #uv0 do
-		for slot12, slot13 in ipairs(slot1[uv0[slot6]]) do
-			if slot13[1] == slot2 then
-				slot0.avatarType = slot7
+function var_0_0.getTypeData(arg_17_0, arg_17_1, arg_17_2)
+	for iter_17_0 = 1, #var_0_1 do
+		local var_17_0 = var_0_1[iter_17_0]
+		local var_17_1 = arg_17_1[var_17_0]
 
-				return slot0:createData(slot7, slot13)
+		for iter_17_1, iter_17_2 in ipairs(var_17_1) do
+			if iter_17_2[1] == arg_17_2 then
+				arg_17_0.avatarType = var_17_0
+
+				return arg_17_0:createData(var_17_0, iter_17_2)
 			end
 		end
 	end
 end
 
-function slot0.isAvatarTask(slot0)
+function var_0_0.isAvatarTask(arg_18_0)
 	return true
 end
 
-function slot0.createData(slot0, slot1, slot2)
-	slot3 = nil
+function var_0_0.createData(arg_19_0, arg_19_1, arg_19_2)
+	local var_19_0
 
-	if slot1 == uv0.type_task_level then
-		slot4, slot5, slot6, slot7, slot8, slot9 = unpack(slot2)
-		slot10 = ""
+	if arg_19_1 == var_0_0.type_task_level then
+		local var_19_1, var_19_2, var_19_3, var_19_4, var_19_5, var_19_6 = unpack(arg_19_2)
+		local var_19_7 = ""
 
-		if slot6 > 0 and slot6 <= #uv1 then
-			slot10 = pg.gametip[uv1[slot6]].tip
+		if var_19_3 > 0 and var_19_3 <= #var_0_3 then
+			var_19_7 = pg.gametip[var_0_3[var_19_3]].tip
 		end
 
-		slot12 = pg.ship_data_statistics[slot5 * 10 + 1].name
+		local var_19_8 = var_19_2 * 10 + 1
+		local var_19_9 = pg.ship_data_statistics[var_19_8].name
+		local var_19_10
+		local var_19_11
 
-		for slot18, slot19 in ipairs(slot7) do
-			assert(pg.chapter_template[slot19] ~= nil, "找不到chapterid = " .. slot19)
+		for iter_19_0, iter_19_1 in ipairs(var_19_4) do
+			assert(pg.chapter_template[iter_19_1] ~= nil, "找不到chapterid = " .. iter_19_1)
 
-			slot14 = nil or {
+			var_19_11 = var_19_11 or {
 				"ACTIVITY_MAP",
 				{
-					pg.chapter_template[slot19].act_id
+					pg.chapter_template[iter_19_1].act_id
 				}
 			}
-			slot13 = (nil or pg.chapter_template[slot19].chapter_name) and pg.chapter_template[slot19].chapter_name .. "," .. pg.chapter_template[slot19].chapter_name
+
+			if not var_19_10 then
+				var_19_10 = pg.chapter_template[iter_19_1].chapter_name
+			else
+				var_19_10 = var_19_10 .. "," .. pg.chapter_template[iter_19_1].chapter_name
+			end
 		end
 
-		slot3 = {
-			target_num = slot8,
-			award_num = slot9,
-			scene = slot14,
-			desc = i18n("avatar_task_level", slot10, slot12, slot13, slot8)
+		var_19_0 = {
+			target_num = var_19_5,
+			award_num = var_19_6,
+			scene = var_19_11,
+			desc = i18n("avatar_task_level", var_19_7, var_19_9, var_19_10, var_19_5)
 		}
-	elseif slot1 == uv0.type_task_ship then
-		slot4, slot5, slot6, slot7 = unpack(slot2)
+	elseif arg_19_1 == var_0_0.type_task_ship then
+		local var_19_12, var_19_13, var_19_14, var_19_15 = unpack(arg_19_2)
+		local var_19_16 = var_19_13 * 10 + 1
+		local var_19_17 = pg.ship_data_statistics[var_19_16].name
 
-		if slot6 == 1 then
-			slot3 = {
-				award_num = slot7,
-				desc = i18n(uv2, pg.ship_data_statistics[slot5 * 10 + 1].name)
+		if var_19_14 == 1 then
+			var_19_0 = {
+				award_num = var_19_15,
+				desc = i18n(var_0_4, var_19_17)
 			}
-		elseif slot6 == 2 then
-			slot3 = {
-				award_num = slot7,
-				desc = i18n(uv3, slot9),
+		elseif var_19_14 == 2 then
+			var_19_0 = {
+				award_num = var_19_15,
+				desc = i18n(var_0_5, var_19_17),
 				scene = {
 					"DOCKYARD",
 					{
@@ -181,7 +205,7 @@ function slot0.createData(slot0, slot1, slot2)
 		end
 	end
 
-	return setmetatable(slot3, {
+	return setmetatable(var_19_0, {
 		__index = {
 			award_num = 1,
 			target_num = 1,
@@ -190,4 +214,4 @@ function slot0.createData(slot0, slot1, slot2)
 	})
 end
 
-return slot0
+return var_0_0

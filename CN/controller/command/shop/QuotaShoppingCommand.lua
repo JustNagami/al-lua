@@ -1,43 +1,49 @@
-slot0 = class("QuotaShoppingCommand", pm.SimpleCommand)
-slot0.QUOTA_SHOP = 4
+﻿local var_0_0 = class("QuotaShoppingCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot5 = slot2.type
-	slot8 = getProxy(ShopsProxy):getQuotaShop():getGoodsCfg(slot2.id)
+var_0_0.QUOTA_SHOP = 4
 
-	if Drop.New({
-		type = slot8.resource_category,
-		id = slot8.resource_type
-	}):getOwnedCount() < slot8.resource_num * slot2.count then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", slot9:getName()))
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.count
+	local var_1_3 = var_1_0.type
+	local var_1_4 = getProxy(ShopsProxy)
+	local var_1_5 = var_1_4:getQuotaShop():getGoodsCfg(var_1_1)
+	local var_1_6 = Drop.New({
+		type = var_1_5.resource_category,
+		id = var_1_5.resource_type
+	})
+
+	if var_1_6:getOwnedCount() < var_1_5.resource_num * var_1_2 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", var_1_6:getName()))
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(16201, {
-		id = slot3,
-		type = uv0.QUOTA_SHOP,
-		count = slot4
-	}, 16202, function (slot0)
-		if slot0.result == 0 then
-			slot2 = uv0:getQuotaShop()
+		id = var_1_1,
+		type = var_0_0.QUOTA_SHOP,
+		count = var_1_2
+	}, 16202, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.drop_list)
+			local var_2_1 = var_1_4:getQuotaShop()
 
-			slot2:getGoodsById(uv1):addBuyCount(uv2)
-			uv0:updateQuotaShop(slot2)
+			var_2_1:getGoodsById(var_1_1):addBuyCount(var_1_2)
+			var_1_4:updateQuotaShop(var_2_1)
 			reducePlayerOwn({
-				type = uv3.resource_category,
-				id = uv3.resource_type,
-				count = uv3.resource_num * uv2
+				type = var_1_5.resource_category,
+				id = var_1_5.resource_type,
+				count = var_1_5.resource_num * var_1_2
 			})
-			uv4:sendNotification(GAME.QUOTA_SHOPPING_DONE, {
-				awards = PlayerConst.addTranDrop(slot0.drop_list),
-				id = uv1
+			arg_1_0:sendNotification(GAME.QUOTA_SHOPPING_DONE, {
+				awards = var_2_0,
+				id = var_1_1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

@@ -1,82 +1,84 @@
-slot0 = class("CommanderQuicklyFinishBoxMsgBoxPage", import(".CommanderMsgBoxPage"))
+﻿local var_0_0 = class("CommanderQuicklyFinishBoxMsgBoxPage", import(".CommanderMsgBoxPage"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CommanderQuicklyFinishBoxUI"
 end
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_2_0)
+	var_0_0.super.OnInit(arg_2_0)
 
-	slot0.ssrToggle = slot0:findTF("frame/bg/content/rarity/ssr")
-	slot0.srToggle = slot0:findTF("frame/bg/content/rarity/sr")
-	slot0.rToggle = slot0:findTF("frame/bg/content/rarity/r")
-	slot0.descTxt = slot0:findTF("frame/bg/content/rarity/Text"):GetComponent(typeof(Text))
+	arg_2_0.ssrToggle = arg_2_0:findTF("frame/bg/content/rarity/ssr")
+	arg_2_0.srToggle = arg_2_0:findTF("frame/bg/content/rarity/sr")
+	arg_2_0.rToggle = arg_2_0:findTF("frame/bg/content/rarity/r")
+	arg_2_0.descTxt = arg_2_0:findTF("frame/bg/content/rarity/Text"):GetComponent(typeof(Text))
 end
 
-function slot0.Show(slot0, slot1)
-	uv0.super.Show(slot0, slot1)
+function var_0_0.Show(arg_3_0, arg_3_1)
+	var_0_0.super.Show(arg_3_0, arg_3_1)
 
-	slot0.descTxt.text = i18n("acceleration_tips_3")
+	arg_3_0.descTxt.text = i18n("acceleration_tips_3")
 
-	onButton(slot0, slot0.confirmBtn, function ()
-		slot0, slot1, slot2, slot3 = getProxy(CommanderProxy):CalcQuickItemUsageCnt(uv0.toggleFlags)
+	onButton(arg_3_0, arg_3_0.confirmBtn, function()
+		local var_4_0, var_4_1, var_4_2, var_4_3 = getProxy(CommanderProxy):CalcQuickItemUsageCnt(arg_3_0.toggleFlags)
 
-		if slot0 <= 0 then
+		if var_4_0 <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("noacceleration_tips"))
 
 			return
 		end
 
-		if uv1.onYes then
-			uv1.onYes(slot0, slot1, slot2, uv0.toggleFlags)
+		if arg_3_1.onYes then
+			arg_3_1.onYes(var_4_0, var_4_1, var_4_2, arg_3_0.toggleFlags)
 		end
 
-		uv0:SaveConfig()
-		uv0:Hide()
+		arg_3_0:SaveConfig()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	slot0:InitToggle()
-	slot0:UpdateContent()
+	arg_3_0:InitToggle()
+	arg_3_0:UpdateContent()
 end
 
-function slot0.UpdateContent(slot0)
-	slot1, slot2, slot3, slot4 = getProxy(CommanderProxy):CalcQuickItemUsageCnt(slot0.toggleFlags)
+function var_0_0.UpdateContent(arg_5_0)
+	local var_5_0, var_5_1, var_5_2, var_5_3 = getProxy(CommanderProxy):CalcQuickItemUsageCnt(arg_5_0.toggleFlags)
+	local var_5_4 = i18n("acceleration_tips_1", var_5_0, var_5_1)
+	local var_5_5 = i18n("acceleration_tips_2", var_5_3[1], var_5_3[2], var_5_3[3])
 
-	setText(slot0.text1, i18n("acceleration_tips_1", slot1, slot2))
-	setText(slot0.text2, i18n("acceleration_tips_2", slot4[1], slot4[2], slot4[3]))
+	setText(arg_5_0.text1, var_5_4)
+	setText(arg_5_0.text2, var_5_5)
 end
 
-function slot0.InitToggle(slot0)
-	slot0.toggleFlags = {}
+function var_0_0.InitToggle(arg_6_0)
+	arg_6_0.toggleFlags = {}
 
-	onToggle(slot0, slot0.ssrToggle, function (slot0)
-		uv0.toggleFlags[1] = slot0
+	onToggle(arg_6_0, arg_6_0.ssrToggle, function(arg_7_0)
+		arg_6_0.toggleFlags[1] = arg_7_0
 
-		uv0:UpdateContent()
+		arg_6_0:UpdateContent()
 	end, SFX_PANEL)
-	onToggle(slot0, slot0.srToggle, function (slot0)
-		uv0.toggleFlags[2] = slot0
+	onToggle(arg_6_0, arg_6_0.srToggle, function(arg_8_0)
+		arg_6_0.toggleFlags[2] = arg_8_0
 
-		uv0:UpdateContent()
+		arg_6_0:UpdateContent()
 	end, SFX_PANEL)
-	onToggle(slot0, slot0.rToggle, function (slot0)
-		uv0.toggleFlags[3] = slot0
+	onToggle(arg_6_0, arg_6_0.rToggle, function(arg_9_0)
+		arg_6_0.toggleFlags[3] = arg_9_0
 
-		uv0:UpdateContent()
+		arg_6_0:UpdateContent()
 	end, SFX_PANEL)
 
-	slot1 = slot0:GetConfig()
+	local var_6_0 = arg_6_0:GetConfig()
 
-	triggerToggle(slot0.ssrToggle, slot1[1])
-	triggerToggle(slot0.srToggle, slot1[2])
-	triggerToggle(slot0.rToggle, slot1[3])
+	triggerToggle(arg_6_0.ssrToggle, var_6_0[1])
+	triggerToggle(arg_6_0.srToggle, var_6_0[2])
+	triggerToggle(arg_6_0.rToggle, var_6_0[3])
 end
 
-function slot0.GetConfig(slot0)
-	return getProxy(SettingsProxy):GetCommanderQuicklyToolRarityConfig()
+function var_0_0.GetConfig(arg_10_0)
+	return (getProxy(SettingsProxy):GetCommanderQuicklyToolRarityConfig())
 end
 
-function slot0.SaveConfig(slot0)
-	getProxy(SettingsProxy):SaveCommanderQuicklyToolRarityConfig(slot0.toggleFlags)
+function var_0_0.SaveConfig(arg_11_0)
+	getProxy(SettingsProxy):SaveCommanderQuicklyToolRarityConfig(arg_11_0.toggleFlags)
 end
 
-return slot0
+return var_0_0

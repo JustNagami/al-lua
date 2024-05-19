@@ -1,218 +1,223 @@
-slot0 = class("SailBoatGameVo")
-slot0.game_id = nil
-slot0.hub_id = nil
-slot0.total_times = nil
-slot0.drop = nil
-slot0.menu_bgm = "theme-SeaAndSun-image"
-slot0.game_bgm = "theme-tempest-up"
-slot0.game_time = 120
-slot0.rule_tip = "sail_boat_minigame_help"
-slot0.frameRate = Application.targetFrameRate or 60
-slot0.ui_atlas = "ui/minigameui/sailboatgameui_atlas"
-slot0.game_ui = "SailBoatGameUI"
-slot0.SFX_COUNT_DOWN = "event:/ui/ddldaoshu2"
-slot0.SFX_SOUND_FIRE = "event:/ui/kaipao"
-slot0.SFX_SOUND_BOOM = "event:/ui/baozha3"
-slot0.SFX_SOUND_SKILL = "event:/ui/chongneng"
-slot0.SFX_SOUND_ITEM = "event:/ui/mini_shine"
-slot0.use_direct_round = nil
-slot0.enemyToEndRate = nil
-slot0.gameTime = 0
-slot0.gameStepTime = 0
-slot0.deltaTime = 0
+﻿local var_0_0 = class("SailBoatGameVo")
 
-function slot0.Init(slot0, slot1)
-	uv0.game_id = slot0
-	uv0.hub_id = slot1
-	uv0.total_times = pg.mini_game_hub[uv0.hub_id]
-	uv0.drop = pg.mini_game[uv0.game_id].simple_config_data.drop_ids
-	uv0.total_times = pg.mini_game_hub[uv0.hub_id].reward_need
+var_0_0.game_id = nil
+var_0_0.hub_id = nil
+var_0_0.total_times = nil
+var_0_0.drop = nil
+var_0_0.menu_bgm = "theme-SeaAndSun-image"
+var_0_0.game_bgm = "theme-tempest-up"
+var_0_0.game_time = 120
+var_0_0.rule_tip = "sail_boat_minigame_help"
+var_0_0.frameRate = Application.targetFrameRate or 60
+var_0_0.ui_atlas = "ui/minigameui/sailboatgameui_atlas"
+var_0_0.game_ui = "SailBoatGameUI"
+var_0_0.SFX_COUNT_DOWN = "event:/ui/ddldaoshu2"
+var_0_0.SFX_SOUND_FIRE = "event:/ui/kaipao"
+var_0_0.SFX_SOUND_BOOM = "event:/ui/baozha3"
+var_0_0.SFX_SOUND_SKILL = "event:/ui/chongneng"
+var_0_0.SFX_SOUND_ITEM = "event:/ui/mini_shine"
+var_0_0.use_direct_round = nil
+var_0_0.enemyToEndRate = nil
+var_0_0.gameTime = 0
+var_0_0.gameStepTime = 0
+var_0_0.deltaTime = 0
+
+function var_0_0.Init(arg_1_0, arg_1_1)
+	var_0_0.game_id = arg_1_0
+	var_0_0.hub_id = arg_1_1
+	var_0_0.total_times = pg.mini_game_hub[var_0_0.hub_id]
+	var_0_0.drop = pg.mini_game[var_0_0.game_id].simple_config_data.drop_ids
+	var_0_0.total_times = pg.mini_game_hub[var_0_0.hub_id].reward_need
 end
 
-function slot0.GetGameTimes()
-	return uv0.GetMiniGameHubData().count
+function var_0_0.GetGameTimes()
+	return var_0_0.GetMiniGameHubData().count
 end
 
-function slot0.GetGameUseTimes()
-	return uv0.GetMiniGameHubData().usedtime or 0
+function var_0_0.GetGameUseTimes()
+	return var_0_0.GetMiniGameHubData().usedtime or 0
 end
 
-function slot0.GetGameRound()
-	if uv0.use_direct_round ~= nil then
-		return uv0.use_direct_round
+function var_0_0.GetGameRound()
+	if var_0_0.use_direct_round ~= nil then
+		return var_0_0.use_direct_round
 	end
 
-	if uv0.selectRound ~= nil then
-		return uv0.selectRound
+	if var_0_0.selectRound ~= nil then
+		return var_0_0.selectRound
 	end
 
-	slot0 = uv0.GetGameUseTimes()
+	local var_4_0 = var_0_0.GetGameUseTimes()
+	local var_4_1 = var_0_0.GetGameTimes()
 
-	if uv0.GetGameTimes() and slot1 > 0 then
-		return slot0 + 1
+	if var_4_1 and var_4_1 > 0 then
+		return var_4_0 + 1
 	end
 
-	if slot0 and slot0 > 0 then
-		return slot0
+	if var_4_0 and var_4_0 > 0 then
+		return var_4_0
 	end
 
 	return 1
 end
 
-function slot0.GetMiniGameData()
-	return getProxy(MiniGameProxy):GetMiniGameData(uv0.game_id)
+function var_0_0.GetMiniGameData()
+	return getProxy(MiniGameProxy):GetMiniGameData(var_0_0.game_id)
 end
 
-function slot0.GetMiniGameHubData()
-	return getProxy(MiniGameProxy):GetHubByHubId(uv0.hub_id)
+function var_0_0.GetMiniGameHubData()
+	return getProxy(MiniGameProxy):GetHubByHubId(var_0_0.hub_id)
 end
 
-function slot0.CheckRectCollider(slot0, slot1, slot2, slot3)
-	slot5 = slot0.y
-	slot6 = slot2.width
-	slot7 = slot2.height
-	slot9 = slot1.y
-	slot11 = slot3.height
+function var_0_0.CheckRectCollider(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	local var_7_0 = arg_7_0.x
+	local var_7_1 = arg_7_0.y
+	local var_7_2 = arg_7_2.width
+	local var_7_3 = arg_7_2.height
+	local var_7_4 = arg_7_1.x
+	local var_7_5 = arg_7_1.y
+	local var_7_6 = arg_7_3.width
+	local var_7_7 = arg_7_3.height
 
-	if slot1.x <= slot0.x and slot4 >= slot8 + slot3.width then
+	if var_7_4 <= var_7_0 and var_7_0 >= var_7_4 + var_7_6 then
 		return false
-	elseif slot4 <= slot8 and slot8 >= slot4 + slot6 then
+	elseif var_7_0 <= var_7_4 and var_7_4 >= var_7_0 + var_7_2 then
 		return false
-	elseif slot9 <= slot5 and slot5 >= slot9 + slot11 then
+	elseif var_7_5 <= var_7_1 and var_7_1 >= var_7_5 + var_7_7 then
 		return false
-	elseif slot5 <= slot9 and slot9 >= slot5 + slot7 then
+	elseif var_7_1 <= var_7_5 and var_7_5 >= var_7_1 + var_7_3 then
 		return false
 	else
 		return true
 	end
 end
 
-slot0.char_id = 1
-slot0.char_weapons = {
+var_0_0.char_id = 1
+var_0_0.char_weapons = {
 	{},
 	{}
 }
-slot0.char_start_pos = Vector2(0, 0)
-slot0.char_speed = Vector2(300, 300)
-slot0.char_speed_rate = 1
-slot0.scene_speed = 60
-slot0.scene_direct = Vector2(0, -1)
-slot0.scene_width = 1920
-slot0.scene_height = 1080
-slot0.fill_offsetX = 200
-slot0.fill_offsetY = 100
-slot0.skillTime = 10
-slot0.collider_time = 1
-slot0.colliderDamage = 5
-slot0.fire_step = 10
-slot0.bullet_step = 3
-slot0.item_move_speed = Vector2(1000, 0)
-slot0.scoreNum = 0
-slot0.joyStickData = nil
-slot0.moveAmount = nil
-slot0.roundData = nil
-slot0.sceneSpeed = nil
-slot0.equips = {}
-slot0.skill = 0
-slot0.selectRound = nil
+var_0_0.char_start_pos = Vector2(0, 0)
+var_0_0.char_speed = Vector2(300, 300)
+var_0_0.char_speed_rate = 1
+var_0_0.scene_speed = 60
+var_0_0.scene_direct = Vector2(0, -1)
+var_0_0.scene_width = 1920
+var_0_0.scene_height = 1080
+var_0_0.fill_offsetX = 200
+var_0_0.fill_offsetY = 100
+var_0_0.skillTime = 10
+var_0_0.collider_time = 1
+var_0_0.colliderDamage = 5
+var_0_0.fire_step = 10
+var_0_0.bullet_step = 3
+var_0_0.item_move_speed = Vector2(1000, 0)
+var_0_0.scoreNum = 0
+var_0_0.joyStickData = nil
+var_0_0.moveAmount = nil
+var_0_0.roundData = nil
+var_0_0.sceneSpeed = nil
+var_0_0.equips = {}
+var_0_0.skill = 0
+var_0_0.selectRound = nil
 
-function slot0.Prepare()
-	uv0.gameTime = uv0.game_time
-	uv0.gameStepTime = 0
-	uv0.scoreNum = 0
-	uv0.moveAmount = Vector2(uv0.scene_direct.x * uv0.scene_speed, uv0.scene_direct.y * uv0.scene_speed)
-	uv0.roundData = SailBoatGameConst.game_round[uv0.GetGameRound()]
-	uv0.sceneSpeed = Vector2(0, 0)
-	uv0.skill = 1
+function var_0_0.Prepare()
+	var_0_0.gameTime = var_0_0.game_time
+	var_0_0.gameStepTime = 0
+	var_0_0.scoreNum = 0
+	var_0_0.moveAmount = Vector2(var_0_0.scene_direct.x * var_0_0.scene_speed, var_0_0.scene_direct.y * var_0_0.scene_speed)
+	var_0_0.roundData = SailBoatGameConst.game_round[var_0_0.GetGameRound()]
+	var_0_0.sceneSpeed = Vector2(0, 0)
+	var_0_0.skill = 1
 end
 
-function slot0.SetGameTpl(slot0)
-	uv0.tpl = slot0
+function var_0_0.SetGameTpl(arg_9_0)
+	var_0_0.tpl = arg_9_0
 end
 
-function slot0.SetGameBgs(slot0)
-	uv0.bg = slot0
+function var_0_0.SetGameBgs(arg_10_0)
+	var_0_0.bg = arg_10_0
 end
 
-function slot0.GetGameBg(slot0)
-	return uv0.bg
+function var_0_0.GetGameBg(arg_11_0)
+	return var_0_0.bg
 end
 
-function slot0.SetGameChar(slot0)
-	uv0.char = slot0
+function var_0_0.SetGameChar(arg_12_0)
+	var_0_0.char = arg_12_0
 end
 
-function slot0.GetGameChar()
-	return uv0.char
+function var_0_0.GetGameChar()
+	return var_0_0.char
 end
 
-function slot0.SetGameItems(slot0)
-	uv0.items = slot0
+function var_0_0.SetGameItems(arg_14_0)
+	var_0_0.items = arg_14_0
 end
 
-function slot0.GetBulletSprite(slot0)
-	return GetSpriteFromAtlas(uv0.ui_atlas, slot0)
+function var_0_0.GetBulletSprite(arg_15_0)
+	return GetSpriteFromAtlas(var_0_0.ui_atlas, arg_15_0)
 end
 
-function slot0.GetEquipIcon(slot0)
-	return GetSpriteFromAtlas(uv0.ui_atlas, slot0)
+function var_0_0.GetEquipIcon(arg_16_0)
+	return GetSpriteFromAtlas(var_0_0.ui_atlas, arg_16_0)
 end
 
-function slot0.GetBgIcon(slot0)
-	return GetSpriteFromAtlas(uv0.ui_atlas, slot0)
+function var_0_0.GetBgIcon(arg_17_0)
+	return GetSpriteFromAtlas(var_0_0.ui_atlas, arg_17_0)
 end
 
-function slot0.GetGameBullet()
-	return tf(instantiate(findTF(uv0.tpl, "bulletTpl")))
+function var_0_0.GetGameBullet()
+	return tf(instantiate(findTF(var_0_0.tpl, "bulletTpl")))
 end
 
-function slot0.GetGameItems()
-	return uv0.items
+function var_0_0.GetGameItems()
+	return var_0_0.items
 end
 
-function slot0.SetGameEnemys(slot0)
-	uv0.enemys = slot0
+function var_0_0.SetGameEnemys(arg_20_0)
+	var_0_0.enemys = arg_20_0
 end
 
-function slot0.GetGameEnemys()
-	return uv0.enemys
+function var_0_0.GetGameEnemys()
+	return var_0_0.enemys
 end
 
-function slot0.GetGameItemTf(slot0)
-	return tf(instantiate(findTF(uv0.tpl, slot0)))
+function var_0_0.GetGameItemTf(arg_22_0)
+	return tf(instantiate(findTF(var_0_0.tpl, arg_22_0)))
 end
 
-function slot0.GetGameEnemyTf(slot0)
-	return tf(instantiate(findTF(uv0.tpl, slot0)))
+function var_0_0.GetGameEnemyTf(arg_23_0)
+	return tf(instantiate(findTF(var_0_0.tpl, arg_23_0)))
 end
 
-function slot0.GetGameBgTf(slot0)
-	return tf(instantiate(findTF(uv0.tpl, slot0)))
+function var_0_0.GetGameBgTf(arg_24_0)
+	return tf(instantiate(findTF(var_0_0.tpl, arg_24_0)))
 end
 
-function slot0.GetGameCharTf(slot0)
-	return tf(instantiate(findTF(uv0.tpl, slot0)))
+function var_0_0.GetGameCharTf(arg_25_0)
+	return tf(instantiate(findTF(var_0_0.tpl, arg_25_0)))
 end
 
-function slot0.GetGameEffectTf(slot0)
-	return tf(instantiate(findTF(uv0.tpl, slot0)))
+function var_0_0.GetGameEffectTf(arg_26_0)
+	return tf(instantiate(findTF(var_0_0.tpl, arg_26_0)))
 end
 
-function slot0.SetSceneSpeed(slot0)
-	uv0.sceneSpeed = slot0
+function var_0_0.SetSceneSpeed(arg_27_0)
+	var_0_0.sceneSpeed = arg_27_0
 end
 
-function slot0.GetSceneSpeed()
-	return uv0.sceneSpeed
+function var_0_0.GetSceneSpeed()
+	return var_0_0.sceneSpeed
 end
 
-function slot0.AddSkill()
-	uv0.skill = uv0.skill + 1
+function var_0_0.AddSkill()
+	var_0_0.skill = var_0_0.skill + 1
 end
 
-function slot0.UseSkill()
-	if uv0.skill > 0 then
-		uv0.skill = uv0.skill - 1
+function var_0_0.UseSkill()
+	if var_0_0.skill > 0 then
+		var_0_0.skill = var_0_0.skill - 1
 
 		return true
 	end
@@ -220,51 +225,57 @@ function slot0.UseSkill()
 	return false
 end
 
-function slot0.GetSkill()
-	return uv0.skill
+function var_0_0.GetSkill()
+	return var_0_0.skill
 end
 
-function slot0.GetRoundData()
-	return uv0.roundData
+function var_0_0.GetRoundData()
+	return var_0_0.roundData
 end
 
-function slot0.GetRangePos(slot0, slot1)
-	if uv0.CheckDoublicat(Vector2(math.random(slot0[1], slot0[2]), math.random(slot1[1], slot1[2]))) then
-		slot4 = slot2
+function var_0_0.GetRangePos(arg_33_0, arg_33_1)
+	local var_33_0 = Vector2(math.random(arg_33_0[1], arg_33_0[2]), math.random(arg_33_1[1], arg_33_1[2]))
 
-		for slot8 = 1, 4 do
-			slot4.x = slot4.x + 100
+	if var_0_0.CheckDoublicat(var_33_0) then
+		local var_33_1 = var_33_0
 
-			if not uv0.CheckDoublicat(slot4) then
-				return slot4
+		for iter_33_0 = 1, 4 do
+			var_33_1.x = var_33_1.x + 100
+
+			if not var_0_0.CheckDoublicat(var_33_1) then
+				return var_33_1
 			end
 		end
 
-		slot5 = slot2
+		local var_33_2 = var_33_0
 
-		for slot9 = 1, 4 do
-			slot4.x = slot4.x - 100
+		for iter_33_1 = 1, 4 do
+			var_33_1.x = var_33_1.x - 100
 
-			if not uv0.CheckDoublicat(slot4) then
-				return slot4
+			if not var_0_0.CheckDoublicat(var_33_1) then
+				return var_33_1
 			end
 		end
 
 		return nil
 	else
-		return slot2
+		return var_33_0
 	end
 end
 
-function slot0.CheckDoublicat(slot0)
-	for slot5 = 1, #uv0.GetGameItems() do
-		if slot1[slot5]:checkPositionInRange(slot0) then
+function var_0_0.CheckDoublicat(arg_34_0)
+	local var_34_0 = var_0_0.GetGameItems()
+
+	for iter_34_0 = 1, #var_34_0 do
+		if var_34_0[iter_34_0]:checkPositionInRange(arg_34_0) then
 			return true
 		end
 	end
 
-	for slot6 = 1, #uv0.GetGameEnemys() do
-		if slot2[slot6]:checkPositionInRange(slot0) then
+	local var_34_1 = var_0_0.GetGameEnemys()
+
+	for iter_34_1 = 1, #var_34_1 do
+		if var_34_1[iter_34_1]:checkPositionInRange(arg_34_0) then
 			return true
 		end
 	end
@@ -272,30 +283,38 @@ function slot0.CheckDoublicat(slot0)
 	return false
 end
 
-function slot0.PointInRect1(slot0, slot1, slot2, slot3, slot4)
-	slot5, slot6, slot7, slot8, slot9, slot10 = nil
-	slot6 = uv0.Sign(slot0, slot2, slot3)
-	slot7 = uv0.Sign(slot0, slot3, slot4)
-	slot8 = uv0.Sign(slot0, slot4, slot1)
+function var_0_0.PointInRect1(arg_35_0, arg_35_1, arg_35_2, arg_35_3, arg_35_4)
+	local var_35_0
+	local var_35_1
+	local var_35_2
+	local var_35_3
+	local var_35_4
+	local var_35_5
+	local var_35_6 = var_0_0.Sign(arg_35_0, arg_35_1, arg_35_2)
+	local var_35_7 = var_0_0.Sign(arg_35_0, arg_35_2, arg_35_3)
+	local var_35_8 = var_0_0.Sign(arg_35_0, arg_35_3, arg_35_4)
+	local var_35_9 = var_0_0.Sign(arg_35_0, arg_35_4, arg_35_1)
+	local var_35_10 = var_35_6 < 0 or var_35_7 < 0 or var_35_8 < 0 or var_35_9 < 0
+	local var_35_11 = var_35_6 > 0 or var_35_7 > 0 or var_35_8 > 0 or var_35_9 > 0
 
-	return not (uv0.Sign(slot0, slot1, slot2) < 0 or slot6 < 0 or slot7 < 0 or slot8 < 0) or not (slot5 > 0 or slot6 > 0 or slot7 > 0 or slot8 > 0)
+	return not var_35_10 or not var_35_11
 end
 
-function slot0.PointInRect2(slot0, slot1, slot2)
-	if slot0.x < slot1.x or slot0.y < slot1.y then
+function var_0_0.PointInRect2(arg_36_0, arg_36_1, arg_36_2)
+	if arg_36_0.x < arg_36_1.x or arg_36_0.y < arg_36_1.y then
 		return false
 	end
 
-	if slot2.x < slot0.x or slot2.y < slot0.y then
+	if arg_36_0.x > arg_36_2.x or arg_36_0.y > arg_36_2.y then
 		return false
 	end
 
 	return true
 end
 
-function slot0.Clear()
-	uv0.tpl = nil
-	uv0.char = nil
+function var_0_0.Clear()
+	var_0_0.tpl = nil
+	var_0_0.char = nil
 end
 
-return slot0
+return var_0_0

@@ -1,5 +1,6 @@
-slot0 = class("NoticeConst")
-slot0.LAYER_GATEWAY = "layer gateway"
-slot0.LAYER_SERVER = "layer server"
+﻿local var_0_0 = class("NoticeConst")
 
-return slot0
+var_0_0.LAYER_GATEWAY = "layer gateway"
+var_0_0.LAYER_SERVER = "layer server"
+
+return var_0_0

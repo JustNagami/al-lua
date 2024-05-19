@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	time = 12,
-	name = "精准狩猎",
-	init_effect = "jinengchufared",
-	color = "red",
-	picture = "",
-	desc = "提升命中",
-	stack = 1,
-	id = 902181,
-	icon = 902180,
-	last_effect = "",
+﻿return {
 	blink = {
 		1,
 		0,
@@ -60,5 +40,25 @@ return {
 				target = "TargetSelf"
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	time = 12,
+	name = "精准狩猎",
+	init_effect = "jinengchufared",
+	color = "red",
+	picture = "",
+	desc = "提升命中",
+	stack = 1,
+	id = 902181,
+	icon = 902180,
+	last_effect = ""
 }

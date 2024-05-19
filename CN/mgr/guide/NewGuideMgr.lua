@@ -1,268 +1,276 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.NewGuideMgr = singletonClass("NewGuideMgr")
-slot0 = pg.NewGuideMgr
-slot0.ENABLE_GUIDE = true
+
+local var_0_0 = pg.NewGuideMgr
+
+var_0_0.ENABLE_GUIDE = true
 
 require("Mgr/Guide/Include")
 
-slot1 = true
-slot2 = 0
-slot3 = 1
-slot4 = 2
-slot5 = 3
-slot6 = 4
-slot7 = 5
+local var_0_1 = true
+local var_0_2 = 0
+local var_0_3 = 1
+local var_0_4 = 2
+local var_0_5 = 3
+local var_0_6 = 4
+local var_0_7 = 5
 
-function slot8(...)
-	if not uv0 then
+local function var_0_8(...)
+	if not var_0_1 then
 		return
 	end
 
 	print(...)
 end
 
-function slot9(slot0, slot1)
-	slot0.players = {
-		[GuideStep.TYPE_DOFUNC] = GuideDoFunctionPlayer.New(slot1),
-		[GuideStep.TYPE_DONOTHING] = GuideDoNothingPlayer.New(slot1),
-		[GuideStep.TYPE_FINDUI] = GuideFindUIPlayer.New(slot1),
-		[GuideStep.TYPE_HIDEUI] = GuideHideUIPlayer.New(slot1),
-		[GuideStep.TYPE_SENDNOTIFIES] = GuideSendNotifiesPlayer.New(slot1),
-		[GuideStep.TYPE_SHOWSIGN] = GuideShowSignPlayer.New(slot1),
-		[GuideStep.TYPE_STORY] = GuideStoryPlayer.New(slot1)
+local function var_0_9(arg_2_0, arg_2_1)
+	arg_2_0.players = {
+		[GuideStep.TYPE_DOFUNC] = GuideDoFunctionPlayer.New(arg_2_1),
+		[GuideStep.TYPE_DONOTHING] = GuideDoNothingPlayer.New(arg_2_1),
+		[GuideStep.TYPE_FINDUI] = GuideFindUIPlayer.New(arg_2_1),
+		[GuideStep.TYPE_HIDEUI] = GuideHideUIPlayer.New(arg_2_1),
+		[GuideStep.TYPE_SENDNOTIFIES] = GuideSendNotifiesPlayer.New(arg_2_1),
+		[GuideStep.TYPE_SHOWSIGN] = GuideShowSignPlayer.New(arg_2_1),
+		[GuideStep.TYPE_STORY] = GuideStoryPlayer.New(arg_2_1)
 	}
 end
 
-function slot10(slot0)
-	return Guide.New(require("GameCfg.guide.newguide.segments." .. slot0))
+local function var_0_10(arg_3_0)
+	local var_3_0 = require("GameCfg.guide.newguide.segments." .. arg_3_0)
+
+	return Guide.New(var_3_0)
 end
 
-function slot0.Init(slot0, slot1)
-	slot0.sceneRecords = {}
-	slot0.state = uv0
+function var_0_0.Init(arg_4_0, arg_4_1)
+	arg_4_0.sceneRecords = {}
+	arg_4_0.state = var_0_2
 
-	PoolMgr.GetInstance():GetUI("NewGuideUI", true, function (slot0)
-		uv0._go = slot0
-		uv0._tf = uv0._go.transform
+	PoolMgr.GetInstance():GetUI("NewGuideUI", true, function(arg_5_0)
+		arg_4_0._go = arg_5_0
+		arg_4_0._tf = arg_4_0._go.transform
 
-		uv0._go:SetActive(false)
-		uv0._go.transform:SetParent(pg.UIMgr.GetInstance().OverlayToast, false)
+		arg_4_0._go:SetActive(false)
+		arg_4_0._go.transform:SetParent(pg.UIMgr.GetInstance().OverlayToast, false)
 
-		uv0.uiFinder = GuideUIFinder.New(uv0._tf)
-		uv0.uiDuplicator = GuideUIDuplicator.New(uv0._tf:Find("target"))
-		uv0.uiLoader = GuideUILoader.New(uv0._tf:Find("target"))
-		uv0.dialogueWindows = {
-			[GuideStep.DIALOGUE_BLUE] = uv0._tf:Find("windows/window_1")
+		arg_4_0.uiFinder = GuideUIFinder.New(arg_4_0._tf)
+		arg_4_0.uiDuplicator = GuideUIDuplicator.New(arg_4_0._tf:Find("target"))
+		arg_4_0.uiLoader = GuideUILoader.New(arg_4_0._tf:Find("target"))
+		arg_4_0.dialogueWindows = {
+			[GuideStep.DIALOGUE_BLUE] = arg_4_0._tf:Find("windows/window_1")
 		}
-		uv0.counsellors = {}
-		uv0.state = uv1
-		uv0.uiLongPress = GetOrAddComponent(uv0._tf:Find("BG/close_btn"), typeof(UILongPressTrigger))
-		uv0.uiLongPress.longPressThreshold = 10
+		arg_4_0.counsellors = {}
+		arg_4_0.state = var_0_3
+		arg_4_0.uiLongPress = GetOrAddComponent(arg_4_0._tf:Find("BG/close_btn"), typeof(UILongPressTrigger))
+		arg_4_0.uiLongPress.longPressThreshold = 10
 
-		uv2(uv0, uv0._tf)
-		uv3()
+		var_0_9(arg_4_0, arg_4_0._tf)
+		arg_4_1()
 	end)
 end
 
-function slot0.PlayNothing(slot0)
-	SetActive(slot0._go, true)
+function var_0_0.PlayNothing(arg_6_0)
+	SetActive(arg_6_0._go, true)
 end
 
-function slot0.StopNothing(slot0)
-	SetActive(slot0._go, false)
+function var_0_0.StopNothing(arg_7_0)
+	SetActive(arg_7_0._go, false)
 end
 
-function slot0.Play(slot0, slot1, slot2, slot3, slot4)
-	if not slot0:CanPlay() then
-		uv0("can not play guide " .. slot1)
-		slot3()
+function var_0_0.Play(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4)
+	if not arg_8_0:CanPlay() then
+		var_0_8("can not play guide " .. arg_8_1)
+		arg_8_3()
 
 		return
 	end
 
-	uv0("play guide : " .. slot1)
-	slot0:PlayScript(uv1(slot1), slot2, slot3, slot4)
+	var_0_8("play guide : " .. arg_8_1)
+
+	local var_8_0 = var_0_10(arg_8_1)
+
+	arg_8_0:PlayScript(var_8_0, arg_8_2, arg_8_3, arg_8_4)
 end
 
-function slot0._Play(slot0, slot1, slot2, slot3, slot4)
-	slot0:PlayScript(Guide.New(slot1), slot2, slot3, slot4)
+function var_0_0._Play(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
+	local var_9_0 = Guide.New(arg_9_1)
+
+	arg_9_0:PlayScript(var_9_0, arg_9_2, arg_9_3, arg_9_4)
 end
 
-function slot0.PlayScript(slot0, slot1, slot2, slot3, slot4)
-	if not slot1 then
-		uv0("should exist guide file ")
-		slot3()
+function var_0_0.PlayScript(arg_10_0, arg_10_1, arg_10_2, arg_10_3, arg_10_4)
+	if not arg_10_1 then
+		var_0_8("should exist guide file ")
+		arg_10_3()
 
 		return
 	end
 
-	slot0.OnFailed = slot4
+	arg_10_0.OnFailed = arg_10_4
 
-	slot0:OnStart()
+	arg_10_0:OnStart()
 
-	slot5 = {}
-	slot9 = slot2
+	local var_10_0 = {}
 
-	for slot9, slot10 in ipairs(slot1:GetStepsWithCode(slot9)) do
-		table.insert(slot5, function (slot0)
-			if uv0:IsStop() then
+	for iter_10_0, iter_10_1 in ipairs(arg_10_1:GetStepsWithCode(arg_10_2)) do
+		table.insert(var_10_0, function(arg_11_0)
+			if arg_10_0:IsStop() then
 				return
 			end
 
-			slot1 = uv0.players[uv1:GetType()]
+			local var_11_0 = arg_10_0.players[iter_10_1:GetType()]
 
-			slot1:Execute(uv1, slot0)
+			var_11_0:Execute(iter_10_1, arg_11_0)
 
-			uv0.player = slot1
+			arg_10_0.player = var_11_0
 		end)
 	end
 
-	seriesAsync(slot5, function ()
-		uv0:OnEnd(uv1)
+	seriesAsync(var_10_0, function()
+		arg_10_0:OnEnd(arg_10_3)
 	end)
 end
 
-function slot0.CanPlay(slot0)
-	if pg.MsgboxMgr.GetInstance()._go.activeSelf or pg.NewStoryMgr.GetInstance():IsRunning() or not uv0.ENABLE_GUIDE or not slot0:IsLoaded() or slot0:IsPause() or slot0:IsBusy() then
+function var_0_0.CanPlay(arg_13_0)
+	if pg.MsgboxMgr.GetInstance()._go.activeSelf or pg.NewStoryMgr.GetInstance():IsRunning() or not var_0_0.ENABLE_GUIDE or not arg_13_0:IsLoaded() or arg_13_0:IsPause() or arg_13_0:IsBusy() then
 		return false
 	end
 
 	return true
 end
 
-function slot0.OnStart(slot0)
-	pg.DelegateInfo.New(slot0)
+function var_0_0.OnStart(arg_14_0)
+	pg.DelegateInfo.New(arg_14_0)
 
-	slot0.state = uv0
+	arg_14_0.state = var_0_4
 
 	pg.m02:sendNotification(GAME.START_GUIDE)
-	slot0._go.transform:SetAsLastSibling()
-	slot0._go:SetActive(true)
-	slot0.uiLongPress.onLongPressed:AddListener(function ()
-		uv0:Stop()
+	arg_14_0._go.transform:SetAsLastSibling()
+	arg_14_0._go:SetActive(true)
+	arg_14_0.uiLongPress.onLongPressed:AddListener(function()
+		arg_14_0:Stop()
 	end)
 end
 
-function slot0.OnEnd(slot0, slot1)
-	slot0.uiLongPress.onLongPressed:RemoveAllListeners()
-	pg.DelegateInfo.Dispose(slot0)
+function var_0_0.OnEnd(arg_16_0, arg_16_1)
+	arg_16_0.uiLongPress.onLongPressed:RemoveAllListeners()
+	pg.DelegateInfo.Dispose(arg_16_0)
 
-	slot0.state = uv0
+	arg_16_0.state = var_0_3
 
-	slot0:Clear()
+	arg_16_0:Clear()
 
-	if slot1 then
-		slot1()
+	if arg_16_1 then
+		arg_16_1()
 	end
 end
 
-function slot0.Pause(slot0)
-	if slot0:IsBusy() then
-		slot0.state = uv0
+function var_0_0.Pause(arg_17_0)
+	if arg_17_0:IsBusy() then
+		arg_17_0.state = var_0_6
 
-		SetActive(slot0._go, false)
+		SetActive(arg_17_0._go, false)
 	end
 end
 
-function slot0.Resume(slot0)
-	if slot0:IsPause() then
-		slot0.state = uv0
+function var_0_0.Resume(arg_18_0)
+	if arg_18_0:IsPause() then
+		arg_18_0.state = var_0_4
 
-		SetActive(slot0._go, true)
+		SetActive(arg_18_0._go, true)
 	end
 end
 
-function slot0.Stop(slot0)
-	if slot0.state ~= uv0 then
-		if slot0.OnFailed then
-			slot0.OnFailed()
+function var_0_0.Stop(arg_19_0)
+	if arg_19_0.state ~= var_0_5 then
+		if arg_19_0.OnFailed then
+			arg_19_0.OnFailed()
 		end
 
-		slot0.state = uv0
+		arg_19_0.state = var_0_5
 
-		slot0.uiFinder:Clear()
-		slot0.uiDuplicator:Clear()
-		slot0.uiLoader:Clear()
-		slot0:Clear()
+		arg_19_0.uiFinder:Clear()
+		arg_19_0.uiDuplicator:Clear()
+		arg_19_0.uiLoader:Clear()
+		arg_19_0:Clear()
 	end
 end
 
-function slot0.NextStep(slot0)
+function var_0_0.NextStep(arg_20_0)
 	if not IsUnityEditor then
 		return
 	end
 
-	if slot0.state == uv0 and slot0.player then
-		slot0.player:NextOne()
+	if arg_20_0.state == var_0_4 and arg_20_0.player then
+		arg_20_0.player:NextOne()
 	end
 end
 
-function slot0.Clear(slot0)
-	slot0.OnFailed = nil
-	slot0.sceneRecords = {}
+function var_0_0.Clear(arg_21_0)
+	arg_21_0.OnFailed = nil
+	arg_21_0.sceneRecords = {}
 
-	slot0._go:SetActive(false)
+	arg_21_0._go:SetActive(false)
 
-	for slot4, slot5 in ipairs(slot0.players) do
-		slot5:Clear()
+	for iter_21_0, iter_21_1 in ipairs(arg_21_0.players) do
+		iter_21_1:Clear()
 	end
 
-	if slot0.player then
-		slot0.player = nil
+	if arg_21_0.player then
+		arg_21_0.player = nil
 	end
 
 	pg.m02:sendNotification(GAME.END_GUIDE)
 end
 
-function slot0.IsPause(slot0)
-	return slot0.state and slot0.state == uv0
+function var_0_0.IsPause(arg_22_0)
+	return arg_22_0.state and arg_22_0.state == var_0_6
 end
 
-function slot0.IsBusy(slot0)
-	return slot0.state and slot0.state == uv0
+function var_0_0.IsBusy(arg_23_0)
+	return arg_23_0.state and arg_23_0.state == var_0_4
 end
 
-function slot0.IsLoaded(slot0)
-	return slot0.state and uv0 < slot0.state
+function var_0_0.IsLoaded(arg_24_0)
+	return arg_24_0.state and arg_24_0.state > var_0_2
 end
 
-function slot0.IsStop(slot0)
-	return slot0.state and slot0.state == uv0
+function var_0_0.IsStop(arg_25_0)
+	return arg_25_0.state and arg_25_0.state == var_0_5
 end
 
-function slot0.OnSceneEnter(slot0, slot1)
-	if not slot0:IsLoaded() then
+function var_0_0.OnSceneEnter(arg_26_0, arg_26_1)
+	if not arg_26_0:IsLoaded() then
 		return
 	end
 
-	if not table.contains(slot0.sceneRecords, slot1.view) then
-		table.insert(slot0.sceneRecords, slot1.view)
+	if not table.contains(arg_26_0.sceneRecords, arg_26_1.view) then
+		table.insert(arg_26_0.sceneRecords, arg_26_1.view)
 	end
 
-	if slot0.player then
-		slot0.player:OnSceneEnter()
+	if arg_26_0.player then
+		arg_26_0.player:OnSceneEnter()
 	end
 end
 
-function slot0.OnSceneExit(slot0, slot1)
-	if not slot0:IsLoaded() then
+function var_0_0.OnSceneExit(arg_27_0, arg_27_1)
+	if not arg_27_0:IsLoaded() then
 		return
 	end
 
-	if table.contains(slot0.sceneRecords, slot1.view) then
-		table.removebyvalue(slot0.sceneRecords, slot1.view)
+	if table.contains(arg_27_0.sceneRecords, arg_27_1.view) then
+		table.removebyvalue(arg_27_0.sceneRecords, arg_27_1.view)
 	end
 end
 
-function slot0.ExistScene(slot0, slot1)
-	return table.contains(slot0.sceneRecords, slot1)
+function var_0_0.ExistScene(arg_28_0, arg_28_1)
+	return table.contains(arg_28_0.sceneRecords, arg_28_1)
 end
 
-function slot0.Exit(slot0)
-	slot0:Clear()
-	slot0.uiFinder:Clear()
-	slot0.uiDuplicator:Clear()
-	slot0.uiLoader:Clear()
+function var_0_0.Exit(arg_29_0)
+	arg_29_0:Clear()
+	arg_29_0.uiFinder:Clear()
+	arg_29_0.uiDuplicator:Clear()
+	arg_29_0.uiLoader:Clear()
 
-	slot0.state = uv0
+	arg_29_0.state = var_0_7
 end

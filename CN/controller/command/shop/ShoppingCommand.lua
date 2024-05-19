@@ -1,35 +1,39 @@
-slot0 = class("ShoppingCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ShoppingCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = slot2.id
-	slot4 = slot2.count
-	slot5 = pg.shop_template[slot3]
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.count
+	local var_1_3 = pg.shop_template[var_1_1]
 
-	if not slot3 then
+	if not var_1_1 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_shopId_noFound"))
 
 		return
 	end
 
-	if slot5.type == DROP_TYPE_WORLD_ITEM and not nowWorld():IsActivate() then
+	if var_1_3.type == DROP_TYPE_WORLD_ITEM and not nowWorld():IsActivate() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("world_shop_bag_unactivated"))
 
 		return
 	end
 
-	slot7 = getProxy(PlayerProxy):getData()
+	local var_1_4 = getProxy(PlayerProxy)
+	local var_1_5 = var_1_4:getData()
 
-	if slot5.type == DROP_TYPE_ITEM then
-		for slot13, slot14 in pairs(Item.getConfigData(slot5.effect_args[1]).display_icon) do
-			if slot14[1] == 1 then
-				if slot14[2] == 1 and slot7:GoldMax(slot14[3]) then
+	if var_1_3.type == DROP_TYPE_ITEM then
+		local var_1_6 = var_1_3.effect_args
+		local var_1_7 = Item.getConfigData(var_1_6[1]).display_icon
+
+		for iter_1_0, iter_1_1 in pairs(var_1_7) do
+			if iter_1_1[1] == 1 then
+				if iter_1_1[2] == 1 and var_1_5:GoldMax(iter_1_1[3]) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 					return
 				end
 
-				if slot14[2] == 2 and slot7:OilMax(slot14[3]) then
+				if iter_1_1[2] == 2 and var_1_5:OilMax(iter_1_1[3]) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 					return
@@ -38,19 +42,21 @@ function slot0.execute(slot0, slot1)
 		end
 	end
 
-	if slot5.type == DROP_TYPE_RESOURCE then
-		if slot5.effect_args[1] == 1 and slot7:GoldMax(slot5.num * slot4) then
+	if var_1_3.type == DROP_TYPE_RESOURCE then
+		if var_1_3.effect_args[1] == 1 and var_1_5:GoldMax(var_1_3.num * var_1_2) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 			return
 		end
 
-		if slot5.effect_args[1] == 2 then
-			if slot5.num == -1 and slot5.genre == ShopArgs.BuyOil then
-				slot8 = ShopArgs.getOilByLevel(slot7.level)
+		if var_1_3.effect_args[1] == 2 then
+			local var_1_8 = var_1_3.num
+
+			if var_1_8 == -1 and var_1_3.genre == ShopArgs.BuyOil then
+				var_1_8 = ShopArgs.getOilByLevel(var_1_5.level)
 			end
 
-			if slot7:OilMax(slot8 * slot4) then
+			if var_1_5:OilMax(var_1_8 * var_1_2) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 				return
@@ -58,95 +64,111 @@ function slot0.execute(slot0, slot1)
 		end
 	end
 
-	if slot4 == 0 then
+	if var_1_2 == 0 then
 		return
 	end
 
-	slot10 = false
-	slot12 = getProxy(NavalAcademyProxy)
+	local var_1_9 = getProxy(ShopsProxy)
+	local var_1_10 = var_1_9:getShopStreet()
+	local var_1_11 = false
+	local var_1_12 = var_1_3.resource_num
+	local var_1_13 = getProxy(NavalAcademyProxy)
 
-	if slot5.resource_num == -1 then
-		if slot5.effect_args == ShopArgs.EffectShopStreetLevel then
-			slot11 = pg.navalacademy_shoppingstreet_template[getProxy(ShopsProxy):getShopStreet().level].lv_up_cost[2] * slot4
-		elseif switch(slot5.effect_args, {
-			[ShopArgs.EffectTradingPortLevel] = function ()
-				return uv0._goldVO
-			end,
-			[ShopArgs.EffectOilFieldLevel] = function ()
-				return uv0._oilVO
-			end,
-			[ShopArgs.EffectClassLevel] = function ()
-				return uv0._classVO
+	if var_1_12 == -1 then
+		if var_1_3.effect_args == ShopArgs.EffectShopStreetLevel then
+			var_1_12 = pg.navalacademy_shoppingstreet_template[var_1_10.level].lv_up_cost[2] * var_1_2
+		else
+			local var_1_14 = switch(var_1_3.effect_args, {
+				[ShopArgs.EffectTradingPortLevel] = function()
+					return var_1_13._goldVO
+				end,
+				[ShopArgs.EffectOilFieldLevel] = function()
+					return var_1_13._oilVO
+				end,
+				[ShopArgs.EffectClassLevel] = function()
+					return var_1_13._classVO
+				end
+			})
+
+			if var_1_14 then
+				var_1_12 = var_1_14:bindConfigTable()[var_1_14:GetLevel()].use[2] * var_1_2
 			end
-		}) then
-			slot11 = slot13:bindConfigTable()[slot13:GetLevel()].use[2] * slot4
 		end
-	elseif slot9 and slot5.genre == ShopArgs.ShoppingStreetLimit then
-		slot10 = true
-		slot11 = math.ceil(slot9:getGoodsById(slot3).discount / 100 * slot5.resource_num * slot4)
+	else
+		var_1_12 = var_1_3.resource_num * var_1_2
+
+		if var_1_10 and var_1_3.genre == ShopArgs.ShoppingStreetLimit then
+			var_1_11 = true
+
+			local var_1_15 = var_1_10:getGoodsById(var_1_1)
+
+			var_1_12 = math.ceil(var_1_15.discount / 100 * var_1_12)
+		end
 	end
 
-	if slot5.limit_args then
-		for slot16, slot17 in ipairs(slot5.limit_args) do
-			if type(slot17) == "table" and slot17[1] == "level" and slot7.level < slot17[2] then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("common_limit_level", slot17[2]))
+	if var_1_3.limit_args then
+		for iter_1_2, iter_1_3 in ipairs(var_1_3.limit_args) do
+			if type(iter_1_3) == "table" and iter_1_3[1] == "level" and iter_1_3[2] > var_1_5.level then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("common_limit_level", iter_1_3[2]))
 
 				return
 			end
 		end
 	end
 
-	if slot5.discount ~= 0 and CommonCommodity.InCommodityDiscountTime(slot5.id) then
-		slot11 = slot11 * (100 - slot5.discount) / 100
+	if var_1_3.discount ~= 0 and CommonCommodity.InCommodityDiscountTime(var_1_3.id) then
+		var_1_12 = var_1_12 * ((100 - var_1_3.discount) / 100)
 	end
 
-	if slot7[id2res(slot5.resource_type)] < slot11 then
-		slot13 = Drop.New({
+	if var_1_12 > var_1_5[id2res(var_1_3.resource_type)] then
+		local var_1_16 = Drop.New({
 			type = DROP_TYPE_RESOURCE,
-			id = slot5.resource_type
+			id = var_1_3.resource_type
 		}):getName()
 
-		if slot5.resource_type == 1 then
+		if var_1_3.resource_type == 1 then
 			GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
 				{
 					59001,
-					slot11 - slot7[id2res(slot5.resource_type)],
-					slot11
+					var_1_12 - var_1_5[id2res(var_1_3.resource_type)],
+					var_1_12
 				}
 			})
-		elseif slot5.resource_type == 4 or slot5.resource_type == 14 then
+		elseif var_1_3.resource_type == 4 or var_1_3.resource_type == 14 then
 			GoShoppingMsgBox(i18n("switch_to_shop_tip_3", i18n("word_gem")), ChargeScene.TYPE_DIAMOND)
-		elseif not ItemTipPanel.ShowItemTip(DROP_TYPE_RESOURCE, slot5.resource_type) then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("buyProp_noResource_error", slot13))
+		elseif not ItemTipPanel.ShowItemTip(DROP_TYPE_RESOURCE, var_1_3.resource_type) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("buyProp_noResource_error", var_1_16))
 		end
 
 		return
 	end
 
-	slot13 = {}
+	local var_1_17 = {}
 
-	table.insert(slot13, function (slot0)
-		if uv0.genre == ShopArgs.GiftPackage or uv0.genre == ShopArgs.NewServerShop then
-			slot3, slot4 = CheckOverflow(GetItemsOverflowDic({
-				Drop.New({
-					count = 1,
-					type = DROP_TYPE_ITEM,
-					id = uv0.effect_args[1]
-				})
-			}))
+	table.insert(var_1_17, function(arg_5_0)
+		if var_1_3.genre == ShopArgs.GiftPackage or var_1_3.genre == ShopArgs.NewServerShop then
+			local var_5_0 = Drop.New({
+				count = 1,
+				type = DROP_TYPE_ITEM,
+				id = var_1_3.effect_args[1]
+			})
+			local var_5_1 = GetItemsOverflowDic({
+				var_5_0
+			})
+			local var_5_2, var_5_3 = CheckOverflow(var_5_1)
 
-			if not slot3 then
-				switch(slot4, {
-					gold = function ()
+			if not var_5_2 then
+				switch(var_5_3, {
+					gold = function()
 						pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
 					end,
-					oil = function ()
+					oil = function()
 						pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
 					end,
-					equip = function ()
+					equip = function()
 						NoPosMsgBox(i18n("switch_to_shop_tip_noPos"), openDestroyEquip, gotoChargeScene)
 					end,
-					ship = function ()
+					ship = function()
 						NoPosMsgBox(i18n("switch_to_shop_tip_noDockyard"), openDockyardClear, gotoChargeScene, openDockyardIntensify)
 					end
 				})
@@ -154,146 +176,148 @@ function slot0.execute(slot0, slot1)
 				return
 			end
 
-			if not CheckShipExpOverflow(slot2) then
+			if not CheckShipExpOverflow(var_5_1) then
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("player_expResource_mail_fullBag"),
-					onYes = slot0
+					onYes = arg_5_0
 				})
 
 				return
 			end
 		end
 
-		slot0()
+		arg_5_0()
 	end)
-	seriesAsync(slot13, function ()
+	seriesAsync(var_1_17, function()
 		pg.ConnectionMgr.GetInstance():Send(16001, {
-			id = uv0,
-			number = uv1
-		}, 16002, function (slot0)
-			if slot0.result == 0 then
-				slot1 = {}
+			id = var_1_1,
+			number = var_1_2
+		}, 16002, function(arg_11_0)
+			if arg_11_0.result == 0 then
+				local var_11_0 = {}
 
-				if uv0.type == 0 then
-					uv1:sendNotification(GAME.EXTEND, {
-						id = uv2,
-						count = uv3
+				if var_1_3.type == 0 then
+					arg_1_0:sendNotification(GAME.EXTEND, {
+						id = var_1_1,
+						count = var_1_2
 					})
 				else
-					slot1 = PlayerConst.addTranDrop(slot0.drop_list)
+					var_11_0 = PlayerConst.addTranDrop(arg_11_0.drop_list)
 
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_buy_success"))
 				end
 
-				uv4:getData():consume({
-					[id2res(uv0.resource_type)] = uv5
+				local var_11_1 = var_1_4:getData()
+
+				var_11_1:consume({
+					[id2res(var_1_3.resource_type)] = var_1_12
 				})
 
-				slot3 = nil
+				local var_11_2
 
-				if uv6 then
-					slot4 = uv7:getShopStreet()
-					slot3 = slot4.type
+				if var_1_11 then
+					local var_11_3 = var_1_9:getShopStreet()
+					local var_11_4 = var_11_3:getGoodsById(var_1_1)
 
-					slot4:getGoodsById(uv2):reduceBuyCount()
-					uv7:UpdateShopStreet(slot4)
+					var_11_2 = var_11_3.type
+
+					var_11_4:reduceBuyCount()
+					var_1_9:UpdateShopStreet(var_11_3)
 				else
-					switch(uv0.genre, {
-						[ShopArgs.BuyOil] = function ()
-							uv0:increaseBuyOilCount()
+					switch(var_1_3.genre, {
+						[ShopArgs.BuyOil] = function()
+							var_11_1:increaseBuyOilCount()
 						end,
-						[ShopArgs.ArenaShopLimit] = function ()
-							slot0 = getProxy(ShopsProxy)
-							slot1 = slot0:getMeritorousShop()
-							slot2 = slot1:getGoodsById(uv0)
+						[ShopArgs.ArenaShopLimit] = function()
+							local var_13_0 = getProxy(ShopsProxy)
+							local var_13_1 = var_13_0:getMeritorousShop()
+							local var_13_2 = var_13_1:getGoodsById(var_1_1)
 
-							slot2:increaseBuyCount()
-							slot1:updateGoods(slot2)
+							var_13_2:increaseBuyCount()
+							var_13_1:updateGoods(var_13_2)
 
-							uv1 = slot1.type
+							var_11_2 = var_13_1.type
 
-							slot0:updateMeritorousShop(slot1)
+							var_13_0:updateMeritorousShop(var_13_1)
 						end,
-						[ShopArgs.GiftPackage] = function ()
-							uv0:GetNormalByID(uv1):increaseBuyCount()
+						[ShopArgs.GiftPackage] = function()
+							var_1_9:GetNormalByID(var_1_1):increaseBuyCount()
 						end,
-						[ShopArgs.NewServerShop] = function ()
-							uv0:GetNormalByID(uv1):increaseBuyCount()
+						[ShopArgs.NewServerShop] = function()
+							var_1_9:GetNormalByID(var_1_1):increaseBuyCount()
 						end,
-						[ShopArgs.SkinShop] = function ()
+						[ShopArgs.SkinShop] = function()
 							assert(false, "must be used ShoppingCommand")
 						end,
-						[ShopArgs.SkinShopTimeLimit] = function ()
+						[ShopArgs.SkinShopTimeLimit] = function()
 							assert(false, "must be used ShoppingCommand")
 						end,
-						[ShopArgs.guildShop] = function ()
-							slot0 = getProxy(ShopsProxy):getGuildShop()
+						[ShopArgs.guildShop] = function()
+							local var_18_0 = getProxy(ShopsProxy):getGuildShop()
 
-							slot0:getGoodsById(uv0):reduceBuyCount()
-							uv1:updateGuildShop(slot0)
+							var_18_0:getGoodsById(var_1_1):reduceBuyCount()
+							var_1_9:updateGuildShop(var_18_0)
 						end,
-						[ShopArgs.WorldShop] = function ()
+						[ShopArgs.WorldShop] = function()
 							nowWorld():UpdateWorldShopGoods({
 								{
-									goods_id = uv0,
-									count = uv1
+									goods_id = var_1_1,
+									count = var_1_2
 								}
 							})
 						end,
-						[ShopArgs.WorldCollection] = function ()
+						[ShopArgs.WorldCollection] = function()
 							nowWorld():UpdateWorldShopGoods({
 								{
-									goods_id = uv0,
-									count = uv1
+									goods_id = var_1_1,
+									count = var_1_2
 								}
 							})
 						end
 					})
 				end
 
-				uv4:updatePlayer(slot2)
+				var_1_4:updatePlayer(var_11_1)
 
-				if uv0.group > 0 then
-					uv7:updateNormalGroupList(uv0.group, uv0.group_buy_count)
+				if var_1_3.group > 0 then
+					var_1_9:updateNormalGroupList(var_1_3.group, var_1_3.group_buy_count)
 				end
 
-				switch(uv0.effect_args, {
-					[ShopArgs.EffecetShipBagSize] = function ()
+				switch(var_1_3.effect_args, {
+					[ShopArgs.EffecetShipBagSize] = function()
 						pg.TipsMgr.GetInstance():ShowTips(i18n("shop_extendship_success"))
 					end,
-					[ShopArgs.EffecetEquipBagSize] = function ()
+					[ShopArgs.EffecetEquipBagSize] = function()
 						pg.TipsMgr.GetInstance():ShowTips(i18n("shop_extendequip_success"))
 					end,
-					[ShopArgs.EffectCommanderBagSize] = function ()
+					[ShopArgs.EffectCommanderBagSize] = function()
 						pg.TipsMgr.GetInstance():ShowTips(i18n("shop_extendcommander_success"))
 					end,
-					[ShopArgs.EffectSpWeaponBagSize] = function ()
+					[ShopArgs.EffectSpWeaponBagSize] = function()
 						pg.TipsMgr.GetInstance():ShowTips(i18n("shop_spweapon_success"))
 					end
 				})
 
-				if not uv8.isQuickShopping then
-					uv1:sendNotification(GAME.SHOPPING_DONE, {
-						id = uv2,
-						shopType = slot3,
-						normalList = uv7:GetNormalList(),
-						normalGroupList = uv7:GetNormalGroupList(),
-						awards = slot1
+				if not var_1_0.isQuickShopping then
+					arg_1_0:sendNotification(GAME.SHOPPING_DONE, {
+						id = var_1_1,
+						shopType = var_11_2,
+						normalList = var_1_9:GetNormalList(),
+						normalGroupList = var_1_9:GetNormalGroupList(),
+						awards = var_11_0
 					})
 				end
-
-				return
-			end
-
-			originalPrint(slot0.result)
-
-			if slot0.result == 4400 then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("shopping_error_time_limit"))
 			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
+				originalPrint(arg_11_0.result)
+
+				if arg_11_0.result == 4400 then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("shopping_error_time_limit"))
+				else
+					pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_11_0.result))
+				end
 			end
 		end)
 	end)
 end
 
-return slot0
+return var_0_0

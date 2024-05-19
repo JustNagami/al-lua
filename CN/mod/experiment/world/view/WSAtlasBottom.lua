@@ -1,5 +1,6 @@
-slot0 = class("WSAtlasBottom", import("...BaseEntity"))
-slot0.Fields = {
+﻿local var_0_0 = class("WSAtlasBottom", import("...BaseEntity"))
+
+var_0_0.Fields = {
 	rtBg = "userdata",
 	transform = "userdata",
 	btnBoss = "userdata",
@@ -12,72 +13,73 @@ slot0.Fields = {
 	btnShop = "userdata",
 	btnDailyTask = "userdata"
 }
-slot0.EventUpdateScale = "WSAtlasBottom.EventUpdateScale"
+var_0_0.EventUpdateScale = "WSAtlasBottom.EventUpdateScale"
 
-function slot0.Setup(slot0)
-	pg.DelegateInfo.New(slot0)
-	slot0:Init()
+function var_0_0.Setup(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
+	arg_1_0:Init()
 end
 
-function slot0.Dispose(slot0)
-	pg.DelegateInfo.Dispose(slot0)
-	slot0:Clear()
+function var_0_0.Dispose(arg_2_0)
+	pg.DelegateInfo.Dispose(arg_2_0)
+	arg_2_0:Clear()
 end
 
-function slot0.Init(slot0)
-	slot1 = slot0.transform
-	slot0.rtBg = slot1:Find("bg")
-	slot0.rtButton = slot1:Find("button")
-	slot0.btnBoss = slot0.rtButton:Find("btn_boss")
-	slot0.btnShop = slot0.rtButton:Find("btn_shop")
-	slot0.btnOverview = slot0.rtButton:Find("btn_overview")
-	slot0.btnCollection = slot0.rtButton:Find("btn_collection")
-	slot0.btnDailyTask = slot0.rtButton:Find("btn_daily")
-	slot0.comSilder = slot1:Find("scale/Slider"):GetComponent("Slider")
-	slot0.comSilder.interactable = CAMERA_MOVE_OPEN
+function var_0_0.Init(arg_3_0)
+	local var_3_0 = arg_3_0.transform
+
+	arg_3_0.rtBg = var_3_0:Find("bg")
+	arg_3_0.rtButton = var_3_0:Find("button")
+	arg_3_0.btnBoss = arg_3_0.rtButton:Find("btn_boss")
+	arg_3_0.btnShop = arg_3_0.rtButton:Find("btn_shop")
+	arg_3_0.btnOverview = arg_3_0.rtButton:Find("btn_overview")
+	arg_3_0.btnCollection = arg_3_0.rtButton:Find("btn_collection")
+	arg_3_0.btnDailyTask = arg_3_0.rtButton:Find("btn_daily")
+	arg_3_0.comSilder = var_3_0:Find("scale/Slider"):GetComponent("Slider")
+	arg_3_0.comSilder.interactable = CAMERA_MOVE_OPEN
 
 	if CAMERA_MOVE_OPEN then
-		slot0.comSilder.onValueChanged:AddListener(function (slot0)
-			uv0:DispatchEvent(uv1.EventUpdateScale, slot0)
+		arg_3_0.comSilder.onValueChanged:AddListener(function(arg_4_0)
+			arg_3_0:DispatchEvent(var_0_0.EventUpdateScale, arg_4_0)
 		end)
 	end
 end
 
-function slot0.UpdateScale(slot0, slot1, slot2, slot3)
-	if slot2 then
-		slot4 = slot0.comSilder.value
+function var_0_0.UpdateScale(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	if arg_5_2 then
+		local var_5_0 = arg_5_0.comSilder.value
 
-		setImageAlpha(slot0.btnOverview, slot4)
-		setActive(slot0.btnOverview, true)
+		setImageAlpha(arg_5_0.btnOverview, var_5_0)
+		setActive(arg_5_0.btnOverview, true)
 
-		slot0.twId = LeanTween.value(go(slot0.comSilder), slot4, slot1, WSAtlasWorld.baseDuration):setEase(LeanTweenType.easeInOutSine):setOnUpdate(System.Action_float(function (slot0)
-			uv0.comSilder.value = slot0
+		arg_5_0.twId = LeanTween.value(go(arg_5_0.comSilder), var_5_0, arg_5_1, WSAtlasWorld.baseDuration):setEase(LeanTweenType.easeInOutSine):setOnUpdate(System.Action_float(function(arg_6_0)
+			arg_5_0.comSilder.value = arg_6_0
 
-			setImageAlpha(uv0.btnOverview, slot0)
-		end)):setOnComplete(System.Action(function ()
-			setActive(uv0.btnOverview, uv1 == 1)
+			setImageAlpha(arg_5_0.btnOverview, arg_6_0)
+		end)):setOnComplete(System.Action(function()
+			setActive(arg_5_0.btnOverview, arg_5_1 == 1)
 
-			return existCall(uv2)
+			return existCall(arg_5_3)
 		end)).uniqueId
 
-		slot0.wsTimer:AddTween(slot0.twId)
+		arg_5_0.wsTimer:AddTween(arg_5_0.twId)
 	else
-		setImageAlpha(slot0.btnOverview, slot1)
-		setActive(slot0.btnOverview, slot1 == 1)
+		setImageAlpha(arg_5_0.btnOverview, arg_5_1)
+		setActive(arg_5_0.btnOverview, arg_5_1 == 1)
 
-		slot0.comSilder.value = slot1
+		arg_5_0.comSilder.value = arg_5_1
 
-		return existCall(slot3)
+		return existCall(arg_5_3)
 	end
 end
 
-function slot0.CheckIsTweening(slot0)
-	return slot0.twId and LeanTween.isTweening(slot0.twId)
+function var_0_0.CheckIsTweening(arg_8_0)
+	return arg_8_0.twId and LeanTween.isTweening(arg_8_0.twId)
 end
 
-function slot0.SetOverSize(slot0, slot1)
-	slot0.rtBg.offsetMin = Vector2(slot1, slot0.rtBg.offsetMin.y)
-	slot0.rtBg.offsetMax = Vector2(-slot1, slot0.rtBg.offsetMax.y)
+function var_0_0.SetOverSize(arg_9_0, arg_9_1)
+	arg_9_0.rtBg.offsetMin = Vector2(arg_9_1, arg_9_0.rtBg.offsetMin.y)
+	arg_9_0.rtBg.offsetMax = Vector2(-arg_9_1, arg_9_0.rtBg.offsetMax.y)
 end
 
-return slot0
+return var_0_0

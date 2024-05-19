@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "",
-	init_effect = "",
-	time = 3,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 17783,
-	icon = 17780,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -47,5 +26,26 @@ return {
 				hpLowerBound = 0
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "",
+	init_effect = "",
+	time = 3,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 17783,
+	icon = 17780,
+	last_effect = ""
 }

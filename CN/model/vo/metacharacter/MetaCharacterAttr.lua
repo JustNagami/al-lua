@@ -1,109 +1,116 @@
-slot0 = class("MetaCharacterAttr", import("..BaseVO"))
+﻿local var_0_0 = class("MetaCharacterAttr", import("..BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.attr = slot1.attr
-	slot0.items = _.map(slot1.items or {}, function (slot0)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.attr = arg_1_1.attr
+	arg_1_0.items = _.map(arg_1_1.items or {}, function(arg_2_0)
 		return MetaRepairItem.New({
-			id = slot0
+			id = arg_2_0
 		})
 	end)
-	slot0.level = slot1.level or 1
+	arg_1_0.level = arg_1_1.level or 1
 end
 
-function slot0.getLevelByItemId(slot0, slot1)
-	slot2 = 1
+function var_0_0.getLevelByItemId(arg_3_0, arg_3_1)
+	local var_3_0 = 1
 
-	for slot6, slot7 in pairs(slot0.items) do
-		if slot7.id == slot1 then
-			slot2 = slot6 + 1
+	for iter_3_0, iter_3_1 in pairs(arg_3_0.items) do
+		if iter_3_1.id == arg_3_1 then
+			var_3_0 = iter_3_0 + 1
 
 			break
 		end
 	end
 
-	return slot2
+	return var_3_0
 end
 
-function slot0.updateCount(slot0, slot1)
-	if slot0.level < slot1 then
-		slot0.level = slot1
+function var_0_0.updateCount(arg_4_0, arg_4_1)
+	if arg_4_1 > arg_4_0.level then
+		arg_4_0.level = arg_4_1
 	end
 end
 
-function slot0.hasItemId(slot0, slot1)
-	return _.any(slot0.items, function (slot0)
-		return slot0.id == uv0
+function var_0_0.hasItemId(arg_5_0, arg_5_1)
+	return _.any(arg_5_0.items, function(arg_6_0)
+		return arg_6_0.id == arg_5_1
 	end)
 end
 
-function slot0.getLevel(slot0)
-	return slot0.level
+function var_0_0.getLevel(arg_7_0)
+	return arg_7_0.level
 end
 
-function slot0.isMaxLevel(slot0)
-	return slot0.level > #slot0.items
+function var_0_0.isMaxLevel(arg_8_0)
+	return arg_8_0.level > #arg_8_0.items
 end
 
-function slot0.getAddition(slot0)
-	for slot5 = 1, slot0.level - 1 do
-		slot1 = 0 + slot0.items[slot5]:getAdditionValue()
+function var_0_0.getAddition(arg_9_0)
+	local var_9_0 = 0
+
+	for iter_9_0 = 1, arg_9_0.level - 1 do
+		var_9_0 = var_9_0 + arg_9_0.items[iter_9_0]:getAdditionValue()
 	end
 
-	return slot1
+	return var_9_0
 end
 
-function slot0.getMaxAddition(slot0)
-	for slot5, slot6 in ipairs(slot0.items) do
-		slot1 = 0 + slot6:getAdditionValue()
+function var_0_0.getMaxAddition(arg_10_0)
+	local var_10_0 = 0
+
+	for iter_10_0, iter_10_1 in ipairs(arg_10_0.items) do
+		var_10_0 = var_10_0 + iter_10_1:getAdditionValue()
 	end
 
-	return slot1
+	return var_10_0
 end
 
-function slot0.getRepairExp(slot0)
-	for slot5 = 1, slot0.level - 1 do
-		slot1 = 0 + slot0.items[slot5]:getRepairExp()
+function var_0_0.getRepairExp(arg_11_0)
+	local var_11_0 = 0
+
+	for iter_11_0 = 1, arg_11_0.level - 1 do
+		var_11_0 = var_11_0 + arg_11_0.items[iter_11_0]:getRepairExp()
 	end
 
-	return slot1
+	return var_11_0
 end
 
-function slot0.getItem(slot0)
-	assert(slot0.items[slot0.level], "level : " .. slot0.level)
+function var_0_0.getItem(arg_12_0)
+	assert(arg_12_0.items[arg_12_0.level], "level : " .. arg_12_0.level)
 
-	return slot0.items[slot0.level]
+	return arg_12_0.items[arg_12_0.level]
 end
 
-function slot0.getItemByLevel(slot0, slot1)
-	return slot0.items[slot1]
+function var_0_0.getItemByLevel(arg_13_0, arg_13_1)
+	return arg_13_0.items[arg_13_1]
 end
 
-function slot0.levelUp(slot0)
-	if not slot0:isMaxLevel() then
-		slot0.level = slot0.level + 1
+function var_0_0.levelUp(arg_14_0)
+	if not arg_14_0:isMaxLevel() then
+		arg_14_0.level = arg_14_0.level + 1
 	end
 end
 
-function slot0.isCanRepair(slot0)
-	if slot0:isMaxLevel() then
+function var_0_0.isCanRepair(arg_15_0)
+	if arg_15_0:isMaxLevel() then
 		return false
 	end
 
-	slot2 = slot0:getItem()
+	local var_15_0 = arg_15_0:getItem()
+	local var_15_1 = var_15_0:getItemId()
 
-	if slot2:getTotalCnt() <= getProxy(BagProxy):getItemCountById(slot2:getItemId()) then
+	if var_15_0:getTotalCnt() <= getProxy(BagProxy):getItemCountById(var_15_1) then
 		return true
 	else
 		return false
 	end
 end
 
-function slot0.getItemCount(slot0)
-	return #slot0.items
+function var_0_0.getItemCount(arg_16_0)
+	return #arg_16_0.items
 end
 
-function slot0.isLock(slot0)
-	return slot0:getItemCount() == 0
+function var_0_0.isLock(arg_17_0)
+	return arg_17_0:getItemCount() == 0
 end
 
-return slot0
+return var_0_0

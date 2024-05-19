@@ -1,48 +1,51 @@
-slot0 = class("FrameReTemplatePage", import("view.base.BaseActivityPage"))
+﻿local var_0_0 = class("FrameReTemplatePage", import("view.base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.battleBtn = slot0:findTF("battle_btn", slot0.bg)
-	slot0.getBtn = slot0:findTF("get_btn", slot0.bg)
-	slot0.gotBtn = slot0:findTF("got_btn", slot0.bg)
-	slot0.bar = slot0:findTF("frame/bar", slot0.bg)
-	slot0.step = slot0:findTF("frame/step", slot0.bg)
-	slot0.progress = slot0:findTF("frame/progress", slot0.bg)
-	slot0.frameGot = slot0:findTF("frame/got", slot0.bg)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.battleBtn = arg_1_0:findTF("battle_btn", arg_1_0.bg)
+	arg_1_0.getBtn = arg_1_0:findTF("get_btn", arg_1_0.bg)
+	arg_1_0.gotBtn = arg_1_0:findTF("got_btn", arg_1_0.bg)
+	arg_1_0.bar = arg_1_0:findTF("frame/bar", arg_1_0.bg)
+	arg_1_0.step = arg_1_0:findTF("frame/step", arg_1_0.bg)
+	arg_1_0.progress = arg_1_0:findTF("frame/progress", arg_1_0.bg)
+	arg_1_0.frameGot = arg_1_0:findTF("frame/got", arg_1_0.bg)
 end
 
-function slot0.OnDataSetting(slot0)
-	slot0.avatarConfig = pg.activity_event_avatarframe[slot0.activity:getConfig("config_id")]
+function var_0_0.OnDataSetting(arg_2_0)
+	arg_2_0.avatarConfig = pg.activity_event_avatarframe[arg_2_0.activity:getConfig("config_id")]
 end
 
-function slot0.OnFirstFlush(slot0)
-	onButton(slot0, slot0.battleBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK)
+function var_0_0.OnFirstFlush(arg_3_0)
+	onButton(arg_3_0, arg_3_0.battleBtn, function()
+		arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.getBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_OPERATION, {
+	onButton(arg_3_0, arg_3_0.getBtn, function()
+		arg_3_0:emit(ActivityMediator.EVENT_OPERATION, {
 			cmd = 1,
-			activity_id = uv0.activity.id
+			activity_id = arg_3_0.activity.id
 		})
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	if slot0.avatarConfig.target < slot0.activity.data1 then
-		slot1 = slot2 or slot1
-	end
+function var_0_0.OnUpdateFlush(arg_6_0)
+	local var_6_0 = arg_6_0.activity.data1
+	local var_6_1 = arg_6_0.avatarConfig.target
 
-	setText(slot0.step, slot1 / slot2 >= 1 and setColorStr(slot1, COLOR_GREEN) or slot1)
-	setText(slot0.progress, "/" .. slot2)
-	setFillAmount(slot0.bar, slot3)
+	var_6_0 = var_6_1 < var_6_0 and var_6_1 or var_6_0
 
-	slot4 = slot2 <= slot1
-	slot5 = slot0.activity.data2 >= 1
+	local var_6_2 = var_6_0 / var_6_1
 
-	setActive(slot0.battleBtn, not slot4)
-	setActive(slot0.getBtn, not slot5 and slot4)
-	setActive(slot0.gotBtn, slot5)
-	setActive(slot0.frameGot, slot5)
+	setText(arg_6_0.step, var_6_2 >= 1 and setColorStr(var_6_0, COLOR_GREEN) or var_6_0)
+	setText(arg_6_0.progress, "/" .. var_6_1)
+	setFillAmount(arg_6_0.bar, var_6_2)
+
+	local var_6_3 = var_6_1 <= var_6_0
+	local var_6_4 = arg_6_0.activity.data2 >= 1
+
+	setActive(arg_6_0.battleBtn, not var_6_3)
+	setActive(arg_6_0.getBtn, not var_6_4 and var_6_3)
+	setActive(arg_6_0.gotBtn, var_6_4)
+	setActive(arg_6_0.frameGot, var_6_4)
 end
 
-return slot0
+return var_0_0

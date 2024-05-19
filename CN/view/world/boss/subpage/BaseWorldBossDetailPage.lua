@@ -1,5 +1,5 @@
-slot0 = class("BaseWorldBossDetailPage", import("....base.BaseSubView"))
-slot1 = {
+﻿local var_0_0 = class("BaseWorldBossDetailPage", import("....base.BaseSubView"))
+local var_0_1 = {
 	[970701] = {
 		-36.45481,
 		717.0379
@@ -36,326 +36,374 @@ slot1 = {
 	}
 }
 
-function slot0.Setup(slot0, slot1)
-	for slot6, slot7 in pairs({
+function var_0_0.Setup(arg_1_0, arg_1_1)
+	local var_1_0 = {
 		onBossUpdated = "OnBossUpdated",
 		onRankListUpdated = "OnRankListUpdated",
 		onPtUpdated = "OnPtUpdated",
 		onBossProgressUpdate = "OnBossProgressUpdate"
-	}) do
-		slot0[slot6] = function (...)
-			uv0[uv1](uv2, ...)
+	}
+
+	for iter_1_0, iter_1_1 in pairs(var_1_0) do
+		arg_1_0[iter_1_0] = function(...)
+			var_0_0[iter_1_1](arg_1_0, ...)
 		end
 	end
 
-	slot0.proxy = slot1
+	arg_1_0.proxy = arg_1_1
 
-	slot0:AddListeners(slot0.proxy)
+	arg_1_0:AddListeners(arg_1_0.proxy)
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.supportBtn = slot0:findTF("btns/help_btn")
-	slot0.startBtn = slot0:findTF("btns/start_btn")
-	slot0.awardBtn = slot0:findTF("btns/award_btn")
-	slot0.timeTF = slot0:findTF("btns/time")
-	slot0.leftTime = slot0:findTF("btns/time/label/Text"):GetComponent(typeof(Text))
-	slot0.awardList = UIItemList.New(slot0:findTF("award_panel/list"), slot0:findTF("award_panel/list/tpl"))
-	slot0.levelTxt = slot0:findTF("hp/level/Text"):GetComponent(typeof(Text))
-	slot0.hpTxt = slot0:findTF("hp/Text"):GetComponent(typeof(Text))
-	slot0.hpSlider = slot0:findTF("hp/slider"):GetComponent(typeof(Slider))
-	slot0.painting = slot0:findTF("paint")
-	slot0.infoAndRankPanel = WorldBossInfoAndRankPanel.New(slot0._tf, slot0.event)
+function var_0_0.OnLoaded(arg_3_0)
+	arg_3_0.supportBtn = arg_3_0:findTF("btns/help_btn")
+	arg_3_0.startBtn = arg_3_0:findTF("btns/start_btn")
+	arg_3_0.awardBtn = arg_3_0:findTF("btns/award_btn")
+	arg_3_0.timeTF = arg_3_0:findTF("btns/time")
+	arg_3_0.leftTime = arg_3_0:findTF("btns/time/label/Text"):GetComponent(typeof(Text))
+	arg_3_0.awardList = UIItemList.New(arg_3_0:findTF("award_panel/list"), arg_3_0:findTF("award_panel/list/tpl"))
+	arg_3_0.levelTxt = arg_3_0:findTF("hp/level/Text"):GetComponent(typeof(Text))
+	arg_3_0.hpTxt = arg_3_0:findTF("hp/Text"):GetComponent(typeof(Text))
+	arg_3_0.hpSlider = arg_3_0:findTF("hp/slider"):GetComponent(typeof(Slider))
+	arg_3_0.painting = arg_3_0:findTF("paint")
+	arg_3_0.infoAndRankPanel = WorldBossInfoAndRankPanel.New(arg_3_0._tf, arg_3_0.event)
 
-	slot0.infoAndRankPanel:SetCallback(function (slot0)
-		setGray(uv0.awardBtn, slot0, true)
-	end, function (slot0, slot1)
-		setGray(uv0.supportBtn, slot1 <= slot0, true)
-		onButton(uv0, uv0.supportBtn, function ()
-			if uv1 <= uv0 then
+	arg_3_0.infoAndRankPanel:SetCallback(function(arg_4_0)
+		setGray(arg_3_0.awardBtn, arg_4_0, true)
+	end, function(arg_5_0, arg_5_1)
+		setGray(arg_3_0.supportBtn, arg_5_1 <= arg_5_0, true)
+		onButton(arg_3_0, arg_3_0.supportBtn, function()
+			if arg_5_0 >= arg_5_1 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_max_challenge_people_cnt"))
 
 				return
 			end
 
-			if uv2.boss:isDeath() then
+			if arg_3_0.boss:isDeath() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_boss_is_death"))
 			else
-				uv2:OnRescue()
+				arg_3_0:OnRescue()
 			end
 		end, SFX_PANEL)
 	end)
-	setText(slot0:findTF("btns/time/label"), i18n("time_remaining_tip"))
+	setText(arg_3_0:findTF("btns/time/label"), i18n("time_remaining_tip"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.startBtn, function ()
-		uv0:OnStart()
+function var_0_0.OnInit(arg_7_0)
+	onButton(arg_7_0, arg_7_0.startBtn, function()
+		arg_7_0:OnStart()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.awardBtn, function ()
-		if uv0.boss:GetLeftTime() <= 0 then
+	onButton(arg_7_0, arg_7_0.awardBtn, function()
+		if arg_7_0.boss:GetLeftTime() <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_boss_award_expired"))
 		else
-			if uv0.boss:ShouldWaitForResult() then
+			if arg_7_0.boss:ShouldWaitForResult() then
 				return
 			end
 
-			uv0:emit(WorldBossMediator.ON_SUBMIT_AWARD, uv0.boss.id)
+			arg_7_0:emit(WorldBossMediator.ON_SUBMIT_AWARD, arg_7_0.boss.id)
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.OnStart(slot0)
-	if slot0.boss:isDeath() then
+function var_0_0.OnStart(arg_10_0)
+	if arg_10_0.boss:isDeath() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_boss_is_death"))
-	elseif slot0.boss:GetLeftTime() <= 0 then
+	elseif arg_10_0.boss:GetLeftTime() <= 0 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_boss_is_death"))
 	else
-		slot0:emit(WorldBossMediator.ON_BATTLE, slot0.boss.id)
+		arg_10_0:emit(WorldBossMediator.ON_BATTLE, arg_10_0.boss.id)
 	end
 end
 
-function slot0.AddListeners(slot0, slot1)
-	slot1:AddListener(WorldBossProxy.EventPtUpdated, slot0.onPtUpdated)
-	slot1:AddListener(WorldBossProxy.EventBossUpdated, slot0.onBossUpdated)
-	slot1:AddListener(WorldBossProxy.EventRankListUpdated, slot0.onRankListUpdated)
-	slot1:AddListener(WorldBossProxy.EventUnlockProgressUpdated, slot0.onBossProgressUpdate)
+function var_0_0.AddListeners(arg_11_0, arg_11_1)
+	arg_11_1:AddListener(WorldBossProxy.EventPtUpdated, arg_11_0.onPtUpdated)
+	arg_11_1:AddListener(WorldBossProxy.EventBossUpdated, arg_11_0.onBossUpdated)
+	arg_11_1:AddListener(WorldBossProxy.EventRankListUpdated, arg_11_0.onRankListUpdated)
+	arg_11_1:AddListener(WorldBossProxy.EventUnlockProgressUpdated, arg_11_0.onBossProgressUpdate)
 end
 
-function slot0.RemoveListeners(slot0, slot1)
-	slot1:RemoveListener(WorldBossProxy.EventPtUpdated, slot0.onPtUpdated)
-	slot1:RemoveListener(WorldBossProxy.EventBossUpdated, slot0.onBossUpdated)
-	slot1:RemoveListener(WorldBossProxy.EventRankListUpdated, slot0.onRankListUpdated)
-	slot1:RemoveListener(WorldBossProxy.EventUnlockProgressUpdated, slot0.onBossProgressUpdate)
+function var_0_0.RemoveListeners(arg_12_0, arg_12_1)
+	arg_12_1:RemoveListener(WorldBossProxy.EventPtUpdated, arg_12_0.onPtUpdated)
+	arg_12_1:RemoveListener(WorldBossProxy.EventBossUpdated, arg_12_0.onBossUpdated)
+	arg_12_1:RemoveListener(WorldBossProxy.EventRankListUpdated, arg_12_0.onRankListUpdated)
+	arg_12_1:RemoveListener(WorldBossProxy.EventUnlockProgressUpdated, arg_12_0.onBossProgressUpdate)
 end
 
-function slot0.OnBossUpdated(slot0)
-	if slot0:isShowing() then
-		slot0:UpdateBoss()
+function var_0_0.OnBossUpdated(arg_13_0)
+	if arg_13_0:isShowing() then
+		arg_13_0:UpdateBoss()
 	end
 end
 
-function slot0.OnRankListUpdated(slot0, slot1, slot2, slot3)
-	if slot0:isShowing() and slot0.boss and slot0.boss.id == slot3 and slot0.infoAndRankPanel and slot0.infoAndRankPanel:GetLoaded() then
-		slot0.infoAndRankPanel:FlushRank()
+function var_0_0.OnRankListUpdated(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
+	if arg_14_0:isShowing() and arg_14_0.boss and arg_14_0.boss.id == arg_14_3 and arg_14_0.infoAndRankPanel and arg_14_0.infoAndRankPanel:GetLoaded() then
+		arg_14_0.infoAndRankPanel:FlushRank()
 	end
 end
 
-function slot0.OnBossProgressUpdate(slot0)
-	if slot0:isShowing() then
-		slot0:OnUpdateRes()
+function var_0_0.OnBossProgressUpdate(arg_15_0)
+	if arg_15_0:isShowing() then
+		arg_15_0:OnUpdateRes()
 	end
 end
 
-function slot0.OnPtUpdated(slot0)
-	if slot0:isShowing() then
-		slot0:OnUpdatePt()
+function var_0_0.OnPtUpdated(arg_16_0)
+	if arg_16_0:isShowing() then
+		arg_16_0:OnUpdatePt()
 	end
 end
 
-function slot0.UpdatePainting(slot0, slot1)
-	if not slot1 then
+function var_0_0.UpdatePainting(arg_17_0, arg_17_1)
+	if not arg_17_1 then
 		return
 	end
 
-	if slot0.groupId ~= slot1 then
-		slot0.groupId = slot1
-		slot2 = slot0:findTF("label"):GetComponent(typeof(Image))
-		slot2.sprite = GetSpriteFromAtlas("MetaWorldboss/" .. slot0.groupId, "title" .. slot0:GetResSuffix())
+	if arg_17_0.groupId ~= arg_17_1 then
+		arg_17_0.groupId = arg_17_1
 
-		slot2:SetNativeSize()
-		setMetaPaintingPrefabAsync(slot0.painting, slot0.groupId, "lihuisha", function ()
-			uv0:OnPaintingLoad()
+		local var_17_0 = arg_17_0:findTF("label"):GetComponent(typeof(Image))
+
+		var_17_0.sprite = GetSpriteFromAtlas("MetaWorldboss/" .. arg_17_0.groupId, "title" .. arg_17_0:GetResSuffix())
+
+		var_17_0:SetNativeSize()
+		setMetaPaintingPrefabAsync(arg_17_0.painting, arg_17_0.groupId, "lihuisha", function()
+			arg_17_0:OnPaintingLoad()
 		end)
 
-		slot3 = nil
+		local var_17_1
+		local var_17_2 = WorldBossConst.MetaId2BossId(arg_17_1)
 
-		if WorldBossConst.MetaId2BossId(slot1) and (pg.world_joint_boss_template[slot4].p_offset or uv0[slot1]) or uv0[slot1] then
-			setAnchoredPosition(slot0.painting, {
-				x = slot3[1],
-				y = slot3[2]
+		if var_17_2 then
+			var_17_1 = pg.world_joint_boss_template[var_17_2].p_offset or var_0_1[arg_17_1]
+		else
+			var_17_1 = var_0_1[arg_17_1]
+		end
+
+		if var_17_1 then
+			setAnchoredPosition(arg_17_0.painting, {
+				x = var_17_1[1],
+				y = var_17_1[2]
 			})
 
-			slot0.painting.localScale = Vector3(slot3[3] or 1, slot3[4] or 1, 1)
+			local var_17_3 = var_17_1[3] or 1
+			local var_17_4 = var_17_1[4] or 1
+
+			arg_17_0.painting.localScale = Vector3(var_17_3, var_17_4, 1)
 		end
 	else
-		slot0:OnPaintingLoad()
+		arg_17_0:OnPaintingLoad()
 	end
 end
 
-function slot0.UpdateBoss(slot0)
-	slot0.boss = slot0.proxy:GetBoss()
+function var_0_0.UpdateBoss(arg_19_0)
+	arg_19_0.boss = arg_19_0.proxy:GetBoss()
 
-	if slot0.boss then
-		slot0:UpdateMainInfo()
-		slot0:RemoveChallengeTimer()
-		slot0:AddChanllengTimer()
-		slot0:RemoveGetAwardTimer()
-		slot0:AddGetAwaradTimer()
+	if arg_19_0.boss then
+		arg_19_0:UpdateMainInfo()
+		arg_19_0:RemoveChallengeTimer()
+		arg_19_0:AddChanllengTimer()
+		arg_19_0:RemoveGetAwardTimer()
+		arg_19_0:AddGetAwaradTimer()
 	end
 end
 
-function slot0.Update(slot0)
-	slot0:UpdateBoss()
-	slot0:Show()
+function var_0_0.Update(arg_20_0)
+	arg_20_0:UpdateBoss()
+	arg_20_0:Show()
 
-	if slot0.boss then
-		slot0.infoAndRankPanel:ExecuteAction("Flush", slot0.boss, slot0.proxy)
-		slot0:UpdateAward()
-		slot0:OnUpdateRes()
-		slot0:OnUpdatePt()
+	if arg_20_0.boss then
+		arg_20_0.infoAndRankPanel:ExecuteAction("Flush", arg_20_0.boss, arg_20_0.proxy)
+		arg_20_0:UpdateAward()
+		arg_20_0:OnUpdateRes()
+		arg_20_0:OnUpdatePt()
 	end
 end
 
-function slot0.UpdateAward(slot0)
-	slot0.awardList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
-			slot4 = {
+function var_0_0.UpdateAward(arg_21_0)
+	local var_21_0 = arg_21_0.boss:GetAwards()
+
+	arg_21_0.awardList:make(function(arg_22_0, arg_22_1, arg_22_2)
+		if arg_22_0 == UIItemList.EventUpdate then
+			local var_22_0 = var_21_0[arg_22_1 + 1]
+			local var_22_1 = {
 				count = 0,
-				type = slot3[1],
-				id = slot3[2]
+				type = var_22_0[1],
+				id = var_22_0[2]
 			}
 
-			updateDrop(slot2:Find("equipment/bg"), slot4)
-			slot2:Find("mask/name"):GetComponent("ScrollText"):SetText(slot4:getConfig("name"))
-			onButton(uv1, slot2, function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+			updateDrop(arg_22_2:Find("equipment/bg"), var_22_1)
+
+			local var_22_2 = arg_22_2:Find("mask/name"):GetComponent("ScrollText")
+			local var_22_3 = var_22_1:getConfig("name")
+
+			var_22_2:SetText(var_22_3)
+			onButton(arg_21_0, arg_22_2, function()
+				arg_21_0:emit(BaseUI.ON_DROP, var_22_1)
 			end, SFX_PANEL)
 		end
 	end)
-	slot0.awardList:align(math.min(#slot0.boss:GetAwards(), 3))
+	arg_21_0.awardList:align(math.min(#var_21_0, 3))
 end
 
-function slot0.UpdateMainInfo(slot0)
-	slot1 = slot0.boss
-	slot3 = slot1:GetHP()
-	slot4 = slot1:GetMaxHp()
-	slot0.levelTxt.text = slot1:GetLevel()
-	slot0.hpTxt.text = slot3 .. "/<color=#E31D15>" .. slot4 .. "</color>"
-	slot0.hpSlider.value = slot3 / slot4
-	slot6 = slot1:IsExpired()
+function var_0_0.UpdateMainInfo(arg_24_0)
+	local var_24_0 = arg_24_0.boss
+	local var_24_1 = arg_24_0.proxy
+	local var_24_2 = var_24_0:GetHP()
+	local var_24_3 = var_24_0:GetMaxHp()
 
-	setActive(slot0.supportBtn, not slot1:isDeath() and not slot6)
-	setActive(tf(slot0.leftTime).parent, true)
-	setActive(slot0.awardBtn, slot5 and slot0.proxy:canGetSelfAward())
-	setActive(slot0.startBtn, not slot5 and not slot6)
-	slot0:UpdatePainting(slot1.config.meta_id)
+	arg_24_0.levelTxt.text = var_24_0:GetLevel()
+	arg_24_0.hpTxt.text = var_24_2 .. "/<color=#E31D15>" .. var_24_3 .. "</color>"
+	arg_24_0.hpSlider.value = var_24_2 / var_24_3
+
+	local var_24_4 = var_24_0:isDeath()
+	local var_24_5 = var_24_0:IsExpired()
+	local var_24_6 = var_24_1:canGetSelfAward()
+
+	setActive(arg_24_0.supportBtn, not var_24_4 and not var_24_5)
+	setActive(tf(arg_24_0.leftTime).parent, true)
+	setActive(arg_24_0.awardBtn, var_24_4 and var_24_6)
+	setActive(arg_24_0.startBtn, not var_24_4 and not var_24_5)
+	arg_24_0:UpdatePainting(var_24_0.config.meta_id)
 end
 
-function slot0.AddChanllengTimer(slot0)
-	if slot0.boss:isDeath() then
+function var_0_0.AddChanllengTimer(arg_25_0)
+	local var_25_0 = arg_25_0.boss
+
+	if var_25_0:isDeath() then
 		return
 	end
 
-	if slot1:GetExpiredTime() < pg.TimeMgr.GetInstance():GetServerTime() then
-		function ()
-			uv0.leftTime.text = i18n("world_word_expired")
+	local var_25_1 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_25_2 = var_25_0:GetExpiredTime()
 
-			onNextTick(function ()
-				uv0:OnBossExpired()
-			end)
-		end()
+	local function var_25_3()
+		arg_25_0.leftTime.text = i18n("world_word_expired")
+
+		onNextTick(function()
+			arg_25_0:OnBossExpired()
+		end)
+	end
+
+	if var_25_2 < var_25_1 then
+		var_25_3()
 	else
-		slot0.bossTimer = Timer.New(function ()
-			if uv0 - pg.TimeMgr.GetInstance():GetServerTime() > 0 then
-				uv1.leftTime.text = pg.TimeMgr.GetInstance():DescCDTime(slot0)
+		arg_25_0.bossTimer = Timer.New(function()
+			local var_28_0 = var_25_2 - pg.TimeMgr.GetInstance():GetServerTime()
+
+			if var_28_0 > 0 then
+				arg_25_0.leftTime.text = pg.TimeMgr.GetInstance():DescCDTime(var_28_0)
 			else
-				uv2()
-				uv1:RemoveChallengeTimer()
+				var_25_3()
+				arg_25_0:RemoveChallengeTimer()
 			end
 		end, 1, -1)
 
-		slot0.bossTimer:Start()
-		slot0.bossTimer.func()
+		arg_25_0.bossTimer:Start()
+		arg_25_0.bossTimer.func()
 	end
 end
 
-function slot0.RemoveChallengeTimer(slot0)
-	if slot0.bossTimer then
-		slot0.bossTimer:Stop()
+function var_0_0.RemoveChallengeTimer(arg_29_0)
+	if arg_29_0.bossTimer then
+		arg_29_0.bossTimer:Stop()
 
-		slot0.bossTimer = nil
+		arg_29_0.bossTimer = nil
 	end
 end
 
-function slot0.AddGetAwaradTimer(slot0)
-	if not slot0.boss:isDeath() then
+function var_0_0.AddGetAwaradTimer(arg_30_0)
+	local var_30_0 = arg_30_0.boss
+
+	if not var_30_0:isDeath() then
 		return
 	end
 
-	if slot1:GetExpiredTime() < pg.TimeMgr.GetInstance():GetServerTime() then
-		function ()
-			uv0.leftTime.text = i18n("world_word_expired")
+	local var_30_1 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_30_2 = var_30_0:GetExpiredTime()
 
-			onNextTick(function ()
-				uv0:OnBossExpired()
-			end)
-		end()
+	local function var_30_3()
+		arg_30_0.leftTime.text = i18n("world_word_expired")
+
+		onNextTick(function()
+			arg_30_0:OnBossExpired()
+		end)
+	end
+
+	if var_30_2 < var_30_1 then
+		var_30_3()
 	else
-		slot0.awardTimer = Timer.New(function ()
-			if uv0 - pg.TimeMgr.GetInstance():GetServerTime() > 0 then
-				uv1.leftTime.text = pg.TimeMgr.GetInstance():DescCDTime(slot0)
+		arg_30_0.awardTimer = Timer.New(function()
+			local var_33_0 = var_30_2 - pg.TimeMgr.GetInstance():GetServerTime()
+
+			if var_33_0 > 0 then
+				arg_30_0.leftTime.text = pg.TimeMgr.GetInstance():DescCDTime(var_33_0)
 			else
-				uv2()
-				uv1:RemoveGetAwardTimer()
+				var_30_3()
+				arg_30_0:RemoveGetAwardTimer()
 			end
 		end, 1, -1)
 
-		slot0.awardTimer:Start()
-		slot0.awardTimer.func()
+		arg_30_0.awardTimer:Start()
+		arg_30_0.awardTimer.func()
 	end
 end
 
-function slot0.OnBossExpired(slot0)
-	slot0:emit(WorldBossMediator.ON_SELF_BOSS_OVERTIME)
+function var_0_0.OnBossExpired(arg_34_0)
+	arg_34_0:emit(WorldBossMediator.ON_SELF_BOSS_OVERTIME)
 end
 
-function slot0.RemoveGetAwardTimer(slot0)
-	if slot0.awardTimer then
-		slot0.awardTimer:Stop()
+function var_0_0.RemoveGetAwardTimer(arg_35_0)
+	if arg_35_0.awardTimer then
+		arg_35_0.awardTimer:Stop()
 
-		slot0.awardTimer = nil
+		arg_35_0.awardTimer = nil
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.groupId then
-		slot0:OnRetPaintingPrefab()
-		retMetaPaintingPrefab(slot0.painting, slot0.groupId)
+function var_0_0.OnDestroy(arg_36_0)
+	if arg_36_0.groupId then
+		arg_36_0:OnRetPaintingPrefab()
+		retMetaPaintingPrefab(arg_36_0.painting, arg_36_0.groupId)
 	end
 
-	slot0:RemoveGetAwardTimer()
-	slot0:RemoveListeners(slot0.proxy)
-	slot0:RemoveChallengeTimer()
+	arg_36_0:RemoveGetAwardTimer()
+	arg_36_0:RemoveListeners(arg_36_0.proxy)
+	arg_36_0:RemoveChallengeTimer()
 
-	if slot0.infoAndRankPanel then
-		slot0.infoAndRankPanel:Destroy()
+	if arg_36_0.infoAndRankPanel then
+		arg_36_0.infoAndRankPanel:Destroy()
 
-		slot0.infoAndRankPanel = nil
+		arg_36_0.infoAndRankPanel = nil
 	end
 
-	if slot0:isShowing() then
-		slot0:Hide()
+	if arg_36_0:isShowing() then
+		arg_36_0:Hide()
 	end
 end
 
-function slot0.OnRetPaintingPrefab(slot0)
+function var_0_0.OnRetPaintingPrefab(arg_37_0)
+	return
 end
 
-function slot0.GetResSuffix(slot0)
+function var_0_0.GetResSuffix(arg_38_0)
 	return ""
 end
 
-function slot0.OnPaintingLoad(slot0)
+function var_0_0.OnPaintingLoad(arg_39_0)
+	return
 end
 
-function slot0.OnUpdateRes(slot0)
+function var_0_0.OnUpdateRes(arg_40_0)
+	return
 end
 
-function slot0.OnUpdatePt(slot0)
+function var_0_0.OnUpdatePt(arg_41_0)
+	return
 end
 
-function slot0.OnRescue(slot0)
+function var_0_0.OnRescue(arg_42_0)
+	return
 end
 
-return slot0
+return var_0_0

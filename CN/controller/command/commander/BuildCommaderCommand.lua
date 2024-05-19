@@ -1,51 +1,64 @@
-slot0 = class("BuildCommaderCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("BuildCommaderCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.callback
-	slot5 = slot2.tip
-	slot9 = getProxy(BagProxy)
-	slot11 = {}
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.callback
+	local var_1_3 = var_1_0.tip
+	local var_1_4 = getProxy(CommanderProxy)
+	local var_1_5 = var_1_4:getPoolById(var_1_1)
+	local var_1_6 = getProxy(PlayerProxy):getData()
+	local var_1_7 = getProxy(BagProxy)
+	local var_1_8 = var_1_5:getConsume()
+	local var_1_9 = {}
 
-	for slot15, slot16 in ipairs(getProxy(CommanderProxy):getPoolById(slot2.id):getConsume()) do
-		if slot16[1] == DROP_TYPE_RESOURCE then
-			if getProxy(PlayerProxy):getData():getResById(slot16[2]) < slot16[3] then
+	for iter_1_0, iter_1_1 in ipairs(var_1_8) do
+		if iter_1_1[1] == DROP_TYPE_RESOURCE then
+			if var_1_6:getResById(iter_1_1[2]) < iter_1_1[3] then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 				return
 			end
-		elseif slot16[1] == DROP_TYPE_ITEM and slot9:getItemCountById(slot16[2]) < slot16[3] then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
+		elseif iter_1_1[1] == DROP_TYPE_ITEM then
+			local var_1_10 = iter_1_1[2]
 
-			return
+			if var_1_7:getItemCountById(var_1_10) < iter_1_1[3] then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
+
+				return
+			end
 		end
 
-		table.insert(slot11, Drop.Create(slot16))
+		local var_1_11 = Drop.Create(iter_1_1)
+
+		table.insert(var_1_9, var_1_11)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(25002, {
-		boxid = slot3
-	}, 25003, function (slot0)
-		if slot0.result == 0 then
-			uv0:updateBox(CommanderBox.New(slot0.box))
+		boxid = var_1_1
+	}, 25003, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = CommanderBox.New(arg_2_0.box)
 
-			for slot5, slot6 in ipairs(uv1) do
-				uv2:sendNotification(GAME.CONSUME_ITEM, slot6)
+			var_1_4:updateBox(var_2_0)
+
+			for iter_2_0, iter_2_1 in ipairs(var_1_9) do
+				arg_1_0:sendNotification(GAME.CONSUME_ITEM, iter_2_1)
 			end
 
-			uv2:sendNotification(GAME.COMMANDER_ON_BUILD_DONE)
+			arg_1_0:sendNotification(GAME.COMMANDER_ON_BUILD_DONE)
 
-			if uv3 then
+			if var_1_3 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("commander_build_done"))
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_build_erro", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_build_erro", arg_2_0.result))
 		end
 
-		if uv4 then
-			uv4()
+		if var_1_2 then
+			var_1_2()
 		end
 	end)
 end
 
-return slot0
+return var_0_0

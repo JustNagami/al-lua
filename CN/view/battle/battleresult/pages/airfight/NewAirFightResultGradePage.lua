@@ -1,42 +1,58 @@
-slot0 = class("NewAirFightResultGradePage", import("..NewBattleResultGradePage"))
+﻿local var_0_0 = class("NewAirFightResultGradePage", import("..NewBattleResultGradePage"))
 
-function slot0.LoadGrade(slot0, slot1)
-	slot4 = ys.Battle.BattleConst.BattleScore.C < slot0.contextData.score
-	slot5, slot6, slot7 = nil
-	slot7 = ({
+function var_0_0.LoadGrade(arg_1_0, arg_1_1)
+	local var_1_0 = {
 		"d",
 		"c",
 		"b",
 		"a",
 		"s"
-	})[slot3 + 1]
+	}
+	local var_1_1 = arg_1_0.contextData.score
+	local var_1_2
 
-	LoadImageSpriteAsync("battlescore/battle_score_" .. slot7 .. "/letter_" .. slot7, slot0.gradeIcon, true)
-	LoadImageSpriteAsync("battlescore/battle_score_" .. slot7 .. "/label_" .. slot7, slot0.gradeTxt, true)
+	var_1_2 = var_1_1 > ys.Battle.BattleConst.BattleScore.C
 
-	if slot1 then
-		slot1()
+	local var_1_3
+	local var_1_4
+	local var_1_5
+	local var_1_6 = var_1_0[var_1_1 + 1]
+	local var_1_7 = "battlescore/battle_score_" .. var_1_6 .. "/letter_" .. var_1_6
+	local var_1_8 = "battlescore/battle_score_" .. var_1_6 .. "/label_" .. var_1_6
+
+	LoadImageSpriteAsync(var_1_7, arg_1_0.gradeIcon, true)
+	LoadImageSpriteAsync(var_1_8, arg_1_0.gradeTxt, true)
+
+	if arg_1_1 then
+		arg_1_1()
 	end
 end
 
-function slot0.GetGetObjectives(slot0)
-	slot1 = {}
-	slot2 = slot0.contextData.statistics._airFightStatistics
+function var_0_0.GetGetObjectives(arg_2_0)
+	local var_2_0 = {}
+	local var_2_1 = arg_2_0.contextData.statistics._airFightStatistics
+	local var_2_2 = i18n("fighterplane_destroy_tip") .. var_2_1.kill
 
-	table.insert(slot1, {
-		text = setColorStr(i18n("fighterplane_destroy_tip") .. slot2.kill, "#FFFFFFFF"),
-		value = setColorStr(slot2.score, COLOR_BLUE)
-	})
-	table.insert(slot1, {
-		text = setColorStr(i18n("fighterplane_hit_tip") .. slot2.hit, "#FFFFFFFF"),
-		value = setColorStr(-slot2.lose, COLOR_BLUE)
-	})
-	table.insert(slot1, {
-		text = setColorStr(i18n("fighterplane_destroy_tip"), "#FFFFFFFF"),
-		value = setColorStr(slot2.total, COLOR_YELLOW)
+	table.insert(var_2_0, {
+		text = setColorStr(var_2_2, "#FFFFFFFF"),
+		value = setColorStr(var_2_1.score, COLOR_BLUE)
 	})
 
-	return slot1
+	local var_2_3 = i18n("fighterplane_hit_tip") .. var_2_1.hit
+
+	table.insert(var_2_0, {
+		text = setColorStr(var_2_3, "#FFFFFFFF"),
+		value = setColorStr(-var_2_1.lose, COLOR_BLUE)
+	})
+
+	local var_2_4 = i18n("fighterplane_destroy_tip")
+
+	table.insert(var_2_0, {
+		text = setColorStr(var_2_4, "#FFFFFFFF"),
+		value = setColorStr(var_2_1.total, COLOR_YELLOW)
+	})
+
+	return var_2_0
 end
 
-return slot0
+return var_0_0

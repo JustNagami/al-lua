@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 106320,
-	icon = 106320,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffField",
@@ -79,5 +59,25 @@ return {
 				skill_id = 106322
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 106320,
+	icon = 106320,
+	last_effect = ""
 }

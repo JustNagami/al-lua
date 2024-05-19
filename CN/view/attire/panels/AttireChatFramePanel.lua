@@ -1,79 +1,88 @@
-slot0 = class("AttireChatFramePanel", import(".AttireFramePanel"))
-slot1 = setmetatable
+﻿local var_0_0 = class("AttireChatFramePanel", import(".AttireFramePanel"))
+local var_0_1 = setmetatable
 
-function slot2(slot0)
-	slot1 = {
-		Update = function (slot0, slot1, slot2, slot3)
-			uv0:Update(slot1, slot2, slot3)
-			slot0:ReturnIconFrame(AttireConst.TYPE_CHAT_FRAME)
+local function var_0_2(arg_1_0)
+	local var_1_0 = {}
+	local var_1_1 = AttireFramePanel.Card(arg_1_0)
 
-			if slot0:isEmpty() then
-				return
-			end
-
-			slot0:LoadPrefab(slot1, function (slot0)
-				uv0(uv1, slot0, uv2)
-			end)
-		end,
-		Dispose = function (slot0)
-			slot0:ReturnIconFrame(AttireConst.TYPE_CHAT_FRAME)
-		end
-	}
-
-	function slot4(slot0, slot1, slot2)
-		setAnchoredPosition(slot1, Vector2.zero)
-		setText(slot1.transform:Find("Text"), "")
+	local function var_1_2(arg_2_0)
+		return
 	end
 
-	function (slot0)
-	end(slot1)
+	local function var_1_3(arg_3_0, arg_3_1, arg_3_2)
+		setAnchoredPosition(arg_3_1, Vector2.zero)
+		setText(arg_3_1.transform:Find("Text"), "")
+	end
 
-	return uv0(slot1, {
-		__index = AttireFramePanel.Card(slot0)
-	})
-end
+	function var_1_0.Update(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+		var_1_1:Update(arg_4_1, arg_4_2, arg_4_3)
+		arg_4_0:ReturnIconFrame(AttireConst.TYPE_CHAT_FRAME)
 
-function slot0.getUIName(slot0)
-	return "AttireChatFrameUI"
-end
-
-function slot0.GetData(slot0)
-	return slot0.rawAttireVOs.chatFrames
-end
-
-function slot0.OnInitItem(slot0, slot1)
-	slot2 = uv0(slot1)
-	slot0.cards[slot1] = slot2
-
-	onButton(slot0, slot2._go, function ()
-		if uv0:isEmpty() then
+		if arg_4_0:isEmpty() then
 			return
 		end
 
-		if uv1.card then
-			uv1.card:UpdateSelected(false)
+		arg_4_0:LoadPrefab(arg_4_1, function(arg_5_0)
+			var_1_3(arg_4_0, arg_5_0, arg_4_1)
+		end)
+	end
+
+	function var_1_0.Dispose(arg_6_0)
+		arg_6_0:ReturnIconFrame(AttireConst.TYPE_CHAT_FRAME)
+	end
+
+	var_1_2(var_1_0)
+
+	return var_0_1(var_1_0, {
+		__index = var_1_1
+	})
+end
+
+function var_0_0.getUIName(arg_7_0)
+	return "AttireChatFrameUI"
+end
+
+function var_0_0.GetData(arg_8_0)
+	return arg_8_0.rawAttireVOs.chatFrames
+end
+
+function var_0_0.OnInitItem(arg_9_0, arg_9_1)
+	local var_9_0 = var_0_2(arg_9_1)
+
+	arg_9_0.cards[arg_9_1] = var_9_0
+
+	onButton(arg_9_0, var_9_0._go, function()
+		if var_9_0:isEmpty() then
+			return
 		end
 
-		uv1.contextData.chatFrameIndex = uv0.attireFrame.id
+		if arg_9_0.card then
+			arg_9_0.card:UpdateSelected(false)
+		end
 
-		uv1:UpdateDesc(uv0)
-		uv0:UpdateSelected(true)
+		arg_9_0.contextData.chatFrameIndex = var_9_0.attireFrame.id
 
-		uv1.card = uv0
+		arg_9_0:UpdateDesc(var_9_0)
+		var_9_0:UpdateSelected(true)
+
+		arg_9_0.card = var_9_0
 	end, SFX_PANEL)
 end
 
-function slot0.GetColumn(slot0)
+function var_0_0.GetColumn(arg_11_0)
 	return 3
 end
 
-function slot0.OnUpdateItem(slot0, slot1, slot2)
-	uv0.super.OnUpdateItem(slot0, slot1, slot2)
+function var_0_0.OnUpdateItem(arg_12_0, arg_12_1, arg_12_2)
+	var_0_0.super.OnUpdateItem(arg_12_0, arg_12_1, arg_12_2)
 
-	if slot0.cards[slot2].attireFrame.id == (slot0.contextData.chatFrameIndex or slot0.displayVOs[1].id) then
-		triggerButton(slot4._go)
-		slot4:UpdateSelected(true)
+	local var_12_0 = arg_12_0.contextData.chatFrameIndex or arg_12_0.displayVOs[1].id
+	local var_12_1 = arg_12_0.cards[arg_12_2]
+
+	if var_12_1.attireFrame.id == var_12_0 then
+		triggerButton(var_12_1._go)
+		var_12_1:UpdateSelected(true)
 	end
 end
 
-return slot0
+return var_0_0

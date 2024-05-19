@@ -1,329 +1,349 @@
-slot0 = class("CookGameJudge")
+﻿local var_0_0 = class("CookGameJudge")
 
-function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot0._tf = slot1
-	slot0._judgeDatas = slot3
-	slot0._gameData = slot4
-	slot0._event = slot5
-	slot0._index = slot2
-	slot0.wantedTf = findTF(slot0._tf, "wanted")
-	slot0.smokeTf = findTF(slot0._tf, "wanted/smoke")
-	slot0.dftEvent = GetComponent(findTF(slot0._tf, "mask/anim"), typeof(DftAniEvent))
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5)
+	arg_1_0._tf = arg_1_1
+	arg_1_0._judgeDatas = arg_1_3
+	arg_1_0._gameData = arg_1_4
+	arg_1_0._event = arg_1_5
+	arg_1_0._index = arg_1_2
+	arg_1_0.wantedTf = findTF(arg_1_0._tf, "wanted")
+	arg_1_0.smokeTf = findTF(arg_1_0._tf, "wanted/smoke")
+	arg_1_0.dftEvent = GetComponent(findTF(arg_1_0._tf, "mask/anim"), typeof(DftAniEvent))
 
-	slot0.dftEvent:SetEndEvent(function (slot0)
-		uv0:onAniEnd()
+	arg_1_0.dftEvent:SetEndEvent(function(arg_2_0)
+		arg_1_0:onAniEnd()
 	end)
 
-	slot0.animator = GetComponent(findTF(slot0._tf, "mask/anim"), typeof(Animator))
+	arg_1_0.animator = GetComponent(findTF(arg_1_0._tf, "mask/anim"), typeof(Animator))
 
-	onButton(slot0._event, findTF(slot0._tf, "collider"), function ()
-		if uv0.clickCallback then
-			uv0.clickCallback()
+	onButton(arg_1_0._event, findTF(arg_1_0._tf, "collider"), function()
+		if arg_1_0.clickCallback then
+			arg_1_0.clickCallback()
 		end
 	end, SFX_CANCEL)
 end
 
-function slot0.clear(slot0)
-	slot0._puzzleTime = nil
-	slot0._puzzleWeight = nil
-	slot0._puzzleCamp = nil
-	slot0.cakeId = 1
-	slot0.inTrigger = false
-	slot0.serveData = nil
-	slot0.serveCallback = nil
+function var_0_0.clear(arg_4_0)
+	arg_4_0._puzzleTime = nil
+	arg_4_0._puzzleWeight = nil
+	arg_4_0._puzzleCamp = nil
+	arg_4_0.cakeId = 1
+	arg_4_0.inTrigger = false
+	arg_4_0.serveData = nil
+	arg_4_0.serveCallback = nil
 
-	slot0:updateWanted(nil)
-	slot0:showCard(nil)
-	setActive(slot0.wantedTf, false)
-	setActive(slot0._tf, false)
+	arg_4_0:updateWanted(nil)
+	arg_4_0:showCard(nil)
+	setActive(arg_4_0.wantedTf, false)
+	setActive(arg_4_0._tf, false)
 
-	slot0.animator.runtimeAnimatorController = slot0:getAnimData(slot0.cakeId).runtimeAnimator
+	local var_4_0 = arg_4_0:getAnimData(arg_4_0.cakeId)
 
-	slot0:select(false)
+	arg_4_0.animator.runtimeAnimatorController = var_4_0.runtimeAnimator
+
+	arg_4_0:select(false)
 end
 
-function slot0.start(slot0)
-	slot0:clear()
-	setActive(slot0._tf, true)
-	slot0:updateWanted(math.random(1, slot0._gameData.cake_num))
+function var_0_0.start(arg_5_0)
+	arg_5_0:clear()
+	setActive(arg_5_0._tf, true)
+	arg_5_0:updateWanted(math.random(1, arg_5_0._gameData.cake_num))
 end
 
-function slot0.step(slot0, slot1)
-	if slot0.wantedCakeTime and slot0.wantedCakeTime > 0 then
-		slot0.wantedCakeTime = slot0.wantedCakeTime - slot1
+function var_0_0.step(arg_6_0, arg_6_1)
+	if arg_6_0.wantedCakeTime and arg_6_0.wantedCakeTime > 0 then
+		arg_6_0.wantedCakeTime = arg_6_0.wantedCakeTime - arg_6_1
 
-		if slot0.wantedCakeTime <= 0 then
-			slot0.wantedCakeTime = nil
+		if arg_6_0.wantedCakeTime <= 0 then
+			arg_6_0.wantedCakeTime = nil
 
-			slot0:updateWanted(math.random(1, slot0._gameData.cake_num))
+			arg_6_0:updateWanted(math.random(1, arg_6_0._gameData.cake_num))
 		end
 	end
 
-	if slot0._puzzleTime then
-		slot0._puzzleTime = slot0._puzzleTime - slot1
+	if arg_6_0._puzzleTime then
+		arg_6_0._puzzleTime = arg_6_0._puzzleTime - arg_6_1
 
-		if slot0._puzzleTime <= 0 then
-			slot0._puzzleTime = nil
-			slot0._puzzleCamp = nil
-			slot0._puzzleWeight = nil
+		if arg_6_0._puzzleTime <= 0 then
+			arg_6_0._puzzleTime = nil
+			arg_6_0._puzzleCamp = nil
+			arg_6_0._puzzleWeight = nil
 
-			slot0:showCard(false)
+			arg_6_0:showCard(false)
 		end
 	end
 
-	if slot0.readyServeTime and slot0.readyServeTime > 0 then
-		slot0.readyServeTime = slot0.readyServeTime - slot1
+	if arg_6_0.readyServeTime and arg_6_0.readyServeTime > 0 then
+		arg_6_0.readyServeTime = arg_6_0.readyServeTime - arg_6_1
 
-		if slot0.readyServeTime <= 0 then
-			slot0.readyServeTime = nil
-			slot0.serveData = nil
-			slot0.serveCallback = nil
+		if arg_6_0.readyServeTime <= 0 then
+			arg_6_0.readyServeTime = nil
+			arg_6_0.serveData = nil
+			arg_6_0.serveCallback = nil
 		end
 	end
 end
 
-function slot0.destroy(slot0)
+function var_0_0.destroy(arg_7_0)
+	return
 end
 
-function slot0.changeSpeed(slot0, slot1)
-	slot0.animator.speed = slot1
+function var_0_0.changeSpeed(arg_8_0, arg_8_1)
+	arg_8_0.animator.speed = arg_8_1
 end
 
-function slot0.onAniEnd(slot0)
-	slot0.inTrigger = false
+function var_0_0.onAniEnd(arg_9_0)
+	arg_9_0.inTrigger = false
 
-	if slot0.freshWanted then
-		slot0.freshWanted = false
-		slot0.wantedCakeTime = nil
+	if arg_9_0.freshWanted then
+		arg_9_0.freshWanted = false
+		arg_9_0.wantedCakeTime = nil
 
-		slot0:updateWanted(math.random(1, slot0._gameData.cake_num))
+		arg_9_0:updateWanted(math.random(1, arg_9_0._gameData.cake_num))
 	end
 end
 
-function slot0.getIndex(slot0)
-	return slot0._index
+function var_0_0.getIndex(arg_10_0)
+	return arg_10_0._index
 end
 
-function slot0.getTf(slot0)
-	return slot0._tf
+function var_0_0.getTf(arg_11_0)
+	return arg_11_0._tf
 end
 
-function slot0.trigger(slot0, slot1, slot2, slot3, slot4)
-	if slot0.inTrigger then
+function var_0_0.trigger(arg_12_0, arg_12_1, arg_12_2, arg_12_3, arg_12_4)
+	if arg_12_0.inTrigger then
 		print("评委已有状态")
 
 		return
 	end
 
-	slot5 = Vector3(1, 1, 1)
-	slot0.inTrigger = true
+	local var_12_0 = Vector3(1, 1, 1)
 
-	if slot0.cakeId ~= slot1 then
-		slot0.cakeId = slot1
-		slot0.animator.runtimeAnimatorController = slot0:getAnimData(slot0.cakeId).runtimeAnimator
+	arg_12_0.inTrigger = true
+
+	if arg_12_0.cakeId ~= arg_12_1 then
+		arg_12_0.cakeId = arg_12_1
+
+		local var_12_1 = arg_12_0:getAnimData(arg_12_0.cakeId)
+
+		arg_12_0.animator.runtimeAnimatorController = var_12_1.runtimeAnimator
 	end
 
-	slot0.animator:SetBool("AC", slot3 or false)
-	slot0.animator:SetBool("right", slot2 or false)
-	slot0.animator:SetBool("bk", slot4 or false)
-	slot0.animator:SetBool("reject", slot0._puzzleCamp and true or false)
+	arg_12_0.animator:SetBool("AC", arg_12_3 or false)
+	arg_12_0.animator:SetBool("right", arg_12_2 or false)
+	arg_12_0.animator:SetBool("bk", arg_12_4 or false)
+	arg_12_0.animator:SetBool("reject", arg_12_0._puzzleCamp and true or false)
 
-	if slot0._puzzleCamp and not slot2 then
-		slot5 = (slot0._puzzleCamp ~= CookGameConst.camp_player or Vector3(-1, 1, 1)) and Vector3(1, 1, 1)
+	if arg_12_0._puzzleCamp and not arg_12_2 then
+		if arg_12_0._puzzleCamp == CookGameConst.camp_player then
+			var_12_0 = Vector3(-1, 1, 1)
+		else
+			var_12_0 = Vector3(1, 1, 1)
+		end
 	end
 
-	findTF(slot0._tf, "mask").localScale = slot5
+	findTF(arg_12_0._tf, "mask").localScale = var_12_0
 
-	slot0.animator:SetTrigger("trigger")
+	arg_12_0.animator:SetTrigger("trigger")
 
-	if slot2 then
-		slot0:updateWanted()
+	if arg_12_2 then
+		arg_12_0:updateWanted()
 
-		slot0.freshWanted = true
-		slot0.wantedCakeTime = 3
+		arg_12_0.freshWanted = true
+		arg_12_0.wantedCakeTime = 3
 	end
 end
 
-function slot0.readyServe(slot0, slot1, slot2)
-	if slot0.serveCallback then
-		slot0.serveCallback(false)
+function var_0_0.readyServe(arg_13_0, arg_13_1, arg_13_2)
+	if arg_13_0.serveCallback then
+		arg_13_0.serveCallback(false)
 	end
 
-	slot0.serveData = slot1
-	slot0.readyServeTime = 4
-	slot0.serveCallback = slot2
+	arg_13_0.serveData = arg_13_1
+	arg_13_0.readyServeTime = 4
+	arg_13_0.serveCallback = arg_13_2
 
-	if slot0.serveData.battleData.cake_allow and slot0.wantedCake ~= slot0.serveData.parameter.cakeId then
-		if not slot0._puzzleTime then
-			setActive(slot0.smokeTf, false)
-			setActive(slot0.smokeTf, true)
+	if arg_13_0.serveData.battleData.cake_allow and arg_13_0.wantedCake ~= arg_13_0.serveData.parameter.cakeId then
+		if not arg_13_0._puzzleTime then
+			setActive(arg_13_0.smokeTf, false)
+			setActive(arg_13_0.smokeTf, true)
 
-			slot0.wantedCake = slot0.serveData.parameter.cakeId
+			arg_13_0.wantedCake = arg_13_0.serveData.parameter.cakeId
 
-			slot0:showCake(slot0.wantedCake)
-		elseif slot0._puzzleCamp ~= slot0.serveData.parameter.camp and slot0._puzzleWeight < slot0.serveData.parameter.weight then
-			setActive(slot0.smokeTf, false)
-			setActive(slot0.smokeTf, true)
+			arg_13_0:showCake(arg_13_0.wantedCake)
+		elseif arg_13_0._puzzleCamp ~= arg_13_0.serveData.parameter.camp and arg_13_0.serveData.parameter.weight > arg_13_0._puzzleWeight then
+			setActive(arg_13_0.smokeTf, false)
+			setActive(arg_13_0.smokeTf, true)
 
-			slot0.wantedCake = slot0.serveData.parameter.cakeId
+			arg_13_0.wantedCake = arg_13_0.serveData.parameter.cakeId
 
-			slot0:showCake(slot0.wantedCake)
+			arg_13_0:showCake(arg_13_0.wantedCake)
 		end
 	end
 end
 
-function slot0.setWantedImg(slot0)
+function var_0_0.setWantedImg(arg_14_0)
+	return
 end
 
-function slot0.serve(slot0)
-	if not slot0.serveData then
+function var_0_0.serve(arg_15_0)
+	if not arg_15_0.serveData then
 		return
 	end
 
-	if (not slot0.wantedCake or slot0.inTrigger) and slot0.serveCallback then
-		slot0.serveCallback(false)
+	if (not arg_15_0.wantedCake or arg_15_0.inTrigger) and arg_15_0.serveCallback then
+		arg_15_0.serveCallback(false)
 	end
 
-	slot2 = slot0.serveData.battleData.ac_able
-	slot3 = slot0.serveData.judgeData.acPos
-	slot4 = slot0.serveData.battleData.id
-	slot5 = slot0.serveData.parameter.right_index
-	slot6 = slot0.serveData.parameter.right_flag
-	slot7 = slot0.serveData.parameter.rate
-	slot8 = slot0.serveData.parameter.weight
+	local var_15_0 = arg_15_0.serveData.parameter.cakeId
+	local var_15_1 = arg_15_0.serveData.battleData.ac_able
+	local var_15_2 = arg_15_0.serveData.judgeData.acPos
+	local var_15_3 = arg_15_0.serveData.battleData.id
+	local var_15_4 = arg_15_0.serveData.parameter.right_index
+	local var_15_5 = arg_15_0.serveData.parameter.right_flag
+	local var_15_6 = arg_15_0.serveData.parameter.rate
+	local var_15_7 = arg_15_0.serveData.parameter.weight
 
-	if not slot0.serveData.parameter.cakeId then
+	if not var_15_0 then
 		print("cakeId 不能为nil")
 
 		return
 	end
 
-	slot10 = false
+	local var_15_8 = var_15_1 and true or false
+	local var_15_9 = false
 
-	if slot2 and true or false then
-		slot11 = slot0._tf.parent
+	if var_15_8 then
+		local var_15_10 = arg_15_0._tf.parent
 
-		if slot0._tf.anchoredPosition.y < slot3.y then
-			slot10 = true
+		if var_15_2.y > arg_15_0._tf.anchoredPosition.y then
+			var_15_9 = true
 		end
 	end
 
-	slot11 = 1
+	local var_15_11 = 1
 
-	if slot0._puzzleCamp and slot0.serveData.parameter.camp == slot0._puzzleCamp then
-		slot11 = 2
-	elseif slot0._puzzleCamp and slot0.serveData.parameter.camp ~= slot0._puzzleCamp then
-		slot11 = 0
+	if arg_15_0._puzzleCamp and arg_15_0.serveData.parameter.camp == arg_15_0._puzzleCamp then
+		var_15_11 = 2
+	elseif arg_15_0._puzzleCamp and arg_15_0.serveData.parameter.camp ~= arg_15_0._puzzleCamp then
+		var_15_11 = 0
 	end
 
-	if slot0.serveData.parameter.puzzle then
-		slot0:setPuzzle(slot0.serveData.parameter.camp, slot0.serveData.battleData.weight)
+	if arg_15_0.serveData.parameter.puzzle then
+		arg_15_0:setPuzzle(arg_15_0.serveData.parameter.camp, arg_15_0.serveData.battleData.weight)
 	end
 
-	slot0:trigger(slot1, slot6, slot9, slot10)
-	slot0._event:emit(CookGameView.SERVE_EVENT, {
-		serveData = slot0.serveData,
-		pos = slot0._tf.position,
-		right = slot6,
-		rate = slot11,
-		weight = slot0._puzzleWeight or 0
+	local var_15_12 = arg_15_0._puzzleWeight or 0
+
+	arg_15_0:trigger(var_15_0, var_15_5, var_15_8, var_15_9)
+	arg_15_0._event:emit(CookGameView.SERVE_EVENT, {
+		serveData = arg_15_0.serveData,
+		pos = arg_15_0._tf.position,
+		right = var_15_5,
+		rate = var_15_11,
+		weight = var_15_12
 	})
 
-	slot0.serveData = nil
-	slot0.serveCallback = nil
-	slot0.readyServeTime = nil
+	arg_15_0.serveData = nil
+	arg_15_0.serveCallback = nil
+	arg_15_0.readyServeTime = nil
 end
 
-function slot0.setPuzzle(slot0, slot1, slot2)
-	slot0._puzzleCamp = slot1
-	slot0._puzzleWeight = slot2
-	slot0._puzzleTime = CookGameConst.puzzle_time
+function var_0_0.setPuzzle(arg_16_0, arg_16_1, arg_16_2)
+	arg_16_0._puzzleCamp = arg_16_1
+	arg_16_0._puzzleWeight = arg_16_2
+	arg_16_0._puzzleTime = CookGameConst.puzzle_time
 
-	slot0:showCard(true)
+	arg_16_0:showCard(true)
 end
 
-function slot0.showCard(slot0, slot1)
-	setActive(findTF(slot0.wantedTf, "Card"), slot1)
-	slot0:showCake(nil)
+function var_0_0.showCard(arg_17_0, arg_17_1)
+	setActive(findTF(arg_17_0.wantedTf, "Card"), arg_17_1)
+	arg_17_0:showCake(nil)
 end
 
-function slot0.isInServe(slot0)
-	return slot0.serveData
+function var_0_0.isInServe(arg_18_0)
+	return arg_18_0.serveData
 end
 
-function slot0.isInTrigger(slot0)
-	return slot0.inTrigger
+function var_0_0.isInTrigger(arg_19_0)
+	return arg_19_0.inTrigger
 end
 
-function slot0.getPuzzleCamp(slot0)
-	return slot0._puzzleCamp
+function var_0_0.getPuzzleCamp(arg_20_0)
+	return arg_20_0._puzzleCamp
 end
 
-function slot0.getWantedCake(slot0)
-	return slot0.wantedCake
+function var_0_0.getWantedCake(arg_21_0)
+	return arg_21_0.wantedCake
 end
 
-function slot0.updateWanted(slot0, slot1)
-	if slot0.wantedCake ~= slot1 and slot1 then
-		slot0:showCake(slot1)
+function var_0_0.updateWanted(arg_22_0, arg_22_1)
+	if arg_22_0.wantedCake ~= arg_22_1 and arg_22_1 then
+		arg_22_0:showCake(arg_22_1)
 	end
 
-	if slot1 and slot1 > 0 then
-		setActive(slot0.wantedTf, true)
+	if arg_22_1 and arg_22_1 > 0 then
+		setActive(arg_22_0.wantedTf, true)
 
-		slot0.wantedCake = slot1
-		slot0.wantedCakeTime = nil
+		arg_22_0.wantedCake = arg_22_1
+		arg_22_0.wantedCakeTime = nil
 	else
-		setActive(slot0.wantedTf, false)
+		setActive(arg_22_0.wantedTf, false)
 	end
 end
 
-function slot0.showCake(slot0, slot1)
-	for slot5 = 1, slot0._gameData.cake_num do
-		setActive(findTF(slot0.wantedTf, "cake_" .. slot5), not slot0._puzzleTime and slot5 == (slot1 or slot0.wantedCake))
+function var_0_0.showCake(arg_23_0, arg_23_1)
+	arg_23_1 = arg_23_1 or arg_23_0.wantedCake
+
+	for iter_23_0 = 1, arg_23_0._gameData.cake_num do
+		setActive(findTF(arg_23_0.wantedTf, "cake_" .. iter_23_0), not arg_23_0._puzzleTime and iter_23_0 == arg_23_1)
 	end
 end
 
-function slot0.setFrontContainer(slot0, slot1)
-	slot0._frontTf = slot1
+function var_0_0.setFrontContainer(arg_24_0, arg_24_1)
+	arg_24_0._frontTf = arg_24_1
 
-	if slot0._frontTf then
-		SetParent(slot0.wantedTf, slot0._frontTf, true)
+	if arg_24_0._frontTf then
+		SetParent(arg_24_0.wantedTf, arg_24_0._frontTf, true)
 	end
 end
 
-function slot0.getPos(slot0)
-	return slot0._tf.anchoredPosition()
+function var_0_0.getPos(arg_25_0)
+	return arg_25_0._tf.anchoredPosition()
 end
 
-function slot0.getLeftTf(slot0)
-	return findTF(slot0._tf, "leftPos")
+function var_0_0.getLeftTf(arg_26_0)
+	return findTF(arg_26_0._tf, "leftPos")
 end
 
-function slot0.getRightTf(slot0)
-	return findTF(slot0._tf, "rightPos")
+function var_0_0.getRightTf(arg_27_0)
+	return findTF(arg_27_0._tf, "rightPos")
 end
 
-function slot0.select(slot0, slot1)
-	setActive(findTF(slot0._tf, "select"), slot1)
+function var_0_0.select(arg_28_0, arg_28_1)
+	setActive(findTF(arg_28_0._tf, "select"), arg_28_1)
 end
 
-function slot0.setClickCallback(slot0, slot1)
-	slot0.clickCallback = slot1
+function var_0_0.setClickCallback(arg_29_0, arg_29_1)
+	arg_29_0.clickCallback = arg_29_1
 end
 
-function slot0.getAcTargetTf(slot0)
-	return findTF(slot0._tf, "acTarget")
+function var_0_0.getAcTargetTf(arg_30_0)
+	return findTF(arg_30_0._tf, "acTarget")
 end
 
-function slot0.getAnimData(slot0, slot1)
-	for slot5 = 1, #slot0._judgeDatas do
-		if slot0._judgeDatas[slot5].data.cake_id == slot1 then
-			return slot6
+function var_0_0.getAnimData(arg_31_0, arg_31_1)
+	for iter_31_0 = 1, #arg_31_0._judgeDatas do
+		local var_31_0 = arg_31_0._judgeDatas[iter_31_0]
+
+		if var_31_0.data.cake_id == arg_31_1 then
+			return var_31_0
 		end
 	end
 
 	return nil
 end
 
-return slot0
+return var_0_0

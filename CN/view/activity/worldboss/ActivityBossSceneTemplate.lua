@@ -1,557 +1,576 @@
-slot0 = class("ActivityBossSceneTemplate", import("view.base.BaseUI"))
+﻿local var_0_0 = class("ActivityBossSceneTemplate", import("view.base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	error("Need Complete")
 end
 
-slot0.optionsPath = {
+var_0_0.optionsPath = {
 	"adapt/top/option"
 }
 
-function slot0.init(slot0)
-	slot0.mainTF = slot0:findTF("adapt")
-	slot0.bg = slot0:findTF("bg")
-	slot0.bottom = slot0:findTF("bottom", slot0.mainTF)
-	slot4 = slot0.bottom
-	slot0.hpBar = slot0:findTF("progress", slot4)
-	slot0.barList = {}
+function var_0_0.init(arg_2_0)
+	arg_2_0.mainTF = arg_2_0:findTF("adapt")
+	arg_2_0.bg = arg_2_0:findTF("bg")
+	arg_2_0.bottom = arg_2_0:findTF("bottom", arg_2_0.mainTF)
+	arg_2_0.hpBar = arg_2_0:findTF("progress", arg_2_0.bottom)
+	arg_2_0.barList = {}
 
-	for slot4 = 1, 4 do
-		slot0.barList[slot4] = slot0:findTF(slot4, slot0.hpBar)
+	for iter_2_0 = 1, 4 do
+		arg_2_0.barList[iter_2_0] = arg_2_0:findTF(iter_2_0, arg_2_0.hpBar)
 	end
 
-	slot0.progressDigit = slot0:findTF("digit", slot0.bottom)
-	slot0.digitbig = slot0.progressDigit:Find("big")
-	slot0.digitsmall = slot0.progressDigit:Find("small")
-	slot0.left = slot0:findTF("left", slot0.mainTF)
-	slot0.rankTF = slot0:findTF("rank", slot0.left)
-	slot4 = "layout"
-	slot0.rankList = CustomIndexLayer.Clone2Full(slot0.rankTF:Find(slot4), 3)
+	arg_2_0.progressDigit = arg_2_0:findTF("digit", arg_2_0.bottom)
+	arg_2_0.digitbig = arg_2_0.progressDigit:Find("big")
+	arg_2_0.digitsmall = arg_2_0.progressDigit:Find("small")
+	arg_2_0.left = arg_2_0:findTF("left", arg_2_0.mainTF)
+	arg_2_0.rankTF = arg_2_0:findTF("rank", arg_2_0.left)
+	arg_2_0.rankList = CustomIndexLayer.Clone2Full(arg_2_0.rankTF:Find("layout"), 3)
 
-	for slot4, slot5 in ipairs(slot0.rankList) do
-		setActive(slot5, false)
+	for iter_2_1, iter_2_2 in ipairs(arg_2_0.rankList) do
+		setActive(iter_2_2, false)
 	end
 
-	slot4 = slot0.mainTF
-	slot0.right = slot0:findTF("right", slot4)
-	slot0.stageList = {}
+	arg_2_0.right = arg_2_0:findTF("right", arg_2_0.mainTF)
+	arg_2_0.stageList = {}
 
-	for slot4 = 1, 4 do
-		slot0.stageList[slot4] = slot0:findTF(slot4, slot0.right)
+	for iter_2_3 = 1, 4 do
+		arg_2_0.stageList[iter_2_3] = arg_2_0:findTF(iter_2_3, arg_2_0.right)
 	end
 
-	slot0.stageSP = slot0:findTF("5", slot0.right)
+	arg_2_0.stageSP = arg_2_0:findTF("5", arg_2_0.right)
 
-	if not IsNil(slot0.stageSP) then
-		setActive(slot0.stageSP, false)
+	if not IsNil(arg_2_0.stageSP) then
+		setActive(arg_2_0.stageSP, false)
 	end
 
-	slot0.awardFlash = slot0:findTF("ptaward/flash", slot0.right)
-	slot0.awardBtn = slot0:findTF("ptaward/button", slot0.right)
-	slot0.ptScoreTxt = slot0:findTF("ptaward/Text", slot0.right)
-	slot0.top = slot0:findTF("top", slot0.mainTF)
-	slot0.ticketNum = slot0:findTF("ticket/Text", slot0.top)
-	slot0.helpBtn = slot0:findTF("help", slot0.top)
+	arg_2_0.awardFlash = arg_2_0:findTF("ptaward/flash", arg_2_0.right)
+	arg_2_0.awardBtn = arg_2_0:findTF("ptaward/button", arg_2_0.right)
+	arg_2_0.ptScoreTxt = arg_2_0:findTF("ptaward/Text", arg_2_0.right)
+	arg_2_0.top = arg_2_0:findTF("top", arg_2_0.mainTF)
+	arg_2_0.ticketNum = arg_2_0:findTF("ticket/Text", arg_2_0.top)
+	arg_2_0.helpBtn = arg_2_0:findTF("help", arg_2_0.top)
 
-	onButton(slot0, slot0.top:Find("back_btn"), function ()
-		uv0:emit(uv1.ON_BACK)
+	onButton(arg_2_0, arg_2_0.top:Find("back_btn"), function()
+		arg_2_0:emit(var_0_0.ON_BACK)
 	end, SOUND_BACK)
-	setActive(slot0.top, false)
-	setAnchoredPosition(slot0.top, {
+	setActive(arg_2_0.top, false)
+	setAnchoredPosition(arg_2_0.top, {
 		y = 1080
 	})
-	setActive(slot0.left, false)
-	setAnchoredPosition(slot0.left, {
+	setActive(arg_2_0.left, false)
+	setAnchoredPosition(arg_2_0.left, {
 		x = -1920
 	})
-	setActive(slot0.right, false)
-	setAnchoredPosition(slot0.right, {
+	setActive(arg_2_0.right, false)
+	setAnchoredPosition(arg_2_0.right, {
 		x = 1920
 	})
-	setActive(slot0.bottom, false)
-	setAnchoredPosition(slot0.bottom, {
+	setActive(arg_2_0.bottom, false)
+	setAnchoredPosition(arg_2_0.bottom, {
 		y = -1080
 	})
-	slot0:buildCommanderPanel()
+	arg_2_0:buildCommanderPanel()
 end
 
-function slot0.GetBonusWindow(slot0)
-	if not slot0.bonusWindow then
-		slot0.bonusWindow = ActivityBossPtAwardSubPanel.New(slot0)
+function var_0_0.GetBonusWindow(arg_4_0)
+	if not arg_4_0.bonusWindow then
+		arg_4_0.bonusWindow = ActivityBossPtAwardSubPanel.New(arg_4_0)
 
-		slot0.bonusWindow:Load()
+		arg_4_0.bonusWindow:Load()
 	end
 
-	return slot0.bonusWindow
+	return arg_4_0.bonusWindow
 end
 
-function slot0.DestroyBonusWindow(slot0)
-	if slot0.bonusWindow then
-		slot0.bonusWindow:Destroy()
+function var_0_0.DestroyBonusWindow(arg_5_0)
+	if arg_5_0.bonusWindow then
+		arg_5_0.bonusWindow:Destroy()
 
-		slot0.bonusWindow = nil
-	end
-end
-
-function slot0.GetFleetEditPanel(slot0)
-	if not slot0.fleetEditPanel then
-		slot0.fleetEditPanel = ActivityBossBattleFleetSelectSubPanel.New(slot0)
-
-		slot0.fleetEditPanel:Load()
-	end
-
-	return slot0.fleetEditPanel
-end
-
-function slot0.DestroyFleetEditPanel(slot0)
-	if slot0.fleetEditPanel then
-		slot0.fleetEditPanel:Destroy()
-
-		slot0.fleetEditPanel = nil
+		arg_5_0.bonusWindow = nil
 	end
 end
 
-function slot0.EnterAnim(slot0)
-	setActive(slot0.top, true)
-	setActive(slot0.left, true)
-	setActive(slot0.right, true)
-	setActive(slot0.bottom, true)
-	slot0.mainTF:GetComponent("Animation"):Play("Enter_Animation")
+function var_0_0.GetFleetEditPanel(arg_6_0)
+	if not arg_6_0.fleetEditPanel then
+		arg_6_0.fleetEditPanel = ActivityBossBattleFleetSelectSubPanel.New(arg_6_0)
+
+		arg_6_0.fleetEditPanel:Load()
+	end
+
+	return arg_6_0.fleetEditPanel
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.awardBtn, function ()
-		uv0:ShowAwards()
+function var_0_0.DestroyFleetEditPanel(arg_7_0)
+	if arg_7_0.fleetEditPanel then
+		arg_7_0.fleetEditPanel:Destroy()
+
+		arg_7_0.fleetEditPanel = nil
+	end
+end
+
+function var_0_0.EnterAnim(arg_8_0)
+	setActive(arg_8_0.top, true)
+	setActive(arg_8_0.left, true)
+	setActive(arg_8_0.right, true)
+	setActive(arg_8_0.bottom, true)
+	arg_8_0.mainTF:GetComponent("Animation"):Play("Enter_Animation")
+end
+
+function var_0_0.didEnter(arg_9_0)
+	onButton(arg_9_0, arg_9_0.awardBtn, function()
+		arg_9_0:ShowAwards()
 	end, SFX_PANEL)
-
-	function slot4()
+	onButton(arg_9_0, arg_9_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.world_boss_help.tip
 		})
-	end
+	end, SFX_PANEL)
+	arg_9_0:UpdateDropItems()
 
-	onButton(slot0, slot0.helpBtn, slot4, SFX_PANEL)
-	slot0:UpdateDropItems()
-
-	for slot4 = 1, #slot0.stageList - 1 do
-		onButton(slot0, slot0.stageList[slot4], function ()
-			if uv0.contextData.activity:checkBattleTimeInBossAct() then
-				uv0:ShowNormalFleet(uv1, true)
+	for iter_9_0 = 1, #arg_9_0.stageList - 1 do
+		onButton(arg_9_0, arg_9_0.stageList[iter_9_0], function()
+			if arg_9_0.contextData.activity:checkBattleTimeInBossAct() then
+				arg_9_0:ShowNormalFleet(iter_9_0, true)
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 			end
 		end, SFX_PANEL)
 	end
 
-	onButton(slot0, slot0.stageList[#slot0.stageList], function ()
-		if uv0.contextData.activity:checkBattleTimeInBossAct() then
-			uv0:ShowEXFleet()
+	onButton(arg_9_0, arg_9_0.stageList[#arg_9_0.stageList], function()
+		if arg_9_0.contextData.activity:checkBattleTimeInBossAct() then
+			arg_9_0:ShowEXFleet()
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 		end
 	end, SFX_PANEL)
 
-	if not IsNil(slot0.stageSP) then
-		setActive(slot0.stageSP, slot0.contextData.spStageID)
-		onButton(slot0, slot0.stageSP, function ()
-			if uv0.contextData.activity:checkBattleTimeInBossAct() then
-				uv0:emit(ActivityBossMediatorTemplate.ONEN_BUFF_SELECT)
+	if not IsNil(arg_9_0.stageSP) then
+		setActive(arg_9_0.stageSP, arg_9_0.contextData.spStageID)
+		onButton(arg_9_0, arg_9_0.stageSP, function()
+			if arg_9_0.contextData.activity:checkBattleTimeInBossAct() then
+				arg_9_0:emit(ActivityBossMediatorTemplate.ONEN_BUFF_SELECT)
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 			end
 		end, SFX_PANEL)
 	end
 
-	if slot0.contextData.editFleet then
-		if slot0.contextData.editFleet <= #slot0.contextData.normalStageIDs then
-			slot0:ShowNormalFleet(slot1)
-		elseif slot0.contextData.editFleet == #slot0.contextData.normalStageIDs + 1 then
-			slot0:ShowEXFleet()
-		elseif slot0.contextData.editFleet == #slot0.contextData.normalStageIDs + 2 then
-			slot0:ShowSPFleet()
+	if arg_9_0.contextData.editFleet then
+		local var_9_0 = arg_9_0.contextData.editFleet
+
+		if var_9_0 <= #arg_9_0.contextData.normalStageIDs then
+			arg_9_0:ShowNormalFleet(var_9_0)
+		elseif arg_9_0.contextData.editFleet == #arg_9_0.contextData.normalStageIDs + 1 then
+			arg_9_0:ShowEXFleet()
+		elseif arg_9_0.contextData.editFleet == #arg_9_0.contextData.normalStageIDs + 2 then
+			arg_9_0:ShowSPFleet()
 		end
 	end
 
-	slot0:EnterAnim()
+	arg_9_0:EnterAnim()
 
-	if slot0.contextData.msg then
-		slot1 = slot0.contextData.msg.param
+	if arg_9_0.contextData.msg then
+		local var_9_1 = arg_9_0.contextData.msg.param
 
-		switch(slot0.contextData.msg.type, {
-			lastBonus = function ()
-				pg.MsgboxMgr.GetInstance():ShowMsgBox(uv0)
+		switch(arg_9_0.contextData.msg.type, {
+			lastBonus = function()
+				pg.MsgboxMgr.GetInstance():ShowMsgBox(var_9_1)
 			end,
-			oil = function ()
-				if not ItemTipPanel.ShowOilBuyTip(uv0) then
+			oil = function()
+				if not ItemTipPanel.ShowOilBuyTip(var_9_1) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 				end
 			end,
-			shipCapacity = function ()
+			shipCapacity = function()
 				BeginStageCommand.DockOverload()
 			end,
-			energy = function ()
-				Fleet.EnergyCheck(_.map(_.values(uv0.ships), function (slot0)
-					return getProxy(BayProxy):getShipById(slot0)
-				end), Fleet.DEFAULT_NAME_BOSS_ACT[uv0.id], function (slot0)
-					if slot0 then
-						uv0:emit(PreCombatMediator.BEGIN_STAGE_PROXY, {
-							curFleetId = uv1.id
+			energy = function()
+				Fleet.EnergyCheck(_.map(_.values(var_9_1.ships), function(arg_19_0)
+					return getProxy(BayProxy):getShipById(arg_19_0)
+				end), Fleet.DEFAULT_NAME_BOSS_ACT[var_9_1.id], function(arg_20_0)
+					if arg_20_0 then
+						arg_9_0:emit(PreCombatMediator.BEGIN_STAGE_PROXY, {
+							curFleetId = var_9_1.id
 						})
 					end
 				end)
 			end
 		})
 
-		slot0.contextData.msg = nil
+		arg_9_0.contextData.msg = nil
 	end
 end
 
-function slot0.UpdateView(slot0)
-	slot0:UpdatePage()
-	slot0:CheckStory()
+function var_0_0.UpdateView(arg_21_0)
+	arg_21_0:UpdatePage()
+	arg_21_0:CheckStory()
 end
 
-function slot0.CheckStory(slot0)
-	slot1 = pg.NewStoryMgr.GetInstance()
+function var_0_0.CheckStory(arg_22_0)
+	local var_22_0 = pg.NewStoryMgr.GetInstance()
+	local var_22_1 = arg_22_0.contextData.activity:getConfig("config_client").story
 
-	table.SerialIpairsAsync(slot0.contextData.activity:getConfig("config_client").story, function (slot0, slot1, slot2)
-		if uv0.contextData.bossHP < slot1[1] + ((slot0 == 1 or slot1[1] == 0) and 1 or 0) and not pg.NewStoryMgr:GetInstance():IsPlayed(slot1[2]) then
-			uv1:Play(slot1[2], slot2)
+	table.SerialIpairsAsync(var_22_1, function(arg_23_0, arg_23_1, arg_23_2)
+		if arg_22_0.contextData.bossHP < arg_23_1[1] + ((arg_23_0 == 1 or arg_23_1[1] == 0) and 1 or 0) and not pg.NewStoryMgr:GetInstance():IsPlayed(arg_23_1[2]) then
+			var_22_0:Play(arg_23_1[2], arg_23_2)
 
 			return
 		end
 
-		slot2()
+		arg_23_2()
 	end)
 end
 
-function slot0.UpdatePage(slot0)
-	slot1 = slot0.contextData.bossHP
+function var_0_0.UpdatePage(arg_24_0)
+	local var_24_0 = arg_24_0.contextData.bossHP
 
-	setText(slot0.digitbig, math.floor(slot1 / 100))
+	setText(arg_24_0.digitbig, math.floor(var_24_0 / 100))
+	setText(arg_24_0.digitsmall, string.format("%02d", var_24_0 % 100) .. "%")
 
-	slot6 = slot1 % 100
+	local var_24_1 = pg.TimeMgr.GetInstance()
 
-	setText(slot0.digitsmall, string.format("%02d", slot6) .. "%")
+	for iter_24_0 = 1, 4 do
+		local var_24_2 = arg_24_0.barList[iter_24_0]
 
-	for slot6 = 1, 4 do
-		slot7 = slot0.barList[slot6]
+		setSlider(arg_24_0:findTF("Slider", var_24_2), 0, 2500, math.min(math.max(var_24_0 - (iter_24_0 - 1) * 2500, 0), 2500))
 
-		setSlider(slot0:findTF("Slider", slot7), 0, 2500, math.min(math.max(slot1 - (slot6 - 1) * 2500, 0), 2500))
+		local var_24_3 = arg_24_0.contextData.mileStones[5 - iter_24_0]
 
-		slot8 = slot0.contextData.mileStones[5 - slot6]
+		setActive(arg_24_0:findTF("milestone/item", var_24_2), not var_24_3)
+		setActive(arg_24_0:findTF("milestone/time", var_24_2), var_24_3)
 
-		setActive(slot0:findTF("milestone/item", slot7), not slot8)
-		setActive(slot0:findTF("milestone/time", slot7), slot8)
+		if var_24_3 then
+			local var_24_4 = var_24_1:STimeDescC(arg_24_0.contextData.mileStones[5 - iter_24_0], "%m/%d/%H:%M")
 
-		if slot8 then
-			setText(slot0:findTF("milestone/time/Text", slot7), pg.TimeMgr.GetInstance():STimeDescC(slot0.contextData.mileStones[5 - slot6], "%m/%d/%H:%M"))
+			setText(arg_24_0:findTF("milestone/time/Text", var_24_2), var_24_4)
 		end
 	end
 
-	for slot6 = 1, #slot0.stageList - 1 do
-		slot7 = slot0.contextData.normalStageIDs[slot6]
-		slot8 = slot0.stageList[slot6]
+	for iter_24_1 = 1, #arg_24_0.stageList - 1 do
+		local var_24_5 = arg_24_0.contextData.normalStageIDs[iter_24_1]
+		local var_24_6 = arg_24_0.stageList[iter_24_1]
 
-		for slot12, slot13 in ipairs(slot0.contextData.ticketInitPools) do
-			for slot17, slot18 in ipairs(slot13[1]) do
-				if slot18 == slot7 then
-					slot20 = slot0.contextData.stageTickets[slot7] or 0
+		for iter_24_2, iter_24_3 in ipairs(arg_24_0.contextData.ticketInitPools) do
+			for iter_24_4, iter_24_5 in ipairs(iter_24_3[1]) do
+				if iter_24_5 == var_24_5 then
+					local var_24_7 = iter_24_3[2]
+					local var_24_8 = arg_24_0.contextData.stageTickets[var_24_5] or 0
 
-					setActive(slot8:Find("Text"), slot20 > 0)
-					setText(slot8:Find("Text"), string.format("%d/%d", slot20, slot13[2]))
+					setActive(var_24_6:Find("Text"), var_24_8 > 0)
+					setText(var_24_6:Find("Text"), string.format("%d/%d", var_24_8, var_24_7))
 				end
 			end
 		end
 	end
 
-	setText(slot0.ptScoreTxt, slot0.contextData.ptData.count)
-	setActive(slot0.awardFlash, slot0.contextData.ptData:CanGetAward())
+	setText(arg_24_0.ptScoreTxt, arg_24_0.contextData.ptData.count)
+	setActive(arg_24_0.awardFlash, arg_24_0.contextData.ptData:CanGetAward())
 
-	if slot0.bonusWindow and slot0.bonusWindow:IsShowing() then
-		slot0.bonusWindow.buffer:UpdateView(slot0.contextData.ptData)
+	if arg_24_0.bonusWindow and arg_24_0.bonusWindow:IsShowing() then
+		arg_24_0.bonusWindow.buffer:UpdateView(arg_24_0.contextData.ptData)
 	end
 
-	setText(slot0.ticketNum, slot0:GetEXTicket())
+	local var_24_9 = arg_24_0:GetEXTicket()
+
+	setText(arg_24_0.ticketNum, var_24_9)
 end
 
-function slot0.GetEXTicket(slot0)
-	return getProxy(PlayerProxy):getRawData():getResource(slot0.contextData.TicketID)
+function var_0_0.GetEXTicket(arg_25_0)
+	return getProxy(PlayerProxy):getRawData():getResource(arg_25_0.contextData.TicketID)
 end
 
-function slot0.ShowNormalFleet(slot0, slot1, slot2)
-	if not slot0.contextData.actFleets[slot1] then
-		slot0.contextData.actFleets[slot1] = slot0:CreateNewFleet(slot1)
+function var_0_0.ShowNormalFleet(arg_26_0, arg_26_1, arg_26_2)
+	if not arg_26_0.contextData.actFleets[arg_26_1] then
+		arg_26_0.contextData.actFleets[arg_26_1] = arg_26_0:CreateNewFleet(arg_26_1)
 	end
 
-	if not slot0.contextData.actFleets[slot1 + 10] then
-		slot0.contextData.actFleets[slot1 + 10] = slot0:CreateNewFleet(slot1 + 10)
+	if not arg_26_0.contextData.actFleets[arg_26_1 + 10] then
+		arg_26_0.contextData.actFleets[arg_26_1 + 10] = arg_26_0:CreateNewFleet(arg_26_1 + 10)
 	end
 
-	if slot2 and #slot0.contextData.actFleets[slot1].ships <= 0 then
-		for slot7 = #slot0.contextData.normalStageIDs, 1, -1 do
-			slot8 = slot0.contextData.actFleets[slot7]
+	local var_26_0 = arg_26_0.contextData.actFleets[arg_26_1]
 
-			if slot7 ~= slot1 and slot8 and slot8:isLegalToFight() == true then
-				slot3:updateShips(slot8.ships)
+	if arg_26_2 and #var_26_0.ships <= 0 then
+		for iter_26_0 = #arg_26_0.contextData.normalStageIDs, 1, -1 do
+			local var_26_1 = arg_26_0.contextData.actFleets[iter_26_0]
+
+			if iter_26_0 ~= arg_26_1 and var_26_1 and var_26_1:isLegalToFight() == true then
+				var_26_0:updateShips(var_26_1.ships)
 
 				break
 			end
 		end
 	end
 
-	slot4 = slot0:GetFleetEditPanel()
+	local var_26_2 = arg_26_0:GetFleetEditPanel()
 
-	slot4.buffer:SetSettings(1, 1, false)
-	slot4.buffer:SetFleets({
-		slot0.contextData.actFleets[slot1],
-		slot0.contextData.actFleets[slot1 + 10]
+	var_26_2.buffer:SetSettings(1, 1, false)
+	var_26_2.buffer:SetFleets({
+		arg_26_0.contextData.actFleets[arg_26_1],
+		arg_26_0.contextData.actFleets[arg_26_1 + 10]
 	})
 
-	slot5 = slot0.contextData.useOilLimit[slot1]
+	local var_26_3 = arg_26_0.contextData.useOilLimit[arg_26_1]
+	local var_26_4 = arg_26_0.contextData.normalStageIDs[arg_26_1]
 
-	if not slot0.contextData.activity:IsOilLimit(slot0.contextData.normalStageIDs[slot1]) then
-		slot5 = {
+	if not arg_26_0.contextData.activity:IsOilLimit(var_26_4) then
+		var_26_3 = {
 			0,
 			0
 		}
 	end
 
-	slot4.buffer:SetOilLimit(slot5)
+	var_26_2.buffer:SetOilLimit(var_26_3)
 
-	slot0.contextData.editFleet = slot1
+	arg_26_0.contextData.editFleet = arg_26_1
 
-	slot4.buffer:UpdateView()
-	slot4.buffer:Show()
+	var_26_2.buffer:UpdateView()
+	var_26_2.buffer:Show()
 end
 
-function slot0.ShowEXFleet(slot0)
-	if not slot0.contextData.actFleets[#slot0.contextData.normalStageIDs + 1] then
-		slot0.contextData.actFleets[slot1] = slot0:CreateNewFleet(slot1)
+function var_0_0.ShowEXFleet(arg_27_0)
+	local var_27_0 = #arg_27_0.contextData.normalStageIDs + 1
+
+	if not arg_27_0.contextData.actFleets[var_27_0] then
+		arg_27_0.contextData.actFleets[var_27_0] = arg_27_0:CreateNewFleet(var_27_0)
 	end
 
-	if not slot0.contextData.actFleets[slot1 + 10] then
-		slot0.contextData.actFleets[slot1 + 10] = slot0:CreateNewFleet(slot1 + 10)
+	if not arg_27_0.contextData.actFleets[var_27_0 + 10] then
+		arg_27_0.contextData.actFleets[var_27_0 + 10] = arg_27_0:CreateNewFleet(var_27_0 + 10)
 	end
 
-	slot2 = slot0:GetFleetEditPanel()
+	local var_27_1 = arg_27_0:GetFleetEditPanel()
 
-	slot2.buffer:SetSettings(1, 1, true)
-	slot2.buffer:SetFleets({
-		slot0.contextData.actFleets[slot1],
-		slot0.contextData.actFleets[slot1 + 10]
+	var_27_1.buffer:SetSettings(1, 1, true)
+	var_27_1.buffer:SetFleets({
+		arg_27_0.contextData.actFleets[var_27_0],
+		arg_27_0.contextData.actFleets[var_27_0 + 10]
 	})
 
-	slot3 = slot0.contextData.useOilLimit[slot1]
+	local var_27_2 = arg_27_0.contextData.useOilLimit[var_27_0]
+	local var_27_3 = arg_27_0.contextData.exStageID
 
-	if not slot0.contextData.activity:IsOilLimit(slot0.contextData.exStageID) then
-		slot3 = {
+	if not arg_27_0.contextData.activity:IsOilLimit(var_27_3) then
+		var_27_2 = {
 			0,
 			0
 		}
 	end
 
-	slot2.buffer:SetOilLimit(slot3)
+	var_27_1.buffer:SetOilLimit(var_27_2)
 
-	slot0.contextData.editFleet = slot1
+	arg_27_0.contextData.editFleet = var_27_0
 
-	slot2.buffer:UpdateView()
-	slot2.buffer:Show()
+	var_27_1.buffer:UpdateView()
+	var_27_1.buffer:Show()
 end
 
-function slot0.ShowSPFleet(slot0)
-	if not slot0.contextData.actFleets[#slot0.contextData.normalStageIDs + 2] then
-		slot0.contextData.actFleets[slot1] = slot0:CreateNewFleet(slot1)
+function var_0_0.ShowSPFleet(arg_28_0)
+	local var_28_0 = #arg_28_0.contextData.normalStageIDs + 2
+
+	if not arg_28_0.contextData.actFleets[var_28_0] then
+		arg_28_0.contextData.actFleets[var_28_0] = arg_28_0:CreateNewFleet(var_28_0)
 	end
 
-	if not slot0.contextData.actFleets[slot1 + 10] then
-		slot0.contextData.actFleets[slot1 + 10] = slot0:CreateNewFleet(slot1 + 10)
+	if not arg_28_0.contextData.actFleets[var_28_0 + 10] then
+		arg_28_0.contextData.actFleets[var_28_0 + 10] = arg_28_0:CreateNewFleet(var_28_0 + 10)
 	end
 
-	slot2 = slot0:GetFleetEditPanel()
+	local var_28_1 = arg_28_0:GetFleetEditPanel()
 
-	slot2.buffer:SetSettings(1, 1, false)
-	slot2.buffer:SetFleets({
-		slot0.contextData.actFleets[slot1],
-		slot0.contextData.actFleets[slot1 + 10]
+	var_28_1.buffer:SetSettings(1, 1, false)
+	var_28_1.buffer:SetFleets({
+		arg_28_0.contextData.actFleets[var_28_0],
+		arg_28_0.contextData.actFleets[var_28_0 + 10]
 	})
-	slot2.buffer:SetOilLimit({
+
+	local var_28_2 = {
 		0,
 		0
+	}
+
+	var_28_1.buffer:SetOilLimit(var_28_2)
+
+	arg_28_0.contextData.editFleet = var_28_0
+
+	var_28_1.buffer:UpdateView()
+	var_28_1.buffer:Show()
+end
+
+function var_0_0.commitEdit(arg_29_0)
+	arg_29_0:emit(arg_29_0.contextData.mediatorClass.ON_COMMIT_FLEET)
+end
+
+function var_0_0.commitCombat(arg_30_0)
+	if arg_30_0.contextData.editFleet <= #arg_30_0.contextData.normalStageIDs then
+		arg_30_0:emit(arg_30_0.contextData.mediatorClass.ON_PRECOMBAT, arg_30_0.contextData.editFleet)
+	elseif arg_30_0.contextData.editFleet == #arg_30_0.contextData.normalStageIDs + 1 then
+		arg_30_0:emit(arg_30_0.contextData.mediatorClass.ON_EX_PRECOMBAT, arg_30_0.contextData.editFleet, false)
+	elseif arg_30_0.contextData.editFleet <= #arg_30_0.contextData.normalStageIDs + 2 then
+		arg_30_0:emit(arg_30_0.contextData.mediatorClass.ON_SP_PRECOMBAT, arg_30_0.contextData.editFleet, false)
+	end
+end
+
+function var_0_0.commitTrybat(arg_31_0)
+	arg_31_0:emit(arg_31_0.contextData.mediatorClass.ON_EX_PRECOMBAT, arg_31_0.contextData.editFleet, true)
+end
+
+function var_0_0.updateEditPanel(arg_32_0)
+	if arg_32_0.fleetEditPanel then
+		arg_32_0.fleetEditPanel.buffer:UpdateView()
+	end
+end
+
+function var_0_0.hideFleetEdit(arg_33_0)
+	if arg_33_0.fleetEditPanel then
+		arg_33_0.fleetEditPanel.buffer:Hide()
+	end
+
+	if arg_33_0.commanderFormationPanel then
+		arg_33_0.commanderFormationPanel.buffer:Close()
+	end
+
+	arg_33_0.contextData.editFleet = nil
+end
+
+function var_0_0.openShipInfo(arg_34_0, arg_34_1, arg_34_2)
+	local var_34_0 = arg_34_0.contextData.actFleets[arg_34_2]
+	local var_34_1 = {}
+	local var_34_2 = getProxy(BayProxy)
+
+	for iter_34_0, iter_34_1 in ipairs(var_34_0 and var_34_0.ships or {}) do
+		table.insert(var_34_1, var_34_2:getShipById(iter_34_1))
+	end
+
+	arg_34_0:emit(arg_34_0.contextData.mediatorClass.ON_FLEET_SHIPINFO, {
+		shipId = arg_34_1,
+		shipVOs = var_34_1
 	})
-
-	slot0.contextData.editFleet = slot1
-
-	slot2.buffer:UpdateView()
-	slot2.buffer:Show()
 end
 
-function slot0.commitEdit(slot0)
-	slot0:emit(slot0.contextData.mediatorClass.ON_COMMIT_FLEET)
+function var_0_0.setCommanderPrefabs(arg_35_0, arg_35_1)
+	arg_35_0.commanderPrefabs = arg_35_1
 end
 
-function slot0.commitCombat(slot0)
-	if slot0.contextData.editFleet <= #slot0.contextData.normalStageIDs then
-		slot0:emit(slot0.contextData.mediatorClass.ON_PRECOMBAT, slot0.contextData.editFleet)
-	elseif slot0.contextData.editFleet == #slot0.contextData.normalStageIDs + 1 then
-		slot0:emit(slot0.contextData.mediatorClass.ON_EX_PRECOMBAT, slot0.contextData.editFleet, false)
-	elseif slot0.contextData.editFleet <= #slot0.contextData.normalStageIDs + 2 then
-		slot0:emit(slot0.contextData.mediatorClass.ON_SP_PRECOMBAT, slot0.contextData.editFleet, false)
-	end
-end
+function var_0_0.openCommanderPanel(arg_36_0, arg_36_1, arg_36_2)
+	local var_36_0 = arg_36_0.contextData.activityID
 
-function slot0.commitTrybat(slot0)
-	slot0:emit(slot0.contextData.mediatorClass.ON_EX_PRECOMBAT, slot0.contextData.editFleet, true)
-end
-
-function slot0.updateEditPanel(slot0)
-	if slot0.fleetEditPanel then
-		slot0.fleetEditPanel.buffer:UpdateView()
-	end
-end
-
-function slot0.hideFleetEdit(slot0)
-	if slot0.fleetEditPanel then
-		slot0.fleetEditPanel.buffer:Hide()
-	end
-
-	if slot0.commanderFormationPanel then
-		slot0.commanderFormationPanel.buffer:Close()
-	end
-
-	slot0.contextData.editFleet = nil
-end
-
-function slot0.openShipInfo(slot0, slot1, slot2)
-	slot4 = {}
-
-	for slot9, slot10 in ipairs(slot0.contextData.actFleets[slot2] and slot3.ships or {}) do
-		table.insert(slot4, getProxy(BayProxy):getShipById(slot10))
-	end
-
-	slot0:emit(slot0.contextData.mediatorClass.ON_FLEET_SHIPINFO, {
-		shipId = slot1,
-		shipVOs = slot4
-	})
-end
-
-function slot0.setCommanderPrefabs(slot0, slot1)
-	slot0.commanderPrefabs = slot1
-end
-
-function slot0.openCommanderPanel(slot0, slot1, slot2)
-	slot3 = slot0.contextData.activityID
-
-	slot0.levelCMDFormationView:setCallback(function (slot0)
-		if slot0.type == LevelUIConst.COMMANDER_OP_SHOW_SKILL then
-			uv0:emit(ActivityBossMediatorTemplate.ON_COMMANDER_SKILL, slot0.skill)
-		elseif slot0.type == LevelUIConst.COMMANDER_OP_ADD then
-			uv0.contextData.eliteCommanderSelected = {
-				fleetIndex = uv1,
-				cmdPos = slot0.pos,
-				mode = uv0.curMode
+	arg_36_0.levelCMDFormationView:setCallback(function(arg_37_0)
+		if arg_37_0.type == LevelUIConst.COMMANDER_OP_SHOW_SKILL then
+			arg_36_0:emit(ActivityBossMediatorTemplate.ON_COMMANDER_SKILL, arg_37_0.skill)
+		elseif arg_37_0.type == LevelUIConst.COMMANDER_OP_ADD then
+			arg_36_0.contextData.eliteCommanderSelected = {
+				fleetIndex = arg_36_2,
+				cmdPos = arg_37_0.pos,
+				mode = arg_36_0.curMode
 			}
 
-			uv0:emit(ActivityBossMediatorTemplate.ON_SELECT_COMMANDER, uv1, slot0.pos)
+			arg_36_0:emit(ActivityBossMediatorTemplate.ON_SELECT_COMMANDER, arg_36_2, arg_37_0.pos)
 		else
-			uv0:emit(ActivityBossMediatorTemplate.COMMANDER_FORMATION_OP, {
+			arg_36_0:emit(ActivityBossMediatorTemplate.COMMANDER_FORMATION_OP, {
 				FleetType = LevelUIConst.FLEET_TYPE_ACTIVITY,
-				data = slot0,
-				fleetId = uv2.id,
-				actId = uv3
+				data = arg_37_0,
+				fleetId = arg_36_1.id,
+				actId = var_36_0
 			})
 		end
 	end)
-	slot0.levelCMDFormationView:Load()
-	slot0.levelCMDFormationView:ActionInvoke("update", slot1, slot0.commanderPrefabs)
-	slot0.levelCMDFormationView:ActionInvoke("Show")
+	arg_36_0.levelCMDFormationView:Load()
+	arg_36_0.levelCMDFormationView:ActionInvoke("update", arg_36_1, arg_36_0.commanderPrefabs)
+	arg_36_0.levelCMDFormationView:ActionInvoke("Show")
 end
 
-function slot0.updateCommanderFleet(slot0, slot1)
-	if slot0.levelCMDFormationView:isShowing() then
-		slot0.levelCMDFormationView:ActionInvoke("updateFleet", slot1)
+function var_0_0.updateCommanderFleet(arg_38_0, arg_38_1)
+	if arg_38_0.levelCMDFormationView:isShowing() then
+		arg_38_0.levelCMDFormationView:ActionInvoke("updateFleet", arg_38_1)
 	end
 end
 
-function slot0.updateCommanderPrefab(slot0)
-	if slot0.levelCMDFormationView:isShowing() then
-		slot0.levelCMDFormationView:ActionInvoke("updatePrefabs", slot0.commanderPrefabs)
+function var_0_0.updateCommanderPrefab(arg_39_0)
+	if arg_39_0.levelCMDFormationView:isShowing() then
+		arg_39_0.levelCMDFormationView:ActionInvoke("updatePrefabs", arg_39_0.commanderPrefabs)
 	end
 end
 
-function slot0.closeCommanderPanel(slot0)
-	if slot0.levelCMDFormationView:isShowing() then
-		slot0.levelCMDFormationView:ActionInvoke("Hide")
+function var_0_0.closeCommanderPanel(arg_40_0)
+	if arg_40_0.levelCMDFormationView:isShowing() then
+		arg_40_0.levelCMDFormationView:ActionInvoke("Hide")
 	end
 end
 
-function slot0.buildCommanderPanel(slot0)
-	slot0.levelCMDFormationView = LevelCMDFormationView.New(slot0._tf, slot0.event, slot0.contextData)
+function var_0_0.buildCommanderPanel(arg_41_0)
+	arg_41_0.levelCMDFormationView = LevelCMDFormationView.New(arg_41_0._tf, arg_41_0.event, arg_41_0.contextData)
 end
 
-function slot0.destroyCommanderPanel(slot0)
-	slot0.levelCMDFormationView:Destroy()
+function var_0_0.destroyCommanderPanel(arg_42_0)
+	arg_42_0.levelCMDFormationView:Destroy()
 
-	slot0.levelCMDFormationView = nil
+	arg_42_0.levelCMDFormationView = nil
 end
 
-function slot0.ShowAwards(slot0)
-	slot1 = slot0:GetBonusWindow()
+function var_0_0.ShowAwards(arg_43_0)
+	local var_43_0 = arg_43_0:GetBonusWindow()
 
-	slot1.buffer:UpdateView(slot0.contextData.ptData)
-	slot1.buffer:Show()
+	var_43_0.buffer:UpdateView(arg_43_0.contextData.ptData)
+	var_43_0.buffer:Show()
 end
 
-function slot0.CreateNewFleet(slot0, slot1)
+function var_0_0.CreateNewFleet(arg_44_0, arg_44_1)
 	return TypedFleet.New({
-		id = slot1,
+		id = arg_44_1,
 		ship_list = {},
 		commanders = {},
-		fleetType = slot1 > 10 and FleetType.Submarine or FleetType.Normal
+		fleetType = arg_44_1 > 10 and FleetType.Submarine or FleetType.Normal
 	})
 end
 
-function slot0.UpdateRank(slot0, slot1)
-	slot1 = slot1 or {}
+function var_0_0.UpdateRank(arg_45_0, arg_45_1)
+	arg_45_1 = arg_45_1 or {}
 
-	for slot5 = 1, #slot0.rankList do
-		setActive(slot0.rankList[slot5], slot5 <= #slot1)
+	for iter_45_0 = 1, #arg_45_0.rankList do
+		local var_45_0 = arg_45_0.rankList[iter_45_0]
 
-		if slot5 <= #slot1 then
-			setText(slot6:Find("Text"), tostring(slot1[slot5].name))
+		setActive(var_45_0, iter_45_0 <= #arg_45_1)
+
+		if iter_45_0 <= #arg_45_1 then
+			local var_45_1 = var_45_0:Find("Text")
+
+			setText(var_45_1, tostring(arg_45_1[iter_45_0].name))
 		end
 	end
 end
 
-function slot0.UpdateDropItems(slot0)
-	for slot4, slot5 in ipairs(slot0.contextData.DisplayItems or {}) do
-		slot7 = Drop.New({
-			type = slot0.contextData.DisplayItems[5 - slot4][1],
-			id = slot0.contextData.DisplayItems[5 - slot4][2],
-			count = slot0.contextData.DisplayItems[5 - slot4][3]
+function var_0_0.UpdateDropItems(arg_46_0)
+	for iter_46_0, iter_46_1 in ipairs(arg_46_0.contextData.DisplayItems or {}) do
+		local var_46_0 = arg_46_0:findTF("milestone/item", arg_46_0.barList[iter_46_0])
+		local var_46_1 = Drop.New({
+			type = arg_46_0.contextData.DisplayItems[5 - iter_46_0][1],
+			id = arg_46_0.contextData.DisplayItems[5 - iter_46_0][2],
+			count = arg_46_0.contextData.DisplayItems[5 - iter_46_0][3]
 		})
 
-		onButton(slot0, slot0:findTF("milestone/item", slot0.barList[slot4]), function ()
-			uv0:emit(uv1.ON_DROP, uv2)
+		onButton(arg_46_0, var_46_0, function()
+			arg_46_0:emit(var_0_0.ON_DROP, var_46_1)
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.bonusWindow and slot0.bonusWindow:IsShowing() then
-		slot0.bonusWindow.buffer:Hide()
+function var_0_0.onBackPressed(arg_48_0)
+	if arg_48_0.bonusWindow and arg_48_0.bonusWindow:IsShowing() then
+		arg_48_0.bonusWindow.buffer:Hide()
 
 		return
 	end
 
-	uv0.super.onBackPressed(slot0)
+	var_0_0.super.onBackPressed(arg_48_0)
 end
 
-function slot0.willExit(slot0)
-	slot0:DestroyBonusWindow()
-	slot0:DestroyFleetEditPanel()
-	slot0:destroyCommanderPanel()
+function var_0_0.willExit(arg_49_0)
+	arg_49_0:DestroyBonusWindow()
+	arg_49_0:DestroyFleetEditPanel()
+	arg_49_0:destroyCommanderPanel()
 end
 
-return slot0
+return var_0_0

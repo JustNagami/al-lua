@@ -1,13 +1,14 @@
-slot0 = class("ChargeMenuMediator", import("...base.ContextMediator"))
-slot0.GO_SKIN_SHOP = "ChargeMenuMediator:GO_SKIN_SHOP"
-slot0.GO_SUPPLY_SHOP = "ChargeMenuMediator:GO_SUPPLY_SHOP"
-slot0.GO_CHARGE_SHOP = "ChargeMenuMediator:GO_CHARGE_SHOP"
+﻿local var_0_0 = class("ChargeMenuMediator", import("...base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bindEvent()
+var_0_0.GO_SKIN_SHOP = "ChargeMenuMediator:GO_SKIN_SHOP"
+var_0_0.GO_SUPPLY_SHOP = "ChargeMenuMediator:GO_SUPPLY_SHOP"
+var_0_0.GO_CHARGE_SHOP = "ChargeMenuMediator:GO_CHARGE_SHOP"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bindEvent()
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_2_0)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.CHARGE_SUCCESS,
@@ -16,38 +17,43 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	if slot1:getName() == PlayerProxy.UPDATED then
-		slot0.viewComponent:updatePlayerRes(slot1:getBody())
-	elseif slot2 == GAME.CHARGE_SUCCESS or slot2 == GAME.SHOPPING_DONE then
-		slot0.viewComponent:FlushBanner()
+function var_0_0.handleNotification(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_1:getName()
+	local var_3_1 = arg_3_1:getBody()
 
-		if slot0.viewComponent.lookUpIndex then
-			pg.m02:sendNotification(GAME.TRACK, TrackConst.GetTrackData(TrackConst.SYSTEM_SHOP, TrackConst.ACTION_BUY_RECOMMEND, slot0.viewComponent.lookUpIndex))
+	if var_3_0 == PlayerProxy.UPDATED then
+		arg_3_0.viewComponent:updatePlayerRes(var_3_1)
+	elseif var_3_0 == GAME.CHARGE_SUCCESS or var_3_0 == GAME.SHOPPING_DONE then
+		arg_3_0.viewComponent:FlushBanner()
+
+		if arg_3_0.viewComponent.lookUpIndex then
+			pg.m02:sendNotification(GAME.TRACK, TrackConst.GetTrackData(TrackConst.SYSTEM_SHOP, TrackConst.ACTION_BUY_RECOMMEND, arg_3_0.viewComponent.lookUpIndex))
 		end
 
-		if slot2 == GAME.CHARGE_SUCCESS then
-			slot0.viewComponent:OnChargeSuccess(Goods.Create({
-				shop_id = slot3.shopId
-			}, Goods.TYPE_CHARGE))
+		if var_3_0 == GAME.CHARGE_SUCCESS then
+			local var_3_2 = Goods.Create({
+				shop_id = var_3_1.shopId
+			}, Goods.TYPE_CHARGE)
+
+			arg_3_0.viewComponent:OnChargeSuccess(var_3_2)
 		end
-	elseif slot2 == GAME.REMOVE_LAYER_DONE then
-		slot0.viewComponent:OnRemoveLayer(slot3)
+	elseif var_3_0 == GAME.REMOVE_LAYER_DONE then
+		arg_3_0.viewComponent:OnRemoveLayer(var_3_1)
 	end
 end
 
-function slot0.bindEvent(slot0)
-	slot0:bind(uv0.GO_SKIN_SHOP, function (slot0, slot1)
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.SKINSHOP)
+function var_0_0.bindEvent(arg_4_0)
+	arg_4_0:bind(var_0_0.GO_SKIN_SHOP, function(arg_5_0, arg_5_1)
+		arg_4_0:sendNotification(GAME.GO_SCENE, SCENE.SKINSHOP)
 	end)
-	slot0:bind(uv0.GO_SUPPLY_SHOP, function (slot0, slot1)
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, slot1)
+	arg_4_0:bind(var_0_0.GO_SUPPLY_SHOP, function(arg_6_0, arg_6_1)
+		arg_4_0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, arg_6_1)
 	end)
-	slot0:bind(uv0.GO_CHARGE_SHOP, function (slot0, slot1)
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
-			wrap = slot1
+	arg_4_0:bind(var_0_0.GO_CHARGE_SHOP, function(arg_7_0, arg_7_1)
+		arg_4_0:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
+			wrap = arg_7_1
 		})
 	end)
 end
 
-return slot0
+return var_0_0

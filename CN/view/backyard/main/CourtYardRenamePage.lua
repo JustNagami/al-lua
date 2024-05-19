@@ -1,30 +1,32 @@
-slot0 = class("CourtYardRenamePage", import("...base.BaseSubView"))
+﻿local var_0_0 = class("CourtYardRenamePage", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CourtYardRenameUI"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.confirmBtn = slot0:findTF("frame/confirm")
-	slot0.cancelBtn = slot0:findTF("frame/cancel")
-	slot0.closeBtn = slot0:findTF("frame/close")
-	slot0.input = slot0:findTF("frame/input")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.confirmBtn = arg_2_0:findTF("frame/confirm")
+	arg_2_0.cancelBtn = arg_2_0:findTF("frame/cancel")
+	arg_2_0.closeBtn = arg_2_0:findTF("frame/close")
+	arg_2_0.input = arg_2_0:findTF("frame/input")
 
-	setText(slot0:findTF("frame/cancel/Text"), i18n("word_cancel"))
-	setText(slot0:findTF("frame/confirm/Text"), i18n("word_ok"))
-	setText(slot0:findTF("frame/title"), i18n("backyard_rename_title"))
-	setText(slot0:findTF("frame/input/placehoder"), i18n("backyard_rename_tip"))
+	setText(arg_2_0:findTF("frame/cancel/Text"), i18n("word_cancel"))
+	setText(arg_2_0:findTF("frame/confirm/Text"), i18n("word_ok"))
+	setText(arg_2_0:findTF("frame/title"), i18n("backyard_rename_title"))
+	setText(arg_2_0:findTF("frame/input/placehoder"), i18n("backyard_rename_tip"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.confirmBtn, function ()
-		if not getInputText(uv0.input) or slot0 == "" then
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.confirmBtn, function()
+		local var_4_0 = getInputText(arg_3_0.input)
+
+		if not var_4_0 or var_4_0 == "" then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("word_should_input"))
 
 			return
 		end
 
-		if not nameValidityCheck(slot0, 0, 20, {
+		if not nameValidityCheck(var_4_0, 0, 20, {
 			"spece_illegal_tip",
 			"login_newPlayerScene_name_tooShort",
 			"login_newPlayerScene_name_tooLong",
@@ -33,26 +35,26 @@ function slot0.OnInit(slot0)
 			return
 		end
 
-		uv0:emit(CourtYardMediator.RENAME, slot0)
-		uv0:Hide()
+		arg_3_0:emit(CourtYardMediator.RENAME, var_4_0)
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.cancelBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.Flush(slot0)
-	slot0:Show()
+function var_0_0.Flush(arg_8_0)
+	arg_8_0:Show()
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:Hide()
+function var_0_0.OnDestroy(arg_9_0)
+	arg_9_0:Hide()
 end
 
-return slot0
+return var_0_0

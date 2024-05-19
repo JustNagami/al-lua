@@ -1,34 +1,36 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("BattleSkillEditCustomWarning", slot0.Battle.BattleSkillEffect)
-slot0.Battle.BattleSkillEditCustomWarning = slot1
-slot1.__name = "BattleSkillEditCustomWarning"
-slot1.OP_ADD = 1
-slot1.OP_REMOVE = 0
-slot1.OP_REMOVE_PERMANENT = -1
-slot1.OP_REMOVE_TEMPLATE = -2
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1, lv)
+local var_0_0 = ys
+local var_0_1 = class("BattleSkillEditCustomWarning", var_0_0.Battle.BattleSkillEffect)
 
-	slot0._labelData = {
-		op = slot0._tempData.arg_list.op,
-		key = slot0._tempData.arg_list.key,
-		x = slot0._tempData.arg_list.x,
-		y = slot0._tempData.arg_list.y,
-		dialogue = slot0._tempData.arg_list.dialogue,
-		duration = slot0._tempData.arg_list.duration
+var_0_0.Battle.BattleSkillEditCustomWarning = var_0_1
+var_0_1.__name = "BattleSkillEditCustomWarning"
+var_0_1.OP_ADD = 1
+var_0_1.OP_REMOVE = 0
+var_0_1.OP_REMOVE_PERMANENT = -1
+var_0_1.OP_REMOVE_TEMPLATE = -2
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1, lv)
+
+	arg_1_0._labelData = {
+		op = arg_1_0._tempData.arg_list.op,
+		key = arg_1_0._tempData.arg_list.key,
+		x = arg_1_0._tempData.arg_list.x,
+		y = arg_1_0._tempData.arg_list.y,
+		dialogue = arg_1_0._tempData.arg_list.dialogue,
+		duration = arg_1_0._tempData.arg_list.duration
 	}
 end
 
-function slot1.DoDataEffect(slot0)
-	slot0:doEditWarning()
+function var_0_1.DoDataEffect(arg_2_0)
+	arg_2_0:doEditWarning()
 end
 
-function slot1.DoDataEffectWithoutTarget(slot0)
-	slot0:doEditWarning()
+function var_0_1.DoDataEffectWithoutTarget(arg_3_0)
+	arg_3_0:doEditWarning()
 end
 
-function slot1.doEditWarning(slot0)
-	uv0.Battle.BattleDataProxy.GetInstance():DispatchCustomWarning(slot0._labelData)
+function var_0_1.doEditWarning(arg_4_0)
+	var_0_0.Battle.BattleDataProxy.GetInstance():DispatchCustomWarning(arg_4_0._labelData)
 end

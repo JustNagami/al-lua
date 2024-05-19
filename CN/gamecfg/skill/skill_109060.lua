@@ -1,4 +1,45 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			target_choise = "TargetAllHelp",
+			targetAniEffect = "",
+			arg_list = {
+				maxHPRatio = 0.015
+			}
+		},
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetAllHelp",
+				"TargetNationality"
+			},
+			arg_list = {
+				delay = 1,
+				maxHPRatio = 0.02,
+				nationality = 109
+			}
+		},
+		{
+			target_choise = "TargetSelf",
+			type = "BattleSkillEditFleetAttr",
+			arg_list = {
+				value = 10,
+				attr = "ReisalinAP"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -355,46 +396,5 @@ return {
 	painting = 1,
 	id = 109060,
 	picture = "0",
-	desc = "开局效果",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			target_choise = "TargetAllHelp",
-			targetAniEffect = "",
-			arg_list = {
-				maxHPRatio = 0.015
-			}
-		},
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetAllHelp",
-				"TargetNationality"
-			},
-			arg_list = {
-				delay = 1,
-				maxHPRatio = 0.02,
-				nationality = 109
-			}
-		},
-		{
-			target_choise = "TargetSelf",
-			type = "BattleSkillEditFleetAttr",
-			arg_list = {
-				value = 10,
-				attr = "ReisalinAP"
-			}
-		}
-	}
+	desc = "开局效果"
 }

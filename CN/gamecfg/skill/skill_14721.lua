@@ -1,4 +1,65 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillProjectShelter",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				duration = 5,
+				effect = "shield03",
+				count = 10,
+				box = {
+					4,
+					10,
+					15
+				},
+				offset = {
+					10,
+					0,
+					7.5
+				}
+			}
+		},
+		{
+			type = "BattleSkillProjectShelter",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				duration = 5,
+				effect = "shield03",
+				count = 10,
+				box = {
+					4,
+					10,
+					15
+				},
+				offset = {
+					10,
+					0,
+					-7.5
+				}
+			}
+		},
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 64621
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -555,66 +616,5 @@ return {
 	painting = 0,
 	id = 14721,
 	picture = "0",
-	desc = "",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillProjectShelter",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				duration = 5,
-				effect = "shield03",
-				count = 10,
-				box = {
-					4,
-					10,
-					15
-				},
-				offset = {
-					10,
-					0,
-					7.5
-				}
-			}
-		},
-		{
-			type = "BattleSkillProjectShelter",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				duration = 5,
-				effect = "shield03",
-				count = 10,
-				box = {
-					4,
-					10,
-					15
-				},
-				offset = {
-					10,
-					0,
-					-7.5
-				}
-			}
-		},
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 64621
-			}
-		}
-	}
+	desc = ""
 }

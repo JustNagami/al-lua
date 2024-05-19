@@ -1,24 +1,25 @@
-slot0 = class("EducateUpgradeFavorCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("EducateUpgradeFavorCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody() and slot2.callback
-	slot4 = getProxy(EducateProxy):GetCharData():GetFavorPerformIds()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0 and var_1_0.callback
+	local var_1_2 = getProxy(EducateProxy):GetCharData():GetFavorPerformIds()
 
 	pg.ConnectionMgr.GetInstance():Send(27006, {
 		type = 0
-	}, 27007, function (slot0)
-		if slot0.result == 0 then
-			EducateHelper.UpdateDropsData(slot0.drops)
+	}, 27007, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			EducateHelper.UpdateDropsData(arg_2_0.drops)
 			getProxy(EducateProxy):GetCharData():UpgradeFavor()
-			uv0:sendNotification(GAME.EDUCATE_UPGRADE_FAVOR_DONE, {
-				drops = slot0.drops,
-				performs = uv1,
-				cb = uv2
+			arg_1_0:sendNotification(GAME.EDUCATE_UPGRADE_FAVOR_DONE, {
+				drops = arg_2_0.drops,
+				performs = var_1_2,
+				cb = var_1_1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate upgrad favor error: ", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate upgrad favor error: ", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

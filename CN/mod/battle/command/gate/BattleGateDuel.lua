@@ -1,11 +1,12 @@
-slot0 = class("BattleGateDuel")
-ys.Battle.BattleGateDuel = slot0
-slot0.__name = "BattleGateDuel"
+﻿local var_0_0 = class("BattleGateDuel")
 
-function slot0.Entrance(slot0, slot1)
-	slot2 = slot0.mainFleetId
+ys.Battle.BattleGateDuel = var_0_0
+var_0_0.__name = "BattleGateDuel"
 
-	if not slot1.LegalFleet(slot0.mainFleetId) then
+function var_0_0.Entrance(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_0.mainFleetId
+
+	if not arg_1_1.LegalFleet(arg_1_0.mainFleetId) then
 		return
 	end
 
@@ -15,97 +16,130 @@ function slot0.Entrance(slot0, slot1)
 		return
 	end
 
-	slot5 = getProxy(PlayerProxy)
-	slot8, slot9 = nil
-	slot11 = getProxy(MilitaryExerciseProxy):getRivalById(slot0.rivalId)
-	slot13 = pg.battle_cost_template[SYSTEM_DUEL].oil_cost > 0
-	slot14 = {}
-	slot15 = 0
-	slot16 = 0
-	slot17 = 0
-	slot18 = 0
+	local var_1_1 = getProxy(PlayerProxy)
+	local var_1_2 = getProxy(BayProxy)
+	local var_1_3 = getProxy(FleetProxy)
+	local var_1_4
+	local var_1_5
+	local var_1_6 = arg_1_0.rivalId
+	local var_1_7 = getProxy(MilitaryExerciseProxy):getRivalById(var_1_6)
+	local var_1_8 = pg.battle_cost_template[SYSTEM_DUEL]
+	local var_1_9 = var_1_8.oil_cost > 0
+	local var_1_10 = {}
+	local var_1_11 = 0
+	local var_1_12 = 0
+	local var_1_13 = 0
+	local var_1_14 = 0
+	local var_1_15 = var_1_3:getFleetById(var_1_0)
+	local var_1_16 = var_1_2:getSortShipsByFleet(var_1_15)
 
-	for slot24, slot25 in ipairs(getProxy(BayProxy):getSortShipsByFleet(getProxy(FleetProxy):getFleetById(slot2))) do
-		slot14[#slot14 + 1] = slot25.id
+	for iter_1_0, iter_1_1 in ipairs(var_1_16) do
+		var_1_10[#var_1_10 + 1] = iter_1_1.id
 	end
 
-	if slot13 and slot5:getData().oil < slot18 then
+	local var_1_17 = var_1_1:getData()
+
+	if var_1_9 and var_1_14 > var_1_17.oil then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 		return
 	end
 
-	for slot26, slot27 in ipairs(slot11.mainShips) do
-		slot22 = 0 + slot27.level
+	local var_1_18 = 0
+
+	for iter_1_2, iter_1_3 in ipairs(var_1_7.mainShips) do
+		var_1_18 = var_1_18 + iter_1_3.level
 	end
 
-	for slot26, slot27 in ipairs(slot11.vanguardShips) do
-		slot22 = slot22 + slot27.level
+	for iter_1_4, iter_1_5 in ipairs(var_1_7.vanguardShips) do
+		var_1_18 = var_1_18 + iter_1_5.level
 	end
 
-	RivalLevelVertiry = slot22
+	RivalLevelVertiry = var_1_18
 
-	slot1.ShipVertify()
-	BeginStageCommand.SendRequest(SYSTEM_DUEL, slot14, {
-		slot8
-	}, function (slot0)
-		if uv0 then
-			uv1:consume({
+	arg_1_1.ShipVertify()
+
+	local function var_1_19(arg_2_0)
+		if var_1_9 then
+			var_1_17:consume({
 				gold = 0,
-				oil = uv2
+				oil = var_1_12
 			})
 		end
 
-		if uv3.enter_energy_cost > 0 then
-			for slot5, slot6 in ipairs(uv4) do
-				slot6:cosumeEnergy(pg.gameset.battle_consume_energy.key_value)
-				uv5:updateShip(slot6)
+		if var_1_8.enter_energy_cost > 0 then
+			local var_2_0 = pg.gameset.battle_consume_energy.key_value
+
+			for iter_2_0, iter_2_1 in ipairs(var_1_16) do
+				iter_2_1:cosumeEnergy(var_2_0)
+				var_1_2:updateShip(iter_2_1)
 			end
 		end
 
-		slot1 = ys.Battle.BattleConfig.ARENA_LIST
+		local var_2_1 = ys.Battle.BattleConfig.ARENA_LIST
+		local var_2_2 = var_2_1[math.random(#var_2_1)]
 
-		uv6:updatePlayer(uv1)
-		uv9:sendNotification(GAME.BEGIN_STAGE_DONE, {
-			mainFleetId = uv7,
+		var_1_1:updatePlayer(var_1_17)
+
+		local var_2_3 = {
+			mainFleetId = var_1_0,
 			prefabFleet = {},
-			stageId = slot1[math.random(#slot1)],
+			stageId = var_2_2,
 			system = SYSTEM_DUEL,
-			rivalId = uv8,
-			token = slot0.key,
+			rivalId = var_1_6,
+			token = arg_2_0.key,
 			mode = mode
-		})
-	end, function (slot0)
-		uv0:RequestFailStandardProcess(slot0)
-	end)
+		}
+
+		arg_1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var_2_3)
+	end
+
+	local function var_1_20(arg_3_0)
+		arg_1_1:RequestFailStandardProcess(arg_3_0)
+	end
+
+	BeginStageCommand.SendRequest(SYSTEM_DUEL, var_1_10, {
+		var_1_6
+	}, var_1_19, var_1_20)
 end
 
-function slot0.Exit(slot0, slot1)
-	slot2 = pg.battle_cost_template[SYSTEM_DUEL]
-	slot5 = slot0.statistics._battleScore
-	slot6 = 0
-	slot7 = {}
-	slot8 = getProxy(FleetProxy):getFleetById(slot0.mainFleetId)
-	slot6 = slot8:getEndCost().oil
+function var_0_0.Exit(arg_4_0, arg_4_1)
+	local var_4_0 = pg.battle_cost_template[SYSTEM_DUEL]
+	local var_4_1 = getProxy(FleetProxy)
+	local var_4_2 = getProxy(BayProxy)
+	local var_4_3 = arg_4_0.statistics._battleScore
+	local var_4_4 = 0
+	local var_4_5 = {}
+	local var_4_6 = var_4_1:getFleetById(arg_4_0.mainFleetId)
+	local var_4_7 = var_4_2:getSortShipsByFleet(var_4_6)
+	local var_4_8 = var_4_6:getEndCost().oil
+	local var_4_9 = arg_4_1.GeneralPackage(arg_4_0, var_4_7)
 
-	slot1:SendRequest(slot1.GeneralPackage(slot0, getProxy(BayProxy):getSortShipsByFleet(slot8)), function (slot0)
-		uv0.addShipsExp(slot0.ship_exp_list, uv1.statistics, false)
+	local function var_4_10(arg_5_0)
+		arg_4_1.addShipsExp(arg_5_0.ship_exp_list, arg_4_0.statistics, false)
 
-		uv1.statistics.mvpShipID = slot0.mvp
-		slot1, slot2 = uv0:GeneralLoot(slot0)
+		arg_4_0.statistics.mvpShipID = arg_5_0.mvp
 
-		uv0.GeneralPlayerCosume(SYSTEM_DUEL, ys.Battle.BattleConst.BattleScore.C < uv2, uv3, slot0.player_exp, exFlag)
+		local var_5_0, var_5_1 = arg_4_1:GeneralLoot(arg_5_0)
+		local var_5_2 = var_4_3 > ys.Battle.BattleConst.BattleScore.C
+
+		arg_4_1.GeneralPlayerCosume(SYSTEM_DUEL, var_5_2, var_4_8, arg_5_0.player_exp, exFlag)
 		getProxy(MilitaryExerciseProxy):reduceExerciseCount()
-		uv0:sendNotification(GAME.FINISH_STAGE_DONE, {
+
+		local var_5_3 = {
 			system = SYSTEM_DUEL,
-			statistics = uv1.statistics,
-			score = uv2,
-			drops = slot1,
+			statistics = arg_4_0.statistics,
+			score = var_4_3,
+			drops = var_5_0,
 			commanderExps = {},
-			result = slot0.result,
-			extraDrops = slot2
-		})
-	end)
+			result = arg_5_0.result,
+			extraDrops = var_5_1
+		}
+
+		arg_4_1:sendNotification(GAME.FINISH_STAGE_DONE, var_5_3)
+	end
+
+	arg_4_1:SendRequest(var_4_9, var_4_10)
 end
 
-return slot0
+return var_0_0

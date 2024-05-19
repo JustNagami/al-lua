@@ -1,44 +1,51 @@
-slot0 = class("TaskProgressUpdateCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("TaskProgressUpdateCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-	slot0:CheckAndSubmitVoteTask()
+	arg_1_0:CheckAndSubmitVoteTask()
 end
 
-function slot0.CheckAndSubmitVoteTask(slot0, slot1)
-	for slot6, slot7 in pairs(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_VOTE)) do
-		if not slot7:isEnd() then
-			slot0:SubmitTaskList(slot0:GetCanSubmitVoteTaskList(slot7))
+function var_0_0.CheckAndSubmitVoteTask(arg_2_0, arg_2_1)
+	local var_2_0 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_VOTE)
+
+	for iter_2_0, iter_2_1 in pairs(var_2_0) do
+		if not iter_2_1:isEnd() then
+			local var_2_1 = arg_2_0:GetCanSubmitVoteTaskList(iter_2_1)
+
+			arg_2_0:SubmitTaskList(var_2_1)
 		end
 	end
 end
 
-function slot0.GetCanSubmitVoteTaskList(slot0, slot1)
-	slot2 = slot1:getConfig("config_id")
-	slot3 = pg.activity_vote[slot2]
+function var_0_0.GetCanSubmitVoteTaskList(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_1:getConfig("config_id")
+	local var_3_1 = pg.activity_vote[var_3_0]
 
-	assert(slot3, slot1.id .. "-" .. slot2)
+	assert(var_3_1, arg_3_1.id .. "-" .. var_3_0)
 
-	slot5 = {}
+	local var_3_2 = _.flatten(var_3_1.task_period)
+	local var_3_3 = {}
 
-	for slot9, slot10 in ipairs(_.flatten(slot3.task_period)) do
-		if getProxy(TaskProxy):getTaskById(slot10) and slot11:isFinish() and not slot11:isReceive() then
-			table.insert(slot5, slot11)
+	for iter_3_0, iter_3_1 in ipairs(var_3_2) do
+		local var_3_4 = getProxy(TaskProxy):getTaskById(iter_3_1)
+
+		if var_3_4 and var_3_4:isFinish() and not var_3_4:isReceive() then
+			table.insert(var_3_3, var_3_4)
 		end
 	end
 
-	return slot5
+	return var_3_3
 end
 
-function slot0.SubmitTaskList(slot0, slot1)
-	if #slot1 <= 0 then
+function var_0_0.SubmitTaskList(arg_4_0, arg_4_1)
+	if #arg_4_1 <= 0 then
 		return
 	end
 
-	for slot5, slot6 in pairs(slot1) do
-		slot0:sendNotification(GAME.SUBMIT_TASK, slot6.id)
+	for iter_4_0, iter_4_1 in pairs(arg_4_1) do
+		arg_4_0:sendNotification(GAME.SUBMIT_TASK, iter_4_1.id)
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,56 +1,58 @@
-slot0 = class("MonopolyPage", import("....base.BaseActivityPage"))
-slot0.ON_START = "MonopolyGame:ON_START"
-slot0.ON_MOVE = "MonopolyGame:ON_MOVE"
-slot0.ON_TRIGGER = "MonopolyGame:ON_TRIGGER"
-slot0.ON_AWARD = "MonopolyGame:ON_AWARD"
+﻿local var_0_0 = class("MonopolyPage", import("....base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
+var_0_0.ON_START = "MonopolyGame:ON_START"
+var_0_0.ON_MOVE = "MonopolyGame:ON_MOVE"
+var_0_0.ON_TRIGGER = "MonopolyGame:ON_TRIGGER"
+var_0_0.ON_AWARD = "MonopolyGame:ON_AWARD"
 
-	slot0:bind(uv0.ON_START, function (slot0, slot1, slot2)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+
+	arg_1_0:bind(var_0_0.ON_START, function(arg_2_0, arg_2_1, arg_2_2)
 		pg.m02:sendNotification(GAME.MONOPOLY_OP, {
-			activity_id = slot1,
+			activity_id = arg_2_1,
 			cmd = ActivityConst.MONOPOLY_OP_THROW,
-			callback = slot2
+			callback = arg_2_2
 		})
 	end)
-	slot0:bind(uv0.ON_MOVE, function (slot0, slot1, slot2)
+	arg_1_0:bind(var_0_0.ON_MOVE, function(arg_3_0, arg_3_1, arg_3_2)
 		pg.m02:sendNotification(GAME.MONOPOLY_OP, {
-			activity_id = slot1,
+			activity_id = arg_3_1,
 			cmd = ActivityConst.MONOPOLY_OP_MOVE,
-			callback = slot2
+			callback = arg_3_2
 		})
 	end)
-	slot0:bind(uv0.ON_TRIGGER, function (slot0, slot1, slot2)
+	arg_1_0:bind(var_0_0.ON_TRIGGER, function(arg_4_0, arg_4_1, arg_4_2)
 		pg.m02:sendNotification(GAME.MONOPOLY_OP, {
-			activity_id = slot1,
+			activity_id = arg_4_1,
 			cmd = ActivityConst.MONOPOLY_OP_TRIGGER,
-			callback = slot2
+			callback = arg_4_2
 		})
 	end)
-	slot0:bind(uv0.ON_AWARD, function (slot0)
-		uv0:emit(ActivityMediator.OPEN_LAYER, Context.New({
+	arg_1_0:bind(var_0_0.ON_AWARD, function(arg_5_0)
+		arg_1_0:emit(ActivityMediator.OPEN_LAYER, Context.New({
 			mediator = RedPacketMediator,
 			viewComponent = RedPacketLayer
 		}))
 	end)
 end
 
-function slot0.OnFirstFlush(slot0)
+function var_0_0.OnFirstFlush(arg_6_0)
+	return
 end
 
-function slot0.OnUpdateFlush(slot0)
-	if not slot0.game then
-		slot0.game = import("view.activity.subPages.Monopoly.game.MomopolyGame").New()
+function var_0_0.OnUpdateFlush(arg_7_0)
+	if not arg_7_0.game then
+		arg_7_0.game = import("view.activity.subPages.Monopoly.game.MomopolyGame").New()
 
-		slot0.game:SetUp(slot0, slot0.activity)
+		arg_7_0.game:SetUp(arg_7_0, arg_7_0.activity)
 	else
-		slot0.game:NetActivity(slot0.activity)
+		arg_7_0.game:NetActivity(arg_7_0.activity)
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	slot0.game:Destroy()
+function var_0_0.OnDestroy(arg_8_0)
+	arg_8_0.game:Destroy()
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.world_event_complete = {
 	{
 		event_id = 200,

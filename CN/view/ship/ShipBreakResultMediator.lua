@@ -1,18 +1,18 @@
-slot0 = class("ShipBreakResultMediator", import("..base.ContextMediator"))
+﻿local var_0_0 = class("ShipBreakResultMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	if slot0.contextData.newShip and slot0.contextData.oldShip then
-		slot0.viewComponent:updateStatistics()
+function var_0_0.register(arg_1_0)
+	if arg_1_0.contextData.newShip and arg_1_0.contextData.oldShip then
+		arg_1_0.viewComponent:updateStatistics()
 	end
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_2_0)
 	return {}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot2 = slot1:getName()
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_1:getName()
+	local var_3_1 = arg_3_1:getBody()
 end
 
-return slot0
+return var_0_0

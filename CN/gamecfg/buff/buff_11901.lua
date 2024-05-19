@@ -1,4 +1,21 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 11902,
+				target = {
+					"TargetAllFoe",
+					"TargetShipType"
+				},
+				ship_type_list = {
+					8,
+					17
+				}
+			}
+		}
+	},
 	{
 		time = 5
 	},
@@ -38,22 +55,5 @@ return {
 	stack = 1,
 	id = 11901,
 	icon = 11900,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 11902,
-				target = {
-					"TargetAllFoe",
-					"TargetShipType"
-				},
-				ship_type_list = {
-					8,
-					17
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,89 +1,106 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst
-slot2 = slot0.Battle.BattleConfig
-slot3 = class("BattleEnvironmentBehaviourForce", slot0.Battle.BattleEnvironmentBehaviour)
-slot0.Battle.BattleEnvironmentBehaviourForce = slot3
-slot3.__name = "BattleEnvironmentBehaviourForce"
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0)
-	slot0._moveEndTime = nil
-	slot0._lastSpeed = nil
-	slot0._speed = Vector3.zero
-	slot0._targetIndex = 0
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst
+local var_0_2 = var_0_0.Battle.BattleConfig
+local var_0_3 = class("BattleEnvironmentBehaviourForce", var_0_0.Battle.BattleEnvironmentBehaviour)
 
-	uv0.super.Ctor(slot0)
+var_0_0.Battle.BattleEnvironmentBehaviourForce = var_0_3
+var_0_3.__name = "BattleEnvironmentBehaviourForce"
+
+function var_0_3.Ctor(arg_1_0)
+	arg_1_0._moveEndTime = nil
+	arg_1_0._lastSpeed = nil
+	arg_1_0._speed = Vector3.zero
+	arg_1_0._targetIndex = 0
+
+	var_0_3.super.Ctor(arg_1_0)
 end
 
-function slot3.SetTemplate(slot0, slot1)
-	uv0.super.SetTemplate(slot0, slot1)
+function var_0_3.SetTemplate(arg_2_0, arg_2_1)
+	var_0_3.super.SetTemplate(arg_2_0, arg_2_1)
 
-	slot0._route = slot1.route or {}
-	slot0._moveEndTime = pg.TimeMgr.GetInstance():GetCombatTime()
-	slot3, slot4 = nil
+	arg_2_0._route = arg_2_1.route or {}
+	arg_2_0._moveEndTime = pg.TimeMgr.GetInstance():GetCombatTime()
 
-	if #slot0._unit:GetTemplate().cld_data == 1 then
-		slot4 = slot2.cld_data[1]
-	elseif #slot2.cld_data == 2 then
-		slot3, slot4 = unpack(slot2.cld_data)
+	local var_2_0 = arg_2_0._unit:GetTemplate()
+	local var_2_1
+	local var_2_2
+
+	if #var_2_0.cld_data == 1 then
+		var_2_1 = var_2_0.cld_data[1]
+		var_2_2 = var_2_1
+	elseif #var_2_0.cld_data == 2 then
+		var_2_1, var_2_2 = unpack(var_2_0.cld_data)
 	end
 
-	slot5 = {
-		uv1.Battle.BattleDataProxy.GetInstance():GetTotalBounds()
+	local var_2_3 = {
+		var_0_0.Battle.BattleDataProxy.GetInstance():GetTotalBounds()
 	}
-	slot5[3] = slot5[3] + slot3
-	slot5[4] = slot5[4] - slot3
-	slot5[2] = slot5[2] + slot4
-	slot5[1] = slot5[1] - slot4
-	slot0._bounds = slot5
+
+	var_2_3[3] = var_2_3[3] + var_2_1
+	var_2_3[4] = var_2_3[4] - var_2_1
+	var_2_3[2] = var_2_3[2] + var_2_2
+	var_2_3[1] = var_2_3[1] - var_2_2
+	arg_2_0._bounds = var_2_3
 end
 
-function slot3.doBehaviour(slot0)
-	if slot0._moveEndTime and slot0._moveEndTime <= pg.TimeMgr.GetInstance():GetCombatTime() then
-		slot0._targetIndex = slot0._targetIndex + 1
-		slot0._moveEndTime = nil
+function var_0_3.doBehaviour(arg_3_0)
+	local var_3_0 = pg.TimeMgr.GetInstance():GetCombatTime()
 
-		if slot0._lastSpeed then
-			slot0._speed:Add(slot0._lastSpeed)
+	if arg_3_0._moveEndTime and var_3_0 >= arg_3_0._moveEndTime then
+		arg_3_0._targetIndex = arg_3_0._targetIndex + 1
+		arg_3_0._moveEndTime = nil
 
-			slot0._lastSpeed = nil
+		if arg_3_0._lastSpeed then
+			arg_3_0._speed:Add(arg_3_0._lastSpeed)
+
+			arg_3_0._lastSpeed = nil
 		end
 
-		if slot0._route[slot0._targetIndex] then
-			slot0._lastSpeed = Vector3(unpack(slot2)):Normalize() * slot2[4]
-			slot0._moveEndTime = slot1 + slot2[5]
+		local var_3_1 = arg_3_0._route[arg_3_0._targetIndex]
+
+		if var_3_1 then
+			arg_3_0._lastSpeed = Vector3(unpack(var_3_1)):Normalize() * var_3_1[4]
+			arg_3_0._moveEndTime = var_3_0 + var_3_1[5]
 		end
 	end
 
-	slot0._unit._aoeData:SetPosition(slot0:UpdateAndRestrictPosition(slot0._unit._aoeData:GetPosition()))
-	uv0.super.doBehaviour(slot0)
+	local var_3_2 = arg_3_0._unit._aoeData:GetPosition()
+	local var_3_3 = arg_3_0:UpdateAndRestrictPosition(var_3_2)
+
+	arg_3_0._unit._aoeData:SetPosition(var_3_3)
+	var_0_3.super.doBehaviour(arg_3_0)
 end
 
-function slot3.UpdateAndRestrictPosition(slot0, slot1)
-	if slot0._speed:SqrMagnitude() < 0.01 then
-		return slot1
+function var_0_3.UpdateAndRestrictPosition(arg_4_0, arg_4_1)
+	if arg_4_0._speed:SqrMagnitude() < 0.01 then
+		return arg_4_1
 	end
 
-	if (slot1 + slot0._speed).x < slot0._bounds[3] then
-		slot0._speed.x = math.abs(slot0._speed.x)
-		slot3.x = slot2[3] + math.abs(slot3.x - slot2[3])
-	elseif slot2[4] < slot3.x then
-		slot0._speed.x = -math.abs(slot0._speed.x)
-		slot3.x = slot2[4] - math.abs(slot3.x - slot2[4])
+	local var_4_0 = arg_4_0._bounds
+	local var_4_1 = arg_4_1 + arg_4_0._speed
+
+	if var_4_1.x < var_4_0[3] then
+		arg_4_0._speed.x = math.abs(arg_4_0._speed.x)
+		var_4_1.x = var_4_0[3] + math.abs(var_4_1.x - var_4_0[3])
+	elseif var_4_0[4] < var_4_1.x then
+		arg_4_0._speed.x = -math.abs(arg_4_0._speed.x)
+		var_4_1.x = var_4_0[4] - math.abs(var_4_1.x - var_4_0[4])
 	end
 
-	if slot3.z < slot2[2] then
-		slot0._speed.z = math.abs(slot0._speed.z)
-		slot3.z = slot2[2] + math.abs(slot3.z - slot2[2])
-	elseif slot2[1] < slot3.z then
-		slot0._speed.z = -math.abs(slot0._speed.z)
-		slot3.z = slot2[1] - math.abs(slot3.z - slot2[1])
+	if var_4_1.z < var_4_0[2] then
+		arg_4_0._speed.z = math.abs(arg_4_0._speed.z)
+		var_4_1.z = var_4_0[2] + math.abs(var_4_1.z - var_4_0[2])
+	elseif var_4_0[1] < var_4_1.z then
+		arg_4_0._speed.z = -math.abs(arg_4_0._speed.z)
+		var_4_1.z = var_4_0[1] - math.abs(var_4_1.z - var_4_0[1])
 	end
 
-	return slot3
+	return var_4_1
 end
 
-function slot3.Dispose(slot0)
-	uv0.super.Dispose(slot0)
-	table.clear(slot0)
+function var_0_3.Dispose(arg_5_0)
+	var_0_3.super.Dispose(arg_5_0)
+	table.clear(arg_5_0)
 end

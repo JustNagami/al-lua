@@ -1,35 +1,35 @@
-slot0 = class("WorldMediaCollectionSubLayer", import("view.base.BaseSubView"))
+﻿local var_0_0 = class("WorldMediaCollectionSubLayer", import("view.base.BaseSubView"))
 
-function slot0.Ctor(slot0, slot1, ...)
-	uv0.super.Ctor(slot0, ...)
+function var_0_0.Ctor(arg_1_0, arg_1_1, ...)
+	var_0_0.super.Ctor(arg_1_0, ...)
 
-	slot0.viewParent = slot1
-	slot0.buffer = setmetatable({}, {
-		__index = function (slot0, slot1)
-			return function (slot0, ...)
-				uv0:ActionInvoke(uv1, ...)
+	arg_1_0.viewParent = arg_1_1
+	arg_1_0.buffer = setmetatable({}, {
+		__index = function(arg_2_0, arg_2_1)
+			return function(arg_3_0, ...)
+				arg_1_0:ActionInvoke(arg_2_1, ...)
 			end
 		end,
-		__newindex = function ()
+		__newindex = function()
 			errorMsg("Cant write Data in ActionInvoke buffer")
 		end
 	})
 end
 
-function slot0.SetActive(slot0, slot1)
-	if slot1 then
-		slot0:Show()
+function var_0_0.SetActive(arg_5_0, arg_5_1)
+	if arg_5_1 then
+		arg_5_0:Show()
 	else
-		slot0:Hide()
+		arg_5_0:Hide()
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.loader then
-		slot0.loader:Clear()
+function var_0_0.OnDestroy(arg_6_0)
+	if arg_6_0.loader then
+		arg_6_0.loader:Clear()
 
-		slot0.loader = nil
+		arg_6_0.loader = nil
 	end
 end
 
-return slot0
+return var_0_0

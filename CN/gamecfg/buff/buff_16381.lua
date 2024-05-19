@@ -1,23 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 1,
-	picture = "",
-	desc = "特效触发器",
-	stack = 1,
-	id = 16381,
-	icon = 16380,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -122,5 +103,24 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 1,
+	picture = "",
+	desc = "特效触发器",
+	stack = 1,
+	id = 16381,
+	icon = 16380,
+	last_effect = ""
 }

@@ -1,1 +1,1 @@
-return class("SnapshotShareMediator", import("..base.ContextMediator"))
+﻿return (class("SnapshotShareMediator", import("..base.ContextMediator")))

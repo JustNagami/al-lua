@@ -1,13 +1,13 @@
-slot0 = class("FeastThemeTemplate", import("model.vo.NewBackYard.BackYardSelfThemeTemplate"))
+﻿local var_0_0 = class("FeastThemeTemplate", import("model.vo.NewBackYard.BackYardSelfThemeTemplate"))
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	uv0.super.Ctor(slot0, slot1, slot2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
 
-	slot0.mapSize = slot3
+	arg_1_0.mapSize = arg_1_3
 end
 
-function slot0.GetMapSize(slot0)
-	return slot0.mapSize
+function var_0_0.GetMapSize(arg_2_0)
+	return arg_2_0.mapSize
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.memory_template = setmetatable({
 	__name = "memory_template",
 	all = {
@@ -3527,6 +3527,17 @@ pg.base.memory_template = {
 		icon = "activity",
 		is_open = 0
 	},
+	[4001] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "侧翼-1",
+		condition = "进入「异色格」作战 A2/C2",
+		story = "TACT20016",
+		id = 4001,
+		icon = "activity",
+		is_open = 0
+	},
 	{
 		type = 1,
 		subtitle = "",
@@ -3659,6 +3670,17 @@ pg.base.memory_template = {
 		icon = "activity",
 		is_open = 0
 	},
+	[4000] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "将杀-1",
+		condition = "进入「异色格」作战B4/D4",
+		story = "TACT20015",
+		id = 4000,
+		icon = "activity",
+		is_open = 0
+	},
 	{
 		type = 1,
 		subtitle = "",
@@ -3667,6 +3689,17 @@ pg.base.memory_template = {
 		condition = "与「异色格」作战 B4/D4 BOSS交战",
 		story = "TACT20013",
 		id = 49,
+		icon = "activity",
+		is_open = 0
+	},
+	[4002] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "侧翼-2",
+		condition = "通过「异色格」作战 B4/D4",
+		story = "TACT20017",
+		id = 4002,
 		icon = "activity",
 		is_open = 0
 	},
@@ -6649,39 +6682,6 @@ pg.base.memory_template = {
 		story = "ACTRUYUE06",
 		id = 320,
 		icon = "memory_actruyue",
-		is_open = 0
-	},
-	[4001] = {
-		type = 1,
-		subtitle = "",
-		mask = "bg/bg_memory",
-		title = "侧翼-1",
-		condition = "进入「异色格」作战 A2/C2",
-		story = "TACT20016",
-		id = 4001,
-		icon = "activity",
-		is_open = 0
-	},
-	[4000] = {
-		type = 1,
-		subtitle = "",
-		mask = "bg/bg_memory",
-		title = "将杀-1",
-		condition = "进入「异色格」作战B4/D4",
-		story = "TACT20015",
-		id = 4000,
-		icon = "activity",
-		is_open = 0
-	},
-	[4002] = {
-		type = 1,
-		subtitle = "",
-		mask = "bg/bg_memory",
-		title = "侧翼-2",
-		condition = "通过「异色格」作战 B4/D4",
-		story = "TACT20017",
-		id = 4002,
-		icon = "activity",
 		is_open = 0
 	},
 	[322] = {

@@ -1,1 +1,1 @@
-return class("VotomsPage", import(".TemplatePage.SkinTemplatePage"))
+﻿return (class("VotomsPage", import(".TemplatePage.SkinTemplatePage")))

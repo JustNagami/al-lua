@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = 1250004,
 	map_id = 10001,
 	bgm = "holo-fff-inst",

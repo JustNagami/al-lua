@@ -1,29 +1,35 @@
-slot0 = class("WorldBossPtRecoverCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("WorldBossPtRecoverCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	if nowWorld():GetBossProxy():isMaxPt() then
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = nowWorld():GetBossProxy()
+
+	if var_1_0:isMaxPt() then
 		return
 	end
 
-	slot6 = slot3:GetRecoverPtTime()
+	local var_1_1 = var_1_0:GetNextReconveTime()
+	local var_1_2 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_1_3 = var_1_0:GetRecoverPtTime()
 
-	if slot3:GetNextReconveTime() <= pg.TimeMgr.GetInstance():GetServerTime() then
-		slot7 = slot5 - slot4
+	if var_1_1 <= var_1_2 then
+		local var_1_4 = var_1_2 - var_1_1
 
-		slot3:increasePt()
+		var_1_0:increasePt()
 
-		if not slot3:isMaxPt() then
-			while slot6 <= slot7 do
-				slot3:increasePt()
+		if not var_1_0:isMaxPt() then
+			while var_1_3 <= var_1_4 do
+				var_1_0:increasePt()
 
-				slot7 = slot7 - slot6
+				var_1_4 = var_1_4 - var_1_3
 			end
 
-			slot3:updatePtTime(slot5 + slot6 - slot7)
+			local var_1_5 = var_1_2 + (var_1_3 - var_1_4)
+
+			var_1_0:updatePtTime(var_1_5)
 		end
 	end
 
-	slot0:sendNotification(GAME.WORLD_BOSS_PT_RECOVER_DONE)
+	arg_1_0:sendNotification(GAME.WORLD_BOSS_PT_RECOVER_DONE)
 end
 
-return slot0
+return var_0_0

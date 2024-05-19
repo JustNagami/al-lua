@@ -1,189 +1,191 @@
-slot0 = _G
-slot1 = require("string")
-slot2 = require("math")
-slot4 = require("socket.core")
+﻿local var_0_0 = _G
+local var_0_1 = require("string")
+local var_0_2 = require("math")
+local var_0_3 = require("socket.core")
+local var_0_4 = var_0_3
 
-function slot4.connect4(slot0, slot1, slot2, slot3)
-	return uv0.connect(slot0, slot1, slot2, slot3, "inet")
+function var_0_4.connect4(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	return var_0_3.connect(arg_1_0, arg_1_1, arg_1_2, arg_1_3, "inet")
 end
 
-function slot4.connect6(slot0, slot1, slot2, slot3)
-	return uv0.connect(slot0, slot1, slot2, slot3, "inet6")
+function var_0_4.connect6(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	return var_0_3.connect(arg_2_0, arg_2_1, arg_2_2, arg_2_3, "inet6")
 end
 
-function slot4.bind(slot0, slot1, slot2)
-	if slot0 == "*" then
-		slot0 = "0.0.0.0"
+function var_0_4.bind(arg_3_0, arg_3_1, arg_3_2)
+	if arg_3_0 == "*" then
+		arg_3_0 = "0.0.0.0"
 	end
 
-	slot3, slot4 = uv0.dns.getaddrinfo(slot0)
+	local var_3_0, var_3_1 = var_0_3.dns.getaddrinfo(arg_3_0)
 
-	if not slot3 then
-		return nil, slot4
+	if not var_3_0 then
+		return nil, var_3_1
 	end
 
-	slot5, slot6 = nil
-	slot4 = "no info on address"
+	local var_3_2
+	local var_3_3
+	local var_3_4 = "no info on address"
 
-	for slot10, slot11 in uv1.ipairs(slot3) do
-		if slot11.family == "inet" then
-			slot5, slot4 = uv0.tcp4()
+	for iter_3_0, iter_3_1 in var_0_0.ipairs(var_3_0) do
+		if iter_3_1.family == "inet" then
+			var_3_2, var_3_4 = var_0_3.tcp4()
 		else
-			slot5, slot4 = uv0.tcp6()
+			var_3_2, var_3_4 = var_0_3.tcp6()
 		end
 
-		if not slot5 then
-			return nil, slot4
+		if not var_3_2 then
+			return nil, var_3_4
 		end
 
-		slot5:setoption("reuseaddr", true)
+		var_3_2:setoption("reuseaddr", true)
 
-		slot12, slot4 = slot5:bind(slot11.addr, slot1)
+		local var_3_5, var_3_6 = var_3_2:bind(iter_3_1.addr, arg_3_1)
 
-		if not slot12 then
-			slot5:close()
+		var_3_4 = var_3_6
+
+		if not var_3_5 then
+			var_3_2:close()
 		else
-			slot12, slot4 = slot5:listen(slot2)
+			local var_3_7, var_3_8 = var_3_2:listen(arg_3_2)
 
-			if not slot12 then
-				slot5:close()
+			var_3_4 = var_3_8
+
+			if not var_3_7 then
+				var_3_2:close()
 			else
-				return slot5
+				return var_3_2
 			end
 		end
 	end
 
-	return nil, slot4
+	return nil, var_3_4
 end
 
-slot4.try = slot4.newtry()
+var_0_4.try = var_0_4.newtry()
 
-function slot4.choose(slot0)
-	return function (slot0, slot1, slot2)
-		if uv0.type(slot0) ~= "string" then
-			slot2 = slot1
-			slot1 = slot0
-			slot0 = "default"
+function var_0_4.choose(arg_4_0)
+	return function(arg_5_0, arg_5_1, arg_5_2)
+		if var_0_0.type(arg_5_0) ~= "string" then
+			arg_5_0, arg_5_1, arg_5_2 = "default", arg_5_0, arg_5_1
 		end
 
-		if not uv1[slot0 or "nil"] then
-			uv0.error("unknown key (" .. uv0.tostring(slot0) .. ")", 3)
+		local var_5_0 = arg_4_0[arg_5_0 or "nil"]
+
+		if not var_5_0 then
+			var_0_0.error("unknown key (" .. var_0_0.tostring(arg_5_0) .. ")", 3)
 		else
-			return slot3(slot1, slot2)
+			return var_5_0(arg_5_1, arg_5_2)
 		end
 	end
 end
 
-slot5 = {}
-slot6 = {}
-slot4.sourcet = slot5
-slot4.sinkt = slot6
-slot4.BLOCKSIZE = 2048
+local var_0_5 = {}
+local var_0_6 = {}
 
-slot6["close-when-done"] = function (slot0)
-	return uv0.setmetatable({
-		getfd = function ()
-			return uv0:getfd()
+var_0_4.sourcet = var_0_5
+var_0_4.sinkt = var_0_6
+var_0_4.BLOCKSIZE = 2048
+var_0_6["close-when-done"] = function(arg_6_0)
+	return var_0_0.setmetatable({
+		getfd = function()
+			return arg_6_0:getfd()
 		end,
-		dirty = function ()
-			return uv0:dirty()
+		dirty = function()
+			return arg_6_0:dirty()
 		end
 	}, {
-		__call = function (slot0, slot1, slot2)
-			if not slot1 then
-				uv0:close()
+		__call = function(arg_9_0, arg_9_1, arg_9_2)
+			if not arg_9_1 then
+				arg_6_0:close()
 
 				return 1
 			else
-				return uv0:send(slot1)
+				return arg_6_0:send(arg_9_1)
 			end
 		end
 	})
 end
-
-slot6["keep-open"] = function (slot0)
-	return uv0.setmetatable({
-		getfd = function ()
-			return uv0:getfd()
+var_0_6["keep-open"] = function(arg_10_0)
+	return var_0_0.setmetatable({
+		getfd = function()
+			return arg_10_0:getfd()
 		end,
-		dirty = function ()
-			return uv0:dirty()
+		dirty = function()
+			return arg_10_0:dirty()
 		end
 	}, {
-		__call = function (slot0, slot1, slot2)
-			if slot1 then
-				return uv0:send(slot1)
+		__call = function(arg_13_0, arg_13_1, arg_13_2)
+			if arg_13_1 then
+				return arg_10_0:send(arg_13_1)
 			else
 				return 1
 			end
 		end
 	})
 end
-
-slot6.default = slot6["keep-open"]
-slot4.sink = slot4.choose(slot6)
-
-slot5["by-length"] = function (slot0, slot1)
-	return uv0.setmetatable({
-		getfd = function ()
-			return uv0:getfd()
+var_0_6.default = var_0_6["keep-open"]
+var_0_4.sink = var_0_4.choose(var_0_6)
+var_0_5["by-length"] = function(arg_14_0, arg_14_1)
+	return var_0_0.setmetatable({
+		getfd = function()
+			return arg_14_0:getfd()
 		end,
-		dirty = function ()
-			return uv0:dirty()
+		dirty = function()
+			return arg_14_0:dirty()
 		end
 	}, {
-		__call = function ()
-			if uv0 <= 0 then
+		__call = function()
+			if arg_14_1 <= 0 then
 				return nil
 			end
 
-			slot1, slot2 = uv3:receive(uv1.min(uv2.BLOCKSIZE, uv0))
+			local var_17_0 = var_0_2.min(var_0_3.BLOCKSIZE, arg_14_1)
+			local var_17_1, var_17_2 = arg_14_0:receive(var_17_0)
 
-			if slot2 then
-				return nil, slot2
+			if var_17_2 then
+				return nil, var_17_2
 			end
 
-			uv0 = uv0 - uv4.len(slot1)
+			arg_14_1 = arg_14_1 - var_0_1.len(var_17_1)
 
-			return slot1
+			return var_17_1
 		end
 	})
 end
+var_0_5["until-closed"] = function(arg_18_0)
+	local var_18_0
 
-slot5["until-closed"] = function (slot0)
-	slot1 = nil
-
-	return uv0.setmetatable({
-		getfd = function ()
-			return uv0:getfd()
+	return var_0_0.setmetatable({
+		getfd = function()
+			return arg_18_0:getfd()
 		end,
-		dirty = function ()
-			return uv0:dirty()
+		dirty = function()
+			return arg_18_0:dirty()
 		end
 	}, {
-		__call = function ()
-			if uv0 then
+		__call = function()
+			if var_18_0 then
 				return nil
 			end
 
-			slot0, slot1, slot2 = uv1:receive(uv2.BLOCKSIZE)
+			local var_21_0, var_21_1, var_21_2 = arg_18_0:receive(var_0_3.BLOCKSIZE)
 
-			if not slot1 then
-				return slot0
-			elseif slot1 == "closed" then
-				uv1:close()
+			if not var_21_1 then
+				return var_21_0
+			elseif var_21_1 == "closed" then
+				arg_18_0:close()
 
-				uv0 = 1
+				var_18_0 = 1
 
-				return slot2
+				return var_21_2
 			else
-				return nil, slot1
+				return nil, var_21_1
 			end
 		end
 	})
 end
+var_0_5.default = var_0_5["until-closed"]
+var_0_4.source = var_0_4.choose(var_0_5)
 
-slot5.default = slot5["until-closed"]
-slot4.source = slot4.choose(slot5)
-
-return slot4
+return var_0_4

@@ -1,50 +1,60 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConfig
-slot0.Battle.BattleOpticalSightView = class("BattleOpticalSightView")
-slot2 = slot0.Battle.BattleOpticalSightView
-slot2.__name = "BattleOpticalSightView"
-slot2.SIGHT_A = slot1.ChargeWeaponConfig.SIGHT_A
-slot2.SIGHT_B = slot1.ChargeWeaponConfig.SIGHT_B
-slot2.SIGHT_C = slot1.ChargeWeaponConfig.SIGHT_C
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, slot1)
-	slot0._sightTF = slot1:Find("Sight")
-	slot0._rulerTF = slot1:Find("Ruler")
-	slot0._cornerTF = slot1:Find("Corners")
-	slot0._active = false
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConfig
+
+var_0_0.Battle.BattleOpticalSightView = class("BattleOpticalSightView")
+
+local var_0_2 = var_0_0.Battle.BattleOpticalSightView
+
+var_0_2.__name = "BattleOpticalSightView"
+var_0_2.SIGHT_A = var_0_1.ChargeWeaponConfig.SIGHT_A
+var_0_2.SIGHT_B = var_0_1.ChargeWeaponConfig.SIGHT_B
+var_0_2.SIGHT_C = var_0_1.ChargeWeaponConfig.SIGHT_C
+
+function var_0_2.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._sightTF = arg_1_1:Find("Sight")
+	arg_1_0._rulerTF = arg_1_1:Find("Ruler")
+	arg_1_0._cornerTF = arg_1_1:Find("Corners")
+	arg_1_0._active = false
 end
 
-function slot2.SetAreaBound(slot0, slot1, slot2)
-	slot0._totalLeftBound = slot1
-	slot0._totalRightBound = slot2
+function var_0_2.SetAreaBound(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0._totalLeftBound = arg_2_1
+	arg_2_0._totalRightBound = arg_2_2
 end
 
-function slot2.SetActive(slot0, slot1)
-	slot0._active = slot1
+function var_0_2.SetActive(arg_3_0, arg_3_1)
+	arg_3_0._active = arg_3_1
 
-	SetActive(slot0._sightTF, slot1)
-	SetActive(slot0._rulerTF, slot1)
-	SetActive(slot0._cornerTF, slot1)
+	SetActive(arg_3_0._sightTF, arg_3_1)
+	SetActive(arg_3_0._rulerTF, arg_3_1)
+	SetActive(arg_3_0._cornerTF, arg_3_1)
 end
 
-function slot2.Update(slot0)
-	if not slot0._active then
+function var_0_2.Update(arg_4_0)
+	if not arg_4_0._active then
 		return
 	end
 
-	slot2 = uv1.Battle.BattleVariable.CameraPosToUICamera(Vector3.New(math.min(slot0._fleetVO:GetMotion():GetPos().x + uv0.SIGHT_C, slot0._totalRightBound), 0, 5 + slot0._fleetVO:GetMotion():GetPos().z))
-	slot0._sightTF.position = slot2
-	slot0._rulerTF.position = Vector3.New(0, slot2.y)
+	local var_4_0 = arg_4_0._fleetVO:GetMotion():GetPos().x + var_0_2.SIGHT_C
+	local var_4_1 = math.min(var_4_0, arg_4_0._totalRightBound)
+	local var_4_2 = var_0_0.Battle.BattleVariable.CameraPosToUICamera(Vector3.New(var_4_1, 0, 5 + arg_4_0._fleetVO:GetMotion():GetPos().z))
+
+	arg_4_0._sightTF.position = var_4_2
+
+	local var_4_3 = Vector3.New(0, var_4_2.y)
+
+	arg_4_0._rulerTF.position = var_4_3
 end
 
-function slot2.SetFleetVO(slot0, slot1)
-	slot0._fleetVO = slot1
+function var_0_2.SetFleetVO(arg_5_0, arg_5_1)
+	arg_5_0._fleetVO = arg_5_1
 end
 
-function slot2.Dispose(slot0)
-	slot0._sightTF = nil
-	slot0._rulerTF = nil
-	slot0._cornerTF = nil
-	slot0._fleetVO = nil
+function var_0_2.Dispose(arg_6_0)
+	arg_6_0._sightTF = nil
+	arg_6_0._rulerTF = nil
+	arg_6_0._cornerTF = nil
+	arg_6_0._fleetVO = nil
 end

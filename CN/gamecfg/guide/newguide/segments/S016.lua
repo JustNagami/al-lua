@@ -1,3 +1,7 @@
+﻿local var_0_0 = {
+	"返回主界面"
+}
+
 return {
 	id = "S016",
 	events = {
@@ -8,9 +12,7 @@ return {
 				mode = 2,
 				posY = 223.26,
 				posX = -136.21,
-				text = ({
-					"返回主界面"
-				})[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/blur_panel/adapt/top/back_btn",

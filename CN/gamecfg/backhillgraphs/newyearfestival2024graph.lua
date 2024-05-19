@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	Points = {
 		{
 			x = -173.3788,
@@ -32,7 +32,8 @@ slot0 = {
 		}
 	}
 }
-slot0.Points[2].outRandom = true
-slot0.Points[7].outRandom = true
 
-return slot0
+var_0_0.Points[2].outRandom = true
+var_0_0.Points[7].outRandom = true
+
+return var_0_0

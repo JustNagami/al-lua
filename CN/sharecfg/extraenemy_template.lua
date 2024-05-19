@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.extraenemy_template = {
 	{
 		mail_title = "world_boss_title_1",

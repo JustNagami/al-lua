@@ -1,4 +1,4 @@
-return {
+﻿return {
 	Points = {
 		{
 			x = -180,

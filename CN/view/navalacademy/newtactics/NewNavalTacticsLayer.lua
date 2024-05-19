@@ -1,88 +1,92 @@
-slot0 = class("NewNavalTacticsLayer", import("...base.BaseUI"))
-slot0.ON_UNLOCK = "NewNavalTacticsLayer:ON_UNLOCK"
-slot0.ON_ADD_STUDENT = "NewNavalTacticsLayer:ON_ADD_STUDENT"
-slot0.ON_SKILL_SELECTED = "NewNavalTacticsLayer:ON_SKILL_SELECTED"
-slot0.ON_RESEL_SKILL = "NewNavalTacticsLayer:ON_RESEL_SKILL"
-slot0.ON_LESSON_SELECTED = "NewNavalTacticsLayer:ON_LESSON_SELECTED"
-slot0.ON_CANCEL_ADD_STUDENT = "NewNavalTacticsLayer:ON_CANCEL_ADD_STUDENT"
+﻿local var_0_0 = class("NewNavalTacticsLayer", import("...base.BaseUI"))
 
-function slot0.getUIName(slot0)
+var_0_0.ON_UNLOCK = "NewNavalTacticsLayer:ON_UNLOCK"
+var_0_0.ON_ADD_STUDENT = "NewNavalTacticsLayer:ON_ADD_STUDENT"
+var_0_0.ON_SKILL_SELECTED = "NewNavalTacticsLayer:ON_SKILL_SELECTED"
+var_0_0.ON_RESEL_SKILL = "NewNavalTacticsLayer:ON_RESEL_SKILL"
+var_0_0.ON_LESSON_SELECTED = "NewNavalTacticsLayer:ON_LESSON_SELECTED"
+var_0_0.ON_CANCEL_ADD_STUDENT = "NewNavalTacticsLayer:ON_CANCEL_ADD_STUDENT"
+
+function var_0_0.getUIName(arg_1_0)
 	return "NewNavalTacticsUI"
 end
 
-function slot0.OnUnlockSlot(slot0)
-	if slot0.studentsPage:GetLoaded() then
-		slot0.studentsPage:OnUnlockSlot()
+function var_0_0.OnUnlockSlot(arg_2_0)
+	if arg_2_0.studentsPage:GetLoaded() then
+		arg_2_0.studentsPage:OnUnlockSlot()
 	end
 end
 
-function slot0.OnAddStudent(slot0)
-	if slot0.studentsPage:GetLoaded() then
-		slot0.studentsPage:OnAddStudent()
+function var_0_0.OnAddStudent(arg_3_0)
+	if arg_3_0.studentsPage:GetLoaded() then
+		arg_3_0.studentsPage:OnAddStudent()
 	end
 
-	if slot0.selLessonPage:GetLoaded() and slot0.selLessonPage:isShowing() then
-		slot0.selLessonPage:Hide()
-	end
-end
-
-function slot0.ResendCancelOp(slot0, slot1)
-	slot0.inAddStudentProcess = false
-
-	for slot5, slot6 in ipairs(slot1) do
-		slot0:emit(NewNavalTacticsMediator.ON_CANCEL, slot6[1], slot6[2])
+	if arg_3_0.selLessonPage:GetLoaded() and arg_3_0.selLessonPage:isShowing() then
+		arg_3_0.selLessonPage:Hide()
 	end
 end
 
-function slot0.OnExitStudent(slot0)
-	if slot0.studentsPage:GetLoaded() then
-		slot0.studentsPage:OnExitStudent()
+function var_0_0.ResendCancelOp(arg_4_0, arg_4_1)
+	arg_4_0.inAddStudentProcess = false
+
+	for iter_4_0, iter_4_1 in ipairs(arg_4_1) do
+		arg_4_0:emit(NewNavalTacticsMediator.ON_CANCEL, iter_4_1[1], iter_4_1[2])
 	end
 end
 
-function slot0.BlockEvents(slot0)
-	GetOrAddComponent(slot0._tf, typeof(CanvasGroup)).blocksRaycasts = false
-end
-
-function slot0.UnblockEvents(slot0)
-	GetOrAddComponent(slot0._tf, typeof(CanvasGroup)).blocksRaycasts = true
-end
-
-function slot0.IsInAddStudentProcess(slot0)
-	return slot0.inAddStudentProcess
-end
-
-function slot0.OnUpdateMetaSkillPanel(slot0, slot1)
-	if slot0.metaSkillPage then
-		slot0.metaSkillPage:reUpdate()
+function var_0_0.OnExitStudent(arg_5_0)
+	if arg_5_0.studentsPage:GetLoaded() then
+		arg_5_0.studentsPage:OnExitStudent()
 	end
 end
 
-function slot0.SetStudents(slot0, slot1)
-	slot0.students = slot1
+function var_0_0.BlockEvents(arg_6_0)
+	GetOrAddComponent(arg_6_0._tf, typeof(CanvasGroup)).blocksRaycasts = false
 end
 
-function slot0.init(slot0)
-	slot0.painting = slot0:findTF("painting"):GetComponent(typeof(Image))
-	slot0.backBtn = slot0:findTF("adpter/frame/btnBack")
-	slot0.option = slot0:findTF("adpter/frame/option")
-	slot0.stampBtn = slot0:findTF("stamp")
-	slot0.quickFinishPanel = slot0:findTF("painting/quick_finish", slot0.mainPanel)
-	slot0.quickFinishText = slot0:findTF("painting/quick_finish/Text", slot0.mainPanel)
-	slot0.studentsPage = NewNavalTacticsStudentsPage.New(slot0:findTF("adpter"), slot0.event)
-	slot0.unlockPage = NewNavalTacticsUnlockSlotPage.New(slot0._tf, slot0.event)
-	slot0.selSkillPage = NewNavalTacticsSelSkillsPage.New(slot0._tf, slot0.event, slot0.contextData)
-	slot0.selLessonPage = NewNavalTacticsSelLessonPage.New(slot0._tf, slot0.event)
-	slot0.finishLessonUtil = NewNavalTacticsFinishLessonUtil.New(slot0.studentsPage, slot0.selLessonPage, slot0.selSkillPage)
+function var_0_0.UnblockEvents(arg_7_0)
+	GetOrAddComponent(arg_7_0._tf, typeof(CanvasGroup)).blocksRaycasts = true
 end
 
-function slot0.didEnter(slot0)
-	slot0:bind(uv0.ON_UNLOCK, function (slot0, slot1)
-		uv0.unlockPage:ExecuteAction("Show", slot1, function ()
-			uv0:emit(NewNavalTacticsMediator.ON_SHOPPING, uv1)
+function var_0_0.IsInAddStudentProcess(arg_8_0)
+	return arg_8_0.inAddStudentProcess
+end
+
+function var_0_0.OnUpdateMetaSkillPanel(arg_9_0, arg_9_1)
+	if arg_9_0.metaSkillPage then
+		arg_9_0.metaSkillPage:reUpdate()
+	end
+end
+
+function var_0_0.SetStudents(arg_10_0, arg_10_1)
+	arg_10_0.students = arg_10_1
+end
+
+function var_0_0.init(arg_11_0)
+	arg_11_0.painting = arg_11_0:findTF("painting"):GetComponent(typeof(Image))
+	arg_11_0.backBtn = arg_11_0:findTF("adpter/frame/btnBack")
+	arg_11_0.option = arg_11_0:findTF("adpter/frame/option")
+	arg_11_0.stampBtn = arg_11_0:findTF("stamp")
+	arg_11_0.quickFinishPanel = arg_11_0:findTF("painting/quick_finish", arg_11_0.mainPanel)
+	arg_11_0.quickFinishText = arg_11_0:findTF("painting/quick_finish/Text", arg_11_0.mainPanel)
+
+	local var_11_0 = arg_11_0:findTF("adpter")
+
+	arg_11_0.studentsPage = NewNavalTacticsStudentsPage.New(var_11_0, arg_11_0.event)
+	arg_11_0.unlockPage = NewNavalTacticsUnlockSlotPage.New(arg_11_0._tf, arg_11_0.event)
+	arg_11_0.selSkillPage = NewNavalTacticsSelSkillsPage.New(arg_11_0._tf, arg_11_0.event, arg_11_0.contextData)
+	arg_11_0.selLessonPage = NewNavalTacticsSelLessonPage.New(arg_11_0._tf, arg_11_0.event)
+	arg_11_0.finishLessonUtil = NewNavalTacticsFinishLessonUtil.New(arg_11_0.studentsPage, arg_11_0.selLessonPage, arg_11_0.selSkillPage)
+end
+
+function var_0_0.didEnter(arg_12_0)
+	arg_12_0:bind(var_0_0.ON_UNLOCK, function(arg_13_0, arg_13_1)
+		arg_12_0.unlockPage:ExecuteAction("Show", arg_13_1, function()
+			arg_12_0:emit(NewNavalTacticsMediator.ON_SHOPPING, arg_13_1)
 		end)
 	end)
-	slot0:bind(uv0.ON_ADD_STUDENT, function (slot0, slot1)
+	arg_12_0:bind(var_0_0.ON_ADD_STUDENT, function(arg_15_0, arg_15_1)
 		if not getProxy(BagProxy):ExitTypeItems(Item.LESSON_TYPE) then
 			if not ItemTipPanel.ShowItemTipbyID(16001, i18n("item_lack_title", i18n("ship_book"), i18n("ship_book"))) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("tactics_no_lesson"))
@@ -91,167 +95,185 @@ function slot0.didEnter(slot0)
 			return
 		end
 
-		uv0:emit(NewNavalTacticsMediator.ON_SELECT_SHIP, slot1)
+		arg_12_0:emit(NewNavalTacticsMediator.ON_SELECT_SHIP, arg_15_1)
 	end)
-	slot0:bind(uv0.ON_SKILL_SELECTED, function (slot0, slot1)
-		uv0.selLessonPage:ExecuteAction("Show", slot1)
-		uv0.selSkillPage:Hide()
+	arg_12_0:bind(var_0_0.ON_SKILL_SELECTED, function(arg_16_0, arg_16_1)
+		arg_12_0.selLessonPage:ExecuteAction("Show", arg_16_1)
+		arg_12_0.selSkillPage:Hide()
 	end)
-	slot0:bind(uv0.ON_RESEL_SKILL, function (slot0, slot1)
-		uv0.selLessonPage:Hide()
-		uv0.selSkillPage:Show(slot1)
+	arg_12_0:bind(var_0_0.ON_RESEL_SKILL, function(arg_17_0, arg_17_1)
+		arg_12_0.selLessonPage:Hide()
+		arg_12_0.selSkillPage:Show(arg_17_1)
 	end)
-	slot0:bind(uv0.ON_LESSON_SELECTED, function (slot0, slot1)
-		uv0:AddStudentFinish(slot1)
+	arg_12_0:bind(var_0_0.ON_LESSON_SELECTED, function(arg_18_0, arg_18_1)
+		arg_12_0:AddStudentFinish(arg_18_1)
 	end)
-	setActive(slot0.stampBtn, getProxy(TaskProxy):mingshiTouchFlagEnabled())
+	setActive(arg_12_0.stampBtn, getProxy(TaskProxy):mingshiTouchFlagEnabled())
 
 	if LOCK_CLICK_MINGSHI then
-		setActive(slot0.stampBtn, false)
+		setActive(arg_12_0.stampBtn, false)
 	end
 
-	onButton(slot0, slot0.stampBtn, function ()
+	onButton(arg_12_0, arg_12_0.stampBtn, function()
 		getProxy(TaskProxy):dealMingshiTouchFlag(3)
 	end, SFX_CONFIRM)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:closeView()
+	onButton(arg_12_0, arg_12_0.backBtn, function()
+		arg_12_0:closeView()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.option, function ()
-		uv0:emit(uv1.ON_HOME)
+	onButton(arg_12_0, arg_12_0.option, function()
+		arg_12_0:emit(var_0_0.ON_HOME)
 	end, SFX_PANEL)
-	slot0:SetPainting()
-	slot0:Init()
-	slot0:OnUpdateQuickFinishPanel()
-	slot0.studentsPage:ExecuteAction("Show", slot0.students)
+	arg_12_0:SetPainting()
+	arg_12_0:Init()
+	arg_12_0:OnUpdateQuickFinishPanel()
+	arg_12_0.studentsPage:ExecuteAction("Show", arg_12_0.students)
 end
 
-function slot0.Init(slot0)
-	if slot0.contextData.shipToLesson then
-		slot0.inAddStudentProcess = true
+function var_0_0.Init(arg_22_0)
+	if arg_22_0.contextData.shipToLesson then
+		arg_22_0.inAddStudentProcess = true
 
-		slot0:AddStudent(slot0.contextData.shipToLesson.shipId, slot0.contextData.shipToLesson.index, slot0.contextData.shipToLesson.skillIndex)
+		local var_22_0 = arg_22_0.contextData.shipToLesson.skillIndex
+		local var_22_1 = arg_22_0.contextData.shipToLesson.shipId
+		local var_22_2 = arg_22_0.contextData.shipToLesson.index
 
-		slot0.contextData.shipToLesson = nil
-	elseif slot0.contextData.metaShipID then
-		slot0.inAddStudentProcess = true
+		arg_22_0:AddStudent(var_22_1, var_22_2, var_22_0)
 
-		slot0:ShowMetaShipSkill(slot0.contextData.metaShipID)
+		arg_22_0.contextData.shipToLesson = nil
+	elseif arg_22_0.contextData.metaShipID then
+		arg_22_0.inAddStudentProcess = true
 
-		slot0.contextData.metaShipID = nil
+		local var_22_3 = arg_22_0.contextData.metaShipID
+
+		arg_22_0:ShowMetaShipSkill(var_22_3)
+
+		arg_22_0.contextData.metaShipID = nil
 	end
 end
 
-function slot0.OnUpdateQuickFinishPanel(slot0)
-	setActive(slot0.quickFinishPanel, getProxy(NavalAcademyProxy):getDailyFinishCnt() > 0)
-	setText(slot0.quickFinishText, i18n("skill_learn_tip", slot1))
+function var_0_0.OnUpdateQuickFinishPanel(arg_23_0)
+	local var_23_0 = getProxy(NavalAcademyProxy):getDailyFinishCnt()
+
+	setActive(arg_23_0.quickFinishPanel, var_23_0 > 0)
+	setText(arg_23_0.quickFinishText, i18n("skill_learn_tip", var_23_0))
 end
 
-function slot0.SetPainting(slot0)
-	ResourceMgr.Inst:getAssetAsync("Clutter/class_painting", "", typeof(Sprite), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		uv0.painting.sprite = slot0
+function var_0_0.SetPainting(arg_24_0)
+	ResourceMgr.Inst:getAssetAsync("Clutter/class_painting", "", typeof(Sprite), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_25_0)
+		arg_24_0.painting.sprite = arg_25_0
 
-		uv0.painting:SetNativeSize()
+		arg_24_0.painting:SetNativeSize()
 	end), true, true)
 end
 
-function slot0.ShowMetaShipSkill(slot0, slot1)
-	slot0.metaSkillPage = NavalTacticsMetaSkillsView.New(slot0._tf, slot0.event)
+function var_0_0.ShowMetaShipSkill(arg_26_0, arg_26_1)
+	arg_26_0.metaSkillPage = NavalTacticsMetaSkillsView.New(arg_26_0._tf, arg_26_0.event)
 
-	slot0.metaSkillPage:Reset()
-	slot0.metaSkillPage:Load()
-	slot0.metaSkillPage:setData(slot1, function ()
-		uv0.inAddStudentProcess = false
+	arg_26_0.metaSkillPage:Reset()
+	arg_26_0.metaSkillPage:Load()
+	arg_26_0.metaSkillPage:setData(arg_26_1, function()
+		arg_26_0.inAddStudentProcess = false
 
-		uv0.metaSkillPage:Destroy()
+		arg_26_0.metaSkillPage:Destroy()
 
-		uv0.metaSkillPage = nil
+		arg_26_0.metaSkillPage = nil
 	end)
 end
 
-function slot0.AddStudent(slot0, slot1, slot2, slot3)
-	slot0.selSkillPage:ExecuteAction("Show", Student.New({
-		id = slot2,
-		ship_id = slot1
-	}), slot3)
+function var_0_0.AddStudent(arg_28_0, arg_28_1, arg_28_2, arg_28_3)
+	local var_28_0 = Student.New({
+		id = arg_28_2,
+		ship_id = arg_28_1
+	})
+
+	arg_28_0.selSkillPage:ExecuteAction("Show", var_28_0, arg_28_3)
 end
 
-function slot0.AddStudentFinish(slot0, slot1)
-	if getProxy(BayProxy):RawGetShipById(slot1.shipId):isActivityNpc() then
+function var_0_0.AddStudentFinish(arg_29_0, arg_29_1)
+	local var_29_0 = getProxy(BayProxy):RawGetShipById(arg_29_1.shipId)
+
+	if var_29_0:isActivityNpc() then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("npc_learn_skill_tip"),
-			onYes = function ()
-				uv0:StartLesson(uv1, uv2)
+			onYes = function()
+				arg_29_0:StartLesson(arg_29_1, var_29_0)
 			end
 		})
 	else
-		slot0:StartLesson(slot1, slot2)
+		arg_29_0:StartLesson(arg_29_1, var_29_0)
 	end
 end
 
-function slot0.StartLesson(slot0, slot1, slot2)
+function var_0_0.StartLesson(arg_31_0, arg_31_1, arg_31_2)
+	local var_31_0 = Item.getConfigData(arg_31_1.lessonId).name
+	local var_31_1 = arg_31_1:getSkillId(arg_31_2)
+	local var_31_2 = arg_31_2:getName()
+	local var_31_3 = ShipSkill.New(arg_31_2.skills[var_31_1], arg_31_2.id)
+	local var_31_4 = var_31_3:GetName()
+
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
-		content = i18n("tactics_lesson_start_tip", Item.getConfigData(slot1.lessonId).name, slot2:getName(), ShipSkill.New(slot2.skills[slot1:getSkillId(slot2)], slot2.id):GetName()),
-		onYes = function ()
-			if uv0:IsMaxLevel() then
+		content = i18n("tactics_lesson_start_tip", var_31_0, var_31_2, var_31_4),
+		onYes = function()
+			if var_31_3:IsMaxLevel() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("tactics_max_level"))
 
 				return
 			end
 
-			uv1:emit(NewNavalTacticsMediator.ON_START, {
-				shipId = uv2.shipId,
-				skillPos = uv2:getSkillId(uv3),
-				lessonId = uv2.lessonId,
-				roomId = uv2.id
+			arg_31_0:emit(NewNavalTacticsMediator.ON_START, {
+				shipId = arg_31_1.shipId,
+				skillPos = arg_31_1:getSkillId(arg_31_2),
+				lessonId = arg_31_1.lessonId,
+				roomId = arg_31_1.id
 			})
 		end
 	})
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.finishLessonUtil:IsWorking() then
+function var_0_0.onBackPressed(arg_33_0)
+	if arg_33_0.finishLessonUtil:IsWorking() then
 		return
 	end
 
-	uv0.super.onBackPressed(slot0)
+	var_0_0.super.onBackPressed(arg_33_0)
 end
 
-function slot0.willExit(slot0)
-	if slot0.studentsPage then
-		slot0.studentsPage:Destroy()
+function var_0_0.willExit(arg_34_0)
+	if arg_34_0.studentsPage then
+		arg_34_0.studentsPage:Destroy()
 
-		slot0.studentsPage = nil
+		arg_34_0.studentsPage = nil
 	end
 
-	if slot0.unlockPage then
-		slot0.unlockPage:Destroy()
+	if arg_34_0.unlockPage then
+		arg_34_0.unlockPage:Destroy()
 
-		slot0.unlockPage = nil
+		arg_34_0.unlockPage = nil
 	end
 
-	if slot0.selSkillPage then
-		slot0.selSkillPage:Destroy()
+	if arg_34_0.selSkillPage then
+		arg_34_0.selSkillPage:Destroy()
 
-		slot0.selSkillPage = nil
+		arg_34_0.selSkillPage = nil
 	end
 
-	if slot0.selLessonPage then
-		slot0.selLessonPage:Destroy()
+	if arg_34_0.selLessonPage then
+		arg_34_0.selLessonPage:Destroy()
 
-		slot0.selLessonPage = nil
+		arg_34_0.selLessonPage = nil
 	end
 
-	if slot0.finishLessonUtil then
-		slot0.finishLessonUtil:Dispose()
+	if arg_34_0.finishLessonUtil then
+		arg_34_0.finishLessonUtil:Dispose()
 
-		slot0.finishLessonUtil = nil
+		arg_34_0.finishLessonUtil = nil
 	end
 
-	if slot0.metaSkillPage then
-		slot0.metaSkillPage:Destroy()
+	if arg_34_0.metaSkillPage then
+		arg_34_0.metaSkillPage:Destroy()
 
-		slot0.metaSkillPage = nil
+		arg_34_0.metaSkillPage = nil
 	end
 end
 
-return slot0
+return var_0_0

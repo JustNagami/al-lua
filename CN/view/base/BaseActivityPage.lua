@@ -1,91 +1,100 @@
-slot0 = class("BaseActivityPage", import(".BaseSubView"))
+﻿local var_0_0 = class("BaseActivityPage", import(".BaseSubView"))
 
-function slot0.SetShareData(slot0, slot1)
-	slot0.shareData = slot1
+function var_0_0.SetShareData(arg_1_0, arg_1_1)
+	arg_1_0.shareData = arg_1_1
 end
 
-function slot0.SetUIName(slot0, slot1)
-	slot0._uiName = slot1
+function var_0_0.SetUIName(arg_2_0, arg_2_1)
+	arg_2_0._uiName = arg_2_1
 end
 
-function slot0.getUIName(slot0)
-	return slot0._uiName
+function var_0_0.getUIName(arg_3_0)
+	return arg_3_0._uiName
 end
 
-function slot0.Flush(slot0, slot1)
-	slot0.activity = slot1
+function var_0_0.Flush(arg_4_0, arg_4_1)
+	arg_4_0.activity = arg_4_1
 
-	if slot0:OnDataSetting() then
+	if arg_4_0:OnDataSetting() then
 		return
 	end
 
-	if defaultValue(slot0.isFirst, true) then
-		slot0.isFirst = false
+	if defaultValue(arg_4_0.isFirst, true) then
+		arg_4_0.isFirst = false
 
-		slot0:BindPageLink()
-		slot0:OnFirstFlush()
+		arg_4_0:BindPageLink()
+		arg_4_0:OnFirstFlush()
 	end
 
-	slot0:OnUpdateFlush()
+	arg_4_0:OnUpdateFlush()
 end
 
-function slot0.ShowOrHide(slot0, slot1)
-	SetActive(slot0._go, slot1)
+function var_0_0.ShowOrHide(arg_5_0, arg_5_1)
+	SetActive(arg_5_0._go, arg_5_1)
 
-	if slot1 then
-		slot2 = {}
+	if arg_5_1 then
+		local var_5_0 = {}
 
-		slot0:emit(ActivityMainScene.GET_PAGE_BGM, slot0.__cname, slot2)
+		arg_5_0:emit(ActivityMainScene.GET_PAGE_BGM, arg_5_0.__cname, var_5_0)
 
-		if slot2.bgm then
-			pg.BgmMgr.GetInstance():Push(ActivityMainScene.__cname, slot2.bgm)
+		if var_5_0.bgm then
+			pg.BgmMgr.GetInstance():Push(ActivityMainScene.__cname, var_5_0.bgm)
 		end
 
-		slot0:OnShowFlush()
+		arg_5_0:OnShowFlush()
 	else
-		slot0:OnHideFlush()
+		arg_5_0:OnHideFlush()
 	end
 end
 
-function slot0.BindPageLink(slot0)
-	for slot4, slot5 in ipairs(slot0:GetPageLink()) do
-		ActivityConst.PageIdLink[slot5] = slot0.activity.id
+function var_0_0.BindPageLink(arg_6_0)
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0:GetPageLink()) do
+		ActivityConst.PageIdLink[iter_6_1] = arg_6_0.activity.id
 	end
 end
 
-function slot0.OnInit(slot0)
+function var_0_0.OnInit(arg_7_0)
+	return
 end
 
-function slot0.OnDataSetting(slot0)
+function var_0_0.OnDataSetting(arg_8_0)
+	return
 end
 
-function slot0.GetPageLink(slot0)
+function var_0_0.GetPageLink(arg_9_0)
 	return {}
 end
 
-function slot0.OnFirstFlush(slot0)
+function var_0_0.OnFirstFlush(arg_10_0)
+	return
 end
 
-function slot0.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_11_0)
+	return
 end
 
-function slot0.OnHideFlush(slot0)
+function var_0_0.OnHideFlush(arg_12_0)
+	return
 end
 
-function slot0.OnShowFlush(slot0)
+function var_0_0.OnShowFlush(arg_13_0)
+	return
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_14_0)
+	return
 end
 
-function slot0.OnLoadLayers(slot0)
+function var_0_0.OnLoadLayers(arg_15_0)
+	return
 end
 
-function slot0.OnRemoveLayers(slot0)
+function var_0_0.OnRemoveLayers(arg_16_0)
+	return
 end
 
-function slot0.UseSecondPage(slot0, slot1)
+function var_0_0.UseSecondPage(arg_17_0, arg_17_1)
 	return false
 end
 
-return slot0
+return var_0_0

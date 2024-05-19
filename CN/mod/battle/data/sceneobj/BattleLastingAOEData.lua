@@ -1,97 +1,99 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst
-slot2 = class("BattleLastingAOEData", slot0.Battle.BattleAOEData)
-slot0.Battle.BattleLastingAOEData = slot2
-slot2.__name = "BattleLastingAOEData"
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	uv0.super.Ctor(slot0, slot1, slot2, slot3, slot5)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst
+local var_0_2 = class("BattleLastingAOEData", var_0_0.Battle.BattleAOEData)
 
-	slot0._exitCldFunc = slot4
+var_0_0.Battle.BattleLastingAOEData = var_0_2
+var_0_2.__name = "BattleLastingAOEData"
 
-	if slot6 then
-		slot0.Settle = slot0.frequentlySettle
+function var_0_2.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5, arg_1_6)
+	var_0_2.super.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_5)
+
+	arg_1_0._exitCldFunc = arg_1_4
+
+	if arg_1_6 then
+		arg_1_0.Settle = arg_1_0.frequentlySettle
 	end
 
-	slot0._handledList = {}
+	arg_1_0._handledList = {}
 end
 
-function slot2.Dispose(slot0)
-	for slot4, slot5 in pairs(slot0._handledList) do
-		slot0._exitCldFunc(slot4)
+function var_0_2.Dispose(arg_2_0)
+	for iter_2_0, iter_2_1 in pairs(arg_2_0._handledList) do
+		arg_2_0._exitCldFunc(iter_2_0)
 
-		slot0._handledList[slot4] = nil
+		arg_2_0._handledList[iter_2_0] = nil
 	end
 
-	slot0._exitCldFunc = nil
-	slot0._handledList = nil
+	arg_2_0._exitCldFunc = nil
+	arg_2_0._handledList = nil
 
-	uv0.super.Dispose(slot0)
+	var_0_2.super.Dispose(arg_2_0)
 end
 
-function slot2.Settle(slot0)
-	slot1 = {}
-	slot2 = {
-		[slot7.UID] = true
-	}
+function var_0_2.Settle(arg_3_0)
+	local var_3_0 = {}
+	local var_3_1 = {}
 
-	for slot6, slot7 in ipairs(slot0._cldObjList) do
-		if not slot0._handledList[slot7] then
-			slot1[#slot1 + 1] = slot7
-			slot0._handledList[slot7] = true
+	for iter_3_0, iter_3_1 in ipairs(arg_3_0._cldObjList) do
+		var_3_1[iter_3_1.UID] = true
+
+		if not arg_3_0._handledList[iter_3_1] then
+			var_3_0[#var_3_0 + 1] = iter_3_1
+			arg_3_0._handledList[iter_3_1] = true
 		end
 	end
 
-	slot0.SortCldObjList(slot1)
-	slot0._cldComponent:GetCldData().func(slot1, obj)
+	arg_3_0.SortCldObjList(var_3_0)
+	arg_3_0._cldComponent:GetCldData().func(var_3_0, obj)
 
-	for slot6, slot7 in pairs(slot0._handledList) do
-		if not slot2[slot6.UID] then
-			slot0._exitCldFunc(slot6)
+	for iter_3_2, iter_3_3 in pairs(arg_3_0._handledList) do
+		if not var_3_1[iter_3_2.UID] then
+			arg_3_0._exitCldFunc(iter_3_2)
 
-			slot0._handledList[slot6] = nil
+			arg_3_0._handledList[iter_3_2] = nil
 		end
 	end
 end
 
-function slot2.frequentlySettle(slot0)
-	slot1 = {
-		[slot6.UID] = true
-	}
+function var_0_2.frequentlySettle(arg_4_0)
+	local var_4_0 = {}
 
-	for slot5, slot6 in ipairs(slot0._cldObjList) do
-		if not slot0._handledList[slot6] then
-			slot0._handledList[slot6] = true
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0._cldObjList) do
+		var_4_0[iter_4_1.UID] = true
+
+		if not arg_4_0._handledList[iter_4_1] then
+			arg_4_0._handledList[iter_4_1] = true
 		end
 	end
 
-	for slot5, slot6 in pairs(slot0._handledList) do
-		if not slot1[slot5.UID] then
-			slot0._exitCldFunc(slot5)
+	for iter_4_2, iter_4_3 in pairs(arg_4_0._handledList) do
+		if not var_4_0[iter_4_2.UID] then
+			arg_4_0._exitCldFunc(iter_4_2)
 
-			slot0._handledList[slot5] = nil
+			arg_4_0._handledList[iter_4_2] = nil
 		end
 	end
 
-	slot0.SortCldObjList(slot0._cldObjList)
-	slot0._cldComponent:GetCldData().func(slot0._cldObjList)
+	arg_4_0.SortCldObjList(arg_4_0._cldObjList)
+	arg_4_0._cldComponent:GetCldData().func(arg_4_0._cldObjList)
 end
 
-function slot2.ForceExit(slot0, slot1)
-	slot2 = nil
+function var_0_2.ForceExit(arg_5_0, arg_5_1)
+	local var_5_0
 
-	for slot6, slot7 in pairs(slot0._handledList) do
-		if slot6.UID == slot1 then
-			slot2 = slot6
+	for iter_5_0, iter_5_1 in pairs(arg_5_0._handledList) do
+		if iter_5_0.UID == arg_5_1 then
+			var_5_0 = iter_5_0
 
 			break
 		end
 	end
 
-	if slot2 then
-		slot0._exitCldFunc(slot2)
+	if var_5_0 then
+		arg_5_0._exitCldFunc(var_5_0)
 
-		slot0._handledList[slot2] = nil
+		arg_5_0._handledList[var_5_0] = nil
 	end
 end

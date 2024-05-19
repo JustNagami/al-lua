@@ -1,27 +1,35 @@
-slot0 = class("MainActMapBtn", import(".MainBaseActivityBtn"))
+﻿local var_0_0 = class("MainActMapBtn", import(".MainBaseActivityBtn"))
 
-function slot0.GetEventName(slot0)
+function var_0_0.GetEventName(arg_1_0)
 	return "event_map"
 end
 
-function slot0.GetActivity(slot0)
-	return _.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_ZPROJECT), function (slot0)
-		return not slot0:isEnd()
-	end)
+function var_0_0.GetActivity(arg_2_0)
+	local var_2_0 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_ZPROJECT)
+
+	return (_.detect(var_2_0, function(arg_3_0)
+		return not arg_3_0:isEnd()
+	end))
 end
 
-function slot0.GetActivityID(slot0)
-	return slot0:GetActivity() and slot1.id
+function var_0_0.GetActivityID(arg_4_0)
+	local var_4_0 = arg_4_0:GetActivity()
+
+	return var_4_0 and var_4_0.id
 end
 
-function slot0.OnInit(slot0)
-	setActive(slot0.tipTr.gameObject, getProxy(ChapterProxy):IsActivitySPChapterActive() and SettingsProxy.IsShowActivityMapSPTip())
+function var_0_0.OnInit(arg_5_0)
+	local var_5_0 = getProxy(ChapterProxy):IsActivitySPChapterActive() and SettingsProxy.IsShowActivityMapSPTip()
+
+	setActive(arg_5_0.tipTr.gameObject, var_5_0)
 end
 
-function slot0.CustomOnClick(slot0)
-	if slot0:GetActivity() then
-		slot0:emit(NewMainMediator.SKIP_ACTIVITY_MAP, slot1.id)
+function var_0_0.CustomOnClick(arg_6_0)
+	local var_6_0 = arg_6_0:GetActivity()
+
+	if var_6_0 then
+		arg_6_0:emit(NewMainMediator.SKIP_ACTIVITY_MAP, var_6_0.id)
 	end
 end
 
-return slot0
+return var_0_0

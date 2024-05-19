@@ -1,34 +1,34 @@
-slot0 = class("FourthInvitePage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("FourthInvitePage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.icons = {
-		slot0:findTF("AD/bg/npc1"),
-		slot0:findTF("AD/bg/npc2"),
-		slot0:findTF("AD/bg/npc3"),
-		slot0:findTF("AD/bg/npc4"),
-		slot0:findTF("AD/bg/npc5"),
-		slot0:findTF("AD/bg/npc6"),
-		slot0:findTF("AD/bg/npc7")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.icons = {
+		arg_1_0:findTF("AD/bg/npc1"),
+		arg_1_0:findTF("AD/bg/npc2"),
+		arg_1_0:findTF("AD/bg/npc3"),
+		arg_1_0:findTF("AD/bg/npc4"),
+		arg_1_0:findTF("AD/bg/npc5"),
+		arg_1_0:findTF("AD/bg/npc6"),
+		arg_1_0:findTF("AD/bg/npc7")
 	}
-	slot0.helpBtn = slot0:findTF("AD/help")
-	slot0.goBtn = slot0:findTF("AD/go")
-	slot0.gotBtn = slot0:findTF("AD/got")
+	arg_1_0.helpBtn = arg_1_0:findTF("AD/help")
+	arg_1_0.goBtn = arg_1_0:findTF("AD/go")
+	arg_1_0.gotBtn = arg_1_0:findTF("AD/got")
 end
 
-function slot0.OnDataSetting(slot0)
-	slot0.gameId = slot0.activity:getConfig("config_client").mini_game_id
-	slot0.hubId = pg.mini_game[slot0.gameId].hub_id
-	slot0.data = getProxy(MiniGameProxy):GetHubByHubId(slot0.hubId)
-	slot0.ultimate = slot0.data.ultimate
-	slot0.usedtime = slot0.data.usedtime
-	slot0.maxtime = slot0.data:getConfig("reward_need")
+function var_0_0.OnDataSetting(arg_2_0)
+	arg_2_0.gameId = arg_2_0.activity:getConfig("config_client").mini_game_id
+	arg_2_0.hubId = pg.mini_game[arg_2_0.gameId].hub_id
+	arg_2_0.data = getProxy(MiniGameProxy):GetHubByHubId(arg_2_0.hubId)
+	arg_2_0.ultimate = arg_2_0.data.ultimate
+	arg_2_0.usedtime = arg_2_0.data.usedtime
+	arg_2_0.maxtime = arg_2_0.data:getConfig("reward_need")
 end
 
-function slot0.OnFirstFlush(slot0)
-	onButton(slot0, slot0.goBtn, function ()
-		pg.m02:sendNotification(GAME.GO_MINI_GAME, uv0.gameId)
+function var_0_0.OnFirstFlush(arg_3_0)
+	onButton(arg_3_0, arg_3_0.goBtn, function()
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, arg_3_0.gameId)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_3_0, arg_3_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.catchteasure_help.tip
@@ -36,32 +36,35 @@ function slot0.OnFirstFlush(slot0)
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	SetActive(slot0.gotBtn, slot0.ultimate == 1)
-	slot0:UpdateSigned()
-	slot0:CheckGet()
+function var_0_0.OnUpdateFlush(arg_6_0)
+	SetActive(arg_6_0.gotBtn, arg_6_0.ultimate == 1)
+	arg_6_0:UpdateSigned()
+	arg_6_0:CheckGet()
 end
 
-function slot0.UpdateSigned(slot0)
-	slot1 = slot0.maxtime
+function var_0_0.UpdateSigned(arg_7_0)
+	local var_7_0 = arg_7_0.maxtime
+	local var_7_1 = arg_7_0.usedtime
 
-	for slot6, slot7 in ipairs(slot0.icons) do
-		setActive(slot7, slot6 <= slot0.usedtime)
+	for iter_7_0, iter_7_1 in ipairs(arg_7_0.icons) do
+		local var_7_2 = iter_7_0 <= var_7_1
+
+		setActive(iter_7_1, var_7_2)
 	end
 end
 
-function slot0.CheckGet(slot0)
-	if slot0.ultimate == 0 then
-		if slot0.usedtime < slot0.maxtime then
+function var_0_0.CheckGet(arg_8_0)
+	if arg_8_0.ultimate == 0 then
+		if arg_8_0.maxtime > arg_8_0.usedtime then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = slot0.hubId,
+			hubid = arg_8_0.hubId,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
 	end
 end
 
-return slot0
+return var_0_0

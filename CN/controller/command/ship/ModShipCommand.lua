@@ -1,86 +1,94 @@
-slot0 = class("ModShipCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ModShipCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.shipIds or {}
-	slot6 = getProxy(BayProxy):getShipById(slot2.shipId)
-	slot7 = Clone(slot6)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.shipId
+	local var_1_2 = var_1_0.shipIds or {}
+	local var_1_3 = getProxy(BayProxy)
+	local var_1_4 = var_1_3:getShipById(var_1_1)
+	local var_1_5 = Clone(var_1_4)
 
-	if not slot6 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", slot3))
+	if not var_1_4 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", var_1_1))
 
 		return
 	end
 
-	if table.getCount(slot4) == 0 then
+	if table.getCount(var_1_2) == 0 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("word_materal_no_enough"))
 
 		return
 	end
 
-	slot8 = {}
+	local var_1_6 = {}
 
-	for slot12, slot13 in ipairs(slot4) do
-		if not slot5:getShipById(slot13) then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", slot13))
+	for iter_1_0, iter_1_1 in ipairs(var_1_2) do
+		local var_1_7 = var_1_3:getShipById(iter_1_1)
+
+		if not var_1_7 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", iter_1_1))
 
 			return
 		end
 
-		table.insert(slot8, slot14)
+		table.insert(var_1_6, var_1_7)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(12017, {
-		ship_id = slot3,
-		material_id_list = slot4
-	}, 12018, function (slot0)
-		if slot0.result == 0 then
-			pg.TrackerMgr.GetInstance():Tracking(TRACKING_SHIP_INTENSIFY, #uv0)
+		ship_id = var_1_1,
+		material_id_list = var_1_2
+	}, 12018, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			pg.TrackerMgr.GetInstance():Tracking(TRACKING_SHIP_INTENSIFY, #var_1_2)
 
-			slot1 = {}
-			slot2 = getProxy(EquipmentProxy)
+			local var_2_0 = {}
+			local var_2_1 = getProxy(EquipmentProxy)
 
-			for slot6, slot7 in ipairs(uv1) do
-				for slot11, slot12 in ipairs(slot7.equipments) do
-					if slot12 then
-						slot2:addEquipment(slot12)
+			for iter_2_0, iter_2_1 in ipairs(var_1_6) do
+				for iter_2_2, iter_2_3 in ipairs(iter_2_1.equipments) do
+					if iter_2_3 then
+						var_2_1:addEquipment(iter_2_3)
 
-						if not slot1[slot12.id] then
-							slot1[slot12.id] = slot12:clone()
+						if not var_2_0[iter_2_3.id] then
+							var_2_0[iter_2_3.id] = iter_2_3:clone()
 						else
-							slot1[slot12.id].count = slot1[slot12.id].count + 1
+							var_2_0[iter_2_3.id].count = var_2_0[iter_2_3.id].count + 1
 						end
 					end
 
-					if slot7:getEquipSkin(slot11) ~= 0 then
-						slot2:addEquipmentSkin(slot7:getEquipSkin(slot11), 1)
-						slot7:updateEquipmentSkin(slot11, 0)
+					if iter_2_1:getEquipSkin(iter_2_2) ~= 0 then
+						var_2_1:addEquipmentSkin(iter_2_1:getEquipSkin(iter_2_2), 1)
+						iter_2_1:updateEquipmentSkin(iter_2_2, 0)
 						pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_skin_unload"))
 					end
 				end
 
-				if slot7:GetSpWeapon() then
-					slot7:UpdateSpWeapon(nil)
-					slot2:AddSpWeapon(slot8)
+				local var_2_2 = iter_2_1:GetSpWeapon()
+
+				if var_2_2 then
+					iter_2_1:UpdateSpWeapon(nil)
+					var_2_1:AddSpWeapon(var_2_2)
 				end
 
-				uv2:removeShip(slot7)
+				var_1_3:removeShip(iter_2_1)
 			end
 
-			for slot7, slot8 in pairs(ShipModLayer.getModExpAdditions(uv3, uv1)) do
-				uv3:addModAttrExp(slot7, slot8)
+			local var_2_3 = ShipModLayer.getModExpAdditions(var_1_4, var_1_6)
+
+			for iter_2_4, iter_2_5 in pairs(var_2_3) do
+				var_1_4:addModAttrExp(iter_2_4, iter_2_5)
 			end
 
-			uv2:updateShip(uv3)
-			uv4:sendNotification(GAME.MOD_SHIP_DONE, {
-				oldShip = uv5,
-				newShip = uv3,
-				equipments = slot1
+			var_1_3:updateShip(var_1_4)
+			arg_1_0:sendNotification(GAME.MOD_SHIP_DONE, {
+				oldShip = var_1_5,
+				newShip = var_1_4,
+				equipments = var_2_0
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_modShip_error", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_modShip_error", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

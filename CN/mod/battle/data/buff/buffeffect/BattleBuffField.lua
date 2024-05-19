@@ -1,35 +1,60 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("BattleBuffField", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffField = slot1
-slot1.__name = "BattleBuffField"
-slot2 = slot0.Battle.BattleConst
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+local var_0_1 = class("BattleBuffField", var_0_0.Battle.BattleBuffEffect)
+
+var_0_0.Battle.BattleBuffField = var_0_1
+var_0_1.__name = "BattleBuffField"
+
+local var_0_2 = var_0_0.Battle.BattleConst
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot1.SetArgs(slot0, slot1, slot2)
-	slot0._level = slot2:GetLv()
-	slot0._caster = slot2:GetCaster()
-	slot3 = slot0._tempData.arg_list
-	slot0._auraBuffID = slot3.buff_id
-	slot0._target = slot3.target
-	slot0._check_target = slot3.check_target or "TargetNull"
-	slot0._isUpdateAura = slot3.FAura
-	slot4 = true
+function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0._level = arg_2_2:GetLv()
+	arg_2_0._caster = arg_2_2:GetCaster()
 
-	if type(slot0._target) == "string" and slot0._target == "TargetAllHarm" or slot5 == "table" and table.contains(slot0._target, "TargetAllHarm") or slot5 == "string" and slot0._target == "TargetAllFoe" or slot5 == "table" and table.contains(slot0._target, "TargetAllFoe") then
-		slot4 = false
+	local var_2_0 = arg_2_0._tempData.arg_list
+
+	arg_2_0._auraBuffID = var_2_0.buff_id
+	arg_2_0._target = var_2_0.target
+	arg_2_0._check_target = var_2_0.check_target or "TargetNull"
+	arg_2_0._isUpdateAura = var_2_0.FAura
+
+	local var_2_1 = true
+	local var_2_2 = type(arg_2_0._target)
+
+	if var_2_2 == "string" and arg_2_0._target == "TargetAllHarm" or var_2_2 == "table" and table.contains(arg_2_0._target, "TargetAllHarm") or var_2_2 == "string" and arg_2_0._target == "TargetAllFoe" or var_2_2 == "table" and table.contains(arg_2_0._target, "TargetAllFoe") then
+		var_2_1 = false
 	end
 
-	function slot7(slot0)
-		if slot0.Active then
-			slot5 = uv0._tempData.arg_list
+	local function var_2_3(arg_3_0)
+		for iter_3_0, iter_3_1 in ipairs(arg_3_0) do
+			if iter_3_1.Active then
+				local var_3_0 = arg_2_0:getTargetList(arg_2_1, arg_2_0._target, arg_2_0._tempData.arg_list)
 
-			for slot5, slot6 in ipairs(uv0:getTargetList(uv1, uv0._target, slot5)) do
-				if slot6:GetUniqueID() == slot0.UID then
-					slot6:RemoveBuff(uv0._auraBuffID)
+				for iter_3_2, iter_3_3 in ipairs(var_3_0) do
+					if iter_3_3:GetUniqueID() == iter_3_1.UID then
+						local var_3_1 = var_0_0.Battle.BattleBuffUnit.New(arg_2_0._auraBuffID, arg_2_0._level, arg_2_0._caster)
+
+						iter_3_3:AddBuff(var_3_1)
+
+						break
+					end
+				end
+			end
+		end
+	end
+
+	local function var_2_4(arg_4_0)
+		if arg_4_0.Active then
+			local var_4_0 = arg_2_0:getTargetList(arg_2_1, arg_2_0._target, arg_2_0._tempData.arg_list)
+
+			for iter_4_0, iter_4_1 in ipairs(var_4_0) do
+				if iter_4_1:GetUniqueID() == arg_4_0.UID then
+					iter_4_1:RemoveBuff(arg_2_0._auraBuffID)
 
 					break
 				end
@@ -37,29 +62,21 @@ function slot1.SetArgs(slot0, slot1, slot2)
 		end
 	end
 
-	slot10 = uv0.Battle.BattleDataProxy.GetInstance()
-	slot11, slot12, slot13, slot14 = slot10:GetFieldBound()
-	slot0._aura = slot10:SpawnLastingCubeArea(uv1.AOEField.SURFACE, slot1:GetIFF(), Vector3((slot13 + slot14) * 0.5, 0, (slot11 + slot12) * 0.5), math.abs(slot14 - slot13), math.abs(slot11 - slot12), 0, function (slot0)
-		for slot4, slot5 in ipairs(slot0) do
-			if slot5.Active then
-				slot10 = uv0._tempData.arg_list
+	local var_2_5 = arg_2_0._isUpdateAura and var_2_4 or nil
+	local var_2_6 = arg_2_0._isUpdateAura and true or false
+	local var_2_7 = var_0_0.Battle.BattleDataProxy.GetInstance()
+	local var_2_8, var_2_9, var_2_10, var_2_11 = var_2_7:GetFieldBound()
+	local var_2_12 = Vector3((var_2_10 + var_2_11) * 0.5, 0, (var_2_8 + var_2_9) * 0.5)
+	local var_2_13 = math.abs(var_2_11 - var_2_10)
+	local var_2_14 = math.abs(var_2_8 - var_2_9)
 
-				for slot10, slot11 in ipairs(uv0:getTargetList(uv1, uv0._target, slot10)) do
-					if slot11:GetUniqueID() == slot5.UID then
-						slot11:AddBuff(uv2.Battle.BattleBuffUnit.New(uv0._auraBuffID, uv0._level, uv0._caster))
-
-						break
-					end
-				end
-			end
-		end
-	end, slot7, slot4, nil, slot0._isUpdateAura and slot7 or nil, slot0._isUpdateAura and true or false)
+	arg_2_0._aura = var_2_7:SpawnLastingCubeArea(var_0_2.AOEField.SURFACE, arg_2_1:GetIFF(), var_2_12, var_2_13, var_2_14, 0, var_2_3, var_2_4, var_2_1, nil, var_2_5, var_2_6)
 end
 
-function slot1.Clear(slot0)
-	slot0._aura:SetActiveFlag(false)
+function var_0_1.Clear(arg_5_0)
+	arg_5_0._aura:SetActiveFlag(false)
 
-	slot0._aura = nil
+	arg_5_0._aura = nil
 
-	uv0.super.Clear(slot0)
+	var_0_1.super.Clear(arg_5_0)
 end

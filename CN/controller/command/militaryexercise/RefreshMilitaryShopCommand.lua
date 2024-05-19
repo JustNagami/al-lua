@@ -1,33 +1,39 @@
-slot0 = class("RefreshMilitaryShopCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("RefreshMilitaryShopCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
+function var_0_0.execute(arg_1_0, arg_1_1)
 	pg.ConnectionMgr.GetInstance():Send(18102, {
 		type = 0
-	}, 18103, function (slot0)
-		if slot0.result == 0 then
-			slot5 = getProxy(PlayerProxy)
-			slot6 = slot5:getData()
+	}, 18103, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(ShopsProxy)
+			local var_2_1 = var_2_0:getMeritorousShop()
+			local var_2_2 = pg.arena_data_shop[1]
+			local var_2_3 = var_2_2.refresh_price[var_2_1.refreshCount] or var_2_2.refresh_price[#var_2_2.refresh_price]
+			local var_2_4 = getProxy(PlayerProxy)
+			local var_2_5 = var_2_4:getData()
 
-			slot6:consume({
-				gem = pg.arena_data_shop[1].refresh_price[getProxy(ShopsProxy):getMeritorousShop().refreshCount] or slot3.refresh_price[#slot3.refresh_price]
+			var_2_5:consume({
+				gem = var_2_3
 			})
-			slot5:updatePlayer(slot6)
-			slot2:increaseRefreshCount()
+			var_2_4:updatePlayer(var_2_5)
+			var_2_1:increaseRefreshCount()
 
-			for slot11, slot12 in ipairs(slot0.arena_shop_list) do
-				slot13 = Goods.Create(slot12, Goods.TYPE_MILITARY)
+			local var_2_6 = {}
+
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.arena_shop_list) do
+				local var_2_7 = Goods.Create(iter_2_1, Goods.TYPE_MILITARY)
+
+				var_2_6[var_2_7.id] = var_2_7
 			end
 
-			slot2:updateAllGoods({
-				[slot13.id] = slot13
-			})
-			slot1:addMeritorousShop(slot2)
+			var_2_1:updateAllGoods(var_2_6)
+			var_2_0:addMeritorousShop(var_2_1)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("refresh_shopStreet_ok"))
-			uv0:sendNotification(GAME.REFRESH_MILITARY_SHOP_DONE, Clone(slot2))
+			arg_1_0:sendNotification(GAME.REFRESH_MILITARY_SHOP_DONE, Clone(var_2_1))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

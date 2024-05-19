@@ -1,5 +1,5 @@
-slot0 = class("XiefeierIdolMusicPage", import("...base.BaseActivityPage"))
-slot1 = {
+﻿local var_0_0 = class("XiefeierIdolMusicPage", import("...base.BaseActivityPage"))
+local var_0_1 = {
 	0.08,
 	0.19,
 	0.4,
@@ -10,55 +10,55 @@ slot1 = {
 	1
 }
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.masklist = slot0.bg:Find("maskList")
-	slot0.slider = slot0.bg:Find("slider")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.masklist = arg_1_0.bg:Find("maskList")
+	arg_1_0.slider = arg_1_0.bg:Find("slider")
 end
 
-function slot0.OnDataSetting(slot0)
-	slot0.HubID = slot0.activity:getConfig("config_id")
+function var_0_0.OnDataSetting(arg_2_0)
+	arg_2_0.HubID = arg_2_0.activity:getConfig("config_id")
 
-	print("self.HubID:" .. slot0.HubID)
+	print("self.HubID:" .. arg_2_0.HubID)
 
-	slot0.mgProxy = getProxy(MiniGameProxy)
+	arg_2_0.mgProxy = getProxy(MiniGameProxy)
 end
 
-function slot0.OnFirstFlush(slot0)
-	onButton(slot0, slot0.bg:Find("battle_btn"), function ()
+function var_0_0.OnFirstFlush(arg_3_0)
+	onButton(arg_3_0, arg_3_0.bg:Find("battle_btn"), function()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 16)
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot0.hubData = slot0.mgProxy:GetHubByHubId(slot0.HubID)
-	slot0.finish_times = slot0.hubData.usedtime
-	slot0.all_times = slot0.hubData.usedtime + slot0.hubData.count
+function var_0_0.OnUpdateFlush(arg_5_0)
+	arg_5_0.hubData = arg_5_0.mgProxy:GetHubByHubId(arg_5_0.HubID)
+	arg_5_0.finish_times = arg_5_0.hubData.usedtime
+	arg_5_0.all_times = arg_5_0.hubData.usedtime + arg_5_0.hubData.count
 
-	for slot4 = 1, 7 do
-		setActive(slot0.masklist:Find("mask" .. slot4 .. "/dot"), slot4 <= slot0.finish_times)
-		setActive(slot0.masklist:Find("mask" .. slot4 .. "/frame"), slot4 <= slot0.all_times and not isActive(slot0.masklist:Find("mask" .. slot4 .. "/dot")))
+	for iter_5_0 = 1, 7 do
+		setActive(arg_5_0.masklist:Find("mask" .. iter_5_0 .. "/dot"), iter_5_0 <= arg_5_0.finish_times)
+		setActive(arg_5_0.masklist:Find("mask" .. iter_5_0 .. "/frame"), iter_5_0 <= arg_5_0.all_times and not isActive(arg_5_0.masklist:Find("mask" .. iter_5_0 .. "/dot")))
 	end
 
-	if slot0.finish_times > 0 then
-		setSlider(slot0.slider, 0, 1, uv0[slot0.finish_times])
+	if arg_5_0.finish_times > 0 then
+		setSlider(arg_5_0.slider, 0, 1, var_0_1[arg_5_0.finish_times])
 	else
-		setSlider(slot0.slider, 0, 1, 0)
+		setSlider(arg_5_0.slider, 0, 1, 0)
 	end
 
-	if slot0.hubData:getConfig("reward_need") <= slot0.finish_times and slot0.hubData.ultimate == 0 then
-		slot0:emit(ActivityMediator.MUSIC_GAME_OPERATOR, {
-			hubid = slot0.HubID,
+	if arg_5_0.finish_times >= arg_5_0.hubData:getConfig("reward_need") and arg_5_0.hubData.ultimate == 0 then
+		arg_5_0:emit(ActivityMediator.MUSIC_GAME_OPERATOR, {
+			hubid = arg_5_0.HubID,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
 	end
 
-	setActive(slot0.bg:Find("got_icon"), slot0.hubData.ultimate ~= 0)
+	setActive(arg_5_0.bg:Find("got_icon"), arg_5_0.hubData.ultimate ~= 0)
 end
 
-function slot0.OnDestroy(slot0)
-	clearImageSprite(slot0.bg)
+function var_0_0.OnDestroy(arg_6_0)
+	clearImageSprite(arg_6_0.bg)
 end
 
-return slot0
+return var_0_0

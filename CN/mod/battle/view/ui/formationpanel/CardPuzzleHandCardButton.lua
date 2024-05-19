@@ -1,82 +1,88 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConfig
-slot0.Battle.CardPuzzleHandCardButton = class("CardPuzzleHandCardButton")
-slot2 = slot0.Battle.CardPuzzleHandCardButton
-slot2.__name = "CardPuzzleHandCardButton"
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, slot1)
-	slot0._go = slot1
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConfig
 
-	slot0:init()
+var_0_0.Battle.CardPuzzleHandCardButton = class("CardPuzzleHandCardButton")
+
+local var_0_2 = var_0_0.Battle.CardPuzzleHandCardButton
+
+var_0_2.__name = "CardPuzzleHandCardButton"
+
+function var_0_2.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._go = arg_1_1
+
+	arg_1_0:init()
 end
 
-function slot2.SetCardInfo(slot0, slot1)
-	slot0._cardInfo = slot1
+function var_0_2.SetCardInfo(arg_2_0, arg_2_1)
+	arg_2_0._cardInfo = arg_2_1
 
-	slot0:updateCardView()
+	arg_2_0:updateCardView()
 end
 
-function slot2.UpdateTotalCost(slot0)
-	if slot0._cardInfo then
-		setText(slot0._costTxt, slot0._cardInfo:GetTotalCost())
+function var_0_2.UpdateTotalCost(arg_3_0)
+	if arg_3_0._cardInfo then
+		setText(arg_3_0._costTxt, arg_3_0._cardInfo:GetTotalCost())
 	end
 end
 
-function slot2.ConfigCallback(slot0, slot1)
-	slot0._callback = slot1
+function var_0_2.ConfigCallback(arg_4_0, arg_4_1)
+	arg_4_0._callback = arg_4_1
 end
 
-function slot2.init(slot0)
-	slot0._btnTF = slot0._go.transform
-	slot0._icon = slot0._btnTF:Find("skill_icon/unfill")
-	slot0._costTxt = slot0._btnTF:Find("cost/cost_label")
-	slot0._cardName = slot0._btnTF:Find("name")
-	slot0._cardType = slot0._btnTF:Find("icon_bg")
-	slot0._cardTypeList = {}
+function var_0_2.init(arg_5_0)
+	arg_5_0._btnTF = arg_5_0._go.transform
+	arg_5_0._icon = arg_5_0._btnTF:Find("skill_icon/unfill")
+	arg_5_0._costTxt = arg_5_0._btnTF:Find("cost/cost_label")
+	arg_5_0._cardName = arg_5_0._btnTF:Find("name")
+	arg_5_0._cardType = arg_5_0._btnTF:Find("icon_bg")
+	arg_5_0._cardTypeList = {}
 
-	for slot4 = 1, 3 do
-		table.insert(slot0._cardTypeList, slot0._cardType:Find("card_type_" .. slot4))
+	for iter_5_0 = 1, 3 do
+		table.insert(arg_5_0._cardTypeList, arg_5_0._cardType:Find("card_type_" .. iter_5_0))
 	end
 
-	slot0._cardRarity = slot0._btnTF:Find("bg")
-	slot0._cardRarityList = {}
+	arg_5_0._cardRarity = arg_5_0._btnTF:Find("bg")
+	arg_5_0._cardRarityList = {}
 
-	for slot4 = 0, 4 do
-		table.insert(slot0._cardRarityList, slot0._cardRarity:Find("rarity_" .. slot4))
+	for iter_5_1 = 0, 4 do
+		table.insert(arg_5_0._cardRarityList, arg_5_0._cardRarity:Find("rarity_" .. iter_5_1))
 	end
 
-	slot0._tag = slot0._btnTF:Find("tag")
+	arg_5_0._tag = arg_5_0._btnTF:Find("tag")
 
-	GetComponent(slot0._btnTF, "EventTriggerListener"):AddPointUpFunc(function ()
-		if uv0._cardInfo then
-			uv0._callback(uv0._cardInfo)
+	GetComponent(arg_5_0._btnTF, "EventTriggerListener"):AddPointUpFunc(function()
+		if arg_5_0._cardInfo then
+			arg_5_0._callback(arg_5_0._cardInfo)
 		end
 	end)
 end
 
-function slot2.updateCardView(slot0)
-	if slot0._cardInfo then
-		setActive(slot0._btnTF, true)
-		setText(slot0._costTxt, slot0._cardInfo:GetTotalCost())
-		setText(slot0._cardName, slot0._cardInfo:GetCardTemplate().name)
-		setText(slot0._tag, "词缀功能TODO")
+function var_0_2.updateCardView(arg_7_0)
+	if arg_7_0._cardInfo then
+		setActive(arg_7_0._btnTF, true)
+		setText(arg_7_0._costTxt, arg_7_0._cardInfo:GetTotalCost())
+		setText(arg_7_0._cardName, arg_7_0._cardInfo:GetCardTemplate().name)
+		setText(arg_7_0._tag, "词缀功能TODO")
 
-		slot2 = slot0._cardInfo:GetCardType()
+		local var_7_0 = arg_7_0._cardInfo:GetRarity()
+		local var_7_1 = arg_7_0._cardInfo:GetCardType()
 
-		for slot6, slot7 in ipairs(slot0._cardRarityList) do
-			setActive(slot7, slot6 == slot0._cardInfo:GetRarity() + 1)
+		for iter_7_0, iter_7_1 in ipairs(arg_7_0._cardRarityList) do
+			setActive(iter_7_1, iter_7_0 == var_7_0 + 1)
 		end
 
-		for slot6, slot7 in ipairs(slot0._cardTypeList) do
-			setActive(slot7, slot6 == slot2)
+		for iter_7_2, iter_7_3 in ipairs(arg_7_0._cardTypeList) do
+			setActive(iter_7_3, iter_7_2 == var_7_1)
 		end
 
-		GetImageSpriteFromAtlasAsync("skillicon/" .. slot0._cardInfo:GetIconID(), "", slot0._icon)
+		GetImageSpriteFromAtlasAsync("skillicon/" .. arg_7_0._cardInfo:GetIconID(), "", arg_7_0._icon)
 	else
-		setActive(slot0._btnTF, false)
+		setActive(arg_7_0._btnTF, false)
 	end
 end
 
-function slot2.Dispose(slot0)
+function var_0_2.Dispose(arg_8_0)
+	return
 end

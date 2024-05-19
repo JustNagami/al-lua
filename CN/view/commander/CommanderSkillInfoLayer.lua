@@ -1,46 +1,47 @@
-slot0 = class("CommanderSkillInfoLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("CommanderSkillInfoLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CommanderSkillInfoUI"
 end
 
-function slot0.init(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+function var_0_0.init(arg_2_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_2_0._tf)
 
-	slot0.skillNameTxt = slot0:findTF("panel/bg/skill_name"):GetComponent(typeof(Text))
-	slot0.skillLevelTxt = slot0:findTF("panel/bg/skill_lv"):GetComponent(typeof(Text))
-	slot0.skillDescTxt = slot0:findTF("panel/bg/help_panel/skill_intro"):GetComponent(typeof(Text))
-	slot0.skillIcon = slot0:findTF("panel/bg/skill_icon")
+	arg_2_0.skillNameTxt = arg_2_0:findTF("panel/bg/skill_name"):GetComponent(typeof(Text))
+	arg_2_0.skillLevelTxt = arg_2_0:findTF("panel/bg/skill_lv"):GetComponent(typeof(Text))
+	arg_2_0.skillDescTxt = arg_2_0:findTF("panel/bg/help_panel/skill_intro"):GetComponent(typeof(Text))
+	arg_2_0.skillIcon = arg_2_0:findTF("panel/bg/skill_icon")
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:emit(uv1.ON_CLOSE)
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(slot0, slot0:findTF("panel/top/btnBack"), function ()
-		uv0:emit(uv1.ON_CLOSE)
+	onButton(arg_3_0, arg_3_0:findTF("panel/top/btnBack"), function()
+		arg_3_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(slot0, slot0:findTF("panel/ok_button"), function ()
-		uv0:emit(uv1.ON_CLOSE)
+	onButton(arg_3_0, arg_3_0:findTF("panel/ok_button"), function()
+		arg_3_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CONFIRM)
-	slot0:updateSkill()
+	arg_3_0:updateSkill()
 end
 
-function slot0.updateSkill(slot0)
-	slot1 = slot0.contextData.skill
-	slot0.skillNameTxt.text = slot1:getConfig("name")
-	slot0.skillLevelTxt.text = "Lv." .. slot1:getLevel()
-	slot0.skillDescTxt.text = slot1:getConfig("desc")
+function var_0_0.updateSkill(arg_7_0)
+	local var_7_0 = arg_7_0.contextData.skill
 
-	GetImageSpriteFromAtlasAsync("CommanderSkillIcon/" .. slot1:getConfig("icon"), "", slot0.skillIcon)
+	arg_7_0.skillNameTxt.text = var_7_0:getConfig("name")
+	arg_7_0.skillLevelTxt.text = "Lv." .. var_7_0:getLevel()
+	arg_7_0.skillDescTxt.text = var_7_0:getConfig("desc")
+
+	GetImageSpriteFromAtlasAsync("CommanderSkillIcon/" .. var_7_0:getConfig("icon"), "", arg_7_0.skillIcon)
 end
 
-function slot0.close(slot0)
-	slot0:emit(uv0.ON_CLOSE)
+function var_0_0.close(arg_8_0)
+	arg_8_0:emit(var_0_0.ON_CLOSE)
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_9_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_9_0._tf)
 end
 
-return slot0
+return var_0_0

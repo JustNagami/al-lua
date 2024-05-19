@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onTorpedoWeaponFire"
+			},
+			arg_list = {
+				buff_id = 800891,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -18,17 +30,5 @@ return {
 	stack = 1,
 	id = 800890,
 	icon = 800890,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onTorpedoWeaponFire"
-			},
-			arg_list = {
-				buff_id = 800891,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

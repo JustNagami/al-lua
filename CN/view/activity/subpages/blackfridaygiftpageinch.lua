@@ -1,7 +1,8 @@
-slot0 = class("BlackFridayGiftPageInCH", import(".BlackFridayGiftPage"))
-slot0.DAY_COLOR = {
+﻿local var_0_0 = class("BlackFridayGiftPageInCH", import(".BlackFridayGiftPage"))
+
+var_0_0.DAY_COLOR = {
 	"FBFDFE",
 	"24477E"
 }
 
-return slot0
+return var_0_0

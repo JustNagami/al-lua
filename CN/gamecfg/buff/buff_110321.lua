@@ -1,23 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 5,
-	picture = "",
-	desc = "属性降低",
-	stack = 1,
-	id = 16651,
-	icon = 16650,
-	last_effect = "Darkness",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffAddAttrRatio",
@@ -52,5 +33,24 @@ return {
 				number = -500
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 5,
+	picture = "",
+	desc = "属性降低",
+	stack = 1,
+	id = 16651,
+	icon = 16650,
+	last_effect = "Darkness"
 }

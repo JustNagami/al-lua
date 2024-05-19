@@ -1,114 +1,128 @@
-slot0 = class("GuideShowSignPlayer", import(".GuidePlayer"))
+﻿local var_0_0 = class("GuideShowSignPlayer", import(".GuidePlayer"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.signTrs = {}
+	arg_1_0.signTrs = {}
 end
 
-function slot0.OnExecution(slot0, slot1, slot2)
+function var_0_0.OnExecution(arg_2_0, arg_2_1, arg_2_2)
 	seriesAsync({
-		function (slot0)
-			uv0:loadSigns(uv1, slot0)
+		function(arg_3_0)
+			arg_2_0:loadSigns(arg_2_1, arg_3_0)
 		end,
-		function (slot0)
-			uv0:InitSign(uv1, slot0)
+		function(arg_4_0)
+			arg_2_0:InitSign(arg_2_1, arg_4_0)
 		end
-	}, slot2)
+	}, arg_2_2)
 end
 
-function slot0.loadSigns(slot0, slot1, slot2)
-	slot4 = {}
+function var_0_0.loadSigns(arg_5_0, arg_5_1, arg_5_2)
+	local var_5_0 = arg_5_1:GetSignList()
+	local var_5_1 = {}
 
-	for slot8, slot9 in ipairs(slot1:GetSignList()) do
-		table.insert(slot4, function (slot0)
-			uv0:LoadSignRes(uv1, function (slot0)
-				table.insert(uv0.signTrs, slot0)
-				uv1()
+	for iter_5_0, iter_5_1 in ipairs(var_5_0) do
+		table.insert(var_5_1, function(arg_6_0)
+			arg_5_0:LoadSignRes(iter_5_1, function(arg_7_0)
+				table.insert(arg_5_0.signTrs, arg_7_0)
+				arg_6_0()
 			end)
 		end)
 	end
 
-	parallelAsync(slot4, slot2)
+	parallelAsync(var_5_1, arg_5_2)
 end
 
-function slot0.LoadSignRes(slot0, slot1, slot2)
-	slot0.uiLoader:Load(slot1.signName, function (slot0)
-		if uv0.atlasName and uv0.fileName then
-			setImageSprite(findTF(slot0, "shadow"), LoadSprite(uv0.atlasName, uv0.fileName), true)
+function var_0_0.LoadSignRes(arg_8_0, arg_8_1, arg_8_2)
+	arg_8_0.uiLoader:Load(arg_8_1.signName, function(arg_9_0)
+		if arg_8_1.atlasName and arg_8_1.fileName then
+			local var_9_0 = LoadSprite(arg_8_1.atlasName, arg_8_1.fileName)
+
+			setImageSprite(findTF(arg_9_0, "shadow"), var_9_0, true)
 		end
 
-		slot0.localPosition = uv0.pos
-		slot0.eulerAngles = Vector3(0, 0, 0)
-		slot0.localScale = Vector3.one
+		arg_9_0.localPosition = arg_8_1.pos
+		arg_9_0.eulerAngles = Vector3(0, 0, 0)
+		arg_9_0.localScale = Vector3.one
 
-		setActive(slot0, true)
+		setActive(arg_9_0, true)
 
-		if uv1 then
-			uv1(slot0)
+		if arg_8_2 then
+			arg_8_2(arg_9_0)
 		end
 	end)
 end
 
-function slot0.InitSign(slot0, slot1, slot2)
-	if slot1:GetSignType() == GuideShowSignStep.SIGN_TYPE_2 then
-		slot0:UpdateSign2(slot1, slot2)
-	elseif slot3 == GuideShowSignStep.SIGN_TYPE_3 then
-		slot0:UpdateSign3(slot1, slot2)
+function var_0_0.InitSign(arg_10_0, arg_10_1, arg_10_2)
+	local var_10_0 = arg_10_1:GetSignType()
+
+	if var_10_0 == GuideShowSignStep.SIGN_TYPE_2 then
+		arg_10_0:UpdateSign2(arg_10_1, arg_10_2)
+	elseif var_10_0 == GuideShowSignStep.SIGN_TYPE_3 then
+		arg_10_0:UpdateSign3(arg_10_1, arg_10_2)
 	else
-		slot0:UpdateCommonSign(slot1, slot2)
+		arg_10_0:UpdateCommonSign(arg_10_1, arg_10_2)
 	end
 end
 
-function slot0.UpdateSign2(slot0, slot1, slot2)
-	slot4 = findTF(slot0.signTrs[1], "btn")
+function var_0_0.UpdateSign2(arg_11_0, arg_11_1, arg_11_2)
+	local var_11_0 = arg_11_0.signTrs[1]
+	local var_11_1 = findTF(var_11_0, "btn")
 
-	if slot1:ShouldClick() then
-		setActive(slot3, false)
-		slot0:SearchUI(slot1:GetClickData(), function (slot0)
-			if IsNil(slot0) then
+	if arg_11_1:ShouldClick() then
+		setActive(var_11_0, false)
+
+		local var_11_2 = arg_11_1:GetClickData()
+
+		arg_11_0:SearchUI(var_11_2, function(arg_12_0)
+			if IsNil(arg_12_0) then
 				pg.NewGuideMgr.GetInstance():Stop()
 
 				return
 			end
 
-			uv0.localPosition = uv0.parent:InverseTransformPoint(slot0.position) - Vector3(slot0.sizeDelta.x * (slot0.pivot.x - 0.5), slot0.sizeDelta.y * (slot0.pivot.y - 0.5), 0)
-			uv1.sizeDelta = slot0.sizeDelta + uv2.sizeDeltaPlus
+			local var_12_0 = Vector3(arg_12_0.sizeDelta.x * (arg_12_0.pivot.x - 0.5), arg_12_0.sizeDelta.y * (arg_12_0.pivot.y - 0.5), 0)
+			local var_12_1 = var_11_0.parent:InverseTransformPoint(arg_12_0.position)
 
-			setActive(uv0, true)
+			var_11_0.localPosition = var_12_1 - var_12_0
+			var_11_1.sizeDelta = arg_12_0.sizeDelta + var_11_2.sizeDeltaPlus
+
+			setActive(var_11_0, true)
 		end)
-	elseif slot1:ExistClickArea() then
-		slot4.sizeDelta = slot1:GetClickArea()
+	elseif arg_11_1:ExistClickArea() then
+		var_11_1.sizeDelta = arg_11_1:GetClickArea()
 	end
 
-	slot5 = GetOrAddComponent(slot4, typeof(UILongPressTrigger))
+	local var_11_3 = GetOrAddComponent(var_11_1, typeof(UILongPressTrigger))
 
-	slot5.onLongPressed:RemoveAllListeners()
-	slot5.onReleased:RemoveAllListeners()
+	var_11_3.onLongPressed:RemoveAllListeners()
+	var_11_3.onReleased:RemoveAllListeners()
 
-	if slot1:GetTriggerType() == 1 then
-		slot5.onLongPressed:AddListener(slot2)
+	if arg_11_1:GetTriggerType() == 1 then
+		var_11_3.onLongPressed:AddListener(arg_11_2)
 	else
-		slot5.onReleased:AddListener(slot2)
+		var_11_3.onReleased:AddListener(arg_11_2)
 	end
 end
 
-function slot0.UpdateSign3(slot0, slot1, slot2)
-	slot0.signTrs[1].sizeDelta = slot1:GetClickArea()
+function var_0_0.UpdateSign3(arg_13_0, arg_13_1, arg_13_2)
+	arg_13_0.signTrs[1].sizeDelta = arg_13_1:GetClickArea()
 
-	slot2()
+	arg_13_2()
 end
 
-function slot0.UpdateCommonSign(slot0, slot1, slot2)
-	if slot1:GetExitDelay() <= 0 then
-		slot2()
+function var_0_0.UpdateCommonSign(arg_14_0, arg_14_1, arg_14_2)
+	local var_14_0 = arg_14_1:GetExitDelay()
+
+	if var_14_0 <= 0 then
+		arg_14_2()
 	else
-		Timer.New(slot2, slot3, 1):Start()
+		Timer.New(arg_14_2, var_14_0, 1):Start()
 	end
 end
 
-function slot0.OnClear(slot0)
-	slot0.signTrs = {}
+function var_0_0.OnClear(arg_15_0)
+	arg_15_0.signTrs = {}
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.child_buff = {
 	[1001] = {
 		desc = "消耗心情+1",

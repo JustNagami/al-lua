@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.child_event = {
 	[11011] = {
 		state = "",

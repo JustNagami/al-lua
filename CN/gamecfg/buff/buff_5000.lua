@@ -1,4 +1,28 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "loadSpeed",
+				number = -3000
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "damageRatioBullet",
+				number = -0.15
+			}
+		}
+	},
 	{
 		time = 5
 	},
@@ -38,29 +62,5 @@ return {
 	stack = 1,
 	id = 5000,
 	icon = 5000,
-	last_effect = "Darkness",
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "loadSpeed",
-				number = -3000
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "damageRatioBullet",
-				number = -0.15
-			}
-		}
-	}
+	last_effect = "Darkness"
 }

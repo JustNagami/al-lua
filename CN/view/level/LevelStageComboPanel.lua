@@ -1,72 +1,78 @@
-slot0 = class("LevelStageComboPanel", import("view.base.BaseSubPanel"))
+﻿local var_0_0 = class("LevelStageComboPanel", import("view.base.BaseSubPanel"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "LevelStageComboPanel"
 end
 
-function slot0.OnInit(slot0)
-	slot0.tf_combo = slot0:findTF("combo/text")
-	slot0.text_combo = slot0.tf_combo:GetComponent(typeof(Text))
-	slot0.tf_perfect = slot0:findTF("perfect/text")
-	slot0.text_perfect = slot0.tf_perfect:GetComponent(typeof(Text))
-	slot0.tf_good = slot0:findTF("good/text")
-	slot0.text_good = slot0.tf_good:GetComponent(typeof(Text))
-	slot0.tf_miss = slot0:findTF("miss/text")
-	slot0.text_miss = slot0.tf_miss:GetComponent(typeof(Text))
-	slot0.anims = {}
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0.tf_combo = arg_2_0:findTF("combo/text")
+	arg_2_0.text_combo = arg_2_0.tf_combo:GetComponent(typeof(Text))
+	arg_2_0.tf_perfect = arg_2_0:findTF("perfect/text")
+	arg_2_0.text_perfect = arg_2_0.tf_perfect:GetComponent(typeof(Text))
+	arg_2_0.tf_good = arg_2_0:findTF("good/text")
+	arg_2_0.text_good = arg_2_0.tf_good:GetComponent(typeof(Text))
+	arg_2_0.tf_miss = arg_2_0:findTF("miss/text")
+	arg_2_0.text_miss = arg_2_0.tf_miss:GetComponent(typeof(Text))
+	arg_2_0.anims = {}
 end
 
-function slot0.UpdateView(slot0, slot1)
-	if not slot1 then
+function var_0_0.UpdateView(arg_3_0, arg_3_1)
+	if not arg_3_1 then
 		return
 	end
 
-	setText(slot0.text_combo, slot1.combo or 0)
+	setText(arg_3_0.text_combo, arg_3_1.combo or 0)
 
-	if slot1.scoreHistory then
-		slot0.text_perfect.text = slot2[4] or 0
-		slot0.text_good.text = (slot2[2] or 0) + (slot2[3] or 0)
-		slot0.text_miss.text = (slot2[0] or 0) + (slot2[1] or 0)
+	local var_3_0 = arg_3_1.scoreHistory
+
+	if var_3_0 then
+		arg_3_0.text_perfect.text = var_3_0[4] or 0
+		arg_3_0.text_good.text = (var_3_0[2] or 0) + (var_3_0[3] or 0)
+		arg_3_0.text_miss.text = (var_3_0[0] or 0) + (var_3_0[1] or 0)
 	end
 end
 
-function slot0.UpdateViewAnimated(slot0, slot1)
-	if not slot1 then
+function var_0_0.UpdateViewAnimated(arg_4_0, arg_4_1)
+	if not arg_4_1 then
 		return
 	end
 
-	slot0:SetTextAnim(slot0.tf_combo, slot0.text_combo, slot1.combo or 0, 1)
+	arg_4_0:SetTextAnim(arg_4_0.tf_combo, arg_4_0.text_combo, arg_4_1.combo or 0, 1)
 
-	if slot1.scoreHistory then
-		slot0:SetTextAnim(slot0.tf_perfect, slot0.text_perfect, slot2[4] or 0, 2)
-		slot0:SetTextAnim(slot0.tf_good, slot0.text_good, (slot2[2] or 0) + (slot2[3] or 0), 3)
-		slot0:SetTextAnim(slot0.tf_miss, slot0.text_miss, (slot2[0] or 0) + (slot2[1] or 0), 4)
+	local var_4_0 = arg_4_1.scoreHistory
+
+	if var_4_0 then
+		arg_4_0:SetTextAnim(arg_4_0.tf_perfect, arg_4_0.text_perfect, var_4_0[4] or 0, 2)
+		arg_4_0:SetTextAnim(arg_4_0.tf_good, arg_4_0.text_good, (var_4_0[2] or 0) + (var_4_0[3] or 0), 3)
+		arg_4_0:SetTextAnim(arg_4_0.tf_miss, arg_4_0.text_miss, (var_4_0[0] or 0) + (var_4_0[1] or 0), 4)
 	end
 end
 
-function slot0.SetTextAnim(slot0, slot1, slot2, slot3, slot4)
-	if tonumber(slot2.text) == slot3 then
+function var_0_0.SetTextAnim(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
+	if tonumber(arg_5_2.text) == arg_5_3 then
 		return
 	end
 
-	slot5 = false
-	slot7 = slot1.localPosition + Vector3(0, 30, 0)
-	slot0.anims[slot4] = LeanTween.value(go(slot1), 0, 1, 0.3):setLoopPingPong(1):setOnUpdate(System.Action_float(function (slot0)
-		uv0.localPosition = Vector3.Lerp(uv1, uv2, slot0)
+	local var_5_0 = false
+	local var_5_1 = arg_5_1.localPosition
+	local var_5_2 = var_5_1 + Vector3(0, 30, 0)
 
-		if slot0 >= 1 and not uv3 then
-			uv4.text = uv5
-			uv3 = true
+	arg_5_0.anims[arg_5_4] = LeanTween.value(go(arg_5_1), 0, 1, 0.3):setLoopPingPong(1):setOnUpdate(System.Action_float(function(arg_6_0)
+		arg_5_1.localPosition = Vector3.Lerp(var_5_1, var_5_2, arg_6_0)
+
+		if arg_6_0 >= 1 and not var_5_0 then
+			arg_5_2.text = arg_5_3
+			var_5_0 = true
 		end
 	end)).id
 end
 
-function slot0.OnDestroy(slot0)
-	for slot4, slot5 in pairs(slot0.anims) do
-		LeanTween.cancel(slot5)
+function var_0_0.OnDestroy(arg_7_0)
+	for iter_7_0, iter_7_1 in pairs(arg_7_0.anims) do
+		LeanTween.cancel(iter_7_1)
 	end
 
-	table.clear(slot0.anims)
+	table.clear(arg_7_0.anims)
 end
 
-return slot0
+return var_0_0

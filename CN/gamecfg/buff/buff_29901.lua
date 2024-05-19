@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行15次攻击，触发专属弹幕-哈尔滨I"
-	},
-	desc_get = "主炮每进行15次攻击，触发专属弹幕-哈尔滨I",
-	name = "专属弹幕-哈尔滨I",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行15次攻击，触发专属弹幕-哈尔滨I",
-	stack = 1,
-	id = 29901,
-	icon = 29900,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -38,5 +24,19 @@ return {
 				countType = 29900
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行15次攻击，触发专属弹幕-哈尔滨I"
+	},
+	desc_get = "主炮每进行15次攻击，触发专属弹幕-哈尔滨I",
+	name = "专属弹幕-哈尔滨I",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行15次攻击，触发专属弹幕-哈尔滨I",
+	stack = 1,
+	id = 29901,
+	icon = 29900,
+	last_effect = ""
 }

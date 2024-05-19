@@ -1,533 +1,563 @@
-slot0 = class("BayProxy", import(".NetProxy"))
-slot0.SHIP_ADDED = "ship added"
-slot0.SHIP_REMOVED = "ship removed"
-slot0.SHIP_UPDATED = "ship updated"
-slot0.SHIP_EQUIPMENT_ADDED = "ship equipment added"
-slot0.SHIP_EQUIPMENT_REMOVED = "ship equipment removed"
+﻿local var_0_0 = class("BayProxy", import(".NetProxy"))
 
-function slot0.register(slot0)
-	slot0:on(12001, function (slot0)
-		uv0.data = {}
-		uv0.activityNpcShipIds = {}
-		uv0.metaShipIDList = {}
-		uv0.equipCountDic = {}
-		uv0.equipSkinCountDic = {}
+var_0_0.SHIP_ADDED = "ship added"
+var_0_0.SHIP_REMOVED = "ship removed"
+var_0_0.SHIP_UPDATED = "ship updated"
+var_0_0.SHIP_EQUIPMENT_ADDED = "ship equipment added"
+var_0_0.SHIP_EQUIPMENT_REMOVED = "ship equipment removed"
 
-		for slot4, slot5 in ipairs(slot0.shiplist) do
-			slot6 = Ship.New(slot5)
+function var_0_0.register(arg_1_0)
+	arg_1_0:on(12001, function(arg_2_0)
+		arg_1_0.data = {}
+		arg_1_0.activityNpcShipIds = {}
+		arg_1_0.metaShipIDList = {}
+		arg_1_0.equipCountDic = {}
+		arg_1_0.equipSkinCountDic = {}
 
-			slot6:display("loaded")
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.shiplist) do
+			local var_2_0 = Ship.New(iter_2_1)
 
-			uv0.shipHighestLevel = math.max(uv0.shipHighestLevel, slot6.level)
+			var_2_0:display("loaded")
 
-			if slot6:getConfigTable() then
-				uv0.data[slot6.id] = slot6
+			arg_1_0.shipHighestLevel = math.max(arg_1_0.shipHighestLevel, var_2_0.level)
 
-				if slot6:isActivityNpc() then
-					table.insert(uv0.activityNpcShipIds, slot6.id)
-				elseif slot6:isMetaShip() and not table.contains(uv0.metaShipIDList, slot6.id) then
-					table.insert(uv0.metaShipIDList, slot6.id)
+			if var_2_0:getConfigTable() then
+				arg_1_0.data[var_2_0.id] = var_2_0
+
+				if var_2_0:isActivityNpc() then
+					table.insert(arg_1_0.activityNpcShipIds, var_2_0.id)
+				elseif var_2_0:isMetaShip() and not table.contains(arg_1_0.metaShipIDList, var_2_0.id) then
+					table.insert(arg_1_0.metaShipIDList, var_2_0.id)
 				end
 
-				uv1.recordShipLevelVertify(slot6)
-				uv0:UpdateShipEquipAndSkinCount(slot6, true)
+				var_0_0.recordShipLevelVertify(var_2_0)
+				arg_1_0:UpdateShipEquipAndSkinCount(var_2_0, true)
 			else
-				warning("不存在的角色: " .. slot6.id)
+				warning("不存在的角色: " .. var_2_0.id)
 			end
 		end
 
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("isActivityNpc")
 	end)
-	slot0:on(12031, function (slot0)
-		uv0.energyRecoverTime = slot0.energy_auto_increase_time + Ship.ENERGY_RECOVER_TIME
+	arg_1_0:on(12031, function(arg_3_0)
+		arg_1_0.energyRecoverTime = arg_3_0.energy_auto_increase_time + Ship.ENERGY_RECOVER_TIME
 
-		uv0:addEnergyListener(uv0.energyRecoverTime - pg.TimeMgr.GetInstance():GetServerTime())
+		local var_3_0 = arg_1_0.energyRecoverTime - pg.TimeMgr.GetInstance():GetServerTime()
+
+		arg_1_0:addEnergyListener(var_3_0)
 	end)
-	slot0:on(12010, function (slot0)
-		for slot4, slot5 in ipairs(slot0.ship_list) do
-			slot6 = Ship.New(slot5)
+	arg_1_0:on(12010, function(arg_4_0)
+		for iter_4_0, iter_4_1 in ipairs(arg_4_0.ship_list) do
+			local var_4_0 = Ship.New(iter_4_1)
 
-			slot6:display("loaded")
+			var_4_0:display("loaded")
 
-			uv0.shipHighestLevel = math.max(uv0.shipHighestLevel, slot6.level)
+			arg_1_0.shipHighestLevel = math.max(arg_1_0.shipHighestLevel, var_4_0.level)
 
-			if slot6:getConfigTable() then
-				uv0.data[slot6.id] = slot6
+			if var_4_0:getConfigTable() then
+				arg_1_0.data[var_4_0.id] = var_4_0
 
-				if slot6:isActivityNpc() then
-					table.insert(uv0.activityNpcShipIds, slot6.id)
-				elseif slot6:isMetaShip() and not table.contains(uv0.metaShipIDList, slot6.id) then
-					table.insert(uv0.metaShipIDList, slot6.id)
+				if var_4_0:isActivityNpc() then
+					table.insert(arg_1_0.activityNpcShipIds, var_4_0.id)
+				elseif var_4_0:isMetaShip() and not table.contains(arg_1_0.metaShipIDList, var_4_0.id) then
+					table.insert(arg_1_0.metaShipIDList, var_4_0.id)
 				end
 
-				uv1.recordShipLevelVertify(slot6)
-				uv0:UpdateShipEquipAndSkinCount(slot6, true)
+				var_0_0.recordShipLevelVertify(var_4_0)
+				arg_1_0:UpdateShipEquipAndSkinCount(var_4_0, true)
 			else
-				warning("不存在的角色: " .. slot6.id)
+				warning("不存在的角色: " .. var_4_0.id)
 			end
 		end
 
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("isActivityNpc")
 	end)
-	slot0:on(12042, function (slot0)
-		uv0.newShipList = {}
+	arg_1_0:on(12042, function(arg_5_0)
+		local var_5_0 = getProxy(PlayerProxy):getInited()
+		local var_5_1 = 0
 
-		for slot7, slot8 in ipairs(slot0.ship_list) do
-			if Ship.New(slot8):getConfigTable() and slot9.id > 0 then
-				uv0:addShip(slot9, false)
+		arg_1_0.newShipList = {}
 
-				if getProxy(PlayerProxy):getInited() then
-					slot3 = 0 + 1
+		for iter_5_0, iter_5_1 in ipairs(arg_5_0.ship_list) do
+			local var_5_2 = Ship.New(iter_5_1)
+
+			if var_5_2:getConfigTable() and var_5_2.id > 0 then
+				arg_1_0:addShip(var_5_2, false)
+
+				if var_5_0 then
+					var_5_1 = var_5_1 + 1
 				end
 
-				uv0.newShipList[#uv0.newShipList + 1] = slot9
+				arg_1_0.newShipList[#arg_1_0.newShipList + 1] = var_5_2
 			else
-				warning("不存在的角色: " .. slot9.id)
+				warning("不存在的角色: " .. var_5_2.id)
 			end
 		end
 
-		if slot3 > 0 then
-			uv0:countShip(slot3)
+		if var_5_1 > 0 then
+			arg_1_0:countShip(var_5_1)
 		end
 
-		uv0.metaTransItemMap = {}
+		arg_1_0.metaTransItemMap = {}
 	end)
 
-	slot1 = getProxy(PlayerProxy)
+	local var_1_0 = getProxy(PlayerProxy)
 
-	slot0:on(12019, function (slot0)
-		slot2 = uv1:getShipById(uv0:getData().character)
+	arg_1_0:on(12019, function(arg_6_0)
+		local var_6_0 = var_1_0:getData()
+		local var_6_1 = arg_1_0:getShipById(var_6_0.character)
 
-		slot2:setLikability(slot0.intimacy)
-		uv1:updateShip(slot2)
+		var_6_1:setLikability(arg_6_0.intimacy)
+		arg_1_0:updateShip(var_6_1)
 	end)
 
-	slot0.shipHighestLevel = 0
+	arg_1_0.shipHighestLevel = 0
 end
 
-function slot0.recoverAllShipEnergy(slot0)
-	slot2 = pg.energy_template[4].upper_bound
-	slot3 = {}
-	slot4 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING)
-	slot7 = getProxy(ActivityProxy)
-	slot8 = slot7
-	slot9 = ActivityConst.ACTIVITY_TYPE_HOTSPRING_2
+function var_0_0.recoverAllShipEnergy(arg_7_0)
+	local var_7_0 = pg.energy_template[3].upper_bound - 1
+	local var_7_1 = pg.energy_template[4].upper_bound
+	local var_7_2 = {}
+	local var_7_3 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING)
 
-	table.insertto(slot4, slot7.getActivitiesByType(slot8, slot9))
-	table.Foreach(slot4, function (slot0, slot1)
-		if slot1 and not slot1:isEnd() then
-			slot2 = slot1:GetEnergyRecoverAddition()
+	table.insertto(var_7_3, getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING_2))
+	table.Foreach(var_7_3, function(arg_8_0, arg_8_1)
+		if arg_8_1 and not arg_8_1:isEnd() then
+			local var_8_0 = arg_8_1:GetEnergyRecoverAddition()
 
-			_.each(slot1:getData1List(), function (slot0)
-				uv0[slot0] = (uv0[slot0] or 0) + uv1
+			_.each(arg_8_1:getData1List(), function(arg_9_0)
+				var_7_2[arg_9_0] = (var_7_2[arg_9_0] or 0) + var_8_0
 			end)
 		end
 	end)
 
-	for slot8, slot9 in pairs(slot0.data) do
-		slot10 = slot9:getRecoverEnergyPoint()
-		slot12 = pg.energy_template[3].upper_bound - 1
+	for iter_7_0, iter_7_1 in pairs(arg_7_0.data) do
+		local var_7_4 = iter_7_1:getRecoverEnergyPoint()
+		local var_7_5 = 0
+		local var_7_6 = var_7_0
 
-		if slot9.state == Ship.STATE_REST or slot9.state == Ship.STATE_TRAIN then
-			if slot9.state == Ship.STATE_TRAIN then
-				slot11 = 0 + Ship.BACKYARD_1F_ENERGY_ADDITION
-			elseif slot9.state == Ship.STATE_REST then
-				slot11 = slot11 + Ship.BACKYARD_2F_ENERGY_ADDITION
+		if iter_7_1.state == Ship.STATE_REST or iter_7_1.state == Ship.STATE_TRAIN then
+			if iter_7_1.state == Ship.STATE_TRAIN then
+				var_7_5 = var_7_5 + Ship.BACKYARD_1F_ENERGY_ADDITION
+			elseif iter_7_1.state == Ship.STATE_REST then
+				var_7_5 = var_7_5 + Ship.BACKYARD_2F_ENERGY_ADDITION
 			end
 
-			for slot16, slot17 in ipairs(getProxy(ActivityProxy):getBackyardEnergyActivityBuffs()) do
-				slot11 = slot11 + tonumber(slot17:getConfig("benefit_effect"))
+			for iter_7_2, iter_7_3 in ipairs(getProxy(ActivityProxy):getBackyardEnergyActivityBuffs()) do
+				var_7_5 = var_7_5 + tonumber(iter_7_3:getConfig("benefit_effect"))
 			end
 
-			slot12 = slot2
+			var_7_6 = var_7_1
 		end
 
-		if slot3[slot9.id] then
-			slot11 = slot11 + slot3[slot9.id]
-			slot12 = slot2
+		if var_7_2[iter_7_1.id] then
+			var_7_5 = var_7_5 + var_7_2[iter_7_1.id]
+			var_7_6 = var_7_1
 		end
 
-		slot9:setEnergy(math.min(slot9:getEnergy() + math.max(math.min(slot10, slot12 - slot9:getEnergy()), 0) + slot11, slot2))
-		slot0:updateShip(slot9)
+		local var_7_7 = math.max(math.min(var_7_4, var_7_6 - iter_7_1:getEnergy()), 0)
+		local var_7_8 = math.min(iter_7_1:getEnergy() + var_7_7 + var_7_5, var_7_1)
+
+		iter_7_1:setEnergy(var_7_8)
+		arg_7_0:updateShip(iter_7_1)
 	end
 end
 
-function slot0.addEnergyListener(slot0, slot1)
-	if slot1 <= 0 then
-		slot0:recoverAllShipEnergy()
-		slot0:addEnergyListener(Ship.ENERGY_RECOVER_TIME)
+function var_0_0.addEnergyListener(arg_10_0, arg_10_1)
+	if arg_10_1 <= 0 then
+		arg_10_0:recoverAllShipEnergy()
+		arg_10_0:addEnergyListener(Ship.ENERGY_RECOVER_TIME)
 
 		return
 	end
 
-	if slot0.energyTimer then
-		slot0.energyTimer:Stop()
+	if arg_10_0.energyTimer then
+		arg_10_0.energyTimer:Stop()
 
-		slot0.energyTimer = nil
+		arg_10_0.energyTimer = nil
 	end
 
-	slot0.energyTimer = Timer.New(function ()
-		uv0:recoverAllShipEnergy()
-		uv0:addEnergyListener(Ship.ENERGY_RECOVER_TIME)
-	end, slot1, 1)
+	arg_10_0.energyTimer = Timer.New(function()
+		arg_10_0:recoverAllShipEnergy()
+		arg_10_0:addEnergyListener(Ship.ENERGY_RECOVER_TIME)
+	end, arg_10_1, 1)
 
-	slot0.energyTimer:Start()
+	arg_10_0.energyTimer:Start()
 end
 
-function slot0.remove(slot0)
-	if slot0.energyTimer then
-		slot0.energyTimer:Stop()
+function var_0_0.remove(arg_12_0)
+	if arg_12_0.energyTimer then
+		arg_12_0.energyTimer:Stop()
 
-		slot0.energyTimer = nil
-	end
-end
-
-function slot0.recordShipLevelVertify(slot0)
-	if slot0 then
-		ys.BattleShipLevelVertify[slot0.id] = uv0.generateLevelVertify(slot0.level)
+		arg_12_0.energyTimer = nil
 	end
 end
 
-function slot0.checkShiplevelVertify(slot0)
-	if uv0.generateLevelVertify(slot0.level) == ys.BattleShipLevelVertify[slot0.id] then
+function var_0_0.recordShipLevelVertify(arg_13_0)
+	if arg_13_0 then
+		ys.BattleShipLevelVertify[arg_13_0.id] = var_0_0.generateLevelVertify(arg_13_0.level)
+	end
+end
+
+function var_0_0.checkShiplevelVertify(arg_14_0)
+	if var_0_0.generateLevelVertify(arg_14_0.level) == ys.BattleShipLevelVertify[arg_14_0.id] then
 		return true
 	else
 		return false
 	end
 end
 
-function slot0.generateLevelVertify(slot0)
-	return (slot0 + 1114) * 824
+function var_0_0.generateLevelVertify(arg_15_0)
+	return (arg_15_0 + 1114) * 824
 end
 
-function slot0.addShip(slot0, slot1, slot2)
-	assert(isa(slot1, Ship), "should be an instance of Ship")
-	assert(slot0.data[slot1.id] == nil, "ship already exist, use updateShip() instead")
+function var_0_0.addShip(arg_16_0, arg_16_1, arg_16_2)
+	assert(isa(arg_16_1, Ship), "should be an instance of Ship")
+	assert(arg_16_0.data[arg_16_1.id] == nil, "ship already exist, use updateShip() instead")
 
-	slot0.data[slot1.id] = slot1
+	arg_16_0.data[arg_16_1.id] = arg_16_1
 
-	uv0.recordShipLevelVertify(slot1)
-	slot0:UpdateShipEquipAndSkinCount(slot1, true)
+	var_0_0.recordShipLevelVertify(arg_16_1)
+	arg_16_0:UpdateShipEquipAndSkinCount(arg_16_1, true)
 
-	if defaultValue(slot2, true) then
-		slot0:countShip()
+	arg_16_2 = defaultValue(arg_16_2, true)
+
+	if arg_16_2 then
+		arg_16_0:countShip()
 	end
 
-	slot0.shipHighestLevel = math.max(slot0.shipHighestLevel, slot1.level)
+	arg_16_0.shipHighestLevel = math.max(arg_16_0.shipHighestLevel, arg_16_1.level)
 
-	if slot1:isActivityNpc() then
-		table.insert(slot0.activityNpcShipIds, slot1.id)
+	if arg_16_1:isActivityNpc() then
+		table.insert(arg_16_0.activityNpcShipIds, arg_16_1.id)
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("isActivityNpc")
 	else
-		if slot1:isMetaShip() and not table.contains(slot0.metaShipIDList, slot1.id) then
-			table.insert(slot0.metaShipIDList, slot1.id)
+		if arg_16_1:isMetaShip() and not table.contains(arg_16_0.metaShipIDList, arg_16_1.id) then
+			table.insert(arg_16_0.metaShipIDList, arg_16_1.id)
 			getProxy(MetaCharacterProxy):requestMetaTacticsInfo({
-				slot1.id
+				arg_16_1.id
 			})
 		end
 
-		if getProxy(CollectionProxy) then
-			slot3:flushCollection(slot1)
+		local var_16_0 = getProxy(CollectionProxy)
+
+		if var_16_0 then
+			var_16_0:flushCollection(arg_16_1)
 		end
 	end
 
 	if getProxy(PlayerProxy):getInited() then
-		slot0.facade:sendNotification(uv0.SHIP_ADDED, slot1:clone())
+		arg_16_0.facade:sendNotification(var_0_0.SHIP_ADDED, arg_16_1:clone())
 	end
 end
 
-function slot0.countShip(slot0, slot1)
-	slot2 = getProxy(PlayerProxy)
-	slot3 = slot2:getData()
+function var_0_0.countShip(arg_17_0, arg_17_1)
+	local var_17_0 = getProxy(PlayerProxy)
+	local var_17_1 = var_17_0:getData()
 
-	slot3:increaseShipCount(slot1)
-	slot2:updatePlayer(slot3)
+	var_17_1:increaseShipCount(arg_17_1)
+	var_17_0:updatePlayer(var_17_1)
 end
 
-function slot0.getNewShip(slot0, slot1)
-	slot2 = slot0.newShipList or {}
+function var_0_0.getNewShip(arg_18_0, arg_18_1)
+	local var_18_0 = arg_18_0.newShipList or {}
 
-	if slot1 then
-		slot0.newShipList = nil
+	if arg_18_1 then
+		arg_18_0.newShipList = nil
 	end
 
-	return slot2
+	return var_18_0
 end
 
-function slot0.getMetaTransItemMap(slot0, slot1)
-	slot2 = nil
+function var_0_0.getMetaTransItemMap(arg_19_0, arg_19_1)
+	local var_19_0
 
-	if slot0.metaTransItemMap and slot0.metaTransItemMap[slot1] and #slot0.metaTransItemMap[slot1] > 0 then
-		slot2 = slot0.metaTransItemMap[slot1][1]
+	if arg_19_0.metaTransItemMap and arg_19_0.metaTransItemMap[arg_19_1] and #arg_19_0.metaTransItemMap[arg_19_1] > 0 then
+		var_19_0 = arg_19_0.metaTransItemMap[arg_19_1][1]
 
-		table.remove(slot0.metaTransItemMap[slot1], 1)
+		table.remove(arg_19_0.metaTransItemMap[arg_19_1], 1)
 	end
 
-	return slot2
+	return var_19_0
 end
 
-function slot0.addMetaTransItemMap(slot0, slot1, slot2)
-	if not slot0.metaTransItemMap then
-		slot0.metaTransItemMap = {}
+function var_0_0.addMetaTransItemMap(arg_20_0, arg_20_1, arg_20_2)
+	if not arg_20_0.metaTransItemMap then
+		arg_20_0.metaTransItemMap = {}
 	end
 
-	if not slot0.metaTransItemMap[slot1] then
-		slot0.metaTransItemMap[slot1] = {}
+	if not arg_20_0.metaTransItemMap[arg_20_1] then
+		arg_20_0.metaTransItemMap[arg_20_1] = {}
 	end
 
-	table.insert(slot0.metaTransItemMap[slot1], slot2)
+	table.insert(arg_20_0.metaTransItemMap[arg_20_1], arg_20_2)
 end
 
-function slot0.getShipsByFleet(slot0, slot1)
-	assert(isa(slot1, Fleet), "should be an instance of Fleet")
+function var_0_0.getShipsByFleet(arg_21_0, arg_21_1)
+	assert(isa(arg_21_1, Fleet), "should be an instance of Fleet")
 
-	slot2 = {}
+	local var_21_0 = {}
 
-	for slot6, slot7 in ipairs(slot1:getShipIds()) do
-		table.insert(slot2, slot0.data[slot7])
+	for iter_21_0, iter_21_1 in ipairs(arg_21_1:getShipIds()) do
+		table.insert(var_21_0, arg_21_0.data[iter_21_1])
 	end
 
-	return slot2
+	return var_21_0
 end
 
-function slot0.getSortShipsByFleet(slot0, slot1)
-	assert(isa(slot1, Fleet), "should be an instance of Fleet")
+function var_0_0.getSortShipsByFleet(arg_22_0, arg_22_1)
+	assert(isa(arg_22_1, Fleet), "should be an instance of Fleet")
 
-	for slot6, slot7 in ipairs(slot1.mainShips) do
-		table.insert({}, slot0.data[slot7])
+	local var_22_0 = {}
+
+	for iter_22_0, iter_22_1 in ipairs(arg_22_1.mainShips) do
+		table.insert(var_22_0, arg_22_0.data[iter_22_1])
 	end
 
-	for slot6, slot7 in ipairs(slot1.vanguardShips) do
-		table.insert(slot2, slot0.data[slot7])
+	for iter_22_2, iter_22_3 in ipairs(arg_22_1.vanguardShips) do
+		table.insert(var_22_0, arg_22_0.data[iter_22_3])
 	end
 
-	for slot6, slot7 in ipairs(slot1.subShips) do
-		table.insert(slot2, slot0.data[slot7])
+	for iter_22_4, iter_22_5 in ipairs(arg_22_1.subShips) do
+		table.insert(var_22_0, arg_22_0.data[iter_22_5])
 	end
 
-	return slot2
+	return var_22_0
 end
 
-function slot0.getShipByTeam(slot0, slot1, slot2)
-	assert(isa(slot1, Fleet), "should be an instance of Fleet")
+function var_0_0.getShipByTeam(arg_23_0, arg_23_1, arg_23_2)
+	assert(isa(arg_23_1, Fleet), "should be an instance of Fleet")
 
-	slot3 = {}
+	local var_23_0 = {}
 
-	if slot2 == TeamType.Vanguard then
-		for slot7, slot8 in ipairs(slot1.vanguardShips) do
-			table.insert(slot3, slot0.data[slot8])
+	if arg_23_2 == TeamType.Vanguard then
+		for iter_23_0, iter_23_1 in ipairs(arg_23_1.vanguardShips) do
+			table.insert(var_23_0, arg_23_0.data[iter_23_1])
 		end
-	elseif slot2 == TeamType.Main then
-		for slot7, slot8 in ipairs(slot1.mainShips) do
-			table.insert(slot3, slot0.data[slot8])
+	elseif arg_23_2 == TeamType.Main then
+		for iter_23_2, iter_23_3 in ipairs(arg_23_1.mainShips) do
+			table.insert(var_23_0, arg_23_0.data[iter_23_3])
 		end
-	elseif slot2 == TeamType.Submarine then
-		for slot7, slot8 in ipairs(slot1.subShips) do
-			table.insert(slot3, slot0.data[slot8])
-		end
-	end
-
-	return Clone(slot3)
-end
-
-function slot0.getShipsByTypes(slot0, slot1)
-	slot2 = {}
-
-	for slot6, slot7 in pairs(slot0.data) do
-		if table.contains(slot1, slot7:getShipType()) then
-			table.insert(slot2, slot7)
+	elseif arg_23_2 == TeamType.Submarine then
+		for iter_23_4, iter_23_5 in ipairs(arg_23_1.subShips) do
+			table.insert(var_23_0, arg_23_0.data[iter_23_5])
 		end
 	end
 
-	return slot2
+	return Clone(var_23_0)
 end
 
-function slot0.getShipsByStatus(slot0, slot1)
-	slot2 = {}
+function var_0_0.getShipsByTypes(arg_24_0, arg_24_1)
+	local var_24_0 = {}
 
-	for slot6, slot7 in pairs(slot0.data) do
-		if slot7.status == slot1 then
-			table.insert(slot2, slot7)
+	for iter_24_0, iter_24_1 in pairs(arg_24_0.data) do
+		if table.contains(arg_24_1, iter_24_1:getShipType()) then
+			table.insert(var_24_0, iter_24_1)
 		end
 	end
 
-	return slot2
+	return var_24_0
 end
 
-function slot0.getShipsByTeamType(slot0, slot1)
-	slot2 = {}
+function var_0_0.getShipsByStatus(arg_25_0, arg_25_1)
+	local var_25_0 = {}
 
-	for slot6, slot7 in pairs(slot0.data) do
-		if slot7:getTeamType() == slot1 then
-			table.insert(slot2, slot7)
+	for iter_25_0, iter_25_1 in pairs(arg_25_0.data) do
+		if iter_25_1.status == arg_25_1 then
+			table.insert(var_25_0, iter_25_1)
 		end
 	end
 
-	return slot2
+	return var_25_0
 end
 
-function slot0.getConfigShipCount(slot0, slot1)
-	for slot6, slot7 in pairs(slot0.data) do
-		if slot7.configId == slot1 then
-			slot2 = 0 + 1
+function var_0_0.getShipsByTeamType(arg_26_0, arg_26_1)
+	local var_26_0 = {}
+
+	for iter_26_0, iter_26_1 in pairs(arg_26_0.data) do
+		if iter_26_1:getTeamType() == arg_26_1 then
+			table.insert(var_26_0, iter_26_1)
 		end
 	end
 
-	return slot2
+	return var_26_0
 end
 
-function slot0.getShips(slot0)
-	slot1 = {}
+function var_0_0.getConfigShipCount(arg_27_0, arg_27_1)
+	local var_27_0 = 0
 
-	for slot5, slot6 in pairs(slot0.data) do
-		table.insert(slot1, slot6)
+	for iter_27_0, iter_27_1 in pairs(arg_27_0.data) do
+		if iter_27_1.configId == arg_27_1 then
+			var_27_0 = var_27_0 + 1
+		end
 	end
 
-	return slot1
+	return var_27_0
 end
 
-function slot0.getShipCount(slot0)
-	return table.getCount(slot0.data)
+function var_0_0.getShips(arg_28_0)
+	local var_28_0 = {}
+
+	for iter_28_0, iter_28_1 in pairs(arg_28_0.data) do
+		table.insert(var_28_0, iter_28_1)
+	end
+
+	return var_28_0
 end
 
-function slot0.getShipById(slot0, slot1)
-	if slot0.data[slot1] ~= nil then
-		return slot0.data[slot1]:clone()
+function var_0_0.getShipCount(arg_29_0)
+	return (table.getCount(arg_29_0.data))
+end
+
+function var_0_0.getShipById(arg_30_0, arg_30_1)
+	if arg_30_0.data[arg_30_1] ~= nil then
+		return arg_30_0.data[arg_30_1]:clone()
 	end
 end
 
-function slot0.RawGetShipById(slot0, slot1)
-	return slot0.data[slot1]
+function var_0_0.RawGetShipById(arg_31_0, arg_31_1)
+	return arg_31_0.data[arg_31_1]
 end
 
-function slot0.getMetaShipByGroupId(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.data) do
-		if slot6:isMetaShip() and slot6.metaCharacter.id == slot1 then
-			return slot6
+function var_0_0.getMetaShipByGroupId(arg_32_0, arg_32_1)
+	for iter_32_0, iter_32_1 in pairs(arg_32_0.data) do
+		if iter_32_1:isMetaShip() and iter_32_1.metaCharacter.id == arg_32_1 then
+			return iter_32_1
 		end
 	end
 end
 
-function slot0.getMetaShipIDList(slot0)
-	return slot0.metaShipIDList
+function var_0_0.getMetaShipIDList(arg_33_0)
+	return arg_33_0.metaShipIDList
 end
 
-function slot0.updateShip(slot0, slot1)
-	if slot1.isNpc then
+function var_0_0.updateShip(arg_34_0, arg_34_1)
+	if arg_34_1.isNpc then
 		return
 	end
 
-	assert(isa(slot1, Ship), "should be an instance of Ship")
-	assert(slot0.data[slot1.id] ~= nil, "ship should exist")
+	assert(isa(arg_34_1, Ship), "should be an instance of Ship")
+	assert(arg_34_0.data[arg_34_1.id] ~= nil, "ship should exist")
 
-	if slot0.shipHighestLevel < slot1.level then
-		slot0.shipHighestLevel = slot1.level
+	if arg_34_1.level > arg_34_0.shipHighestLevel then
+		arg_34_0.shipHighestLevel = arg_34_1.level
 
-		pg.TrackerMgr.GetInstance():Tracking(TRACKING_SHIP_HIGHEST_LEVEL, slot0.shipHighestLevel)
+		pg.TrackerMgr.GetInstance():Tracking(TRACKING_SHIP_HIGHEST_LEVEL, arg_34_0.shipHighestLevel)
 	end
 
-	slot2 = slot0.data[slot1.id]
+	local var_34_0 = arg_34_0.data[arg_34_1.id]
 
-	slot0:UpdateShipEquipAndSkinCount(slot2, false)
+	arg_34_0:UpdateShipEquipAndSkinCount(var_34_0, false)
 
-	slot0.data[slot1.id] = slot1
+	arg_34_0.data[arg_34_1.id] = arg_34_1
 
-	uv0.recordShipLevelVertify(slot1)
-	slot0:UpdateShipEquipAndSkinCount(slot1, true)
+	var_0_0.recordShipLevelVertify(arg_34_1)
+	arg_34_0:UpdateShipEquipAndSkinCount(arg_34_1, true)
 
-	if slot2:isActivityNpc() and not slot1:isActivityNpc() then
-		table.removebyvalue(slot0.activityNpcShipIds, slot1.id)
+	if var_34_0:isActivityNpc() and not arg_34_1:isActivityNpc() then
+		table.removebyvalue(arg_34_0.activityNpcShipIds, arg_34_1.id)
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("isActivityNpc")
 	end
 
-	if slot2.level < slot1.level then
-		pg.TrackerMgr.GetInstance():Tracking(TRACKING_SHIP_LEVEL_UP, slot1.level - slot2.level)
+	if var_34_0.level < arg_34_1.level then
+		pg.TrackerMgr.GetInstance():Tracking(TRACKING_SHIP_LEVEL_UP, arg_34_1.level - var_34_0.level)
 	end
 
-	if (slot2:getStar() < slot1:getStar() or slot2.intimacy < slot1.intimacy or slot2.level < slot1.level or not slot2.propose and slot1.propose) and getProxy(CollectionProxy) and not slot1:isActivityNpc() then
-		slot3:flushCollection(slot1)
+	if var_34_0:getStar() < arg_34_1:getStar() or var_34_0.intimacy < arg_34_1.intimacy or var_34_0.level < arg_34_1.level or not var_34_0.propose and arg_34_1.propose then
+		local var_34_1 = getProxy(CollectionProxy)
+
+		if var_34_1 and not arg_34_1:isActivityNpc() then
+			var_34_1:flushCollection(arg_34_1)
+		end
 	end
 
-	slot0.facade:sendNotification(uv0.SHIP_UPDATED, slot1:clone())
+	arg_34_0.facade:sendNotification(var_0_0.SHIP_UPDATED, arg_34_1:clone())
 end
 
-function slot0.removeShip(slot0, slot1)
-	assert(isa(slot1, Ship), "should be an instance of Ship")
-	slot0:removeShipById(slot1.id)
+function var_0_0.removeShip(arg_35_0, arg_35_1)
+	assert(isa(arg_35_1, Ship), "should be an instance of Ship")
+	arg_35_0:removeShipById(arg_35_1.id)
 end
 
-function slot0.getEquipment2ByflagShip(slot0)
-	slot3 = slot0:getShipById(getProxy(PlayerProxy):getData().character)
+function var_0_0.getEquipment2ByflagShip(arg_36_0)
+	local var_36_0 = getProxy(PlayerProxy):getData()
+	local var_36_1 = arg_36_0:getShipById(var_36_0.character)
 
-	assert(slot3, "ship is nil")
+	assert(var_36_1, "ship is nil")
 
-	return slot3:getEquip(2)
+	return var_36_1:getEquip(2)
 end
 
-function slot0.removeShipById(slot0, slot1)
-	assert(slot0.data[slot1] ~= nil, "ship should exist")
+function var_0_0.removeShipById(arg_37_0, arg_37_1)
+	local var_37_0 = arg_37_0.data[arg_37_1]
 
-	if slot2:isActivityNpc() then
-		table.removebyvalue(slot0.activityNpcShipIds, slot2.id)
+	assert(var_37_0 ~= nil, "ship should exist")
+
+	if var_37_0:isActivityNpc() then
+		table.removebyvalue(arg_37_0.activityNpcShipIds, var_37_0.id)
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("isActivityNpc")
 	end
 
-	slot0.data[slot2.id] = nil
+	arg_37_0.data[var_37_0.id] = nil
 
-	slot2:display("removed")
-	slot0:UpdateShipEquipAndSkinCount(slot2, false)
-	slot0.facade:sendNotification(uv0.SHIP_REMOVED, slot2)
+	var_37_0:display("removed")
+	arg_37_0:UpdateShipEquipAndSkinCount(var_37_0, false)
+	arg_37_0.facade:sendNotification(var_0_0.SHIP_REMOVED, var_37_0)
 end
 
-function slot0.findShipByGroup(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.data) do
-		if slot6.groupId == slot1 then
-			return slot6
+function var_0_0.findShipByGroup(arg_38_0, arg_38_1)
+	for iter_38_0, iter_38_1 in pairs(arg_38_0.data) do
+		if iter_38_1.groupId == arg_38_1 then
+			return iter_38_1
 		end
 	end
 
 	return nil
 end
 
-function slot0.findShipsByGroup(slot0, slot1)
-	slot2 = {}
+function var_0_0.findShipsByGroup(arg_39_0, arg_39_1)
+	local var_39_0 = {}
 
-	for slot6, slot7 in pairs(slot0.data) do
-		if slot7.groupId == slot1 then
-			table.insert(slot2, slot7)
+	for iter_39_0, iter_39_1 in pairs(arg_39_0.data) do
+		if iter_39_1.groupId == arg_39_1 then
+			table.insert(var_39_0, iter_39_1)
 		end
 	end
 
-	return slot2
+	return var_39_0
 end
 
-function slot0._findShipsByGroup(slot0, slot1, slot2, slot3)
-	slot6 = {}
-
-	for slot10, slot11 in pairs(slot0.data) do
-		if slot11.groupId == slot1 and function (slot0)
-			if uv0 then
-				return slot0:isRemoulded()
-			else
-				return true
-			end
-		end(slot11) and function (slot0)
-			if uv0 then
-				return slot0.propose
-			else
-				return true
-			end
-		end(slot11) then
-			table.insert(slot6, slot11)
+function var_0_0._findShipsByGroup(arg_40_0, arg_40_1, arg_40_2, arg_40_3)
+	local function var_40_0(arg_41_0)
+		if arg_40_2 then
+			return arg_41_0:isRemoulded()
+		else
+			return true
 		end
 	end
 
-	return slot6
+	local function var_40_1(arg_42_0)
+		if arg_40_3 then
+			return arg_42_0.propose
+		else
+			return true
+		end
+	end
+
+	local var_40_2 = {}
+
+	for iter_40_0, iter_40_1 in pairs(arg_40_0.data) do
+		if iter_40_1.groupId == arg_40_1 and var_40_0(iter_40_1) and var_40_1(iter_40_1) then
+			table.insert(var_40_2, iter_40_1)
+		end
+	end
+
+	return var_40_2
 end
 
-function slot0.ExistGroupShip(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.data) do
-		if slot6.groupId == slot1 then
+function var_0_0.ExistGroupShip(arg_43_0, arg_43_1)
+	for iter_43_0, iter_43_1 in pairs(arg_43_0.data) do
+		if iter_43_1.groupId == arg_43_1 then
 			return true
 		end
 	end
@@ -535,21 +565,25 @@ function slot0.ExistGroupShip(slot0, slot1)
 	return false
 end
 
-function slot0._ExistGroupShip(slot0, slot1, slot2, slot3)
-	for slot9, slot10 in pairs(slot0.data) do
-		if slot10.groupId == slot1 and function (slot0)
-			if uv0 then
-				return slot0:isRemoulded()
-			else
-				return true
-			end
-		end(slot10) and function (slot0)
-			if uv0 then
-				return slot0.propose
-			else
-				return true
-			end
-		end(slot10) then
+function var_0_0._ExistGroupShip(arg_44_0, arg_44_1, arg_44_2, arg_44_3)
+	local function var_44_0(arg_45_0)
+		if arg_44_2 then
+			return arg_45_0:isRemoulded()
+		else
+			return true
+		end
+	end
+
+	local function var_44_1(arg_46_0)
+		if arg_44_3 then
+			return arg_46_0.propose
+		else
+			return true
+		end
+	end
+
+	for iter_44_0, iter_44_1 in pairs(arg_44_0.data) do
+		if iter_44_1.groupId == arg_44_1 and var_44_0(iter_44_1) and var_44_1(iter_44_1) then
 			return true
 		end
 	end
@@ -557,552 +591,608 @@ function slot0._ExistGroupShip(slot0, slot1, slot2, slot3)
 	return false
 end
 
-function slot0.getSameGroupShipCount(slot0, slot1)
-	for slot6, slot7 in pairs(slot0.data) do
-		if slot7.groupId == slot1 then
-			slot2 = 0 + 1
+function var_0_0.getSameGroupShipCount(arg_47_0, arg_47_1)
+	local var_47_0 = 0
+
+	for iter_47_0, iter_47_1 in pairs(arg_47_0.data) do
+		if iter_47_1.groupId == arg_47_1 then
+			var_47_0 = var_47_0 + 1
 		end
 	end
 
-	return slot2
+	return var_47_0
 end
 
-function slot0.getUpgradeShips(slot0, slot1)
-	slot4 = {}
+function var_0_0.getUpgradeShips(arg_48_0, arg_48_1)
+	local var_48_0 = arg_48_1:getConfig("rarity")
+	local var_48_1 = arg_48_1.groupId
+	local var_48_2 = {}
 
-	for slot8, slot9 in pairs(slot0.data) do
-		if slot9.groupId == slot1.groupId or slot9:isTestShip() and slot9:canUseTestShip(slot1:getConfig("rarity")) then
-			table.insert(slot4, slot9)
+	for iter_48_0, iter_48_1 in pairs(arg_48_0.data) do
+		if iter_48_1.groupId == var_48_1 or iter_48_1:isTestShip() and iter_48_1:canUseTestShip(var_48_0) then
+			table.insert(var_48_2, iter_48_1)
 		end
 	end
 
-	return slot4
+	return var_48_2
 end
 
-function slot0.getBayPower(slot0)
-	slot1 = {}
+function var_0_0.getBayPower(arg_49_0)
+	local var_49_0 = {}
+	local var_49_1 = 0
 
-	for slot6, slot7 in pairs(slot0.data) do
-		slot8 = slot7.configId
-		slot9 = slot7:getShipCombatPower()
+	for iter_49_0, iter_49_1 in pairs(arg_49_0.data) do
+		local var_49_2 = iter_49_1.configId
+		local var_49_3 = iter_49_1:getShipCombatPower()
 
-		if ShipGroup.GetGroupConfig(slot7:getGroupId()).handbook_type ~= 1 and (not slot1[slot8] or slot1[slot8] < slot9) then
-			slot1[slot8] = slot9
-			slot2 = 0 - defaultValue(slot1[slot8], 0) + slot9
+		if ShipGroup.GetGroupConfig(iter_49_1:getGroupId()).handbook_type ~= 1 and (not var_49_0[var_49_2] or var_49_3 > var_49_0[var_49_2]) then
+			var_49_1 = var_49_1 - defaultValue(var_49_0[var_49_2], 0)
+			var_49_0[var_49_2] = var_49_3
+			var_49_1 = var_49_1 + var_49_3
 		end
 	end
 
-	return slot2
+	return var_49_1
 end
 
-function slot0.GetBayPowerRootedAsyn(slot0, slot1)
-	slot2 = nil
+function var_0_0.GetBayPowerRootedAsyn(arg_50_0, arg_50_1)
+	local var_50_0
 
-	coroutine.wrap(function ()
-		slot0 = {}
-		slot2 = 0
+	var_50_0 = coroutine.wrap(function()
+		local var_51_0 = {}
+		local var_51_1 = 0
+		local var_51_2 = 0
 
-		for slot6, slot7 in pairs(uv0.data) do
-			slot8 = slot7.configId
-			slot9 = slot7:getShipCombatPower()
+		for iter_51_0, iter_51_1 in pairs(arg_50_0.data) do
+			local var_51_3 = iter_51_1.configId
+			local var_51_4 = iter_51_1:getShipCombatPower()
 
-			if ShipGroup.GetGroupConfig(slot7:getGroupId()).handbook_type ~= 1 and (not slot0[slot8] or slot0[slot8] < slot9) then
-				slot0[slot8] = slot9
-				slot1 = 0 - defaultValue(slot0[slot8], 0) + slot9
+			if ShipGroup.GetGroupConfig(iter_51_1:getGroupId()).handbook_type ~= 1 and (not var_51_0[var_51_3] or var_51_4 > var_51_0[var_51_3]) then
+				var_51_1 = var_51_1 - defaultValue(var_51_0[var_51_3], 0)
+				var_51_0[var_51_3] = var_51_4
+				var_51_1 = var_51_1 + var_51_4
 			end
 
-			if slot2 + 1 == 1 or slot2 % 50 == 0 then
-				onNextTick(uv1)
+			var_51_2 = var_51_2 + 1
+
+			if var_51_2 == 1 or var_51_2 % 50 == 0 then
+				onNextTick(var_50_0)
 				coroutine.yield()
 			end
 		end
 
-		uv2(slot1^0.667)
-	end)()
+		arg_50_1(var_51_1^0.667)
+	end)
+
+	var_50_0()
 end
 
-function slot0.getBayPowerRooted(slot0)
-	return slot0:getBayPower()^0.667
+function var_0_0.getBayPowerRooted(arg_52_0)
+	return arg_52_0:getBayPower()^0.667
 end
 
-function slot0.getEquipsInShips(slot0, slot1)
-	slot2 = {}
+function var_0_0.getEquipsInShips(arg_53_0, arg_53_1)
+	local var_53_0 = {}
 
-	for slot6, slot7 in pairs(slot0.data) do
-		for slot11, slot12 in pairs(slot7.equipments) do
-			if slot12 and (not slot1 or slot1(slot12, slot7.id)) then
-				table.insert(slot2, setmetatable({
-					shipId = slot7.id,
-					shipPos = slot11
+	for iter_53_0, iter_53_1 in pairs(arg_53_0.data) do
+		for iter_53_2, iter_53_3 in pairs(iter_53_1.equipments) do
+			if iter_53_3 and (not arg_53_1 or arg_53_1(iter_53_3, iter_53_1.id)) then
+				table.insert(var_53_0, setmetatable({
+					shipId = iter_53_1.id,
+					shipPos = iter_53_2
 				}, {
-					__index = slot12
+					__index = iter_53_3
 				}))
 			end
 		end
 	end
 
-	return slot2
+	return var_53_0
 end
 
-function slot0.UpdateShipEquipAndSkinCount(slot0, slot1, slot2)
-	if not slot1 then
+function var_0_0.UpdateShipEquipAndSkinCount(arg_54_0, arg_54_1, arg_54_2)
+	if not arg_54_1 then
 		return
 	end
 
-	for slot7, slot8 in pairs(slot1.equipments) do
-		if slot8 then
-			slot0.equipCountDic[slot8.id] = defaultValue(slot0.equipCountDic[slot8.id], 0) + (slot2 and 1 or -1)
+	local var_54_0 = arg_54_2 and 1 or -1
 
-			assert(slot0.equipCountDic[slot8.id] >= 0)
+	for iter_54_0, iter_54_1 in pairs(arg_54_1.equipments) do
+		if iter_54_1 then
+			arg_54_0.equipCountDic[iter_54_1.id] = defaultValue(arg_54_0.equipCountDic[iter_54_1.id], 0) + var_54_0
+
+			assert(arg_54_0.equipCountDic[iter_54_1.id] >= 0)
 		end
 	end
 
-	for slot7, slot8 in pairs(slot1.equipmentSkins) do
-		if slot8 > 0 then
-			slot0.equipSkinCountDic[slot8] = defaultValue(slot0.equipSkinCountDic[slot8], 0) + slot3
+	for iter_54_2, iter_54_3 in pairs(arg_54_1.equipmentSkins) do
+		if iter_54_3 > 0 then
+			arg_54_0.equipSkinCountDic[iter_54_3] = defaultValue(arg_54_0.equipSkinCountDic[iter_54_3], 0) + var_54_0
 
-			assert(slot0.equipSkinCountDic[slot8] >= 0)
+			assert(arg_54_0.equipSkinCountDic[iter_54_3] >= 0)
 		end
 	end
 end
 
-function slot0.GetEquipCountInShips(slot0, slot1)
-	return slot0.equipCountDic[slot1] or 0
+function var_0_0.GetEquipCountInShips(arg_55_0, arg_55_1)
+	return arg_55_0.equipCountDic[arg_55_1] or 0
 end
 
-function slot0.GetEquipSkinCountInShips(slot0, slot1)
-	return slot0.equipSkinCountDic[slot1] or 0
+function var_0_0.GetEquipSkinCountInShips(arg_56_0, arg_56_1)
+	return arg_56_0.equipSkinCountDic[arg_56_1] or 0
 end
 
-function slot0.GetEquipsInShipsRaw(slot0)
-	function slot1(slot0, slot1, slot2)
-		slot3 = CreateShell(slot0)
-		slot3.shipId = slot1
-		slot3.shipPos = slot2
+function var_0_0.GetEquipsInShipsRaw(arg_57_0)
+	local function var_57_0(arg_58_0, arg_58_1, arg_58_2)
+		local var_58_0 = CreateShell(arg_58_0)
 
-		return slot3
+		var_58_0.shipId = arg_58_1
+		var_58_0.shipPos = arg_58_2
+
+		return var_58_0
 	end
 
-	slot2 = {}
+	local var_57_1 = {}
 
-	for slot6, slot7 in pairs(slot0.data) do
-		for slot11, slot12 in pairs(slot7.equipments) do
-			if slot12 then
-				table.insert(slot2, slot1(slot12, slot7.id, slot11))
+	for iter_57_0, iter_57_1 in pairs(arg_57_0.data) do
+		for iter_57_2, iter_57_3 in pairs(iter_57_1.equipments) do
+			if iter_57_3 then
+				table.insert(var_57_1, var_57_0(iter_57_3, iter_57_1.id, iter_57_2))
 			end
 		end
 	end
 
-	return slot2
+	return var_57_1
 end
 
-function slot0.getEquipmentSkinInShips(slot0, slot1, slot2)
-	function slot3(slot0)
-		slot1 = false
+function var_0_0.getEquipmentSkinInShips(arg_59_0, arg_59_1, arg_59_2)
+	local function var_59_0(arg_60_0)
+		local var_60_0 = false
 
-		if slot0 and slot0 > 0 then
-			slot1 = _.any(pg.equip_skin_template[slot0].equip_type, function (slot0)
-				return not uv0 or table.contains(uv0, slot0)
+		if arg_60_0 and arg_60_0 > 0 then
+			local var_60_1 = pg.equip_skin_template[arg_60_0]
+
+			var_60_0 = _.any(var_60_1.equip_type, function(arg_61_0)
+				return not arg_59_2 or table.contains(arg_59_2, arg_61_0)
 			end)
 		end
 
-		return slot1
+		return var_60_0
 	end
 
-	slot4 = {}
+	local var_59_1 = {}
 
-	for slot8, slot9 in pairs(slot0.data) do
-		if not slot1 or slot1.id ~= slot9.id then
-			for slot13, slot14 in pairs(slot9:getEquipSkins()) do
-				if slot14 and slot3(slot14) then
-					table.insert(slot4, {
-						id = slot14,
-						shipId = slot9.id,
-						shipPos = slot13
+	for iter_59_0, iter_59_1 in pairs(arg_59_0.data) do
+		if not arg_59_1 or arg_59_1.id ~= iter_59_1.id then
+			for iter_59_2, iter_59_3 in pairs(iter_59_1:getEquipSkins()) do
+				local var_59_2 = var_59_0(iter_59_3)
+
+				if iter_59_3 and var_59_2 then
+					table.insert(var_59_1, {
+						id = iter_59_3,
+						shipId = iter_59_1.id,
+						shipPos = iter_59_2
 					})
 				end
 			end
 		end
 	end
 
-	return slot4
+	return var_59_1
 end
 
-function slot0.GetSpWeaponsInShips(slot0, slot1)
-	slot2 = {}
+function var_0_0.GetSpWeaponsInShips(arg_62_0, arg_62_1)
+	local var_62_0 = {}
 
-	for slot6, slot7 in pairs(slot0.data) do
-		if (not slot1 or slot1.id ~= slot7.id) and slot7:GetSpWeapon() and (not slot1 or not slot1:IsSpWeaponForbidden(slot8)) then
-			table.insert(slot2, slot8)
+	for iter_62_0, iter_62_1 in pairs(arg_62_0.data) do
+		if not arg_62_1 or arg_62_1.id ~= iter_62_1.id then
+			local var_62_1 = iter_62_1:GetSpWeapon()
+
+			if var_62_1 and (not arg_62_1 or not arg_62_1:IsSpWeaponForbidden(var_62_1)) then
+				table.insert(var_62_0, var_62_1)
+			end
 		end
 	end
 
-	return slot2
+	return var_62_0
 end
 
-function slot0.getProposeGroupList(slot0)
-	for slot5, slot6 in pairs(slot0.data) do
-		if slot6:ShowPropose() then
-			-- Nothing
+function var_0_0.getProposeGroupList(arg_63_0)
+	local var_63_0 = {}
+
+	for iter_63_0, iter_63_1 in pairs(arg_63_0.data) do
+		if iter_63_1:ShowPropose() then
+			var_63_0[iter_63_1.groupId] = true
 		end
 	end
 
-	return {
-		[slot6.groupId] = true
-	}
+	return var_63_0
 end
 
-function slot0.GetRecommendShip(slot0, slot1, slot2, slot3)
-	assert(slot3)
+function var_0_0.GetRecommendShip(arg_64_0, arg_64_1, arg_64_2, arg_64_3)
+	assert(arg_64_3)
 
-	slot5 = {
-		[slot10] = slot10:getShipCombatPower()
-	}
+	local var_64_0 = arg_64_0:getShipsByTypes(arg_64_1)
+	local var_64_1 = {}
 
-	for slot9, slot10 in ipairs(slot0:getShipsByTypes(slot1)) do
-		-- Nothing
+	for iter_64_0, iter_64_1 in ipairs(var_64_0) do
+		var_64_1[iter_64_1] = iter_64_1:getShipCombatPower()
 	end
 
-	table.sort(slot4, function (slot0, slot1)
-		return uv0[slot0] < uv0[slot1]
+	table.sort(var_64_0, function(arg_65_0, arg_65_1)
+		return var_64_1[arg_65_0] < var_64_1[arg_65_1]
 	end)
 
-	slot6 = {}
+	local var_64_2 = {}
 
-	for slot10, slot11 in ipairs(slot2) do
-		slot6[#slot6 + 1] = slot0.data[slot11]:getGroupId()
+	for iter_64_2, iter_64_3 in ipairs(arg_64_2) do
+		var_64_2[#var_64_2 + 1] = arg_64_0.data[iter_64_3]:getGroupId()
 	end
 
-	slot7 = #slot4
-	slot8 = nil
+	local var_64_3 = #var_64_0
+	local var_64_4
 
-	while slot7 > 0 do
-		slot9 = slot4[slot7]
+	while var_64_3 > 0 do
+		local var_64_5 = var_64_0[var_64_3]
+		local var_64_6 = var_64_5.id
+		local var_64_7 = var_64_5:getGroupId()
 
-		if not table.contains(slot2, slot9.id) and not table.contains(slot6, slot9:getGroupId()) and slot3(slot9) then
-			slot8 = slot9
+		if not table.contains(arg_64_2, var_64_6) and not table.contains(var_64_2, var_64_7) and arg_64_3(var_64_5) then
+			var_64_4 = var_64_5
 
 			break
 		else
-			slot7 = slot7 - 1
+			var_64_3 = var_64_3 - 1
 		end
 	end
 
-	return slot8
+	return var_64_4
 end
 
-function slot0.getActivityRecommendShips(slot0, slot1, slot2, slot3, slot4)
-	slot6 = {
-		[slot11] = slot11:getShipCombatPower()
-	}
+function var_0_0.getActivityRecommendShips(arg_66_0, arg_66_1, arg_66_2, arg_66_3, arg_66_4)
+	local var_66_0 = arg_66_0:getShipsByTypes(arg_66_1)
+	local var_66_1 = {}
 
-	for slot10, slot11 in ipairs(slot0:getShipsByTypes(slot1)) do
-		-- Nothing
+	for iter_66_0, iter_66_1 in ipairs(var_66_0) do
+		var_66_1[iter_66_1] = iter_66_1:getShipCombatPower()
 	end
 
-	table.sort(slot5, function (slot0, slot1)
-		return uv0[slot0] < uv0[slot1]
+	table.sort(var_66_0, function(arg_67_0, arg_67_1)
+		return var_66_1[arg_67_0] < var_66_1[arg_67_1]
 	end)
 
-	slot7 = {}
+	local var_66_2 = {}
 
-	for slot11, slot12 in ipairs(slot2) do
-		slot7[#slot7 + 1] = slot0.data[slot12]:getGroupId()
+	for iter_66_2, iter_66_3 in ipairs(arg_66_2) do
+		local var_66_3 = arg_66_0.data[iter_66_3]
+
+		var_66_2[#var_66_2 + 1] = var_66_3:getGroupId()
 	end
 
-	slot8 = #slot5
-	slot9 = {}
+	local var_66_4 = #var_66_0
+	local var_66_5 = {}
 
-	while slot8 > 0 and slot3 > 0 do
-		slot10 = slot5[slot8]
-		slot12 = slot10:getGroupId()
+	while var_66_4 > 0 and arg_66_3 > 0 do
+		local var_66_6 = var_66_0[var_66_4]
+		local var_66_7 = var_66_6.id
+		local var_66_8 = var_66_6:getGroupId()
 
-		if not table.contains(slot2, slot10.id) and not table.contains(slot7, slot12) and ShipStatus.ShipStatusCheck("inActivity", slot10, nil, {
-			inActivity = slot4
+		if not table.contains(arg_66_2, var_66_7) and not table.contains(var_66_2, var_66_8) and ShipStatus.ShipStatusCheck("inActivity", var_66_6, nil, {
+			inActivity = arg_66_4
 		}) then
-			table.insert(slot9, slot10)
-			table.insert(slot7, slot12)
+			table.insert(var_66_5, var_66_6)
+			table.insert(var_66_2, var_66_8)
 
-			slot3 = slot3 - 1
+			arg_66_3 = arg_66_3 - 1
 		end
 
-		slot8 = slot8 - 1
+		var_66_4 = var_66_4 - 1
 	end
 
-	return slot9
+	return var_66_5
 end
 
-function slot0.getDelegationRecommendShips(slot0, slot1)
-	slot2 = 6 - #slot1.shipIds
+function var_0_0.getDelegationRecommendShips(arg_68_0, arg_68_1)
+	local var_68_0 = 6 - #arg_68_1.shipIds
+	local var_68_1 = arg_68_1.template.ship_type
+	local var_68_2 = arg_68_1.template.ship_lv
+	local var_68_3 = math.max(var_68_2, 2)
+	local var_68_4 = Clone(arg_68_1.shipIds)
+	local var_68_5 = arg_68_0:getShipsByTypes(var_68_1)
 
-	table.sort(slot0:getShipsByTypes(slot1.template.ship_type), function (slot0, slot1)
-		return slot1.level < slot0.level
+	table.sort(var_68_5, function(arg_69_0, arg_69_1)
+		return arg_69_0.level > arg_69_1.level
 	end)
 
-	slot7 = {}
-	slot8 = false
+	local var_68_6 = {}
+	local var_68_7 = false
 
-	for slot12, slot13 in ipairs(Clone(slot1.shipIds)) do
-		if math.max(slot1.template.ship_lv, 2) <= slot0.data[slot13].level then
-			slot8 = true
+	for iter_68_0, iter_68_1 in ipairs(var_68_4) do
+		local var_68_8 = arg_68_0.data[iter_68_1]
+
+		if var_68_3 <= var_68_8.level then
+			var_68_7 = true
 		end
 
-		slot7[#slot7 + 1] = slot14:getGroupId()
+		var_68_6[#var_68_6 + 1] = var_68_8:getGroupId()
 	end
 
-	if slot8 then
-		slot4 = 2
+	if var_68_7 then
+		var_68_3 = 2
 	end
 
-	slot9 = {}
-	slot10 = #slot6
+	local var_68_9 = {}
+	local var_68_10 = #var_68_5
 
-	while slot10 > 0 do
-		if slot2 <= 0 then
+	while var_68_10 > 0 do
+		if var_68_0 <= 0 then
 			break
 		end
 
-		slot11 = slot6[slot10]
-		slot12 = slot11.id
-		slot13 = slot11:getGroupId()
+		local var_68_11 = var_68_5[var_68_10]
+		local var_68_12 = var_68_11.id
+		local var_68_13 = var_68_11:getGroupId()
 
-		if slot4 <= slot11.level and slot11.lockState ~= Ship.LOCK_STATE_UNLOCK and not table.contains(slot5, slot12) and not table.contains(slot7, slot13) and not table.contains(slot9, slot12) and not slot11:getFlag("inElite") and not slot11:getFlag("inActivity") and ShipStatus.ShipStatusCheck("inEvent", slot11) then
-			table.insert(slot7, slot13)
-			table.insert(slot9, slot12)
+		if var_68_3 <= var_68_11.level and var_68_11.lockState ~= Ship.LOCK_STATE_UNLOCK and not table.contains(var_68_4, var_68_12) and not table.contains(var_68_6, var_68_13) and not table.contains(var_68_9, var_68_12) and not var_68_11:getFlag("inElite") and not var_68_11:getFlag("inActivity") and ShipStatus.ShipStatusCheck("inEvent", var_68_11) then
+			table.insert(var_68_6, var_68_13)
+			table.insert(var_68_9, var_68_12)
 
-			slot2 = slot2 - 1
+			var_68_0 = var_68_0 - 1
 
-			if slot8 == false then
-				slot8 = true
-				slot4 = 2
-				slot10 = #slot6
+			if var_68_7 == false then
+				var_68_7 = true
+				var_68_3 = 2
+				var_68_10 = #var_68_5
 			end
 		else
-			slot10 = slot10 - 1
+			var_68_10 = var_68_10 - 1
 		end
 	end
 
-	return slot9
+	return var_68_9
 end
 
-function slot0.getDelegationRecommendShipsLV1(slot0, slot1)
-	slot2 = 6 - #slot1.shipIds
+function var_0_0.getDelegationRecommendShipsLV1(arg_70_0, arg_70_1)
+	local var_70_0 = 6 - #arg_70_1.shipIds
+	local var_70_1 = arg_70_1.template.ship_type
+	local var_70_2 = Clone(arg_70_1.shipIds)
+	local var_70_3 = arg_70_0:getShipsByTypes(var_70_1)
+	local var_70_4 = _.select(var_70_3, function(arg_71_0)
+		return arg_71_0.level == 1
+	end)
 
-	function slot11(slot0)
-		return slot0.lockState == slot0.LOCK_STATE_UNLOCK and 0 or 1
-	end
-
-	table.sort(_.select(slot0:getShipsByTypes(slot1.template.ship_type), function (slot0)
-		return slot0.level == 1
-	end), CompareFuncs({
-		slot11
+	table.sort(var_70_4, CompareFuncs({
+		function(arg_72_0)
+			return arg_72_0.lockState == arg_72_0.LOCK_STATE_UNLOCK and 0 or 1
+		end
 	}))
 
-	slot7 = {}
+	local var_70_5 = {}
 
-	for slot11, slot12 in ipairs(Clone(slot1.shipIds)) do
-		slot7[#slot7 + 1] = slot0.data[slot12]:getGroupId()
+	for iter_70_0, iter_70_1 in ipairs(var_70_2) do
+		local var_70_6 = arg_70_0.data[iter_70_1]
+
+		var_70_5[#var_70_5 + 1] = var_70_6:getGroupId()
 	end
 
-	slot8 = {}
-	slot9 = #slot6
+	local var_70_7 = {}
+	local var_70_8 = #var_70_4
 
-	while slot9 > 0 do
-		if slot2 <= 0 then
+	while var_70_8 > 0 do
+		if var_70_0 <= 0 then
 			break
 		end
 
-		slot10 = slot6[slot9]
-		slot12 = slot10:getGroupId()
+		local var_70_9 = var_70_4[var_70_8]
+		local var_70_10 = var_70_9.id
+		local var_70_11 = var_70_9:getGroupId()
 
-		if not table.contains(slot4, slot10.id) and not table.contains(slot7, slot12) and not table.contains(slot8, slot11) and not slot10:getFlag("inElite") and not slot10:getFlag("inActivity") and ShipStatus.ShipStatusCheck("inEvent", slot10) then
-			table.insert(slot7, slot12)
-			table.insert(slot8, slot11)
+		if not table.contains(var_70_2, var_70_10) and not table.contains(var_70_5, var_70_11) and not table.contains(var_70_7, var_70_10) and not var_70_9:getFlag("inElite") and not var_70_9:getFlag("inActivity") and ShipStatus.ShipStatusCheck("inEvent", var_70_9) then
+			table.insert(var_70_5, var_70_11)
+			table.insert(var_70_7, var_70_10)
 
-			slot2 = slot2 - 1
+			var_70_0 = var_70_0 - 1
 		else
-			slot9 = slot9 - 1
+			var_70_8 = var_70_8 - 1
 		end
 	end
 
-	return slot8
+	return var_70_7
 end
 
-function slot0.getWorldRecommendShip(slot0, slot1, slot2)
-	slot4 = {
-		[slot9] = slot9:getShipCombatPower()
-	}
+function var_0_0.getWorldRecommendShip(arg_73_0, arg_73_1, arg_73_2)
+	local var_73_0 = arg_73_0:getShipsByTeamType(arg_73_1)
+	local var_73_1 = {}
 
-	for slot8, slot9 in ipairs(slot0:getShipsByTeamType(slot1)) do
-		-- Nothing
+	for iter_73_0, iter_73_1 in ipairs(var_73_0) do
+		var_73_1[iter_73_1] = iter_73_1:getShipCombatPower()
 	end
 
-	table.sort(slot3, function (slot0, slot1)
-		return uv0[slot0] < uv0[slot1]
+	table.sort(var_73_0, function(arg_74_0, arg_74_1)
+		return var_73_1[arg_74_0] < var_73_1[arg_74_1]
 	end)
 
-	slot5 = {}
+	local var_73_2 = {}
 
-	for slot9, slot10 in ipairs(slot2) do
-		slot5[#slot5 + 1] = slot0.data[slot10]:getGroupId()
+	for iter_73_2, iter_73_3 in ipairs(arg_73_2) do
+		var_73_2[#var_73_2 + 1] = arg_73_0.data[iter_73_3]:getGroupId()
 	end
 
-	slot6 = #slot3
-	slot7 = nil
+	local var_73_3 = #var_73_0
+	local var_73_4
 
-	while slot6 > 0 do
-		slot8 = slot3[slot6]
+	while var_73_3 > 0 do
+		local var_73_5 = var_73_0[var_73_3]
+		local var_73_6 = var_73_5.id
+		local var_73_7 = var_73_5:getGroupId()
 
-		if not table.contains(slot2, slot8.id) and not table.contains(slot5, slot8:getGroupId()) and ShipStatus.ShipStatusCheck("inWorld", slot8) then
-			slot7 = slot8
+		if not table.contains(arg_73_2, var_73_6) and not table.contains(var_73_2, var_73_7) and ShipStatus.ShipStatusCheck("inWorld", var_73_5) then
+			var_73_4 = var_73_5
 
 			break
 		else
-			slot6 = slot6 - 1
+			var_73_3 = var_73_3 - 1
 		end
 	end
 
-	return slot7
+	return var_73_4
 end
 
-function slot0.getModRecommendShip(slot0, slot1, slot2)
-	slot8 = underscore.map(slot2, function (slot0)
-		return uv0.data[slot0]
+function var_0_0.getModRecommendShip(arg_75_0, arg_75_1, arg_75_2)
+	local var_75_0 = underscore.map(arg_75_2, function(arg_76_0)
+		return arg_75_0.data[arg_76_0]
 	end)
+	local var_75_1 = Clone(arg_75_1)
 
-	for slot8, slot9 in pairs(ShipModLayer.getModExpAdditions(Clone(slot1), slot8)) do
-		slot4:addModAttrExp(slot8, slot9)
+	for iter_75_0, iter_75_1 in pairs(ShipModLayer.getModExpAdditions(var_75_1, var_75_0)) do
+		var_75_1:addModAttrExp(iter_75_0, iter_75_1)
 	end
 
-	for slot10, slot11 in pairs(slot4:getNeedModExp()) do
-		slot6 = 0 + slot11
+	local var_75_2 = var_75_1:getNeedModExp()
+	local var_75_3 = 0
+
+	for iter_75_2, iter_75_3 in pairs(var_75_2) do
+		var_75_3 = var_75_3 + iter_75_3
 	end
 
-	slot7 = {}
+	local var_75_4 = {}
 
-	for slot11, slot12 in pairs(slot0.data) do
-		if slot12:isSameKind(slot1) then
-			slot7.sameKind = slot7.sameKind or {}
+	for iter_75_4, iter_75_5 in pairs(arg_75_0.data) do
+		if iter_75_5:isSameKind(arg_75_1) then
+			var_75_4.sameKind = var_75_4.sameKind or {}
 
-			table.insert(slot7.sameKind, slot12)
+			table.insert(var_75_4.sameKind, iter_75_5)
 		else
-			slot7[slot13] = slot7[slot12:getShipType()] or {}
+			local var_75_5 = iter_75_5:getShipType()
 
-			table.insert(slot7[slot13], slot12)
+			var_75_4[var_75_5] = var_75_4[var_75_5] or {}
+
+			table.insert(var_75_4[var_75_5], iter_75_5)
 		end
 	end
 
-	slot12 = pg.ship_data_by_type[slot1:getConfig("type")].strengthen_choose_type
+	local var_75_6 = arg_75_1:getConfig("type")
 
-	for slot12, slot13 in ipairs(table.mergeArray({
+	for iter_75_6, iter_75_7 in ipairs(table.mergeArray({
 		"sameKind"
-	}, slot12)) do
-		if #slot3 == 12 or slot6 == 0 then
+	}, pg.ship_data_by_type[var_75_6].strengthen_choose_type)) do
+		if #var_75_0 == 12 or var_75_3 == 0 then
 			break
 		end
 
-		slot14 = slot7[slot13] or {}
-		slot15 = {
-			[slot20] = true
-		}
-		slot19 = ShipStatus.FILTER_SHIPS_FLAGS_2
-		slot20 = underscore.map
+		local var_75_7 = var_75_4[iter_75_7] or {}
+		local var_75_8 = {}
 
-		for slot19, slot20 in ipairs(pg.ShipFlagMgr.GetInstance():FilterShips(slot19, slot20(slot14, function (slot0)
-			return slot0.id
+		for iter_75_8, iter_75_9 in ipairs(pg.ShipFlagMgr.GetInstance():FilterShips(ShipStatus.FILTER_SHIPS_FLAGS_2, underscore.map(var_75_7, function(arg_77_0)
+			return arg_77_0.id
 		end))) do
-			-- Nothing
+			var_75_8[iter_75_9] = true
 		end
 
-		for slot19, slot20 in ipairs(underscore.filter(slot14, function (slot0)
-			return slot0.level == 1 and slot0:getRarity() <= ShipRarity.Gray and slot0:GetLockState() ~= Ship.LOCK_STATE_LOCK and not table.contains(uv0, slot0.id) and uv1.id ~= slot0.id and not uv2[slot0.id]
-		end)) do
-			if #slot3 == 12 or slot6 == 0 then
+		local var_75_9 = underscore.filter(var_75_7, function(arg_78_0)
+			return arg_78_0.level == 1 and arg_78_0:getRarity() <= ShipRarity.Gray and arg_78_0:GetLockState() ~= Ship.LOCK_STATE_LOCK and not table.contains(arg_75_2, arg_78_0.id) and arg_75_1.id ~= arg_78_0.id and not var_75_8[arg_78_0.id]
+		end)
+
+		for iter_75_10, iter_75_11 in ipairs(var_75_9) do
+			if #var_75_0 == 12 or var_75_3 == 0 then
 				break
 			end
 
-			slot22 = false
+			local var_75_10 = ShipModLayer.getModExpAdditions(var_75_1, {
+				iter_75_11
+			})
+			local var_75_11 = false
 
-			for slot26, slot27 in pairs(ShipModLayer.getModExpAdditions(slot4, {
-				slot20
-			})) do
-				if slot27 > 0 and slot5[slot26] > 0 then
-					slot22 = true
-					slot6 = slot6 - math.min(slot5[slot26], slot27)
-					slot5[slot26] = math.max(slot5[slot26] - slot27, 0)
+			for iter_75_12, iter_75_13 in pairs(var_75_10) do
+				if iter_75_13 > 0 and var_75_2[iter_75_12] > 0 then
+					var_75_11 = true
+					var_75_3 = var_75_3 - math.min(var_75_2[iter_75_12], iter_75_13)
+					var_75_2[iter_75_12] = math.max(var_75_2[iter_75_12] - iter_75_13, 0)
 				end
 			end
 
-			if slot22 then
-				table.insert(slot3, slot20)
+			if var_75_11 then
+				table.insert(var_75_0, iter_75_11)
 			end
 		end
 	end
 
-	return underscore.map(slot3, function (slot0)
-		return slot0.id
+	return underscore.map(var_75_0, function(arg_79_0)
+		return arg_79_0.id
 	end)
 end
 
-function slot0.getUpgradeRecommendShip(slot0, slot1, slot2, slot3)
-	slot5 = pg.ShipFlagMgr.GetInstance():FilterShips(ShipStatus.FILTER_SHIPS_FLAGS_4, underscore.keys(slot0.data))
-	slot7 = {}
+function var_0_0.getUpgradeRecommendShip(arg_80_0, arg_80_1, arg_80_2, arg_80_3)
+	local var_80_0 = arg_80_0:getUpgradeShips(arg_80_1)
+	local var_80_1 = pg.ShipFlagMgr.GetInstance():FilterShips(ShipStatus.FILTER_SHIPS_FLAGS_4, underscore.keys(arg_80_0.data))
 
-	for slot11, slot12 in ipairs(slot0:getUpgradeShips(slot1)) do
-		if function (slot0)
-			return slot0.level == 1 and slot0:GetLockState() ~= Ship.LOCK_STATE_LOCK and not table.contains(uv0, slot0.id) and uv1.id ~= slot0.id and not table.contains(uv2, slot0.id)
-		end(slot12) then
-			table.insert(slot7, slot12)
+	local function var_80_2(arg_81_0)
+		return arg_81_0.level == 1 and arg_81_0:GetLockState() ~= Ship.LOCK_STATE_LOCK and not table.contains(arg_80_2, arg_81_0.id) and arg_80_1.id ~= arg_81_0.id and not table.contains(var_80_1, arg_81_0.id)
+	end
+
+	local var_80_3 = {}
+
+	for iter_80_0, iter_80_1 in ipairs(var_80_0) do
+		if var_80_2(iter_80_1) then
+			table.insert(var_80_3, iter_80_1)
 		end
 	end
 
-	table.sort(slot7, CompareFuncs({
-		function (slot0)
-			return slot0:isSameKind(uv0) and 0 or 1
+	local var_80_4 = {
+		function(arg_82_0)
+			return arg_82_0:isSameKind(arg_80_1) and 0 or 1
 		end
-	}))
+	}
 
-	for slot13, slot14 in pairs(slot2) do
-		table.insert({}, slot0.data[slot14])
+	table.sort(var_80_3, CompareFuncs(var_80_4))
+
+	local var_80_5 = {}
+
+	for iter_80_2, iter_80_3 in pairs(arg_80_2) do
+		table.insert(var_80_5, arg_80_0.data[iter_80_3])
 	end
 
-	for slot13, slot14 in ipairs(slot7) do
-		if #slot9 == slot3 then
+	for iter_80_4, iter_80_5 in ipairs(var_80_3) do
+		if #var_80_5 == arg_80_3 then
 			break
 		end
 
-		table.insert(slot9, slot14)
+		table.insert(var_80_5, iter_80_5)
 	end
 
-	return underscore.map(slot9, function (slot0)
-		return slot0.id
+	return underscore.map(var_80_5, function(arg_83_0)
+		return arg_83_0.id
 	end)
 end
 
-function slot0.getGroupPropose(slot0, slot1)
-	slot2 = false
+function var_0_0.getGroupPropose(arg_84_0, arg_84_1)
+	local var_84_0 = false
 
-	if slot0.data then
-		for slot6, slot7 in ipairs(slot0.data) do
-			if pg.ship_data_template[slot7.configId].group_type == slot1 and slot7.propose then
+	if arg_84_0.data then
+		for iter_84_0, iter_84_1 in ipairs(arg_84_0.data) do
+			if pg.ship_data_template[iter_84_1.configId].group_type == arg_84_1 and iter_84_1.propose then
 				return true
 			end
 		end
 	end
 
-	return slot2
+	return var_84_0
 end
 
-function slot0.CanUseShareSkinShips(slot0, slot1)
-	slot6 = {}
+function var_0_0.CanUseShareSkinShips(arg_85_0, arg_85_1)
+	local var_85_0 = pg.ship_skin_template[arg_85_1].ship_group
+	local var_85_1 = pg.ship_data_group.get_id_list_by_group_type[var_85_0][1]
+	local var_85_2 = pg.ship_data_group[var_85_1].share_group_id
+	local var_85_3 = {}
+	local var_85_4 = arg_85_0:getRawData()
 
-	for slot11, slot12 in pairs(slot0:getRawData()) do
-		if table.contains(pg.ship_data_group[pg.ship_data_group.get_id_list_by_group_type[pg.ship_skin_template[slot1].ship_group][1]].share_group_id, slot12.groupId) and slot12:GetNoProposeIntimacyMax() <= math.floor(slot12:getIntimacy() / 100) then
-			table.insert(slot6, slot12)
+	for iter_85_0, iter_85_1 in pairs(var_85_4) do
+		if table.contains(var_85_2, iter_85_1.groupId) and math.floor(iter_85_1:getIntimacy() / 100) >= iter_85_1:GetNoProposeIntimacyMax() then
+			table.insert(var_85_3, iter_85_1)
 		end
 	end
 
-	return slot6
+	return var_85_3
 end
 
-return slot0
+return var_0_0

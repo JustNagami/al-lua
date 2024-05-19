@@ -1,314 +1,359 @@
-slot0 = class("TransformEquipmentCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("TransformEquipmentCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody().candicate
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.candicate
 
 	seriesAsync({
-		function (slot0)
-			if uv0.type == DROP_TYPE_ITEM then
+		function(arg_2_0)
+			if var_1_1.type == DROP_TYPE_ITEM then
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("equipment_upgrade_feedback_compose_tip"),
-					onYes = slot0
+					onYes = arg_2_0
 				})
 
 				return
-			elseif uv0.type == DROP_TYPE_EQUIP and uv0.template.shipId ~= nil then
-				slot3, slot4 = ShipStatus.ShipStatusCheck("onModify", getProxy(BayProxy):getShipById(uv0.template.shipId))
+			elseif var_1_1.type == DROP_TYPE_EQUIP and var_1_1.template.shipId ~= nil then
+				local var_2_0 = var_1_1.template.shipId
+				local var_2_1 = getProxy(BayProxy):getShipById(var_2_0)
+				local var_2_2, var_2_3 = ShipStatus.ShipStatusCheck("onModify", var_2_1)
 
-				if not slot3 then
-					pg.TipsMgr.GetInstance():ShowTips(slot4)
+				if not var_2_2 then
+					pg.TipsMgr.GetInstance():ShowTips(var_2_3)
 
 					return
 				end
 
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
-					content = i18n("equipment_upgrade_feedback_equipment_consume", slot2:getName(), uv0.template:getConfig("name")),
-					onYes = slot0
+					content = i18n("equipment_upgrade_feedback_equipment_consume", var_2_1:getName(), var_1_1.template:getConfig("name")),
+					onYes = arg_2_0
 				})
 
 				return
 			end
 
-			slot0()
+			arg_2_0()
 		end,
-		function (slot0)
-			if uv0.type == DROP_TYPE_EQUIP then
-				return slot0({
-					shipId = uv0.template.shipId,
-					pos = uv0.template.shipPos,
-					equipmentId = uv0.template.id,
-					formulaIds = uv1.formulaIds
+		function(arg_3_0)
+			if var_1_1.type == DROP_TYPE_EQUIP then
+				return arg_3_0({
+					shipId = var_1_1.template.shipId,
+					pos = var_1_1.template.shipPos,
+					equipmentId = var_1_1.template.id,
+					formulaIds = var_1_0.formulaIds
 				})
 			end
 
-			slot3 = getProxy(BagProxy)
-			slot6 = pg.compose_data_template[uv0.composeCfg.id]
+			local var_3_0 = var_1_1.composeCfg.id
+			local var_3_1 = 1
+			local var_3_2 = getProxy(BagProxy)
+			local var_3_3 = getProxy(PlayerProxy)
+			local var_3_4 = var_3_3:getData()
+			local var_3_5 = pg.compose_data_template[var_3_0]
+			local var_3_6 = getProxy(EquipmentProxy)
+			local var_3_7 = var_3_6:getCapacity()
 
-			if getProxy(PlayerProxy):getData():getMaxEquipmentBag() < getProxy(EquipmentProxy):getCapacity() + 1 then
+			if var_3_4:getMaxEquipmentBag() < var_3_7 + var_3_1 then
 				NoPosMsgBox(i18n("switch_to_shop_tip_noPos"), openDestroyEquip, gotoChargeScene)
 
 				return
 			end
 
-			if slot5.gold < slot6.gold_num * slot2 then
+			if var_3_4.gold < var_3_5.gold_num * var_3_1 then
 				GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
 					{
 						59001,
-						slot6.gold_num * slot2 - slot5.gold,
-						slot6.gold_num * slot2
+						var_3_5.gold_num * var_3_1 - var_3_4.gold,
+						var_3_5.gold_num * var_3_1
 					}
 				})
 
 				return
 			end
 
-			if not slot3:getItemById(slot6.material_id) or slot9.count < slot6.material_num * slot2 then
+			local var_3_8 = var_3_2:getItemById(var_3_5.material_id)
+
+			if not var_3_8 or var_3_8.count < var_3_5.material_num * var_3_1 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("word_materal_no_enough"))
 
 				return
 			end
 
 			pg.ConnectionMgr.GetInstance():Send(14006, {
-				id = slot1,
-				num = slot2
-			}, 14007, function (slot0)
-				if slot0.result == 0 then
-					uv0:addEquipmentById(uv1.equip_id, uv2)
-					uv3:consume({
-						gold = uv1.gold_num * uv2
+				id = var_3_0,
+				num = var_3_1
+			}, 14007, function(arg_4_0)
+				if arg_4_0.result == 0 then
+					var_3_6:addEquipmentById(var_3_5.equip_id, var_3_1)
+					var_3_4:consume({
+						gold = var_3_5.gold_num * var_3_1
 					})
-					uv4:updatePlayer(uv3)
-					uv5:removeItemById(uv1.material_id, uv1.material_num * uv2)
-					uv6:sendNotification(GAME.COMPOSITE_EQUIPMENT_DONE, {
+					var_3_3:updatePlayer(var_3_4)
+					var_3_2:removeItemById(var_3_5.material_id, var_3_5.material_num * var_3_1)
+					arg_1_0:sendNotification(GAME.COMPOSITE_EQUIPMENT_DONE, {
 						equipment = Equipment.New({
-							id = uv1.equip_id
+							id = var_3_5.equip_id
 						}),
-						count = uv2,
-						composeId = uv7
+						count = var_3_1,
+						composeId = var_3_0
 					})
-					uv8({
-						equipmentId = uv1.equip_id,
-						formulaIds = uv9.formulaIds
+					arg_3_0({
+						equipmentId = var_3_5.equip_id,
+						formulaIds = var_1_0.formulaIds
 					})
 				else
-					pg.TipsMgr.GetInstance():ShowTips(errorTip("equipment_compositeEquipment", slot0.result))
+					pg.TipsMgr.GetInstance():ShowTips(errorTip("equipment_compositeEquipment", arg_4_0.result))
 				end
 			end)
 		end,
-		function (slot0, slot1)
-			uv0:ExecuteEquipTransform(slot1)
+		function(arg_5_0, arg_5_1)
+			arg_1_0:ExecuteEquipTransform(arg_5_1)
 		end
 	})
 end
 
-function slot0.ExecuteEquipTransform(slot0, slot1)
-	slot2 = slot1.shipId
-	slot3 = slot2
-	slot5 = slot1.equipmentId
-	slot6 = slot1.formulaIds
-	slot7 = nil
+function var_0_0.ExecuteEquipTransform(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1.shipId
+	local var_6_1 = var_6_0
+	local var_6_2 = arg_6_1.pos
+	local var_6_3 = arg_6_1.equipmentId
+	local var_6_4 = arg_6_1.formulaIds
+	local var_6_5
 
-	if slot2 then
-		slot7 = getProxy(BayProxy):getShipById(slot2):getEquip(slot1.pos)
+	if var_6_0 then
+		var_6_5 = getProxy(BayProxy):getShipById(var_6_0):getEquip(var_6_2)
 
-		assert(slot7, "can not find equipment at ship.")
+		assert(var_6_5, "can not find equipment at ship.")
 
-		slot5 = slot7.id
-	elseif slot5 ~= 0 then
-		slot7 = getProxy(EquipmentProxy):getEquipmentById(slot5)
+		var_6_3 = var_6_5.id
+	elseif var_6_3 ~= 0 then
+		var_6_5 = getProxy(EquipmentProxy):getEquipmentById(var_6_3)
 
-		assert(slot7, "can not find equipment: " .. slot5)
+		assert(var_6_5, "can not find equipment: " .. var_6_3)
 
-		slot5 = slot7.id
+		var_6_3 = var_6_5.id
 	end
 
-	slot8, slot9 = EquipmentTransformUtil.CheckEquipmentFormulasSucceed(slot6, slot5)
+	local var_6_6, var_6_7 = EquipmentTransformUtil.CheckEquipmentFormulasSucceed(var_6_4, var_6_3)
 
-	if not slot8 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", slot9))
+	if not var_6_6 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", var_6_7))
 
 		return
 	end
 
-	slot10 = {}
-	slot11 = {}
+	local var_6_8 = {}
+	local var_6_9 = {}
 
-	function slot12()
-		slot0 = getProxy(BagProxy)
-		slot1 = getProxy(PlayerProxy)
+	local function var_6_10()
+		local var_7_0 = getProxy(BagProxy)
+		local var_7_1 = getProxy(PlayerProxy)
 
-		for slot5, slot6 in pairs(uv0) do
-			if slot5 == "gold" then
-				slot7 = slot1:getData()
+		for iter_7_0, iter_7_1 in pairs(var_6_8) do
+			if iter_7_0 == "gold" then
+				local var_7_2 = var_7_1:getData()
+				local var_7_3 = {
+					gold = math.abs(iter_7_1)
+				}
 
-				if slot6 > 0 then
-					slot7:consume({
-						gold = math.abs(slot6)
-					})
-					slot1:updatePlayer(slot7)
-				elseif slot6 < 0 then
-					slot7:addResources(slot8)
-					slot1:updatePlayer(slot7)
+				if iter_7_1 > 0 then
+					var_7_2:consume(var_7_3)
+					var_7_1:updatePlayer(var_7_2)
+				elseif iter_7_1 < 0 then
+					var_7_2:addResources(var_7_3)
+					var_7_1:updatePlayer(var_7_2)
 				end
-			elseif slot6 > 0 then
-				slot0:removeItemById(slot5, slot6)
-			elseif slot6 < 0 then
-				slot0:addItemById(slot5, -slot6)
+			elseif iter_7_1 > 0 then
+				var_7_0:removeItemById(iter_7_0, iter_7_1)
+			elseif iter_7_1 < 0 then
+				var_7_0:addItemById(iter_7_0, -iter_7_1)
 			end
 		end
 
-		table.clear(uv0)
+		table.clear(var_6_8)
 	end
 
-	slot13 = slot5
+	local var_6_11 = var_6_3
 
-	function slot14()
-		uv0()
+	local function var_6_12()
+		var_6_10()
 
-		slot3 = (not uv1 or getProxy(BayProxy):getShipById(uv1):getEquip(uv2)) and getProxy(EquipmentProxy):getEquipmentById(uv3)
+		local var_8_0 = getProxy(BayProxy)
+		local var_8_1 = getProxy(EquipmentProxy)
+		local var_8_2
+		local var_8_3
 
-		assert(slot3, "Cant Get Equip " .. (uv1 and "Ship " .. uv1 .. " Pos " .. uv2 or "ID " .. uv3))
+		if var_6_0 then
+			var_8_2 = var_8_0:getShipById(var_6_0)
+			var_8_3 = var_8_2:getEquip(var_6_2)
+		else
+			var_8_3 = var_8_1:getEquipmentById(var_6_3)
+		end
 
-		slot4 = slot3:MigrateTo(uv4)
+		assert(var_8_3, "Cant Get Equip " .. (var_6_0 and "Ship " .. var_6_0 .. " Pos " .. var_6_2 or "ID " .. var_6_3))
 
-		if nil then
-			if not slot2:isForbiddenAtPos(slot4, uv2) then
-				slot2:updateEquip(uv2, slot4)
-				slot0:updateShip(slot2)
+		local var_8_4 = var_8_3:MigrateTo(var_6_11)
+
+		if var_8_2 then
+			if not var_8_2:isForbiddenAtPos(var_8_4, var_6_2) then
+				var_8_2:updateEquip(var_6_2, var_8_4)
+				var_8_0:updateShip(var_8_2)
 			else
-				slot2:updateEquip(uv2, nil)
-				slot0:updateShip(slot2)
+				var_8_2:updateEquip(var_6_2, nil)
+				var_8_0:updateShip(var_8_2)
 
-				uv1 = nil
+				var_6_0 = nil
 
-				slot1:addEquipment(slot4)
+				var_8_1:addEquipment(var_8_4)
 			end
 		else
-			slot1:removeEquipmentById(slot3.id, 1)
-			slot1:addEquipmentById(slot4.id, 1)
+			var_8_1:removeEquipmentById(var_8_3.id, 1)
+			var_8_1:addEquipmentById(var_8_4.id, 1)
 		end
 
-		return slot2, slot3, slot4
+		return var_8_2, var_8_3, var_8_4
 	end
 
-	slot15 = slot7
-	slot16, slot17, slot18 = nil
+	local var_6_13 = var_6_5
+	local var_6_14
+	local var_6_15
+	local var_6_16
 
-	table.SerialIpairsAsync(slot6, function (slot0, slot1, slot2)
+	table.SerialIpairsAsync(var_6_4, function(arg_9_0, arg_9_1, arg_9_2)
 		seriesAsync({
-			function (slot0)
-				pg.ConnectionMgr.GetInstance():Send(uv0 and 14013 or 14015, uv0 and {
-					ship_id = uv0,
-					pos = uv1,
-					upgrade_id = uv2
+			function(arg_10_0)
+				local var_10_0 = var_6_0 and 14013 or 14015
+				local var_10_1 = var_6_0 and 14014 or 14016
+				local var_10_2 = var_6_0 and {
+					ship_id = var_6_0,
+					pos = var_6_2,
+					upgrade_id = arg_9_1
 				} or {
-					equip_id = uv3,
-					upgrade_id = uv2
-				}, uv0 and 14014 or 14016, slot0)
+					equip_id = var_6_11,
+					upgrade_id = arg_9_1
+				}
+
+				pg.ConnectionMgr.GetInstance():Send(var_10_0, var_10_2, var_10_1, arg_10_0)
 			end,
-			function (slot0, slot1)
-				if slot1.result == 0 then
-					for slot7, slot8 in ipairs(pg.equip_upgrade_data[uv0].material_consume) do
-						uv1[slot9] = (uv1[slot8[1]] or 0) + slot8[2]
+			function(arg_11_0, arg_11_1)
+				if arg_11_1.result == 0 then
+					local var_11_0 = pg.equip_upgrade_data[arg_9_1]
+					local var_11_1 = var_11_0.material_consume
+
+					for iter_11_0, iter_11_1 in ipairs(var_11_1) do
+						local var_11_2 = iter_11_1[1]
+						local var_11_3 = iter_11_1[2]
+
+						var_6_8[var_11_2] = (var_6_8[var_11_2] or 0) + var_11_3
 					end
 
-					uv1.gold = (uv1.gold or 0) + slot2.coin_consume
+					var_6_8.gold = (var_6_8.gold or 0) + var_11_0.coin_consume
 
-					for slot8, slot9 in pairs(Equipment.GetRevertRewardsStatic(uv2)) do
-						if slot8 ~= "gold" then
-							uv1[slot8] = (uv1[slot8] or 0) - slot9
-							uv3[slot8] = (uv3[slot8] or 0) + slot9
+					local var_11_4 = Equipment.GetRevertRewardsStatic(var_6_11)
+
+					for iter_11_2, iter_11_3 in pairs(var_11_4) do
+						if iter_11_2 ~= "gold" then
+							var_6_8[iter_11_2] = (var_6_8[iter_11_2] or 0) - iter_11_3
+							var_6_9[iter_11_2] = (var_6_9[iter_11_2] or 0) + iter_11_3
 						end
 					end
 
-					assert(Equipment.CanInBag(uv2), "Missing equip_data_template ID: " .. (uv2 or "NIL"))
+					assert(Equipment.CanInBag(var_6_11), "Missing equip_data_template ID: " .. (var_6_11 or "NIL"))
 
-					if Equipment.CanInBag(uv2) then
-						slot5 = Equipment.getConfigData(uv2).destory_gold or 0
-						uv1.gold = (uv1.gold or 0) - slot5
-						uv3.gold = (uv3.gold or 0) + slot5
+					if Equipment.CanInBag(var_6_11) then
+						local var_11_5 = Equipment.getConfigData(var_6_11).destory_gold or 0
+
+						var_6_8.gold = (var_6_8.gold or 0) - var_11_5
+						var_6_9.gold = (var_6_9.gold or 0) + var_11_5
 					end
 
-					uv4 = uv2
-					uv2 = slot2.target_id
-					uv5, uv6, uv7 = uv8()
+					var_6_3 = var_6_11
+					var_6_11 = var_11_0.target_id
+					var_6_14, var_6_15, var_6_16 = var_6_12()
 
-					uv9()
+					arg_9_2()
 				else
-					pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot1.result] .. slot1.result)
-					uv10:sendNotification(GAME.TRANSFORM_EQUIPMENT_FAIL)
+					pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_11_1.result] .. arg_11_1.result)
+					arg_6_0:sendNotification(GAME.TRANSFORM_EQUIPMENT_FAIL)
 				end
 			end
 		})
-	end, function ()
-		if not uv0 and uv1 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_upgrade_equipped_unavailable", getProxy(BayProxy):getShipById(uv1):getName(), uv2:getConfig("name")))
+	end, function()
+		if not var_6_0 and var_6_1 then
+			local var_12_0 = getProxy(BayProxy):getShipById(var_6_1)
+
+			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_upgrade_equipped_unavailable", var_12_0:getName(), var_6_16:getConfig("name")))
 		end
 
-		uv5:sendNotification(GAME.TRANSFORM_EQUIPMENT_DONE, {
-			ship = uv3,
-			equip = uv4,
-			newEquip = uv2
-		})
+		local var_12_1 = {
+			ship = var_6_14,
+			equip = var_6_15,
+			newEquip = var_6_16
+		}
+
+		arg_6_0:sendNotification(GAME.TRANSFORM_EQUIPMENT_DONE, var_12_1)
 		LoadContextCommand.LoadLayerOnTopContext(Context.New({
 			mediator = EquipmentTransformInfoMediator,
 			viewComponent = EquipmentTransformInfoLayer,
 			data = {
-				equipVO = uv6
+				equipVO = var_6_13
 			},
-			onRemoved = function ()
-				if getProxy(ContextProxy):getCurrentContext():getContextByMediator(EquipmentInfoMediator) then
-					pg.m02:retrieveMediator(slot2.mediator.__cname):getViewComponent():closeView()
+			onRemoved = function()
+				local var_13_0 = getProxy(ContextProxy):getCurrentContext()
+				local var_13_1 = var_13_0:getContextByMediator(EquipmentInfoMediator)
+
+				if var_13_1 then
+					pg.m02:retrieveMediator(var_13_1.mediator.__cname):getViewComponent():closeView()
 				end
 
-				slot4 = pg.m02:retrieveMediator(slot1.mediator.__cname):getViewComponent()
+				local var_13_2 = pg.m02:retrieveMediator(var_13_0.mediator.__cname):getViewComponent()
 
 				seriesAsync({
-					function (slot0)
-						uv0:emit(BaseUI.ON_ACHIEVE, {
+					function(arg_14_0)
+						var_13_2:emit(BaseUI.ON_ACHIEVE, {
 							{
 								count = 1,
-								id = uv1 and uv1.id or 0,
+								id = var_6_16 and var_6_16.id or 0,
 								type = DROP_TYPE_EQUIP
 							}
-						}, slot0)
+						}, arg_14_0)
 					end,
-					function (slot0)
-						onNextTick(slot0)
+					function(arg_15_0)
+						onNextTick(arg_15_0)
 					end,
-					function (slot0)
-						if not next(uv0) then
-							slot0()
+					function(arg_16_0)
+						if not next(var_6_9) then
+							arg_16_0()
 
 							return
 						end
 
-						slot1 = {}
+						local var_16_0 = {}
 
-						for slot5, slot6 in pairs(uv0) do
-							if slot5 == "gold" then
-								table.insert(slot1, {
+						for iter_16_0, iter_16_1 in pairs(var_6_9) do
+							if iter_16_0 == "gold" then
+								table.insert(var_16_0, {
 									type = DROP_TYPE_RESOURCE,
-									id = res2id(slot5),
-									count = slot6
+									id = res2id(iter_16_0),
+									count = iter_16_1
 								})
 							else
-								table.insert(slot1, {
+								table.insert(var_16_0, {
 									type = DROP_TYPE_ITEM,
-									id = slot5,
-									count = slot6
+									id = iter_16_0,
+									count = iter_16_1
 								})
 							end
 						end
 
-						uv1:emit(BaseUI.ON_AWARD, {
-							items = slot1,
+						var_13_2:emit(BaseUI.ON_AWARD, {
+							items = var_16_0,
 							title = AwardInfoLayer.TITLE.REVERT,
-							removeFunc = slot0
+							removeFunc = arg_16_0
 						})
 					end,
-					function (slot0)
-						uv0:sendNotification(GAME.TRANSFORM_EQUIPMENT_AWARD_FINISHED, uv1)
+					function(arg_17_0)
+						arg_6_0:sendNotification(GAME.TRANSFORM_EQUIPMENT_AWARD_FINISHED, var_12_1)
 					end
 				})
 			end
@@ -316,4 +361,4 @@ function slot0.ExecuteEquipTransform(slot0, slot1)
 	end)
 end
 
-return slot0
+return var_0_0

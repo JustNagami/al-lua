@@ -1,45 +1,49 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("BattleAntiAirUnit", slot0.Battle.BattleWeaponUnit)
-slot0.Battle.BattleAntiAirUnit = slot1
-slot1.__name = "BattleAntiAirUnit"
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = class("BattleAntiAirUnit", var_0_0.Battle.BattleWeaponUnit)
+
+var_0_0.Battle.BattleAntiAirUnit = var_0_1
+var_0_1.__name = "BattleAntiAirUnit"
+
+function var_0_1.Ctor(arg_1_0)
+	var_0_1.super.Ctor(arg_1_0)
 end
 
-function slot1.TriggerBuffOnFire(slot0)
-	slot0._host:TriggerBuff(uv0.Battle.BattleConst.BuffEffectType.ON_ANTIAIR_FIRE_NEAR, {})
+function var_0_1.TriggerBuffOnFire(arg_2_0)
+	arg_2_0._host:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_ANTIAIR_FIRE_NEAR, {})
 end
 
-function slot1.FilterTarget(slot0)
-	slot4 = 1
+function var_0_1.FilterTarget(arg_3_0)
+	local var_3_0 = arg_3_0._dataProxy:GetAircraftList()
+	local var_3_1 = {}
+	local var_3_2 = arg_3_0._host:GetIFF()
+	local var_3_3 = 1
 
-	for slot8, slot9 in pairs(slot0._dataProxy:GetAircraftList()) do
-		if slot9:GetIFF() ~= slot0._host:GetIFF() and slot9:IsVisitable() then
-			slot4 = slot4 + 1
+	for iter_3_0, iter_3_1 in pairs(var_3_0) do
+		if iter_3_1:GetIFF() ~= var_3_2 and iter_3_1:IsVisitable() then
+			var_3_1[var_3_3] = iter_3_1
+			var_3_3 = var_3_3 + 1
 		end
 	end
 
-	return {
-		[slot4] = slot9
-	}
+	return var_3_1
 end
 
-function slot1.Spawn(slot0, slot1, slot2)
-	slot3 = uv0.super.Spawn(slot0, slot1, slot2)
+function var_0_1.Spawn(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = var_0_1.super.Spawn(arg_4_0, arg_4_1, arg_4_2)
 
-	slot3:SetDirectHitUnit(slot2)
+	var_4_0:SetDirectHitUnit(arg_4_2)
 
-	return slot3
+	return var_4_0
 end
 
-function slot1.TriggerBuffWhenSpawn(slot0, slot1)
-	slot2 = {
-		_bullet = slot1,
-		bulletTag = slot1:GetExtraTag()
+function var_0_1.TriggerBuffWhenSpawn(arg_5_0, arg_5_1)
+	local var_5_0 = {
+		_bullet = arg_5_1,
+		bulletTag = arg_5_1:GetExtraTag()
 	}
 
-	slot0._host:TriggerBuff(uv0.Battle.BattleConst.BuffEffectType.ON_BULLET_CREATE, slot2)
-	slot0._host:TriggerBuff(uv0.Battle.BattleConst.BuffEffectType.ON_ANTIAIR_BULLET_CREATE, slot2)
+	arg_5_0._host:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_BULLET_CREATE, var_5_0)
+	arg_5_0._host:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_ANTIAIR_BULLET_CREATE, var_5_0)
 end

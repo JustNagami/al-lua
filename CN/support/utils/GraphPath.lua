@@ -1,46 +1,48 @@
-slot0 = class("GraphPath")
-GraphPath = slot0
+﻿local var_0_0 = class("GraphPath")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.points = {}
-	slot0.edges = {}
+GraphPath = var_0_0
 
-	for slot5, slot6 in pairs(slot1.Points) do
-		slot7 = {
-			id = slot5,
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.points = {}
+	arg_1_0.edges = {}
+
+	for iter_1_0, iter_1_1 in pairs(arg_1_1.Points) do
+		local var_1_0 = {
+			id = iter_1_0,
 			nexts = {}
 		}
 
-		table.merge(slot7, slot6)
+		table.merge(var_1_0, iter_1_1)
 
-		slot0.points[slot5] = setmetatable(slot7, Vector2)
+		arg_1_0.points[iter_1_0] = setmetatable(var_1_0, Vector2)
 	end
 
-	for slot5, slot6 in pairs(slot1.Edges) do
-		slot8 = slot0.points[slot6.p2]
+	for iter_1_2, iter_1_3 in pairs(arg_1_1.Edges) do
+		local var_1_1 = arg_1_0.points[iter_1_3.p1]
+		local var_1_2 = arg_1_0.points[iter_1_3.p2]
 
-		if slot0.points[slot6.p1] and slot8 and slot7 ~= slot8 then
-			table.insert(slot7.nexts, slot6.p2)
-			table.insert(slot8.nexts, slot6.p1)
+		if var_1_1 and var_1_2 and var_1_1 ~= var_1_2 then
+			table.insert(var_1_1.nexts, iter_1_3.p2)
+			table.insert(var_1_2.nexts, iter_1_3.p1)
 
-			slot0.edges[slot7] = slot0.edges[slot7] or {}
-			slot0.edges[slot7][slot8] = slot6
-			slot0.edges[slot8] = slot0.edges[slot8] or {}
-			slot0.edges[slot8][slot7] = slot6
+			arg_1_0.edges[var_1_1] = arg_1_0.edges[var_1_1] or {}
+			arg_1_0.edges[var_1_1][var_1_2] = iter_1_3
+			arg_1_0.edges[var_1_2] = arg_1_0.edges[var_1_2] or {}
+			arg_1_0.edges[var_1_2][var_1_1] = iter_1_3
 		end
 	end
 end
 
-function slot0.getRandomPoint(slot0)
-	slot1 = _.values(slot0.points)
+function var_0_0.getRandomPoint(arg_2_0)
+	local var_2_0 = _.values(arg_2_0.points)
 
-	return slot1[math.random(1, #slot1)]
+	return var_2_0[math.random(1, #var_2_0)]
 end
 
-function slot0.getPoint(slot0, slot1)
-	return slot0.points[slot1]
+function var_0_0.getPoint(arg_3_0, arg_3_1)
+	return arg_3_0.points[arg_3_1]
 end
 
-function slot0.getEdge(slot0, slot1, slot2)
-	return slot0.edges[slot1] and slot0.edges[slot1][slot2]
+function var_0_0.getEdge(arg_4_0, arg_4_1, arg_4_2)
+	return arg_4_0.edges[arg_4_1] and arg_4_0.edges[arg_4_1][arg_4_2]
 end

@@ -1,34 +1,36 @@
-slot2 = class("DynamicEggCellView", DecorateClass(import(".DynamicCellView"), import(".EggCellView")))
+﻿local var_0_0 = import(".DynamicCellView")
+local var_0_1 = import(".EggCellView")
+local var_0_2 = class("DynamicEggCellView", DecorateClass(var_0_0, var_0_1))
 
-function slot2.Ctor(slot0, slot1)
-	uv0.Ctor(slot0, slot1)
-	uv1.Ctor(slot0)
-	uv1.InitEggCellTransform(slot0)
+function var_0_2.Ctor(arg_1_0, arg_1_1)
+	var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_1.Ctor(arg_1_0)
+	var_0_1.InitEggCellTransform(arg_1_0)
 end
 
-function slot2.GetOrder(slot0)
+function var_0_2.GetOrder(arg_2_0)
 	return ChapterConst.CellPriorityEnemy
 end
 
-function slot2.SetActive(slot0, slot1)
-	setActive(slot0.go, slot1)
+function var_0_2.SetActive(arg_3_0, arg_3_1)
+	setActive(arg_3_0.go, arg_3_1)
 end
 
-function slot2.LoadIcon(slot0, slot1, slot2, slot3)
-	if slot0.lastPrefab == slot1 then
-		existCall(slot3)
+function var_0_2.LoadIcon(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	if arg_4_0.lastPrefab == arg_4_1 then
+		existCall(arg_4_3)
 
 		return
 	end
 
-	slot0.lastPrefab = slot1
+	arg_4_0.lastPrefab = arg_4_1
 
-	uv0.StartEggCellView(slot0, slot2, slot3)
+	var_0_1.StartEggCellView(arg_4_0, arg_4_2, arg_4_3)
 end
 
-function slot2.UpdateChampionCell(slot0, slot1, slot2, slot3)
-	uv0.UpdateEggCell(slot0, slot1, slot2, slot2:getConfigTable(), slot3)
-	slot0:RefreshLinePosition(slot1, slot2)
+function var_0_2.UpdateChampionCell(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	var_0_1.UpdateEggCell(arg_5_0, arg_5_1, arg_5_2, arg_5_2:getConfigTable(), arg_5_3)
+	arg_5_0:RefreshLinePosition(arg_5_1, arg_5_2)
 end
 
-return slot2
+return var_0_2

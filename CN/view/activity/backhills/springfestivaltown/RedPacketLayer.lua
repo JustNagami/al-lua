@@ -1,6 +1,6 @@
-slot0 = class("RedPacketLayer", import("view.base.BaseUI"))
+﻿local var_0_0 = class("RedPacketLayer", import("view.base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	if PLATFORM_CODE == PLATFORM_CHT then
 		return "RedPacket2023UI"
 	else
@@ -8,118 +8,125 @@ function slot0.getUIName(slot0)
 	end
 end
 
-function slot0.init(slot0)
-	slot0:initData()
-	slot0:findUI()
-	slot0:addListener()
+function var_0_0.init(arg_2_0)
+	arg_2_0:initData()
+	arg_2_0:findUI()
+	arg_2_0:addListener()
 end
 
-function slot0.didEnter(slot0)
-	slot0:updateUI()
-	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf)
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0:updateUI()
+	pg.UIMgr.GetInstance():OverlayPanel(arg_3_0._tf)
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
+function var_0_0.willExit(arg_4_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_4_0._tf)
 end
 
-function slot0.initData(slot0)
-	slot0.activityProxy = getProxy(ActivityProxy)
-	slot1 = slot0.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKETS)
-	slot0.activityID = slot1.id
-	slot0.countToStory = {}
+function var_0_0.initData(arg_5_0)
+	arg_5_0.activityProxy = getProxy(ActivityProxy)
 
-	if slot1:getConfig("config_client").story then
-		for slot6, slot7 in ipairs(slot2) do
-			slot0.countToStory[slot7[1]] = slot7[2]
+	local var_5_0 = arg_5_0.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKETS)
+
+	arg_5_0.activityID = var_5_0.id
+	arg_5_0.countToStory = {}
+
+	local var_5_1 = var_5_0:getConfig("config_client").story
+
+	if var_5_1 then
+		for iter_5_0, iter_5_1 in ipairs(var_5_1) do
+			arg_5_0.countToStory[iter_5_1[1]] = iter_5_1[2]
 		end
 	end
 end
 
-function slot0.findUI(slot0)
-	slot0.packetBtn = slot0:findTF("Container/PacketBtn")
-	slot0.packetMask = slot0:findTF("Container/PacketBtnMask")
-	slot0.helpBtn = slot0:findTF("Container/HelpBtn")
-	slot0.tagTF = slot0:findTF("tag", slot0.packetBtn)
-	slot0.countTF = slot0:findTF("Container/Count")
-	slot0.specialTF = slot0:findTF("Container/Count/Special")
-	slot0.specialCountText = slot0:findTF("Text", slot0.specialTF)
-	slot0.normalTF = slot0:findTF("Container/Count/Normal")
-	slot0.normalCountText = slot0:findTF("Text", slot0.normalTF)
-	slot0.awardBtnList = {}
+function var_0_0.findUI(arg_6_0)
+	arg_6_0.packetBtn = arg_6_0:findTF("Container/PacketBtn")
+	arg_6_0.packetMask = arg_6_0:findTF("Container/PacketBtnMask")
+	arg_6_0.helpBtn = arg_6_0:findTF("Container/HelpBtn")
+	arg_6_0.tagTF = arg_6_0:findTF("tag", arg_6_0.packetBtn)
+	arg_6_0.countTF = arg_6_0:findTF("Container/Count")
+	arg_6_0.specialTF = arg_6_0:findTF("Container/Count/Special")
+	arg_6_0.specialCountText = arg_6_0:findTF("Text", arg_6_0.specialTF)
+	arg_6_0.normalTF = arg_6_0:findTF("Container/Count/Normal")
+	arg_6_0.normalCountText = arg_6_0:findTF("Text", arg_6_0.normalTF)
+	arg_6_0.awardBtnList = {}
 
-	table.insert(slot0.awardBtnList, slot0:findTF("Container/Award"))
-	table.insert(slot0.awardBtnList, slot0:findTF("Container/Award2"))
+	table.insert(arg_6_0.awardBtnList, arg_6_0:findTF("Container/Award"))
+	table.insert(arg_6_0.awardBtnList, arg_6_0:findTF("Container/Award2"))
 
-	slot0.countText = slot0:findTF("Container/CountText")
-	slot0.backBtn = slot0:findTF("Top/BackBtn")
+	arg_6_0.countText = arg_6_0:findTF("Container/CountText")
+	arg_6_0.backBtn = arg_6_0:findTF("Top/BackBtn")
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:closeView()
+function var_0_0.addListener(arg_7_0)
+	onButton(arg_7_0, arg_7_0.backBtn, function()
+		arg_7_0:closeView()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.packetBtn, function ()
+	onButton(arg_7_0, arg_7_0.packetBtn, function()
 		pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 1,
-			activity_id = uv0.activityID
+			activity_id = arg_7_0.activityID
 		})
 	end, SFX_PANEL)
-
-	function slot4()
+	onButton(arg_7_0, arg_7_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_chunjie_jiulou.tip
 		})
-	end
+	end, SFX_PANEL)
 
-	slot5 = SFX_PANEL
-
-	onButton(slot0, slot0.helpBtn, slot4, slot5)
-
-	for slot4, slot5 in ipairs(slot0.awardBtnList) do
-		if slot5 then
-			onButton(slot0, slot5, function ()
+	for iter_7_0, iter_7_1 in ipairs(arg_7_0.awardBtnList) do
+		if iter_7_1 then
+			onButton(arg_7_0, iter_7_1, function()
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SKINSHOP)
 			end, SFX_PANEL)
 		end
 	end
 end
 
-function slot0.updateUI(slot0)
-	slot1 = slot0.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKETS)
-	slot2 = slot1.data3
-	slot3 = slot1.data1
-	slot4 = math.min(slot1.data1, slot1.data2)
+function var_0_0.updateUI(arg_12_0)
+	local var_12_0 = arg_12_0.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKETS)
+	local var_12_1 = var_12_0.data3
+	local var_12_2 = var_12_0.data1
+	local var_12_3 = math.min(var_12_0.data1, var_12_0.data2)
+	local var_12_4 = var_12_2 - var_12_3
 
-	print(slot3 - slot4, slot4, slot3)
-	setActive(slot0.tagTF, slot4 > 0)
-	setActive(slot0.normalTF, slot5 > 0)
-	setActive(slot0.specialTF, slot4 > 0)
-	setActive(slot0.countTF, slot3 > 0)
-	setText(slot0.normalCountText, slot5)
-	setText(slot0.specialCountText, slot4)
-	setActive(slot0.packetBtn, slot3 > 0)
-	setActive(slot0.packetMask, slot3 <= 0)
-	setText(slot0.countText, slot1.data1_list[2] .. "/" .. slot1.data1_list[1])
+	print(var_12_4, var_12_3, var_12_2)
+	setActive(arg_12_0.tagTF, var_12_3 > 0)
+	setActive(arg_12_0.normalTF, var_12_4 > 0)
+	setActive(arg_12_0.specialTF, var_12_3 > 0)
+	setActive(arg_12_0.countTF, var_12_2 > 0)
+	setText(arg_12_0.normalCountText, var_12_4)
+	setText(arg_12_0.specialCountText, var_12_3)
+	setActive(arg_12_0.packetBtn, var_12_2 > 0)
+	setActive(arg_12_0.packetMask, not (var_12_2 > 0))
+
+	local var_12_5 = var_12_0.data1_list[2]
+	local var_12_6 = var_12_0.data1_list[1]
+
+	setText(arg_12_0.countText, var_12_5 .. "/" .. var_12_6)
 end
 
-function slot0.tryPlayStory(slot0)
-	slot1 = slot0.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKETS)
-	slot5 = slot1.data1 - math.min(slot1.data1, slot1.data2)
+function var_0_0.tryPlayStory(arg_13_0)
+	local var_13_0 = arg_13_0.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKETS)
+	local var_13_1 = var_13_0.data3
+	local var_13_2 = var_13_0.data1 - math.min(var_13_0.data1, var_13_0.data2)
+	local var_13_3 = var_13_1 - var_13_0.data2
+	local var_13_4 = arg_13_0.countToStory[var_13_3]
 
-	if slot0.countToStory[slot1.data3 - slot1.data2] then
-		pg.NewStoryMgr.GetInstance():Play(slot7)
+	if var_13_4 then
+		pg.NewStoryMgr.GetInstance():Play(var_13_4)
 	end
 end
 
-function slot0.onSubmitFinished(slot0)
-	slot0:updateUI()
-	slot0:tryPlayStory()
+function var_0_0.onSubmitFinished(arg_14_0)
+	arg_14_0:updateUI()
+	arg_14_0:tryPlayStory()
 end
 
-function slot0.isShowRedPoint()
+function var_0_0.isShowRedPoint()
 	return getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKETS).data1 > 0
 end
 
-return slot0
+return var_0_0

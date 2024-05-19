@@ -1,88 +1,97 @@
-slot0 = class("ShinanoframePage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("ShinanoframePage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.goBtn = slot0:findTF("GoBtn", slot0.bg)
-	slot0.getBtn = slot0:findTF("GetBtn", slot0.bg)
-	slot0.gotBtn = slot0:findTF("GotBtn", slot0.bg)
-	slot0.switchBtn = slot0:findTF("SwitchBtn", slot0.bg)
-	slot0.phaseTF_1 = slot0:findTF("Phase1", slot0.bg)
-	slot0.phaseTF_2 = slot0:findTF("Phase2", slot0.bg)
-	slot0.gotTag = slot0:findTF("Phase2/GotTag", slot0.bg)
-	slot0.frameTF = slot0:findTF("Phase2/Icon", slot0.bg)
-	slot0.progressBar = slot0:findTF("Phase2/Progress", slot0.bg)
-	slot0.progressText = slot0:findTF("Phase2/ProgressText", slot0.bg)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.goBtn = arg_1_0:findTF("GoBtn", arg_1_0.bg)
+	arg_1_0.getBtn = arg_1_0:findTF("GetBtn", arg_1_0.bg)
+	arg_1_0.gotBtn = arg_1_0:findTF("GotBtn", arg_1_0.bg)
+	arg_1_0.switchBtn = arg_1_0:findTF("SwitchBtn", arg_1_0.bg)
+	arg_1_0.phaseTF_1 = arg_1_0:findTF("Phase1", arg_1_0.bg)
+	arg_1_0.phaseTF_2 = arg_1_0:findTF("Phase2", arg_1_0.bg)
+	arg_1_0.gotTag = arg_1_0:findTF("Phase2/GotTag", arg_1_0.bg)
+	arg_1_0.frameTF = arg_1_0:findTF("Phase2/Icon", arg_1_0.bg)
+	arg_1_0.progressBar = arg_1_0:findTF("Phase2/Progress", arg_1_0.bg)
+	arg_1_0.progressText = arg_1_0:findTF("Phase2/ProgressText", arg_1_0.bg)
 
-	setActive(slot0.goBtn, false)
-	setActive(slot0.getBtn, false)
-	setActive(slot0.gotBtn, false)
-	setActive(slot0.gotTag, false)
-	setActive(slot0.progressBar, false)
-	setActive(slot0.progressText, false)
-	setActive(slot0.phaseTF_2, false)
+	setActive(arg_1_0.goBtn, false)
+	setActive(arg_1_0.getBtn, false)
+	setActive(arg_1_0.gotBtn, false)
+	setActive(arg_1_0.gotTag, false)
+	setActive(arg_1_0.progressBar, false)
+	setActive(arg_1_0.progressText, false)
+	setActive(arg_1_0.phaseTF_2, false)
 end
 
-function slot0.OnDataSetting(slot0)
-	if slot0.ptData then
-		slot0.ptData:Update(slot0.activity)
+function var_0_0.OnDataSetting(arg_2_0)
+	if arg_2_0.ptData then
+		arg_2_0.ptData:Update(arg_2_0.activity)
 	else
-		slot0.ptData = ActivityPtData.New(slot0.activity)
+		arg_2_0.ptData = ActivityPtData.New(arg_2_0.activity)
 	end
 end
 
-function slot0.OnFirstFlush(slot0)
-	onButton(slot0, slot0.goBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK)
+function var_0_0.OnFirstFlush(arg_3_0)
+	onButton(arg_3_0, arg_3_0.goBtn, function()
+		arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.getBtn, function ()
-		slot0, slot1 = uv0.ptData:GetResProgress()
+	onButton(arg_3_0, arg_3_0.getBtn, function()
+		local var_5_0, var_5_1 = arg_3_0.ptData:GetResProgress()
 
-		uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+		arg_3_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
 			cmd = 1,
-			activity_id = uv0.ptData:GetId(),
-			arg1 = slot1
+			activity_id = arg_3_0.ptData:GetId(),
+			arg1 = var_5_1
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.switchBtn, function ()
-		setActive(uv0.phaseTF_1, not isActive(uv0.phaseTF_1))
-		setActive(uv0.phaseTF_2, not isActive(uv0.phaseTF_2))
+	onButton(arg_3_0, arg_3_0.switchBtn, function()
+		setActive(arg_3_0.phaseTF_1, not isActive(arg_3_0.phaseTF_1))
+		setActive(arg_3_0.phaseTF_2, not isActive(arg_3_0.phaseTF_2))
 	end, SFX_PANEL)
-	setParent(LoadAndInstantiateSync("IconFrame", tostring(slot0.ptData.dropList[1][2])), slot0.frameTF, false)
+
+	local var_3_0 = arg_3_0.ptData.dropList[1][2]
+	local var_3_1 = tostring(var_3_0)
+	local var_3_2 = LoadAndInstantiateSync("IconFrame", var_3_1)
+
+	setParent(var_3_2, arg_3_0.frameTF, false)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	if not getProxy(ActivityProxy):getActivityById(ActivityConst.SHINANO_EXP_ACT_ID) or slot1:isEnd() then
-		setActive(slot0.phaseTF_1, false)
-		setActive(slot0.phaseTF_2, true)
+function var_0_0.OnUpdateFlush(arg_7_0)
+	local var_7_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.SHINANO_EXP_ACT_ID)
 
-		slot2, slot3, slot4 = slot0.ptData:GetResProgress()
+	if not var_7_0 or var_7_0:isEnd() then
+		setActive(arg_7_0.phaseTF_1, false)
+		setActive(arg_7_0.phaseTF_2, true)
 
-		setText(slot0.progressText, slot2 .. "/" .. slot3)
-		setSlider(slot0.progressBar, 0, 1, slot4)
-		setActive(slot0.progressBar, true)
-		setActive(slot0.progressText, true)
+		local var_7_1, var_7_2, var_7_3 = arg_7_0.ptData:GetResProgress()
 
-		slot5 = slot0.ptData:CanGetAward()
-		slot6 = slot0.ptData:CanGetNextAward()
+		setText(arg_7_0.progressText, var_7_1 .. "/" .. var_7_2)
+		setSlider(arg_7_0.progressBar, 0, 1, var_7_3)
+		setActive(arg_7_0.progressBar, true)
+		setActive(arg_7_0.progressText, true)
 
-		setActive(slot0.goBtn, slot0.ptData:CanGetMorePt() and not slot5 and slot6)
-		setActive(slot0.getBtn, slot5)
-		setActive(slot0.gotBtn, not slot6)
-		setActive(slot0.gotTag, not slot6)
+		local var_7_4 = arg_7_0.ptData:CanGetAward()
+		local var_7_5 = arg_7_0.ptData:CanGetNextAward()
+		local var_7_6 = arg_7_0.ptData:CanGetMorePt()
+
+		setActive(arg_7_0.goBtn, var_7_6 and not var_7_4 and var_7_5)
+		setActive(arg_7_0.getBtn, var_7_4)
+		setActive(arg_7_0.gotBtn, not var_7_5)
+		setActive(arg_7_0.gotTag, not var_7_5)
 	else
-		setActive(slot0.phaseTF_1, true)
-		setActive(slot0.phaseTF_2, false)
+		setActive(arg_7_0.phaseTF_1, true)
+		setActive(arg_7_0.phaseTF_2, false)
 
-		slot2, slot3, slot4 = slot0.ptData:GetResProgress()
+		local var_7_7, var_7_8, var_7_9 = arg_7_0.ptData:GetResProgress()
 
-		setText(slot0.progressText, slot2 .. "/" .. slot3)
-		setSlider(slot0.progressBar, 0, 1, slot4)
-		setActive(slot0.progressBar, true)
-		setActive(slot0.progressText, true)
+		setText(arg_7_0.progressText, var_7_7 .. "/" .. var_7_8)
+		setSlider(arg_7_0.progressBar, 0, 1, var_7_9)
+		setActive(arg_7_0.progressBar, true)
+		setActive(arg_7_0.progressText, true)
 	end
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_8_0)
+	return
 end
 
-return slot0
+return var_0_0

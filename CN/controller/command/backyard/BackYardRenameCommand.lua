@@ -1,21 +1,23 @@
-slot0 = class("BackYardRenameCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("BackYardRenameCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+
 	pg.ConnectionMgr.GetInstance():Send(19016, {
-		name = slot1:getBody()
-	}, 19017, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(DormProxy)
-			slot2 = slot1:getData()
+		name = var_1_0
+	}, 19017, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(DormProxy)
+			local var_2_1 = var_2_0:getData()
 
-			slot2:setName(uv0)
-			slot1:updateDrom(slot2, BackYardConst.DORM_UPDATE_TYPE_NAME)
-			uv1:sendNotification(GAME.BACKYARD_RENAME_DONE)
+			var_2_1:setName(var_1_0)
+			var_2_0:updateDrom(var_2_1, BackYardConst.DORM_UPDATE_TYPE_NAME)
+			arg_1_0:sendNotification(GAME.BACKYARD_RENAME_DONE)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_rename_success"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

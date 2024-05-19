@@ -1,17 +1,4 @@
-return {
-	{
-		desc = "主炮每进行8次攻击，触发全弹发射-博加特里级II"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行8次攻击，触发全弹发射-博加特里级II",
-	stack = 1,
-	id = 26112,
-	icon = 20100,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -37,5 +24,18 @@ return {
 				countType = 26110
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行8次攻击，触发全弹发射-博加特里级II"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行8次攻击，触发全弹发射-博加特里级II",
+	stack = 1,
+	id = 26112,
+	icon = 20100,
+	last_effect = ""
 }

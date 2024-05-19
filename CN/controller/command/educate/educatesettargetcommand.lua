@@ -1,29 +1,30 @@
-slot0 = class("EducateSetTargetCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("EducateSetTargetCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody() and slot2.callback
-	slot4 = slot2.open
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0 and var_1_0.callback
+	local var_1_2 = var_1_0.open
 
 	pg.ConnectionMgr.GetInstance():Send(27019, {
-		id = slot2.id
-	}, 27020, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(EducateProxy)
+		id = var_1_0.id
+	}, 27020, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(EducateProxy)
 
-			slot1:GetTaskProxy():UpdateTargetAwardStatus(false)
-			slot1:GetTaskProxy():SetTarget(uv0.id)
-			slot1:UpdateGameStatus()
-			uv1:sendNotification(GAME.EDUCATE_SET_TARGET_DONE, {
-				autoOpen = uv2
+			var_2_0:GetTaskProxy():UpdateTargetAwardStatus(false)
+			var_2_0:GetTaskProxy():SetTarget(var_1_0.id)
+			var_2_0:UpdateGameStatus()
+			arg_1_0:sendNotification(GAME.EDUCATE_SET_TARGET_DONE, {
+				autoOpen = var_1_2
 			})
 
-			if uv3 then
-				uv3()
+			if var_1_1 then
+				var_1_1()
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate set target error: ", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate set target error: ", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

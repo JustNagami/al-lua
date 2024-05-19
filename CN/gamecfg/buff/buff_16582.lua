@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "雪之都的孤狼",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 16580,
-	icon = 16580,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCancelBuff",
@@ -52,5 +31,26 @@ return {
 				skill_id = 16580
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "雪之都的孤狼",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 16580,
+	icon = 16580,
+	last_effect = ""
 }

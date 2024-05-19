@@ -1,100 +1,111 @@
-slot0 = class("RectCollisionHorizontal")
-slot0.directUp = Vector3(0, 1, 0)
-slot0.directDown = Vector3(0, -1, 0)
-slot0.directRight = Vector3(1, 0, 0)
-slot0.directLeft = Vector3(-1, 0, 0)
+﻿local var_0_0 = class("RectCollisionHorizontal")
 
-function slot0.HorizontalCollisions(slot0, slot1, slot2)
-	slot3 = slot0.x ~= 0 and Mathf.Sign(slot0.x) or slot1.MoveDir
-	slot4 = slot3 == 1 and uv0.directRight or uv0.directLeft
-	slot5 = slot3 == -1 and slot2.bottomLeft or slot2.bottomRight
-	slot6 = Mathf.Abs(slot0.x) + slot2.skinWidth
+var_0_0.directUp = Vector3(0, 1, 0)
+var_0_0.directDown = Vector3(0, -1, 0)
+var_0_0.directRight = Vector3(1, 0, 0)
+var_0_0.directLeft = Vector3(-1, 0, 0)
 
-	if Mathf.Abs(slot0.x) < slot2.skinWidth then
-		slot6 = 2 * slot2.skinWidth
+function var_0_0.HorizontalCollisions(arg_1_0, arg_1_1, arg_1_2)
+	local var_1_0 = arg_1_0.x ~= 0 and Mathf.Sign(arg_1_0.x) or arg_1_1.MoveDir
+	local var_1_1 = var_1_0 == 1 and var_0_0.directRight or var_0_0.directLeft
+	local var_1_2 = var_1_0 == -1 and arg_1_2.bottomLeft or arg_1_2.bottomRight
+	local var_1_3 = Mathf.Abs(arg_1_0.x) + arg_1_2.skinWidth
+
+	if Mathf.Abs(arg_1_0.x) < arg_1_2.skinWidth then
+		var_1_3 = 2 * arg_1_2.skinWidth
 	end
 
-	slot7 = false
-	slot8 = Vector3.zero
+	local var_1_4 = false
+	local var_1_5 = Vector3.zero
 
-	for slot12 = 1, slot2.horizontalRayCount do
-		slot8.x = slot5.x
-		slot8.y = slot5.y + slot2.horizontalRaySpacing * (slot12 - 1)
-		slot8.z = slot5.z
-		slot13, slot14 = Physics.Raycast(slot8, slot4, nil, slot6, slot1.layerMask)
-		slot15 = false
+	for iter_1_0 = 1, arg_1_2.horizontalRayCount do
+		var_1_5.x = var_1_2.x
+		var_1_5.y = var_1_2.y + arg_1_2.horizontalRaySpacing * (iter_1_0 - 1)
+		var_1_5.z = var_1_2.z
 
-		if slot14 then
-			if table.contains(slot1.ignoreLayerMask, go(slot14.transform.parent).layer) then
-				slot15 = true
+		local var_1_6, var_1_7 = Physics.Raycast(var_1_5, var_1_1, nil, var_1_3, arg_1_1.layerMask)
+		local var_1_8 = false
+
+		if var_1_7 then
+			local var_1_9 = var_1_7.transform.parent
+
+			if table.contains(arg_1_1.ignoreLayerMask, go(var_1_9).layer) then
+				var_1_8 = true
 			end
 
-			if slot3 == 1 and not slot1.horizontalRightTfs[slot16] then
-				slot1.horizontalRightTfs[slot16] = slot16
-			elseif slot3 == -1 and not slot1.horizontalLeftTfs[slot16] then
-				slot1.horizontalLeftTfs[slot16] = slot16
+			if var_1_0 == 1 and not arg_1_1.horizontalRightTfs[var_1_9] then
+				arg_1_1.horizontalRightTfs[var_1_9] = var_1_9
+			elseif var_1_0 == -1 and not arg_1_1.horizontalLeftTfs[var_1_9] then
+				arg_1_1.horizontalLeftTfs[var_1_9] = var_1_9
 			end
 		end
 
-		if not slot15 and slot13 and slot14.distance ~= 0 then
-			slot16 = Vector3.Angle(slot14.normal, uv0.directUp)
+		if not var_1_8 and var_1_6 and var_1_7.distance ~= 0 then
+			local var_1_10 = Vector3.Angle(var_1_7.normal, var_0_0.directUp)
 
-			if slot12 == 1 and slot16 <= slot1.config.maxSlopeAngle then
-				if slot1.descendingSlope then
-					slot1.descendingSlope = false
-					slot0 = slot1.moveAmountOld
+			if iter_1_0 == 1 and var_1_10 <= arg_1_1.config.maxSlopeAngle then
+				if arg_1_1.descendingSlope then
+					arg_1_1.descendingSlope = false
+					arg_1_0 = arg_1_1.moveAmountOld
 				end
 
-				slot17 = 0
+				local var_1_11 = 0
 
-				if slot16 ~= slot1.slopeAngleOld then
-					slot0.x = slot0.x - (slot14.distance - slot2.skinWidth) * slot3
+				if var_1_10 ~= arg_1_1.slopeAngleOld then
+					var_1_11 = var_1_7.distance - arg_1_2.skinWidth
+					arg_1_0.x = arg_1_0.x - var_1_11 * var_1_0
 				end
 
-				RectCollisionHorizontal.ClimbSlope(slot0, slot1, slot16, slot14.normal)
+				RectCollisionHorizontal.ClimbSlope(arg_1_0, arg_1_1, var_1_10, var_1_7.normal)
 
-				slot0.x = slot0.x + slot17 * slot3
+				arg_1_0.x = arg_1_0.x + var_1_11 * var_1_0
 			end
 
-			if not slot1.climbingSlope or slot1.config.maxSlopeAngle < slot16 then
-				slot0.x = (slot14.distance - slot2.skinWidth) * slot3
-				slot6 = slot14.distance
+			if not arg_1_1.climbingSlope or var_1_10 > arg_1_1.config.maxSlopeAngle then
+				arg_1_0.x = (var_1_7.distance - arg_1_2.skinWidth) * var_1_0
+				var_1_3 = var_1_7.distance
 
-				if slot1.climbingSlope then
-					slot0.y = Mathf.Tan(slot1.slopeAngle * Mathf.Deg2Rad) * Mathf.Abs(slot0.x)
+				if arg_1_1.climbingSlope then
+					arg_1_0.y = Mathf.Tan(arg_1_1.slopeAngle * Mathf.Deg2Rad) * Mathf.Abs(arg_1_0.x)
 				end
 
-				if slot12 == 1 then
-					slot7 = true
+				if iter_1_0 == 1 then
+					var_1_4 = true
 				end
 
-				slot1.left = slot3 == -1
-				slot1.right = slot3 == 1
+				arg_1_1.left = var_1_0 == -1
+				arg_1_1.right = var_1_0 == 1
 			end
 		end
 	end
 
-	if slot7 then
-		slot8.x = slot5.x
-		slot8.y = slot5.y + slot2.horizontalRaySpacing * (slot2.horizontalRayCount - 1)
-		slot8.z = slot5.z
-		slot10, slot11 = Physics.Raycast(slot8, slot4, nil, 2 * slot2.skinWidth, slot1.layerMask)
+	if var_1_4 then
+		local var_1_12 = 2 * arg_1_2.skinWidth
 
-		if slot10 and slot1.config.maxSlopeAngle < Vector3.Angle(slot11.normal, uv0.directUp) then
-			slot1.fullSliding = true
+		var_1_5.x = var_1_2.x
+		var_1_5.y = var_1_2.y + arg_1_2.horizontalRaySpacing * (arg_1_2.horizontalRayCount - 1)
+		var_1_5.z = var_1_2.z
+
+		local var_1_13, var_1_14 = Physics.Raycast(var_1_5, var_1_1, nil, var_1_12, arg_1_1.layerMask)
+
+		if var_1_13 and Vector3.Angle(var_1_14.normal, var_0_0.directUp) > arg_1_1.config.maxSlopeAngle then
+			arg_1_1.fullSliding = true
 		end
 	end
 end
 
-function slot0.ClimbSlope(slot0, slot1, slot2, slot3)
-	if slot0.y <= Mathf.Sin(slot2 * Mathf.Deg2Rad) * Mathf.Abs(slot0.x) then
-		slot0.y = slot5
-		slot0.x = Mathf.Cos(slot2 * Mathf.Deg2Rad) * slot4 * Mathf.Sign(slot0.x)
-		slot1.below = true
-		slot1.climbingSlope = true
-		slot1.slopeAngle = slot2
-		slot1.slopeNormal = slot3
+function var_0_0.ClimbSlope(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	local var_2_0 = Mathf.Abs(arg_2_0.x)
+	local var_2_1 = Mathf.Sin(arg_2_2 * Mathf.Deg2Rad) * var_2_0
+
+	if var_2_1 >= arg_2_0.y then
+		arg_2_0.y = var_2_1
+		arg_2_0.x = Mathf.Cos(arg_2_2 * Mathf.Deg2Rad) * var_2_0 * Mathf.Sign(arg_2_0.x)
+		arg_2_1.below = true
+		arg_2_1.climbingSlope = true
+		arg_2_1.slopeAngle = arg_2_2
+		arg_2_1.slopeNormal = arg_2_3
 	end
 end
 
-return slot0
+return var_0_0

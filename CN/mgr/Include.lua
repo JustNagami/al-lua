@@ -1,4 +1,4 @@
-require("Mgr/TimeMgr")
+﻿require("Mgr/TimeMgr")
 require("Mgr/EffectMgr")
 require("Mgr/UIMgr")
 require("Mgr/SceneMgr")

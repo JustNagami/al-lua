@@ -1,4 +1,26 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBulletCreate"
+			},
+			arg_list = {
+				attr = "cri",
+				number = 0.01
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "dodgeRateExtra",
+				number = 0.05
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -248,27 +270,5 @@ return {
 	stack = 1,
 	id = 17082,
 	icon = 17080,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBulletCreate"
-			},
-			arg_list = {
-				attr = "cri",
-				number = 0.01
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "dodgeRateExtra",
-				number = 0.05
-			}
-		}
-	}
+	last_effect = ""
 }

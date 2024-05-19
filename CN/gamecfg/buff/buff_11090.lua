@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "在场时，敌方所有驱逐舰、巡洋舰的回避率降低10%（20%）",
-	name = "曙光",
-	init_effect = "",
-	time = 0,
-	color = "yellow",
-	picture = "",
-	desc = "在场时，敌方所有驱逐舰、巡洋舰的回避率降低10%（20%）",
-	stack = 1,
-	id = 11090,
-	icon = 11090,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -48,5 +27,26 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "在场时，敌方所有驱逐舰、巡洋舰的回避率降低10%（20%）",
+	name = "曙光",
+	init_effect = "",
+	time = 0,
+	color = "yellow",
+	picture = "",
+	desc = "在场时，敌方所有驱逐舰、巡洋舰的回避率降低10%（20%）",
+	stack = 1,
+	id = 11090,
+	icon = 11090,
+	last_effect = ""
 }

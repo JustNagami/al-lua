@@ -1,29 +1,37 @@
-slot0 = class("WorldFleetRedeployCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("WorldFleetRedeployCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	pg.ConnectionMgr.GetInstance():Send(33409, slot1:getBody(), 33410, function (slot0)
-		if slot0.result == 0 then
-			slot2 = nowWorld()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-			slot2:SetFleets(getProxy(WorldProxy):NetBuildMapFleetList(slot0.group_list))
+	pg.ConnectionMgr.GetInstance():Send(33409, var_1_0, 33410, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(WorldProxy)
+			local var_2_1 = nowWorld()
 
-			slot3 = slot2:GetActiveMap()
+			var_2_1:SetFleets(var_2_0:NetBuildMapFleetList(arg_2_0.group_list))
 
-			slot3:SetValid(false)
-			slot3:UnbindFleets()
+			local var_2_2 = var_2_1:GetActiveMap()
 
-			slot3.findex = table.indexof(slot2.fleets, slot2:GetFleet(slot0.group_list[1].id))
+			var_2_2:SetValid(false)
+			var_2_2:UnbindFleets()
 
-			slot3:BindFleets(slot2.fleets)
-			slot2.staminaMgr:ConsumeStamina(slot2:CalcOrderCost(WorldConst.OpReqRedeploy))
-			slot2:SetReqCDTime(WorldConst.OpReqRedeploy, pg.TimeMgr.GetInstance():GetServerTime())
+			local var_2_3 = arg_2_0.group_list[1].id
+
+			var_2_2.findex = table.indexof(var_2_1.fleets, var_2_1:GetFleet(var_2_3))
+
+			var_2_2:BindFleets(var_2_1.fleets)
+
+			local var_2_4 = var_2_1:CalcOrderCost(WorldConst.OpReqRedeploy)
+
+			var_2_1.staminaMgr:ConsumeStamina(var_2_4)
+			var_2_1:SetReqCDTime(WorldConst.OpReqRedeploy, pg.TimeMgr.GetInstance():GetServerTime())
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_instruction_redeploy_2"))
-			slot2:GetBossProxy():GenFleet()
-			uv0:sendNotification(GAME.WORLD_FLEET_REDEPLOY_DONE)
+			var_2_1:GetBossProxy():GenFleet()
+			arg_1_0:sendNotification(GAME.WORLD_FLEET_REDEPLOY_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("world_fleet_redeploy_error_", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("world_fleet_redeploy_error_", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

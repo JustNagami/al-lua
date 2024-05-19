@@ -1,53 +1,57 @@
-slot0 = class("Responder")
-slot1 = {
-	__index = function (slot0, slot1)
-		slot0[slot1] = {}
+﻿local var_0_0 = class("Responder")
+local var_0_1 = {
+	__index = function(arg_1_0, arg_1_1)
+		arg_1_0[arg_1_1] = {}
 
-		return slot0[slot1]
+		return arg_1_0[arg_1_1]
 	end
 }
 
-function slot0.Ctor(slot0, slot1)
-	slot0.binder = slot1
+function var_0_0.Ctor(arg_2_0, arg_2_1)
+	arg_2_0.binder = arg_2_1
 end
 
-function slot0.reset(slot0)
-	if slot0.map then
-		for slot4, slot5 in pairs(slot0.map) do
-			underscore.each(slot5, function (slot0)
-				Destroy(slot0._tf)
+function var_0_0.reset(arg_3_0)
+	if arg_3_0.map then
+		for iter_3_0, iter_3_1 in pairs(arg_3_0.map) do
+			underscore.each(iter_3_1, function(arg_4_0)
+				Destroy(arg_4_0._tf)
 			end)
 		end
 	end
 
-	slot0.timeRiver = {}
-	slot0.fireList = {}
-	slot0.eventRange = {}
-	slot0.map = setmetatable({}, uv0)
-	slot0.findingResult = {}
-	slot0.reactorRyza = nil
-	slot0.enemyCount = 0
+	arg_3_0.timeRiver = {}
+	arg_3_0.fireList = {}
+	arg_3_0.eventRange = {}
+	arg_3_0.map = setmetatable({}, var_0_1)
+	arg_3_0.findingResult = {}
+	arg_3_0.reactorRyza = nil
+	arg_3_0.enemyCount = 0
 end
 
-function slot0.AddListener(slot0, slot1, slot2, slot3)
-	slot0.eventRange[slot1] = slot0.eventRange[slot1] or setmetatable({}, uv0)
+function var_0_0.AddListener(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	arg_5_0.eventRange[arg_5_1] = arg_5_0.eventRange[arg_5_1] or setmetatable({}, var_0_1)
 
-	for slot8, slot9 in ipairs(slot3) do
-		table.insert(slot0.eventRange[slot1][tostring(slot2.pos + slot9)], slot2)
+	local var_5_0 = arg_5_0.eventRange[arg_5_1]
+
+	for iter_5_0, iter_5_1 in ipairs(arg_5_3) do
+		table.insert(var_5_0[tostring(arg_5_2.pos + iter_5_1)], arg_5_2)
 	end
 end
 
-function slot0.RemoveListener(slot0, slot1, slot2, slot3)
-	if not slot3 then
+function var_0_0.RemoveListener(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+	if not arg_6_3 then
 		return
 	end
 
-	for slot8, slot9 in ipairs(slot3) do
-		table.removebyvalue(slot0.eventRange[slot1][tostring(slot2.pos + slot9)], slot2)
+	local var_6_0 = arg_6_0.eventRange[arg_6_1]
+
+	for iter_6_0, iter_6_1 in ipairs(arg_6_3) do
+		table.removebyvalue(var_6_0[tostring(arg_6_2.pos + iter_6_1)], arg_6_2)
 	end
 end
 
-slot2 = {
+local var_0_2 = {
 	{
 		0,
 		1
@@ -66,219 +70,219 @@ slot2 = {
 	}
 }
 
-function slot0.InRange(slot0, slot1)
-	slot2 = slot0.binder.config.mapSize
+function var_0_0.InRange(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_0.binder.config.mapSize
 
-	if slot1.x < 0 or slot1.y < 0 or slot2.x <= slot1.x or slot2.y <= slot1.y then
+	if arg_7_1.x < 0 or arg_7_1.y < 0 or arg_7_1.x >= var_7_0.x or arg_7_1.y >= var_7_0.y then
 		return false
 	else
 		return true
 	end
 end
 
-function slot0.GetCrossFire(slot0, slot1, slot2)
-	slot3 = {
+function var_0_0.GetCrossFire(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0 = {
 		0,
 		0,
 		0,
 		0
 	}
 
-	for slot7, slot8 in ipairs(uv0) do
-		for slot12 = 1, slot2 do
-			if slot0:GetFirePassability(slot1 + NewPos(unpack(slot8)) * slot12) < 2 then
-				slot3[slot7] = slot12
+	for iter_8_0, iter_8_1 in ipairs(var_0_2) do
+		for iter_8_2 = 1, arg_8_2 do
+			local var_8_1 = arg_8_1 + NewPos(unpack(iter_8_1)) * iter_8_2
+			local var_8_2 = arg_8_0:GetFirePassability(var_8_1)
+
+			if var_8_2 < 2 then
+				var_8_0[iter_8_0] = iter_8_2
 			end
 
-			if slot14 > 0 then
+			if var_8_2 > 0 then
 				break
 			end
 		end
 	end
 
-	for slot8, slot9 in ipairs(slot0.timeRiver) do
-		if isa(slot9, EnemyConductor) then
-			slot9:CheckBlock(slot1, slot3, {})
+	local var_8_3 = {}
+
+	for iter_8_3, iter_8_4 in ipairs(arg_8_0.timeRiver) do
+		if isa(iter_8_4, EnemyConductor) then
+			iter_8_4:CheckBlock(arg_8_1, var_8_0, var_8_3)
 		end
 	end
 
-	slot5 = {
+	local var_8_4 = {
 		{
 			0,
 			0
 		}
 	}
 
-	for slot9, slot10 in ipairs(uv0) do
-		for slot14 = 1, slot3[slot9] do
-			table.insert(slot5, {
-				slot10[1] * slot14,
-				slot10[2] * slot14
+	for iter_8_5, iter_8_6 in ipairs(var_0_2) do
+		for iter_8_7 = 1, var_8_0[iter_8_5] do
+			table.insert(var_8_4, {
+				iter_8_6[1] * iter_8_7,
+				iter_8_6[2] * iter_8_7
 			})
 		end
 	end
 
-	return slot3, slot5, slot4
+	return var_8_0, var_8_4, var_8_3
 end
 
-function slot0.getRangeList(slot0, slot1, slot2)
-	return underscore.map(slot2, function (slot0)
-		return uv0.pos + NewPos(unpack(slot0))
+function var_0_0.getRangeList(arg_9_0, arg_9_1, arg_9_2)
+	return underscore.map(arg_9_2, function(arg_10_0)
+		return arg_9_1.pos + NewPos(unpack(arg_10_0))
 	end)
 end
 
-function slot0.EventCall(slot0, slot1, slot2, slot3, slot4)
-	if isa(slot4, Reactor) then
-		if slot4 == MoveRyza then
-			slot0.reactorRyza:React(slot1, slot2)
+function var_0_0.EventCall(arg_11_0, arg_11_1, arg_11_2, arg_11_3, arg_11_4)
+	if isa(arg_11_4, Reactor) then
+		if arg_11_4 == MoveRyza then
+			arg_11_0.reactorRyza:React(arg_11_1, arg_11_2)
 		else
-			slot4:React(slot1, slot2)
+			arg_11_4:React(arg_11_1, arg_11_2)
 		end
 	else
-		if not slot0.eventRange[slot1] then
+		local var_11_0 = arg_11_0.eventRange[arg_11_1]
+
+		if not var_11_0 then
 			return
 		end
 
-		slot9 = slot3
-		slot10 = slot4
-
-		for slot9, slot10 in ipairs(slot0:getRangeList(slot9, slot10)) do
-			slot14 = 1
-
-			for slot14, slot15 in ipairs(underscore.rest(slot5[tostring(slot10)], slot14)) do
-				slot15:React(slot1, slot2)
+		for iter_11_0, iter_11_1 in ipairs(arg_11_0:getRangeList(arg_11_3, arg_11_4)) do
+			for iter_11_2, iter_11_3 in ipairs(underscore.rest(var_11_0[tostring(iter_11_1)], 1)) do
+				iter_11_3:React(arg_11_1, arg_11_2)
 			end
 		end
 	end
 end
 
-function slot0.CreateCall(slot0, slot1)
-	table.insert(slot0.map[tostring(slot1.pos)], slot1)
+function var_0_0.CreateCall(arg_12_0, arg_12_1)
+	table.insert(arg_12_0.map[tostring(arg_12_1.pos)], arg_12_1)
 
-	if slot1:InTimeRiver() then
-		table.insert(slot0.timeRiver, slot1)
+	if arg_12_1:InTimeRiver() then
+		table.insert(arg_12_0.timeRiver, arg_12_1)
 	end
 
-	if isa(slot1, MoveRyza) then
-		slot0.reactorRyza = slot1
-	elseif isa(slot1, MoveEnemy) then
-		slot0.enemyCount = defaultValue(slot0.enemyCount, 0) + 1
-	elseif isa(slot1, EffectFire) then
-		table.insert(slot0.fireList, slot1)
+	if isa(arg_12_1, MoveRyza) then
+		arg_12_0.reactorRyza = arg_12_1
+	elseif isa(arg_12_1, MoveEnemy) then
+		arg_12_0.enemyCount = defaultValue(arg_12_0.enemyCount, 0) + 1
+	elseif isa(arg_12_1, EffectFire) then
+		table.insert(arg_12_0.fireList, arg_12_1)
 	end
 end
 
-function slot0.DestroyCall(slot0, slot1, slot2)
-	table.removebyvalue(slot0.map[tostring(slot1.pos)], slot1)
+function var_0_0.DestroyCall(arg_13_0, arg_13_1, arg_13_2)
+	table.removebyvalue(arg_13_0.map[tostring(arg_13_1.pos)], arg_13_1)
 
-	if slot1:InTimeRiver() then
-		table.removebyvalue(slot0.timeRiver, slot1)
+	if arg_13_1:InTimeRiver() then
+		table.removebyvalue(arg_13_0.timeRiver, arg_13_1)
 	end
 
-	slot0.binder:emit(RyzaMiniGameView.EVENT_DESTROY, slot1, slot2)
+	arg_13_0.binder:emit(RyzaMiniGameView.EVENT_DESTROY, arg_13_1, arg_13_2)
 
-	if isa(slot1, MoveEnemy) then
-		slot0.enemyCount = slot0.enemyCount - 1
+	if isa(arg_13_1, MoveEnemy) then
+		arg_13_0.enemyCount = arg_13_0.enemyCount - 1
 
-		if slot0.enemyCount == 0 then
-			slot0:GameFinish(true)
+		if arg_13_0.enemyCount == 0 then
+			arg_13_0:GameFinish(true)
 		end
-	elseif isa(slot1, EffectFire) then
-		table.removebyvalue(slot0.fireList, slot1)
+	elseif isa(arg_13_1, EffectFire) then
+		table.removebyvalue(arg_13_0.fireList, arg_13_1)
 	end
 end
 
-function slot0.GetCellPassability(slot0, slot1)
-	if not slot0:InRange(slot1) then
+function var_0_0.GetCellPassability(arg_14_0, arg_14_1)
+	if not arg_14_0:InRange(arg_14_1) then
 		return false
 	end
 
-	slot5 = slot1
-
-	for slot5, slot6 in ipairs(slot0.map[tostring(slot5)]) do
-		if not slot6:CellPassability() then
-			return false, slot6
+	for iter_14_0, iter_14_1 in ipairs(arg_14_0.map[tostring(arg_14_1)]) do
+		if not iter_14_1:CellPassability() then
+			return false, iter_14_1
 		end
 	end
 
 	return true
 end
 
-function slot0.GetFirePassability(slot0, slot1)
-	if not slot0:InRange(slot1) then
+function var_0_0.GetFirePassability(arg_15_0, arg_15_1)
+	if not arg_15_0:InRange(arg_15_1) then
 		return 2
 	end
 
-	return underscore.reduce(slot0.map[tostring(slot1)], 0, function (slot0, slot1)
-		return math.max(slot0, slot1:FirePassability())
+	return underscore.reduce(arg_15_0.map[tostring(arg_15_1)], 0, function(arg_16_0, arg_16_1)
+		return math.max(arg_16_0, arg_16_1:FirePassability())
 	end)
 end
 
-function slot0.GetCellCanBomb(slot0, slot1)
-	if not slot0:InRange(slot1) then
+function var_0_0.GetCellCanBomb(arg_17_0, arg_17_1)
+	if not arg_17_0:InRange(arg_17_1) then
 		return false
 	end
 
-	return underscore.all(slot0.map[tostring(slot1)], function (slot0)
-		return not isa(slot0, ObjectBomb)
+	return underscore.all(arg_17_0.map[tostring(arg_17_1)], function(arg_18_0)
+		return not isa(arg_18_0, ObjectBomb)
 	end)
 end
 
-function slot0.TimeFlow(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.timeRiver) do
-		slot6:TimeUpdate(slot1)
+function var_0_0.TimeFlow(arg_19_0, arg_19_1)
+	for iter_19_0, iter_19_1 in ipairs(arg_19_0.timeRiver) do
+		iter_19_1:TimeUpdate(arg_19_1)
 	end
 end
 
-function slot0.Create(slot0, slot1)
-	slot0.binder:emit(RyzaMiniGameView.EVENT_CREATE, slot1)
+function var_0_0.Create(arg_20_0, arg_20_1)
+	arg_20_0.binder:emit(RyzaMiniGameView.EVENT_CREATE, arg_20_1)
 end
 
-function slot0.GetJoyStick(slot0)
-	return NewPos(slot0.binder.uiMgr.hrz, -slot0.binder.uiMgr.vtc)
+function var_0_0.GetJoyStick(arg_21_0)
+	return NewPos(arg_21_0.binder.uiMgr.hrz, -arg_21_0.binder.uiMgr.vtc)
 end
 
-function slot0.RyzaBomb(slot0)
-	slot0.reactorRyza:SetBomb()
+function var_0_0.RyzaBomb(arg_22_0)
+	arg_22_0.reactorRyza:SetBomb()
 end
 
-function slot0.GameFinish(slot0, slot1)
-	slot0.binder:emit(RyzaMiniGameView.EVENT_FINISH, slot1)
+function var_0_0.GameFinish(arg_23_0, arg_23_1)
+	arg_23_0.binder:emit(RyzaMiniGameView.EVENT_FINISH, arg_23_1)
 end
 
-function slot0.WindowFocrus(slot0, slot1)
-	slot0.binder:emit(RyzaMiniGameView.EVENT_WINDOW_FOCUS, slot1)
+function var_0_0.WindowFocrus(arg_24_0, arg_24_1)
+	arg_24_0.binder:emit(RyzaMiniGameView.EVENT_WINDOW_FOCUS, arg_24_1)
 end
 
-function slot0.SyncStatus(slot0, slot1, slot2, slot3)
-	slot0.binder:emit(RyzaMiniGameView.EVENT_STATUS_SYNC, slot1, slot2, slot3)
+function var_0_0.SyncStatus(arg_25_0, arg_25_1, arg_25_2, arg_25_3)
+	arg_25_0.binder:emit(RyzaMiniGameView.EVENT_STATUS_SYNC, arg_25_1, arg_25_2, arg_25_3)
 end
 
-function slot0.UpdateHide(slot0, slot1, slot2)
-	slot0.binder:emit(RyzaMiniGameView.EVENT_UPDATE_HIDE, slot1, slot2)
+function var_0_0.UpdateHide(arg_26_0, arg_26_1, arg_26_2)
+	arg_26_0.binder:emit(RyzaMiniGameView.EVENT_UPDATE_HIDE, arg_26_1, arg_26_2)
 end
 
-function slot0.UpdatePos(slot0, slot1, slot2)
-	table.removebyvalue(slot0.map[tostring(slot1.pos)], slot1)
-	table.insert(slot0.map[tostring(slot2)], slot1)
+function var_0_0.UpdatePos(arg_27_0, arg_27_1, arg_27_2)
+	table.removebyvalue(arg_27_0.map[tostring(arg_27_1.pos)], arg_27_1)
+	table.insert(arg_27_0.map[tostring(arg_27_2)], arg_27_1)
 end
 
-function slot3(slot0, slot1)
-	slot2 = slot1.pos - slot0.pos
+local function var_0_3(arg_28_0, arg_28_1)
+	local var_28_0 = arg_28_1.pos - arg_28_0.pos
 
-	for slot6, slot7 in ipairs(slot0.range) do
-		for slot11, slot12 in ipairs(slot1.range) do
-			slot13 = {
+	for iter_28_0, iter_28_1 in ipairs(arg_28_0.range) do
+		for iter_28_2, iter_28_3 in ipairs(arg_28_1.range) do
+			local var_28_1 = {
 				{},
 				{}
 			}
 
-			for slot17, slot18 in ipairs(slot7) do
-				slot13[slot17][1] = slot18[1] - slot12[slot17][2]
-				slot13[slot17][2] = slot18[2] - slot12[slot17][1]
+			for iter_28_4, iter_28_5 in ipairs(iter_28_1) do
+				var_28_1[iter_28_4][1] = iter_28_5[1] - iter_28_3[iter_28_4][2]
+				var_28_1[iter_28_4][2] = iter_28_5[2] - iter_28_3[iter_28_4][1]
 			end
 
-			if slot13[1][1] < slot2.x and slot2.x < slot13[1][2] and slot13[2][1] < slot2.y and slot2.y < slot13[2][2] then
+			if var_28_0.x > var_28_1[1][1] and var_28_0.x < var_28_1[1][2] and var_28_0.y > var_28_1[2][1] and var_28_0.y < var_28_1[2][2] then
 				return true
 			end
 		end
@@ -287,124 +291,130 @@ function slot3(slot0, slot1)
 	return false
 end
 
-function slot0.Wayfinding(slot0, slot1)
-	if slot0.reactorRyza.hide or slot0:CollideRyza(slot1) then
-		slot0.findingResult[slot1] = nil
+function var_0_0.Wayfinding(arg_29_0, arg_29_1)
+	if arg_29_0.reactorRyza.hide or arg_29_0:CollideRyza(arg_29_1) then
+		arg_29_0.findingResult[arg_29_1] = nil
 
 		return {
-			slot0.realPos
+			arg_29_0.realPos
 		}
-	elseif slot0.findingResult[slot1] then
-		if slot0.findingResult[slot1].ryzaPos == slot0.reactorRyza.pos and slot2.reactorPos == slot1.pos then
-			return slot2.path
+	elseif arg_29_0.findingResult[arg_29_1] then
+		local var_29_0 = arg_29_0.findingResult[arg_29_1]
+
+		if var_29_0.ryzaPos == arg_29_0.reactorRyza.pos and var_29_0.reactorPos == arg_29_1.pos then
+			return var_29_0.path
 		else
-			slot0.findingResult[slot1] = nil
+			arg_29_0.findingResult[arg_29_1] = nil
 		end
 	end
 
-	slot3 = {
-		[tostring(slot1.pos)] = 0
+	local var_29_1 = {
+		arg_29_1.pos
+	}
+	local var_29_2 = {
+		[tostring(arg_29_1.pos)] = 0
 	}
 
-	function slot4(slot0)
-		slot1 = {}
+	local function var_29_3(arg_30_0)
+		local var_30_0 = {}
 
-		while uv0[tostring(uv1[slot0])] > 0 do
-			table.insert(slot1, uv1[slot0])
+		while var_29_2[tostring(var_29_1[arg_30_0])] > 0 do
+			table.insert(var_30_0, var_29_1[arg_30_0])
 
-			slot0 = uv0[tostring(uv1[slot0])]
+			arg_30_0 = var_29_2[tostring(var_29_1[arg_30_0])]
 		end
 
-		uv2.findingResult[uv3] = {
-			ryzaPos = uv2.reactorRyza.pos,
-			reactorPos = uv3.pos,
-			path = slot1
+		arg_29_0.findingResult[arg_29_1] = {
+			ryzaPos = arg_29_0.reactorRyza.pos,
+			reactorPos = arg_29_1.pos,
+			path = var_30_0
 		}
 
-		return slot1
+		return var_30_0
 	end
 
-	slot5 = 0
-	slot6 = nil
+	local var_29_4 = 0
+	local var_29_5
 
-	while slot5 < #{
-		slot1.pos
-	} do
-		slot5 = slot5 + 1
+	while var_29_4 < #var_29_1 do
+		var_29_4 = var_29_4 + 1
 
-		for slot10, slot11 in ipairs(uv0) do
-			if slot3[tostring(slot2[slot5] + NewPos(unpack(slot11)))] == nil then
-				if slot0:GetCellPassability(slot6) then
-					slot3[tostring(slot6)] = slot5
+		for iter_29_0, iter_29_1 in ipairs(var_0_2) do
+			local var_29_6 = var_29_1[var_29_4] + NewPos(unpack(iter_29_1))
 
-					table.insert(slot2, slot6)
+			if var_29_2[tostring(var_29_6)] == nil then
+				if arg_29_0:GetCellPassability(var_29_6) then
+					var_29_2[tostring(var_29_6)] = var_29_4
 
-					if uv1({
-						pos = slot0.reactorRyza.realPos,
-						range = slot0.reactorRyza:GetCollideRange()
+					table.insert(var_29_1, var_29_6)
+
+					if var_0_3({
+						pos = arg_29_0.reactorRyza.realPos,
+						range = arg_29_0.reactorRyza:GetCollideRange()
 					}, {
-						pos = slot6,
-						range = slot1:GetCollideRange()
+						pos = var_29_6,
+						range = arg_29_1:GetCollideRange()
 					}) then
-						return slot4(#slot2)
+						return var_29_3(#var_29_1)
 					end
 				else
-					slot3[tostring(slot6)] = false
+					var_29_2[tostring(var_29_6)] = false
 				end
 			end
 		end
 
-		for slot10, slot11 in ipairs(uv0) do
-			slot12 = NewPos(unpack(slot11))
-			slot6 = slot2[slot5] + slot12 + NewPos(unpack(uv0[slot10 % 4 + 1]))
+		for iter_29_2, iter_29_3 in ipairs(var_0_2) do
+			local var_29_7 = NewPos(unpack(iter_29_3))
+			local var_29_8 = NewPos(unpack(var_0_2[iter_29_2 % 4 + 1]))
+			local var_29_9 = var_29_1[var_29_4] + var_29_7 + var_29_8
 
-			if slot3[tostring(slot2[slot5] + slot12)] and slot3[tostring(slot2[slot5] + slot13)] and slot3[tostring(slot6)] == nil and slot0:GetCellPassability(slot6) then
-				slot3[tostring(slot6)] = slot5
+			if var_29_2[tostring(var_29_1[var_29_4] + var_29_7)] and var_29_2[tostring(var_29_1[var_29_4] + var_29_8)] and var_29_2[tostring(var_29_9)] == nil and arg_29_0:GetCellPassability(var_29_9) then
+				var_29_2[tostring(var_29_9)] = var_29_4
 
-				table.insert(slot2, slot6)
+				table.insert(var_29_1, var_29_9)
 
-				if uv1({
-					pos = slot0.reactorRyza.realPos,
-					range = slot0.reactorRyza:GetCollideRange()
+				if var_0_3({
+					pos = arg_29_0.reactorRyza.realPos,
+					range = arg_29_0.reactorRyza:GetCollideRange()
 				}, {
-					pos = slot6,
-					range = slot1:GetCollideRange()
+					pos = var_29_9,
+					range = arg_29_1:GetCollideRange()
 				}) then
-					return slot4(#slot2)
+					return var_29_3(#var_29_1)
 				end
 			end
 		end
 	end
 end
 
-function slot0.SearchRyza(slot0, slot1, slot2)
-	if slot0.reactorRyza.hide then
+function var_0_0.SearchRyza(arg_31_0, arg_31_1, arg_31_2)
+	if arg_31_0.reactorRyza.hide then
 		return false
 	else
-		return ((slot1.realPos or slot1.pos) - slot0.reactorRyza.realPos):SqrMagnitude() < slot2 * slot2
+		return ((arg_31_1.realPos or arg_31_1.pos) - arg_31_0.reactorRyza.realPos):SqrMagnitude() < arg_31_2 * arg_31_2
 	end
 end
 
-function slot0.CollideRyza(slot0, slot1)
-	return uv0({
-		pos = slot0.reactorRyza.realPos,
-		range = slot0.reactorRyza:GetCollideRange()
+function var_0_0.CollideRyza(arg_32_0, arg_32_1)
+	return var_0_3({
+		pos = arg_32_0.reactorRyza.realPos,
+		range = arg_32_0.reactorRyza:GetCollideRange()
 	}, {
-		pos = slot1.realPos,
-		range = slot1:GetCollideRange()
+		pos = arg_32_1.realPos,
+		range = arg_32_1:GetCollideRange()
 	})
 end
 
-function slot0.CollideFire(slot0, slot1)
-	return underscore.filter(slot0.fireList, function (slot0)
-		return uv0({
-			pos = slot0.pos,
-			range = slot0:GetCollideRange()
+function var_0_0.CollideFire(arg_33_0, arg_33_1)
+	return underscore.filter(arg_33_0.fireList, function(arg_34_0)
+		return var_0_3({
+			pos = arg_34_0.pos,
+			range = arg_34_0:GetCollideRange()
 		}, {
-			pos = uv1.realPos,
-			range = uv1:GetCollideRange()
+			pos = arg_33_1.realPos,
+			range = arg_33_1:GetCollideRange()
 		})
 	end)
 end
 
-return slot0
+return var_0_0

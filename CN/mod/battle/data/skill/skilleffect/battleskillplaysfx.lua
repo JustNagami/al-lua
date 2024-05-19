@@ -1,23 +1,25 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("BattleSkillPlaySFX", slot0.Battle.BattleSkillEffect)
-slot0.Battle.BattleSkillPlaySFX = slot1
-slot1.__name = "BattleSkillPlaySFX"
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2)
+local var_0_0 = ys
+local var_0_1 = class("BattleSkillPlaySFX", var_0_0.Battle.BattleSkillEffect)
 
-	slot0._SFXID = slot0._tempData.arg_list.sound_effect
+var_0_0.Battle.BattleSkillPlaySFX = var_0_1
+var_0_1.__name = "BattleSkillPlaySFX"
+
+function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+
+	arg_1_0._SFXID = arg_1_0._tempData.arg_list.sound_effect
 end
 
-function slot1.DoDataEffect(slot0, slot1, slot2)
-	slot0:playSound()
+function var_0_1.DoDataEffect(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0:playSound()
 end
 
-function slot1.DoDataEffectWithoutTarget(slot0, slot1)
-	slot0:playSound()
+function var_0_1.DoDataEffectWithoutTarget(arg_3_0, arg_3_1)
+	arg_3_0:playSound()
 end
 
-function slot1.playSound(slot0)
-	uv0.Battle.PlayBattleSFX(slot0._SFXID)
+function var_0_1.playSound(arg_4_0)
+	var_0_0.Battle.PlayBattleSFX(arg_4_0._SFXID)
 end

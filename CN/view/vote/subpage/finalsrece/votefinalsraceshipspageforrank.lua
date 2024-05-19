@@ -1,41 +1,44 @@
-slot0 = class("VoteFinalsRaceShipsPageForRank", import(".VoteFinalsRaceShipsPage"))
+﻿local var_0_0 = class("VoteFinalsRaceShipsPageForRank", import(".VoteFinalsRaceShipsPage"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "FinalsRaceShipsRank"
 end
 
-function slot0.OnLoaded(slot0)
-	uv0.super.OnLoaded(slot0)
+function var_0_0.OnLoaded(arg_2_0)
+	var_0_0.super.OnLoaded(arg_2_0)
 
-	slot0.loadedPaintings = {}
+	arg_2_0.loadedPaintings = {}
 end
 
-function slot0.UpdateTop3(slot0, slot1, slot2, slot3)
-	slot0:ClearPaintings()
-	uv0.super.UpdateTop3(slot0, slot1, slot2, slot3)
-	setText(slot0.num1TF:Find("Text"), i18n("vote_lable_ship_votes", slot1 and slot0.voteGroup:GetVotes(slot1) or 0))
+function var_0_0.UpdateTop3(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	arg_3_0:ClearPaintings()
+	var_0_0.super.UpdateTop3(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	setText(arg_3_0.num1TF:Find("Text"), i18n("vote_lable_ship_votes", arg_3_1 and arg_3_0.voteGroup:GetVotes(arg_3_1) or 0))
 end
 
-function slot0.LoadPainting(slot0, slot1, slot2)
-	setPaintingPrefabAsync(slot1, slot2, "pifu", function ()
-		table.insert(uv0.loadedPaintings, {
-			tr = uv1,
-			painting = uv2
+function var_0_0.LoadPainting(arg_4_0, arg_4_1, arg_4_2)
+	setPaintingPrefabAsync(arg_4_1, arg_4_2, "pifu", function()
+		table.insert(arg_4_0.loadedPaintings, {
+			tr = arg_4_1,
+			painting = arg_4_2
 		})
 	end)
 end
 
-function slot0.ClearPaintings(slot0)
-	for slot4, slot5 in ipairs(slot0.loadedPaintings) do
-		retPaintingPrefab(slot5.tr, slot5.painting)
+function var_0_0.ClearPaintings(arg_6_0)
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0.loadedPaintings) do
+		local var_6_0 = iter_6_1.tr
+		local var_6_1 = iter_6_1.painting
+
+		retPaintingPrefab(var_6_0, var_6_1)
 	end
 
-	slot0.loadedPaintings = {}
+	arg_6_0.loadedPaintings = {}
 end
 
-function slot0.OnDestroy(slot0)
-	uv0.super.OnDestroy(slot0)
-	slot0:ClearPaintings()
+function var_0_0.OnDestroy(arg_7_0)
+	var_0_0.super.OnDestroy(arg_7_0)
+	arg_7_0:ClearPaintings()
 end
 
-return slot0
+return var_0_0

@@ -1,195 +1,207 @@
-slot0 = class("BattleChallengeResultLayer", import(".BattleResultLayer"))
-slot0.DURATION_WIN_FADE_IN = 0.5
-slot0.DURATION_LOSE_FADE_IN = 1.5
-slot0.DURATION_GRADE_LAST = 1.5
-slot0.DURATION_MOVE = 0.7
-slot0.DURATION_WIN_SCALE = 0.7
-slot0.STATE_DEFEAT = "state_defeat"
-slot0.STATE_CLEAR = "state_clear"
-slot0.STATE_CONTINUE = "state_continue"
-slot0.STATE_QUIT = "state_quit"
+﻿local var_0_0 = class("BattleChallengeResultLayer", import(".BattleResultLayer"))
 
-function slot0.getUIName(slot0)
+var_0_0.DURATION_WIN_FADE_IN = 0.5
+var_0_0.DURATION_LOSE_FADE_IN = 1.5
+var_0_0.DURATION_GRADE_LAST = 1.5
+var_0_0.DURATION_MOVE = 0.7
+var_0_0.DURATION_WIN_SCALE = 0.7
+var_0_0.STATE_DEFEAT = "state_defeat"
+var_0_0.STATE_CLEAR = "state_clear"
+var_0_0.STATE_CONTINUE = "state_continue"
+var_0_0.STATE_QUIT = "state_quit"
+
+function var_0_0.getUIName(arg_1_0)
 	return "BattleResultUI"
 end
 
-function slot0.setChallengeInfo(slot0, slot1, slot2)
-	slot0.challenge = slot1
-	slot0.challengeExpire = slot2
+function var_0_0.setChallengeInfo(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0.challenge = arg_2_1
+	arg_2_0.challengeExpire = arg_2_2
 end
 
-function slot0.setShips(slot0, slot1)
-	slot0.shipVOs = slot1
+function var_0_0.setShips(arg_3_0, arg_3_1)
+	arg_3_0.shipVOs = arg_3_1
 end
 
-function slot0.isTotalClear(slot0)
-	return slot0.challenge:getMode() == ChallengeProxy.MODE_CASUAL and slot0.challenge:IsFinish() or slot0:isFail()
+function var_0_0.isTotalClear(arg_4_0)
+	return arg_4_0.challenge:getMode() == ChallengeProxy.MODE_CASUAL and arg_4_0.challenge:IsFinish() or arg_4_0:isFail()
 end
 
-function slot0.isFail(slot0)
-	return slot0.contextData.score < ys.Battle.BattleConst.BattleScore.S
+function var_0_0.isFail(arg_5_0)
+	return arg_5_0.contextData.score < ys.Battle.BattleConst.BattleScore.S
 end
 
-function slot0.init(slot0)
-	uv0.super.init(slot0)
+function var_0_0.init(arg_6_0)
+	var_0_0.super.init(arg_6_0)
 
-	slot0._challengeBottomPanel = slot0:findTF("challenge_confirm", slot0._blurConatiner)
+	arg_6_0._challengeBottomPanel = arg_6_0:findTF("challenge_confirm", arg_6_0._blurConatiner)
 
-	setText(findTF(slot0._challengeBottomPanel, "continue_btn/text"), i18n("battle_result_continue_battle"))
-	setText(findTF(slot0._challengeBottomPanel, "quit_btn/text"), i18n("battle_result_quit_battle"))
-	setText(findTF(slot0._challengeBottomPanel, "share_btn/text"), i18n("battle_result_share_battle"))
+	setText(findTF(arg_6_0._challengeBottomPanel, "continue_btn/text"), i18n("battle_result_continue_battle"))
+	setText(findTF(arg_6_0._challengeBottomPanel, "quit_btn/text"), i18n("battle_result_quit_battle"))
+	setText(findTF(arg_6_0._challengeBottomPanel, "share_btn/text"), i18n("battle_result_share_battle"))
 
-	slot0._shareBtn = slot0:findTF("share_btn", slot0._challengeBottomPanel)
-	slot0._continueBtn = slot0:findTF("continue_btn", slot0._challengeBottomPanel)
-	slot0._quitBtn = slot0:findTF("quit_btn", slot0._challengeBottomPanel)
-	slot0._expire = slot0:findTF("challenge_expire", slot0._main)
-	slot0._expireTxt = slot0:findTF("text", slot0._expire)
+	arg_6_0._shareBtn = arg_6_0:findTF("share_btn", arg_6_0._challengeBottomPanel)
+	arg_6_0._continueBtn = arg_6_0:findTF("continue_btn", arg_6_0._challengeBottomPanel)
+	arg_6_0._quitBtn = arg_6_0:findTF("quit_btn", arg_6_0._challengeBottomPanel)
+	arg_6_0._expire = arg_6_0:findTF("challenge_expire", arg_6_0._main)
+	arg_6_0._expireTxt = arg_6_0:findTF("text", arg_6_0._expire)
 end
 
-function slot0.didEnter(slot0)
-	uv0.super.didEnter(slot0)
-	onButton(slot0, slot0._skipBtn, function ()
-		uv0:skip()
+function var_0_0.didEnter(arg_7_0)
+	var_0_0.super.didEnter(arg_7_0)
+	onButton(arg_7_0, arg_7_0._skipBtn, function()
+		arg_7_0:skip()
 	end, SFX_CONFIRM)
 end
 
-function slot0.setStageName(slot0)
-	if slot0.contextData.system and slot0.contextData.system == SYSTEM_DUEL then
-		setText(slot0._levelText, slot0.rivalVO.name)
+function var_0_0.setStageName(arg_9_0)
+	if arg_9_0.contextData.system and arg_9_0.contextData.system == SYSTEM_DUEL then
+		setText(arg_9_0._levelText, arg_9_0.rivalVO.name)
 	else
-		slot2 = pg.expedition_data_template[slot0.contextData.stageId]
+		local var_9_0 = arg_9_0.contextData.stageId
+		local var_9_1 = pg.expedition_data_template[var_9_0]
 	end
 
-	if slot0.challenge:getMode() == ChallengeProxy.MODE_INFINITE then
-		setText(slot0._levelText, pg.expedition_data_template[slot0.contextData.stageId].name .. " - ROUND " .. slot0.challenge:getLevel())
+	if arg_9_0.challenge:getMode() == ChallengeProxy.MODE_INFINITE then
+		local var_9_2 = arg_9_0.contextData.stageId
+		local var_9_3 = pg.expedition_data_template[var_9_2].name .. " - ROUND " .. arg_9_0.challenge:getLevel()
+
+		setText(arg_9_0._levelText, var_9_3)
 	else
-		uv0.super.setStageName(slot0)
-	end
-end
-
-function slot0.rankAnimaFinish(slot0)
-	if slot0.challenge:getMode() == ChallengeProxy.MODE_INFINITE then
-		SetActive(slot0:findTF("main/conditions"), false)
-
-		slot0._stateFlag = uv0.STATE_REPORTED
-	else
-		SetActive(slot1, true)
-		slot0:setCondition(i18n("challenge_combat_score", slot0.challenge:getLastScore()), true)
-		slot0:setCondition(i18n("challenge_current_score", slot0.challenge:getScore()), true)
-		table.insert(slot0._delayLeanList, LeanTween.delayedCall(1, System.Action(function ()
-			uv0._stateFlag = uv1.STATE_REPORTED
-
-			SetActive(uv0:findTF("jieuan01/tips", uv0._bg), true)
-		end)).id)
-
-		slot0._stateFlag = uv0.STATE_REPORT
+		var_0_0.super.setStageName(arg_9_0)
 	end
 end
 
-function slot0.displayDefeat(slot0)
-	if slot0:isFail() then
-		slot0._stateFlag = uv0.STATE_QUIT
+function var_0_0.rankAnimaFinish(arg_10_0)
+	local var_10_0 = arg_10_0:findTF("main/conditions")
 
-		function ()
-			uv0:skip()
-		end()
+	if arg_10_0.challenge:getMode() == ChallengeProxy.MODE_INFINITE then
+		SetActive(var_10_0, false)
+
+		arg_10_0._stateFlag = var_0_0.STATE_REPORTED
 	else
-		slot0:emit(BattleResultMediator.ON_CHALLENGE_DEFEAT_SCENE, {
-			callback = slot1
+		SetActive(var_10_0, true)
+		arg_10_0:setCondition(i18n("challenge_combat_score", arg_10_0.challenge:getLastScore()), true)
+		arg_10_0:setCondition(i18n("challenge_current_score", arg_10_0.challenge:getScore()), true)
+
+		local var_10_1 = LeanTween.delayedCall(1, System.Action(function()
+			arg_10_0._stateFlag = var_0_0.STATE_REPORTED
+
+			SetActive(arg_10_0:findTF("jieuan01/tips", arg_10_0._bg), true)
+		end))
+
+		table.insert(arg_10_0._delayLeanList, var_10_1.id)
+
+		arg_10_0._stateFlag = var_0_0.STATE_REPORT
+	end
+end
+
+function var_0_0.displayDefeat(arg_12_0)
+	local function var_12_0()
+		arg_12_0:skip()
+	end
+
+	if arg_12_0:isFail() then
+		arg_12_0._stateFlag = var_0_0.STATE_QUIT
+
+		var_12_0()
+	else
+		arg_12_0:emit(BattleResultMediator.ON_CHALLENGE_DEFEAT_SCENE, {
+			callback = var_12_0
 		})
 	end
 end
 
-function slot0.showRightBottomPanel(slot0)
-	SetActive(slot0._expire, slot0.challengeExpire)
-	setText(slot0._expireTxt, i18n("challenge_expire_warn"))
-	SetActive(slot0._skipBtn, false)
+function var_0_0.showRightBottomPanel(arg_14_0)
+	SetActive(arg_14_0._expire, arg_14_0.challengeExpire)
+	setText(arg_14_0._expireTxt, i18n("challenge_expire_warn"))
+	SetActive(arg_14_0._skipBtn, false)
 
-	if not slot0:isTotalClear() then
-		SetActive(slot0:findTF("jieuan01/tips", slot0._bg), false)
+	if not arg_14_0:isTotalClear() then
+		SetActive(arg_14_0:findTF("jieuan01/tips", arg_14_0._bg), false)
 	end
 
-	SetActive(slot0._challengeBottomPanel, true)
+	SetActive(arg_14_0._challengeBottomPanel, true)
 
-	if slot0:isTotalClear() then
-		SetActive(slot0._continueBtn, false)
-		SetActive(slot0._quitBtn, false)
-		SetActive(slot0._shareBtn, true)
-		onButton(slot0, slot0._shareBtn, function ()
-			uv0:emit(BattleResultMediator.ON_CHALLENGE_SHARE)
+	if arg_14_0:isTotalClear() then
+		SetActive(arg_14_0._continueBtn, false)
+		SetActive(arg_14_0._quitBtn, false)
+		SetActive(arg_14_0._shareBtn, true)
+		onButton(arg_14_0, arg_14_0._shareBtn, function()
+			arg_14_0:emit(BattleResultMediator.ON_CHALLENGE_SHARE)
 		end, SFX_CONFIRM)
-		onButton(slot0, slot0._bg, function ()
-			uv0:skip()
+		onButton(arg_14_0, arg_14_0._bg, function()
+			arg_14_0:skip()
 
-			uv0._stateFlag = uv1.STATE_CLEAR
+			arg_14_0._stateFlag = var_0_0.STATE_CLEAR
 		end)
 	else
-		SetActive(slot0._continueBtn, true)
-		SetActive(slot0._quitBtn, true)
-		SetActive(slot0._shareBtn, false)
-		onButton(slot0, slot0._continueBtn, function ()
-			uv0:skip()
+		SetActive(arg_14_0._continueBtn, true)
+		SetActive(arg_14_0._quitBtn, true)
+		SetActive(arg_14_0._shareBtn, false)
+		onButton(arg_14_0, arg_14_0._continueBtn, function()
+			arg_14_0:skip()
 
-			uv0._stateFlag = uv1.STATE_CONTINUE
+			arg_14_0._stateFlag = var_0_0.STATE_CONTINUE
 		end, SFX_CONFIRM)
-		onButton(slot0, slot0._quitBtn, function ()
-			uv0:skip()
+		onButton(arg_14_0, arg_14_0._quitBtn, function()
+			arg_14_0:skip()
 
-			uv0._stateFlag = uv1.STATE_QUIT
+			arg_14_0._stateFlag = var_0_0.STATE_QUIT
 		end, SFX_CONFIRM)
 	end
 
-	slot0._stateFlag = uv0.STATE_DEFEAT
+	arg_14_0._stateFlag = var_0_0.STATE_DEFEAT
 end
 
-function slot0.onBackPressed(slot0)
-	slot0:skip()
+function var_0_0.onBackPressed(arg_19_0)
+	arg_19_0:skip()
 end
 
-function slot0.skip(slot0)
-	for slot4, slot5 in ipairs(slot0._delayLeanList) do
-		LeanTween.cancel(slot5)
+function var_0_0.skip(arg_20_0)
+	for iter_20_0, iter_20_1 in ipairs(arg_20_0._delayLeanList) do
+		LeanTween.cancel(iter_20_1)
 	end
 
-	if slot0._stateFlag == uv0.STATE_RANK_ANIMA then
-		-- Nothing
-	elseif slot0._stateFlag == uv0.STATE_REPORT then
-		slot1 = slot0._conditionContainer.childCount
+	if arg_20_0._stateFlag == var_0_0.STATE_RANK_ANIMA then
+		-- block empty
+	elseif arg_20_0._stateFlag == var_0_0.STATE_REPORT then
+		local var_20_0 = arg_20_0._conditionContainer.childCount
 
-		while slot1 > 0 do
-			SetActive(slot0._conditionContainer:GetChild(slot1 - 1), true)
+		while var_20_0 > 0 do
+			SetActive(arg_20_0._conditionContainer:GetChild(var_20_0 - 1), true)
 
-			slot1 = slot1 - 1
+			var_20_0 = var_20_0 - 1
 		end
 
-		SetActive(slot0:findTF("jieuan01/tips", slot0._bg), true)
+		SetActive(arg_20_0:findTF("jieuan01/tips", arg_20_0._bg), true)
 
-		slot0._stateFlag = uv0.STATE_REPORTED
-	elseif slot0._stateFlag == uv0.STATE_REPORTED then
-		slot0:showRightBottomPanel()
-	elseif slot0._stateFlag == uv0.STATE_DEFEAT then
-		if slot0:isTotalClear() then
-			slot0:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE, {
+		arg_20_0._stateFlag = var_0_0.STATE_REPORTED
+	elseif arg_20_0._stateFlag == var_0_0.STATE_REPORTED then
+		arg_20_0:showRightBottomPanel()
+	elseif arg_20_0._stateFlag == var_0_0.STATE_DEFEAT then
+		if arg_20_0:isTotalClear() then
+			arg_20_0:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE, {
 				goToNext = false
 			})
 		else
-			slot0:displayDefeat()
+			arg_20_0:displayDefeat()
 		end
-	elseif slot0._stateFlag == uv0.STATE_CONTINUE then
-		slot0:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE, {
+	elseif arg_20_0._stateFlag == var_0_0.STATE_CONTINUE then
+		arg_20_0:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE, {
 			goToNext = true
 		})
-	elseif slot0._stateFlag == uv0.STATE_QUIT or slot0._stateFlag == uv0.STATE_CLEAR then
-		slot0:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE, {
+	elseif arg_20_0._stateFlag == var_0_0.STATE_QUIT or arg_20_0._stateFlag == var_0_0.STATE_CLEAR then
+		arg_20_0:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE, {
 			goToNext = false
 		})
 	end
 end
 
-function slot0.willExit(slot0)
-	uv0.super.willExit(slot0)
-	LeanTween.cancel(go(slot0._tf))
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_21_0)
+	var_0_0.super.willExit(arg_21_0)
+	LeanTween.cancel(go(arg_21_0._tf))
+	pg.UIMgr.GetInstance():UnblurPanel(arg_21_0._tf)
 end
 
-return slot0
+return var_0_0

@@ -1,136 +1,138 @@
-slot0 = class("CollectionShipCard")
-slot0.TypeCard = 1
-slot0.TypeTrans = 2
-slot1 = pg.ship_data_group
+﻿local var_0_0 = class("CollectionShipCard")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.go = slot1
-	slot0.tr = slot1.transform
-	slot0.btn = GetOrAddComponent(slot1, "Button")
-	slot0.content = findTF(slot0.tr, "content").gameObject
+var_0_0.TypeCard = 1
+var_0_0.TypeTrans = 2
 
-	setActive(findTF(slot0.content, "dockyard"), false)
-	setActive(findTF(slot0.content, "collection"), true)
-	setActive(findTF(slot0.content, "expbuff"), false)
+local var_0_1 = pg.ship_data_group
 
-	slot0.shipFrameImg = findTF(slot0.content, "front/frame")
-	slot0.iconShip = findTF(slot0.content, "ship_icon"):GetComponent(typeof(Image))
-	slot0.imageBg = findTF(slot0.content, "bg"):GetComponent(typeof(Image))
-	slot0.labelName = findTF(slot0.content, "info/name_mask/name")
-	slot0.mask2D = GetOrAddComponent(findTF(slot0.content, "info/name_mask"), typeof(RectMask2D))
-	slot0.iconType = findTF(slot0.content, "info/top/type"):GetComponent(typeof(Image))
-	slot0.ringTF = findTF(slot0.content, "front/ring")
-	slot0.ringMetaTF = findTF(slot0.content, "front/ring_meta")
-	slot0.maskTF = findTF(slot0.content, "collection/mask")
-	slot0.heart = findTF(slot0.content, "collection/heart")
-	slot0.labelHeart = findTF(slot0.heart, "heart"):GetComponent(typeof(Text))
-	slot0.labelHeartIcon = findTF(slot0.heart, "icon"):GetComponent(typeof(Image))
-	slot0.labelHeartPlus = findTF(slot0.heart, "heart+"):GetComponent(typeof(Text))
-	slot0.imageUnknown = findTF(slot0.tr, "unknown"):GetComponent(typeof(Image))
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.go = arg_1_1
+	arg_1_0.tr = arg_1_1.transform
+	arg_1_0.btn = GetOrAddComponent(arg_1_1, "Button")
+	arg_1_0.content = findTF(arg_1_0.tr, "content").gameObject
 
-	ClearTweenItemAlphaAndWhite(slot0.go)
+	setActive(findTF(arg_1_0.content, "dockyard"), false)
+	setActive(findTF(arg_1_0.content, "collection"), true)
+	setActive(findTF(arg_1_0.content, "expbuff"), false)
+
+	arg_1_0.shipFrameImg = findTF(arg_1_0.content, "front/frame")
+	arg_1_0.iconShip = findTF(arg_1_0.content, "ship_icon"):GetComponent(typeof(Image))
+	arg_1_0.imageBg = findTF(arg_1_0.content, "bg"):GetComponent(typeof(Image))
+	arg_1_0.labelName = findTF(arg_1_0.content, "info/name_mask/name")
+	arg_1_0.mask2D = GetOrAddComponent(findTF(arg_1_0.content, "info/name_mask"), typeof(RectMask2D))
+	arg_1_0.iconType = findTF(arg_1_0.content, "info/top/type"):GetComponent(typeof(Image))
+	arg_1_0.ringTF = findTF(arg_1_0.content, "front/ring")
+	arg_1_0.ringMetaTF = findTF(arg_1_0.content, "front/ring_meta")
+	arg_1_0.maskTF = findTF(arg_1_0.content, "collection/mask")
+	arg_1_0.heart = findTF(arg_1_0.content, "collection/heart")
+	arg_1_0.labelHeart = findTF(arg_1_0.heart, "heart"):GetComponent(typeof(Text))
+	arg_1_0.labelHeartIcon = findTF(arg_1_0.heart, "icon"):GetComponent(typeof(Image))
+	arg_1_0.labelHeartPlus = findTF(arg_1_0.heart, "heart+"):GetComponent(typeof(Text))
+	arg_1_0.imageUnknown = findTF(arg_1_0.tr, "unknown"):GetComponent(typeof(Image))
+
+	ClearTweenItemAlphaAndWhite(arg_1_0.go)
 end
 
-function slot0.getIsInited(slot0)
-	return slot0.shipGroup ~= nil
+function var_0_0.getIsInited(arg_2_0)
+	return arg_2_0.shipGroup ~= nil
 end
 
-function slot0.update(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot6 = ShipGroup.getState(slot5, slot2, slot3)
+function var_0_0.update(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4, arg_3_5)
+	local var_3_0 = ShipGroup.getState(arg_3_5, arg_3_2, arg_3_3)
 
-	if slot0.code ~= slot1 or slot0.shipGroup ~= slot2 or slot0.showTrans ~= slot3 or slot0.propose ~= slot4 or slot0.state ~= slot6 then
-		slot0.code = slot1
-		slot0.shipGroup = slot2
-		slot0.showTrans = slot3
-		slot0.propose = slot4
-		slot0.state = slot6
-		slot0.config = uv0[slot5]
+	if arg_3_0.code ~= arg_3_1 or arg_3_0.shipGroup ~= arg_3_2 or arg_3_0.showTrans ~= arg_3_3 or arg_3_0.propose ~= arg_3_4 or arg_3_0.state ~= var_3_0 then
+		arg_3_0.code = arg_3_1
+		arg_3_0.shipGroup = arg_3_2
+		arg_3_0.showTrans = arg_3_3
+		arg_3_0.propose = arg_3_4
+		arg_3_0.state = var_3_0
+		arg_3_0.config = var_0_1[arg_3_5]
 
-		slot0:flush()
+		arg_3_0:flush()
 	end
 
-	TweenItemAlphaAndWhite(slot0.go)
+	TweenItemAlphaAndWhite(arg_3_0.go)
 end
 
-function slot0.flush(slot0)
-	slot1 = slot0.shipGroup
+function var_0_0.flush(arg_4_0)
+	local var_4_0 = arg_4_0.shipGroup
 
-	setActive(slot0.heart, slot0.state == ShipGroup.STATE_UNLOCK)
+	setActive(arg_4_0.heart, arg_4_0.state == ShipGroup.STATE_UNLOCK)
 
-	if slot0.state == ShipGroup.STATE_UNLOCK then
-		slot0.labelHeart.text = slot1.hearts > 999 and "999" or tostring(slot1.hearts)
+	if arg_4_0.state == ShipGroup.STATE_UNLOCK then
+		arg_4_0.labelHeart.text = var_4_0.hearts > 999 and "999" or tostring(var_4_0.hearts)
 
-		setActive(slot0.labelHeartPlus, slot1.hearts > 999)
+		setActive(arg_4_0.labelHeartPlus, var_4_0.hearts > 999)
 
-		slot0.labelHeart.color = slot1.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
-		slot0.labelHeartIcon.color = slot1.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
-		slot0.labelHeartPlus.color = slot1.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
+		arg_4_0.labelHeart.color = var_4_0.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
+		arg_4_0.labelHeartIcon.color = var_4_0.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
+		arg_4_0.labelHeartPlus.color = var_4_0.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
 
-		slot0:loadImage(slot0.shipGroup, true)
-	elseif slot0.state == ShipGroup.STATE_NOTGET then
-		slot0.shipGroup = ShipGroup.New({
-			id = slot0.config.group_type
+		arg_4_0:loadImage(arg_4_0.shipGroup, true)
+	elseif arg_4_0.state == ShipGroup.STATE_NOTGET then
+		arg_4_0.shipGroup = ShipGroup.New({
+			id = arg_4_0.config.group_type
 		})
-		slot0.shipGroup.trans = true
+		arg_4_0.shipGroup.trans = true
 
 		if PLATFORM_CODE == PLATFORM_CH and HXSet.isHx() then
-			slot0:loadImage(slot0.shipGroup, false)
+			arg_4_0:loadImage(arg_4_0.shipGroup, false)
 		else
-			slot0:loadImage(slot0.shipGroup, true)
+			arg_4_0:loadImage(arg_4_0.shipGroup, true)
 		end
-	elseif slot0.state == ShipGroup.STATE_LOCK then
-		-- Nothing
+	elseif arg_4_0.state == ShipGroup.STATE_LOCK then
+		-- block empty
 	end
 
-	setActive(slot0.content, slot0.state == ShipGroup.STATE_NOTGET or slot0.state == ShipGroup.STATE_UNLOCK)
-	setActive(slot0.imageUnknown, slot0.state == ShipGroup.STATE_LOCK)
-	setActive(slot0.maskTF, slot0.state == ShipGroup.STATE_NOTGET)
+	setActive(arg_4_0.content, arg_4_0.state == ShipGroup.STATE_NOTGET or arg_4_0.state == ShipGroup.STATE_UNLOCK)
+	setActive(arg_4_0.imageUnknown, arg_4_0.state == ShipGroup.STATE_LOCK)
+	setActive(arg_4_0.maskTF, arg_4_0.state == ShipGroup.STATE_NOTGET)
 
-	if slot1 then
-		slot2 = slot1:isMetaGroup()
+	if var_4_0 then
+		local var_4_1 = var_4_0:isMetaGroup()
 
-		setActive(slot0.ringTF, slot0.propose and not slot2)
-		setActive(slot0.ringMetaTF, slot0.propose and slot2)
+		setActive(arg_4_0.ringTF, arg_4_0.propose and not var_4_1)
+		setActive(arg_4_0.ringMetaTF, arg_4_0.propose and var_4_1)
 	else
-		setActive(slot0.ringTF, false)
-		setActive(slot0.ringMetaTF, false)
+		setActive(arg_4_0.ringTF, false)
+		setActive(arg_4_0.ringMetaTF, false)
 	end
 
-	if not slot0.mask2D.enabled then
-		slot0.mask2D.enabled = true
+	if not arg_4_0.mask2D.enabled then
+		arg_4_0.mask2D.enabled = true
 	end
 
-	setActive(slot0.labelName, false)
-	setActive(slot0.labelName, true)
+	setActive(arg_4_0.labelName, false)
+	setActive(arg_4_0.labelName, true)
 end
 
-function slot0.loadImage(slot0, slot1, slot2)
-	slot3 = slot1:rarity2bgPrint(slot0.showTrans)
-	slot4 = slot2 and slot1:getPainting(slot0.showTrans) or "unknown"
+function var_0_0.loadImage(arg_5_0, arg_5_1, arg_5_2)
+	local var_5_0 = arg_5_1:rarity2bgPrint(arg_5_0.showTrans)
+	local var_5_1 = arg_5_2 and arg_5_1:getPainting(arg_5_0.showTrans) or "unknown"
 
-	GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. slot3, "", slot0.imageBg)
+	GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. var_5_0, "", arg_5_0.imageBg)
 
-	slot0.loadingPaintingName = slot4
+	arg_5_0.loadingPaintingName = var_5_1
 
-	GetSpriteFromAtlasAsync("shipYardIcon/" .. slot4, "", function (slot0)
-		if not IsNil(uv0.go) and uv0.loadingPaintingName == uv1 then
-			uv0.iconShip.sprite = slot0
+	GetSpriteFromAtlasAsync("shipYardIcon/" .. var_5_1, "", function(arg_6_0)
+		if not IsNil(arg_5_0.go) and arg_5_0.loadingPaintingName == var_5_1 then
+			arg_5_0.iconShip.sprite = arg_6_0
 		end
 	end)
 
-	slot0.iconType.sprite = GetSpriteFromAtlas("shiptype", shipType2print(slot1:getShipType(slot0.showTrans)))
+	arg_5_0.iconType.sprite = GetSpriteFromAtlas("shiptype", shipType2print(arg_5_1:getShipType(arg_5_0.showTrans)))
 
-	setScrollText(slot0.labelName, slot1:getName(slot0.showTrans))
-	setShipCardFrame(slot0.shipFrameImg, slot3)
+	setScrollText(arg_5_0.labelName, arg_5_1:getName(arg_5_0.showTrans))
+	setShipCardFrame(arg_5_0.shipFrameImg, var_5_0)
 end
 
-function slot0.clear(slot0)
-	slot0.shipGroup = nil
-	slot0.showTrans = nil
-	slot0.propose = nil
-	slot0.code = nil
+function var_0_0.clear(arg_7_0)
+	arg_7_0.shipGroup = nil
+	arg_7_0.showTrans = nil
+	arg_7_0.propose = nil
+	arg_7_0.code = nil
 
-	ClearTweenItemAlphaAndWhite(slot0.go)
+	ClearTweenItemAlphaAndWhite(arg_7_0.go)
 end
 
-return slot0
+return var_0_0

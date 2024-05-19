@@ -1,133 +1,152 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.MainGroupMgr = singletonClass("MainGroupMgr")
-slot0 = pg.MainGroupMgr
-slot0.GroupNameList = {
+
+local var_0_0 = pg.MainGroupMgr
+
+var_0_0.GroupNameList = {
 	PaintingGroupConst.PaintingGroupName
 }
 
-function slot0.Ctor(slot0)
-	slot0:initData()
+function var_0_0.Ctor(arg_1_0)
+	arg_1_0:initData()
 end
 
-function slot0.StartCheckD(slot0)
-	slot0.curGroupIndex = 1
+function var_0_0.StartCheckD(arg_2_0)
+	arg_2_0.curGroupIndex = 1
 
-	slot0:checkWithIndex(slot0.curGroupIndex)
-	slot0:createCheckTimer()
+	arg_2_0:checkWithIndex(arg_2_0.curGroupIndex)
+	arg_2_0:createCheckTimer()
 end
 
-function slot0.StartUpdateD(slot0)
-	slot0.finishCount = 0
+function var_0_0.StartUpdateD(arg_3_0)
+	arg_3_0.finishCount = 0
 
-	slot0:SetTotalCount()
+	arg_3_0:SetTotalCount()
 
-	slot0.curGroupIndex = 1
+	arg_3_0.curGroupIndex = 1
 
-	slot0:updateWithIndex(slot0.curGroupIndex)
-	slot0:createUpdateTimer()
+	arg_3_0:updateWithIndex(arg_3_0.curGroupIndex)
+	arg_3_0:createUpdateTimer()
 end
 
-function slot0.GetState(slot0)
-	slot1 = nil
+function var_0_0.GetState(arg_4_0)
+	local var_4_0
 
-	return slot0.groupList[(slot0.curGroupIndex <= #uv0.GroupNameList or #uv0.GroupNameList) and slot0.curGroupIndex].state
-end
-
-function slot0.GetCountProgress(slot0)
-	return slot0.finishCount + slot0.groupList[slot0.curGroupIndex].downloadCount, slot0.totalCount
-end
-
-function slot0.SetTotalCount(slot0)
-	slot0.totalCount = 0
-
-	for slot4, slot5 in ipairs(slot0.groupList) do
-		slot0.totalCount = slot0.totalCount + slot5.toUpdate.Count
+	if arg_4_0.curGroupIndex > #var_0_0.GroupNameList then
+		var_4_0 = #var_0_0.GroupNameList
+	else
+		var_4_0 = arg_4_0.curGroupIndex
 	end
 
-	return slot0.totalCount
+	return arg_4_0.groupList[var_4_0].state
 end
 
-function slot0.GetTotalSize(slot0)
-	for slot5, slot6 in ipairs(uv0.GroupNameList) do
-		slot1 = 0 + GroupHelper.GetGroupSize(slot6)
+function var_0_0.GetCountProgress(arg_5_0)
+	local var_5_0 = arg_5_0.groupList[arg_5_0.curGroupIndex]
+
+	return arg_5_0.finishCount + var_5_0.downloadCount, arg_5_0.totalCount
+end
+
+function var_0_0.SetTotalCount(arg_6_0)
+	arg_6_0.totalCount = 0
+
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0.groupList) do
+		arg_6_0.totalCount = arg_6_0.totalCount + iter_6_1.toUpdate.Count
 	end
 
-	return slot1
+	return arg_6_0.totalCount
 end
 
-function slot0.initData(slot0)
-	slot0.curGroupIndex = 1
-	slot0.frameTimer = nil
-	slot0.finishCount = 0
-	slot0.totalCount = 0
-	slot0.groupList = {}
+function var_0_0.GetTotalSize(arg_7_0)
+	local var_7_0 = 0
 
-	for slot4, slot5 in ipairs(uv0.GroupNameList) do
-		table.insert(slot0.groupList, GroupHelper.GetGroupMgrByName(slot5))
+	for iter_7_0, iter_7_1 in ipairs(var_0_0.GroupNameList) do
+		var_7_0 = var_7_0 + GroupHelper.GetGroupSize(iter_7_1)
+	end
+
+	return var_7_0
+end
+
+function var_0_0.initData(arg_8_0)
+	arg_8_0.curGroupIndex = 1
+	arg_8_0.frameTimer = nil
+	arg_8_0.finishCount = 0
+	arg_8_0.totalCount = 0
+	arg_8_0.groupList = {}
+
+	for iter_8_0, iter_8_1 in ipairs(var_0_0.GroupNameList) do
+		local var_8_0 = GroupHelper.GetGroupMgrByName(iter_8_1)
+
+		table.insert(arg_8_0.groupList, var_8_0)
 	end
 end
 
-function slot0.clearTimer(slot0)
-	if slot0.frameTimer then
-		slot0.frameTimer:Stop()
+function var_0_0.clearTimer(arg_9_0)
+	if arg_9_0.frameTimer then
+		arg_9_0.frameTimer:Stop()
 
-		slot0.frameTimer = nil
+		arg_9_0.frameTimer = nil
 	end
 end
 
-function slot0.checkWithIndex(slot0, slot1)
-	if slot1 > #uv0.GroupNameList then
-		slot0:clearTimer()
+function var_0_0.checkWithIndex(arg_10_0, arg_10_1)
+	if arg_10_1 > #var_0_0.GroupNameList then
+		arg_10_0:clearTimer()
 
 		return
 	end
 
-	slot0.groupList[slot0.curGroupIndex]:CheckD()
+	arg_10_0.groupList[arg_10_0.curGroupIndex]:CheckD()
 end
 
-function slot0.onCheckD(slot0)
-	if slot0.groupList[slot0.curGroupIndex].state == DownloadState.CheckToUpdate or slot2 == DownloadState.CheckOver or slot2 == DownloadState.UpdateSuccess then
-		slot0.curGroupIndex = slot0.curGroupIndex + 1
+function var_0_0.onCheckD(arg_11_0)
+	local var_11_0 = arg_11_0.groupList[arg_11_0.curGroupIndex]
+	local var_11_1 = var_11_0.state
 
-		slot0:checkWithIndex(slot0.curGroupIndex)
-	elseif slot1.state == DownloadState.CheckFailure then
-		slot0:clearTimer()
+	if var_11_1 == DownloadState.CheckToUpdate or var_11_1 == DownloadState.CheckOver or var_11_1 == DownloadState.UpdateSuccess then
+		arg_11_0.curGroupIndex = arg_11_0.curGroupIndex + 1
+
+		arg_11_0:checkWithIndex(arg_11_0.curGroupIndex)
+	elseif var_11_0.state == DownloadState.CheckFailure then
+		arg_11_0:clearTimer()
 	end
 end
 
-function slot0.createCheckTimer(slot0)
-	slot0.frameTimer = FrameTimer.New(function ()
-		uv0:onCheckD()
+function var_0_0.createCheckTimer(arg_12_0)
+	arg_12_0.frameTimer = FrameTimer.New(function()
+		arg_12_0:onCheckD()
 	end, 1, -1)
 
-	slot0.frameTimer:Start()
+	arg_12_0.frameTimer:Start()
 end
 
-function slot0.updateWithIndex(slot0, slot1)
-	if slot1 > #uv0.GroupNameList then
-		slot0:clearTimer()
+function var_0_0.updateWithIndex(arg_14_0, arg_14_1)
+	if arg_14_1 > #var_0_0.GroupNameList then
+		arg_14_0:clearTimer()
 
 		return
 	end
 
-	slot0.groupList[slot0.curGroupIndex]:UpdateD()
+	arg_14_0.groupList[arg_14_0.curGroupIndex]:UpdateD()
 end
 
-function slot0.onUpdateD(slot0)
-	if slot0.groupList[slot0.curGroupIndex].state == DownloadState.UpdateSuccess then
-		slot0.finishCount = slot0.finishCount + slot1.downloadTotal
-		slot0.curGroupIndex = slot0.curGroupIndex + 1
+function var_0_0.onUpdateD(arg_15_0)
+	local var_15_0 = arg_15_0.groupList[arg_15_0.curGroupIndex]
 
-		slot0:updateWithIndex(slot0.curGroupIndex)
-	elseif slot1.state == DownloadState.UpdateFailure then
-		slot0:clearTimer()
+	if var_15_0.state == DownloadState.UpdateSuccess then
+		arg_15_0.finishCount = arg_15_0.finishCount + var_15_0.downloadTotal
+		arg_15_0.curGroupIndex = arg_15_0.curGroupIndex + 1
+
+		arg_15_0:updateWithIndex(arg_15_0.curGroupIndex)
+	elseif var_15_0.state == DownloadState.UpdateFailure then
+		arg_15_0:clearTimer()
 	end
 end
 
-function slot0.createUpdateTimer(slot0)
-	slot0.frameTimer = FrameTimer.New(function ()
-		uv0:onUpdateD()
+function var_0_0.createUpdateTimer(arg_16_0)
+	arg_16_0.frameTimer = FrameTimer.New(function()
+		arg_16_0:onUpdateD()
 	end, 1, -1)
 
-	slot0.frameTimer:Start()
+	arg_16_0.frameTimer:Start()
 end

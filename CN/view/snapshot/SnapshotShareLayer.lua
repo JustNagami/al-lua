@@ -1,31 +1,33 @@
-slot0 = class("SnapshotShareLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("SnapshotShareLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "snapshotshareui"
 end
 
-function slot0.init(slot0)
-	slot0.photoImgTrans = slot0:findTF("PhotoImg")
-	slot0.rawImage = slot0.photoImgTrans:GetComponent("RawImage")
-	slot0.shareBtnTrans = slot0:findTF("BtnPanel/ShareBtn")
-	slot0.confirmBtnTrans = slot0:findTF("BtnPanel/ConfirmBtn")
-	slot0.cancelBtnTrans = slot0:findTF("BtnPanel/CancelBtn")
-	slot0.userAgreenTF = slot0:findTF("UserAgreement")
-	slot0.userAgreenMainTF = slot0:findTF("window", slot0.userAgreenTF)
-	slot0.closeUserAgreenTF = slot0:findTF("close_btn", slot0.userAgreenMainTF)
-	slot0.userRefuseConfirmTF = slot0:findTF("refuse_btn", slot0.userAgreenMainTF)
-	slot0.userAgreenConfirmTF = slot0:findTF("accept_btn", slot0.userAgreenMainTF)
+function var_0_0.init(arg_2_0)
+	arg_2_0.photoImgTrans = arg_2_0:findTF("PhotoImg")
+	arg_2_0.rawImage = arg_2_0.photoImgTrans:GetComponent("RawImage")
+	arg_2_0.shareBtnTrans = arg_2_0:findTF("BtnPanel/ShareBtn")
+	arg_2_0.confirmBtnTrans = arg_2_0:findTF("BtnPanel/ConfirmBtn")
+	arg_2_0.cancelBtnTrans = arg_2_0:findTF("BtnPanel/CancelBtn")
+	arg_2_0.userAgreenTF = arg_2_0:findTF("UserAgreement")
+	arg_2_0.userAgreenMainTF = arg_2_0:findTF("window", arg_2_0.userAgreenTF)
+	arg_2_0.closeUserAgreenTF = arg_2_0:findTF("close_btn", arg_2_0.userAgreenMainTF)
+	arg_2_0.userRefuseConfirmTF = arg_2_0:findTF("refuse_btn", arg_2_0.userAgreenMainTF)
+	arg_2_0.userAgreenConfirmTF = arg_2_0:findTF("accept_btn", arg_2_0.userAgreenMainTF)
 
-	setActive(slot0.userAgreenTF, false)
+	setActive(arg_2_0.userAgreenTF, false)
 
-	slot0.rawImage.texture = slot0.contextData.photoTex
-	slot0.bytes = slot0.contextData.photoData
+	arg_2_0.rawImage.texture = arg_2_0.contextData.photoTex
+	arg_2_0.bytes = arg_2_0.contextData.photoData
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.shareBtnTrans, function ()
-		if not PlayerPrefs.GetInt("snapshotAgress") or slot0 <= 0 then
-			uv0:showUserAgreement(function ()
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0.shareBtnTrans, function()
+		local var_4_0 = PlayerPrefs.GetInt("snapshotAgress")
+
+		if not var_4_0 or var_4_0 <= 0 then
+			arg_3_0:showUserAgreement(function()
 				PlayerPrefs.SetInt("snapshotAgress", 1)
 				pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypePhoto)
 			end)
@@ -33,43 +35,47 @@ function slot0.didEnter(slot0)
 			pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypePhoto)
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.confirmBtnTrans, function ()
-		slot0 = pg.TimeMgr.GetInstance():STimeDescS(pg.TimeMgr.GetInstance():GetServerTime(), "*t")
+	onButton(arg_3_0, arg_3_0.confirmBtnTrans, function()
+		local var_6_0 = pg.TimeMgr.GetInstance():STimeDescS(pg.TimeMgr.GetInstance():GetServerTime(), "*t")
+		local var_6_1 = "azur" .. var_6_0.year .. var_6_0.month .. var_6_0.day .. var_6_0.hour .. var_6_0.min .. var_6_0.sec .. ".jpg"
+		local var_6_2 = Application.persistentDataPath .. "/" .. var_6_1
 
-		MediaSaver.SaveImageWithBytes(Application.persistentDataPath .. "/" .. ("azur" .. slot0.year .. slot0.month .. slot0.day .. slot0.hour .. slot0.min .. slot0.sec .. ".jpg"), uv0.bytes)
+		MediaSaver.SaveImageWithBytes(var_6_2, arg_3_0.bytes)
 		pg.TipsMgr.GetInstance():ShowTips(i18n("word_save_ok"))
-		uv0:closeView()
+		arg_3_0:closeView()
 	end)
-	onButton(slot0, slot0.cancelBtnTrans, function ()
-		uv0:closeView()
+	onButton(arg_3_0, arg_3_0.cancelBtnTrans, function()
+		arg_3_0:closeView()
 	end)
 end
 
-function slot0.willExit(slot0)
+function var_0_0.willExit(arg_8_0)
+	return
 end
 
-function slot0.showUserAgreement(slot0, slot1)
-	setButtonEnabled(slot0.userAgreenConfirmTF, true)
+function var_0_0.showUserAgreement(arg_9_0, arg_9_1)
+	setButtonEnabled(arg_9_0.userAgreenConfirmTF, true)
 
-	slot2 = nil
-	slot0.userAgreenTitleTF = slot0:findTF("UserAgreement/window/title")
-	slot0.userAgreenTitleTF:GetComponent("Text").text = i18n("word_snapshot_share_title")
+	local var_9_0
 
-	setActive(slot0.userAgreenTF, true)
-	setText(slot0.userAgreenTF:Find("window/container/scrollrect/content/Text"), i18n("word_snapshot_share_agreement"))
-	onButton(slot0, slot0.userRefuseConfirmTF, function ()
-		setActive(uv0.userAgreenTF, false)
+	arg_9_0.userAgreenTitleTF = arg_9_0:findTF("UserAgreement/window/title")
+	arg_9_0.userAgreenTitleTF:GetComponent("Text").text = i18n("word_snapshot_share_title")
+
+	setActive(arg_9_0.userAgreenTF, true)
+	setText(arg_9_0.userAgreenTF:Find("window/container/scrollrect/content/Text"), i18n("word_snapshot_share_agreement"))
+	onButton(arg_9_0, arg_9_0.userRefuseConfirmTF, function()
+		setActive(arg_9_0.userAgreenTF, false)
 	end)
-	onButton(slot0, slot0.userAgreenConfirmTF, function ()
-		setActive(uv0.userAgreenTF, false)
+	onButton(arg_9_0, arg_9_0.userAgreenConfirmTF, function()
+		setActive(arg_9_0.userAgreenTF, false)
 
-		if uv1 then
-			uv1()
+		if arg_9_1 then
+			arg_9_1()
 		end
 	end)
-	onButton(slot0, slot0.closeUserAgreenTF, function ()
-		setActive(uv0.userAgreenTF, false)
+	onButton(arg_9_0, arg_9_0.closeUserAgreenTF, function()
+		setActive(arg_9_0.userAgreenTF, false)
 	end)
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-return {
+﻿return {
 	uiEffect = "",
 	name = "Terror Field",
 	cd = 0,

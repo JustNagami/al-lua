@@ -1,12 +1,13 @@
-slot0 = class("LevelStageSSSSFeverPanel", import("view.base.BaseSubPanel"))
+﻿local var_0_0 = class("LevelStageSSSSFeverPanel", import("view.base.BaseSubPanel"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "LevelStageSSSSFeverPanel"
 end
 
-slot0.stepCount = 10
-slot0.enemyCount = 4
-slot1 = {
+var_0_0.stepCount = 10
+var_0_0.enemyCount = 4
+
+local var_0_1 = {
 	liuhua = {
 		9401,
 		9403,
@@ -32,7 +33,7 @@ slot1 = {
 		9455
 	}
 }
-slot2 = {
+local var_0_2 = {
 	qian = {
 		9461,
 		9463,
@@ -51,232 +52,245 @@ slot2 = {
 	}
 }
 
-function slot0.OnInit(slot0)
-	slot0.barGroup1 = slot0:GetBarTFGroup(slot0._tf:Find("Bar1"))
-	slot3 = slot0._tf
-	slot4 = slot3
-	slot5 = "Bar2"
-	slot0.barGroup2 = slot0:GetBarTFGroup(slot3.Find(slot4, slot5))
-	slot0.banner = slot0._tf:Find("Banner")
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0.barGroup1 = arg_2_0:GetBarTFGroup(arg_2_0._tf:Find("Bar1"))
+	arg_2_0.barGroup2 = arg_2_0:GetBarTFGroup(arg_2_0._tf:Find("Bar2"))
+	arg_2_0.banner = arg_2_0._tf:Find("Banner")
 
-	setActive(slot0.banner, false)
+	setActive(arg_2_0.banner, false)
 
-	slot0.buff2Character = {}
+	arg_2_0.buff2Character = {}
 
-	for slot4, slot5 in pairs(uv0) do
-		for slot9, slot10 in ipairs(slot5) do
-			slot0.buff2Character[slot10] = slot4
+	for iter_2_0, iter_2_1 in pairs(var_0_1) do
+		for iter_2_2, iter_2_3 in ipairs(iter_2_1) do
+			arg_2_0.buff2Character[iter_2_3] = iter_2_0
 		end
 	end
 
-	slot0.buff2Enemy = {}
+	arg_2_0.buff2Enemy = {}
 
-	for slot4, slot5 in pairs(uv1) do
-		for slot9, slot10 in ipairs(slot5) do
-			slot0.buff2Enemy[slot10] = slot4
+	for iter_2_4, iter_2_5 in pairs(var_0_2) do
+		for iter_2_6, iter_2_7 in ipairs(iter_2_5) do
+			arg_2_0.buff2Enemy[iter_2_7] = iter_2_4
 		end
 	end
 
-	slot0.loader = AutoLoader.New()
-	slot0.animations = AsyncExcutionRequestPackage.New({})
-	slot0.PanelAnimations = AsyncExcutionRequestPackage.New({})
-	slot0.cleanActions = {}
+	arg_2_0.loader = AutoLoader.New()
+	arg_2_0.animations = AsyncExcutionRequestPackage.New({})
+	arg_2_0.PanelAnimations = AsyncExcutionRequestPackage.New({})
+	arg_2_0.cleanActions = {}
 end
 
-function slot0.GetIcon(slot0, slot1, slot2)
-	slot4 = slot2 and slot0.buff2Character or slot0.buff2Enemy
+function var_0_0.GetIcon(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = arg_3_1.buff_list
+	local var_3_1 = arg_3_2 and arg_3_0.buff2Character or arg_3_0.buff2Enemy
 
-	for slot8, slot9 in ipairs(slot1.buff_list) do
-		if slot4[slot9] then
-			return slot4[slot9]
+	for iter_3_0, iter_3_1 in ipairs(var_3_0) do
+		if var_3_1[iter_3_1] then
+			return var_3_1[iter_3_1]
 		end
 	end
 
 	return ""
 end
 
-function slot0.GetBarTFGroup(slot0, slot1)
+function var_0_0.GetBarTFGroup(arg_4_0, arg_4_1)
 	return {
-		main = slot1,
-		fillImg = slot1:Find("Fill"),
-		ratioText = slot1:Find("Text"),
-		iconImg = slot1:Find("Icon")
+		main = arg_4_1,
+		fillImg = arg_4_1:Find("Fill"),
+		ratioText = arg_4_1:Find("Text"),
+		iconImg = arg_4_1:Find("Icon")
 	}
 end
 
-slot3 = {
+local var_0_3 = {
 	1590001,
 	1590051
 }
 
-function slot0.UpdateView(slot0, slot1, slot2)
-	if table.contains(uv0, slot1.id) then
-		slot0:Hide()
-		existCall(slot2)
+function var_0_0.UpdateView(arg_5_0, arg_5_1, arg_5_2)
+	if table.contains(var_0_3, arg_5_1.id) then
+		arg_5_0:Hide()
+		existCall(arg_5_2)
 
 		return
 	end
 
-	slot0:UpdateKaijuBar(slot1)
-	slot0:UpdateSyberSquadBar(slot1)
-	slot0.animations:Resume()
-	slot0.PanelAnimations:Insert(function (slot0)
-		existCall(uv0)
-		slot0()
+	arg_5_0:UpdateKaijuBar(arg_5_1)
+	arg_5_0:UpdateSyberSquadBar(arg_5_1)
+	arg_5_0.animations:Resume()
+	arg_5_0.PanelAnimations:Insert(function(arg_6_0)
+		existCall(arg_5_2)
+		arg_6_0()
 	end)
-	slot0.PanelAnimations:Resume()
+	arg_5_0.PanelAnimations:Resume()
 end
 
-function slot0.UpdateKaijuBar(slot0, slot1)
-	slot5 = math.min(slot1.moveStep / (slot1:isLoop() and 0 or uv0.stepCount), 1)
-	slot7 = slot0.barGroup1.fillImg:GetComponent(typeof(Image))
-	slot8 = slot0.barGroup1.ratioText
+function var_0_0.UpdateKaijuBar(arg_7_0, arg_7_1)
+	local var_7_0 = getProxy(ChapterProxy):GetExtendChapterData(arg_7_1.id, "FleetMoveDistance")
+	local var_7_1 = arg_7_1.moveStep
+	local var_7_2 = arg_7_1:isLoop() and 0 or var_0_0.stepCount
+	local var_7_3 = math.min(var_7_1 / var_7_2, 1)
+	local var_7_4 = arg_7_0.barGroup1.fillImg
+	local var_7_5 = var_7_4:GetComponent(typeof(Image))
+	local var_7_6 = arg_7_0.barGroup1.ratioText
 
-	if getProxy(ChapterProxy):GetExtendChapterData(slot1.id, "FleetMoveDistance") and slot3 <= slot4 then
-		slot0.animations:Insert(function (slot0)
-			slot1 = uv0 - uv1
-			slot2 = slot1 / uv2
+	if var_7_0 and var_7_1 <= var_7_2 then
+		arg_7_0.animations:Insert(function(arg_8_0)
+			local var_8_0 = var_7_1 - var_7_0
+			local var_8_1 = var_8_0 / var_7_2
+			local var_8_2 = math.min(var_7_0, var_7_2 - var_8_0)
 
-			LeanTween.value(go(uv3), 0, 1, math.min(uv1, uv2 - slot1)):setOnUpdate(System.Action_float(function (slot0)
-				slot1 = Mathf.Lerp(uv0, uv1, slot0)
-				uv2.fillAmount = slot1
+			LeanTween.value(go(var_7_4), 0, 1, var_8_2):setOnUpdate(System.Action_float(function(arg_9_0)
+				local var_9_0 = Mathf.Lerp(var_8_1, var_7_3, arg_9_0)
 
-				setText(uv3, string.format("%02d%%", math.floor(slot1 * 100)))
-			end)):setOnComplete(System.Action(slot0))
+				var_7_5.fillAmount = var_9_0
+
+				setText(var_7_6, string.format("%02d%%", math.floor(var_9_0 * 100)))
+			end)):setOnComplete(System.Action(arg_8_0))
 		end)
 	end
 
-	slot9 = slot0:GetIcon(slot1, false)
+	local var_7_7 = arg_7_0:GetIcon(arg_7_1, false)
 
-	slot0.animations:Insert(function (slot0)
-		uv0.fillAmount = uv1
+	arg_7_0.animations:Insert(function(arg_10_0)
+		var_7_5.fillAmount = var_7_3
 
-		setText(uv2, string.format("%02d%%", math.floor(uv1 * 100)))
+		setText(var_7_6, string.format("%02d%%", math.floor(var_7_3 * 100)))
 
-		if uv1 >= 1 then
-			uv3.loader:GetSpriteQuiet("ui/LevelStageSSSSFeverPanel_atlas", "icon_" .. uv4, uv3.barGroup1.iconImg, true)
+		if var_7_3 >= 1 then
+			arg_7_0.loader:GetSpriteQuiet("ui/LevelStageSSSSFeverPanel_atlas", "icon_" .. var_7_7, arg_7_0.barGroup1.iconImg, true)
 		end
 
-		slot0()
+		arg_10_0()
 	end)
 
-	if slot2 and slot4 > slot3 - slot2 and slot4 <= slot3 then
-		slot0.PanelAnimations:Insert(function (slot0)
-			uv0:ShowPanel(uv1, "Kaiju", slot0, uv1 == "he" and "" or "2")
+	if var_7_0 and var_7_2 > var_7_1 - var_7_0 and var_7_2 <= var_7_1 then
+		arg_7_0.PanelAnimations:Insert(function(arg_11_0)
+			arg_7_0:ShowPanel(var_7_7, "Kaiju", arg_11_0, var_7_7 == "he" and "" or "2")
 		end)
 	end
 end
 
-function slot0.UpdateSyberSquadBar(slot0, slot1)
-	slot5 = math.min(slot1.defeatEnemies / (slot1:isLoop() and 0 or uv0.enemyCount), 1)
-	slot7 = slot0.barGroup2.fillImg:GetComponent(typeof(Image))
-	slot8 = slot0.barGroup2.ratioText
+function var_0_0.UpdateSyberSquadBar(arg_12_0, arg_12_1)
+	local var_12_0 = getProxy(ChapterProxy):GetLastDefeatedEnemy(arg_12_1.id)
+	local var_12_1 = arg_12_1.defeatEnemies
+	local var_12_2 = arg_12_1:isLoop() and 0 or var_0_0.enemyCount
+	local var_12_3 = math.min(var_12_1 / var_12_2, 1)
+	local var_12_4 = arg_12_0.barGroup2.fillImg
+	local var_12_5 = var_12_4:GetComponent(typeof(Image))
+	local var_12_6 = arg_12_0.barGroup2.ratioText
 
-	if getProxy(ChapterProxy):GetLastDefeatedEnemy(slot1.id) and slot3 <= slot4 then
-		slot0.animations:Insert(function (slot0)
-			slot2 = math.max(uv0 - 1, 0) / uv1
+	if var_12_0 and var_12_1 <= var_12_2 then
+		arg_12_0.animations:Insert(function(arg_13_0)
+			local var_13_0 = math.max(var_12_1 - 1, 0) / var_12_2
 
-			LeanTween.value(go(uv2), 0, 1, 1):setOnUpdate(System.Action_float(function (slot0)
-				slot1 = Mathf.Lerp(uv0, uv1, slot0)
-				uv2.fillAmount = slot1
+			LeanTween.value(go(var_12_4), 0, 1, 1):setOnUpdate(System.Action_float(function(arg_14_0)
+				local var_14_0 = Mathf.Lerp(var_13_0, var_12_3, arg_14_0)
 
-				setText(uv3, string.format("%02d%%", math.floor(slot1 * 100)))
-			end)):setOnComplete(System.Action(slot0))
+				var_12_5.fillAmount = var_14_0
+
+				setText(var_12_6, string.format("%02d%%", math.floor(var_14_0 * 100)))
+			end)):setOnComplete(System.Action(arg_13_0))
 		end)
 	end
 
-	slot9 = slot0:GetIcon(slot1, true)
+	local var_12_7 = arg_12_0:GetIcon(arg_12_1, true)
 
-	slot0.animations:Insert(function (slot0)
-		uv0.fillAmount = uv1
+	arg_12_0.animations:Insert(function(arg_15_0)
+		var_12_5.fillAmount = var_12_3
 
-		setText(uv2, string.format("%02d%%", math.floor(uv1 * 100)))
+		setText(var_12_6, string.format("%02d%%", math.floor(var_12_3 * 100)))
 
-		if uv1 >= 1 then
-			uv3.loader:GetSpriteQuiet("ui/LevelStageSSSSFeverPanel_atlas", "icon_" .. uv4, uv3.barGroup2.iconImg, true)
+		if var_12_3 >= 1 then
+			arg_12_0.loader:GetSpriteQuiet("ui/LevelStageSSSSFeverPanel_atlas", "icon_" .. var_12_7, arg_12_0.barGroup2.iconImg, true)
 		end
 
-		slot0()
+		arg_15_0()
 	end)
 
-	if slot2 and slot3 == slot4 then
-		slot0.PanelAnimations:Insert(function (slot0)
-			uv0:ShowPanel(uv1, "SyberSquad", slot0)
+	if var_12_0 and var_12_1 == var_12_2 then
+		arg_12_0.PanelAnimations:Insert(function(arg_16_0)
+			arg_12_0:ShowPanel(var_12_7, "SyberSquad", arg_16_0)
 		end)
 	end
 end
 
-function slot0.ShowPanel(slot0, slot1, slot2, slot3, slot4)
-	slot0:emit(LevelUIConst.FROZEN)
-	pg.UIMgr.GetInstance():BlurPanel(slot0.banner)
+function var_0_0.ShowPanel(arg_17_0, arg_17_1, arg_17_2, arg_17_3, arg_17_4)
+	arg_17_0:emit(LevelUIConst.FROZEN)
+	pg.UIMgr.GetInstance():BlurPanel(arg_17_0.banner)
 
-	slot5 = slot0.banner:Find(slot2)
-	slot6 = slot5:Find("Character")
+	local var_17_0 = arg_17_0.banner:Find(arg_17_2)
+	local var_17_1 = var_17_0:Find("Character")
+	local var_17_2 = var_17_1:GetComponent(typeof(Image))
 
-	slot0.loader:GetSpriteQuiet("ui/LevelStageSSSSFeverPanel_atlas", slot1, slot6, true)
-	setActive(slot0.banner, true)
-	setAnchoredPosition(slot5, {
+	arg_17_0.loader:GetSpriteQuiet("ui/LevelStageSSSSFeverPanel_atlas", arg_17_1, var_17_1, true)
+	setActive(arg_17_0.banner, true)
+	setAnchoredPosition(var_17_0, {
 		x = 2436
 	})
-	setActive(slot5, true)
+	setActive(var_17_0, true)
 
-	slot6:GetComponent(typeof(Image)).enabled = true
+	var_17_2.enabled = true
 
-	if slot4 ~= nil then
-		setActive(slot5:Find("Word"), false)
-		setActive(slot5:Find("Word2"), false)
-		setActive(slot5:Find("Word" .. slot4), true)
+	if arg_17_4 ~= nil then
+		setActive(var_17_0:Find("Word"), false)
+		setActive(var_17_0:Find("Word2"), false)
+		setActive(var_17_0:Find("Word" .. arg_17_4), true)
 	end
 
-	slot9 = nil
+	local var_17_3 = var_17_0:GetComponent(typeof(DftAniEvent))
+	local var_17_4
 
-	function slot10()
-		uv0()
-		existCall(uv1)
+	local function var_17_5()
+		table.removebyvalue(arg_17_0.cleanActions, var_17_5)
+		var_17_3:SetEndEvent(nil)
+
+		var_17_2.enabled = false
+		var_17_2.sprite = nil
+
+		pg.UIMgr.GetInstance():UnblurPanel(arg_17_0.banner, arg_17_0._tf)
+		setActive(arg_17_0.banner, false)
+		setActive(var_17_0, false)
+		arg_17_0:emit(LevelUIConst.UN_FROZEN)
 	end
 
-	slot5:GetComponent(typeof(DftAniEvent)):SetEndEvent(slot10)
-	onButton(slot0, slot0.banner, slot10)
-	table.insert(slot0.cleanActions, function ()
-		table.removebyvalue(uv0.cleanActions, uv1)
-		uv2:SetEndEvent(nil)
+	local function var_17_6()
+		var_17_5()
+		existCall(arg_17_3)
+	end
 
-		uv3.enabled = false
-		uv3.sprite = nil
-
-		pg.UIMgr.GetInstance():UnblurPanel(uv0.banner, uv0._tf)
-		setActive(uv0.banner, false)
-		setActive(uv4, false)
-		uv0:emit(LevelUIConst.UN_FROZEN)
-	end)
+	var_17_3:SetEndEvent(var_17_6)
+	onButton(arg_17_0, arg_17_0.banner, var_17_6)
+	table.insert(arg_17_0.cleanActions, var_17_5)
 end
 
-function slot0.CloseActions(slot0)
-	if slot0.animations and not slot0.animations.stopped then
-		slot0.animations:Stop()
+function var_0_0.CloseActions(arg_20_0)
+	if arg_20_0.animations and not arg_20_0.animations.stopped then
+		arg_20_0.animations:Stop()
 	end
 
-	slot0.animations = nil
+	arg_20_0.animations = nil
 
-	if slot0.PanelAnimations and not slot0.PanelAnimations.stopped then
-		slot0.PanelAnimations:Stop()
+	if arg_20_0.PanelAnimations and not arg_20_0.PanelAnimations.stopped then
+		arg_20_0.PanelAnimations:Stop()
 	end
 
-	slot0.PanelAnimations = nil
+	arg_20_0.PanelAnimations = nil
 
-	if slot0.cleanActions then
-		_.each(slot0.cleanActions, function (slot0)
-			slot0()
+	if arg_20_0.cleanActions then
+		_.each(arg_20_0.cleanActions, function(arg_21_0)
+			arg_21_0()
 		end)
 	end
 
-	slot0.cleanActions = nil
+	arg_20_0.cleanActions = nil
 
-	slot0.loader:ClearRequests()
+	arg_20_0.loader:ClearRequests()
 end
 
-function slot0.OnHide(slot0)
-	slot0:CloseActions()
+function var_0_0.OnHide(arg_22_0)
+	arg_22_0:CloseActions()
 end
 
-return slot0
+return var_0_0

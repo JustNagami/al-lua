@@ -1,32 +1,36 @@
-slot0 = class("ActivityStoreDataCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ActivityStoreDataCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = slot2.callback
-	slot4 = slot2.activity_id
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.callback
+	local var_1_2 = var_1_0.activity_id
+	local var_1_3 = getProxy(ActivityProxy):getActivityById(var_1_0.activity_id)
 
-	if not getProxy(ActivityProxy):getActivityById(slot2.activity_id) or slot5:isEnd() then
+	if not var_1_3 or var_1_3:isEnd() then
 		return
 	end
 
+	local var_1_4 = var_1_0.intValue or 0
+	local var_1_5 = var_1_0.strValue or ""
+
 	pg.ConnectionMgr.GetInstance():Send(26160, {
-		act_id = slot4,
-		int_value = slot2.intValue or 0,
-		str_value = slot2.strValue or ""
-	}, 26161, function (slot0)
-		if slot0.result == 0 then
-			uv0.data1 = uv1
-			uv0.str_data1 = uv2
+		act_id = var_1_2,
+		int_value = var_1_4,
+		str_value = var_1_5
+	}, 26161, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			var_1_3.data1 = var_1_4
+			var_1_3.str_data1 = var_1_5
 
-			getProxy(ActivityProxy):updateActivity(uv0)
+			getProxy(ActivityProxy):updateActivity(var_1_3)
 
-			if uv3 then
-				uv3()
+			if var_1_1 then
+				var_1_1()
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

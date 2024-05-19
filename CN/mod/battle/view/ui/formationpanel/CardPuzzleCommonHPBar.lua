@@ -1,35 +1,42 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConfig
-slot0.Battle.CardPuzzleCommonHPBar = class("CardPuzzleCommonHPBar")
-slot2 = slot0.Battle.CardPuzzleCommonHPBar
-slot2.__name = "CardPuzzleCommonHPBar"
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, slot1)
-	slot0._go = slot1
-	slot0._tf = slot0._go.transform
-	slot0._hpTF = slot0._tf:Find("fleetBlood/blood")
-	slot0._hpProgress = slot0._hpTF:GetComponent(typeof(Image))
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConfig
+
+var_0_0.Battle.CardPuzzleCommonHPBar = class("CardPuzzleCommonHPBar")
+
+local var_0_2 = var_0_0.Battle.CardPuzzleCommonHPBar
+
+var_0_2.__name = "CardPuzzleCommonHPBar"
+
+function var_0_2.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._go = arg_1_1
+	arg_1_0._tf = arg_1_0._go.transform
+	arg_1_0._hpTF = arg_1_0._tf:Find("fleetBlood/blood")
+	arg_1_0._hpProgress = arg_1_0._hpTF:GetComponent(typeof(Image))
 end
 
-function slot2.SetCardPuzzleComponent(slot0, slot1)
-	slot0._info = slot1
+function var_0_2.SetCardPuzzleComponent(arg_2_0, arg_2_1)
+	arg_2_0._info = arg_2_1
 end
 
-function slot2.Update(slot0)
-	slot0:updateHPBar()
+function var_0_2.Update(arg_3_0)
+	arg_3_0:updateHPBar()
 end
 
-function slot2.updateHPBar(slot0)
-	slot0._hpProgress.fillAmount = slot0._info:GetCurrentCommonHP() / slot0._info:GetTotalCommonHP()
+function var_0_2.updateHPBar(arg_4_0)
+	local var_4_0 = arg_4_0._info:GetCurrentCommonHP() / arg_4_0._info:GetTotalCommonHP()
+
+	arg_4_0._hpProgress.fillAmount = var_4_0
 end
 
-function slot2.Dispose(slot0)
-	slot0._hpProgress = nil
-	slot0._hpTF = nil
-	slot0._tf = nil
-	slot0._go = nil
+function var_0_2.Dispose(arg_5_0)
+	arg_5_0._hpProgress = nil
+	arg_5_0._hpTF = nil
+	arg_5_0._tf = nil
+	arg_5_0._go = nil
 end
 
-function slot2.updateResource(slot0)
+function var_0_2.updateResource(arg_6_0)
+	return
 end

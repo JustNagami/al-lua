@@ -1,27 +1,31 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleCommand = class("BattleCommand", slot0.MVC.Command)
-slot0.Battle.BattleCommand.__name = "BattleCommand"
+﻿ys = ys or {}
 
-function slot0.Battle.BattleCommand.Ctor(slot0)
-	uv0.Battle.BattleCommand.super.Ctor(slot0)
+local var_0_0 = ys
+
+var_0_0.Battle.BattleCommand = class("BattleCommand", var_0_0.MVC.Command)
+var_0_0.Battle.BattleCommand.__name = "BattleCommand"
+
+function var_0_0.Battle.BattleCommand.Ctor(arg_1_0)
+	var_0_0.Battle.BattleCommand.super.Ctor(arg_1_0)
 end
 
-function slot0.Battle.BattleCommand.Initialize(slot0)
-	uv0.Battle.BattleCommand.super.Initialize(slot0)
+function var_0_0.Battle.BattleCommand.Initialize(arg_2_0)
+	var_0_0.Battle.BattleCommand.super.Initialize(arg_2_0)
 
-	slot0._dataProxy = slot0._state:GetProxyByName(uv0.Battle.BattleDataProxy.__name)
+	arg_2_0._dataProxy = arg_2_0._state:GetProxyByName(var_0_0.Battle.BattleDataProxy.__name)
 
-	slot0:InitProtocol()
-	slot0:InitBattleEvent()
+	arg_2_0:InitProtocol()
+	arg_2_0:InitBattleEvent()
 end
 
-function slot0.Battle.BattleCommand.StartBattle(slot0)
-	slot0._state:Active()
+function var_0_0.Battle.BattleCommand.StartBattle(arg_3_0)
+	arg_3_0._state:Active()
 end
 
-function slot0.Battle.BattleCommand.InitProtocol(slot0)
+function var_0_0.Battle.BattleCommand.InitProtocol(arg_4_0)
+	return
 end
 
-function slot0.Battle.BattleCommand.InitBattleEvent(slot0)
+function var_0_0.Battle.BattleCommand.InitBattleEvent(arg_5_0)
+	return
 end

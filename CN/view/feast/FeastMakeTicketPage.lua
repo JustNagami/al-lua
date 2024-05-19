@@ -1,325 +1,340 @@
-slot0 = class("FeastMakeTicketPage", import("view.base.BaseSubView"))
+﻿local var_0_0 = class("FeastMakeTicketPage", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "FeastPuzzlePage"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.back = slot0:findTF("back")
-	slot0.finishTr = slot0:findTF("finish")
-	slot0.envelopesAnim = slot0.finishTr:Find("envelopes"):GetComponent(typeof(SpineAnimUI))
-	slot0.sendBtn = slot0.finishTr:Find("send")
-	slot0.titleTr = slot0.finishTr:Find("label1")
-	slot0.failedTip = slot0:findTF("failed_tip")
-	slot0.descTr = slot0:findTF("desc_panel")
-	slot0.descTxt = slot0.descTr:Find("frame/Text"):GetComponent(typeof(Text))
-	slot0.homeBtn = slot0:findTF("home")
-	slot0.helpBtn = slot0:findTF("help")
-	slot0.tipTopTr = slot0:findTF("tip")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.back = arg_2_0:findTF("back")
+	arg_2_0.finishTr = arg_2_0:findTF("finish")
+	arg_2_0.envelopesAnim = arg_2_0.finishTr:Find("envelopes"):GetComponent(typeof(SpineAnimUI))
+	arg_2_0.sendBtn = arg_2_0.finishTr:Find("send")
+	arg_2_0.titleTr = arg_2_0.finishTr:Find("label1")
+	arg_2_0.failedTip = arg_2_0:findTF("failed_tip")
+	arg_2_0.descTr = arg_2_0:findTF("desc_panel")
+	arg_2_0.descTxt = arg_2_0.descTr:Find("frame/Text"):GetComponent(typeof(Text))
+	arg_2_0.homeBtn = arg_2_0:findTF("home")
+	arg_2_0.helpBtn = arg_2_0:findTF("help")
+	arg_2_0.tipTopTr = arg_2_0:findTF("tip")
 
-	setText(slot0:findTF("tip/Text"), i18n("feast_label_make_ticket_tip"))
-	setText(slot0:findTF("tip/label"), i18n("feast_label_make_ticket_click_tip"))
-	setText(slot0:findTF("failed_tip/Text"), i18n("feast_label_make_ticket_failed_tip"))
+	setText(arg_2_0:findTF("tip/Text"), i18n("feast_label_make_ticket_tip"))
+	setText(arg_2_0:findTF("tip/label"), i18n("feast_label_make_ticket_click_tip"))
+	setText(arg_2_0:findTF("failed_tip/Text"), i18n("feast_label_make_ticket_failed_tip"))
 end
 
-function slot0.OnInit(slot0)
-	slot0:bind(FeastScene.ON_MAKE_TICKET, function (slot0, slot1)
-		uv0:OnMakeTicket(slot1)
+function var_0_0.OnInit(arg_3_0)
+	arg_3_0:bind(FeastScene.ON_MAKE_TICKET, function(arg_4_0, arg_4_1)
+		arg_3_0:OnMakeTicket(arg_4_1)
 	end)
 end
 
-function slot0.OnMakeTicket(slot0, slot1)
-	if slot0.feastShip and slot0.feastShip.id == slot1 then
-		setActive(slot0.finishTr, true)
-		setActive(slot0.tipTopTr, false)
+function var_0_0.OnMakeTicket(arg_5_0, arg_5_1)
+	if arg_5_0.feastShip and arg_5_0.feastShip.id == arg_5_1 then
+		setActive(arg_5_0.finishTr, true)
+		setActive(arg_5_0.tipTopTr, false)
 
-		slot0.sendBtn.localScale = Vector3.zero
-		slot0.titleTr.localScale = Vector3.zero
+		arg_5_0.sendBtn.localScale = Vector3.zero
+		arg_5_0.titleTr.localScale = Vector3.zero
 
-		slot0.envelopesAnim:SetActionCallBack(function (slot0)
-			if slot0 == "finish" then
-				LeanTween.scale(uv0.sendBtn, Vector3(1, 1, 1), 0.3)
-				LeanTween.scale(uv0.titleTr, Vector3(1, 1, 1), 0.3)
-				uv0.envelopesAnim:SetActionCallBack(nil)
-				uv0.envelopesAnim:SetAction("action2", 0)
+		arg_5_0.envelopesAnim:SetActionCallBack(function(arg_6_0)
+			if arg_6_0 == "finish" then
+				LeanTween.scale(arg_5_0.sendBtn, Vector3(1, 1, 1), 0.3)
+				LeanTween.scale(arg_5_0.titleTr, Vector3(1, 1, 1), 0.3)
+				arg_5_0.envelopesAnim:SetActionCallBack(nil)
+				arg_5_0.envelopesAnim:SetAction("action2", 0)
 			end
 		end)
-		slot0.envelopesAnim:SetAction("action1", 0)
+		arg_5_0.envelopesAnim:SetAction("action1", 0)
 	end
 end
 
-function slot0.Show(slot0, slot1)
+function var_0_0.Show(arg_7_0, arg_7_1)
 	Input.multiTouchEnabled = false
 
-	uv0.super.Show(slot0)
-	slot0:CloseTip()
-	setActive(slot0.tipTopTr, true)
-	setActive(slot0.finishTr, false)
+	var_0_0.super.Show(arg_7_0)
+	arg_7_0:CloseTip()
+	setActive(arg_7_0.tipTopTr, true)
+	setActive(arg_7_0.finishTr, false)
 
-	slot0.feastShip = slot1
+	arg_7_0.feastShip = arg_7_1
 
 	seriesAsync({
-		function (slot0)
-			uv0:LoadPuzzleRes(uv1:GetPrefab(), slot0)
+		function(arg_8_0)
+			arg_7_0:LoadPuzzleRes(arg_7_1:GetPrefab(), arg_8_0)
 		end
-	}, function ()
-		uv0:InitPuzzle()
-		uv0:RegisterEvent()
+	}, function()
+		arg_7_0:InitPuzzle()
+		arg_7_0:RegisterEvent()
 	end)
 end
 
-function slot0.LoadPuzzleRes(slot0, slot1, slot2)
-	ResourceMgr.Inst:getAssetAsync("FeastPuzzle/" .. slot1, slot1, typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		if uv0.exited then
+function var_0_0.LoadPuzzleRes(arg_10_0, arg_10_1, arg_10_2)
+	ResourceMgr.Inst:getAssetAsync("FeastPuzzle/" .. arg_10_1, arg_10_1, typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_11_0)
+		if arg_10_0.exited then
 			return
 		end
 
-		uv0.puzzleGo = Object.Instantiate(slot0, uv0._tf:Find("container"))
-		uv0.rect = uv0.puzzleGo.transform:Find("nodes")
-		uv0.items = {}
+		arg_10_0.puzzleGo = Object.Instantiate(arg_11_0, arg_10_0._tf:Find("container"))
+		arg_10_0.rect = arg_10_0.puzzleGo.transform:Find("nodes")
+		arg_10_0.items = {}
 
-		eachChild(uv0.rect, function (slot0)
-			table.insert(uv0.items, {
-				level = slot1,
-				tr = slot0,
-				isCompletion = tonumber(slot0.name) == 1
+		eachChild(arg_10_0.rect, function(arg_12_0)
+			local var_12_0 = tonumber(arg_12_0.name)
+			local var_12_1 = var_12_0 == 1
+
+			table.insert(arg_10_0.items, {
+				level = var_12_0,
+				tr = arg_12_0,
+				isCompletion = var_12_1
 			})
 		end)
-		uv1()
+		arg_10_2()
 	end), true, true)
 end
 
-function slot1(slot0, slot1)
-	return LuaHelper.ScreenToLocal(slot0:GetComponent("RectTransform"), slot1, pg.UIMgr.GetInstance().overlayCameraComp)
+local function var_0_1(arg_13_0, arg_13_1)
+	local var_13_0 = pg.UIMgr.GetInstance().overlayCameraComp
+	local var_13_1 = arg_13_0:GetComponent("RectTransform")
+
+	return (LuaHelper.ScreenToLocal(var_13_1, arg_13_1, var_13_0))
 end
 
-function slot0.InitPuzzle(slot0, slot1)
-	slot0.dragging = false
+function var_0_0.InitPuzzle(arg_14_0, arg_14_1)
+	arg_14_0.dragging = false
 
-	for slot5, slot6 in ipairs(slot0.items) do
-		slot7 = slot6.tr:GetComponent(typeof(EventTriggerListener))
-		slot8 = Vector3.zero
+	for iter_14_0, iter_14_1 in ipairs(arg_14_0.items) do
+		local var_14_0 = iter_14_1.tr:GetComponent(typeof(EventTriggerListener))
+		local var_14_1 = Vector3.zero
 
-		slot7:AddBeginDragFunc(function (slot0, slot1)
-			uv0.dragging = true
-			uv1 = uv2.tr.localPosition
+		var_14_0:AddBeginDragFunc(function(arg_15_0, arg_15_1)
+			arg_14_0.dragging = true
+			var_14_1 = iter_14_1.tr.localPosition
 
-			uv2.tr:SetAsLastSibling()
+			iter_14_1.tr:SetAsLastSibling()
 		end)
-		slot7:AddDragFunc(function (slot0, slot1)
-			uv2.tr.localPosition = uv0(uv1.rect, slot1.position)
+		var_14_0:AddDragFunc(function(arg_16_0, arg_16_1)
+			local var_16_0 = var_0_1(arg_14_0.rect, arg_16_1.position)
+
+			iter_14_1.tr.localPosition = var_16_0
 		end)
-		slot7:AddDragEndFunc(function (slot0, slot1)
-			uv0.dragging = false
+		var_14_0:AddDragEndFunc(function(arg_17_0, arg_17_1)
+			arg_14_0.dragging = false
 
-			if uv0:FindMatcher(uv1) then
-				uv0:Merge(uv1, slot2, uv2)
+			local var_17_0 = arg_14_0:FindMatcher(iter_14_1)
 
-				if uv0:CheckFinish() then
-					uv0:OnPass()
+			if var_17_0 then
+				arg_14_0:Merge(iter_14_1, var_17_0, var_14_1)
+
+				if arg_14_0:CheckFinish() then
+					arg_14_0:OnPass()
 				end
 			else
-				uv0:ShowTip()
+				arg_14_0:ShowTip()
 
-				uv1.tr.localPosition = uv2
+				iter_14_1.tr.localPosition = var_14_1
 			end
 		end)
-		slot7:AddPointUpFunc(function (slot0, slot1)
-			if uv0.dragging then
+		var_14_0:AddPointUpFunc(function(arg_18_0, arg_18_1)
+			if arg_14_0.dragging then
 				return
 			end
 
-			uv0:ShowDesc(uv1)
+			arg_14_0:ShowDesc(iter_14_1)
 		end)
 	end
 end
 
-function slot0.ShowTip(slot0)
-	slot0:CloseTip()
-	setActive(slot0.failedTip, true)
+function var_0_0.ShowTip(arg_19_0)
+	arg_19_0:CloseTip()
+	setActive(arg_19_0.failedTip, true)
 
-	slot0.timer = Timer.New(function ()
-		uv0:CloseTip()
+	arg_19_0.timer = Timer.New(function()
+		arg_19_0:CloseTip()
 	end, 2, 1)
 
-	slot0.timer:Start()
+	arg_19_0.timer:Start()
 end
 
-function slot0.CloseTip(slot0)
-	if slot0.timer then
-		setActive(slot0.failedTip, false)
-		slot0.timer:Stop()
+function var_0_0.CloseTip(arg_21_0)
+	if arg_21_0.timer then
+		setActive(arg_21_0.failedTip, false)
+		arg_21_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_21_0.timer = nil
 	end
 end
 
-function slot0.CheckFinish(slot0)
-	return slot0.rect.childCount == 1
+function var_0_0.CheckFinish(arg_22_0)
+	return arg_22_0.rect.childCount == 1
 end
 
-function slot0.Merge(slot0, slot1, slot2, slot3)
-	if slot2.level < slot1.level then
-		slot1.tr.localPosition = slot3
+function var_0_0.Merge(arg_23_0, arg_23_1, arg_23_2, arg_23_3)
+	if arg_23_2.level < arg_23_1.level then
+		arg_23_1.tr.localPosition = arg_23_3
 
-		setParent(slot2.tr, slot1.tr:Find("slot"))
+		setParent(arg_23_2.tr, arg_23_1.tr:Find("slot"))
 
-		slot2.tr.localPosition = Vector3.zero
+		arg_23_2.tr.localPosition = Vector3.zero
 
-		slot0:ClearEvent(slot2.tr)
+		arg_23_0:ClearEvent(arg_23_2.tr)
 
-		slot1.isCompletion = true
+		arg_23_1.isCompletion = true
 	else
-		setParent(slot1.tr, slot2.tr:Find("slot"))
+		setParent(arg_23_1.tr, arg_23_2.tr:Find("slot"))
 
-		slot1.tr.localPosition = Vector3.zero
+		arg_23_1.tr.localPosition = Vector3.zero
 
-		slot0:ClearEvent(slot1.tr)
+		arg_23_0:ClearEvent(arg_23_1.tr)
 
-		slot2.isCompletion = true
+		arg_23_2.isCompletion = true
 	end
 end
 
-function slot2(slot0, slot1)
-	return getBounds(slot0.tr):Intersects(getBounds(slot1.tr))
+local function var_0_2(arg_24_0, arg_24_1)
+	local var_24_0 = getBounds(arg_24_0.tr)
+	local var_24_1 = getBounds(arg_24_1.tr)
+
+	return var_24_0:Intersects(var_24_1)
 end
 
-function slot3(slot0, slot1)
-	if slot0.level < slot1.level then
-		return slot0.isCompletion
+local function var_0_3(arg_25_0, arg_25_1)
+	if arg_25_0.level < arg_25_1.level then
+		return arg_25_0.isCompletion
 	else
-		return slot1.isCompletion
+		return arg_25_1.isCompletion
 	end
 end
 
-function slot0.FindMatcher(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.items) do
-		if (slot1.level + 1 == slot6.level or slot1.level - 1 == slot6.level) and uv0(slot1, slot6) and uv1(slot1, slot6) then
-			return slot6
+function var_0_0.FindMatcher(arg_26_0, arg_26_1)
+	for iter_26_0, iter_26_1 in pairs(arg_26_0.items) do
+		if (arg_26_1.level + 1 == iter_26_1.level or arg_26_1.level - 1 == iter_26_1.level) and var_0_3(arg_26_1, iter_26_1) and var_0_2(arg_26_1, iter_26_1) then
+			return iter_26_1
 		end
 	end
 
 	return nil
 end
 
-function slot0.OnPass(slot0)
-	for slot4, slot5 in ipairs(slot0.items) do
-		slot0:ClearEvent(slot5.tr)
+function var_0_0.OnPass(arg_27_0)
+	for iter_27_0, iter_27_1 in ipairs(arg_27_0.items) do
+		arg_27_0:ClearEvent(iter_27_1.tr)
 	end
 
-	setActive(slot0.rect, false)
-	slot0:emit(FeastMediator.MAKE_TICKET, slot0.feastShip.tid)
+	setActive(arg_27_0.rect, false)
+	arg_27_0:emit(FeastMediator.MAKE_TICKET, arg_27_0.feastShip.tid)
 end
 
-function slot0.RegisterEvent(slot0, slot1)
-	onButton(slot0, slot0.back, function ()
-		uv0:Hide()
+function var_0_0.RegisterEvent(arg_28_0, arg_28_1)
+	onButton(arg_28_0, arg_28_0.back, function()
+		arg_28_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.sendBtn, function ()
-		uv0:Hide()
-		uv0:emit(FeastScene.ON_SKIP_GIVE_GIFT, uv0.feastShip)
+	onButton(arg_28_0, arg_28_0.sendBtn, function()
+		arg_28_0:Hide()
+		arg_28_0:emit(FeastScene.ON_SKIP_GIVE_GIFT, arg_28_0.feastShip)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_28_0, arg_28_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.feast_make_invitation_tip.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.homeBtn, function ()
-		uv0:emit(BaseUI.ON_HOME)
+	onButton(arg_28_0, arg_28_0.homeBtn, function()
+		arg_28_0:emit(BaseUI.ON_HOME)
 	end, SFX_PANEL)
 end
 
-function slot0.ShowDesc(slot0, slot1)
-	slot0.isShowDesc = true
+function var_0_0.ShowDesc(arg_33_0, arg_33_1)
+	arg_33_0.isShowDesc = true
 
-	pg.UIMgr.GetInstance():BlurPanel(slot0.descTr)
-	setActive(slot0.descTr, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_33_0.descTr)
+	setActive(arg_33_0.descTr, true)
 
-	slot0.descNode = Object.Instantiate(slot1.tr.gameObject, slot0.descTr)
-	slot0.descNode.transform.localPosition = Vector3(0, 100, 0)
-	slot0.descTxt.text = i18n("feast_invitation_part" .. slot1.level)
+	arg_33_0.descNode = Object.Instantiate(arg_33_1.tr.gameObject, arg_33_0.descTr)
+	arg_33_0.descNode.transform.localPosition = Vector3(0, 100, 0)
+	arg_33_0.descTxt.text = i18n("feast_invitation_part" .. arg_33_1.level)
 
-	onButton(slot0, slot0.descTr, function ()
-		uv0:HideDesc()
+	onButton(arg_33_0, arg_33_0.descTr, function()
+		arg_33_0:HideDesc()
 	end, SFX_PANEL)
 end
 
-function slot0.HideDesc(slot0)
-	if not slot0.isShowDesc then
+function var_0_0.HideDesc(arg_35_0)
+	if not arg_35_0.isShowDesc then
 		return
 	end
 
-	slot0.isShowDesc = false
+	arg_35_0.isShowDesc = false
 
-	pg.UIMgr.GetInstance():UnblurPanel(slot0.descTr, slot0._tf)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_35_0.descTr, arg_35_0._tf)
 
-	if slot0.descNode then
-		Object.Destroy(slot0.descNode.gameObject)
+	if arg_35_0.descNode then
+		Object.Destroy(arg_35_0.descNode.gameObject)
 
-		slot0.descNode = nil
+		arg_35_0.descNode = nil
 	end
 
-	setActive(slot0.descTr, false)
+	setActive(arg_35_0.descTr, false)
 end
 
-function slot0.Clear(slot0)
-	slot0.envelopesAnim:SetActionCallBack(nil)
-	slot0:CloseTip()
+function var_0_0.Clear(arg_36_0)
+	arg_36_0.envelopesAnim:SetActionCallBack(nil)
+	arg_36_0:CloseTip()
 
-	for slot4, slot5 in ipairs(slot0.items) do
-		slot0:ClearEvent(slot5.tr)
+	for iter_36_0, iter_36_1 in ipairs(arg_36_0.items) do
+		arg_36_0:ClearEvent(iter_36_1.tr)
 	end
 
-	slot0.items = {}
+	arg_36_0.items = {}
 
-	if slot0.puzzleGo then
-		Object.Destroy(slot0.puzzleGo)
+	if arg_36_0.puzzleGo then
+		Object.Destroy(arg_36_0.puzzleGo)
 
-		slot0.puzzleGo = nil
+		arg_36_0.puzzleGo = nil
 	end
 
-	removeOnButton(slot0.back)
+	removeOnButton(arg_36_0.back)
 
-	if LeanTween.isTweening(slot0.sendBtn.gameObject) then
-		LeanTween.cancel(slot0.sendBtn.gameObject)
+	if LeanTween.isTweening(arg_36_0.sendBtn.gameObject) then
+		LeanTween.cancel(arg_36_0.sendBtn.gameObject)
 	end
 
-	if LeanTween.isTweening(slot0.titleTr.gameObject) then
-		LeanTween.cancel(slot0.titleTr.gameObject)
+	if LeanTween.isTweening(arg_36_0.titleTr.gameObject) then
+		LeanTween.cancel(arg_36_0.titleTr.gameObject)
 	end
 
-	slot0:HideDesc()
+	arg_36_0:HideDesc()
 end
 
-function slot0.ClearEvent(slot0, slot1)
-	slot2 = slot1:GetComponent(typeof(EventTriggerListener))
+function var_0_0.ClearEvent(arg_37_0, arg_37_1)
+	local var_37_0 = arg_37_1:GetComponent(typeof(EventTriggerListener))
 
-	slot2:AddBeginDragFunc(nil)
-	slot2:AddDragFunc(nil)
-	slot2:AddDragEndFunc(nil)
-	slot2:AddPointUpFunc(nil)
+	var_37_0:AddBeginDragFunc(nil)
+	var_37_0:AddDragFunc(nil)
+	var_37_0:AddDragEndFunc(nil)
+	var_37_0:AddPointUpFunc(nil)
 
-	for slot7 = 1, slot1:GetComponentsInChildren(typeof(Image)).Length do
-		slot3[slot7 - 1].raycastTarget = false
+	local var_37_1 = arg_37_1:GetComponentsInChildren(typeof(Image))
+
+	for iter_37_0 = 1, var_37_1.Length do
+		var_37_1[iter_37_0 - 1].raycastTarget = false
 	end
 end
 
-function slot0.Hide(slot0)
+function var_0_0.Hide(arg_38_0)
 	Input.multiTouchEnabled = true
 
-	uv0.super.Hide(slot0)
-	slot0:Clear()
+	var_0_0.super.Hide(arg_38_0)
+	arg_38_0:Clear()
 end
 
-function slot0.OnDestroy(slot0)
-	slot0.exited = true
+function var_0_0.OnDestroy(arg_39_0)
+	arg_39_0.exited = true
 
-	slot0:Clear()
+	arg_39_0:Clear()
 
-	if slot0:isShowing() then
-		slot0:Hide()
+	if arg_39_0:isShowing() then
+		arg_39_0:Hide()
 	end
 end
 
-return slot0
+return var_0_0

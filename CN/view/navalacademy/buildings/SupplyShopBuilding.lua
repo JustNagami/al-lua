@@ -1,19 +1,21 @@
-slot0 = class("SupplyShopBuilding", import(".NavalAcademyBuilding"))
+﻿local var_0_0 = class("SupplyShopBuilding", import(".NavalAcademyBuilding"))
 
-function slot0.GetGameObjectName(slot0)
+function var_0_0.GetGameObjectName(arg_1_0)
 	return "supplyShop"
 end
 
-function slot0.GetTitle(slot0)
+function var_0_0.GetTitle(arg_2_0)
 	return i18n("school_title_shangdian")
 end
 
-function slot0.OnClick(slot0)
-	slot0:emit(NavalAcademyMediator.ON_OPEN_SUPPLYSHOP)
+function var_0_0.OnClick(arg_3_0)
+	arg_3_0:emit(NavalAcademyMediator.ON_OPEN_SUPPLYSHOP)
 end
 
-function slot0.IsTip(slot0)
-	return getProxy(ShopsProxy):getShopStreet() and slot2:isUpdateGoods()
+function var_0_0.IsTip(arg_4_0)
+	local var_4_0 = getProxy(ShopsProxy):getShopStreet()
+
+	return var_4_0 and var_4_0:isUpdateGoods()
 end
 
-return slot0
+return var_0_0

@@ -1,33 +1,39 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleDataFunction
-slot2 = slot0.Battle.BattleConst
-slot3 = slot0.Battle.BattleFormulas
-slot4 = slot0.Battle.BattleAttr
-slot5 = slot0.Battle.BattleUnitEvent
-slot0.Battle.BattleNPCUnit = class("BattleNPCUnit", slot0.Battle.BattleEnemyUnit)
+﻿ys = ys or {}
 
-function slot0.Battle.BattleNPCUnit.SetTemplate(slot0, slot1, slot2)
-	uv0.super.SetTemplate(slot0, slot1)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleDataFunction
+local var_0_2 = var_0_0.Battle.BattleConst
+local var_0_3 = var_0_0.Battle.BattleFormulas
+local var_0_4 = var_0_0.Battle.BattleAttr
+local var_0_5 = var_0_0.Battle.BattleUnitEvent
 
-	slot0._tmpData = setmetatable({}, {
-		__index = uv1.Battle.BattleDataFunction.GetMonsterTmpDataFromID(slot0._tmpID)
+var_0_0.Battle.BattleNPCUnit = class("BattleNPCUnit", var_0_0.Battle.BattleEnemyUnit)
+
+local var_0_6 = var_0_0.Battle.BattleNPCUnit
+
+function var_0_6.SetTemplate(arg_1_0, arg_1_1, arg_1_2)
+	var_0_6.super.SetTemplate(arg_1_0, arg_1_1)
+
+	arg_1_0._tmpData = setmetatable({}, {
+		__index = var_0_0.Battle.BattleDataFunction.GetMonsterTmpDataFromID(arg_1_0._tmpID)
 	})
 
-	if slot2.template then
-		for slot6, slot7 in pairs(slot2.template) do
-			slot0._tmpData[slot6] = slot7
+	if arg_1_2.template then
+		for iter_1_0, iter_1_1 in pairs(arg_1_2.template) do
+			arg_1_0._tmpData[iter_1_0] = iter_1_1
 		end
 
-		slot0._tmpData.id = slot1
+		arg_1_0._tmpData.id = arg_1_1
 	end
 
-	if slot2.attr then
-		uv2.SetAttr(slot0, slot2.attr)
+	if arg_1_2.attr then
+		var_0_4.SetAttr(arg_1_0, arg_1_2.attr)
 	else
-		slot0:SetAttr()
+		arg_1_0:SetAttr()
 	end
 
-	slot0:SetCurrentHP(slot2.currentHP or slot0:GetMaxHP())
-	slot0:InitCldComponent()
+	local var_1_0 = arg_1_2.currentHP or arg_1_0:GetMaxHP()
+
+	arg_1_0:SetCurrentHP(var_1_0)
+	arg_1_0:InitCldComponent()
 end

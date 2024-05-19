@@ -1,118 +1,123 @@
-slot0 = class("GuideShowSignStep", import(".GuideStep"))
-slot0.SIGN_TYPE_2 = 2
-slot0.SIGN_TYPE_3 = 3
+﻿local var_0_0 = class("GuideShowSignStep", import(".GuideStep"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+var_0_0.SIGN_TYPE_2 = 2
+var_0_0.SIGN_TYPE_3 = 3
 
-	slot2 = slot1.showSign
-	slot0.sType = slot2.type
-	slot0.duration = slot2.duration
-	slot0.clickUI = slot0:GenClickData(slot2.clickUI)
-	slot0.clickArea = slot2.clickArea
-	slot0.longPress = slot2.longPress
-	slot0.signIndexList = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	for slot6, slot7 in ipairs(slot2.signList) do
-		slot8 = slot7.signType
+	local var_1_0 = arg_1_1.showSign
 
-		if type(slot7.pos) == "string" then
-			if slot9 == "useCachePos" then
-				slot9 = WorldGuider.GetInstance():GetTempGridPos(slot7.cachedIndex)
+	arg_1_0.sType = var_1_0.type
+	arg_1_0.duration = var_1_0.duration
+	arg_1_0.clickUI = arg_1_0:GenClickData(var_1_0.clickUI)
+	arg_1_0.clickArea = var_1_0.clickArea
+	arg_1_0.longPress = var_1_0.longPress
+	arg_1_0.signIndexList = {}
+
+	for iter_1_0, iter_1_1 in ipairs(var_1_0.signList) do
+		local var_1_1 = iter_1_1.signType
+		local var_1_2 = iter_1_1.pos
+		local var_1_3 = iter_1_1.cachedIndex
+
+		if type(var_1_2) == "string" then
+			if var_1_2 == "useCachePos" then
+				var_1_2 = WorldGuider.GetInstance():GetTempGridPos(var_1_3)
 			end
-		elseif type(slot9) == "table" then
-			slot9 = Vector3.New(slot9[1], slot9[2], slot9[3])
+		elseif type(var_1_2) == "table" then
+			var_1_2 = Vector3.New(var_1_2[1], var_1_2[2], var_1_2[3])
 		end
 
-		table.insert(slot0.signIndexList, {
-			pos = slot9 or Vector3(0, 0, 0),
-			signName = slot0:GetSignResName(slot8),
-			atlasName = slot7.atlasName,
-			fileName = slot7.fileName
+		table.insert(arg_1_0.signIndexList, {
+			pos = var_1_2 or Vector3(0, 0, 0),
+			signName = arg_1_0:GetSignResName(var_1_1),
+			atlasName = iter_1_1.atlasName,
+			fileName = iter_1_1.fileName
 		})
 	end
 end
 
-function slot0.GenClickData(slot0, slot1)
-	if not slot1 then
+function var_0_0.GenClickData(arg_2_0, arg_2_1)
+	if not arg_2_1 then
 		return nil
 	end
 
-	slot2 = slot0:GenSearchData(slot1)
-	slot3 = slot1.sizeDeltaPlus or {
+	local var_2_0 = arg_2_0:GenSearchData(arg_2_1)
+	local var_2_1 = arg_2_1.sizeDeltaPlus or {
 		0,
 		0
 	}
-	slot2.sizeDeltaPlus = Vector2(slot3[1], slot3[2])
 
-	return slot2
+	var_2_0.sizeDeltaPlus = Vector2(var_2_1[1], var_2_1[2])
+
+	return var_2_0
 end
 
-function slot0.GetType(slot0)
+function var_0_0.GetType(arg_3_0)
 	return GuideStep.TYPE_SHOWSIGN
 end
 
-function slot0.GetSignType(slot0)
-	return slot0.sType
+function var_0_0.GetSignType(arg_4_0)
+	return arg_4_0.sType
 end
 
-function slot0.GetFirstSign(slot0)
-	return slot0.signIndexList[1]
+function var_0_0.GetFirstSign(arg_5_0)
+	return arg_5_0.signIndexList[1]
 end
 
-function slot0.GetSignList(slot0)
-	return slot0.signIndexList
+function var_0_0.GetSignList(arg_6_0)
+	return arg_6_0.signIndexList
 end
 
-function slot0.GetSignResName(slot0, slot1)
-	slot2 = ""
+function var_0_0.GetSignResName(arg_7_0, arg_7_1)
+	local var_7_0 = ""
 
-	if slot1 == 1 or slot1 == 6 then
-		slot2 = "wTask"
-	elseif slot1 == 2 then
-		slot2 = "wDanger"
-	elseif slot1 == 3 then
-		slot2 = "wForbidden"
-	elseif slot1 == 4 then
-		slot2 = "wClickArea"
-	elseif slot1 == 5 then
-		slot2 = "wShowArea"
+	if arg_7_1 == 1 or arg_7_1 == 6 then
+		var_7_0 = "wTask"
+	elseif arg_7_1 == 2 then
+		var_7_0 = "wDanger"
+	elseif arg_7_1 == 3 then
+		var_7_0 = "wForbidden"
+	elseif arg_7_1 == 4 then
+		var_7_0 = "wClickArea"
+	elseif arg_7_1 == 5 then
+		var_7_0 = "wShowArea"
 	end
 
-	return slot2
+	return var_7_0
 end
 
-function slot0.ShouldClick(slot0)
-	return slot0.clickUI ~= nil
+function var_0_0.ShouldClick(arg_8_0)
+	return arg_8_0.clickUI ~= nil
 end
 
-function slot0.GetClickData(slot0)
-	return slot0.clickUI
+function var_0_0.GetClickData(arg_9_0)
+	return arg_9_0.clickUI
 end
 
-function slot0.ExistClickArea(slot0)
-	return slot0.clickArea ~= nil
+function var_0_0.ExistClickArea(arg_10_0)
+	return arg_10_0.clickArea ~= nil
 end
 
-function slot0.GetClickArea(slot0)
-	slot1 = slot0.clickArea or {
+function var_0_0.GetClickArea(arg_11_0)
+	local var_11_0 = arg_11_0.clickArea or {
 		0,
 		0
 	}
 
-	return Vector2(slot1[1], slot1[2])
+	return Vector2(var_11_0[1], var_11_0[2])
 end
 
-function slot0.GetTriggerType(slot0)
-	return slot0.longPress
+function var_0_0.GetTriggerType(arg_12_0)
+	return arg_12_0.longPress
 end
 
-function slot0.GetExitDelay(slot0)
-	return slot0.duration or 0
+function var_0_0.GetExitDelay(arg_13_0)
+	return arg_13_0.duration or 0
 end
 
-function slot0.ExistTrigger(slot0)
-	return slot0:GetSignType() ~= uv0.SIGN_TYPE_3
+function var_0_0.ExistTrigger(arg_14_0)
+	return arg_14_0:GetSignType() ~= var_0_0.SIGN_TYPE_3
 end
 
-return slot0
+return var_0_0

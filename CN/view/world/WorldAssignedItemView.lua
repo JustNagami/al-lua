@@ -1,142 +1,143 @@
-slot0 = class("WorldAssignedItemView", import("..base.BaseSubView"))
+﻿local var_0_0 = class("WorldAssignedItemView", import("..base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "StoreHouseItemAssignedView"
 end
 
-function slot0.OnInit(slot0)
-	slot1 = slot0._tf:Find("operate")
-	slot0.ulist = UIItemList.New(slot1:Find("got/bottom/list"), slot1:Find("got/bottom/list/tpl"))
-	slot0.confirmBtn = slot1:Find("action/confirm")
+function var_0_0.OnInit(arg_2_0)
+	local var_2_0 = arg_2_0._tf:Find("operate")
 
-	setText(slot0.confirmBtn, i18n("text_confirm"))
+	arg_2_0.ulist = UIItemList.New(var_2_0:Find("got/bottom/list"), var_2_0:Find("got/bottom/list/tpl"))
+	arg_2_0.confirmBtn = var_2_0:Find("action/confirm")
 
-	slot0.cancelBtn = slot1:Find("action/cancel")
+	setText(arg_2_0.confirmBtn, i18n("text_confirm"))
 
-	setText(slot0.cancelBtn, i18n("text_cancel"))
+	arg_2_0.cancelBtn = var_2_0:Find("action/cancel")
 
-	slot0.rightArr = slot1:Find("calc/value_bg/add")
-	slot0.leftArr = slot1:Find("calc/value_bg/mius")
-	slot0.maxBtn = slot1:Find("calc/max")
-	slot0.valueText = slot1:Find("calc/value_bg/Text")
-	slot0.itemTF = slot1:Find("item/left/IconTpl")
-	slot0.nameTF = slot0:findTF("item/display_panel/name_container/name")
-	slot0.descTF = slot0:findTF("item/display_panel/desc/Text")
+	setText(arg_2_0.cancelBtn, i18n("text_cancel"))
 
-	onButton(slot0, slot0._tf:Find("bg"), function ()
-		uv0:Hide()
+	arg_2_0.rightArr = var_2_0:Find("calc/value_bg/add")
+	arg_2_0.leftArr = var_2_0:Find("calc/value_bg/mius")
+	arg_2_0.maxBtn = var_2_0:Find("calc/max")
+	arg_2_0.valueText = var_2_0:Find("calc/value_bg/Text")
+	arg_2_0.itemTF = var_2_0:Find("item/left/IconTpl")
+	arg_2_0.nameTF = arg_2_0:findTF("item/display_panel/name_container/name")
+	arg_2_0.descTF = arg_2_0:findTF("item/display_panel/desc/Text")
+
+	onButton(arg_2_0, arg_2_0._tf:Find("bg"), function()
+		arg_2_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.cancelBtn, function ()
-		uv0:Hide()
+	onButton(arg_2_0, arg_2_0.cancelBtn, function()
+		arg_2_0:Hide()
 	end, SFX_PANEL)
-	pressPersistTrigger(slot0.rightArr, 0.5, function (slot0)
-		if not uv0.itemVO then
+	pressPersistTrigger(arg_2_0.rightArr, 0.5, function(arg_5_0)
+		if not arg_2_0.itemVO then
 			return
 		end
 
-		uv0.count = math.min(uv0.count + 1, uv0.itemVO.count)
+		arg_2_0.count = math.min(arg_2_0.count + 1, arg_2_0.itemVO.count)
 
-		uv0:updateValue()
+		arg_2_0:updateValue()
 	end, nil, true, true, 0.1, SFX_PANEL)
-	pressPersistTrigger(slot0.leftArr, 0.5, function (slot0)
-		if not uv0.itemVO then
+	pressPersistTrigger(arg_2_0.leftArr, 0.5, function(arg_6_0)
+		if not arg_2_0.itemVO then
 			return
 		end
 
-		uv0.count = math.max(uv0.count - 1, 1)
+		arg_2_0.count = math.max(arg_2_0.count - 1, 1)
 
-		uv0:updateValue()
+		arg_2_0:updateValue()
 	end, nil, true, true, 0.1, SFX_PANEL)
-	onButton(slot0, slot0.maxBtn, function ()
-		if not uv0.itemVO then
+	onButton(arg_2_0, arg_2_0.maxBtn, function()
+		if not arg_2_0.itemVO then
 			return
 		end
 
-		uv0.count = uv0.itemVO.count
+		arg_2_0.count = arg_2_0.itemVO.count
 
-		uv0:updateValue()
+		arg_2_0:updateValue()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.confirmBtn, function ()
-		if not uv0.selectedIndex or not uv0.itemVO or uv0.count <= 0 then
+	onButton(arg_2_0, arg_2_0.confirmBtn, function()
+		if not arg_2_0.selectedIndex or not arg_2_0.itemVO or arg_2_0.count <= 0 then
 			return
 		end
 
-		uv0:emit(WorldInventoryMediator.OnUseItem, uv0.itemVO.id, uv0.count, uv0.itemVO:getConfig("usage_arg")[uv0.selectedIndex])
-		uv0:Hide()
+		arg_2_0:emit(WorldInventoryMediator.OnUseItem, arg_2_0.itemVO.id, arg_2_0.count, arg_2_0.itemVO:getConfig("usage_arg")[arg_2_0.selectedIndex])
+		arg_2_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.Show(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	setActive(slot0._tf, true)
+function var_0_0.Show(arg_9_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_9_0._tf)
+	setActive(arg_9_0._tf, true)
 end
 
-function slot0.Hide(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
-	setActive(slot0._tf, false)
+function var_0_0.Hide(arg_10_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_10_0._tf, arg_10_0._parentTf)
+	setActive(arg_10_0._tf, false)
 end
 
-function slot0.updateValue(slot0)
-	setText(slot0.valueText, slot0.count)
-	slot0.ulist:each(function (slot0, slot1)
-		if not isActive(slot1) then
+function var_0_0.updateValue(arg_11_0)
+	setText(arg_11_0.valueText, arg_11_0.count)
+	arg_11_0.ulist:each(function(arg_12_0, arg_12_1)
+		if not isActive(arg_12_1) then
 			return
 		end
 
-		setText(slot1:Find("item/bg/icon_bg/count"), uv0.count)
+		setText(arg_12_1:Find("item/bg/icon_bg/count"), arg_11_0.count)
 	end)
 end
 
-function slot0.update(slot0, slot1)
-	slot0.count = 1
-	slot0.selectedIndex = nil
-	slot0.selectedItem = nil
-	slot0.itemVO = slot1
-	slot0.displayDrops = underscore.map(slot1:getConfig("usage_arg"), function (slot0)
+function var_0_0.update(arg_13_0, arg_13_1)
+	arg_13_0.count = 1
+	arg_13_0.selectedIndex = nil
+	arg_13_0.selectedItem = nil
+	arg_13_0.itemVO = arg_13_1
+	arg_13_0.displayDrops = underscore.map(arg_13_1:getConfig("usage_arg"), function(arg_14_0)
 		return {
-			type = slot0[1],
-			id = slot0[2],
-			count = slot0[3]
+			type = arg_14_0[1],
+			id = arg_14_0[2],
+			count = arg_14_0[3]
 		}
 	end)
 
-	slot0.ulist:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	arg_13_0.ulist:make(function(arg_15_0, arg_15_1, arg_15_2)
+		arg_15_1 = arg_15_1 + 1
 
-		if slot0 == UIItemList.EventUpdate then
-			updateDrop(slot2:Find("item/bg"), uv0.displayDrops[slot1])
+		if arg_15_0 == UIItemList.EventUpdate then
+			updateDrop(arg_15_2:Find("item/bg"), arg_13_0.displayDrops[arg_15_1])
 
-			slot3 = slot2:Find("item/bg/icon_bg/count")
+			local var_15_0 = arg_15_2:Find("item/bg/icon_bg/count")
 
-			onToggle(uv0, slot2, function (slot0)
-				if slot0 then
-					uv0.selectedIndex = uv1
-					uv0.selectedItem = uv2
+			onToggle(arg_13_0, arg_15_2, function(arg_16_0)
+				if arg_16_0 then
+					arg_13_0.selectedIndex = arg_15_1
+					arg_13_0.selectedItem = arg_15_2
 				end
 			end, SFX_PANEL)
-			setScrollText(slot2:Find("name_bg/Text"), uv0.displayDrops[slot1]:getConfig("name"))
+			setScrollText(arg_15_2:Find("name_bg/Text"), arg_13_0.displayDrops[arg_15_1]:getConfig("name"))
 
-			uv0.selectedItem = uv0.selectedItem or slot2
+			arg_13_0.selectedItem = arg_13_0.selectedItem or arg_15_2
 		end
 	end)
-	slot0.ulist:align(#slot0.displayDrops)
-	triggerToggle(slot0.selectedItem, true)
-	slot0:updateValue()
+	arg_13_0.ulist:align(#arg_13_0.displayDrops)
+	triggerToggle(arg_13_0.selectedItem, true)
+	arg_13_0:updateValue()
 
-	slot2 = {
-		type = slot1.type,
-		id = slot1.id,
-		count = slot1.count
+	local var_13_0 = {
+		type = arg_13_1.type,
+		id = arg_13_1.id,
+		count = arg_13_1.count
 	}
 
-	updateDrop(slot0.itemTF:Find("left/IconTpl"), setmetatable({
+	updateDrop(arg_13_0.itemTF:Find("left/IconTpl"), setmetatable({
 		count = 0
 	}, {
-		__index = slot2
+		__index = var_13_0
 	}))
-	UpdateOwnDisplay(slot0.itemTF:Find("left/own"), slot2)
-	setText(slot0.nameTF, slot1:getConfig("name"))
-	setText(slot0.descTF, slot1:getConfig("display"))
+	UpdateOwnDisplay(arg_13_0.itemTF:Find("left/own"), var_13_0)
+	setText(arg_13_0.nameTF, arg_13_1:getConfig("name"))
+	setText(arg_13_0.descTF, arg_13_1:getConfig("display"))
 end
 
-return slot0
+return var_0_0

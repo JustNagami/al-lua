@@ -1,78 +1,78 @@
-slot0 = class("ChallengeShareLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("ChallengeShareLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ChallengeShareUI"
 end
 
-function slot0.init(slot0)
-	slot0.painting = slot0:findTF("main/Painting")
-	slot0.shipList = slot0:findTF("main/ship_list")
-	slot0.cardTF = slot0:findTF("ship_card", slot0.shipList)
-	slot0.itemList = UIItemList.New(slot0.shipList, slot0.cardTF)
-	slot0.wordTF = slot0:findTF("main/word")
-	slot0.touchBtn = slot0:findTF("touch_btn")
+function var_0_0.init(arg_2_0)
+	arg_2_0.painting = arg_2_0:findTF("main/Painting")
+	arg_2_0.shipList = arg_2_0:findTF("main/ship_list")
+	arg_2_0.cardTF = arg_2_0:findTF("ship_card", arg_2_0.shipList)
+	arg_2_0.itemList = UIItemList.New(arg_2_0.shipList, arg_2_0.cardTF)
+	arg_2_0.wordTF = arg_2_0:findTF("main/word")
+	arg_2_0.touchBtn = arg_2_0:findTF("touch_btn")
 
-	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_2_0._tf)
 end
 
-function slot0.setLevel(slot0, slot1)
-	slot0.level = slot1
+function var_0_0.setLevel(arg_3_0, arg_3_1)
+	arg_3_0.level = arg_3_1
 end
 
-function slot0.setShipPaintList(slot0, slot1)
-	slot0.shipPaintList = slot1
+function var_0_0.setShipPaintList(arg_4_0, arg_4_1)
+	arg_4_0.shipPaintList = arg_4_1
 end
 
-function slot0.setFlagShipPaint(slot0, slot1)
-	slot0.flagShipPaint = slot1
+function var_0_0.setFlagShipPaint(arg_5_0, arg_5_1)
+	arg_5_0.flagShipPaint = arg_5_1
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.touchBtn, function ()
-		if uv0.isLoading then
+function var_0_0.didEnter(arg_6_0)
+	onButton(arg_6_0, arg_6_0.touchBtn, function()
+		if arg_6_0.isLoading then
 			return
 		end
 
-		uv0:closeView()
+		arg_6_0:closeView()
 	end, SFX_PANEL)
-	slot0.itemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			table.insert(uv0.funcs, function (slot0)
-				LoadSpriteAsync("shipYardIcon/" .. uv0.shipPaintList[uv1 + 1], function (slot0)
-					if not IsNil(uv0) then
-						setImageSprite(uv0:Find("back/Image"), slot0)
+	arg_6_0.itemList:make(function(arg_8_0, arg_8_1, arg_8_2)
+		if arg_8_0 == UIItemList.EventUpdate then
+			table.insert(arg_6_0.funcs, function(arg_9_0)
+				LoadSpriteAsync("shipYardIcon/" .. arg_6_0.shipPaintList[arg_8_1 + 1], function(arg_10_0)
+					if not IsNil(arg_8_2) then
+						setImageSprite(arg_8_2:Find("back/Image"), arg_10_0)
 					end
 
-					uv1()
+					arg_9_0()
 				end)
 			end)
 		end
 	end)
-	slot0:flush()
+	arg_6_0:flush()
 end
 
-function slot0.flush(slot0)
-	slot0.funcs = {}
+function var_0_0.flush(arg_11_0)
+	arg_11_0.funcs = {}
 
-	slot0.itemList:align(#slot0.shipPaintList)
-	table.insert(slot0.funcs, function (slot0)
-		setPaintingPrefabAsync(uv0.painting, uv0.flagShipPaint, "chuanwu", slot0)
+	arg_11_0.itemList:align(#arg_11_0.shipPaintList)
+	table.insert(arg_11_0.funcs, function(arg_12_0)
+		setPaintingPrefabAsync(arg_11_0.painting, arg_11_0.flagShipPaint, "chuanwu", arg_12_0)
 	end)
 
-	slot0.isLoading = true
+	arg_11_0.isLoading = true
 
-	parallelAsync(slot0.funcs, function ()
-		uv0.isLoading = false
+	parallelAsync(arg_11_0.funcs, function()
+		arg_11_0.isLoading = false
 
 		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeChallenge)
 	end)
-	setText(slot0.wordTF:Find("Text"), i18n("challenge_share_progress"))
-	setText(slot0.wordTF:Find("number/Text"), slot0.level)
-	setText(slot0.wordTF:Find("Text2"), i18n("challenge_share"))
+	setText(arg_11_0.wordTF:Find("Text"), i18n("challenge_share_progress"))
+	setText(arg_11_0.wordTF:Find("number/Text"), arg_11_0.level)
+	setText(arg_11_0.wordTF:Find("Text2"), i18n("challenge_share"))
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
+function var_0_0.willExit(arg_14_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_14_0._tf)
 end
 
-return slot0
+return var_0_0

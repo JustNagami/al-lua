@@ -1,146 +1,155 @@
-slot0 = class("CourtYardInteraction")
+﻿local var_0_0 = class("CourtYardInteraction")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.host = slot1
-	slot0.isReset = false
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.host = arg_1_1
+	arg_1_0.isReset = false
 
-	slot0:Clear()
+	arg_1_0:Clear()
 end
 
-function slot0.Update(slot0, slot1)
-	slot0.loop = slot1
+function var_0_0.Update(arg_2_0, arg_2_1)
+	arg_2_0.loop = arg_2_1
 
-	slot0:InitData()
-	slot0:DoPreheatStep(slot0.ownerPreheat, slot0.userPreheat)
+	arg_2_0:InitData()
+	arg_2_0:DoPreheatStep(arg_2_0.ownerPreheat, arg_2_0.userPreheat)
 end
 
-function slot0.InitData(slot0)
-	slot1, slot0.userActions, slot0.closeBodyMask, slot0.ownerPreheat, slot0.userPreheat, slot0.tailAction = slot0.host:GetActions()
-	slot0.ownerActions = slot1
-	slot0.total = #slot1
-	slot0.index = 0
+function var_0_0.InitData(arg_3_0)
+	local var_3_0, var_3_1, var_3_2, var_3_3, var_3_4, var_3_5 = arg_3_0.host:GetActions()
+
+	arg_3_0.ownerPreheat = var_3_3
+	arg_3_0.userPreheat = var_3_4
+	arg_3_0.tailAction = var_3_5
+	arg_3_0.ownerActions = var_3_0
+	arg_3_0.userActions = var_3_1
+	arg_3_0.closeBodyMask = var_3_2
+	arg_3_0.total = #var_3_0
+	arg_3_0.index = 0
 end
 
-function slot0.DoPreheatStep(slot0, slot1, slot2)
-	slot0.preheatProcess = false
+function var_0_0.DoPreheatStep(arg_4_0, arg_4_1, arg_4_2)
+	arg_4_0.preheatProcess = false
 
-	if slot1 then
-		slot0.preheatProcess = true
+	if arg_4_1 then
+		arg_4_0.preheatProcess = true
 
-		slot0.host:GetOwner():UpdateInteraction(slot0:PackData(slot1))
+		arg_4_0.host:GetOwner():UpdateInteraction(arg_4_0:PackData(arg_4_1))
 
-		if slot2 then
-			slot0.host:GetUser():UpdateInteraction(slot0:PackData(slot2))
+		if arg_4_2 then
+			arg_4_0.host:GetUser():UpdateInteraction(arg_4_0:PackData(arg_4_2))
 		end
 	else
-		slot0:DoStep()
+		arg_4_0:DoStep()
 	end
 end
 
-function slot0.DoStep(slot0)
-	if slot0.total <= slot0.index then
-		slot0:AllStepEnd()
+function var_0_0.DoStep(arg_5_0)
+	if arg_5_0.index >= arg_5_0.total then
+		arg_5_0:AllStepEnd()
 
 		return
 	end
 
-	slot0.index = slot0.index + 1
-	slot0.states[slot0.host.user] = false
-	slot0.states[slot0.host.owner] = false
+	arg_5_0.index = arg_5_0.index + 1
+	arg_5_0.states[arg_5_0.host.user] = false
+	arg_5_0.states[arg_5_0.host.owner] = false
 
-	slot0.host:GetUser():UpdateInteraction(slot0:PackData(slot0:GetUserAction()))
-	slot0.host:GetOwner():UpdateInteraction(slot0:PackData(slot0:GetOwnerAction()))
+	arg_5_0.host:GetUser():UpdateInteraction(arg_5_0:PackData(arg_5_0:GetUserAction()))
+	arg_5_0.host:GetOwner():UpdateInteraction(arg_5_0:PackData(arg_5_0:GetOwnerAction()))
 
-	slot0.isReset = false
+	arg_5_0.isReset = false
 end
 
-function slot0.GetUserAction(slot0)
-	return slot0.userActions[slot0.index]
+function var_0_0.GetUserAction(arg_6_0)
+	return arg_6_0.userActions[arg_6_0.index]
 end
 
-function slot0.GetOwnerAction(slot0)
-	return slot0.ownerActions[slot0.index]
+function var_0_0.GetOwnerAction(arg_7_0)
+	return arg_7_0.ownerActions[arg_7_0.index]
 end
 
-function slot0.DoTailStep(slot0)
-	slot0.index = 0
+function var_0_0.DoTailStep(arg_8_0)
+	arg_8_0.index = 0
 
-	slot0.host:GetUser():UpdateInteraction(slot0:PackData(slot0.tailAction))
-	slot0.host:GetOwner():UpdateInteraction(slot0:PackData(slot0.tailAction))
+	arg_8_0.host:GetUser():UpdateInteraction(arg_8_0:PackData(arg_8_0.tailAction))
+	arg_8_0.host:GetOwner():UpdateInteraction(arg_8_0:PackData(arg_8_0.tailAction))
 end
 
-function slot0.PackData(slot0, slot1)
+function var_0_0.PackData(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_0.index / arg_9_0.total
+
 	return {
-		action = slot1,
-		slot = slot0.host,
-		closeBodyMask = slot0.closeBodyMask[slot0.index],
-		progress = slot0.index / slot0.total,
-		total = slot0.total,
-		index = slot0.index,
-		isReset = slot0.isReset
+		action = arg_9_1,
+		slot = arg_9_0.host,
+		closeBodyMask = arg_9_0.closeBodyMask[arg_9_0.index],
+		progress = var_9_0,
+		total = arg_9_0.total,
+		index = arg_9_0.index,
+		isReset = arg_9_0.isReset
 	}
 end
 
-function slot0.StepEnd(slot0, slot1)
-	if slot0.preheatProcess then
-		slot0:DoStep()
+function var_0_0.StepEnd(arg_10_0, arg_10_1)
+	if arg_10_0.preheatProcess then
+		arg_10_0:DoStep()
 	else
-		if slot0.index == 0 then
+		if arg_10_0.index == 0 then
 			return
 		end
 
-		slot0.states[slot1] = true
+		arg_10_0.states[arg_10_1] = true
 
-		slot0:OnStepEnd()
+		arg_10_0:OnStepEnd()
 	end
 end
 
-function slot0.AllStepEnd(slot0)
-	if slot0.loop and slot0.total > 1 then
-		slot0.isReset = true
-		slot0.index = 0
+function var_0_0.AllStepEnd(arg_11_0)
+	if arg_11_0.loop and arg_11_0.total > 1 then
+		arg_11_0.isReset = true
+		arg_11_0.index = 0
 
-		slot0:DoStep()
-	elseif slot0.loop and slot0.total == 1 then
-		-- Nothing
-	elseif not slot0.loop and slot0.tailAction then
-		slot0:DoTailStep()
+		arg_11_0:DoStep()
+	elseif arg_11_0.loop and arg_11_0.total == 1 then
+		-- block empty
+	elseif not arg_11_0.loop and arg_11_0.tailAction then
+		arg_11_0:DoTailStep()
 	else
-		slot0.host:End()
-		slot0:Clear()
+		arg_11_0.host:End()
+		arg_11_0:Clear()
 	end
 end
 
-function slot0.Clear(slot0)
-	slot0.index = 0
-	slot0.states = {}
-	slot0.total = 0
-	slot0.loop = nil
+function var_0_0.Clear(arg_12_0)
+	arg_12_0.index = 0
+	arg_12_0.states = {}
+	arg_12_0.total = 0
+	arg_12_0.loop = nil
 end
 
-function slot0.GetIndex(slot0)
-	return slot0.index
+function var_0_0.GetIndex(arg_13_0)
+	return arg_13_0.index
 end
 
-function slot0.IsCompleteStep(slot0)
-	return slot0:IsCompleteUserStep() and slot0:IsCompleteOwnerStep()
+function var_0_0.IsCompleteStep(arg_14_0)
+	return arg_14_0:IsCompleteUserStep() and arg_14_0:IsCompleteOwnerStep()
 end
 
-function slot0.IsCompleteUserStep(slot0)
-	return slot0.states[slot0.host.user] == true
+function var_0_0.IsCompleteUserStep(arg_15_0)
+	return arg_15_0.states[arg_15_0.host.user] == true
 end
 
-function slot0.IsCompleteOwnerStep(slot0)
-	return slot0.states[slot0.host.owner] == true
+function var_0_0.IsCompleteOwnerStep(arg_16_0)
+	return arg_16_0.states[arg_16_0.host.owner] == true
 end
 
-function slot0.OnStepEnd(slot0)
-	if slot0:IsCompleteStep() then
-		slot0:DoStep()
+function var_0_0.OnStepEnd(arg_17_0)
+	if arg_17_0:IsCompleteStep() then
+		arg_17_0:DoStep()
 	end
 end
 
-function slot0.Reset(slot0)
+function var_0_0.Reset(arg_18_0)
+	return
 end
 
-return slot0
+return var_0_0

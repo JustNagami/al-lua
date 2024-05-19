@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行10次攻击，触发专属弹幕-恶毒μII"
-	},
-	desc_get = "主炮每进行10次攻击，触发专属弹幕-不屈II",
-	name = "专属弹幕-不屈II",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行10次攻击，触发专属弹幕-不屈II",
-	stack = 1,
-	id = 29882,
-	icon = 29880,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -39,5 +25,19 @@ return {
 				countType = 29880
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行10次攻击，触发专属弹幕-恶毒μII"
+	},
+	desc_get = "主炮每进行10次攻击，触发专属弹幕-不屈II",
+	name = "专属弹幕-不屈II",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行10次攻击，触发专属弹幕-不屈II",
+	stack = 1,
+	id = 29882,
+	icon = 29880,
+	last_effect = ""
 }

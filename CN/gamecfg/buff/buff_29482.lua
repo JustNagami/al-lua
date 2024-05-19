@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行8次攻击，触发专属弹幕-能代II"
-	},
-	desc_get = "主炮每进行8次攻击，触发专属弹幕-能代II",
-	name = "专属弹幕-能代II",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行8次攻击，触发专属弹幕-能代II",
-	stack = 1,
-	id = 29482,
-	icon = 29480,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -38,5 +24,19 @@ return {
 				countType = 29480
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行8次攻击，触发专属弹幕-能代II"
+	},
+	desc_get = "主炮每进行8次攻击，触发专属弹幕-能代II",
+	name = "专属弹幕-能代II",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行8次攻击，触发专属弹幕-能代II",
+	stack = 1,
+	id = 29482,
+	icon = 29480,
+	last_effect = ""
 }

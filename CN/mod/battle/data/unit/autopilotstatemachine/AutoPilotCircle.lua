@@ -1,55 +1,61 @@
-ys = ys or {}
-slot0 = ys
-slot1 = Vector3.up
-slot2 = class("AutoPilotCircle", slot0.Battle.IPilot)
-slot0.Battle.AutoPilotCircle = slot2
-slot2.__name = "AutoPilotCircle"
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, ...)
-	uv0.super.Ctor(slot0, ...)
+local var_0_0 = ys
+local var_0_1 = Vector3.up
+local var_0_2 = class("AutoPilotCircle", var_0_0.Battle.IPilot)
+
+var_0_0.Battle.AutoPilotCircle = var_0_2
+var_0_2.__name = "AutoPilotCircle"
+
+function var_0_2.Ctor(arg_1_0, ...)
+	var_0_2.super.Ctor(arg_1_0, ...)
 end
 
-function slot2.SetParameter(slot0, slot1, slot2)
-	uv0.super.SetParameter(slot0, slot1, slot2)
+function var_0_2.SetParameter(arg_2_0, arg_2_1, arg_2_2)
+	var_0_2.super.SetParameter(arg_2_0, arg_2_1, arg_2_2)
 
-	slot0._referencePoint = Vector3(slot1.x, 0, slot1.z)
-	slot0._radius = slot1.radius
+	arg_2_0._referencePoint = Vector3(arg_2_1.x, 0, arg_2_1.z)
+	arg_2_0._radius = arg_2_1.radius
 
-	if slot1.antiClockWise == true then
-		slot0.GetDirection = uv0._antiClockWise
+	if arg_2_1.antiClockWise == true then
+		arg_2_0.GetDirection = var_0_2._antiClockWise
 	else
-		slot0.GetDirection = uv0._clockWise
+		arg_2_0.GetDirection = var_0_2._clockWise
 	end
 end
 
-function slot2._clockWise(slot0, slot1)
-	if slot0:IsExpired() then
-		slot0:Finish()
+function var_0_2._clockWise(arg_3_0, arg_3_1)
+	if arg_3_0:IsExpired() then
+		arg_3_0:Finish()
 
 		return Vector3.zero
 	end
 
-	if slot0._radius < (slot1 - slot0._referencePoint).magnitude then
-		return (slot0._referencePoint - slot1).normalized
+	if (arg_3_1 - arg_3_0._referencePoint).magnitude > arg_3_0._radius then
+		return (arg_3_0._referencePoint - arg_3_1).normalized
 	else
-		slot3 = (slot0._referencePoint - slot1).normalized
+		local var_3_0 = (arg_3_0._referencePoint - arg_3_1).normalized
+		local var_3_1 = -var_3_0.z
+		local var_3_2 = var_3_0.x
 
-		return Vector3(-slot3.z, 0, slot3.x)
+		return Vector3(var_3_1, 0, var_3_2)
 	end
 end
 
-function slot2._antiClockWise(slot0, slot1)
-	if slot0._duration > 0 and slot0._duration < pg.TimeMgr.GetInstance():GetCombatTime() - slot0._startTime then
-		slot0:Finish()
+function var_0_2._antiClockWise(arg_4_0, arg_4_1)
+	if arg_4_0._duration > 0 and pg.TimeMgr.GetInstance():GetCombatTime() - arg_4_0._startTime > arg_4_0._duration then
+		arg_4_0:Finish()
 
 		return Vector3.zero
 	end
 
-	if slot0._radius < (slot1 - slot0._referencePoint).magnitude then
-		return (slot0._referencePoint - slot1).normalized
+	if (arg_4_1 - arg_4_0._referencePoint).magnitude > arg_4_0._radius then
+		return (arg_4_0._referencePoint - arg_4_1).normalized
 	else
-		slot3 = (slot0._referencePoint - slot1).normalized
+		local var_4_0 = (arg_4_0._referencePoint - arg_4_1).normalized
+		local var_4_1 = var_4_0.z
+		local var_4_2 = -var_4_0.x
 
-		return Vector3(slot3.z, 0, -slot3.x)
+		return Vector3(var_4_1, 0, var_4_2)
 	end
 end

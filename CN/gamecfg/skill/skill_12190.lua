@@ -1,4 +1,34 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 12191
+			}
+		},
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				delay = 2,
+				emitter = "BattleBulletEmitter",
+				weapon_id = 68451
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -246,35 +276,5 @@ return {
 	id = 12190,
 	picture = "0",
 	castCV = "skill",
-	desc = "魔力猛击",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 12191
-			}
-		},
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				delay = 2,
-				emitter = "BattleBulletEmitter",
-				weapon_id = 68451
-			}
-		}
-	}
+	desc = "魔力猛击"
 }

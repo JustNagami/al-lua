@@ -1,48 +1,55 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst
-slot0.Battle.EngageAntiSubState = class("EngageAntiSubState", slot0.Battle.IAntiSubState)
-slot0.Battle.EngageAntiSubState.__name = "EngageAntiSubState"
-slot2 = slot0.Battle.EngageAntiSubState
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst
+
+var_0_0.Battle.EngageAntiSubState = class("EngageAntiSubState", var_0_0.Battle.IAntiSubState)
+var_0_0.Battle.EngageAntiSubState.__name = "EngageAntiSubState"
+
+local var_0_2 = var_0_0.Battle.EngageAntiSubState
+
+function var_0_2.Ctor(arg_1_0)
+	var_0_2.super.Ctor(arg_1_0)
 end
 
-function slot2.OnVigilantEngage(slot0, slot1)
+function var_0_2.OnVigilantEngage(arg_2_0, arg_2_1)
+	return
 end
 
-function slot2.OnMineExplode(slot0, slot1)
+function var_0_2.OnMineExplode(arg_3_0, arg_3_1)
+	return
 end
 
-function slot2.OnSubmarinFloat(slot0, slot1)
+function var_0_2.OnSubmarinFloat(arg_4_0, arg_4_1)
+	return
 end
 
-function slot2.ToPreLevel(slot0, slot1)
-	slot1:OnVigilantState()
+function var_0_2.ToPreLevel(arg_5_0, arg_5_1)
+	arg_5_1:OnVigilantState()
 end
 
-function slot2.OnHateChain(slot0)
+function var_0_2.OnHateChain(arg_6_0)
+	return
 end
 
-function slot2.GetWeaponUseable(slot0)
+function var_0_2.GetWeaponUseable(arg_7_0)
 	return {
-		uv0.OXY_STATE.FLOAT
+		var_0_1.OXY_STATE.FLOAT
 	}
 end
 
-function slot2.CanDecay(slot0)
+function var_0_2.CanDecay(arg_8_0)
 	return true
 end
 
-function slot2.GetWarnMark(slot0)
+function var_0_2.GetWarnMark(arg_9_0)
 	return 3
 end
 
-function slot2.GetMeterSpeed(slot0)
+function var_0_2.GetMeterSpeed(arg_10_0)
 	return 5
 end
 
-function slot2.DecayDuration(slot0)
+function var_0_2.DecayDuration(arg_11_0)
 	return 3
 end

@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"前往<color=#ff7d36>仓库</color>界面",
 	"去看看现有的<color=#ff7d36>设计图纸</color>吧",
 	"点击制作按钮<color=#ff7d36>制作装备</color>吧！",
@@ -15,7 +15,7 @@ return {
 				mode = 2,
 				posY = -102.56,
 				posX = 0,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/bottom/equipButton",
@@ -36,7 +36,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/topItems/adapt/bottom_back/types/design",
@@ -58,7 +58,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 210.07,
-				text = slot0[3]
+				text = var_0_0[3]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/StoreHouseUI(Clone)/EquipmentDesignUI(Clone)/equipment_scrollview/equipment_grid/0/info/make_btn",
@@ -79,7 +79,7 @@ return {
 				mode = 2,
 				posY = -2.69,
 				posX = 202.1,
-				text = slot0[4]
+				text = var_0_0[4]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/msg_panel/bg/confirm_btn",

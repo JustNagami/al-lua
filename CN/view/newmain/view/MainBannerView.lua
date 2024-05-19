@@ -1,73 +1,83 @@
-slot0 = class("MainBannerView", import("view.base.BaseEventLogic"))
+﻿local var_0_0 = class("MainBannerView", import("view.base.BaseEventLogic"))
 
-function slot0.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot2)
-	pg.DelegateInfo.New(slot0)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.Ctor(arg_1_0, arg_1_2)
+	pg.DelegateInfo.New(arg_1_0)
 
-	slot0._tf = slot1
-	slot0._go = slot1.gameObject
-	slot0.event = slot2
-	slot0.scrollSnap = BannerScrollRect.New(findTF(slot1, "mask/content"), findTF(slot1, "dots"))
+	arg_1_0._tf = arg_1_1
+	arg_1_0._go = arg_1_1.gameObject
+	arg_1_0.event = arg_1_2
+	arg_1_0.scrollSnap = BannerScrollRect.New(findTF(arg_1_1, "mask/content"), findTF(arg_1_1, "dots"))
 end
 
-function slot0.Init(slot0)
-	slot1 = getProxy(ActivityProxy):getBannerDisplays()
+function var_0_0.Init(arg_2_0)
+	local var_2_0 = getProxy(ActivityProxy):getBannerDisplays()
 
-	slot0:UpdateItems(slot1)
+	arg_2_0:UpdateItems(var_2_0)
 
-	slot0.banners = slot1
+	arg_2_0.banners = var_2_0
 end
 
-function slot0.Refresh(slot0)
-	if #slot0.banners ~= #getProxy(ActivityProxy):getBannerDisplays() then
-		slot0:Clear()
-		slot0:Init()
+function var_0_0.Refresh(arg_3_0)
+	local var_3_0 = getProxy(ActivityProxy):getBannerDisplays()
+
+	if #arg_3_0.banners ~= #var_3_0 then
+		arg_3_0:Clear()
+		arg_3_0:Init()
 	else
-		slot0.scrollSnap:Resume()
+		arg_3_0.scrollSnap:Resume()
 	end
 end
 
-function slot0.UpdateItems(slot0, slot1)
-	for slot5 = 0, #slot1 - 1 do
-		slot6 = slot1[slot5 + 1]
+function var_0_0.UpdateItems(arg_4_0, arg_4_1)
+	for iter_4_0 = 0, #arg_4_1 - 1 do
+		local var_4_0 = arg_4_1[iter_4_0 + 1]
+		local var_4_1 = arg_4_0.scrollSnap:AddChild()
 
-		LoadImageSpriteAsync("activitybanner/" .. slot6.pic, slot0.scrollSnap:AddChild())
-		setActive(findTF(slot7, "red"), slot6.type == 3 and tonumber(slot6.param) == nil and getProxy(ActivityProxy):readyToAchieveByType(ActivityConst.ACTIVITY_TYPE_LEVELAWARD))
-		onButton(slot0, slot7, function ()
-			MainBaseActivityBtn.Skip(uv0, uv1)
+		LoadImageSpriteAsync("activitybanner/" .. var_4_0.pic, var_4_1)
+
+		local var_4_2 = var_4_0.type == 3 and tonumber(var_4_0.param) == nil and getProxy(ActivityProxy):readyToAchieveByType(ActivityConst.ACTIVITY_TYPE_LEVELAWARD)
+
+		setActive(findTF(var_4_1, "red"), var_4_2)
+		onButton(arg_4_0, var_4_1, function()
+			MainBaseActivityBtn.Skip(arg_4_0, var_4_0)
 		end, SFX_MAIN)
 	end
 
-	slot0.scrollSnap:SetUp()
+	arg_4_0.scrollSnap:SetUp()
 end
 
-function slot0.Fold(slot0, slot1, slot2)
-	slot0.lposX = slot0.lposX or slot0._tf.localPosition.x
+function var_0_0.Fold(arg_6_0, arg_6_1, arg_6_2)
+	arg_6_0.lposX = arg_6_0.lposX or arg_6_0._tf.localPosition.x
 
-	if slot2 == 0 then
-		slot0._go.transform.localPosition = Vector3(slot1 and slot0.lposX + 1200 or slot0.lposX, slot0._go.transform.localPosition.y, 0)
+	local var_6_0 = arg_6_1 and arg_6_0.lposX + 1200 or arg_6_0.lposX
+
+	if arg_6_2 == 0 then
+		local var_6_1 = arg_6_0._go.transform.localPosition
+
+		arg_6_0._go.transform.localPosition = Vector3(var_6_0, var_6_1.y, 0)
 	else
-		LeanTween.moveLocalX(slot0._go, slot3, slot2):setEase(LeanTweenType.easeInOutExpo)
+		LeanTween.moveLocalX(arg_6_0._go, var_6_0, arg_6_2):setEase(LeanTweenType.easeInOutExpo)
 	end
 end
 
-function slot0.Disable(slot0)
-	slot0.scrollSnap:Puase()
+function var_0_0.Disable(arg_7_0)
+	arg_7_0.scrollSnap:Puase()
 
-	slot0.lposX = nil
+	arg_7_0.lposX = nil
 end
 
-function slot0.Clear(slot0)
-	slot0.scrollSnap:Reset()
+function var_0_0.Clear(arg_8_0)
+	arg_8_0.scrollSnap:Reset()
 end
 
-function slot0.Dispose(slot0)
-	slot0:disposeEvent()
-	pg.DelegateInfo.Dispose(slot0)
-	slot0:Clear()
-	slot0.scrollSnap:Dispose()
+function var_0_0.Dispose(arg_9_0)
+	arg_9_0:disposeEvent()
+	pg.DelegateInfo.Dispose(arg_9_0)
+	arg_9_0:Clear()
+	arg_9_0.scrollSnap:Dispose()
 
-	slot0.scrollSnap = nil
+	arg_9_0.scrollSnap = nil
 end
 
-return slot0
+return var_0_0

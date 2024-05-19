@@ -1,109 +1,124 @@
-slot0 = class("SenrankaguraBackHillScene", import("view.activity.BackHills.TemplateMV.BackHillTemplate"))
+﻿local var_0_0 = class("SenrankaguraBackHillScene", import("view.activity.BackHills.TemplateMV.BackHillTemplate"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "SenrankaguraBackHillUI"
 end
 
-slot0.edge2area = {
+var_0_0.edge2area = {
 	default = "_SDPlace"
 }
 
-function slot0.init(slot0)
-	uv0.super.init(slot0)
+function var_0_0.init(arg_2_0)
+	var_0_0.super.init(arg_2_0)
 
-	slot0.top = slot0:findTF("top")
-	slot0._bg = slot0:findTF("BG")
-	slot0._map = slot0:findTF("map")
+	arg_2_0.top = arg_2_0:findTF("top")
+	arg_2_0._bg = arg_2_0:findTF("BG")
+	arg_2_0._map = arg_2_0:findTF("map")
 
-	for slot4 = 0, slot0._map.childCount - 1 do
-		slot5 = slot0._map:GetChild(slot4)
-		slot0["map_" .. go(slot5).name] = slot5
+	for iter_2_0 = 0, arg_2_0._map.childCount - 1 do
+		local var_2_0 = arg_2_0._map:GetChild(iter_2_0)
+		local var_2_1 = go(var_2_0).name
+
+		arg_2_0["map_" .. var_2_1] = var_2_0
 	end
 
-	slot0._upper = slot0:findTF("upper")
+	arg_2_0._upper = arg_2_0:findTF("upper")
 
-	for slot4 = 0, slot0._upper.childCount - 1 do
-		slot5 = slot0._upper:GetChild(slot4)
-		slot0["upper_" .. go(slot5).name] = slot5
+	for iter_2_1 = 0, arg_2_0._upper.childCount - 1 do
+		local var_2_2 = arg_2_0._upper:GetChild(iter_2_1)
+		local var_2_3 = go(var_2_2).name
+
+		arg_2_0["upper_" .. var_2_3] = var_2_2
 	end
 
-	slot0._SDPlace = slot0._tf:Find("SDPlace")
-	slot0.containers = {
-		slot0._SDPlace
+	arg_2_0._SDPlace = arg_2_0._tf:Find("SDPlace")
+	arg_2_0.containers = {
+		arg_2_0._SDPlace
 	}
-	slot0._shipTpl = slot0._map:Find("ship")
-	slot0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.SenrankaguraBackHillGraph"))
+	arg_2_0._shipTpl = arg_2_0._map:Find("ship")
+	arg_2_0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.SenrankaguraBackHillGraph"))
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0:findTF("top/Back"), function ()
-		uv0:onBackPressed()
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0:findTF("top/Back"), function()
+		arg_3_0:onBackPressed()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0:findTF("top/Home"), function ()
-		uv0:quickExitFunc()
+	onButton(arg_3_0, arg_3_0:findTF("top/Home"), function()
+		arg_3_0:quickExitFunc()
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("top/Help"), function ()
+	onButton(arg_3_0, arg_3_0:findTF("top/Help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.senrankagura_backhill_help.tip
 		})
 	end, SFX_PANEL)
-	slot0:InitStudents(getProxy(ActivityProxy):getActivityById(ActivityConst.SENRANKAGURA_BUFF) and slot1.id, 2, 3)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "renshuzhidaochang", function ()
-		uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.SENRANKAGURA_TRAIN)
+
+	local var_3_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.SENRANKAGURA_BUFF)
+
+	arg_3_0:InitStudents(var_3_0 and var_3_0.id, 2, 3)
+	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "renshuzhidaochang", function()
+		arg_3_0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.SENRANKAGURA_TRAIN)
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "michuanrenfashu", function ()
-		uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.SENRANKAGURA_MEDAL)
+	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "michuanrenfashu", function()
+		arg_3_0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.SENRANKAGURA_MEDAL)
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "renzherenwuban", function ()
-		uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ACTIVITY, {
+	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "renzherenwuban", function()
+		arg_3_0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ACTIVITY, {
 			id = ActivityConst.SENRANKAGURA_TURNTABLE
 		})
 	end)
-	slot0:InitFacilityCross(slot0._map, slot0._upper, "baochouleijisuo", function ()
-		uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ACTIVITY, {
+	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "baochouleijisuo", function()
+		arg_3_0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ACTIVITY, {
 			id = ActivityConst.SENRANKAGURA_PT
 		})
 	end)
-	slot0:BindItemActivityShop()
-	slot0:BindItemSkinShop()
-	slot0:BindItemBuildShip()
-	slot0:BindItemBattle()
-	slot0:UpdateView()
+	arg_3_0:BindItemActivityShop()
+	arg_3_0:BindItemSkinShop()
+	arg_3_0:BindItemBuildShip()
+	arg_3_0:BindItemBattle()
+	arg_3_0:UpdateView()
 end
 
-function slot0.UpdateView(slot0)
-	setActive(slot0.upper_renshuzhidaochang:Find("Tip"), uv0.TrainTip())
-	setActive(slot0.upper_michuanrenfashu:Find("Tip"), uv0.MedalTip())
-	setActive(slot0.upper_renzherenwuban:Find("Tip"), uv0.TaskTip())
-	setActive(slot0.upper_baochouleijisuo:Find("Tip"), uv0.PTTip())
+function var_0_0.UpdateView(arg_11_0)
+	setActive(arg_11_0.upper_renshuzhidaochang:Find("Tip"), var_0_0.TrainTip())
+	setActive(arg_11_0.upper_michuanrenfashu:Find("Tip"), var_0_0.MedalTip())
+	setActive(arg_11_0.upper_renzherenwuban:Find("Tip"), var_0_0.TaskTip())
+	setActive(arg_11_0.upper_baochouleijisuo:Find("Tip"), var_0_0.PTTip())
 end
 
-function slot0.willExit(slot0)
-	slot0:clearStudents()
-	uv0.super.willExit(slot0)
+function var_0_0.willExit(arg_12_0)
+	arg_12_0:clearStudents()
+	var_0_0.super.willExit(arg_12_0)
 end
 
-function slot0.MedalTip()
-	return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityById(ActivityConst.SENRANKAGURA_MEDAL_ID)) or SenrankaguraMedalScene.GetTaskCountAble()
+function var_0_0.MedalTip()
+	local var_13_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.SENRANKAGURA_MEDAL_ID)
+
+	return Activity.IsActivityReady(var_13_0) or SenrankaguraMedalScene.GetTaskCountAble()
 end
 
-function slot0.TaskTip()
-	return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityById(ActivityConst.SENRANKAGURA_TURNTABLE))
+function var_0_0.TaskTip()
+	local var_14_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.SENRANKAGURA_TURNTABLE)
+
+	return Activity.IsActivityReady(var_14_0)
 end
 
-function slot0.PTTip()
-	return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityById(ActivityConst.SENRANKAGURA_PT))
+function var_0_0.PTTip()
+	local var_15_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.SENRANKAGURA_PT)
+
+	return Activity.IsActivityReady(var_15_0)
 end
 
-function slot0.TrainTip()
-	return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityById(ActivityConst.SENRANKAGURA_TRAIN_ACT_ID))
+function var_0_0.TrainTip()
+	local var_16_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.SENRANKAGURA_TRAIN_ACT_ID)
+
+	return Activity.IsActivityReady(var_16_0)
 end
 
-function slot0.IsShowMainTip(slot0)
-	if slot0 and not slot0:isEnd() then
-		return uv0.PTTip() or uv0.MedalTip() or uv0.TaskTip() or uv0.TrainTip()
+function var_0_0.IsShowMainTip(arg_17_0)
+	if arg_17_0 and not arg_17_0:isEnd() then
+		return var_0_0.PTTip() or var_0_0.MedalTip() or var_0_0.TaskTip() or var_0_0.TrainTip()
 	end
 end
 
-return slot0
+return var_0_0

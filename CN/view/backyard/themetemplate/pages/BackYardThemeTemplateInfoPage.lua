@@ -1,63 +1,68 @@
-slot0 = class("BackYardThemeTemplateInfoPage", import("...Shop.pages.BackYardThemeInfoPage"))
+﻿local var_0_0 = class("BackYardThemeTemplateInfoPage", import("...Shop.pages.BackYardThemeInfoPage"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "BackYardTemplateInfoPage"
 end
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
-	onButton(slot0, slot0.purchaseBtn, function ()
-		uv0.contextData.themeMsgBox:ExecuteAction("SetUp", uv0.template, uv0.dorm, uv0.player)
+function var_0_0.OnInit(arg_2_0)
+	var_0_0.super.OnInit(arg_2_0)
+	onButton(arg_2_0, arg_2_0.purchaseBtn, function()
+		arg_2_0.contextData.themeMsgBox:ExecuteAction("SetUp", arg_2_0.template, arg_2_0.dorm, arg_2_0.player)
 	end, SFX_PANEL)
-	setActive(slot0.icon, false)
+	setActive(arg_2_0.icon, false)
 
-	slot0.iconRaw = slot0:findTF("frame/icon/Image_raw"):GetComponent(typeof(RawImage))
+	arg_2_0.iconRaw = arg_2_0:findTF("frame/icon/Image_raw"):GetComponent(typeof(RawImage))
 
-	setActive(slot0.leftArrBtn, false)
-	setActive(slot0.rightArrBtn, false)
+	setActive(arg_2_0.leftArrBtn, false)
+	setActive(arg_2_0.rightArrBtn, false)
 end
 
-function slot0.OnInitCard(slot0, slot1)
-	slot2 = BackYardThemTemplateFurnitureCard.New(slot1)
+function var_0_0.OnInitCard(arg_4_0, arg_4_1)
+	local var_4_0 = BackYardThemTemplateFurnitureCard.New(arg_4_1)
 
-	onButton(slot0, slot2._go, function ()
-		if uv0.furniture:canPurchase() and uv0.furniture:inTime() and (uv0.furniture:canPurchaseByGem() or uv0.furniture:canPurchaseByDormMoeny()) then
-			uv1.contextData.furnitureMsgBox:ExecuteAction("SetUp", uv0.furniture, uv1.dorm, uv1.target)
+	onButton(arg_4_0, var_4_0._go, function()
+		if var_4_0.furniture:canPurchase() and var_4_0.furniture:inTime() and (var_4_0.furniture:canPurchaseByGem() or var_4_0.furniture:canPurchaseByDormMoeny()) then
+			arg_4_0.contextData.furnitureMsgBox:ExecuteAction("SetUp", var_4_0.furniture, arg_4_0.dorm, arg_4_0.target)
 		end
 	end, SFX_PANEL)
 
-	slot0.cards[slot1] = slot2
+	arg_4_0.cards[arg_4_1] = var_4_0
 end
 
-function slot0.SetUp(slot0, slot1, slot2, slot3)
-	slot0:Show()
+function var_0_0.SetUp(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+	arg_6_0:Show()
 
-	slot0.template = slot1
-	slot0.dorm = slot2
-	slot0.target = slot3
-	slot0.player = getProxy(PlayerProxy):getData()
+	arg_6_0.template = arg_6_1
+	arg_6_0.dorm = arg_6_2
+	arg_6_0.target = arg_6_3
+	arg_6_0.player = getProxy(PlayerProxy):getData()
 
-	slot0:InitFurnitureList()
-	slot0:UpdateThemeInfo()
-	slot0:UpdateRes()
+	arg_6_0:InitFurnitureList()
+	arg_6_0:UpdateThemeInfo()
+	arg_6_0:UpdateRes()
 end
 
-function slot0.InitFurnitureList(slot0)
-	slot0.displays = {}
+function var_0_0.InitFurnitureList(arg_7_0)
+	arg_7_0.displays = {}
 
-	for slot6, slot7 in pairs(slot0.template:GetFurnitureCnt()) do
-		if pg.furniture_data_template[slot6] then
-			table.insert(slot0.displays, slot0.dorm:GetPurchasedFurnitures()[slot6] or Furniture.New({
-				id = slot6
-			}))
+	local var_7_0 = arg_7_0.template:GetFurnitureCnt()
+	local var_7_1 = arg_7_0.dorm:GetPurchasedFurnitures()
+
+	for iter_7_0, iter_7_1 in pairs(var_7_0) do
+		if pg.furniture_data_template[iter_7_0] then
+			local var_7_2 = var_7_1[iter_7_0] or Furniture.New({
+				id = iter_7_0
+			})
+
+			table.insert(arg_7_0.displays, var_7_2)
 		end
 	end
 
-	function slot3(slot0)
-		if slot0:inTime() then
-			if slot0:canPurchaseByGem() and not slot0:canPurchaseByDormMoeny() then
+	local function var_7_3(arg_8_0)
+		if arg_8_0:inTime() then
+			if arg_8_0:canPurchaseByGem() and not arg_8_0:canPurchaseByDormMoeny() then
 				return 1
-			elseif slot0:canPurchaseByGem() and slot0:canPurchaseByDormMoeny() then
+			elseif arg_8_0:canPurchaseByGem() and arg_8_0:canPurchaseByDormMoeny() then
 				return 2
 			else
 				return 3
@@ -67,60 +72,71 @@ function slot0.InitFurnitureList(slot0)
 		end
 	end
 
-	table.sort(slot0.displays, function (slot0, slot1)
-		if (slot0:canPurchase() and 1 or 0) == (slot1:canPurchase() and 1 or 0) then
-			return uv0(slot0) < uv0(slot1)
+	table.sort(arg_7_0.displays, function(arg_9_0, arg_9_1)
+		local var_9_0 = arg_9_0:canPurchase() and 1 or 0
+		local var_9_1 = arg_9_1:canPurchase() and 1 or 0
+
+		if var_9_0 == var_9_1 then
+			return var_7_3(arg_9_0) < var_7_3(arg_9_1)
 		else
-			return slot3 < slot2
+			return var_9_1 < var_9_0
 		end
 	end)
-	slot0.scrollRect:SetTotalCount(#slot0.displays)
+	arg_7_0.scrollRect:SetTotalCount(#arg_7_0.displays)
 end
 
-function slot0.UpdateThemeInfo(slot0)
-	slot1 = slot0.template
-	slot0.nameTxt.text = slot1:GetName()
+function var_0_0.UpdateThemeInfo(arg_10_0)
+	local var_10_0 = arg_10_0.template
 
-	setActive(slot0.iconRaw.gameObject, false)
-	BackYardThemeTempalteUtil.GetTexture(slot1:GetTextureName(), slot1:GetImageMd5(), function (slot0)
-		if not IsNil(uv0.iconRaw) and slot0 then
-			uv0.iconRaw.texture = slot0
+	arg_10_0.nameTxt.text = var_10_0:GetName()
 
-			setActive(uv0.iconRaw.gameObject, true)
+	setActive(arg_10_0.iconRaw.gameObject, false)
+
+	local var_10_1 = var_10_0:GetImageMd5()
+
+	BackYardThemeTempalteUtil.GetTexture(var_10_0:GetTextureName(), var_10_1, function(arg_11_0)
+		if not IsNil(arg_10_0.iconRaw) and arg_11_0 then
+			arg_10_0.iconRaw.texture = arg_11_0
+
+			setActive(arg_10_0.iconRaw.gameObject, true)
 		end
 	end)
 
-	slot0.desc.text = slot1:GetDesc()
+	arg_10_0.desc.text = var_10_0:GetDesc()
 
-	slot0:UpdatePurchaseBtn()
+	arg_10_0:UpdatePurchaseBtn()
 end
 
-function slot0.UpdatePurchaseBtn(slot0)
-	slot1 = slot0.template:OwnThemeTemplateFurniture()
-	slot3 = false
+function var_0_0.UpdatePurchaseBtn(arg_12_0)
+	local var_12_0 = arg_12_0.template:OwnThemeTemplateFurniture()
+	local var_12_1 = arg_12_0.template:GetFurnitureCnt()
+	local var_12_2 = false
 
-	for slot7, slot8 in pairs(slot0.template:GetFurnitureCnt()) do
-		if Furniture.New({
-			id = slot7
-		}):inTime() and slot9:canPurchaseByDormMoeny() and slot0.dorm:GetOwnFurnitureCount(slot7) < slot8 then
-			slot3 = true
+	for iter_12_0, iter_12_1 in pairs(var_12_1) do
+		local var_12_3 = Furniture.New({
+			id = iter_12_0
+		})
+		local var_12_4 = arg_12_0.dorm:GetOwnFurnitureCount(iter_12_0)
+
+		if var_12_3:inTime() and var_12_3:canPurchaseByDormMoeny() and var_12_4 < iter_12_1 then
+			var_12_2 = true
 
 			break
 		end
 	end
 
-	setActive(slot0.purchaseBtn, not slot1 and slot3)
-	setActive(slot0.purchaseAllBtn, false)
+	setActive(arg_12_0.purchaseBtn, not var_12_0 and var_12_2)
+	setActive(arg_12_0.purchaseAllBtn, false)
 end
 
-function slot0.OnDestroy(slot0)
-	uv0.super.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_13_0)
+	var_0_0.super.OnDestroy(arg_13_0)
 
-	if not IsNil(slot0.iconRaw.texture) then
-		Object.Destroy(slot0.iconRaw.texture)
+	if not IsNil(arg_13_0.iconRaw.texture) then
+		Object.Destroy(arg_13_0.iconRaw.texture)
 
-		slot0.iconRaw.texture = nil
+		arg_13_0.iconRaw.texture = nil
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"再来通过“训练”开始对小猫进行培养！",
 	"点击“开始训练”来选择想要训练的喵箱！",
 	"最多可以一口气选择<color=#A9F548>10</color>个想要训练的喵箱，不过同时只会有<color=#A9F548>4</color>个进行训练！这次就先选择1个吧！"
@@ -14,7 +14,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 0,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/CommanderCatUI(Clone)/blur_panel/pages/CommanderCatDockUI(Clone)/box/boxes_btn",
@@ -31,7 +31,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 0,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/CommanderBoxesUI(Clone)/frame/boxes/start_btn"
@@ -44,7 +44,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 0,
-				text = slot0[3]
+				text = var_0_0[3]
 			}
 		},
 		{

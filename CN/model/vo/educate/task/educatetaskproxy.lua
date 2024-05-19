@@ -1,284 +1,301 @@
-slot0 = class("EducateTaskProxy")
-slot0.TASK_ADDED = "EducateTaskProxy.TASK_ADDED"
-slot0.TASK_REMOVED = "EducateTaskProxy.TASK_REMOVED"
-slot0.TASK_UPDATED = "EducateTaskProxy.TASK_UPDATED"
+﻿local var_0_0 = class("EducateTaskProxy")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.binder = slot1
-	slot0.data = {}
-	slot0.targetSetDays = {}
+var_0_0.TASK_ADDED = "EducateTaskProxy.TASK_ADDED"
+var_0_0.TASK_REMOVED = "EducateTaskProxy.TASK_REMOVED"
+var_0_0.TASK_UPDATED = "EducateTaskProxy.TASK_UPDATED"
 
-	for slot5, slot6 in ipairs(pg.gameset.child_target_set_date.description) do
-		slot0.targetSetDays[slot5] = EducateHelper.GetTimeFromCfg(slot6)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.binder = arg_1_1
+	arg_1_0.data = {}
+	arg_1_0.targetSetDays = {}
+
+	for iter_1_0, iter_1_1 in ipairs(pg.gameset.child_target_set_date.description) do
+		arg_1_0.targetSetDays[iter_1_0] = EducateHelper.GetTimeFromCfg(iter_1_1)
 	end
 end
 
-function slot0.SetUp(slot0, slot1)
-	slot0.data = {}
+function var_0_0.SetUp(arg_2_0, arg_2_1)
+	arg_2_0.data = {}
 
-	for slot5, slot6 in ipairs(slot1.tasks or {}) do
-		slot0.data[slot6.id] = EducateTask.New(slot6)
+	for iter_2_0, iter_2_1 in ipairs(arg_2_1.tasks or {}) do
+		arg_2_0.data[iter_2_1.id] = EducateTask.New(iter_2_1)
 	end
 
-	slot0:SetTarget(slot1.targetId or 0)
+	arg_2_0:SetTarget(arg_2_1.targetId or 0)
 
-	slot0.finishMindTaskIds = slot1.finishMindTaskIds
-	slot0.isGotTargetAward = slot1.isGotTargetAward
+	arg_2_0.finishMindTaskIds = arg_2_1.finishMindTaskIds
+	arg_2_0.isGotTargetAward = arg_2_1.isGotTargetAward
 end
 
-function slot0.UpdateTargetAwardStatus(slot0, slot1)
-	slot0.isGotTargetAward = slot1
+function var_0_0.UpdateTargetAwardStatus(arg_3_0, arg_3_1)
+	arg_3_0.isGotTargetAward = arg_3_1
 end
 
-function slot0.CanGetTargetAward(slot0)
-	return not slot0.isGotTargetAward
+function var_0_0.CanGetTargetAward(arg_4_0)
+	return not arg_4_0.isGotTargetAward
 end
 
-function slot0.AddTask(slot0, slot1)
-	slot2 = EducateTask.New(slot1)
-	slot0.data[slot2.id] = slot2
+function var_0_0.AddTask(arg_5_0, arg_5_1)
+	local var_5_0 = EducateTask.New(arg_5_1)
 
-	if slot2:IsMind() then
+	arg_5_0.data[var_5_0.id] = var_5_0
+
+	if var_5_0:IsMind() then
 		EducateTipHelper.SetNewTip(EducateTipHelper.NEW_MIND_TASK)
 	end
 
-	slot0.binder:sendNotification(uv0.TASK_ADDED)
+	arg_5_0.binder:sendNotification(var_0_0.TASK_ADDED)
 end
 
-function slot0.RemoveTaskById(slot0, slot1)
-	slot0.data[slot1] = nil
+function var_0_0.RemoveTaskById(arg_6_0, arg_6_1)
+	arg_6_0.data[arg_6_1] = nil
 
-	slot0.binder:sendNotification(uv0.TASK_REMOVED)
+	arg_6_0.binder:sendNotification(var_0_0.TASK_REMOVED)
 end
 
-function slot0.UpdateTask(slot0, slot1)
-	if slot0.data[slot1.id] == nil then
+function var_0_0.UpdateTask(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_0.data[arg_7_1.id]
+
+	if var_7_0 == nil then
 		return
 	end
 
-	slot2.progress = slot1.progress
+	var_7_0.progress = arg_7_1.progress
 
-	slot0.binder:sendNotification(uv0.TASK_UPDATED)
+	arg_7_0.binder:sendNotification(var_0_0.TASK_UPDATED)
 end
 
-function slot0.GetTasksBySystem(slot0, slot1)
-	slot2 = {}
+function var_0_0.GetTasksBySystem(arg_8_0, arg_8_1)
+	local var_8_0 = {}
 
-	for slot6, slot7 in pairs(slot0.data) do
-		if slot7:GetSystemType() == slot1 then
-			table.insert(slot2, slot7:clone())
+	for iter_8_0, iter_8_1 in pairs(arg_8_0.data) do
+		if iter_8_1:GetSystemType() == arg_8_1 then
+			table.insert(var_8_0, iter_8_1:clone())
 		end
 	end
 
-	return slot2
+	return var_8_0
 end
 
-function slot0.GetTaskById(slot0, slot1)
-	return slot0.data[slot1] and slot0.data[slot1]:clone() or nil
+function var_0_0.GetTaskById(arg_9_0, arg_9_1)
+	return arg_9_0.data[arg_9_1] and arg_9_0.data[arg_9_1]:clone() or nil
 end
 
-function slot0.SetTarget(slot0, slot1)
-	slot0.targetId = slot1
+function var_0_0.SetTarget(arg_10_0, arg_10_1)
+	arg_10_0.targetId = arg_10_1
 
-	if slot0.targetId == 0 then
-		slot0.targetTaskIds = {}
+	if arg_10_0.targetId == 0 then
+		arg_10_0.targetTaskIds = {}
 	else
-		slot0.targetTaskIds = pg.child_target_set[slot0.targetId].ids
+		arg_10_0.targetTaskIds = pg.child_target_set[arg_10_0.targetId].ids
 	end
 end
 
-function slot0.GetTargetId(slot0)
-	return slot0.targetId
+function var_0_0.GetTargetId(arg_11_0)
+	return arg_11_0.targetId
 end
 
-function slot0.GetTargetSetDays(slot0)
-	return slot0.targetSetDays
+function var_0_0.GetTargetSetDays(arg_12_0)
+	return arg_12_0.targetSetDays
 end
 
-function slot0.CheckTargetSet(slot0)
-	if slot0.targetId == 0 then
+function var_0_0.CheckTargetSet(arg_13_0)
+	if arg_13_0.targetId == 0 then
 		return true
 	end
 
-	for slot5, slot6 in pairs(slot0.targetSetDays) do
-		if EducateHelper.IsSameDay(slot6, getProxy(EducateProxy):GetCurTime()) then
-			return pg.child_target_set[slot0.targetId].stage ~= slot5
+	local var_13_0 = getProxy(EducateProxy):GetCurTime()
+
+	for iter_13_0, iter_13_1 in pairs(arg_13_0.targetSetDays) do
+		if EducateHelper.IsSameDay(iter_13_1, var_13_0) then
+			return pg.child_target_set[arg_13_0.targetId].stage ~= iter_13_0
 		end
 	end
 
 	return false
 end
 
-function slot0.GetTargetTasksForShow(slot0)
-	slot1 = {}
+function var_0_0.GetTargetTasksForShow(arg_14_0)
+	local var_14_0 = {}
 
-	for slot5, slot6 in ipairs(slot0.targetTaskIds) do
-		if slot0.data[slot6] and not slot0.isGotTargetAward then
-			table.insert(slot1, slot0:GetTaskById(slot6))
+	for iter_14_0, iter_14_1 in ipairs(arg_14_0.targetTaskIds) do
+		if arg_14_0.data[iter_14_1] and not arg_14_0.isGotTargetAward then
+			table.insert(var_14_0, arg_14_0:GetTaskById(iter_14_1))
 		else
-			slot7 = EducateTask.New({
-				id = slot6
+			local var_14_1 = EducateTask.New({
+				id = iter_14_1
 			})
 
-			slot7:SetRecieve()
-			table.insert(slot1, slot7)
+			var_14_1:SetRecieve()
+			table.insert(var_14_0, var_14_1)
 		end
 	end
 
-	return slot1
+	return var_14_0
 end
 
-function slot0.GetMainTasksForShow(slot0)
-	slot1 = {}
+function var_0_0.GetMainTasksForShow(arg_15_0)
+	local var_15_0 = {}
 
-	for slot5, slot6 in ipairs(pg.child_task.all) do
-		if pg.child_task[slot6].type_1 == EducateTask.STSTEM_TYPE_MAIN then
-			if slot0.data[slot6] then
-				table.insert(slot1, slot0:GetTaskById(slot6))
-			elseif EducateTask.New({
-				id = slot6
-			}):InTime() then
-				slot8:SetRecieve()
-				table.insert(slot1, slot8)
+	for iter_15_0, iter_15_1 in ipairs(pg.child_task.all) do
+		if pg.child_task[iter_15_1].type_1 == EducateTask.STSTEM_TYPE_MAIN then
+			if arg_15_0.data[iter_15_1] then
+				table.insert(var_15_0, arg_15_0:GetTaskById(iter_15_1))
+			else
+				local var_15_1 = EducateTask.New({
+					id = iter_15_1
+				})
+
+				if var_15_1:InTime() then
+					var_15_1:SetRecieve()
+					table.insert(var_15_0, var_15_1)
+				end
 			end
 		end
 	end
 
-	return slot1
+	return var_15_0
 end
 
-function slot0.FilterByGroup(slot0, slot1, slot2)
-	slot3 = {}
+function var_0_0.FilterByGroup(arg_16_0, arg_16_1, arg_16_2)
+	local var_16_0 = {}
 
-	for slot7, slot8 in ipairs(slot1) do
-		if not slot3[slot8:getConfig("group")] then
-			slot3[slot9] = {}
+	for iter_16_0, iter_16_1 in ipairs(arg_16_1) do
+		local var_16_1 = iter_16_1:getConfig("group")
+
+		if not var_16_0[var_16_1] then
+			var_16_0[var_16_1] = {}
 		end
 
-		table.insert(slot3[slot9], slot8)
+		table.insert(var_16_0[var_16_1], iter_16_1)
 	end
 
-	slot4 = {}
+	local var_16_2 = {}
 
-	for slot8, slot9 in pairs(slot3) do
-		table.sort(slot9, CompareFuncs({
-			function (slot0)
-				return slot0:IsReceive() and 1 or 0
+	for iter_16_2, iter_16_3 in pairs(var_16_0) do
+		table.sort(iter_16_3, CompareFuncs({
+			function(arg_17_0)
+				return arg_17_0:IsReceive() and 1 or 0
 			end,
-			function (slot0)
-				return -slot0:getConfig("order")
+			function(arg_18_0)
+				return -arg_18_0:getConfig("order")
 			end,
-			function (slot0)
-				return -slot0.id
+			function(arg_19_0)
+				return -arg_19_0.id
 			end
 		}))
 
-		if slot2 then
-			if underscore.any(slot9, function (slot0)
-				return not slot0:IsReceive()
+		if arg_16_2 then
+			if underscore.any(iter_16_3, function(arg_20_0)
+				return not arg_20_0:IsReceive()
 			end) then
-				table.insert(slot4, slot9[1])
+				table.insert(var_16_2, iter_16_3[1])
 			end
 		else
-			table.insert(slot4, slot9[1])
+			table.insert(var_16_2, iter_16_3[1])
 		end
 	end
 
-	table.sort(slot4, CompareFuncs({
-		function (slot0)
-			return slot0:IsReceive() and 1 or 0
+	table.sort(var_16_2, CompareFuncs({
+		function(arg_21_0)
+			return arg_21_0:IsReceive() and 1 or 0
 		end,
-		function (slot0)
-			return slot0:IsFinish() and 0 or 1
+		function(arg_22_0)
+			return arg_22_0:IsFinish() and 0 or 1
 		end,
-		function (slot0)
-			return slot0:getConfig("group")
+		function(arg_23_0)
+			return arg_23_0:getConfig("group")
 		end,
-		function (slot0)
-			return -slot0.id
+		function(arg_24_0)
+			return -arg_24_0.id
 		end
 	}))
 
-	return slot4
+	return var_16_2
 end
 
-function slot0.GetOtherTargetTaskProgress(slot0)
-	if slot0.targetId == 0 then
+function var_0_0.GetOtherTargetTaskProgress(arg_25_0)
+	if arg_25_0.targetId == 0 then
 		return 0, 0
 	end
 
-	return underscore.reduce(pg.child_target_set[slot0.targetId].ids, 0, function (slot0, slot1)
-		return slot0 + (uv0.data[slot1] and 0 or pg.child_task[slot1].task_target_progress)
-	end), pg.child_target_set[slot0.targetId].target_progress
+	local var_25_0 = pg.child_target_set[arg_25_0.targetId].target_progress
+	local var_25_1 = pg.child_target_set[arg_25_0.targetId].ids
+
+	return underscore.reduce(var_25_1, 0, function(arg_26_0, arg_26_1)
+		return arg_26_0 + (arg_25_0.data[arg_26_1] and 0 or pg.child_task[arg_26_1].task_target_progress)
+	end), var_25_0
 end
 
-function slot0.GetMainTargetTaskProgress(slot0)
-	slot2 = 0
+function var_0_0.GetMainTargetTaskProgress(arg_27_0)
+	local var_27_0 = 0
+	local var_27_1 = 0
 
-	for slot6, slot7 in ipairs(pg.child_task.all) do
-		if pg.child_task[slot7].type_1 == EducateTask.STSTEM_TYPE_MAIN then
-			if slot0.data[slot7] then
-				slot1 = 0 + 1
+	for iter_27_0, iter_27_1 in ipairs(pg.child_task.all) do
+		if pg.child_task[iter_27_1].type_1 == EducateTask.STSTEM_TYPE_MAIN then
+			if arg_27_0.data[iter_27_1] then
+				var_27_0 = var_27_0 + 1
 			elseif EducateTask.New({
-				id = slot7
+				id = iter_27_1
 			}):InTime() then
-				slot2 = slot2 + 1
-				slot1 = slot1 + 1
+				var_27_1 = var_27_1 + 1
+				var_27_0 = var_27_0 + 1
 			end
 		end
 	end
 
-	return slot2, slot1
+	return var_27_1, var_27_0
 end
 
-function slot0.GetShowTargetTasks(slot0)
-	slot1 = slot0:FilterByGroup(slot0:GetTargetTasksForShow())
+function var_0_0.GetShowTargetTasks(arg_28_0)
+	local var_28_0 = arg_28_0:FilterByGroup(arg_28_0:GetTargetTasksForShow())
 
-	table.sort(slot1, CompareFuncs({
-		function (slot0)
-			return slot0:IsReceive() and 1 or 0
+	table.sort(var_28_0, CompareFuncs({
+		function(arg_29_0)
+			return arg_29_0:IsReceive() and 1 or 0
 		end,
-		function (slot0)
-			return -slot0:getConfig("order")
+		function(arg_30_0)
+			return -arg_30_0:getConfig("order")
 		end,
-		function (slot0)
-			return -slot0.id
+		function(arg_31_0)
+			return -arg_31_0.id
 		end
 	}))
 
-	return slot1
+	return var_28_0
 end
 
-function slot0.GetSiteEnterAddTasks(slot0, slot1)
-	slot2 = {}
+function var_0_0.GetSiteEnterAddTasks(arg_32_0, arg_32_1)
+	local var_32_0 = {}
 
-	for slot6, slot7 in pairs(slot0.data) do
-		if slot7:NeedAddProgressFromSiteEnter() and EducateHelper.IsMatchSubType(slot7:getConfig("sub_type"), slot1) then
-			table.insert(slot2, slot7:clone())
+	for iter_32_0, iter_32_1 in pairs(arg_32_0.data) do
+		if iter_32_1:NeedAddProgressFromSiteEnter() and EducateHelper.IsMatchSubType(iter_32_1:getConfig("sub_type"), arg_32_1) then
+			table.insert(var_32_0, iter_32_1:clone())
 		end
 	end
 
-	return slot2
+	return var_32_0
 end
 
-function slot0.GetPerformAddTasks(slot0, slot1)
-	slot2 = {}
+function var_0_0.GetPerformAddTasks(arg_33_0, arg_33_1)
+	local var_33_0 = {}
 
-	for slot6, slot7 in pairs(slot0.data) do
-		if slot7:NeedAddProgressFromPerform() and EducateHelper.IsMatchSubType(slot7:getConfig("sub_type"), slot1) then
-			table.insert(slot2, slot7:clone())
+	for iter_33_0, iter_33_1 in pairs(arg_33_0.data) do
+		if iter_33_1:NeedAddProgressFromPerform() and EducateHelper.IsMatchSubType(iter_33_1:getConfig("sub_type"), arg_33_1) then
+			table.insert(var_33_0, iter_33_1:clone())
 		end
 	end
 
-	return slot2
+	return var_33_0
 end
 
-function slot0.OnNewWeek(slot0)
+function var_0_0.OnNewWeek(arg_34_0)
+	return
 end
 
-function slot0.IsShowMindTasksTip(slot0)
-	for slot4, slot5 in pairs(slot0.data) do
-		if slot5:IsMind() and slot5:IsFinish() then
+function var_0_0.IsShowMindTasksTip(arg_35_0)
+	for iter_35_0, iter_35_1 in pairs(arg_35_0.data) do
+		if iter_35_1:IsMind() and iter_35_1:IsFinish() then
 			return true
 		end
 	end
@@ -286,13 +303,15 @@ function slot0.IsShowMindTasksTip(slot0)
 	return false
 end
 
-function slot0.IsShowMainTasksTip(slot0)
-	return slot0:FilterByGroup(slot0:GetMainTasksForShow())[1] and not slot1:IsReceive() and slot1:IsFinish()
+function var_0_0.IsShowMainTasksTip(arg_36_0)
+	local var_36_0 = arg_36_0:FilterByGroup(arg_36_0:GetMainTasksForShow())[1]
+
+	return var_36_0 and not var_36_0:IsReceive() and var_36_0:IsFinish()
 end
 
-function slot0.IsShowTargetTasksTip(slot0)
-	for slot4, slot5 in pairs(slot0.data) do
-		if slot5:IsTarget() and slot5:IsFinish() then
+function var_0_0.IsShowTargetTasksTip(arg_37_0)
+	for iter_37_0, iter_37_1 in pairs(arg_37_0.data) do
+		if iter_37_1:IsTarget() and iter_37_1:IsFinish() then
 			return true
 		end
 	end
@@ -300,22 +319,22 @@ function slot0.IsShowTargetTasksTip(slot0)
 	return false
 end
 
-function slot0.IsShowOtherTasksTip(slot0)
-	if slot0:IsShowMainTasksTip() then
+function var_0_0.IsShowOtherTasksTip(arg_38_0)
+	if arg_38_0:IsShowMainTasksTip() then
 		return true
 	end
 
-	if slot0.isGotTargetAward then
+	if arg_38_0.isGotTargetAward then
 		return false
 	end
 
-	slot1, slot2 = slot0:GetOtherTargetTaskProgress()
+	local var_38_0, var_38_1 = arg_38_0:GetOtherTargetTaskProgress()
 
-	if slot1 / slot2 >= 1 then
+	if var_38_0 / var_38_1 >= 1 then
 		return true
 	end
 
-	return slot0:IsShowTargetTasksTip()
+	return arg_38_0:IsShowTargetTasksTip()
 end
 
-return slot0
+return var_0_0

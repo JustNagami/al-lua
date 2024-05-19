@@ -1,4 +1,4 @@
-return {
+﻿return {
 	{
 		content = "刷屏:大量无意义表情符号或字符"
 	},

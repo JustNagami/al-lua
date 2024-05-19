@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.furniture_compose_template = {
 	{
 		id = 1,

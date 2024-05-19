@@ -1,4 +1,23 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				maxTargetNumber = 0,
+				target = "TargetSelf",
+				skill_id = 12154,
+				check_target = {
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"qiao5zhupao"
+				}
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,24 +38,5 @@ return {
 	stack = 1,
 	id = 12157,
 	icon = 12150,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				maxTargetNumber = 0,
-				target = "TargetSelf",
-				skill_id = 12154,
-				check_target = {
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"qiao5zhupao"
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

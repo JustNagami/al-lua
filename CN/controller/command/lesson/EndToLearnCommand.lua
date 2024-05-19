@@ -1,54 +1,55 @@
-slot0 = class("EndToLearnCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("EndToLearnCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
 	pg.ConnectionMgr.GetInstance():Send(22004, {
 		type = 0
-	}, 22005, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(NavalAcademyProxy)
-			slot2 = getProxy(BayProxy)
-			slot3 = slot1:getCourse()
-			slot5 = slot3.proficiency
-			slot6 = math.max(slot5 - slot0.proficiency, 0)
-			slot3.proficiency = slot6
-			slot7 = {}
-			slot8 = {}
+	}, 22005, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(NavalAcademyProxy)
+			local var_2_1 = getProxy(BayProxy)
+			local var_2_2 = var_2_0:getCourse()
+			local var_2_3 = var_2_2:getConfig("name_show")
+			local var_2_4 = var_2_2.proficiency
+			local var_2_5 = math.max(var_2_4 - arg_2_0.proficiency, 0)
 
-			_.each(slot0.awards, function (slot0)
-				uv0[slot0.ship_id] = slot0.exp
-				uv1[slot0.ship_id] = slot0.energy
+			var_2_2.proficiency = var_2_5
+
+			local var_2_6 = {}
+			local var_2_7 = {}
+
+			_.each(arg_2_0.awards, function(arg_3_0)
+				var_2_6[arg_3_0.ship_id] = arg_3_0.exp
+				var_2_7[arg_3_0.ship_id] = arg_3_0.energy
 			end)
 
-			slot9 = _.map(slot3.students, function (slot0)
-				return uv0:getShipById(slot0)
+			local var_2_8 = _.map(var_2_2.students, function(arg_4_0)
+				return var_2_1:getShipById(arg_4_0)
 			end)
-			slot10 = Clone(slot9)
+			local var_2_9 = Clone(var_2_8)
 
-			_.each(slot10, function (slot0)
-				slot0:addExp(uv0[slot0.id] or 0)
-				slot0:cosumeEnergy(uv1[slot0.id] or 0)
-				uv2:updateShip(slot0)
+			_.each(var_2_9, function(arg_5_0)
+				arg_5_0:addExp(var_2_6[arg_5_0.id] or 0)
+				arg_5_0:cosumeEnergy(var_2_7[arg_5_0.id] or 0)
+				var_2_1:updateShip(arg_5_0)
 			end)
 
-			slot3.students = {}
-			slot3.timestamp = 0
+			var_2_2.students = {}
+			var_2_2.timestamp = 0
 
-			slot1:setCourse(slot3)
-			uv0:sendNotification(GAME.CLASS_STOP_COURSE_DONE, {
-				title = slot3:getConfig("name_show"),
-				oldProficiency = slot5,
-				newProficiency = slot6,
-				oldStudents = slot9,
-				newStudents = slot10
+			var_2_0:setCourse(var_2_2)
+			arg_1_0:sendNotification(GAME.CLASS_STOP_COURSE_DONE, {
+				title = var_2_3,
+				oldProficiency = var_2_4,
+				newProficiency = var_2_5,
+				oldStudents = var_2_8,
+				newStudents = var_2_9
 			})
-
-			return
+		else
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("lesson_endToLearn", arg_2_0.result))
 		end
-
-		pg.TipsMgr.GetInstance():ShowTips(errorTip("lesson_endToLearn", slot0.result))
 	end)
 end
 
-return slot0
+return var_0_0

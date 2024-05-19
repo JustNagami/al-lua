@@ -1,1 +1,1 @@
-return class("FranceRestartMainPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿return (class("FranceRestartMainPage", import(".TemplatePage.PreviewTemplatePage")))

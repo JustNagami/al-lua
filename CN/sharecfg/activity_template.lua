@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_template = {
 	[3] = {
 		mark = 20170406,

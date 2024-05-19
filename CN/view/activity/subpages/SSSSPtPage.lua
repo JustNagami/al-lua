@@ -1,5 +1,5 @@
-slot0 = class("SSSSPtPage", import(".TemplatePage.PtTemplatePage"))
-slot1 = {
+﻿local var_0_0 = class("SSSSPtPage", import(".TemplatePage.PtTemplatePage"))
+local var_0_1 = {
 	{
 		11,
 		1.5
@@ -17,252 +17,264 @@ slot1 = {
 		4
 	}
 }
-slot2 = 0.25
-slot3 = 20
-slot4 = 20
-slot5 = 0.75
-slot6 = 3
-slot7 = 0.75
-slot8 = 5
-slot9 = "he"
+local var_0_2 = 0.25
+local var_0_3 = 20
+local var_0_4 = 20
+local var_0_5 = 0.75
+local var_0_6 = 3
+local var_0_7 = 0.75
+local var_0_8 = 5
+local var_0_9 = "he"
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.maskNode = slot0:findTF("mask", slot0.bg)
-	slot0.role = slot0:findTF("role", slot0.maskNode)
-	slot0.food = slot0:findTF("food", slot0.maskNode)
-	slot0.monster = slot0:findTF("monster", slot0.maskNode)
-	slot0.reflectNode = slot0:findTF("reflection", slot0.maskNode)
-	slot0.monsterReflect = slot0:findTF("monster_reflection", slot0.reflectNode)
-	slot0.roleReflect = slot0:findTF("role_reflection", slot0.reflectNode)
-	slot0.feedBtn = slot0:findTF("feed_btn", slot0.bg)
-	slot0.window = slot0:findTF("window")
-	slot0.monsterAni = GetComponent(slot0:findTF("panel/monster", slot0.window), typeof(Animator))
-	slot0.spineRole = slot0:findTF("panel/spinechar", slot0.window)
-	slot0.spriteRole = slot0:findTF("panel/spritechar", slot0.window)
-	slot0.isPlaying = false
-	slot0.coutinuePlay = {}
+	arg_1_0.maskNode = arg_1_0:findTF("mask", arg_1_0.bg)
+	arg_1_0.role = arg_1_0:findTF("role", arg_1_0.maskNode)
+	arg_1_0.food = arg_1_0:findTF("food", arg_1_0.maskNode)
+	arg_1_0.monster = arg_1_0:findTF("monster", arg_1_0.maskNode)
+	arg_1_0.reflectNode = arg_1_0:findTF("reflection", arg_1_0.maskNode)
+	arg_1_0.monsterReflect = arg_1_0:findTF("monster_reflection", arg_1_0.reflectNode)
+	arg_1_0.roleReflect = arg_1_0:findTF("role_reflection", arg_1_0.reflectNode)
+	arg_1_0.feedBtn = arg_1_0:findTF("feed_btn", arg_1_0.bg)
+	arg_1_0.window = arg_1_0:findTF("window")
+	arg_1_0.monsterAni = GetComponent(arg_1_0:findTF("panel/monster", arg_1_0.window), typeof(Animator))
+	arg_1_0.spineRole = arg_1_0:findTF("panel/spinechar", arg_1_0.window)
+	arg_1_0.spriteRole = arg_1_0:findTF("panel/spritechar", arg_1_0.window)
+	arg_1_0.isPlaying = false
+	arg_1_0.coutinuePlay = {}
 end
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
-	setActive(slot0.window, false)
-	onButton(slot0, slot0.monster, function ()
-		if uv0.monster.localScale.x == uv1[#uv1][2] then
-			uv0:OpenMonsterWin()
+function var_0_0.OnFirstFlush(arg_2_0)
+	var_0_0.super.OnFirstFlush(arg_2_0)
+	setActive(arg_2_0.window, false)
+	onButton(arg_2_0, arg_2_0.monster, function()
+		if arg_2_0.monster.localScale.x == var_0_1[#var_0_1][2] then
+			arg_2_0:OpenMonsterWin()
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("close", slot0.window), function ()
-		setActive(uv0.window, false)
+	onButton(arg_2_0, arg_2_0:findTF("close", arg_2_0.window), function()
+		setActive(arg_2_0.window, false)
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("close_btn", slot0.window), function ()
-		setActive(uv0.window, false)
+	onButton(arg_2_0, arg_2_0:findTF("close_btn", arg_2_0.window), function()
+		setActive(arg_2_0.window, false)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.feedBtn, function ()
-		slot0 = {}
-		slot1 = uv0.ptData:GetAward()
-		slot3 = getProxy(PlayerProxy):getRawData()
-		slot6, slot7 = Task.StaticJudgeOverflow(slot3.gold, slot3.oil, LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(pg.gameset.urpt_chapter_max.description[1]), true, true, {
+	onButton(arg_2_0, arg_2_0.feedBtn, function()
+		local var_6_0 = {}
+		local var_6_1 = arg_2_0.ptData:GetAward()
+		local var_6_2 = getProxy(PlayerProxy):getRawData()
+		local var_6_3 = pg.gameset.urpt_chapter_max.description[1]
+		local var_6_4 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var_6_3)
+		local var_6_5, var_6_6 = Task.StaticJudgeOverflow(var_6_2.gold, var_6_2.oil, var_6_4, true, true, {
 			{
-				slot1.type,
-				slot1.id,
-				slot1.count
+				var_6_1.type,
+				var_6_1.id,
+				var_6_1.count
 			}
 		})
 
-		if slot6 then
-			table.insert(slot0, function (slot0)
+		if var_6_5 then
+			table.insert(var_6_0, function(arg_7_0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					type = MSGBOX_TYPE_ITEM_BOX,
 					content = i18n("award_max_warning"),
-					items = uv0,
-					onYes = slot0
+					items = var_6_6,
+					onYes = arg_7_0
 				})
 			end)
 		end
 
-		seriesAsync(slot0, function ()
-			slot1, slot2 = uv0.ptData:GetResProgress()
+		seriesAsync(var_6_0, function()
+			local function var_8_0()
+				arg_2_0:PlayFeedAni()
+			end
 
-			uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+			local var_8_1, var_8_2 = arg_2_0.ptData:GetResProgress()
+
+			arg_2_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
 				cmd = 1,
-				activity_id = uv0.ptData:GetId(),
-				arg1 = slot2,
-				callback = function ()
-					uv0:PlayFeedAni()
-				end
+				activity_id = arg_2_0.ptData:GetId(),
+				arg1 = var_8_2,
+				callback = var_8_0
 			})
 		end)
 	end, SFX_PANEL)
-	setActive(slot0:findTF("blink_effect", slot0.bg), true)
-	slot0:UpdateMonster()
+	setActive(arg_2_0:findTF("blink_effect", arg_2_0.bg), true)
+	arg_2_0:UpdateMonster()
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_10_0)
+	var_0_0.super.OnUpdateFlush(arg_10_0)
 
-	slot1, slot2, slot3 = slot0.ptData:GetLevelProgress()
-	slot4, slot5, slot6 = slot0.ptData:GetResProgress()
+	local var_10_0, var_10_1, var_10_2 = arg_10_0.ptData:GetLevelProgress()
+	local var_10_3, var_10_4, var_10_5 = arg_10_0.ptData:GetResProgress()
 
-	setText(slot0.step, setColorStr(slot1, "#f0dbff") .. "/" .. slot2)
-	setText(slot0.progress, (slot6 >= 1 and setColorStr(slot4, "#f0dbff") or slot4) .. "/" .. slot5)
+	setText(arg_10_0.step, setColorStr(var_10_0, "#f0dbff") .. "/" .. var_10_1)
+	setText(arg_10_0.progress, (var_10_5 >= 1 and setColorStr(var_10_3, "#f0dbff") or var_10_3) .. "/" .. var_10_4)
 
-	if isActive(slot0.getBtn) and slot0:IsSpecialPhase() then
-		setActive(slot0.getBtn, false)
-		setActive(slot0.feedBtn, true)
+	if isActive(arg_10_0.getBtn) and arg_10_0:IsSpecialPhase() then
+		setActive(arg_10_0.getBtn, false)
+		setActive(arg_10_0.feedBtn, true)
 	else
-		setActive(slot0.feedBtn, false)
+		setActive(arg_10_0.feedBtn, false)
 	end
 end
 
-function slot0.IsSpecialPhase(slot0)
-	slot2 = false
+function var_0_0.IsSpecialPhase(arg_11_0)
+	local var_11_0 = arg_11_0.ptData:GetLevelProgress()
+	local var_11_1 = false
 
-	for slot6, slot7 in ipairs(uv0) do
-		if slot0.ptData:GetLevelProgress() == slot7[1] then
-			slot2 = true
+	for iter_11_0, iter_11_1 in ipairs(var_0_1) do
+		if var_11_0 == iter_11_1[1] then
+			var_11_1 = true
 		end
 	end
 
-	return slot2
+	return var_11_1
 end
 
-function slot0.GetMonsterScale(slot0, slot1)
-	slot2 = 1
+function var_0_0.GetMonsterScale(arg_12_0, arg_12_1)
+	local var_12_0 = 1
 
-	for slot6, slot7 in ipairs(uv0) do
-		if slot7[1] < slot1 then
-			slot2 = slot7[2]
+	for iter_12_0, iter_12_1 in ipairs(var_0_1) do
+		if arg_12_1 > iter_12_1[1] then
+			var_12_0 = iter_12_1[2]
 		end
 	end
 
-	return slot2
+	return var_12_0
 end
 
-function slot0.UpdateMonster(slot0)
-	slot2 = slot0:GetMonsterScale(slot0.ptData:GetLevelProgress())
+function var_0_0.UpdateMonster(arg_13_0)
+	local var_13_0 = arg_13_0.ptData:GetLevelProgress()
+	local var_13_1 = arg_13_0:GetMonsterScale(var_13_0)
 
-	setLocalScale(slot0.monster, Vector2(slot2, slot2))
-	setLocalScale(slot0.monsterReflect, Vector2(slot2, slot2))
+	setLocalScale(arg_13_0.monster, Vector2(var_13_1, var_13_1))
+	setLocalScale(arg_13_0.monsterReflect, Vector2(var_13_1, var_13_1))
 end
 
-function slot0.PlayFeedAni(slot0)
-	if slot0.isPlaying then
-		table.insert(slot0.coutinuePlay, slot0.ptData:GetLevelProgress() - 1)
+function var_0_0.PlayFeedAni(arg_14_0)
+	if arg_14_0.isPlaying then
+		local var_14_0 = arg_14_0.ptData:GetLevelProgress() - 1
+
+		table.insert(arg_14_0.coutinuePlay, var_14_0)
 
 		return
 	end
 
-	slot0.isPlaying = true
+	arg_14_0.isPlaying = true
 
-	slot0:managedTween(LeanTween.moveX, function ()
-		uv0:PlayThrowFoodAni(function ()
-			uv0:PlayMonsterAni()
+	arg_14_0:managedTween(LeanTween.moveX, function()
+		arg_14_0:PlayThrowFoodAni(function()
+			arg_14_0:PlayMonsterAni()
 		end)
-	end, slot0.role, slot0.role.localPosition.x + uv0, uv1):setLoopPingPong(1)
+	end, arg_14_0.role, arg_14_0.role.localPosition.x + var_0_3, var_0_2):setLoopPingPong(1)
 end
 
-function slot0.PlayThrowFoodAni(slot0, slot1)
-	slot2 = Vector2(280, -70)
-	slot3 = Vector2(500, -70)
-	slot4 = 1
-	slot5 = (slot3.x - slot2.x) / uv0
-	slot6 = (slot3.y - slot2.y) / uv0
+function var_0_0.PlayThrowFoodAni(arg_17_0, arg_17_1)
+	local var_17_0 = Vector2(280, -70)
+	local var_17_1 = Vector2(500, -70)
+	local var_17_2 = 1
+	local var_17_3 = (var_17_1.x - var_17_0.x) / var_0_6
+	local var_17_4 = (var_17_1.y - var_17_0.y) / var_0_6
 
-	setLocalPosition(slot0.food, slot2)
-	setActive(slot0.food, true)
+	setLocalPosition(arg_17_0.food, var_17_0)
+	setActive(arg_17_0.food, true)
 
-	slot0.foodTimer = Timer.New(function ()
-		setLocalPosition(uv4.food, Vector2(uv0.x + uv1 * uv2, uv0.y + uv3 * uv2))
+	arg_17_0.foodTimer = Timer.New(function()
+		local var_18_0 = Vector2(var_17_0.x + var_17_3 * var_17_2, var_17_0.y + var_17_4 * var_17_2)
 
-		if uv2 == uv5 then
-			uv4.foodTimer:Stop()
-			setActive(uv4.food, false)
+		setLocalPosition(arg_17_0.food, var_18_0)
 
-			if uv6 then
-				uv6()
+		if var_17_2 == var_0_6 then
+			arg_17_0.foodTimer:Stop()
+			setActive(arg_17_0.food, false)
+
+			if arg_17_1 then
+				arg_17_1()
 			end
 		else
-			uv2 = uv2 + 1
+			var_17_2 = var_17_2 + 1
 		end
-	end, uv1 / uv0, uv0)
+	end, var_0_5 / var_0_6, var_0_6)
 
-	slot0.foodTimer:Start()
+	arg_17_0.foodTimer:Start()
 end
 
-function slot0.PlayMonsterAni(slot0)
-	slot1 = slot0.monster.localScale.x
-	slot4 = 1
-	slot5 = (slot0:GetMonsterScale(slot0.coutinuePlay[1] and slot0.coutinuePlay[1] or slot0.ptData:GetLevelProgress()) - slot1) / uv0
+function var_0_0.PlayMonsterAni(arg_19_0)
+	local var_19_0 = arg_19_0.monster.localScale.x
+	local var_19_1 = arg_19_0.coutinuePlay[1] and arg_19_0.coutinuePlay[1] or arg_19_0.ptData:GetLevelProgress()
+	local var_19_2 = arg_19_0:GetMonsterScale(var_19_1)
+	local var_19_3 = 1
+	local var_19_4 = (var_19_2 - var_19_0) / var_0_8
 
-	setLocalScale(slot0.monster, Vector2(slot1, slot1))
-	setLocalScale(slot0.monsterReflect, Vector2(slot1, slot1))
+	setLocalScale(arg_19_0.monster, Vector2(var_19_0, var_19_0))
+	setLocalScale(arg_19_0.monsterReflect, Vector2(var_19_0, var_19_0))
 
-	slot0.monsterTimer = Timer.New(function ()
-		slot0 = Vector2(uv0 + uv1 * uv2, uv0 + uv1 * uv2)
+	arg_19_0.monsterTimer = Timer.New(function()
+		local var_20_0 = Vector2(var_19_0 + var_19_4 * var_19_3, var_19_0 + var_19_4 * var_19_3)
 
-		setLocalScale(uv3.monster, slot0)
-		setLocalScale(uv3.monsterReflect, slot0)
+		setLocalScale(arg_19_0.monster, var_20_0)
+		setLocalScale(arg_19_0.monsterReflect, var_20_0)
 
-		if uv2 == uv4 then
-			uv3.monsterTimer:Stop()
+		if var_19_3 == var_0_8 then
+			arg_19_0.monsterTimer:Stop()
 
-			uv3.monsterTimer = nil
-			uv3.isPlaying = false
+			arg_19_0.monsterTimer = nil
+			arg_19_0.isPlaying = false
 
-			if #uv3.coutinuePlay > 0 then
-				table.remove(uv3.coutinuePlay, 1)
-				uv3:PlayFeedAni()
+			if #arg_19_0.coutinuePlay > 0 then
+				table.remove(arg_19_0.coutinuePlay, 1)
+				arg_19_0:PlayFeedAni()
 			end
 		else
-			uv2 = uv2 + 1
+			var_19_3 = var_19_3 + 1
 		end
-	end, uv1 / uv0, uv0)
+	end, var_0_7 / var_0_8, var_0_8)
 
-	slot0:managedTween(LeanTween.moveX, function ()
-		uv0:managedTween(LeanTween.moveY, function ()
-			uv0.monsterTimer:Start()
-		end, uv0.monster, uv0.monster.localPosition.y + uv1, uv2):setLoopPingPong(2)
-	end, slot0.monster, slot0.monster.localPosition.x + uv4, uv3):setLoopPingPong(2)
+	arg_19_0:managedTween(LeanTween.moveX, function()
+		arg_19_0:managedTween(LeanTween.moveY, function()
+			arg_19_0.monsterTimer:Start()
+		end, arg_19_0.monster, arg_19_0.monster.localPosition.y + var_0_4, var_0_2):setLoopPingPong(2)
+	end, arg_19_0.monster, arg_19_0.monster.localPosition.x + var_0_3, var_0_2):setLoopPingPong(2)
 end
 
-function slot0.OpenMonsterWin(slot0)
-	setActive(slot0.window, true)
-	slot0.monsterAni:Play("ATK")
-	setLocalPosition(slot0.spriteRole, Vector2(-180, -115))
+function var_0_0.OpenMonsterWin(arg_23_0)
+	setActive(arg_23_0.window, true)
+	arg_23_0.monsterAni:Play("ATK")
+	setLocalPosition(arg_23_0.spriteRole, Vector2(-180, -115))
 
-	if LeanTween.isTweening(go(slot0.spriteRole)) then
-		LeanTween.cancel(go(slot0.spriteRole))
+	if LeanTween.isTweening(go(arg_23_0.spriteRole)) then
+		LeanTween.cancel(go(arg_23_0.spriteRole))
 	end
 
-	slot0:managedTween(LeanTween.moveX, nil, slot0.spriteRole, slot0.spriteRole.localPosition.x + 20, 0.8):setLoopPingPong()
+	arg_23_0:managedTween(LeanTween.moveX, nil, arg_23_0.spriteRole, arg_23_0.spriteRole.localPosition.x + 20, 0.8):setLoopPingPong()
 end
 
-function slot0.OnHideFlush(slot0)
-	setActive(slot0.window, false)
+function var_0_0.OnHideFlush(arg_24_0)
+	setActive(arg_24_0.window, false)
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:cleanManagedTween()
+function var_0_0.OnDestroy(arg_25_0)
+	arg_25_0:cleanManagedTween()
 
-	if slot0.foodTimer then
-		slot0.foodTimer:Stop()
+	if arg_25_0.foodTimer then
+		arg_25_0.foodTimer:Stop()
 
-		slot0.foodTimer = nil
+		arg_25_0.foodTimer = nil
 	end
 
-	if slot0.monsterTimer then
-		slot0.monsterTimer:Stop()
+	if arg_25_0.monsterTimer then
+		arg_25_0.monsterTimer:Stop()
 
-		slot0.monsterTimer = nil
+		arg_25_0.monsterTimer = nil
 	end
 
-	if slot0.model then
-		PoolMgr.GetInstance():ReturnSpineChar(uv0, slot0.model)
+	if arg_25_0.model then
+		PoolMgr.GetInstance():ReturnSpineChar(var_0_9, arg_25_0.model)
 
-		slot0.model = nil
+		arg_25_0.model = nil
 	end
 end
 
-return slot0
+return var_0_0

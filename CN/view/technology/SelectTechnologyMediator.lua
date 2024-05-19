@@ -1,76 +1,103 @@
-slot0 = class("SelectTechnologyMediator", import("..base.ContextMediator"))
-slot0.ON_BLUEPRINT = "SelectTechnologyMediator:ON_BLUEPRINT"
-slot0.ON_TECHNOLOGY = "SelectTechnologyMediator:ON_TECHNOLOGY"
-slot0.ON_TRANSFORM_EQUIPMENT = "SelectTechnologyMediator:ON_TRANSFORM_EQUIPMENT"
-slot0.ON_META = "SelectTechnologyMediator:ON_META"
+﻿local var_0_0 = class("SelectTechnologyMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.ON_TECHNOLOGY, function ()
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.TECHNOLOGY)
+var_0_0.ON_BLUEPRINT = "SelectTechnologyMediator:ON_BLUEPRINT"
+var_0_0.ON_TECHNOLOGY = "SelectTechnologyMediator:ON_TECHNOLOGY"
+var_0_0.ON_TRANSFORM_EQUIPMENT = "SelectTechnologyMediator:ON_TRANSFORM_EQUIPMENT"
+var_0_0.ON_META = "SelectTechnologyMediator:ON_META"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_TECHNOLOGY, function()
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.TECHNOLOGY)
 	end)
-	slot0:bind(uv0.ON_BLUEPRINT, function ()
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.SHIPBLUEPRINT)
+	arg_1_0:bind(var_0_0.ON_BLUEPRINT, function()
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHIPBLUEPRINT)
 	end)
-	slot0:bind(TechnologyConst.OPEN_TECHNOLOGY_TREE_SCENE, function ()
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.TECHNOLOGY_TREE_SCENE)
+	arg_1_0:bind(TechnologyConst.OPEN_TECHNOLOGY_TREE_SCENE, function()
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.TECHNOLOGY_TREE_SCENE)
 	end)
-	slot0:bind(uv0.ON_TRANSFORM_EQUIPMENT, function ()
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.EQUIPMENT_TRANSFORM)
+	arg_1_0:bind(var_0_0.ON_TRANSFORM_EQUIPMENT, function()
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.EQUIPMENT_TRANSFORM)
 	end)
-	slot0:bind(uv0.ON_META, function ()
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.METACHARACTER)
+	arg_1_0:bind(var_0_0.ON_META, function()
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.METACHARACTER)
 	end)
-	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
-	slot0.viewComponent:notifyTechnology(uv0.onTechnologyNotify())
-	slot0.viewComponent:notifyBlueprint(uv0.onBlueprintNotify())
-	slot0.viewComponent:notifyFleet(getProxy(TechnologyNationProxy):getShowRedPointTag())
-	slot0.viewComponent:notifyMeta(MetaCharacterConst.isMetaMainEntRedPoint())
+
+	local var_1_0 = getProxy(PlayerProxy)
+
+	arg_1_0.viewComponent:setPlayer(var_1_0:getData())
+
+	local var_1_1 = var_0_0.onTechnologyNotify()
+
+	arg_1_0.viewComponent:notifyTechnology(var_1_1)
+
+	local var_1_2 = var_0_0.onBlueprintNotify()
+
+	arg_1_0.viewComponent:notifyBlueprint(var_1_2)
+
+	local var_1_3 = getProxy(TechnologyNationProxy):getShowRedPointTag()
+
+	arg_1_0.viewComponent:notifyFleet(var_1_3)
+
+	local var_1_4 = MetaCharacterConst.isMetaMainEntRedPoint()
+
+	arg_1_0.viewComponent:notifyMeta(var_1_4)
 end
 
-function slot0.onTechnologyNotify()
-	return #getProxy(TechnologyProxy):getPlanningTechnologys() > 0 and slot0[#slot0]:isCompleted()
+function var_0_0.onTechnologyNotify()
+	local var_7_0 = getProxy(TechnologyProxy):getPlanningTechnologys()
+
+	return #var_7_0 > 0 and var_7_0[#var_7_0]:isCompleted()
 end
 
-function slot0.onBlueprintNotify()
-	slot0 = getProxy(TechnologyProxy)
+function var_0_0.onBlueprintNotify()
+	local var_8_0 = getProxy(TechnologyProxy)
 
-	if PlayerPrefs.GetString("technology_day_mark", "") ~= pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d", true) and slot0:CheckPursuingCostTip() then
+	if PlayerPrefs.GetString("technology_day_mark", "") ~= pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d", true) and var_8_0:CheckPursuingCostTip() then
 		return true
 	end
 
-	if not slot0:getBuildingBluePrint() then
-		return _.any(_.values(slot0:getBluePrints()), function (slot0)
-			slot2, slot3 = slot0:isFinishPrevTask()
+	local var_8_1 = var_8_0:getBluePrints()
+	local var_8_2 = var_8_0:getBuildingBluePrint()
 
-			return slot0:getState() == ShipBluePrint.STATE_LOCK and slot2
+	if not var_8_2 then
+		return _.any(_.values(var_8_1), function(arg_9_0)
+			local var_9_0 = arg_9_0:getState() == ShipBluePrint.STATE_LOCK
+			local var_9_1, var_9_2 = arg_9_0:isFinishPrevTask()
+
+			return var_9_0 and var_9_1
 		end)
 	else
-		if slot2:getState() == ShipBluePrint.STATE_DEV_FINISHED then
+		if var_8_2:getState() == ShipBluePrint.STATE_DEV_FINISHED then
 			return true
 		end
 
-		slot3 = false
+		local var_8_3 = false
+		local var_8_4 = var_8_2:getTaskIds()
 
-		return _.any(slot2:getTaskIds(), function (slot0)
-			slot1 = uv0:getTaskStateById(slot0)
+		return _.any(var_8_4, function(arg_10_0)
+			local var_10_0 = var_8_2:getTaskStateById(arg_10_0)
+			local var_10_1 = getProxy(TaskProxy):isFinishPrevTasks(arg_10_0)
 
-			return slot1 == (ShipBluePrint.TASK_STATE_OPENING and getProxy(TaskProxy):isFinishPrevTasks(slot0)) or slot1 == ShipBluePrint.TASK_STATE_ACHIEVED
+			return var_10_0 == (ShipBluePrint.TASK_STATE_OPENING and var_10_1) or var_10_0 == ShipBluePrint.TASK_STATE_ACHIEVED
 		end)
 	end
 
 	return false
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_11_0)
 	return {
 		PlayerProxy.UPDATED
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	if slot1:getName() == PlayerProxy.UPDATED then
-		slot0.viewComponent:setPlayer(slot1:getBody())
+function var_0_0.handleNotification(arg_12_0, arg_12_1)
+	local var_12_0 = arg_12_1:getName()
+	local var_12_1 = arg_12_1:getBody()
+
+	if var_12_0 == PlayerProxy.UPDATED then
+		arg_12_0.viewComponent:setPlayer(var_12_1)
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,38 +1,42 @@
-slot0 = class("OtherWorldTaskLayer", import("..base.BaseUI"))
-slot0.sub_item_warning = "sub_item_warning"
-slot1 = "other_world_task_title"
+﻿local var_0_0 = class("OtherWorldTaskLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+var_0_0.sub_item_warning = "sub_item_warning"
+
+local var_0_1 = "other_world_task_title"
+
+function var_0_0.getUIName(arg_1_0)
 	return "OtherWorldTaskUI"
 end
 
-function slot0.init(slot0)
-	slot0.activityId = ActivityConst.OTHER_WORLD_TASK_ID
-	slot1 = findTF(slot0._tf, "ad")
-	slot0.btnBack = findTF(slot1, "btnBack")
-	slot0.taskPage = OtherWorldTaskPage.New(findTF(slot1, "pages/taskPage"), slot0.contextData, findTF(slot1, "tpl"), slot0)
+function var_0_0.init(arg_2_0)
+	arg_2_0.activityId = ActivityConst.OTHER_WORLD_TASK_ID
 
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	slot0.taskPage:setActive(true)
+	local var_2_0 = findTF(arg_2_0._tf, "ad")
+
+	arg_2_0.btnBack = findTF(var_2_0, "btnBack")
+	arg_2_0.taskPage = OtherWorldTaskPage.New(findTF(var_2_0, "pages/taskPage"), arg_2_0.contextData, findTF(var_2_0, "tpl"), arg_2_0)
+
+	pg.UIMgr.GetInstance():BlurPanel(arg_2_0._tf)
+	arg_2_0.taskPage:setActive(true)
 end
 
-function slot0.didEnter(slot0)
-	setText(findTF(slot0._tf, "ad/title/text"), i18n(uv0))
-	onButton(slot0, slot0.btnBack, function ()
-		uv0:closeView()
+function var_0_0.didEnter(arg_3_0)
+	setText(findTF(arg_3_0._tf, "ad/title/text"), i18n(var_0_1))
+	onButton(arg_3_0, arg_3_0.btnBack, function()
+		arg_3_0:closeView()
 	end, SOUND_BACK)
-	onButton(slot0, findTF(slot0._tf, "ad/pages/taskPage/clickClose"), function ()
-		uv0:closeView()
+	onButton(arg_3_0, findTF(arg_3_0._tf, "ad/pages/taskPage/clickClose"), function()
+		arg_3_0:closeView()
 	end, SFX_CANCEL)
 end
 
-function slot0.updateTask(slot0, slot1)
-	slot0.taskPage:updateTask(slot1)
+function var_0_0.updateTask(arg_6_0, arg_6_1)
+	arg_6_0.taskPage:updateTask(arg_6_1)
 end
 
-function slot0.willExit(slot0)
-	slot0.taskPage:dispose()
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_7_0)
+	arg_7_0.taskPage:dispose()
+	pg.UIMgr.GetInstance():UnblurPanel(arg_7_0._tf)
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,30 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandom",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 164071
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetAllHelp",
+				"TargetNationality"
+			},
+			arg_list = {
+				buff_id = 17664,
+				nationality = {
+					7
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -286,31 +312,5 @@ return {
 	id = 17661,
 	picture = "0",
 	castCV = "skill",
-	desc = "",
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandom",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 164071
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetAllHelp",
-				"TargetNationality"
-			},
-			arg_list = {
-				buff_id = 17664,
-				nationality = {
-					7
-				}
-			}
-		}
-	}
+	desc = ""
 }

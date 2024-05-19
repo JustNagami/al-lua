@@ -1,34 +1,36 @@
-slot0 = class("BuildingUpgradeMediator", import("view.base.ContextMediator"))
-slot0.ACTIVITY_OPERATION = "ACTIVITY_OPERATION"
+﻿local var_0_0 = class("BuildingUpgradeMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:BindEvent()
+var_0_0.ACTIVITY_OPERATION = "ACTIVITY_OPERATION"
 
-	slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF)
+function var_0_0.register(arg_1_0)
+	arg_1_0:BindEvent()
 
-	assert(slot1, "Building Activity Not Found")
-	slot0.viewComponent:UpdateActivity(slot1)
+	local var_1_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF)
+
+	assert(var_1_0, "Building Activity Not Found")
+	arg_1_0.viewComponent:UpdateActivity(var_1_0)
 end
 
-function slot0.BindEvent(slot0)
-	slot0:bind(uv0.ACTIVITY_OPERATION, function (slot0, slot1)
-		uv0:sendNotification(GAME.ACTIVITY_OPERATION, slot1)
+function var_0_0.BindEvent(arg_2_0)
+	arg_2_0:bind(var_0_0.ACTIVITY_OPERATION, function(arg_3_0, arg_3_1)
+		arg_2_0:sendNotification(GAME.ACTIVITY_OPERATION, arg_3_1)
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_4_0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
 
-	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED and slot3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF then
-		slot0.viewComponent:UpdateActivity(slot3)
-		slot0.viewComponent:Set(slot3)
+	if var_5_0 == ActivityProxy.ACTIVITY_UPDATED and var_5_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF then
+		arg_5_0.viewComponent:UpdateActivity(var_5_1)
+		arg_5_0.viewComponent:Set(var_5_1)
 	end
 end
 
-return slot0
+return var_0_0

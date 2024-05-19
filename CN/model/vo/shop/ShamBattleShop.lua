@@ -1,30 +1,30 @@
-slot0 = class("ShamBattleShop", import(".MonthlyShop"))
-slot0.GoodsType = Goods.TYPE_SHAM_BATTLE
-slot0.type = ShopArgs.ShopShamBattle
+﻿local var_0_0 = class("ShamBattleShop", import(".MonthlyShop"))
 
-function slot0.update(slot0, slot1, slot2)
-	slot0.id = slot1
-	slot0.configId = slot1
-	slot3 = {
-		[slot8.shop_id] = slot8.pay_count
-	}
+var_0_0.GoodsType = Goods.TYPE_SHAM_BATTLE
+var_0_0.type = ShopArgs.ShopShamBattle
 
-	for slot7, slot8 in ipairs(slot2) do
-		-- Nothing
+function var_0_0.update(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.id = arg_1_1
+	arg_1_0.configId = arg_1_1
+
+	local var_1_0 = {}
+
+	for iter_1_0, iter_1_1 in ipairs(arg_1_2) do
+		var_1_0[iter_1_1.shop_id] = iter_1_1.pay_count
 	end
 
-	table.clear(slot0.goods)
+	table.clear(arg_1_0.goods)
 
-	if slot0.id and slot0.id > 0 and slot0:getConfigTable() then
-		slot7 = "core_shop_goods"
+	if arg_1_0.id and arg_1_0.id > 0 and arg_1_0:getConfigTable() then
+		for iter_1_2, iter_1_3 in ipairs(arg_1_0:getConfig("core_shop_goods")) do
+			local var_1_1 = var_1_0[iter_1_3] or 0
 
-		for slot7, slot8 in ipairs(slot0:getConfig(slot7)) do
-			slot0.goods[slot8] = Goods.Create({
-				shop_id = slot8,
-				buy_count = slot3[slot8] or 0
-			}, slot0.GoodsType)
+			arg_1_0.goods[iter_1_3] = Goods.Create({
+				shop_id = iter_1_3,
+				buy_count = var_1_1
+			}, arg_1_0.GoodsType)
 		end
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,15 +1,4 @@
-return {
-	{},
-	init_effect = "",
-	name = "专属弹幕",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行10次攻击，触发专属弹幕-奥托II",
-	stack = 1,
-	id = 30012,
-	icon = 30000,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -35,5 +24,16 @@ return {
 				countType = 30010
 			}
 		}
-	}
+	},
+	{},
+	init_effect = "",
+	name = "专属弹幕",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行10次攻击，触发专属弹幕-奥托II",
+	stack = 1,
+	id = 30012,
+	icon = 30000,
+	last_effect = ""
 }

@@ -1,4 +1,30 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBulletHitBefore"
+			},
+			arg_list = {
+				rant = 400,
+				skill_id = 12530,
+				target = "TargetSelf",
+				time = 8
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onHPRatioUpdate"
+			},
+			arg_list = {
+				hpUpperBound = 0.3,
+				target = "TargetSelf",
+				skill_id = 12531,
+				quota = 1
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -289,31 +315,5 @@ return {
 	stack = 1,
 	id = 12530,
 	icon = 12530,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBulletHitBefore"
-			},
-			arg_list = {
-				rant = 400,
-				skill_id = 12530,
-				target = "TargetSelf",
-				time = 8
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onHPRatioUpdate"
-			},
-			arg_list = {
-				hpUpperBound = 0.3,
-				target = "TargetSelf",
-				skill_id = 12531,
-				quota = 1
-			}
-		}
-	}
+	last_effect = ""
 }

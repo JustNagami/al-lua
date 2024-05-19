@@ -1,15 +1,17 @@
-slot0 = class("VoteFunRaceShipsPageForRank", import("..FinalsRece.VoteFinalsRaceShipsPageForRank"))
+﻿local var_0_0 = class("VoteFunRaceShipsPageForRank", import("..FinalsRece.VoteFinalsRaceShipsPageForRank"))
 
-function slot0.getUIName(slot0)
-	if slot0.contextData.voteGroup:IsFunMetaRace() then
+function var_0_0.getUIName(arg_1_0)
+	local var_1_0 = arg_1_0.contextData.voteGroup
+
+	if var_1_0:IsFunMetaRace() then
 		return "FinalsRaceShipsRankForMeta"
-	elseif slot1:IsFunSireRace() then
+	elseif var_1_0:IsFunSireRace() then
 		return "FinalsRaceShipsRankForSire"
-	elseif slot1:IsFunKidRace() then
+	elseif var_1_0:IsFunKidRace() then
 		return "FinalsRaceShipsRankForKid"
 	else
 		assert(false)
 	end
 end
 
-return slot0
+return var_0_0

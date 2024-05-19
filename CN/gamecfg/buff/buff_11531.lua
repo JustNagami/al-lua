@@ -1,4 +1,33 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "manualEnhancement",
+				number = 0.2
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "initialEnhancement",
+				number = 0.4
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -248,34 +277,5 @@ return {
 	stack = 1,
 	id = 11531,
 	icon = 11530,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "manualEnhancement",
-				number = 0.2
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "initialEnhancement",
-				number = 0.4
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,56 +1,56 @@
-slot0 = class("ShipDialog")
-slot1 = 0.3
-slot2 = 2
+﻿local var_0_0 = class("ShipDialog")
+local var_0_1 = 0.3
+local var_0_2 = 2
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.dialog = slot1
-	slot0.label = slot0.dialog.gameObject:GetComponentInChildren(typeof(Text))
-	slot0.content = slot2
-	slot0.started = false
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.dialog = arg_1_1
+	arg_1_0.label = arg_1_0.dialog.gameObject:GetComponentInChildren(typeof(Text))
+	arg_1_0.content = arg_1_2
+	arg_1_0.started = false
 end
 
-function slot0.loop(slot0, slot1, slot2, slot3)
-	slot0.timer = Timer.New(function ()
-		uv0:display()
-	end, slot2 + slot3 * math.random(), slot1)
+function var_0_0.loop(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	arg_2_0.timer = Timer.New(function()
+		arg_2_0:display()
+	end, arg_2_2 + arg_2_3 * math.random(), arg_2_1)
 end
 
-function slot0.display(slot0)
-	if slot0.chatOn then
+function var_0_0.display(arg_4_0)
+	if arg_4_0.chatOn then
 		return
 	end
 
-	slot0.chatOn = true
-	rtf(slot0.dialog).localScale = Vector3.New(0, 0, 1)
-	slot0.label.text = slot0.content
-	slot0.label.alignment = CHAT_POP_STR_LEN < #slot0.content and TextAnchor.MiddleLeft or TextAnchor.MiddleCenter
+	arg_4_0.chatOn = true
+	rtf(arg_4_0.dialog).localScale = Vector3.New(0, 0, 1)
+	arg_4_0.label.text = arg_4_0.content
+	arg_4_0.label.alignment = #arg_4_0.content > CHAT_POP_STR_LEN and TextAnchor.MiddleLeft or TextAnchor.MiddleCenter
 
-	LeanTween.scale(rtf(slot0.dialog), Vector3.New(1, 1, 1), uv0):setEase(LeanTweenType.easeOutBack)
-	LeanTween.scale(rtf(slot0.dialog), Vector3.New(0, 0, 1), uv0):setOnComplete(System.Action(function ()
-		uv0.chatOn = false
-	end)):setDelay(uv0 + uv1):setEase(LeanTweenType.easeInBack)
+	LeanTween.scale(rtf(arg_4_0.dialog), Vector3.New(1, 1, 1), var_0_1):setEase(LeanTweenType.easeOutBack)
+	LeanTween.scale(rtf(arg_4_0.dialog), Vector3.New(0, 0, 1), var_0_1):setOnComplete(System.Action(function()
+		arg_4_0.chatOn = false
+	end)):setDelay(var_0_1 + var_0_2):setEase(LeanTweenType.easeInBack)
 end
 
-function slot0.play(slot0)
-	if not slot0.started then
-		slot0.started = true
+function var_0_0.play(arg_6_0)
+	if not arg_6_0.started then
+		arg_6_0.started = true
 
-		slot0.timer:Start()
+		arg_6_0.timer:Start()
 	else
-		slot0.timer:Resume()
+		arg_6_0.timer:Resume()
 	end
 end
 
-function slot0.pause(slot0)
-	if slot0.started then
-		slot0.timer:Pause()
+function var_0_0.pause(arg_7_0)
+	if arg_7_0.started then
+		arg_7_0.timer:Pause()
 	end
 end
 
-function slot0.stop(slot0)
-	slot0.timer:Stop()
+function var_0_0.stop(arg_8_0)
+	arg_8_0.timer:Stop()
 
-	slot0.started = false
+	arg_8_0.started = false
 end
 
-return slot0
+return var_0_0

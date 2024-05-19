@@ -1,65 +1,66 @@
-slot0 = class("MedalShop", import(".BaseShop"))
+﻿local var_0_0 = class("MedalShop", import(".BaseShop"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.goods = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.goods = {}
 
-	for slot5, slot6 in ipairs(slot1.good_list) do
-		slot7 = MedalGoods.New(slot6)
-		slot7.id = slot5
-		slot0.goods[slot5] = slot7
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.good_list) do
+		local var_1_0 = MedalGoods.New(iter_1_1)
+
+		var_1_0.id = iter_1_0
+		arg_1_0.goods[iter_1_0] = var_1_0
 	end
 
-	slot0.nextTime = slot1.item_flash_time
-	slot0.type = ShopArgs.ShopMedal
+	arg_1_0.nextTime = arg_1_1.item_flash_time
+	arg_1_0.type = ShopArgs.ShopMedal
 end
 
-function slot0.IsSameKind(slot0, slot1)
-	return isa(slot1, MedalShop)
+function var_0_0.IsSameKind(arg_2_0, arg_2_1)
+	return isa(arg_2_1, MedalShop)
 end
 
-function slot0.GetCommodityById(slot0, slot1)
-	return slot0:getGoodsById(slot1)
+function var_0_0.GetCommodityById(arg_3_0, arg_3_1)
+	return arg_3_0:getGoodsById(arg_3_1)
 end
 
-function slot0.GetCommodities(slot0)
-	return slot0:getSortGoods()
+function var_0_0.GetCommodities(arg_4_0)
+	return arg_4_0:getSortGoods()
 end
 
-function slot0.updateNextRefreshTime(slot0, slot1)
-	slot0.nextTime = slot1
+function var_0_0.updateNextRefreshTime(arg_5_0, arg_5_1)
+	arg_5_0.nextTime = arg_5_1
 end
 
-function slot0.CanRefresh(slot0)
+function var_0_0.CanRefresh(arg_6_0)
 	return false
 end
 
-function slot0.getSortGoods(slot0)
-	slot1 = underscore.values(slot0.goods)
+function var_0_0.getSortGoods(arg_7_0)
+	local var_7_0 = underscore.values(arg_7_0.goods)
 
-	table.sort(slot1, CompareFuncs({
-		function (slot0)
-			return slot0:CanPurchase() and 0 or 1
+	table.sort(var_7_0, CompareFuncs({
+		function(arg_8_0)
+			return arg_8_0:CanPurchase() and 0 or 1
 		end,
-		function (slot0)
-			return slot0:getConfig("order")
+		function(arg_9_0)
+			return arg_9_0:getConfig("order")
 		end
 	}))
 
-	return slot1
+	return var_7_0
 end
 
-function slot0.getGoodsById(slot0, slot1)
-	assert(slot0.goods[slot1], "goods should exist")
+function var_0_0.getGoodsById(arg_10_0, arg_10_1)
+	assert(arg_10_0.goods[arg_10_1], "goods should exist")
 
-	return slot0.goods[slot1]
+	return arg_10_0.goods[arg_10_1]
 end
 
-function slot0.GetResetConsume(slot0)
+function var_0_0.GetResetConsume(arg_11_0)
 	return pg.guildset.store_reset_cost.key_value
 end
 
-function slot0.UpdateGoodsCnt(slot0, slot1, slot2)
-	slot0:getGoodsById(slot1):UpdateCnt(slot2)
+function var_0_0.UpdateGoodsCnt(arg_12_0, arg_12_1, arg_12_2)
+	arg_12_0:getGoodsById(arg_12_1):UpdateCnt(arg_12_2)
 end
 
-return slot0
+return var_0_0

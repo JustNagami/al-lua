@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.arena_data_rank = {
 	{
 		battle_award = 50,

@@ -1,29 +1,33 @@
-slot0 = class("MainActInsBtn", import(".MainBaseSpcailActBtn"))
+﻿local var_0_0 = class("MainActInsBtn", import(".MainBaseSpcailActBtn"))
 
-function slot0.InShowTime(slot0)
-	return getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_INSTAGRAM) and not slot1:isEnd()
+function var_0_0.InShowTime(arg_1_0)
+	local var_1_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_INSTAGRAM)
+
+	return var_1_0 and not var_1_0:isEnd()
 end
 
-function slot0.GetUIName(slot0)
+function var_0_0.GetUIName(arg_2_0)
 	return "MainUIInsBtn"
 end
 
-function slot0.OnClick(slot0)
-	slot0.event:emit(NewMainMediator.SKIP_INS)
+function var_0_0.OnClick(arg_3_0)
+	arg_3_0.event:emit(NewMainMediator.SKIP_INS)
 end
 
-function slot0.OnInit(slot0)
-	slot0.animator = slot0._tf:Find("icon"):GetComponent(typeof(Animator))
-	slot1 = getProxy(InstagramProxy):ShouldShowTip()
-	slot0.animator.enabled = slot1
+function var_0_0.OnInit(arg_4_0)
+	arg_4_0.animator = arg_4_0._tf:Find("icon"):GetComponent(typeof(Animator))
 
-	setActive(slot0._tf:Find("Tip"), slot1)
+	local var_4_0 = getProxy(InstagramProxy):ShouldShowTip()
 
-	slot0._tf.localScale = slot0.isScale and Vector3(0.85, 0.85, 1) or Vector3(1, 1, 1)
+	arg_4_0.animator.enabled = var_4_0
 
-	setAnchoredPosition(slot0._tf, {
-		y = slot0.isScale and -950 or -752.5
+	setActive(arg_4_0._tf:Find("Tip"), var_4_0)
+
+	arg_4_0._tf.localScale = arg_4_0.isScale and Vector3(0.85, 0.85, 1) or Vector3(1, 1, 1)
+
+	setAnchoredPosition(arg_4_0._tf, {
+		y = arg_4_0.isScale and -950 or -752.5
 	})
 end
 
-return slot0
+return var_0_0

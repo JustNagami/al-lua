@@ -1,55 +1,62 @@
-slot0 = class("AtelierCompositeCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("AtelierCompositeCommand", pm.SimpleCommand)
 
-function slot0.SerialAsyncUnitl(slot0, slot1, slot2)
-	slot3 = 0
-	slot4 = nil
+function var_0_0.SerialAsyncUnitl(arg_1_0, arg_1_1, arg_1_2)
+	local var_1_0 = 0
+	local var_1_1
 
-	function ()
-		uv0 = uv0 + 1
+	local function var_1_2()
+		var_1_0 = var_1_0 + 1
 
-		if uv0 <= uv1 then
-			uv2(uv0, uv3)
+		if var_1_0 <= arg_1_1 then
+			arg_1_0(var_1_0, var_1_2)
 		else
-			existCall(uv4)
+			existCall(arg_1_2)
 		end
-	end()
+	end
+
+	var_1_2()
 end
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1.body
-	slot6 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+function var_0_0.execute(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_1.body
+	local var_3_1 = var_3_0.formulaId
+	local var_3_2 = var_3_0.items
+	local var_3_3 = var_3_0.repeats
+	local var_3_4 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
-	assert(slot6)
+	assert(var_3_4)
 	pg.ConnectionMgr.GetInstance():Send(26053, {
-		act_id = slot6.id,
-		recipe_id = slot2.formulaId,
-		items = slot2.items,
-		times = slot2.repeats
-	}, 26054, function (slot0)
-		if slot0.result == 0 then
-			uv0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
-			slot1 = uv0:GetItems()
+		act_id = var_3_4.id,
+		recipe_id = var_3_1,
+		items = var_3_2,
+		times = var_3_3
+	}, 26054, function(arg_4_0)
+		if arg_4_0.result == 0 then
+			var_3_4 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
-			_.each(uv1, function (slot0)
-				if not uv0[slot0.value] then
+			local var_4_0 = var_3_4:GetItems()
+
+			_.each(var_3_2, function(arg_5_0)
+				if not var_4_0[arg_5_0.value] then
 					return
 				end
 
-				uv0[slot0.value].count = uv0[slot0.value].count - uv1
+				var_4_0[arg_5_0.value].count = var_4_0[arg_5_0.value].count - var_3_3
 
-				if uv0[slot0.value].count <= 0 then
-					uv0[slot0.value] = nil
+				if var_4_0[arg_5_0.value].count <= 0 then
+					var_4_0[arg_5_0.value] = nil
 				end
 			end)
-			uv0:AddFormulaUseCount(uv3, uv2)
-			getProxy(ActivityProxy):updateActivity(uv0)
-			uv4:sendNotification(GAME.COMPOSITE_ATELIER_RECIPE_DONE, PlayerConst.addTranDrop(slot0.award_list))
+			var_3_4:AddFormulaUseCount(var_3_1, var_3_3)
+			getProxy(ActivityProxy):updateActivity(var_3_4)
 
-			return
+			local var_4_1 = PlayerConst.addTranDrop(arg_4_0.award_list)
+
+			arg_3_0:sendNotification(GAME.COMPOSITE_ATELIER_RECIPE_DONE, var_4_1)
+		else
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_4_0.result))
 		end
-
-		pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
 	end)
 end
 
-return slot0
+return var_0_0

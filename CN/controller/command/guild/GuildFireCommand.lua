@@ -1,29 +1,32 @@
-slot0 = class("GuildFireCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GuildFireCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot6 = getProxy(GuildProxy):getData()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(GuildProxy)
+	local var_1_2 = getProxy(PlayerProxy):getData()
+	local var_1_3 = var_1_1:getData()
 
-	if slot6:getDutyByMemberId(slot1:getBody()) <= slot6:getDutyByMemberId(getProxy(PlayerProxy):getData().id) then
+	if var_1_3:getDutyByMemberId(var_1_2.id) >= var_1_3:getDutyByMemberId(var_1_0) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_fire_duty_limit"))
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(60014, {
-		player_id = slot2
-	}, 60015, function (slot0)
-		if slot0.result == 0 then
-			slot1 = uv0:getData()
-			slot1 = uv0:getData()
+		player_id = var_1_0
+	}, 60015, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = var_1_1:getData()
+			local var_2_1 = var_1_1:getData()
 
-			slot1:deleteMember(uv1)
-			uv0:updateGuild(slot1)
-			uv2:sendNotification(GAME.GUILD_FIRE_DONE)
+			var_2_1:deleteMember(var_1_0)
+			var_1_1:updateGuild(var_2_1)
+			arg_1_0:sendNotification(GAME.GUILD_FIRE_DONE)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_fire_succeed"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("guild_fire_erro", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("guild_fire_erro", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

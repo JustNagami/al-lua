@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.map_event_template = {
 	[20] = {
 		grid_color = "",

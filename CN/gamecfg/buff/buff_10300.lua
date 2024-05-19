@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 10300,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		desc = "出击时，皇家舰队全员炮击、雷装、航空、防空、装填、机动属性上升5.0%——“永远#11岁的女王！”",
 		addition = {
@@ -69,17 +81,5 @@ return {
 	stack = 1,
 	id = 10300,
 	icon = 10300,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 10300,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

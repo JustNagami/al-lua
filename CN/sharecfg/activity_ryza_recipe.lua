@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_ryza_recipe = {
 	{
 		display = "这把镰刀被改良得更方便采集，可以像风一样安静轻巧地割下花草。",

@@ -1,4 +1,24 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				minTargetNumber = 1,
+				target = "TargetSelf",
+				skill_id = 10110,
+				check_target = {
+					"TargetAllHelp",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"Indianapolis"
+				}
+			}
+		}
+	},
 	{
 		desc = "与印第安纳波利斯同时出击时，炮击、防空、装填提升5.0%",
 		addition = {
@@ -69,25 +89,5 @@ return {
 	stack = 1,
 	id = 10110,
 	icon = 10110,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				minTargetNumber = 1,
-				target = "TargetSelf",
-				skill_id = 10110,
-				check_target = {
-					"TargetAllHelp",
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"Indianapolis"
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

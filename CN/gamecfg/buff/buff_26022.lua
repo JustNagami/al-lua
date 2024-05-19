@@ -1,17 +1,4 @@
-return {
-	{
-		desc = "主炮每进行10次攻击，触发全弹发射-明斯克级II"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行10次攻击，触发全弹发射-明斯克级II",
-	stack = 1,
-	id = 26022,
-	icon = 20100,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -38,5 +25,18 @@ return {
 				countType = 26020
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行10次攻击，触发全弹发射-明斯克级II"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行10次攻击，触发全弹发射-明斯克级II",
+	stack = 1,
+	id = 26022,
+	icon = 20100,
+	last_effect = ""
 }

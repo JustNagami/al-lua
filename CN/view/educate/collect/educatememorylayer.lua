@@ -1,64 +1,64 @@
-slot0 = class("EducateMemoryLayer", import(".EducateCollectLayerTemplate"))
+﻿local var_0_0 = class("EducateMemoryLayer", import(".EducateCollectLayerTemplate"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "EducateMemoryUI"
 end
 
-function slot0.initConfig(slot0)
-	slot0.config = pg.child_memory
+function var_0_0.initConfig(arg_2_0)
+	arg_2_0.config = pg.child_memory
 end
 
-function slot0.didEnter(slot0)
-	setText(slot0:findTF("review_btn/Text", slot0.performTF), i18n("child_btn_review"))
+function var_0_0.didEnter(arg_3_0)
+	setText(arg_3_0:findTF("review_btn/Text", arg_3_0.performTF), i18n("child_btn_review"))
 
-	slot0.memories = getProxy(EducateProxy):GetMemories()
+	arg_3_0.memories = getProxy(EducateProxy):GetMemories()
 
-	setText(slot0.curCntTF, #slot0.memories)
-	setText(slot0.allCntTF, "/" .. #slot0.config.all)
-	slot0:updatePage()
+	setText(arg_3_0.curCntTF, #arg_3_0.memories)
+	setText(arg_3_0.allCntTF, "/" .. #arg_3_0.config.all)
+	arg_3_0:updatePage()
 end
 
-function slot0.updateItem(slot0, slot1, slot2)
-	slot3 = table.contains(slot0.memories, slot1.id)
+function var_0_0.updateItem(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = table.contains(arg_4_0.memories, arg_4_1.id)
 
-	setActive(slot0:findTF("lock", slot2), not slot3)
-	setActive(slot0:findTF("unlock", slot2), slot3)
-	setActive(slot0:findTF("unlock/new", slot2), EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_MEMORY, slot1.id))
+	setActive(arg_4_0:findTF("lock", arg_4_2), not var_4_0)
+	setActive(arg_4_0:findTF("unlock", arg_4_2), var_4_0)
+	setActive(arg_4_0:findTF("unlock/new", arg_4_2), EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_MEMORY, arg_4_1.id))
 
-	if slot3 then
-		LoadImageSpriteAsync("bg/" .. slot1.pic, slot0:findTF("unlock/mask/Image", slot2))
-		setText(slot0:findTF("unlock/name", slot2), slot1.desc)
-		onButton(slot0, slot2, function ()
-			uv0:showPerformWindow(uv1)
+	if var_4_0 then
+		LoadImageSpriteAsync("bg/" .. arg_4_1.pic, arg_4_0:findTF("unlock/mask/Image", arg_4_2))
+		setText(arg_4_0:findTF("unlock/name", arg_4_2), arg_4_1.desc)
+		onButton(arg_4_0, arg_4_2, function()
+			arg_4_0:showPerformWindow(arg_4_1)
 		end, SFX_PANEL)
 	else
-		removeOnButton(slot2)
-		setText(slot0:findTF("lock/Text", slot2), i18n("child_collect_lock"))
+		removeOnButton(arg_4_2)
+		setText(arg_4_0:findTF("lock/Text", arg_4_2), i18n("child_collect_lock"))
 	end
 end
 
-function slot0.showPerformWindow(slot0, slot1)
-	EducateTipHelper.ClearNewTip(EducateTipHelper.NEW_MEMORY, slot1.id)
+function var_0_0.showPerformWindow(arg_6_0, arg_6_1)
+	EducateTipHelper.ClearNewTip(EducateTipHelper.NEW_MEMORY, arg_6_1.id)
 
-	slot2 = slot0:findTF("Image", slot0.performTF)
+	local var_6_0 = arg_6_0:findTF("Image", arg_6_0.performTF)
 
-	LoadImageSpriteAsync("bg/" .. slot1.pic, slot2)
-	setActive(slot0.performTF, true)
-	onButton(slot0, slot2, function ()
-		setActive(uv0.performTF, false)
+	LoadImageSpriteAsync("bg/" .. arg_6_1.pic, var_6_0)
+	setActive(arg_6_0.performTF, true)
+	onButton(arg_6_0, var_6_0, function()
+		setActive(arg_6_0.performTF, false)
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("review_btn", slot0.performTF), function ()
-		pg.PerformMgr.GetInstance():PlayOne(uv0.performance)
+	onButton(arg_6_0, arg_6_0:findTF("review_btn", arg_6_0.performTF), function()
+		pg.PerformMgr.GetInstance():PlayOne(arg_6_1.performance)
 	end, SFX_PANEL)
 end
 
-function slot0.playAnimChange(slot0)
-	slot0.anim:Stop()
-	slot0.anim:Play("anim_educate_memory_change")
+function var_0_0.playAnimChange(arg_9_0)
+	arg_9_0.anim:Stop()
+	arg_9_0.anim:Play("anim_educate_memory_change")
 end
 
-function slot0.playAnimClose(slot0)
-	slot0.anim:Play("anim_educate_memory_out")
+function var_0_0.playAnimClose(arg_10_0)
+	arg_10_0.anim:Play("anim_educate_memory_out")
 end
 
-return slot0
+return var_0_0

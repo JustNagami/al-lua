@@ -1,9 +1,10 @@
-slot0 = class("GuildFetchCapitalLogCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GuildFetchCapitalLogCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(GuildProxy)
 
-	if not getProxy(GuildProxy):getData() then
+	if not var_1_1:getData() then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_no_exist"))
 
 		return
@@ -11,32 +12,39 @@ function slot0.execute(slot0, slot1)
 
 	pg.ConnectionMgr.GetInstance():Send(62011, {
 		type = 0
-	}, 62012, function (slot0)
-		if slot0.result == 0 then
-			slot1 = uv0:getData()
+	}, 62012, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = var_1_1:getData()
+			local var_2_1 = {}
 
-			for slot6, slot7 in ipairs(slot0.inclog) do
-				table.insert({}, GuildCapitalLog.New(slot7))
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.inclog) do
+				local var_2_2 = GuildCapitalLog.New(iter_2_1)
+
+				table.insert(var_2_1, var_2_2)
 			end
 
-			for slot6, slot7 in ipairs(slot0.declog) do
-				table.insert(slot2, GuildCapitalLog.New(slot7))
+			for iter_2_2, iter_2_3 in ipairs(arg_2_0.declog) do
+				local var_2_3 = GuildCapitalLog.New(iter_2_3)
+
+				table.insert(var_2_1, var_2_3)
 			end
 
-			for slot6, slot7 in ipairs(slot0.otherlog) do
-				table.insert(slot2, GuildCapitalLog.New(slot7))
+			for iter_2_4, iter_2_5 in ipairs(arg_2_0.otherlog) do
+				local var_2_4 = GuildCapitalLog.New(iter_2_5)
+
+				table.insert(var_2_1, var_2_4)
 			end
 
-			if #slot2 > 0 then
-				slot1:updateCapitalLogs(slot2)
-				uv0:updateGuild(slot1)
+			if #var_2_1 > 0 then
+				var_2_0:updateCapitalLogs(var_2_1)
+				var_1_1:updateGuild(var_2_0)
 			end
 
-			uv1:sendNotification(GAME.GUILD_FETCH_CAPITAL_LOG_DONE)
+			arg_1_0:sendNotification(GAME.GUILD_FETCH_CAPITAL_LOG_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

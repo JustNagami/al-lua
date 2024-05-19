@@ -1,20 +1,24 @@
-return {
+﻿return {
+	CurrentIconList = {
+		1
+	},
 	{
 		Image = "doa_virtual_buff",
 		IsVirtualIcon = true,
-		CheckExist = function ()
-			if not getProxy(ActivityProxy):getActivityById(ActivityConst.DOA_PT_ID) then
+		CheckExist = function()
+			local var_1_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.DOA_PT_ID)
+
+			if not var_1_0 then
 				return false
 			end
 
-			if not slot0:isEnd() and ActivityPtData.New(slot0):isInBuffTime() then
+			local var_1_1 = ActivityPtData.New(var_1_0)
+
+			if not var_1_0:isEnd() and var_1_1:isInBuffTime() then
 				return true
 			end
 
 			return false
 		end
-	},
-	CurrentIconList = {
-		1
 	}
 }

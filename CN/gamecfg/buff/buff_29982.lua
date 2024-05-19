@@ -1,15 +1,4 @@
-return {
-	{},
-	init_effect = "",
-	name = "专属弹幕",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮类型检查",
-	stack = 1,
-	id = 29982,
-	icon = 29980,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -41,5 +30,16 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{},
+	init_effect = "",
+	name = "专属弹幕",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮类型检查",
+	stack = 1,
+	id = 29982,
+	icon = 29980,
+	last_effect = ""
 }

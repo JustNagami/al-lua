@@ -1,19 +1,21 @@
-slot0 = class("ColoringClearCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ColoringClearCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.activityId
+	local var_1_2 = var_1_0.id
 
 	pg.ConnectionMgr.GetInstance():Send(26006, {
-		act_id = slot2.activityId,
-		id = slot2.id
-	}, 26007, function (slot0)
-		if slot0.result == 0 then
-			getProxy(ColoringProxy):getColorGroup(uv0):clearFill()
-			uv1:sendNotification(GAME.COLORING_CLEAR_DONE)
+		act_id = var_1_1,
+		id = var_1_2
+	}, 26007, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			getProxy(ColoringProxy):getColorGroup(var_1_2):clearFill()
+			arg_1_0:sendNotification(GAME.COLORING_CLEAR_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("coloring_clear", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("coloring_clear", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

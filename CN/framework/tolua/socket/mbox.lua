@@ -1,127 +1,139 @@
-slot0 = {}
+﻿local var_0_0 = {}
 
 if module then
-	mbox = slot0
+	mbox = var_0_0
 end
 
-function slot0.split_message(slot0)
-	slot0 = string.gsub(slot0, "\r\n", "\n")
+function var_0_0.split_message(arg_1_0)
+	local var_1_0 = {}
 
-	string.gsub(slot0, "^(.-\n)\n", function (slot0)
-		uv0.headers = slot0
+	arg_1_0 = string.gsub(arg_1_0, "\r\n", "\n")
+
+	string.gsub(arg_1_0, "^(.-\n)\n", function(arg_2_0)
+		var_1_0.headers = arg_2_0
 	end)
-	string.gsub(slot0, "^.-\n\n(.*)", function (slot0)
-		uv0.body = slot0
+	string.gsub(arg_1_0, "^.-\n\n(.*)", function(arg_3_0)
+		var_1_0.body = arg_3_0
 	end)
 
-	if not ({}).body then
-		string.gsub(slot0, "^\n(.*)", function (slot0)
-			uv0.body = slot0
+	if not var_1_0.body then
+		string.gsub(arg_1_0, "^\n(.*)", function(arg_4_0)
+			var_1_0.body = arg_4_0
 		end)
 	end
 
-	if not slot1.headers and not slot1.body then
-		slot1.headers = slot0
+	if not var_1_0.headers and not var_1_0.body then
+		var_1_0.headers = arg_1_0
 	end
 
-	return slot1.headers or "", slot1.body or ""
+	return var_1_0.headers or "", var_1_0.body or ""
 end
 
-function slot0.split_headers(slot0)
-	string.gsub("\n" .. string.gsub(string.gsub(slot0, "\r\n", "\n"), "\n[ ]+", " "), "\n([^\n]+)", function (slot0)
-		table.insert(uv0, slot0)
+function var_0_0.split_headers(arg_5_0)
+	local var_5_0 = {}
+
+	arg_5_0 = string.gsub(arg_5_0, "\r\n", "\n")
+	arg_5_0 = string.gsub(arg_5_0, "\n[ ]+", " ")
+
+	string.gsub("\n" .. arg_5_0, "\n([^\n]+)", function(arg_6_0)
+		table.insert(var_5_0, arg_6_0)
 	end)
 
-	return {}
+	return var_5_0
 end
 
-function slot0.parse_header(slot0)
-	slot1, slot2, slot3, slot4 = string.find(string.gsub(string.gsub(slot0, "\n[ ]+", " "), "\n+", ""), "([^%s:]-):%s*(.*)")
+function var_0_0.parse_header(arg_7_0)
+	arg_7_0 = string.gsub(arg_7_0, "\n[ ]+", " ")
+	arg_7_0 = string.gsub(arg_7_0, "\n+", "")
 
-	return slot3, slot4
+	local var_7_0, var_7_1, var_7_2, var_7_3 = string.find(arg_7_0, "([^%s:]-):%s*(.*)")
+
+	return var_7_2, var_7_3
 end
 
-function slot0.parse_headers(slot0)
-	slot2 = {}
+function var_0_0.parse_headers(arg_8_0)
+	local var_8_0 = var_0_0.split_headers(arg_8_0)
+	local var_8_1 = {}
 
-	for slot6 = 1, #uv0.split_headers(slot0) do
-		slot7, slot8 = uv0.parse_header(slot1[slot6])
+	for iter_8_0 = 1, #var_8_0 do
+		local var_8_2, var_8_3 = var_0_0.parse_header(var_8_0[iter_8_0])
 
-		if slot7 then
-			if slot2[string.lower(slot7)] then
-				slot2[slot7] = slot2[slot7] .. ", " .. slot8
+		if var_8_2 then
+			local var_8_4 = string.lower(var_8_2)
+
+			if var_8_1[var_8_4] then
+				var_8_1[var_8_4] = var_8_1[var_8_4] .. ", " .. var_8_3
 			else
-				slot2[slot7] = slot8
+				var_8_1[var_8_4] = var_8_3
 			end
 		end
 	end
 
-	return slot2
+	return var_8_1
 end
 
-function slot0.parse_from(slot0)
-	slot1, slot2, slot3, slot4 = string.find(slot0, "^%s*(.-)%s*%<(.-)%>")
+function var_0_0.parse_from(arg_9_0)
+	local var_9_0, var_9_1, var_9_2, var_9_3 = string.find(arg_9_0, "^%s*(.-)%s*%<(.-)%>")
 
-	if not slot4 then
-		slot1, slot2, slot4 = string.find(slot0, "%s*(.+)%s*")
+	if not var_9_3 then
+		local var_9_4, var_9_5
+
+		var_9_4, var_9_5, var_9_3 = string.find(arg_9_0, "%s*(.+)%s*")
 	end
 
-	slot4 = slot4 or ""
+	var_9_2 = var_9_2 or ""
+	var_9_3 = var_9_3 or ""
 
-	if (slot3 or "") == "" then
-		slot3 = slot4
+	if var_9_2 == "" then
+		var_9_2 = var_9_3
 	end
 
-	return string.gsub(slot3, "\"", ""), slot4
+	return string.gsub(var_9_2, "\"", ""), var_9_3
 end
 
-function slot0.split_mbox(slot0)
-	slot1 = {}
-	slot0 = string.gsub(slot0, "\r\n", "\n") .. [[
+function var_0_0.split_mbox(arg_10_0)
+	local var_10_0 = {}
 
+	arg_10_0 = string.gsub(arg_10_0, "\r\n", "\n") .. "\n\nFrom \n"
 
-From 
-]]
-	slot2 = 1
-	slot3 = 1
-	slot4 = 1
+	local var_10_1 = 1
+	local var_10_2 = 1
+	local var_10_3 = 1
 
 	while true do
-		slot5, slot2 = string.find(slot0, [[
+		local var_10_4, var_10_5 = string.find(arg_10_0, "\n\nFrom .-\n", var_10_3)
 
-
-From .-
-]], slot4)
-
-		if not slot5 then
+		if not var_10_4 then
 			break
 		end
 
-		table.insert(slot1, string.sub(slot0, slot4, slot3 - 1))
+		local var_10_6 = string.sub(arg_10_0, var_10_3, var_10_4 - 1)
 
-		slot4 = slot2 + 1
+		table.insert(var_10_0, var_10_6)
+
+		var_10_3 = var_10_5 + 1
 	end
 
-	return slot1
+	return var_10_0
 end
 
-function slot0.parse(slot0)
-	for slot5 = 1, #uv0.split_mbox(slot0) do
-		slot1[slot5] = uv0.parse_message(slot1[slot5])
+function var_0_0.parse(arg_11_0)
+	local var_11_0 = var_0_0.split_mbox(arg_11_0)
+
+	for iter_11_0 = 1, #var_11_0 do
+		var_11_0[iter_11_0] = var_0_0.parse_message(var_11_0[iter_11_0])
 	end
 
-	return slot1
+	return var_11_0
 end
 
-function slot0.parse_message(slot0)
-	slot1 = {
-		body = slot3,
-		headers = slot2
-	}
-	slot2, slot3 = uv0.split_message(slot0)
-	slot1.headers = uv0.parse_headers(slot1.headers)
+function var_0_0.parse_message(arg_12_0)
+	local var_12_0 = {}
 
-	return slot1
+	var_12_0.headers, var_12_0.body = var_0_0.split_message(arg_12_0)
+	var_12_0.headers = var_0_0.parse_headers(var_12_0.headers)
+
+	return var_12_0
 end
 
-return slot0
+return var_0_0

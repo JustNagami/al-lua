@@ -1,539 +1,561 @@
-slot0 = class("GameRoomShootingView", import("..BaseMiniGameView"))
-slot0.animTime = 0.3333333333333333
-slot0.moveModulus = 120
+﻿local var_0_0 = class("GameRoomShootingView", import("..BaseMiniGameView"))
 
-function slot0.getUIName(slot0)
+var_0_0.animTime = 0.3333333333333333
+var_0_0.moveModulus = 120
+
+function var_0_0.getUIName(arg_1_0)
 	return "GameRoomShootingUI"
 end
 
-function slot0.init(slot0)
-	slot0.uiMGR = pg.UIMgr.GetInstance()
-	slot0.blurPanel = slot0._tf:Find("noAdaptPanel/blur_panel")
-	slot0.top = slot0.blurPanel:Find("top")
-	slot0.backBtn = slot0.top:Find("back")
-	slot0.scoreTF = slot0.top:Find("score/Text")
+function var_0_0.init(arg_2_0)
+	arg_2_0.uiMGR = pg.UIMgr.GetInstance()
+	arg_2_0.blurPanel = arg_2_0._tf:Find("noAdaptPanel/blur_panel")
+	arg_2_0.top = arg_2_0.blurPanel:Find("top")
+	arg_2_0.backBtn = arg_2_0.top:Find("back")
+	arg_2_0.scoreTF = arg_2_0.top:Find("score/Text")
 
-	setText(slot0.scoreTF, 0)
+	setText(arg_2_0.scoreTF, 0)
 
-	slot0.bestScoreTF = slot0.top:Find("score_heightest/Text")
-	slot0.ticketTF = slot0.top:Find("ticket/Text")
-	slot0.helpBtn = slot0.top:Find("help_btn")
+	arg_2_0.bestScoreTF = arg_2_0.top:Find("score_heightest/Text")
+	arg_2_0.ticketTF = arg_2_0.top:Find("ticket/Text")
+	arg_2_0.helpBtn = arg_2_0.top:Find("help_btn")
 
-	setActive(slot0.helpBtn, false)
+	setActive(arg_2_0.helpBtn, false)
 
-	slot0.sightTF = slot0.blurPanel:Find("MoveArea/Sight")
+	arg_2_0.sightTF = arg_2_0.blurPanel:Find("MoveArea/Sight")
 
-	setActive(slot0.sightTF, false)
+	setActive(arg_2_0.sightTF, false)
 
-	slot0.corners = slot0.blurPanel:Find("Corners")
-	slot0.shootAreaTF = slot0._tf:Find("noAdaptPanel/ShootArea")
-	slot0.targetPanel = slot0.shootAreaTF:Find("target_panel")
-	slot0.targetTpl = {}
+	arg_2_0.corners = arg_2_0.blurPanel:Find("Corners")
+	arg_2_0.shootAreaTF = arg_2_0._tf:Find("noAdaptPanel/ShootArea")
+	arg_2_0.targetPanel = arg_2_0.shootAreaTF:Find("target_panel")
+	arg_2_0.targetTpl = {}
 
-	for slot5 = 1, slot0.shootAreaTF:Find("tpl").childCount do
-		slot0.targetTpl[slot5] = slot1:GetChild(slot5 - 1)
+	local var_2_0 = arg_2_0.shootAreaTF:Find("tpl")
+
+	for iter_2_0 = 1, var_2_0.childCount do
+		arg_2_0.targetTpl[iter_2_0] = var_2_0:GetChild(iter_2_0 - 1)
 	end
 
-	setActive(slot1, false)
+	setActive(var_2_0, false)
 
-	slot0.startMaskTF = slot0._tf:Find("noAdaptPanel/blur_panel/start_mask")
-	slot0.countdownTF = slot0._tf:Find("noAdaptPanel/blur_panel/countUI")
-	slot0.lastTimeTF = slot0.shootAreaTF:Find("time_word")
-	slot0.bottomTF = slot0._tf:Find("noAdaptPanel/bottom")
-	slot0.joyStrickTF = slot0.bottomTF:Find("Stick")
-	slot0.fireBtn = slot0.bottomTF:Find("fire/ActCtl")
-	slot0.fireBtnDelegate = GetOrAddComponent(slot0.fireBtn, "EventTriggerListener")
+	arg_2_0.startMaskTF = arg_2_0._tf:Find("noAdaptPanel/blur_panel/start_mask")
+	arg_2_0.countdownTF = arg_2_0._tf:Find("noAdaptPanel/blur_panel/countUI")
+	arg_2_0.lastTimeTF = arg_2_0.shootAreaTF:Find("time_word")
+	arg_2_0.bottomTF = arg_2_0._tf:Find("noAdaptPanel/bottom")
+	arg_2_0.joyStrickTF = arg_2_0.bottomTF:Find("Stick")
+	arg_2_0.fireBtn = arg_2_0.bottomTF:Find("fire/ActCtl")
+	arg_2_0.fireBtnDelegate = GetOrAddComponent(arg_2_0.fireBtn, "EventTriggerListener")
 
-	setActive(slot0.fireBtn:Find("block"), false)
+	setActive(arg_2_0.fireBtn:Find("block"), false)
 
-	slot0.resultPanel = slot0._tf:Find("result_panel")
+	arg_2_0.resultPanel = arg_2_0._tf:Find("result_panel")
 
-	setText(findTF(slot0.resultPanel, "main/right/score/Text"), i18n("game_room_shooting_tip"))
-	setActive(slot0.resultPanel, false)
+	setText(findTF(arg_2_0.resultPanel, "main/right/score/Text"), i18n("game_room_shooting_tip"))
+	setActive(arg_2_0.resultPanel, false)
 end
 
-function slot0.initData(slot0)
-	slot0.tempConfig = slot0:GetMGData():getConfig("simple_config_data")
-	slot0.tempConfig.waitCountdown = 3
-	slot0.tempConfig.half = 56
+function var_0_0.initData(arg_3_0)
+	arg_3_0.tempConfig = arg_3_0:GetMGData():getConfig("simple_config_data")
+	arg_3_0.tempConfig.waitCountdown = 3
+	arg_3_0.tempConfig.half = 56
 end
 
-function slot0.addTimer(slot0, slot1, slot2, slot3)
-	slot0.timerList = slot0.timerList or {}
+function var_0_0.addTimer(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	arg_4_0.timerList = arg_4_0.timerList or {}
 
-	assert(slot0.timerList[slot1] == nil, "error Timers")
-	assert(slot2 > 0, "duration must >0")
+	assert(arg_4_0.timerList[arg_4_1] == nil, "error Timers")
+	assert(arg_4_2 > 0, "duration must >0")
 
-	slot0.timerList[slot1] = {
-		timeMark = Time.realtimeSinceStartup + slot2,
-		func = slot3
+	arg_4_0.timerList[arg_4_1] = {
+		timeMark = Time.realtimeSinceStartup + arg_4_2,
+		func = arg_4_3
 	}
 end
 
-function slot0.updateTimers(slot0)
-	for slot5, slot6 in pairs(slot0.timerList) do
-		if slot6.timeMark < Time.realtimeSinceStartup then
-			slot0.timerList[slot5] = nil
+function var_0_0.updateTimers(arg_5_0)
+	local var_5_0 = Time.realtimeSinceStartup
 
-			slot6.func()
+	for iter_5_0, iter_5_1 in pairs(arg_5_0.timerList) do
+		if var_5_0 > iter_5_1.timeMark then
+			local var_5_1 = iter_5_1.func
+
+			arg_5_0.timerList[iter_5_0] = nil
+
+			var_5_1()
 		end
 	end
 end
 
-function slot0.stopTimers(slot0)
-	slot0.isStopped = true
+function var_0_0.stopTimers(arg_6_0)
+	arg_6_0.isStopped = true
 
-	for slot5, slot6 in pairs(slot0.timerList) do
-		slot6.timeMark = slot6.timeMark - Time.realtimeSinceStartup
+	local var_6_0 = Time.realtimeSinceStartup
+
+	for iter_6_0, iter_6_1 in pairs(arg_6_0.timerList) do
+		iter_6_1.timeMark = iter_6_1.timeMark - var_6_0
 	end
 end
 
-function slot0.restartTimers(slot0)
-	slot0.isStopped = false
+function var_0_0.restartTimers(arg_7_0)
+	arg_7_0.isStopped = false
 
-	for slot5, slot6 in pairs(slot0.timerList) do
-		slot6.timeMark = slot6.timeMark + Time.realtimeSinceStartup
+	local var_7_0 = Time.realtimeSinceStartup
+
+	for iter_7_0, iter_7_1 in pairs(arg_7_0.timerList) do
+		iter_7_1.timeMark = iter_7_1.timeMark + var_7_0
 	end
 end
 
-function slot0.clearTimers(slot0)
-	slot0.timerList = {}
+function var_0_0.clearTimers(arg_8_0)
+	arg_8_0.timerList = {}
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		if uv0.isPlaying then
-			uv0:stopTimers()
+function var_0_0.didEnter(arg_9_0)
+	onButton(arg_9_0, arg_9_0.backBtn, function()
+		if arg_9_0.isPlaying then
+			arg_9_0:stopTimers()
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("tips_summergame_exit"),
-				onYes = function ()
-					uv0.lastTime = 0
+				onYes = function()
+					arg_9_0.lastTime = 0
 
-					uv0:restartTimers()
-					uv0:gameFinish()
+					arg_9_0:restartTimers()
+					arg_9_0:gameFinish()
 				end,
-				onNo = function ()
-					uv0:restartTimers()
+				onNo = function()
+					arg_9_0:restartTimers()
 				end
 			})
 		else
-			uv0:closeView()
+			arg_9_0:closeView()
 		end
 	end)
-	onButton(slot0, findTF(slot0.startMaskTF, "startGame"), function ()
-		if not uv0.isPlaying then
-			uv0:openCoinLayer(false)
-			uv0:gameStart()
+	onButton(arg_9_0, findTF(arg_9_0.startMaskTF, "startGame"), function()
+		if not arg_9_0.isPlaying then
+			arg_9_0:openCoinLayer(false)
+			arg_9_0:gameStart()
 		end
 	end)
 
-	if slot0:getGameRoomData() then
-		slot0.gameHelpTip = slot0:getGameRoomData().game_help
+	if arg_9_0:getGameRoomData() then
+		arg_9_0.gameHelpTip = arg_9_0:getGameRoomData().game_help
 	end
 
-	onButton(slot0, findTF(slot0.startMaskTF, "ruleGame"), function ()
+	onButton(arg_9_0, findTF(arg_9_0.startMaskTF, "ruleGame"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = uv0.gameHelpTip
+			helps = arg_9_0.gameHelpTip
 		})
 	end)
-	slot0:initData()
-	slot0:updateCount()
-	slot0:resetTime()
-	slot0:initFireFunc()
-	slot0:setFireLink(false)
-	slot0:changeStartMaskUI(true)
+	arg_9_0:initData()
+	arg_9_0:updateCount()
+	arg_9_0:resetTime()
+	arg_9_0:initFireFunc()
+	arg_9_0:setFireLink(false)
+	arg_9_0:changeStartMaskUI(true)
 end
 
-function slot0.changeStartMaskUI(slot0, slot1)
-	setActive(slot0.bottomTF, not slot1)
-	setActive(slot0.startMaskTF, slot1)
+function var_0_0.changeStartMaskUI(arg_15_0, arg_15_1)
+	setActive(arg_15_0.bottomTF, not arg_15_1)
+	setActive(arg_15_0.startMaskTF, arg_15_1)
 end
 
-function slot0.onBackPressed(slot0)
-	triggerButton(slot0.backBtn)
+function var_0_0.onBackPressed(arg_16_0)
+	triggerButton(arg_16_0.backBtn)
 end
 
-function slot1(slot0, slot1)
-	return Vector2(math.clamp(slot0.x, -slot1.x, slot1.x), math.clamp(slot0.y, -slot1.y, slot1.y))
+local function var_0_1(arg_17_0, arg_17_1)
+	return Vector2(math.clamp(arg_17_0.x, -arg_17_1.x, arg_17_1.x), math.clamp(arg_17_0.y, -arg_17_1.y, arg_17_1.y))
 end
 
-function slot0.update(slot0)
-	slot1 = Time.GetTimestamp()
+function var_0_0.update(arg_18_0)
+	local var_18_0 = Time.GetTimestamp()
 
-	if not slot0.isStopped then
-		if slot0.isAfterCount and slot0.sightTimeMark then
-			if not slot0.moveRect then
-				slot2 = tf(slot0.sightTF.parent)
-				slot0.moveRect = Vector2(slot2.rect.width - slot0.sightTF.rect.width, slot2.rect.height - slot0.sightTF.rect.height) / 2
+	if not arg_18_0.isStopped then
+		if arg_18_0.isAfterCount and arg_18_0.sightTimeMark then
+			if not arg_18_0.moveRect then
+				local var_18_1 = tf(arg_18_0.sightTF.parent)
+
+				arg_18_0.moveRect = Vector2(var_18_1.rect.width - arg_18_0.sightTF.rect.width, var_18_1.rect.height - arg_18_0.sightTF.rect.height) / 2
 			end
 
-			slot0.sightTF.anchoredPosition = uv1(slot0.sightTF.anchoredPosition + Vector2(slot0.uiMGR.hrz, slot0.uiMGR.vtc) * slot0.tempConfig.moveSpeed * (slot1 - slot0.sightTimeMark) * uv0.moveModulus * (slot0.isDown and 0.5 or 1), slot0.moveRect)
+			local var_18_2 = Vector2(arg_18_0.uiMGR.hrz, arg_18_0.uiMGR.vtc) * arg_18_0.tempConfig.moveSpeed * (var_18_0 - arg_18_0.sightTimeMark) * var_0_0.moveModulus
+
+			arg_18_0.sightTF.anchoredPosition = var_0_1(arg_18_0.sightTF.anchoredPosition + var_18_2 * (arg_18_0.isDown and 0.5 or 1), arg_18_0.moveRect)
 		end
 
-		slot0:updateTimers()
+		arg_18_0:updateTimers()
 	end
 
-	slot0.sightTimeMark = slot1
+	arg_18_0.sightTimeMark = var_18_0
 end
 
-function slot0.resetTime(slot0)
-	slot0.countdown = slot0.tempConfig.waitCountdown
+function var_0_0.resetTime(arg_19_0)
+	arg_19_0.countdown = arg_19_0.tempConfig.waitCountdown
 
-	setText(findTF(slot0.countdownTF, "count"), slot0.countdown)
+	setText(findTF(arg_19_0.countdownTF, "count"), arg_19_0.countdown)
 
-	slot0.lastTime = slot0.tempConfig.baseTime
+	arg_19_0.lastTime = arg_19_0.tempConfig.baseTime
 
-	setText(slot0.lastTimeTF, slot0.lastTime)
+	setText(arg_19_0.lastTimeTF, arg_19_0.lastTime)
 end
 
-function slot0.gameStart(slot0)
-	slot0.isPlaying = true
+function var_0_0.gameStart(arg_20_0)
+	arg_20_0.isPlaying = true
 
-	slot0:changeStartMaskUI(false)
-	UpdateBeat:Add(slot0.update, slot0)
-	setActive(slot0.countdownTF, true)
+	arg_20_0:changeStartMaskUI(false)
+	UpdateBeat:Add(arg_20_0.update, arg_20_0)
+	setActive(arg_20_0.countdownTF, true)
 
-	function slot1(slot0)
-		uv0:addTimer("start countdown", 1, function ()
-			uv0.countdown = uv0.countdown - 1
+	local function var_20_0(arg_21_0)
+		arg_20_0:addTimer("start countdown", 1, function()
+			arg_20_0.countdown = arg_20_0.countdown - 1
 
-			setText(findTF(uv0.countdownTF, "count"), uv0.countdown)
+			setText(findTF(arg_20_0.countdownTF, "count"), arg_20_0.countdown)
 
-			if uv0.countdown > 0 then
-				uv1(uv1)
+			if arg_20_0.countdown > 0 then
+				arg_21_0(arg_21_0)
 			else
-				uv0:afterCountDown()
+				arg_20_0:afterCountDown()
 			end
 		end)
 	end
 
-	slot1(slot1)
+	var_20_0(var_20_0)
 end
 
-function slot0.afterCountDown(slot0)
-	slot0.isAfterCount = true
+function var_0_0.afterCountDown(arg_23_0)
+	arg_23_0.isAfterCount = true
 
-	slot0.uiMGR:AttachStickOb(slot0.joyStrickTF)
-	setActive(slot0.sightTF, true)
-	setActive(slot0.countdownTF, false)
-	setAnchoredPosition(slot0.sightTF, Vector2.zero)
-	slot0:setFireLink(true)
+	arg_23_0.uiMGR:AttachStickOb(arg_23_0.joyStrickTF)
+	setActive(arg_23_0.sightTF, true)
+	setActive(arg_23_0.countdownTF, false)
+	setAnchoredPosition(arg_23_0.sightTF, Vector2.zero)
+	arg_23_0:setFireLink(true)
 
-	slot0.score = 0
+	arg_23_0.score = 0
 
-	slot0:flushTarget(true)
+	arg_23_0:flushTarget(true)
 
-	function slot1(slot0)
-		uv0:addTimer("gamefinish", 1, function ()
-			uv0.lastTime = uv0.lastTime - 1
+	local function var_23_0(arg_24_0)
+		arg_23_0:addTimer("gamefinish", 1, function()
+			arg_23_0.lastTime = arg_23_0.lastTime - 1
 
-			setText(uv0.lastTimeTF, uv0.lastTime)
+			setText(arg_23_0.lastTimeTF, arg_23_0.lastTime)
 
-			if uv0.lastTime > 0 then
-				uv1(uv1)
+			if arg_23_0.lastTime > 0 then
+				arg_24_0(arg_24_0)
 			else
-				uv0:gameFinish()
+				arg_23_0:gameFinish()
 			end
 		end)
 	end
 
-	slot1(slot1)
+	var_23_0(var_23_0)
 end
 
-function slot0.gameFinish(slot0, slot1)
-	if slot0.isAfterCount then
-		slot0:setFireLink(false)
-		slot0.uiMGR:ClearStick()
+function var_0_0.gameFinish(arg_26_0, arg_26_1)
+	if arg_26_0.isAfterCount then
+		arg_26_0:setFireLink(false)
+		arg_26_0.uiMGR:ClearStick()
 
-		slot0.isAfterCount = false
+		arg_26_0.isAfterCount = false
 	end
 
-	slot0:clearTimers()
-	UpdateBeat:Remove(slot0.update, slot0)
-	setActive(slot0.sightTF, false)
-	setActive(slot0.countdownTF, false)
-	slot0:resetTime()
+	arg_26_0:clearTimers()
+	UpdateBeat:Remove(arg_26_0.update, arg_26_0)
+	setActive(arg_26_0.sightTF, false)
+	setActive(arg_26_0.countdownTF, false)
+	arg_26_0:resetTime()
 
-	slot0.isPlaying = false
+	arg_26_0.isPlaying = false
 
-	if not slot1 then
-		for slot5 = 1, 3 do
-			for slot9 = 1, 6 do
-				if slot0.cell[slot5][slot9] then
-					slot0.targetPanel:Find("line_" .. slot5):GetChild(slot9 - 1):GetChild(0):GetComponent(typeof(Animator)):Play("targetDown")
+	if not arg_26_1 then
+		for iter_26_0 = 1, 3 do
+			for iter_26_1 = 1, 6 do
+				if arg_26_0.cell[iter_26_0][iter_26_1] then
+					arg_26_0.targetPanel:Find("line_" .. iter_26_0):GetChild(iter_26_1 - 1):GetChild(0):GetComponent(typeof(Animator)):Play("targetDown")
 				end
 			end
 		end
 
-		Timer.New(function ()
-			uv0:changeStartMaskUI(true)
-		end, uv0.animTime):Start()
-		slot0:resultFinish()
+		Timer.New(function()
+			arg_26_0:changeStartMaskUI(true)
+		end, var_0_0.animTime):Start()
+		arg_26_0:resultFinish()
 	end
 end
 
-function slot0.resultFinish(slot0)
-	slot2 = 1
+function var_0_0.resultFinish(arg_28_0)
+	local var_28_0 = arg_28_0.tempConfig.score_level
+	local var_28_1 = 1
 
-	for slot6 = 1, #slot0.tempConfig.score_level do
-		if slot1[slot6] <= slot0.score then
-			slot2 = slot6
+	for iter_28_0 = 1, #var_28_0 do
+		if arg_28_0.score >= var_28_0[iter_28_0] then
+			var_28_1 = iter_28_0
 		end
 	end
 
-	slot0.awardLevel = slot2
+	arg_28_0.awardLevel = var_28_1
 
-	slot0:SendSuccess(slot0.score)
-	slot0:showResultPanel({})
+	arg_28_0:SendSuccess(arg_28_0.score)
+	arg_28_0:showResultPanel({})
 end
 
-function slot0.showResultPanel(slot0, slot1, slot2)
-	function slot3()
-		setActive(uv0.resultPanel, false)
-		uv0:openCoinLayer(true)
+function var_0_0.showResultPanel(arg_29_0, arg_29_1, arg_29_2)
+	local function var_29_0()
+		setActive(arg_29_0.resultPanel, false)
+		arg_29_0:openCoinLayer(true)
 
-		if uv1 then
-			uv1()
+		if arg_29_2 then
+			arg_29_2()
 		else
-			uv0:updateCount()
+			arg_29_0:updateCount()
 		end
 	end
 
-	onButton(slot0, slot0.resultPanel:Find("bg"), slot3)
-	onButton(slot0, slot0.resultPanel:Find("main/btn_confirm"), slot3)
+	onButton(arg_29_0, arg_29_0.resultPanel:Find("bg"), var_29_0)
+	onButton(arg_29_0, arg_29_0.resultPanel:Find("main/btn_confirm"), var_29_0)
 
-	if slot0.bestScore < slot0.score then
-		slot0:StoreDataToServer({
-			slot0.score
+	local var_29_1 = arg_29_0.resultPanel:Find("main")
+
+	if arg_29_0.score > arg_29_0.bestScore then
+		arg_29_0:StoreDataToServer({
+			arg_29_0.score
 		})
-		GetImageSpriteFromAtlasAsync("ui/minigameui/shootinggameui_atlas", "new_recode", slot0.resultPanel:Find("main"):Find("success"), true)
+		GetImageSpriteFromAtlasAsync("ui/minigameui/shootinggameui_atlas", "new_recode", var_29_1:Find("success"), true)
 	else
-		GetImageSpriteFromAtlasAsync("ui/minigameui/shootinggameui_atlas", "success", slot4:Find("success"), true)
+		GetImageSpriteFromAtlasAsync("ui/minigameui/shootinggameui_atlas", "success", var_29_1:Find("success"), true)
 	end
 
-	GetImageSpriteFromAtlasAsync("ui/minigameui/shootinggameui_atlas", "level_" .. slot0.awardLevel, slot4:Find("success/level"), true)
-	setText(slot4:Find("right/score/number"), slot0.score)
-	setActive(slot4:Find("right/awards/list"), #slot1 > 0)
-	setActive(slot4:Find("right/awards/nothing"), #slot1 == 0)
+	GetImageSpriteFromAtlasAsync("ui/minigameui/shootinggameui_atlas", "level_" .. arg_29_0.awardLevel, var_29_1:Find("success/level"), true)
+	setText(var_29_1:Find("right/score/number"), arg_29_0.score)
+	setActive(var_29_1:Find("right/awards/list"), #arg_29_1 > 0)
+	setActive(var_29_1:Find("right/awards/nothing"), #arg_29_1 == 0)
 
-	slot0.itemList = slot0.itemList or UIItemList.New(slot4:Find("right/awards/list"), slot4:Find("right/awards/list/item"))
+	arg_29_0.itemList = arg_29_0.itemList or UIItemList.New(var_29_1:Find("right/awards/list"), var_29_1:Find("right/awards/list/item"))
 
-	slot0.itemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			updateDrop(slot2, uv0[slot1 + 1])
-			setText(slot2:Find("number"), "x" .. uv0[slot1 + 1].count)
+	arg_29_0.itemList:make(function(arg_31_0, arg_31_1, arg_31_2)
+		if arg_31_0 == UIItemList.EventUpdate then
+			updateDrop(arg_31_2, arg_29_1[arg_31_1 + 1])
+			setText(arg_31_2:Find("number"), "x" .. arg_29_1[arg_31_1 + 1].count)
 		end
 	end)
-	slot0.itemList:align(#slot1)
-	setActive(slot0.resultPanel, true)
+	arg_29_0.itemList:align(#arg_29_1)
+	setActive(arg_29_0.resultPanel, true)
 end
 
-function slot0.OnSendMiniGameOPDone(slot0, slot1)
-	slot0:updateCount()
+function var_0_0.OnSendMiniGameOPDone(arg_32_0, arg_32_1)
+	arg_32_0:updateCount()
 end
 
-function slot0.updateCount(slot0)
-	setText(slot0.ticketTF, slot0:GetMGHubData().count)
+function var_0_0.updateCount(arg_33_0)
+	setText(arg_33_0.ticketTF, arg_33_0:GetMGHubData().count)
 
-	slot0.bestScore = checkExist(slot0:GetMGData():GetRuntimeData("elements"), {
+	arg_33_0.bestScore = checkExist(arg_33_0:GetMGData():GetRuntimeData("elements"), {
 		1
 	}) or 0
 
-	setText(slot0.bestScoreTF, slot0.bestScore)
+	setText(arg_33_0.bestScoreTF, arg_33_0.bestScore)
 end
 
-function slot0.initFireFunc(slot0)
-	slot1 = pg.TipsMgr.GetInstance()
-	slot2 = pg.TimeMgr.GetInstance()
+function var_0_0.initFireFunc(arg_34_0)
+	local var_34_0 = pg.TipsMgr.GetInstance()
+	local var_34_1 = pg.TimeMgr.GetInstance()
+	local var_34_2 = arg_34_0.sightTF:Find("sight_base")
+	local var_34_3 = arg_34_0.sightTF:Find("sight_ready")
 
-	setImageAlpha(slot0.sightTF:Find("sight_base"), 1)
-	setImageAlpha(slot0.sightTF:Find("sight_ready"), 0)
+	setImageAlpha(var_34_2, 1)
+	setImageAlpha(var_34_3, 0)
 
-	function slot5()
-		setActive(uv0.corners, true)
-		LeanTween.scale(uv1, Vector3(1.95, 1.95, 1), 0.1):setOnComplete(System.Action(function ()
-			LeanTween.alpha(uv0, 0, 0.1)
-			LeanTween.alpha(uv1, 1, 0.1)
+	local function var_34_4()
+		setActive(arg_34_0.corners, true)
+		LeanTween.scale(var_34_2, Vector3(1.95, 1.95, 1), 0.1):setOnComplete(System.Action(function()
+			LeanTween.alpha(var_34_2, 0, 0.1)
+			LeanTween.alpha(var_34_3, 1, 0.1)
 		end))
 	end
 
-	function slot6()
-		setActive(uv0.corners, false)
-		LeanTween.alpha(uv1, 1, 0.1)
-		LeanTween.alpha(uv2, 0, 0.1):setOnComplete(System.Action(function ()
-			LeanTween.scale(uv0, Vector3.one, 0.1)
+	local function var_34_5()
+		setActive(arg_34_0.corners, false)
+		LeanTween.alpha(var_34_2, 1, 0.1)
+		LeanTween.alpha(var_34_3, 0, 0.1):setOnComplete(System.Action(function()
+			LeanTween.scale(var_34_2, Vector3.one, 0.1)
 		end))
 	end
 
-	function slot0._downFunc()
-		uv0()
+	function arg_34_0._downFunc()
+		var_34_4()
 	end
 
-	function slot0._upFunc()
-		LeanTween.scale(uv0, Vector3(2, 2, 2), 0.03):setOnComplete(System.Action(function ()
-			LeanTween.scale(uv0, Vector3.one, 0.07):setOnComplete(System.Action(function ()
-				uv0()
+	function arg_34_0._upFunc()
+		LeanTween.scale(var_34_3, Vector3(2, 2, 2), 0.03):setOnComplete(System.Action(function()
+			LeanTween.scale(var_34_3, Vector3.one, 0.07):setOnComplete(System.Action(function()
+				var_34_5()
 			end))
 		end))
 
-		slot0, slot1, slot2 = uv2:checkHit()
+		local var_40_0, var_40_1, var_40_2 = arg_34_0:checkHit()
 
-		if slot0 then
-			slot3 = uv2.cell[slot1][slot2]
-			uv2.cell[slot1][slot2] = nil
-			uv2.score = uv2.score + uv2.tempConfig.targetScore[slot3]
-			uv2.targetCount[slot3] = uv2.targetCount[slot3] - 1
-			uv2.lastTime = uv2.lastTime + uv2.tempConfig.bonusTime
+		if var_40_0 then
+			local var_40_3 = arg_34_0.cell[var_40_1][var_40_2]
 
-			setText(uv2.lastTimeTF, uv2.lastTime)
-			uv2.targetPanel:Find("line_" .. slot1):GetChild(slot2 - 1):GetChild(0):GetComponent(typeof(Animator)):Play("targetDown")
-			uv2:addTimer("flush call", 0.2 + uv3.animTime, function ()
-				uv0:flushTarget()
+			arg_34_0.cell[var_40_1][var_40_2] = nil
+			arg_34_0.score = arg_34_0.score + arg_34_0.tempConfig.targetScore[var_40_3]
+			arg_34_0.targetCount[var_40_3] = arg_34_0.targetCount[var_40_3] - 1
+			arg_34_0.lastTime = arg_34_0.lastTime + arg_34_0.tempConfig.bonusTime
+
+			setText(arg_34_0.lastTimeTF, arg_34_0.lastTime)
+			arg_34_0.targetPanel:Find("line_" .. var_40_1):GetChild(var_40_2 - 1):GetChild(0):GetComponent(typeof(Animator)):Play("targetDown")
+			arg_34_0:addTimer("flush call", 0.2 + var_0_0.animTime, function()
+				arg_34_0:flushTarget()
 			end)
 
-			if not _.any(uv2.targetCount, function (slot0)
-				return slot0 > 0
+			if not _.any(arg_34_0.targetCount, function(arg_44_0)
+				return arg_44_0 > 0
 			end) then
-				uv2:gameFinish()
+				arg_34_0:gameFinish()
 			end
 		end
 
-		uv2:setFireLink(false)
-		uv2:addTimer("fire cd", uv2.tempConfig.fireCD, function ()
-			uv0:setFireLink(true)
+		arg_34_0:setFireLink(false)
+		arg_34_0:addTimer("fire cd", arg_34_0.tempConfig.fireCD, function()
+			arg_34_0:setFireLink(true)
 		end)
 	end
 
-	function slot0._cancelFunc()
-		uv0()
+	function arg_34_0._cancelFunc()
+		var_34_5()
 	end
 
-	slot0._emptyFunc = nil
+	arg_34_0._emptyFunc = nil
 end
 
-function slot0.setFireLink(slot0, slot1)
-	if slot1 then
-		setButtonEnabled(slot0.fireBtn, true)
+function var_0_0.setFireLink(arg_47_0, arg_47_1)
+	if arg_47_1 then
+		setButtonEnabled(arg_47_0.fireBtn, true)
 
-		if slot0._downFunc ~= nil then
-			slot0.fireBtnDelegate:AddPointDownFunc(function ()
-				uv0.isDown = true
+		if arg_47_0._downFunc ~= nil then
+			arg_47_0.fireBtnDelegate:AddPointDownFunc(function()
+				arg_47_0.isDown = true
 
-				if uv0._main_cannon_sound then
-					uv0._main_cannon_sound:Stop(true)
+				if arg_47_0._main_cannon_sound then
+					arg_47_0._main_cannon_sound:Stop(true)
 				end
 
-				uv0._main_cannon_sound = pg.CriMgr.GetInstance():PlaySE_V3("battle-cannon-main-prepared")
+				arg_47_0._main_cannon_sound = pg.CriMgr.GetInstance():PlaySE_V3("battle-cannon-main-prepared")
 
-				uv0._downFunc()
+				arg_47_0._downFunc()
 			end)
 		end
 
-		if slot0._upFunc ~= nil then
-			slot0.fireBtnDelegate:AddPointUpFunc(function ()
-				if uv0.isDown then
-					if uv0._main_cannon_sound then
-						uv0._main_cannon_sound:Stop(true)
+		if arg_47_0._upFunc ~= nil then
+			arg_47_0.fireBtnDelegate:AddPointUpFunc(function()
+				if arg_47_0.isDown then
+					if arg_47_0._main_cannon_sound then
+						arg_47_0._main_cannon_sound:Stop(true)
 					end
 
 					pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/battle/boom2")
 
-					uv0.isDown = false
+					arg_47_0.isDown = false
 
-					uv0._upFunc()
+					arg_47_0._upFunc()
 				end
 			end)
 		end
 
-		if slot0._cancelFunc ~= nil then
-			slot0.fireBtnDelegate:AddPointExitFunc(function ()
-				if uv0.isDown then
-					if uv0._main_cannon_sound then
-						uv0._main_cannon_sound:Stop(true)
+		if arg_47_0._cancelFunc ~= nil then
+			arg_47_0.fireBtnDelegate:AddPointExitFunc(function()
+				if arg_47_0.isDown then
+					if arg_47_0._main_cannon_sound then
+						arg_47_0._main_cannon_sound:Stop(true)
 					end
 
-					uv0.isDown = false
+					arg_47_0.isDown = false
 
-					uv0._cancelFunc()
+					arg_47_0._cancelFunc()
 				end
 			end)
 		end
 	else
-		if slot0.isDown then
-			slot0.isDown = false
+		if arg_47_0.isDown then
+			arg_47_0.isDown = false
 
-			slot0._cancelFunc()
+			arg_47_0._cancelFunc()
 		end
 
-		setButtonEnabled(slot0.fireBtn, false)
-		slot0.fireBtnDelegate:RemovePointDownFunc()
-		slot0.fireBtnDelegate:RemovePointUpFunc()
-		slot0.fireBtnDelegate:RemovePointExitFunc()
+		setButtonEnabled(arg_47_0.fireBtn, false)
+		arg_47_0.fireBtnDelegate:RemovePointDownFunc()
+		arg_47_0.fireBtnDelegate:RemovePointUpFunc()
+		arg_47_0.fireBtnDelegate:RemovePointExitFunc()
 	end
 end
 
-function slot0.flushTarget(slot0, slot1)
-	if slot1 then
-		slot0.targetCount = {
+function var_0_0.flushTarget(arg_51_0, arg_51_1)
+	if arg_51_1 then
+		arg_51_0.targetCount = {
 			2,
 			4,
 			6
 		}
 	end
 
-	for slot5 = 1, 3 do
-		for slot9 = 1, 6 do
-			removeAllChildren(slot0.targetPanel:Find("line_" .. slot5):GetChild(slot9 - 1))
+	for iter_51_0 = 1, 3 do
+		for iter_51_1 = 1, 6 do
+			removeAllChildren(arg_51_0.targetPanel:Find("line_" .. iter_51_0):GetChild(iter_51_1 - 1))
 		end
 	end
 
-	slot2 = {
+	local var_51_0 = {
 		0,
 		0,
 		0
 	}
-	slot0.cell = {
+
+	arg_51_0.cell = {
 		{},
 		{},
 		{}
 	}
 
-	for slot6, slot7 in ipairs(slot0.targetCount) do
-		for slot11 = 1, slot7 do
-			slot12 = math.random(3)
+	for iter_51_2, iter_51_3 in ipairs(arg_51_0.targetCount) do
+		for iter_51_4 = 1, iter_51_3 do
+			local var_51_1 = math.random(3)
+			local var_51_2 = math.random(6)
 
-			while slot0.cell[slot12][math.random(6)] or slot1 and slot2[slot12] >= 4 do
-				slot13 = math.random(6)
-				slot12 = math.random(3)
+			while arg_51_0.cell[var_51_1][var_51_2] or arg_51_1 and var_51_0[var_51_1] >= 4 do
+				var_51_1, var_51_2 = math.random(3), math.random(6)
 			end
 
-			slot2[slot12] = slot2[slot12] + 1
-			slot0.cell[slot12][slot13] = slot6
+			var_51_0[var_51_1] = var_51_0[var_51_1] + 1
+			arg_51_0.cell[var_51_1][var_51_2] = iter_51_2
 
-			cloneTplTo(slot0.targetTpl[slot6], slot0.targetPanel:Find("line_" .. slot12):GetChild(slot13 - 1))
+			cloneTplTo(arg_51_0.targetTpl[iter_51_2], arg_51_0.targetPanel:Find("line_" .. var_51_1):GetChild(var_51_2 - 1))
 		end
 	end
 
-	setText(slot0.scoreTF, slot0.score)
+	setText(arg_51_0.scoreTF, arg_51_0.score)
 end
 
-function slot0.checkHit(slot0)
-	for slot4 = 1, 3 do
-		for slot8 = 1, 6 do
-			if slot0.cell[slot4][slot8] then
-				slot9 = slot0.targetPanel:Find("line_" .. slot4):GetChild(slot8 - 1):GetChild(0):Find("icon/face")
-				slot10 = slot0.sightTF:InverseTransformPoint(slot9:TransformPoint(slot9.position))
+function var_0_0.checkHit(arg_52_0)
+	for iter_52_0 = 1, 3 do
+		for iter_52_1 = 1, 6 do
+			if arg_52_0.cell[iter_52_0][iter_52_1] then
+				local var_52_0 = arg_52_0.targetPanel:Find("line_" .. iter_52_0):GetChild(iter_52_1 - 1):GetChild(0):Find("icon/face")
+				local var_52_1 = arg_52_0.sightTF:InverseTransformPoint(var_52_0:TransformPoint(var_52_0.position))
 
-				if slot10.x * slot10.x + slot10.y * slot10.y < slot0.tempConfig.half * slot0.tempConfig.half then
-					return true, slot4, slot8
+				if var_52_1.x * var_52_1.x + var_52_1.y * var_52_1.y < arg_52_0.tempConfig.half * arg_52_0.tempConfig.half then
+					return true, iter_52_0, iter_52_1
 				end
 			end
 		end
 	end
 end
 
-function slot0.willExit(slot0)
+function var_0_0.willExit(arg_53_0)
+	return
 end
 
-return slot0
+return var_0_0

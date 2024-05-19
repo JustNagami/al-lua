@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.ship_strengthen_blueprint = {
 	[101] = {
 		effect_equipment_proficiency = "",

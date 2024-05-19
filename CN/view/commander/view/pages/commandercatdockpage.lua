@@ -1,236 +1,251 @@
-slot0 = class("CommanderCatDockPage", import("view.base.BaseSubView"))
-slot0.ON_SORT = "CommanderCatDockPage:ON_SORT"
+﻿local var_0_0 = class("CommanderCatDockPage", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+var_0_0.ON_SORT = "CommanderCatDockPage:ON_SORT"
+
+function var_0_0.getUIName(arg_1_0)
 	return "CommanderCatDockui"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.scrollRect = slot0._tf:Find("frame"):GetComponent("LScrollRect")
-	slot0.reserveBtn = slot0._tf:Find("box/reserve_btn")
-	slot0.reserveTxt = slot0.reserveBtn:Find("Text"):GetComponent(typeof(Text))
-	slot0.reserveTip = slot0.reserveBtn:Find("free")
-	slot0.homeBtn = slot0._tf:Find("box/home")
-	slot0.homeTxt = slot0.homeBtn:Find("Text"):GetComponent(typeof(Text))
-	slot0.homeTip = slot0.homeBtn:Find("tip")
-	slot0.boxesBtn = slot0._tf:Find("box/boxes_btn")
-	slot0.boxesTxt = slot0.boxesBtn:Find("Text"):GetComponent(typeof(Text))
-	slot0.boxesTip = slot0.boxesBtn:Find("tip")
-	slot0.capacityTxt = slot0._tf:Find("box/capcity/Text"):GetComponent(typeof(Text))
-	slot0.sortBtn = slot0._tf:Find("top/sort_btn")
-	slot0.sortIdTxt = slot0.sortBtn:Find("id")
-	slot0.sortLvTxt = slot0.sortBtn:Find("Level")
-	slot0.sortRarityTxt = slot0.sortBtn:Find("Rarity")
-	slot0.ascBtn = slot0._tf:Find("top/asc_btn")
-	slot0.ascTr = slot0.ascBtn:Find("asc")
-	slot0.descTr = slot0.ascBtn:Find("desc")
-	slot0.selectedTr = slot0._tf:Find("bottom")
-	slot0.btnsTr = slot0._tf:Find("box")
-	slot0.selectedNumTxt = slot0._tf:Find("bottom/value/Text"):GetComponent(typeof(Text))
-	slot0.selectedBtn = slot0._tf:Find("bottom/select_btn")
-	slot0.cancelBtn = slot0._tf:Find("bottom/cancel_btn")
-	slot0.reservePanel = CommanderReservePage.New(slot0._tf.parent, slot0.event, slot0.contextData)
-	slot0.boxesPanel = CommanderBoxesPage.New(slot0._tf.parent, slot0.event, slot0.contextData)
-	slot0.indexPanel = CommanderIndexPage.New(slot0._tf, slot0.event)
-	slot0.catterySettlementPage = CatterySettlementPage.New(slot0._tf, slot0.event)
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.scrollRect = arg_2_0._tf:Find("frame"):GetComponent("LScrollRect")
+	arg_2_0.reserveBtn = arg_2_0._tf:Find("box/reserve_btn")
+	arg_2_0.reserveTxt = arg_2_0.reserveBtn:Find("Text"):GetComponent(typeof(Text))
+	arg_2_0.reserveTip = arg_2_0.reserveBtn:Find("free")
+	arg_2_0.homeBtn = arg_2_0._tf:Find("box/home")
+	arg_2_0.homeTxt = arg_2_0.homeBtn:Find("Text"):GetComponent(typeof(Text))
+	arg_2_0.homeTip = arg_2_0.homeBtn:Find("tip")
+	arg_2_0.boxesBtn = arg_2_0._tf:Find("box/boxes_btn")
+	arg_2_0.boxesTxt = arg_2_0.boxesBtn:Find("Text"):GetComponent(typeof(Text))
+	arg_2_0.boxesTip = arg_2_0.boxesBtn:Find("tip")
+	arg_2_0.capacityTxt = arg_2_0._tf:Find("box/capcity/Text"):GetComponent(typeof(Text))
+	arg_2_0.sortBtn = arg_2_0._tf:Find("top/sort_btn")
+	arg_2_0.sortIdTxt = arg_2_0.sortBtn:Find("id")
+	arg_2_0.sortLvTxt = arg_2_0.sortBtn:Find("Level")
+	arg_2_0.sortRarityTxt = arg_2_0.sortBtn:Find("Rarity")
+	arg_2_0.ascBtn = arg_2_0._tf:Find("top/asc_btn")
+	arg_2_0.ascTr = arg_2_0.ascBtn:Find("asc")
+	arg_2_0.descTr = arg_2_0.ascBtn:Find("desc")
+	arg_2_0.selectedTr = arg_2_0._tf:Find("bottom")
+	arg_2_0.btnsTr = arg_2_0._tf:Find("box")
+	arg_2_0.selectedNumTxt = arg_2_0._tf:Find("bottom/value/Text"):GetComponent(typeof(Text))
+	arg_2_0.selectedBtn = arg_2_0._tf:Find("bottom/select_btn")
+	arg_2_0.cancelBtn = arg_2_0._tf:Find("bottom/cancel_btn")
+	arg_2_0.reservePanel = CommanderReservePage.New(arg_2_0._tf.parent, arg_2_0.event, arg_2_0.contextData)
+	arg_2_0.boxesPanel = CommanderBoxesPage.New(arg_2_0._tf.parent, arg_2_0.event, arg_2_0.contextData)
+	arg_2_0.indexPanel = CommanderIndexPage.New(arg_2_0._tf, arg_2_0.event)
+	arg_2_0.catterySettlementPage = CatterySettlementPage.New(arg_2_0._tf, arg_2_0.event)
 end
 
-function slot0.RegisterEvent(slot0)
-	slot0:bind(uv0.ON_SORT, function (slot0)
-		uv0:OnSort()
+function var_0_0.RegisterEvent(arg_3_0)
+	arg_3_0:bind(var_0_0.ON_SORT, function(arg_4_0)
+		arg_3_0:OnSort()
 	end)
-	slot0:bind(CommanderCatScene.EVENT_NEXT_ONE, function (slot0, slot1)
-		uv0:OnNextOn(slot1, 1)
+	arg_3_0:bind(CommanderCatScene.EVENT_NEXT_ONE, function(arg_5_0, arg_5_1)
+		arg_3_0:OnNextOn(arg_5_1, 1)
 	end)
-	slot0:bind(CommanderCatScene.EVENT_PREV_ONE, function (slot0, slot1)
-		uv0:OnNextOn(slot1, -1)
+	arg_3_0:bind(CommanderCatScene.EVENT_PREV_ONE, function(arg_6_0, arg_6_1)
+		arg_3_0:OnNextOn(arg_6_1, -1)
 	end)
-	slot0:bind(CommanderCatScene.MSG_UPDATE, function (slot0)
-		uv0:UpdateCommanders(true)
-		uv0:UpdateCapacity()
+	arg_3_0:bind(CommanderCatScene.MSG_UPDATE, function(arg_7_0)
+		arg_3_0:UpdateCommanders(true)
+		arg_3_0:UpdateCapacity()
 	end)
-	slot0:bind(CommanderCatScene.MSG_HOME_TIP, function (slot0)
-		uv0:UpdateHome()
+	arg_3_0:bind(CommanderCatScene.MSG_HOME_TIP, function(arg_8_0)
+		arg_3_0:UpdateHome()
 	end)
-	slot0:bind(CommanderCatScene.MSG_BUILD, function ()
-		uv0:UpdateBoxes()
+	arg_3_0:bind(CommanderCatScene.MSG_BUILD, function()
+		arg_3_0:UpdateBoxes()
 	end)
-	slot0:bind(CommanderCatScene.MSG_RESERVE_BOX, function ()
-		uv0:UpdateReserve()
+	arg_3_0:bind(CommanderCatScene.MSG_RESERVE_BOX, function()
+		arg_3_0:UpdateReserve()
 	end)
-	slot0:bind(CommanderCatScene.EVENT_FOLD, function (slot0, slot1)
-		if slot1 then
-			LeanTween.moveX(rtf(uv0._tf), 1000, 0.5)
+	arg_3_0:bind(CommanderCatScene.EVENT_FOLD, function(arg_11_0, arg_11_1)
+		if arg_11_1 then
+			LeanTween.moveX(rtf(arg_3_0._tf), 1000, 0.5)
 		else
-			LeanTween.moveX(rtf(uv0._tf), -423, 0.5)
+			LeanTween.moveX(rtf(arg_3_0._tf), -423, 0.5)
 		end
 	end)
 end
 
-function slot0.OnNextOn(slot0, slot1, slot2)
-	slot3 = 0
+function var_0_0.OnNextOn(arg_12_0, arg_12_1, arg_12_2)
+	local var_12_0 = 0
 
-	for slot7, slot8 in ipairs(slot0.displays) do
-		if slot8.id == slot1 then
-			slot3 = slot7
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0.displays) do
+		if iter_12_1.id == arg_12_1 then
+			var_12_0 = iter_12_0
 
 			break
 		end
 	end
 
-	if slot3 + slot2 <= 0 or slot4 > #slot0.displays then
+	local var_12_1 = var_12_0 + arg_12_2
+
+	if var_12_1 <= 0 or var_12_1 > #arg_12_0.displays then
 		return
 	end
 
-	slot5 = false
+	local var_12_2 = false
+	local var_12_3 = arg_12_0.displays[var_12_1]
 
-	for slot10, slot11 in pairs(slot0.cards) do
-		if slot11.commanderVO and slot11.commanderVO.id == slot0.displays[slot4].id then
-			slot5 = true
+	for iter_12_2, iter_12_3 in pairs(arg_12_0.cards) do
+		if iter_12_3.commanderVO and iter_12_3.commanderVO.id == var_12_3.id then
+			var_12_2 = true
 
-			triggerButton(slot11.infoTF)
+			triggerButton(iter_12_3.infoTF)
 
 			break
 		end
 	end
 
-	if not slot5 then
-		slot0:emit(CommanderCatScene.EVENT_SELECTED, slot6)
+	if not var_12_2 then
+		arg_12_0:emit(CommanderCatScene.EVENT_SELECTED, var_12_3)
 	end
 end
 
-function slot0.OnSort(slot0)
-	slot0.sortData = slot0.indexPanel.data
-	slot0.sortData.asc = slot0.sortData.asc
+function var_0_0.OnSort(arg_13_0)
+	local var_13_0 = arg_13_0.sortData.asc
 
-	slot0:UpdateSortTxt()
-	slot0:UpdateCommanders(false)
-	setActive(slot0.ascTr, slot0.sortData.asc)
-	setActive(slot0.descTr, not slot0.sortData.asc)
+	arg_13_0.sortData = arg_13_0.indexPanel.data
+	arg_13_0.sortData.asc = var_13_0
+
+	arg_13_0:UpdateSortTxt()
+	arg_13_0:UpdateCommanders(false)
+	setActive(arg_13_0.ascTr, arg_13_0.sortData.asc)
+	setActive(arg_13_0.descTr, not arg_13_0.sortData.asc)
 end
 
-function slot0.UpdateSortTxt(slot0)
-	setActive(slot0.sortIdTxt, slot0.sortData.sortData == "id")
-	setActive(slot0.sortLvTxt, slot0.sortData.sortData == "Level")
-	setActive(slot0.sortRarityTxt, slot0.sortData.sortData == "Rarity")
+function var_0_0.UpdateSortTxt(arg_14_0)
+	setActive(arg_14_0.sortIdTxt, arg_14_0.sortData.sortData == "id")
+	setActive(arg_14_0.sortLvTxt, arg_14_0.sortData.sortData == "Level")
+	setActive(arg_14_0.sortRarityTxt, arg_14_0.sortData.sortData == "Rarity")
 end
 
-function slot0.OnInit(slot0)
-	slot0.onCommander = slot0.contextData.onCommander or function (slot0, slot1, slot2, slot3)
+function var_0_0.OnInit(arg_15_0)
+	arg_15_0.onCommander = arg_15_0.contextData.onCommander or function(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
 		return true
 	end
-	slot0.onSelected = slot0.contextData.onSelected or function (slot0, slot1)
-		slot1()
+	arg_15_0.onSelected = arg_15_0.contextData.onSelected or function(arg_17_0, arg_17_1)
+		arg_17_1()
 	end
-	slot0.onQuit = slot0.contextData.onQuit or function (slot0)
+	arg_15_0.onQuit = arg_15_0.contextData.onQuit or function(arg_18_0)
+		return
 	end
 
-	slot0:RegisterEvent()
+	arg_15_0:RegisterEvent()
 
-	slot0.sortData = slot0.contextData.sortData or {
+	arg_15_0.sortData = arg_15_0.contextData.sortData or {
 		asc = false,
 		sortData = "Level",
 		nationData = {},
 		rarityData = {}
 	}
 
-	function slot0.scrollRect.onInitItem(slot0)
-		uv0:OnInitItem(slot0)
+	function arg_15_0.scrollRect.onInitItem(arg_19_0)
+		arg_15_0:OnInitItem(arg_19_0)
 	end
 
-	function slot0.scrollRect.onUpdateItem(slot0, slot1)
-		uv0:OnUpdateItem(slot0, slot1)
+	function arg_15_0.scrollRect.onUpdateItem(arg_20_0, arg_20_1)
+		arg_15_0:OnUpdateItem(arg_20_0, arg_20_1)
 	end
 
-	onButton(slot0, slot0.reserveBtn, function ()
-		uv0.reservePanel:ExecuteAction("Update")
+	onButton(arg_15_0, arg_15_0.reserveBtn, function()
+		arg_15_0.reservePanel:ExecuteAction("Update")
 	end, SFX_PANEL)
-	onButton(slot0, slot0.boxesBtn, function ()
-		uv0.boxesPanel:ExecuteAction("Update")
+	onButton(arg_15_0, arg_15_0.boxesBtn, function()
+		arg_15_0.boxesPanel:ExecuteAction("Update")
 	end, SFX_PANEL)
-	onButton(slot0, slot0.ascBtn, function ()
-		uv0.sortData.asc = not uv0.sortData.asc
+	onButton(arg_15_0, arg_15_0.ascBtn, function()
+		arg_15_0.sortData.asc = not arg_15_0.sortData.asc
 
-		setActive(uv0.ascTr, uv0.sortData.asc)
-		setActive(uv0.descTr, not uv0.sortData.asc)
-		uv0:UpdateCommanders(false)
+		setActive(arg_15_0.ascTr, arg_15_0.sortData.asc)
+		setActive(arg_15_0.descTr, not arg_15_0.sortData.asc)
+		arg_15_0:UpdateCommanders(false)
 	end, SFX_PANEL)
-	setActive(slot0.ascTr, slot0.sortData.asc)
-	setActive(slot0.descTr, not slot0.sortData.asc)
-	onButton(slot0, slot0.sortBtn, function ()
-		uv0.indexPanel:ExecuteAction("Show", uv0.sortData)
+	setActive(arg_15_0.ascTr, arg_15_0.sortData.asc)
+	setActive(arg_15_0.descTr, not arg_15_0.sortData.asc)
+	onButton(arg_15_0, arg_15_0.sortBtn, function()
+		arg_15_0.indexPanel:ExecuteAction("Show", arg_15_0.sortData)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.selectedBtn, function ()
-		if (uv0.contextData.minCount or 1) > #uv0.selectedList then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_select_min_cnt", slot0))
+	onButton(arg_15_0, arg_15_0.selectedBtn, function()
+		local var_25_0 = arg_15_0.contextData.minCount or 1
+
+		if var_25_0 > #arg_15_0.selectedList then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_select_min_cnt", var_25_0))
 
 			return
 		end
 
-		uv0.onSelected(uv0.selectedList, function ()
-			uv0:emit(CommanderCatScene.EVENT_BACK)
+		arg_15_0.onSelected(arg_15_0.selectedList, function()
+			arg_15_0:emit(CommanderCatScene.EVENT_BACK)
 		end)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.cancelBtn, function ()
-		uv0:emit(CommanderCatScene.EVENT_BACK)
+	onButton(arg_15_0, arg_15_0.cancelBtn, function()
+		arg_15_0:emit(CommanderCatScene.EVENT_BACK)
 	end, SFX_PANEL)
 
 	if not LOCK_CATTERY then
-		onButton(slot0, slot0.homeBtn, function ()
-			uv0:emit(CommanderCatMediator.OPEN_HOME)
+		onButton(arg_15_0, arg_15_0.homeBtn, function()
+			arg_15_0:emit(CommanderCatMediator.OPEN_HOME)
 		end, SFX_PANEL)
 	else
-		setActive(slot0.homeBtn, false)
+		setActive(arg_15_0.homeBtn, false)
 	end
 
-	slot0:Flush()
+	arg_15_0:Flush()
 end
 
-function slot0.Flush(slot0)
-	slot0.cards = {}
-	slot0.selectedList = slot0.contextData.selectedIds or {}
-	slot0.previewCommander = slot0.contextData.activeCommander
-	slot0.previewCommanderId = slot0.previewCommander and slot0.previewCommander.id
-	slot0.selectedId = slot0.previewCommanderId or slot0.contextData.selectedId
+function var_0_0.Flush(arg_29_0)
+	arg_29_0.cards = {}
+	arg_29_0.selectedList = arg_29_0.contextData.selectedIds or {}
+	arg_29_0.previewCommander = arg_29_0.contextData.activeCommander
+	arg_29_0.previewCommanderId = arg_29_0.previewCommander and arg_29_0.previewCommander.id
+	arg_29_0.selectedId = arg_29_0.previewCommanderId or arg_29_0.contextData.selectedId
 
-	slot0:UpdateCommanders(true)
-	slot0:UpdateBoxes()
-	slot0:UpdateReserve()
-	slot0:UpdateCapacity()
-	slot0:UpdateHome()
-	slot0:TryPlayStory()
-	slot0:DisplayCatterySettlement()
-	slot0:UpdateStyle()
-	slot0:UpdateSortTxt()
+	arg_29_0:UpdateCommanders(true)
+	arg_29_0:UpdateBoxes()
+	arg_29_0:UpdateReserve()
+	arg_29_0:UpdateCapacity()
+	arg_29_0:UpdateHome()
+	arg_29_0:TryPlayStory()
+	arg_29_0:DisplayCatterySettlement()
+	arg_29_0:UpdateStyle()
+	arg_29_0:UpdateSortTxt()
 end
 
-function slot0.Show(slot0)
-	setActive(slot0._tf, true)
-	CommanderCatUtil.SetActive(slot0._tf, true)
+function var_0_0.Show(arg_30_0)
+	setActive(arg_30_0._tf, true)
+	CommanderCatUtil.SetActive(arg_30_0._tf, true)
 end
 
-function slot0.Hide(slot0)
-	CommanderCatUtil.SetActive(slot0._tf, false)
+function var_0_0.Hide(arg_31_0)
+	CommanderCatUtil.SetActive(arg_31_0._tf, false)
 end
 
-function slot0.UpdateStyle(slot0)
-	setActive(slot0.selectedTr, slot0.contextData.mode == CommanderCatScene.MODE_SELECT)
-	setActive(slot0.btnsTr, slot0.contextData.mode == CommanderCatScene.MODE_VIEW)
+function var_0_0.UpdateStyle(arg_32_0)
+	setActive(arg_32_0.selectedTr, arg_32_0.contextData.mode == CommanderCatScene.MODE_SELECT)
+	setActive(arg_32_0.btnsTr, arg_32_0.contextData.mode == CommanderCatScene.MODE_VIEW)
 
-	if slot0.contextData.mode == CommanderCatScene.MODE_SELECT then
-		slot0:UpdateSelectedTxt()
+	if arg_32_0.contextData.mode == CommanderCatScene.MODE_SELECT then
+		arg_32_0:UpdateSelectedTxt()
 	end
 end
 
-function slot0.TryPlayStory(slot0)
-	if slot0.contextData.fromMain then
+function var_0_0.TryPlayStory(arg_33_0)
+	if arg_33_0.contextData.fromMain then
 		pg.SystemGuideMgr.GetInstance():PlayCommander()
 	end
 end
 
-function slot0.DisplayCatterySettlement(slot0)
-	if getProxy(CommanderProxy):GetCommanderHome() and slot1:ShouldSettleCattery() and slot0.contextData.fromMediatorName == NewMainMediator.__cname and not (pg.NewStoryMgr.GetInstance():IsRunning() or pg.NewGuideMgr.GetInstance():IsBusy()) then
-		slot0.catterySettlementPage:ExecuteAction("Show", Clone(slot1))
+function var_0_0.DisplayCatterySettlement(arg_34_0)
+	local var_34_0 = getProxy(CommanderProxy):GetCommanderHome()
+	local var_34_1 = arg_34_0.contextData.fromMediatorName == NewMainMediator.__cname
+	local var_34_2 = pg.NewStoryMgr.GetInstance():IsRunning() or pg.NewGuideMgr.GetInstance():IsBusy()
+
+	if var_34_0 and var_34_0:ShouldSettleCattery() and var_34_1 and not var_34_2 then
+		local var_34_3 = Clone(var_34_0)
+
+		arg_34_0.catterySettlementPage:ExecuteAction("Show", var_34_3)
 	end
 
 	pg.m02:sendNotification(GAME.OPEN_OR_CLOSE_CATTERY, {
@@ -238,340 +253,374 @@ function slot0.DisplayCatterySettlement(slot0)
 	})
 end
 
-function slot0.UpdateHome(slot0)
-	setActive(slot0.homeTip, getProxy(CommanderProxy):AnyCatteryExistOP() or slot1:AnyCatteryCanUse())
+function var_0_0.UpdateHome(arg_35_0)
+	local var_35_0 = getProxy(CommanderProxy)
 
-	slot3 = ""
+	setActive(arg_35_0.homeTip, var_35_0:AnyCatteryExistOP() or var_35_0:AnyCatteryCanUse())
 
-	if slot1:GetCommanderHome() then
-		slot3 = slot2:GetExistCommanderCattertCnt() .. "/" .. slot2:GetMaxCatteryCnt()
+	local var_35_1 = var_35_0:GetCommanderHome()
+	local var_35_2 = ""
+
+	if var_35_1 then
+		var_35_2 = var_35_1:GetExistCommanderCattertCnt() .. "/" .. var_35_1:GetMaxCatteryCnt()
 	end
 
-	slot0.homeTxt.text = slot3
+	arg_35_0.homeTxt.text = var_35_2
 end
 
-function slot0.UpdateCapacity(slot0)
-	slot0.capacityTxt.text = table.getCount(getProxy(CommanderProxy):getRawData()) .. "/" .. getProxy(PlayerProxy):getRawData().commanderBagMax
+function var_0_0.UpdateCapacity(arg_36_0)
+	local var_36_0 = getProxy(PlayerProxy):getRawData()
+	local var_36_1 = table.getCount(getProxy(CommanderProxy):getRawData())
+
+	arg_36_0.capacityTxt.text = var_36_1 .. "/" .. var_36_0.commanderBagMax
 end
 
-function slot0.UpdateReserve(slot0)
-	slot2 = getProxy(CommanderProxy):getBoxUseCnt()
-	slot0.reserveTxt.text = CommanderConst.MAX_GETBOX_CNT - slot2 .. "/" .. CommanderConst.MAX_GETBOX_CNT
+function var_0_0.UpdateReserve(arg_37_0)
+	local var_37_0 = getProxy(CommanderProxy):getBoxUseCnt()
 
-	setActive(slot0.reserveTip, slot2 == 0)
+	arg_37_0.reserveTxt.text = CommanderConst.MAX_GETBOX_CNT - var_37_0 .. "/" .. CommanderConst.MAX_GETBOX_CNT
+
+	setActive(arg_37_0.reserveTip, var_37_0 == 0)
 end
 
-function slot0.UpdateBoxes(slot0)
-	slot1 = getProxy(CommanderProxy):getBoxes()
-	slot0.boxesTxt.text = #_.select(slot1, function (slot0)
-		return slot0:getState() == CommanderBox.STATE_FINISHED
-	end) .. "/" .. #slot1
+function var_0_0.UpdateBoxes(arg_38_0)
+	local var_38_0 = getProxy(CommanderProxy):getBoxes()
+	local var_38_1 = _.select(var_38_0, function(arg_39_0)
+		return arg_39_0:getState() == CommanderBox.STATE_FINISHED
+	end)
 
-	setActive(slot0.boxesTip, getProxy(CommanderProxy):ShouldTipBox())
+	arg_38_0.boxesTxt.text = #var_38_1 .. "/" .. #var_38_0
+
+	setActive(arg_38_0.boxesTip, getProxy(CommanderProxy):ShouldTipBox())
 end
 
-function slot0.OnInitItem(slot0, slot1)
-	slot2 = slot0:NewCard(slot1)
+function var_0_0.OnInitItem(arg_40_0, arg_40_1)
+	local var_40_0 = arg_40_0:NewCard(arg_40_1)
 
-	onButton(slot0, slot2.infoTF, function ()
-		if not uv0.commanderVO then
+	onButton(arg_40_0, var_40_0.infoTF, function()
+		if not var_40_0.commanderVO then
 			return
 		end
 
-		if uv1.contextData.mode == CommanderCatScene.MODE_SELECT then
-			uv1:OnCheckBefore(uv0.commanderVO)
-			uv1:Check(uv0.commanderVO)
-			uv1:OnCheckAfter(uv0.commanderVO, #uv1.selectedList > #uv1.selectedList)
-		else
-			uv1.selectedList = {}
+		if arg_40_0.contextData.mode == CommanderCatScene.MODE_SELECT then
+			local var_41_0 = #arg_40_0.selectedList
 
-			for slot3, slot4 in pairs(uv1.cards) do
-				slot4:UpdateSelected(uv1.selectedList)
+			arg_40_0:OnCheckBefore(var_40_0.commanderVO)
+			arg_40_0:Check(var_40_0.commanderVO)
+			arg_40_0:OnCheckAfter(var_40_0.commanderVO, var_41_0 > #arg_40_0.selectedList)
+		else
+			arg_40_0.selectedList = {}
+
+			for iter_41_0, iter_41_1 in pairs(arg_40_0.cards) do
+				iter_41_1:UpdateSelected(arg_40_0.selectedList)
 			end
 
-			table.insert(uv1.selectedList, uv0.commanderVO.id)
-			uv0:UpdateSelected(uv1.selectedList, not defaultValue(uv1.sortData.displayCustomName, true))
+			table.insert(arg_40_0.selectedList, var_40_0.commanderVO.id)
+			var_40_0:UpdateSelected(arg_40_0.selectedList, not defaultValue(arg_40_0.sortData.displayCustomName, true))
 
-			uv1.selectedId = uv0.commanderVO.id
+			arg_40_0.selectedId = var_40_0.commanderVO.id
 
-			uv1:emit(CommanderCatScene.EVENT_SELECTED, uv0.commanderVO, true)
+			arg_40_0:emit(CommanderCatScene.EVENT_SELECTED, var_40_0.commanderVO, true)
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot2.quitTF, function ()
-		if not uv0.commanderVO then
+	onButton(arg_40_0, var_40_0.quitTF, function()
+		if not var_40_0.commanderVO then
 			return
 		end
 
-		if uv0.commanderVO.id == 0 then
-			uv1.onQuit(function ()
-				uv0:emit(CommanderCatScene.EVENT_BACK)
+		if var_40_0.commanderVO.id == 0 then
+			arg_40_0.onQuit(function()
+				arg_40_0:emit(CommanderCatScene.EVENT_BACK)
 			end)
 		end
 	end, SFX_PANEL)
 
-	slot0.cards[slot1] = slot2
+	arg_40_0.cards[arg_40_1] = var_40_0
 end
 
-function slot0.OnCheckBefore(slot0, slot1)
-	if slot0.previewCommander and slot0.contextData.maxCount > 1 then
-		slot0:emit(CommanderCatScene.EVENT_SELECTED, slot0.previewCommander, true)
+function var_0_0.OnCheckBefore(arg_44_0, arg_44_1)
+	if arg_44_0.previewCommander and arg_44_0.contextData.maxCount > 1 then
+		arg_44_0:emit(CommanderCatScene.EVENT_SELECTED, arg_44_0.previewCommander, true)
 	else
-		slot0:emit(CommanderCatScene.EVENT_SELECTED, slot1, true)
+		arg_44_0:emit(CommanderCatScene.EVENT_SELECTED, arg_44_1, true)
 
-		if slot0.previewCommander then
-			slot0:emit(CommanderCatScene.EVENT_PREVIEW_ADDITION, slot0.previewCommander, true)
+		if arg_44_0.previewCommander then
+			arg_44_0:emit(CommanderCatScene.EVENT_PREVIEW_ADDITION, arg_44_0.previewCommander, true)
 		else
-			slot0:emit(CommanderCatScene.EVENT_PREVIEW_ADDITION, slot1, true)
+			arg_44_0:emit(CommanderCatScene.EVENT_PREVIEW_ADDITION, arg_44_1, true)
 		end
 	end
 end
 
-function slot0.OnCheckAfter(slot0, slot1, slot2)
-	if slot0.previewCommander and slot0.contextData.maxCount > 1 then
-		slot0:emit(CommanderCatScene.EVENT_PREVIEW_PLAY, slot0.selectedList, slot2)
+function var_0_0.OnCheckAfter(arg_45_0, arg_45_1, arg_45_2)
+	if arg_45_0.previewCommander and arg_45_0.contextData.maxCount > 1 then
+		arg_45_0:emit(CommanderCatScene.EVENT_PREVIEW_PLAY, arg_45_0.selectedList, arg_45_2)
 	end
 end
 
-function slot0.Check(slot0, slot1)
-	if table.contains(slot0.selectedList, slot1.id) and (slot0.contextData.maxCount or table.getCount(slot0.commanderList)) == 1 then
-		slot0:UpdateSelected()
+function var_0_0.Check(arg_46_0, arg_46_1)
+	local var_46_0 = arg_46_0.contextData.maxCount or table.getCount(arg_46_0.commanderList)
+
+	if table.contains(arg_46_0.selectedList, arg_46_1.id) and var_46_0 == 1 then
+		arg_46_0:UpdateSelected()
 
 		return
-	elseif table.contains(slot0.selectedList, slot1.id) then
-		table.remove(slot0.selectedList, table.indexof(slot0.selectedList, slot1.id))
-		slot0:UpdateSelected()
+	elseif table.contains(arg_46_0.selectedList, arg_46_1.id) then
+		local var_46_1 = table.indexof(arg_46_0.selectedList, arg_46_1.id)
+
+		table.remove(arg_46_0.selectedList, var_46_1)
+		arg_46_0:UpdateSelected()
 
 		return
 	end
 
-	function slot3()
-		for slot3, slot4 in ipairs(uv0.selectedList) do
-			if slot4 == uv1.id then
-				table.remove(uv0.selectedList, slot3)
+	local function var_46_2()
+		for iter_47_0, iter_47_1 in ipairs(arg_46_0.selectedList) do
+			if iter_47_1 == arg_46_1.id then
+				table.remove(arg_46_0.selectedList, iter_47_0)
 
 				break
 			end
 		end
 	end
 
-	slot4, slot5 = slot0.onCommander(slot1, function ()
-		uv0()
-		uv1:UpdateSelected()
-	end, function ()
-		uv0()
-		uv1:UpdateCommanders(true)
+	local var_46_3, var_46_4 = arg_46_0.onCommander(arg_46_1, function()
+		var_46_2()
+		arg_46_0:UpdateSelected()
+	end, function()
+		var_46_2()
+		arg_46_0:UpdateCommanders(true)
 
-		for slot3, slot4 in ipairs(uv1.commanderList or {}) do
-			if slot4.id == uv2.id then
-				uv1:Check(slot4)
+		for iter_49_0, iter_49_1 in ipairs(arg_46_0.commanderList or {}) do
+			if iter_49_1.id == arg_46_1.id then
+				arg_46_0:Check(iter_49_1)
 			end
 		end
 
-		uv1:UpdateSelected()
-	end, slot0)
+		arg_46_0:UpdateSelected()
+	end, arg_46_0)
 
-	if not slot4 then
-		if slot5 then
-			pg.TipsMgr.GetInstance():ShowTips(slot5)
+	if not var_46_3 then
+		if var_46_4 then
+			pg.TipsMgr.GetInstance():ShowTips(var_46_4)
 		end
 
 		return
 	end
 
-	if slot2 == 1 then
-		table.remove(slot0.selectedList, #slot0.selectedList)
-	elseif slot2 <= #slot0.selectedList then
+	if var_46_0 == 1 then
+		table.remove(arg_46_0.selectedList, #arg_46_0.selectedList)
+	elseif var_46_0 <= #arg_46_0.selectedList then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("commander_select_max"))
-		slot0:UpdateSelected()
+		arg_46_0:UpdateSelected()
 
 		return
 	end
 
-	table.insert(slot0.selectedList, slot1.id)
-	slot0:UpdateSelected()
+	table.insert(arg_46_0.selectedList, arg_46_1.id)
+	arg_46_0:UpdateSelected()
 end
 
-function slot0.UpdateSelected(slot0)
-	for slot4, slot5 in pairs(slot0.cards) do
-		slot5:UpdateSelected(slot0.selectedList)
+function var_0_0.UpdateSelected(arg_50_0)
+	for iter_50_0, iter_50_1 in pairs(arg_50_0.cards) do
+		iter_50_1:UpdateSelected(arg_50_0.selectedList)
 	end
 
-	slot0:UpdateSelectedTxt()
+	arg_50_0:UpdateSelectedTxt()
 end
 
-function slot0.UpdateSelectedTxt(slot0)
-	slot0.selectedNumTxt.text = #slot0.selectedList .. "/" .. (slot0.contextData.maxCount or table.getCount(slot0.commanderList))
+function var_0_0.UpdateSelectedTxt(arg_51_0)
+	local var_51_0 = arg_51_0.contextData.maxCount or table.getCount(arg_51_0.commanderList)
+
+	arg_51_0.selectedNumTxt.text = #arg_51_0.selectedList .. "/" .. var_51_0
 end
 
-function slot0.NewCard(slot0, slot1)
-	if slot0.contextData.mode == CommanderCatScene.MODE_VIEW or slot0.contextData.maxCount == 1 then
-		return CommanderCatCard.New(slot1, CommanderCatCard.MARK_TYPE_CIRCLE)
+function var_0_0.NewCard(arg_52_0, arg_52_1)
+	if arg_52_0.contextData.mode == CommanderCatScene.MODE_VIEW or arg_52_0.contextData.maxCount == 1 then
+		return CommanderCatCard.New(arg_52_1, CommanderCatCard.MARK_TYPE_CIRCLE)
 	else
-		return CommanderCatCard.New(slot1, CommanderCatCard.MARK_TYPE_TICK)
+		return CommanderCatCard.New(arg_52_1, CommanderCatCard.MARK_TYPE_TICK)
 	end
 end
 
-function slot0.OnUpdateItem(slot0, slot1, slot2)
-	if not slot0.cards[slot2] then
-		slot0.cards[slot2] = slot0:NewCard(slot2)
+function var_0_0.OnUpdateItem(arg_53_0, arg_53_1, arg_53_2)
+	local var_53_0 = arg_53_0.cards[arg_53_2]
+
+	if not var_53_0 then
+		var_53_0 = arg_53_0:NewCard(arg_53_2)
+		arg_53_0.cards[arg_53_2] = var_53_0
 	end
 
-	slot4 = slot0.displays[slot1 + 1]
+	local var_53_1 = arg_53_0.displays[arg_53_1 + 1]
 
-	slot3:Update(slot4, slot0.selectedList, not defaultValue(slot0.sortData.displayCustomName, true))
+	var_53_0:Update(var_53_1, arg_53_0.selectedList, not defaultValue(arg_53_0.sortData.displayCustomName, true))
 
-	if slot4 and slot0.selectedId and slot0.selectedId == slot4.id and slot0.shouldTrigger then
-		slot0.shouldTrigger = false
+	if var_53_1 and arg_53_0.selectedId and arg_53_0.selectedId == var_53_1.id and arg_53_0.shouldTrigger then
+		arg_53_0.shouldTrigger = false
 
-		triggerButton(slot3.infoTF)
+		triggerButton(var_53_0.infoTF)
 	end
 end
 
-function slot1(slot0, slot1, slot2)
-	slot3 = false
-	slot4 = false
-	slot5 = slot0:getConfig("nationality")
+local function var_0_1(arg_54_0, arg_54_1, arg_54_2)
+	local var_54_0 = false
+	local var_54_1 = false
+	local var_54_2 = arg_54_0:getConfig("nationality")
 
-	if table.getCount(slot1) == 0 or slot1[slot5] or slot1[CommanderIndexPage.NATION_OTHER] and CommanderIndexPage.IsOtherNation(slot5) then
-		slot3 = true
+	if table.getCount(arg_54_1) == 0 or arg_54_1[var_54_2] or arg_54_1[CommanderIndexPage.NATION_OTHER] and CommanderIndexPage.IsOtherNation(var_54_2) then
+		var_54_0 = true
 	end
 
-	if table.getCount(slot2) == 0 or slot2[slot0:getRarity()] then
-		slot4 = true
+	if table.getCount(arg_54_2) == 0 or arg_54_2[arg_54_0:getRarity()] then
+		var_54_1 = true
 	end
 
-	return slot3 and slot4
+	return var_54_0 and var_54_1
 end
 
-function slot2(slot0, slot1, slot2, slot3, slot4)
-	function slot5()
-		if uv0 == "id" then
-			return (uv1 and {
-				uv2.id < uv3.id
+local function var_0_2(arg_55_0, arg_55_1, arg_55_2, arg_55_3, arg_55_4)
+	local function var_55_0()
+		if arg_55_3 == "id" then
+			return (arg_55_2 and {
+				arg_55_0.id < arg_55_1.id
 			} or {
-				uv3.id < uv2.id
-			})[1]
-		elseif uv2["get" .. uv0](uv2) == uv3["get" .. uv0](uv3) then
-			return (uv1 and {
-				uv2.configId < uv3.configId
-			} or {
-				uv3.configId < uv2.configId
+				arg_55_0.id > arg_55_1.id
 			})[1]
 		else
-			return (uv1 and {
-				slot0 < slot1
-			} or {
-				slot1 < slot0
-			})[1]
+			local var_56_0 = arg_55_0["get" .. arg_55_3](arg_55_0)
+			local var_56_1 = arg_55_1["get" .. arg_55_3](arg_55_1)
+
+			if var_56_0 == var_56_1 then
+				return (arg_55_2 and {
+					arg_55_0.configId < arg_55_1.configId
+				} or {
+					arg_55_0.configId > arg_55_1.configId
+				})[1]
+			else
+				return (arg_55_2 and {
+					var_56_0 < var_56_1
+				} or {
+					var_56_1 < var_56_0
+				})[1]
+			end
 		end
 	end
 
-	if (slot0.inFleet and 1 or 0) == (slot1.inFleet and 1 or 0) then
-		return function ()
-			if (uv0 == uv1.id and 1 or 0) == (uv0 == uv2.id and 1 or 0) then
-				return uv3()
-			else
-				return slot1 < slot0
-			end
-		end()
+	local function var_55_1()
+		local var_57_0 = arg_55_4 == arg_55_0.id and 1 or 0
+		local var_57_1 = arg_55_4 == arg_55_1.id and 1 or 0
+
+		if var_57_0 == var_57_1 then
+			return var_55_0()
+		else
+			return var_57_1 < var_57_0
+		end
+	end
+
+	local var_55_2 = arg_55_0.inFleet and 1 or 0
+	local var_55_3 = arg_55_1.inFleet and 1 or 0
+
+	if var_55_2 == var_55_3 then
+		return var_55_1()
 	else
-		return slot8 < slot7
+		return var_55_3 < var_55_2
 	end
 end
 
-function slot0.UpdateCommanders(slot0, slot1)
-	slot3 = (slot1 or not slot0.commanderList) and CommanderCatUtil.GetCommanderList(slot0.contextData) or slot0.commanderList
-	slot0.shouldTrigger = true
-	slot0.displays = {}
-	slot4 = {
-		[slot10] = true
-	}
-	slot5 = {}
+function var_0_0.UpdateCommanders(arg_58_0, arg_58_1)
+	local var_58_0 = (arg_58_1 or not arg_58_0.commanderList) and CommanderCatUtil.GetCommanderList(arg_58_0.contextData) or arg_58_0.commanderList
 
-	for slot9, slot10 in pairs(slot0.sortData.nationData or {}) do
-		-- Nothing
+	arg_58_0.shouldTrigger = true
+	arg_58_0.displays = {}
+
+	local var_58_1 = {}
+	local var_58_2 = {}
+
+	for iter_58_0, iter_58_1 in pairs(arg_58_0.sortData.nationData or {}) do
+		var_58_1[iter_58_1] = true
 	end
 
-	for slot9, slot10 in ipairs(slot0.sortData.rarityData or {}) do
-		slot5[slot10] = true
+	for iter_58_2, iter_58_3 in ipairs(arg_58_0.sortData.rarityData or {}) do
+		var_58_2[iter_58_3] = true
 	end
 
-	for slot9, slot10 in pairs(slot3) do
-		if uv0(slot10, slot4, slot5) then
-			table.insert(slot0.displays, slot10)
+	for iter_58_4, iter_58_5 in pairs(var_58_0) do
+		if var_0_1(iter_58_5, var_58_1, var_58_2) then
+			table.insert(arg_58_0.displays, iter_58_5)
 		end
 	end
 
-	table.sort(slot0.displays, function (slot0, slot1)
-		return uv0(slot0, slot1, uv1.sortData.asc, uv1.sortData.sortData, uv1.previewCommanderId)
+	table.sort(arg_58_0.displays, function(arg_59_0, arg_59_1)
+		return var_0_2(arg_59_0, arg_59_1, arg_58_0.sortData.asc, arg_58_0.sortData.sortData, arg_58_0.previewCommanderId)
 	end)
 
-	if not slot0.selectedId and #slot0.displays > 0 then
-		slot0.selectedId = slot0.displays[1].id
-	elseif #slot0.displays > 0 and _.all(slot0.displays, function (slot0)
-		return slot0.id ~= uv0.selectedId
-	end) and slot0.previewCommander then
-		slot0:OnCheckBefore(slot0.previewCommander)
-		slot0:OnCheckAfter(slot0.previewCommander)
+	if not arg_58_0.selectedId and #arg_58_0.displays > 0 then
+		arg_58_0.selectedId = arg_58_0.displays[1].id
+	elseif #arg_58_0.displays > 0 and _.all(arg_58_0.displays, function(arg_60_0)
+		return arg_60_0.id ~= arg_58_0.selectedId
+	end) and arg_58_0.previewCommander then
+		arg_58_0:OnCheckBefore(arg_58_0.previewCommander)
+		arg_58_0:OnCheckAfter(arg_58_0.previewCommander)
 	end
 
-	if slot0.previewCommanderId and slot0.contextData.maxCount == 1 then
-		table.insert(slot0.displays, 1, {
+	if arg_58_0.previewCommanderId and arg_58_0.contextData.maxCount == 1 then
+		table.insert(arg_58_0.displays, 1, {
 			id = 0
 		})
 	end
 
-	slot6, slot7 = slot0:FillList()
+	local var_58_3, var_58_4 = arg_58_0:FillList()
 
-	slot0.scrollRect:SetTotalCount(slot6, slot7)
+	arg_58_0.scrollRect:SetTotalCount(var_58_3, var_58_4)
 
-	slot0.commanderList = slot3
+	arg_58_0.commanderList = var_58_0
 end
 
-function slot0.FillList(slot0)
-	if slot0.contextData.mode == CommanderCatScene.MODE_VIEW then
-		slot2 = #slot0.displays + (#slot0.displays % 4 > 0 and 4 - #slot0.displays % 4 or 0)
-		slot3 = nil
+function var_0_0.FillList(arg_61_0)
+	if arg_61_0.contextData.mode == CommanderCatScene.MODE_VIEW then
+		local var_61_0 = #arg_61_0.displays % 4 > 0 and 4 - #arg_61_0.displays % 4 or 0
+		local var_61_1 = #arg_61_0.displays + var_61_0
+		local var_61_2
 
-		if slot0.selectedId then
-			slot4 = 0
+		if arg_61_0.selectedId then
+			local var_61_3 = 0
 
-			for slot8, slot9 in ipairs(slot0.displays) do
-				if slot9.id == slot0.selectedId then
-					slot4 = slot8
+			for iter_61_0, iter_61_1 in ipairs(arg_61_0.displays) do
+				if iter_61_1.id == arg_61_0.selectedId then
+					var_61_3 = iter_61_0
 
 					break
 				end
 			end
 
-			slot3 = math.floor(slot4 / 4) / (#slot0.displays / 4)
+			var_61_2 = math.floor(var_61_3 / 4) / (#arg_61_0.displays / 4)
 		end
 
-		return math.max(12, slot2), slot3 or slot0.contextData.scrollValue or 0
-	elseif slot0.contextData.mode == CommanderCatScene.MODE_SELECT then
-		return #slot0.displays, slot0.contextData.scrollValue or 0
+		return math.max(12, var_61_1), var_61_2 or arg_61_0.contextData.scrollValue or 0
+	elseif arg_61_0.contextData.mode == CommanderCatScene.MODE_SELECT then
+		return #arg_61_0.displays, arg_61_0.contextData.scrollValue or 0
 	end
 end
 
-function slot0.CanBack(slot0)
-	if slot0.boxesPanel and slot0.boxesPanel:GetLoaded() and slot0.boxesPanel.CanBack and not slot0.boxesPanel:CanBack() then
+function var_0_0.CanBack(arg_62_0)
+	if arg_62_0.boxesPanel and arg_62_0.boxesPanel:GetLoaded() and arg_62_0.boxesPanel.CanBack and not arg_62_0.boxesPanel:CanBack() then
 		return false
 	end
 
-	if slot0.reservePanel and slot0.reservePanel:GetLoaded() and slot0.reservePanel:isShowing() then
-		slot0.reservePanel:Hide()
-
-		return false
-	end
-
-	if slot0.boxesPanel and slot0.boxesPanel:GetLoaded() and slot0.boxesPanel:isShowing() then
-		slot0.boxesPanel:Hide()
+	if arg_62_0.reservePanel and arg_62_0.reservePanel:GetLoaded() and arg_62_0.reservePanel:isShowing() then
+		arg_62_0.reservePanel:Hide()
 
 		return false
 	end
 
-	if slot0.indexPanel and slot0.indexPanel:GetLoaded() and slot0.indexPanel:isShowing() then
-		slot0.indexPanel:Hide()
+	if arg_62_0.boxesPanel and arg_62_0.boxesPanel:GetLoaded() and arg_62_0.boxesPanel:isShowing() then
+		arg_62_0.boxesPanel:Hide()
+
+		return false
+	end
+
+	if arg_62_0.indexPanel and arg_62_0.indexPanel:GetLoaded() and arg_62_0.indexPanel:isShowing() then
+		arg_62_0.indexPanel:Hide()
 
 		return false
 	end
@@ -579,36 +628,36 @@ function slot0.CanBack(slot0)
 	return true
 end
 
-function slot0.OnDestroy(slot0)
-	for slot4, slot5 in pairs(slot0.cards) do
-		slot5:Dispose()
+function var_0_0.OnDestroy(arg_63_0)
+	for iter_63_0, iter_63_1 in pairs(arg_63_0.cards) do
+		iter_63_1:Dispose()
 	end
 
-	if slot0.reservePanel then
-		slot0.reservePanel:Destroy()
+	if arg_63_0.reservePanel then
+		arg_63_0.reservePanel:Destroy()
 
-		slot0.reservePanel = nil
+		arg_63_0.reservePanel = nil
 	end
 
-	if slot0.boxesPanel then
-		slot0.boxesPanel:Destroy()
+	if arg_63_0.boxesPanel then
+		arg_63_0.boxesPanel:Destroy()
 
-		slot0.boxesPanel = nil
+		arg_63_0.boxesPanel = nil
 	end
 
-	if slot0.indexPanel then
-		slot0.indexPanel:Destroy()
+	if arg_63_0.indexPanel then
+		arg_63_0.indexPanel:Destroy()
 
-		slot0.indexPanel = nil
+		arg_63_0.indexPanel = nil
 	end
 
-	if slot0.catterySettlementPage then
-		slot0.catterySettlementPage:Destroy()
+	if arg_63_0.catterySettlementPage then
+		arg_63_0.catterySettlementPage:Destroy()
 
-		slot0.catterySettlementPage = nil
+		arg_63_0.catterySettlementPage = nil
 	end
 
-	slot0.contextData.scrollValue = math.min(slot0.scrollRect.value, 1)
+	arg_63_0.contextData.scrollValue = math.min(arg_63_0.scrollRect.value, 1)
 end
 
-return slot0
+return var_0_0

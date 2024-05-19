@@ -1,4 +1,24 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandom",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 62871
+			}
+		},
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			target_choise = "TargetPlayerVanguardFleet",
+			targetAniEffect = "",
+			arg_list = {
+				maxHPRatio = 0.01
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -226,25 +246,5 @@ return {
 	id = 16020,
 	picture = "0",
 	castCV = "skill",
-	desc = "",
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandom",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 62871
-			}
-		},
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			target_choise = "TargetPlayerVanguardFleet",
-			targetAniEffect = "",
-			arg_list = {
-				maxHPRatio = 0.01
-			}
-		}
-	}
+	desc = ""
 }

@@ -1,67 +1,73 @@
-slot0 = class("GuildBossRankPage", import("....base.BaseSubView"))
+﻿local var_0_0 = class("GuildBossRankPage", import("....base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "GuildBossRankPage"
 end
 
-function slot1(slot0)
+local function var_0_1(arg_2_0)
 	return {
-		numer = slot0.transform:Find("numer"):GetComponent(typeof(Text)),
-		name = slot0.transform:Find("name"):GetComponent(typeof(Text)),
-		damage = slot0.transform:Find("damage"):GetComponent(typeof(Text)),
-		Update = function (slot0, slot1, slot2)
-			slot0.numer.text = slot1
-			slot0.name.text = slot2.name
-			slot0.damage.text = slot2.damage
+		numer = arg_2_0.transform:Find("numer"):GetComponent(typeof(Text)),
+		name = arg_2_0.transform:Find("name"):GetComponent(typeof(Text)),
+		damage = arg_2_0.transform:Find("damage"):GetComponent(typeof(Text)),
+		Update = function(arg_3_0, arg_3_1, arg_3_2)
+			arg_3_0.numer.text = arg_3_1
+			arg_3_0.name.text = arg_3_2.name
+			arg_3_0.damage.text = arg_3_2.damage
 		end
 	}
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.scrollrect = slot0:findTF("frame/scrollrect"):GetComponent("LScrollRect")
-	slot0.closeBtn = slot0:findTF("frame/close")
+function var_0_0.OnLoaded(arg_4_0)
+	arg_4_0.scrollrect = arg_4_0:findTF("frame/scrollrect"):GetComponent("LScrollRect")
+	arg_4_0.closeBtn = arg_4_0:findTF("frame/close")
 
-	setText(slot0:findTF("frame/titles/num"), i18n("guild_damage_ranking"))
-	setText(slot0:findTF("frame/titles/member"), i18n("guild_word_member"))
-	setText(slot0:findTF("frame/titles/damage"), i18n("guild_total_damage"))
+	setText(arg_4_0:findTF("frame/titles/num"), i18n("guild_damage_ranking"))
+	setText(arg_4_0:findTF("frame/titles/member"), i18n("guild_word_member"))
+	setText(arg_4_0:findTF("frame/titles/damage"), i18n("guild_total_damage"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_5_0)
+	onButton(arg_5_0, arg_5_0._tf, function()
+		arg_5_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:Hide()
+	onButton(arg_5_0, arg_5_0.closeBtn, function()
+		arg_5_0:Hide()
 	end, SFX_PANEL)
 
-	function slot0.scrollrect.onInitItem(slot0)
-		uv0:OnInitItem(slot0)
+	function arg_5_0.scrollrect.onInitItem(arg_8_0)
+		arg_5_0:OnInitItem(arg_8_0)
 	end
 
-	function slot0.scrollrect.onUpdateItem(slot0, slot1)
-		uv0:OnUpdateItem(slot0, slot1)
+	function arg_5_0.scrollrect.onUpdateItem(arg_9_0, arg_9_1)
+		arg_5_0:OnUpdateItem(arg_9_0, arg_9_1)
 	end
 
-	slot0.cards = {}
+	arg_5_0.cards = {}
 end
 
-function slot0.OnInitItem(slot0, slot1)
-	slot0.cards[slot1] = uv0(slot1)
+function var_0_0.OnInitItem(arg_10_0, arg_10_1)
+	local var_10_0 = var_0_1(arg_10_1)
+
+	arg_10_0.cards[arg_10_1] = var_10_0
 end
 
-function slot0.OnUpdateItem(slot0, slot1, slot2)
-	slot0.cards[slot2]:Update(slot1 + 1, slot0.ranks[slot1 + 1])
+function var_0_0.OnUpdateItem(arg_11_0, arg_11_1, arg_11_2)
+	local var_11_0 = arg_11_0.cards[arg_11_2]
+	local var_11_1 = arg_11_0.ranks[arg_11_1 + 1]
+
+	var_11_0:Update(arg_11_1 + 1, var_11_1)
 end
 
-function slot0.Show(slot0, slot1)
-	uv0.super.Show(slot0)
+function var_0_0.Show(arg_12_0, arg_12_1)
+	var_0_0.super.Show(arg_12_0)
 
-	slot0.ranks = slot1
+	arg_12_0.ranks = arg_12_1
 
-	slot0.scrollrect:SetTotalCount(#slot1)
+	arg_12_0.scrollrect:SetTotalCount(#arg_12_1)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_13_0)
+	return
 end
 
-return slot0
+return var_0_0

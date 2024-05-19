@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行12次攻击，触发专属弹幕-确捷I"
-	},
-	desc_get = "主炮每进行12次攻击，触发专属弹幕-确捷I",
-	name = "专属弹幕-确捷I",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行12次攻击，触发专属弹幕-确捷I",
-	stack = 1,
-	id = 29401,
-	icon = 29400,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -38,5 +24,19 @@ return {
 				countType = 29400
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行12次攻击，触发专属弹幕-确捷I"
+	},
+	desc_get = "主炮每进行12次攻击，触发专属弹幕-确捷I",
+	name = "专属弹幕-确捷I",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行12次攻击，触发专属弹幕-确捷I",
+	stack = 1,
+	id = 29401,
+	icon = 29400,
+	last_effect = ""
 }

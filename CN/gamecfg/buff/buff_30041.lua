@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行15次攻击，触发专属弹幕-舒尔茨I"
-	},
-	desc_get = "",
-	name = "专属弹幕-舒尔茨",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 30041,
-	icon = 30040,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -44,5 +30,19 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行15次攻击，触发专属弹幕-舒尔茨I"
+	},
+	desc_get = "",
+	name = "专属弹幕-舒尔茨",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 30041,
+	icon = 30040,
+	last_effect = ""
 }

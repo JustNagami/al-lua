@@ -1,1 +1,1 @@
-return class("ShinanoMainPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿return (class("ShinanoMainPage", import(".TemplatePage.PreviewTemplatePage")))

@@ -1,267 +1,285 @@
-slot0 = class("Match3GameView", import("..BaseMiniGameView"))
-slot1 = 6
-slot2 = 7
-slot3 = -405
-slot4 = -275
-slot5 = 135
-slot6 = 110
-slot7 = false
-slot8 = 0.1
-slot9 = 0
-slot10 = 0.3
-slot11 = 0.5
-slot12 = 100
-slot13 = 0.2
-slot14 = 0.4
-slot15 = 180
-slot16 = 60
-slot17 = 3
-slot18 = 2
-slot19 = 0.3
-slot20 = 0.3
-slot21 = 2.5
-slot22 = "event:/ui/ddldaoshu2"
-slot23 = "event:/ui/boat_drag"
-slot24 = "event:/ui/break_out_full"
-slot25 = "event:/ui/sx-good"
-slot26 = "event:/ui/sx-perfect"
-slot27 = "event:/ui/sx-jishu"
-slot28 = "event:/ui/furnitrue_save"
+﻿local var_0_0 = class("Match3GameView", import("..BaseMiniGameView"))
+local var_0_1 = 6
+local var_0_2 = 7
+local var_0_3 = -405
+local var_0_4 = -275
+local var_0_5 = 135
+local var_0_6 = 110
+local var_0_7 = false
+local var_0_8 = 0.1
+local var_0_9 = 0
+local var_0_10 = 0.3
+local var_0_11 = 0.5
+local var_0_12 = 100
+local var_0_13 = 0.2
+local var_0_14 = 0.4
+local var_0_15 = 180
+local var_0_16 = 60
+local var_0_17 = 3
+local var_0_18 = 2
+local var_0_19 = 0.3
+local var_0_20 = 0.3
+local var_0_21 = 2.5
+local var_0_22 = "event:/ui/ddldaoshu2"
+local var_0_23 = "event:/ui/boat_drag"
+local var_0_24 = "event:/ui/break_out_full"
+local var_0_25 = "event:/ui/sx-good"
+local var_0_26 = "event:/ui/sx-perfect"
+local var_0_27 = "event:/ui/sx-jishu"
+local var_0_28 = "event:/ui/furnitrue_save"
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "Match3GameUI"
 end
 
-function slot0.getBGM(slot0)
+function var_0_0.getBGM(arg_2_0)
 	return "backyard"
 end
 
-function slot0.init(slot0)
-	slot0.matchEffect = slot0:findTF("effects/sanxiaoxiaoshi")
-	slot0.goodEffect = slot0:findTF("effects/sanxiaoGood")
-	slot0.greatEffect = slot0:findTF("effects/sanxiaoGreat")
-	slot0.perfectEffect = slot0:findTF("effects/sanxiaoPerfect")
-	slot0.hintEffect = slot0:findTF("effects/hint")
-	slot0.selectedEffect = slot0:findTF("effects/selected")
-	slot0.whitenMat = slot0:findTF("effects/whiten"):GetComponent("Image").material
-	slot0.backBtn = slot0:findTF("button/back")
-	slot0.mainPage = slot0:findTF("main")
-	slot0.startBtn = slot0:findTF("main/start")
-	slot0.helpBtn = slot0:findTF("main/rule")
-	slot0.countdownPage = slot0:findTF("countdown")
-	slot0.countdownAnim = slot0:findTF("countdown")
-	slot0.gamePage = slot0:findTF("game")
-	slot0.gameMask = slot0:findTF("game/mask")
-	slot0.warning = slot0:findTF("game/warning")
-	slot0.countdownTf = slot0:findTF("game/countdown")
-	slot0.countdownText = slot0:findTF("game/countdown/Text")
-	slot0.inf = slot0:findTF("game/countdown/inf")
-	slot0.scoreText = slot0:findTF("game/score/Text")
-	slot0.floatText = slot0:findTF("game/floatText")
-	slot0.floatChar = {}
-	slot0.pausePage = slot0:findTF("game/pause")
-	slot0.pauseYes = slot0:findTF("game/pause/yes")
-	slot0.pauseNo = slot0:findTF("game/pause/no")
+function var_0_0.init(arg_3_0)
+	arg_3_0.matchEffect = arg_3_0:findTF("effects/sanxiaoxiaoshi")
+	arg_3_0.goodEffect = arg_3_0:findTF("effects/sanxiaoGood")
+	arg_3_0.greatEffect = arg_3_0:findTF("effects/sanxiaoGreat")
+	arg_3_0.perfectEffect = arg_3_0:findTF("effects/sanxiaoPerfect")
+	arg_3_0.hintEffect = arg_3_0:findTF("effects/hint")
+	arg_3_0.selectedEffect = arg_3_0:findTF("effects/selected")
+	arg_3_0.whitenMat = arg_3_0:findTF("effects/whiten"):GetComponent("Image").material
+	arg_3_0.backBtn = arg_3_0:findTF("button/back")
+	arg_3_0.mainPage = arg_3_0:findTF("main")
+	arg_3_0.startBtn = arg_3_0:findTF("main/start")
+	arg_3_0.helpBtn = arg_3_0:findTF("main/rule")
+	arg_3_0.countdownPage = arg_3_0:findTF("countdown")
+	arg_3_0.countdownAnim = arg_3_0:findTF("countdown")
+	arg_3_0.gamePage = arg_3_0:findTF("game")
+	arg_3_0.gameMask = arg_3_0:findTF("game/mask")
+	arg_3_0.warning = arg_3_0:findTF("game/warning")
+	arg_3_0.countdownTf = arg_3_0:findTF("game/countdown")
+	arg_3_0.countdownText = arg_3_0:findTF("game/countdown/Text")
+	arg_3_0.inf = arg_3_0:findTF("game/countdown/inf")
+	arg_3_0.scoreText = arg_3_0:findTF("game/score/Text")
+	arg_3_0.floatText = arg_3_0:findTF("game/floatText")
+	arg_3_0.floatChar = {}
+	arg_3_0.pausePage = arg_3_0:findTF("game/pause")
+	arg_3_0.pauseYes = arg_3_0:findTF("game/pause/yes")
+	arg_3_0.pauseNo = arg_3_0:findTF("game/pause/no")
 
-	for slot4 = 0, 9 do
-		slot0.floatChar[slot4] = slot0:findTF("game/floatText/" .. slot4)
+	for iter_3_0 = 0, 9 do
+		arg_3_0.floatChar[iter_3_0] = arg_3_0:findTF("game/floatText/" .. iter_3_0)
 	end
 
-	slot0.tilesRoot = slot0:findTF("game/tiles")
-	slot0.gameListener = slot0.tilesRoot:GetComponent("EventTriggerListener")
-	slot0.longPressListener = slot0.tilesRoot:GetComponent("UILongPressTrigger")
-	slot0.endPage = slot0:findTF("end")
-	slot0.endBtn = slot0:findTF("end/end_btn")
-	slot0.endScore = slot0:findTF("end/score/Text")
-	slot0.newSign = slot0:findTF("end/score/Text/new")
-	slot0.bestScore = slot0:findTF("end/highest/Text")
-	slot0.tiles = {
-		slot0:findTF("tiles/Akashi"),
-		slot0:findTF("tiles/Ayanami"),
-		slot0:findTF("tiles/Javelin"),
-		slot0:findTF("tiles/Laffey"),
-		slot0:findTF("tiles/Z23")
+	arg_3_0.tilesRoot = arg_3_0:findTF("game/tiles")
+	arg_3_0.gameListener = arg_3_0.tilesRoot:GetComponent("EventTriggerListener")
+	arg_3_0.longPressListener = arg_3_0.tilesRoot:GetComponent("UILongPressTrigger")
+	arg_3_0.endPage = arg_3_0:findTF("end")
+	arg_3_0.endBtn = arg_3_0:findTF("end/end_btn")
+	arg_3_0.endScore = arg_3_0:findTF("end/score/Text")
+	arg_3_0.newSign = arg_3_0:findTF("end/score/Text/new")
+	arg_3_0.bestScore = arg_3_0:findTF("end/highest/Text")
+	arg_3_0.tiles = {
+		arg_3_0:findTF("tiles/Akashi"),
+		arg_3_0:findTF("tiles/Ayanami"),
+		arg_3_0:findTF("tiles/Javelin"),
+		arg_3_0:findTF("tiles/Laffey"),
+		arg_3_0:findTF("tiles/Z23")
 	}
 end
 
-function slot0.onBackPressed(slot0)
-	if isActive(slot0.mainPage) then
-		slot0:emit(uv0.ON_BACK)
-	elseif isActive(slot0.pausePage) then
-		triggerButton(slot0.pauseNo)
-	elseif isActive(slot0.gamePage) then
-		slot0:pause()
-	elseif isActive(slot0.endPage) and slot0.endBtn:GetComponent("Button").enabled then
-		triggerButton(slot0.endBtn)
+function var_0_0.onBackPressed(arg_4_0)
+	if isActive(arg_4_0.mainPage) then
+		arg_4_0:emit(var_0_0.ON_BACK)
+	elseif isActive(arg_4_0.pausePage) then
+		triggerButton(arg_4_0.pauseNo)
+	elseif isActive(arg_4_0.gamePage) then
+		arg_4_0:pause()
+	elseif isActive(arg_4_0.endPage) and arg_4_0.endBtn:GetComponent("Button").enabled then
+		triggerButton(arg_4_0.endBtn)
 	end
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:onBackPressed()
+function var_0_0.didEnter(arg_5_0)
+	onButton(arg_5_0, arg_5_0.backBtn, function()
+		arg_5_0:onBackPressed()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.startBtn, function ()
-		if uv0 then
-			setActive(uv1.mainPage, false)
-			setActive(uv1.gamePage, true)
-			uv1:startGame()
+	onButton(arg_5_0, arg_5_0.startBtn, function()
+		if var_0_7 then
+			setActive(arg_5_0.mainPage, false)
+			setActive(arg_5_0.gamePage, true)
+			arg_5_0:startGame()
 		else
-			uv1.mainPage:GetComponent("CanvasGroup").blocksRaycasts = false
+			arg_5_0.mainPage:GetComponent("CanvasGroup").blocksRaycasts = false
 
-			uv1:managedTween(LeanTween.value, function ()
-				uv0.mainPage:GetComponent("CanvasGroup").alpha = 1
-				uv0.mainPage:GetComponent("CanvasGroup").blocksRaycasts = true
+			arg_5_0:managedTween(LeanTween.value, function()
+				arg_5_0.mainPage:GetComponent("CanvasGroup").alpha = 1
+				arg_5_0.mainPage:GetComponent("CanvasGroup").blocksRaycasts = true
 
-				setActive(uv0.mainPage, false)
-				setActive(uv0.countdownPage, true)
-				pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv1)
-			end, go(uv1.mainPage), 1, 0, uv3):setOnUpdate(System.Action_float(function (slot0)
-				uv0.mainPage:GetComponent("CanvasGroup").alpha = slot0
+				setActive(arg_5_0.mainPage, false)
+				setActive(arg_5_0.countdownPage, true)
+				pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_22)
+			end, go(arg_5_0.mainPage), 1, 0, var_0_20):setOnUpdate(System.Action_float(function(arg_9_0)
+				arg_5_0.mainPage:GetComponent("CanvasGroup").alpha = arg_9_0
 			end))
 		end
 	end)
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_5_0, arg_5_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("3match_tip")
 		})
 	end, SFX_PANEL)
-	slot0.countdownAnim:GetComponent(typeof(DftAniEvent)):SetEndEvent(function (slot0)
-		setActive(uv0.countdownPage, false)
-		setActive(uv0.gamePage, true)
-		uv0:startGame()
+	arg_5_0.countdownAnim:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_11_0)
+		setActive(arg_5_0.countdownPage, false)
+		setActive(arg_5_0.gamePage, true)
+		arg_5_0:startGame()
 	end)
-	onButton(slot0, slot0.endBtn, function ()
-		uv0.mainPage:GetComponent("CanvasGroup").blocksRaycasts = false
+	onButton(arg_5_0, arg_5_0.endBtn, function()
+		arg_5_0.mainPage:GetComponent("CanvasGroup").blocksRaycasts = false
 
-		uv0:managedTween(LeanTween.value, function ()
-			uv0.mainPage:GetComponent("CanvasGroup").alpha = 1
-			uv0.mainPage:GetComponent("CanvasGroup").blocksRaycasts = true
-		end, go(uv0.endPage), 0, 1, uv1):setOnUpdate(System.Action_float(function (slot0)
-			uv0.mainPage:GetComponent("CanvasGroup").alpha = slot0
+		arg_5_0:managedTween(LeanTween.value, function()
+			arg_5_0.mainPage:GetComponent("CanvasGroup").alpha = 1
+			arg_5_0.mainPage:GetComponent("CanvasGroup").blocksRaycasts = true
+		end, go(arg_5_0.endPage), 0, 1, var_0_20):setOnUpdate(System.Action_float(function(arg_14_0)
+			arg_5_0.mainPage:GetComponent("CanvasGroup").alpha = arg_14_0
 		end))
-		setActive(uv0.mainPage, true)
-		setActive(uv0.countdownPage, false)
-		setActive(uv0.gamePage, false)
-		setActive(uv0.endPage, false)
+		setActive(arg_5_0.mainPage, true)
+		setActive(arg_5_0.countdownPage, false)
+		setActive(arg_5_0.gamePage, false)
+		setActive(arg_5_0.endPage, false)
 	end)
-	onButton(slot0, slot0.pauseYes, function ()
-		uv0:stopGame()
+	onButton(arg_5_0, arg_5_0.pauseYes, function()
+		arg_5_0:stopGame()
 	end)
-	onButton(slot0, slot0.pauseNo, function ()
-		setActive(uv0.pausePage, false)
-		uv0:resumeGame()
+	onButton(arg_5_0, arg_5_0.pauseNo, function()
+		setActive(arg_5_0.pausePage, false)
+		arg_5_0:resumeGame()
 	end)
 
-	slot2 = false
+	local var_5_0 = false
 
-	slot0.gameListener:AddPointClickFunc(function (slot0, slot1)
-		if uv0 then
-			uv0 = false
+	arg_5_0.gameListener:AddPointClickFunc(function(arg_17_0, arg_17_1)
+		if var_5_0 then
+			var_5_0 = false
 
 			return
 		end
 
-		if uv1.updating then
+		if arg_5_0.updating then
 			return
 		end
 
-		if not uv1.inGame then
+		if not arg_5_0.inGame then
 			return
 		end
 
-		slot3, slot4 = uv1:pos2index(LuaHelper.ScreenToLocal(uv1.tilesRoot, slot1.position, GameObject.Find("UICamera"):GetComponent(typeof(Camera))))
+		local var_17_0 = LuaHelper.ScreenToLocal(arg_5_0.tilesRoot, arg_17_1.position, GameObject.Find("UICamera"):GetComponent(typeof(Camera)))
+		local var_17_1, var_17_2 = arg_5_0:pos2index(var_17_0)
 
-		if uv1.selected then
-			if uv1.selected == uv1.tileTfs[slot3][slot4] then
-				uv1:unselect()
-			elseif math.abs(slot3 - uv1.selectedIndex.i) + math.abs(slot4 - uv1.selectedIndex.j) == 1 then
-				uv1:tryMoveTo({
-					i = slot3,
-					j = slot4
+		if arg_5_0.selected then
+			if arg_5_0.selected == arg_5_0.tileTfs[var_17_1][var_17_2] then
+				arg_5_0:unselect()
+			elseif math.abs(var_17_1 - arg_5_0.selectedIndex.i) + math.abs(var_17_2 - arg_5_0.selectedIndex.j) == 1 then
+				arg_5_0:tryMoveTo({
+					i = var_17_1,
+					j = var_17_2
 				})
 			else
-				uv1:select(slot3, slot4)
+				arg_5_0:select(var_17_1, var_17_2)
 			end
 		else
-			uv1:select(slot3, slot4)
+			arg_5_0:select(var_17_1, var_17_2)
 		end
 	end)
-	slot0.longPressListener.onLongPressed:AddListener(function ()
-		if uv0.updating then
+	arg_5_0.longPressListener.onLongPressed:AddListener(function()
+		if arg_5_0.updating then
 			return
 		end
 
-		if not uv0.inGame then
+		if not arg_5_0.inGame then
 			return
 		end
 
-		slot1, slot2 = uv0:pos2index(LuaHelper.ScreenToLocal(uv0.tilesRoot, Input.mousePosition, GameObject.Find("UICamera"):GetComponent(typeof(Camera))))
+		local var_18_0 = LuaHelper.ScreenToLocal(arg_5_0.tilesRoot, Input.mousePosition, GameObject.Find("UICamera"):GetComponent(typeof(Camera)))
+		local var_18_1, var_18_2 = arg_5_0:pos2index(var_18_0)
 
-		uv0:unselect()
-		uv0:animate(slot1, slot2, true)
+		arg_5_0:unselect()
+		arg_5_0:animate(var_18_1, var_18_2, true)
 	end)
-	slot0.gameListener:AddBeginDragFunc(function (slot0, slot1)
-		if uv0.updating then
+	arg_5_0.gameListener:AddBeginDragFunc(function(arg_19_0, arg_19_1)
+		if arg_5_0.updating then
 			return
 		end
 
-		if not uv0.inGame then
+		if not arg_5_0.inGame then
 			return
 		end
 
-		uv1 = true
-		slot2 = slot1.delta
-		slot4, slot5 = uv0:pos2index(LuaHelper.ScreenToLocal(uv0.tilesRoot, slot1.position, GameObject.Find("UICamera"):GetComponent(typeof(Camera))))
+		var_5_0 = true
 
-		uv0:animate(slot4, slot5, false)
-		uv0:unselect()
+		local var_19_0 = arg_19_1.delta
+		local var_19_1 = LuaHelper.ScreenToLocal(arg_5_0.tilesRoot, arg_19_1.position, GameObject.Find("UICamera"):GetComponent(typeof(Camera)))
+		local var_19_2, var_19_3 = arg_5_0:pos2index(var_19_1)
 
-		uv0.selected = uv0.tileTfs[slot4][slot5]
-		uv0.selectedIndex = {
-			i = slot4,
-			j = slot5
+		arg_5_0:animate(var_19_2, var_19_3, false)
+		arg_5_0:unselect()
+
+		arg_5_0.selected = arg_5_0.tileTfs[var_19_2][var_19_3]
+		arg_5_0.selectedIndex = {
+			i = var_19_2,
+			j = var_19_3
 		}
 
-		uv0:tryMoveTo({
-			i = uv0.selectedIndex.i + slot4,
-			j = uv0.selectedIndex.j + (math.abs(slot2.y) < math.abs(slot2.x) and (slot2.x > 0 and 1 or -1) or 0)
+		if math.abs(var_19_0.x) > math.abs(var_19_0.y) then
+			var_19_2 = 0
+			var_19_3 = var_19_0.x > 0 and 1 or -1
+		else
+			var_19_2 = var_19_0.y > 0 and 1 or -1
+			var_19_3 = 0
+		end
+
+		arg_5_0:tryMoveTo({
+			i = arg_5_0.selectedIndex.i + var_19_2,
+			j = arg_5_0.selectedIndex.j + var_19_3
 		})
 	end)
-	setActive(slot0.mainPage, true)
-	slot0:updateData()
+	setActive(arg_5_0.mainPage, true)
+	arg_5_0:updateData()
 end
 
-function slot0.updateData(slot0)
-	slot0.infinite = slot0:GetMGHubData().count == 0
-	slot0.best = slot0:GetMGData():GetRuntimeData("elements") and slot2[1] or 0
+function var_0_0.updateData(arg_20_0)
+	arg_20_0.infinite = arg_20_0:GetMGHubData().count == 0
+
+	local var_20_0 = arg_20_0:GetMGData():GetRuntimeData("elements")
+
+	arg_20_0.best = var_20_0 and var_20_0[1] or 0
 end
 
-function slot0.index2pos(slot0, slot1, slot2)
-	return Vector3.New(uv0 + (slot2 - 1) * uv1, uv2 + (slot1 - 1) * uv3)
+function var_0_0.index2pos(arg_21_0, arg_21_1, arg_21_2)
+	return Vector3.New(var_0_3 + (arg_21_2 - 1) * var_0_5, var_0_4 + (arg_21_1 - 1) * var_0_6)
 end
 
-function slot0.pos2index(slot0, slot1)
-	return math.ceil((slot1.y - (uv2 - uv3 / 2)) / uv3), math.ceil((slot1.x - (uv0 - uv1 / 2)) / uv1)
+function var_0_0.pos2index(arg_22_0, arg_22_1)
+	local var_22_0 = var_0_3 - var_0_5 / 2
+	local var_22_1 = var_0_4 - var_0_6 / 2
+
+	return math.ceil((arg_22_1.y - var_22_1) / var_0_6), math.ceil((arg_22_1.x - var_22_0) / var_0_5)
 end
 
-function slot0.dropTime(slot0)
-	return math.max(slot0 * uv0, uv1)
+function var_0_0.dropTime(arg_23_0)
+	return math.max(arg_23_0 * var_0_8, var_0_9)
 end
 
-function slot0.cancelHint(slot0)
-	if slot0.hint then
-		Destroy(slot0.hint)
-		slot0.hint1:GetComponent("Animator"):SetBool("selected", false)
-		slot0.hint2:GetComponent("Animator"):SetBool("selected", false)
+function var_0_0.cancelHint(arg_24_0)
+	if arg_24_0.hint then
+		Destroy(arg_24_0.hint)
+		arg_24_0.hint1:GetComponent("Animator"):SetBool("selected", false)
+		arg_24_0.hint2:GetComponent("Animator"):SetBool("selected", false)
 
-		slot0.hint = nil
-		slot0.hint1 = nil
-		slot0.hint2 = nil
+		arg_24_0.hint = nil
+		arg_24_0.hint1 = nil
+		arg_24_0.hint2 = nil
 	end
 end
 
-slot29 = {
+local var_0_29 = {
 	{
 		0,
 		1
@@ -280,105 +298,112 @@ slot29 = {
 	}
 }
 
-function slot0.unselect(slot0)
-	if slot0.selectedEffectTf then
-		Destroy(slot0.selectedEffectTf)
+function var_0_0.unselect(arg_25_0)
+	if arg_25_0.selectedEffectTf then
+		Destroy(arg_25_0.selectedEffectTf)
 
-		slot0.selectedEffectTf = nil
+		arg_25_0.selectedEffectTf = nil
 	end
 
-	if slot0.selected then
-		slot0:animate(slot0.selectedIndex.i, slot0.selectedIndex.j, false)
+	if arg_25_0.selected then
+		arg_25_0:animate(arg_25_0.selectedIndex.i, arg_25_0.selectedIndex.j, false)
 
-		slot0.selected = nil
-		slot0.selectedIndex = nil
+		arg_25_0.selected = nil
+		arg_25_0.selectedIndex = nil
 
-		slot0:reorderTiles()
+		arg_25_0:reorderTiles()
 	end
 end
 
-function slot0.select(slot0, slot1, slot2)
-	slot0:unselect()
+function var_0_0.select(arg_26_0, arg_26_1, arg_26_2)
+	arg_26_0:unselect()
 
-	slot0.selected = slot0.tileTfs[slot1][slot2]
-	slot0.selectedIndex = {
-		i = slot1,
-		j = slot2
+	arg_26_0.selected = arg_26_0.tileTfs[arg_26_1][arg_26_2]
+	arg_26_0.selectedIndex = {
+		i = arg_26_1,
+		j = arg_26_2
 	}
-	slot0.selectedEffectTf = rtf(cloneTplTo(slot0.selectedEffect, slot0.tilesRoot))
-	slot0.selectedEffectTf.anchoredPosition = slot0.selected.anchoredPosition
+	arg_26_0.selectedEffectTf = rtf(cloneTplTo(arg_26_0.selectedEffect, arg_26_0.tilesRoot))
+	arg_26_0.selectedEffectTf.anchoredPosition = arg_26_0.selected.anchoredPosition
 
-	slot0.selected:SetAsLastSibling()
-	slot0:animate(slot1, slot2, true)
+	arg_26_0.selected:SetAsLastSibling()
+	arg_26_0:animate(arg_26_1, arg_26_2, true)
 end
 
-function slot0.animate(slot0, slot1, slot2, slot3)
-	if not slot0.tileTfs[slot1][slot2] then
-		warning("bad position", slot1, slot2)
+function var_0_0.animate(arg_27_0, arg_27_1, arg_27_2, arg_27_3)
+	if not arg_27_0.tileTfs[arg_27_1][arg_27_2] then
+		warning("bad position", arg_27_1, arg_27_2)
 	end
 
-	slot7 = slot3
+	arg_27_0.tileTfs[arg_27_1][arg_27_2]:GetComponent("Animator"):SetBool("selected", arg_27_3)
 
-	slot0.tileTfs[slot1][slot2]:GetComponent("Animator"):SetBool("selected", slot7)
+	for iter_27_0, iter_27_1 in pairs(var_0_29) do
+		local var_27_0 = arg_27_0.tileTfs[arg_27_1 + iter_27_1[1]][arg_27_2 + iter_27_1[2]]
 
-	for slot7, slot8 in pairs(uv0) do
-		if slot0.tileTfs[slot1 + slot8[1]][slot2 + slot8[2]] then
-			slot9:GetComponent("Animator"):SetBool("selected", slot3)
+		if var_27_0 then
+			var_27_0:GetComponent("Animator"):SetBool("selected", arg_27_3)
 		end
 	end
 
-	if slot0.hint then
-		slot0.hint1:GetComponent("Animator"):SetBool("selected", true)
-		slot0.hint2:GetComponent("Animator"):SetBool("selected", true)
+	if arg_27_0.hint then
+		arg_27_0.hint1:GetComponent("Animator"):SetBool("selected", true)
+		arg_27_0.hint2:GetComponent("Animator"):SetBool("selected", true)
 	end
 end
 
-function slot0.tryMoveTo(slot0, slot1)
-	if slot0.selectedIndex == nil then
+function var_0_0.tryMoveTo(arg_28_0, arg_28_1)
+	if arg_28_0.selectedIndex == nil then
 		return
 	end
 
-	if slot0.hintTimer then
-		slot0.hintTimer:Pause()
+	if arg_28_0.hintTimer then
+		arg_28_0.hintTimer:Pause()
 	end
 
-	if not slot0.tileIndicies[slot1.i][slot1.j] then
+	if not arg_28_0.tileIndicies[arg_28_1.i][arg_28_1.j] then
 		return
 	end
 
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_23)
 
-	if slot0:moveValid(slot0.selectedIndex, slot1) then
-		slot0:unselect()
+	if arg_28_0:moveValid(arg_28_0.selectedIndex, arg_28_1) then
+		local var_28_0 = arg_28_0.selectedIndex
 
-		slot0.updating = true
+		arg_28_0:unselect()
 
-		slot0:swap(slot0.selectedIndex, slot1)
-		slot0:managedTween(LeanTween.delayedCall, function ()
-			if not uv0.inGame then
+		arg_28_0.updating = true
+
+		arg_28_0:swap(var_28_0, arg_28_1)
+		arg_28_0:managedTween(LeanTween.delayedCall, function()
+			if not arg_28_0.inGame then
 				return
 			end
 
-			uv0.combo = 0
+			arg_28_0.combo = 0
 
-			uv0:update()
-		end, uv1, nil)
+			arg_28_0:update()
+		end, var_0_13, nil)
 	else
-		slot0:managedTween(LeanTween.move, nil, slot0.tileTfs[slot0.selectedIndex.i][slot0.selectedIndex.j], slot0:index2pos(slot1.i, slot1.j), uv1):setLoopPingPong(1)
-		slot0:managedTween(LeanTween.move, nil, slot0.tileTfs[slot1.i][slot1.j], slot0:index2pos(slot0.selectedIndex.i, slot0.selectedIndex.j), uv1):setLoopPingPong(1)
+		local var_28_1 = arg_28_0.tileTfs[arg_28_0.selectedIndex.i][arg_28_0.selectedIndex.j]
+		local var_28_2 = arg_28_0.tileTfs[arg_28_1.i][arg_28_1.j]
+		local var_28_3 = arg_28_0:index2pos(arg_28_0.selectedIndex.i, arg_28_0.selectedIndex.j)
+		local var_28_4 = arg_28_0:index2pos(arg_28_1.i, arg_28_1.j)
 
-		slot0.updating = true
+		arg_28_0:managedTween(LeanTween.move, nil, var_28_1, var_28_4, var_0_13):setLoopPingPong(1)
+		arg_28_0:managedTween(LeanTween.move, nil, var_28_2, var_28_3, var_0_13):setLoopPingPong(1)
 
-		slot0:managedTween(LeanTween.delayedCall, function ()
-			uv0.updating = false
+		arg_28_0.updating = true
 
-			uv0.hintTimer:Resume()
-		end, uv1 * 2 + 0.1, nil)
-		slot0:unselect()
+		arg_28_0:managedTween(LeanTween.delayedCall, function()
+			arg_28_0.updating = false
+
+			arg_28_0.hintTimer:Resume()
+		end, var_0_13 * 2 + 0.1, nil)
+		arg_28_0:unselect()
 	end
 end
 
-slot30 = {
+local var_0_30 = {
 	{
 		{
 			0,
@@ -411,15 +436,23 @@ slot30 = {
 	}
 }
 
-function slot0.isConnected(slot0, slot1)
-	for slot5, slot6 in pairs(uv0) do
-		slot7, slot8, slot9 = nil
+function var_0_0.isConnected(arg_31_0, arg_31_1)
+	for iter_31_0, iter_31_1 in pairs(var_0_30) do
+		local var_31_0
+		local var_31_1
+		local var_31_2
+		local var_31_3 = arg_31_0.tileIndicies[arg_31_1.i][arg_31_1.j]
+		local var_31_4 = arg_31_0.tileIndicies[arg_31_1.i + iter_31_1[1][1]][arg_31_1.j + iter_31_1[1][2]]
+		local var_31_5 = arg_31_0.tileIndicies[arg_31_1.i + iter_31_1[2][1]][arg_31_1.j + iter_31_1[2][2]]
 
-		if slot0.tileIndicies[slot1.i][slot1.j] == slot0.tileIndicies[slot1.i + slot6[1][1]][slot1.j + slot6[1][2]] and slot7 == slot0.tileIndicies[slot1.i + slot6[2][1]][slot1.j + slot6[2][2]] then
+		if var_31_3 == var_31_4 and var_31_3 == var_31_5 then
 			return true
 		end
 
-		if slot7 == slot0.tileIndicies[slot1.i + slot6[1][2]][slot1.j + slot6[1][1]] and slot7 == slot0.tileIndicies[slot1.i + slot6[2][2]][slot1.j + slot6[2][1]] then
+		local var_31_6 = arg_31_0.tileIndicies[arg_31_1.i + iter_31_1[1][2]][arg_31_1.j + iter_31_1[1][1]]
+		local var_31_7 = arg_31_0.tileIndicies[arg_31_1.i + iter_31_1[2][2]][arg_31_1.j + iter_31_1[2][1]]
+
+		if var_31_3 == var_31_6 and var_31_3 == var_31_7 then
 			return true
 		end
 	end
@@ -427,252 +460,267 @@ function slot0.isConnected(slot0, slot1)
 	return false
 end
 
-function slot0.moveValid(slot0, slot1, slot2)
-	slot0.tileIndicies[slot2.i][slot2.j] = slot0.tileIndicies[slot1.i][slot1.j]
-	slot0.tileIndicies[slot1.i][slot1.j] = slot0.tileIndicies[slot2.i][slot2.j]
-	slot0.tileIndicies[slot2.i][slot2.j] = slot0.tileIndicies[slot1.i][slot1.j]
-	slot0.tileIndicies[slot1.i][slot1.j] = slot0.tileIndicies[slot2.i][slot2.j]
+function var_0_0.moveValid(arg_32_0, arg_32_1, arg_32_2)
+	arg_32_0.tileIndicies[arg_32_1.i][arg_32_1.j], arg_32_0.tileIndicies[arg_32_2.i][arg_32_2.j] = arg_32_0.tileIndicies[arg_32_2.i][arg_32_2.j], arg_32_0.tileIndicies[arg_32_1.i][arg_32_1.j]
 
-	return slot0:isConnected(slot1) or slot0:isConnected(slot2)
+	local var_32_0 = arg_32_0:isConnected(arg_32_1) or arg_32_0:isConnected(arg_32_2)
+
+	arg_32_0.tileIndicies[arg_32_1.i][arg_32_1.j], arg_32_0.tileIndicies[arg_32_2.i][arg_32_2.j] = arg_32_0.tileIndicies[arg_32_2.i][arg_32_2.j], arg_32_0.tileIndicies[arg_32_1.i][arg_32_1.j]
+
+	return var_32_0
 end
 
-function slot0.moveTile(slot0, slot1, slot2, slot3)
-	slot0:managedTween(LeanTween.move, nil, slot1, slot0:index2pos(slot2.i, slot2.j), slot3 or 0):setEase(LeanTweenType.easeInQuad)
+function var_0_0.moveTile(arg_33_0, arg_33_1, arg_33_2, arg_33_3)
+	local var_33_0 = arg_33_0:index2pos(arg_33_2.i, arg_33_2.j)
+
+	arg_33_0:managedTween(LeanTween.move, nil, arg_33_1, var_33_0, arg_33_3 or 0):setEase(LeanTweenType.easeInQuad)
 end
 
-function slot0.swap(slot0, slot1, slot2)
-	slot0:moveTile(slot0.tileTfs[slot1.i][slot1.j], slot2, uv0)
-	slot0:moveTile(slot0.tileTfs[slot2.i][slot2.j], slot1, uv0)
+function var_0_0.swap(arg_34_0, arg_34_1, arg_34_2)
+	local var_34_0 = arg_34_0.tileTfs[arg_34_1.i][arg_34_1.j]
+	local var_34_1 = arg_34_0.tileTfs[arg_34_2.i][arg_34_2.j]
 
-	slot0.tileTfs[slot2.i][slot2.j] = slot0.tileTfs[slot1.i][slot1.j]
-	slot0.tileTfs[slot1.i][slot1.j] = slot0.tileTfs[slot2.i][slot2.j]
-	slot0.tileIndicies[slot2.i][slot2.j] = slot0.tileIndicies[slot1.i][slot1.j]
-	slot0.tileIndicies[slot1.i][slot1.j] = slot0.tileIndicies[slot2.i][slot2.j]
+	arg_34_0:moveTile(var_34_0, arg_34_2, var_0_13)
+	arg_34_0:moveTile(var_34_1, arg_34_1, var_0_13)
+
+	arg_34_0.tileTfs[arg_34_1.i][arg_34_1.j], arg_34_0.tileTfs[arg_34_2.i][arg_34_2.j] = arg_34_0.tileTfs[arg_34_2.i][arg_34_2.j], arg_34_0.tileTfs[arg_34_1.i][arg_34_1.j]
+	arg_34_0.tileIndicies[arg_34_1.i][arg_34_1.j], arg_34_0.tileIndicies[arg_34_2.i][arg_34_2.j] = arg_34_0.tileIndicies[arg_34_2.i][arg_34_2.j], arg_34_0.tileIndicies[arg_34_1.i][arg_34_1.j]
 end
 
-function slot0.formatTime(slot0, slot1)
-	slot2 = math.floor(slot1 / 60)
+function var_0_0.formatTime(arg_35_0, arg_35_1)
+	local var_35_0 = math.floor(arg_35_1 / 60)
 
-	return slot2 .. ":" .. math.floor(slot1 - slot2 * 60)
+	arg_35_1 = arg_35_1 - var_35_0 * 60
+
+	local var_35_1 = math.floor(arg_35_1)
+
+	return var_35_0 .. ":" .. var_35_1
 end
 
-function dir2Angle(slot0)
-	if slot0[1] == 1 then
+function dir2Angle(arg_36_0)
+	if arg_36_0[1] == 1 then
 		return -90
-	elseif slot0[1] == -1 then
+	elseif arg_36_0[1] == -1 then
 		return 90
-	elseif slot0[2] == 1 then
+	elseif arg_36_0[2] == 1 then
 		return 180
-	elseif slot0[2] == -1 then
+	elseif arg_36_0[2] == -1 then
 		return 0
 	end
 end
 
-function slot0.startGame(slot0)
-	slot0:updateData()
+function var_0_0.startGame(arg_37_0)
+	arg_37_0:updateData()
 
-	slot1 = Timer.New(function ()
-		uv0:managedTween(LeanTween.value, function ()
-			uv0.gamePage:GetComponent("CanvasGroup").alpha = 1
+	local var_37_0 = Timer.New(function()
+		arg_37_0:managedTween(LeanTween.value, function()
+			arg_37_0.gamePage:GetComponent("CanvasGroup").alpha = 1
 
-			uv0:stopGame()
-		end, go(uv0.gamePage), 1, 0, uv1):setOnUpdate(System.Action_float(function (slot0)
-			uv0.gamePage:GetComponent("CanvasGroup").alpha = slot0
+			arg_37_0:stopGame()
+		end, go(arg_37_0.gamePage), 1, 0, var_0_10):setOnUpdate(System.Action_float(function(arg_40_0)
+			arg_37_0.gamePage:GetComponent("CanvasGroup").alpha = arg_40_0
 		end))
-		UpdateBeat:RemoveListener(uv0.handle)
-	end, slot0.infinite and uv1 or uv2)
-	slot0.handle = UpdateBeat:CreateListener(function ()
-		setText(uv0.countdownText, math.floor(uv1.time))
+		UpdateBeat:RemoveListener(arg_37_0.handle)
+	end, arg_37_0.infinite and var_0_15 or var_0_16)
 
-		if uv1.time <= uv2 and not isActive(uv0.warning) then
-			setActive(uv0.warning, true)
+	arg_37_0.handle = UpdateBeat:CreateListener(function()
+		setText(arg_37_0.countdownText, math.floor(var_37_0.time))
+
+		if var_37_0.time <= var_0_17 and not isActive(arg_37_0.warning) then
+			setActive(arg_37_0.warning, true)
 		end
-	end, slot0)
+	end, arg_37_0)
 
-	slot1:Start()
-	UpdateBeat:AddListener(slot0.handle)
+	var_37_0:Start()
+	UpdateBeat:AddListener(arg_37_0.handle)
 
-	slot0.timer = slot1
+	arg_37_0.timer = var_37_0
 
-	setActive(slot0.inf, false)
-	setActive(slot0.countdownText, true)
+	setActive(arg_37_0.inf, false)
+	setActive(arg_37_0.countdownText, true)
 
-	slot0.tileIndicies = {}
+	arg_37_0.tileIndicies = {}
 
-	for slot5 = -1, uv4 + 2 do
-		slot0.tileIndicies[slot5] = {}
+	for iter_37_0 = -1, var_0_1 + 2 do
+		arg_37_0.tileIndicies[iter_37_0] = {}
 	end
 
-	slot0.tileTfs = {}
+	arg_37_0.tileTfs = {}
 
-	for slot5 = -1, uv4 + 2 do
-		slot0.tileTfs[slot5] = {}
+	for iter_37_1 = -1, var_0_1 + 2 do
+		arg_37_0.tileTfs[iter_37_1] = {}
 	end
 
-	slot0:fillTileIndicies()
-	slot0:fillTiles(true)
+	arg_37_0:fillTileIndicies()
+	arg_37_0:fillTiles(true)
 
-	slot0.selected = nil
-	slot0.updating = false
-	slot0.score = 0
-	slot0.combo = 0
-	slot0.inGame = true
+	arg_37_0.selected = nil
+	arg_37_0.updating = false
+	arg_37_0.score = 0
+	arg_37_0.combo = 0
+	arg_37_0.inGame = true
 
-	setText(slot0.scoreText, slot0.score)
+	setText(arg_37_0.scoreText, arg_37_0.score)
 
-	function slot0.hintFunc()
-		if uv0.hint then
+	function arg_37_0.hintFunc()
+		if arg_37_0.hint then
 			return
 		end
 
-		slot0, slot1, slot2 = uv0:findMove()
-		slot4 = rtf(cloneTplTo(uv0.hintEffect, uv0.tilesRoot))
-		slot4.anchoredPosition = (uv0:index2pos(slot0, slot1) + uv0:index2pos(slot0 + slot2[1], slot1 + slot2[2])) / 2
-		slot4.localEulerAngles = Vector3.New(0, 0, dir2Angle(slot2))
-		uv0.hint = slot4
-		uv0.hint1 = uv0.tileTfs[slot0][slot1]
-		uv0.hint2 = uv0.tileTfs[slot0 + slot2[1]][slot1 + slot2[2]]
+		local var_42_0, var_42_1, var_42_2 = arg_37_0:findMove()
+		local var_42_3
 
-		uv0.hint1:GetComponent("Animator"):SetBool("selected", true)
-		uv0.hint2:GetComponent("Animator"):SetBool("selected", true)
+		var_42_3.anchoredPosition, var_42_3 = (arg_37_0:index2pos(var_42_0, var_42_1) + arg_37_0:index2pos(var_42_0 + var_42_2[1], var_42_1 + var_42_2[2])) / 2, rtf(cloneTplTo(arg_37_0.hintEffect, arg_37_0.tilesRoot))
+		var_42_3.localEulerAngles = Vector3.New(0, 0, dir2Angle(var_42_2))
+		arg_37_0.hint = var_42_3
+		arg_37_0.hint1 = arg_37_0.tileTfs[var_42_0][var_42_1]
+		arg_37_0.hint2 = arg_37_0.tileTfs[var_42_0 + var_42_2[1]][var_42_1 + var_42_2[2]]
+
+		arg_37_0.hint1:GetComponent("Animator"):SetBool("selected", true)
+		arg_37_0.hint2:GetComponent("Animator"):SetBool("selected", true)
 	end
 
-	slot0.hintTimer = Timer.New(slot0.hintFunc, uv5)
+	arg_37_0.hintTimer = Timer.New(arg_37_0.hintFunc, var_0_21)
 
-	slot0.hintTimer:Start()
+	arg_37_0.hintTimer:Start()
 end
 
-function slot0.pauseGame(slot0)
-	if slot0.timer then
-		slot0.timer:Pause()
+function var_0_0.pauseGame(arg_43_0)
+	if arg_43_0.timer then
+		arg_43_0.timer:Pause()
 	end
 
-	if slot0.hintTimer then
-		slot0.hintTimer:Pause()
+	if arg_43_0.hintTimer then
+		arg_43_0.hintTimer:Pause()
 	end
 
-	if slot0.warning then
-		slot0.warning:GetComponent("Animator").enabled = false
+	if arg_43_0.warning then
+		arg_43_0.warning:GetComponent("Animator").enabled = false
 	end
 
-	slot0:pauseManagedTween()
+	arg_43_0:pauseManagedTween()
 end
 
-function slot0.pause(slot0)
-	setActive(slot0.pausePage, true)
-	slot0:pauseGame()
+function var_0_0.pause(arg_44_0)
+	setActive(arg_44_0.pausePage, true)
+	arg_44_0:pauseGame()
 end
 
-function slot0.resumeGame(slot0)
-	if slot0.timer then
-		slot0.timer:Resume()
+function var_0_0.resumeGame(arg_45_0)
+	if arg_45_0.timer then
+		arg_45_0.timer:Resume()
 	end
 
-	if slot0.hintTimer then
-		slot0.hintTimer:Resume()
+	if arg_45_0.hintTimer then
+		arg_45_0.hintTimer:Resume()
 	end
 
-	if slot0.warning then
-		slot0.warning:GetComponent("Animator").enabled = true
+	if arg_45_0.warning then
+		arg_45_0.warning:GetComponent("Animator").enabled = true
 	end
 
-	slot0:resumeManagedTween()
+	arg_45_0:resumeManagedTween()
 end
 
-function slot0.fillTileIndicies(slot0)
-	slot1 = {
-		[slot5] = {}
-	}
+function var_0_0.fillTileIndicies(arg_46_0)
+	local var_46_0 = {}
 
-	for slot5 = -1, uv0 + 2 do
-		for slot9 = 1, uv1 do
-			slot1[slot5][slot9] = slot0.tileIndicies[slot5][slot9]
+	for iter_46_0 = -1, var_0_1 + 2 do
+		var_46_0[iter_46_0] = {}
+
+		for iter_46_1 = 1, var_0_2 do
+			var_46_0[iter_46_0][iter_46_1] = arg_46_0.tileIndicies[iter_46_0][iter_46_1]
 		end
 	end
 
 	repeat
-		slot0.tileIndicies = {}
+		arg_46_0.tileIndicies = {}
 
-		for slot5 = -1, uv0 + 2 do
-			slot0.tileIndicies[slot5] = {}
+		for iter_46_2 = -1, var_0_1 + 2 do
+			arg_46_0.tileIndicies[iter_46_2] = {}
 
-			for slot9 = 1, uv1 do
-				slot0.tileIndicies[slot5][slot9] = slot1[slot5][slot9]
+			for iter_46_3 = 1, var_0_2 do
+				arg_46_0.tileIndicies[iter_46_2][iter_46_3] = var_46_0[iter_46_2][iter_46_3]
 			end
 		end
 
-		for slot5 = 1, uv0 do
-			for slot9 = 1, uv1 do
-				if not slot0.tileIndicies[slot5][slot9] then
-					slot10, slot11 = nil
+		for iter_46_4 = 1, var_0_1 do
+			for iter_46_5 = 1, var_0_2 do
+				if not arg_46_0.tileIndicies[iter_46_4][iter_46_5] then
+					local var_46_1
+					local var_46_2
 
-					if slot0.tileIndicies[slot5 - 1][slot9] and slot0.tileIndicies[slot5 - 1][slot9] == slot0.tileIndicies[slot5 - 2][slot9] then
-						slot10 = slot0.tileIndicies[slot5 - 1][slot9]
+					if arg_46_0.tileIndicies[iter_46_4 - 1][iter_46_5] and arg_46_0.tileIndicies[iter_46_4 - 1][iter_46_5] == arg_46_0.tileIndicies[iter_46_4 - 2][iter_46_5] then
+						var_46_1 = arg_46_0.tileIndicies[iter_46_4 - 1][iter_46_5]
 					end
 
-					if slot0.tileIndicies[slot5][slot9 - 1] and slot0.tileIndicies[slot5][slot9 - 1] == slot0.tileIndicies[slot5][slot9 - 2] then
-						slot11 = slot0.tileIndicies[slot5][slot9 - 2]
+					if arg_46_0.tileIndicies[iter_46_4][iter_46_5 - 1] and arg_46_0.tileIndicies[iter_46_4][iter_46_5 - 1] == arg_46_0.tileIndicies[iter_46_4][iter_46_5 - 2] then
+						var_46_2 = arg_46_0.tileIndicies[iter_46_4][iter_46_5 - 2]
 					end
 
-					slot12 = math.random(1, #slot0.tiles)
+					local var_46_3 = math.random(1, #arg_46_0.tiles)
 
-					while slot12 == slot10 or slot12 == slot11 do
-						slot12 = math.random(1, #slot0.tiles)
+					while var_46_3 == var_46_1 or var_46_3 == var_46_2 do
+						var_46_3 = math.random(1, #arg_46_0.tiles)
 					end
 
-					slot0.tileIndicies[slot5][slot9] = slot12
+					arg_46_0.tileIndicies[iter_46_4][iter_46_5] = var_46_3
 				end
 			end
 		end
-	until slot0:findMove()
+	until arg_46_0:findMove()
 end
 
-function slot0.reorderTiles(slot0)
-	for slot4 = 1, uv0 do
-		for slot8 = 1, uv1 do
-			if slot0.tileTfs[slot4][slot8] then
-				slot0.tileTfs[slot4][slot8]:SetAsFirstSibling()
+function var_0_0.reorderTiles(arg_47_0)
+	for iter_47_0 = 1, var_0_1 do
+		for iter_47_1 = 1, var_0_2 do
+			if arg_47_0.tileTfs[iter_47_0][iter_47_1] then
+				arg_47_0.tileTfs[iter_47_0][iter_47_1]:SetAsFirstSibling()
 			end
 		end
 	end
 end
 
-function slot0.fillTiles(slot0, slot1)
-	slot2 = 0
+function var_0_0.fillTiles(arg_48_0, arg_48_1)
+	local var_48_0 = 0
 
-	for slot6 = 1, uv0 do
-		for slot11 = uv1, 1, -1 do
-			if not slot0.tileTfs[slot11][slot6] then
-				slot7 = 0 + 1
+	for iter_48_0 = 1, var_0_2 do
+		local var_48_1 = 0
+
+		for iter_48_1 = var_0_1, 1, -1 do
+			if not arg_48_0.tileTfs[iter_48_1][iter_48_0] then
+				var_48_1 = var_48_1 + 1
 			end
 		end
 
-		slot2 = math.max(slot7, slot2)
+		var_48_0 = math.max(var_48_1, var_48_0)
 
-		for slot11 = 1, uv1 do
-			if not slot0.tileTfs[slot11][slot6] then
-				if slot1 then
-					rtf(cloneTplTo(slot0.tiles[slot0.tileIndicies[slot11][slot6]], slot0.tilesRoot)).anchoredPosition = slot0:index2pos(slot11, slot6)
+		for iter_48_2 = 1, var_0_1 do
+			if not arg_48_0.tileTfs[iter_48_2][iter_48_0] then
+				local var_48_2 = rtf(cloneTplTo(arg_48_0.tiles[arg_48_0.tileIndicies[iter_48_2][iter_48_0]], arg_48_0.tilesRoot))
+
+				if arg_48_1 then
+					var_48_2.anchoredPosition = arg_48_0:index2pos(iter_48_2, iter_48_0)
 				else
-					slot12.anchoredPosition = slot0:index2pos(slot11 + slot7, slot6)
+					var_48_2.anchoredPosition = arg_48_0:index2pos(iter_48_2 + var_48_1, iter_48_0)
 
-					slot0:moveTile(slot12, {
-						i = slot11,
-						j = slot6
-					}, slot0.dropTime(slot7))
+					arg_48_0:moveTile(var_48_2, {
+						i = iter_48_2,
+						j = iter_48_0
+					}, arg_48_0.dropTime(var_48_1))
 				end
 
-				slot0.tileTfs[slot11][slot6] = slot12
+				arg_48_0.tileTfs[iter_48_2][iter_48_0] = var_48_2
 			end
 		end
 	end
 
-	slot0:reorderTiles()
+	arg_48_0:reorderTiles()
 
-	return slot2
+	return var_48_0
 end
 
-slot31 = {
+local var_0_31 = {
 	{
 		{
 			-1,
@@ -705,36 +753,49 @@ slot31 = {
 	}
 }
 
-function slot0.findMove(slot0)
-	for slot4 = 1, uv0 do
-		for slot8 = 1, uv1 do
-			slot9 = slot0.tileIndicies[slot4][slot8]
-			slot10, slot11 = nil
+function var_0_0.findMove(arg_49_0)
+	for iter_49_0 = 1, var_0_1 do
+		for iter_49_1 = 1, var_0_2 do
+			local var_49_0 = arg_49_0.tileIndicies[iter_49_0][iter_49_1]
+			local var_49_1
+			local var_49_2
 
-			for slot15, slot16 in pairs(uv2) do
-				if slot9 == slot0.tileIndicies[slot4 + slot16[1][1]][slot8 + slot16[1][2]] and slot9 == slot0.tileIndicies[slot4 + slot16[2][1]][slot8 + slot16[2][2]] then
-					return slot4, slot8, {
+			for iter_49_2, iter_49_3 in pairs(var_0_31) do
+				local var_49_3 = arg_49_0.tileIndicies[iter_49_0 + iter_49_3[1][1]][iter_49_1 + iter_49_3[1][2]]
+				local var_49_4 = arg_49_0.tileIndicies[iter_49_0 + iter_49_3[2][1]][iter_49_1 + iter_49_3[2][2]]
+
+				if var_49_0 == var_49_3 and var_49_0 == var_49_4 then
+					return iter_49_0, iter_49_1, {
 						-1,
 						0
 					}
 				end
 
-				if slot9 == slot0.tileIndicies[slot4 - slot16[1][1]][slot8 - slot16[1][2]] and slot9 == slot0.tileIndicies[slot4 - slot16[2][1]][slot8 - slot16[2][2]] then
-					return slot4, slot8, {
+				local var_49_5 = arg_49_0.tileIndicies[iter_49_0 - iter_49_3[1][1]][iter_49_1 - iter_49_3[1][2]]
+				local var_49_6 = arg_49_0.tileIndicies[iter_49_0 - iter_49_3[2][1]][iter_49_1 - iter_49_3[2][2]]
+
+				if var_49_0 == var_49_5 and var_49_0 == var_49_6 then
+					return iter_49_0, iter_49_1, {
 						1,
 						0
 					}
 				end
 
-				if slot9 == slot0.tileIndicies[slot4 - slot16[1][2]][slot8 + slot16[1][1]] and slot9 == slot0.tileIndicies[slot4 - slot16[2][2]][slot8 + slot16[2][1]] then
-					return slot4, slot8, {
+				local var_49_7 = arg_49_0.tileIndicies[iter_49_0 - iter_49_3[1][2]][iter_49_1 + iter_49_3[1][1]]
+				local var_49_8 = arg_49_0.tileIndicies[iter_49_0 - iter_49_3[2][2]][iter_49_1 + iter_49_3[2][1]]
+
+				if var_49_0 == var_49_7 and var_49_0 == var_49_8 then
+					return iter_49_0, iter_49_1, {
 						0,
 						-1
 					}
 				end
 
-				if slot9 == slot0.tileIndicies[slot4 + slot16[1][2]][slot8 - slot16[1][1]] and slot9 == slot0.tileIndicies[slot4 + slot16[2][2]][slot8 - slot16[2][1]] then
-					return slot4, slot8, {
+				local var_49_9 = arg_49_0.tileIndicies[iter_49_0 + iter_49_3[1][2]][iter_49_1 - iter_49_3[1][1]]
+				local var_49_10 = arg_49_0.tileIndicies[iter_49_0 + iter_49_3[2][2]][iter_49_1 - iter_49_3[2][1]]
+
+				if var_49_0 == var_49_9 and var_49_0 == var_49_10 then
+					return iter_49_0, iter_49_1, {
 						0,
 						1
 					}
@@ -744,297 +805,328 @@ function slot0.findMove(slot0)
 	end
 end
 
-function slot0.stopGame(slot0)
-	slot0.inGame = false
+function var_0_0.stopGame(arg_50_0)
+	arg_50_0.inGame = false
 
-	setActive(slot0.warning, false)
-	slot0.hintTimer:Reset(slot0.hintFunc, 5)
-	slot0.hintTimer:Stop()
-	slot0:cleanManagedTween(true)
-	slot0:cancelHint()
+	setActive(arg_50_0.warning, false)
+	arg_50_0.hintTimer:Reset(arg_50_0.hintFunc, 5)
+	arg_50_0.hintTimer:Stop()
+	arg_50_0:cleanManagedTween(true)
+	arg_50_0:cancelHint()
 
-	if slot0.timer then
-		slot0.timer:Pause()
+	if arg_50_0.timer then
+		arg_50_0.timer:Pause()
 	end
 
-	if slot0.handle then
-		UpdateBeat:RemoveListener(slot0.handle)
+	if arg_50_0.handle then
+		UpdateBeat:RemoveListener(arg_50_0.handle)
 	end
 
-	for slot4 = 1, uv0 do
-		for slot8 = 1, uv1 do
-			if slot0.tileTfs[slot4][slot8] then
-				Destroy(slot0.tileTfs[slot4][slot8])
+	for iter_50_0 = 1, var_0_1 do
+		for iter_50_1 = 1, var_0_2 do
+			if arg_50_0.tileTfs[iter_50_0][iter_50_1] then
+				Destroy(arg_50_0.tileTfs[iter_50_0][iter_50_1])
 			end
 		end
 	end
 
-	if slot0.selectedEffectTf then
-		Destroy(slot0.selectedEffectTf)
+	if arg_50_0.selectedEffectTf then
+		Destroy(arg_50_0.selectedEffectTf)
 
-		slot0.selectedEffectTf = nil
+		arg_50_0.selectedEffectTf = nil
 	end
 
-	setText(slot0.bestScore, math.max(slot0.best, slot0.score))
-	setActive(slot0.gamePage, false)
-	setActive(slot0.pausePage, false)
-	setActive(slot0.endBtn, false)
-	setActive(slot0.endPage, true)
+	setText(arg_50_0.bestScore, math.max(arg_50_0.best, arg_50_0.score))
+	setActive(arg_50_0.gamePage, false)
+	setActive(arg_50_0.pausePage, false)
+	setActive(arg_50_0.endBtn, false)
+	setActive(arg_50_0.endPage, true)
 
-	if slot0.score > 0 then
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv2)
+	if arg_50_0.score > 0 then
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_27)
 	end
 
-	setActive(slot0.newSign, false)
-	setText(slot0.endScore, 0)
-	slot0:managedTween(LeanTween.value, function ()
-		setActive(uv0.newSign, uv0.best < uv0.score)
-		setActive(uv0.endBtn, true)
-		setImageAlpha(uv0.endBtn, 0)
+	setActive(arg_50_0.newSign, false)
+	setText(arg_50_0.endScore, 0)
+	arg_50_0:managedTween(LeanTween.value, function()
+		setActive(arg_50_0.newSign, arg_50_0.best < arg_50_0.score)
+		setActive(arg_50_0.endBtn, true)
+		setImageAlpha(arg_50_0.endBtn, 0)
 
-		uv0.endBtn:GetComponent("Button").enabled = false
+		arg_50_0.endBtn:GetComponent("Button").enabled = false
 
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv1)
-		uv0:managedTween(LeanTween.value, function ()
-			uv0.endBtn:GetComponent("Button").enabled = true
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_28)
+		arg_50_0:managedTween(LeanTween.value, function()
+			arg_50_0.endBtn:GetComponent("Button").enabled = true
 
-			if uv0.infinite or uv0.timer and uv0.timer.time <= 0 then
-				if not uv0.infinite then
-					uv0:SendSuccess(0)
+			if arg_50_0.infinite or arg_50_0.timer and arg_50_0.timer.time <= 0 then
+				if not arg_50_0.infinite then
+					arg_50_0:SendSuccess(0)
 				end
 
-				if uv0.best < uv0.score then
-					uv0:StoreDataToServer({
-						uv0.score
+				if arg_50_0.score > arg_50_0.best then
+					arg_50_0:StoreDataToServer({
+						arg_50_0.score
 					})
 				end
 			end
 
-			uv0.timer = nil
-		end, go(uv0.endBtn), 0, 1, uv2):setOnUpdate(System.Action_float(function (slot0)
-			setImageAlpha(uv0.endBtn, slot0)
+			arg_50_0.timer = nil
+		end, go(arg_50_0.endBtn), 0, 1, var_0_19):setOnUpdate(System.Action_float(function(arg_53_0)
+			setImageAlpha(arg_50_0.endBtn, arg_53_0)
 		end))
-	end, go(slot0.endScore), 0, slot0.score, slot0.score > 0 and uv5 or 0):setOnUpdate(System.Action_float(function (slot0)
-		setText(uv0.endScore, math.floor(slot0))
+	end, go(arg_50_0.endScore), 0, arg_50_0.score, arg_50_0.score > 0 and var_0_18 or 0):setOnUpdate(System.Action_float(function(arg_54_0)
+		setText(arg_50_0.endScore, math.floor(arg_54_0))
 	end))
 end
 
-function slot0.formatScore(slot0, slot1, slot2)
-	slot3 = {}
+function var_0_0.formatScore(arg_55_0, arg_55_1, arg_55_2)
+	local var_55_0 = {}
 
-	while slot2 > 0 do
-		table.insert(slot3, math.fmod(slot2, 10))
+	while arg_55_2 > 0 do
+		table.insert(var_55_0, math.fmod(arg_55_2, 10))
 
-		slot2 = math.floor(slot2 / 10)
+		arg_55_2 = math.floor(arg_55_2 / 10)
 	end
 
-	for slot7 = #slot3, 1, -1 do
-		cloneTplTo(slot0.floatChar[slot3[slot7]], slot1)
+	for iter_55_0 = #var_55_0, 1, -1 do
+		cloneTplTo(arg_55_0.floatChar[var_55_0[iter_55_0]], arg_55_1)
 	end
 end
 
-function slot0.update(slot0)
-	slot0.hintTimer:Stop()
+function var_0_0.update(arg_56_0)
+	arg_56_0.hintTimer:Stop()
 
-	slot1 = true
-	slot0.updating = true
+	local var_56_0 = true
 
-	if next(slot0:tryMatch()) ~= nil then
-		slot0:cancelHint()
+	arg_56_0.updating = true
 
-		slot1 = false
-		slot0.combo = slot0.combo + 1
+	local var_56_1 = arg_56_0:tryMatch()
 
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
+	if next(var_56_1) ~= nil then
+		arg_56_0:cancelHint()
 
-		slot3 = nil
+		var_56_0 = false
+		arg_56_0.combo = arg_56_0.combo + 1
 
-		for slot7, slot8 in pairs(slot2) do
-			slot3 = #slot8 == 3 and 30 * slot0.combo or #slot8 == 4 and 60 * slot0.combo or 20 * #slot8 * slot0.combo
-			slot0.score = slot0.score + slot3
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_24)
 
-			setText(slot0.scoreText, slot0.score)
-			_.each(slot8, function (slot0)
-				uv0.tileIndicies[slot0[1]][slot0[2]] = nil
+		local var_56_2
 
-				if uv0.tileTfs[slot0[1]][slot0[2]] then
-					slot1 = uv0.tileTfs[slot0[1]][slot0[2]]
-					uv1 = uv1 + slot1.anchoredPosition
-					slot1:GetComponent("Image").material = uv0.whitenMat
-					slot2 = slot1.localPosition
-					slot2.z = -50
-					cloneTplTo(uv0.matchEffect, uv0.tilesRoot).localPosition = slot2
+		for iter_56_0, iter_56_1 in pairs(var_56_1) do
+			if #iter_56_1 == 3 then
+				var_56_2 = 30 * arg_56_0.combo
+			elseif #iter_56_1 == 4 then
+				var_56_2 = 60 * arg_56_0.combo
+			else
+				var_56_2 = 20 * #iter_56_1 * arg_56_0.combo
+			end
 
-					uv0:managedTween(LeanTween.value, function ()
-						Destroy(uv0)
-						Destroy(uv1)
-					end, go(slot1), 1, 0, uv2):setOnUpdate(System.Action_float(function (slot0)
-						setImageAlpha(uv0, slot0)
-						setLocalScale(uv0, Vector3.one * slot0 * 2.7)
+			arg_56_0.score = arg_56_0.score + var_56_2
+
+			setText(arg_56_0.scoreText, arg_56_0.score)
+
+			local var_56_3 = Vector2.zero
+
+			_.each(iter_56_1, function(arg_57_0)
+				arg_56_0.tileIndicies[arg_57_0[1]][arg_57_0[2]] = nil
+
+				if arg_56_0.tileTfs[arg_57_0[1]][arg_57_0[2]] then
+					local var_57_0 = arg_56_0.tileTfs[arg_57_0[1]][arg_57_0[2]]
+
+					var_56_3 = var_56_3 + var_57_0.anchoredPosition
+					var_57_0:GetComponent("Image").material = arg_56_0.whitenMat
+
+					local var_57_1 = var_57_0.localPosition
+
+					var_57_1.z = -50
+
+					local var_57_2 = cloneTplTo(arg_56_0.matchEffect, arg_56_0.tilesRoot)
+
+					var_57_2.localPosition = var_57_1
+
+					arg_56_0:managedTween(LeanTween.value, function()
+						Destroy(var_57_0)
+						Destroy(var_57_2)
+					end, go(var_57_0), 1, 0, var_0_10):setOnUpdate(System.Action_float(function(arg_59_0)
+						setImageAlpha(var_57_0, arg_59_0)
+						setLocalScale(var_57_0, Vector3.one * arg_59_0 * 2.7)
 					end))
 				end
 
-				uv0.tileTfs[slot0[1]][slot0[2]] = nil
+				arg_56_0.tileTfs[arg_57_0[1]][arg_57_0[2]] = nil
 			end)
 
-			slot9 = Vector2.zero / #slot8
-			slot10 = rtf(cloneTplTo(slot0.floatText, slot0.tilesRoot))
-			slot10.anchoredPosition = slot9
+			var_56_3 = var_56_3 / #iter_56_1
 
-			slot0:formatScore(slot10, slot3)
-			slot0:managedTween(LeanTween.moveY, function ()
-				Destroy(uv0)
-			end, slot10, slot9.y + uv2, uv3)
+			local var_56_4 = rtf(cloneTplTo(arg_56_0.floatText, arg_56_0.tilesRoot))
+
+			var_56_4.anchoredPosition = var_56_3
+
+			arg_56_0:formatScore(var_56_4, var_56_2)
+			arg_56_0:managedTween(LeanTween.moveY, function()
+				Destroy(var_56_4)
+			end, var_56_4, var_56_3.y + var_0_12, var_0_11)
 		end
 
-		slot0:managedTween(LeanTween.delayedCall, function ()
-			if not uv0.inGame then
+		arg_56_0:managedTween(LeanTween.delayedCall, function()
+			if not arg_56_0.inGame then
 				return
 			end
 
-			slot0 = 0
+			local var_61_0 = 0
 
-			for slot4 = 1, uv1 do
-				for slot8 = 1, uv2 do
-					if uv0.tileIndicies[slot4][slot8] then
-						slot9 = slot4
+			for iter_61_0 = 1, var_0_1 do
+				for iter_61_1 = 1, var_0_2 do
+					if arg_56_0.tileIndicies[iter_61_0][iter_61_1] then
+						local var_61_1 = iter_61_0
 
-						for slot13 = slot4, 1, -1 do
-							if uv0.tileIndicies[slot13 - 1][slot8] or slot13 == 1 then
-								slot9 = slot13
+						for iter_61_2 = iter_61_0, 1, -1 do
+							if arg_56_0.tileIndicies[iter_61_2 - 1][iter_61_1] or iter_61_2 == 1 then
+								var_61_1 = iter_61_2
 
 								break
 							end
 						end
 
-						if slot9 ~= slot4 then
-							slot10 = slot4 - slot9
-							slot0 = math.max(slot10, slot0)
+						if var_61_1 ~= iter_61_0 then
+							local var_61_2 = iter_61_0 - var_61_1
 
-							uv0:moveTile(uv0.tileTfs[slot4][slot8], {
-								i = slot9,
-								j = slot8
-							}, uv0.dropTime(slot10))
+							var_61_0 = math.max(var_61_2, var_61_0)
 
-							uv0.tileTfs[slot9][slot8] = uv0.tileTfs[slot4][slot8]
-							uv0.tileIndicies[slot9][slot8] = uv0.tileIndicies[slot4][slot8]
-							uv0.tileTfs[slot4][slot8] = nil
-							uv0.tileIndicies[slot4][slot8] = nil
+							arg_56_0:moveTile(arg_56_0.tileTfs[iter_61_0][iter_61_1], {
+								i = var_61_1,
+								j = iter_61_1
+							}, arg_56_0.dropTime(var_61_2))
+
+							arg_56_0.tileTfs[var_61_1][iter_61_1] = arg_56_0.tileTfs[iter_61_0][iter_61_1]
+							arg_56_0.tileIndicies[var_61_1][iter_61_1] = arg_56_0.tileIndicies[iter_61_0][iter_61_1]
+							arg_56_0.tileTfs[iter_61_0][iter_61_1] = nil
+							arg_56_0.tileIndicies[iter_61_0][iter_61_1] = nil
 						end
 					end
 				end
 			end
 
-			uv0:fillTileIndicies()
+			arg_56_0:fillTileIndicies()
 
-			if uv0.combo > 1 and next(uv0:tryMatch()) == nil then
-				slot2 = nil
-				slot3 = Vector3.New(0, 0, -50)
+			local var_61_3 = arg_56_0:tryMatch()
 
-				if uv0.combo == 2 then
-					slot2 = cloneTplTo(uv0.goodEffect, uv0.tilesRoot)
+			if arg_56_0.combo > 1 and next(var_61_3) == nil then
+				local var_61_4
+				local var_61_5 = Vector3.New(0, 0, -50)
 
-					pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv3)
-				elseif uv0.combo == 3 then
-					slot2 = cloneTplTo(uv0.greatEffect, uv0.tilesRoot)
+				if arg_56_0.combo == 2 then
+					var_61_4 = cloneTplTo(arg_56_0.goodEffect, arg_56_0.tilesRoot)
 
-					pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv3)
+					pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_25)
+				elseif arg_56_0.combo == 3 then
+					var_61_4 = cloneTplTo(arg_56_0.greatEffect, arg_56_0.tilesRoot)
+
+					pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_25)
 				else
-					slot2 = cloneTplTo(uv0.perfectEffect, uv0.tilesRoot)
+					var_61_4 = cloneTplTo(arg_56_0.perfectEffect, arg_56_0.tilesRoot)
 
-					pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv4)
+					pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_26)
 				end
 
-				slot2.localPosition = slot3
+				var_61_4.localPosition = var_61_5
 
-				uv0:managedTween(LeanTween.delayedCall, function ()
-					Destroy(uv0)
-				end, uv5, nil)
+				arg_56_0:managedTween(LeanTween.delayedCall, function()
+					Destroy(var_61_4)
+				end, var_0_14, nil)
 			end
 
-			uv0:managedTween(LeanTween.delayedCall, function ()
-				if not uv0.inGame then
+			local var_61_6 = math.max(arg_56_0:fillTiles(), var_61_0)
+
+			arg_56_0:managedTween(LeanTween.delayedCall, function()
+				if not arg_56_0.inGame then
 					return
 				end
 
-				uv0:update()
-			end, math.max(uv5, uv0.dropTime(math.max(uv0:fillTiles(), slot0))), nil)
-		end, uv1, nil)
+				arg_56_0:update()
+			end, math.max(var_0_14, arg_56_0.dropTime(var_61_6)), nil)
+		end, var_0_10, nil)
 	end
 
-	if slot0.inGame then
-		slot0.hintTimer:Reset(slot0.hintFunc, uv9)
-		slot0.hintTimer:Start()
+	if arg_56_0.inGame then
+		arg_56_0.hintTimer:Reset(arg_56_0.hintFunc, var_0_21)
+		arg_56_0.hintTimer:Start()
 	end
 
-	slot0.updating = not slot1
+	arg_56_0.updating = not var_56_0
 end
 
-function slot0.tryMatch(slot0)
-	for slot5 = 1, uv0 do
+function var_0_0.tryMatch(arg_64_0)
+	local var_64_0 = {}
+
+	for iter_64_0 = 1, var_0_1 do
+		var_64_0[iter_64_0] = {}
 	end
 
-	return slot0:bfs({
-		[slot5] = {}
-	})
+	return arg_64_0:bfs(var_64_0)
 end
 
-function slot0.bfs(slot0, slot1)
-	slot2 = {}
+function var_0_0.bfs(arg_65_0, arg_65_1)
+	local var_65_0 = {}
 
-	for slot6 = 1, uv0 do
-		for slot10 = 1, uv1 do
-			if not slot1[slot6][slot10] then
-				if not slot0:isConnected({
-					i = slot6,
-					j = slot10
+	for iter_65_0 = 1, var_0_1 do
+		for iter_65_1 = 1, var_0_2 do
+			if not arg_65_1[iter_65_0][iter_65_1] then
+				if not arg_65_0:isConnected({
+					i = iter_65_0,
+					j = iter_65_1
 				}) then
-					slot1[slot6][slot10] = true
+					arg_65_1[iter_65_0][iter_65_1] = true
 				else
-					slot11 = {
+					local var_65_1 = {
 						{
-							slot6,
-							slot10
+							iter_65_0,
+							iter_65_1
 						}
 					}
-					slot12 = {
+					local var_65_2 = {
 						{
-							slot6,
-							slot10
+							iter_65_0,
+							iter_65_1
 						}
 					}
-					slot13 = slot0.tileIndicies[slot6][slot10]
+					local var_65_3 = arg_65_0.tileIndicies[iter_65_0][iter_65_1]
 
-					while next(slot11) ~= nil do
-						slot14, slot15 = unpack(table.remove(slot11))
-						slot1[slot14][slot15] = true
+					while next(var_65_1) ~= nil do
+						local var_65_4, var_65_5 = unpack(table.remove(var_65_1))
 
-						for slot19, slot20 in pairs(uv2) do
-							if slot0.tileIndicies[slot14 + slot20[1]][slot15 + slot20[2]] and not slot1[slot21][slot22] and slot0.tileIndicies[slot21][slot22] == slot13 and slot0:isConnected({
-								i = slot21,
-								j = slot22
+						arg_65_1[var_65_4][var_65_5] = true
+
+						for iter_65_2, iter_65_3 in pairs(var_0_29) do
+							local var_65_6 = var_65_4 + iter_65_3[1]
+							local var_65_7 = var_65_5 + iter_65_3[2]
+
+							if arg_65_0.tileIndicies[var_65_6][var_65_7] and not arg_65_1[var_65_6][var_65_7] and arg_65_0.tileIndicies[var_65_6][var_65_7] == var_65_3 and arg_65_0:isConnected({
+								i = var_65_6,
+								j = var_65_7
 							}) then
-								table.insert(slot11, {
-									slot21,
-									slot22
+								table.insert(var_65_1, {
+									var_65_6,
+									var_65_7
 								})
-								table.insert(slot12, {
-									slot21,
-									slot22
+								table.insert(var_65_2, {
+									var_65_6,
+									var_65_7
 								})
 							end
 						end
 					end
 
-					if #slot12 >= 3 then
-						table.insert(slot2, slot12)
+					if #var_65_2 >= 3 then
+						table.insert(var_65_0, var_65_2)
 					end
 				end
 			end
 		end
 	end
 
-	return slot2
+	return var_65_0
 end
 
-return slot0
+return var_0_0

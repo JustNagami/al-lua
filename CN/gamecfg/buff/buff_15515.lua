@@ -1,4 +1,20 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffHP",
+			trigger = {
+				"onBulletHit"
+			},
+			arg_list = {
+				weaponType = 1,
+				target = "TargetSelf",
+				damageConvertRatio = 500,
+				bulletTag = {
+					"EMD"
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -187,21 +203,5 @@ return {
 	stack = 1,
 	id = 15515,
 	icon = 15515,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffHP",
-			trigger = {
-				"onBulletHit"
-			},
-			arg_list = {
-				weaponType = 1,
-				target = "TargetSelf",
-				damageConvertRatio = 500,
-				bulletTag = {
-					"EMD"
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

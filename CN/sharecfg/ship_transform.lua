@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.ship_transform = {
 	[970701] = {
 		id = 970701,

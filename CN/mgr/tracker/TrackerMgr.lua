@@ -1,6 +1,8 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.TrackerMgr = singletonClass("TrackerMgr")
-slot0 = pg.TrackerMgr
+
+local var_0_0 = pg.TrackerMgr
+
 TRACKING_ROLE_CREATE = "role_create"
 TRACKING_ROLE_LOGIN = "role_login"
 TRACKING_TUTORIAL_COMPLETE_1 = "tutorial_complete_1"
@@ -44,70 +46,77 @@ TRACKING_CLASS_LEVEL_UP_8 = "class_level_up_8"
 TRACKING_CLASS_LEVEL_UP_9 = "class_level_up_9"
 TRACKING_CLASS_LEVEL_UP_10 = "class_level_up_10"
 
-function slot0.Ctor(slot0)
-	slot1 = nil
+function var_0_0.Ctor(arg_1_0)
+	local var_1_0
 
 	if PLATFORM_CODE == PLATFORM_CH then
-		slot1 = require("Mgr.Tracker.BiliTracker")
+		var_1_0 = require("Mgr.Tracker.BiliTracker")
 	elseif PLATFORM_CODE == PLATFORM_JP then
-		slot1 = require("Mgr.Tracker.AiriJPTracker")
+		var_1_0 = require("Mgr.Tracker.AiriJPTracker")
 	elseif PLATFORM_CODE == PLATFORM_US then
-		slot1 = require("Mgr.Tracker.AiriUSTracker")
+		var_1_0 = require("Mgr.Tracker.AiriUSTracker")
 	elseif PLATFORM_CODE == PLATFORM_KR then
-		slot1 = require("Mgr.Tracker.KwxyKrTracker")
+		var_1_0 = require("Mgr.Tracker.KwxyKrTracker")
 	elseif PLATFORM_CODE == PLATFORM_CHT then
-		slot1 = require("Mgr.Tracker.YongshiTracker")
+		var_1_0 = require("Mgr.Tracker.YongshiTracker")
 	end
 
-	if slot1 then
-		slot0.instance = slot1.New()
-	end
-end
-
-function slot0.Call(slot0, slot1, ...)
-	if slot0.instance and slot0.instance[slot1] then
-		slot0.instance[slot1](slot0.instance, ...)
+	if var_1_0 then
+		arg_1_0.instance = var_1_0.New()
 	end
 end
 
-function slot0.Tracking(slot0, slot1, slot2, slot3)
-	slot5 = getProxy(UserProxy) ~= nil and slot4:getData() or nil
+function var_0_0.Call(arg_2_0, arg_2_1, ...)
+	if arg_2_0.instance and arg_2_0.instance[arg_2_1] then
+		arg_2_0.instance[arg_2_1](arg_2_0.instance, ...)
+	end
+end
 
-	if (slot5 ~= nil and slot5.uid or nil) == nil then
+function var_0_0.Tracking(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	local var_3_0 = getProxy(UserProxy)
+	local var_3_1 = var_3_0 ~= nil and var_3_0:getData() or nil
+	local var_3_2 = var_3_1 ~= nil and var_3_1.uid or nil
+
+	if var_3_2 == nil then
 		return
 	end
 
-	slot8 = getProxy(PlayerProxy) ~= nil and slot7:getData() or nil
-	slot9 = slot8 ~= nil and slot8.id or nil
+	local var_3_3 = getProxy(PlayerProxy)
+	local var_3_4 = var_3_3 ~= nil and var_3_3:getData() or nil
+	local var_3_5 = var_3_4 ~= nil and var_3_4.id or nil
 
-	if (slot9 ~= nil and slot9 or slot3) == nil then
+	var_3_5 = var_3_5 ~= nil and var_3_5 or arg_3_3
+
+	if var_3_5 == nil then
 		return
 	end
 
-	slot12 = getProxy(ServerProxy):getLastServer(slot6).id
+	local var_3_6 = getProxy(ServerProxy):getLastServer(var_3_2).id
 
-	if slot1 == TRACKING_2D_RETENTION or slot1 == TRACKING_7D_RETENTION then
-		if PlayerPrefs.GetInt("tracking_" .. slot1, 0) <= 0 then
-			originalPrint("tracking type : " .. slot1 .. "   user_id:" .. slot9)
-			PlayerPrefs.SetInt(slot13, 1)
+	if arg_3_1 == TRACKING_2D_RETENTION or arg_3_1 == TRACKING_7D_RETENTION then
+		local var_3_7 = "tracking_" .. arg_3_1
+
+		if PlayerPrefs.GetInt(var_3_7, 0) <= 0 then
+			originalPrint("tracking type : " .. arg_3_1 .. "   user_id:" .. var_3_5)
+			PlayerPrefs.SetInt(var_3_7, 1)
 			PlayerPrefs.Save()
-			slot0:Call("Tracking", slot1, slot9, slot2)
+			arg_3_0:Call("Tracking", arg_3_1, var_3_5, arg_3_2)
 		end
 	else
-		originalPrint("tracking type : " .. slot1 .. ",   user_id:" .. slot9 .. ",   data:" .. (slot2 or "nil"))
-		slot0:Call("Tracking", slot1, slot9, slot2, slot12)
+		originalPrint("tracking type : " .. arg_3_1 .. ",   user_id:" .. var_3_5 .. ",   data:" .. (arg_3_2 or "nil"))
+		arg_3_0:Call("Tracking", arg_3_1, var_3_5, arg_3_2, var_3_6)
 	end
 
-	if slot1 == TRACKING_PURCHASE_CLICK then
-		if slot2 == 1 then
-			originalPrint("tracking type : " .. TRACKING_PURCHASE_CLICK_MONTHLYCARD .. "   user_id:" .. slot9)
-			slot0:Call("Tracking", TRACKING_PURCHASE_CLICK_MONTHLYCARD, slot9, slot2)
-		elseif slot2 == 2 then
-			originalPrint("tracking type : " .. TRACKING_PURCHASE_CLICK_GIFTBAG .. "   user_id:" .. slot9)
-			slot0:Call("Tracking", TRACKING_PURCHASE_CLICK_GIFTBAG, slot9, slot2)
+	if arg_3_1 == TRACKING_PURCHASE_CLICK then
+		if arg_3_2 == 1 then
+			originalPrint("tracking type : " .. TRACKING_PURCHASE_CLICK_MONTHLYCARD .. "   user_id:" .. var_3_5)
+			arg_3_0:Call("Tracking", TRACKING_PURCHASE_CLICK_MONTHLYCARD, var_3_5, arg_3_2)
+		elseif arg_3_2 == 2 then
+			originalPrint("tracking type : " .. TRACKING_PURCHASE_CLICK_GIFTBAG .. "   user_id:" .. var_3_5)
+			arg_3_0:Call("Tracking", TRACKING_PURCHASE_CLICK_GIFTBAG, var_3_5, arg_3_2)
 		else
-			originalPrint("tracking type : " .. TRACKING_PURCHASE_CLICK_DIAMOND .. "   user_id:" .. slot9)
-			slot0:Call("Tracking", TRACKING_PURCHASE_CLICK_DIAMOND, slot9, slot2)
+			originalPrint("tracking type : " .. TRACKING_PURCHASE_CLICK_DIAMOND .. "   user_id:" .. var_3_5)
+			arg_3_0:Call("Tracking", TRACKING_PURCHASE_CLICK_DIAMOND, var_3_5, arg_3_2)
 		end
 	end
 end

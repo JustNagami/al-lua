@@ -1,8 +1,8 @@
-slot0 = class("MainCalcHxSequence")
+﻿local var_0_0 = class("MainCalcHxSequence")
 
-function slot0.Execute(slot0, slot1)
+function var_0_0.Execute(arg_1_0, arg_1_1)
 	HXSet.calcLocalizationUse()
-	slot1()
+	arg_1_1()
 end
 
-return slot0
+return var_0_0

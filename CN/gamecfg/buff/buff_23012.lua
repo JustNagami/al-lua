@@ -1,17 +1,4 @@
-return {
-	{
-		desc = "主炮每进行10次攻击，触发全弹发射-1934型II"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行10次攻击，触发全弹发射-1934型II",
-	stack = 1,
-	id = 23012,
-	icon = 20000,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -38,5 +25,18 @@ return {
 				countType = 23010
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行10次攻击，触发全弹发射-1934型II"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行10次攻击，触发全弹发射-1934型II",
+	stack = 1,
+	id = 23012,
+	icon = 20000,
+	last_effect = ""
 }

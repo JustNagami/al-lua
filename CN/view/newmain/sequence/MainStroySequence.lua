@@ -1,101 +1,127 @@
-slot0 = class("MainStroySequence")
+﻿local var_0_0 = class("MainStroySequence")
 
-function slot0.Execute(slot0, slot1)
-	slot2 = {}
+function var_0_0.Execute(arg_1_0, arg_1_1)
+	local var_1_0 = {}
 
-	slot0:CollectTaskStories(slot2)
-	slot0:CollectCommanderStories(slot2)
-	slot0:CollectNpcStories(slot2)
-	slot0:CollectPuzzlaStories(slot2)
-	slot0:CollectIdolStories(slot2)
-	slot0:CollectDOAStories(slot2)
-	slot0:CollectActivityStage(slot2)
-	slot0:Play(slot2, slot1)
+	arg_1_0:CollectTaskStories(var_1_0)
+	arg_1_0:CollectCommanderStories(var_1_0)
+	arg_1_0:CollectNpcStories(var_1_0)
+	arg_1_0:CollectPuzzlaStories(var_1_0)
+	arg_1_0:CollectIdolStories(var_1_0)
+	arg_1_0:CollectDOAStories(var_1_0)
+	arg_1_0:CollectActivityStage(var_1_0)
+	arg_1_0:Play(var_1_0, arg_1_1)
 end
 
-function slot0.Play(slot0, slot1, slot2)
-	slot3 = {}
+function var_0_0.Play(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = {}
 
-	for slot7, slot8 in ipairs(slot1) do
-		if type(slot8) == "string" and not pg.NewStoryMgr.GetInstance():IsPlayed(slot8) then
-			table.insert(slot3, function (slot0)
-				pg.NewStoryMgr.GetInstance():Play(uv0, slot0, true, true)
+	for iter_2_0, iter_2_1 in ipairs(arg_2_1) do
+		if type(iter_2_1) == "string" and not pg.NewStoryMgr.GetInstance():IsPlayed(iter_2_1) then
+			table.insert(var_2_0, function(arg_3_0)
+				pg.NewStoryMgr.GetInstance():Play(iter_2_1, arg_3_0, true, true)
 			end)
-		elseif type(slot8) == "function" then
-			table.insert(slot3, slot8)
+		elseif type(iter_2_1) == "function" then
+			table.insert(var_2_0, iter_2_1)
 		end
 	end
 
-	seriesAsync(slot3, slot2)
+	seriesAsync(var_2_0, arg_2_2)
 end
 
-function slot0.CollectTaskStories(slot0, slot1)
-	for slot6, slot7 in pairs(getProxy(TaskProxy):getRawData()) do
-		if slot7:getConfig("story_id") and slot8 ~= "" then
-			table.insert(slot1, slot8)
+function var_0_0.CollectTaskStories(arg_4_0, arg_4_1)
+	local var_4_0 = getProxy(TaskProxy):getRawData()
+
+	for iter_4_0, iter_4_1 in pairs(var_4_0) do
+		local var_4_1 = iter_4_1:getConfig("story_id")
+
+		if var_4_1 and var_4_1 ~= "" then
+			table.insert(arg_4_1, var_4_1)
 		end
 	end
 end
 
-function slot0.CollectCommanderStories(slot0, slot1)
+function var_0_0.CollectCommanderStories(arg_5_0, arg_5_1)
 	if ENABLE_GUIDE and getProxy(PlayerProxy):getRawData().level >= 40 then
-		table.insert(slot1, "ZHIHUIMIAO1")
+		table.insert(arg_5_1, "ZHIHUIMIAO1")
 	end
 end
 
-function slot0.CollectNpcStories(slot0, slot1)
-	slot3 = getProxy(TaskProxy)
+function var_0_0.CollectNpcStories(arg_6_0, arg_6_1)
+	local var_6_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.ACT_NPC_SHIP_ID)
+	local var_6_1 = getProxy(TaskProxy)
 
-	if getProxy(ActivityProxy):getActivityById(ActivityConst.ACT_NPC_SHIP_ID) and not slot2:isEnd() and slot2:getConfig("config_client").npc then
-		slot6 = slot4.npc[2]
+	if var_6_0 and not var_6_0:isEnd() then
+		local var_6_2 = var_6_0:getConfig("config_client")
 
-		if slot4.npc[1] and slot5 ~= "" then
-			table.insert(slot1, slot5)
-		end
+		if var_6_2.npc then
+			local var_6_3 = var_6_2.npc[1]
+			local var_6_4 = var_6_2.npc[2]
 
-		if slot6 and type(slot6) == "number" then
-			table.insert(slot1, function (slot0)
-				if (uv0:getTaskById(uv1) or uv0:getFinishTaskById(uv1)) and slot1:isFinish() and not slot1:isReceive() then
-					pg.m02:sendNotification(GAME.FETCH_NPC_SHIP, {
-						taskId = slot1.id,
-						callback = slot0
-					})
-				else
-					slot0()
+			if var_6_3 and var_6_3 ~= "" then
+				table.insert(arg_6_1, var_6_3)
+			end
+
+			if var_6_4 and type(var_6_4) == "number" then
+				local function var_6_5(arg_7_0)
+					local var_7_0 = var_6_1:getTaskById(var_6_4) or var_6_1:getFinishTaskById(var_6_4)
+
+					if var_7_0 and var_7_0:isFinish() and not var_7_0:isReceive() then
+						pg.m02:sendNotification(GAME.FETCH_NPC_SHIP, {
+							taskId = var_7_0.id,
+							callback = arg_7_0
+						})
+					else
+						arg_7_0()
+					end
 				end
-			end)
+
+				table.insert(arg_6_1, var_6_5)
+			end
 		end
 	end
 end
 
-function slot0.CollectPuzzlaStories(slot0, slot1)
-	for slot6, slot7 in ipairs(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PUZZLA)) do
-		if slot7 and not slot7:isEnd() and type(slot7:getConfig("config_client")) == "table" and slot8[2] and type(slot8[2]) == "string" then
-			table.insert(slot1, slot8[2])
+function var_0_0.CollectPuzzlaStories(arg_8_0, arg_8_1)
+	local var_8_0 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PUZZLA)
+
+	for iter_8_0, iter_8_1 in ipairs(var_8_0) do
+		if iter_8_1 and not iter_8_1:isEnd() then
+			local var_8_1 = iter_8_1:getConfig("config_client")
+
+			if type(var_8_1) == "table" and var_8_1[2] and type(var_8_1[2]) == "string" then
+				table.insert(arg_8_1, var_8_1[2])
+			end
 		end
 	end
 end
 
-function slot0.CollectIdolStories(slot0, slot1)
-	if getProxy(ActivityProxy):getActivityById(ActivityConst.MUSIC_CHUIXUE7DAY_ID) and not slot2:isEnd() and slot2:getConfig("config_client").story[1][1] then
-		table.insert(slot1, slot4)
-	end
-end
+function var_0_0.CollectIdolStories(arg_9_0, arg_9_1)
+	local var_9_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.MUSIC_CHUIXUE7DAY_ID)
 
-function slot0.CollectDOAStories(slot0, slot1)
-	if getProxy(ActivityProxy):getActivityById(ActivityConst.DOA_COLLECTION_FURNITURE) and not slot2:isEnd() and slot2:getConfig("config_client").story ~= nil then
-		table.insert(slot1, slot2:getConfig("config_client").story)
-	end
-end
+	if var_9_0 and not var_9_0:isEnd() then
+		local var_9_1 = var_9_0:getConfig("config_client").story[1][1]
 
-function slot0.CollectActivityStage(slot0, slot1)
-	slot5 = ActivityConst.ACTIVITY_TYPE_ZPROJECT
-
-	for slot5, slot6 in ipairs(getProxy(ActivityProxy):getActivitiesByType(slot5)) do
-		if slot6 and not slot6:isEnd() and slot6:getConfig("config_client").story ~= nil then
-			table.insert(slot1, slot6:getConfig("config_client").story)
+		if var_9_1 then
+			table.insert(arg_9_1, var_9_1)
 		end
 	end
 end
 
-return slot0
+function var_0_0.CollectDOAStories(arg_10_0, arg_10_1)
+	local var_10_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.DOA_COLLECTION_FURNITURE)
+
+	if var_10_0 and not var_10_0:isEnd() and var_10_0:getConfig("config_client").story ~= nil then
+		table.insert(arg_10_1, var_10_0:getConfig("config_client").story)
+	end
+end
+
+function var_0_0.CollectActivityStage(arg_11_0, arg_11_1)
+	for iter_11_0, iter_11_1 in ipairs(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_ZPROJECT)) do
+		if iter_11_1 and not iter_11_1:isEnd() and iter_11_1:getConfig("config_client").story ~= nil then
+			table.insert(arg_11_1, iter_11_1:getConfig("config_client").story)
+		end
+	end
+end
+
+return var_0_0

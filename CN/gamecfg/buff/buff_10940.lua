@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id = 10941,
+				target = "TargetSelf",
+				time = 20
+			}
+		}
+	},
 	{
 		desc = "鬼神演舞"
 	},
@@ -39,18 +52,5 @@ return {
 	stack = 1,
 	id = 10940,
 	icon = 10940,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id = 10941,
-				target = "TargetSelf",
-				time = 20
-			}
-		}
-	}
+	last_effect = ""
 }

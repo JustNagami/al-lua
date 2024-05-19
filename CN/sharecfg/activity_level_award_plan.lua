@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_level_award_plan = {
 	{
 		id = 1,

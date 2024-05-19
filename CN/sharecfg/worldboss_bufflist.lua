@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.worldboss_bufflist = {
 	[1001] = {
 		lua_id = 59010,

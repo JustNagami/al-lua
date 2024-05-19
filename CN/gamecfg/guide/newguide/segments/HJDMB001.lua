@@ -1,3 +1,7 @@
+﻿local var_0_0 = {
+	"点击按钮查看帮助"
+}
+
 return {
 	id = "test",
 	events = {
@@ -8,9 +12,7 @@ return {
 				mode = 2,
 				posY = 180.11,
 				posX = 538.63,
-				text = ({
-					"点击按钮查看帮助"
-				})[1],
+				text = var_0_0[1],
 				ui = {
 					path = "",
 					pathIndex = -1

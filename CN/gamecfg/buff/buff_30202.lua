@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行10次攻击，触发专属弹幕-火力II"
-	},
-	desc_get = "主炮每进行10次攻击，触发专属弹幕-火力II",
-	name = "专属弹幕-火力II",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行10次攻击，触发专属弹幕-火力II",
-	stack = 1,
-	id = 30202,
-	icon = 30200,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -51,5 +37,19 @@ return {
 				countType = 30200
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行10次攻击，触发专属弹幕-火力II"
+	},
+	desc_get = "主炮每进行10次攻击，触发专属弹幕-火力II",
+	name = "专属弹幕-火力II",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行10次攻击，触发专属弹幕-火力II",
+	stack = 1,
+	id = 30202,
+	icon = 30200,
+	last_effect = ""
 }

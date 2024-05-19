@@ -1,44 +1,47 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleUnitEvent
-slot0.Battle.BattleNPCCharacter = class("BattleNPCCharacter", slot0.Battle.BattleEnemyCharacter)
-slot0.Battle.BattleNPCCharacter.__name = "BattleNPCCharacter"
-slot2 = slot0.Battle.BattleNPCCharacter
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleUnitEvent
 
-	slot0._preCastBound = false
+var_0_0.Battle.BattleNPCCharacter = class("BattleNPCCharacter", var_0_0.Battle.BattleEnemyCharacter)
+var_0_0.Battle.BattleNPCCharacter.__name = "BattleNPCCharacter"
+
+local var_0_2 = var_0_0.Battle.BattleNPCCharacter
+
+function var_0_2.Ctor(arg_1_0)
+	var_0_2.super.Ctor(arg_1_0)
+
+	arg_1_0._preCastBound = false
 end
 
-function slot2.SetHPColor(slot0, slot1)
-	slot0._HPColor = slot1
+function var_0_2.SetHPColor(arg_2_0, arg_2_1)
+	arg_2_0._HPColor = arg_2_1
 end
 
-function slot2.GetHPColor(slot0)
-	return slot0._HPColor
+function var_0_2.GetHPColor(arg_3_0)
+	return arg_3_0._HPColor
 end
 
-function slot2.SetModleID(slot0, slot1)
-	slot0._prefab = slot1
+function var_0_2.SetModleID(arg_4_0, arg_4_1)
+	arg_4_0._prefab = arg_4_1
 end
 
-function slot2.GetModleID(slot0)
-	if slot0._prefab then
-		return slot0._prefab
+function var_0_2.GetModleID(arg_5_0)
+	if arg_5_0._prefab then
+		return arg_5_0._prefab
 	else
-		return slot0._unitData:GetTemplate().prefab
+		return arg_5_0._unitData:GetTemplate().prefab
 	end
 end
 
-function slot2.SetUnvisible(slot0)
-	slot0._isUnvisible = true
+function var_0_2.SetUnvisible(arg_6_0)
+	arg_6_0._isUnvisible = true
 end
 
-function slot2.MakeVisible(slot0)
-	if slot0._isUnvisible then
-		slot0._go:SetActive(false)
-		slot0._HPBar:SetActive(false)
-		slot0._buffBar:SetActive(false)
+function var_0_2.MakeVisible(arg_7_0)
+	if arg_7_0._isUnvisible then
+		arg_7_0._go:SetActive(false)
+		arg_7_0._HPBar:SetActive(false)
+		arg_7_0._buffBar:SetActive(false)
 	end
 end

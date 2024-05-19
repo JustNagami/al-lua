@@ -1,35 +1,42 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleFormulas
-slot2 = slot0.Battle.BattleConfig
-slot0.Battle.CardPuzzleControlStrategy = class("CardPuzzleControlStrategy", slot0.Battle.BattleJoyStickBotBaseStrategy)
-slot3 = slot0.Battle.CardPuzzleControlStrategy
-slot3.__name = "CardPuzzleControlStrategy"
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
-	slot0._fleetVO:GetCardPuzzleComponent():AttachMoveController(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleFormulas
+local var_0_2 = var_0_0.Battle.BattleConfig
 
-	slot0._moveState = uv1.Battle.CardPuzzleMoveState.New(slot0._fleetVO)
+var_0_0.Battle.CardPuzzleControlStrategy = class("CardPuzzleControlStrategy", var_0_0.Battle.BattleJoyStickBotBaseStrategy)
+
+local var_0_3 = var_0_0.Battle.CardPuzzleControlStrategy
+
+var_0_3.__name = "CardPuzzleControlStrategy"
+
+function var_0_3.Ctor(arg_1_0, arg_1_1)
+	var_0_3.super.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._fleetVO:GetCardPuzzleComponent():AttachMoveController(arg_1_0)
+
+	arg_1_0._moveState = var_0_0.Battle.CardPuzzleMoveState.New(arg_1_0._fleetVO)
 end
 
-function slot3.GetStrategyType(slot0)
-	return uv0.Battle.BattleJoyStickAutoBot.CARD_PUZZLE_CONTROL
+function var_0_3.GetStrategyType(arg_2_0)
+	return var_0_0.Battle.BattleJoyStickAutoBot.CARD_PUZZLE_CONTROL
 end
 
-function slot3.InputTargetPoint(slot0, slot1, slot2)
-	slot0._moveState:SetReferencePoint(slot1)
-	slot0._moveState:FinishCallback(slot2)
-	slot0._moveState:ChangeState(slot0._moveState.STATE_MOVE)
+function var_0_3.InputTargetPoint(arg_3_0, arg_3_1, arg_3_2)
+	arg_3_0._moveState:SetReferencePoint(arg_3_1)
+	arg_3_0._moveState:FinishCallback(arg_3_2)
+	arg_3_0._moveState:ChangeState(arg_3_0._moveState.STATE_MOVE)
 end
 
-function slot3.analysis(slot0)
-	slot0._hrz, slot0._vtc = slot0._moveState:GetDirection()
+function var_0_3.analysis(arg_4_0)
+	local var_4_0, var_4_1 = arg_4_0._moveState:GetDirection()
+
+	arg_4_0._hrz = var_4_0
+	arg_4_0._vtc = var_4_1
 end
 
-function slot3.Output(slot0)
-	slot0._moveState:Update()
-	slot0:analysis()
+function var_0_3.Output(arg_5_0)
+	arg_5_0._moveState:Update()
+	arg_5_0:analysis()
 
-	return slot0._hrz, slot0._vtc
+	return arg_5_0._hrz, arg_5_0._vtc
 end

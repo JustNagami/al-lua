@@ -1,6 +1,7 @@
-slot0 = class("WorldAutoFightRewardMediator", ContextMediator)
+﻿local var_0_0 = class("WorldAutoFightRewardMediator", ContextMediator)
 
-function slot0.register(slot0)
+function var_0_0.register(arg_1_0)
+	return
 end
 
-return slot0
+return var_0_0

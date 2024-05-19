@@ -1,38 +1,41 @@
-slot0 = class("AtelierMaterialDetailMediator", import("view.base.ContextMediator"))
-slot0.SHOW_DETAIL = "SHOW_DETAIL"
-slot0.GO_RECIPE = "GO_RECIPE"
+﻿local var_0_0 = class("AtelierMaterialDetailMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(GAME.GO_SCENE, function (slot0, slot1, slot2)
-		uv0.viewComponent:closeView()
-		uv0:sendNotification(GAME.GO_SCENE, slot1, slot2)
+var_0_0.SHOW_DETAIL = "SHOW_DETAIL"
+var_0_0.GO_RECIPE = "GO_RECIPE"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(GAME.GO_SCENE, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0.viewComponent:closeView()
+		arg_1_0:sendNotification(GAME.GO_SCENE, arg_2_1, arg_2_2)
 	end)
-	slot0:bind(uv0.GO_RECIPE, function (slot0, slot1)
-		uv0.viewComponent:closeView()
+	arg_1_0:bind(var_0_0.GO_RECIPE, function(arg_3_0, arg_3_1)
+		arg_1_0.viewComponent:closeView()
 
 		if getProxy(ContextProxy):getCurrentContext():getContextByMediator(AtelierCompositeMediator) then
-			uv0:sendNotification(AtelierCompositeMediator.OPEN_FORMULA, slot1)
+			arg_1_0:sendNotification(AtelierCompositeMediator.OPEN_FORMULA, arg_3_1)
 		else
-			uv0:sendNotification(GAME.GO_SCENE, SCENE.ATELIER_COMPOSITE, {
-				formulaId = slot1
+			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.ATELIER_COMPOSITE, {
+				formulaId = arg_3_1
 			})
 		end
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_4_0)
 	return {}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
 
-	if slot1:getName() == nil then
-		-- Nothing
+	if var_5_0 == nil then
+		-- block empty
 	end
 end
 
-function slot0.remove(slot0)
+function var_0_0.remove(arg_6_0)
+	return
 end
 
-return slot0
+return var_0_0

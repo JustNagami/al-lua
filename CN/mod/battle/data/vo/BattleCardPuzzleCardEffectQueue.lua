@@ -1,83 +1,93 @@
-ys = ys or {}
-slot1 = class("BattleCardPuzzleCardEffectQueue")
-ys.Battle.BattleCardPuzzleCardEffectQueue = slot1
-slot1.__name = "BattleCardPuzzleCardEffectQueue"
-slot1.QUEUE_TYPE_NORMAL = "normal"
-slot1.QUEUE_TYPE_RETURN = "return"
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	slot0._card = slot1
-	slot0._holdForInputMark = false
-	slot0._condition = nil
-	slot0._moveAfterCast = nil
-	slot0._effectList = {}
-	slot0._headEffect = nil
+local var_0_0 = ys
+local var_0_1 = class("BattleCardPuzzleCardEffectQueue")
+
+var_0_0.Battle.BattleCardPuzzleCardEffectQueue = var_0_1
+var_0_1.__name = "BattleCardPuzzleCardEffectQueue"
+var_0_1.QUEUE_TYPE_NORMAL = "normal"
+var_0_1.QUEUE_TYPE_RETURN = "return"
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._card = arg_1_1
+	arg_1_0._holdForInputMark = false
+	arg_1_0._condition = nil
+	arg_1_0._moveAfterCast = nil
+	arg_1_0._effectList = {}
+	arg_1_0._headEffect = nil
 end
 
-function slot1.SetQueueType(slot0, slot1)
-	slot0._queueType = slot1
+function var_0_1.SetQueueType(arg_2_0, arg_2_1)
+	arg_2_0._queueType = arg_2_1
 end
 
-function slot1.GetQueueType(slot0)
-	return slot0._queueType
+function var_0_1.GetQueueType(arg_3_0)
+	return arg_3_0._queueType
 end
 
-function slot1.ConfigData(slot0, slot1)
-	slot0._condition = slot1.condition
-	slot0._branch = slot1.branch
-	slot2 = #slot1
-	slot3 = -1
+function var_0_1.ConfigData(arg_4_0, arg_4_1)
+	arg_4_0._condition = arg_4_1.condition
+	arg_4_0._branch = arg_4_1.branch
 
-	while slot2 > 0 do
-		assert(uv0.Battle[slot1[slot2].type] ~= nil, "找不到对应的卡牌效果类型>>" .. slot4.type .. "<<，检查卡牌ID：" .. slot0._card:GetCardID())
+	local var_4_0 = #arg_4_1
+	local var_4_1 = -1
 
-		if uv0.Battle[slot4.type].New(slot4):HoldForInput() then
-			slot0._holdForInputMark = true
+	while var_4_0 > 0 do
+		local var_4_2 = arg_4_1[var_4_0]
+
+		assert(var_0_0.Battle[var_4_2.type] ~= nil, "找不到对应的卡牌效果类型>>" .. var_4_2.type .. "<<，检查卡牌ID：" .. arg_4_0._card:GetCardID())
+
+		local var_4_3 = var_0_0.Battle[var_4_2.type].New(var_4_2)
+
+		if var_4_3:HoldForInput() then
+			arg_4_0._holdForInputMark = true
 		end
 
-		if slot5:MoveCardAfterCast() ~= slot0._moveAfterCast then
-			slot0._moveAfterCast = slot5:MoveCardAfterCast()
+		if var_4_3:MoveCardAfterCast() ~= arg_4_0._moveAfterCast then
+			arg_4_0._moveAfterCast = var_4_3:MoveCardAfterCast()
 		end
 
-		slot5:ConfigCard(slot0._card)
-		slot5:SetQueue(slot0)
+		var_4_3:ConfigCard(arg_4_0._card)
+		var_4_3:SetQueue(arg_4_0)
 
-		slot0._effectList[slot5] = slot3
-		slot2 = slot2 - 1
-		slot3 = slot5
+		arg_4_0._effectList[var_4_3] = var_4_1
+		var_4_0 = var_4_0 - 1
+		var_4_1 = var_4_3
 	end
 
-	slot0._headEffect = slot3
+	arg_4_0._headEffect = var_4_1
 end
 
-function slot1.Start(slot0)
-	if slot0._headEffect == -1 then
-		slot0._card:QueueFinish(slot0)
+function var_0_1.Start(arg_5_0)
+	if arg_5_0._headEffect == -1 then
+		arg_5_0._card:QueueFinish(arg_5_0)
 	else
-		slot0._headEffect:Execute()
+		arg_5_0._headEffect:Execute()
 	end
 end
 
-function slot1.EffectFinale(slot0, slot1)
-	if slot0._effectList[slot1] == -1 then
-		slot0._card:QueueFinish(slot0)
+function var_0_1.EffectFinale(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_0._effectList[arg_6_1]
+
+	if var_6_0 == -1 then
+		arg_6_0._card:QueueFinish(arg_6_0)
 	else
-		slot2:Execute()
+		var_6_0:Execute()
 	end
 end
 
-function slot1.GetBranch(slot0)
-	return slot0._branch
+function var_0_1.GetBranch(arg_7_0)
+	return arg_7_0._branch
 end
 
-function slot1.GetHoldForInputMark(slot0)
-	return slot0._holdForInputMark
+function var_0_1.GetHoldForInputMark(arg_8_0)
+	return arg_8_0._holdForInputMark
 end
 
-function slot1.GetMoveAfterCast(slot0)
-	return slot0._moveAfterCast
+function var_0_1.GetMoveAfterCast(arg_9_0)
+	return arg_9_0._moveAfterCast
 end
 
-function slot1.GetCondition(slot0)
-	return slot0._condition
+function var_0_1.GetCondition(arg_10_0)
+	return arg_10_0._condition
 end

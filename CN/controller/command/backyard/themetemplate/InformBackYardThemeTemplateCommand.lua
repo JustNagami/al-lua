@@ -1,7 +1,8 @@
-slot0 = class("InformBackYardThemeTemplateCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("InformBackYardThemeTemplateCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody().playerName
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.playerName
 
 	if getProxy(PlayerProxy):getRawData().level < 20 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("inform_level_limit"))
@@ -9,32 +10,38 @@ function slot0.execute(slot0, slot1)
 		return
 	end
 
-	slot5 = slot2.uid
-	slot6 = slot2.tid
+	local var_1_2 = var_1_0.uid
+	local var_1_3 = var_1_0.tid
+	local var_1_4 = 0
 
-	for slot11, slot12 in ipairs(slot2.content) do
-		slot7 = slot12 + 0
+	for iter_1_0, iter_1_1 in ipairs(var_1_0.content) do
+		var_1_4 = iter_1_1 + var_1_4
 	end
 
-	if not getProxy(DormProxy):GetShopThemeTemplateById(slot6) and not slot8:GetCollectionThemeTemplateById(slot6) or not slot9.name then
+	local var_1_5 = getProxy(DormProxy)
+	local var_1_6 = var_1_5:GetShopThemeTemplateById(var_1_3) or var_1_5:GetCollectionThemeTemplateById(var_1_3)
+
+	if not var_1_6 or not var_1_6.name then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(19129, {
-		target_id = slot5,
-		target_name = slot3,
-		theme_id = slot6,
-		theme_name = slot9.name,
-		reason = slot7
-	}, 19130, function (slot0)
-		if slot0.result == 0 then
-			table.insert(getProxy(ChatProxy).informs, uv0 .. uv1)
-			uv2:sendNotification(GAME.INFORM_THEME_TEMPLATE_DONE)
+		target_id = var_1_2,
+		target_name = var_1_1,
+		theme_id = var_1_3,
+		theme_name = var_1_6.name,
+		reason = var_1_4
+	}, 19130, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(ChatProxy)
+
+			table.insert(var_2_0.informs, var_1_2 .. var_1_3)
+			arg_1_0:sendNotification(GAME.INFORM_THEME_TEMPLATE_DONE)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("inform_sueecss"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

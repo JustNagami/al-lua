@@ -1,52 +1,56 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConfig
-slot2 = slot0.Battle.BattleVariable
-slot0.Battle.BattleCameraBoundFixDecorate = class("BattleCameraBoundFixDecorate")
-slot0.Battle.BattleCameraBoundFixDecorate.__name = "BattleCameraBoundFixDecorate"
-slot3 = slot0.Battle.BattleCameraBoundFixDecorate
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConfig
+local var_0_2 = var_0_0.Battle.BattleVariable
+
+var_0_0.Battle.BattleCameraBoundFixDecorate = class("BattleCameraBoundFixDecorate")
+var_0_0.Battle.BattleCameraBoundFixDecorate.__name = "BattleCameraBoundFixDecorate"
+
+local var_0_3 = var_0_0.Battle.BattleCameraBoundFixDecorate
+
+function var_0_3.Ctor(arg_1_0)
+	return
 end
 
-function slot3.SetMapData(slot0, slot1, slot2, slot3, slot4)
-	slot0._cameraUpperBound = slot1 + 30
-	slot0._cameraLowerBound = slot2 - 5
-	slot0._cameraLeftBound = slot3 - 3
-	slot0._cameraRightBound = slot4 + 3
-	slot0._cameraHalfWidth = uv0.CAMERA_SIZE * pg.CameraFixMgr.GetInstance().targetRatio
-	slot0._cameraLeftBoundPoint = slot0._cameraLeftBound + slot0._cameraHalfWidth
-	slot0._cameraRightBoundPoint = slot0._cameraRightBound - slot0._cameraHalfWidth
-	slot0._projectionConst = uv0.CAMERA_SIZE / uv1._camera_radian_x_sin
+function var_0_3.SetMapData(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
+	arg_2_0._cameraUpperBound = arg_2_1 + 30
+	arg_2_0._cameraLowerBound = arg_2_2 - 5
+	arg_2_0._cameraLeftBound = arg_2_3 - 3
+	arg_2_0._cameraRightBound = arg_2_4 + 3
+	arg_2_0._cameraHalfWidth = var_0_1.CAMERA_SIZE * pg.CameraFixMgr.GetInstance().targetRatio
+	arg_2_0._cameraLeftBoundPoint = arg_2_0._cameraLeftBound + arg_2_0._cameraHalfWidth
+	arg_2_0._cameraRightBoundPoint = arg_2_0._cameraRightBound - arg_2_0._cameraHalfWidth
+	arg_2_0._projectionConst = var_0_1.CAMERA_SIZE / var_0_2._camera_radian_x_sin
 
-	return slot0._cameraUpperBound, slot0._cameraLowerBound, slot0._cameraLeftBound, slot0._cameraRightBound
+	return arg_2_0._cameraUpperBound, arg_2_0._cameraLowerBound, arg_2_0._cameraLeftBound, arg_2_0._cameraRightBound
 end
 
-function slot3.GetCameraPos(slot0, slot1)
-	slot2 = slot1.y / uv0._camera_radian_x_tan + slot0._projectionConst
+function var_0_3.GetCameraPos(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_1.y / var_0_2._camera_radian_x_tan + arg_3_0._projectionConst
 
-	if slot1.z < slot0._cameraLowerBound then
-		slot1.z = slot0._cameraLowerBound
-	elseif slot1.z > slot0._cameraUpperBound - slot2 then
-		slot1.z = slot0._cameraUpperBound - slot2
+	if arg_3_1.z < arg_3_0._cameraLowerBound then
+		arg_3_1.z = arg_3_0._cameraLowerBound
+	elseif arg_3_1.z > arg_3_0._cameraUpperBound - var_3_0 then
+		arg_3_1.z = arg_3_0._cameraUpperBound - var_3_0
 	end
 
-	if slot1.x < slot0._cameraLeftBoundPoint then
-		slot1.x = slot0._cameraLeftBoundPoint
-	elseif slot0._cameraRightBoundPoint < slot1.x then
-		slot1.x = slot0._cameraRightBoundPoint
+	if arg_3_1.x < arg_3_0._cameraLeftBoundPoint then
+		arg_3_1.x = arg_3_0._cameraLeftBoundPoint
+	elseif arg_3_1.x > arg_3_0._cameraRightBoundPoint then
+		arg_3_1.x = arg_3_0._cameraRightBoundPoint
 	end
 
-	return slot1
+	return arg_3_1
 end
 
-function slot3.Dispose(slot0)
-	slot0._cameraUpperBound = nil
-	slot0._cameraLowerBound = nil
-	slot0._cameraLeftBound = nil
-	slot0._cameraRightBound = nil
-	slot0._cameraHalfWidth = nil
-	slot0._cameraLeftBoundPoint = nil
-	slot0._cameraRightBoundPoint = nil
-	slot0._projectionConst = nil
+function var_0_3.Dispose(arg_4_0)
+	arg_4_0._cameraUpperBound = nil
+	arg_4_0._cameraLowerBound = nil
+	arg_4_0._cameraLeftBound = nil
+	arg_4_0._cameraRightBound = nil
+	arg_4_0._cameraHalfWidth = nil
+	arg_4_0._cameraLeftBoundPoint = nil
+	arg_4_0._cameraRightBoundPoint = nil
+	arg_4_0._projectionConst = nil
 end

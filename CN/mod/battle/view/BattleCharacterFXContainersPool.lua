@@ -1,23 +1,28 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleResourceManager
-slot0.Battle.BattleCharacterFXContainersPool = singletonClass("BattleCharacterFXContainersPool")
-slot0.Battle.BattleCharacterFXContainersPool.__name = "BattleCharacterFXContainersPool"
-slot2 = slot0.Battle.BattleCharacterFXContainersPool
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleResourceManager
+
+var_0_0.Battle.BattleCharacterFXContainersPool = singletonClass("BattleCharacterFXContainersPool")
+var_0_0.Battle.BattleCharacterFXContainersPool.__name = "BattleCharacterFXContainersPool"
+
+local var_0_2 = var_0_0.Battle.BattleCharacterFXContainersPool
+
+function var_0_2.Ctor(arg_1_0)
+	return
 end
 
-function slot2.Init(slot0)
-	slot0._pool = {}
-	slot0._templateContainer = GameObject("characterFXContainerPoolParent")
-	slot0._templateContainerTf = slot0._templateContainer.transform
-	slot0._templateContainerTf.position = Vector3(-10000, -10000, 0)
+function var_0_2.Init(arg_2_0)
+	arg_2_0._pool = {}
+	arg_2_0._templateContainer = GameObject("characterFXContainerPoolParent")
+	arg_2_0._templateContainerTf = arg_2_0._templateContainer.transform
+	arg_2_0._templateContainerTf.position = Vector3(-10000, -10000, 0)
 end
 
-function slot2.Pop(slot0, slot1, slot2)
-	slot3 = slot1.localEulerAngles
-	slot2 = slot2 or {
+function var_0_2.Pop(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = arg_3_1.localEulerAngles
+
+	arg_3_2 = arg_3_2 or {
 		{
 			0,
 			0,
@@ -39,66 +44,67 @@ function slot2.Pop(slot0, slot1, slot2)
 			0
 		}
 	}
-	slot4 = nil
 
-	if #slot0._pool == 0 then
-		slot4 = {
-			[slot8] = slot10
-		}
+	local var_3_1
 
-		for slot8, slot9 in ipairs(uv0.Battle.BattleConst.FXContainerIndex) do
-			slot10 = GameObject()
-			slot11 = slot10.transform
-			slot12 = slot2[slot8]
+	if #arg_3_0._pool == 0 then
+		var_3_1 = {}
 
-			slot11:SetParent(slot1, false)
+		for iter_3_0, iter_3_1 in ipairs(var_0_0.Battle.BattleConst.FXContainerIndex) do
+			local var_3_2 = GameObject()
+			local var_3_3 = var_3_2.transform
+			local var_3_4 = arg_3_2[iter_3_0]
 
-			slot11.localPosition = Vector3(slot12[1], slot12[2], slot12[3])
-			slot11.localEulerAngles = Vector3(slot3.x * -1, slot3.y, slot3.z)
-			slot10.name = "fxContainer_" .. slot9
+			var_3_3:SetParent(arg_3_1, false)
+
+			var_3_3.localPosition = Vector3(var_3_4[1], var_3_4[2], var_3_4[3])
+			var_3_3.localEulerAngles = Vector3(var_3_0.x * -1, var_3_0.y, var_3_0.z)
+			var_3_2.name = "fxContainer_" .. iter_3_1
+			var_3_1[iter_3_0] = var_3_2
 		end
 	else
-		slot0._pool[#slot0._pool] = nil
+		var_3_1 = arg_3_0._pool[#arg_3_0._pool]
+		arg_3_0._pool[#arg_3_0._pool] = nil
 
-		for slot8, slot9 in ipairs(slot0._pool[#slot0._pool]) do
-			slot10 = slot2[slot8]
-			slot11 = slot9.transform
+		for iter_3_2, iter_3_3 in ipairs(var_3_1) do
+			local var_3_5 = arg_3_2[iter_3_2]
+			local var_3_6 = iter_3_3.transform
 
-			slot11:SetParent(slot1, false)
+			var_3_6:SetParent(arg_3_1, false)
 
-			slot11.localPosition = Vector3(slot10[1], slot10[2], slot10[3])
-			slot11.localEulerAngles = Vector3(slot3.x * -1, slot3.y, slot3.z)
+			var_3_6.localPosition = Vector3(var_3_5[1], var_3_5[2], var_3_5[3])
+			var_3_6.localEulerAngles = Vector3(var_3_0.x * -1, var_3_0.y, var_3_0.z)
 		end
 	end
 
-	return slot4
+	return var_3_1
 end
 
-function slot2.Push(slot0, slot1)
-	for slot5, slot6 in ipairs(slot1) do
-		slot7 = slot6.transform
+function var_0_2.Push(arg_4_0, arg_4_1)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_1) do
+		local var_4_0 = iter_4_1.transform
 
-		slot7:SetParent(slot0._templateContainerTf, false)
+		var_4_0:SetParent(arg_4_0._templateContainerTf, false)
 
-		for slot12 = slot7.childCount - 1, 0, -1 do
-			uv0.GetInstance():DestroyOb(slot7:GetChild(slot12).gameObject)
+		for iter_4_2 = var_4_0.childCount - 1, 0, -1 do
+			var_0_1.GetInstance():DestroyOb(var_4_0:GetChild(iter_4_2).gameObject)
 		end
 	end
 
-	slot0._pool[#slot0._pool + 1] = slot1
+	arg_4_0._pool[#arg_4_0._pool + 1] = arg_4_1
 end
 
-function slot2.Clear(slot0)
-	for slot4, slot5 in ipairs(slot0._pool) do
-		for slot9, slot10 in ipairs(slot5) do
-			Object.Destroy(slot10)
+function var_0_2.Clear(arg_5_0)
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0._pool) do
+		for iter_5_2, iter_5_3 in ipairs(iter_5_1) do
+			Object.Destroy(iter_5_3)
 		end
 	end
 
-	slot0._pool = nil
+	arg_5_0._pool = nil
 
-	Object.Destroy(slot0._templateContainer)
+	Object.Destroy(arg_5_0._templateContainer)
 
-	slot0._templateContainer = nil
-	slot0._templateContainerTf = nil
+	arg_5_0._templateContainer = nil
+	arg_5_0._templateContainerTf = nil
 end

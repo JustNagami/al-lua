@@ -1,150 +1,165 @@
-slot0 = class("ActivityPermanentLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("ActivityPermanentLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ActivitySelectUI"
 end
 
-function slot0.onBackPressed(slot0)
-	slot0:closeView()
+function var_0_0.onBackPressed(arg_2_0)
+	arg_2_0:closeView()
 end
 
-function slot0.onBackPressed(slot0)
-	if isActive(slot0.rtMsgbox) then
-		slot0:hideMsgbox()
+function var_0_0.onBackPressed(arg_3_0)
+	if isActive(arg_3_0.rtMsgbox) then
+		arg_3_0:hideMsgbox()
 	else
-		uv0.super.onBackPressed(slot0)
+		var_0_0.super.onBackPressed(arg_3_0)
 	end
 end
 
-function slot0.init(slot0)
-	slot0.bg = slot0._tf:Find("bg_back")
+function var_0_0.init(arg_4_0)
+	arg_4_0.bg = arg_4_0._tf:Find("bg_back")
 
-	onButton(slot0, slot0.bg, function ()
-		uv0:closeView()
+	onButton(arg_4_0, arg_4_0.bg, function()
+		arg_4_0:closeView()
 	end, SFX_CANCEL)
 
-	slot0.btnBack = slot0._tf:Find("window/inner/top/back")
+	arg_4_0.btnBack = arg_4_0._tf:Find("window/inner/top/back")
 
-	onButton(slot0, slot0.btnBack, function ()
-		uv0:closeView()
+	onButton(arg_4_0, arg_4_0.btnBack, function()
+		arg_4_0:closeView()
 	end, SFX_CANCEL)
-	setText(slot0._tf:Find("window/inner/top/back/Text"), i18n("activity_permanent_total"))
+	setText(arg_4_0._tf:Find("window/inner/top/back/Text"), i18n("activity_permanent_total"))
 
-	slot0.btnHelp = slot0._tf:Find("window/inner/top/help")
+	arg_4_0.btnHelp = arg_4_0._tf:Find("window/inner/top/help")
 
-	onButton(slot0, slot0.btnHelp, function ()
+	onButton(arg_4_0, arg_4_0.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("activity_permanent_help")
 		})
 	end, SFX_PANEL)
 
-	slot0.content = slot0._tf:Find("window/inner/content/scroll_rect")
-	slot0.itemList = UIItemList.New(slot0.content, slot0.content:Find("item"))
-	slot1 = getProxy(ActivityPermanentProxy)
+	arg_4_0.content = arg_4_0._tf:Find("window/inner/content/scroll_rect")
+	arg_4_0.itemList = UIItemList.New(arg_4_0.content, arg_4_0.content:Find("item"))
 
-	slot0.itemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0.ids[slot1 + 1]
-			slot4 = pg.activity_task_permanent[slot3]
+	local var_4_0 = getProxy(ActivityPermanentProxy)
 
-			setText(slot2:Find("main/word/Text"), slot4.gametip)
-			setText(slot2:Find("main/Image/tip/Text"), slot4.gametip_extra)
-			GetImageSpriteFromAtlasAsync("activitybanner/" .. slot4.banner_route, "", slot2:Find("main/Image"))
-			onButton(uv0, slot2:Find("main"), function ()
-				uv0:showMsgbox(uv1)
+	arg_4_0.itemList:make(function(arg_8_0, arg_8_1, arg_8_2)
+		arg_8_1 = arg_8_1 + 1
+
+		if arg_8_0 == UIItemList.EventUpdate then
+			local var_8_0 = arg_4_0.ids[arg_8_1]
+			local var_8_1 = pg.activity_task_permanent[var_8_0]
+
+			setText(arg_8_2:Find("main/word/Text"), var_8_1.gametip)
+			setText(arg_8_2:Find("main/Image/tip/Text"), var_8_1.gametip_extra)
+			GetImageSpriteFromAtlasAsync("activitybanner/" .. var_8_1.banner_route, "", arg_8_2:Find("main/Image"))
+			onButton(arg_4_0, arg_8_2:Find("main"), function()
+				arg_4_0:showMsgbox(var_8_0)
 			end, SFX_PANEL)
 
-			if slot3 == uv0.contextData.finishId then
-				uv0.childFinish = slot2
-				GetOrAddComponent(slot2:Find("finish"), typeof(CanvasGroup)).alpha = 0
+			local var_8_2 = arg_8_2:Find("finish")
+			local var_8_3 = GetOrAddComponent(var_8_2, typeof(CanvasGroup))
+
+			if var_8_0 == arg_4_0.contextData.finishId then
+				arg_4_0.childFinish = arg_8_2
+				var_8_3.alpha = 0
 			else
-				slot6.alpha = 1
+				var_8_3.alpha = 1
 			end
 
-			setText(slot5:Find("Image/Text"), i18n("activity_permanent_finished"))
-			setActive(slot5, uv1:isActivityFinish(slot3))
+			setText(var_8_2:Find("Image/Text"), i18n("activity_permanent_finished"))
+			setActive(var_8_2, var_4_0:isActivityFinish(var_8_0))
 		end
 	end)
 
-	slot0.rtMsgbox = slot0._tf:Find("Msgbox")
+	arg_4_0.rtMsgbox = arg_4_0._tf:Find("Msgbox")
 
-	onButton(slot0, slot0.rtMsgbox:Find("bg"), function ()
-		uv0:hideMsgbox()
+	onButton(arg_4_0, arg_4_0.rtMsgbox:Find("bg"), function()
+		arg_4_0:hideMsgbox()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.rtMsgbox:Find("window/top/btnBack"), function ()
-		uv0:hideMsgbox()
+	onButton(arg_4_0, arg_4_0.rtMsgbox:Find("window/top/btnBack"), function()
+		arg_4_0:hideMsgbox()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.rtMsgbox:Find("window/button_container/custom_button_2"), function ()
-		uv0:hideMsgbox()
+	onButton(arg_4_0, arg_4_0.rtMsgbox:Find("window/button_container/custom_button_2"), function()
+		arg_4_0:hideMsgbox()
 	end, SFX_CANCEL)
 end
 
-function slot0.didEnter(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	slot0.itemList:align(#slot0.ids)
+function var_0_0.didEnter(arg_13_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_13_0._tf)
+	arg_13_0.itemList:align(#arg_13_0.ids)
 
-	if slot0.childFinish then
-		scrollTo(slot0.content, nil, math.clamp(slot0.childFinish.anchoredPosition.y / (slot0.content.rect.height - slot0.content:GetComponent(typeof(ScrollRect)).viewport.rect.height), 0, 1))
-		slot0:doFinishAnim(slot0.childFinish)
+	if arg_13_0.childFinish then
+		local var_13_0 = arg_13_0.content:GetComponent(typeof(ScrollRect)).viewport
 
-		slot0.childFinish = nil
+		scrollTo(arg_13_0.content, nil, math.clamp(arg_13_0.childFinish.anchoredPosition.y / (arg_13_0.content.rect.height - var_13_0.rect.height), 0, 1))
+		arg_13_0:doFinishAnim(arg_13_0.childFinish)
+
+		arg_13_0.childFinish = nil
 	end
 
 	if PlayerPrefs.GetInt("permanent_select", 0) ~= 1 then
 		PlayerPrefs.SetInt("permanent_select", 1)
-		triggerButton(slot0.btnHelp)
+		triggerButton(arg_13_0.btnHelp)
 	end
 end
 
-function slot0.willExit(slot0)
-	if isActive(slot0.rtMsgbox) then
-		slot0:hideMsgbox()
+function var_0_0.willExit(arg_14_0)
+	if isActive(arg_14_0.rtMsgbox) then
+		arg_14_0:hideMsgbox()
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_14_0._tf)
 
-	if slot0.ltId then
-		LeanTween.cancel(slot0.ltId)
+	if arg_14_0.ltId then
+		LeanTween.cancel(arg_14_0.ltId)
 
-		slot0.ltId = nil
+		arg_14_0.ltId = nil
 	end
 end
 
-function slot0.setActivitys(slot0, slot1)
-	slot0.ids = slot1
-	slot2 = getProxy(ActivityPermanentProxy)
+function var_0_0.setActivitys(arg_15_0, arg_15_1)
+	arg_15_0.ids = arg_15_1
 
-	table.sort(slot0.ids, function (slot0, slot1)
-		if uv0:isActivityFinish(slot0) == uv0:isActivityFinish(slot1) then
-			return slot0 < slot1
+	local var_15_0 = getProxy(ActivityPermanentProxy)
+
+	table.sort(arg_15_0.ids, function(arg_16_0, arg_16_1)
+		local var_16_0 = var_15_0:isActivityFinish(arg_16_0)
+		local var_16_1 = var_15_0:isActivityFinish(arg_16_1)
+
+		if var_16_0 == var_16_1 then
+			return arg_16_0 < arg_16_1
 		else
-			return slot3
+			return var_16_1
 		end
 	end)
 end
 
-function slot0.doFinishAnim(slot0, slot1)
-	slot0.ltId = LeanTween.alphaCanvas(GetOrAddComponent(slot1:Find("finish"), typeof(CanvasGroup)), 1, 1).uniqueId
+function var_0_0.doFinishAnim(arg_17_0, arg_17_1)
+	local var_17_0 = arg_17_1:Find("finish")
+	local var_17_1 = GetOrAddComponent(var_17_0, typeof(CanvasGroup))
+
+	arg_17_0.ltId = LeanTween.alphaCanvas(var_17_1, 1, 1).uniqueId
 end
 
-function slot0.showMsgbox(slot0, slot1)
-	setText(slot0.rtMsgbox:Find("window/button_container/custom_button_1/pic"), i18n("msgbox_text_confirm"))
-	setText(slot0.rtMsgbox:Find("window/button_container/custom_button_2/pic"), i18n("msgbox_text_cancel"))
-	setText(slot0.rtMsgbox:Find("window/top/bg/infomation/title"), i18n("words_information"))
-	setText(slot0.rtMsgbox:Find("window/msg_panel/content"), i18n("activity_permanent_tips1", pg.activity_task_permanent[slot1].activity_name))
-	setText(slot0.rtMsgbox:Find("window/msg_panel/Text"), i18n("activity_permanent_tips4"))
-	onButton(slot0, slot0.rtMsgbox:Find("window/button_container/custom_button_1"), function ()
-		uv0:hideMsgbox()
-		uv0:emit(ActivityPermanentMediator.START_SELECT, uv1)
+function var_0_0.showMsgbox(arg_18_0, arg_18_1)
+	setText(arg_18_0.rtMsgbox:Find("window/button_container/custom_button_1/pic"), i18n("msgbox_text_confirm"))
+	setText(arg_18_0.rtMsgbox:Find("window/button_container/custom_button_2/pic"), i18n("msgbox_text_cancel"))
+	setText(arg_18_0.rtMsgbox:Find("window/top/bg/infomation/title"), i18n("words_information"))
+	setText(arg_18_0.rtMsgbox:Find("window/msg_panel/content"), i18n("activity_permanent_tips1", pg.activity_task_permanent[arg_18_1].activity_name))
+	setText(arg_18_0.rtMsgbox:Find("window/msg_panel/Text"), i18n("activity_permanent_tips4"))
+	onButton(arg_18_0, arg_18_0.rtMsgbox:Find("window/button_container/custom_button_1"), function()
+		arg_18_0:hideMsgbox()
+		arg_18_0:emit(ActivityPermanentMediator.START_SELECT, arg_18_1)
 	end, SFX_CONFIRM)
-	setActive(slot0.rtMsgbox, true)
-	pg.UIMgr.GetInstance():BlurPanel(slot0.rtMsgbox)
+	setActive(arg_18_0.rtMsgbox, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_18_0.rtMsgbox)
 end
 
-function slot0.hideMsgbox(slot0)
-	setActive(slot0.rtMsgbox, false)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0.rtMsgbox)
+function var_0_0.hideMsgbox(arg_20_0)
+	setActive(arg_20_0.rtMsgbox, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_20_0.rtMsgbox)
 end
 
-return slot0
+return var_0_0

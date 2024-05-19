@@ -1,69 +1,75 @@
-slot0 = class("NewWorldBossResultStatisticsPage", import("..NewBattleResultStatisticsPage"))
+﻿local var_0_0 = class("NewWorldBossResultStatisticsPage", import("..NewBattleResultStatisticsPage"))
 
-function slot0.UpdateGrade(slot0)
-	LoadImageSpriteAsync("battlescore/grade_label_clear", slot0.gradeTxt, false)
-	setActive(slot0.gradeIcon, false)
-	setActive(slot0.topPanel:Find("grade/label"), false)
+function var_0_0.UpdateGrade(arg_1_0)
+	local var_1_0 = "battlescore/grade_label_clear"
+
+	LoadImageSpriteAsync(var_1_0, arg_1_0.gradeTxt, false)
+	setActive(arg_1_0.gradeIcon, false)
+	setActive(arg_1_0.topPanel:Find("grade/label"), false)
 end
 
-function slot0.LoadBG(slot0, slot1)
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. "CommonBg", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		if uv0.exited or IsNil(slot0) then
-			if uv1 then
-				uv1()
+function var_0_0.LoadBG(arg_2_0, arg_2_1)
+	local var_2_0 = "CommonBg"
+
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. var_2_0, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_3_0)
+		if arg_2_0.exited or IsNil(arg_3_0) then
+			if arg_2_1 then
+				arg_2_1()
 			end
 
 			return
 		end
 
-		slot1 = Object.Instantiate(slot0, uv0._tf)
+		local var_3_0 = Object.Instantiate(arg_3_0, arg_2_0._tf)
 
-		slot1.transform:SetAsFirstSibling()
+		var_3_0.transform:SetAsFirstSibling()
 
-		uv0.effectTr = slot1.transform
+		arg_2_0.effectTr = var_3_0.transform
 
-		if uv1 then
-			uv1()
+		if arg_2_1 then
+			arg_2_1()
 		end
 	end), true, true)
 end
 
-function slot0.UpdateOutput(slot0, slot1)
-	setText(slot1:Find("Text"), slot0.contextData.statistics.specificDamage)
+function var_0_0.UpdateOutput(arg_4_0, arg_4_1)
+	setText(arg_4_1:Find("Text"), arg_4_0.contextData.statistics.specificDamage)
 end
 
-function slot0.UpdateCommanders(slot0, slot1)
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/Worldboss", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		if uv0.exited or IsNil(slot0) then
-			uv1()
+function var_0_0.UpdateCommanders(arg_5_0, arg_5_1)
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/Worldboss", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_6_0)
+		if arg_5_0.exited or IsNil(arg_6_0) then
+			arg_5_1()
 
 			return
 		end
 
-		uv0:UpdateOutput(Object.Instantiate(slot0, uv0.topPanel).transform)
-		uv1()
+		local var_6_0 = Object.Instantiate(arg_6_0, arg_5_0.topPanel)
+
+		arg_5_0:UpdateOutput(var_6_0.transform)
+		arg_5_1()
 	end), true, true)
 end
 
-function slot0.UpdatePlayer(slot0)
-	setActive(slot0.topPanel:Find("exp"), false)
+function var_0_0.UpdatePlayer(arg_7_0)
+	setActive(arg_7_0.topPanel:Find("exp"), false)
 end
 
-function slot0.RegisterEvent(slot0, slot1)
-	uv0.super.RegisterEvent(slot0, slot1)
-	triggerButton(slot0.statisticsBtn)
-	setActive(slot0.statisticsBtn, false)
+function var_0_0.RegisterEvent(arg_8_0, arg_8_1)
+	var_0_0.super.RegisterEvent(arg_8_0, arg_8_1)
+	triggerButton(arg_8_0.statisticsBtn)
+	setActive(arg_8_0.statisticsBtn, false)
 end
 
-function slot0.UpdatePainting(slot0, slot1)
-	slot0:UpdatePaintingPosition()
-	slot0:UpdateMvpPainting(slot1)
+function var_0_0.UpdatePainting(arg_9_0, arg_9_1)
+	arg_9_0:UpdatePaintingPosition()
+	arg_9_0:UpdateMvpPainting(arg_9_1)
 end
 
-function slot0.UpdateChapterName(slot0)
-	slot0.chapterName.text = ""
+function var_0_0.UpdateChapterName(arg_10_0)
+	arg_10_0.chapterName.text = ""
 
-	setActive(slot0.opBonus, false)
+	setActive(arg_10_0.opBonus, false)
 end
 
-return slot0
+return var_0_0

@@ -1,23 +1,29 @@
-slot0 = class("CourtYardFurniturePlaceableArea", import("...map.CourtYardPlaceableArea"))
+﻿local var_0_0 = class("CourtYardFurniturePlaceableArea", import("...map.CourtYardPlaceableArea"))
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	slot0.furniture = slot2
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0.furniture = arg_1_2
 
-	uv0.super.Ctor(slot0, slot1, slot3)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_3)
 end
 
-function slot0.LegalPosition(slot0, slot1, slot2)
-	return uv0.super.IsEmptyPosition(slot0, slot1) and table.contains(slot0.furniture:GetCanputonPosition(), slot1)
+function var_0_0.LegalPosition(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = arg_2_0.furniture:GetCanputonPosition()
+
+	return var_0_0.super.IsEmptyPosition(arg_2_0, arg_2_1) and table.contains(var_2_0, arg_2_1)
 end
 
-function slot0.AreaWithInfo(slot0, slot1, slot2, slot3, slot4)
-	return _.map(slot1:GetAreaByPosition(slot2), function (slot0)
+function var_0_0.AreaWithInfo(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
+	local var_3_0 = arg_3_1:GetAreaByPosition(arg_3_2)
+
+	return _.map(var_3_0, function(arg_4_0)
+		local var_4_0 = arg_3_4 or arg_3_0:LegalPosition(arg_4_0)
+
 		return {
-			flag = (uv0 or uv1:LegalPosition(slot0)) and 3 or 2,
-			position = slot0,
-			offset = uv2
+			flag = var_4_0 and 3 or 2,
+			position = arg_4_0,
+			offset = arg_3_3
 		}
 	end)
 end
 
-return slot0
+return var_0_0

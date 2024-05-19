@@ -1,142 +1,147 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst
-slot2 = slot0.Battle.BattleConfig
-slot3 = class("BattleEnvironmentBehaviour")
-slot0.Battle.BattleEnvironmentBehaviour = slot3
-slot3.__name = "BattleEnvironmentBehaviour"
-slot3.STATE_DELAY = "STATE_DELAY"
-slot3.STATE_READY = "STATE_READY"
-slot3.STATE_OVERHEAT = "STATE_OVERHEAT"
-slot3.STATE_EXPIRE = "STATE_EXPIRE"
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0, slot1, slot2)
-	slot0._cldUnitList = {}
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst
+local var_0_2 = var_0_0.Battle.BattleConfig
+local var_0_3 = class("BattleEnvironmentBehaviour")
+
+var_0_0.Battle.BattleEnvironmentBehaviour = var_0_3
+var_0_3.__name = "BattleEnvironmentBehaviour"
+var_0_3.STATE_DELAY = "STATE_DELAY"
+var_0_3.STATE_READY = "STATE_READY"
+var_0_3.STATE_OVERHEAT = "STATE_OVERHEAT"
+var_0_3.STATE_EXPIRE = "STATE_EXPIRE"
+
+function var_0_3.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0._cldUnitList = {}
 end
 
-function slot3.SetUnitRef(slot0, slot1)
-	assert(slot1, "Shounld Bind A Unit")
+function var_0_3.SetUnitRef(arg_2_0, arg_2_1)
+	assert(arg_2_1, "Shounld Bind A Unit")
 
-	slot0._unit = slot1
+	arg_2_0._unit = arg_2_1
 end
 
-function slot3.SetTemplate(slot0, slot1)
-	slot0._tmpData = slot1
+function var_0_3.SetTemplate(arg_3_0, arg_3_1)
+	arg_3_0._tmpData = arg_3_1
 
-	if slot0._tmpData.delay then
-		slot0._delayStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
-		slot0._state = uv0.STATE_DELAY
+	if arg_3_0._tmpData.delay then
+		arg_3_0._delayStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
+		arg_3_0._state = var_0_3.STATE_DELAY
 	else
-		slot0._state = uv0.STATE_READY
+		arg_3_0._state = var_0_3.STATE_READY
 	end
 
-	if slot0._tmpData.life_time then
-		slot0._liftStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
+	if arg_3_0._tmpData.life_time then
+		arg_3_0._liftStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
 	end
 
-	slot0._diveFilter = slot0._tmpData.diveFilter or {}
+	arg_3_0._diveFilter = arg_3_0._tmpData.diveFilter or {}
 end
 
-function slot3.UpdateCollideUnitList(slot0, slot1)
-	if #slot0._diveFilter ~= 0 then
-		slot2 = #slot1
+function var_0_3.UpdateCollideUnitList(arg_4_0, arg_4_1)
+	if #arg_4_0._diveFilter ~= 0 then
+		local var_4_0 = #arg_4_1
 
-		while slot2 > 0 do
-			for slot7, slot8 in ipairs(slot0._diveFilter) do
-				if slot1[slot2]:GetCurrentOxyState() == slot8 then
-					table.remove(slot1, slot2)
+		while var_4_0 > 0 do
+			local var_4_1 = arg_4_1[var_4_0]:GetCurrentOxyState()
+
+			for iter_4_0, iter_4_1 in ipairs(arg_4_0._diveFilter) do
+				if var_4_1 == iter_4_1 then
+					table.remove(arg_4_1, var_4_0)
 
 					break
 				end
 			end
 
-			slot2 = slot2 - 1
+			var_4_0 = var_4_0 - 1
 		end
 	end
 
-	slot0._cldUnitList = slot1
+	arg_4_0._cldUnitList = arg_4_1
 end
 
-function slot3.OnUpdate(slot0)
-	slot0:updateDelay()
-	slot0:updateReload()
-	slot0:updateLifeTime()
+function var_0_3.OnUpdate(arg_5_0)
+	arg_5_0:updateDelay()
+	arg_5_0:updateReload()
+	arg_5_0:updateLifeTime()
 
-	if slot0._state == uv0.STATE_READY then
-		slot0:doBehaviour()
+	if arg_5_0._state == var_0_3.STATE_READY then
+		arg_5_0:doBehaviour()
 	end
 end
 
-function slot3.Dispose(slot0)
-	slot0._cldUnitList = nil
-	slot0._tmpData = nil
-	slot0._CDstartTime = nil
+function var_0_3.Dispose(arg_6_0)
+	arg_6_0._cldUnitList = nil
+	arg_6_0._tmpData = nil
+	arg_6_0._CDstartTime = nil
 end
 
-function slot3.OnCollide(slot0, slot1)
+function var_0_3.OnCollide(arg_7_0, arg_7_1)
+	return
 end
 
-function slot3.GetCurrentState(slot0)
-	return slot0._state
+function var_0_3.GetCurrentState(arg_8_0)
+	return arg_8_0._state
 end
 
-function slot3.updateDelay(slot0)
-	if slot0._delayStartTime and slot0._tmpData.delay + slot0._delayStartTime <= pg.TimeMgr.GetInstance():GetCombatTime() then
-		slot0._delayStartTime = nil
+function var_0_3.updateDelay(arg_9_0)
+	if arg_9_0._delayStartTime and arg_9_0._tmpData.delay + arg_9_0._delayStartTime <= pg.TimeMgr.GetInstance():GetCombatTime() then
+		arg_9_0._delayStartTime = nil
 
-		slot0:handleCoolDown()
+		arg_9_0:handleCoolDown()
 	end
 end
 
-function slot3.updateReload(slot0)
-	if slot0._CDstartTime then
-		if slot0:getReloadFinishTimeStamp() <= pg.TimeMgr.GetInstance():GetCombatTime() then
-			slot0:handleCoolDown()
+function var_0_3.updateReload(arg_10_0)
+	if arg_10_0._CDstartTime then
+		if arg_10_0:getReloadFinishTimeStamp() <= pg.TimeMgr.GetInstance():GetCombatTime() then
+			arg_10_0:handleCoolDown()
 		else
 			return
 		end
 	end
 end
 
-function slot3.updateLifeTime(slot0)
-	if slot0._liftStartTime and slot0._liftStartTime + slot0._tmpData.life_time <= pg.TimeMgr.GetInstance():GetCombatTime() then
-		slot0._state = uv0.STATE_EXPIRE
+function var_0_3.updateLifeTime(arg_11_0)
+	if arg_11_0._liftStartTime and arg_11_0._liftStartTime + arg_11_0._tmpData.life_time <= pg.TimeMgr.GetInstance():GetCombatTime() then
+		arg_11_0._state = var_0_3.STATE_EXPIRE
 
-		slot0:doExpire()
+		arg_11_0:doExpire()
 	end
 end
 
-function slot3.getReloadFinishTimeStamp(slot0)
-	return slot0._tmpData.reload_time + slot0._CDstartTime
+function var_0_3.getReloadFinishTimeStamp(arg_12_0)
+	return arg_12_0._tmpData.reload_time + arg_12_0._CDstartTime
 end
 
-function slot3.handleCoolDown(slot0)
-	slot0._state = uv0.STATE_READY
-	slot0._CDstartTime = nil
+function var_0_3.handleCoolDown(arg_13_0)
+	arg_13_0._state = var_0_3.STATE_READY
+	arg_13_0._CDstartTime = nil
 end
 
-function slot3.doBehaviour(slot0)
-	if slot0._tmpData.reload_time then
-		slot0._CDstartTime = pg.TimeMgr.GetInstance():GetCombatTime()
-		slot0._state = uv0.STATE_OVERHEAT
+function var_0_3.doBehaviour(arg_14_0)
+	if arg_14_0._tmpData.reload_time then
+		arg_14_0._CDstartTime = pg.TimeMgr.GetInstance():GetCombatTime()
+		arg_14_0._state = var_0_3.STATE_OVERHEAT
 	end
 end
 
-function slot3.doExpire(slot0)
-	slot0._state = uv0.STATE_EXPIRE
+function var_0_3.doExpire(arg_15_0)
+	arg_15_0._state = var_0_3.STATE_EXPIRE
 end
 
-slot3.BehaviourClassEnum = {
-	[slot1.EnviroumentBehaviour.PLAY_FX] = "BattleEnvironmentBehaviourPlayFX",
-	[slot1.EnviroumentBehaviour.DAMAGE] = "BattleEnvironmentBehaviourDamage",
-	[slot1.EnviroumentBehaviour.BUFF] = "BattleEnvironmentBehaviourBuff",
-	[slot1.EnviroumentBehaviour.MOVEMENT] = "BattleEnvironmentBehaviourMovement",
-	[slot1.EnviroumentBehaviour.FORCE] = "BattleEnvironmentBehaviourForce",
-	[slot1.EnviroumentBehaviour.SPAWN] = "BattleEnvironmentBehaviourSpawn",
-	[slot1.EnviroumentBehaviour.PLAY_SFX] = "BattleEnvironmentBehaviourPlaySFX",
-	[slot1.EnviroumentBehaviour.SHAKE_SCREEN] = "BattleEnvironmentBehaviourShakeScreen"
+var_0_3.BehaviourClassEnum = {
+	[var_0_1.EnviroumentBehaviour.PLAY_FX] = "BattleEnvironmentBehaviourPlayFX",
+	[var_0_1.EnviroumentBehaviour.DAMAGE] = "BattleEnvironmentBehaviourDamage",
+	[var_0_1.EnviroumentBehaviour.BUFF] = "BattleEnvironmentBehaviourBuff",
+	[var_0_1.EnviroumentBehaviour.MOVEMENT] = "BattleEnvironmentBehaviourMovement",
+	[var_0_1.EnviroumentBehaviour.FORCE] = "BattleEnvironmentBehaviourForce",
+	[var_0_1.EnviroumentBehaviour.SPAWN] = "BattleEnvironmentBehaviourSpawn",
+	[var_0_1.EnviroumentBehaviour.PLAY_SFX] = "BattleEnvironmentBehaviourPlaySFX",
+	[var_0_1.EnviroumentBehaviour.SHAKE_SCREEN] = "BattleEnvironmentBehaviourShakeScreen"
 }
 
-function slot3.CreateBehaviour(slot0)
-	return uv0.Battle[uv1.BehaviourClassEnum[slot0.type]].New()
+function var_0_3.CreateBehaviour(arg_16_0)
+	return var_0_0.Battle[var_0_3.BehaviourClassEnum[arg_16_0.type]].New()
 end

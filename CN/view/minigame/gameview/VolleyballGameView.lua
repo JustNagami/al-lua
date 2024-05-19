@@ -1,5 +1,5 @@
-slot0 = class("VolleyballGameView", import("..BaseMiniGameView"))
-slot1 = {
+﻿local var_0_0 = class("VolleyballGameView", import("..BaseMiniGameView"))
+local var_0_1 = {
 	"maliluosi_2_DOA",
 	"suixiang_2_doa",
 	"xia_2_DOA",
@@ -8,7 +8,7 @@ slot1 = {
 	"nvtiangou_2_DOA",
 	"monika_2_DOA"
 }
-slot2 = {
+local var_0_2 = {
 	10600010,
 	10600020,
 	10600030,
@@ -17,560 +17,575 @@ slot2 = {
 	10600060,
 	10600070
 }
-slot3 = 1
-slot4 = 2
-slot5 = -1
-slot6 = 0
-slot7 = 0.35
-slot8 = 0.15
-slot9 = 0
-slot10 = 1
-slot11 = 2
-slot12 = 0
-slot13 = 1
-slot14 = 2
-slot15 = 1.5
-slot16 = 1
-slot17 = 0.5
-slot18 = 0.5
-slot19 = 0.43
-slot20 = 0.5
-slot21 = 0.76
-slot22 = 0.83
-slot23 = -30
-slot24 = 50
-slot25 = 60
-slot26 = 230
-slot27 = 60
-slot28 = "event:/ui/ddldaoshu2"
-slot29 = "event:/ui/fighterplane_click"
-slot30 = "event:/ui/jieqiu"
-slot31 = "event:/ui/kouqiu"
-slot32 = 0.8
-slot33 = -1000
+local var_0_3 = 1
+local var_0_4 = 2
+local var_0_5 = -1
+local var_0_6 = 0
+local var_0_7 = 0.35
+local var_0_8 = 0.15
+local var_0_9 = 0
+local var_0_10 = 1
+local var_0_11 = 2
+local var_0_12 = 0
+local var_0_13 = 1
+local var_0_14 = 2
+local var_0_15 = 1.5
+local var_0_16 = 1
+local var_0_17 = 0.5
+local var_0_18 = 0.5
+local var_0_19 = 0.43
+local var_0_20 = 0.5
+local var_0_21 = 0.76
+local var_0_22 = 0.83
+local var_0_23 = -30
+local var_0_24 = 50
+local var_0_25 = 60
+local var_0_26 = 230
+local var_0_27 = 60
+local var_0_28 = "event:/ui/ddldaoshu2"
+local var_0_29 = "event:/ui/fighterplane_click"
+local var_0_30 = "event:/ui/jieqiu"
+local var_0_31 = "event:/ui/kouqiu"
+local var_0_32 = 0.8
+local var_0_33 = -1000
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "VolleyballGameUI"
 end
 
-function slot0.init(slot0)
-	slot0.countTimeUI = slot0:findTF("count_time_ui")
-	slot0.countTimeImage = slot0:findTF("time", slot0.countTimeUI)
-	slot0.countTimeNumImage = slot0:findTF("nums", slot0.countTimeUI)
-	slot0.mainUI = slot0:findTF("main_ui")
-	slot0.returnBtn = slot0:findTF("return_btn", slot0.mainUI)
-	slot0.mainStartBtn = slot0:findTF("start_btn", slot0.mainUI)
-	slot0.ruleBtn = slot0:findTF("rule_btn", slot0.mainUI)
-	slot0.progressScroll = slot0:findTF("right_panel/scroll_view/", slot0.mainUI)
-	slot0.progressContent = slot0:findTF("right_panel/scroll_view/viewport/content", slot0.mainUI)
-	slot0.colors = slot0:findTF("right_panel/colors", slot0.mainUI)
-	slot0.icons = slot0:findTF("right_panel/icons", slot0.mainUI)
-	slot0.gotIcon = slot0:findTF("bg/got", slot0.mainUI)
-	slot0.selectUI = slot0:findTF("select_ui")
-	slot0.selectBackBtn = slot0:findTF("back_btn", slot0.selectUI)
-	slot0.selectStartBtn = slot0:findTF("start_btn", slot0.selectUI)
-	slot0.tags = slot0:findTF("select_panel/tags", slot0.selectUI)
-	slot0.paints = slot0:findTF("select_panel/paints", slot0.selectUI)
-	slot0.freeTitle = slot0:findTF("select_panel/title/free", slot0.selectUI)
-	slot0.dayTitle = slot0:findTF("select_panel/title/challenge", slot0.selectUI)
-	slot0.titleDayNum = slot0:findTF("select_panel/title/challenge/num", slot0.selectUI)
-	slot0.ruleTxt = slot0:findTF("select_panel/rule/rule_txt", slot0.selectUI)
-	slot0.select4Chars = slot0:findTF("select_panel/chars", slot0.selectUI)
-	slot0.selectWindow = slot0:findTF("select_windows", slot0.selectUI)
-	slot0.selectSureBtn = slot0:findTF("windows/sure_btn", slot0.selectWindow)
-	slot0.select9Chars = slot0:findTF("windows/char_layout", slot0.selectWindow)
-	slot0.selectNum = slot0:findTF("windows/tips/num", slot0.selectWindow)
-	slot0.gameUI = slot0:findTF("game_ui")
-	slot0.bgEffect = slot0:findTF("bg/shatanpaiqiu_hailang", slot0.gameUI)
-	slot0.hitEffect = slot0:findTF("shatanpaiqiu_jida", slot0.gameUI)
-	slot0.upEffect = slot0:findTF("shatanpaiqiu_jieqiu", slot0.gameUI)
-	slot0.ball = slot0:findTF("ball", slot0.gameUI)
-	slot0.ballShadow = slot0:findTF("ball_shadow", slot0.gameUI)
-	slot0.pauseBtn = slot0:findTF("pause_btn", slot0.gameUI)
-	slot0.backBtn = slot0:findTF("back_btn", slot0.gameUI)
-	slot0.qteBtn = slot0:findTF("qte_btn", slot0.gameUI)
-	slot0.pos = slot0:findTF("pos", slot0.gameUI)
+function var_0_0.init(arg_2_0)
+	arg_2_0.countTimeUI = arg_2_0:findTF("count_time_ui")
+	arg_2_0.countTimeImage = arg_2_0:findTF("time", arg_2_0.countTimeUI)
+	arg_2_0.countTimeNumImage = arg_2_0:findTF("nums", arg_2_0.countTimeUI)
+	arg_2_0.mainUI = arg_2_0:findTF("main_ui")
+	arg_2_0.returnBtn = arg_2_0:findTF("return_btn", arg_2_0.mainUI)
+	arg_2_0.mainStartBtn = arg_2_0:findTF("start_btn", arg_2_0.mainUI)
+	arg_2_0.ruleBtn = arg_2_0:findTF("rule_btn", arg_2_0.mainUI)
+	arg_2_0.progressScroll = arg_2_0:findTF("right_panel/scroll_view/", arg_2_0.mainUI)
+	arg_2_0.progressContent = arg_2_0:findTF("right_panel/scroll_view/viewport/content", arg_2_0.mainUI)
+	arg_2_0.colors = arg_2_0:findTF("right_panel/colors", arg_2_0.mainUI)
+	arg_2_0.icons = arg_2_0:findTF("right_panel/icons", arg_2_0.mainUI)
+	arg_2_0.gotIcon = arg_2_0:findTF("bg/got", arg_2_0.mainUI)
+	arg_2_0.selectUI = arg_2_0:findTF("select_ui")
+	arg_2_0.selectBackBtn = arg_2_0:findTF("back_btn", arg_2_0.selectUI)
+	arg_2_0.selectStartBtn = arg_2_0:findTF("start_btn", arg_2_0.selectUI)
+	arg_2_0.tags = arg_2_0:findTF("select_panel/tags", arg_2_0.selectUI)
+	arg_2_0.paints = arg_2_0:findTF("select_panel/paints", arg_2_0.selectUI)
+	arg_2_0.freeTitle = arg_2_0:findTF("select_panel/title/free", arg_2_0.selectUI)
+	arg_2_0.dayTitle = arg_2_0:findTF("select_panel/title/challenge", arg_2_0.selectUI)
+	arg_2_0.titleDayNum = arg_2_0:findTF("select_panel/title/challenge/num", arg_2_0.selectUI)
+	arg_2_0.ruleTxt = arg_2_0:findTF("select_panel/rule/rule_txt", arg_2_0.selectUI)
+	arg_2_0.select4Chars = arg_2_0:findTF("select_panel/chars", arg_2_0.selectUI)
+	arg_2_0.selectWindow = arg_2_0:findTF("select_windows", arg_2_0.selectUI)
+	arg_2_0.selectSureBtn = arg_2_0:findTF("windows/sure_btn", arg_2_0.selectWindow)
+	arg_2_0.select9Chars = arg_2_0:findTF("windows/char_layout", arg_2_0.selectWindow)
+	arg_2_0.selectNum = arg_2_0:findTF("windows/tips/num", arg_2_0.selectWindow)
+	arg_2_0.gameUI = arg_2_0:findTF("game_ui")
+	arg_2_0.bgEffect = arg_2_0:findTF("bg/shatanpaiqiu_hailang", arg_2_0.gameUI)
+	arg_2_0.hitEffect = arg_2_0:findTF("shatanpaiqiu_jida", arg_2_0.gameUI)
+	arg_2_0.upEffect = arg_2_0:findTF("shatanpaiqiu_jieqiu", arg_2_0.gameUI)
+	arg_2_0.ball = arg_2_0:findTF("ball", arg_2_0.gameUI)
+	arg_2_0.ballShadow = arg_2_0:findTF("ball_shadow", arg_2_0.gameUI)
+	arg_2_0.pauseBtn = arg_2_0:findTF("pause_btn", arg_2_0.gameUI)
+	arg_2_0.backBtn = arg_2_0:findTF("back_btn", arg_2_0.gameUI)
+	arg_2_0.qteBtn = arg_2_0:findTF("qte_btn", arg_2_0.gameUI)
+	arg_2_0.pos = arg_2_0:findTF("pos", arg_2_0.gameUI)
 
-	slot0:initPos()
+	arg_2_0:initPos()
 
-	slot0.ourScore = slot0:findTF("score/our", slot0.gameUI)
-	slot0.enemyScore = slot0:findTF("score/enemy", slot0.gameUI)
-	slot0.qte = slot0:findTF("qte", slot0.gameUI)
-	slot0.qteCircles = slot0:findTF("circles", slot0.qte)
-	slot0.qteCircle = slot0:findTF("circles/big", slot0.qte)
-	slot0.result = slot0:findTF("result", slot0.qte)
-	slot0.resultTxt = slot0:findTF("txts", slot0.qte)
-	slot0.cutin = slot0:findTF("cutin", slot0.gameUI)
-	slot0.cutinPaint = slot0:findTF("cutin/paint", slot0.gameUI)
-	slot0.cutinPaints = slot0:findTF("cutin_paints", slot0.gameUI)
-	slot0.scoreCutin = slot0:findTF("score_cutin", slot0.gameUI)
-	slot0.scoreCutinNums = slot0:findTF("score_cutin/nums", slot0.gameUI)
-	slot0.ourScoreCutin = slot0:findTF("score_cutin/our", slot0.gameUI)
-	slot0.enemyScoreCutin = slot0:findTF("score_cutin/enemy", slot0.gameUI)
-	slot0.charTF = {
-		our1 = slot0:findTF("char/our1", slot0.gameUI),
-		our2 = slot0:findTF("char/our2", slot0.gameUI),
-		enemy1 = slot0:findTF("char/enemy1", slot0.gameUI),
-		enemy2 = slot0:findTF("char/enemy2", slot0.gameUI)
-	}
-	slot0.charModels = {}
-	slot0.charactor = {}
-	slot0.cutinMask = slot0:findTF("cutin_mask", slot0.gameUI)
-	slot0.endUI = slot0:findTF("end_ui")
-	slot0.endDayTitle = slot0:findTF("title/race", slot0.endUI)
-	slot0.endFreeTitle = slot0:findTF("title/free", slot0.endUI)
-	slot0.endTitleDay = slot0:findTF("title/race/num", slot0.endUI)
-	slot0.titleDays = slot0:findTF("title_days", slot0.endUI)
-	slot0.endOurScore = slot0:findTF("score_panel/score/our", slot0.endUI)
-	slot0.endEnemyScore = slot0:findTF("score_panel/score/enemy", slot0.endUI)
-	slot0.endScoreNums = slot0:findTF("nums", slot0.endUI)
-	slot0.sureBtn = slot0:findTF("sure_btn", slot0.endUI)
-	slot0.winTag = slot0:findTF("score_panel/score/win", slot0.endUI)
-	slot0.loseTag = slot0:findTF("score_panel/score/lose", slot0.endUI)
-	slot0.helpUI = slot0:findTF("help_ui")
+	arg_2_0.ourScore = arg_2_0:findTF("score/our", arg_2_0.gameUI)
+	arg_2_0.enemyScore = arg_2_0:findTF("score/enemy", arg_2_0.gameUI)
+	arg_2_0.qte = arg_2_0:findTF("qte", arg_2_0.gameUI)
+	arg_2_0.qteCircles = arg_2_0:findTF("circles", arg_2_0.qte)
+	arg_2_0.qteCircle = arg_2_0:findTF("circles/big", arg_2_0.qte)
+	arg_2_0.result = arg_2_0:findTF("result", arg_2_0.qte)
+	arg_2_0.resultTxt = arg_2_0:findTF("txts", arg_2_0.qte)
+	arg_2_0.cutin = arg_2_0:findTF("cutin", arg_2_0.gameUI)
+	arg_2_0.cutinPaint = arg_2_0:findTF("cutin/paint", arg_2_0.gameUI)
+	arg_2_0.cutinPaints = arg_2_0:findTF("cutin_paints", arg_2_0.gameUI)
+	arg_2_0.scoreCutin = arg_2_0:findTF("score_cutin", arg_2_0.gameUI)
+	arg_2_0.scoreCutinNums = arg_2_0:findTF("score_cutin/nums", arg_2_0.gameUI)
+	arg_2_0.ourScoreCutin = arg_2_0:findTF("score_cutin/our", arg_2_0.gameUI)
+	arg_2_0.enemyScoreCutin = arg_2_0:findTF("score_cutin/enemy", arg_2_0.gameUI)
+	arg_2_0.charTF = {}
+	arg_2_0.charTF.our1 = arg_2_0:findTF("char/our1", arg_2_0.gameUI)
+	arg_2_0.charTF.our2 = arg_2_0:findTF("char/our2", arg_2_0.gameUI)
+	arg_2_0.charTF.enemy1 = arg_2_0:findTF("char/enemy1", arg_2_0.gameUI)
+	arg_2_0.charTF.enemy2 = arg_2_0:findTF("char/enemy2", arg_2_0.gameUI)
+	arg_2_0.charModels = {}
+	arg_2_0.charactor = {}
+	arg_2_0.cutinMask = arg_2_0:findTF("cutin_mask", arg_2_0.gameUI)
+	arg_2_0.endUI = arg_2_0:findTF("end_ui")
+	arg_2_0.endDayTitle = arg_2_0:findTF("title/race", arg_2_0.endUI)
+	arg_2_0.endFreeTitle = arg_2_0:findTF("title/free", arg_2_0.endUI)
+	arg_2_0.endTitleDay = arg_2_0:findTF("title/race/num", arg_2_0.endUI)
+	arg_2_0.titleDays = arg_2_0:findTF("title_days", arg_2_0.endUI)
+	arg_2_0.endOurScore = arg_2_0:findTF("score_panel/score/our", arg_2_0.endUI)
+	arg_2_0.endEnemyScore = arg_2_0:findTF("score_panel/score/enemy", arg_2_0.endUI)
+	arg_2_0.endScoreNums = arg_2_0:findTF("nums", arg_2_0.endUI)
+	arg_2_0.sureBtn = arg_2_0:findTF("sure_btn", arg_2_0.endUI)
+	arg_2_0.winTag = arg_2_0:findTF("score_panel/score/win", arg_2_0.endUI)
+	arg_2_0.loseTag = arg_2_0:findTF("score_panel/score/lose", arg_2_0.endUI)
+	arg_2_0.helpUI = arg_2_0:findTF("help_ui")
 end
 
-function slot0.initPos(slot0)
-	slot0.orgPos = {
-		our_serve = slot0:findTF("our_pos/serve_pos", slot0.pos).anchoredPosition,
-		our1 = slot0:findTF("our_pos/drop_pos1", slot0.pos).anchoredPosition,
-		our2 = slot0:findTF("our_pos/drop_pos2", slot0.pos).anchoredPosition,
-		enemy_serve = slot0:findTF("enemy_pos/serve_pos", slot0.pos).anchoredPosition,
-		enemy1 = slot0:findTF("enemy_pos/drop_pos1", slot0.pos).anchoredPosition,
-		enemy2 = slot0:findTF("enemy_pos/drop_pos2", slot0.pos).anchoredPosition
-	}
+function var_0_0.initPos(arg_3_0)
+	arg_3_0.orgPos = {}
+	arg_3_0.orgPos.our_serve = arg_3_0:findTF("our_pos/serve_pos", arg_3_0.pos).anchoredPosition
+	arg_3_0.orgPos.our1 = arg_3_0:findTF("our_pos/drop_pos1", arg_3_0.pos).anchoredPosition
+	arg_3_0.orgPos.our2 = arg_3_0:findTF("our_pos/drop_pos2", arg_3_0.pos).anchoredPosition
+	arg_3_0.orgPos.enemy_serve = arg_3_0:findTF("enemy_pos/serve_pos", arg_3_0.pos).anchoredPosition
+	arg_3_0.orgPos.enemy1 = arg_3_0:findTF("enemy_pos/drop_pos1", arg_3_0.pos).anchoredPosition
+	arg_3_0.orgPos.enemy2 = arg_3_0:findTF("enemy_pos/drop_pos2", arg_3_0.pos).anchoredPosition
 
-	slot0:resetPos()
+	arg_3_0:resetPos()
 end
 
-function slot0.resetPos(slot0)
-	slot0.anchoredPos = Clone(slot0.orgPos)
-	slot0.anchoredPos.our1 = slot0:getRandomPos("our1")
-	slot0.anchoredPos.our2 = slot0:getRandomPos("our2")
-	slot0.anchoredPos.enemy1 = slot0:getRandomPos("enemy1")
-	slot0.anchoredPos.enemy2 = slot0:getRandomPos("enemy2")
+function var_0_0.resetPos(arg_4_0)
+	arg_4_0.anchoredPos = Clone(arg_4_0.orgPos)
+	arg_4_0.anchoredPos.our1 = arg_4_0:getRandomPos("our1")
+	arg_4_0.anchoredPos.our2 = arg_4_0:getRandomPos("our2")
+	arg_4_0.anchoredPos.enemy1 = arg_4_0:getRandomPos("enemy1")
+	arg_4_0.anchoredPos.enemy2 = arg_4_0:getRandomPos("enemy2")
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.returnBtn, function ()
-		uv0:emit(uv1.ON_BACK)
+function var_0_0.didEnter(arg_5_0)
+	onButton(arg_5_0, arg_5_0.returnBtn, function()
+		arg_5_0:emit(var_0_0.ON_BACK)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.ruleBtn, function ()
+	onButton(arg_5_0, arg_5_0.ruleBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("venusvolleyball_help")
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.mainStartBtn, function ()
-		setActive(uv0.selectUI, true)
-		pg.UIMgr.GetInstance():BlurPanel(uv0.selectUI)
-		uv0:initSelectUI()
+	onButton(arg_5_0, arg_5_0.mainStartBtn, function()
+		setActive(arg_5_0.selectUI, true)
+		pg.UIMgr.GetInstance():BlurPanel(arg_5_0.selectUI)
+		arg_5_0:initSelectUI()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.selectBackBtn, function ()
-		setActive(uv0.selectUI, false)
-		pg.UIMgr.GetInstance():UnblurPanel(uv0.selectUI, uv0._tf)
+	onButton(arg_5_0, arg_5_0.selectBackBtn, function()
+		setActive(arg_5_0.selectUI, false)
+		pg.UIMgr.GetInstance():UnblurPanel(arg_5_0.selectUI, arg_5_0._tf)
 	end, SFX_PANEL)
 
-	slot0.canStartGame = false
+	arg_5_0.canStartGame = false
 
-	onButton(slot0, slot0.selectStartBtn, function ()
-		if not uv0.canStartGame then
+	onButton(arg_5_0, arg_5_0.selectStartBtn, function()
+		if not arg_5_0.canStartGame then
 			return
 		end
 
-		setActive(uv0.mainUI, false)
-		setActive(uv0.selectUI, false)
-		pg.UIMgr.GetInstance():UnblurPanel(uv0.selectUI, uv0._tf)
-		setActive(uv0.gameUI, true)
-		uv0:resetGameData()
+		setActive(arg_5_0.mainUI, false)
+		setActive(arg_5_0.selectUI, false)
+		pg.UIMgr.GetInstance():UnblurPanel(arg_5_0.selectUI, arg_5_0._tf)
+		setActive(arg_5_0.gameUI, true)
+		arg_5_0:resetGameData()
 
-		if uv0.isFirstgame == 0 then
-			uv0:firstShow(function ()
-				uv0:startCountTimer()
+		if arg_5_0.isFirstgame == 0 then
+			arg_5_0:firstShow(function()
+				arg_5_0:startCountTimer()
 			end)
 		else
-			uv0:startCountTimer()
+			arg_5_0:startCountTimer()
 		end
 	end, SFX_PANEL)
 
-	slot0.canSureChar = false
+	arg_5_0.canSureChar = false
 
-	onButton(slot0, slot0.selectSureBtn, function ()
-		if not uv0.canSureChar then
+	onButton(arg_5_0, arg_5_0.selectSureBtn, function()
+		if not arg_5_0.canSureChar then
 			return
 		end
 
-		if uv0.selectCharCamp == "enemy" then
-			uv0.charNames.enemy1 = uv1[uv0.selectSDIndex1]
-			uv0.charNames.enemy2 = uv1[uv0.selectSDIndex2]
-		elseif uv0.selectCharCamp == "our" then
-			uv0.charNames.our1 = uv1[uv0.selectSDIndex1]
-			uv0.charNames.our2 = uv1[uv0.selectSDIndex2]
+		if arg_5_0.selectCharCamp == "enemy" then
+			arg_5_0.charNames.enemy1 = var_0_1[arg_5_0.selectSDIndex1]
+			arg_5_0.charNames.enemy2 = var_0_1[arg_5_0.selectSDIndex2]
+		elseif arg_5_0.selectCharCamp == "our" then
+			arg_5_0.charNames.our1 = var_0_1[arg_5_0.selectSDIndex1]
+			arg_5_0.charNames.our2 = var_0_1[arg_5_0.selectSDIndex2]
 		end
 
-		setActive(uv0.selectWindow, false)
-		uv0:refreshSelectUI()
+		setActive(arg_5_0.selectWindow, false)
+		arg_5_0:refreshSelectUI()
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("mask", slot0.selectWindow), function ()
-		setActive(uv0.selectWindow, false)
+	onButton(arg_5_0, arg_5_0:findTF("mask", arg_5_0.selectWindow), function()
+		setActive(arg_5_0.selectWindow, false)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.pauseBtn, function ()
-		if not uv0.btnAvailable then
+	onButton(arg_5_0, arg_5_0.pauseBtn, function()
+		if not arg_5_0.btnAvailable then
 			return
 		end
 
-		uv0:pauseGame()
+		arg_5_0:pauseGame()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
 			content = i18n("venusvolleyball_suspend_tip"),
-			onNo = function ()
-				uv0:resumeGame()
+			onNo = function()
+				arg_5_0:resumeGame()
 			end,
-			onYes = function ()
-				uv0:resumeGame()
+			onYes = function()
+				arg_5_0:resumeGame()
 			end
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.backBtn, function ()
-		if not uv0.btnAvailable then
+	onButton(arg_5_0, arg_5_0.backBtn, function()
+		if not arg_5_0.btnAvailable then
 			return
 		end
 
-		uv0:pauseGame()
+		arg_5_0:pauseGame()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("venusvolleyball_return_tip"),
-			onNo = function ()
-				uv0:resumeGame()
+			onNo = function()
+				arg_5_0:resumeGame()
 			end,
-			onYes = function ()
-				uv0:endGame()
+			onYes = function()
+				arg_5_0:endGame()
 			end
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.qteBtn, function ()
-		if uv0.qteBtnStatus == uv1 then
+	onButton(arg_5_0, arg_5_0.qteBtn, function()
+		if arg_5_0.qteBtnStatus == var_0_5 then
 			return
 		end
 
-		uv0:qteResult()
+		arg_5_0:qteResult()
 	end)
-	onButton(slot0, slot0.sureBtn, function ()
-		setActive(uv0.mainUI, true)
-		uv0:initMainUI()
-		setActive(uv0.gameUI, false)
-		setActive(uv0.endUI, false)
-		uv0:clearSpineChars()
-		pg.UIMgr.GetInstance():UnblurPanel(uv0.endUI, uv0._tf)
+	onButton(arg_5_0, arg_5_0.sureBtn, function()
+		setActive(arg_5_0.mainUI, true)
+		arg_5_0:initMainUI()
+		setActive(arg_5_0.gameUI, false)
+		setActive(arg_5_0.endUI, false)
+		arg_5_0:clearSpineChars()
+		pg.UIMgr.GetInstance():UnblurPanel(arg_5_0.endUI, arg_5_0._tf)
 	end, SFX_PANEL)
-	slot0:initMainUI()
+	arg_5_0:initMainUI()
 end
 
-function slot0.playEffect(slot0, slot1, slot2)
-	if slot2 then
-		slot1.anchoredPosition = slot2
+function var_0_0.playEffect(arg_22_0, arg_22_1, arg_22_2)
+	if arg_22_2 then
+		arg_22_1.anchoredPosition = arg_22_2
 	else
-		slot1.anchoredPosition = slot0.ball.anchoredPosition
+		arg_22_1.anchoredPosition = arg_22_0.ball.anchoredPosition
 	end
 
-	setActive(slot1, false)
-	setActive(slot1, true)
+	setActive(arg_22_1, false)
+	setActive(arg_22_1, true)
 end
 
-function slot0.getGameData(slot0)
-	slot0.mgProxy = getProxy(MiniGameProxy)
-	slot0.hubData = slot0.mgProxy:GetHubByHubId(13)
-	slot0.curDay = slot0.hubData.ultimate == 0 and slot0.hubData.usedtime + 1 or 8
-	slot0.unlockDay = slot0.hubData.usedtime + slot0.hubData.count
-	slot0.curDay = slot0.curDay <= slot0.unlockDay and slot0.curDay or slot0.unlockDay
-	slot0.mgData = slot0.mgProxy:GetMiniGameData(17)
-	slot0.endScore = slot0.mgData:GetSimpleValue("endScore")[slot0.curDay]
-	slot0.storylist = slot0.mgData:GetSimpleValue("story")
-	slot0.isFirstgame = PlayerPrefs.GetInt("volleyballgame_first_" .. getProxy(PlayerProxy):getData().id)
+function var_0_0.getGameData(arg_23_0)
+	arg_23_0.mgProxy = getProxy(MiniGameProxy)
+	arg_23_0.hubData = arg_23_0.mgProxy:GetHubByHubId(13)
+	arg_23_0.curDay = arg_23_0.hubData.ultimate == 0 and arg_23_0.hubData.usedtime + 1 or 8
+	arg_23_0.unlockDay = arg_23_0.hubData.usedtime + arg_23_0.hubData.count
+	arg_23_0.curDay = arg_23_0.curDay <= arg_23_0.unlockDay and arg_23_0.curDay or arg_23_0.unlockDay
+	arg_23_0.mgData = arg_23_0.mgProxy:GetMiniGameData(17)
+	arg_23_0.endScore = arg_23_0.mgData:GetSimpleValue("endScore")[arg_23_0.curDay]
+	arg_23_0.storylist = arg_23_0.mgData:GetSimpleValue("story")
+
+	local var_23_0 = getProxy(PlayerProxy):getData().id
+
+	arg_23_0.isFirstgame = PlayerPrefs.GetInt("volleyballgame_first_" .. var_23_0)
 end
 
-function slot0.getEnemyCharsIndex(slot0)
-	return slot0.mgData:GetSimpleValue("mainChar")[slot0.curDay], slot0.mgData:GetSimpleValue("minorChar")[slot0.curDay]
+function var_0_0.getEnemyCharsIndex(arg_24_0)
+	return arg_24_0.mgData:GetSimpleValue("mainChar")[arg_24_0.curDay], arg_24_0.mgData:GetSimpleValue("minorChar")[arg_24_0.curDay]
 end
 
-function slot0.initMainUI(slot0)
-	slot0.isInGame = false
+function var_0_0.initMainUI(arg_25_0)
+	arg_25_0.isInGame = false
 
-	slot0:getGameData()
+	arg_25_0:getGameData()
 
-	if slot0.hubData.ultimate == 0 and slot0.hubData:getConfig("reward_need") <= slot0.hubData.usedtime then
+	if arg_25_0.hubData.ultimate == 0 and arg_25_0.hubData.usedtime >= arg_25_0.hubData:getConfig("reward_need") then
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = slot0.hubData.id,
+			hubid = arg_25_0.hubData.id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
 	end
 
-	slot0.isFree = slot0.hubData.ultimate ~= 0 and true or false
+	arg_25_0.isFree = arg_25_0.hubData.ultimate ~= 0 and true or false
 
-	setActive(slot0:findTF("free_tag", slot0.mainStartBtn), slot0.isFree)
-	setActive(slot0.gotIcon, slot0.isFree)
-	eachChild(slot0.progressContent, function (slot0)
-		slot1 = ""
-		slot2 = tonumber(slot0.name)
+	setActive(arg_25_0:findTF("free_tag", arg_25_0.mainStartBtn), arg_25_0.isFree)
+	setActive(arg_25_0.gotIcon, arg_25_0.isFree)
+	eachChild(arg_25_0.progressContent, function(arg_26_0)
+		local var_26_0 = ""
+		local var_26_1 = tonumber(arg_26_0.name)
+		local var_26_2 = var_0_1[arg_25_0.mgData:GetSimpleValue("mainChar")[var_26_1]]
 
-		setActive(uv1:findTF("char_bg/mask", slot0), false)
-		setActive(uv1:findTF("name_bg/mask", slot0), false)
-		setActive(uv1:findTF("pass", slot0), false)
+		setActive(arg_25_0:findTF("char_bg/mask", arg_26_0), false)
+		setActive(arg_25_0:findTF("name_bg/mask", arg_26_0), false)
+		setActive(arg_25_0:findTF("pass", arg_26_0), false)
 
-		if slot2 == uv1.curDay and uv1.hubData.count > 0 then
-			slot1 = "red"
+		if var_26_1 == arg_25_0.curDay and arg_25_0.hubData.count > 0 then
+			var_26_0 = "red"
 
-			setImageSprite(uv1:findTF("char_bg/icon", slot0), uv1.icons:Find(uv1:getCharIndex(uv0[uv1.mgData:GetSimpleValue("mainChar")[slot2]])):GetComponent(typeof(Image)).sprite, true)
-		elseif slot2 < uv1.curDay or slot2 == uv1.curDay and uv1.hubData.count == 0 then
-			slot1 = "grey"
+			setImageSprite(arg_25_0:findTF("char_bg/icon", arg_26_0), arg_25_0.icons:Find(arg_25_0:getCharIndex(var_26_2)):GetComponent(typeof(Image)).sprite, true)
+		elseif var_26_1 < arg_25_0.curDay or var_26_1 == arg_25_0.curDay and arg_25_0.hubData.count == 0 then
+			var_26_0 = "grey"
 
-			setImageSprite(uv1:findTF("char_bg/icon", slot0), uv1.icons:Find(uv1:getCharIndex(slot3)):GetComponent(typeof(Image)).sprite, true)
-			setActive(uv1:findTF("char_bg/mask", slot0), true)
-			setActive(uv1:findTF("name_bg/mask", slot0), true)
-			setActive(uv1:findTF("pass", slot0), true)
-		elseif uv1.curDay < slot2 and slot2 <= uv1.unlockDay then
-			slot1 = "blue"
+			setImageSprite(arg_25_0:findTF("char_bg/icon", arg_26_0), arg_25_0.icons:Find(arg_25_0:getCharIndex(var_26_2)):GetComponent(typeof(Image)).sprite, true)
+			setActive(arg_25_0:findTF("char_bg/mask", arg_26_0), true)
+			setActive(arg_25_0:findTF("name_bg/mask", arg_26_0), true)
+			setActive(arg_25_0:findTF("pass", arg_26_0), true)
+		elseif var_26_1 > arg_25_0.curDay and var_26_1 <= arg_25_0.unlockDay then
+			var_26_0 = "blue"
 
-			setImageSprite(uv1:findTF("char_bg/icon", slot0), uv1.icons:Find(uv1:getCharIndex(slot3)):GetComponent(typeof(Image)).sprite, true)
+			setImageSprite(arg_25_0:findTF("char_bg/icon", arg_26_0), arg_25_0.icons:Find(arg_25_0:getCharIndex(var_26_2)):GetComponent(typeof(Image)).sprite, true)
 		else
-			slot1 = "grey"
+			var_26_0 = "grey"
 
-			setImageSprite(uv1:findTF("char_bg/icon", slot0), uv1.colors:Find("unkonwn"):GetComponent(typeof(Image)).sprite)
+			setImageSprite(arg_25_0:findTF("char_bg/icon", arg_26_0), arg_25_0.colors:Find("unkonwn"):GetComponent(typeof(Image)).sprite)
 		end
 
-		setImageSprite(uv1:findTF("name_bg", slot0), uv1.colors:Find(slot1):GetComponent(typeof(Image)).sprite)
+		setImageSprite(arg_25_0:findTF("name_bg", arg_26_0), arg_25_0.colors:Find(var_26_0):GetComponent(typeof(Image)).sprite)
 	end)
 
-	slot0.progressContent.anchoredPosition = {
+	local var_25_0 = 215
+	local var_25_1 = math.min(645, (arg_25_0.curDay - 1) * var_25_0)
+
+	arg_25_0.progressContent.anchoredPosition = {
 		x = 0,
-		y = math.min(645, (slot0.curDay - 1) * 215)
+		y = var_25_1
 	}
 
-	onScroll(slot0, slot0.progressScroll, function (slot0)
-		setActive(uv0:findTF("right_panel/arraws_up", uv0.mainUI), slot0.y < 1 and true or false)
-		setActive(uv0:findTF("right_panel/arraws_down", uv0.mainUI), slot0.y > 0 and true or false)
+	onScroll(arg_25_0, arg_25_0.progressScroll, function(arg_27_0)
+		setActive(arg_25_0:findTF("right_panel/arraws_up", arg_25_0.mainUI), arg_27_0.y < 1 and true or false)
+		setActive(arg_25_0:findTF("right_panel/arraws_down", arg_25_0.mainUI), arg_27_0.y > 0 and true or false)
 	end)
 end
 
-function slot0.initSelectUI(slot0)
-	setActive(slot0.freeTitle, slot0.isFree)
-	setActive(slot0.dayTitle, not slot0.isFree)
-	setText(slot0.titleDayNum, slot0.curDay)
-	setText(slot0.ruleTxt, i18n("venusvolleyball_rule_tip", slot0.endScore))
+function var_0_0.initSelectUI(arg_28_0)
+	setActive(arg_28_0.freeTitle, arg_28_0.isFree)
+	setActive(arg_28_0.dayTitle, not arg_28_0.isFree)
+	setText(arg_28_0.titleDayNum, arg_28_0.curDay)
+	setText(arg_28_0.ruleTxt, i18n("venusvolleyball_rule_tip", arg_28_0.endScore))
 
-	slot0.charNames = {}
-	slot0.lastSelectNames = {}
+	arg_28_0.charNames = {}
+	arg_28_0.lastSelectNames = {}
 
-	eachChild(slot0.select4Chars, function (slot0)
-		slot1 = slot0.name
+	eachChild(arg_28_0.select4Chars, function(arg_29_0)
+		local var_29_0 = arg_29_0.name
 
-		onButton(uv0, slot0, function ()
-			if not uv0.isFree and string.find(uv1, "enemy") then
+		onButton(arg_28_0, arg_29_0, function()
+			if not arg_28_0.isFree and string.find(var_29_0, "enemy") then
 				return
 			end
 
-			uv0.selectCharCamp = string.find(uv1, "enemy") and "enemy" or "our"
+			arg_28_0.selectCharCamp = string.find(var_29_0, "enemy") and "enemy" or "our"
 
-			uv0:openSelectWindow()
+			arg_28_0:openSelectWindow()
 		end)
 	end)
 
-	if not slot0.isFree then
-		slot1, slot2 = slot0:getEnemyCharsIndex()
-		slot0.charNames.enemy2 = uv0[slot2]
-		slot0.charNames.enemy1 = uv0[slot1]
+	if not arg_28_0.isFree then
+		local var_28_0, var_28_1 = arg_28_0:getEnemyCharsIndex()
+
+		arg_28_0.charNames.enemy1, arg_28_0.charNames.enemy2 = var_0_1[var_28_0], var_0_1[var_28_1]
 	end
 
-	slot0:refreshSelectUI()
+	arg_28_0:refreshSelectUI()
 end
 
-function slot0.getCharIndex(slot0, slot1)
-	for slot5, slot6 in ipairs(uv0) do
-		if slot6 == slot1 then
-			return slot5
+function var_0_0.getCharIndex(arg_31_0, arg_31_1)
+	for iter_31_0, iter_31_1 in ipairs(var_0_1) do
+		if iter_31_1 == arg_31_1 then
+			return iter_31_0
 		end
 	end
 
 	return 1
 end
 
-function slot0.refreshSelectUI(slot0)
-	eachChild(slot0.select4Chars, function (slot0)
-		if uv0.charNames[slot0.name] then
-			setActive(uv0:findTF("select_btn", slot0), false)
-			setActive(uv0:findTF("char", slot0), true)
-			setImageSprite(uv0:findTF("char/icon", slot0), uv0.paints:Find(uv0:getCharIndex(uv0.charNames[slot1])):GetComponent(typeof(Image)).sprite, true)
-			setImageSprite(uv0:findTF("char/tag", slot0), uv0.tags:Find(uv0:getCharIndex(uv0.charNames[slot1])):GetComponent(typeof(Image)).sprite, true)
+function var_0_0.refreshSelectUI(arg_32_0)
+	eachChild(arg_32_0.select4Chars, function(arg_33_0)
+		local var_33_0 = arg_33_0.name
+
+		if arg_32_0.charNames[var_33_0] then
+			setActive(arg_32_0:findTF("select_btn", arg_33_0), false)
+			setActive(arg_32_0:findTF("char", arg_33_0), true)
+			setImageSprite(arg_32_0:findTF("char/icon", arg_33_0), arg_32_0.paints:Find(arg_32_0:getCharIndex(arg_32_0.charNames[var_33_0])):GetComponent(typeof(Image)).sprite, true)
+			setImageSprite(arg_32_0:findTF("char/tag", arg_33_0), arg_32_0.tags:Find(arg_32_0:getCharIndex(arg_32_0.charNames[var_33_0])):GetComponent(typeof(Image)).sprite, true)
 		else
-			setActive(uv0:findTF("select_btn", slot0), true)
-			setActive(uv0:findTF("char", slot0), false)
+			setActive(arg_32_0:findTF("select_btn", arg_33_0), true)
+			setActive(arg_32_0:findTF("char", arg_33_0), false)
 		end
 	end)
 
-	slot0.canStartGame = slot0.charNames.our1 and slot0.charNames.our2 and slot0.charNames.enemy1 and slot0.charNames.enemy2 and true or false
+	arg_32_0.canStartGame = arg_32_0.charNames.our1 and arg_32_0.charNames.our2 and arg_32_0.charNames.enemy1 and arg_32_0.charNames.enemy2 and true or false
 
-	setGray(slot0.selectStartBtn, not slot0.canStartGame, not slot0.canStartGame)
+	setGray(arg_32_0.selectStartBtn, not arg_32_0.canStartGame, not arg_32_0.canStartGame)
 end
 
-function slot0.isSelected(slot0, slot1, slot2)
-	slot3 = false
+function var_0_0.isSelected(arg_34_0, arg_34_1, arg_34_2)
+	local var_34_0 = false
 
-	for slot7, slot8 in pairs(slot0.charNames) do
-		if slot1 == slot8 then
-			slot3 = not string.find(slot7, slot2) and true or false
+	for iter_34_0, iter_34_1 in pairs(arg_34_0.charNames) do
+		if arg_34_1 == iter_34_1 then
+			var_34_0 = not string.find(iter_34_0, arg_34_2) and true or false
 		end
 	end
 
-	return slot3
+	return var_34_0
 end
 
-function slot0.openSelectWindow(slot0)
-	setActive(slot0.selectWindow, true)
+function var_0_0.openSelectWindow(arg_35_0)
+	setActive(arg_35_0.selectWindow, true)
 
-	slot0.hasSelectNum = 0
+	arg_35_0.hasSelectNum = 0
 
-	setText(slot0.selectNum, setColorStr(slot0.hasSelectNum, COLOR_GREEN) .. "/2")
+	setText(arg_35_0.selectNum, setColorStr(arg_35_0.hasSelectNum, COLOR_GREEN) .. "/2")
 
-	slot0.selectSDIndex1 = nil
-	slot0.selectSDIndex2 = nil
+	arg_35_0.selectSDIndex1 = nil
+	arg_35_0.selectSDIndex2 = nil
 
-	eachChild(slot0.select9Chars, function (slot0)
-		setImageSprite(uv0:findTF("char/frame/icon", slot0), uv0.icons:Find(tonumber(slot0.name)):GetComponent(typeof(Image)).sprite, true)
-		onButton(uv0, slot0, function ()
-			if uv0:isSelected(uv1[uv2], uv0.selectCharCamp) then
+	eachChild(arg_35_0.select9Chars, function(arg_36_0)
+		local var_36_0 = tonumber(arg_36_0.name)
+
+		setImageSprite(arg_35_0:findTF("char/frame/icon", arg_36_0), arg_35_0.icons:Find(var_36_0):GetComponent(typeof(Image)).sprite, true)
+		onButton(arg_35_0, arg_36_0, function()
+			if arg_35_0:isSelected(var_0_1[var_36_0], arg_35_0.selectCharCamp) then
 				return
 			end
 
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv3)
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_29)
 
-			if isActive(uv0:findTF("selected", uv4)) then
-				setActive(uv0:findTF("selected", uv4), false)
+			if isActive(arg_35_0:findTF("selected", arg_36_0)) then
+				setActive(arg_35_0:findTF("selected", arg_36_0), false)
 
-				if uv0.selectSDIndex1 and uv0.selectSDIndex1 == uv2 then
-					uv0.selectSDIndex1 = nil
+				if arg_35_0.selectSDIndex1 and arg_35_0.selectSDIndex1 == var_36_0 then
+					arg_35_0.selectSDIndex1 = nil
 				end
 
-				if uv0.selectSDIndex2 and uv0.selectSDIndex2 == uv2 then
-					uv0.selectSDIndex2 = nil
+				if arg_35_0.selectSDIndex2 and arg_35_0.selectSDIndex2 == var_36_0 then
+					arg_35_0.selectSDIndex2 = nil
 				end
 
-				uv0.hasSelectNum = uv0.hasSelectNum - 1
-			elseif uv0.selectSDIndex1 and uv0.selectSDIndex2 then
-				-- Nothing
-			elseif uv0.selectSDIndex1 then
-				uv0.selectSDIndex2 = uv2
-				uv0.hasSelectNum = uv0.hasSelectNum + 1
+				arg_35_0.hasSelectNum = arg_35_0.hasSelectNum - 1
+			elseif arg_35_0.selectSDIndex1 and arg_35_0.selectSDIndex2 then
+				-- block empty
+			elseif arg_35_0.selectSDIndex1 then
+				arg_35_0.selectSDIndex2 = var_36_0
+				arg_35_0.hasSelectNum = arg_35_0.hasSelectNum + 1
 			else
-				uv0.selectSDIndex1 = uv2
-				uv0.hasSelectNum = uv0.hasSelectNum + 1
+				arg_35_0.selectSDIndex1 = var_36_0
+				arg_35_0.hasSelectNum = arg_35_0.hasSelectNum + 1
 			end
 
-			uv0:refreshSelectWindow()
+			arg_35_0:refreshSelectWindow()
 		end)
 	end)
-	slot0:refreshSelectWindow()
+	arg_35_0:refreshSelectWindow()
 end
 
-function slot0.refreshSelectWindow(slot0)
-	eachChild(slot0.select9Chars, function (slot0)
-		setActive(uv0:findTF("char/mask", slot0), uv0:isSelected(uv1[tonumber(slot0.name)], uv0.selectCharCamp) and true or false)
+function var_0_0.refreshSelectWindow(arg_38_0)
+	eachChild(arg_38_0.select9Chars, function(arg_39_0)
+		local var_39_0 = tonumber(arg_39_0.name)
 
-		if slot1 == uv0.selectSDIndex1 or slot1 == uv0.selectSDIndex2 then
-			setActive(uv0:findTF("selected", slot0), true)
+		setActive(arg_38_0:findTF("char/mask", arg_39_0), arg_38_0:isSelected(var_0_1[var_39_0], arg_38_0.selectCharCamp) and true or false)
+
+		if var_39_0 == arg_38_0.selectSDIndex1 or var_39_0 == arg_38_0.selectSDIndex2 then
+			setActive(arg_38_0:findTF("selected", arg_39_0), true)
 		else
-			setActive(uv0:findTF("selected", slot0), false)
+			setActive(arg_38_0:findTF("selected", arg_39_0), false)
 		end
 	end)
-	setText(slot0.selectNum, setColorStr(slot0.hasSelectNum, COLOR_GREEN) .. "/2")
+	setText(arg_38_0.selectNum, setColorStr(arg_38_0.hasSelectNum, COLOR_GREEN) .. "/2")
 
-	slot0.canSureChar = slot0.selectSDIndex1 and slot0.selectSDIndex2 and true or false
+	arg_38_0.canSureChar = arg_38_0.selectSDIndex1 and arg_38_0.selectSDIndex2 and true or false
 
-	setGray(slot0.selectSureBtn, not slot0.canSureChar, not slot0.canSureChar)
+	setGray(arg_38_0.selectSureBtn, not arg_38_0.canSureChar, not arg_38_0.canSureChar)
 end
 
-function slot0.firstShow(slot0, slot1)
-	setActive(slot0.helpUI, true)
-	pg.UIMgr.GetInstance():BlurPanel(slot0.helpUI)
-	onButton(slot0, slot0.helpUI, function ()
-		PlayerPrefs.SetInt("volleyballgame_first_" .. getProxy(PlayerProxy):getData().id, 1)
-		setActive(uv0.helpUI, false)
-		pg.UIMgr.GetInstance():UnblurPanel(uv0.helpUI, uv0._tf)
+function var_0_0.firstShow(arg_40_0, arg_40_1)
+	setActive(arg_40_0.helpUI, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_40_0.helpUI)
+	onButton(arg_40_0, arg_40_0.helpUI, function()
+		local var_41_0 = getProxy(PlayerProxy):getData().id
 
-		if uv1 then
-			uv1()
+		PlayerPrefs.SetInt("volleyballgame_first_" .. var_41_0, 1)
+		setActive(arg_40_0.helpUI, false)
+		pg.UIMgr.GetInstance():UnblurPanel(arg_40_0.helpUI, arg_40_0._tf)
+
+		if arg_40_1 then
+			arg_40_1()
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.startCountTimer(slot0)
-	slot0:setBtnAvailable(false)
-	setActive(slot0.countTimeUI, true)
-	pg.UIMgr.GetInstance():BlurPanel(slot0.countTimeUI)
+function var_0_0.startCountTimer(arg_42_0)
+	arg_42_0:setBtnAvailable(false)
+	setActive(arg_42_0.countTimeUI, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_42_0.countTimeUI)
 
-	slot0.countTime = 3
+	arg_42_0.countTime = 3
 
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
-	setImageSprite(slot0.countTimeImage, slot0.countTimeNumImage:Find(slot0.countTime):GetComponent(typeof(Image)).sprite)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_28)
+	setImageSprite(arg_42_0.countTimeImage, arg_42_0.countTimeNumImage:Find(arg_42_0.countTime):GetComponent(typeof(Image)).sprite)
 
-	if slot0.countTimer then
-		slot0.countTimer:Reset(function ()
-			uv0.countTime = uv0.countTime - 1
+	local function var_42_0()
+		arg_42_0.countTime = arg_42_0.countTime - 1
 
-			if uv0.countTime <= 0 then
-				setActive(uv0.countTimeUI, false)
-				pg.UIMgr.GetInstance():UnblurPanel(uv0.countTimeUI, uv0._tf)
-				uv0:resetGameAni()
-				uv0:startGame()
-			else
-				setImageSprite(uv0.countTimeImage, uv0.countTimeNumImage:Find(uv0.countTime):GetComponent(typeof(Image)).sprite)
-			end
-		end, 1, -1)
-	else
-		slot0.countTimer = Timer.New(slot1, 1, -1)
+		if arg_42_0.countTime <= 0 then
+			setActive(arg_42_0.countTimeUI, false)
+			pg.UIMgr.GetInstance():UnblurPanel(arg_42_0.countTimeUI, arg_42_0._tf)
+			arg_42_0:resetGameAni()
+			arg_42_0:startGame()
+		else
+			setImageSprite(arg_42_0.countTimeImage, arg_42_0.countTimeNumImage:Find(arg_42_0.countTime):GetComponent(typeof(Image)).sprite)
+		end
 	end
 
-	slot0.countTimer:Start()
+	if arg_42_0.countTimer then
+		arg_42_0.countTimer:Reset(var_42_0, 1, -1)
+	else
+		arg_42_0.countTimer = Timer.New(var_42_0, 1, -1)
+	end
+
+	arg_42_0.countTimer:Start()
 end
 
-function slot0.setBtnAvailable(slot0, slot1)
-	slot0.btnAvailable = slot1
+function var_0_0.setBtnAvailable(arg_44_0, arg_44_1)
+	arg_44_0.btnAvailable = arg_44_1
 
-	setGray(slot0.backBtn, not slot1, not slot1)
-	setGray(slot0.pauseBtn, not slot1, not slot1)
+	setGray(arg_44_0.backBtn, not arg_44_1, not arg_44_1)
+	setGray(arg_44_0.pauseBtn, not arg_44_1, not arg_44_1)
 end
 
-function slot0.startGame(slot0)
-	slot0.isInGame = true
+function var_0_0.startGame(arg_45_0)
+	arg_45_0.isInGame = true
 
-	slot0:setBtnAvailable(true)
-	setActive(slot0.bgEffect, false)
-	setActive(slot0.bgEffect, true)
+	arg_45_0:setBtnAvailable(true)
+	setActive(arg_45_0.bgEffect, false)
+	setActive(arg_45_0.bgEffect, true)
 
-	if slot0.beginTeam == uv0 then
-		slot0:ourServe(function ()
-			uv0:enemyUp2Up(function ()
-				uv0:enemyUp2Hit(function ()
-					uv0:enemyThrow(function ()
-						uv0:enterLoop()
+	if arg_45_0.beginTeam == var_0_3 then
+		arg_45_0:ourServe(function()
+			arg_45_0:enemyUp2Up(function()
+				arg_45_0:enemyUp2Hit(function()
+					arg_45_0:enemyThrow(function()
+						arg_45_0:enterLoop()
 					end)
 				end)
 			end)
 		end)
 	else
-		slot0:enemyServe(function ()
-			uv0:enterLoop()
+		arg_45_0:enemyServe(function()
+			arg_45_0:enterLoop()
 		end)
 	end
 end
 
-function slot0.enterLoop(slot0)
-	slot0:ourUp2Up(function ()
-		uv0:ourUp2Hit(function ()
-			uv0:ourThrow(function ()
-				uv0:enemyUp2Up(function ()
-					uv0:enemyUp2Hit(function ()
-						uv0:enemyThrow(function ()
-							uv0:enterLoop()
+function var_0_0.enterLoop(arg_51_0)
+	arg_51_0:ourUp2Up(function()
+		arg_51_0:ourUp2Hit(function()
+			arg_51_0:ourThrow(function()
+				arg_51_0:enemyUp2Up(function()
+					arg_51_0:enemyUp2Hit(function()
+						arg_51_0:enemyThrow(function()
+							arg_51_0:enterLoop()
 						end)
 					end)
 				end)
@@ -579,913 +594,963 @@ function slot0.enterLoop(slot0)
 	end)
 end
 
-function slot0.ourServe(slot0, slot1)
-	slot0.ballPosTag = "our_serve"
+function var_0_0.ourServe(arg_58_0, arg_58_1)
+	arg_58_0.ballPosTag = "our_serve"
 
-	setActive(slot0.ball, true)
-	slot0:charServeBall()
-	slot0:managedTween(LeanTween.delayedCall, function ()
-		slot0 = "enemy" .. math.random(2)
-		uv0.ballPosTag = slot0
-		uv0.anchoredPos[uv0.ballPosTag] = uv0:getRandomPos(uv0.ballPosTag)
+	setActive(arg_58_0.ball, true)
+	arg_58_0:charServeBall()
+	arg_58_0:managedTween(LeanTween.delayedCall, function()
+		local var_59_0 = "enemy" .. math.random(2)
 
-		uv0:ballServe(uv0.ball, uv1, uv0.anchoredPos[slot0], function ()
-			if uv0 then
-				uv0()
+		arg_58_0.ballPosTag = var_59_0
+		arg_58_0.anchoredPos[arg_58_0.ballPosTag] = arg_58_0:getRandomPos(arg_58_0.ballPosTag)
+
+		arg_58_0:ballServe(arg_58_0.ball, var_0_15, arg_58_0.anchoredPos[var_59_0], function()
+			if arg_58_1 then
+				arg_58_1()
 			end
 		end)
-		uv0:managedTween(LeanTween.delayedCall, function ()
-			uv0:charUpBall()
-		end, uv1 - uv3, nil)
-	end, uv2 + 0.5, nil)
+		arg_58_0:managedTween(LeanTween.delayedCall, function()
+			arg_58_0:charUpBall()
+		end, var_0_15 - var_0_21, nil)
+	end, var_0_20 + 0.5, nil)
 end
 
-function slot0.enemyServe(slot0, slot1)
-	slot0.ballPosTag = "enemy_serve"
+function var_0_0.enemyServe(arg_62_0, arg_62_1)
+	arg_62_0.ballPosTag = "enemy_serve"
 
-	setActive(slot0.ball, true)
-	slot0:charServeBall()
-	slot0:managedTween(LeanTween.delayedCall, function ()
-		slot0 = "our" .. math.random(2)
-		uv0.ballPosTag = slot0
-		uv0.anchoredPos[uv0.ballPosTag] = uv0:getRandomPos(uv0.ballPosTag)
+	setActive(arg_62_0.ball, true)
+	arg_62_0:charServeBall()
+	arg_62_0:managedTween(LeanTween.delayedCall, function()
+		local var_63_0 = "our" .. math.random(2)
 
-		uv0:ballServe(uv0.ball, uv1, uv0.anchoredPos[slot0], function ()
-			if uv0 then
-				uv0()
+		arg_62_0.ballPosTag = var_63_0
+		arg_62_0.anchoredPos[arg_62_0.ballPosTag] = arg_62_0:getRandomPos(arg_62_0.ballPosTag)
+
+		arg_62_0:ballServe(arg_62_0.ball, var_0_15, arg_62_0.anchoredPos[var_63_0], function()
+			if arg_62_1 then
+				arg_62_1()
 			end
 		end)
-		uv0:managedTween(LeanTween.delayedCall, function ()
-			uv0:charUpBall()
-		end, uv1 - uv3, nil)
-	end, uv2 + 0.5, nil)
+		arg_62_0:managedTween(LeanTween.delayedCall, function()
+			arg_62_0:charUpBall()
+		end, var_0_15 - var_0_21, nil)
+	end, var_0_20 + 0.5, nil)
 end
 
-function slot0.ourUp2Up(slot0, slot1)
-	if slot0.qteStatus == uv0 and slot0.qteType == uv1 then
-		slot0:ourFly()
+function var_0_0.ourUp2Up(arg_66_0, arg_66_1)
+	if arg_66_0.qteStatus == var_0_11 and arg_66_0.qteType == var_0_13 then
+		arg_66_0:ourFly()
 
 		return
 	end
 
-	slot0.ballPosTag = slot0.ballPosTag == "our1" and "our2" or "our1"
+	arg_66_0.ballPosTag = arg_66_0.ballPosTag == "our1" and "our2" or "our1"
 
-	slot0:ballUp2Up(slot0.ball, uv2, slot0.anchoredPos[slot0.ballPosTag], function ()
-		if uv0 then
-			uv0()
+	arg_66_0:ballUp2Up(arg_66_0.ball, var_0_16, arg_66_0.anchoredPos[arg_66_0.ballPosTag], function()
+		if arg_66_1 then
+			arg_66_1()
 		end
 	end)
-	slot0:managedTween(LeanTween.delayedCall, function ()
-		uv0:charUpBall()
+	arg_66_0:managedTween(LeanTween.delayedCall, function()
+		arg_66_0:charUpBall()
 	end, 0.3, nil)
 end
 
-function slot0.ourUp2Hit(slot0, slot1)
-	slot2 = {}
-	slot0.ballPosTag = slot0.ballPosTag == "our1" and "our2" or "our1"
-	slot0.anchoredPos[slot0.ballPosTag] = slot0:getRandomPos(slot0.ballPosTag)
-	slot0.qteType = uv0
+function var_0_0.ourUp2Hit(arg_69_0, arg_69_1)
+	local var_69_0 = {}
 
-	slot0:charHitBall()
+	arg_69_0.ballPosTag = arg_69_0.ballPosTag == "our1" and "our2" or "our1"
+	arg_69_0.anchoredPos[arg_69_0.ballPosTag] = arg_69_0:getRandomPos(arg_69_0.ballPosTag)
+	arg_69_0.qteType = var_0_14
 
-	slot4 = false
+	arg_69_0:charHitBall()
 
-	function slot5(slot0)
-		if uv0 then
-			slot0()
+	local var_69_1 = false
+
+	local function var_69_2(arg_70_0)
+		if var_69_1 then
+			arg_70_0()
 		else
-			uv0 = true
+			var_69_1 = true
 		end
 	end
 
-	table.insert(slot2, function (slot0)
-		function slot1()
-			if uv0.isCutin then
-				uv0:showcutin(function ()
-					uv0.isCutin = false
+	table.insert(var_69_0, function(arg_71_0)
+		local function var_71_0()
+			if arg_69_0.isCutin then
+				arg_69_0:showcutin(function()
+					arg_69_0.isCutin = false
 
-					uv1()
+					arg_71_0()
 				end)
 			else
-				uv1()
+				arg_71_0()
 			end
 		end
 
-		uv0:managedTween(LeanTween.delayedCall, function ()
-			uv0(uv1)
-		end, uv2 - 0.2, nil)
-		uv0:managedTween(LeanTween.delayedCall, function ()
-			uv0:startQTE(uv1, 200, uv0.anchoredPos[uv0.ballPosTag], function ()
-				uv0(uv1)
+		arg_69_0:managedTween(LeanTween.delayedCall, function()
+			var_69_2(var_71_0)
+		end, var_0_16 - 0.2, nil)
+		arg_69_0:managedTween(LeanTween.delayedCall, function()
+			arg_69_0:startQTE(var_0_32, 200, arg_69_0.anchoredPos[arg_69_0.ballPosTag], function()
+				var_69_2(var_71_0)
 			end)
-		end, uv2 - uv3 - 0.2, nil)
+		end, var_0_16 - var_0_32 - 0.2, nil)
 	end)
-	table.insert(slot2, function (slot0)
-		uv0:ballUp2Hit(uv0.ball, uv1, uv0.anchoredPos[uv0.ballPosTag], slot0)
+	table.insert(var_69_0, function(arg_77_0)
+		arg_69_0:ballUp2Hit(arg_69_0.ball, var_0_16, arg_69_0.anchoredPos[arg_69_0.ballPosTag], arg_77_0)
 	end)
-	parallelAsync(slot2, function ()
-		if uv0 then
-			uv0()
+	parallelAsync(var_69_0, function()
+		if arg_69_1 then
+			arg_69_1()
 		end
 	end)
 end
 
-function slot0.ourThrow(slot0, slot1)
-	slot2 = "enemy" .. math.random(2)
-	slot0.ballPosTag = slot2
-	slot0.anchoredPos[slot0.ballPosTag] = slot0:getRandomPos(slot0.ballPosTag)
+function var_0_0.ourThrow(arg_79_0, arg_79_1)
+	local var_79_0 = "enemy" .. math.random(2)
 
-	slot0:ballHit(slot0.ball, uv0, slot0.anchoredPos[slot2], function ()
-		if uv0 then
-			uv0()
+	arg_79_0.ballPosTag = var_79_0
+	arg_79_0.anchoredPos[arg_79_0.ballPosTag] = arg_79_0:getRandomPos(arg_79_0.ballPosTag)
+
+	arg_79_0:ballHit(arg_79_0.ball, var_0_17, arg_79_0.anchoredPos[var_79_0], function()
+		if arg_79_1 then
+			arg_79_1()
 		end
 	end)
-	slot0:charUpBall()
+	arg_79_0:charUpBall()
 end
 
-function slot0.enemyUp2Up(slot0, slot1)
-	if slot0.qteStatus == uv0 and slot0.qteType == uv1 then
-		slot0:enemyFly()
+function var_0_0.enemyUp2Up(arg_81_0, arg_81_1)
+	if arg_81_0.qteStatus == var_0_10 and arg_81_0.qteType == var_0_14 then
+		arg_81_0:enemyFly()
 
 		return
 	end
 
-	slot0.ballPosTag = slot0.ballPosTag == "enemy1" and "enemy2" or "enemy1"
+	arg_81_0.ballPosTag = arg_81_0.ballPosTag == "enemy1" and "enemy2" or "enemy1"
 
-	slot0:ballUp2Up(slot0.ball, uv2, slot0.anchoredPos[slot0.ballPosTag], function ()
-		if uv0 then
-			uv0()
+	arg_81_0:ballUp2Up(arg_81_0.ball, var_0_16, arg_81_0.anchoredPos[arg_81_0.ballPosTag], function()
+		if arg_81_1 then
+			arg_81_1()
 		end
 	end)
-	slot0:managedTween(LeanTween.delayedCall, function ()
-		uv0:charUpBall()
+	arg_81_0:managedTween(LeanTween.delayedCall, function()
+		arg_81_0:charUpBall()
 	end, 0.3, nil)
 end
 
-function slot0.enemyUp2Hit(slot0, slot1)
-	slot0.ballPosTag = slot0.ballPosTag == "enemy1" and "enemy2" or "enemy1"
-	slot0.anchoredPos[slot0.ballPosTag] = slot0:getRandomPos(slot0.ballPosTag)
-	slot0.randomQtePos = "our" .. math.random(2)
-	slot0.anchoredPos[slot0.randomQtePos] = slot0:getRandomPos(slot0.randomQtePos)
-	slot0.qteType = uv0
+function var_0_0.enemyUp2Hit(arg_84_0, arg_84_1)
+	arg_84_0.ballPosTag = arg_84_0.ballPosTag == "enemy1" and "enemy2" or "enemy1"
+	arg_84_0.anchoredPos[arg_84_0.ballPosTag] = arg_84_0:getRandomPos(arg_84_0.ballPosTag)
+	arg_84_0.randomQtePos = "our" .. math.random(2)
+	arg_84_0.anchoredPos[arg_84_0.randomQtePos] = arg_84_0:getRandomPos(arg_84_0.randomQtePos)
+	arg_84_0.qteType = var_0_13
 
-	slot0:managedTween(LeanTween.delayedCall, function ()
-		uv0:startQTE(uv1, 0, uv0.anchoredPos[uv0.randomQtePos])
-	end, uv2 - uv1, nil)
-	slot0:ballUp2Hit(slot0.ball, uv2, slot0.anchoredPos[slot0.ballPosTag], function ()
-		if uv0 then
-			uv0()
+	arg_84_0:managedTween(LeanTween.delayedCall, function()
+		arg_84_0:startQTE(var_0_32, 0, arg_84_0.anchoredPos[arg_84_0.randomQtePos])
+	end, var_0_16 - var_0_32, nil)
+	arg_84_0:ballUp2Hit(arg_84_0.ball, var_0_16, arg_84_0.anchoredPos[arg_84_0.ballPosTag], function()
+		if arg_84_1 then
+			arg_84_1()
 		end
 	end)
-	slot0:charHitBall()
+	arg_84_0:charHitBall()
 end
 
-function slot0.enemyThrow(slot0, slot1)
-	slot0.ballPosTag = slot0.randomQtePos
+function var_0_0.enemyThrow(arg_87_0, arg_87_1)
+	arg_87_0.ballPosTag = arg_87_0.randomQtePos
 
-	slot0:ballHit(slot0.ball, uv0, slot0.anchoredPos[slot0.ballPosTag], function ()
-		if uv0 then
-			uv0()
+	arg_87_0:ballHit(arg_87_0.ball, var_0_17, arg_87_0.anchoredPos[arg_87_0.ballPosTag], function()
+		if arg_87_1 then
+			arg_87_1()
 		end
 	end)
-	slot0:charUpBall()
+	arg_87_0:charUpBall()
 end
 
-function slot0.ourFly(slot0)
-	slot0.ballPosTag = "out"
+function var_0_0.ourFly(arg_89_0)
+	arg_89_0.ballPosTag = "out"
 
-	slot0:hitFly(slot0.ball, uv0, {
-		x = -math.random(1000, 1100),
-		y = math.random(0, 200) - 100
-	}, function ()
-		uv0.qteStatus = uv1
+	local var_89_0 = math.random(1000, 1100)
+	local var_89_1 = math.random(0, 200)
 
-		setGray(uv0.qteBtn, true, true)
+	arg_89_0:hitFly(arg_89_0.ball, var_0_18, {
+		x = -var_89_0,
+		y = var_89_1 - 100
+	}, function()
+		arg_89_0.qteStatus = var_0_9
 
-		uv0.enemyScoreNum = uv0.enemyScoreNum + 1
+		setGray(arg_89_0.qteBtn, true, true)
 
-		uv0:updateScore()
+		arg_89_0.enemyScoreNum = arg_89_0.enemyScoreNum + 1
+
+		arg_89_0:updateScore()
 	end)
 end
 
-function slot0.enemyFly(slot0)
-	slot0.ballPosTag = "out"
+function var_0_0.enemyFly(arg_91_0)
+	arg_91_0.ballPosTag = "out"
 
-	slot0:hitFly(slot0.ball, uv0, {
-		x = math.random(1000, 1100),
-		y = math.random(0, 200) - 100
-	}, function ()
-		uv0.qteStatus = uv1
+	local var_91_0 = math.random(1000, 1100)
+	local var_91_1 = math.random(0, 200)
 
-		setGray(uv0.qteBtn, true, true)
+	arg_91_0:hitFly(arg_91_0.ball, var_0_18, {
+		x = var_91_0,
+		y = var_91_1 - 100
+	}, function()
+		arg_91_0.qteStatus = var_0_9
 
-		uv0.ourScoreNum = uv0.ourScoreNum + 1
+		setGray(arg_91_0.qteBtn, true, true)
 
-		uv0:updateScore()
+		arg_91_0.ourScoreNum = arg_91_0.ourScoreNum + 1
+
+		arg_91_0:updateScore()
 	end)
 end
 
-function slot0.qteSuccess(slot0)
-	slot0.qteStatus = uv0
-	slot0.beginTeam = uv1
+function var_0_0.qteSuccess(arg_93_0)
+	arg_93_0.qteStatus = var_0_10
+	arg_93_0.beginTeam = var_0_3
 
-	slot0:changeQTEBtnStatus(uv2)
+	arg_93_0:changeQTEBtnStatus(var_0_5)
 end
 
-function slot0.qteFail(slot0)
-	slot0.qteStatus = uv0
-	slot0.beginTeam = uv1
+function var_0_0.qteFail(arg_94_0)
+	arg_94_0.qteStatus = var_0_11
+	arg_94_0.beginTeam = var_0_4
 
-	slot0:changeQTEBtnStatus(uv2)
+	arg_94_0:changeQTEBtnStatus(var_0_5)
 end
 
-function slot0.GetBeziersPoints(slot0, slot1, slot2, slot3, slot4)
-	slot6 = {}
+function var_0_0.GetBeziersPoints(arg_95_0, arg_95_1, arg_95_2, arg_95_3, arg_95_4)
+	local function var_95_0(arg_96_0)
+		local var_96_0 = arg_95_1:Clone():Mul((1 - arg_96_0) * (1 - arg_96_0))
+		local var_96_1 = arg_95_2:Clone():Mul(2 * arg_96_0 * (1 - arg_96_0))
+		local var_96_2 = arg_95_3:Clone():Mul(arg_96_0 * arg_96_0)
 
-	table.insert(slot6, Vector3(0, 0, 0))
-
-	slot10 = 0
-
-	table.insert(slot6, function (slot0)
-		return uv0:Clone():Mul((1 - slot0) * (1 - slot0)):Clone():Add(uv1:Clone():Mul(2 * slot0 * (1 - slot0))):Add(uv2:Clone():Mul(slot0 * slot0))
-	end(slot10))
-
-	for slot10 = 1, slot4 do
-		table.insert(slot6, slot5(slot10 / slot4))
+		return var_96_0:Clone():Add(var_96_1):Add(var_96_2)
 	end
 
-	table.insert(slot6, Vector3(0, 0, 0))
+	local var_95_1 = {}
 
-	return slot6
+	table.insert(var_95_1, Vector3(0, 0, 0))
+	table.insert(var_95_1, var_95_0(0))
+
+	for iter_95_0 = 1, arg_95_4 do
+		local var_95_2 = iter_95_0 / arg_95_4
+
+		table.insert(var_95_1, var_95_0(var_95_2))
+	end
+
+	table.insert(var_95_1, Vector3(0, 0, 0))
+
+	return var_95_1
 end
 
-function slot0.ballParabolaMove(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	slot7 = Vector2(slot1.anchoredPosition.x, slot1.anchoredPosition.y - slot5)
-	slot8 = Vector2(slot3.x, slot3.y)
-	slot9 = slot8.x - slot7.x
-	slot10 = slot8.y - slot7.y
-	slot12 = DOAParabolaCalc(slot2, math.abs(uv0), math.abs(slot6 - slot5))
-	slot13, slot14 = nil
+function var_0_0.ballParabolaMove(arg_97_0, arg_97_1, arg_97_2, arg_97_3, arg_97_4, arg_97_5, arg_97_6)
+	local var_97_0 = Vector2(arg_97_1.anchoredPosition.x, arg_97_1.anchoredPosition.y - arg_97_5)
+	local var_97_1 = Vector2(arg_97_3.x, arg_97_3.y)
+	local var_97_2 = var_97_1.x - var_97_0.x
+	local var_97_3 = var_97_1.y - var_97_0.y
+	local var_97_4 = math.abs(arg_97_6 - arg_97_5)
+	local var_97_5 = DOAParabolaCalc(arg_97_2, math.abs(var_0_33), var_97_4)
+	local var_97_6
+	local var_97_7
 
-	if slot5 < slot6 then
-		slot13 = slot12 + slot11
-		slot14 = slot12
+	if arg_97_5 < arg_97_6 then
+		var_97_6 = var_97_5 + var_97_4
+
+		local var_97_8 = var_97_5
 	else
-		slot13 = slot12
-		slot14 = slot12 + slot11
+		var_97_6 = var_97_5
+
+		local var_97_9 = var_97_5 + var_97_4
 	end
 
-	slot15 = math.sqrt(2 * math.abs(uv0) * slot13)
+	local var_97_10 = math.sqrt(2 * math.abs(var_0_33) * var_97_6)
 
-	slot0:managedTween(LeanTween.value, function ()
-		if uv0 then
-			uv0()
+	arg_97_0:managedTween(LeanTween.value, function()
+		if arg_97_4 then
+			arg_97_4()
 		end
-	end, go(slot1), 0, slot2, slot2):setOnUpdate(System.Action_float(function (slot0)
-		uv5.anchoredPosition = Vector2(uv6.x + uv0 * slot0 / uv1, uv6.y + uv2 * slot0 / uv1 + uv7 + uv3 * slot0 + 0.5 * uv4 * slot0 * slot0)
+	end, go(arg_97_1), 0, arg_97_2, arg_97_2):setOnUpdate(System.Action_float(function(arg_99_0)
+		local var_99_0 = var_97_2 * arg_99_0 / arg_97_2
+		local var_99_1 = var_97_3 * arg_99_0 / arg_97_2
+		local var_99_2 = var_97_10 * arg_99_0 + 0.5 * var_0_33 * arg_99_0 * arg_99_0
+
+		arg_97_1.anchoredPosition = Vector2(var_97_0.x + var_99_0, var_97_0.y + var_99_1 + arg_97_5 + var_99_2)
 	end))
 end
 
-function slot0.ballServe(slot0, slot1, slot2, slot3, slot4)
-	slot0:ballParabolaMove(slot1, slot2, slot3, function ()
-		if uv0 then
-			uv0()
+function var_0_0.ballServe(arg_100_0, arg_100_1, arg_100_2, arg_100_3, arg_100_4)
+	arg_100_0:ballParabolaMove(arg_100_1, arg_100_2, arg_100_3, function()
+		if arg_100_4 then
+			arg_100_4()
 		end
-	end, uv0, uv1)
-	slot0:managedTween(LeanTween.move, nil, slot0.ballShadow, Vector3(slot3.x, slot3.y + uv2), slot2):setEase(LeanTweenType.linear)
+	end, var_0_24, var_0_25)
+	arg_100_0:managedTween(LeanTween.move, nil, arg_100_0.ballShadow, Vector3(arg_100_3.x, arg_100_3.y + var_0_23), arg_100_2):setEase(LeanTweenType.linear)
 end
 
-function slot0.ballUp2Up(slot0, slot1, slot2, slot3, slot4)
-	slot0:ballParabolaMove(slot1, slot2, slot3, function ()
-		if uv0 then
-			uv0()
+function var_0_0.ballUp2Up(arg_102_0, arg_102_1, arg_102_2, arg_102_3, arg_102_4)
+	arg_102_0:ballParabolaMove(arg_102_1, arg_102_2, arg_102_3, function()
+		if arg_102_4 then
+			arg_102_4()
 		end
-	end, uv0, uv0)
-	slot0:managedTween(LeanTween.move, nil, slot0.ballShadow, Vector3(slot3.x, slot3.y + uv1), slot2):setEase(LeanTweenType.linear)
+	end, var_0_25, var_0_25)
+	arg_102_0:managedTween(LeanTween.move, nil, arg_102_0.ballShadow, Vector3(arg_102_3.x, arg_102_3.y + var_0_23), arg_102_2):setEase(LeanTweenType.linear)
 end
 
-function slot0.ballUp2Hit(slot0, slot1, slot2, slot3, slot4)
-	slot0:ballParabolaMove(slot1, slot2, {
-		x = slot3.x,
-		y = slot3.y
-	}, function ()
-		if uv0 then
-			uv0()
-		end
-	end, uv0, uv1)
-	slot0:managedTween(LeanTween.move, nil, slot0.ballShadow, Vector3(slot3.x, slot3.y + uv2), slot2):setEase(LeanTweenType.linear)
-end
-
-function slot0.ballHit(slot0, slot1, slot2, slot3, slot4)
-	slot3 = Vector2(slot3.x, slot3.y + uv0)
-
-	slot0:managedTween(LeanTween.moveX, function ()
-		if uv0 then
-			uv0()
-		end
-	end, slot1, slot3.x, slot2):setEase(LeanTweenType.linear)
-	slot0:managedTween(LeanTween.moveY, nil, slot1, slot3.y, slot2):setEase(LeanTweenType.linear)
-	slot0:managedTween(LeanTween.move, nil, slot0.ballShadow, Vector3(slot3.x, slot3.y + uv1), slot2):setEase(LeanTweenType.linear)
-end
-
-function slot0.charMove(slot0, slot1, slot2, slot3, slot4)
-	slot0:managedTween(LeanTween.moveX, nil, slot1, slot3.x, slot2):setEase(LeanTweenType.easeOutQuad)
-	slot0:managedTween(LeanTween.moveY, function ()
-		if uv0 then
-			uv0()
-		end
-	end, slot1, slot3.y, slot2):setEase(LeanTweenType.linear)
-end
-
-function slot0.hitFly(slot0, slot1, slot2, slot3, slot4)
-	slot0:ballParabolaMove(slot1, slot2, slot3, function ()
-		if uv0 then
-			uv0()
-		end
-	end, uv0, uv1)
-	slot0:managedTween(LeanTween.move, nil, slot0.ballShadow, Vector3(slot3.x, slot3.y + uv2), slot2):setEase(LeanTweenType.linear)
-end
-
-function slot0.startQTE(slot0, slot1, slot2, slot3, slot4)
-	slot0:changeQTEBtnStatus(uv0)
-
-	slot0.qte.anchoredPosition = {
-		x = slot3.x,
-		y = slot3.y + slot2
+function var_0_0.ballUp2Hit(arg_104_0, arg_104_1, arg_104_2, arg_104_3, arg_104_4)
+	local var_104_0 = {
+		x = arg_104_3.x,
+		y = arg_104_3.y
 	}
 
-	setActive(slot0.qte, true)
-	setActive(slot0.qteCircles, true)
-	setActive(slot0.result, false)
-	setLocalScale(slot0.qteCircle, Vector3(1, 1, 1))
-	slot0.result:GetComponent(typeof(DftAniEvent)):SetEndEvent(function (slot0)
-		setActive(uv0.result, false)
+	arg_104_0:ballParabolaMove(arg_104_1, arg_104_2, var_104_0, function()
+		if arg_104_4 then
+			arg_104_4()
+		end
+	end, var_0_25, var_0_26)
+	arg_104_0:managedTween(LeanTween.move, nil, arg_104_0.ballShadow, Vector3(arg_104_3.x, arg_104_3.y + var_0_23), arg_104_2):setEase(LeanTweenType.linear)
+end
+
+function var_0_0.ballHit(arg_106_0, arg_106_1, arg_106_2, arg_106_3, arg_106_4)
+	arg_106_3 = Vector2(arg_106_3.x, arg_106_3.y + var_0_25)
+
+	arg_106_0:managedTween(LeanTween.moveX, function()
+		if arg_106_4 then
+			arg_106_4()
+		end
+	end, arg_106_1, arg_106_3.x, arg_106_2):setEase(LeanTweenType.linear)
+	arg_106_0:managedTween(LeanTween.moveY, nil, arg_106_1, arg_106_3.y, arg_106_2):setEase(LeanTweenType.linear)
+	arg_106_0:managedTween(LeanTween.move, nil, arg_106_0.ballShadow, Vector3(arg_106_3.x, arg_106_3.y + var_0_23), arg_106_2):setEase(LeanTweenType.linear)
+end
+
+function var_0_0.charMove(arg_108_0, arg_108_1, arg_108_2, arg_108_3, arg_108_4)
+	arg_108_0:managedTween(LeanTween.moveX, nil, arg_108_1, arg_108_3.x, arg_108_2):setEase(LeanTweenType.easeOutQuad)
+	arg_108_0:managedTween(LeanTween.moveY, function()
+		if arg_108_4 then
+			arg_108_4()
+		end
+	end, arg_108_1, arg_108_3.y, arg_108_2):setEase(LeanTweenType.linear)
+end
+
+function var_0_0.hitFly(arg_110_0, arg_110_1, arg_110_2, arg_110_3, arg_110_4)
+	arg_110_0:ballParabolaMove(arg_110_1, arg_110_2, arg_110_3, function()
+		if arg_110_4 then
+			arg_110_4()
+		end
+	end, var_0_27, var_0_26)
+	arg_110_0:managedTween(LeanTween.move, nil, arg_110_0.ballShadow, Vector3(arg_110_3.x, arg_110_3.y + var_0_23), arg_110_2):setEase(LeanTweenType.linear)
+end
+
+function var_0_0.startQTE(arg_112_0, arg_112_1, arg_112_2, arg_112_3, arg_112_4)
+	arg_112_0:changeQTEBtnStatus(var_0_6)
+
+	arg_112_0.qte.anchoredPosition = {
+		x = arg_112_3.x,
+		y = arg_112_3.y + arg_112_2
+	}
+
+	setActive(arg_112_0.qte, true)
+	setActive(arg_112_0.qteCircles, true)
+	setActive(arg_112_0.result, false)
+	setLocalScale(arg_112_0.qteCircle, Vector3(1, 1, 1))
+	arg_112_0.result:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_113_0)
+		setActive(arg_112_0.result, false)
 	end)
 
-	slot0.qteCallback = slot4
-	slot0.qteTween = LeanTween.scale(slot0.qteCircle, Vector3(0, 0, 1), slot1):setOnComplete(System.Action(function ()
-		uv0:changeQTEBtnStatus(uv1)
-		setImageSprite(uv0.result, uv0.resultTxt:Find("miss"):GetComponent(typeof(Image)).sprite, true)
-		setActive(uv0.result, true)
-		uv0:qteFail()
+	arg_112_0.qteCallback = arg_112_4
+	arg_112_0.qteTween = LeanTween.scale(arg_112_0.qteCircle, Vector3(0, 0, 1), arg_112_1):setOnComplete(System.Action(function()
+		arg_112_0:changeQTEBtnStatus(var_0_5)
+		setImageSprite(arg_112_0.result, arg_112_0.resultTxt:Find("miss"):GetComponent(typeof(Image)).sprite, true)
+		setActive(arg_112_0.result, true)
+		arg_112_0:qteFail()
 
-		uv0.isCutin = false
+		arg_112_0.isCutin = false
 
-		setActive(uv0.qteCircles, false)
-		existCall(uv0.qteCallback)
+		setActive(arg_112_0.qteCircles, false)
+		existCall(arg_112_0.qteCallback)
 
-		uv0.qteCallback = nil
+		arg_112_0.qteCallback = nil
 	end)).uniqueId
 end
 
-function slot0.qteResult(slot0)
-	if LeanTween.isTweening(slot0.qteTween) then
-		LeanTween.cancel(slot0.qteTween, false)
+function var_0_0.qteResult(arg_115_0)
+	if LeanTween.isTweening(arg_115_0.qteTween) then
+		LeanTween.cancel(arg_115_0.qteTween, false)
 	end
 
-	setActive(slot0.result, true)
+	local var_115_0 = math.abs(arg_115_0.qteCircle.localScale.x)
 
-	slot0.isCutin = false
+	setActive(arg_115_0.result, true)
 
-	if math.abs(slot0.qteCircle.localScale.x) <= 0 or uv0 < slot1 then
-		setImageSprite(slot0.result, slot0.resultTxt:Find("miss"):GetComponent(typeof(Image)).sprite, true)
-		slot0:qteFail()
-	elseif uv1 < slot1 then
-		setImageSprite(slot0.result, slot0.resultTxt:Find("good"):GetComponent(typeof(Image)).sprite, true)
-		slot0:qteSuccess()
+	arg_115_0.isCutin = false
+
+	if var_115_0 <= 0 or var_115_0 > var_0_7 then
+		setImageSprite(arg_115_0.result, arg_115_0.resultTxt:Find("miss"):GetComponent(typeof(Image)).sprite, true)
+		arg_115_0:qteFail()
+	elseif var_115_0 > var_0_8 then
+		setImageSprite(arg_115_0.result, arg_115_0.resultTxt:Find("good"):GetComponent(typeof(Image)).sprite, true)
+		arg_115_0:qteSuccess()
 	else
-		setImageSprite(slot0.result, slot0.resultTxt:Find("perfect"):GetComponent(typeof(Image)).sprite, true)
-		slot0:qteSuccess()
+		setImageSprite(arg_115_0.result, arg_115_0.resultTxt:Find("perfect"):GetComponent(typeof(Image)).sprite, true)
+		arg_115_0:qteSuccess()
 
-		if slot0.qteType == uv2 then
-			slot0.isCutin = true
+		if arg_115_0.qteType == var_0_14 then
+			arg_115_0.isCutin = true
 		else
-			slot0.isCutin = false
+			arg_115_0.isCutin = false
 		end
 	end
 
-	setActive(slot0.qteCircles, false)
-	existCall(slot0.qteCallback)
+	setActive(arg_115_0.qteCircles, false)
+	existCall(arg_115_0.qteCallback)
 
-	slot0.qteCallback = nil
+	arg_115_0.qteCallback = nil
 end
 
-function slot34(slot0, slot1, slot2, slot3, slot4)
-	slot5 = {
-		_tf = slot1,
-		spineAnim = slot2,
-		skele = slot3,
-		posTag = slot4,
-		ctor = function (slot0)
-			uv0._tf.anchoredPosition = uv1.anchoredPos[uv2]
-		end,
-		setPosTag = function (slot0, slot1)
-			uv0._tf.anchoredPosition = uv1.anchoredPos[slot1]
-			uv0.posTag = slot1
-		end,
-		getPosTag = function (slot0)
-			return uv0.posTag
-		end,
-		pauseSpine = function (slot0)
-			uv0.skele.timeScale = 0
-		end,
-		resumeSpine = function (slot0)
-			uv0.skele.timeScale = 1
-		end,
-		setActionOnce = function (slot0, slot1, slot2)
-			uv0.spineAnim:SetActionCallBack(function (slot0)
-				if slot0 == "action" then
-					if uv0 == "chuanqiu" or uv0 == "dianqiu" then
-						uv1:playEffect(uv1.upEffect, Vector2(uv2._tf.anchoredPosition.x, uv2._tf.anchoredPosition.y + uv3))
-						pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv4)
-					elseif uv0 == "kouqiu" then
-						uv1:playEffect(uv1.hitEffect, Vector2(uv2._tf.anchoredPosition.x, uv2._tf.anchoredPosition.y + uv3 + uv5))
-						pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv6)
-					elseif uv0 == "faqiu" then
-						pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv4)
-						uv1:playEffect(uv1.upEffect, Vector2(uv2._tf.anchoredPosition.x, uv2._tf.anchoredPosition.y + uv7))
-					end
+local function var_0_34(arg_116_0, arg_116_1, arg_116_2, arg_116_3, arg_116_4)
+	local var_116_0 = {
+		_tf = arg_116_1,
+		spineAnim = arg_116_2,
+		skele = arg_116_3,
+		posTag = arg_116_4
+	}
+
+	function var_116_0.ctor(arg_117_0)
+		var_116_0._tf.anchoredPosition = arg_116_0.anchoredPos[arg_116_4]
+	end
+
+	function var_116_0.setPosTag(arg_118_0, arg_118_1)
+		var_116_0._tf.anchoredPosition = arg_116_0.anchoredPos[arg_118_1]
+		var_116_0.posTag = arg_118_1
+	end
+
+	function var_116_0.getPosTag(arg_119_0)
+		return var_116_0.posTag
+	end
+
+	function var_116_0.pauseSpine(arg_120_0)
+		var_116_0.skele.timeScale = 0
+	end
+
+	function var_116_0.resumeSpine(arg_121_0)
+		var_116_0.skele.timeScale = 1
+	end
+
+	function var_116_0.setActionOnce(arg_122_0, arg_122_1, arg_122_2)
+		var_116_0.spineAnim:SetActionCallBack(function(arg_123_0)
+			if arg_123_0 == "action" then
+				if arg_122_1 == "chuanqiu" or arg_122_1 == "dianqiu" then
+					arg_116_0:playEffect(arg_116_0.upEffect, Vector2(var_116_0._tf.anchoredPosition.x, var_116_0._tf.anchoredPosition.y + var_0_25))
+					pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_30)
+				elseif arg_122_1 == "kouqiu" then
+					arg_116_0:playEffect(arg_116_0.hitEffect, Vector2(var_116_0._tf.anchoredPosition.x, var_116_0._tf.anchoredPosition.y + var_0_25 + var_0_26))
+					pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_31)
+				elseif arg_122_1 == "faqiu" then
+					pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_30)
+					arg_116_0:playEffect(arg_116_0.upEffect, Vector2(var_116_0._tf.anchoredPosition.x, var_116_0._tf.anchoredPosition.y + var_0_24))
 				end
+			end
 
-				if slot0 == "finish" then
-					uv2.spineAnim:SetActionCallBack(nil)
+			if arg_123_0 == "finish" then
+				var_116_0.spineAnim:SetActionCallBack(nil)
 
-					if uv8 then
-						uv8()
-					else
-						uv2.spineAnim:SetAction("normal2", 0)
-					end
+				if arg_122_2 then
+					arg_122_2()
+				else
+					var_116_0.spineAnim:SetAction("normal2", 0)
+				end
+			end
+		end)
+		var_116_0.spineAnim:SetAction(arg_122_1, 0)
+	end
+
+	function var_116_0.move(arg_124_0, arg_124_1, arg_124_2, arg_124_3, arg_124_4)
+		local function var_124_0()
+			var_116_0.spineAnim:SetAction("run", 0)
+
+			var_116_0.posTag = arg_124_2
+
+			arg_116_0:charMove(var_116_0._tf, arg_124_1, arg_116_0.anchoredPos[arg_124_2], function()
+				if arg_124_4 then
+					arg_124_4()
+				else
+					var_116_0.spineAnim:SetAction("normal2", 0)
 				end
 			end)
-			uv0.spineAnim:SetAction(slot1, 0)
-		end,
-		move = function (slot0, slot1, slot2, slot3, slot4)
-			function slot5()
-				uv0.spineAnim:SetAction("run", 0)
-
-				uv0.posTag = uv1
-
-				uv2:charMove(uv0._tf, uv3, uv2.anchoredPos[uv1], function ()
-					if uv0 then
-						uv0()
-					else
-						uv1.spineAnim:SetAction("normal2", 0)
-					end
-				end)
-			end
-
-			if slot3 then
-				uv0:setActionOnce(slot3, function ()
-					uv0()
-				end)
-			else
-				slot5()
-			end
 		end
-	}
 
-	slot5:ctor()
+		if arg_124_3 then
+			var_116_0:setActionOnce(arg_124_3, function()
+				var_124_0()
+			end)
+		else
+			var_124_0()
+		end
+	end
 
-	return slot5
+	var_116_0:ctor()
+
+	return var_116_0
 end
 
-function slot0.getRandomPos(slot0, slot1)
-	slot2 = math.random(0, 300)
-	slot3 = math.random(0, 50)
-	slot5 = slot0.orgPos[slot1]
+function var_0_0.getRandomPos(arg_128_0, arg_128_1)
+	local var_128_0 = math.random(0, 300)
+	local var_128_1 = math.random(0, 50)
+	local var_128_2 = arg_128_0.orgPos[arg_128_1]
+	local var_128_3 = var_128_2
 
-	return (not string.find(slot1, "our") or {
-		x = slot4.x + slot2 - 50,
-		y = slot4.y + slot3 - 25
-	}) and {
-		x = slot4.x + slot2 - 250,
-		y = slot4.y + slot3 - 25
-	}
-end
-
-function slot0.loadSpineChars(slot0)
-	slot0:clearSpineChars()
-
-	slot0.beginTeam = math.random(2)
-
-	if slot0.beginTeam == uv0 then
-		slot0.serveChar = "our" .. math.random(2)
+	if string.find(arg_128_1, "our") then
+		var_128_3 = {
+			x = var_128_2.x + var_128_0 - 50,
+			y = var_128_2.y + var_128_1 - 25
+		}
 	else
-		slot0.serveChar = "enemy" .. math.random(2)
+		var_128_3 = {
+			x = var_128_2.x + var_128_0 - 250,
+			y = var_128_2.y + var_128_1 - 25
+		}
 	end
 
-	slot0:setBallPos()
+	return var_128_3
+end
 
-	for slot4, slot5 in pairs(slot0.charNames) do
-		slot0:loadOneSpineChar(slot4, slot0.serveChar)
+function var_0_0.loadSpineChars(arg_129_0)
+	arg_129_0:clearSpineChars()
+
+	arg_129_0.beginTeam = math.random(2)
+
+	if arg_129_0.beginTeam == var_0_3 then
+		arg_129_0.serveChar = "our" .. math.random(2)
+	else
+		arg_129_0.serveChar = "enemy" .. math.random(2)
+	end
+
+	arg_129_0:setBallPos()
+
+	for iter_129_0, iter_129_1 in pairs(arg_129_0.charNames) do
+		arg_129_0:loadOneSpineChar(iter_129_0, arg_129_0.serveChar)
 	end
 end
 
-function slot0.loadOneSpineChar(slot0, slot1, slot2)
-	if not slot0.charNames[slot1] then
-		slot0.charNames[slot1] = false
+function var_0_0.loadOneSpineChar(arg_130_0, arg_130_1, arg_130_2)
+	if not arg_130_0.charNames[arg_130_1] then
+		arg_130_0.charNames[arg_130_1] = false
 
 		return
 	end
 
 	pg.UIMgr.GetInstance():LoadingOn()
-	PoolMgr.GetInstance():GetSpineChar(slot0.charNames[slot1], true, function (slot0)
+	PoolMgr.GetInstance():GetSpineChar(arg_130_0.charNames[arg_130_1], true, function(arg_131_0)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		slot1 = ""
+		local var_131_0 = ""
+		local var_131_1
 
-		if string.find(uv0, "our") then
-			tf(slot0).localScale = Vector3(0.6, 0.6, 1)
-			tf(slot0).localPosition = Vector3(-20, 0, 0)
+		if string.find(arg_130_1, "our") then
+			tf(arg_131_0).localScale = Vector3(0.6, 0.6, 1)
+			tf(arg_131_0).localPosition = Vector3(-20, 0, 0)
 
-			if string.find(uv0, "1") then
-				slot1 = "our1"
+			if string.find(arg_130_1, "1") then
+				var_131_1 = "our1"
 			else
-				slot1 = "our2"
+				var_131_1 = "our2"
 			end
 		else
-			tf(slot0).localScale = Vector3(-0.6, 0.6, 1)
-			tf(slot0).localPosition = Vector3(20, 0, 0)
-			slot1 = string.find(uv0, "1") and "enemy1" or "enemy2"
+			tf(arg_131_0).localScale = Vector3(-0.6, 0.6, 1)
+			tf(arg_131_0).localPosition = Vector3(20, 0, 0)
+			var_131_1 = string.find(arg_130_1, "1") and "enemy1" or "enemy2"
 		end
 
-		uv1.charModels[uv0] = slot0
-		slot2 = slot0:GetComponent("SpineAnimUI")
-		slot3 = slot0:GetComponent("SkeletonGraphic")
+		arg_130_0.charModels[arg_130_1] = arg_131_0
 
-		slot2:SetAction("normal2", 0)
+		local var_131_2 = arg_131_0:GetComponent("SpineAnimUI")
+		local var_131_3 = arg_131_0:GetComponent("SkeletonGraphic")
 
-		slot3.timeScale = 1
-		slot4 = uv1._tf:Find("game_ui/char/" .. uv0)
+		var_131_2:SetAction("normal2", 0)
 
-		setParent(slot0, slot4)
+		var_131_3.timeScale = 1
 
-		uv1.charactor[uv0] = uv2(uv1, slot4, slot2, slot3, slot1)
+		local var_131_4 = arg_130_0._tf:Find("game_ui/char/" .. arg_130_1)
 
-		if uv0 == uv3 then
-			if uv1.beginTeam == uv4 then
-				uv1.charactor[uv0]:setPosTag("our_serve")
+		setParent(arg_131_0, var_131_4)
+
+		arg_130_0.charactor[arg_130_1] = var_0_34(arg_130_0, var_131_4, var_131_2, var_131_3, var_131_1)
+
+		if arg_130_1 == arg_130_2 then
+			if arg_130_0.beginTeam == var_0_3 then
+				arg_130_0.charactor[arg_130_1]:setPosTag("our_serve")
 			else
-				uv1.charactor[uv0]:setPosTag("enemy_serve")
+				arg_130_0.charactor[arg_130_1]:setPosTag("enemy_serve")
 			end
 		end
 	end)
 end
 
-function slot0.clearSpineChars(slot0)
-	for slot4, slot5 in pairs(slot0.charModels) do
-		if slot0.charModels[slot4] and slot0.charNames[slot4] then
-			PoolMgr.GetInstance():ReturnSpineChar(slot0.charNames[slot4], slot0.charModels[slot4])
+function var_0_0.clearSpineChars(arg_132_0)
+	for iter_132_0, iter_132_1 in pairs(arg_132_0.charModels) do
+		if arg_132_0.charModels[iter_132_0] and arg_132_0.charNames[iter_132_0] then
+			PoolMgr.GetInstance():ReturnSpineChar(arg_132_0.charNames[iter_132_0], arg_132_0.charModels[iter_132_0])
 		end
 	end
 
-	slot0.charModels = {}
+	arg_132_0.charModels = {}
 end
 
-function slot0.getCharWithTag(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.charactor) do
-		if slot6:getPosTag() == slot1 then
-			return slot5, slot6
+function var_0_0.getCharWithTag(arg_133_0, arg_133_1)
+	for iter_133_0, iter_133_1 in pairs(arg_133_0.charactor) do
+		if iter_133_1:getPosTag() == arg_133_1 then
+			return iter_133_0, iter_133_1
 		end
 	end
 
 	return nil
 end
 
-function slot0.getAnotherChar(slot0, slot1)
-	slot2 = ""
+function var_0_0.getAnotherChar(arg_134_0, arg_134_1)
+	local var_134_0 = ""
 
-	if string.find(slot1, "our") then
-		slot2 = slot1 == "our1" and "our2" or "our1"
-	elseif string.find(slot1, "enemy") then
-		slot2 = slot1 == "enemy1" and "enemy2" or "enemy1"
+	if string.find(arg_134_1, "our") then
+		var_134_0 = arg_134_1 == "our1" and "our2" or "our1"
+	elseif string.find(arg_134_1, "enemy") then
+		var_134_0 = arg_134_1 == "enemy1" and "enemy2" or "enemy1"
 	end
 
-	return slot2, slot0.charactor[slot2]
+	return var_134_0, arg_134_0.charactor[var_134_0]
 end
 
-function slot0.setBallPos(slot0)
-	setActive(slot0.ball, true)
+function var_0_0.setBallPos(arg_135_0)
+	setActive(arg_135_0.ball, true)
 
-	slot1 = string.find(slot0.serveChar, "our") and "our_serve" or "enemy_serve"
-	slot0.ball.anchoredPosition = {
-		x = slot0.orgPos[slot1].x,
-		y = slot0.orgPos[slot1].y + 300
+	local var_135_0 = string.find(arg_135_0.serveChar, "our") and "our_serve" or "enemy_serve"
+
+	arg_135_0.ball.anchoredPosition = {
+		x = arg_135_0.orgPos[var_135_0].x,
+		y = arg_135_0.orgPos[var_135_0].y + 300
 	}
-	slot0.ballShadow.anchoredPosition = Vector3(slot0.orgPos[slot1].x, slot0.orgPos[slot1].y, 0)
+	arg_135_0.ballShadow.anchoredPosition = Vector3(arg_135_0.orgPos[var_135_0].x, arg_135_0.orgPos[var_135_0].y, 0)
 
-	slot0:managedTween(LeanTween.rotate, nil, slot0.ball, 360, 0.5):setLoopClamp()
+	arg_135_0:managedTween(LeanTween.rotate, nil, arg_135_0.ball, 360, 0.5):setLoopClamp()
 end
 
-function slot0.resetChar(slot0)
-	slot0:resetPos()
+function var_0_0.resetChar(arg_136_0)
+	arg_136_0:resetPos()
 
-	for slot4, slot5 in pairs(slot0.charactor) do
-		if LeanTween.isTweening(go(slot5._tf)) then
-			LeanTween.cancel(go(slot5._tf))
+	for iter_136_0, iter_136_1 in pairs(arg_136_0.charactor) do
+		if LeanTween.isTweening(go(iter_136_1._tf)) then
+			LeanTween.cancel(go(iter_136_1._tf))
 		end
 	end
 
-	slot0.charactor.our1:setPosTag("our1")
-	slot0.charactor.our2:setPosTag("our2")
-	slot0.charactor.enemy1:setPosTag("enemy1")
-	slot0.charactor.enemy2:setPosTag("enemy2")
+	arg_136_0.charactor.our1:setPosTag("our1")
+	arg_136_0.charactor.our2:setPosTag("our2")
+	arg_136_0.charactor.enemy1:setPosTag("enemy1")
+	arg_136_0.charactor.enemy2:setPosTag("enemy2")
 
-	if slot0.beginTeam == uv0 then
-		slot0.serveChar = "our" .. math.random(2)
+	if arg_136_0.beginTeam == var_0_3 then
+		arg_136_0.serveChar = "our" .. math.random(2)
 
-		slot0.charactor[slot0.serveChar]:setPosTag("our_serve")
+		arg_136_0.charactor[arg_136_0.serveChar]:setPosTag("our_serve")
 	else
-		slot0.serveChar = "enemy" .. math.random(2)
+		arg_136_0.serveChar = "enemy" .. math.random(2)
 
-		slot0.charactor[slot0.serveChar]:setPosTag("enemy_serve")
+		arg_136_0.charactor[arg_136_0.serveChar]:setPosTag("enemy_serve")
 	end
 
-	slot0:setBallPos()
+	arg_136_0:setBallPos()
 end
 
-function slot0.charServeBall(slot0)
-	slot0:managedTween(LeanTween.rotate, nil, slot0.ball, 360, 0.5):setLoopClamp()
+function var_0_0.charServeBall(arg_137_0)
+	arg_137_0:managedTween(LeanTween.rotate, nil, arg_137_0.ball, 360, 0.5):setLoopClamp()
 
-	slot1 = string.find(slot0.serveChar, "our") and "our_serve" or "enemy_serve"
+	local var_137_0 = string.find(arg_137_0.serveChar, "our") and "our_serve" or "enemy_serve"
 
-	slot0:managedTween(LeanTween.delayedCall, function ()
-		uv0:managedTween(LeanTween.moveY, nil, uv0.ball, uv0.orgPos[uv1].y + uv2, 0.5):setEase(LeanTweenType.linear)
-		uv0.charactor[uv0.serveChar]:setActionOnce("faqiu", function ()
-			uv0:managedTween(LeanTween.delayedCall, function ()
-				uv0.charactor[uv0.serveChar]:move(1, uv0.serveChar)
+	arg_137_0:managedTween(LeanTween.delayedCall, function()
+		arg_137_0:managedTween(LeanTween.moveY, nil, arg_137_0.ball, arg_137_0.orgPos[var_137_0].y + var_0_24, 0.5):setEase(LeanTweenType.linear)
+		arg_137_0.charactor[arg_137_0.serveChar]:setActionOnce("faqiu", function()
+			arg_137_0:managedTween(LeanTween.delayedCall, function()
+				arg_137_0.charactor[arg_137_0.serveChar]:move(1, arg_137_0.serveChar)
 			end, 0.2, nil)
 		end)
 	end, 0.5, nil)
 end
 
-function slot0.charUpBall(slot0, slot1)
-	slot2, slot3 = slot0:getCharWithTag(slot0.ballPosTag)
+function var_0_0.charUpBall(arg_141_0, arg_141_1)
+	local var_141_0, var_141_1 = arg_141_0:getCharWithTag(arg_141_0.ballPosTag)
 
-	if not slot3 then
+	if not var_141_1 then
 		return
 	end
 
-	slot0.upChar = slot2
-	slot0.hitChar = slot0:getAnotherChar(slot0.upChar)
+	arg_141_0.upChar = var_141_0
+	arg_141_0.hitChar = arg_141_0:getAnotherChar(arg_141_0.upChar)
 
-	slot3:move(0.45, slot0.ballPosTag, nil, function ()
-		uv0:setActionOnce("chuanqiu")
+	var_141_1:move(0.45, arg_141_0.ballPosTag, nil, function()
+		var_141_1:setActionOnce("chuanqiu")
 	end)
 end
 
-function slot0.charHitBall(slot0)
-	slot0.charactor[slot0.hitChar]:move(0.5, slot0.ballPosTag, nil, function ()
-		uv0:setActionOnce("kouqiu")
+function var_0_0.charHitBall(arg_143_0)
+	local var_143_0 = arg_143_0.charactor[arg_143_0.hitChar]
+
+	var_143_0:move(0.5, arg_143_0.ballPosTag, nil, function()
+		var_143_0:setActionOnce("kouqiu")
 	end)
 end
 
-function slot0.showcutin(slot0, slot1)
-	slot0:setBtnAvailable(false)
-	slot0:pauseGame()
-	setActive(slot0.cutin, true)
+function var_0_0.showcutin(arg_145_0, arg_145_1)
+	arg_145_0:setBtnAvailable(false)
+	arg_145_0:pauseGame()
+	setActive(arg_145_0.cutin, true)
 
-	slot2 = ""
+	local var_145_0 = ""
 
-	for slot6, slot7 in pairs(slot0.charNames) do
-		if slot6 == slot0.hitChar then
-			slot2 = slot7
+	for iter_145_0, iter_145_1 in pairs(arg_145_0.charNames) do
+		if iter_145_0 == arg_145_0.hitChar then
+			var_145_0 = iter_145_1
 		end
 	end
 
-	slot3, slot4, slot5 = ShipWordHelper.GetWordAndCV(uv0[slot0:getCharIndex(slot2)], "skill")
+	local var_145_1, var_145_2, var_145_3 = ShipWordHelper.GetWordAndCV(var_0_2[arg_145_0:getCharIndex(var_145_0)], "skill")
 
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(slot4)
-	setActive(slot0:findTF("line", slot0.gameUI), true)
-	setActive(slot0:findTF("shatanpaiqiu_cutin", slot0.cutin), false)
-	setActive(slot0:findTF("shatanpaiqiu_cutin", slot0.cutin), true)
-	setImageSprite(slot0.cutinPaint, slot0.cutinPaints:Find(slot0:getCharIndex(slot2)):GetComponent(typeof(Image)).sprite, true)
-	LeanTween.moveX(slot0.cutin, 0, 0.3):setOnComplete(System.Action(function ()
-		LeanTween.delayedCall(1, System.Action(function ()
-			setActive(uv0:findTF("line", uv0.gameUI), false)
-			LeanTween.moveX(uv0.cutin, -567, 0.3):setOnComplete(System.Action(function ()
-				setActive(uv0.cutin, false)
-				uv0:setBtnAvailable(true)
-				uv0:resumeGame()
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_145_2)
+	setActive(arg_145_0:findTF("line", arg_145_0.gameUI), true)
+	setActive(arg_145_0:findTF("shatanpaiqiu_cutin", arg_145_0.cutin), false)
+	setActive(arg_145_0:findTF("shatanpaiqiu_cutin", arg_145_0.cutin), true)
+	setImageSprite(arg_145_0.cutinPaint, arg_145_0.cutinPaints:Find(arg_145_0:getCharIndex(var_145_0)):GetComponent(typeof(Image)).sprite, true)
+	LeanTween.moveX(arg_145_0.cutin, 0, 0.3):setOnComplete(System.Action(function()
+		LeanTween.delayedCall(1, System.Action(function()
+			setActive(arg_145_0:findTF("line", arg_145_0.gameUI), false)
+			LeanTween.moveX(arg_145_0.cutin, -567, 0.3):setOnComplete(System.Action(function()
+				setActive(arg_145_0.cutin, false)
+				arg_145_0:setBtnAvailable(true)
+				arg_145_0:resumeGame()
 
-				if uv1 then
-					uv1()
+				if arg_145_1 then
+					arg_145_1()
 				end
 			end))
 		end))
 	end))
 end
 
-function slot0.showScoreCutin(slot0, slot1)
-	slot0:setBtnAvailable(false)
-	slot0:pauseGame()
-	setImageSprite(slot0.ourScoreCutin, slot0.scoreCutinNums:Find(slot0.ourScoreNum):GetComponent(typeof(Image)).sprite, true)
-	setImageSprite(slot0.enemyScoreCutin, slot0.scoreCutinNums:Find(slot0.enemyScoreNum):GetComponent(typeof(Image)).sprite, true)
-	setActive(slot0.scoreCutin, true)
-	setLocalScale(slot0.scoreCutin, Vector3(1, 0, 1))
-	LeanTween.scale(slot0.scoreCutin, Vector3(1, 1, 1), 0.2):setOnComplete(System.Action(function ()
-		uv0:resetChar()
-		LeanTween.delayedCall(0.6, System.Action(function ()
-			LeanTween.scale(uv0.scoreCutin, Vector3(1, 0, 1), 0.2):setOnComplete(System.Action(function ()
-				setActive(uv0.scoreCutin, false)
-				uv0:setBtnAvailable(true)
-				uv0:resumeGame()
+function var_0_0.showScoreCutin(arg_149_0, arg_149_1)
+	arg_149_0:setBtnAvailable(false)
+	arg_149_0:pauseGame()
+	setImageSprite(arg_149_0.ourScoreCutin, arg_149_0.scoreCutinNums:Find(arg_149_0.ourScoreNum):GetComponent(typeof(Image)).sprite, true)
+	setImageSprite(arg_149_0.enemyScoreCutin, arg_149_0.scoreCutinNums:Find(arg_149_0.enemyScoreNum):GetComponent(typeof(Image)).sprite, true)
+	setActive(arg_149_0.scoreCutin, true)
+	setLocalScale(arg_149_0.scoreCutin, Vector3(1, 0, 1))
+	LeanTween.scale(arg_149_0.scoreCutin, Vector3(1, 1, 1), 0.2):setOnComplete(System.Action(function()
+		arg_149_0:resetChar()
+		LeanTween.delayedCall(0.6, System.Action(function()
+			LeanTween.scale(arg_149_0.scoreCutin, Vector3(1, 0, 1), 0.2):setOnComplete(System.Action(function()
+				setActive(arg_149_0.scoreCutin, false)
+				arg_149_0:setBtnAvailable(true)
+				arg_149_0:resumeGame()
 
-				if uv1 then
-					uv1()
+				if arg_149_1 then
+					arg_149_1()
 				end
 			end))
 		end))
 	end))
 end
 
-function slot0.updateScore(slot0)
-	setText(slot0.ourScore, slot0.ourScoreNum)
-	setText(slot0.enemyScore, slot0.enemyScoreNum)
-	setActive(slot0.qte, false)
+function var_0_0.updateScore(arg_153_0)
+	setText(arg_153_0.ourScore, arg_153_0.ourScoreNum)
+	setText(arg_153_0.enemyScore, arg_153_0.enemyScoreNum)
+	setActive(arg_153_0.qte, false)
 
-	if slot0.endScore <= slot0.ourScoreNum or slot0.endScore <= slot0.enemyScoreNum then
-		slot0:endGame()
+	if arg_153_0.ourScoreNum >= arg_153_0.endScore or arg_153_0.enemyScoreNum >= arg_153_0.endScore then
+		arg_153_0:endGame()
 	else
-		slot0:showScoreCutin(function ()
-			uv0:startGame()
+		arg_153_0:showScoreCutin(function()
+			arg_153_0:startGame()
 		end)
 	end
 end
 
-function slot0.endGame(slot0)
-	setActive(slot0.winTag, slot0.ourScoreNum ~= slot0.enemyScoreNum)
-	setActive(slot0.loseTag, slot0.ourScoreNum ~= slot0.enemyScoreNum)
-	slot0:setBtnAvailable(false)
+function var_0_0.endGame(arg_155_0)
+	setActive(arg_155_0.winTag, arg_155_0.ourScoreNum ~= arg_155_0.enemyScoreNum)
+	setActive(arg_155_0.loseTag, arg_155_0.ourScoreNum ~= arg_155_0.enemyScoreNum)
+	arg_155_0:setBtnAvailable(false)
 
-	slot0.isInGame = false
+	arg_155_0.isInGame = false
 
-	pg.UIMgr.GetInstance():BlurPanel(slot0.endUI)
-	setActive(slot0.endUI, true)
-	setActive(slot0.endFreeTitle, slot0.isFree)
-	setActive(slot0.endDayTitle, not slot0.isFree)
-	setImageSprite(slot0.endTitleDay, slot0.titleDays:Find(slot0.curDay):GetComponent(typeof(Image)).sprite, true)
-	setImageSprite(slot0.endOurScore, slot0.endScoreNums:Find(slot0.ourScoreNum):GetComponent(typeof(Image)).sprite, true)
-	setImageSprite(slot0.endEnemyScore, slot0.endScoreNums:Find(slot0.enemyScoreNum):GetComponent(typeof(Image)).sprite, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_155_0.endUI)
+	setActive(arg_155_0.endUI, true)
+	setActive(arg_155_0.endFreeTitle, arg_155_0.isFree)
+	setActive(arg_155_0.endDayTitle, not arg_155_0.isFree)
+	setImageSprite(arg_155_0.endTitleDay, arg_155_0.titleDays:Find(arg_155_0.curDay):GetComponent(typeof(Image)).sprite, true)
+	setImageSprite(arg_155_0.endOurScore, arg_155_0.endScoreNums:Find(arg_155_0.ourScoreNum):GetComponent(typeof(Image)).sprite, true)
+	setImageSprite(arg_155_0.endEnemyScore, arg_155_0.endScoreNums:Find(arg_155_0.enemyScoreNum):GetComponent(typeof(Image)).sprite, true)
 
-	slot1 = -20
+	local var_155_0 = -20
+	local var_155_1
 
-	if slot0.enemyScoreNum < slot0.ourScoreNum then
-		slot0.winTag.anchoredPosition = Vector3(-170, 200, 0)
-		slot0.loseTag.anchoredPosition = Vector3(180, 200, 0)
-		slot1 = -20
+	if arg_155_0.ourScoreNum > arg_155_0.enemyScoreNum then
+		arg_155_0.winTag.anchoredPosition = Vector3(-170, 200, 0)
+		arg_155_0.loseTag.anchoredPosition = Vector3(180, 200, 0)
+		var_155_1 = -20
 	else
-		slot0.winTag.anchoredPosition = Vector3(170, 200, 0)
-		slot0.loseTag.anchoredPosition = Vector3(-180, 200, 0)
-		slot1 = 20
+		arg_155_0.winTag.anchoredPosition = Vector3(170, 200, 0)
+		arg_155_0.loseTag.anchoredPosition = Vector3(-180, 200, 0)
+		var_155_1 = 20
 	end
 
-	setActive(slot0.winTag:GetChild(0), false)
-	setActive(slot0.winTag:GetChild(0), true)
-	setLocalRotation(slot0.loseTag, Vector3(0, 0, 0))
-	LeanTween.rotateZ(go(slot0.loseTag), slot1, 0.2):setOnComplete(System.Action(function ()
-		if uv0:GetMGHubData().count > 0 then
-			uv0:emit(BaseMiniGameMediator.MINI_GAME_SUCCESS, 0)
+	setActive(arg_155_0.winTag:GetChild(0), false)
+	setActive(arg_155_0.winTag:GetChild(0), true)
+	setLocalRotation(arg_155_0.loseTag, Vector3(0, 0, 0))
+	LeanTween.rotateZ(go(arg_155_0.loseTag), var_155_1, 0.2):setOnComplete(System.Action(function()
+		if arg_155_0:GetMGHubData().count > 0 then
+			arg_155_0:emit(BaseMiniGameMediator.MINI_GAME_SUCCESS, 0)
 		end
 	end))
 end
 
-function slot0.OnGetAwardDone(slot0, slot1)
-	if slot1.cmd == MiniGameOPCommand.CMD_COMPLETE then
-		slot2 = slot0:GetMGHubData()
-		slot3 = slot2.ultimate
-		slot5 = slot2:getConfig("reward_need")
-		slot6 = slot0:GetMGHubData().count
-		slot7 = pg.NewStoryMgr.GetInstance()
-		slot8 = slot0.storylist[slot0:GetMGHubData().usedtime] and slot0.storylist[slot0:GetMGHubData().usedtime][1] or nil
+function var_0_0.OnGetAwardDone(arg_157_0, arg_157_1)
+	if arg_157_1.cmd == MiniGameOPCommand.CMD_COMPLETE then
+		local var_157_0 = arg_157_0:GetMGHubData()
+		local var_157_1 = var_157_0.ultimate
+		local var_157_2 = var_157_0.usedtime
+		local var_157_3 = var_157_0:getConfig("reward_need")
+		local var_157_4 = arg_157_0:GetMGHubData().count
+		local var_157_5 = pg.NewStoryMgr.GetInstance()
+		local var_157_6 = arg_157_0.storylist[arg_157_0:GetMGHubData().usedtime] and arg_157_0.storylist[arg_157_0:GetMGHubData().usedtime][1] or nil
 
-		if slot2.usedtime ~= 7 and slot8 and not slot7:IsPlayed(slot8) then
-			slot7:Play(slot8)
+		if var_157_2 ~= 7 and var_157_6 and not var_157_5:IsPlayed(var_157_6) then
+			var_157_5:Play(var_157_6)
 		end
 
-		if slot3 == 0 and slot5 <= slot4 then
+		if var_157_1 == 0 and var_157_3 <= var_157_2 then
 			pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-				hubid = slot2.id,
+				hubid = var_157_0.id,
 				cmd = MiniGameOPCommand.CMD_ULTIMATE,
 				args1 = {}
 			})
 		end
-	elseif slot1.cmd == MiniGameOPCommand.CMD_ULTIMATE then
-		slot3 = pg.NewStoryMgr.GetInstance()
+	elseif arg_157_1.cmd == MiniGameOPCommand.CMD_ULTIMATE then
+		local var_157_7 = arg_157_0.storylist[7][1] and arg_157_0.storylist[7][1] or nil
+		local var_157_8 = pg.NewStoryMgr.GetInstance()
 
-		if (slot0.storylist[7][1] and slot0.storylist[7][1] or nil) and not slot3:IsPlayed(slot2) then
-			slot3:Play(slot2)
+		if var_157_7 and not var_157_8:IsPlayed(var_157_7) then
+			var_157_8:Play(var_157_7)
 		end
 	end
 end
 
-function slot0.pauseGame(slot0)
-	slot0:pauseManagedTween()
+function var_0_0.pauseGame(arg_158_0)
+	arg_158_0:pauseManagedTween()
 
-	if slot0.qteTimer then
-		slot0.qteTimer:Pause()
+	if arg_158_0.qteTimer then
+		arg_158_0.qteTimer:Pause()
 	end
 
-	if slot0.qteTween and LeanTween.isTweening(slot0.qteTween) then
-		LeanTween.pause(slot0.qteTween)
+	if arg_158_0.qteTween and LeanTween.isTweening(arg_158_0.qteTween) then
+		LeanTween.pause(arg_158_0.qteTween)
 	end
 
-	for slot4, slot5 in pairs(slot0.charactor) do
-		slot5:pauseSpine()
-	end
-end
-
-function slot0.resumeGame(slot0)
-	slot0:resumeManagedTween()
-
-	if slot0.qteTimer then
-		slot0.qteTimer:Resume()
-	end
-
-	if slot0.qteTween and LeanTween.isTweening(slot0.qteTween) then
-		LeanTween.resume(slot0.qteTween)
-	end
-
-	for slot4, slot5 in pairs(slot0.charactor) do
-		slot5:resumeSpine()
+	for iter_158_0, iter_158_1 in pairs(arg_158_0.charactor) do
+		iter_158_1:pauseSpine()
 	end
 end
 
-function slot0.clearTimer(slot0)
-	if slot0.qteTimer then
-		slot0.qteTimer:Stop()
+function var_0_0.resumeGame(arg_159_0)
+	arg_159_0:resumeManagedTween()
 
-		slot0.qteTimer = nil
+	if arg_159_0.qteTimer then
+		arg_159_0.qteTimer:Resume()
 	end
 
-	if slot0.countTimer then
-		slot0.countTimer:Stop()
+	if arg_159_0.qteTween and LeanTween.isTweening(arg_159_0.qteTween) then
+		LeanTween.resume(arg_159_0.qteTween)
+	end
 
-		slot0.countTimer = nil
+	for iter_159_0, iter_159_1 in pairs(arg_159_0.charactor) do
+		iter_159_1:resumeSpine()
 	end
 end
 
-function slot0.changeQTEBtnStatus(slot0, slot1)
-	slot0.qteBtnStatus = slot1
+function var_0_0.clearTimer(arg_160_0)
+	if arg_160_0.qteTimer then
+		arg_160_0.qteTimer:Stop()
+
+		arg_160_0.qteTimer = nil
+	end
+
+	if arg_160_0.countTimer then
+		arg_160_0.countTimer:Stop()
+
+		arg_160_0.countTimer = nil
+	end
 end
 
-function slot0.resetGameData(slot0)
-	slot0.qteStatus = uv0
-	slot0.qteType = uv1
+function var_0_0.changeQTEBtnStatus(arg_161_0, arg_161_1)
+	arg_161_0.qteBtnStatus = arg_161_1
+end
 
-	slot0:changeQTEBtnStatus(uv2)
+function var_0_0.resetGameData(arg_162_0)
+	arg_162_0.qteStatus = var_0_9
+	arg_162_0.qteType = var_0_12
 
-	slot0.ballPosTag = ""
-	slot0.isCutin = false
-	slot0.cutin.anchoredPosition = {
+	arg_162_0:changeQTEBtnStatus(var_0_5)
+
+	arg_162_0.ballPosTag = ""
+	arg_162_0.isCutin = false
+	arg_162_0.cutin.anchoredPosition = {
 		x = -567,
 		y = 582
 	}
-	slot0.isScoreCutin = false
+	arg_162_0.isScoreCutin = false
 
-	setActive(slot0.scoreCutin, false)
+	setActive(arg_162_0.scoreCutin, false)
 
-	slot0.ourScoreNum = 0
-	slot0.enemyScoreNum = 0
+	arg_162_0.ourScoreNum = 0
+	arg_162_0.enemyScoreNum = 0
 
-	setText(slot0.ourScore, slot0.ourScoreNum)
-	setText(slot0.enemyScore, slot0.enemyScoreNum)
-	setActive(slot0.qte, false)
-	slot0:loadSpineChars()
+	setText(arg_162_0.ourScore, arg_162_0.ourScoreNum)
+	setText(arg_162_0.enemyScore, arg_162_0.enemyScoreNum)
+	setActive(arg_162_0.qte, false)
+	arg_162_0:loadSpineChars()
 end
 
-function slot0.exitGame(slot0)
-	slot0.isInGame = false
+function var_0_0.exitGame(arg_163_0)
+	arg_163_0.isInGame = false
 
-	slot0:setBtnAvailable(true)
-	slot0:resetGameAni()
+	arg_163_0:setBtnAvailable(true)
+	arg_163_0:resetGameAni()
 end
 
-function slot0.resetGameAni(slot0)
-	slot0:cleanManagedTween()
+function var_0_0.resetGameAni(arg_164_0)
+	arg_164_0:cleanManagedTween()
 
-	if slot0.qteTween and LeanTween.isTweening(slot0.qteTween) then
-		LeanTween.cancel(slot0.qteTween, false)
+	if arg_164_0.qteTween and LeanTween.isTweening(arg_164_0.qteTween) then
+		LeanTween.cancel(arg_164_0.qteTween, false)
 	end
 
-	slot0:clearTimer()
+	arg_164_0:clearTimer()
 end
 
-function slot0.willExit(slot0)
-	slot0:clearSpineChars()
-	pg.UIMgr.GetInstance():UnblurPanel(slot0.selectUI, slot0._tf)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0.endUI, slot0._tf)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0.countTimeUI, slot0._tf)
+function var_0_0.willExit(arg_165_0)
+	arg_165_0:clearSpineChars()
+	pg.UIMgr.GetInstance():UnblurPanel(arg_165_0.selectUI, arg_165_0._tf)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_165_0.endUI, arg_165_0._tf)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_165_0.countTimeUI, arg_165_0._tf)
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.isInGame then
-		triggerButton(slot0.backBtn)
-	elseif isActive(slot0.selectUI) then
-		triggerButton(slot0.selectBackBtn)
-	elseif isActive(slot0.mainUI) then
-		triggerButton(slot0.returnBtn)
+function var_0_0.onBackPressed(arg_166_0)
+	if arg_166_0.isInGame then
+		triggerButton(arg_166_0.backBtn)
+	elseif isActive(arg_166_0.selectUI) then
+		triggerButton(arg_166_0.selectBackBtn)
+	elseif isActive(arg_166_0.mainUI) then
+		triggerButton(arg_166_0.returnBtn)
 	end
 end
 
-return slot0
+return var_0_0

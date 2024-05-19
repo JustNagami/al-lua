@@ -1,155 +1,162 @@
-slot0 = class("FriendScene", import("..base.BaseUI"))
-slot0.FRIEND_PAGE = 1
-slot0.SEARCH_PAGE = 2
-slot0.REQUEST_PAGE = 3
-slot0.BLACKLIST_PAGE = 4
+﻿local var_0_0 = class("FriendScene", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+var_0_0.FRIEND_PAGE = 1
+var_0_0.SEARCH_PAGE = 2
+var_0_0.REQUEST_PAGE = 3
+var_0_0.BLACKLIST_PAGE = 4
+
+function var_0_0.getUIName(arg_1_0)
 	return "FriendUI"
 end
 
-function slot0.setFriendVOs(slot0, slot1)
-	slot0.friendVOs = slot1
+function var_0_0.setFriendVOs(arg_2_0, arg_2_1)
+	arg_2_0.friendVOs = arg_2_1
 end
 
-function slot0.setPlayer(slot0, slot1)
-	slot0.playerVO = slot1
+function var_0_0.setPlayer(arg_3_0, arg_3_1)
+	arg_3_0.playerVO = arg_3_1
 end
 
-function slot0.setRequests(slot0, slot1)
-	slot0.requestVOs = slot1
+function var_0_0.setRequests(arg_4_0, arg_4_1)
+	arg_4_0.requestVOs = arg_4_1
 end
 
-function slot0.setSearchResult(slot0, slot1)
-	slot0.searchResultVOs = slot1
+function var_0_0.setSearchResult(arg_5_0, arg_5_1)
+	arg_5_0.searchResultVOs = arg_5_1
 end
 
-function slot0.removeSearchResult(slot0, slot1)
-	slot0:setSearchResult(_.select(slot0.searchResultVOs, function (slot0)
-		return slot0.id ~= uv0
-	end))
+function var_0_0.removeSearchResult(arg_6_0, arg_6_1)
+	local var_6_0 = _.select(arg_6_0.searchResultVOs, function(arg_7_0)
+		return arg_7_0.id ~= arg_6_1
+	end)
+
+	arg_6_0:setSearchResult(var_6_0)
 end
 
-function slot0.setBlackList(slot0, slot1)
-	if slot1 then
-		slot0.blackVOs = {}
+function var_0_0.setBlackList(arg_8_0, arg_8_1)
+	if arg_8_1 then
+		arg_8_0.blackVOs = {}
 
-		for slot5, slot6 in pairs(slot1 or {}) do
-			table.insert(slot0.blackVOs, slot6)
+		for iter_8_0, iter_8_1 in pairs(arg_8_1 or {}) do
+			table.insert(arg_8_0.blackVOs, iter_8_1)
 		end
 	end
 end
 
-function slot0.init(slot0)
-	slot0.pages = slot0:findTF("pages")
-	slot0.togglesTF = slot0:findTF("blur_panel/adapt/left_length/frame/tagRoot")
-	slot4 = slot0.event
-	slot0.pages = {
-		FriendListPage.New(slot0.pages, slot0.event, slot0.contextData),
-		FriendSearchPage.New(slot0.pages, slot0.event),
-		FriendRequestPage.New(slot0.pages, slot0.event),
-		FriendBlackListPage.New(slot0.pages, slot4)
+function var_0_0.init(arg_9_0)
+	arg_9_0.pages = arg_9_0:findTF("pages")
+	arg_9_0.togglesTF = arg_9_0:findTF("blur_panel/adapt/left_length/frame/tagRoot")
+	arg_9_0.pages = {
+		FriendListPage.New(arg_9_0.pages, arg_9_0.event, arg_9_0.contextData),
+		FriendSearchPage.New(arg_9_0.pages, arg_9_0.event),
+		FriendRequestPage.New(arg_9_0.pages, arg_9_0.event),
+		FriendBlackListPage.New(arg_9_0.pages, arg_9_0.event)
 	}
-	slot0.toggles = {}
+	arg_9_0.toggles = {}
 
-	for slot4 = 1, slot0.togglesTF.childCount do
-		slot0.toggles[slot4] = slot0.togglesTF:GetChild(slot4 - 1)
+	for iter_9_0 = 1, arg_9_0.togglesTF.childCount do
+		arg_9_0.toggles[iter_9_0] = arg_9_0.togglesTF:GetChild(iter_9_0 - 1)
 
-		onToggle(slot0, slot0.toggles[slot4], function (slot0)
-			if slot0 then
-				uv0:switchPage(uv1)
+		onToggle(arg_9_0, arg_9_0.toggles[iter_9_0], function(arg_10_0)
+			if arg_10_0 then
+				arg_9_0:switchPage(iter_9_0)
 			end
 		end, SFX_PANEL)
 	end
 
-	slot0.chatTipContainer = slot0.toggles[1]:Find("count")
-	slot0.chatTip = slot0.toggles[1]:Find("count/Text"):GetComponent(typeof(Text))
-	slot0.listEmptyTF = slot0:findTF("empty")
+	arg_9_0.chatTipContainer = arg_9_0.toggles[1]:Find("count")
+	arg_9_0.chatTip = arg_9_0.toggles[1]:Find("count/Text"):GetComponent(typeof(Text))
+	arg_9_0.listEmptyTF = arg_9_0:findTF("empty")
 
-	setActive(slot0.listEmptyTF, false)
+	setActive(arg_9_0.listEmptyTF, false)
 
-	slot0.listEmptyTxt = slot0:findTF("Text", slot0.listEmptyTF)
+	arg_9_0.listEmptyTxt = arg_9_0:findTF("Text", arg_9_0.listEmptyTF)
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0:findTF("blur_panel/adapt/top/back_btn"), function ()
-		uv0:emit(uv1.ON_BACK)
+function var_0_0.didEnter(arg_11_0)
+	onButton(arg_11_0, arg_11_0:findTF("blur_panel/adapt/top/back_btn"), function()
+		arg_11_0:emit(var_0_0.ON_BACK)
 	end, SOUND_BACK)
-	triggerToggle(slot0.toggles[slot0.contextData.initPage or 1], true)
-	slot0:updateRequestTip()
+
+	local var_11_0 = arg_11_0.contextData.initPage or 1
+
+	triggerToggle(arg_11_0.toggles[var_11_0], true)
+	arg_11_0:updateRequestTip()
 end
 
-function slot0.wrapData(slot0)
+function var_0_0.wrapData(arg_13_0)
 	return {
-		friendVOs = slot0.friendVOs,
-		requestVOs = slot0.requestVOs,
-		searchResults = slot0.searchResultVOs,
-		blackVOs = slot0.blackVOs,
-		playerVO = slot0.playerVO
+		friendVOs = arg_13_0.friendVOs,
+		requestVOs = arg_13_0.requestVOs,
+		searchResults = arg_13_0.searchResultVOs,
+		blackVOs = arg_13_0.blackVOs,
+		playerVO = arg_13_0.playerVO
 	}
 end
 
-function slot0.updateEmpty(slot0, slot1, slot2)
-	slot3 = {}
-	slot4 = ""
+function var_0_0.updateEmpty(arg_14_0, arg_14_1, arg_14_2)
+	local var_14_0 = {}
+	local var_14_1 = ""
 
-	if slot1 == uv0.FRIEND_PAGE then
-		slot3 = slot2.friendVOs
-		slot4 = i18n("list_empty_tip_friendui")
-	elseif slot1 == uv0.SEARCH_PAGE then
-		slot3 = slot2.searchResults
-		slot4 = i18n("list_empty_tip_friendui_search")
-	elseif slot1 == uv0.REQUEST_PAGE then
-		slot3 = slot2.requestVOs
-		slot4 = i18n("list_empty_tip_friendui_request")
-	elseif slot1 == uv0.BLACKLIST_PAGE then
-		slot3 = slot2.blackVOs
-		slot4 = i18n("list_empty_tip_friendui_black")
+	if arg_14_1 == var_0_0.FRIEND_PAGE then
+		var_14_0 = arg_14_2.friendVOs
+		var_14_1 = i18n("list_empty_tip_friendui")
+	elseif arg_14_1 == var_0_0.SEARCH_PAGE then
+		var_14_0 = arg_14_2.searchResults
+		var_14_1 = i18n("list_empty_tip_friendui_search")
+	elseif arg_14_1 == var_0_0.REQUEST_PAGE then
+		var_14_0 = arg_14_2.requestVOs
+		var_14_1 = i18n("list_empty_tip_friendui_request")
+	elseif arg_14_1 == var_0_0.BLACKLIST_PAGE then
+		var_14_0 = arg_14_2.blackVOs
+		var_14_1 = i18n("list_empty_tip_friendui_black")
 	end
 
-	setActive(slot0.listEmptyTF, not slot3 or #slot3 <= 0)
-	setText(slot0.listEmptyTxt, slot4)
+	setActive(arg_14_0.listEmptyTF, not var_14_0 or #var_14_0 <= 0)
+	setText(arg_14_0.listEmptyTxt, var_14_1)
 end
 
-function slot0.switchPage(slot0, slot1)
-	if slot0.page then
-		slot0.page:ExecuteAction("Hide")
+function var_0_0.switchPage(arg_15_0, arg_15_1)
+	if arg_15_0.page then
+		arg_15_0.page:ExecuteAction("Hide")
 	end
 
-	slot2 = slot0.pages[slot1]
-	slot3 = slot0:wrapData()
+	local var_15_0 = arg_15_0.pages[arg_15_1]
+	local var_15_1 = arg_15_0:wrapData()
 
-	slot2:ExecuteAction("Show")
-	slot2:ExecuteAction("UpdateData", slot3)
+	var_15_0:ExecuteAction("Show")
+	var_15_0:ExecuteAction("UpdateData", var_15_1)
 
-	slot0.page = slot2
+	arg_15_0.page = var_15_0
 
-	slot0:updateEmpty(slot1, slot3)
+	arg_15_0:updateEmpty(arg_15_1, var_15_1)
 end
 
-function slot0.updatePage(slot0, slot1)
-	if slot0.page and slot0.pages[slot1] == slot0.page then
-		slot3 = slot0:wrapData()
+function var_0_0.updatePage(arg_16_0, arg_16_1)
+	local var_16_0 = arg_16_0.pages[arg_16_1]
 
-		slot0.page:ExecuteAction("UpdateData", slot3)
-		slot0:updateEmpty(slot1, slot3)
-	end
-end
+	if arg_16_0.page and var_16_0 == arg_16_0.page then
+		local var_16_1 = arg_16_0:wrapData()
 
-function slot0.updateChatNotification(slot0, slot1)
-	setActive(slot0.chatTipContainer, slot1 > 0)
-
-	slot0.chatTip.text = slot1
-end
-
-function slot0.updateRequestTip(slot0)
-	setActive(slot0.toggles[3]:Find("tip"), #slot0.requestVOs > 0)
-end
-
-function slot0.willExit(slot0)
-	for slot4, slot5 in ipairs(slot0.pages) do
-		slot5:Destroy()
+		arg_16_0.page:ExecuteAction("UpdateData", var_16_1)
+		arg_16_0:updateEmpty(arg_16_1, var_16_1)
 	end
 end
 
-return slot0
+function var_0_0.updateChatNotification(arg_17_0, arg_17_1)
+	setActive(arg_17_0.chatTipContainer, arg_17_1 > 0)
+
+	arg_17_0.chatTip.text = arg_17_1
+end
+
+function var_0_0.updateRequestTip(arg_18_0)
+	setActive(arg_18_0.toggles[3]:Find("tip"), #arg_18_0.requestVOs > 0)
+end
+
+function var_0_0.willExit(arg_19_0)
+	for iter_19_0, iter_19_1 in ipairs(arg_19_0.pages) do
+		iter_19_1:Destroy()
+	end
+end
+
+return var_0_0

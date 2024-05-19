@@ -1,4 +1,43 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onWeaponSteday"
+			},
+			arg_list = {
+				rant = 4000,
+				time = 10,
+				skill_id = 13270,
+				target = "TargetSelf",
+				index = {
+					1
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				quota = 1,
+				target = "TargetSelf",
+				time = 20,
+				skill_id = 13272
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 13271,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -419,44 +458,5 @@ return {
 	stack = 1,
 	id = 13270,
 	icon = 13270,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onWeaponSteday"
-			},
-			arg_list = {
-				rant = 4000,
-				time = 10,
-				skill_id = 13270,
-				target = "TargetSelf",
-				index = {
-					1
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				quota = 1,
-				target = "TargetSelf",
-				time = 20,
-				skill_id = 13272
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 13271,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

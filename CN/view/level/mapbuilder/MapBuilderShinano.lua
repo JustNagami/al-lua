@@ -1,79 +1,83 @@
-slot1 = class("MapBuilderShinano", import(".MapBuilder"))
+﻿local var_0_0 = import(".MapBuilder")
+local var_0_1 = class("MapBuilderShinano", var_0_0)
 
-function slot1.Ctor(slot0, ...)
-	uv0.super.Ctor(slot0, ...)
+function var_0_1.Ctor(arg_1_0, ...)
+	var_0_1.super.Ctor(arg_1_0, ...)
 
-	slot0.chapterTFsById = {}
-	slot0.chaptersInBackAnimating = {}
+	arg_1_0.chapterTFsById = {}
+	arg_1_0.chaptersInBackAnimating = {}
 end
 
-function slot1.GetType(slot0)
-	return uv0.TYPESHINANO
+function var_0_1.GetType(arg_2_0)
+	return var_0_0.TYPESHINANO
 end
 
-function slot1.getUIName(slot0)
+function var_0_1.getUIName(arg_3_0)
 	return "Shinano_levels"
 end
 
-function slot1.OnInit(slot0)
-	slot0.tpl = slot0._tf:Find("level_tpl")
+function var_0_1.OnInit(arg_4_0)
+	arg_4_0.tpl = arg_4_0._tf:Find("level_tpl")
 
-	setActive(slot0.tpl, false)
+	setActive(arg_4_0.tpl, false)
 
-	slot0.itemHolder = slot0._tf:Find("items")
-	slot1 = slot0._tf:Find("preloadResources"):GetComponent(typeof(ItemList))
-	slot2 = Instantiate(slot1.prefabItem[0])
+	arg_4_0.itemHolder = arg_4_0._tf:Find("items")
 
-	setAnchoredPosition(slot0._tf:Find("rumeng"), tf(slot2).anchoredPosition)
-	setParent(slot2, slot0._tf:Find("rumeng"))
-	setAnchoredPosition(slot2, Vector2.zero)
-	slot0:InitTransformMapBtn(slot0._tf:Find("rumeng"), 1, slot1.prefabItem[1])
+	local var_4_0 = arg_4_0._tf:Find("preloadResources"):GetComponent(typeof(ItemList))
+	local var_4_1 = Instantiate(var_4_0.prefabItem[0])
 
-	slot3 = Instantiate(slot1.prefabItem[2])
+	setAnchoredPosition(arg_4_0._tf:Find("rumeng"), tf(var_4_1).anchoredPosition)
+	setParent(var_4_1, arg_4_0._tf:Find("rumeng"))
+	setAnchoredPosition(var_4_1, Vector2.zero)
+	arg_4_0:InitTransformMapBtn(arg_4_0._tf:Find("rumeng"), 1, var_4_0.prefabItem[1])
 
-	setAnchoredPosition(slot0._tf:Find("huigui"), tf(slot3).anchoredPosition)
-	setParent(slot3, slot0._tf:Find("huigui"))
-	setAnchoredPosition(slot3, Vector2.zero)
-	slot0:InitTransformMapBtn(slot0._tf:Find("huigui"), -1, slot1.prefabItem[3])
+	local var_4_2 = Instantiate(var_4_0.prefabItem[2])
+
+	setAnchoredPosition(arg_4_0._tf:Find("huigui"), tf(var_4_2).anchoredPosition)
+	setParent(var_4_2, arg_4_0._tf:Find("huigui"))
+	setAnchoredPosition(var_4_2, Vector2.zero)
+	arg_4_0:InitTransformMapBtn(arg_4_0._tf:Find("huigui"), -1, var_4_0.prefabItem[3])
 end
 
-function slot1.OnShow(slot0)
-	setActive(slot0.sceneParent.mainLayer:Find("title_chapter_lines"), true)
-	setActive(slot0.sceneParent.topChapter:Find("title_chapter"), true)
-	setActive(slot0.sceneParent.topChapter:Find("type_skirmish"), true)
+function var_0_1.OnShow(arg_5_0)
+	setActive(arg_5_0.sceneParent.mainLayer:Find("title_chapter_lines"), true)
+	setActive(arg_5_0.sceneParent.topChapter:Find("title_chapter"), true)
+	setActive(arg_5_0.sceneParent.topChapter:Find("type_skirmish"), true)
 end
 
-function slot1.OnHide(slot0)
-	setActive(slot0.sceneParent.mainLayer:Find("title_chapter_lines"), false)
-	setActive(slot0.sceneParent.topChapter:Find("title_chapter"), false)
+function var_0_1.OnHide(arg_6_0)
+	setActive(arg_6_0.sceneParent.mainLayer:Find("title_chapter_lines"), false)
+	setActive(arg_6_0.sceneParent.topChapter:Find("title_chapter"), false)
+	setActive(arg_6_0.sceneParent.topChapter:Find("type_skirmish"), false)
+	table.clear(arg_6_0.chaptersInBackAnimating)
 
-	slot4 = "type_skirmish"
+	for iter_6_0, iter_6_1 in pairs(arg_6_0.chapterTFsById) do
+		local var_6_0 = findTF(iter_6_1, "main/info/bk")
 
-	setActive(slot0.sceneParent.topChapter:Find(slot4), false)
-	table.clear(slot0.chaptersInBackAnimating)
-
-	for slot4, slot5 in pairs(slot0.chapterTFsById) do
-		LeanTween.cancel(rtf(findTF(slot5, "main/info/bk")))
+		LeanTween.cancel(rtf(var_6_0))
 	end
 
-	uv0.super.OnHide(slot0)
+	var_0_1.super.OnHide(arg_6_0)
 end
 
-function slot1.TrySwitchNextMap(slot0, slot1)
-	if not getProxy(ChapterProxy):getMapById(slot0.sceneParent.contextData.mapIdx + slot1) then
+function var_0_1.TrySwitchNextMap(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_0.sceneParent.contextData.mapIdx + arg_7_1
+	local var_7_1 = getProxy(ChapterProxy):getMapById(var_7_0)
+
+	if not var_7_1 then
 		return
 	end
 
-	if slot3:getMapType() == Map.ELITE and not slot3:isEliteEnabled() then
+	if var_7_1:getMapType() == Map.ELITE and not var_7_1:isEliteEnabled() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("elite_disable_unusable"))
 
 		return
 	end
 
-	slot5, slot6 = slot3:isUnlock()
+	local var_7_2, var_7_3 = var_7_1:isUnlock()
 
-	if not slot5 then
-		pg.TipsMgr.GetInstance():ShowTips(slot6)
+	if not var_7_2 then
+		pg.TipsMgr.GetInstance():ShowTips(var_7_3)
 
 		return
 	end
@@ -81,193 +85,222 @@ function slot1.TrySwitchNextMap(slot0, slot1)
 	return true
 end
 
-function slot1.InitTransformMapBtn(slot0, slot1, slot2, slot3)
-	onButton(slot0.sceneParent, slot1, function ()
-		if uv0.sceneParent:isfrozen() then
+function var_0_1.InitTransformMapBtn(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
+	onButton(arg_8_0.sceneParent, arg_8_1, function()
+		if arg_8_0.sceneParent:isfrozen() then
 			return
 		end
 
-		slot0 = nil
+		local var_9_0
 
 		seriesAsync({
-			function (slot0)
-				if not uv0:TrySwitchNextMap(uv1) then
+			function(arg_10_0)
+				if not arg_8_0:TrySwitchNextMap(arg_8_2) then
 					return
 				end
 
 				pg.CriMgr.GetInstance():StopBGM()
 				pg.CriMgr.GetInstance():PlaySE_V3("ui-qiehuan")
 
-				uv2 = uv0._tf:Find(uv3.name .. "(Clone)") or Instantiate(uv3)
+				var_9_0 = arg_8_0._tf:Find(arg_8_3.name .. "(Clone)") or Instantiate(arg_8_3)
 
-				setParent(uv2, uv0._tf)
-				setAnchoredPosition(uv2, rtf(uv4).anchoredPosition)
+				setParent(var_9_0, arg_8_0._tf)
+				setAnchoredPosition(var_9_0, rtf(arg_8_1).anchoredPosition)
 
-				if Map.bindConfigTable(Map)[uv0.contextData.mapIdx + uv1] and #slot2.bg > 0 then
-					GetSpriteFromAtlasAsync("levelmap/" .. slot2.bg, "", function (slot0)
+				local var_10_0 = arg_8_0.contextData.mapIdx + arg_8_2
+				local var_10_1 = Map.bindConfigTable(Map)[var_10_0]
+
+				if var_10_1 and #var_10_1.bg > 0 then
+					GetSpriteFromAtlasAsync("levelmap/" .. var_10_1.bg, "", function(arg_11_0)
+						return
 					end)
 				end
 
-				uv0.sceneParent:frozen()
-				LeanTween.delayedCall(go(uv4), 2.3, System.Action(slot0))
+				arg_8_0.sceneParent:frozen()
+				LeanTween.delayedCall(go(arg_8_1), 2.3, System.Action(arg_10_0))
 			end,
-			function (slot0)
-				uv0.sceneParent:setMap(uv0.contextData.mapIdx + uv1)
-				LeanTween.delayedCall(go(uv2), 0.5, System.Action(slot0))
+			function(arg_12_0)
+				arg_8_0.sceneParent:setMap(arg_8_0.contextData.mapIdx + arg_8_2)
+				LeanTween.delayedCall(go(arg_8_1), 0.5, System.Action(arg_12_0))
 			end,
-			function (slot0)
-				if not IsNil(uv0) then
-					Destroy(uv0)
+			function(arg_13_0)
+				if not IsNil(var_9_0) then
+					Destroy(var_9_0)
 				end
 
-				uv1.sceneParent:unfrozen()
+				arg_8_0.sceneParent:unfrozen()
 			end
 		})
 	end)
 end
 
-function slot1.Update(slot0, slot1)
-	slot0.float.pivot = Vector2(0.5, 0.5)
-	slot0.float.anchoredPosition = Vector2(0, 0)
+function var_0_1.Update(arg_14_0, arg_14_1)
+	arg_14_0.float.pivot = Vector2(0.5, 0.5)
+	arg_14_0.float.anchoredPosition = Vector2(0, 0)
 
-	setText(slot0.sceneParent.chapterName, string.split(slot1:getConfig("name"), "||")[1])
-	slot0.sceneParent.loader:GetSpriteQuiet("chapterno", "chapter" .. slot1:getMapTitleNumber(), slot0.sceneParent.chapterNoTitle, true)
-	uv0.super.Update(slot0, slot1)
+	local var_14_0 = string.split(arg_14_1:getConfig("name"), "||")
+
+	setText(arg_14_0.sceneParent.chapterName, var_14_0[1])
+
+	local var_14_1 = arg_14_1:getMapTitleNumber()
+
+	arg_14_0.sceneParent.loader:GetSpriteQuiet("chapterno", "chapter" .. var_14_1, arg_14_0.sceneParent.chapterNoTitle, true)
+	var_0_1.super.Update(arg_14_0, arg_14_1)
 end
 
-function slot1.UpdateButtons(slot0)
-	slot0.sceneParent:updateDifficultyBtns()
-	slot0.sceneParent:updateActivityBtns()
+function var_0_1.UpdateButtons(arg_15_0)
+	arg_15_0.sceneParent:updateDifficultyBtns()
+	arg_15_0.sceneParent:updateActivityBtns()
 end
 
-function slot1.PostUpdateMap(slot0, slot1)
-	setActive(slot0._tf:Find("rumeng"), false)
-	setActive(slot0._tf:Find("huigui"), false)
+function var_0_1.PostUpdateMap(arg_16_0, arg_16_1)
+	local var_16_0 = arg_16_0.contextData.map:getConfig("type") == Map.ACT_EXTRA
+	local var_16_1 = arg_16_0._tf:Find("rumeng")
+	local var_16_2 = arg_16_0._tf:Find("huigui")
 
-	if not (slot0.contextData.map:getConfig("type") == Map.ACT_EXTRA) then
-		setActive(slot0.sceneParent.btnPrev, false)
-		setActive(slot0.sceneParent.btnNext, false)
+	setActive(var_16_1, false)
+	setActive(var_16_2, false)
 
-		slot6 = getProxy(ChapterProxy):getMapById(slot1.id + 1)
+	if not var_16_0 then
+		setActive(arg_16_0.sceneParent.btnPrev, false)
+		setActive(arg_16_0.sceneParent.btnNext, false)
 
-		setActive(slot4, slot6)
-		setActive(slot5, getProxy(ChapterProxy):getMapById(slot1.id - 1))
-		LeanTween.cancel(go(slot4), true)
-		LeanTween.cancel(go(slot5), true)
+		local var_16_3 = getProxy(ChapterProxy):getMapById(arg_16_1.id + 1)
+		local var_16_4 = getProxy(ChapterProxy):getMapById(arg_16_1.id - 1)
 
-		if slot6 then
-			slot8 = tf(slot4).localScale
-			slot11 = Clone(tf(slot4):GetChild(0):Find("Quad"):GetComponent(typeof(MeshRenderer)).sharedMaterial:GetColor("_MainColor"))
+		setActive(var_16_1, var_16_3)
+		setActive(var_16_2, var_16_4)
+		LeanTween.cancel(go(var_16_1), true)
+		LeanTween.cancel(go(var_16_2), true)
 
-			slot0:RecordTween("rumengAlphaTween", LeanTween.value(go(slot4), 0, 1, 0.8):setOnUpdate(System.Action_float(function (slot0)
-				uv0.a = uv1.a * slot0
+		if var_16_3 then
+			local var_16_5 = tf(var_16_1).localScale
+			local var_16_6 = tf(var_16_1):GetChild(0):Find("Quad"):GetComponent(typeof(MeshRenderer)).sharedMaterial
+			local var_16_7 = var_16_6:GetColor("_MainColor")
+			local var_16_8 = Clone(var_16_7)
+			local var_16_9 = LeanTween.value(go(var_16_1), 0, 1, 0.8):setOnUpdate(System.Action_float(function(arg_17_0)
+				var_16_8.a = var_16_7.a * arg_17_0
 
-				uv2:SetColor("_MainColor", uv0)
-			end)):setEase(LeanTweenType.easeInCubic):setOnComplete(System.Action(function ()
-				uv0:SetColor("_MainColor", uv1)
-			end)).id)
+				var_16_6:SetColor("_MainColor", var_16_8)
+			end)):setEase(LeanTweenType.easeInCubic):setOnComplete(System.Action(function()
+				var_16_6:SetColor("_MainColor", var_16_7)
+			end))
 
-			return
-		end
+			arg_16_0:RecordTween("rumengAlphaTween", var_16_9.id)
+		elseif var_16_4 then
+			local var_16_10 = tf(var_16_2).localScale
+			local var_16_11 = tf(var_16_2):GetChild(0):Find("Quad"):GetComponent(typeof(MeshRenderer)).sharedMaterial
+			local var_16_12 = var_16_11:GetColor("_MainColor")
+			local var_16_13 = Clone(var_16_12)
+			local var_16_14 = LeanTween.value(go(var_16_2), 0, 1, 0.8):setOnUpdate(System.Action_float(function(arg_19_0)
+				var_16_13.a = var_16_12.a * arg_19_0
 
-		if slot7 then
-			slot8 = tf(slot5).localScale
-			slot11 = Clone(tf(slot5):GetChild(0):Find("Quad"):GetComponent(typeof(MeshRenderer)).sharedMaterial:GetColor("_MainColor"))
+				var_16_11:SetColor("_MainColor", var_16_13)
+			end)):setEase(LeanTweenType.easeInCubic):setOnComplete(System.Action(function()
+				var_16_11:SetColor("_MainColor", var_16_12)
+			end))
 
-			slot0:RecordTween("huiguiAlphaTween", LeanTween.value(go(slot5), 0, 1, 0.8):setOnUpdate(System.Action_float(function (slot0)
-				uv0.a = uv1.a * slot0
-
-				uv2:SetColor("_MainColor", uv0)
-			end)):setEase(LeanTweenType.easeInCubic):setOnComplete(System.Action(function ()
-				uv0:SetColor("_MainColor", uv1)
-			end)).id)
+			arg_16_0:RecordTween("huiguiAlphaTween", var_16_14.id)
 		end
 	end
 end
 
-function slot1.UpdateMapItems(slot0)
-	if not slot0:isShowing() then
+function var_0_1.UpdateMapItems(arg_21_0)
+	if not arg_21_0:isShowing() then
 		return
 	end
 
-	uv0.super.UpdateMapItems(slot0)
-	table.clear(slot0.chapterTFsById)
+	var_0_1.super.UpdateMapItems(arg_21_0)
 
-	slot3 = {}
+	local var_21_0 = arg_21_0.data
+	local var_21_1 = getProxy(ChapterProxy)
 
-	for slot7, slot8 in pairs(slot0.data:getChapters()) do
-		if (slot8:isUnlock() or slot8:activeAlways()) and (not slot8:ifNeedHide() or getProxy(ChapterProxy):GetJustClearChapters(slot8.id)) then
-			table.insert(slot3, slot8)
+	table.clear(arg_21_0.chapterTFsById)
+
+	local var_21_2 = {}
+
+	for iter_21_0, iter_21_1 in pairs(var_21_0:getChapters()) do
+		if (iter_21_1:isUnlock() or iter_21_1:activeAlways()) and (not iter_21_1:ifNeedHide() or var_21_1:GetJustClearChapters(iter_21_1.id)) then
+			table.insert(var_21_2, iter_21_1)
 		end
 	end
 
-	function slot8(slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
+	UIItemList.StaticAlign(arg_21_0.itemHolder, arg_21_0.tpl, #var_21_2, function(arg_22_0, arg_22_1, arg_22_2)
+		if arg_22_0 == UIItemList.EventUpdate then
+			local var_22_0 = var_21_2[arg_22_1 + 1]
 
-			uv1:UpdateMapItem(slot2, slot3)
+			arg_21_0:UpdateMapItem(arg_22_2, var_22_0)
 
-			slot2.name = "Chapter_" .. slot3.id
-			uv1.chapterTFsById[slot3.id] = slot2
+			arg_22_2.name = "Chapter_" .. var_22_0.id
+			arg_21_0.chapterTFsById[var_22_0.id] = arg_22_2
 		end
+	end)
+
+	local var_21_3 = {}
+
+	for iter_21_2, iter_21_3 in pairs(var_21_2) do
+		local var_21_4 = iter_21_3:getConfigTable()
+
+		var_21_3[var_21_4.pos_x] = var_21_3[var_21_4.pos_x] or {}
+
+		local var_21_5 = var_21_3[var_21_4.pos_x]
+
+		var_21_5[var_21_4.pos_y] = var_21_5[var_21_4.pos_y] or {}
+
+		local var_21_6 = var_21_5[var_21_4.pos_y]
+
+		table.insert(var_21_6, iter_21_3)
 	end
 
-	UIItemList.StaticAlign(slot0.itemHolder, slot0.tpl, #slot3, slot8)
-
-	slot4 = {}
-
-	for slot8, slot9 in pairs(slot3) do
-		slot10 = slot9:getConfigTable()
-		slot4[slot10.pos_x] = slot4[slot10.pos_x] or {}
-		slot11[slot10.pos_y] = slot4[slot10.pos_x][slot10.pos_y] or {}
-
-		table.insert(slot11[slot10.pos_y], slot9)
-	end
-
-	for slot8, slot9 in pairs(slot4) do
-		for slot13, slot14 in pairs(slot9) do
-			slot15 = {}
+	for iter_21_4, iter_21_5 in pairs(var_21_3) do
+		for iter_21_6, iter_21_7 in pairs(iter_21_5) do
+			local var_21_7 = {}
 
 			seriesAsync({
-				function (slot0)
-					for slot5, slot6 in pairs(uv0) do
-						if slot6:ifNeedHide() and uv1:GetJustClearChapters(slot6.id) and uv2.chapterTFsById[slot6.id] then
-							slot1 = 0 + 1
-							slot7 = uv2.chapterTFsById[slot6.id]
+				function(arg_23_0)
+					local var_23_0 = 0
 
-							setActive(slot7, true)
-							uv2:PlayChapterItemAnimationBackward(slot7, slot6, function ()
-								uv0 = uv0 - 1
+					for iter_23_0, iter_23_1 in pairs(iter_21_7) do
+						if iter_23_1:ifNeedHide() and var_21_1:GetJustClearChapters(iter_23_1.id) and arg_21_0.chapterTFsById[iter_23_1.id] then
+							var_23_0 = var_23_0 + 1
 
-								setActive(uv1, false)
-								uv2:RecordJustClearChapters(uv3.id, nil)
+							local var_23_1 = arg_21_0.chapterTFsById[iter_23_1.id]
 
-								if uv0 <= 0 then
-									uv4()
+							setActive(var_23_1, true)
+							arg_21_0:PlayChapterItemAnimationBackward(var_23_1, iter_23_1, function()
+								var_23_0 = var_23_0 - 1
+
+								setActive(var_23_1, false)
+								var_21_1:RecordJustClearChapters(iter_23_1.id, nil)
+
+								if var_23_0 <= 0 then
+									arg_23_0()
 								end
 							end)
 
-							uv3[slot6.id] = true
-						elseif uv2.chapterTFsById[slot6.id] then
-							setActive(uv2.chapterTFsById[slot6.id], false)
+							var_21_7[iter_23_1.id] = true
+						elseif arg_21_0.chapterTFsById[iter_23_1.id] then
+							setActive(arg_21_0.chapterTFsById[iter_23_1.id], false)
 						end
 					end
 
-					if slot1 <= 0 then
-						slot0()
+					if var_23_0 <= 0 then
+						arg_23_0()
 					end
 				end,
-				function (slot0)
-					for slot5, slot6 in pairs(uv0) do
-						if not uv1[slot6.id] then
-							slot1 = 0 + 1
+				function(arg_25_0)
+					local var_25_0 = 0
 
-							setActive(uv2.chapterTFsById[slot6.id], true)
-							uv2:PlayChapterItemAnimation(uv2.chapterTFsById[slot6.id], slot6, function ()
-								uv0 = uv0 - 1
+					for iter_25_0, iter_25_1 in pairs(iter_21_7) do
+						if not var_21_7[iter_25_1.id] then
+							var_25_0 = var_25_0 + 1
 
-								if uv0 <= 0 then
-									uv1()
+							setActive(arg_21_0.chapterTFsById[iter_25_1.id], true)
+							arg_21_0:PlayChapterItemAnimation(arg_21_0.chapterTFsById[iter_25_1.id], iter_25_1, function()
+								var_25_0 = var_25_0 - 1
+
+								if var_25_0 <= 0 then
+									arg_25_0()
 								end
 							end)
 						end
@@ -278,249 +311,294 @@ function slot1.UpdateMapItems(slot0)
 	end
 end
 
-function slot1.UpdateMapItem(slot0, slot1, slot2)
-	slot3 = slot2:getConfigTable()
+function var_0_1.UpdateMapItem(arg_27_0, arg_27_1, arg_27_2)
+	local var_27_0 = arg_27_2:getConfigTable()
 
-	setAnchoredPosition(slot1, {
-		x = slot0.mapWidth * slot3.pos_x,
-		y = slot0.mapHeight * slot3.pos_y
+	setAnchoredPosition(arg_27_1, {
+		x = arg_27_0.mapWidth * var_27_0.pos_x,
+		y = arg_27_0.mapHeight * var_27_0.pos_y
 	})
 
-	slot4 = findTF(slot1, "main")
+	local var_27_1 = findTF(arg_27_1, "main")
 
-	setActive(slot4, true)
-	setActive(findTF(slot4, "info/bk/fordark"), slot3.icon_outline == 1)
+	setActive(var_27_1, true)
 
-	slot6 = findTF(slot4, "circle/clear_flag")
-	slot7 = findTF(slot4, "circle/lock")
-	slot12 = string.split(slot3.name, "|")
-	slot13 = not slot2.active and not slot2:isUnlock() and "#737373" or "#FFFFFF"
+	local var_27_2 = findTF(var_27_1, "info/bk/fordark")
 
-	setText(findTF(slot4, "info/bk/title_form/title_index"), setColorStr(slot3.chapter_name .. "  ", slot13))
-	setText(findTF(slot4, "info/bk/title_form/title"), setColorStr(slot12[1], slot13))
-	setText(findTF(slot4, "info/bk/title_form/title_en"), setColorStr(slot12[2] or "", slot13))
-	setFillAmount(findTF(slot4, "circle/progress"), slot2.progress / 100)
-	setText(findTF(slot4, "circle/progress_text"), string.format("%d%%", slot2.progress))
-	setActive(findTF(slot4, "circle/stars"), slot2:existAchieve())
+	setActive(var_27_2, var_27_0.icon_outline == 1)
 
-	if slot2:existAchieve() then
-		for slot17, slot18 in ipairs(slot2.achieves) do
-			setActive(slot11:Find("star" .. slot17 .. "/light"), ChapterConst.IsAchieved(slot18))
+	local var_27_3 = findTF(var_27_1, "circle/clear_flag")
+	local var_27_4 = findTF(var_27_1, "circle/lock")
+	local var_27_5 = not arg_27_2.active and not arg_27_2:isUnlock()
+	local var_27_6 = findTF(var_27_1, "circle/progress")
+	local var_27_7 = findTF(var_27_1, "circle/progress_text")
+	local var_27_8 = findTF(var_27_1, "circle/stars")
+	local var_27_9 = string.split(var_27_0.name, "|")
+	local var_27_10 = var_27_5 and "#737373" or "#FFFFFF"
+
+	setText(findTF(var_27_1, "info/bk/title_form/title_index"), setColorStr(var_27_0.chapter_name .. "  ", var_27_10))
+	setText(findTF(var_27_1, "info/bk/title_form/title"), setColorStr(var_27_9[1], var_27_10))
+	setText(findTF(var_27_1, "info/bk/title_form/title_en"), setColorStr(var_27_9[2] or "", var_27_10))
+	setFillAmount(var_27_6, arg_27_2.progress / 100)
+	setText(var_27_7, string.format("%d%%", arg_27_2.progress))
+	setActive(var_27_8, arg_27_2:existAchieve())
+
+	if arg_27_2:existAchieve() then
+		for iter_27_0, iter_27_1 in ipairs(arg_27_2.achieves) do
+			local var_27_11 = ChapterConst.IsAchieved(iter_27_1)
+			local var_27_12 = var_27_8:Find("star" .. iter_27_0 .. "/light")
+
+			setActive(var_27_12, var_27_11)
 		end
 	end
 
-	slot14 = not slot2.active and slot2:isClear()
+	local var_27_13 = not arg_27_2.active and arg_27_2:isClear()
 
-	setActive(slot6, slot14)
-	setActive(slot7, slot8)
-	setActive(slot10, not slot14 and not slot8)
-	slot0:DeleteTween("fighting" .. slot2.id)
+	setActive(var_27_3, var_27_13)
+	setActive(var_27_4, var_27_5)
+	setActive(var_27_7, not var_27_13 and not var_27_5)
+	arg_27_0:DeleteTween("fighting" .. arg_27_2.id)
 
-	slot15 = findTF(slot4, "circle/fighting")
+	local var_27_14 = findTF(var_27_1, "circle/fighting")
 
-	setText(findTF(slot15, "Text"), i18n("tag_level_fighting"))
+	setText(findTF(var_27_14, "Text"), i18n("tag_level_fighting"))
 
-	slot16 = findTF(slot4, "circle/oni")
+	local var_27_15 = findTF(var_27_1, "circle/oni")
 
-	setText(findTF(slot16, "Text"), i18n("tag_level_oni"))
+	setText(findTF(var_27_15, "Text"), i18n("tag_level_oni"))
 
-	slot17 = findTF(slot4, "circle/narrative")
+	local var_27_16 = findTF(var_27_1, "circle/narrative")
 
-	setText(findTF(slot17, "Text"), i18n("tag_level_narrative"))
-	setActive(slot15, false)
-	setActive(slot16, false)
-	setActive(slot17, false)
+	setText(findTF(var_27_16, "Text"), i18n("tag_level_narrative"))
+	setActive(var_27_14, false)
+	setActive(var_27_15, false)
+	setActive(var_27_16, false)
 
-	slot18, slot19 = nil
+	local var_27_17
+	local var_27_18
 
-	if slot2:getConfig("chapter_tag") == 1 then
-		slot18 = slot17
+	if arg_27_2:getConfig("chapter_tag") == 1 then
+		var_27_17 = var_27_16
 	end
 
-	if slot2.active then
-		slot18 = slot2:existOni() and slot16 or slot15
+	if arg_27_2.active then
+		var_27_17 = arg_27_2:existOni() and var_27_15 or var_27_14
 	end
 
-	if slot18 then
-		setActive(slot18, true)
+	if var_27_17 then
+		setActive(var_27_17, true)
 
-		slot19 = GetOrAddComponent(slot18, "CanvasGroup")
-		slot19.alpha = 1
+		local var_27_19 = GetOrAddComponent(var_27_17, "CanvasGroup")
 
-		slot0:RecordTween("fighting" .. slot2.id, LeanTween.alphaCanvas(slot19, 0, 0.5):setFrom(1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId)
+		var_27_19.alpha = 1
+
+		arg_27_0:RecordTween("fighting" .. arg_27_2.id, LeanTween.alphaCanvas(var_27_19, 0, 0.5):setFrom(1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId)
 	end
 
-	setActive(findTF(slot4, "triesLimit"), false)
+	local var_27_20 = findTF(var_27_1, "triesLimit")
 
-	if slot2:isTriesLimit() then
-		slot22 = slot2:getConfig("count")
+	setActive(var_27_20, false)
 
-		setText(slot20:Find("label"), i18n("levelScene_chapter_count_tip"))
-		setText(slot20:Find("Text"), setColorStr(slot22 - slot2:getTodayDefeatCount() .. "/" .. slot22, slot22 <= slot2:getTodayDefeatCount() and COLOR_RED or COLOR_GREEN))
+	if arg_27_2:isTriesLimit() then
+		local var_27_21 = arg_27_2:getConfig("count")
+		local var_27_22 = var_27_21 - arg_27_2:getTodayDefeatCount() .. "/" .. var_27_21
+
+		setText(var_27_20:Find("label"), i18n("levelScene_chapter_count_tip"))
+		setText(var_27_20:Find("Text"), setColorStr(var_27_22, var_27_21 <= arg_27_2:getTodayDefeatCount() and COLOR_RED or COLOR_GREEN))
 	end
 
-	slot22 = slot2:GetDailyBonusQuota()
-	slot23 = findTF(slot4, "mark")
+	local var_27_23 = arg_27_2:GetDailyBonusQuota()
+	local var_27_24 = findTF(var_27_1, "mark")
 
-	setActive(slot23:Find("bonus"), slot22)
-	setActive(slot23, slot22)
+	setActive(var_27_24:Find("bonus"), var_27_23)
+	setActive(var_27_24, var_27_23)
 
-	if slot22 then
-		slot0.sceneParent.loader:GetSprite("ui/levelmainscene_atlas", slot0.sceneParent.contextData.map:getConfig("type") == Map.ACTIVITY_HARD and "bonus_us_hard" or "bonus_us", slot23:Find("bonus"))
-		LeanTween.cancel(go(slot23), true)
+	if var_27_23 then
+		local var_27_25 = var_27_24:GetComponent(typeof(CanvasGroup))
+		local var_27_26 = arg_27_0.sceneParent.contextData.map:getConfig("type") == Map.ACTIVITY_HARD and "bonus_us_hard" or "bonus_us"
 
-		slot27 = slot23.anchoredPosition.y
-		slot23:GetComponent(typeof(CanvasGroup)).alpha = 0
+		arg_27_0.sceneParent.loader:GetSprite("ui/levelmainscene_atlas", var_27_26, var_27_24:Find("bonus"))
+		LeanTween.cancel(go(var_27_24), true)
 
-		LeanTween.value(go(slot23), 0, 1, 0.2):setOnUpdate(System.Action_float(function (slot0)
-			uv0.alpha = slot0
-			slot1 = uv1.anchoredPosition
-			slot1.y = uv2 * slot0
-			uv1.anchoredPosition = slot1
-		end)):setOnComplete(System.Action(function ()
-			uv0.alpha = 1
-			slot0 = uv1.anchoredPosition
-			slot0.y = uv2
-			uv1.anchoredPosition = slot0
+		local var_27_27 = var_27_24.anchoredPosition.y
+
+		var_27_25.alpha = 0
+
+		LeanTween.value(go(var_27_24), 0, 1, 0.2):setOnUpdate(System.Action_float(function(arg_28_0)
+			var_27_25.alpha = arg_28_0
+
+			local var_28_0 = var_27_24.anchoredPosition
+
+			var_28_0.y = var_27_27 * arg_28_0
+			var_27_24.anchoredPosition = var_28_0
+		end)):setOnComplete(System.Action(function()
+			var_27_25.alpha = 1
+
+			local var_29_0 = var_27_24.anchoredPosition
+
+			var_29_0.y = var_27_27
+			var_27_24.anchoredPosition = var_29_0
 		end)):setEase(LeanTweenType.easeOutSine):setDelay(0.7)
 	end
 
-	slot24 = slot2.id
+	local var_27_28 = arg_27_2.id
 
-	onButton(slot0.sceneParent, slot4, function ()
-		if uv0:InvokeParent("isfrozen") then
+	onButton(arg_27_0.sceneParent, var_27_1, function()
+		if arg_27_0:InvokeParent("isfrozen") then
 			return
 		end
 
-		if uv0.chaptersInBackAnimating[uv1] then
+		if arg_27_0.chaptersInBackAnimating[var_27_28] then
 			return
 		end
 
-		if not getProxy(ChapterProxy):getChapterById(uv1):isUnlock() then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_tracking_error_pre", slot0:getPrevChapterName()))
+		local var_30_0 = getProxy(ChapterProxy):getChapterById(var_27_28)
+
+		if not var_30_0:isUnlock() then
+			local var_30_1 = var_30_0:getPrevChapterName()
+
+			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_tracking_error_pre", var_30_1))
 
 			return
 		end
 
-		if not getProxy(ChapterProxy):getMapById(slot0:getConfig("map")):isRemaster() and not slot0:inActTime() then
+		if not getProxy(ChapterProxy):getMapById(var_30_0:getConfig("map")):isRemaster() and not var_30_0:inActTime() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("battle_levelScene_close"))
 
 			return
 		end
 
-		if uv0.sceneParent.player.level < slot0:getConfig("unlocklevel") then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_chapter_level_limit", slot2))
+		local var_30_2 = var_30_0:getConfig("unlocklevel")
+
+		if var_30_2 > arg_27_0.sceneParent.player.level then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_chapter_level_limit", var_30_2))
 
 			return
 		end
 
-		if getProxy(ChapterProxy):getActiveChapter(true) and slot3.id ~= uv1 then
-			uv0:InvokeParent("emit", LevelMediator2.ON_STRATEGYING_CHAPTER)
+		local var_30_3 = getProxy(ChapterProxy):getActiveChapter(true)
+
+		if var_30_3 and var_30_3.id ~= var_27_28 then
+			arg_27_0:InvokeParent("emit", LevelMediator2.ON_STRATEGYING_CHAPTER)
 
 			return
 		end
 
-		if slot0.active then
-			uv0:InvokeParent("switchToChapter", slot0)
+		if var_30_0.active then
+			arg_27_0:InvokeParent("switchToChapter", var_30_0)
 		else
-			slot4 = uv2.localPosition
+			local var_30_4 = arg_27_1.localPosition
 
-			uv0:InvokeParent("displayChapterPanel", slot0, Vector3(slot4.x - 10, slot4.y + 150))
+			arg_27_0:InvokeParent("displayChapterPanel", var_30_0, Vector3(var_30_4.x - 10, var_30_4.y + 150))
 		end
 	end, SFX_UI_WEIGHANCHOR_SELECT)
 end
 
-function slot1.PlayChapterItemAnimation(slot0, slot1, slot2, slot3)
-	slot4 = findTF(slot1, "main")
-	slot6 = findTF(slot4, "circle")
-	slot7 = findTF(slot4, "info/bk")
+function var_0_1.PlayChapterItemAnimation(arg_31_0, arg_31_1, arg_31_2, arg_31_3)
+	local var_31_0 = findTF(arg_31_1, "main")
+	local var_31_1 = var_31_0:Find("info")
+	local var_31_2 = findTF(var_31_0, "circle")
+	local var_31_3 = findTF(var_31_0, "info/bk")
 
-	LeanTween.cancel(go(slot6))
+	LeanTween.cancel(go(var_31_2))
 
-	slot6.localScale = Vector3.zero
+	var_31_2.localScale = Vector3.zero
 
-	slot0:RecordTween(LeanTween.scale(slot6, Vector3.one, 0.3):setDelay(0.3).uniqueId)
-	LeanTween.cancel(go(slot7))
-	setAnchoredPosition(slot7, {
-		x = -1 * slot4:Find("info").rect.width
+	local var_31_4 = LeanTween.scale(var_31_2, Vector3.one, 0.3):setDelay(0.3)
+
+	arg_31_0:RecordTween(var_31_4.uniqueId)
+	LeanTween.cancel(go(var_31_3))
+	setAnchoredPosition(var_31_3, {
+		x = -1 * var_31_1.rect.width
 	})
-	shiftPanel(slot7, 0, nil, 0.4, 0.4, true, true, nil, function ()
-		if uv0:isTriesLimit() then
-			setActive(findTF(uv1, "triesLimit"), true)
+	shiftPanel(var_31_3, 0, nil, 0.4, 0.4, true, true, nil, function()
+		if arg_31_2:isTriesLimit() then
+			setActive(findTF(var_31_0, "triesLimit"), true)
 		end
 
-		if uv2 then
-			uv2()
+		if arg_31_3 then
+			arg_31_3()
 		end
 	end)
 end
 
-function slot1.PlayChapterItemAnimationBackward(slot0, slot1, slot2, slot3)
-	slot4 = findTF(slot1, "main")
-	slot6 = findTF(slot4, "circle")
-	slot7 = findTF(slot4, "info/bk")
+function var_0_1.PlayChapterItemAnimationBackward(arg_33_0, arg_33_1, arg_33_2, arg_33_3)
+	local var_33_0 = findTF(arg_33_1, "main")
+	local var_33_1 = var_33_0:Find("info")
+	local var_33_2 = findTF(var_33_0, "circle")
+	local var_33_3 = findTF(var_33_0, "info/bk")
 
-	LeanTween.cancel(go(slot6))
+	LeanTween.cancel(go(var_33_2))
 
-	slot6.localScale = Vector3.one
+	var_33_2.localScale = Vector3.one
 
-	slot0:RecordTween(LeanTween.scale(go(slot6), Vector3.zero, 0.3):setDelay(0.3).uniqueId)
+	local var_33_4 = LeanTween.scale(go(var_33_2), Vector3.zero, 0.3):setDelay(0.3)
 
-	slot0.chaptersInBackAnimating[slot2.id] = true
+	arg_33_0:RecordTween(var_33_4.uniqueId)
 
-	LeanTween.cancel(go(slot7))
-	setAnchoredPosition(slot7, {
+	arg_33_0.chaptersInBackAnimating[arg_33_2.id] = true
+
+	LeanTween.cancel(go(var_33_3))
+	setAnchoredPosition(var_33_3, {
 		x = 0
 	})
-	shiftPanel(slot7, -1 * slot4:Find("info").rect.width, nil, 0.4, 0.4, true, true, nil, function ()
-		uv0.chaptersInBackAnimating[uv1.id] = nil
+	shiftPanel(var_33_3, -1 * var_33_1.rect.width, nil, 0.4, 0.4, true, true, nil, function()
+		arg_33_0.chaptersInBackAnimating[arg_33_2.id] = nil
 
-		if uv2 then
-			uv2()
+		if arg_33_3 then
+			arg_33_3()
 		end
 	end)
 
-	if slot2:isTriesLimit() then
-		setActive(findTF(slot4, "triesLimit"), false)
+	if arg_33_2:isTriesLimit() then
+		setActive(findTF(var_33_0, "triesLimit"), false)
 	end
 end
 
-function slot1.UpdateChapterTF(slot0, slot1)
-	if slot0.chapterTFsById[slot1] then
-		slot3 = getProxy(ChapterProxy):getChapterById(slot1)
+function var_0_1.UpdateChapterTF(arg_35_0, arg_35_1)
+	local var_35_0 = arg_35_0.chapterTFsById[arg_35_1]
 
-		slot0:UpdateMapItem(slot2, slot3)
-		slot0:PlayChapterItemAnimation(slot2, slot3)
+	if var_35_0 then
+		local var_35_1 = getProxy(ChapterProxy):getChapterById(arg_35_1)
+
+		arg_35_0:UpdateMapItem(var_35_0, var_35_1)
+		arg_35_0:PlayChapterItemAnimation(var_35_0, var_35_1)
 	end
 end
 
-function slot1.AddChapterTF(slot0, slot1)
-	slot2 = slot0.data
+function var_0_1.AddChapterTF(arg_36_0, arg_36_1)
+	local var_36_0 = arg_36_0.data
 
-	if slot0.chapterTFsById[slot1] then
-		slot0:UpdateChapterTF(slot1)
-	elseif _.contains(slot2:GetChapterList(), function (slot0)
-		if slot0 ~= uv0 then
+	if arg_36_0.chapterTFsById[arg_36_1] then
+		arg_36_0:UpdateChapterTF(arg_36_1)
+	elseif _.contains(var_36_0:GetChapterList(), function(arg_37_0)
+		if arg_37_0 ~= arg_36_1 then
 			return false
 		end
 
-		return (getProxy(ChapterProxy):getChapterById(uv0, true):isUnlock() or slot1:activeAlways()) and not slot1:ifNeedHide()
+		local var_37_0 = getProxy(ChapterProxy):getChapterById(arg_36_1, true)
+
+		return (var_37_0:isUnlock() or var_37_0:activeAlways()) and not var_37_0:ifNeedHide()
 	end) then
-		slot4 = getProxy(ChapterProxy):getChapterById(slot1, true)
-		slot3 = cloneTplTo(slot0.tpl, slot0.itemHolder, "Chapter_" .. slot4.id)
+		local var_36_1 = getProxy(ChapterProxy):getChapterById(arg_36_1, true)
+		local var_36_2 = cloneTplTo(arg_36_0.tpl, arg_36_0.itemHolder, "Chapter_" .. var_36_1.id)
 
-		slot0:UpdateMapItem(slot3, slot4)
+		arg_36_0:UpdateMapItem(var_36_2, var_36_1)
 
-		slot0.chapterTFsById[slot4.id] = slot3
+		arg_36_0.chapterTFsById[var_36_1.id] = var_36_2
 
-		slot0:PlayChapterItemAnimation(slot3)
+		arg_36_0:PlayChapterItemAnimation(var_36_2)
 	end
 end
 
-function slot1.TryOpenChapter(slot0, slot1)
-	if slot0.chapterTFsById[slot1] then
-		triggerButton(slot2:Find("main"))
+function var_0_1.TryOpenChapter(arg_38_0, arg_38_1)
+	local var_38_0 = arg_38_0.chapterTFsById[arg_38_1]
+
+	if var_38_0 then
+		local var_38_1 = var_38_0:Find("main")
+
+		triggerButton(var_38_1)
 	end
 end
 
-return slot1
+return var_0_1

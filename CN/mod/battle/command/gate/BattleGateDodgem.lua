@@ -1,27 +1,32 @@
-slot0 = class("BattleGateDodgem")
-ys.Battle.BattleGateDodgem = slot0
-slot0.__name = "BattleGateDodgem"
+﻿local var_0_0 = class("BattleGateDodgem")
 
-function slot0.Entrance(slot0, slot1)
-	slot2 = slot0.stageId
+ys.Battle.BattleGateDodgem = var_0_0
+var_0_0.__name = "BattleGateDodgem"
 
-	slot1:sendNotification(GAME.BEGIN_STAGE_DONE, {
-		prefabFleet = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(pg.expedition_data_template[slot2].dungeon_id).fleet_prefab,
-		stageId = slot2,
+function var_0_0.Entrance(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_0.stageId
+	local var_1_1 = pg.expedition_data_template[var_1_0].dungeon_id
+	local var_1_2 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(var_1_1).fleet_prefab
+	local var_1_3 = {
+		prefabFleet = var_1_2,
+		stageId = var_1_0,
 		system = SYSTEM_DODGEM
-	})
+	}
+
+	arg_1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var_1_3)
 end
 
-function slot0.Exit(slot0, slot1)
-	slot2 = slot0
+function var_0_0.Exit(arg_2_0, arg_2_1)
+	local var_2_0 = arg_2_0
+	local var_2_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_DODGEM)
 
-	slot1:sendNotification(GAME.ACTIVITY_OPERATION, {
+	arg_2_1:sendNotification(GAME.ACTIVITY_OPERATION, {
 		cmd = 1,
-		activity_id = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_DODGEM) and slot3.id,
-		statistics = slot2.statistics,
-		arg1 = slot2.statistics._battleScore,
-		arg2 = slot2.statistics.dodgemResult.score
+		activity_id = var_2_1 and var_2_1.id,
+		statistics = var_2_0.statistics,
+		arg1 = var_2_0.statistics._battleScore,
+		arg2 = var_2_0.statistics.dodgemResult.score
 	})
 end
 
-return slot0
+return var_0_0

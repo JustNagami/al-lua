@@ -1,19 +1,20 @@
-slot0 = class("EducateEvent", import("model.vo.BaseVO"))
-slot0.TYPE_PLAN = 1
-slot0.TYPE_OPTION = 2
-slot0.TYPE_BUBBLE = 3
+﻿local var_0_0 = class("EducateEvent", import("model.vo.BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id
-	slot0.configId = slot0.id
+var_0_0.TYPE_PLAN = 1
+var_0_0.TYPE_OPTION = 2
+var_0_0.TYPE_BUBBLE = 3
+
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.id = arg_1_1.id
+	arg_1_0.configId = arg_1_0.id
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_2_0)
 	return pg.child_event
 end
 
-function slot0.GetPerformance(slot0)
-	return slot0:getConfig("performance")
+function var_0_0.GetPerformance(arg_3_0)
+	return arg_3_0:getConfig("performance")
 end
 
-return slot0
+return var_0_0

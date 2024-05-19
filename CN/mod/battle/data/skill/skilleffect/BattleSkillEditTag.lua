@@ -1,22 +1,24 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("BattleSkillEditTag", slot0.Battle.BattleSkillEffect)
-slot0.Battle.BattleSkillEditTag = slot1
-slot1.__name = "BattleSkillEditTag"
-slot1.TAG_OPERATION_APPEND = 1
-slot1.TAG_OPERATION_REMOVE = -1
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2)
+local var_0_0 = ys
+local var_0_1 = class("BattleSkillEditTag", var_0_0.Battle.BattleSkillEffect)
 
-	slot0._tag = slot0._tempData.arg_list.tag
-	slot0._op = slot0._tempData.arg_list.operation
+var_0_0.Battle.BattleSkillEditTag = var_0_1
+var_0_1.__name = "BattleSkillEditTag"
+var_0_1.TAG_OPERATION_APPEND = 1
+var_0_1.TAG_OPERATION_REMOVE = -1
+
+function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+
+	arg_1_0._tag = arg_1_0._tempData.arg_list.tag
+	arg_1_0._op = arg_1_0._tempData.arg_list.operation
 end
 
-function slot1.DoDataEffect(slot0, slot1, slot2)
-	if slot0._op == uv0.TAG_OPERATION_APPEND then
-		slot2:AddLabelTag(slot0._tag)
-	elseif slot0._op == uv0.TAG_OPERATION_REMOVE then
-		slot2:RemoveLabelTag(slot0._tag)
+function var_0_1.DoDataEffect(arg_2_0, arg_2_1, arg_2_2)
+	if arg_2_0._op == var_0_1.TAG_OPERATION_APPEND then
+		arg_2_2:AddLabelTag(arg_2_0._tag)
+	elseif arg_2_0._op == var_0_1.TAG_OPERATION_REMOVE then
+		arg_2_2:RemoveLabelTag(arg_2_0._tag)
 	end
 end

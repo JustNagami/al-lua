@@ -1,42 +1,51 @@
-slot0 = class("GameRoomExchangeCoinCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GameRoomExchangeCoinCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.price
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.times
+	local var_1_2 = var_1_0.price
 
 	pg.ConnectionMgr.GetInstance():Send(26124, {
-		times = slot2.times
-	}, 26125, function (slot0)
-		if slot0.result == 0 then
-			uv0.coinMax = pg.gameset.game_coin_max.key_value
-			uv0.myCoinCount = getProxy(GameRoomProxy):getCoin()
+		times = var_1_1
+	}, 26125, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			arg_1_0.coinMax = pg.gameset.game_coin_max.key_value
+			arg_1_0.myCoinCount = getProxy(GameRoomProxy):getCoin()
 
-			if uv0.coinMax - uv0.myCoinCount < uv1 then
-				uv1 = slot1
+			local var_2_0 = arg_1_0.coinMax - arg_1_0.myCoinCount
+
+			if var_2_0 < var_1_1 then
+				var_1_1 = var_2_0
 			end
 
-			getProxy(GameRoomProxy):setPayCoinCount(uv1)
+			local var_2_1 = id2res(GameRoomProxy.coin_res_id)
 
-			slot3 = getProxy(PlayerProxy):getRawData()
+			getProxy(GameRoomProxy):setPayCoinCount(var_1_1)
 
-			slot3:addResources({
-				[id2res(GameRoomProxy.coin_res_id)] = uv1 or 0
+			local var_2_2 = getProxy(PlayerProxy):getRawData()
+
+			var_2_2:addResources({
+				[var_2_1] = var_1_1 or 0
 			})
-			slot3:consume({
-				gold = uv2 or 0
+			var_2_2:consume({
+				gold = var_1_2 or 0
 			})
-			getProxy(PlayerProxy):updatePlayer(slot3)
-			pg.m02:sendNotification(GAME.GAME_ROOM_AWARD_DONE, {
+			getProxy(PlayerProxy):updatePlayer(var_2_2)
+
+			local var_2_3 = pg.player_resource[GameRoomProxy.coin_res_id].itemid
+			local var_2_4 = {
 				{
-					id = pg.player_resource[GameRoomProxy.coin_res_id].itemid,
+					id = var_2_3,
 					type = DROP_TYPE_ITEM,
-					count = uv1
+					count = var_1_1
 				}
-			})
+			}
+
+			pg.m02:sendNotification(GAME.GAME_ROOM_AWARD_DONE, var_2_4)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

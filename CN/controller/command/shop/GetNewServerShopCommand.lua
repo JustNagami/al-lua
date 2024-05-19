@@ -1,31 +1,34 @@
-slot0 = class("GetNewServerShopCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GetNewServerShopCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_SHOP) or slot4:isEnd() then
-		slot1:getBody().callback()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().callback
+	local var_1_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_NEWSERVER_SHOP)
+
+	if not var_1_1 or var_1_1:isEnd() then
+		var_1_0()
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(26041, {
-		act_id = slot4.id
-	}, 26042, function (slot0)
-		if slot0.result == 0 then
-			slot1 = NewServerShop.New({
-				start_time = slot0.start_time,
-				stop_time = slot0.stop_time,
-				goods = slot0.goods,
-				id = uv0.id
+		act_id = var_1_1.id
+	}, 26042, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = NewServerShop.New({
+				start_time = arg_2_0.start_time,
+				stop_time = arg_2_0.stop_time,
+				goods = arg_2_0.goods,
+				id = var_1_1.id
 			})
 
-			getProxy(ShopsProxy):SetNewServerShop(slot1)
-			uv1(slot1)
-			uv2:sendNotification(GAME.GET_NEW_SERVER_SHOP_DONE)
+			getProxy(ShopsProxy):SetNewServerShop(var_2_0)
+			var_1_0(var_2_0)
+			arg_1_0:sendNotification(GAME.GET_NEW_SERVER_SHOP_DONE)
 		else
-			uv1()
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			var_1_0()
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

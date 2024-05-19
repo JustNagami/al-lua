@@ -1,5 +1,5 @@
-slot0 = class("AssignedShipForGreetingScene", import(".BaseAssignedShipScene"))
-slot1 = {
+﻿local var_0_0 = class("AssignedShipForGreetingScene", import(".BaseAssignedShipScene"))
+local var_0_1 = {
 	select_panel_7 = {
 		Vector2(80, -110),
 		Vector2(80, -330),
@@ -11,77 +11,79 @@ slot1 = {
 	}
 }
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "AssignedShipUI6"
 end
 
-function slot0.init(slot0)
-	slot1 = slot0._tf:Find("layer")
-	slot0.backBtn = slot1:Find("top/back")
-	slot0.confirmBtn = slot1:Find("confirm")
-	slot0.print = slot1:Find("print")
-	slot0.rtName = slot1:Find("name")
-	slot0.rtTitle = slot1:Find("top/title")
-	slot0.selectTarget = nil
-	slot0.count = 1
-	slot0.spList = {}
-	slot0.afterAnima = {}
+function var_0_0.init(arg_2_0)
+	local var_2_0 = arg_2_0._tf:Find("layer")
+
+	arg_2_0.backBtn = var_2_0:Find("top/back")
+	arg_2_0.confirmBtn = var_2_0:Find("confirm")
+	arg_2_0.print = var_2_0:Find("print")
+	arg_2_0.rtName = var_2_0:Find("name")
+	arg_2_0.rtTitle = var_2_0:Find("top/title")
+	arg_2_0.selectTarget = nil
+	arg_2_0.count = 1
+	arg_2_0.spList = {}
+	arg_2_0.afterAnima = {}
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:emit(uv1.ON_BACK)
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0.backBtn, function()
+		arg_3_0:emit(var_0_0.ON_BACK)
 	end, SOUND_BACK)
-	onButton(slot0, slot0.confirmBtn, function ()
+	onButton(arg_3_0, arg_3_0.confirmBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n(uv0.strTip, pg.ship_data_statistics[uv0.selectedShipNumber].name),
-			onYes = function ()
-				uv0:emit(AssignedShipMediator.ON_USE_ITEM, uv0.itemVO.id, uv0.count, {
-					uv0.idList[uv0.selectTarget]
+			content = i18n(arg_3_0.strTip, pg.ship_data_statistics[arg_3_0.selectedShipNumber].name),
+			onYes = function()
+				arg_3_0:emit(AssignedShipMediator.ON_USE_ITEM, arg_3_0.itemVO.id, arg_3_0.count, {
+					arg_3_0.idList[arg_3_0.selectTarget]
 				})
 			end
 		})
 	end, SFX_PANEL)
-	setActive(slot0.rtTitle, slot0.title)
+	setActive(arg_3_0.rtTitle, arg_3_0.title)
 
-	if slot0.title then
-		GetImageSpriteFromAtlasAsync("extra_page/" .. slot0.style .. "/" .. slot0.title, "", slot0.rtTitle, true)
+	if arg_3_0.title then
+		GetImageSpriteFromAtlasAsync("extra_page/" .. arg_3_0.style .. "/" .. arg_3_0.title, "", arg_3_0.rtTitle, true)
 	end
 
-	slot2 = "select_panel_" .. #slot0.shipIdList
+	local var_3_0 = #arg_3_0.shipIdList
+	local var_3_1 = "select_panel_" .. var_3_0
 
-	setActive(slot0._tf:Find("layer/" .. slot2), true)
+	setActive(arg_3_0._tf:Find("layer/" .. var_3_1), true)
 
-	slot0.selectPanel = slot0._tf:Find("layer/" .. slot2 .. "/layout")
-	slot0.itemList = UIItemList.New(slot0.selectPanel, slot0.selectPanel:Find("item"))
+	arg_3_0.selectPanel = arg_3_0._tf:Find("layer/" .. var_3_1 .. "/layout")
+	arg_3_0.itemList = UIItemList.New(arg_3_0.selectPanel, arg_3_0.selectPanel:Find("item"))
 
-	slot0.itemList:make(function (slot0, slot1, slot2)
-		slot1 = slot1 + 1
+	arg_3_0.itemList:make(function(arg_7_0, arg_7_1, arg_7_2)
+		arg_7_1 = arg_7_1 + 1
 
-		if uv0[uv1] then
-			setAnchoredPosition(slot2, uv0[uv1][slot1])
+		if var_0_1[var_3_1] then
+			setAnchoredPosition(arg_7_2, var_0_1[var_3_1][arg_7_1])
 		end
 
-		slot3 = uv2.shipIdList[slot1]
+		local var_7_0 = arg_3_0.shipIdList[arg_7_1]
 
-		if slot0 == UIItemList.EventUpdate then
-			GetImageSpriteFromAtlasAsync("extra_page/" .. uv2.style .. "/i_" .. slot3, "", slot2:Find("unselected/icon"))
-			GetImageSpriteFromAtlasAsync("extra_page/" .. uv2.style .. "/i_" .. slot3, "", slot2:Find("selected/icon"))
-			onToggle(uv2, slot2, function (slot0)
-				if slot0 and uv0.selectTarget ~= uv1 then
-					LeanTween.cancel(uv0.print)
+		if arg_7_0 == UIItemList.EventUpdate then
+			GetImageSpriteFromAtlasAsync("extra_page/" .. arg_3_0.style .. "/i_" .. var_7_0, "", arg_7_2:Find("unselected/icon"))
+			GetImageSpriteFromAtlasAsync("extra_page/" .. arg_3_0.style .. "/i_" .. var_7_0, "", arg_7_2:Find("selected/icon"))
+			onToggle(arg_3_0, arg_7_2, function(arg_8_0)
+				if arg_8_0 and arg_3_0.selectTarget ~= arg_7_1 then
+					LeanTween.cancel(arg_3_0.print)
 
-					if uv0.rtName then
-						LeanTween.cancel(uv0.rtName)
+					if arg_3_0.rtName then
+						LeanTween.cancel(arg_3_0.rtName)
 					end
 
-					uv0:setSelectTarget(uv1)
+					arg_3_0:setSelectTarget(arg_7_1)
 				end
 			end, SFX_PANEL)
 		end
 	end)
-	slot0.itemList:align(#slot0.idList)
-	triggerToggle(slot0.selectPanel:GetChild(0), true)
+	arg_3_0.itemList:align(#arg_3_0.idList)
+	triggerToggle(arg_3_0.selectPanel:GetChild(0), true)
 end
 
-return slot0
+return var_0_0

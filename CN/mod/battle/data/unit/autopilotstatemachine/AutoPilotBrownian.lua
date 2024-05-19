@@ -1,72 +1,78 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("AutoPilotBrownian", slot0.Battle.IPilot)
-slot0.Battle.AutoPilotBrownian = slot1
-slot1.__name = "AutoPilotBrownian"
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, ...)
-	uv0.super.Ctor(slot0, ...)
+local var_0_0 = ys
+local var_0_1 = class("AutoPilotBrownian", var_0_0.Battle.IPilot)
+
+var_0_0.Battle.AutoPilotBrownian = var_0_1
+var_0_1.__name = "AutoPilotBrownian"
+
+function var_0_1.Ctor(arg_1_0, ...)
+	var_0_1.super.Ctor(arg_1_0, ...)
 end
 
-function slot1.SetParameter(slot0, slot1, slot2)
-	uv0.super.SetParameter(slot0, slot1, slot2)
+function var_0_1.SetParameter(arg_2_0, arg_2_1, arg_2_2)
+	var_0_1.super.SetParameter(arg_2_0, arg_2_1, arg_2_2)
 
-	slot0._randomPoint = {
-		X1 = slot1.X1,
-		X2 = slot1.X2,
-		Z1 = slot1.Z1,
-		Z2 = slot1.Z2
+	arg_2_0._randomPoint = {
+		X1 = arg_2_1.X1,
+		X2 = arg_2_1.X2,
+		Z1 = arg_2_1.Z1,
+		Z2 = arg_2_1.Z2
 	}
-	slot0._stop = slot1.stopCount
-	slot0._move = slot1.moveCount
-	slot0._random = slot1.randomCount or 30
+	arg_2_0._stop = arg_2_1.stopCount
+	arg_2_0._move = arg_2_1.moveCount
+	arg_2_0._random = arg_2_1.randomCount or 30
 end
 
-function slot1.Active(slot0, slot1)
-	slot0._stopCount = slot0._stop
-	slot0._moveCount = 0
-	slot0._randomCount = 0
-	slot0._referencePoint = uv0.Battle.BattleFormulas.RandomPos(slot0._randomPoint)
+function var_0_1.Active(arg_3_0, arg_3_1)
+	arg_3_0._stopCount = arg_3_0._stop
+	arg_3_0._moveCount = 0
+	arg_3_0._randomCount = 0
+	arg_3_0._referencePoint = var_0_0.Battle.BattleFormulas.RandomPos(arg_3_0._randomPoint)
 
-	uv1.super.Active(slot0, slot1)
+	var_0_1.super.Active(arg_3_0, arg_3_1)
 end
 
-function slot1.GetDirection(slot0, slot1)
-	if slot0:IsExpired() then
-		slot0:Finish()
+function var_0_1.GetDirection(arg_4_0, arg_4_1)
+	if arg_4_0:IsExpired() then
+		arg_4_0:Finish()
 
 		return Vector3.zero
 	end
 
-	slot0._moveCount = slot0._moveCount or 0
+	arg_4_0._moveCount = arg_4_0._moveCount or 0
 
-	if slot0._stopCount < slot0._stop then
-		slot0._stopCount = slot0._stopCount + 1
+	if arg_4_0._stop > arg_4_0._stopCount then
+		arg_4_0._stopCount = arg_4_0._stopCount + 1
 
 		return Vector3.zero
 	end
 
-	if (slot0._referencePoint - slot1).magnitude < 0.4 or slot0._random < slot0._randomCount then
-		if slot0._move < slot0._moveCount then
-			slot0._stopCount = 0
-			slot0._moveCount = 0
+	local var_4_0 = arg_4_0._referencePoint - arg_4_1
+
+	if var_4_0.magnitude < 0.4 or arg_4_0._randomCount > arg_4_0._random then
+		if arg_4_0._move < arg_4_0._moveCount then
+			arg_4_0._stopCount = 0
+			arg_4_0._moveCount = 0
 		else
-			slot0._randomCount = 0
-			slot4 = 0
+			arg_4_0._randomCount = 0
 
-			while Vector3.SqrDistance(uv0.Battle.BattleFormulas.RandomPos(slot0._randomPoint), slot1) < 5 do
-				slot3 = uv0.Battle.BattleFormulas.RandomPos(slot0._randomPoint)
-				slot4 = slot4 + 1
+			local var_4_1 = var_0_0.Battle.BattleFormulas.RandomPos(arg_4_0._randomPoint)
+			local var_4_2 = 0
+
+			while Vector3.SqrDistance(var_4_1, arg_4_1) < 5 do
+				var_4_1 = var_0_0.Battle.BattleFormulas.RandomPos(arg_4_0._randomPoint)
+				var_4_2 = var_4_2 + 1
 			end
 
-			slot0._referencePoint = slot3
+			arg_4_0._referencePoint = var_4_1
 		end
 
 		return Vector3.zero
 	else
-		slot0._randomCount = slot0._randomCount + 1
-		slot0._moveCount = slot0._moveCount + 1
+		arg_4_0._randomCount = arg_4_0._randomCount + 1
+		arg_4_0._moveCount = arg_4_0._moveCount + 1
 
-		return slot2:SetNormalize()
+		return var_4_0:SetNormalize()
 	end
 end

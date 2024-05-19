@@ -1,4 +1,22 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onSink"
+			},
+			arg_list = {
+				skill_id = 110161,
+				target = "TargetSelf",
+				deathCause = {
+					1,
+					3,
+					4,
+					5
+				}
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -17,23 +35,5 @@ return {
 	stack = 1,
 	id = 110163,
 	icon = 110160,
-	last_effect = "Darkness",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onSink"
-			},
-			arg_list = {
-				skill_id = 110161,
-				target = "TargetSelf",
-				deathCause = {
-					1,
-					3,
-					4,
-					5
-				}
-			}
-		}
-	}
+	last_effect = "Darkness"
 }

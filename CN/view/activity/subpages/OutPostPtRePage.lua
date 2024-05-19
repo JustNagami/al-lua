@@ -1,53 +1,60 @@
-slot0 = class("OutPostPtRePage", import(".TemplatePage.NewFrameTemplatePage"))
-slot1 = {
+﻿local var_0_0 = class("OutPostPtRePage", import(".TemplatePage.NewFrameTemplatePage"))
+local var_0_1 = {
 	16851,
 	16852,
 	16853,
 	16854
 }
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.bg = slot0:findTF("AD")
-	slot0.switchBtn = slot0:findTF("AD/switcher/switch_btn")
-	slot0.bar = slot0:findTF("AD/switcher/phase2/Image/bar")
-	slot0.displayBtn = slot0:findTF("AD/display_btn")
-	slot0.gotTag = slot0:findTF("AD/switcher/phase2/Image/got")
-	slot3, slot4 = slot0:GetActTask()
-	slot5 = slot3 and slot3:isReceive() and slot4
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.switchBtn = arg_1_0:findTF("AD/switcher/switch_btn")
+	arg_1_0.bar = arg_1_0:findTF("AD/switcher/phase2/Image/bar")
+	arg_1_0.displayBtn = arg_1_0:findTF("AD/display_btn")
+	arg_1_0.gotTag = arg_1_0:findTF("AD/switcher/phase2/Image/got")
 
-	setActive(slot0.displayBtn:Find("Image1"), not slot5)
-	setActive(slot0.displayBtn:Find("Image2"), slot5)
+	local var_1_0 = arg_1_0.displayBtn:Find("Image1")
+	local var_1_1 = arg_1_0.displayBtn:Find("Image2")
+	local var_1_2, var_1_3 = arg_1_0:GetActTask()
+	local var_1_4 = var_1_2 and var_1_2:isReceive() and var_1_3
 
-	slot6 = nil
+	setActive(var_1_0, not var_1_4)
+	setActive(var_1_1, var_1_4)
 
-	onButton(slot0, slot0.displayBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
+	local var_1_5
+
+	onButton(arg_1_0, arg_1_0.displayBtn, function()
+		arg_1_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
 			page = "activity",
-			targetId = uv1
+			targetId = var_1_5
 		})
 	end)
 end
 
-function slot0.GetActTask(slot0)
-	slot2 = getProxy(TaskProxy)
-	slot3 = nil
-	slot4 = false
+function var_0_0.GetActTask(arg_3_0)
+	local var_3_0 = var_0_1
+	local var_3_1 = getProxy(TaskProxy)
+	local var_3_2
+	local var_3_3 = false
 
-	for slot8 = #uv0, 1, -1 do
-		if slot2:getTaskById(slot1[slot8]) or slot2:getFinishTaskById(slot9) then
-			slot3 = slot10
+	for iter_3_0 = #var_3_0, 1, -1 do
+		local var_3_4 = var_3_0[iter_3_0]
+		local var_3_5 = var_3_1:getTaskById(var_3_4) or var_3_1:getFinishTaskById(var_3_4)
 
-			if slot8 == #slot1 then
-				slot4 = true
+		if var_3_5 then
+			var_3_2 = var_3_5
+
+			if iter_3_0 == #var_3_0 then
+				var_3_3 = true
 			end
 
 			break
 		end
 	end
 
-	return slot3, slot4
+	return var_3_2, var_3_3
 end
 
-return slot0
+return var_0_0

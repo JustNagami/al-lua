@@ -1,4 +1,22 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffFixRange",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				bulletRange = 2,
+				index = {
+					1,
+					2,
+					3,
+					4
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -27,23 +45,5 @@ return {
 	stack = 1,
 	id = 8635,
 	icon = 8635,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffFixRange",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				bulletRange = 2,
-				index = {
-					1,
-					2,
-					3,
-					4
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,480 +1,549 @@
-slot0 = class("GuildProxy", import(".NetProxy"))
-slot0.NEW_GUILD_ADDED = "GuildProxy:NEW_GUILD_ADDED"
-slot0.GUILD_UPDATED = "GuildProxy:GUILD_UPDATED"
-slot0.EXIT_GUILD = "GuildProxy:EXIT_GUILD"
-slot0.REQUEST_ADDED = "GuildProxy:REQUEST_ADDED"
-slot0.REQUEST_DELETED = "GuildProxy:REQUEST_DELETED"
-slot0.NEW_MSG_ADDED = "GuildProxy:NEW_MSG_ADDED"
-slot0.REQUEST_COUNT_UPDATED = "GuildProxy:REQUEST_COUNT_UPDATED"
-slot0.LOG_ADDED = "GuildProxy:LOG_ADDED"
-slot0.WEEKLYTASK_UPDATED = "GuildProxy:WEEKLYTASK_UPDATED"
-slot0.SUPPLY_STARTED = "GuildProxy:SUPPLY_STARTED"
-slot0.WEEKLYTASK_ADDED = "GuildProxy:WEEKLYTASK_ADDED"
-slot0.DONATE_UPDTAE = "GuildProxy:DONATE_UPDTAE"
-slot0.TECHNOLOGY_START = "GuildProxy:TECHNOLOGY_START"
-slot0.TECHNOLOGY_STOP = "GuildProxy:TECHNOLOGY_STOP"
-slot0.CAPITAL_UPDATED = "GuildProxy:CAPITAL_UPDATED"
-slot0.GUILD_BATTLE_STARTED = "GuildProxy:GUILD_BATTLE_STARTED"
-slot0.GUILD_BATTLE_CLOSED = "GuildProxy:GUILD_BATTLE_CLOSED"
-slot0.ON_DELETED_MEMBER = "GuildProxy:ON_DELETED_MEMBER"
-slot0.ON_ADDED_MEMBER = "GuildProxy:ON_ADDED_MEMBER"
-slot0.BATTLE_BTN_FLAG_CHANGE = "GuildProxy:BATTLE_BTN_FLAG_CHANGE"
-slot0.ON_EXIST_DELETED_MEMBER = "GuildProxy:ON_EXIST_DELETED_MEMBER"
-slot0.ON_DONATE_LIST_UPDATED = "GuildProxy:ON_DONATE_LIST_UPDATED"
+﻿local var_0_0 = class("GuildProxy", import(".NetProxy"))
 
-function slot0.register(slot0)
-	slot0:Init()
-	slot0:on(60000, function (slot0)
-		if Guild.New(slot0.guild).id == 0 then
-			uv0:exitGuild()
-		elseif uv0.data == nil then
-			uv0:addGuild(slot1)
+var_0_0.NEW_GUILD_ADDED = "GuildProxy:NEW_GUILD_ADDED"
+var_0_0.GUILD_UPDATED = "GuildProxy:GUILD_UPDATED"
+var_0_0.EXIT_GUILD = "GuildProxy:EXIT_GUILD"
+var_0_0.REQUEST_ADDED = "GuildProxy:REQUEST_ADDED"
+var_0_0.REQUEST_DELETED = "GuildProxy:REQUEST_DELETED"
+var_0_0.NEW_MSG_ADDED = "GuildProxy:NEW_MSG_ADDED"
+var_0_0.REQUEST_COUNT_UPDATED = "GuildProxy:REQUEST_COUNT_UPDATED"
+var_0_0.LOG_ADDED = "GuildProxy:LOG_ADDED"
+var_0_0.WEEKLYTASK_UPDATED = "GuildProxy:WEEKLYTASK_UPDATED"
+var_0_0.SUPPLY_STARTED = "GuildProxy:SUPPLY_STARTED"
+var_0_0.WEEKLYTASK_ADDED = "GuildProxy:WEEKLYTASK_ADDED"
+var_0_0.DONATE_UPDTAE = "GuildProxy:DONATE_UPDTAE"
+var_0_0.TECHNOLOGY_START = "GuildProxy:TECHNOLOGY_START"
+var_0_0.TECHNOLOGY_STOP = "GuildProxy:TECHNOLOGY_STOP"
+var_0_0.CAPITAL_UPDATED = "GuildProxy:CAPITAL_UPDATED"
+var_0_0.GUILD_BATTLE_STARTED = "GuildProxy:GUILD_BATTLE_STARTED"
+var_0_0.GUILD_BATTLE_CLOSED = "GuildProxy:GUILD_BATTLE_CLOSED"
+var_0_0.ON_DELETED_MEMBER = "GuildProxy:ON_DELETED_MEMBER"
+var_0_0.ON_ADDED_MEMBER = "GuildProxy:ON_ADDED_MEMBER"
+var_0_0.BATTLE_BTN_FLAG_CHANGE = "GuildProxy:BATTLE_BTN_FLAG_CHANGE"
+var_0_0.ON_EXIST_DELETED_MEMBER = "GuildProxy:ON_EXIST_DELETED_MEMBER"
+var_0_0.ON_DONATE_LIST_UPDATED = "GuildProxy:ON_DONATE_LIST_UPDATED"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:Init()
+	arg_1_0:on(60000, function(arg_2_0)
+		local var_2_0 = Guild.New(arg_2_0.guild)
+
+		if var_2_0.id == 0 then
+			arg_1_0:exitGuild()
+		elseif arg_1_0.data == nil then
+			arg_1_0:addGuild(var_2_0)
 
 			if not getProxy(GuildProxy).isGetChatMsg then
-				uv0:sendNotification(GAME.GET_GUILD_CHAT_LIST)
+				arg_1_0:sendNotification(GAME.GET_GUILD_CHAT_LIST)
 			end
 
-			uv0:sendNotification(GAME.GUILD_GET_USER_INFO)
-			uv0:sendNotification(GAME.GUILD_GET_MY_ASSAULT_FLEET, {})
-			uv0:sendNotification(GAME.GUILD_GET_ASSAULT_FLEET, {})
-			uv0:sendNotification(GAME.GUILD_GET_ACTIVATION_EVENT, {
+			arg_1_0:sendNotification(GAME.GUILD_GET_USER_INFO)
+			arg_1_0:sendNotification(GAME.GUILD_GET_MY_ASSAULT_FLEET, {})
+			arg_1_0:sendNotification(GAME.GUILD_GET_ASSAULT_FLEET, {})
+			arg_1_0:sendNotification(GAME.GUILD_GET_ACTIVATION_EVENT, {
 				force = true
 			})
-			uv0:sendNotification(GAME.GUILD_GET_REQUEST_LIST, slot1.id)
+			arg_1_0:sendNotification(GAME.GUILD_GET_REQUEST_LIST, var_2_0.id)
 		else
-			uv0:updateGuild(slot1)
+			arg_1_0:updateGuild(var_2_0)
 		end
 	end)
-	slot0:on(60009, function (slot0)
-		uv0.requestCount = slot0.count
+	arg_1_0:on(60009, function(arg_3_0)
+		arg_1_0.requestCount = arg_3_0.count
 
-		uv0:sendNotification(uv1.REQUEST_COUNT_UPDATED, slot0.count)
+		arg_1_0:sendNotification(var_0_0.REQUEST_COUNT_UPDATED, arg_3_0.count)
 	end)
-	slot0:on(60030, function (slot0)
-		if not uv0:getData() then
+	arg_1_0:on(60030, function(arg_4_0)
+		local var_4_0 = arg_1_0:getData()
+
+		if not var_4_0 then
 			return
 		end
 
-		slot1:updateBaseInfo({
-			base = slot0.guild
+		var_4_0:updateBaseInfo({
+			base = arg_4_0.guild
 		})
-		uv0:updateGuild(slot1)
+		arg_1_0:updateGuild(var_4_0)
 	end)
-	slot0:on(60031, function (slot0)
-		if not uv0:getData() then
+	arg_1_0:on(60031, function(arg_5_0)
+		local var_5_0 = arg_1_0:getData()
+
+		if not var_5_0 then
 			return
 		end
 
-		slot2 = false
+		local var_5_1 = false
 
-		for slot6, slot7 in ipairs(slot0.member_list) do
-			if GuildMember.New(slot7).duty == 0 then
-				slot1:deleteMember(slot8.id)
-				uv0:sendNotification(GuildProxy.ON_DELETED_MEMBER, {
-					member = slot1:getMemberById(slot8.id):clone()
+		for iter_5_0, iter_5_1 in ipairs(arg_5_0.member_list) do
+			local var_5_2 = GuildMember.New(iter_5_1)
+
+			if var_5_2.duty == 0 then
+				local var_5_3 = var_5_0:getMemberById(var_5_2.id):clone()
+
+				var_5_0:deleteMember(var_5_2.id)
+				arg_1_0:sendNotification(GuildProxy.ON_DELETED_MEMBER, {
+					member = var_5_3
 				})
 
-				slot2 = true
-			elseif slot1.member[slot8.id] then
-				slot1:updateMember(slot8)
+				var_5_1 = true
+			elseif var_5_0.member[var_5_2.id] then
+				var_5_0:updateMember(var_5_2)
 			else
-				slot1:addMember(slot8)
-				uv0:sendNotification(GuildProxy.ON_ADDED_MEMBER, {
-					member = slot8
+				var_5_0:addMember(var_5_2)
+				arg_1_0:sendNotification(GuildProxy.ON_ADDED_MEMBER, {
+					member = var_5_2
 				})
 			end
 		end
 
-		for slot6, slot7 in ipairs(slot0.log_list) do
-			slot8 = GuildLogInfo.New(slot7)
+		for iter_5_2, iter_5_3 in ipairs(arg_5_0.log_list) do
+			local var_5_4 = GuildLogInfo.New(iter_5_3)
 
-			slot1:addLog(slot8)
-			uv0:sendNotification(uv1.LOG_ADDED, Clone(slot8))
+			var_5_0:addLog(var_5_4)
+			arg_1_0:sendNotification(var_0_0.LOG_ADDED, Clone(var_5_4))
 		end
 
-		slot1:setMemberCount(table.getCount(slot1.member or {}))
-		uv0:updateGuild(slot1)
+		var_5_0:setMemberCount(table.getCount(var_5_0.member or {}))
+		arg_1_0:updateGuild(var_5_0)
 
-		if slot2 then
-			uv0:sendNotification(GuildProxy.ON_EXIST_DELETED_MEMBER)
+		if var_5_1 then
+			arg_1_0:sendNotification(GuildProxy.ON_EXIST_DELETED_MEMBER)
 		end
 	end)
-	slot0:on(60032, function (slot0)
-		if not uv0:getData() then
+	arg_1_0:on(60032, function(arg_6_0)
+		local var_6_0 = arg_1_0:getData()
+
+		if not var_6_0 then
 			return
 		end
 
-		slot1:updateExp(slot0.exp)
-		slot1:updateLevel(slot0.lv)
-		uv0:updateGuild(slot1)
+		var_6_0:updateExp(arg_6_0.exp)
+		var_6_0:updateLevel(arg_6_0.lv)
+		arg_1_0:updateGuild(var_6_0)
 	end)
-	slot0:on(60008, function (slot0)
-		if uv0.data:warpChatInfo(slot0.chat) then
-			uv0:AddNewMsg(slot2)
+	arg_1_0:on(60008, function(arg_7_0)
+		local var_7_0 = arg_7_0.chat
+		local var_7_1 = arg_1_0.data:warpChatInfo(var_7_0)
+
+		if var_7_1 then
+			arg_1_0:AddNewMsg(var_7_1)
 		end
 	end)
-	slot0:on(62004, function (slot0)
-		if not uv0:getData() or not slot1:IsCompletion() then
+	arg_1_0:on(62004, function(arg_8_0)
+		local var_8_0 = arg_1_0:getData()
+
+		if not var_8_0 or not var_8_0:IsCompletion() then
 			return
 		end
 
-		slot1:updateWeeklyTask(GuildTask.New(slot0.this_weekly_tasks))
-		slot1:setWeeklyTaskFlag(0)
-		uv0:updateGuild(slot1)
-		uv0:sendNotification(uv1.WEEKLYTASK_ADDED)
+		local var_8_1 = GuildTask.New(arg_8_0.this_weekly_tasks)
+
+		var_8_0:updateWeeklyTask(var_8_1)
+		var_8_0:setWeeklyTaskFlag(0)
+		arg_1_0:updateGuild(var_8_0)
+		arg_1_0:sendNotification(var_0_0.WEEKLYTASK_ADDED)
 	end)
-	slot0:on(62005, function (slot0)
-		if not uv0:getData() or not slot1:IsCompletion() then
+	arg_1_0:on(62005, function(arg_9_0)
+		local var_9_0 = arg_1_0:getData()
+
+		if not var_9_0 or not var_9_0:IsCompletion() then
 			return
 		end
 
-		slot1:startSupply(slot0.benefit_finish_time)
-		slot1:consumeCapital(slot1:getSupplyConsume())
-		uv0:updateGuild(slot1)
-		uv0:sendNotification(uv1.CAPITAL_UPDATED)
-		uv0:sendNotification(uv1.SUPPLY_STARTED)
+		var_9_0:startSupply(arg_9_0.benefit_finish_time)
+
+		local var_9_1 = var_9_0:getSupplyConsume()
+
+		var_9_0:consumeCapital(var_9_1)
+		arg_1_0:updateGuild(var_9_0)
+		arg_1_0:sendNotification(var_0_0.CAPITAL_UPDATED)
+		arg_1_0:sendNotification(var_0_0.SUPPLY_STARTED)
 	end)
-	slot0:on(62018, function (slot0)
-		if not uv0:getData() or not slot1:IsCompletion() then
+	arg_1_0:on(62018, function(arg_10_0)
+		local var_10_0 = arg_1_0:getData()
+
+		if not var_10_0 or not var_10_0:IsCompletion() then
 			return
 		end
 
-		slot2 = pg.guild_technology_template[slot0.id].group
+		local var_10_1 = pg.guild_technology_template[arg_10_0.id].group
+		local var_10_2 = var_10_0:getActiveTechnologyGroup()
 
-		if slot1:getActiveTechnologyGroup() then
-			slot3:Stop()
+		if var_10_2 then
+			var_10_2:Stop()
 		end
 
-		slot1:getTechnologyGroupById(slot2):Start()
-		slot1:UpdateTechCancelCnt()
-		uv0:updateGuild(slot1)
-		uv0:sendNotification(uv1.TECHNOLOGY_START)
+		var_10_0:getTechnologyGroupById(var_10_1):Start()
+		var_10_0:UpdateTechCancelCnt()
+		arg_1_0:updateGuild(var_10_0)
+		arg_1_0:sendNotification(var_0_0.TECHNOLOGY_START)
 	end)
-	slot0:on(62019, function (slot0)
-		if not uv0:getData() or not slot1:IsCompletion() then
+	arg_1_0:on(62019, function(arg_11_0)
+		local var_11_0 = arg_1_0:getData()
+
+		if not var_11_0 or not var_11_0:IsCompletion() then
 			return
 		end
 
-		slot4 = slot0.has_tech_point == 1
+		local var_11_1 = GuildDonateTask.New({
+			id = arg_11_0.id
+		})
+		local var_11_2 = arg_11_0.has_capital == 1
+		local var_11_3 = arg_11_0.has_tech_point == 1
+		local var_11_4 = arg_11_0.user_id
+		local var_11_5 = getProxy(PlayerProxy):getRawData().id
 
-		if slot0.has_capital == 1 then
-			slot1:updateCapital(slot1:getCapital() + GuildDonateTask.New({
-				id = slot0.id
-			}):getCapital())
+		if var_11_2 then
+			local var_11_6 = var_11_1:getCapital()
+			local var_11_7 = var_11_0:getCapital()
 
-			if getProxy(PlayerProxy):getRawData().id == slot0.user_id then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("guild_donate_addition_capital_tip", slot7))
+			var_11_0:updateCapital(var_11_7 + var_11_6)
+
+			if var_11_5 == var_11_4 then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("guild_donate_addition_capital_tip", var_11_6))
 			end
 		end
 
-		if slot4 and slot1:getActiveTechnologyGroup() then
-			slot7:AddProgress(slot2:getConfig("award_tech_exp"))
+		if var_11_3 then
+			local var_11_8 = var_11_0:getActiveTechnologyGroup()
 
-			if slot7.pid ~= slot7.pid and slot7:GuildMemberCntType() then
-				slot11 = slot1:getTechnologyById(slot7.id)
+			if var_11_8 then
+				local var_11_9 = var_11_8.pid
+				local var_11_10 = var_11_1:getConfig("award_tech_exp")
 
-				assert(slot11)
-				slot11:Update(slot10, slot7)
+				var_11_8:AddProgress(var_11_10)
+
+				local var_11_11 = var_11_8.pid
+
+				if var_11_9 ~= var_11_11 and var_11_8:GuildMemberCntType() then
+					local var_11_12 = var_11_0:getTechnologyById(var_11_8.id)
+
+					assert(var_11_12)
+					var_11_12:Update(var_11_11, var_11_8)
+				end
+
+				if var_11_5 == var_11_4 then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("guild_donate_addition_techpoint_tip", var_11_10))
+				end
 			end
-
-			if slot6 == slot5 then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("guild_donate_addition_techpoint_tip", slot9))
-			end
 		end
 
-		if slot3 or slot4 then
-			uv0:updateGuild(slot1)
-			uv0:sendNotification(uv1.DONATE_UPDTAE)
+		if var_11_2 or var_11_3 then
+			arg_1_0:updateGuild(var_11_0)
+			arg_1_0:sendNotification(var_0_0.DONATE_UPDTAE)
 		end
 
-		if slot3 then
-			uv0:sendNotification(uv1.CAPITAL_UPDATED)
+		if var_11_2 then
+			arg_1_0:sendNotification(var_0_0.CAPITAL_UPDATED)
 		end
 
-		if not slot3 and slot5 == slot6 then
+		if not var_11_2 and var_11_4 == var_11_5 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_donate_capital_toplimit"))
 		end
 
-		if not slot4 and slot5 == slot6 then
+		if not var_11_3 and var_11_4 == var_11_5 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_donate_techpoint_toplimit"))
 		end
 	end)
-	slot0:on(62031, function (slot0)
-		if not uv0:getData() or not slot1:IsCompletion() then
+	arg_1_0:on(62031, function(arg_12_0)
+		local var_12_0 = arg_1_0:getData()
+
+		if not var_12_0 or not var_12_0:IsCompletion() then
 			return
 		end
 
-		for slot6, slot7 in ipairs(slot0.donate_tasks) do
-			table.insert({}, GuildDonateTask.New({
-				id = slot7
-			}))
+		local var_12_1 = {}
+
+		for iter_12_0, iter_12_1 in ipairs(arg_12_0.donate_tasks) do
+			local var_12_2 = GuildDonateTask.New({
+				id = iter_12_1
+			})
+
+			table.insert(var_12_1, var_12_2)
 		end
 
-		if slot1 then
-			slot1.donateCount = 0
+		if var_12_0 then
+			var_12_0.donateCount = 0
 
-			slot1:updateDonateTasks(slot2)
-			uv0:updateGuild(slot1)
-			uv0:sendNotification(uv1.ON_DONATE_LIST_UPDATED)
-		elseif uv0:GetPublicGuild() then
-			slot3:ResetDonateCnt()
-			slot3:UpdateDonateTasks(slot2)
-			uv0:sendNotification(GAME.PUBLIC_GUILD_REFRESH_DONATE_LIST_DONE)
+			var_12_0:updateDonateTasks(var_12_1)
+			arg_1_0:updateGuild(var_12_0)
+			arg_1_0:sendNotification(var_0_0.ON_DONATE_LIST_UPDATED)
+		else
+			local var_12_3 = arg_1_0:GetPublicGuild()
+
+			if var_12_3 then
+				var_12_3:ResetDonateCnt()
+				var_12_3:UpdateDonateTasks(var_12_1)
+				arg_1_0:sendNotification(GAME.PUBLIC_GUILD_REFRESH_DONATE_LIST_DONE)
+			end
 		end
 	end)
-	slot0:on(61021, function (slot0)
-		uv0.refreshActivationEventTime = 0
+	arg_1_0:on(61021, function(arg_13_0)
+		local var_13_0 = getProxy(PlayerProxy):getData()
 
-		if slot0.user_id ~= getProxy(PlayerProxy):getData().id then
-			uv0:sendNotification(uv1.GUILD_BATTLE_STARTED)
+		arg_1_0.refreshActivationEventTime = 0
+
+		if arg_13_0.user_id ~= var_13_0.id then
+			arg_1_0:sendNotification(var_0_0.GUILD_BATTLE_STARTED)
 		end
 	end)
 end
 
-function slot0.AddPublicGuild(slot0, slot1)
-	slot0.publicGuild = slot1
+function var_0_0.AddPublicGuild(arg_14_0, arg_14_1)
+	arg_14_0.publicGuild = arg_14_1
 end
 
-function slot0.GetPublicGuild(slot0)
-	return slot0.publicGuild
+function var_0_0.GetPublicGuild(arg_15_0)
+	return arg_15_0.publicGuild
 end
 
-function slot0.Init(slot0)
-	slot0.data = nil
-	slot0.chatMsgs = {}
-	slot0.bossRanks = {}
-	slot0.isGetChatMsg = false
-	slot0.refreshActivationEventTime = 0
-	slot0.nextRequestBattleRankTime = 0
-	slot0.refreshBossTime = 0
-	slot0.bossRankUpdateTime = 0
-	slot0.isFetchAssaultFleet = false
-	slot0.battleRanks = {}
-	slot0.ranks = {}
-	slot0.requests = nil
-	slot0.rankUpdateTime = 0
-	slot0.requestReportTime = 0
-	slot0.newChatMsgCnt = 0
-	slot0.requestCount = 0
-	slot0.cdTime = {
+function var_0_0.Init(arg_16_0)
+	arg_16_0.data = nil
+	arg_16_0.chatMsgs = {}
+	arg_16_0.bossRanks = {}
+	arg_16_0.isGetChatMsg = false
+	arg_16_0.refreshActivationEventTime = 0
+	arg_16_0.nextRequestBattleRankTime = 0
+	arg_16_0.refreshBossTime = 0
+	arg_16_0.bossRankUpdateTime = 0
+	arg_16_0.isFetchAssaultFleet = false
+	arg_16_0.battleRanks = {}
+	arg_16_0.ranks = {}
+	arg_16_0.requests = nil
+	arg_16_0.rankUpdateTime = 0
+	arg_16_0.requestReportTime = 0
+	arg_16_0.newChatMsgCnt = 0
+	arg_16_0.requestCount = 0
+	arg_16_0.cdTime = {
 		0,
 		0
 	}
 end
 
-function slot0.AddNewMsg(slot0, slot1)
-	slot0.newChatMsgCnt = slot0.newChatMsgCnt + 1
+function var_0_0.AddNewMsg(arg_17_0, arg_17_1)
+	arg_17_0.newChatMsgCnt = arg_17_0.newChatMsgCnt + 1
 
-	slot0:addMsg(slot1)
-	slot0:sendNotification(uv0.NEW_MSG_ADDED, slot1)
+	arg_17_0:addMsg(arg_17_1)
+	arg_17_0:sendNotification(var_0_0.NEW_MSG_ADDED, arg_17_1)
 end
 
-function slot0.ResetRequestCount(slot0)
-	slot0.requestCount = 0
+function var_0_0.ResetRequestCount(arg_18_0)
+	arg_18_0.requestCount = 0
 end
 
-function slot0.UpdatePosCdTime(slot0, slot1, slot2)
-	slot0.cdTime[slot1] = slot2
+function var_0_0.UpdatePosCdTime(arg_19_0, arg_19_1, arg_19_2)
+	arg_19_0.cdTime[arg_19_1] = arg_19_2
 end
 
-function slot0.GetNextCanFormationTime(slot0, slot1)
-	return (slot0.cdTime[slot1] or 0) + pg.guildset.operation_assault_team_cd.key_value
+function var_0_0.GetNextCanFormationTime(arg_20_0, arg_20_1)
+	local var_20_0 = pg.guildset.operation_assault_team_cd.key_value
+
+	return (arg_20_0.cdTime[arg_20_1] or 0) + var_20_0
 end
 
-function slot0.CanFormationPos(slot0, slot1)
-	return slot0:GetNextCanFormationTime(slot1) <= pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.CanFormationPos(arg_21_0, arg_21_1)
+	return arg_21_0:GetNextCanFormationTime(arg_21_1) <= pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function slot0.ClearNewChatMsgCnt(slot0)
-	slot0.newChatMsgCnt = 0
+function var_0_0.ClearNewChatMsgCnt(arg_22_0)
+	arg_22_0.newChatMsgCnt = 0
 end
 
-function slot0.GetNewChatMsgCnt(slot0)
-	return slot0.newChatMsgCnt
+function var_0_0.GetNewChatMsgCnt(arg_23_0)
+	return arg_23_0.newChatMsgCnt
 end
 
-function slot0.setRequestList(slot0, slot1)
-	slot0.requests = slot1
+function var_0_0.setRequestList(arg_24_0, arg_24_1)
+	arg_24_0.requests = arg_24_1
 end
 
-function slot0.addGuild(slot0, slot1)
-	assert(isa(slot1, Guild), "guild should instance of Guild")
+function var_0_0.addGuild(arg_25_0, arg_25_1)
+	assert(isa(arg_25_1, Guild), "guild should instance of Guild")
 
-	slot0.data = slot1
+	arg_25_0.data = arg_25_1
 
-	slot0:sendNotification(uv0.NEW_GUILD_ADDED, Clone(slot1))
+	arg_25_0:sendNotification(var_0_0.NEW_GUILD_ADDED, Clone(arg_25_1))
 end
 
-function slot0.updateGuild(slot0, slot1)
-	assert(isa(slot1, Guild), "guild should instance of Guild")
+function var_0_0.updateGuild(arg_26_0, arg_26_1)
+	assert(isa(arg_26_1, Guild), "guild should instance of Guild")
 
-	slot0.data = slot1
+	arg_26_0.data = arg_26_1
 
-	slot0:sendNotification(uv0.GUILD_UPDATED, Clone(slot1))
+	arg_26_0:sendNotification(var_0_0.GUILD_UPDATED, Clone(arg_26_1))
 end
 
-function slot0.exitGuild(slot0)
-	slot0:Init()
-	slot0:sendNotification(uv0.EXIT_GUILD)
+function var_0_0.exitGuild(arg_27_0)
+	arg_27_0:Init()
+	arg_27_0:sendNotification(var_0_0.EXIT_GUILD)
 	pg.ShipFlagMgr.GetInstance():ClearShipsFlag("inGuildEvent")
 	pg.ShipFlagMgr.GetInstance():ClearShipsFlag("inGuildBossEvent")
 end
 
-function slot0.getRequests(slot0)
-	return slot0.requests
+function var_0_0.getRequests(arg_28_0)
+	return arg_28_0.requests
 end
 
-function slot0.getSortRequest(slot0)
-	if not slot0.requests then
+function var_0_0.getSortRequest(arg_29_0)
+	if not arg_29_0.requests then
 		return nil
 	end
 
-	slot1 = {}
+	local var_29_0 = {}
 
-	for slot5, slot6 in pairs(slot0.requests) do
-		table.insert(slot1, slot6)
+	for iter_29_0, iter_29_1 in pairs(arg_29_0.requests) do
+		table.insert(var_29_0, iter_29_1)
 	end
 
-	return slot1
+	return var_29_0
 end
 
-function slot0.deleteRequest(slot0, slot1)
-	if not slot0.requests then
+function var_0_0.deleteRequest(arg_30_0, arg_30_1)
+	if not arg_30_0.requests then
 		return
 	end
 
-	slot0.requests[slot1] = nil
+	arg_30_0.requests[arg_30_1] = nil
 
-	slot0:sendNotification(uv0.REQUEST_DELETED, slot1)
+	arg_30_0:sendNotification(var_0_0.REQUEST_DELETED, arg_30_1)
 end
 
-function slot0.addMsg(slot0, slot1)
-	table.insert(slot0.chatMsgs, slot1)
+function var_0_0.addMsg(arg_31_0, arg_31_1)
+	table.insert(arg_31_0.chatMsgs, arg_31_1)
 
-	if GuildConst.CHAT_LOG_MAX_COUNT < #slot0.chatMsgs then
-		table.remove(slot0.chatMsgs, 1)
+	if #arg_31_0.chatMsgs > GuildConst.CHAT_LOG_MAX_COUNT then
+		table.remove(arg_31_0.chatMsgs, 1)
 	end
 end
 
-function slot0.getChatMsgs(slot0)
-	return slot0.chatMsgs
+function var_0_0.getChatMsgs(arg_32_0)
+	return arg_32_0.chatMsgs
 end
 
-function slot0.GetMessagesByUniqueId(slot0, slot1)
-	return _.select(slot0.chatMsgs, function (slot0)
-		return slot0.uniqueId == uv0
+function var_0_0.GetMessagesByUniqueId(arg_33_0, arg_33_1)
+	return _.select(arg_33_0.chatMsgs, function(arg_34_0)
+		return arg_34_0.uniqueId == arg_33_1
 	end)
 end
 
-function slot0.UpdateMsg(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.chatMsgs) do
-		if slot6:IsSame(slot1.uniqueId) then
-			slot0.data[slot5] = slot1
+function var_0_0.UpdateMsg(arg_35_0, arg_35_1)
+	for iter_35_0, iter_35_1 in ipairs(arg_35_0.chatMsgs) do
+		if iter_35_1:IsSame(arg_35_1.uniqueId) then
+			arg_35_0.data[iter_35_0] = arg_35_1
 		end
 	end
 end
 
-function slot0.ShouldFetchActivationEvent(slot0)
-	return slot0.refreshActivationEventTime < pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.ShouldFetchActivationEvent(arg_36_0)
+	return pg.TimeMgr.GetInstance():GetServerTime() > arg_36_0.refreshActivationEventTime
 end
 
-function slot0.AddFetchActivationEventCDTime(slot0)
-	slot0.refreshActivationEventTime = GuildConst.REFRESH_ACTIVATION_EVENT_TIME + pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.AddFetchActivationEventCDTime(arg_37_0)
+	arg_37_0.refreshActivationEventTime = GuildConst.REFRESH_ACTIVATION_EVENT_TIME + pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function slot0.AddActivationEventTimer(slot0, slot1)
+function var_0_0.AddActivationEventTimer(arg_38_0, arg_38_1)
+	return
 end
 
-function slot0.RemoveActivationEventTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.RemoveActivationEventTimer(arg_39_0)
+	if arg_39_0.timer then
+		arg_39_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_39_0.timer = nil
 	end
 end
 
-function slot0.remove(slot0)
-	slot0:RemoveActivationEventTimer()
+function var_0_0.remove(arg_40_0)
+	arg_40_0:RemoveActivationEventTimer()
 end
 
-function slot0.SetRank(slot0, slot1, slot2)
-	slot0.ranks[slot1] = slot2
-	slot0["rankTimer" .. slot1] = pg.TimeMgr.GetInstance():GetServerTime() + 1800
+function var_0_0.SetRank(arg_41_0, arg_41_1, arg_41_2)
+	arg_41_0.ranks[arg_41_1] = arg_41_2
+	arg_41_0["rankTimer" .. arg_41_1] = pg.TimeMgr.GetInstance():GetServerTime() + 1800
 end
 
-function slot0.GetRanks(slot0)
-	return slot0.ranks
+function var_0_0.GetRanks(arg_42_0)
+	return arg_42_0.ranks
 end
 
-function slot0.ShouldRefreshRank(slot0, slot1)
-	if not slot0["rankTimer" .. slot1] or slot0["rankTimer" .. slot1] <= pg.TimeMgr.GetInstance():GetServerTime() then
+function var_0_0.ShouldRefreshRank(arg_43_0, arg_43_1)
+	if not arg_43_0["rankTimer" .. arg_43_1] or pg.TimeMgr.GetInstance():GetServerTime() >= arg_43_0["rankTimer" .. arg_43_1] then
 		return true
 	end
 
 	return false
 end
 
-function slot0.SetReports(slot0, slot1)
-	slot0.reports = slot1
+function var_0_0.SetReports(arg_44_0, arg_44_1)
+	arg_44_0.reports = arg_44_1
 end
 
-function slot0.GetReports(slot0)
-	return slot0.reports or {}
+function var_0_0.GetReports(arg_45_0)
+	return arg_45_0.reports or {}
 end
 
-function slot0.GetReportById(slot0, slot1)
-	return slot0.reports[slot1]
+function var_0_0.GetReportById(arg_46_0, arg_46_1)
+	return arg_46_0.reports[arg_46_1]
 end
 
-function slot0.AddReport(slot0, slot1)
-	if not slot0.reports then
-		slot0.reports = {}
+function var_0_0.AddReport(arg_47_0, arg_47_1)
+	if not arg_47_0.reports then
+		arg_47_0.reports = {}
 	end
 
-	slot0.reports[slot1.id] = slot1
+	arg_47_0.reports[arg_47_1.id] = arg_47_1
 end
 
-function slot0.GetMaxReportId(slot0)
-	for slot6, slot7 in pairs(slot0:GetReports()) do
-		if 0 < slot7.id then
-			slot2 = slot7.id
+function var_0_0.GetMaxReportId(arg_48_0)
+	local var_48_0 = arg_48_0:GetReports()
+	local var_48_1 = 0
+
+	for iter_48_0, iter_48_1 in pairs(var_48_0) do
+		if var_48_1 < iter_48_1.id then
+			var_48_1 = iter_48_1.id
 		end
 	end
 
-	return slot2
+	return var_48_1
 end
 
-function slot0.AnyRepoerCanGet(slot0)
-	return #slot0:GetCanGetReports() > 0
+function var_0_0.AnyRepoerCanGet(arg_49_0)
+	return #arg_49_0:GetCanGetReports() > 0
 end
 
-function slot0.GetCanGetReports(slot0)
-	slot1 = {}
+function var_0_0.GetCanGetReports(arg_50_0)
+	local var_50_0 = {}
+	local var_50_1 = arg_50_0:GetReports()
 
-	for slot6, slot7 in pairs(slot0:GetReports()) do
-		if slot7:CanSubmit() then
-			table.insert(slot1, slot7.id)
+	for iter_50_0, iter_50_1 in pairs(var_50_1) do
+		if iter_50_1:CanSubmit() then
+			table.insert(var_50_0, iter_50_1.id)
 		end
 	end
 
-	return slot1
+	return var_50_0
 end
 
-function slot0.ShouldRequestReport(slot0)
-	if not slot0.requestReportTime then
-		slot0.requestReportTime = 0
+function var_0_0.ShouldRequestReport(arg_51_0)
+	if not arg_51_0.requestReportTime then
+		arg_51_0.requestReportTime = 0
 	end
 
-	slot2 = pg.TimeMgr.GetInstance():GetServerTime()
+	local function var_51_0()
+		local var_52_0 = arg_51_0:getRawData():GetActiveEvent()
 
-	if not slot0.reports and function ()
-		if uv0:getRawData():GetActiveEvent() and slot1:GetMissionFinishCnt() > 0 then
+		if var_52_0 and var_52_0:GetMissionFinishCnt() > 0 then
 			return true
 		end
 
 		return false
-	end() or slot0.requestReportTime < slot2 then
-		slot0.requestReportTime = slot2 + GuildConst.REQUEST_REPORT_CD
+	end
+
+	local var_51_1 = pg.TimeMgr.GetInstance():GetServerTime()
+
+	if not arg_51_0.reports and var_51_0() or var_51_1 > arg_51_0.requestReportTime then
+		arg_51_0.requestReportTime = var_51_1 + GuildConst.REQUEST_REPORT_CD
 
 		return true
 	end
@@ -482,13 +551,15 @@ function slot0.ShouldRequestReport(slot0)
 	return false
 end
 
-function slot0.ShouldRequestForamtion(slot0)
-	if not slot0.requestFormationTime then
-		slot0.requestFormationTime = 0
+function var_0_0.ShouldRequestForamtion(arg_53_0)
+	if not arg_53_0.requestFormationTime then
+		arg_53_0.requestFormationTime = 0
 	end
 
-	if slot0.requestFormationTime < pg.TimeMgr.GetInstance():GetServerTime() then
-		slot0.requestFormationTime = slot1 + GuildConst.REQUEST_FORMATION_CD
+	local var_53_0 = pg.TimeMgr.GetInstance():GetServerTime()
+
+	if var_53_0 > arg_53_0.requestFormationTime then
+		arg_53_0.requestFormationTime = var_53_0 + GuildConst.REQUEST_FORMATION_CD
 
 		return true
 	end
@@ -496,287 +567,321 @@ function slot0.ShouldRequestForamtion(slot0)
 	return false
 end
 
-function slot0.GetRecommendShipsForMission(slot0, slot1)
-	if slot1:IsEliteType() then
-		return slot0:GetRecommendShipsForEliteMission(slot1)
+function var_0_0.GetRecommendShipsForMission(arg_54_0, arg_54_1)
+	if arg_54_1:IsEliteType() then
+		return arg_54_0:GetRecommendShipsForEliteMission(arg_54_1)
 	else
-		slot2 = {}
-		slot5 = {}
+		local var_54_0 = {}
+		local var_54_1 = getProxy(BayProxy):getRawData()
+		local var_54_2 = {}
 
-		for slot9, slot10 in pairs(getProxy(BayProxy):getRawData()) do
-			table.insert(slot5, {
-				id = slot10.id,
-				power = slot10:getShipCombatPower(),
-				nation = slot10:getNation(),
-				type = slot10:getShipType(),
-				level = slot10.level,
-				tagList = slot10:getConfig("tag_list"),
-				configId = slot10.configId,
-				attrs = slot10:getProperties(),
-				isActivityNpc = function ()
-					return uv0:isActivityNpc()
+		for iter_54_0, iter_54_1 in pairs(var_54_1) do
+			table.insert(var_54_2, {
+				id = iter_54_1.id,
+				power = iter_54_1:getShipCombatPower(),
+				nation = iter_54_1:getNation(),
+				type = iter_54_1:getShipType(),
+				level = iter_54_1.level,
+				tagList = iter_54_1:getConfig("tag_list"),
+				configId = iter_54_1.configId,
+				attrs = iter_54_1:getProperties(),
+				isActivityNpc = function()
+					return iter_54_1:isActivityNpc()
 				end
 			})
 		end
 
-		slot6 = slot1:GetRecommendShipNation()
-		slot7 = slot1:GetRecommendShipTypes()
-		slot11 = {
-			function (slot0)
-				return table.contains(uv0, slot0.nation) and 0 or 1
+		local var_54_3 = arg_54_1:GetRecommendShipNation()
+		local var_54_4 = arg_54_1:GetRecommendShipTypes()
+
+		table.sort(var_54_2, CompareFuncs({
+			function(arg_56_0)
+				return table.contains(var_54_3, arg_56_0.nation) and 0 or 1
 			end,
-			function (slot0)
-				return table.contains(uv0, slot0.type) and 0 or 1
+			function(arg_57_0)
+				return table.contains(var_54_4, arg_57_0.type) and 0 or 1
 			end,
-			function (slot0)
-				return -slot0.level
+			function(arg_58_0)
+				return -arg_58_0.level
 			end,
-			slot12
-		}
-
-		function slot12(slot0)
-			return -slot0.power
-		end
-
-		table.sort(slot5, CompareFuncs(slot11))
-
-		for slot11, slot12 in ipairs(slot5) do
-			if GuildEventMediator.OnCheckMissionShip(slot1.id, slot2, slot12) then
-				table.insert(slot2, slot12.id)
-			end
-
-			if #slot2 == 4 then
-				break
-			end
-		end
-
-		return slot2
-	end
-end
-
-function slot0.GetRecommendShipsForEliteMission(slot0, slot1)
-	assert(slot1:IsEliteType())
-
-	slot2 = {}
-	slot5 = {}
-	slot6 = {}
-	slot7 = {}
-
-	for slot11, slot12 in pairs(getProxy(BayProxy):getRawData()) do
-		if slot1:SameSquadron({
-			id = slot12.id,
-			power = slot12:getShipCombatPower(),
-			nation = slot12:getNation(),
-			type = slot12:getShipType(),
-			level = slot12.level,
-			tagList = slot12:getConfig("tag_list"),
-			configId = slot12.configId,
-			attrs = slot12:getProperties(),
-			isActivityNpc = function ()
-				return uv0:isActivityNpc()
-			end
-		}) then
-			table.insert(slot6, slot13)
-		else
-			table.insert(slot7, slot13)
-		end
-	end
-
-	function slot8(slot0)
-		if slot0 and not table.contains(uv0, slot0.id) and GuildEventMediator.OnCheckMissionShip(uv1.id, uv0, slot0) then
-			table.insert(uv0, slot0.id)
-		end
-	end
-
-	slot9 = slot1:GetEffectAttr()
-	slot11 = slot1:GetSquadronTargetCnt()
-
-	if #slot6 > 0 and slot11 > 0 then
-		table.sort(slot6, CompareFuncs({
-			function (slot0)
-				return uv0:MatchAttr(slot0) and 0 or 1
-			end,
-			function (slot0)
-				return uv0:MatchNation(slot0) and 0 or 1
-			end,
-			function (slot0)
-				return uv0:MatchShipType(slot0) and 0 or 1
-			end,
-			function (slot0)
-				return -(slot0.attrs[uv0] or 0)
-			end,
-			function (slot0)
-				return -slot0.level
-			end,
-			function (slot0)
-				return -slot0.power
+			function(arg_59_0)
+				return -arg_59_0.power
 			end
 		}))
 
-		for slot15 = 1, slot11 do
-			slot8(slot6[slot15])
-		end
-	end
-
-	if #slot2 < 4 and #slot7 > 0 then
-		table.sort(slot7, slot10)
-
-		for slot15 = 1, #slot7 do
-			if #slot2 == 4 then
-				break
+		for iter_54_2, iter_54_3 in ipairs(var_54_2) do
+			if GuildEventMediator.OnCheckMissionShip(arg_54_1.id, var_54_0, iter_54_3) then
+				table.insert(var_54_0, iter_54_3.id)
 			end
 
-			slot8(slot7[slot15])
-		end
-	end
-
-	if #slot2 < 4 and slot11 > 0 and slot11 < #slot6 then
-		for slot15 = slot11 + 1, #slot6 do
-			if #slot2 == 4 then
+			if #var_54_0 == 4 then
 				break
 			end
-
-			slot8(slot6[slot15])
 		end
-	end
 
-	return slot2
+		return var_54_0
+	end
 end
 
-function slot0.ShouldShowApplyTip(slot0)
-	if slot0.data and GuildMember.IsAdministrator(slot0.data:getSelfDuty()) then
-		if not slot0.requests then
-			return slot0.requestCount > 0
+function var_0_0.GetRecommendShipsForEliteMission(arg_60_0, arg_60_1)
+	assert(arg_60_1:IsEliteType())
+
+	local var_60_0 = {}
+	local var_60_1 = getProxy(BayProxy):getRawData()
+	local var_60_2 = {}
+	local var_60_3 = {}
+	local var_60_4 = {}
+
+	for iter_60_0, iter_60_1 in pairs(var_60_1) do
+		local var_60_5 = {
+			id = iter_60_1.id,
+			power = iter_60_1:getShipCombatPower(),
+			nation = iter_60_1:getNation(),
+			type = iter_60_1:getShipType(),
+			level = iter_60_1.level,
+			tagList = iter_60_1:getConfig("tag_list"),
+			configId = iter_60_1.configId,
+			attrs = iter_60_1:getProperties(),
+			isActivityNpc = function()
+				return iter_60_1:isActivityNpc()
+			end
+		}
+
+		if arg_60_1:SameSquadron(var_60_5) then
+			table.insert(var_60_3, var_60_5)
+		else
+			table.insert(var_60_4, var_60_5)
+		end
+	end
+
+	local function var_60_6(arg_62_0)
+		if arg_62_0 and not table.contains(var_60_0, arg_62_0.id) and GuildEventMediator.OnCheckMissionShip(arg_60_1.id, var_60_0, arg_62_0) then
+			table.insert(var_60_0, arg_62_0.id)
+		end
+	end
+
+	local var_60_7 = arg_60_1:GetEffectAttr()
+	local var_60_8 = CompareFuncs({
+		function(arg_63_0)
+			return arg_60_1:MatchAttr(arg_63_0) and 0 or 1
+		end,
+		function(arg_64_0)
+			return arg_60_1:MatchNation(arg_64_0) and 0 or 1
+		end,
+		function(arg_65_0)
+			return arg_60_1:MatchShipType(arg_65_0) and 0 or 1
+		end,
+		function(arg_66_0)
+			return -(arg_66_0.attrs[var_60_7] or 0)
+		end,
+		function(arg_67_0)
+			return -arg_67_0.level
+		end,
+		function(arg_68_0)
+			return -arg_68_0.power
+		end
+	})
+	local var_60_9 = arg_60_1:GetSquadronTargetCnt()
+
+	if #var_60_3 > 0 and var_60_9 > 0 then
+		table.sort(var_60_3, var_60_8)
+
+		for iter_60_2 = 1, var_60_9 do
+			var_60_6(var_60_3[iter_60_2])
+		end
+	end
+
+	if #var_60_0 < 4 and #var_60_4 > 0 then
+		table.sort(var_60_4, var_60_8)
+
+		for iter_60_3 = 1, #var_60_4 do
+			if #var_60_0 == 4 then
+				break
+			end
+
+			var_60_6(var_60_4[iter_60_3])
+		end
+	end
+
+	if #var_60_0 < 4 and var_60_9 > 0 and var_60_9 < #var_60_3 then
+		for iter_60_4 = var_60_9 + 1, #var_60_3 do
+			if #var_60_0 == 4 then
+				break
+			end
+
+			var_60_6(var_60_3[iter_60_4])
+		end
+	end
+
+	return var_60_0
+end
+
+function var_0_0.ShouldShowApplyTip(arg_69_0)
+	if arg_69_0.data and GuildMember.IsAdministrator(arg_69_0.data:getSelfDuty()) then
+		if not arg_69_0.requests then
+			return arg_69_0.requestCount > 0
 		end
 
-		return table.getCount(slot0.requests) + slot0.requestCount > 0
+		return table.getCount(arg_69_0.requests) + arg_69_0.requestCount > 0
 	end
 
 	return false
 end
 
-function slot0.ShouldShowBattleTip(slot0)
-	slot2 = false
+function var_0_0.ShouldShowBattleTip(arg_70_0)
+	local var_70_0 = arg_70_0:getData()
+	local var_70_1 = false
 
-	if slot0:getData() then
-		slot5 = slot1:GetActiveEvent()
+	local function var_70_2(arg_71_0)
+		if arg_71_0 and arg_71_0:IsParticipant() then
+			local var_71_0 = arg_71_0:GetBossMission()
 
-		if slot5 then
-			slot2 = slot0:ShouldShowMainTip() or not slot5 and (GuildMember.IsAdministrator(slot1:getSelfDuty()) and slot1:ShouldTipActiveEvent()) and function ()
-				for slot3, slot4 in ipairs(pg.guild_operation_template.all) do
-					if pg.guild_operation_template[slot4].unlock_guild_level <= uv0.level and slot5.consume <= uv0:getCapital() then
-						return true
-					end
-				end
+			return var_71_0 and var_71_0:IsActive() and var_71_0:CanEnterBattle()
+		end
 
-				return false
-			end() or slot5 and not slot0:GetBattleBtnRecord() or slot5:IsParticipant() and slot5:AnyMissionCanFormation() or function (slot0)
-				if slot0 and slot0:IsParticipant() then
-					return slot0:GetBossMission() and slot1:IsActive() and slot1:CanEnterBattle()
-				end
+		return false
+	end
 
-				return false
-			end(slot5) or not slot7 and not slot5:IsLimitedJoin()
+	local function var_70_3()
+		for iter_72_0, iter_72_1 in ipairs(pg.guild_operation_template.all) do
+			local var_72_0 = pg.guild_operation_template[iter_72_1]
+
+			if var_70_0.level >= var_72_0.unlock_guild_level and var_70_0:getCapital() >= var_72_0.consume then
+				return true
+			end
+		end
+
+		return false
+	end
+
+	if var_70_0 then
+		local var_70_4 = var_70_0:GetActiveEvent()
+		local var_70_5 = GuildMember.IsAdministrator(var_70_0:getSelfDuty()) and var_70_0:ShouldTipActiveEvent()
+
+		var_70_1 = arg_70_0:ShouldShowMainTip() or not var_70_4 and var_70_5 and var_70_3() or var_70_4 and not arg_70_0:GetBattleBtnRecord()
+
+		if var_70_4 and not var_70_1 then
+			local var_70_6 = var_70_4:IsParticipant()
+
+			var_70_1 = var_70_6 and var_70_4:AnyMissionCanFormation() or var_70_2(var_70_4) or not var_70_6 and not var_70_4:IsLimitedJoin()
 		end
 	end
 
-	return slot2
+	return var_70_1
 end
 
-function slot0.SetBattleBtnRecord(slot0)
-	if not slot0:GetBattleBtnRecord() and slot0:getRawData() and slot2:GetActiveEvent() then
-		PlayerPrefs.SetInt("guild_battle_btn_flag" .. getProxy(PlayerProxy):getRawData().id, 1)
-		PlayerPrefs.Save()
-		slot0:sendNotification(uv0.BATTLE_BTN_FLAG_CHANGE)
+function var_0_0.SetBattleBtnRecord(arg_73_0)
+	if not arg_73_0:GetBattleBtnRecord() then
+		local var_73_0 = arg_73_0:getRawData()
+
+		if var_73_0 and var_73_0:GetActiveEvent() then
+			local var_73_1 = getProxy(PlayerProxy):getRawData()
+
+			PlayerPrefs.SetInt("guild_battle_btn_flag" .. var_73_1.id, 1)
+			PlayerPrefs.Save()
+			arg_73_0:sendNotification(var_0_0.BATTLE_BTN_FLAG_CHANGE)
+		end
 	end
 end
 
-function slot0.GetBattleBtnRecord(slot0)
-	return PlayerPrefs.GetInt("guild_battle_btn_flag" .. getProxy(PlayerProxy):getRawData().id, 0) > 0
+function var_0_0.GetBattleBtnRecord(arg_74_0)
+	local var_74_0 = getProxy(PlayerProxy):getRawData()
+
+	return PlayerPrefs.GetInt("guild_battle_btn_flag" .. var_74_0.id, 0) > 0
 end
 
-function slot0.ShouldShowMainTip(slot0)
-	return _.any(slot0.reports or {}, function (slot0)
-		return slot0:CanSubmit()
-	end) and not function ()
-		return uv0.data:getMemberById(getProxy(PlayerProxy):getRawData().id):IsRecruit()
-	end()
+function var_0_0.ShouldShowMainTip(arg_75_0)
+	local function var_75_0()
+		local var_76_0 = getProxy(PlayerProxy):getRawData().id
+
+		return arg_75_0.data:getMemberById(var_76_0):IsRecruit()
+	end
+
+	return _.any(arg_75_0.reports or {}, function(arg_77_0)
+		return arg_77_0:CanSubmit()
+	end) and not var_75_0()
 end
 
-function slot0.ShouldShowTip(slot0)
-	slot1 = {}
+function var_0_0.ShouldShowTip(arg_78_0)
+	local var_78_0 = {}
+	local var_78_1 = arg_78_0:getData()
 
-	if slot0:getData() then
-		table.insert(slot1, slot2:ShouldShowDonateTip())
-		table.insert(slot1, slot0:ShouldShowApplyTip())
-		table.insert(slot1, slot2:ShouldWeeklyTaskTip())
-		table.insert(slot1, slot2:ShouldShowSupplyTip())
-		table.insert(slot1, slot2:ShouldShowTechTip())
+	if var_78_1 then
+		table.insert(var_78_0, var_78_1:ShouldShowDonateTip())
+		table.insert(var_78_0, arg_78_0:ShouldShowApplyTip())
+		table.insert(var_78_0, var_78_1:ShouldWeeklyTaskTip())
+		table.insert(var_78_0, var_78_1:ShouldShowSupplyTip())
+		table.insert(var_78_0, var_78_1:ShouldShowTechTip())
 
 		if not LOCK_GUILD_BATTLE then
-			table.insert(slot1, slot0:ShouldShowBattleTip())
+			table.insert(var_78_0, arg_78_0:ShouldShowBattleTip())
 		end
 	end
 
-	return #slot1 > 0 and _.any(slot1, function (slot0)
-		return slot0 == true
+	return #var_78_0 > 0 and _.any(var_78_0, function(arg_79_0)
+		return arg_79_0 == true
 	end)
 end
 
-function slot0.SetRefreshBossTime(slot0, slot1)
-	slot0.refreshBossTime = slot1 + GuildConst.REFRESH_BOSS_TIME
+function var_0_0.SetRefreshBossTime(arg_80_0, arg_80_1)
+	arg_80_0.refreshBossTime = arg_80_1 + GuildConst.REFRESH_BOSS_TIME
 end
 
-function slot0.ShouldRefreshBoss(slot0)
-	return slot0:getRawData():GetActiveEvent() and not slot1:IsExpired() and slot0.refreshBossTime <= pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.ShouldRefreshBoss(arg_81_0)
+	local var_81_0 = arg_81_0:getRawData():GetActiveEvent()
+
+	return var_81_0 and not var_81_0:IsExpired() and pg.TimeMgr.GetInstance():GetServerTime() >= arg_81_0.refreshBossTime
 end
 
-function slot0.ResetRefreshBossTime(slot0)
-	slot0.refreshBossTime = 0
+function var_0_0.ResetRefreshBossTime(arg_82_0)
+	arg_82_0.refreshBossTime = 0
 end
 
-function slot0.ShouldRefreshBossRank(slot0)
-	return slot0:getRawData():GetActiveEvent() and GuildConst.REFRESH_MISSION_BOSS_RANK_TIME <= pg.TimeMgr.GetInstance():GetServerTime() - slot0.bossRankUpdateTime
+function var_0_0.ShouldRefreshBossRank(arg_83_0)
+	local var_83_0 = arg_83_0:getRawData():GetActiveEvent()
+	local var_83_1 = pg.TimeMgr.GetInstance():GetServerTime()
+
+	return var_83_0 and var_83_1 - arg_83_0.bossRankUpdateTime >= GuildConst.REFRESH_MISSION_BOSS_RANK_TIME
 end
 
-function slot0.UpdateBossRank(slot0, slot1)
-	slot0.bossRanks = slot1
+function var_0_0.UpdateBossRank(arg_84_0, arg_84_1)
+	arg_84_0.bossRanks = arg_84_1
 end
 
-function slot0.GetBossRank(slot0)
-	return slot0.bossRanks
+function var_0_0.GetBossRank(arg_85_0)
+	return arg_85_0.bossRanks
 end
 
-function slot0.ResetBossRankTime(slot0)
-	slot0.rankUpdateTime = 0
+function var_0_0.ResetBossRankTime(arg_86_0)
+	arg_86_0.rankUpdateTime = 0
 end
 
-function slot0.UpdateBossRankRefreshTime(slot0, slot1)
-	slot0.rankUpdateTime = slot1
+function var_0_0.UpdateBossRankRefreshTime(arg_87_0, arg_87_1)
+	arg_87_0.rankUpdateTime = arg_87_1
 end
 
-function slot0.GetAdditionGuild(slot0)
-	if slot0.data == nil then
-		return slot0.publicGuild
+function var_0_0.GetAdditionGuild(arg_88_0)
+	if arg_88_0.data == nil then
+		return arg_88_0.publicGuild
 	else
-		return slot0.data
+		return arg_88_0.data
 	end
 end
 
-function slot0.SetReportRankList(slot0, slot1, slot2)
-	if not slot0.reportRankList then
-		slot0.reportRankList = {}
+function var_0_0.SetReportRankList(arg_89_0, arg_89_1, arg_89_2)
+	if not arg_89_0.reportRankList then
+		arg_89_0.reportRankList = {}
 	end
 
-	slot0.reportRankList[slot1] = slot2
+	arg_89_0.reportRankList[arg_89_1] = arg_89_2
 end
 
-function slot0.GetReportRankList(slot0, slot1)
-	if slot0.reportRankList then
-		return slot0.reportRankList[slot1]
+function var_0_0.GetReportRankList(arg_90_0, arg_90_1)
+	if arg_90_0.reportRankList then
+		return arg_90_0.reportRankList[arg_90_1]
 	end
 
 	return nil
 end
 
-return slot0
+return var_0_0

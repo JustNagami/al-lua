@@ -1,29 +1,30 @@
-slot0 = class("SetTecAttrAdditionCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("SetTecAttrAdditionCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.onSuccess
-	slot5 = {
-		techset_list = slot2.sendList
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.sendList
+	local var_1_2 = var_1_0.onSuccess
+	local var_1_3 = {
+		techset_list = var_1_1
 	}
 
 	print("64009 Set Attr Addition")
 
 	if Application.isEditor then
-		print_r(slot3)
+		print_r(var_1_1)
 	end
 
-	pg.ConnectionMgr.GetInstance():Send(64009, slot5, 64010, function (slot0)
-		if slot0.result == 0 then
-			getProxy(TechnologyNationProxy):initSetableAttrAddition(uv0)
-			uv1:sendNotification(TechnologyConst.SET_TEC_ATTR_ADDITION_FINISH, {
-				onSuccess = uv2
+	pg.ConnectionMgr.GetInstance():Send(64009, var_1_3, 64010, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			getProxy(TechnologyNationProxy):initSetableAttrAddition(var_1_1)
+			arg_1_0:sendNotification(TechnologyConst.SET_TEC_ATTR_ADDITION_FINISH, {
+				onSuccess = var_1_2
 			})
 			pg.TipsMgr.GetInstance():ShowTips(i18n("attrset_save_success"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips("64009 Error Code:" .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips("64009 Error Code:" .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

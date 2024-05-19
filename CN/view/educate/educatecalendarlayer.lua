@@ -1,49 +1,56 @@
-slot0 = class("EducateCalendarLayer", import(".base.EducateBaseUI"))
+﻿local var_0_0 = class("EducateCalendarLayer", import(".base.EducateBaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "EducateCalendarUI"
 end
 
-function slot0.init(slot0)
-	slot0.calendarTF = slot0:findTF("anim_root/calendar")
-	slot0.monthTF = slot0:findTF("month", slot0.calendarTF)
+function var_0_0.init(arg_2_0)
+	arg_2_0.calendarTF = arg_2_0:findTF("anim_root/calendar")
+	arg_2_0.monthTF = arg_2_0:findTF("month", arg_2_0.calendarTF)
 
-	setText(slot0:findTF("Text", slot0.monthTF), i18n("word_month"))
+	setText(arg_2_0:findTF("Text", arg_2_0.monthTF), i18n("word_month"))
 
-	slot0.weekTF = slot0:findTF("week/week", slot0.calendarTF)
-	slot0.curTime = getProxy(EducateProxy):GetCurTime()
-	slot0.anim = slot0:findTF("anim_root"):GetComponent(typeof(Animation))
-	slot0.animEvent = slot0:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+	arg_2_0.weekTF = arg_2_0:findTF("week/week", arg_2_0.calendarTF)
+	arg_2_0.curTime = getProxy(EducateProxy):GetCurTime()
+	arg_2_0.anim = arg_2_0:findTF("anim_root"):GetComponent(typeof(Animation))
+	arg_2_0.animEvent = arg_2_0:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
 
-	slot0.animEvent:SetEndEvent(function ()
-		uv0:emit(uv1.ON_CLOSE)
+	arg_2_0.animEvent:SetEndEvent(function()
+		arg_2_0:emit(var_0_0.ON_CLOSE)
 	end)
-	slot0.animEvent:SetTriggerEvent(function ()
-		slot0 = EducateHelper.GetTimeAfterWeeks(uv0.curTime, 1)
+	arg_2_0.animEvent:SetTriggerEvent(function()
+		local var_4_0 = EducateHelper.GetTimeAfterWeeks(arg_2_0.curTime, 1)
+		local var_4_1 = EducateHelper.GetShowMonthNumber(var_4_0.month)
+		local var_4_2 = i18n("word_which_week", var_4_0.week)
 
-		setText(uv0.monthTF, EducateHelper.GetShowMonthNumber(slot0.month))
-		setText(uv0.weekTF, i18n("word_which_week", slot0.week))
+		setText(arg_2_0.monthTF, var_4_1)
+		setText(arg_2_0.weekTF, var_4_2)
 	end)
 end
 
-function slot0.didEnter(slot0)
-	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf, {
-		groupName = slot0:getGroupNameFromData(),
-		weight = slot0:getWeightFromData() + 1
+function var_0_0.didEnter(arg_5_0)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_5_0._tf, {
+		groupName = arg_5_0:getGroupNameFromData(),
+		weight = arg_5_0:getWeightFromData() + 1
 	})
-	setText(slot0.monthTF, EducateHelper.GetShowMonthNumber(slot0.curTime.month))
-	setText(slot0.weekTF, i18n("word_which_week", slot0.curTime.week))
+
+	local var_5_0 = EducateHelper.GetShowMonthNumber(arg_5_0.curTime.month)
+	local var_5_1 = i18n("word_which_week", arg_5_0.curTime.week)
+
+	setText(arg_5_0.monthTF, var_5_0)
+	setText(arg_5_0.weekTF, var_5_1)
 end
 
-function slot0.onBackPressed(slot0)
+function var_0_0.onBackPressed(arg_6_0)
+	return
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
+function var_0_0.willExit(arg_7_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_7_0._tf)
 
-	if slot0.contextData.onExit then
-		slot0.contextData.onExit()
+	if arg_7_0.contextData.onExit then
+		arg_7_0.contextData.onExit()
 	end
 end
 
-return slot0
+return var_0_0

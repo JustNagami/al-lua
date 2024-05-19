@@ -1,101 +1,119 @@
-slot0 = class("PlayerVitaeLive2dBtn", import(".PlayerVitaeBaseBtn"))
+﻿local var_0_0 = class("PlayerVitaeLive2dBtn", import(".PlayerVitaeBaseBtn"))
 
-function slot0.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2)
-	slot0:Load(slot0.tf)
-	setActive(slot0.tf, true)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0:Load(arg_1_0.tf)
+	setActive(arg_1_0.tf, true)
 end
 
-function slot0.InitBtn(slot0)
+function var_0_0.InitBtn(arg_2_0)
+	return
 end
 
-function slot0.GetBgName(slot0)
-	slot1, slot2 = nil
+function var_0_0.GetBgName(arg_3_0)
+	local var_3_0
+	local var_3_1
+	local var_3_2 = arg_3_0:IsHrzType() and "share/btn_l2d_atlas" or "admiralui_atlas"
 
-	return slot0:IsHrzType() and "share/btn_l2d_atlas" or "admiralui_atlas", slot0.ship and slot0.ship:GetSkinConfig().spine_use_live2d == 1 and (slot0:IsHrzType() and "spine_painting_bg" or "sp") or slot0:IsHrzType() and "live2d_bg" or "l2d"
+	if arg_3_0.ship and arg_3_0.ship:GetSkinConfig().spine_use_live2d == 1 then
+		var_3_1 = arg_3_0:IsHrzType() and "spine_painting_bg" or "sp"
+	else
+		var_3_1 = arg_3_0:IsHrzType() and "live2d_bg" or "l2d"
+	end
+
+	return var_3_2, var_3_1
 end
 
-function slot0.IsActive(slot0)
+function var_0_0.IsActive(arg_4_0)
 	return true
 end
 
-function slot0.Update(slot0, slot1, slot2, slot3)
-	uv0.super.Update(slot0, slot1, slot2, slot3)
-	slot0:NewGo()
-	slot0:RequesetLive2dRes()
+function var_0_0.Update(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	var_0_0.super.Update(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	arg_5_0:NewGo()
+	arg_5_0:RequesetLive2dRes()
 end
 
-function slot0.RequesetLive2dRes(slot0)
-	slot0:StartCheckUpdate(HXSet.autoHxShiftPath("live2d/" .. string.lower(slot0.ship:getPainting()), nil, true))
+function var_0_0.RequesetLive2dRes(arg_6_0)
+	local var_6_0 = arg_6_0.ship
+	local var_6_1 = "live2d/" .. string.lower(var_6_0:getPainting())
+	local var_6_2 = HXSet.autoHxShiftPath(var_6_1, nil, true)
+
+	arg_6_0:StartCheckUpdate(var_6_2)
 end
 
-function slot0.StartCheckUpdate(slot0, slot1)
-	if BundleWizard.Inst:GetGroupMgr("L2D").state == DownloadState.None or slot3 == DownloadState.CheckFailure then
-		slot2:CheckD()
+function var_0_0.StartCheckUpdate(arg_7_0, arg_7_1)
+	local var_7_0 = BundleWizard.Inst:GetGroupMgr("L2D")
+	local var_7_1 = var_7_0.state
+
+	if var_7_1 == DownloadState.None or var_7_1 == DownloadState.CheckFailure then
+		var_7_0:CheckD()
 	end
 
-	if slot2:CheckF(slot1) == DownloadState.CheckToUpdate or slot4 == DownloadState.UpdateFailure then
-		slot0:ShowOrHide(true)
-		slot0:UpdateBtnState(false, false)
-		onButton(slot0, slot0.tf, function ()
-			VersionMgr.Inst:RequestUIForUpdateF("L2D", uv0, true)
+	local var_7_2 = var_7_0:CheckF(arg_7_1)
+
+	if var_7_2 == DownloadState.CheckToUpdate or var_7_2 == DownloadState.UpdateFailure then
+		arg_7_0:ShowOrHide(true)
+		arg_7_0:UpdateBtnState(false, false)
+		onButton(arg_7_0, arg_7_0.tf, function()
+			VersionMgr.Inst:RequestUIForUpdateF("L2D", arg_7_1, true)
 		end, SFX_PANEL)
-	elseif slot4 == DownloadState.Updating then
-		slot0:ShowOrHide(true)
-		slot0:UpdateBtnState(true, false)
-		removeOnButton(slot0.tf)
+	elseif var_7_2 == DownloadState.Updating then
+		arg_7_0:ShowOrHide(true)
+		arg_7_0:UpdateBtnState(true, false)
+		removeOnButton(arg_7_0.tf)
 	else
-		slot5 = PathMgr.FileExists(PathMgr.getAssetBundle(slot1))
+		local var_7_3 = PathMgr.FileExists(PathMgr.getAssetBundle(arg_7_1))
 
-		slot0:ShowOrHide(slot5)
+		arg_7_0:ShowOrHide(var_7_3)
 
-		if slot5 then
-			slot0:UpdateBtnState(false, false)
-			uv0.super.InitBtn(slot0)
+		if var_7_3 then
+			arg_7_0:UpdateBtnState(false, false)
+			var_0_0.super.InitBtn(arg_7_0)
 		end
 	end
 
-	if slot0.live2dTimer then
-		slot0.live2dTimer:Stop()
+	if arg_7_0.live2dTimer then
+		arg_7_0.live2dTimer:Stop()
 
-		slot0.live2dTimer = nil
+		arg_7_0.live2dTimer = nil
 	end
 
-	if slot4 == DownloadState.CheckToUpdate or slot4 == DownloadState.UpdateFailure or slot4 == DownloadState.Updating then
-		slot0.live2dTimer = Timer.New(function ()
-			uv0:StartCheckUpdate(uv1)
+	if var_7_2 == DownloadState.CheckToUpdate or var_7_2 == DownloadState.UpdateFailure or var_7_2 == DownloadState.Updating then
+		arg_7_0.live2dTimer = Timer.New(function()
+			arg_7_0:StartCheckUpdate(arg_7_1)
 		end, 0.5, 1)
 
-		slot0.live2dTimer:Start()
+		arg_7_0.live2dTimer:Start()
 	end
 end
 
-function slot0.GetDefaultValue(slot0)
-	return getProxy(SettingsProxy):getCharacterSetting(slot0.ship.id, SHIP_FLAG_L2D)
+function var_0_0.GetDefaultValue(arg_10_0)
+	return getProxy(SettingsProxy):getCharacterSetting(arg_10_0.ship.id, SHIP_FLAG_L2D)
 end
 
-function slot0.OnSwitch(slot0, slot1)
-	getProxy(SettingsProxy):setCharacterSetting(slot0.ship.id, SHIP_FLAG_L2D, slot1)
+function var_0_0.OnSwitch(arg_11_0, arg_11_1)
+	getProxy(SettingsProxy):setCharacterSetting(arg_11_0.ship.id, SHIP_FLAG_L2D, arg_11_1)
 
 	return true
 end
 
-function slot0.OnDispose(slot0)
-	if slot0.live2dTimer then
-		slot0.live2dTimer:Stop()
+function var_0_0.OnDispose(arg_12_0)
+	if arg_12_0.live2dTimer then
+		arg_12_0.live2dTimer:Stop()
 
-		slot0.live2dTimer = nil
+		arg_12_0.live2dTimer = nil
 	end
 end
 
-function slot0.Load(slot0, slot1)
-	uv0.super.Load(slot0, slot1)
+function var_0_0.Load(arg_13_0, arg_13_1)
+	var_0_0.super.Load(arg_13_0, arg_13_1)
 
-	if slot0:IsHrzType() then
-		slot1.gameObject.name = "live2d"
+	if arg_13_0:IsHrzType() then
+		arg_13_1.gameObject.name = "live2d"
 	end
 
-	slot0.tf:GetComponent(typeof(Image)):SetNativeSize()
+	arg_13_0.tf:GetComponent(typeof(Image)):SetNativeSize()
 end
 
-return slot0
+return var_0_0

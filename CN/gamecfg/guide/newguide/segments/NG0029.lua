@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"指挥官，新解锁了喵窝功能，快来看看吧",
 	"把指挥喵放入空置的喵窝中后，会随着时间自动获得经验",
 	"喵窝解锁及0点刷新后放入未互动过的指挥喵可以进行互动，指挥官来试试吧",
@@ -21,7 +21,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 0,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/blur_panel/pages/CommanderCatDockUI(Clone)/box/home",
@@ -44,7 +44,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 0,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/CommanderCatUI(Clone)/blur_panel/pages/CommanderCatDockUI(Clone)/box/home",
@@ -70,7 +70,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 41.84,
-				text = slot0[2]
+				text = var_0_0[2]
 			}
 		},
 		{
@@ -121,7 +121,7 @@ return {
 				mode = 1,
 				posY = 245.9,
 				posX = -382.13,
-				text = slot0[3],
+				text = var_0_0[3],
 				ui = {
 					path = "OverlayCamera/Overlay/UIMain/CommanderHomeUI(Clone)/bg/bubble"
 				}
@@ -134,7 +134,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 0,
-				text = slot0[4]
+				text = var_0_0[4]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/CommanderHomeUI(Clone)/bg/bubble/clean",
@@ -155,7 +155,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 0,
-				text = slot0[5]
+				text = var_0_0[5]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/CommanderHomeUI(Clone)/bg/bubble/feed",
@@ -182,7 +182,7 @@ return {
 				mode = 1,
 				posY = 122.14,
 				posX = -340.6,
-				text = slot0[6]
+				text = var_0_0[6]
 			}
 		},
 		{
@@ -214,7 +214,7 @@ return {
 				mode = 1,
 				posY = -200,
 				posX = -500,
-				text = slot0[7]
+				text = var_0_0[7]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/CommanderCatUI(Clone)/blur_panel/left_panel/help_btn",
@@ -233,7 +233,7 @@ return {
 				mode = 1,
 				posY = -200,
 				posX = -500,
-				text = slot0[7]
+				text = var_0_0[7]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/blur_panel/left_panel/help_btn",

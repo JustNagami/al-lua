@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				target = "TargetSelf",
+				time = 35,
+				skill_id = 2101
+			}
+		}
+	},
 	{
 		desc = "每隔35秒，朝前方发射3发鱼雷(威力依据技能等级)",
 		addition = {
@@ -199,18 +212,5 @@ return {
 	stack = 1,
 	id = 2101,
 	icon = 2100,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				target = "TargetSelf",
-				time = 35,
-				skill_id = 2101
-			}
-		}
-	}
+	last_effect = ""
 }

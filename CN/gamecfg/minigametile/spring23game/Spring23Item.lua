@@ -1,4 +1,4 @@
-return {
+﻿return {
 	tilewidth = 384,
 	name = "Item",
 	spacing = 0,

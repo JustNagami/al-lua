@@ -1,145 +1,151 @@
-slot0 = class("SailBoatGamingUI")
-slot1 = nil
+﻿local var_0_0 = class("SailBoatGamingUI")
+local var_0_1
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0._tf = slot1
-	slot0._event = slot2
-	uv0 = SailBoatGameVo
-	slot0._gameUI = findTF(slot0._tf, "ui/gamingUI")
-	slot0.btnBack = findTF(slot0._gameUI, "back")
-	slot0.btnPause = findTF(slot0._gameUI, "pause")
-	slot0.gameTime = findTF(slot0._gameUI, "time")
-	slot0.gameScore = findTF(slot0._gameUI, "score")
-	slot0.btnSkill = findTF(slot0._gameUI, "skill")
-	slot0.skillCount = findTF(slot0._gameUI, "skill/amount")
-	slot0.progress = GetComponent(findTF(slot0._gameUI, "progress"), typeof(Slider))
-	slot0.powerTf = findTF(slot0._gameUI, "power")
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0._tf = arg_1_1
+	arg_1_0._event = arg_1_2
+	var_0_1 = SailBoatGameVo
+	arg_1_0._gameUI = findTF(arg_1_0._tf, "ui/gamingUI")
+	arg_1_0.btnBack = findTF(arg_1_0._gameUI, "back")
+	arg_1_0.btnPause = findTF(arg_1_0._gameUI, "pause")
+	arg_1_0.gameTime = findTF(arg_1_0._gameUI, "time")
+	arg_1_0.gameScore = findTF(arg_1_0._gameUI, "score")
+	arg_1_0.btnSkill = findTF(arg_1_0._gameUI, "skill")
+	arg_1_0.skillCount = findTF(arg_1_0._gameUI, "skill/amount")
+	arg_1_0.progress = GetComponent(findTF(arg_1_0._gameUI, "progress"), typeof(Slider))
+	arg_1_0.powerTf = findTF(arg_1_0._gameUI, "power")
 
-	onButton(slot0._event, slot0.btnSkill, function ()
-		if uv0.skillTime > 0 then
+	onButton(arg_1_0._event, arg_1_0.btnSkill, function()
+		if arg_1_0.skillTime > 0 then
 			return
 		end
 
-		if uv1.UseSkill() then
-			uv0._event:emit(SailBoatGameView.USE_SKILL)
+		if var_0_1.UseSkill() then
+			arg_1_0._event:emit(SailBoatGameView.USE_SKILL)
 
-			uv0.skillTime = uv1.skillTime
+			arg_1_0.skillTime = var_0_1.skillTime
 
-			setActive(uv0.powerTf, false)
-			setActive(uv0.powerTf, true)
+			setActive(arg_1_0.powerTf, false)
+			setActive(arg_1_0.powerTf, true)
 		end
 	end, SFX_CONFIRM)
-	onButton(slot0._event, slot0.btnBack, function ()
-		uv0._event:emit(SailBoatGameView.PAUSE_GAME, true)
-		uv0._event:emit(SailBoatGameView.OPEN_LEVEL_UI)
+	onButton(arg_1_0._event, arg_1_0.btnBack, function()
+		arg_1_0._event:emit(SailBoatGameView.PAUSE_GAME, true)
+		arg_1_0._event:emit(SailBoatGameView.OPEN_LEVEL_UI)
 	end, SFX_CONFIRM)
-	onButton(slot0._event, slot0.btnPause, function ()
-		uv0._event:emit(SailBoatGameView.PAUSE_GAME, true)
-		uv0._event:emit(SailBoatGameView.OPEN_PAUSE_UI)
+	onButton(arg_1_0._event, arg_1_0.btnPause, function()
+		arg_1_0._event:emit(SailBoatGameView.PAUSE_GAME, true)
+		arg_1_0._event:emit(SailBoatGameView.OPEN_PAUSE_UI)
 	end, SFX_CONFIRM)
 
-	slot0.direct = Vector2(0, 0)
-	slot0.joyStick = MiniGameJoyStick.New(findTF(slot0._gameUI, "joyStick"))
+	arg_1_0.direct = Vector2(0, 0)
+	arg_1_0.joyStick = MiniGameJoyStick.New(findTF(arg_1_0._gameUI, "joyStick"))
 
-	slot0.joyStick:setActiveCallback(function (slot0)
+	arg_1_0.joyStick:setActiveCallback(function(arg_5_0)
+		return
 	end)
 
-	slot0._hpTf = findTF(slot0._gameUI, "hp")
-	slot0._hpSlider = GetComponent(slot0._hpTf, typeof(Slider))
-	slot0._powerEnemy = findTF(slot0._gameUI, "powerEnemy")
+	arg_1_0._hpTf = findTF(arg_1_0._gameUI, "hp")
+	arg_1_0._hpSlider = GetComponent(arg_1_0._hpTf, typeof(Slider))
+	arg_1_0._powerEnemy = findTF(arg_1_0._gameUI, "powerEnemy")
 end
 
-function slot0.show(slot0, slot1)
-	setActive(slot0._gameUI, slot1)
+function var_0_0.show(arg_6_0, arg_6_1)
+	setActive(arg_6_0._gameUI, arg_6_1)
 end
 
-function slot0.update(slot0)
+function var_0_0.update(arg_7_0)
+	return
 end
 
-function slot0.start(slot0)
-	slot0.direct = Vector2(0, 0)
-	slot0.subGameStepTime = 0
-	slot0.maxProgress = uv0.GetRoundData().progress
-	slot0.powers = Clone(uv0.GetRoundData().powers)
+function var_0_0.start(arg_8_0)
+	arg_8_0.direct = Vector2(0, 0)
+	arg_8_0.subGameStepTime = 0
+	arg_8_0.maxProgress = var_0_1.GetRoundData().progress
+	arg_8_0.powers = Clone(var_0_1.GetRoundData().powers)
 
-	setText(slot0.skillCount, uv0.GetSkill())
+	setText(arg_8_0.skillCount, var_0_1.GetSkill())
 
-	slot0.skillTime = 0
-	slot0._char = nil
+	arg_8_0.skillTime = 0
+	arg_8_0._char = nil
 
-	setActive(slot0._powerEnemy, false)
-	setActive(slot0.powerTf, false)
+	setActive(arg_8_0._powerEnemy, false)
+	setActive(arg_8_0.powerTf, false)
 end
 
-function slot0.addScore(slot0, slot1)
-	slot2 = slot1.num
-	slot3 = slot1.pos
-	slot4 = slot1.id
+function var_0_0.addScore(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_1.num
+	local var_9_1 = arg_9_1.pos
+	local var_9_2 = arg_9_1.id
 end
 
-function slot0.step(slot0, slot1)
-	if not slot0._char then
-		slot0._char = uv0.GetGameChar()
-		slot0._hpSlider.minValue = 0
-		slot0._hpSlider.maxValue = slot0._char:getMaxHp()
+function var_0_0.step(arg_10_0, arg_10_1)
+	if not arg_10_0._char then
+		arg_10_0._char = var_0_1.GetGameChar()
+		arg_10_0._hpSlider.minValue = 0
+		arg_10_0._hpSlider.maxValue = arg_10_0._char:getMaxHp()
 	end
 
-	setText(slot0.gameScore, uv0.scoreNum)
-	setText(slot0.gameTime, math.floor(uv0.gameTime))
+	local var_10_0 = var_0_1.gameTime
+	local var_10_1 = var_0_1.gameStepTime
 
-	slot0.progress.value = uv0.gameStepTime / slot0.maxProgress
+	setText(arg_10_0.gameScore, var_0_1.scoreNum)
+	setText(arg_10_0.gameTime, math.floor(var_10_0))
 
-	slot0.joyStick:step()
-	slot0.joyStick:setDirectTarget(slot0.direct)
+	arg_10_0.progress.value = var_10_1 / arg_10_0.maxProgress
 
-	if slot0.skillTime > 0 then
-		slot0.skillTime = slot0.skillTime - slot1
+	arg_10_0.joyStick:step()
+	arg_10_0.joyStick:setDirectTarget(arg_10_0.direct)
+
+	if arg_10_0.skillTime > 0 then
+		arg_10_0.skillTime = arg_10_0.skillTime - arg_10_1
 	end
 
-	SailBoatGameVo.joyStickData = slot0.joyStick:getValue()
+	SailBoatGameVo.joyStickData = arg_10_0.joyStick:getValue()
 
-	setText(slot0.skillCount, uv0.GetSkill())
+	setText(arg_10_0.skillCount, var_0_1.GetSkill())
 
-	slot4 = slot0._char:getHpPos()
-	slot0._hpTf.position = slot4
-	slot0.powerTf.position = slot4
-	slot0._hpSlider.value = slot0._char:getHp()
+	local var_10_2 = arg_10_0._char:getHpPos()
 
-	for slot8 = #slot0.powers, 1, -1 do
-		if slot0.powers[slot8] < uv0.gameStepTime then
-			table.remove(slot0.powers, slot8)
-			setActive(slot0._powerEnemy, false)
-			setActive(slot0._powerEnemy, true)
-		end
-	end
-end
+	arg_10_0._hpTf.position = var_10_2
+	arg_10_0.powerTf.position = var_10_2
+	arg_10_0._hpSlider.value = arg_10_0._char:getHp()
 
-function slot0.press(slot0, slot1, slot2)
-	if slot1 == KeyCode.W then
-		if slot2 then
-			slot0.direct.y = 1
-		elseif slot0.direct.y == 1 then
-			slot0.direct.y = 0
-		end
-	elseif slot1 == KeyCode.S then
-		if slot2 then
-			slot0.direct.y = -1
-		elseif slot0.direct.y == -1 then
-			slot0.direct.y = 0
-		end
-	elseif slot1 == KeyCode.A then
-		if slot2 then
-			slot0.direct.x = -1
-		elseif slot0.direct.x == -1 then
-			slot0.direct.x = 0
-		end
-	elseif slot1 == KeyCode.D then
-		if slot2 then
-			slot0.direct.x = 1
-		elseif slot0.direct.x == 1 then
-			slot0.direct.x = 0
+	for iter_10_0 = #arg_10_0.powers, 1, -1 do
+		if var_0_1.gameStepTime > arg_10_0.powers[iter_10_0] then
+			table.remove(arg_10_0.powers, iter_10_0)
+			setActive(arg_10_0._powerEnemy, false)
+			setActive(arg_10_0._powerEnemy, true)
 		end
 	end
 end
 
-return slot0
+function var_0_0.press(arg_11_0, arg_11_1, arg_11_2)
+	if arg_11_1 == KeyCode.W then
+		if arg_11_2 then
+			arg_11_0.direct.y = 1
+		elseif arg_11_0.direct.y == 1 then
+			arg_11_0.direct.y = 0
+		end
+	elseif arg_11_1 == KeyCode.S then
+		if arg_11_2 then
+			arg_11_0.direct.y = -1
+		elseif arg_11_0.direct.y == -1 then
+			arg_11_0.direct.y = 0
+		end
+	elseif arg_11_1 == KeyCode.A then
+		if arg_11_2 then
+			arg_11_0.direct.x = -1
+		elseif arg_11_0.direct.x == -1 then
+			arg_11_0.direct.x = 0
+		end
+	elseif arg_11_1 == KeyCode.D then
+		if arg_11_2 then
+			arg_11_0.direct.x = 1
+		elseif arg_11_0.direct.x == 1 then
+			arg_11_0.direct.x = 0
+		end
+	end
+end
+
+return var_0_0

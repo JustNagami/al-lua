@@ -1,1 +1,1 @@
-return class("YunXianMainPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿return (class("YunXianMainPage", import(".TemplatePage.PreviewTemplatePage")))

@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "",
-	init_effect = "",
-	time = 5,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 16711,
-	icon = 16710,
-	last_effect = "leigensitebao_suoding",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffAddTag",
@@ -41,5 +20,26 @@ return {
 				target = "TargetSelf"
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "",
+	init_effect = "",
+	time = 5,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 16711,
+	icon = 16710,
+	last_effect = "leigensitebao_suoding"
 }

@@ -1,40 +1,47 @@
-slot0 = class("YidaliPTPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var_0_0 = class("YidaliPTPage", import(".TemplatePage.PtTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.progresses = slot0:findTF("progresses", slot0.bg)
-	slot0.progress_r = slot0:findTF("progress_r", slot0.progresses)
-	slot0.progress_l = slot0:findTF("progress_l", slot0.progresses)
+	arg_1_0.progresses = arg_1_0:findTF("progresses", arg_1_0.bg)
+	arg_1_0.progress_r = arg_1_0:findTF("progress_r", arg_1_0.progresses)
+	arg_1_0.progress_l = arg_1_0:findTF("progress_l", arg_1_0.progresses)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	if checkExist(slot0.activity:getConfig("config_client").story, {
-		slot0.ptData:getTargetLevel()
+function var_0_0.OnUpdateFlush(arg_2_0)
+	local var_2_0 = arg_2_0.ptData:getTargetLevel()
+	local var_2_1 = arg_2_0.activity:getConfig("config_client").story
+
+	if checkExist(var_2_1, {
+		var_2_0
 	}, {
 		1
 	}) then
-		pg.NewStoryMgr.GetInstance():Play(slot2[slot1][1])
+		pg.NewStoryMgr.GetInstance():Play(var_2_1[var_2_0][1])
 	end
 
-	slot3, slot4, slot5 = slot0.ptData:GetLevelProgress()
-	slot6, slot7, slot8 = slot0.ptData:GetResProgress()
+	local var_2_2, var_2_3, var_2_4 = arg_2_0.ptData:GetLevelProgress()
+	local var_2_5, var_2_6, var_2_7 = arg_2_0.ptData:GetResProgress()
 
-	setText(slot0.step, slot3 .. "/" .. slot4)
-	setText(slot0.progress_l, slot8 >= 1 and setColorStr(slot6, COLOR_GREEN) or slot6)
-	setText(slot0.progress_r, "/" .. slot7)
-	setSlider(slot0.slider, 0, 1, slot8)
+	setText(arg_2_0.step, var_2_2 .. "/" .. var_2_3)
+	setText(arg_2_0.progress_l, var_2_7 >= 1 and setColorStr(var_2_5, COLOR_GREEN) or var_2_5)
+	setText(arg_2_0.progress_r, "/" .. var_2_6)
+	setSlider(arg_2_0.slider, 0, 1, var_2_7)
 
-	slot9 = slot0.ptData:CanGetAward()
-	slot10 = slot0.ptData:CanGetNextAward()
+	local var_2_8 = arg_2_0.ptData:CanGetAward()
+	local var_2_9 = arg_2_0.ptData:CanGetNextAward()
+	local var_2_10 = arg_2_0.ptData:CanGetMorePt()
 
-	setActive(slot0.battleBtn, slot0.ptData:CanGetMorePt() and not slot9 and slot10)
-	setActive(slot0.getBtn, slot9)
-	setActive(slot0.gotBtn, not slot10)
-	updateDrop(slot0.awardTF, slot0.ptData:GetAward())
-	onButton(slot0, slot0.awardTF, function ()
-		uv0:emit(BaseUI.ON_DROP, uv1)
+	setActive(arg_2_0.battleBtn, var_2_10 and not var_2_8 and var_2_9)
+	setActive(arg_2_0.getBtn, var_2_8)
+	setActive(arg_2_0.gotBtn, not var_2_9)
+
+	local var_2_11 = arg_2_0.ptData:GetAward()
+
+	updateDrop(arg_2_0.awardTF, var_2_11)
+	onButton(arg_2_0, arg_2_0.awardTF, function()
+		arg_2_0:emit(BaseUI.ON_DROP, var_2_11)
 	end, SFX_PANEL)
 end
 
-return slot0
+return var_0_0

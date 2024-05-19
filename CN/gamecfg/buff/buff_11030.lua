@@ -1,4 +1,21 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				maxTargetNumber = 1,
+				quota = 1,
+				skill_id = 11030,
+				check_target = {
+					"TargetAllHelp",
+					"TargetPlayerVanguardFleet"
+				}
+			}
+		}
+	},
 	{
 		desc = "决死突袭"
 	},
@@ -39,22 +56,5 @@ return {
 	stack = 1,
 	id = 11030,
 	icon = 11030,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				maxTargetNumber = 1,
-				quota = 1,
-				skill_id = 11030,
-				check_target = {
-					"TargetAllHelp",
-					"TargetPlayerVanguardFleet"
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

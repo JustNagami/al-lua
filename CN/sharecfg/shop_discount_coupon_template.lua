@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.shop_discount_coupon_template = {
 	[70364] = {
 		id = 70364,

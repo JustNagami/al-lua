@@ -1,49 +1,55 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleEvent
-slot2 = slot0.Battle.BattleFormulas
-slot3 = slot0.Battle.BattleConst
-slot4 = slot0.Battle.BattleConfig
-slot5 = slot0.Battle.BattleDataFunction
-slot6 = slot0.Battle.BattleAttr
-slot7 = slot0.Battle.BattleVariable
-slot8 = slot0.Battle.BattleTargetChoise
-slot9 = class("BattleIndieSonar")
-slot0.Battle.BattleIndieSonar = slot9
-slot9.__name = "BattleIndieSonar"
+﻿ys = ys or {}
 
-function slot9.Ctor(slot0, slot1, slot2, slot3)
-	slot0._fleetVO = slot1
-	slot0._range = 180
-	slot0._duration = slot3
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleEvent
+local var_0_2 = var_0_0.Battle.BattleFormulas
+local var_0_3 = var_0_0.Battle.BattleConst
+local var_0_4 = var_0_0.Battle.BattleConfig
+local var_0_5 = var_0_0.Battle.BattleDataFunction
+local var_0_6 = var_0_0.Battle.BattleAttr
+local var_0_7 = var_0_0.Battle.BattleVariable
+local var_0_8 = var_0_0.Battle.BattleTargetChoise
+local var_0_9 = class("BattleIndieSonar")
+
+var_0_0.Battle.BattleIndieSonar = var_0_9
+var_0_9.__name = "BattleIndieSonar"
+
+function var_0_9.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0._fleetVO = arg_1_1
+	arg_1_0._range = 180
+	arg_1_0._duration = arg_1_3
 end
 
-function slot9.SwitchHost(slot0, slot1)
-	slot0._host = slot1
+function var_0_9.SwitchHost(arg_2_0, arg_2_1)
+	arg_2_0._host = arg_2_1
 end
 
-function slot9.Detect(slot0)
-	slot0._snoarStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
+function var_0_9.Detect(arg_3_0)
+	arg_3_0._snoarStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
 
-	for slot5, slot6 in ipairs(slot0:FilterTarget()) do
-		slot6:Detected(slot0._duration)
+	local var_3_0 = arg_3_0:FilterTarget()
+
+	for iter_3_0, iter_3_1 in ipairs(var_3_0) do
+		iter_3_1:Detected(arg_3_0._duration)
 	end
 
-	slot0._detectedList = slot1
+	arg_3_0._detectedList = var_3_0
 
-	slot0._fleetVO:DispatchSonarScan(true)
+	arg_3_0._fleetVO:DispatchSonarScan(true)
 end
 
-function slot9.Update(slot0, slot1)
-	if slot1 > slot0._snoarStartTime + slot0._duration then
-		slot0._detectedList = nil
+function var_0_9.Update(arg_4_0, arg_4_1)
+	if arg_4_1 > arg_4_0._snoarStartTime + arg_4_0._duration then
+		arg_4_0._detectedList = nil
 
-		slot0._fleetVO:RemoveIndieSonar(slot0)
+		arg_4_0._fleetVO:RemoveIndieSonar(arg_4_0)
 	end
 end
 
-function slot9.FilterTarget(slot0)
-	return uv0.TargetDiveState(slot0._host, {
-		diveState = uv1.OXY_STATE.DIVE
-	}, uv0.LegalTarget(slot0._host))
+function var_0_9.FilterTarget(arg_5_0)
+	local var_5_0 = var_0_8.LegalTarget(arg_5_0._host)
+
+	return (var_0_8.TargetDiveState(arg_5_0._host, {
+		diveState = var_0_3.OXY_STATE.DIVE
+	}, var_5_0))
 end

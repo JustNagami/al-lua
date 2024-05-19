@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "花之牌",
-	init_effect = "",
-	time = 5,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 11831,
-	icon = 11830,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkillRandom",
@@ -54,5 +33,26 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "花之牌",
+	init_effect = "",
+	time = 5,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 11831,
+	icon = 11830,
+	last_effect = ""
 }

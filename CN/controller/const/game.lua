@@ -1,4 +1,4 @@
-GAME = {
+﻿GAME = {
 	CANCEL_LEARN_TACTICS = "cancel learn tactics",
 	USER_REGISTER = "user register",
 	BACKYARD_SAVE_THEME_TEMPLATE = "backyard save theme template",

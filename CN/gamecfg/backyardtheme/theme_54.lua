@@ -1,3 +1,3 @@
-return {
+﻿return {
 	id = 54
 }

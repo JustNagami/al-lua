@@ -1,115 +1,128 @@
-slot0 = class("ShipCustomMsgBox", import("...base.BaseSubView"))
+﻿local var_0_0 = class("ShipCustomMsgBox", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ShipCustomMsgBox"
 end
 
-function slot0.OnInit(slot0)
-	slot0.customMsgbox = slot0._tf
-	slot0.msgBoxItemPanel = slot0.customMsgbox:Find("frame/bg/item_panel")
-	slot0.msgboxItemContains = slot0.customMsgbox:Find("frame/bg/item_panel/items")
-	slot0.msgBoxItemTpl = slot0.msgboxItemContains:Find("equipmenttpl")
-	slot0.msgBoxItemContent = slot0.customMsgbox:Find("frame/bg/item_panel/content")
-	slot0.msgBoxItemContent1 = slot0.customMsgbox:Find("frame/bg/item_panel/content_num")
-	slot0.msgBoxCancelBtn = slot0.customMsgbox:Find("frame/btns/cancel_btn")
-	slot0.msgBoxConfirmBtn = slot0.customMsgbox:Find("frame/btns/confirm_btn")
-	slot0.msgBoxContent = slot0.customMsgbox:Find("frame/bg/content")
-	slot0.msgBtnBack = slot0.customMsgbox:Find("frame/top/btnBack")
-	slot0.msgBoxTitle = slot0.customMsgbox:Find("frame/top/title_list/infomation/title")
-	slot0.msgBoxTitleEn = slot0.customMsgbox:Find("frame/top/title_list/infomation/title_en")
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0.customMsgbox = arg_2_0._tf
+	arg_2_0.msgBoxItemPanel = arg_2_0.customMsgbox:Find("frame/bg/item_panel")
+	arg_2_0.msgboxItemContains = arg_2_0.customMsgbox:Find("frame/bg/item_panel/items")
+	arg_2_0.msgBoxItemTpl = arg_2_0.msgboxItemContains:Find("equipmenttpl")
+	arg_2_0.msgBoxItemContent = arg_2_0.customMsgbox:Find("frame/bg/item_panel/content")
+	arg_2_0.msgBoxItemContent1 = arg_2_0.customMsgbox:Find("frame/bg/item_panel/content_num")
+	arg_2_0.msgBoxCancelBtn = arg_2_0.customMsgbox:Find("frame/btns/cancel_btn")
+	arg_2_0.msgBoxConfirmBtn = arg_2_0.customMsgbox:Find("frame/btns/confirm_btn")
+	arg_2_0.msgBoxContent = arg_2_0.customMsgbox:Find("frame/bg/content")
+	arg_2_0.msgBtnBack = arg_2_0.customMsgbox:Find("frame/top/btnBack")
+	arg_2_0.msgBoxTitle = arg_2_0.customMsgbox:Find("frame/top/title_list/infomation/title")
+	arg_2_0.msgBoxTitleEn = arg_2_0.customMsgbox:Find("frame/top/title_list/infomation/title_en")
 
-	SetActive(slot0.customMsgbox, false)
+	SetActive(arg_2_0.customMsgbox, false)
 
-	slot0.settings = {}
+	arg_2_0.settings = {}
 
-	onButton(slot0, slot0.msgBoxConfirmBtn, function ()
-		if uv0.settings.onYes then
-			uv0.settings.onYes()
+	onButton(arg_2_0, arg_2_0.msgBoxConfirmBtn, function()
+		if arg_2_0.settings.onYes then
+			arg_2_0.settings.onYes()
 		else
-			uv0:hideCustomMsgBox()
+			arg_2_0:hideCustomMsgBox()
 		end
 	end, SFX_PANEL)
-	SetActive(slot0.msgBoxCancelBtn, not defaultValue(slot0.settings.hideNO, false))
-	onButton(slot0, slot0.msgBoxCancelBtn, function ()
-		if uv0.settings.onCancel then
-			uv0.settings.onCancel()
+	SetActive(arg_2_0.msgBoxCancelBtn, not defaultValue(arg_2_0.settings.hideNO, false))
+	onButton(arg_2_0, arg_2_0.msgBoxCancelBtn, function()
+		if arg_2_0.settings.onCancel then
+			arg_2_0.settings.onCancel()
 		else
-			uv0:hideCustomMsgBox()
+			arg_2_0:hideCustomMsgBox()
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.customMsgbox, function ()
-		uv0:hideCustomMsgBox()
+	onButton(arg_2_0, arg_2_0.customMsgbox, function()
+		arg_2_0:hideCustomMsgBox()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.msgBtnBack, function ()
-		uv0:hideCustomMsgBox()
+	onButton(arg_2_0, arg_2_0.msgBtnBack, function()
+		arg_2_0:hideCustomMsgBox()
 	end, SFX_CANCEL)
 end
 
-function slot0.SetShareData(slot0, slot1)
-	slot0.shareData = slot1
+function var_0_0.SetShareData(arg_7_0, arg_7_1)
+	arg_7_0.shareData = arg_7_1
 end
 
-function slot0.showCustomMsgBox(slot0, slot1)
-	slot0.isShowCustomMsgBox = true
-	slot0.settings = slot1
+function var_0_0.showCustomMsgBox(arg_8_0, arg_8_1)
+	arg_8_0.isShowCustomMsgBox = true
+	arg_8_0.settings = arg_8_1
 
-	setActive(slot0.customMsgbox, true)
-	pg.UIMgr.GetInstance():OverlayPanel(slot0.customMsgbox, {
+	setActive(arg_8_0.customMsgbox, true)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_8_0.customMsgbox, {
 		groupName = LayerWeightConst.GROUP_SHIPINFOUI
 	})
 
-	slot2 = slot1.items and #slot1.items > 0
+	local var_8_0 = arg_8_1.items and #arg_8_1.items > 0
 
-	setActive(slot0.msgBoxItemPanel, slot2)
-	setActive(slot0.msgBoxContent, not slot2)
+	setActive(arg_8_0.msgBoxItemPanel, var_8_0)
+	setActive(arg_8_0.msgBoxContent, not var_8_0)
 
-	if slot2 then
-		for slot8 = slot0.msgboxItemContains.childCount + 1, #slot1.items do
-			cloneTplTo(slot0.msgBoxItemTpl, slot0.msgboxItemContains)
+	if var_8_0 then
+		local var_8_1 = arg_8_1.items
+
+		for iter_8_0 = arg_8_0.msgboxItemContains.childCount + 1, #var_8_1 do
+			cloneTplTo(arg_8_0.msgBoxItemTpl, arg_8_0.msgboxItemContains)
 		end
 
-		for slot8 = 1, slot0.msgboxItemContains.childCount do
-			SetActive(slot0.msgboxItemContains:GetChild(slot8 - 1), slot8 <= #slot3)
+		local var_8_2 = arg_8_0.msgboxItemContains.childCount
 
-			if slot8 <= #slot3 then
-				slot10 = slot3[slot8]
+		for iter_8_1 = 1, var_8_2 do
+			local var_8_3 = arg_8_0.msgboxItemContains:GetChild(iter_8_1 - 1)
 
-				updateDrop(slot9, slot10)
+			SetActive(var_8_3, iter_8_1 <= #var_8_1)
 
-				slot11 = 0
+			if iter_8_1 <= #var_8_1 then
+				local var_8_4 = var_8_1[iter_8_1]
 
-				if slot10.type == DROP_TYPE_RESOURCE then
-					slot11 = slot0.shareData.player:getResById(slot10.id)
-				elseif slot10.type == DROP_TYPE_ITEM then
-					slot11 = getProxy(BagProxy):getItemCountById(slot10.id)
+				updateDrop(var_8_3, var_8_4)
+
+				local var_8_5 = 0
+
+				if var_8_4.type == DROP_TYPE_RESOURCE then
+					var_8_5 = arg_8_0.shareData.player:getResById(var_8_4.id)
+				elseif var_8_4.type == DROP_TYPE_ITEM then
+					var_8_5 = getProxy(BagProxy):getItemCountById(var_8_4.id)
 				end
 
-				setText(slot9:Find("icon_bg/count"), (slot11 < slot10.count and "<color=#D6341DFF>" .. slot11 .. "</color>" or "<color=#A9F548FF>" .. slot11 .. "</color>") .. "/" .. slot12)
+				local var_8_6 = var_8_4.count
+
+				var_8_5 = var_8_5 < var_8_6 and "<color=#D6341DFF>" .. var_8_5 .. "</color>" or "<color=#A9F548FF>" .. var_8_5 .. "</color>"
+
+				setText(var_8_3:Find("icon_bg/count"), var_8_5 .. "/" .. var_8_6)
 			end
 		end
 
-		setText(slot0.msgBoxItemContent, slot1.content or "")
-		setText(slot0.msgBoxItemContent1, slot1.content1 or "")
+		setText(arg_8_0.msgBoxItemContent, arg_8_1.content or "")
+		setText(arg_8_0.msgBoxItemContent1, arg_8_1.content1 or "")
 	else
-		setText(slot0.msgBoxContent, slot1.content or "")
+		setText(arg_8_0.msgBoxContent, arg_8_1.content or "")
 	end
 
-	if slot1.title then
-		setText(slot0.msgBoxTitle, slot1.title.title)
-		setText(slot0.msgBoxTitleEn, slot1.title.titleEn or "")
+	if arg_8_1.title then
+		local var_8_7 = arg_8_1.title.title
+		local var_8_8 = arg_8_1.title.titleEn
+
+		setText(arg_8_0.msgBoxTitle, var_8_7)
+		setText(arg_8_0.msgBoxTitleEn, var_8_8 or "")
 	end
 end
 
-function slot0.hideCustomMsgBox(slot0)
-	slot0.isShowCustomMsgBox = nil
+function var_0_0.hideCustomMsgBox(arg_9_0)
+	arg_9_0.isShowCustomMsgBox = nil
 
-	SetActive(slot0.customMsgbox, false)
+	SetActive(arg_9_0.customMsgbox, false)
 end
 
-function slot0.OnDestroy(slot0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.customMsgbox, slot0._tf)
+function var_0_0.OnDestroy(arg_10_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_10_0.customMsgbox, arg_10_0._tf)
 
-	slot0.shareData = nil
+	arg_10_0.shareData = nil
 end
 
-return slot0
+return var_0_0

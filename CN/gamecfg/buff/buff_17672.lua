@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "",
-	init_effect = "",
-	time = 8,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 17672,
-	icon = 17670,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -42,5 +21,26 @@ return {
 				tag = "xiongmeng"
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "",
+	init_effect = "",
+	time = 8,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 17672,
+	icon = 17670,
+	last_effect = ""
 }

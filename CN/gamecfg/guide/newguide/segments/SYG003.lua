@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"<color=#ff7d36>军事委托</color>从这里进入",
 	"前往<color=#ff7d36>军事委托</color>",
 	"这里显示着今日的所有委托，<color=#ff7d36>每个委托耗时不同，消耗与奖励也不同</color>",
@@ -17,12 +17,12 @@ return {
 				mode = 2,
 				posY = 89.6,
 				posX = 186.59,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/right/combatBtn",
 				pathIndex = -1,
-				onClick = function ()
+				onClick = function()
 					pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
 						mapIdx = 1,
 						noRecord = true
@@ -44,7 +44,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/LevelMainScene(Clone)/main/right_chapter/event_btns/event_container/btn_task",
@@ -65,7 +65,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[3]
+				text = var_0_0[3]
 			}
 		},
 		{
@@ -75,7 +75,7 @@ return {
 				mode = 2,
 				posY = -69.9,
 				posX = -271.7,
-				text = slot0[4]
+				text = var_0_0[4]
 			},
 			ui = {
 				delay = 1,
@@ -98,7 +98,7 @@ return {
 				mode = 2,
 				posY = 175.56,
 				posX = -231.6,
-				text = slot0[5]
+				text = var_0_0[5]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/EventUI(Clone)/blur_panel/adapt/left_length/frame/scroll_rect/tagRoot/urgency_btn",
@@ -119,7 +119,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[6]
+				text = var_0_0[6]
 			}
 		}
 	}

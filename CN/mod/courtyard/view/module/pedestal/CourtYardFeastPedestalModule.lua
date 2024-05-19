@@ -1,31 +1,34 @@
-slot0 = class("CourtYardFeastPedestalModule", import("..CourtYardBaseModule"))
+﻿local var_0_0 = class("CourtYardFeastPedestalModule", import("..CourtYardBaseModule"))
 
-function slot0.OnInit(slot0)
-	slot0.storey = slot0.data
-	slot0.scrollView = slot0._tf.parent:Find("scroll_view")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.storey = arg_1_0.data
+	arg_1_0.scrollView = arg_1_0._tf.parent:Find("scroll_view")
 end
 
-function slot0.AddListeners(slot0)
-	slot0:AddListener(CourtYardEvent.UPDATE_STOREY, slot0.OnUpdate)
+function var_0_0.AddListeners(arg_2_0)
+	arg_2_0:AddListener(CourtYardEvent.UPDATE_STOREY, arg_2_0.OnUpdate)
 end
 
-function slot0.RemoveListeners(slot0)
-	slot0:RemoveListener(CourtYardEvent.UPDATE_STOREY, slot0.OnUpdate)
+function var_0_0.RemoveListeners(arg_3_0)
+	arg_3_0:RemoveListener(CourtYardEvent.UPDATE_STOREY, arg_3_0.OnUpdate)
 end
 
-function slot0.OnUpdate(slot0, slot1)
-	slot0.level = slot1
+function var_0_0.OnUpdate(arg_4_0, arg_4_1)
+	arg_4_0.level = arg_4_1
 
-	slot0:InitScrollRect(slot1)
+	arg_4_0:InitScrollRect(arg_4_1)
 end
 
-function slot0.InitScrollRect(slot0, slot1)
-	slot0._tf.sizeDelta = Vector2(slot0._tf.sizeDelta.x, 1080 + (slot1 - 1) * 150)
+function var_0_0.InitScrollRect(arg_5_0, arg_5_1)
+	local var_5_0 = 1080 + (arg_5_1 - 1) * 150
 
-	scrollTo(slot0.scrollView, 0.5, 0.5)
+	arg_5_0._tf.sizeDelta = Vector2(arg_5_0._tf.sizeDelta.x, var_5_0)
+
+	scrollTo(arg_5_0.scrollView, 0.5, 0.5)
 end
 
-function slot0.OnDispose(slot0)
+function var_0_0.OnDispose(arg_6_0)
+	return
 end
 
-return slot0
+return var_0_0

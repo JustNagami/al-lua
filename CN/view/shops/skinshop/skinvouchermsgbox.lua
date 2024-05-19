@@ -1,109 +1,121 @@
-slot0 = class("SkinVoucherMsgBox", import(".SkinCouponMsgBox"))
+﻿local var_0_0 = class("SkinVoucherMsgBox", import(".SkinCouponMsgBox"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "SkinVoucherMsgBoxUI"
 end
 
-function slot0.OnLoaded(slot0)
-	uv0.super.OnLoaded(slot0)
-	setActive(slot0.confirmBtn, false)
+function var_0_0.OnLoaded(arg_2_0)
+	var_0_0.super.OnLoaded(arg_2_0)
+	setActive(arg_2_0.confirmBtn, false)
 
-	slot0.realPriceBtn = slot0:findTF("window/button_container/real_price")
-	slot0.discountPriceBtn = slot0:findTF("window/button_container/discount_price")
+	arg_2_0.realPriceBtn = arg_2_0:findTF("window/button_container/real_price")
+	arg_2_0.discountPriceBtn = arg_2_0:findTF("window/button_container/discount_price")
 
-	setText(slot0._tf:Find("window/top/bg/infomation/title"), i18n("title_info"))
+	setText(arg_2_0._tf:Find("window/top/bg/infomation/title"), i18n("title_info"))
 end
 
-function slot0.RegisterBtn(slot0, slot1)
-	onButton(slot0, slot0.discountPriceBtn, function ()
-		if not uv0.prevSelId then
+function var_0_0.RegisterBtn(arg_3_0, arg_3_1)
+	onButton(arg_3_0, arg_3_0.discountPriceBtn, function()
+		if not arg_3_0.prevSelId then
 			return
 		end
 
-		if uv1.onYes then
-			uv1.onYes(uv0.prevSelId)
+		if arg_3_1.onYes then
+			arg_3_1.onYes(arg_3_0.prevSelId)
 		end
 
-		uv0:Hide()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.realPriceBtn, function ()
-		if uv0.onYes then
-			uv0.onYes()
+	onButton(arg_3_0, arg_3_0.realPriceBtn, function()
+		if arg_3_1.onYes then
+			arg_3_1.onYes()
 		end
 
-		uv1:Hide()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.UpdateContent(slot0, slot1)
-	if slot0.prevSelId then
-		slot0.label1.text = i18n(math.max(0, slot1.price - pg.item_data_statistics[slot0.prevSelId].usage_arg[2]) > 0 and "skin_purchase_confirm" or "skin_purchase_over_price", slot4.name, slot6, slot1.skinName)
+function var_0_0.UpdateContent(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1.skinName
+	local var_6_1 = arg_6_1.price
+
+	if arg_6_0.prevSelId then
+		local var_6_2 = pg.item_data_statistics[arg_6_0.prevSelId]
+		local var_6_3 = var_6_2.usage_arg[2]
+		local var_6_4 = math.max(0, var_6_1 - var_6_3)
+
+		arg_6_0.label1.text = i18n(var_6_4 > 0 and "skin_purchase_confirm" or "skin_purchase_over_price", var_6_2.name, var_6_4, var_6_0)
 	else
-		slot0.label1.text = i18n("charge_scene_buy_confirm", slot3, slot2)
+		arg_6_0.label1.text = i18n("charge_scene_buy_confirm", var_6_1, var_6_0)
 	end
 
-	setActive(slot0.realPriceBtn, not slot0.prevSelId)
-	setActive(slot0.discountPriceBtn, slot0.prevSelId)
+	setActive(arg_6_0.realPriceBtn, not arg_6_0.prevSelId)
+	setActive(arg_6_0.discountPriceBtn, arg_6_0.prevSelId)
 end
 
-function slot0.UpdateItem(slot0, slot1)
-	slot0.itemTrs = {}
+function var_0_0.UpdateItem(arg_7_0, arg_7_1)
+	arg_7_0.itemTrs = {}
 
-	UIItemList.StaticAlign(slot0:findTF("window/frame/list"), slot0:findTF("window/frame/left"), #table.mergeArray({
+	local var_7_0 = table.mergeArray({
 		0
-	}, slot1.itemList or {}), function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:FlushItem(uv1[slot1 + 1], slot2)
+	}, arg_7_1.itemList or {})
+
+	UIItemList.StaticAlign(arg_7_0:findTF("window/frame/list"), arg_7_0:findTF("window/frame/left"), #var_7_0, function(arg_8_0, arg_8_1, arg_8_2)
+		if arg_8_0 == UIItemList.EventUpdate then
+			arg_7_0:FlushItem(var_7_0[arg_8_1 + 1], arg_8_2)
 		end
 	end)
-	triggerToggle(slot0:findTF("window/frame/list/none"), true)
+	triggerToggle(arg_7_0:findTF("window/frame/list/none"), true)
 end
 
-function slot0.FlushItem(slot0, slot1, slot2)
-	if slot1 == 0 then
-		setText(slot2:Find("name_bg/Text"), i18n("not_use_ticket_to_buy_skin"))
+function var_0_0.FlushItem(arg_9_0, arg_9_1, arg_9_2)
+	if arg_9_1 == 0 then
+		setText(arg_9_2:Find("name_bg/Text"), i18n("not_use_ticket_to_buy_skin"))
 	else
-		updateDrop(slot2, {
+		updateDrop(arg_9_2, {
 			count = 1,
 			type = DROP_TYPE_ITEM,
-			id = slot1
+			id = arg_9_1
 		})
-		setText(slot2:Find("name_bg/Text"), pg.item_data_statistics[slot1].name)
+
+		local var_9_0 = pg.item_data_statistics[arg_9_1].name
+
+		setText(arg_9_2:Find("name_bg/Text"), var_9_0)
 	end
 
-	onToggle(slot0, slot2, function (slot0)
-		if slot0 then
-			if uv0 == 0 then
-				uv1.prevSelId = nil
+	onToggle(arg_9_0, arg_9_2, function(arg_10_0)
+		if arg_10_0 then
+			if arg_9_1 == 0 then
+				arg_9_0.prevSelId = nil
 
-				uv1:UpdateContent(uv1.settings)
+				arg_9_0:UpdateContent(arg_9_0.settings)
 			else
-				uv1:ClearPrevSel()
+				arg_9_0:ClearPrevSel()
 
-				uv1.prevSelId = uv0
+				arg_9_0.prevSelId = arg_9_1
 
-				uv1:UpdateContent(uv1.settings)
+				arg_9_0:UpdateContent(arg_9_0.settings)
 			end
 		end
 	end, SFX_PANEL)
 
-	slot0.itemTrs[slot1] = slot2
+	arg_9_0.itemTrs[arg_9_1] = arg_9_2
 end
 
-function slot0.ClearPrevSel(slot0)
-	slot0.prevSelId = nil
+function var_0_0.ClearPrevSel(arg_11_0)
+	arg_11_0.prevSelId = nil
 end
 
-function slot0.Hide(slot0)
-	slot0.settings = nil
+function var_0_0.Hide(arg_12_0)
+	arg_12_0.settings = nil
 
-	setActive(slot0._tf, false)
-	slot0:ClearPrevSel()
+	setActive(arg_12_0._tf, false)
+	arg_12_0:ClearPrevSel()
 
-	for slot4, slot5 in pairs(slot0.itemTrs) do
-		removeOnToggle(slot5)
-		triggerToggle(slot5, false)
+	for iter_12_0, iter_12_1 in pairs(arg_12_0.itemTrs) do
+		removeOnToggle(iter_12_1)
+		triggerToggle(iter_12_1, false)
 	end
 end
 
-return slot0
+return var_0_0

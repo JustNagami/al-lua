@@ -1,66 +1,71 @@
-slot2 = class("DynamicChampionCellView", DecorateClass(import(".DynamicCellView"), import(".ChampionCellView")))
+﻿local var_0_0 = import(".DynamicCellView")
+local var_0_1 = import(".ChampionCellView")
+local var_0_2 = class("DynamicChampionCellView", DecorateClass(var_0_0, var_0_1))
 
-function slot2.Ctor(slot0, slot1)
-	uv0.Ctor(slot0, slot1)
-	uv1.Ctor(slot0)
-	uv1.InitChampionCellTransform(slot0)
+function var_0_2.Ctor(arg_1_0, arg_1_1)
+	var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_1.Ctor(arg_1_0)
+	var_0_1.InitChampionCellTransform(arg_1_0)
 end
 
-function slot2.GetOrder(slot0)
+function var_0_2.GetOrder(arg_2_0)
 	return ChapterConst.CellPriorityEnemy
 end
 
-function slot2.SetActive(slot0, slot1)
-	slot0:SetActiveModel(slot1)
+function var_0_2.SetActive(arg_3_0, arg_3_1)
+	arg_3_0:SetActiveModel(arg_3_1)
 end
 
-function slot2.SetActiveModel(slot0, slot1)
-	slot0:SetSpineVisible(slot1)
-	setActive(slot0.tfShadow, slot1)
+function var_0_2.SetActiveModel(arg_4_0, arg_4_1)
+	arg_4_0:SetSpineVisible(arg_4_1)
+	setActive(arg_4_0.tfShadow, arg_4_1)
 
-	for slot5, slot6 in pairs(slot0._extraEffectList) do
-		if not IsNil(slot6) then
-			setActive(slot6, slot1)
+	for iter_4_0, iter_4_1 in pairs(arg_4_0._extraEffectList) do
+		if not IsNil(iter_4_1) then
+			setActive(iter_4_1, arg_4_1)
 		end
 	end
 end
 
-function slot2.PlayShuiHua()
+function var_0_2.PlayShuiHua()
+	return
 end
 
-function slot2.UpdateChampionCell(slot0, slot1, slot2, slot3)
-	uv0.UpdateChampionCell(slot0, slot1, slot2, slot3)
-	slot0:RefreshLinePosition(slot1, slot2)
+function var_0_2.UpdateChampionCell(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+	var_0_1.UpdateChampionCell(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+	arg_6_0:RefreshLinePosition(arg_6_1, arg_6_2)
 end
 
-function slot2.TweenShining(slot0, slot1)
-	slot0:StopTween()
+function var_0_2.TweenShining(arg_7_0, arg_7_1)
+	arg_7_0:StopTween()
 
-	if not slot0:GetSpineRole() then
+	local var_7_0 = arg_7_0:GetSpineRole()
+
+	if not var_7_0 then
 		return
 	end
 
-	slot2:TweenShining(0.5, slot1, 0, 1, Color.New(0, 0, 0, 0), Color.New(1, 1, 1, 1), true, true)
+	var_7_0:TweenShining(0.5, arg_7_1, 0, 1, Color.New(0, 0, 0, 0), Color.New(1, 1, 1, 1), true, true)
 end
 
-function slot2.StopTween(slot0)
-	if not slot0.tweenId then
+function var_0_2.StopTween(arg_8_0)
+	if not arg_8_0.tweenId then
 		return
 	end
 
-	LeanTween.cancel(slot0.tweenId, true)
+	LeanTween.cancel(arg_8_0.tweenId, true)
 
-	slot0.tweenId = nil
+	arg_8_0.tweenId = nil
 end
 
-function slot2.Clear(slot0)
-	slot0:StopTween()
+function var_0_2.Clear(arg_9_0)
+	arg_9_0:StopTween()
 
-	if slot0.go then
-		LeanTween.cancel(slot0.go)
+	if arg_9_0.go then
+		LeanTween.cancel(arg_9_0.go)
 	end
 
-	uv0.Clear(slot0)
+	var_0_1.Clear(arg_9_0)
 end
 
-return slot2
+return var_0_2

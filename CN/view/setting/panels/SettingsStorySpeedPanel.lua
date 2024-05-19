@@ -1,36 +1,43 @@
-slot0 = class("SettingsStorySpeedPanel", import(".SettingsBasePanel"))
+﻿local var_0_0 = class("SettingsStorySpeedPanel", import(".SettingsBasePanel"))
 
-function slot0.GetUIName(slot0)
+function var_0_0.GetUIName(arg_1_0)
 	return "SettingsStorySpeed"
 end
 
-function slot0.GetTitle(slot0)
+function var_0_0.GetTitle(arg_2_0)
 	return i18n("story_setting_label")
 end
 
-function slot0.GetTitleEn(slot0)
+function var_0_0.GetTitleEn(arg_3_0)
 	return "  / AUTO SPEED"
 end
 
-function slot0.OnInit(slot0)
-	slot0.btns = {}
+function var_0_0.OnInit(arg_4_0)
+	local var_4_0 = arg_4_0._tf:Find("speeds")
 
-	for slot5 = 1, slot0._tf:Find("speeds").childCount do
-		slot6 = slot1:GetChild(slot5 - 1)
+	arg_4_0.btns = {}
 
-		onToggle(slot0, slot6, function (slot0)
-			if slot0 then
-				getProxy(SettingsProxy):SetStorySpeed(Story.STORY_AUTO_SPEED[uv0])
+	for iter_4_0 = 1, var_4_0.childCount do
+		local var_4_1 = var_4_0:GetChild(iter_4_0 - 1)
+
+		onToggle(arg_4_0, var_4_1, function(arg_5_0)
+			if arg_5_0 then
+				local var_5_0 = Story.STORY_AUTO_SPEED[iter_4_0]
+
+				getProxy(SettingsProxy):SetStorySpeed(var_5_0)
 			end
 		end, SFX_PANEL)
-		setText(slot6:Find("Text"), i18n("setting_story_speed_" .. slot5))
+		setText(var_4_1:Find("Text"), i18n("setting_story_speed_" .. iter_4_0))
 
-		slot0.btns[slot5] = slot6
+		arg_4_0.btns[iter_4_0] = var_4_1
 	end
 end
 
-function slot0.OnUpdate(slot0)
-	triggerToggle(slot0.btns[table.indexof(Story.STORY_AUTO_SPEED, getProxy(SettingsProxy):GetStorySpeed()) or 2], true)
+function var_0_0.OnUpdate(arg_6_0)
+	local var_6_0 = getProxy(SettingsProxy):GetStorySpeed()
+	local var_6_1 = table.indexof(Story.STORY_AUTO_SPEED, var_6_0) or 2
+
+	triggerToggle(arg_6_0.btns[var_6_1], true)
 end
 
-return slot0
+return var_0_0

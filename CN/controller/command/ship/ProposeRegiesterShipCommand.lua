@@ -1,30 +1,33 @@
-slot0 = class("ProposeRegiesterShipCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ProposeRegiesterShipCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	if not getProxy(BayProxy):getShipById(slot1:getBody().shipId) then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", slot3))
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().shipId
+	local var_1_1 = getProxy(BayProxy):getShipById(var_1_0)
+
+	if not var_1_1 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", var_1_0))
 
 		return
 	end
 
-	if not slot5.propose or slot5:ShowPropose() then
+	if not var_1_1.propose or var_1_1:ShowPropose() then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(12032, {
-		ship_id = slot3
-	}, 12033, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(PlayerProxy)
-			slot2 = slot1:getData()
+		ship_id = var_1_0
+	}, 12033, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(PlayerProxy)
+			local var_2_1 = var_2_0:getData()
 
-			slot2:SetProposeShipId(uv0)
-			slot1:updatePlayer(slot2)
-			uv1:sendNotification(GAME.PROPOSE_REGISTER_SHIP_DONE)
+			var_2_1:SetProposeShipId(var_1_0)
+			var_2_0:updatePlayer(var_2_1)
+			arg_1_0:sendNotification(GAME.PROPOSE_REGISTER_SHIP_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_proposeShip", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_proposeShip", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

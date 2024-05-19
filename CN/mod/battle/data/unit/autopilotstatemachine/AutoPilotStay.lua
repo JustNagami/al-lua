@@ -1,16 +1,18 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("AutoPilotStay", slot0.Battle.IPilot)
-slot0.Battle.AutoPilotStay = slot1
-slot1.__name = "AutoPilotStay"
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, ...)
-	uv0.super.Ctor(slot0, ...)
+local var_0_0 = ys
+local var_0_1 = class("AutoPilotStay", var_0_0.Battle.IPilot)
+
+var_0_0.Battle.AutoPilotStay = var_0_1
+var_0_1.__name = "AutoPilotStay"
+
+function var_0_1.Ctor(arg_1_0, ...)
+	var_0_1.super.Ctor(arg_1_0, ...)
 end
 
-function slot1.GetDirection(slot0)
-	if slot0:IsExpired() then
-		slot0:Finish()
+function var_0_1.GetDirection(arg_2_0)
+	if arg_2_0:IsExpired() then
+		arg_2_0:Finish()
 	end
 
 	return Vector3.zero

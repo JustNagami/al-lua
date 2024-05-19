@@ -1,118 +1,119 @@
-slot0 = class("RectCollider")
-slot1 = 1 / (Application.targetFrameRate or 60)
+﻿local var_0_0 = class("RectCollider")
+local var_0_1 = 1 / (Application.targetFrameRate or 60)
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	slot0._tf = slot1
-	slot0._animTf = findTF(slot1, "anim")
-	slot0._config = slot2
-	slot0._event = slot3
-	slot0.scriptList = {}
-	slot0._scripts = {}
-	slot0._collisionInfo = RectCollisionInfo.New(slot0._config, slot0._tf)
-	slot0._collisionInfo.frameRate = uv0
-	slot0._keyInfo = RectKeyInfo.New()
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0._tf = arg_1_1
+	arg_1_0._animTf = findTF(arg_1_1, "anim")
+	arg_1_0._config = arg_1_2
+	arg_1_0._event = arg_1_3
+	arg_1_0.scriptList = {}
+	arg_1_0._scripts = {}
+	arg_1_0._collisionInfo = RectCollisionInfo.New(arg_1_0._config, arg_1_0._tf)
+	arg_1_0._collisionInfo.frameRate = var_0_1
+	arg_1_0._keyInfo = RectKeyInfo.New()
 
-	slot0._keyInfo:setTriggerCallback(function (slot0, slot1)
-		uv0:onKeyTrigger(slot0, slot1)
+	arg_1_0._keyInfo:setTriggerCallback(function(arg_2_0, arg_2_1)
+		arg_1_0:onKeyTrigger(arg_2_0, arg_2_1)
 	end)
 
-	slot0._keyTrigger = RectKeyTriggerController.New(slot0._keyInfo)
-	slot0.initFlag = false
+	arg_1_0._keyTrigger = RectKeyTriggerController.New(arg_1_0._keyInfo)
+	arg_1_0.initFlag = false
 end
 
-function slot0.onInit(slot0)
-	slot0._translateVelocity = Vector2(0, 0)
-	slot0._collider2d = GetComponent(findTF(slot0._tf, "collider"), typeof(BoxCollider2D))
-	slot0._origins = RectOriginsCom.New(slot0._collider2d)
-	slot0.colliderController = RectColliderController.New(slot0._collisionInfo, slot0._origins)
+function var_0_0.onInit(arg_3_0)
+	arg_3_0._translateVelocity = Vector2(0, 0)
+	arg_3_0._collider2d = GetComponent(findTF(arg_3_0._tf, "collider"), typeof(BoxCollider2D))
+	arg_3_0._origins = RectOriginsCom.New(arg_3_0._collider2d)
+	arg_3_0.colliderController = RectColliderController.New(arg_3_0._collisionInfo, arg_3_0._origins)
 end
 
-function slot0.clear(slot0)
-	if slot0._collisionInfo.script then
-		slot0._collisionInfo.script:active(false)
-		slot0._collisionInfo:removeScript()
+function var_0_0.clear(arg_4_0)
+	if arg_4_0._collisionInfo.script then
+		arg_4_0._collisionInfo.script:active(false)
+		arg_4_0._collisionInfo:removeScript()
 	end
 
-	slot0._keyTrigger:destroy()
+	arg_4_0._keyTrigger:destroy()
 end
 
-function slot0.addScript(slot0, slot1)
-	slot1:setData(slot0._collisionInfo, slot0._keyInfo, slot0._event)
+function var_0_0.addScript(arg_5_0, arg_5_1)
+	arg_5_1:setData(arg_5_0._collisionInfo, arg_5_0._keyInfo, arg_5_0._event)
 
-	slot0.scriptList[slot1.__cname] = slot1
+	arg_5_0.scriptList[arg_5_1.__cname] = arg_5_1
 
-	table.insert(slot0._scripts, slot1)
+	table.insert(arg_5_0._scripts, arg_5_1)
 
-	if #slot0._scripts >= 2 then
-		table.sort(slot0._scripts, function (slot0, slot1)
-			return slot0:getWeight() < slot1:getWeight()
+	if #arg_5_0._scripts >= 2 then
+		table.sort(arg_5_0._scripts, function(arg_6_0, arg_6_1)
+			return arg_6_0:getWeight() < arg_6_1:getWeight()
 		end)
 	end
 end
 
-function slot0.addScripts(slot0, slot1)
-	for slot5 = 1, #slot1 do
-		slot0:addScript(slot1[slot5])
+function var_0_0.addScripts(arg_7_0, arg_7_1)
+	for iter_7_0 = 1, #arg_7_1 do
+		arg_7_0:addScript(arg_7_1[iter_7_0])
 	end
 end
 
-function slot0.start(slot0)
-	slot0._collisionInfo:removeScript()
+function var_0_0.start(arg_8_0)
+	arg_8_0._collisionInfo:removeScript()
 
-	for slot4, slot5 in ipairs(slot0._scripts) do
-		slot5:active(false)
+	for iter_8_0, iter_8_1 in ipairs(arg_8_0._scripts) do
+		iter_8_1:active(false)
 	end
 end
 
-function slot0.step(slot0)
-	if not slot0.initFlag then
-		slot0.initFlag = true
+function var_0_0.step(arg_9_0)
+	if not arg_9_0.initFlag then
+		arg_9_0.initFlag = true
 
-		slot0:onInit()
+		arg_9_0:onInit()
 	end
 
-	for slot4, slot5 in ipairs(slot0._scripts) do
-		slot5:step()
+	for iter_9_0, iter_9_1 in ipairs(arg_9_0._scripts) do
+		iter_9_1:step()
 	end
 
-	slot1 = slot0._collisionInfo:getVelocity()
-	slot0._translateVelocity.x = slot1.x * slot0._collisionInfo.frameRate
-	slot0._translateVelocity.y = slot1.y * slot0._collisionInfo.frameRate
+	local var_9_0 = arg_9_0._collisionInfo:getVelocity()
 
-	slot0.colliderController:move(slot0._translateVelocity)
-	slot0._tf:Translate(slot0._translateVelocity)
-	slot0._collisionInfo:setPos(slot0._tf.anchoredPosition)
+	arg_9_0._translateVelocity.x = var_9_0.x * arg_9_0._collisionInfo.frameRate
+	arg_9_0._translateVelocity.y = var_9_0.y * arg_9_0._collisionInfo.frameRate
 
-	if slot0._collisionInfo.directionalInput.x ~= 0 and math.sign(slot0._tf.localScale.x) ~= slot0._collisionInfo.directionalInput.x then
-		slot0._tf.localScale = Vector3(slot0._tf.localScale.x * -1, slot0._tf.localScale.y, slot0._tf.localScale.z)
+	arg_9_0.colliderController:move(arg_9_0._translateVelocity)
+	arg_9_0._tf:Translate(arg_9_0._translateVelocity)
+	arg_9_0._collisionInfo:setPos(arg_9_0._tf.anchoredPosition)
+
+	if arg_9_0._collisionInfo.directionalInput.x ~= 0 and math.sign(arg_9_0._tf.localScale.x) ~= arg_9_0._collisionInfo.directionalInput.x then
+		arg_9_0._tf.localScale = Vector3(arg_9_0._tf.localScale.x * -1, arg_9_0._tf.localScale.y, arg_9_0._tf.localScale.z)
 	end
 
-	for slot5, slot6 in ipairs(slot0._scripts) do
-		slot6:lateStep()
+	for iter_9_2, iter_9_3 in ipairs(arg_9_0._scripts) do
+		iter_9_3:lateStep()
 	end
 
-	if slot0._collisionInfo.script and slot0._collisionInfo.scriptTime then
-		slot0._collisionInfo.scriptTime = slot0._collisionInfo.scriptTime - slot0._collisionInfo.frameRate
+	if arg_9_0._collisionInfo.script and arg_9_0._collisionInfo.scriptTime then
+		arg_9_0._collisionInfo.scriptTime = arg_9_0._collisionInfo.scriptTime - arg_9_0._collisionInfo.frameRate
 
-		if slot0._collisionInfo.scriptTime <= 0 then
-			slot0._collisionInfo.script:active(false)
-			slot0._collisionInfo:removeScript()
+		if arg_9_0._collisionInfo.scriptTime <= 0 then
+			arg_9_0._collisionInfo.script:active(false)
+			arg_9_0._collisionInfo:removeScript()
 		end
 	end
 end
 
-function slot0.onKeyTrigger(slot0, slot1, slot2)
-	for slot6, slot7 in pairs(slot0.scriptList) do
-		slot7:keyTrigger(slot1, slot2)
+function var_0_0.onKeyTrigger(arg_10_0, arg_10_1, arg_10_2)
+	for iter_10_0, iter_10_1 in pairs(arg_10_0.scriptList) do
+		iter_10_1:keyTrigger(arg_10_1, arg_10_2)
 	end
 end
 
-function slot0.getCollisionInfo(slot0)
-	return slot0._collisionInfo
+function var_0_0.getCollisionInfo(arg_11_0)
+	return arg_11_0._collisionInfo
 end
 
-function slot0.getScript(slot0, slot1)
-	return slot0.scriptList[slot1.__cname] or nil
+function var_0_0.getScript(arg_12_0, arg_12_1)
+	return arg_12_0.scriptList[arg_12_1.__cname] or nil
 end
 
-return slot0
+return var_0_0

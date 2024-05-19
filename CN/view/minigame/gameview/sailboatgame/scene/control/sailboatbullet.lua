@@ -1,201 +1,214 @@
-slot0 = class("SailBoatBullet")
-slot1 = nil
+﻿local var_0_0 = class("SailBoatBullet")
+local var_0_1
 
-function slot0.Ctor(slot0, slot1, slot2)
-	uv0 = SailBoatGameVo
-	slot0._tf = slot1
-	slot0._eventCall = slot2
-	slot0._collider = GetComponent(findTF(slot0._tf, "bound"), typeof(BoxCollider2D))
-	slot0._img = GetComponent(findTF(slot0._tf, "img"), typeof(Image))
-	slot0._weaponData = nil
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_1 = SailBoatGameVo
+	arg_1_0._tf = arg_1_1
+	arg_1_0._eventCall = arg_1_2
+	arg_1_0._collider = GetComponent(findTF(arg_1_0._tf, "bound"), typeof(BoxCollider2D))
+	arg_1_0._img = GetComponent(findTF(arg_1_0._tf, "img"), typeof(Image))
+	arg_1_0._weaponData = nil
 end
 
-function slot0.setData(slot0, slot1)
-	slot0._data = slot1
+function var_0_0.setData(arg_2_0, arg_2_1)
+	arg_2_0._data = arg_2_1
 end
 
-function slot0.start(slot0)
-	slot0._removeFlag = false
+function var_0_0.start(arg_3_0)
+	arg_3_0._removeFlag = false
 
-	slot0:setSprite(uv0.GetBulletSprite(slot0._data.image))
-	slot0:setVisible(true)
+	arg_3_0:setSprite(var_0_1.GetBulletSprite(arg_3_0._data.image))
+	arg_3_0:setVisible(true)
 
-	slot0._moveDistance = 0
-	slot0._lifeTime = 0
+	arg_3_0._moveDistance = 0
+	arg_3_0._lifeTime = 0
 
-	slot0:setPosition(slot0._fireData.pos)
-	slot0:setMove(slot0._fireData.move)
-	slot0:setHitGroup(slot0._fireData.hit)
+	arg_3_0:setPosition(arg_3_0._fireData.pos)
+	arg_3_0:setMove(arg_3_0._fireData.move)
+	arg_3_0:setHitGroup(arg_3_0._fireData.hit)
 
-	if slot0._fireData.content then
-		slot0:setContent(slot1)
+	local var_3_0 = arg_3_0._fireData.content
+
+	if var_3_0 then
+		arg_3_0:setContent(var_3_0)
 	end
 
-	if slot0:getConfig("fire_effect") then
-		slot0._eventCall(SailBoatGameEvent.CREATE_EFFECT, {
-			effect = slot0:getConfig("fire_effect"),
-			direct = Vector3(slot0._move.x, 1, 1),
-			position = slot0._fireData.effect_pos,
-			content = slot0._fireData.effect_content
+	if arg_3_0:getConfig("fire_effect") then
+		local var_3_1 = arg_3_0:getConfig("fire_effect")
+		local var_3_2 = arg_3_0._fireData.effect_content
+		local var_3_3 = arg_3_0._fireData.effect_pos
+
+		arg_3_0._eventCall(SailBoatGameEvent.CREATE_EFFECT, {
+			effect = var_3_1,
+			direct = Vector3(arg_3_0._move.x, 1, 1),
+			position = var_3_3,
+			content = var_3_2
 		})
 	end
 end
 
-function slot0.getWorld(slot0)
-	return slot0._tf.position
+function var_0_0.getWorld(arg_4_0)
+	return arg_4_0._tf.position
 end
 
-function slot0.step(slot0, slot1)
-	slot2 = slot0._tf.anchoredPosition
-	slot2.x = slot2.x + slot0._move.x * slot1 * slot0._speed
-	slot2.y = slot2.y + slot0._move.y * slot1 * slot0._speed
-	slot0._tf.anchoredPosition = slot2
+function var_0_0.step(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_0._tf.anchoredPosition
 
-	if slot0._life and slot0._life > 0 then
-		slot0._life = slot0._life - slot1
+	var_5_0.x = var_5_0.x + arg_5_0._move.x * arg_5_1 * arg_5_0._speed
+	var_5_0.y = var_5_0.y + arg_5_0._move.y * arg_5_1 * arg_5_0._speed
+	arg_5_0._tf.anchoredPosition = var_5_0
 
-		if slot0._life <= 0 then
-			slot0._life = 0
+	if arg_5_0._life and arg_5_0._life > 0 then
+		arg_5_0._life = arg_5_0._life - arg_5_1
 
-			slot0:setRemoveFlag(true)
+		if arg_5_0._life <= 0 then
+			arg_5_0._life = 0
+
+			arg_5_0:setRemoveFlag(true)
 		end
 	end
 
-	if SailBoatGameVo.scene_width < math.abs(slot2.x) then
-		slot0._removeFlag = true
-	elseif SailBoatGameVo.scene_height < math.abs(slot2.y) then
-		slot0._removeFlag = true
+	if math.abs(var_5_0.x) > SailBoatGameVo.scene_width then
+		arg_5_0._removeFlag = true
+	elseif math.abs(var_5_0.y) > SailBoatGameVo.scene_height then
+		arg_5_0._removeFlag = true
 	end
 end
 
-function slot0.getDamage(slot0)
+function var_0_0.getDamage(arg_6_0)
 	return {
-		num = slot0._weaponData.damage,
-		position = slot0._tf.position
+		num = arg_6_0._weaponData.damage,
+		position = arg_6_0._tf.position
 	}
 end
 
-function slot0.setMove(slot0, slot1)
-	slot0._move = slot1
+function var_0_0.setMove(arg_7_0, arg_7_1)
+	arg_7_0._move = arg_7_1
 end
 
-function slot0.setPosition(slot0, slot1)
-	slot0._tf.anchoredPosition = slot1
+function var_0_0.setPosition(arg_8_0, arg_8_1)
+	arg_8_0._tf.anchoredPosition = arg_8_1
 end
 
-function slot0.hit(slot0)
-	if slot0:getConfig("hit_effect") then
-		slot0._eventCall(SailBoatGameEvent.CREATE_EFFECT, {
-			effect = slot0:getConfig("hit_effect"),
+function var_0_0.hit(arg_9_0)
+	if arg_9_0:getConfig("hit_effect") then
+		local var_9_0 = arg_9_0:getConfig("hit_effect")
+
+		arg_9_0._eventCall(SailBoatGameEvent.CREATE_EFFECT, {
+			effect = var_9_0,
 			direct = Vector3(1, 1, 1),
-			position = slot0._tf.anchoredPosition
+			position = arg_9_0._tf.anchoredPosition
 		})
 	end
 
-	slot0._removeFlag = true
+	arg_9_0._removeFlag = true
 end
 
-function slot0.setHitGroup(slot0, slot1)
-	slot0._hitGroup = slot1
+function var_0_0.setHitGroup(arg_10_0, arg_10_1)
+	arg_10_0._hitGroup = arg_10_1
 end
 
-function slot0.getHitGroup(slot0)
-	if not slot0._hitGroup then
-		slot0._hitGroup = {}
+function var_0_0.getHitGroup(arg_11_0)
+	if not arg_11_0._hitGroup then
+		arg_11_0._hitGroup = {}
 	end
 
-	return slot0._hitGroup
+	return arg_11_0._hitGroup
 end
 
-function slot0.setSprite(slot0, slot1)
-	slot0._img.sprite = slot1
+function var_0_0.setSprite(arg_12_0, arg_12_1)
+	arg_12_0._img.sprite = arg_12_1
 
-	slot0._img:SetNativeSize()
+	arg_12_0._img:SetNativeSize()
 end
 
-function slot0.getSpeed(slot0)
-	return slot0._speed
+function var_0_0.getSpeed(arg_13_0)
+	return arg_13_0._speed
 end
 
-function slot0.setFireData(slot0, slot1)
-	slot0._fireData = slot1
+function var_0_0.setFireData(arg_14_0, arg_14_1)
+	arg_14_0._fireData = arg_14_1
 end
 
-function slot0.setWeapon(slot0, slot1)
-	slot0._weaponData = slot1
-	slot0._speed = slot0._weaponData.speed
-	slot0._damage = slot0._weaponData.damage
-	slot0._life = slot0._weaponData.life
+function var_0_0.setWeapon(arg_15_0, arg_15_1)
+	arg_15_0._weaponData = arg_15_1
+	arg_15_0._speed = arg_15_0._weaponData.speed
+	arg_15_0._damage = arg_15_0._weaponData.damage
+	arg_15_0._life = arg_15_0._weaponData.life
 end
 
-function slot0.setContent(slot0, slot1)
-	slot0._content = slot1
+function var_0_0.setContent(arg_16_0, arg_16_1)
+	arg_16_0._content = arg_16_1
 
-	SetParent(slot0._tf, slot1)
+	SetParent(arg_16_0._tf, arg_16_1)
 end
 
-function slot0.getId(slot0)
-	return slot0._data.id
+function var_0_0.getId(arg_17_0)
+	return arg_17_0._data.id
 end
 
-function slot0.setVisible(slot0, slot1)
-	setActive(slot0._tf, slot1)
+function var_0_0.setVisible(arg_18_0, arg_18_1)
+	setActive(arg_18_0._tf, arg_18_1)
 end
 
-function slot0.setPosition(slot0, slot1)
-	slot0._tf.anchoredPosition = slot1
+function var_0_0.setPosition(arg_19_0, arg_19_1)
+	arg_19_0._tf.anchoredPosition = arg_19_1
 end
 
-function slot0.clear(slot0)
-	slot0:setVisible(false)
+function var_0_0.clear(arg_20_0)
+	arg_20_0:setVisible(false)
 end
 
-function slot0.setRemoveFlag(slot0, slot1)
-	slot0._removeFlag = slot1
+function var_0_0.setRemoveFlag(arg_21_0, arg_21_1)
+	arg_21_0._removeFlag = arg_21_1
 end
 
-function slot0.getRemoveFlag(slot0)
-	return slot0._removeFlag
+function var_0_0.getRemoveFlag(arg_22_0)
+	return arg_22_0._removeFlag
 end
 
-function slot0.dispose(slot0)
-	uv0 = nil
+function var_0_0.dispose(arg_23_0)
+	var_0_1 = nil
 end
 
-function slot0.getColliderData(slot0)
-	slot1 = slot0._content:InverseTransformPoint(slot0._collider.bounds.min)
+function var_0_0.getColliderData(arg_24_0)
+	local var_24_0 = arg_24_0._content:InverseTransformPoint(arg_24_0._collider.bounds.min)
 
-	if not slot0._boundData then
-		slot2 = slot0._content:InverseTransformPoint(slot0._collider.bounds.max)
-		slot0._boundData = {
-			width = math.floor(slot2.x - slot1.x),
-			height = math.floor(slot2.y - slot1.y)
+	if not arg_24_0._boundData then
+		local var_24_1 = arg_24_0._content:InverseTransformPoint(arg_24_0._collider.bounds.max)
+
+		arg_24_0._boundData = {
+			width = math.floor(var_24_1.x - var_24_0.x),
+			height = math.floor(var_24_1.y - var_24_0.y)
 		}
 	end
 
-	return slot1, slot0._boundData
+	return var_24_0, arg_24_0._boundData
 end
 
-function slot0.checkPositionInRange(slot0, slot1)
-	slot2 = slot0._tf.anchoredPosition
+function var_0_0.checkPositionInRange(arg_25_0, arg_25_1)
+	local var_25_0 = arg_25_0._tf.anchoredPosition
+	local var_25_1 = math.abs(var_25_0.x - arg_25_1.x)
+	local var_25_2 = math.abs(var_25_0.y - arg_25_1.y)
+	local var_25_3 = arg_25_0:getConfig("range")
 
-	if math.abs(slot2.x - slot1.x) < slot0:getConfig("range").x and math.abs(slot2.y - slot1.y) < slot5.y then
+	if var_25_1 < var_25_3.x and var_25_2 < var_25_3.y then
 		return true
 	end
 
 	return false
 end
 
-function slot0.getPosition(slot0)
-	return slot0._tf.anchoredPosition
+function var_0_0.getPosition(arg_26_0)
+	return arg_26_0._tf.anchoredPosition
 end
 
-function slot0.getConfig(slot0, slot1)
-	return slot0._data[slot1]
+function var_0_0.getConfig(arg_27_0, arg_27_1)
+	return arg_27_0._data[arg_27_1]
 end
 
-function slot0.getWeaponConfig(slot0, slot1)
-	return slot0._weaponData[slot1]
+function var_0_0.getWeaponConfig(arg_28_0, arg_28_1)
+	return arg_28_0._weaponData[arg_28_1]
 end
 
-return slot0
+return var_0_0

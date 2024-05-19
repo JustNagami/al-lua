@@ -1,283 +1,313 @@
-slot0 = class("SettingsBattlePage", import("...base.BaseSubView"))
-slot1 = "joystick_anchorX"
-slot2 = "joystick_anchorY"
-slot3 = "skill_1_anchorX"
-slot4 = "skill_1_anchorY"
-slot5 = "skill_2_anchorX"
-slot6 = "skill_2_anchorY"
-slot7 = "skill_3_anchorX"
-slot8 = "skill_3_anchorY"
-slot9 = "skill_4_anchorX"
-slot10 = "skill_4_anchorY"
-slot0.CLD_RED = Color.New(0.6, 0.05, 0.05, 0.5)
-slot0.DEFAULT_GREY = Color.New(0.5, 0.5, 0.5, 0.5)
+﻿local var_0_0 = class("SettingsBattlePage", import("...base.BaseSubView"))
+local var_0_1 = "joystick_anchorX"
+local var_0_2 = "joystick_anchorY"
+local var_0_3 = "skill_1_anchorX"
+local var_0_4 = "skill_1_anchorY"
+local var_0_5 = "skill_2_anchorX"
+local var_0_6 = "skill_2_anchorY"
+local var_0_7 = "skill_3_anchorX"
+local var_0_8 = "skill_3_anchorY"
+local var_0_9 = "skill_4_anchorX"
+local var_0_10 = "skill_4_anchorY"
 
-function slot0.getUIName(slot0)
+var_0_0.CLD_RED = Color.New(0.6, 0.05, 0.05, 0.5)
+var_0_0.DEFAULT_GREY = Color.New(0.5, 0.5, 0.5, 0.5)
+
+function var_0_0.getUIName(arg_1_0)
 	return "SettingsBattlePage"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.editPanel = slot0._tf:Find("editor")
-	slot1 = findTF(slot0._tf, "editor/buttons")
-	slot0.normalBtns = findTF(slot1, "normal")
-	slot0.editBtns = findTF(slot1, "editing")
-	slot0.saveBtn = findTF(slot0.editBtns, "save")
-	slot0.cancelBtn = findTF(slot0.editBtns, "cancel")
-	slot0.editBtn = findTF(slot0.normalBtns, "edit")
-	slot0.revertBtn = findTF(slot0.normalBtns, "reset")
-	slot0.interface = findTF(slot0._tf, "editor/editing_region")
-	slot0.stick = findTF(slot0.interface, "Stick")
-	slot0.skillBtn1 = findTF(slot0.interface, "Skill_1")
-	slot0.skillBtn2 = findTF(slot0.interface, "Skill_2")
-	slot0.skillBtn3 = findTF(slot0.interface, "Skill_3")
-	slot0.skillBtn4 = findTF(slot0.interface, "Skill_4")
-	slot0.eventStick = slot0.stick:GetComponent("EventTriggerListener")
-	slot0.eventSkillBtn1 = slot0.skillBtn1:GetComponent("EventTriggerListener")
-	slot0.eventSkillBtn2 = slot0.skillBtn2:GetComponent("EventTriggerListener")
-	slot0.eventSkillBtn3 = slot0.skillBtn3:GetComponent("EventTriggerListener")
-	slot0.eventSkillBtn4 = slot0.skillBtn4:GetComponent("EventTriggerListener")
-	slot0.mask = findTF(slot0.interface, "mask")
-	slot0.topArea = findTF(slot0.interface, "top")
-	slot0.cg = slot0._tf:GetComponent(typeof(CanvasGroup))
-	slot0.topLayerCg = slot0._parentTf.parent:Find("blur_panel"):GetComponent(typeof(CanvasGroup))
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.editPanel = arg_2_0._tf:Find("editor")
 
-	setActive(slot0._tf, true)
-	setText(slot0._tf:Find("editor/editing_region/mask/middle/Text"), i18n("settings_battle_tip"))
-	setText(slot0._tf:Find("editor/buttons/normal/edit/Image"), i18n("settings_battle_Btn_edit"))
-	setText(slot0._tf:Find("editor/buttons/normal/reset/Image"), i18n("settings_battle_Btn_reset"))
-	setText(slot0._tf:Find("editor/title"), i18n("settings_battle_title"))
-	setText(slot0._tf:Find("editor/buttons/editing/save/Image"), i18n("settings_battle_Btn_save"))
-	setText(slot0._tf:Find("editor/buttons/editing/cancel/Image"), i18n("settings_battle_Btn_cancel"))
+	local var_2_0 = findTF(arg_2_0._tf, "editor/buttons")
+
+	arg_2_0.normalBtns = findTF(var_2_0, "normal")
+	arg_2_0.editBtns = findTF(var_2_0, "editing")
+	arg_2_0.saveBtn = findTF(arg_2_0.editBtns, "save")
+	arg_2_0.cancelBtn = findTF(arg_2_0.editBtns, "cancel")
+	arg_2_0.editBtn = findTF(arg_2_0.normalBtns, "edit")
+	arg_2_0.revertBtn = findTF(arg_2_0.normalBtns, "reset")
+	arg_2_0.interface = findTF(arg_2_0._tf, "editor/editing_region")
+	arg_2_0.stick = findTF(arg_2_0.interface, "Stick")
+	arg_2_0.skillBtn1 = findTF(arg_2_0.interface, "Skill_1")
+	arg_2_0.skillBtn2 = findTF(arg_2_0.interface, "Skill_2")
+	arg_2_0.skillBtn3 = findTF(arg_2_0.interface, "Skill_3")
+	arg_2_0.skillBtn4 = findTF(arg_2_0.interface, "Skill_4")
+	arg_2_0.eventStick = arg_2_0.stick:GetComponent("EventTriggerListener")
+	arg_2_0.eventSkillBtn1 = arg_2_0.skillBtn1:GetComponent("EventTriggerListener")
+	arg_2_0.eventSkillBtn2 = arg_2_0.skillBtn2:GetComponent("EventTriggerListener")
+	arg_2_0.eventSkillBtn3 = arg_2_0.skillBtn3:GetComponent("EventTriggerListener")
+	arg_2_0.eventSkillBtn4 = arg_2_0.skillBtn4:GetComponent("EventTriggerListener")
+	arg_2_0.mask = findTF(arg_2_0.interface, "mask")
+	arg_2_0.topArea = findTF(arg_2_0.interface, "top")
+	arg_2_0.cg = arg_2_0._tf:GetComponent(typeof(CanvasGroup))
+	arg_2_0.topLayerCg = arg_2_0._parentTf.parent:Find("blur_panel"):GetComponent(typeof(CanvasGroup))
+
+	setActive(arg_2_0._tf, true)
+	setText(arg_2_0._tf:Find("editor/editing_region/mask/middle/Text"), i18n("settings_battle_tip"))
+	setText(arg_2_0._tf:Find("editor/buttons/normal/edit/Image"), i18n("settings_battle_Btn_edit"))
+	setText(arg_2_0._tf:Find("editor/buttons/normal/reset/Image"), i18n("settings_battle_Btn_reset"))
+	setText(arg_2_0._tf:Find("editor/title"), i18n("settings_battle_title"))
+	setText(arg_2_0._tf:Find("editor/buttons/editing/save/Image"), i18n("settings_battle_Btn_save"))
+	setText(arg_2_0._tf:Find("editor/buttons/editing/cancel/Image"), i18n("settings_battle_Btn_cancel"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.editBtn, function ()
-		uv0:EditModeEnabled(true)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.editBtn, function()
+		arg_3_0:EditModeEnabled(true)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.revertBtn, function ()
+	onButton(arg_3_0, arg_3_0.revertBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = false,
 			content = i18n("setting_interface_revert_check"),
-			onYes = function ()
-				uv0:RevertInterfaceSetting(true)
+			onYes = function()
+				arg_3_0:RevertInterfaceSetting(true)
 			end
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.cancelBtn, function ()
-		if uv0._currentDrag then
-			LuaHelper.triggerEndDrag(uv0._currentDrag)
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
+		if arg_3_0._currentDrag then
+			LuaHelper.triggerEndDrag(arg_3_0._currentDrag)
 		end
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = false,
 			content = i18n("setting_interface_cancel_check"),
-			onYes = function ()
-				uv0:EditModeEnabled(false)
-				uv0:RevertInterfaceSetting(false)
+			onYes = function()
+				arg_3_0:EditModeEnabled(false)
+				arg_3_0:RevertInterfaceSetting(false)
 			end
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.saveBtn, function ()
-		if uv0._currentDrag then
-			LuaHelper.triggerEndDrag(uv0._currentDrag)
+	onButton(arg_3_0, arg_3_0.saveBtn, function()
+		if arg_3_0._currentDrag then
+			LuaHelper.triggerEndDrag(arg_3_0._currentDrag)
 		end
 
-		uv0:EditModeEnabled(false)
-		uv0:SaveInterfaceSetting()
+		arg_3_0:EditModeEnabled(false)
+		arg_3_0:SaveInterfaceSetting()
 		pg.TipsMgr.GetInstance():ShowTips(i18n("setting_interface_save_success"))
 	end, SFX_PANEL)
-	slot0:InitInterfaceComponents()
+	arg_3_0:InitInterfaceComponents()
 end
 
-function slot0.InitInterfaceComponents(slot0)
-	slot0:InitInterfaceComponent(slot0.stick, slot0.eventStick, uv0, uv1, ys.Battle.BattleConfig.JOY_STICK_DEFAULT_PREFERENCE)
+function var_0_0.InitInterfaceComponents(arg_10_0)
+	local var_10_0 = ys.Battle.BattleConfig.JOY_STICK_DEFAULT_PREFERENCE
 
-	slot2 = ys.Battle.BattleConfig.SKILL_BUTTON_DEFAULT_PREFERENCE
+	arg_10_0:InitInterfaceComponent(arg_10_0.stick, arg_10_0.eventStick, var_0_1, var_0_2, var_10_0)
 
-	slot0:InitInterfaceComponent(slot0.skillBtn1, slot0.eventSkillBtn1, uv2, uv3, slot2[1])
-	slot0:InitInterfaceComponent(slot0.skillBtn2, slot0.eventSkillBtn2, uv4, uv5, slot2[2])
-	slot0:InitInterfaceComponent(slot0.skillBtn3, slot0.eventSkillBtn3, uv6, uv7, slot2[3])
+	local var_10_1 = ys.Battle.BattleConfig.SKILL_BUTTON_DEFAULT_PREFERENCE
 
-	slot7 = uv8
+	arg_10_0:InitInterfaceComponent(arg_10_0.skillBtn1, arg_10_0.eventSkillBtn1, var_0_3, var_0_4, var_10_1[1])
+	arg_10_0:InitInterfaceComponent(arg_10_0.skillBtn2, arg_10_0.eventSkillBtn2, var_0_5, var_0_6, var_10_1[2])
+	arg_10_0:InitInterfaceComponent(arg_10_0.skillBtn3, arg_10_0.eventSkillBtn3, var_0_7, var_0_8, var_10_1[3])
+	arg_10_0:InitInterfaceComponent(arg_10_0.skillBtn4, arg_10_0.eventSkillBtn4, var_0_9, var_0_10, var_10_1[4])
 
-	slot0:InitInterfaceComponent(slot0.skillBtn4, slot0.eventSkillBtn4, slot7, uv9, slot2[4])
+	local var_10_2 = arg_10_0:GetScale()
 
-	slot0.components = {
-		slot0.topArea,
-		slot0.stick,
-		slot0.skillBtn1,
-		slot0.skillBtn2,
-		slot0.skillBtn3,
-		slot0.skillBtn4
+	arg_10_0.components = {
+		arg_10_0.topArea,
+		arg_10_0.stick,
+		arg_10_0.skillBtn1,
+		arg_10_0.skillBtn2,
+		arg_10_0.skillBtn3,
+		arg_10_0.skillBtn4
 	}
 
-	for slot7 = 2, #slot0.components do
-		setLocalScale(slot0.components[slot7], slot0:GetScale())
+	for iter_10_0 = 2, #arg_10_0.components do
+		setLocalScale(arg_10_0.components[iter_10_0], var_10_2)
 	end
 
-	slot0:EditModeEnabled(false)
+	arg_10_0:EditModeEnabled(false)
 end
 
-function slot0.GetScale(slot0)
-	slot5 = nil
-	slot5 = rtf(slot0.interface).rect.width / rtf(slot0.interface).rect.height > rtf(slot0._parentTf).rect.width / rtf(slot0._parentTf).rect.height and slot2 / slot4 or slot1 / slot3
+function var_0_0.GetScale(arg_11_0)
+	local var_11_0 = rtf(arg_11_0.interface).rect.width
+	local var_11_1 = rtf(arg_11_0.interface).rect.height
+	local var_11_2 = rtf(arg_11_0._parentTf).rect.width
+	local var_11_3 = rtf(arg_11_0._parentTf).rect.height
+	local var_11_4
 
-	return Vector3.New(slot5, slot5, 1)
-end
-
-function slot0.InitInterfaceComponent(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot8 = rtf(slot0._parentTf).rect.width * 0.5 + slot0.interface.localPosition.x + slot0.interface.parent.localPosition.x + slot0.interface.parent.parent.localPosition.x
-	slot9 = rtf(slot0._parentTf).rect.height * 0.5 + slot0.interface.localPosition.y + slot0.interface.parent.localPosition.y + slot0.interface.parent.parent.localPosition.y
-	slot10, slot11, slot12, slot13 = nil
-
-	slot2:AddBeginDragFunc(function (slot0, slot1)
-		uv0._currentDrag = uv1
-		uv2 = uv3 / UnityEngine.Screen.width
-		uv4 = uv5 / UnityEngine.Screen.height
-		uv6 = uv7.localPosition.x
-		uv8 = uv7.localPosition.y
-	end)
-	slot2:AddDragFunc(function (slot0, slot1)
-		uv0.localPosition = Vector3(slot1.position.x * uv1 - uv2, slot1.position.y * uv3 - uv4, 0)
-
-		uv5:CheckInterfaceIntersect()
-	end)
-	slot2:AddDragEndFunc(function (slot0, slot1)
-		uv0._currentDrag = nil
-
-		if uv0:CheckInterfaceIntersect() then
-			uv1.localPosition = Vector3(uv2, uv3, 0)
-		end
-
-		uv0:CheckInterfaceIntersect()
-	end)
-	slot0:SetInterfaceAnchor(slot1, slot3, slot4, slot5)
-end
-
-function slot0.EditModeEnabled(slot0, slot1)
-	setActive(slot0.normalBtns, not slot1)
-	setActive(slot0.mask, not slot1)
-	setActive(slot0.editBtns, slot1)
-
-	for slot5, slot6 in ipairs(slot0.components) do
-		setActive(findTF(slot6, "rect"), slot1)
-
-		if slot5 > 1 then
-			GetOrAddComponent(slot6, "EventTriggerListener").enabled = slot1
-		end
-	end
-
-	Input.multiTouchEnabled = not slot1
-	slot0.topLayerCg.blocksRaycasts = not slot1
-end
-
-function slot0.SetInterfaceAnchor(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot6, slot7 = nil
-
-	if slot5 then
-		slot6 = slot4.x
-		slot7 = slot4.y
+	if var_11_0 / var_11_1 > var_11_2 / var_11_3 then
+		var_11_4 = var_11_1 / var_11_3
 	else
-		slot6 = PlayerPrefs.GetFloat(slot2, slot4.x)
-		slot7 = PlayerPrefs.GetFloat(slot3, slot4.y)
+		var_11_4 = var_11_0 / var_11_2
 	end
 
-	slot1.localPosition = Vector3((slot6 - 0.5) * rtf(slot0.interface).rect.width, (slot7 - 0.5) * rtf(slot0.interface).rect.height, 0)
+	return Vector3.New(var_11_4, var_11_4, 1)
 end
 
-function slot11(slot0)
-	slot1 = rtf(slot0)
-	slot2 = slot1.rect
-	slot3 = slot2.width * slot1.lossyScale.x
-	slot4 = slot2.height * slot1.lossyScale.y
-	slot5 = slot1.position
+function var_0_0.InitInterfaceComponent(arg_12_0, arg_12_1, arg_12_2, arg_12_3, arg_12_4, arg_12_5)
+	local var_12_0 = rtf(arg_12_0._parentTf).rect.width
+	local var_12_1 = rtf(arg_12_0._parentTf).rect.height
+	local var_12_2 = var_12_0 * 0.5 + arg_12_0.interface.localPosition.x + arg_12_0.interface.parent.localPosition.x + arg_12_0.interface.parent.parent.localPosition.x
+	local var_12_3 = var_12_1 * 0.5 + arg_12_0.interface.localPosition.y + arg_12_0.interface.parent.localPosition.y + arg_12_0.interface.parent.parent.localPosition.y
+	local var_12_4
+	local var_12_5
+	local var_12_6
+	local var_12_7
 
-	return UnityEngine.Rect.New(slot5.x - slot3 / 2, slot5.y - slot4 / 2, slot3, slot4)
+	arg_12_2:AddBeginDragFunc(function(arg_13_0, arg_13_1)
+		arg_12_0._currentDrag = arg_12_2
+		var_12_6 = var_12_0 / UnityEngine.Screen.width
+		var_12_7 = var_12_1 / UnityEngine.Screen.height
+		var_12_4 = arg_12_1.localPosition.x
+		var_12_5 = arg_12_1.localPosition.y
+	end)
+	arg_12_2:AddDragFunc(function(arg_14_0, arg_14_1)
+		arg_12_1.localPosition = Vector3(arg_14_1.position.x * var_12_6 - var_12_2, arg_14_1.position.y * var_12_7 - var_12_3, 0)
+
+		arg_12_0:CheckInterfaceIntersect()
+	end)
+	arg_12_2:AddDragEndFunc(function(arg_15_0, arg_15_1)
+		arg_12_0._currentDrag = nil
+
+		if arg_12_0:CheckInterfaceIntersect() then
+			arg_12_1.localPosition = Vector3(var_12_4, var_12_5, 0)
+		end
+
+		arg_12_0:CheckInterfaceIntersect()
+	end)
+	arg_12_0:SetInterfaceAnchor(arg_12_1, arg_12_3, arg_12_4, arg_12_5)
 end
 
-function slot0.CheckInterfaceIntersect(slot0)
-	slot1 = {}
-	slot2 = false
-	slot3 = {
-		[slot9] = uv0(slot9:Find("rect"))
-	}
-	slot4 = uv0(slot0.interface)
+function var_0_0.EditModeEnabled(arg_16_0, arg_16_1)
+	setActive(arg_16_0.normalBtns, not arg_16_1)
+	setActive(arg_16_0.mask, not arg_16_1)
+	setActive(arg_16_0.editBtns, arg_16_1)
 
-	for slot8, slot9 in ipairs(slot0.components) do
-		-- Nothing
+	for iter_16_0, iter_16_1 in ipairs(arg_16_0.components) do
+		setActive(findTF(iter_16_1, "rect"), arg_16_1)
+
+		if iter_16_0 > 1 then
+			GetOrAddComponent(iter_16_1, "EventTriggerListener").enabled = arg_16_1
+		end
 	end
 
-	for slot8, slot9 in ipairs(slot0.components) do
-		for slot13, slot14 in ipairs(slot0.components) do
-			if slot9 ~= slot14 and slot3[slot9]:Overlaps(slot3[slot14]) then
-				slot1[slot14] = true
+	Input.multiTouchEnabled = not arg_16_1
+	arg_16_0.topLayerCg.blocksRaycasts = not arg_16_1
+end
+
+function var_0_0.SetInterfaceAnchor(arg_17_0, arg_17_1, arg_17_2, arg_17_3, arg_17_4, arg_17_5)
+	local var_17_0
+	local var_17_1
+
+	if arg_17_5 then
+		var_17_0 = arg_17_4.x
+		var_17_1 = arg_17_4.y
+	else
+		var_17_0 = PlayerPrefs.GetFloat(arg_17_2, arg_17_4.x)
+		var_17_1 = PlayerPrefs.GetFloat(arg_17_3, arg_17_4.y)
+	end
+
+	local var_17_2 = rtf(arg_17_0.interface).rect.width
+	local var_17_3 = rtf(arg_17_0.interface).rect.height
+	local var_17_4 = (var_17_0 - 0.5) * var_17_2
+	local var_17_5 = (var_17_1 - 0.5) * var_17_3
+
+	arg_17_1.localPosition = Vector3(var_17_4, var_17_5, 0)
+end
+
+local function var_0_11(arg_18_0)
+	local var_18_0 = rtf(arg_18_0)
+	local var_18_1 = var_18_0.rect
+	local var_18_2 = var_18_1.width * var_18_0.lossyScale.x
+	local var_18_3 = var_18_1.height * var_18_0.lossyScale.y
+	local var_18_4 = var_18_0.position
+
+	return UnityEngine.Rect.New(var_18_4.x - var_18_2 / 2, var_18_4.y - var_18_3 / 2, var_18_2, var_18_3)
+end
+
+function var_0_0.CheckInterfaceIntersect(arg_19_0)
+	local var_19_0 = {}
+	local var_19_1 = false
+	local var_19_2 = {}
+	local var_19_3 = var_0_11(arg_19_0.interface)
+
+	for iter_19_0, iter_19_1 in ipairs(arg_19_0.components) do
+		var_19_2[iter_19_1] = var_0_11(iter_19_1:Find("rect"))
+	end
+
+	for iter_19_2, iter_19_3 in ipairs(arg_19_0.components) do
+		for iter_19_4, iter_19_5 in ipairs(arg_19_0.components) do
+			if iter_19_3 ~= iter_19_5 and var_19_2[iter_19_3]:Overlaps(var_19_2[iter_19_5]) then
+				var_19_0[iter_19_5] = true
 			end
 		end
 
-		if slot8 > 1 then
-			if not slot4:Contains(Vector2.New(slot3[slot9].xMin, slot3[slot9].yMin)) or not slot4:Contains(Vector2.New(slot3[slot9].xMax, slot3[slot9].yMax)) then
-				slot1[slot9] = true
+		if iter_19_2 > 1 then
+			local var_19_4 = Vector2.New(var_19_2[iter_19_3].xMin, var_19_2[iter_19_3].yMin)
+			local var_19_5 = Vector2.New(var_19_2[iter_19_3].xMax, var_19_2[iter_19_3].yMax)
+
+			if not var_19_3:Contains(var_19_4) or not var_19_3:Contains(var_19_5) then
+				var_19_0[iter_19_3] = true
 			end
 		end
 	end
 
-	for slot8, slot9 in ipairs(slot0.components) do
-		if slot1[slot9] then
-			findTF(slot9, "rect"):GetComponent(typeof(Image)).color = uv1.CLD_RED
-			slot2 = true
+	for iter_19_6, iter_19_7 in ipairs(arg_19_0.components) do
+		local var_19_6 = findTF(iter_19_7, "rect"):GetComponent(typeof(Image))
+
+		if var_19_0[iter_19_7] then
+			var_19_6.color = var_0_0.CLD_RED
+			var_19_1 = true
 		else
-			slot10.color = uv1.DEFAULT_GREY
+			var_19_6.color = var_0_0.DEFAULT_GREY
 		end
 	end
 
-	return slot2
+	return var_19_1
 end
 
-function slot0.RevertInterfaceSetting(slot0, slot1)
-	slot3 = ys.Battle.BattleConfig.SKILL_BUTTON_DEFAULT_PREFERENCE
+function var_0_0.RevertInterfaceSetting(arg_20_0, arg_20_1)
+	local var_20_0 = ys.Battle.BattleConfig.JOY_STICK_DEFAULT_PREFERENCE
+	local var_20_1 = ys.Battle.BattleConfig.SKILL_BUTTON_DEFAULT_PREFERENCE
 
-	slot0:SetInterfaceAnchor(slot0.stick, uv0, uv1, ys.Battle.BattleConfig.JOY_STICK_DEFAULT_PREFERENCE, slot1)
-	slot0:SetInterfaceAnchor(slot0.skillBtn1, uv2, uv3, slot3[1], slot1)
-	slot0:SetInterfaceAnchor(slot0.skillBtn2, uv4, uv5, slot3[2], slot1)
-	slot0:SetInterfaceAnchor(slot0.skillBtn3, uv6, uv7, slot3[3], slot1)
-	slot0:SetInterfaceAnchor(slot0.skillBtn4, uv8, uv9, slot3[4], slot1)
-	slot0:SaveInterfaceSetting()
+	arg_20_0:SetInterfaceAnchor(arg_20_0.stick, var_0_1, var_0_2, var_20_0, arg_20_1)
+	arg_20_0:SetInterfaceAnchor(arg_20_0.skillBtn1, var_0_3, var_0_4, var_20_1[1], arg_20_1)
+	arg_20_0:SetInterfaceAnchor(arg_20_0.skillBtn2, var_0_5, var_0_6, var_20_1[2], arg_20_1)
+	arg_20_0:SetInterfaceAnchor(arg_20_0.skillBtn3, var_0_7, var_0_8, var_20_1[3], arg_20_1)
+	arg_20_0:SetInterfaceAnchor(arg_20_0.skillBtn4, var_0_9, var_0_10, var_20_1[4], arg_20_1)
+	arg_20_0:SaveInterfaceSetting()
 end
 
-function slot0.SaveInterfaceSetting(slot0)
-	slot0:OverrideInterfaceSetting(slot0.stick, uv0, uv1)
-	slot0:OverrideInterfaceSetting(slot0.skillBtn1, uv2, uv3)
-	slot0:OverrideInterfaceSetting(slot0.skillBtn2, uv4, uv5)
-	slot0:OverrideInterfaceSetting(slot0.skillBtn3, uv6, uv7)
-	slot0:OverrideInterfaceSetting(slot0.skillBtn4, uv8, uv9)
+function var_0_0.SaveInterfaceSetting(arg_21_0)
+	arg_21_0:OverrideInterfaceSetting(arg_21_0.stick, var_0_1, var_0_2)
+	arg_21_0:OverrideInterfaceSetting(arg_21_0.skillBtn1, var_0_3, var_0_4)
+	arg_21_0:OverrideInterfaceSetting(arg_21_0.skillBtn2, var_0_5, var_0_6)
+	arg_21_0:OverrideInterfaceSetting(arg_21_0.skillBtn3, var_0_7, var_0_8)
+	arg_21_0:OverrideInterfaceSetting(arg_21_0.skillBtn4, var_0_9, var_0_10)
 end
 
-function slot0.OverrideInterfaceSetting(slot0, slot1, slot2, slot3)
-	slot4 = rtf(slot0.interface).rect.width
-	slot5 = rtf(slot0.interface).rect.height
+function var_0_0.OverrideInterfaceSetting(arg_22_0, arg_22_1, arg_22_2, arg_22_3)
+	local var_22_0 = rtf(arg_22_0.interface).rect.width
+	local var_22_1 = rtf(arg_22_0.interface).rect.height
+	local var_22_2 = (arg_22_1.localPosition.x + var_22_0 * 0.5) / var_22_0
+	local var_22_3 = (arg_22_1.localPosition.y + var_22_1 * 0.5) / var_22_1
 
-	PlayerPrefs.SetFloat(slot2, (slot1.localPosition.x + slot4 * 0.5) / slot4)
-	PlayerPrefs.SetFloat(slot3, (slot1.localPosition.y + slot5 * 0.5) / slot5)
+	PlayerPrefs.SetFloat(arg_22_2, var_22_2)
+	PlayerPrefs.SetFloat(arg_22_3, var_22_3)
 end
 
-function slot0.OnDestroy(slot0)
-	ClearEventTrigger(slot0.eventStick)
-	ClearEventTrigger(slot0.eventSkillBtn1)
-	ClearEventTrigger(slot0.eventSkillBtn2)
-	ClearEventTrigger(slot0.eventSkillBtn3)
-	ClearEventTrigger(slot0.eventSkillBtn4)
+function var_0_0.OnDestroy(arg_23_0)
+	ClearEventTrigger(arg_23_0.eventStick)
+	ClearEventTrigger(arg_23_0.eventSkillBtn1)
+	ClearEventTrigger(arg_23_0.eventSkillBtn2)
+	ClearEventTrigger(arg_23_0.eventSkillBtn3)
+	ClearEventTrigger(arg_23_0.eventSkillBtn4)
 
 	Input.multiTouchEnabled = true
 end
 
-function slot0.Show(slot0)
-	slot0.cg.blocksRaycasts = true
-	slot0.cg.alpha = 1
+function var_0_0.Show(arg_24_0)
+	arg_24_0.cg.blocksRaycasts = true
+	arg_24_0.cg.alpha = 1
 end
 
-function slot0.Hide(slot0)
-	slot0.cg.blocksRaycasts = false
-	slot0.cg.alpha = 0
+function var_0_0.Hide(arg_25_0)
+	arg_25_0.cg.blocksRaycasts = false
+	arg_25_0.cg.alpha = 0
 end
 
-return slot0
+return var_0_0

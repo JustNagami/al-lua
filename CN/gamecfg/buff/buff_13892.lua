@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onAttach",
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id = 13893,
+				time = 1
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,18 +32,5 @@ return {
 	stack = 1,
 	id = 13892,
 	icon = 13890,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onAttach",
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id = 13893,
-				time = 1
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.puzzle_relics_template = {
 	[10001] = {
 		book_idx = 1,

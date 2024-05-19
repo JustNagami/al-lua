@@ -1,51 +1,69 @@
-pg = pg or {}
-slot0 = pg
-slot0.ShaderMgr = singletonClass("ShaderMgr")
-slot1 = slot0.ShaderMgr
+﻿pg = pg or {}
 
-function slot0.ShaderMgr.Init(slot0, slot1)
+local var_0_0 = pg
+
+var_0_0.ShaderMgr = singletonClass("ShaderMgr")
+
+local var_0_1 = var_0_0.ShaderMgr
+
+function var_0_0.ShaderMgr.Init(arg_1_0, arg_1_1)
 	print("initializing shader manager...")
 	Shader.DisableKeyword("LOW_DEVICE_PERFORMANCE")
-	parallelAsync({
-		function (slot0)
-			ResourceMgr.Inst:LoadShaderAndCached("shader", slot0, false, false)
-		end,
-		function (slot0)
-			ResourceMgr.Inst:LoadShaderAndCached("l2dshader", slot0, false, false)
-		end,
-		function (slot0)
-			ResourceMgr.Inst:LoadShaderAndCached("spineshader", slot0, false, false)
-		end,
-		function (slot0)
-			slot0()
-		end,
-		function (slot0)
-			ResourceMgr.Inst:LoadShaderAndCached("builtinpipeline/shaders", slot0, false, false)
-		end
-	}, function ()
+
+	local function var_1_0(arg_2_0)
+		ResourceMgr.Inst:LoadShaderAndCached("shader", arg_2_0, false, false)
+	end
+
+	local function var_1_1(arg_3_0)
+		ResourceMgr.Inst:LoadShaderAndCached("l2dshader", arg_3_0, false, false)
+	end
+
+	local function var_1_2(arg_4_0)
+		ResourceMgr.Inst:LoadShaderAndCached("spineshader", arg_4_0, false, false)
+	end
+
+	local function var_1_3(arg_5_0)
+		arg_5_0()
+	end
+
+	local function var_1_4(arg_6_0)
+		ResourceMgr.Inst:LoadShaderAndCached("builtinpipeline/shaders", arg_6_0, false, false)
+	end
+
+	local var_1_5 = {
+		var_1_0,
+		var_1_1,
+		var_1_2,
+		var_1_3,
+		var_1_4
+	}
+
+	parallelAsync(var_1_5, function()
 		originalPrint("所有shader加载完成")
-		uv0()
+		arg_1_1()
 	end)
 end
 
-function slot1.GetShader(slot0, slot1)
-	return ResourceMgr.Inst:GetShader(slot1)
+function var_0_1.GetShader(arg_8_0, arg_8_1)
+	return (ResourceMgr.Inst:GetShader(arg_8_1))
 end
 
-function slot1.GetBlurMaterialSync(slot0)
-	if slot0.blurMaterial ~= nil then
-		return slot0.blurMaterial
+function var_0_1.GetBlurMaterialSync(arg_9_0)
+	if arg_9_0.blurMaterial ~= nil then
+		return arg_9_0.blurMaterial
 	else
-		slot0.blurMaterial = Material.New(slot0:GetShader("Hidden/MobileBlur"))
+		local var_9_0 = arg_9_0:GetShader("Hidden/MobileBlur")
 
-		slot0.blurMaterial:SetVector("_Parameter", Vector4.New(1, -1, 0, 0))
+		arg_9_0.blurMaterial = Material.New(var_9_0)
 
-		return slot0.blurMaterial
+		arg_9_0.blurMaterial:SetVector("_Parameter", Vector4.New(1, -1, 0, 0))
+
+		return arg_9_0.blurMaterial
 	end
 end
 
-function slot1.BlurTexture(slot0, slot1)
-	slot2 = ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "GetTemporary", {
+function var_0_1.BlurTexture(arg_10_0, arg_10_1)
+	local var_10_0 = ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "GetTemporary", {
 		typeof("System.Int32"),
 		typeof("System.Int32"),
 		typeof("System.Int32")
@@ -54,7 +72,7 @@ function slot1.BlurTexture(slot0, slot1)
 		Screen.height * 0.25,
 		0
 	})
-	slot3 = ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "GetTemporary", {
+	local var_10_1 = ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "GetTemporary", {
 		typeof("System.Int32"),
 		typeof("System.Int32"),
 		typeof("System.Int32")
@@ -63,32 +81,34 @@ function slot1.BlurTexture(slot0, slot1)
 		Screen.height * 0.25,
 		0
 	})
-	slot2.filterMode = ReflectionHelp.RefGetField(typeof("UnityEngine.FilterMode"), "Bilinear")
-	slot8 = {
+
+	var_10_0.filterMode = ReflectionHelp.RefGetField(typeof("UnityEngine.FilterMode"), "Bilinear")
+
+	local var_10_2 = arg_10_0:GetBlurMaterialSync()
+
+	ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.Graphics"), "Blit", {
 		typeof("UnityEngine.RenderTexture"),
 		typeof("UnityEngine.RenderTexture"),
 		typeof("UnityEngine.Material"),
 		typeof("System.Int32")
-	}
-
-	ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.Graphics"), "Blit", slot8, {
-		slot1,
-		slot2,
-		slot0:GetBlurMaterialSync(),
+	}, {
+		arg_10_1,
+		var_10_0,
+		var_10_2,
 		0
 	})
 
-	for slot8 = 0, 1 do
-		slot4:SetVector("_Parameter", Vector4.New(1 + slot8, -1 - slot8, 0, 0))
+	for iter_10_0 = 0, 1 do
+		var_10_2:SetVector("_Parameter", Vector4.New(1 + iter_10_0, -1 - iter_10_0, 0, 0))
 		ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.Graphics"), "Blit", {
 			typeof("UnityEngine.RenderTexture"),
 			typeof("UnityEngine.RenderTexture"),
 			typeof("UnityEngine.Material"),
 			typeof("System.Int32")
 		}, {
-			slot2,
-			slot3,
-			slot4,
+			var_10_0,
+			var_10_1,
+			var_10_2,
 			1
 		})
 		ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.Graphics"), "Blit", {
@@ -97,9 +117,9 @@ function slot1.BlurTexture(slot0, slot1)
 			typeof("UnityEngine.Material"),
 			typeof("System.Int32")
 		}, {
-			slot3,
-			slot2,
-			slot4,
+			var_10_1,
+			var_10_0,
+			var_10_2,
 			2
 		})
 	end
@@ -107,22 +127,24 @@ function slot1.BlurTexture(slot0, slot1)
 	ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "ReleaseTemporary", {
 		typeof("UnityEngine.RenderTexture")
 	}, {
-		slot3
+		var_10_1
 	})
 
-	return slot2
+	return var_10_0
 end
 
-function slot1.SetSpineUIOutline(slot0, slot1, slot2)
-	slot5 = Material.New(slot0:GetShader("M02/Unlit Colored_Alpha_UI_Outline"))
+function var_0_1.SetSpineUIOutline(arg_11_0, arg_11_1, arg_11_2)
+	local var_11_0 = arg_11_0:GetShader("M02/Unlit Colored_Alpha_UI_Outline")
+	local var_11_1 = GetComponent(arg_11_1, "SkeletonGraphic")
+	local var_11_2 = Material.New(var_11_0)
 
-	slot5:SetColor("_OutlineColor", slot2)
-	slot5:SetFloat("_OutlineWidth", 5.75)
-	slot5:SetFloat("_ThresholdEnd", 0.2)
+	var_11_2:SetColor("_OutlineColor", arg_11_2)
+	var_11_2:SetFloat("_OutlineWidth", 5.75)
+	var_11_2:SetFloat("_ThresholdEnd", 0.2)
 
-	GetComponent(slot1, "SkeletonGraphic").material = slot5
+	var_11_1.material = var_11_2
 end
 
-function slot1.DelSpineUIOutline(slot0, slot1)
-	GetComponent(slot1, "SkeletonGraphic").material = nil
+function var_0_1.DelSpineUIOutline(arg_12_0, arg_12_1)
+	GetComponent(arg_12_1, "SkeletonGraphic").material = nil
 end

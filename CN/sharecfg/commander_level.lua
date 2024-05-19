@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.commander_level = {
 	{
 		exp_5 = 100,

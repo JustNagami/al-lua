@@ -1,381 +1,425 @@
-slot0 = class("EquipmentTraceBackLayer", import("view.base.BaseUI"))
+﻿local var_0_0 = class("EquipmentTraceBackLayer", import("view.base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "EquipmentTraceBackUI"
 end
 
-function slot0.init(slot0)
-	slot1 = slot0._tf:Find("Adapt/Left/Operation")
-	slot0.sortOrderBtn = slot1:Find("Bar1")
-	slot0.orderText = slot1:Find("OrderText")
-	slot0.sortBarBtn = slot1:Find("Bar2")
-	slot0.sortImg = slot1:Find("SortImg")
-	slot0.sortBar = slot0._tf:Find("Adapt/Left/SortBar")
+function var_0_0.init(arg_2_0)
+	local var_2_0 = arg_2_0._tf:Find("Adapt/Left/Operation")
 
-	setActive(slot0.sortBar, false)
+	arg_2_0.sortOrderBtn = var_2_0:Find("Bar1")
+	arg_2_0.orderText = var_2_0:Find("OrderText")
+	arg_2_0.sortBarBtn = var_2_0:Find("Bar2")
+	arg_2_0.sortImg = var_2_0:Find("SortImg")
+	arg_2_0.sortBar = arg_2_0._tf:Find("Adapt/Left/SortBar")
 
-	slot0.equipLayout = slot0._tf:Find("Adapt/Left/Scroll View")
-	slot0.equipLayoutScroll = slot0.equipLayout:GetComponent("LScrollRect")
-	slot0.equipLayoutContent = slot0.equipLayout:Find("Viewport/Content")
-	slot0.equipLayoutContent:GetComponent(typeof(GridLayoutGroup)).constraintCount = 6
-	slot3 = slot0._tf:Find("Adapt/Right")
-	slot0.sourceEquip = slot3:Find("Source")
-	slot0.sourceEquipStatus = slot3:Find("Status")
-	slot0.formulaWire = slot3:Find("Wire")
-	slot0.targetEquip = slot3:Find("Target")
-	slot0.confirmBtn = slot3:Find("ConfirmBtn")
-	slot0.cancelBtn = slot3:Find("CancelBtn")
-	slot0.materialLayout = slot3:Find("Scroll View")
-	slot0.materialLayoutContent = slot0.materialLayout:Find("Viewport/Content")
-	slot0.goldText = slot3:Find("GoldText")
+	setActive(arg_2_0.sortBar, false)
 
-	setText(slot1:Find("Field/Text"), i18n("equipment_upgrade_quick_interface_source_chosen"))
-	setText(slot3:Find("Text"), i18n("equipment_upgrade_quick_interface_materials_consume"))
+	arg_2_0.equipLayout = arg_2_0._tf:Find("Adapt/Left/Scroll View")
+	arg_2_0.equipLayoutScroll = arg_2_0.equipLayout:GetComponent("LScrollRect")
+	arg_2_0.equipLayoutContent = arg_2_0.equipLayout:Find("Viewport/Content")
+	arg_2_0.equipLayoutContent:GetComponent(typeof(GridLayoutGroup)).constraintCount = 6
 
-	slot0.loader = AutoLoader.New()
+	local var_2_1 = arg_2_0._tf:Find("Adapt/Right")
+
+	arg_2_0.sourceEquip = var_2_1:Find("Source")
+	arg_2_0.sourceEquipStatus = var_2_1:Find("Status")
+	arg_2_0.formulaWire = var_2_1:Find("Wire")
+	arg_2_0.targetEquip = var_2_1:Find("Target")
+	arg_2_0.confirmBtn = var_2_1:Find("ConfirmBtn")
+	arg_2_0.cancelBtn = var_2_1:Find("CancelBtn")
+	arg_2_0.materialLayout = var_2_1:Find("Scroll View")
+	arg_2_0.materialLayoutContent = arg_2_0.materialLayout:Find("Viewport/Content")
+	arg_2_0.goldText = var_2_1:Find("GoldText")
+
+	setText(var_2_0:Find("Field/Text"), i18n("equipment_upgrade_quick_interface_source_chosen"))
+	setText(var_2_1:Find("Text"), i18n("equipment_upgrade_quick_interface_materials_consume"))
+
+	arg_2_0.loader = AutoLoader.New()
 end
 
-slot0.SortType = {
+var_0_0.SortType = {
 	Rarity = "rarity",
 	Strengthen = "level",
 	Type = "type"
 }
-slot1 = {
-	slot0.SortType.Rarity,
-	slot0.SortType.Type,
-	slot0.SortType.Strengthen
+
+local var_0_1 = {
+	var_0_0.SortType.Rarity,
+	var_0_0.SortType.Type,
+	var_0_0.SortType.Strengthen
 }
-slot2 = {
-	[slot0.SortType.Rarity] = "rarity",
-	[slot0.SortType.Type] = "type",
-	[slot0.SortType.Strengthen] = "strengthen"
+local var_0_2 = {
+	[var_0_0.SortType.Rarity] = "rarity",
+	[var_0_0.SortType.Type] = "type",
+	[var_0_0.SortType.Strengthen] = "strengthen"
 }
-slot0.SortOrder = {
+
+var_0_0.SortOrder = {
 	Descend = 0,
 	Ascend = 1
 }
-slot3 = {
-	[slot0.SortOrder.Descend] = "word_desc",
-	[slot0.SortOrder.Ascend] = "word_asc"
+
+local var_0_3 = {
+	[var_0_0.SortOrder.Descend] = "word_desc",
+	[var_0_0.SortOrder.Ascend] = "word_asc"
 }
 
-function slot0.SetEnv(slot0, slot1)
-	slot0.env = slot1
+function var_0_0.SetEnv(arg_3_0, arg_3_1)
+	arg_3_0.env = arg_3_1
 end
 
-function slot0.GetAllPaths(slot0, slot1)
-	slot2 = {}
-	slot3 = {
+function var_0_0.GetAllPaths(arg_4_0, arg_4_1)
+	local var_4_0 = {}
+	local var_4_1 = {
 		{
-			slot1
+			arg_4_1
 		}
 	}
 
-	while #slot3 > 0 do
-		for slot9, slot10 in ipairs(EquipmentProxy.GetTransformSources(table.remove(slot3, 1)[1])) do
-			slot11 = pg.equip_upgrade_data[slot10].upgrade_from
-			slot12 = slot4[2] and Clone(slot4[2]) or {}
+	while #var_4_1 > 0 do
+		local var_4_2 = table.remove(var_4_1, 1)
+		local var_4_3 = EquipmentProxy.GetTransformSources(var_4_2[1])
 
-			table.insert(slot12, 1, slot10)
-			table.insert(slot3, {
-				slot11,
-				slot12
+		for iter_4_0, iter_4_1 in ipairs(var_4_3) do
+			local var_4_4 = pg.equip_upgrade_data[iter_4_1].upgrade_from
+			local var_4_5 = var_4_2[2] and Clone(var_4_2[2]) or {}
+
+			table.insert(var_4_5, 1, iter_4_1)
+			table.insert(var_4_1, {
+				var_4_4,
+				var_4_5
 			})
 
-			if #slot0.env.tracebackHelper:GetEquipmentTransformCandicates(slot11) > 0 then
-				table.insertto(slot2, _.map(slot13, function (slot0)
+			local var_4_6 = arg_4_0.env.tracebackHelper:GetEquipmentTransformCandicates(var_4_4)
+
+			if #var_4_6 > 0 then
+				table.insertto(var_4_0, _.map(var_4_6, function(arg_5_0)
 					return {
-						source = slot0,
-						formulas = uv0
+						source = arg_5_0,
+						formulas = var_4_5
 					}
 				end))
 			end
 		end
 	end
 
-	return slot2
+	return var_4_0
 end
 
-function slot0.UpdateSourceEquipmentPaths(slot0)
-	slot0.totalPaths = slot0:GetAllPaths(slot0.contextData.TargetEquipmentId)
+function var_0_0.UpdateSourceEquipmentPaths(arg_6_0)
+	arg_6_0.totalPaths = arg_6_0:GetAllPaths(arg_6_0.contextData.TargetEquipmentId)
 
-	if slot0.contextData.sourceEquipmentInstance then
-		slot0.contextData.sourceEquipmentInstance = _.detect(slot0.totalPaths, function (slot0)
-			return EquipmentTransformUtil.SameDrop(slot0.source, uv0.contextData.sourceEquipmentInstance)
-		end) and slot1.source or nil
+	if arg_6_0.contextData.sourceEquipmentInstance then
+		local var_6_0 = _.detect(arg_6_0.totalPaths, function(arg_7_0)
+			return EquipmentTransformUtil.SameDrop(arg_7_0.source, arg_6_0.contextData.sourceEquipmentInstance)
+		end)
+
+		arg_6_0.contextData.sourceEquipmentInstance = var_6_0 and var_6_0.source or nil
 	end
 end
 
-function slot0.UpdateSort(slot0)
-	for slot4, slot5 in ipairs(slot0.totalPaths) do
-		slot5.isSourceEnough = slot5.source.type ~= DROP_TYPE_ITEM or slot5.source.composeCfg.material_num <= slot5.source.template.count
-		slot5.isMaterialEnough = slot5.isSourceEnough and EquipmentTransformUtil.CheckTransformFormulasSucceed(slot5.formulas, slot5.source)
+function var_0_0.UpdateSort(arg_8_0)
+	for iter_8_0, iter_8_1 in ipairs(arg_8_0.totalPaths) do
+		iter_8_1.isSourceEnough = iter_8_1.source.type ~= DROP_TYPE_ITEM or iter_8_1.source.template.count >= iter_8_1.source.composeCfg.material_num
+		iter_8_1.isMaterialEnough = iter_8_1.isSourceEnough and EquipmentTransformUtil.CheckTransformFormulasSucceed(iter_8_1.formulas, iter_8_1.source)
 	end
 
-	table.sort(slot0.totalPaths, function (slot0, slot1)
-		if slot0.isSourceEnough ~= slot1.isSourceEnough then
-			return slot0.isSourceEnough
+	table.sort(arg_8_0.totalPaths, function(arg_9_0, arg_9_1)
+		if arg_9_0.isSourceEnough ~= arg_9_1.isSourceEnough then
+			return arg_9_0.isSourceEnough
 		end
 
-		if slot0.isMaterialEnough ~= slot1.isMaterialEnough then
-			return slot0.isMaterialEnough
+		if arg_9_0.isMaterialEnough ~= arg_9_1.isMaterialEnough then
+			return arg_9_0.isMaterialEnough
 		end
 
-		if slot0.source.type ~= slot1.source.type then
-			return slot0.source.type < slot1.source.type
+		if arg_9_0.source.type ~= arg_9_1.source.type then
+			return arg_9_0.source.type < arg_9_1.source.type
 		end
 
-		slot2 = uv0.contextData.sortType
+		local var_9_0 = arg_8_0.contextData.sortType
+		local var_9_1 = arg_8_0.contextData.sortOrder == var_0_0.SortOrder.Descend and 1 or -1
 
-		if slot0.source.type == DROP_TYPE_ITEM then
-			return (slot0.source.template.id - slot1.source.template.id) * (uv0.contextData.sortOrder == uv1.SortOrder.Descend and 1 or -1) > 0
+		if arg_9_0.source.type == DROP_TYPE_ITEM then
+			return (arg_9_0.source.template.id - arg_9_1.source.template.id) * var_9_1 > 0
 		end
 
-		if (slot0.source.template.shipId or -1) ~= (slot1.source.template.shipId or -1) then
-			return slot4 < slot5
+		local var_9_2 = arg_9_0.source.template.shipId or -1
+		local var_9_3 = arg_9_1.source.template.shipId or -1
+
+		if var_9_2 ~= var_9_3 then
+			return var_9_2 < var_9_3
 		end
 
-		return (slot0.source.template:getConfigTable()[slot2] - slot1.source.template:getConfigTable()[slot2] ~= 0 and slot8 or slot0.source.template.id - slot1.source.template.id) * slot3 > 0
+		local var_9_4 = arg_9_0.source.template:getConfigTable()[var_9_0] - arg_9_1.source.template:getConfigTable()[var_9_0]
+
+		var_9_4 = var_9_4 ~= 0 and var_9_4 or arg_9_0.source.template.id - arg_9_1.source.template.id
+
+		return var_9_4 * var_9_1 > 0
 	end)
-	setText(slot0.orderText, i18n(uv1[slot0.contextData.sortOrder]))
-	slot0.loader:GetSprite("ui/equipmenttracebackui_atlas", uv2[slot0.contextData.sortType], slot0.sortImg)
+	setText(arg_8_0.orderText, i18n(var_0_3[arg_8_0.contextData.sortOrder]))
+	arg_8_0.loader:GetSprite("ui/equipmenttracebackui_atlas", var_0_2[arg_8_0.contextData.sortType], arg_8_0.sortImg)
 end
 
-function slot0.didEnter(slot0)
-	function slot0.equipLayoutScroll.onUpdateItem(slot0, slot1)
-		uv0:UpdateSourceListItem(slot0, tf(slot1))
-		TweenItemAlphaAndWhite(slot1)
+function var_0_0.didEnter(arg_10_0)
+	function arg_10_0.equipLayoutScroll.onUpdateItem(arg_11_0, arg_11_1)
+		arg_10_0:UpdateSourceListItem(arg_11_0, tf(arg_11_1))
+		TweenItemAlphaAndWhite(arg_11_1)
 	end
 
-	function slot0.equipLayoutScroll.onReturnItem(slot0, slot1)
-		ClearTweenItemAlphaAndWhite(slot1)
+	function arg_10_0.equipLayoutScroll.onReturnItem(arg_12_0, arg_12_1)
+		ClearTweenItemAlphaAndWhite(arg_12_1)
 	end
 
-	function slot4()
-		setActive(uv0.sortBar, not isActive(uv0.sortBar))
-	end
+	onButton(arg_10_0, arg_10_0.sortBarBtn, function()
+		local var_13_0 = isActive(arg_10_0.sortBar)
 
-	onButton(slot0, slot0.sortBarBtn, slot4, SFX_PANEL)
+		setActive(arg_10_0.sortBar, not var_13_0)
+	end, SFX_PANEL)
 
-	for slot4 = 1, slot0.sortBar.childCount do
-		onButton(slot0, slot0.sortBar:GetChild(slot4 - 1), function ()
-			uv0.contextData.sortType = uv1[uv2]
+	for iter_10_0 = 1, arg_10_0.sortBar.childCount do
+		local var_10_0 = arg_10_0.sortBar:GetChild(iter_10_0 - 1)
 
-			uv0:UpdateSort()
-			uv0:UpdateSourceList()
-			setActive(uv0.sortBar, false)
+		onButton(arg_10_0, var_10_0, function()
+			arg_10_0.contextData.sortType = var_0_1[iter_10_0]
+
+			arg_10_0:UpdateSort()
+			arg_10_0:UpdateSourceList()
+			setActive(arg_10_0.sortBar, false)
 		end, SFX_PANEL)
 	end
 
-	onButton(slot0, slot0.sortOrderBtn, function ()
-		uv0.contextData.sortOrder = uv1.SortOrder.Ascend - uv0.contextData.sortOrder
+	onButton(arg_10_0, arg_10_0.sortOrderBtn, function()
+		arg_10_0.contextData.sortOrder = var_0_0.SortOrder.Ascend - arg_10_0.contextData.sortOrder
 
-		uv0:UpdateSort()
-		uv0:UpdateSourceList()
+		arg_10_0:UpdateSort()
+		arg_10_0:UpdateSourceList()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.cancelBtn, function ()
-		uv0:closeView()
+	onButton(arg_10_0, arg_10_0.cancelBtn, function()
+		arg_10_0:closeView()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.confirmBtn, function ()
-		if not uv0.contextData.sourceEquipmentInstance then
+	onButton(arg_10_0, arg_10_0.confirmBtn, function()
+		local var_17_0 = arg_10_0.contextData.sourceEquipmentInstance
+
+		if not var_17_0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_upgrade_quick_interface_feedback_source_chosen"))
 
 			return
 		end
 
-		if not EquipmentTransformUtil.CheckTransformFormulasSucceed(uv0.contextData.sourceEquipmentFormulaList, slot0) then
+		if not EquipmentTransformUtil.CheckTransformFormulasSucceed(arg_10_0.contextData.sourceEquipmentFormulaList, var_17_0) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_upgrade_feedback_lack_of_materials"))
 
 			return
 		end
 
-		uv0:emit(EquipmentTraceBackMediator.TRANSFORM_EQUIP, slot0, uv0.contextData.sourceEquipmentFormulaList)
+		arg_10_0:emit(EquipmentTraceBackMediator.TRANSFORM_EQUIP, var_17_0, arg_10_0.contextData.sourceEquipmentFormulaList)
 	end, SFX_PANEL)
 
-	slot0.contextData.sortOrder = slot0.contextData.sortOrder or uv1.SortOrder.Descend
-	slot0.contextData.sortType = slot0.contextData.sortType or uv1.SortType.Rarity
+	arg_10_0.contextData.sortOrder = arg_10_0.contextData.sortOrder or var_0_0.SortOrder.Descend
+	arg_10_0.contextData.sortType = arg_10_0.contextData.sortType or var_0_0.SortType.Rarity
 
-	slot0:UpdateSourceEquipmentPaths()
-	slot0:UpdateSort()
-	slot0:UpdateSourceList()
-	slot0:UpdateFormula()
-	updateDrop(slot0.targetEquip, {
+	arg_10_0:UpdateSourceEquipmentPaths()
+	arg_10_0:UpdateSort()
+	arg_10_0:UpdateSourceList()
+	arg_10_0:UpdateFormula()
+	updateDrop(arg_10_0.targetEquip, {
 		type = DROP_TYPE_EQUIP,
-		id = slot0.contextData.TargetEquipmentId
+		id = arg_10_0.contextData.TargetEquipmentId
 	})
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_10_0._tf, true)
 end
 
-function slot0.UpdateSourceList(slot0)
-	slot0.lastSourceItem = nil
+function var_0_0.UpdateSourceList(arg_18_0)
+	arg_18_0.lastSourceItem = nil
 
-	slot0.equipLayoutScroll:SetTotalCount(#slot0.totalPaths)
+	arg_18_0.equipLayoutScroll:SetTotalCount(#arg_18_0.totalPaths)
 end
 
-function slot0.UpdateSourceListItem(slot0, slot1, slot2)
-	slot3 = slot0.totalPaths[slot1 + 1].source
-	slot4 = slot3.template
+function var_0_0.UpdateSourceListItem(arg_19_0, arg_19_1, arg_19_2)
+	local var_19_0 = arg_19_0.totalPaths[arg_19_1 + 1].source
+	local var_19_1 = var_19_0.template
 
-	updateDrop(slot2:Find("Item"), slot3)
-	setText(slot2:Find("Item/icon_bg/count"), slot4.count)
-	setActive(slot2:Find("EquipShip"), slot4.shipId)
-	setActive(slot2:Find("Selected"), false)
+	updateDrop(arg_19_2:Find("Item"), var_19_0)
+	setText(arg_19_2:Find("Item/icon_bg/count"), var_19_1.count)
+	setActive(arg_19_2:Find("EquipShip"), var_19_1.shipId)
+	setActive(arg_19_2:Find("Selected"), false)
 
-	if slot3 == slot0.contextData.sourceEquipmentInstance then
-		slot0.lastSourceItem = slot2
+	if var_19_0 == arg_19_0.contextData.sourceEquipmentInstance then
+		arg_19_0.lastSourceItem = arg_19_2
 
-		setActive(slot2:Find("Selected"), true)
+		setActive(arg_19_2:Find("Selected"), true)
 	end
 
-	setActive(slot2:Find("Item/mask"), false)
+	setActive(arg_19_2:Find("Item/mask"), false)
 
-	if slot3.type == DROP_TYPE_ITEM then
-		slot8 = slot3.composeCfg.material_num <= slot4.count
+	if var_19_0.type == DROP_TYPE_ITEM then
+		local var_19_2 = arg_19_2:Find("Item/icon_bg/count")
+		local var_19_3 = var_19_1.count
+		local var_19_4 = var_19_0.composeCfg.material_num
+		local var_19_5 = var_19_4 <= var_19_3
+		local var_19_6 = setColorStr(var_19_3 .. "/" .. var_19_4, var_19_5 and COLOR_WHITE or COLOR_RED)
 
-		setText(slot2:Find("Item/icon_bg/count"), setColorStr(slot6 .. "/" .. slot7, slot8 and COLOR_WHITE or COLOR_RED))
-		setActive(slot2:Find("Item/mask"), not slot8)
+		setText(var_19_2, var_19_6)
+		setActive(arg_19_2:Find("Item/mask"), not var_19_5)
 	end
 
-	if slot4.shipId then
-		slot0.loader:GetSprite("qicon/" .. getProxy(BayProxy):getShipById(slot4.shipId):getPainting(), "", slot2:Find("EquipShip/Image"))
+	if var_19_1.shipId then
+		local var_19_7 = getProxy(BayProxy):getShipById(var_19_1.shipId)
+
+		arg_19_0.loader:GetSprite("qicon/" .. var_19_7:getPainting(), "", arg_19_2:Find("EquipShip/Image"))
 	end
 
-	slot2:Find("Mask/NameText"):GetComponent(typeof(ScrollText)):SetText(slot4:getConfig("name"))
-	onButton(slot0, slot2:Find("Item"), function ()
-		if uv0.type == DROP_TYPE_ITEM and not (uv0.composeCfg.material_num <= uv0.template.count) then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_upgrade_feedback_lack_of_fragment", uv0.template:getConfig("name")))
+	arg_19_2:Find("Mask/NameText"):GetComponent(typeof(ScrollText)):SetText(var_19_1:getConfig("name"))
+	onButton(arg_19_0, arg_19_2:Find("Item"), function()
+		if var_19_0.type == DROP_TYPE_ITEM and not (var_19_0.template.count >= var_19_0.composeCfg.material_num) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_upgrade_feedback_lack_of_fragment", var_19_0.template:getConfig("name")))
 
 			return
 		end
 
-		if uv1.lastSourceItem then
-			setActive(uv1.lastSourceItem:Find("Selected"), false)
+		if arg_19_0.lastSourceItem then
+			setActive(arg_19_0.lastSourceItem:Find("Selected"), false)
 		end
 
-		uv1.lastSourceItem = uv2
+		arg_19_0.lastSourceItem = arg_19_2
 
-		setActive(uv2:Find("Selected"), true)
+		setActive(arg_19_2:Find("Selected"), true)
 
-		uv1.contextData.sourceEquipmentInstance = uv0
-		uv1.contextData.sourceEquipmentFormulaList = uv1.totalPaths[uv3 + 1].formulas
+		arg_19_0.contextData.sourceEquipmentInstance = var_19_0
+		arg_19_0.contextData.sourceEquipmentFormulaList = arg_19_0.totalPaths[arg_19_1 + 1].formulas
 
-		uv1:UpdateFormula()
+		arg_19_0:UpdateFormula()
 	end, SFX_PANEL)
 end
 
-function slot0.UpdatePlayer(slot0, slot1)
-	slot0.player = slot1
+function var_0_0.UpdatePlayer(arg_21_0, arg_21_1)
+	arg_21_0.player = arg_21_1
 
-	slot0:UpdateConsumeComparer()
+	arg_21_0:UpdateConsumeComparer()
 end
 
-function slot0.UpdateConsumeComparer(slot0)
-	slot1 = 0
-	slot2 = 0
-	slot3 = true
+function var_0_0.UpdateConsumeComparer(arg_22_0)
+	local var_22_0 = 0
+	local var_22_1 = 0
+	local var_22_2 = true
 
-	if slot0.contextData.sourceEquipmentInstance then
-		slot3, slot1, slot2 = EquipmentTransformUtil.CheckTransformEnoughGold(slot0.contextData.sourceEquipmentFormulaList, slot0.contextData.sourceEquipmentInstance)
+	if arg_22_0.contextData.sourceEquipmentInstance then
+		var_22_2, var_22_0, var_22_1 = EquipmentTransformUtil.CheckTransformEnoughGold(arg_22_0.contextData.sourceEquipmentFormulaList, arg_22_0.contextData.sourceEquipmentInstance)
 	end
 
-	if slot2 > 0 then
-		slot4 = setColorStr(slot1, slot3 and COLOR_WHITE or COLOR_RED) .. setColorStr(" + " .. slot2, slot3 and COLOR_GREEN or COLOR_RED)
+	local var_22_3 = setColorStr(var_22_0, var_22_2 and COLOR_WHITE or COLOR_RED)
+
+	if var_22_1 > 0 then
+		var_22_3 = var_22_3 .. setColorStr(" + " .. var_22_1, var_22_2 and COLOR_GREEN or COLOR_RED)
 	end
 
-	slot0.goldText:GetComponent(typeof(Text)).text = slot4
+	arg_22_0.goldText:GetComponent(typeof(Text)).text = var_22_3
 end
 
-function slot0.UpdateFormula(slot0)
-	slot1 = slot0.contextData.sourceEquipmentInstance
+function var_0_0.UpdateFormula(arg_23_0)
+	local var_23_0 = arg_23_0.contextData.sourceEquipmentInstance
 
-	setActive(slot0.sourceEquipStatus, not slot1)
-	setActive(slot0.sourceEquip, slot1)
-	setActive(slot0.materialLayout, slot1)
+	setActive(arg_23_0.sourceEquipStatus, not var_23_0)
+	setActive(arg_23_0.sourceEquip, var_23_0)
+	setActive(arg_23_0.materialLayout, var_23_0)
 
-	if slot1 then
-		updateDrop(slot0.sourceEquip, slot1)
+	if var_23_0 then
+		updateDrop(arg_23_0.sourceEquip, var_23_0)
 
-		slot2 = slot0.sourceEquip:Find("icon_bg/count")
-		slot3 = ""
+		local var_23_1 = arg_23_0.sourceEquip:Find("icon_bg/count")
+		local var_23_2 = ""
 
-		if slot1 and slot1.type == DROP_TYPE_ITEM then
-			slot3 = slot1.composeCfg.material_num
+		if var_23_0 and var_23_0.type == DROP_TYPE_ITEM then
+			var_23_2 = var_23_0.composeCfg.material_num
 		end
 
-		setText(slot2, slot3)
-		slot0.loader:GetSprite("ui/equipmenttracebackui_atlas", (not slot0.contextData.sourceEquipmentFormulaList or #slot4 <= 1) and "wire" or "wire2", slot0.formulaWire)
-		slot0:UpdateFormulaMaterials()
+		setText(var_23_1, var_23_2)
+
+		local var_23_3 = arg_23_0.contextData.sourceEquipmentFormulaList
+		local var_23_4 = not var_23_3 or #var_23_3 <= 1
+
+		arg_23_0.loader:GetSprite("ui/equipmenttracebackui_atlas", var_23_4 and "wire" or "wire2", arg_23_0.formulaWire)
+		arg_23_0:UpdateFormulaMaterials()
 	else
-		slot0:UpdateConsumeComparer()
+		arg_23_0:UpdateConsumeComparer()
 	end
 end
 
-function slot0.UpdateFormulaMaterials(slot0)
-	if not slot0.contextData.sourceEquipmentFormulaList then
+function var_0_0.UpdateFormulaMaterials(arg_24_0)
+	if not arg_24_0.contextData.sourceEquipmentFormulaList then
 		return
 	end
 
-	slot1 = {}
-	slot2 = 0
+	local var_24_0 = {}
+	local var_24_1 = 0
 
-	for slot6, slot7 in ipairs(slot0.contextData.sourceEquipmentFormulaList) do
-		for slot12, slot13 in ipairs(pg.equip_upgrade_data[slot7].material_consume) do
-			slot1[slot13[1]] = (slot1[slot13[1]] or 0) + slot13[2]
+	for iter_24_0, iter_24_1 in ipairs(arg_24_0.contextData.sourceEquipmentFormulaList) do
+		local var_24_2 = pg.equip_upgrade_data[iter_24_1]
+
+		for iter_24_2, iter_24_3 in ipairs(var_24_2.material_consume) do
+			var_24_0[iter_24_3[1]] = (var_24_0[iter_24_3[1]] or 0) + iter_24_3[2]
 		end
 
-		slot2 = slot2 + slot8.coin_consume
+		var_24_1 = var_24_1 + var_24_2.coin_consume
 	end
 
-	slot3 = {}
+	local var_24_3 = {}
 
-	for slot7, slot8 in pairs(slot1) do
-		table.insert(slot3, {
-			id = slot7,
-			count = slot8
+	for iter_24_4, iter_24_5 in pairs(var_24_0) do
+		table.insert(var_24_3, {
+			id = iter_24_4,
+			count = iter_24_5
 		})
 	end
 
-	table.sort(slot3, function (slot0, slot1)
-		return slot1.id < slot0.id
+	table.sort(var_24_3, function(arg_25_0, arg_25_1)
+		return arg_25_0.id > arg_25_1.id
 	end)
 
-	slot0.consumeMaterials = slot3
+	arg_24_0.consumeMaterials = var_24_3
 
-	UIItemList.StaticAlign(slot0.materialLayoutContent, slot0.materialLayoutContent:GetChild(0), #slot0.consumeMaterials, function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:UpdateFormulaMaterialItem(slot1, slot2)
+	UIItemList.StaticAlign(arg_24_0.materialLayoutContent, arg_24_0.materialLayoutContent:GetChild(0), #arg_24_0.consumeMaterials, function(arg_26_0, arg_26_1, arg_26_2)
+		if arg_26_0 == UIItemList.EventUpdate then
+			arg_24_0:UpdateFormulaMaterialItem(arg_26_1, arg_26_2)
 		end
 	end)
 	Canvas.ForceUpdateCanvases()
 
-	slot4 = slot0.materialLayoutContent.rect.height < slot0.materialLayout.rect.height
-	slot0.materialLayout:GetComponent(typeof(ScrollRect)).enabled = not slot4
+	local var_24_4 = arg_24_0.materialLayoutContent.rect.height < arg_24_0.materialLayout.rect.height
 
-	setActive(slot0.materialLayout:Find("Scrollbar"), not slot4)
+	arg_24_0.materialLayout:GetComponent(typeof(ScrollRect)).enabled = not var_24_4
 
-	if slot4 then
-		slot0.materialLayoutContent.anchoredPosition = Vector2.zero
+	setActive(arg_24_0.materialLayout:Find("Scrollbar"), not var_24_4)
+
+	if var_24_4 then
+		arg_24_0.materialLayoutContent.anchoredPosition = Vector2.zero
 	end
 
-	slot0:UpdateConsumeComparer()
+	arg_24_0:UpdateConsumeComparer()
 end
 
-function slot0.UpdateFormulaMaterialItem(slot0, slot1, slot2)
-	slot3 = slot0.consumeMaterials[slot1 + 1]
-
-	updateDrop(slot2:Find("Item"), {
+function var_0_0.UpdateFormulaMaterialItem(arg_27_0, arg_27_1, arg_27_2)
+	local var_27_0 = arg_27_0.consumeMaterials[arg_27_1 + 1]
+	local var_27_1 = {
 		type = DROP_TYPE_ITEM,
-		id = slot3.id
-	})
-	setText(slot2:Find("Count"), setColorStr(slot3.count, slot3.count <= getProxy(BagProxy):getItemCountById(slot3.id) and COLOR_GREEN or COLOR_RED) .. "/" .. slot5)
-	onButton(slot0, slot2:Find("Item"), function ()
-		uv0:emit(uv1.ON_DROP, uv2)
+		id = var_27_0.id
+	}
+
+	updateDrop(arg_27_2:Find("Item"), var_27_1)
+
+	local var_27_2 = getProxy(BagProxy):getItemCountById(var_27_0.id)
+
+	setText(arg_27_2:Find("Count"), setColorStr(var_27_0.count, var_27_2 >= var_27_0.count and COLOR_GREEN or COLOR_RED) .. "/" .. var_27_2)
+	onButton(arg_27_0, arg_27_2:Find("Item"), function()
+		arg_27_0:emit(var_0_0.ON_DROP, var_27_1)
 	end)
 end
 
-function slot0.willExit(slot0)
-	slot0.loader:Clear()
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_29_0)
+	arg_29_0.loader:Clear()
+	pg.UIMgr.GetInstance():UnblurPanel(arg_29_0._tf)
 end
 
-return slot0
+return var_0_0

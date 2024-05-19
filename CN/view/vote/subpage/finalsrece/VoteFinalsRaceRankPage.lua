@@ -1,25 +1,26 @@
-slot0 = class("VoteFinalsRaceRankPage", import("..GroupRace.VoteGroupRaceRankPage"))
+﻿local var_0_0 = class("VoteFinalsRaceRankPage", import("..GroupRace.VoteGroupRaceRankPage"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "FinalsRaceRank"
 end
 
-function slot0.NewCard(slot0, slot1)
-	slot2 = slot1.transform
+function var_0_0.NewCard(arg_2_0, arg_2_1)
+	local var_2_0 = arg_2_1.transform
 
 	return {
-		Update = function (slot0, slot1, slot2, slot3)
-			setActive(uv0:Find("1"), slot1 == 1)
-			setActive(uv0:Find("2"), slot1 == 2)
-			setActive(uv0:Find("3"), slot1 == 3)
-			setText(uv0:Find("number"), slot1)
-			setText(uv0:Find("name"), shortenString(slot0:getShipName(), 6))
-			setText(uv0:Find("Text"), slot2)
+		Update = function(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+			setActive(var_2_0:Find("1"), arg_3_1 == 1)
+			setActive(var_2_0:Find("2"), arg_3_1 == 2)
+			setActive(var_2_0:Find("3"), arg_3_1 == 3)
+			setText(var_2_0:Find("number"), arg_3_1)
+			setText(var_2_0:Find("name"), shortenString(arg_3_0:getShipName(), 6))
+			setText(var_2_0:Find("Text"), arg_3_2)
 		end
 	}
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_4_0)
+	return
 end
 
-return slot0
+return var_0_0

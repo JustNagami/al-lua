@@ -1,142 +1,163 @@
-assert(require("jit").version_num == 20100, "LuaJIT core/library version mismatch")
+﻿local var_0_0 = require("jit")
 
-slot1 = require("jit.util")
-slot2 = require("jit.vmdef")
-slot3 = slot1.funcinfo
-slot4 = slot1.funcbc
-slot5 = slot1.traceinfo
-slot6 = slot1.traceir
-slot7 = slot1.tracek
-slot8 = slot1.tracemc
-slot9 = slot1.tracesnap
-slot10 = slot1.traceexitstub
-slot11 = slot1.ircalladdr
-slot12 = require("bit")
-slot13 = slot12.band
-slot14 = slot12.rshift
-slot15 = slot12.tohex
-slot16 = string.sub
-slot17 = string.gsub
-slot18 = string.format
-slot19 = string.byte
-slot20 = string.rep
-slot21 = type
-slot22 = tostring
-slot23 = io.stdout
-slot24 = io.stderr
-slot25, slot26, slot27, slot28, slot29 = nil
-slot30 = {
+assert(var_0_0.version_num == 20100, "LuaJIT core/library version mismatch")
+
+local var_0_1 = require("jit.util")
+local var_0_2 = require("jit.vmdef")
+local var_0_3 = var_0_1.funcinfo
+local var_0_4 = var_0_1.funcbc
+local var_0_5 = var_0_1.traceinfo
+local var_0_6 = var_0_1.traceir
+local var_0_7 = var_0_1.tracek
+local var_0_8 = var_0_1.tracemc
+local var_0_9 = var_0_1.tracesnap
+local var_0_10 = var_0_1.traceexitstub
+local var_0_11 = var_0_1.ircalladdr
+local var_0_12 = require("bit")
+local var_0_13 = var_0_12.band
+local var_0_14 = var_0_12.rshift
+local var_0_15 = var_0_12.tohex
+local var_0_16 = string.sub
+local var_0_17 = string.gsub
+local var_0_18 = string.format
+local var_0_19 = string.byte
+local var_0_20 = string.rep
+local var_0_21 = type
+local var_0_22 = tostring
+local var_0_23 = io.stdout
+local var_0_24 = io.stderr
+local var_0_25
+local var_0_26
+local var_0_27
+local var_0_28
+local var_0_29
+local var_0_30 = {
 	__index = false
 }
-slot31 = {}
-slot32 = 0
+local var_0_31 = {}
+local var_0_32 = 0
 
-function slot33(slot0, slot1)
-	uv0.__index = {}
+local function var_0_33(arg_1_0, arg_1_1)
+	local var_1_0 = {}
 
-	if uv1.arch:sub(1, 4) == "mips" then
-		slot2[uv2(slot0, 0)] = "exit"
+	var_0_30.__index = var_1_0
+
+	if var_0_0.arch:sub(1, 4) == "mips" then
+		var_1_0[var_0_10(arg_1_0, 0)] = "exit"
 
 		return
 	end
 
-	for slot6 = 0, slot1 - 1 do
-		if uv2(slot0, slot6) < 0 then
-			slot7 = slot7 + 4294967296.0
+	for iter_1_0 = 0, arg_1_1 - 1 do
+		local var_1_1 = var_0_10(arg_1_0, iter_1_0)
+
+		if var_1_1 < 0 then
+			var_1_1 = var_1_1 + 4294967296
 		end
 
-		slot2[slot7] = uv3(slot6)
+		var_1_0[var_1_1] = var_0_22(iter_1_0)
 	end
 
-	if uv2(slot0, slot1) then
-		slot2[slot3] = "stack_check"
+	local var_1_2 = var_0_10(arg_1_0, arg_1_1)
+
+	if var_1_2 then
+		var_1_0[var_1_2] = "stack_check"
 	end
 end
 
-function slot34(slot0, slot1)
-	slot2 = uv0
+local function var_0_34(arg_2_0, arg_2_1)
+	local var_2_0 = var_0_31
 
-	if uv1 == 0 then
-		for slot7 = 0, #uv2.ircall do
-			if uv3(slot7) ~= 0 then
-				if slot8 < 0 then
-					slot8 = slot8 + 4294967296.0
+	if var_0_32 == 0 then
+		local var_2_1 = var_0_2.ircall
+
+		for iter_2_0 = 0, #var_2_1 do
+			local var_2_2 = var_0_11(iter_2_0)
+
+			if var_2_2 ~= 0 then
+				if var_2_2 < 0 then
+					var_2_2 = var_2_2 + 4294967296
 				end
 
-				slot2[slot8] = slot3[slot7]
+				var_2_0[var_2_2] = var_2_1[iter_2_0]
 			end
 		end
 	end
 
-	if uv1 == 1000000 then
-		uv4(slot0, slot1)
-	elseif uv1 < slot1 then
-		for slot6 = uv1, slot1 - 1 do
-			if uv5(slot6) == nil then
-				uv4(slot0, slot1)
-				setmetatable(uv0, uv6)
+	if var_0_32 == 1000000 then
+		var_0_33(arg_2_0, arg_2_1)
+	elseif arg_2_1 > var_0_32 then
+		for iter_2_1 = var_0_32, arg_2_1 - 1 do
+			local var_2_3 = var_0_10(iter_2_1)
 
-				slot1 = 1000000
+			if var_2_3 == nil then
+				var_0_33(arg_2_0, arg_2_1)
+				setmetatable(var_0_31, var_0_30)
+
+				arg_2_1 = 1000000
 
 				break
 			end
 
-			if slot7 < 0 then
-				slot7 = slot7 + 4294967296.0
+			if var_2_3 < 0 then
+				var_2_3 = var_2_3 + 4294967296
 			end
 
-			slot2[slot7] = uv7(slot6)
+			var_2_0[var_2_3] = var_0_22(iter_2_1)
 		end
 
-		uv1 = slot1
+		var_0_32 = arg_2_1
 	end
 
-	return slot2
+	return var_2_0
 end
 
-function slot35(slot0)
-	uv0:write(slot0)
+local function var_0_35(arg_3_0)
+	var_0_28:write(arg_3_0)
 end
 
-function slot36(slot0)
-	if not uv0(slot0) then
+local function var_0_36(arg_4_0)
+	local var_4_0 = var_0_5(arg_4_0)
+
+	if not var_4_0 then
 		return
 	end
 
-	slot2, slot3, slot4 = uv1(slot0)
+	local var_4_1, var_4_2, var_4_3 = var_0_8(arg_4_0)
 
-	if not slot2 then
+	if not var_4_1 then
 		return
 	end
 
-	if not uv2 then
-		uv2 = require("jit.dis_" .. uv3.arch)
+	if not var_0_26 then
+		var_0_26 = require("jit.dis_" .. var_0_0.arch)
 	end
 
-	if slot3 < 0 then
-		slot3 = slot3 + 4294967296.0
+	if var_4_2 < 0 then
+		var_4_2 = var_4_2 + 4294967296
 	end
 
-	uv4:write("---- TRACE ", slot0, " mcode ", #slot2, "\n")
+	var_0_28:write("---- TRACE ", arg_4_0, " mcode ", #var_4_1, "\n")
 
-	slot5 = uv2.create(slot2, slot3, uv5)
-	slot5.hexdump = 0
-	slot5.symtab = uv6(slot0, slot1.nexit)
+	local var_4_4 = var_0_26.create(var_4_1, var_4_2, var_0_35)
 
-	if slot4 ~= 0 then
-		uv7[slot3 + slot4] = "LOOP"
+	var_4_4.hexdump = 0
+	var_4_4.symtab = var_0_34(arg_4_0, var_4_0.nexit)
 
-		slot5:disass(0, slot4)
-		uv4:write("->LOOP:\n")
-		slot5:disass(slot4, #slot2 - slot4)
+	if var_4_3 ~= 0 then
+		var_0_31[var_4_2 + var_4_3] = "LOOP"
 
-		uv7[slot3 + slot4] = nil
+		var_4_4:disass(0, var_4_3)
+		var_0_28:write("->LOOP:\n")
+		var_4_4:disass(var_4_3, #var_4_1 - var_4_3)
+
+		var_0_31[var_4_2 + var_4_3] = nil
 	else
-		slot5:disass(0, #slot2)
+		var_4_4:disass(0, #var_4_1)
 	end
 end
 
-slot37 = {
+local var_0_37 = {
 	[0] = "nil",
 	"fal",
 	"tru",
@@ -162,118 +183,106 @@ slot37 = {
 	"u64",
 	"sfp"
 }
-slot38 = {
+local var_0_38 = {
 	[0] = "%s",
 	"%s",
 	"%s",
-	"[36m%s[m",
-	"[32m%s[m",
+	"\x1B[36m%s\x1B[m",
+	"\x1B[32m%s\x1B[m",
 	"%s",
-	"[1m%s[m",
+	"\x1B[1m%s\x1B[m",
 	"%s",
-	"[1m%s[m",
+	"\x1B[1m%s\x1B[m",
 	"%s",
-	"[33m%s[m",
-	"[31m%s[m",
-	"[36m%s[m",
-	"[34m%s[m",
-	"[34m%s[m",
-	"[35m%s[m",
-	"[35m%s[m",
-	"[35m%s[m",
-	"[35m%s[m",
-	"[35m%s[m",
-	"[35m%s[m",
-	"[35m%s[m",
-	"[35m%s[m",
-	"[35m%s[m"
+	"\x1B[33m%s\x1B[m",
+	"\x1B[31m%s\x1B[m",
+	"\x1B[36m%s\x1B[m",
+	"\x1B[34m%s\x1B[m",
+	"\x1B[34m%s\x1B[m",
+	"\x1B[35m%s\x1B[m",
+	"\x1B[35m%s\x1B[m",
+	"\x1B[35m%s\x1B[m",
+	"\x1B[35m%s\x1B[m",
+	"\x1B[35m%s\x1B[m",
+	"\x1B[35m%s\x1B[m",
+	"\x1B[35m%s\x1B[m",
+	"\x1B[35m%s\x1B[m",
+	"\x1B[35m%s\x1B[m"
 }
 
-function slot39(slot0)
-	return slot0
+local function var_0_39(arg_5_0)
+	return arg_5_0
 end
 
-function slot40(slot0, slot1)
-	return uv0(uv1[slot1], slot0)
+local function var_0_40(arg_6_0, arg_6_1)
+	return var_0_18(var_0_38[arg_6_1], arg_6_0)
 end
 
-slot41 = setmetatable({}, {
-	__index = function (slot0, slot1)
-		slot2 = uv0(uv1[slot1], slot1)
-		slot0[slot1] = slot2
+local var_0_41 = setmetatable({}, {
+	__index = function(arg_7_0, arg_7_1)
+		local var_7_0 = var_0_40(var_0_37[arg_7_1], arg_7_1)
 
-		return slot2
+		arg_7_0[arg_7_1] = var_7_0
+
+		return var_7_0
 	end
 })
-slot42 = {
+local var_0_42 = {
 	[">"] = "&gt;",
 	["<"] = "&lt;",
 	["&"] = "&amp;"
 }
 
-function slot43(slot0, slot1)
-	return uv2("<span class=\"irt_%s\">%s</span>", uv3[slot1], uv0(slot0, "[<>&]", uv1))
+local function var_0_43(arg_8_0, arg_8_1)
+	arg_8_0 = var_0_17(arg_8_0, "[<>&]", var_0_42)
+
+	return var_0_18("<span class=\"irt_%s\">%s</span>", var_0_37[arg_8_1], arg_8_0)
 end
 
-slot44 = setmetatable({}, {
-	__index = function (slot0, slot1)
-		slot2 = uv0(uv1[slot1], slot1)
-		slot0[slot1] = slot2
+local var_0_44 = setmetatable({}, {
+	__index = function(arg_9_0, arg_9_1)
+		local var_9_0 = var_0_43(var_0_37[arg_9_1], arg_9_1)
 
-		return slot2
+		arg_9_0[arg_9_1] = var_9_0
+
+		return var_9_0
 	end
 })
-slot45 = [[
-<style type="text/css">
-background { background: #ffffff; color: #000000; }
-pre.ljdump {
-font-size: 10pt;
-background: #f0f4ff;
-color: #000000;
-border: 1px solid #bfcfff;
-padding: 0.5em;
-margin-left: 2em;
-margin-right: 2em;
-}
-span.irt_str { color: #00a000; }
-span.irt_thr, span.irt_fun { color: #404040; font-weight: bold; }
-span.irt_tab { color: #c00000; }
-span.irt_udt, span.irt_lud { color: #00c0c0; }
-span.irt_num { color: #4040c0; }
-span.irt_int, span.irt_i8, span.irt_u8, span.irt_i16, span.irt_u16 { color: #b040b0; }
-</style>
-]]
-slot46, slot47 = nil
-slot48 = {
+local var_0_45 = "<style type=\"text/css\">\nbackground { background: #ffffff; color: #000000; }\npre.ljdump {\nfont-size: 10pt;\nbackground: #f0f4ff;\ncolor: #000000;\nborder: 1px solid #bfcfff;\npadding: 0.5em;\nmargin-left: 2em;\nmargin-right: 2em;\n}\nspan.irt_str { color: #00a000; }\nspan.irt_thr, span.irt_fun { color: #404040; font-weight: bold; }\nspan.irt_tab { color: #c00000; }\nspan.irt_udt, span.irt_lud { color: #00c0c0; }\nspan.irt_num { color: #4040c0; }\nspan.irt_int, span.irt_i8, span.irt_u8, span.irt_i16, span.irt_u16 { color: #b040b0; }\n</style>\n"
+local var_0_46
+local var_0_47
+local var_0_48 = {
 	["SLOAD "] = setmetatable({}, {
-		__index = function (slot0, slot1)
-			if uv0(slot1, 1) ~= 0 then
-				slot2 = "" .. "P"
+		__index = function(arg_10_0, arg_10_1)
+			local var_10_0 = ""
+
+			if var_0_13(arg_10_1, 1) ~= 0 then
+				var_10_0 = var_10_0 .. "P"
 			end
 
-			if uv0(slot1, 2) ~= 0 then
-				slot2 = slot2 .. "F"
+			if var_0_13(arg_10_1, 2) ~= 0 then
+				var_10_0 = var_10_0 .. "F"
 			end
 
-			if uv0(slot1, 4) ~= 0 then
-				slot2 = slot2 .. "T"
+			if var_0_13(arg_10_1, 4) ~= 0 then
+				var_10_0 = var_10_0 .. "T"
 			end
 
-			if uv0(slot1, 8) ~= 0 then
-				slot2 = slot2 .. "C"
+			if var_0_13(arg_10_1, 8) ~= 0 then
+				var_10_0 = var_10_0 .. "C"
 			end
 
-			if uv0(slot1, 16) ~= 0 then
-				slot2 = slot2 .. "R"
+			if var_0_13(arg_10_1, 16) ~= 0 then
+				var_10_0 = var_10_0 .. "R"
 			end
 
-			if uv0(slot1, 32) ~= 0 then
-				slot2 = slot2 .. "I"
+			if var_0_13(arg_10_1, 32) ~= 0 then
+				var_10_0 = var_10_0 .. "I"
 			end
 
-			slot0[slot1] = slot2
+			arg_10_0[arg_10_1] = var_10_0
 
-			return slot2
+			return var_10_0
 		end
 	}),
 	["XLOAD "] = {
@@ -287,25 +296,30 @@ slot48 = {
 		"RVU"
 	},
 	["CONV  "] = setmetatable({}, {
-		__index = function (slot0, slot1)
-			if uv1(slot1, 2048) ~= 0 then
-				slot2 = uv0[uv1(uv2(slot1, 5), 31)] .. "." .. uv0[uv1(slot1, 31)] .. " sext"
+		__index = function(arg_11_0, arg_11_1)
+			local var_11_0 = var_0_47[var_0_13(arg_11_1, 31)]
+			local var_11_1 = var_0_47[var_0_13(var_0_14(arg_11_1, 5), 31)] .. "." .. var_11_0
+
+			if var_0_13(arg_11_1, 2048) ~= 0 then
+				var_11_1 = var_11_1 .. " sext"
 			end
 
-			if uv2(slot1, 14) == 2 then
-				slot2 = slot2 .. " index"
-			elseif slot3 == 3 then
-				slot2 = slot2 .. " check"
+			local var_11_2 = var_0_14(arg_11_1, 14)
+
+			if var_11_2 == 2 then
+				var_11_1 = var_11_1 .. " index"
+			elseif var_11_2 == 3 then
+				var_11_1 = var_11_1 .. " check"
 			end
 
-			slot0[slot1] = slot2
+			arg_11_0[arg_11_1] = var_11_1
 
-			return slot2
+			return var_11_1
 		end
 	}),
-	["FLOAD "] = slot2.irfield,
-	["FREF  "] = slot2.irfield,
-	FPMATH = slot2.irfpm,
+	["FLOAD "] = var_0_2.irfield,
+	["FREF  "] = var_0_2.irfield,
+	FPMATH = var_0_2.irfpm,
 	BUFHDR = {
 		[0] = "RESET",
 		"APPEND"
@@ -317,521 +331,561 @@ slot48 = {
 	}
 }
 
-function slot49(slot0)
-	if slot0 == "\n" then
+local function var_0_49(arg_12_0)
+	if arg_12_0 == "\n" then
 		return "\\n"
-	elseif slot0 == "\r" then
+	elseif arg_12_0 == "\r" then
 		return "\\r"
-	elseif slot0 == "\t" then
+	elseif arg_12_0 == "\t" then
 		return "\\t"
 	else
-		return uv0("\\%03d", uv1(slot0))
+		return var_0_18("\\%03d", var_0_19(arg_12_0))
 	end
 end
 
-function slot50(slot0, slot1)
-	if uv0(slot0, slot1).loc then
-		return slot2.loc
-	elseif slot2.ffid then
-		return uv1.ffnames[slot2.ffid]
-	elseif slot2.addr then
-		return uv2("C:%x", slot2.addr)
+local function var_0_50(arg_13_0, arg_13_1)
+	local var_13_0 = var_0_3(arg_13_0, arg_13_1)
+
+	if var_13_0.loc then
+		return var_13_0.loc
+	elseif var_13_0.ffid then
+		return var_0_2.ffnames[var_13_0.ffid]
+	elseif var_13_0.addr then
+		return var_0_18("C:%x", var_13_0.addr)
 	else
 		return "(?)"
 	end
 end
 
-function slot51(slot0, slot1, slot2)
-	slot3, slot4, slot5 = uv0(slot0, slot1)
-	slot7 = nil
+local function var_0_51(arg_14_0, arg_14_1, arg_14_2)
+	local var_14_0, var_14_1, var_14_2 = var_0_7(arg_14_0, arg_14_1)
+	local var_14_3 = var_0_21(var_14_0)
+	local var_14_4
 
-	if uv1(slot3) == "number" then
-		if uv2(slot2 or 0, 196608) ~= 0 then
-			slot7 = uv2(slot2, 131072) ~= 0 and "contpc" or "ftsz"
-		elseif slot3 == 6755399441055744.0 then
-			slot7 = "bias"
+	if var_14_3 == "number" then
+		if var_0_13(arg_14_2 or 0, 196608) ~= 0 then
+			var_14_4 = var_0_13(arg_14_2, 131072) ~= 0 and "contpc" or "ftsz"
+		elseif var_14_0 == 6755399441055744 then
+			var_14_4 = "bias"
 		else
-			slot7 = uv3(slot3 > 0 and slot3 < 1.390671161567e-309 and "%+a" or "%+.14g", slot3)
+			var_14_4 = var_0_18(var_14_0 > 0 and var_14_0 < 1.390671161567e-309 and "%+a" or "%+.14g", var_14_0)
 		end
-	elseif slot6 == "string" then
-		slot7 = uv3(#slot3 > 20 and "\"%.20s\"~" or "\"%s\"", uv4(slot3, "%c", uv5))
-	elseif slot6 == "function" then
-		slot7 = uv6(slot3)
-	elseif slot6 == "table" then
-		slot7 = uv3("{%p}", slot3)
-	elseif slot6 == "userdata" then
-		if slot4 == 12 then
-			slot7 = uv3("userdata:%p", slot3)
-		elseif uv3("[%p]", slot3) == "[NULL]" then
-			slot7 = "NULL"
+	elseif var_14_3 == "string" then
+		var_14_4 = var_0_18(#var_14_0 > 20 and "\"%.20s\"~" or "\"%s\"", var_0_17(var_14_0, "%c", var_0_49))
+	elseif var_14_3 == "function" then
+		var_14_4 = var_0_50(var_14_0)
+	elseif var_14_3 == "table" then
+		var_14_4 = var_0_18("{%p}", var_14_0)
+	elseif var_14_3 == "userdata" then
+		if var_14_1 == 12 then
+			var_14_4 = var_0_18("userdata:%p", var_14_0)
+		else
+			var_14_4 = var_0_18("[%p]", var_14_0)
+
+			if var_14_4 == "[NULL]" then
+				var_14_4 = "NULL"
+			end
 		end
-	elseif slot4 == 21 then
-		if uv7(uv7(uv8(slot3), 1, -3), 1, 1) ~= "-" then
-			slot7 = "+" .. slot7
+	elseif var_14_1 == 21 then
+		var_14_4 = var_0_16(var_0_22(var_14_0), 1, -3)
+
+		if var_0_16(var_14_4, 1, 1) ~= "-" then
+			var_14_4 = "+" .. var_14_4
 		end
-	elseif slot2 == 17137663 then
+	elseif arg_14_2 == 17137663 then
 		return "----"
 	else
-		slot7 = uv8(slot3)
+		var_14_4 = var_0_22(var_14_0)
 	end
 
-	if slot5 then
-		slot7 = uv3("%s @%d", uv9(uv3("%-4s", slot7), slot4), slot5)
+	local var_14_5 = var_0_46(var_0_18("%-4s", var_14_4), var_14_1)
+
+	if var_14_2 then
+		var_14_5 = var_0_18("%s @%d", var_14_5, var_14_2)
 	end
 
-	return slot7
+	return var_14_5
 end
 
-function slot52(slot0, slot1)
-	slot2 = 2
+local function var_0_52(arg_15_0, arg_15_1)
+	local var_15_0 = 2
 
-	for slot6 = 0, slot1[1] - 1 do
-		if uv0(slot1[slot2], 24) == slot6 then
-			slot2 = slot2 + 1
+	for iter_15_0 = 0, arg_15_1[1] - 1 do
+		local var_15_1 = arg_15_1[var_15_0]
 
-			if uv1(slot7, 65535) - 32768 < 0 then
-				uv2:write(uv3(slot0, slot8, slot7))
-			elseif uv1(slot7, 524288) ~= 0 then
-				uv2:write(uv4(uv5("%04d/%04d", slot8, slot8 + 1), 14))
+		if var_0_14(var_15_1, 24) == iter_15_0 then
+			var_15_0 = var_15_0 + 1
+
+			local var_15_2 = var_0_13(var_15_1, 65535) - 32768
+
+			if var_15_2 < 0 then
+				var_0_28:write(var_0_51(arg_15_0, var_15_2, var_15_1))
+			elseif var_0_13(var_15_1, 524288) ~= 0 then
+				var_0_28:write(var_0_46(var_0_18("%04d/%04d", var_15_2, var_15_2 + 1), 14))
 			else
-				slot9, slot10, slot11, slot12 = uv6(slot0, slot8)
+				local var_15_3, var_15_4, var_15_5, var_15_6 = var_0_6(arg_15_0, var_15_2)
 
-				uv2:write(uv4(uv5("%04d", slot8), uv1(slot10, 31)))
+				var_0_28:write(var_0_46(var_0_18("%04d", var_15_2), var_0_13(var_15_4, 31)))
 			end
 
-			uv2:write(uv1(slot7, 65536) == 0 and " " or "|")
+			var_0_28:write(var_0_13(var_15_1, 65536) == 0 and " " or "|")
 		else
-			uv2:write("---- ")
+			var_0_28:write("---- ")
 		end
 	end
 
-	uv2:write("]\n")
+	var_0_28:write("]\n")
 end
 
-function slot53(slot0)
-	slot4 = slot0
+local function var_0_53(arg_16_0)
+	var_0_28:write("---- TRACE ", arg_16_0, " snapshots\n")
 
-	uv0:write("---- TRACE ", slot4, " snapshots\n")
+	for iter_16_0 = 0, 1000000000 do
+		local var_16_0 = var_0_9(arg_16_0, iter_16_0)
 
-	for slot4 = 0, 1000000000 do
-		if not uv1(slot0, slot4) then
+		if not var_16_0 then
 			break
 		end
 
-		uv0:write(uv2("#%-3d %04d [ ", slot4, slot5[0]))
-		uv3(slot0, slot5)
+		var_0_28:write(var_0_18("#%-3d %04d [ ", iter_16_0, var_16_0[0]))
+		var_0_52(arg_16_0, var_16_0)
 	end
 end
 
-function slot54(slot0, slot1)
-	if not uv0 then
-		uv0 = require("jit.dis_" .. uv1.arch)
+local function var_0_54(arg_17_0, arg_17_1)
+	if not var_0_26 then
+		var_0_26 = require("jit.dis_" .. var_0_0.arch)
 	end
 
-	slot3 = uv3(slot0, 8)
+	local var_17_0 = var_0_13(arg_17_0, 255)
+	local var_17_1 = var_0_14(arg_17_0, 8)
 
-	if uv2(slot0, 255) == 253 or slot2 == 254 then
-		return (slot3 == 0 or slot3 == 255) and " {sink" or uv4(" {%04d", slot1 - slot3)
+	if var_17_0 == 253 or var_17_0 == 254 then
+		return (var_17_1 == 0 or var_17_1 == 255) and " {sink" or var_0_18(" {%04d", arg_17_1 - var_17_1)
 	end
 
-	if slot0 > 255 then
-		return uv4("[%x]", slot3 * 4)
+	if arg_17_0 > 255 then
+		return var_0_18("[%x]", var_17_1 * 4)
 	end
 
-	if slot2 < 128 then
-		return uv0.regname(slot2)
+	if var_17_0 < 128 then
+		return var_0_26.regname(var_17_0)
 	end
 
 	return ""
 end
 
-function slot55(slot0, slot1)
-	slot2 = nil
+local function var_0_55(arg_18_0, arg_18_1)
+	local var_18_0
 
-	if slot1 > 0 then
-		slot3, slot4, slot1, slot6 = uv0(slot0, slot1)
+	if arg_18_1 > 0 then
+		local var_18_1, var_18_2, var_18_3, var_18_4 = var_0_6(arg_18_0, arg_18_1)
 
-		if uv1(slot4, 31) == 0 then
-			slot2 = uv2(slot0, slot6)
+		if var_0_13(var_18_2, 31) == 0 then
+			arg_18_1 = var_18_3
+			var_18_0 = var_0_51(arg_18_0, var_18_4)
 		end
 	end
 
-	if slot1 < 0 then
-		uv3:write(uv4("[0x%x](", tonumber(uv5(slot0, slot1))))
+	if arg_18_1 < 0 then
+		var_0_28:write(var_0_18("[0x%x](", tonumber((var_0_7(arg_18_0, arg_18_1)))))
 	else
-		uv3:write(uv4("%04d (", slot1))
+		var_0_28:write(var_0_18("%04d (", arg_18_1))
 	end
 
-	return slot2
+	return var_18_0
 end
 
-function slot56(slot0, slot1)
-	if slot1 < 0 then
-		uv0:write(uv1(slot0, slot1))
+local function var_0_56(arg_19_0, arg_19_1)
+	if arg_19_1 < 0 then
+		var_0_28:write(var_0_51(arg_19_0, arg_19_1))
 	else
-		slot2, slot3, slot4, slot5 = uv2(slot0, slot1)
-		slot6 = 6 * uv3(slot3, 8)
+		local var_19_0, var_19_1, var_19_2, var_19_3 = var_0_6(arg_19_0, arg_19_1)
+		local var_19_4 = 6 * var_0_14(var_19_1, 8)
 
-		if uv4(uv5.irnames, slot6 + 1, slot6 + 6) == "CARG  " then
-			uv6(slot0, slot4)
+		if var_0_16(var_0_2.irnames, var_19_4 + 1, var_19_4 + 6) == "CARG  " then
+			var_0_56(arg_19_0, var_19_2)
 
-			if slot5 < 0 then
-				uv0:write(" ", uv1(slot0, slot5))
+			if var_19_3 < 0 then
+				var_0_28:write(" ", var_0_51(arg_19_0, var_19_3))
 			else
-				uv0:write(" ", uv7("%04d", slot5))
+				var_0_28:write(" ", var_0_18("%04d", var_19_3))
 			end
 		else
-			uv0:write(uv7("%04d", slot1))
+			var_0_28:write(var_0_18("%04d", arg_19_1))
 		end
 	end
 end
 
-function slot57(slot0, slot1, slot2)
-	if not uv0(slot0) then
+local function var_0_57(arg_20_0, arg_20_1, arg_20_2)
+	local var_20_0 = var_0_5(arg_20_0)
+
+	if not var_20_0 then
 		return
 	end
 
-	slot4 = slot3.nins
+	local var_20_1 = var_20_0.nins
 
-	uv1:write("---- TRACE ", slot0, " IR\n")
+	var_0_28:write("---- TRACE ", arg_20_0, " IR\n")
 
-	slot5 = uv2.irnames
-	slot6 = 65536
-	slot7, slot8 = nil
+	local var_20_2 = var_0_2.irnames
+	local var_20_3 = 65536
+	local var_20_4
+	local var_20_5
 
-	if slot1 then
-		slot6 = uv3(slot0, 0)[0]
-		slot8 = 0
+	if arg_20_1 then
+		var_20_4 = var_0_9(arg_20_0, 0)
+		var_20_3 = var_20_4[0]
+		var_20_5 = 0
 	end
 
-	for slot12 = 1, slot4 do
-		if slot6 <= slot12 then
-			if slot2 then
-				uv1:write(uv4("....              SNAP   #%-3d [ ", slot8))
+	for iter_20_0 = 1, var_20_1 do
+		if var_20_3 <= iter_20_0 then
+			if arg_20_2 then
+				var_0_28:write(var_0_18("....              SNAP   #%-3d [ ", var_20_5))
 			else
-				uv1:write(uv4("....        SNAP   #%-3d [ ", slot8))
+				var_0_28:write(var_0_18("....        SNAP   #%-3d [ ", var_20_5))
 			end
 
-			uv5(slot0, slot7)
+			var_0_52(arg_20_0, var_20_4)
 
-			slot6 = uv3(slot0, slot8 + 1) and slot7[0] or 65536
+			var_20_5 = var_20_5 + 1
+			var_20_4 = var_0_9(arg_20_0, var_20_5)
+			var_20_3 = var_20_4 and var_20_4[0] or 65536
 		end
 
-		slot13, slot14, slot15, slot16, slot17 = uv6(slot0, slot12)
-		slot18 = 6 * uv7(slot14, 8)
-		slot19 = uv8(slot14, 31)
+		local var_20_6, var_20_7, var_20_8, var_20_9, var_20_10 = var_0_6(arg_20_0, iter_20_0)
+		local var_20_11 = 6 * var_0_14(var_20_7, 8)
+		local var_20_12 = var_0_13(var_20_7, 31)
+		local var_20_13 = var_0_16(var_20_2, var_20_11 + 1, var_20_11 + 6)
 
-		if uv9(slot5, slot18 + 1, slot18 + 6) == "LOOP  " then
-			if slot2 then
-				uv1:write(uv4("%04d ------------ LOOP ------------\n", slot12))
+		if var_20_13 == "LOOP  " then
+			if arg_20_2 then
+				var_0_28:write(var_0_18("%04d ------------ LOOP ------------\n", iter_20_0))
 			else
-				uv1:write(uv4("%04d ------ LOOP ------------\n", slot12))
+				var_0_28:write(var_0_18("%04d ------ LOOP ------------\n", iter_20_0))
 			end
-		elseif slot20 ~= "NOP   " and slot20 ~= "CARG  " and (slot2 or slot20 ~= "RENAME") then
-			slot21 = uv8(slot17, 255)
+		elseif var_20_13 ~= "NOP   " and var_20_13 ~= "CARG  " and (arg_20_2 or var_20_13 ~= "RENAME") then
+			local var_20_14 = var_0_13(var_20_10, 255)
 
-			if slot2 then
-				uv1:write(uv4("%04d %-6s", slot12, uv10(slot17, slot12)))
+			if arg_20_2 then
+				var_0_28:write(var_0_18("%04d %-6s", iter_20_0, var_0_54(var_20_10, iter_20_0)))
 			else
-				uv1:write(uv4("%04d ", slot12))
+				var_0_28:write(var_0_18("%04d ", iter_20_0))
 			end
 
-			uv1:write(uv4("%s%s %s %s ", (slot21 == 254 or slot21 == 253) and "}" or uv8(slot14, 128) == 0 and " " or ">", uv8(slot14, 64) == 0 and " " or "+", uv11[slot19], slot20))
+			var_0_28:write(var_0_18("%s%s %s %s ", (var_20_14 == 254 or var_20_14 == 253) and "}" or var_0_13(var_20_7, 128) == 0 and " " or ">", var_0_13(var_20_7, 64) == 0 and " " or "+", var_0_47[var_20_12], var_20_13))
 
-			slot22 = uv8(slot13, 3)
+			local var_20_15 = var_0_13(var_20_6, 3)
+			local var_20_16 = var_0_13(var_20_6, 12)
 
-			if uv9(slot20, 1, 4) == "CALL" then
-				slot24 = nil
+			if var_0_16(var_20_13, 1, 4) == "CALL" then
+				local var_20_17
 
-				if uv8(slot13, 12) == 4 then
-					uv1:write(uv4("%-10s  (", uv2.ircall[slot16]))
+				if var_20_16 == 4 then
+					var_0_28:write(var_0_18("%-10s  (", var_0_2.ircall[var_20_9]))
 				else
-					slot24 = uv12(slot0, slot16)
+					var_20_17 = var_0_55(arg_20_0, var_20_9)
 				end
 
-				if slot15 ~= -1 then
-					uv13(slot0, slot15)
+				if var_20_8 ~= -1 then
+					var_0_56(arg_20_0, var_20_8)
 				end
 
-				uv1:write(")")
+				var_0_28:write(")")
 
-				if slot24 then
-					uv1:write(" ctype ", slot24)
+				if var_20_17 then
+					var_0_28:write(" ctype ", var_20_17)
 				end
-			elseif slot20 == "CNEW  " and slot16 == -1 then
-				uv1:write(uv14(slot0, slot15))
-			elseif slot22 ~= 3 then
-				if slot15 < 0 then
-					uv1:write(uv14(slot0, slot15))
+			elseif var_20_13 == "CNEW  " and var_20_9 == -1 then
+				var_0_28:write(var_0_51(arg_20_0, var_20_8))
+			elseif var_20_15 ~= 3 then
+				if var_20_8 < 0 then
+					var_0_28:write(var_0_51(arg_20_0, var_20_8))
 				else
-					uv1:write(uv4(slot22 == 0 and "%04d" or "#%-3d", slot15))
+					var_0_28:write(var_0_18(var_20_15 == 0 and "%04d" or "#%-3d", var_20_8))
 				end
 
-				if slot23 ~= 12 then
-					if slot23 == 4 then
-						if uv15[slot20] and slot24[slot16] then
-							uv1:write("  ", slot24[slot16])
-						elseif slot20 == "UREFO " or slot20 == "UREFC " then
-							uv1:write(uv4("  #%-3d", uv7(slot16, 8)))
+				if var_20_16 ~= 12 then
+					if var_20_16 == 4 then
+						local var_20_18 = var_0_48[var_20_13]
+
+						if var_20_18 and var_20_18[var_20_9] then
+							var_0_28:write("  ", var_20_18[var_20_9])
+						elseif var_20_13 == "UREFO " or var_20_13 == "UREFC " then
+							var_0_28:write(var_0_18("  #%-3d", var_0_14(var_20_9, 8)))
 						else
-							uv1:write(uv4("  #%-3d", slot16))
+							var_0_28:write(var_0_18("  #%-3d", var_20_9))
 						end
-					elseif slot16 < 0 then
-						uv1:write("  ", uv14(slot0, slot16))
+					elseif var_20_9 < 0 then
+						var_0_28:write("  ", var_0_51(arg_20_0, var_20_9))
 					else
-						uv1:write(uv4("  %04d", slot16))
+						var_0_28:write(var_0_18("  %04d", var_20_9))
 					end
 				end
 			end
 
-			uv1:write("\n")
+			var_0_28:write("\n")
 		end
 	end
 
-	if slot7 then
-		if slot2 then
-			uv1:write(uv4("....              SNAP   #%-3d [ ", slot8))
+	if var_20_4 then
+		if arg_20_2 then
+			var_0_28:write(var_0_18("....              SNAP   #%-3d [ ", var_20_5))
 		else
-			uv1:write(uv4("....        SNAP   #%-3d [ ", slot8))
+			var_0_28:write(var_0_18("....        SNAP   #%-3d [ ", var_20_5))
 		end
 
-		uv5(slot0, slot7)
+		var_0_52(arg_20_0, var_20_4)
 	end
 end
 
-slot58 = ""
-slot59 = 0
+local var_0_58 = ""
+local var_0_59 = 0
 
-function slot60(slot0, slot1)
-	if uv0(slot0) == "number" then
-		if uv0(slot1) == "function" then
-			slot1 = uv1(slot1)
+local function var_0_60(arg_21_0, arg_21_1)
+	if var_0_21(arg_21_0) == "number" then
+		if var_0_21(arg_21_1) == "function" then
+			arg_21_1 = var_0_50(arg_21_1)
 		end
 
-		slot0 = uv2(uv3.traceerr[slot0], slot1)
+		arg_21_0 = var_0_18(var_0_2.traceerr[arg_21_0], arg_21_1)
 	end
 
-	return slot0
+	return arg_21_0
 end
 
-function slot61(slot0, slot1, slot2, slot3, slot4, slot5)
-	if slot0 == "stop" or slot0 == "abort" and uv0.a then
-		if uv0.i then
-			uv1(slot1, uv0.s, uv0.r and slot0 == "stop")
-		elseif uv0.s then
-			uv2(slot1)
+local function var_0_61(arg_22_0, arg_22_1, arg_22_2, arg_22_3, arg_22_4, arg_22_5)
+	if arg_22_0 == "stop" or arg_22_0 == "abort" and var_0_29.a then
+		if var_0_29.i then
+			var_0_57(arg_22_1, var_0_29.s, var_0_29.r and arg_22_0 == "stop")
+		elseif var_0_29.s then
+			var_0_53(arg_22_1)
 		end
 
-		if uv0.m then
-			uv3(slot1)
+		if var_0_29.m then
+			var_0_36(arg_22_1)
 		end
 	end
 
-	if slot0 == "start" then
-		if uv0.H then
-			uv4:write("<pre class=\"ljdump\">\n")
+	if arg_22_0 == "start" then
+		if var_0_29.H then
+			var_0_28:write("<pre class=\"ljdump\">\n")
 		end
 
-		uv4:write("---- TRACE ", slot1, " ", slot0)
+		var_0_28:write("---- TRACE ", arg_22_1, " ", arg_22_0)
 
-		if slot4 then
-			uv4:write(" ", slot4, "/", slot5 == -1 and "stitch" or slot5)
+		if arg_22_4 then
+			var_0_28:write(" ", arg_22_4, "/", arg_22_5 == -1 and "stitch" or arg_22_5)
 		end
 
-		uv4:write(" ", uv5(slot2, slot3), "\n")
-	elseif slot0 == "stop" or slot0 == "abort" then
-		uv4:write("---- TRACE ", slot1, " ", slot0)
+		var_0_28:write(" ", var_0_50(arg_22_2, arg_22_3), "\n")
+	elseif arg_22_0 == "stop" or arg_22_0 == "abort" then
+		var_0_28:write("---- TRACE ", arg_22_1, " ", arg_22_0)
 
-		if slot0 == "abort" then
-			uv4:write(" ", uv5(slot2, slot3), " -- ", uv6(slot4, slot5), "\n")
+		if arg_22_0 == "abort" then
+			var_0_28:write(" ", var_0_50(arg_22_2, arg_22_3), " -- ", var_0_60(arg_22_4, arg_22_5), "\n")
 		else
-			slot6 = uv7(slot1)
+			local var_22_0 = var_0_5(arg_22_1)
+			local var_22_1 = var_22_0.link
+			local var_22_2 = var_22_0.linktype
 
-			if slot6.link == slot1 or slot7 == 0 then
-				uv4:write(" -> ", slot6.linktype, "\n")
-			elseif slot8 == "root" then
-				uv4:write(" -> ", slot7, "\n")
+			if var_22_1 == arg_22_1 or var_22_1 == 0 then
+				var_0_28:write(" -> ", var_22_2, "\n")
+			elseif var_22_2 == "root" then
+				var_0_28:write(" -> ", var_22_1, "\n")
 			else
-				uv4:write(" -> ", slot7, " ", slot8, "\n")
+				var_0_28:write(" -> ", var_22_1, " ", var_22_2, "\n")
 			end
 		end
 
-		if uv0.H then
-			uv4:write("</pre>\n\n")
+		if var_0_29.H then
+			var_0_28:write("</pre>\n\n")
 		else
-			uv4:write("\n")
+			var_0_28:write("\n")
 		end
 	else
-		if slot0 == "flush" then
-			uv9 = 0
-			uv8 = {}
+		if arg_22_0 == "flush" then
+			var_0_31, var_0_32 = {}, 0
 		end
 
-		uv4:write("---- TRACE ", slot0, "\n\n")
+		var_0_28:write("---- TRACE ", arg_22_0, "\n\n")
 	end
 
-	uv4:flush()
+	var_0_28:flush()
 end
 
-function slot62(slot0, slot1, slot2, slot3, slot4)
-	if slot3 ~= uv0 then
-		uv0 = slot3
-		uv1 = uv2(" .", slot3)
+local function var_0_62(arg_23_0, arg_23_1, arg_23_2, arg_23_3, arg_23_4)
+	if arg_23_3 ~= var_0_59 then
+		var_0_59 = arg_23_3
+		var_0_58 = var_0_20(" .", arg_23_3)
 	end
 
-	slot5 = nil
+	local var_23_0
 
-	if slot2 >= 0 then
-		if uv4.H then
-			slot5 = uv5(uv3(slot1, slot2, uv1), "[<>&]", uv6)
+	if arg_23_2 >= 0 then
+		var_23_0 = var_0_25(arg_23_1, arg_23_2, var_0_58)
+
+		if var_0_29.H then
+			var_23_0 = var_0_17(var_23_0, "[<>&]", var_0_42)
 		end
 	else
-		slot5 = "0000 " .. uv1 .. " FUNCC      \n"
-		slot4 = slot1
+		var_23_0 = "0000 " .. var_0_58 .. " FUNCC      \n"
+		arg_23_4 = arg_23_1
 	end
 
-	if slot2 <= 0 then
-		uv7:write(uv8(slot5, 1, -2), "         ; ", uv9(slot1), "\n")
+	if arg_23_2 <= 0 then
+		var_0_28:write(var_0_16(var_23_0, 1, -2), "         ; ", var_0_50(arg_23_1), "\n")
 	else
-		uv7:write(slot5)
+		var_0_28:write(var_23_0)
 	end
 
-	if slot2 >= 0 and uv10(uv11(slot1, slot2), 255) < 16 then
-		uv7:write(uv3(slot1, slot2 + 1, uv1))
+	if arg_23_2 >= 0 and var_0_13(var_0_4(arg_23_1, arg_23_2), 255) < 16 then
+		var_0_28:write(var_0_25(arg_23_1, arg_23_2 + 1, var_0_58))
 	end
 end
 
-function slot63(slot0, slot1, slot2, slot3, ...)
-	uv0:write("---- TRACE ", slot0, " exit ", slot1, "\n")
+local function var_0_63(arg_24_0, arg_24_1, arg_24_2, arg_24_3, ...)
+	var_0_28:write("---- TRACE ", arg_24_0, " exit ", arg_24_1, "\n")
 
-	if uv1.X then
-		slot4 = {
+	if var_0_29.X then
+		local var_24_0 = {
 			...
 		}
 
-		if uv2.arch == "x64" then
-			for slot8 = 1, slot2 do
-				uv0:write(uv3(" %016x", slot4[slot8]))
+		if var_0_0.arch == "x64" then
+			for iter_24_0 = 1, arg_24_2 do
+				var_0_28:write(var_0_18(" %016x", var_24_0[iter_24_0]))
 
-				if slot8 % 4 == 0 then
-					uv0:write("\n")
+				if iter_24_0 % 4 == 0 then
+					var_0_28:write("\n")
 				end
 			end
 		else
-			for slot8 = 1, slot2 do
-				uv0:write(" ", uv4(slot4[slot8]))
+			for iter_24_1 = 1, arg_24_2 do
+				var_0_28:write(" ", var_0_15(var_24_0[iter_24_1]))
 
-				if slot8 % 8 == 0 then
-					uv0:write("\n")
+				if iter_24_1 % 8 == 0 then
+					var_0_28:write("\n")
 				end
 			end
 		end
 
-		if uv2.arch == "mips" or uv2.arch == "mipsel" then
-			for slot8 = 1, slot3, 2 do
-				uv0:write(uv3(" %+17.14g", slot4[slot2 + slot8]))
+		if var_0_0.arch == "mips" or var_0_0.arch == "mipsel" then
+			for iter_24_2 = 1, arg_24_3, 2 do
+				var_0_28:write(var_0_18(" %+17.14g", var_24_0[arg_24_2 + iter_24_2]))
 
-				if slot8 % 8 == 7 then
-					uv0:write("\n")
+				if iter_24_2 % 8 == 7 then
+					var_0_28:write("\n")
 				end
 			end
 		else
-			for slot8 = 1, slot3 do
-				uv0:write(uv3(" %+17.14g", slot4[slot2 + slot8]))
+			for iter_24_3 = 1, arg_24_3 do
+				var_0_28:write(var_0_18(" %+17.14g", var_24_0[arg_24_2 + iter_24_3]))
 
-				if slot8 % 4 == 0 then
-					uv0:write("\n")
+				if iter_24_3 % 4 == 0 then
+					var_0_28:write("\n")
 				end
 			end
 		end
 	end
 end
 
-function slot65(slot0, slot1)
-	if uv0 then
-		uv1()
+local function var_0_64()
+	if var_0_27 then
+		var_0_27 = false
+
+		var_0_0.attach(var_0_63)
+		var_0_0.attach(var_0_62)
+		var_0_0.attach(var_0_61)
+
+		if var_0_28 and var_0_28 ~= var_0_23 and var_0_28 ~= var_0_24 then
+			var_0_28:close()
+		end
+
+		var_0_28 = nil
+	end
+end
+
+local function var_0_65(arg_26_0, arg_26_1)
+	if var_0_27 then
+		var_0_64()
 	end
 
-	slot3 = (os.getenv("TERM") and slot2:match("color") or os.getenv("COLORTERM")) and "A" or "T"
-	slot4 = {
+	local var_26_0 = os.getenv("TERM")
+	local var_26_1 = (var_26_0 and var_26_0:match("color") or os.getenv("COLORTERM")) and "A" or "T"
+
+	arg_26_0 = arg_26_0 and var_0_17(arg_26_0, "[TAH]", function(arg_27_0)
+		var_26_1 = arg_27_0
+
+		return ""
+	end)
+
+	local var_26_2 = {
 		i = true,
 		t = true,
 		m = true,
 		b = true
 	}
 
-	if slot0 and uv2(slot0, "[TAH]", function (slot0)
-		uv0 = slot0
+	if arg_26_0 and arg_26_0 ~= "" then
+		local var_26_3 = var_0_16(arg_26_0, 1, 1)
 
-		return ""
-	end) and slot0 ~= "" then
-		if uv3(slot0, 1, 1) ~= "+" and slot5 ~= "-" then
-			slot4 = {}
+		if var_26_3 ~= "+" and var_26_3 ~= "-" then
+			var_26_2 = {}
 		end
 
-		for slot9 = 1, #slot0 do
-			slot4[uv3(slot0, slot9, slot9)] = slot5 ~= "-"
+		for iter_26_0 = 1, #arg_26_0 do
+			var_26_2[var_0_16(arg_26_0, iter_26_0, iter_26_0)] = var_26_3 ~= "-"
 		end
 	end
 
-	uv4 = slot4
+	var_0_29 = var_26_2
 
-	if slot4.t or slot4.b or slot4.i or slot4.s or slot4.m then
-		uv5.attach(uv6, "trace")
+	if var_26_2.t or var_26_2.b or var_26_2.i or var_26_2.s or var_26_2.m then
+		var_0_0.attach(var_0_61, "trace")
 	end
 
-	if slot4.b then
-		uv5.attach(uv7, "record")
+	if var_26_2.b then
+		var_0_0.attach(var_0_62, "record")
 
-		if not uv8 then
-			uv8 = require("jit.bc").line
+		if not var_0_25 then
+			var_0_25 = require("jit.bc").line
 		end
 	end
 
-	if slot4.x or slot4.X then
-		uv5.attach(uv9, "texit")
+	if var_26_2.x or var_26_2.X then
+		var_0_0.attach(var_0_63, "texit")
 	end
 
-	if slot1 or os.getenv("LUAJIT_DUMPFILE") then
-		uv10 = slot1 == "-" and uv11 or assert(io.open(slot1, "w"))
+	arg_26_1 = arg_26_1 or os.getenv("LUAJIT_DUMPFILE")
+
+	if arg_26_1 then
+		var_0_28 = arg_26_1 == "-" and var_0_23 or assert(io.open(arg_26_1, "w"))
 	else
-		uv10 = uv11
+		var_0_28 = var_0_23
 	end
 
-	slot4[slot3] = true
+	var_26_2[var_26_1] = true
 
-	if slot3 == "A" then
-		uv12 = uv13
-		uv14 = uv15
-	elseif slot3 == "H" then
-		uv12 = uv16
-		uv14 = uv17
+	if var_26_1 == "A" then
+		var_0_46 = var_0_40
+		var_0_47 = var_0_41
+	elseif var_26_1 == "H" then
+		var_0_46 = var_0_43
+		var_0_47 = var_0_44
 
-		uv10:write(uv18)
+		var_0_28:write(var_0_45)
 	else
-		uv12 = uv19
-		uv14 = uv20
+		var_0_46 = var_0_39
+		var_0_47 = var_0_37
 	end
 
-	uv0 = true
+	var_0_27 = true
 end
 
 return {
-	on = slot65,
-	off = function ()
-		if uv0 then
-			uv0 = false
-
-			uv1.attach(uv2)
-			uv1.attach(uv3)
-			uv1.attach(uv4)
-
-			if uv5 and uv5 ~= uv6 and uv5 ~= uv7 then
-				uv5:close()
-			end
-
-			uv5 = nil
-		end
-	end,
-	start = slot65
+	on = var_0_65,
+	off = var_0_64,
+	start = var_0_65
 }

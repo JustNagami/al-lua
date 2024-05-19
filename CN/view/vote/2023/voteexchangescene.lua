@@ -1,184 +1,205 @@
-slot0 = class("VoteExchangeScene", import("view.base.BaseUI"))
+﻿local var_0_0 = class("VoteExchangeScene", import("view.base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "VoteExchangeUI"
 end
 
-function slot0.init(slot0)
-	slot0.closeBtn = slot0:findTF("blur_panel/adapt/top/back_btn")
-	slot0.dailyTask = slot0:findTF("left/task/slider/bar")
-	slot0.dailyTaskTxt = slot0:findTF("left/task/Text"):GetComponent(typeof(Text))
-	slot0.timeTxt = slot0:findTF("right/title/Text/Text"):GetComponent(typeof(Text))
-	slot0.dailyTaskGoBtn = slot0:findTF("left/go")
-	slot0.totalCntTxt = slot0:findTF("right/total/Text"):GetComponent(typeof(Text))
-	slot0.uiItemList = UIItemList.New(slot0:findTF("right/view/content"), slot0:findTF("right/view/content/tpl"))
-	slot0.taskContainer = slot0:findTF("right/view")
-	slot0.emptyTr = slot0:findTF("right/empty")
+function var_0_0.init(arg_2_0)
+	arg_2_0.closeBtn = arg_2_0:findTF("blur_panel/adapt/top/back_btn")
+	arg_2_0.dailyTask = arg_2_0:findTF("left/task/slider/bar")
+	arg_2_0.dailyTaskTxt = arg_2_0:findTF("left/task/Text"):GetComponent(typeof(Text))
+	arg_2_0.timeTxt = arg_2_0:findTF("right/title/Text/Text"):GetComponent(typeof(Text))
+	arg_2_0.dailyTaskGoBtn = arg_2_0:findTF("left/go")
+	arg_2_0.totalCntTxt = arg_2_0:findTF("right/total/Text"):GetComponent(typeof(Text))
+	arg_2_0.uiItemList = UIItemList.New(arg_2_0:findTF("right/view/content"), arg_2_0:findTF("right/view/content/tpl"))
+	arg_2_0.taskContainer = arg_2_0:findTF("right/view")
+	arg_2_0.emptyTr = arg_2_0:findTF("right/empty")
 
-	setText(slot0:findTF("left/bg/Text"), i18n("vote_lable_daily_task_title"))
+	setText(arg_2_0:findTF("left/bg/Text"), i18n("vote_lable_daily_task_title"))
 
-	slot1 = string.split(i18n("vote_lable_daily_task_tip"), "$1")
+	local var_2_0 = string.split(i18n("vote_lable_daily_task_tip"), "$1")
 
-	setText(slot0:findTF("left/task/desc/label1"), slot1[1])
-	setText(slot0:findTF("left/task/desc/labe2"), slot1[2])
-	setText(slot0:findTF("right/title/Text"), i18n("vote_lable_task_title"))
-	setText(slot0.emptyTr:Find("Image/Text"), i18n("vote_lable_task_list_is_empty"))
+	setText(arg_2_0:findTF("left/task/desc/label1"), var_2_0[1])
+	setText(arg_2_0:findTF("left/task/desc/labe2"), var_2_0[2])
+	setText(arg_2_0:findTF("right/title/Text"), i18n("vote_lable_task_title"))
+	setText(arg_2_0.emptyTr:Find("Image/Text"), i18n("vote_lable_task_list_is_empty"))
 end
 
-function slot0.didEnter(slot0)
-	assert(slot0.contextData.voteGroup)
-	onButton(slot0, slot0.dailyTaskGoBtn, function ()
-		uv0:emit(VoteExchangeMediator.GO_TASK)
+function var_0_0.didEnter(arg_3_0)
+	assert(arg_3_0.contextData.voteGroup)
+	onButton(arg_3_0, arg_3_0.dailyTaskGoBtn, function()
+		arg_3_0:emit(VoteExchangeMediator.GO_TASK)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:emit(uv1.ON_CLOSE)
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_PANEL)
 
-	slot0.taskList = slot0:GetTaskList()
-	slot0.dailyTaskList = slot0:GetDailyTaskList()
+	arg_3_0.taskList = arg_3_0:GetTaskList()
+	arg_3_0.dailyTaskList = arg_3_0:GetDailyTaskList()
 
-	slot0:Flush()
+	arg_3_0:Flush()
 end
 
-function slot0.Flush(slot0)
-	slot0:UpdateDailyTask()
-	slot0:UpdateTitle()
-	slot0:UpdateTicket()
-	slot0:UpdateTaskList()
+function var_0_0.Flush(arg_6_0)
+	arg_6_0:UpdateDailyTask()
+	arg_6_0:UpdateTitle()
+	arg_6_0:UpdateTicket()
+	arg_6_0:UpdateTaskList()
 end
 
-function slot0.UpdateTitle(slot0)
-	slot0.timeTxt.text = slot0.contextData.voteGroup:getConfig("name") .. " " .. slot0.contextData.voteGroup:getTimeDesc()
+function var_0_0.UpdateTitle(arg_7_0)
+	local var_7_0 = arg_7_0.contextData.voteGroup:getConfig("name")
+	local var_7_1 = arg_7_0.contextData.voteGroup:getTimeDesc()
+
+	arg_7_0.timeTxt.text = var_7_0 .. " " .. var_7_1
 end
 
-function slot0.GetActivity(slot0)
-	slot2 = nil
+function var_0_0.GetActivity(arg_8_0)
+	local var_8_0 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_VOTE)
+	local var_8_1
 
-	for slot6, slot7 in ipairs(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_VOTE)) do
-		if slot7:getConfig("config_id") == slot0.contextData.voteGroup.configId then
-			slot2 = slot7
+	for iter_8_0, iter_8_1 in ipairs(var_8_0) do
+		if iter_8_1:getConfig("config_id") == arg_8_0.contextData.voteGroup.configId then
+			var_8_1 = iter_8_1
 
 			break
 		end
 	end
 
-	return slot2
+	return var_8_1
 end
 
-function slot0.UpdateTicket(slot0)
-	if slot0:GetActivity() then
-		slot0.totalCntTxt.text = slot1.data3 .. "/" .. slot0.contextData.voteGroup:getConfig("ticket_period")
+function var_0_0.UpdateTicket(arg_9_0)
+	local var_9_0 = arg_9_0:GetActivity()
+
+	if var_9_0 then
+		local var_9_1 = arg_9_0.contextData.voteGroup:getConfig("ticket_period")
+
+		arg_9_0.totalCntTxt.text = var_9_0.data3 .. "/" .. var_9_1
 	else
-		slot0.totalCntTxt.text = ""
+		arg_9_0.totalCntTxt.text = ""
 	end
 end
 
-function slot0.GetTaskList(slot0)
-	if slot0:GetActivity() and slot0.contextData.voteGroup:getConfig("ticket_period") <= slot1.data3 then
+function var_0_0.GetTaskList(arg_10_0)
+	local var_10_0 = arg_10_0:GetActivity()
+
+	if var_10_0 and var_10_0.data3 >= arg_10_0.contextData.voteGroup:getConfig("ticket_period") then
 		return {}
 	end
 
-	slot3 = getProxy(TaskProxy)
+	local var_10_1 = Clone(arg_10_0.contextData.voteGroup:getConfig("task_period"))
+	local var_10_2 = getProxy(TaskProxy)
 
-	for slot7 = #Clone(slot0.contextData.voteGroup:getConfig("task_period")), 1, -1 do
-		for slot12 = #slot2[slot7], 1, -1 do
-			if not slot3:getTaskById(slot8[slot12]) and not slot3:getFinishTaskById(slot13) or slot14:isFinish() and slot14:isReceive() then
-				table.remove(slot8, slot12)
+	for iter_10_0 = #var_10_1, 1, -1 do
+		local var_10_3 = var_10_1[iter_10_0]
+
+		for iter_10_1 = #var_10_3, 1, -1 do
+			local var_10_4 = var_10_3[iter_10_1]
+			local var_10_5 = var_10_2:getTaskById(var_10_4) or var_10_2:getFinishTaskById(var_10_4)
+
+			if not var_10_5 or var_10_5:isFinish() and var_10_5:isReceive() then
+				table.remove(var_10_3, iter_10_1)
 			end
 		end
 
-		if #slot8 <= 0 then
-			table.remove(slot2, slot7)
+		if #var_10_3 <= 0 then
+			table.remove(var_10_1, iter_10_0)
 		end
 	end
 
-	return slot2
+	return var_10_1
 end
 
-function slot0.GetDailyTaskList(slot0)
-	return slot0.contextData.voteGroup:getConfig("task_daily")
+function var_0_0.GetDailyTaskList(arg_11_0)
+	return (arg_11_0.contextData.voteGroup:getConfig("task_daily"))
 end
 
-function slot0.UpdateDailyTask(slot0)
-	slot2 = getProxy(TaskProxy)
+function var_0_0.UpdateDailyTask(arg_12_0)
+	local var_12_0 = 0
+	local var_12_1 = getProxy(TaskProxy)
 
-	for slot6, slot7 in ipairs(slot0.dailyTaskList) do
-		if (slot2:getTaskById(slot7) or slot2:getFinishTaskById(slot7)) and slot8:isFinish() and slot8:isReceive() then
-			slot1 = 0 + 1
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0.dailyTaskList) do
+		local var_12_2 = var_12_1:getTaskById(iter_12_1) or var_12_1:getFinishTaskById(iter_12_1)
+
+		if var_12_2 and var_12_2:isFinish() and var_12_2:isReceive() then
+			var_12_0 = var_12_0 + 1
 		end
 	end
 
-	slot0.dailyTaskTxt.text = slot1 .. "/" .. #slot0.dailyTaskList
+	arg_12_0.dailyTaskTxt.text = var_12_0 .. "/" .. #arg_12_0.dailyTaskList
 
-	setFillAmount(slot0.dailyTask, slot1 / #slot0.dailyTaskList)
+	setFillAmount(arg_12_0.dailyTask, var_12_0 / #arg_12_0.dailyTaskList)
 end
 
-function slot0.UpdateTaskList(slot0)
-	slot0.uiItemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:UpdateTaskCard(uv0.taskList[slot1 + 1], slot2)
+function var_0_0.UpdateTaskList(arg_13_0)
+	arg_13_0.uiItemList:make(function(arg_14_0, arg_14_1, arg_14_2)
+		if arg_14_0 == UIItemList.EventUpdate then
+			arg_13_0:UpdateTaskCard(arg_13_0.taskList[arg_14_1 + 1], arg_14_2)
 		end
 	end)
-	slot0.uiItemList:align(#slot0.taskList)
+	arg_13_0.uiItemList:align(#arg_13_0.taskList)
 
-	slot1 = #slot0.taskList <= 0
+	local var_13_0 = #arg_13_0.taskList <= 0
 
-	setActive(slot0.emptyTr, slot1)
-	setActive(slot0.taskContainer, not slot1)
+	setActive(arg_13_0.emptyTr, var_13_0)
+	setActive(arg_13_0.taskContainer, not var_13_0)
 end
 
-function slot0.UpdateTaskCard(slot0, slot1, slot2)
-	slot3 = UIItemList.New(slot2:Find("content"), slot2:Find("content/extend_tpl"))
+function var_0_0.UpdateTaskCard(arg_15_0, arg_15_1, arg_15_2)
+	local var_15_0 = UIItemList.New(arg_15_2:Find("content"), arg_15_2:Find("content/extend_tpl"))
 
-	slot3:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:UpdateTaskDesc(uv1[slot1 + 2], slot2)
+	var_15_0:make(function(arg_16_0, arg_16_1, arg_16_2)
+		if arg_16_0 == UIItemList.EventUpdate then
+			arg_15_0:UpdateTaskDesc(arg_15_1[arg_16_1 + 2], arg_16_2)
 		end
 	end)
-	slot3:align(#slot1 - 1)
-	slot0:UpdateTaskDesc(slot1[1], slot2:Find("info"))
+	var_15_0:align(#arg_15_1 - 1)
+	arg_15_0:UpdateTaskDesc(arg_15_1[1], arg_15_2:Find("info"))
 end
 
-function slot0.UpdateTaskDesc(slot0, slot1, slot2)
-	slot3 = getProxy(TaskProxy):getTaskById(slot1) or getProxy(TaskProxy):getFinishTaskById(slot1)
+function var_0_0.UpdateTaskDesc(arg_17_0, arg_17_1, arg_17_2)
+	local var_17_0 = getProxy(TaskProxy):getTaskById(arg_17_1) or getProxy(TaskProxy):getFinishTaskById(arg_17_1)
 
-	assert(slot3, slot1)
+	assert(var_17_0, arg_17_1)
 
-	slot4 = slot3:isFinish()
-	slot5 = slot3:isReceive()
-	slot7 = slot2:Find("get")
+	local var_17_1 = var_17_0:isFinish()
+	local var_17_2 = var_17_0:isReceive()
+	local var_17_3 = arg_17_2:Find("go")
+	local var_17_4 = arg_17_2:Find("get")
 
-	setActive(slot2:Find("go"), not slot4)
-	setActive(slot2:Find("got"), slot4 and slot5)
-	setActive(slot7, slot4 and not slot5)
+	setActive(var_17_3, not var_17_1)
+	setActive(arg_17_2:Find("got"), var_17_1 and var_17_2)
+	setActive(var_17_4, var_17_1 and not var_17_2)
 
-	slot8 = slot3:getConfig("award_display")
+	local var_17_5 = var_17_0:getConfig("award_display")
 
-	updateDrop(slot2:Find("IconTpl"), {
-		type = slot8[1][1],
-		id = slot8[1][2],
-		count = slot8[1][3]
+	updateDrop(arg_17_2:Find("IconTpl"), {
+		type = var_17_5[1][1],
+		id = var_17_5[1][2],
+		count = var_17_5[1][3]
 	})
 
-	slot9 = slot3:getProgress()
-	slot10 = slot3:getConfig("target_num")
+	local var_17_6 = var_17_0:getProgress()
+	local var_17_7 = var_17_0:getConfig("target_num")
 
-	setText(slot2:Find("Text"), slot9 .. "/" .. slot10)
-	setText(slot2:Find("desc"), slot3:getConfig("desc"))
-	setFillAmount(slot2:Find("Slider/Fill"), slot9 / slot10)
-	onButton(slot0, slot6, function ()
-		uv0:emit(VoteExchangeMediator.SKIP_TASK, uv1)
+	setText(arg_17_2:Find("Text"), var_17_6 .. "/" .. var_17_7)
+	setText(arg_17_2:Find("desc"), var_17_0:getConfig("desc"))
+	setFillAmount(arg_17_2:Find("Slider/Fill"), var_17_6 / var_17_7)
+	onButton(arg_17_0, var_17_3, function()
+		arg_17_0:emit(VoteExchangeMediator.SKIP_TASK, var_17_0)
 	end, SFX_PANEL)
-	onButton(slot0, slot7, function ()
-		uv0:emit(VoteExchangeMediator.SUBMIT_TASK, uv1.id)
+	onButton(arg_17_0, var_17_4, function()
+		arg_17_0:emit(VoteExchangeMediator.SUBMIT_TASK, var_17_0.id)
 	end, SFX_PANEL)
 end
 
-function slot0.onBackPressed(slot0)
-	uv0.super.onBackPressed(slot0)
+function var_0_0.onBackPressed(arg_20_0)
+	var_0_0.super.onBackPressed(arg_20_0)
 end
 
-function slot0.willExit(slot0)
+function var_0_0.willExit(arg_21_0)
+	return
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.secretary_special_ship_expression = {
 	[1000] = {
 		chime_11 = "",

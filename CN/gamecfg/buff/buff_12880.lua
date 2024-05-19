@@ -1,4 +1,24 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				buff_id = 12881
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				buff_id = 12883
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,25 +39,5 @@ return {
 	stack = 1,
 	id = 12880,
 	icon = 12880,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				buff_id = 12881
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				buff_id = 12883
-			}
-		}
-	}
+	last_effect = ""
 }

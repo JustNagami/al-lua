@@ -1,376 +1,458 @@
-slot0 = class("WorldMediaCollectionFileDetailLayer", import(".WorldMediaCollectionSubLayer"))
+﻿local var_0_0 = class("WorldMediaCollectionFileDetailLayer", import(".WorldMediaCollectionSubLayer"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "WorldMediaCollectionFileDetailUI"
 end
 
-function slot0.OnInit(slot0)
-	assert(slot0.viewParent, "Need assign ViewParent for " .. slot0.__cname)
-	onButton(slot0, slot0._tf:Find("Buttom"), function ()
-		uv0.viewParent:Backward()
+function var_0_0.OnInit(arg_2_0)
+	assert(arg_2_0.viewParent, "Need assign ViewParent for " .. arg_2_0.__cname)
+	onButton(arg_2_0, arg_2_0._tf:Find("Buttom"), function()
+		arg_2_0.viewParent:Backward()
 	end)
 
-	slot0.anim = slot0._tf:GetComponent(typeof(Animation))
-	slot0.canvasGroup = slot0._tf:GetComponent(typeof(CanvasGroup))
+	arg_2_0.anim = arg_2_0._tf:GetComponent(typeof(Animation))
+	arg_2_0.canvasGroup = arg_2_0._tf:GetComponent(typeof(CanvasGroup))
 
-	slot0:InitDocument()
+	arg_2_0:InitDocument()
 
-	slot1 = slot0._tf:Find("ArchiveList")
-	slot0.scrollComp = slot1:GetComponent("LScrollRect")
-	slot0.fileChild = {}
-	slot0.fileChildIndex = {}
+	local var_2_0 = arg_2_0._tf:Find("ArchiveList")
 
-	function slot0.scrollComp.onUpdateItem(slot0, ...)
-		uv0:OnUpdateFile(slot0 + 1, ...)
+	arg_2_0.scrollComp = var_2_0:GetComponent("LScrollRect")
+	arg_2_0.fileChild = {}
+	arg_2_0.fileChildIndex = {}
+
+	function arg_2_0.scrollComp.onUpdateItem(arg_4_0, ...)
+		arg_2_0:OnUpdateFile(arg_4_0 + 1, ...)
 	end
 
-	setActive(slot1:Find("Item"), false)
+	setActive(var_2_0:Find("Item"), false)
 
-	slot0.loader = AutoLoader.New()
+	arg_2_0.loader = AutoLoader.New()
 
-	setText(slot0._tf:Find("ArchiveList/ProgressDesc"), i18n("world_collection_1"))
+	setText(arg_2_0._tf:Find("ArchiveList/ProgressDesc"), i18n("world_collection_1"))
 end
 
-function slot0.InitDocument(slot0)
-	slot0.document = slot0._tf:Find("Document")
-	slot0.documentContentTF = slot0.document:Find("Viewport/Content")
-	slot0.documentHead = slot0.documentContentTF:Find("Head")
-	slot0.documentBody = slot0.documentContentTF:Find("Body")
-	slot0.documentTitle = slot0.documentHead:Find("Title")
-	slot0.documentRect = slot0.documentBody:Find("Rect")
-	slot0.documentTip = slot0.documentRect:Find("SubTitle")
-	slot0.documentText = slot0.documentRect:Find("Text")
-	slot0.documentImage = slot0.documentRect:Find("Image")
-	slot0.documentStamp = slot0.documentImage:Find("ClassifiedStamp")
+function var_0_0.InitDocument(arg_5_0)
+	arg_5_0.document = arg_5_0._tf:Find("Document")
+	arg_5_0.documentContentTF = arg_5_0.document:Find("Viewport/Content")
+	arg_5_0.documentHead = arg_5_0.documentContentTF:Find("Head")
+	arg_5_0.documentBody = arg_5_0.documentContentTF:Find("Body")
+	arg_5_0.documentTitle = arg_5_0.documentHead:Find("Title")
+	arg_5_0.documentRect = arg_5_0.documentBody:Find("Rect")
+	arg_5_0.documentTip = arg_5_0.documentRect:Find("SubTitle")
+	arg_5_0.documentText = arg_5_0.documentRect:Find("Text")
+	arg_5_0.documentImage = arg_5_0.documentRect:Find("Image")
+	arg_5_0.documentStamp = arg_5_0.documentImage:Find("ClassifiedStamp")
 end
 
-function slot0.Openning(slot0)
-	slot0.anim:Play("Enter")
-	slot0:Enter()
+function var_0_0.Openning(arg_6_0)
+	arg_6_0.anim:Play("Enter")
+	arg_6_0:Enter()
 end
 
-function slot0.Enter(slot0)
-	slot0.contextData.SelectedFile = nil
+function var_0_0.Enter(arg_7_0)
+	local function var_7_0()
+		local var_8_0 = nowWorld():GetCollectionProxy()
+		local var_8_1 = WorldCollectionProxy.GetCollectionFileGroupTemplate(arg_7_0.contextData.FileGroupIndex)
 
-	slot0:UpdateView()
-	slot0:SwitchFileIndex(slot0.contextData.SelectedFile or function ()
-		for slot5, slot6 in ipairs(WorldCollectionProxy.GetCollectionFileGroupTemplate(uv0.contextData.FileGroupIndex).child) do
-			if nowWorld():GetCollectionProxy():IsUnlock(slot6) then
-				return slot5
+		for iter_8_0, iter_8_1 in ipairs(var_8_1.child) do
+			if var_8_0:IsUnlock(iter_8_1) then
+				return iter_8_0
 			end
 		end
-	end())
+	end
+
+	local var_7_1 = arg_7_0.contextData.SelectedFile or var_7_0()
+
+	arg_7_0.contextData.SelectedFile = nil
+
+	arg_7_0:UpdateView()
+	arg_7_0:SwitchFileIndex(var_7_1)
 end
 
-function slot0.Hide(slot0)
-	slot0.canvasGroup.alpha = 1
+function var_0_0.Hide(arg_9_0)
+	arg_9_0.canvasGroup.alpha = 1
 
-	uv0.super.Hide(slot0)
+	var_0_0.super.Hide(arg_9_0)
 end
 
-function slot0.UpdateView(slot0)
-	assert(slot0.contextData.FileGroupIndex, "Not Initialize FileGroupIndex")
+function var_0_0.UpdateView(arg_10_0)
+	assert(arg_10_0.contextData.FileGroupIndex, "Not Initialize FileGroupIndex")
 
-	slot0.archiveList = _.map(WorldCollectionProxy.GetCollectionFileGroupTemplate(slot0.contextData.FileGroupIndex).child, function (slot0)
-		return WorldCollectionProxy.GetCollectionTemplate(slot0)
+	arg_10_0.archiveList = _.map(WorldCollectionProxy.GetCollectionFileGroupTemplate(arg_10_0.contextData.FileGroupIndex).child, function(arg_11_0)
+		return WorldCollectionProxy.GetCollectionTemplate(arg_11_0)
 	end)
-	slot2 = WorldCollectionProxy.GetCollectionFileGroupTemplate(slot0.contextData.FileGroupIndex)
-	slot4 = #slot2.child
 
-	for slot8, slot9 in ipairs(slot2.child) do
-		if nowWorld():GetCollectionProxy():IsUnlock(slot9) then
-			slot3 = 0 + 1
+	local var_10_0 = nowWorld():GetCollectionProxy()
+	local var_10_1 = WorldCollectionProxy.GetCollectionFileGroupTemplate(arg_10_0.contextData.FileGroupIndex)
+	local var_10_2 = 0
+	local var_10_3 = #var_10_1.child
+
+	for iter_10_0, iter_10_1 in ipairs(var_10_1.child) do
+		if var_10_0:IsUnlock(iter_10_1) then
+			var_10_2 = var_10_2 + 1
 		end
 	end
 
-	setText(slot0._tf:Find("ArchiveList/ProgressDesc/ProgressText"), slot3 .. "/" .. slot4)
-	slot0.scrollComp:SetTotalCount(#slot0.archiveList)
+	setText(arg_10_0._tf:Find("ArchiveList/ProgressDesc/ProgressText"), var_10_2 .. "/" .. var_10_3)
+	arg_10_0.scrollComp:SetTotalCount(#arg_10_0.archiveList)
 end
 
-function slot1(slot0)
-	return string.char(226, 133, 160 + slot0 - 1)
+local function var_0_1(arg_12_0)
+	return (string.char(226, 133, 160 + (arg_12_0 - 1)))
 end
 
-function slot0.OnUpdateFile(slot0, slot1, slot2)
-	if slot0.exited then
+function var_0_0.OnUpdateFile(arg_13_0, arg_13_1, arg_13_2)
+	if arg_13_0.exited then
 		return
 	end
 
-	slot3 = slot0.archiveList[slot1]
+	local var_13_0 = arg_13_0.archiveList[arg_13_1]
 
-	if slot0.fileChildIndex[slot2] and slot0.fileChildIndex[slot2] ~= slot1 then
-		slot0.fileChild[slot0.fileChildIndex[slot2]] = nil
+	if arg_13_0.fileChildIndex[arg_13_2] and arg_13_0.fileChildIndex[arg_13_2] ~= arg_13_1 then
+		local var_13_1 = arg_13_0.fileChildIndex[arg_13_2]
+
+		arg_13_0.fileChild[var_13_1] = nil
 	end
 
-	slot0.fileChildIndex[slot2] = slot1
-	slot0.fileChild[slot1] = slot2
-	slot5 = tf(slot2)
-	slot6 = WorldCollectionProxy.GetCollectionFileGroupTemplate(slot0.contextData.FileGroupIndex)
-	slot7 = nowWorld():GetCollectionProxy():IsUnlock(slot3.id)
-	slot8 = slot1 == slot0.contextData.SelectedFile
+	arg_13_0.fileChildIndex[arg_13_2] = arg_13_1
+	arg_13_0.fileChild[arg_13_1] = arg_13_2
 
-	setActive(slot5:Find("Selected"), slot8)
-	setText(slot5:Find("Desc"), setColorStr(string.format("%s %s", shortenString(slot6.name or "", 6), uv0(slot3.group_ID)), slot8 and "#000" or COLOR_WHITE))
-	setActive(slot5:Find("Desc"), slot7)
-	setActive(slot5:Find("Icon"), slot7)
-	setActive(slot5:Find("Cover"), slot7)
-	setActive(slot5:Find("Locked"), not slot7)
-	slot0.loader:GetSprite("ui/WorldMediaCollectionFileDetailUI_atlas", "cover" .. slot6.type, slot5:Find("Cover"))
-	onButton(slot0, slot5, function ()
-		if not nowWorld():GetCollectionProxy():IsUnlock(uv0.id) then
+	local var_13_2 = nowWorld():GetCollectionProxy()
+	local var_13_3 = tf(arg_13_2)
+	local var_13_4 = WorldCollectionProxy.GetCollectionFileGroupTemplate(arg_13_0.contextData.FileGroupIndex)
+	local var_13_5 = var_13_2:IsUnlock(var_13_0.id)
+	local var_13_6 = arg_13_1 == arg_13_0.contextData.SelectedFile
+
+	setActive(var_13_3:Find("Selected"), var_13_6)
+
+	local var_13_7 = string.format("%s %s", shortenString(var_13_4.name or "", 6), var_0_1(var_13_0.group_ID))
+
+	setText(var_13_3:Find("Desc"), setColorStr(var_13_7, var_13_6 and "#000" or COLOR_WHITE))
+	setActive(var_13_3:Find("Desc"), var_13_5)
+	setActive(var_13_3:Find("Icon"), var_13_5)
+	setActive(var_13_3:Find("Cover"), var_13_5)
+	setActive(var_13_3:Find("Locked"), not var_13_5)
+	arg_13_0.loader:GetSprite("ui/WorldMediaCollectionFileDetailUI_atlas", "cover" .. var_13_4.type, var_13_3:Find("Cover"))
+	onButton(arg_13_0, var_13_3, function()
+		if not nowWorld():GetCollectionProxy():IsUnlock(var_13_0.id) then
 			return
 		end
 
-		uv1:SwitchFileIndex(uv2)
+		arg_13_0:SwitchFileIndex(arg_13_1)
 	end, SFX_PANEL)
 end
 
-function slot0.SwitchFileIndex(slot0, slot1)
-	if slot0.contextData.SelectedFile and slot0.contextData.SelectedFile == slot1 then
+function var_0_0.SwitchFileIndex(arg_15_0, arg_15_1)
+	if arg_15_0.contextData.SelectedFile and arg_15_0.contextData.SelectedFile == arg_15_1 then
 		return
 	end
 
-	slot2 = slot1 and slot0.archiveList[slot1]
+	local var_15_0 = arg_15_1 and arg_15_0.archiveList[arg_15_1]
 
-	if slot2 and nowWorld():GetCollectionProxy():IsUnlock(slot2.id) then
-		slot0.contextData.SelectedFile = slot1
+	if var_15_0 and nowWorld():GetCollectionProxy():IsUnlock(var_15_0.id) then
+		local var_15_1 = arg_15_0.contextData.SelectedFile
+		local var_15_2 = arg_15_0.fileChild[var_15_1]
 
-		if slot0.fileChild[slot0.contextData.SelectedFile] then
-			slot0:OnUpdateFile(slot4, slot5)
+		arg_15_0.contextData.SelectedFile = arg_15_1
+
+		if var_15_2 then
+			arg_15_0:OnUpdateFile(var_15_1, var_15_2)
 		end
 
-		if slot0.fileChild[slot1] then
-			slot0:OnUpdateFile(slot1, slot0.fileChild[slot1])
+		if arg_15_0.fileChild[arg_15_1] then
+			arg_15_0:OnUpdateFile(arg_15_1, arg_15_0.fileChild[arg_15_1])
 		end
 
-		setActive(slot0.document, true)
-		setText(slot0.document:Find("Head/Title"), slot2.name)
-		slot0:SetDocument(slot2)
+		setActive(arg_15_0.document, true)
+		setText(arg_15_0.document:Find("Head/Title"), var_15_0.name)
+		arg_15_0:SetDocument(var_15_0)
 	else
-		setActive(slot0.document, false)
+		setActive(arg_15_0.document, false)
 	end
 end
 
-function slot0.SetDocument(slot0, slot1, slot2)
-	setText(slot0.documentTitle, slot1.name)
+function var_0_0.SetDocument(arg_16_0, arg_16_1, arg_16_2)
+	setText(arg_16_0.documentTitle, arg_16_1.name)
 
-	if slot1.pic and #slot3 > 0 then
-		slot4 = LoadSprite("CollectionFileIllustration/" .. slot3, "")
+	local var_16_0 = arg_16_1.pic
 
-		setImageSprite(slot0.documentImage, slot4, true)
-		setActive(slot0.documentImage, slot4)
+	if var_16_0 and #var_16_0 > 0 then
+		local var_16_1 = LoadSprite("CollectionFileIllustration/" .. var_16_0, "")
 
-		if slot4 then
-			setActive(slot0.documentStamp, slot1.is_classified == 1)
+		setImageSprite(arg_16_0.documentImage, var_16_1, true)
+		setActive(arg_16_0.documentImage, var_16_1)
 
-			if slot1.is_classified == 1 then
-				slot0.loader:GetSprite("ui/WorldMediaCollectionFileDetailUI_atlas", "stamp" .. WorldCollectionProxy.GetCollectionFileGroupTemplate(WorldCollectionProxy.GetCollectionGroup(slot1.id)).type, slot0.documentStamp)
+		if var_16_1 then
+			setActive(arg_16_0.documentStamp, arg_16_1.is_classified == 1)
+
+			if arg_16_1.is_classified == 1 then
+				local var_16_2 = WorldCollectionProxy.GetCollectionGroup(arg_16_1.id)
+				local var_16_3 = WorldCollectionProxy.GetCollectionFileGroupTemplate(var_16_2).type
+
+				arg_16_0.loader:GetSprite("ui/WorldMediaCollectionFileDetailUI_atlas", "stamp" .. var_16_3, arg_16_0.documentStamp)
 			end
 		end
 	else
-		setActive(slot0.documentImage, false)
+		setActive(arg_16_0.documentImage, false)
 	end
 
-	slot0:SetDocumentText(slot1.content, slot1.subTitle, slot2)
+	arg_16_0:SetDocumentText(arg_16_1.content, arg_16_1.subTitle, arg_16_2)
 end
 
-function slot0.getTextPreferredHeight(slot0, slot1, slot2)
-	return ReflectionHelp.RefCallMethod(typeof("UnityEngine.TextGenerator"), "GetPreferredHeight", slot0.cachedTextGeneratorForLayout, {
+function var_0_0.getTextPreferredHeight(arg_17_0, arg_17_1, arg_17_2)
+	local var_17_0 = arg_17_0.cachedTextGeneratorForLayout
+	local var_17_1 = arg_17_0:GetGenerationSettings(Vector2(arg_17_1, 0))
+
+	return ReflectionHelp.RefCallMethod(typeof("UnityEngine.TextGenerator"), "GetPreferredHeight", var_17_0, {
 		typeof("System.String"),
 		typeof("UnityEngine.TextGenerationSettings")
 	}, {
-		slot2,
-		slot0:GetGenerationSettings(Vector2(slot1, 0))
-	}) / slot0.pixelsPerUnit
+		arg_17_2,
+		var_17_1
+	}) / arg_17_0.pixelsPerUnit
 end
 
-function slot0.SetDocumentText(slot0, slot1, slot2, slot3)
-	slot7 = math.max(slot0.documentRect.rect.width - (isActive(slot0.documentImage) and slot0.documentImage.rect.width or 0), 0)
-	slot9 = slot5 and slot0.documentImage.rect.height + 100 or 0
-	slot0.documentText:GetComponent(typeof(Text)).text = ""
-	slot11 = ""
+function var_0_0.SetDocumentText(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
+	local var_18_0 = arg_18_0.documentRect.rect.width
+	local var_18_1 = isActive(arg_18_0.documentImage)
+	local var_18_2 = var_18_1 and arg_18_0.documentImage.rect.width or 0
+	local var_18_3 = math.max(var_18_0 - var_18_2, 0)
+	local var_18_4 = arg_18_0.documentImage.rect.height
+	local var_18_5 = var_18_1 and var_18_4 + 100 or 0
+	local var_18_6 = arg_18_0.documentText:GetComponent(typeof(Text))
 
-	if not slot5 then
-		slot10.text = slot1
+	var_18_6.text = ""
 
-		function ()
-			if isActive(uv0.documentHead) then
-				slot0 = 0 + uv0.documentHead:GetComponent(typeof(LayoutElement)).preferredHeight
-			end
+	local var_18_7 = ""
 
-			slot1 = uv0.documentBody:GetComponent("LayoutGroup")
+	local function var_18_8()
+		local var_19_0 = 0
 
-			setActive(uv0.documentTip, uv1 and #uv1 > 0)
+		if isActive(arg_18_0.documentHead) then
+			var_19_0 = var_19_0 + arg_18_0.documentHead:GetComponent(typeof(LayoutElement)).preferredHeight
+		end
 
-			slot3 = 0
+		local var_19_1 = arg_18_0.documentBody:GetComponent("LayoutGroup")
+		local var_19_2 = var_19_0 + (var_19_1.padding.top + var_19_1.padding.bottom)
 
-			if uv1 and #uv1 > 0 then
-				slot4 = uv0.documentTip:Find("Text"):GetComponent(typeof(Text))
-				slot4.text = uv1
-				slot0 = slot0 + slot1.padding.top + slot1.padding.bottom + uv2.getTextPreferredHeight(slot4, uv3, uv1) + uv0.documentRect:GetComponent(typeof(VerticalLayoutGroup)).spacing
-			end
+		setActive(arg_18_0.documentTip, arg_18_2 and #arg_18_2 > 0)
 
-			if uv4 then
-				uv0.documentImage.anchoredPosition = Vector2(0, -50 - slot3)
-			end
+		local var_19_3 = 0
 
-			slot0 = slot0 + uv2.getTextPreferredHeight(uv5, uv3, uv6)
-			slot5 = uv0.documentContentTF.sizeDelta
-			slot5.y = slot0
-			uv0.documentContentTF.sizeDelta = slot5
+		if arg_18_2 and #arg_18_2 > 0 then
+			local var_19_4 = arg_18_0.documentTip:Find("Text"):GetComponent(typeof(Text))
 
-			setActive(uv0.document:Find("Arrow"), uv0.document:Find("Viewport").rect.height < slot0)
-			uv0.document:GetComponent(typeof(ScrollRect)).onValueChanged:RemoveAllListeners()
+			var_19_4.text = arg_18_2
+			var_19_3 = var_0_0.getTextPreferredHeight(var_19_4, var_18_0, arg_18_2)
+			var_19_3 = var_19_3 + arg_18_0.documentRect:GetComponent(typeof(VerticalLayoutGroup)).spacing
+			var_19_2 = var_19_2 + var_19_3
+		end
 
-			uv7 = uv7 or 0
-			uv0.documentContentTF.anchoredPosition = Vector2(0, math.max(slot4 - slot8, 0) * uv7)
-			slot9.velocity = Vector2.zero
+		if var_18_1 then
+			arg_18_0.documentImage.anchoredPosition = Vector2(0, -50 - var_19_3)
+		end
 
-			if slot8 < slot0 then
-				onScroll(uv0, uv0.document, function (slot0)
-					setActive(uv0, slot0.y > 0.01)
-				end)
-			end
-		end()
+		local var_19_5 = var_0_0.getTextPreferredHeight(var_18_6, var_18_0, var_18_7)
+		local var_19_6 = var_19_2 + var_19_5
+		local var_19_7 = arg_18_0.documentContentTF.sizeDelta
+
+		var_19_7.y = var_19_6
+		arg_18_0.documentContentTF.sizeDelta = var_19_7
+
+		local var_19_8 = arg_18_0.document:Find("Viewport")
+		local var_19_9 = arg_18_0.document:Find("Arrow")
+		local var_19_10 = var_19_8.rect.height
+
+		setActive(var_19_9, var_19_10 < var_19_6)
+
+		local var_19_11 = arg_18_0.document:GetComponent(typeof(ScrollRect))
+
+		var_19_11.onValueChanged:RemoveAllListeners()
+
+		arg_18_3 = arg_18_3 or 0
+
+		local var_19_12 = math.max(var_19_5 - var_19_10, 0) * arg_18_3
+
+		arg_18_0.documentContentTF.anchoredPosition = Vector2(0, var_19_12)
+		var_19_11.velocity = Vector2.zero
+
+		if var_19_10 < var_19_6 then
+			onScroll(arg_18_0, arg_18_0.document, function(arg_20_0)
+				setActive(var_19_9, arg_20_0.y > 0.01)
+			end)
+		end
+	end
+
+	if not var_18_1 then
+		var_18_7 = arg_18_1
+		var_18_6.text = var_18_7
+
+		var_18_8()
 
 		return
 	end
 
-	slot13, slot14 = slot0.SplitRichAndLetters(slot1)
-	slot15 = 1
-	slot16 = 1
+	local var_18_9, var_18_10 = arg_18_0.SplitRichAndLetters(arg_18_1)
+	local var_18_11 = 1
+	local var_18_12 = 1
 
-	function slot17(slot0)
-		slot1 = ""
-		slot2 = ""
-		slot3 = {}
+	local function var_18_13(arg_21_0)
+		local var_21_0 = ""
+		local var_21_1 = ""
+		local var_21_2 = {}
 
-		for slot8 = slot0 and 1 or uv0, #uv1 do
-			if uv2[uv3].start < uv1[slot8].start then
+		for iter_21_0 = arg_21_0 and 1 or var_18_12, #var_18_10 do
+			if var_18_10[iter_21_0].start > var_18_9[var_18_11].start then
 				break
 			end
 
-			if slot8 == uv0 then
-				uv0 = uv0 + 1
-				slot1 = slot1 .. uv1[slot8].value
+			local var_21_3 = var_18_10[iter_21_0]
+
+			if iter_21_0 == var_18_12 then
+				var_18_12 = var_18_12 + 1
+				var_21_0 = var_21_0 .. var_21_3.value
 			end
 
-			if slot0 then
-				if slot9.EndTagIndex then
-					slot3[#slot3 + 1] = slot9.EndTagIndex
+			if arg_21_0 then
+				if var_21_3.EndTagIndex then
+					var_21_2[#var_21_2 + 1] = var_21_3.EndTagIndex
 				else
-					table.remove(slot3)
+					table.remove(var_21_2)
 				end
 			end
 		end
 
-		slot5 = ""
+		local var_21_4 = ""
 
-		if uv3 <= #uv2 then
-			slot5 = uv2[uv3].value
+		if var_18_11 <= #var_18_9 then
+			var_21_4 = var_18_9[var_18_11].value
 		end
 
-		for slot9, slot10 in ipairs(slot3) do
-			slot2 = uv1[slot10].value .. slot2
+		for iter_21_1, iter_21_2 in ipairs(var_21_2) do
+			var_21_1 = var_18_10[iter_21_2].value .. var_21_1
 		end
 
-		uv3 = uv3 + 1
+		var_18_11 = var_18_11 + 1
 
-		return slot5, slot1, slot2
+		return var_21_4, var_21_0, var_21_1
 	end
 
-	while slot9 > 0 and slot15 < #slot13 do
-		slot19, slot20, slot21 = slot17(true)
-		slot10.text = slot11 .. slot20 .. slot19 .. slot21
-		slot11 = slot7 < slot10.preferredWidth and slot11 .. "\n" .. slot20 .. slot19 or slot11 .. slot20 .. slot19
-		slot10.text = slot11
-		slot18 = uv0.getTextPreferredHeight(slot10, slot10.preferredWidth, slot11)
+	local var_18_14 = 0
+
+	while var_18_14 < var_18_5 and var_18_11 < #var_18_9 do
+		local var_18_15, var_18_16, var_18_17 = var_18_13(true)
+		local var_18_18 = var_18_7 .. var_18_16 .. var_18_15 .. var_18_17
+
+		var_18_6.text = var_18_18
+
+		if var_18_3 < var_18_6.preferredWidth then
+			var_18_18 = var_18_7 .. "\n" .. var_18_16 .. var_18_15
+		else
+			var_18_18 = var_18_7 .. var_18_16 .. var_18_15
+		end
+
+		var_18_7 = var_18_18
+		var_18_6.text = var_18_7
+		var_18_14 = var_0_0.getTextPreferredHeight(var_18_6, var_18_6.preferredWidth, var_18_7)
 	end
 
-	for slot22 = slot15, #slot13 do
-		slot23, slot24 = slot17(false)
-		slot11 = slot11 .. slot24 .. slot23
+	for iter_18_0 = var_18_11, #var_18_9 do
+		local var_18_19, var_18_20 = var_18_13(false)
+
+		var_18_7 = var_18_7 .. var_18_20 .. var_18_19
 	end
 
-	slot19, slot20, slot21 = slot17(true)
-	slot10.text = slot11 .. slot21
+	local var_18_21, var_18_22, var_18_23 = var_18_13(true)
 
-	slot12()
+	var_18_7 = var_18_7 .. var_18_23
+	var_18_6.text = var_18_7
+
+	var_18_8()
 end
 
-function slot0.SplitRichAndLetters(slot0)
-	slot3 = {}
-	slot4 = {}
+function var_0_0.SplitRichAndLetters(arg_22_0)
+	local var_22_0 = 1
+	local var_22_1 = "<([^>]*)>"
+	local var_22_2 = {}
+	local var_22_3 = {}
 
 	while true do
-		slot5, slot6 = string.find(slot0, "<([^>]*)>", 1)
+		local var_22_4, var_22_5 = string.find(arg_22_0, var_22_1, var_22_0)
 
-		if not slot6 then
+		if not var_22_5 then
 			break
 		end
 
-		slot7 = string.sub(slot0, slot5, slot6)
+		local var_22_6 = string.sub(arg_22_0, var_22_4, var_22_5)
+		local var_22_7 = string.find(var_22_6, "=")
+		local var_22_8 = string.find(var_22_6, "/")
 
-		if not string.find(slot7, "/") and not string.find(slot7, "=") then
-			slot1 = slot6 + 1
+		if not var_22_8 and not var_22_7 then
+			var_22_0 = var_22_5 + 1
 		else
-			table.insert(slot3, {
-				value = slot7,
-				start = slot5
+			table.insert(var_22_2, {
+				value = var_22_6,
+				start = var_22_4
 			})
 
-			if slot8 then
-				slot4[#slot4 + 1] = #slot3
-			elseif slot9 and #slot4 > 0 then
-				slot3[table.remove(slot4)].EndTagIndex = #slot3
+			if var_22_7 then
+				var_22_3[#var_22_3 + 1] = #var_22_2
+			elseif var_22_8 and #var_22_3 > 0 then
+				var_22_2[table.remove(var_22_3)].EndTagIndex = #var_22_2
 			end
 
-			slot0 = string.sub(slot0, 1, slot5 - 1) .. string.sub(slot0, slot6 + 1, -1)
-			slot1 = slot5
+			local var_22_9 = string.sub(arg_22_0, var_22_5 + 1, -1)
+
+			arg_22_0 = string.sub(arg_22_0, 1, var_22_4 - 1) .. var_22_9
+			var_22_0 = var_22_4
 		end
 	end
 
-	slot5 = {}
-	slot6 = false
-	slot7 = 1
+	local var_22_10 = {}
+	local var_22_11 = 1
+	local var_22_12 = false
+	local var_22_13 = 1
 
 	while true do
-		slot8, slot9 = string.find(slot0, "[-\\xc2-\\xf4][\\x80-\\xbf]*", 1)
+		local var_22_14, var_22_15 = string.find(arg_22_0, "[\x01-\x7F\xC2-\xF4][\x80-\xBF]*", var_22_11)
 
-		if not slot9 then
-			slot5[#slot5 + 1] = {
-				value = string.sub(slot0, slot7, #slot0),
-				start = slot7
+		if not var_22_15 then
+			var_22_10[#var_22_10 + 1] = {
+				value = string.sub(arg_22_0, var_22_13, #arg_22_0),
+				start = var_22_13
 			}
 
 			break
 		end
 
-		slot10 = string.sub(slot0, slot8, slot9)
-		slot11 = false
+		local var_22_16 = string.sub(arg_22_0, var_22_14, var_22_15)
+		local var_22_17 = false
 
 		if PLATFORM_CODE == PLATFORM_US then
-			if slot6 ~= (slot10 == " " or slot10 == " ") then
-				slot11 = slot8 > 1
+			local var_22_18 = var_22_16 == " " or var_22_16 == " "
+
+			if var_22_12 ~= var_22_18 then
+				var_22_17 = var_22_14 > 1
 			end
 
-			slot6 = slot12
+			var_22_12 = var_22_18
 		else
-			slot11 = slot8 > 1
+			var_22_17 = var_22_14 > 1
 		end
 
-		if slot11 then
-			slot5[#slot5 + 1] = {
-				value = string.sub(slot0, slot7, slot8 - 1),
-				start = slot7
+		if var_22_17 then
+			var_22_10[#var_22_10 + 1] = {
+				value = string.sub(arg_22_0, var_22_13, var_22_14 - 1),
+				start = var_22_13
 			}
-			slot7 = slot8
+			var_22_13 = var_22_14
 		end
 
-		slot1 = slot9 + 1
+		var_22_11 = var_22_15 + 1
 	end
 
-	return slot5, slot3
+	return var_22_10, var_22_2
 end
 
-return slot0
+return var_0_0

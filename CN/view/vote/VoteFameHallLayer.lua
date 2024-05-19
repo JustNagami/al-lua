@@ -1,6 +1,6 @@
-slot0 = class("VoteFameHallLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("VoteFameHallLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	if PLATFORM_CODE == PLATFORM_CHT then
 		return "VoteFameHallUIForCht"
 	else
@@ -8,70 +8,78 @@ function slot0.getUIName(slot0)
 	end
 end
 
-function slot0.SetPastVoteData(slot0, slot1)
-	slot0.voteData = slot1
+function var_0_0.SetPastVoteData(arg_2_0, arg_2_1)
+	arg_2_0.voteData = arg_2_1
 end
 
-function slot0.init(slot0)
-	slot0.tip = slot0:findTF("Text"):GetComponent(typeof(Text))
-	slot0.backBtn = slot0:findTF("adapt/back")
+function var_0_0.init(arg_3_0)
+	arg_3_0.tip = arg_3_0:findTF("Text"):GetComponent(typeof(Text))
+	arg_3_0.backBtn = arg_3_0:findTF("adapt/back")
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:emit(uv1.ON_CLOSE)
+function var_0_0.didEnter(arg_4_0)
+	onButton(arg_4_0, arg_4_0.backBtn, function()
+		arg_4_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_PANEL)
-	slot0:InitData()
+	arg_4_0:InitData()
 end
 
-function slot0.InitData(slot0)
-	slot0.displays = {}
-	slot0.btns = {}
+function var_0_0.InitData(arg_6_0)
+	arg_6_0.displays = {}
+	arg_6_0.btns = {}
 
-	for slot5, slot6 in pairs(slot0.voteData) do
-		slot7 = slot0:findTF("adapt/btns/btn_" .. slot5)
-		slot0.displays[slot5] = slot6
+	local var_6_0 = false
 
-		onToggle(slot0, slot7, function (slot0)
-			if slot0 then
-				uv0:Flush(uv1)
+	for iter_6_0, iter_6_1 in pairs(arg_6_0.voteData) do
+		local var_6_1 = arg_6_0:findTF("adapt/btns/btn_" .. iter_6_0)
+
+		arg_6_0.displays[iter_6_0] = iter_6_1
+
+		onToggle(arg_6_0, var_6_1, function(arg_7_0)
+			if arg_7_0 then
+				arg_6_0:Flush(iter_6_0)
 			end
 		end, SFX_PANEL)
 
-		slot0.btns[slot5] = slot7
+		arg_6_0.btns[iter_6_0] = var_6_1
 
-		if not false then
-			triggerToggle(slot7, true)
+		if not var_6_0 then
+			triggerToggle(var_6_1, true)
 
-			slot1 = true
+			var_6_0 = true
 		end
 	end
 
-	slot0:UpdateBtnsTip()
+	arg_6_0:UpdateBtnsTip()
 end
 
-function slot0.Flush(slot0, slot1)
-	for slot6, slot7 in ipairs(slot0.displays[slot1]) do
-		slot8 = pg.vote_champion[slot7]
-		slot10 = slot8.story
-		slot11 = slot8.task
+function var_0_0.Flush(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_0.displays[arg_8_1]
 
-		onButton(slot0, slot0:findTF(slot1 .. "/" .. slot8.rank), function ()
-			uv0:GetAward(uv1, uv2)
+	for iter_8_0, iter_8_1 in ipairs(var_8_0) do
+		local var_8_1 = pg.vote_champion[iter_8_1]
+		local var_8_2 = arg_8_0:findTF(arg_8_1 .. "/" .. var_8_1.rank)
+		local var_8_3 = var_8_1.story
+		local var_8_4 = var_8_1.task
+
+		onButton(arg_8_0, var_8_2, function()
+			arg_8_0:GetAward(var_8_3, var_8_4)
 		end, SFX_PANEL)
 	end
 
-	slot0:UpdateTips(slot1)
+	arg_8_0:UpdateTips(arg_8_1)
 
-	slot0.year = slot1
+	arg_8_0.year = arg_8_1
 end
 
-function slot0.UpdateTips(slot0, slot1)
-	if not slot1 then
+function var_0_0.UpdateTips(arg_10_0, arg_10_1)
+	if not arg_10_1 then
 		return
 	end
 
-	slot4 = {
+	local var_10_0 = arg_10_0.displays[arg_10_1]
+	local var_10_1 = getProxy(AttireProxy)
+	local var_10_2 = {
 		{
 			"",
 			false
@@ -86,52 +94,69 @@ function slot0.UpdateTips(slot0, slot1)
 		}
 	}
 
-	for slot8, slot9 in ipairs(slot0.displays[slot1]) do
-		slot10 = pg.vote_champion[slot9]
-		slot11 = slot10.story
-		slot14 = getProxy(TaskProxy):getTaskById(slot10.task) or slot13:getFinishTaskById(slot12)
-		slot4[slot8][2] = getProxy(AttireProxy):getAttireFrame(AttireConst.TYPE_ICON_FRAME, pg.task_data_template[slot12].award_display[1][2]) ~= nil and slot17:isOwned()
-		slot4[slot8][1] = ShipGroup.getDefaultShipConfig(slot10.ship_group).name
+	for iter_10_0, iter_10_1 in ipairs(var_10_0) do
+		local var_10_3 = pg.vote_champion[iter_10_1]
+		local var_10_4 = var_10_3.story
+		local var_10_5 = var_10_3.task
+		local var_10_6 = getProxy(TaskProxy)
+		local var_10_7 = var_10_6:getTaskById(var_10_5) or var_10_6:getFinishTaskById(var_10_5)
+		local var_10_8 = arg_10_0:findTF(arg_10_1 .. "/" .. var_10_3.rank .. "/title/tip")
+		local var_10_9 = pg.task_data_template[var_10_5].award_display[1]
+		local var_10_10 = var_10_1:getAttireFrame(AttireConst.TYPE_ICON_FRAME, var_10_9[2])
 
-		setActive(slot0:findTF(slot1 .. "/" .. slot10.rank .. "/title/tip"), slot14 and slot14:isFinish() and not slot14:isReceive() and (slot17 == nil or not slot17:isOwned()))
+		var_10_2[iter_10_0][2] = var_10_10 ~= nil and var_10_10:isOwned()
+		var_10_2[iter_10_0][1] = ShipGroup.getDefaultShipConfig(var_10_3.ship_group).name
+
+		setActive(var_10_8, var_10_7 and var_10_7:isFinish() and not var_10_7:isReceive() and (var_10_10 == nil or not var_10_10:isOwned()))
 	end
 
-	slot5 = _.map(slot4, function (slot0)
-		return slot0[2] and slot0[1] .. "(<color=#92fc63>" .. i18n("word_got") .. "</color>)" or slot0[1]
+	local var_10_11 = _.map(var_10_2, function(arg_11_0)
+		return arg_11_0[2] and arg_11_0[1] .. "(<color=#92fc63>" .. i18n("word_got") .. "</color>)" or arg_11_0[1]
 	end)
-	slot0.tip.text = i18n("vote_fame_tip", slot5[1], slot5[2], slot5[3])
+
+	arg_10_0.tip.text = i18n("vote_fame_tip", var_10_11[1], var_10_11[2], var_10_11[3])
 end
 
-function slot0.UpdateBtnsTip(slot0)
-	slot1 = getProxy(TaskProxy)
-	slot2 = getProxy(AttireProxy)
+function var_0_0.UpdateBtnsTip(arg_12_0)
+	local var_12_0 = getProxy(TaskProxy)
+	local var_12_1 = getProxy(AttireProxy)
 
-	for slot6, slot7 in pairs(slot0.displays) do
-		setActive(slot0.btns[slot6]:Find("tip"), _.any(slot7, function (slot0)
-			slot3 = uv0:getTaskById(pg.vote_champion[slot0].task) or uv0:getFinishTaskById(slot2)
-			slot5 = uv1:getAttireFrame(AttireConst.TYPE_ICON_FRAME, pg.task_data_template[slot2].award_display[1][2])
+	for iter_12_0, iter_12_1 in pairs(arg_12_0.displays) do
+		local var_12_2 = _.any(iter_12_1, function(arg_13_0)
+			local var_13_0 = pg.vote_champion[arg_13_0].task
+			local var_13_1 = var_12_0:getTaskById(var_13_0) or var_12_0:getFinishTaskById(var_13_0)
+			local var_13_2 = pg.task_data_template[var_13_0].award_display[1]
+			local var_13_3 = var_12_1:getAttireFrame(AttireConst.TYPE_ICON_FRAME, var_13_2[2])
 
-			return slot3 and slot3:isFinish() and not slot3:isReceive() and (slot5 == nil or not slot5:isOwned())
-		end))
+			return var_13_1 and var_13_1:isFinish() and not var_13_1:isReceive() and (var_13_3 == nil or not var_13_3:isOwned())
+		end)
+
+		setActive(arg_12_0.btns[iter_12_0]:Find("tip"), var_12_2)
 	end
 end
 
-function slot0.GetAward(slot0, slot1, slot2)
-	seriesAsync({
-		function (slot0)
-			pg.NewStoryMgr.GetInstance():Play(uv0, slot0, true)
+function var_0_0.GetAward(arg_14_0, arg_14_1, arg_14_2)
+	local var_14_0 = {
+		function(arg_15_0)
+			pg.NewStoryMgr.GetInstance():Play(arg_14_1, arg_15_0, true)
 		end,
-		function (slot0)
-			if (getProxy(TaskProxy):getTaskById(uv0) or slot1:getFinishTaskById(uv0)) and slot2:isFinish() and not slot2:isReceive() then
-				uv1:emit(VoteFameHallMediator.ON_SUBMIT_TASK, slot2.id)
+		function(arg_16_0)
+			local var_16_0 = getProxy(TaskProxy)
+			local var_16_1 = var_16_0:getTaskById(arg_14_2) or var_16_0:getFinishTaskById(arg_14_2)
+
+			if var_16_1 and var_16_1:isFinish() and not var_16_1:isReceive() then
+				arg_14_0:emit(VoteFameHallMediator.ON_SUBMIT_TASK, var_16_1.id)
 			end
 
-			slot0()
+			arg_16_0()
 		end
-	})
+	}
+
+	seriesAsync(var_14_0)
 end
 
-function slot0.willExit(slot0)
+function var_0_0.willExit(arg_17_0)
+	return
 end
 
-return slot0
+return var_0_0

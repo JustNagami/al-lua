@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.name_code = {
 	{
 		name = "峰风",

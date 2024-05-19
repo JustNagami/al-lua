@@ -1,215 +1,226 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConfig
-slot0.Battle.CardPuzzleCombatCard = class("CardPuzzleCombatCard", CardPuzzleCardView)
-slot2 = slot0.Battle.CardPuzzleCombatCard
-slot2.__name = "CardPuzzleCombatCard"
-slot2.CARD_SCALE = Vector3(0.57, 0.57, 0)
-slot2.DRAG_SCALE = Vector3(0.65, 0.65, 0)
-slot2.DRAW_SCALE = Vector3(0.2, 0.2, 0)
-slot2.SHUFFLE_SCALE = Vector3(0.1, 0.1, 0)
-slot2.RECYLE_POS = Vector3(10000, 10000, 0)
-slot2.STATE_LOCK = "STATE_LOCK"
-slot2.STATE_FREE = "STATE_FREE"
-slot2.STATE_DRAG = "STATE_DRAG"
-slot2.STATE_LONG_PRESS = "STATE_LONG_PRESS"
-slot2.BASE_LERP = 0.2
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConfig
 
-	slot0._go = slot1.gameObject
-	slot1.localScale = uv0.CARD_SCALE
-	slot0._moveLerp = 0.2
-	slot0._pos = Vector3.zero
+var_0_0.Battle.CardPuzzleCombatCard = class("CardPuzzleCombatCard", CardPuzzleCardView)
+
+local var_0_2 = var_0_0.Battle.CardPuzzleCombatCard
+
+var_0_2.__name = "CardPuzzleCombatCard"
+var_0_2.CARD_SCALE = Vector3(0.57, 0.57, 0)
+var_0_2.DRAG_SCALE = Vector3(0.65, 0.65, 0)
+var_0_2.DRAW_SCALE = Vector3(0.2, 0.2, 0)
+var_0_2.SHUFFLE_SCALE = Vector3(0.1, 0.1, 0)
+var_0_2.RECYLE_POS = Vector3(10000, 10000, 0)
+var_0_2.STATE_LOCK = "STATE_LOCK"
+var_0_2.STATE_FREE = "STATE_FREE"
+var_0_2.STATE_DRAG = "STATE_DRAG"
+var_0_2.STATE_LONG_PRESS = "STATE_LONG_PRESS"
+var_0_2.BASE_LERP = 0.2
+
+function var_0_2.Ctor(arg_1_0, arg_1_1)
+	var_0_2.super.Ctor(arg_1_0, arg_1_1)
+
+	arg_1_0._go = arg_1_1.gameObject
+	arg_1_1.localScale = var_0_2.CARD_SCALE
+	arg_1_0._moveLerp = 0.2
+	arg_1_0._pos = Vector3.zero
 end
 
-function slot2.GetRarityBG(slot0, slot1)
-	return "battle_card_bg_" .. slot1
+function var_0_2.GetRarityBG(arg_2_0, arg_2_1)
+	return "battle_card_bg_" .. arg_2_1
 end
 
-function slot2.GetCardCost(slot0)
-	return slot0.data:GetTotalCost()
+function var_0_2.GetCardCost(arg_3_0)
+	return arg_3_0.data:GetTotalCost()
 end
 
-function slot2.UpdateView(slot0)
-	uv0.super.UpdateView(slot0)
+function var_0_2.UpdateView(arg_4_0)
+	var_0_2.super.UpdateView(arg_4_0)
 
-	slot0._coolDown = slot0._tf:Find("cooldown")
-	slot0._coolDownProgress = slot0._coolDown:GetComponent(typeof(Image))
-	slot0._canvaGroup = slot0._tf:GetComponent(typeof(CanvasGroup))
-	slot0._boostHint = slot0._tf:Find("boost_hint")
+	arg_4_0._coolDown = arg_4_0._tf:Find("cooldown")
+	arg_4_0._coolDownProgress = arg_4_0._coolDown:GetComponent(typeof(Image))
+	arg_4_0._canvaGroup = arg_4_0._tf:GetComponent(typeof(CanvasGroup))
+	arg_4_0._boostHint = arg_4_0._tf:Find("boost_hint")
 
-	slot0:UpdateTotalCost()
-	slot0:UpdateBoostHint()
+	arg_4_0:UpdateTotalCost()
+	arg_4_0:UpdateBoostHint()
 end
 
-function slot2.Update(slot0)
-	slot0:updateCoolDown()
-	slot0:MoveToRefPos()
+function var_0_2.Update(arg_5_0)
+	arg_5_0:updateCoolDown()
+	arg_5_0:MoveToRefPos()
 end
 
-function slot2.ShowGray(slot0, slot1)
-	setGray(slot0._tf, slot1, true)
+function var_0_2.ShowGray(arg_6_0, arg_6_1)
+	setGray(arg_6_0._tf, arg_6_1, true)
 end
 
-function slot2.SetCardInfo(slot0, slot1)
-	slot0._cardInfo = slot1
+function var_0_2.SetCardInfo(arg_7_0, arg_7_1)
+	arg_7_0._cardInfo = arg_7_1
 
-	slot0:SetData(slot0._cardInfo)
+	arg_7_0:SetData(arg_7_0._cardInfo)
 end
 
-function slot2.GetCardInfo(slot0)
-	return slot0._cardInfo
+function var_0_2.GetCardInfo(arg_8_0)
+	return arg_8_0._cardInfo
 end
 
-function slot2.DrawAnima(slot0, slot1)
-	slot0:drawAlphaAndScale()
+function var_0_2.DrawAnima(arg_9_0, arg_9_1)
+	arg_9_0:drawAlphaAndScale()
 
-	slot0._tf.localPosition = slot1
+	arg_9_0._tf.localPosition = arg_9_1
 end
 
-function slot2.GetUIPos(slot0)
-	return slot0._tf.anchoredPosition
+function var_0_2.GetUIPos(arg_10_0)
+	return arg_10_0._tf.anchoredPosition
 end
 
-function slot2.SetSibling(slot0, slot1)
-	slot0._tf:SetSiblingIndex(slot1)
+function var_0_2.SetSibling(arg_11_0, arg_11_1)
+	arg_11_0._tf:SetSiblingIndex(arg_11_1)
 end
 
-function slot2.SetReferencePos(slot0, slot1)
-	slot0._refPos = slot1
+function var_0_2.SetReferencePos(arg_12_0, arg_12_1)
+	arg_12_0._refPos = arg_12_1
 end
 
-function slot2.SetMoveLerp(slot0, slot1)
-	slot0._moveLerp = slot1 or uv0.BASE_LERP
+function var_0_2.SetMoveLerp(arg_13_0, arg_13_1)
+	arg_13_0._moveLerp = arg_13_1 or var_0_2.BASE_LERP
 end
 
-function slot2.MoveToRefPos(slot0)
-	if slot0._tf.localPosition:Equals(slot0._refPos) then
-		if slot0._moveToPointCallback then
-			slot0:_moveToPointCallback()
+function var_0_2.MoveToRefPos(arg_14_0)
+	if arg_14_0._tf.localPosition:Equals(arg_14_0._refPos) then
+		if arg_14_0._moveToPointCallback then
+			arg_14_0:_moveToPointCallback()
 
-			slot0._moveToPointCallback = nil
+			arg_14_0._moveToPointCallback = nil
 		end
 
 		return
 	end
 
-	if slot0._moveLerp == 1 then
-		slot0._pos:Copy(slot0._refPos)
+	if arg_14_0._moveLerp == 1 then
+		arg_14_0._pos:Copy(arg_14_0._refPos)
 	else
-		slot0._pos:Copy(Vector2.Lerp(slot0._tf.localPosition, slot0._refPos, slot0._moveLerp))
+		local var_14_0 = arg_14_0._tf.localPosition
+		local var_14_1 = Vector2.Lerp(var_14_0, arg_14_0._refPos, arg_14_0._moveLerp)
+
+		arg_14_0._pos:Copy(var_14_1)
 	end
 
-	slot0._tf.localPosition = slot0._pos
+	arg_14_0._tf.localPosition = arg_14_0._pos
 end
 
-function slot2.SetToObjPoolRecylePos(slot0)
-	slot0._tf.localPosition = uv0.RECYLE_POS
+function var_0_2.SetToObjPoolRecylePos(arg_15_0)
+	arg_15_0._tf.localPosition = var_0_2.RECYLE_POS
 end
 
-function slot2.MoveToDeck(slot0, slot1, slot2)
-	slot0:shuffleBackAlphaAndScale()
-	slot0:SetMoveLerp(0.8)
+function var_0_2.MoveToDeck(arg_16_0, arg_16_1, arg_16_2)
+	arg_16_0:shuffleBackAlphaAndScale()
+	arg_16_0:SetMoveLerp(0.8)
 
-	slot0._refPos = slot2
-	slot0._moveToPointCallback = slot1
+	arg_16_0._refPos = arg_16_2
+	arg_16_0._moveToPointCallback = arg_16_1
 end
 
-function slot2.GetState(slot0)
-	return slot0._state
+function var_0_2.GetState(arg_17_0)
+	return arg_17_0._state
 end
 
-function slot2.ChangeState(slot0, slot1)
-	slot0._state = slot1
+function var_0_2.ChangeState(arg_18_0, arg_18_1)
+	arg_18_0._state = arg_18_1
 end
 
-function slot2.ConfigOP(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	slot0._dragDelegate = GetOrAddComponent(slot0._go, "EventTriggerListener")
+function var_0_2.ConfigOP(arg_19_0, arg_19_1, arg_19_2, arg_19_3, arg_19_4, arg_19_5, arg_19_6)
+	arg_19_0._dragDelegate = GetOrAddComponent(arg_19_0._go, "EventTriggerListener")
 
-	slot0._dragDelegate:AddPointUpFunc(function (slot0, slot1)
-		uv0()
+	arg_19_0._dragDelegate:AddPointUpFunc(function(arg_20_0, arg_20_1)
+		arg_19_6()
 	end)
-	slot0._dragDelegate:AddBeginDragFunc(function (slot0, slot1)
-		uv0:dragAlphaAndScale()
-		uv1(uv0._cardInfo)
+	arg_19_0._dragDelegate:AddBeginDragFunc(function(arg_21_0, arg_21_1)
+		arg_19_0:dragAlphaAndScale()
+		arg_19_2(arg_19_0._cardInfo)
 	end)
-	slot0._dragDelegate:AddDragFunc(function (slot0, slot1)
-		uv0(slot1.position)
+	arg_19_0._dragDelegate:AddDragFunc(function(arg_22_0, arg_22_1)
+		arg_19_3(arg_22_1.position)
 	end)
-	slot0._dragDelegate:AddDragEndFunc(function (slot0, slot1)
-		uv0:resetAll()
-		uv1()
+	arg_19_0._dragDelegate:AddDragEndFunc(function(arg_23_0, arg_23_1)
+		arg_19_0:resetAll()
+		arg_19_4()
 	end)
 
-	slot0._longPressDelegate = GetOrAddComponent(slot0._go, "UILongPressTrigger")
-	slot0._longPressDelegate.longPressThreshold = 0.5
+	arg_19_0._longPressDelegate = GetOrAddComponent(arg_19_0._go, "UILongPressTrigger")
+	arg_19_0._longPressDelegate.longPressThreshold = 0.5
 
-	slot0._longPressDelegate.onLongPressed:AddListener(function ()
-		uv0()
+	arg_19_0._longPressDelegate.onLongPressed:AddListener(function()
+		arg_19_5()
 	end)
 end
 
-function slot2.updateCoolDown(slot0)
-	if slot0._cardInfo:GetCastRemainRate() > 0 then
-		setActive(slot0._coolDown, true)
+function var_0_2.updateCoolDown(arg_25_0)
+	if arg_25_0._cardInfo:GetCastRemainRate() > 0 then
+		setActive(arg_25_0._coolDown, true)
 
-		slot0._coolDownProgress.fillAmount = slot0._cardInfo:GetCastRemainRate()
+		arg_25_0._coolDownProgress.fillAmount = arg_25_0._cardInfo:GetCastRemainRate()
 	else
-		setActive(slot0._coolDown, false)
+		setActive(arg_25_0._coolDown, false)
 	end
 end
 
-function slot2.change2ScrPos(slot0, slot1)
-	return LuaHelper.ScreenToLocal(slot0, slot1, pg.UIMgr.GetInstance().overlayCameraComp)
+function var_0_2.change2ScrPos(arg_26_0, arg_26_1)
+	local var_26_0 = pg.UIMgr.GetInstance().overlayCameraComp
+
+	return (LuaHelper.ScreenToLocal(arg_26_0, arg_26_1, var_26_0))
 end
 
-function slot2.UpdateDragPosition(slot0, slot1)
-	slot0:SetReferencePos(slot0.change2ScrPos(slot0._tf.parent, slot1))
+function var_0_2.UpdateDragPosition(arg_27_0, arg_27_1)
+	local var_27_0 = arg_27_0.change2ScrPos(arg_27_0._tf.parent, arg_27_1)
+
+	arg_27_0:SetReferencePos(var_27_0)
 end
 
-function slot2.BlockRayCast(slot0, slot1)
-	slot0._canvaGroup.blocksRaycasts = slot1
+function var_0_2.BlockRayCast(arg_28_0, arg_28_1)
+	arg_28_0._canvaGroup.blocksRaycasts = arg_28_1
 end
 
-function slot2.UpdateTotalCost(slot0)
-	if slot0._cardInfo then
-		setText(slot0.costTF, slot0.data:GetTotalCost())
+function var_0_2.UpdateTotalCost(arg_29_0)
+	if arg_29_0._cardInfo then
+		setText(arg_29_0.costTF, arg_29_0.data:GetTotalCost())
 	end
 end
 
-function slot2.UpdateBoostHint(slot0)
-	if slot0._cardInfo then
-		setActive(slot0._boostHint, slot0._cardInfo:IsBoost())
+function var_0_2.UpdateBoostHint(arg_30_0)
+	if arg_30_0._cardInfo then
+		setActive(arg_30_0._boostHint, arg_30_0._cardInfo:IsBoost())
 	end
 end
 
-function slot2.dragAlphaAndScale(slot0)
-	LeanTween.cancel(slot0._go)
-	LeanTween.scale(slot0._go, uv0.DRAG_SCALE, 0.1)
-	LeanTween.alphaCanvas(slot0._canvaGroup, 0.7, 0.1)
+function var_0_2.dragAlphaAndScale(arg_31_0)
+	LeanTween.cancel(arg_31_0._go)
+	LeanTween.scale(arg_31_0._go, var_0_2.DRAG_SCALE, 0.1)
+	LeanTween.alphaCanvas(arg_31_0._canvaGroup, 0.7, 0.1)
 end
 
-function slot2.drawAlphaAndScale(slot0)
-	LeanTween.cancel(slot0._go)
+function var_0_2.drawAlphaAndScale(arg_32_0)
+	LeanTween.cancel(arg_32_0._go)
 
-	slot0._tf.localScale = uv0.DRAW_SCALE
-	slot0._canvaGroup.alpha = 0.2
+	arg_32_0._tf.localScale = var_0_2.DRAW_SCALE
+	arg_32_0._canvaGroup.alpha = 0.2
 
-	LeanTween.scale(slot0._go, uv0.CARD_SCALE, 0.2)
-	LeanTween.alphaCanvas(slot0._canvaGroup, 1, 0.2)
+	LeanTween.scale(arg_32_0._go, var_0_2.CARD_SCALE, 0.2)
+	LeanTween.alphaCanvas(arg_32_0._canvaGroup, 1, 0.2)
 end
 
-function slot2.shuffleBackAlphaAndScale(slot0)
-	slot0:resetAll()
-	LeanTween.scale(slot0._go, uv0.SHUFFLE_SCALE, 0.2)
-	LeanTween.alphaCanvas(slot0._canvaGroup, 0, 0.2)
+function var_0_2.shuffleBackAlphaAndScale(arg_33_0)
+	arg_33_0:resetAll()
+	LeanTween.scale(arg_33_0._go, var_0_2.SHUFFLE_SCALE, 0.2)
+	LeanTween.alphaCanvas(arg_33_0._canvaGroup, 0, 0.2)
 end
 
-function slot2.resetAll(slot0)
-	LeanTween.cancel(slot0._go)
+function var_0_2.resetAll(arg_34_0)
+	LeanTween.cancel(arg_34_0._go)
 
-	slot0._tf.localScale = uv0.CARD_SCALE
-	slot0._canvaGroup.alpha = 1
+	arg_34_0._tf.localScale = var_0_2.CARD_SCALE
+	arg_34_0._canvaGroup.alpha = 1
 end

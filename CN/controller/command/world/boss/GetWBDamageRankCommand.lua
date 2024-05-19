@@ -1,46 +1,47 @@
-slot0 = class("GetWBDamageRankCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GetWBDamageRankCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.callback
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.bossId
+	local var_1_2 = var_1_0.callback
 
-	if not slot2.bossId or slot3 == 0 then
-		if slot4 then
-			slot4()
+	if not var_1_1 or var_1_1 == 0 then
+		if var_1_2 then
+			var_1_2()
 		end
 
 		return
 	end
 
-	slot5 = getProxy(PlayerProxy):getRawData().id
+	local var_1_3 = getProxy(PlayerProxy):getRawData().id
 
 	pg.ConnectionMgr.GetInstance():Send(34505, {
-		boss_id = slot3
-	}, 34506, function (slot0)
-		slot1 = {}
+		boss_id = var_1_1
+	}, 34506, function(arg_2_0)
+		local var_2_0 = {}
 
-		for slot5, slot6 in ipairs(slot0.rank_list) do
-			table.insert(slot1, {
-				id = slot6.id,
-				name = slot6.name,
-				damage = slot6.damage,
-				isSelf = uv0 == slot6.id
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.rank_list) do
+			table.insert(var_2_0, {
+				id = iter_2_1.id,
+				name = iter_2_1.name,
+				damage = iter_2_1.damage,
+				isSelf = var_1_3 == iter_2_1.id
 			})
 		end
 
-		table.sort(slot1, function (slot0, slot1)
-			return slot1.damage < slot0.damage
+		table.sort(var_2_0, function(arg_3_0, arg_3_1)
+			return arg_3_0.damage > arg_3_1.damage
 		end)
-		nowWorld():GetBossProxy():SetRank(uv1, slot1)
+		nowWorld():GetBossProxy():SetRank(var_1_1, var_2_0)
 
-		if uv2 then
-			uv2(#slot1)
+		if var_1_2 then
+			var_1_2(#var_2_0)
 		end
 
-		uv3:sendNotification(GAME.WORLD_GET_BOSS_RANK_DONE, {
-			bossId = uv1
+		arg_1_0:sendNotification(GAME.WORLD_GET_BOSS_RANK_DONE, {
+			bossId = var_1_1
 		})
 	end)
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.energy_template = {
 	{
 		upper_bound = 0,

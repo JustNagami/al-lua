@@ -1,4 +1,24 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onAttach",
+				"onTorpedoWeaponBulletCreate"
+			},
+			arg_list = {
+				attr = "damageRatioByBulletTorpedo",
+				number = 0.05
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -157,25 +177,5 @@ return {
 	stack = 1,
 	id = 12883,
 	icon = 12880,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onAttach",
-				"onTorpedoWeaponBulletCreate"
-			},
-			arg_list = {
-				attr = "damageRatioByBulletTorpedo",
-				number = 0.05
-			}
-		}
-	}
+	last_effect = ""
 }

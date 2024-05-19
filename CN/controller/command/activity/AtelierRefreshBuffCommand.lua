@@ -1,34 +1,38 @@
-slot0 = class("AtelierRefreshBuffCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("AtelierRefreshBuffCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1.body
+	local var_1_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
-	assert(slot3)
-	table.Foreach(slot1.body, function (slot0, slot1)
-		if slot1[1] == 0 then
+	assert(var_1_1)
+
+	local var_1_2 = {}
+
+	table.Foreach(var_1_0, function(arg_2_0, arg_2_1)
+		if arg_2_1[1] == 0 then
 			return
 		end
 
-		table.insert(uv0, {
-			pos = slot0,
-			itemid = slot1[1],
-			itemnum = slot1[2]
+		table.insert(var_1_2, {
+			pos = arg_2_0,
+			itemid = arg_2_1[1],
+			itemnum = arg_2_1[2]
 		})
 	end)
 	pg.ConnectionMgr.GetInstance():Send(26055, {
-		act_id = slot3.id,
-		slots = {}
-	}, 26056, function (slot0)
-		if slot0.result == 0 then
-			uv0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+		act_id = var_1_1.id,
+		slots = var_1_2
+	}, 26056, function(arg_3_0)
+		if arg_3_0.result == 0 then
+			var_1_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
-			uv0:UpdateBuffSlots(uv1)
-			getProxy(ActivityProxy):updateActivity(uv0)
-			uv2:sendNotification(GAME.UPDATE_ATELIER_BUFF_DONE, uv0)
+			var_1_1:UpdateBuffSlots(var_1_2)
+			getProxy(ActivityProxy):updateActivity(var_1_1)
+			arg_1_0:sendNotification(GAME.UPDATE_ATELIER_BUFF_DONE, var_1_1)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_3_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

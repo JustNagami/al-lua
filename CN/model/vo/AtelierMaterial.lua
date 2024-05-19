@@ -1,5 +1,6 @@
-slot0 = class("AtelierMaterial", import("model.vo.BaseVO"))
-slot0.TYPE = {
+﻿local var_0_0 = class("AtelierMaterial", import("model.vo.BaseVO"))
+
+var_0_0.TYPE = {
 	STRENGTHEN = 5,
 	SAIREN = 4,
 	NORMAL = 1,
@@ -7,7 +8,7 @@ slot0.TYPE = {
 	TOOL = 6,
 	MOD = 3
 }
-slot0.ELEMENT_TYPE = {
+var_0_0.ELEMENT_TYPE = {
 	CRYO = 2,
 	SAIREN = 5,
 	ELECTRO = 3,
@@ -15,57 +16,59 @@ slot0.ELEMENT_TYPE = {
 	PYRO = 1
 }
 
-function slot0.Ctor(slot0, ...)
-	uv0.super.Ctor(slot0, ...)
+function var_0_0.Ctor(arg_1_0, ...)
+	var_0_0.super.Ctor(arg_1_0, ...)
 
-	slot0.count = slot0.count or 0
+	arg_1_0.count = arg_1_0.count or 0
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_2_0)
 	return pg.activity_ryza_item
 end
 
-function slot0.GetName(slot0)
-	return slot0:getConfig("name")
+function var_0_0.GetName(arg_3_0)
+	return arg_3_0:getConfig("name")
 end
 
-function slot0.GetRarity(slot0)
-	return slot0:getConfig("rarity")
+function var_0_0.GetRarity(arg_4_0)
+	return arg_4_0:getConfig("rarity")
 end
 
-function slot0.GetIconPath(slot0)
-	return "props/" .. slot0:getConfig("icon")
+function var_0_0.GetIconPath(arg_5_0)
+	return "props/" .. arg_5_0:getConfig("icon")
 end
 
-function slot0.GetDesc(slot0)
-	return slot0:getConfig("display")
+function var_0_0.GetDesc(arg_6_0)
+	return arg_6_0:getConfig("display")
 end
 
-function slot0.GetType(slot0)
-	return slot0:getConfig("type")
+function var_0_0.GetType(arg_7_0)
+	return arg_7_0:getConfig("type")
 end
 
-function slot0.GetProps(slot0)
-	return slot0:getConfig("prop")
+function var_0_0.GetProps(arg_8_0)
+	return arg_8_0:getConfig("prop")
 end
 
-function slot0.GetLevel(slot0)
-	return slot0:getConfig("prop_level")
+function var_0_0.GetLevel(arg_9_0)
+	return arg_9_0:getConfig("prop_level")
 end
 
-function slot0.GetSource(slot0)
-	return slot0:getConfig("get_access")
+function var_0_0.GetSource(arg_10_0)
+	return arg_10_0:getConfig("get_access")
 end
 
-function slot0.GetBuffs(slot0)
-	return type(slot0:getConfig("benefit_buff")) == "table" and slot1 or nil
+function var_0_0.GetBuffs(arg_11_0)
+	local var_11_0 = arg_11_0:getConfig("benefit_buff")
+
+	return type(var_11_0) == "table" and var_11_0 or nil
 end
 
-function slot0.GetVoices(slot0)
-	return slot0:getConfig("got_voice")
+function var_0_0.GetVoices(arg_12_0)
+	return arg_12_0:getConfig("got_voice")
 end
 
-slot1 = {
+local var_0_1 = {
 	1,
 	1,
 	1,
@@ -73,28 +76,38 @@ slot1 = {
 	0
 }
 
-function slot0.GetBaseCircleTransform(slot0)
-	return type(slot0:getConfig("base_circle")) == "table" and slot1 or uv0
+function var_0_0.GetBaseCircleTransform(arg_13_0)
+	local var_13_0 = arg_13_0:getConfig("base_circle")
+
+	return type(var_13_0) == "table" and var_13_0 or var_0_1
 end
 
-function slot0.GetNormalCircleTransform(slot0)
-	return type(slot0:getConfig("normal_circle")) == "table" and slot1 or uv0
+function var_0_0.GetNormalCircleTransform(arg_14_0)
+	local var_14_0 = arg_14_0:getConfig("normal_circle")
+
+	return type(var_14_0) == "table" and var_14_0 or var_0_1
 end
 
-function slot0.IsNormal(slot0)
-	return slot0:GetType() == uv0.TYPE.NORMAL or slot1 == uv0.TYPE.MOD or slot1 == uv0.TYPE.SAIREN
+function var_0_0.IsNormal(arg_15_0)
+	local var_15_0 = arg_15_0:GetType()
+
+	return var_15_0 == var_0_0.TYPE.NORMAL or var_15_0 == var_0_0.TYPE.MOD or var_15_0 == var_0_0.TYPE.SAIREN
 end
 
-function slot0.UpdateRyzaItem(slot0, slot1, slot2)
-	slot2 = slot2 or {}
-	slot3 = ItemRarity.Rarity2Print(slot1:GetRarity())
+function var_0_0.UpdateRyzaItem(arg_16_0, arg_16_1, arg_16_2)
+	arg_16_2 = arg_16_2 or {}
 
-	setImageSprite(findTF(slot0, "icon_bg"), GetSpriteFromAtlas("weaponframes", "bg" .. slot3))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot3)
-	GetImageSpriteFromAtlasAsync(slot1:GetIconPath(), "", findTF(slot0, "icon_bg/icon"))
-	setIconStars(slot0, false)
-	setIconName(slot0, slot1:GetName(), slot2)
-	setIconColorful(slot0, slot1:GetRarity(), slot2)
+	local var_16_0 = ItemRarity.Rarity2Print(arg_16_1:GetRarity())
+
+	setImageSprite(findTF(arg_16_0, "icon_bg"), GetSpriteFromAtlas("weaponframes", "bg" .. var_16_0))
+	setFrame(findTF(arg_16_0, "icon_bg/frame"), var_16_0)
+
+	local var_16_1 = findTF(arg_16_0, "icon_bg/icon")
+
+	GetImageSpriteFromAtlasAsync(arg_16_1:GetIconPath(), "", var_16_1)
+	setIconStars(arg_16_0, false)
+	setIconName(arg_16_0, arg_16_1:GetName(), arg_16_2)
+	setIconColorful(arg_16_0, arg_16_1:GetRarity(), arg_16_2)
 end
 
-return slot0
+return var_0_0

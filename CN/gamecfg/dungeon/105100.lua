@@ -1,4 +1,4 @@
-return {
+﻿return {
 	map_id = 10008,
 	id = 105100,
 	skill_hide = {
@@ -237,7 +237,7 @@ return {
 						500
 					},
 					conditionWaves = {
-						[222.0] = false
+						[222] = false
 					},
 					triggerParam = {},
 					spawn = {
@@ -296,7 +296,7 @@ return {
 						500
 					},
 					conditionWaves = {
-						[222.0] = true
+						[222] = true
 					},
 					triggerParam = {},
 					spawn = {

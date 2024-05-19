@@ -1,4 +1,5 @@
-return {
+﻿return {
+	effect_list = {},
 	{
 		desc = "中型/重型主炮开火时有几率发动，额外进行一轮攻击",
 		effect_list = {
@@ -50,6 +51,5 @@ return {
 	stack = 1,
 	id = 151,
 	icon = 1,
-	last_effect = "",
-	effect_list = {}
+	last_effect = ""
 }

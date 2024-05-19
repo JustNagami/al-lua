@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行6次攻击，触发专属弹幕-伊吹II"
-	},
-	desc_get = "主炮每进行6次攻击，触发专属弹幕-伊吹II",
-	name = "专属弹幕-伊吹II",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行6次攻击，触发专属弹幕-伊吹II",
-	stack = 1,
-	id = 29222,
-	icon = 29220,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -38,5 +24,19 @@ return {
 				countType = 29220
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行6次攻击，触发专属弹幕-伊吹II"
+	},
+	desc_get = "主炮每进行6次攻击，触发专属弹幕-伊吹II",
+	name = "专属弹幕-伊吹II",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行6次攻击，触发专属弹幕-伊吹II",
+	stack = 1,
+	id = 29222,
+	icon = 29220,
+	last_effect = ""
 }

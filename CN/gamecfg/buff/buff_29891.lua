@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行24次攻击，触发专属弹幕-普利茅斯I"
-	},
-	desc_get = "主炮每进行24次攻击，触发专属弹幕-普利茅斯I",
-	name = "专属弹幕-普利茅斯I",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行24次攻击，触发专属弹幕-普利茅斯I",
-	stack = 1,
-	id = 29891,
-	icon = 29890,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -58,5 +44,19 @@ return {
 				number = 0.05
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行24次攻击，触发专属弹幕-普利茅斯I"
+	},
+	desc_get = "主炮每进行24次攻击，触发专属弹幕-普利茅斯I",
+	name = "专属弹幕-普利茅斯I",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行24次攻击，触发专属弹幕-普利茅斯I",
+	stack = 1,
+	id = 29891,
+	icon = 29890,
+	last_effect = ""
 }

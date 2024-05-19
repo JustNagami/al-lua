@@ -1,18 +1,18 @@
-slot0 = class("YinDiMainPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿local var_0_0 = class("YinDiMainPage", import(".TemplatePage.PreviewTemplatePage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.btnList = slot0:findTF("btn_list", slot0.bg)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.btnList = arg_1_0:findTF("btn_list", arg_1_0.bg)
 end
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
-	onButton(slot0, findTF(slot0.bg, "btn_list/shop"), function ()
-		uv0:emit(ActivityMediator.GO_SHOPS_LAYER, {
+function var_0_0.OnFirstFlush(arg_2_0)
+	var_0_0.super.OnFirstFlush(arg_2_0)
+	onButton(arg_2_0, findTF(arg_2_0.bg, "btn_list/shop"), function()
+		arg_2_0:emit(ActivityMediator.GO_SHOPS_LAYER, {
 			warp = NewShopsScene.TYPE_ACTIVITY,
-			actId = uv0.activity.id
+			actId = arg_2_0.activity.id
 		})
 	end)
 end
 
-return slot0
+return var_0_0

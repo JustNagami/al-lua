@@ -1,70 +1,80 @@
-slot0 = class("LuodeniTaskPage", import(".TemplatePage.SkinTemplatePage"))
+﻿local var_0_0 = class("LuodeniTaskPage", import(".TemplatePage.SkinTemplatePage"))
 
-function slot0.OnUpdateFlush(slot0)
-	slot0.nday = slot0.activity.data3
+function var_0_0.OnUpdateFlush(arg_1_0)
+	arg_1_0.nday = arg_1_0.activity.data3
 
-	if slot0.activity:getConfig("config_client").firstStory then
-		playStory(slot1)
+	local var_1_0 = arg_1_0.activity:getConfig("config_client").firstStory
+
+	if var_1_0 then
+		playStory(var_1_0)
 	end
 
-	slot0:PlayStory()
+	arg_1_0:PlayStory()
 
-	if slot0.dayTF then
-		setText(slot0.dayTF, tostring(slot0.nday))
+	if arg_1_0.dayTF then
+		setText(arg_1_0.dayTF, tostring(arg_1_0.nday))
 	end
 
-	slot0.uilist:align(#slot0.taskGroup[slot0.nday])
-	setText(slot0.dayTF, setColorStr(slot0.nday, "#F2F5FF") .. setColorStr("/" .. #slot0.taskGroup, "#F2F5FF"))
+	arg_1_0.uilist:align(#arg_1_0.taskGroup[arg_1_0.nday])
+	setText(arg_1_0.dayTF, setColorStr(arg_1_0.nday, "#F2F5FF") .. setColorStr("/" .. #arg_1_0.taskGroup, "#F2F5FF"))
 end
 
-function slot0.PlayStory(slot0)
-	slot2 = false
+function var_0_0.PlayStory(arg_2_0)
+	local var_2_0 = arg_2_0.activity:getConfig("config_client").story
+	local var_2_1 = false
 
-	if slot0.nday == 1 then
-		slot4 = slot0.taskGroup[1][2]
+	if arg_2_0.nday == 1 then
+		local var_2_2 = arg_2_0.taskGroup[1][1]
+		local var_2_3 = arg_2_0.taskGroup[1][2]
+		local var_2_4 = arg_2_0.taskProxy:getTaskById(var_2_2) or arg_2_0.taskProxy:getFinishTaskById(var_2_2)
+		local var_2_5 = arg_2_0.taskProxy:getTaskById(var_2_3) or arg_2_0.taskProxy:getFinishTaskById(var_2_3)
 
-		if (slot0.taskProxy:getTaskById(slot0.taskGroup[1][1]) or slot0.taskProxy:getFinishTaskById(slot3)):getTaskStatus() == 2 and (slot0.taskProxy:getTaskById(slot4) or slot0.taskProxy:getFinishTaskById(slot4)):getTaskStatus() == 2 and checkExist(slot0.activity:getConfig("config_client").story, {
+		if var_2_4:getTaskStatus() == 2 and var_2_5:getTaskStatus() == 2 and checkExist(var_2_0, {
 			1
 		}, {
 			1
 		}) then
-			slot2 = true
+			var_2_1 = true
 		end
 	end
 
-	if slot0.nday == 2 then
-		slot2 = true
+	if arg_2_0.nday == 2 then
+		var_2_1 = true
 	end
 
-	if slot0.nday == 1 and slot2 or slot0.nday == 2 then
-		pg.NewStoryMgr.GetInstance():Play(slot1[1][1])
+	if arg_2_0.nday == 1 and var_2_1 or arg_2_0.nday == 2 then
+		pg.NewStoryMgr.GetInstance():Play(var_2_0[1][1])
 	end
 
-	if slot0.nday == 5 then
-		slot5 = slot0.taskGroup[slot0.nday][2]
+	if arg_2_0.nday == 5 then
+		local var_2_6 = arg_2_0.nday
+		local var_2_7 = arg_2_0.taskGroup[arg_2_0.nday][1]
+		local var_2_8 = arg_2_0.taskGroup[arg_2_0.nday][2]
+		local var_2_9 = arg_2_0.taskProxy:getTaskById(var_2_7) or arg_2_0.taskProxy:getFinishTaskById(var_2_7)
+		local var_2_10 = arg_2_0.taskProxy:getTaskById(var_2_8) or arg_2_0.taskProxy:getFinishTaskById(var_2_8)
 
-		if (slot0.taskProxy:getTaskById(slot0.taskGroup[slot0.nday][1]) or slot0.taskProxy:getFinishTaskById(slot4)):getTaskStatus() == 2 and (slot0.taskProxy:getTaskById(slot5) or slot0.taskProxy:getFinishTaskById(slot5)):getTaskStatus() == 2 then
-			slot3 = slot0.nday + 1
+		if var_2_9:getTaskStatus() == 2 and var_2_10:getTaskStatus() == 2 then
+			var_2_6 = var_2_6 + 1
 		end
 
-		if checkExist(slot1, {
-			slot3
+		if checkExist(var_2_0, {
+			var_2_6
 		}, {
 			1
 		}) then
-			pg.NewStoryMgr.GetInstance():Play(slot1[slot3][1])
+			pg.NewStoryMgr.GetInstance():Play(var_2_0[var_2_6][1])
 		end
-	elseif slot0.nday ~= 1 and checkExist(slot1, {
-		slot0.nday
+	elseif arg_2_0.nday ~= 1 and checkExist(var_2_0, {
+		arg_2_0.nday
 	}, {
 		1
 	}) then
-		pg.NewStoryMgr.GetInstance():Play(slot1[slot0.nday][1])
+		pg.NewStoryMgr.GetInstance():Play(var_2_0[arg_2_0.nday][1])
 	end
 end
 
-function slot0.GetProgressColor(slot0)
+function var_0_0.GetProgressColor(arg_3_0)
 	return "#98A7D1", "#98A7D1"
 end
 
-return slot0
+return var_0_0

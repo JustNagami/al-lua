@@ -1,34 +1,37 @@
-slot0 = class("GuildUpdateNodeAnimFlagCommand", import(".GuildEventBaseCommand"))
+﻿local var_0_0 = class("GuildUpdateNodeAnimFlagCommand", import(".GuildEventBaseCommand"))
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.position
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.position
 
-	if not slot0:ExistMission(slot2.id) then
+	if not arg_1_0:ExistMission(var_1_1) then
 		return
 	end
 
+	local var_1_3 = {
+		event_id = var_1_1,
+		index = var_1_2
+	}
+
 	pg.ConnectionMgr.GetInstance():Send(61025, {
 		perf = {
-			{
-				event_id = slot3,
-				index = slot4
-			}
+			var_1_3
 		}
-	}, 61026, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(GuildProxy)
-			slot2 = slot1:getData()
+	}, 61026, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(GuildProxy)
+			local var_2_1 = var_2_0:getData()
 
-			slot2:GetActiveEvent():GetMissionById(uv0):UpdateNodeAnimFlagIndex(uv1)
-			slot1:updateGuild(slot2)
-			uv2:sendNotification(GAME.GUILD_UPDATE_NODE_ANIM_FLAG_DONE, {
-				id = uv0
+			var_2_1:GetActiveEvent():GetMissionById(var_1_1):UpdateNodeAnimFlagIndex(var_1_2)
+			var_2_0:updateGuild(var_2_1)
+			arg_1_0:sendNotification(GAME.GUILD_UPDATE_NODE_ANIM_FLAG_DONE, {
+				id = var_1_1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

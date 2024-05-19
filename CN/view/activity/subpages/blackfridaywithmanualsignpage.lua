@@ -1,98 +1,110 @@
-slot0 = class("BlackFridayWithManualSignPage", import(".BlackFridayPage"))
+﻿local var_0_0 = class("BlackFridayWithManualSignPage", import(".BlackFridayPage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.signList = UIItemList.New(slot0:findTF("AD/singlist"), slot0:findTF("AD/singlist/Award"))
-	slot0.signBtn = slot0:findTF("AD/signBtn")
+	arg_1_0.signList = UIItemList.New(arg_1_0:findTF("AD/singlist"), arg_1_0:findTF("AD/singlist/Award"))
+	arg_1_0.signBtn = arg_1_0:findTF("AD/signBtn")
 
-	setText(slot0.signBtn:Find("Text"), i18n("SkinMagazinePage2_tip"))
+	setText(arg_1_0.signBtn:Find("Text"), i18n("SkinMagazinePage2_tip"))
 end
 
-function slot0.GetPageLink(slot0)
+function var_0_0.GetPageLink(arg_2_0)
+	local var_2_0 = arg_2_0.activity:getConfig("config_client")[2]
+
 	return {
-		slot0.activity:getConfig("config_client")[2]
+		var_2_0
 	}
 end
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
+function var_0_0.OnFirstFlush(arg_3_0)
+	var_0_0.super.OnFirstFlush(arg_3_0)
 
-	slot0.signInActId = slot0.activity:getConfig("config_client")[2]
+	arg_3_0.signInActId = arg_3_0.activity:getConfig("config_client")[2]
 end
 
-function slot0.FlushSignBtn(slot0)
-	onButton(slot0, slot0.signBtn, function ()
-		uv0:Sign(uv1)
+function var_0_0.FlushSignBtn(arg_4_0)
+	local var_4_0 = getProxy(ActivityProxy):getActivityById(arg_4_0.signInActId)
+	local var_4_1 = not var_4_0 or var_4_0:isEnd()
+
+	onButton(arg_4_0, arg_4_0.signBtn, function()
+		arg_4_0:Sign(var_4_0)
 	end, SFX_PANEL)
-	setActive(slot0.signBtn, not (not getProxy(ActivityProxy):getActivityById(slot0.signInActId) or slot1:isEnd()) and slot1:AnyAwardCanGet())
+	setActive(arg_4_0.signBtn, not var_4_1 and var_4_0:AnyAwardCanGet())
 end
 
-function slot0.FlushSignActivity(slot0)
-	if not getProxy(ActivityProxy):getActivityById(slot0.signInActId) or slot1:isEnd() then
-		slot0:FlushEmptyList()
+function var_0_0.FlushSignActivity(arg_6_0)
+	local var_6_0 = getProxy(ActivityProxy):getActivityById(arg_6_0.signInActId)
+
+	if not var_6_0 or var_6_0:isEnd() then
+		arg_6_0:FlushEmptyList()
 	else
-		slot0:FlushSignList(slot1)
+		arg_6_0:FlushSignList(var_6_0)
 	end
 end
 
-function slot0.FlushEmptyList(slot0)
-	slot0.signList:align(0)
+function var_0_0.FlushEmptyList(arg_7_0)
+	arg_7_0.signList:align(0)
 end
 
-function slot0.FlushSignList(slot0, slot1)
-	slot3 = slot1:GetCanGetAwardIndexList()
-	slot6 = type(slot1:getConfig("config_client")) == "table" and slot5 or {}
+function var_0_0.FlushSignList(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_1:GetDropList()
+	local var_8_1 = arg_8_1:GetCanGetAwardIndexList()
+	local var_8_2 = {}
+	local var_8_3 = arg_8_1:getConfig("config_client")
+	local var_8_4 = type(var_8_3) == "table" and var_8_3 or {}
 
-	slot0.signList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0:GetAwardState(slot1 + 1)
+	arg_8_0.signList:make(function(arg_9_0, arg_9_1, arg_9_2)
+		if arg_9_0 == UIItemList.EventUpdate then
+			local var_9_0 = arg_8_1:GetAwardState(arg_9_1 + 1)
 
-			uv1:UpdateSignAward(uv0, slot3, uv2[slot1 + 1], slot2)
+			arg_8_0:UpdateSignAward(arg_8_1, var_9_0, var_8_0[arg_9_1 + 1], arg_9_2)
 
-			if slot3 == ManualSignActivity.STATE_GOT then
-				table.insert(uv3, uv4[slot1 + 1])
+			if var_9_0 == ManualSignActivity.STATE_GOT then
+				table.insert(var_8_2, var_8_4[arg_9_1 + 1])
 			end
 		end
 	end)
-	slot0.signList:align(#slot1:GetDropList())
-	slot0:TryPlayStory({})
+	arg_8_0.signList:align(#var_8_0)
+	arg_8_0:TryPlayStory(var_8_2)
 end
 
-function slot0.TryPlayStory(slot0, slot1)
-	if #slot1 <= 0 then
+function var_0_0.TryPlayStory(arg_10_0, arg_10_1)
+	if #arg_10_1 <= 0 then
 		return
 	end
 
-	if #_.select(slot1, function (slot0)
-		return not pg.NewStoryMgr.GetInstance():IsPlayed(slot0)
-	end) > 0 then
-		pg.NewStoryMgr.GetInstance():SeriesPlay(slot2)
+	local var_10_0 = _.select(arg_10_1, function(arg_11_0)
+		return not pg.NewStoryMgr.GetInstance():IsPlayed(arg_11_0)
+	end)
+
+	if #var_10_0 > 0 then
+		pg.NewStoryMgr.GetInstance():SeriesPlay(var_10_0)
 	end
 end
 
-function slot0.UpdateSignAward(slot0, slot1, slot2, slot3, slot4)
-	updateDrop(slot4, slot3)
-	setActive(slot4:Find("got"), slot2 == ManualSignActivity.STATE_GOT)
-	setActive(slot4:Find("get"), slot2 == ManualSignActivity.STATE_CAN_GET)
-	onButton(slot0, slot4, function ()
-		if uv0 == ManualSignActivity.STATE_CAN_GET then
-			uv1:Sign(uv2)
+function var_0_0.UpdateSignAward(arg_12_0, arg_12_1, arg_12_2, arg_12_3, arg_12_4)
+	updateDrop(arg_12_4, arg_12_3)
+	setActive(arg_12_4:Find("got"), arg_12_2 == ManualSignActivity.STATE_GOT)
+	setActive(arg_12_4:Find("get"), arg_12_2 == ManualSignActivity.STATE_CAN_GET)
+	onButton(arg_12_0, arg_12_4, function()
+		if arg_12_2 == ManualSignActivity.STATE_CAN_GET then
+			arg_12_0:Sign(arg_12_1)
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.Sign(slot0, slot1)
+function var_0_0.Sign(arg_14_0, arg_14_1)
 	pg.m02:sendNotification(GAME.ACT_MANUAL_SIGN, {
-		activity_id = slot1.id,
+		activity_id = arg_14_1.id,
 		cmd = ManualSignActivity.OP_GET_AWARD
 	})
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
-	slot0:FlushSignActivity()
-	slot0:FlushSignBtn()
+function var_0_0.OnUpdateFlush(arg_15_0)
+	var_0_0.super.OnUpdateFlush(arg_15_0)
+	arg_15_0:FlushSignActivity()
+	arg_15_0:FlushSignBtn()
 end
 
-return slot0
+return var_0_0

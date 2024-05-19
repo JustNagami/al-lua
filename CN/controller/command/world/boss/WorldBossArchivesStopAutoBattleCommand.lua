@@ -1,31 +1,38 @@
-slot0 = class("WorldBossArchivesStopAutoBattleCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("WorldBossArchivesStopAutoBattleCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = slot2.id
-	slot4 = slot2.type
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.type
+	local var_1_3 = nowWorld():GetBossProxy()
+	local var_1_4 = var_1_3:GetSelfBoss()
 
-	if not nowWorld():GetBossProxy():GetSelfBoss() then
+	if not var_1_4 then
 		return
 	end
 
-	slot7 = slot6.hp
-	slot8 = slot5:GetHighestDamage()
+	local var_1_5 = var_1_4.hp
+	local var_1_6 = var_1_3:GetHighestDamage()
 
 	pg.ConnectionMgr.GetInstance():Send(34525, {
-		boss_id = slot3
-	}, 34526, function (slot0)
-		if slot0.result == 0 then
-			uv0:ClearAutoBattle()
-			uv1:sendNotification(GAME.WORLD_ARCHIVES_BOSS_STOP_AUTO_BATTLE_DONE, {
-				cnt = slot0.count or 0,
-				damage = slot0.damage or 0,
-				oil = slot0.oil or 0
+		boss_id = var_1_1
+	}, 34526, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			var_1_3:ClearAutoBattle()
+
+			local var_2_0 = arg_2_0.count or 0
+			local var_2_1 = arg_2_0.damage or 0
+			local var_2_2 = arg_2_0.oil or 0
+
+			arg_1_0:sendNotification(GAME.WORLD_ARCHIVES_BOSS_STOP_AUTO_BATTLE_DONE, {
+				cnt = var_2_0,
+				damage = var_2_1,
+				oil = var_2_2
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

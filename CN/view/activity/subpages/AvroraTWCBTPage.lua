@@ -1,20 +1,20 @@
-slot0 = class("AvroraTWCBTPage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("AvroraTWCBTPage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.get = slot0:findTF("get", slot0.bg)
-	slot0.go = slot0:findTF("go", slot0.bg)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.get = arg_1_0:findTF("get", arg_1_0.bg)
+	arg_1_0.go = arg_1_0:findTF("go", arg_1_0.bg)
 end
 
-function slot0.OnFirstFlush(slot0)
-	onButton(slot0, slot0.go, function ()
-		uv0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+function var_0_0.OnFirstFlush(arg_2_0)
+	onButton(arg_2_0, arg_2_0.go, function()
+		arg_2_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
 
-	slot2 = getProxy(ChapterProxy):isClear(304)
+	local var_2_0 = getProxy(ChapterProxy):isClear(304)
 
-	setActive(slot0.go, not slot2)
-	setActive(slot0.get, slot2)
+	setActive(arg_2_0.go, not var_2_0)
+	setActive(arg_2_0.get, var_2_0)
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,50 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffShield",
+			trigger = {
+				"onStack",
+				"onTakeDamage"
+			},
+			arg_list = {
+				casterMaxHPRatio = 0.035
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onRemove"
+			},
+			arg_list = {
+				skill_id = 14921,
+				target = "TargetSelf",
+				effectAttachData = {
+					{
+						value = 0,
+						type = "BattleBuffShield",
+						op = "lessequal"
+					}
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onRemove"
+			},
+			arg_list = {
+				skill_id = 14922,
+				target = "TargetSelf",
+				effectAttachData = {
+					{
+						value = 0,
+						type = "BattleBuffShield",
+						op = "great"
+					}
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -487,51 +533,5 @@ return {
 	stack = 1,
 	id = 14921,
 	icon = 14920,
-	last_effect = "Shield",
-	effect_list = {
-		{
-			type = "BattleBuffShield",
-			trigger = {
-				"onStack",
-				"onTakeDamage"
-			},
-			arg_list = {
-				casterMaxHPRatio = 0.035
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onRemove"
-			},
-			arg_list = {
-				skill_id = 14921,
-				target = "TargetSelf",
-				effectAttachData = {
-					{
-						value = 0,
-						type = "BattleBuffShield",
-						op = "lessequal"
-					}
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onRemove"
-			},
-			arg_list = {
-				skill_id = 14922,
-				target = "TargetSelf",
-				effectAttachData = {
-					{
-						value = 0,
-						type = "BattleBuffShield",
-						op = "great"
-					}
-				}
-			}
-		}
-	}
+	last_effect = "Shield"
 }

@@ -1,43 +1,43 @@
-slot0 = class("ActivityBossBuff", import("model.vo.BaseVO"))
+﻿local var_0_0 = class("ActivityBossBuff", import("model.vo.BaseVO"))
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_1_0)
 	return pg.worldboss_bufflist
 end
 
-function slot0.GetConfigID(slot0)
-	return slot0.configId
+function var_0_0.GetConfigID(arg_2_0)
+	return arg_2_0.configId
 end
 
-function slot0.GetIcon(slot0)
-	return slot0:getConfig("buff_icon")
+function var_0_0.GetIcon(arg_3_0)
+	return arg_3_0:getConfig("buff_icon")
 end
 
-function slot0.GetIconPath(slot0)
-	return "activitybossbuff/" .. slot0:getConfig("buff_icon")
+function var_0_0.GetIconPath(arg_4_0)
+	return "activitybossbuff/" .. arg_4_0:getConfig("buff_icon")
 end
 
-function slot0.GetName(slot0)
-	return slot0:getConfig("name")
+function var_0_0.GetName(arg_5_0)
+	return arg_5_0:getConfig("name")
 end
 
-function slot0.GetDesc(slot0)
-	return slot0:getConfig("desc")
+function var_0_0.GetDesc(arg_6_0)
+	return arg_6_0:getConfig("desc")
 end
 
-function slot0.CastOnEnemy(slot0)
-	return slot0:getConfig("buff_target") == 1
+function var_0_0.CastOnEnemy(arg_7_0)
+	return arg_7_0:getConfig("buff_target") == 1
 end
 
-function slot0.GetBuffID(slot0)
-	return slot0:getConfig("lua_id")
+function var_0_0.GetBuffID(arg_8_0)
+	return arg_8_0:getConfig("lua_id")
 end
 
-function slot0.GetBonus(slot0)
-	return tonumber(slot0:getConfig("bonus"))
+function var_0_0.GetBonus(arg_9_0)
+	return tonumber(arg_9_0:getConfig("bonus"))
 end
 
-function slot0.GetBonusText(slot0)
-	return math.floor(slot0:GetBonus() * 100) .. "%"
+function var_0_0.GetBonusText(arg_10_0)
+	return math.floor(arg_10_0:GetBonus() * 100) .. "%"
 end
 
-return slot0
+return var_0_0

@@ -1,8 +1,9 @@
-slot0 = class("SailBoatGameEvent")
-slot0.PLAYER_EVENT_DAMAGE = "player event damage"
-slot0.BOAT_EVENT_FIRE = "boat event fire"
-slot0.CREATE_EFFECT = "create effect"
-slot0.USE_ITEM = "use item"
-slot0.PLAYER_DEAD = "player dead"
+﻿local var_0_0 = class("SailBoatGameEvent")
 
-return slot0
+var_0_0.PLAYER_EVENT_DAMAGE = "player event damage"
+var_0_0.BOAT_EVENT_FIRE = "boat event fire"
+var_0_0.CREATE_EFFECT = "create effect"
+var_0_0.USE_ITEM = "use item"
+var_0_0.PLAYER_DEAD = "player dead"
+
+return var_0_0

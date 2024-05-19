@@ -1,22 +1,25 @@
-slot0 = class("SenrankaguraTrainMediator", import("..base.ContextMediator"))
-slot0.LEVEL_UP = "level up"
-slot0.GET_REWARD = "get reward"
+﻿local var_0_0 = class("SenrankaguraTrainMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.LEVEL_UP, function (slot0, slot1)
-		uv0:sendNotification(GAME.SENRANKAGURA_TRAIN_ACT_OP, slot1)
+var_0_0.LEVEL_UP = "level up"
+var_0_0.GET_REWARD = "get reward"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.LEVEL_UP, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.SENRANKAGURA_TRAIN_ACT_OP, arg_2_1)
 	end)
-	slot0:bind(uv0.GET_REWARD, function (slot0, slot1)
-		uv0:sendNotification(GAME.SENRANKAGURA_TRAIN_ACT_OP, slot1)
+	arg_1_0:bind(var_0_0.GET_REWARD, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.SENRANKAGURA_TRAIN_ACT_OP, arg_3_1)
 	end)
 end
 
-function slot0.initNotificationHandleDic(slot0)
-	slot0.handleDic = {
-		[GAME.SENRANKAGURA_TRAIN_ACT_OP_DONE] = function (slot0, slot1)
-			slot0.viewComponent:LevelUp(slot1:getBody())
+function var_0_0.initNotificationHandleDic(arg_4_0)
+	arg_4_0.handleDic = {
+		[GAME.SENRANKAGURA_TRAIN_ACT_OP_DONE] = function(arg_5_0, arg_5_1)
+			local var_5_0 = arg_5_1:getBody()
+
+			arg_5_0.viewComponent:LevelUp(var_5_0)
 		end
 	}
 end
 
-return slot0
+return var_0_0

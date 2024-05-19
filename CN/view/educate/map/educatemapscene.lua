@@ -1,235 +1,243 @@
-slot0 = class("EducateMapScene", import("..base.EducateBaseUI"))
+﻿local var_0_0 = class("EducateMapScene", import("..base.EducateBaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "EducateMapUI"
 end
 
-function slot0.preload(slot0, slot1)
+function var_0_0.preload(arg_2_0, arg_2_1)
 	if getProxy(EducateProxy):NeedRequestOptsData() then
 		pg.m02:sendNotification(GAME.EDUCATE_REQUEST_OPTION, {
-			callback = slot1
+			callback = arg_2_1
 		})
 	else
-		slot1()
+		arg_2_1()
 	end
 end
 
-function slot0.init(slot0)
-	slot0:initData()
-	slot0:findUI()
-	slot0:addListener()
+function var_0_0.init(arg_3_0)
+	arg_3_0:initData()
+	arg_3_0:findUI()
+	arg_3_0:addListener()
 end
 
-function slot0.initData(slot0)
-	slot0.config = pg.child_site
-	slot0.siteIdList = getProxy(EducateProxy):GetShowSiteIds()
+function var_0_0.initData(arg_4_0)
+	arg_4_0.config = pg.child_site
+	arg_4_0.siteIdList = getProxy(EducateProxy):GetShowSiteIds()
 end
 
-function slot0.findUI(slot0)
-	slot0.topTF = slot0:findTF("ui/top")
-	slot0.homeBtn = slot0:findTF("ui/home_btn/home_btn")
+function var_0_0.findUI(arg_5_0)
+	arg_5_0.topTF = arg_5_0:findTF("ui/top")
+	arg_5_0.homeBtn = arg_5_0:findTF("ui/home_btn/home_btn")
 
-	setText(slot0:findTF("Text", slot0.homeBtn), i18n("child_btn_home"))
+	setText(arg_5_0:findTF("Text", arg_5_0.homeBtn), i18n("child_btn_home"))
 
-	slot0.mapTF = slot0:findTF("map")
-	slot0.mapContent = slot0:findTF("content", slot0.mapTF)
-	slot0.mapSiteTpl = slot0:findTF("site_tpl", slot0.mapTF)
+	arg_5_0.mapTF = arg_5_0:findTF("map")
+	arg_5_0.mapContent = arg_5_0:findTF("content", arg_5_0.mapTF)
+	arg_5_0.mapSiteTpl = arg_5_0:findTF("site_tpl", arg_5_0.mapTF)
 
-	setText(slot0:findTF("limit/Text", slot0.mapSiteTpl), i18n("child_option_limit"))
-	setActive(slot0.mapSiteTpl, false)
+	setText(arg_5_0:findTF("limit/Text", arg_5_0.mapSiteTpl), i18n("child_option_limit"))
+	setActive(arg_5_0.mapSiteTpl, false)
 
-	slot0.siteUIList = UIItemList.New(slot0.mapContent, slot0.mapSiteTpl)
-	slot0.datePanel = EducateDatePanel.New(slot0:findTF("date", slot0.topTF), slot0.event)
+	arg_5_0.siteUIList = UIItemList.New(arg_5_0.mapContent, arg_5_0.mapSiteTpl)
+	arg_5_0.datePanel = EducateDatePanel.New(arg_5_0:findTF("date", arg_5_0.topTF), arg_5_0.event)
 
-	slot0.datePanel:Load()
+	arg_5_0.datePanel:Load()
 
-	slot0.resPanel = EducateResPanel.New(slot0:findTF("res", slot0.topTF), slot0.event, {
+	arg_5_0.resPanel = EducateResPanel.New(arg_5_0:findTF("res", arg_5_0.topTF), arg_5_0.event, {
 		showBg = true
 	})
 
-	slot0.resPanel:Load()
+	arg_5_0.resPanel:Load()
 
-	slot0.topPanel = EducateTopPanel.New(slot0:findTF("top_right", slot0.topTF), slot0.event)
+	arg_5_0.topPanel = EducateTopPanel.New(arg_5_0:findTF("top_right", arg_5_0.topTF), arg_5_0.event)
 
-	slot0.topPanel:Load()
+	arg_5_0.topPanel:Load()
 
-	slot0.targetPanel = EducateTargetPanel.New(slot0:findTF("ui/target"), slot0.event)
+	arg_5_0.targetPanel = EducateTargetPanel.New(arg_5_0:findTF("ui/target"), arg_5_0.event)
 
-	slot0.targetPanel:Load()
+	arg_5_0.targetPanel:Load()
 
-	slot0.archivePanel = EducateArchivePanel.New(slot0:findTF("ui/archive_panel"), slot0.event)
+	arg_5_0.archivePanel = EducateArchivePanel.New(arg_5_0:findTF("ui/archive_panel"), arg_5_0.event)
 
-	slot0.archivePanel:Load()
+	arg_5_0.archivePanel:Load()
 
-	slot0.detailPanel = EducateSiteDetailPanel.New(slot0:findTF("ui/detail_panel"), slot0.event, {
-		onEnter = function ()
-			uv0:MoveTargetPanelLeft()
+	arg_5_0.detailPanel = EducateSiteDetailPanel.New(arg_5_0:findTF("ui/detail_panel"), arg_5_0.event, {
+		onEnter = function()
+			arg_5_0:MoveTargetPanelLeft()
 		end,
-		onExit = function ()
-			uv0:MoveTargetPanelRight()
+		onExit = function()
+			arg_5_0:MoveTargetPanelRight()
 		end
 	})
 
-	slot0.detailPanel:Load()
+	arg_5_0.detailPanel:Load()
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0.homeBtn, function ()
-		uv0:emit(EducateBaseUI.EDUCATE_CHANGE_SCENE, SCENE.EDUCATE)
+function var_0_0.addListener(arg_8_0)
+	onButton(arg_8_0, arg_8_0.homeBtn, function()
+		arg_8_0:emit(EducateBaseUI.EDUCATE_CHANGE_SCENE, SCENE.EDUCATE)
 	end, SFX_PANEL)
 end
 
-function slot0.didEnter(slot0)
-	pg.UIMgr.GetInstance():OverlayPanel(slot0.topTF, {
-		groupName = slot0:getGroupNameFromData(),
-		weight = slot0:getWeightFromData()
+function var_0_0.didEnter(arg_10_0)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_10_0.topTF, {
+		groupName = arg_10_0:getGroupNameFromData(),
+		weight = arg_10_0:getWeightFromData()
 	})
-	slot0.siteUIList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:updateSiteItem(slot1, slot2)
+	arg_10_0.siteUIList:make(function(arg_11_0, arg_11_1, arg_11_2)
+		if arg_11_0 == UIItemList.EventUpdate then
+			arg_10_0:updateSiteItem(arg_11_1, arg_11_2)
 		end
 	end)
-	slot0.siteUIList:align(#slot0.siteIdList)
-	slot0:playAnim()
-	slot0:CheckTips(function ()
-		uv0.siteUIList:align(#uv0.siteIdList)
+	arg_10_0.siteUIList:align(#arg_10_0.siteIdList)
+	arg_10_0:playAnim()
+	arg_10_0:CheckTips(function()
+		arg_10_0.siteUIList:align(#arg_10_0.siteIdList)
 	end)
 end
 
-function slot0.playAnim(slot0)
-	slot1 = slot0.siteUIList
-
-	slot1:each(function (slot0, slot1)
-		setActive(slot1, false)
+function var_0_0.playAnim(arg_13_0)
+	arg_13_0.siteUIList:each(function(arg_14_0, arg_14_1)
+		setActive(arg_14_1, false)
 	end)
-	table.insert({}, function (slot0)
-		uv0:managedTween(LeanTween.delayedCall, function ()
-			uv0()
+
+	local var_13_0 = {}
+
+	table.insert(var_13_0, function(arg_15_0)
+		arg_13_0:managedTween(LeanTween.delayedCall, function()
+			arg_15_0()
 		end, 0.165, nil)
 	end)
 
-	for slot5 = 1, #slot0.siteIdList do
-		table.insert(slot1, function (slot0)
-			setActive(uv0.siteUIList.container:GetChild(uv1 - 1), true)
-			uv0:managedTween(LeanTween.delayedCall, function ()
-				uv0()
+	for iter_13_0 = 1, #arg_13_0.siteIdList do
+		table.insert(var_13_0, function(arg_17_0)
+			setActive(arg_13_0.siteUIList.container:GetChild(iter_13_0 - 1), true)
+			arg_13_0:managedTween(LeanTween.delayedCall, function()
+				arg_17_0()
 			end, 0.033, nil)
 		end)
 	end
 
-	seriesAsync(slot1, function ()
+	seriesAsync(var_13_0, function()
+		return
 	end)
 end
 
-function slot0.CheckTips(slot0, slot1)
-	slot2 = {}
+function var_0_0.CheckTips(arg_20_0, arg_20_1)
+	local var_20_0 = {}
+	local var_20_1 = EducateTipHelper.GetSiteUnlockTipIds()
 
-	if #EducateTipHelper.GetSiteUnlockTipIds() > 0 then
-		slot0:emit(uv0.EDUCATE_ON_UNLOCK_TIP, {
+	if #var_20_1 > 0 then
+		arg_20_0:emit(var_0_0.EDUCATE_ON_UNLOCK_TIP, {
 			type = EducateUnlockTipLayer.UNLOCK_TYPE_SITE,
-			list = slot3,
-			onExit = slot1
+			list = var_20_1,
+			onExit = arg_20_1
 		})
 	end
 end
 
-function slot0.updateSiteItem(slot0, slot1, slot2)
-	slot3 = slot0.config[slot0.siteIdList[slot1 + 1]]
-	slot2.name = slot3.id
+function var_0_0.updateSiteItem(arg_21_0, arg_21_1, arg_21_2)
+	local var_21_0 = arg_21_0.config[arg_21_0.siteIdList[arg_21_1 + 1]]
 
-	LoadImageSpriteAsync("educatesite/" .. slot3.icon, slot0:findTF("icon", slot2), true)
-	LoadImageSpriteAsync("educatesite/" .. slot3.name_pic, slot0:findTF("name", slot2), true)
-	setActive(slot0:findTF("limit", slot2), underscore.any(getProxy(EducateProxy):GetOptionsBySiteId(slot3.id), function (slot0)
-		return slot0:IsShowLimit()
-	end))
-	setActive(slot0:findTF("new", slot2), EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_SITE, slot3.id))
-	setAnchoredPosition(slot2, {
-		x = slot3.coordinate[1],
-		y = slot3.coordinate[2]
+	arg_21_2.name = var_21_0.id
+
+	LoadImageSpriteAsync("educatesite/" .. var_21_0.icon, arg_21_0:findTF("icon", arg_21_2), true)
+	LoadImageSpriteAsync("educatesite/" .. var_21_0.name_pic, arg_21_0:findTF("name", arg_21_2), true)
+
+	local var_21_1 = getProxy(EducateProxy):GetOptionsBySiteId(var_21_0.id)
+	local var_21_2 = underscore.any(var_21_1, function(arg_22_0)
+		return arg_22_0:IsShowLimit()
+	end)
+
+	setActive(arg_21_0:findTF("limit", arg_21_2), var_21_2)
+	setActive(arg_21_0:findTF("new", arg_21_2), EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_SITE, var_21_0.id))
+	setAnchoredPosition(arg_21_2, {
+		x = var_21_0.coordinate[1],
+		y = var_21_0.coordinate[2]
 	})
-	onButton(slot0, slot2, function ()
-		uv0.detailPanel:Show(uv1.id)
+	onButton(arg_21_0, arg_21_2, function()
+		arg_21_0.detailPanel:Show(var_21_0.id)
 	end, SFX_PANEL)
 end
 
-function slot0.clearNewTip(slot0, slot1)
-	eachChild(slot0.mapContent, function (slot0)
-		if tonumber(slot0.name) == uv0 then
-			setActive(uv1:findTF("new", slot0), false)
+function var_0_0.clearNewTip(arg_24_0, arg_24_1)
+	eachChild(arg_24_0.mapContent, function(arg_25_0)
+		if tonumber(arg_25_0.name) == arg_24_1 then
+			setActive(arg_24_0:findTF("new", arg_25_0), false)
 		end
 	end)
 end
 
-function slot0.updateRes(slot0)
-	slot0.resPanel:Flush()
+function var_0_0.updateRes(arg_26_0)
+	arg_26_0.resPanel:Flush()
 end
 
-function slot0.updateAttrs(slot0)
-	slot0.archivePanel:Flush()
+function var_0_0.updateAttrs(arg_27_0)
+	arg_27_0.archivePanel:Flush()
 end
 
-function slot0.updateTime(slot0)
-	slot0.siteUIList:align(#slot0.siteIdList)
-	slot0.datePanel:Flush()
+function var_0_0.updateTime(arg_28_0)
+	arg_28_0.siteUIList:align(#arg_28_0.siteIdList)
+	arg_28_0.datePanel:Flush()
 end
 
-function slot0.updateTarget(slot0)
-	slot0.targetPanel:Flush()
+function var_0_0.updateTarget(arg_29_0)
+	arg_29_0.targetPanel:Flush()
 end
 
-function slot0.updateTimeWeekDay(slot0, slot1)
-	slot0.datePanel:UpdateWeekDay(slot1)
+function var_0_0.updateTimeWeekDay(arg_30_0, arg_30_1)
+	arg_30_0.datePanel:UpdateWeekDay(arg_30_1)
 end
 
-function slot0.MoveTargetPanelLeft(slot0)
-	slot0.targetPanel:SetPosLeft()
+function var_0_0.MoveTargetPanelLeft(arg_31_0)
+	arg_31_0.targetPanel:SetPosLeft()
 end
 
-function slot0.MoveTargetPanelRight(slot0)
-	slot0.targetPanel:SetPosRight()
+function var_0_0.MoveTargetPanelRight(arg_32_0)
+	arg_32_0.targetPanel:SetPosRight()
 end
 
-function slot0.ShowSpecEvent(slot0, slot1, slot2, slot3, slot4)
-	slot0.detailPanel:showSpecEvent(slot1, slot2, slot3, slot4)
+function var_0_0.ShowSpecEvent(arg_33_0, arg_33_1, arg_33_2, arg_33_3, arg_33_4)
+	arg_33_0.detailPanel:showSpecEvent(arg_33_1, arg_33_2, arg_33_3, arg_33_4)
 end
 
-function slot0.ShowSitePerform(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot0.detailPanel:showSitePerform(slot1, slot2, slot3, slot4, slot5)
+function var_0_0.ShowSitePerform(arg_34_0, arg_34_1, arg_34_2, arg_34_3, arg_34_4, arg_34_5)
+	arg_34_0.detailPanel:showSitePerform(arg_34_1, arg_34_2, arg_34_3, arg_34_4, arg_34_5)
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.detailPanel:isShowing() then
-		slot0.detailPanel:onClose()
+function var_0_0.onBackPressed(arg_35_0)
+	if arg_35_0.detailPanel:isShowing() then
+		arg_35_0.detailPanel:onClose()
 	else
-		slot0:emit(uv0.ON_BACK_PRESSED)
+		arg_35_0:emit(var_0_0.ON_BACK_PRESSED)
 	end
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.topTF, slot0:findTF("ui"))
-	slot0.datePanel:Destroy()
+function var_0_0.willExit(arg_36_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_36_0.topTF, arg_36_0:findTF("ui"))
+	arg_36_0.datePanel:Destroy()
 
-	slot0.datePanel = nil
+	arg_36_0.datePanel = nil
 
-	slot0.resPanel:Destroy()
+	arg_36_0.resPanel:Destroy()
 
-	slot0.resPanel = nil
+	arg_36_0.resPanel = nil
 
-	slot0.topPanel:Destroy()
+	arg_36_0.topPanel:Destroy()
 
-	slot0.topPanel = nil
+	arg_36_0.topPanel = nil
 
-	slot0.targetPanel:Destroy()
+	arg_36_0.targetPanel:Destroy()
 
-	slot0.targetPanel = nil
+	arg_36_0.targetPanel = nil
 
-	slot0.archivePanel:Destroy()
+	arg_36_0.archivePanel:Destroy()
 
-	slot0.archivePanel = nil
+	arg_36_0.archivePanel = nil
 
-	slot0.detailPanel:Destroy()
+	arg_36_0.detailPanel:Destroy()
 
-	slot0.detailPanel = nil
+	arg_36_0.detailPanel = nil
 end
 
-return slot0
+return var_0_0

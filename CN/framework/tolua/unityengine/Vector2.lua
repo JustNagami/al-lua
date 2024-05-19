@@ -1,364 +1,397 @@
-slot0 = math.sqrt
-slot2 = rawget
-slot3 = math
-slot4 = slot3.acos
-slot5 = slot3.max
-slot6 = {}
-slot7 = tolua.initget(slot6)
+﻿local var_0_0 = math.sqrt
+local var_0_1 = setmetatable
+local var_0_2 = rawget
+local var_0_3 = math
+local var_0_4 = var_0_3.acos
+local var_0_5 = var_0_3.max
+local var_0_6 = {}
+local var_0_7 = tolua.initget(var_0_6)
 
-function slot6.__index(slot0, slot1)
-	if uv0(uv1, slot1) == nil and uv0(uv2, slot1) ~= nil then
-		return slot2(slot0)
+function var_0_6.__index(arg_1_0, arg_1_1)
+	local var_1_0 = var_0_2(var_0_6, arg_1_1)
+
+	if var_1_0 == nil then
+		var_1_0 = var_0_2(var_0_7, arg_1_1)
+
+		if var_1_0 ~= nil then
+			return var_1_0(arg_1_0)
+		end
 	end
 
-	return slot2
+	return var_1_0
 end
 
-function slot6.__call(slot0, slot1, slot2)
-	return uv0({
-		x = slot1 or 0,
-		y = slot2 or 0
-	}, uv1)
+function var_0_6.__call(arg_2_0, arg_2_1, arg_2_2)
+	return var_0_1({
+		x = arg_2_1 or 0,
+		y = arg_2_2 or 0
+	}, var_0_6)
 end
 
-function slot6.New(slot0, slot1)
-	return uv0({
-		x = slot0 or 0,
-		y = slot1 or 0
-	}, uv1)
+function var_0_6.New(arg_3_0, arg_3_1)
+	return var_0_1({
+		x = arg_3_0 or 0,
+		y = arg_3_1 or 0
+	}, var_0_6)
 end
 
-function slot6.Set(slot0, slot1, slot2)
-	slot0.x = slot1 or 0
-	slot0.y = slot2 or 0
+function var_0_6.Set(arg_4_0, arg_4_1, arg_4_2)
+	arg_4_0.x = arg_4_1 or 0
+	arg_4_0.y = arg_4_2 or 0
 end
 
-function slot6.Get(slot0)
-	return slot0.x, slot0.y
+function var_0_6.Get(arg_5_0)
+	return arg_5_0.x, arg_5_0.y
 end
 
-function slot6.SqrMagnitude(slot0)
-	return slot0.x * slot0.x + slot0.y * slot0.y
+function var_0_6.SqrMagnitude(arg_6_0)
+	return arg_6_0.x * arg_6_0.x + arg_6_0.y * arg_6_0.y
 end
 
-function slot6.Clone(slot0)
-	return uv0({
-		x = slot0.x,
-		y = slot0.y
-	}, uv1)
+function var_0_6.Clone(arg_7_0)
+	return var_0_1({
+		x = arg_7_0.x,
+		y = arg_7_0.y
+	}, var_0_6)
 end
 
-function slot6.Normalize(slot0)
-	slot1 = slot0.x
-	slot2 = slot0.y
+function var_0_6.Normalize(arg_8_0)
+	local var_8_0 = arg_8_0.x
+	local var_8_1 = arg_8_0.y
+	local var_8_2 = var_0_0(var_8_0 * var_8_0 + var_8_1 * var_8_1)
 
-	if uv0(slot1 * slot1 + slot2 * slot2) > 1e-05 then
-		slot1 = slot1 / slot3
-		slot2 = slot2 / slot3
+	if var_8_2 > 1e-05 then
+		var_8_0 = var_8_0 / var_8_2
+		var_8_1 = var_8_1 / var_8_2
 	else
-		slot1 = 0
-		slot2 = 0
+		var_8_0 = 0
+		var_8_1 = 0
 	end
 
-	return uv1({
-		x = slot1,
-		y = slot2
-	}, uv2)
+	return var_0_1({
+		x = var_8_0,
+		y = var_8_1
+	}, var_0_6)
 end
 
-function slot6.SetNormalize(slot0)
-	if uv0(slot0.x * slot0.x + slot0.y * slot0.y) > 1e-05 then
-		slot0.x = slot0.x / slot1
-		slot0.y = slot0.y / slot1
+function var_0_6.SetNormalize(arg_9_0)
+	local var_9_0 = var_0_0(arg_9_0.x * arg_9_0.x + arg_9_0.y * arg_9_0.y)
+
+	if var_9_0 > 1e-05 then
+		arg_9_0.x = arg_9_0.x / var_9_0
+		arg_9_0.y = arg_9_0.y / var_9_0
 	else
-		slot0.x = 0
-		slot0.y = 0
+		arg_9_0.x = 0
+		arg_9_0.y = 0
 	end
 
-	return slot0
+	return arg_9_0
 end
 
-function slot6.Dot(slot0, slot1)
-	return slot0.x * slot1.x + slot0.y * slot1.y
+function var_0_6.Dot(arg_10_0, arg_10_1)
+	return arg_10_0.x * arg_10_1.x + arg_10_0.y * arg_10_1.y
 end
 
-function slot6.Angle(slot0, slot1)
-	slot2 = slot0.x
-	slot3 = slot0.y
+function var_0_6.Angle(arg_11_0, arg_11_1)
+	local var_11_0 = arg_11_0.x
+	local var_11_1 = arg_11_0.y
+	local var_11_2 = var_0_0(var_11_0 * var_11_0 + var_11_1 * var_11_1)
 
-	if uv0(slot2 * slot2 + slot3 * slot3) > 1e-05 then
-		slot2 = slot2 / slot4
-		slot3 = slot3 / slot4
+	if var_11_2 > 1e-05 then
+		var_11_0 = var_11_0 / var_11_2
+		var_11_1 = var_11_1 / var_11_2
 	else
-		slot3 = 0
-		slot2 = 0
+		var_11_0, var_11_1 = 0, 0
 	end
 
-	slot5 = slot1.x
-	slot6 = slot1.y
+	local var_11_3 = arg_11_1.x
+	local var_11_4 = arg_11_1.y
+	local var_11_5 = var_0_0(var_11_3 * var_11_3 + var_11_4 * var_11_4)
 
-	if uv0(slot5 * slot5 + slot6 * slot6) > 1e-05 then
-		slot5 = slot5 / slot4
-		slot6 = slot6 / slot4
+	if var_11_5 > 1e-05 then
+		var_11_3 = var_11_3 / var_11_5
+		var_11_4 = var_11_4 / var_11_5
 	else
-		slot6 = 0
-		slot5 = 0
+		var_11_3, var_11_4 = 0, 0
 	end
 
-	if slot2 * slot5 + slot3 * slot6 < -1 then
-		slot4 = -1
-	elseif slot4 > 1 then
-		slot4 = 1
+	local var_11_6 = var_11_0 * var_11_3 + var_11_1 * var_11_4
+
+	if var_11_6 < -1 then
+		var_11_6 = -1
+	elseif var_11_6 > 1 then
+		var_11_6 = 1
 	end
 
-	return uv1(slot4) * 57.29578
+	return var_0_4(var_11_6) * 57.29578
 end
 
-function slot6.Magnitude(slot0)
-	return uv0(slot0.x * slot0.x + slot0.y * slot0.y)
+function var_0_6.Magnitude(arg_12_0)
+	return var_0_0(arg_12_0.x * arg_12_0.x + arg_12_0.y * arg_12_0.y)
 end
 
-function slot6.Reflect(slot0, slot1)
-	slot2 = slot0.x
-	slot3 = slot0.y
-	slot4 = slot1.x
-	slot5 = slot1.y
-	slot6 = -2 * (slot2 * slot4 + slot3 * slot5)
+function var_0_6.Reflect(arg_13_0, arg_13_1)
+	local var_13_0 = arg_13_0.x
+	local var_13_1 = arg_13_0.y
+	local var_13_2 = arg_13_1.x
+	local var_13_3 = arg_13_1.y
+	local var_13_4 = -2 * (var_13_0 * var_13_2 + var_13_1 * var_13_3)
 
-	return uv0({
-		x = slot6 * slot4 + slot2,
-		y = slot6 * slot5 + slot3
-	}, uv1)
+	return var_0_1({
+		x = var_13_4 * var_13_2 + var_13_0,
+		y = var_13_4 * var_13_3 + var_13_1
+	}, var_0_6)
 end
 
-function slot6.Distance(slot0, slot1)
-	return uv0((slot0.x - slot1.x)^2 + (slot0.y - slot1.y)^2)
+function var_0_6.Distance(arg_14_0, arg_14_1)
+	return var_0_0((arg_14_0.x - arg_14_1.x)^2 + (arg_14_0.y - arg_14_1.y)^2)
 end
 
-function slot6.Lerp(slot0, slot1, slot2)
-	if slot2 < 0 then
-		slot2 = 0
-	elseif slot2 > 1 then
-		slot2 = 1
+function var_0_6.Lerp(arg_15_0, arg_15_1, arg_15_2)
+	if arg_15_2 < 0 then
+		arg_15_2 = 0
+	elseif arg_15_2 > 1 then
+		arg_15_2 = 1
 	end
 
-	return uv0({
-		x = slot0.x + (slot1.x - slot0.x) * slot2,
-		y = slot0.y + (slot1.y - slot0.y) * slot2
-	}, uv1)
+	return var_0_1({
+		x = arg_15_0.x + (arg_15_1.x - arg_15_0.x) * arg_15_2,
+		y = arg_15_0.y + (arg_15_1.y - arg_15_0.y) * arg_15_2
+	}, var_0_6)
 end
 
-function slot6.LerpUnclamped(slot0, slot1, slot2)
-	return uv0({
-		x = slot0.x + (slot1.x - slot0.x) * slot2,
-		y = slot0.y + (slot1.y - slot0.y) * slot2
-	}, uv1)
+function var_0_6.LerpUnclamped(arg_16_0, arg_16_1, arg_16_2)
+	return var_0_1({
+		x = arg_16_0.x + (arg_16_1.x - arg_16_0.x) * arg_16_2,
+		y = arg_16_0.y + (arg_16_1.y - arg_16_0.y) * arg_16_2
+	}, var_0_6)
 end
 
-function slot6.MoveTowards(slot0, slot1, slot2)
-	slot5 = slot1.x - slot0.x
-	slot6 = slot1.y - slot0.y
+function var_0_6.MoveTowards(arg_17_0, arg_17_1, arg_17_2)
+	local var_17_0 = arg_17_0.x
+	local var_17_1 = arg_17_0.y
+	local var_17_2 = arg_17_1.x - var_17_0
+	local var_17_3 = arg_17_1.y - var_17_1
+	local var_17_4 = var_17_2 * var_17_2 + var_17_3 * var_17_3
 
-	if slot5 * slot5 + slot6 * slot6 > slot2 * slot2 and slot7 ~= 0 then
-		slot7 = slot2 / uv0(slot7)
+	if var_17_4 > arg_17_2 * arg_17_2 and var_17_4 ~= 0 then
+		local var_17_5 = arg_17_2 / var_0_0(var_17_4)
 
-		return uv1({
-			x = slot3 + slot5 * slot7,
-			y = slot4 + slot6 * slot7
-		}, uv2)
+		return var_0_1({
+			x = var_17_0 + var_17_2 * var_17_5,
+			y = var_17_1 + var_17_3 * var_17_5
+		}, var_0_6)
 	end
 
-	return uv1({
-		x = slot1.x,
-		y = slot1.y
-	}, uv2)
+	return var_0_1({
+		x = arg_17_1.x,
+		y = arg_17_1.y
+	}, var_0_6)
 end
 
-function slot6.ClampMagnitude(slot0, slot1)
-	slot2 = slot0.x
-	slot3 = slot0.y
+function var_0_6.ClampMagnitude(arg_18_0, arg_18_1)
+	local var_18_0 = arg_18_0.x
+	local var_18_1 = arg_18_0.y
+	local var_18_2 = var_18_0 * var_18_0 + var_18_1 * var_18_1
 
-	if slot2 * slot2 + slot3 * slot3 > slot1 * slot1 then
-		slot5 = slot1 / uv0(slot4)
+	if var_18_2 > arg_18_1 * arg_18_1 then
+		local var_18_3 = arg_18_1 / var_0_0(var_18_2)
 
-		return uv1({
-			x = slot2 * slot5,
-			y = slot3 * slot5
-		}, uv2)
+		var_18_0 = var_18_0 * var_18_3
+		var_18_1 = var_18_1 * var_18_3
+
+		return var_0_1({
+			x = var_18_0,
+			y = var_18_1
+		}, var_0_6)
 	end
 
-	return uv1({
-		x = slot2,
-		y = slot3
-	}, uv2)
+	return var_0_1({
+		x = var_18_0,
+		y = var_18_1
+	}, var_0_6)
 end
 
-function slot6.SmoothDamp(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot3 = uv0.max(0.0001, slot3)
-	slot7 = 2 / slot3 * (slot5 or Time.deltaTime)
-	slot7 = 1 / (1 + slot7 + 0.48 * slot7 * slot7 + 0.235 * slot7 * slot7 * slot7)
-	slot12 = slot0.x - slot1.x
-	slot13 = slot0.y - slot1.y
-	slot15 = (slot4 or uv0.huge) * slot3
+function var_0_6.SmoothDamp(arg_19_0, arg_19_1, arg_19_2, arg_19_3, arg_19_4, arg_19_5)
+	arg_19_5 = arg_19_5 or Time.deltaTime
+	arg_19_4 = arg_19_4 or var_0_3.huge
+	arg_19_3 = var_0_3.max(0.0001, arg_19_3)
 
-	if slot12 * slot12 + slot13 * slot13 > slot15 * slot15 then
-		slot14 = slot15 / uv1(slot14)
-		slot12 = slot12 * slot14
-		slot13 = slot13 * slot14
+	local var_19_0 = 2 / arg_19_3
+	local var_19_1 = var_19_0 * arg_19_5
+	local var_19_2 = 1 / (1 + var_19_1 + 0.48 * var_19_1 * var_19_1 + 0.235 * var_19_1 * var_19_1 * var_19_1)
+	local var_19_3 = arg_19_1.x
+	local var_19_4 = arg_19_1.y
+	local var_19_5 = arg_19_0.x
+	local var_19_6 = arg_19_0.y
+	local var_19_7 = var_19_5 - var_19_3
+	local var_19_8 = var_19_6 - var_19_4
+	local var_19_9 = var_19_7 * var_19_7 + var_19_8 * var_19_8
+	local var_19_10 = arg_19_4 * arg_19_3
+
+	if var_19_9 > var_19_10 * var_19_10 then
+		local var_19_11 = var_19_10 / var_0_0(var_19_9)
+
+		var_19_7 = var_19_7 * var_19_11
+		var_19_8 = var_19_8 * var_19_11
 	end
 
-	slot14 = slot2.x
-	slot15 = slot2.y
-	slot16 = (slot14 + slot6 * slot12) * slot5
-	slot17 = (slot15 + slot6 * slot13) * slot5
-	slot2.x = (slot14 - slot6 * slot16) * slot7
-	slot2.y = (slot15 - slot6 * slot17) * slot7
+	local var_19_12 = arg_19_2.x
+	local var_19_13 = arg_19_2.y
+	local var_19_14 = (var_19_12 + var_19_0 * var_19_7) * arg_19_5
+	local var_19_15 = (var_19_13 + var_19_0 * var_19_8) * arg_19_5
 
-	if (slot8 - slot10) * (slot10 - slot12 + (slot12 + slot16) * slot7 - slot8) + (slot9 - slot11) * (slot11 - slot13 + (slot13 + slot17) * slot7 - slot9) > 0 then
-		slot14 = slot8
-		slot15 = slot9
-		slot2.x = 0
-		slot2.y = 0
+	arg_19_2.x = (var_19_12 - var_19_0 * var_19_14) * var_19_2
+	arg_19_2.y = (var_19_13 - var_19_0 * var_19_15) * var_19_2
+
+	local var_19_16 = var_19_5 - var_19_7 + (var_19_7 + var_19_14) * var_19_2
+	local var_19_17 = var_19_6 - var_19_8 + (var_19_8 + var_19_15) * var_19_2
+
+	if (var_19_3 - var_19_5) * (var_19_16 - var_19_3) + (var_19_4 - var_19_6) * (var_19_17 - var_19_4) > 0 then
+		var_19_16 = var_19_3
+		var_19_17 = var_19_4
+		arg_19_2.x = 0
+		arg_19_2.y = 0
 	end
 
-	return uv2({
-		x = slot14,
-		y = slot15
-	}, uv3), slot2
+	return var_0_1({
+		x = var_19_16,
+		y = var_19_17
+	}, var_0_6), arg_19_2
 end
 
-function slot6.Max(slot0, slot1)
-	return uv0({
-		x = uv1.max(slot0.x, slot1.x),
-		y = uv1.max(slot0.y, slot1.y)
-	}, uv2)
+function var_0_6.Max(arg_20_0, arg_20_1)
+	return var_0_1({
+		x = var_0_3.max(arg_20_0.x, arg_20_1.x),
+		y = var_0_3.max(arg_20_0.y, arg_20_1.y)
+	}, var_0_6)
 end
 
-function slot6.Min(slot0, slot1)
-	return uv0({
-		x = uv1.min(slot0.x, slot1.x),
-		y = uv1.min(slot0.y, slot1.y)
-	}, uv2)
+function var_0_6.Min(arg_21_0, arg_21_1)
+	return var_0_1({
+		x = var_0_3.min(arg_21_0.x, arg_21_1.x),
+		y = var_0_3.min(arg_21_0.y, arg_21_1.y)
+	}, var_0_6)
 end
 
-function slot6.Scale(slot0, slot1)
-	return uv0({
-		x = slot0.x * slot1.x,
-		y = slot0.y * slot1.y
-	}, uv1)
+function var_0_6.Scale(arg_22_0, arg_22_1)
+	return var_0_1({
+		x = arg_22_0.x * arg_22_1.x,
+		y = arg_22_0.y * arg_22_1.y
+	}, var_0_6)
 end
 
-function slot6.Div(slot0, slot1)
-	slot0.x = slot0.x / slot1
-	slot0.y = slot0.y / slot1
+function var_0_6.Div(arg_23_0, arg_23_1)
+	arg_23_0.x = arg_23_0.x / arg_23_1
+	arg_23_0.y = arg_23_0.y / arg_23_1
 
-	return slot0
+	return arg_23_0
 end
 
-function slot6.Mul(slot0, slot1)
-	slot0.x = slot0.x * slot1
-	slot0.y = slot0.y * slot1
+function var_0_6.Mul(arg_24_0, arg_24_1)
+	arg_24_0.x = arg_24_0.x * arg_24_1
+	arg_24_0.y = arg_24_0.y * arg_24_1
 
-	return slot0
+	return arg_24_0
 end
 
-function slot6.Add(slot0, slot1)
-	slot0.x = slot0.x + slot1.x
-	slot0.y = slot0.y + slot1.y
+function var_0_6.Add(arg_25_0, arg_25_1)
+	arg_25_0.x = arg_25_0.x + arg_25_1.x
+	arg_25_0.y = arg_25_0.y + arg_25_1.y
 
-	return slot0
+	return arg_25_0
 end
 
-function slot6.Sub(slot0, slot1)
-	slot0.x = slot0.x - slot1.x
-	slot0.y = slot0.y - slot1.y
+function var_0_6.Sub(arg_26_0, arg_26_1)
+	arg_26_0.x = arg_26_0.x - arg_26_1.x
+	arg_26_0.y = arg_26_0.y - arg_26_1.y
 
-	return slot0
+	return arg_26_0
 end
 
-function slot6.__tostring(slot0)
-	return string.format("(%f,%f)", slot0.x, slot0.y)
+function var_0_6.__tostring(arg_27_0)
+	return string.format("(%f,%f)", arg_27_0.x, arg_27_0.y)
 end
 
-function slot6.__div(slot0, slot1)
-	return uv0({
-		x = slot0.x / slot1,
-		y = slot0.y / slot1
-	}, uv1)
+function var_0_6.__div(arg_28_0, arg_28_1)
+	return var_0_1({
+		x = arg_28_0.x / arg_28_1,
+		y = arg_28_0.y / arg_28_1
+	}, var_0_6)
 end
 
-function slot6.__mul(slot0, slot1)
-	if type(slot1) == "number" then
-		return uv0({
-			x = slot0.x * slot1,
-			y = slot0.y * slot1
-		}, uv1)
+function var_0_6.__mul(arg_29_0, arg_29_1)
+	if type(arg_29_1) == "number" then
+		return var_0_1({
+			x = arg_29_0.x * arg_29_1,
+			y = arg_29_0.y * arg_29_1
+		}, var_0_6)
 	else
-		return uv0({
-			x = slot0 * slot1.x,
-			y = slot0 * slot1.y
-		}, uv1)
+		return var_0_1({
+			x = arg_29_0 * arg_29_1.x,
+			y = arg_29_0 * arg_29_1.y
+		}, var_0_6)
 	end
 end
 
-function slot6.__add(slot0, slot1)
-	return uv0({
-		x = slot0.x + slot1.x,
-		y = slot0.y + slot1.y
-	}, uv1)
+function var_0_6.__add(arg_30_0, arg_30_1)
+	return var_0_1({
+		x = arg_30_0.x + arg_30_1.x,
+		y = arg_30_0.y + arg_30_1.y
+	}, var_0_6)
 end
 
-function slot6.__sub(slot0, slot1)
-	return uv0({
-		x = slot0.x - slot1.x,
-		y = slot0.y - slot1.y
-	}, uv1)
+function var_0_6.__sub(arg_31_0, arg_31_1)
+	return var_0_1({
+		x = arg_31_0.x - arg_31_1.x,
+		y = arg_31_0.y - arg_31_1.y
+	}, var_0_6)
 end
 
-function slot6.__unm(slot0)
-	return uv0({
-		x = -slot0.x,
-		y = -slot0.y
-	}, uv1)
+function var_0_6.__unm(arg_32_0)
+	return var_0_1({
+		x = -arg_32_0.x,
+		y = -arg_32_0.y
+	}, var_0_6)
 end
 
-function slot6.__eq(slot0, slot1)
-	return (slot0.x - slot1.x)^2 + (slot0.y - slot1.y)^2 < 9.999999e-11
+function var_0_6.__eq(arg_33_0, arg_33_1)
+	return (arg_33_0.x - arg_33_1.x)^2 + (arg_33_0.y - arg_33_1.y)^2 < 9.999999e-11
 end
 
-function slot7.up()
-	return uv0({
+function var_0_7.up()
+	return var_0_1({
 		x = 0,
 		y = 1
-	}, uv1)
+	}, var_0_6)
 end
 
-function slot7.right()
-	return uv0({
+function var_0_7.right()
+	return var_0_1({
 		x = 1,
 		y = 0
-	}, uv1)
+	}, var_0_6)
 end
 
-function slot7.zero()
-	return uv0({
+function var_0_7.zero()
+	return var_0_1({
 		x = 0,
 		y = 0
-	}, uv1)
+	}, var_0_6)
 end
 
-function slot7.one()
-	return uv0({
+function var_0_7.one()
+	return var_0_1({
 		x = 1,
 		y = 1
-	}, uv1)
+	}, var_0_6)
 end
 
-slot7.magnitude = slot6.Magnitude
-slot7.normalized = slot6.Normalize
-slot7.sqrMagnitude = slot6.SqrMagnitude
-UnityEngine.Vector2 = slot6
+var_0_7.magnitude = var_0_6.Magnitude
+var_0_7.normalized = var_0_6.Normalize
+var_0_7.sqrMagnitude = var_0_6.SqrMagnitude
+UnityEngine.Vector2 = var_0_6
 
-setmetatable(slot6, slot6)
+var_0_1(var_0_6, var_0_6)
 
-return slot6
+return var_0_6

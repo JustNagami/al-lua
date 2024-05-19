@@ -1,4 +1,24 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				minTargetNumber = 2,
+				target = "TargetSelf",
+				skill_id = 12240,
+				check_target = {
+					"TargetAllHelp",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"Cleveland-Class"
+				}
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,25 +39,5 @@ return {
 	stack = 1,
 	id = 12240,
 	icon = 12240,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				minTargetNumber = 2,
-				target = "TargetSelf",
-				skill_id = 12240,
-				check_target = {
-					"TargetAllHelp",
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"Cleveland-Class"
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

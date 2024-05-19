@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.recommend_shop = {
 	{
 		shop_id = 1,

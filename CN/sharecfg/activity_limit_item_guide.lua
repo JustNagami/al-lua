@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_limit_item_guide = {
 	{
 		id = 1,

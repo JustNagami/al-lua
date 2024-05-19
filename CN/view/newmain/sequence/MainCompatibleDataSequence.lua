@@ -1,35 +1,38 @@
-slot0 = class("MainCompatibleDataSequence")
+﻿local var_0_0 = class("MainCompatibleDataSequence")
 
-function slot0.Execute(slot0, slot1)
+function var_0_0.Execute(arg_1_0, arg_1_1)
 	seriesAsync({
-		function (slot0)
-			getProxy(IslandProxy):CheckAndRequest(slot0)
+		function(arg_2_0)
+			getProxy(IslandProxy):CheckAndRequest(arg_2_0)
 		end,
-		function (slot0)
-			uv0:CheckSpecialDayForEducateChar(slot0)
+		function(arg_3_0)
+			arg_1_0:CheckSpecialDayForEducateChar(arg_3_0)
 		end
-	}, slot1)
+	}, arg_1_1)
 end
 
-function slot0.CheckSpecialDayForEducateChar(slot0, slot1)
+function var_0_0.CheckSpecialDayForEducateChar(arg_4_0, arg_4_1)
 	if LOCK_EDUCATE_SYSTEM then
-		slot1()
+		arg_4_1()
 
 		return
 	end
 
-	slot3, slot4, slot5 = ChineseCalendar.GetCurrYearMonthDay(pg.TimeMgr.GetInstance():GetServerTime())
-	slot7 = getProxy(SettingsProxy)
+	local var_4_0 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_4_1, var_4_2, var_4_3 = ChineseCalendar.GetCurrYearMonthDay(var_4_0)
+	local var_4_4 = getProxy(PlayerProxy):getRawData():ExistEducateChar()
+	local var_4_5 = getProxy(SettingsProxy)
 
-	if getProxy(PlayerProxy):getRawData():ExistEducateChar() and slot7:GetFlagShipDisplayMode() ~= FlAG_SHIP_DISPLAY_ONLY_SHIP and not slot7:IsTipDay(slot3, slot4, slot5) and ChineseCalendar.AnySpecialDay(slot3, slot4, slot5) then
-		slot8, slot9 = PlayerVitaeShipsPage.GetSlotMaxCnt()
+	if var_4_4 and var_4_5:GetFlagShipDisplayMode() ~= FlAG_SHIP_DISPLAY_ONLY_SHIP and not var_4_5:IsTipDay(var_4_1, var_4_2, var_4_3) and ChineseCalendar.AnySpecialDay(var_4_1, var_4_2, var_4_3) then
+		local var_4_6, var_4_7 = PlayerVitaeShipsPage.GetSlotMaxCnt()
+		local var_4_8 = var_4_7 + 1
 
-		if slot9 + 1 and slot10 > 0 then
-			slot7:setCurrentSecretaryIndex(slot10)
+		if var_4_8 and var_4_8 > 0 then
+			var_4_5:setCurrentSecretaryIndex(var_4_8)
 		end
 	end
 
-	slot1()
+	arg_4_1()
 end
 
-return slot0
+return var_0_0

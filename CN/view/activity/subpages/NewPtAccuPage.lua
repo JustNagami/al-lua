@@ -1,21 +1,22 @@
-slot0 = class("NewPtAccuPage", import(".TemplatePage.PtTemplatePage"))
-slot0.TIME = 300
+﻿local var_0_0 = class("NewPtAccuPage", import(".TemplatePage.PtTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+var_0_0.TIME = 300
 
-	slot0.value2 = slot0:findTF("AD/value2")
-	slot0.sliderTxt = slot0:findTF("AD/slider/Text")
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
+
+	arg_1_0.value2 = arg_1_0:findTF("AD/value2")
+	arg_1_0.sliderTxt = arg_1_0:findTF("AD/slider/Text")
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
-	setText(slot0.value2, slot0.ptData:GetValue2())
+function var_0_0.OnUpdateFlush(arg_2_0)
+	var_0_0.super.OnUpdateFlush(arg_2_0)
+	setText(arg_2_0.value2, arg_2_0.ptData:GetValue2())
 
-	slot1, slot2, slot3 = slot0.ptData:GetResProgress()
+	local var_2_0, var_2_1, var_2_2 = arg_2_0.ptData:GetResProgress()
 
-	setText(slot0.sliderTxt, math.floor(math.min(slot3, 1) * 100) .. "%")
-	slot0:GetWorldPtData(uv0.TIME)
+	setText(arg_2_0.sliderTxt, math.floor(math.min(var_2_2, 1) * 100) .. "%")
+	arg_2_0:GetWorldPtData(var_0_0.TIME)
 end
 
-return slot0
+return var_0_0

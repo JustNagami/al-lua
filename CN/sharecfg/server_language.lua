@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.server_language = {
 	{
 		id = 1,
