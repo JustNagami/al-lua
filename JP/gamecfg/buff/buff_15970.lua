@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 15970,
-	icon = 15970,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -44,5 +23,26 @@ return {
 				dhpGreaterMaxhp = -0.05
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 15970,
+	icon = 15970,
+	last_effect = ""
 }

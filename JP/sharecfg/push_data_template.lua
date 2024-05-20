@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.push_data_template = {
 	{
 		alignment = 0,

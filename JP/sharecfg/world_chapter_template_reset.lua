@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.world_chapter_template_reset = {
 	[8000] = {
 		id = 8000,

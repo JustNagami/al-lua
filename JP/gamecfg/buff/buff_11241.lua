@@ -1,10 +1,42 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffFixDamage",
+			trigger = {
+				"onBeforeTakeDamage"
+			},
+			arg_list = {
+				value = 1,
+				rant = 500,
+				target = "TargetSelf",
+				time = 0
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "luck",
+				target = "TargetSelf",
+				number = 5
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					value = 1,
@@ -31,7 +63,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					value = 1,
@@ -58,7 +90,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					value = 1,
@@ -85,7 +117,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					value = 1,
@@ -112,7 +144,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					value = 1,
@@ -139,7 +171,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					value = 1,
@@ -166,7 +198,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					value = 1,
@@ -193,7 +225,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					value = 1,
@@ -220,7 +252,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					value = 1,
@@ -247,7 +279,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					value = 1,
@@ -278,37 +310,5 @@ return {
 	stack = 1,
 	id = 11241,
 	icon = 11240,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffFixDamage",
-			trigger = {
-				"onTakeDamage"
-			},
-			arg_list = {
-				value = 1,
-				rant = 500,
-				target = "TargetSelf",
-				time = 0
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "luck",
-				target = "TargetSelf",
-				number = 5
-			}
-		}
-	}
+	last_effect = ""
 }

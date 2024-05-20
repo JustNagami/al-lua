@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.chapter_boom = {
 	[1190001] = {
 		action_times = 3,

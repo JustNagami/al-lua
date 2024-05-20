@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.auto_pilot_template = {
 	[10001] = {
 		id = 10001,
@@ -433,6 +433,129 @@ pg.auto_pilot_template = {
 					moveCount = 240,
 					duration = -1,
 					X1 = 0,
+					stopCount = 60
+				}
+			}
+		}
+	},
+	[15011] = {
+		id = 15011,
+		name = "角色用/技能用AI - 战熊",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 5,
+				param = {
+					Z1 = 10,
+					Z2 = -20,
+					X2 = 10,
+					moveCount = 240,
+					duration = -1,
+					X1 = 0,
+					stopCount = 60
+				}
+			}
+		}
+	},
+	[15012] = {
+		id = 15012,
+		name = "角色用/技能用AI - 拉菲机器人移动1号",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 2,
+				type = 1,
+				param = {
+					x = -65,
+					z = 85
+				}
+			},
+			{
+				index = 2,
+				to = 2,
+				type = 5,
+				param = {
+					Z1 = 5,
+					Z2 = -25,
+					X2 = 25,
+					moveCount = 240,
+					duration = -1,
+					X1 = -5,
+					stopCount = 60
+				}
+			}
+		}
+	},
+	[15013] = {
+		id = 15013,
+		name = "角色用/技能用AI - 拉菲机器人移动2号",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 2,
+				type = 1,
+				param = {
+					x = -65,
+					z = 35
+				}
+			},
+			{
+				index = 2,
+				to = 2,
+				type = 5,
+				param = {
+					Z1 = 25,
+					Z2 = -5,
+					X2 = 25,
+					moveCount = 240,
+					duration = -1,
+					X1 = -5,
+					stopCount = 60
+				}
+			}
+		}
+	},
+	[15014] = {
+		id = 15014,
+		name = "角色用/技能用AI - 拉菲机器人移动1号-演习",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 5,
+				param = {
+					Z1 = 30,
+					Z2 = -5,
+					X2 = 5,
+					moveCount = 240,
+					duration = -1,
+					X1 = -15,
+					stopCount = 60
+				}
+			}
+		}
+	},
+	[15015] = {
+		id = 15015,
+		name = "角色用/技能用AI - 拉菲机器人移动2号-演习",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 5,
+				param = {
+					Z1 = 5,
+					Z2 = -30,
+					X2 = 5,
+					moveCount = 240,
+					duration = -1,
+					X1 = -15,
 					stopCount = 60
 				}
 			}
@@ -7082,7 +7205,7 @@ pg.auto_pilot_template = {
 				to = 1,
 				type = 0,
 				param = {
-					duration = -1
+					duration = 0.5
 				}
 			}
 		}
@@ -7106,7 +7229,7 @@ pg.auto_pilot_template = {
 				to = 1,
 				type = 0,
 				param = {
-					duration = -1
+					duration = 0.5
 				}
 			}
 		}
@@ -9706,6 +9829,408 @@ pg.auto_pilot_template = {
 			}
 		}
 	},
+	[70235] = {
+		id = 70235,
+		name = "2023海盗活动EX 水平追踪移动",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 8,
+				param = {
+					X = -8,
+					duration = 300,
+					offsetZ = 1
+				}
+			}
+		}
+	},
+	[70236] = {
+		id = 70236,
+		name = "2023基洛夫meta 闪流移动",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 3,
+				param = {
+					Z1 = 33,
+					Z2 = 73,
+					X2 = -10,
+					moveCount = 300,
+					duration = -1,
+					X1 = -25,
+					stopCount = 0
+				}
+			}
+		}
+	},
+	[70237] = {
+		id = 70237,
+		name = "2023基洛夫meta 彗星移动",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 3,
+				param = {
+					Z1 = 33,
+					Z2 = 73,
+					X2 = 15,
+					moveCount = 300,
+					duration = -1,
+					X1 = 0,
+					stopCount = 0
+				}
+			}
+		}
+	},
+	[70238] = {
+		id = 70238,
+		name = "2023关岛活动 大型蛋船BOSS保持原位",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 2,
+				type = 1,
+				param = {
+					x = 0,
+					z = 40
+				}
+			},
+			{
+				index = 2,
+				to = 1,
+				type = 0,
+				param = {
+					duration = 0.5
+				}
+			}
+		}
+	},
+	[70239] = {
+		id = 70239,
+		name = "2023关岛活动EX 浮游炮移动 左",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 2,
+				type = 0,
+				param = {
+					duration = 0.6
+				}
+			},
+			{
+				index = 2,
+				to = 3,
+				type = 2,
+				param = {
+					x = -60,
+					z = 0
+				}
+			},
+			{
+				index = 3,
+				to = 1,
+				type = 0,
+				param = {
+					duration = -1
+				}
+			}
+		}
+	},
+	[70240] = {
+		id = 70240,
+		name = "2023关岛活动EX 浮游炮移动 上",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 2,
+				type = 0,
+				param = {
+					duration = 0.6
+				}
+			},
+			{
+				index = 2,
+				to = 3,
+				type = 2,
+				param = {
+					x = 0,
+					z = 59
+				}
+			},
+			{
+				index = 3,
+				to = 1,
+				type = 0,
+				param = {
+					duration = -1
+				}
+			}
+		}
+	},
+	[70241] = {
+		id = 70241,
+		name = "2023关岛活动EX 浮游炮移动 右",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 2,
+				type = 0,
+				param = {
+					duration = 0.6
+				}
+			},
+			{
+				index = 2,
+				to = 3,
+				type = 2,
+				param = {
+					x = 60,
+					z = 0
+				}
+			},
+			{
+				index = 3,
+				to = 1,
+				type = 0,
+				param = {
+					duration = -1
+				}
+			}
+		}
+	},
+	[70242] = {
+		id = 70242,
+		name = "2023关岛活动EX 浮游炮移动 下",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 2,
+				type = 0,
+				param = {
+					duration = 0.6
+				}
+			},
+			{
+				index = 2,
+				to = 3,
+				type = 2,
+				param = {
+					x = 0,
+					z = -59
+				}
+			},
+			{
+				index = 3,
+				to = 1,
+				type = 0,
+				param = {
+					duration = -1
+				}
+			}
+		}
+	},
+	[70251] = {
+		id = 70251,
+		name = "开始等待一下后再随机移动",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 2,
+				type = 0,
+				param = {
+					duration = 2.5
+				}
+			},
+			{
+				index = 2,
+				to = 1,
+				type = 3,
+				param = {
+					Z1 = 35,
+					Z2 = 75,
+					X2 = -5,
+					moveCount = 240,
+					duration = -1,
+					X1 = -20,
+					stopCount = 90
+				}
+			}
+		}
+	},
+	[70252] = {
+		id = 70252,
+		name = "2024同盟活动EX 永不停止的随机移动",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 3,
+				param = {
+					Z1 = 24,
+					Z2 = 80,
+					duration = -1,
+					X2 = 0,
+					moveCount = 300,
+					valve = 1,
+					X1 = -20,
+					stopCount = 0
+				}
+			}
+		}
+	},
+	[70253] = {
+		id = 70253,
+		name = "2024异世界冒险 德文郡第一波移动",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 2,
+				type = 0,
+				param = {
+					duration = 2
+				}
+			},
+			{
+				index = 2,
+				to = 1,
+				type = 3,
+				param = {
+					Z1 = 35,
+					Z2 = 75,
+					X2 = -5,
+					moveCount = 300,
+					duration = 3,
+					X1 = -20,
+					stopCount = 0
+				}
+			}
+		}
+	},
+	[70254] = {
+		id = 70254,
+		name = "2024异世界冒险 巨炎龙 飞出屏幕外",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 1,
+				param = {
+					x = 50,
+					z = 50
+				}
+			},
+			{
+				index = 2,
+				to = 1,
+				type = 0,
+				param = {
+					duration = 0.5
+				}
+			}
+		}
+	},
+	[70255] = {
+		id = 70255,
+		name = "2024异世界冒险 巨炎龙 返回屏幕并开始随机移动",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 2,
+				type = 1,
+				param = {
+					x = -5,
+					z = 50
+				}
+			},
+			{
+				index = 2,
+				to = 1,
+				type = 0,
+				param = {
+					duration = 0.5
+				}
+			}
+		}
+	},
+	[70256] = {
+		id = 70256,
+		name = "2024异世界冒险 小独角兽 移动",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 5,
+				param = {
+					Z1 = 20,
+					Z2 = -20,
+					X2 = 10,
+					moveCount = 240,
+					duration = -1,
+					X1 = 0,
+					stopCount = 60
+				}
+			}
+		}
+	},
+	[70257] = {
+		id = 70257,
+		name = "2024异世界冒险 净化者顶在前面",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 5,
+				param = {
+					Z1 = 20,
+					Z2 = -20,
+					X2 = 5,
+					moveCount = 240,
+					duration = -1,
+					X1 = -5,
+					stopCount = 60
+				}
+			}
+		}
+	},
+	[70258] = {
+		id = 70258,
+		name = "2024异世界冒险 革律翁 移动",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 3,
+				param = {
+					Z1 = 32,
+					Z2 = 72,
+					X2 = -55,
+					moveCount = 240,
+					duration = -1,
+					X1 = -65,
+					stopCount = 60
+				}
+			}
+		}
+	},
 	[75001] = {
 		id = 75001,
 		name = "弹幕挑战1boss",
@@ -10732,6 +11257,22 @@ pg.auto_pilot_template = {
 				type = 2,
 				param = {
 					x = -500,
+					z = 0
+				}
+			}
+		}
+	},
+	[80001] = {
+		id = 80001,
+		name = "自爆船AI-反向",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 2,
+				param = {
+					x = 500,
 					z = 0
 				}
 			}
@@ -12907,7 +13448,7 @@ pg.auto_pilot_template = {
 		}
 	},
 	[200004] = {
-		id = 200000,
+		id = 200004,
 		name = "回到中点",
 		default = 1,
 		list = {
@@ -12918,6 +13459,25 @@ pg.auto_pilot_template = {
 				param = {
 					x = -12.5,
 					z = 55
+				}
+			}
+		}
+	},
+	[200005] = {
+		id = 200005,
+		name = "转圈小范围 顺时针",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 4,
+				param = {
+					z = 55,
+					radius = 12,
+					antiClockWise = true,
+					duration = -1,
+					x = -10
 				}
 			}
 		}

@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "装甲空母 +",
-	init_effect = "",
-	time = 0,
-	color = "yellow",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 1010340,
-	icon = 10340,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -41,5 +20,26 @@ return {
 				target = "TargetSelf"
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "装甲空母 +",
+	init_effect = "",
+	time = 0,
+	color = "yellow",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 1010340,
+	icon = 10340,
+	last_effect = ""
 }

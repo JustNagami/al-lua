@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "injureRatioByCannon",
+				number = -0.1
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -157,18 +170,5 @@ return {
 	stack = 1,
 	id = 11122,
 	icon = 11120,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "injureRatioByCannon",
-				number = -0.1
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,4 +1,35 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				attr = "cannonPower",
+				number = 50
+			}
+		},
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				attr = "torpedoPower",
+				number = 50
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -268,36 +299,5 @@ return {
 	stack = 3,
 	id = 15412,
 	icon = 15410,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				attr = "cannonPower",
-				number = 50
-			}
-		},
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				attr = "torpedoPower",
-				number = 50
-			}
-		}
-	}
+	last_effect = ""
 }

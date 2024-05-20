@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "皇家方舟技能3",
-	init_effect = "",
-	time = 0,
-	color = "yellow",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 800030,
-	icon = 800030,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -62,5 +41,26 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "皇家方舟技能3",
+	init_effect = "",
+	time = 0,
+	color = "yellow",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 800030,
+	icon = 800030,
+	last_effect = ""
 }

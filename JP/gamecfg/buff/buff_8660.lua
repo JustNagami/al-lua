@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "hanbingquyu_beiji",
 	name = "blizzard",
 	time = 3,

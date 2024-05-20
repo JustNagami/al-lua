@@ -1,4 +1,23 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandomByWeight",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 67651
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -136,24 +155,5 @@ return {
 	id = 103062,
 	picture = "0",
 	castCV = "skill",
-	desc = "百合根",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandomByWeight",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 67651
-			}
-		}
-	}
+	desc = "百合根"
 }

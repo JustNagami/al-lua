@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行15次攻击，触发专属弹幕-Z1I"
-	},
-	desc_get = "主炮每进行15次攻击，触发专属弹幕-Z1I",
-	name = "专属弹幕-Z1I",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行15次攻击，触发专属弹幕-Z1I",
-	stack = 1,
-	id = 29171,
-	icon = 29170,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -33,10 +19,51 @@ return {
 				"onBattleBuffCount"
 			},
 			arg_list = {
-				target = "TargetSelf",
+				maxTargetNumber = 0,
 				skill_id = 29171,
-				countType = 29170
+				target = "TargetSelf",
+				countType = 29170,
+				check_target = {
+					"TargetSelf",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"Z1SP"
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBattleBuffCount"
+			},
+			arg_list = {
+				minTargetNumber = 1,
+				skill_id = 29173,
+				target = "TargetSelf",
+				countType = 29170,
+				check_target = {
+					"TargetSelf",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"Z1SP"
+				}
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行15次攻击，触发专属弹幕-Z1I"
+	},
+	desc_get = "主炮每进行15次攻击，触发专属弹幕-Z1I",
+	name = "专属弹幕-Z1I",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行15次攻击，触发专属弹幕-Z1I",
+	stack = 1,
+	id = 29171,
+	icon = 29170,
+	last_effect = ""
 }

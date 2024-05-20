@@ -1,4 +1,24 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 66140,
+				emitter = "BattleBulletEmitter"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -146,25 +166,5 @@ return {
 	id = 16691,
 	picture = "0",
 	castCV = "skill",
-	desc = "BIG SEVEN",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 66140,
-				emitter = "BattleBulletEmitter"
-			}
-		}
-	}
+	desc = "BIG SEVEN"
 }

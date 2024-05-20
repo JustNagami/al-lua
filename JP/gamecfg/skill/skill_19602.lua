@@ -1,4 +1,32 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 163061
+			}
+		},
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandomByWeight",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 163081
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -226,33 +254,5 @@ return {
 	id = 19600,
 	picture = "1",
 	castCV = "skill",
-	desc = "地毯轰炸+平行鱼雷",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 163061
-			}
-		},
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandomByWeight",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 163081
-			}
-		}
-	}
+	desc = "地毯轰炸+平行鱼雷"
 }

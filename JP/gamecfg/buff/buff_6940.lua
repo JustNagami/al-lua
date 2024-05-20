@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "",
 	name = "",
 	time = 30,
@@ -48,7 +48,8 @@ return {
 					3,
 					18,
 					19,
-					20
+					20,
+					23
 				}
 			}
 		},

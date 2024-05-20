@@ -1,4 +1,34 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "injureRatio",
+				number = -0.06
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onRemove"
+			},
+			arg_list = {
+				skill_id = 101122,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -257,35 +287,5 @@ return {
 	stack = 1,
 	id = 101122,
 	icon = 101122,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "injureRatio",
-				number = -0.06
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onRemove"
-			},
-			arg_list = {
-				skill_id = 101122,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

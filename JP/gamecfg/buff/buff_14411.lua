@@ -1,4 +1,12 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {},
 	{
 		effect_list = {
 			{
@@ -139,7 +147,7 @@ return {
 			}
 		}
 	},
-	time = 30,
+	time = 0,
 	name = "",
 	init_effect = "jinengchufared",
 	color = "red",
@@ -148,13 +156,5 @@ return {
 	stack = 1,
 	id = 14411,
 	icon = 14411,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {}
+	last_effect = ""
 }

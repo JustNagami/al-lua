@@ -1,4 +1,43 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onStack",
+				"onTorpedoWeaponBulletCreate"
+			},
+			arg_list = {
+				attr = "cri",
+				number = 0.015
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onTorpedoWeaponFire"
+			},
+			arg_list = {
+				skill_id = 101100
+			}
+		},
+		{
+			type = "BattleBuffCancelBuff",
+			trigger = {
+				"onTorpedoWeaponFire"
+			},
+			arg_list = {
+				count = 1,
+				delay = 1
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -347,44 +386,5 @@ return {
 	stack = 20,
 	id = 101101,
 	icon = 101100,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onStack",
-				"onTorpedoWeaponBulletCreate"
-			},
-			arg_list = {
-				attr = "cri",
-				number = 0.015
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onTorpedoWeaponFire"
-			},
-			arg_list = {
-				skill_id = 101100
-			}
-		},
-		{
-			type = "BattleBuffCancelBuff",
-			trigger = {
-				"onTorpedoWeaponFire"
-			},
-			arg_list = {
-				count = 1,
-				delay = 1
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "",
-	init_effect = "",
-	time = 15,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 15983,
-	icon = 15983,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCleanse",
@@ -59,5 +38,26 @@ return {
 				target = "TargetSelf"
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "",
+	init_effect = "",
+	time = 15,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 15983,
+	icon = 15983,
+	last_effect = ""
 }

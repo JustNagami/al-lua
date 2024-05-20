@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.ship_data_lesson = {
 	[101031] = {
 		cannon = 15,

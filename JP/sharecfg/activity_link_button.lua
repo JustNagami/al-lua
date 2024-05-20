@@ -1,7 +1,7 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_link_button = {
 	{
-		param = "0",
+		param = "5301",
 		name = "event_all",
 		type = 3,
 		text_pic = "text_event_all",
@@ -11,7 +11,7 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			5001
+			5301
 		}
 	},
 	{
@@ -59,10 +59,10 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			4990
+			5309
 		},
 		param = {
-			"SIXTH_ANNIVERSARY_JP"
+			"IDOL_MEDAL_COLLECTION_SCENE3"
 		}
 	},
 	[30] = {
@@ -94,13 +94,16 @@ pg.activity_link_button = {
 	[60] = {
 		param = "0",
 		name = "event_LanternFestival",
-		time = "stop",
-		text_pic = "",
 		type = 0,
-		pic = "event_LanternFestival",
+		text_pic = "text_event_LanternFestival",
 		id = 60,
 		group_id = 7,
-		order = 1
+		pic = "event_LanternFestival",
+		order = 1,
+		time = {
+			"default",
+			5202
+		}
 	},
 	[70] = {
 		param = "0",
@@ -113,7 +116,7 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			4733
+			5267
 		}
 	},
 	[80] = {
@@ -155,11 +158,38 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			4935
+			5093
 		},
 		param = {
-			"SSSS_MEDAL_COLLECTION"
+			"SENRANKAGURA_MEDAL"
 		}
+	},
+	[101] = {
+		type = 2,
+		name = "event_senran",
+		text_pic = "text_event_senran",
+		id = 101,
+		group_id = 100,
+		pic = "event_senran",
+		order = 1,
+		time = {
+			"default",
+			5099
+		},
+		param = {
+			"SENRANKAGURA_TRAIN"
+		}
+	},
+	[102] = {
+		param = "0",
+		name = "event_boss_single",
+		time = "stop",
+		text_pic = "text_event_anotherWorld",
+		type = 0,
+		pic = "event_map",
+		id = 102,
+		group_id = 4,
+		order = 1
 	},
 	get_id_list_by_name = {
 		event_all = {
@@ -193,6 +223,12 @@ pg.activity_link_button = {
 		},
 		event_medal = {
 			100
+		},
+		event_senran = {
+			101
+		},
+		event_boss_single = {
+			102
 		}
 	},
 	all = {
@@ -207,6 +243,8 @@ pg.activity_link_button = {
 		70,
 		80,
 		90,
-		100
+		100,
+		101,
+		102
 	}
 }

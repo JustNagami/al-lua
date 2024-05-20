@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "马耳他的英雄",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 14110,
-	icon = 14110,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -42,5 +21,26 @@ return {
 				skill_id = 14111
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "马耳他的英雄",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 14110,
+	icon = 14110,
+	last_effect = ""
 }

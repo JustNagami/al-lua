@@ -1,16 +1,16 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_banner = {
 	{
-		param = "5023",
+		param = "5324",
 		id = 1,
 		pic = "temp3",
 		type = 3,
 		time = {
 			{
 				{
-					2023,
-					10,
-					19
+					2024,
+					5,
+					16
 				},
 				{
 					0,
@@ -20,9 +20,9 @@ pg.activity_banner = {
 			},
 			{
 				{
-					2023,
-					11,
-					9
+					2024,
+					6,
+					13
 				},
 				{
 					23,
@@ -33,30 +33,30 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "5022",
+		param = "5341",
 		id = 2,
-		pic = "temp1",
+		pic = "temp2",
 		type = 3,
 		time = {
 			{
 				{
-					2023,
-					10,
+					2024,
+					5,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					6,
 					12
 				},
 				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2023,
-					10,
-					26
-				},
-				{
 					23,
 					59,
 					59
@@ -65,21 +65,16 @@ pg.activity_banner = {
 		}
 	},
 	{
+		param = "5318",
 		id = 3,
-		pic = "temp4",
-		type = 2,
-		param = {
-			"scene level",
-			{
-				mapIdx = 15
-			}
-		},
+		pic = "temp6",
+		type = 3,
 		time = {
 			{
 				{
-					2023,
-					10,
-					19
+					2024,
+					5,
+					16
 				},
 				{
 					0,
@@ -89,9 +84,9 @@ pg.activity_banner = {
 			},
 			{
 				{
-					2023,
-					10,
-					26
+					2024,
+					6,
+					19
 				},
 				{
 					23,
@@ -102,8 +97,81 @@ pg.activity_banner = {
 		}
 	},
 	{
+		param = "5340",
 		id = 4,
-		pic = "temp2",
+		pic = "temp7",
+		type = 3,
+		time = {
+			{
+				{
+					2024,
+					5,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					6,
+					19
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		param = "5321",
+		id = 5,
+		pic = "temp9",
+		type = 3,
+		time = {
+			{
+				{
+					2024,
+					5,
+					9
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					5,
+					21
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 6,
+		pic = "temp8",
+		time = "stop",
+		type = 2,
+		param = {
+			"scene court yard"
+		}
+	},
+	{
+		id = 7,
+		pic = "temp1",
 		type = 2,
 		param = {
 			"scene equip",
@@ -115,9 +183,9 @@ pg.activity_banner = {
 		time = {
 			{
 				{
-					2023,
-					10,
-					12
+					2024,
+					5,
+					9
 				},
 				{
 					0,
@@ -127,9 +195,9 @@ pg.activity_banner = {
 			},
 			{
 				{
-					2023,
-					10,
-					26
+					2024,
+					5,
+					21
 				},
 				{
 					23,
@@ -140,128 +208,28 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "5019",
-		id = 5,
-		pic = "temp8",
-		type = 3,
-		time = {
-			{
-				{
-					2023,
-					9,
-					28
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2023,
-					10,
-					11
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		param = "5020",
+		param = "5311",
 		time = "stop",
 		type = 3,
-		id = 6,
-		pic = "temp5"
-	},
-	{
-		id = 7,
-		pic = "temp6",
-		time = "stop",
-		type = 2,
-		param = {
-			"crusing"
-		}
-	},
-	{
 		id = 8,
-		pic = "temp7",
-		type = 2,
-		param = {
-			"scene charge",
-			{
-				wrap = 2
-			}
-		},
-		time = {
-			{
-				{
-					2023,
-					9,
-					28
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2023,
-					10,
-					11
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
+		pic = "temp4"
 	},
 	{
-		param = "4950",
-		time = "stop",
-		type = 3,
 		id = 9,
-		pic = "temp9"
+		pic = "temp5",
+		time = "stop",
+		type = 2,
+		param = {
+			"scene level",
+			{}
+		}
 	},
 	[90] = {
 		param = "",
-		id = 90,
-		pic = "temp99",
+		time = "stop",
 		type = 9,
-		time = {
-			{
-				{
-					2023,
-					9,
-					28
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2023,
-					10,
-					11
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
+		id = 90,
+		pic = "temp99"
 	},
 	[91] = {
 		param = "",
@@ -279,35 +247,10 @@ pg.activity_banner = {
 	},
 	[99] = {
 		param = "",
-		id = 99,
-		pic = "limit_skin",
+		time = "stop",
 		type = 12,
-		time = {
-			{
-				{
-					2023,
-					9,
-					21
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2023,
-					10,
-					4
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
+		id = 99,
+		pic = "limit_skin"
 	},
 	[100] = {
 		param = "水餃子|東煌で有名な食べ物<color=#92fc63>（60分間寮舎経験値効率が5%アップ）</color>",
@@ -328,21 +271,21 @@ pg.activity_banner = {
 		time = "always",
 		type = 13,
 		id = 201,
-		pic = "autumn"
+		pic = "spring"
 	},
 	get_id_list_by_type = {
 		[3] = {
 			1,
 			2,
-			5,
-			6,
-			9
-		},
-		[2] = {
 			3,
 			4,
-			7,
+			5,
 			8
+		},
+		[2] = {
+			6,
+			7,
+			9
 		},
 		[9] = {
 			90,

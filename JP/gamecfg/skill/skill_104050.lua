@@ -1,4 +1,23 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 68301
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -136,24 +155,5 @@ return {
 	id = 104050,
 	picture = "0",
 	castCV = "skill",
-	desc = "FutureBase",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 68301
-			}
-		}
-	}
+	desc = "FutureBase"
 }

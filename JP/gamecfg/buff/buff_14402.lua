@@ -1,4 +1,18 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 14403,
+				nationality = 6,
+				target = {
+					"TargetAllHelp",
+					"TargetNationality"
+				}
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,19 +33,5 @@ return {
 	stack = 1,
 	id = 14402,
 	icon = 14402,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 14403,
-				nationality = 6,
-				target = {
-					"TargetAllHelp",
-					"TargetNationality"
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

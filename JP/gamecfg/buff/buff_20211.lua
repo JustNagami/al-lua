@@ -1,17 +1,4 @@
-return {
-	{
-		desc = "主炮每进行12次攻击，触发全弹发射-彭萨科拉级I"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行12次攻击，触发全弹发射-彭萨科拉级I",
-	stack = 1,
-	id = 20211,
-	icon = 20200,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -37,5 +24,18 @@ return {
 				countType = 20210
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行12次攻击，触发全弹发射-彭萨科拉级I"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行12次攻击，触发全弹发射-彭萨科拉级I",
+	stack = 1,
+	id = 20211,
+	icon = 20200,
+	last_effect = ""
 }

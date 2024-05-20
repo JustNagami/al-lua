@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.achievement_data_template = {
 	{
 		action = 1,

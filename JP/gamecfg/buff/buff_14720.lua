@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 14720,
-	icon = 14720,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -44,5 +23,26 @@ return {
 				skill_id = 14720
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 14720,
+	icon = 14720,
+	last_effect = ""
 }

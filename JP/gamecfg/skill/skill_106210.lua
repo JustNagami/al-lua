@@ -1,4 +1,34 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 65281,
+				emitter = "BattleBulletEmitter"
+			}
+		},
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandomByWeight",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 160941,
+				emitter = "BattleBulletEmitter"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -246,35 +276,5 @@ return {
 	id = 106210,
 	picture = "0",
 	castCV = "skill",
-	desc = "",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 65281,
-				emitter = "BattleBulletEmitter"
-			}
-		},
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandomByWeight",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 160941,
-				emitter = "BattleBulletEmitter"
-			}
-		}
-	}
+	desc = ""
 }

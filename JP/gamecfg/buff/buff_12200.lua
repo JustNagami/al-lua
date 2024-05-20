@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "尽职守护",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 12200,
-	icon = 12200,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -48,5 +27,26 @@ return {
 				target = "TargetPlayerByType"
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "尽职守护",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 12200,
+	icon = 12200,
+	last_effect = ""
 }

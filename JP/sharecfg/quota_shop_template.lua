@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.quota_shop_template = {
 	{
 		id = 1,
@@ -12,7 +12,9 @@ pg.quota_shop_template = {
 			10903,
 			10904,
 			10905,
-			10906
+			10906,
+			10907,
+			10908
 		}
 	},
 	all = {

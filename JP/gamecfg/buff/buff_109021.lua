@@ -1,4 +1,38 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				tag = "RyzaBoost"
+			}
+		},
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBulletCreate"
+			},
+			arg_list = {
+				attr = "cri",
+				number = 0.05,
+				index = {
+					109
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "DMG_TAG_EHC_ITEMHIT",
+				number = 0.01
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -368,39 +402,5 @@ return {
 	stack = 1,
 	id = 109021,
 	icon = 109020,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddTag",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				tag = "RyzaBoost"
-			}
-		},
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBulletCreate"
-			},
-			arg_list = {
-				attr = "cri",
-				number = 0.05,
-				index = {
-					109
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "DMG_TAG_EHC_ITEMHIT",
-				number = 0.01
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,4 +1,53 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddReloadRequirement",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				type = "airAssist",
+				number = -0.05
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAllInStrikeSteady"
+			},
+			arg_list = {
+				skill_id = 11612
+			}
+		},
+		{
+			type = "BattleBuffCount",
+			trigger = {
+				"onAllInStrikeSteady"
+			},
+			arg_list = {
+				countTarget = 2,
+				countType = 11611
+			}
+		},
+		{
+			type = "BattleBuffCancelBuff",
+			trigger = {
+				"onBattleBuffCount"
+			},
+			arg_list = {
+				count = 1,
+				countType = 11611
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -447,54 +496,5 @@ return {
 	stack = 1,
 	id = 11612,
 	icon = 11610,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddReloadRequirement",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				type = "airAssist",
-				number = -0.05
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAllInStrikeSteady"
-			},
-			arg_list = {
-				skill_id = 11612
-			}
-		},
-		{
-			type = "BattleBuffCount",
-			trigger = {
-				"onAllInStrikeSteady"
-			},
-			arg_list = {
-				countTarget = 2,
-				countType = 11611
-			}
-		},
-		{
-			type = "BattleBuffCancelBuff",
-			trigger = {
-				"onBattleBuffCount"
-			},
-			arg_list = {
-				count = 1,
-				countType = 11611
-			}
-		}
-	}
+	last_effect = ""
 }

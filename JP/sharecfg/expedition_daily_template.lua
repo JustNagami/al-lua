@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.expedition_daily_template = {
 	[101] = {
 		tips = "まだ開放されていないステージです",
@@ -322,9 +322,9 @@ pg.expedition_daily_template = {
 		limit_period = {
 			{
 				{
-					2023,
-					9,
-					7
+					2024,
+					3,
+					21
 				},
 				{
 					0,
@@ -334,9 +334,9 @@ pg.expedition_daily_template = {
 			},
 			{
 				{
-					2023,
-					9,
-					13
+					2024,
+					3,
+					27
 				},
 				{
 					23,

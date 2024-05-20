@@ -1,4 +1,40 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 13321,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffCount",
+			trigger = {
+				"onFire"
+			},
+			arg_list = {
+				countTarget = 15,
+				countType = 13320,
+				index = {
+					1
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBattleBuffCount"
+			},
+			arg_list = {
+				target = "TargetSelf",
+				skill_id = 13320,
+				countType = 13320
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -389,41 +425,5 @@ return {
 	stack = 1,
 	id = 13320,
 	icon = 13320,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 13321,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffCount",
-			trigger = {
-				"onFire"
-			},
-			arg_list = {
-				countTarget = 15,
-				countType = 13320,
-				index = {
-					1
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBattleBuffCount"
-			},
-			arg_list = {
-				target = "TargetSelf",
-				skill_id = 13320,
-				countType = 13320
-			}
-		}
-	}
+	last_effect = ""
 }

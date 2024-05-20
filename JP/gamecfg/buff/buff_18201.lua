@@ -1,4 +1,46 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "dodgeRate",
+				number = 1500
+			}
+		},
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "attackRating",
+				number = 2000
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "injureRatioByBulletTorpedo",
+				number = -0.05
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -377,47 +419,5 @@ return {
 	stack = 1,
 	id = 18201,
 	icon = 18200,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "dodgeRate",
-				number = 1500
-			}
-		},
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "attackRating",
-				number = 2000
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "injureRatioByBulletTorpedo",
-				number = -0.05
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "伦敦改",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 12420,
-	icon = 12420,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -43,5 +22,26 @@ return {
 				skill_id = 12421
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "伦敦改",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 12420,
+	icon = 12420,
+	last_effect = ""
 }

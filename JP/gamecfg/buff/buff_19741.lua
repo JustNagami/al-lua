@@ -1,4 +1,28 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "cannonPower",
+				number = 500
+			}
+		},
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "dodgeRate",
+				number = 500
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -267,29 +291,5 @@ return {
 	stack = 1,
 	id = 19741,
 	icon = 19740,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "cannonPower",
-				number = 500
-			}
-		},
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "dodgeRate",
-				number = 500
-			}
-		}
-	}
+	last_effect = ""
 }

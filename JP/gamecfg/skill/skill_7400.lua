@@ -1,4 +1,4 @@
-return {
+﻿return {
 	uiEffect = "",
 	name = "烟雾弹·兵装训练",
 	cd = 0,
@@ -41,7 +41,8 @@ return {
 					10,
 					12,
 					13,
-					21
+					21,
+					24
 				}
 			}
 		}

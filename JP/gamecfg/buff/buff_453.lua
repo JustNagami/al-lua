@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "",
 	name = "YMSRE",
 	time = 0,

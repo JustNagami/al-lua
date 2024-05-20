@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.enemy_data_by_type = {
 	{
 		type_name = "駆逐",
@@ -76,6 +76,30 @@ pg.enemy_data_by_type = {
 		type_name = "運送",
 		type = 19
 	},
+	{
+		type_name = "ミ駆",
+		type = 20
+	},
+	{
+		type_name = "ミ駆",
+		type = 21
+	},
+	{
+		type_name = "風帆",
+		type = 22
+	},
+	{
+		type_name = "風帆",
+		type = 23
+	},
+	{
+		type_name = "風帆",
+		type = 24
+	},
+	{
+		type_name = "不明",
+		type = 25
+	},
 	all = {
 		1,
 		2,
@@ -95,6 +119,12 @@ pg.enemy_data_by_type = {
 		16,
 		17,
 		18,
-		19
+		19,
+		20,
+		21,
+		22,
+		23,
+		24,
+		25
 	}
 }

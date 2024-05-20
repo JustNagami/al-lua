@@ -1,4 +1,15 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onAllInStrikeSteady"
+			},
+			arg_list = {
+				buff_id = 800021
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,16 +30,5 @@ return {
 	stack = 1,
 	id = 800020,
 	icon = 800020,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onAllInStrikeSteady"
-			},
-			arg_list = {
-				buff_id = 800021
-			}
-		}
-	}
+	last_effect = ""
 }

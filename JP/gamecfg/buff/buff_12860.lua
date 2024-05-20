@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "龙凤1",
-	init_effect = "",
-	time = 0,
-	color = "yellow",
-	picture = "",
-	desc = "",
-	stack = 2,
-	id = 12860,
-	icon = 12860,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -45,5 +24,26 @@ return {
 				maxTargetNumber = 2
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "龙凤1",
+	init_effect = "",
+	time = 0,
+	color = "yellow",
+	picture = "",
+	desc = "",
+	stack = 2,
+	id = 12860,
+	icon = 12860,
+	last_effect = ""
 }

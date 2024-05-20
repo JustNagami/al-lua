@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.tradingport_template = {
 	{
 		store = 900,

@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.npc_squad_template = {
 	{
 		id = 1,

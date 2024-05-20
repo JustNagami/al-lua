@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "MeltyWorld",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "占坑",
-	stack = 1,
-	id = 104060,
-	icon = 104060,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -38,5 +18,25 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "MeltyWorld",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "占坑",
+	stack = 1,
+	id = 104060,
+	icon = 104060,
+	last_effect = ""
 }

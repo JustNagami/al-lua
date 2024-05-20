@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAllInStrikeSteady"
+			},
+			arg_list = {
+				rant = 4000,
+				target = "TargetSelf",
+				skill_id = 13360
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -159,18 +172,5 @@ return {
 	stack = 1,
 	id = 13360,
 	icon = 13360,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAllInStrikeSteady"
-			},
-			arg_list = {
-				rant = 4000,
-				target = "TargetSelf",
-				skill_id = 13360
-			}
-		}
-	}
+	last_effect = ""
 }

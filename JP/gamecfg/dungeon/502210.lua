@@ -1,4 +1,4 @@
-return {
+﻿return {
 	map_id = 10001,
 	id = 501210,
 	stages = {
@@ -229,6 +229,15 @@ return {
 								8007
 							}
 						},
+						corrdinate = {
+							0,
+							0,
+							55
+						},
+						buffList = {
+							8001,
+							8007
+						},
 						{
 							monsterTemplateID = 5006,
 							reinforceDelay = 5,
@@ -247,16 +256,7 @@ return {
 						monsterTemplateID = 5012,
 						reinforceDelay = 5,
 						delay = 0,
-						moveCast = true,
-						corrdinate = {
-							0,
-							0,
-							55
-						},
-						buffList = {
-							8001,
-							8007
-						}
+						moveCast = true
 					},
 					reinforcement = {
 						{

@@ -1,3 +1,3032 @@
+_G.pg.base.spweapon_data_statistics[1010100] = {
+	tech = 1,
+	name = "饅頭ダブルソード",
+	value_2_random = 3,
+	type = 1,
+	value_1_random = 5,
+	value_1 = 5,
+	effect_id_display = 901020,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1010101,
+	upgrade_id = 1,
+	value_2 = 3,
+	icon = "1010100",
+	effect_id = 0,
+	attribute_2 = "dodge",
+	id = 1010100,
+	rarity = 2,
+	unique = 0,
+	important = 1,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1010101] = {
+	prev = 1010100,
+	base = 1010100,
+	next = 1010102,
+	upgrade_id = 2,
+	id = 1010101,
+	value_1 = 6,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1010102] = {
+	prev = 1010101,
+	base = 1010100,
+	next = 1010103,
+	upgrade_id = 3,
+	id = 1010102,
+	value_1 = 7,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1010103] = {
+	prev = 1010102,
+	base = 1010100,
+	next = 1010104,
+	upgrade_id = 4,
+	id = 1010103,
+	value_2 = 4,
+	value_1 = 7,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1010104] = {
+	prev = 1010103,
+	base = 1010100,
+	next = 1010105,
+	upgrade_id = 5,
+	id = 1010104,
+	value_2 = 4,
+	value_1 = 8,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1010105] = {
+	prev = 1010104,
+	base = 1010100,
+	next = 1010106,
+	upgrade_id = 6,
+	id = 1010105,
+	value_2 = 5,
+	value_1 = 8,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1010106] = {
+	prev = 1010105,
+	base = 1010100,
+	next = 1010107,
+	upgrade_id = 7,
+	id = 1010106,
+	value_2 = 5,
+	value_1 = 9,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1010107] = {
+	prev = 1010106,
+	base = 1010100,
+	next = 1010108,
+	upgrade_id = 8,
+	id = 1010107,
+	value_2 = 6,
+	value_1 = 9,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1010108] = {
+	prev = 1010107,
+	base = 1010100,
+	next = 1010109,
+	upgrade_id = 9,
+	id = 1010108,
+	value_2 = 6,
+	value_1 = 10,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1010109] = {
+	prev = 1010108,
+	base = 1010100,
+	next = 1010110,
+	upgrade_id = 10,
+	id = 1010109,
+	value_2 = 6,
+	value_1 = 11,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1010110] = {
+	prev = 1010109,
+	base = 1010100,
+	next = 1010120,
+	upgrade_id = 11,
+	id = 1010110,
+	value_2 = 7,
+	value_1 = 12,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1010120] = {
+	tech = 2,
+	name = "饅頭ダブルソード",
+	value_2_random = 3,
+	type = 1,
+	value_1_random = 5,
+	value_1 = 14,
+	effect_id_display = 901020,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1010121,
+	upgrade_id = 21,
+	value_2 = 7,
+	icon = "1010100",
+	effect_id = 0,
+	attribute_2 = "dodge",
+	id = 1010120,
+	rarity = 3,
+	unique = 0,
+	important = 1,
+	prev = 1010110,
+	attribute_1 = "cannon",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1010121] = {
+	prev = 1010120,
+	base = 1010120,
+	next = 1010122,
+	upgrade_id = 22,
+	id = 1010121,
+	value_2 = 8,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1010122] = {
+	prev = 1010121,
+	base = 1010120,
+	next = 1010123,
+	upgrade_id = 23,
+	id = 1010122,
+	value_2 = 9,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1010123] = {
+	prev = 1010122,
+	base = 1010120,
+	next = 1010124,
+	upgrade_id = 24,
+	id = 1010123,
+	value_2 = 9,
+	value_1 = 15,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1010124] = {
+	prev = 1010123,
+	base = 1010120,
+	next = 1010125,
+	upgrade_id = 25,
+	id = 1010124,
+	value_2 = 10,
+	value_1 = 15,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1010125] = {
+	prev = 1010124,
+	base = 1010120,
+	next = 1010126,
+	upgrade_id = 26,
+	id = 1010125,
+	value_2 = 10,
+	value_1 = 16,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1010126] = {
+	prev = 1010125,
+	base = 1010120,
+	next = 1010127,
+	upgrade_id = 27,
+	id = 1010126,
+	value_2 = 11,
+	value_1 = 16,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1010127] = {
+	prev = 1010126,
+	base = 1010120,
+	next = 1010128,
+	upgrade_id = 28,
+	id = 1010127,
+	value_2 = 11,
+	value_1 = 17,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1010128] = {
+	prev = 1010127,
+	base = 1010120,
+	next = 1010129,
+	upgrade_id = 29,
+	id = 1010128,
+	value_2 = 11,
+	value_1 = 18,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1010129] = {
+	prev = 1010128,
+	base = 1010120,
+	next = 1010130,
+	upgrade_id = 30,
+	id = 1010129,
+	value_2 = 12,
+	value_1 = 19,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1010130] = {
+	prev = 1010129,
+	value_2 = 12,
+	value_1 = 20,
+	base = 1010120,
+	effect_id_display = 901020,
+	next = 0,
+	upgrade_id = 31,
+	id = 1010130,
+	effect_id = 901020,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1010200] = {
+	tech = 1,
+	name = "饅頭ハンマー",
+	value_2_random = 3,
+	type = 1,
+	value_1_random = 5,
+	value_1 = 8,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1010201,
+	upgrade_id = 1,
+	value_2 = 1,
+	icon = "1010200",
+	effect_id = 0,
+	attribute_2 = "hit",
+	id = 1010200,
+	rarity = 2,
+	unique = 0,
+	important = 1,
+	prev = 0,
+	attribute_1 = "torpedo",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1010201] = {
+	prev = 1010200,
+	base = 1010200,
+	next = 1010202,
+	upgrade_id = 2,
+	id = 1010201,
+	value_1 = 9,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1010202] = {
+	prev = 1010201,
+	base = 1010200,
+	next = 1010203,
+	upgrade_id = 3,
+	id = 1010202,
+	value_1 = 10,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1010203] = {
+	prev = 1010202,
+	base = 1010200,
+	next = 1010204,
+	upgrade_id = 4,
+	id = 1010203,
+	value_1 = 11,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1010204] = {
+	prev = 1010203,
+	base = 1010200,
+	next = 1010205,
+	upgrade_id = 5,
+	id = 1010204,
+	value_2 = 2,
+	value_1 = 12,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1010205] = {
+	prev = 1010204,
+	base = 1010200,
+	next = 1010206,
+	upgrade_id = 6,
+	id = 1010205,
+	value_2 = 2,
+	value_1 = 13,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1010206] = {
+	prev = 1010205,
+	base = 1010200,
+	next = 1010207,
+	upgrade_id = 7,
+	id = 1010206,
+	value_2 = 2,
+	value_1 = 14,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1010207] = {
+	prev = 1010206,
+	base = 1010200,
+	next = 1010208,
+	upgrade_id = 8,
+	id = 1010207,
+	value_2 = 3,
+	value_1 = 15,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1010208] = {
+	prev = 1010207,
+	base = 1010200,
+	next = 1010209,
+	upgrade_id = 9,
+	id = 1010208,
+	value_2 = 3,
+	value_1 = 16,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1010209] = {
+	prev = 1010208,
+	base = 1010200,
+	next = 1010210,
+	upgrade_id = 10,
+	id = 1010209,
+	value_2 = 3,
+	value_1 = 17,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1010210] = {
+	prev = 1010209,
+	base = 1010200,
+	next = 1010220,
+	upgrade_id = 11,
+	id = 1010210,
+	value_2 = 4,
+	value_1 = 18,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1010220] = {
+	tech = 2,
+	name = "饅頭ハンマー",
+	value_2_random = 3,
+	type = 1,
+	value_1_random = 5,
+	value_1 = 20,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1010221,
+	upgrade_id = 21,
+	value_2 = 5,
+	icon = "1010200",
+	effect_id = 0,
+	attribute_2 = "hit",
+	id = 1010220,
+	rarity = 3,
+	unique = 0,
+	important = 1,
+	prev = 1010210,
+	attribute_1 = "torpedo",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1010221] = {
+	prev = 1010220,
+	base = 1010220,
+	next = 1010222,
+	upgrade_id = 22,
+	id = 1010221,
+	value_1 = 21,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1010222] = {
+	prev = 1010221,
+	base = 1010220,
+	next = 1010223,
+	upgrade_id = 23,
+	id = 1010222,
+	value_1 = 22,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1010223] = {
+	prev = 1010222,
+	base = 1010220,
+	next = 1010224,
+	upgrade_id = 24,
+	id = 1010223,
+	value_1 = 23,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1010224] = {
+	prev = 1010223,
+	base = 1010220,
+	next = 1010225,
+	upgrade_id = 25,
+	id = 1010224,
+	value_1 = 24,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1010225] = {
+	prev = 1010224,
+	base = 1010220,
+	next = 1010226,
+	upgrade_id = 26,
+	id = 1010225,
+	value_2 = 6,
+	value_1 = 25,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1010226] = {
+	prev = 1010225,
+	base = 1010220,
+	next = 1010227,
+	upgrade_id = 27,
+	id = 1010226,
+	value_2 = 6,
+	value_1 = 26,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1010227] = {
+	prev = 1010226,
+	base = 1010220,
+	next = 1010228,
+	upgrade_id = 28,
+	id = 1010227,
+	value_2 = 6,
+	value_1 = 27,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1010228] = {
+	prev = 1010227,
+	base = 1010220,
+	next = 1010229,
+	upgrade_id = 29,
+	id = 1010228,
+	value_2 = 6,
+	value_1 = 28,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1010229] = {
+	prev = 1010228,
+	base = 1010220,
+	next = 1010230,
+	upgrade_id = 30,
+	id = 1010229,
+	value_2 = 6,
+	value_1 = 29,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1010230] = {
+	prev = 1010229,
+	value_2 = 7,
+	value_1 = 30,
+	base = 1010220,
+	effect_id_display = 901010,
+	next = 0,
+	upgrade_id = 31,
+	id = 1010230,
+	effect_id = 901010,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1020100] = {
+	tech = 1,
+	name = "饅頭ソード",
+	value_2_random = 3,
+	type = 2,
+	value_1_random = 5,
+	value_1 = 6,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1020101,
+	upgrade_id = 1,
+	value_2 = 1,
+	icon = "1020100",
+	effect_id = 0,
+	attribute_2 = "reload",
+	id = 1020100,
+	rarity = 2,
+	unique = 0,
+	important = 1,
+	prev = 0,
+	attribute_1 = "hit",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1020101] = {
+	prev = 1020100,
+	base = 1020100,
+	next = 1020102,
+	upgrade_id = 2,
+	id = 1020101,
+	value_1 = 7,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1020102] = {
+	prev = 1020101,
+	base = 1020100,
+	next = 1020103,
+	upgrade_id = 3,
+	id = 1020102,
+	value_1 = 8,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1020103] = {
+	prev = 1020102,
+	base = 1020100,
+	next = 1020104,
+	upgrade_id = 4,
+	id = 1020103,
+	value_2 = 2,
+	value_1 = 8,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1020104] = {
+	prev = 1020103,
+	base = 1020100,
+	next = 1020105,
+	upgrade_id = 5,
+	id = 1020104,
+	value_2 = 2,
+	value_1 = 9,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1020105] = {
+	prev = 1020104,
+	base = 1020100,
+	next = 1020106,
+	upgrade_id = 6,
+	id = 1020105,
+	value_2 = 3,
+	value_1 = 9,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1020106] = {
+	prev = 1020105,
+	base = 1020100,
+	next = 1020107,
+	upgrade_id = 7,
+	id = 1020106,
+	value_2 = 3,
+	value_1 = 10,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1020107] = {
+	prev = 1020106,
+	base = 1020100,
+	next = 1020108,
+	upgrade_id = 8,
+	id = 1020107,
+	value_2 = 4,
+	value_1 = 10,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1020108] = {
+	prev = 1020107,
+	base = 1020100,
+	next = 1020109,
+	upgrade_id = 9,
+	id = 1020108,
+	value_2 = 4,
+	value_1 = 11,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1020109] = {
+	prev = 1020108,
+	base = 1020100,
+	next = 1020110,
+	upgrade_id = 10,
+	id = 1020109,
+	value_2 = 5,
+	value_1 = 11,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1020110] = {
+	prev = 1020109,
+	base = 1020100,
+	next = 1020120,
+	upgrade_id = 11,
+	id = 1020110,
+	value_2 = 5,
+	value_1 = 12,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1020120] = {
+	tech = 2,
+	name = "饅頭ソード",
+	value_2_random = 3,
+	type = 2,
+	value_1_random = 5,
+	value_1 = 14,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1020121,
+	upgrade_id = 21,
+	value_2 = 5,
+	icon = "1020100",
+	effect_id = 0,
+	attribute_2 = "reload",
+	id = 1020120,
+	rarity = 3,
+	unique = 0,
+	important = 1,
+	prev = 1020110,
+	attribute_1 = "hit",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1020121] = {
+	prev = 1020120,
+	base = 1020120,
+	next = 1020122,
+	upgrade_id = 22,
+	id = 1020121,
+	value_1 = 15,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1020122] = {
+	prev = 1020121,
+	base = 1020120,
+	next = 1020123,
+	upgrade_id = 23,
+	id = 1020122,
+	value_1 = 16,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1020123] = {
+	prev = 1020122,
+	base = 1020120,
+	next = 1020124,
+	upgrade_id = 24,
+	id = 1020123,
+	value_2 = 6,
+	value_1 = 16,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1020124] = {
+	prev = 1020123,
+	base = 1020120,
+	next = 1020125,
+	upgrade_id = 25,
+	id = 1020124,
+	value_2 = 6,
+	value_1 = 17,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1020125] = {
+	prev = 1020124,
+	base = 1020120,
+	next = 1020126,
+	upgrade_id = 26,
+	id = 1020125,
+	value_2 = 7,
+	value_1 = 17,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1020126] = {
+	prev = 1020125,
+	base = 1020120,
+	next = 1020127,
+	upgrade_id = 27,
+	id = 1020126,
+	value_2 = 7,
+	value_1 = 18,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1020127] = {
+	prev = 1020126,
+	base = 1020120,
+	next = 1020128,
+	upgrade_id = 28,
+	id = 1020127,
+	value_2 = 8,
+	value_1 = 18,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1020128] = {
+	prev = 1020127,
+	base = 1020120,
+	next = 1020129,
+	upgrade_id = 29,
+	id = 1020128,
+	value_2 = 8,
+	value_1 = 19,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1020129] = {
+	prev = 1020128,
+	base = 1020120,
+	next = 1020130,
+	upgrade_id = 30,
+	id = 1020129,
+	value_2 = 9,
+	value_1 = 19,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1020130] = {
+	prev = 1020129,
+	value_2 = 9,
+	value_1 = 20,
+	base = 1020120,
+	effect_id_display = 901010,
+	next = 0,
+	upgrade_id = 31,
+	id = 1020130,
+	effect_id = 901010,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1030100] = {
+	tech = 1,
+	name = "饅頭クロスボウ",
+	value_2_random = 3,
+	type = 3,
+	value_1_random = 5,
+	value_1 = 3,
+	effect_id_display = 902010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1030101,
+	upgrade_id = 1,
+	value_2 = 4,
+	icon = "1030100",
+	effect_id = 0,
+	attribute_2 = "antiaircraft",
+	id = 1030100,
+	rarity = 2,
+	unique = 0,
+	important = 1,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1030101] = {
+	prev = 1030100,
+	base = 1030100,
+	next = 1030102,
+	upgrade_id = 2,
+	id = 1030101,
+	value_1 = 4,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1030102] = {
+	prev = 1030101,
+	base = 1030100,
+	next = 1030103,
+	upgrade_id = 3,
+	id = 1030102,
+	value_2 = 5,
+	value_1 = 5,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1030103] = {
+	prev = 1030102,
+	base = 1030100,
+	next = 1030104,
+	upgrade_id = 4,
+	id = 1030103,
+	value_2 = 5,
+	value_1 = 6,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1030104] = {
+	prev = 1030103,
+	base = 1030100,
+	next = 1030105,
+	upgrade_id = 5,
+	id = 1030104,
+	value_2 = 6,
+	value_1 = 6,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1030105] = {
+	prev = 1030104,
+	base = 1030100,
+	next = 1030106,
+	upgrade_id = 6,
+	id = 1030105,
+	value_2 = 7,
+	value_1 = 7,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1030106] = {
+	prev = 1030105,
+	base = 1030100,
+	next = 1030107,
+	upgrade_id = 7,
+	id = 1030106,
+	value_2 = 8,
+	value_1 = 7,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1030107] = {
+	prev = 1030106,
+	base = 1030100,
+	next = 1030108,
+	upgrade_id = 8,
+	id = 1030107,
+	value_2 = 9,
+	value_1 = 8,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1030108] = {
+	prev = 1030107,
+	base = 1030100,
+	next = 1030109,
+	upgrade_id = 9,
+	id = 1030108,
+	value_2 = 10,
+	value_1 = 8,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1030109] = {
+	prev = 1030108,
+	base = 1030100,
+	next = 1030110,
+	upgrade_id = 10,
+	id = 1030109,
+	value_2 = 11,
+	value_1 = 8,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1030110] = {
+	prev = 1030109,
+	base = 1030100,
+	next = 1030120,
+	upgrade_id = 11,
+	id = 1030110,
+	value_2 = 12,
+	value_1 = 9,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1030120] = {
+	tech = 2,
+	name = "饅頭クロスボウ",
+	value_2_random = 3,
+	type = 3,
+	value_1_random = 5,
+	value_1 = 10,
+	effect_id_display = 902010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1030121,
+	upgrade_id = 21,
+	value_2 = 14,
+	icon = "1030100",
+	effect_id = 0,
+	attribute_2 = "antiaircraft",
+	id = 1030120,
+	rarity = 3,
+	unique = 0,
+	important = 1,
+	prev = 1030110,
+	attribute_1 = "cannon",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1030121] = {
+	prev = 1030120,
+	base = 1030120,
+	next = 1030122,
+	upgrade_id = 22,
+	id = 1030121,
+	value_2 = 15,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1030122] = {
+	prev = 1030121,
+	base = 1030120,
+	next = 1030123,
+	upgrade_id = 23,
+	id = 1030122,
+	value_2 = 16,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1030123] = {
+	prev = 1030122,
+	base = 1030120,
+	next = 1030124,
+	upgrade_id = 24,
+	id = 1030123,
+	value_2 = 17,
+	value_1 = 11,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1030124] = {
+	prev = 1030123,
+	base = 1030120,
+	next = 1030125,
+	upgrade_id = 25,
+	id = 1030124,
+	value_2 = 18,
+	value_1 = 11,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1030125] = {
+	prev = 1030124,
+	base = 1030120,
+	next = 1030126,
+	upgrade_id = 26,
+	id = 1030125,
+	value_2 = 18,
+	value_1 = 12,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1030126] = {
+	prev = 1030125,
+	base = 1030120,
+	next = 1030127,
+	upgrade_id = 27,
+	id = 1030126,
+	value_2 = 19,
+	value_1 = 12,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1030127] = {
+	prev = 1030126,
+	base = 1030120,
+	next = 1030128,
+	upgrade_id = 28,
+	id = 1030127,
+	value_2 = 19,
+	value_1 = 13,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1030128] = {
+	prev = 1030127,
+	base = 1030120,
+	next = 1030129,
+	upgrade_id = 29,
+	id = 1030128,
+	value_2 = 20,
+	value_1 = 13,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1030129] = {
+	prev = 1030128,
+	base = 1030120,
+	next = 1030130,
+	upgrade_id = 30,
+	id = 1030129,
+	value_2 = 20,
+	value_1 = 14,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1030130] = {
+	prev = 1030129,
+	value_2 = 21,
+	value_1 = 15,
+	base = 1030120,
+	effect_id_display = 902010,
+	next = 0,
+	upgrade_id = 31,
+	id = 1030130,
+	effect_id = 902010,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1040100] = {
+	tech = 1,
+	name = "饅頭バスターソード",
+	value_2_random = 3,
+	type = 4,
+	value_1_random = 5,
+	value_1 = 7,
+	effect_id_display = 901020,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1040101,
+	upgrade_id = 1,
+	value_2 = 4,
+	icon = "1040100",
+	effect_id = 0,
+	attribute_2 = "torpedo",
+	id = 1040100,
+	rarity = 2,
+	unique = 0,
+	important = 1,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1040101] = {
+	prev = 1040100,
+	base = 1040100,
+	next = 1040102,
+	upgrade_id = 2,
+	id = 1040101,
+	value_2 = 5,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1040102] = {
+	prev = 1040101,
+	base = 1040100,
+	next = 1040103,
+	upgrade_id = 3,
+	id = 1040102,
+	value_2 = 5,
+	value_1 = 8,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1040103] = {
+	prev = 1040102,
+	base = 1040100,
+	next = 1040104,
+	upgrade_id = 4,
+	id = 1040103,
+	value_2 = 6,
+	value_1 = 8,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1040104] = {
+	prev = 1040103,
+	base = 1040100,
+	next = 1040105,
+	upgrade_id = 5,
+	id = 1040104,
+	value_2 = 6,
+	value_1 = 9,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1040105] = {
+	prev = 1040104,
+	base = 1040100,
+	next = 1040106,
+	upgrade_id = 6,
+	id = 1040105,
+	value_2 = 7,
+	value_1 = 9,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1040106] = {
+	prev = 1040105,
+	base = 1040100,
+	next = 1040107,
+	upgrade_id = 7,
+	id = 1040106,
+	value_2 = 7,
+	value_1 = 10,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1040107] = {
+	prev = 1040106,
+	base = 1040100,
+	next = 1040108,
+	upgrade_id = 8,
+	id = 1040107,
+	value_2 = 8,
+	value_1 = 10,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1040108] = {
+	prev = 1040107,
+	base = 1040100,
+	next = 1040109,
+	upgrade_id = 9,
+	id = 1040108,
+	value_2 = 8,
+	value_1 = 11,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1040109] = {
+	prev = 1040108,
+	base = 1040100,
+	next = 1040110,
+	upgrade_id = 10,
+	id = 1040109,
+	value_2 = 9,
+	value_1 = 11,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1040110] = {
+	prev = 1040109,
+	base = 1040100,
+	next = 1040120,
+	upgrade_id = 11,
+	id = 1040110,
+	value_2 = 9,
+	value_1 = 12,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1040120] = {
+	tech = 2,
+	name = "饅頭バスターソード",
+	value_2_random = 3,
+	type = 4,
+	value_1_random = 5,
+	value_1 = 13,
+	effect_id_display = 901020,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1040121,
+	upgrade_id = 21,
+	value_2 = 10,
+	icon = "1040100",
+	effect_id = 0,
+	attribute_2 = "torpedo",
+	id = 1040120,
+	rarity = 3,
+	unique = 0,
+	important = 1,
+	prev = 1040110,
+	attribute_1 = "cannon",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1040121] = {
+	prev = 1040120,
+	base = 1040120,
+	next = 1040122,
+	upgrade_id = 22,
+	id = 1040121,
+	value_2 = 11,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1040122] = {
+	prev = 1040121,
+	base = 1040120,
+	next = 1040123,
+	upgrade_id = 23,
+	id = 1040122,
+	value_2 = 11,
+	value_1 = 14,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1040123] = {
+	prev = 1040122,
+	base = 1040120,
+	next = 1040124,
+	upgrade_id = 24,
+	id = 1040123,
+	value_2 = 12,
+	value_1 = 14,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1040124] = {
+	prev = 1040123,
+	base = 1040120,
+	next = 1040125,
+	upgrade_id = 25,
+	id = 1040124,
+	value_2 = 12,
+	value_1 = 15,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1040125] = {
+	prev = 1040124,
+	base = 1040120,
+	next = 1040126,
+	upgrade_id = 26,
+	id = 1040125,
+	value_2 = 13,
+	value_1 = 15,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1040126] = {
+	prev = 1040125,
+	base = 1040120,
+	next = 1040127,
+	upgrade_id = 27,
+	id = 1040126,
+	value_2 = 13,
+	value_1 = 16,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1040127] = {
+	prev = 1040126,
+	base = 1040120,
+	next = 1040128,
+	upgrade_id = 28,
+	id = 1040127,
+	value_2 = 14,
+	value_1 = 17,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1040128] = {
+	prev = 1040127,
+	base = 1040120,
+	next = 1040129,
+	upgrade_id = 29,
+	id = 1040128,
+	value_2 = 14,
+	value_1 = 18,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1040129] = {
+	prev = 1040128,
+	base = 1040120,
+	next = 1040130,
+	upgrade_id = 30,
+	id = 1040129,
+	value_2 = 14,
+	value_1 = 19,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1040130] = {
+	prev = 1040129,
+	value_2 = 15,
+	value_1 = 20,
+	base = 1040120,
+	effect_id_display = 901020,
+	next = 0,
+	upgrade_id = 31,
+	id = 1040130,
+	effect_id = 901020,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1050100] = {
+	tech = 1,
+	name = "饅頭ランス",
+	value_2_random = 3,
+	type = 5,
+	value_1_random = 5,
+	value_1 = 6,
+	effect_id_display = 902020,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1050101,
+	upgrade_id = 1,
+	value_2 = 5,
+	icon = "1050100",
+	effect_id = 0,
+	attribute_2 = "antiaircraft",
+	id = 1050100,
+	rarity = 2,
+	unique = 0,
+	important = 1,
+	prev = 0,
+	attribute_1 = "hit",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1050101] = {
+	prev = 1050100,
+	base = 1050100,
+	next = 1050102,
+	upgrade_id = 2,
+	id = 1050101,
+	value_2 = 6,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1050102] = {
+	prev = 1050101,
+	base = 1050100,
+	next = 1050103,
+	upgrade_id = 3,
+	id = 1050102,
+	value_2 = 6,
+	value_1 = 7,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1050103] = {
+	prev = 1050102,
+	base = 1050100,
+	next = 1050104,
+	upgrade_id = 4,
+	id = 1050103,
+	value_2 = 7,
+	value_1 = 7,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1050104] = {
+	prev = 1050103,
+	base = 1050100,
+	next = 1050105,
+	upgrade_id = 5,
+	id = 1050104,
+	value_2 = 7,
+	value_1 = 8,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1050105] = {
+	prev = 1050104,
+	base = 1050100,
+	next = 1050106,
+	upgrade_id = 6,
+	id = 1050105,
+	value_2 = 8,
+	value_1 = 8,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1050106] = {
+	prev = 1050105,
+	base = 1050100,
+	next = 1050107,
+	upgrade_id = 7,
+	id = 1050106,
+	value_2 = 8,
+	value_1 = 9,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1050107] = {
+	prev = 1050106,
+	base = 1050100,
+	next = 1050108,
+	upgrade_id = 8,
+	id = 1050107,
+	value_2 = 9,
+	value_1 = 9,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1050108] = {
+	prev = 1050107,
+	base = 1050100,
+	next = 1050109,
+	upgrade_id = 9,
+	id = 1050108,
+	value_2 = 9,
+	value_1 = 10,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1050109] = {
+	prev = 1050108,
+	base = 1050100,
+	next = 1050110,
+	upgrade_id = 10,
+	id = 1050109,
+	value_2 = 10,
+	value_1 = 10,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1050110] = {
+	prev = 1050109,
+	base = 1050100,
+	next = 1050120,
+	upgrade_id = 11,
+	id = 1050110,
+	value_2 = 10,
+	value_1 = 11,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1050120] = {
+	tech = 2,
+	name = "饅頭ランス",
+	value_2_random = 3,
+	type = 5,
+	value_1_random = 5,
+	value_1 = 12,
+	effect_id_display = 902020,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1050121,
+	upgrade_id = 21,
+	value_2 = 12,
+	icon = "1050100",
+	effect_id = 0,
+	attribute_2 = "antiaircraft",
+	id = 1050120,
+	rarity = 3,
+	unique = 0,
+	important = 1,
+	prev = 1050110,
+	attribute_1 = "hit",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1050121] = {
+	prev = 1050120,
+	base = 1050120,
+	next = 1050122,
+	upgrade_id = 22,
+	id = 1050121,
+	value_1 = 13,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1050122] = {
+	prev = 1050121,
+	base = 1050120,
+	next = 1050123,
+	upgrade_id = 23,
+	id = 1050122,
+	value_2 = 13,
+	value_1 = 13,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1050123] = {
+	prev = 1050122,
+	base = 1050120,
+	next = 1050124,
+	upgrade_id = 24,
+	id = 1050123,
+	value_2 = 13,
+	value_1 = 14,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1050124] = {
+	prev = 1050123,
+	base = 1050120,
+	next = 1050125,
+	upgrade_id = 25,
+	id = 1050124,
+	value_2 = 14,
+	value_1 = 14,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1050125] = {
+	prev = 1050124,
+	base = 1050120,
+	next = 1050126,
+	upgrade_id = 26,
+	id = 1050125,
+	value_2 = 14,
+	value_1 = 15,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1050126] = {
+	prev = 1050125,
+	base = 1050120,
+	next = 1050127,
+	upgrade_id = 27,
+	id = 1050126,
+	value_2 = 15,
+	value_1 = 15,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1050127] = {
+	prev = 1050126,
+	base = 1050120,
+	next = 1050128,
+	upgrade_id = 28,
+	id = 1050127,
+	value_2 = 15,
+	value_1 = 16,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1050128] = {
+	prev = 1050127,
+	base = 1050120,
+	next = 1050129,
+	upgrade_id = 29,
+	id = 1050128,
+	value_2 = 16,
+	value_1 = 17,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1050129] = {
+	prev = 1050128,
+	base = 1050120,
+	next = 1050130,
+	upgrade_id = 30,
+	id = 1050129,
+	value_2 = 17,
+	value_1 = 18,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1050130] = {
+	prev = 1050129,
+	value_2 = 18,
+	value_1 = 19,
+	base = 1050120,
+	effect_id_display = 902020,
+	next = 0,
+	upgrade_id = 31,
+	id = 1050130,
+	effect_id = 902020,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1060100] = {
+	tech = 1,
+	name = "饅頭オフィサーソード",
+	value_2_random = 3,
+	type = 6,
+	value_1_random = 5,
+	value_1 = 4,
+	effect_id_display = 902030,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1060101,
+	upgrade_id = 1,
+	value_2 = 4,
+	icon = "1060100",
+	effect_id = 0,
+	attribute_2 = "dodge",
+	id = 1060100,
+	rarity = 2,
+	unique = 0,
+	important = 1,
+	prev = 0,
+	attribute_1 = "hit",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1060101] = {
+	prev = 1060100,
+	base = 1060100,
+	next = 1060102,
+	upgrade_id = 2,
+	id = 1060101,
+	value_2 = 5,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1060102] = {
+	prev = 1060101,
+	base = 1060100,
+	next = 1060103,
+	upgrade_id = 3,
+	id = 1060102,
+	value_2 = 5,
+	value_1 = 5,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1060103] = {
+	prev = 1060102,
+	base = 1060100,
+	next = 1060104,
+	upgrade_id = 4,
+	id = 1060103,
+	value_2 = 6,
+	value_1 = 5,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1060104] = {
+	prev = 1060103,
+	base = 1060100,
+	next = 1060105,
+	upgrade_id = 5,
+	id = 1060104,
+	value_2 = 6,
+	value_1 = 6,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1060105] = {
+	prev = 1060104,
+	base = 1060100,
+	next = 1060106,
+	upgrade_id = 6,
+	id = 1060105,
+	value_2 = 7,
+	value_1 = 6,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1060106] = {
+	prev = 1060105,
+	base = 1060100,
+	next = 1060107,
+	upgrade_id = 7,
+	id = 1060106,
+	value_2 = 7,
+	value_1 = 7,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1060107] = {
+	prev = 1060106,
+	base = 1060100,
+	next = 1060108,
+	upgrade_id = 8,
+	id = 1060107,
+	value_2 = 8,
+	value_1 = 7,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1060108] = {
+	prev = 1060107,
+	base = 1060100,
+	next = 1060109,
+	upgrade_id = 9,
+	id = 1060108,
+	value_2 = 8,
+	value_1 = 8,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1060109] = {
+	prev = 1060108,
+	base = 1060100,
+	next = 1060110,
+	upgrade_id = 10,
+	id = 1060109,
+	value_2 = 9,
+	value_1 = 8,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1060110] = {
+	prev = 1060109,
+	base = 1060100,
+	next = 1060120,
+	upgrade_id = 11,
+	id = 1060110,
+	value_2 = 10,
+	value_1 = 9,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1060120] = {
+	tech = 2,
+	name = "饅頭オフィサーソード",
+	value_2_random = 3,
+	type = 6,
+	value_1_random = 5,
+	value_1 = 10,
+	effect_id_display = 902030,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1060121,
+	upgrade_id = 21,
+	value_2 = 10,
+	icon = "1060100",
+	effect_id = 0,
+	attribute_2 = "dodge",
+	id = 1060120,
+	rarity = 3,
+	unique = 0,
+	important = 1,
+	prev = 1060110,
+	attribute_1 = "hit",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1060121] = {
+	prev = 1060120,
+	base = 1060120,
+	next = 1060122,
+	upgrade_id = 22,
+	id = 1060121,
+	value_2 = 11,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1060122] = {
+	prev = 1060121,
+	base = 1060120,
+	next = 1060123,
+	upgrade_id = 23,
+	id = 1060122,
+	value_2 = 12,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1060123] = {
+	prev = 1060122,
+	base = 1060120,
+	next = 1060124,
+	upgrade_id = 24,
+	id = 1060123,
+	value_2 = 12,
+	value_1 = 11,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1060124] = {
+	prev = 1060123,
+	base = 1060120,
+	next = 1060125,
+	upgrade_id = 25,
+	id = 1060124,
+	value_2 = 13,
+	value_1 = 11,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1060125] = {
+	prev = 1060124,
+	base = 1060120,
+	next = 1060126,
+	upgrade_id = 26,
+	id = 1060125,
+	value_2 = 13,
+	value_1 = 12,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1060126] = {
+	prev = 1060125,
+	base = 1060120,
+	next = 1060127,
+	upgrade_id = 27,
+	id = 1060126,
+	value_2 = 14,
+	value_1 = 12,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1060127] = {
+	prev = 1060126,
+	base = 1060120,
+	next = 1060128,
+	upgrade_id = 28,
+	id = 1060127,
+	value_2 = 14,
+	value_1 = 13,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1060128] = {
+	prev = 1060127,
+	base = 1060120,
+	next = 1060129,
+	upgrade_id = 29,
+	id = 1060128,
+	value_2 = 15,
+	value_1 = 13,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1060129] = {
+	prev = 1060128,
+	base = 1060120,
+	next = 1060130,
+	upgrade_id = 30,
+	id = 1060129,
+	value_2 = 16,
+	value_1 = 14,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1060130] = {
+	prev = 1060129,
+	value_2 = 17,
+	value_1 = 15,
+	base = 1060120,
+	effect_id_display = 902030,
+	next = 0,
+	upgrade_id = 31,
+	id = 1060130,
+	effect_id = 902030,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1060200] = {
+	tech = 1,
+	name = "饅頭ボウガン",
+	value_2_random = 3,
+	type = 6,
+	value_1_random = 5,
+	value_1 = 5,
+	effect_id_display = 902040,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1060201,
+	upgrade_id = 1,
+	value_2 = 5,
+	icon = "1060200",
+	effect_id = 0,
+	attribute_2 = "antiaircraft",
+	id = 1060200,
+	rarity = 2,
+	unique = 0,
+	important = 1,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1060201] = {
+	prev = 1060200,
+	base = 1060200,
+	next = 1060202,
+	upgrade_id = 2,
+	id = 1060201,
+	value_1 = 6,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1060202] = {
+	prev = 1060201,
+	base = 1060200,
+	next = 1060203,
+	upgrade_id = 3,
+	id = 1060202,
+	value_2 = 6,
+	value_1 = 6,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1060203] = {
+	prev = 1060202,
+	base = 1060200,
+	next = 1060204,
+	upgrade_id = 4,
+	id = 1060203,
+	value_2 = 6,
+	value_1 = 7,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1060204] = {
+	prev = 1060203,
+	base = 1060200,
+	next = 1060205,
+	upgrade_id = 5,
+	id = 1060204,
+	value_2 = 7,
+	value_1 = 7,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1060205] = {
+	prev = 1060204,
+	base = 1060200,
+	next = 1060206,
+	upgrade_id = 6,
+	id = 1060205,
+	value_2 = 7,
+	value_1 = 8,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1060206] = {
+	prev = 1060205,
+	base = 1060200,
+	next = 1060207,
+	upgrade_id = 7,
+	id = 1060206,
+	value_2 = 8,
+	value_1 = 8,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1060207] = {
+	prev = 1060206,
+	base = 1060200,
+	next = 1060208,
+	upgrade_id = 8,
+	id = 1060207,
+	value_2 = 8,
+	value_1 = 9,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1060208] = {
+	prev = 1060207,
+	base = 1060200,
+	next = 1060209,
+	upgrade_id = 9,
+	id = 1060208,
+	value_2 = 9,
+	value_1 = 10,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1060209] = {
+	prev = 1060208,
+	base = 1060200,
+	next = 1060210,
+	upgrade_id = 10,
+	id = 1060209,
+	value_2 = 9,
+	value_1 = 11,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1060210] = {
+	prev = 1060209,
+	base = 1060200,
+	next = 1060220,
+	upgrade_id = 11,
+	id = 1060210,
+	value_2 = 10,
+	value_1 = 12,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1060220] = {
+	tech = 2,
+	name = "饅頭ボウガン",
+	value_2_random = 3,
+	type = 6,
+	value_1_random = 5,
+	value_1 = 14,
+	effect_id_display = 902040,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1060221,
+	upgrade_id = 21,
+	value_2 = 11,
+	icon = "1060200",
+	effect_id = 0,
+	attribute_2 = "antiaircraft",
+	id = 1060220,
+	rarity = 3,
+	unique = 0,
+	important = 1,
+	prev = 1060210,
+	attribute_1 = "cannon",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1060221] = {
+	prev = 1060220,
+	base = 1060220,
+	next = 1060222,
+	upgrade_id = 22,
+	id = 1060221,
+	value_2 = 12,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1060222] = {
+	prev = 1060221,
+	base = 1060220,
+	next = 1060223,
+	upgrade_id = 23,
+	id = 1060222,
+	value_2 = 12,
+	value_1 = 15,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1060223] = {
+	prev = 1060222,
+	base = 1060220,
+	next = 1060224,
+	upgrade_id = 24,
+	id = 1060223,
+	value_2 = 13,
+	value_1 = 15,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1060224] = {
+	prev = 1060223,
+	base = 1060220,
+	next = 1060225,
+	upgrade_id = 25,
+	id = 1060224,
+	value_2 = 13,
+	value_1 = 16,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1060225] = {
+	prev = 1060224,
+	base = 1060220,
+	next = 1060226,
+	upgrade_id = 26,
+	id = 1060225,
+	value_2 = 14,
+	value_1 = 16,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1060226] = {
+	prev = 1060225,
+	base = 1060220,
+	next = 1060227,
+	upgrade_id = 27,
+	id = 1060226,
+	value_2 = 14,
+	value_1 = 17,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1060227] = {
+	prev = 1060226,
+	base = 1060220,
+	next = 1060228,
+	upgrade_id = 28,
+	id = 1060227,
+	value_2 = 15,
+	value_1 = 17,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1060228] = {
+	prev = 1060227,
+	base = 1060220,
+	next = 1060229,
+	upgrade_id = 29,
+	id = 1060228,
+	value_2 = 15,
+	value_1 = 18,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1060229] = {
+	prev = 1060228,
+	base = 1060220,
+	next = 1060230,
+	upgrade_id = 30,
+	id = 1060229,
+	value_2 = 16,
+	value_1 = 19,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1060230] = {
+	prev = 1060229,
+	value_2 = 17,
+	value_1 = 20,
+	base = 1060220,
+	effect_id_display = 902040,
+	next = 0,
+	upgrade_id = 31,
+	id = 1060230,
+	effect_id = 902040,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1070100] = {
+	tech = 1,
+	name = "饅頭ハンターボウ",
+	value_2_random = 3,
+	type = 7,
+	value_1_random = 5,
+	value_1 = 7,
+	effect_id_display = 902050,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1070101,
+	upgrade_id = 1,
+	value_2 = 5,
+	icon = "1070100",
+	effect_id = 0,
+	attribute_2 = "antiaircraft",
+	id = 1070100,
+	rarity = 2,
+	unique = 0,
+	important = 1,
+	prev = 0,
+	attribute_1 = "air",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1070101] = {
+	prev = 1070100,
+	base = 1070100,
+	next = 1070102,
+	upgrade_id = 2,
+	id = 1070101,
+	value_1 = 8,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1070102] = {
+	prev = 1070101,
+	base = 1070100,
+	next = 1070103,
+	upgrade_id = 3,
+	id = 1070102,
+	value_2 = 6,
+	value_1 = 8,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1070103] = {
+	prev = 1070102,
+	base = 1070100,
+	next = 1070104,
+	upgrade_id = 4,
+	id = 1070103,
+	value_2 = 6,
+	value_1 = 9,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1070104] = {
+	prev = 1070103,
+	base = 1070100,
+	next = 1070105,
+	upgrade_id = 5,
+	id = 1070104,
+	value_2 = 7,
+	value_1 = 9,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1070105] = {
+	prev = 1070104,
+	base = 1070100,
+	next = 1070106,
+	upgrade_id = 6,
+	id = 1070105,
+	value_2 = 7,
+	value_1 = 10,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1070106] = {
+	prev = 1070105,
+	base = 1070100,
+	next = 1070107,
+	upgrade_id = 7,
+	id = 1070106,
+	value_2 = 8,
+	value_1 = 11,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1070107] = {
+	prev = 1070106,
+	base = 1070100,
+	next = 1070108,
+	upgrade_id = 8,
+	id = 1070107,
+	value_2 = 8,
+	value_1 = 12,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1070108] = {
+	prev = 1070107,
+	base = 1070100,
+	next = 1070109,
+	upgrade_id = 9,
+	id = 1070108,
+	value_2 = 9,
+	value_1 = 13,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1070109] = {
+	prev = 1070108,
+	base = 1070100,
+	next = 1070110,
+	upgrade_id = 10,
+	id = 1070109,
+	value_2 = 9,
+	value_1 = 14,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1070110] = {
+	prev = 1070109,
+	base = 1070100,
+	next = 1070120,
+	upgrade_id = 11,
+	id = 1070110,
+	value_2 = 10,
+	value_1 = 15,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1070120] = {
+	tech = 2,
+	name = "饅頭ハンターボウ",
+	value_2_random = 3,
+	type = 7,
+	value_1_random = 5,
+	value_1 = 17,
+	effect_id_display = 902050,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1070121,
+	upgrade_id = 21,
+	value_2 = 11,
+	icon = "1070100",
+	effect_id = 0,
+	attribute_2 = "antiaircraft",
+	id = 1070120,
+	rarity = 3,
+	unique = 0,
+	important = 1,
+	prev = 1070110,
+	attribute_1 = "air",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1070121] = {
+	prev = 1070120,
+	base = 1070120,
+	next = 1070122,
+	upgrade_id = 22,
+	id = 1070121,
+	value_2 = 12,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1070122] = {
+	prev = 1070121,
+	base = 1070120,
+	next = 1070123,
+	upgrade_id = 23,
+	id = 1070122,
+	value_2 = 12,
+	value_1 = 18,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1070123] = {
+	prev = 1070122,
+	base = 1070120,
+	next = 1070124,
+	upgrade_id = 24,
+	id = 1070123,
+	value_2 = 13,
+	value_1 = 18,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1070124] = {
+	prev = 1070123,
+	base = 1070120,
+	next = 1070125,
+	upgrade_id = 25,
+	id = 1070124,
+	value_2 = 13,
+	value_1 = 19,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1070125] = {
+	prev = 1070124,
+	base = 1070120,
+	next = 1070126,
+	upgrade_id = 26,
+	id = 1070125,
+	value_2 = 14,
+	value_1 = 20,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1070126] = {
+	prev = 1070125,
+	base = 1070120,
+	next = 1070127,
+	upgrade_id = 27,
+	id = 1070126,
+	value_2 = 14,
+	value_1 = 21,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1070127] = {
+	prev = 1070126,
+	base = 1070120,
+	next = 1070128,
+	upgrade_id = 28,
+	id = 1070127,
+	value_2 = 15,
+	value_1 = 22,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1070128] = {
+	prev = 1070127,
+	base = 1070120,
+	next = 1070129,
+	upgrade_id = 29,
+	id = 1070128,
+	value_2 = 15,
+	value_1 = 23,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1070129] = {
+	prev = 1070128,
+	base = 1070120,
+	next = 1070130,
+	upgrade_id = 30,
+	id = 1070129,
+	value_2 = 16,
+	value_1 = 24,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1070130] = {
+	prev = 1070129,
+	value_2 = 17,
+	value_1 = 25,
+	base = 1070120,
+	effect_id_display = 902050,
+	next = 0,
+	upgrade_id = 31,
+	id = 1070130,
+	effect_id = 902050,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1070200] = {
+	tech = 1,
+	name = "饅頭セプター",
+	value_2_random = 3,
+	type = 7,
+	value_1_random = 5,
+	value_1 = 7,
+	effect_id_display = 902060,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1070201,
+	upgrade_id = 1,
+	value_2 = 5,
+	icon = "1070200",
+	effect_id = 0,
+	attribute_2 = "dodge",
+	id = 1070200,
+	rarity = 2,
+	unique = 0,
+	important = 1,
+	prev = 0,
+	attribute_1 = "air",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1070201] = {
+	prev = 1070200,
+	base = 1070200,
+	next = 1070202,
+	upgrade_id = 2,
+	id = 1070201,
+	value_1 = 8,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1070202] = {
+	prev = 1070201,
+	base = 1070200,
+	next = 1070203,
+	upgrade_id = 3,
+	id = 1070202,
+	value_2 = 6,
+	value_1 = 8,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1070203] = {
+	prev = 1070202,
+	base = 1070200,
+	next = 1070204,
+	upgrade_id = 4,
+	id = 1070203,
+	value_2 = 6,
+	value_1 = 9,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1070204] = {
+	prev = 1070203,
+	base = 1070200,
+	next = 1070205,
+	upgrade_id = 5,
+	id = 1070204,
+	value_2 = 7,
+	value_1 = 9,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1070205] = {
+	prev = 1070204,
+	base = 1070200,
+	next = 1070206,
+	upgrade_id = 6,
+	id = 1070205,
+	value_2 = 7,
+	value_1 = 10,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1070206] = {
+	prev = 1070205,
+	base = 1070200,
+	next = 1070207,
+	upgrade_id = 7,
+	id = 1070206,
+	value_2 = 8,
+	value_1 = 11,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1070207] = {
+	prev = 1070206,
+	base = 1070200,
+	next = 1070208,
+	upgrade_id = 8,
+	id = 1070207,
+	value_2 = 8,
+	value_1 = 12,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1070208] = {
+	prev = 1070207,
+	base = 1070200,
+	next = 1070209,
+	upgrade_id = 9,
+	id = 1070208,
+	value_2 = 9,
+	value_1 = 13,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1070209] = {
+	prev = 1070208,
+	base = 1070200,
+	next = 1070210,
+	upgrade_id = 10,
+	id = 1070209,
+	value_2 = 9,
+	value_1 = 14,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1070210] = {
+	prev = 1070209,
+	base = 1070200,
+	next = 1070220,
+	upgrade_id = 11,
+	id = 1070210,
+	value_2 = 10,
+	value_1 = 15,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1070220] = {
+	tech = 2,
+	name = "饅頭セプター",
+	value_2_random = 3,
+	type = 7,
+	value_1_random = 5,
+	value_1 = 17,
+	effect_id_display = 902060,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1070221,
+	upgrade_id = 21,
+	value_2 = 11,
+	icon = "1070200",
+	effect_id = 0,
+	attribute_2 = "dodge",
+	id = 1070220,
+	rarity = 3,
+	unique = 0,
+	important = 1,
+	prev = 1070210,
+	attribute_1 = "air",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1070221] = {
+	prev = 1070220,
+	base = 1070220,
+	next = 1070222,
+	upgrade_id = 22,
+	id = 1070221,
+	value_2 = 12,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1070222] = {
+	prev = 1070221,
+	base = 1070220,
+	next = 1070223,
+	upgrade_id = 23,
+	id = 1070222,
+	value_2 = 12,
+	value_1 = 18,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1070223] = {
+	prev = 1070222,
+	base = 1070220,
+	next = 1070224,
+	upgrade_id = 24,
+	id = 1070223,
+	value_2 = 13,
+	value_1 = 18,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1070224] = {
+	prev = 1070223,
+	base = 1070220,
+	next = 1070225,
+	upgrade_id = 25,
+	id = 1070224,
+	value_2 = 13,
+	value_1 = 19,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1070225] = {
+	prev = 1070224,
+	base = 1070220,
+	next = 1070226,
+	upgrade_id = 26,
+	id = 1070225,
+	value_2 = 14,
+	value_1 = 20,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1070226] = {
+	prev = 1070225,
+	base = 1070220,
+	next = 1070227,
+	upgrade_id = 27,
+	id = 1070226,
+	value_2 = 14,
+	value_1 = 21,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1070227] = {
+	prev = 1070226,
+	base = 1070220,
+	next = 1070228,
+	upgrade_id = 28,
+	id = 1070227,
+	value_2 = 15,
+	value_1 = 22,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1070228] = {
+	prev = 1070227,
+	base = 1070220,
+	next = 1070229,
+	upgrade_id = 29,
+	id = 1070228,
+	value_2 = 15,
+	value_1 = 23,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1070229] = {
+	prev = 1070228,
+	base = 1070220,
+	next = 1070230,
+	upgrade_id = 30,
+	id = 1070229,
+	value_2 = 16,
+	value_1 = 24,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1070230] = {
+	prev = 1070229,
+	value_2 = 17,
+	value_1 = 25,
+	base = 1070220,
+	effect_id_display = 902060,
+	next = 0,
+	upgrade_id = 31,
+	id = 1070230,
+	effect_id = 902060,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1080100] = {
+	tech = 1,
+	name = "饅頭ダガー",
+	value_2_random = 3,
+	type = 8,
+	value_1_random = 5,
+	value_1 = 1,
+	effect_id_display = 902070,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1080101,
+	upgrade_id = 1,
+	value_2 = 2,
+	icon = "1080100",
+	effect_id = 0,
+	attribute_2 = "dodge",
+	id = 1080100,
+	rarity = 2,
+	unique = 0,
+	important = 1,
+	prev = 0,
+	attribute_1 = "hit",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1080101] = {
+	prev = 1080100,
+	base = 1080100,
+	next = 1080102,
+	upgrade_id = 2,
+	id = 1080101,
+	value_2 = 3,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1080102] = {
+	prev = 1080101,
+	base = 1080100,
+	next = 1080103,
+	upgrade_id = 3,
+	id = 1080102,
+	value_2 = 4,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1080103] = {
+	prev = 1080102,
+	base = 1080100,
+	next = 1080104,
+	upgrade_id = 4,
+	id = 1080103,
+	value_2 = 5,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1080104] = {
+	prev = 1080103,
+	base = 1080100,
+	next = 1080105,
+	upgrade_id = 5,
+	id = 1080104,
+	value_2 = 6,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1080105] = {
+	prev = 1080104,
+	base = 1080100,
+	next = 1080106,
+	upgrade_id = 6,
+	id = 1080105,
+	value_2 = 7,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1080106] = {
+	prev = 1080105,
+	base = 1080100,
+	next = 1080107,
+	upgrade_id = 7,
+	id = 1080106,
+	value_2 = 7,
+	value_1 = 2,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1080107] = {
+	prev = 1080106,
+	base = 1080100,
+	next = 1080108,
+	upgrade_id = 8,
+	id = 1080107,
+	value_2 = 8,
+	value_1 = 2,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1080108] = {
+	prev = 1080107,
+	base = 1080100,
+	next = 1080109,
+	upgrade_id = 9,
+	id = 1080108,
+	value_2 = 8,
+	value_1 = 3,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1080109] = {
+	prev = 1080108,
+	base = 1080100,
+	next = 1080110,
+	upgrade_id = 10,
+	id = 1080109,
+	value_2 = 9,
+	value_1 = 3,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1080110] = {
+	prev = 1080109,
+	base = 1080100,
+	next = 1080120,
+	upgrade_id = 11,
+	id = 1080110,
+	value_2 = 9,
+	value_1 = 4,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1080120] = {
+	tech = 2,
+	name = "饅頭ダガー",
+	value_2_random = 3,
+	type = 8,
+	value_1_random = 5,
+	value_1 = 5,
+	effect_id_display = 902070,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1080121,
+	upgrade_id = 21,
+	value_2 = 10,
+	icon = "1080100",
+	effect_id = 0,
+	attribute_2 = "dodge",
+	id = 1080120,
+	rarity = 3,
+	unique = 0,
+	important = 1,
+	prev = 1080110,
+	attribute_1 = "hit",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1080121] = {
+	prev = 1080120,
+	base = 1080120,
+	next = 1080122,
+	upgrade_id = 22,
+	id = 1080121,
+	value_2 = 11,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1080122] = {
+	prev = 1080121,
+	base = 1080120,
+	next = 1080123,
+	upgrade_id = 23,
+	id = 1080122,
+	value_2 = 11,
+	value_1 = 6,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1080123] = {
+	prev = 1080122,
+	base = 1080120,
+	next = 1080124,
+	upgrade_id = 24,
+	id = 1080123,
+	value_2 = 12,
+	value_1 = 6,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1080124] = {
+	prev = 1080123,
+	base = 1080120,
+	next = 1080125,
+	upgrade_id = 25,
+	id = 1080124,
+	value_2 = 12,
+	value_1 = 7,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1080125] = {
+	prev = 1080124,
+	base = 1080120,
+	next = 1080126,
+	upgrade_id = 26,
+	id = 1080125,
+	value_2 = 13,
+	value_1 = 7,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1080126] = {
+	prev = 1080125,
+	base = 1080120,
+	next = 1080127,
+	upgrade_id = 27,
+	id = 1080126,
+	value_2 = 13,
+	value_1 = 8,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1080127] = {
+	prev = 1080126,
+	base = 1080120,
+	next = 1080128,
+	upgrade_id = 28,
+	id = 1080127,
+	value_2 = 14,
+	value_1 = 8,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1080128] = {
+	prev = 1080127,
+	base = 1080120,
+	next = 1080129,
+	upgrade_id = 29,
+	id = 1080128,
+	value_2 = 14,
+	value_1 = 9,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1080129] = {
+	prev = 1080128,
+	base = 1080120,
+	next = 1080130,
+	upgrade_id = 30,
+	id = 1080129,
+	value_2 = 15,
+	value_1 = 9,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1080130] = {
+	prev = 1080129,
+	value_2 = 15,
+	value_1 = 10,
+	base = 1080120,
+	effect_id_display = 902070,
+	next = 0,
+	upgrade_id = 31,
+	id = 1080130,
+	effect_id = 902070,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1080200] = {
+	tech = 1,
+	name = "饅頭クナイ",
+	value_2_random = 3,
+	type = 8,
+	value_1_random = 5,
+	value_1 = 10,
+	effect_id_display = 902080,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1080201,
+	upgrade_id = 1,
+	value_2 = 1,
+	icon = "1080200",
+	effect_id = 0,
+	attribute_2 = "hit",
+	id = 1080200,
+	rarity = 2,
+	unique = 0,
+	important = 1,
+	prev = 0,
+	attribute_1 = "torpedo",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1080201] = {
+	prev = 1080200,
+	base = 1080200,
+	next = 1080202,
+	upgrade_id = 2,
+	id = 1080201,
+	value_1 = 11,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1080202] = {
+	prev = 1080201,
+	base = 1080200,
+	next = 1080203,
+	upgrade_id = 3,
+	id = 1080202,
+	value_1 = 12,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1080203] = {
+	prev = 1080202,
+	base = 1080200,
+	next = 1080204,
+	upgrade_id = 4,
+	id = 1080203,
+	value_1 = 13,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1080204] = {
+	prev = 1080203,
+	base = 1080200,
+	next = 1080205,
+	upgrade_id = 5,
+	id = 1080204,
+	value_2 = 2,
+	value_1 = 14,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1080205] = {
+	prev = 1080204,
+	base = 1080200,
+	next = 1080206,
+	upgrade_id = 6,
+	id = 1080205,
+	value_2 = 2,
+	value_1 = 15,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1080206] = {
+	prev = 1080205,
+	base = 1080200,
+	next = 1080207,
+	upgrade_id = 7,
+	id = 1080206,
+	value_2 = 2,
+	value_1 = 16,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1080207] = {
+	prev = 1080206,
+	base = 1080200,
+	next = 1080208,
+	upgrade_id = 8,
+	id = 1080207,
+	value_2 = 2,
+	value_1 = 17,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1080208] = {
+	prev = 1080207,
+	base = 1080200,
+	next = 1080209,
+	upgrade_id = 9,
+	id = 1080208,
+	value_2 = 3,
+	value_1 = 18,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1080209] = {
+	prev = 1080208,
+	base = 1080200,
+	next = 1080210,
+	upgrade_id = 10,
+	id = 1080209,
+	value_2 = 3,
+	value_1 = 19,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1080210] = {
+	prev = 1080209,
+	base = 1080200,
+	next = 1080220,
+	upgrade_id = 11,
+	id = 1080210,
+	value_2 = 3,
+	value_1 = 21,
+	level = 11
+}
+_G.pg.base.spweapon_data_statistics[1080220] = {
+	tech = 2,
+	name = "饅頭クナイ",
+	value_2_random = 3,
+	type = 8,
+	value_1_random = 5,
+	value_1 = 24,
+	effect_id_display = 902080,
+	level = 1,
+	descrip = "特殊装備コアで製造できる量産型の兵装",
+	uncraftable = 0,
+	next = 1080221,
+	upgrade_id = 21,
+	value_2 = 3,
+	icon = "1080200",
+	effect_id = 0,
+	attribute_2 = "hit",
+	id = 1080220,
+	rarity = 3,
+	unique = 0,
+	important = 1,
+	prev = 1080210,
+	attribute_1 = "torpedo",
+	usability = {},
+	skill_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[1080221] = {
+	prev = 1080220,
+	base = 1080220,
+	next = 1080222,
+	upgrade_id = 22,
+	id = 1080221,
+	value_1 = 25,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[1080222] = {
+	prev = 1080221,
+	base = 1080220,
+	next = 1080223,
+	upgrade_id = 23,
+	id = 1080222,
+	value_1 = 26,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[1080223] = {
+	prev = 1080222,
+	base = 1080220,
+	next = 1080224,
+	upgrade_id = 24,
+	id = 1080223,
+	value_1 = 27,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[1080224] = {
+	prev = 1080223,
+	base = 1080220,
+	next = 1080225,
+	upgrade_id = 25,
+	id = 1080224,
+	value_2 = 4,
+	value_1 = 28,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[1080225] = {
+	prev = 1080224,
+	base = 1080220,
+	next = 1080226,
+	upgrade_id = 26,
+	id = 1080225,
+	value_2 = 4,
+	value_1 = 29,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[1080226] = {
+	prev = 1080225,
+	base = 1080220,
+	next = 1080227,
+	upgrade_id = 27,
+	id = 1080226,
+	value_2 = 4,
+	value_1 = 30,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[1080227] = {
+	prev = 1080226,
+	base = 1080220,
+	next = 1080228,
+	upgrade_id = 28,
+	id = 1080227,
+	value_2 = 4,
+	value_1 = 31,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[1080228] = {
+	prev = 1080227,
+	base = 1080220,
+	next = 1080229,
+	upgrade_id = 29,
+	id = 1080228,
+	value_2 = 5,
+	value_1 = 32,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[1080229] = {
+	prev = 1080228,
+	base = 1080220,
+	next = 1080230,
+	upgrade_id = 30,
+	id = 1080229,
+	value_2 = 5,
+	value_1 = 33,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[1080230] = {
+	prev = 1080229,
+	value_2 = 5,
+	value_1 = 35,
+	base = 1080220,
+	effect_id_display = 902080,
+	next = 0,
+	upgrade_id = 31,
+	id = 1080230,
+	effect_id = 902080,
+	level = 11
+}
 _G.pg.base.spweapon_data_statistics[9000] = {
 	tech = 0,
 	name = "スーパーレインボー1号",
@@ -10650,3032 +13679,4491 @@ _G.pg.base.spweapon_data_statistics[12430] = {
 		}
 	}
 }
-_G.pg.base.spweapon_data_statistics[1010100] = {
-	tech = 1,
-	name = "饅頭ダブルソード",
-	value_2_random = 3,
-	type = 1,
-	value_1_random = 5,
-	value_1 = 5,
-	effect_id_display = 901020,
+_G.pg.base.spweapon_data_statistics[12440] = {
+	tech = 0,
+	name = "輝ける黄金ランツァ",
+	value_2_random = 5,
+	type = 10,
+	value_1_random = 30,
+	value_1 = 110,
+	effect_id_display = 902250,
 	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
+	descrip = "由特殊兵装核心制造出来的专属特制兵装",
 	uncraftable = 0,
-	next = 1010101,
-	upgrade_id = 1,
-	value_2 = 3,
-	icon = "1010100",
-	effect_id = 0,
-	attribute_2 = "dodge",
-	id = 1010100,
-	rarity = 2,
-	unique = 0,
-	important = 1,
-	prev = 0,
-	attribute_1 = "cannon",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1010101] = {
-	prev = 1010100,
-	base = 1010100,
-	next = 1010102,
-	upgrade_id = 2,
-	id = 1010101,
-	value_1 = 6,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1010102] = {
-	prev = 1010101,
-	base = 1010100,
-	next = 1010103,
-	upgrade_id = 3,
-	id = 1010102,
-	value_1 = 7,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1010103] = {
-	prev = 1010102,
-	base = 1010100,
-	next = 1010104,
-	upgrade_id = 4,
-	id = 1010103,
+	next = 12441,
+	upgrade_id = 101,
 	value_2 = 4,
-	value_1 = 7,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1010104] = {
-	prev = 1010103,
-	base = 1010100,
-	next = 1010105,
-	upgrade_id = 5,
-	id = 1010104,
-	value_2 = 4,
-	value_1 = 8,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1010105] = {
-	prev = 1010104,
-	base = 1010100,
-	next = 1010106,
-	upgrade_id = 6,
-	id = 1010105,
-	value_2 = 5,
-	value_1 = 8,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1010106] = {
-	prev = 1010105,
-	base = 1010100,
-	next = 1010107,
-	upgrade_id = 7,
-	id = 1010106,
-	value_2 = 5,
-	value_1 = 9,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1010107] = {
-	prev = 1010106,
-	base = 1010100,
-	next = 1010108,
-	upgrade_id = 8,
-	id = 1010107,
-	value_2 = 6,
-	value_1 = 9,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1010108] = {
-	prev = 1010107,
-	base = 1010100,
-	next = 1010109,
-	upgrade_id = 9,
-	id = 1010108,
-	value_2 = 6,
-	value_1 = 10,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1010109] = {
-	prev = 1010108,
-	base = 1010100,
-	next = 1010110,
-	upgrade_id = 10,
-	id = 1010109,
-	value_2 = 6,
-	value_1 = 11,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1010110] = {
-	prev = 1010109,
-	base = 1010100,
-	next = 1010120,
-	upgrade_id = 11,
-	id = 1010110,
-	value_2 = 7,
-	value_1 = 12,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1010120] = {
-	tech = 2,
-	name = "饅頭ダブルソード",
-	value_2_random = 3,
-	type = 1,
-	value_1_random = 5,
-	value_1 = 14,
-	effect_id_display = 901020,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1010121,
-	upgrade_id = 21,
-	value_2 = 7,
-	icon = "1010100",
-	effect_id = 0,
-	attribute_2 = "dodge",
-	id = 1010120,
-	rarity = 3,
-	unique = 0,
-	important = 1,
-	prev = 1010110,
-	attribute_1 = "cannon",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1010121] = {
-	prev = 1010120,
-	base = 1010120,
-	next = 1010122,
-	upgrade_id = 22,
-	id = 1010121,
-	value_2 = 8,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1010122] = {
-	prev = 1010121,
-	base = 1010120,
-	next = 1010123,
-	upgrade_id = 23,
-	id = 1010122,
-	value_2 = 9,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1010123] = {
-	prev = 1010122,
-	base = 1010120,
-	next = 1010124,
-	upgrade_id = 24,
-	id = 1010123,
-	value_2 = 9,
-	value_1 = 15,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1010124] = {
-	prev = 1010123,
-	base = 1010120,
-	next = 1010125,
-	upgrade_id = 25,
-	id = 1010124,
-	value_2 = 10,
-	value_1 = 15,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1010125] = {
-	prev = 1010124,
-	base = 1010120,
-	next = 1010126,
-	upgrade_id = 26,
-	id = 1010125,
-	value_2 = 10,
-	value_1 = 16,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1010126] = {
-	prev = 1010125,
-	base = 1010120,
-	next = 1010127,
-	upgrade_id = 27,
-	id = 1010126,
-	value_2 = 11,
-	value_1 = 16,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1010127] = {
-	prev = 1010126,
-	base = 1010120,
-	next = 1010128,
-	upgrade_id = 28,
-	id = 1010127,
-	value_2 = 11,
-	value_1 = 17,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1010128] = {
-	prev = 1010127,
-	base = 1010120,
-	next = 1010129,
-	upgrade_id = 29,
-	id = 1010128,
-	value_2 = 11,
-	value_1 = 18,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1010129] = {
-	prev = 1010128,
-	base = 1010120,
-	next = 1010130,
-	upgrade_id = 30,
-	id = 1010129,
-	value_2 = 12,
-	value_1 = 19,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1010130] = {
-	prev = 1010129,
-	value_2 = 12,
-	value_1 = 20,
-	base = 1010120,
-	effect_id_display = 901020,
-	next = 0,
-	upgrade_id = 31,
-	id = 1010130,
-	effect_id = 901020,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1010200] = {
-	tech = 1,
-	name = "饅頭ハンマー",
-	value_2_random = 3,
-	type = 1,
-	value_1_random = 5,
-	value_1 = 8,
-	effect_id_display = 901010,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1010201,
-	upgrade_id = 1,
-	value_2 = 1,
-	icon = "1010200",
-	effect_id = 0,
+	icon = "12440",
+	effect_id = 902250,
 	attribute_2 = "hit",
-	id = 1010200,
-	rarity = 2,
-	unique = 0,
-	important = 1,
+	id = 12440,
+	rarity = 4,
+	unique = 960002,
+	important = 2,
 	prev = 0,
-	attribute_1 = "torpedo",
-	usability = {},
-	skill_upgrade = {},
+	attribute_1 = "durability",
+	usability = {
+		24
+	},
+	skill_upgrade = {
+		{
+			0,
+			1017200
+		}
+	},
 	label = {}
 }
-_G.pg.base.spweapon_data_statistics[1010201] = {
-	prev = 1010200,
-	base = 1010200,
-	next = 1010202,
-	upgrade_id = 2,
-	id = 1010201,
-	value_1 = 9,
+_G.pg.base.spweapon_data_statistics[12441] = {
+	prev = 12440,
+	base = 12440,
+	next = 12442,
+	upgrade_id = 102,
+	id = 12441,
+	value_2 = 4,
+	value_1 = 115,
 	level = 2
 }
-_G.pg.base.spweapon_data_statistics[1010202] = {
-	prev = 1010201,
-	base = 1010200,
-	next = 1010203,
-	upgrade_id = 3,
-	id = 1010202,
-	value_1 = 10,
+_G.pg.base.spweapon_data_statistics[12442] = {
+	prev = 12441,
+	base = 12440,
+	next = 12443,
+	upgrade_id = 103,
+	id = 12442,
+	value_2 = 5,
+	value_1 = 120,
 	level = 3
 }
-_G.pg.base.spweapon_data_statistics[1010203] = {
-	prev = 1010202,
-	base = 1010200,
-	next = 1010204,
-	upgrade_id = 4,
-	id = 1010203,
-	value_1 = 11,
+_G.pg.base.spweapon_data_statistics[12443] = {
+	prev = 12442,
+	base = 12440,
+	next = 12444,
+	upgrade_id = 104,
+	id = 12443,
+	value_2 = 5,
+	value_1 = 125,
 	level = 4
 }
-_G.pg.base.spweapon_data_statistics[1010204] = {
-	prev = 1010203,
-	base = 1010200,
-	next = 1010205,
-	upgrade_id = 5,
-	id = 1010204,
-	value_2 = 2,
-	value_1 = 12,
+_G.pg.base.spweapon_data_statistics[12444] = {
+	prev = 12443,
+	base = 12440,
+	next = 12445,
+	upgrade_id = 105,
+	id = 12444,
+	value_2 = 6,
+	value_1 = 130,
 	level = 5
 }
-_G.pg.base.spweapon_data_statistics[1010205] = {
-	prev = 1010204,
-	base = 1010200,
-	next = 1010206,
-	upgrade_id = 6,
-	id = 1010205,
-	value_2 = 2,
+_G.pg.base.spweapon_data_statistics[12445] = {
+	prev = 12444,
+	base = 12440,
+	next = 12446,
+	upgrade_id = 106,
+	id = 12445,
+	value_2 = 6,
+	value_1 = 135,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12446] = {
+	prev = 12445,
+	base = 12440,
+	next = 12447,
+	upgrade_id = 107,
+	id = 12446,
+	value_2 = 7,
+	value_1 = 140,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12447] = {
+	prev = 12446,
+	base = 12440,
+	next = 12448,
+	upgrade_id = 108,
+	id = 12447,
+	value_2 = 7,
+	value_1 = 145,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12448] = {
+	prev = 12447,
+	base = 12440,
+	next = 12449,
+	upgrade_id = 109,
+	id = 12448,
+	value_2 = 8,
+	value_1 = 150,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12449] = {
+	prev = 12448,
+	base = 12440,
+	next = 12450,
+	upgrade_id = 110,
+	id = 12449,
+	value_2 = 8,
+	value_1 = 160,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12450] = {
+	base = 12440,
+	prev = 12449,
+	next = 0,
+	upgrade_id = 111,
+	id = 12450,
+	value_2 = 9,
+	value_1 = 170,
+	level = 11,
+	skill_upgrade = {
+		{
+			17200,
+			1017200
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12460] = {
+	tech = 0,
+	name = "何かが書かれた紙",
+	value_2_random = 5,
+	type = 10,
+	value_1_random = 10,
+	value_1 = 10,
+	effect_id_display = 902240,
+	level = 1,
+	descrip = "由特殊兵装核心制造出来的专属特制兵装",
+	uncraftable = 0,
+	next = 12461,
+	upgrade_id = 101,
+	value_2 = 4,
+	icon = "12460",
+	effect_id = 902240,
+	attribute_2 = "hit",
+	id = 12460,
+	rarity = 4,
+	unique = 960006,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		23
+	},
+	skill_upgrade = {
+		{
+			0,
+			1017270
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12461] = {
+	prev = 12460,
+	base = 12460,
+	next = 12462,
+	upgrade_id = 102,
+	id = 12461,
+	value_2 = 4,
+	value_1 = 11,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12462] = {
+	prev = 12461,
+	base = 12460,
+	next = 12463,
+	upgrade_id = 103,
+	id = 12462,
+	value_2 = 5,
+	value_1 = 12,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12463] = {
+	prev = 12462,
+	base = 12460,
+	next = 12464,
+	upgrade_id = 104,
+	id = 12463,
+	value_2 = 5,
 	value_1 = 13,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1010206] = {
-	prev = 1010205,
-	base = 1010200,
-	next = 1010207,
-	upgrade_id = 7,
-	id = 1010206,
-	value_2 = 2,
-	value_1 = 14,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1010207] = {
-	prev = 1010206,
-	base = 1010200,
-	next = 1010208,
-	upgrade_id = 8,
-	id = 1010207,
-	value_2 = 3,
-	value_1 = 15,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1010208] = {
-	prev = 1010207,
-	base = 1010200,
-	next = 1010209,
-	upgrade_id = 9,
-	id = 1010208,
-	value_2 = 3,
-	value_1 = 16,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1010209] = {
-	prev = 1010208,
-	base = 1010200,
-	next = 1010210,
-	upgrade_id = 10,
-	id = 1010209,
-	value_2 = 3,
-	value_1 = 17,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1010210] = {
-	prev = 1010209,
-	base = 1010200,
-	next = 1010220,
-	upgrade_id = 11,
-	id = 1010210,
-	value_2 = 4,
-	value_1 = 18,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1010220] = {
-	tech = 2,
-	name = "饅頭ハンマー",
-	value_2_random = 3,
-	type = 1,
-	value_1_random = 5,
-	value_1 = 20,
-	effect_id_display = 901010,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1010221,
-	upgrade_id = 21,
-	value_2 = 5,
-	icon = "1010200",
-	effect_id = 0,
-	attribute_2 = "hit",
-	id = 1010220,
-	rarity = 3,
-	unique = 0,
-	important = 1,
-	prev = 1010210,
-	attribute_1 = "torpedo",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1010221] = {
-	prev = 1010220,
-	base = 1010220,
-	next = 1010222,
-	upgrade_id = 22,
-	id = 1010221,
-	value_1 = 21,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1010222] = {
-	prev = 1010221,
-	base = 1010220,
-	next = 1010223,
-	upgrade_id = 23,
-	id = 1010222,
-	value_1 = 22,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1010223] = {
-	prev = 1010222,
-	base = 1010220,
-	next = 1010224,
-	upgrade_id = 24,
-	id = 1010223,
-	value_1 = 23,
 	level = 4
 }
-_G.pg.base.spweapon_data_statistics[1010224] = {
-	prev = 1010223,
-	base = 1010220,
-	next = 1010225,
-	upgrade_id = 25,
-	id = 1010224,
-	value_1 = 24,
+_G.pg.base.spweapon_data_statistics[12464] = {
+	prev = 12463,
+	base = 12460,
+	next = 12465,
+	upgrade_id = 105,
+	id = 12464,
+	value_2 = 6,
+	value_1 = 14,
 	level = 5
 }
-_G.pg.base.spweapon_data_statistics[1010225] = {
-	prev = 1010224,
-	base = 1010220,
-	next = 1010226,
-	upgrade_id = 26,
-	id = 1010225,
+_G.pg.base.spweapon_data_statistics[12465] = {
+	prev = 12464,
+	base = 12460,
+	next = 12466,
+	upgrade_id = 106,
+	id = 12465,
 	value_2 = 6,
-	value_1 = 25,
+	value_1 = 15,
 	level = 6
 }
-_G.pg.base.spweapon_data_statistics[1010226] = {
-	prev = 1010225,
-	base = 1010220,
-	next = 1010227,
-	upgrade_id = 27,
-	id = 1010226,
-	value_2 = 6,
-	value_1 = 26,
+_G.pg.base.spweapon_data_statistics[12466] = {
+	prev = 12465,
+	base = 12460,
+	next = 12467,
+	upgrade_id = 107,
+	id = 12466,
+	value_2 = 7,
+	value_1 = 16,
 	level = 7
 }
-_G.pg.base.spweapon_data_statistics[1010227] = {
-	prev = 1010226,
-	base = 1010220,
-	next = 1010228,
-	upgrade_id = 28,
-	id = 1010227,
-	value_2 = 6,
-	value_1 = 27,
+_G.pg.base.spweapon_data_statistics[12467] = {
+	prev = 12466,
+	base = 12460,
+	next = 12468,
+	upgrade_id = 108,
+	id = 12467,
+	value_2 = 7,
+	value_1 = 17,
 	level = 8
 }
-_G.pg.base.spweapon_data_statistics[1010228] = {
-	prev = 1010227,
-	base = 1010220,
-	next = 1010229,
-	upgrade_id = 29,
-	id = 1010228,
-	value_2 = 6,
-	value_1 = 28,
+_G.pg.base.spweapon_data_statistics[12468] = {
+	prev = 12467,
+	base = 12460,
+	next = 12469,
+	upgrade_id = 109,
+	id = 12468,
+	value_2 = 8,
+	value_1 = 18,
 	level = 9
 }
-_G.pg.base.spweapon_data_statistics[1010229] = {
-	prev = 1010228,
-	base = 1010220,
-	next = 1010230,
-	upgrade_id = 30,
-	id = 1010229,
-	value_2 = 6,
-	value_1 = 29,
+_G.pg.base.spweapon_data_statistics[12469] = {
+	prev = 12468,
+	base = 12460,
+	next = 12470,
+	upgrade_id = 110,
+	id = 12469,
+	value_2 = 8,
+	value_1 = 19,
 	level = 10
 }
-_G.pg.base.spweapon_data_statistics[1010230] = {
-	prev = 1010229,
-	value_2 = 7,
-	value_1 = 30,
-	base = 1010220,
-	effect_id_display = 901010,
+_G.pg.base.spweapon_data_statistics[12470] = {
+	base = 12460,
+	prev = 12469,
 	next = 0,
-	upgrade_id = 31,
-	id = 1010230,
-	effect_id = 901010,
-	level = 11
+	upgrade_id = 111,
+	id = 12470,
+	value_2 = 9,
+	value_1 = 20,
+	level = 11,
+	skill_upgrade = {
+		{
+			17270,
+			1017270
+		}
+	}
 }
-_G.pg.base.spweapon_data_statistics[1020100] = {
-	tech = 1,
-	name = "饅頭ソード",
-	value_2_random = 3,
-	type = 2,
-	value_1_random = 5,
-	value_1 = 6,
-	effect_id_display = 901010,
+_G.pg.base.spweapon_data_statistics[12480] = {
+	tech = 0,
+	name = "果てへの舵輪",
+	value_2_random = 5,
+	type = 10,
+	value_1_random = 10,
+	value_1 = 10,
+	effect_id_display = 902240,
 	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
+	descrip = "由特殊兵装核心制造出来的专属特制兵装",
 	uncraftable = 0,
-	next = 1020101,
-	upgrade_id = 1,
+	next = 12481,
+	upgrade_id = 101,
 	value_2 = 1,
-	icon = "1020100",
-	effect_id = 0,
-	attribute_2 = "reload",
-	id = 1020100,
-	rarity = 2,
-	unique = 0,
-	important = 1,
+	icon = "12480",
+	effect_id = 902240,
+	attribute_2 = "dodge",
+	id = 12480,
+	rarity = 4,
+	unique = 960003,
+	important = 2,
 	prev = 0,
-	attribute_1 = "hit",
-	usability = {},
-	skill_upgrade = {},
+	attribute_1 = "cannon",
+	usability = {
+		23
+	},
+	skill_upgrade = {
+		{
+			0,
+			1017250
+		}
+	},
 	label = {}
 }
-_G.pg.base.spweapon_data_statistics[1020101] = {
-	prev = 1020100,
-	base = 1020100,
-	next = 1020102,
-	upgrade_id = 2,
-	id = 1020101,
-	value_1 = 7,
+_G.pg.base.spweapon_data_statistics[12481] = {
+	prev = 12480,
+	base = 12480,
+	next = 12482,
+	upgrade_id = 102,
+	id = 12481,
+	value_1 = 11,
 	level = 2
 }
-_G.pg.base.spweapon_data_statistics[1020102] = {
-	prev = 1020101,
-	base = 1020100,
-	next = 1020103,
-	upgrade_id = 3,
-	id = 1020102,
-	value_1 = 8,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1020103] = {
-	prev = 1020102,
-	base = 1020100,
-	next = 1020104,
-	upgrade_id = 4,
-	id = 1020103,
+_G.pg.base.spweapon_data_statistics[12482] = {
+	prev = 12481,
+	base = 12480,
+	next = 12483,
+	upgrade_id = 103,
+	id = 12482,
 	value_2 = 2,
-	value_1 = 8,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1020104] = {
-	prev = 1020103,
-	base = 1020100,
-	next = 1020105,
-	upgrade_id = 5,
-	id = 1020104,
-	value_2 = 2,
-	value_1 = 9,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1020105] = {
-	prev = 1020104,
-	base = 1020100,
-	next = 1020106,
-	upgrade_id = 6,
-	id = 1020105,
-	value_2 = 3,
-	value_1 = 9,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1020106] = {
-	prev = 1020105,
-	base = 1020100,
-	next = 1020107,
-	upgrade_id = 7,
-	id = 1020106,
-	value_2 = 3,
-	value_1 = 10,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1020107] = {
-	prev = 1020106,
-	base = 1020100,
-	next = 1020108,
-	upgrade_id = 8,
-	id = 1020107,
-	value_2 = 4,
-	value_1 = 10,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1020108] = {
-	prev = 1020107,
-	base = 1020100,
-	next = 1020109,
-	upgrade_id = 9,
-	id = 1020108,
-	value_2 = 4,
-	value_1 = 11,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1020109] = {
-	prev = 1020108,
-	base = 1020100,
-	next = 1020110,
-	upgrade_id = 10,
-	id = 1020109,
-	value_2 = 5,
-	value_1 = 11,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1020110] = {
-	prev = 1020109,
-	base = 1020100,
-	next = 1020120,
-	upgrade_id = 11,
-	id = 1020110,
-	value_2 = 5,
 	value_1 = 12,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1020120] = {
-	tech = 2,
-	name = "饅頭ソード",
-	value_2_random = 3,
-	type = 2,
-	value_1_random = 5,
-	value_1 = 14,
-	effect_id_display = 901010,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1020121,
-	upgrade_id = 21,
-	value_2 = 5,
-	icon = "1020100",
-	effect_id = 0,
-	attribute_2 = "reload",
-	id = 1020120,
-	rarity = 3,
-	unique = 0,
-	important = 1,
-	prev = 1020110,
-	attribute_1 = "hit",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1020121] = {
-	prev = 1020120,
-	base = 1020120,
-	next = 1020122,
-	upgrade_id = 22,
-	id = 1020121,
-	value_1 = 15,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1020122] = {
-	prev = 1020121,
-	base = 1020120,
-	next = 1020123,
-	upgrade_id = 23,
-	id = 1020122,
-	value_1 = 16,
 	level = 3
 }
-_G.pg.base.spweapon_data_statistics[1020123] = {
-	prev = 1020122,
-	base = 1020120,
-	next = 1020124,
-	upgrade_id = 24,
-	id = 1020123,
-	value_2 = 6,
-	value_1 = 16,
+_G.pg.base.spweapon_data_statistics[12483] = {
+	prev = 12482,
+	base = 12480,
+	next = 12484,
+	upgrade_id = 104,
+	id = 12483,
+	value_2 = 3,
+	value_1 = 13,
 	level = 4
 }
-_G.pg.base.spweapon_data_statistics[1020124] = {
-	prev = 1020123,
-	base = 1020120,
-	next = 1020125,
-	upgrade_id = 25,
-	id = 1020124,
-	value_2 = 6,
-	value_1 = 17,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1020125] = {
-	prev = 1020124,
-	base = 1020120,
-	next = 1020126,
-	upgrade_id = 26,
-	id = 1020125,
-	value_2 = 7,
-	value_1 = 17,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1020126] = {
-	prev = 1020125,
-	base = 1020120,
-	next = 1020127,
-	upgrade_id = 27,
-	id = 1020126,
-	value_2 = 7,
-	value_1 = 18,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1020127] = {
-	prev = 1020126,
-	base = 1020120,
-	next = 1020128,
-	upgrade_id = 28,
-	id = 1020127,
-	value_2 = 8,
-	value_1 = 18,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1020128] = {
-	prev = 1020127,
-	base = 1020120,
-	next = 1020129,
-	upgrade_id = 29,
-	id = 1020128,
-	value_2 = 8,
-	value_1 = 19,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1020129] = {
-	prev = 1020128,
-	base = 1020120,
-	next = 1020130,
-	upgrade_id = 30,
-	id = 1020129,
-	value_2 = 9,
-	value_1 = 19,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1020130] = {
-	prev = 1020129,
-	value_2 = 9,
-	value_1 = 20,
-	base = 1020120,
-	effect_id_display = 901010,
-	next = 0,
-	upgrade_id = 31,
-	id = 1020130,
-	effect_id = 901010,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1030100] = {
-	tech = 1,
-	name = "饅頭クロスボウ",
-	value_2_random = 3,
-	type = 3,
-	value_1_random = 5,
-	value_1 = 3,
-	effect_id_display = 902010,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1030101,
-	upgrade_id = 1,
+_G.pg.base.spweapon_data_statistics[12484] = {
+	prev = 12483,
+	base = 12480,
+	next = 12485,
+	upgrade_id = 105,
+	id = 12484,
 	value_2 = 4,
-	icon = "1030100",
-	effect_id = 0,
-	attribute_2 = "antiaircraft",
-	id = 1030100,
-	rarity = 2,
-	unique = 0,
-	important = 1,
-	prev = 0,
-	attribute_1 = "cannon",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1030101] = {
-	prev = 1030100,
-	base = 1030100,
-	next = 1030102,
-	upgrade_id = 2,
-	id = 1030101,
-	value_1 = 4,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1030102] = {
-	prev = 1030101,
-	base = 1030100,
-	next = 1030103,
-	upgrade_id = 3,
-	id = 1030102,
-	value_2 = 5,
-	value_1 = 5,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1030103] = {
-	prev = 1030102,
-	base = 1030100,
-	next = 1030104,
-	upgrade_id = 4,
-	id = 1030103,
-	value_2 = 5,
-	value_1 = 6,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1030104] = {
-	prev = 1030103,
-	base = 1030100,
-	next = 1030105,
-	upgrade_id = 5,
-	id = 1030104,
-	value_2 = 6,
-	value_1 = 6,
+	value_1 = 14,
 	level = 5
 }
-_G.pg.base.spweapon_data_statistics[1030105] = {
-	prev = 1030104,
-	base = 1030100,
-	next = 1030106,
-	upgrade_id = 6,
-	id = 1030105,
-	value_2 = 7,
-	value_1 = 7,
+_G.pg.base.spweapon_data_statistics[12485] = {
+	prev = 12484,
+	base = 12480,
+	next = 12486,
+	upgrade_id = 106,
+	id = 12485,
+	value_2 = 5,
+	value_1 = 15,
 	level = 6
 }
-_G.pg.base.spweapon_data_statistics[1030106] = {
-	prev = 1030105,
-	base = 1030100,
-	next = 1030107,
-	upgrade_id = 7,
-	id = 1030106,
-	value_2 = 8,
-	value_1 = 7,
+_G.pg.base.spweapon_data_statistics[12486] = {
+	prev = 12485,
+	base = 12480,
+	next = 12487,
+	upgrade_id = 107,
+	id = 12486,
+	value_2 = 6,
+	value_1 = 16,
 	level = 7
 }
-_G.pg.base.spweapon_data_statistics[1030107] = {
-	prev = 1030106,
-	base = 1030100,
-	next = 1030108,
-	upgrade_id = 8,
-	id = 1030107,
-	value_2 = 9,
-	value_1 = 8,
+_G.pg.base.spweapon_data_statistics[12487] = {
+	prev = 12486,
+	base = 12480,
+	next = 12488,
+	upgrade_id = 108,
+	id = 12487,
+	value_2 = 7,
+	value_1 = 17,
 	level = 8
 }
-_G.pg.base.spweapon_data_statistics[1030108] = {
-	prev = 1030107,
-	base = 1030100,
-	next = 1030109,
-	upgrade_id = 9,
-	id = 1030108,
-	value_2 = 10,
-	value_1 = 8,
+_G.pg.base.spweapon_data_statistics[12488] = {
+	prev = 12487,
+	base = 12480,
+	next = 12489,
+	upgrade_id = 109,
+	id = 12488,
+	value_2 = 8,
+	value_1 = 18,
 	level = 9
 }
-_G.pg.base.spweapon_data_statistics[1030109] = {
-	prev = 1030108,
-	base = 1030100,
-	next = 1030110,
-	upgrade_id = 10,
-	id = 1030109,
-	value_2 = 11,
-	value_1 = 8,
+_G.pg.base.spweapon_data_statistics[12489] = {
+	prev = 12488,
+	base = 12480,
+	next = 12490,
+	upgrade_id = 110,
+	id = 12489,
+	value_2 = 9,
+	value_1 = 19,
 	level = 10
 }
-_G.pg.base.spweapon_data_statistics[1030110] = {
-	prev = 1030109,
-	base = 1030100,
-	next = 1030120,
-	upgrade_id = 11,
-	id = 1030110,
-	value_2 = 12,
-	value_1 = 9,
-	level = 11
+_G.pg.base.spweapon_data_statistics[12490] = {
+	base = 12480,
+	prev = 12489,
+	next = 0,
+	upgrade_id = 111,
+	id = 12490,
+	value_2 = 10,
+	value_1 = 20,
+	level = 11,
+	skill_upgrade = {
+		{
+			17250,
+			1017250
+		}
+	}
 }
-_G.pg.base.spweapon_data_statistics[1030120] = {
-	tech = 2,
-	name = "饅頭クロスボウ",
-	value_2_random = 3,
-	type = 3,
-	value_1_random = 5,
-	value_1 = 10,
-	effect_id_display = 902010,
+_G.pg.base.spweapon_data_statistics[12500] = {
+	tech = 0,
+	name = "幽霊船の刃",
+	value_2_random = 5,
+	type = 10,
+	value_1_random = 20,
+	value_1 = 100,
+	effect_id_display = 902230,
 	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
+	descrip = "由特殊兵装核心制造出来的专属特制兵装",
 	uncraftable = 0,
-	next = 1030121,
-	upgrade_id = 21,
-	value_2 = 14,
-	icon = "1030100",
-	effect_id = 0,
-	attribute_2 = "antiaircraft",
-	id = 1030120,
-	rarity = 3,
-	unique = 0,
-	important = 1,
-	prev = 1030110,
-	attribute_1 = "cannon",
-	usability = {},
-	skill_upgrade = {},
+	next = 12501,
+	upgrade_id = 101,
+	value_2 = 1,
+	icon = "12500",
+	effect_id = 902230,
+	attribute_2 = "hit",
+	id = 12500,
+	rarity = 4,
+	unique = 960004,
+	important = 2,
+	prev = 0,
+	attribute_1 = "durability",
+	usability = {
+		22
+	},
+	skill_upgrade = {
+		{
+			0,
+			1017160
+		}
+	},
 	label = {}
 }
-_G.pg.base.spweapon_data_statistics[1030121] = {
-	prev = 1030120,
-	base = 1030120,
-	next = 1030122,
-	upgrade_id = 22,
-	id = 1030121,
+_G.pg.base.spweapon_data_statistics[12501] = {
+	prev = 12500,
+	base = 12500,
+	next = 12502,
+	upgrade_id = 102,
+	id = 12501,
+	value_1 = 105,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12502] = {
+	prev = 12501,
+	base = 12500,
+	next = 12503,
+	upgrade_id = 103,
+	id = 12502,
+	value_2 = 2,
+	value_1 = 110,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12503] = {
+	prev = 12502,
+	base = 12500,
+	next = 12504,
+	upgrade_id = 104,
+	id = 12503,
+	value_2 = 3,
+	value_1 = 115,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12504] = {
+	prev = 12503,
+	base = 12500,
+	next = 12505,
+	upgrade_id = 105,
+	id = 12504,
+	value_2 = 4,
+	value_1 = 120,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12505] = {
+	prev = 12504,
+	base = 12500,
+	next = 12506,
+	upgrade_id = 106,
+	id = 12505,
+	value_2 = 5,
+	value_1 = 125,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12506] = {
+	prev = 12505,
+	base = 12500,
+	next = 12507,
+	upgrade_id = 107,
+	id = 12506,
+	value_2 = 6,
+	value_1 = 130,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12507] = {
+	prev = 12506,
+	base = 12500,
+	next = 12508,
+	upgrade_id = 108,
+	id = 12507,
+	value_2 = 7,
+	value_1 = 135,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12508] = {
+	prev = 12507,
+	base = 12500,
+	next = 12509,
+	upgrade_id = 109,
+	id = 12508,
+	value_2 = 8,
+	value_1 = 140,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12509] = {
+	prev = 12508,
+	base = 12500,
+	next = 12510,
+	upgrade_id = 110,
+	id = 12509,
+	value_2 = 9,
+	value_1 = 145,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12510] = {
+	base = 12500,
+	prev = 12509,
+	next = 0,
+	upgrade_id = 111,
+	id = 12510,
+	value_2 = 10,
+	value_1 = 150,
+	level = 11,
+	skill_upgrade = {
+		{
+			17160,
+			1017160
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12520] = {
+	tech = 0,
+	name = "持ち歩き「ちっちゃいの」",
+	value_2_random = 5,
+	type = 10,
+	value_1_random = 20,
+	value_1 = 100,
+	effect_id_display = 902230,
+	level = 1,
+	descrip = "由特殊兵装核心制造出来的专属特制兵装",
+	uncraftable = 0,
+	next = 12521,
+	upgrade_id = 101,
+	value_2 = 1,
+	icon = "12520",
+	effect_id = 902230,
+	attribute_2 = "reload",
+	id = 12520,
+	rarity = 4,
+	unique = 960005,
+	important = 2,
+	prev = 0,
+	attribute_1 = "durability",
+	usability = {
+		22
+	},
+	skill_upgrade = {
+		{
+			0,
+			1017210
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12521] = {
+	prev = 12520,
+	base = 12520,
+	next = 12522,
+	upgrade_id = 102,
+	id = 12521,
+	value_1 = 105,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12522] = {
+	prev = 12521,
+	base = 12520,
+	next = 12523,
+	upgrade_id = 103,
+	id = 12522,
+	value_2 = 2,
+	value_1 = 110,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12523] = {
+	prev = 12522,
+	base = 12520,
+	next = 12524,
+	upgrade_id = 104,
+	id = 12523,
+	value_2 = 3,
+	value_1 = 115,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12524] = {
+	prev = 12523,
+	base = 12520,
+	next = 12525,
+	upgrade_id = 105,
+	id = 12524,
+	value_2 = 4,
+	value_1 = 120,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12525] = {
+	prev = 12524,
+	base = 12520,
+	next = 12526,
+	upgrade_id = 106,
+	id = 12525,
+	value_2 = 5,
+	value_1 = 125,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12526] = {
+	prev = 12525,
+	base = 12520,
+	next = 12527,
+	upgrade_id = 107,
+	id = 12526,
+	value_2 = 6,
+	value_1 = 130,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12527] = {
+	prev = 12526,
+	base = 12520,
+	next = 12528,
+	upgrade_id = 108,
+	id = 12527,
+	value_2 = 7,
+	value_1 = 135,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12528] = {
+	prev = 12527,
+	base = 12520,
+	next = 12529,
+	upgrade_id = 109,
+	id = 12528,
+	value_2 = 8,
+	value_1 = 140,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12529] = {
+	prev = 12528,
+	base = 12520,
+	next = 12530,
+	upgrade_id = 110,
+	id = 12529,
+	value_2 = 9,
+	value_1 = 145,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12530] = {
+	base = 12520,
+	prev = 12529,
+	next = 0,
+	upgrade_id = 111,
+	id = 12530,
+	value_2 = 10,
+	value_1 = 150,
+	level = 11,
+	skill_upgrade = {
+		{
+			17210,
+			1017210
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12540] = {
+	tech = 0,
+	name = "光風霽月",
+	value_2_random = 10,
+	type = 4,
+	value_1_random = 5,
+	value_1 = 5,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 12541,
+	upgrade_id = 101,
 	value_2 = 15,
+	icon = "12540",
+	effect_id = 901010,
+	attribute_2 = "cannon",
+	id = 12540,
+	rarity = 4,
+	unique = 30311,
+	important = 2,
+	prev = 0,
+	attribute_1 = "dodge",
+	usability = {
+		3
+	},
+	skill_upgrade = {
+		{
+			0,
+			1090190
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12541] = {
+	prev = 12540,
+	base = 12540,
+	next = 12542,
+	upgrade_id = 102,
+	id = 12541,
+	value_2 = 17,
+	value_1 = 6,
 	level = 2
 }
-_G.pg.base.spweapon_data_statistics[1030122] = {
-	prev = 1030121,
-	base = 1030120,
-	next = 1030123,
-	upgrade_id = 23,
-	id = 1030122,
-	value_2 = 16,
+_G.pg.base.spweapon_data_statistics[12542] = {
+	prev = 12541,
+	base = 12540,
+	next = 12543,
+	upgrade_id = 103,
+	id = 12542,
+	value_2 = 19,
+	value_1 = 7,
 	level = 3
 }
-_G.pg.base.spweapon_data_statistics[1030123] = {
-	prev = 1030122,
-	base = 1030120,
-	next = 1030124,
-	upgrade_id = 24,
-	id = 1030123,
-	value_2 = 17,
-	value_1 = 11,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1030124] = {
-	prev = 1030123,
-	base = 1030120,
-	next = 1030125,
-	upgrade_id = 25,
-	id = 1030124,
-	value_2 = 18,
-	value_1 = 11,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1030125] = {
-	prev = 1030124,
-	base = 1030120,
-	next = 1030126,
-	upgrade_id = 26,
-	id = 1030125,
-	value_2 = 18,
-	value_1 = 12,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1030126] = {
-	prev = 1030125,
-	base = 1030120,
-	next = 1030127,
-	upgrade_id = 27,
-	id = 1030126,
-	value_2 = 19,
-	value_1 = 12,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1030127] = {
-	prev = 1030126,
-	base = 1030120,
-	next = 1030128,
-	upgrade_id = 28,
-	id = 1030127,
-	value_2 = 19,
-	value_1 = 13,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1030128] = {
-	prev = 1030127,
-	base = 1030120,
-	next = 1030129,
-	upgrade_id = 29,
-	id = 1030128,
-	value_2 = 20,
-	value_1 = 13,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1030129] = {
-	prev = 1030128,
-	base = 1030120,
-	next = 1030130,
-	upgrade_id = 30,
-	id = 1030129,
-	value_2 = 20,
-	value_1 = 14,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1030130] = {
-	prev = 1030129,
+_G.pg.base.spweapon_data_statistics[12543] = {
+	prev = 12542,
+	base = 12540,
+	next = 12544,
+	upgrade_id = 104,
+	id = 12543,
 	value_2 = 21,
-	value_1 = 15,
-	base = 1030120,
-	effect_id_display = 902010,
-	next = 0,
-	upgrade_id = 31,
-	id = 1030130,
-	effect_id = 902010,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1040100] = {
-	tech = 1,
-	name = "饅頭バスターソード",
-	value_2_random = 3,
-	type = 4,
-	value_1_random = 5,
-	value_1 = 7,
-	effect_id_display = 901020,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1040101,
-	upgrade_id = 1,
-	value_2 = 4,
-	icon = "1040100",
-	effect_id = 0,
-	attribute_2 = "torpedo",
-	id = 1040100,
-	rarity = 2,
-	unique = 0,
-	important = 1,
-	prev = 0,
-	attribute_1 = "cannon",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1040101] = {
-	prev = 1040100,
-	base = 1040100,
-	next = 1040102,
-	upgrade_id = 2,
-	id = 1040101,
-	value_2 = 5,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1040102] = {
-	prev = 1040101,
-	base = 1040100,
-	next = 1040103,
-	upgrade_id = 3,
-	id = 1040102,
-	value_2 = 5,
-	value_1 = 8,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1040103] = {
-	prev = 1040102,
-	base = 1040100,
-	next = 1040104,
-	upgrade_id = 4,
-	id = 1040103,
-	value_2 = 6,
 	value_1 = 8,
 	level = 4
 }
-_G.pg.base.spweapon_data_statistics[1040104] = {
-	prev = 1040103,
-	base = 1040100,
-	next = 1040105,
-	upgrade_id = 5,
-	id = 1040104,
-	value_2 = 6,
+_G.pg.base.spweapon_data_statistics[12544] = {
+	prev = 12543,
+	base = 12540,
+	next = 12545,
+	upgrade_id = 105,
+	id = 12544,
+	value_2 = 23,
 	value_1 = 9,
 	level = 5
 }
-_G.pg.base.spweapon_data_statistics[1040105] = {
-	prev = 1040104,
-	base = 1040100,
-	next = 1040106,
-	upgrade_id = 6,
-	id = 1040105,
-	value_2 = 7,
-	value_1 = 9,
+_G.pg.base.spweapon_data_statistics[12545] = {
+	prev = 12544,
+	base = 12540,
+	next = 12546,
+	upgrade_id = 106,
+	id = 12545,
+	value_2 = 25,
+	value_1 = 10,
 	level = 6
 }
-_G.pg.base.spweapon_data_statistics[1040106] = {
-	prev = 1040105,
-	base = 1040100,
-	next = 1040107,
-	upgrade_id = 7,
-	id = 1040106,
-	value_2 = 7,
-	value_1 = 10,
+_G.pg.base.spweapon_data_statistics[12546] = {
+	prev = 12545,
+	base = 12540,
+	next = 12547,
+	upgrade_id = 107,
+	id = 12546,
+	value_2 = 27,
+	value_1 = 11,
 	level = 7
 }
-_G.pg.base.spweapon_data_statistics[1040107] = {
-	prev = 1040106,
-	base = 1040100,
-	next = 1040108,
-	upgrade_id = 8,
-	id = 1040107,
-	value_2 = 8,
-	value_1 = 10,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1040108] = {
-	prev = 1040107,
-	base = 1040100,
-	next = 1040109,
-	upgrade_id = 9,
-	id = 1040108,
-	value_2 = 8,
-	value_1 = 11,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1040109] = {
-	prev = 1040108,
-	base = 1040100,
-	next = 1040110,
-	upgrade_id = 10,
-	id = 1040109,
-	value_2 = 9,
-	value_1 = 11,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1040110] = {
-	prev = 1040109,
-	base = 1040100,
-	next = 1040120,
-	upgrade_id = 11,
-	id = 1040110,
-	value_2 = 9,
+_G.pg.base.spweapon_data_statistics[12547] = {
+	prev = 12546,
+	base = 12540,
+	next = 12548,
+	upgrade_id = 108,
+	id = 12547,
+	value_2 = 29,
 	value_1 = 12,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1040120] = {
-	tech = 2,
-	name = "饅頭バスターソード",
-	value_2_random = 3,
-	type = 4,
-	value_1_random = 5,
-	value_1 = 13,
-	effect_id_display = 901020,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1040121,
-	upgrade_id = 21,
-	value_2 = 10,
-	icon = "1040100",
-	effect_id = 0,
-	attribute_2 = "torpedo",
-	id = 1040120,
-	rarity = 3,
-	unique = 0,
-	important = 1,
-	prev = 1040110,
-	attribute_1 = "cannon",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1040121] = {
-	prev = 1040120,
-	base = 1040120,
-	next = 1040122,
-	upgrade_id = 22,
-	id = 1040121,
-	value_2 = 11,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1040122] = {
-	prev = 1040121,
-	base = 1040120,
-	next = 1040123,
-	upgrade_id = 23,
-	id = 1040122,
-	value_2 = 11,
-	value_1 = 14,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1040123] = {
-	prev = 1040122,
-	base = 1040120,
-	next = 1040124,
-	upgrade_id = 24,
-	id = 1040123,
-	value_2 = 12,
-	value_1 = 14,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1040124] = {
-	prev = 1040123,
-	base = 1040120,
-	next = 1040125,
-	upgrade_id = 25,
-	id = 1040124,
-	value_2 = 12,
-	value_1 = 15,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1040125] = {
-	prev = 1040124,
-	base = 1040120,
-	next = 1040126,
-	upgrade_id = 26,
-	id = 1040125,
-	value_2 = 13,
-	value_1 = 15,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1040126] = {
-	prev = 1040125,
-	base = 1040120,
-	next = 1040127,
-	upgrade_id = 27,
-	id = 1040126,
-	value_2 = 13,
-	value_1 = 16,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1040127] = {
-	prev = 1040126,
-	base = 1040120,
-	next = 1040128,
-	upgrade_id = 28,
-	id = 1040127,
-	value_2 = 14,
-	value_1 = 17,
 	level = 8
 }
-_G.pg.base.spweapon_data_statistics[1040128] = {
-	prev = 1040127,
-	base = 1040120,
-	next = 1040129,
-	upgrade_id = 29,
-	id = 1040128,
-	value_2 = 14,
-	value_1 = 18,
+_G.pg.base.spweapon_data_statistics[12548] = {
+	prev = 12547,
+	base = 12540,
+	next = 12549,
+	upgrade_id = 109,
+	id = 12548,
+	value_2 = 31,
+	value_1 = 13,
 	level = 9
 }
-_G.pg.base.spweapon_data_statistics[1040129] = {
-	prev = 1040128,
-	base = 1040120,
-	next = 1040130,
-	upgrade_id = 30,
-	id = 1040129,
-	value_2 = 14,
-	value_1 = 19,
+_G.pg.base.spweapon_data_statistics[12549] = {
+	prev = 12548,
+	base = 12540,
+	next = 12550,
+	upgrade_id = 110,
+	id = 12549,
+	value_2 = 33,
+	value_1 = 14,
 	level = 10
 }
-_G.pg.base.spweapon_data_statistics[1040130] = {
-	prev = 1040129,
-	value_2 = 15,
-	value_1 = 20,
-	base = 1040120,
-	effect_id_display = 901020,
+_G.pg.base.spweapon_data_statistics[12550] = {
+	base = 12540,
+	prev = 12549,
 	next = 0,
-	upgrade_id = 31,
-	id = 1040130,
+	upgrade_id = 111,
+	id = 12550,
+	value_2 = 35,
+	value_1 = 15,
+	level = 11,
+	skill_upgrade = {
+		{
+			2041,
+			1090190
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12560] = {
+	tech = 0,
+	name = "当たりの一本",
+	value_2_random = 10,
+	type = 1,
+	value_1_random = 10,
+	value_1 = 15,
+	effect_id_display = 901020,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 12561,
+	upgrade_id = 101,
+	value_2 = 6,
+	icon = "12560",
 	effect_id = 901020,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1050100] = {
-	tech = 1,
-	name = "饅頭ランス",
-	value_2_random = 3,
-	type = 5,
-	value_1_random = 5,
-	value_1 = 6,
-	effect_id_display = 902020,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1050101,
-	upgrade_id = 1,
-	value_2 = 5,
-	icon = "1050100",
-	effect_id = 0,
-	attribute_2 = "antiaircraft",
-	id = 1050100,
-	rarity = 2,
-	unique = 0,
-	important = 1,
+	attribute_2 = "reload",
+	id = 12560,
+	rarity = 4,
+	unique = 10107,
+	important = 2,
 	prev = 0,
-	attribute_1 = "hit",
-	usability = {},
-	skill_upgrade = {},
+	attribute_1 = "torpedo",
+	usability = {
+		1
+	},
+	skill_upgrade = {
+		{
+			0,
+			1090200
+		}
+	},
 	label = {}
 }
-_G.pg.base.spweapon_data_statistics[1050101] = {
-	prev = 1050100,
-	base = 1050100,
-	next = 1050102,
-	upgrade_id = 2,
-	id = 1050101,
+_G.pg.base.spweapon_data_statistics[12561] = {
+	prev = 12560,
+	base = 12560,
+	next = 12562,
+	upgrade_id = 102,
+	id = 12561,
 	value_2 = 6,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1050102] = {
-	prev = 1050101,
-	base = 1050100,
-	next = 1050103,
-	upgrade_id = 3,
-	id = 1050102,
-	value_2 = 6,
-	value_1 = 7,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1050103] = {
-	prev = 1050102,
-	base = 1050100,
-	next = 1050104,
-	upgrade_id = 4,
-	id = 1050103,
-	value_2 = 7,
-	value_1 = 7,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1050104] = {
-	prev = 1050103,
-	base = 1050100,
-	next = 1050105,
-	upgrade_id = 5,
-	id = 1050104,
-	value_2 = 7,
-	value_1 = 8,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1050105] = {
-	prev = 1050104,
-	base = 1050100,
-	next = 1050106,
-	upgrade_id = 6,
-	id = 1050105,
-	value_2 = 8,
-	value_1 = 8,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1050106] = {
-	prev = 1050105,
-	base = 1050100,
-	next = 1050107,
-	upgrade_id = 7,
-	id = 1050106,
-	value_2 = 8,
-	value_1 = 9,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1050107] = {
-	prev = 1050106,
-	base = 1050100,
-	next = 1050108,
-	upgrade_id = 8,
-	id = 1050107,
-	value_2 = 9,
-	value_1 = 9,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1050108] = {
-	prev = 1050107,
-	base = 1050100,
-	next = 1050109,
-	upgrade_id = 9,
-	id = 1050108,
-	value_2 = 9,
-	value_1 = 10,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1050109] = {
-	prev = 1050108,
-	base = 1050100,
-	next = 1050110,
-	upgrade_id = 10,
-	id = 1050109,
-	value_2 = 10,
-	value_1 = 10,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1050110] = {
-	prev = 1050109,
-	base = 1050100,
-	next = 1050120,
-	upgrade_id = 11,
-	id = 1050110,
-	value_2 = 10,
-	value_1 = 11,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1050120] = {
-	tech = 2,
-	name = "饅頭ランス",
-	value_2_random = 3,
-	type = 5,
-	value_1_random = 5,
-	value_1 = 12,
-	effect_id_display = 902020,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1050121,
-	upgrade_id = 21,
-	value_2 = 12,
-	icon = "1050100",
-	effect_id = 0,
-	attribute_2 = "antiaircraft",
-	id = 1050120,
-	rarity = 3,
-	unique = 0,
-	important = 1,
-	prev = 1050110,
-	attribute_1 = "hit",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1050121] = {
-	prev = 1050120,
-	base = 1050120,
-	next = 1050122,
-	upgrade_id = 22,
-	id = 1050121,
-	value_1 = 13,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1050122] = {
-	prev = 1050121,
-	base = 1050120,
-	next = 1050123,
-	upgrade_id = 23,
-	id = 1050122,
-	value_2 = 13,
-	value_1 = 13,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1050123] = {
-	prev = 1050122,
-	base = 1050120,
-	next = 1050124,
-	upgrade_id = 24,
-	id = 1050123,
-	value_2 = 13,
-	value_1 = 14,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1050124] = {
-	prev = 1050123,
-	base = 1050120,
-	next = 1050125,
-	upgrade_id = 25,
-	id = 1050124,
-	value_2 = 14,
-	value_1 = 14,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1050125] = {
-	prev = 1050124,
-	base = 1050120,
-	next = 1050126,
-	upgrade_id = 26,
-	id = 1050125,
-	value_2 = 14,
-	value_1 = 15,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1050126] = {
-	prev = 1050125,
-	base = 1050120,
-	next = 1050127,
-	upgrade_id = 27,
-	id = 1050126,
-	value_2 = 15,
-	value_1 = 15,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1050127] = {
-	prev = 1050126,
-	base = 1050120,
-	next = 1050128,
-	upgrade_id = 28,
-	id = 1050127,
-	value_2 = 15,
 	value_1 = 16,
-	level = 8
+	level = 2
 }
-_G.pg.base.spweapon_data_statistics[1050128] = {
-	prev = 1050127,
-	base = 1050120,
-	next = 1050129,
-	upgrade_id = 29,
-	id = 1050128,
-	value_2 = 16,
+_G.pg.base.spweapon_data_statistics[12562] = {
+	prev = 12561,
+	base = 12560,
+	next = 12563,
+	upgrade_id = 103,
+	id = 12562,
+	value_2 = 7,
 	value_1 = 17,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1050129] = {
-	prev = 1050128,
-	base = 1050120,
-	next = 1050130,
-	upgrade_id = 30,
-	id = 1050129,
-	value_2 = 17,
-	value_1 = 18,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1050130] = {
-	prev = 1050129,
-	value_2 = 18,
-	value_1 = 19,
-	base = 1050120,
-	effect_id_display = 902020,
-	next = 0,
-	upgrade_id = 31,
-	id = 1050130,
-	effect_id = 902020,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1060100] = {
-	tech = 1,
-	name = "饅頭オフィサーソード",
-	value_2_random = 3,
-	type = 6,
-	value_1_random = 5,
-	value_1 = 4,
-	effect_id_display = 902030,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1060101,
-	upgrade_id = 1,
-	value_2 = 4,
-	icon = "1060100",
-	effect_id = 0,
-	attribute_2 = "dodge",
-	id = 1060100,
-	rarity = 2,
-	unique = 0,
-	important = 1,
-	prev = 0,
-	attribute_1 = "hit",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1060101] = {
-	prev = 1060100,
-	base = 1060100,
-	next = 1060102,
-	upgrade_id = 2,
-	id = 1060101,
-	value_2 = 5,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1060102] = {
-	prev = 1060101,
-	base = 1060100,
-	next = 1060103,
-	upgrade_id = 3,
-	id = 1060102,
-	value_2 = 5,
-	value_1 = 5,
 	level = 3
 }
-_G.pg.base.spweapon_data_statistics[1060103] = {
-	prev = 1060102,
-	base = 1060100,
-	next = 1060104,
-	upgrade_id = 4,
-	id = 1060103,
-	value_2 = 6,
-	value_1 = 5,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1060104] = {
-	prev = 1060103,
-	base = 1060100,
-	next = 1060105,
-	upgrade_id = 5,
-	id = 1060104,
-	value_2 = 6,
-	value_1 = 6,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1060105] = {
-	prev = 1060104,
-	base = 1060100,
-	next = 1060106,
-	upgrade_id = 6,
-	id = 1060105,
-	value_2 = 7,
-	value_1 = 6,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1060106] = {
-	prev = 1060105,
-	base = 1060100,
-	next = 1060107,
-	upgrade_id = 7,
-	id = 1060106,
-	value_2 = 7,
-	value_1 = 7,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1060107] = {
-	prev = 1060106,
-	base = 1060100,
-	next = 1060108,
-	upgrade_id = 8,
-	id = 1060107,
+_G.pg.base.spweapon_data_statistics[12563] = {
+	prev = 12562,
+	base = 12560,
+	next = 12564,
+	upgrade_id = 104,
+	id = 12563,
 	value_2 = 8,
-	value_1 = 7,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1060108] = {
-	prev = 1060107,
-	base = 1060100,
-	next = 1060109,
-	upgrade_id = 9,
-	id = 1060108,
-	value_2 = 8,
-	value_1 = 8,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1060109] = {
-	prev = 1060108,
-	base = 1060100,
-	next = 1060110,
-	upgrade_id = 10,
-	id = 1060109,
-	value_2 = 9,
-	value_1 = 8,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1060110] = {
-	prev = 1060109,
-	base = 1060100,
-	next = 1060120,
-	upgrade_id = 11,
-	id = 1060110,
-	value_2 = 10,
-	value_1 = 9,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1060120] = {
-	tech = 2,
-	name = "饅頭オフィサーソード",
-	value_2_random = 3,
-	type = 6,
-	value_1_random = 5,
-	value_1 = 10,
-	effect_id_display = 902030,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1060121,
-	upgrade_id = 21,
-	value_2 = 10,
-	icon = "1060100",
-	effect_id = 0,
-	attribute_2 = "dodge",
-	id = 1060120,
-	rarity = 3,
-	unique = 0,
-	important = 1,
-	prev = 1060110,
-	attribute_1 = "hit",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1060121] = {
-	prev = 1060120,
-	base = 1060120,
-	next = 1060122,
-	upgrade_id = 22,
-	id = 1060121,
-	value_2 = 11,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1060122] = {
-	prev = 1060121,
-	base = 1060120,
-	next = 1060123,
-	upgrade_id = 23,
-	id = 1060122,
-	value_2 = 12,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1060123] = {
-	prev = 1060122,
-	base = 1060120,
-	next = 1060124,
-	upgrade_id = 24,
-	id = 1060123,
-	value_2 = 12,
-	value_1 = 11,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1060124] = {
-	prev = 1060123,
-	base = 1060120,
-	next = 1060125,
-	upgrade_id = 25,
-	id = 1060124,
-	value_2 = 13,
-	value_1 = 11,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1060125] = {
-	prev = 1060124,
-	base = 1060120,
-	next = 1060126,
-	upgrade_id = 26,
-	id = 1060125,
-	value_2 = 13,
-	value_1 = 12,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1060126] = {
-	prev = 1060125,
-	base = 1060120,
-	next = 1060127,
-	upgrade_id = 27,
-	id = 1060126,
-	value_2 = 14,
-	value_1 = 12,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1060127] = {
-	prev = 1060126,
-	base = 1060120,
-	next = 1060128,
-	upgrade_id = 28,
-	id = 1060127,
-	value_2 = 14,
-	value_1 = 13,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1060128] = {
-	prev = 1060127,
-	base = 1060120,
-	next = 1060129,
-	upgrade_id = 29,
-	id = 1060128,
-	value_2 = 15,
-	value_1 = 13,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1060129] = {
-	prev = 1060128,
-	base = 1060120,
-	next = 1060130,
-	upgrade_id = 30,
-	id = 1060129,
-	value_2 = 16,
-	value_1 = 14,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1060130] = {
-	prev = 1060129,
-	value_2 = 17,
-	value_1 = 15,
-	base = 1060120,
-	effect_id_display = 902030,
-	next = 0,
-	upgrade_id = 31,
-	id = 1060130,
-	effect_id = 902030,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1060200] = {
-	tech = 1,
-	name = "饅頭ボウガン",
-	value_2_random = 3,
-	type = 6,
-	value_1_random = 5,
-	value_1 = 5,
-	effect_id_display = 902040,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1060201,
-	upgrade_id = 1,
-	value_2 = 5,
-	icon = "1060200",
-	effect_id = 0,
-	attribute_2 = "antiaircraft",
-	id = 1060200,
-	rarity = 2,
-	unique = 0,
-	important = 1,
-	prev = 0,
-	attribute_1 = "cannon",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1060201] = {
-	prev = 1060200,
-	base = 1060200,
-	next = 1060202,
-	upgrade_id = 2,
-	id = 1060201,
-	value_1 = 6,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1060202] = {
-	prev = 1060201,
-	base = 1060200,
-	next = 1060203,
-	upgrade_id = 3,
-	id = 1060202,
-	value_2 = 6,
-	value_1 = 6,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1060203] = {
-	prev = 1060202,
-	base = 1060200,
-	next = 1060204,
-	upgrade_id = 4,
-	id = 1060203,
-	value_2 = 6,
-	value_1 = 7,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1060204] = {
-	prev = 1060203,
-	base = 1060200,
-	next = 1060205,
-	upgrade_id = 5,
-	id = 1060204,
-	value_2 = 7,
-	value_1 = 7,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1060205] = {
-	prev = 1060204,
-	base = 1060200,
-	next = 1060206,
-	upgrade_id = 6,
-	id = 1060205,
-	value_2 = 7,
-	value_1 = 8,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1060206] = {
-	prev = 1060205,
-	base = 1060200,
-	next = 1060207,
-	upgrade_id = 7,
-	id = 1060206,
-	value_2 = 8,
-	value_1 = 8,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1060207] = {
-	prev = 1060206,
-	base = 1060200,
-	next = 1060208,
-	upgrade_id = 8,
-	id = 1060207,
-	value_2 = 8,
-	value_1 = 9,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1060208] = {
-	prev = 1060207,
-	base = 1060200,
-	next = 1060209,
-	upgrade_id = 9,
-	id = 1060208,
-	value_2 = 9,
-	value_1 = 10,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1060209] = {
-	prev = 1060208,
-	base = 1060200,
-	next = 1060210,
-	upgrade_id = 10,
-	id = 1060209,
-	value_2 = 9,
-	value_1 = 11,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1060210] = {
-	prev = 1060209,
-	base = 1060200,
-	next = 1060220,
-	upgrade_id = 11,
-	id = 1060210,
-	value_2 = 10,
-	value_1 = 12,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1060220] = {
-	tech = 2,
-	name = "饅頭ボウガン",
-	value_2_random = 3,
-	type = 6,
-	value_1_random = 5,
-	value_1 = 14,
-	effect_id_display = 902040,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1060221,
-	upgrade_id = 21,
-	value_2 = 11,
-	icon = "1060200",
-	effect_id = 0,
-	attribute_2 = "antiaircraft",
-	id = 1060220,
-	rarity = 3,
-	unique = 0,
-	important = 1,
-	prev = 1060210,
-	attribute_1 = "cannon",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1060221] = {
-	prev = 1060220,
-	base = 1060220,
-	next = 1060222,
-	upgrade_id = 22,
-	id = 1060221,
-	value_2 = 12,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1060222] = {
-	prev = 1060221,
-	base = 1060220,
-	next = 1060223,
-	upgrade_id = 23,
-	id = 1060222,
-	value_2 = 12,
-	value_1 = 15,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1060223] = {
-	prev = 1060222,
-	base = 1060220,
-	next = 1060224,
-	upgrade_id = 24,
-	id = 1060223,
-	value_2 = 13,
-	value_1 = 15,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1060224] = {
-	prev = 1060223,
-	base = 1060220,
-	next = 1060225,
-	upgrade_id = 25,
-	id = 1060224,
-	value_2 = 13,
-	value_1 = 16,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1060225] = {
-	prev = 1060224,
-	base = 1060220,
-	next = 1060226,
-	upgrade_id = 26,
-	id = 1060225,
-	value_2 = 14,
-	value_1 = 16,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1060226] = {
-	prev = 1060225,
-	base = 1060220,
-	next = 1060227,
-	upgrade_id = 27,
-	id = 1060226,
-	value_2 = 14,
-	value_1 = 17,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1060227] = {
-	prev = 1060226,
-	base = 1060220,
-	next = 1060228,
-	upgrade_id = 28,
-	id = 1060227,
-	value_2 = 15,
-	value_1 = 17,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1060228] = {
-	prev = 1060227,
-	base = 1060220,
-	next = 1060229,
-	upgrade_id = 29,
-	id = 1060228,
-	value_2 = 15,
-	value_1 = 18,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1060229] = {
-	prev = 1060228,
-	base = 1060220,
-	next = 1060230,
-	upgrade_id = 30,
-	id = 1060229,
-	value_2 = 16,
-	value_1 = 19,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1060230] = {
-	prev = 1060229,
-	value_2 = 17,
-	value_1 = 20,
-	base = 1060220,
-	effect_id_display = 902040,
-	next = 0,
-	upgrade_id = 31,
-	id = 1060230,
-	effect_id = 902040,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1070100] = {
-	tech = 1,
-	name = "饅頭ハンターボウ",
-	value_2_random = 3,
-	type = 7,
-	value_1_random = 5,
-	value_1 = 7,
-	effect_id_display = 902050,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1070101,
-	upgrade_id = 1,
-	value_2 = 5,
-	icon = "1070100",
-	effect_id = 0,
-	attribute_2 = "antiaircraft",
-	id = 1070100,
-	rarity = 2,
-	unique = 0,
-	important = 1,
-	prev = 0,
-	attribute_1 = "air",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1070101] = {
-	prev = 1070100,
-	base = 1070100,
-	next = 1070102,
-	upgrade_id = 2,
-	id = 1070101,
-	value_1 = 8,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1070102] = {
-	prev = 1070101,
-	base = 1070100,
-	next = 1070103,
-	upgrade_id = 3,
-	id = 1070102,
-	value_2 = 6,
-	value_1 = 8,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1070103] = {
-	prev = 1070102,
-	base = 1070100,
-	next = 1070104,
-	upgrade_id = 4,
-	id = 1070103,
-	value_2 = 6,
-	value_1 = 9,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1070104] = {
-	prev = 1070103,
-	base = 1070100,
-	next = 1070105,
-	upgrade_id = 5,
-	id = 1070104,
-	value_2 = 7,
-	value_1 = 9,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1070105] = {
-	prev = 1070104,
-	base = 1070100,
-	next = 1070106,
-	upgrade_id = 6,
-	id = 1070105,
-	value_2 = 7,
-	value_1 = 10,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1070106] = {
-	prev = 1070105,
-	base = 1070100,
-	next = 1070107,
-	upgrade_id = 7,
-	id = 1070106,
-	value_2 = 8,
-	value_1 = 11,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1070107] = {
-	prev = 1070106,
-	base = 1070100,
-	next = 1070108,
-	upgrade_id = 8,
-	id = 1070107,
-	value_2 = 8,
-	value_1 = 12,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1070108] = {
-	prev = 1070107,
-	base = 1070100,
-	next = 1070109,
-	upgrade_id = 9,
-	id = 1070108,
-	value_2 = 9,
-	value_1 = 13,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1070109] = {
-	prev = 1070108,
-	base = 1070100,
-	next = 1070110,
-	upgrade_id = 10,
-	id = 1070109,
-	value_2 = 9,
-	value_1 = 14,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1070110] = {
-	prev = 1070109,
-	base = 1070100,
-	next = 1070120,
-	upgrade_id = 11,
-	id = 1070110,
-	value_2 = 10,
-	value_1 = 15,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1070120] = {
-	tech = 2,
-	name = "饅頭ハンターボウ",
-	value_2_random = 3,
-	type = 7,
-	value_1_random = 5,
-	value_1 = 17,
-	effect_id_display = 902050,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1070121,
-	upgrade_id = 21,
-	value_2 = 11,
-	icon = "1070100",
-	effect_id = 0,
-	attribute_2 = "antiaircraft",
-	id = 1070120,
-	rarity = 3,
-	unique = 0,
-	important = 1,
-	prev = 1070110,
-	attribute_1 = "air",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1070121] = {
-	prev = 1070120,
-	base = 1070120,
-	next = 1070122,
-	upgrade_id = 22,
-	id = 1070121,
-	value_2 = 12,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1070122] = {
-	prev = 1070121,
-	base = 1070120,
-	next = 1070123,
-	upgrade_id = 23,
-	id = 1070122,
-	value_2 = 12,
-	value_1 = 18,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1070123] = {
-	prev = 1070122,
-	base = 1070120,
-	next = 1070124,
-	upgrade_id = 24,
-	id = 1070123,
-	value_2 = 13,
 	value_1 = 18,
 	level = 4
 }
-_G.pg.base.spweapon_data_statistics[1070124] = {
-	prev = 1070123,
-	base = 1070120,
-	next = 1070125,
-	upgrade_id = 25,
-	id = 1070124,
-	value_2 = 13,
+_G.pg.base.spweapon_data_statistics[12564] = {
+	prev = 12563,
+	base = 12560,
+	next = 12565,
+	upgrade_id = 105,
+	id = 12564,
+	value_2 = 9,
 	value_1 = 19,
 	level = 5
 }
-_G.pg.base.spweapon_data_statistics[1070125] = {
-	prev = 1070124,
-	base = 1070120,
-	next = 1070126,
-	upgrade_id = 26,
-	id = 1070125,
-	value_2 = 14,
+_G.pg.base.spweapon_data_statistics[12565] = {
+	prev = 12564,
+	base = 12560,
+	next = 12566,
+	upgrade_id = 106,
+	id = 12565,
+	value_2 = 10,
 	value_1 = 20,
 	level = 6
 }
-_G.pg.base.spweapon_data_statistics[1070126] = {
-	prev = 1070125,
-	base = 1070120,
-	next = 1070127,
-	upgrade_id = 27,
-	id = 1070126,
-	value_2 = 14,
+_G.pg.base.spweapon_data_statistics[12566] = {
+	prev = 12565,
+	base = 12560,
+	next = 12567,
+	upgrade_id = 107,
+	id = 12566,
+	value_2 = 11,
 	value_1 = 21,
 	level = 7
 }
-_G.pg.base.spweapon_data_statistics[1070127] = {
-	prev = 1070126,
-	base = 1070120,
-	next = 1070128,
-	upgrade_id = 28,
-	id = 1070127,
-	value_2 = 15,
+_G.pg.base.spweapon_data_statistics[12567] = {
+	prev = 12566,
+	base = 12560,
+	next = 12568,
+	upgrade_id = 108,
+	id = 12567,
+	value_2 = 12,
 	value_1 = 22,
 	level = 8
 }
-_G.pg.base.spweapon_data_statistics[1070128] = {
-	prev = 1070127,
-	base = 1070120,
-	next = 1070129,
-	upgrade_id = 29,
-	id = 1070128,
-	value_2 = 15,
+_G.pg.base.spweapon_data_statistics[12568] = {
+	prev = 12567,
+	base = 12560,
+	next = 12569,
+	upgrade_id = 109,
+	id = 12568,
+	value_2 = 13,
 	value_1 = 23,
 	level = 9
 }
-_G.pg.base.spweapon_data_statistics[1070129] = {
-	prev = 1070128,
-	base = 1070120,
-	next = 1070130,
-	upgrade_id = 30,
-	id = 1070129,
-	value_2 = 16,
+_G.pg.base.spweapon_data_statistics[12569] = {
+	prev = 12568,
+	base = 12560,
+	next = 12570,
+	upgrade_id = 110,
+	id = 12569,
+	value_2 = 14,
 	value_1 = 24,
 	level = 10
 }
-_G.pg.base.spweapon_data_statistics[1070130] = {
-	prev = 1070129,
-	value_2 = 17,
-	value_1 = 25,
-	base = 1070120,
-	effect_id_display = 902050,
+_G.pg.base.spweapon_data_statistics[12570] = {
+	base = 12560,
+	prev = 12569,
 	next = 0,
-	upgrade_id = 31,
-	id = 1070130,
-	effect_id = 902050,
-	level = 11
+	upgrade_id = 111,
+	id = 12570,
+	value_2 = 15,
+	value_1 = 25,
+	level = 11,
+	skill_upgrade = {
+		{
+			2051,
+			1090200
+		}
+	}
 }
-_G.pg.base.spweapon_data_statistics[1070200] = {
-	tech = 1,
-	name = "饅頭セプター",
-	value_2_random = 3,
-	type = 7,
-	value_1_random = 5,
-	value_1 = 7,
-	effect_id_display = 902060,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1070201,
-	upgrade_id = 1,
-	value_2 = 5,
-	icon = "1070200",
-	effect_id = 0,
-	attribute_2 = "dodge",
-	id = 1070200,
-	rarity = 2,
-	unique = 0,
-	important = 1,
-	prev = 0,
-	attribute_1 = "air",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1070201] = {
-	prev = 1070200,
-	base = 1070200,
-	next = 1070202,
-	upgrade_id = 2,
-	id = 1070201,
-	value_1 = 8,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1070202] = {
-	prev = 1070201,
-	base = 1070200,
-	next = 1070203,
-	upgrade_id = 3,
-	id = 1070202,
-	value_2 = 6,
-	value_1 = 8,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1070203] = {
-	prev = 1070202,
-	base = 1070200,
-	next = 1070204,
-	upgrade_id = 4,
-	id = 1070203,
-	value_2 = 6,
-	value_1 = 9,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1070204] = {
-	prev = 1070203,
-	base = 1070200,
-	next = 1070205,
-	upgrade_id = 5,
-	id = 1070204,
-	value_2 = 7,
-	value_1 = 9,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1070205] = {
-	prev = 1070204,
-	base = 1070200,
-	next = 1070206,
-	upgrade_id = 6,
-	id = 1070205,
-	value_2 = 7,
-	value_1 = 10,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1070206] = {
-	prev = 1070205,
-	base = 1070200,
-	next = 1070207,
-	upgrade_id = 7,
-	id = 1070206,
-	value_2 = 8,
-	value_1 = 11,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1070207] = {
-	prev = 1070206,
-	base = 1070200,
-	next = 1070208,
-	upgrade_id = 8,
-	id = 1070207,
-	value_2 = 8,
-	value_1 = 12,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1070208] = {
-	prev = 1070207,
-	base = 1070200,
-	next = 1070209,
-	upgrade_id = 9,
-	id = 1070208,
-	value_2 = 9,
-	value_1 = 13,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1070209] = {
-	prev = 1070208,
-	base = 1070200,
-	next = 1070210,
-	upgrade_id = 10,
-	id = 1070209,
-	value_2 = 9,
-	value_1 = 14,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1070210] = {
-	prev = 1070209,
-	base = 1070200,
-	next = 1070220,
-	upgrade_id = 11,
-	id = 1070210,
-	value_2 = 10,
-	value_1 = 15,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1070220] = {
-	tech = 2,
-	name = "饅頭セプター",
-	value_2_random = 3,
-	type = 7,
-	value_1_random = 5,
-	value_1 = 17,
-	effect_id_display = 902060,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1070221,
-	upgrade_id = 21,
-	value_2 = 11,
-	icon = "1070200",
-	effect_id = 0,
-	attribute_2 = "dodge",
-	id = 1070220,
-	rarity = 3,
-	unique = 0,
-	important = 1,
-	prev = 1070210,
-	attribute_1 = "air",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1070221] = {
-	prev = 1070220,
-	base = 1070220,
-	next = 1070222,
-	upgrade_id = 22,
-	id = 1070221,
-	value_2 = 12,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1070222] = {
-	prev = 1070221,
-	base = 1070220,
-	next = 1070223,
-	upgrade_id = 23,
-	id = 1070222,
-	value_2 = 12,
-	value_1 = 18,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1070223] = {
-	prev = 1070222,
-	base = 1070220,
-	next = 1070224,
-	upgrade_id = 24,
-	id = 1070223,
-	value_2 = 13,
-	value_1 = 18,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1070224] = {
-	prev = 1070223,
-	base = 1070220,
-	next = 1070225,
-	upgrade_id = 25,
-	id = 1070224,
-	value_2 = 13,
-	value_1 = 19,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1070225] = {
-	prev = 1070224,
-	base = 1070220,
-	next = 1070226,
-	upgrade_id = 26,
-	id = 1070225,
-	value_2 = 14,
+_G.pg.base.spweapon_data_statistics[12580] = {
+	tech = 0,
+	name = "双刀・両舷繚閃",
+	value_2_random = 0,
+	type = 2,
+	value_1_random = 0,
 	value_1 = 20,
-	level = 6
+	effect_id_display = 110310,
+	level = 1,
+	descrip = "飛鳥の専用特殊装備",
+	uncraftable = 1,
+	next = 12581,
+	upgrade_id = 10001,
+	value_2 = 20,
+	icon = "12580",
+	effect_id = 110310,
+	attribute_2 = "torpedo",
+	id = 12580,
+	rarity = 4,
+	unique = 1100001,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		2
+	},
+	skill_upgrade = {
+		{
+			0,
+			110030
+		}
+	},
+	label = {
+		"SRSPW"
+	}
 }
-_G.pg.base.spweapon_data_statistics[1070226] = {
-	prev = 1070225,
-	base = 1070220,
-	next = 1070227,
-	upgrade_id = 27,
-	id = 1070226,
-	value_2 = 14,
+_G.pg.base.spweapon_data_statistics[12581] = {
+	prev = 12580,
+	base = 12580,
+	next = 12582,
+	upgrade_id = 10002,
+	id = 12581,
+	value_2 = 21,
 	value_1 = 21,
-	level = 7
+	level = 2
 }
-_G.pg.base.spweapon_data_statistics[1070227] = {
-	prev = 1070226,
-	base = 1070220,
-	next = 1070228,
-	upgrade_id = 28,
-	id = 1070227,
-	value_2 = 15,
+_G.pg.base.spweapon_data_statistics[12582] = {
+	prev = 12581,
+	base = 12580,
+	next = 12583,
+	upgrade_id = 10003,
+	id = 12582,
+	value_2 = 22,
 	value_1 = 22,
-	level = 8
+	level = 3
 }
-_G.pg.base.spweapon_data_statistics[1070228] = {
-	prev = 1070227,
-	base = 1070220,
-	next = 1070229,
-	upgrade_id = 29,
-	id = 1070228,
-	value_2 = 15,
+_G.pg.base.spweapon_data_statistics[12583] = {
+	prev = 12582,
+	base = 12580,
+	next = 12584,
+	upgrade_id = 10004,
+	id = 12583,
+	value_2 = 23,
 	value_1 = 23,
-	level = 9
+	level = 4
 }
-_G.pg.base.spweapon_data_statistics[1070229] = {
-	prev = 1070228,
-	base = 1070220,
-	next = 1070230,
-	upgrade_id = 30,
-	id = 1070229,
-	value_2 = 16,
+_G.pg.base.spweapon_data_statistics[12584] = {
+	prev = 12583,
+	base = 12580,
+	next = 12585,
+	upgrade_id = 10005,
+	id = 12584,
+	value_2 = 24,
 	value_1 = 24,
-	level = 10
+	level = 5
 }
-_G.pg.base.spweapon_data_statistics[1070230] = {
-	prev = 1070229,
-	value_2 = 17,
+_G.pg.base.spweapon_data_statistics[12585] = {
+	prev = 12584,
+	base = 12580,
+	next = 12586,
+	upgrade_id = 10006,
+	id = 12585,
+	value_2 = 25,
 	value_1 = 25,
-	base = 1070220,
-	effect_id_display = 902060,
-	next = 0,
-	upgrade_id = 31,
-	id = 1070230,
-	effect_id = 902060,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1080100] = {
-	tech = 1,
-	name = "饅頭ダガー",
-	value_2_random = 3,
-	type = 8,
-	value_1_random = 5,
-	value_1 = 1,
-	effect_id_display = 902070,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1080101,
-	upgrade_id = 1,
-	value_2 = 2,
-	icon = "1080100",
-	effect_id = 0,
-	attribute_2 = "dodge",
-	id = 1080100,
-	rarity = 2,
-	unique = 0,
-	important = 1,
-	prev = 0,
-	attribute_1 = "hit",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1080101] = {
-	prev = 1080100,
-	base = 1080100,
-	next = 1080102,
-	upgrade_id = 2,
-	id = 1080101,
-	value_2 = 3,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1080102] = {
-	prev = 1080101,
-	base = 1080100,
-	next = 1080103,
-	upgrade_id = 3,
-	id = 1080102,
-	value_2 = 4,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1080103] = {
-	prev = 1080102,
-	base = 1080100,
-	next = 1080104,
-	upgrade_id = 4,
-	id = 1080103,
-	value_2 = 5,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1080104] = {
-	prev = 1080103,
-	base = 1080100,
-	next = 1080105,
-	upgrade_id = 5,
-	id = 1080104,
-	value_2 = 6,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1080105] = {
-	prev = 1080104,
-	base = 1080100,
-	next = 1080106,
-	upgrade_id = 6,
-	id = 1080105,
-	value_2 = 7,
 	level = 6
 }
-_G.pg.base.spweapon_data_statistics[1080106] = {
-	prev = 1080105,
-	base = 1080100,
-	next = 1080107,
-	upgrade_id = 7,
-	id = 1080106,
-	value_2 = 7,
-	value_1 = 2,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1080107] = {
-	prev = 1080106,
-	base = 1080100,
-	next = 1080108,
-	upgrade_id = 8,
-	id = 1080107,
-	value_2 = 8,
-	value_1 = 2,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1080108] = {
-	prev = 1080107,
-	base = 1080100,
-	next = 1080109,
-	upgrade_id = 9,
-	id = 1080108,
-	value_2 = 8,
-	value_1 = 3,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1080109] = {
-	prev = 1080108,
-	base = 1080100,
-	next = 1080110,
-	upgrade_id = 10,
-	id = 1080109,
-	value_2 = 9,
-	value_1 = 3,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1080110] = {
-	prev = 1080109,
-	base = 1080100,
-	next = 1080120,
-	upgrade_id = 11,
-	id = 1080110,
-	value_2 = 9,
-	value_1 = 4,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1080120] = {
-	tech = 2,
-	name = "饅頭ダガー",
-	value_2_random = 3,
-	type = 8,
-	value_1_random = 5,
-	value_1 = 5,
-	effect_id_display = 902070,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1080121,
-	upgrade_id = 21,
-	value_2 = 10,
-	icon = "1080100",
-	effect_id = 0,
-	attribute_2 = "dodge",
-	id = 1080120,
-	rarity = 3,
-	unique = 0,
-	important = 1,
-	prev = 1080110,
-	attribute_1 = "hit",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1080121] = {
-	prev = 1080120,
-	base = 1080120,
-	next = 1080122,
-	upgrade_id = 22,
-	id = 1080121,
-	value_2 = 11,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1080122] = {
-	prev = 1080121,
-	base = 1080120,
-	next = 1080123,
-	upgrade_id = 23,
-	id = 1080122,
-	value_2 = 11,
-	value_1 = 6,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1080123] = {
-	prev = 1080122,
-	base = 1080120,
-	next = 1080124,
-	upgrade_id = 24,
-	id = 1080123,
-	value_2 = 12,
-	value_1 = 6,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1080124] = {
-	prev = 1080123,
-	base = 1080120,
-	next = 1080125,
-	upgrade_id = 25,
-	id = 1080124,
-	value_2 = 12,
-	value_1 = 7,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1080125] = {
-	prev = 1080124,
-	base = 1080120,
-	next = 1080126,
-	upgrade_id = 26,
-	id = 1080125,
-	value_2 = 13,
-	value_1 = 7,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1080126] = {
-	prev = 1080125,
-	base = 1080120,
-	next = 1080127,
-	upgrade_id = 27,
-	id = 1080126,
-	value_2 = 13,
-	value_1 = 8,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1080127] = {
-	prev = 1080126,
-	base = 1080120,
-	next = 1080128,
-	upgrade_id = 28,
-	id = 1080127,
-	value_2 = 14,
-	value_1 = 8,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1080128] = {
-	prev = 1080127,
-	base = 1080120,
-	next = 1080129,
-	upgrade_id = 29,
-	id = 1080128,
-	value_2 = 14,
-	value_1 = 9,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1080129] = {
-	prev = 1080128,
-	base = 1080120,
-	next = 1080130,
-	upgrade_id = 30,
-	id = 1080129,
-	value_2 = 15,
-	value_1 = 9,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1080130] = {
-	prev = 1080129,
-	value_2 = 15,
-	value_1 = 10,
-	base = 1080120,
-	effect_id_display = 902070,
-	next = 0,
-	upgrade_id = 31,
-	id = 1080130,
-	effect_id = 902070,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1080200] = {
-	tech = 1,
-	name = "饅頭クナイ",
-	value_2_random = 3,
-	type = 8,
-	value_1_random = 5,
-	value_1 = 10,
-	effect_id_display = 902080,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1080201,
-	upgrade_id = 1,
-	value_2 = 1,
-	icon = "1080200",
-	effect_id = 0,
-	attribute_2 = "hit",
-	id = 1080200,
-	rarity = 2,
-	unique = 0,
-	important = 1,
-	prev = 0,
-	attribute_1 = "torpedo",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1080201] = {
-	prev = 1080200,
-	base = 1080200,
-	next = 1080202,
-	upgrade_id = 2,
-	id = 1080201,
-	value_1 = 11,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1080202] = {
-	prev = 1080201,
-	base = 1080200,
-	next = 1080203,
-	upgrade_id = 3,
-	id = 1080202,
-	value_1 = 12,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[1080203] = {
-	prev = 1080202,
-	base = 1080200,
-	next = 1080204,
-	upgrade_id = 4,
-	id = 1080203,
-	value_1 = 13,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[1080204] = {
-	prev = 1080203,
-	base = 1080200,
-	next = 1080205,
-	upgrade_id = 5,
-	id = 1080204,
-	value_2 = 2,
-	value_1 = 14,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[1080205] = {
-	prev = 1080204,
-	base = 1080200,
-	next = 1080206,
-	upgrade_id = 6,
-	id = 1080205,
-	value_2 = 2,
-	value_1 = 15,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[1080206] = {
-	prev = 1080205,
-	base = 1080200,
-	next = 1080207,
-	upgrade_id = 7,
-	id = 1080206,
-	value_2 = 2,
-	value_1 = 16,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[1080207] = {
-	prev = 1080206,
-	base = 1080200,
-	next = 1080208,
-	upgrade_id = 8,
-	id = 1080207,
-	value_2 = 2,
-	value_1 = 17,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[1080208] = {
-	prev = 1080207,
-	base = 1080200,
-	next = 1080209,
-	upgrade_id = 9,
-	id = 1080208,
-	value_2 = 3,
-	value_1 = 18,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[1080209] = {
-	prev = 1080208,
-	base = 1080200,
-	next = 1080210,
-	upgrade_id = 10,
-	id = 1080209,
-	value_2 = 3,
-	value_1 = 19,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[1080210] = {
-	prev = 1080209,
-	base = 1080200,
-	next = 1080220,
-	upgrade_id = 11,
-	id = 1080210,
-	value_2 = 3,
-	value_1 = 21,
-	level = 11
-}
-_G.pg.base.spweapon_data_statistics[1080220] = {
-	tech = 2,
-	name = "饅頭クナイ",
-	value_2_random = 3,
-	type = 8,
-	value_1_random = 5,
-	value_1 = 24,
-	effect_id_display = 902080,
-	level = 1,
-	descrip = "特殊装備コアで製造できる量産型の兵装",
-	uncraftable = 0,
-	next = 1080221,
-	upgrade_id = 21,
-	value_2 = 3,
-	icon = "1080200",
-	effect_id = 0,
-	attribute_2 = "hit",
-	id = 1080220,
-	rarity = 3,
-	unique = 0,
-	important = 1,
-	prev = 1080210,
-	attribute_1 = "torpedo",
-	usability = {},
-	skill_upgrade = {},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[1080221] = {
-	prev = 1080220,
-	base = 1080220,
-	next = 1080222,
-	upgrade_id = 22,
-	id = 1080221,
-	value_1 = 25,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[1080222] = {
-	prev = 1080221,
-	base = 1080220,
-	next = 1080223,
-	upgrade_id = 23,
-	id = 1080222,
+_G.pg.base.spweapon_data_statistics[12586] = {
+	prev = 12585,
+	base = 12580,
+	next = 12587,
+	upgrade_id = 10007,
+	id = 12586,
+	value_2 = 26,
 	value_1 = 26,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12587] = {
+	prev = 12586,
+	base = 12580,
+	next = 12588,
+	upgrade_id = 10008,
+	id = 12587,
+	value_2 = 27,
+	value_1 = 27,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12588] = {
+	prev = 12587,
+	base = 12580,
+	next = 12589,
+	upgrade_id = 10009,
+	id = 12588,
+	value_2 = 28,
+	value_1 = 28,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12589] = {
+	prev = 12588,
+	base = 12580,
+	next = 12590,
+	upgrade_id = 10010,
+	id = 12589,
+	value_2 = 29,
+	value_1 = 29,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12590] = {
+	base = 12580,
+	prev = 12589,
+	next = 0,
+	upgrade_id = 10011,
+	id = 12590,
+	value_2 = 30,
+	value_1 = 30,
+	level = 11,
+	skill_upgrade = {
+		{
+			110020,
+			110030
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12600] = {
+	tech = 0,
+	name = "抜刀・鳳閃飛燕",
+	value_2_random = 0,
+	type = 4,
+	value_1_random = 0,
+	value_1 = 12,
+	effect_id_display = 110320,
+	level = 1,
+	descrip = "斑鳩の専用特殊装備",
+	uncraftable = 1,
+	next = 12601,
+	upgrade_id = 10001,
+	value_2 = 8,
+	icon = "12600",
+	effect_id = 110320,
+	attribute_2 = "reload",
+	id = 12600,
+	rarity = 4,
+	unique = 1100002,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		3
+	},
+	skill_upgrade = {
+		{
+			0,
+			110060
+		}
+	},
+	label = {
+		"SRSPW"
+	}
+}
+_G.pg.base.spweapon_data_statistics[12601] = {
+	prev = 12600,
+	base = 12600,
+	next = 12602,
+	upgrade_id = 10002,
+	id = 12601,
+	value_2 = 9,
+	value_1 = 14,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12602] = {
+	prev = 12601,
+	base = 12600,
+	next = 12603,
+	upgrade_id = 10003,
+	id = 12602,
+	value_2 = 10,
+	value_1 = 16,
 	level = 3
 }
-_G.pg.base.spweapon_data_statistics[1080223] = {
-	prev = 1080222,
-	base = 1080220,
-	next = 1080224,
-	upgrade_id = 24,
-	id = 1080223,
-	value_1 = 27,
+_G.pg.base.spweapon_data_statistics[12603] = {
+	prev = 12602,
+	base = 12600,
+	next = 12604,
+	upgrade_id = 10004,
+	id = 12603,
+	value_2 = 11,
+	value_1 = 18,
 	level = 4
 }
-_G.pg.base.spweapon_data_statistics[1080224] = {
-	prev = 1080223,
-	base = 1080220,
-	next = 1080225,
-	upgrade_id = 25,
-	id = 1080224,
-	value_2 = 4,
+_G.pg.base.spweapon_data_statistics[12604] = {
+	prev = 12603,
+	base = 12600,
+	next = 12605,
+	upgrade_id = 10005,
+	id = 12604,
+	value_2 = 12,
+	value_1 = 20,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12605] = {
+	prev = 12604,
+	base = 12600,
+	next = 12606,
+	upgrade_id = 10006,
+	id = 12605,
+	value_2 = 13,
+	value_1 = 22,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12606] = {
+	prev = 12605,
+	base = 12600,
+	next = 12607,
+	upgrade_id = 10007,
+	id = 12606,
+	value_2 = 14,
+	value_1 = 24,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12607] = {
+	prev = 12606,
+	base = 12600,
+	next = 12608,
+	upgrade_id = 10008,
+	id = 12607,
+	value_2 = 15,
+	value_1 = 26,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12608] = {
+	prev = 12607,
+	base = 12600,
+	next = 12609,
+	upgrade_id = 10009,
+	id = 12608,
+	value_2 = 16,
+	value_1 = 28,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12609] = {
+	prev = 12608,
+	base = 12600,
+	next = 12610,
+	upgrade_id = 10010,
+	id = 12609,
+	value_2 = 17,
+	value_1 = 30,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12610] = {
+	base = 12600,
+	prev = 12609,
+	next = 0,
+	upgrade_id = 10011,
+	id = 12610,
+	value_2 = 18,
+	value_1 = 32,
+	level = 11,
+	skill_upgrade = {
+		{
+			110040,
+			110060
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12620] = {
+	tech = 0,
+	name = "六刀・魁ノ焔",
+	value_2_random = 0,
+	type = 8,
+	value_1_random = 0,
+	value_1 = 27,
+	effect_id_display = 110330,
+	level = 1,
+	descrip = "焔の専用特殊装備",
+	uncraftable = 1,
+	next = 12621,
+	upgrade_id = 10001,
+	value_2 = 9,
+	icon = "12620",
+	effect_id = 110330,
+	attribute_2 = "hit",
+	id = 12620,
+	rarity = 4,
+	unique = 1100003,
+	important = 2,
+	prev = 0,
+	attribute_1 = "torpedo",
+	usability = {
+		8
+	},
+	skill_upgrade = {
+		{
+			0,
+			110090
+		}
+	},
+	label = {
+		"SRSPW"
+	}
+}
+_G.pg.base.spweapon_data_statistics[12621] = {
+	prev = 12620,
+	base = 12620,
+	next = 12622,
+	upgrade_id = 10002,
+	id = 12621,
+	value_2 = 10,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12622] = {
+	prev = 12621,
+	base = 12620,
+	next = 12623,
+	upgrade_id = 10003,
+	id = 12622,
+	value_2 = 10,
+	value_1 = 28,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12623] = {
+	prev = 12622,
+	base = 12620,
+	next = 12624,
+	upgrade_id = 10004,
+	id = 12623,
+	value_2 = 11,
+	value_1 = 28,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12624] = {
+	prev = 12623,
+	base = 12620,
+	next = 12625,
+	upgrade_id = 10005,
+	id = 12624,
+	value_2 = 11,
+	value_1 = 29,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12625] = {
+	prev = 12624,
+	base = 12620,
+	next = 12626,
+	upgrade_id = 10006,
+	id = 12625,
+	value_2 = 12,
+	value_1 = 30,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12626] = {
+	prev = 12625,
+	base = 12620,
+	next = 12627,
+	upgrade_id = 10007,
+	id = 12626,
+	value_2 = 12,
+	value_1 = 31,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12627] = {
+	prev = 12626,
+	base = 12620,
+	next = 12628,
+	upgrade_id = 10008,
+	id = 12627,
+	value_2 = 13,
+	value_1 = 32,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12628] = {
+	prev = 12627,
+	base = 12620,
+	next = 12629,
+	upgrade_id = 10009,
+	id = 12628,
+	value_2 = 13,
+	value_1 = 33,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12629] = {
+	prev = 12628,
+	base = 12620,
+	next = 12630,
+	upgrade_id = 10010,
+	id = 12629,
+	value_2 = 14,
+	value_1 = 34,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12630] = {
+	base = 12620,
+	prev = 12629,
+	next = 0,
+	upgrade_id = 10011,
+	id = 12630,
+	value_2 = 15,
+	value_1 = 35,
+	level = 11,
+	skill_upgrade = {
+		{
+			110070,
+			110090
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12640] = {
+	tech = 0,
+	name = "扇・霜袖雪舞",
+	value_2_random = 0,
+	type = 7,
+	value_1_random = 0,
+	value_1 = 20,
+	effect_id_display = 110340,
+	level = 1,
+	descrip = "雪泉の専用特殊装備",
+	uncraftable = 1,
+	next = 12641,
+	upgrade_id = 10001,
+	value_2 = 5,
+	icon = "12640",
+	effect_id = 110340,
+	attribute_2 = "hit",
+	id = 12640,
+	rarity = 4,
+	unique = 1100004,
+	important = 2,
+	prev = 0,
+	attribute_1 = "air",
+	usability = {
+		7
+	},
+	skill_upgrade = {
+		{
+			0,
+			110120
+		}
+	},
+	label = {
+		"SRSPW"
+	}
+}
+_G.pg.base.spweapon_data_statistics[12641] = {
+	prev = 12640,
+	base = 12640,
+	next = 12642,
+	upgrade_id = 10002,
+	id = 12641,
+	value_2 = 6,
+	value_1 = 22,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12642] = {
+	prev = 12641,
+	base = 12640,
+	next = 12643,
+	upgrade_id = 10003,
+	id = 12642,
+	value_2 = 7,
+	value_1 = 24,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12643] = {
+	prev = 12642,
+	base = 12640,
+	next = 12644,
+	upgrade_id = 10004,
+	id = 12643,
+	value_2 = 8,
+	value_1 = 26,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12644] = {
+	prev = 12643,
+	base = 12640,
+	next = 12645,
+	upgrade_id = 10005,
+	id = 12644,
+	value_2 = 9,
 	value_1 = 28,
 	level = 5
 }
-_G.pg.base.spweapon_data_statistics[1080225] = {
-	prev = 1080224,
-	base = 1080220,
-	next = 1080226,
-	upgrade_id = 26,
-	id = 1080225,
-	value_2 = 4,
-	value_1 = 29,
+_G.pg.base.spweapon_data_statistics[12645] = {
+	prev = 12644,
+	base = 12640,
+	next = 12646,
+	upgrade_id = 10006,
+	id = 12645,
+	value_2 = 10,
+	value_1 = 30,
 	level = 6
 }
-_G.pg.base.spweapon_data_statistics[1080226] = {
-	prev = 1080225,
-	base = 1080220,
-	next = 1080227,
-	upgrade_id = 27,
-	id = 1080226,
-	value_2 = 4,
-	value_1 = 30,
+_G.pg.base.spweapon_data_statistics[12646] = {
+	prev = 12645,
+	base = 12640,
+	next = 12647,
+	upgrade_id = 10007,
+	id = 12646,
+	value_2 = 11,
+	value_1 = 32,
 	level = 7
 }
-_G.pg.base.spweapon_data_statistics[1080227] = {
-	prev = 1080226,
-	base = 1080220,
-	next = 1080228,
-	upgrade_id = 28,
-	id = 1080227,
-	value_2 = 4,
-	value_1 = 31,
+_G.pg.base.spweapon_data_statistics[12647] = {
+	prev = 12646,
+	base = 12640,
+	next = 12648,
+	upgrade_id = 10008,
+	id = 12647,
+	value_2 = 12,
+	value_1 = 34,
 	level = 8
 }
-_G.pg.base.spweapon_data_statistics[1080228] = {
-	prev = 1080227,
-	base = 1080220,
-	next = 1080229,
-	upgrade_id = 29,
-	id = 1080228,
-	value_2 = 5,
-	value_1 = 32,
+_G.pg.base.spweapon_data_statistics[12648] = {
+	prev = 12647,
+	base = 12640,
+	next = 12649,
+	upgrade_id = 10009,
+	id = 12648,
+	value_2 = 13,
+	value_1 = 36,
 	level = 9
 }
-_G.pg.base.spweapon_data_statistics[1080229] = {
-	prev = 1080228,
-	base = 1080220,
-	next = 1080230,
-	upgrade_id = 30,
-	id = 1080229,
-	value_2 = 5,
-	value_1 = 33,
+_G.pg.base.spweapon_data_statistics[12649] = {
+	prev = 12648,
+	base = 12640,
+	next = 12650,
+	upgrade_id = 10010,
+	id = 12649,
+	value_2 = 14,
+	value_1 = 38,
 	level = 10
 }
-_G.pg.base.spweapon_data_statistics[1080230] = {
-	prev = 1080229,
-	value_2 = 5,
-	value_1 = 35,
-	base = 1080220,
-	effect_id_display = 902080,
+_G.pg.base.spweapon_data_statistics[12650] = {
+	base = 12640,
+	prev = 12649,
 	next = 0,
-	upgrade_id = 31,
-	id = 1080230,
-	effect_id = 902080,
-	level = 11
+	upgrade_id = 10011,
+	id = 12650,
+	value_2 = 15,
+	value_1 = 40,
+	level = 11,
+	skill_upgrade = {
+		{
+			110100,
+			110120
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12660] = {
+	tech = 0,
+	name = "扇・紫氷連華",
+	value_2_random = 0,
+	type = 6,
+	value_1_random = 0,
+	value_1 = 20,
+	effect_id_display = 110350,
+	level = 1,
+	descrip = "雪不帰の専用特殊装備",
+	uncraftable = 1,
+	next = 12661,
+	upgrade_id = 10001,
+	value_2 = 10,
+	icon = "12660",
+	effect_id = 110350,
+	attribute_2 = "reload",
+	id = 12660,
+	rarity = 4,
+	unique = 1100005,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		5
+	},
+	skill_upgrade = {
+		{
+			0,
+			110150
+		}
+	},
+	label = {
+		"SRSPW"
+	}
+}
+_G.pg.base.spweapon_data_statistics[12661] = {
+	prev = 12660,
+	base = 12660,
+	next = 12662,
+	upgrade_id = 10002,
+	id = 12661,
+	value_2 = 11,
+	value_1 = 21,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12662] = {
+	prev = 12661,
+	base = 12660,
+	next = 12663,
+	upgrade_id = 10003,
+	id = 12662,
+	value_2 = 12,
+	value_1 = 22,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12663] = {
+	prev = 12662,
+	base = 12660,
+	next = 12664,
+	upgrade_id = 10004,
+	id = 12663,
+	value_2 = 13,
+	value_1 = 23,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12664] = {
+	prev = 12663,
+	base = 12660,
+	next = 12665,
+	upgrade_id = 10005,
+	id = 12664,
+	value_2 = 14,
+	value_1 = 24,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12665] = {
+	prev = 12664,
+	base = 12660,
+	next = 12666,
+	upgrade_id = 10006,
+	id = 12665,
+	value_2 = 15,
+	value_1 = 25,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12666] = {
+	prev = 12665,
+	base = 12660,
+	next = 12667,
+	upgrade_id = 10007,
+	id = 12666,
+	value_2 = 16,
+	value_1 = 26,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12667] = {
+	prev = 12666,
+	base = 12660,
+	next = 12668,
+	upgrade_id = 10008,
+	id = 12667,
+	value_2 = 17,
+	value_1 = 27,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12668] = {
+	prev = 12667,
+	base = 12660,
+	next = 12669,
+	upgrade_id = 10009,
+	id = 12668,
+	value_2 = 18,
+	value_1 = 28,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12669] = {
+	prev = 12668,
+	base = 12660,
+	next = 12670,
+	upgrade_id = 10010,
+	id = 12669,
+	value_2 = 19,
+	value_1 = 29,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12670] = {
+	base = 12660,
+	prev = 12669,
+	next = 0,
+	upgrade_id = 10011,
+	id = 12670,
+	value_2 = 20,
+	value_1 = 30,
+	level = 11,
+	skill_upgrade = {
+		{
+			110140,
+			110150
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12680] = {
+	tech = 0,
+	name = "手裏剣・影潜む円月",
+	value_2_random = 0,
+	type = 7,
+	value_1_random = 0,
+	value_1 = 27,
+	effect_id_display = 110360,
+	level = 1,
+	descrip = "紫の専用特殊装備",
+	uncraftable = 1,
+	next = 12681,
+	upgrade_id = 10001,
+	value_2 = 9,
+	icon = "12680",
+	effect_id = 110360,
+	attribute_2 = "antiaircraft",
+	id = 12680,
+	rarity = 4,
+	unique = 1100006,
+	important = 2,
+	prev = 0,
+	attribute_1 = "air",
+	usability = {
+		6
+	},
+	skill_upgrade = {
+		{
+			0,
+			110180
+		}
+	},
+	label = {
+		"SRSPW"
+	}
+}
+_G.pg.base.spweapon_data_statistics[12681] = {
+	prev = 12680,
+	base = 12680,
+	next = 12682,
+	upgrade_id = 10002,
+	id = 12681,
+	value_2 = 10,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12682] = {
+	prev = 12681,
+	base = 12680,
+	next = 12683,
+	upgrade_id = 10003,
+	id = 12682,
+	value_2 = 10,
+	value_1 = 28,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12683] = {
+	prev = 12682,
+	base = 12680,
+	next = 12684,
+	upgrade_id = 10004,
+	id = 12683,
+	value_2 = 11,
+	value_1 = 28,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12684] = {
+	prev = 12683,
+	base = 12680,
+	next = 12685,
+	upgrade_id = 10005,
+	id = 12684,
+	value_2 = 11,
+	value_1 = 29,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12685] = {
+	prev = 12684,
+	base = 12680,
+	next = 12686,
+	upgrade_id = 10006,
+	id = 12685,
+	value_2 = 12,
+	value_1 = 30,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12686] = {
+	prev = 12685,
+	base = 12680,
+	next = 12687,
+	upgrade_id = 10007,
+	id = 12686,
+	value_2 = 12,
+	value_1 = 31,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12687] = {
+	prev = 12686,
+	base = 12680,
+	next = 12688,
+	upgrade_id = 10008,
+	id = 12687,
+	value_2 = 13,
+	value_1 = 32,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12688] = {
+	prev = 12687,
+	base = 12680,
+	next = 12689,
+	upgrade_id = 10009,
+	id = 12688,
+	value_2 = 13,
+	value_1 = 33,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12689] = {
+	prev = 12688,
+	base = 12680,
+	next = 12690,
+	upgrade_id = 10010,
+	id = 12689,
+	value_2 = 14,
+	value_1 = 34,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12690] = {
+	base = 12680,
+	prev = 12689,
+	next = 0,
+	upgrade_id = 10011,
+	id = 12690,
+	value_2 = 15,
+	value_1 = 35,
+	level = 11,
+	skill_upgrade = {
+		{
+			110170,
+			110180
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12700] = {
+	tech = 0,
+	name = "太刀・ハンカネ",
+	value_2_random = 0,
+	type = 4,
+	value_1_random = 0,
+	value_1 = 20,
+	effect_id_display = 110370,
+	level = 1,
+	descrip = "夕焼の専用特殊装備",
+	uncraftable = 1,
+	next = 12701,
+	upgrade_id = 10001,
+	value_2 = 5,
+	icon = "12700",
+	effect_id = 110370,
+	attribute_2 = "hit",
+	id = 12700,
+	rarity = 4,
+	unique = 1100007,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		3
+	},
+	skill_upgrade = {
+		{
+			0,
+			110210
+		}
+	},
+	label = {
+		"SRSPW"
+	}
+}
+_G.pg.base.spweapon_data_statistics[12701] = {
+	prev = 12700,
+	base = 12700,
+	next = 12702,
+	upgrade_id = 10002,
+	id = 12701,
+	value_2 = 6,
+	value_1 = 21,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12702] = {
+	prev = 12701,
+	base = 12700,
+	next = 12703,
+	upgrade_id = 10003,
+	id = 12702,
+	value_2 = 7,
+	value_1 = 22,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12703] = {
+	prev = 12702,
+	base = 12700,
+	next = 12704,
+	upgrade_id = 10004,
+	id = 12703,
+	value_2 = 8,
+	value_1 = 23,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12704] = {
+	prev = 12703,
+	base = 12700,
+	next = 12705,
+	upgrade_id = 10005,
+	id = 12704,
+	value_2 = 9,
+	value_1 = 24,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12705] = {
+	prev = 12704,
+	base = 12700,
+	next = 12706,
+	upgrade_id = 10006,
+	id = 12705,
+	value_2 = 10,
+	value_1 = 25,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12706] = {
+	prev = 12705,
+	base = 12700,
+	next = 12707,
+	upgrade_id = 10007,
+	id = 12706,
+	value_2 = 11,
+	value_1 = 26,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12707] = {
+	prev = 12706,
+	base = 12700,
+	next = 12708,
+	upgrade_id = 10008,
+	id = 12707,
+	value_2 = 12,
+	value_1 = 27,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12708] = {
+	prev = 12707,
+	base = 12700,
+	next = 12709,
+	upgrade_id = 10009,
+	id = 12708,
+	value_2 = 13,
+	value_1 = 28,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12709] = {
+	prev = 12708,
+	base = 12700,
+	next = 12710,
+	upgrade_id = 10010,
+	id = 12709,
+	value_2 = 14,
+	value_1 = 29,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12710] = {
+	base = 12700,
+	prev = 12709,
+	next = 0,
+	upgrade_id = 10011,
+	id = 12710,
+	value_2 = 15,
+	value_1 = 30,
+	level = 11,
+	skill_upgrade = {
+		{
+			110190,
+			110210
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12720] = {
+	tech = 0,
+	name = "麗しきフィオレット",
+	value_2_random = 5,
+	type = 4,
+	value_1_random = 10,
+	value_1 = 12,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 12721,
+	upgrade_id = 101,
+	value_2 = 5,
+	icon = "12720",
+	effect_id = 901010,
+	attribute_2 = "hit",
+	id = 12720,
+	rarity = 4,
+	unique = 60302,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		3
+	},
+	skill_upgrade = {
+		{
+			0,
+			1012620
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12721] = {
+	prev = 12720,
+	base = 12720,
+	next = 12722,
+	upgrade_id = 102,
+	id = 12721,
+	value_2 = 6,
+	value_1 = 14,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12722] = {
+	prev = 12721,
+	base = 12720,
+	next = 12723,
+	upgrade_id = 103,
+	id = 12722,
+	value_2 = 7,
+	value_1 = 16,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12723] = {
+	prev = 12722,
+	base = 12720,
+	next = 12724,
+	upgrade_id = 104,
+	id = 12723,
+	value_2 = 8,
+	value_1 = 18,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12724] = {
+	prev = 12723,
+	base = 12720,
+	next = 12725,
+	upgrade_id = 105,
+	id = 12724,
+	value_2 = 9,
+	value_1 = 20,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12725] = {
+	prev = 12724,
+	base = 12720,
+	next = 12726,
+	upgrade_id = 106,
+	id = 12725,
+	value_2 = 10,
+	value_1 = 22,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12726] = {
+	prev = 12725,
+	base = 12720,
+	next = 12727,
+	upgrade_id = 107,
+	id = 12726,
+	value_2 = 11,
+	value_1 = 24,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12727] = {
+	prev = 12726,
+	base = 12720,
+	next = 12728,
+	upgrade_id = 108,
+	id = 12727,
+	value_2 = 12,
+	value_1 = 26,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12728] = {
+	prev = 12727,
+	base = 12720,
+	next = 12729,
+	upgrade_id = 109,
+	id = 12728,
+	value_2 = 13,
+	value_1 = 28,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12729] = {
+	prev = 12728,
+	base = 12720,
+	next = 12730,
+	upgrade_id = 110,
+	id = 12729,
+	value_2 = 14,
+	value_1 = 30,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12730] = {
+	base = 12720,
+	prev = 12729,
+	next = 0,
+	upgrade_id = 111,
+	id = 12730,
+	value_2 = 15,
+	value_1 = 32,
+	level = 11,
+	skill_upgrade = {
+		{
+			12620,
+			1012620
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12740] = {
+	tech = 0,
+	name = "エクスプローラー・アイ",
+	value_2_random = 5,
+	type = 7,
+	value_1_random = 10,
+	value_1 = 20,
+	effect_id_display = 902060,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 12741,
+	upgrade_id = 101,
+	value_2 = 5,
+	icon = "12740",
+	effect_id = 902060,
+	attribute_2 = "reload",
+	id = 12740,
+	rarity = 4,
+	unique = 10738,
+	important = 2,
+	prev = 0,
+	attribute_1 = "air",
+	usability = {
+		7
+	},
+	skill_upgrade = {
+		{
+			0,
+			1011940
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12741] = {
+	prev = 12740,
+	base = 12740,
+	next = 12742,
+	upgrade_id = 102,
+	id = 12741,
+	value_2 = 6,
+	value_1 = 21,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12742] = {
+	prev = 12741,
+	base = 12740,
+	next = 12743,
+	upgrade_id = 103,
+	id = 12742,
+	value_2 = 7,
+	value_1 = 22,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12743] = {
+	prev = 12742,
+	base = 12740,
+	next = 12744,
+	upgrade_id = 104,
+	id = 12743,
+	value_2 = 8,
+	value_1 = 23,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12744] = {
+	prev = 12743,
+	base = 12740,
+	next = 12745,
+	upgrade_id = 105,
+	id = 12744,
+	value_2 = 9,
+	value_1 = 24,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12745] = {
+	prev = 12744,
+	base = 12740,
+	next = 12746,
+	upgrade_id = 106,
+	id = 12745,
+	value_2 = 10,
+	value_1 = 25,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12746] = {
+	prev = 12745,
+	base = 12740,
+	next = 12747,
+	upgrade_id = 107,
+	id = 12746,
+	value_2 = 11,
+	value_1 = 26,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12747] = {
+	prev = 12746,
+	base = 12740,
+	next = 12748,
+	upgrade_id = 108,
+	id = 12747,
+	value_2 = 12,
+	value_1 = 27,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12748] = {
+	prev = 12747,
+	base = 12740,
+	next = 12749,
+	upgrade_id = 109,
+	id = 12748,
+	value_2 = 13,
+	value_1 = 28,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12749] = {
+	prev = 12748,
+	base = 12740,
+	next = 12750,
+	upgrade_id = 110,
+	id = 12749,
+	value_2 = 14,
+	value_1 = 29,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12750] = {
+	base = 12740,
+	prev = 12749,
+	next = 0,
+	upgrade_id = 111,
+	id = 12750,
+	value_2 = 15,
+	value_1 = 30,
+	level = 11,
+	skill_upgrade = {
+		{
+			11940,
+			1011940
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12760] = {
+	tech = 0,
+	name = "ホイール・フォーチュン",
+	value_2_random = 20,
+	type = 1,
+	value_1_random = 10,
+	value_1 = 16,
+	effect_id_display = 901020,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 12761,
+	upgrade_id = 101,
+	value_2 = 100,
+	icon = "12760",
+	effect_id = 901020,
+	attribute_2 = "durability",
+	id = 12760,
+	rarity = 4,
+	unique = 20112,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		1
+	},
+	skill_upgrade = {
+		{
+			0,
+			1090210
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12761] = {
+	prev = 12760,
+	base = 12760,
+	next = 12762,
+	upgrade_id = 102,
+	id = 12761,
+	value_2 = 110,
+	value_1 = 17,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12762] = {
+	prev = 12761,
+	base = 12760,
+	next = 12763,
+	upgrade_id = 103,
+	id = 12762,
+	value_2 = 120,
+	value_1 = 18,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12763] = {
+	prev = 12762,
+	base = 12760,
+	next = 12764,
+	upgrade_id = 104,
+	id = 12763,
+	value_2 = 130,
+	value_1 = 19,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12764] = {
+	prev = 12763,
+	base = 12760,
+	next = 12765,
+	upgrade_id = 105,
+	id = 12764,
+	value_2 = 140,
+	value_1 = 20,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12765] = {
+	prev = 12764,
+	base = 12760,
+	next = 12766,
+	upgrade_id = 106,
+	id = 12765,
+	value_2 = 150,
+	value_1 = 21,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12766] = {
+	prev = 12765,
+	base = 12760,
+	next = 12767,
+	upgrade_id = 107,
+	id = 12766,
+	value_2 = 160,
+	value_1 = 22,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12767] = {
+	prev = 12766,
+	base = 12760,
+	next = 12768,
+	upgrade_id = 108,
+	id = 12767,
+	value_2 = 170,
+	value_1 = 23,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12768] = {
+	prev = 12767,
+	base = 12760,
+	next = 12769,
+	upgrade_id = 109,
+	id = 12768,
+	value_2 = 180,
+	value_1 = 24,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12769] = {
+	prev = 12768,
+	base = 12760,
+	next = 12770,
+	upgrade_id = 110,
+	id = 12769,
+	value_2 = 190,
+	value_1 = 25,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12770] = {
+	base = 12760,
+	prev = 12769,
+	next = 0,
+	upgrade_id = 111,
+	id = 12770,
+	value_2 = 200,
+	value_1 = 26,
+	level = 11,
+	skill_upgrade = {
+		{
+			4071,
+			1090210
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12780] = {
+	tech = 0,
+	name = "オレサマスタイル ",
+	value_2_random = 5,
+	type = 1,
+	value_1_random = 10,
+	value_1 = 11,
+	effect_id_display = 901020,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 12781,
+	upgrade_id = 101,
+	value_2 = 5,
+	icon = "12780",
+	effect_id = 901020,
+	attribute_2 = "reload",
+	id = 12780,
+	rarity = 4,
+	unique = 40101,
+	important = 2,
+	prev = 0,
+	attribute_1 = "torpedo",
+	usability = {
+		1
+	},
+	skill_upgrade = {
+		{
+			0,
+			1010380
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12781] = {
+	prev = 12780,
+	base = 12780,
+	next = 12782,
+	upgrade_id = 102,
+	id = 12781,
+	value_2 = 5,
+	value_1 = 12,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12782] = {
+	prev = 12781,
+	base = 12780,
+	next = 12783,
+	upgrade_id = 103,
+	id = 12782,
+	value_2 = 6,
+	value_1 = 13,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12783] = {
+	prev = 12782,
+	base = 12780,
+	next = 12784,
+	upgrade_id = 104,
+	id = 12783,
+	value_2 = 7,
+	value_1 = 14,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12784] = {
+	prev = 12783,
+	base = 12780,
+	next = 12785,
+	upgrade_id = 105,
+	id = 12784,
+	value_2 = 8,
+	value_1 = 15,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12785] = {
+	prev = 12784,
+	base = 12780,
+	next = 12786,
+	upgrade_id = 106,
+	id = 12785,
+	value_2 = 9,
+	value_1 = 16,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12786] = {
+	prev = 12785,
+	base = 12780,
+	next = 12787,
+	upgrade_id = 107,
+	id = 12786,
+	value_2 = 9,
+	value_1 = 17,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12787] = {
+	prev = 12786,
+	base = 12780,
+	next = 12788,
+	upgrade_id = 108,
+	id = 12787,
+	value_2 = 10,
+	value_1 = 18,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12788] = {
+	prev = 12787,
+	base = 12780,
+	next = 12789,
+	upgrade_id = 109,
+	id = 12788,
+	value_2 = 11,
+	value_1 = 19,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12789] = {
+	prev = 12788,
+	base = 12780,
+	next = 12790,
+	upgrade_id = 110,
+	id = 12789,
+	value_2 = 12,
+	value_1 = 20,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12790] = {
+	base = 12780,
+	prev = 12789,
+	next = 0,
+	upgrade_id = 111,
+	id = 12790,
+	value_2 = 13,
+	value_1 = 22,
+	level = 11,
+	skill_upgrade = {
+		{
+			10380,
+			1010380
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12800] = {
+	tech = 0,
+	name = "7つの橋の教え",
+	value_2_random = 5,
+	type = 2,
+	value_1_random = 10,
+	value_1 = 20,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 12801,
+	upgrade_id = 101,
+	value_2 = 1,
+	icon = "12800",
+	effect_id = 901010,
+	attribute_2 = "dodge",
+	id = 12800,
+	rarity = 4,
+	unique = 40201,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		2
+	},
+	skill_upgrade = {
+		{
+			0,
+			1090220
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12801] = {
+	prev = 12800,
+	base = 12800,
+	next = 12802,
+	upgrade_id = 102,
+	id = 12801,
+	value_2 = 1,
+	value_1 = 21,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12802] = {
+	prev = 12801,
+	base = 12800,
+	next = 12803,
+	upgrade_id = 103,
+	id = 12802,
+	value_2 = 2,
+	value_1 = 22,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12803] = {
+	prev = 12802,
+	base = 12800,
+	next = 12804,
+	upgrade_id = 104,
+	id = 12803,
+	value_2 = 3,
+	value_1 = 23,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12804] = {
+	prev = 12803,
+	base = 12800,
+	next = 12805,
+	upgrade_id = 105,
+	id = 12804,
+	value_2 = 4,
+	value_1 = 24,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12805] = {
+	prev = 12804,
+	base = 12800,
+	next = 12806,
+	upgrade_id = 106,
+	id = 12805,
+	value_2 = 5,
+	value_1 = 25,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12806] = {
+	prev = 12805,
+	base = 12800,
+	next = 12807,
+	upgrade_id = 107,
+	id = 12806,
+	value_2 = 6,
+	value_1 = 26,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12807] = {
+	prev = 12806,
+	base = 12800,
+	next = 12808,
+	upgrade_id = 108,
+	id = 12807,
+	value_2 = 7,
+	value_1 = 27,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12808] = {
+	prev = 12807,
+	base = 12800,
+	next = 12809,
+	upgrade_id = 109,
+	id = 12808,
+	value_2 = 8,
+	value_1 = 28,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12809] = {
+	prev = 12808,
+	base = 12800,
+	next = 12810,
+	upgrade_id = 110,
+	id = 12809,
+	value_2 = 9,
+	value_1 = 29,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12810] = {
+	base = 12800,
+	prev = 12809,
+	next = 0,
+	upgrade_id = 111,
+	id = 12810,
+	value_2 = 10,
+	value_1 = 30,
+	level = 11,
+	skill_upgrade = {
+		{
+			1032,
+			1090220
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12820] = {
+	tech = 0,
+	name = "騎士隊長のメダル",
+	value_2_random = 5,
+	type = 6,
+	value_1_random = 10,
+	value_1 = 13,
+	effect_id_display = 902020,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 12821,
+	upgrade_id = 101,
+	value_2 = 1,
+	icon = "12820",
+	effect_id = 902020,
+	attribute_2 = "hit",
+	id = 12820,
+	rarity = 4,
+	unique = 20505,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		5
+	},
+	skill_upgrade = {
+		{
+			0,
+			1012160
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12821] = {
+	prev = 12820,
+	base = 12820,
+	next = 12822,
+	upgrade_id = 102,
+	id = 12821,
+	value_2 = 1,
+	value_1 = 14,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12822] = {
+	prev = 12821,
+	base = 12820,
+	next = 12823,
+	upgrade_id = 103,
+	id = 12822,
+	value_2 = 2,
+	value_1 = 15,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12823] = {
+	prev = 12822,
+	base = 12820,
+	next = 12824,
+	upgrade_id = 104,
+	id = 12823,
+	value_2 = 3,
+	value_1 = 16,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12824] = {
+	prev = 12823,
+	base = 12820,
+	next = 12825,
+	upgrade_id = 105,
+	id = 12824,
+	value_2 = 4,
+	value_1 = 17,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12825] = {
+	prev = 12824,
+	base = 12820,
+	next = 12826,
+	upgrade_id = 106,
+	id = 12825,
+	value_2 = 5,
+	value_1 = 18,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12826] = {
+	prev = 12825,
+	base = 12820,
+	next = 12827,
+	upgrade_id = 107,
+	id = 12826,
+	value_2 = 6,
+	value_1 = 19,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12827] = {
+	prev = 12826,
+	base = 12820,
+	next = 12828,
+	upgrade_id = 108,
+	id = 12827,
+	value_2 = 7,
+	value_1 = 20,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12828] = {
+	prev = 12827,
+	base = 12820,
+	next = 12829,
+	upgrade_id = 109,
+	id = 12828,
+	value_2 = 8,
+	value_1 = 21,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12829] = {
+	prev = 12828,
+	base = 12820,
+	next = 12830,
+	upgrade_id = 110,
+	id = 12829,
+	value_2 = 9,
+	value_1 = 23,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12830] = {
+	base = 12820,
+	prev = 12829,
+	next = 0,
+	upgrade_id = 111,
+	id = 12830,
+	value_2 = 10,
+	value_1 = 25,
+	level = 11,
+	skill_upgrade = {
+		{
+			12160,
+			1012160
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12840] = {
+	tech = 0,
+	name = "スマイルちゃん",
+	value_2_random = 5,
+	type = 1,
+	value_1_random = 10,
+	value_1 = 13,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 12841,
+	upgrade_id = 101,
+	value_2 = 1,
+	icon = "12840",
+	effect_id = 901010,
+	attribute_2 = "hit",
+	id = 12840,
+	rarity = 4,
+	unique = 40118,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		1
+	},
+	skill_upgrade = {
+		{
+			0,
+			1090230
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12841] = {
+	prev = 12840,
+	base = 12840,
+	next = 12842,
+	upgrade_id = 102,
+	id = 12841,
+	value_2 = 1,
+	value_1 = 14,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12842] = {
+	prev = 12841,
+	base = 12840,
+	next = 12843,
+	upgrade_id = 103,
+	id = 12842,
+	value_2 = 2,
+	value_1 = 15,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12843] = {
+	prev = 12842,
+	base = 12840,
+	next = 12844,
+	upgrade_id = 104,
+	id = 12843,
+	value_2 = 3,
+	value_1 = 16,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12844] = {
+	prev = 12843,
+	base = 12840,
+	next = 12845,
+	upgrade_id = 105,
+	id = 12844,
+	value_2 = 4,
+	value_1 = 17,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12845] = {
+	prev = 12844,
+	base = 12840,
+	next = 12846,
+	upgrade_id = 106,
+	id = 12845,
+	value_2 = 5,
+	value_1 = 18,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12846] = {
+	prev = 12845,
+	base = 12840,
+	next = 12847,
+	upgrade_id = 107,
+	id = 12846,
+	value_2 = 6,
+	value_1 = 19,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12847] = {
+	prev = 12846,
+	base = 12840,
+	next = 12848,
+	upgrade_id = 108,
+	id = 12847,
+	value_2 = 7,
+	value_1 = 20,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12848] = {
+	prev = 12847,
+	base = 12840,
+	next = 12849,
+	upgrade_id = 109,
+	id = 12848,
+	value_2 = 8,
+	value_1 = 21,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12849] = {
+	prev = 12848,
+	base = 12840,
+	next = 12850,
+	upgrade_id = 110,
+	id = 12849,
+	value_2 = 9,
+	value_1 = 23,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12850] = {
+	base = 12840,
+	prev = 12849,
+	next = 0,
+	upgrade_id = 111,
+	id = 12850,
+	value_2 = 10,
+	value_1 = 25,
+	level = 11,
+	skill_upgrade = {
+		{
+			2081,
+			1090230
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12860] = {
+	tech = 0,
+	name = "ダーバオ",
+	value_2_random = 5,
+	type = 2,
+	value_1_random = 10,
+	value_1 = 6,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 12861,
+	upgrade_id = 101,
+	value_2 = 20,
+	icon = "12860",
+	effect_id = 901010,
+	attribute_2 = "cannon",
+	id = 12860,
+	rarity = 4,
+	unique = 50202,
+	important = 2,
+	prev = 0,
+	attribute_1 = "hit",
+	usability = {
+		2
+	},
+	skill_upgrade = {
+		{
+			0,
+			1010480
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12861] = {
+	prev = 12860,
+	base = 12860,
+	next = 12862,
+	upgrade_id = 102,
+	id = 12861,
+	value_2 = 21,
+	value_1 = 7,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12862] = {
+	prev = 12861,
+	base = 12860,
+	next = 12863,
+	upgrade_id = 103,
+	id = 12862,
+	value_2 = 22,
+	value_1 = 8,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12863] = {
+	prev = 12862,
+	base = 12860,
+	next = 12864,
+	upgrade_id = 104,
+	id = 12863,
+	value_2 = 23,
+	value_1 = 8,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12864] = {
+	prev = 12863,
+	base = 12860,
+	next = 12865,
+	upgrade_id = 105,
+	id = 12864,
+	value_2 = 24,
+	value_1 = 9,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12865] = {
+	prev = 12864,
+	base = 12860,
+	next = 12866,
+	upgrade_id = 106,
+	id = 12865,
+	value_2 = 25,
+	value_1 = 9,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12866] = {
+	prev = 12865,
+	base = 12860,
+	next = 12867,
+	upgrade_id = 107,
+	id = 12866,
+	value_2 = 26,
+	value_1 = 10,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12867] = {
+	prev = 12866,
+	base = 12860,
+	next = 12868,
+	upgrade_id = 108,
+	id = 12867,
+	value_2 = 27,
+	value_1 = 10,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12868] = {
+	prev = 12867,
+	base = 12860,
+	next = 12869,
+	upgrade_id = 109,
+	id = 12868,
+	value_2 = 28,
+	value_1 = 11,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12869] = {
+	prev = 12868,
+	base = 12860,
+	next = 12870,
+	upgrade_id = 110,
+	id = 12869,
+	value_2 = 29,
+	value_1 = 11,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12870] = {
+	base = 12860,
+	prev = 12869,
+	next = 0,
+	upgrade_id = 111,
+	id = 12870,
+	value_2 = 30,
+	value_1 = 12,
+	level = 11,
+	skill_upgrade = {
+		{
+			10480,
+			1010480
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12880] = {
+	tech = 0,
+	name = "アーバオ",
+	value_2_random = 5,
+	type = 2,
+	value_1_random = 10,
+	value_1 = 6,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 12881,
+	upgrade_id = 101,
+	value_2 = 20,
+	icon = "12880",
+	effect_id = 901010,
+	attribute_2 = "cannon",
+	id = 12880,
+	rarity = 4,
+	unique = 50203,
+	important = 2,
+	prev = 0,
+	attribute_1 = "hit",
+	usability = {
+		2
+	},
+	skill_upgrade = {
+		{
+			0,
+			1010490
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12881] = {
+	prev = 12880,
+	base = 12880,
+	next = 12882,
+	upgrade_id = 102,
+	id = 12881,
+	value_2 = 21,
+	value_1 = 7,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12882] = {
+	prev = 12881,
+	base = 12880,
+	next = 12883,
+	upgrade_id = 103,
+	id = 12882,
+	value_2 = 22,
+	value_1 = 8,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12883] = {
+	prev = 12882,
+	base = 12880,
+	next = 12884,
+	upgrade_id = 104,
+	id = 12883,
+	value_2 = 23,
+	value_1 = 8,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12884] = {
+	prev = 12883,
+	base = 12880,
+	next = 12885,
+	upgrade_id = 105,
+	id = 12884,
+	value_2 = 24,
+	value_1 = 9,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12885] = {
+	prev = 12884,
+	base = 12880,
+	next = 12886,
+	upgrade_id = 106,
+	id = 12885,
+	value_2 = 25,
+	value_1 = 9,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12886] = {
+	prev = 12885,
+	base = 12880,
+	next = 12887,
+	upgrade_id = 107,
+	id = 12886,
+	value_2 = 26,
+	value_1 = 10,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12887] = {
+	prev = 12886,
+	base = 12880,
+	next = 12888,
+	upgrade_id = 108,
+	id = 12887,
+	value_2 = 27,
+	value_1 = 10,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12888] = {
+	prev = 12887,
+	base = 12880,
+	next = 12889,
+	upgrade_id = 109,
+	id = 12888,
+	value_2 = 28,
+	value_1 = 11,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12889] = {
+	prev = 12888,
+	base = 12880,
+	next = 12890,
+	upgrade_id = 110,
+	id = 12889,
+	value_2 = 29,
+	value_1 = 11,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12890] = {
+	base = 12880,
+	prev = 12889,
+	next = 0,
+	upgrade_id = 111,
+	id = 12890,
+	value_2 = 30,
+	value_1 = 12,
+	level = 11,
+	skill_upgrade = {
+		{
+			10490,
+			1010490
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12900] = {
+	tech = 0,
+	name = "よく褒めてもらおう",
+	value_2_random = 5,
+	type = 8,
+	value_1_random = 10,
+	value_1 = 15,
+	effect_id_display = 902070,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 12901,
+	upgrade_id = 101,
+	value_2 = 1,
+	icon = "12900",
+	effect_id = 902070,
+	attribute_2 = "hit",
+	id = 12900,
+	rarity = 4,
+	unique = 30801,
+	important = 2,
+	prev = 0,
+	attribute_1 = "torpedo",
+	usability = {
+		8
+	},
+	skill_upgrade = {
+		{
+			0,
+			1011370
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12901] = {
+	prev = 12900,
+	base = 12900,
+	next = 12902,
+	upgrade_id = 102,
+	id = 12901,
+	value_1 = 16,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12902] = {
+	prev = 12901,
+	base = 12900,
+	next = 12903,
+	upgrade_id = 103,
+	id = 12902,
+	value_2 = 2,
+	value_1 = 17,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12903] = {
+	prev = 12902,
+	base = 12900,
+	next = 12904,
+	upgrade_id = 104,
+	id = 12903,
+	value_2 = 3,
+	value_1 = 18,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12904] = {
+	prev = 12903,
+	base = 12900,
+	next = 12905,
+	upgrade_id = 105,
+	id = 12904,
+	value_2 = 4,
+	value_1 = 19,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12905] = {
+	prev = 12904,
+	base = 12900,
+	next = 12906,
+	upgrade_id = 106,
+	id = 12905,
+	value_2 = 5,
+	value_1 = 20,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12906] = {
+	prev = 12905,
+	base = 12900,
+	next = 12907,
+	upgrade_id = 107,
+	id = 12906,
+	value_2 = 6,
+	value_1 = 21,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12907] = {
+	prev = 12906,
+	base = 12900,
+	next = 12908,
+	upgrade_id = 108,
+	id = 12907,
+	value_2 = 7,
+	value_1 = 22,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12908] = {
+	prev = 12907,
+	base = 12900,
+	next = 12909,
+	upgrade_id = 109,
+	id = 12908,
+	value_2 = 8,
+	value_1 = 23,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12909] = {
+	prev = 12908,
+	base = 12900,
+	next = 12910,
+	upgrade_id = 110,
+	id = 12909,
+	value_2 = 9,
+	value_1 = 24,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12910] = {
+	base = 12900,
+	prev = 12909,
+	next = 0,
+	upgrade_id = 111,
+	id = 12910,
+	value_2 = 10,
+	value_1 = 25,
+	level = 11,
+	skill_upgrade = {
+		{
+			11370,
+			1011370
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12920] = {
+	tech = 0,
+	name = "朝鍛夕錬",
+	value_2_random = 5,
+	type = 2,
+	value_1_random = 10,
+	value_1 = 10,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 12921,
+	upgrade_id = 101,
+	value_2 = 5,
+	icon = "12920",
+	effect_id = 901010,
+	attribute_2 = "dodge",
+	id = 12920,
+	rarity = 4,
+	unique = 30212,
+	important = 2,
+	prev = 0,
+	attribute_1 = "torpedo",
+	usability = {
+		2
+	},
+	skill_upgrade = {
+		{
+			0,
+			1090240
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12921] = {
+	prev = 12920,
+	base = 12920,
+	next = 12922,
+	upgrade_id = 102,
+	id = 12921,
+	value_2 = 6,
+	value_1 = 11,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12922] = {
+	prev = 12921,
+	base = 12920,
+	next = 12923,
+	upgrade_id = 103,
+	id = 12922,
+	value_2 = 7,
+	value_1 = 12,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12923] = {
+	prev = 12922,
+	base = 12920,
+	next = 12924,
+	upgrade_id = 104,
+	id = 12923,
+	value_2 = 8,
+	value_1 = 13,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12924] = {
+	prev = 12923,
+	base = 12920,
+	next = 12925,
+	upgrade_id = 105,
+	id = 12924,
+	value_2 = 9,
+	value_1 = 14,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12925] = {
+	prev = 12924,
+	base = 12920,
+	next = 12926,
+	upgrade_id = 106,
+	id = 12925,
+	value_2 = 10,
+	value_1 = 15,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12926] = {
+	prev = 12925,
+	base = 12920,
+	next = 12927,
+	upgrade_id = 107,
+	id = 12926,
+	value_2 = 11,
+	value_1 = 16,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12927] = {
+	prev = 12926,
+	base = 12920,
+	next = 12928,
+	upgrade_id = 108,
+	id = 12927,
+	value_2 = 12,
+	value_1 = 17,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12928] = {
+	prev = 12927,
+	base = 12920,
+	next = 12929,
+	upgrade_id = 109,
+	id = 12928,
+	value_2 = 13,
+	value_1 = 18,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12929] = {
+	prev = 12928,
+	base = 12920,
+	next = 12930,
+	upgrade_id = 110,
+	id = 12929,
+	value_2 = 14,
+	value_1 = 19,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12930] = {
+	base = 12920,
+	prev = 12929,
+	next = 0,
+	upgrade_id = 111,
+	id = 12930,
+	value_2 = 15,
+	value_1 = 20,
+	level = 11,
+	skill_upgrade = {
+		{
+			1091,
+			1090240
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12940] = {
+	tech = 0,
+	name = "捨てられません",
+	value_2_random = 5,
+	type = 2,
+	value_1_random = 10,
+	value_1 = 11,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 12941,
+	upgrade_id = 101,
+	value_2 = 11,
+	icon = "12940",
+	effect_id = 901010,
+	attribute_2 = "hit",
+	id = 12940,
+	rarity = 4,
+	unique = 20204,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		2
+	},
+	skill_upgrade = {
+		{
+			0,
+			1012940
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12941] = {
+	prev = 12940,
+	base = 12940,
+	next = 12942,
+	upgrade_id = 102,
+	id = 12941,
+	value_2 = 12,
+	value_1 = 12,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12942] = {
+	prev = 12941,
+	base = 12940,
+	next = 12943,
+	upgrade_id = 103,
+	id = 12942,
+	value_2 = 12,
+	value_1 = 13,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12943] = {
+	prev = 12942,
+	base = 12940,
+	next = 12944,
+	upgrade_id = 104,
+	id = 12943,
+	value_2 = 13,
+	value_1 = 14,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12944] = {
+	prev = 12943,
+	base = 12940,
+	next = 12945,
+	upgrade_id = 105,
+	id = 12944,
+	value_2 = 13,
+	value_1 = 15,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12945] = {
+	prev = 12944,
+	base = 12940,
+	next = 12946,
+	upgrade_id = 106,
+	id = 12945,
+	value_2 = 14,
+	value_1 = 16,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12946] = {
+	prev = 12945,
+	base = 12940,
+	next = 12947,
+	upgrade_id = 107,
+	id = 12946,
+	value_2 = 14,
+	value_1 = 17,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12947] = {
+	prev = 12946,
+	base = 12940,
+	next = 12948,
+	upgrade_id = 108,
+	id = 12947,
+	value_2 = 15,
+	value_1 = 18,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12948] = {
+	prev = 12947,
+	base = 12940,
+	next = 12949,
+	upgrade_id = 109,
+	id = 12948,
+	value_2 = 15,
+	value_1 = 19,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12949] = {
+	prev = 12948,
+	base = 12940,
+	next = 12950,
+	upgrade_id = 110,
+	id = 12949,
+	value_2 = 16,
+	value_1 = 20,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12950] = {
+	base = 12940,
+	prev = 12949,
+	next = 0,
+	upgrade_id = 111,
+	id = 12950,
+	value_2 = 17,
+	value_1 = 22,
+	level = 11,
+	skill_upgrade = {
+		{
+			12940,
+			1012940
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12960] = {
+	tech = 0,
+	name = "ブレイブ・ブルジェ",
+	value_2_random = 10,
+	type = 1,
+	value_1_random = 10,
+	value_1 = 10,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 12961,
+	upgrade_id = 101,
+	value_2 = 20,
+	icon = "12960",
+	effect_id = 901010,
+	attribute_2 = "torpedo",
+	id = 12960,
+	rarity = 4,
+	unique = 90101,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		1
+	},
+	skill_upgrade = {
+		{
+			0,
+			1005080
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12961] = {
+	prev = 12960,
+	base = 12960,
+	next = 12962,
+	upgrade_id = 102,
+	id = 12961,
+	value_2 = 21,
+	value_1 = 10,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12962] = {
+	prev = 12961,
+	base = 12960,
+	next = 12963,
+	upgrade_id = 103,
+	id = 12962,
+	value_2 = 22,
+	value_1 = 10,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12963] = {
+	prev = 12962,
+	base = 12960,
+	next = 12964,
+	upgrade_id = 104,
+	id = 12963,
+	value_2 = 23,
+	value_1 = 11,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12964] = {
+	prev = 12963,
+	base = 12960,
+	next = 12965,
+	upgrade_id = 105,
+	id = 12964,
+	value_2 = 24,
+	value_1 = 11,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12965] = {
+	prev = 12964,
+	base = 12960,
+	next = 12966,
+	upgrade_id = 106,
+	id = 12965,
+	value_2 = 25,
+	value_1 = 12,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12966] = {
+	prev = 12965,
+	base = 12960,
+	next = 12967,
+	upgrade_id = 107,
+	id = 12966,
+	value_2 = 26,
+	value_1 = 12,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12967] = {
+	prev = 12966,
+	base = 12960,
+	next = 12968,
+	upgrade_id = 108,
+	id = 12967,
+	value_2 = 27,
+	value_1 = 13,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12968] = {
+	prev = 12967,
+	base = 12960,
+	next = 12969,
+	upgrade_id = 109,
+	id = 12968,
+	value_2 = 28,
+	value_1 = 13,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12969] = {
+	prev = 12968,
+	base = 12960,
+	next = 12970,
+	upgrade_id = 110,
+	id = 12969,
+	value_2 = 29,
+	value_1 = 14,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12970] = {
+	base = 12960,
+	prev = 12969,
+	next = 0,
+	upgrade_id = 111,
+	id = 12970,
+	value_2 = 30,
+	value_1 = 15,
+	level = 11,
+	skill_upgrade = {
+		{
+			5081,
+			1005080
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[12980] = {
+	tech = 0,
+	name = "彫像には不要かも？",
+	value_2_random = 5,
+	type = 1,
+	value_1_random = 10,
+	value_1 = 9,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 12981,
+	upgrade_id = 101,
+	value_2 = 4,
+	icon = "12980",
+	effect_id = 901010,
+	attribute_2 = "hit",
+	id = 12980,
+	rarity = 4,
+	unique = 10131,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		1
+	},
+	skill_upgrade = {
+		{
+			0,
+			1010750
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[12981] = {
+	prev = 12980,
+	base = 12980,
+	next = 12982,
+	upgrade_id = 102,
+	id = 12981,
+	value_2 = 5,
+	value_1 = 10,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[12982] = {
+	prev = 12981,
+	base = 12980,
+	next = 12983,
+	upgrade_id = 103,
+	id = 12982,
+	value_2 = 5,
+	value_1 = 11,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[12983] = {
+	prev = 12982,
+	base = 12980,
+	next = 12984,
+	upgrade_id = 104,
+	id = 12983,
+	value_2 = 6,
+	value_1 = 12,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[12984] = {
+	prev = 12983,
+	base = 12980,
+	next = 12985,
+	upgrade_id = 105,
+	id = 12984,
+	value_2 = 6,
+	value_1 = 13,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[12985] = {
+	prev = 12984,
+	base = 12980,
+	next = 12986,
+	upgrade_id = 106,
+	id = 12985,
+	value_2 = 7,
+	value_1 = 14,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[12986] = {
+	prev = 12985,
+	base = 12980,
+	next = 12987,
+	upgrade_id = 107,
+	id = 12986,
+	value_2 = 7,
+	value_1 = 15,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[12987] = {
+	prev = 12986,
+	base = 12980,
+	next = 12988,
+	upgrade_id = 108,
+	id = 12987,
+	value_2 = 8,
+	value_1 = 16,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[12988] = {
+	prev = 12987,
+	base = 12980,
+	next = 12989,
+	upgrade_id = 109,
+	id = 12988,
+	value_2 = 8,
+	value_1 = 17,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[12989] = {
+	prev = 12988,
+	base = 12980,
+	next = 12990,
+	upgrade_id = 110,
+	id = 12989,
+	value_2 = 9,
+	value_1 = 18,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[12990] = {
+	base = 12980,
+	prev = 12989,
+	next = 0,
+	upgrade_id = 111,
+	id = 12990,
+	value_2 = 10,
+	value_1 = 20,
+	level = 11,
+	skill_upgrade = {
+		{
+			10750,
+			1010750
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[13000] = {
+	tech = 0,
+	name = "白騎兵の手綱",
+	value_2_random = 5,
+	type = 2,
+	value_1_random = 10,
+	value_1 = 17,
+	effect_id_display = 901020,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 13001,
+	upgrade_id = 101,
+	value_2 = 8,
+	icon = "13000",
+	effect_id = 901020,
+	attribute_2 = "dodge",
+	id = 13000,
+	rarity = 4,
+	unique = 70203,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		2
+	},
+	skill_upgrade = {
+		{
+			0,
+			1013000
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13001] = {
+	prev = 13000,
+	base = 13000,
+	next = 13002,
+	upgrade_id = 102,
+	id = 13001,
+	value_2 = 9,
+	value_1 = 18,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13002] = {
+	prev = 13001,
+	base = 13000,
+	next = 13003,
+	upgrade_id = 103,
+	id = 13002,
+	value_2 = 9,
+	value_1 = 19,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13003] = {
+	prev = 13002,
+	base = 13000,
+	next = 13004,
+	upgrade_id = 104,
+	id = 13003,
+	value_2 = 10,
+	value_1 = 20,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13004] = {
+	prev = 13003,
+	base = 13000,
+	next = 13005,
+	upgrade_id = 105,
+	id = 13004,
+	value_2 = 10,
+	value_1 = 21,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13005] = {
+	prev = 13004,
+	base = 13000,
+	next = 13006,
+	upgrade_id = 106,
+	id = 13005,
+	value_2 = 11,
+	value_1 = 22,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13006] = {
+	prev = 13005,
+	base = 13000,
+	next = 13007,
+	upgrade_id = 107,
+	id = 13006,
+	value_2 = 11,
+	value_1 = 23,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13007] = {
+	prev = 13006,
+	base = 13000,
+	next = 13008,
+	upgrade_id = 108,
+	id = 13007,
+	value_2 = 12,
+	value_1 = 24,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13008] = {
+	prev = 13007,
+	base = 13000,
+	next = 13009,
+	upgrade_id = 109,
+	id = 13008,
+	value_2 = 13,
+	value_1 = 25,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13009] = {
+	prev = 13008,
+	base = 13000,
+	next = 13010,
+	upgrade_id = 110,
+	id = 13009,
+	value_2 = 14,
+	value_1 = 26,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13010] = {
+	base = 13000,
+	prev = 13009,
+	next = 0,
+	upgrade_id = 111,
+	id = 13010,
+	value_2 = 15,
+	value_1 = 28,
+	level = 11,
+	skill_upgrade = {
+		{
+			13000,
+			1013000
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[13020] = {
+	tech = 0,
+	name = "シャイニング・コメット！",
+	value_2_random = 20,
+	type = 1,
+	value_1_random = 10,
+	value_1 = 13,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 13021,
+	upgrade_id = 101,
+	value_2 = 100,
+	icon = "13020",
+	effect_id = 901010,
+	attribute_2 = "durability",
+	id = 13020,
+	rarity = 4,
+	unique = 20108,
+	important = 2,
+	prev = 0,
+	attribute_1 = "torpedo",
+	usability = {
+		1
+	},
+	skill_upgrade = {
+		{
+			0,
+			1090250
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13021] = {
+	prev = 13020,
+	base = 13020,
+	next = 13022,
+	upgrade_id = 102,
+	id = 13021,
+	value_2 = 105,
+	value_1 = 14,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13022] = {
+	prev = 13021,
+	base = 13020,
+	next = 13023,
+	upgrade_id = 103,
+	id = 13022,
+	value_2 = 110,
+	value_1 = 15,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13023] = {
+	prev = 13022,
+	base = 13020,
+	next = 13024,
+	upgrade_id = 104,
+	id = 13023,
+	value_2 = 115,
+	value_1 = 16,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13024] = {
+	prev = 13023,
+	base = 13020,
+	next = 13025,
+	upgrade_id = 105,
+	id = 13024,
+	value_2 = 120,
+	value_1 = 17,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13025] = {
+	prev = 13024,
+	base = 13020,
+	next = 13026,
+	upgrade_id = 106,
+	id = 13025,
+	value_2 = 125,
+	value_1 = 18,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13026] = {
+	prev = 13025,
+	base = 13020,
+	next = 13027,
+	upgrade_id = 107,
+	id = 13026,
+	value_2 = 130,
+	value_1 = 19,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13027] = {
+	prev = 13026,
+	base = 13020,
+	next = 13028,
+	upgrade_id = 108,
+	id = 13027,
+	value_2 = 135,
+	value_1 = 20,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13028] = {
+	prev = 13027,
+	base = 13020,
+	next = 13029,
+	upgrade_id = 109,
+	id = 13028,
+	value_2 = 140,
+	value_1 = 21,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13029] = {
+	prev = 13028,
+	base = 13020,
+	next = 13030,
+	upgrade_id = 110,
+	id = 13029,
+	value_2 = 145,
+	value_1 = 23,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13030] = {
+	base = 13020,
+	prev = 13029,
+	next = 0,
+	upgrade_id = 111,
+	id = 13030,
+	value_2 = 150,
+	value_1 = 25,
+	level = 11,
+	skill_upgrade = {
+		{
+			1011,
+			1090250
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[13040] = {
+	tech = 0,
+	name = "個性装着",
+	value_2_random = 5,
+	type = 6,
+	value_1_random = 10,
+	value_1 = 13,
+	effect_id_display = 902030,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 13041,
+	upgrade_id = 101,
+	value_2 = 6,
+	icon = "13040",
+	effect_id = 902030,
+	attribute_2 = "hit",
+	id = 13040,
+	rarity = 4,
+	unique = 10512,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		5
+	},
+	skill_upgrade = {
+		{
+			0,
+			1010980
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13041] = {
+	prev = 13040,
+	base = 13040,
+	next = 13042,
+	upgrade_id = 102,
+	id = 13041,
+	value_2 = 6,
+	value_1 = 14,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13042] = {
+	prev = 13041,
+	base = 13040,
+	next = 13043,
+	upgrade_id = 103,
+	id = 13042,
+	value_2 = 7,
+	value_1 = 15,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13043] = {
+	prev = 13042,
+	base = 13040,
+	next = 13044,
+	upgrade_id = 104,
+	id = 13043,
+	value_2 = 8,
+	value_1 = 16,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13044] = {
+	prev = 13043,
+	base = 13040,
+	next = 13045,
+	upgrade_id = 105,
+	id = 13044,
+	value_2 = 9,
+	value_1 = 17,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13045] = {
+	prev = 13044,
+	base = 13040,
+	next = 13046,
+	upgrade_id = 106,
+	id = 13045,
+	value_2 = 10,
+	value_1 = 18,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13046] = {
+	prev = 13045,
+	base = 13040,
+	next = 13047,
+	upgrade_id = 107,
+	id = 13046,
+	value_2 = 11,
+	value_1 = 19,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13047] = {
+	prev = 13046,
+	base = 13040,
+	next = 13048,
+	upgrade_id = 108,
+	id = 13047,
+	value_2 = 12,
+	value_1 = 20,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13048] = {
+	prev = 13047,
+	base = 13040,
+	next = 13049,
+	upgrade_id = 109,
+	id = 13048,
+	value_2 = 13,
+	value_1 = 21,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13049] = {
+	prev = 13048,
+	base = 13040,
+	next = 13050,
+	upgrade_id = 110,
+	id = 13049,
+	value_2 = 14,
+	value_1 = 23,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13050] = {
+	base = 13040,
+	prev = 13049,
+	next = 0,
+	upgrade_id = 111,
+	id = 13050,
+	value_2 = 15,
+	value_1 = 25,
+	level = 11,
+	skill_upgrade = {
+		{
+			10980,
+			1010980
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[13060] = {
+	tech = 0,
+	name = "猪武者の慎重",
+	value_2_random = 5,
+	type = 6,
+	value_1_random = 10,
+	value_1 = 8,
+	effect_id_display = 902030,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 13061,
+	upgrade_id = 101,
+	value_2 = 6,
+	icon = "13060",
+	effect_id = 902030,
+	attribute_2 = "reload",
+	id = 13060,
+	rarity = 4,
+	unique = 40401,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		4
+	},
+	skill_upgrade = {
+		{
+			0,
+			1010660
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13061] = {
+	prev = 13060,
+	base = 13060,
+	next = 13062,
+	upgrade_id = 102,
+	id = 13061,
+	value_2 = 6,
+	value_1 = 9,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13062] = {
+	prev = 13061,
+	base = 13060,
+	next = 13063,
+	upgrade_id = 103,
+	id = 13062,
+	value_2 = 7,
+	value_1 = 10,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13063] = {
+	prev = 13062,
+	base = 13060,
+	next = 13064,
+	upgrade_id = 104,
+	id = 13063,
+	value_2 = 8,
+	value_1 = 11,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13064] = {
+	prev = 13063,
+	base = 13060,
+	next = 13065,
+	upgrade_id = 105,
+	id = 13064,
+	value_2 = 9,
+	value_1 = 12,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13065] = {
+	prev = 13064,
+	base = 13060,
+	next = 13066,
+	upgrade_id = 106,
+	id = 13065,
+	value_2 = 10,
+	value_1 = 14,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13066] = {
+	prev = 13065,
+	base = 13060,
+	next = 13067,
+	upgrade_id = 107,
+	id = 13066,
+	value_2 = 11,
+	value_1 = 15,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13067] = {
+	prev = 13066,
+	base = 13060,
+	next = 13068,
+	upgrade_id = 108,
+	id = 13067,
+	value_2 = 12,
+	value_1 = 16,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13068] = {
+	prev = 13067,
+	base = 13060,
+	next = 13069,
+	upgrade_id = 109,
+	id = 13068,
+	value_2 = 13,
+	value_1 = 17,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13069] = {
+	prev = 13068,
+	base = 13060,
+	next = 13070,
+	upgrade_id = 110,
+	id = 13069,
+	value_2 = 14,
+	value_1 = 18,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13070] = {
+	base = 13060,
+	prev = 13069,
+	next = 0,
+	upgrade_id = 111,
+	id = 13070,
+	value_2 = 15,
+	value_1 = 20,
+	level = 11,
+	skill_upgrade = {
+		{
+			10660,
+			1010660
+		}
+	}
 }

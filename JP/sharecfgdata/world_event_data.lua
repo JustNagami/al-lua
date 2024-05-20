@@ -66822,6 +66822,1222 @@ _G.pg.base.world_event_data[210000] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[210100] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210100,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2101000,
+		2101001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210200] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210200,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2102000,
+		2102001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210300] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210300,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2103000,
+		2103001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210400] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210400,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2104000,
+		2104001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210500] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210500,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2105000,
+		2105001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210600] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210600,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2106000,
+		2106001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210700] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210700,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2107000,
+		2107001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210800] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210800,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2108000,
+		2108001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210900] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210900,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2109000,
+		2109001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[211000] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 211000,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2110000,
+		2110001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[211100] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 211100,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2111000,
+		2111001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213000] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213000,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2130000,
+		2130001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213100] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213100,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2131000,
+		2131001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213200] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213200,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2132000,
+		2132001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213300] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213300,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2133000,
+		2133001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213400] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213400,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2134000,
+		2134001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213500] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213500,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2135000,
+		2135001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213600] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213600,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2136000,
+		2136001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213700] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213700,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2137000,
+		2137001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213800] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213800,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2138000,
+		2138001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213900] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213900,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2139000,
+		2139001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216000] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216000,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2160000,
+		2160001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216100] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216100,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2161000,
+		2161001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216200] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216200,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2162000,
+		2162001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216300] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216300,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2163000,
+		2163001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216400] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216400,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2164000,
+		2164001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216500] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216500,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2165000,
+		2165001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216600] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216600,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2166000,
+		2166001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216700] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216700,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2167000,
+		2167001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216800] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216800,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2168000,
+		2168001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216900] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216900,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2169000,
+		2169001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[217000] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 217000,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2170000,
+		2170001
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[210001] = {
 	visuality = 0,
 	name = "",
@@ -66846,6 +68062,1222 @@ _G.pg.base.world_event_data[210001] = {
 	effect = {
 		2100010,
 		2100011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210101] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210101,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2101010,
+		2101011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210201] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210201,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2102010,
+		2102011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210301] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210301,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2103010,
+		2103011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210401] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210401,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2104010,
+		2104011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210501] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210501,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2105010,
+		2105011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210601] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210601,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2106010,
+		2106011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210701] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210701,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2107010,
+		2107011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210801] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210801,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2108010,
+		2108011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[210901] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 210901,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2109010,
+		2109011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[211001] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 211001,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2110010,
+		2110011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[211101] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 211101,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2111010,
+		2111011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213001] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213001,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2130010,
+		2130011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213101] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213101,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2131010,
+		2131011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213201] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213201,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2132010,
+		2132011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213301] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213301,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2133010,
+		2133011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213401] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213401,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2134010,
+		2134011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213501] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213501,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2135010,
+		2135011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213601] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213601,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2136010,
+		2136011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213701] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213701,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2137010,
+		2137011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213801] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213801,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2138010,
+		2138011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[213901] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 213901,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2139010,
+		2139011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216001] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216001,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2160010,
+		2160011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216101] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216101,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2161010,
+		2161011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216201] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216201,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2162010,
+		2162011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216301] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216301,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2163010,
+		2163011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216401] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216401,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2164010,
+		2164011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216501] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216501,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2165010,
+		2165011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216601] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216601,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2166010,
+		2166011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216701] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216701,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2167010,
+		2167011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216801] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216801,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2168010,
+		2168011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[216901] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 216901,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2169010,
+		2169011
+	},
+	grid = {
+		{
+			0,
+			0,
+			21,
+			21
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[217001] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 2,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 1,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 217001,
+	scale = 0,
+	event_op = {},
+	effect = {
+		2170010,
+		2170011
 	},
 	grid = {
 		{
@@ -66896,82 +69328,6 @@ _G.pg.base.world_event_data[210010] = {
 			0,
 			9,
 			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[210100] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210100,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2101000,
-		2101001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[210101] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210101,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2101010,
-		2101011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
 		}
 	},
 	slg_bufflist = {},
@@ -67057,82 +69413,6 @@ _G.pg.base.world_event_data[210111] = {
 			0,
 			9,
 			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[210200] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210200,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2102000,
-		2102001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[210201] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210201,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2102010,
-		2102011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
 		}
 	},
 	slg_bufflist = {},
@@ -67306,82 +69586,6 @@ _G.pg.base.world_event_data[210222] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[210300] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210300,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2103000,
-		2103001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[210301] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210301,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2103010,
-		2103011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[210310] = {
 	visuality = 0,
 	name = "",
@@ -67548,82 +69752,6 @@ _G.pg.base.world_event_data[210322] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[210400] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210400,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2104000,
-		2104001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[210401] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210401,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2104010,
-		2104011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[210410] = {
 	visuality = 0,
 	name = "",
@@ -67783,82 +69911,6 @@ _G.pg.base.world_event_data[210422] = {
 			0,
 			0,
 			0
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[210500] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210500,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2105000,
-		2105001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[210501] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210501,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2105010,
-		2105011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
 		}
 	},
 	slg_bufflist = {},
@@ -68053,82 +70105,6 @@ _G.pg.base.world_event_data[210522] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[210600] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210600,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2106000,
-		2106001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[210601] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210601,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2106010,
-		2106011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[210610] = {
 	visuality = 0,
 	name = "海洋ゴミ",
@@ -68172,82 +70148,6 @@ _G.pg.base.world_event_data[210610] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[210700] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210700,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2107000,
-		2107001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[210701] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210701,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2107010,
-		2107011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[210710] = {
 	visuality = 0,
 	name = "海洋ゴミ",
@@ -68284,82 +70184,6 @@ _G.pg.base.world_event_data[210710] = {
 			0,
 			9,
 			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[210800] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210800,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2108000,
-		2108001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[210801] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210801,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2108010,
-		2108011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
 		}
 	},
 	slg_bufflist = {},
@@ -68452,82 +70276,6 @@ _G.pg.base.world_event_data[210811] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[210900] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210900,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2109000,
-		2109001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[210901] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 210901,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2109010,
-		2109011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[210910] = {
 	visuality = 0,
 	name = "エネルギー供給装置",
@@ -68606,82 +70354,6 @@ _G.pg.base.world_event_data[210911] = {
 			0,
 			9,
 			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[211000] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 211000,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2110000,
-		2110001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[211001] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 211001,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2110010,
-		2110011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
 		}
 	},
 	slg_bufflist = {},
@@ -68848,82 +70520,6 @@ _G.pg.base.world_event_data[211022] = {
 			0,
 			0,
 			0
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[211100] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 211100,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2111000,
-		2111001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[211101] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 211101,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2111010,
-		2111011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
 		}
 	},
 	slg_bufflist = {},
@@ -69136,82 +70732,6 @@ _G.pg.base.world_event_data[211122] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[213000] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213000,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2130000,
-		2130001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[213001] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213001,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2130010,
-		2130011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[213010] = {
 	visuality = 0,
 	name = "散らかされた資材",
@@ -69250,82 +70770,6 @@ _G.pg.base.world_event_data[213010] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[213100] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213100,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2131000,
-		2131001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[213101] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213101,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2131010,
-		2131011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[213110] = {
 	visuality = 0,
 	name = "散らかされた資材",
@@ -69357,82 +70801,6 @@ _G.pg.base.world_event_data[213110] = {
 			0,
 			9,
 			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[213200] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213200,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2132000,
-		2132001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[213201] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213201,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2132010,
-		2132011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
 		}
 	},
 	slg_bufflist = {},
@@ -69515,82 +70883,6 @@ _G.pg.base.world_event_data[213211] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[213300] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213300,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2133000,
-		2133001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[213301] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213301,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2133010,
-		2133011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[213310] = {
 	visuality = 0,
 	name = "捨てられた資材",
@@ -69659,82 +70951,6 @@ _G.pg.base.world_event_data[213311] = {
 			0,
 			9,
 			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[213400] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213400,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2134000,
-		2134001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[213401] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213401,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2134010,
-		2134011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
 		}
 	},
 	slg_bufflist = {},
@@ -69908,82 +71124,6 @@ _G.pg.base.world_event_data[213422] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[213500] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213500,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2135000,
-		2135001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[213501] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213501,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2135010,
-		2135011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[213510] = {
 	visuality = 0,
 	name = "",
@@ -70143,82 +71283,6 @@ _G.pg.base.world_event_data[213522] = {
 			0,
 			0,
 			0
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[213600] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213600,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2136000,
-		2136001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[213601] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213601,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2136010,
-		2136011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
 		}
 	},
 	slg_bufflist = {},
@@ -70467,82 +71531,6 @@ _G.pg.base.world_event_data[213632] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[213700] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213700,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2137000,
-		2137001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[213701] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213701,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2137010,
-		2137011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[213710] = {
 	visuality = 0,
 	name = "",
@@ -70777,82 +71765,6 @@ _G.pg.base.world_event_data[213732] = {
 			0,
 			0,
 			0
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[213800] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213800,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2138000,
-		2138001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[213801] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213801,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2138010,
-		2138011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
 		}
 	},
 	slg_bufflist = {},
@@ -71223,82 +72135,6 @@ _G.pg.base.world_event_data[213842] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[213900] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213900,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2139000,
-		2139001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[213901] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 213901,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2139010,
-		2139011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[213910] = {
 	visuality = 0,
 	name = "",
@@ -71662,310 +72498,6 @@ _G.pg.base.world_event_data[213942] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[216000] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216000,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2160000,
-		2160001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[216001] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216001,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2160010,
-		2160011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[216100] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216100,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2161000,
-		2161001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[216101] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216101,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2161010,
-		2161011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[216200] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216200,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2162000,
-		2162001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[216201] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216201,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2162010,
-		2162011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[216300] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216300,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2163000,
-		2163001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[216301] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216301,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2163010,
-		2163011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[216310] = {
 	visuality = 0,
 	name = "捨てられた資材",
@@ -72004,82 +72536,6 @@ _G.pg.base.world_event_data[216310] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[216400] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216400,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2164000,
-		2164001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[216401] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216401,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2164010,
-		2164011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[216410] = {
 	visuality = 0,
 	name = "捨てられた資材",
@@ -72111,82 +72567,6 @@ _G.pg.base.world_event_data[216410] = {
 			0,
 			9,
 			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[216500] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216500,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2165000,
-		2165001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[216501] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216501,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2165010,
-		2165011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
 		}
 	},
 	slg_bufflist = {},
@@ -72269,82 +72649,6 @@ _G.pg.base.world_event_data[216511] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[216600] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216600,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2166000,
-		2166001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[216601] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216601,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2166010,
-		2166011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[216610] = {
 	visuality = 0,
 	name = "捨てられた資材",
@@ -72413,82 +72717,6 @@ _G.pg.base.world_event_data[216611] = {
 			0,
 			9,
 			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[216700] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216700,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2167000,
-		2167001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[216701] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216701,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2167010,
-		2167011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
 		}
 	},
 	slg_bufflist = {},
@@ -72662,82 +72890,6 @@ _G.pg.base.world_event_data[216722] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[216800] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216800,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2168000,
-		2168001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[216801] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216801,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2168010,
-		2168011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[216810] = {
 	visuality = 0,
 	name = "",
@@ -72897,82 +73049,6 @@ _G.pg.base.world_event_data[216822] = {
 			0,
 			0,
 			0
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[216900] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216900,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2169000,
-		2169001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[216901] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 216901,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2169010,
-		2169011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
 		}
 	},
 	slg_bufflist = {},
@@ -73214,82 +73290,6 @@ _G.pg.base.world_event_data[216932] = {
 			0,
 			0,
 			0
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[217000] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 217000,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2170000,
-		2170001
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[217001] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 2,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 1,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 217001,
-	scale = 0,
-	event_op = {},
-	effect = {
-		2170010,
-		2170011
-	},
-	grid = {
-		{
-			0,
-			0,
-			21,
-			21
 		}
 	},
 	slg_bufflist = {},
@@ -158529,6 +158529,43 @@ _G.pg.base.world_event_data[10110001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10110021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10110021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		101100012
+	},
+	grid = {
+		{
+			5,
+			5,
+			10,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10110002] = {
 	visuality = 0,
 	name = "",
@@ -158566,6 +158603,43 @@ _G.pg.base.world_event_data[10110002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10110022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10110022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		101100013
+	},
+	grid = {
+		{
+			4,
+			4,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10110003] = {
 	visuality = 0,
 	name = "",
@@ -158585,6 +158659,43 @@ _G.pg.base.world_event_data[10110003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10110003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		101100014
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10110023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10110023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -159015,117 +159126,6 @@ _G.pg.base.world_event_data[10110017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10110021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10110021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		101100012
-	},
-	grid = {
-		{
-			5,
-			5,
-			10,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10110022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10110022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		101100013
-	},
-	grid = {
-		{
-			4,
-			4,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10110023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10110023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		101100014
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10110060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -159237,6 +159237,43 @@ _G.pg.base.world_event_data[10110101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10110151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10110151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10110102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -159261,43 +159298,6 @@ _G.pg.base.world_event_data[10110102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10110151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10110151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -159393,221 +159393,6 @@ _G.pg.base.world_event_data[10110201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10110202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10110202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101100202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10110203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10110203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101100203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10110204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10110204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101100204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10110205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10110205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101100205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10110206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10110206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101100206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10110251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -159637,6 +159422,49 @@ _G.pg.base.world_event_data[10110251] = {
 	effect = {
 		101100201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10110202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10110202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101100202,
+		10029
 	},
 	grid = {
 		{
@@ -159694,6 +159522,49 @@ _G.pg.base.world_event_data[10110252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10110203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10110203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101100203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10110253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -159723,6 +159594,49 @@ _G.pg.base.world_event_data[10110253] = {
 	effect = {
 		101100203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10110204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10110204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101100204,
+		10031
 	},
 	grid = {
 		{
@@ -159780,6 +159694,49 @@ _G.pg.base.world_event_data[10110254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10110205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10110205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101100205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10110255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -159809,6 +159766,49 @@ _G.pg.base.world_event_data[10110255] = {
 	effect = {
 		101100205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10110206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10110206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101100206,
+		10033
 	},
 	grid = {
 		{
@@ -160203,6 +160203,43 @@ _G.pg.base.world_event_data[10120001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10120021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10120021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		101200012
+	},
+	grid = {
+		{
+			5,
+			5,
+			7,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10120002] = {
 	visuality = 0,
 	name = "",
@@ -160240,6 +160277,43 @@ _G.pg.base.world_event_data[10120002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10120022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10120022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		101200013
+	},
+	grid = {
+		{
+			4,
+			4,
+			8,
+			15
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10120003] = {
 	visuality = 0,
 	name = "",
@@ -160259,6 +160333,43 @@ _G.pg.base.world_event_data[10120003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10120003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		101200014
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10120023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10120023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -160689,117 +160800,6 @@ _G.pg.base.world_event_data[10120017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10120021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10120021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		101200012
-	},
-	grid = {
-		{
-			5,
-			5,
-			7,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10120022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10120022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		101200013
-	},
-	grid = {
-		{
-			4,
-			4,
-			8,
-			15
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10120023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10120023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		101200014
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10120060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -160911,6 +160911,43 @@ _G.pg.base.world_event_data[10120101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10120151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10120151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10120102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -160935,43 +160972,6 @@ _G.pg.base.world_event_data[10120102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10120151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10120151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -161067,221 +161067,6 @@ _G.pg.base.world_event_data[10120201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10120202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10120202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101200202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10120203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10120203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101200203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10120204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10120204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101200204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10120205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10120205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101200205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10120206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10120206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101200206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10120251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -161311,6 +161096,49 @@ _G.pg.base.world_event_data[10120251] = {
 	effect = {
 		101200201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10120202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10120202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101200202,
+		10029
 	},
 	grid = {
 		{
@@ -161368,6 +161196,49 @@ _G.pg.base.world_event_data[10120252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10120203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10120203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101200203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10120253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -161397,6 +161268,49 @@ _G.pg.base.world_event_data[10120253] = {
 	effect = {
 		101200203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10120204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10120204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101200204,
+		10031
 	},
 	grid = {
 		{
@@ -161454,6 +161368,49 @@ _G.pg.base.world_event_data[10120254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10120205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10120205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101200205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10120255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -161483,6 +161440,49 @@ _G.pg.base.world_event_data[10120255] = {
 	effect = {
 		101200205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10120206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10120206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101200206,
+		10033
 	},
 	grid = {
 		{
@@ -161877,6 +161877,43 @@ _G.pg.base.world_event_data[10130001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10130021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10130021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		101300012
+	},
+	grid = {
+		{
+			5,
+			5,
+			7,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10130002] = {
 	visuality = 0,
 	name = "",
@@ -161914,6 +161951,43 @@ _G.pg.base.world_event_data[10130002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10130022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10130022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		101300013
+	},
+	grid = {
+		{
+			4,
+			4,
+			8,
+			15
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10130003] = {
 	visuality = 0,
 	name = "",
@@ -161933,6 +162007,43 @@ _G.pg.base.world_event_data[10130003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10130003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		101300014
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10130023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10130023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -162363,117 +162474,6 @@ _G.pg.base.world_event_data[10130017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10130021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10130021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		101300012
-	},
-	grid = {
-		{
-			5,
-			5,
-			7,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10130022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10130022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		101300013
-	},
-	grid = {
-		{
-			4,
-			4,
-			8,
-			15
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10130023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10130023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		101300014
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10130060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -162585,6 +162585,43 @@ _G.pg.base.world_event_data[10130101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10130151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10130151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10130102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -162609,43 +162646,6 @@ _G.pg.base.world_event_data[10130102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10130151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10130151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -162741,221 +162741,6 @@ _G.pg.base.world_event_data[10130201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10130202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10130202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101300202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10130203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10130203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101300203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10130204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10130204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101300204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10130205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10130205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101300205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10130206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10130206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101300206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10130251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -162985,6 +162770,49 @@ _G.pg.base.world_event_data[10130251] = {
 	effect = {
 		101300201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10130202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10130202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101300202,
+		10029
 	},
 	grid = {
 		{
@@ -163042,6 +162870,49 @@ _G.pg.base.world_event_data[10130252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10130203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10130203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101300203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10130253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -163071,6 +162942,49 @@ _G.pg.base.world_event_data[10130253] = {
 	effect = {
 		101300203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10130204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10130204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101300204,
+		10031
 	},
 	grid = {
 		{
@@ -163128,6 +163042,49 @@ _G.pg.base.world_event_data[10130254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10130205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10130205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101300205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10130255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -163157,6 +163114,49 @@ _G.pg.base.world_event_data[10130255] = {
 	effect = {
 		101300205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10130206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10130206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101300206,
+		10033
 	},
 	grid = {
 		{
@@ -163551,6 +163551,43 @@ _G.pg.base.world_event_data[10140001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10140021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10140021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		101400012
+	},
+	grid = {
+		{
+			4,
+			4,
+			7,
+			12
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10140002] = {
 	visuality = 0,
 	name = "",
@@ -163588,6 +163625,43 @@ _G.pg.base.world_event_data[10140002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10140022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10140022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		101400013
+	},
+	grid = {
+		{
+			3,
+			3,
+			8,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10140003] = {
 	visuality = 0,
 	name = "",
@@ -163607,6 +163681,43 @@ _G.pg.base.world_event_data[10140003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10140003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		101400014
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10140023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10140023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -164000,117 +164111,6 @@ _G.pg.base.world_event_data[10140016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10140021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10140021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		101400012
-	},
-	grid = {
-		{
-			4,
-			4,
-			7,
-			12
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10140022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10140022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		101400013
-	},
-	grid = {
-		{
-			3,
-			3,
-			8,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10140023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10140023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		101400014
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10140060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -164222,6 +164222,43 @@ _G.pg.base.world_event_data[10140101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10140151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10140151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10140102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -164246,43 +164283,6 @@ _G.pg.base.world_event_data[10140102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10140151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10140151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -164378,221 +164378,6 @@ _G.pg.base.world_event_data[10140201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10140202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10140202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101400202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10140203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10140203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101400203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10140204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10140204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101400204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10140205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10140205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101400205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10140206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10140206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		101400206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10140251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -164622,6 +164407,49 @@ _G.pg.base.world_event_data[10140251] = {
 	effect = {
 		101400201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10140202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10140202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101400202,
+		10029
 	},
 	grid = {
 		{
@@ -164679,6 +164507,49 @@ _G.pg.base.world_event_data[10140252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10140203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10140203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101400203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10140253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -164708,6 +164579,49 @@ _G.pg.base.world_event_data[10140253] = {
 	effect = {
 		101400203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10140204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10140204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101400204,
+		10031
 	},
 	grid = {
 		{
@@ -164765,6 +164679,49 @@ _G.pg.base.world_event_data[10140254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10140205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10140205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101400205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10140255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -164794,6 +164751,49 @@ _G.pg.base.world_event_data[10140255] = {
 	effect = {
 		101400205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10140206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10140206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		101400206,
+		10033
 	},
 	grid = {
 		{
@@ -165188,6 +165188,43 @@ _G.pg.base.world_event_data[10210002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10210022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10210022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		102100013
+	},
+	grid = {
+		{
+			3,
+			3,
+			6,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10210003] = {
 	visuality = 0,
 	name = "",
@@ -165207,6 +165244,43 @@ _G.pg.base.world_event_data[10210003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10210003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		102100014
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10210023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10210023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -165600,80 +165674,6 @@ _G.pg.base.world_event_data[10210016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10210022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10210022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		102100013
-	},
-	grid = {
-		{
-			3,
-			3,
-			6,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10210023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10210023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		102100014
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10210060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -165865,135 +165865,6 @@ _G.pg.base.world_event_data[10210201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10210202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10210202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		102100202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10210203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10210203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		102100203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10210204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10210204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		102100204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10210251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -166023,6 +165894,49 @@ _G.pg.base.world_event_data[10210251] = {
 	effect = {
 		102100201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10210202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10210202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		102100202,
+		10028
 	},
 	grid = {
 		{
@@ -166080,6 +165994,49 @@ _G.pg.base.world_event_data[10210252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10210203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10210203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		102100203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10210253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -166109,6 +166066,49 @@ _G.pg.base.world_event_data[10210253] = {
 	effect = {
 		102100203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10210204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10210204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		102100204,
+		10032
 	},
 	grid = {
 		{
@@ -166503,6 +166503,43 @@ _G.pg.base.world_event_data[10220002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10220022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10220022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		102200013
+	},
+	grid = {
+		{
+			3,
+			3,
+			9,
+			4
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10220003] = {
 	visuality = 0,
 	name = "",
@@ -166522,6 +166559,43 @@ _G.pg.base.world_event_data[10220003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10220003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		102200014
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10220023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10220023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -166915,80 +166989,6 @@ _G.pg.base.world_event_data[10220016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10220022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10220022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		102200013
-	},
-	grid = {
-		{
-			3,
-			3,
-			9,
-			4
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10220023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10220023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		102200014
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10220060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -167180,135 +167180,6 @@ _G.pg.base.world_event_data[10220201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10220202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10220202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		102200202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10220203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10220203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		102200203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10220204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10220204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		102200204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10220251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -167338,6 +167209,49 @@ _G.pg.base.world_event_data[10220251] = {
 	effect = {
 		102200201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10220202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10220202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		102200202,
+		10028
 	},
 	grid = {
 		{
@@ -167395,6 +167309,49 @@ _G.pg.base.world_event_data[10220252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10220203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10220203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		102200203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10220253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -167424,6 +167381,49 @@ _G.pg.base.world_event_data[10220253] = {
 	effect = {
 		102200203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10220204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10220204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		102200204,
+		10032
 	},
 	grid = {
 		{
@@ -167818,6 +167818,43 @@ _G.pg.base.world_event_data[10230002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10230022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10230022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		102300013
+	},
+	grid = {
+		{
+			3,
+			3,
+			6,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10230003] = {
 	visuality = 0,
 	name = "",
@@ -167837,6 +167874,43 @@ _G.pg.base.world_event_data[10230003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10230003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		102300014
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10230023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10230023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -168230,80 +168304,6 @@ _G.pg.base.world_event_data[10230016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10230022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10230022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		102300013
-	},
-	grid = {
-		{
-			3,
-			3,
-			6,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10230023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10230023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		102300014
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10230060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -168495,135 +168495,6 @@ _G.pg.base.world_event_data[10230201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10230202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10230202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		102300202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10230203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10230203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		102300203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10230204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10230204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		102300204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10230251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -168653,6 +168524,49 @@ _G.pg.base.world_event_data[10230251] = {
 	effect = {
 		102300201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10230202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10230202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		102300202,
+		10028
 	},
 	grid = {
 		{
@@ -168710,6 +168624,49 @@ _G.pg.base.world_event_data[10230252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10230203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10230203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		102300203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10230253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -168739,6 +168696,49 @@ _G.pg.base.world_event_data[10230253] = {
 	effect = {
 		102300203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10230204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10230204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		102300204,
+		10032
 	},
 	grid = {
 		{
@@ -169133,6 +169133,43 @@ _G.pg.base.world_event_data[10240002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10240022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10240022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		102400013
+	},
+	grid = {
+		{
+			3,
+			3,
+			4,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10240003] = {
 	visuality = 0,
 	name = "",
@@ -169152,6 +169189,43 @@ _G.pg.base.world_event_data[10240003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10240003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		102400014
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10240023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10240023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -169545,80 +169619,6 @@ _G.pg.base.world_event_data[10240016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10240022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10240022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		102400013
-	},
-	grid = {
-		{
-			3,
-			3,
-			4,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10240023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10240023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		102400014
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10240060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -169810,135 +169810,6 @@ _G.pg.base.world_event_data[10240201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10240202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10240202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		102400202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10240203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10240203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		102400203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10240204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10240204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		102400204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10240251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -169968,6 +169839,49 @@ _G.pg.base.world_event_data[10240251] = {
 	effect = {
 		102400201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10240202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10240202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		102400202,
+		10028
 	},
 	grid = {
 		{
@@ -170025,6 +169939,49 @@ _G.pg.base.world_event_data[10240252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10240203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10240203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		102400203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10240253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -170054,6 +170011,49 @@ _G.pg.base.world_event_data[10240253] = {
 	effect = {
 		102400203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10240204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10240204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		102400204,
+		10032
 	},
 	grid = {
 		{
@@ -170448,6 +170448,43 @@ _G.pg.base.world_event_data[10250002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10250022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10250022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		102500013
+	},
+	grid = {
+		{
+			3,
+			3,
+			11,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10250003] = {
 	visuality = 0,
 	name = "",
@@ -170467,6 +170504,43 @@ _G.pg.base.world_event_data[10250003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10250003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		102500014
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10250023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10250023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -170897,80 +170971,6 @@ _G.pg.base.world_event_data[10250017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10250022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10250022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		102500013
-	},
-	grid = {
-		{
-			3,
-			3,
-			11,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10250023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10250023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		102500014
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10250060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -171082,6 +171082,43 @@ _G.pg.base.world_event_data[10250101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10250151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10250151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10250102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -171106,43 +171143,6 @@ _G.pg.base.world_event_data[10250102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10250151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10250151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -171238,178 +171238,6 @@ _G.pg.base.world_event_data[10250201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10250202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10250202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		102500202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10250203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10250203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		102500203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10250204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10250204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		102500204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10250205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10250205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		102500205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10250251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -171439,6 +171267,49 @@ _G.pg.base.world_event_data[10250251] = {
 	effect = {
 		102500201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10250202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10250202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		102500202,
+		10028
 	},
 	grid = {
 		{
@@ -171496,6 +171367,49 @@ _G.pg.base.world_event_data[10250252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10250203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10250203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		102500203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10250253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -171539,6 +171453,49 @@ _G.pg.base.world_event_data[10250253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10250204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10250204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		102500204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10250254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -171568,6 +171525,49 @@ _G.pg.base.world_event_data[10250254] = {
 	effect = {
 		102500204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10250205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10250205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		102500205,
+		10032
 	},
 	grid = {
 		{
@@ -171962,6 +171962,43 @@ _G.pg.base.world_event_data[10310002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10310022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10310022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		103100013
+	},
+	grid = {
+		{
+			3,
+			3,
+			6,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10310003] = {
 	visuality = 0,
 	name = "",
@@ -171981,6 +172018,43 @@ _G.pg.base.world_event_data[10310003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10310003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		103100014
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10310023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10310023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -172374,80 +172448,6 @@ _G.pg.base.world_event_data[10310016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10310022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10310022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		103100013
-	},
-	grid = {
-		{
-			3,
-			3,
-			6,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10310023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10310023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		103100014
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10310060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -172639,135 +172639,6 @@ _G.pg.base.world_event_data[10310201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10310202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10310202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		103100202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10310203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10310203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		103100203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10310204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10310204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		103100204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10310251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -172797,6 +172668,49 @@ _G.pg.base.world_event_data[10310251] = {
 	effect = {
 		103100201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10310202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10310202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		103100202,
+		10028
 	},
 	grid = {
 		{
@@ -172854,6 +172768,49 @@ _G.pg.base.world_event_data[10310252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10310203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10310203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		103100203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10310253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -172883,6 +172840,49 @@ _G.pg.base.world_event_data[10310253] = {
 	effect = {
 		103100203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10310204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10310204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		103100204,
+		10032
 	},
 	grid = {
 		{
@@ -173277,6 +173277,43 @@ _G.pg.base.world_event_data[10320002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10320022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10320022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		103200013
+	},
+	grid = {
+		{
+			3,
+			3,
+			8,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10320003] = {
 	visuality = 0,
 	name = "",
@@ -173296,6 +173333,43 @@ _G.pg.base.world_event_data[10320003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10320003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		103200014
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10320023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10320023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -173726,80 +173800,6 @@ _G.pg.base.world_event_data[10320017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10320022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10320022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		103200013
-	},
-	grid = {
-		{
-			3,
-			3,
-			8,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10320023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10320023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		103200014
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10320060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -173911,6 +173911,43 @@ _G.pg.base.world_event_data[10320101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10320151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10320151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10320102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -173935,43 +173972,6 @@ _G.pg.base.world_event_data[10320102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10320151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10320151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -174067,178 +174067,6 @@ _G.pg.base.world_event_data[10320201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10320202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10320202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		103200202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10320203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10320203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		103200203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10320204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10320204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		103200204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10320205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10320205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		103200205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10320251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -174268,6 +174096,49 @@ _G.pg.base.world_event_data[10320251] = {
 	effect = {
 		103200201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10320202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10320202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		103200202,
+		10028
 	},
 	grid = {
 		{
@@ -174325,6 +174196,49 @@ _G.pg.base.world_event_data[10320252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10320203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10320203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		103200203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10320253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -174368,6 +174282,49 @@ _G.pg.base.world_event_data[10320253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10320204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10320204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		103200204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10320254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -174397,6 +174354,49 @@ _G.pg.base.world_event_data[10320254] = {
 	effect = {
 		103200204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10320205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10320205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		103200205,
+		10032
 	},
 	grid = {
 		{
@@ -174791,6 +174791,43 @@ _G.pg.base.world_event_data[10330002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10330022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10330022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		103300013
+	},
+	grid = {
+		{
+			3,
+			3,
+			8,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10330003] = {
 	visuality = 0,
 	name = "",
@@ -174810,6 +174847,43 @@ _G.pg.base.world_event_data[10330003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10330003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		103300014
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10330023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10330023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -175240,80 +175314,6 @@ _G.pg.base.world_event_data[10330017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10330022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10330022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		103300013
-	},
-	grid = {
-		{
-			3,
-			3,
-			8,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10330023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10330023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		103300014
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10330060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -175425,6 +175425,43 @@ _G.pg.base.world_event_data[10330101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10330151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10330151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10330102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -175449,43 +175486,6 @@ _G.pg.base.world_event_data[10330102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10330151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10330151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -175581,178 +175581,6 @@ _G.pg.base.world_event_data[10330201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10330202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10330202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		103300202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10330203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10330203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		103300203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10330204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10330204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		103300204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10330205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10330205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		103300205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10330251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -175782,6 +175610,49 @@ _G.pg.base.world_event_data[10330251] = {
 	effect = {
 		103300201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10330202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10330202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		103300202,
+		10028
 	},
 	grid = {
 		{
@@ -175839,6 +175710,49 @@ _G.pg.base.world_event_data[10330252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10330203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10330203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		103300203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10330253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -175882,6 +175796,49 @@ _G.pg.base.world_event_data[10330253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10330204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10330204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		103300204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10330254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -175911,6 +175868,49 @@ _G.pg.base.world_event_data[10330254] = {
 	effect = {
 		103300204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10330205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10330205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		103300205,
+		10032
 	},
 	grid = {
 		{
@@ -176305,6 +176305,43 @@ _G.pg.base.world_event_data[10340002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10340022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10340022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		103400013
+	},
+	grid = {
+		{
+			3,
+			3,
+			8,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10340003] = {
 	visuality = 0,
 	name = "",
@@ -176324,6 +176361,43 @@ _G.pg.base.world_event_data[10340003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10340003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		103400014
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10340023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10340023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -176754,80 +176828,6 @@ _G.pg.base.world_event_data[10340017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10340022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10340022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		103400013
-	},
-	grid = {
-		{
-			3,
-			3,
-			8,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10340023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10340023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		103400014
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10340060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -176939,6 +176939,43 @@ _G.pg.base.world_event_data[10340101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10340151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10340151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10340102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -176963,43 +177000,6 @@ _G.pg.base.world_event_data[10340102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10340151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10340151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -177095,178 +177095,6 @@ _G.pg.base.world_event_data[10340201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10340202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10340202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		103400202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10340203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10340203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		103400203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10340204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10340204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		103400204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10340205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10340205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		103400205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10340251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -177296,6 +177124,49 @@ _G.pg.base.world_event_data[10340251] = {
 	effect = {
 		103400201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10340202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10340202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		103400202,
+		10028
 	},
 	grid = {
 		{
@@ -177353,6 +177224,49 @@ _G.pg.base.world_event_data[10340252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10340203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10340203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		103400203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10340253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -177396,6 +177310,49 @@ _G.pg.base.world_event_data[10340253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10340204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10340204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		103400204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10340254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -177425,6 +177382,49 @@ _G.pg.base.world_event_data[10340254] = {
 	effect = {
 		103400204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10340205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10340205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		103400205,
+		10032
 	},
 	grid = {
 		{
@@ -177819,6 +177819,43 @@ _G.pg.base.world_event_data[10410002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10410022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10410022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		104100013
+	},
+	grid = {
+		{
+			3,
+			3,
+			14,
+			4
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10410003] = {
 	visuality = 0,
 	name = "",
@@ -177838,6 +177875,43 @@ _G.pg.base.world_event_data[10410003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10410003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		104100014
+	},
+	grid = {
+		{
+			2,
+			2,
+			15,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10410023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10410023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -178268,80 +178342,6 @@ _G.pg.base.world_event_data[10410017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10410022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10410022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		104100013
-	},
-	grid = {
-		{
-			3,
-			3,
-			14,
-			4
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10410023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10410023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		104100014
-	},
-	grid = {
-		{
-			2,
-			2,
-			15,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10410060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -178453,6 +178453,43 @@ _G.pg.base.world_event_data[10410101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10410151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10410151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			15,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10410102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -178477,43 +178514,6 @@ _G.pg.base.world_event_data[10410102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			15,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10410151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10410151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -178609,178 +178609,6 @@ _G.pg.base.world_event_data[10410201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10410202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10410202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		104100202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			15,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10410203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10410203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		104100203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			15,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10410204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10410204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		104100204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			15,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10410205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10410205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		104100205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			15,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10410251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -178810,6 +178638,49 @@ _G.pg.base.world_event_data[10410251] = {
 	effect = {
 		104100201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			15,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10410202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10410202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		104100202,
+		10028
 	},
 	grid = {
 		{
@@ -178867,6 +178738,49 @@ _G.pg.base.world_event_data[10410252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10410203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10410203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		104100203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			15,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10410253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -178910,6 +178824,49 @@ _G.pg.base.world_event_data[10410253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10410204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10410204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		104100204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			15,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10410254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -178939,6 +178896,49 @@ _G.pg.base.world_event_data[10410254] = {
 	effect = {
 		104100204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			15,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10410205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10410205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		104100205,
+		10032
 	},
 	grid = {
 		{
@@ -179333,6 +179333,43 @@ _G.pg.base.world_event_data[10420001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10420021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10420021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		104200012
+	},
+	grid = {
+		{
+			4,
+			4,
+			17,
+			4
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10420002] = {
 	visuality = 0,
 	name = "",
@@ -179370,6 +179407,43 @@ _G.pg.base.world_event_data[10420002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10420022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10420022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		104200013
+	},
+	grid = {
+		{
+			3,
+			3,
+			18,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10420003] = {
 	visuality = 0,
 	name = "",
@@ -179389,6 +179463,43 @@ _G.pg.base.world_event_data[10420003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10420003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		104200014
+	},
+	grid = {
+		{
+			2,
+			2,
+			19,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10420023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10420023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -179782,117 +179893,6 @@ _G.pg.base.world_event_data[10420016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10420021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10420021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		104200012
-	},
-	grid = {
-		{
-			4,
-			4,
-			17,
-			4
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10420022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10420022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		104200013
-	},
-	grid = {
-		{
-			3,
-			3,
-			18,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10420023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10420023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		104200014
-	},
-	grid = {
-		{
-			2,
-			2,
-			19,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10420060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -180004,6 +180004,43 @@ _G.pg.base.world_event_data[10420101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10420151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10420151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			19,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10420102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -180028,43 +180065,6 @@ _G.pg.base.world_event_data[10420102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			19,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10420151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10420151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -180160,221 +180160,6 @@ _G.pg.base.world_event_data[10420201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10420202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10420202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		104200202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			19,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10420203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10420203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		104200203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			19,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10420204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10420204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		104200204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			19,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10420205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10420205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		104200205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			19,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10420206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10420206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		104200206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			19,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10420251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -180404,6 +180189,49 @@ _G.pg.base.world_event_data[10420251] = {
 	effect = {
 		104200201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			19,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10420202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10420202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		104200202,
+		10029
 	},
 	grid = {
 		{
@@ -180461,6 +180289,49 @@ _G.pg.base.world_event_data[10420252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10420203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10420203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		104200203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			19,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10420253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -180490,6 +180361,49 @@ _G.pg.base.world_event_data[10420253] = {
 	effect = {
 		104200203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			19,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10420204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10420204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		104200204,
+		10031
 	},
 	grid = {
 		{
@@ -180547,6 +180461,49 @@ _G.pg.base.world_event_data[10420254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10420205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10420205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		104200205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			19,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10420255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -180576,6 +180533,49 @@ _G.pg.base.world_event_data[10420255] = {
 	effect = {
 		104200205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			19,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10420206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10420206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		104200206,
+		10033
 	},
 	grid = {
 		{
@@ -180970,6 +180970,43 @@ _G.pg.base.world_event_data[10430002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10430022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10430022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		104300013
+	},
+	grid = {
+		{
+			3,
+			3,
+			6,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10430003] = {
 	visuality = 0,
 	name = "",
@@ -180989,6 +181026,43 @@ _G.pg.base.world_event_data[10430003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10430003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		104300014
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10430023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10430023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -181382,80 +181456,6 @@ _G.pg.base.world_event_data[10430016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10430022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10430022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		104300013
-	},
-	grid = {
-		{
-			3,
-			3,
-			6,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10430023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10430023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		104300014
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10430060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -181647,135 +181647,6 @@ _G.pg.base.world_event_data[10430201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10430202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10430202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		104300202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10430203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10430203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		104300203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10430204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10430204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		104300204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10430251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -181805,6 +181676,49 @@ _G.pg.base.world_event_data[10430251] = {
 	effect = {
 		104300201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10430202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10430202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		104300202,
+		10028
 	},
 	grid = {
 		{
@@ -181862,6 +181776,49 @@ _G.pg.base.world_event_data[10430252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10430203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10430203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		104300203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10430253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -181891,6 +181848,49 @@ _G.pg.base.world_event_data[10430253] = {
 	effect = {
 		104300203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10430204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10430204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		104300204,
+		10032
 	},
 	grid = {
 		{
@@ -182285,6 +182285,43 @@ _G.pg.base.world_event_data[10440002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10440022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10440022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		104400013
+	},
+	grid = {
+		{
+			3,
+			3,
+			9,
+			4
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10440003] = {
 	visuality = 0,
 	name = "",
@@ -182304,6 +182341,43 @@ _G.pg.base.world_event_data[10440003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10440003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		104400014
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10440023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10440023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -182697,80 +182771,6 @@ _G.pg.base.world_event_data[10440016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10440022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10440022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		104400013
-	},
-	grid = {
-		{
-			3,
-			3,
-			9,
-			4
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10440023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10440023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		104400014
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10440060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -182962,135 +182962,6 @@ _G.pg.base.world_event_data[10440201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10440202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10440202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		104400202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10440203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10440203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		104400203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10440204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10440204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		104400204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10440251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -183120,6 +182991,49 @@ _G.pg.base.world_event_data[10440251] = {
 	effect = {
 		104400201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10440202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10440202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		104400202,
+		10028
 	},
 	grid = {
 		{
@@ -183177,6 +183091,49 @@ _G.pg.base.world_event_data[10440252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10440203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10440203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		104400203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10440253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -183206,6 +183163,49 @@ _G.pg.base.world_event_data[10440253] = {
 	effect = {
 		104400203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10440204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10440204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		104400204,
+		10032
 	},
 	grid = {
 		{
@@ -183600,6 +183600,43 @@ _G.pg.base.world_event_data[10510001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10510021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10510021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		105100012
+	},
+	grid = {
+		{
+			4,
+			4,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10510002] = {
 	visuality = 0,
 	name = "",
@@ -183637,6 +183674,43 @@ _G.pg.base.world_event_data[10510002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10510022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10510022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		105100013
+	},
+	grid = {
+		{
+			3,
+			3,
+			10,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10510003] = {
 	visuality = 0,
 	name = "",
@@ -183656,6 +183730,43 @@ _G.pg.base.world_event_data[10510003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10510003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		105100014
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10510023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10510023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -184049,117 +184160,6 @@ _G.pg.base.world_event_data[10510016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10510021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10510021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		105100012
-	},
-	grid = {
-		{
-			4,
-			4,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10510022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10510022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		105100013
-	},
-	grid = {
-		{
-			3,
-			3,
-			10,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10510023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10510023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		105100014
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10510060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -184271,6 +184271,43 @@ _G.pg.base.world_event_data[10510101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10510151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10510151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10510102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -184295,43 +184332,6 @@ _G.pg.base.world_event_data[10510102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10510151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10510151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -184427,221 +184427,6 @@ _G.pg.base.world_event_data[10510201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10510202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10510202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105100202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10510203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10510203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105100203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10510204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10510204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105100204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10510205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10510205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105100205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10510206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10510206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105100206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10510251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -184671,6 +184456,49 @@ _G.pg.base.world_event_data[10510251] = {
 	effect = {
 		105100201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10510202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10510202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105100202,
+		10029
 	},
 	grid = {
 		{
@@ -184728,6 +184556,49 @@ _G.pg.base.world_event_data[10510252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10510203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10510203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105100203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10510253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -184757,6 +184628,49 @@ _G.pg.base.world_event_data[10510253] = {
 	effect = {
 		105100203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10510204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10510204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105100204,
+		10031
 	},
 	grid = {
 		{
@@ -184814,6 +184728,49 @@ _G.pg.base.world_event_data[10510254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10510205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10510205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105100205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10510255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -184843,6 +184800,49 @@ _G.pg.base.world_event_data[10510255] = {
 	effect = {
 		105100205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10510206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10510206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105100206,
+		10033
 	},
 	grid = {
 		{
@@ -185237,6 +185237,43 @@ _G.pg.base.world_event_data[10520001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10520021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10520021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		105200012
+	},
+	grid = {
+		{
+			4,
+			4,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10520002] = {
 	visuality = 0,
 	name = "",
@@ -185274,6 +185311,43 @@ _G.pg.base.world_event_data[10520002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10520022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10520022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		105200013
+	},
+	grid = {
+		{
+			3,
+			3,
+			10,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10520003] = {
 	visuality = 0,
 	name = "",
@@ -185293,6 +185367,43 @@ _G.pg.base.world_event_data[10520003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10520003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		105200014
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10520023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10520023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -185686,117 +185797,6 @@ _G.pg.base.world_event_data[10520016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10520021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10520021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		105200012
-	},
-	grid = {
-		{
-			4,
-			4,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10520022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10520022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		105200013
-	},
-	grid = {
-		{
-			3,
-			3,
-			10,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10520023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10520023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		105200014
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10520060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -185908,6 +185908,43 @@ _G.pg.base.world_event_data[10520101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10520151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10520151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10520102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -185932,43 +185969,6 @@ _G.pg.base.world_event_data[10520102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10520151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10520151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -186064,221 +186064,6 @@ _G.pg.base.world_event_data[10520201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10520202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10520202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105200202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10520203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10520203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105200203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10520204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10520204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105200204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10520205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10520205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105200205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10520206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10520206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105200206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10520251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -186308,6 +186093,49 @@ _G.pg.base.world_event_data[10520251] = {
 	effect = {
 		105200201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10520202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10520202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105200202,
+		10029
 	},
 	grid = {
 		{
@@ -186365,6 +186193,49 @@ _G.pg.base.world_event_data[10520252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10520203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10520203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105200203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10520253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -186394,6 +186265,49 @@ _G.pg.base.world_event_data[10520253] = {
 	effect = {
 		105200203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10520204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10520204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105200204,
+		10031
 	},
 	grid = {
 		{
@@ -186451,6 +186365,49 @@ _G.pg.base.world_event_data[10520254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10520205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10520205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105200205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10520255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -186480,6 +186437,49 @@ _G.pg.base.world_event_data[10520255] = {
 	effect = {
 		105200205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10520206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10520206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105200206,
+		10033
 	},
 	grid = {
 		{
@@ -186874,6 +186874,43 @@ _G.pg.base.world_event_data[10530001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10530021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10530021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		105300012
+	},
+	grid = {
+		{
+			4,
+			4,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10530002] = {
 	visuality = 0,
 	name = "",
@@ -186911,6 +186948,43 @@ _G.pg.base.world_event_data[10530002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10530022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10530022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		105300013
+	},
+	grid = {
+		{
+			3,
+			3,
+			10,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10530003] = {
 	visuality = 0,
 	name = "",
@@ -186930,6 +187004,43 @@ _G.pg.base.world_event_data[10530003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10530003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		105300014
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10530023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10530023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -187323,117 +187434,6 @@ _G.pg.base.world_event_data[10530016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10530021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10530021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		105300012
-	},
-	grid = {
-		{
-			4,
-			4,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10530022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10530022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		105300013
-	},
-	grid = {
-		{
-			3,
-			3,
-			10,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10530023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10530023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		105300014
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10530060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -187545,6 +187545,43 @@ _G.pg.base.world_event_data[10530101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10530151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10530151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10530102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -187569,43 +187606,6 @@ _G.pg.base.world_event_data[10530102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10530151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10530151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -187701,221 +187701,6 @@ _G.pg.base.world_event_data[10530201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10530202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10530202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105300202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10530203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10530203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105300203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10530204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10530204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105300204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10530205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10530205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105300205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10530206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10530206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105300206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10530251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -187945,6 +187730,49 @@ _G.pg.base.world_event_data[10530251] = {
 	effect = {
 		105300201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10530202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10530202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105300202,
+		10029
 	},
 	grid = {
 		{
@@ -188002,6 +187830,49 @@ _G.pg.base.world_event_data[10530252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10530203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10530203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105300203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10530253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -188031,6 +187902,49 @@ _G.pg.base.world_event_data[10530253] = {
 	effect = {
 		105300203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10530204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10530204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105300204,
+		10031
 	},
 	grid = {
 		{
@@ -188088,6 +188002,49 @@ _G.pg.base.world_event_data[10530254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10530205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10530205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105300205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10530255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -188117,6 +188074,49 @@ _G.pg.base.world_event_data[10530255] = {
 	effect = {
 		105300205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10530206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10530206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105300206,
+		10033
 	},
 	grid = {
 		{
@@ -188511,6 +188511,43 @@ _G.pg.base.world_event_data[10540001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10540021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10540021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		105400012
+	},
+	grid = {
+		{
+			4,
+			4,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10540002] = {
 	visuality = 0,
 	name = "",
@@ -188548,6 +188585,43 @@ _G.pg.base.world_event_data[10540002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10540022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10540022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		105400013
+	},
+	grid = {
+		{
+			3,
+			3,
+			10,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10540003] = {
 	visuality = 0,
 	name = "",
@@ -188567,6 +188641,43 @@ _G.pg.base.world_event_data[10540003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10540003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		105400014
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10540023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10540023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -188960,117 +189071,6 @@ _G.pg.base.world_event_data[10540016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10540021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10540021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		105400012
-	},
-	grid = {
-		{
-			4,
-			4,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10540022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10540022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		105400013
-	},
-	grid = {
-		{
-			3,
-			3,
-			10,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10540023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10540023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		105400014
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10540060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -189182,6 +189182,43 @@ _G.pg.base.world_event_data[10540101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10540151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10540151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10540102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -189206,43 +189243,6 @@ _G.pg.base.world_event_data[10540102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10540151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10540151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -189338,221 +189338,6 @@ _G.pg.base.world_event_data[10540201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10540202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10540202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105400202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10540203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10540203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105400203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10540204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10540204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105400204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10540205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10540205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105400205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10540206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10540206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		105400206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10540251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -189582,6 +189367,49 @@ _G.pg.base.world_event_data[10540251] = {
 	effect = {
 		105400201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10540202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10540202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105400202,
+		10029
 	},
 	grid = {
 		{
@@ -189639,6 +189467,49 @@ _G.pg.base.world_event_data[10540252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10540203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10540203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105400203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10540253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -189668,6 +189539,49 @@ _G.pg.base.world_event_data[10540253] = {
 	effect = {
 		105400203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10540204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10540204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105400204,
+		10031
 	},
 	grid = {
 		{
@@ -189725,6 +189639,49 @@ _G.pg.base.world_event_data[10540254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10540205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10540205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105400205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10540255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -189754,6 +189711,49 @@ _G.pg.base.world_event_data[10540255] = {
 	effect = {
 		105400205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10540206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10540206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		105400206,
+		10033
 	},
 	grid = {
 		{
@@ -190148,6 +190148,43 @@ _G.pg.base.world_event_data[10610001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10610021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10610021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		106100012
+	},
+	grid = {
+		{
+			4,
+			4,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10610002] = {
 	visuality = 0,
 	name = "",
@@ -190185,6 +190222,43 @@ _G.pg.base.world_event_data[10610002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10610022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10610022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		106100013
+	},
+	grid = {
+		{
+			3,
+			3,
+			13,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10610003] = {
 	visuality = 0,
 	name = "",
@@ -190204,6 +190278,43 @@ _G.pg.base.world_event_data[10610003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10610003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		106100014
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10610023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10610023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -190597,117 +190708,6 @@ _G.pg.base.world_event_data[10610016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10610021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10610021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		106100012
-	},
-	grid = {
-		{
-			4,
-			4,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10610022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10610022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		106100013
-	},
-	grid = {
-		{
-			3,
-			3,
-			13,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10610023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10610023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		106100014
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10610060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -190819,6 +190819,43 @@ _G.pg.base.world_event_data[10610101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10610151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10610151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10610102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -190843,43 +190880,6 @@ _G.pg.base.world_event_data[10610102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10610151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10610151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -190975,221 +190975,6 @@ _G.pg.base.world_event_data[10610201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10610202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10610202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106100202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10610203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10610203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106100203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10610204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10610204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106100204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10610205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10610205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106100205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10610206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10610206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106100206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10610251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -191219,6 +191004,49 @@ _G.pg.base.world_event_data[10610251] = {
 	effect = {
 		106100201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10610202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10610202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106100202,
+		10029
 	},
 	grid = {
 		{
@@ -191276,6 +191104,49 @@ _G.pg.base.world_event_data[10610252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10610203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10610203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106100203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10610253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -191305,6 +191176,49 @@ _G.pg.base.world_event_data[10610253] = {
 	effect = {
 		106100203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10610204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10610204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106100204,
+		10031
 	},
 	grid = {
 		{
@@ -191362,6 +191276,49 @@ _G.pg.base.world_event_data[10610254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10610205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10610205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106100205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10610255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -191391,6 +191348,49 @@ _G.pg.base.world_event_data[10610255] = {
 	effect = {
 		106100205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10610206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10610206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106100206,
+		10033
 	},
 	grid = {
 		{
@@ -191785,6 +191785,43 @@ _G.pg.base.world_event_data[10620002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10620022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10620022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		106200013
+	},
+	grid = {
+		{
+			3,
+			3,
+			8,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10620003] = {
 	visuality = 0,
 	name = "",
@@ -191804,6 +191841,43 @@ _G.pg.base.world_event_data[10620003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10620003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		106200014
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10620023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10620023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -192234,80 +192308,6 @@ _G.pg.base.world_event_data[10620017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10620022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10620022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		106200013
-	},
-	grid = {
-		{
-			3,
-			3,
-			8,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10620023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10620023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		106200014
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10620060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -192419,6 +192419,43 @@ _G.pg.base.world_event_data[10620101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10620151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10620151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10620102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -192443,43 +192480,6 @@ _G.pg.base.world_event_data[10620102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10620151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10620151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -192575,178 +192575,6 @@ _G.pg.base.world_event_data[10620201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10620202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10620202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106200202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10620203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10620203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106200203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10620204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10620204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106200204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10620205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10620205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106200205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10620251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -192776,6 +192604,49 @@ _G.pg.base.world_event_data[10620251] = {
 	effect = {
 		106200201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10620202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10620202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106200202,
+		10028
 	},
 	grid = {
 		{
@@ -192833,6 +192704,49 @@ _G.pg.base.world_event_data[10620252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10620203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10620203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106200203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10620253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -192876,6 +192790,49 @@ _G.pg.base.world_event_data[10620253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10620204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10620204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106200204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10620254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -192905,6 +192862,49 @@ _G.pg.base.world_event_data[10620254] = {
 	effect = {
 		106200204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10620205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10620205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106200205,
+		10032
 	},
 	grid = {
 		{
@@ -193299,6 +193299,43 @@ _G.pg.base.world_event_data[10630001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10630021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10630021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		106300012
+	},
+	grid = {
+		{
+			4,
+			4,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10630002] = {
 	visuality = 0,
 	name = "",
@@ -193336,6 +193373,43 @@ _G.pg.base.world_event_data[10630002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10630022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10630022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		106300013
+	},
+	grid = {
+		{
+			3,
+			3,
+			13,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10630003] = {
 	visuality = 0,
 	name = "",
@@ -193355,6 +193429,43 @@ _G.pg.base.world_event_data[10630003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10630003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		106300014
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10630023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10630023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -193748,117 +193859,6 @@ _G.pg.base.world_event_data[10630016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10630021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10630021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		106300012
-	},
-	grid = {
-		{
-			4,
-			4,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10630022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10630022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		106300013
-	},
-	grid = {
-		{
-			3,
-			3,
-			13,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10630023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10630023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		106300014
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10630060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -193970,6 +193970,43 @@ _G.pg.base.world_event_data[10630101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10630151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10630151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10630102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -193994,43 +194031,6 @@ _G.pg.base.world_event_data[10630102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10630151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10630151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -194126,221 +194126,6 @@ _G.pg.base.world_event_data[10630201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10630202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10630202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106300202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10630203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10630203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106300203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10630204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10630204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106300204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10630205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10630205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106300205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10630206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10630206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106300206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10630251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -194370,6 +194155,49 @@ _G.pg.base.world_event_data[10630251] = {
 	effect = {
 		106300201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10630202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10630202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106300202,
+		10029
 	},
 	grid = {
 		{
@@ -194427,6 +194255,49 @@ _G.pg.base.world_event_data[10630252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10630203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10630203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106300203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10630253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -194456,6 +194327,49 @@ _G.pg.base.world_event_data[10630253] = {
 	effect = {
 		106300203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10630204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10630204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106300204,
+		10031
 	},
 	grid = {
 		{
@@ -194513,6 +194427,49 @@ _G.pg.base.world_event_data[10630254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10630205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10630205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106300205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10630255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -194542,6 +194499,49 @@ _G.pg.base.world_event_data[10630255] = {
 	effect = {
 		106300205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10630206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10630206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106300206,
+		10033
 	},
 	grid = {
 		{
@@ -194936,6 +194936,43 @@ _G.pg.base.world_event_data[10640001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10640021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10640021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		106400012
+	},
+	grid = {
+		{
+			4,
+			4,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10640002] = {
 	visuality = 0,
 	name = "",
@@ -194973,6 +195010,43 @@ _G.pg.base.world_event_data[10640002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10640022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10640022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		106400013
+	},
+	grid = {
+		{
+			3,
+			3,
+			10,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10640003] = {
 	visuality = 0,
 	name = "",
@@ -194992,6 +195066,43 @@ _G.pg.base.world_event_data[10640003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10640003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		106400014
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10640023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10640023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -195385,117 +195496,6 @@ _G.pg.base.world_event_data[10640016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10640021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10640021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		106400012
-	},
-	grid = {
-		{
-			4,
-			4,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10640022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10640022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		106400013
-	},
-	grid = {
-		{
-			3,
-			3,
-			10,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10640023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10640023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		106400014
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10640060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -195607,6 +195607,43 @@ _G.pg.base.world_event_data[10640101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10640151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10640151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10640102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -195631,43 +195668,6 @@ _G.pg.base.world_event_data[10640102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10640151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10640151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -195763,221 +195763,6 @@ _G.pg.base.world_event_data[10640201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10640202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10640202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106400202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10640203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10640203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106400203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10640204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10640204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106400204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10640205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10640205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106400205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10640206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10640206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106400206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10640251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -196007,6 +195792,49 @@ _G.pg.base.world_event_data[10640251] = {
 	effect = {
 		106400201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10640202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10640202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106400202,
+		10029
 	},
 	grid = {
 		{
@@ -196064,6 +195892,49 @@ _G.pg.base.world_event_data[10640252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10640203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10640203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106400203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10640253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -196093,6 +195964,49 @@ _G.pg.base.world_event_data[10640253] = {
 	effect = {
 		106400203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10640204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10640204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106400204,
+		10031
 	},
 	grid = {
 		{
@@ -196150,6 +196064,49 @@ _G.pg.base.world_event_data[10640254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10640205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10640205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106400205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10640255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -196179,6 +196136,49 @@ _G.pg.base.world_event_data[10640255] = {
 	effect = {
 		106400205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10640206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10640206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106400206,
+		10033
 	},
 	grid = {
 		{
@@ -196573,6 +196573,43 @@ _G.pg.base.world_event_data[10650002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10650022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10650022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		106500013
+	},
+	grid = {
+		{
+			3,
+			3,
+			11,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10650003] = {
 	visuality = 0,
 	name = "",
@@ -196592,6 +196629,43 @@ _G.pg.base.world_event_data[10650003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10650003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		106500014
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10650023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10650023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -197022,80 +197096,6 @@ _G.pg.base.world_event_data[10650017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10650022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10650022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		106500013
-	},
-	grid = {
-		{
-			3,
-			3,
-			11,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10650023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10650023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		106500014
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10650060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -197207,6 +197207,43 @@ _G.pg.base.world_event_data[10650101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10650151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10650151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10650102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -197231,43 +197268,6 @@ _G.pg.base.world_event_data[10650102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10650151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10650151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -197363,178 +197363,6 @@ _G.pg.base.world_event_data[10650201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10650202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10650202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106500202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10650203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10650203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106500203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10650204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10650204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106500204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10650205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10650205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106500205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10650251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -197564,6 +197392,49 @@ _G.pg.base.world_event_data[10650251] = {
 	effect = {
 		106500201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10650202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10650202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106500202,
+		10028
 	},
 	grid = {
 		{
@@ -197621,6 +197492,49 @@ _G.pg.base.world_event_data[10650252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10650203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10650203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106500203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10650253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -197664,6 +197578,49 @@ _G.pg.base.world_event_data[10650253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10650204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10650204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106500204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10650254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -197693,6 +197650,49 @@ _G.pg.base.world_event_data[10650254] = {
 	effect = {
 		106500204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10650205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10650205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106500205,
+		10032
 	},
 	grid = {
 		{
@@ -198087,6 +198087,43 @@ _G.pg.base.world_event_data[10660002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10660022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10660022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		106600013
+	},
+	grid = {
+		{
+			3,
+			3,
+			11,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10660003] = {
 	visuality = 0,
 	name = "",
@@ -198106,6 +198143,43 @@ _G.pg.base.world_event_data[10660003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10660003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		106600014
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10660023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10660023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -198536,80 +198610,6 @@ _G.pg.base.world_event_data[10660017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10660022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10660022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		106600013
-	},
-	grid = {
-		{
-			3,
-			3,
-			11,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10660023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10660023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		106600014
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10660060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -198721,6 +198721,43 @@ _G.pg.base.world_event_data[10660101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10660151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10660151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10660102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -198745,43 +198782,6 @@ _G.pg.base.world_event_data[10660102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10660151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10660151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -198877,178 +198877,6 @@ _G.pg.base.world_event_data[10660201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10660202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10660202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106600202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10660203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10660203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106600203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10660204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10660204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106600204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10660205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10660205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		106600205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10660251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -199078,6 +198906,49 @@ _G.pg.base.world_event_data[10660251] = {
 	effect = {
 		106600201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10660202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10660202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106600202,
+		10028
 	},
 	grid = {
 		{
@@ -199135,6 +199006,49 @@ _G.pg.base.world_event_data[10660252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10660203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10660203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106600203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10660253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -199178,6 +199092,49 @@ _G.pg.base.world_event_data[10660253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10660204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10660204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106600204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10660254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -199207,6 +199164,49 @@ _G.pg.base.world_event_data[10660254] = {
 	effect = {
 		106600204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10660205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10660205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		106600205,
+		10032
 	},
 	grid = {
 		{
@@ -199601,6 +199601,43 @@ _G.pg.base.world_event_data[10710001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10710021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10710021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		107100012
+	},
+	grid = {
+		{
+			5,
+			5,
+			7,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10710002] = {
 	visuality = 0,
 	name = "",
@@ -199638,6 +199675,43 @@ _G.pg.base.world_event_data[10710002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10710022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10710022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		107100013
+	},
+	grid = {
+		{
+			4,
+			4,
+			8,
+			15
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10710003] = {
 	visuality = 0,
 	name = "",
@@ -199657,6 +199731,43 @@ _G.pg.base.world_event_data[10710003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10710003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		107100014
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10710023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10710023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -200087,117 +200198,6 @@ _G.pg.base.world_event_data[10710017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10710021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10710021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		107100012
-	},
-	grid = {
-		{
-			5,
-			5,
-			7,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10710022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10710022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		107100013
-	},
-	grid = {
-		{
-			4,
-			4,
-			8,
-			15
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10710023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10710023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		107100014
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10710060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -200309,6 +200309,43 @@ _G.pg.base.world_event_data[10710101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10710151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10710151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10710102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -200333,43 +200370,6 @@ _G.pg.base.world_event_data[10710102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10710151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10710151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -200465,221 +200465,6 @@ _G.pg.base.world_event_data[10710201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10710202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10710202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		107100202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10710203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10710203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		107100203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10710204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10710204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		107100204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10710205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10710205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		107100205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10710206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10710206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		107100206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10710251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -200709,6 +200494,49 @@ _G.pg.base.world_event_data[10710251] = {
 	effect = {
 		107100201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10710202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10710202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		107100202,
+		10029
 	},
 	grid = {
 		{
@@ -200766,6 +200594,49 @@ _G.pg.base.world_event_data[10710252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10710203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10710203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		107100203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10710253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -200795,6 +200666,49 @@ _G.pg.base.world_event_data[10710253] = {
 	effect = {
 		107100203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10710204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10710204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		107100204,
+		10031
 	},
 	grid = {
 		{
@@ -200852,6 +200766,49 @@ _G.pg.base.world_event_data[10710254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10710205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10710205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		107100205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10710255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -200881,6 +200838,49 @@ _G.pg.base.world_event_data[10710255] = {
 	effect = {
 		107100205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10710206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10710206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		107100206,
+		10033
 	},
 	grid = {
 		{
@@ -201275,6 +201275,43 @@ _G.pg.base.world_event_data[10720001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10720021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10720021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		107200012
+	},
+	grid = {
+		{
+			5,
+			5,
+			14,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10720002] = {
 	visuality = 0,
 	name = "",
@@ -201312,6 +201349,43 @@ _G.pg.base.world_event_data[10720002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10720022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10720022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		107200013
+	},
+	grid = {
+		{
+			4,
+			4,
+			15,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10720003] = {
 	visuality = 0,
 	name = "",
@@ -201331,6 +201405,43 @@ _G.pg.base.world_event_data[10720003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10720003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		107200014
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10720023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10720023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -201761,117 +201872,6 @@ _G.pg.base.world_event_data[10720017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10720021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10720021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		107200012
-	},
-	grid = {
-		{
-			5,
-			5,
-			14,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10720022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10720022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		107200013
-	},
-	grid = {
-		{
-			4,
-			4,
-			15,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10720023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10720023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		107200014
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10720060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -201983,6 +201983,43 @@ _G.pg.base.world_event_data[10720101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10720151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10720151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10720102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -202007,43 +202044,6 @@ _G.pg.base.world_event_data[10720102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10720151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10720151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -202139,221 +202139,6 @@ _G.pg.base.world_event_data[10720201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10720202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10720202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		107200202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10720203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10720203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		107200203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10720204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10720204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		107200204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10720205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10720205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		107200205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10720206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10720206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		107200206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10720251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -202383,6 +202168,49 @@ _G.pg.base.world_event_data[10720251] = {
 	effect = {
 		107200201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10720202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10720202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		107200202,
+		10029
 	},
 	grid = {
 		{
@@ -202440,6 +202268,49 @@ _G.pg.base.world_event_data[10720252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10720203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10720203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		107200203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10720253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -202469,6 +202340,49 @@ _G.pg.base.world_event_data[10720253] = {
 	effect = {
 		107200203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10720204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10720204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		107200204,
+		10031
 	},
 	grid = {
 		{
@@ -202526,6 +202440,49 @@ _G.pg.base.world_event_data[10720254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10720205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10720205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		107200205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10720255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -202555,6 +202512,49 @@ _G.pg.base.world_event_data[10720255] = {
 	effect = {
 		107200205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10720206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10720206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		107200206,
+		10033
 	},
 	grid = {
 		{
@@ -202949,6 +202949,43 @@ _G.pg.base.world_event_data[10730001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10730021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10730021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		107300012
+	},
+	grid = {
+		{
+			5,
+			5,
+			4,
+			19
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10730002] = {
 	visuality = 0,
 	name = "",
@@ -202986,6 +203023,43 @@ _G.pg.base.world_event_data[10730002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10730022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10730022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		107300013
+	},
+	grid = {
+		{
+			4,
+			4,
+			5,
+			20
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10730003] = {
 	visuality = 0,
 	name = "",
@@ -203005,6 +203079,43 @@ _G.pg.base.world_event_data[10730003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10730003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		107300014
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			22
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10730023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10730023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -203435,117 +203546,6 @@ _G.pg.base.world_event_data[10730017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10730021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10730021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		107300012
-	},
-	grid = {
-		{
-			5,
-			5,
-			4,
-			19
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10730022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10730022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		107300013
-	},
-	grid = {
-		{
-			4,
-			4,
-			5,
-			20
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10730023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10730023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		107300014
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			22
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10730060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -203657,6 +203657,43 @@ _G.pg.base.world_event_data[10730101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10730151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10730151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			22
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10730102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -203681,43 +203718,6 @@ _G.pg.base.world_event_data[10730102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			22
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10730151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10730151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -203813,221 +203813,6 @@ _G.pg.base.world_event_data[10730201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10730202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10730202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		107300202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			22
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10730203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10730203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		107300203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			22
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10730204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10730204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		107300204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			22
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10730205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 231411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10730205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		107300205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			22
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10730206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 233211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10730206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		107300206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			22
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10730251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -204057,6 +203842,49 @@ _G.pg.base.world_event_data[10730251] = {
 	effect = {
 		107300201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			22
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10730202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10730202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		107300202,
+		10029
 	},
 	grid = {
 		{
@@ -204114,6 +203942,49 @@ _G.pg.base.world_event_data[10730252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10730203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10730203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		107300203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			22
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10730253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -204143,6 +204014,49 @@ _G.pg.base.world_event_data[10730253] = {
 	effect = {
 		107300203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			22
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10730204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10730204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		107300204,
+		10031
 	},
 	grid = {
 		{
@@ -204200,6 +204114,49 @@ _G.pg.base.world_event_data[10730254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10730205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 231411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10730205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		107300205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			22
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10730255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -204229,6 +204186,49 @@ _G.pg.base.world_event_data[10730255] = {
 	effect = {
 		107300205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			22
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10730206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 233211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10730206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		107300206,
+		10033
 	},
 	grid = {
 		{
@@ -204623,6 +204623,43 @@ _G.pg.base.world_event_data[10810002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10810022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10810022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		108100013
+	},
+	grid = {
+		{
+			3,
+			3,
+			4,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10810003] = {
 	visuality = 0,
 	name = "",
@@ -204642,6 +204679,43 @@ _G.pg.base.world_event_data[10810003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10810003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		108100014
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10810023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10810023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -205035,80 +205109,6 @@ _G.pg.base.world_event_data[10810016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10810022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10810022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		108100013
-	},
-	grid = {
-		{
-			3,
-			3,
-			4,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10810023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10810023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		108100014
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10810060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -205300,135 +205300,6 @@ _G.pg.base.world_event_data[10810201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10810202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10810202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108100202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10810203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10810203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108100203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10810204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10810204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108100204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10810251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -205458,6 +205329,49 @@ _G.pg.base.world_event_data[10810251] = {
 	effect = {
 		108100201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10810202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10810202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108100202,
+		10028
 	},
 	grid = {
 		{
@@ -205515,6 +205429,49 @@ _G.pg.base.world_event_data[10810252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10810203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10810203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108100203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10810253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -205544,6 +205501,49 @@ _G.pg.base.world_event_data[10810253] = {
 	effect = {
 		108100203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10810204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10810204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108100204,
+		10032
 	},
 	grid = {
 		{
@@ -205938,6 +205938,43 @@ _G.pg.base.world_event_data[10820001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10820021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10820021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		108200012
+	},
+	grid = {
+		{
+			4,
+			4,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10820002] = {
 	visuality = 0,
 	name = "",
@@ -205975,6 +206012,43 @@ _G.pg.base.world_event_data[10820002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10820022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10820022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		108200013
+	},
+	grid = {
+		{
+			3,
+			3,
+			10,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10820003] = {
 	visuality = 0,
 	name = "",
@@ -205994,6 +206068,43 @@ _G.pg.base.world_event_data[10820003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10820003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		108200014
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10820023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10820023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -206387,117 +206498,6 @@ _G.pg.base.world_event_data[10820016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10820021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10820021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		108200012
-	},
-	grid = {
-		{
-			4,
-			4,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10820022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10820022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		108200013
-	},
-	grid = {
-		{
-			3,
-			3,
-			10,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10820023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10820023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		108200014
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10820060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -206609,6 +206609,43 @@ _G.pg.base.world_event_data[10820101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10820151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10820151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10820102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -206633,43 +206670,6 @@ _G.pg.base.world_event_data[10820102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10820151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10820151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -206765,221 +206765,6 @@ _G.pg.base.world_event_data[10820201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10820202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10820202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108200202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10820203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10820203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108200203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10820204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10820204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108200204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10820205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10820205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108200205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10820206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10820206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108200206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10820251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -207009,6 +206794,49 @@ _G.pg.base.world_event_data[10820251] = {
 	effect = {
 		108200201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10820202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10820202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108200202,
+		10029
 	},
 	grid = {
 		{
@@ -207066,6 +206894,49 @@ _G.pg.base.world_event_data[10820252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10820203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10820203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108200203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10820253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -207095,6 +206966,49 @@ _G.pg.base.world_event_data[10820253] = {
 	effect = {
 		108200203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10820204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10820204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108200204,
+		10031
 	},
 	grid = {
 		{
@@ -207152,6 +207066,49 @@ _G.pg.base.world_event_data[10820254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10820205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10820205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108200205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10820255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -207181,6 +207138,49 @@ _G.pg.base.world_event_data[10820255] = {
 	effect = {
 		108200205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10820206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10820206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108200206,
+		10033
 	},
 	grid = {
 		{
@@ -207575,6 +207575,43 @@ _G.pg.base.world_event_data[10830002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10830022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10830022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		108300013
+	},
+	grid = {
+		{
+			3,
+			3,
+			6,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10830003] = {
 	visuality = 0,
 	name = "",
@@ -207594,6 +207631,43 @@ _G.pg.base.world_event_data[10830003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10830003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		108300014
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10830023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10830023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -207987,80 +208061,6 @@ _G.pg.base.world_event_data[10830016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10830022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10830022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		108300013
-	},
-	grid = {
-		{
-			3,
-			3,
-			6,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10830023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10830023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		108300014
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10830060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -208252,135 +208252,6 @@ _G.pg.base.world_event_data[10830201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10830202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10830202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108300202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10830203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10830203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108300203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10830204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10830204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108300204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10830251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -208410,6 +208281,49 @@ _G.pg.base.world_event_data[10830251] = {
 	effect = {
 		108300201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10830202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10830202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108300202,
+		10028
 	},
 	grid = {
 		{
@@ -208467,6 +208381,49 @@ _G.pg.base.world_event_data[10830252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10830203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10830203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108300203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10830253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -208496,6 +208453,49 @@ _G.pg.base.world_event_data[10830253] = {
 	effect = {
 		108300203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10830204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10830204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108300204,
+		10032
 	},
 	grid = {
 		{
@@ -208890,6 +208890,43 @@ _G.pg.base.world_event_data[10840002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10840022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10840022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		108400013
+	},
+	grid = {
+		{
+			3,
+			3,
+			6,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10840003] = {
 	visuality = 0,
 	name = "",
@@ -208909,6 +208946,43 @@ _G.pg.base.world_event_data[10840003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10840003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		108400014
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10840023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10840023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -209302,80 +209376,6 @@ _G.pg.base.world_event_data[10840016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10840022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10840022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		108400013
-	},
-	grid = {
-		{
-			3,
-			3,
-			6,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10840023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10840023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		108400014
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10840060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -209567,135 +209567,6 @@ _G.pg.base.world_event_data[10840201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10840202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10840202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108400202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10840203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10840203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108400203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10840204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10840204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108400204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10840251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -209725,6 +209596,49 @@ _G.pg.base.world_event_data[10840251] = {
 	effect = {
 		108400201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10840202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10840202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108400202,
+		10028
 	},
 	grid = {
 		{
@@ -209782,6 +209696,49 @@ _G.pg.base.world_event_data[10840252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10840203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10840203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108400203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10840253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -209811,6 +209768,49 @@ _G.pg.base.world_event_data[10840253] = {
 	effect = {
 		108400203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10840204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10840204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108400204,
+		10032
 	},
 	grid = {
 		{
@@ -210205,6 +210205,43 @@ _G.pg.base.world_event_data[10850001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10850021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10850021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		108500012
+	},
+	grid = {
+		{
+			4,
+			4,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10850002] = {
 	visuality = 0,
 	name = "",
@@ -210242,6 +210279,43 @@ _G.pg.base.world_event_data[10850002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10850022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10850022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		108500013
+	},
+	grid = {
+		{
+			3,
+			3,
+			13,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10850003] = {
 	visuality = 0,
 	name = "",
@@ -210261,6 +210335,43 @@ _G.pg.base.world_event_data[10850003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10850003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		108500014
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10850023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10850023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -210654,117 +210765,6 @@ _G.pg.base.world_event_data[10850016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10850021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10850021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		108500012
-	},
-	grid = {
-		{
-			4,
-			4,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10850022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10850022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		108500013
-	},
-	grid = {
-		{
-			3,
-			3,
-			13,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10850023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10850023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		108500014
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10850060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -210876,6 +210876,43 @@ _G.pg.base.world_event_data[10850101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10850151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10850151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10850102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -210900,43 +210937,6 @@ _G.pg.base.world_event_data[10850102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10850151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10850151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -211032,221 +211032,6 @@ _G.pg.base.world_event_data[10850201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10850202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10850202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108500202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10850203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10850203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108500203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10850204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10850204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108500204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10850205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 211411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10850205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108500205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10850206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 213211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10850206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		108500206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10850251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -211276,6 +211061,49 @@ _G.pg.base.world_event_data[10850251] = {
 	effect = {
 		108500201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10850202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10850202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108500202,
+		10029
 	},
 	grid = {
 		{
@@ -211333,6 +211161,49 @@ _G.pg.base.world_event_data[10850252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10850203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10850203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108500203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10850253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -211362,6 +211233,49 @@ _G.pg.base.world_event_data[10850253] = {
 	effect = {
 		108500203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10850204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10850204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108500204,
+		10031
 	},
 	grid = {
 		{
@@ -211419,6 +211333,49 @@ _G.pg.base.world_event_data[10850254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10850205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 211411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10850205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108500205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10850255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -211448,6 +211405,49 @@ _G.pg.base.world_event_data[10850255] = {
 	effect = {
 		108500205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10850206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 213211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10850206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		108500206,
+		10033
 	},
 	grid = {
 		{
@@ -211842,6 +211842,43 @@ _G.pg.base.world_event_data[10910001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10910021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10910021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		109100012
+	},
+	grid = {
+		{
+			4,
+			4,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10910002] = {
 	visuality = 0,
 	name = "",
@@ -211879,6 +211916,43 @@ _G.pg.base.world_event_data[10910002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10910022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10910022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		109100013
+	},
+	grid = {
+		{
+			3,
+			3,
+			10,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10910003] = {
 	visuality = 0,
 	name = "",
@@ -211898,6 +211972,43 @@ _G.pg.base.world_event_data[10910003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10910003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		109100014
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10910023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10910023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -212291,117 +212402,6 @@ _G.pg.base.world_event_data[10910016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10910021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10910021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		109100012
-	},
-	grid = {
-		{
-			4,
-			4,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10910022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10910022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		109100013
-	},
-	grid = {
-		{
-			3,
-			3,
-			10,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10910023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10910023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		109100014
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10910060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -212513,6 +212513,43 @@ _G.pg.base.world_event_data[10910101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10910151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10910151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10910102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -212537,43 +212574,6 @@ _G.pg.base.world_event_data[10910102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10910151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10910151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -212669,221 +212669,6 @@ _G.pg.base.world_event_data[10910201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10910202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10910202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109100202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10910203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10910203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109100203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10910204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10910204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109100204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10910205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10910205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109100205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10910206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10910206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109100206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10910251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -212913,6 +212698,49 @@ _G.pg.base.world_event_data[10910251] = {
 	effect = {
 		109100201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10910202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10910202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109100202,
+		10029
 	},
 	grid = {
 		{
@@ -212970,6 +212798,49 @@ _G.pg.base.world_event_data[10910252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10910203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10910203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109100203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10910253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -212999,6 +212870,49 @@ _G.pg.base.world_event_data[10910253] = {
 	effect = {
 		109100203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10910204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10910204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109100204,
+		10031
 	},
 	grid = {
 		{
@@ -213056,6 +212970,49 @@ _G.pg.base.world_event_data[10910254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10910205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10910205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109100205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10910255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -213085,6 +213042,49 @@ _G.pg.base.world_event_data[10910255] = {
 	effect = {
 		109100205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10910206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10910206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109100206,
+		10033
 	},
 	grid = {
 		{
@@ -213479,6 +213479,43 @@ _G.pg.base.world_event_data[10920002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10920022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10920022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		109200013
+	},
+	grid = {
+		{
+			3,
+			3,
+			6,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10920003] = {
 	visuality = 0,
 	name = "",
@@ -213498,6 +213535,43 @@ _G.pg.base.world_event_data[10920003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10920003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		109200014
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10920023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10920023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -213891,80 +213965,6 @@ _G.pg.base.world_event_data[10920016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10920022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10920022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		109200013
-	},
-	grid = {
-		{
-			3,
-			3,
-			6,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10920023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10920023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		109200014
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10920060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -214156,135 +214156,6 @@ _G.pg.base.world_event_data[10920201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10920202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10920202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109200202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10920203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10920203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109200203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10920204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10920204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109200204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10920251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -214314,6 +214185,49 @@ _G.pg.base.world_event_data[10920251] = {
 	effect = {
 		109200201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10920202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10920202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109200202,
+		10028
 	},
 	grid = {
 		{
@@ -214371,6 +214285,49 @@ _G.pg.base.world_event_data[10920252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10920203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10920203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109200203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10920253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -214400,6 +214357,49 @@ _G.pg.base.world_event_data[10920253] = {
 	effect = {
 		109200203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10920204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10920204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109200204,
+		10032
 	},
 	grid = {
 		{
@@ -214794,6 +214794,43 @@ _G.pg.base.world_event_data[10930002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10930022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10930022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		109300013
+	},
+	grid = {
+		{
+			3,
+			3,
+			6,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10930003] = {
 	visuality = 0,
 	name = "",
@@ -214813,6 +214850,43 @@ _G.pg.base.world_event_data[10930003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10930003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		109300014
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10930023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10930023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -215206,80 +215280,6 @@ _G.pg.base.world_event_data[10930016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10930022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10930022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		109300013
-	},
-	grid = {
-		{
-			3,
-			3,
-			6,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10930023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10930023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		109300014
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10930060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -215471,135 +215471,6 @@ _G.pg.base.world_event_data[10930201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10930202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10930202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109300202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10930203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10930203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109300203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10930204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10930204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109300204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10930251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -215629,6 +215500,49 @@ _G.pg.base.world_event_data[10930251] = {
 	effect = {
 		109300201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10930202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10930202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109300202,
+		10028
 	},
 	grid = {
 		{
@@ -215686,6 +215600,49 @@ _G.pg.base.world_event_data[10930252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10930203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10930203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109300203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10930253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -215715,6 +215672,49 @@ _G.pg.base.world_event_data[10930253] = {
 	effect = {
 		109300203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10930204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10930204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109300204,
+		10032
 	},
 	grid = {
 		{
@@ -216109,6 +216109,43 @@ _G.pg.base.world_event_data[10940002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10940022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10940022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		109400013
+	},
+	grid = {
+		{
+			3,
+			3,
+			8,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10940003] = {
 	visuality = 0,
 	name = "",
@@ -216128,6 +216165,43 @@ _G.pg.base.world_event_data[10940003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10940003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		109400014
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10940023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10940023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -216558,80 +216632,6 @@ _G.pg.base.world_event_data[10940017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10940022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10940022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		109400013
-	},
-	grid = {
-		{
-			3,
-			3,
-			8,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10940023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10940023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		109400014
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10940060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -216743,6 +216743,43 @@ _G.pg.base.world_event_data[10940101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10940151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10940151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10940102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -216767,43 +216804,6 @@ _G.pg.base.world_event_data[10940102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10940151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10940151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -216899,178 +216899,6 @@ _G.pg.base.world_event_data[10940201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10940202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10940202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109400202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10940203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10940203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109400203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10940204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10940204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109400204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10940205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10940205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109400205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10940251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -217100,6 +216928,49 @@ _G.pg.base.world_event_data[10940251] = {
 	effect = {
 		109400201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10940202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10940202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109400202,
+		10028
 	},
 	grid = {
 		{
@@ -217157,6 +217028,49 @@ _G.pg.base.world_event_data[10940252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10940203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10940203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109400203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10940253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -217200,6 +217114,49 @@ _G.pg.base.world_event_data[10940253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10940204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10940204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109400204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10940254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -217229,6 +217186,49 @@ _G.pg.base.world_event_data[10940254] = {
 	effect = {
 		109400204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10940205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10940205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109400205,
+		10032
 	},
 	grid = {
 		{
@@ -217623,6 +217623,43 @@ _G.pg.base.world_event_data[10950002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10950022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10950022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		109500013
+	},
+	grid = {
+		{
+			3,
+			3,
+			8,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10950003] = {
 	visuality = 0,
 	name = "",
@@ -217642,6 +217679,43 @@ _G.pg.base.world_event_data[10950003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 10950003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		109500014
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10950023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 10950023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -218072,80 +218146,6 @@ _G.pg.base.world_event_data[10950017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10950022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10950022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		109500013
-	},
-	grid = {
-		{
-			3,
-			3,
-			8,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10950023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 10950023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		109500014
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10950060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -218257,6 +218257,43 @@ _G.pg.base.world_event_data[10950101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10950151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 10950151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10950102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -218281,43 +218318,6 @@ _G.pg.base.world_event_data[10950102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10950151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 10950151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -218413,178 +218413,6 @@ _G.pg.base.world_event_data[10950201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[10950202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10950202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109500202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10950203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10950203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109500203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10950204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10950204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109500204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[10950205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 10950205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		109500205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[10950251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -218614,6 +218442,49 @@ _G.pg.base.world_event_data[10950251] = {
 	effect = {
 		109500201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10950202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10950202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109500202,
+		10028
 	},
 	grid = {
 		{
@@ -218671,6 +218542,49 @@ _G.pg.base.world_event_data[10950252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10950203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10950203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109500203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10950253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -218714,6 +218628,49 @@ _G.pg.base.world_event_data[10950253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[10950204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10950204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109500204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[10950254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -218743,6 +218700,49 @@ _G.pg.base.world_event_data[10950254] = {
 	effect = {
 		109500204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[10950205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 10950205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		109500205,
+		10032
 	},
 	grid = {
 		{
@@ -219137,6 +219137,43 @@ _G.pg.base.world_event_data[11010001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11010021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11010021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110100012
+	},
+	grid = {
+		{
+			5,
+			5,
+			19,
+			4
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11010002] = {
 	visuality = 0,
 	name = "",
@@ -219174,6 +219211,43 @@ _G.pg.base.world_event_data[11010002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11010022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11010022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110100013
+	},
+	grid = {
+		{
+			4,
+			4,
+			20,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11010003] = {
 	visuality = 0,
 	name = "",
@@ -219193,6 +219267,43 @@ _G.pg.base.world_event_data[11010003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11010003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110100014
+	},
+	grid = {
+		{
+			2,
+			2,
+			22,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11010023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11010023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -219623,117 +219734,6 @@ _G.pg.base.world_event_data[11010017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11010021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11010021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110100012
-	},
-	grid = {
-		{
-			5,
-			5,
-			19,
-			4
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11010022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11010022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110100013
-	},
-	grid = {
-		{
-			4,
-			4,
-			20,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11010023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11010023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110100014
-	},
-	grid = {
-		{
-			2,
-			2,
-			22,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11010060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -219845,6 +219845,43 @@ _G.pg.base.world_event_data[11010101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11010151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11010151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			22,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11010102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -219869,43 +219906,6 @@ _G.pg.base.world_event_data[11010102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			22,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11010151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11010151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -220001,221 +220001,6 @@ _G.pg.base.world_event_data[11010201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11010202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11010202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110100202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			22,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11010203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11010203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110100203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			22,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11010204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11010204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110100204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			22,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11010205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11010205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110100205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			22,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11010206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11010206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110100206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			22,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11010251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -220245,6 +220030,49 @@ _G.pg.base.world_event_data[11010251] = {
 	effect = {
 		110100201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			22,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11010202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11010202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110100202,
+		10029
 	},
 	grid = {
 		{
@@ -220302,6 +220130,49 @@ _G.pg.base.world_event_data[11010252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11010203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11010203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110100203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			22,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11010253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -220331,6 +220202,49 @@ _G.pg.base.world_event_data[11010253] = {
 	effect = {
 		110100203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			22,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11010204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11010204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110100204,
+		10031
 	},
 	grid = {
 		{
@@ -220388,6 +220302,49 @@ _G.pg.base.world_event_data[11010254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11010205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11010205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110100205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			22,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11010255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -220417,6 +220374,49 @@ _G.pg.base.world_event_data[11010255] = {
 	effect = {
 		110100205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			22,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11010206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11010206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110100206,
+		10033
 	},
 	grid = {
 		{
@@ -220811,6 +220811,43 @@ _G.pg.base.world_event_data[11020001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11020021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11020021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110200012
+	},
+	grid = {
+		{
+			5,
+			5,
+			14,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11020002] = {
 	visuality = 0,
 	name = "",
@@ -220848,6 +220885,43 @@ _G.pg.base.world_event_data[11020002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11020022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11020022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110200013
+	},
+	grid = {
+		{
+			4,
+			4,
+			15,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11020003] = {
 	visuality = 0,
 	name = "",
@@ -220867,6 +220941,43 @@ _G.pg.base.world_event_data[11020003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11020003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110200014
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11020023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11020023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -221297,117 +221408,6 @@ _G.pg.base.world_event_data[11020017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11020021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11020021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110200012
-	},
-	grid = {
-		{
-			5,
-			5,
-			14,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11020022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11020022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110200013
-	},
-	grid = {
-		{
-			4,
-			4,
-			15,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11020023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11020023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110200014
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11020060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -221519,6 +221519,43 @@ _G.pg.base.world_event_data[11020101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11020151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11020151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11020102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -221543,43 +221580,6 @@ _G.pg.base.world_event_data[11020102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11020151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11020151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -221675,221 +221675,6 @@ _G.pg.base.world_event_data[11020201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11020202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11020202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110200202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11020203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11020203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110200203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11020204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11020204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110200204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11020205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11020205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110200205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11020206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11020206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110200206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11020251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -221919,6 +221704,49 @@ _G.pg.base.world_event_data[11020251] = {
 	effect = {
 		110200201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11020202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11020202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110200202,
+		10029
 	},
 	grid = {
 		{
@@ -221976,6 +221804,49 @@ _G.pg.base.world_event_data[11020252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11020203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11020203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110200203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11020253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -222005,6 +221876,49 @@ _G.pg.base.world_event_data[11020253] = {
 	effect = {
 		110200203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11020204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11020204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110200204,
+		10031
 	},
 	grid = {
 		{
@@ -222062,6 +221976,49 @@ _G.pg.base.world_event_data[11020254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11020205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11020205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110200205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11020255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -222091,6 +222048,49 @@ _G.pg.base.world_event_data[11020255] = {
 	effect = {
 		110200205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11020206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11020206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110200206,
+		10033
 	},
 	grid = {
 		{
@@ -222485,6 +222485,43 @@ _G.pg.base.world_event_data[11030001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11030021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11030021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110300012
+	},
+	grid = {
+		{
+			4,
+			4,
+			4,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11030002] = {
 	visuality = 0,
 	name = "",
@@ -222522,6 +222559,43 @@ _G.pg.base.world_event_data[11030002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11030022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11030022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110300013
+	},
+	grid = {
+		{
+			3,
+			3,
+			5,
+			18
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11030003] = {
 	visuality = 0,
 	name = "",
@@ -222541,6 +222615,43 @@ _G.pg.base.world_event_data[11030003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11030003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110300014
+	},
+	grid = {
+		{
+			2,
+			2,
+			6,
+			19
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11030023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11030023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -222934,117 +223045,6 @@ _G.pg.base.world_event_data[11030016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11030021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11030021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110300012
-	},
-	grid = {
-		{
-			4,
-			4,
-			4,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11030022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11030022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110300013
-	},
-	grid = {
-		{
-			3,
-			3,
-			5,
-			18
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11030023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11030023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110300014
-	},
-	grid = {
-		{
-			2,
-			2,
-			6,
-			19
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11030060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -223156,6 +223156,43 @@ _G.pg.base.world_event_data[11030101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11030151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11030151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			6,
+			19
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11030102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -223180,43 +223217,6 @@ _G.pg.base.world_event_data[11030102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			6,
-			19
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11030151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11030151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -223312,221 +223312,6 @@ _G.pg.base.world_event_data[11030201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11030202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11030202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110300202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			6,
-			19
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11030203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11030203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110300203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			6,
-			19
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11030204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11030204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110300204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			6,
-			19
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11030205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11030205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110300205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			6,
-			19
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11030206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11030206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110300206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			6,
-			19
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11030251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -223556,6 +223341,49 @@ _G.pg.base.world_event_data[11030251] = {
 	effect = {
 		110300201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			6,
+			19
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11030202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11030202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110300202,
+		10029
 	},
 	grid = {
 		{
@@ -223613,6 +223441,49 @@ _G.pg.base.world_event_data[11030252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11030203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11030203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110300203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			6,
+			19
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11030253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -223642,6 +223513,49 @@ _G.pg.base.world_event_data[11030253] = {
 	effect = {
 		110300203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			6,
+			19
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11030204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11030204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110300204,
+		10031
 	},
 	grid = {
 		{
@@ -223699,6 +223613,49 @@ _G.pg.base.world_event_data[11030254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11030205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11030205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110300205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			6,
+			19
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11030255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -223728,6 +223685,49 @@ _G.pg.base.world_event_data[11030255] = {
 	effect = {
 		110300205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			6,
+			19
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11030206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11030206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110300206,
+		10033
 	},
 	grid = {
 		{
@@ -224122,6 +224122,43 @@ _G.pg.base.world_event_data[11040001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11040021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11040021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110400012
+	},
+	grid = {
+		{
+			4,
+			4,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11040002] = {
 	visuality = 0,
 	name = "",
@@ -224159,6 +224196,43 @@ _G.pg.base.world_event_data[11040002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11040022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11040022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110400013
+	},
+	grid = {
+		{
+			3,
+			3,
+			13,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11040003] = {
 	visuality = 0,
 	name = "",
@@ -224178,6 +224252,43 @@ _G.pg.base.world_event_data[11040003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11040003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110400014
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11040023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11040023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -224571,117 +224682,6 @@ _G.pg.base.world_event_data[11040016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11040021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11040021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110400012
-	},
-	grid = {
-		{
-			4,
-			4,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11040022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11040022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110400013
-	},
-	grid = {
-		{
-			3,
-			3,
-			13,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11040023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11040023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110400014
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11040060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -224793,6 +224793,43 @@ _G.pg.base.world_event_data[11040101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11040151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11040151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11040102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -224817,43 +224854,6 @@ _G.pg.base.world_event_data[11040102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11040151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11040151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -224949,221 +224949,6 @@ _G.pg.base.world_event_data[11040201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11040202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11040202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110400202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11040203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11040203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110400203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11040204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11040204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110400204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11040205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11040205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110400205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11040206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11040206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110400206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			14,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11040251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -225193,6 +224978,49 @@ _G.pg.base.world_event_data[11040251] = {
 	effect = {
 		110400201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11040202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11040202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110400202,
+		10029
 	},
 	grid = {
 		{
@@ -225250,6 +225078,49 @@ _G.pg.base.world_event_data[11040252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11040203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11040203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110400203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11040253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -225279,6 +225150,49 @@ _G.pg.base.world_event_data[11040253] = {
 	effect = {
 		110400203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11040204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11040204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110400204,
+		10031
 	},
 	grid = {
 		{
@@ -225336,6 +225250,49 @@ _G.pg.base.world_event_data[11040254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11040205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11040205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110400205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11040255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -225365,6 +225322,49 @@ _G.pg.base.world_event_data[11040255] = {
 	effect = {
 		110400205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			14,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11040206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11040206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110400206,
+		10033
 	},
 	grid = {
 		{
@@ -225759,6 +225759,43 @@ _G.pg.base.world_event_data[11050002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11050022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11050022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110500013
+	},
+	grid = {
+		{
+			3,
+			3,
+			8,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11050003] = {
 	visuality = 0,
 	name = "",
@@ -225778,6 +225815,43 @@ _G.pg.base.world_event_data[11050003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11050003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110500014
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11050023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11050023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -226208,80 +226282,6 @@ _G.pg.base.world_event_data[11050017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11050022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11050022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110500013
-	},
-	grid = {
-		{
-			3,
-			3,
-			8,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11050023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11050023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110500014
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11050060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -226393,6 +226393,43 @@ _G.pg.base.world_event_data[11050101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11050151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11050151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11050102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -226417,43 +226454,6 @@ _G.pg.base.world_event_data[11050102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11050151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11050151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -226549,178 +226549,6 @@ _G.pg.base.world_event_data[11050201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11050202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11050202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110500202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11050203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11050203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110500203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11050204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11050204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110500204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11050205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11050205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110500205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11050251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -226750,6 +226578,49 @@ _G.pg.base.world_event_data[11050251] = {
 	effect = {
 		110500201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11050202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11050202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110500202,
+		10028
 	},
 	grid = {
 		{
@@ -226807,6 +226678,49 @@ _G.pg.base.world_event_data[11050252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11050203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11050203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110500203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11050253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -226850,6 +226764,49 @@ _G.pg.base.world_event_data[11050253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11050204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11050204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110500204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11050254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -226879,6 +226836,49 @@ _G.pg.base.world_event_data[11050254] = {
 	effect = {
 		110500204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11050205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11050205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110500205,
+		10032
 	},
 	grid = {
 		{
@@ -227273,6 +227273,43 @@ _G.pg.base.world_event_data[11060001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11060021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11060021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110600012
+	},
+	grid = {
+		{
+			5,
+			5,
+			7,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11060002] = {
 	visuality = 0,
 	name = "",
@@ -227310,6 +227347,43 @@ _G.pg.base.world_event_data[11060002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11060022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11060022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110600013
+	},
+	grid = {
+		{
+			4,
+			4,
+			8,
+			15
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11060003] = {
 	visuality = 0,
 	name = "",
@@ -227329,6 +227403,43 @@ _G.pg.base.world_event_data[11060003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11060003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		110600014
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11060023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11060023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -227759,117 +227870,6 @@ _G.pg.base.world_event_data[11060017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11060021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11060021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110600012
-	},
-	grid = {
-		{
-			5,
-			5,
-			7,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11060022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11060022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110600013
-	},
-	grid = {
-		{
-			4,
-			4,
-			8,
-			15
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11060023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11060023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		110600014
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11060060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -227981,6 +227981,43 @@ _G.pg.base.world_event_data[11060101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11060151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11060151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11060102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -228005,43 +228042,6 @@ _G.pg.base.world_event_data[11060102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11060151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11060151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -228137,221 +228137,6 @@ _G.pg.base.world_event_data[11060201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11060202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11060202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110600202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11060203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11060203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110600203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11060204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11060204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110600204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11060205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11060205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110600205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11060206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11060206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		110600206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11060251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -228381,6 +228166,49 @@ _G.pg.base.world_event_data[11060251] = {
 	effect = {
 		110600201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11060202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11060202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110600202,
+		10029
 	},
 	grid = {
 		{
@@ -228438,6 +228266,49 @@ _G.pg.base.world_event_data[11060252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11060203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11060203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110600203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11060253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -228467,6 +228338,49 @@ _G.pg.base.world_event_data[11060253] = {
 	effect = {
 		110600203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11060204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11060204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110600204,
+		10031
 	},
 	grid = {
 		{
@@ -228524,6 +228438,49 @@ _G.pg.base.world_event_data[11060254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11060205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11060205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110600205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11060255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -228553,6 +228510,49 @@ _G.pg.base.world_event_data[11060255] = {
 	effect = {
 		110600205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11060206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11060206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		110600206,
+		10033
 	},
 	grid = {
 		{
@@ -228947,6 +228947,43 @@ _G.pg.base.world_event_data[11110002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11110022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11110022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		111100013
+	},
+	grid = {
+		{
+			3,
+			3,
+			8,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11110003] = {
 	visuality = 0,
 	name = "",
@@ -228966,6 +229003,43 @@ _G.pg.base.world_event_data[11110003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11110003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		111100014
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11110023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11110023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -229396,80 +229470,6 @@ _G.pg.base.world_event_data[11110017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11110022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11110022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		111100013
-	},
-	grid = {
-		{
-			3,
-			3,
-			8,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11110023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11110023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		111100014
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11110060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -229581,6 +229581,43 @@ _G.pg.base.world_event_data[11110101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11110151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11110151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11110102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -229605,43 +229642,6 @@ _G.pg.base.world_event_data[11110102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11110151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11110151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -229737,178 +229737,6 @@ _G.pg.base.world_event_data[11110201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11110202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11110202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		111100202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11110203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 223411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11110203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		111100203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11110204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11110204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		111100204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11110205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11110205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		111100205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11110251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -229938,6 +229766,49 @@ _G.pg.base.world_event_data[11110251] = {
 	effect = {
 		111100201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11110202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11110202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		111100202,
+		10028
 	},
 	grid = {
 		{
@@ -229995,6 +229866,49 @@ _G.pg.base.world_event_data[11110252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11110203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 223411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11110203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		111100203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11110253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -230038,6 +229952,49 @@ _G.pg.base.world_event_data[11110253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11110204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11110204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		111100204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11110254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -230067,6 +230024,49 @@ _G.pg.base.world_event_data[11110254] = {
 	effect = {
 		111100204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11110205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11110205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		111100205,
+		10032
 	},
 	grid = {
 		{
@@ -230461,6 +230461,43 @@ _G.pg.base.world_event_data[11120002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11120022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11120022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		111200013
+	},
+	grid = {
+		{
+			3,
+			3,
+			9,
+			4
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11120003] = {
 	visuality = 0,
 	name = "",
@@ -230480,6 +230517,43 @@ _G.pg.base.world_event_data[11120003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11120003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		111200014
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11120023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11120023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -230873,80 +230947,6 @@ _G.pg.base.world_event_data[11120016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11120022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11120022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		111200013
-	},
-	grid = {
-		{
-			3,
-			3,
-			9,
-			4
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11120023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11120023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		111200014
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11120060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -231138,135 +231138,6 @@ _G.pg.base.world_event_data[11120201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11120202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11120202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		111200202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11120203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11120203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		111200203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11120204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11120204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		111200204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			10,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11120251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -231296,6 +231167,49 @@ _G.pg.base.world_event_data[11120251] = {
 	effect = {
 		111200201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11120202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11120202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		111200202,
+		10028
 	},
 	grid = {
 		{
@@ -231353,6 +231267,49 @@ _G.pg.base.world_event_data[11120252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11120203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11120203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		111200203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11120253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -231382,6 +231339,49 @@ _G.pg.base.world_event_data[11120253] = {
 	effect = {
 		111200203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			10,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11120204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11120204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		111200204,
+		10032
 	},
 	grid = {
 		{
@@ -231776,6 +231776,43 @@ _G.pg.base.world_event_data[11130002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11130022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11130022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		111300013
+	},
+	grid = {
+		{
+			3,
+			3,
+			11,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11130003] = {
 	visuality = 0,
 	name = "",
@@ -231795,6 +231832,43 @@ _G.pg.base.world_event_data[11130003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11130003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		111300014
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11130023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11130023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -232225,80 +232299,6 @@ _G.pg.base.world_event_data[11130017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11130022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11130022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		111300013
-	},
-	grid = {
-		{
-			3,
-			3,
-			11,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11130023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11130023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		111300014
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11130060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -232410,6 +232410,43 @@ _G.pg.base.world_event_data[11130101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11130151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11130151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11130102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -232434,43 +232471,6 @@ _G.pg.base.world_event_data[11130102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11130151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11130151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -232566,178 +232566,6 @@ _G.pg.base.world_event_data[11130201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11130202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11130202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		111300202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11130203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 223411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11130203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		111300203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11130204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11130204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		111300204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11130205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11130205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		111300205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11130251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -232767,6 +232595,49 @@ _G.pg.base.world_event_data[11130251] = {
 	effect = {
 		111300201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11130202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11130202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		111300202,
+		10028
 	},
 	grid = {
 		{
@@ -232824,6 +232695,49 @@ _G.pg.base.world_event_data[11130252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11130203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 223411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11130203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		111300203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11130253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -232867,6 +232781,49 @@ _G.pg.base.world_event_data[11130253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11130204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11130204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		111300204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11130254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -232896,6 +232853,49 @@ _G.pg.base.world_event_data[11130254] = {
 	effect = {
 		111300204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11130205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11130205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		111300205,
+		10032
 	},
 	grid = {
 		{
@@ -233290,6 +233290,43 @@ _G.pg.base.world_event_data[11140002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11140022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11140022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		111400013
+	},
+	grid = {
+		{
+			3,
+			3,
+			6,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11140003] = {
 	visuality = 0,
 	name = "",
@@ -233309,6 +233346,43 @@ _G.pg.base.world_event_data[11140003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11140003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		111400014
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			12
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11140023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11140023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -233739,80 +233813,6 @@ _G.pg.base.world_event_data[11140017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11140022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11140022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		111400013
-	},
-	grid = {
-		{
-			3,
-			3,
-			6,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11140023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11140023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		111400014
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			12
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11140060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -233924,6 +233924,43 @@ _G.pg.base.world_event_data[11140101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11140151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11140151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			12
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11140102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -233948,43 +233985,6 @@ _G.pg.base.world_event_data[11140102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			12
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11140151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11140151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -234080,178 +234080,6 @@ _G.pg.base.world_event_data[11140201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11140202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11140202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		111400202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			12
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11140203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 223411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11140203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		111400203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			12
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11140204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11140204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		111400204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			12
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11140205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11140205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		111400205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			12
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11140251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -234281,6 +234109,49 @@ _G.pg.base.world_event_data[11140251] = {
 	effect = {
 		111400201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			12
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11140202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11140202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		111400202,
+		10028
 	},
 	grid = {
 		{
@@ -234338,6 +234209,49 @@ _G.pg.base.world_event_data[11140252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11140203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 223411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11140203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		111400203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			12
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11140253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -234381,6 +234295,49 @@ _G.pg.base.world_event_data[11140253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11140204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11140204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		111400204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			12
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11140254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -234410,6 +234367,49 @@ _G.pg.base.world_event_data[11140254] = {
 	effect = {
 		111400204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			12
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11140205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11140205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		111400205,
+		10032
 	},
 	grid = {
 		{
@@ -234804,6 +234804,43 @@ _G.pg.base.world_event_data[11210001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11210021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11210021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		112100012
+	},
+	grid = {
+		{
+			5,
+			5,
+			14,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11210002] = {
 	visuality = 0,
 	name = "",
@@ -234841,6 +234878,43 @@ _G.pg.base.world_event_data[11210002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11210022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11210022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		112100013
+	},
+	grid = {
+		{
+			4,
+			4,
+			15,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11210003] = {
 	visuality = 0,
 	name = "",
@@ -234860,6 +234934,43 @@ _G.pg.base.world_event_data[11210003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11210003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		112100014
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11210023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11210023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -235290,117 +235401,6 @@ _G.pg.base.world_event_data[11210017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11210021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11210021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		112100012
-	},
-	grid = {
-		{
-			5,
-			5,
-			14,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11210022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11210022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		112100013
-	},
-	grid = {
-		{
-			4,
-			4,
-			15,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11210023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11210023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		112100014
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11210060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -235512,6 +235512,43 @@ _G.pg.base.world_event_data[11210101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11210151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11210151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11210102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -235536,43 +235573,6 @@ _G.pg.base.world_event_data[11210102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11210151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11210151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -235668,221 +235668,6 @@ _G.pg.base.world_event_data[11210201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11210202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11210202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112100202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11210203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11210203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112100203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11210204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11210204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112100204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11210205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11210205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112100205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11210206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11210206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112100206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11210251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -235912,6 +235697,49 @@ _G.pg.base.world_event_data[11210251] = {
 	effect = {
 		112100201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11210202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11210202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112100202,
+		10029
 	},
 	grid = {
 		{
@@ -235969,6 +235797,49 @@ _G.pg.base.world_event_data[11210252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11210203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11210203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112100203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11210253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -235998,6 +235869,49 @@ _G.pg.base.world_event_data[11210253] = {
 	effect = {
 		112100203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11210204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11210204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112100204,
+		10031
 	},
 	grid = {
 		{
@@ -236055,6 +235969,49 @@ _G.pg.base.world_event_data[11210254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11210205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11210205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112100205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11210255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -236084,6 +236041,49 @@ _G.pg.base.world_event_data[11210255] = {
 	effect = {
 		112100205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11210206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11210206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112100206,
+		10033
 	},
 	grid = {
 		{
@@ -236478,6 +236478,43 @@ _G.pg.base.world_event_data[11220002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11220022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11220022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		112200013
+	},
+	grid = {
+		{
+			3,
+			3,
+			6,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11220003] = {
 	visuality = 0,
 	name = "",
@@ -236497,6 +236534,43 @@ _G.pg.base.world_event_data[11220003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11220003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		112200014
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11220023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11220023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -236890,80 +236964,6 @@ _G.pg.base.world_event_data[11220016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11220022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11220022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		112200013
-	},
-	grid = {
-		{
-			3,
-			3,
-			6,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11220023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11220023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		112200014
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11220060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -237155,135 +237155,6 @@ _G.pg.base.world_event_data[11220201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11220202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11220202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112200202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11220203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11220203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112200203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11220204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11220204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112200204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11220251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -237313,6 +237184,49 @@ _G.pg.base.world_event_data[11220251] = {
 	effect = {
 		112200201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11220202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11220202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112200202,
+		10028
 	},
 	grid = {
 		{
@@ -237370,6 +237284,49 @@ _G.pg.base.world_event_data[11220252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11220203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11220203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112200203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11220253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -237399,6 +237356,49 @@ _G.pg.base.world_event_data[11220253] = {
 	effect = {
 		112200203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11220204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11220204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112200204,
+		10032
 	},
 	grid = {
 		{
@@ -237793,6 +237793,43 @@ _G.pg.base.world_event_data[11230002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11230022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11230022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		112300013
+	},
+	grid = {
+		{
+			3,
+			3,
+			11,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11230003] = {
 	visuality = 0,
 	name = "",
@@ -237812,6 +237849,43 @@ _G.pg.base.world_event_data[11230003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11230003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		112300014
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11230023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11230023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -238242,80 +238316,6 @@ _G.pg.base.world_event_data[11230017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11230022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11230022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		112300013
-	},
-	grid = {
-		{
-			3,
-			3,
-			11,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11230023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11230023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		112300014
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11230060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -238427,6 +238427,43 @@ _G.pg.base.world_event_data[11230101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11230151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11230151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11230102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -238451,43 +238488,6 @@ _G.pg.base.world_event_data[11230102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11230151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11230151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -238583,178 +238583,6 @@ _G.pg.base.world_event_data[11230201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11230202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11230202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112300202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11230203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 223411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11230203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112300203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11230204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11230204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112300204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11230205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11230205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112300205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11230251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -238784,6 +238612,49 @@ _G.pg.base.world_event_data[11230251] = {
 	effect = {
 		112300201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11230202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11230202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112300202,
+		10028
 	},
 	grid = {
 		{
@@ -238841,6 +238712,49 @@ _G.pg.base.world_event_data[11230252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11230203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 223411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11230203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112300203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11230253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -238884,6 +238798,49 @@ _G.pg.base.world_event_data[11230253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11230204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11230204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112300204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11230254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -238913,6 +238870,49 @@ _G.pg.base.world_event_data[11230254] = {
 	effect = {
 		112300204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11230205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11230205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112300205,
+		10032
 	},
 	grid = {
 		{
@@ -239307,6 +239307,43 @@ _G.pg.base.world_event_data[11240001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11240021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11240021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		112400012
+	},
+	grid = {
+		{
+			5,
+			5,
+			4,
+			19
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11240002] = {
 	visuality = 0,
 	name = "",
@@ -239344,6 +239381,43 @@ _G.pg.base.world_event_data[11240002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11240022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11240022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		112400013
+	},
+	grid = {
+		{
+			4,
+			4,
+			5,
+			20
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11240003] = {
 	visuality = 0,
 	name = "",
@@ -239363,6 +239437,43 @@ _G.pg.base.world_event_data[11240003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11240003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		112400014
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			22
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11240023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11240023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -239793,117 +239904,6 @@ _G.pg.base.world_event_data[11240017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11240021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11240021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		112400012
-	},
-	grid = {
-		{
-			5,
-			5,
-			4,
-			19
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11240022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11240022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		112400013
-	},
-	grid = {
-		{
-			4,
-			4,
-			5,
-			20
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11240023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11240023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		112400014
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			22
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11240060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -240015,6 +240015,43 @@ _G.pg.base.world_event_data[11240101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11240151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11240151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			22
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11240102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -240039,43 +240076,6 @@ _G.pg.base.world_event_data[11240102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			22
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11240151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11240151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -240171,221 +240171,6 @@ _G.pg.base.world_event_data[11240201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11240202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 223411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11240202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112400202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			22
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11240203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11240203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112400203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			22
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11240204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 223011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11240204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112400204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			22
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11240205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11240205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112400205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			22
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11240206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 223211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11240206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112400206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			22
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11240251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -240415,6 +240200,49 @@ _G.pg.base.world_event_data[11240251] = {
 	effect = {
 		112400201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			22
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11240202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 223411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11240202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112400202,
+		10029
 	},
 	grid = {
 		{
@@ -240472,6 +240300,49 @@ _G.pg.base.world_event_data[11240252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11240203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11240203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112400203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			22
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11240253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -240501,6 +240372,49 @@ _G.pg.base.world_event_data[11240253] = {
 	effect = {
 		112400203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			22
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11240204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 223011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11240204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112400204,
+		10031
 	},
 	grid = {
 		{
@@ -240558,6 +240472,49 @@ _G.pg.base.world_event_data[11240254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11240205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11240205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112400205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			22
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11240255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -240587,6 +240544,49 @@ _G.pg.base.world_event_data[11240255] = {
 	effect = {
 		112400205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			22
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11240206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 223211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11240206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112400206,
+		10033
 	},
 	grid = {
 		{
@@ -240981,6 +240981,43 @@ _G.pg.base.world_event_data[11250002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11250022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11250022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		112500013
+	},
+	grid = {
+		{
+			3,
+			3,
+			11,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11250003] = {
 	visuality = 0,
 	name = "",
@@ -241000,6 +241037,43 @@ _G.pg.base.world_event_data[11250003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11250003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		112500014
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11250023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11250023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -241430,80 +241504,6 @@ _G.pg.base.world_event_data[11250017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11250022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11250022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		112500013
-	},
-	grid = {
-		{
-			3,
-			3,
-			11,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11250023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11250023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		112500014
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11250060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -241615,6 +241615,43 @@ _G.pg.base.world_event_data[11250101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11250151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11250151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11250102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -241639,43 +241676,6 @@ _G.pg.base.world_event_data[11250102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11250151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11250151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -241771,178 +241771,6 @@ _G.pg.base.world_event_data[11250201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11250202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11250202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112500202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11250203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 223411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11250203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112500203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11250204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11250204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112500204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11250205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11250205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		112500205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			12,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11250251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -241972,6 +241800,49 @@ _G.pg.base.world_event_data[11250251] = {
 	effect = {
 		112500201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11250202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11250202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112500202,
+		10028
 	},
 	grid = {
 		{
@@ -242029,6 +241900,49 @@ _G.pg.base.world_event_data[11250252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11250203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 223411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11250203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112500203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11250253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -242072,6 +241986,49 @@ _G.pg.base.world_event_data[11250253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11250204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11250204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112500204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11250254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -242101,6 +242058,49 @@ _G.pg.base.world_event_data[11250254] = {
 	effect = {
 		112500204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			12,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11250205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11250205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		112500205,
+		10032
 	},
 	grid = {
 		{
@@ -242495,6 +242495,43 @@ _G.pg.base.world_event_data[11310002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11310022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11310022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		113100013
+	},
+	grid = {
+		{
+			3,
+			3,
+			6,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11310003] = {
 	visuality = 0,
 	name = "",
@@ -242514,6 +242551,43 @@ _G.pg.base.world_event_data[11310003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11310003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		113100014
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11310023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11310023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -242907,80 +242981,6 @@ _G.pg.base.world_event_data[11310016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11310022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11310022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		113100013
-	},
-	grid = {
-		{
-			3,
-			3,
-			6,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11310023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11310023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		113100014
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11310060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -243172,135 +243172,6 @@ _G.pg.base.world_event_data[11310201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11310202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11310202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113100202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11310203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11310203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113100203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11310204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11310204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113100204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11310251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -243330,6 +243201,49 @@ _G.pg.base.world_event_data[11310251] = {
 	effect = {
 		113100201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11310202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11310202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113100202,
+		10028
 	},
 	grid = {
 		{
@@ -243387,6 +243301,49 @@ _G.pg.base.world_event_data[11310252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11310203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11310203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113100203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11310253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -243416,6 +243373,49 @@ _G.pg.base.world_event_data[11310253] = {
 	effect = {
 		113100203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11310204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11310204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113100204,
+		10032
 	},
 	grid = {
 		{
@@ -243810,6 +243810,43 @@ _G.pg.base.world_event_data[11320002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11320022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11320022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		113200013
+	},
+	grid = {
+		{
+			3,
+			3,
+			4,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11320003] = {
 	visuality = 0,
 	name = "",
@@ -243829,6 +243866,43 @@ _G.pg.base.world_event_data[11320003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11320003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		113200014
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11320023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11320023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -244222,80 +244296,6 @@ _G.pg.base.world_event_data[11320016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11320022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11320022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		113200013
-	},
-	grid = {
-		{
-			3,
-			3,
-			4,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11320023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11320023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		113200014
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11320060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -244487,135 +244487,6 @@ _G.pg.base.world_event_data[11320201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11320202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11320202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113200202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11320203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11320203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113200203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11320204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11320204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113200204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11320251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -244645,6 +244516,49 @@ _G.pg.base.world_event_data[11320251] = {
 	effect = {
 		113200201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11320202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11320202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113200202,
+		10028
 	},
 	grid = {
 		{
@@ -244702,6 +244616,49 @@ _G.pg.base.world_event_data[11320252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11320203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11320203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113200203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11320253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -244731,6 +244688,49 @@ _G.pg.base.world_event_data[11320253] = {
 	effect = {
 		113200203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11320204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11320204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113200204,
+		10032
 	},
 	grid = {
 		{
@@ -245125,6 +245125,43 @@ _G.pg.base.world_event_data[11330002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11330022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11330022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		113300013
+	},
+	grid = {
+		{
+			3,
+			3,
+			8,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11330003] = {
 	visuality = 0,
 	name = "",
@@ -245144,6 +245181,43 @@ _G.pg.base.world_event_data[11330003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11330003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		113300014
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11330023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11330023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -245574,80 +245648,6 @@ _G.pg.base.world_event_data[11330017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11330022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11330022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		113300013
-	},
-	grid = {
-		{
-			3,
-			3,
-			8,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11330023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11330023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		113300014
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11330060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -245759,6 +245759,43 @@ _G.pg.base.world_event_data[11330101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11330151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11330151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11330102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -245783,43 +245820,6 @@ _G.pg.base.world_event_data[11330102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11330151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11330151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -245915,178 +245915,6 @@ _G.pg.base.world_event_data[11330201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11330202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11330202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113300202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11330203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11330203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113300203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11330204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11330204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113300204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11330205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11330205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113300205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11330251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -246116,6 +245944,49 @@ _G.pg.base.world_event_data[11330251] = {
 	effect = {
 		113300201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11330202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11330202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113300202,
+		10028
 	},
 	grid = {
 		{
@@ -246173,6 +246044,49 @@ _G.pg.base.world_event_data[11330252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11330203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11330203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113300203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11330253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -246216,6 +246130,49 @@ _G.pg.base.world_event_data[11330253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11330204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11330204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113300204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11330254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -246245,6 +246202,49 @@ _G.pg.base.world_event_data[11330254] = {
 	effect = {
 		113300204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11330205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11330205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113300205,
+		10032
 	},
 	grid = {
 		{
@@ -246639,6 +246639,43 @@ _G.pg.base.world_event_data[11340002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11340022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11340022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		113400013
+	},
+	grid = {
+		{
+			3,
+			3,
+			6,
+			6
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11340003] = {
 	visuality = 0,
 	name = "",
@@ -246658,6 +246695,43 @@ _G.pg.base.world_event_data[11340003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11340003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		113400014
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11340023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11340023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -247051,80 +247125,6 @@ _G.pg.base.world_event_data[11340016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11340022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11340022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		113400013
-	},
-	grid = {
-		{
-			3,
-			3,
-			6,
-			6
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11340023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11340023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		113400014
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11340060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -247316,135 +247316,6 @@ _G.pg.base.world_event_data[11340201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11340202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11340202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113400202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11340203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11340203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113400203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11340204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11340204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113400204,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			7,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11340251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -247474,6 +247345,49 @@ _G.pg.base.world_event_data[11340251] = {
 	effect = {
 		113400201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11340202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11340202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113400202,
+		10028
 	},
 	grid = {
 		{
@@ -247531,6 +247445,49 @@ _G.pg.base.world_event_data[11340252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11340203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11340203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113400203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11340253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -247560,6 +247517,49 @@ _G.pg.base.world_event_data[11340253] = {
 	effect = {
 		113400203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			7,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11340204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11340204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113400204,
+		10032
 	},
 	grid = {
 		{
@@ -247954,6 +247954,43 @@ _G.pg.base.world_event_data[11350002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11350022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11350022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		113500013
+	},
+	grid = {
+		{
+			3,
+			3,
+			8,
+			8
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11350003] = {
 	visuality = 0,
 	name = "",
@@ -247973,6 +248010,43 @@ _G.pg.base.world_event_data[11350003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11350003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		113500014
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11350023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11350023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -248403,80 +248477,6 @@ _G.pg.base.world_event_data[11350017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11350022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11350022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		113500013
-	},
-	grid = {
-		{
-			3,
-			3,
-			8,
-			8
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11350023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11350023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		113500014
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11350060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -248588,6 +248588,43 @@ _G.pg.base.world_event_data[11350101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11350151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11350151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11350102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -248612,43 +248649,6 @@ _G.pg.base.world_event_data[11350102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11350151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11350151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -248744,178 +248744,6 @@ _G.pg.base.world_event_data[11350201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11350202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11350202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113500202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11350203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 223411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11350203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113500203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11350204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11350204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113500204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11350205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 221411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11350205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		113500205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			9
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11350251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -248945,6 +248773,49 @@ _G.pg.base.world_event_data[11350251] = {
 	effect = {
 		113500201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11350202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11350202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113500202,
+		10028
 	},
 	grid = {
 		{
@@ -249002,6 +248873,49 @@ _G.pg.base.world_event_data[11350252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11350203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 223411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11350203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113500203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11350253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -249045,6 +248959,49 @@ _G.pg.base.world_event_data[11350253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11350204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11350204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113500204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11350254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -249074,6 +249031,49 @@ _G.pg.base.world_event_data[11350254] = {
 	effect = {
 		113500204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			9
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11350205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 221411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11350205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		113500205,
+		10032
 	},
 	grid = {
 		{
@@ -249468,6 +249468,43 @@ _G.pg.base.world_event_data[11410002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11410022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11410022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		114100013
+	},
+	grid = {
+		{
+			3,
+			3,
+			14,
+			4
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11410003] = {
 	visuality = 0,
 	name = "",
@@ -249487,6 +249524,43 @@ _G.pg.base.world_event_data[11410003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11410003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		114100014
+	},
+	grid = {
+		{
+			2,
+			2,
+			15,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11410023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11410023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -249917,80 +249991,6 @@ _G.pg.base.world_event_data[11410017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11410022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11410022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		114100013
-	},
-	grid = {
-		{
-			3,
-			3,
-			14,
-			4
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11410023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11410023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		114100014
-	},
-	grid = {
-		{
-			2,
-			2,
-			15,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11410060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -250102,6 +250102,43 @@ _G.pg.base.world_event_data[11410101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11410151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11410151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			15,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11410102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -250126,43 +250163,6 @@ _G.pg.base.world_event_data[11410102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			15,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11410151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11410151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -250258,178 +250258,6 @@ _G.pg.base.world_event_data[11410201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11410202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11410202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114100202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			15,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11410203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11410203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114100203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			15,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11410204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11410204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114100204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			15,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11410205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11410205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114100205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			15,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11410251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -250459,6 +250287,49 @@ _G.pg.base.world_event_data[11410251] = {
 	effect = {
 		114100201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			15,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11410202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11410202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114100202,
+		10028
 	},
 	grid = {
 		{
@@ -250516,6 +250387,49 @@ _G.pg.base.world_event_data[11410252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11410203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11410203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114100203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			15,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11410253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -250559,6 +250473,49 @@ _G.pg.base.world_event_data[11410253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11410204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11410204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114100204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			15,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11410254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -250588,6 +250545,49 @@ _G.pg.base.world_event_data[11410254] = {
 	effect = {
 		114100204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			15,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11410205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11410205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114100205,
+		10032
 	},
 	grid = {
 		{
@@ -250982,6 +250982,43 @@ _G.pg.base.world_event_data[11420001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11420021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11420021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		114200012
+	},
+	grid = {
+		{
+			4,
+			4,
+			7,
+			12
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11420002] = {
 	visuality = 0,
 	name = "",
@@ -251019,6 +251056,43 @@ _G.pg.base.world_event_data[11420002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11420022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11420022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		114200013
+	},
+	grid = {
+		{
+			3,
+			3,
+			8,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11420003] = {
 	visuality = 0,
 	name = "",
@@ -251038,6 +251112,43 @@ _G.pg.base.world_event_data[11420003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11420003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		114200014
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11420023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11420023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -251431,117 +251542,6 @@ _G.pg.base.world_event_data[11420016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11420021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11420021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		114200012
-	},
-	grid = {
-		{
-			4,
-			4,
-			7,
-			12
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11420022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11420022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		114200013
-	},
-	grid = {
-		{
-			3,
-			3,
-			8,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11420023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11420023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		114200014
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11420060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -251653,6 +251653,43 @@ _G.pg.base.world_event_data[11420101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11420151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11420151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11420102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -251677,43 +251714,6 @@ _G.pg.base.world_event_data[11420102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11420151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11420151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -251809,221 +251809,6 @@ _G.pg.base.world_event_data[11420201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11420202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11420202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114200202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11420203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11420203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114200203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11420204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11420204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114200204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11420205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11420205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114200205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11420206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11420206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114200206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			9,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11420251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -252053,6 +251838,49 @@ _G.pg.base.world_event_data[11420251] = {
 	effect = {
 		114200201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11420202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11420202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114200202,
+		10029
 	},
 	grid = {
 		{
@@ -252110,6 +251938,49 @@ _G.pg.base.world_event_data[11420252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11420203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11420203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114200203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11420253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -252139,6 +252010,49 @@ _G.pg.base.world_event_data[11420253] = {
 	effect = {
 		114200203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11420204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11420204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114200204,
+		10031
 	},
 	grid = {
 		{
@@ -252196,6 +252110,49 @@ _G.pg.base.world_event_data[11420254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11420205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11420205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114200205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11420255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -252225,6 +252182,49 @@ _G.pg.base.world_event_data[11420255] = {
 	effect = {
 		114200205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			9,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11420206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11420206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114200206,
+		10033
 	},
 	grid = {
 		{
@@ -252619,6 +252619,43 @@ _G.pg.base.world_event_data[11430002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11430022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11430022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		114300013
+	},
+	grid = {
+		{
+			3,
+			3,
+			4,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11430003] = {
 	visuality = 0,
 	name = "",
@@ -252638,6 +252675,43 @@ _G.pg.base.world_event_data[11430003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11430003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		114300014
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			15
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11430023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11430023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -253068,80 +253142,6 @@ _G.pg.base.world_event_data[11430017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11430022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11430022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		114300013
-	},
-	grid = {
-		{
-			3,
-			3,
-			4,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11430023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11430023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		114300014
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			15
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11430060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -253253,6 +253253,43 @@ _G.pg.base.world_event_data[11430101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11430151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11430151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			15
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11430102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -253277,43 +253314,6 @@ _G.pg.base.world_event_data[11430102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			15
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11430151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11430151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -253409,178 +253409,6 @@ _G.pg.base.world_event_data[11430201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11430202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11430202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114300202,
-		10028
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			15
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11430203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11430203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114300203,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			15
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11430204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11430204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114300204,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			15
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11430205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11430205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114300205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			5,
-			15
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11430251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -253610,6 +253438,49 @@ _G.pg.base.world_event_data[11430251] = {
 	effect = {
 		114300201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			15
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11430202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11430202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114300202,
+		10028
 	},
 	grid = {
 		{
@@ -253667,6 +253538,49 @@ _G.pg.base.world_event_data[11430252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11430203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11430203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114300203,
+		10029
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			15
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11430253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -253710,6 +253624,49 @@ _G.pg.base.world_event_data[11430253] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11430204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11430204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114300204,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			15
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11430254] = {
 	visuality = 0,
 	name = "「駒」",
@@ -253739,6 +253696,49 @@ _G.pg.base.world_event_data[11430254] = {
 	effect = {
 		114300204,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			5,
+			15
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11430205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11430205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114300205,
+		10032
 	},
 	grid = {
 		{
@@ -254133,6 +254133,43 @@ _G.pg.base.world_event_data[11440001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11440021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11440021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		114400012
+	},
+	grid = {
+		{
+			5,
+			5,
+			19,
+			4
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11440002] = {
 	visuality = 0,
 	name = "",
@@ -254170,6 +254207,43 @@ _G.pg.base.world_event_data[11440002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11440022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11440022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		114400013
+	},
+	grid = {
+		{
+			4,
+			4,
+			20,
+			5
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11440003] = {
 	visuality = 0,
 	name = "",
@@ -254189,6 +254263,43 @@ _G.pg.base.world_event_data[11440003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11440003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		114400014
+	},
+	grid = {
+		{
+			2,
+			2,
+			22,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11440023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11440023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -254619,117 +254730,6 @@ _G.pg.base.world_event_data[11440017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11440021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11440021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		114400012
-	},
-	grid = {
-		{
-			5,
-			5,
-			19,
-			4
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11440022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11440022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		114400013
-	},
-	grid = {
-		{
-			4,
-			4,
-			20,
-			5
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11440023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11440023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		114400014
-	},
-	grid = {
-		{
-			2,
-			2,
-			22,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11440060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -254841,6 +254841,43 @@ _G.pg.base.world_event_data[11440101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11440151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11440151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			22,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11440102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -254865,43 +254902,6 @@ _G.pg.base.world_event_data[11440102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			22,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11440151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11440151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -254997,221 +254997,6 @@ _G.pg.base.world_event_data[11440201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11440202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11440202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114400202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			22,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11440203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11440203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114400203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			22,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11440204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11440204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114400204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			22,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11440205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 241411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11440205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114400205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			22,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11440206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 243211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11440206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		114400206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			22,
-			7
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11440251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -255241,6 +255026,49 @@ _G.pg.base.world_event_data[11440251] = {
 	effect = {
 		114400201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			22,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11440202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11440202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114400202,
+		10029
 	},
 	grid = {
 		{
@@ -255298,6 +255126,49 @@ _G.pg.base.world_event_data[11440252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11440203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11440203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114400203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			22,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11440253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -255327,6 +255198,49 @@ _G.pg.base.world_event_data[11440253] = {
 	effect = {
 		114400203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			22,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11440204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11440204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114400204,
+		10031
 	},
 	grid = {
 		{
@@ -255384,6 +255298,49 @@ _G.pg.base.world_event_data[11440254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11440205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 241411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11440205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114400205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			22,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11440255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -255413,6 +255370,49 @@ _G.pg.base.world_event_data[11440255] = {
 	effect = {
 		114400205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			22,
+			7
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11440206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 243211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11440206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		114400206,
+		10033
 	},
 	grid = {
 		{
@@ -255807,6 +255807,43 @@ _G.pg.base.world_event_data[11510001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11510021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11510021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115100012
+	},
+	grid = {
+		{
+			5,
+			5,
+			10,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11510002] = {
 	visuality = 0,
 	name = "",
@@ -255844,6 +255881,43 @@ _G.pg.base.world_event_data[11510002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11510022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11510022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115100013
+	},
+	grid = {
+		{
+			4,
+			4,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11510003] = {
 	visuality = 0,
 	name = "",
@@ -255863,6 +255937,43 @@ _G.pg.base.world_event_data[11510003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11510003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115100014
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11510023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11510023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -256293,117 +256404,6 @@ _G.pg.base.world_event_data[11510017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11510021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11510021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115100012
-	},
-	grid = {
-		{
-			5,
-			5,
-			10,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11510022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11510022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115100013
-	},
-	grid = {
-		{
-			4,
-			4,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11510023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11510023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115100014
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11510060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -256515,6 +256515,43 @@ _G.pg.base.world_event_data[11510101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11510151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11510151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11510102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -256539,43 +256576,6 @@ _G.pg.base.world_event_data[11510102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11510151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11510151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -256671,221 +256671,6 @@ _G.pg.base.world_event_data[11510201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11510202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11510202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115100202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11510203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 291211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11510203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115100203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11510204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11510204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115100204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11510205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 291411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11510205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115100205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11510206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11510206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115100206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11510251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -256915,6 +256700,49 @@ _G.pg.base.world_event_data[11510251] = {
 	effect = {
 		115100201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11510202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11510202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115100202,
+		10029
 	},
 	grid = {
 		{
@@ -256972,6 +256800,49 @@ _G.pg.base.world_event_data[11510252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11510203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 291211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11510203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115100203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11510253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -257001,6 +256872,49 @@ _G.pg.base.world_event_data[11510253] = {
 	effect = {
 		115100203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11510204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11510204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115100204,
+		10031
 	},
 	grid = {
 		{
@@ -257058,6 +256972,49 @@ _G.pg.base.world_event_data[11510254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11510205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 291411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11510205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115100205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11510255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -257087,6 +257044,49 @@ _G.pg.base.world_event_data[11510255] = {
 	effect = {
 		115100205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11510206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11510206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115100206,
+		10033
 	},
 	grid = {
 		{
@@ -257481,6 +257481,43 @@ _G.pg.base.world_event_data[11520001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11520021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11520021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115200012
+	},
+	grid = {
+		{
+			5,
+			5,
+			10,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11520002] = {
 	visuality = 0,
 	name = "",
@@ -257518,6 +257555,43 @@ _G.pg.base.world_event_data[11520002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11520022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11520022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115200013
+	},
+	grid = {
+		{
+			4,
+			4,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11520003] = {
 	visuality = 0,
 	name = "",
@@ -257537,6 +257611,43 @@ _G.pg.base.world_event_data[11520003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11520003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115200014
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11520023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11520023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -257967,117 +258078,6 @@ _G.pg.base.world_event_data[11520017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11520021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11520021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115200012
-	},
-	grid = {
-		{
-			5,
-			5,
-			10,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11520022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11520022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115200013
-	},
-	grid = {
-		{
-			4,
-			4,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11520023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11520023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115200014
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11520060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -258189,6 +258189,43 @@ _G.pg.base.world_event_data[11520101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11520151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11520151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11520102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -258213,43 +258250,6 @@ _G.pg.base.world_event_data[11520102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11520151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11520151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -258345,221 +258345,6 @@ _G.pg.base.world_event_data[11520201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11520202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11520202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115200202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11520203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 291211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11520203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115200203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11520204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11520204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115200204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11520205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 291411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11520205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115200205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11520206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11520206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115200206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11520251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -258589,6 +258374,49 @@ _G.pg.base.world_event_data[11520251] = {
 	effect = {
 		115200201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11520202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11520202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115200202,
+		10029
 	},
 	grid = {
 		{
@@ -258646,6 +258474,49 @@ _G.pg.base.world_event_data[11520252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11520203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 291211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11520203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115200203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11520253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -258675,6 +258546,49 @@ _G.pg.base.world_event_data[11520253] = {
 	effect = {
 		115200203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11520204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11520204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115200204,
+		10031
 	},
 	grid = {
 		{
@@ -258732,6 +258646,49 @@ _G.pg.base.world_event_data[11520254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11520205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 291411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11520205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115200205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11520255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -258761,6 +258718,49 @@ _G.pg.base.world_event_data[11520255] = {
 	effect = {
 		115200205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11520206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11520206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115200206,
+		10033
 	},
 	grid = {
 		{
@@ -259155,6 +259155,43 @@ _G.pg.base.world_event_data[11530001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11530021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11530021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115300012
+	},
+	grid = {
+		{
+			5,
+			5,
+			10,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11530002] = {
 	visuality = 0,
 	name = "",
@@ -259192,6 +259229,43 @@ _G.pg.base.world_event_data[11530002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11530022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11530022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115300013
+	},
+	grid = {
+		{
+			4,
+			4,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11530003] = {
 	visuality = 0,
 	name = "",
@@ -259211,6 +259285,43 @@ _G.pg.base.world_event_data[11530003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11530003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115300014
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11530023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11530023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -259641,117 +259752,6 @@ _G.pg.base.world_event_data[11530017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11530021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11530021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115300012
-	},
-	grid = {
-		{
-			5,
-			5,
-			10,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11530022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11530022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115300013
-	},
-	grid = {
-		{
-			4,
-			4,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11530023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11530023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115300014
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11530060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -259863,6 +259863,43 @@ _G.pg.base.world_event_data[11530101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11530151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11530151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11530102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -259887,43 +259924,6 @@ _G.pg.base.world_event_data[11530102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11530151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11530151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -260019,221 +260019,6 @@ _G.pg.base.world_event_data[11530201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11530202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11530202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115300202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11530203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 291211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11530203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115300203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11530204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11530204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115300204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11530205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 291411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11530205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115300205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11530206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11530206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115300206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11530251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -260263,6 +260048,49 @@ _G.pg.base.world_event_data[11530251] = {
 	effect = {
 		115300201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11530202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11530202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115300202,
+		10029
 	},
 	grid = {
 		{
@@ -260320,6 +260148,49 @@ _G.pg.base.world_event_data[11530252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11530203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 291211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11530203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115300203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11530253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -260349,6 +260220,49 @@ _G.pg.base.world_event_data[11530253] = {
 	effect = {
 		115300203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11530204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11530204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115300204,
+		10031
 	},
 	grid = {
 		{
@@ -260406,6 +260320,49 @@ _G.pg.base.world_event_data[11530254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11530205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 291411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11530205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115300205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11530255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -260435,6 +260392,49 @@ _G.pg.base.world_event_data[11530255] = {
 	effect = {
 		115300205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11530206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11530206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115300206,
+		10033
 	},
 	grid = {
 		{
@@ -260829,6 +260829,43 @@ _G.pg.base.world_event_data[11540001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11540021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11540021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115400012
+	},
+	grid = {
+		{
+			5,
+			5,
+			14,
+			14
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11540002] = {
 	visuality = 0,
 	name = "",
@@ -260866,6 +260903,43 @@ _G.pg.base.world_event_data[11540002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11540022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11540022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115400013
+	},
+	grid = {
+		{
+			4,
+			4,
+			15,
+			15
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11540003] = {
 	visuality = 0,
 	name = "",
@@ -260885,6 +260959,43 @@ _G.pg.base.world_event_data[11540003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11540003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115400014
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11540023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11540023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -261278,117 +261389,6 @@ _G.pg.base.world_event_data[11540016] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11540021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11540021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115400012
-	},
-	grid = {
-		{
-			5,
-			5,
-			14,
-			14
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11540022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11540022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115400013
-	},
-	grid = {
-		{
-			4,
-			4,
-			15,
-			15
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11540023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11540023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115400014
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11540060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -261500,6 +261500,43 @@ _G.pg.base.world_event_data[11540101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11540151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11540151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11540102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -261524,43 +261561,6 @@ _G.pg.base.world_event_data[11540102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11540151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11540151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -261656,92 +261656,6 @@ _G.pg.base.world_event_data[11540201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11540202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11540202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115400202,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11540203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11540203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115400203,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			17,
-			17
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11540251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -261785,6 +261699,49 @@ _G.pg.base.world_event_data[11540251] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11540202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11540202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115400202,
+		10031
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11540252] = {
 	visuality = 0,
 	name = "「駒」",
@@ -261814,6 +261771,49 @@ _G.pg.base.world_event_data[11540252] = {
 	effect = {
 		115400202,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			17,
+			17
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11540203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11540203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115400203,
+		10033
 	},
 	grid = {
 		{
@@ -262208,6 +262208,43 @@ _G.pg.base.world_event_data[11550001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11550021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11550021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115500012
+	},
+	grid = {
+		{
+			5,
+			5,
+			10,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11550002] = {
 	visuality = 0,
 	name = "",
@@ -262245,6 +262282,43 @@ _G.pg.base.world_event_data[11550002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11550022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11550022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115500013
+	},
+	grid = {
+		{
+			4,
+			4,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11550003] = {
 	visuality = 0,
 	name = "",
@@ -262264,6 +262338,43 @@ _G.pg.base.world_event_data[11550003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11550003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115500014
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11550023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11550023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -262694,117 +262805,6 @@ _G.pg.base.world_event_data[11550017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11550021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11550021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115500012
-	},
-	grid = {
-		{
-			5,
-			5,
-			10,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11550022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11550022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115500013
-	},
-	grid = {
-		{
-			4,
-			4,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11550023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11550023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115500014
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11550060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -262916,6 +262916,43 @@ _G.pg.base.world_event_data[11550101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11550151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11550151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11550102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -262940,43 +262977,6 @@ _G.pg.base.world_event_data[11550102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11550151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11550151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -263072,221 +263072,6 @@ _G.pg.base.world_event_data[11550201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11550202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11550202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115500202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11550203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 291211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11550203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115500203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11550204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11550204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115500204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11550205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 291411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11550205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115500205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11550206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11550206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115500206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11550251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -263316,6 +263101,49 @@ _G.pg.base.world_event_data[11550251] = {
 	effect = {
 		115500201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11550202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11550202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115500202,
+		10029
 	},
 	grid = {
 		{
@@ -263373,6 +263201,49 @@ _G.pg.base.world_event_data[11550252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11550203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 291211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11550203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115500203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11550253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -263402,6 +263273,49 @@ _G.pg.base.world_event_data[11550253] = {
 	effect = {
 		115500203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11550204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11550204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115500204,
+		10031
 	},
 	grid = {
 		{
@@ -263459,6 +263373,49 @@ _G.pg.base.world_event_data[11550254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11550205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 291411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11550205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115500205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11550255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -263488,6 +263445,49 @@ _G.pg.base.world_event_data[11550255] = {
 	effect = {
 		115500205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11550206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11550206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115500206,
+		10033
 	},
 	grid = {
 		{
@@ -263882,6 +263882,43 @@ _G.pg.base.world_event_data[11560001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11560021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11560021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115600012
+	},
+	grid = {
+		{
+			5,
+			5,
+			10,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11560002] = {
 	visuality = 0,
 	name = "",
@@ -263919,6 +263956,43 @@ _G.pg.base.world_event_data[11560002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11560022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11560022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115600013
+	},
+	grid = {
+		{
+			4,
+			4,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11560003] = {
 	visuality = 0,
 	name = "",
@@ -263938,6 +264012,43 @@ _G.pg.base.world_event_data[11560003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11560003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115600014
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11560023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11560023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -264368,117 +264479,6 @@ _G.pg.base.world_event_data[11560017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11560021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11560021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115600012
-	},
-	grid = {
-		{
-			5,
-			5,
-			10,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11560022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11560022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115600013
-	},
-	grid = {
-		{
-			4,
-			4,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11560023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11560023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115600014
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11560060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -264590,6 +264590,43 @@ _G.pg.base.world_event_data[11560101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11560151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11560151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11560102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -264614,43 +264651,6 @@ _G.pg.base.world_event_data[11560102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11560151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11560151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -264746,221 +264746,6 @@ _G.pg.base.world_event_data[11560201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11560202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11560202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115600202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11560203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 291211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11560203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115600203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11560204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11560204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115600204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11560205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 291411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11560205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115600205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11560206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11560206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115600206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11560251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -264990,6 +264775,49 @@ _G.pg.base.world_event_data[11560251] = {
 	effect = {
 		115600201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11560202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11560202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115600202,
+		10029
 	},
 	grid = {
 		{
@@ -265047,6 +264875,49 @@ _G.pg.base.world_event_data[11560252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11560203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 291211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11560203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115600203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11560253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -265076,6 +264947,49 @@ _G.pg.base.world_event_data[11560253] = {
 	effect = {
 		115600203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11560204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11560204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115600204,
+		10031
 	},
 	grid = {
 		{
@@ -265133,6 +265047,49 @@ _G.pg.base.world_event_data[11560254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11560205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 291411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11560205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115600205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11560255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -265162,6 +265119,49 @@ _G.pg.base.world_event_data[11560255] = {
 	effect = {
 		115600205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11560206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11560206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115600206,
+		10033
 	},
 	grid = {
 		{
@@ -265556,6 +265556,43 @@ _G.pg.base.world_event_data[11570001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11570021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11570021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115700012
+	},
+	grid = {
+		{
+			5,
+			5,
+			10,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11570002] = {
 	visuality = 0,
 	name = "",
@@ -265593,6 +265630,43 @@ _G.pg.base.world_event_data[11570002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11570022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11570022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115700013
+	},
+	grid = {
+		{
+			4,
+			4,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11570003] = {
 	visuality = 0,
 	name = "",
@@ -265612,6 +265686,43 @@ _G.pg.base.world_event_data[11570003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11570003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115700014
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11570023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11570023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -266042,117 +266153,6 @@ _G.pg.base.world_event_data[11570017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11570021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11570021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115700012
-	},
-	grid = {
-		{
-			5,
-			5,
-			10,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11570022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11570022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115700013
-	},
-	grid = {
-		{
-			4,
-			4,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11570023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11570023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115700014
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11570060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -266264,6 +266264,43 @@ _G.pg.base.world_event_data[11570101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11570151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11570151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11570102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -266288,43 +266325,6 @@ _G.pg.base.world_event_data[11570102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11570151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11570151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -266420,221 +266420,6 @@ _G.pg.base.world_event_data[11570201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11570202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11570202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115700202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11570203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 291211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11570203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115700203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11570204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11570204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115700204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11570205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 291411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11570205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115700205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11570206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11570206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115700206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11570251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -266664,6 +266449,49 @@ _G.pg.base.world_event_data[11570251] = {
 	effect = {
 		115700201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11570202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11570202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115700202,
+		10029
 	},
 	grid = {
 		{
@@ -266721,6 +266549,49 @@ _G.pg.base.world_event_data[11570252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11570203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 291211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11570203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115700203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11570253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -266750,6 +266621,49 @@ _G.pg.base.world_event_data[11570253] = {
 	effect = {
 		115700203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11570204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11570204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115700204,
+		10031
 	},
 	grid = {
 		{
@@ -266807,6 +266721,49 @@ _G.pg.base.world_event_data[11570254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11570205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 291411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11570205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115700205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11570255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -266836,6 +266793,49 @@ _G.pg.base.world_event_data[11570255] = {
 	effect = {
 		115700205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11570206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11570206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115700206,
+		10033
 	},
 	grid = {
 		{
@@ -267230,6 +267230,43 @@ _G.pg.base.world_event_data[11580001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11580021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11580021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115800012
+	},
+	grid = {
+		{
+			5,
+			5,
+			10,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11580002] = {
 	visuality = 0,
 	name = "",
@@ -267267,6 +267304,43 @@ _G.pg.base.world_event_data[11580002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11580022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11580022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115800013
+	},
+	grid = {
+		{
+			4,
+			4,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11580003] = {
 	visuality = 0,
 	name = "",
@@ -267286,6 +267360,43 @@ _G.pg.base.world_event_data[11580003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11580003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115800014
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11580023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11580023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -267716,117 +267827,6 @@ _G.pg.base.world_event_data[11580017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11580021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11580021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115800012
-	},
-	grid = {
-		{
-			5,
-			5,
-			10,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11580022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11580022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115800013
-	},
-	grid = {
-		{
-			4,
-			4,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11580023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11580023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115800014
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11580060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -267938,6 +267938,43 @@ _G.pg.base.world_event_data[11580101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11580151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11580151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11580102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -267962,43 +267999,6 @@ _G.pg.base.world_event_data[11580102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11580151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11580151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -268094,221 +268094,6 @@ _G.pg.base.world_event_data[11580201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11580202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11580202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115800202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11580203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 291211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11580203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115800203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11580204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11580204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115800204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11580205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 291411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11580205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115800205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11580206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11580206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115800206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11580251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -268338,6 +268123,49 @@ _G.pg.base.world_event_data[11580251] = {
 	effect = {
 		115800201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11580202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11580202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115800202,
+		10029
 	},
 	grid = {
 		{
@@ -268395,6 +268223,49 @@ _G.pg.base.world_event_data[11580252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11580203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 291211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11580203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115800203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11580253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -268424,6 +268295,49 @@ _G.pg.base.world_event_data[11580253] = {
 	effect = {
 		115800203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11580204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11580204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115800204,
+		10031
 	},
 	grid = {
 		{
@@ -268481,6 +268395,49 @@ _G.pg.base.world_event_data[11580254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11580205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 291411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11580205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115800205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11580255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -268510,6 +268467,49 @@ _G.pg.base.world_event_data[11580255] = {
 	effect = {
 		115800205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11580206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11580206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115800206,
+		10033
 	},
 	grid = {
 		{
@@ -268904,6 +268904,43 @@ _G.pg.base.world_event_data[11590001] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11590021] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11590021,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115900012
+	},
+	grid = {
+		{
+			5,
+			5,
+			10,
+			10
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11590002] = {
 	visuality = 0,
 	name = "",
@@ -268941,6 +268978,43 @@ _G.pg.base.world_event_data[11590002] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11590022] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11590022,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115900013
+	},
+	grid = {
+		{
+			4,
+			4,
+			11,
+			11
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11590003] = {
 	visuality = 0,
 	name = "",
@@ -268960,6 +269034,43 @@ _G.pg.base.world_event_data[11590003] = {
 	is_guide = 0,
 	object_icon = "",
 	id = 11590003,
+	scale = 0,
+	event_op = {},
+	effect = {
+		115900014
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11590023] = {
+	visuality = 0,
+	name = "",
+	compass_index = 0,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 0,
+	infection_value = 0,
+	auto_pri = 0,
+	discover_type = 2,
+	is_scanevent = 0,
+	scan_desc = "",
+	is_guide = 0,
+	object_icon = "",
+	id = 11590023,
 	scale = 0,
 	event_op = {},
 	effect = {
@@ -269390,117 +269501,6 @@ _G.pg.base.world_event_data[11590017] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11590021] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11590021,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115900012
-	},
-	grid = {
-		{
-			5,
-			5,
-			10,
-			10
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11590022] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11590022,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115900013
-	},
-	grid = {
-		{
-			4,
-			4,
-			11,
-			11
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11590023] = {
-	visuality = 0,
-	name = "",
-	compass_index = 0,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 0,
-	infection_value = 0,
-	auto_pri = 0,
-	discover_type = 2,
-	is_scanevent = 0,
-	scan_desc = "",
-	is_guide = 0,
-	object_icon = "",
-	id = 11590023,
-	scale = 0,
-	event_op = {},
-	effect = {
-		115900014
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11590060] = {
 	visuality = 0,
 	name = "サルベージポイント",
@@ -269612,6 +269612,43 @@ _G.pg.base.world_event_data[11590101] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11590151] = {
+	visuality = 0,
+	name = "資材",
+	compass_index = 2,
+	expedition_icon = 0,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "putongbaoxiang",
+	special_enemy = 0,
+	infection_value = 1,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 1,
+	scan_desc = "サルベージすると資材がもらえる",
+	is_guide = 0,
+	object_icon = "",
+	id = 11590151,
+	scale = 0,
+	event_op = {},
+	effect = {
+		10006
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11590102] = {
 	visuality = 0,
 	name = "隠された資材",
@@ -269636,43 +269673,6 @@ _G.pg.base.world_event_data[11590102] = {
 	effect = {
 		106,
 		10000
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11590151] = {
-	visuality = 0,
-	name = "資材",
-	compass_index = 2,
-	expedition_icon = 0,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "putongbaoxiang",
-	special_enemy = 0,
-	infection_value = 1,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 1,
-	scan_desc = "サルベージすると資材がもらえる",
-	is_guide = 0,
-	object_icon = "",
-	id = 11590151,
-	scale = 0,
-	event_op = {},
-	effect = {
-		10006
 	},
 	grid = {
 		{
@@ -269768,221 +269768,6 @@ _G.pg.base.world_event_data[11590201] = {
 	map_buff = {},
 	deviation = {}
 }
-_G.pg.base.world_event_data[11590202] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293011,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11590202,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115900202,
-		10029
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11590203] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 291211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11590203,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115900203,
-		10030
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11590204] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293211,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11590204,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115900204,
-		10031
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11590205] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 291411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11590205,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115900205,
-		10032
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
-_G.pg.base.world_event_data[11590206] = {
-	visuality = 0,
-	name = "「駒」",
-	compass_index = 1,
-	expedition_icon = 293411,
-	enemyicon = 0,
-	icontype = 2,
-	obstacle = 0,
-	event_sight = -1,
-	icon = "",
-	special_enemy = 3,
-	infection_value = 2,
-	auto_pri = 3,
-	discover_type = 2,
-	is_scanevent = 3,
-	scan_desc = "艦船の「素体」をベースに製造された「駒」",
-	is_guide = 0,
-	id = 11590206,
-	scale = 0,
-	object_icon = {
-		"cell_red",
-		1,
-		100,
-		0
-	},
-	event_op = {},
-	effect = {
-		115900206,
-		10033
-	},
-	grid = {
-		{
-			2,
-			2,
-			13,
-			13
-		}
-	},
-	slg_bufflist = {},
-	slg_buffnum = {},
-	map_buff = {},
-	deviation = {}
-}
 _G.pg.base.world_event_data[11590251] = {
 	visuality = 0,
 	name = "「駒」",
@@ -270012,6 +269797,49 @@ _G.pg.base.world_event_data[11590251] = {
 	effect = {
 		115900201,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11590202] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293011,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11590202,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115900202,
+		10029
 	},
 	grid = {
 		{
@@ -270069,6 +269897,49 @@ _G.pg.base.world_event_data[11590252] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11590203] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 291211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11590203,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115900203,
+		10030
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11590253] = {
 	visuality = 0,
 	name = "「駒」",
@@ -270098,6 +269969,49 @@ _G.pg.base.world_event_data[11590253] = {
 	effect = {
 		115900203,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11590204] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293211,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11590204,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115900204,
+		10031
 	},
 	grid = {
 		{
@@ -270155,6 +270069,49 @@ _G.pg.base.world_event_data[11590254] = {
 	map_buff = {},
 	deviation = {}
 }
+_G.pg.base.world_event_data[11590205] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 291411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11590205,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115900205,
+		10032
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
 _G.pg.base.world_event_data[11590255] = {
 	visuality = 0,
 	name = "「駒」",
@@ -270184,6 +270141,49 @@ _G.pg.base.world_event_data[11590255] = {
 	effect = {
 		115900205,
 		10001
+	},
+	grid = {
+		{
+			2,
+			2,
+			13,
+			13
+		}
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {}
+}
+_G.pg.base.world_event_data[11590206] = {
+	visuality = 0,
+	name = "「駒」",
+	compass_index = 1,
+	expedition_icon = 293411,
+	enemyicon = 0,
+	icontype = 2,
+	obstacle = 0,
+	event_sight = -1,
+	icon = "",
+	special_enemy = 3,
+	infection_value = 2,
+	auto_pri = 3,
+	discover_type = 2,
+	is_scanevent = 3,
+	scan_desc = "艦船の「素体」をベースに製造された「駒」",
+	is_guide = 0,
+	id = 11590206,
+	scale = 0,
+	object_icon = {
+		"cell_red",
+		1,
+		100,
+		0
+	},
+	event_op = {},
+	effect = {
+		115900206,
+		10033
 	},
 	grid = {
 		{

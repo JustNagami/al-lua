@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.specialunit_template = {
 	[1150001] = {
 		appear_story = "DONGHUO13",

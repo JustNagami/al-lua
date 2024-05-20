@@ -1,4 +1,22 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffNewWeapon",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			pop = {
+				castCV = "skill",
+				trigger = {
+					"onAttach"
+				}
+			},
+			arg_list = {
+				weapon_id = 63211
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -208,23 +226,5 @@ return {
 	stack = 1,
 	id = 108017,
 	icon = 108010,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffNewWeapon",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			pop = {
-				castCV = "skill",
-				trigger = {
-					"onAttach"
-				}
-			},
-			arg_list = {
-				weapon_id = 63211
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行15次攻击，触发专属弹幕-吸血鬼I"
-	},
-	desc_get = "主炮每进行15次攻击，触发专属弹幕-吸血鬼I",
-	name = "专属弹幕-吸血鬼I",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行15次攻击，触发专属弹幕-吸血鬼I",
-	stack = 1,
-	id = 29091,
-	icon = 29090,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -38,5 +24,19 @@ return {
 				countType = 29090
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行15次攻击，触发专属弹幕-吸血鬼I"
+	},
+	desc_get = "主炮每进行15次攻击，触发专属弹幕-吸血鬼I",
+	name = "专属弹幕-吸血鬼I",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行15次攻击，触发专属弹幕-吸血鬼I",
+	stack = 1,
+	id = 29091,
+	icon = 29090,
+	last_effect = ""
 }

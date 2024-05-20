@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_event_chequer = {
 	{
 		chequer_normal = 24,

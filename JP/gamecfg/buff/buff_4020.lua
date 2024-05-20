@@ -1,10 +1,31 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffFixDamage",
+			trigger = {
+				"onBeforeTakeDamage"
+			},
+			arg_list = {
+				rate = 0.5,
+				rant = 350,
+				target = "TargetSelf",
+				time = 0
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					rate = 0.5,
@@ -20,7 +41,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					rate = 0.5,
@@ -36,7 +57,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					rate = 0.5,
@@ -52,7 +73,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					rate = 0.5,
@@ -68,7 +89,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					rate = 0.5,
@@ -84,7 +105,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					rate = 0.5,
@@ -100,7 +121,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					rate = 0.5,
@@ -116,7 +137,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					rate = 0.5,
@@ -132,7 +153,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					rate = 0.5,
@@ -148,7 +169,7 @@ return {
 			{
 				type = "BattleBuffFixDamage",
 				trigger = {
-					"onTakeDamage"
+					"onBeforeTakeDamage"
 				},
 				arg_list = {
 					rate = 0.5,
@@ -168,26 +189,5 @@ return {
 	stack = 1,
 	id = 4020,
 	icon = 4020,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffFixDamage",
-			trigger = {
-				"onTakeDamage"
-			},
-			arg_list = {
-				rate = 0.5,
-				rant = 350,
-				target = "TargetSelf",
-				time = 0
-			}
-		}
-	}
+	last_effect = ""
 }

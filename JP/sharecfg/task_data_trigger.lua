@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.task_data_trigger = {
 	{
 		group_id = 0,
@@ -712,6 +712,62 @@ pg.task_data_trigger = {
 		id = 91,
 		task_id = 5931
 	},
+	[92] = {
+		group_id = 60107,
+		activity_id = 0,
+		count = 1,
+		type = 2,
+		id = 92,
+		task_id = 5941
+	},
+	[93] = {
+		group_id = 11802,
+		activity_id = 0,
+		count = 1,
+		type = 2,
+		id = 93,
+		task_id = 5951
+	},
+	[94] = {
+		group_id = 50102,
+		activity_id = 0,
+		count = 1,
+		type = 2,
+		id = 94,
+		task_id = 5961
+	},
+	[95] = {
+		group_id = 50601,
+		activity_id = 0,
+		count = 1,
+		type = 2,
+		id = 95,
+		task_id = 5971
+	},
+	[96] = {
+		group_id = 10730,
+		activity_id = 0,
+		count = 1,
+		type = 2,
+		id = 96,
+		task_id = 5981
+	},
+	[97] = {
+		group_id = 90701,
+		activity_id = 0,
+		count = 1,
+		type = 2,
+		id = 97,
+		task_id = 5991
+	},
+	[98] = {
+		group_id = 50207,
+		activity_id = 0,
+		count = 1,
+		type = 2,
+		id = 98,
+		task_id = 500001
+	},
 	all = {
 		1,
 		2,
@@ -801,6 +857,13 @@ pg.task_data_trigger = {
 		88,
 		89,
 		90,
-		91
+		91,
+		92,
+		93,
+		94,
+		95,
+		96,
+		97,
+		98
 	}
 }

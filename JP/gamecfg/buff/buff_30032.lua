@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行16次攻击，触发专属弹幕"
-	},
-	desc_get = "主炮每进行16次攻击，触发专属弹幕",
-	name = "专属弹幕",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行16次攻击，触发专属弹幕",
-	stack = 1,
-	id = 30032,
-	icon = 30030,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -39,5 +25,19 @@ return {
 				countType = 30030
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行16次攻击，触发专属弹幕"
+	},
+	desc_get = "主炮每进行16次攻击，触发专属弹幕",
+	name = "专属弹幕",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行16次攻击，触发专属弹幕",
+	stack = 1,
+	id = 30032,
+	icon = 30030,
+	last_effect = ""
 }

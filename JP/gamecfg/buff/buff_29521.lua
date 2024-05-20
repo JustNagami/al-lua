@@ -1,28 +1,4 @@
-return {
-	{
-		shipInfoScene = {
-			equip = {
-				{
-					number = 10,
-					label = {
-						"DD",
-						"MG"
-					}
-				}
-			}
-		}
-	},
-	desc_get = "",
-	name = "专属弹幕-里诺",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 29521,
-	icon = 29520,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -54,5 +30,29 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{
+		shipInfoScene = {
+			equip = {
+				{
+					number = 10,
+					label = {
+						"DD",
+						"MG"
+					}
+				}
+			}
+		}
+	},
+	desc_get = "",
+	name = "专属弹幕-里诺",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 29521,
+	icon = 29520,
+	last_effect = ""
 }

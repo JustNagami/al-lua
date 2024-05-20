@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_template_headhunting = {
 	[10251] = {
 		man_num = 2,

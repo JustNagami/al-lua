@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_series_enemy_story = {
 	{
 		name = "TS-1",

@@ -1,4 +1,4 @@
-return {
+﻿return {
 	time = 0,
 	name = "",
 	init_effect = "jinengchufablue",
@@ -20,7 +20,7 @@ return {
 		{
 			type = "BattleBuffFixDamage",
 			trigger = {
-				"onTakeDamage"
+				"onBeforeTakeDamage"
 			},
 			arg_list = {
 				value = 1,

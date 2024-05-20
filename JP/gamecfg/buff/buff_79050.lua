@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "",
 	name = "濒死护盾",
 	time = 0,
@@ -35,12 +35,12 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
-					slot1 = slot0 * 3
+				centerPosFun = function(arg_1_0)
+					local var_1_0 = arg_1_0 * 3
 
 					return Vector3(3, 0.75, 0)
 				end,
-				rotationFun = function (slot0)
+				rotationFun = function(arg_2_0)
 					return Vector3(0, 0, 0)
 				end
 			}

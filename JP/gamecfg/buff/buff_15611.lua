@@ -1,4 +1,33 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddReloadRequirement",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				type = 16,
+				number = -0.2
+			}
+		},
+		{
+			type = "BattleBuffCancelBuff",
+			trigger = {
+				"onTorpedoWeaponFire"
+			},
+			arg_list = {
+				count = 1
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -247,34 +276,5 @@ return {
 	stack = 1,
 	id = 15611,
 	icon = 15611,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddReloadRequirement",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				type = 16,
-				number = -0.2
-			}
-		},
-		{
-			type = "BattleBuffCancelBuff",
-			trigger = {
-				"onTorpedoWeaponFire"
-			},
-			arg_list = {
-				count = 1
-			}
-		}
-	}
+	last_effect = ""
 }

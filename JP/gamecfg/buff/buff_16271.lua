@@ -1,4 +1,35 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "dodgeRate",
+				number = 500
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "injureRatio",
+				number = -0.01
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -267,36 +298,5 @@ return {
 	stack = 1,
 	id = 16271,
 	icon = 16270,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "dodgeRate",
-				number = 500
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "injureRatio",
-				number = -0.01
-			}
-		}
-	}
+	last_effect = ""
 }

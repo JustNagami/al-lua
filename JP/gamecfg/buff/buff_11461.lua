@@ -1,4 +1,33 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "DMG_TAG_EHC_T_5",
+				number = 0.05
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				skill_id = 11460,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -247,34 +276,5 @@ return {
 	stack = 1,
 	id = 11461,
 	icon = 11460,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "DMG_TAG_EHC_T_5",
-				number = 0.05
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				skill_id = 11460,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

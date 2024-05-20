@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id = 4042,
+				target = "TargetSelf",
+				time = 20
+			}
+		}
+	},
 	{
 		desc = "每20秒，有10.0%的概率发动，承受先锋队伍受到的50%伤害，持续8秒，同技能效果不叠加",
 		addition = {
@@ -69,18 +82,5 @@ return {
 	stack = 1,
 	id = 4041,
 	icon = 4040,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id = 4042,
-				target = "TargetSelf",
-				time = 20
-			}
-		}
-	}
+	last_effect = ""
 }

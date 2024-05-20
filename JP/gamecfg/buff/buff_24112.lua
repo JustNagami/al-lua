@@ -1,41 +1,51 @@
-return {
-	{
-		desc = "主炮每进行8次攻击，触发全弹发射-宁海级II"
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				buff_id = 24113,
+				maxTargetNumber = 0,
+				target = "TargetSelf",
+				check_target = {
+					"TargetSelf",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"PinghaiNinghai-SP"
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				minTargetNumber = 1,
+				buff_id = 24114,
+				target = "TargetSelf",
+				check_target = {
+					"TargetSelf",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"PinghaiNinghai-SP"
+				}
+			}
+		}
 	},
+	{},
 	init_effect = "",
 	name = "全弹发射",
 	time = 0,
 	color = "red",
 	picture = "",
-	desc = "主炮每进行8次攻击，触发全弹发射-宁海级II",
+	desc = "检查是否为特殊兵装版本",
 	stack = 1,
 	id = 24112,
 	icon = 20100,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCount",
-			trigger = {
-				"onFire"
-			},
-			arg_list = {
-				countTarget = 8,
-				countType = 24110,
-				index = {
-					1
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBattleBuffCount"
-			},
-			arg_list = {
-				target = "TargetSelf",
-				skill_id = 24112,
-				countType = 24110
-			}
-		}
-	}
+	last_effect = ""
 }

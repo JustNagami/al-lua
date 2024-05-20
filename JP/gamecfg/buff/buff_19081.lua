@@ -1,4 +1,24 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				group = 19080,
+				attr = "damageReduceFromAmmoType_2",
+				number = 0.15
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -158,25 +178,5 @@ return {
 	stack = 1,
 	id = 19081,
 	icon = 19081,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				group = 19080,
-				attr = "damageReduceFromAmmoType_2",
-				number = 0.15
-			}
-		}
-	}
+	last_effect = ""
 }

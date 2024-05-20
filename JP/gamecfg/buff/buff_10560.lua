@@ -1,4 +1,43 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onTorpedoWeaponBulletCreate"
+			},
+			arg_list = {
+				attr = "cri",
+				number = 0.2
+			}
+		},
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onTorpedoWeaponBulletCreate"
+			},
+			arg_list = {
+				attr = "criDamage",
+				number = 0.5
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onTorpedoWeaponFire"
+			},
+			arg_list = {
+				skill_id = 10560,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		desc = "鱼雷暴击率提高20.0%，暴击伤害提高50.0%",
 		addition = {
@@ -389,44 +428,5 @@ return {
 	stack = 1,
 	id = 10560,
 	icon = 10560,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onTorpedoWeaponBulletCreate"
-			},
-			arg_list = {
-				attr = "cri",
-				number = 0.2
-			}
-		},
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onTorpedoWeaponBulletCreate"
-			},
-			arg_list = {
-				attr = "criDamage",
-				number = 0.5
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onTorpedoWeaponFire"
-			},
-			arg_list = {
-				skill_id = 10560,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

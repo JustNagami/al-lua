@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.item_data_chat = {
 	[0] = {
 		time_limit_type = 0,
@@ -128,6 +128,62 @@ pg.item_data_chat = {
 		desc = "<size=28><color=#ffffff>己の限界に挑む勇気のある指揮官に贈る</color><color=#A7A7AAFF>「限界挑戦」で入手可能（23.10.01-23.10.31）</color></size>",
 		scene = {}
 	},
+	[10006] = {
+		time_limit_type = 0,
+		name = "限界挑戦・サソリ座",
+		id = 10006,
+		time_second = 0,
+		desc = "<size=28><color=#ffffff>己の限界に挑む勇気のある指揮官に贈る</color><color=#A7A7AAFF>「限界挑戦」で入手可能（23.11.01-23.11.30）</color></size>",
+		scene = {}
+	},
+	[10007] = {
+		time_limit_type = 0,
+		name = "限界挑戦・いて座",
+		id = 10007,
+		time_second = 0,
+		desc = "<size=28><color=#ffffff>己の限界に挑む勇気のある指揮官に贈る</color><color=#A7A7AAFF>「限界挑戦」で入手可能（23.12.01-23.12.31）</color></size>",
+		scene = {}
+	},
+	[10008] = {
+		time_limit_type = 0,
+		name = "限界挑戦・やぎ座",
+		id = 10008,
+		time_second = 0,
+		desc = "<size=28><color=#ffffff>己の限界に挑む勇気のある指揮官に贈る</color><color=#A7A7AAFF>「限界挑戦」で入手可能（24.01.01-24.01.31）</color></size>",
+		scene = {}
+	},
+	[10009] = {
+		time_limit_type = 0,
+		name = "限界挑戦・みずかめ座",
+		id = 10009,
+		time_second = 0,
+		desc = "<size=28><color=#ffffff>己の限界に挑む勇気のある指揮官に贈る</color><color=#A7A7AAFF>「限界挑戦」で入手可能 （24.02.01-24.02.29）</color></size>",
+		scene = {}
+	},
+	[10010] = {
+		time_limit_type = 0,
+		name = "限界挑戦・うお座",
+		id = 10010,
+		time_second = 0,
+		desc = "<size=28><color=#ffffff>己の限界に挑む勇気のある指揮官に贈る</color><color=#A7A7AAFF>「限界挑戦」で入手可能（24.03.01-24.03.31）</color></size>",
+		scene = {}
+	},
+	[10011] = {
+		time_limit_type = 0,
+		name = "限界挑戦・ひつじ座",
+		id = 10011,
+		time_second = 0,
+		desc = "<size=28><color=#ffffff>己の限界に挑む勇気のある指揮官に贈る</color><color=#A7A7AAFF>「限界挑戦」で入手可能（24.04.01-24.04.30）</color></size>",
+		scene = {}
+	},
+	[10012] = {
+		time_limit_type = 0,
+		name = "限界挑戦・おうし座",
+		id = 10012,
+		time_second = 0,
+		desc = "<size=28><color=#ffffff>己の限界に挑む勇気のある指揮官に贈る</color><color=#A7A7AAFF>「限界挑戦」で入手可能（24.05.01-24.05.31）</color></size>",
+		scene = {}
+	},
 	all = {
 		0,
 		101,
@@ -144,6 +200,13 @@ pg.item_data_chat = {
 		10002,
 		10003,
 		10004,
-		10005
+		10005,
+		10006,
+		10007,
+		10008,
+		10009,
+		10010,
+		10011,
+		10012
 	}
 }

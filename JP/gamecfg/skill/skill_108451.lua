@@ -1,4 +1,4 @@
-return {
+﻿return {
 	name = "",
 	cd = 0,
 	id = 108451,

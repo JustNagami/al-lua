@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "莫里森",
-	init_effect = "",
-	time = 0,
-	color = "blue",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 14490,
-	icon = 14490,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -43,5 +22,26 @@ return {
 				skill_id = 14490
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "莫里森",
+	init_effect = "",
+	time = 0,
+	color = "blue",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 14490,
+	icon = 14490,
+	last_effect = ""
 }

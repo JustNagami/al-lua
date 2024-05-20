@@ -1,4 +1,23 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffHPLink",
+			trigger = {
+				"onTakeDamage"
+			},
+			arg_list = {
+				number = 0.8,
+				absorb = 0.15
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -147,24 +166,5 @@ return {
 	stack = 1,
 	id = 16504,
 	icon = 16504,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffHPLink",
-			trigger = {
-				"onTakeDamage"
-			},
-			arg_list = {
-				number = 0.8,
-				absorb = 0.15
-			}
-		}
-	}
+	last_effect = ""
 }

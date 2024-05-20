@@ -1,4 +1,27 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id = 10784,
+				time = 20,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 10780,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		desc = "幸运舰？"
 	},
@@ -38,28 +61,5 @@ return {
 	stack = 1,
 	id = 10780,
 	icon = 10780,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id = 10784,
-				time = 20,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 10780,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

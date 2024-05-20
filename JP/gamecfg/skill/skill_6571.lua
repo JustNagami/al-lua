@@ -1,4 +1,4 @@
-return {
+﻿return {
 	uiEffect = "",
 	name = "",
 	cd = 0,
@@ -22,7 +22,7 @@ return {
 			target_choise = "TargetSelf",
 			targetAniEffect = "",
 			arg_list = {
-				buff_id = 6572
+				buff_id = 6574
 			}
 		}
 	}

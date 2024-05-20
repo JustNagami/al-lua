@@ -1,4 +1,4 @@
-return {
+﻿return {
 	fadeOut = 1.5,
 	mode = 2,
 	id = "HAMAN3",
@@ -234,15 +234,15 @@ return {
 				time = 1
 			},
 			action = {
+				painting = {
+					alpha = 0.3,
+					time = 1
+				},
 				{
 					number = 2,
 					dur = 0.15,
 					type = "shake",
 					y = 30
-				},
-				painting = {
-					alpha = 0.3,
-					time = 1
 				}
 			}
 		},

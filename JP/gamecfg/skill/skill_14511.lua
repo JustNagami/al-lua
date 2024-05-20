@@ -1,4 +1,13 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {},
 	{
 		effect_list = {
 			{
@@ -406,14 +415,5 @@ return {
 	id = 14511,
 	picture = "0",
 	castCV = "skill",
-	desc = "新泽西弹幕",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {}
+	desc = "新泽西弹幕"
 }

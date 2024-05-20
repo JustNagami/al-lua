@@ -1,4 +1,32 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				maxHPRatio = 0.15
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 19021
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -226,33 +254,5 @@ return {
 	id = 19020,
 	picture = "0",
 	castCV = "skill",
-	desc = "海之女神",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				maxHPRatio = 0.15
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 19021
-			}
-		}
-	}
+	desc = "海之女神"
 }

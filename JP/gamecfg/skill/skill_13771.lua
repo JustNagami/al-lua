@@ -1,4 +1,23 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandom",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 65121
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -136,24 +155,5 @@ return {
 	id = 13771,
 	picture = "0",
 	castCV = "",
-	desc = "",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandom",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 65121
-			}
-		}
-	}
+	desc = ""
 }

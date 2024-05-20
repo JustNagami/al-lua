@@ -1,4 +1,59 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandomByWeight",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 160101
+			}
+		},
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandomByWeight",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 160101,
+				delay = 0.5
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 109011
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 109013
+			}
+		},
+		{
+			target_choise = "TargetSelf",
+			type = "BattleSkillEditFleetAttr",
+			arg_list = {
+				value = -6,
+				attr = "ReisalinAP"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -495,60 +550,5 @@ return {
 	painting = 1,
 	id = 109010,
 	picture = "0",
-	desc = "",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandomByWeight",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 160101
-			}
-		},
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandomByWeight",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 160101,
-				delay = 0.5
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 109011
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 109013
-			}
-		},
-		{
-			target_choise = "TargetSelf",
-			type = "BattleSkillEditFleetAttr",
-			arg_list = {
-				value = -6,
-				attr = "ReisalinAP"
-			}
-		}
-	}
+	desc = ""
 }

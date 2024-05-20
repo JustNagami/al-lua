@@ -1,4 +1,5 @@
-return {
+﻿return {
+	effect_list = {},
 	{
 		effect_list = {
 			{
@@ -38,6 +39,5 @@ return {
 	id = 200584,
 	name = "2023云仙活动 无形侵蚀",
 	cd = 0,
-	painting = "wuxingzhixi",
-	effect_list = {}
+	painting = "wuxingzhixi"
 }

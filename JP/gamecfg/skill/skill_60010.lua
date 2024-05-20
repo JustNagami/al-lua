@@ -1,4 +1,4 @@
-return {
+﻿return {
 	uiEffect = "",
 	name = "大黄蜂-轰炸",
 	cd = 0,
@@ -19,8 +19,8 @@ return {
 			casterAniEffect = {
 				time = 1,
 				effect = "feijiyingzi",
-				posFun = function (slot0, slot1, slot2)
-					return Vector3(-100, 0, slot1.z) - slot0
+				posFun = function(arg_1_0, arg_1_1, arg_1_2)
+					return Vector3(-100, 0, arg_1_1.z) - arg_1_0
 				end
 			}
 		},

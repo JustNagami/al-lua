@@ -1,4 +1,41 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 65181
+			}
+		},
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 65201
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 13752
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -316,42 +353,5 @@ return {
 	id = 13750,
 	picture = "1",
 	castCV = "skill",
-	desc = "鱼雷",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 65181
-			}
-		},
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 65201
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 13752
-			}
-		}
-	}
+	desc = "鱼雷"
 }

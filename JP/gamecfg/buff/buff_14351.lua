@@ -1,23 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	time = 0,
-	name = "",
-	init_effect = "jinengchufared",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 14351,
-	icon = 14350,
-	last_effect = "",
+﻿return {
 	blink = {
 		1,
 		0,
@@ -46,5 +27,24 @@ return {
 				count = 1
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	time = 0,
+	name = "",
+	init_effect = "jinengchufared",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 14351,
+	icon = 14350,
+	last_effect = ""
 }

@@ -1,4 +1,4 @@
-return {
+﻿return {
 	{
 		content = "迷惑行為"
 	},

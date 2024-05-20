@@ -1,15 +1,4 @@
-return {
-	{},
-	init_effect = "",
-	name = "",
-	time = 3,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 2,
-	id = 24013,
-	icon = 12680,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -38,7 +27,7 @@ return {
 			},
 			arg_list = {
 				minTargetNumber = 1,
-				skill_id = 24031,
+				skill_id = 24033,
 				target = "TargetSelf",
 				check_target = {
 					"TargetSelf",
@@ -57,7 +46,7 @@ return {
 			},
 			arg_list = {
 				minTargetNumber = 1,
-				skill_id = 24041,
+				skill_id = 24043,
 				target = "TargetSelf",
 				check_target = {
 					"TargetSelf",
@@ -87,5 +76,16 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{},
+	init_effect = "",
+	name = "",
+	time = 3,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 2,
+	id = 24013,
+	icon = 12680,
+	last_effect = ""
 }

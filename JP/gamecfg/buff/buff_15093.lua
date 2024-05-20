@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				skill_id = 15091,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,17 +31,5 @@ return {
 	stack = 1,
 	id = 15093,
 	icon = 15090,
-	last_effect = "qingsebuff",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				skill_id = 15091,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = "qingsebuff"
 }

@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.escort_template = {
 	[20001] = {
 		id = 20001,

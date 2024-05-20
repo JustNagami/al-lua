@@ -1,4 +1,15 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 10510
+			}
+		}
+	},
 	{
 		desc = "队伍中所有先锋伤害提高15.0%",
 		addition = {
@@ -69,16 +80,5 @@ return {
 	stack = 1,
 	id = 10510,
 	icon = 10510,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 10510
-			}
-		}
-	}
+	last_effect = ""
 }

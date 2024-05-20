@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "猛进射击 +",
-	init_effect = "",
-	time = 0,
-	color = "yellow",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 1011700,
-	icon = 11700,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -63,5 +42,26 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "猛进射击 +",
+	init_effect = "",
+	time = 0,
+	color = "yellow",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 1011700,
+	icon = 11700,
+	last_effect = ""
 }

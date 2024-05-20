@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAllInStrikeSteady"
+			},
+			arg_list = {
+				quota = 1,
+				target = "TargetSelf",
+				skill_id = 10830
+			}
+		}
+	},
 	{
 		desc = "航空预备"
 	},
@@ -39,18 +52,5 @@ return {
 	stack = 1,
 	id = 10830,
 	icon = 10830,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAllInStrikeSteady"
-			},
-			arg_list = {
-				quota = 1,
-				target = "TargetSelf",
-				skill_id = 10830
-			}
-		}
-	}
+	last_effect = ""
 }

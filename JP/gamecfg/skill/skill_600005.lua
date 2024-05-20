@@ -1,4 +1,46 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				maxHPRatio = 0.05
+			}
+		},
+		{
+			type = "BattleSkillEditTag",
+			casterAniEffect = "",
+			target_choise = "TargetShipTag",
+			targetAniEffect = "",
+			arg_list = {
+				tag = "huifu3",
+				operation = -1,
+				ship_tag_list = {
+					"huifu3"
+				}
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 600005
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 600000
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -159,47 +201,5 @@ return {
 	id = 600005,
 	picture = "0",
 	aniEffect = "",
-	desc = "",
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				maxHPRatio = 0.05
-			}
-		},
-		{
-			type = "BattleSkillEditTag",
-			casterAniEffect = "",
-			target_choise = "TargetShipTag",
-			targetAniEffect = "",
-			arg_list = {
-				tag = "huifu3",
-				operation = -1,
-				ship_tag_list = {
-					"huifu3"
-				}
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 600005
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 600000
-			}
-		}
-	}
+	desc = ""
 }

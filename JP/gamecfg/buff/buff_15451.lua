@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				buff_id = 15452,
+				rant = 4000,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -158,18 +171,5 @@ return {
 	stack = 1,
 	id = 15451,
 	icon = 15451,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				buff_id = 15452,
-				rant = 4000,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

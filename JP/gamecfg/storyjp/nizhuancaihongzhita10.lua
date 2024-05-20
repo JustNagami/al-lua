@@ -1,4 +1,4 @@
-return {
+﻿return {
 	fadeOut = 1.5,
 	mode = 2,
 	id = "NIZHUANCAIHONGZHITA10",
@@ -122,6 +122,16 @@ return {
 			painting = {
 				alpha = 0.3,
 				time = 1
+			}
+		},
+		action = {
+			{
+				type = "shake",
+				y = 45,
+				delay = 0,
+				dur = 0.15,
+				x = 0,
+				number = 2
 			}
 		},
 		{
@@ -1087,16 +1097,6 @@ return {
 			painting = {
 				alpha = 0.3,
 				time = 1
-			}
-		},
-		action = {
-			{
-				type = "shake",
-				y = 45,
-				delay = 0,
-				dur = 0.15,
-				x = 0,
-				number = 2
 			}
 		}
 	}

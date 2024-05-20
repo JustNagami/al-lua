@@ -1,4 +1,36 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBulletCreate"
+			},
+			arg_list = {
+				attr = "cri",
+				number = 0.1,
+				index = {
+					1
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "chargeBulletAccuracy",
+				number = 2
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -269,7 +301,7 @@ return {
 			}
 		}
 	},
-	time = 10,
+	time = 0,
 	name = "最适化武装",
 	init_effect = "jinengchufared",
 	picture = "",
@@ -277,37 +309,5 @@ return {
 	stack = 1,
 	id = 12173,
 	icon = 12150,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBulletCreate"
-			},
-			arg_list = {
-				attr = "cri",
-				number = 0.1,
-				index = {
-					1
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "chargeBulletAccuracy",
-				number = 2
-			}
-		}
-	}
+	last_effect = ""
 }

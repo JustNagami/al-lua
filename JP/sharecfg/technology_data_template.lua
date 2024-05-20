@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.technology_data_template = {
 	{
 		name = "基礎研究",

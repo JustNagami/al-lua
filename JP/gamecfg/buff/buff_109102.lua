@@ -1,4 +1,27 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddAircraftAttr",
+			trigger = {
+				"onAircraftCreate",
+				"onAttach"
+			},
+			arg_list = {
+				attr = "CRI_TAG_EHC_ITEMHIT",
+				number = 0.05
+			}
+		},
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBulletCreate"
+			},
+			arg_list = {
+				attr = "CRI_TAG_EHC_ITEMHIT",
+				number = 0.05
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -257,28 +280,5 @@ return {
 	stack = 1,
 	id = 109102,
 	icon = 109100,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddAircraftAttr",
-			trigger = {
-				"onAircraftCreate",
-				"onAttach"
-			},
-			arg_list = {
-				attr = "CRI_TAG_EHC_ITEMHIT",
-				number = 0.05
-			}
-		},
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBulletCreate"
-			},
-			arg_list = {
-				attr = "CRI_TAG_EHC_ITEMHIT",
-				number = 0.05
-			}
-		}
-	}
+	last_effect = ""
 }

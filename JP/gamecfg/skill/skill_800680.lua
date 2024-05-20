@@ -1,4 +1,27 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleSkillEditTag",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				tag = "METASheffieldFire",
+				operation = -1
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetSelf"
+			},
+			arg_list = {
+				buff_id = 800683
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -346,28 +369,5 @@ return {
 	id = 800680,
 	picture = "1",
 	castCV = "skill",
-	desc = "",
-	effect_list = {
-		{
-			type = "BattleSkillEditTag",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				tag = "METASheffieldFire",
-				operation = -1
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetSelf"
-			},
-			arg_list = {
-				buff_id = 800683
-			}
-		}
-	}
+	desc = ""
 }

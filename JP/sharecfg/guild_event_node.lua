@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.guild_event_node = {
 	{
 		item = "sairendanchuan",

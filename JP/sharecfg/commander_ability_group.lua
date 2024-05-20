@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.commander_ability_group = {
 	[10] = {
 		id = 10,
@@ -22,6 +22,20 @@ pg.commander_ability_group = {
 			121,
 			122,
 			123
+		}
+	},
+	[13] = {
+		id = 13,
+		ability_list = {
+			131,
+			132
+		}
+	},
+	[14] = {
+		id = 14,
+		ability_list = {
+			141,
+			142
 		}
 	},
 	[20] = {
@@ -190,6 +204,14 @@ pg.commander_ability_group = {
 			751,
 			752,
 			753
+		}
+	},
+	[76] = {
+		id = 76,
+		ability_list = {
+			761,
+			762,
+			763
 		}
 	},
 	[80] = {
@@ -422,10 +444,24 @@ pg.commander_ability_group = {
 			5131
 		}
 	},
+	[514] = {
+		id = 514,
+		ability_list = {
+			5141
+		}
+	},
+	[515] = {
+		id = 515,
+		ability_list = {
+			5151
+		}
+	},
 	all = {
 		10,
 		11,
 		12,
+		13,
+		14,
 		20,
 		21,
 		22,
@@ -447,6 +483,7 @@ pg.commander_ability_group = {
 		73,
 		74,
 		75,
+		76,
 		80,
 		81,
 		82,
@@ -478,6 +515,8 @@ pg.commander_ability_group = {
 		510,
 		511,
 		512,
-		513
+		513,
+		514,
+		515
 	}
 }

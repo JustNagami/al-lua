@@ -1,20 +1,9 @@
-return {
-	{},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 800815,
-	icon = 800810,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
 			trigger = {
-				"onStartGame"
+				"onSubmarineRaid"
 			},
 			arg_list = {
 				skill_id = 800815,
@@ -36,5 +25,16 @@ return {
 				skill_id = 800811
 			}
 		}
-	}
+	},
+	{},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 800815,
+	icon = 800810,
+	last_effect = ""
 }

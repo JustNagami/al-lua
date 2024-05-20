@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "",
 	name = "隐形装甲",
 	time = 8,
@@ -13,7 +13,7 @@ return {
 		{
 			type = "BattleBuffFixDamage",
 			trigger = {
-				"onTakeDamage"
+				"onBeforeTakeDamage"
 			},
 			arg_list = {
 				value = 1,

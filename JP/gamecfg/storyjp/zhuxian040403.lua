@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "ZHUXIAN040403",
 	mode = 2,
 	once = true,
@@ -427,6 +427,12 @@ return {
 				time = 1
 			}
 		},
+		effects = {
+			{
+				active = true,
+				name = "UIhuohua"
+			}
+		},
 		{
 			side = 1,
 			actorName = "エンタープライズ",
@@ -844,12 +850,6 @@ return {
 			painting = {
 				alpha = 0.3,
 				time = 1
-			}
-		},
-		effects = {
-			{
-				active = true,
-				name = "UIhuohua"
 			}
 		}
 	}

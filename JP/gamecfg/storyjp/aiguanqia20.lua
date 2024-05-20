@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "AIGUANQIA20",
 	mode = 2,
 	fadein = 1.5,

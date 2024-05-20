@@ -1,7 +1,7 @@
 _G.pg.base.equip_data_statistics[2] = {
 	type = 3,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	tech = 1,
 	rarity = 2,
 	ammo = 5,
@@ -34,7 +34,7 @@ _G.pg.base.equip_data_statistics[2] = {
 _G.pg.base.equip_data_statistics[3] = {
 	type = 3,
 	name = "0",
-	speciality = "拡散",
+	speciality = "<[SCA]>",
 	tech = 1,
 	rarity = 2,
 	ammo = 5,
@@ -69,7 +69,7 @@ _G.pg.base.equip_data_statistics[3] = {
 _G.pg.base.equip_data_statistics[4] = {
 	type = 4,
 	name = "0",
-	speciality = "砲撃",
+	speciality = "<[FP]>",
 	tech = 1,
 	rarity = 5,
 	ammo = 5,
@@ -106,7 +106,7 @@ _G.pg.base.equip_data_statistics[4] = {
 _G.pg.base.equip_data_statistics[5] = {
 	type = 4,
 	name = "0",
-	speciality = "砲撃",
+	speciality = "<[FP]>",
 	tech = 1,
 	rarity = 3,
 	ammo = 5,
@@ -143,7 +143,7 @@ _G.pg.base.equip_data_statistics[5] = {
 _G.pg.base.equip_data_statistics[6] = {
 	type = 5,
 	name = "0",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 2,
 	ammo = 5,
@@ -187,7 +187,7 @@ _G.pg.base.equip_data_statistics[6] = {
 _G.pg.base.equip_data_statistics[7] = {
 	type = 5,
 	name = "0",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 2,
 	ammo = 5,
@@ -231,7 +231,7 @@ _G.pg.base.equip_data_statistics[7] = {
 _G.pg.base.equip_data_statistics[8] = {
 	type = 3,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	tech = 1,
 	rarity = 2,
 	ammo = 5,
@@ -264,7 +264,7 @@ _G.pg.base.equip_data_statistics[8] = {
 _G.pg.base.equip_data_statistics[20] = {
 	type = 5,
 	name = "0",
-	speciality = "雷撃",
+	speciality = "<[LOCK]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -308,7 +308,7 @@ _G.pg.base.equip_data_statistics[20] = {
 _G.pg.base.equip_data_statistics[21] = {
 	type = 5,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -352,7 +352,7 @@ _G.pg.base.equip_data_statistics[21] = {
 _G.pg.base.equip_data_statistics[22] = {
 	type = 5,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -396,7 +396,7 @@ _G.pg.base.equip_data_statistics[22] = {
 _G.pg.base.equip_data_statistics[100] = {
 	tech = 1,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 5,
@@ -444,7 +444,7 @@ _G.pg.base.equip_data_statistics[100] = {
 _G.pg.base.equip_data_statistics[101] = {
 	tech = 1,
 	name = "0",
-	speciality = "拡散",
+	speciality = "<[SCA]>",
 	type = 2,
 	rarity = 1,
 	ammo = 5,
@@ -483,7 +483,7 @@ _G.pg.base.equip_data_statistics[101] = {
 _G.pg.base.equip_data_statistics[102] = {
 	tech = 1,
 	name = "0",
-	speciality = "通常",
+	speciality = "<[NORM]>",
 	type = 3,
 	rarity = 1,
 	ammo = 5,
@@ -521,7 +521,7 @@ _G.pg.base.equip_data_statistics[102] = {
 _G.pg.base.equip_data_statistics[103] = {
 	tech = 1,
 	name = "0",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	rarity = 1,
 	ammo = 5,
@@ -561,11 +561,11 @@ _G.pg.base.equip_data_statistics[103] = {
 _G.pg.base.equip_data_statistics[104] = {
 	tech = 1,
 	name = "0",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	rarity = 1,
 	ammo = 5,
-	damage = "4/回",
+	damage = "4<[WAVE]>",
 	nationality = 0,
 	descrip = "デフォルト装備",
 	id = 104,
@@ -622,7 +622,7 @@ _G.pg.base.equip_data_statistics[104] = {
 _G.pg.base.equip_data_statistics[105] = {
 	tech = 1,
 	name = "0",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	rarity = 1,
 	ammo = 5,
@@ -670,7 +670,7 @@ _G.pg.base.equip_data_statistics[105] = {
 _G.pg.base.equip_data_statistics[106] = {
 	tech = 1,
 	name = "0",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	rarity = 1,
 	ammo = 5,
@@ -718,7 +718,7 @@ _G.pg.base.equip_data_statistics[106] = {
 _G.pg.base.equip_data_statistics[107] = {
 	tech = 1,
 	name = "0",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	rarity = 1,
 	ammo = 5,
@@ -766,7 +766,7 @@ _G.pg.base.equip_data_statistics[107] = {
 _G.pg.base.equip_data_statistics[108] = {
 	tech = 1,
 	name = "0",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	rarity = 1,
 	ammo = 5,
@@ -814,7 +814,7 @@ _G.pg.base.equip_data_statistics[108] = {
 _G.pg.base.equip_data_statistics[109] = {
 	type = 7,
 	name = "0",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -853,7 +853,7 @@ _G.pg.base.equip_data_statistics[109] = {
 _G.pg.base.equip_data_statistics[110] = {
 	type = 8,
 	name = "0",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -891,7 +891,7 @@ _G.pg.base.equip_data_statistics[110] = {
 _G.pg.base.equip_data_statistics[111] = {
 	type = 9,
 	name = "0",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -929,7 +929,7 @@ _G.pg.base.equip_data_statistics[111] = {
 _G.pg.base.equip_data_statistics[113] = {
 	type = 7,
 	name = "0",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -968,7 +968,7 @@ _G.pg.base.equip_data_statistics[113] = {
 _G.pg.base.equip_data_statistics[114] = {
 	type = 8,
 	name = "0",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1006,7 +1006,7 @@ _G.pg.base.equip_data_statistics[114] = {
 _G.pg.base.equip_data_statistics[115] = {
 	type = 9,
 	name = "0",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1044,7 +1044,7 @@ _G.pg.base.equip_data_statistics[115] = {
 _G.pg.base.equip_data_statistics[117] = {
 	type = 7,
 	name = "0",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1083,7 +1083,7 @@ _G.pg.base.equip_data_statistics[117] = {
 _G.pg.base.equip_data_statistics[118] = {
 	type = 8,
 	name = "0",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1121,7 +1121,7 @@ _G.pg.base.equip_data_statistics[118] = {
 _G.pg.base.equip_data_statistics[119] = {
 	type = 9,
 	name = "0",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1159,7 +1159,7 @@ _G.pg.base.equip_data_statistics[119] = {
 _G.pg.base.equip_data_statistics[121] = {
 	type = 7,
 	name = "0",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1198,7 +1198,7 @@ _G.pg.base.equip_data_statistics[121] = {
 _G.pg.base.equip_data_statistics[122] = {
 	type = 8,
 	name = "0",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1236,7 +1236,7 @@ _G.pg.base.equip_data_statistics[122] = {
 _G.pg.base.equip_data_statistics[123] = {
 	type = 9,
 	name = "0",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1274,7 +1274,7 @@ _G.pg.base.equip_data_statistics[123] = {
 _G.pg.base.equip_data_statistics[125] = {
 	type = 7,
 	name = "0",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1313,7 +1313,7 @@ _G.pg.base.equip_data_statistics[125] = {
 _G.pg.base.equip_data_statistics[126] = {
 	type = 8,
 	name = "0",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1351,7 +1351,7 @@ _G.pg.base.equip_data_statistics[126] = {
 _G.pg.base.equip_data_statistics[127] = {
 	type = 9,
 	name = "0",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1389,7 +1389,7 @@ _G.pg.base.equip_data_statistics[127] = {
 _G.pg.base.equip_data_statistics[140] = {
 	tech = 1,
 	name = "0",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	rarity = 1,
 	ammo = 5,
@@ -1428,7 +1428,7 @@ _G.pg.base.equip_data_statistics[140] = {
 _G.pg.base.equip_data_statistics[141] = {
 	type = 10,
 	name = "0",
-	speciality = "対潜",
+	speciality = "<[ASW]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1460,7 +1460,7 @@ _G.pg.base.equip_data_statistics[141] = {
 _G.pg.base.equip_data_statistics[144] = {
 	type = 12,
 	name = "0",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	attribute_3 = "air",
 	ammo = 5,
@@ -1497,7 +1497,7 @@ _G.pg.base.equip_data_statistics[144] = {
 _G.pg.base.equip_data_statistics[147] = {
 	type = 10,
 	name = "0",
-	speciality = "対潜",
+	speciality = "<[ASW]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1529,7 +1529,7 @@ _G.pg.base.equip_data_statistics[147] = {
 _G.pg.base.equip_data_statistics[148] = {
 	type = 7,
 	name = "0",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1568,7 +1568,7 @@ _G.pg.base.equip_data_statistics[148] = {
 _G.pg.base.equip_data_statistics[149] = {
 	type = 8,
 	name = "0",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1606,7 +1606,7 @@ _G.pg.base.equip_data_statistics[149] = {
 _G.pg.base.equip_data_statistics[150] = {
 	type = 9,
 	name = "0",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1644,7 +1644,7 @@ _G.pg.base.equip_data_statistics[150] = {
 _G.pg.base.equip_data_statistics[152] = {
 	type = 12,
 	name = "0",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1678,7 +1678,7 @@ _G.pg.base.equip_data_statistics[152] = {
 _G.pg.base.equip_data_statistics[153] = {
 	type = 7,
 	name = "0",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1717,7 +1717,7 @@ _G.pg.base.equip_data_statistics[153] = {
 _G.pg.base.equip_data_statistics[154] = {
 	type = 8,
 	name = "0",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1755,7 +1755,7 @@ _G.pg.base.equip_data_statistics[154] = {
 _G.pg.base.equip_data_statistics[155] = {
 	type = 9,
 	name = "0",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1790,14 +1790,51 @@ _G.pg.base.equip_data_statistics[155] = {
 		"DB"
 	}
 }
+_G.pg.base.equip_data_statistics[158] = {
+	tech = 1,
+	name = "0",
+	speciality = "<[VOL]>",
+	type = 4,
+	rarity = 1,
+	ammo = 5,
+	damage = "16 x 2",
+	nationality = 0,
+	descrip = "デフォルト装備",
+	id = 158,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		1
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		158
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		24
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"MOT",
+		"SF",
+		"MG"
+	}
+}
 _G.pg.base.equip_data_statistics[190] = {
 	tech = 1,
 	name = "测试远程 防空炮",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	rarity = 1,
 	ammo = 5,
-	damage = "4/轮",
+	damage = "4<[WAVE]>",
 	nationality = 0,
 	descrip = "默认装备",
 	id = 190,
@@ -1854,7 +1891,7 @@ _G.pg.base.equip_data_statistics[190] = {
 _G.pg.base.equip_data_statistics[201] = {
 	tech = 1,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 5,
@@ -1938,7 +1975,7 @@ _G.pg.base.equip_data_statistics[204] = {
 _G.pg.base.equip_data_statistics[211] = {
 	tech = 1,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 5,
@@ -2026,7 +2063,7 @@ _G.pg.base.equip_data_statistics[215] = {
 _G.pg.base.equip_data_statistics[221] = {
 	tech = 1,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 5,
@@ -2110,7 +2147,7 @@ _G.pg.base.equip_data_statistics[224] = {
 _G.pg.base.equip_data_statistics[231] = {
 	tech = 1,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 5,
@@ -2188,7 +2225,7 @@ _G.pg.base.equip_data_statistics[234] = {
 _G.pg.base.equip_data_statistics[251] = {
 	tech = 1,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 5,
@@ -2266,7 +2303,7 @@ _G.pg.base.equip_data_statistics[254] = {
 _G.pg.base.equip_data_statistics[261] = {
 	tech = 1,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 5,
@@ -2350,7 +2387,7 @@ _G.pg.base.equip_data_statistics[264] = {
 _G.pg.base.equip_data_statistics[271] = {
 	tech = 1,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 5,
@@ -2434,7 +2471,7 @@ _G.pg.base.equip_data_statistics[274] = {
 _G.pg.base.equip_data_statistics[301] = {
 	tech = 1,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 5,
@@ -2518,7 +2555,7 @@ _G.pg.base.equip_data_statistics[304] = {
 _G.pg.base.equip_data_statistics[311] = {
 	tech = 1,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 5,
@@ -2596,7 +2633,7 @@ _G.pg.base.equip_data_statistics[314] = {
 _G.pg.base.equip_data_statistics[321] = {
 	tech = 1,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 5,
@@ -2680,7 +2717,7 @@ _G.pg.base.equip_data_statistics[324] = {
 _G.pg.base.equip_data_statistics[331] = {
 	tech = 1,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 5,
@@ -2758,7 +2795,7 @@ _G.pg.base.equip_data_statistics[334] = {
 _G.pg.base.equip_data_statistics[351] = {
 	tech = 1,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 5,
@@ -2836,7 +2873,7 @@ _G.pg.base.equip_data_statistics[354] = {
 _G.pg.base.equip_data_statistics[371] = {
 	tech = 1,
 	name = "0",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 5,
@@ -2915,7 +2952,7 @@ _G.pg.base.equip_data_statistics[374] = {
 _G.pg.base.equip_data_statistics[391] = {
 	tech = 1,
 	name = "北联雷击重巡副炮T1",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 5,
@@ -2993,7 +3030,7 @@ _G.pg.base.equip_data_statistics[394] = {
 _G.pg.base.equip_data_statistics[430] = {
 	tech = 1,
 	name = "喀琅施塔得自带副炮",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 1,
@@ -3034,7 +3071,7 @@ _G.pg.base.equip_data_statistics[430] = {
 _G.pg.base.equip_data_statistics[431] = {
 	tech = 1,
 	name = "双联装128mmSKC41高平两用炮（奥丁副炮）",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 1,
@@ -3083,7 +3120,7 @@ _G.pg.base.equip_data_statistics[431] = {
 _G.pg.base.equip_data_statistics[432] = {
 	tech = 1,
 	name = "三联装SKC25式150mm主炮（奥丁副炮）",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 2,
 	rarity = 1,
 	ammo = 1,
@@ -3123,7 +3160,7 @@ _G.pg.base.equip_data_statistics[432] = {
 _G.pg.base.equip_data_statistics[433] = {
 	tech = 3,
 	name = "四联装533mm磁性鱼雷（模拟展示用）",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "四联装533mm磁性鱼雷，伯鲁克科技研发的特殊鱼雷，运用磁性引信和声导技术，能极大的提高鱼雷的命中率",
 	ammo = 4,
@@ -3177,7 +3214,7 @@ _G.pg.base.equip_data_statistics[433] = {
 _G.pg.base.equip_data_statistics[434] = {
 	tech = 0,
 	name = "试作型三联装234mm主炮（模拟展示用）",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -3222,7 +3259,7 @@ _G.pg.base.equip_data_statistics[434] = {
 _G.pg.base.equip_data_statistics[435] = {
 	tech = 1,
 	name = "皇家雷击轻巡副炮T4（模拟展示用）",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 5,
@@ -3270,7 +3307,7 @@ _G.pg.base.equip_data_statistics[435] = {
 _G.pg.base.equip_data_statistics[436] = {
 	tech = 1,
 	name = "P1突破后自带150mm副炮",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 2,
 	rarity = 1,
 	ammo = 1,
@@ -3308,11 +3345,11 @@ _G.pg.base.equip_data_statistics[436] = {
 _G.pg.base.equip_data_statistics[437] = {
 	tech = 1,
 	name = "应瑞肇和自带防空炮",
-	speciality = "近程",
+	speciality = "<[SRG]>",
 	type = 6,
 	rarity = 2,
 	ammo = 5,
-	damage = "19/轮",
+	damage = "19<[WAVE]>",
 	nationality = 2,
 	descrip = "说明未填写",
 	id = 437,
@@ -3369,7 +3406,7 @@ _G.pg.base.equip_data_statistics[437] = {
 _G.pg.base.equip_data_statistics[438] = {
 	tech = 1,
 	name = "埃吉尔自带强化型副炮",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 2,
 	rarity = 1,
 	ammo = 1,
@@ -3407,7 +3444,7 @@ _G.pg.base.equip_data_statistics[438] = {
 _G.pg.base.equip_data_statistics[439] = {
 	tech = 1,
 	name = "奈美子自带征战巨坦副炮",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 2,
 	rarity = 1,
 	ammo = 1,
@@ -3443,7 +3480,7 @@ _G.pg.base.equip_data_statistics[439] = {
 _G.pg.base.equip_data_statistics[440] = {
 	tech = 3,
 	name = "征战巨坦自带主炮-类152MK5",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 2,
 	rarity = 5,
 	ammo = 2,
@@ -3502,7 +3539,7 @@ _G.pg.base.equip_data_statistics[440] = {
 _G.pg.base.equip_data_statistics[441] = {
 	tech = 3,
 	name = "爆裂钻孔机自带鱼雷-类四联装533mm磁雷",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "默认装备",
 	ammo = 4,
@@ -3570,11 +3607,11 @@ _G.pg.base.equip_data_statistics[441] = {
 _G.pg.base.equip_data_statistics[442] = {
 	tech = 0,
 	name = "苍穹喷射机自带防空炮-类六联博福斯",
-	speciality = "近程",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "说明未填写",
 	ammo = 5,
-	damage = "150/轮",
+	damage = "150<[WAVE]>",
 	nationality = 2,
 	rarity = 5,
 	id = 442,
@@ -3637,7 +3674,7 @@ _G.pg.base.equip_data_statistics[442] = {
 _G.pg.base.equip_data_statistics[446] = {
 	tech = 1,
 	name = "格奈META特殊副炮",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 1,
@@ -3686,7 +3723,7 @@ _G.pg.base.equip_data_statistics[446] = {
 _G.pg.base.equip_data_statistics[447] = {
 	tech = 1,
 	name = "P2突破后自带150mm副炮",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 2,
 	rarity = 1,
 	ammo = 1,
@@ -3724,7 +3761,7 @@ _G.pg.base.equip_data_statistics[447] = {
 _G.pg.base.equip_data_statistics[448] = {
 	tech = 1,
 	name = "单联鱼雷",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	type = 5,
 	rarity = 1,
 	ammo = 5,
@@ -3772,7 +3809,7 @@ _G.pg.base.equip_data_statistics[448] = {
 _G.pg.base.equip_data_statistics[449] = {
 	tech = 1,
 	name = "展示用双联主炮",
-	speciality = "跨射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "默认装备",
 	ammo = 3,
@@ -3818,7 +3855,7 @@ _G.pg.base.equip_data_statistics[449] = {
 _G.pg.base.equip_data_statistics[450] = {
 	type = 2,
 	name = "征战巨坦自带主炮-类152MK5+3",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	tech = 3,
 	rarity = 5,
 	ammo = 2,
@@ -3912,7 +3949,7 @@ _G.pg.base.equip_data_statistics[454] = {
 _G.pg.base.equip_data_statistics[455] = {
 	rarity = 5,
 	name = "钻孔机自带鱼雷-类四联磁+3",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	type = 5,
 	tech = 3,
 	ammo = 4,
@@ -4015,7 +4052,7 @@ _G.pg.base.equip_data_statistics[459] = {
 _G.pg.base.equip_data_statistics[460] = {
 	rarity = 5,
 	name = "VIT自带防空炮-类六联博福斯+3",
-	speciality = "近程",
+	speciality = "<[SRG]>",
 	type = 6,
 	tech = 0,
 	ammo = 5,
@@ -4117,7 +4154,7 @@ _G.pg.base.equip_data_statistics[464] = {
 _G.pg.base.equip_data_statistics[465] = {
 	tech = 1,
 	name = "布雷斯特后向副炮",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 2,
 	rarity = 1,
 	ammo = 1,
@@ -4155,7 +4192,7 @@ _G.pg.base.equip_data_statistics[465] = {
 _G.pg.base.equip_data_statistics[466] = {
 	tech = 3,
 	name = "火球替换鱼雷",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "默认装备",
 	ammo = 4,
@@ -4223,7 +4260,7 @@ _G.pg.base.equip_data_statistics[466] = {
 _G.pg.base.equip_data_statistics[467] = {
 	rarity = 5,
 	name = "雷球替换防空",
-	speciality = "近程",
+	speciality = "<[SRG]>",
 	type = 6,
 	tech = 0,
 	ammo = 5,
@@ -4289,7 +4326,7 @@ _G.pg.base.equip_data_statistics[467] = {
 _G.pg.base.equip_data_statistics[468] = {
 	tech = 0,
 	name = "哈曼II自带刺猬弹",
-	speciality = "反潜",
+	speciality = "<[ASW]>",
 	type = 14,
 	descrip = "说明未填写",
 	ammo = 9,
@@ -4343,11 +4380,11 @@ _G.pg.base.equip_data_statistics[468] = {
 _G.pg.base.equip_data_statistics[469] = {
 	tech = 0,
 	name = "摩耶特殊兵装专属特殊防空炮",
-	speciality = "近程",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "说明未填写",
 	ammo = 5,
-	damage = "124/轮",
+	damage = "124<[WAVE]>",
 	nationality = 3,
 	rarity = 5,
 	id = 469,
@@ -4410,7 +4447,7 @@ _G.pg.base.equip_data_statistics[469] = {
 _G.pg.base.equip_data_statistics[470] = {
 	type = 10,
 	name = "英雄满破强化深弹",
-	speciality = "反潜",
+	speciality = "<[ASW]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -4442,7 +4479,7 @@ _G.pg.base.equip_data_statistics[470] = {
 _G.pg.base.equip_data_statistics[471] = {
 	tech = 1,
 	name = "革律翁用双联装副炮",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 1,
@@ -4491,11 +4528,11 @@ _G.pg.base.equip_data_statistics[471] = {
 _G.pg.base.equip_data_statistics[472] = {
 	tech = 0,
 	name = "150mm五式炮自带防空炮",
-	speciality = "近程",
+	speciality = "<[SRG]>",
 	type = 6,
 	rarity = 5,
 	ammo = 5,
-	damage = "85/轮",
+	damage = "85<[WAVE]>",
 	nationality = 3,
 	descrip = "说明未填写",
 	id = 472,
@@ -4572,10 +4609,59 @@ _G.pg.base.equip_data_statistics[479] = {
 		479
 	}
 }
+_G.pg.base.equip_data_statistics[486] = {
+	tech = 1,
+	name = "投影「罗德尼」短距近防",
+	speciality = "<[LOCK]>",
+	type = 1,
+	rarity = 1,
+	ammo = 1,
+	damage = "15 x 2",
+	nationality = 4,
+	descrip = "默认装备",
+	id = 486,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		2
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		486
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {
+		"HMS",
+		"CL",
+		"MG",
+		"AP"
+	}
+}
 _G.pg.base.equip_data_statistics[500] = {
 	type = 10,
 	name = "ビーバーズエムブレム",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 25,
 	ammo = 10,
@@ -4706,7 +4792,7 @@ _G.pg.base.equip_data_statistics[513] = {
 _G.pg.base.equip_data_statistics[520] = {
 	type = 10,
 	name = "真珠の涙",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -4823,7 +4909,7 @@ _G.pg.base.equip_data_statistics[533] = {
 _G.pg.base.equip_data_statistics[540] = {
 	type = 10,
 	name = "猫パンチ",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -4939,7 +5025,7 @@ _G.pg.base.equip_data_statistics[553] = {
 _G.pg.base.equip_data_statistics[580] = {
 	type = 10,
 	name = "九一式徹甲弾",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 4,
 	ammo = 10,
@@ -5061,7 +5147,7 @@ _G.pg.base.equip_data_statistics[591] = {
 _G.pg.base.equip_data_statistics[600] = {
 	type = 10,
 	name = "一式徹甲弾",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 6,
 	ammo = 10,
@@ -5198,7 +5284,7 @@ _G.pg.base.equip_data_statistics[613] = {
 _G.pg.base.equip_data_statistics[620] = {
 	type = 10,
 	name = "SHS",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -5322,7 +5408,7 @@ _G.pg.base.equip_data_statistics[633] = {
 _G.pg.base.equip_data_statistics[640] = {
 	type = 10,
 	name = "Z旗",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	rarity = 6,
 	descrip = "無勢を挫く幸運、揺るがない意志、必勝を信じる正義――旗を高く掲げ、いざ戦場へ！",
@@ -5462,7 +5548,7 @@ _G.pg.base.equip_data_statistics[653] = {
 _G.pg.base.equip_data_statistics[660] = {
 	type = 10,
 	name = "100/150航空燃料",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -5572,7 +5658,7 @@ _G.pg.base.equip_data_statistics[671] = {
 _G.pg.base.equip_data_statistics[680] = {
 	type = 10,
 	name = "ホーミングビーコン",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -5682,7 +5768,7 @@ _G.pg.base.equip_data_statistics[691] = {
 _G.pg.base.equip_data_statistics[700] = {
 	type = 10,
 	name = "九八式発砲遅延装置",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -5794,7 +5880,7 @@ _G.pg.base.equip_data_statistics[711] = {
 _G.pg.base.equip_data_statistics[720] = {
 	type = 10,
 	name = "約束の証明",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 80,
 	ammo = 10,
@@ -5935,7 +6021,7 @@ _G.pg.base.equip_data_statistics[733] = {
 _G.pg.base.equip_data_statistics[740] = {
 	type = 17,
 	name = "Fl 282",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -6038,7 +6124,7 @@ _G.pg.base.equip_data_statistics[751] = {
 _G.pg.base.equip_data_statistics[760] = {
 	type = 10,
 	name = "偵察レポート・NY周辺海域",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 50,
 	ammo = 10,
@@ -6151,7 +6237,7 @@ _G.pg.base.equip_data_statistics[771] = {
 _G.pg.base.equip_data_statistics[780] = {
 	type = 10,
 	name = "情報レポート・北極要塞",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 100,
 	ammo = 10,
@@ -6264,7 +6350,7 @@ _G.pg.base.equip_data_statistics[791] = {
 _G.pg.base.equip_data_statistics[800] = {
 	type = 10,
 	name = "強化耐圧殻設計案",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	rarity = 4,
 	descrip = "再設計された耐圧殻によって船体強度が強化し、速力と最大航続距離が向上した",
@@ -6377,7 +6463,7 @@ _G.pg.base.equip_data_statistics[810] = {
 _G.pg.base.equip_data_statistics[820] = {
 	type = 10,
 	name = "フロンティアメダル",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 20,
 	ammo = 10,
@@ -6512,7 +6598,7 @@ _G.pg.base.equip_data_statistics[833] = {
 _G.pg.base.equip_data_statistics[840] = {
 	type = 10,
 	name = "精鋭ダメコン饅頭(ユニオン)",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 8,
 	ammo = 10,
@@ -6642,7 +6728,7 @@ _G.pg.base.equip_data_statistics[853] = {
 _G.pg.base.equip_data_statistics[860] = {
 	type = 10,
 	name = "海軍条約文書",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 12,
 	ammo = 10,
@@ -6770,7 +6856,7 @@ _G.pg.base.equip_data_statistics[873] = {
 _G.pg.base.equip_data_statistics[880] = {
 	type = 10,
 	name = "サイン・オブ・ビクトリー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 8,
 	ammo = 10,
@@ -6908,7 +6994,7 @@ _G.pg.base.equip_data_statistics[893] = {
 _G.pg.base.equip_data_statistics[940] = {
 	type = 10,
 	name = "作戦記録：AF",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -7010,7 +7096,7 @@ _G.pg.base.equip_data_statistics[951] = {
 _G.pg.base.equip_data_statistics[960] = {
 	type = 10,
 	name = "FuMO 25",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 8,
 	ammo = 10,
@@ -7145,7 +7231,7 @@ _G.pg.base.equip_data_statistics[973] = {
 _G.pg.base.equip_data_statistics[980] = {
 	type = 10,
 	name = "情報レポート・調査日誌",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 100,
 	ammo = 10,
@@ -7259,7 +7345,7 @@ _G.pg.base.equip_data_statistics[991] = {
 _G.pg.base.equip_data_statistics[1000] = {
 	type = 10,
 	name = "艦艇修理施設",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 0,
 	ammo = 10,
@@ -7333,7 +7419,7 @@ _G.pg.base.equip_data_statistics[1006] = {
 _G.pg.base.equip_data_statistics[1020] = {
 	type = 10,
 	name = "艦艇修理施設",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 0,
 	ammo = 10,
@@ -7431,7 +7517,7 @@ _G.pg.base.equip_data_statistics[1030] = {
 _G.pg.base.equip_data_statistics[1040] = {
 	type = 10,
 	name = "艦艇修理施設",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 0,
 	ammo = 10,
@@ -7550,7 +7636,7 @@ _G.pg.base.equip_data_statistics[1053] = {
 _G.pg.base.equip_data_statistics[1060] = {
 	type = 10,
 	name = "6CRH徹甲弾",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 11,
 	ammo = 10,
@@ -7689,7 +7775,7 @@ _G.pg.base.equip_data_statistics[1073] = {
 _G.pg.base.equip_data_statistics[1100] = {
 	type = 10,
 	name = "対空レーダー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 0,
 	ammo = 10,
@@ -7775,7 +7861,7 @@ _G.pg.base.equip_data_statistics[1103] = {
 _G.pg.base.equip_data_statistics[1120] = {
 	type = 10,
 	name = "対空レーダー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 0,
 	ammo = 10,
@@ -7876,7 +7962,7 @@ _G.pg.base.equip_data_statistics[1126] = {
 _G.pg.base.equip_data_statistics[1140] = {
 	type = 10,
 	name = "対空レーダー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 0,
 	ammo = 10,
@@ -8003,7 +8089,7 @@ _G.pg.base.equip_data_statistics[1151] = {
 _G.pg.base.equip_data_statistics[1160] = {
 	type = 10,
 	name = "高性能対空レーダー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -8146,7 +8232,7 @@ _G.pg.base.equip_data_statistics[1173] = {
 _G.pg.base.equip_data_statistics[1200] = {
 	type = 10,
 	name = "火器管制レーダー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 3,
 	ammo = 10,
@@ -8214,7 +8300,7 @@ _G.pg.base.equip_data_statistics[1203] = {
 _G.pg.base.equip_data_statistics[1220] = {
 	type = 10,
 	name = "火器管制レーダー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 5,
 	ammo = 10,
@@ -8302,7 +8388,7 @@ _G.pg.base.equip_data_statistics[1226] = {
 _G.pg.base.equip_data_statistics[1240] = {
 	type = 10,
 	name = "火器管制レーダー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 8,
 	ammo = 10,
@@ -8421,7 +8507,7 @@ _G.pg.base.equip_data_statistics[1251] = {
 _G.pg.base.equip_data_statistics[1260] = {
 	type = 10,
 	name = "高性能火器管制レーダー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 12,
 	ammo = 10,
@@ -8550,7 +8636,7 @@ _G.pg.base.equip_data_statistics[1273] = {
 _G.pg.base.equip_data_statistics[1300] = {
 	type = 10,
 	name = "バルジ",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 0,
 	ammo = 10,
@@ -8628,7 +8714,7 @@ _G.pg.base.equip_data_statistics[1303] = {
 _G.pg.base.equip_data_statistics[1320] = {
 	type = 10,
 	name = "バルジ",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 0,
 	ammo = 10,
@@ -8724,7 +8810,7 @@ _G.pg.base.equip_data_statistics[1326] = {
 _G.pg.base.equip_data_statistics[1340] = {
 	type = 10,
 	name = "バルジ",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 0,
 	ammo = 10,
@@ -8851,7 +8937,7 @@ _G.pg.base.equip_data_statistics[1351] = {
 _G.pg.base.equip_data_statistics[1400] = {
 	type = 10,
 	name = "油圧カタパルト",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 18,
 	ammo = 10,
@@ -8934,7 +9020,7 @@ _G.pg.base.equip_data_statistics[1406] = {
 _G.pg.base.equip_data_statistics[1420] = {
 	type = 10,
 	name = "油圧カタパルト",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 20,
 	ammo = 10,
@@ -9045,7 +9131,7 @@ _G.pg.base.equip_data_statistics[1430] = {
 _G.pg.base.equip_data_statistics[1440] = {
 	type = 10,
 	name = "油圧カタパルト",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 25,
 	ammo = 10,
@@ -9180,7 +9266,7 @@ _G.pg.base.equip_data_statistics[1453] = {
 _G.pg.base.equip_data_statistics[1500] = {
 	type = 10,
 	name = "SGレーダー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 2,
 	ammo = 10,
@@ -9290,7 +9376,7 @@ _G.pg.base.equip_data_statistics[1506] = {
 _G.pg.base.equip_data_statistics[1520] = {
 	type = 10,
 	name = "SGレーダー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 4,
 	ammo = 10,
@@ -9423,7 +9509,7 @@ _G.pg.base.equip_data_statistics[1530] = {
 _G.pg.base.equip_data_statistics[1540] = {
 	type = 10,
 	name = "SGレーダー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 6,
 	ammo = 10,
@@ -9577,7 +9663,7 @@ _G.pg.base.equip_data_statistics[1553] = {
 _G.pg.base.equip_data_statistics[1600] = {
 	type = 10,
 	name = "電気式揚弾機",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 0,
 	ammo = 10,
@@ -9664,7 +9750,7 @@ _G.pg.base.equip_data_statistics[1603] = {
 _G.pg.base.equip_data_statistics[1620] = {
 	type = 10,
 	name = "電気式揚弾機",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 1,
 	ammo = 10,
@@ -9749,7 +9835,7 @@ _G.pg.base.equip_data_statistics[1623] = {
 _G.pg.base.equip_data_statistics[1640] = {
 	type = 10,
 	name = "電気式揚弾機",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 3,
 	ammo = 10,
@@ -9861,7 +9947,7 @@ _G.pg.base.equip_data_statistics[1647] = {
 _G.pg.base.equip_data_statistics[1700] = {
 	type = 10,
 	name = "油圧舵",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 14,
 	ammo = 10,
@@ -9950,7 +10036,7 @@ _G.pg.base.equip_data_statistics[1703] = {
 _G.pg.base.equip_data_statistics[1720] = {
 	type = 10,
 	name = "油圧舵",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 16,
 	ammo = 10,
@@ -10039,7 +10125,7 @@ _G.pg.base.equip_data_statistics[1723] = {
 _G.pg.base.equip_data_statistics[1740] = {
 	type = 10,
 	name = "油圧舵",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 20,
 	ammo = 10,
@@ -10157,7 +10243,7 @@ _G.pg.base.equip_data_statistics[1747] = {
 _G.pg.base.equip_data_statistics[1760] = {
 	type = 10,
 	name = "強化油圧舵",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 24,
 	ammo = 10,
@@ -10323,7 +10409,7 @@ _G.pg.base.equip_data_statistics[1773] = {
 _G.pg.base.equip_data_statistics[1800] = {
 	type = 10,
 	name = "改良型缶",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 1,
 	ammo = 10,
@@ -10410,7 +10496,7 @@ _G.pg.base.equip_data_statistics[1803] = {
 _G.pg.base.equip_data_statistics[1820] = {
 	type = 10,
 	name = "改良型缶",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 2,
 	ammo = 10,
@@ -10519,7 +10605,7 @@ _G.pg.base.equip_data_statistics[1826] = {
 _G.pg.base.equip_data_statistics[1840] = {
 	type = 10,
 	name = "改良型缶",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 3,
 	ammo = 10,
@@ -10665,7 +10751,7 @@ _G.pg.base.equip_data_statistics[1851] = {
 _G.pg.base.equip_data_statistics[1900] = {
 	type = 10,
 	name = "迷彩塗装",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 14,
 	ammo = 10,
@@ -10718,7 +10804,7 @@ _G.pg.base.equip_data_statistics[1903] = {
 _G.pg.base.equip_data_statistics[1920] = {
 	type = 10,
 	name = "迷彩塗装",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 16,
 	ammo = 10,
@@ -10771,7 +10857,7 @@ _G.pg.base.equip_data_statistics[1923] = {
 _G.pg.base.equip_data_statistics[1940] = {
 	type = 10,
 	name = "迷彩塗装",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 20,
 	ammo = 10,
@@ -10853,7 +10939,7 @@ _G.pg.base.equip_data_statistics[1947] = {
 _G.pg.base.equip_data_statistics[1960] = {
 	type = 10,
 	name = "マリニエール魂（迷彩）",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 35,
 	ammo = 10,
@@ -10965,7 +11051,7 @@ _G.pg.base.equip_data_statistics[1971] = {
 _G.pg.base.equip_data_statistics[2000] = {
 	type = 10,
 	name = "燃料フィルター",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 2,
 	ammo = 10,
@@ -11052,7 +11138,7 @@ _G.pg.base.equip_data_statistics[2003] = {
 _G.pg.base.equip_data_statistics[2020] = {
 	type = 10,
 	name = "燃料フィルター",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 2,
 	ammo = 10,
@@ -11160,7 +11246,7 @@ _G.pg.base.equip_data_statistics[2026] = {
 _G.pg.base.equip_data_statistics[2040] = {
 	type = 10,
 	name = "燃料フィルター",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 2,
 	ammo = 10,
@@ -11304,7 +11390,7 @@ _G.pg.base.equip_data_statistics[2051] = {
 _G.pg.base.equip_data_statistics[2100] = {
 	type = 10,
 	name = "空母燃料タンク",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 14,
 	ammo = 10,
@@ -11368,7 +11454,7 @@ _G.pg.base.equip_data_statistics[2103] = {
 _G.pg.base.equip_data_statistics[2120] = {
 	type = 10,
 	name = "空母燃料タンク",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 16,
 	ammo = 10,
@@ -11453,7 +11539,7 @@ _G.pg.base.equip_data_statistics[2126] = {
 _G.pg.base.equip_data_statistics[2140] = {
 	type = 10,
 	name = "空母燃料タンク",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 20,
 	ammo = 10,
@@ -11574,7 +11660,7 @@ _G.pg.base.equip_data_statistics[2151] = {
 _G.pg.base.equip_data_statistics[2200] = {
 	type = 10,
 	name = "自動装填機構",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 1,
 	ammo = 10,
@@ -11657,7 +11743,7 @@ _G.pg.base.equip_data_statistics[2203] = {
 _G.pg.base.equip_data_statistics[2220] = {
 	type = 10,
 	name = "自動装填機構",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 2,
 	ammo = 10,
@@ -11762,7 +11848,7 @@ _G.pg.base.equip_data_statistics[2226] = {
 _G.pg.base.equip_data_statistics[2240] = {
 	type = 10,
 	name = "自動装填機構",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 3,
 	ammo = 10,
@@ -11903,7 +11989,7 @@ _G.pg.base.equip_data_statistics[2251] = {
 _G.pg.base.equip_data_statistics[2300] = {
 	type = 10,
 	name = "ジャイロスコープ",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 1,
 	ammo = 10,
@@ -11985,7 +12071,7 @@ _G.pg.base.equip_data_statistics[2303] = {
 _G.pg.base.equip_data_statistics[2320] = {
 	type = 10,
 	name = "ジャイロスコープ",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 2,
 	ammo = 10,
@@ -12090,7 +12176,7 @@ _G.pg.base.equip_data_statistics[2326] = {
 _G.pg.base.equip_data_statistics[2340] = {
 	type = 10,
 	name = "ジャイロスコープ",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 3,
 	ammo = 10,
@@ -12232,7 +12318,7 @@ _G.pg.base.equip_data_statistics[2351] = {
 _G.pg.base.equip_data_statistics[2400] = {
 	type = 10,
 	name = "応急修理装置",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 0,
 	ammo = 10,
@@ -12284,7 +12370,7 @@ _G.pg.base.equip_data_statistics[2403] = {
 _G.pg.base.equip_data_statistics[2420] = {
 	type = 10,
 	name = "応急修理装置",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 0,
 	ammo = 10,
@@ -12354,7 +12440,7 @@ _G.pg.base.equip_data_statistics[2426] = {
 _G.pg.base.equip_data_statistics[2440] = {
 	type = 10,
 	name = "応急修理装置",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 0,
 	ammo = 10,
@@ -12455,7 +12541,7 @@ _G.pg.base.equip_data_statistics[2451] = {
 _G.pg.base.equip_data_statistics[2500] = {
 	type = 10,
 	name = "消火装置",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 0,
 	ammo = 10,
@@ -12507,7 +12593,7 @@ _G.pg.base.equip_data_statistics[2503] = {
 _G.pg.base.equip_data_statistics[2520] = {
 	type = 10,
 	name = "消火装置",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 0,
 	ammo = 10,
@@ -12559,7 +12645,7 @@ _G.pg.base.equip_data_statistics[2523] = {
 _G.pg.base.equip_data_statistics[2540] = {
 	type = 10,
 	name = "消火装置",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 0,
 	ammo = 10,
@@ -12635,7 +12721,7 @@ _G.pg.base.equip_data_statistics[2547] = {
 _G.pg.base.equip_data_statistics[2600] = {
 	type = 10,
 	name = "九三式酸素魚雷",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 3,
 	ammo = 10,
@@ -12759,7 +12845,7 @@ _G.pg.base.equip_data_statistics[2610] = {
 _G.pg.base.equip_data_statistics[2620] = {
 	type = 10,
 	name = "九三式酸素魚雷",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 3,
 	ammo = 10,
@@ -12888,7 +12974,7 @@ _G.pg.base.equip_data_statistics[2630] = {
 _G.pg.base.equip_data_statistics[2640] = {
 	type = 10,
 	name = "九三式酸素魚雷",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 3,
 	ammo = 10,
@@ -13045,7 +13131,7 @@ _G.pg.base.equip_data_statistics[2653] = {
 _G.pg.base.equip_data_statistics[2740] = {
 	type = 10,
 	name = "533mm磁気魚雷（水上艦用）",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 6,
 	ammo = 10,
@@ -13190,7 +13276,7 @@ _G.pg.base.equip_data_statistics[2753] = {
 _G.pg.base.equip_data_statistics[2800] = {
 	type = 10,
 	name = "94式高射装置",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 4,
 	ammo = 10,
@@ -13338,7 +13424,7 @@ _G.pg.base.equip_data_statistics[2811] = {
 _G.pg.base.equip_data_statistics[2900] = {
 	type = 10,
 	name = "従来型ソナー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 1,
 	ammo = 10,
@@ -13404,7 +13490,7 @@ _G.pg.base.equip_data_statistics[2903] = {
 _G.pg.base.equip_data_statistics[2920] = {
 	type = 10,
 	name = "従来型ソナー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 2,
 	ammo = 10,
@@ -13491,7 +13577,7 @@ _G.pg.base.equip_data_statistics[2926] = {
 _G.pg.base.equip_data_statistics[2940] = {
 	type = 10,
 	name = "従来型ソナー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 4,
 	ammo = 10,
@@ -13615,7 +13701,7 @@ _G.pg.base.equip_data_statistics[2951] = {
 _G.pg.base.equip_data_statistics[3000] = {
 	type = 10,
 	name = "改良型ソナー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	value_2 = 3,
 	ammo = 10,
@@ -13702,7 +13788,7 @@ _G.pg.base.equip_data_statistics[3006] = {
 _G.pg.base.equip_data_statistics[3020] = {
 	type = 10,
 	name = "改良型ソナー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 2,
 	value_2 = 5,
 	ammo = 10,
@@ -13816,7 +13902,7 @@ _G.pg.base.equip_data_statistics[3030] = {
 _G.pg.base.equip_data_statistics[3040] = {
 	type = 10,
 	name = "改良型ソナー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 3,
 	value_2 = 7,
 	ammo = 10,
@@ -13956,7 +14042,7 @@ _G.pg.base.equip_data_statistics[3053] = {
 _G.pg.base.equip_data_statistics[3100] = {
 	type = 10,
 	name = "圧縮酸素ボンベ",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -14063,7 +14149,7 @@ _G.pg.base.equip_data_statistics[3111] = {
 _G.pg.base.equip_data_statistics[3120] = {
 	type = 10,
 	name = "改良型シュノーケル",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -14189,7 +14275,7 @@ _G.pg.base.equip_data_statistics[3133] = {
 _G.pg.base.equip_data_statistics[3140] = {
 	type = 10,
 	name = "改良型蓄電池群",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -14337,7 +14423,7 @@ _G.pg.base.equip_data_statistics[3153] = {
 _G.pg.base.equip_data_statistics[3200] = {
 	type = 10,
 	name = "VH装甲鋼板",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -14465,7 +14551,7 @@ _G.pg.base.equip_data_statistics[3213] = {
 _G.pg.base.equip_data_statistics[3220] = {
 	type = 10,
 	name = "VC装甲鋼板",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -14579,7 +14665,7 @@ _G.pg.base.equip_data_statistics[3231] = {
 _G.pg.base.equip_data_statistics[3300] = {
 	type = 10,
 	name = "四神の印",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -14703,7 +14789,7 @@ _G.pg.base.equip_data_statistics[3313] = {
 _G.pg.base.equip_data_statistics[3400] = {
 	type = 18,
 	name = "九四式四十糎砲(積載)",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -14823,7 +14909,7 @@ _G.pg.base.equip_data_statistics[3413] = {
 _G.pg.base.equip_data_statistics[3500] = {
 	type = 18,
 	name = "航空戦資材(積載)",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -14928,7 +15014,7 @@ _G.pg.base.equip_data_statistics[3511] = {
 _G.pg.base.equip_data_statistics[3520] = {
 	type = 18,
 	name = "小口径主砲砲戦資材(積載)",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -15033,7 +15119,7 @@ _G.pg.base.equip_data_statistics[3531] = {
 _G.pg.base.equip_data_statistics[3540] = {
 	type = 18,
 	name = "雷撃戦資材(積載)",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -15138,7 +15224,7 @@ _G.pg.base.equip_data_statistics[3551] = {
 _G.pg.base.equip_data_statistics[3560] = {
 	type = 10,
 	name = "破損した演説原稿",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 6,
 	ammo = 10,
@@ -15252,7 +15338,7 @@ _G.pg.base.equip_data_statistics[3571] = {
 _G.pg.base.equip_data_statistics[3580] = {
 	type = 10,
 	name = "アドミラルティ射撃統制システム",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 20,
 	ammo = 10,
@@ -15381,7 +15467,7 @@ _G.pg.base.equip_data_statistics[3593] = {
 _G.pg.base.equip_data_statistics[3600] = {
 	type = 10,
 	name = "世界博覧会の招待状",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 6,
 	ammo = 10,
@@ -15495,7 +15581,7 @@ _G.pg.base.equip_data_statistics[3611] = {
 _G.pg.base.equip_data_statistics[3620] = {
 	type = 10,
 	name = "結界通行手形",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 17,
 	ammo = 10,
@@ -15609,7 +15695,7 @@ _G.pg.base.equip_data_statistics[3631] = {
 _G.pg.base.equip_data_statistics[3640] = {
 	type = 10,
 	name = "アルビオンの演習作戦報告書",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 10,
 	ammo = 10,
@@ -15723,7 +15809,7 @@ _G.pg.base.equip_data_statistics[3651] = {
 _G.pg.base.equip_data_statistics[3660] = {
 	type = 10,
 	name = "クラウン・オブ・J",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 1,
 	ammo = 10,
@@ -15851,7 +15937,7 @@ _G.pg.base.equip_data_statistics[3673] = {
 _G.pg.base.equip_data_statistics[3680] = {
 	tech = 1,
 	name = "12ポンドロングキャノン",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -15896,10 +15982,13 @@ _G.pg.base.equip_data_statistics[3680] = {
 	skill_id = {},
 	hidden_skill_id = {},
 	part_main = {
-		22
+		22,
+		23
 	},
 	part_sub = {
-		22
+		22,
+		23,
+		24
 	},
 	equip_parameters = {},
 	label = {
@@ -15965,7 +16054,7 @@ _G.pg.base.equip_data_statistics[3686] = {
 _G.pg.base.equip_data_statistics[3700] = {
 	tech = 2,
 	name = "12ポンドロングキャノン",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -16010,10 +16099,13 @@ _G.pg.base.equip_data_statistics[3700] = {
 	skill_id = {},
 	hidden_skill_id = {},
 	part_main = {
-		22
+		22,
+		23
 	},
 	part_sub = {
-		22
+		22,
+		23,
+		24
 	},
 	equip_parameters = {},
 	label = {
@@ -16115,7 +16207,7 @@ _G.pg.base.equip_data_statistics[3710] = {
 _G.pg.base.equip_data_statistics[3720] = {
 	tech = 3,
 	name = "12ポンドロングキャノン",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -16160,10 +16252,13 @@ _G.pg.base.equip_data_statistics[3720] = {
 	skill_id = {},
 	hidden_skill_id = {},
 	part_main = {
-		22
+		22,
+		23
 	},
 	part_sub = {
-		22
+		22,
+		23,
+		24
 	},
 	equip_parameters = {},
 	label = {
@@ -16295,7 +16390,7 @@ _G.pg.base.equip_data_statistics[3733] = {
 _G.pg.base.equip_data_statistics[3740] = {
 	type = 10,
 	name = "球型砲丸",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 5,
 	ammo = 10,
@@ -16321,10 +16416,14 @@ _G.pg.base.equip_data_statistics[3740] = {
 	},
 	hidden_skill_id = {},
 	part_main = {
-		22
+		22,
+		23,
+		24
 	},
 	part_sub = {
-		22
+		22,
+		23,
+		24
 	},
 	equip_parameters = {},
 	label = {
@@ -16413,7 +16512,7 @@ _G.pg.base.equip_data_statistics[3751] = {
 _G.pg.base.equip_data_statistics[3760] = {
 	type = 10,
 	name = "帆綱パーツ",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 14,
 	ammo = 10,
@@ -16437,10 +16536,14 @@ _G.pg.base.equip_data_statistics[3760] = {
 	skill_id = {},
 	hidden_skill_id = {},
 	part_main = {
-		22
+		22,
+		23,
+		24
 	},
 	part_sub = {
-		22
+		22,
+		23,
+		24
 	},
 	equip_parameters = {},
 	label = {
@@ -16529,7 +16632,7 @@ _G.pg.base.equip_data_statistics[3771] = {
 _G.pg.base.equip_data_statistics[3780] = {
 	type = 10,
 	name = "夢雪の幻界",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 1,
 	ammo = 10,
@@ -16636,7 +16739,7 @@ _G.pg.base.equip_data_statistics[3791] = {
 _G.pg.base.equip_data_statistics[3800] = {
 	type = 10,
 	name = "梅の語り",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -16752,7 +16855,7 @@ _G.pg.base.equip_data_statistics[3813] = {
 _G.pg.base.equip_data_statistics[3820] = {
 	type = 18,
 	name = "戊型水上機",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 14,
 	ammo = 10,
@@ -16870,7 +16973,7 @@ _G.pg.base.equip_data_statistics[3831] = {
 _G.pg.base.equip_data_statistics[3840] = {
 	type = 10,
 	name = "謎のポスター？",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 6,
 	ammo = 10,
@@ -16999,7 +17102,7 @@ _G.pg.base.equip_data_statistics[3853] = {
 _G.pg.base.equip_data_statistics[3860] = {
 	type = 10,
 	name = "女王陛下の仕事帳（極秘）",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 4,
 	ammo = 10,
@@ -17113,7 +17216,7 @@ _G.pg.base.equip_data_statistics[3871] = {
 _G.pg.base.equip_data_statistics[3880] = {
 	type = 10,
 	name = "作戦レポート・極海の嵐",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 1,
 	ammo = 10,
@@ -17227,7 +17330,7 @@ _G.pg.base.equip_data_statistics[3891] = {
 _G.pg.base.equip_data_statistics[3900] = {
 	type = 10,
 	name = "ワタツミ研究メモ",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 5,
 	ammo = 10,
@@ -17341,7 +17444,7 @@ _G.pg.base.equip_data_statistics[3911] = {
 _G.pg.base.equip_data_statistics[3920] = {
 	type = 10,
 	name = "オアシス気圧計",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 6,
 	ammo = 10,
@@ -17455,7 +17558,7 @@ _G.pg.base.equip_data_statistics[3931] = {
 _G.pg.base.equip_data_statistics[3940] = {
 	type = 10,
 	name = "精鋭航空整備饅頭",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -17564,7 +17667,7 @@ _G.pg.base.equip_data_statistics[3951] = {
 _G.pg.base.equip_data_statistics[3960] = {
 	type = 10,
 	name = "博覧会記念チケット",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 1,
 	ammo = 10,
@@ -17675,7 +17778,7 @@ _G.pg.base.equip_data_statistics[3971] = {
 _G.pg.base.equip_data_statistics[3980] = {
 	type = 10,
 	name = "模擬電子対抗戦コマンド",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -17812,7 +17915,7 @@ _G.pg.base.equip_data_statistics[3991] = {
 _G.pg.base.equip_data_statistics[4000] = {
 	tech = 1,
 	name = "従来型爆雷投射機",
-	speciality = "対潜",
+	speciality = "<[ASW]>",
 	type = 14,
 	rarity = 1,
 	ammo = 8,
@@ -17892,7 +17995,7 @@ _G.pg.base.equip_data_statistics[4003] = {
 _G.pg.base.equip_data_statistics[4020] = {
 	tech = 2,
 	name = "従来型爆雷投射機",
-	speciality = "対潜",
+	speciality = "<[ASW]>",
 	type = 14,
 	descrip = "0",
 	ammo = 8,
@@ -17973,7 +18076,7 @@ _G.pg.base.equip_data_statistics[4023] = {
 _G.pg.base.equip_data_statistics[4040] = {
 	tech = 3,
 	name = "従来型爆雷投射機",
-	speciality = "対潜",
+	speciality = "<[ASW]>",
 	type = 14,
 	descrip = "0",
 	ammo = 8,
@@ -18090,7 +18193,7 @@ _G.pg.base.equip_data_statistics[4047] = {
 _G.pg.base.equip_data_statistics[4100] = {
 	tech = 1,
 	name = "改良型爆雷投射機",
-	speciality = "対潜",
+	speciality = "<[ASW]>",
 	type = 14,
 	descrip = "0",
 	ammo = 8,
@@ -18171,7 +18274,7 @@ _G.pg.base.equip_data_statistics[4103] = {
 _G.pg.base.equip_data_statistics[4120] = {
 	tech = 2,
 	name = "改良型爆雷投射機",
-	speciality = "対潜",
+	speciality = "<[ASW]>",
 	type = 14,
 	descrip = "0",
 	ammo = 8,
@@ -18279,7 +18382,7 @@ _G.pg.base.equip_data_statistics[4126] = {
 _G.pg.base.equip_data_statistics[4140] = {
 	tech = 3,
 	name = "改良型爆雷投射機",
-	speciality = "対潜",
+	speciality = "<[ASW]>",
 	type = 14,
 	descrip = "0",
 	ammo = 8,
@@ -18433,7 +18536,7 @@ _G.pg.base.equip_data_statistics[4151] = {
 _G.pg.base.equip_data_statistics[4200] = {
 	rarity = 2,
 	name = "ソードフィッシュMarkⅡ-ASV（対潜）",
-	speciality = "対潜",
+	speciality = "<[ASW]>",
 	type = 15,
 	tech = 1,
 	ammo = 5,
@@ -18521,7 +18624,7 @@ _G.pg.base.equip_data_statistics[4203] = {
 _G.pg.base.equip_data_statistics[4220] = {
 	rarity = 3,
 	name = "ソードフィッシュMarkⅡ-ASV（対潜）",
-	speciality = "対潜",
+	speciality = "<[ASW]>",
 	type = 15,
 	tech = 2,
 	ammo = 5,
@@ -18651,7 +18754,7 @@ _G.pg.base.equip_data_statistics[4226] = {
 _G.pg.base.equip_data_statistics[4240] = {
 	rarity = 4,
 	name = "ソードフィッシュMarkⅡ-ASV（対潜）",
-	speciality = "対潜",
+	speciality = "<[ASW]>",
 	type = 15,
 	tech = 3,
 	ammo = 5,
@@ -18852,7 +18955,7 @@ _G.pg.base.equip_data_statistics[4251] = {
 _G.pg.base.equip_data_statistics[4300] = {
 	rarity = 2,
 	name = "TBM-3アベンジャー（対潜）",
-	speciality = "対潜",
+	speciality = "<[ASW]>",
 	type = 15,
 	tech = 1,
 	ammo = 5,
@@ -18940,7 +19043,7 @@ _G.pg.base.equip_data_statistics[4303] = {
 _G.pg.base.equip_data_statistics[4320] = {
 	rarity = 3,
 	name = "TBM-3アベンジャー（対潜）",
-	speciality = "対潜",
+	speciality = "<[ASW]>",
 	type = 15,
 	tech = 2,
 	ammo = 5,
@@ -19070,7 +19173,7 @@ _G.pg.base.equip_data_statistics[4326] = {
 _G.pg.base.equip_data_statistics[4340] = {
 	rarity = 4,
 	name = "TBM-3アベンジャー（対潜）",
-	speciality = "対潜",
+	speciality = "<[ASW]>",
 	type = 15,
 	tech = 3,
 	ammo = 5,
@@ -19268,10 +19371,297 @@ _G.pg.base.equip_data_statistics[4351] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[4360] = {
+	rarity = 5,
+	name = "TBMアベンジャー(VT-51)",
+	speciality = "<[ASW]>",
+	type = 15,
+	tech = 0,
+	ammo = 5,
+	nationality = 1,
+	descrip = "サン・ジャシントの上で活躍したVT-51中隊",
+	id = 4360,
+	torpedo_ammo = 0,
+	value_3 = 0,
+	value_2 = 45,
+	icon = "4360",
+	attribute_2 = "antisub",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {
+		{
+			8,
+			53360
+		},
+		{
+			6,
+			53380
+		}
+	},
+	equip_info = {
+		6,
+		7,
+		8,
+		9,
+		10
+	},
+	weapon_id = {
+		4360
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		6
+	},
+	part_sub = {
+		6
+	},
+	equip_parameters = {},
+	label = {
+		"ASA"
+	}
+}
+_G.pg.base.equip_data_statistics[4361] = {
+	id = 4361,
+	base = 4360,
+	ammo_info = {
+		{
+			8,
+			53361
+		},
+		{
+			6,
+			53381
+		}
+	},
+	weapon_id = {
+		4361
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[4362] = {
+	id = 4362,
+	base = 4360,
+	ammo_info = {
+		{
+			8,
+			53362
+		},
+		{
+			6,
+			53382
+		}
+	},
+	weapon_id = {
+		4362
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[4363] = {
+	id = 4363,
+	base = 4360,
+	ammo_info = {
+		{
+			8,
+			53363
+		},
+		{
+			6,
+			53383
+		}
+	},
+	weapon_id = {
+		4363
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[4364] = {
+	id = 4364,
+	base = 4360,
+	ammo_info = {
+		{
+			8,
+			53364
+		},
+		{
+			6,
+			53384
+		}
+	},
+	weapon_id = {
+		4364
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[4365] = {
+	id = 4365,
+	base = 4360,
+	ammo_info = {
+		{
+			8,
+			53365
+		},
+		{
+			6,
+			53385
+		}
+	},
+	weapon_id = {
+		4365
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[4366] = {
+	id = 4366,
+	base = 4360,
+	ammo_info = {
+		{
+			8,
+			53366
+		},
+		{
+			6,
+			53386
+		}
+	},
+	weapon_id = {
+		4366
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[4367] = {
+	id = 4367,
+	base = 4360,
+	ammo_info = {
+		{
+			8,
+			53367
+		},
+		{
+			6,
+			53387
+		}
+	},
+	weapon_id = {
+		4367
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[4368] = {
+	id = 4368,
+	base = 4360,
+	ammo_info = {
+		{
+			8,
+			53368
+		},
+		{
+			6,
+			53388
+		}
+	},
+	weapon_id = {
+		4368
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[4369] = {
+	id = 4369,
+	base = 4360,
+	ammo_info = {
+		{
+			8,
+			53369
+		},
+		{
+			6,
+			53389
+		}
+	},
+	weapon_id = {
+		4369
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[4370] = {
+	id = 4370,
+	base = 4360,
+	ammo_info = {
+		{
+			8,
+			53370
+		},
+		{
+			6,
+			53390
+		}
+	},
+	weapon_id = {
+		4370
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[4371] = {
+	id = 4371,
+	anti_siren = 100,
+	base = 4360,
+	ammo_info = {
+		{
+			8,
+			53371
+		},
+		{
+			6,
+			53391
+		}
+	},
+	weapon_id = {
+		4371
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[4372] = {
+	id = 4372,
+	anti_siren = 200,
+	base = 4360,
+	ammo_info = {
+		{
+			8,
+			53372
+		},
+		{
+			6,
+			53392
+		}
+	},
+	weapon_id = {
+		4372
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[4373] = {
+	id = 4373,
+	anti_siren = 300,
+	base = 4360,
+	ammo_info = {
+		{
+			8,
+			53373
+		},
+		{
+			6,
+			53393
+		}
+	},
+	weapon_id = {
+		4373
+	},
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[5000] = {
 	tech = 1,
 	name = "533mm三連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	rarity = 1,
 	ammo = 5,
@@ -19366,7 +19756,7 @@ _G.pg.base.equip_data_statistics[5003] = {
 _G.pg.base.equip_data_statistics[5020] = {
 	tech = 2,
 	name = "533mm三連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -19462,7 +19852,7 @@ _G.pg.base.equip_data_statistics[5023] = {
 _G.pg.base.equip_data_statistics[5040] = {
 	tech = 3,
 	name = "533mm三連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -19594,7 +19984,7 @@ _G.pg.base.equip_data_statistics[5047] = {
 _G.pg.base.equip_data_statistics[5100] = {
 	tech = 1,
 	name = "533mm四連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -19690,7 +20080,7 @@ _G.pg.base.equip_data_statistics[5103] = {
 _G.pg.base.equip_data_statistics[5120] = {
 	tech = 2,
 	name = "533mm四連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -19813,7 +20203,7 @@ _G.pg.base.equip_data_statistics[5126] = {
 _G.pg.base.equip_data_statistics[5140] = {
 	tech = 3,
 	name = "533mm四連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -19982,7 +20372,7 @@ _G.pg.base.equip_data_statistics[5151] = {
 _G.pg.base.equip_data_statistics[5200] = {
 	tech = 1,
 	name = "533mm五連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -20105,7 +20495,7 @@ _G.pg.base.equip_data_statistics[5206] = {
 _G.pg.base.equip_data_statistics[5220] = {
 	tech = 2,
 	name = "533mm五連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -20264,7 +20654,7 @@ _G.pg.base.equip_data_statistics[5230] = {
 _G.pg.base.equip_data_statistics[5240] = {
 	tech = 3,
 	name = "533mm五連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -20452,8 +20842,8 @@ _G.pg.base.equip_data_statistics[5253] = {
 }
 _G.pg.base.equip_data_statistics[5300] = {
 	tech = 1,
-	name = "550mm連装魚雷発射管",
-	speciality = "雷撃",
+	name = "550mm連装魚雷",
+	speciality = "<[TRP]>",
 	type = 5,
 	rarity = 1,
 	ammo = 5,
@@ -20547,8 +20937,8 @@ _G.pg.base.equip_data_statistics[5303] = {
 }
 _G.pg.base.equip_data_statistics[5320] = {
 	tech = 2,
-	name = "550mm連装魚雷発射管",
-	speciality = "雷撃",
+	name = "550mm連装魚雷",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -20643,8 +21033,8 @@ _G.pg.base.equip_data_statistics[5323] = {
 }
 _G.pg.base.equip_data_statistics[5340] = {
 	tech = 3,
-	name = "550mm連装魚雷発射管",
-	speciality = "雷撃",
+	name = "550mm連装魚雷",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -20775,8 +21165,8 @@ _G.pg.base.equip_data_statistics[5347] = {
 }
 _G.pg.base.equip_data_statistics[5400] = {
 	tech = 1,
-	name = "550mm三連装魚雷発射管",
-	speciality = "雷撃",
+	name = "550mm三連装魚雷",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -20871,8 +21261,8 @@ _G.pg.base.equip_data_statistics[5403] = {
 }
 _G.pg.base.equip_data_statistics[5420] = {
 	tech = 2,
-	name = "550mm三連装魚雷発射管",
-	speciality = "雷撃",
+	name = "550mm三連装魚雷",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -20994,8 +21384,8 @@ _G.pg.base.equip_data_statistics[5426] = {
 }
 _G.pg.base.equip_data_statistics[5440] = {
 	tech = 3,
-	name = "550mm三連装魚雷発射管",
-	speciality = "雷撃",
+	name = "550mm三連装魚雷",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -21164,7 +21554,7 @@ _G.pg.base.equip_data_statistics[5451] = {
 _G.pg.base.equip_data_statistics[5500] = {
 	tech = 1,
 	name = "潜水艦用550mm24V魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "说明未填写",
 	ammo = 5,
@@ -21251,7 +21641,7 @@ _G.pg.base.equip_data_statistics[5503] = {
 _G.pg.base.equip_data_statistics[5520] = {
 	tech = 2,
 	name = "潜水艦用550mm24V魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "说明未填写",
 	ammo = 5,
@@ -21365,7 +21755,7 @@ _G.pg.base.equip_data_statistics[5526] = {
 _G.pg.base.equip_data_statistics[5540] = {
 	tech = 3,
 	name = "潜水艦用550mm24V魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "说明未填写",
 	ammo = 5,
@@ -21522,14 +21912,543 @@ _G.pg.base.equip_data_statistics[5551] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[5600] = {
+	tech = 3,
+	name = "550mm四連装魚雷",
+	speciality = "<[TRP]>",
+	type = 5,
+	descrip = "说明未填写",
+	ammo = 5,
+	damage = "62 x 4",
+	nationality = 8,
+	rarity = 4,
+	id = 5600,
+	value_3 = 0,
+	torpedo_ammo = 0,
+	value_2 = 25,
+	icon = "5600",
+	attribute_2 = "torpedo",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {
+		{
+			3,
+			1806
+		}
+	},
+	equip_info = {
+		1,
+		2,
+		{
+			3,
+			1806
+		},
+		{
+			4,
+			1403
+		},
+		6,
+		10,
+		11,
+		12
+	},
+	weapon_id = {
+		5600
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {
+		"FFNF",
+		"ST",
+		"TP",
+		"QUAD"
+	}
+}
+_G.pg.base.equip_data_statistics[5601] = {
+	id = 5601,
+	damage = "72 x 4",
+	base = 5600,
+	weapon_id = {
+		5601
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5602] = {
+	id = 5602,
+	damage = "82 x 4",
+	base = 5600,
+	weapon_id = {
+		5602
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5603] = {
+	id = 5603,
+	damage = "92 x 4",
+	base = 5600,
+	weapon_id = {
+		5603
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5604] = {
+	id = 5604,
+	damage = "102 x 4",
+	base = 5600,
+	weapon_id = {
+		5604
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5605] = {
+	id = 5605,
+	damage = "112 x 4",
+	base = 5600,
+	weapon_id = {
+		5605
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5606] = {
+	id = 5606,
+	damage = "122 x 4",
+	base = 5600,
+	weapon_id = {
+		5606
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5607] = {
+	id = 5607,
+	damage = "132 x 4",
+	base = 5600,
+	weapon_id = {
+		5607
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5608] = {
+	id = 5608,
+	damage = "142 x 4",
+	base = 5600,
+	weapon_id = {
+		5608
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5609] = {
+	id = 5609,
+	damage = "152 x 4",
+	base = 5600,
+	weapon_id = {
+		5609
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5610] = {
+	id = 5610,
+	damage = "162 x 4",
+	base = 5600,
+	weapon_id = {
+		5610
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5611] = {
+	id = 5611,
+	anti_siren = 100,
+	damage = "162 x 4",
+	base = 5600,
+	weapon_id = {
+		5611
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5620] = {
+	tech = 3,
+	name = "550mm四連装魚雷（弾薬調整）",
+	speciality = "<[TRP]>",
+	type = 5,
+	descrip = "说明未填写",
+	ammo = 5,
+	damage = "62 x 4",
+	nationality = 8,
+	rarity = 4,
+	id = 5620,
+	value_3 = 0,
+	torpedo_ammo = 0,
+	value_2 = 25,
+	icon = "5620",
+	attribute_2 = "torpedo",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {
+		{
+			3,
+			1839
+		}
+	},
+	equip_info = {
+		1,
+		2,
+		{
+			3,
+			1839
+		},
+		{
+			4,
+			1403
+		},
+		6,
+		10,
+		11,
+		12
+	},
+	weapon_id = {
+		5620
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {
+		"FFNF",
+		"ST",
+		"TP",
+		"QUAD",
+		"FTP"
+	}
+}
+_G.pg.base.equip_data_statistics[5621] = {
+	id = 5621,
+	damage = "72 x 4",
+	base = 5620,
+	weapon_id = {
+		5621
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5622] = {
+	id = 5622,
+	damage = "82 x 4",
+	base = 5620,
+	weapon_id = {
+		5622
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5623] = {
+	id = 5623,
+	damage = "92 x 4",
+	base = 5620,
+	weapon_id = {
+		5623
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5624] = {
+	id = 5624,
+	damage = "102 x 4",
+	base = 5620,
+	weapon_id = {
+		5624
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5625] = {
+	id = 5625,
+	damage = "112 x 4",
+	base = 5620,
+	weapon_id = {
+		5625
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5626] = {
+	id = 5626,
+	damage = "122 x 4",
+	base = 5620,
+	weapon_id = {
+		5626
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5627] = {
+	id = 5627,
+	damage = "132 x 4",
+	base = 5620,
+	weapon_id = {
+		5627
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5628] = {
+	id = 5628,
+	damage = "142 x 4",
+	base = 5620,
+	weapon_id = {
+		5628
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5629] = {
+	id = 5629,
+	damage = "152 x 4",
+	base = 5620,
+	weapon_id = {
+		5629
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5630] = {
+	id = 5630,
+	damage = "162 x 4",
+	base = 5620,
+	weapon_id = {
+		5630
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5631] = {
+	id = 5631,
+	anti_siren = 100,
+	damage = "162 x 4",
+	base = 5620,
+	weapon_id = {
+		5631
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5640] = {
+	tech = 0,
+	name = "550mm四連装魚雷改（弾薬調整）",
+	speciality = "<[TRP]>",
+	type = 5,
+	descrip = "说明未填写",
+	ammo = 5,
+	damage = "82 x 4",
+	nationality = 8,
+	rarity = 5,
+	id = 5640,
+	value_3 = 0,
+	torpedo_ammo = 0,
+	value_2 = 45,
+	icon = "5640",
+	attribute_2 = "torpedo",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {
+		{
+			3,
+			1839
+		}
+	},
+	equip_info = {
+		1,
+		2,
+		{
+			3,
+			1839
+		},
+		{
+			4,
+			1403
+		},
+		6,
+		10,
+		11,
+		12
+	},
+	weapon_id = {
+		5640
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {
+		"FFNF",
+		"ST",
+		"TP",
+		"QUAD",
+		"FTP"
+	}
+}
+_G.pg.base.equip_data_statistics[5641] = {
+	id = 5641,
+	damage = "92 x 4",
+	base = 5640,
+	weapon_id = {
+		5641
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5642] = {
+	id = 5642,
+	damage = "102 x 4",
+	base = 5640,
+	weapon_id = {
+		5642
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5643] = {
+	id = 5643,
+	damage = "112 x 4",
+	base = 5640,
+	weapon_id = {
+		5643
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5644] = {
+	id = 5644,
+	damage = "122 x 4",
+	base = 5640,
+	weapon_id = {
+		5644
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5645] = {
+	id = 5645,
+	damage = "132 x 4",
+	base = 5640,
+	weapon_id = {
+		5645
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5646] = {
+	id = 5646,
+	damage = "142 x 4",
+	base = 5640,
+	weapon_id = {
+		5646
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5647] = {
+	id = 5647,
+	damage = "152 x 4",
+	base = 5640,
+	weapon_id = {
+		5647
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5648] = {
+	id = 5648,
+	damage = "162 x 4",
+	base = 5640,
+	weapon_id = {
+		5648
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5649] = {
+	id = 5649,
+	damage = "172 x 4",
+	base = 5640,
+	weapon_id = {
+		5649
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5650] = {
+	id = 5650,
+	damage = "182 x 4",
+	base = 5640,
+	weapon_id = {
+		5650
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5651] = {
+	id = 5651,
+	anti_siren = 100,
+	damage = "182 x 4",
+	base = 5640,
+	weapon_id = {
+		5651
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5652] = {
+	id = 5652,
+	anti_siren = 200,
+	damage = "182 x 4",
+	base = 5640,
+	weapon_id = {
+		5652
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[5653] = {
+	id = 5653,
+	anti_siren = 300,
+	damage = "182 x 4",
+	base = 5640,
+	weapon_id = {
+		5653
+	},
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[6000] = {
 	tech = 1,
 	name = "12.7mm対空機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	rarity = 1,
 	ammo = 5,
-	damage = "6/回",
+	damage = "6<[WAVE]>",
 	nationality = 0,
 	descrip = "0",
 	id = 6000,
@@ -21590,7 +22509,7 @@ _G.pg.base.equip_data_statistics[6000] = {
 }
 _G.pg.base.equip_data_statistics[6001] = {
 	id = 6001,
-	damage = "7/回",
+	damage = "7<[WAVE]>",
 	base = 6000,
 	weapon_id = {
 		6001
@@ -21599,7 +22518,7 @@ _G.pg.base.equip_data_statistics[6001] = {
 }
 _G.pg.base.equip_data_statistics[6002] = {
 	id = 6002,
-	damage = "8/回",
+	damage = "8<[WAVE]>",
 	base = 6000,
 	weapon_id = {
 		6002
@@ -21608,7 +22527,7 @@ _G.pg.base.equip_data_statistics[6002] = {
 }
 _G.pg.base.equip_data_statistics[6003] = {
 	id = 6003,
-	damage = "9/回",
+	damage = "9<[WAVE]>",
 	base = 6000,
 	weapon_id = {
 		6003
@@ -21618,11 +22537,11 @@ _G.pg.base.equip_data_statistics[6003] = {
 _G.pg.base.equip_data_statistics[6020] = {
 	tech = 2,
 	name = "12.7mm対空機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "8/回",
+	damage = "8<[WAVE]>",
 	nationality = 0,
 	rarity = 2,
 	id = 6020,
@@ -21684,7 +22603,7 @@ _G.pg.base.equip_data_statistics[6020] = {
 }
 _G.pg.base.equip_data_statistics[6021] = {
 	id = 6021,
-	damage = "9/回",
+	damage = "9<[WAVE]>",
 	base = 6020,
 	weapon_id = {
 		6021
@@ -21693,7 +22612,7 @@ _G.pg.base.equip_data_statistics[6021] = {
 }
 _G.pg.base.equip_data_statistics[6022] = {
 	id = 6022,
-	damage = "10/回",
+	damage = "10<[WAVE]>",
 	base = 6020,
 	weapon_id = {
 		6022
@@ -21702,7 +22621,7 @@ _G.pg.base.equip_data_statistics[6022] = {
 }
 _G.pg.base.equip_data_statistics[6023] = {
 	id = 6023,
-	damage = "11/回",
+	damage = "11<[WAVE]>",
 	base = 6020,
 	weapon_id = {
 		6023
@@ -21712,11 +22631,11 @@ _G.pg.base.equip_data_statistics[6023] = {
 _G.pg.base.equip_data_statistics[6040] = {
 	tech = 3,
 	name = "12.7mm対空機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "8/回",
+	damage = "8<[WAVE]>",
 	nationality = 0,
 	rarity = 3,
 	id = 6040,
@@ -21778,7 +22697,7 @@ _G.pg.base.equip_data_statistics[6040] = {
 }
 _G.pg.base.equip_data_statistics[6041] = {
 	id = 6041,
-	damage = "9/回",
+	damage = "9<[WAVE]>",
 	base = 6040,
 	weapon_id = {
 		6041
@@ -21787,7 +22706,7 @@ _G.pg.base.equip_data_statistics[6041] = {
 }
 _G.pg.base.equip_data_statistics[6042] = {
 	id = 6042,
-	damage = "10/回",
+	damage = "10<[WAVE]>",
 	base = 6040,
 	weapon_id = {
 		6042
@@ -21796,7 +22715,7 @@ _G.pg.base.equip_data_statistics[6042] = {
 }
 _G.pg.base.equip_data_statistics[6043] = {
 	id = 6043,
-	damage = "11/回",
+	damage = "11<[WAVE]>",
 	base = 6040,
 	weapon_id = {
 		6043
@@ -21805,7 +22724,7 @@ _G.pg.base.equip_data_statistics[6043] = {
 }
 _G.pg.base.equip_data_statistics[6044] = {
 	id = 6044,
-	damage = "12/回",
+	damage = "12<[WAVE]>",
 	base = 6040,
 	weapon_id = {
 		6044
@@ -21814,7 +22733,7 @@ _G.pg.base.equip_data_statistics[6044] = {
 }
 _G.pg.base.equip_data_statistics[6045] = {
 	id = 6045,
-	damage = "13/回",
+	damage = "13<[WAVE]>",
 	base = 6040,
 	weapon_id = {
 		6045
@@ -21823,7 +22742,7 @@ _G.pg.base.equip_data_statistics[6045] = {
 }
 _G.pg.base.equip_data_statistics[6046] = {
 	id = 6046,
-	damage = "15/回",
+	damage = "15<[WAVE]>",
 	base = 6040,
 	weapon_id = {
 		6046
@@ -21832,7 +22751,7 @@ _G.pg.base.equip_data_statistics[6046] = {
 }
 _G.pg.base.equip_data_statistics[6047] = {
 	id = 6047,
-	damage = "15/回",
+	damage = "15<[WAVE]>",
 	base = 6040,
 	weapon_id = {
 		6047
@@ -21842,11 +22761,11 @@ _G.pg.base.equip_data_statistics[6047] = {
 _G.pg.base.equip_data_statistics[6100] = {
 	tech = 1,
 	name = "100mm連装高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	rarity = 1,
 	ammo = 5,
-	damage = "18/回",
+	damage = "18<[WAVE]>",
 	nationality = 8,
 	descrip = "0",
 	id = 6100,
@@ -21907,7 +22826,7 @@ _G.pg.base.equip_data_statistics[6100] = {
 }
 _G.pg.base.equip_data_statistics[6101] = {
 	id = 6101,
-	damage = "20/回",
+	damage = "20<[WAVE]>",
 	base = 6100,
 	weapon_id = {
 		6101
@@ -21916,7 +22835,7 @@ _G.pg.base.equip_data_statistics[6101] = {
 }
 _G.pg.base.equip_data_statistics[6102] = {
 	id = 6102,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	base = 6100,
 	weapon_id = {
 		6102
@@ -21925,7 +22844,7 @@ _G.pg.base.equip_data_statistics[6102] = {
 }
 _G.pg.base.equip_data_statistics[6103] = {
 	id = 6103,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	base = 6100,
 	weapon_id = {
 		6103
@@ -21935,11 +22854,11 @@ _G.pg.base.equip_data_statistics[6103] = {
 _G.pg.base.equip_data_statistics[6120] = {
 	tech = 2,
 	name = "100mm連装高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "20/回",
+	damage = "20<[WAVE]>",
 	nationality = 8,
 	rarity = 2,
 	id = 6120,
@@ -22001,7 +22920,7 @@ _G.pg.base.equip_data_statistics[6120] = {
 }
 _G.pg.base.equip_data_statistics[6121] = {
 	id = 6121,
-	damage = "23/回",
+	damage = "23<[WAVE]>",
 	base = 6120,
 	weapon_id = {
 		6121
@@ -22010,7 +22929,7 @@ _G.pg.base.equip_data_statistics[6121] = {
 }
 _G.pg.base.equip_data_statistics[6122] = {
 	id = 6122,
-	damage = "26/回",
+	damage = "26<[WAVE]>",
 	base = 6120,
 	weapon_id = {
 		6122
@@ -22019,7 +22938,7 @@ _G.pg.base.equip_data_statistics[6122] = {
 }
 _G.pg.base.equip_data_statistics[6123] = {
 	id = 6123,
-	damage = "29/回",
+	damage = "29<[WAVE]>",
 	base = 6120,
 	weapon_id = {
 		6123
@@ -22029,11 +22948,11 @@ _G.pg.base.equip_data_statistics[6123] = {
 _G.pg.base.equip_data_statistics[6140] = {
 	tech = 3,
 	name = "100mm連装高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	nationality = 8,
 	rarity = 3,
 	id = 6140,
@@ -22095,7 +23014,7 @@ _G.pg.base.equip_data_statistics[6140] = {
 }
 _G.pg.base.equip_data_statistics[6141] = {
 	id = 6141,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	base = 6140,
 	weapon_id = {
 		6141
@@ -22104,7 +23023,7 @@ _G.pg.base.equip_data_statistics[6141] = {
 }
 _G.pg.base.equip_data_statistics[6142] = {
 	id = 6142,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 6140,
 	weapon_id = {
 		6142
@@ -22113,7 +23032,7 @@ _G.pg.base.equip_data_statistics[6142] = {
 }
 _G.pg.base.equip_data_statistics[6143] = {
 	id = 6143,
-	damage = "32/回",
+	damage = "32<[WAVE]>",
 	base = 6140,
 	weapon_id = {
 		6143
@@ -22122,7 +23041,7 @@ _G.pg.base.equip_data_statistics[6143] = {
 }
 _G.pg.base.equip_data_statistics[6144] = {
 	id = 6144,
-	damage = "36/回",
+	damage = "36<[WAVE]>",
 	base = 6140,
 	weapon_id = {
 		6144
@@ -22131,7 +23050,7 @@ _G.pg.base.equip_data_statistics[6144] = {
 }
 _G.pg.base.equip_data_statistics[6145] = {
 	id = 6145,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 6140,
 	weapon_id = {
 		6145
@@ -22140,7 +23059,7 @@ _G.pg.base.equip_data_statistics[6145] = {
 }
 _G.pg.base.equip_data_statistics[6146] = {
 	id = 6146,
-	damage = "44/回",
+	damage = "44<[WAVE]>",
 	base = 6140,
 	weapon_id = {
 		6146
@@ -22149,7 +23068,7 @@ _G.pg.base.equip_data_statistics[6146] = {
 }
 _G.pg.base.equip_data_statistics[6147] = {
 	id = 6147,
-	damage = "44/回",
+	damage = "44<[WAVE]>",
 	base = 6140,
 	weapon_id = {
 		6147
@@ -22159,7 +23078,7 @@ _G.pg.base.equip_data_statistics[6147] = {
 _G.pg.base.equip_data_statistics[7000] = {
 	tech = 1,
 	name = "152mm単装砲",
-	speciality = "通常",
+	speciality = "<[NORM]>",
 	type = 2,
 	rarity = 1,
 	ammo = 3,
@@ -22245,7 +23164,7 @@ _G.pg.base.equip_data_statistics[7003] = {
 _G.pg.base.equip_data_statistics[7020] = {
 	tech = 2,
 	name = "152mm単装砲",
-	speciality = "通常",
+	speciality = "<[NORM]>",
 	type = 2,
 	descrip = "0",
 	ammo = 3,
@@ -22332,7 +23251,7 @@ _G.pg.base.equip_data_statistics[7023] = {
 _G.pg.base.equip_data_statistics[7040] = {
 	tech = 3,
 	name = "152mm単装砲",
-	speciality = "通常",
+	speciality = "<[NORM]>",
 	type = 2,
 	descrip = "0",
 	ammo = 3,
@@ -22455,7 +23374,7 @@ _G.pg.base.equip_data_statistics[7047] = {
 _G.pg.base.equip_data_statistics[7100] = {
 	tech = 1,
 	name = "150mm主砲",
-	speciality = "通常",
+	speciality = "<[NORM]>",
 	type = 2,
 	rarity = 1,
 	ammo = 3,
@@ -22541,7 +23460,7 @@ _G.pg.base.equip_data_statistics[7103] = {
 _G.pg.base.equip_data_statistics[7120] = {
 	tech = 2,
 	name = "150mm主砲",
-	speciality = "通常",
+	speciality = "<[NORM]>",
 	type = 2,
 	descrip = "0",
 	ammo = 3,
@@ -22628,7 +23547,7 @@ _G.pg.base.equip_data_statistics[7123] = {
 _G.pg.base.equip_data_statistics[7140] = {
 	tech = 3,
 	name = "150mm主砲",
-	speciality = "通常",
+	speciality = "<[NORM]>",
 	type = 2,
 	descrip = "0",
 	ammo = 3,
@@ -22751,7 +23670,7 @@ _G.pg.base.equip_data_statistics[7147] = {
 _G.pg.base.equip_data_statistics[7200] = {
 	tech = 1,
 	name = "130mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -22847,7 +23766,7 @@ _G.pg.base.equip_data_statistics[7203] = {
 _G.pg.base.equip_data_statistics[7220] = {
 	tech = 2,
 	name = "130mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -22970,7 +23889,7 @@ _G.pg.base.equip_data_statistics[7226] = {
 _G.pg.base.equip_data_statistics[7240] = {
 	tech = 3,
 	name = "130mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 2,
@@ -23140,7 +24059,7 @@ _G.pg.base.equip_data_statistics[7251] = {
 _G.pg.base.equip_data_statistics[7300] = {
 	tech = 0,
 	name = "試製203mm三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 2,
@@ -23320,7 +24239,7 @@ _G.pg.base.equip_data_statistics[7313] = {
 _G.pg.base.equip_data_statistics[7320] = {
 	tech = 0,
 	name = "130mm副砲Mle1932",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -23452,7 +24371,7 @@ _G.pg.base.equip_data_statistics[7327] = {
 _G.pg.base.equip_data_statistics[7340] = {
 	tech = 0,
 	name = "潜水艦用203mm連装砲Mle1924",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -23575,7 +24494,7 @@ _G.pg.base.equip_data_statistics[7347] = {
 _G.pg.base.equip_data_statistics[11000] = {
 	tech = 1,
 	name = "76mm砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 3,
@@ -23669,7 +24588,7 @@ _G.pg.base.equip_data_statistics[11003] = {
 _G.pg.base.equip_data_statistics[11020] = {
 	tech = 2,
 	name = "76mm砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -23764,7 +24683,7 @@ _G.pg.base.equip_data_statistics[11023] = {
 _G.pg.base.equip_data_statistics[11040] = {
 	tech = 3,
 	name = "76mm砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -23895,7 +24814,7 @@ _G.pg.base.equip_data_statistics[11047] = {
 _G.pg.base.equip_data_statistics[11060] = {
 	tech = 0,
 	name = "127mm単装砲初期型",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -24026,7 +24945,7 @@ _G.pg.base.equip_data_statistics[11067] = {
 _G.pg.base.equip_data_statistics[11100] = {
 	tech = 1,
 	name = "127mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -24121,7 +25040,7 @@ _G.pg.base.equip_data_statistics[11103] = {
 _G.pg.base.equip_data_statistics[11120] = {
 	tech = 2,
 	name = "127mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -24243,7 +25162,7 @@ _G.pg.base.equip_data_statistics[11126] = {
 _G.pg.base.equip_data_statistics[11140] = {
 	tech = 3,
 	name = "127mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 2,
@@ -24412,7 +25331,7 @@ _G.pg.base.equip_data_statistics[11151] = {
 _G.pg.base.equip_data_statistics[11160] = {
 	tech = 0,
 	name = "127mm連装副砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 2,
@@ -24581,7 +25500,7 @@ _G.pg.base.equip_data_statistics[11171] = {
 _G.pg.base.equip_data_statistics[11200] = {
 	attribute_3 = "antiaircraft",
 	name = "127mm連装両用砲MK12",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 1,
 	ammo = 3,
@@ -24704,7 +25623,7 @@ _G.pg.base.equip_data_statistics[11206] = {
 _G.pg.base.equip_data_statistics[11220] = {
 	attribute_3 = "antiaircraft",
 	name = "127mm連装両用砲MK12",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 2,
 	ammo = 2,
@@ -24864,7 +25783,7 @@ _G.pg.base.equip_data_statistics[11230] = {
 _G.pg.base.equip_data_statistics[11240] = {
 	attribute_3 = "antiaircraft",
 	name = "127mm連装両用砲MK12",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 3,
 	ammo = 2,
@@ -25054,7 +25973,7 @@ _G.pg.base.equip_data_statistics[11253] = {
 _G.pg.base.equip_data_statistics[11260] = {
 	attribute_3 = "antiaircraft",
 	name = "試作型137mm連装両用砲Mk1",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 0,
 	ammo = 1,
@@ -25236,7 +26155,7 @@ _G.pg.base.equip_data_statistics[11273] = {
 _G.pg.base.equip_data_statistics[12000] = {
 	tech = 1,
 	name = "152mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	rarity = 1,
 	ammo = 3,
@@ -25322,7 +26241,7 @@ _G.pg.base.equip_data_statistics[12003] = {
 _G.pg.base.equip_data_statistics[12020] = {
 	tech = 2,
 	name = "152mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 3,
@@ -25409,7 +26328,7 @@ _G.pg.base.equip_data_statistics[12023] = {
 _G.pg.base.equip_data_statistics[12040] = {
 	tech = 3,
 	name = "152mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 3,
@@ -25532,7 +26451,7 @@ _G.pg.base.equip_data_statistics[12047] = {
 _G.pg.base.equip_data_statistics[12060] = {
 	tech = 0,
 	name = "152mm連装砲Mk15",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 3,
@@ -25655,7 +26574,7 @@ _G.pg.base.equip_data_statistics[12067] = {
 _G.pg.base.equip_data_statistics[12100] = {
 	tech = 1,
 	name = "152mm三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 3,
@@ -25742,7 +26661,7 @@ _G.pg.base.equip_data_statistics[12103] = {
 _G.pg.base.equip_data_statistics[12120] = {
 	tech = 2,
 	name = "152mm三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 3,
@@ -25856,7 +26775,7 @@ _G.pg.base.equip_data_statistics[12126] = {
 _G.pg.base.equip_data_statistics[12140] = {
 	tech = 3,
 	name = "152mm三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 2,
@@ -26017,7 +26936,7 @@ _G.pg.base.equip_data_statistics[12151] = {
 _G.pg.base.equip_data_statistics[12160] = {
 	tech = 0,
 	name = "152mm三連装砲Mk16",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 2,
@@ -26198,7 +27117,7 @@ _G.pg.base.equip_data_statistics[12173] = {
 _G.pg.base.equip_data_statistics[12200] = {
 	attribute_3 = "antiaircraft",
 	name = "試作型三連装152mm両用砲Mk17",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	tech = 0,
 	ammo = 2,
@@ -26380,7 +27299,7 @@ _G.pg.base.equip_data_statistics[12213] = {
 _G.pg.base.equip_data_statistics[13000] = {
 	tech = 1,
 	name = "203mm三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	rarity = 1,
 	ammo = 3,
@@ -26466,7 +27385,7 @@ _G.pg.base.equip_data_statistics[13003] = {
 _G.pg.base.equip_data_statistics[13020] = {
 	tech = 2,
 	name = "203mm三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 3,
@@ -26553,7 +27472,7 @@ _G.pg.base.equip_data_statistics[13023] = {
 _G.pg.base.equip_data_statistics[13040] = {
 	tech = 3,
 	name = "203mm三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 2,
@@ -26676,7 +27595,7 @@ _G.pg.base.equip_data_statistics[13047] = {
 _G.pg.base.equip_data_statistics[13060] = {
 	tech = 0,
 	name = "203mm三連装砲Mk13",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 2,
@@ -26799,7 +27718,7 @@ _G.pg.base.equip_data_statistics[13067] = {
 _G.pg.base.equip_data_statistics[13080] = {
 	tech = 0,
 	name = "三連装203mm主砲Mk14",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "说明未填写",
 	ammo = 1,
@@ -26959,7 +27878,7 @@ _G.pg.base.equip_data_statistics[13091] = {
 _G.pg.base.equip_data_statistics[13100] = {
 	tech = 1,
 	name = "203mm三連装砲改",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 3,
@@ -27046,7 +27965,7 @@ _G.pg.base.equip_data_statistics[13103] = {
 _G.pg.base.equip_data_statistics[13120] = {
 	tech = 2,
 	name = "203mm三連装砲改",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 2,
@@ -27160,7 +28079,7 @@ _G.pg.base.equip_data_statistics[13126] = {
 _G.pg.base.equip_data_statistics[13140] = {
 	tech = 3,
 	name = "203mm三連装砲改",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 2,
@@ -27320,7 +28239,7 @@ _G.pg.base.equip_data_statistics[13151] = {
 _G.pg.base.equip_data_statistics[13160] = {
 	tech = 0,
 	name = "203mm三連装砲Mk15",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 1,
@@ -27497,10 +28416,181 @@ _G.pg.base.equip_data_statistics[13173] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[13180] = {
+	tech = 0,
+	name = "305mm三連装砲Mk8",
+	speciality = "<[VOL]>",
+	type = 11,
+	descrip = "アラスカ級巡洋艦が搭載する主砲",
+	ammo = 1,
+	damage = "62 x 3",
+	nationality = 1,
+	rarity = 6,
+	id = 13180,
+	value_3 = 0,
+	torpedo_ammo = 0,
+	value_2 = 65,
+	icon = "14000",
+	attribute_2 = "cannon",
+	property_rate = {},
+	ammo_icon = {
+		2
+	},
+	ammo_info = {
+		{
+			2,
+			1429
+		}
+	},
+	equip_info = {
+		1,
+		2,
+		6,
+		10,
+		11,
+		12
+	},
+	weapon_id = {
+		13180
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		18
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"USS",
+		"CB",
+		"MG",
+		"AP"
+	}
+}
+_G.pg.base.equip_data_statistics[13181] = {
+	id = 13181,
+	damage = "68 x 3",
+	base = 13180,
+	weapon_id = {
+		13181
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[13182] = {
+	id = 13182,
+	damage = "72 x 3",
+	base = 13180,
+	weapon_id = {
+		13182
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[13183] = {
+	id = 13183,
+	damage = "78 x 3",
+	base = 13180,
+	weapon_id = {
+		13183
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[13184] = {
+	id = 13184,
+	damage = "82 x 3",
+	base = 13180,
+	weapon_id = {
+		13184
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[13185] = {
+	id = 13185,
+	damage = "86 x 3",
+	base = 13180,
+	weapon_id = {
+		13185
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[13186] = {
+	id = 13186,
+	damage = "92 x 3",
+	base = 13180,
+	weapon_id = {
+		13186
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[13187] = {
+	id = 13187,
+	damage = "96 x 3",
+	base = 13180,
+	weapon_id = {
+		13187
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[13188] = {
+	id = 13188,
+	damage = "102 x 3",
+	base = 13180,
+	weapon_id = {
+		13188
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[13189] = {
+	id = 13189,
+	damage = "106 x 3",
+	base = 13180,
+	weapon_id = {
+		13189
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[13190] = {
+	id = 13190,
+	damage = "110 x 3",
+	base = 13180,
+	weapon_id = {
+		13190
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[13191] = {
+	id = 13191,
+	anti_siren = 100,
+	damage = "110 x 3",
+	base = 13180,
+	weapon_id = {
+		13191
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[13192] = {
+	id = 13192,
+	anti_siren = 200,
+	damage = "110 x 3",
+	base = 13180,
+	weapon_id = {
+		13192
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[13193] = {
+	id = 13193,
+	anti_siren = 300,
+	damage = "110 x 3",
+	base = 13180,
+	weapon_id = {
+		13193
+	},
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[14100] = {
 	tech = 1,
 	name = "356mm三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	rarity = 1,
 	ammo = 3,
@@ -27579,7 +28669,7 @@ _G.pg.base.equip_data_statistics[14103] = {
 _G.pg.base.equip_data_statistics[14120] = {
 	tech = 2,
 	name = "356mm三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -27660,7 +28750,7 @@ _G.pg.base.equip_data_statistics[14123] = {
 _G.pg.base.equip_data_statistics[14140] = {
 	tech = 3,
 	name = "356mm三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -27777,7 +28867,7 @@ _G.pg.base.equip_data_statistics[14147] = {
 _G.pg.base.equip_data_statistics[14160] = {
 	tech = 0,
 	name = "試作型356mm四連装砲MkB",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -27931,7 +29021,7 @@ _G.pg.base.equip_data_statistics[14171] = {
 _G.pg.base.equip_data_statistics[14180] = {
 	tech = 0,
 	name = "406mm連装砲Mk1",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 1,
@@ -28048,7 +29138,7 @@ _G.pg.base.equip_data_statistics[14187] = {
 _G.pg.base.equip_data_statistics[14200] = {
 	tech = 1,
 	name = "406mm連装砲MK5",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 3,
@@ -28128,7 +29218,7 @@ _G.pg.base.equip_data_statistics[14203] = {
 _G.pg.base.equip_data_statistics[14220] = {
 	tech = 2,
 	name = "406mm連装砲MK5",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 1,
@@ -28236,7 +29326,7 @@ _G.pg.base.equip_data_statistics[14226] = {
 _G.pg.base.equip_data_statistics[14240] = {
 	tech = 3,
 	name = "406mm連装砲MK5",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 1,
@@ -28390,7 +29480,7 @@ _G.pg.base.equip_data_statistics[14251] = {
 _G.pg.base.equip_data_statistics[14260] = {
 	tech = 0,
 	name = "406mm連装砲Mk8",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 1,
@@ -28544,7 +29634,7 @@ _G.pg.base.equip_data_statistics[14271] = {
 _G.pg.base.equip_data_statistics[14300] = {
 	tech = 1,
 	name = "406mm三連装砲MK6",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 3,
@@ -28624,7 +29714,7 @@ _G.pg.base.equip_data_statistics[14303] = {
 _G.pg.base.equip_data_statistics[14320] = {
 	tech = 2,
 	name = "406mm三連装砲MK6",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -28732,7 +29822,7 @@ _G.pg.base.equip_data_statistics[14326] = {
 _G.pg.base.equip_data_statistics[14340] = {
 	tech = 3,
 	name = "406mm三連装砲MK6",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -28886,7 +29976,7 @@ _G.pg.base.equip_data_statistics[14351] = {
 _G.pg.base.equip_data_statistics[14360] = {
 	tech = 0,
 	name = "試作型406mm三連装砲MkD",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 1,
@@ -29060,7 +30150,7 @@ _G.pg.base.equip_data_statistics[14373] = {
 _G.pg.base.equip_data_statistics[14380] = {
 	tech = 0,
 	name = "406mm三連装砲Mk2",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 3,
@@ -29213,7 +30303,7 @@ _G.pg.base.equip_data_statistics[14391] = {
 _G.pg.base.equip_data_statistics[14400] = {
 	tech = 1,
 	name = "406mm三連装砲MK7",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 3,
@@ -29320,7 +30410,7 @@ _G.pg.base.equip_data_statistics[14406] = {
 _G.pg.base.equip_data_statistics[14460] = {
 	tech = 0,
 	name = "406mm三連装砲MK7",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "アイオワ級戦艦のために開発されたMk7型主砲",
 	ammo = 2,
@@ -29494,7 +30584,7 @@ _G.pg.base.equip_data_statistics[14473] = {
 _G.pg.base.equip_data_statistics[14500] = {
 	tech = 0,
 	name = "試作型457mm連装砲MKA",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 1,
@@ -29668,7 +30758,7 @@ _G.pg.base.equip_data_statistics[14513] = {
 _G.pg.base.equip_data_statistics[14520] = {
 	tech = 0,
 	name = "試作型406mm連装砲Mk4",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 1,
@@ -29844,7 +30934,7 @@ _G.pg.base.equip_data_statistics[14533] = {
 _G.pg.base.equip_data_statistics[14540] = {
 	tech = 0,
 	name = "試作型406mm三連装砲Mk6改",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -30018,7 +31108,7 @@ _G.pg.base.equip_data_statistics[14553] = {
 _G.pg.base.equip_data_statistics[15000] = {
 	tech = 1,
 	name = "潜水艦用Mark14魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -30105,7 +31195,7 @@ _G.pg.base.equip_data_statistics[15003] = {
 _G.pg.base.equip_data_statistics[15020] = {
 	tech = 2,
 	name = "潜水艦用Mark14魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -30219,7 +31309,7 @@ _G.pg.base.equip_data_statistics[15026] = {
 _G.pg.base.equip_data_statistics[15040] = {
 	tech = 3,
 	name = "潜水艦用Mark14魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -30379,7 +31469,7 @@ _G.pg.base.equip_data_statistics[15051] = {
 _G.pg.base.equip_data_statistics[15060] = {
 	tech = 0,
 	name = "潜水艦用Mark18魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 4,
@@ -30539,7 +31629,7 @@ _G.pg.base.equip_data_statistics[15071] = {
 _G.pg.base.equip_data_statistics[15100] = {
 	tech = 1,
 	name = "潜水艦用Mark16魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -30653,7 +31743,7 @@ _G.pg.base.equip_data_statistics[15106] = {
 _G.pg.base.equip_data_statistics[15120] = {
 	tech = 2,
 	name = "潜水艦用Mark16魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -30803,7 +31893,7 @@ _G.pg.base.equip_data_statistics[15130] = {
 _G.pg.base.equip_data_statistics[15140] = {
 	tech = 3,
 	name = "潜水艦用Mark16魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -30983,7 +32073,7 @@ _G.pg.base.equip_data_statistics[15153] = {
 _G.pg.base.equip_data_statistics[15160] = {
 	tech = 0,
 	name = "潜水艦用Mark28魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 4,
@@ -31163,7 +32253,7 @@ _G.pg.base.equip_data_statistics[15173] = {
 _G.pg.base.equip_data_statistics[15200] = {
 	tech = 0,
 	name = "533mm三連装魚雷Mk17",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -31295,7 +32385,7 @@ _G.pg.base.equip_data_statistics[15207] = {
 _G.pg.base.equip_data_statistics[15220] = {
 	tech = 0,
 	name = "533mm四連装魚雷Mk17",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -31464,7 +32554,7 @@ _G.pg.base.equip_data_statistics[15231] = {
 _G.pg.base.equip_data_statistics[15240] = {
 	tech = 0,
 	name = "533mm五連装魚雷Mk17",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -31653,7 +32743,7 @@ _G.pg.base.equip_data_statistics[15253] = {
 _G.pg.base.equip_data_statistics[15300] = {
 	tech = 0,
 	name = "533mm魚雷Mark35（四連射）",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "说明未填写",
 	ammo = 4,
@@ -31845,7 +32935,7 @@ _G.pg.base.equip_data_statistics[15313] = {
 _G.pg.base.equip_data_statistics[15500] = {
 	type = 10,
 	name = "PBY-5Aカタリナ",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 10,
 	ammo = 10,
@@ -31978,11 +33068,11 @@ _G.pg.base.equip_data_statistics[15511] = {
 _G.pg.base.equip_data_statistics[16000] = {
 	tech = 1,
 	name = "20mmエリコン機関砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	rarity = 1,
 	ammo = 5,
-	damage = "8/回",
+	damage = "8<[WAVE]>",
 	nationality = 1,
 	descrip = "0",
 	id = 16000,
@@ -32043,7 +33133,7 @@ _G.pg.base.equip_data_statistics[16000] = {
 }
 _G.pg.base.equip_data_statistics[16001] = {
 	id = 16001,
-	damage = "9/回",
+	damage = "9<[WAVE]>",
 	base = 16000,
 	weapon_id = {
 		16001
@@ -32052,7 +33142,7 @@ _G.pg.base.equip_data_statistics[16001] = {
 }
 _G.pg.base.equip_data_statistics[16002] = {
 	id = 16002,
-	damage = "10/回",
+	damage = "10<[WAVE]>",
 	base = 16000,
 	weapon_id = {
 		16002
@@ -32061,7 +33151,7 @@ _G.pg.base.equip_data_statistics[16002] = {
 }
 _G.pg.base.equip_data_statistics[16003] = {
 	id = 16003,
-	damage = "12/回",
+	damage = "12<[WAVE]>",
 	base = 16000,
 	weapon_id = {
 		16003
@@ -32071,11 +33161,11 @@ _G.pg.base.equip_data_statistics[16003] = {
 _G.pg.base.equip_data_statistics[16020] = {
 	tech = 2,
 	name = "20mmエリコン機関砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "9/回",
+	damage = "9<[WAVE]>",
 	nationality = 1,
 	rarity = 2,
 	id = 16020,
@@ -32137,7 +33227,7 @@ _G.pg.base.equip_data_statistics[16020] = {
 }
 _G.pg.base.equip_data_statistics[16021] = {
 	id = 16021,
-	damage = "10/回",
+	damage = "10<[WAVE]>",
 	base = 16020,
 	weapon_id = {
 		16021
@@ -32146,7 +33236,7 @@ _G.pg.base.equip_data_statistics[16021] = {
 }
 _G.pg.base.equip_data_statistics[16022] = {
 	id = 16022,
-	damage = "12/回",
+	damage = "12<[WAVE]>",
 	base = 16020,
 	weapon_id = {
 		16022
@@ -32155,7 +33245,7 @@ _G.pg.base.equip_data_statistics[16022] = {
 }
 _G.pg.base.equip_data_statistics[16023] = {
 	id = 16023,
-	damage = "14/回",
+	damage = "14<[WAVE]>",
 	base = 16020,
 	weapon_id = {
 		16023
@@ -32165,11 +33255,11 @@ _G.pg.base.equip_data_statistics[16023] = {
 _G.pg.base.equip_data_statistics[16040] = {
 	tech = 3,
 	name = "20mmエリコン機関砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "11/回",
+	damage = "11<[WAVE]>",
 	nationality = 1,
 	rarity = 3,
 	id = 16040,
@@ -32231,7 +33321,7 @@ _G.pg.base.equip_data_statistics[16040] = {
 }
 _G.pg.base.equip_data_statistics[16041] = {
 	id = 16041,
-	damage = "12/回",
+	damage = "12<[WAVE]>",
 	base = 16040,
 	weapon_id = {
 		16041
@@ -32240,7 +33330,7 @@ _G.pg.base.equip_data_statistics[16041] = {
 }
 _G.pg.base.equip_data_statistics[16042] = {
 	id = 16042,
-	damage = "13/回",
+	damage = "13<[WAVE]>",
 	base = 16040,
 	weapon_id = {
 		16042
@@ -32249,7 +33339,7 @@ _G.pg.base.equip_data_statistics[16042] = {
 }
 _G.pg.base.equip_data_statistics[16043] = {
 	id = 16043,
-	damage = "14/回",
+	damage = "14<[WAVE]>",
 	base = 16040,
 	weapon_id = {
 		16043
@@ -32258,7 +33348,7 @@ _G.pg.base.equip_data_statistics[16043] = {
 }
 _G.pg.base.equip_data_statistics[16044] = {
 	id = 16044,
-	damage = "16/回",
+	damage = "16<[WAVE]>",
 	base = 16040,
 	weapon_id = {
 		16044
@@ -32267,7 +33357,7 @@ _G.pg.base.equip_data_statistics[16044] = {
 }
 _G.pg.base.equip_data_statistics[16045] = {
 	id = 16045,
-	damage = "18/回",
+	damage = "18<[WAVE]>",
 	base = 16040,
 	weapon_id = {
 		16045
@@ -32276,7 +33366,7 @@ _G.pg.base.equip_data_statistics[16045] = {
 }
 _G.pg.base.equip_data_statistics[16046] = {
 	id = 16046,
-	damage = "20/回",
+	damage = "20<[WAVE]>",
 	base = 16040,
 	weapon_id = {
 		16046
@@ -32285,7 +33375,7 @@ _G.pg.base.equip_data_statistics[16046] = {
 }
 _G.pg.base.equip_data_statistics[16047] = {
 	id = 16047,
-	damage = "20/回",
+	damage = "20<[WAVE]>",
 	base = 16040,
 	weapon_id = {
 		16047
@@ -32295,11 +33385,11 @@ _G.pg.base.equip_data_statistics[16047] = {
 _G.pg.base.equip_data_statistics[16060] = {
 	tech = 0,
 	name = "76mm高角砲改修型",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "29/回",
+	damage = "29<[WAVE]>",
 	nationality = 1,
 	rarity = 4,
 	id = 16060,
@@ -32361,7 +33451,7 @@ _G.pg.base.equip_data_statistics[16060] = {
 }
 _G.pg.base.equip_data_statistics[16061] = {
 	id = 16061,
-	damage = "32/回",
+	damage = "32<[WAVE]>",
 	base = 16060,
 	weapon_id = {
 		16061
@@ -32370,7 +33460,7 @@ _G.pg.base.equip_data_statistics[16061] = {
 }
 _G.pg.base.equip_data_statistics[16062] = {
 	id = 16062,
-	damage = "35/回",
+	damage = "35<[WAVE]>",
 	base = 16060,
 	weapon_id = {
 		16062
@@ -32379,7 +33469,7 @@ _G.pg.base.equip_data_statistics[16062] = {
 }
 _G.pg.base.equip_data_statistics[16063] = {
 	id = 16063,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	base = 16060,
 	weapon_id = {
 		16063
@@ -32388,7 +33478,7 @@ _G.pg.base.equip_data_statistics[16063] = {
 }
 _G.pg.base.equip_data_statistics[16064] = {
 	id = 16064,
-	damage = "41/回",
+	damage = "41<[WAVE]>",
 	base = 16060,
 	weapon_id = {
 		16064
@@ -32397,7 +33487,7 @@ _G.pg.base.equip_data_statistics[16064] = {
 }
 _G.pg.base.equip_data_statistics[16065] = {
 	id = 16065,
-	damage = "44/回",
+	damage = "44<[WAVE]>",
 	base = 16060,
 	weapon_id = {
 		16065
@@ -32406,7 +33496,7 @@ _G.pg.base.equip_data_statistics[16065] = {
 }
 _G.pg.base.equip_data_statistics[16066] = {
 	id = 16066,
-	damage = "47/回",
+	damage = "47<[WAVE]>",
 	base = 16060,
 	weapon_id = {
 		16066
@@ -32415,7 +33505,7 @@ _G.pg.base.equip_data_statistics[16066] = {
 }
 _G.pg.base.equip_data_statistics[16067] = {
 	id = 16067,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 16060,
 	weapon_id = {
 		16067
@@ -32424,7 +33514,7 @@ _G.pg.base.equip_data_statistics[16067] = {
 }
 _G.pg.base.equip_data_statistics[16068] = {
 	id = 16068,
-	damage = "53/回",
+	damage = "53<[WAVE]>",
 	base = 16060,
 	weapon_id = {
 		16068
@@ -32433,7 +33523,7 @@ _G.pg.base.equip_data_statistics[16068] = {
 }
 _G.pg.base.equip_data_statistics[16069] = {
 	id = 16069,
-	damage = "57/回",
+	damage = "57<[WAVE]>",
 	base = 16060,
 	weapon_id = {
 		16069
@@ -32442,7 +33532,7 @@ _G.pg.base.equip_data_statistics[16069] = {
 }
 _G.pg.base.equip_data_statistics[16070] = {
 	id = 16070,
-	damage = "61/回",
+	damage = "61<[WAVE]>",
 	base = 16060,
 	weapon_id = {
 		16070
@@ -32452,7 +33542,7 @@ _G.pg.base.equip_data_statistics[16070] = {
 _G.pg.base.equip_data_statistics[16071] = {
 	id = 16071,
 	anti_siren = 100,
-	damage = "61/回",
+	damage = "61<[WAVE]>",
 	base = 16060,
 	weapon_id = {
 		16071
@@ -32462,11 +33552,11 @@ _G.pg.base.equip_data_statistics[16071] = {
 _G.pg.base.equip_data_statistics[16080] = {
 	tech = 0,
 	name = "76mm連装RF砲Mk27",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "33/回",
+	damage = "33<[WAVE]>",
 	nationality = 1,
 	rarity = 5,
 	id = 16080,
@@ -32528,7 +33618,7 @@ _G.pg.base.equip_data_statistics[16080] = {
 }
 _G.pg.base.equip_data_statistics[16081] = {
 	id = 16081,
-	damage = "39/回",
+	damage = "39<[WAVE]>",
 	base = 16080,
 	weapon_id = {
 		16081
@@ -32537,7 +33627,7 @@ _G.pg.base.equip_data_statistics[16081] = {
 }
 _G.pg.base.equip_data_statistics[16082] = {
 	id = 16082,
-	damage = "45/回",
+	damage = "45<[WAVE]>",
 	base = 16080,
 	weapon_id = {
 		16082
@@ -32546,7 +33636,7 @@ _G.pg.base.equip_data_statistics[16082] = {
 }
 _G.pg.base.equip_data_statistics[16083] = {
 	id = 16083,
-	damage = "51/回",
+	damage = "51<[WAVE]>",
 	base = 16080,
 	weapon_id = {
 		16083
@@ -32555,7 +33645,7 @@ _G.pg.base.equip_data_statistics[16083] = {
 }
 _G.pg.base.equip_data_statistics[16084] = {
 	id = 16084,
-	damage = "57/回",
+	damage = "57<[WAVE]>",
 	base = 16080,
 	weapon_id = {
 		16084
@@ -32564,7 +33654,7 @@ _G.pg.base.equip_data_statistics[16084] = {
 }
 _G.pg.base.equip_data_statistics[16085] = {
 	id = 16085,
-	damage = "63/回",
+	damage = "63<[WAVE]>",
 	base = 16080,
 	weapon_id = {
 		16085
@@ -32573,7 +33663,7 @@ _G.pg.base.equip_data_statistics[16085] = {
 }
 _G.pg.base.equip_data_statistics[16086] = {
 	id = 16086,
-	damage = "69/回",
+	damage = "69<[WAVE]>",
 	base = 16080,
 	weapon_id = {
 		16086
@@ -32582,7 +33672,7 @@ _G.pg.base.equip_data_statistics[16086] = {
 }
 _G.pg.base.equip_data_statistics[16087] = {
 	id = 16087,
-	damage = "75/回",
+	damage = "75<[WAVE]>",
 	base = 16080,
 	weapon_id = {
 		16087
@@ -32591,7 +33681,7 @@ _G.pg.base.equip_data_statistics[16087] = {
 }
 _G.pg.base.equip_data_statistics[16088] = {
 	id = 16088,
-	damage = "81/回",
+	damage = "81<[WAVE]>",
 	base = 16080,
 	weapon_id = {
 		16088
@@ -32600,7 +33690,7 @@ _G.pg.base.equip_data_statistics[16088] = {
 }
 _G.pg.base.equip_data_statistics[16089] = {
 	id = 16089,
-	damage = "87/回",
+	damage = "87<[WAVE]>",
 	base = 16080,
 	weapon_id = {
 		16089
@@ -32609,7 +33699,7 @@ _G.pg.base.equip_data_statistics[16089] = {
 }
 _G.pg.base.equip_data_statistics[16090] = {
 	id = 16090,
-	damage = "94/回",
+	damage = "94<[WAVE]>",
 	base = 16080,
 	weapon_id = {
 		16090
@@ -32619,7 +33709,7 @@ _G.pg.base.equip_data_statistics[16090] = {
 _G.pg.base.equip_data_statistics[16091] = {
 	id = 16091,
 	anti_siren = 100,
-	damage = "94/回",
+	damage = "94<[WAVE]>",
 	base = 16080,
 	weapon_id = {
 		16091
@@ -32629,7 +33719,7 @@ _G.pg.base.equip_data_statistics[16091] = {
 _G.pg.base.equip_data_statistics[16092] = {
 	id = 16092,
 	anti_siren = 200,
-	damage = "94/回",
+	damage = "94<[WAVE]>",
 	base = 16080,
 	weapon_id = {
 		16092
@@ -32639,7 +33729,7 @@ _G.pg.base.equip_data_statistics[16092] = {
 _G.pg.base.equip_data_statistics[16093] = {
 	id = 16093,
 	anti_siren = 300,
-	damage = "94/回",
+	damage = "94<[WAVE]>",
 	base = 16080,
 	weapon_id = {
 		16093
@@ -32649,11 +33739,11 @@ _G.pg.base.equip_data_statistics[16093] = {
 _G.pg.base.equip_data_statistics[16100] = {
 	tech = 1,
 	name = "20mm二連装エリコン機関砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "14/回",
+	damage = "14<[WAVE]>",
 	nationality = 1,
 	rarity = 2,
 	id = 16100,
@@ -32715,7 +33805,7 @@ _G.pg.base.equip_data_statistics[16100] = {
 }
 _G.pg.base.equip_data_statistics[16101] = {
 	id = 16101,
-	damage = "16/回",
+	damage = "16<[WAVE]>",
 	base = 16100,
 	weapon_id = {
 		16101
@@ -32724,7 +33814,7 @@ _G.pg.base.equip_data_statistics[16101] = {
 }
 _G.pg.base.equip_data_statistics[16102] = {
 	id = 16102,
-	damage = "18/回",
+	damage = "18<[WAVE]>",
 	base = 16100,
 	weapon_id = {
 		16102
@@ -32733,7 +33823,7 @@ _G.pg.base.equip_data_statistics[16102] = {
 }
 _G.pg.base.equip_data_statistics[16103] = {
 	id = 16103,
-	damage = "20/回",
+	damage = "20<[WAVE]>",
 	base = 16100,
 	weapon_id = {
 		16103
@@ -32743,11 +33833,11 @@ _G.pg.base.equip_data_statistics[16103] = {
 _G.pg.base.equip_data_statistics[16120] = {
 	tech = 2,
 	name = "20mm二連装エリコン機関砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "15/回",
+	damage = "15<[WAVE]>",
 	nationality = 1,
 	rarity = 3,
 	id = 16120,
@@ -32809,7 +33899,7 @@ _G.pg.base.equip_data_statistics[16120] = {
 }
 _G.pg.base.equip_data_statistics[16121] = {
 	id = 16121,
-	damage = "17/回",
+	damage = "17<[WAVE]>",
 	base = 16120,
 	weapon_id = {
 		16121
@@ -32818,7 +33908,7 @@ _G.pg.base.equip_data_statistics[16121] = {
 }
 _G.pg.base.equip_data_statistics[16122] = {
 	id = 16122,
-	damage = "19/回",
+	damage = "19<[WAVE]>",
 	base = 16120,
 	weapon_id = {
 		16122
@@ -32827,7 +33917,7 @@ _G.pg.base.equip_data_statistics[16122] = {
 }
 _G.pg.base.equip_data_statistics[16123] = {
 	id = 16123,
-	damage = "21/回",
+	damage = "21<[WAVE]>",
 	base = 16120,
 	weapon_id = {
 		16123
@@ -32836,7 +33926,7 @@ _G.pg.base.equip_data_statistics[16123] = {
 }
 _G.pg.base.equip_data_statistics[16124] = {
 	id = 16124,
-	damage = "24/回",
+	damage = "24<[WAVE]>",
 	base = 16120,
 	weapon_id = {
 		16124
@@ -32845,7 +33935,7 @@ _G.pg.base.equip_data_statistics[16124] = {
 }
 _G.pg.base.equip_data_statistics[16125] = {
 	id = 16125,
-	damage = "27/回",
+	damage = "27<[WAVE]>",
 	base = 16120,
 	weapon_id = {
 		16125
@@ -32854,7 +33944,7 @@ _G.pg.base.equip_data_statistics[16125] = {
 }
 _G.pg.base.equip_data_statistics[16126] = {
 	id = 16126,
-	damage = "30/回",
+	damage = "30<[WAVE]>",
 	base = 16120,
 	weapon_id = {
 		16126
@@ -32864,11 +33954,11 @@ _G.pg.base.equip_data_statistics[16126] = {
 _G.pg.base.equip_data_statistics[16140] = {
 	tech = 3,
 	name = "20mm二連装エリコン機関砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "18/回",
+	damage = "18<[WAVE]>",
 	nationality = 1,
 	rarity = 4,
 	id = 16140,
@@ -32930,7 +34020,7 @@ _G.pg.base.equip_data_statistics[16140] = {
 }
 _G.pg.base.equip_data_statistics[16141] = {
 	id = 16141,
-	damage = "20/回",
+	damage = "20<[WAVE]>",
 	base = 16140,
 	weapon_id = {
 		16141
@@ -32939,7 +34029,7 @@ _G.pg.base.equip_data_statistics[16141] = {
 }
 _G.pg.base.equip_data_statistics[16142] = {
 	id = 16142,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	base = 16140,
 	weapon_id = {
 		16142
@@ -32948,7 +34038,7 @@ _G.pg.base.equip_data_statistics[16142] = {
 }
 _G.pg.base.equip_data_statistics[16143] = {
 	id = 16143,
-	damage = "24/回",
+	damage = "24<[WAVE]>",
 	base = 16140,
 	weapon_id = {
 		16143
@@ -32957,7 +34047,7 @@ _G.pg.base.equip_data_statistics[16143] = {
 }
 _G.pg.base.equip_data_statistics[16144] = {
 	id = 16144,
-	damage = "27/回",
+	damage = "27<[WAVE]>",
 	base = 16140,
 	weapon_id = {
 		16144
@@ -32966,7 +34056,7 @@ _G.pg.base.equip_data_statistics[16144] = {
 }
 _G.pg.base.equip_data_statistics[16145] = {
 	id = 16145,
-	damage = "30/回",
+	damage = "30<[WAVE]>",
 	base = 16140,
 	weapon_id = {
 		16145
@@ -32975,7 +34065,7 @@ _G.pg.base.equip_data_statistics[16145] = {
 }
 _G.pg.base.equip_data_statistics[16146] = {
 	id = 16146,
-	damage = "33/回",
+	damage = "33<[WAVE]>",
 	base = 16140,
 	weapon_id = {
 		16146
@@ -32984,7 +34074,7 @@ _G.pg.base.equip_data_statistics[16146] = {
 }
 _G.pg.base.equip_data_statistics[16147] = {
 	id = 16147,
-	damage = "36/回",
+	damage = "36<[WAVE]>",
 	base = 16140,
 	weapon_id = {
 		16147
@@ -32993,7 +34083,7 @@ _G.pg.base.equip_data_statistics[16147] = {
 }
 _G.pg.base.equip_data_statistics[16148] = {
 	id = 16148,
-	damage = "39/回",
+	damage = "39<[WAVE]>",
 	base = 16140,
 	weapon_id = {
 		16148
@@ -33002,7 +34092,7 @@ _G.pg.base.equip_data_statistics[16148] = {
 }
 _G.pg.base.equip_data_statistics[16149] = {
 	id = 16149,
-	damage = "42/回",
+	damage = "42<[WAVE]>",
 	base = 16140,
 	weapon_id = {
 		16149
@@ -33011,7 +34101,7 @@ _G.pg.base.equip_data_statistics[16149] = {
 }
 _G.pg.base.equip_data_statistics[16150] = {
 	id = 16150,
-	damage = "45/回",
+	damage = "45<[WAVE]>",
 	base = 16140,
 	weapon_id = {
 		16150
@@ -33021,7 +34111,7 @@ _G.pg.base.equip_data_statistics[16150] = {
 _G.pg.base.equip_data_statistics[16151] = {
 	id = 16151,
 	anti_siren = 100,
-	damage = "45/回",
+	damage = "45<[WAVE]>",
 	base = 16140,
 	weapon_id = {
 		16151
@@ -33031,11 +34121,11 @@ _G.pg.base.equip_data_statistics[16151] = {
 _G.pg.base.equip_data_statistics[16160] = {
 	tech = 0,
 	name = "20mm四連装エリコン機関砲Mk15",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	nationality = 1,
 	rarity = 4,
 	id = 16160,
@@ -33097,7 +34187,7 @@ _G.pg.base.equip_data_statistics[16160] = {
 }
 _G.pg.base.equip_data_statistics[16161] = {
 	id = 16161,
-	damage = "27/回",
+	damage = "27<[WAVE]>",
 	base = 16160,
 	weapon_id = {
 		16161
@@ -33106,7 +34196,7 @@ _G.pg.base.equip_data_statistics[16161] = {
 }
 _G.pg.base.equip_data_statistics[16162] = {
 	id = 16162,
-	damage = "29/回",
+	damage = "29<[WAVE]>",
 	base = 16160,
 	weapon_id = {
 		16162
@@ -33115,7 +34205,7 @@ _G.pg.base.equip_data_statistics[16162] = {
 }
 _G.pg.base.equip_data_statistics[16163] = {
 	id = 16163,
-	damage = "31/回",
+	damage = "31<[WAVE]>",
 	base = 16160,
 	weapon_id = {
 		16163
@@ -33124,7 +34214,7 @@ _G.pg.base.equip_data_statistics[16163] = {
 }
 _G.pg.base.equip_data_statistics[16164] = {
 	id = 16164,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	base = 16160,
 	weapon_id = {
 		16164
@@ -33133,7 +34223,7 @@ _G.pg.base.equip_data_statistics[16164] = {
 }
 _G.pg.base.equip_data_statistics[16165] = {
 	id = 16165,
-	damage = "37/回",
+	damage = "37<[WAVE]>",
 	base = 16160,
 	weapon_id = {
 		16165
@@ -33142,7 +34232,7 @@ _G.pg.base.equip_data_statistics[16165] = {
 }
 _G.pg.base.equip_data_statistics[16166] = {
 	id = 16166,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 16160,
 	weapon_id = {
 		16166
@@ -33151,7 +34241,7 @@ _G.pg.base.equip_data_statistics[16166] = {
 }
 _G.pg.base.equip_data_statistics[16167] = {
 	id = 16167,
-	damage = "43/回",
+	damage = "43<[WAVE]>",
 	base = 16160,
 	weapon_id = {
 		16167
@@ -33160,7 +34250,7 @@ _G.pg.base.equip_data_statistics[16167] = {
 }
 _G.pg.base.equip_data_statistics[16168] = {
 	id = 16168,
-	damage = "46/回",
+	damage = "46<[WAVE]>",
 	base = 16160,
 	weapon_id = {
 		16168
@@ -33169,7 +34259,7 @@ _G.pg.base.equip_data_statistics[16168] = {
 }
 _G.pg.base.equip_data_statistics[16169] = {
 	id = 16169,
-	damage = "49/回",
+	damage = "49<[WAVE]>",
 	base = 16160,
 	weapon_id = {
 		16169
@@ -33178,7 +34268,7 @@ _G.pg.base.equip_data_statistics[16169] = {
 }
 _G.pg.base.equip_data_statistics[16170] = {
 	id = 16170,
-	damage = "52/回",
+	damage = "52<[WAVE]>",
 	base = 16160,
 	weapon_id = {
 		16170
@@ -33188,7 +34278,7 @@ _G.pg.base.equip_data_statistics[16170] = {
 _G.pg.base.equip_data_statistics[16171] = {
 	id = 16171,
 	anti_siren = 100,
-	damage = "52/回",
+	damage = "52<[WAVE]>",
 	base = 16160,
 	weapon_id = {
 		16171
@@ -33198,11 +34288,11 @@ _G.pg.base.equip_data_statistics[16171] = {
 _G.pg.base.equip_data_statistics[16200] = {
 	tech = 1,
 	name = "四連装28mm対空機銃「シカゴピアノ」",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	nationality = 1,
 	rarity = 2,
 	id = 16200,
@@ -33264,7 +34354,7 @@ _G.pg.base.equip_data_statistics[16200] = {
 }
 _G.pg.base.equip_data_statistics[16201] = {
 	id = 16201,
-	damage = "26/回",
+	damage = "26<[WAVE]>",
 	base = 16200,
 	weapon_id = {
 		16201
@@ -33273,7 +34363,7 @@ _G.pg.base.equip_data_statistics[16201] = {
 }
 _G.pg.base.equip_data_statistics[16202] = {
 	id = 16202,
-	damage = "30/回",
+	damage = "30<[WAVE]>",
 	base = 16200,
 	weapon_id = {
 		16202
@@ -33282,7 +34372,7 @@ _G.pg.base.equip_data_statistics[16202] = {
 }
 _G.pg.base.equip_data_statistics[16203] = {
 	id = 16203,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	base = 16200,
 	weapon_id = {
 		16203
@@ -33292,11 +34382,11 @@ _G.pg.base.equip_data_statistics[16203] = {
 _G.pg.base.equip_data_statistics[16220] = {
 	tech = 2,
 	name = "四連装28mm対空機銃「シカゴピアノ」",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	nationality = 1,
 	rarity = 3,
 	id = 16220,
@@ -33358,7 +34448,7 @@ _G.pg.base.equip_data_statistics[16220] = {
 }
 _G.pg.base.equip_data_statistics[16221] = {
 	id = 16221,
-	damage = "29/回",
+	damage = "29<[WAVE]>",
 	base = 16220,
 	weapon_id = {
 		16221
@@ -33367,7 +34457,7 @@ _G.pg.base.equip_data_statistics[16221] = {
 }
 _G.pg.base.equip_data_statistics[16222] = {
 	id = 16222,
-	damage = "33/回",
+	damage = "33<[WAVE]>",
 	base = 16220,
 	weapon_id = {
 		16222
@@ -33376,7 +34466,7 @@ _G.pg.base.equip_data_statistics[16222] = {
 }
 _G.pg.base.equip_data_statistics[16223] = {
 	id = 16223,
-	damage = "37/回",
+	damage = "37<[WAVE]>",
 	base = 16220,
 	weapon_id = {
 		16223
@@ -33385,7 +34475,7 @@ _G.pg.base.equip_data_statistics[16223] = {
 }
 _G.pg.base.equip_data_statistics[16224] = {
 	id = 16224,
-	damage = "41/回",
+	damage = "41<[WAVE]>",
 	base = 16220,
 	weapon_id = {
 		16224
@@ -33394,7 +34484,7 @@ _G.pg.base.equip_data_statistics[16224] = {
 }
 _G.pg.base.equip_data_statistics[16225] = {
 	id = 16225,
-	damage = "45/回",
+	damage = "45<[WAVE]>",
 	base = 16220,
 	weapon_id = {
 		16225
@@ -33403,7 +34493,7 @@ _G.pg.base.equip_data_statistics[16225] = {
 }
 _G.pg.base.equip_data_statistics[16226] = {
 	id = 16226,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 16220,
 	weapon_id = {
 		16226
@@ -33413,11 +34503,11 @@ _G.pg.base.equip_data_statistics[16226] = {
 _G.pg.base.equip_data_statistics[16240] = {
 	tech = 3,
 	name = "四連装28mm対空機銃「シカゴピアノ」",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "29/回",
+	damage = "29<[WAVE]>",
 	nationality = 1,
 	rarity = 4,
 	id = 16240,
@@ -33479,7 +34569,7 @@ _G.pg.base.equip_data_statistics[16240] = {
 }
 _G.pg.base.equip_data_statistics[16241] = {
 	id = 16241,
-	damage = "33/回",
+	damage = "33<[WAVE]>",
 	base = 16240,
 	weapon_id = {
 		16241
@@ -33488,7 +34578,7 @@ _G.pg.base.equip_data_statistics[16241] = {
 }
 _G.pg.base.equip_data_statistics[16242] = {
 	id = 16242,
-	damage = "37/回",
+	damage = "37<[WAVE]>",
 	base = 16240,
 	weapon_id = {
 		16242
@@ -33497,7 +34587,7 @@ _G.pg.base.equip_data_statistics[16242] = {
 }
 _G.pg.base.equip_data_statistics[16243] = {
 	id = 16243,
-	damage = "41/回",
+	damage = "41<[WAVE]>",
 	base = 16240,
 	weapon_id = {
 		16243
@@ -33506,7 +34596,7 @@ _G.pg.base.equip_data_statistics[16243] = {
 }
 _G.pg.base.equip_data_statistics[16244] = {
 	id = 16244,
-	damage = "45/回",
+	damage = "45<[WAVE]>",
 	base = 16240,
 	weapon_id = {
 		16244
@@ -33515,7 +34605,7 @@ _G.pg.base.equip_data_statistics[16244] = {
 }
 _G.pg.base.equip_data_statistics[16245] = {
 	id = 16245,
-	damage = "49/回",
+	damage = "49<[WAVE]>",
 	base = 16240,
 	weapon_id = {
 		16245
@@ -33524,7 +34614,7 @@ _G.pg.base.equip_data_statistics[16245] = {
 }
 _G.pg.base.equip_data_statistics[16246] = {
 	id = 16246,
-	damage = "53/回",
+	damage = "53<[WAVE]>",
 	base = 16240,
 	weapon_id = {
 		16246
@@ -33533,7 +34623,7 @@ _G.pg.base.equip_data_statistics[16246] = {
 }
 _G.pg.base.equip_data_statistics[16247] = {
 	id = 16247,
-	damage = "57/回",
+	damage = "57<[WAVE]>",
 	base = 16240,
 	weapon_id = {
 		16247
@@ -33542,7 +34632,7 @@ _G.pg.base.equip_data_statistics[16247] = {
 }
 _G.pg.base.equip_data_statistics[16248] = {
 	id = 16248,
-	damage = "62/回",
+	damage = "62<[WAVE]>",
 	base = 16240,
 	weapon_id = {
 		16248
@@ -33551,7 +34641,7 @@ _G.pg.base.equip_data_statistics[16248] = {
 }
 _G.pg.base.equip_data_statistics[16249] = {
 	id = 16249,
-	damage = "67/回",
+	damage = "67<[WAVE]>",
 	base = 16240,
 	weapon_id = {
 		16249
@@ -33560,7 +34650,7 @@ _G.pg.base.equip_data_statistics[16249] = {
 }
 _G.pg.base.equip_data_statistics[16250] = {
 	id = 16250,
-	damage = "72/回",
+	damage = "72<[WAVE]>",
 	base = 16240,
 	weapon_id = {
 		16250
@@ -33570,7 +34660,7 @@ _G.pg.base.equip_data_statistics[16250] = {
 _G.pg.base.equip_data_statistics[16251] = {
 	id = 16251,
 	anti_siren = 100,
-	damage = "72/回",
+	damage = "72<[WAVE]>",
 	base = 16240,
 	weapon_id = {
 		16251
@@ -33580,11 +34670,11 @@ _G.pg.base.equip_data_statistics[16251] = {
 _G.pg.base.equip_data_statistics[16300] = {
 	tech = 1,
 	name = "二連装ボフォース40mm機関砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "19/回",
+	damage = "19<[WAVE]>",
 	nationality = 1,
 	rarity = 2,
 	id = 16300,
@@ -33646,7 +34736,7 @@ _G.pg.base.equip_data_statistics[16300] = {
 }
 _G.pg.base.equip_data_statistics[16301] = {
 	id = 16301,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	base = 16300,
 	weapon_id = {
 		16301
@@ -33655,7 +34745,7 @@ _G.pg.base.equip_data_statistics[16301] = {
 }
 _G.pg.base.equip_data_statistics[16302] = {
 	id = 16302,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	base = 16300,
 	weapon_id = {
 		16302
@@ -33664,7 +34754,7 @@ _G.pg.base.equip_data_statistics[16302] = {
 }
 _G.pg.base.equip_data_statistics[16303] = {
 	id = 16303,
-	damage = "29/回",
+	damage = "29<[WAVE]>",
 	base = 16300,
 	weapon_id = {
 		16303
@@ -33674,11 +34764,11 @@ _G.pg.base.equip_data_statistics[16303] = {
 _G.pg.base.equip_data_statistics[16320] = {
 	tech = 2,
 	name = "二連装ボフォース40mm機関砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "23/回",
+	damage = "23<[WAVE]>",
 	nationality = 1,
 	rarity = 3,
 	id = 16320,
@@ -33740,7 +34830,7 @@ _G.pg.base.equip_data_statistics[16320] = {
 }
 _G.pg.base.equip_data_statistics[16321] = {
 	id = 16321,
-	damage = "26/回",
+	damage = "26<[WAVE]>",
 	base = 16320,
 	weapon_id = {
 		16321
@@ -33749,7 +34839,7 @@ _G.pg.base.equip_data_statistics[16321] = {
 }
 _G.pg.base.equip_data_statistics[16322] = {
 	id = 16322,
-	damage = "29/回",
+	damage = "29<[WAVE]>",
 	base = 16320,
 	weapon_id = {
 		16322
@@ -33758,7 +34848,7 @@ _G.pg.base.equip_data_statistics[16322] = {
 }
 _G.pg.base.equip_data_statistics[16323] = {
 	id = 16323,
-	damage = "33/回",
+	damage = "33<[WAVE]>",
 	base = 16320,
 	weapon_id = {
 		16323
@@ -33767,7 +34857,7 @@ _G.pg.base.equip_data_statistics[16323] = {
 }
 _G.pg.base.equip_data_statistics[16324] = {
 	id = 16324,
-	damage = "37/回",
+	damage = "37<[WAVE]>",
 	base = 16320,
 	weapon_id = {
 		16324
@@ -33776,7 +34866,7 @@ _G.pg.base.equip_data_statistics[16324] = {
 }
 _G.pg.base.equip_data_statistics[16325] = {
 	id = 16325,
-	damage = "41/回",
+	damage = "41<[WAVE]>",
 	base = 16320,
 	weapon_id = {
 		16325
@@ -33785,7 +34875,7 @@ _G.pg.base.equip_data_statistics[16325] = {
 }
 _G.pg.base.equip_data_statistics[16326] = {
 	id = 16326,
-	damage = "45/回",
+	damage = "45<[WAVE]>",
 	base = 16320,
 	weapon_id = {
 		16326
@@ -33795,11 +34885,11 @@ _G.pg.base.equip_data_statistics[16326] = {
 _G.pg.base.equip_data_statistics[16340] = {
 	tech = 3,
 	name = "二連装ボフォース40mm機関砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	nationality = 1,
 	rarity = 4,
 	id = 16340,
@@ -33861,7 +34951,7 @@ _G.pg.base.equip_data_statistics[16340] = {
 }
 _G.pg.base.equip_data_statistics[16341] = {
 	id = 16341,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 16340,
 	weapon_id = {
 		16341
@@ -33870,7 +34960,7 @@ _G.pg.base.equip_data_statistics[16341] = {
 }
 _G.pg.base.equip_data_statistics[16342] = {
 	id = 16342,
-	damage = "31/回",
+	damage = "31<[WAVE]>",
 	base = 16340,
 	weapon_id = {
 		16342
@@ -33879,7 +34969,7 @@ _G.pg.base.equip_data_statistics[16342] = {
 }
 _G.pg.base.equip_data_statistics[16343] = {
 	id = 16343,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	base = 16340,
 	weapon_id = {
 		16343
@@ -33888,7 +34978,7 @@ _G.pg.base.equip_data_statistics[16343] = {
 }
 _G.pg.base.equip_data_statistics[16344] = {
 	id = 16344,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	base = 16340,
 	weapon_id = {
 		16344
@@ -33897,7 +34987,7 @@ _G.pg.base.equip_data_statistics[16344] = {
 }
 _G.pg.base.equip_data_statistics[16345] = {
 	id = 16345,
-	damage = "42/回",
+	damage = "42<[WAVE]>",
 	base = 16340,
 	weapon_id = {
 		16345
@@ -33906,7 +34996,7 @@ _G.pg.base.equip_data_statistics[16345] = {
 }
 _G.pg.base.equip_data_statistics[16346] = {
 	id = 16346,
-	damage = "46/回",
+	damage = "46<[WAVE]>",
 	base = 16340,
 	weapon_id = {
 		16346
@@ -33915,7 +35005,7 @@ _G.pg.base.equip_data_statistics[16346] = {
 }
 _G.pg.base.equip_data_statistics[16347] = {
 	id = 16347,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 16340,
 	weapon_id = {
 		16347
@@ -33924,7 +35014,7 @@ _G.pg.base.equip_data_statistics[16347] = {
 }
 _G.pg.base.equip_data_statistics[16348] = {
 	id = 16348,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	base = 16340,
 	weapon_id = {
 		16348
@@ -33933,7 +35023,7 @@ _G.pg.base.equip_data_statistics[16348] = {
 }
 _G.pg.base.equip_data_statistics[16349] = {
 	id = 16349,
-	damage = "58/回",
+	damage = "58<[WAVE]>",
 	base = 16340,
 	weapon_id = {
 		16349
@@ -33942,7 +35032,7 @@ _G.pg.base.equip_data_statistics[16349] = {
 }
 _G.pg.base.equip_data_statistics[16350] = {
 	id = 16350,
-	damage = "62/回",
+	damage = "62<[WAVE]>",
 	base = 16340,
 	weapon_id = {
 		16350
@@ -33952,7 +35042,7 @@ _G.pg.base.equip_data_statistics[16350] = {
 _G.pg.base.equip_data_statistics[16351] = {
 	id = 16351,
 	anti_siren = 100,
-	damage = "62/回",
+	damage = "62<[WAVE]>",
 	base = 16340,
 	weapon_id = {
 		16351
@@ -33962,11 +35052,11 @@ _G.pg.base.equip_data_statistics[16351] = {
 _G.pg.base.equip_data_statistics[16400] = {
 	tech = 1,
 	name = "四連装ボフォース40mm機関砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	nationality = 1,
 	rarity = 3,
 	id = 16400,
@@ -34028,7 +35118,7 @@ _G.pg.base.equip_data_statistics[16400] = {
 }
 _G.pg.base.equip_data_statistics[16401] = {
 	id = 16401,
-	damage = "44/回",
+	damage = "44<[WAVE]>",
 	base = 16400,
 	weapon_id = {
 		16401
@@ -34037,7 +35127,7 @@ _G.pg.base.equip_data_statistics[16401] = {
 }
 _G.pg.base.equip_data_statistics[16402] = {
 	id = 16402,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 16400,
 	weapon_id = {
 		16402
@@ -34046,7 +35136,7 @@ _G.pg.base.equip_data_statistics[16402] = {
 }
 _G.pg.base.equip_data_statistics[16403] = {
 	id = 16403,
-	damage = "56/回",
+	damage = "56<[WAVE]>",
 	base = 16400,
 	weapon_id = {
 		16403
@@ -34055,7 +35145,7 @@ _G.pg.base.equip_data_statistics[16403] = {
 }
 _G.pg.base.equip_data_statistics[16404] = {
 	id = 16404,
-	damage = "62/回",
+	damage = "62<[WAVE]>",
 	base = 16400,
 	weapon_id = {
 		16404
@@ -34064,7 +35154,7 @@ _G.pg.base.equip_data_statistics[16404] = {
 }
 _G.pg.base.equip_data_statistics[16405] = {
 	id = 16405,
-	damage = "69/回",
+	damage = "69<[WAVE]>",
 	base = 16400,
 	weapon_id = {
 		16405
@@ -34073,7 +35163,7 @@ _G.pg.base.equip_data_statistics[16405] = {
 }
 _G.pg.base.equip_data_statistics[16406] = {
 	id = 16406,
-	damage = "76/回",
+	damage = "76<[WAVE]>",
 	base = 16400,
 	weapon_id = {
 		16406
@@ -34083,11 +35173,11 @@ _G.pg.base.equip_data_statistics[16406] = {
 _G.pg.base.equip_data_statistics[16420] = {
 	tech = 2,
 	name = "四連装ボフォース40mm機関砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "43/回",
+	damage = "43<[WAVE]>",
 	nationality = 1,
 	rarity = 4,
 	id = 16420,
@@ -34149,7 +35239,7 @@ _G.pg.base.equip_data_statistics[16420] = {
 }
 _G.pg.base.equip_data_statistics[16421] = {
 	id = 16421,
-	damage = "49/回",
+	damage = "49<[WAVE]>",
 	base = 16420,
 	weapon_id = {
 		16421
@@ -34158,7 +35248,7 @@ _G.pg.base.equip_data_statistics[16421] = {
 }
 _G.pg.base.equip_data_statistics[16422] = {
 	id = 16422,
-	damage = "55/回",
+	damage = "55<[WAVE]>",
 	base = 16420,
 	weapon_id = {
 		16422
@@ -34167,7 +35257,7 @@ _G.pg.base.equip_data_statistics[16422] = {
 }
 _G.pg.base.equip_data_statistics[16423] = {
 	id = 16423,
-	damage = "61/回",
+	damage = "61<[WAVE]>",
 	base = 16420,
 	weapon_id = {
 		16423
@@ -34176,7 +35266,7 @@ _G.pg.base.equip_data_statistics[16423] = {
 }
 _G.pg.base.equip_data_statistics[16424] = {
 	id = 16424,
-	damage = "67/回",
+	damage = "67<[WAVE]>",
 	base = 16420,
 	weapon_id = {
 		16424
@@ -34185,7 +35275,7 @@ _G.pg.base.equip_data_statistics[16424] = {
 }
 _G.pg.base.equip_data_statistics[16425] = {
 	id = 16425,
-	damage = "73/回",
+	damage = "73<[WAVE]>",
 	base = 16420,
 	weapon_id = {
 		16425
@@ -34194,7 +35284,7 @@ _G.pg.base.equip_data_statistics[16425] = {
 }
 _G.pg.base.equip_data_statistics[16426] = {
 	id = 16426,
-	damage = "80/回",
+	damage = "80<[WAVE]>",
 	base = 16420,
 	weapon_id = {
 		16426
@@ -34203,7 +35293,7 @@ _G.pg.base.equip_data_statistics[16426] = {
 }
 _G.pg.base.equip_data_statistics[16427] = {
 	id = 16427,
-	damage = "87/回",
+	damage = "87<[WAVE]>",
 	base = 16420,
 	weapon_id = {
 		16427
@@ -34212,7 +35302,7 @@ _G.pg.base.equip_data_statistics[16427] = {
 }
 _G.pg.base.equip_data_statistics[16428] = {
 	id = 16428,
-	damage = "94/回",
+	damage = "94<[WAVE]>",
 	base = 16420,
 	weapon_id = {
 		16428
@@ -34221,7 +35311,7 @@ _G.pg.base.equip_data_statistics[16428] = {
 }
 _G.pg.base.equip_data_statistics[16429] = {
 	id = 16429,
-	damage = "101/回",
+	damage = "101<[WAVE]>",
 	base = 16420,
 	weapon_id = {
 		16429
@@ -34230,7 +35320,7 @@ _G.pg.base.equip_data_statistics[16429] = {
 }
 _G.pg.base.equip_data_statistics[16430] = {
 	id = 16430,
-	damage = "108/回",
+	damage = "108<[WAVE]>",
 	base = 16420,
 	weapon_id = {
 		16430
@@ -34240,11 +35330,11 @@ _G.pg.base.equip_data_statistics[16430] = {
 _G.pg.base.equip_data_statistics[16440] = {
 	tech = 3,
 	name = "四連装ボフォース40mm機関砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "48/回",
+	damage = "48<[WAVE]>",
 	nationality = 1,
 	rarity = 5,
 	id = 16440,
@@ -34306,7 +35396,7 @@ _G.pg.base.equip_data_statistics[16440] = {
 }
 _G.pg.base.equip_data_statistics[16441] = {
 	id = 16441,
-	damage = "55/回",
+	damage = "55<[WAVE]>",
 	base = 16440,
 	weapon_id = {
 		16441
@@ -34315,7 +35405,7 @@ _G.pg.base.equip_data_statistics[16441] = {
 }
 _G.pg.base.equip_data_statistics[16442] = {
 	id = 16442,
-	damage = "62/回",
+	damage = "62<[WAVE]>",
 	base = 16440,
 	weapon_id = {
 		16442
@@ -34324,7 +35414,7 @@ _G.pg.base.equip_data_statistics[16442] = {
 }
 _G.pg.base.equip_data_statistics[16443] = {
 	id = 16443,
-	damage = "69/回",
+	damage = "69<[WAVE]>",
 	base = 16440,
 	weapon_id = {
 		16443
@@ -34333,7 +35423,7 @@ _G.pg.base.equip_data_statistics[16443] = {
 }
 _G.pg.base.equip_data_statistics[16444] = {
 	id = 16444,
-	damage = "76/回",
+	damage = "76<[WAVE]>",
 	base = 16440,
 	weapon_id = {
 		16444
@@ -34342,7 +35432,7 @@ _G.pg.base.equip_data_statistics[16444] = {
 }
 _G.pg.base.equip_data_statistics[16445] = {
 	id = 16445,
-	damage = "83/回",
+	damage = "83<[WAVE]>",
 	base = 16440,
 	weapon_id = {
 		16445
@@ -34351,7 +35441,7 @@ _G.pg.base.equip_data_statistics[16445] = {
 }
 _G.pg.base.equip_data_statistics[16446] = {
 	id = 16446,
-	damage = "90/回",
+	damage = "90<[WAVE]>",
 	base = 16440,
 	weapon_id = {
 		16446
@@ -34360,7 +35450,7 @@ _G.pg.base.equip_data_statistics[16446] = {
 }
 _G.pg.base.equip_data_statistics[16447] = {
 	id = 16447,
-	damage = "97/回",
+	damage = "97<[WAVE]>",
 	base = 16440,
 	weapon_id = {
 		16447
@@ -34369,7 +35459,7 @@ _G.pg.base.equip_data_statistics[16447] = {
 }
 _G.pg.base.equip_data_statistics[16448] = {
 	id = 16448,
-	damage = "104/回",
+	damage = "104<[WAVE]>",
 	base = 16440,
 	weapon_id = {
 		16448
@@ -34378,7 +35468,7 @@ _G.pg.base.equip_data_statistics[16448] = {
 }
 _G.pg.base.equip_data_statistics[16449] = {
 	id = 16449,
-	damage = "112/回",
+	damage = "112<[WAVE]>",
 	base = 16440,
 	weapon_id = {
 		16449
@@ -34387,7 +35477,7 @@ _G.pg.base.equip_data_statistics[16449] = {
 }
 _G.pg.base.equip_data_statistics[16450] = {
 	id = 16450,
-	damage = "120/回",
+	damage = "120<[WAVE]>",
 	base = 16440,
 	weapon_id = {
 		16450
@@ -34397,7 +35487,7 @@ _G.pg.base.equip_data_statistics[16450] = {
 _G.pg.base.equip_data_statistics[16451] = {
 	id = 16451,
 	anti_siren = 100,
-	damage = "120/回",
+	damage = "120<[WAVE]>",
 	base = 16440,
 	weapon_id = {
 		16451
@@ -34407,7 +35497,7 @@ _G.pg.base.equip_data_statistics[16451] = {
 _G.pg.base.equip_data_statistics[16452] = {
 	id = 16452,
 	anti_siren = 200,
-	damage = "120/回",
+	damage = "120<[WAVE]>",
 	base = 16440,
 	weapon_id = {
 		16452
@@ -34417,7 +35507,7 @@ _G.pg.base.equip_data_statistics[16452] = {
 _G.pg.base.equip_data_statistics[16453] = {
 	id = 16453,
 	anti_siren = 300,
-	damage = "120/回",
+	damage = "120<[WAVE]>",
 	base = 16440,
 	weapon_id = {
 		16453
@@ -34427,11 +35517,11 @@ _G.pg.base.equip_data_statistics[16453] = {
 _G.pg.base.equip_data_statistics[16460] = {
 	attribute_3 = "cannon",
 	name = "127mm連装両用砲Mk12(時限信管)",
-	speciality = "遠距離",
+	speciality = "<[LRG]>",
 	type = 21,
 	tech = 0,
 	ammo = 5,
-	damage = "82/回",
+	damage = "82<[WAVE]>",
 	nationality = 1,
 	descrip = "说明未填写",
 	rarity = 5,
@@ -34484,7 +35574,7 @@ _G.pg.base.equip_data_statistics[16460] = {
 }
 _G.pg.base.equip_data_statistics[16461] = {
 	id = 16461,
-	damage = "93/回",
+	damage = "93<[WAVE]>",
 	base = 16460,
 	weapon_id = {
 		16461
@@ -34492,7 +35582,7 @@ _G.pg.base.equip_data_statistics[16461] = {
 }
 _G.pg.base.equip_data_statistics[16462] = {
 	id = 16462,
-	damage = "103/回",
+	damage = "103<[WAVE]>",
 	base = 16460,
 	weapon_id = {
 		16462
@@ -34500,7 +35590,7 @@ _G.pg.base.equip_data_statistics[16462] = {
 }
 _G.pg.base.equip_data_statistics[16463] = {
 	id = 16463,
-	damage = "114/回",
+	damage = "114<[WAVE]>",
 	base = 16460,
 	weapon_id = {
 		16463
@@ -34508,7 +35598,7 @@ _G.pg.base.equip_data_statistics[16463] = {
 }
 _G.pg.base.equip_data_statistics[16464] = {
 	id = 16464,
-	damage = "124/回",
+	damage = "124<[WAVE]>",
 	base = 16460,
 	weapon_id = {
 		16464
@@ -34516,7 +35606,7 @@ _G.pg.base.equip_data_statistics[16464] = {
 }
 _G.pg.base.equip_data_statistics[16465] = {
 	id = 16465,
-	damage = "135/回",
+	damage = "135<[WAVE]>",
 	base = 16460,
 	weapon_id = {
 		16465
@@ -34524,7 +35614,7 @@ _G.pg.base.equip_data_statistics[16465] = {
 }
 _G.pg.base.equip_data_statistics[16466] = {
 	id = 16466,
-	damage = "145/回",
+	damage = "145<[WAVE]>",
 	base = 16460,
 	weapon_id = {
 		16466
@@ -34532,7 +35622,7 @@ _G.pg.base.equip_data_statistics[16466] = {
 }
 _G.pg.base.equip_data_statistics[16467] = {
 	id = 16467,
-	damage = "156/回",
+	damage = "156<[WAVE]>",
 	base = 16460,
 	weapon_id = {
 		16467
@@ -34540,7 +35630,7 @@ _G.pg.base.equip_data_statistics[16467] = {
 }
 _G.pg.base.equip_data_statistics[16468] = {
 	id = 16468,
-	damage = "168/回",
+	damage = "168<[WAVE]>",
 	base = 16460,
 	weapon_id = {
 		16468
@@ -34548,7 +35638,7 @@ _G.pg.base.equip_data_statistics[16468] = {
 }
 _G.pg.base.equip_data_statistics[16469] = {
 	id = 16469,
-	damage = "180/回",
+	damage = "180<[WAVE]>",
 	base = 16460,
 	weapon_id = {
 		16469
@@ -34556,7 +35646,7 @@ _G.pg.base.equip_data_statistics[16469] = {
 }
 _G.pg.base.equip_data_statistics[16470] = {
 	id = 16470,
-	damage = "192/回",
+	damage = "192<[WAVE]>",
 	base = 16460,
 	weapon_id = {
 		16470
@@ -34565,7 +35655,7 @@ _G.pg.base.equip_data_statistics[16470] = {
 _G.pg.base.equip_data_statistics[16471] = {
 	id = 16471,
 	anti_siren = 100,
-	damage = "192/回",
+	damage = "192<[WAVE]>",
 	base = 16460,
 	weapon_id = {
 		16471
@@ -34574,7 +35664,7 @@ _G.pg.base.equip_data_statistics[16471] = {
 _G.pg.base.equip_data_statistics[16472] = {
 	id = 16472,
 	anti_siren = 200,
-	damage = "192/回",
+	damage = "192<[WAVE]>",
 	base = 16460,
 	weapon_id = {
 		16472
@@ -34583,7 +35673,7 @@ _G.pg.base.equip_data_statistics[16472] = {
 _G.pg.base.equip_data_statistics[16473] = {
 	id = 16473,
 	anti_siren = 300,
-	damage = "192/回",
+	damage = "192<[WAVE]>",
 	base = 16460,
 	weapon_id = {
 		16473
@@ -34592,7 +35682,7 @@ _G.pg.base.equip_data_statistics[16473] = {
 _G.pg.base.equip_data_statistics[17000] = {
 	type = 7,
 	name = "F2Aバッファロー",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -34686,7 +35776,7 @@ _G.pg.base.equip_data_statistics[17003] = {
 _G.pg.base.equip_data_statistics[17020] = {
 	rarity = 2,
 	name = "F2Aバッファロー",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 2,
 	ammo = 5,
@@ -34781,7 +35871,7 @@ _G.pg.base.equip_data_statistics[17023] = {
 _G.pg.base.equip_data_statistics[17040] = {
 	rarity = 3,
 	name = "F2Aバッファロー",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -34936,7 +36026,7 @@ _G.pg.base.equip_data_statistics[17047] = {
 _G.pg.base.equip_data_statistics[17060] = {
 	rarity = 5,
 	name = "F2Aバッファロー（サッチ隊）",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -35186,7 +36276,7 @@ _G.pg.base.equip_data_statistics[17073] = {
 _G.pg.base.equip_data_statistics[17080] = {
 	rarity = 4,
 	name = "試作型XF2A-4バッファロー",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -35450,7 +36540,7 @@ _G.pg.base.equip_data_statistics[17091] = {
 _G.pg.base.equip_data_statistics[17100] = {
 	rarity = 2,
 	name = "F4Fワイルドキャット",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 1,
 	ammo = 5,
@@ -35545,7 +36635,7 @@ _G.pg.base.equip_data_statistics[17103] = {
 _G.pg.base.equip_data_statistics[17120] = {
 	rarity = 3,
 	name = "F4Fワイルドキャット",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 2,
 	ammo = 5,
@@ -35685,7 +36775,7 @@ _G.pg.base.equip_data_statistics[17126] = {
 _G.pg.base.equip_data_statistics[17140] = {
 	rarity = 4,
 	name = "F4Fワイルドキャット",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -35901,7 +36991,7 @@ _G.pg.base.equip_data_statistics[17151] = {
 _G.pg.base.equip_data_statistics[17200] = {
 	rarity = 2,
 	name = "F4Uコルセア",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 1,
 	ammo = 5,
@@ -36012,7 +37102,7 @@ _G.pg.base.equip_data_statistics[17203] = {
 _G.pg.base.equip_data_statistics[17220] = {
 	rarity = 3,
 	name = "F4Uコルセア",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 2,
 	ammo = 5,
@@ -36180,7 +37270,7 @@ _G.pg.base.equip_data_statistics[17226] = {
 _G.pg.base.equip_data_statistics[17240] = {
 	rarity = 4,
 	name = "F4Uコルセア",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -36444,7 +37534,7 @@ _G.pg.base.equip_data_statistics[17251] = {
 _G.pg.base.equip_data_statistics[17260] = {
 	rarity = 5,
 	name = "F4U（VF-17中隊）",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -36750,7 +37840,7 @@ _G.pg.base.equip_data_statistics[17273] = {
 _G.pg.base.equip_data_statistics[17300] = {
 	rarity = 3,
 	name = "F6Fヘルキャット",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 1,
 	ammo = 5,
@@ -36947,7 +38037,7 @@ _G.pg.base.equip_data_statistics[17306] = {
 _G.pg.base.equip_data_statistics[17320] = {
 	rarity = 4,
 	name = "F6Fヘルキャット",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 2,
 	ammo = 5,
@@ -37236,7 +38326,7 @@ _G.pg.base.equip_data_statistics[17330] = {
 _G.pg.base.equip_data_statistics[17340] = {
 	rarity = 5,
 	name = "F6Fヘルキャット",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -37597,7 +38687,7 @@ _G.pg.base.equip_data_statistics[17353] = {
 _G.pg.base.equip_data_statistics[17360] = {
 	rarity = 5,
 	name = "F7Fタイガーキャット",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -37901,7 +38991,7 @@ _G.pg.base.equip_data_statistics[17373] = {
 _G.pg.base.equip_data_statistics[17380] = {
 	rarity = 5,
 	name = "F8Fベアキャット",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -38205,7 +39295,7 @@ _G.pg.base.equip_data_statistics[17393] = {
 _G.pg.base.equip_data_statistics[17400] = {
 	rarity = 4,
 	name = "スカイロケット",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -38469,7 +39559,7 @@ _G.pg.base.equip_data_statistics[17411] = {
 _G.pg.base.equip_data_statistics[17420] = {
 	rarity = 5,
 	name = "試作型XF5U「フライングパンケーキ」",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -38773,7 +39863,7 @@ _G.pg.base.equip_data_statistics[17433] = {
 _G.pg.base.equip_data_statistics[17440] = {
 	rarity = 5,
 	name = "F6Fヘルキャット（HVAR搭載型）",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -39120,7 +40210,7 @@ _G.pg.base.equip_data_statistics[17453] = {
 _G.pg.base.equip_data_statistics[18000] = {
 	type = 8,
 	name = "TBDデバステイター",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -39226,7 +40316,7 @@ _G.pg.base.equip_data_statistics[18003] = {
 _G.pg.base.equip_data_statistics[18020] = {
 	rarity = 2,
 	name = "TBDデバステイター",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 2,
 	ammo = 5,
@@ -39333,7 +40423,7 @@ _G.pg.base.equip_data_statistics[18023] = {
 _G.pg.base.equip_data_statistics[18040] = {
 	rarity = 3,
 	name = "TBDデバステイター",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 3,
 	ammo = 5,
@@ -39512,7 +40602,7 @@ _G.pg.base.equip_data_statistics[18047] = {
 _G.pg.base.equip_data_statistics[18060] = {
 	rarity = 5,
 	name = "TBDデバステイター（VT-8中隊）",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 0,
 	ammo = 5,
@@ -39853,7 +40943,7 @@ _G.pg.base.equip_data_statistics[18073] = {
 _G.pg.base.equip_data_statistics[18100] = {
 	rarity = 2,
 	name = "TBFアベンジャー",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 1,
 	ammo = 5,
@@ -39960,7 +41050,7 @@ _G.pg.base.equip_data_statistics[18103] = {
 _G.pg.base.equip_data_statistics[18120] = {
 	rarity = 3,
 	name = "TBFアベンジャー",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 2,
 	ammo = 5,
@@ -40121,7 +41211,7 @@ _G.pg.base.equip_data_statistics[18126] = {
 _G.pg.base.equip_data_statistics[18140] = {
 	rarity = 4,
 	name = "TBFアベンジャー",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 3,
 	ammo = 5,
@@ -40373,7 +41463,7 @@ _G.pg.base.equip_data_statistics[18151] = {
 _G.pg.base.equip_data_statistics[18180] = {
 	rarity = 5,
 	name = "TBMアベンジャー(VT-18中隊)",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 0,
 	ammo = 5,
@@ -40704,7 +41794,7 @@ _G.pg.base.equip_data_statistics[18193] = {
 _G.pg.base.equip_data_statistics[18220] = {
 	rarity = 5,
 	name = "XTB2D-1スカイパイレート",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 0,
 	ammo = 5,
@@ -40994,7 +42084,7 @@ _G.pg.base.equip_data_statistics[18233] = {
 _G.pg.base.equip_data_statistics[19000] = {
 	type = 9,
 	name = "SBDドーントレス",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -41116,7 +42206,7 @@ _G.pg.base.equip_data_statistics[19003] = {
 _G.pg.base.equip_data_statistics[19020] = {
 	rarity = 2,
 	name = "SBDドーントレス",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 2,
 	ammo = 5,
@@ -41239,7 +42329,7 @@ _G.pg.base.equip_data_statistics[19023] = {
 _G.pg.base.equip_data_statistics[19040] = {
 	rarity = 3,
 	name = "SBDドーントレス",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 3,
 	ammo = 5,
@@ -41450,7 +42540,7 @@ _G.pg.base.equip_data_statistics[19047] = {
 _G.pg.base.equip_data_statistics[19060] = {
 	rarity = 5,
 	name = "SBD（マクラスキー隊）",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 0,
 	ammo = 5,
@@ -41742,7 +42832,7 @@ _G.pg.base.equip_data_statistics[19073] = {
 _G.pg.base.equip_data_statistics[19100] = {
 	rarity = 2,
 	name = "SB2Cヘルダイバー",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 1,
 	ammo = 5,
@@ -41865,7 +42955,7 @@ _G.pg.base.equip_data_statistics[19103] = {
 _G.pg.base.equip_data_statistics[19120] = {
 	rarity = 3,
 	name = "SB2Cヘルダイバー",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 2,
 	ammo = 5,
@@ -42054,7 +43144,7 @@ _G.pg.base.equip_data_statistics[19126] = {
 _G.pg.base.equip_data_statistics[19140] = {
 	rarity = 4,
 	name = "SB2Cヘルダイバー",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 3,
 	ammo = 5,
@@ -42354,7 +43444,7 @@ _G.pg.base.equip_data_statistics[19151] = {
 _G.pg.base.equip_data_statistics[19160] = {
 	rarity = 5,
 	name = "実験型XSB3C-1",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 0,
 	ammo = 5,
@@ -42700,7 +43790,7 @@ _G.pg.base.equip_data_statistics[19173] = {
 _G.pg.base.equip_data_statistics[19200] = {
 	rarity = 3,
 	name = "BTD-1デストロイヤー",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 1,
 	ammo = 5,
@@ -42861,7 +43951,7 @@ _G.pg.base.equip_data_statistics[19206] = {
 _G.pg.base.equip_data_statistics[19220] = {
 	rarity = 4,
 	name = "BTD-1デストロイヤー",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 2,
 	ammo = 5,
@@ -43094,7 +44184,7 @@ _G.pg.base.equip_data_statistics[19230] = {
 _G.pg.base.equip_data_statistics[19240] = {
 	rarity = 5,
 	name = "BTD-1デストロイヤー",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 3,
 	ammo = 5,
@@ -43384,7 +44474,7 @@ _G.pg.base.equip_data_statistics[19253] = {
 _G.pg.base.equip_data_statistics[19300] = {
 	rarity = 6,
 	name = "AD-1スカイレーダー",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 0,
 	ammo = 5,
@@ -43731,7 +44821,7 @@ _G.pg.base.equip_data_statistics[19313] = {
 _G.pg.base.equip_data_statistics[21000] = {
 	tech = 1,
 	name = "102mm単装砲(副砲)",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 3,
@@ -43825,7 +44915,7 @@ _G.pg.base.equip_data_statistics[21003] = {
 _G.pg.base.equip_data_statistics[21020] = {
 	tech = 2,
 	name = "102mm単装砲(副砲)",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -43920,7 +45010,7 @@ _G.pg.base.equip_data_statistics[21023] = {
 _G.pg.base.equip_data_statistics[21040] = {
 	tech = 3,
 	name = "102mm単装砲(副砲)",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -44051,7 +45141,7 @@ _G.pg.base.equip_data_statistics[21047] = {
 _G.pg.base.equip_data_statistics[21100] = {
 	tech = 1,
 	name = "102mm連装砲(副砲)",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 3,
@@ -44145,7 +45235,7 @@ _G.pg.base.equip_data_statistics[21103] = {
 _G.pg.base.equip_data_statistics[21120] = {
 	tech = 2,
 	name = "102mm連装砲(副砲)",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -44240,7 +45330,7 @@ _G.pg.base.equip_data_statistics[21123] = {
 _G.pg.base.equip_data_statistics[21140] = {
 	tech = 3,
 	name = "102mm連装砲(副砲)",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -44371,7 +45461,7 @@ _G.pg.base.equip_data_statistics[21147] = {
 _G.pg.base.equip_data_statistics[21160] = {
 	tech = 0,
 	name = "102mm連装副砲MarkXVI",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -44537,7 +45627,7 @@ _G.pg.base.equip_data_statistics[21171] = {
 _G.pg.base.equip_data_statistics[21200] = {
 	tech = 1,
 	name = "102mm三連装砲(副砲)",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -44632,7 +45722,7 @@ _G.pg.base.equip_data_statistics[21203] = {
 _G.pg.base.equip_data_statistics[21220] = {
 	tech = 2,
 	name = "102mm三連装砲(副砲)",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -44754,7 +45844,7 @@ _G.pg.base.equip_data_statistics[21226] = {
 _G.pg.base.equip_data_statistics[21240] = {
 	tech = 3,
 	name = "102mm三連装砲(副砲)",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -44922,7 +46012,7 @@ _G.pg.base.equip_data_statistics[21251] = {
 _G.pg.base.equip_data_statistics[21300] = {
 	tech = 1,
 	name = "120mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 3,
@@ -45016,7 +46106,7 @@ _G.pg.base.equip_data_statistics[21303] = {
 _G.pg.base.equip_data_statistics[21320] = {
 	tech = 2,
 	name = "120mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -45111,7 +46201,7 @@ _G.pg.base.equip_data_statistics[21323] = {
 _G.pg.base.equip_data_statistics[21340] = {
 	tech = 3,
 	name = "120mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -45242,7 +46332,7 @@ _G.pg.base.equip_data_statistics[21347] = {
 _G.pg.base.equip_data_statistics[21400] = {
 	tech = 1,
 	name = "120mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -45337,7 +46427,7 @@ _G.pg.base.equip_data_statistics[21403] = {
 _G.pg.base.equip_data_statistics[21420] = {
 	tech = 2,
 	name = "120mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -45459,7 +46549,7 @@ _G.pg.base.equip_data_statistics[21426] = {
 _G.pg.base.equip_data_statistics[21440] = {
 	tech = 3,
 	name = "120mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -45627,7 +46717,7 @@ _G.pg.base.equip_data_statistics[21451] = {
 _G.pg.base.equip_data_statistics[21460] = {
 	attribute_3 = "antiaircraft",
 	name = "120mm連装両用砲MarkXI",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 0,
 	ammo = 3,
@@ -45815,7 +46905,7 @@ _G.pg.base.equip_data_statistics[21473] = {
 _G.pg.base.equip_data_statistics[21500] = {
 	attribute_3 = "antiaircraft",
 	name = "134mm連装高角砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 1,
 	ammo = 3,
@@ -45911,7 +47001,7 @@ _G.pg.base.equip_data_statistics[21503] = {
 _G.pg.base.equip_data_statistics[21520] = {
 	attribute_3 = "antiaircraft",
 	name = "134mm連装高角砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 2,
 	ammo = 1,
@@ -46035,7 +47125,7 @@ _G.pg.base.equip_data_statistics[21526] = {
 _G.pg.base.equip_data_statistics[21540] = {
 	attribute_3 = "antiaircraft",
 	name = "134mm連装高角砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 3,
 	ammo = 1,
@@ -46205,7 +47295,7 @@ _G.pg.base.equip_data_statistics[21551] = {
 _G.pg.base.equip_data_statistics[21600] = {
 	attribute_3 = "antiaircraft",
 	name = "114mm連装両用砲MarkIV",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 0,
 	ammo = 3,
@@ -46275,7 +47365,6 @@ _G.pg.base.equip_data_statistics[21600] = {
 }
 _G.pg.base.equip_data_statistics[21601] = {
 	id = 21601,
-	damage = "4 x 4",
 	base = 21600,
 	weapon_id = {
 		21601
@@ -46396,7 +47485,7 @@ _G.pg.base.equip_data_statistics[21613] = {
 _G.pg.base.equip_data_statistics[22000] = {
 	tech = 1,
 	name = "152mm単装砲",
-	speciality = "拡散",
+	speciality = "<[SCA]>",
 	type = 2,
 	rarity = 1,
 	ammo = 1,
@@ -46483,7 +47572,7 @@ _G.pg.base.equip_data_statistics[22003] = {
 _G.pg.base.equip_data_statistics[22020] = {
 	tech = 2,
 	name = "152mm単装砲",
-	speciality = "拡散",
+	speciality = "<[SCA]>",
 	type = 2,
 	descrip = "0",
 	ammo = 1,
@@ -46571,7 +47660,7 @@ _G.pg.base.equip_data_statistics[22023] = {
 _G.pg.base.equip_data_statistics[22040] = {
 	tech = 3,
 	name = "152mm単装砲",
-	speciality = "拡散",
+	speciality = "<[SCA]>",
 	type = 2,
 	descrip = "0",
 	ammo = 1,
@@ -46695,7 +47784,7 @@ _G.pg.base.equip_data_statistics[22047] = {
 _G.pg.base.equip_data_statistics[22060] = {
 	tech = 0,
 	name = "152mm連装副砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 2,
@@ -46819,7 +47908,7 @@ _G.pg.base.equip_data_statistics[22067] = {
 _G.pg.base.equip_data_statistics[22100] = {
 	tech = 1,
 	name = "152mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 1,
@@ -46907,7 +47996,7 @@ _G.pg.base.equip_data_statistics[22103] = {
 _G.pg.base.equip_data_statistics[22120] = {
 	tech = 2,
 	name = "152mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 1,
@@ -47022,7 +48111,7 @@ _G.pg.base.equip_data_statistics[22126] = {
 _G.pg.base.equip_data_statistics[22140] = {
 	tech = 3,
 	name = "152mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 1,
@@ -47183,7 +48272,7 @@ _G.pg.base.equip_data_statistics[22151] = {
 _G.pg.base.equip_data_statistics[22200] = {
 	tech = 1,
 	name = "152mm三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 1,
@@ -47271,7 +48360,7 @@ _G.pg.base.equip_data_statistics[22203] = {
 _G.pg.base.equip_data_statistics[22220] = {
 	tech = 2,
 	name = "152mm三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 1,
@@ -47386,7 +48475,7 @@ _G.pg.base.equip_data_statistics[22226] = {
 _G.pg.base.equip_data_statistics[22240] = {
 	tech = 3,
 	name = "152mm三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 1,
@@ -47547,7 +48636,7 @@ _G.pg.base.equip_data_statistics[22251] = {
 _G.pg.base.equip_data_statistics[22260] = {
 	tech = 0,
 	name = "試製152mm三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 1,
@@ -47728,7 +48817,7 @@ _G.pg.base.equip_data_statistics[22273] = {
 _G.pg.base.equip_data_statistics[22280] = {
 	tech = 0,
 	name = "試作型四連装152mm砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "说明未填写",
 	ammo = 1,
@@ -47909,7 +48998,7 @@ _G.pg.base.equip_data_statistics[22293] = {
 _G.pg.base.equip_data_statistics[23000] = {
 	tech = 1,
 	name = "203mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 3,
@@ -47996,7 +49085,7 @@ _G.pg.base.equip_data_statistics[23003] = {
 _G.pg.base.equip_data_statistics[23020] = {
 	tech = 2,
 	name = "203mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 1,
@@ -48110,7 +49199,7 @@ _G.pg.base.equip_data_statistics[23026] = {
 _G.pg.base.equip_data_statistics[23040] = {
 	tech = 3,
 	name = "203mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 1,
@@ -48270,7 +49359,7 @@ _G.pg.base.equip_data_statistics[23051] = {
 _G.pg.base.equip_data_statistics[23100] = {
 	tech = 0,
 	name = "試作型234mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 3,
@@ -48450,7 +49539,7 @@ _G.pg.base.equip_data_statistics[23113] = {
 _G.pg.base.equip_data_statistics[23120] = {
 	tech = 0,
 	name = "試作型234mm三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 3,
@@ -48630,7 +49719,7 @@ _G.pg.base.equip_data_statistics[23133] = {
 _G.pg.base.equip_data_statistics[23200] = {
 	tech = 0,
 	name = "試作型203mm三連装砲MarkIX",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 2,
@@ -48810,7 +49899,7 @@ _G.pg.base.equip_data_statistics[23213] = {
 _G.pg.base.equip_data_statistics[23220] = {
 	tech = 0,
 	name = "試作型203mm三連装砲Mark X",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -48990,7 +50079,7 @@ _G.pg.base.equip_data_statistics[23233] = {
 _G.pg.base.equip_data_statistics[24000] = {
 	tech = 1,
 	name = "356mm四連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 3,
@@ -49097,7 +50186,7 @@ _G.pg.base.equip_data_statistics[24006] = {
 _G.pg.base.equip_data_statistics[24020] = {
 	tech = 2,
 	name = "356mm四連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -49241,7 +50330,7 @@ _G.pg.base.equip_data_statistics[24030] = {
 _G.pg.base.equip_data_statistics[24040] = {
 	tech = 3,
 	name = "356mm四連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -49415,7 +50504,7 @@ _G.pg.base.equip_data_statistics[24053] = {
 _G.pg.base.equip_data_statistics[24060] = {
 	tech = 0,
 	name = "356mm連装砲MarkVII",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -49569,7 +50658,7 @@ _G.pg.base.equip_data_statistics[24071] = {
 _G.pg.base.equip_data_statistics[24100] = {
 	tech = 1,
 	name = "381mm連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 3,
@@ -49649,7 +50738,7 @@ _G.pg.base.equip_data_statistics[24103] = {
 _G.pg.base.equip_data_statistics[24120] = {
 	tech = 2,
 	name = "381mm連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 1,
@@ -49757,7 +50846,7 @@ _G.pg.base.equip_data_statistics[24126] = {
 _G.pg.base.equip_data_statistics[24140] = {
 	tech = 3,
 	name = "381mm連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 1,
@@ -49911,7 +51000,7 @@ _G.pg.base.equip_data_statistics[24151] = {
 _G.pg.base.equip_data_statistics[24160] = {
 	tech = 0,
 	name = "試製381mm三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -50085,7 +51174,7 @@ _G.pg.base.equip_data_statistics[24173] = {
 _G.pg.base.equip_data_statistics[24200] = {
 	tech = 1,
 	name = "406mm三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 3,
@@ -50192,7 +51281,7 @@ _G.pg.base.equip_data_statistics[24206] = {
 _G.pg.base.equip_data_statistics[24220] = {
 	tech = 2,
 	name = "406mm三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 3,
@@ -50335,7 +51424,7 @@ _G.pg.base.equip_data_statistics[24230] = {
 _G.pg.base.equip_data_statistics[24240] = {
 	tech = 3,
 	name = "406mm三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 3,
@@ -50508,7 +51597,7 @@ _G.pg.base.equip_data_statistics[24253] = {
 _G.pg.base.equip_data_statistics[24300] = {
 	tech = 1,
 	name = "381mm連装砲改",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "381mm連装砲の改良型",
 	ammo = 3,
@@ -50615,7 +51704,7 @@ _G.pg.base.equip_data_statistics[24306] = {
 _G.pg.base.equip_data_statistics[24320] = {
 	tech = 2,
 	name = "381mm連装砲改",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "381mm連装砲の改良型",
 	ammo = 2,
@@ -50759,7 +51848,7 @@ _G.pg.base.equip_data_statistics[24330] = {
 _G.pg.base.equip_data_statistics[24340] = {
 	tech = 0,
 	name = "381mm連装砲改",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "381mm連装砲の改良型",
 	ammo = 2,
@@ -50933,7 +52022,7 @@ _G.pg.base.equip_data_statistics[24353] = {
 _G.pg.base.equip_data_statistics[25000] = {
 	tech = 0,
 	name = "533mm三連装魚雷MarkIX",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -50963,7 +52052,7 @@ _G.pg.base.equip_data_statistics[25000] = {
 		},
 		{
 			4,
-			1402
+			1419
 		},
 		6,
 		10,
@@ -51066,7 +52155,7 @@ _G.pg.base.equip_data_statistics[25007] = {
 _G.pg.base.equip_data_statistics[25020] = {
 	tech = 0,
 	name = "533mm四連装魚雷MarkIX",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -51096,7 +52185,7 @@ _G.pg.base.equip_data_statistics[25020] = {
 		},
 		{
 			4,
-			1403
+			1420
 		},
 		6,
 		10,
@@ -51236,7 +52325,7 @@ _G.pg.base.equip_data_statistics[25031] = {
 _G.pg.base.equip_data_statistics[25040] = {
 	tech = 0,
 	name = "533mm五連装魚雷MarkIX",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -51266,7 +52355,7 @@ _G.pg.base.equip_data_statistics[25040] = {
 		},
 		{
 			4,
-			1404
+			1421
 		},
 		6,
 		10,
@@ -51426,7 +52515,7 @@ _G.pg.base.equip_data_statistics[25053] = {
 _G.pg.base.equip_data_statistics[25100] = {
 	tech = 1,
 	name = "潜水艦用MarkVIII魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -51513,7 +52602,7 @@ _G.pg.base.equip_data_statistics[25103] = {
 _G.pg.base.equip_data_statistics[25120] = {
 	tech = 2,
 	name = "潜水艦用MarkVIII魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -51627,7 +52716,7 @@ _G.pg.base.equip_data_statistics[25126] = {
 _G.pg.base.equip_data_statistics[25140] = {
 	tech = 3,
 	name = "潜水艦用MarkVIII魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -51787,7 +52876,7 @@ _G.pg.base.equip_data_statistics[25151] = {
 _G.pg.base.equip_data_statistics[25200] = {
 	tech = 0,
 	name = "潜水艦用Mark12魚雷“Ferry”",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -51967,7 +53056,7 @@ _G.pg.base.equip_data_statistics[25213] = {
 _G.pg.base.equip_data_statistics[25300] = {
 	tech = 0,
 	name = "潜水艦用Mark20(S)魚雷“Bidder”",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 4,
@@ -52147,7 +53236,7 @@ _G.pg.base.equip_data_statistics[25313] = {
 _G.pg.base.equip_data_statistics[25800] = {
 	tech = 0,
 	name = "対潜迫撃砲「ヘッジホッグ」",
-	speciality = "対潜",
+	speciality = "<[ASW]>",
 	type = 14,
 	descrip = "0",
 	ammo = 9,
@@ -52321,11 +53410,11 @@ _G.pg.base.equip_data_statistics[25813] = {
 _G.pg.base.equip_data_statistics[26000] = {
 	tech = 1,
 	name = "QF 2ポンド二連装ポンポン砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	rarity = 1,
 	ammo = 5,
-	damage = "14/回",
+	damage = "14<[WAVE]>",
 	nationality = 2,
 	descrip = "0",
 	id = 26000,
@@ -52386,7 +53475,7 @@ _G.pg.base.equip_data_statistics[26000] = {
 }
 _G.pg.base.equip_data_statistics[26001] = {
 	id = 26001,
-	damage = "16/回",
+	damage = "16<[WAVE]>",
 	base = 26000,
 	weapon_id = {
 		26001
@@ -52395,7 +53484,7 @@ _G.pg.base.equip_data_statistics[26001] = {
 }
 _G.pg.base.equip_data_statistics[26002] = {
 	id = 26002,
-	damage = "18/回",
+	damage = "18<[WAVE]>",
 	base = 26000,
 	weapon_id = {
 		26002
@@ -52404,7 +53493,7 @@ _G.pg.base.equip_data_statistics[26002] = {
 }
 _G.pg.base.equip_data_statistics[26003] = {
 	id = 26003,
-	damage = "21/回",
+	damage = "21<[WAVE]>",
 	base = 26000,
 	weapon_id = {
 		26003
@@ -52414,11 +53503,11 @@ _G.pg.base.equip_data_statistics[26003] = {
 _G.pg.base.equip_data_statistics[26020] = {
 	tech = 2,
 	name = "QF 2ポンド二連装ポンポン砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "19/回",
+	damage = "19<[WAVE]>",
 	nationality = 2,
 	rarity = 2,
 	id = 26020,
@@ -52480,7 +53569,7 @@ _G.pg.base.equip_data_statistics[26020] = {
 }
 _G.pg.base.equip_data_statistics[26021] = {
 	id = 26021,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	base = 26020,
 	weapon_id = {
 		26021
@@ -52489,7 +53578,7 @@ _G.pg.base.equip_data_statistics[26021] = {
 }
 _G.pg.base.equip_data_statistics[26022] = {
 	id = 26022,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	base = 26020,
 	weapon_id = {
 		26022
@@ -52498,7 +53587,7 @@ _G.pg.base.equip_data_statistics[26022] = {
 }
 _G.pg.base.equip_data_statistics[26023] = {
 	id = 26023,
-	damage = "29/回",
+	damage = "29<[WAVE]>",
 	base = 26020,
 	weapon_id = {
 		26023
@@ -52508,11 +53597,11 @@ _G.pg.base.equip_data_statistics[26023] = {
 _G.pg.base.equip_data_statistics[26040] = {
 	tech = 3,
 	name = "QF 2ポンド二連装ポンポン砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "23/回",
+	damage = "23<[WAVE]>",
 	nationality = 2,
 	rarity = 3,
 	id = 26040,
@@ -52574,7 +53663,7 @@ _G.pg.base.equip_data_statistics[26040] = {
 }
 _G.pg.base.equip_data_statistics[26041] = {
 	id = 26041,
-	damage = "26/回",
+	damage = "26<[WAVE]>",
 	base = 26040,
 	weapon_id = {
 		26041
@@ -52583,7 +53672,7 @@ _G.pg.base.equip_data_statistics[26041] = {
 }
 _G.pg.base.equip_data_statistics[26042] = {
 	id = 26042,
-	damage = "29/回",
+	damage = "29<[WAVE]>",
 	base = 26040,
 	weapon_id = {
 		26042
@@ -52592,7 +53681,7 @@ _G.pg.base.equip_data_statistics[26042] = {
 }
 _G.pg.base.equip_data_statistics[26043] = {
 	id = 26043,
-	damage = "33/回",
+	damage = "33<[WAVE]>",
 	base = 26040,
 	weapon_id = {
 		26043
@@ -52601,7 +53690,7 @@ _G.pg.base.equip_data_statistics[26043] = {
 }
 _G.pg.base.equip_data_statistics[26044] = {
 	id = 26044,
-	damage = "37/回",
+	damage = "37<[WAVE]>",
 	base = 26040,
 	weapon_id = {
 		26044
@@ -52610,7 +53699,7 @@ _G.pg.base.equip_data_statistics[26044] = {
 }
 _G.pg.base.equip_data_statistics[26045] = {
 	id = 26045,
-	damage = "41/回",
+	damage = "41<[WAVE]>",
 	base = 26040,
 	weapon_id = {
 		26045
@@ -52619,7 +53708,7 @@ _G.pg.base.equip_data_statistics[26045] = {
 }
 _G.pg.base.equip_data_statistics[26046] = {
 	id = 26046,
-	damage = "45/回",
+	damage = "45<[WAVE]>",
 	base = 26040,
 	weapon_id = {
 		26046
@@ -52628,7 +53717,7 @@ _G.pg.base.equip_data_statistics[26046] = {
 }
 _G.pg.base.equip_data_statistics[26047] = {
 	id = 26047,
-	damage = "45/回",
+	damage = "45<[WAVE]>",
 	base = 26040,
 	weapon_id = {
 		26047
@@ -52638,11 +53727,11 @@ _G.pg.base.equip_data_statistics[26047] = {
 _G.pg.base.equip_data_statistics[26060] = {
 	tech = 0,
 	name = "40mmボフォース連装対空機銃MarkI",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	nationality = 2,
 	rarity = 4,
 	id = 26060,
@@ -52704,7 +53793,7 @@ _G.pg.base.equip_data_statistics[26060] = {
 }
 _G.pg.base.equip_data_statistics[26061] = {
 	id = 26061,
-	damage = "30/回",
+	damage = "30<[WAVE]>",
 	base = 26060,
 	weapon_id = {
 		26061
@@ -52713,7 +53802,7 @@ _G.pg.base.equip_data_statistics[26061] = {
 }
 _G.pg.base.equip_data_statistics[26062] = {
 	id = 26062,
-	damage = "32/回",
+	damage = "32<[WAVE]>",
 	base = 26060,
 	weapon_id = {
 		26062
@@ -52722,7 +53811,7 @@ _G.pg.base.equip_data_statistics[26062] = {
 }
 _G.pg.base.equip_data_statistics[26063] = {
 	id = 26063,
-	damage = "36/回",
+	damage = "36<[WAVE]>",
 	base = 26060,
 	weapon_id = {
 		26063
@@ -52731,7 +53820,7 @@ _G.pg.base.equip_data_statistics[26063] = {
 }
 _G.pg.base.equip_data_statistics[26064] = {
 	id = 26064,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	base = 26060,
 	weapon_id = {
 		26064
@@ -52740,7 +53829,7 @@ _G.pg.base.equip_data_statistics[26064] = {
 }
 _G.pg.base.equip_data_statistics[26065] = {
 	id = 26065,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 26060,
 	weapon_id = {
 		26065
@@ -52749,7 +53838,7 @@ _G.pg.base.equip_data_statistics[26065] = {
 }
 _G.pg.base.equip_data_statistics[26066] = {
 	id = 26066,
-	damage = "44/回",
+	damage = "44<[WAVE]>",
 	base = 26060,
 	weapon_id = {
 		26066
@@ -52758,7 +53847,7 @@ _G.pg.base.equip_data_statistics[26066] = {
 }
 _G.pg.base.equip_data_statistics[26067] = {
 	id = 26067,
-	damage = "48/回",
+	damage = "48<[WAVE]>",
 	base = 26060,
 	weapon_id = {
 		26067
@@ -52767,7 +53856,7 @@ _G.pg.base.equip_data_statistics[26067] = {
 }
 _G.pg.base.equip_data_statistics[26068] = {
 	id = 26068,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	base = 26060,
 	weapon_id = {
 		26068
@@ -52776,7 +53865,7 @@ _G.pg.base.equip_data_statistics[26068] = {
 }
 _G.pg.base.equip_data_statistics[26069] = {
 	id = 26069,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	base = 26060,
 	weapon_id = {
 		26069
@@ -52785,7 +53874,7 @@ _G.pg.base.equip_data_statistics[26069] = {
 }
 _G.pg.base.equip_data_statistics[26070] = {
 	id = 26070,
-	damage = "62/回",
+	damage = "62<[WAVE]>",
 	base = 26060,
 	weapon_id = {
 		26070
@@ -52795,7 +53884,7 @@ _G.pg.base.equip_data_statistics[26070] = {
 _G.pg.base.equip_data_statistics[26071] = {
 	id = 26071,
 	anti_siren = 100,
-	damage = "62/回",
+	damage = "62<[WAVE]>",
 	base = 26060,
 	weapon_id = {
 		26071
@@ -52805,11 +53894,11 @@ _G.pg.base.equip_data_statistics[26071] = {
 _G.pg.base.equip_data_statistics[26100] = {
 	tech = 1,
 	name = "QF 2ポンド四連装ポンポン砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "27/回",
+	damage = "27<[WAVE]>",
 	nationality = 2,
 	rarity = 2,
 	id = 26100,
@@ -52871,7 +53960,7 @@ _G.pg.base.equip_data_statistics[26100] = {
 }
 _G.pg.base.equip_data_statistics[26101] = {
 	id = 26101,
-	damage = "31/回",
+	damage = "31<[WAVE]>",
 	base = 26100,
 	weapon_id = {
 		26101
@@ -52880,7 +53969,7 @@ _G.pg.base.equip_data_statistics[26101] = {
 }
 _G.pg.base.equip_data_statistics[26102] = {
 	id = 26102,
-	damage = "35/回",
+	damage = "35<[WAVE]>",
 	base = 26100,
 	weapon_id = {
 		26102
@@ -52889,7 +53978,7 @@ _G.pg.base.equip_data_statistics[26102] = {
 }
 _G.pg.base.equip_data_statistics[26103] = {
 	id = 26103,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 26100,
 	weapon_id = {
 		26103
@@ -52899,11 +53988,11 @@ _G.pg.base.equip_data_statistics[26103] = {
 _G.pg.base.equip_data_statistics[26120] = {
 	tech = 2,
 	name = "QF 2ポンド四連装ポンポン砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "30/回",
+	damage = "30<[WAVE]>",
 	nationality = 2,
 	rarity = 3,
 	id = 26120,
@@ -52965,7 +54054,7 @@ _G.pg.base.equip_data_statistics[26120] = {
 }
 _G.pg.base.equip_data_statistics[26121] = {
 	id = 26121,
-	damage = "35/回",
+	damage = "35<[WAVE]>",
 	base = 26120,
 	weapon_id = {
 		26121
@@ -52974,7 +54063,7 @@ _G.pg.base.equip_data_statistics[26121] = {
 }
 _G.pg.base.equip_data_statistics[26122] = {
 	id = 26122,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 26120,
 	weapon_id = {
 		26122
@@ -52983,7 +54072,7 @@ _G.pg.base.equip_data_statistics[26122] = {
 }
 _G.pg.base.equip_data_statistics[26123] = {
 	id = 26123,
-	damage = "45/回",
+	damage = "45<[WAVE]>",
 	base = 26120,
 	weapon_id = {
 		26123
@@ -52992,7 +54081,7 @@ _G.pg.base.equip_data_statistics[26123] = {
 }
 _G.pg.base.equip_data_statistics[26124] = {
 	id = 26124,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 26120,
 	weapon_id = {
 		26124
@@ -53001,7 +54090,7 @@ _G.pg.base.equip_data_statistics[26124] = {
 }
 _G.pg.base.equip_data_statistics[26125] = {
 	id = 26125,
-	damage = "55/回",
+	damage = "55<[WAVE]>",
 	base = 26120,
 	weapon_id = {
 		26125
@@ -53010,7 +54099,7 @@ _G.pg.base.equip_data_statistics[26125] = {
 }
 _G.pg.base.equip_data_statistics[26126] = {
 	id = 26126,
-	damage = "60/回",
+	damage = "60<[WAVE]>",
 	base = 26120,
 	weapon_id = {
 		26126
@@ -53020,11 +54109,11 @@ _G.pg.base.equip_data_statistics[26126] = {
 _G.pg.base.equip_data_statistics[26140] = {
 	tech = 3,
 	name = "QF 2ポンド四連装ポンポン砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	nationality = 2,
 	rarity = 4,
 	id = 26140,
@@ -53086,7 +54175,7 @@ _G.pg.base.equip_data_statistics[26140] = {
 }
 _G.pg.base.equip_data_statistics[26141] = {
 	id = 26141,
-	damage = "39/回",
+	damage = "39<[WAVE]>",
 	base = 26140,
 	weapon_id = {
 		26141
@@ -53095,7 +54184,7 @@ _G.pg.base.equip_data_statistics[26141] = {
 }
 _G.pg.base.equip_data_statistics[26142] = {
 	id = 26142,
-	damage = "44/回",
+	damage = "44<[WAVE]>",
 	base = 26140,
 	weapon_id = {
 		26142
@@ -53104,7 +54193,7 @@ _G.pg.base.equip_data_statistics[26142] = {
 }
 _G.pg.base.equip_data_statistics[26143] = {
 	id = 26143,
-	damage = "49/回",
+	damage = "49<[WAVE]>",
 	base = 26140,
 	weapon_id = {
 		26143
@@ -53113,7 +54202,7 @@ _G.pg.base.equip_data_statistics[26143] = {
 }
 _G.pg.base.equip_data_statistics[26144] = {
 	id = 26144,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	base = 26140,
 	weapon_id = {
 		26144
@@ -53122,7 +54211,7 @@ _G.pg.base.equip_data_statistics[26144] = {
 }
 _G.pg.base.equip_data_statistics[26145] = {
 	id = 26145,
-	damage = "59/回",
+	damage = "59<[WAVE]>",
 	base = 26140,
 	weapon_id = {
 		26145
@@ -53131,7 +54220,7 @@ _G.pg.base.equip_data_statistics[26145] = {
 }
 _G.pg.base.equip_data_statistics[26146] = {
 	id = 26146,
-	damage = "64/回",
+	damage = "64<[WAVE]>",
 	base = 26140,
 	weapon_id = {
 		26146
@@ -53140,7 +54229,7 @@ _G.pg.base.equip_data_statistics[26146] = {
 }
 _G.pg.base.equip_data_statistics[26147] = {
 	id = 26147,
-	damage = "69/回",
+	damage = "69<[WAVE]>",
 	base = 26140,
 	weapon_id = {
 		26147
@@ -53149,7 +54238,7 @@ _G.pg.base.equip_data_statistics[26147] = {
 }
 _G.pg.base.equip_data_statistics[26148] = {
 	id = 26148,
-	damage = "74/回",
+	damage = "74<[WAVE]>",
 	base = 26140,
 	weapon_id = {
 		26148
@@ -53158,7 +54247,7 @@ _G.pg.base.equip_data_statistics[26148] = {
 }
 _G.pg.base.equip_data_statistics[26149] = {
 	id = 26149,
-	damage = "79/回",
+	damage = "79<[WAVE]>",
 	base = 26140,
 	weapon_id = {
 		26149
@@ -53167,7 +54256,7 @@ _G.pg.base.equip_data_statistics[26149] = {
 }
 _G.pg.base.equip_data_statistics[26150] = {
 	id = 26150,
-	damage = "84/回",
+	damage = "84<[WAVE]>",
 	base = 26140,
 	weapon_id = {
 		26150
@@ -53177,7 +54266,7 @@ _G.pg.base.equip_data_statistics[26150] = {
 _G.pg.base.equip_data_statistics[26151] = {
 	id = 26151,
 	anti_siren = 100,
-	damage = "84/回",
+	damage = "84<[WAVE]>",
 	base = 26140,
 	weapon_id = {
 		26151
@@ -53187,11 +54276,11 @@ _G.pg.base.equip_data_statistics[26151] = {
 _G.pg.base.equip_data_statistics[26200] = {
 	tech = 1,
 	name = "QF 2ポンド八連装ポンポン砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "42/回",
+	damage = "42<[WAVE]>",
 	nationality = 2,
 	rarity = 3,
 	id = 26200,
@@ -53253,7 +54342,7 @@ _G.pg.base.equip_data_statistics[26200] = {
 }
 _G.pg.base.equip_data_statistics[26201] = {
 	id = 26201,
-	damage = "48/回",
+	damage = "48<[WAVE]>",
 	base = 26200,
 	weapon_id = {
 		26201
@@ -53262,7 +54351,7 @@ _G.pg.base.equip_data_statistics[26201] = {
 }
 _G.pg.base.equip_data_statistics[26202] = {
 	id = 26202,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	base = 26200,
 	weapon_id = {
 		26202
@@ -53271,7 +54360,7 @@ _G.pg.base.equip_data_statistics[26202] = {
 }
 _G.pg.base.equip_data_statistics[26203] = {
 	id = 26203,
-	damage = "60/回",
+	damage = "60<[WAVE]>",
 	base = 26200,
 	weapon_id = {
 		26203
@@ -53280,7 +54369,7 @@ _G.pg.base.equip_data_statistics[26203] = {
 }
 _G.pg.base.equip_data_statistics[26204] = {
 	id = 26204,
-	damage = "66/回",
+	damage = "66<[WAVE]>",
 	base = 26200,
 	weapon_id = {
 		26204
@@ -53289,7 +54378,7 @@ _G.pg.base.equip_data_statistics[26204] = {
 }
 _G.pg.base.equip_data_statistics[26205] = {
 	id = 26205,
-	damage = "73/回",
+	damage = "73<[WAVE]>",
 	base = 26200,
 	weapon_id = {
 		26205
@@ -53298,7 +54387,7 @@ _G.pg.base.equip_data_statistics[26205] = {
 }
 _G.pg.base.equip_data_statistics[26206] = {
 	id = 26206,
-	damage = "80/回",
+	damage = "80<[WAVE]>",
 	base = 26200,
 	weapon_id = {
 		26206
@@ -53308,11 +54397,11 @@ _G.pg.base.equip_data_statistics[26206] = {
 _G.pg.base.equip_data_statistics[26220] = {
 	tech = 2,
 	name = "QF 2ポンド八連装ポンポン砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "46/回",
+	damage = "46<[WAVE]>",
 	nationality = 2,
 	rarity = 4,
 	id = 26220,
@@ -53374,7 +54463,7 @@ _G.pg.base.equip_data_statistics[26220] = {
 }
 _G.pg.base.equip_data_statistics[26221] = {
 	id = 26221,
-	damage = "53/回",
+	damage = "53<[WAVE]>",
 	base = 26220,
 	weapon_id = {
 		26221
@@ -53383,7 +54472,7 @@ _G.pg.base.equip_data_statistics[26221] = {
 }
 _G.pg.base.equip_data_statistics[26222] = {
 	id = 26222,
-	damage = "60/回",
+	damage = "60<[WAVE]>",
 	base = 26220,
 	weapon_id = {
 		26222
@@ -53392,7 +54481,7 @@ _G.pg.base.equip_data_statistics[26222] = {
 }
 _G.pg.base.equip_data_statistics[26223] = {
 	id = 26223,
-	damage = "67/回",
+	damage = "67<[WAVE]>",
 	base = 26220,
 	weapon_id = {
 		26223
@@ -53401,7 +54490,7 @@ _G.pg.base.equip_data_statistics[26223] = {
 }
 _G.pg.base.equip_data_statistics[26224] = {
 	id = 26224,
-	damage = "74/回",
+	damage = "74<[WAVE]>",
 	base = 26220,
 	weapon_id = {
 		26224
@@ -53410,7 +54499,7 @@ _G.pg.base.equip_data_statistics[26224] = {
 }
 _G.pg.base.equip_data_statistics[26225] = {
 	id = 26225,
-	damage = "81/回",
+	damage = "81<[WAVE]>",
 	base = 26220,
 	weapon_id = {
 		26225
@@ -53419,7 +54508,7 @@ _G.pg.base.equip_data_statistics[26225] = {
 }
 _G.pg.base.equip_data_statistics[26226] = {
 	id = 26226,
-	damage = "88/回",
+	damage = "88<[WAVE]>",
 	base = 26220,
 	weapon_id = {
 		26226
@@ -53428,7 +54517,7 @@ _G.pg.base.equip_data_statistics[26226] = {
 }
 _G.pg.base.equip_data_statistics[26227] = {
 	id = 26227,
-	damage = "95/回",
+	damage = "95<[WAVE]>",
 	base = 26220,
 	weapon_id = {
 		26227
@@ -53437,7 +54526,7 @@ _G.pg.base.equip_data_statistics[26227] = {
 }
 _G.pg.base.equip_data_statistics[26228] = {
 	id = 26228,
-	damage = "102/回",
+	damage = "102<[WAVE]>",
 	base = 26220,
 	weapon_id = {
 		26228
@@ -53446,7 +54535,7 @@ _G.pg.base.equip_data_statistics[26228] = {
 }
 _G.pg.base.equip_data_statistics[26229] = {
 	id = 26229,
-	damage = "109/回",
+	damage = "109<[WAVE]>",
 	base = 26220,
 	weapon_id = {
 		26229
@@ -53455,7 +54544,7 @@ _G.pg.base.equip_data_statistics[26229] = {
 }
 _G.pg.base.equip_data_statistics[26230] = {
 	id = 26230,
-	damage = "117/回",
+	damage = "117<[WAVE]>",
 	base = 26220,
 	weapon_id = {
 		26230
@@ -53465,11 +54554,11 @@ _G.pg.base.equip_data_statistics[26230] = {
 _G.pg.base.equip_data_statistics[26240] = {
 	tech = 3,
 	name = "QF 2ポンド八連装ポンポン砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	nationality = 2,
 	rarity = 5,
 	id = 26240,
@@ -53531,7 +54620,7 @@ _G.pg.base.equip_data_statistics[26240] = {
 }
 _G.pg.base.equip_data_statistics[26241] = {
 	id = 26241,
-	damage = "57/回",
+	damage = "57<[WAVE]>",
 	base = 26240,
 	weapon_id = {
 		26241
@@ -53540,7 +54629,7 @@ _G.pg.base.equip_data_statistics[26241] = {
 }
 _G.pg.base.equip_data_statistics[26242] = {
 	id = 26242,
-	damage = "64/回",
+	damage = "64<[WAVE]>",
 	base = 26240,
 	weapon_id = {
 		26242
@@ -53549,7 +54638,7 @@ _G.pg.base.equip_data_statistics[26242] = {
 }
 _G.pg.base.equip_data_statistics[26243] = {
 	id = 26243,
-	damage = "72/回",
+	damage = "72<[WAVE]>",
 	base = 26240,
 	weapon_id = {
 		26243
@@ -53558,7 +54647,7 @@ _G.pg.base.equip_data_statistics[26243] = {
 }
 _G.pg.base.equip_data_statistics[26244] = {
 	id = 26244,
-	damage = "80/回",
+	damage = "80<[WAVE]>",
 	base = 26240,
 	weapon_id = {
 		26244
@@ -53567,7 +54656,7 @@ _G.pg.base.equip_data_statistics[26244] = {
 }
 _G.pg.base.equip_data_statistics[26245] = {
 	id = 26245,
-	damage = "88/回",
+	damage = "88<[WAVE]>",
 	base = 26240,
 	weapon_id = {
 		26245
@@ -53576,7 +54665,7 @@ _G.pg.base.equip_data_statistics[26245] = {
 }
 _G.pg.base.equip_data_statistics[26246] = {
 	id = 26246,
-	damage = "96/回",
+	damage = "96<[WAVE]>",
 	base = 26240,
 	weapon_id = {
 		26246
@@ -53585,7 +54674,7 @@ _G.pg.base.equip_data_statistics[26246] = {
 }
 _G.pg.base.equip_data_statistics[26247] = {
 	id = 26247,
-	damage = "104/回",
+	damage = "104<[WAVE]>",
 	base = 26240,
 	weapon_id = {
 		26247
@@ -53594,7 +54683,7 @@ _G.pg.base.equip_data_statistics[26247] = {
 }
 _G.pg.base.equip_data_statistics[26248] = {
 	id = 26248,
-	damage = "112/回",
+	damage = "112<[WAVE]>",
 	base = 26240,
 	weapon_id = {
 		26248
@@ -53603,7 +54692,7 @@ _G.pg.base.equip_data_statistics[26248] = {
 }
 _G.pg.base.equip_data_statistics[26249] = {
 	id = 26249,
-	damage = "120/回",
+	damage = "120<[WAVE]>",
 	base = 26240,
 	weapon_id = {
 		26249
@@ -53612,7 +54701,7 @@ _G.pg.base.equip_data_statistics[26249] = {
 }
 _G.pg.base.equip_data_statistics[26250] = {
 	id = 26250,
-	damage = "128/回",
+	damage = "128<[WAVE]>",
 	base = 26240,
 	weapon_id = {
 		26250
@@ -53622,7 +54711,7 @@ _G.pg.base.equip_data_statistics[26250] = {
 _G.pg.base.equip_data_statistics[26251] = {
 	id = 26251,
 	anti_siren = 100,
-	damage = "128/回",
+	damage = "128<[WAVE]>",
 	base = 26240,
 	weapon_id = {
 		26251
@@ -53632,7 +54721,7 @@ _G.pg.base.equip_data_statistics[26251] = {
 _G.pg.base.equip_data_statistics[26252] = {
 	id = 26252,
 	anti_siren = 200,
-	damage = "128/回",
+	damage = "128<[WAVE]>",
 	base = 26240,
 	weapon_id = {
 		26252
@@ -53642,7 +54731,7 @@ _G.pg.base.equip_data_statistics[26252] = {
 _G.pg.base.equip_data_statistics[26253] = {
 	id = 26253,
 	anti_siren = 300,
-	damage = "128/回",
+	damage = "128<[WAVE]>",
 	base = 26240,
 	weapon_id = {
 		26253
@@ -53652,11 +54741,11 @@ _G.pg.base.equip_data_statistics[26253] = {
 _G.pg.base.equip_data_statistics[26300] = {
 	tech = 1,
 	name = "76mm高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "16/回",
+	damage = "16<[WAVE]>",
 	nationality = 1,
 	rarity = 2,
 	id = 26300,
@@ -53718,7 +54807,7 @@ _G.pg.base.equip_data_statistics[26300] = {
 }
 _G.pg.base.equip_data_statistics[26301] = {
 	id = 26301,
-	damage = "18/回",
+	damage = "18<[WAVE]>",
 	base = 26300,
 	weapon_id = {
 		26301
@@ -53727,7 +54816,7 @@ _G.pg.base.equip_data_statistics[26301] = {
 }
 _G.pg.base.equip_data_statistics[26302] = {
 	id = 26302,
-	damage = "21/回",
+	damage = "21<[WAVE]>",
 	base = 26300,
 	weapon_id = {
 		26302
@@ -53736,7 +54825,7 @@ _G.pg.base.equip_data_statistics[26302] = {
 }
 _G.pg.base.equip_data_statistics[26303] = {
 	id = 26303,
-	damage = "24/回",
+	damage = "24<[WAVE]>",
 	base = 26300,
 	weapon_id = {
 		26303
@@ -53746,11 +54835,11 @@ _G.pg.base.equip_data_statistics[26303] = {
 _G.pg.base.equip_data_statistics[26320] = {
 	tech = 2,
 	name = "76mm高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "18/回",
+	damage = "18<[WAVE]>",
 	nationality = 1,
 	rarity = 3,
 	id = 26320,
@@ -53812,7 +54901,7 @@ _G.pg.base.equip_data_statistics[26320] = {
 }
 _G.pg.base.equip_data_statistics[26321] = {
 	id = 26321,
-	damage = "21/回",
+	damage = "21<[WAVE]>",
 	base = 26320,
 	weapon_id = {
 		26321
@@ -53821,7 +54910,7 @@ _G.pg.base.equip_data_statistics[26321] = {
 }
 _G.pg.base.equip_data_statistics[26322] = {
 	id = 26322,
-	damage = "24/回",
+	damage = "24<[WAVE]>",
 	base = 26320,
 	weapon_id = {
 		26322
@@ -53830,7 +54919,7 @@ _G.pg.base.equip_data_statistics[26322] = {
 }
 _G.pg.base.equip_data_statistics[26323] = {
 	id = 26323,
-	damage = "27/回",
+	damage = "27<[WAVE]>",
 	base = 26320,
 	weapon_id = {
 		26323
@@ -53839,7 +54928,7 @@ _G.pg.base.equip_data_statistics[26323] = {
 }
 _G.pg.base.equip_data_statistics[26324] = {
 	id = 26324,
-	damage = "30/回",
+	damage = "30<[WAVE]>",
 	base = 26320,
 	weapon_id = {
 		26324
@@ -53848,7 +54937,7 @@ _G.pg.base.equip_data_statistics[26324] = {
 }
 _G.pg.base.equip_data_statistics[26325] = {
 	id = 26325,
-	damage = "33/回",
+	damage = "33<[WAVE]>",
 	base = 26320,
 	weapon_id = {
 		26325
@@ -53857,7 +54946,7 @@ _G.pg.base.equip_data_statistics[26325] = {
 }
 _G.pg.base.equip_data_statistics[26326] = {
 	id = 26326,
-	damage = "36/回",
+	damage = "36<[WAVE]>",
 	base = 26320,
 	weapon_id = {
 		26326
@@ -53867,11 +54956,11 @@ _G.pg.base.equip_data_statistics[26326] = {
 _G.pg.base.equip_data_statistics[26340] = {
 	tech = 3,
 	name = "76mm高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	nationality = 1,
 	rarity = 4,
 	id = 26340,
@@ -53933,7 +55022,7 @@ _G.pg.base.equip_data_statistics[26340] = {
 }
 _G.pg.base.equip_data_statistics[26341] = {
 	id = 26341,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	base = 26340,
 	weapon_id = {
 		26341
@@ -53942,7 +55031,7 @@ _G.pg.base.equip_data_statistics[26341] = {
 }
 _G.pg.base.equip_data_statistics[26342] = {
 	id = 26342,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 26340,
 	weapon_id = {
 		26342
@@ -53951,7 +55040,7 @@ _G.pg.base.equip_data_statistics[26342] = {
 }
 _G.pg.base.equip_data_statistics[26343] = {
 	id = 26343,
-	damage = "31/回",
+	damage = "31<[WAVE]>",
 	base = 26340,
 	weapon_id = {
 		26343
@@ -53960,7 +55049,7 @@ _G.pg.base.equip_data_statistics[26343] = {
 }
 _G.pg.base.equip_data_statistics[26344] = {
 	id = 26344,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	base = 26340,
 	weapon_id = {
 		26344
@@ -53969,7 +55058,7 @@ _G.pg.base.equip_data_statistics[26344] = {
 }
 _G.pg.base.equip_data_statistics[26345] = {
 	id = 26345,
-	damage = "37/回",
+	damage = "37<[WAVE]>",
 	base = 26340,
 	weapon_id = {
 		26345
@@ -53978,7 +55067,7 @@ _G.pg.base.equip_data_statistics[26345] = {
 }
 _G.pg.base.equip_data_statistics[26346] = {
 	id = 26346,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 26340,
 	weapon_id = {
 		26346
@@ -53987,7 +55076,7 @@ _G.pg.base.equip_data_statistics[26346] = {
 }
 _G.pg.base.equip_data_statistics[26347] = {
 	id = 26347,
-	damage = "43/回",
+	damage = "43<[WAVE]>",
 	base = 26340,
 	weapon_id = {
 		26347
@@ -53996,7 +55085,7 @@ _G.pg.base.equip_data_statistics[26347] = {
 }
 _G.pg.base.equip_data_statistics[26348] = {
 	id = 26348,
-	damage = "46/回",
+	damage = "46<[WAVE]>",
 	base = 26340,
 	weapon_id = {
 		26348
@@ -54005,7 +55094,7 @@ _G.pg.base.equip_data_statistics[26348] = {
 }
 _G.pg.base.equip_data_statistics[26349] = {
 	id = 26349,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 26340,
 	weapon_id = {
 		26349
@@ -54014,7 +55103,7 @@ _G.pg.base.equip_data_statistics[26349] = {
 }
 _G.pg.base.equip_data_statistics[26350] = {
 	id = 26350,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	base = 26340,
 	weapon_id = {
 		26350
@@ -54024,7 +55113,7 @@ _G.pg.base.equip_data_statistics[26350] = {
 _G.pg.base.equip_data_statistics[26351] = {
 	id = 26351,
 	anti_siren = 100,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	base = 26340,
 	weapon_id = {
 		26351
@@ -54034,11 +55123,11 @@ _G.pg.base.equip_data_statistics[26351] = {
 _G.pg.base.equip_data_statistics[26360] = {
 	tech = 0,
 	name = "20mmエリコン高角砲MkII",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "16/回",
+	damage = "16<[WAVE]>",
 	nationality = 2,
 	rarity = 4,
 	id = 26360,
@@ -54100,7 +55189,7 @@ _G.pg.base.equip_data_statistics[26360] = {
 }
 _G.pg.base.equip_data_statistics[26361] = {
 	id = 26361,
-	damage = "18/回",
+	damage = "18<[WAVE]>",
 	base = 26360,
 	weapon_id = {
 		26361
@@ -54109,7 +55198,7 @@ _G.pg.base.equip_data_statistics[26361] = {
 }
 _G.pg.base.equip_data_statistics[26362] = {
 	id = 26362,
-	damage = "20/回",
+	damage = "20<[WAVE]>",
 	base = 26360,
 	weapon_id = {
 		26362
@@ -54118,7 +55207,7 @@ _G.pg.base.equip_data_statistics[26362] = {
 }
 _G.pg.base.equip_data_statistics[26363] = {
 	id = 26363,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	base = 26360,
 	weapon_id = {
 		26363
@@ -54127,7 +55216,7 @@ _G.pg.base.equip_data_statistics[26363] = {
 }
 _G.pg.base.equip_data_statistics[26364] = {
 	id = 26364,
-	damage = "24/回",
+	damage = "24<[WAVE]>",
 	base = 26360,
 	weapon_id = {
 		26364
@@ -54136,7 +55225,7 @@ _G.pg.base.equip_data_statistics[26364] = {
 }
 _G.pg.base.equip_data_statistics[26365] = {
 	id = 26365,
-	damage = "26/回",
+	damage = "26<[WAVE]>",
 	base = 26360,
 	weapon_id = {
 		26365
@@ -54145,7 +55234,7 @@ _G.pg.base.equip_data_statistics[26365] = {
 }
 _G.pg.base.equip_data_statistics[26366] = {
 	id = 26366,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 26360,
 	weapon_id = {
 		26366
@@ -54154,7 +55243,7 @@ _G.pg.base.equip_data_statistics[26366] = {
 }
 _G.pg.base.equip_data_statistics[26367] = {
 	id = 26367,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 26360,
 	weapon_id = {
 		26367
@@ -54163,7 +55252,7 @@ _G.pg.base.equip_data_statistics[26367] = {
 }
 _G.pg.base.equip_data_statistics[26368] = {
 	id = 26368,
-	damage = "30/回",
+	damage = "30<[WAVE]>",
 	base = 26360,
 	weapon_id = {
 		26368
@@ -54172,7 +55261,7 @@ _G.pg.base.equip_data_statistics[26368] = {
 }
 _G.pg.base.equip_data_statistics[26369] = {
 	id = 26369,
-	damage = "30/回",
+	damage = "30<[WAVE]>",
 	base = 26360,
 	weapon_id = {
 		26369
@@ -54181,7 +55270,7 @@ _G.pg.base.equip_data_statistics[26369] = {
 }
 _G.pg.base.equip_data_statistics[26370] = {
 	id = 26370,
-	damage = "32/回",
+	damage = "32<[WAVE]>",
 	base = 26360,
 	weapon_id = {
 		26370
@@ -54191,7 +55280,7 @@ _G.pg.base.equip_data_statistics[26370] = {
 _G.pg.base.equip_data_statistics[26371] = {
 	id = 26371,
 	anti_siren = 100,
-	damage = "32/回",
+	damage = "32<[WAVE]>",
 	base = 26360,
 	weapon_id = {
 		26371
@@ -54201,11 +55290,11 @@ _G.pg.base.equip_data_statistics[26371] = {
 _G.pg.base.equip_data_statistics[26380] = {
 	tech = 0,
 	name = "20mmエリコン連装高角砲Mk.V",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "24/回",
+	damage = "24<[WAVE]>",
 	nationality = 2,
 	rarity = 4,
 	id = 26380,
@@ -54267,7 +55356,7 @@ _G.pg.base.equip_data_statistics[26380] = {
 }
 _G.pg.base.equip_data_statistics[26381] = {
 	id = 26381,
-	damage = "26/回",
+	damage = "26<[WAVE]>",
 	base = 26380,
 	weapon_id = {
 		26381
@@ -54276,7 +55365,7 @@ _G.pg.base.equip_data_statistics[26381] = {
 }
 _G.pg.base.equip_data_statistics[26382] = {
 	id = 26382,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 26380,
 	weapon_id = {
 		26382
@@ -54285,7 +55374,7 @@ _G.pg.base.equip_data_statistics[26382] = {
 }
 _G.pg.base.equip_data_statistics[26383] = {
 	id = 26383,
-	damage = "30/回",
+	damage = "30<[WAVE]>",
 	base = 26380,
 	weapon_id = {
 		26383
@@ -54294,7 +55383,7 @@ _G.pg.base.equip_data_statistics[26383] = {
 }
 _G.pg.base.equip_data_statistics[26384] = {
 	id = 26384,
-	damage = "32/回",
+	damage = "32<[WAVE]>",
 	base = 26380,
 	weapon_id = {
 		26384
@@ -54303,7 +55392,7 @@ _G.pg.base.equip_data_statistics[26384] = {
 }
 _G.pg.base.equip_data_statistics[26385] = {
 	id = 26385,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	base = 26380,
 	weapon_id = {
 		26385
@@ -54312,7 +55401,7 @@ _G.pg.base.equip_data_statistics[26385] = {
 }
 _G.pg.base.equip_data_statistics[26386] = {
 	id = 26386,
-	damage = "36/回",
+	damage = "36<[WAVE]>",
 	base = 26380,
 	weapon_id = {
 		26386
@@ -54321,7 +55410,7 @@ _G.pg.base.equip_data_statistics[26386] = {
 }
 _G.pg.base.equip_data_statistics[26387] = {
 	id = 26387,
-	damage = "36/回",
+	damage = "36<[WAVE]>",
 	base = 26380,
 	weapon_id = {
 		26387
@@ -54330,7 +55419,7 @@ _G.pg.base.equip_data_statistics[26387] = {
 }
 _G.pg.base.equip_data_statistics[26388] = {
 	id = 26388,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	base = 26380,
 	weapon_id = {
 		26388
@@ -54339,7 +55428,7 @@ _G.pg.base.equip_data_statistics[26388] = {
 }
 _G.pg.base.equip_data_statistics[26389] = {
 	id = 26389,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	base = 26380,
 	weapon_id = {
 		26389
@@ -54348,7 +55437,7 @@ _G.pg.base.equip_data_statistics[26389] = {
 }
 _G.pg.base.equip_data_statistics[26390] = {
 	id = 26390,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 26380,
 	weapon_id = {
 		26390
@@ -54358,7 +55447,7 @@ _G.pg.base.equip_data_statistics[26390] = {
 _G.pg.base.equip_data_statistics[26391] = {
 	id = 26391,
 	anti_siren = 100,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 26380,
 	weapon_id = {
 		26391
@@ -54368,11 +55457,11 @@ _G.pg.base.equip_data_statistics[26391] = {
 _G.pg.base.equip_data_statistics[26400] = {
 	tech = 1,
 	name = "102mm高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "19/回",
+	damage = "19<[WAVE]>",
 	nationality = 2,
 	rarity = 2,
 	id = 26400,
@@ -54434,7 +55523,7 @@ _G.pg.base.equip_data_statistics[26400] = {
 }
 _G.pg.base.equip_data_statistics[26401] = {
 	id = 26401,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	base = 26400,
 	weapon_id = {
 		26401
@@ -54443,7 +55532,7 @@ _G.pg.base.equip_data_statistics[26401] = {
 }
 _G.pg.base.equip_data_statistics[26402] = {
 	id = 26402,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	base = 26400,
 	weapon_id = {
 		26402
@@ -54452,7 +55541,7 @@ _G.pg.base.equip_data_statistics[26402] = {
 }
 _G.pg.base.equip_data_statistics[26403] = {
 	id = 26403,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 26400,
 	weapon_id = {
 		26403
@@ -54462,11 +55551,11 @@ _G.pg.base.equip_data_statistics[26403] = {
 _G.pg.base.equip_data_statistics[26420] = {
 	tech = 2,
 	name = "102mm高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "21/回",
+	damage = "21<[WAVE]>",
 	nationality = 2,
 	rarity = 3,
 	id = 26420,
@@ -54528,7 +55617,7 @@ _G.pg.base.equip_data_statistics[26420] = {
 }
 _G.pg.base.equip_data_statistics[26421] = {
 	id = 26421,
-	damage = "24/回",
+	damage = "24<[WAVE]>",
 	base = 26420,
 	weapon_id = {
 		26421
@@ -54537,7 +55626,7 @@ _G.pg.base.equip_data_statistics[26421] = {
 }
 _G.pg.base.equip_data_statistics[26422] = {
 	id = 26422,
-	damage = "27/回",
+	damage = "27<[WAVE]>",
 	base = 26420,
 	weapon_id = {
 		26422
@@ -54546,7 +55635,7 @@ _G.pg.base.equip_data_statistics[26422] = {
 }
 _G.pg.base.equip_data_statistics[26423] = {
 	id = 26423,
-	damage = "30/回",
+	damage = "30<[WAVE]>",
 	base = 26420,
 	weapon_id = {
 		26423
@@ -54555,7 +55644,7 @@ _G.pg.base.equip_data_statistics[26423] = {
 }
 _G.pg.base.equip_data_statistics[26424] = {
 	id = 26424,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	base = 26420,
 	weapon_id = {
 		26424
@@ -54564,7 +55653,7 @@ _G.pg.base.equip_data_statistics[26424] = {
 }
 _G.pg.base.equip_data_statistics[26425] = {
 	id = 26425,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	base = 26420,
 	weapon_id = {
 		26425
@@ -54573,7 +55662,7 @@ _G.pg.base.equip_data_statistics[26425] = {
 }
 _G.pg.base.equip_data_statistics[26426] = {
 	id = 26426,
-	damage = "42/回",
+	damage = "42<[WAVE]>",
 	base = 26420,
 	weapon_id = {
 		26426
@@ -54583,11 +55672,11 @@ _G.pg.base.equip_data_statistics[26426] = {
 _G.pg.base.equip_data_statistics[26440] = {
 	tech = 3,
 	name = "102mm高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	nationality = 2,
 	rarity = 4,
 	id = 26440,
@@ -54649,7 +55738,7 @@ _G.pg.base.equip_data_statistics[26440] = {
 }
 _G.pg.base.equip_data_statistics[26441] = {
 	id = 26441,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 26440,
 	weapon_id = {
 		26441
@@ -54658,7 +55747,7 @@ _G.pg.base.equip_data_statistics[26441] = {
 }
 _G.pg.base.equip_data_statistics[26442] = {
 	id = 26442,
-	damage = "31/回",
+	damage = "31<[WAVE]>",
 	base = 26440,
 	weapon_id = {
 		26442
@@ -54667,7 +55756,7 @@ _G.pg.base.equip_data_statistics[26442] = {
 }
 _G.pg.base.equip_data_statistics[26443] = {
 	id = 26443,
-	damage = "35/回",
+	damage = "35<[WAVE]>",
 	base = 26440,
 	weapon_id = {
 		26443
@@ -54676,7 +55765,7 @@ _G.pg.base.equip_data_statistics[26443] = {
 }
 _G.pg.base.equip_data_statistics[26444] = {
 	id = 26444,
-	damage = "39/回",
+	damage = "39<[WAVE]>",
 	base = 26440,
 	weapon_id = {
 		26444
@@ -54685,7 +55774,7 @@ _G.pg.base.equip_data_statistics[26444] = {
 }
 _G.pg.base.equip_data_statistics[26445] = {
 	id = 26445,
-	damage = "43/回",
+	damage = "43<[WAVE]>",
 	base = 26440,
 	weapon_id = {
 		26445
@@ -54694,7 +55783,7 @@ _G.pg.base.equip_data_statistics[26445] = {
 }
 _G.pg.base.equip_data_statistics[26446] = {
 	id = 26446,
-	damage = "47/回",
+	damage = "47<[WAVE]>",
 	base = 26440,
 	weapon_id = {
 		26446
@@ -54703,7 +55792,7 @@ _G.pg.base.equip_data_statistics[26446] = {
 }
 _G.pg.base.equip_data_statistics[26447] = {
 	id = 26447,
-	damage = "51/回",
+	damage = "51<[WAVE]>",
 	base = 26440,
 	weapon_id = {
 		26447
@@ -54712,7 +55801,7 @@ _G.pg.base.equip_data_statistics[26447] = {
 }
 _G.pg.base.equip_data_statistics[26448] = {
 	id = 26448,
-	damage = "55/回",
+	damage = "55<[WAVE]>",
 	base = 26440,
 	weapon_id = {
 		26448
@@ -54721,7 +55810,7 @@ _G.pg.base.equip_data_statistics[26448] = {
 }
 _G.pg.base.equip_data_statistics[26449] = {
 	id = 26449,
-	damage = "59/回",
+	damage = "59<[WAVE]>",
 	base = 26440,
 	weapon_id = {
 		26449
@@ -54730,7 +55819,7 @@ _G.pg.base.equip_data_statistics[26449] = {
 }
 _G.pg.base.equip_data_statistics[26450] = {
 	id = 26450,
-	damage = "63/回",
+	damage = "63<[WAVE]>",
 	base = 26440,
 	weapon_id = {
 		26450
@@ -54740,7 +55829,7 @@ _G.pg.base.equip_data_statistics[26450] = {
 _G.pg.base.equip_data_statistics[26451] = {
 	id = 26451,
 	anti_siren = 100,
-	damage = "63/回",
+	damage = "63<[WAVE]>",
 	base = 26440,
 	weapon_id = {
 		26451
@@ -54750,11 +55839,11 @@ _G.pg.base.equip_data_statistics[26451] = {
 _G.pg.base.equip_data_statistics[26460] = {
 	tech = 0,
 	name = "120mm対空砲MarkVIII",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "41/回",
+	damage = "41<[WAVE]>",
 	nationality = 2,
 	rarity = 4,
 	id = 26460,
@@ -54816,7 +55905,7 @@ _G.pg.base.equip_data_statistics[26460] = {
 }
 _G.pg.base.equip_data_statistics[26461] = {
 	id = 26461,
-	damage = "47/回",
+	damage = "47<[WAVE]>",
 	base = 26460,
 	weapon_id = {
 		26461
@@ -54825,7 +55914,7 @@ _G.pg.base.equip_data_statistics[26461] = {
 }
 _G.pg.base.equip_data_statistics[26462] = {
 	id = 26462,
-	damage = "53/回",
+	damage = "53<[WAVE]>",
 	base = 26460,
 	weapon_id = {
 		26462
@@ -54834,7 +55923,7 @@ _G.pg.base.equip_data_statistics[26462] = {
 }
 _G.pg.base.equip_data_statistics[26463] = {
 	id = 26463,
-	damage = "59/回",
+	damage = "59<[WAVE]>",
 	base = 26460,
 	weapon_id = {
 		26463
@@ -54843,7 +55932,7 @@ _G.pg.base.equip_data_statistics[26463] = {
 }
 _G.pg.base.equip_data_statistics[26464] = {
 	id = 26464,
-	damage = "66/回",
+	damage = "66<[WAVE]>",
 	base = 26460,
 	weapon_id = {
 		26464
@@ -54852,7 +55941,7 @@ _G.pg.base.equip_data_statistics[26464] = {
 }
 _G.pg.base.equip_data_statistics[26465] = {
 	id = 26465,
-	damage = "73/回",
+	damage = "73<[WAVE]>",
 	base = 26460,
 	weapon_id = {
 		26465
@@ -54861,7 +55950,7 @@ _G.pg.base.equip_data_statistics[26465] = {
 }
 _G.pg.base.equip_data_statistics[26466] = {
 	id = 26466,
-	damage = "80/回",
+	damage = "80<[WAVE]>",
 	base = 26460,
 	weapon_id = {
 		26466
@@ -54870,7 +55959,7 @@ _G.pg.base.equip_data_statistics[26466] = {
 }
 _G.pg.base.equip_data_statistics[26467] = {
 	id = 26467,
-	damage = "87/回",
+	damage = "87<[WAVE]>",
 	base = 26460,
 	weapon_id = {
 		26467
@@ -54879,7 +55968,7 @@ _G.pg.base.equip_data_statistics[26467] = {
 }
 _G.pg.base.equip_data_statistics[26468] = {
 	id = 26468,
-	damage = "94/回",
+	damage = "94<[WAVE]>",
 	base = 26460,
 	weapon_id = {
 		26468
@@ -54888,7 +55977,7 @@ _G.pg.base.equip_data_statistics[26468] = {
 }
 _G.pg.base.equip_data_statistics[26469] = {
 	id = 26469,
-	damage = "101/回",
+	damage = "101<[WAVE]>",
 	base = 26460,
 	weapon_id = {
 		26469
@@ -54897,7 +55986,7 @@ _G.pg.base.equip_data_statistics[26469] = {
 }
 _G.pg.base.equip_data_statistics[26470] = {
 	id = 26470,
-	damage = "108/回",
+	damage = "108<[WAVE]>",
 	base = 26460,
 	weapon_id = {
 		26470
@@ -54907,7 +55996,7 @@ _G.pg.base.equip_data_statistics[26470] = {
 _G.pg.base.equip_data_statistics[26471] = {
 	id = 26471,
 	anti_siren = 100,
-	damage = "108/回",
+	damage = "108<[WAVE]>",
 	base = 26460,
 	weapon_id = {
 		26471
@@ -54917,11 +56006,11 @@ _G.pg.base.equip_data_statistics[26471] = {
 _G.pg.base.equip_data_statistics[26500] = {
 	tech = 1,
 	name = "113mm連装高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	nationality = 2,
 	rarity = 3,
 	id = 26500,
@@ -54983,7 +56072,7 @@ _G.pg.base.equip_data_statistics[26500] = {
 }
 _G.pg.base.equip_data_statistics[26501] = {
 	id = 26501,
-	damage = "44/回",
+	damage = "44<[WAVE]>",
 	base = 26500,
 	weapon_id = {
 		26501
@@ -54992,7 +56081,7 @@ _G.pg.base.equip_data_statistics[26501] = {
 }
 _G.pg.base.equip_data_statistics[26502] = {
 	id = 26502,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 26500,
 	weapon_id = {
 		26502
@@ -55001,7 +56090,7 @@ _G.pg.base.equip_data_statistics[26502] = {
 }
 _G.pg.base.equip_data_statistics[26503] = {
 	id = 26503,
-	damage = "56/回",
+	damage = "56<[WAVE]>",
 	base = 26500,
 	weapon_id = {
 		26503
@@ -55010,7 +56099,7 @@ _G.pg.base.equip_data_statistics[26503] = {
 }
 _G.pg.base.equip_data_statistics[26504] = {
 	id = 26504,
-	damage = "62/回",
+	damage = "62<[WAVE]>",
 	base = 26500,
 	weapon_id = {
 		26504
@@ -55019,7 +56108,7 @@ _G.pg.base.equip_data_statistics[26504] = {
 }
 _G.pg.base.equip_data_statistics[26505] = {
 	id = 26505,
-	damage = "68/回",
+	damage = "68<[WAVE]>",
 	base = 26500,
 	weapon_id = {
 		26505
@@ -55028,7 +56117,7 @@ _G.pg.base.equip_data_statistics[26505] = {
 }
 _G.pg.base.equip_data_statistics[26506] = {
 	id = 26506,
-	damage = "75/回",
+	damage = "75<[WAVE]>",
 	base = 26500,
 	weapon_id = {
 		26506
@@ -55038,11 +56127,11 @@ _G.pg.base.equip_data_statistics[26506] = {
 _G.pg.base.equip_data_statistics[26520] = {
 	tech = 2,
 	name = "113mm連装高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "45/回",
+	damage = "45<[WAVE]>",
 	nationality = 2,
 	rarity = 4,
 	id = 26520,
@@ -55104,7 +56193,7 @@ _G.pg.base.equip_data_statistics[26520] = {
 }
 _G.pg.base.equip_data_statistics[26521] = {
 	id = 26521,
-	damage = "51/回",
+	damage = "51<[WAVE]>",
 	base = 26520,
 	weapon_id = {
 		26521
@@ -55113,7 +56202,7 @@ _G.pg.base.equip_data_statistics[26521] = {
 }
 _G.pg.base.equip_data_statistics[26522] = {
 	id = 26522,
-	damage = "57/回",
+	damage = "57<[WAVE]>",
 	base = 26520,
 	weapon_id = {
 		26522
@@ -55122,7 +56211,7 @@ _G.pg.base.equip_data_statistics[26522] = {
 }
 _G.pg.base.equip_data_statistics[26523] = {
 	id = 26523,
-	damage = "63/回",
+	damage = "63<[WAVE]>",
 	base = 26520,
 	weapon_id = {
 		26523
@@ -55131,7 +56220,7 @@ _G.pg.base.equip_data_statistics[26523] = {
 }
 _G.pg.base.equip_data_statistics[26524] = {
 	id = 26524,
-	damage = "70/回",
+	damage = "70<[WAVE]>",
 	base = 26520,
 	weapon_id = {
 		26524
@@ -55140,7 +56229,7 @@ _G.pg.base.equip_data_statistics[26524] = {
 }
 _G.pg.base.equip_data_statistics[26525] = {
 	id = 26525,
-	damage = "77/回",
+	damage = "77<[WAVE]>",
 	base = 26520,
 	weapon_id = {
 		26525
@@ -55149,7 +56238,7 @@ _G.pg.base.equip_data_statistics[26525] = {
 }
 _G.pg.base.equip_data_statistics[26526] = {
 	id = 26526,
-	damage = "84/回",
+	damage = "84<[WAVE]>",
 	base = 26520,
 	weapon_id = {
 		26526
@@ -55158,7 +56247,7 @@ _G.pg.base.equip_data_statistics[26526] = {
 }
 _G.pg.base.equip_data_statistics[26527] = {
 	id = 26527,
-	damage = "91/回",
+	damage = "91<[WAVE]>",
 	base = 26520,
 	weapon_id = {
 		26527
@@ -55167,7 +56256,7 @@ _G.pg.base.equip_data_statistics[26527] = {
 }
 _G.pg.base.equip_data_statistics[26528] = {
 	id = 26528,
-	damage = "98/回",
+	damage = "98<[WAVE]>",
 	base = 26520,
 	weapon_id = {
 		26528
@@ -55176,7 +56265,7 @@ _G.pg.base.equip_data_statistics[26528] = {
 }
 _G.pg.base.equip_data_statistics[26529] = {
 	id = 26529,
-	damage = "105/回",
+	damage = "105<[WAVE]>",
 	base = 26520,
 	weapon_id = {
 		26529
@@ -55185,7 +56274,7 @@ _G.pg.base.equip_data_statistics[26529] = {
 }
 _G.pg.base.equip_data_statistics[26530] = {
 	id = 26530,
-	damage = "112/回",
+	damage = "112<[WAVE]>",
 	base = 26520,
 	weapon_id = {
 		26530
@@ -55195,11 +56284,11 @@ _G.pg.base.equip_data_statistics[26530] = {
 _G.pg.base.equip_data_statistics[26540] = {
 	tech = 3,
 	name = "113mm連装高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "52/回",
+	damage = "52<[WAVE]>",
 	nationality = 2,
 	rarity = 5,
 	id = 26540,
@@ -55261,7 +56350,7 @@ _G.pg.base.equip_data_statistics[26540] = {
 }
 _G.pg.base.equip_data_statistics[26541] = {
 	id = 26541,
-	damage = "59/回",
+	damage = "59<[WAVE]>",
 	base = 26540,
 	weapon_id = {
 		26541
@@ -55270,7 +56359,7 @@ _G.pg.base.equip_data_statistics[26541] = {
 }
 _G.pg.base.equip_data_statistics[26542] = {
 	id = 26542,
-	damage = "66/回",
+	damage = "66<[WAVE]>",
 	base = 26540,
 	weapon_id = {
 		26542
@@ -55279,7 +56368,7 @@ _G.pg.base.equip_data_statistics[26542] = {
 }
 _G.pg.base.equip_data_statistics[26543] = {
 	id = 26543,
-	damage = "74/回",
+	damage = "74<[WAVE]>",
 	base = 26540,
 	weapon_id = {
 		26543
@@ -55288,7 +56377,7 @@ _G.pg.base.equip_data_statistics[26543] = {
 }
 _G.pg.base.equip_data_statistics[26544] = {
 	id = 26544,
-	damage = "82/回",
+	damage = "82<[WAVE]>",
 	base = 26540,
 	weapon_id = {
 		26544
@@ -55297,7 +56386,7 @@ _G.pg.base.equip_data_statistics[26544] = {
 }
 _G.pg.base.equip_data_statistics[26545] = {
 	id = 26545,
-	damage = "90/回",
+	damage = "90<[WAVE]>",
 	base = 26540,
 	weapon_id = {
 		26545
@@ -55306,7 +56395,7 @@ _G.pg.base.equip_data_statistics[26545] = {
 }
 _G.pg.base.equip_data_statistics[26546] = {
 	id = 26546,
-	damage = "98/回",
+	damage = "98<[WAVE]>",
 	base = 26540,
 	weapon_id = {
 		26546
@@ -55315,7 +56404,7 @@ _G.pg.base.equip_data_statistics[26546] = {
 }
 _G.pg.base.equip_data_statistics[26547] = {
 	id = 26547,
-	damage = "106/回",
+	damage = "106<[WAVE]>",
 	base = 26540,
 	weapon_id = {
 		26547
@@ -55324,7 +56413,7 @@ _G.pg.base.equip_data_statistics[26547] = {
 }
 _G.pg.base.equip_data_statistics[26548] = {
 	id = 26548,
-	damage = "114/回",
+	damage = "114<[WAVE]>",
 	base = 26540,
 	weapon_id = {
 		26548
@@ -55333,7 +56422,7 @@ _G.pg.base.equip_data_statistics[26548] = {
 }
 _G.pg.base.equip_data_statistics[26549] = {
 	id = 26549,
-	damage = "122/回",
+	damage = "122<[WAVE]>",
 	base = 26540,
 	weapon_id = {
 		26549
@@ -55342,7 +56431,7 @@ _G.pg.base.equip_data_statistics[26549] = {
 }
 _G.pg.base.equip_data_statistics[26550] = {
 	id = 26550,
-	damage = "130/回",
+	damage = "130<[WAVE]>",
 	base = 26540,
 	weapon_id = {
 		26550
@@ -55352,7 +56441,7 @@ _G.pg.base.equip_data_statistics[26550] = {
 _G.pg.base.equip_data_statistics[26551] = {
 	id = 26551,
 	anti_siren = 100,
-	damage = "130/回",
+	damage = "130<[WAVE]>",
 	base = 26540,
 	weapon_id = {
 		26551
@@ -55362,7 +56451,7 @@ _G.pg.base.equip_data_statistics[26551] = {
 _G.pg.base.equip_data_statistics[26552] = {
 	id = 26552,
 	anti_siren = 200,
-	damage = "130/回",
+	damage = "130<[WAVE]>",
 	base = 26540,
 	weapon_id = {
 		26552
@@ -55372,7 +56461,7 @@ _G.pg.base.equip_data_statistics[26552] = {
 _G.pg.base.equip_data_statistics[26553] = {
 	id = 26553,
 	anti_siren = 300,
-	damage = "130/回",
+	damage = "130<[WAVE]>",
 	base = 26540,
 	weapon_id = {
 		26553
@@ -55382,11 +56471,11 @@ _G.pg.base.equip_data_statistics[26553] = {
 _G.pg.base.equip_data_statistics[26600] = {
 	attribute_3 = "hit",
 	name = "連装ボフォース40mm機関砲STAAG",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	tech = 0,
 	ammo = 5,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	nationality = 2,
 	descrip = "0",
 	rarity = 5,
@@ -55449,7 +56538,7 @@ _G.pg.base.equip_data_statistics[26600] = {
 }
 _G.pg.base.equip_data_statistics[26601] = {
 	id = 26601,
-	damage = "43/回",
+	damage = "43<[WAVE]>",
 	base = 26600,
 	weapon_id = {
 		26601
@@ -55458,7 +56547,7 @@ _G.pg.base.equip_data_statistics[26601] = {
 }
 _G.pg.base.equip_data_statistics[26602] = {
 	id = 26602,
-	damage = "48/回",
+	damage = "48<[WAVE]>",
 	base = 26600,
 	weapon_id = {
 		26602
@@ -55467,7 +56556,7 @@ _G.pg.base.equip_data_statistics[26602] = {
 }
 _G.pg.base.equip_data_statistics[26603] = {
 	id = 26603,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	base = 26600,
 	weapon_id = {
 		26603
@@ -55476,7 +56565,7 @@ _G.pg.base.equip_data_statistics[26603] = {
 }
 _G.pg.base.equip_data_statistics[26604] = {
 	id = 26604,
-	damage = "60/回",
+	damage = "60<[WAVE]>",
 	base = 26600,
 	weapon_id = {
 		26604
@@ -55485,7 +56574,7 @@ _G.pg.base.equip_data_statistics[26604] = {
 }
 _G.pg.base.equip_data_statistics[26605] = {
 	id = 26605,
-	damage = "66/回",
+	damage = "66<[WAVE]>",
 	base = 26600,
 	weapon_id = {
 		26605
@@ -55494,7 +56583,7 @@ _G.pg.base.equip_data_statistics[26605] = {
 }
 _G.pg.base.equip_data_statistics[26606] = {
 	id = 26606,
-	damage = "72/回",
+	damage = "72<[WAVE]>",
 	base = 26600,
 	weapon_id = {
 		26606
@@ -55503,7 +56592,7 @@ _G.pg.base.equip_data_statistics[26606] = {
 }
 _G.pg.base.equip_data_statistics[26607] = {
 	id = 26607,
-	damage = "78/回",
+	damage = "78<[WAVE]>",
 	base = 26600,
 	weapon_id = {
 		26607
@@ -55512,7 +56601,7 @@ _G.pg.base.equip_data_statistics[26607] = {
 }
 _G.pg.base.equip_data_statistics[26608] = {
 	id = 26608,
-	damage = "84/回",
+	damage = "84<[WAVE]>",
 	base = 26600,
 	weapon_id = {
 		26608
@@ -55521,7 +56610,7 @@ _G.pg.base.equip_data_statistics[26608] = {
 }
 _G.pg.base.equip_data_statistics[26609] = {
 	id = 26609,
-	damage = "90/回",
+	damage = "90<[WAVE]>",
 	base = 26600,
 	weapon_id = {
 		26609
@@ -55530,7 +56619,7 @@ _G.pg.base.equip_data_statistics[26609] = {
 }
 _G.pg.base.equip_data_statistics[26610] = {
 	id = 26610,
-	damage = "96/回",
+	damage = "96<[WAVE]>",
 	base = 26600,
 	weapon_id = {
 		26610
@@ -55540,7 +56629,7 @@ _G.pg.base.equip_data_statistics[26610] = {
 _G.pg.base.equip_data_statistics[26611] = {
 	id = 26611,
 	anti_siren = 100,
-	damage = "96/回",
+	damage = "96<[WAVE]>",
 	base = 26600,
 	weapon_id = {
 		26611
@@ -55550,7 +56639,7 @@ _G.pg.base.equip_data_statistics[26611] = {
 _G.pg.base.equip_data_statistics[26612] = {
 	id = 26612,
 	anti_siren = 200,
-	damage = "96/回",
+	damage = "96<[WAVE]>",
 	base = 26600,
 	weapon_id = {
 		26612
@@ -55560,7 +56649,7 @@ _G.pg.base.equip_data_statistics[26612] = {
 _G.pg.base.equip_data_statistics[26613] = {
 	id = 26613,
 	anti_siren = 300,
-	damage = "96/回",
+	damage = "96<[WAVE]>",
 	base = 26600,
 	weapon_id = {
 		26613
@@ -55570,11 +56659,11 @@ _G.pg.base.equip_data_statistics[26613] = {
 _G.pg.base.equip_data_statistics[26620] = {
 	attribute_3 = "hit",
 	name = "連装ボフォース40mm機関砲「Hazemeyer」",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	tech = 0,
 	ammo = 5,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	nationality = 2,
 	descrip = "0",
 	rarity = 5,
@@ -55637,7 +56726,7 @@ _G.pg.base.equip_data_statistics[26620] = {
 }
 _G.pg.base.equip_data_statistics[26621] = {
 	id = 26621,
-	damage = "43/回",
+	damage = "43<[WAVE]>",
 	base = 26620,
 	weapon_id = {
 		26621
@@ -55646,7 +56735,7 @@ _G.pg.base.equip_data_statistics[26621] = {
 }
 _G.pg.base.equip_data_statistics[26622] = {
 	id = 26622,
-	damage = "48/回",
+	damage = "48<[WAVE]>",
 	base = 26620,
 	weapon_id = {
 		26622
@@ -55655,7 +56744,7 @@ _G.pg.base.equip_data_statistics[26622] = {
 }
 _G.pg.base.equip_data_statistics[26623] = {
 	id = 26623,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	base = 26620,
 	weapon_id = {
 		26623
@@ -55664,7 +56753,7 @@ _G.pg.base.equip_data_statistics[26623] = {
 }
 _G.pg.base.equip_data_statistics[26624] = {
 	id = 26624,
-	damage = "60/回",
+	damage = "60<[WAVE]>",
 	base = 26620,
 	weapon_id = {
 		26624
@@ -55673,7 +56762,7 @@ _G.pg.base.equip_data_statistics[26624] = {
 }
 _G.pg.base.equip_data_statistics[26625] = {
 	id = 26625,
-	damage = "66/回",
+	damage = "66<[WAVE]>",
 	base = 26620,
 	weapon_id = {
 		26625
@@ -55682,7 +56771,7 @@ _G.pg.base.equip_data_statistics[26625] = {
 }
 _G.pg.base.equip_data_statistics[26626] = {
 	id = 26626,
-	damage = "72/回",
+	damage = "72<[WAVE]>",
 	base = 26620,
 	weapon_id = {
 		26626
@@ -55691,7 +56780,7 @@ _G.pg.base.equip_data_statistics[26626] = {
 }
 _G.pg.base.equip_data_statistics[26627] = {
 	id = 26627,
-	damage = "78/回",
+	damage = "78<[WAVE]>",
 	base = 26620,
 	weapon_id = {
 		26627
@@ -55700,7 +56789,7 @@ _G.pg.base.equip_data_statistics[26627] = {
 }
 _G.pg.base.equip_data_statistics[26628] = {
 	id = 26628,
-	damage = "84/回",
+	damage = "84<[WAVE]>",
 	base = 26620,
 	weapon_id = {
 		26628
@@ -55709,7 +56798,7 @@ _G.pg.base.equip_data_statistics[26628] = {
 }
 _G.pg.base.equip_data_statistics[26629] = {
 	id = 26629,
-	damage = "90/回",
+	damage = "90<[WAVE]>",
 	base = 26620,
 	weapon_id = {
 		26629
@@ -55718,7 +56807,7 @@ _G.pg.base.equip_data_statistics[26629] = {
 }
 _G.pg.base.equip_data_statistics[26630] = {
 	id = 26630,
-	damage = "96/回",
+	damage = "96<[WAVE]>",
 	base = 26620,
 	weapon_id = {
 		26630
@@ -55728,7 +56817,7 @@ _G.pg.base.equip_data_statistics[26630] = {
 _G.pg.base.equip_data_statistics[26631] = {
 	id = 26631,
 	anti_siren = 100,
-	damage = "96/回",
+	damage = "96<[WAVE]>",
 	base = 26620,
 	weapon_id = {
 		26631
@@ -55738,7 +56827,7 @@ _G.pg.base.equip_data_statistics[26631] = {
 _G.pg.base.equip_data_statistics[26632] = {
 	id = 26632,
 	anti_siren = 200,
-	damage = "96/回",
+	damage = "96<[WAVE]>",
 	base = 26620,
 	weapon_id = {
 		26632
@@ -55748,7 +56837,7 @@ _G.pg.base.equip_data_statistics[26632] = {
 _G.pg.base.equip_data_statistics[26633] = {
 	id = 26633,
 	anti_siren = 300,
-	damage = "96/回",
+	damage = "96<[WAVE]>",
 	base = 26620,
 	weapon_id = {
 		26633
@@ -55758,11 +56847,11 @@ _G.pg.base.equip_data_statistics[26633] = {
 _G.pg.base.equip_data_statistics[26640] = {
 	attribute_3 = "cannon",
 	name = "134mm連装高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	tech = 0,
 	ammo = 5,
-	damage = "53/回",
+	damage = "53<[WAVE]>",
 	nationality = 2,
 	descrip = "0",
 	rarity = 5,
@@ -55825,7 +56914,7 @@ _G.pg.base.equip_data_statistics[26640] = {
 }
 _G.pg.base.equip_data_statistics[26641] = {
 	id = 26641,
-	damage = "61/回",
+	damage = "61<[WAVE]>",
 	base = 26640,
 	weapon_id = {
 		26641
@@ -55834,7 +56923,7 @@ _G.pg.base.equip_data_statistics[26641] = {
 }
 _G.pg.base.equip_data_statistics[26642] = {
 	id = 26642,
-	damage = "68/回",
+	damage = "68<[WAVE]>",
 	base = 26640,
 	weapon_id = {
 		26642
@@ -55843,7 +56932,7 @@ _G.pg.base.equip_data_statistics[26642] = {
 }
 _G.pg.base.equip_data_statistics[26643] = {
 	id = 26643,
-	damage = "76/回",
+	damage = "76<[WAVE]>",
 	base = 26640,
 	weapon_id = {
 		26643
@@ -55852,7 +56941,7 @@ _G.pg.base.equip_data_statistics[26643] = {
 }
 _G.pg.base.equip_data_statistics[26644] = {
 	id = 26644,
-	damage = "84/回",
+	damage = "84<[WAVE]>",
 	base = 26640,
 	weapon_id = {
 		26644
@@ -55861,7 +56950,7 @@ _G.pg.base.equip_data_statistics[26644] = {
 }
 _G.pg.base.equip_data_statistics[26645] = {
 	id = 26645,
-	damage = "92/回",
+	damage = "92<[WAVE]>",
 	base = 26640,
 	weapon_id = {
 		26645
@@ -55870,7 +56959,7 @@ _G.pg.base.equip_data_statistics[26645] = {
 }
 _G.pg.base.equip_data_statistics[26646] = {
 	id = 26646,
-	damage = "100/回",
+	damage = "100<[WAVE]>",
 	base = 26640,
 	weapon_id = {
 		26646
@@ -55879,7 +56968,7 @@ _G.pg.base.equip_data_statistics[26646] = {
 }
 _G.pg.base.equip_data_statistics[26647] = {
 	id = 26647,
-	damage = "108/回",
+	damage = "108<[WAVE]>",
 	base = 26640,
 	weapon_id = {
 		26647
@@ -55888,7 +56977,7 @@ _G.pg.base.equip_data_statistics[26647] = {
 }
 _G.pg.base.equip_data_statistics[26648] = {
 	id = 26648,
-	damage = "116/回",
+	damage = "116<[WAVE]>",
 	base = 26640,
 	weapon_id = {
 		26648
@@ -55897,7 +56986,7 @@ _G.pg.base.equip_data_statistics[26648] = {
 }
 _G.pg.base.equip_data_statistics[26649] = {
 	id = 26649,
-	damage = "124/回",
+	damage = "124<[WAVE]>",
 	base = 26640,
 	weapon_id = {
 		26649
@@ -55906,7 +56995,7 @@ _G.pg.base.equip_data_statistics[26649] = {
 }
 _G.pg.base.equip_data_statistics[26650] = {
 	id = 26650,
-	damage = "132/回",
+	damage = "132<[WAVE]>",
 	base = 26640,
 	weapon_id = {
 		26650
@@ -55916,7 +57005,7 @@ _G.pg.base.equip_data_statistics[26650] = {
 _G.pg.base.equip_data_statistics[26651] = {
 	id = 26651,
 	anti_siren = 100,
-	damage = "132/回",
+	damage = "132<[WAVE]>",
 	base = 26640,
 	weapon_id = {
 		26651
@@ -55926,7 +57015,7 @@ _G.pg.base.equip_data_statistics[26651] = {
 _G.pg.base.equip_data_statistics[26652] = {
 	id = 26652,
 	anti_siren = 200,
-	damage = "132/回",
+	damage = "132<[WAVE]>",
 	base = 26640,
 	weapon_id = {
 		26652
@@ -55936,7 +57025,7 @@ _G.pg.base.equip_data_statistics[26652] = {
 _G.pg.base.equip_data_statistics[26653] = {
 	id = 26653,
 	anti_siren = 300,
-	damage = "132/回",
+	damage = "132<[WAVE]>",
 	base = 26640,
 	weapon_id = {
 		26653
@@ -55946,11 +57035,11 @@ _G.pg.base.equip_data_statistics[26653] = {
 _G.pg.base.equip_data_statistics[26660] = {
 	tech = 0,
 	name = "六連装ボフォース40mm対空砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "42/回",
+	damage = "42<[WAVE]>",
 	nationality = 2,
 	rarity = 5,
 	id = 26660,
@@ -56012,7 +57101,7 @@ _G.pg.base.equip_data_statistics[26660] = {
 }
 _G.pg.base.equip_data_statistics[26661] = {
 	id = 26661,
-	damage = "52/回",
+	damage = "52<[WAVE]>",
 	base = 26660,
 	weapon_id = {
 		26661
@@ -56021,7 +57110,7 @@ _G.pg.base.equip_data_statistics[26661] = {
 }
 _G.pg.base.equip_data_statistics[26662] = {
 	id = 26662,
-	damage = "63/回",
+	damage = "63<[WAVE]>",
 	base = 26660,
 	weapon_id = {
 		26662
@@ -56030,7 +57119,7 @@ _G.pg.base.equip_data_statistics[26662] = {
 }
 _G.pg.base.equip_data_statistics[26663] = {
 	id = 26663,
-	damage = "73/回",
+	damage = "73<[WAVE]>",
 	base = 26660,
 	weapon_id = {
 		26663
@@ -56039,7 +57128,7 @@ _G.pg.base.equip_data_statistics[26663] = {
 }
 _G.pg.base.equip_data_statistics[26664] = {
 	id = 26664,
-	damage = "84/回",
+	damage = "84<[WAVE]>",
 	base = 26660,
 	weapon_id = {
 		26664
@@ -56048,7 +57137,7 @@ _G.pg.base.equip_data_statistics[26664] = {
 }
 _G.pg.base.equip_data_statistics[26665] = {
 	id = 26665,
-	damage = "94/回",
+	damage = "94<[WAVE]>",
 	base = 26660,
 	weapon_id = {
 		26665
@@ -56057,7 +57146,7 @@ _G.pg.base.equip_data_statistics[26665] = {
 }
 _G.pg.base.equip_data_statistics[26666] = {
 	id = 26666,
-	damage = "105/回",
+	damage = "105<[WAVE]>",
 	base = 26660,
 	weapon_id = {
 		26666
@@ -56066,7 +57155,7 @@ _G.pg.base.equip_data_statistics[26666] = {
 }
 _G.pg.base.equip_data_statistics[26667] = {
 	id = 26667,
-	damage = "115/回",
+	damage = "115<[WAVE]>",
 	base = 26660,
 	weapon_id = {
 		26667
@@ -56075,7 +57164,7 @@ _G.pg.base.equip_data_statistics[26667] = {
 }
 _G.pg.base.equip_data_statistics[26668] = {
 	id = 26668,
-	damage = "126/回",
+	damage = "126<[WAVE]>",
 	base = 26660,
 	weapon_id = {
 		26668
@@ -56084,7 +57173,7 @@ _G.pg.base.equip_data_statistics[26668] = {
 }
 _G.pg.base.equip_data_statistics[26669] = {
 	id = 26669,
-	damage = "138/回",
+	damage = "138<[WAVE]>",
 	base = 26660,
 	weapon_id = {
 		26669
@@ -56093,7 +57182,7 @@ _G.pg.base.equip_data_statistics[26669] = {
 }
 _G.pg.base.equip_data_statistics[26670] = {
 	id = 26670,
-	damage = "150/回",
+	damage = "150<[WAVE]>",
 	base = 26660,
 	weapon_id = {
 		26670
@@ -56103,7 +57192,7 @@ _G.pg.base.equip_data_statistics[26670] = {
 _G.pg.base.equip_data_statistics[26671] = {
 	id = 26671,
 	anti_siren = 100,
-	damage = "150/回",
+	damage = "150<[WAVE]>",
 	base = 26660,
 	weapon_id = {
 		26671
@@ -56113,7 +57202,7 @@ _G.pg.base.equip_data_statistics[26671] = {
 _G.pg.base.equip_data_statistics[26672] = {
 	id = 26672,
 	anti_siren = 200,
-	damage = "150/回",
+	damage = "150<[WAVE]>",
 	base = 26660,
 	weapon_id = {
 		26672
@@ -56123,7 +57212,7 @@ _G.pg.base.equip_data_statistics[26672] = {
 _G.pg.base.equip_data_statistics[26673] = {
 	id = 26673,
 	anti_siren = 300,
-	damage = "150/回",
+	damage = "150<[WAVE]>",
 	base = 26660,
 	weapon_id = {
 		26673
@@ -56133,11 +57222,11 @@ _G.pg.base.equip_data_statistics[26673] = {
 _G.pg.base.equip_data_statistics[26680] = {
 	attribute_3 = "cannon",
 	name = "134mm連装高角砲(時限信管)",
-	speciality = "遠距離",
+	speciality = "<[LRG]>",
 	type = 21,
 	tech = 0,
 	ammo = 5,
-	damage = "90/回",
+	damage = "90<[WAVE]>",
 	nationality = 2,
 	descrip = "说明未填写",
 	rarity = 5,
@@ -56190,7 +57279,7 @@ _G.pg.base.equip_data_statistics[26680] = {
 }
 _G.pg.base.equip_data_statistics[26681] = {
 	id = 26681,
-	damage = "102/回",
+	damage = "102<[WAVE]>",
 	base = 26680,
 	weapon_id = {
 		26681
@@ -56198,7 +57287,7 @@ _G.pg.base.equip_data_statistics[26681] = {
 }
 _G.pg.base.equip_data_statistics[26682] = {
 	id = 26682,
-	damage = "113/回",
+	damage = "113<[WAVE]>",
 	base = 26680,
 	weapon_id = {
 		26682
@@ -56206,7 +57295,7 @@ _G.pg.base.equip_data_statistics[26682] = {
 }
 _G.pg.base.equip_data_statistics[26683] = {
 	id = 26683,
-	damage = "125/回",
+	damage = "125<[WAVE]>",
 	base = 26680,
 	weapon_id = {
 		26683
@@ -56214,7 +57303,7 @@ _G.pg.base.equip_data_statistics[26683] = {
 }
 _G.pg.base.equip_data_statistics[26684] = {
 	id = 26684,
-	damage = "136/回",
+	damage = "136<[WAVE]>",
 	base = 26680,
 	weapon_id = {
 		26684
@@ -56222,7 +57311,7 @@ _G.pg.base.equip_data_statistics[26684] = {
 }
 _G.pg.base.equip_data_statistics[26685] = {
 	id = 26685,
-	damage = "148/回",
+	damage = "148<[WAVE]>",
 	base = 26680,
 	weapon_id = {
 		26685
@@ -56230,7 +57319,7 @@ _G.pg.base.equip_data_statistics[26685] = {
 }
 _G.pg.base.equip_data_statistics[26686] = {
 	id = 26686,
-	damage = "159/回",
+	damage = "159<[WAVE]>",
 	base = 26680,
 	weapon_id = {
 		26686
@@ -56238,7 +57327,7 @@ _G.pg.base.equip_data_statistics[26686] = {
 }
 _G.pg.base.equip_data_statistics[26687] = {
 	id = 26687,
-	damage = "171/回",
+	damage = "171<[WAVE]>",
 	base = 26680,
 	weapon_id = {
 		26687
@@ -56246,7 +57335,7 @@ _G.pg.base.equip_data_statistics[26687] = {
 }
 _G.pg.base.equip_data_statistics[26688] = {
 	id = 26688,
-	damage = "184/回",
+	damage = "184<[WAVE]>",
 	base = 26680,
 	weapon_id = {
 		26688
@@ -56254,7 +57343,7 @@ _G.pg.base.equip_data_statistics[26688] = {
 }
 _G.pg.base.equip_data_statistics[26689] = {
 	id = 26689,
-	damage = "197/回",
+	damage = "197<[WAVE]>",
 	base = 26680,
 	weapon_id = {
 		26689
@@ -56262,7 +57351,7 @@ _G.pg.base.equip_data_statistics[26689] = {
 }
 _G.pg.base.equip_data_statistics[26690] = {
 	id = 26690,
-	damage = "211/回",
+	damage = "211<[WAVE]>",
 	base = 26680,
 	weapon_id = {
 		26690
@@ -56271,7 +57360,7 @@ _G.pg.base.equip_data_statistics[26690] = {
 _G.pg.base.equip_data_statistics[26691] = {
 	id = 26691,
 	anti_siren = 100,
-	damage = "211/回",
+	damage = "211<[WAVE]>",
 	base = 26680,
 	weapon_id = {
 		26691
@@ -56280,7 +57369,7 @@ _G.pg.base.equip_data_statistics[26691] = {
 _G.pg.base.equip_data_statistics[26692] = {
 	id = 26692,
 	anti_siren = 200,
-	damage = "211/回",
+	damage = "211<[WAVE]>",
 	base = 26680,
 	weapon_id = {
 		26692
@@ -56289,7 +57378,7 @@ _G.pg.base.equip_data_statistics[26692] = {
 _G.pg.base.equip_data_statistics[26693] = {
 	id = 26693,
 	anti_siren = 300,
-	damage = "211/回",
+	damage = "211<[WAVE]>",
 	base = 26680,
 	weapon_id = {
 		26693
@@ -56298,7 +57387,7 @@ _G.pg.base.equip_data_statistics[26693] = {
 _G.pg.base.equip_data_statistics[27000] = {
 	rarity = 2,
 	name = "シーファイア",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 1,
 	ammo = 5,
@@ -56425,7 +57514,7 @@ _G.pg.base.equip_data_statistics[27003] = {
 _G.pg.base.equip_data_statistics[27020] = {
 	rarity = 3,
 	name = "シーファイア",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 2,
 	ammo = 5,
@@ -56621,7 +57710,7 @@ _G.pg.base.equip_data_statistics[27026] = {
 _G.pg.base.equip_data_statistics[27040] = {
 	rarity = 4,
 	name = "シーファイア",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -56933,7 +58022,7 @@ _G.pg.base.equip_data_statistics[27051] = {
 _G.pg.base.equip_data_statistics[27060] = {
 	rarity = 5,
 	name = "シーファイアFR.47",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -57293,7 +58382,7 @@ _G.pg.base.equip_data_statistics[27073] = {
 _G.pg.base.equip_data_statistics[27100] = {
 	rarity = 3,
 	name = "シーファング",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 1,
 	ammo = 5,
@@ -57461,7 +58550,7 @@ _G.pg.base.equip_data_statistics[27106] = {
 _G.pg.base.equip_data_statistics[27120] = {
 	rarity = 4,
 	name = "シーファング",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 2,
 	ammo = 5,
@@ -57705,7 +58794,7 @@ _G.pg.base.equip_data_statistics[27130] = {
 _G.pg.base.equip_data_statistics[27140] = {
 	rarity = 5,
 	name = "シーファング",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -58009,7 +59098,7 @@ _G.pg.base.equip_data_statistics[27153] = {
 _G.pg.base.equip_data_statistics[27200] = {
 	type = 7,
 	name = "シーグラディエーター",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -58103,7 +59192,7 @@ _G.pg.base.equip_data_statistics[27203] = {
 _G.pg.base.equip_data_statistics[27220] = {
 	rarity = 2,
 	name = "シーグラディエーター",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 2,
 	ammo = 5,
@@ -58198,7 +59287,7 @@ _G.pg.base.equip_data_statistics[27223] = {
 _G.pg.base.equip_data_statistics[27240] = {
 	rarity = 3,
 	name = "シーグラディエーター",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -58353,7 +59442,7 @@ _G.pg.base.equip_data_statistics[27247] = {
 _G.pg.base.equip_data_statistics[27260] = {
 	rarity = 3,
 	name = "シーハリケーン",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -58508,7 +59597,7 @@ _G.pg.base.equip_data_statistics[27267] = {
 _G.pg.base.equip_data_statistics[27300] = {
 	rarity = 5,
 	name = "シーフューリー",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -58812,7 +59901,7 @@ _G.pg.base.equip_data_statistics[27313] = {
 _G.pg.base.equip_data_statistics[27320] = {
 	rarity = 5,
 	name = "シーホーネット",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -59116,7 +60205,7 @@ _G.pg.base.equip_data_statistics[27333] = {
 _G.pg.base.equip_data_statistics[28000] = {
 	rarity = 2,
 	name = "ソードフィッシュ",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 1,
 	ammo = 5,
@@ -59223,7 +60312,7 @@ _G.pg.base.equip_data_statistics[28003] = {
 _G.pg.base.equip_data_statistics[28020] = {
 	rarity = 3,
 	name = "ソードフィッシュ",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 2,
 	ammo = 5,
@@ -59384,7 +60473,7 @@ _G.pg.base.equip_data_statistics[28026] = {
 _G.pg.base.equip_data_statistics[28040] = {
 	rarity = 4,
 	name = "ソードフィッシュ",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 3,
 	ammo = 5,
@@ -59636,7 +60725,7 @@ _G.pg.base.equip_data_statistics[28051] = {
 _G.pg.base.equip_data_statistics[28060] = {
 	rarity = 5,
 	name = "ソードフィッシュ（818中隊）",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 0,
 	ammo = 5,
@@ -59967,7 +61056,7 @@ _G.pg.base.equip_data_statistics[28073] = {
 _G.pg.base.equip_data_statistics[28100] = {
 	rarity = 3,
 	name = "バラクーダ",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 1,
 	ammo = 5,
@@ -60128,7 +61217,7 @@ _G.pg.base.equip_data_statistics[28106] = {
 _G.pg.base.equip_data_statistics[28120] = {
 	rarity = 4,
 	name = "バラクーダ",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 2,
 	ammo = 5,
@@ -60361,7 +61450,7 @@ _G.pg.base.equip_data_statistics[28130] = {
 _G.pg.base.equip_data_statistics[28140] = {
 	rarity = 5,
 	name = "バラクーダ",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 3,
 	ammo = 5,
@@ -60651,7 +61740,7 @@ _G.pg.base.equip_data_statistics[28153] = {
 _G.pg.base.equip_data_statistics[28200] = {
 	rarity = 5,
 	name = "ファイアブランド",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 0,
 	ammo = 5,
@@ -60941,7 +62030,7 @@ _G.pg.base.equip_data_statistics[28213] = {
 _G.pg.base.equip_data_statistics[28220] = {
 	rarity = 5,
 	name = "ファイアクレスト",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 0,
 	ammo = 5,
@@ -61231,7 +62320,7 @@ _G.pg.base.equip_data_statistics[28233] = {
 _G.pg.base.equip_data_statistics[28300] = {
 	rarity = 2,
 	name = "フェアリーアルバコア",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 1,
 	ammo = 5,
@@ -61339,7 +62428,7 @@ _G.pg.base.equip_data_statistics[28303] = {
 _G.pg.base.equip_data_statistics[28320] = {
 	rarity = 3,
 	name = "フェアリーアルバコア",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 2,
 	ammo = 5,
@@ -61501,7 +62590,7 @@ _G.pg.base.equip_data_statistics[28326] = {
 _G.pg.base.equip_data_statistics[28340] = {
 	rarity = 4,
 	name = "フェアリーアルバコア",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 3,
 	ammo = 5,
@@ -61754,7 +62843,7 @@ _G.pg.base.equip_data_statistics[28351] = {
 _G.pg.base.equip_data_statistics[28400] = {
 	rarity = 6,
 	name = "ワイヴァーン",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 0,
 	ammo = 5,
@@ -62055,10 +63144,356 @@ _G.pg.base.equip_data_statistics[28413] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[28420] = {
+	rarity = 6,
+	name = "試作型スピアフィッシュ",
+	speciality = "<[TRP]>",
+	type = 8,
+	tech = 0,
+	ammo = 5,
+	nationality = 2,
+	descrip = "说明未填写",
+	id = 28420,
+	torpedo_ammo = 0,
+	value_3 = 0,
+	value_2 = 65,
+	icon = "28420",
+	attribute_2 = "air",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {
+		{
+			6,
+			50360
+		},
+		{
+			4,
+			51240
+		},
+		{
+			5,
+			59940
+		}
+	},
+	equip_info = {
+		6,
+		7,
+		8,
+		9
+	},
+	weapon_id = {
+		28420
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7
+	},
+	part_sub = {
+		6,
+		7
+	},
+	equip_parameters = {},
+	label = {
+		"HMS",
+		"CV",
+		"TB"
+	}
+}
+_G.pg.base.equip_data_statistics[28421] = {
+	id = 28421,
+	base = 28420,
+	ammo_info = {
+		{
+			6,
+			50361
+		},
+		{
+			4,
+			51241
+		},
+		{
+			5,
+			59941
+		}
+	},
+	weapon_id = {
+		28421
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[28422] = {
+	id = 28422,
+	base = 28420,
+	ammo_info = {
+		{
+			6,
+			50362
+		},
+		{
+			4,
+			51242
+		},
+		{
+			5,
+			59942
+		}
+	},
+	weapon_id = {
+		28422
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[28423] = {
+	id = 28423,
+	base = 28420,
+	ammo_info = {
+		{
+			6,
+			50363
+		},
+		{
+			4,
+			51243
+		},
+		{
+			5,
+			59943
+		}
+	},
+	weapon_id = {
+		28423
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[28424] = {
+	id = 28424,
+	base = 28420,
+	ammo_info = {
+		{
+			6,
+			50364
+		},
+		{
+			4,
+			51244
+		},
+		{
+			5,
+			59944
+		}
+	},
+	weapon_id = {
+		28424
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[28425] = {
+	id = 28425,
+	base = 28420,
+	ammo_info = {
+		{
+			6,
+			50365
+		},
+		{
+			4,
+			51245
+		},
+		{
+			5,
+			59945
+		}
+	},
+	weapon_id = {
+		28425
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[28426] = {
+	id = 28426,
+	base = 28420,
+	ammo_info = {
+		{
+			6,
+			50366
+		},
+		{
+			4,
+			51246
+		},
+		{
+			5,
+			59946
+		}
+	},
+	weapon_id = {
+		28426
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[28427] = {
+	id = 28427,
+	base = 28420,
+	ammo_info = {
+		{
+			6,
+			50367
+		},
+		{
+			4,
+			51247
+		},
+		{
+			5,
+			59947
+		}
+	},
+	weapon_id = {
+		28427
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[28428] = {
+	id = 28428,
+	base = 28420,
+	ammo_info = {
+		{
+			6,
+			50368
+		},
+		{
+			4,
+			51248
+		},
+		{
+			5,
+			59948
+		}
+	},
+	weapon_id = {
+		28428
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[28429] = {
+	id = 28429,
+	base = 28420,
+	ammo_info = {
+		{
+			6,
+			50369
+		},
+		{
+			4,
+			51249
+		},
+		{
+			5,
+			59949
+		}
+	},
+	weapon_id = {
+		28429
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[28430] = {
+	id = 28430,
+	base = 28420,
+	ammo_info = {
+		{
+			6,
+			50370
+		},
+		{
+			4,
+			51250
+		},
+		{
+			5,
+			59950
+		}
+	},
+	weapon_id = {
+		28430
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[28431] = {
+	id = 28431,
+	anti_siren = 100,
+	base = 28420,
+	ammo_info = {
+		{
+			6,
+			50371
+		},
+		{
+			4,
+			51251
+		},
+		{
+			5,
+			59951
+		}
+	},
+	weapon_id = {
+		28431
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[28432] = {
+	id = 28432,
+	anti_siren = 200,
+	base = 28420,
+	ammo_info = {
+		{
+			6,
+			50372
+		},
+		{
+			4,
+			51252
+		},
+		{
+			5,
+			59952
+		}
+	},
+	weapon_id = {
+		28432
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[28433] = {
+	id = 28433,
+	anti_siren = 300,
+	base = 28420,
+	ammo_info = {
+		{
+			6,
+			50373
+		},
+		{
+			4,
+			51253
+		},
+		{
+			5,
+			59953
+		}
+	},
+	weapon_id = {
+		28433
+	},
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[29000] = {
 	type = 9,
 	name = "スクア",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -62164,7 +63599,7 @@ _G.pg.base.equip_data_statistics[29003] = {
 _G.pg.base.equip_data_statistics[29020] = {
 	rarity = 2,
 	name = "スクア",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 2,
 	ammo = 5,
@@ -62271,7 +63706,7 @@ _G.pg.base.equip_data_statistics[29023] = {
 _G.pg.base.equip_data_statistics[29040] = {
 	rarity = 3,
 	name = "スクア",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 3,
 	ammo = 5,
@@ -62450,7 +63885,7 @@ _G.pg.base.equip_data_statistics[29047] = {
 _G.pg.base.equip_data_statistics[29100] = {
 	rarity = 2,
 	name = "フルマー",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 1,
 	ammo = 5,
@@ -62557,7 +63992,7 @@ _G.pg.base.equip_data_statistics[29103] = {
 _G.pg.base.equip_data_statistics[29120] = {
 	rarity = 3,
 	name = "フルマー",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 2,
 	ammo = 5,
@@ -62718,7 +64153,7 @@ _G.pg.base.equip_data_statistics[29126] = {
 _G.pg.base.equip_data_statistics[29140] = {
 	rarity = 4,
 	name = "フルマー",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 3,
 	ammo = 5,
@@ -62970,7 +64405,7 @@ _G.pg.base.equip_data_statistics[29151] = {
 _G.pg.base.equip_data_statistics[29200] = {
 	rarity = 5,
 	name = "ファイアフライ",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 0,
 	ammo = 5,
@@ -63260,7 +64695,7 @@ _G.pg.base.equip_data_statistics[29213] = {
 _G.pg.base.equip_data_statistics[29220] = {
 	rarity = 5,
 	name = "ファイアフライ（1771中隊）",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 0,
 	ammo = 5,
@@ -63550,7 +64985,7 @@ _G.pg.base.equip_data_statistics[29233] = {
 _G.pg.base.equip_data_statistics[29300] = {
 	rarity = 5,
 	name = "バラクーダ（831中隊）",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 0,
 	ammo = 5,
@@ -63881,7 +65316,7 @@ _G.pg.base.equip_data_statistics[29313] = {
 _G.pg.base.equip_data_statistics[30000] = {
 	tech = 0,
 	name = "305mm連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 3,
@@ -63997,7 +65432,7 @@ _G.pg.base.equip_data_statistics[30007] = {
 _G.pg.base.equip_data_statistics[31000] = {
 	attribute_3 = "antiaircraft",
 	name = "100mm二連装九八式高角砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 1,
 	ammo = 3,
@@ -64120,7 +65555,7 @@ _G.pg.base.equip_data_statistics[31006] = {
 _G.pg.base.equip_data_statistics[31020] = {
 	attribute_3 = "antiaircraft",
 	name = "100mm二連装九八式高角砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 2,
 	ammo = 3,
@@ -64279,7 +65714,7 @@ _G.pg.base.equip_data_statistics[31030] = {
 _G.pg.base.equip_data_statistics[31040] = {
 	attribute_3 = "antiaircraft",
 	name = "100mm二連装九八式高角砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 3,
 	ammo = 3,
@@ -64468,7 +65903,7 @@ _G.pg.base.equip_data_statistics[31053] = {
 _G.pg.base.equip_data_statistics[31060] = {
 	tech = 0,
 	name = "100mm八八式砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -64636,7 +66071,7 @@ _G.pg.base.equip_data_statistics[31071] = {
 _G.pg.base.equip_data_statistics[31080] = {
 	attribute_3 = "antiaircraft",
 	name = "100mm二連装九八式高角砲改",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 0,
 	ammo = 2,
@@ -64826,7 +66261,7 @@ _G.pg.base.equip_data_statistics[31093] = {
 _G.pg.base.equip_data_statistics[31100] = {
 	tech = 1,
 	name = "120mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 3,
@@ -64920,7 +66355,7 @@ _G.pg.base.equip_data_statistics[31103] = {
 _G.pg.base.equip_data_statistics[31120] = {
 	tech = 2,
 	name = "120mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -65015,7 +66450,7 @@ _G.pg.base.equip_data_statistics[31123] = {
 _G.pg.base.equip_data_statistics[31140] = {
 	tech = 3,
 	name = "120mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -65146,7 +66581,7 @@ _G.pg.base.equip_data_statistics[31147] = {
 _G.pg.base.equip_data_statistics[31160] = {
 	tech = 0,
 	name = "120mm十一年式砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -65277,7 +66712,7 @@ _G.pg.base.equip_data_statistics[31167] = {
 _G.pg.base.equip_data_statistics[31180] = {
 	attribute_3 = "antiaircraft",
 	name = "120mm高角砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 0,
 	ammo = 3,
@@ -65446,7 +66881,7 @@ _G.pg.base.equip_data_statistics[31191] = {
 _G.pg.base.equip_data_statistics[31200] = {
 	tech = 1,
 	name = "127mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -65541,7 +66976,7 @@ _G.pg.base.equip_data_statistics[31203] = {
 _G.pg.base.equip_data_statistics[31220] = {
 	tech = 2,
 	name = "127mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -65663,7 +67098,7 @@ _G.pg.base.equip_data_statistics[31226] = {
 _G.pg.base.equip_data_statistics[31240] = {
 	tech = 3,
 	name = "127mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 2,
@@ -65832,7 +67267,7 @@ _G.pg.base.equip_data_statistics[31251] = {
 _G.pg.base.equip_data_statistics[31260] = {
 	attribute_3 = "antiaircraft",
 	name = "127mm両用砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 0,
 	ammo = 3,
@@ -65964,7 +67399,7 @@ _G.pg.base.equip_data_statistics[31267] = {
 _G.pg.base.equip_data_statistics[31280] = {
 	tech = 0,
 	name = "127mm連装砲改",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 2,
@@ -66134,7 +67569,7 @@ _G.pg.base.equip_data_statistics[31291] = {
 _G.pg.base.equip_data_statistics[32000] = {
 	tech = 1,
 	name = "140mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	rarity = 1,
 	ammo = 3,
@@ -66220,7 +67655,7 @@ _G.pg.base.equip_data_statistics[32003] = {
 _G.pg.base.equip_data_statistics[32020] = {
 	tech = 2,
 	name = "140mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 3,
@@ -66307,7 +67742,7 @@ _G.pg.base.equip_data_statistics[32023] = {
 _G.pg.base.equip_data_statistics[32040] = {
 	tech = 3,
 	name = "140mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 2,
@@ -66430,7 +67865,7 @@ _G.pg.base.equip_data_statistics[32047] = {
 _G.pg.base.equip_data_statistics[32060] = {
 	tech = 3,
 	name = "152mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 2,
@@ -66554,7 +67989,7 @@ _G.pg.base.equip_data_statistics[32067] = {
 _G.pg.base.equip_data_statistics[32100] = {
 	tech = 1,
 	name = "140mm連装砲",
-	speciality = "拡散",
+	speciality = "<[SCA]>",
 	type = 2,
 	descrip = "0",
 	ammo = 3,
@@ -66641,7 +68076,7 @@ _G.pg.base.equip_data_statistics[32103] = {
 _G.pg.base.equip_data_statistics[32120] = {
 	tech = 2,
 	name = "140mm連装砲",
-	speciality = "拡散",
+	speciality = "<[SCA]>",
 	type = 2,
 	descrip = "0",
 	ammo = 2,
@@ -66755,7 +68190,7 @@ _G.pg.base.equip_data_statistics[32126] = {
 _G.pg.base.equip_data_statistics[32140] = {
 	tech = 3,
 	name = "140mm連装砲",
-	speciality = "拡散",
+	speciality = "<[SCA]>",
 	type = 2,
 	descrip = "0",
 	ammo = 2,
@@ -66916,7 +68351,7 @@ _G.pg.base.equip_data_statistics[32151] = {
 _G.pg.base.equip_data_statistics[32200] = {
 	tech = 1,
 	name = "155mm三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 3,
@@ -67030,7 +68465,7 @@ _G.pg.base.equip_data_statistics[32206] = {
 _G.pg.base.equip_data_statistics[32220] = {
 	tech = 2,
 	name = "155mm三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 2,
@@ -67181,7 +68616,7 @@ _G.pg.base.equip_data_statistics[32230] = {
 _G.pg.base.equip_data_statistics[32240] = {
 	tech = 3,
 	name = "155mm三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 2,
@@ -67362,7 +68797,7 @@ _G.pg.base.equip_data_statistics[32253] = {
 _G.pg.base.equip_data_statistics[32260] = {
 	tech = 0,
 	name = "試作型155mm三連装砲改",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 2,
@@ -67543,7 +68978,7 @@ _G.pg.base.equip_data_statistics[32273] = {
 _G.pg.base.equip_data_statistics[32300] = {
 	tech = 1,
 	name = "152mm連装砲",
-	speciality = "拡散",
+	speciality = "<[SCA]>",
 	type = 2,
 	descrip = "0",
 	ammo = 3,
@@ -67630,7 +69065,7 @@ _G.pg.base.equip_data_statistics[32303] = {
 _G.pg.base.equip_data_statistics[32320] = {
 	tech = 2,
 	name = "152mm連装砲",
-	speciality = "拡散",
+	speciality = "<[SCA]>",
 	type = 2,
 	descrip = "0",
 	ammo = 2,
@@ -67745,7 +69180,7 @@ _G.pg.base.equip_data_statistics[32326] = {
 _G.pg.base.equip_data_statistics[32340] = {
 	tech = 3,
 	name = "152mm連装砲",
-	speciality = "拡散",
+	speciality = "<[SCA]>",
 	type = 2,
 	descrip = "0",
 	ammo = 2,
@@ -67906,7 +69341,7 @@ _G.pg.base.equip_data_statistics[32351] = {
 _G.pg.base.equip_data_statistics[32360] = {
 	attribute_3 = "antiaircraft",
 	name = "試作型150mm三連装五式高角砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	tech = 0,
 	ammo = 2,
@@ -68091,7 +69526,7 @@ _G.pg.base.equip_data_statistics[32373] = {
 _G.pg.base.equip_data_statistics[33000] = {
 	tech = 1,
 	name = "203mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 3,
@@ -68178,7 +69613,7 @@ _G.pg.base.equip_data_statistics[33003] = {
 _G.pg.base.equip_data_statistics[33020] = {
 	tech = 2,
 	name = "203mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 2,
@@ -68292,7 +69727,7 @@ _G.pg.base.equip_data_statistics[33026] = {
 _G.pg.base.equip_data_statistics[33040] = {
 	tech = 3,
 	name = "203mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 2,
@@ -68452,7 +69887,7 @@ _G.pg.base.equip_data_statistics[33051] = {
 _G.pg.base.equip_data_statistics[33060] = {
 	tech = 0,
 	name = "試製203mm連装砲（3号）",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "試作兵器・203mm連装砲の強化型。配備されたのが少数にとどまった",
 	ammo = 2,
@@ -68632,7 +70067,7 @@ _G.pg.base.equip_data_statistics[33073] = {
 _G.pg.base.equip_data_statistics[33080] = {
 	tech = 3,
 	name = "203mm連装砲改",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 2,
@@ -68792,7 +70227,7 @@ _G.pg.base.equip_data_statistics[33091] = {
 _G.pg.base.equip_data_statistics[33100] = {
 	tech = 0,
 	name = "試作型三連装310mm砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 11,
 	descrip = "0",
 	ammo = 2,
@@ -68963,7 +70398,7 @@ _G.pg.base.equip_data_statistics[33113] = {
 _G.pg.base.equip_data_statistics[33120] = {
 	tech = 0,
 	name = "試作型203mm/55三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "重桜開発の試作型203mm/55三連装砲（重巡用）",
 	ammo = 2,
@@ -69143,7 +70578,7 @@ _G.pg.base.equip_data_statistics[33133] = {
 _G.pg.base.equip_data_statistics[34000] = {
 	tech = 1,
 	name = "356mm連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	rarity = 1,
 	ammo = 3,
@@ -69222,7 +70657,7 @@ _G.pg.base.equip_data_statistics[34003] = {
 _G.pg.base.equip_data_statistics[34020] = {
 	tech = 2,
 	name = "356mm連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -69303,7 +70738,7 @@ _G.pg.base.equip_data_statistics[34023] = {
 _G.pg.base.equip_data_statistics[34040] = {
 	tech = 3,
 	name = "356mm連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -69420,7 +70855,7 @@ _G.pg.base.equip_data_statistics[34047] = {
 _G.pg.base.equip_data_statistics[34060] = {
 	tech = 0,
 	name = "毘式356mm連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -69537,7 +70972,7 @@ _G.pg.base.equip_data_statistics[34067] = {
 _G.pg.base.equip_data_statistics[34100] = {
 	tech = 1,
 	name = "410mm連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 3,
@@ -69617,7 +71052,7 @@ _G.pg.base.equip_data_statistics[34103] = {
 _G.pg.base.equip_data_statistics[34120] = {
 	tech = 2,
 	name = "410mm連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -69725,7 +71160,7 @@ _G.pg.base.equip_data_statistics[34126] = {
 _G.pg.base.equip_data_statistics[34140] = {
 	tech = 3,
 	name = "410mm連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -69879,7 +71314,7 @@ _G.pg.base.equip_data_statistics[34151] = {
 _G.pg.base.equip_data_statistics[34160] = {
 	attribute_3 = "antiaircraft",
 	name = "410mm連装砲(三式弾)",
-	speciality = "散射",
+	speciality = "<[SCA]>",
 	type = 4,
 	tech = 0,
 	ammo = 6,
@@ -70054,7 +71489,7 @@ _G.pg.base.equip_data_statistics[34173] = {
 _G.pg.base.equip_data_statistics[34180] = {
 	tech = 0,
 	name = "試製410mm三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 1,
@@ -70228,7 +71663,7 @@ _G.pg.base.equip_data_statistics[34193] = {
 _G.pg.base.equip_data_statistics[34240] = {
 	tech = 0,
 	name = "460mm三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "大和型戦艦が装備する460mm主砲",
 	ammo = 1,
@@ -70402,7 +71837,7 @@ _G.pg.base.equip_data_statistics[34253] = {
 _G.pg.base.equip_data_statistics[34300] = {
 	tech = 0,
 	name = "410mm連装砲改",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -70556,7 +71991,7 @@ _G.pg.base.equip_data_statistics[34311] = {
 _G.pg.base.equip_data_statistics[35000] = {
 	tech = 1,
 	name = "610mm連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	rarity = 1,
 	ammo = 5,
@@ -70651,7 +72086,7 @@ _G.pg.base.equip_data_statistics[35003] = {
 _G.pg.base.equip_data_statistics[35020] = {
 	tech = 2,
 	name = "610mm連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -70747,7 +72182,7 @@ _G.pg.base.equip_data_statistics[35023] = {
 _G.pg.base.equip_data_statistics[35040] = {
 	tech = 3,
 	name = "610mm連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -70879,7 +72314,7 @@ _G.pg.base.equip_data_statistics[35047] = {
 _G.pg.base.equip_data_statistics[35100] = {
 	tech = 1,
 	name = "610mm三連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -70975,7 +72410,7 @@ _G.pg.base.equip_data_statistics[35103] = {
 _G.pg.base.equip_data_statistics[35120] = {
 	tech = 2,
 	name = "610mm三連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -71098,7 +72533,7 @@ _G.pg.base.equip_data_statistics[35126] = {
 _G.pg.base.equip_data_statistics[35140] = {
 	tech = 3,
 	name = "610mm三連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -71267,7 +72702,7 @@ _G.pg.base.equip_data_statistics[35151] = {
 _G.pg.base.equip_data_statistics[35160] = {
 	tech = 3,
 	name = "610mm三連装魚雷改",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -71436,7 +72871,7 @@ _G.pg.base.equip_data_statistics[35171] = {
 _G.pg.base.equip_data_statistics[35200] = {
 	tech = 1,
 	name = "610mm四連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -71559,7 +72994,7 @@ _G.pg.base.equip_data_statistics[35206] = {
 _G.pg.base.equip_data_statistics[35220] = {
 	tech = 2,
 	name = "610mm四連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -71718,7 +73153,7 @@ _G.pg.base.equip_data_statistics[35230] = {
 _G.pg.base.equip_data_statistics[35240] = {
 	tech = 3,
 	name = "610mm四連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -71907,7 +73342,7 @@ _G.pg.base.equip_data_statistics[35253] = {
 _G.pg.base.equip_data_statistics[35260] = {
 	tech = 0,
 	name = "610mm四連装魚雷改",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "0",
 	ammo = 5,
@@ -72096,7 +73531,7 @@ _G.pg.base.equip_data_statistics[35273] = {
 _G.pg.base.equip_data_statistics[35340] = {
 	tech = 0,
 	name = "610mm五連装魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "島風型駆逐艦に搭載される五連装610mm魚雷 ",
 	ammo = 5,
@@ -72285,7 +73720,7 @@ _G.pg.base.equip_data_statistics[35353] = {
 _G.pg.base.equip_data_statistics[35400] = {
 	tech = 1,
 	name = "潜水艦用九二式電動魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -72372,7 +73807,7 @@ _G.pg.base.equip_data_statistics[35403] = {
 _G.pg.base.equip_data_statistics[35420] = {
 	tech = 2,
 	name = "潜水艦用九二式電動魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -72486,7 +73921,7 @@ _G.pg.base.equip_data_statistics[35426] = {
 _G.pg.base.equip_data_statistics[35440] = {
 	tech = 3,
 	name = "潜水艦用九二式電動魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -72646,7 +74081,7 @@ _G.pg.base.equip_data_statistics[35451] = {
 _G.pg.base.equip_data_statistics[35460] = {
 	tech = 0,
 	name = "潜水艦用九二式電動魚雷改",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -72806,7 +74241,7 @@ _G.pg.base.equip_data_statistics[35471] = {
 _G.pg.base.equip_data_statistics[35500] = {
 	tech = 1,
 	name = "潜水艦用九五式酸素魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -72920,7 +74355,7 @@ _G.pg.base.equip_data_statistics[35506] = {
 _G.pg.base.equip_data_statistics[35520] = {
 	tech = 2,
 	name = "潜水艦用九五式酸素魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -73070,7 +74505,7 @@ _G.pg.base.equip_data_statistics[35530] = {
 _G.pg.base.equip_data_statistics[35540] = {
 	tech = 3,
 	name = "潜水艦用九五式酸素魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -73250,7 +74685,7 @@ _G.pg.base.equip_data_statistics[35553] = {
 _G.pg.base.equip_data_statistics[35560] = {
 	tech = 3,
 	name = "潜水艦用九六式酸素魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -73430,7 +74865,7 @@ _G.pg.base.equip_data_statistics[35573] = {
 _G.pg.base.equip_data_statistics[35580] = {
 	tech = 0,
 	name = "潜水艦用九五式酸素魚雷改",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -73610,11 +75045,11 @@ _G.pg.base.equip_data_statistics[35593] = {
 _G.pg.base.equip_data_statistics[36100] = {
 	tech = 1,
 	name = "25mm対空機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	rarity = 1,
 	ammo = 5,
-	damage = "8/回",
+	damage = "8<[WAVE]>",
 	nationality = 3,
 	descrip = "0",
 	id = 36100,
@@ -73675,7 +75110,7 @@ _G.pg.base.equip_data_statistics[36100] = {
 }
 _G.pg.base.equip_data_statistics[36101] = {
 	id = 36101,
-	damage = "9/回",
+	damage = "9<[WAVE]>",
 	base = 36100,
 	weapon_id = {
 		36101
@@ -73684,7 +75119,7 @@ _G.pg.base.equip_data_statistics[36101] = {
 }
 _G.pg.base.equip_data_statistics[36102] = {
 	id = 36102,
-	damage = "10/回",
+	damage = "10<[WAVE]>",
 	base = 36100,
 	weapon_id = {
 		36102
@@ -73693,7 +75128,7 @@ _G.pg.base.equip_data_statistics[36102] = {
 }
 _G.pg.base.equip_data_statistics[36103] = {
 	id = 36103,
-	damage = "12/回",
+	damage = "12<[WAVE]>",
 	base = 36100,
 	weapon_id = {
 		36103
@@ -73703,11 +75138,11 @@ _G.pg.base.equip_data_statistics[36103] = {
 _G.pg.base.equip_data_statistics[36120] = {
 	tech = 2,
 	name = "25mm対空機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "9/回",
+	damage = "9<[WAVE]>",
 	nationality = 3,
 	rarity = 2,
 	id = 36120,
@@ -73769,7 +75204,7 @@ _G.pg.base.equip_data_statistics[36120] = {
 }
 _G.pg.base.equip_data_statistics[36121] = {
 	id = 36121,
-	damage = "10/回",
+	damage = "10<[WAVE]>",
 	base = 36120,
 	weapon_id = {
 		36121
@@ -73778,7 +75213,7 @@ _G.pg.base.equip_data_statistics[36121] = {
 }
 _G.pg.base.equip_data_statistics[36122] = {
 	id = 36122,
-	damage = "12/回",
+	damage = "12<[WAVE]>",
 	base = 36120,
 	weapon_id = {
 		36122
@@ -73787,7 +75222,7 @@ _G.pg.base.equip_data_statistics[36122] = {
 }
 _G.pg.base.equip_data_statistics[36123] = {
 	id = 36123,
-	damage = "14/回",
+	damage = "14<[WAVE]>",
 	base = 36120,
 	weapon_id = {
 		36123
@@ -73797,11 +75232,11 @@ _G.pg.base.equip_data_statistics[36123] = {
 _G.pg.base.equip_data_statistics[36140] = {
 	tech = 3,
 	name = "25mm対空機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "11/回",
+	damage = "11<[WAVE]>",
 	nationality = 3,
 	rarity = 3,
 	id = 36140,
@@ -73863,7 +75298,7 @@ _G.pg.base.equip_data_statistics[36140] = {
 }
 _G.pg.base.equip_data_statistics[36141] = {
 	id = 36141,
-	damage = "12/回",
+	damage = "12<[WAVE]>",
 	base = 36140,
 	weapon_id = {
 		36141
@@ -73872,7 +75307,7 @@ _G.pg.base.equip_data_statistics[36141] = {
 }
 _G.pg.base.equip_data_statistics[36142] = {
 	id = 36142,
-	damage = "13/回",
+	damage = "13<[WAVE]>",
 	base = 36140,
 	weapon_id = {
 		36142
@@ -73881,7 +75316,7 @@ _G.pg.base.equip_data_statistics[36142] = {
 }
 _G.pg.base.equip_data_statistics[36143] = {
 	id = 36143,
-	damage = "15/回",
+	damage = "15<[WAVE]>",
 	base = 36140,
 	weapon_id = {
 		36143
@@ -73890,7 +75325,7 @@ _G.pg.base.equip_data_statistics[36143] = {
 }
 _G.pg.base.equip_data_statistics[36144] = {
 	id = 36144,
-	damage = "17/回",
+	damage = "17<[WAVE]>",
 	base = 36140,
 	weapon_id = {
 		36144
@@ -73899,7 +75334,7 @@ _G.pg.base.equip_data_statistics[36144] = {
 }
 _G.pg.base.equip_data_statistics[36145] = {
 	id = 36145,
-	damage = "19/回",
+	damage = "19<[WAVE]>",
 	base = 36140,
 	weapon_id = {
 		36145
@@ -73908,7 +75343,7 @@ _G.pg.base.equip_data_statistics[36145] = {
 }
 _G.pg.base.equip_data_statistics[36146] = {
 	id = 36146,
-	damage = "21/回",
+	damage = "21<[WAVE]>",
 	base = 36140,
 	weapon_id = {
 		36146
@@ -73917,7 +75352,7 @@ _G.pg.base.equip_data_statistics[36146] = {
 }
 _G.pg.base.equip_data_statistics[36147] = {
 	id = 36147,
-	damage = "21/回",
+	damage = "21<[WAVE]>",
 	base = 36140,
 	weapon_id = {
 		36147
@@ -73927,11 +75362,11 @@ _G.pg.base.equip_data_statistics[36147] = {
 _G.pg.base.equip_data_statistics[36200] = {
 	tech = 1,
 	name = "25mm連装対空機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "13/回",
+	damage = "13<[WAVE]>",
 	nationality = 3,
 	rarity = 2,
 	id = 36200,
@@ -73993,7 +75428,7 @@ _G.pg.base.equip_data_statistics[36200] = {
 }
 _G.pg.base.equip_data_statistics[36201] = {
 	id = 36201,
-	damage = "15/回",
+	damage = "15<[WAVE]>",
 	base = 36200,
 	weapon_id = {
 		36201
@@ -74002,7 +75437,7 @@ _G.pg.base.equip_data_statistics[36201] = {
 }
 _G.pg.base.equip_data_statistics[36202] = {
 	id = 36202,
-	damage = "17/回",
+	damage = "17<[WAVE]>",
 	base = 36200,
 	weapon_id = {
 		36202
@@ -74011,7 +75446,7 @@ _G.pg.base.equip_data_statistics[36202] = {
 }
 _G.pg.base.equip_data_statistics[36203] = {
 	id = 36203,
-	damage = "19/回",
+	damage = "19<[WAVE]>",
 	base = 36200,
 	weapon_id = {
 		36203
@@ -74021,11 +75456,11 @@ _G.pg.base.equip_data_statistics[36203] = {
 _G.pg.base.equip_data_statistics[36220] = {
 	tech = 2,
 	name = "25mm連装対空機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "14/回",
+	damage = "14<[WAVE]>",
 	nationality = 3,
 	rarity = 3,
 	id = 36220,
@@ -74087,7 +75522,7 @@ _G.pg.base.equip_data_statistics[36220] = {
 }
 _G.pg.base.equip_data_statistics[36221] = {
 	id = 36221,
-	damage = "16/回",
+	damage = "16<[WAVE]>",
 	base = 36220,
 	weapon_id = {
 		36221
@@ -74096,7 +75531,7 @@ _G.pg.base.equip_data_statistics[36221] = {
 }
 _G.pg.base.equip_data_statistics[36222] = {
 	id = 36222,
-	damage = "18/回",
+	damage = "18<[WAVE]>",
 	base = 36220,
 	weapon_id = {
 		36222
@@ -74105,7 +75540,7 @@ _G.pg.base.equip_data_statistics[36222] = {
 }
 _G.pg.base.equip_data_statistics[36223] = {
 	id = 36223,
-	damage = "20/回",
+	damage = "20<[WAVE]>",
 	base = 36220,
 	weapon_id = {
 		36223
@@ -74114,7 +75549,7 @@ _G.pg.base.equip_data_statistics[36223] = {
 }
 _G.pg.base.equip_data_statistics[36224] = {
 	id = 36224,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	base = 36220,
 	weapon_id = {
 		36224
@@ -74123,7 +75558,7 @@ _G.pg.base.equip_data_statistics[36224] = {
 }
 _G.pg.base.equip_data_statistics[36225] = {
 	id = 36225,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	base = 36220,
 	weapon_id = {
 		36225
@@ -74132,7 +75567,7 @@ _G.pg.base.equip_data_statistics[36225] = {
 }
 _G.pg.base.equip_data_statistics[36226] = {
 	id = 36226,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 36220,
 	weapon_id = {
 		36226
@@ -74142,11 +75577,11 @@ _G.pg.base.equip_data_statistics[36226] = {
 _G.pg.base.equip_data_statistics[36240] = {
 	tech = 3,
 	name = "25mm連装対空機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "16/回",
+	damage = "16<[WAVE]>",
 	nationality = 3,
 	rarity = 4,
 	id = 36240,
@@ -74208,7 +75643,7 @@ _G.pg.base.equip_data_statistics[36240] = {
 }
 _G.pg.base.equip_data_statistics[36241] = {
 	id = 36241,
-	damage = "18/回",
+	damage = "18<[WAVE]>",
 	base = 36240,
 	weapon_id = {
 		36241
@@ -74217,7 +75652,7 @@ _G.pg.base.equip_data_statistics[36241] = {
 }
 _G.pg.base.equip_data_statistics[36242] = {
 	id = 36242,
-	damage = "20/回",
+	damage = "20<[WAVE]>",
 	base = 36240,
 	weapon_id = {
 		36242
@@ -74226,7 +75661,7 @@ _G.pg.base.equip_data_statistics[36242] = {
 }
 _G.pg.base.equip_data_statistics[36243] = {
 	id = 36243,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	base = 36240,
 	weapon_id = {
 		36243
@@ -74235,7 +75670,7 @@ _G.pg.base.equip_data_statistics[36243] = {
 }
 _G.pg.base.equip_data_statistics[36244] = {
 	id = 36244,
-	damage = "24/回",
+	damage = "24<[WAVE]>",
 	base = 36240,
 	weapon_id = {
 		36244
@@ -74244,7 +75679,7 @@ _G.pg.base.equip_data_statistics[36244] = {
 }
 _G.pg.base.equip_data_statistics[36245] = {
 	id = 36245,
-	damage = "26/回",
+	damage = "26<[WAVE]>",
 	base = 36240,
 	weapon_id = {
 		36245
@@ -74253,7 +75688,7 @@ _G.pg.base.equip_data_statistics[36245] = {
 }
 _G.pg.base.equip_data_statistics[36246] = {
 	id = 36246,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 36240,
 	weapon_id = {
 		36246
@@ -74262,7 +75697,7 @@ _G.pg.base.equip_data_statistics[36246] = {
 }
 _G.pg.base.equip_data_statistics[36247] = {
 	id = 36247,
-	damage = "31/回",
+	damage = "31<[WAVE]>",
 	base = 36240,
 	weapon_id = {
 		36247
@@ -74271,7 +75706,7 @@ _G.pg.base.equip_data_statistics[36247] = {
 }
 _G.pg.base.equip_data_statistics[36248] = {
 	id = 36248,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	base = 36240,
 	weapon_id = {
 		36248
@@ -74280,7 +75715,7 @@ _G.pg.base.equip_data_statistics[36248] = {
 }
 _G.pg.base.equip_data_statistics[36249] = {
 	id = 36249,
-	damage = "37/回",
+	damage = "37<[WAVE]>",
 	base = 36240,
 	weapon_id = {
 		36249
@@ -74289,7 +75724,7 @@ _G.pg.base.equip_data_statistics[36249] = {
 }
 _G.pg.base.equip_data_statistics[36250] = {
 	id = 36250,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 36240,
 	weapon_id = {
 		36250
@@ -74299,7 +75734,7 @@ _G.pg.base.equip_data_statistics[36250] = {
 _G.pg.base.equip_data_statistics[36251] = {
 	id = 36251,
 	anti_siren = 100,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 36240,
 	weapon_id = {
 		36251
@@ -74309,11 +75744,11 @@ _G.pg.base.equip_data_statistics[36251] = {
 _G.pg.base.equip_data_statistics[36300] = {
 	tech = 1,
 	name = "25mm三連装対空機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "16/回",
+	damage = "16<[WAVE]>",
 	nationality = 3,
 	rarity = 2,
 	id = 36300,
@@ -74375,7 +75810,7 @@ _G.pg.base.equip_data_statistics[36300] = {
 }
 _G.pg.base.equip_data_statistics[36301] = {
 	id = 36301,
-	damage = "18/回",
+	damage = "18<[WAVE]>",
 	base = 36300,
 	weapon_id = {
 		36301
@@ -74384,7 +75819,7 @@ _G.pg.base.equip_data_statistics[36301] = {
 }
 _G.pg.base.equip_data_statistics[36302] = {
 	id = 36302,
-	damage = "21/回",
+	damage = "21<[WAVE]>",
 	base = 36300,
 	weapon_id = {
 		36302
@@ -74393,7 +75828,7 @@ _G.pg.base.equip_data_statistics[36302] = {
 }
 _G.pg.base.equip_data_statistics[36303] = {
 	id = 36303,
-	damage = "24/回",
+	damage = "24<[WAVE]>",
 	base = 36300,
 	weapon_id = {
 		36303
@@ -74403,11 +75838,11 @@ _G.pg.base.equip_data_statistics[36303] = {
 _G.pg.base.equip_data_statistics[36320] = {
 	tech = 2,
 	name = "25mm三連装対空機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "18/回",
+	damage = "18<[WAVE]>",
 	nationality = 3,
 	rarity = 3,
 	id = 36320,
@@ -74469,7 +75904,7 @@ _G.pg.base.equip_data_statistics[36320] = {
 }
 _G.pg.base.equip_data_statistics[36321] = {
 	id = 36321,
-	damage = "21/回",
+	damage = "21<[WAVE]>",
 	base = 36320,
 	weapon_id = {
 		36321
@@ -74478,7 +75913,7 @@ _G.pg.base.equip_data_statistics[36321] = {
 }
 _G.pg.base.equip_data_statistics[36322] = {
 	id = 36322,
-	damage = "24/回",
+	damage = "24<[WAVE]>",
 	base = 36320,
 	weapon_id = {
 		36322
@@ -74487,7 +75922,7 @@ _G.pg.base.equip_data_statistics[36322] = {
 }
 _G.pg.base.equip_data_statistics[36323] = {
 	id = 36323,
-	damage = "27/回",
+	damage = "27<[WAVE]>",
 	base = 36320,
 	weapon_id = {
 		36323
@@ -74496,7 +75931,7 @@ _G.pg.base.equip_data_statistics[36323] = {
 }
 _G.pg.base.equip_data_statistics[36324] = {
 	id = 36324,
-	damage = "30/回",
+	damage = "30<[WAVE]>",
 	base = 36320,
 	weapon_id = {
 		36324
@@ -74505,7 +75940,7 @@ _G.pg.base.equip_data_statistics[36324] = {
 }
 _G.pg.base.equip_data_statistics[36325] = {
 	id = 36325,
-	damage = "33/回",
+	damage = "33<[WAVE]>",
 	base = 36320,
 	weapon_id = {
 		36325
@@ -74514,7 +75949,7 @@ _G.pg.base.equip_data_statistics[36325] = {
 }
 _G.pg.base.equip_data_statistics[36326] = {
 	id = 36326,
-	damage = "36/回",
+	damage = "36<[WAVE]>",
 	base = 36320,
 	weapon_id = {
 		36326
@@ -74524,11 +75959,11 @@ _G.pg.base.equip_data_statistics[36326] = {
 _G.pg.base.equip_data_statistics[36340] = {
 	tech = 3,
 	name = "25mm三連装対空機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	nationality = 3,
 	rarity = 4,
 	id = 36340,
@@ -74590,7 +76025,7 @@ _G.pg.base.equip_data_statistics[36340] = {
 }
 _G.pg.base.equip_data_statistics[36341] = {
 	id = 36341,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	base = 36340,
 	weapon_id = {
 		36341
@@ -74599,7 +76034,7 @@ _G.pg.base.equip_data_statistics[36341] = {
 }
 _G.pg.base.equip_data_statistics[36342] = {
 	id = 36342,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 36340,
 	weapon_id = {
 		36342
@@ -74608,7 +76043,7 @@ _G.pg.base.equip_data_statistics[36342] = {
 }
 _G.pg.base.equip_data_statistics[36343] = {
 	id = 36343,
-	damage = "31/回",
+	damage = "31<[WAVE]>",
 	base = 36340,
 	weapon_id = {
 		36343
@@ -74617,7 +76052,7 @@ _G.pg.base.equip_data_statistics[36343] = {
 }
 _G.pg.base.equip_data_statistics[36344] = {
 	id = 36344,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	base = 36340,
 	weapon_id = {
 		36344
@@ -74626,7 +76061,7 @@ _G.pg.base.equip_data_statistics[36344] = {
 }
 _G.pg.base.equip_data_statistics[36345] = {
 	id = 36345,
-	damage = "37/回",
+	damage = "37<[WAVE]>",
 	base = 36340,
 	weapon_id = {
 		36345
@@ -74635,7 +76070,7 @@ _G.pg.base.equip_data_statistics[36345] = {
 }
 _G.pg.base.equip_data_statistics[36346] = {
 	id = 36346,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 36340,
 	weapon_id = {
 		36346
@@ -74644,7 +76079,7 @@ _G.pg.base.equip_data_statistics[36346] = {
 }
 _G.pg.base.equip_data_statistics[36347] = {
 	id = 36347,
-	damage = "43/回",
+	damage = "43<[WAVE]>",
 	base = 36340,
 	weapon_id = {
 		36347
@@ -74653,7 +76088,7 @@ _G.pg.base.equip_data_statistics[36347] = {
 }
 _G.pg.base.equip_data_statistics[36348] = {
 	id = 36348,
-	damage = "46/回",
+	damage = "46<[WAVE]>",
 	base = 36340,
 	weapon_id = {
 		36348
@@ -74662,7 +76097,7 @@ _G.pg.base.equip_data_statistics[36348] = {
 }
 _G.pg.base.equip_data_statistics[36349] = {
 	id = 36349,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 36340,
 	weapon_id = {
 		36349
@@ -74671,7 +76106,7 @@ _G.pg.base.equip_data_statistics[36349] = {
 }
 _G.pg.base.equip_data_statistics[36350] = {
 	id = 36350,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	base = 36340,
 	weapon_id = {
 		36350
@@ -74681,7 +76116,7 @@ _G.pg.base.equip_data_statistics[36350] = {
 _G.pg.base.equip_data_statistics[36351] = {
 	id = 36351,
 	anti_siren = 100,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	base = 36340,
 	weapon_id = {
 		36351
@@ -74691,11 +76126,11 @@ _G.pg.base.equip_data_statistics[36351] = {
 _G.pg.base.equip_data_statistics[36360] = {
 	tech = 0,
 	name = "25mm九六式三連装機銃（爆風避盾装備）",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	nationality = 3,
 	rarity = 5,
 	id = 36360,
@@ -74757,7 +76192,7 @@ _G.pg.base.equip_data_statistics[36360] = {
 }
 _G.pg.base.equip_data_statistics[36361] = {
 	id = 36361,
-	damage = "43/回",
+	damage = "43<[WAVE]>",
 	base = 36360,
 	weapon_id = {
 		36361
@@ -74766,7 +76201,7 @@ _G.pg.base.equip_data_statistics[36361] = {
 }
 _G.pg.base.equip_data_statistics[36362] = {
 	id = 36362,
-	damage = "46/回",
+	damage = "46<[WAVE]>",
 	base = 36360,
 	weapon_id = {
 		36362
@@ -74775,7 +76210,7 @@ _G.pg.base.equip_data_statistics[36362] = {
 }
 _G.pg.base.equip_data_statistics[36363] = {
 	id = 36363,
-	damage = "49/回",
+	damage = "49<[WAVE]>",
 	base = 36360,
 	weapon_id = {
 		36363
@@ -74784,7 +76219,7 @@ _G.pg.base.equip_data_statistics[36363] = {
 }
 _G.pg.base.equip_data_statistics[36364] = {
 	id = 36364,
-	damage = "52/回",
+	damage = "52<[WAVE]>",
 	base = 36360,
 	weapon_id = {
 		36364
@@ -74793,7 +76228,7 @@ _G.pg.base.equip_data_statistics[36364] = {
 }
 _G.pg.base.equip_data_statistics[36365] = {
 	id = 36365,
-	damage = "55/回",
+	damage = "55<[WAVE]>",
 	base = 36360,
 	weapon_id = {
 		36365
@@ -74802,7 +76237,7 @@ _G.pg.base.equip_data_statistics[36365] = {
 }
 _G.pg.base.equip_data_statistics[36366] = {
 	id = 36366,
-	damage = "58/回",
+	damage = "58<[WAVE]>",
 	base = 36360,
 	weapon_id = {
 		36366
@@ -74811,7 +76246,7 @@ _G.pg.base.equip_data_statistics[36366] = {
 }
 _G.pg.base.equip_data_statistics[36367] = {
 	id = 36367,
-	damage = "61/回",
+	damage = "61<[WAVE]>",
 	base = 36360,
 	weapon_id = {
 		36367
@@ -74820,7 +76255,7 @@ _G.pg.base.equip_data_statistics[36367] = {
 }
 _G.pg.base.equip_data_statistics[36368] = {
 	id = 36368,
-	damage = "64/回",
+	damage = "64<[WAVE]>",
 	base = 36360,
 	weapon_id = {
 		36368
@@ -74829,7 +76264,7 @@ _G.pg.base.equip_data_statistics[36368] = {
 }
 _G.pg.base.equip_data_statistics[36369] = {
 	id = 36369,
-	damage = "68/回",
+	damage = "68<[WAVE]>",
 	base = 36360,
 	weapon_id = {
 		36369
@@ -74838,7 +76273,7 @@ _G.pg.base.equip_data_statistics[36369] = {
 }
 _G.pg.base.equip_data_statistics[36370] = {
 	id = 36370,
-	damage = "72/回",
+	damage = "72<[WAVE]>",
 	base = 36360,
 	weapon_id = {
 		36370
@@ -74848,7 +76283,7 @@ _G.pg.base.equip_data_statistics[36370] = {
 _G.pg.base.equip_data_statistics[36371] = {
 	id = 36371,
 	anti_siren = 100,
-	damage = "72/回",
+	damage = "72<[WAVE]>",
 	base = 36360,
 	weapon_id = {
 		36371
@@ -74858,7 +76293,7 @@ _G.pg.base.equip_data_statistics[36371] = {
 _G.pg.base.equip_data_statistics[36372] = {
 	id = 36372,
 	anti_siren = 200,
-	damage = "72/回",
+	damage = "72<[WAVE]>",
 	base = 36360,
 	weapon_id = {
 		36372
@@ -74868,7 +76303,7 @@ _G.pg.base.equip_data_statistics[36372] = {
 _G.pg.base.equip_data_statistics[36373] = {
 	id = 36373,
 	anti_siren = 300,
-	damage = "72/回",
+	damage = "72<[WAVE]>",
 	base = 36360,
 	weapon_id = {
 		36373
@@ -74878,11 +76313,11 @@ _G.pg.base.equip_data_statistics[36373] = {
 _G.pg.base.equip_data_statistics[36400] = {
 	tech = 1,
 	name = "毘式40mm連装機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "19/回",
+	damage = "19<[WAVE]>",
 	nationality = 3,
 	rarity = 2,
 	id = 36400,
@@ -74944,7 +76379,7 @@ _G.pg.base.equip_data_statistics[36400] = {
 }
 _G.pg.base.equip_data_statistics[36401] = {
 	id = 36401,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	base = 36400,
 	weapon_id = {
 		36401
@@ -74953,7 +76388,7 @@ _G.pg.base.equip_data_statistics[36401] = {
 }
 _G.pg.base.equip_data_statistics[36402] = {
 	id = 36402,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	base = 36400,
 	weapon_id = {
 		36402
@@ -74962,7 +76397,7 @@ _G.pg.base.equip_data_statistics[36402] = {
 }
 _G.pg.base.equip_data_statistics[36403] = {
 	id = 36403,
-	damage = "29/回",
+	damage = "29<[WAVE]>",
 	base = 36400,
 	weapon_id = {
 		36403
@@ -74972,11 +76407,11 @@ _G.pg.base.equip_data_statistics[36403] = {
 _G.pg.base.equip_data_statistics[36420] = {
 	tech = 2,
 	name = "毘式40mm連装機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	nationality = 3,
 	rarity = 3,
 	id = 36420,
@@ -75038,7 +76473,7 @@ _G.pg.base.equip_data_statistics[36420] = {
 }
 _G.pg.base.equip_data_statistics[36421] = {
 	id = 36421,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	base = 36420,
 	weapon_id = {
 		36421
@@ -75047,7 +76482,7 @@ _G.pg.base.equip_data_statistics[36421] = {
 }
 _G.pg.base.equip_data_statistics[36422] = {
 	id = 36422,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 36420,
 	weapon_id = {
 		36422
@@ -75056,7 +76491,7 @@ _G.pg.base.equip_data_statistics[36422] = {
 }
 _G.pg.base.equip_data_statistics[36423] = {
 	id = 36423,
-	damage = "31/回",
+	damage = "31<[WAVE]>",
 	base = 36420,
 	weapon_id = {
 		36423
@@ -75065,7 +76500,7 @@ _G.pg.base.equip_data_statistics[36423] = {
 }
 _G.pg.base.equip_data_statistics[36424] = {
 	id = 36424,
-	damage = "35/回",
+	damage = "35<[WAVE]>",
 	base = 36420,
 	weapon_id = {
 		36424
@@ -75074,7 +76509,7 @@ _G.pg.base.equip_data_statistics[36424] = {
 }
 _G.pg.base.equip_data_statistics[36425] = {
 	id = 36425,
-	damage = "39/回",
+	damage = "39<[WAVE]>",
 	base = 36420,
 	weapon_id = {
 		36425
@@ -75083,7 +76518,7 @@ _G.pg.base.equip_data_statistics[36425] = {
 }
 _G.pg.base.equip_data_statistics[36426] = {
 	id = 36426,
-	damage = "43/回",
+	damage = "43<[WAVE]>",
 	base = 36420,
 	weapon_id = {
 		36426
@@ -75093,11 +76528,11 @@ _G.pg.base.equip_data_statistics[36426] = {
 _G.pg.base.equip_data_statistics[36440] = {
 	tech = 3,
 	name = "毘式40mm連装機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "26/回",
+	damage = "26<[WAVE]>",
 	nationality = 3,
 	rarity = 4,
 	id = 36440,
@@ -75159,7 +76594,7 @@ _G.pg.base.equip_data_statistics[36440] = {
 }
 _G.pg.base.equip_data_statistics[36441] = {
 	id = 36441,
-	damage = "29/回",
+	damage = "29<[WAVE]>",
 	base = 36440,
 	weapon_id = {
 		36441
@@ -75168,7 +76603,7 @@ _G.pg.base.equip_data_statistics[36441] = {
 }
 _G.pg.base.equip_data_statistics[36442] = {
 	id = 36442,
-	damage = "33/回",
+	damage = "33<[WAVE]>",
 	base = 36440,
 	weapon_id = {
 		36442
@@ -75177,7 +76612,7 @@ _G.pg.base.equip_data_statistics[36442] = {
 }
 _G.pg.base.equip_data_statistics[36443] = {
 	id = 36443,
-	damage = "37/回",
+	damage = "37<[WAVE]>",
 	base = 36440,
 	weapon_id = {
 		36443
@@ -75186,7 +76621,7 @@ _G.pg.base.equip_data_statistics[36443] = {
 }
 _G.pg.base.equip_data_statistics[36444] = {
 	id = 36444,
-	damage = "41/回",
+	damage = "41<[WAVE]>",
 	base = 36440,
 	weapon_id = {
 		36444
@@ -75195,7 +76630,7 @@ _G.pg.base.equip_data_statistics[36444] = {
 }
 _G.pg.base.equip_data_statistics[36445] = {
 	id = 36445,
-	damage = "45/回",
+	damage = "45<[WAVE]>",
 	base = 36440,
 	weapon_id = {
 		36445
@@ -75204,7 +76639,7 @@ _G.pg.base.equip_data_statistics[36445] = {
 }
 _G.pg.base.equip_data_statistics[36446] = {
 	id = 36446,
-	damage = "49/回",
+	damage = "49<[WAVE]>",
 	base = 36440,
 	weapon_id = {
 		36446
@@ -75213,7 +76648,7 @@ _G.pg.base.equip_data_statistics[36446] = {
 }
 _G.pg.base.equip_data_statistics[36447] = {
 	id = 36447,
-	damage = "53/回",
+	damage = "53<[WAVE]>",
 	base = 36440,
 	weapon_id = {
 		36447
@@ -75222,7 +76657,7 @@ _G.pg.base.equip_data_statistics[36447] = {
 }
 _G.pg.base.equip_data_statistics[36448] = {
 	id = 36448,
-	damage = "57/回",
+	damage = "57<[WAVE]>",
 	base = 36440,
 	weapon_id = {
 		36448
@@ -75231,7 +76666,7 @@ _G.pg.base.equip_data_statistics[36448] = {
 }
 _G.pg.base.equip_data_statistics[36449] = {
 	id = 36449,
-	damage = "61/回",
+	damage = "61<[WAVE]>",
 	base = 36440,
 	weapon_id = {
 		36449
@@ -75240,7 +76675,7 @@ _G.pg.base.equip_data_statistics[36449] = {
 }
 _G.pg.base.equip_data_statistics[36450] = {
 	id = 36450,
-	damage = "65/回",
+	damage = "65<[WAVE]>",
 	base = 36440,
 	weapon_id = {
 		36450
@@ -75250,7 +76685,7 @@ _G.pg.base.equip_data_statistics[36450] = {
 _G.pg.base.equip_data_statistics[36451] = {
 	id = 36451,
 	anti_siren = 100,
-	damage = "65/回",
+	damage = "65<[WAVE]>",
 	base = 36440,
 	weapon_id = {
 		36451
@@ -75260,11 +76695,11 @@ _G.pg.base.equip_data_statistics[36451] = {
 _G.pg.base.equip_data_statistics[36500] = {
 	tech = 1,
 	name = "76mm高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "16/回",
+	damage = "16<[WAVE]>",
 	nationality = 3,
 	rarity = 2,
 	id = 36500,
@@ -75326,7 +76761,7 @@ _G.pg.base.equip_data_statistics[36500] = {
 }
 _G.pg.base.equip_data_statistics[36501] = {
 	id = 36501,
-	damage = "18/回",
+	damage = "18<[WAVE]>",
 	base = 36500,
 	weapon_id = {
 		36501
@@ -75335,7 +76770,7 @@ _G.pg.base.equip_data_statistics[36501] = {
 }
 _G.pg.base.equip_data_statistics[36502] = {
 	id = 36502,
-	damage = "21/回",
+	damage = "21<[WAVE]>",
 	base = 36500,
 	weapon_id = {
 		36502
@@ -75344,7 +76779,7 @@ _G.pg.base.equip_data_statistics[36502] = {
 }
 _G.pg.base.equip_data_statistics[36503] = {
 	id = 36503,
-	damage = "24/回",
+	damage = "24<[WAVE]>",
 	base = 36500,
 	weapon_id = {
 		36503
@@ -75354,11 +76789,11 @@ _G.pg.base.equip_data_statistics[36503] = {
 _G.pg.base.equip_data_statistics[36520] = {
 	tech = 2,
 	name = "76mm高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "18/回",
+	damage = "18<[WAVE]>",
 	nationality = 3,
 	rarity = 3,
 	id = 36520,
@@ -75420,7 +76855,7 @@ _G.pg.base.equip_data_statistics[36520] = {
 }
 _G.pg.base.equip_data_statistics[36521] = {
 	id = 36521,
-	damage = "21/回",
+	damage = "21<[WAVE]>",
 	base = 36520,
 	weapon_id = {
 		36521
@@ -75429,7 +76864,7 @@ _G.pg.base.equip_data_statistics[36521] = {
 }
 _G.pg.base.equip_data_statistics[36522] = {
 	id = 36522,
-	damage = "24/回",
+	damage = "24<[WAVE]>",
 	base = 36520,
 	weapon_id = {
 		36522
@@ -75438,7 +76873,7 @@ _G.pg.base.equip_data_statistics[36522] = {
 }
 _G.pg.base.equip_data_statistics[36523] = {
 	id = 36523,
-	damage = "27/回",
+	damage = "27<[WAVE]>",
 	base = 36520,
 	weapon_id = {
 		36523
@@ -75447,7 +76882,7 @@ _G.pg.base.equip_data_statistics[36523] = {
 }
 _G.pg.base.equip_data_statistics[36524] = {
 	id = 36524,
-	damage = "30/回",
+	damage = "30<[WAVE]>",
 	base = 36520,
 	weapon_id = {
 		36524
@@ -75456,7 +76891,7 @@ _G.pg.base.equip_data_statistics[36524] = {
 }
 _G.pg.base.equip_data_statistics[36525] = {
 	id = 36525,
-	damage = "33/回",
+	damage = "33<[WAVE]>",
 	base = 36520,
 	weapon_id = {
 		36525
@@ -75465,7 +76900,7 @@ _G.pg.base.equip_data_statistics[36525] = {
 }
 _G.pg.base.equip_data_statistics[36526] = {
 	id = 36526,
-	damage = "36/回",
+	damage = "36<[WAVE]>",
 	base = 36520,
 	weapon_id = {
 		36526
@@ -75475,11 +76910,11 @@ _G.pg.base.equip_data_statistics[36526] = {
 _G.pg.base.equip_data_statistics[36540] = {
 	tech = 3,
 	name = "76mm高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	nationality = 3,
 	rarity = 4,
 	id = 36540,
@@ -75541,7 +76976,7 @@ _G.pg.base.equip_data_statistics[36540] = {
 }
 _G.pg.base.equip_data_statistics[36541] = {
 	id = 36541,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	base = 36540,
 	weapon_id = {
 		36541
@@ -75550,7 +76985,7 @@ _G.pg.base.equip_data_statistics[36541] = {
 }
 _G.pg.base.equip_data_statistics[36542] = {
 	id = 36542,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 36540,
 	weapon_id = {
 		36542
@@ -75559,7 +76994,7 @@ _G.pg.base.equip_data_statistics[36542] = {
 }
 _G.pg.base.equip_data_statistics[36543] = {
 	id = 36543,
-	damage = "31/回",
+	damage = "31<[WAVE]>",
 	base = 36540,
 	weapon_id = {
 		36543
@@ -75568,7 +77003,7 @@ _G.pg.base.equip_data_statistics[36543] = {
 }
 _G.pg.base.equip_data_statistics[36544] = {
 	id = 36544,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	base = 36540,
 	weapon_id = {
 		36544
@@ -75577,7 +77012,7 @@ _G.pg.base.equip_data_statistics[36544] = {
 }
 _G.pg.base.equip_data_statistics[36545] = {
 	id = 36545,
-	damage = "37/回",
+	damage = "37<[WAVE]>",
 	base = 36540,
 	weapon_id = {
 		36545
@@ -75586,7 +77021,7 @@ _G.pg.base.equip_data_statistics[36545] = {
 }
 _G.pg.base.equip_data_statistics[36546] = {
 	id = 36546,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 36540,
 	weapon_id = {
 		36546
@@ -75595,7 +77030,7 @@ _G.pg.base.equip_data_statistics[36546] = {
 }
 _G.pg.base.equip_data_statistics[36547] = {
 	id = 36547,
-	damage = "43/回",
+	damage = "43<[WAVE]>",
 	base = 36540,
 	weapon_id = {
 		36547
@@ -75604,7 +77039,7 @@ _G.pg.base.equip_data_statistics[36547] = {
 }
 _G.pg.base.equip_data_statistics[36548] = {
 	id = 36548,
-	damage = "46/回",
+	damage = "46<[WAVE]>",
 	base = 36540,
 	weapon_id = {
 		36548
@@ -75613,7 +77048,7 @@ _G.pg.base.equip_data_statistics[36548] = {
 }
 _G.pg.base.equip_data_statistics[36549] = {
 	id = 36549,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 36540,
 	weapon_id = {
 		36549
@@ -75622,7 +77057,7 @@ _G.pg.base.equip_data_statistics[36549] = {
 }
 _G.pg.base.equip_data_statistics[36550] = {
 	id = 36550,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	base = 36540,
 	weapon_id = {
 		36550
@@ -75632,7 +77067,7 @@ _G.pg.base.equip_data_statistics[36550] = {
 _G.pg.base.equip_data_statistics[36551] = {
 	id = 36551,
 	anti_siren = 100,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	base = 36540,
 	weapon_id = {
 		36551
@@ -75642,11 +77077,11 @@ _G.pg.base.equip_data_statistics[36551] = {
 _G.pg.base.equip_data_statistics[36560] = {
 	tech = 0,
 	name = "100mm連装高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	nationality = 3,
 	rarity = 5,
 	id = 36560,
@@ -75708,7 +77143,7 @@ _G.pg.base.equip_data_statistics[36560] = {
 }
 _G.pg.base.equip_data_statistics[36561] = {
 	id = 36561,
-	damage = "57/回",
+	damage = "57<[WAVE]>",
 	base = 36560,
 	weapon_id = {
 		36561
@@ -75717,7 +77152,7 @@ _G.pg.base.equip_data_statistics[36561] = {
 }
 _G.pg.base.equip_data_statistics[36562] = {
 	id = 36562,
-	damage = "64/回",
+	damage = "64<[WAVE]>",
 	base = 36560,
 	weapon_id = {
 		36562
@@ -75726,7 +77161,7 @@ _G.pg.base.equip_data_statistics[36562] = {
 }
 _G.pg.base.equip_data_statistics[36563] = {
 	id = 36563,
-	damage = "71/回",
+	damage = "71<[WAVE]>",
 	base = 36560,
 	weapon_id = {
 		36563
@@ -75735,7 +77170,7 @@ _G.pg.base.equip_data_statistics[36563] = {
 }
 _G.pg.base.equip_data_statistics[36564] = {
 	id = 36564,
-	damage = "78/回",
+	damage = "78<[WAVE]>",
 	base = 36560,
 	weapon_id = {
 		36564
@@ -75744,7 +77179,7 @@ _G.pg.base.equip_data_statistics[36564] = {
 }
 _G.pg.base.equip_data_statistics[36565] = {
 	id = 36565,
-	damage = "86/回",
+	damage = "86<[WAVE]>",
 	base = 36560,
 	weapon_id = {
 		36565
@@ -75753,7 +77188,7 @@ _G.pg.base.equip_data_statistics[36565] = {
 }
 _G.pg.base.equip_data_statistics[36566] = {
 	id = 36566,
-	damage = "94/回",
+	damage = "94<[WAVE]>",
 	base = 36560,
 	weapon_id = {
 		36566
@@ -75762,7 +77197,7 @@ _G.pg.base.equip_data_statistics[36566] = {
 }
 _G.pg.base.equip_data_statistics[36567] = {
 	id = 36567,
-	damage = "102/回",
+	damage = "102<[WAVE]>",
 	base = 36560,
 	weapon_id = {
 		36567
@@ -75771,7 +77206,7 @@ _G.pg.base.equip_data_statistics[36567] = {
 }
 _G.pg.base.equip_data_statistics[36568] = {
 	id = 36568,
-	damage = "110/回",
+	damage = "110<[WAVE]>",
 	base = 36560,
 	weapon_id = {
 		36568
@@ -75780,7 +77215,7 @@ _G.pg.base.equip_data_statistics[36568] = {
 }
 _G.pg.base.equip_data_statistics[36569] = {
 	id = 36569,
-	damage = "118/回",
+	damage = "118<[WAVE]>",
 	base = 36560,
 	weapon_id = {
 		36569
@@ -75789,7 +77224,7 @@ _G.pg.base.equip_data_statistics[36569] = {
 }
 _G.pg.base.equip_data_statistics[36570] = {
 	id = 36570,
-	damage = "126/回",
+	damage = "126<[WAVE]>",
 	base = 36560,
 	weapon_id = {
 		36570
@@ -75799,7 +77234,7 @@ _G.pg.base.equip_data_statistics[36570] = {
 _G.pg.base.equip_data_statistics[36571] = {
 	id = 36571,
 	anti_siren = 100,
-	damage = "126/回",
+	damage = "126<[WAVE]>",
 	base = 36560,
 	weapon_id = {
 		36571
@@ -75809,7 +77244,7 @@ _G.pg.base.equip_data_statistics[36571] = {
 _G.pg.base.equip_data_statistics[36572] = {
 	id = 36572,
 	anti_siren = 200,
-	damage = "126/回",
+	damage = "126<[WAVE]>",
 	base = 36560,
 	weapon_id = {
 		36572
@@ -75819,7 +77254,7 @@ _G.pg.base.equip_data_statistics[36572] = {
 _G.pg.base.equip_data_statistics[36573] = {
 	id = 36573,
 	anti_siren = 300,
-	damage = "126/回",
+	damage = "126<[WAVE]>",
 	base = 36560,
 	weapon_id = {
 		36573
@@ -75829,11 +77264,11 @@ _G.pg.base.equip_data_statistics[36573] = {
 _G.pg.base.equip_data_statistics[36580] = {
 	tech = 0,
 	name = "80mm高射砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "44/回",
+	damage = "44<[WAVE]>",
 	nationality = 3,
 	rarity = 4,
 	id = 36580,
@@ -75895,7 +77330,7 @@ _G.pg.base.equip_data_statistics[36580] = {
 }
 _G.pg.base.equip_data_statistics[36581] = {
 	id = 36581,
-	damage = "48/回",
+	damage = "48<[WAVE]>",
 	base = 36580,
 	weapon_id = {
 		36581
@@ -75904,7 +77339,7 @@ _G.pg.base.equip_data_statistics[36581] = {
 }
 _G.pg.base.equip_data_statistics[36582] = {
 	id = 36582,
-	damage = "52/回",
+	damage = "52<[WAVE]>",
 	base = 36580,
 	weapon_id = {
 		36582
@@ -75913,7 +77348,7 @@ _G.pg.base.equip_data_statistics[36582] = {
 }
 _G.pg.base.equip_data_statistics[36583] = {
 	id = 36583,
-	damage = "56/回",
+	damage = "56<[WAVE]>",
 	base = 36580,
 	weapon_id = {
 		36583
@@ -75922,7 +77357,7 @@ _G.pg.base.equip_data_statistics[36583] = {
 }
 _G.pg.base.equip_data_statistics[36584] = {
 	id = 36584,
-	damage = "60/回",
+	damage = "60<[WAVE]>",
 	base = 36580,
 	weapon_id = {
 		36584
@@ -75931,7 +77366,7 @@ _G.pg.base.equip_data_statistics[36584] = {
 }
 _G.pg.base.equip_data_statistics[36585] = {
 	id = 36585,
-	damage = "64/回",
+	damage = "64<[WAVE]>",
 	base = 36580,
 	weapon_id = {
 		36585
@@ -75940,7 +77375,7 @@ _G.pg.base.equip_data_statistics[36585] = {
 }
 _G.pg.base.equip_data_statistics[36586] = {
 	id = 36586,
-	damage = "68/回",
+	damage = "68<[WAVE]>",
 	base = 36580,
 	weapon_id = {
 		36586
@@ -75949,7 +77384,7 @@ _G.pg.base.equip_data_statistics[36586] = {
 }
 _G.pg.base.equip_data_statistics[36587] = {
 	id = 36587,
-	damage = "72/回",
+	damage = "72<[WAVE]>",
 	base = 36580,
 	weapon_id = {
 		36587
@@ -75958,7 +77393,7 @@ _G.pg.base.equip_data_statistics[36587] = {
 }
 _G.pg.base.equip_data_statistics[36588] = {
 	id = 36588,
-	damage = "76/回",
+	damage = "76<[WAVE]>",
 	base = 36580,
 	weapon_id = {
 		36588
@@ -75967,7 +77402,7 @@ _G.pg.base.equip_data_statistics[36588] = {
 }
 _G.pg.base.equip_data_statistics[36589] = {
 	id = 36589,
-	damage = "80/回",
+	damage = "80<[WAVE]>",
 	base = 36580,
 	weapon_id = {
 		36589
@@ -75976,7 +77411,7 @@ _G.pg.base.equip_data_statistics[36589] = {
 }
 _G.pg.base.equip_data_statistics[36590] = {
 	id = 36590,
-	damage = "84/回",
+	damage = "84<[WAVE]>",
 	base = 36580,
 	weapon_id = {
 		36590
@@ -75986,7 +77421,7 @@ _G.pg.base.equip_data_statistics[36590] = {
 _G.pg.base.equip_data_statistics[36591] = {
 	id = 36591,
 	anti_siren = 100,
-	damage = "84/回",
+	damage = "84<[WAVE]>",
 	base = 36580,
 	weapon_id = {
 		36591
@@ -75996,11 +77431,11 @@ _G.pg.base.equip_data_statistics[36591] = {
 _G.pg.base.equip_data_statistics[36600] = {
 	tech = 1,
 	name = "127mm連装高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "32/回",
+	damage = "32<[WAVE]>",
 	nationality = 3,
 	rarity = 2,
 	id = 36600,
@@ -76062,7 +77497,7 @@ _G.pg.base.equip_data_statistics[36600] = {
 }
 _G.pg.base.equip_data_statistics[36601] = {
 	id = 36601,
-	damage = "37/回",
+	damage = "37<[WAVE]>",
 	base = 36600,
 	weapon_id = {
 		36601
@@ -76071,7 +77506,7 @@ _G.pg.base.equip_data_statistics[36601] = {
 }
 _G.pg.base.equip_data_statistics[36602] = {
 	id = 36602,
-	damage = "42/回",
+	damage = "42<[WAVE]>",
 	base = 36600,
 	weapon_id = {
 		36602
@@ -76080,7 +77515,7 @@ _G.pg.base.equip_data_statistics[36602] = {
 }
 _G.pg.base.equip_data_statistics[36603] = {
 	id = 36603,
-	damage = "47/回",
+	damage = "47<[WAVE]>",
 	base = 36600,
 	weapon_id = {
 		36603
@@ -76090,11 +77525,11 @@ _G.pg.base.equip_data_statistics[36603] = {
 _G.pg.base.equip_data_statistics[36620] = {
 	tech = 2,
 	name = "127mm連装高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "39/回",
+	damage = "39<[WAVE]>",
 	nationality = 3,
 	rarity = 3,
 	id = 36620,
@@ -76156,7 +77591,7 @@ _G.pg.base.equip_data_statistics[36620] = {
 }
 _G.pg.base.equip_data_statistics[36621] = {
 	id = 36621,
-	damage = "45/回",
+	damage = "45<[WAVE]>",
 	base = 36620,
 	weapon_id = {
 		36621
@@ -76165,7 +77600,7 @@ _G.pg.base.equip_data_statistics[36621] = {
 }
 _G.pg.base.equip_data_statistics[36622] = {
 	id = 36622,
-	damage = "51/回",
+	damage = "51<[WAVE]>",
 	base = 36620,
 	weapon_id = {
 		36622
@@ -76174,7 +77609,7 @@ _G.pg.base.equip_data_statistics[36622] = {
 }
 _G.pg.base.equip_data_statistics[36623] = {
 	id = 36623,
-	damage = "57/回",
+	damage = "57<[WAVE]>",
 	base = 36620,
 	weapon_id = {
 		36623
@@ -76183,7 +77618,7 @@ _G.pg.base.equip_data_statistics[36623] = {
 }
 _G.pg.base.equip_data_statistics[36624] = {
 	id = 36624,
-	damage = "63/回",
+	damage = "63<[WAVE]>",
 	base = 36620,
 	weapon_id = {
 		36624
@@ -76192,7 +77627,7 @@ _G.pg.base.equip_data_statistics[36624] = {
 }
 _G.pg.base.equip_data_statistics[36625] = {
 	id = 36625,
-	damage = "70/回",
+	damage = "70<[WAVE]>",
 	base = 36620,
 	weapon_id = {
 		36625
@@ -76201,7 +77636,7 @@ _G.pg.base.equip_data_statistics[36625] = {
 }
 _G.pg.base.equip_data_statistics[36626] = {
 	id = 36626,
-	damage = "77/回",
+	damage = "77<[WAVE]>",
 	base = 36620,
 	weapon_id = {
 		36626
@@ -76211,11 +77646,11 @@ _G.pg.base.equip_data_statistics[36626] = {
 _G.pg.base.equip_data_statistics[36640] = {
 	tech = 3,
 	name = "127mm連装高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "46/回",
+	damage = "46<[WAVE]>",
 	nationality = 3,
 	rarity = 4,
 	id = 36640,
@@ -76277,7 +77712,7 @@ _G.pg.base.equip_data_statistics[36640] = {
 }
 _G.pg.base.equip_data_statistics[36641] = {
 	id = 36641,
-	damage = "53/回",
+	damage = "53<[WAVE]>",
 	base = 36640,
 	weapon_id = {
 		36641
@@ -76286,7 +77721,7 @@ _G.pg.base.equip_data_statistics[36641] = {
 }
 _G.pg.base.equip_data_statistics[36642] = {
 	id = 36642,
-	damage = "60/回",
+	damage = "60<[WAVE]>",
 	base = 36640,
 	weapon_id = {
 		36642
@@ -76295,7 +77730,7 @@ _G.pg.base.equip_data_statistics[36642] = {
 }
 _G.pg.base.equip_data_statistics[36643] = {
 	id = 36643,
-	damage = "67/回",
+	damage = "67<[WAVE]>",
 	base = 36640,
 	weapon_id = {
 		36643
@@ -76304,7 +77739,7 @@ _G.pg.base.equip_data_statistics[36643] = {
 }
 _G.pg.base.equip_data_statistics[36644] = {
 	id = 36644,
-	damage = "74/回",
+	damage = "74<[WAVE]>",
 	base = 36640,
 	weapon_id = {
 		36644
@@ -76313,7 +77748,7 @@ _G.pg.base.equip_data_statistics[36644] = {
 }
 _G.pg.base.equip_data_statistics[36645] = {
 	id = 36645,
-	damage = "81/回",
+	damage = "81<[WAVE]>",
 	base = 36640,
 	weapon_id = {
 		36645
@@ -76322,7 +77757,7 @@ _G.pg.base.equip_data_statistics[36645] = {
 }
 _G.pg.base.equip_data_statistics[36646] = {
 	id = 36646,
-	damage = "88/回",
+	damage = "88<[WAVE]>",
 	base = 36640,
 	weapon_id = {
 		36646
@@ -76331,7 +77766,7 @@ _G.pg.base.equip_data_statistics[36646] = {
 }
 _G.pg.base.equip_data_statistics[36647] = {
 	id = 36647,
-	damage = "95/回",
+	damage = "95<[WAVE]>",
 	base = 36640,
 	weapon_id = {
 		36647
@@ -76340,7 +77775,7 @@ _G.pg.base.equip_data_statistics[36647] = {
 }
 _G.pg.base.equip_data_statistics[36648] = {
 	id = 36648,
-	damage = "102/回",
+	damage = "102<[WAVE]>",
 	base = 36640,
 	weapon_id = {
 		36648
@@ -76349,7 +77784,7 @@ _G.pg.base.equip_data_statistics[36648] = {
 }
 _G.pg.base.equip_data_statistics[36649] = {
 	id = 36649,
-	damage = "109/回",
+	damage = "109<[WAVE]>",
 	base = 36640,
 	weapon_id = {
 		36649
@@ -76358,7 +77793,7 @@ _G.pg.base.equip_data_statistics[36649] = {
 }
 _G.pg.base.equip_data_statistics[36650] = {
 	id = 36650,
-	damage = "116/回",
+	damage = "116<[WAVE]>",
 	base = 36640,
 	weapon_id = {
 		36650
@@ -76368,7 +77803,7 @@ _G.pg.base.equip_data_statistics[36650] = {
 _G.pg.base.equip_data_statistics[36651] = {
 	id = 36651,
 	anti_siren = 100,
-	damage = "116/回",
+	damage = "116<[WAVE]>",
 	base = 36640,
 	weapon_id = {
 		36651
@@ -76378,11 +77813,11 @@ _G.pg.base.equip_data_statistics[36651] = {
 _G.pg.base.equip_data_statistics[36660] = {
 	tech = 0,
 	name = "127mm連装高角砲改",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	nationality = 3,
 	rarity = 5,
 	id = 36660,
@@ -76444,7 +77879,7 @@ _G.pg.base.equip_data_statistics[36660] = {
 }
 _G.pg.base.equip_data_statistics[36661] = {
 	id = 36661,
-	damage = "61/回",
+	damage = "61<[WAVE]>",
 	base = 36660,
 	weapon_id = {
 		36661
@@ -76453,7 +77888,7 @@ _G.pg.base.equip_data_statistics[36661] = {
 }
 _G.pg.base.equip_data_statistics[36662] = {
 	id = 36662,
-	damage = "68/回",
+	damage = "68<[WAVE]>",
 	base = 36660,
 	weapon_id = {
 		36662
@@ -76462,7 +77897,7 @@ _G.pg.base.equip_data_statistics[36662] = {
 }
 _G.pg.base.equip_data_statistics[36663] = {
 	id = 36663,
-	damage = "75/回",
+	damage = "75<[WAVE]>",
 	base = 36660,
 	weapon_id = {
 		36663
@@ -76471,7 +77906,7 @@ _G.pg.base.equip_data_statistics[36663] = {
 }
 _G.pg.base.equip_data_statistics[36664] = {
 	id = 36664,
-	damage = "82/回",
+	damage = "82<[WAVE]>",
 	base = 36660,
 	weapon_id = {
 		36664
@@ -76480,7 +77915,7 @@ _G.pg.base.equip_data_statistics[36664] = {
 }
 _G.pg.base.equip_data_statistics[36665] = {
 	id = 36665,
-	damage = "89/回",
+	damage = "89<[WAVE]>",
 	base = 36660,
 	weapon_id = {
 		36665
@@ -76489,7 +77924,7 @@ _G.pg.base.equip_data_statistics[36665] = {
 }
 _G.pg.base.equip_data_statistics[36666] = {
 	id = 36666,
-	damage = "96/回",
+	damage = "96<[WAVE]>",
 	base = 36660,
 	weapon_id = {
 		36666
@@ -76498,7 +77933,7 @@ _G.pg.base.equip_data_statistics[36666] = {
 }
 _G.pg.base.equip_data_statistics[36667] = {
 	id = 36667,
-	damage = "103/回",
+	damage = "103<[WAVE]>",
 	base = 36660,
 	weapon_id = {
 		36667
@@ -76507,7 +77942,7 @@ _G.pg.base.equip_data_statistics[36667] = {
 }
 _G.pg.base.equip_data_statistics[36668] = {
 	id = 36668,
-	damage = "110/回",
+	damage = "110<[WAVE]>",
 	base = 36660,
 	weapon_id = {
 		36668
@@ -76516,7 +77951,7 @@ _G.pg.base.equip_data_statistics[36668] = {
 }
 _G.pg.base.equip_data_statistics[36669] = {
 	id = 36669,
-	damage = "117/回",
+	damage = "117<[WAVE]>",
 	base = 36660,
 	weapon_id = {
 		36669
@@ -76525,7 +77960,7 @@ _G.pg.base.equip_data_statistics[36669] = {
 }
 _G.pg.base.equip_data_statistics[36670] = {
 	id = 36670,
-	damage = "124/回",
+	damage = "124<[WAVE]>",
 	base = 36660,
 	weapon_id = {
 		36670
@@ -76535,7 +77970,7 @@ _G.pg.base.equip_data_statistics[36670] = {
 _G.pg.base.equip_data_statistics[36671] = {
 	id = 36671,
 	anti_siren = 100,
-	damage = "124/回",
+	damage = "124<[WAVE]>",
 	base = 36660,
 	weapon_id = {
 		36671
@@ -76545,7 +77980,7 @@ _G.pg.base.equip_data_statistics[36671] = {
 _G.pg.base.equip_data_statistics[36672] = {
 	id = 36672,
 	anti_siren = 200,
-	damage = "124/回",
+	damage = "124<[WAVE]>",
 	base = 36660,
 	weapon_id = {
 		36672
@@ -76555,7 +77990,7 @@ _G.pg.base.equip_data_statistics[36672] = {
 _G.pg.base.equip_data_statistics[36673] = {
 	id = 36673,
 	anti_siren = 300,
-	damage = "124/回",
+	damage = "124<[WAVE]>",
 	base = 36660,
 	weapon_id = {
 		36673
@@ -76565,11 +78000,11 @@ _G.pg.base.equip_data_statistics[36673] = {
 _G.pg.base.equip_data_statistics[36700] = {
 	tech = 0,
 	name = "試作型五式40mm高射機関砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "47/回",
+	damage = "47<[WAVE]>",
 	nationality = 3,
 	rarity = 5,
 	id = 36700,
@@ -76631,7 +78066,7 @@ _G.pg.base.equip_data_statistics[36700] = {
 }
 _G.pg.base.equip_data_statistics[36701] = {
 	id = 36701,
-	damage = "51/回",
+	damage = "51<[WAVE]>",
 	base = 36700,
 	weapon_id = {
 		36701
@@ -76640,7 +78075,7 @@ _G.pg.base.equip_data_statistics[36701] = {
 }
 _G.pg.base.equip_data_statistics[36702] = {
 	id = 36702,
-	damage = "55/回",
+	damage = "55<[WAVE]>",
 	base = 36700,
 	weapon_id = {
 		36702
@@ -76649,7 +78084,7 @@ _G.pg.base.equip_data_statistics[36702] = {
 }
 _G.pg.base.equip_data_statistics[36703] = {
 	id = 36703,
-	damage = "59/回",
+	damage = "59<[WAVE]>",
 	base = 36700,
 	weapon_id = {
 		36703
@@ -76658,7 +78093,7 @@ _G.pg.base.equip_data_statistics[36703] = {
 }
 _G.pg.base.equip_data_statistics[36704] = {
 	id = 36704,
-	damage = "63/回",
+	damage = "63<[WAVE]>",
 	base = 36700,
 	weapon_id = {
 		36704
@@ -76667,7 +78102,7 @@ _G.pg.base.equip_data_statistics[36704] = {
 }
 _G.pg.base.equip_data_statistics[36705] = {
 	id = 36705,
-	damage = "67/回",
+	damage = "67<[WAVE]>",
 	base = 36700,
 	weapon_id = {
 		36705
@@ -76676,7 +78111,7 @@ _G.pg.base.equip_data_statistics[36705] = {
 }
 _G.pg.base.equip_data_statistics[36706] = {
 	id = 36706,
-	damage = "71/回",
+	damage = "71<[WAVE]>",
 	base = 36700,
 	weapon_id = {
 		36706
@@ -76685,7 +78120,7 @@ _G.pg.base.equip_data_statistics[36706] = {
 }
 _G.pg.base.equip_data_statistics[36707] = {
 	id = 36707,
-	damage = "75/回",
+	damage = "75<[WAVE]>",
 	base = 36700,
 	weapon_id = {
 		36707
@@ -76694,7 +78129,7 @@ _G.pg.base.equip_data_statistics[36707] = {
 }
 _G.pg.base.equip_data_statistics[36708] = {
 	id = 36708,
-	damage = "79/回",
+	damage = "79<[WAVE]>",
 	base = 36700,
 	weapon_id = {
 		36708
@@ -76703,7 +78138,7 @@ _G.pg.base.equip_data_statistics[36708] = {
 }
 _G.pg.base.equip_data_statistics[36709] = {
 	id = 36709,
-	damage = "83/回",
+	damage = "83<[WAVE]>",
 	base = 36700,
 	weapon_id = {
 		36709
@@ -76712,7 +78147,7 @@ _G.pg.base.equip_data_statistics[36709] = {
 }
 _G.pg.base.equip_data_statistics[36710] = {
 	id = 36710,
-	damage = "87/回",
+	damage = "87<[WAVE]>",
 	base = 36700,
 	weapon_id = {
 		36710
@@ -76722,7 +78157,7 @@ _G.pg.base.equip_data_statistics[36710] = {
 _G.pg.base.equip_data_statistics[36711] = {
 	id = 36711,
 	anti_siren = 100,
-	damage = "87/回",
+	damage = "87<[WAVE]>",
 	base = 36700,
 	weapon_id = {
 		36711
@@ -76732,7 +78167,7 @@ _G.pg.base.equip_data_statistics[36711] = {
 _G.pg.base.equip_data_statistics[36712] = {
 	id = 36712,
 	anti_siren = 200,
-	damage = "87/回",
+	damage = "87<[WAVE]>",
 	base = 36700,
 	weapon_id = {
 		36712
@@ -76742,7 +78177,7 @@ _G.pg.base.equip_data_statistics[36712] = {
 _G.pg.base.equip_data_statistics[36713] = {
 	id = 36713,
 	anti_siren = 300,
-	damage = "87/回",
+	damage = "87<[WAVE]>",
 	base = 36700,
 	weapon_id = {
 		36713
@@ -76752,11 +78187,11 @@ _G.pg.base.equip_data_statistics[36713] = {
 _G.pg.base.equip_data_statistics[36720] = {
 	tech = 0,
 	name = "127mm連装高角砲改(時限信管)",
-	speciality = "遠距離",
+	speciality = "<[LRG]>",
 	type = 21,
 	descrip = "说明未填写",
 	ammo = 5,
-	damage = "81/回",
+	damage = "81<[WAVE]>",
 	nationality = 3,
 	rarity = 5,
 	id = 36720,
@@ -76808,7 +78243,7 @@ _G.pg.base.equip_data_statistics[36720] = {
 }
 _G.pg.base.equip_data_statistics[36721] = {
 	id = 36721,
-	damage = "92/回",
+	damage = "92<[WAVE]>",
 	base = 36720,
 	weapon_id = {
 		36721
@@ -76816,7 +78251,7 @@ _G.pg.base.equip_data_statistics[36721] = {
 }
 _G.pg.base.equip_data_statistics[36722] = {
 	id = 36722,
-	damage = "102/回",
+	damage = "102<[WAVE]>",
 	base = 36720,
 	weapon_id = {
 		36722
@@ -76824,7 +78259,7 @@ _G.pg.base.equip_data_statistics[36722] = {
 }
 _G.pg.base.equip_data_statistics[36723] = {
 	id = 36723,
-	damage = "112/回",
+	damage = "112<[WAVE]>",
 	base = 36720,
 	weapon_id = {
 		36723
@@ -76832,7 +78267,7 @@ _G.pg.base.equip_data_statistics[36723] = {
 }
 _G.pg.base.equip_data_statistics[36724] = {
 	id = 36724,
-	damage = "123/回",
+	damage = "123<[WAVE]>",
 	base = 36720,
 	weapon_id = {
 		36724
@@ -76840,7 +78275,7 @@ _G.pg.base.equip_data_statistics[36724] = {
 }
 _G.pg.base.equip_data_statistics[36725] = {
 	id = 36725,
-	damage = "133/回",
+	damage = "133<[WAVE]>",
 	base = 36720,
 	weapon_id = {
 		36725
@@ -76848,7 +78283,7 @@ _G.pg.base.equip_data_statistics[36725] = {
 }
 _G.pg.base.equip_data_statistics[36726] = {
 	id = 36726,
-	damage = "143/回",
+	damage = "143<[WAVE]>",
 	base = 36720,
 	weapon_id = {
 		36726
@@ -76856,7 +78291,7 @@ _G.pg.base.equip_data_statistics[36726] = {
 }
 _G.pg.base.equip_data_statistics[36727] = {
 	id = 36727,
-	damage = "154/回",
+	damage = "154<[WAVE]>",
 	base = 36720,
 	weapon_id = {
 		36727
@@ -76864,7 +78299,7 @@ _G.pg.base.equip_data_statistics[36727] = {
 }
 _G.pg.base.equip_data_statistics[36728] = {
 	id = 36728,
-	damage = "166/回",
+	damage = "166<[WAVE]>",
 	base = 36720,
 	weapon_id = {
 		36728
@@ -76872,7 +78307,7 @@ _G.pg.base.equip_data_statistics[36728] = {
 }
 _G.pg.base.equip_data_statistics[36729] = {
 	id = 36729,
-	damage = "178/回",
+	damage = "178<[WAVE]>",
 	base = 36720,
 	weapon_id = {
 		36729
@@ -76880,7 +78315,7 @@ _G.pg.base.equip_data_statistics[36729] = {
 }
 _G.pg.base.equip_data_statistics[36730] = {
 	id = 36730,
-	damage = "190/回",
+	damage = "190<[WAVE]>",
 	base = 36720,
 	weapon_id = {
 		36730
@@ -76889,7 +78324,7 @@ _G.pg.base.equip_data_statistics[36730] = {
 _G.pg.base.equip_data_statistics[36731] = {
 	id = 36731,
 	anti_siren = 100,
-	damage = "190/回",
+	damage = "190<[WAVE]>",
 	base = 36720,
 	weapon_id = {
 		36731
@@ -76898,7 +78333,7 @@ _G.pg.base.equip_data_statistics[36731] = {
 _G.pg.base.equip_data_statistics[36732] = {
 	id = 36732,
 	anti_siren = 200,
-	damage = "190/回",
+	damage = "190<[WAVE]>",
 	base = 36720,
 	weapon_id = {
 		36732
@@ -76907,7 +78342,7 @@ _G.pg.base.equip_data_statistics[36732] = {
 _G.pg.base.equip_data_statistics[36733] = {
 	id = 36733,
 	anti_siren = 300,
-	damage = "190/回",
+	damage = "190<[WAVE]>",
 	base = 36720,
 	weapon_id = {
 		36733
@@ -76916,7 +78351,7 @@ _G.pg.base.equip_data_statistics[36733] = {
 _G.pg.base.equip_data_statistics[37000] = {
 	type = 7,
 	name = "九六式艦戦",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -77010,7 +78445,7 @@ _G.pg.base.equip_data_statistics[37003] = {
 _G.pg.base.equip_data_statistics[37020] = {
 	rarity = 2,
 	name = "九六式艦戦",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 2,
 	ammo = 5,
@@ -77105,7 +78540,7 @@ _G.pg.base.equip_data_statistics[37023] = {
 _G.pg.base.equip_data_statistics[37040] = {
 	rarity = 3,
 	name = "九六式艦戦",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -77260,7 +78695,7 @@ _G.pg.base.equip_data_statistics[37047] = {
 _G.pg.base.equip_data_statistics[37100] = {
 	rarity = 2,
 	name = "零戦二一型",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 1,
 	ammo = 5,
@@ -77387,7 +78822,7 @@ _G.pg.base.equip_data_statistics[37103] = {
 _G.pg.base.equip_data_statistics[37120] = {
 	rarity = 3,
 	name = "零戦二一型",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 2,
 	ammo = 5,
@@ -77583,7 +79018,7 @@ _G.pg.base.equip_data_statistics[37126] = {
 _G.pg.base.equip_data_statistics[37140] = {
 	rarity = 4,
 	name = "零戦二一型",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -77895,7 +79330,7 @@ _G.pg.base.equip_data_statistics[37151] = {
 _G.pg.base.equip_data_statistics[37160] = {
 	rarity = 4,
 	name = "零戦三二型",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -78207,7 +79642,7 @@ _G.pg.base.equip_data_statistics[37171] = {
 _G.pg.base.equip_data_statistics[37200] = {
 	rarity = 3,
 	name = "零戦五二型",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 1,
 	ammo = 5,
@@ -78403,7 +79838,7 @@ _G.pg.base.equip_data_statistics[37206] = {
 _G.pg.base.equip_data_statistics[37220] = {
 	rarity = 4,
 	name = "零戦五二型",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 2,
 	ammo = 5,
@@ -78691,7 +80126,7 @@ _G.pg.base.equip_data_statistics[37230] = {
 _G.pg.base.equip_data_statistics[37240] = {
 	rarity = 5,
 	name = "零戦五二型",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -79051,7 +80486,7 @@ _G.pg.base.equip_data_statistics[37253] = {
 _G.pg.base.equip_data_statistics[37300] = {
 	rarity = 3,
 	name = "烈風",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 1,
 	ammo = 5,
@@ -79219,7 +80654,7 @@ _G.pg.base.equip_data_statistics[37306] = {
 _G.pg.base.equip_data_statistics[37320] = {
 	rarity = 4,
 	name = "烈風",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 2,
 	ammo = 5,
@@ -79463,7 +80898,7 @@ _G.pg.base.equip_data_statistics[37330] = {
 _G.pg.base.equip_data_statistics[37340] = {
 	rarity = 5,
 	name = "烈風",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -79767,7 +81202,7 @@ _G.pg.base.equip_data_statistics[37353] = {
 _G.pg.base.equip_data_statistics[37400] = {
 	rarity = 5,
 	name = "紫電改二",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -80127,7 +81562,7 @@ _G.pg.base.equip_data_statistics[37413] = {
 _G.pg.base.equip_data_statistics[37420] = {
 	rarity = 4,
 	name = "二式水戦",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 12,
 	tech = 0,
 	ammo = 5,
@@ -80439,7 +81874,7 @@ _G.pg.base.equip_data_statistics[37431] = {
 _G.pg.base.equip_data_statistics[37440] = {
 	rarity = 4,
 	name = "強風",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 12,
 	tech = 0,
 	ammo = 5,
@@ -80748,10 +82183,370 @@ _G.pg.base.equip_data_statistics[37451] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[37460] = {
+	rarity = 5,
+	name = "試作型紫電改四",
+	speciality = "<[AIR]>",
+	type = 7,
+	tech = 0,
+	ammo = 5,
+	nationality = 3,
+	descrip = "说明未填写",
+	id = 37460,
+	torpedo_ammo = 0,
+	value_3 = 0,
+	value_2 = 45,
+	icon = "37460",
+	attribute_2 = "air",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {
+		{
+			6,
+			59540
+		},
+		{
+			6,
+			50860
+		},
+		{
+			5,
+			52340
+		}
+	},
+	equip_info = {
+		6,
+		7,
+		8,
+		9
+	},
+	weapon_id = {
+		37460,
+		83460
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7
+	},
+	part_sub = {
+		6,
+		7
+	},
+	equip_parameters = {},
+	label = {
+		"IJN",
+		"CV",
+		"FT"
+	}
+}
+_G.pg.base.equip_data_statistics[37461] = {
+	id = 37461,
+	base = 37460,
+	ammo_info = {
+		{
+			6,
+			59541
+		},
+		{
+			6,
+			50861
+		},
+		{
+			5,
+			52341
+		}
+	},
+	weapon_id = {
+		37461,
+		83461
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[37462] = {
+	id = 37462,
+	base = 37460,
+	ammo_info = {
+		{
+			6,
+			59542
+		},
+		{
+			6,
+			50862
+		},
+		{
+			5,
+			52342
+		}
+	},
+	weapon_id = {
+		37462,
+		83462
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[37463] = {
+	id = 37463,
+	base = 37460,
+	ammo_info = {
+		{
+			6,
+			59543
+		},
+		{
+			6,
+			50863
+		},
+		{
+			5,
+			52343
+		}
+	},
+	weapon_id = {
+		37463,
+		83463
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[37464] = {
+	id = 37464,
+	base = 37460,
+	ammo_info = {
+		{
+			6,
+			59544
+		},
+		{
+			6,
+			50864
+		},
+		{
+			5,
+			52344
+		}
+	},
+	weapon_id = {
+		37464,
+		83464
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[37465] = {
+	id = 37465,
+	base = 37460,
+	ammo_info = {
+		{
+			6,
+			59545
+		},
+		{
+			6,
+			50865
+		},
+		{
+			5,
+			52345
+		}
+	},
+	weapon_id = {
+		37465,
+		83465
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[37466] = {
+	id = 37466,
+	base = 37460,
+	ammo_info = {
+		{
+			6,
+			59546
+		},
+		{
+			6,
+			50866
+		},
+		{
+			5,
+			52346
+		}
+	},
+	weapon_id = {
+		37466,
+		83466
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[37467] = {
+	id = 37467,
+	base = 37460,
+	ammo_info = {
+		{
+			6,
+			59547
+		},
+		{
+			6,
+			50867
+		},
+		{
+			5,
+			52347
+		}
+	},
+	weapon_id = {
+		37467,
+		83467
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[37468] = {
+	id = 37468,
+	base = 37460,
+	ammo_info = {
+		{
+			6,
+			59548
+		},
+		{
+			6,
+			50868
+		},
+		{
+			5,
+			52348
+		}
+	},
+	weapon_id = {
+		37468,
+		83468
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[37469] = {
+	id = 37469,
+	base = 37460,
+	ammo_info = {
+		{
+			6,
+			59549
+		},
+		{
+			6,
+			50869
+		},
+		{
+			5,
+			52349
+		}
+	},
+	weapon_id = {
+		37469,
+		83469
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[37470] = {
+	id = 37470,
+	base = 37460,
+	ammo_info = {
+		{
+			6,
+			59550
+		},
+		{
+			6,
+			50870
+		},
+		{
+			5,
+			52350
+		}
+	},
+	weapon_id = {
+		37470,
+		83470
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[37471] = {
+	id = 37471,
+	anti_siren = 100,
+	base = 37460,
+	ammo_info = {
+		{
+			6,
+			59551
+		},
+		{
+			6,
+			50871
+		},
+		{
+			5,
+			52351
+		}
+	},
+	weapon_id = {
+		37471,
+		83471
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[37472] = {
+	id = 37472,
+	anti_siren = 200,
+	base = 37460,
+	ammo_info = {
+		{
+			6,
+			59552
+		},
+		{
+			6,
+			50872
+		},
+		{
+			5,
+			52352
+		}
+	},
+	weapon_id = {
+		37472,
+		83472
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[37473] = {
+	id = 37473,
+	anti_siren = 300,
+	base = 37460,
+	ammo_info = {
+		{
+			6,
+			59553
+		},
+		{
+			6,
+			50873
+		},
+		{
+			5,
+			52353
+		}
+	},
+	weapon_id = {
+		37473,
+		83473
+	},
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[38000] = {
 	type = 8,
 	name = "九七式艦攻",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -80857,7 +82652,7 @@ _G.pg.base.equip_data_statistics[38003] = {
 _G.pg.base.equip_data_statistics[38020] = {
 	rarity = 2,
 	name = "九七式艦攻",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 2,
 	ammo = 5,
@@ -80964,7 +82759,7 @@ _G.pg.base.equip_data_statistics[38023] = {
 _G.pg.base.equip_data_statistics[38040] = {
 	rarity = 3,
 	name = "九七式艦攻",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 3,
 	ammo = 5,
@@ -81143,7 +82938,7 @@ _G.pg.base.equip_data_statistics[38047] = {
 _G.pg.base.equip_data_statistics[38060] = {
 	rarity = 3,
 	name = "九七式艦攻改",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 0,
 	ammo = 5,
@@ -81322,7 +83117,7 @@ _G.pg.base.equip_data_statistics[38067] = {
 _G.pg.base.equip_data_statistics[38100] = {
 	rarity = 2,
 	name = "天山",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 1,
 	ammo = 5,
@@ -81429,7 +83224,7 @@ _G.pg.base.equip_data_statistics[38103] = {
 _G.pg.base.equip_data_statistics[38120] = {
 	rarity = 3,
 	name = "天山",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 2,
 	ammo = 5,
@@ -81590,7 +83385,7 @@ _G.pg.base.equip_data_statistics[38126] = {
 _G.pg.base.equip_data_statistics[38140] = {
 	rarity = 4,
 	name = "天山",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 3,
 	ammo = 5,
@@ -81842,7 +83637,7 @@ _G.pg.base.equip_data_statistics[38151] = {
 _G.pg.base.equip_data_statistics[38160] = {
 	rarity = 4,
 	name = "天山改",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 0,
 	ammo = 5,
@@ -82142,7 +83937,7 @@ _G.pg.base.equip_data_statistics[38171] = {
 _G.pg.base.equip_data_statistics[38200] = {
 	rarity = 3,
 	name = "流星",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 1,
 	ammo = 5,
@@ -82331,7 +84126,7 @@ _G.pg.base.equip_data_statistics[38206] = {
 _G.pg.base.equip_data_statistics[38220] = {
 	rarity = 4,
 	name = "流星",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 2,
 	ammo = 5,
@@ -82608,7 +84403,7 @@ _G.pg.base.equip_data_statistics[38230] = {
 _G.pg.base.equip_data_statistics[38240] = {
 	rarity = 5,
 	name = "流星",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 3,
 	ammo = 5,
@@ -82954,7 +84749,7 @@ _G.pg.base.equip_data_statistics[38253] = {
 _G.pg.base.equip_data_statistics[38300] = {
 	rarity = 5,
 	name = "試作型彩雲（艦攻型・特別計画艦仕様）",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 0,
 	ammo = 5,
@@ -83244,7 +85039,7 @@ _G.pg.base.equip_data_statistics[38313] = {
 _G.pg.base.equip_data_statistics[39000] = {
 	rarity = 2,
 	name = "九九式艦爆",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 1,
 	ammo = 5,
@@ -83367,7 +85162,7 @@ _G.pg.base.equip_data_statistics[39003] = {
 _G.pg.base.equip_data_statistics[39020] = {
 	rarity = 3,
 	name = "九九式艦爆",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 2,
 	ammo = 5,
@@ -83556,7 +85351,7 @@ _G.pg.base.equip_data_statistics[39026] = {
 _G.pg.base.equip_data_statistics[39040] = {
 	rarity = 4,
 	name = "九九式艦爆",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 3,
 	ammo = 5,
@@ -83856,7 +85651,7 @@ _G.pg.base.equip_data_statistics[39051] = {
 _G.pg.base.equip_data_statistics[39060] = {
 	rarity = 4,
 	name = "九九式艦爆改",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 0,
 	ammo = 5,
@@ -84156,7 +85951,7 @@ _G.pg.base.equip_data_statistics[39071] = {
 _G.pg.base.equip_data_statistics[39100] = {
 	rarity = 3,
 	name = "彗星",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 1,
 	ammo = 5,
@@ -84345,7 +86140,7 @@ _G.pg.base.equip_data_statistics[39106] = {
 _G.pg.base.equip_data_statistics[39120] = {
 	rarity = 4,
 	name = "彗星",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 2,
 	ammo = 5,
@@ -84622,7 +86417,7 @@ _G.pg.base.equip_data_statistics[39130] = {
 _G.pg.base.equip_data_statistics[39140] = {
 	rarity = 5,
 	name = "彗星",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 3,
 	ammo = 5,
@@ -84968,7 +86763,7 @@ _G.pg.base.equip_data_statistics[39153] = {
 _G.pg.base.equip_data_statistics[39160] = {
 	rarity = 5,
 	name = "彗星一二型甲",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 0,
 	ammo = 5,
@@ -85314,7 +87109,7 @@ _G.pg.base.equip_data_statistics[39173] = {
 _G.pg.base.equip_data_statistics[39200] = {
 	type = 12,
 	name = "瑞雲",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	attribute_3 = "air",
 	ammo = 5,
@@ -85437,7 +87232,7 @@ _G.pg.base.equip_data_statistics[39203] = {
 _G.pg.base.equip_data_statistics[39220] = {
 	rarity = 3,
 	name = "瑞雲",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 12,
 	tech = 2,
 	ammo = 5,
@@ -85626,7 +87421,7 @@ _G.pg.base.equip_data_statistics[39226] = {
 _G.pg.base.equip_data_statistics[39240] = {
 	rarity = 4,
 	name = "瑞雲",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 12,
 	tech = 3,
 	ammo = 5,
@@ -85926,7 +87721,7 @@ _G.pg.base.equip_data_statistics[39251] = {
 _G.pg.base.equip_data_statistics[39300] = {
 	rarity = 4,
 	name = "晴嵐",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 12,
 	tech = 0,
 	ammo = 5,
@@ -86180,7 +87975,7 @@ _G.pg.base.equip_data_statistics[39311] = {
 _G.pg.base.equip_data_statistics[39320] = {
 	rarity = 5,
 	name = "彗星二一型",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 0,
 	ammo = 5,
@@ -86524,7 +88319,7 @@ _G.pg.base.equip_data_statistics[39333] = {
 _G.pg.base.equip_data_statistics[39340] = {
 	rarity = 6,
 	name = "試作型天雷（特別計画艦仕様）",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 0,
 	ammo = 5,
@@ -86911,7 +88706,7 @@ _G.pg.base.equip_data_statistics[39353] = {
 _G.pg.base.equip_data_statistics[41000] = {
 	tech = 1,
 	name = "127mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 1,
@@ -87006,7 +88801,7 @@ _G.pg.base.equip_data_statistics[41003] = {
 _G.pg.base.equip_data_statistics[41020] = {
 	tech = 2,
 	name = "127mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "127mm単装砲。ほとんどの駆逐艦に装備可能",
 	ammo = 1,
@@ -87102,7 +88897,7 @@ _G.pg.base.equip_data_statistics[41023] = {
 _G.pg.base.equip_data_statistics[41040] = {
 	tech = 3,
 	name = "127mm単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "127mm単装砲。ほとんどの駆逐艦に装備可能",
 	ammo = 1,
@@ -87234,7 +89029,7 @@ _G.pg.base.equip_data_statistics[41047] = {
 _G.pg.base.equip_data_statistics[41060] = {
 	tech = 0,
 	name = "127mmKM40連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 1,
@@ -87404,7 +89199,7 @@ _G.pg.base.equip_data_statistics[41071] = {
 _G.pg.base.equip_data_statistics[41100] = {
 	attribute_3 = "antiaircraft",
 	name = "128mmSKC41連装両用砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 1,
 	ammo = 1,
@@ -87502,7 +89297,7 @@ _G.pg.base.equip_data_statistics[41103] = {
 _G.pg.base.equip_data_statistics[41120] = {
 	attribute_3 = "antiaircraft",
 	name = "128mmSKC41連装両用砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 2,
 	ammo = 1,
@@ -87627,7 +89422,7 @@ _G.pg.base.equip_data_statistics[41126] = {
 _G.pg.base.equip_data_statistics[41140] = {
 	attribute_3 = "antiaircraft",
 	name = "128mmSKC41連装両用砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 3,
 	ammo = 1,
@@ -87798,7 +89593,7 @@ _G.pg.base.equip_data_statistics[41151] = {
 _G.pg.base.equip_data_statistics[41160] = {
 	attribute_3 = "antiaircraft",
 	name = "128mmSKC41連装両用砲改",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 0,
 	ammo = 1,
@@ -87989,7 +89784,7 @@ _G.pg.base.equip_data_statistics[41173] = {
 _G.pg.base.equip_data_statistics[42000] = {
 	tech = 1,
 	name = "150mmSKC/28単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "150mmSKC28主砲。軽巡洋艦と一部の駆逐艦に装備可能",
 	ammo = 1,
@@ -88077,7 +89872,7 @@ _G.pg.base.equip_data_statistics[42003] = {
 _G.pg.base.equip_data_statistics[42020] = {
 	tech = 2,
 	name = "150mmSKC/28単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "150mmSKC28主砲。軽巡洋艦と一部の駆逐艦に装備可能",
 	ammo = 1,
@@ -88192,7 +89987,7 @@ _G.pg.base.equip_data_statistics[42026] = {
 _G.pg.base.equip_data_statistics[42040] = {
 	tech = 3,
 	name = "150mmSKC/28単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "150mmSKC28主砲。軽巡洋艦と一部の駆逐艦に装備可能",
 	ammo = 1,
@@ -88353,7 +90148,7 @@ _G.pg.base.equip_data_statistics[42051] = {
 _G.pg.base.equip_data_statistics[42060] = {
 	tech = 0,
 	name = "150mmSKC28連装副砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 1,
@@ -88514,7 +90309,7 @@ _G.pg.base.equip_data_statistics[42071] = {
 _G.pg.base.equip_data_statistics[42080] = {
 	tech = 0,
 	name = "試作型150mmSKC28連装砲改",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "",
 	ammo = 1,
@@ -88695,7 +90490,7 @@ _G.pg.base.equip_data_statistics[42093] = {
 _G.pg.base.equip_data_statistics[42100] = {
 	tech = 1,
 	name = "150mmSKC/25三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "三連装150mmSKC25主砲。軽巡洋艦と一部の駆逐艦が装備可能",
 	ammo = 1,
@@ -88783,7 +90578,7 @@ _G.pg.base.equip_data_statistics[42103] = {
 _G.pg.base.equip_data_statistics[42120] = {
 	tech = 2,
 	name = "150mmSKC/25三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "三連装150mmSKC25主砲。軽巡洋艦と一部の駆逐艦が装備可能",
 	ammo = 1,
@@ -88898,7 +90693,7 @@ _G.pg.base.equip_data_statistics[42126] = {
 _G.pg.base.equip_data_statistics[42140] = {
 	tech = 3,
 	name = "150mmSKC/25三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "三連装150mmSKC25主砲。軽巡洋艦と一部の駆逐艦が装備可能",
 	ammo = 1,
@@ -89059,7 +90854,7 @@ _G.pg.base.equip_data_statistics[42151] = {
 _G.pg.base.equip_data_statistics[42200] = {
 	tech = 1,
 	name = "150mmTbtsKC/36連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "1936A駆逐艦に装備された150mmTbtsKC36連装砲。軽巡洋艦と一部の駆逐艦に装備可能",
 	ammo = 1,
@@ -89147,7 +90942,7 @@ _G.pg.base.equip_data_statistics[42203] = {
 _G.pg.base.equip_data_statistics[42220] = {
 	tech = 2,
 	name = "150mmTbtsKC/36連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "1936A駆逐艦に装備された150mmTbtsKC36連装砲。軽巡洋艦と一部の駆逐艦に装備可能",
 	ammo = 1,
@@ -89262,7 +91057,7 @@ _G.pg.base.equip_data_statistics[42226] = {
 _G.pg.base.equip_data_statistics[42240] = {
 	tech = 3,
 	name = "150mmTbtsKC/36連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "1936A駆逐艦に装備された150mmTbtsKC36連装砲。軽巡洋艦と一部の駆逐艦に装備可能",
 	ammo = 1,
@@ -89423,7 +91218,7 @@ _G.pg.base.equip_data_statistics[42251] = {
 _G.pg.base.equip_data_statistics[42300] = {
 	tech = 1,
 	name = "150mmTbtsKC36単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "1936A駆逐艦に装備された150mmTbtsKC36単装砲。軽巡洋艦と一部の駆逐艦に装備可能",
 	ammo = 1,
@@ -89511,7 +91306,7 @@ _G.pg.base.equip_data_statistics[42303] = {
 _G.pg.base.equip_data_statistics[42340] = {
 	tech = 3,
 	name = "150mmTbtsKC36単装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 1,
@@ -89671,7 +91466,7 @@ _G.pg.base.equip_data_statistics[42351] = {
 _G.pg.base.equip_data_statistics[42360] = {
 	tech = 0,
 	name = "試作型150mmTbtsKC42T式連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "",
 	ammo = 1,
@@ -89855,7 +91650,7 @@ _G.pg.base.equip_data_statistics[42373] = {
 _G.pg.base.equip_data_statistics[43000] = {
 	tech = 1,
 	name = "203mmSKC連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "アドミラル・ヒッパー級主砲の203mmSKC連装砲。重巡に装備可能",
 	ammo = 1,
@@ -89969,7 +91764,7 @@ _G.pg.base.equip_data_statistics[43006] = {
 _G.pg.base.equip_data_statistics[43020] = {
 	tech = 2,
 	name = "203mmSKC連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "アドミラル・ヒッパー級主砲の203mmSKC連装砲。重巡に装備可能",
 	ammo = 1,
@@ -90119,7 +91914,7 @@ _G.pg.base.equip_data_statistics[43030] = {
 _G.pg.base.equip_data_statistics[43040] = {
 	tech = 3,
 	name = "203mmSKC連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "アドミラル・ヒッパー級主砲の203mmSKC連装砲。重巡に装備可能",
 	ammo = 1,
@@ -90299,7 +92094,7 @@ _G.pg.base.equip_data_statistics[43053] = {
 _G.pg.base.equip_data_statistics[43060] = {
 	tech = 0,
 	name = "試作203mmSKC三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 1,
@@ -90479,7 +92274,7 @@ _G.pg.base.equip_data_statistics[43073] = {
 _G.pg.base.equip_data_statistics[43080] = {
 	tech = 0,
 	name = "203mmSKC連装砲改",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "鉄血が開発した203mmSKC連装砲の改修型",
 	ammo = 1,
@@ -90659,7 +92454,7 @@ _G.pg.base.equip_data_statistics[43093] = {
 _G.pg.base.equip_data_statistics[43100] = {
 	tech = 1,
 	name = "283mmSKC28三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 11,
 	descrip = "ドイッチュランドの主砲、283mmSKC28三連装砲。ドイッチュランド級にのみ装備可能",
 	ammo = 1,
@@ -90737,7 +92532,7 @@ _G.pg.base.equip_data_statistics[43103] = {
 _G.pg.base.equip_data_statistics[43120] = {
 	tech = 2,
 	name = "283mmSKC28三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 11,
 	descrip = "ドイッチュランドの主砲、283mmSKC28三連装砲。ドイッチュランド級にのみ装備可能",
 	ammo = 1,
@@ -90842,7 +92637,7 @@ _G.pg.base.equip_data_statistics[43126] = {
 _G.pg.base.equip_data_statistics[43140] = {
 	tech = 3,
 	name = "283mmSKC28三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 11,
 	descrip = "ドイッチュランドの主砲、283mmSKC28三連装砲。ドイッチュランド級にのみ装備可能",
 	ammo = 1,
@@ -90993,7 +92788,7 @@ _G.pg.base.equip_data_statistics[43151] = {
 _G.pg.base.equip_data_statistics[43160] = {
 	tech = 0,
 	name = "試作型203mmSKC三連装砲改",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "",
 	ammo = 1,
@@ -91173,7 +92968,7 @@ _G.pg.base.equip_data_statistics[43173] = {
 _G.pg.base.equip_data_statistics[44000] = {
 	tech = 1,
 	name = "283mmSKC34三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "シャルンホルスト級の主砲、283mmSKC34三連装砲。戦艦と巡洋戦艦にのみ装備可能",
 	ammo = 3,
@@ -91253,7 +93048,7 @@ _G.pg.base.equip_data_statistics[44003] = {
 _G.pg.base.equip_data_statistics[44020] = {
 	tech = 2,
 	name = "283mmSKC34三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "シャルンホルスト級の主砲、283mmSKC34三連装砲。戦艦と巡洋戦艦にのみ装備可能",
 	ammo = 3,
@@ -91360,7 +93155,7 @@ _G.pg.base.equip_data_statistics[44026] = {
 _G.pg.base.equip_data_statistics[44040] = {
 	tech = 3,
 	name = "283mmSKC34三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "シャルンホルスト級の主砲、283mmSKC34三連装砲。戦艦と巡洋戦艦にのみ装備可能",
 	ammo = 3,
@@ -91513,7 +93308,7 @@ _G.pg.base.equip_data_statistics[44051] = {
 _G.pg.base.equip_data_statistics[44100] = {
 	tech = 1,
 	name = "380mmSKC連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "ビスマルク級の主砲、380mmSKC連装砲。戦艦と巡洋戦艦にのみ装備可能",
 	ammo = 3,
@@ -91620,7 +93415,7 @@ _G.pg.base.equip_data_statistics[44106] = {
 _G.pg.base.equip_data_statistics[44120] = {
 	tech = 2,
 	name = "380mmSKC連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "ビスマルク級の主砲、380mmSKC連装砲。戦艦と巡洋戦艦にのみ装備可能",
 	ammo = 1,
@@ -91764,7 +93559,7 @@ _G.pg.base.equip_data_statistics[44130] = {
 _G.pg.base.equip_data_statistics[44140] = {
 	tech = 3,
 	name = "380mmSKC連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "ビスマルク級の主砲、380mmSKC連装砲。戦艦と巡洋戦艦にのみ装備可能",
 	ammo = 1,
@@ -91938,7 +93733,7 @@ _G.pg.base.equip_data_statistics[44153] = {
 _G.pg.base.equip_data_statistics[44200] = {
 	tech = 0,
 	name = "試作型406mmSKC連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -92112,7 +93907,7 @@ _G.pg.base.equip_data_statistics[44213] = {
 _G.pg.base.equip_data_statistics[44300] = {
 	tech = 0,
 	name = "試作型305mmSKC39三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -92286,7 +94081,7 @@ _G.pg.base.equip_data_statistics[44313] = {
 _G.pg.base.equip_data_statistics[44400] = {
 	tech = 0,
 	name = "試作型三連装305mmSKC39主砲（超巡）",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 11,
 	descrip = "0",
 	ammo = 1,
@@ -92454,10 +94249,184 @@ _G.pg.base.equip_data_statistics[44413] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[44500] = {
+	tech = 0,
+	name = "試作型380mmSKC三連装砲",
+	speciality = "<[VOL]>",
+	type = 4,
+	descrip = "说明未填写",
+	ammo = 2,
+	damage = "70 x 3",
+	nationality = 4,
+	rarity = 5,
+	id = 44500,
+	value_3 = 0,
+	torpedo_ammo = 0,
+	value_2 = 45,
+	icon = "44500",
+	attribute_2 = "cannon",
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {
+		{
+			2,
+			1591
+		}
+	},
+	equip_info = {
+		1,
+		2,
+		6,
+		10,
+		11,
+		12
+	},
+	weapon_id = {
+		44500
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		4,
+		5,
+		10,
+		13
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"KMS",
+		"BB",
+		"MG",
+		"HE"
+	}
+}
+_G.pg.base.equip_data_statistics[44501] = {
+	id = 44501,
+	damage = "76 x 3",
+	base = 44500,
+	weapon_id = {
+		44501
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[44502] = {
+	id = 44502,
+	damage = "80 x 3",
+	base = 44500,
+	weapon_id = {
+		44502
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[44503] = {
+	id = 44503,
+	damage = "86 x 3",
+	base = 44500,
+	weapon_id = {
+		44503
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[44504] = {
+	id = 44504,
+	damage = "90 x 3",
+	base = 44500,
+	weapon_id = {
+		44504
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[44505] = {
+	id = 44505,
+	damage = "94 x 3",
+	base = 44500,
+	weapon_id = {
+		44505
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[44506] = {
+	id = 44506,
+	damage = "100 x 3",
+	base = 44500,
+	weapon_id = {
+		44506
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[44507] = {
+	id = 44507,
+	damage = "104 x 3",
+	base = 44500,
+	weapon_id = {
+		44507
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[44508] = {
+	id = 44508,
+	damage = "110 x 3",
+	base = 44500,
+	weapon_id = {
+		44508
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[44509] = {
+	id = 44509,
+	damage = "114 x 3",
+	base = 44500,
+	weapon_id = {
+		44509
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[44510] = {
+	id = 44510,
+	damage = "118 x 3",
+	base = 44500,
+	weapon_id = {
+		44510
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[44511] = {
+	id = 44511,
+	anti_siren = 100,
+	damage = "118 x 3",
+	base = 44500,
+	weapon_id = {
+		44511
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[44512] = {
+	id = 44512,
+	anti_siren = 200,
+	damage = "118 x 3",
+	base = 44500,
+	weapon_id = {
+		44512
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[44513] = {
+	id = 44513,
+	anti_siren = 300,
+	damage = "118 x 3",
+	base = 44500,
+	weapon_id = {
+		44513
+	},
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[45000] = {
 	tech = 1,
 	name = "533mm三連装磁気魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "クラップが開発した磁気信管とソナー技術を活かした533mm磁気魚雷。魚雷の命中率を大幅に強化できる",
 	ammo = 4,
@@ -92553,7 +94522,7 @@ _G.pg.base.equip_data_statistics[45003] = {
 _G.pg.base.equip_data_statistics[45020] = {
 	tech = 2,
 	name = "533mm三連装磁気魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "クラップが開発した磁気信管とソナー技術を活かした533mm磁気魚雷。魚雷の命中率を大幅に強化できる",
 	ammo = 4,
@@ -92676,7 +94645,7 @@ _G.pg.base.equip_data_statistics[45026] = {
 _G.pg.base.equip_data_statistics[45040] = {
 	tech = 3,
 	name = "533mm三連装磁気魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "クラップが開発した磁気信管とソナー技術を活かした533mm磁気魚雷。魚雷の命中率を大幅に強化できる",
 	ammo = 4,
@@ -92845,7 +94814,7 @@ _G.pg.base.equip_data_statistics[45051] = {
 _G.pg.base.equip_data_statistics[45100] = {
 	tech = 1,
 	name = "533mm四連装磁気魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "クラップが開発した磁気信管とソナー技術を活かした533mm磁気魚雷。魚雷の命中率を大幅に強化できる",
 	ammo = 4,
@@ -92968,7 +94937,7 @@ _G.pg.base.equip_data_statistics[45106] = {
 _G.pg.base.equip_data_statistics[45120] = {
 	tech = 2,
 	name = "533mm四連装磁気魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "クラップが開発した磁気信管とソナー技術を活かした533mm磁気魚雷。魚雷の命中率を大幅に強化できる",
 	ammo = 4,
@@ -93127,7 +95096,7 @@ _G.pg.base.equip_data_statistics[45130] = {
 _G.pg.base.equip_data_statistics[45140] = {
 	tech = 3,
 	name = "533mm四連装磁気魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "クラップが開発した磁気信管とソナー技術を活かした533mm磁気魚雷。魚雷の命中率を大幅に強化できる",
 	ammo = 4,
@@ -93316,7 +95285,7 @@ _G.pg.base.equip_data_statistics[45153] = {
 _G.pg.base.equip_data_statistics[45200] = {
 	tech = 1,
 	name = "533mm五連装磁気魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "クラップが開発した磁気信管とソナー技術を活かした533mm磁気魚雷。魚雷の命中率を大幅に強化できる",
 	ammo = 4,
@@ -93475,7 +95444,7 @@ _G.pg.base.equip_data_statistics[45210] = {
 _G.pg.base.equip_data_statistics[45220] = {
 	tech = 2,
 	name = "533mm五連装磁気魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "クラップが開発した磁気信管とソナー技術を活かした533mm磁気魚雷。魚雷の命中率を大幅に強化できる",
 	ammo = 4,
@@ -93634,7 +95603,7 @@ _G.pg.base.equip_data_statistics[45230] = {
 _G.pg.base.equip_data_statistics[45240] = {
 	tech = 3,
 	name = "533mm五連装磁気魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "クラップが開発した磁気信管とソナー技術を活かした533mm磁気魚雷。魚雷の命中率を大幅に強化できる",
 	ammo = 4,
@@ -93823,7 +95792,7 @@ _G.pg.base.equip_data_statistics[45253] = {
 _G.pg.base.equip_data_statistics[45300] = {
 	tech = 1,
 	name = "潜水艦用G7a魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -93910,7 +95879,7 @@ _G.pg.base.equip_data_statistics[45303] = {
 _G.pg.base.equip_data_statistics[45320] = {
 	tech = 2,
 	name = "潜水艦用G7a魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -94024,7 +95993,7 @@ _G.pg.base.equip_data_statistics[45326] = {
 _G.pg.base.equip_data_statistics[45340] = {
 	tech = 3,
 	name = "潜水艦用G7a魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 5,
@@ -94184,7 +96153,7 @@ _G.pg.base.equip_data_statistics[45351] = {
 _G.pg.base.equip_data_statistics[45400] = {
 	tech = 1,
 	name = "潜水艦用G7e音響追跡魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 4,
@@ -94298,7 +96267,7 @@ _G.pg.base.equip_data_statistics[45406] = {
 _G.pg.base.equip_data_statistics[45420] = {
 	tech = 2,
 	name = "潜水艦用G7e音響追跡魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 4,
@@ -94448,7 +96417,7 @@ _G.pg.base.equip_data_statistics[45430] = {
 _G.pg.base.equip_data_statistics[45440] = {
 	tech = 3,
 	name = "潜水艦用G7e音響追跡魚雷",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "0",
 	ammo = 4,
@@ -94628,11 +96597,11 @@ _G.pg.base.equip_data_statistics[45453] = {
 _G.pg.base.equip_data_statistics[46000] = {
 	tech = 1,
 	name = "20mm四連装MG機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	rarity = 1,
 	ammo = 5,
-	damage = "17/回",
+	damage = "17<[WAVE]>",
 	nationality = 4,
 	descrip = "対空火器・四連装20mmMG機銃",
 	id = 46000,
@@ -94693,7 +96662,7 @@ _G.pg.base.equip_data_statistics[46000] = {
 }
 _G.pg.base.equip_data_statistics[46001] = {
 	id = 46001,
-	damage = "20/回",
+	damage = "20<[WAVE]>",
 	base = 46000,
 	weapon_id = {
 		46001
@@ -94702,7 +96671,7 @@ _G.pg.base.equip_data_statistics[46001] = {
 }
 _G.pg.base.equip_data_statistics[46002] = {
 	id = 46002,
-	damage = "23/回",
+	damage = "23<[WAVE]>",
 	base = 46000,
 	weapon_id = {
 		46002
@@ -94711,7 +96680,7 @@ _G.pg.base.equip_data_statistics[46002] = {
 }
 _G.pg.base.equip_data_statistics[46003] = {
 	id = 46003,
-	damage = "26/回",
+	damage = "26<[WAVE]>",
 	base = 46000,
 	weapon_id = {
 		46003
@@ -94721,11 +96690,11 @@ _G.pg.base.equip_data_statistics[46003] = {
 _G.pg.base.equip_data_statistics[46020] = {
 	tech = 2,
 	name = "20mm四連装MG機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "対空火器・四連装20mmMG機銃",
 	ammo = 5,
-	damage = "20/回",
+	damage = "20<[WAVE]>",
 	nationality = 4,
 	rarity = 2,
 	id = 46020,
@@ -94787,7 +96756,7 @@ _G.pg.base.equip_data_statistics[46020] = {
 }
 _G.pg.base.equip_data_statistics[46021] = {
 	id = 46021,
-	damage = "23/回",
+	damage = "23<[WAVE]>",
 	base = 46020,
 	weapon_id = {
 		46021
@@ -94796,7 +96765,7 @@ _G.pg.base.equip_data_statistics[46021] = {
 }
 _G.pg.base.equip_data_statistics[46022] = {
 	id = 46022,
-	damage = "27/回",
+	damage = "27<[WAVE]>",
 	base = 46020,
 	weapon_id = {
 		46022
@@ -94805,7 +96774,7 @@ _G.pg.base.equip_data_statistics[46022] = {
 }
 _G.pg.base.equip_data_statistics[46023] = {
 	id = 46023,
-	damage = "31/回",
+	damage = "31<[WAVE]>",
 	base = 46020,
 	weapon_id = {
 		46023
@@ -94815,11 +96784,11 @@ _G.pg.base.equip_data_statistics[46023] = {
 _G.pg.base.equip_data_statistics[46040] = {
 	tech = 3,
 	name = "20mm四連装MG機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "対空火器・四連装20mmMG機銃",
 	ammo = 5,
-	damage = "23/回",
+	damage = "23<[WAVE]>",
 	nationality = 4,
 	rarity = 3,
 	id = 46040,
@@ -94881,7 +96850,7 @@ _G.pg.base.equip_data_statistics[46040] = {
 }
 _G.pg.base.equip_data_statistics[46041] = {
 	id = 46041,
-	damage = "26/回",
+	damage = "26<[WAVE]>",
 	base = 46040,
 	weapon_id = {
 		46041
@@ -94890,7 +96859,7 @@ _G.pg.base.equip_data_statistics[46041] = {
 }
 _G.pg.base.equip_data_statistics[46042] = {
 	id = 46042,
-	damage = "30/回",
+	damage = "30<[WAVE]>",
 	base = 46040,
 	weapon_id = {
 		46042
@@ -94899,7 +96868,7 @@ _G.pg.base.equip_data_statistics[46042] = {
 }
 _G.pg.base.equip_data_statistics[46043] = {
 	id = 46043,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	base = 46040,
 	weapon_id = {
 		46043
@@ -94908,7 +96877,7 @@ _G.pg.base.equip_data_statistics[46043] = {
 }
 _G.pg.base.equip_data_statistics[46044] = {
 	id = 46044,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	base = 46040,
 	weapon_id = {
 		46044
@@ -94917,7 +96886,7 @@ _G.pg.base.equip_data_statistics[46044] = {
 }
 _G.pg.base.equip_data_statistics[46045] = {
 	id = 46045,
-	damage = "42/回",
+	damage = "42<[WAVE]>",
 	base = 46040,
 	weapon_id = {
 		46045
@@ -94926,7 +96895,7 @@ _G.pg.base.equip_data_statistics[46045] = {
 }
 _G.pg.base.equip_data_statistics[46046] = {
 	id = 46046,
-	damage = "46/回",
+	damage = "46<[WAVE]>",
 	base = 46040,
 	weapon_id = {
 		46046
@@ -94935,7 +96904,7 @@ _G.pg.base.equip_data_statistics[46046] = {
 }
 _G.pg.base.equip_data_statistics[46047] = {
 	id = 46047,
-	damage = "46/回",
+	damage = "46<[WAVE]>",
 	base = 46040,
 	weapon_id = {
 		46047
@@ -94945,11 +96914,11 @@ _G.pg.base.equip_data_statistics[46047] = {
 _G.pg.base.equip_data_statistics[46060] = {
 	tech = 0,
 	name = "88mmSKC32高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	nationality = 4,
 	rarity = 4,
 	id = 46060,
@@ -95011,7 +96980,7 @@ _G.pg.base.equip_data_statistics[46060] = {
 }
 _G.pg.base.equip_data_statistics[46061] = {
 	id = 46061,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	base = 46060,
 	weapon_id = {
 		46061
@@ -95020,7 +96989,7 @@ _G.pg.base.equip_data_statistics[46061] = {
 }
 _G.pg.base.equip_data_statistics[46062] = {
 	id = 46062,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 46060,
 	weapon_id = {
 		46062
@@ -95029,7 +96998,7 @@ _G.pg.base.equip_data_statistics[46062] = {
 }
 _G.pg.base.equip_data_statistics[46063] = {
 	id = 46063,
-	damage = "46/回",
+	damage = "46<[WAVE]>",
 	base = 46060,
 	weapon_id = {
 		46063
@@ -95038,7 +97007,7 @@ _G.pg.base.equip_data_statistics[46063] = {
 }
 _G.pg.base.equip_data_statistics[46064] = {
 	id = 46064,
-	damage = "52/回",
+	damage = "52<[WAVE]>",
 	base = 46060,
 	weapon_id = {
 		46064
@@ -95047,7 +97016,7 @@ _G.pg.base.equip_data_statistics[46064] = {
 }
 _G.pg.base.equip_data_statistics[46065] = {
 	id = 46065,
-	damage = "58/回",
+	damage = "58<[WAVE]>",
 	base = 46060,
 	weapon_id = {
 		46065
@@ -95056,7 +97025,7 @@ _G.pg.base.equip_data_statistics[46065] = {
 }
 _G.pg.base.equip_data_statistics[46066] = {
 	id = 46066,
-	damage = "64/回",
+	damage = "64<[WAVE]>",
 	base = 46060,
 	weapon_id = {
 		46066
@@ -95065,7 +97034,7 @@ _G.pg.base.equip_data_statistics[46066] = {
 }
 _G.pg.base.equip_data_statistics[46067] = {
 	id = 46067,
-	damage = "70/回",
+	damage = "70<[WAVE]>",
 	base = 46060,
 	weapon_id = {
 		46067
@@ -95074,7 +97043,7 @@ _G.pg.base.equip_data_statistics[46067] = {
 }
 _G.pg.base.equip_data_statistics[46068] = {
 	id = 46068,
-	damage = "76/回",
+	damage = "76<[WAVE]>",
 	base = 46060,
 	weapon_id = {
 		46068
@@ -95083,7 +97052,7 @@ _G.pg.base.equip_data_statistics[46068] = {
 }
 _G.pg.base.equip_data_statistics[46069] = {
 	id = 46069,
-	damage = "82/回",
+	damage = "82<[WAVE]>",
 	base = 46060,
 	weapon_id = {
 		46069
@@ -95092,7 +97061,7 @@ _G.pg.base.equip_data_statistics[46069] = {
 }
 _G.pg.base.equip_data_statistics[46070] = {
 	id = 46070,
-	damage = "89/回",
+	damage = "89<[WAVE]>",
 	base = 46060,
 	weapon_id = {
 		46070
@@ -95102,7 +97071,7 @@ _G.pg.base.equip_data_statistics[46070] = {
 _G.pg.base.equip_data_statistics[46071] = {
 	id = 46071,
 	anti_siren = 100,
-	damage = "89/回",
+	damage = "89<[WAVE]>",
 	base = 46060,
 	weapon_id = {
 		46071
@@ -95112,11 +97081,11 @@ _G.pg.base.equip_data_statistics[46071] = {
 _G.pg.base.equip_data_statistics[46100] = {
 	tech = 1,
 	name = "37mm機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	rarity = 1,
 	ammo = 5,
-	damage = "8/回",
+	damage = "8<[WAVE]>",
 	nationality = 4,
 	descrip = "対空火器・37mm機銃",
 	id = 46100,
@@ -95177,7 +97146,7 @@ _G.pg.base.equip_data_statistics[46100] = {
 }
 _G.pg.base.equip_data_statistics[46101] = {
 	id = 46101,
-	damage = "9/回",
+	damage = "9<[WAVE]>",
 	base = 46100,
 	weapon_id = {
 		46101
@@ -95186,7 +97155,7 @@ _G.pg.base.equip_data_statistics[46101] = {
 }
 _G.pg.base.equip_data_statistics[46102] = {
 	id = 46102,
-	damage = "10/回",
+	damage = "10<[WAVE]>",
 	base = 46100,
 	weapon_id = {
 		46102
@@ -95195,7 +97164,7 @@ _G.pg.base.equip_data_statistics[46102] = {
 }
 _G.pg.base.equip_data_statistics[46103] = {
 	id = 46103,
-	damage = "12/回",
+	damage = "12<[WAVE]>",
 	base = 46100,
 	weapon_id = {
 		46103
@@ -95205,11 +97174,11 @@ _G.pg.base.equip_data_statistics[46103] = {
 _G.pg.base.equip_data_statistics[46120] = {
 	tech = 2,
 	name = "37mm機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "対空火器・37mm機銃",
 	ammo = 5,
-	damage = "11/回",
+	damage = "11<[WAVE]>",
 	nationality = 4,
 	rarity = 2,
 	id = 46120,
@@ -95271,7 +97240,7 @@ _G.pg.base.equip_data_statistics[46120] = {
 }
 _G.pg.base.equip_data_statistics[46121] = {
 	id = 46121,
-	damage = "12/回",
+	damage = "12<[WAVE]>",
 	base = 46120,
 	weapon_id = {
 		46121
@@ -95280,7 +97249,7 @@ _G.pg.base.equip_data_statistics[46121] = {
 }
 _G.pg.base.equip_data_statistics[46122] = {
 	id = 46122,
-	damage = "14/回",
+	damage = "14<[WAVE]>",
 	base = 46120,
 	weapon_id = {
 		46122
@@ -95289,7 +97258,7 @@ _G.pg.base.equip_data_statistics[46122] = {
 }
 _G.pg.base.equip_data_statistics[46123] = {
 	id = 46123,
-	damage = "16/回",
+	damage = "16<[WAVE]>",
 	base = 46120,
 	weapon_id = {
 		46123
@@ -95299,11 +97268,11 @@ _G.pg.base.equip_data_statistics[46123] = {
 _G.pg.base.equip_data_statistics[46140] = {
 	tech = 3,
 	name = "37mm機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "対空火器・37mm機銃",
 	ammo = 5,
-	damage = "12/回",
+	damage = "12<[WAVE]>",
 	nationality = 4,
 	rarity = 3,
 	id = 46140,
@@ -95365,7 +97334,7 @@ _G.pg.base.equip_data_statistics[46140] = {
 }
 _G.pg.base.equip_data_statistics[46141] = {
 	id = 46141,
-	damage = "14/回",
+	damage = "14<[WAVE]>",
 	base = 46140,
 	weapon_id = {
 		46141
@@ -95374,7 +97343,7 @@ _G.pg.base.equip_data_statistics[46141] = {
 }
 _G.pg.base.equip_data_statistics[46142] = {
 	id = 46142,
-	damage = "16/回",
+	damage = "16<[WAVE]>",
 	base = 46140,
 	weapon_id = {
 		46142
@@ -95383,7 +97352,7 @@ _G.pg.base.equip_data_statistics[46142] = {
 }
 _G.pg.base.equip_data_statistics[46143] = {
 	id = 46143,
-	damage = "18/回",
+	damage = "18<[WAVE]>",
 	base = 46140,
 	weapon_id = {
 		46143
@@ -95392,7 +97361,7 @@ _G.pg.base.equip_data_statistics[46143] = {
 }
 _G.pg.base.equip_data_statistics[46144] = {
 	id = 46144,
-	damage = "20/回",
+	damage = "20<[WAVE]>",
 	base = 46140,
 	weapon_id = {
 		46144
@@ -95401,7 +97370,7 @@ _G.pg.base.equip_data_statistics[46144] = {
 }
 _G.pg.base.equip_data_statistics[46145] = {
 	id = 46145,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	base = 46140,
 	weapon_id = {
 		46145
@@ -95410,7 +97379,7 @@ _G.pg.base.equip_data_statistics[46145] = {
 }
 _G.pg.base.equip_data_statistics[46146] = {
 	id = 46146,
-	damage = "24/回",
+	damage = "24<[WAVE]>",
 	base = 46140,
 	weapon_id = {
 		46146
@@ -95419,7 +97388,7 @@ _G.pg.base.equip_data_statistics[46146] = {
 }
 _G.pg.base.equip_data_statistics[46147] = {
 	id = 46147,
-	damage = "24/回",
+	damage = "24<[WAVE]>",
 	base = 46140,
 	weapon_id = {
 		46147
@@ -95429,11 +97398,11 @@ _G.pg.base.equip_data_statistics[46147] = {
 _G.pg.base.equip_data_statistics[46200] = {
 	tech = 1,
 	name = "37mm連装機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "対空火器・37mm連装機銃",
 	ammo = 5,
-	damage = "15/回",
+	damage = "15<[WAVE]>",
 	nationality = 4,
 	rarity = 2,
 	id = 46200,
@@ -95495,7 +97464,7 @@ _G.pg.base.equip_data_statistics[46200] = {
 }
 _G.pg.base.equip_data_statistics[46201] = {
 	id = 46201,
-	damage = "17/回",
+	damage = "17<[WAVE]>",
 	base = 46200,
 	weapon_id = {
 		46201
@@ -95504,7 +97473,7 @@ _G.pg.base.equip_data_statistics[46201] = {
 }
 _G.pg.base.equip_data_statistics[46202] = {
 	id = 46202,
-	damage = "19/回",
+	damage = "19<[WAVE]>",
 	base = 46200,
 	weapon_id = {
 		46202
@@ -95513,7 +97482,7 @@ _G.pg.base.equip_data_statistics[46202] = {
 }
 _G.pg.base.equip_data_statistics[46203] = {
 	id = 46203,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	base = 46200,
 	weapon_id = {
 		46203
@@ -95523,11 +97492,11 @@ _G.pg.base.equip_data_statistics[46203] = {
 _G.pg.base.equip_data_statistics[46220] = {
 	tech = 2,
 	name = "37mm連装機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "対空火器・37mm連装機銃",
 	ammo = 5,
-	damage = "17/回",
+	damage = "17<[WAVE]>",
 	nationality = 4,
 	rarity = 3,
 	id = 46220,
@@ -95589,7 +97558,7 @@ _G.pg.base.equip_data_statistics[46220] = {
 }
 _G.pg.base.equip_data_statistics[46221] = {
 	id = 46221,
-	damage = "19/回",
+	damage = "19<[WAVE]>",
 	base = 46220,
 	weapon_id = {
 		46221
@@ -95598,7 +97567,7 @@ _G.pg.base.equip_data_statistics[46221] = {
 }
 _G.pg.base.equip_data_statistics[46222] = {
 	id = 46222,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	base = 46220,
 	weapon_id = {
 		46222
@@ -95607,7 +97576,7 @@ _G.pg.base.equip_data_statistics[46222] = {
 }
 _G.pg.base.equip_data_statistics[46223] = {
 	id = 46223,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	base = 46220,
 	weapon_id = {
 		46223
@@ -95616,7 +97585,7 @@ _G.pg.base.equip_data_statistics[46223] = {
 }
 _G.pg.base.equip_data_statistics[46224] = {
 	id = 46224,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 46220,
 	weapon_id = {
 		46224
@@ -95625,7 +97594,7 @@ _G.pg.base.equip_data_statistics[46224] = {
 }
 _G.pg.base.equip_data_statistics[46225] = {
 	id = 46225,
-	damage = "31/回",
+	damage = "31<[WAVE]>",
 	base = 46220,
 	weapon_id = {
 		46225
@@ -95634,7 +97603,7 @@ _G.pg.base.equip_data_statistics[46225] = {
 }
 _G.pg.base.equip_data_statistics[46226] = {
 	id = 46226,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	base = 46220,
 	weapon_id = {
 		46226
@@ -95644,11 +97613,11 @@ _G.pg.base.equip_data_statistics[46226] = {
 _G.pg.base.equip_data_statistics[46240] = {
 	tech = 3,
 	name = "37mm連装機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "対空火器・37mm連装機銃",
 	ammo = 5,
-	damage = "20/回",
+	damage = "20<[WAVE]>",
 	nationality = 4,
 	rarity = 4,
 	id = 46240,
@@ -95710,7 +97679,7 @@ _G.pg.base.equip_data_statistics[46240] = {
 }
 _G.pg.base.equip_data_statistics[46241] = {
 	id = 46241,
-	damage = "23/回",
+	damage = "23<[WAVE]>",
 	base = 46240,
 	weapon_id = {
 		46241
@@ -95719,7 +97688,7 @@ _G.pg.base.equip_data_statistics[46241] = {
 }
 _G.pg.base.equip_data_statistics[46242] = {
 	id = 46242,
-	damage = "26/回",
+	damage = "26<[WAVE]>",
 	base = 46240,
 	weapon_id = {
 		46242
@@ -95728,7 +97697,7 @@ _G.pg.base.equip_data_statistics[46242] = {
 }
 _G.pg.base.equip_data_statistics[46243] = {
 	id = 46243,
-	damage = "29/回",
+	damage = "29<[WAVE]>",
 	base = 46240,
 	weapon_id = {
 		46243
@@ -95737,7 +97706,7 @@ _G.pg.base.equip_data_statistics[46243] = {
 }
 _G.pg.base.equip_data_statistics[46244] = {
 	id = 46244,
-	damage = "32/回",
+	damage = "32<[WAVE]>",
 	base = 46240,
 	weapon_id = {
 		46244
@@ -95746,7 +97715,7 @@ _G.pg.base.equip_data_statistics[46244] = {
 }
 _G.pg.base.equip_data_statistics[46245] = {
 	id = 46245,
-	damage = "35/回",
+	damage = "35<[WAVE]>",
 	base = 46240,
 	weapon_id = {
 		46245
@@ -95755,7 +97724,7 @@ _G.pg.base.equip_data_statistics[46245] = {
 }
 _G.pg.base.equip_data_statistics[46246] = {
 	id = 46246,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	base = 46240,
 	weapon_id = {
 		46246
@@ -95764,7 +97733,7 @@ _G.pg.base.equip_data_statistics[46246] = {
 }
 _G.pg.base.equip_data_statistics[46247] = {
 	id = 46247,
-	damage = "41/回",
+	damage = "41<[WAVE]>",
 	base = 46240,
 	weapon_id = {
 		46247
@@ -95773,7 +97742,7 @@ _G.pg.base.equip_data_statistics[46247] = {
 }
 _G.pg.base.equip_data_statistics[46248] = {
 	id = 46248,
-	damage = "44/回",
+	damage = "44<[WAVE]>",
 	base = 46240,
 	weapon_id = {
 		46248
@@ -95782,7 +97751,7 @@ _G.pg.base.equip_data_statistics[46248] = {
 }
 _G.pg.base.equip_data_statistics[46249] = {
 	id = 46249,
-	damage = "47/回",
+	damage = "47<[WAVE]>",
 	base = 46240,
 	weapon_id = {
 		46249
@@ -95791,7 +97760,7 @@ _G.pg.base.equip_data_statistics[46249] = {
 }
 _G.pg.base.equip_data_statistics[46250] = {
 	id = 46250,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 46240,
 	weapon_id = {
 		46250
@@ -95801,7 +97770,7 @@ _G.pg.base.equip_data_statistics[46250] = {
 _G.pg.base.equip_data_statistics[46251] = {
 	id = 46251,
 	anti_siren = 100,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 46240,
 	weapon_id = {
 		46251
@@ -95811,11 +97780,11 @@ _G.pg.base.equip_data_statistics[46251] = {
 _G.pg.base.equip_data_statistics[46260] = {
 	tech = 0,
 	name = "37mmFlak M43連装機銃",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "26/回",
+	damage = "26<[WAVE]>",
 	nationality = 4,
 	rarity = 4,
 	id = 46260,
@@ -95877,7 +97846,7 @@ _G.pg.base.equip_data_statistics[46260] = {
 }
 _G.pg.base.equip_data_statistics[46261] = {
 	id = 46261,
-	damage = "29/回",
+	damage = "29<[WAVE]>",
 	base = 46260,
 	weapon_id = {
 		46261
@@ -95886,7 +97855,7 @@ _G.pg.base.equip_data_statistics[46261] = {
 }
 _G.pg.base.equip_data_statistics[46262] = {
 	id = 46262,
-	damage = "32/回",
+	damage = "32<[WAVE]>",
 	base = 46260,
 	weapon_id = {
 		46262
@@ -95895,7 +97864,7 @@ _G.pg.base.equip_data_statistics[46262] = {
 }
 _G.pg.base.equip_data_statistics[46263] = {
 	id = 46263,
-	damage = "35/回",
+	damage = "35<[WAVE]>",
 	base = 46260,
 	weapon_id = {
 		46263
@@ -95904,7 +97873,7 @@ _G.pg.base.equip_data_statistics[46263] = {
 }
 _G.pg.base.equip_data_statistics[46264] = {
 	id = 46264,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	base = 46260,
 	weapon_id = {
 		46264
@@ -95913,7 +97882,7 @@ _G.pg.base.equip_data_statistics[46264] = {
 }
 _G.pg.base.equip_data_statistics[46265] = {
 	id = 46265,
-	damage = "41/回",
+	damage = "41<[WAVE]>",
 	base = 46260,
 	weapon_id = {
 		46265
@@ -95922,7 +97891,7 @@ _G.pg.base.equip_data_statistics[46265] = {
 }
 _G.pg.base.equip_data_statistics[46266] = {
 	id = 46266,
-	damage = "44/回",
+	damage = "44<[WAVE]>",
 	base = 46260,
 	weapon_id = {
 		46266
@@ -95931,7 +97900,7 @@ _G.pg.base.equip_data_statistics[46266] = {
 }
 _G.pg.base.equip_data_statistics[46267] = {
 	id = 46267,
-	damage = "47/回",
+	damage = "47<[WAVE]>",
 	base = 46260,
 	weapon_id = {
 		46267
@@ -95940,7 +97909,7 @@ _G.pg.base.equip_data_statistics[46267] = {
 }
 _G.pg.base.equip_data_statistics[46268] = {
 	id = 46268,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 46260,
 	weapon_id = {
 		46268
@@ -95949,7 +97918,7 @@ _G.pg.base.equip_data_statistics[46268] = {
 }
 _G.pg.base.equip_data_statistics[46269] = {
 	id = 46269,
-	damage = "53/回",
+	damage = "53<[WAVE]>",
 	base = 46260,
 	weapon_id = {
 		46269
@@ -95958,7 +97927,7 @@ _G.pg.base.equip_data_statistics[46269] = {
 }
 _G.pg.base.equip_data_statistics[46270] = {
 	id = 46270,
-	damage = "56/回",
+	damage = "56<[WAVE]>",
 	base = 46260,
 	weapon_id = {
 		46270
@@ -95968,7 +97937,7 @@ _G.pg.base.equip_data_statistics[46270] = {
 _G.pg.base.equip_data_statistics[46271] = {
 	id = 46271,
 	anti_siren = 100,
-	damage = "56/回",
+	damage = "56<[WAVE]>",
 	base = 46260,
 	weapon_id = {
 		46271
@@ -95978,11 +97947,11 @@ _G.pg.base.equip_data_statistics[46271] = {
 _G.pg.base.equip_data_statistics[46300] = {
 	tech = 1,
 	name = "105mmSKC連装高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "対空火器・105mmSKC高角砲",
 	ammo = 5,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	nationality = 4,
 	rarity = 3,
 	id = 46300,
@@ -96044,7 +98013,7 @@ _G.pg.base.equip_data_statistics[46300] = {
 }
 _G.pg.base.equip_data_statistics[46301] = {
 	id = 46301,
-	damage = "39/回",
+	damage = "39<[WAVE]>",
 	base = 46300,
 	weapon_id = {
 		46301
@@ -96053,7 +98022,7 @@ _G.pg.base.equip_data_statistics[46301] = {
 }
 _G.pg.base.equip_data_statistics[46302] = {
 	id = 46302,
-	damage = "44/回",
+	damage = "44<[WAVE]>",
 	base = 46300,
 	weapon_id = {
 		46302
@@ -96062,7 +98031,7 @@ _G.pg.base.equip_data_statistics[46302] = {
 }
 _G.pg.base.equip_data_statistics[46303] = {
 	id = 46303,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 46300,
 	weapon_id = {
 		46303
@@ -96071,7 +98040,7 @@ _G.pg.base.equip_data_statistics[46303] = {
 }
 _G.pg.base.equip_data_statistics[46304] = {
 	id = 46304,
-	damage = "56/回",
+	damage = "56<[WAVE]>",
 	base = 46300,
 	weapon_id = {
 		46304
@@ -96080,7 +98049,7 @@ _G.pg.base.equip_data_statistics[46304] = {
 }
 _G.pg.base.equip_data_statistics[46305] = {
 	id = 46305,
-	damage = "62/回",
+	damage = "62<[WAVE]>",
 	base = 46300,
 	weapon_id = {
 		46305
@@ -96089,7 +98058,7 @@ _G.pg.base.equip_data_statistics[46305] = {
 }
 _G.pg.base.equip_data_statistics[46306] = {
 	id = 46306,
-	damage = "68/回",
+	damage = "68<[WAVE]>",
 	base = 46300,
 	weapon_id = {
 		46306
@@ -96099,11 +98068,11 @@ _G.pg.base.equip_data_statistics[46306] = {
 _G.pg.base.equip_data_statistics[46320] = {
 	tech = 2,
 	name = "105mmSKC連装高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "対空火器・105mmSKC高角砲",
 	ammo = 5,
-	damage = "41/回",
+	damage = "41<[WAVE]>",
 	nationality = 4,
 	rarity = 4,
 	id = 46320,
@@ -96165,7 +98134,7 @@ _G.pg.base.equip_data_statistics[46320] = {
 }
 _G.pg.base.equip_data_statistics[46321] = {
 	id = 46321,
-	damage = "47/回",
+	damage = "47<[WAVE]>",
 	base = 46320,
 	weapon_id = {
 		46321
@@ -96174,7 +98143,7 @@ _G.pg.base.equip_data_statistics[46321] = {
 }
 _G.pg.base.equip_data_statistics[46322] = {
 	id = 46322,
-	damage = "53/回",
+	damage = "53<[WAVE]>",
 	base = 46320,
 	weapon_id = {
 		46322
@@ -96183,7 +98152,7 @@ _G.pg.base.equip_data_statistics[46322] = {
 }
 _G.pg.base.equip_data_statistics[46323] = {
 	id = 46323,
-	damage = "59/回",
+	damage = "59<[WAVE]>",
 	base = 46320,
 	weapon_id = {
 		46323
@@ -96192,7 +98161,7 @@ _G.pg.base.equip_data_statistics[46323] = {
 }
 _G.pg.base.equip_data_statistics[46324] = {
 	id = 46324,
-	damage = "65/回",
+	damage = "65<[WAVE]>",
 	base = 46320,
 	weapon_id = {
 		46324
@@ -96201,7 +98170,7 @@ _G.pg.base.equip_data_statistics[46324] = {
 }
 _G.pg.base.equip_data_statistics[46325] = {
 	id = 46325,
-	damage = "71/回",
+	damage = "71<[WAVE]>",
 	base = 46320,
 	weapon_id = {
 		46325
@@ -96210,7 +98179,7 @@ _G.pg.base.equip_data_statistics[46325] = {
 }
 _G.pg.base.equip_data_statistics[46326] = {
 	id = 46326,
-	damage = "77/回",
+	damage = "77<[WAVE]>",
 	base = 46320,
 	weapon_id = {
 		46326
@@ -96219,7 +98188,7 @@ _G.pg.base.equip_data_statistics[46326] = {
 }
 _G.pg.base.equip_data_statistics[46327] = {
 	id = 46327,
-	damage = "83/回",
+	damage = "83<[WAVE]>",
 	base = 46320,
 	weapon_id = {
 		46327
@@ -96228,7 +98197,7 @@ _G.pg.base.equip_data_statistics[46327] = {
 }
 _G.pg.base.equip_data_statistics[46328] = {
 	id = 46328,
-	damage = "89/回",
+	damage = "89<[WAVE]>",
 	base = 46320,
 	weapon_id = {
 		46328
@@ -96237,7 +98206,7 @@ _G.pg.base.equip_data_statistics[46328] = {
 }
 _G.pg.base.equip_data_statistics[46329] = {
 	id = 46329,
-	damage = "95/回",
+	damage = "95<[WAVE]>",
 	base = 46320,
 	weapon_id = {
 		46329
@@ -96246,7 +98215,7 @@ _G.pg.base.equip_data_statistics[46329] = {
 }
 _G.pg.base.equip_data_statistics[46330] = {
 	id = 46330,
-	damage = "102/回",
+	damage = "102<[WAVE]>",
 	base = 46320,
 	weapon_id = {
 		46330
@@ -96256,11 +98225,11 @@ _G.pg.base.equip_data_statistics[46330] = {
 _G.pg.base.equip_data_statistics[46340] = {
 	tech = 3,
 	name = "105mmSKC連装高角砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "対空火器・105mmSKC高角砲",
 	ammo = 5,
-	damage = "49/回",
+	damage = "49<[WAVE]>",
 	nationality = 4,
 	rarity = 5,
 	id = 46340,
@@ -96322,7 +98291,7 @@ _G.pg.base.equip_data_statistics[46340] = {
 }
 _G.pg.base.equip_data_statistics[46341] = {
 	id = 46341,
-	damage = "56/回",
+	damage = "56<[WAVE]>",
 	base = 46340,
 	weapon_id = {
 		46341
@@ -96331,7 +98300,7 @@ _G.pg.base.equip_data_statistics[46341] = {
 }
 _G.pg.base.equip_data_statistics[46342] = {
 	id = 46342,
-	damage = "63/回",
+	damage = "63<[WAVE]>",
 	base = 46340,
 	weapon_id = {
 		46342
@@ -96340,7 +98309,7 @@ _G.pg.base.equip_data_statistics[46342] = {
 }
 _G.pg.base.equip_data_statistics[46343] = {
 	id = 46343,
-	damage = "70/回",
+	damage = "70<[WAVE]>",
 	base = 46340,
 	weapon_id = {
 		46343
@@ -96349,7 +98318,7 @@ _G.pg.base.equip_data_statistics[46343] = {
 }
 _G.pg.base.equip_data_statistics[46344] = {
 	id = 46344,
-	damage = "77/回",
+	damage = "77<[WAVE]>",
 	base = 46340,
 	weapon_id = {
 		46344
@@ -96358,7 +98327,7 @@ _G.pg.base.equip_data_statistics[46344] = {
 }
 _G.pg.base.equip_data_statistics[46345] = {
 	id = 46345,
-	damage = "84/回",
+	damage = "84<[WAVE]>",
 	base = 46340,
 	weapon_id = {
 		46345
@@ -96367,7 +98336,7 @@ _G.pg.base.equip_data_statistics[46345] = {
 }
 _G.pg.base.equip_data_statistics[46346] = {
 	id = 46346,
-	damage = "91/回",
+	damage = "91<[WAVE]>",
 	base = 46340,
 	weapon_id = {
 		46346
@@ -96376,7 +98345,7 @@ _G.pg.base.equip_data_statistics[46346] = {
 }
 _G.pg.base.equip_data_statistics[46347] = {
 	id = 46347,
-	damage = "98/回",
+	damage = "98<[WAVE]>",
 	base = 46340,
 	weapon_id = {
 		46347
@@ -96385,7 +98354,7 @@ _G.pg.base.equip_data_statistics[46347] = {
 }
 _G.pg.base.equip_data_statistics[46348] = {
 	id = 46348,
-	damage = "106/回",
+	damage = "106<[WAVE]>",
 	base = 46340,
 	weapon_id = {
 		46348
@@ -96394,7 +98363,7 @@ _G.pg.base.equip_data_statistics[46348] = {
 }
 _G.pg.base.equip_data_statistics[46349] = {
 	id = 46349,
-	damage = "114/回",
+	damage = "114<[WAVE]>",
 	base = 46340,
 	weapon_id = {
 		46349
@@ -96403,7 +98372,7 @@ _G.pg.base.equip_data_statistics[46349] = {
 }
 _G.pg.base.equip_data_statistics[46350] = {
 	id = 46350,
-	damage = "122/回",
+	damage = "122<[WAVE]>",
 	base = 46340,
 	weapon_id = {
 		46350
@@ -96413,7 +98382,7 @@ _G.pg.base.equip_data_statistics[46350] = {
 _G.pg.base.equip_data_statistics[46351] = {
 	id = 46351,
 	anti_siren = 100,
-	damage = "122/回",
+	damage = "122<[WAVE]>",
 	base = 46340,
 	weapon_id = {
 		46351
@@ -96423,7 +98392,7 @@ _G.pg.base.equip_data_statistics[46351] = {
 _G.pg.base.equip_data_statistics[46352] = {
 	id = 46352,
 	anti_siren = 200,
-	damage = "122/回",
+	damage = "122<[WAVE]>",
 	base = 46340,
 	weapon_id = {
 		46352
@@ -96433,7 +98402,7 @@ _G.pg.base.equip_data_statistics[46352] = {
 _G.pg.base.equip_data_statistics[46353] = {
 	id = 46353,
 	anti_siren = 300,
-	damage = "122/回",
+	damage = "122<[WAVE]>",
 	base = 46340,
 	weapon_id = {
 		46353
@@ -96443,11 +98412,11 @@ _G.pg.base.equip_data_statistics[46353] = {
 _G.pg.base.equip_data_statistics[46360] = {
 	tech = 0,
 	name = "105mmSKC高角連装砲改修型",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "55/回",
+	damage = "55<[WAVE]>",
 	nationality = 4,
 	rarity = 5,
 	id = 46360,
@@ -96509,7 +98478,7 @@ _G.pg.base.equip_data_statistics[46360] = {
 }
 _G.pg.base.equip_data_statistics[46361] = {
 	id = 46361,
-	damage = "62/回",
+	damage = "62<[WAVE]>",
 	base = 46360,
 	weapon_id = {
 		46361
@@ -96518,7 +98487,7 @@ _G.pg.base.equip_data_statistics[46361] = {
 }
 _G.pg.base.equip_data_statistics[46362] = {
 	id = 46362,
-	damage = "69/回",
+	damage = "69<[WAVE]>",
 	base = 46360,
 	weapon_id = {
 		46362
@@ -96527,7 +98496,7 @@ _G.pg.base.equip_data_statistics[46362] = {
 }
 _G.pg.base.equip_data_statistics[46363] = {
 	id = 46363,
-	damage = "76/回",
+	damage = "76<[WAVE]>",
 	base = 46360,
 	weapon_id = {
 		46363
@@ -96536,7 +98505,7 @@ _G.pg.base.equip_data_statistics[46363] = {
 }
 _G.pg.base.equip_data_statistics[46364] = {
 	id = 46364,
-	damage = "83/回",
+	damage = "83<[WAVE]>",
 	base = 46360,
 	weapon_id = {
 		46364
@@ -96545,7 +98514,7 @@ _G.pg.base.equip_data_statistics[46364] = {
 }
 _G.pg.base.equip_data_statistics[46365] = {
 	id = 46365,
-	damage = "90/回",
+	damage = "90<[WAVE]>",
 	base = 46360,
 	weapon_id = {
 		46365
@@ -96554,7 +98523,7 @@ _G.pg.base.equip_data_statistics[46365] = {
 }
 _G.pg.base.equip_data_statistics[46366] = {
 	id = 46366,
-	damage = "97/回",
+	damage = "97<[WAVE]>",
 	base = 46360,
 	weapon_id = {
 		46366
@@ -96563,7 +98532,7 @@ _G.pg.base.equip_data_statistics[46366] = {
 }
 _G.pg.base.equip_data_statistics[46367] = {
 	id = 46367,
-	damage = "104/回",
+	damage = "104<[WAVE]>",
 	base = 46360,
 	weapon_id = {
 		46367
@@ -96572,7 +98541,7 @@ _G.pg.base.equip_data_statistics[46367] = {
 }
 _G.pg.base.equip_data_statistics[46368] = {
 	id = 46368,
-	damage = "112/回",
+	damage = "112<[WAVE]>",
 	base = 46360,
 	weapon_id = {
 		46368
@@ -96581,7 +98550,7 @@ _G.pg.base.equip_data_statistics[46368] = {
 }
 _G.pg.base.equip_data_statistics[46369] = {
 	id = 46369,
-	damage = "120/回",
+	damage = "120<[WAVE]>",
 	base = 46360,
 	weapon_id = {
 		46369
@@ -96590,7 +98559,7 @@ _G.pg.base.equip_data_statistics[46369] = {
 }
 _G.pg.base.equip_data_statistics[46370] = {
 	id = 46370,
-	damage = "128/回",
+	damage = "128<[WAVE]>",
 	base = 46360,
 	weapon_id = {
 		46370
@@ -96600,7 +98569,7 @@ _G.pg.base.equip_data_statistics[46370] = {
 _G.pg.base.equip_data_statistics[46371] = {
 	id = 46371,
 	anti_siren = 100,
-	damage = "128/回",
+	damage = "128<[WAVE]>",
 	base = 46360,
 	weapon_id = {
 		46371
@@ -96610,7 +98579,7 @@ _G.pg.base.equip_data_statistics[46371] = {
 _G.pg.base.equip_data_statistics[46372] = {
 	id = 46372,
 	anti_siren = 200,
-	damage = "128/回",
+	damage = "128<[WAVE]>",
 	base = 46360,
 	weapon_id = {
 		46372
@@ -96620,7 +98589,7 @@ _G.pg.base.equip_data_statistics[46372] = {
 _G.pg.base.equip_data_statistics[46373] = {
 	id = 46373,
 	anti_siren = 300,
-	damage = "128/回",
+	damage = "128<[WAVE]>",
 	base = 46360,
 	weapon_id = {
 		46373
@@ -96630,11 +98599,11 @@ _G.pg.base.equip_data_statistics[46373] = {
 _G.pg.base.equip_data_statistics[46380] = {
 	tech = 0,
 	name = "105mmSKC高角連装砲改修型(時限信管)",
-	speciality = "遠距離",
+	speciality = "<[LRG]>",
 	type = 21,
 	descrip = "说明未填写",
 	ammo = 5,
-	damage = "71/回",
+	damage = "71<[WAVE]>",
 	nationality = 4,
 	rarity = 5,
 	id = 46380,
@@ -96686,7 +98655,7 @@ _G.pg.base.equip_data_statistics[46380] = {
 }
 _G.pg.base.equip_data_statistics[46381] = {
 	id = 46381,
-	damage = "80/回",
+	damage = "80<[WAVE]>",
 	base = 46380,
 	weapon_id = {
 		46381
@@ -96694,7 +98663,7 @@ _G.pg.base.equip_data_statistics[46381] = {
 }
 _G.pg.base.equip_data_statistics[46382] = {
 	id = 46382,
-	damage = "90/回",
+	damage = "90<[WAVE]>",
 	base = 46380,
 	weapon_id = {
 		46382
@@ -96702,7 +98671,7 @@ _G.pg.base.equip_data_statistics[46382] = {
 }
 _G.pg.base.equip_data_statistics[46383] = {
 	id = 46383,
-	damage = "99/回",
+	damage = "99<[WAVE]>",
 	base = 46380,
 	weapon_id = {
 		46383
@@ -96710,7 +98679,7 @@ _G.pg.base.equip_data_statistics[46383] = {
 }
 _G.pg.base.equip_data_statistics[46384] = {
 	id = 46384,
-	damage = "108/回",
+	damage = "108<[WAVE]>",
 	base = 46380,
 	weapon_id = {
 		46384
@@ -96718,7 +98687,7 @@ _G.pg.base.equip_data_statistics[46384] = {
 }
 _G.pg.base.equip_data_statistics[46385] = {
 	id = 46385,
-	damage = "117/回",
+	damage = "117<[WAVE]>",
 	base = 46380,
 	weapon_id = {
 		46385
@@ -96726,7 +98695,7 @@ _G.pg.base.equip_data_statistics[46385] = {
 }
 _G.pg.base.equip_data_statistics[46386] = {
 	id = 46386,
-	damage = "126/回",
+	damage = "126<[WAVE]>",
 	base = 46380,
 	weapon_id = {
 		46386
@@ -96734,7 +98703,7 @@ _G.pg.base.equip_data_statistics[46386] = {
 }
 _G.pg.base.equip_data_statistics[46387] = {
 	id = 46387,
-	damage = "135/回",
+	damage = "135<[WAVE]>",
 	base = 46380,
 	weapon_id = {
 		46387
@@ -96742,7 +98711,7 @@ _G.pg.base.equip_data_statistics[46387] = {
 }
 _G.pg.base.equip_data_statistics[46388] = {
 	id = 46388,
-	damage = "146/回",
+	damage = "146<[WAVE]>",
 	base = 46380,
 	weapon_id = {
 		46388
@@ -96750,7 +98719,7 @@ _G.pg.base.equip_data_statistics[46388] = {
 }
 _G.pg.base.equip_data_statistics[46389] = {
 	id = 46389,
-	damage = "156/回",
+	damage = "156<[WAVE]>",
 	base = 46380,
 	weapon_id = {
 		46389
@@ -96758,7 +98727,7 @@ _G.pg.base.equip_data_statistics[46389] = {
 }
 _G.pg.base.equip_data_statistics[46390] = {
 	id = 46390,
-	damage = "167/回",
+	damage = "167<[WAVE]>",
 	base = 46380,
 	weapon_id = {
 		46390
@@ -96767,7 +98736,7 @@ _G.pg.base.equip_data_statistics[46390] = {
 _G.pg.base.equip_data_statistics[46391] = {
 	id = 46391,
 	anti_siren = 100,
-	damage = "167/回",
+	damage = "167<[WAVE]>",
 	base = 46380,
 	weapon_id = {
 		46391
@@ -96776,7 +98745,7 @@ _G.pg.base.equip_data_statistics[46391] = {
 _G.pg.base.equip_data_statistics[46392] = {
 	id = 46392,
 	anti_siren = 200,
-	damage = "167/回",
+	damage = "167<[WAVE]>",
 	base = 46380,
 	weapon_id = {
 		46392
@@ -96785,7 +98754,7 @@ _G.pg.base.equip_data_statistics[46392] = {
 _G.pg.base.equip_data_statistics[46393] = {
 	id = 46393,
 	anti_siren = 300,
-	damage = "167/回",
+	damage = "167<[WAVE]>",
 	base = 46380,
 	weapon_id = {
 		46393
@@ -96794,11 +98763,11 @@ _G.pg.base.equip_data_statistics[46393] = {
 _G.pg.base.equip_data_statistics[46400] = {
 	tech = 0,
 	name = "試作型四連装30mm機関砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "说明未填写",
 	ammo = 5,
-	damage = "35/回",
+	damage = "35<[WAVE]>",
 	nationality = 4,
 	rarity = 5,
 	id = 46400,
@@ -96860,7 +98829,7 @@ _G.pg.base.equip_data_statistics[46400] = {
 }
 _G.pg.base.equip_data_statistics[46401] = {
 	id = 46401,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 46400,
 	weapon_id = {
 		46401
@@ -96869,7 +98838,7 @@ _G.pg.base.equip_data_statistics[46401] = {
 }
 _G.pg.base.equip_data_statistics[46402] = {
 	id = 46402,
-	damage = "45/回",
+	damage = "45<[WAVE]>",
 	base = 46400,
 	weapon_id = {
 		46402
@@ -96878,7 +98847,7 @@ _G.pg.base.equip_data_statistics[46402] = {
 }
 _G.pg.base.equip_data_statistics[46403] = {
 	id = 46403,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 46400,
 	weapon_id = {
 		46403
@@ -96887,7 +98856,7 @@ _G.pg.base.equip_data_statistics[46403] = {
 }
 _G.pg.base.equip_data_statistics[46404] = {
 	id = 46404,
-	damage = "56/回",
+	damage = "56<[WAVE]>",
 	base = 46400,
 	weapon_id = {
 		46404
@@ -96896,7 +98865,7 @@ _G.pg.base.equip_data_statistics[46404] = {
 }
 _G.pg.base.equip_data_statistics[46405] = {
 	id = 46405,
-	damage = "62/回",
+	damage = "62<[WAVE]>",
 	base = 46400,
 	weapon_id = {
 		46405
@@ -96905,7 +98874,7 @@ _G.pg.base.equip_data_statistics[46405] = {
 }
 _G.pg.base.equip_data_statistics[46406] = {
 	id = 46406,
-	damage = "68/回",
+	damage = "68<[WAVE]>",
 	base = 46400,
 	weapon_id = {
 		46406
@@ -96914,7 +98883,7 @@ _G.pg.base.equip_data_statistics[46406] = {
 }
 _G.pg.base.equip_data_statistics[46407] = {
 	id = 46407,
-	damage = "74/回",
+	damage = "74<[WAVE]>",
 	base = 46400,
 	weapon_id = {
 		46407
@@ -96923,7 +98892,7 @@ _G.pg.base.equip_data_statistics[46407] = {
 }
 _G.pg.base.equip_data_statistics[46408] = {
 	id = 46408,
-	damage = "80/回",
+	damage = "80<[WAVE]>",
 	base = 46400,
 	weapon_id = {
 		46408
@@ -96932,7 +98901,7 @@ _G.pg.base.equip_data_statistics[46408] = {
 }
 _G.pg.base.equip_data_statistics[46409] = {
 	id = 46409,
-	damage = "86/回",
+	damage = "86<[WAVE]>",
 	base = 46400,
 	weapon_id = {
 		46409
@@ -96941,7 +98910,7 @@ _G.pg.base.equip_data_statistics[46409] = {
 }
 _G.pg.base.equip_data_statistics[46410] = {
 	id = 46410,
-	damage = "92/回",
+	damage = "92<[WAVE]>",
 	base = 46400,
 	weapon_id = {
 		46410
@@ -96951,7 +98920,7 @@ _G.pg.base.equip_data_statistics[46410] = {
 _G.pg.base.equip_data_statistics[46411] = {
 	id = 46411,
 	anti_siren = 100,
-	damage = "92/回",
+	damage = "92<[WAVE]>",
 	base = 46400,
 	weapon_id = {
 		46411
@@ -96961,7 +98930,7 @@ _G.pg.base.equip_data_statistics[46411] = {
 _G.pg.base.equip_data_statistics[46412] = {
 	id = 46412,
 	anti_siren = 200,
-	damage = "92/回",
+	damage = "92<[WAVE]>",
 	base = 46400,
 	weapon_id = {
 		46412
@@ -96971,7 +98940,7 @@ _G.pg.base.equip_data_statistics[46412] = {
 _G.pg.base.equip_data_statistics[46413] = {
 	id = 46413,
 	anti_siren = 300,
-	damage = "92/回",
+	damage = "92<[WAVE]>",
 	base = 46400,
 	weapon_id = {
 		46413
@@ -96981,11 +98950,11 @@ _G.pg.base.equip_data_statistics[46413] = {
 _G.pg.base.equip_data_statistics[46420] = {
 	tech = 0,
 	name = "試作型55mm Gerät  58対空砲",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "说明未填写",
 	ammo = 5,
-	damage = "37/回",
+	damage = "37<[WAVE]>",
 	nationality = 4,
 	rarity = 5,
 	id = 46420,
@@ -97047,7 +99016,7 @@ _G.pg.base.equip_data_statistics[46420] = {
 }
 _G.pg.base.equip_data_statistics[46421] = {
 	id = 46421,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 46420,
 	weapon_id = {
 		46421
@@ -97056,7 +99025,7 @@ _G.pg.base.equip_data_statistics[46421] = {
 }
 _G.pg.base.equip_data_statistics[46422] = {
 	id = 46422,
-	damage = "43/回",
+	damage = "43<[WAVE]>",
 	base = 46420,
 	weapon_id = {
 		46422
@@ -97065,7 +99034,7 @@ _G.pg.base.equip_data_statistics[46422] = {
 }
 _G.pg.base.equip_data_statistics[46423] = {
 	id = 46423,
-	damage = "46/回",
+	damage = "46<[WAVE]>",
 	base = 46420,
 	weapon_id = {
 		46423
@@ -97074,7 +99043,7 @@ _G.pg.base.equip_data_statistics[46423] = {
 }
 _G.pg.base.equip_data_statistics[46424] = {
 	id = 46424,
-	damage = "49/回",
+	damage = "49<[WAVE]>",
 	base = 46420,
 	weapon_id = {
 		46424
@@ -97083,7 +99052,7 @@ _G.pg.base.equip_data_statistics[46424] = {
 }
 _G.pg.base.equip_data_statistics[46425] = {
 	id = 46425,
-	damage = "52/回",
+	damage = "52<[WAVE]>",
 	base = 46420,
 	weapon_id = {
 		46425
@@ -97092,7 +99061,7 @@ _G.pg.base.equip_data_statistics[46425] = {
 }
 _G.pg.base.equip_data_statistics[46426] = {
 	id = 46426,
-	damage = "55/回",
+	damage = "55<[WAVE]>",
 	base = 46420,
 	weapon_id = {
 		46426
@@ -97101,7 +99070,7 @@ _G.pg.base.equip_data_statistics[46426] = {
 }
 _G.pg.base.equip_data_statistics[46427] = {
 	id = 46427,
-	damage = "58/回",
+	damage = "58<[WAVE]>",
 	base = 46420,
 	weapon_id = {
 		46427
@@ -97110,7 +99079,7 @@ _G.pg.base.equip_data_statistics[46427] = {
 }
 _G.pg.base.equip_data_statistics[46428] = {
 	id = 46428,
-	damage = "61/回",
+	damage = "61<[WAVE]>",
 	base = 46420,
 	weapon_id = {
 		46428
@@ -97119,7 +99088,7 @@ _G.pg.base.equip_data_statistics[46428] = {
 }
 _G.pg.base.equip_data_statistics[46429] = {
 	id = 46429,
-	damage = "64/回",
+	damage = "64<[WAVE]>",
 	base = 46420,
 	weapon_id = {
 		46429
@@ -97128,7 +99097,7 @@ _G.pg.base.equip_data_statistics[46429] = {
 }
 _G.pg.base.equip_data_statistics[46430] = {
 	id = 46430,
-	damage = "68/回",
+	damage = "68<[WAVE]>",
 	base = 46420,
 	weapon_id = {
 		46430
@@ -97138,7 +99107,7 @@ _G.pg.base.equip_data_statistics[46430] = {
 _G.pg.base.equip_data_statistics[46431] = {
 	id = 46431,
 	anti_siren = 100,
-	damage = "68/回",
+	damage = "68<[WAVE]>",
 	base = 46420,
 	weapon_id = {
 		46431
@@ -97148,7 +99117,7 @@ _G.pg.base.equip_data_statistics[46431] = {
 _G.pg.base.equip_data_statistics[46432] = {
 	id = 46432,
 	anti_siren = 200,
-	damage = "68/回",
+	damage = "68<[WAVE]>",
 	base = 46420,
 	weapon_id = {
 		46432
@@ -97158,7 +99127,7 @@ _G.pg.base.equip_data_statistics[46432] = {
 _G.pg.base.equip_data_statistics[46433] = {
 	id = 46433,
 	anti_siren = 300,
-	damage = "68/回",
+	damage = "68<[WAVE]>",
 	base = 46420,
 	weapon_id = {
 		46433
@@ -97168,7 +99137,7 @@ _G.pg.base.equip_data_statistics[46433] = {
 _G.pg.base.equip_data_statistics[47000] = {
 	rarity = 2,
 	name = "BF-109T艦上戦闘機",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 1,
 	ammo = 5,
@@ -97279,7 +99248,7 @@ _G.pg.base.equip_data_statistics[47003] = {
 _G.pg.base.equip_data_statistics[47020] = {
 	rarity = 3,
 	name = "BF-109T艦上戦闘機",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 2,
 	ammo = 5,
@@ -97447,7 +99416,7 @@ _G.pg.base.equip_data_statistics[47026] = {
 _G.pg.base.equip_data_statistics[47040] = {
 	rarity = 4,
 	name = "BF-109T艦上戦闘機",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -97711,7 +99680,7 @@ _G.pg.base.equip_data_statistics[47051] = {
 _G.pg.base.equip_data_statistics[47060] = {
 	rarity = 3,
 	name = "Ar-197",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -97930,7 +99899,7 @@ _G.pg.base.equip_data_statistics[47067] = {
 _G.pg.base.equip_data_statistics[47080] = {
 	rarity = 4,
 	name = "試作型FW-190 A-5(艦載機型）",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -98242,7 +100211,7 @@ _G.pg.base.equip_data_statistics[47091] = {
 _G.pg.base.equip_data_statistics[47100] = {
 	rarity = 3,
 	name = "Me-155A艦上戦闘機",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 1,
 	ammo = 5,
@@ -98410,7 +100379,7 @@ _G.pg.base.equip_data_statistics[47106] = {
 _G.pg.base.equip_data_statistics[47120] = {
 	rarity = 4,
 	name = "Me-155A艦上戦闘機",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 2,
 	ammo = 5,
@@ -98654,7 +100623,7 @@ _G.pg.base.equip_data_statistics[47130] = {
 _G.pg.base.equip_data_statistics[47140] = {
 	rarity = 5,
 	name = "Me-155A艦上戦闘機",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -98958,7 +100927,7 @@ _G.pg.base.equip_data_statistics[47153] = {
 _G.pg.base.equip_data_statistics[47160] = {
 	rarity = 5,
 	name = "試作型BF-109G（特別計画艦仕様）",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -99305,7 +101274,7 @@ _G.pg.base.equip_data_statistics[47173] = {
 _G.pg.base.equip_data_statistics[47180] = {
 	rarity = 5,
 	name = "試作型FW-190 A-6/R6（艦載機型）",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -99708,7 +101677,7 @@ _G.pg.base.equip_data_statistics[47193] = {
 _G.pg.base.equip_data_statistics[48000] = {
 	rarity = 3,
 	name = "Ar-195",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 0,
 	ammo = 5,
@@ -99887,7 +101856,7 @@ _G.pg.base.equip_data_statistics[48007] = {
 _G.pg.base.equip_data_statistics[48020] = {
 	rarity = 4,
 	name = "Fi-167",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 0,
 	ammo = 5,
@@ -100139,7 +102108,7 @@ _G.pg.base.equip_data_statistics[48031] = {
 _G.pg.base.equip_data_statistics[48040] = {
 	rarity = 5,
 	name = "Ju-87 D-4",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 0,
 	ammo = 5,
@@ -100429,7 +102398,7 @@ _G.pg.base.equip_data_statistics[48053] = {
 _G.pg.base.equip_data_statistics[49000] = {
 	rarity = 2,
 	name = "Ju-87C急降下爆撃機",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 1,
 	ammo = 5,
@@ -100552,7 +102521,7 @@ _G.pg.base.equip_data_statistics[49003] = {
 _G.pg.base.equip_data_statistics[49020] = {
 	rarity = 3,
 	name = "Ju-87C急降下爆撃機",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 2,
 	ammo = 5,
@@ -100741,7 +102710,7 @@ _G.pg.base.equip_data_statistics[49026] = {
 _G.pg.base.equip_data_statistics[49040] = {
 	rarity = 4,
 	name = "Ju-87C急降下爆撃機",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 3,
 	ammo = 5,
@@ -101041,7 +103010,7 @@ _G.pg.base.equip_data_statistics[49051] = {
 _G.pg.base.equip_data_statistics[49060] = {
 	rarity = 3,
 	name = "He-50b",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 0,
 	ammo = 5,
@@ -101220,7 +103189,7 @@ _G.pg.base.equip_data_statistics[49067] = {
 _G.pg.base.equip_data_statistics[54010] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -101289,7 +103258,7 @@ _G.pg.base.equip_data_statistics[54015] = {
 _G.pg.base.equip_data_statistics[60001] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -101334,7 +103303,7 @@ _G.pg.base.equip_data_statistics[60003] = {
 _G.pg.base.equip_data_statistics[60011] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -101379,7 +103348,7 @@ _G.pg.base.equip_data_statistics[60013] = {
 _G.pg.base.equip_data_statistics[60021] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -101424,7 +103393,7 @@ _G.pg.base.equip_data_statistics[60023] = {
 _G.pg.base.equip_data_statistics[60031] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -101469,7 +103438,7 @@ _G.pg.base.equip_data_statistics[60033] = {
 _G.pg.base.equip_data_statistics[60041] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -101514,7 +103483,7 @@ _G.pg.base.equip_data_statistics[60043] = {
 _G.pg.base.equip_data_statistics[60051] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -101559,7 +103528,7 @@ _G.pg.base.equip_data_statistics[60053] = {
 _G.pg.base.equip_data_statistics[60061] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -101604,7 +103573,7 @@ _G.pg.base.equip_data_statistics[60063] = {
 _G.pg.base.equip_data_statistics[60071] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -101649,7 +103618,7 @@ _G.pg.base.equip_data_statistics[60073] = {
 _G.pg.base.equip_data_statistics[60081] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -101694,7 +103663,7 @@ _G.pg.base.equip_data_statistics[60083] = {
 _G.pg.base.equip_data_statistics[60091] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -101731,7 +103700,7 @@ _G.pg.base.equip_data_statistics[60092] = {
 _G.pg.base.equip_data_statistics[60101] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -101776,7 +103745,7 @@ _G.pg.base.equip_data_statistics[60103] = {
 _G.pg.base.equip_data_statistics[60111] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -101821,7 +103790,7 @@ _G.pg.base.equip_data_statistics[60113] = {
 _G.pg.base.equip_data_statistics[60121] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -101866,7 +103835,7 @@ _G.pg.base.equip_data_statistics[60123] = {
 _G.pg.base.equip_data_statistics[60131] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -101911,7 +103880,7 @@ _G.pg.base.equip_data_statistics[60133] = {
 _G.pg.base.equip_data_statistics[60141] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -101956,7 +103925,7 @@ _G.pg.base.equip_data_statistics[60143] = {
 _G.pg.base.equip_data_statistics[60151] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102001,7 +103970,7 @@ _G.pg.base.equip_data_statistics[60153] = {
 _G.pg.base.equip_data_statistics[60161] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102046,7 +104015,7 @@ _G.pg.base.equip_data_statistics[60163] = {
 _G.pg.base.equip_data_statistics[60171] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102091,7 +104060,7 @@ _G.pg.base.equip_data_statistics[60173] = {
 _G.pg.base.equip_data_statistics[60181] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102136,7 +104105,7 @@ _G.pg.base.equip_data_statistics[60183] = {
 _G.pg.base.equip_data_statistics[60191] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102181,7 +104150,7 @@ _G.pg.base.equip_data_statistics[60193] = {
 _G.pg.base.equip_data_statistics[60201] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102226,7 +104195,7 @@ _G.pg.base.equip_data_statistics[60203] = {
 _G.pg.base.equip_data_statistics[60211] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102271,7 +104240,7 @@ _G.pg.base.equip_data_statistics[60213] = {
 _G.pg.base.equip_data_statistics[60221] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102316,7 +104285,7 @@ _G.pg.base.equip_data_statistics[60223] = {
 _G.pg.base.equip_data_statistics[60231] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102358,7 +104327,7 @@ _G.pg.base.equip_data_statistics[60231] = {
 _G.pg.base.equip_data_statistics[60232] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102400,7 +104369,7 @@ _G.pg.base.equip_data_statistics[60232] = {
 _G.pg.base.equip_data_statistics[60233] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102442,7 +104411,7 @@ _G.pg.base.equip_data_statistics[60233] = {
 _G.pg.base.equip_data_statistics[60234] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102479,7 +104448,7 @@ _G.pg.base.equip_data_statistics[60235] = {
 _G.pg.base.equip_data_statistics[60236] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102516,7 +104485,7 @@ _G.pg.base.equip_data_statistics[60237] = {
 _G.pg.base.equip_data_statistics[60238] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102553,7 +104522,7 @@ _G.pg.base.equip_data_statistics[60239] = {
 _G.pg.base.equip_data_statistics[60241] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102598,7 +104567,7 @@ _G.pg.base.equip_data_statistics[60243] = {
 _G.pg.base.equip_data_statistics[60251] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102643,7 +104612,7 @@ _G.pg.base.equip_data_statistics[60253] = {
 _G.pg.base.equip_data_statistics[60261] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102688,7 +104657,7 @@ _G.pg.base.equip_data_statistics[60263] = {
 _G.pg.base.equip_data_statistics[60271] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102733,7 +104702,7 @@ _G.pg.base.equip_data_statistics[60273] = {
 _G.pg.base.equip_data_statistics[60281] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102778,7 +104747,7 @@ _G.pg.base.equip_data_statistics[60283] = {
 _G.pg.base.equip_data_statistics[60291] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102823,7 +104792,7 @@ _G.pg.base.equip_data_statistics[60293] = {
 _G.pg.base.equip_data_statistics[60301] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102861,7 +104830,7 @@ _G.pg.base.equip_data_statistics[60302] = {
 _G.pg.base.equip_data_statistics[60311] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102906,7 +104875,7 @@ _G.pg.base.equip_data_statistics[60313] = {
 _G.pg.base.equip_data_statistics[60321] = {
 	type = 99,
 	name = "航空攻击展示-埃塞克斯I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -102955,7 +104924,7 @@ _G.pg.base.equip_data_statistics[60323] = {
 _G.pg.base.equip_data_statistics[60331] = {
 	type = 99,
 	name = "航空攻击展示-大凤I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103004,7 +104973,7 @@ _G.pg.base.equip_data_statistics[60333] = {
 _G.pg.base.equip_data_statistics[60341] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103049,7 +105018,7 @@ _G.pg.base.equip_data_statistics[60343] = {
 _G.pg.base.equip_data_statistics[60351] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103094,7 +105063,7 @@ _G.pg.base.equip_data_statistics[60353] = {
 _G.pg.base.equip_data_statistics[60361] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103139,7 +105108,7 @@ _G.pg.base.equip_data_statistics[60363] = {
 _G.pg.base.equip_data_statistics[60371] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103184,7 +105153,7 @@ _G.pg.base.equip_data_statistics[60373] = {
 _G.pg.base.equip_data_statistics[60381] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103229,7 +105198,7 @@ _G.pg.base.equip_data_statistics[60383] = {
 _G.pg.base.equip_data_statistics[60391] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103274,7 +105243,7 @@ _G.pg.base.equip_data_statistics[60393] = {
 _G.pg.base.equip_data_statistics[60401] = {
 	type = 99,
 	name = "航空攻击展示-爱酱I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103321,7 +105290,7 @@ _G.pg.base.equip_data_statistics[60403] = {
 _G.pg.base.equip_data_statistics[60411] = {
 	type = 99,
 	name = "航空攻击展示-小齐柏林I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103368,7 +105337,7 @@ _G.pg.base.equip_data_statistics[60413] = {
 _G.pg.base.equip_data_statistics[60421] = {
 	type = 99,
 	name = "航空攻击展示-可畏I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103415,7 +105384,7 @@ _G.pg.base.equip_data_statistics[60423] = {
 _G.pg.base.equip_data_statistics[60431] = {
 	type = 99,
 	name = "航空攻击展示-时乃空I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103462,7 +105431,7 @@ _G.pg.base.equip_data_statistics[60433] = {
 _G.pg.base.equip_data_statistics[60441] = {
 	type = 99,
 	name = "航空攻击展示-紫咲诗音I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103509,7 +105478,7 @@ _G.pg.base.equip_data_statistics[60443] = {
 _G.pg.base.equip_data_statistics[60451] = {
 	type = 99,
 	name = "航空攻击展示-大神澪I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103556,7 +105525,7 @@ _G.pg.base.equip_data_statistics[60453] = {
 _G.pg.base.equip_data_statistics[60461] = {
 	type = 99,
 	name = "航空攻击展示-白上吹雪III",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103585,7 +105554,7 @@ _G.pg.base.equip_data_statistics[60461] = {
 _G.pg.base.equip_data_statistics[60471] = {
 	type = 99,
 	name = "航空攻击展示-龙凤I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103632,7 +105601,7 @@ _G.pg.base.equip_data_statistics[60473] = {
 _G.pg.base.equip_data_statistics[60491] = {
 	type = 99,
 	name = "航空攻击展示-卡萨布兰卡I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103679,7 +105648,7 @@ _G.pg.base.equip_data_statistics[60493] = {
 _G.pg.base.equip_data_statistics[60511] = {
 	type = 99,
 	name = "航空攻击展示-贝亚恩I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103726,7 +105695,7 @@ _G.pg.base.equip_data_statistics[60513] = {
 _G.pg.base.equip_data_statistics[60521] = {
 	type = 99,
 	name = "航空攻击展示-英仙座I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103773,7 +105742,7 @@ _G.pg.base.equip_data_statistics[60523] = {
 _G.pg.base.equip_data_statistics[60531] = {
 	type = 99,
 	name = "航空攻击展示-鹰I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103820,7 +105789,7 @@ _G.pg.base.equip_data_statistics[60533] = {
 _G.pg.base.equip_data_statistics[60541] = {
 	type = 99,
 	name = "航空攻击展示-千岁I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103867,7 +105836,7 @@ _G.pg.base.equip_data_statistics[60543] = {
 _G.pg.base.equip_data_statistics[60551] = {
 	type = 99,
 	name = "航空攻击展示-千代田I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103914,7 +105883,7 @@ _G.pg.base.equip_data_statistics[60553] = {
 _G.pg.base.equip_data_statistics[60561] = {
 	type = 99,
 	name = "航空攻击展示-信浓I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -103961,7 +105930,7 @@ _G.pg.base.equip_data_statistics[60563] = {
 _G.pg.base.equip_data_statistics[60591] = {
 	type = 99,
 	name = "航空攻击展示-威悉I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104008,7 +105977,7 @@ _G.pg.base.equip_data_statistics[60593] = {
 _G.pg.base.equip_data_statistics[60601] = {
 	type = 99,
 	name = "航空攻击展示-彼得史特拉塞I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104055,7 +106024,7 @@ _G.pg.base.equip_data_statistics[60603] = {
 _G.pg.base.equip_data_statistics[60641] = {
 	type = 99,
 	name = "航空攻击展示-天鹰I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104102,7 +106071,7 @@ _G.pg.base.equip_data_statistics[60643] = {
 _G.pg.base.equip_data_statistics[60671] = {
 	type = 99,
 	name = "航空攻击展示-白龙I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104149,7 +106118,7 @@ _G.pg.base.equip_data_statistics[60673] = {
 _G.pg.base.equip_data_statistics[60681] = {
 	type = 99,
 	name = "航空攻击展示-奥古斯特I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104196,7 +106165,7 @@ _G.pg.base.equip_data_statistics[60683] = {
 _G.pg.base.equip_data_statistics[60711] = {
 	type = 99,
 	name = "航空攻击展示-葛城I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104243,7 +106212,7 @@ _G.pg.base.equip_data_statistics[60713] = {
 _G.pg.base.equip_data_statistics[60751] = {
 	type = 99,
 	name = "航空攻击展示-镇海I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104290,7 +106259,7 @@ _G.pg.base.equip_data_statistics[60753] = {
 _G.pg.base.equip_data_statistics[60781] = {
 	type = 99,
 	name = "航空攻击展示-帝国I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104337,7 +106306,7 @@ _G.pg.base.equip_data_statistics[60783] = {
 _G.pg.base.equip_data_statistics[60831] = {
 	type = 99,
 	name = "航空攻击展示-霞飞I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104384,7 +106353,7 @@ _G.pg.base.equip_data_statistics[60833] = {
 _G.pg.base.equip_data_statistics[60851] = {
 	type = 99,
 	name = "航空攻击展示-契卡洛夫I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104431,7 +106400,7 @@ _G.pg.base.equip_data_statistics[60853] = {
 _G.pg.base.equip_data_statistics[60911] = {
 	type = 99,
 	name = "航空攻击展示-阿尔比恩I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104478,7 +106447,7 @@ _G.pg.base.equip_data_statistics[60913] = {
 _G.pg.base.equip_data_statistics[60921] = {
 	type = 99,
 	name = "航空攻击展示-华甲I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104525,7 +106494,7 @@ _G.pg.base.equip_data_statistics[60923] = {
 _G.pg.base.equip_data_statistics[60931] = {
 	type = 99,
 	name = "航空攻击展示-忒修斯I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104572,7 +106541,7 @@ _G.pg.base.equip_data_statistics[60933] = {
 _G.pg.base.equip_data_statistics[60941] = {
 	type = 99,
 	name = "航空攻击展示-定安I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104619,7 +106588,7 @@ _G.pg.base.equip_data_statistics[60943] = {
 _G.pg.base.equip_data_statistics[60951] = {
 	type = 99,
 	name = "航空攻击展示-怨仇I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104666,7 +106635,7 @@ _G.pg.base.equip_data_statistics[60953] = {
 _G.pg.base.equip_data_statistics[60981] = {
 	type = 99,
 	name = "航空攻击展示-露娜I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104713,7 +106682,7 @@ _G.pg.base.equip_data_statistics[60983] = {
 _G.pg.base.equip_data_statistics[61007] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104771,7 +106740,7 @@ _G.pg.base.equip_data_statistics[61009] = {
 _G.pg.base.equip_data_statistics[61010] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104829,7 +106798,7 @@ _G.pg.base.equip_data_statistics[61012] = {
 _G.pg.base.equip_data_statistics[61031] = {
 	type = 1,
 	name = "十姊妹展示",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104871,7 +106840,7 @@ _G.pg.base.equip_data_statistics[61031] = {
 _G.pg.base.equip_data_statistics[61041] = {
 	type = 1,
 	name = "夕星展示",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104913,7 +106882,7 @@ _G.pg.base.equip_data_statistics[61041] = {
 _G.pg.base.equip_data_statistics[61051] = {
 	type = 5,
 	name = "百合根1段展示",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104956,7 +106925,7 @@ _G.pg.base.equip_data_statistics[61051] = {
 _G.pg.base.equip_data_statistics[61052] = {
 	type = 5,
 	name = "百合根2段展示",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -104999,7 +106968,7 @@ _G.pg.base.equip_data_statistics[61052] = {
 _G.pg.base.equip_data_statistics[61053] = {
 	type = 5,
 	name = "百合根3段展示",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105042,7 +107011,7 @@ _G.pg.base.equip_data_statistics[61053] = {
 _G.pg.base.equip_data_statistics[61054] = {
 	type = 2,
 	name = "百合根4段展示",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105075,7 +107044,7 @@ _G.pg.base.equip_data_statistics[61054] = {
 _G.pg.base.equip_data_statistics[61061] = {
 	type = 99,
 	name = "航空攻击展示-埃塞克斯-约克城I",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105122,7 +107091,7 @@ _G.pg.base.equip_data_statistics[61063] = {
 _G.pg.base.equip_data_statistics[61071] = {
 	type = 99,
 	name = "航空攻击展示-奇尔沙治I",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105166,10 +107135,57 @@ _G.pg.base.equip_data_statistics[61073] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[61081] = {
+	type = 99,
+	name = "航空攻击展示-雪泉I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "航母空袭展示用",
+	id = 61081,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61081
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[61082] = {
+	id = 61082,
+	name = "航空攻击展示-雪泉II",
+	base = 61081,
+	weapon_id = {
+		61082
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[61083] = {
+	id = 61083,
+	name = "航空攻击展示-雪泉II",
+	base = 61081,
+	weapon_id = {
+		61083
+	},
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[61501] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105198,7 +107214,7 @@ _G.pg.base.equip_data_statistics[61501] = {
 _G.pg.base.equip_data_statistics[61503] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105227,7 +107243,7 @@ _G.pg.base.equip_data_statistics[61503] = {
 _G.pg.base.equip_data_statistics[61504] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105256,7 +107272,7 @@ _G.pg.base.equip_data_statistics[61504] = {
 _G.pg.base.equip_data_statistics[61505] = {
 	type = 99,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105285,7 +107301,7 @@ _G.pg.base.equip_data_statistics[61505] = {
 _G.pg.base.equip_data_statistics[66200] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105327,7 +107343,7 @@ _G.pg.base.equip_data_statistics[66200] = {
 _G.pg.base.equip_data_statistics[66220] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105369,7 +107385,7 @@ _G.pg.base.equip_data_statistics[66220] = {
 _G.pg.base.equip_data_statistics[70011] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105419,7 +107435,7 @@ _G.pg.base.equip_data_statistics[70012] = {
 _G.pg.base.equip_data_statistics[70021] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105469,7 +107485,7 @@ _G.pg.base.equip_data_statistics[70022] = {
 _G.pg.base.equip_data_statistics[70031] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105519,7 +107535,7 @@ _G.pg.base.equip_data_statistics[70032] = {
 _G.pg.base.equip_data_statistics[70041] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105569,7 +107585,7 @@ _G.pg.base.equip_data_statistics[70042] = {
 _G.pg.base.equip_data_statistics[70051] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105619,7 +107635,7 @@ _G.pg.base.equip_data_statistics[70052] = {
 _G.pg.base.equip_data_statistics[70061] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105669,7 +107685,7 @@ _G.pg.base.equip_data_statistics[70062] = {
 _G.pg.base.equip_data_statistics[70071] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105719,7 +107735,7 @@ _G.pg.base.equip_data_statistics[70072] = {
 _G.pg.base.equip_data_statistics[70081] = {
 	type = 1,
 	name = "全弹发射-艾伦·萨姆那级I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105770,7 +107786,7 @@ _G.pg.base.equip_data_statistics[70082] = {
 _G.pg.base.equip_data_statistics[70091] = {
 	type = 1,
 	name = "全弹发射-埃德索尔级I",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105821,7 +107837,7 @@ _G.pg.base.equip_data_statistics[70092] = {
 _G.pg.base.equip_data_statistics[70111] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105871,7 +107887,7 @@ _G.pg.base.equip_data_statistics[70112] = {
 _G.pg.base.equip_data_statistics[70121] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105921,7 +107937,7 @@ _G.pg.base.equip_data_statistics[70122] = {
 _G.pg.base.equip_data_statistics[70131] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -105971,7 +107987,7 @@ _G.pg.base.equip_data_statistics[70132] = {
 _G.pg.base.equip_data_statistics[70141] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106021,7 +108037,7 @@ _G.pg.base.equip_data_statistics[70142] = {
 _G.pg.base.equip_data_statistics[70211] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106071,7 +108087,7 @@ _G.pg.base.equip_data_statistics[70212] = {
 _G.pg.base.equip_data_statistics[70221] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106121,7 +108137,7 @@ _G.pg.base.equip_data_statistics[70222] = {
 _G.pg.base.equip_data_statistics[70231] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106171,7 +108187,7 @@ _G.pg.base.equip_data_statistics[70232] = {
 _G.pg.base.equip_data_statistics[70241] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106221,7 +108237,7 @@ _G.pg.base.equip_data_statistics[70242] = {
 _G.pg.base.equip_data_statistics[70251] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106271,7 +108287,7 @@ _G.pg.base.equip_data_statistics[70252] = {
 _G.pg.base.equip_data_statistics[70261] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106321,7 +108337,7 @@ _G.pg.base.equip_data_statistics[70262] = {
 _G.pg.base.equip_data_statistics[70271] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106371,7 +108387,7 @@ _G.pg.base.equip_data_statistics[70272] = {
 _G.pg.base.equip_data_statistics[70281] = {
 	type = 1,
 	name = "全弹发射-俄勒冈城级I",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106422,7 +108438,7 @@ _G.pg.base.equip_data_statistics[70282] = {
 _G.pg.base.equip_data_statistics[70311] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106472,7 +108488,7 @@ _G.pg.base.equip_data_statistics[70312] = {
 _G.pg.base.equip_data_statistics[70321] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106522,7 +108538,7 @@ _G.pg.base.equip_data_statistics[70322] = {
 _G.pg.base.equip_data_statistics[71011] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106569,60 +108585,10 @@ _G.pg.base.equip_data_statistics[71012] = {
 	},
 	hidden_skill_id = {}
 }
-_G.pg.base.equip_data_statistics[71016] = {
-	type = 1,
-	name = "0",
-	speciality = "なし",
-	tech = 1,
-	rarity = 1,
-	ammo = 10,
-	nationality = 0,
-	descrip = "スキル弾幕",
-	id = 71016,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	value_1 = "0",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		71016
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		19,
-		20,
-		21
-	},
-	part_sub = {
-		2,
-		3,
-		4,
-		5,
-		8,
-		13,
-		18
-	},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[71017] = {
-	id = 71017,
-	base = 71016,
-	weapon_id = {
-		71017
-	},
-	hidden_skill_id = {}
-}
 _G.pg.base.equip_data_statistics[71021] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106669,61 +108635,10 @@ _G.pg.base.equip_data_statistics[71022] = {
 	},
 	hidden_skill_id = {}
 }
-_G.pg.base.equip_data_statistics[71026] = {
-	type = 1,
-	name = "0",
-	speciality = "なし",
-	tech = 1,
-	rarity = 1,
-	ammo = 10,
-	nationality = 0,
-	descrip = "スキル弾幕",
-	id = 71026,
-	value_3 = 0,
-	value_2 = 0,
-	icon = "1",
-	value_1 = "0",
-	torpedo_ammo = 0,
-	property_rate = {},
-	ammo_icon = {},
-	ammo_info = {},
-	equip_info = {},
-	weapon_id = {
-		71026
-	},
-	skill_id = {},
-	hidden_skill_id = {},
-	part_main = {
-		1,
-		19,
-		20,
-		21
-	},
-	part_sub = {
-		2,
-		3,
-		4,
-		5,
-		8,
-		13,
-		18
-	},
-	equip_parameters = {},
-	label = {}
-}
-_G.pg.base.equip_data_statistics[71027] = {
-	id = 71027,
-	name = "0",
-	base = 71026,
-	weapon_id = {
-		71027
-	},
-	hidden_skill_id = {}
-}
 _G.pg.base.equip_data_statistics[71031] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106773,7 +108688,7 @@ _G.pg.base.equip_data_statistics[71032] = {
 _G.pg.base.equip_data_statistics[71041] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106823,7 +108738,7 @@ _G.pg.base.equip_data_statistics[71042] = {
 _G.pg.base.equip_data_statistics[71051] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106873,7 +108788,7 @@ _G.pg.base.equip_data_statistics[71052] = {
 _G.pg.base.equip_data_statistics[71061] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106920,10 +108835,61 @@ _G.pg.base.equip_data_statistics[71062] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[71026] = {
+	type = 1,
+	name = "0",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "スキル弾幕",
+	id = 71026,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		71026
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[71027] = {
+	id = 71027,
+	name = "0",
+	base = 71026,
+	weapon_id = {
+		71027
+	},
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[71071] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -106973,7 +108939,7 @@ _G.pg.base.equip_data_statistics[71072] = {
 _G.pg.base.equip_data_statistics[71081] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107023,7 +108989,7 @@ _G.pg.base.equip_data_statistics[71082] = {
 _G.pg.base.equip_data_statistics[71091] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107070,10 +109036,60 @@ _G.pg.base.equip_data_statistics[71092] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[71016] = {
+	type = 1,
+	name = "0",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "スキル弾幕",
+	id = 71016,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		71016
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[71017] = {
+	id = 71017,
+	base = 71016,
+	weapon_id = {
+		71017
+	},
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[71111] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107123,7 +109139,7 @@ _G.pg.base.equip_data_statistics[71112] = {
 _G.pg.base.equip_data_statistics[71121] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107173,7 +109189,7 @@ _G.pg.base.equip_data_statistics[71122] = {
 _G.pg.base.equip_data_statistics[71131] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107223,7 +109239,7 @@ _G.pg.base.equip_data_statistics[71132] = {
 _G.pg.base.equip_data_statistics[71141] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107273,7 +109289,7 @@ _G.pg.base.equip_data_statistics[71142] = {
 _G.pg.base.equip_data_statistics[71151] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107323,7 +109339,7 @@ _G.pg.base.equip_data_statistics[71152] = {
 _G.pg.base.equip_data_statistics[71161] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107373,7 +109389,7 @@ _G.pg.base.equip_data_statistics[71162] = {
 _G.pg.base.equip_data_statistics[71171] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107423,7 +109439,7 @@ _G.pg.base.equip_data_statistics[71172] = {
 _G.pg.base.equip_data_statistics[71181] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107473,7 +109489,7 @@ _G.pg.base.equip_data_statistics[71182] = {
 _G.pg.base.equip_data_statistics[71191] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107523,7 +109539,7 @@ _G.pg.base.equip_data_statistics[71192] = {
 _G.pg.base.equip_data_statistics[71211] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107573,7 +109589,7 @@ _G.pg.base.equip_data_statistics[71212] = {
 _G.pg.base.equip_data_statistics[71221] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107623,7 +109639,7 @@ _G.pg.base.equip_data_statistics[71222] = {
 _G.pg.base.equip_data_statistics[71231] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107673,7 +109689,7 @@ _G.pg.base.equip_data_statistics[71232] = {
 _G.pg.base.equip_data_statistics[71241] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107723,7 +109739,7 @@ _G.pg.base.equip_data_statistics[71242] = {
 _G.pg.base.equip_data_statistics[72011] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107773,7 +109789,7 @@ _G.pg.base.equip_data_statistics[72012] = {
 _G.pg.base.equip_data_statistics[72021] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107823,7 +109839,7 @@ _G.pg.base.equip_data_statistics[72022] = {
 _G.pg.base.equip_data_statistics[72031] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107873,7 +109889,7 @@ _G.pg.base.equip_data_statistics[72032] = {
 _G.pg.base.equip_data_statistics[72041] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107923,7 +109939,7 @@ _G.pg.base.equip_data_statistics[72042] = {
 _G.pg.base.equip_data_statistics[72051] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -107973,7 +109989,7 @@ _G.pg.base.equip_data_statistics[72052] = {
 _G.pg.base.equip_data_statistics[72056] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108023,7 +110039,7 @@ _G.pg.base.equip_data_statistics[72057] = {
 _G.pg.base.equip_data_statistics[72061] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108073,7 +110089,7 @@ _G.pg.base.equip_data_statistics[72062] = {
 _G.pg.base.equip_data_statistics[72071] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108123,7 +110139,7 @@ _G.pg.base.equip_data_statistics[72072] = {
 _G.pg.base.equip_data_statistics[72081] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108173,7 +110189,7 @@ _G.pg.base.equip_data_statistics[72082] = {
 _G.pg.base.equip_data_statistics[72091] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108223,7 +110239,7 @@ _G.pg.base.equip_data_statistics[72092] = {
 _G.pg.base.equip_data_statistics[72111] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108273,7 +110289,7 @@ _G.pg.base.equip_data_statistics[72112] = {
 _G.pg.base.equip_data_statistics[72121] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108323,7 +110339,7 @@ _G.pg.base.equip_data_statistics[72122] = {
 _G.pg.base.equip_data_statistics[72131] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108373,7 +110389,7 @@ _G.pg.base.equip_data_statistics[72132] = {
 _G.pg.base.equip_data_statistics[72141] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108423,7 +110439,7 @@ _G.pg.base.equip_data_statistics[72142] = {
 _G.pg.base.equip_data_statistics[72151] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108473,7 +110489,7 @@ _G.pg.base.equip_data_statistics[72152] = {
 _G.pg.base.equip_data_statistics[72161] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108523,7 +110539,7 @@ _G.pg.base.equip_data_statistics[72162] = {
 _G.pg.base.equip_data_statistics[72211] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108573,7 +110589,7 @@ _G.pg.base.equip_data_statistics[72212] = {
 _G.pg.base.equip_data_statistics[72221] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108623,7 +110639,7 @@ _G.pg.base.equip_data_statistics[72222] = {
 _G.pg.base.equip_data_statistics[72231] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108673,7 +110689,7 @@ _G.pg.base.equip_data_statistics[72232] = {
 _G.pg.base.equip_data_statistics[72241] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108723,7 +110739,7 @@ _G.pg.base.equip_data_statistics[72242] = {
 _G.pg.base.equip_data_statistics[72251] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108773,9 +110789,8 @@ _G.pg.base.equip_data_statistics[72252] = {
 _G.pg.base.equip_data_statistics[72254] = {
 	descrip = "スキル弾幕",
 	name = "0",
-	speciality = "なし",
-	base = 72251,
 	id = 72254,
+	base = 72251,
 	weapon_id = {
 		72254
 	},
@@ -108792,9 +110807,8 @@ _G.pg.base.equip_data_statistics[72255] = {
 _G.pg.base.equip_data_statistics[72256] = {
 	descrip = "スキル弾幕",
 	name = "0",
-	speciality = "なし",
-	base = 72251,
 	id = 72256,
+	base = 72251,
 	weapon_id = {
 		72256
 	},
@@ -108811,7 +110825,7 @@ _G.pg.base.equip_data_statistics[72257] = {
 _G.pg.base.equip_data_statistics[72261] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108861,7 +110875,7 @@ _G.pg.base.equip_data_statistics[72262] = {
 _G.pg.base.equip_data_statistics[72271] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108911,7 +110925,7 @@ _G.pg.base.equip_data_statistics[72272] = {
 _G.pg.base.equip_data_statistics[72311] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -108961,7 +110975,7 @@ _G.pg.base.equip_data_statistics[72312] = {
 _G.pg.base.equip_data_statistics[72411] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109011,7 +111025,7 @@ _G.pg.base.equip_data_statistics[72412] = {
 _G.pg.base.equip_data_statistics[73011] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109061,7 +111075,7 @@ _G.pg.base.equip_data_statistics[73012] = {
 _G.pg.base.equip_data_statistics[73021] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109111,7 +111125,7 @@ _G.pg.base.equip_data_statistics[73022] = {
 _G.pg.base.equip_data_statistics[73031] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109161,7 +111175,7 @@ _G.pg.base.equip_data_statistics[73032] = {
 _G.pg.base.equip_data_statistics[73041] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109211,7 +111225,7 @@ _G.pg.base.equip_data_statistics[73042] = {
 _G.pg.base.equip_data_statistics[73051] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109261,7 +111275,7 @@ _G.pg.base.equip_data_statistics[73052] = {
 _G.pg.base.equip_data_statistics[73111] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109311,7 +111325,7 @@ _G.pg.base.equip_data_statistics[73112] = {
 _G.pg.base.equip_data_statistics[73121] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109361,7 +111375,7 @@ _G.pg.base.equip_data_statistics[73122] = {
 _G.pg.base.equip_data_statistics[73131] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109411,7 +111425,7 @@ _G.pg.base.equip_data_statistics[73132] = {
 _G.pg.base.equip_data_statistics[73211] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109461,7 +111475,7 @@ _G.pg.base.equip_data_statistics[73212] = {
 _G.pg.base.equip_data_statistics[73221] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109511,7 +111525,7 @@ _G.pg.base.equip_data_statistics[73222] = {
 _G.pg.base.equip_data_statistics[73231] = {
 	type = 1,
 	name = "全弹发射-P级I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109562,7 +111576,7 @@ _G.pg.base.equip_data_statistics[73232] = {
 _G.pg.base.equip_data_statistics[73241] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109612,7 +111626,7 @@ _G.pg.base.equip_data_statistics[73242] = {
 _G.pg.base.equip_data_statistics[73311] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109662,7 +111676,7 @@ _G.pg.base.equip_data_statistics[73312] = {
 _G.pg.base.equip_data_statistics[73321] = {
 	type = 1,
 	name = "全弹发射-Type IXB型I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109713,7 +111727,7 @@ _G.pg.base.equip_data_statistics[73322] = {
 _G.pg.base.equip_data_statistics[73411] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109763,7 +111777,7 @@ _G.pg.base.equip_data_statistics[73412] = {
 _G.pg.base.equip_data_statistics[73511] = {
 	type = 1,
 	name = "全弹发射-Type IXC型I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109814,7 +111828,7 @@ _G.pg.base.equip_data_statistics[73512] = {
 _G.pg.base.equip_data_statistics[74011] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109864,7 +111878,7 @@ _G.pg.base.equip_data_statistics[74012] = {
 _G.pg.base.equip_data_statistics[74023] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109903,10 +111917,112 @@ _G.pg.base.equip_data_statistics[74023] = {
 	equip_parameters = {},
 	label = {}
 }
+_G.pg.base.equip_data_statistics[74031] = {
+	type = 1,
+	name = "全弹发射-龙武I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "スキル弾幕",
+	id = 74031,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170291
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[74032] = {
+	id = 74032,
+	name = "全弹发射-龙武II",
+	base = 74031,
+	weapon_id = {
+		170292
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[74041] = {
+	type = 1,
+	name = "全弹发射-虎贲I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "スキル弾幕",
+	id = 74041,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170301
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[74042] = {
+	id = 74042,
+	name = "全弹发射-虎贲II",
+	base = 74041,
+	weapon_id = {
+		170302
+	},
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[74043] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109945,10 +112061,103 @@ _G.pg.base.equip_data_statistics[74043] = {
 	equip_parameters = {},
 	label = {}
 }
+_G.pg.base.equip_data_statistics[74053] = {
+	type = 1,
+	name = "全弹发射-玄武III",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "スキル弾幕",
+	id = 74053,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		74053
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[74061] = {
+	type = 1,
+	name = "0",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "スキル弾幕",
+	id = 74061,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		74061
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[74062] = {
+	id = 74062,
+	name = "全弹发射-飞云II",
+	base = 74061,
+	weapon_id = {
+		74062
+	},
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[74111] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -109998,7 +112207,7 @@ _G.pg.base.equip_data_statistics[74112] = {
 _G.pg.base.equip_data_statistics[74121] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110048,7 +112257,7 @@ _G.pg.base.equip_data_statistics[74122] = {
 _G.pg.base.equip_data_statistics[74131] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110098,7 +112307,7 @@ _G.pg.base.equip_data_statistics[74132] = {
 _G.pg.base.equip_data_statistics[74141] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110145,10 +112354,61 @@ _G.pg.base.equip_data_statistics[74142] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[74151] = {
+	type = 1,
+	name = "0",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "スキル弾幕",
+	id = 74151,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		74151
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[74152] = {
+	id = 74152,
+	name = "全弹发射-济安II",
+	base = 74151,
+	weapon_id = {
+		74152
+	},
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[75011] = {
 	type = 1,
 	name = "全弹发射-索尔达蒂级I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110199,7 +112459,7 @@ _G.pg.base.equip_data_statistics[75012] = {
 _G.pg.base.equip_data_statistics[75021] = {
 	type = 1,
 	name = "全弹发射-诗人级I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110250,7 +112510,7 @@ _G.pg.base.equip_data_statistics[75022] = {
 _G.pg.base.equip_data_statistics[75031] = {
 	type = 1,
 	name = "全弹发射-西北风级I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110301,7 +112561,7 @@ _G.pg.base.equip_data_statistics[75032] = {
 _G.pg.base.equip_data_statistics[75041] = {
 	type = 1,
 	name = "全弹发射-航海家级I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110352,7 +112612,7 @@ _G.pg.base.equip_data_statistics[75042] = {
 _G.pg.base.equip_data_statistics[75211] = {
 	type = 1,
 	name = "全弹发射-特伦托级I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110403,7 +112663,7 @@ _G.pg.base.equip_data_statistics[75212] = {
 _G.pg.base.equip_data_statistics[75221] = {
 	type = 1,
 	name = "全弹发射-扎拉级I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110454,7 +112714,7 @@ _G.pg.base.equip_data_statistics[75222] = {
 _G.pg.base.equip_data_statistics[75231] = {
 	type = 1,
 	name = "全弹发射-博尔扎诺级I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110505,7 +112765,7 @@ _G.pg.base.equip_data_statistics[75232] = {
 _G.pg.base.equip_data_statistics[75511] = {
 	type = 1,
 	name = "全弹发射-布林级I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110556,7 +112816,7 @@ _G.pg.base.equip_data_statistics[75512] = {
 _G.pg.base.equip_data_statistics[76011] = {
 	type = 1,
 	name = "全弹发射-愤怒级I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110607,7 +112867,7 @@ _G.pg.base.equip_data_statistics[76012] = {
 _G.pg.base.equip_data_statistics[76021] = {
 	type = 1,
 	name = "全弹发射-明斯克级I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110658,7 +112918,7 @@ _G.pg.base.equip_data_statistics[76022] = {
 _G.pg.base.equip_data_statistics[76031] = {
 	type = 1,
 	name = "全弹发射-前哨级I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110709,7 +112969,7 @@ _G.pg.base.equip_data_statistics[76032] = {
 _G.pg.base.equip_data_statistics[76111] = {
 	type = 1,
 	name = "全弹发射-博加特里级I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110760,7 +113020,7 @@ _G.pg.base.equip_data_statistics[76112] = {
 _G.pg.base.equip_data_statistics[78011] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110810,7 +113070,7 @@ _G.pg.base.equip_data_statistics[78012] = {
 _G.pg.base.equip_data_statistics[78021] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110860,7 +113120,7 @@ _G.pg.base.equip_data_statistics[78022] = {
 _G.pg.base.equip_data_statistics[78031] = {
 	type = 1,
 	name = "全弹发射-沃克兰级I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110911,7 +113171,7 @@ _G.pg.base.equip_data_statistics[78032] = {
 _G.pg.base.equip_data_statistics[78111] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -110961,7 +113221,7 @@ _G.pg.base.equip_data_statistics[78112] = {
 _G.pg.base.equip_data_statistics[78121] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111012,7 +113272,7 @@ _G.pg.base.equip_data_statistics[78122] = {
 _G.pg.base.equip_data_statistics[78211] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111063,7 +113323,7 @@ _G.pg.base.equip_data_statistics[78212] = {
 _G.pg.base.equip_data_statistics[78221] = {
 	type = 1,
 	name = "全弹发射-絮弗伦级I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111114,7 +113374,7 @@ _G.pg.base.equip_data_statistics[78222] = {
 _G.pg.base.equip_data_statistics[79011] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111164,7 +113424,7 @@ _G.pg.base.equip_data_statistics[79012] = {
 _G.pg.base.equip_data_statistics[79021] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111214,7 +113474,7 @@ _G.pg.base.equip_data_statistics[79022] = {
 _G.pg.base.equip_data_statistics[79031] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111264,7 +113524,7 @@ _G.pg.base.equip_data_statistics[79032] = {
 _G.pg.base.equip_data_statistics[79041] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111314,7 +113574,7 @@ _G.pg.base.equip_data_statistics[79042] = {
 _G.pg.base.equip_data_statistics[79051] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111364,7 +113624,7 @@ _G.pg.base.equip_data_statistics[79052] = {
 _G.pg.base.equip_data_statistics[79061] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111414,7 +113674,7 @@ _G.pg.base.equip_data_statistics[79062] = {
 _G.pg.base.equip_data_statistics[79071] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111464,7 +113724,7 @@ _G.pg.base.equip_data_statistics[79072] = {
 _G.pg.base.equip_data_statistics[79081] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111514,7 +113774,7 @@ _G.pg.base.equip_data_statistics[79082] = {
 _G.pg.base.equip_data_statistics[79091] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111564,7 +113824,7 @@ _G.pg.base.equip_data_statistics[79092] = {
 _G.pg.base.equip_data_statistics[79101] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111614,7 +113874,7 @@ _G.pg.base.equip_data_statistics[79102] = {
 _G.pg.base.equip_data_statistics[79111] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111664,7 +113924,7 @@ _G.pg.base.equip_data_statistics[79112] = {
 _G.pg.base.equip_data_statistics[79121] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111714,7 +113974,7 @@ _G.pg.base.equip_data_statistics[79122] = {
 _G.pg.base.equip_data_statistics[79131] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111764,7 +114024,7 @@ _G.pg.base.equip_data_statistics[79132] = {
 _G.pg.base.equip_data_statistics[79141] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111814,7 +114074,7 @@ _G.pg.base.equip_data_statistics[79142] = {
 _G.pg.base.equip_data_statistics[79151] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111864,7 +114124,7 @@ _G.pg.base.equip_data_statistics[79152] = {
 _G.pg.base.equip_data_statistics[79161] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111914,7 +114174,7 @@ _G.pg.base.equip_data_statistics[79162] = {
 _G.pg.base.equip_data_statistics[79171] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -111964,7 +114224,7 @@ _G.pg.base.equip_data_statistics[79172] = {
 _G.pg.base.equip_data_statistics[79181] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112014,7 +114274,7 @@ _G.pg.base.equip_data_statistics[79182] = {
 _G.pg.base.equip_data_statistics[79191] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112064,7 +114324,7 @@ _G.pg.base.equip_data_statistics[79192] = {
 _G.pg.base.equip_data_statistics[79201] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112114,7 +114374,7 @@ _G.pg.base.equip_data_statistics[79202] = {
 _G.pg.base.equip_data_statistics[79211] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112164,7 +114424,7 @@ _G.pg.base.equip_data_statistics[79212] = {
 _G.pg.base.equip_data_statistics[79221] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112214,7 +114474,7 @@ _G.pg.base.equip_data_statistics[79222] = {
 _G.pg.base.equip_data_statistics[79231] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112264,7 +114524,7 @@ _G.pg.base.equip_data_statistics[79232] = {
 _G.pg.base.equip_data_statistics[79241] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112314,7 +114574,7 @@ _G.pg.base.equip_data_statistics[79242] = {
 _G.pg.base.equip_data_statistics[79251] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112364,7 +114624,7 @@ _G.pg.base.equip_data_statistics[79252] = {
 _G.pg.base.equip_data_statistics[79261] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112414,7 +114674,7 @@ _G.pg.base.equip_data_statistics[79262] = {
 _G.pg.base.equip_data_statistics[79271] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112464,7 +114724,7 @@ _G.pg.base.equip_data_statistics[79272] = {
 _G.pg.base.equip_data_statistics[79311] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112514,7 +114774,7 @@ _G.pg.base.equip_data_statistics[79312] = {
 _G.pg.base.equip_data_statistics[79321] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112564,7 +114824,7 @@ _G.pg.base.equip_data_statistics[79322] = {
 _G.pg.base.equip_data_statistics[79331] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112614,7 +114874,7 @@ _G.pg.base.equip_data_statistics[79332] = {
 _G.pg.base.equip_data_statistics[79341] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112664,7 +114924,7 @@ _G.pg.base.equip_data_statistics[79342] = {
 _G.pg.base.equip_data_statistics[79361] = {
 	type = 1,
 	name = "专属弹幕-天狼星I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112715,7 +114975,7 @@ _G.pg.base.equip_data_statistics[79362] = {
 _G.pg.base.equip_data_statistics[79371] = {
 	type = 1,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112765,7 +115025,7 @@ _G.pg.base.equip_data_statistics[79372] = {
 _G.pg.base.equip_data_statistics[79381] = {
 	type = 1,
 	name = "专属弹幕-北风I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112816,7 +115076,7 @@ _G.pg.base.equip_data_statistics[79382] = {
 _G.pg.base.equip_data_statistics[79383] = {
 	type = 1,
 	name = "专属弹幕鱼雷-北风I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112867,7 +115127,7 @@ _G.pg.base.equip_data_statistics[79384] = {
 _G.pg.base.equip_data_statistics[79391] = {
 	type = 1,
 	name = "专属弹幕-西雅图I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112918,7 +115178,7 @@ _G.pg.base.equip_data_statistics[79392] = {
 _G.pg.base.equip_data_statistics[79401] = {
 	type = 1,
 	name = "专属弹幕-确捷I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -112969,7 +115229,7 @@ _G.pg.base.equip_data_statistics[79402] = {
 _G.pg.base.equip_data_statistics[79411] = {
 	type = 1,
 	name = "专属弹幕-恶毒I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113020,7 +115280,7 @@ _G.pg.base.equip_data_statistics[79412] = {
 _G.pg.base.equip_data_statistics[79421] = {
 	type = 1,
 	name = "专属弹幕-I168I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113071,7 +115331,7 @@ _G.pg.base.equip_data_statistics[79422] = {
 _G.pg.base.equip_data_statistics[79431] = {
 	type = 1,
 	name = "专属弹幕-U101I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113122,7 +115382,7 @@ _G.pg.base.equip_data_statistics[79432] = {
 _G.pg.base.equip_data_statistics[79441] = {
 	type = 1,
 	name = "专属弹幕-棘鳍I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113173,7 +115433,7 @@ _G.pg.base.equip_data_statistics[79442] = {
 _G.pg.base.equip_data_statistics[79451] = {
 	type = 1,
 	name = "全弹发射-克利夫兰μI",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113224,7 +115484,7 @@ _G.pg.base.equip_data_statistics[79452] = {
 _G.pg.base.equip_data_statistics[79461] = {
 	type = 1,
 	name = "全弹发射-南安普顿μI",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113275,7 +115535,7 @@ _G.pg.base.equip_data_statistics[79462] = {
 _G.pg.base.equip_data_statistics[79471] = {
 	type = 1,
 	name = "全弹发射-希佩尔海军上将μI",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113326,7 +115586,7 @@ _G.pg.base.equip_data_statistics[79472] = {
 _G.pg.base.equip_data_statistics[79481] = {
 	type = 1,
 	name = "专属弹幕-能代I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113377,7 +115637,7 @@ _G.pg.base.equip_data_statistics[79482] = {
 _G.pg.base.equip_data_statistics[79491] = {
 	type = 1,
 	name = "专属弹幕-黛朵I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113428,7 +115688,7 @@ _G.pg.base.equip_data_statistics[79492] = {
 _G.pg.base.equip_data_statistics[79501] = {
 	type = 1,
 	name = "专属弹幕-塔什干I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113479,7 +115739,7 @@ _G.pg.base.equip_data_statistics[79502] = {
 _G.pg.base.equip_data_statistics[79511] = {
 	type = 1,
 	name = "专属弹幕-恰巴耶夫I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113530,7 +115790,7 @@ _G.pg.base.equip_data_statistics[79512] = {
 _G.pg.base.equip_data_statistics[79521] = {
 	type = 1,
 	name = "专属弹幕-里诺I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113581,7 +115841,7 @@ _G.pg.base.equip_data_statistics[79522] = {
 _G.pg.base.equip_data_statistics[79541] = {
 	type = 1,
 	name = "专属弹幕-圣女贞德I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113632,7 +115892,7 @@ _G.pg.base.equip_data_statistics[79542] = {
 _G.pg.base.equip_data_statistics[79551] = {
 	type = 1,
 	name = "专属弹幕-柴郡I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113682,7 +115942,7 @@ _G.pg.base.equip_data_statistics[79552] = {
 _G.pg.base.equip_data_statistics[79561] = {
 	type = 1,
 	name = "专属弹幕-德雷克I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113732,7 +115992,7 @@ _G.pg.base.equip_data_statistics[79562] = {
 _G.pg.base.equip_data_statistics[79571] = {
 	type = 1,
 	name = "专属弹幕-美因茨I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113782,7 +116042,7 @@ _G.pg.base.equip_data_statistics[79572] = {
 _G.pg.base.equip_data_statistics[79581] = {
 	type = 1,
 	name = "专属弹幕-赫敏I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113833,7 +116093,7 @@ _G.pg.base.equip_data_statistics[79582] = {
 _G.pg.base.equip_data_statistics[79591] = {
 	type = 1,
 	name = "专属弹幕-U96I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113883,7 +116143,7 @@ _G.pg.base.equip_data_statistics[79592] = {
 _G.pg.base.equip_data_statistics[79601] = {
 	type = 1,
 	name = "专属弹幕-凉月I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113934,7 +116194,7 @@ _G.pg.base.equip_data_statistics[79602] = {
 _G.pg.base.equip_data_statistics[79611] = {
 	type = 1,
 	name = "专属弹幕-罗恩μI",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -113985,7 +116245,7 @@ _G.pg.base.equip_data_statistics[79612] = {
 _G.pg.base.equip_data_statistics[79621] = {
 	type = 1,
 	name = "专属弹幕-恶毒μI",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114036,7 +116296,7 @@ _G.pg.base.equip_data_statistics[79622] = {
 _G.pg.base.equip_data_statistics[79631] = {
 	type = 1,
 	name = "专属弹幕-黛朵μI",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114087,7 +116347,7 @@ _G.pg.base.equip_data_statistics[79632] = {
 _G.pg.base.equip_data_statistics[79641] = {
 	type = 1,
 	name = "专属弹幕-塔什干μI",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114138,7 +116398,7 @@ _G.pg.base.equip_data_statistics[79642] = {
 _G.pg.base.equip_data_statistics[79651] = {
 	type = 1,
 	name = "专属弹幕-大青花鱼μI",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114189,7 +116449,7 @@ _G.pg.base.equip_data_statistics[79652] = {
 _G.pg.base.equip_data_statistics[79661] = {
 	type = 1,
 	name = "专属弹幕-巴尔的摩μI",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114240,7 +116500,7 @@ _G.pg.base.equip_data_statistics[79662] = {
 _G.pg.base.equip_data_statistics[79671] = {
 	type = 1,
 	name = "专属弹幕-U37I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114290,7 +116550,7 @@ _G.pg.base.equip_data_statistics[79672] = {
 _G.pg.base.equip_data_statistics[79681] = {
 	type = 1,
 	name = "专属弹幕-基洛夫I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114341,7 +116601,7 @@ _G.pg.base.equip_data_statistics[79682] = {
 _G.pg.base.equip_data_statistics[79691] = {
 	type = 1,
 	name = "专属弹幕-艾伦萨姆纳I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114392,7 +116652,7 @@ _G.pg.base.equip_data_statistics[79692] = {
 _G.pg.base.equip_data_statistics[79701] = {
 	type = 1,
 	name = "专属弹幕-阿布鲁齐公爵I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114443,7 +116703,7 @@ _G.pg.base.equip_data_statistics[79702] = {
 _G.pg.base.equip_data_statistics[79711] = {
 	type = 1,
 	name = "专属弹幕-旧金山I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114494,7 +116754,7 @@ _G.pg.base.equip_data_statistics[79712] = {
 _G.pg.base.equip_data_statistics[79721] = {
 	type = 1,
 	name = "专属弹幕-射水鱼I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114545,7 +116805,7 @@ _G.pg.base.equip_data_statistics[79722] = {
 _G.pg.base.equip_data_statistics[79731] = {
 	type = 1,
 	name = "专属弹幕-海伦娜.META I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114596,7 +116856,7 @@ _G.pg.base.equip_data_statistics[79732] = {
 _G.pg.base.equip_data_statistics[79741] = {
 	type = 1,
 	name = "专属弹幕-风云I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114647,7 +116907,7 @@ _G.pg.base.equip_data_statistics[79742] = {
 _G.pg.base.equip_data_statistics[79751] = {
 	type = 1,
 	name = "专属弹幕-安克雷奇I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114698,7 +116958,7 @@ _G.pg.base.equip_data_statistics[79752] = {
 _G.pg.base.equip_data_statistics[79761] = {
 	type = 1,
 	name = "专属弹幕-英格拉罕I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114749,7 +117009,7 @@ _G.pg.base.equip_data_statistics[79762] = {
 _G.pg.base.equip_data_statistics[79771] = {
 	type = 1,
 	name = "专属弹幕-岛风I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114800,7 +117060,7 @@ _G.pg.base.equip_data_statistics[79772] = {
 _G.pg.base.equip_data_statistics[79781] = {
 	type = 1,
 	name = "专属弹幕-可怖I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114851,7 +117111,7 @@ _G.pg.base.equip_data_statistics[79782] = {
 _G.pg.base.equip_data_statistics[79791] = {
 	type = 1,
 	name = "专属弹幕-马格德堡I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114902,7 +117162,7 @@ _G.pg.base.equip_data_statistics[79792] = {
 _G.pg.base.equip_data_statistics[79801] = {
 	type = 1,
 	name = "专属弹幕-卡律布狄斯I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -114953,7 +117213,7 @@ _G.pg.base.equip_data_statistics[79802] = {
 _G.pg.base.equip_data_statistics[79811] = {
 	type = 1,
 	name = "专属弹幕-布里斯托尔I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115004,7 +117264,7 @@ _G.pg.base.equip_data_statistics[79812] = {
 _G.pg.base.equip_data_statistics[79821] = {
 	type = 1,
 	name = "专属弹幕-基辅I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115055,7 +117315,7 @@ _G.pg.base.equip_data_statistics[79822] = {
 _G.pg.base.equip_data_statistics[79831] = {
 	type = 1,
 	name = "专属弹幕-庞培·马格诺I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115106,7 +117366,7 @@ _G.pg.base.equip_data_statistics[79832] = {
 _G.pg.base.equip_data_statistics[79841] = {
 	type = 1,
 	name = "专属弹幕-埃姆登I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115157,7 +117417,7 @@ _G.pg.base.equip_data_statistics[79842] = {
 _G.pg.base.equip_data_statistics[79851] = {
 	type = 1,
 	name = "专属弹幕-贾维斯I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115208,7 +117468,7 @@ _G.pg.base.equip_data_statistics[79852] = {
 _G.pg.base.equip_data_statistics[79861] = {
 	type = 1,
 	name = "专属弹幕-小柴郡I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115258,7 +117518,7 @@ _G.pg.base.equip_data_statistics[79862] = {
 _G.pg.base.equip_data_statistics[79871] = {
 	type = 1,
 	name = "专属弹幕-孟菲斯.META I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115309,7 +117569,7 @@ _G.pg.base.equip_data_statistics[79872] = {
 _G.pg.base.equip_data_statistics[79881] = {
 	type = 1,
 	name = "专属弹幕-不屈I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115360,7 +117620,7 @@ _G.pg.base.equip_data_statistics[79882] = {
 _G.pg.base.equip_data_statistics[79891] = {
 	type = 1,
 	name = "专属弹幕-普利茅斯I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115411,7 +117671,7 @@ _G.pg.base.equip_data_statistics[79892] = {
 _G.pg.base.equip_data_statistics[79893] = {
 	type = 1,
 	name = "专属弹幕-普利茅斯II鱼雷",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115453,7 +117713,7 @@ _G.pg.base.equip_data_statistics[79893] = {
 _G.pg.base.equip_data_statistics[79901] = {
 	type = 1,
 	name = "专属弹幕-哈尔滨I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115504,7 +117764,7 @@ _G.pg.base.equip_data_statistics[79902] = {
 _G.pg.base.equip_data_statistics[79903] = {
 	type = 1,
 	name = "专属弹幕-哈尔滨鱼雷",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115546,7 +117806,7 @@ _G.pg.base.equip_data_statistics[79903] = {
 _G.pg.base.equip_data_statistics[79911] = {
 	type = 1,
 	name = "专属弹幕-朱塞佩.加里波第I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115597,7 +117857,7 @@ _G.pg.base.equip_data_statistics[79912] = {
 _G.pg.base.equip_data_statistics[79921] = {
 	type = 1,
 	name = "专属弹幕-莱昂纳多·达·芬奇I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115648,7 +117908,7 @@ _G.pg.base.equip_data_statistics[79922] = {
 _G.pg.base.equip_data_statistics[79931] = {
 	type = 1,
 	name = "专属弹幕-特伦托.METAI",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115699,7 +117959,7 @@ _G.pg.base.equip_data_statistics[79932] = {
 _G.pg.base.equip_data_statistics[79941] = {
 	type = 1,
 	name = "专属弹幕-酒匂I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115750,7 +118010,7 @@ _G.pg.base.equip_data_statistics[79942] = {
 _G.pg.base.equip_data_statistics[79951] = {
 	type = 1,
 	name = "专属弹幕-若月I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115801,7 +118061,7 @@ _G.pg.base.equip_data_statistics[79952] = {
 _G.pg.base.equip_data_statistics[79961] = {
 	type = 1,
 	name = "专属弹幕-猎人METAI",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115852,7 +118112,7 @@ _G.pg.base.equip_data_statistics[79962] = {
 _G.pg.base.equip_data_statistics[79971] = {
 	type = 1,
 	name = "专属弹幕-雅努斯I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115903,7 +118163,7 @@ _G.pg.base.equip_data_statistics[79972] = {
 _G.pg.base.equip_data_statistics[79981] = {
 	type = 1,
 	name = "专属弹幕-皇家财富I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -115954,7 +118214,7 @@ _G.pg.base.equip_data_statistics[79982] = {
 _G.pg.base.equip_data_statistics[79991] = {
 	type = 1,
 	name = "专属弹幕-命运女神METAI",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -116005,7 +118265,7 @@ _G.pg.base.equip_data_statistics[79992] = {
 _G.pg.base.equip_data_statistics[80001] = {
 	type = 1,
 	name = "专属弹幕-雷根斯堡I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -116056,7 +118316,7 @@ _G.pg.base.equip_data_statistics[80002] = {
 _G.pg.base.equip_data_statistics[80011] = {
 	type = 1,
 	name = "专属弹幕-阿尔及利亚.METAI",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -116107,7 +118367,7 @@ _G.pg.base.equip_data_statistics[80012] = {
 _G.pg.base.equip_data_statistics[80021] = {
 	type = 1,
 	name = "专属弹幕-阿蒂利奥·雷戈洛I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -116158,7 +118418,7 @@ _G.pg.base.equip_data_statistics[80022] = {
 _G.pg.base.equip_data_statistics[80031] = {
 	type = 1,
 	name = "专属弹幕-菲利克斯·舒尔茨I",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -116209,7 +118469,7 @@ _G.pg.base.equip_data_statistics[80032] = {
 _G.pg.base.equip_data_statistics[80033] = {
 	type = 1,
 	name = "专属弹幕鱼雷-菲利克斯·舒尔茨II",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -116251,7 +118511,7 @@ _G.pg.base.equip_data_statistics[80033] = {
 _G.pg.base.equip_data_statistics[80041] = {
 	type = 1,
 	name = "专属弹幕-吉尚I",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -116293,9 +118553,8 @@ _G.pg.base.equip_data_statistics[80041] = {
 _G.pg.base.equip_data_statistics[80042] = {
 	descrip = "スキル弾幕",
 	name = "专属弹幕-吉尚II",
-	speciality = "なし",
-	base = 80041,
 	id = 80042,
+	base = 80041,
 	weapon_id = {
 		170162
 	},
@@ -116304,7 +118563,7 @@ _G.pg.base.equip_data_statistics[80042] = {
 _G.pg.base.equip_data_statistics[80051] = {
 	type = 1,
 	name = "专属弹幕-云仙I",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -116346,9 +118605,8 @@ _G.pg.base.equip_data_statistics[80051] = {
 _G.pg.base.equip_data_statistics[80052] = {
 	descrip = "スキル弾幕",
 	name = "专属弹幕-云仙II",
-	speciality = "なし",
-	base = 80051,
 	id = 80052,
+	base = 80051,
 	weapon_id = {
 		61545
 	},
@@ -116357,7 +118615,7 @@ _G.pg.base.equip_data_statistics[80052] = {
 _G.pg.base.equip_data_statistics[80061] = {
 	type = 1,
 	name = "专属弹幕-初月I",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -116399,18 +118657,624 @@ _G.pg.base.equip_data_statistics[80061] = {
 _G.pg.base.equip_data_statistics[80062] = {
 	descrip = "スキル弾幕",
 	name = "专属弹幕-初月II",
-	speciality = "なし",
-	base = 80061,
 	id = 80062,
+	base = 80061,
 	weapon_id = {
 		61547
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[80071] = {
+	type = 1,
+	name = "专属弹幕-金鹿号I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80071,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61548
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80072] = {
+	descrip = "スキル弾幕",
+	name = "专属弹幕-金鹿号II",
+	id = 80072,
+	base = 80071,
+	weapon_id = {
+		61549
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80073] = {
+	type = 1,
+	name = "专属弹幕-加里冒险号I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80073,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61550
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80074] = {
+	descrip = "スキル弾幕",
+	name = "专属弹幕-加里冒险号II",
+	id = 80074,
+	base = 80073,
+	weapon_id = {
+		61551
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80081] = {
+	type = 1,
+	name = "专属弹幕-拉菲I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80081,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61581
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80082] = {
+	descrip = "スキル弾幕",
+	name = "专属弹幕-拉菲II",
+	id = 80082,
+	base = 80081,
+	weapon_id = {
+		61582
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80091] = {
+	type = 1,
+	name = "专属弹幕-松鲷I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80091,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61591
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80092] = {
+	descrip = "スキル弾幕",
+	name = "专属弹幕-松鲷II",
+	id = 80092,
+	base = 80091,
+	weapon_id = {
+		61592
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80101] = {
+	type = 1,
+	name = "专属弹幕-金伯利METAI",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80101,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61601
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80102] = {
+	id = 80102,
+	name = "专属弹幕-金伯利METAII",
+	base = 80101,
+	weapon_id = {
+		61602
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80201] = {
+	type = 1,
+	name = "专属弹幕-火力I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80201,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170401
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80202] = {
+	id = 80202,
+	name = "专属弹幕-火力II",
+	base = 80201,
+	weapon_id = {
+		170402
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80211] = {
+	type = 1,
+	name = "专属弹幕-努比亚人I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80211,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170421
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80212] = {
+	id = 80212,
+	name = "专属弹幕-努比亚人II",
+	base = 80211,
+	weapon_id = {
+		170422
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80221] = {
+	type = 1,
+	name = "专属弹幕-吸血鬼METAI",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80221,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61611
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80222] = {
+	id = 80222,
+	name = "专属弹幕-吸血鬼METAII",
+	base = 80221,
+	weapon_id = {
+		61612
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80231] = {
+	type = 1,
+	name = "专属弹幕-{namecode:532}I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80231,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170441
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80232] = {
+	id = 80232,
+	name = "专属弹幕-{namecode:532}II",
+	base = 80231,
+	weapon_id = {
+		170442
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80241] = {
+	type = 1,
+	name = "专属弹幕-鲁莽(μ兵装)I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80241,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61621
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80242] = {
+	id = 80242,
+	name = "专属弹幕-鲁莽(μ兵装)II",
+	base = 80241,
+	weapon_id = {
+		61622
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80251] = {
+	type = 1,
+	name = "专属弹幕-能代μI",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80251,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170461
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80252] = {
+	id = 80252,
+	name = "专属弹幕-能代μII",
+	base = 80251,
+	weapon_id = {
+		170462
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80253] = {
+	type = 5,
+	name = "专属弹幕-能代μ鱼雷",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80253,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170463
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
 _G.pg.base.equip_data_statistics[85000] = {
 	tech = 1,
 	name = "B-13 130mm連装砲B-2LM",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "北方連合製130mm連装砲。優秀な対艦性能を誇る ",
 	ammo = 3,
@@ -116478,7 +119342,6 @@ _G.pg.base.equip_data_statistics[85000] = {
 }
 _G.pg.base.equip_data_statistics[85001] = {
 	id = 85001,
-	damage = "3 x 6",
 	base = 85000,
 	weapon_id = {
 		85001
@@ -116533,7 +119396,7 @@ _G.pg.base.equip_data_statistics[85006] = {
 _G.pg.base.equip_data_statistics[85040] = {
 	tech = 3,
 	name = "B-13 130mm連装砲B-2LM",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "北方連合製130mm連装砲。優秀な対艦性能を誇る ",
 	ammo = 3,
@@ -116601,7 +119464,6 @@ _G.pg.base.equip_data_statistics[85040] = {
 }
 _G.pg.base.equip_data_statistics[85041] = {
 	id = 85041,
-	damage = "6 x 6",
 	base = 85040,
 	weapon_id = {
 		85041
@@ -116722,11 +119584,11 @@ _G.pg.base.equip_data_statistics[85053] = {
 _G.pg.base.equip_data_statistics[85060] = {
 	tech = 1,
 	name = "100mm連装対空砲SM-5-1s",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "35/回",
+	damage = "35<[WAVE]>",
 	nationality = 7,
 	rarity = 3,
 	id = 85060,
@@ -116788,7 +119650,7 @@ _G.pg.base.equip_data_statistics[85060] = {
 }
 _G.pg.base.equip_data_statistics[85061] = {
 	id = 85061,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 85060,
 	weapon_id = {
 		85061
@@ -116797,7 +119659,7 @@ _G.pg.base.equip_data_statistics[85061] = {
 }
 _G.pg.base.equip_data_statistics[85062] = {
 	id = 85062,
-	damage = "45/回",
+	damage = "45<[WAVE]>",
 	base = 85060,
 	weapon_id = {
 		85062
@@ -116806,7 +119668,7 @@ _G.pg.base.equip_data_statistics[85062] = {
 }
 _G.pg.base.equip_data_statistics[85063] = {
 	id = 85063,
-	damage = "51/回",
+	damage = "51<[WAVE]>",
 	base = 85060,
 	weapon_id = {
 		85063
@@ -116815,7 +119677,7 @@ _G.pg.base.equip_data_statistics[85063] = {
 }
 _G.pg.base.equip_data_statistics[85064] = {
 	id = 85064,
-	damage = "57/回",
+	damage = "57<[WAVE]>",
 	base = 85060,
 	weapon_id = {
 		85064
@@ -116824,7 +119686,7 @@ _G.pg.base.equip_data_statistics[85064] = {
 }
 _G.pg.base.equip_data_statistics[85065] = {
 	id = 85065,
-	damage = "63/回",
+	damage = "63<[WAVE]>",
 	base = 85060,
 	weapon_id = {
 		85065
@@ -116833,7 +119695,7 @@ _G.pg.base.equip_data_statistics[85065] = {
 }
 _G.pg.base.equip_data_statistics[85066] = {
 	id = 85066,
-	damage = "70/回",
+	damage = "70<[WAVE]>",
 	base = 85060,
 	weapon_id = {
 		85066
@@ -116843,7 +119705,7 @@ _G.pg.base.equip_data_statistics[85066] = {
 _G.pg.base.equip_data_statistics[85120] = {
 	tech = 1,
 	name = "152mm三連装砲B-38 MK5",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 3,
@@ -116956,7 +119818,7 @@ _G.pg.base.equip_data_statistics[85126] = {
 _G.pg.base.equip_data_statistics[85140] = {
 	tech = 2,
 	name = "152mm三連装砲B-38 MK5",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 2,
@@ -117106,7 +119968,7 @@ _G.pg.base.equip_data_statistics[85150] = {
 _G.pg.base.equip_data_statistics[85160] = {
 	tech = 3,
 	name = "152mm三連装砲B-38 MK5",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 2,
@@ -117286,11 +120148,11 @@ _G.pg.base.equip_data_statistics[85173] = {
 _G.pg.base.equip_data_statistics[85180] = {
 	tech = 1,
 	name = "37mm対空機関砲70-K",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "9/回",
+	damage = "9<[WAVE]>",
 	nationality = 7,
 	rarity = 2,
 	id = 85180,
@@ -117352,7 +120214,7 @@ _G.pg.base.equip_data_statistics[85180] = {
 }
 _G.pg.base.equip_data_statistics[85181] = {
 	id = 85181,
-	damage = "11/回",
+	damage = "11<[WAVE]>",
 	base = 85180,
 	weapon_id = {
 		85181
@@ -117361,7 +120223,7 @@ _G.pg.base.equip_data_statistics[85181] = {
 }
 _G.pg.base.equip_data_statistics[85182] = {
 	id = 85182,
-	damage = "13/回",
+	damage = "13<[WAVE]>",
 	base = 85180,
 	weapon_id = {
 		85182
@@ -117370,7 +120232,7 @@ _G.pg.base.equip_data_statistics[85182] = {
 }
 _G.pg.base.equip_data_statistics[85183] = {
 	id = 85183,
-	damage = "16/回",
+	damage = "16<[WAVE]>",
 	base = 85180,
 	weapon_id = {
 		85183
@@ -117380,11 +120242,11 @@ _G.pg.base.equip_data_statistics[85183] = {
 _G.pg.base.equip_data_statistics[85200] = {
 	tech = 2,
 	name = "37mm対空機関砲70-K",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "11/回",
+	damage = "11<[WAVE]>",
 	nationality = 7,
 	rarity = 3,
 	id = 85200,
@@ -117446,7 +120308,7 @@ _G.pg.base.equip_data_statistics[85200] = {
 }
 _G.pg.base.equip_data_statistics[85201] = {
 	id = 85201,
-	damage = "13/回",
+	damage = "13<[WAVE]>",
 	base = 85200,
 	weapon_id = {
 		85201
@@ -117455,7 +120317,7 @@ _G.pg.base.equip_data_statistics[85201] = {
 }
 _G.pg.base.equip_data_statistics[85202] = {
 	id = 85202,
-	damage = "16/回",
+	damage = "16<[WAVE]>",
 	base = 85200,
 	weapon_id = {
 		85202
@@ -117464,7 +120326,7 @@ _G.pg.base.equip_data_statistics[85202] = {
 }
 _G.pg.base.equip_data_statistics[85203] = {
 	id = 85203,
-	damage = "19/回",
+	damage = "19<[WAVE]>",
 	base = 85200,
 	weapon_id = {
 		85203
@@ -117473,7 +120335,7 @@ _G.pg.base.equip_data_statistics[85203] = {
 }
 _G.pg.base.equip_data_statistics[85204] = {
 	id = 85204,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	base = 85200,
 	weapon_id = {
 		85204
@@ -117482,7 +120344,7 @@ _G.pg.base.equip_data_statistics[85204] = {
 }
 _G.pg.base.equip_data_statistics[85205] = {
 	id = 85205,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	base = 85200,
 	weapon_id = {
 		85205
@@ -117491,7 +120353,7 @@ _G.pg.base.equip_data_statistics[85205] = {
 }
 _G.pg.base.equip_data_statistics[85206] = {
 	id = 85206,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 85200,
 	weapon_id = {
 		85206
@@ -117501,11 +120363,11 @@ _G.pg.base.equip_data_statistics[85206] = {
 _G.pg.base.equip_data_statistics[85220] = {
 	tech = 3,
 	name = "37mm対空機関砲70-K",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "14/回",
+	damage = "14<[WAVE]>",
 	nationality = 7,
 	rarity = 4,
 	id = 85220,
@@ -117567,7 +120429,7 @@ _G.pg.base.equip_data_statistics[85220] = {
 }
 _G.pg.base.equip_data_statistics[85221] = {
 	id = 85221,
-	damage = "17/回",
+	damage = "17<[WAVE]>",
 	base = 85220,
 	weapon_id = {
 		85221
@@ -117576,7 +120438,7 @@ _G.pg.base.equip_data_statistics[85221] = {
 }
 _G.pg.base.equip_data_statistics[85222] = {
 	id = 85222,
-	damage = "20/回",
+	damage = "20<[WAVE]>",
 	base = 85220,
 	weapon_id = {
 		85222
@@ -117585,7 +120447,7 @@ _G.pg.base.equip_data_statistics[85222] = {
 }
 _G.pg.base.equip_data_statistics[85223] = {
 	id = 85223,
-	damage = "23/回",
+	damage = "23<[WAVE]>",
 	base = 85220,
 	weapon_id = {
 		85223
@@ -117594,7 +120456,7 @@ _G.pg.base.equip_data_statistics[85223] = {
 }
 _G.pg.base.equip_data_statistics[85224] = {
 	id = 85224,
-	damage = "26/回",
+	damage = "26<[WAVE]>",
 	base = 85220,
 	weapon_id = {
 		85224
@@ -117603,7 +120465,7 @@ _G.pg.base.equip_data_statistics[85224] = {
 }
 _G.pg.base.equip_data_statistics[85225] = {
 	id = 85225,
-	damage = "29/回",
+	damage = "29<[WAVE]>",
 	base = 85220,
 	weapon_id = {
 		85225
@@ -117612,7 +120474,7 @@ _G.pg.base.equip_data_statistics[85225] = {
 }
 _G.pg.base.equip_data_statistics[85226] = {
 	id = 85226,
-	damage = "32/回",
+	damage = "32<[WAVE]>",
 	base = 85220,
 	weapon_id = {
 		85226
@@ -117621,7 +120483,7 @@ _G.pg.base.equip_data_statistics[85226] = {
 }
 _G.pg.base.equip_data_statistics[85227] = {
 	id = 85227,
-	damage = "35/回",
+	damage = "35<[WAVE]>",
 	base = 85220,
 	weapon_id = {
 		85227
@@ -117630,7 +120492,7 @@ _G.pg.base.equip_data_statistics[85227] = {
 }
 _G.pg.base.equip_data_statistics[85228] = {
 	id = 85228,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	base = 85220,
 	weapon_id = {
 		85228
@@ -117639,7 +120501,7 @@ _G.pg.base.equip_data_statistics[85228] = {
 }
 _G.pg.base.equip_data_statistics[85229] = {
 	id = 85229,
-	damage = "41/回",
+	damage = "41<[WAVE]>",
 	base = 85220,
 	weapon_id = {
 		85229
@@ -117648,7 +120510,7 @@ _G.pg.base.equip_data_statistics[85229] = {
 }
 _G.pg.base.equip_data_statistics[85230] = {
 	id = 85230,
-	damage = "44/回",
+	damage = "44<[WAVE]>",
 	base = 85220,
 	weapon_id = {
 		85230
@@ -117658,7 +120520,7 @@ _G.pg.base.equip_data_statistics[85230] = {
 _G.pg.base.equip_data_statistics[85231] = {
 	id = 85231,
 	anti_siren = 100,
-	damage = "44/回",
+	damage = "44<[WAVE]>",
 	base = 85220,
 	weapon_id = {
 		85231
@@ -117668,11 +120530,11 @@ _G.pg.base.equip_data_statistics[85231] = {
 _G.pg.base.equip_data_statistics[85260] = {
 	tech = 2,
 	name = "100mm連装高角砲B-54",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "36/回",
+	damage = "36<[WAVE]>",
 	nationality = 7,
 	rarity = 3,
 	id = 85260,
@@ -117734,7 +120596,7 @@ _G.pg.base.equip_data_statistics[85260] = {
 }
 _G.pg.base.equip_data_statistics[85261] = {
 	id = 85261,
-	damage = "41/回",
+	damage = "41<[WAVE]>",
 	base = 85260,
 	weapon_id = {
 		85261
@@ -117743,7 +120605,7 @@ _G.pg.base.equip_data_statistics[85261] = {
 }
 _G.pg.base.equip_data_statistics[85262] = {
 	id = 85262,
-	damage = "47/回",
+	damage = "47<[WAVE]>",
 	base = 85260,
 	weapon_id = {
 		85262
@@ -117752,7 +120614,7 @@ _G.pg.base.equip_data_statistics[85262] = {
 }
 _G.pg.base.equip_data_statistics[85263] = {
 	id = 85263,
-	damage = "52/回",
+	damage = "52<[WAVE]>",
 	base = 85260,
 	weapon_id = {
 		85263
@@ -117761,7 +120623,7 @@ _G.pg.base.equip_data_statistics[85263] = {
 }
 _G.pg.base.equip_data_statistics[85264] = {
 	id = 85264,
-	damage = "59/回",
+	damage = "59<[WAVE]>",
 	base = 85260,
 	weapon_id = {
 		85264
@@ -117770,7 +120632,7 @@ _G.pg.base.equip_data_statistics[85264] = {
 }
 _G.pg.base.equip_data_statistics[85265] = {
 	id = 85265,
-	damage = "66/回",
+	damage = "66<[WAVE]>",
 	base = 85260,
 	weapon_id = {
 		85265
@@ -117779,7 +120641,7 @@ _G.pg.base.equip_data_statistics[85265] = {
 }
 _G.pg.base.equip_data_statistics[85266] = {
 	id = 85266,
-	damage = "73/回",
+	damage = "73<[WAVE]>",
 	base = 85260,
 	weapon_id = {
 		85266
@@ -117789,11 +120651,11 @@ _G.pg.base.equip_data_statistics[85266] = {
 _G.pg.base.equip_data_statistics[85280] = {
 	tech = 3,
 	name = "100mm連装高角砲B-54",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "43/回",
+	damage = "43<[WAVE]>",
 	nationality = 7,
 	rarity = 4,
 	id = 85280,
@@ -117855,7 +120717,7 @@ _G.pg.base.equip_data_statistics[85280] = {
 }
 _G.pg.base.equip_data_statistics[85281] = {
 	id = 85281,
-	damage = "48/回",
+	damage = "48<[WAVE]>",
 	base = 85280,
 	weapon_id = {
 		85281
@@ -117864,7 +120726,7 @@ _G.pg.base.equip_data_statistics[85281] = {
 }
 _G.pg.base.equip_data_statistics[85282] = {
 	id = 85282,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	base = 85280,
 	weapon_id = {
 		85282
@@ -117873,7 +120735,7 @@ _G.pg.base.equip_data_statistics[85282] = {
 }
 _G.pg.base.equip_data_statistics[85283] = {
 	id = 85283,
-	damage = "61/回",
+	damage = "61<[WAVE]>",
 	base = 85280,
 	weapon_id = {
 		85283
@@ -117882,7 +120744,7 @@ _G.pg.base.equip_data_statistics[85283] = {
 }
 _G.pg.base.equip_data_statistics[85284] = {
 	id = 85284,
-	damage = "68/回",
+	damage = "68<[WAVE]>",
 	base = 85280,
 	weapon_id = {
 		85284
@@ -117891,7 +120753,7 @@ _G.pg.base.equip_data_statistics[85284] = {
 }
 _G.pg.base.equip_data_statistics[85285] = {
 	id = 85285,
-	damage = "75/回",
+	damage = "75<[WAVE]>",
 	base = 85280,
 	weapon_id = {
 		85285
@@ -117900,7 +120762,7 @@ _G.pg.base.equip_data_statistics[85285] = {
 }
 _G.pg.base.equip_data_statistics[85286] = {
 	id = 85286,
-	damage = "82/回",
+	damage = "82<[WAVE]>",
 	base = 85280,
 	weapon_id = {
 		85286
@@ -117909,7 +120771,7 @@ _G.pg.base.equip_data_statistics[85286] = {
 }
 _G.pg.base.equip_data_statistics[85287] = {
 	id = 85287,
-	damage = "89/回",
+	damage = "89<[WAVE]>",
 	base = 85280,
 	weapon_id = {
 		85287
@@ -117918,7 +120780,7 @@ _G.pg.base.equip_data_statistics[85287] = {
 }
 _G.pg.base.equip_data_statistics[85288] = {
 	id = 85288,
-	damage = "96/回",
+	damage = "96<[WAVE]>",
 	base = 85280,
 	weapon_id = {
 		85288
@@ -117927,7 +120789,7 @@ _G.pg.base.equip_data_statistics[85288] = {
 }
 _G.pg.base.equip_data_statistics[85289] = {
 	id = 85289,
-	damage = "103/回",
+	damage = "103<[WAVE]>",
 	base = 85280,
 	weapon_id = {
 		85289
@@ -117936,7 +120798,7 @@ _G.pg.base.equip_data_statistics[85289] = {
 }
 _G.pg.base.equip_data_statistics[85290] = {
 	id = 85290,
-	damage = "110/回",
+	damage = "110<[WAVE]>",
 	base = 85280,
 	weapon_id = {
 		85290
@@ -117946,7 +120808,7 @@ _G.pg.base.equip_data_statistics[85290] = {
 _G.pg.base.equip_data_statistics[85291] = {
 	id = 85291,
 	anti_siren = 100,
-	damage = "110/回",
+	damage = "110<[WAVE]>",
 	base = 85280,
 	weapon_id = {
 		85291
@@ -117956,7 +120818,7 @@ _G.pg.base.equip_data_statistics[85291] = {
 _G.pg.base.equip_data_statistics[85300] = {
 	tech = 1,
 	name = "406mm三連装砲B-37 MK-1",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 3,
@@ -118063,7 +120925,7 @@ _G.pg.base.equip_data_statistics[85306] = {
 _G.pg.base.equip_data_statistics[85320] = {
 	tech = 2,
 	name = "406mm三連装砲B-37 MK-1",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 3,
@@ -118110,8 +120972,7 @@ _G.pg.base.equip_data_statistics[85320] = {
 	label = {
 		"SN",
 		"BB",
-		"MG",
-		"AP"
+		"MG"
 	}
 }
 _G.pg.base.equip_data_statistics[85321] = {
@@ -118204,14 +121065,188 @@ _G.pg.base.equip_data_statistics[85330] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[85340] = {
+	tech = 3,
+	name = "406mm三連装砲B-37 MK-1",
+	speciality = "<[VOL]>",
+	type = 4,
+	descrip = "「ソビエツキー・ソユーズ」型戦艦に装備される406mm三連装主砲",
+	ammo = 1,
+	damage = "72 x 3",
+	nationality = 7,
+	rarity = 5,
+	id = 85340,
+	value_3 = 0,
+	torpedo_ammo = 0,
+	value_2 = 45,
+	icon = "85300",
+	attribute_2 = "cannon",
+	property_rate = {},
+	ammo_icon = {
+		2
+	},
+	ammo_info = {
+		{
+			2,
+			1565
+		}
+	},
+	equip_info = {
+		1,
+		2,
+		6,
+		10,
+		11,
+		12
+	},
+	weapon_id = {
+		85340
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		4,
+		5,
+		10,
+		13
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"SN",
+		"BB",
+		"MG",
+		"AP"
+	}
+}
+_G.pg.base.equip_data_statistics[85341] = {
+	id = 85341,
+	damage = "81 x 3",
+	base = 85340,
+	weapon_id = {
+		85341
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[85342] = {
+	id = 85342,
+	damage = "89 x 3",
+	base = 85340,
+	weapon_id = {
+		85342
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[85343] = {
+	id = 85343,
+	damage = "99 x 3",
+	base = 85340,
+	weapon_id = {
+		85343
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[85344] = {
+	id = 85344,
+	damage = "108 x 3",
+	base = 85340,
+	weapon_id = {
+		85344
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[85345] = {
+	id = 85345,
+	damage = "118 x 3",
+	base = 85340,
+	weapon_id = {
+		85345
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[85346] = {
+	id = 85346,
+	damage = "128 x 3",
+	base = 85340,
+	weapon_id = {
+		85346
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[85347] = {
+	id = 85347,
+	damage = "136 x 3",
+	base = 85340,
+	weapon_id = {
+		85347
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[85348] = {
+	id = 85348,
+	damage = "145 x 3",
+	base = 85340,
+	weapon_id = {
+		85348
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[85349] = {
+	id = 85349,
+	damage = "155 x 3",
+	base = 85340,
+	weapon_id = {
+		85349
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[85350] = {
+	id = 85350,
+	damage = "165 x 3",
+	base = 85340,
+	weapon_id = {
+		85350
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[85351] = {
+	id = 85351,
+	anti_siren = 100,
+	damage = "165 x 3",
+	base = 85340,
+	weapon_id = {
+		85351
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[85352] = {
+	id = 85352,
+	anti_siren = 200,
+	damage = "165 x 3",
+	base = 85340,
+	weapon_id = {
+		85352
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[85353] = {
+	id = 85353,
+	anti_siren = 300,
+	damage = "165 x 3",
+	base = 85340,
+	weapon_id = {
+		85353
+	},
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[85360] = {
 	tech = 1,
 	name = "100mm連装両用砲B-34 MZ-14",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "14/回",
+	damage = "14<[WAVE]>",
 	nationality = 7,
 	rarity = 2,
 	id = 85360,
@@ -118273,7 +121308,7 @@ _G.pg.base.equip_data_statistics[85360] = {
 }
 _G.pg.base.equip_data_statistics[85361] = {
 	id = 85361,
-	damage = "16/回",
+	damage = "16<[WAVE]>",
 	base = 85360,
 	weapon_id = {
 		85361
@@ -118282,7 +121317,7 @@ _G.pg.base.equip_data_statistics[85361] = {
 }
 _G.pg.base.equip_data_statistics[85362] = {
 	id = 85362,
-	damage = "19/回",
+	damage = "19<[WAVE]>",
 	base = 85360,
 	weapon_id = {
 		85362
@@ -118291,7 +121326,7 @@ _G.pg.base.equip_data_statistics[85362] = {
 }
 _G.pg.base.equip_data_statistics[85363] = {
 	id = 85363,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	base = 85360,
 	weapon_id = {
 		85363
@@ -118301,11 +121336,11 @@ _G.pg.base.equip_data_statistics[85363] = {
 _G.pg.base.equip_data_statistics[85380] = {
 	tech = 2,
 	name = "100mm連装両用砲B-34 MZ-14",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "33/回",
+	damage = "33<[WAVE]>",
 	nationality = 7,
 	rarity = 3,
 	id = 85380,
@@ -118367,7 +121402,7 @@ _G.pg.base.equip_data_statistics[85380] = {
 }
 _G.pg.base.equip_data_statistics[85381] = {
 	id = 85381,
-	damage = "36/回",
+	damage = "36<[WAVE]>",
 	base = 85380,
 	weapon_id = {
 		85381
@@ -118376,7 +121411,7 @@ _G.pg.base.equip_data_statistics[85381] = {
 }
 _G.pg.base.equip_data_statistics[85382] = {
 	id = 85382,
-	damage = "41/回",
+	damage = "41<[WAVE]>",
 	base = 85380,
 	weapon_id = {
 		85382
@@ -118385,7 +121420,7 @@ _G.pg.base.equip_data_statistics[85382] = {
 }
 _G.pg.base.equip_data_statistics[85383] = {
 	id = 85383,
-	damage = "45/回",
+	damage = "45<[WAVE]>",
 	base = 85380,
 	weapon_id = {
 		85383
@@ -118394,7 +121429,7 @@ _G.pg.base.equip_data_statistics[85383] = {
 }
 _G.pg.base.equip_data_statistics[85384] = {
 	id = 85384,
-	damage = "51/回",
+	damage = "51<[WAVE]>",
 	base = 85380,
 	weapon_id = {
 		85384
@@ -118403,7 +121438,7 @@ _G.pg.base.equip_data_statistics[85384] = {
 }
 _G.pg.base.equip_data_statistics[85385] = {
 	id = 85385,
-	damage = "57/回",
+	damage = "57<[WAVE]>",
 	base = 85380,
 	weapon_id = {
 		85385
@@ -118412,7 +121447,7 @@ _G.pg.base.equip_data_statistics[85385] = {
 }
 _G.pg.base.equip_data_statistics[85386] = {
 	id = 85386,
-	damage = "64/回",
+	damage = "64<[WAVE]>",
 	base = 85380,
 	weapon_id = {
 		85386
@@ -118422,11 +121457,11 @@ _G.pg.base.equip_data_statistics[85386] = {
 _G.pg.base.equip_data_statistics[85400] = {
 	tech = 3,
 	name = "100mm連装両用砲B-34 MZ-14",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	nationality = 7,
 	rarity = 4,
 	id = 85400,
@@ -118488,7 +121523,7 @@ _G.pg.base.equip_data_statistics[85400] = {
 }
 _G.pg.base.equip_data_statistics[85401] = {
 	id = 85401,
-	damage = "42/回",
+	damage = "42<[WAVE]>",
 	base = 85400,
 	weapon_id = {
 		85401
@@ -118497,7 +121532,7 @@ _G.pg.base.equip_data_statistics[85401] = {
 }
 _G.pg.base.equip_data_statistics[85402] = {
 	id = 85402,
-	damage = "47/回",
+	damage = "47<[WAVE]>",
 	base = 85400,
 	weapon_id = {
 		85402
@@ -118506,7 +121541,7 @@ _G.pg.base.equip_data_statistics[85402] = {
 }
 _G.pg.base.equip_data_statistics[85403] = {
 	id = 85403,
-	damage = "53/回",
+	damage = "53<[WAVE]>",
 	base = 85400,
 	weapon_id = {
 		85403
@@ -118515,7 +121550,7 @@ _G.pg.base.equip_data_statistics[85403] = {
 }
 _G.pg.base.equip_data_statistics[85404] = {
 	id = 85404,
-	damage = "59/回",
+	damage = "59<[WAVE]>",
 	base = 85400,
 	weapon_id = {
 		85404
@@ -118524,7 +121559,7 @@ _G.pg.base.equip_data_statistics[85404] = {
 }
 _G.pg.base.equip_data_statistics[85405] = {
 	id = 85405,
-	damage = "65/回",
+	damage = "65<[WAVE]>",
 	base = 85400,
 	weapon_id = {
 		85405
@@ -118533,7 +121568,7 @@ _G.pg.base.equip_data_statistics[85405] = {
 }
 _G.pg.base.equip_data_statistics[85406] = {
 	id = 85406,
-	damage = "71/回",
+	damage = "71<[WAVE]>",
 	base = 85400,
 	weapon_id = {
 		85406
@@ -118542,7 +121577,7 @@ _G.pg.base.equip_data_statistics[85406] = {
 }
 _G.pg.base.equip_data_statistics[85407] = {
 	id = 85407,
-	damage = "77/回",
+	damage = "77<[WAVE]>",
 	base = 85400,
 	weapon_id = {
 		85407
@@ -118551,7 +121586,7 @@ _G.pg.base.equip_data_statistics[85407] = {
 }
 _G.pg.base.equip_data_statistics[85408] = {
 	id = 85408,
-	damage = "83/回",
+	damage = "83<[WAVE]>",
 	base = 85400,
 	weapon_id = {
 		85408
@@ -118560,7 +121595,7 @@ _G.pg.base.equip_data_statistics[85408] = {
 }
 _G.pg.base.equip_data_statistics[85409] = {
 	id = 85409,
-	damage = "89/回",
+	damage = "89<[WAVE]>",
 	base = 85400,
 	weapon_id = {
 		85409
@@ -118569,7 +121604,7 @@ _G.pg.base.equip_data_statistics[85409] = {
 }
 _G.pg.base.equip_data_statistics[85410] = {
 	id = 85410,
-	damage = "96/回",
+	damage = "96<[WAVE]>",
 	base = 85400,
 	weapon_id = {
 		85410
@@ -118579,7 +121614,7 @@ _G.pg.base.equip_data_statistics[85410] = {
 _G.pg.base.equip_data_statistics[85411] = {
 	id = 85411,
 	anti_siren = 100,
-	damage = "96/回",
+	damage = "96<[WAVE]>",
 	base = 85400,
 	weapon_id = {
 		85411
@@ -118589,7 +121624,7 @@ _G.pg.base.equip_data_statistics[85411] = {
 _G.pg.base.equip_data_statistics[85420] = {
 	tech = 3,
 	name = "305mm三連装砲Model1907",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 2,
@@ -118706,7 +121741,7 @@ _G.pg.base.equip_data_statistics[85427] = {
 _G.pg.base.equip_data_statistics[85440] = {
 	tech = 3,
 	name = "152mm連装砲Model1892",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "0",
 	ammo = 3,
@@ -118829,7 +121864,7 @@ _G.pg.base.equip_data_statistics[85447] = {
 _G.pg.base.equip_data_statistics[85460] = {
 	tech = 1,
 	name = "180mm三連装砲B-1-P Model1932",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "優秀な射程を持つ北方連合開発の三連装主砲。",
 	ammo = 1,
@@ -118943,7 +121978,7 @@ _G.pg.base.equip_data_statistics[85466] = {
 _G.pg.base.equip_data_statistics[85480] = {
 	tech = 2,
 	name = "180mm三連装砲B-1-P Model1932",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "優秀な射程を持つ北方連合開発の三連装主砲。",
 	ammo = 1,
@@ -119093,7 +122128,7 @@ _G.pg.base.equip_data_statistics[85490] = {
 _G.pg.base.equip_data_statistics[85520] = {
 	tech = 0,
 	name = "B-50 305mm三連装砲Mk-15",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 11,
 	descrip = "クロンシュタット級巡洋艦が搭載予定の305mm主砲",
 	ammo = 1,
@@ -119264,7 +122299,7 @@ _G.pg.base.equip_data_statistics[85533] = {
 _G.pg.base.equip_data_statistics[85540] = {
 	rarity = 5,
 	name = "試作型艦上式Su-2",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 0,
 	ammo = 5,
@@ -119498,7 +122533,7 @@ _G.pg.base.equip_data_statistics[85553] = {
 _G.pg.base.equip_data_statistics[85560] = {
 	rarity = 5,
 	name = "試作型VIT-2(VK107)",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 0,
 	ammo = 5,
@@ -119732,7 +122767,7 @@ _G.pg.base.equip_data_statistics[85573] = {
 _G.pg.base.equip_data_statistics[85580] = {
 	tech = 0,
 	name = "試作型240mm三連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "ProjectXの重巡洋艦に搭載予定の試作型240mm主砲",
 	ammo = 1,
@@ -119912,7 +122947,7 @@ _G.pg.base.equip_data_statistics[85593] = {
 _G.pg.base.equip_data_statistics[89000] = {
 	type = 10,
 	name = "ランダムワード生成器",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 6,
 	ammo = 10,
@@ -120039,7 +123074,7 @@ _G.pg.base.equip_data_statistics[89013] = {
 _G.pg.base.equip_data_statistics[89020] = {
 	type = 10,
 	name = "ぴょこぴょこ",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 1,
 	ammo = 10,
@@ -120159,7 +123194,7 @@ _G.pg.base.equip_data_statistics[89033] = {
 _G.pg.base.equip_data_statistics[89040] = {
 	type = 10,
 	name = "インテリジェントチップ",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 3,
 	ammo = 10,
@@ -120287,7 +123322,7 @@ _G.pg.base.equip_data_statistics[89053] = {
 _G.pg.base.equip_data_statistics[89060] = {
 	type = 10,
 	name = "チームエンブレム",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 16,
 	ammo = 10,
@@ -120415,7 +123450,7 @@ _G.pg.base.equip_data_statistics[89073] = {
 _G.pg.base.equip_data_statistics[89080] = {
 	type = 10,
 	name = "ゲーマーズの証",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -120530,7 +123565,7 @@ _G.pg.base.equip_data_statistics[89093] = {
 _G.pg.base.equip_data_statistics[89100] = {
 	type = 10,
 	name = "トウモロコシの灯籠",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 50,
 	ammo = 10,
@@ -120659,7 +123694,7 @@ _G.pg.base.equip_data_statistics[89113] = {
 _G.pg.base.equip_data_statistics[89120] = {
 	type = 10,
 	name = "あん肝",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 3,
 	ammo = 10,
@@ -120787,7 +123822,7 @@ _G.pg.base.equip_data_statistics[89133] = {
 _G.pg.base.equip_data_statistics[89140] = {
 	type = 10,
 	name = "熱愛のフィリンエッター",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 15,
 	ammo = 10,
@@ -120916,7 +123951,7 @@ _G.pg.base.equip_data_statistics[89153] = {
 _G.pg.base.equip_data_statistics[89160] = {
 	type = 10,
 	name = "神聖なるリュミエール",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 15,
 	ammo = 10,
@@ -121045,7 +124080,7 @@ _G.pg.base.equip_data_statistics[89173] = {
 _G.pg.base.equip_data_statistics[89180] = {
 	type = 10,
 	name = "輝けるアストラム",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 15,
 	ammo = 10,
@@ -121174,7 +124209,7 @@ _G.pg.base.equip_data_statistics[89193] = {
 _G.pg.base.equip_data_statistics[89200] = {
 	type = 10,
 	name = "グラヴィティシューズ",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 1,
 	ammo = 10,
@@ -121301,7 +124336,7 @@ _G.pg.base.equip_data_statistics[89213] = {
 _G.pg.base.equip_data_statistics[89220] = {
 	type = 10,
 	name = "ネビュラドレス",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -121416,7 +124451,7 @@ _G.pg.base.equip_data_statistics[89233] = {
 _G.pg.base.equip_data_statistics[89240] = {
 	type = 10,
 	name = "ヴィーナス覚醒ジェム",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 16,
 	ammo = 10,
@@ -121544,7 +124579,7 @@ _G.pg.base.equip_data_statistics[89253] = {
 _G.pg.base.equip_data_statistics[89260] = {
 	type = 10,
 	name = "ココロの鍵",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 15,
 	ammo = 10,
@@ -121673,7 +124708,7 @@ _G.pg.base.equip_data_statistics[89273] = {
 _G.pg.base.equip_data_statistics[89280] = {
 	type = 10,
 	name = "輝きのブレスレット",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 16,
 	ammo = 10,
@@ -121801,7 +124836,7 @@ _G.pg.base.equip_data_statistics[89293] = {
 _G.pg.base.equip_data_statistics[89300] = {
 	type = 10,
 	name = "バトルトラクトマックス",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 6,
 	ammo = 10,
@@ -121975,7 +125010,7 @@ _G.pg.base.equip_data_statistics[89313] = {
 _G.pg.base.equip_data_statistics[89320] = {
 	type = 10,
 	name = "グリッドマンキャリバー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -122091,7 +125126,7 @@ _G.pg.base.equip_data_statistics[89333] = {
 _G.pg.base.equip_data_statistics[89340] = {
 	type = 10,
 	name = "バスターボラー",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -122251,7 +125286,7 @@ _G.pg.base.equip_data_statistics[89353] = {
 _G.pg.base.equip_data_statistics[89360] = {
 	type = 10,
 	name = "スカイヴィッター",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -122411,7 +125446,7 @@ _G.pg.base.equip_data_statistics[89373] = {
 _G.pg.base.equip_data_statistics[89380] = {
 	type = 10,
 	name = "ダイナミックキャノン",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -122542,7 +125577,7 @@ _G.pg.base.equip_data_statistics[89393] = {
 _G.pg.base.equip_data_statistics[89400] = {
 	type = 10,
 	name = "ゴルドバーン",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -122657,7 +125692,7 @@ _G.pg.base.equip_data_statistics[89413] = {
 _G.pg.base.equip_data_statistics[89420] = {
 	type = 10,
 	name = "グランフラム",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 1,
 	ammo = 10,
@@ -122787,7 +125822,7 @@ _G.pg.base.equip_data_statistics[89433] = {
 _G.pg.base.equip_data_statistics[89440] = {
 	type = 10,
 	name = "クライスタルレヘルン",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -122902,7 +125937,7 @@ _G.pg.base.equip_data_statistics[89453] = {
 _G.pg.base.equip_data_statistics[89460] = {
 	type = 10,
 	name = "ラウトプラジグ",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -123018,7 +126053,7 @@ _G.pg.base.equip_data_statistics[89473] = {
 _G.pg.base.equip_data_statistics[89480] = {
 	type = 10,
 	name = "ヴィアベールルフト",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 1,
 	ammo = 10,
@@ -123144,7 +126179,7 @@ _G.pg.base.equip_data_statistics[89493] = {
 _G.pg.base.equip_data_statistics[89500] = {
 	type = 10,
 	name = "エリキシル剤",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -123267,7 +126302,7 @@ _G.pg.base.equip_data_statistics[89513] = {
 _G.pg.base.equip_data_statistics[89520] = {
 	type = 10,
 	name = "神秘の羽衣",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 2,
 	ammo = 10,
@@ -123404,7 +126439,7 @@ _G.pg.base.equip_data_statistics[89533] = {
 _G.pg.base.equip_data_statistics[89540] = {
 	type = 10,
 	name = "アポカリプス",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -123529,7 +126564,7 @@ _G.pg.base.equip_data_statistics[89553] = {
 _G.pg.base.equip_data_statistics[89560] = {
 	type = 10,
 	name = "Ｎ／Ａ",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 4,
 	ammo = 10,
@@ -123668,7 +126703,7 @@ _G.pg.base.equip_data_statistics[89573] = {
 _G.pg.base.equip_data_statistics[89580] = {
 	type = 10,
 	name = "創世の槌",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -123783,7 +126818,7 @@ _G.pg.base.equip_data_statistics[89593] = {
 _G.pg.base.equip_data_statistics[89600] = {
 	type = 10,
 	name = "泡雲の弾丸",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 6,
 	ammo = 10,
@@ -123912,7 +126947,7 @@ _G.pg.base.equip_data_statistics[89613] = {
 _G.pg.base.equip_data_statistics[89620] = {
 	type = 10,
 	name = "エネルジアニカ",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 12,
 	ammo = 10,
@@ -124041,7 +127076,7 @@ _G.pg.base.equip_data_statistics[89633] = {
 _G.pg.base.equip_data_statistics[89640] = {
 	type = 18,
 	name = "かに（レシート付き）",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -124160,7 +127195,7 @@ _G.pg.base.equip_data_statistics[89653] = {
 _G.pg.base.equip_data_statistics[89660] = {
 	type = 18,
 	name = "竜の置物",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -124276,10 +127311,742 @@ _G.pg.base.equip_data_statistics[89673] = {
 	base = 89660,
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[89680] = {
+	type = 10,
+	name = "シノビのメダル",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 15,
+	ammo = 10,
+	nationality = 110,
+	descrip = "シノビのメダル",
+	rarity = 5,
+	attribute_1 = "antiaircraft",
+	value_3 = 0,
+	torpedo_ammo = 0,
+	id = 89680,
+	icon = "89680",
+	value_1 = "14",
+	attribute_2 = "hit",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60470
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[89681] = {
+	id = 89681,
+	value_2 = 16,
+	value_1 = "16",
+	base = 89680,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89682] = {
+	id = 89682,
+	value_2 = 17,
+	value_1 = "18",
+	base = 89680,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89683] = {
+	id = 89683,
+	value_2 = 18,
+	value_1 = "20",
+	base = 89680,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89684] = {
+	id = 89684,
+	value_2 = 19,
+	value_1 = "22",
+	base = 89680,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89685] = {
+	id = 89685,
+	value_2 = 20,
+	value_1 = "24",
+	base = 89680,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89686] = {
+	id = 89686,
+	value_2 = 22,
+	value_1 = "26",
+	base = 89680,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89687] = {
+	id = 89687,
+	value_2 = 24,
+	value_1 = "28",
+	base = 89680,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89688] = {
+	id = 89688,
+	value_2 = 26,
+	value_1 = "30",
+	base = 89680,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89689] = {
+	id = 89689,
+	value_2 = 28,
+	value_1 = "32",
+	base = 89680,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89690] = {
+	id = 89690,
+	value_2 = 30,
+	value_1 = "35",
+	base = 89680,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89691] = {
+	value_2 = 32,
+	anti_siren = 100,
+	base = 89680,
+	id = 89691,
+	value_1 = "38",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89692] = {
+	value_2 = 34,
+	anti_siren = 200,
+	base = 89680,
+	id = 89692,
+	value_1 = "41",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89693] = {
+	value_2 = 36,
+	anti_siren = 300,
+	base = 89680,
+	id = 89693,
+	value_1 = "44",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89700] = {
+	type = 10,
+	name = "シノビの装束",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "シノビの装束",
+	nationality = 110,
+	rarity = 5,
+	id = 89700,
+	value_3 = 0,
+	attribute_1 = "durability",
+	icon = "89700",
+	value_1 = "245",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60480
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[89701] = {
+	id = 89701,
+	value_1 = "280",
+	base = 89700,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89702] = {
+	id = 89702,
+	value_1 = "310",
+	base = 89700,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89703] = {
+	id = 89703,
+	value_1 = "340",
+	base = 89700,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89704] = {
+	id = 89704,
+	value_1 = "370",
+	base = 89700,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89705] = {
+	id = 89705,
+	value_1 = "400",
+	base = 89700,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89706] = {
+	id = 89706,
+	value_1 = "430",
+	base = 89700,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89707] = {
+	id = 89707,
+	value_1 = "460",
+	base = 89700,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89708] = {
+	id = 89708,
+	value_1 = "490",
+	base = 89700,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89709] = {
+	id = 89709,
+	value_1 = "520",
+	base = 89700,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89710] = {
+	id = 89710,
+	value_1 = "550",
+	base = 89700,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89711] = {
+	id = 89711,
+	anti_siren = 100,
+	value_1 = "580",
+	base = 89700,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89712] = {
+	id = 89712,
+	anti_siren = 200,
+	value_1 = "610",
+	base = 89700,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89713] = {
+	id = 89713,
+	anti_siren = 300,
+	value_1 = "640",
+	base = 89700,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89720] = {
+	type = 10,
+	name = "忍術の巻物",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 6,
+	ammo = 10,
+	nationality = 110,
+	descrip = "忍術の巻物",
+	rarity = 5,
+	attribute_1 = "hit",
+	value_3 = 0,
+	torpedo_ammo = 0,
+	id = 89720,
+	icon = "89720",
+	value_1 = "10",
+	attribute_2 = "cannon",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60490
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[89721] = {
+	id = 89721,
+	value_2 = 7,
+	value_1 = "11",
+	base = 89720,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89722] = {
+	id = 89722,
+	value_2 = 8,
+	value_1 = "13",
+	base = 89720,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89723] = {
+	id = 89723,
+	value_2 = 9,
+	value_1 = "14",
+	base = 89720,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89724] = {
+	id = 89724,
+	value_2 = 10,
+	value_1 = "16",
+	base = 89720,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89725] = {
+	id = 89725,
+	value_2 = 11,
+	value_1 = "17",
+	base = 89720,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89726] = {
+	id = 89726,
+	value_2 = 12,
+	value_1 = "19",
+	base = 89720,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89727] = {
+	id = 89727,
+	value_2 = 13,
+	value_1 = "20",
+	base = 89720,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89728] = {
+	id = 89728,
+	value_2 = 14,
+	value_1 = "22",
+	base = 89720,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89729] = {
+	id = 89729,
+	value_2 = 15,
+	value_1 = "23",
+	base = 89720,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89730] = {
+	id = 89730,
+	value_2 = 17,
+	value_1 = "25",
+	base = 89720,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89731] = {
+	value_2 = 18,
+	anti_siren = 100,
+	base = 89720,
+	id = 89731,
+	value_1 = "26",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89732] = {
+	value_2 = 19,
+	anti_siren = 200,
+	base = 89720,
+	id = 89732,
+	value_1 = "28",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89733] = {
+	value_2 = 20,
+	anti_siren = 300,
+	base = 89720,
+	id = 89733,
+	value_1 = "29",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89740] = {
+	type = 10,
+	name = "パッションμチケット",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 15,
+	ammo = 10,
+	nationality = 0,
+	descrip = "歌がもたらす共感、情熱を――一緒に楽しもう！",
+	rarity = 5,
+	attribute_1 = "antiaircraft",
+	value_3 = 0,
+	torpedo_ammo = 0,
+	id = 89740,
+	icon = "89740",
+	value_1 = "14",
+	attribute_2 = "hit",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60560
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[89741] = {
+	id = 89741,
+	value_2 = 16,
+	value_1 = "16",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89742] = {
+	id = 89742,
+	value_2 = 17,
+	value_1 = "18",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89743] = {
+	id = 89743,
+	value_2 = 18,
+	value_1 = "20",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89744] = {
+	id = 89744,
+	value_2 = 19,
+	value_1 = "22",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89745] = {
+	id = 89745,
+	value_2 = 20,
+	value_1 = "24",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89746] = {
+	id = 89746,
+	value_2 = 22,
+	value_1 = "26",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89747] = {
+	id = 89747,
+	value_2 = 24,
+	value_1 = "28",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89748] = {
+	id = 89748,
+	value_2 = 26,
+	value_1 = "30",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89749] = {
+	id = 89749,
+	value_2 = 28,
+	value_1 = "32",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89750] = {
+	id = 89750,
+	value_2 = 30,
+	value_1 = "35",
+	base = 89740,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89751] = {
+	value_2 = 32,
+	anti_siren = 100,
+	base = 89740,
+	id = 89751,
+	value_1 = "38",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89752] = {
+	value_2 = 34,
+	anti_siren = 200,
+	base = 89740,
+	id = 89752,
+	value_1 = "41",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89753] = {
+	value_2 = 36,
+	anti_siren = 300,
+	base = 89740,
+	id = 89753,
+	value_1 = "44",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89760] = {
+	type = 10,
+	name = "「Alizarin」応援タオル",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "μ兵装実験ユニット「Alizarin」のイメージカラーのタオル。ライブの応援にも日常生活にも十分使える！",
+	nationality = 0,
+	rarity = 5,
+	id = 89760,
+	value_3 = 0,
+	attribute_1 = "durability",
+	icon = "89760",
+	value_1 = "250",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60570
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[89761] = {
+	id = 89761,
+	value_1 = "280",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89762] = {
+	id = 89762,
+	value_1 = "310",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89763] = {
+	id = 89763,
+	value_1 = "340",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89764] = {
+	id = 89764,
+	value_1 = "370",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89765] = {
+	id = 89765,
+	value_1 = "400",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89766] = {
+	id = 89766,
+	value_1 = "430",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89767] = {
+	id = 89767,
+	value_1 = "460",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89768] = {
+	id = 89768,
+	value_1 = "490",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89769] = {
+	id = 89769,
+	value_1 = "520",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89770] = {
+	id = 89770,
+	value_1 = "550",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89771] = {
+	id = 89771,
+	anti_siren = 100,
+	value_1 = "580",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89772] = {
+	id = 89772,
+	anti_siren = 200,
+	value_1 = "610",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89773] = {
+	id = 89773,
+	anti_siren = 300,
+	value_1 = "640",
+	base = 89760,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89780] = {
+	type = 10,
+	name = "「Cyanidin」応援タオル",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "μ兵装実験ユニット「Cyanidin」のイメージカラーのタオル。ライブの応援にも日常生活にも十分使える！",
+	nationality = 0,
+	rarity = 5,
+	id = 89780,
+	value_3 = 0,
+	attribute_1 = "durability",
+	icon = "89780",
+	value_1 = "250",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60580
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[89781] = {
+	id = 89781,
+	value_1 = "280",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89782] = {
+	id = 89782,
+	value_1 = "310",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89783] = {
+	id = 89783,
+	value_1 = "340",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89784] = {
+	id = 89784,
+	value_1 = "370",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89785] = {
+	id = 89785,
+	value_1 = "400",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89786] = {
+	id = 89786,
+	value_1 = "430",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89787] = {
+	id = 89787,
+	value_1 = "460",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89788] = {
+	id = 89788,
+	value_1 = "490",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89789] = {
+	id = 89789,
+	value_1 = "520",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89790] = {
+	id = 89790,
+	value_1 = "550",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89791] = {
+	id = 89791,
+	anti_siren = 100,
+	value_1 = "580",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89792] = {
+	id = 89792,
+	anti_siren = 200,
+	value_1 = "610",
+	base = 89780,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[89793] = {
+	id = 89793,
+	anti_siren = 300,
+	value_1 = "640",
+	base = 89780,
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[90000] = {
 	tech = 1,
 	name = "130mm単装砲Mle1924",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	rarity = 1,
 	ammo = 3,
@@ -124346,7 +128113,6 @@ _G.pg.base.equip_data_statistics[90000] = {
 }
 _G.pg.base.equip_data_statistics[90001] = {
 	id = 90001,
-	damage = "3 x 5",
 	base = 90000,
 	weapon_id = {
 		90001
@@ -124374,7 +128140,7 @@ _G.pg.base.equip_data_statistics[90003] = {
 _G.pg.base.equip_data_statistics[90020] = {
 	tech = 2,
 	name = "130mm単装砲Mle1924",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -124470,7 +128236,7 @@ _G.pg.base.equip_data_statistics[90023] = {
 _G.pg.base.equip_data_statistics[90040] = {
 	tech = 3,
 	name = "130mm単装砲Mle1924",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -124602,7 +128368,7 @@ _G.pg.base.equip_data_statistics[90047] = {
 _G.pg.base.equip_data_statistics[90100] = {
 	tech = 1,
 	name = "138.6mm単装砲Mle1929",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -124670,7 +128436,6 @@ _G.pg.base.equip_data_statistics[90100] = {
 }
 _G.pg.base.equip_data_statistics[90101] = {
 	id = 90101,
-	damage = "4 x 5",
 	base = 90100,
 	weapon_id = {
 		90101
@@ -124725,7 +128490,7 @@ _G.pg.base.equip_data_statistics[90106] = {
 _G.pg.base.equip_data_statistics[90120] = {
 	tech = 2,
 	name = "138.6mm単装砲Mle1929",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -124885,7 +128650,7 @@ _G.pg.base.equip_data_statistics[90130] = {
 _G.pg.base.equip_data_statistics[90140] = {
 	tech = 3,
 	name = "138.6mm単装砲Mle1929",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -125075,7 +128840,7 @@ _G.pg.base.equip_data_statistics[90153] = {
 _G.pg.base.equip_data_statistics[90200] = {
 	tech = 1,
 	name = "152mm三連装砲Mle1930",
-	speciality = "追尾",
+	speciality = "<[SCA]>",
 	type = 2,
 	rarity = 1,
 	ammo = 3,
@@ -125161,7 +128926,7 @@ _G.pg.base.equip_data_statistics[90203] = {
 _G.pg.base.equip_data_statistics[90220] = {
 	tech = 2,
 	name = "152mm三連装砲Mle1930",
-	speciality = "追尾",
+	speciality = "<[SCA]>",
 	type = 2,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -125248,7 +129013,7 @@ _G.pg.base.equip_data_statistics[90223] = {
 _G.pg.base.equip_data_statistics[90240] = {
 	tech = 3,
 	name = "152mm三連装砲Mle1930",
-	speciality = "追尾",
+	speciality = "<[SCA]>",
 	type = 2,
 	descrip = "说明未填写",
 	ammo = 1,
@@ -125372,7 +129137,7 @@ _G.pg.base.equip_data_statistics[90247] = {
 _G.pg.base.equip_data_statistics[90260] = {
 	tech = 0,
 	name = "152mm三連装砲Mle1930(榴弾)",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "アイリス製の三連装152mm軽巡用主砲。弾薬は榴弾を使用している",
 	ammo = 2,
@@ -125552,7 +129317,7 @@ _G.pg.base.equip_data_statistics[90273] = {
 _G.pg.base.equip_data_statistics[90300] = {
 	tech = 1,
 	name = "330mm四連装砲Mle1931",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -125632,7 +129397,7 @@ _G.pg.base.equip_data_statistics[90303] = {
 _G.pg.base.equip_data_statistics[90320] = {
 	tech = 2,
 	name = "330mm四連装砲Mle1931",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -125739,7 +129504,7 @@ _G.pg.base.equip_data_statistics[90326] = {
 _G.pg.base.equip_data_statistics[90340] = {
 	tech = 3,
 	name = "330mm四連装砲Mle1931",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "说明未填写",
 	ammo = 1,
@@ -125893,7 +129658,7 @@ _G.pg.base.equip_data_statistics[90351] = {
 _G.pg.base.equip_data_statistics[90360] = {
 	tech = 0,
 	name = "試作型四連装330mm砲Mle1931(超巡用)",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 11,
 	descrip = "说明未填写",
 	ammo = 1,
@@ -126064,7 +129829,7 @@ _G.pg.base.equip_data_statistics[90373] = {
 _G.pg.base.equip_data_statistics[90400] = {
 	tech = 1,
 	name = "380mm四連装砲Mle1935",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "リシュリュー級戦艦に搭載された四連装380mm主砲。戦艦・巡洋戦艦が装備可能",
 	ammo = 3,
@@ -126172,7 +129937,7 @@ _G.pg.base.equip_data_statistics[90406] = {
 _G.pg.base.equip_data_statistics[90420] = {
 	tech = 2,
 	name = "380mm四連装砲Mle1935",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "リシュリュー級戦艦に搭載された四連装380mm主砲。戦艦・巡洋戦艦が装備可能",
 	ammo = 2,
@@ -126316,7 +130081,7 @@ _G.pg.base.equip_data_statistics[90430] = {
 _G.pg.base.equip_data_statistics[90440] = {
 	tech = 3,
 	name = "380mm四連装砲Mle1935",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "リシュリュー級戦艦に搭載された四連装380mm主砲。戦艦・巡洋戦艦が装備可能",
 	ammo = 2,
@@ -126490,7 +130255,7 @@ _G.pg.base.equip_data_statistics[90453] = {
 _G.pg.base.equip_data_statistics[90460] = {
 	tech = 3,
 	name = "340mm四連装砲Mle1912",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -126607,7 +130372,7 @@ _G.pg.base.equip_data_statistics[90467] = {
 _G.pg.base.equip_data_statistics[90480] = {
 	tech = 0,
 	name = "試作型380mm三連装砲Mle1935",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "说明未填写",
 	ammo = 1,
@@ -126781,7 +130546,7 @@ _G.pg.base.equip_data_statistics[90493] = {
 _G.pg.base.equip_data_statistics[90500] = {
 	tech = 1,
 	name = "130mm連装砲Mle1935",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -126876,7 +130641,7 @@ _G.pg.base.equip_data_statistics[90503] = {
 _G.pg.base.equip_data_statistics[90540] = {
 	tech = 3,
 	name = "130mm連装砲Mle1935",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -127045,11 +130810,11 @@ _G.pg.base.equip_data_statistics[90551] = {
 _G.pg.base.equip_data_statistics[90560] = {
 	tech = 3,
 	name = "37mm高射砲Mle1925",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "说明未填写",
 	ammo = 5,
-	damage = "17/回",
+	damage = "17<[WAVE]>",
 	nationality = 8,
 	rarity = 3,
 	id = 90560,
@@ -127111,7 +130876,7 @@ _G.pg.base.equip_data_statistics[90560] = {
 }
 _G.pg.base.equip_data_statistics[90561] = {
 	id = 90561,
-	damage = "20/回",
+	damage = "20<[WAVE]>",
 	base = 90560,
 	weapon_id = {
 		90561
@@ -127120,7 +130885,7 @@ _G.pg.base.equip_data_statistics[90561] = {
 }
 _G.pg.base.equip_data_statistics[90562] = {
 	id = 90562,
-	damage = "23/回",
+	damage = "23<[WAVE]>",
 	base = 90560,
 	weapon_id = {
 		90562
@@ -127129,7 +130894,7 @@ _G.pg.base.equip_data_statistics[90562] = {
 }
 _G.pg.base.equip_data_statistics[90563] = {
 	id = 90563,
-	damage = "26/回",
+	damage = "26<[WAVE]>",
 	base = 90560,
 	weapon_id = {
 		90563
@@ -127138,7 +130903,7 @@ _G.pg.base.equip_data_statistics[90563] = {
 }
 _G.pg.base.equip_data_statistics[90564] = {
 	id = 90564,
-	damage = "29/回",
+	damage = "29<[WAVE]>",
 	base = 90560,
 	weapon_id = {
 		90564
@@ -127147,7 +130912,7 @@ _G.pg.base.equip_data_statistics[90564] = {
 }
 _G.pg.base.equip_data_statistics[90565] = {
 	id = 90565,
-	damage = "32/回",
+	damage = "32<[WAVE]>",
 	base = 90560,
 	weapon_id = {
 		90565
@@ -127156,7 +130921,7 @@ _G.pg.base.equip_data_statistics[90565] = {
 }
 _G.pg.base.equip_data_statistics[90566] = {
 	id = 90566,
-	damage = "35/回",
+	damage = "35<[WAVE]>",
 	base = 90560,
 	weapon_id = {
 		90566
@@ -127166,7 +130931,7 @@ _G.pg.base.equip_data_statistics[90566] = {
 _G.pg.base.equip_data_statistics[90567] = {
 	id = 90567,
 	anti_siren = 100,
-	damage = "35/轮",
+	damage = "35<[WAVE]>",
 	base = 90560,
 	weapon_id = {
 		90567
@@ -127176,11 +130941,11 @@ _G.pg.base.equip_data_statistics[90567] = {
 _G.pg.base.equip_data_statistics[90580] = {
 	tech = 3,
 	name = "二連装37mm高射砲Mle1933",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "说明未填写",
 	ammo = 5,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	nationality = 8,
 	rarity = 4,
 	id = 90580,
@@ -127242,7 +131007,7 @@ _G.pg.base.equip_data_statistics[90580] = {
 }
 _G.pg.base.equip_data_statistics[90581] = {
 	id = 90581,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	base = 90580,
 	weapon_id = {
 		90581
@@ -127251,7 +131016,7 @@ _G.pg.base.equip_data_statistics[90581] = {
 }
 _G.pg.base.equip_data_statistics[90582] = {
 	id = 90582,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 90580,
 	weapon_id = {
 		90582
@@ -127260,7 +131025,7 @@ _G.pg.base.equip_data_statistics[90582] = {
 }
 _G.pg.base.equip_data_statistics[90583] = {
 	id = 90583,
-	damage = "31/回",
+	damage = "31<[WAVE]>",
 	base = 90580,
 	weapon_id = {
 		90583
@@ -127269,7 +131034,7 @@ _G.pg.base.equip_data_statistics[90583] = {
 }
 _G.pg.base.equip_data_statistics[90584] = {
 	id = 90584,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	base = 90580,
 	weapon_id = {
 		90584
@@ -127278,7 +131043,7 @@ _G.pg.base.equip_data_statistics[90584] = {
 }
 _G.pg.base.equip_data_statistics[90585] = {
 	id = 90585,
-	damage = "37/回",
+	damage = "37<[WAVE]>",
 	base = 90580,
 	weapon_id = {
 		90585
@@ -127287,7 +131052,7 @@ _G.pg.base.equip_data_statistics[90585] = {
 }
 _G.pg.base.equip_data_statistics[90586] = {
 	id = 90586,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	base = 90580,
 	weapon_id = {
 		90586
@@ -127296,7 +131061,7 @@ _G.pg.base.equip_data_statistics[90586] = {
 }
 _G.pg.base.equip_data_statistics[90587] = {
 	id = 90587,
-	damage = "43/回",
+	damage = "43<[WAVE]>",
 	base = 90580,
 	weapon_id = {
 		90587
@@ -127305,7 +131070,7 @@ _G.pg.base.equip_data_statistics[90587] = {
 }
 _G.pg.base.equip_data_statistics[90588] = {
 	id = 90588,
-	damage = "46/回",
+	damage = "46<[WAVE]>",
 	base = 90580,
 	weapon_id = {
 		90588
@@ -127314,7 +131079,7 @@ _G.pg.base.equip_data_statistics[90588] = {
 }
 _G.pg.base.equip_data_statistics[90589] = {
 	id = 90589,
-	damage = "49/回",
+	damage = "49<[WAVE]>",
 	base = 90580,
 	weapon_id = {
 		90589
@@ -127323,7 +131088,7 @@ _G.pg.base.equip_data_statistics[90589] = {
 }
 _G.pg.base.equip_data_statistics[90590] = {
 	id = 90590,
-	damage = "52/回",
+	damage = "52<[WAVE]>",
 	base = 90580,
 	weapon_id = {
 		90590
@@ -127333,7 +131098,7 @@ _G.pg.base.equip_data_statistics[90590] = {
 _G.pg.base.equip_data_statistics[90591] = {
 	id = 90591,
 	anti_siren = 100,
-	damage = "52/回",
+	damage = "52<[WAVE]>",
 	base = 90580,
 	weapon_id = {
 		90591
@@ -127343,11 +131108,11 @@ _G.pg.base.equip_data_statistics[90591] = {
 _G.pg.base.equip_data_statistics[90600] = {
 	tech = 0,
 	name = "二連装37mm高射砲Mle1936",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	nationality = 8,
 	rarity = 5,
 	id = 90600,
@@ -127409,7 +131174,7 @@ _G.pg.base.equip_data_statistics[90600] = {
 }
 _G.pg.base.equip_data_statistics[90601] = {
 	id = 90601,
-	damage = "42/回",
+	damage = "42<[WAVE]>",
 	base = 90600,
 	weapon_id = {
 		90601
@@ -127418,7 +131183,7 @@ _G.pg.base.equip_data_statistics[90601] = {
 }
 _G.pg.base.equip_data_statistics[90602] = {
 	id = 90602,
-	damage = "46/回",
+	damage = "46<[WAVE]>",
 	base = 90600,
 	weapon_id = {
 		90602
@@ -127427,7 +131192,7 @@ _G.pg.base.equip_data_statistics[90602] = {
 }
 _G.pg.base.equip_data_statistics[90603] = {
 	id = 90603,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 90600,
 	weapon_id = {
 		90603
@@ -127436,7 +131201,7 @@ _G.pg.base.equip_data_statistics[90603] = {
 }
 _G.pg.base.equip_data_statistics[90604] = {
 	id = 90604,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	base = 90600,
 	weapon_id = {
 		90604
@@ -127445,7 +131210,7 @@ _G.pg.base.equip_data_statistics[90604] = {
 }
 _G.pg.base.equip_data_statistics[90605] = {
 	id = 90605,
-	damage = "58/回",
+	damage = "58<[WAVE]>",
 	base = 90600,
 	weapon_id = {
 		90605
@@ -127454,7 +131219,7 @@ _G.pg.base.equip_data_statistics[90605] = {
 }
 _G.pg.base.equip_data_statistics[90606] = {
 	id = 90606,
-	damage = "62/回",
+	damage = "62<[WAVE]>",
 	base = 90600,
 	weapon_id = {
 		90606
@@ -127463,7 +131228,7 @@ _G.pg.base.equip_data_statistics[90606] = {
 }
 _G.pg.base.equip_data_statistics[90607] = {
 	id = 90607,
-	damage = "66/回",
+	damage = "66<[WAVE]>",
 	base = 90600,
 	weapon_id = {
 		90607
@@ -127472,7 +131237,7 @@ _G.pg.base.equip_data_statistics[90607] = {
 }
 _G.pg.base.equip_data_statistics[90608] = {
 	id = 90608,
-	damage = "70/回",
+	damage = "70<[WAVE]>",
 	base = 90600,
 	weapon_id = {
 		90608
@@ -127481,7 +131246,7 @@ _G.pg.base.equip_data_statistics[90608] = {
 }
 _G.pg.base.equip_data_statistics[90609] = {
 	id = 90609,
-	damage = "74/回",
+	damage = "74<[WAVE]>",
 	base = 90600,
 	weapon_id = {
 		90609
@@ -127490,7 +131255,7 @@ _G.pg.base.equip_data_statistics[90609] = {
 }
 _G.pg.base.equip_data_statistics[90610] = {
 	id = 90610,
-	damage = "78/回",
+	damage = "78<[WAVE]>",
 	base = 90600,
 	weapon_id = {
 		90610
@@ -127500,7 +131265,7 @@ _G.pg.base.equip_data_statistics[90610] = {
 _G.pg.base.equip_data_statistics[90611] = {
 	id = 90611,
 	anti_siren = 100,
-	damage = "78/回",
+	damage = "78<[WAVE]>",
 	base = 90600,
 	weapon_id = {
 		90611
@@ -127510,7 +131275,7 @@ _G.pg.base.equip_data_statistics[90611] = {
 _G.pg.base.equip_data_statistics[90612] = {
 	id = 90612,
 	anti_siren = 200,
-	damage = "78/回",
+	damage = "78<[WAVE]>",
 	base = 90600,
 	weapon_id = {
 		90612
@@ -127520,7 +131285,7 @@ _G.pg.base.equip_data_statistics[90612] = {
 _G.pg.base.equip_data_statistics[90613] = {
 	id = 90613,
 	anti_siren = 300,
-	damage = "78/回",
+	damage = "78<[WAVE]>",
 	base = 90600,
 	weapon_id = {
 		90613
@@ -127530,11 +131295,11 @@ _G.pg.base.equip_data_statistics[90613] = {
 _G.pg.base.equip_data_statistics[90620] = {
 	tech = 0,
 	name = "二連装57mm/L60ボフォース対空機関砲Mle1951",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "说明未填写",
 	ammo = 5,
-	damage = "56/回",
+	damage = "56<[WAVE]>",
 	nationality = 8,
 	rarity = 6,
 	id = 90620,
@@ -127596,7 +131361,7 @@ _G.pg.base.equip_data_statistics[90620] = {
 }
 _G.pg.base.equip_data_statistics[90621] = {
 	id = 90621,
-	damage = "63/回",
+	damage = "63<[WAVE]>",
 	base = 90620,
 	weapon_id = {
 		90621
@@ -127604,7 +131369,7 @@ _G.pg.base.equip_data_statistics[90621] = {
 }
 _G.pg.base.equip_data_statistics[90622] = {
 	id = 90622,
-	damage = "71/回",
+	damage = "71<[WAVE]>",
 	base = 90620,
 	weapon_id = {
 		90622
@@ -127612,7 +131377,7 @@ _G.pg.base.equip_data_statistics[90622] = {
 }
 _G.pg.base.equip_data_statistics[90623] = {
 	id = 90623,
-	damage = "78/回",
+	damage = "78<[WAVE]>",
 	base = 90620,
 	weapon_id = {
 		90623
@@ -127620,7 +131385,7 @@ _G.pg.base.equip_data_statistics[90623] = {
 }
 _G.pg.base.equip_data_statistics[90624] = {
 	id = 90624,
-	damage = "85/回",
+	damage = "85<[WAVE]>",
 	base = 90620,
 	weapon_id = {
 		90624
@@ -127628,7 +131393,7 @@ _G.pg.base.equip_data_statistics[90624] = {
 }
 _G.pg.base.equip_data_statistics[90625] = {
 	id = 90625,
-	damage = "92/回",
+	damage = "92<[WAVE]>",
 	base = 90620,
 	weapon_id = {
 		90625
@@ -127636,7 +131401,7 @@ _G.pg.base.equip_data_statistics[90625] = {
 }
 _G.pg.base.equip_data_statistics[90626] = {
 	id = 90626,
-	damage = "100/回",
+	damage = "100<[WAVE]>",
 	base = 90620,
 	weapon_id = {
 		90626
@@ -127644,7 +131409,7 @@ _G.pg.base.equip_data_statistics[90626] = {
 }
 _G.pg.base.equip_data_statistics[90627] = {
 	id = 90627,
-	damage = "107/回",
+	damage = "107<[WAVE]>",
 	base = 90620,
 	weapon_id = {
 		90627
@@ -127652,7 +131417,7 @@ _G.pg.base.equip_data_statistics[90627] = {
 }
 _G.pg.base.equip_data_statistics[90628] = {
 	id = 90628,
-	damage = "115/回",
+	damage = "115<[WAVE]>",
 	base = 90620,
 	weapon_id = {
 		90628
@@ -127660,7 +131425,7 @@ _G.pg.base.equip_data_statistics[90628] = {
 }
 _G.pg.base.equip_data_statistics[90629] = {
 	id = 90629,
-	damage = "123/回",
+	damage = "123<[WAVE]>",
 	base = 90620,
 	weapon_id = {
 		90629
@@ -127668,7 +131433,7 @@ _G.pg.base.equip_data_statistics[90629] = {
 }
 _G.pg.base.equip_data_statistics[90630] = {
 	id = 90630,
-	damage = "132/回",
+	damage = "132<[WAVE]>",
 	base = 90620,
 	weapon_id = {
 		90630
@@ -127677,7 +131442,7 @@ _G.pg.base.equip_data_statistics[90630] = {
 _G.pg.base.equip_data_statistics[90631] = {
 	id = 90631,
 	anti_siren = 100,
-	damage = "132/回",
+	damage = "132<[WAVE]>",
 	base = 90620,
 	weapon_id = {
 		90631
@@ -127686,7 +131451,7 @@ _G.pg.base.equip_data_statistics[90631] = {
 _G.pg.base.equip_data_statistics[90632] = {
 	id = 90632,
 	anti_siren = 200,
-	damage = "132/回",
+	damage = "132<[WAVE]>",
 	base = 90620,
 	weapon_id = {
 		90632
@@ -127695,7 +131460,7 @@ _G.pg.base.equip_data_statistics[90632] = {
 _G.pg.base.equip_data_statistics[90633] = {
 	id = 90633,
 	anti_siren = 300,
-	damage = "132/回",
+	damage = "132<[WAVE]>",
 	base = 90620,
 	weapon_id = {
 		90633
@@ -127704,7 +131469,7 @@ _G.pg.base.equip_data_statistics[90633] = {
 _G.pg.base.equip_data_statistics[90700] = {
 	tech = 1,
 	name = "138.6mm単装砲Mle1927",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -127772,7 +131537,6 @@ _G.pg.base.equip_data_statistics[90700] = {
 }
 _G.pg.base.equip_data_statistics[90701] = {
 	id = 90701,
-	damage = "4 x 4",
 	base = 90700,
 	weapon_id = {
 		90701
@@ -127800,7 +131564,7 @@ _G.pg.base.equip_data_statistics[90703] = {
 _G.pg.base.equip_data_statistics[90720] = {
 	tech = 2,
 	name = "138.6mm単装砲Mle1927",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -127923,7 +131687,7 @@ _G.pg.base.equip_data_statistics[90726] = {
 _G.pg.base.equip_data_statistics[90740] = {
 	tech = 3,
 	name = "138.6mm単装砲Mle1927",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -128092,7 +131856,7 @@ _G.pg.base.equip_data_statistics[90751] = {
 _G.pg.base.equip_data_statistics[90760] = {
 	tech = 3,
 	name = "138.6mm単装砲Mle1923",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -128225,7 +131989,7 @@ _G.pg.base.equip_data_statistics[90767] = {
 _G.pg.base.equip_data_statistics[90780] = {
 	tech = 0,
 	name = "155mm連装砲Mle1920",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -128349,7 +132113,7 @@ _G.pg.base.equip_data_statistics[90787] = {
 _G.pg.base.equip_data_statistics[90800] = {
 	tech = 0,
 	name = "155mm単装副砲Mle1920",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -128473,7 +132237,7 @@ _G.pg.base.equip_data_statistics[90807] = {
 _G.pg.base.equip_data_statistics[90820] = {
 	rarity = 3,
 	name = "グールドゥ・ルスールGL.2戦闘機",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -128628,7 +132392,7 @@ _G.pg.base.equip_data_statistics[90827] = {
 _G.pg.base.equip_data_statistics[90840] = {
 	rarity = 3,
 	name = "ピエール・ルヴァッスールPL.7攻撃機",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 0,
 	ammo = 5,
@@ -128807,7 +132571,7 @@ _G.pg.base.equip_data_statistics[90847] = {
 _G.pg.base.equip_data_statistics[90860] = {
 	tech = 1,
 	name = "203mm連装砲Mle1931",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -128921,7 +132685,7 @@ _G.pg.base.equip_data_statistics[90866] = {
 _G.pg.base.equip_data_statistics[90880] = {
 	tech = 2,
 	name = "203mm連装砲Mle1931",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -129071,7 +132835,7 @@ _G.pg.base.equip_data_statistics[90890] = {
 _G.pg.base.equip_data_statistics[90900] = {
 	tech = 3,
 	name = "203mm連装砲Mle1931",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -129251,7 +133015,7 @@ _G.pg.base.equip_data_statistics[90913] = {
 _G.pg.base.equip_data_statistics[91000] = {
 	tech = 0,
 	name = "試作型406mm/50三連装砲",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "说明未填写",
 	ammo = 1,
@@ -129425,7 +133189,7 @@ _G.pg.base.equip_data_statistics[91013] = {
 _G.pg.base.equip_data_statistics[91100] = {
 	tech = 1,
 	name = "203mm連装砲Mle1924",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -129512,7 +133276,7 @@ _G.pg.base.equip_data_statistics[91103] = {
 _G.pg.base.equip_data_statistics[91140] = {
 	tech = 3,
 	name = "203mm連装砲Mle1924",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -129672,7 +133436,7 @@ _G.pg.base.equip_data_statistics[91151] = {
 _G.pg.base.equip_data_statistics[91180] = {
 	rarity = 3,
 	name = "FBA 19",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 12,
 	tech = 2,
 	ammo = 5,
@@ -129805,7 +133569,7 @@ _G.pg.base.equip_data_statistics[91186] = {
 _G.pg.base.equip_data_statistics[91200] = {
 	rarity = 4,
 	name = "FBA 19",
-	speciality = "爆撃",
+	speciality = "<[BOMB]>",
 	type = 12,
 	tech = 3,
 	ammo = 5,
@@ -130009,7 +133773,7 @@ _G.pg.base.equip_data_statistics[91211] = {
 _G.pg.base.equip_data_statistics[91220] = {
 	rarity = 4,
 	name = "ドボワチン D.790戦闘機",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 0,
 	ammo = 5,
@@ -130273,7 +134037,7 @@ _G.pg.base.equip_data_statistics[91231] = {
 _G.pg.base.equip_data_statistics[91240] = {
 	rarity = 5,
 	name = "ブレゲー BR.810攻撃機",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 0,
 	ammo = 5,
@@ -130633,7 +134397,7 @@ _G.pg.base.equip_data_statistics[91253] = {
 _G.pg.base.equip_data_statistics[91260] = {
 	type = 10,
 	name = "アイリス天使の羽根",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 2,
 	ammo = 10,
@@ -130662,13 +134426,17 @@ _G.pg.base.equip_data_statistics[91260] = {
 		6,
 		7,
 		10,
-		22
+		22,
+		23,
+		24
 	},
 	part_sub = {
 		6,
 		7,
 		10,
-		22
+		22,
+		23,
+		24
 	},
 	equip_parameters = {},
 	label = {
@@ -130770,10 +134538,112 @@ _G.pg.base.equip_data_statistics[91273] = {
 	value_1 = "106",
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[91280] = {
+	type = 10,
+	name = "クロスプローチ",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "クレマンソーが身につけているプローチ。一部には彼女の本人が降臨させるが如く効果があるという",
+	nationality = 10,
+	rarity = 4,
+	id = 91280,
+	value_3 = 0,
+	attribute_1 = "durability",
+	icon = "51280",
+	value_1 = "140",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60520
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"FFNF",
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[91281] = {
+	id = 91281,
+	value_1 = "161",
+	base = 91280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[91282] = {
+	id = 91282,
+	value_1 = "182",
+	base = 91280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[91283] = {
+	id = 91283,
+	value_1 = "203",
+	base = 91280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[91284] = {
+	id = 91284,
+	value_1 = "224",
+	base = 91280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[91285] = {
+	id = 91285,
+	value_1 = "245",
+	base = 91280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[91286] = {
+	id = 91286,
+	value_1 = "266",
+	base = 91280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[91287] = {
+	id = 91287,
+	value_1 = "287",
+	base = 91280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[91288] = {
+	id = 91288,
+	value_1 = "308",
+	base = 91280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[91289] = {
+	id = 91289,
+	value_1 = "329",
+	base = 91280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[91290] = {
+	id = 91290,
+	value_1 = "350",
+	base = 91280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[91291] = {
+	id = 91291,
+	anti_siren = 100,
+	value_1 = "371",
+	base = 91280,
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[95000] = {
 	tech = 1,
 	name = "381mm三連装砲Model1934",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "ヴィットリオ・ヴェネト級戦艦に装備されていた主砲。戦艦・巡洋戦艦が装備可能",
 	ammo = 3,
@@ -130880,7 +134750,7 @@ _G.pg.base.equip_data_statistics[95006] = {
 _G.pg.base.equip_data_statistics[95020] = {
 	tech = 2,
 	name = "381mm三連装砲Model1934",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "ヴィットリオ・ヴェネト級戦艦に装備されていた主砲。戦艦・巡洋戦艦が装備可能",
 	ammo = 1,
@@ -131024,7 +134894,7 @@ _G.pg.base.equip_data_statistics[95030] = {
 _G.pg.base.equip_data_statistics[95040] = {
 	tech = 3,
 	name = "381mm三連装砲Model1934",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "ヴィットリオ・ヴェネト級戦艦に装備されていた主砲。戦艦・巡洋戦艦が装備可能",
 	ammo = 1,
@@ -131200,11 +135070,11 @@ _G.pg.base.equip_data_statistics[95053] = {
 _G.pg.base.equip_data_statistics[95100] = {
 	tech = 1,
 	name = "90mm単装高角砲Model1939",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	nationality = 6,
 	rarity = 3,
 	id = 95100,
@@ -131266,7 +135136,7 @@ _G.pg.base.equip_data_statistics[95100] = {
 }
 _G.pg.base.equip_data_statistics[95101] = {
 	id = 95101,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	base = 95100,
 	weapon_id = {
 		95101
@@ -131275,7 +135145,7 @@ _G.pg.base.equip_data_statistics[95101] = {
 }
 _G.pg.base.equip_data_statistics[95102] = {
 	id = 95102,
-	damage = "42/回",
+	damage = "42<[WAVE]>",
 	base = 95100,
 	weapon_id = {
 		95102
@@ -131284,7 +135154,7 @@ _G.pg.base.equip_data_statistics[95102] = {
 }
 _G.pg.base.equip_data_statistics[95103] = {
 	id = 95103,
-	damage = "46/回",
+	damage = "46<[WAVE]>",
 	base = 95100,
 	weapon_id = {
 		95103
@@ -131293,7 +135163,7 @@ _G.pg.base.equip_data_statistics[95103] = {
 }
 _G.pg.base.equip_data_statistics[95104] = {
 	id = 95104,
-	damage = "51/回",
+	damage = "51<[WAVE]>",
 	base = 95100,
 	weapon_id = {
 		95104
@@ -131302,7 +135172,7 @@ _G.pg.base.equip_data_statistics[95104] = {
 }
 _G.pg.base.equip_data_statistics[95105] = {
 	id = 95105,
-	damage = "56/回",
+	damage = "56<[WAVE]>",
 	base = 95100,
 	weapon_id = {
 		95105
@@ -131311,7 +135181,7 @@ _G.pg.base.equip_data_statistics[95105] = {
 }
 _G.pg.base.equip_data_statistics[95106] = {
 	id = 95106,
-	damage = "61/回",
+	damage = "61<[WAVE]>",
 	base = 95100,
 	weapon_id = {
 		95106
@@ -131321,11 +135191,11 @@ _G.pg.base.equip_data_statistics[95106] = {
 _G.pg.base.equip_data_statistics[95120] = {
 	tech = 2,
 	name = "90mm単装高角砲Model1939",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "35/回",
+	damage = "35<[WAVE]>",
 	nationality = 6,
 	rarity = 4,
 	id = 95120,
@@ -131387,7 +135257,7 @@ _G.pg.base.equip_data_statistics[95120] = {
 }
 _G.pg.base.equip_data_statistics[95121] = {
 	id = 95121,
-	damage = "39/回",
+	damage = "39<[WAVE]>",
 	base = 95120,
 	weapon_id = {
 		95121
@@ -131396,7 +135266,7 @@ _G.pg.base.equip_data_statistics[95121] = {
 }
 _G.pg.base.equip_data_statistics[95122] = {
 	id = 95122,
-	damage = "44/回",
+	damage = "44<[WAVE]>",
 	base = 95120,
 	weapon_id = {
 		95122
@@ -131405,7 +135275,7 @@ _G.pg.base.equip_data_statistics[95122] = {
 }
 _G.pg.base.equip_data_statistics[95123] = {
 	id = 95123,
-	damage = "49/回",
+	damage = "49<[WAVE]>",
 	base = 95120,
 	weapon_id = {
 		95123
@@ -131414,7 +135284,7 @@ _G.pg.base.equip_data_statistics[95123] = {
 }
 _G.pg.base.equip_data_statistics[95124] = {
 	id = 95124,
-	damage = "54/回",
+	damage = "54<[WAVE]>",
 	base = 95120,
 	weapon_id = {
 		95124
@@ -131423,7 +135293,7 @@ _G.pg.base.equip_data_statistics[95124] = {
 }
 _G.pg.base.equip_data_statistics[95125] = {
 	id = 95125,
-	damage = "59/回",
+	damage = "59<[WAVE]>",
 	base = 95120,
 	weapon_id = {
 		95125
@@ -131432,7 +135302,7 @@ _G.pg.base.equip_data_statistics[95125] = {
 }
 _G.pg.base.equip_data_statistics[95126] = {
 	id = 95126,
-	damage = "65/回",
+	damage = "65<[WAVE]>",
 	base = 95120,
 	weapon_id = {
 		95126
@@ -131441,7 +135311,7 @@ _G.pg.base.equip_data_statistics[95126] = {
 }
 _G.pg.base.equip_data_statistics[95127] = {
 	id = 95127,
-	damage = "71/回",
+	damage = "71<[WAVE]>",
 	base = 95120,
 	weapon_id = {
 		95127
@@ -131450,7 +135320,7 @@ _G.pg.base.equip_data_statistics[95127] = {
 }
 _G.pg.base.equip_data_statistics[95128] = {
 	id = 95128,
-	damage = "77/回",
+	damage = "77<[WAVE]>",
 	base = 95120,
 	weapon_id = {
 		95128
@@ -131459,7 +135329,7 @@ _G.pg.base.equip_data_statistics[95128] = {
 }
 _G.pg.base.equip_data_statistics[95129] = {
 	id = 95129,
-	damage = "83/回",
+	damage = "83<[WAVE]>",
 	base = 95120,
 	weapon_id = {
 		95129
@@ -131468,7 +135338,7 @@ _G.pg.base.equip_data_statistics[95129] = {
 }
 _G.pg.base.equip_data_statistics[95130] = {
 	id = 95130,
-	damage = "90/回",
+	damage = "90<[WAVE]>",
 	base = 95120,
 	weapon_id = {
 		95130
@@ -131478,11 +135348,11 @@ _G.pg.base.equip_data_statistics[95130] = {
 _G.pg.base.equip_data_statistics[95140] = {
 	tech = 3,
 	name = "90mm単装高角砲Model1939",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "40/回",
+	damage = "40<[WAVE]>",
 	nationality = 6,
 	rarity = 5,
 	id = 95140,
@@ -131544,7 +135414,7 @@ _G.pg.base.equip_data_statistics[95140] = {
 }
 _G.pg.base.equip_data_statistics[95141] = {
 	id = 95141,
-	damage = "45/回",
+	damage = "45<[WAVE]>",
 	base = 95140,
 	weapon_id = {
 		95141
@@ -131553,7 +135423,7 @@ _G.pg.base.equip_data_statistics[95141] = {
 }
 _G.pg.base.equip_data_statistics[95142] = {
 	id = 95142,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 95140,
 	weapon_id = {
 		95142
@@ -131562,7 +135432,7 @@ _G.pg.base.equip_data_statistics[95142] = {
 }
 _G.pg.base.equip_data_statistics[95143] = {
 	id = 95143,
-	damage = "56/回",
+	damage = "56<[WAVE]>",
 	base = 95140,
 	weapon_id = {
 		95143
@@ -131571,7 +135441,7 @@ _G.pg.base.equip_data_statistics[95143] = {
 }
 _G.pg.base.equip_data_statistics[95144] = {
 	id = 95144,
-	damage = "62/回",
+	damage = "62<[WAVE]>",
 	base = 95140,
 	weapon_id = {
 		95144
@@ -131580,7 +135450,7 @@ _G.pg.base.equip_data_statistics[95144] = {
 }
 _G.pg.base.equip_data_statistics[95145] = {
 	id = 95145,
-	damage = "68/回",
+	damage = "68<[WAVE]>",
 	base = 95140,
 	weapon_id = {
 		95145
@@ -131589,7 +135459,7 @@ _G.pg.base.equip_data_statistics[95145] = {
 }
 _G.pg.base.equip_data_statistics[95146] = {
 	id = 95146,
-	damage = "74/回",
+	damage = "74<[WAVE]>",
 	base = 95140,
 	weapon_id = {
 		95146
@@ -131598,7 +135468,7 @@ _G.pg.base.equip_data_statistics[95146] = {
 }
 _G.pg.base.equip_data_statistics[95147] = {
 	id = 95147,
-	damage = "80/回",
+	damage = "80<[WAVE]>",
 	base = 95140,
 	weapon_id = {
 		95147
@@ -131607,7 +135477,7 @@ _G.pg.base.equip_data_statistics[95147] = {
 }
 _G.pg.base.equip_data_statistics[95148] = {
 	id = 95148,
-	damage = "86/回",
+	damage = "86<[WAVE]>",
 	base = 95140,
 	weapon_id = {
 		95148
@@ -131616,7 +135486,7 @@ _G.pg.base.equip_data_statistics[95148] = {
 }
 _G.pg.base.equip_data_statistics[95149] = {
 	id = 95149,
-	damage = "92/回",
+	damage = "92<[WAVE]>",
 	base = 95140,
 	weapon_id = {
 		95149
@@ -131625,7 +135495,7 @@ _G.pg.base.equip_data_statistics[95149] = {
 }
 _G.pg.base.equip_data_statistics[95150] = {
 	id = 95150,
-	damage = "98/回",
+	damage = "98<[WAVE]>",
 	base = 95140,
 	weapon_id = {
 		95150
@@ -131635,7 +135505,7 @@ _G.pg.base.equip_data_statistics[95150] = {
 _G.pg.base.equip_data_statistics[95151] = {
 	id = 95151,
 	anti_siren = 100,
-	damage = "98/回",
+	damage = "98<[WAVE]>",
 	base = 95140,
 	weapon_id = {
 		95151
@@ -131645,7 +135515,7 @@ _G.pg.base.equip_data_statistics[95151] = {
 _G.pg.base.equip_data_statistics[95152] = {
 	id = 95152,
 	anti_siren = 200,
-	damage = "98/回",
+	damage = "98<[WAVE]>",
 	base = 95140,
 	weapon_id = {
 		95152
@@ -131655,7 +135525,7 @@ _G.pg.base.equip_data_statistics[95152] = {
 _G.pg.base.equip_data_statistics[95153] = {
 	id = 95153,
 	anti_siren = 300,
-	damage = "98/回",
+	damage = "98<[WAVE]>",
 	base = 95140,
 	weapon_id = {
 		95153
@@ -131665,11 +135535,11 @@ _G.pg.base.equip_data_statistics[95153] = {
 _G.pg.base.equip_data_statistics[95160] = {
 	tech = 0,
 	name = "試作型90mm連装高角砲Model1939",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "0",
 	ammo = 5,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	nationality = 6,
 	rarity = 5,
 	id = 95160,
@@ -131731,7 +135601,7 @@ _G.pg.base.equip_data_statistics[95160] = {
 }
 _G.pg.base.equip_data_statistics[95161] = {
 	id = 95161,
-	damage = "57/回",
+	damage = "57<[WAVE]>",
 	base = 95160,
 	weapon_id = {
 		95161
@@ -131740,7 +135610,7 @@ _G.pg.base.equip_data_statistics[95161] = {
 }
 _G.pg.base.equip_data_statistics[95162] = {
 	id = 95162,
-	damage = "64/回",
+	damage = "64<[WAVE]>",
 	base = 95160,
 	weapon_id = {
 		95162
@@ -131749,7 +135619,7 @@ _G.pg.base.equip_data_statistics[95162] = {
 }
 _G.pg.base.equip_data_statistics[95163] = {
 	id = 95163,
-	damage = "71/回",
+	damage = "71<[WAVE]>",
 	base = 95160,
 	weapon_id = {
 		95163
@@ -131758,7 +135628,7 @@ _G.pg.base.equip_data_statistics[95163] = {
 }
 _G.pg.base.equip_data_statistics[95164] = {
 	id = 95164,
-	damage = "78/回",
+	damage = "78<[WAVE]>",
 	base = 95160,
 	weapon_id = {
 		95164
@@ -131767,7 +135637,7 @@ _G.pg.base.equip_data_statistics[95164] = {
 }
 _G.pg.base.equip_data_statistics[95165] = {
 	id = 95165,
-	damage = "85/回",
+	damage = "85<[WAVE]>",
 	base = 95160,
 	weapon_id = {
 		95165
@@ -131776,7 +135646,7 @@ _G.pg.base.equip_data_statistics[95165] = {
 }
 _G.pg.base.equip_data_statistics[95166] = {
 	id = 95166,
-	damage = "92/回",
+	damage = "92<[WAVE]>",
 	base = 95160,
 	weapon_id = {
 		95166
@@ -131785,7 +135655,7 @@ _G.pg.base.equip_data_statistics[95166] = {
 }
 _G.pg.base.equip_data_statistics[95167] = {
 	id = 95167,
-	damage = "99/回",
+	damage = "99<[WAVE]>",
 	base = 95160,
 	weapon_id = {
 		95167
@@ -131794,7 +135664,7 @@ _G.pg.base.equip_data_statistics[95167] = {
 }
 _G.pg.base.equip_data_statistics[95168] = {
 	id = 95168,
-	damage = "106/回",
+	damage = "106<[WAVE]>",
 	base = 95160,
 	weapon_id = {
 		95168
@@ -131803,7 +135673,7 @@ _G.pg.base.equip_data_statistics[95168] = {
 }
 _G.pg.base.equip_data_statistics[95169] = {
 	id = 95169,
-	damage = "113/回",
+	damage = "113<[WAVE]>",
 	base = 95160,
 	weapon_id = {
 		95169
@@ -131812,7 +135682,7 @@ _G.pg.base.equip_data_statistics[95169] = {
 }
 _G.pg.base.equip_data_statistics[95170] = {
 	id = 95170,
-	damage = "120/回",
+	damage = "120<[WAVE]>",
 	base = 95160,
 	weapon_id = {
 		95170
@@ -131822,7 +135692,7 @@ _G.pg.base.equip_data_statistics[95170] = {
 _G.pg.base.equip_data_statistics[95171] = {
 	id = 95171,
 	anti_siren = 100,
-	damage = "120/回",
+	damage = "120<[WAVE]>",
 	base = 95160,
 	weapon_id = {
 		95171
@@ -131832,7 +135702,7 @@ _G.pg.base.equip_data_statistics[95171] = {
 _G.pg.base.equip_data_statistics[95172] = {
 	id = 95172,
 	anti_siren = 200,
-	damage = "120/回",
+	damage = "120<[WAVE]>",
 	base = 95160,
 	weapon_id = {
 		95172
@@ -131842,7 +135712,7 @@ _G.pg.base.equip_data_statistics[95172] = {
 _G.pg.base.equip_data_statistics[95173] = {
 	id = 95173,
 	anti_siren = 300,
-	damage = "120/回",
+	damage = "120<[WAVE]>",
 	base = 95160,
 	weapon_id = {
 		95173
@@ -131852,7 +135722,7 @@ _G.pg.base.equip_data_statistics[95173] = {
 _G.pg.base.equip_data_statistics[95200] = {
 	tech = 1,
 	name = "203mm連装砲Model1927",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 3,
@@ -131966,7 +135836,7 @@ _G.pg.base.equip_data_statistics[95206] = {
 _G.pg.base.equip_data_statistics[95220] = {
 	tech = 2,
 	name = "203mm連装砲Model1927",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 1,
@@ -132025,7 +135895,6 @@ _G.pg.base.equip_data_statistics[95220] = {
 }
 _G.pg.base.equip_data_statistics[95221] = {
 	id = 95221,
-	damage = "26 x 8",
 	base = 95220,
 	weapon_id = {
 		95221
@@ -132116,7 +135985,7 @@ _G.pg.base.equip_data_statistics[95230] = {
 _G.pg.base.equip_data_statistics[95240] = {
 	tech = 3,
 	name = "203mm連装砲Model1927",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 7,
@@ -132296,7 +136165,7 @@ _G.pg.base.equip_data_statistics[95253] = {
 _G.pg.base.equip_data_statistics[95300] = {
 	tech = 1,
 	name = "203mm連装砲Model1924",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 3,
@@ -132383,7 +136252,7 @@ _G.pg.base.equip_data_statistics[95303] = {
 _G.pg.base.equip_data_statistics[95320] = {
 	tech = 2,
 	name = "203mm連装砲Model1924",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 2,
@@ -132497,7 +136366,7 @@ _G.pg.base.equip_data_statistics[95326] = {
 _G.pg.base.equip_data_statistics[95340] = {
 	tech = 3,
 	name = "203mm連装砲Model1924",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "0",
 	ammo = 2,
@@ -132657,7 +136526,7 @@ _G.pg.base.equip_data_statistics[95351] = {
 _G.pg.base.equip_data_statistics[95400] = {
 	tech = 1,
 	name = "120mm連装砲Model1936",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -132753,7 +136622,7 @@ _G.pg.base.equip_data_statistics[95403] = {
 _G.pg.base.equip_data_statistics[95420] = {
 	tech = 2,
 	name = "120mm連装砲Model1936",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -132876,7 +136745,7 @@ _G.pg.base.equip_data_statistics[95426] = {
 _G.pg.base.equip_data_statistics[95440] = {
 	tech = 3,
 	name = "120mm連装砲Model1936",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 3,
@@ -133046,7 +136915,7 @@ _G.pg.base.equip_data_statistics[95451] = {
 _G.pg.base.equip_data_statistics[95460] = {
 	tech = 0,
 	name = "120mm連装砲Model1933",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "0",
 	ammo = 2,
@@ -133177,7 +137046,7 @@ _G.pg.base.equip_data_statistics[95467] = {
 _G.pg.base.equip_data_statistics[95480] = {
 	tech = 0,
 	name = "320mm三連装砲Model1934",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 1,
@@ -133294,11 +137163,11 @@ _G.pg.base.equip_data_statistics[95487] = {
 _G.pg.base.equip_data_statistics[95500] = {
 	tech = 1,
 	name = "37mm連装機銃Model1932",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "37mm連装機銃。対空兵装として使用可能",
 	ammo = 5,
-	damage = "15/回",
+	damage = "15<[WAVE]>",
 	nationality = 6,
 	rarity = 2,
 	id = 95500,
@@ -133360,7 +137229,7 @@ _G.pg.base.equip_data_statistics[95500] = {
 }
 _G.pg.base.equip_data_statistics[95501] = {
 	id = 95501,
-	damage = "17/回",
+	damage = "17<[WAVE]>",
 	base = 95500,
 	weapon_id = {
 		95501
@@ -133369,7 +137238,7 @@ _G.pg.base.equip_data_statistics[95501] = {
 }
 _G.pg.base.equip_data_statistics[95502] = {
 	id = 95502,
-	damage = "19/回",
+	damage = "19<[WAVE]>",
 	base = 95500,
 	weapon_id = {
 		95502
@@ -133378,7 +137247,7 @@ _G.pg.base.equip_data_statistics[95502] = {
 }
 _G.pg.base.equip_data_statistics[95503] = {
 	id = 95503,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	base = 95500,
 	weapon_id = {
 		95503
@@ -133388,11 +137257,11 @@ _G.pg.base.equip_data_statistics[95503] = {
 _G.pg.base.equip_data_statistics[95520] = {
 	tech = 2,
 	name = "37mm連装機銃Model1932",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "37mm連装機銃。対空兵装として使用可能",
 	ammo = 5,
-	damage = "17/回",
+	damage = "17<[WAVE]>",
 	nationality = 6,
 	rarity = 3,
 	id = 95520,
@@ -133454,7 +137323,7 @@ _G.pg.base.equip_data_statistics[95520] = {
 }
 _G.pg.base.equip_data_statistics[95521] = {
 	id = 95521,
-	damage = "19/回",
+	damage = "19<[WAVE]>",
 	base = 95520,
 	weapon_id = {
 		95521
@@ -133463,7 +137332,7 @@ _G.pg.base.equip_data_statistics[95521] = {
 }
 _G.pg.base.equip_data_statistics[95522] = {
 	id = 95522,
-	damage = "22/回",
+	damage = "22<[WAVE]>",
 	base = 95520,
 	weapon_id = {
 		95522
@@ -133472,7 +137341,7 @@ _G.pg.base.equip_data_statistics[95522] = {
 }
 _G.pg.base.equip_data_statistics[95523] = {
 	id = 95523,
-	damage = "25/回",
+	damage = "25<[WAVE]>",
 	base = 95520,
 	weapon_id = {
 		95523
@@ -133481,7 +137350,7 @@ _G.pg.base.equip_data_statistics[95523] = {
 }
 _G.pg.base.equip_data_statistics[95524] = {
 	id = 95524,
-	damage = "28/回",
+	damage = "28<[WAVE]>",
 	base = 95520,
 	weapon_id = {
 		95524
@@ -133490,7 +137359,7 @@ _G.pg.base.equip_data_statistics[95524] = {
 }
 _G.pg.base.equip_data_statistics[95525] = {
 	id = 95525,
-	damage = "31/回",
+	damage = "31<[WAVE]>",
 	base = 95520,
 	weapon_id = {
 		95525
@@ -133499,7 +137368,7 @@ _G.pg.base.equip_data_statistics[95525] = {
 }
 _G.pg.base.equip_data_statistics[95526] = {
 	id = 95526,
-	damage = "34/回",
+	damage = "34<[WAVE]>",
 	base = 95520,
 	weapon_id = {
 		95526
@@ -133509,11 +137378,11 @@ _G.pg.base.equip_data_statistics[95526] = {
 _G.pg.base.equip_data_statistics[95540] = {
 	tech = 3,
 	name = "37mm連装機銃Model1932",
-	speciality = "近距離",
+	speciality = "<[SRG]>",
 	type = 6,
 	descrip = "37mm連装機銃。対空兵装として使用可能",
 	ammo = 5,
-	damage = "20/回",
+	damage = "20<[WAVE]>",
 	nationality = 6,
 	rarity = 4,
 	id = 95540,
@@ -133575,7 +137444,7 @@ _G.pg.base.equip_data_statistics[95540] = {
 }
 _G.pg.base.equip_data_statistics[95541] = {
 	id = 95541,
-	damage = "23/回",
+	damage = "23<[WAVE]>",
 	base = 95540,
 	weapon_id = {
 		95541
@@ -133584,7 +137453,7 @@ _G.pg.base.equip_data_statistics[95541] = {
 }
 _G.pg.base.equip_data_statistics[95542] = {
 	id = 95542,
-	damage = "26/回",
+	damage = "26<[WAVE]>",
 	base = 95540,
 	weapon_id = {
 		95542
@@ -133593,7 +137462,7 @@ _G.pg.base.equip_data_statistics[95542] = {
 }
 _G.pg.base.equip_data_statistics[95543] = {
 	id = 95543,
-	damage = "29/回",
+	damage = "29<[WAVE]>",
 	base = 95540,
 	weapon_id = {
 		95543
@@ -133602,7 +137471,7 @@ _G.pg.base.equip_data_statistics[95543] = {
 }
 _G.pg.base.equip_data_statistics[95544] = {
 	id = 95544,
-	damage = "32/回",
+	damage = "32<[WAVE]>",
 	base = 95540,
 	weapon_id = {
 		95544
@@ -133611,7 +137480,7 @@ _G.pg.base.equip_data_statistics[95544] = {
 }
 _G.pg.base.equip_data_statistics[95545] = {
 	id = 95545,
-	damage = "35/回",
+	damage = "35<[WAVE]>",
 	base = 95540,
 	weapon_id = {
 		95545
@@ -133620,7 +137489,7 @@ _G.pg.base.equip_data_statistics[95545] = {
 }
 _G.pg.base.equip_data_statistics[95546] = {
 	id = 95546,
-	damage = "38/回",
+	damage = "38<[WAVE]>",
 	base = 95540,
 	weapon_id = {
 		95546
@@ -133629,7 +137498,7 @@ _G.pg.base.equip_data_statistics[95546] = {
 }
 _G.pg.base.equip_data_statistics[95547] = {
 	id = 95547,
-	damage = "41/回",
+	damage = "41<[WAVE]>",
 	base = 95540,
 	weapon_id = {
 		95547
@@ -133638,7 +137507,7 @@ _G.pg.base.equip_data_statistics[95547] = {
 }
 _G.pg.base.equip_data_statistics[95548] = {
 	id = 95548,
-	damage = "44/回",
+	damage = "44<[WAVE]>",
 	base = 95540,
 	weapon_id = {
 		95548
@@ -133647,7 +137516,7 @@ _G.pg.base.equip_data_statistics[95548] = {
 }
 _G.pg.base.equip_data_statistics[95549] = {
 	id = 95549,
-	damage = "47/回",
+	damage = "47<[WAVE]>",
 	base = 95540,
 	weapon_id = {
 		95549
@@ -133656,7 +137525,7 @@ _G.pg.base.equip_data_statistics[95549] = {
 }
 _G.pg.base.equip_data_statistics[95550] = {
 	id = 95550,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 95540,
 	weapon_id = {
 		95550
@@ -133666,7 +137535,7 @@ _G.pg.base.equip_data_statistics[95550] = {
 _G.pg.base.equip_data_statistics[95551] = {
 	id = 95551,
 	anti_siren = 100,
-	damage = "50/回",
+	damage = "50<[WAVE]>",
 	base = 95540,
 	weapon_id = {
 		95551
@@ -133676,7 +137545,7 @@ _G.pg.base.equip_data_statistics[95551] = {
 _G.pg.base.equip_data_statistics[95560] = {
 	tech = 1,
 	name = "120mm連装砲",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "",
 	ammo = 3,
@@ -133772,7 +137641,7 @@ _G.pg.base.equip_data_statistics[95563] = {
 _G.pg.base.equip_data_statistics[95600] = {
 	tech = 1,
 	name = "152mm三連装砲Model1934",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "サディア帝国製の改良型軽巡洋艦主砲 ",
 	ammo = 1,
@@ -133887,7 +137756,7 @@ _G.pg.base.equip_data_statistics[95606] = {
 _G.pg.base.equip_data_statistics[95640] = {
 	tech = 3,
 	name = "152mm三連装砲Model1934",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "サディア帝国製の改良型軽巡洋艦主砲 ",
 	ammo = 1,
@@ -134068,7 +137937,7 @@ _G.pg.base.equip_data_statistics[95653] = {
 _G.pg.base.equip_data_statistics[95700] = {
 	tech = 1,
 	name = "潜水艦用533mm魚雷Si 270",
-	speciality = "雷撃",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "",
 	ammo = 5,
@@ -134182,7 +138051,7 @@ _G.pg.base.equip_data_statistics[95706] = {
 _G.pg.base.equip_data_statistics[95720] = {
 	rarity = 2,
 	name = "Fiat G.50戦闘機「アロー」",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 1,
 	ammo = 5,
@@ -134293,7 +138162,7 @@ _G.pg.base.equip_data_statistics[95723] = {
 _G.pg.base.equip_data_statistics[95740] = {
 	rarity = 3,
 	name = "Fiat G.50戦闘機「アロー」",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 2,
 	ammo = 5,
@@ -134461,7 +138330,7 @@ _G.pg.base.equip_data_statistics[95746] = {
 _G.pg.base.equip_data_statistics[95760] = {
 	rarity = 4,
 	name = "Fiat G.50戦闘機「アロー」",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -134725,7 +138594,7 @@ _G.pg.base.equip_data_statistics[95771] = {
 _G.pg.base.equip_data_statistics[95800] = {
 	rarity = 2,
 	name = "Re.2001戦闘機「アリエテ」",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 1,
 	ammo = 5,
@@ -134852,7 +138721,7 @@ _G.pg.base.equip_data_statistics[95803] = {
 _G.pg.base.equip_data_statistics[95820] = {
 	rarity = 3,
 	name = "Re.2001戦闘機「アリエテ」",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 2,
 	ammo = 5,
@@ -135048,7 +138917,7 @@ _G.pg.base.equip_data_statistics[95826] = {
 _G.pg.base.equip_data_statistics[95840] = {
 	rarity = 4,
 	name = "Re.2001戦闘機「アリエテ」",
-	speciality = "航空",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -135360,7 +139229,7 @@ _G.pg.base.equip_data_statistics[95851] = {
 _G.pg.base.equip_data_statistics[95900] = {
 	tech = 0,
 	name = "試作型三連装406mm主砲Model1940",
-	speciality = "投射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "0",
 	ammo = 7,
@@ -135534,7 +139403,7 @@ _G.pg.base.equip_data_statistics[95913] = {
 _G.pg.base.equip_data_statistics[95920] = {
 	attribute_3 = "antiaircraft",
 	name = "135mm連装砲Model1938",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 1,
 	ammo = 3,
@@ -135658,7 +139527,7 @@ _G.pg.base.equip_data_statistics[95926] = {
 _G.pg.base.equip_data_statistics[95940] = {
 	attribute_3 = "antiaircraft",
 	name = "135mm連装砲Model1938",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 2,
 	ammo = 7,
@@ -135819,7 +139688,7 @@ _G.pg.base.equip_data_statistics[95950] = {
 _G.pg.base.equip_data_statistics[95960] = {
 	attribute_3 = "antiaircraft",
 	name = "135mm連装砲Model1938",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 3,
 	ammo = 7,
@@ -136010,7 +139879,7 @@ _G.pg.base.equip_data_statistics[95973] = {
 _G.pg.base.equip_data_statistics[96000] = {
 	tech = 0,
 	name = "SY-1ミサイル",
-	speciality = "誘導 ",
+	speciality = "<[GUID]>",
 	type = 20,
 	descrip = "SY-1対艦ミサイル",
 	ammo = 11,
@@ -136198,10 +140067,201 @@ _G.pg.base.equip_data_statistics[96013] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[96020] = {
+	tech = 0,
+	name = "SY-1甲",
+	speciality = "<[GUID]>",
+	type = 20,
+	descrip = "SY-1甲ミサイル",
+	ammo = 11,
+	damage = "120 x 4",
+	nationality = 5,
+	rarity = 5,
+	id = 96020,
+	value_3 = 0,
+	torpedo_ammo = 0,
+	value_2 = 45,
+	icon = "56020",
+	attribute_2 = "torpedo",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {
+		{
+			9,
+			2402
+		},
+		{
+			10,
+			2403
+		}
+	},
+	equip_info = {
+		6,
+		10,
+		11,
+		12
+	},
+	weapon_id = {
+		96040,
+		96060
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {
+		"PRAN",
+		"DD",
+		"WP",
+		"QUAD"
+	}
+}
+_G.pg.base.equip_data_statistics[96021] = {
+	id = 96021,
+	damage = "132 x 4",
+	base = 96020,
+	weapon_id = {
+		96041,
+		96061
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[96022] = {
+	id = 96022,
+	damage = "144 x 4",
+	base = 96020,
+	weapon_id = {
+		96042,
+		96062
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[96023] = {
+	id = 96023,
+	damage = "166 x 4",
+	base = 96020,
+	weapon_id = {
+		96043,
+		96063
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[96024] = {
+	id = 96024,
+	damage = "188 x 4",
+	base = 96020,
+	weapon_id = {
+		96044,
+		96064
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[96025] = {
+	id = 96025,
+	damage = "209 x 4",
+	base = 96020,
+	weapon_id = {
+		96045,
+		96065
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[96026] = {
+	id = 96026,
+	damage = "231 x 4",
+	base = 96020,
+	weapon_id = {
+		96046,
+		96066
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[96027] = {
+	id = 96027,
+	damage = "252 x 4",
+	base = 96020,
+	weapon_id = {
+		96047,
+		96067
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[96028] = {
+	id = 96028,
+	damage = "274 x 4",
+	base = 96020,
+	weapon_id = {
+		96048,
+		96068
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[96029] = {
+	id = 96029,
+	damage = "296 x 4",
+	base = 96020,
+	weapon_id = {
+		96049,
+		96069
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[96030] = {
+	id = 96030,
+	damage = "317 x 4",
+	base = 96020,
+	weapon_id = {
+		96050,
+		96070
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[96031] = {
+	id = 96031,
+	anti_siren = 100,
+	damage = "317 x 4",
+	base = 96020,
+	weapon_id = {
+		96051,
+		96071
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[96032] = {
+	id = 96032,
+	anti_siren = 200,
+	damage = "317 x 4",
+	base = 96020,
+	weapon_id = {
+		96052,
+		96072
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[96033] = {
+	id = 96033,
+	anti_siren = 300,
+	damage = "317 x 4",
+	base = 96020,
+	weapon_id = {
+		96053,
+		96073
+	},
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[96100] = {
 	attribute_3 = "antiaircraft",
 	name = "試作型130mm連装砲Model 1936",
-	speciality = "追尾",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 0,
 	ammo = 3,
@@ -136390,7 +140450,7 @@ _G.pg.base.equip_data_statistics[96113] = {
 _G.pg.base.equip_data_statistics[100000] = {
 	type = 0,
 	name = "0",
-	speciality = "なし",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -136421,7 +140481,7 @@ _G.pg.base.equip_data_statistics[100000] = {
 _G.pg.base.equip_data_statistics[150000] = {
 	type = 10,
 	name = "刺繍の錦嚢",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -136523,7 +140583,7 @@ _G.pg.base.equip_data_statistics[150011] = {
 _G.pg.base.equip_data_statistics[150020] = {
 	type = 10,
 	name = "テンペスタ・フラッグ",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
@@ -136622,10 +140682,1463 @@ _G.pg.base.equip_data_statistics[150031] = {
 	base = 150020,
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[150040] = {
+	tech = 1,
+	name = "旧式重火砲",
+	speciality = "<[LOCK]>",
+	type = 1,
+	descrip = "謎の力の影響を受けた「旧式」重火砲",
+	ammo = 3,
+	damage = "10 x 3",
+	nationality = 96,
+	rarity = 3,
+	id = 150040,
+	value_3 = 0,
+	torpedo_ammo = 0,
+	value_2 = 12,
+	icon = "150040",
+	attribute_2 = "cannon",
+	property_rate = {},
+	ammo_icon = {
+		1
+	},
+	ammo_info = {
+		{
+			1,
+			1350
+		}
+	},
+	equip_info = {
+		1,
+		2,
+		{
+			3,
+			1350
+		},
+		{
+			4,
+			1115
+		},
+		6,
+		10,
+		11,
+		12
+	},
+	weapon_id = {
+		150040
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		22,
+		23
+	},
+	part_sub = {
+		22,
+		23,
+		24
+	},
+	equip_parameters = {},
+	label = {
+		"MOT",
+		"SF",
+		"MG"
+	}
+}
+_G.pg.base.equip_data_statistics[150041] = {
+	id = 150041,
+	damage = "12 x 3",
+	base = 150040,
+	weapon_id = {
+		150041
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150042] = {
+	id = 150042,
+	damage = "14 x 3",
+	base = 150040,
+	weapon_id = {
+		150042
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150043] = {
+	id = 150043,
+	damage = "16 x 3",
+	base = 150040,
+	weapon_id = {
+		150043
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150044] = {
+	id = 150044,
+	damage = "18 x 3",
+	base = 150040,
+	weapon_id = {
+		150044
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150045] = {
+	id = 150045,
+	damage = "20 x 3",
+	base = 150040,
+	weapon_id = {
+		150045
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150046] = {
+	id = 150046,
+	damage = "22 x 3",
+	base = 150040,
+	weapon_id = {
+		150046
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150080] = {
+	tech = 3,
+	name = "旧式重火砲",
+	speciality = "<[LOCK]>",
+	type = 1,
+	descrip = "謎の力の影響を受けた「旧式」重火砲",
+	ammo = 3,
+	damage = "10 x 3",
+	nationality = 96,
+	rarity = 5,
+	id = 150080,
+	value_3 = 0,
+	torpedo_ammo = 0,
+	value_2 = 45,
+	icon = "150040",
+	attribute_2 = "cannon",
+	property_rate = {},
+	ammo_icon = {
+		1
+	},
+	ammo_info = {
+		{
+			1,
+			1350
+		}
+	},
+	equip_info = {
+		1,
+		2,
+		{
+			3,
+			1350
+		},
+		{
+			4,
+			1115
+		},
+		6,
+		10,
+		11,
+		12
+	},
+	weapon_id = {
+		150080
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		22,
+		23
+	},
+	part_sub = {
+		22,
+		23,
+		24
+	},
+	equip_parameters = {},
+	label = {
+		"MOT",
+		"SF",
+		"MG"
+	}
+}
+_G.pg.base.equip_data_statistics[150081] = {
+	id = 150081,
+	damage = "12 x 3",
+	base = 150080,
+	weapon_id = {
+		150081
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150082] = {
+	id = 150082,
+	damage = "14 x 3",
+	base = 150080,
+	weapon_id = {
+		150082
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150083] = {
+	id = 150083,
+	damage = "16 x 3",
+	base = 150080,
+	weapon_id = {
+		150083
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150084] = {
+	id = 150084,
+	damage = "18 x 3",
+	base = 150080,
+	weapon_id = {
+		150084
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150085] = {
+	id = 150085,
+	damage = "20 x 3",
+	base = 150080,
+	weapon_id = {
+		150085
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150086] = {
+	id = 150086,
+	damage = "22 x 3",
+	base = 150080,
+	weapon_id = {
+		150086
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150087] = {
+	id = 150087,
+	damage = "24 x 3",
+	base = 150080,
+	weapon_id = {
+		150087
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150088] = {
+	id = 150088,
+	damage = "26 x 3",
+	base = 150080,
+	weapon_id = {
+		150088
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150089] = {
+	id = 150089,
+	damage = "28 x 3",
+	base = 150080,
+	weapon_id = {
+		150089
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150090] = {
+	id = 150090,
+	damage = "30 x 3",
+	base = 150080,
+	weapon_id = {
+		150090
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150091] = {
+	id = 150091,
+	anti_siren = 100,
+	damage = "30 x 3",
+	base = 150080,
+	weapon_id = {
+		150091
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150092] = {
+	id = 150092,
+	anti_siren = 200,
+	damage = "30 x 3",
+	base = 150080,
+	weapon_id = {
+		150092
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150093] = {
+	id = 150093,
+	anti_siren = 300,
+	damage = "30 x 3",
+	base = 150080,
+	weapon_id = {
+		150093
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150100] = {
+	tech = 1,
+	name = "旧式半カノン砲",
+	speciality = "<[VOL]>",
+	type = 4,
+	descrip = "謎の力の影響を受けた「旧式」半キャノン砲",
+	ammo = 2,
+	damage = "30 x 6",
+	nationality = 96,
+	rarity = 3,
+	id = 150100,
+	value_3 = 0,
+	torpedo_ammo = 0,
+	value_2 = 12,
+	icon = "150100",
+	attribute_2 = "cannon",
+	property_rate = {},
+	ammo_icon = {
+		1
+	},
+	ammo_info = {
+		{
+			2,
+			1351
+		}
+	},
+	equip_info = {
+		1,
+		2,
+		6,
+		10,
+		11,
+		12
+	},
+	weapon_id = {
+		150100
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		24
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"MOT",
+		"SF",
+		"MG"
+	}
+}
+_G.pg.base.equip_data_statistics[150101] = {
+	id = 150101,
+	damage = "34 x 6",
+	base = 150100,
+	weapon_id = {
+		150101
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150102] = {
+	id = 150102,
+	damage = "38 x 6",
+	base = 150100,
+	weapon_id = {
+		150102
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150103] = {
+	id = 150103,
+	damage = "42 x 6",
+	base = 150100,
+	weapon_id = {
+		150103
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150104] = {
+	id = 150104,
+	damage = "46 x 6",
+	base = 150100,
+	weapon_id = {
+		150104
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150105] = {
+	id = 150105,
+	damage = "50 x 6",
+	base = 150100,
+	weapon_id = {
+		150105
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150106] = {
+	id = 150106,
+	damage = "54 x 6",
+	base = 150100,
+	weapon_id = {
+		150106
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150140] = {
+	tech = 3,
+	name = "旧式半カノン砲",
+	speciality = "<[VOL]>",
+	type = 4,
+	descrip = "謎の力の影響を受けた「旧式」半キャノン砲",
+	ammo = 2,
+	damage = "38 x 6",
+	nationality = 96,
+	rarity = 5,
+	id = 150140,
+	value_3 = 0,
+	torpedo_ammo = 0,
+	value_2 = 45,
+	icon = "150100",
+	attribute_2 = "cannon",
+	property_rate = {},
+	ammo_icon = {
+		1
+	},
+	ammo_info = {
+		{
+			2,
+			1351
+		}
+	},
+	equip_info = {
+		1,
+		2,
+		6,
+		10,
+		11,
+		12
+	},
+	weapon_id = {
+		150140
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		24
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"MOT",
+		"SF",
+		"MG"
+	}
+}
+_G.pg.base.equip_data_statistics[150141] = {
+	id = 150141,
+	damage = "42 x 6",
+	base = 150140,
+	weapon_id = {
+		150141
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150142] = {
+	id = 150142,
+	damage = "46 x 6",
+	base = 150140,
+	weapon_id = {
+		150142
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150143] = {
+	id = 150143,
+	damage = "50 x 6",
+	base = 150140,
+	weapon_id = {
+		150143
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150144] = {
+	id = 150144,
+	damage = "54 x 6",
+	base = 150140,
+	weapon_id = {
+		150144
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150145] = {
+	id = 150145,
+	damage = "58 x 6",
+	base = 150140,
+	weapon_id = {
+		150145
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150146] = {
+	id = 150146,
+	damage = "62 x 6",
+	base = 150140,
+	weapon_id = {
+		150146
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150147] = {
+	id = 150147,
+	damage = "66 x 6",
+	base = 150140,
+	weapon_id = {
+		150147
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150148] = {
+	id = 150148,
+	damage = "70 x 6",
+	base = 150140,
+	weapon_id = {
+		150148
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150149] = {
+	id = 150149,
+	damage = "74 x 6",
+	base = 150140,
+	weapon_id = {
+		150149
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150150] = {
+	id = 150150,
+	damage = "78 x 6",
+	base = 150140,
+	weapon_id = {
+		150150
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150151] = {
+	id = 150151,
+	anti_siren = 100,
+	damage = "78 x 6",
+	base = 150140,
+	weapon_id = {
+		150151
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150152] = {
+	id = 150152,
+	anti_siren = 200,
+	damage = "78 x 6",
+	base = 150140,
+	weapon_id = {
+		150152
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150153] = {
+	id = 150153,
+	anti_siren = 300,
+	damage = "78 x 6",
+	base = 150140,
+	weapon_id = {
+		150153
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150160] = {
+	type = 10,
+	name = "果物補給",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "航海に必要なビタミン源。果物と野菜を補給しよう！",
+	nationality = 96,
+	rarity = 4,
+	id = 150160,
+	value_3 = 0,
+	attribute_1 = "durability",
+	icon = "150160",
+	value_1 = "200",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60460
+	},
+	hidden_skill_id = {},
+	part_main = {
+		22,
+		23,
+		24
+	},
+	part_sub = {
+		22,
+		23,
+		24
+	},
+	equip_parameters = {},
+	label = {
+		"MOT",
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150161] = {
+	id = 150161,
+	value_1 = "230",
+	base = 150160,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150162] = {
+	id = 150162,
+	value_1 = "260",
+	base = 150160,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150163] = {
+	id = 150163,
+	value_1 = "290",
+	base = 150160,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150164] = {
+	id = 150164,
+	value_1 = "320",
+	base = 150160,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150165] = {
+	id = 150165,
+	value_1 = "350",
+	base = 150160,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150166] = {
+	id = 150166,
+	value_1 = "380",
+	base = 150160,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150167] = {
+	id = 150167,
+	value_1 = "410",
+	base = 150160,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150168] = {
+	id = 150168,
+	value_1 = "440",
+	base = 150160,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150169] = {
+	id = 150169,
+	value_1 = "470",
+	base = 150160,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150170] = {
+	id = 150170,
+	value_1 = "500",
+	base = 150160,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150171] = {
+	id = 150171,
+	anti_siren = 100,
+	value_1 = "530",
+	base = 150160,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150180] = {
+	type = 10,
+	name = "航海望遠鏡",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 1,
+	ammo = 10,
+	nationality = 96,
+	descrip = "快活なる海の少女たちが愛用する望遠鏡",
+	rarity = 4,
+	attribute_1 = "hit",
+	value_3 = 0,
+	torpedo_ammo = 0,
+	id = 150180,
+	icon = "150180",
+	value_1 = "9",
+	attribute_2 = "dodge",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60450
+	},
+	hidden_skill_id = {},
+	part_main = {
+		22,
+		23,
+		24
+	},
+	part_sub = {
+		22,
+		23,
+		24
+	},
+	equip_parameters = {},
+	label = {
+		"MOT",
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150181] = {
+	id = 150181,
+	value_2 = 1,
+	value_1 = "11",
+	base = 150180
+}
+_G.pg.base.equip_data_statistics[150182] = {
+	id = 150182,
+	value_2 = 2,
+	value_1 = "12",
+	base = 150180
+}
+_G.pg.base.equip_data_statistics[150183] = {
+	id = 150183,
+	value_2 = 3,
+	value_1 = "14",
+	base = 150180
+}
+_G.pg.base.equip_data_statistics[150184] = {
+	id = 150184,
+	value_2 = 4,
+	value_1 = "15",
+	base = 150180
+}
+_G.pg.base.equip_data_statistics[150185] = {
+	id = 150185,
+	value_2 = 5,
+	value_1 = "17",
+	base = 150180
+}
+_G.pg.base.equip_data_statistics[150186] = {
+	id = 150186,
+	value_2 = 6,
+	value_1 = "18",
+	base = 150180
+}
+_G.pg.base.equip_data_statistics[150187] = {
+	id = 150187,
+	value_2 = 7,
+	value_1 = "20",
+	base = 150180
+}
+_G.pg.base.equip_data_statistics[150188] = {
+	id = 150188,
+	value_2 = 8,
+	value_1 = "21",
+	base = 150180
+}
+_G.pg.base.equip_data_statistics[150189] = {
+	id = 150189,
+	value_2 = 9,
+	value_1 = "23",
+	base = 150180
+}
+_G.pg.base.equip_data_statistics[150190] = {
+	id = 150190,
+	value_2 = 10,
+	value_1 = "24",
+	base = 150180
+}
+_G.pg.base.equip_data_statistics[150191] = {
+	value_2 = 10,
+	anti_siren = 100,
+	base = 150180,
+	id = 150191,
+	value_1 = "25"
+}
+_G.pg.base.equip_data_statistics[150200] = {
+	type = 10,
+	name = "星の海B2Oエリア通行パス",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 8,
+	ammo = 10,
+	nationality = 1,
+	descrip = "B2Oエリアに出入りするために必要な通行許可証。大切に保管するように",
+	rarity = 4,
+	attribute_1 = "air",
+	value_3 = 0,
+	torpedo_ammo = 0,
+	id = 150200,
+	icon = "150200",
+	value_1 = "14",
+	attribute_2 = "antiaircraft",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60500
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"USS",
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150201] = {
+	id = 150201,
+	value_1 = "16",
+	base = 150200,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150202] = {
+	id = 150202,
+	value_2 = 9,
+	value_1 = "18",
+	base = 150200,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150203] = {
+	id = 150203,
+	value_2 = 10,
+	value_1 = "20",
+	base = 150200,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150204] = {
+	id = 150204,
+	value_2 = 11,
+	value_1 = "22",
+	base = 150200,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150205] = {
+	id = 150205,
+	value_2 = 12,
+	value_1 = "24",
+	base = 150200,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150206] = {
+	id = 150206,
+	value_2 = 13,
+	value_1 = "26",
+	base = 150200,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150207] = {
+	id = 150207,
+	value_2 = 14,
+	value_1 = "28",
+	base = 150200,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150208] = {
+	id = 150208,
+	value_2 = 16,
+	value_1 = "30",
+	base = 150200,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150209] = {
+	id = 150209,
+	value_2 = 18,
+	value_1 = "32",
+	base = 150200,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150210] = {
+	id = 150210,
+	value_2 = 20,
+	value_1 = "35",
+	base = 150200,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150211] = {
+	value_2 = 22,
+	anti_siren = 100,
+	base = 150200,
+	id = 150211,
+	value_1 = "38",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150240] = {
+	type = 10,
+	name = "寰昌の釣り竿",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 10,
+	ammo = 10,
+	nationality = 5,
+	descrip = "",
+	rarity = 4,
+	attribute_1 = "hit",
+	value_3 = 0,
+	torpedo_ammo = 0,
+	id = 150240,
+	icon = "150240",
+	value_1 = "14",
+	attribute_2 = "cannon",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60510
+	},
+	hidden_skill_id = {},
+	part_main = {
+		4,
+		5,
+		10
+	},
+	part_sub = {
+		4,
+		5,
+		10
+	},
+	equip_parameters = {},
+	label = {
+		"PRAN",
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150241] = {
+	id = 150241,
+	value_2 = 11,
+	value_1 = "15",
+	base = 150240,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150242] = {
+	id = 150242,
+	value_2 = 12,
+	value_1 = "17",
+	base = 150240,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150243] = {
+	id = 150243,
+	value_2 = 13,
+	value_1 = "18",
+	base = 150240,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150244] = {
+	id = 150244,
+	value_2 = 14,
+	value_1 = "20",
+	base = 150240,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150245] = {
+	id = 150245,
+	value_2 = 15,
+	value_1 = "21",
+	base = 150240,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150246] = {
+	id = 150246,
+	value_2 = 16,
+	value_1 = "23",
+	base = 150240,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150247] = {
+	id = 150247,
+	value_2 = 17,
+	value_1 = "24",
+	base = 150240,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150248] = {
+	id = 150248,
+	value_2 = 18,
+	value_1 = "25",
+	base = 150240,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150249] = {
+	id = 150249,
+	value_2 = 19,
+	value_1 = "26",
+	base = 150240,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150250] = {
+	id = 150250,
+	value_2 = 20,
+	value_1 = "27",
+	base = 150240,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150251] = {
+	value_2 = 21,
+	anti_siren = 100,
+	base = 150240,
+	id = 150251,
+	value_1 = "28",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150260] = {
+	type = 10,
+	name = "アセンション・ボックス",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "世界を一つの街に凝縮し、街を一つの世界に築く。天に登る秘奥は「箱」にあり",
+	nationality = 0,
+	rarity = 4,
+	id = 150260,
+	value_3 = 0,
+	attribute_1 = "durability",
+	icon = "150260",
+	value_1 = "200",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60530
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150261] = {
+	id = 150261,
+	value_1 = "230",
+	base = 150260,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150262] = {
+	id = 150262,
+	value_1 = "260",
+	base = 150260,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150263] = {
+	id = 150263,
+	value_1 = "290",
+	base = 150260,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150264] = {
+	id = 150264,
+	value_1 = "320",
+	base = 150260,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150265] = {
+	id = 150265,
+	value_1 = "350",
+	base = 150260,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150266] = {
+	id = 150266,
+	value_1 = "380",
+	base = 150260,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150267] = {
+	id = 150267,
+	value_1 = "410",
+	base = 150260,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150268] = {
+	id = 150268,
+	value_1 = "440",
+	base = 150260,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150269] = {
+	id = 150269,
+	value_1 = "470",
+	base = 150260,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150270] = {
+	id = 150270,
+	value_1 = "500",
+	base = 150260,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150271] = {
+	id = 150271,
+	anti_siren = 100,
+	value_1 = "530",
+	base = 150260,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150280] = {
+	type = 10,
+	name = "異世界冒険端末",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "異世界の冒険に必要不可欠なアイテム！",
+	nationality = 0,
+	rarity = 5,
+	id = 150280,
+	value_3 = 0,
+	attribute_1 = "durability",
+	icon = "150280",
+	value_1 = "250",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60540
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150281] = {
+	id = 150281,
+	value_1 = "280",
+	base = 150280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150282] = {
+	id = 150282,
+	value_1 = "310",
+	base = 150280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150283] = {
+	id = 150283,
+	value_1 = "340",
+	base = 150280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150284] = {
+	id = 150284,
+	value_1 = "370",
+	base = 150280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150285] = {
+	id = 150285,
+	value_1 = "400",
+	base = 150280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150286] = {
+	id = 150286,
+	value_1 = "430",
+	base = 150280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150287] = {
+	id = 150287,
+	value_1 = "460",
+	base = 150280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150288] = {
+	id = 150288,
+	value_1 = "490",
+	base = 150280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150289] = {
+	id = 150289,
+	value_1 = "520",
+	base = 150280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150290] = {
+	id = 150290,
+	value_1 = "550",
+	base = 150280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150291] = {
+	id = 150291,
+	anti_siren = 100,
+	value_1 = "580",
+	base = 150280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150292] = {
+	id = 150292,
+	anti_siren = 200,
+	value_1 = "610",
+	base = 150280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150293] = {
+	id = 150293,
+	anti_siren = 300,
+	value_1 = "640",
+	base = 150280,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150300] = {
+	type = 10,
+	name = "残された時の残響",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "一朵彼岸花，被定格在了最美的瞬间。艳丽、张扬、有毒。",
+	nationality = 3,
+	rarity = 4,
+	id = 150300,
+	value_3 = 0,
+	attribute_1 = "air",
+	icon = "150300",
+	value_1 = "28",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60550
+	},
+	hidden_skill_id = {},
+	part_main = {
+		7
+	},
+	part_sub = {
+		7
+	},
+	equip_parameters = {},
+	label = {
+		"IJN",
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150301] = {
+	id = 150301,
+	value_1 = "32",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150302] = {
+	id = 150302,
+	value_1 = "36",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150303] = {
+	id = 150303,
+	value_1 = "40",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150304] = {
+	id = 150304,
+	value_1 = "44",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150305] = {
+	id = 150305,
+	value_1 = "49",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150306] = {
+	id = 150306,
+	value_1 = "53",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150307] = {
+	id = 150307,
+	value_1 = "57",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150308] = {
+	id = 150308,
+	value_1 = "61",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150309] = {
+	id = 150309,
+	value_1 = "65",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150310] = {
+	id = 150310,
+	value_1 = "70",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150311] = {
+	id = 150311,
+	anti_siren = 100,
+	value_1 = "75",
+	base = 150300,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150320] = {
+	type = 10,
+	name = "謎のD装置",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "叮叮叮 — 咚咚咚 — 哐哐哐 — 哒哒哒 — 哔哔哔 — 啪啪啪 —",
+	nationality = 0,
+	rarity = 4,
+	id = 150320,
+	value_3 = 0,
+	attribute_1 = "durability",
+	icon = "150320",
+	value_1 = "200",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60590
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150321] = {
+	id = 150321,
+	value_1 = "230",
+	base = 150320,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150322] = {
+	id = 150322,
+	value_1 = "260",
+	base = 150320,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150323] = {
+	id = 150323,
+	value_1 = "290",
+	base = 150320,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150324] = {
+	id = 150324,
+	value_1 = "320",
+	base = 150320,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150325] = {
+	id = 150325,
+	value_1 = "350",
+	base = 150320,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150326] = {
+	id = 150326,
+	value_1 = "380",
+	base = 150320,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150327] = {
+	id = 150327,
+	value_1 = "410",
+	base = 150320,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150328] = {
+	id = 150328,
+	value_1 = "440",
+	base = 150320,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150329] = {
+	id = 150329,
+	value_1 = "470",
+	base = 150320,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150330] = {
+	id = 150330,
+	value_1 = "500",
+	base = 150320,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150331] = {
+	id = 150331,
+	anti_siren = 100,
+	value_1 = "530",
+	base = 150320,
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[170001] = {
 	type = 1,
 	name = "专属弹幕-古比雪夫I",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -136676,7 +142189,7 @@ _G.pg.base.equip_data_statistics[170002] = {
 _G.pg.base.equip_data_statistics[170011] = {
 	type = 1,
 	name = "专属弹幕-谢菲尔德METAI",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -136727,7 +142240,7 @@ _G.pg.base.equip_data_statistics[170012] = {
 _G.pg.base.equip_data_statistics[170021] = {
 	type = 1,
 	name = "专属弹幕-斯库拉I",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -136778,7 +142291,7 @@ _G.pg.base.equip_data_statistics[170022] = {
 _G.pg.base.equip_data_statistics[170031] = {
 	type = 1,
 	name = "专属弹幕-库尔斯克I",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -136829,7 +142342,7 @@ _G.pg.base.equip_data_statistics[170032] = {
 _G.pg.base.equip_data_statistics[170041] = {
 	type = 1,
 	name = "专属弹幕-拉·加利索尼埃METAI",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -136880,7 +142393,7 @@ _G.pg.base.equip_data_statistics[170042] = {
 _G.pg.base.equip_data_statistics[170051] = {
 	type = 1,
 	name = "专属弹幕-伏罗希洛夫I",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -136931,7 +142444,7 @@ _G.pg.base.equip_data_statistics[170052] = {
 _G.pg.base.equip_data_statistics[170061] = {
 	type = 1,
 	name = "专属弹幕-奥托·冯·阿尔文斯莱本I",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -136982,7 +142495,7 @@ _G.pg.base.equip_data_statistics[170062] = {
 _G.pg.base.equip_data_statistics[170071] = {
 	type = 1,
 	name = "专属弹幕-U-556METAI",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -137033,7 +142546,7 @@ _G.pg.base.equip_data_statistics[170072] = {
 _G.pg.base.equip_data_statistics[170121] = {
 	type = 1,
 	name = "专属弹幕-兴登堡I",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -137084,7 +142597,7 @@ _G.pg.base.equip_data_statistics[170122] = {
 _G.pg.base.equip_data_statistics[170131] = {
 	type = 1,
 	name = "专属弹幕-四万十I",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -137135,7 +142648,7 @@ _G.pg.base.equip_data_statistics[170132] = {
 _G.pg.base.equip_data_statistics[170133] = {
 	type = 1,
 	name = "专属弹幕-四万十鱼雷",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -137177,7 +142690,7 @@ _G.pg.base.equip_data_statistics[170133] = {
 _G.pg.base.equip_data_statistics[170141] = {
 	type = 1,
 	name = "专属弹幕-旗风METAI",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -137228,7 +142741,7 @@ _G.pg.base.equip_data_statistics[170142] = {
 _G.pg.base.equip_data_statistics[170151] = {
 	type = 1,
 	name = "专属弹幕-马赛曲I",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -137279,7 +142792,7 @@ _G.pg.base.equip_data_statistics[170152] = {
 _G.pg.base.equip_data_statistics[170171] = {
 	type = 1,
 	name = "专属弹幕-神通METAI",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -137330,7 +142843,7 @@ _G.pg.base.equip_data_statistics[170172] = {
 _G.pg.base.equip_data_statistics[170201] = {
 	type = 1,
 	name = "专属弹幕-休斯敦II-I",
-	speciality = "无",
+	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 10,
@@ -137378,10 +142891,163 @@ _G.pg.base.equip_data_statistics[170202] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[170231] = {
+	type = 1,
+	name = "专属弹幕-维达号I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 170231,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170231
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[170232] = {
+	id = 170232,
+	name = "专属弹幕-维达号II",
+	base = 170231,
+	weapon_id = {
+		170232
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[170241] = {
+	type = 1,
+	name = "专属弹幕-基洛夫META I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 170241,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61571
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[170242] = {
+	id = 170242,
+	name = "专属弹幕-基洛夫META II",
+	base = 170241,
+	weapon_id = {
+		61572
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[170411] = {
+	type = 1,
+	name = "专属弹幕-水星纪念METAI",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 170411,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170411
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[170412] = {
+	id = 170412,
+	name = "专属弹幕-水星纪念METAII",
+	base = 170411,
+	weapon_id = {
+		170412
+	},
+	hidden_skill_id = {}
+}
 _G.pg.base.equip_data_statistics[594017] = {
 	tech = 3,
 	name = "美系剧情海伦娜主炮",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -137421,7 +143087,7 @@ _G.pg.base.equip_data_statistics[594017] = {
 _G.pg.base.equip_data_statistics[594018] = {
 	tech = 3,
 	name = "美系剧情北卡主炮",
-	speciality = "跨射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -137462,7 +143128,7 @@ _G.pg.base.equip_data_statistics[594018] = {
 _G.pg.base.equip_data_statistics[594019] = {
 	tech = 3,
 	name = "美系剧情华盛顿主炮",
-	speciality = "跨射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -137503,7 +143169,7 @@ _G.pg.base.equip_data_statistics[594019] = {
 _G.pg.base.equip_data_statistics[630011] = {
 	type = 2,
 	name = "【愚人节活动】紫布里武器",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	tech = 3,
 	rarity = 4,
 	ammo = 2,
@@ -137542,7 +143208,7 @@ _G.pg.base.equip_data_statistics[630011] = {
 _G.pg.base.equip_data_statistics[630012] = {
 	type = 2,
 	name = "【愚人节活动】紫布里武器",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	tech = 3,
 	rarity = 4,
 	ammo = 2,
@@ -137581,7 +143247,7 @@ _G.pg.base.equip_data_statistics[630012] = {
 _G.pg.base.equip_data_statistics[630021] = {
 	type = 2,
 	name = "【愚人节活动2021】金布里自卫火炮",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	tech = 3,
 	rarity = 4,
 	ammo = 2,
@@ -137620,7 +143286,7 @@ _G.pg.base.equip_data_statistics[630021] = {
 _G.pg.base.equip_data_statistics[630022] = {
 	type = 2,
 	name = "【愚人节活动2021】金布里特殊弹幕",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	tech = 3,
 	rarity = 4,
 	ammo = 2,
@@ -137659,7 +143325,7 @@ _G.pg.base.equip_data_statistics[630022] = {
 _G.pg.base.equip_data_statistics[630023] = {
 	type = 2,
 	name = "【愚人节活动2021】金布里特殊弹幕",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	tech = 3,
 	rarity = 4,
 	ammo = 2,
@@ -137698,7 +143364,7 @@ _G.pg.base.equip_data_statistics[630023] = {
 _G.pg.base.equip_data_statistics[630024] = {
 	type = 2,
 	name = "【愚人节活动2021】金布里特殊钻头",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	tech = 3,
 	rarity = 4,
 	ammo = 2,
@@ -137737,7 +143403,7 @@ _G.pg.base.equip_data_statistics[630024] = {
 _G.pg.base.equip_data_statistics[630050] = {
 	type = 2,
 	name = "【愚人节活动2022】金布里特殊钻头",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	tech = 3,
 	rarity = 4,
 	ammo = 2,
@@ -137776,7 +143442,7 @@ _G.pg.base.equip_data_statistics[630050] = {
 _G.pg.base.equip_data_statistics[630053] = {
 	type = 2,
 	name = "【愚人节活动2022】紫布里武器",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	tech = 3,
 	rarity = 4,
 	ammo = 2,
@@ -137815,7 +143481,7 @@ _G.pg.base.equip_data_statistics[630053] = {
 _G.pg.base.equip_data_statistics[630054] = {
 	type = 2,
 	name = "【愚人节活动2022】紫布里武器",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	tech = 3,
 	rarity = 4,
 	ammo = 2,
@@ -137854,7 +143520,7 @@ _G.pg.base.equip_data_statistics[630054] = {
 _G.pg.base.equip_data_statistics[630055] = {
 	type = 5,
 	name = "【愚人节活动2022】紫布里四联鱼雷",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -137893,7 +143559,7 @@ _G.pg.base.equip_data_statistics[630055] = {
 _G.pg.base.equip_data_statistics[630056] = {
 	type = 11,
 	name = "【愚人节活动2022】彩布里主炮武器",
-	speciality = "跨射",
+	speciality = "<[VOL]>",
 	tech = 3,
 	rarity = 4,
 	ammo = 1,
@@ -137932,7 +143598,7 @@ _G.pg.base.equip_data_statistics[630056] = {
 _G.pg.base.equip_data_statistics[630057] = {
 	type = 2,
 	name = "【愚人节活动2022】彩布里特殊弹幕",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	tech = 3,
 	rarity = 4,
 	ammo = 2,
@@ -137971,7 +143637,7 @@ _G.pg.base.equip_data_statistics[630057] = {
 _G.pg.base.equip_data_statistics[630058] = {
 	type = 5,
 	name = "【愚人节活动2022】彩布里五联鱼雷",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -138010,7 +143676,7 @@ _G.pg.base.equip_data_statistics[630058] = {
 _G.pg.base.equip_data_statistics[630059] = {
 	type = 9,
 	name = "【愚人节活动2022】金布里鱼雷机",
-	speciality = "轰炸",
+	speciality = "<[BOMB]>",
 	tech = 3,
 	rarity = 5,
 	ammo = 5,
@@ -138050,7 +143716,7 @@ _G.pg.base.equip_data_statistics[630059] = {
 _G.pg.base.equip_data_statistics[630060] = {
 	type = 8,
 	name = "【愚人节活动2022】金布里轰炸机",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	tech = 3,
 	rarity = 5,
 	ammo = 5,
@@ -138090,7 +143756,7 @@ _G.pg.base.equip_data_statistics[630060] = {
 _G.pg.base.equip_data_statistics[630061] = {
 	type = 11,
 	name = "【愚人节活动2023】彩布里 锤子主炮",
-	speciality = "跨射",
+	speciality = "<[VOL]>",
 	tech = 3,
 	rarity = 4,
 	ammo = 1,
@@ -138129,7 +143795,7 @@ _G.pg.base.equip_data_statistics[630061] = {
 _G.pg.base.equip_data_statistics[630062] = {
 	type = 2,
 	name = "【愚人节活动2023】彩布里 兵装效果",
-	speciality = "跨射",
+	speciality = "<[VOL]>",
 	tech = 3,
 	rarity = 4,
 	ammo = 1,
@@ -138165,10 +143831,117 @@ _G.pg.base.equip_data_statistics[630062] = {
 	equip_parameters = {},
 	label = {}
 }
+_G.pg.base.equip_data_statistics[630071] = {
+	type = 2,
+	name = "【愚人节活动2024】金布里机甲 钻头导弹",
+	speciality = "<[LOCK]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 2,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 630071,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		630071
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		5
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[630073] = {
+	type = 5,
+	name = "【愚人节活动2024】金布里机甲 鱼雷触发器",
+	speciality = "<[TRP]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 630073,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		630073
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		16,
+		17,
+		18,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		16,
+		17,
+		18,
+		19,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
 _G.pg.base.equip_data_statistics[630221] = {
 	type = 4,
 	name = "【2022异世界勇者】拉菲-兔兔火球主炮",
-	speciality = "跨射",
+	speciality = "<[VOL]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -138203,7 +143976,7 @@ _G.pg.base.equip_data_statistics[630221] = {
 _G.pg.base.equip_data_statistics[630222] = {
 	rarity = 4,
 	name = "【2022异世界勇者】标枪 普通斩击子弹",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 3,
 	tech = 3,
 	ammo = 2,
@@ -138239,7 +144012,7 @@ _G.pg.base.equip_data_statistics[630222] = {
 _G.pg.base.equip_data_statistics[630223] = {
 	rarity = 5,
 	name = "【2022异世界勇者】标枪 消弹蓄力斩击鱼雷",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	type = 5,
 	tech = 3,
 	ammo = 5,
@@ -138282,7 +144055,7 @@ _G.pg.base.equip_data_statistics[630223] = {
 _G.pg.base.equip_data_statistics[630224] = {
 	rarity = 4,
 	name = "【2022异世界勇者】绫波 普通气功波子弹",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 3,
 	tech = 3,
 	ammo = 2,
@@ -138318,7 +144091,7 @@ _G.pg.base.equip_data_statistics[630224] = {
 _G.pg.base.equip_data_statistics[630225] = {
 	rarity = 5,
 	name = "【2022异世界勇者】绫波 蓄力气功波鱼雷",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	type = 5,
 	tech = 3,
 	ammo = 5,
@@ -138361,7 +144134,7 @@ _G.pg.base.equip_data_statistics[630225] = {
 _G.pg.base.equip_data_statistics[630226] = {
 	rarity = 4,
 	name = "【2022异世界勇者】Z23 普通近身战斧挥砍",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 3,
 	tech = 3,
 	ammo = 2,
@@ -138397,7 +144170,7 @@ _G.pg.base.equip_data_statistics[630226] = {
 _G.pg.base.equip_data_statistics[630227] = {
 	rarity = 5,
 	name = "【2022异世界勇者】Z23 远程战斧鱼雷",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	type = 5,
 	tech = 3,
 	ammo = 5,
@@ -138440,7 +144213,7 @@ _G.pg.base.equip_data_statistics[630227] = {
 _G.pg.base.equip_data_statistics[630228] = {
 	rarity = 4,
 	name = "【2022异世界勇者】空武器",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 2,
 	tech = 3,
 	ammo = 2,
@@ -138481,7 +144254,7 @@ _G.pg.base.equip_data_statistics[630228] = {
 _G.pg.base.equip_data_statistics[650601] = {
 	tech = 0,
 	name = "【2020法系活动剧情用】双联装155mm主炮Mle1920",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 2,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -138526,7 +144299,7 @@ _G.pg.base.equip_data_statistics[650601] = {
 _G.pg.base.equip_data_statistics[650602] = {
 	tech = 1,
 	name = "【2020法系活动剧情用】双联装130mm主炮Mle1935",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 1,
 	descrip = "说明未填写",
 	ammo = 3,
@@ -138579,7 +144352,7 @@ _G.pg.base.equip_data_statistics[650602] = {
 _G.pg.base.equip_data_statistics[650603] = {
 	tech = 1,
 	name = "【2020法系活动剧情用】双联550mm鱼雷T1",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	type = 5,
 	rarity = 1,
 	ammo = 5,
@@ -138630,7 +144403,7 @@ _G.pg.base.equip_data_statistics[650603] = {
 _G.pg.base.equip_data_statistics[650604] = {
 	tech = 3,
 	name = "【2020法系活动剧情用】四联装380mm主炮Mle1935",
-	speciality = "跨射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -138672,6 +144445,814 @@ _G.pg.base.equip_data_statistics[650604] = {
 		"MG",
 		"HE"
 	}
+}
+_G.pg.base.equip_data_statistics[841050] = {
+	type = 10,
+	name = "空武器",
+	speciality = "<[LOCK]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 2,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 841050,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		16,
+		17,
+		18,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		16,
+		17,
+		18,
+		19,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139701] = {
+	type = 2,
+	name = "【2024异世界冒险 剧情】抚顺 主炮弹幕",
+	speciality = "<[LOCK]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 2,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139701,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139701
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		5
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139702] = {
+	type = 5,
+	name = "【2024异世界冒险 剧情】抚顺 鱼雷剑气",
+	speciality = "<[TRP]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139702,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139702
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[841051] = {
+	type = 5,
+	name = "空武器（鱼雷触发器）",
+	speciality = "<[TRP]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 841051,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		841051
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		16,
+		17,
+		18,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		16,
+		17,
+		18,
+		19,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139703] = {
+	type = 7,
+	name = "【2024异世界冒险 剧情】利物浦 小天使飞机",
+	speciality = "<[BOMB]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139703,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139703
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7
+	},
+	part_sub = {
+		6,
+		7
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139706] = {
+	type = 7,
+	name = "【2024异世界冒险 剧情】独角兽 独角兽飞机",
+	speciality = "<[BOMB]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139706,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139706
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7
+	},
+	part_sub = {
+		6,
+		7
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139709] = {
+	type = 4,
+	name = "【2024异世界冒险 剧情】努比亚人 药剂投掷",
+	speciality = "<[VOL]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139709,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139709
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		4,
+		5,
+		10,
+		13
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139710] = {
+	type = 2,
+	name = "【2024异世界冒险 剧情】鲁莽 主炮火球",
+	speciality = "<[LOCK]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 2,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139710,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139710
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		5
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139711] = {
+	type = 5,
+	name = "【2024异世界冒险 剧情】鲁莽 鱼雷陨石",
+	speciality = "<[TRP]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139711,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139711
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139712] = {
+	type = 2,
+	name = "【2024异世界冒险 剧情】倔强 主炮冰晶",
+	speciality = "<[LOCK]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 2,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139712,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139712
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		5
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139713] = {
+	type = 5,
+	name = "【2024异世界冒险 剧情】倔强 鱼雷冰爆",
+	speciality = "<[TRP]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139713,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139713
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139716] = {
+	type = 2,
+	name = "【2024异世界冒险 剧情】阿尔及利亚 主炮弹幕",
+	speciality = "<[LOCK]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 2,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139716,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139716
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		5
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139717] = {
+	type = 5,
+	name = "【2024异世界冒险 剧情】阿尔及利亚 鱼雷剑气",
+	speciality = "<[TRP]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139717,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139717
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139718] = {
+	type = 2,
+	name = "【2024异世界冒险 剧情】不屈 主炮弹幕",
+	speciality = "<[LOCK]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 2,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139718,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139718
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		5
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139719] = {
+	type = 5,
+	name = "【2024异世界冒险 剧情】不屈 鱼雷骑枪",
+	speciality = "<[TRP]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139719,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139719
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139720] = {
+	type = 4,
+	name = "【2024异世界冒险 剧情】前卫 金色炮弹",
+	speciality = "<[VOL]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139720,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139720
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		4,
+		5,
+		10,
+		13
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139722] = {
+	type = 2,
+	name = "【2024异世界冒险 剧情】圣女贞德 主炮弹幕",
+	speciality = "<[LOCK]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 2,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139722,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139722
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		5
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139723] = {
+	type = 5,
+	name = "【2024异世界冒险 剧情】圣女贞德 鱼雷光弹",
+	speciality = "<[TRP]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139723,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139723
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		18,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139724] = {
+	type = 7,
+	name = "【2024异世界冒险 剧情】霞飞 飞机",
+	speciality = "<[BOMB]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139724,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139724
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7
+	},
+	part_sub = {
+		6,
+		7
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[3139728] = {
+	type = 7,
+	name = "【2024异世界冒险 剧情】腓特烈·卡尔 激光",
+	speciality = "<[BOMB]>",
+	tech = 3,
+	rarity = 5,
+	ammo = 5,
+	nationality = 0,
+	descrip = "说明未填写",
+	id = 3139728,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3139728
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7
+	},
+	part_sub = {
+		6,
+		7
+	},
+	equip_parameters = {},
+	label = {}
 }
 _G.pg.base.equip_data_statistics[800000] = {
 	id = 800000,
@@ -138766,7 +145347,7 @@ _G.pg.base.equip_data_statistics[800009] = {
 _G.pg.base.equip_data_statistics[800100] = {
 	tech = 3,
 	name = "【大世界五章剧情用】五联装533mm鱼雷",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "说明未填写",
 	ammo = 5,
@@ -138835,7 +145416,7 @@ _G.pg.base.equip_data_statistics[800100] = {
 _G.pg.base.equip_data_statistics[800101] = {
 	tech = 0,
 	name = "【大世界五章剧情用】五联装533mm鱼雷Mark IX",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "说明未填写",
 	ammo = 5,
@@ -138904,7 +145485,7 @@ _G.pg.base.equip_data_statistics[800101] = {
 _G.pg.base.equip_data_statistics[800102] = {
 	tech = 3,
 	name = "【大世界五章剧情用】潜艇用G7e声导鱼雷",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	type = 13,
 	descrip = "说明未填写",
 	ammo = 4,
@@ -138964,7 +145545,7 @@ _G.pg.base.equip_data_statistics[800102] = {
 _G.pg.base.equip_data_statistics[820850] = {
 	attribute_3 = "antiaircraft",
 	name = "【2021岛风活动剧情用】双联100mm98式高射炮",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 1,
 	tech = 3,
 	ammo = 3,
@@ -139034,7 +145615,7 @@ _G.pg.base.equip_data_statistics[820850] = {
 _G.pg.base.equip_data_statistics[820851] = {
 	tech = 3,
 	name = "【2021岛风活动剧情用】203mm连装炮",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -139094,7 +145675,7 @@ _G.pg.base.equip_data_statistics[820851] = {
 _G.pg.base.equip_data_statistics[820852] = {
 	tech = 3,
 	name = "【2021岛风活动剧情用】双联装203mmSKC主炮",
-	speciality = "锁定",
+	speciality = "<[LOCK]>",
 	type = 3,
 	descrip = "双联装203mmSKC主炮，{namecode:425}级重巡主炮，重巡可以使用",
 	ammo = 1,
@@ -139154,7 +145735,7 @@ _G.pg.base.equip_data_statistics[820852] = {
 _G.pg.base.equip_data_statistics[820853] = {
 	tech = 3,
 	name = "【2021岛风活动剧情用】410mm连装炮",
-	speciality = "跨射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -139208,7 +145789,7 @@ _G.pg.base.equip_data_statistics[820853] = {
 _G.pg.base.equip_data_statistics[820854] = {
 	tech = 3,
 	name = "【2021岛风活动剧情用】四联装610mm鱼雷",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "说明未填写",
 	ammo = 5,
@@ -139275,7 +145856,7 @@ _G.pg.base.equip_data_statistics[820854] = {
 _G.pg.base.equip_data_statistics[820855] = {
 	tech = 3,
 	name = "【2021岛风活动剧情用】四联装533mm磁性鱼雷",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "四联装533mm磁性鱼雷，伯鲁克科技研发的特殊鱼雷，运用磁性引信和声导技术，能极大的提高鱼雷的命中率",
 	ammo = 4,
@@ -139342,7 +145923,7 @@ _G.pg.base.equip_data_statistics[820855] = {
 _G.pg.base.equip_data_statistics[820856] = {
 	tech = 3,
 	name = "【2021岛风活动剧情用】410mm连装炮（奥丁用高装填）",
-	speciality = "跨射",
+	speciality = "<[VOL]>",
 	type = 4,
 	descrip = "说明未填写",
 	ammo = 2,
@@ -139396,7 +145977,7 @@ _G.pg.base.equip_data_statistics[820856] = {
 _G.pg.base.equip_data_statistics[820857] = {
 	tech = 3,
 	name = "【2021岛风活动剧情用】四联装533mm磁性鱼雷（奥丁用高装填）",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	type = 5,
 	descrip = "四联装533mm磁性鱼雷，伯鲁克科技研发的特殊鱼雷，运用磁性引信和声导技术，能极大的提高鱼雷的命中率",
 	ammo = 4,
@@ -139463,7 +146044,7 @@ _G.pg.base.equip_data_statistics[820857] = {
 _G.pg.base.equip_data_statistics[820858] = {
 	rarity = 5,
 	name = "【2021岛风活动剧情用】零战五二型",
-	speciality = "空战",
+	speciality = "<[AIR]>",
 	type = 7,
 	tech = 3,
 	ammo = 5,
@@ -139520,7 +146101,7 @@ _G.pg.base.equip_data_statistics[820858] = {
 _G.pg.base.equip_data_statistics[820859] = {
 	rarity = 5,
 	name = "【2021岛风活动剧情用】彗星",
-	speciality = "轰炸",
+	speciality = "<[BOMB]>",
 	type = 9,
 	tech = 3,
 	ammo = 5,
@@ -139577,7 +146158,7 @@ _G.pg.base.equip_data_statistics[820859] = {
 _G.pg.base.equip_data_statistics[820860] = {
 	rarity = 5,
 	name = "【2021岛风活动剧情用】流星",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	type = 8,
 	tech = 3,
 	ammo = 5,
@@ -139724,7 +146305,7 @@ _G.pg.base.equip_data_statistics[960008] = {
 _G.pg.base.equip_data_statistics[960009] = {
 	type = 7,
 	name = "【翻格子活动】铁血战斗机",
-	speciality = "空战",
+	speciality = "<[AIR]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -139767,7 +146348,7 @@ _G.pg.base.equip_data_statistics[960009] = {
 _G.pg.base.equip_data_statistics[960010] = {
 	type = 9,
 	name = "【翻格子活动】铁血轰炸机",
-	speciality = "轰炸",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -139809,7 +146390,7 @@ _G.pg.base.equip_data_statistics[960010] = {
 _G.pg.base.equip_data_statistics[960011] = {
 	type = 7,
 	name = "【翻格子活动】重樱战斗机",
-	speciality = "空战",
+	speciality = "<[AIR]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -139852,7 +146433,7 @@ _G.pg.base.equip_data_statistics[960011] = {
 _G.pg.base.equip_data_statistics[960012] = {
 	type = 8,
 	name = "【翻格子活动】重樱鱼雷机",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -139894,7 +146475,7 @@ _G.pg.base.equip_data_statistics[960012] = {
 _G.pg.base.equip_data_statistics[960013] = {
 	type = 9,
 	name = "【翻格子活动】重樱轰炸机",
-	speciality = "轰炸",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -139936,7 +146517,7 @@ _G.pg.base.equip_data_statistics[960013] = {
 _G.pg.base.equip_data_statistics[960014] = {
 	type = 7,
 	name = "【翻格子活动】白鹰战斗机",
-	speciality = "空战",
+	speciality = "<[AIR]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -139979,7 +146560,7 @@ _G.pg.base.equip_data_statistics[960014] = {
 _G.pg.base.equip_data_statistics[960015] = {
 	type = 8,
 	name = "【翻格子活动】白鹰鱼雷机",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -140021,7 +146602,7 @@ _G.pg.base.equip_data_statistics[960015] = {
 _G.pg.base.equip_data_statistics[960016] = {
 	type = 9,
 	name = "【翻格子活动】白鹰轰炸机",
-	speciality = "轰炸",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -140063,7 +146644,7 @@ _G.pg.base.equip_data_statistics[960016] = {
 _G.pg.base.equip_data_statistics[960017] = {
 	type = 7,
 	name = "【翻格子活动】皇家战斗机",
-	speciality = "空战",
+	speciality = "<[AIR]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -140106,7 +146687,7 @@ _G.pg.base.equip_data_statistics[960017] = {
 _G.pg.base.equip_data_statistics[960018] = {
 	type = 8,
 	name = "【翻格子活动】皇家鱼雷机",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -140148,7 +146729,7 @@ _G.pg.base.equip_data_statistics[960018] = {
 _G.pg.base.equip_data_statistics[960019] = {
 	type = 9,
 	name = "【翻格子活动】皇家轰炸机",
-	speciality = "轰炸",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -140190,7 +146771,7 @@ _G.pg.base.equip_data_statistics[960019] = {
 _G.pg.base.equip_data_statistics[960020] = {
 	type = 7,
 	name = "【翻格子活动】鸢尾战斗机",
-	speciality = "空战",
+	speciality = "<[AIR]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -140233,7 +146814,7 @@ _G.pg.base.equip_data_statistics[960020] = {
 _G.pg.base.equip_data_statistics[960021] = {
 	type = 8,
 	name = "【翻格子活动】鸢尾鱼雷机",
-	speciality = "雷击",
+	speciality = "<[TRP]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,
@@ -140275,7 +146856,7 @@ _G.pg.base.equip_data_statistics[960021] = {
 _G.pg.base.equip_data_statistics[960022] = {
 	type = 9,
 	name = "【翻格子活动】鸢尾轰炸机",
-	speciality = "轰炸",
+	speciality = "<[BOMB]>",
 	tech = 1,
 	rarity = 1,
 	ammo = 5,

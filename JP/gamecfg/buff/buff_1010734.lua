@@ -1,4 +1,24 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "torpedoPower",
+				number = 5000
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -157,25 +177,5 @@ return {
 	stack = 1,
 	id = 1010734,
 	icon = 1010734,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "torpedoPower",
-				number = 5000
-			}
-		}
-	}
+	last_effect = ""
 }

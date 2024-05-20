@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffFixVelocity",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				add = 3,
+				mul = 0
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -148,17 +160,5 @@ return {
 	stack = 1,
 	id = 19121,
 	icon = 19120,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffFixVelocity",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				add = 3,
-				mul = 0
-			}
-		}
-	}
+	last_effect = ""
 }

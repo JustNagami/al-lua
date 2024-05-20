@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "出击时，编队中每有一个铁血阵营潜艇角色，自身雷击、装填属性上升$1",
-	name = "",
-	init_effect = "",
-	time = 0,
-	color = "blue",
-	picture = "",
-	desc = "出击时，编队中每有一个铁血阵营潜艇角色，自身雷击、装填属性上升$1，根据命中鱼雷数触发弹幕",
-	stack = 1,
-	id = 1090040,
-	icon = 3610,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -67,5 +46,26 @@ return {
 				buff_id = 1090045
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "出击时，编队中每有一个铁血阵营潜艇角色，自身雷击、装填属性上升$1",
+	name = "",
+	init_effect = "",
+	time = 0,
+	color = "blue",
+	picture = "",
+	desc = "出击时，编队中每有一个铁血阵营潜艇角色，自身雷击、装填属性上升$1，根据命中鱼雷数触发弹幕",
+	stack = 1,
+	id = 1090040,
+	icon = 3610,
+	last_effect = ""
 }

@@ -1,4 +1,15 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onFlagShip"
+			},
+			arg_list = {
+				skill_id = 13240
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,16 +30,5 @@ return {
 	stack = 1,
 	id = 13240,
 	icon = 13240,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onFlagShip"
-			},
-			arg_list = {
-				skill_id = 13240
-			}
-		}
-	}
+	last_effect = ""
 }

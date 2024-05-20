@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 0,
-	color = "blue",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 15031,
-	icon = 15030,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCleanse",
@@ -41,5 +21,25 @@ return {
 				tag = "AdalbertHigh"
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 0,
+	color = "blue",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 15031,
+	icon = 15030,
+	last_effect = ""
 }

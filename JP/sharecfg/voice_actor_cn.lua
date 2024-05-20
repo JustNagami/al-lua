@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.voice_actor_CN = {
 	{
 		code = 1,
@@ -1475,5 +1475,89 @@ pg.voice_actor_CN = {
 	[382] = {
 		code = 382,
 		actor_name = "野中深愛"
+	},
+	[383] = {
+		code = 383,
+		actor_name = "倉持若菜"
+	},
+	[384] = {
+		code = 384,
+		actor_name = "陽向葵ゅか"
+	},
+	[385] = {
+		code = 385,
+		actor_name = "佐藤日向"
+	},
+	[386] = {
+		code = 386,
+		actor_name = "川口莉奈"
+	},
+	[387] = {
+		code = 387,
+		actor_name = "葉山いくみ"
+	},
+	[388] = {
+		code = 388,
+		actor_name = "原田ひとみ"
+	},
+	[389] = {
+		code = 389,
+		actor_name = "各務華梨"
+	},
+	[390] = {
+		code = 390,
+		actor_name = "佐伯伊織"
+	},
+	[391] = {
+		code = 391,
+		actor_name = "深川瑠華"
+	},
+	[392] = {
+		code = 392,
+		actor_name = "依田菜津"
+	},
+	[393] = {
+		code = 393,
+		actor_name = "佐土原かおり"
+	},
+	[394] = {
+		code = 394,
+		actor_name = "又吉愛"
+	},
+	[395] = {
+		code = 395,
+		actor_name = "佐々木未来"
+	},
+	[396] = {
+		code = 396,
+		actor_name = "牧野天音"
+	},
+	[397] = {
+		code = 397,
+		actor_name = "羽月理恵"
+	},
+	[398] = {
+		code = 398,
+		actor_name = "戸松遥"
+	},
+	[399] = {
+		code = 399,
+		actor_name = "佳穂成美"
+	},
+	[400] = {
+		code = 400,
+		actor_name = "Marika"
+	},
+	[402] = {
+		code = 402,
+		actor_name = "岩井映美里"
+	},
+	[403] = {
+		code = 403,
+		actor_name = "真野美月"
+	},
+	[404] = {
+		code = 404,
+		actor_name = "佐倉薫"
 	}
 }

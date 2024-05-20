@@ -1,4 +1,15 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 1005
+			}
+		}
+	},
 	{
 		desc = "提高舰队中所有主力5.0%炮击属性，同类指挥技能无法同时生效",
 		addition = {
@@ -69,16 +80,5 @@ return {
 	stack = 1,
 	id = 1005,
 	icon = 1000,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 1005
-			}
-		}
-	}
+	last_effect = ""
 }

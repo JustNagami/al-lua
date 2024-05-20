@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.puzzle_combat_template = {
 	[100] = {
 		description = "電子対抗戦・コマンドカードの使い方を練習しよう",

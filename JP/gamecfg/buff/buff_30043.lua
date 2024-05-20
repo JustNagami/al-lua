@@ -1,15 +1,4 @@
-return {
-	{},
-	init_effect = "",
-	name = "专属弹幕",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "轻巡主炮每进行6次攻击，触发专属弹幕-舒尔茨I",
-	stack = 1,
-	id = 30043,
-	icon = 30040,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -35,5 +24,16 @@ return {
 				countType = 30040
 			}
 		}
-	}
+	},
+	{},
+	init_effect = "",
+	name = "专属弹幕",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "轻巡主炮每进行6次攻击，触发专属弹幕-舒尔茨I",
+	stack = 1,
+	id = 30043,
+	icon = 30040,
+	last_effect = ""
 }

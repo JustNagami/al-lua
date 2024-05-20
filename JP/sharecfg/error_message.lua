@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.error_message = {
 	{
 		desc = "操作が無効です。"

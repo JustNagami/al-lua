@@ -1,4 +1,4 @@
-return {
+﻿return {
 	fadeOut = 1.5,
 	mode = 2,
 	id = "BIRUI3",
@@ -230,6 +230,15 @@ return {
 				time = 1
 			}
 		},
+		action = {
+			{
+				type = "move",
+				y = -75,
+				delay = 0,
+				dur = 0.3,
+				x = 0
+			}
+		},
 		{
 			dir = 1,
 			side = 2,
@@ -422,15 +431,6 @@ return {
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
-			}
-		},
-		action = {
-			{
-				type = "move",
-				y = -75,
-				delay = 0,
-				dur = 0.3,
-				x = 0
 			}
 		}
 	}

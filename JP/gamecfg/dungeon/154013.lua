@@ -1,4 +1,4 @@
-return {
+﻿return {
 	map_id = 10001,
 	id = 154013,
 	stages = {
@@ -318,7 +318,7 @@ return {
 					triggerType = 8,
 					waveIndex = 900,
 					preWaves = {
-						101
+						105
 					},
 					triggerParams = {}
 				},

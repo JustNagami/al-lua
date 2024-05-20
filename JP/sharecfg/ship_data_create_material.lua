@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.ship_data_create_material = {
 	{
 		use_gold = 1500,
@@ -11,11 +11,13 @@ pg.ship_data_create_material = {
 		number_1 = 2,
 		id = 1,
 		icon = "build_1",
+		exchange_count = 2,
 		rate_tip = {
+			"<color=#ff5e39>Uレア</color>：1.2%",
 			"<color=#ffde38>SSレア</color>：7%",
 			"<color=#d797ff>Sレア</color>：12%",
 			"<color=#3dc6ff>レア</color>：51%",
-			"ノーマル：30%"
+			"ノーマル：28.8%"
 		}
 	},
 	{
@@ -29,6 +31,7 @@ pg.ship_data_create_material = {
 		number_1 = 1,
 		id = 2,
 		icon = "build_2",
+		exchange_count = 1,
 		rate_tip = {
 			"<color=#ffde38>SSレア</color>：7%",
 			"<color=#d797ff>Sレア</color>：12%",
@@ -47,11 +50,13 @@ pg.ship_data_create_material = {
 		number_1 = 2,
 		id = 3,
 		icon = "build_3",
+		exchange_count = 2,
 		rate_tip = {
+			"<color=#ff5e39>Uレア</color>：1.2%",
 			"<color=#ffde38>SSレア</color>：7%",
 			"<color=#d797ff>Sレア</color>：12%",
 			"<color=#3dc6ff>レア</color>：51%",
-			"ノーマル：30%"
+			"ノーマル：28.8%"
 		}
 	},
 	{
@@ -65,20 +70,19 @@ pg.ship_data_create_material = {
 		number_1 = 2,
 		id = 4,
 		icon = "build_4",
+		exchange_count = 2,
 		rate_tip = {
 			"<color=#ffde38>SSレア</color>：7%",
 			"<color=#d797ff>Sレア</color>：12%",
 			"<color=#3dc6ff>レア</color>：51%",
 			"ノーマル：30%",
-			"<color=#ffde38>クレマンソー</color>：2.0%<color=#92FC63>(up!)</color>",
+			"<color=#ffde38>サン・マルチーニョ</color>：2.0%<color=#92FC63>(up!)</color>【風帆(主力)】",
 			" ",
-			"<color=#ffde38>ギシャン</color>：2.0%<color=#92FC63>(up!)</color>",
+			"<color=#ffde38>ゴールデン・ハインド</color>：2.0%<color=#92FC63>(up!)</color>【風帆(前衛)】",
 			" ",
-			"<color=#ffde38>パンルヴェ</color>：0.5%",
+			"<color=#ffde38>メアリー・セレスト</color>：0.5%【風帆(潜水)】",
 			" ",
-			"<color=#d797ff>リヨン</color>：2.5%<color=#92FC63>(up!)</color>",
-			" ",
-			"<color=#d797ff>シュフラン</color>：2.5%<color=#92FC63>(up!)</color>"
+			"<color=#d797ff>ウィダー</color>：2.5%<color=#92FC63>(up!)</color>【風帆(潜水)】"
 		}
 	},
 	{
@@ -92,6 +96,7 @@ pg.ship_data_create_material = {
 		number_1 = 2,
 		id = 5,
 		icon = "build_5",
+		exchange_count = 2,
 		rate_tip = {
 			"<color=#ffde38>SSレア</color>：7%",
 			"<color=#d797ff>Sレア</color>：12%",
@@ -110,6 +115,7 @@ pg.ship_data_create_material = {
 		number_1 = 2,
 		id = 6,
 		icon = "build_6",
+		exchange_count = 0,
 		rate_tip = {
 			"<color=#ffde38>SSレア</color>：7%",
 			"<color=#d797ff>Sレア</color>：12%",
@@ -128,6 +134,7 @@ pg.ship_data_create_material = {
 		number_1 = 1,
 		id = 7,
 		icon = "build_7",
+		exchange_count = 0,
 		rate_tip = {
 			"<color=#ffde38>SSレア</color>：7%",
 			"<color=#d797ff>Sレア</color>：12%",
@@ -146,6 +153,7 @@ pg.ship_data_create_material = {
 		number_1 = 2,
 		id = 8,
 		icon = "build_8",
+		exchange_count = 0,
 		rate_tip = {
 			"<color=#ffde38>SSレア</color>：7%",
 			"<color=#d797ff>Sレア</color>：12%",
@@ -164,6 +172,7 @@ pg.ship_data_create_material = {
 		number_1 = 1,
 		id = 9,
 		icon = "build_4",
+		exchange_count = 1,
 		rate_tip = {
 			"<color=#ffde38>SSレア</color>：7%",
 			"<color=#d797ff>Sレア</color>：12%",
@@ -183,6 +192,7 @@ pg.ship_data_create_material = {
 		number_1 = 2,
 		id = 10,
 		icon = "build_4",
+		exchange_count = 0,
 		rate_tip = {
 			"<color=#ff5e39>Uレア</color>：1.2%",
 			"<color=#ffde38>SSレア</color>：7%",
@@ -190,13 +200,13 @@ pg.ship_data_create_material = {
 			"<color=#3dc6ff>レア</color>：51%",
 			"ノーマル：28.8%",
 			" ",
-			"<color=#ff5e39>雲仙</color>：1.2%(<color=#92fc63>up!</color>)",
+			"<color=#ff5e39>クロンシュタット</color>：1.2%(<color=#92fc63>up!</color>)",
 			" ",
-			"<color=#ffde38>尾張</color>：2.0%(<color=#92fc63>up!</color>)",
+			"<color=#ffde38>ヴォルガ</color>：2.0%(<color=#92fc63>up!</color>)",
 			" ",
-			"<color=#ffde38>初月</color>：0.5%",
+			"<color=#ffde38>キエフ</color>：0.5%",
 			" ",
-			"<color=#d797ff>名取</color>：2.5%(<color=#92fc63>up!</color>)"
+			"<color=#d797ff>アルハンゲリスク</color>：2.5%(<color=#92fc63>up!</color>)"
 		}
 	},
 	{
@@ -210,6 +220,7 @@ pg.ship_data_create_material = {
 		number_1 = 1,
 		id = 11,
 		icon = "build_11",
+		exchange_count = 0,
 		rate_tip = {
 			"<color=#ffde38>SSレア</color>：7%",
 			"<color=#d797ff>Sレア</color>：12%",

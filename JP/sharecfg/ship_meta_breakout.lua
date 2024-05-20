@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.ship_meta_breakout = setmetatable({
 	__name = "ship_meta_breakout",
 	all = {
@@ -14,6 +14,14 @@ pg.ship_meta_breakout = setmetatable({
 		9701032,
 		9701033,
 		9701034,
+		9701041,
+		9701042,
+		9701043,
+		9701044,
+		9701051,
+		9701052,
+		9701053,
+		9701054,
 		9702011,
 		9702012,
 		9702013,
@@ -34,6 +42,14 @@ pg.ship_meta_breakout = setmetatable({
 		9702052,
 		9702053,
 		9702054,
+		9702061,
+		9702062,
+		9702063,
+		9702064,
+		9702071,
+		9702072,
+		9702073,
+		9702074,
 		9703011,
 		9703012,
 		9703013,
@@ -70,6 +86,10 @@ pg.ship_meta_breakout = setmetatable({
 		9705042,
 		9705043,
 		9705044,
+		9705051,
+		9705052,
+		9705053,
+		9705054,
 		9706011,
 		9706012,
 		9706013,
@@ -105,7 +125,11 @@ pg.ship_meta_breakout = setmetatable({
 		9703021,
 		9703022,
 		9703023,
-		9703024
+		9703024,
+		9713011,
+		9713012,
+		9713013,
+		9713014
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -297,6 +321,132 @@ pg.base.ship_meta_breakout = {
 		id = 9701034,
 		item1 = 21024,
 		pre_id = 9701033,
+		weapon_ids = {}
+	},
+	[9701041] = {
+		breakout_view = "【炬火の力-キンバリー】習得/武器補正+2%",
+		gold = 500,
+		breakout_id = 9701042,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9701041,
+		item1 = 21029,
+		pre_id = 0,
+		weapon_ids = {
+			80101
+		}
+	},
+	[9701042] = {
+		breakout_view = "魚雷装填数+1/開始時魚雷+1/武器補正+3%",
+		gold = 1500,
+		breakout_id = 9701043,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9701042,
+		item1 = 21029,
+		pre_id = 9701041,
+		weapon_ids = {
+			105,
+			105
+		}
+	},
+	[9701043] = {
+		breakout_view = "【炬火の力-キンバリー】強化/武器補正+5%",
+		gold = 2500,
+		breakout_id = 9701044,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9701043,
+		item1 = 21029,
+		pre_id = 9701042,
+		weapon_ids = {
+			80102
+		}
+	},
+	[9701044] = {
+		breakout_view = "なし",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9701044,
+		item1 = 21029,
+		pre_id = 9701043,
+		weapon_ids = {}
+	},
+	[9701051] = {
+		breakout_view = "【焔追の灰-ヴァンパイア】習得/魚雷補正+5%",
+		gold = 500,
+		breakout_id = 9701052,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9701051,
+		item1 = 21032,
+		pre_id = 0,
+		weapon_ids = {
+			80221
+		}
+	},
+	[9701052] = {
+		breakout_view = "魚雷装填数+1/開始時魚雷+1/主砲補正+10%",
+		gold = 1500,
+		breakout_id = 9701053,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9701052,
+		item1 = 21032,
+		pre_id = 9701051,
+		weapon_ids = {
+			105,
+			105
+		}
+	},
+	[9701053] = {
+		breakout_view = "【焔追の灰-ヴァンパイア】強化/武器補正+5%",
+		gold = 2500,
+		breakout_id = 9701054,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9701053,
+		item1 = 21032,
+		pre_id = 9701052,
+		weapon_ids = {
+			80222
+		}
+	},
+	[9701054] = {
+		breakout_view = "なし",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9701054,
+		item1 = 21032,
+		pre_id = 9701053,
 		weapon_ids = {}
 	},
 	[9702011] = {
@@ -612,6 +762,132 @@ pg.base.ship_meta_breakout = {
 		id = 9702054,
 		item1 = 21025,
 		pre_id = 9702053,
+		weapon_ids = {}
+	},
+	[9702061] = {
+		breakout_view = "【焔追の灰-キーロフ】習得/主砲補正+5%",
+		gold = 1000,
+		breakout_id = 9702062,
+		repair = 0,
+		item2 = 21028,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9702061,
+		item1 = 21028,
+		pre_id = 0,
+		weapon_ids = {
+			170241
+		}
+	},
+	[9702062] = {
+		breakout_view = "魚雷装填数+1/開始時魚雷+1/主砲補正+10%",
+		gold = 3000,
+		breakout_id = 9702063,
+		repair = 0,
+		item2 = 21028,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9702062,
+		item1 = 21028,
+		pre_id = 9702061,
+		weapon_ids = {
+			106,
+			106
+		}
+	},
+	[9702063] = {
+		breakout_view = "【焔追の灰-キーロフ】強化/主砲補正+15%",
+		gold = 10000,
+		breakout_id = 9702064,
+		repair = 0,
+		item2 = 21028,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9702063,
+		item1 = 21028,
+		pre_id = 9702062,
+		weapon_ids = {
+			170242
+		}
+	},
+	[9702064] = {
+		breakout_view = "なし",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21028,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9702064,
+		item1 = 21028,
+		pre_id = 9702063,
+		weapon_ids = {}
+	},
+	[9702071] = {
+		breakout_view = "【揺灯の力-パーミャチ・メルクーリヤ】習得/主砲補正+5%",
+		gold = 1000,
+		breakout_id = 9702072,
+		repair = 0,
+		item2 = 21030,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9702071,
+		item1 = 21030,
+		pre_id = 0,
+		weapon_ids = {
+			170411
+		}
+	},
+	[9702072] = {
+		breakout_view = "主砲砲座+1/主砲補正+10%",
+		gold = 3000,
+		breakout_id = 9702073,
+		repair = 0,
+		item2 = 21030,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9702072,
+		item1 = 21030,
+		pre_id = 9702071,
+		weapon_ids = {
+			7200,
+			7200
+		}
+	},
+	[9702073] = {
+		breakout_view = "【揺灯の力-パーミャチ・メルクーリヤ】強化/主砲補正+15%",
+		gold = 10000,
+		breakout_id = 9702074,
+		repair = 0,
+		item2 = 21030,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9702073,
+		item1 = 21030,
+		pre_id = 9702072,
+		weapon_ids = {
+			170412
+		}
+	},
+	[9702074] = {
+		breakout_view = "なし",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21030,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9702074,
+		item1 = 21030,
+		pre_id = 9702073,
 		weapon_ids = {}
 	},
 	[9703011] = {
@@ -1206,6 +1482,73 @@ pg.base.ship_meta_breakout = {
 		id = 9705044,
 		item1 = 21019,
 		pre_id = 9705043,
+		weapon_ids = {}
+	},
+	[9705051] = {
+		breakout_view = "【構造の理・ロドニー】スキル習得/主砲砲座+1/主砲補正+5%",
+		gold = 1000,
+		breakout_id = 9705052,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9705051,
+		item1 = 21031,
+		pre_id = 0,
+		weapon_ids = {
+			24200,
+			24200
+		}
+	},
+	[9705052] = {
+		breakout_view = "副砲砲座+2/主砲補正+10%",
+		gold = 3000,
+		breakout_id = 9705053,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9705052,
+		item1 = 21031,
+		pre_id = 9705051,
+		weapon_ids = {
+			22100,
+			22100,
+			22100
+		}
+	},
+	[9705053] = {
+		breakout_view = "【構造の理・ロドニー】スキル強化/主砲砲座+1/主砲補正+15%",
+		gold = 10000,
+		breakout_id = 9705054,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9705053,
+		item1 = 21031,
+		pre_id = 9705052,
+		weapon_ids = {
+			24200,
+			24200,
+			24200
+		}
+	},
+	[9705054] = {
+		breakout_view = "なし",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9705054,
+		item1 = 21031,
+		pre_id = 9705053,
 		weapon_ids = {}
 	},
 	[9706011] = {
@@ -1804,6 +2147,72 @@ pg.base.ship_meta_breakout = {
 		id = 9703024,
 		item1 = 21023,
 		pre_id = 9703023,
+		weapon_ids = {}
+	},
+	[9713011] = {
+		breakout_view = "【焔追の灰】スキル習得/副砲砲座+1/主砲補正+5%",
+		gold = 500,
+		breakout_id = 9713012,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9713011,
+		item1 = 21027,
+		pre_id = 0,
+		weapon_ids = {
+			21000,
+			21000
+		}
+	},
+	[9713012] = {
+		breakout_view = "主砲砲座+1/主砲補正+10%",
+		gold = 1500,
+		breakout_id = 9713013,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9713012,
+		item1 = 21027,
+		pre_id = 9713011,
+		weapon_ids = {
+			24100,
+			24100
+		}
+	},
+	[9713013] = {
+		breakout_view = "【焔追の灰】スキル強化/副砲砲座+1/主砲補正+15%",
+		gold = 2500,
+		breakout_id = 9713014,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9713013,
+		item1 = 21027,
+		pre_id = 9713012,
+		weapon_ids = {
+			21000,
+			21000,
+			21000
+		}
+	},
+	[9713014] = {
+		breakout_view = "なし",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9713014,
+		item1 = 21027,
+		pre_id = 9713013,
 		weapon_ids = {}
 	}
 }

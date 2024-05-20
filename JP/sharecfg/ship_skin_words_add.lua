@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.ship_skin_words_add = setmetatable({
 	__name = "ship_skin_words_add",
 	all = {

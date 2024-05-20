@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "",
 	name = "2023云仙活动 EX 黑龙次数盾",
 	time = 0,
@@ -12,7 +12,7 @@ return {
 		{
 			type = "BattleBuffFixDamage",
 			trigger = {
-				"onTakeDamage"
+				"onBeforeTakeDamage"
 			},
 			arg_list = {
 				target = "TargetSelf",

@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				time = 20,
+				target = "TargetSelf",
+				skill_id = 10180
+			}
+		}
+	},
 	{
 		desc = "每20秒发动一次掩护炮击，威力为重巡级(依据技能等级)",
 		addition = {
@@ -199,18 +212,5 @@ return {
 	stack = 1,
 	id = 10180,
 	icon = 10180,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				time = 20,
-				target = "TargetSelf",
-				skill_id = 10180
-			}
-		}
-	}
+	last_effect = ""
 }

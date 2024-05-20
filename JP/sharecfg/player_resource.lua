@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.player_resource = {
 	{
 		id = 1,
@@ -1067,8 +1067,23 @@ pg.player_resource = {
 	},
 	[317] = {
 		id = 317,
-		name = "xiaoougen_youhao_pt2",
-		itemid = 59412
+		name = "xiaochaijun_pt2",
+		itemid = 59548
+	},
+	[318] = {
+		id = 318,
+		name = "xiaochaijun_youhao_pt2",
+		itemid = 59549
+	},
+	[319] = {
+		id = 319,
+		name = "xiaoxinnong_pt",
+		itemid = 59572
+	},
+	[320] = {
+		id = 320,
+		name = "xiaosipei_pt2",
+		itemid = 59576
 	},
 	[350] = {
 		id = 350,
@@ -1164,6 +1179,176 @@ pg.player_resource = {
 		id = 371,
 		name = "union10_pt",
 		itemid = 59492
+	},
+	[375] = {
+		id = 375,
+		name = "skinTicket58",
+		itemid = 59495
+	},
+	[376] = {
+		id = 376,
+		name = "haidao_pt",
+		itemid = 59497
+	},
+	[377] = {
+		id = 377,
+		name = "skinTicket59",
+		itemid = 59498
+	},
+	[378] = {
+		id = 378,
+		name = "rixiv2_pt1",
+		itemid = 59500
+	},
+	[379] = {
+		id = 379,
+		name = "commission_pt3",
+		itemid = 59501
+	},
+	[380] = {
+		id = 380,
+		name = "shanluan_pt",
+		itemid = 59506
+	},
+	[381] = {
+		id = 381,
+		name = "shanluan_mission_pt",
+		itemid = 59508
+	},
+	[382] = {
+		id = 382,
+		name = "skinTicket60",
+		itemid = 59509
+	},
+	[383] = {
+		id = 383,
+		name = "newserver_pt_231123",
+		itemid = 59512
+	},
+	[384] = {
+		id = 384,
+		name = "xinghai_pt1",
+		itemid = 59515
+	},
+	[385] = {
+		id = 385,
+		name = "xinghai_pt2",
+		itemid = 59516
+	},
+	[386] = {
+		id = 386,
+		name = "skinTicket61",
+		itemid = 59517
+	},
+	[387] = {
+		id = 387,
+		name = "skinTicket62",
+		itemid = 59518
+	},
+	[388] = {
+		id = 388,
+		name = "dexiur_pt2",
+		itemid = 59519
+	},
+	[389] = {
+		id = 389,
+		name = "dexiv4framept2",
+		itemid = 59520
+	},
+	[390] = {
+		id = 390,
+		name = "skinTicket63",
+		itemid = 59522
+	},
+	[391] = {
+		id = 391,
+		name = "feicaizhixing2024_pt",
+		itemid = 59391
+	},
+	[392] = {
+		id = 392,
+		name = "skinTicket64",
+		itemid = 59527
+	},
+	[393] = {
+		id = 393,
+		name = "chunjie_pt4",
+		itemid = 59528
+	},
+	[394] = {
+		id = 394,
+		name = "skinTicket65",
+		itemid = 59529
+	},
+	[395] = {
+		id = 395,
+		name = "skinTicket66",
+		itemid = 59531
+	},
+	[396] = {
+		id = 396,
+		name = "tongmeng_pt",
+		itemid = 59532
+	},
+	[397] = {
+		id = 397,
+		name = "yidalisp_pt2",
+		itemid = 59533
+	},
+	[398] = {
+		id = 398,
+		name = "skinTicket67",
+		itemid = 59534
+	},
+	[399] = {
+		id = 399,
+		name = "yongzhe_pt2",
+		itemid = 59536
+	},
+	[400] = {
+		id = 400,
+		name = "skinTicket68",
+		itemid = 59539
+	},
+	[401] = {
+		id = 401,
+		name = "yishijie_jinbi",
+		itemid = 59542
+	},
+	[402] = {
+		id = 402,
+		name = "yishijie_exp",
+		itemid = 59543
+	},
+	[403] = {
+		id = 403,
+		name = "maoxiv3_pt2",
+		itemid = 59544
+	},
+	[404] = {
+		id = 404,
+		name = "maoxiv3_frame_pt2",
+		itemid = 59545
+	},
+	[405] = {
+		id = 405,
+		name = "skinTicket69",
+		itemid = 59547
+	},
+	[406] = {
+		id = 406,
+		name = "skinTicket70",
+		itemid = 59570
+	},
+	[407] = {
+		id = 407,
+		name = "ouxiang3_pt",
+		itemid = 59571
+	},
+	[408] = {
+		id = 408,
+		name = "newserver_pt_240425",
+		itemid = 59573
 	},
 	[950] = {
 		id = 950,
@@ -1295,6 +1480,16 @@ pg.player_resource = {
 		name = "worldboss230629_ticket",
 		itemid = 59464
 	},
+	[2020] = {
+		id = 2020,
+		name = "contribution_worldboss240130",
+		itemid = 59523
+	},
+	[2021] = {
+		id = 2021,
+		name = "worldboss230130_ticket",
+		itemid = 59524
+	},
 	[3000] = {
 		id = 3000,
 		name = "guild_boss_damage",
@@ -1364,6 +1559,16 @@ pg.player_resource = {
 		id = 3013,
 		name = "synchronize_shentong",
 		itemid = 21912
+	},
+	[3014] = {
+		id = 3014,
+		name = "synchronize_jiluofu",
+		itemid = 21913
+	},
+	[3015] = {
+		id = 3015,
+		name = "synchronize_luodeni",
+		itemid = 21914
 	},
 	[3106] = {
 		id = 3106,
@@ -1440,6 +1645,21 @@ pg.player_resource = {
 		name = "Battlepass_13",
 		itemid = 59493
 	},
+	[4014] = {
+		id = 4014,
+		name = "Battlepass_14",
+		itemid = 59510
+	},
+	[4015] = {
+		id = 4015,
+		name = "Battlepass_15",
+		itemid = 59525
+	},
+	[4016] = {
+		id = 4016,
+		name = "Battlepass_16",
+		itemid = 59540
+	},
 	[4186] = {
 		id = 4186,
 		name = "skin_rerun_pt1",
@@ -1458,6 +1678,16 @@ pg.player_resource = {
 	[4699] = {
 		id = 4699,
 		name = "skin_rerun_pt_jp2023",
+		itemid = 0
+	},
+	[5081] = {
+		id = 5081,
+		name = "skin_rerun_pt_us2023",
+		itemid = 0
+	},
+	[5082] = {
+		id = 5082,
+		name = "skin_rerun_pt_2023",
 		itemid = 0
 	},
 	[100004] = {
@@ -2115,8 +2345,17 @@ pg.player_resource = {
 		skinTicket48 = {
 			316
 		},
-		xiaoougen_youhao_pt2 = {
+		xiaochaijun_pt2 = {
 			317
+		},
+		xiaochaijun_youhao_pt2 = {
+			318
+		},
+		xiaoxinnong_pt = {
+			319
+		},
+		xiaosipei_pt2 = {
+			320
 		},
 		liuzhounianhaidao_pt = {
 			350
@@ -2174,6 +2413,108 @@ pg.player_resource = {
 		},
 		union10_pt = {
 			371
+		},
+		skinTicket58 = {
+			375
+		},
+		haidao_pt = {
+			376
+		},
+		skinTicket59 = {
+			377
+		},
+		rixiv2_pt1 = {
+			378
+		},
+		commission_pt3 = {
+			379
+		},
+		shanluan_pt = {
+			380
+		},
+		shanluan_mission_pt = {
+			381
+		},
+		skinTicket60 = {
+			382
+		},
+		newserver_pt_231123 = {
+			383
+		},
+		xinghai_pt1 = {
+			384
+		},
+		xinghai_pt2 = {
+			385
+		},
+		skinTicket61 = {
+			386
+		},
+		skinTicket62 = {
+			387
+		},
+		dexiur_pt2 = {
+			388
+		},
+		dexiv4framept2 = {
+			389
+		},
+		skinTicket63 = {
+			390
+		},
+		feicaizhixing2024_pt = {
+			391
+		},
+		skinTicket64 = {
+			392
+		},
+		chunjie_pt4 = {
+			393
+		},
+		skinTicket65 = {
+			394
+		},
+		skinTicket66 = {
+			395
+		},
+		tongmeng_pt = {
+			396
+		},
+		yidalisp_pt2 = {
+			397
+		},
+		skinTicket67 = {
+			398
+		},
+		yongzhe_pt2 = {
+			399
+		},
+		skinTicket68 = {
+			400
+		},
+		yishijie_jinbi = {
+			401
+		},
+		yishijie_exp = {
+			402
+		},
+		maoxiv3_pt2 = {
+			403
+		},
+		maoxiv3_frame_pt2 = {
+			404
+		},
+		skinTicket69 = {
+			405
+		},
+		skinTicket70 = {
+			406
+		},
+		ouxiang3_pt = {
+			407
+		},
+		newserver_pt_240425 = {
+			408
 		},
 		yisegefuke_pt1 = {
 			950
@@ -2253,6 +2594,12 @@ pg.player_resource = {
 		worldboss230629_ticket = {
 			2019
 		},
+		contribution_worldboss240130 = {
+			2020
+		},
+		worldboss230130_ticket = {
+			2021
+		},
 		guild_boss_damage = {
 			3000
 		},
@@ -2294,6 +2641,12 @@ pg.player_resource = {
 		},
 		synchronize_shentong = {
 			3013
+		},
+		synchronize_jiluofu = {
+			3014
+		},
+		synchronize_luodeni = {
+			3015
 		},
 		twhongran_pt = {
 			3106
@@ -2340,6 +2693,15 @@ pg.player_resource = {
 		Battlepass_13 = {
 			4013
 		},
+		Battlepass_14 = {
+			4014
+		},
+		Battlepass_15 = {
+			4015
+		},
+		Battlepass_16 = {
+			4016
+		},
 		skin_rerun_pt1 = {
 			4186
 		},
@@ -2351,6 +2713,12 @@ pg.player_resource = {
 		},
 		skin_rerun_pt_jp2023 = {
 			4699
+		},
+		skin_rerun_pt_us2023 = {
+			5081
+		},
+		skin_rerun_pt_2023 = {
+			5082
 		},
 		skin_rerun_pt = {
 			100004
@@ -2577,6 +2945,9 @@ pg.player_resource = {
 		315,
 		316,
 		317,
+		318,
+		319,
+		320,
 		350,
 		351,
 		352,
@@ -2596,6 +2967,40 @@ pg.player_resource = {
 		369,
 		370,
 		371,
+		375,
+		376,
+		377,
+		378,
+		379,
+		380,
+		381,
+		382,
+		383,
+		384,
+		385,
+		386,
+		387,
+		388,
+		389,
+		390,
+		391,
+		392,
+		393,
+		394,
+		395,
+		396,
+		397,
+		398,
+		399,
+		400,
+		401,
+		402,
+		403,
+		404,
+		405,
+		406,
+		407,
+		408,
 		950,
 		951,
 		952,
@@ -2622,6 +3027,8 @@ pg.player_resource = {
 		2017,
 		2018,
 		2019,
+		2020,
+		2021,
 		3000,
 		3001,
 		3002,
@@ -2636,6 +3043,8 @@ pg.player_resource = {
 		3011,
 		3012,
 		3013,
+		3014,
+		3015,
 		3106,
 		3137,
 		4001,
@@ -2651,10 +3060,15 @@ pg.player_resource = {
 		4011,
 		4012,
 		4013,
+		4014,
+		4015,
+		4016,
 		4186,
 		4276,
 		4599,
 		4699,
+		5081,
+		5082,
 		100004,
 		40275,
 		30853

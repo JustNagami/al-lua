@@ -1,4 +1,4 @@
-return {
+﻿return {
 	fadeOut = 1.5,
 	mode = 2,
 	id = "XUKUFU3",
@@ -351,6 +351,12 @@ return {
 				time = 1
 			}
 		},
+		options = {
+			{
+				content = "時計を指す",
+				flag = 1
+			}
+		},
 		{
 			actor = 808010,
 			side = 2,
@@ -380,12 +386,6 @@ return {
 			painting = {
 				alpha = 0.3,
 				time = 1
-			}
-		},
-		options = {
-			{
-				content = "時計を指す",
-				flag = 1
 			}
 		}
 	}

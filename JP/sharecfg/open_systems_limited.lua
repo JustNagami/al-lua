@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.open_systems_limited = {
 	{
 		scene = "MAINUI",
@@ -101,7 +101,7 @@ pg.open_systems_limited = {
 		name = "オフニャ",
 		story_id = "",
 		id = 14,
-		mediator = "CommandRoomMediator",
+		mediator = "CommanderCatMediator",
 		level = 40
 	},
 	[15] = {
@@ -176,6 +176,22 @@ pg.open_systems_limited = {
 		mediator = "LimitChallengeMediator",
 		level = 80
 	},
+	[24] = {
+		scene = "MAINUI",
+		name = "限界チャレンジ",
+		story_id = "",
+		id = 24,
+		mediator = "EducateMediator",
+		level = 30
+	},
+	[25] = {
+		scene = "MAINUI",
+		name = "3d宿舍",
+		story_id = "",
+		id = 25,
+		mediator = "SelectDorm3DMediator",
+		level = 10
+	},
 	all = {
 		1,
 		2,
@@ -198,6 +214,8 @@ pg.open_systems_limited = {
 		20,
 		21,
 		22,
-		23
+		23,
+		24,
+		25
 	}
 }

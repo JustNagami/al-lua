@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.l2dhx = {
 	aimierbeierding_3 = {},
 	dafeng_2 = {},

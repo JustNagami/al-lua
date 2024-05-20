@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 5,
-	color = "yellow",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 109132,
-	icon = 109130,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCleanse",
@@ -40,5 +20,25 @@ return {
 				buff_id = 109130
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 5,
+	color = "yellow",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 109132,
+	icon = 109130,
+	last_effect = ""
 }

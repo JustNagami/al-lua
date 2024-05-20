@@ -1,4 +1,27 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 10601
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onTorpedoWeaponFire"
+			},
+			arg_list = {
+				rant = 1500,
+				target = "TargetSelf",
+				skill_id = 10600,
+				time = 10
+			}
+		}
+	},
 	{
 		desc = "自身装填值提高15.0%，每次使用鱼雷时有15.0%的概率再次发射一轮",
 		addition = {
@@ -309,28 +332,5 @@ return {
 	stack = 1,
 	id = 10600,
 	icon = 10600,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 10601
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onTorpedoWeaponFire"
-			},
-			arg_list = {
-				rant = 1500,
-				target = "TargetSelf",
-				skill_id = 10600,
-				time = 10
-			}
-		}
-	}
+	last_effect = ""
 }

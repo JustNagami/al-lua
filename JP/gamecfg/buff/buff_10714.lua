@@ -1,4 +1,44 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "dodgeRate",
+				number = 500
+			}
+		},
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "torpedoPower",
+				number = 500
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "damageToArmorRateEnhance_2",
+				number = 0.15
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -356,45 +396,5 @@ return {
 	stack = 1,
 	id = 10714,
 	icon = 10711,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "dodgeRate",
-				number = 500
-			}
-		},
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "torpedoPower",
-				number = 500
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "damageToArmorRateEnhance_2",
-				number = 0.15
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onChargeWeaponFire"
+			},
+			arg_list = {
+				skill_id = 10270,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		desc = "每次主炮开火后提高下一轮主炮攻击(3次炮击)的伤害10.0%",
 		addition = {
@@ -69,17 +81,5 @@ return {
 	stack = 1,
 	id = 10270,
 	icon = 10270,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onChargeWeaponFire"
-			},
-			arg_list = {
-				skill_id = 10270,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

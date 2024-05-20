@@ -1,4 +1,43 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "cannonPower",
+				number = 450
+			}
+		},
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "loadSpeed",
+				number = 450
+			}
+		},
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "attackRating",
+				number = 450
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -347,44 +386,5 @@ return {
 	stack = 1,
 	id = 11061,
 	icon = 11060,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "cannonPower",
-				number = 450
-			}
-		},
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "loadSpeed",
-				number = 450
-			}
-		},
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "attackRating",
-				number = 450
-			}
-		}
-	}
+	last_effect = ""
 }

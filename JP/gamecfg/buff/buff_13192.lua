@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "全弹发射附加鱼雷",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "全弹发射附加鱼雷",
-	stack = 1,
-	id = 13192,
-	icon = 13190,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -44,5 +24,25 @@ return {
 				countType = 13190
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "全弹发射附加鱼雷",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "全弹发射附加鱼雷",
+	stack = 1,
+	id = 13192,
+	icon = 13190,
+	last_effect = ""
 }

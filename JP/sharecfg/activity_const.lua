@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_const = {
 	MILITARY_EXERCISE_ACTIVITY_ID = {
 		act_id = 7
@@ -16,7 +16,7 @@ pg.activity_const = {
 		act_id = 5010
 	},
 	ACT_NPC_SHIP_ID = {
-		act_id = 4885
+		act_id = 5320
 	},
 	ANNIVERSARY_TASK_LIST_ID = {
 		act_id = 10122
@@ -481,7 +481,7 @@ pg.activity_const = {
 		act_id = 485
 	},
 	LANTERNFESTIVAL = {
-		act_id = 4682
+		act_id = 5202
 	},
 	VALENTINE = {
 		act_id = 491
@@ -880,10 +880,10 @@ pg.activity_const = {
 		act_id = 4666
 	},
 	FIREWORK_PT_ID = {
-		act_id = 4671
+		act_id = 5185
 	},
 	FIREWORK_ACT_ID = {
-		act_id = 4672
+		act_id = 5186
 	},
 	ACTIVITY_BOSS_KUYBYSHEV = {
 		act_id = 4674
@@ -947,5 +947,95 @@ pg.activity_const = {
 	},
 	MINIGAME_RACING_ID = {
 		act_id = 5020
+	},
+	MINIGAME_PIRATE_ID = {
+		act_id = 5047
+	},
+	PIRATE_MEDAL_ACT_ID = {
+		act_id = 5048
+	},
+	BOAT_QIAN_SHAO_ZHAN = {
+		act_id = 5023
+	},
+	CASTLE_ACT_ID = {
+		act_id = 5055
+	},
+	CASTLE_AWARD_ID = {
+		act_id = 5054
+	},
+	SENRANKAGURA_TRAIN_ACT_ID = {
+		act_id = 5099
+	},
+	SENRANKAGURA_TASK_ID = {
+		act_id = 5094
+	},
+	SENRANKAGURA_MEDAL_ID = {
+		act_id = 5093
+	},
+	SENRANKAGURA_PT = {
+		act_id = 5098
+	},
+	SENRANKAGURA_BUFF = {
+		act_id = 5095
+	},
+	SENRANKAGURA_TURNTABLE = {
+		act_id = 5096
+	},
+	VOTE_ENTRANCE_ACT_ID = {
+		act_id = 1068
+	},
+	MINIGAME_COOKGAME2_ID = {
+		act_id = 5141
+	},
+	FIREWORK_PT_2024_ID = {
+		act_id = 5185
+	},
+	FEIYUEN_LOGIN = {
+		act_id = 5191
+	},
+	TAIYUAN_ALERT_TASK = {
+		act_id = 5192
+	},
+	MINIGAME_SPRING_FESTIVAL_2024 = {
+		act_id = 5193
+	},
+	ACTIVITY_HUAZHONGSHIJIE = {
+		act_id = 4667
+	},
+	OTHER_WORLD_TASK_ID = {
+		act_id = 5261
+	},
+	OTHER_WORLD_TERMINAL_EVENT_ID = {
+		act_id = 5265
+	},
+	OTHER_WORLD_TERMINAL_LOTTERY_ID = {
+		act_id = 5264
+	},
+	OTHER_WORLD_TERMINAL_TASK_ID = {
+		act_id = 5269
+	},
+	OTHER_WORLD_TERMINAL_PT_ID = {
+		act_id = 5270
+	},
+	OTHER_WORLD_TERMINAL_BATTLE_ID = {
+		act_id = 5260
+	},
+	MUSIC_FESTIVAL_ID_3 = {
+		act_id = 5310
+	},
+	MUSIC_FESTIVAL_MEDALCOLLECTION_3 = {
+		act_id = 5309
+	},
+	MUSIC_FESTIVAL_PT_ID_3 = {
+		act_id = 5308
+	},
+	LINER_SIGN_ID = {
+		act_id = 5324
+	},
+	LINER_NAMED_ID = {
+		act_id = 5322
+	},
+	LINER_ID = {
+		act_id = 5335
 	}
 }

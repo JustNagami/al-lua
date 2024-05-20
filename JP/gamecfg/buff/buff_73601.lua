@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "",
 	name = "濒死免疫",
 	time = 0,
@@ -13,7 +13,7 @@ return {
 		{
 			type = "BattleBuffFixDamage",
 			trigger = {
-				"onTakeDamage"
+				"onBeforeTakeDamage"
 			},
 			arg_list = {
 				value = 1,

@@ -1,4 +1,4 @@
-return {
+﻿return {
 	fadeOut = 1.5,
 	mode = 2,
 	id = "YUZHEDETIANPING21",
@@ -219,20 +219,22 @@ return {
 			actorName = "マルコ·ポーロ",
 			say = "なんなの…あれ…？白い鎧、弓、そして…馬？",
 			movableNode = {
-				time = 2,
-				name = "shenpanjijia_zhipei",
-				spine = {
-					action = "move",
-					scale = 1
-				},
-				path = {
-					{
-						-1500,
-						0
+				{
+					time = 2,
+					name = "shenpanjijia_zhipei",
+					spine = {
+						action = "move",
+						scale = 1
 					},
-					{
-						1500,
-						0
+					path = {
+						{
+							-1500,
+							0
+						},
+						{
+							1500,
+							0
+						}
 					}
 				}
 			},

@@ -1,4 +1,24 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				minTargetNumber = 1,
+				target = "TargetSelf",
+				skill_id = 10440,
+				check_target = {
+					"TargetAllHelp",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"Akagi"
+				}
+			}
+		}
+	},
 	{
 		desc = "与{namecode:91}同在一个舰队时，自身航空性能提高15.0%",
 		addition = {
@@ -69,25 +89,5 @@ return {
 	stack = 1,
 	id = 10440,
 	icon = 10440,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				minTargetNumber = 1,
-				target = "TargetSelf",
-				skill_id = 10440,
-				check_target = {
-					"TargetAllHelp",
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"Akagi"
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.world_joint_boss_template = {
 	{
 		state = "always",
@@ -221,7 +221,7 @@ pg.world_joint_boss_template = {
 		}
 	},
 	{
-		state = "stop",
+		state = "always",
 		name = "レナウン(META)",
 		painting = "shengwang",
 		boss_level_id = 106,
@@ -264,7 +264,7 @@ pg.world_joint_boss_template = {
 		}
 	},
 	{
-		state = "stop",
+		state = "always",
 		name = "アリゾナ(META)",
 		painting = "yalisangna",
 		boss_level_id = 121,
@@ -363,12 +363,13 @@ pg.world_joint_boss_template = {
 		}
 	},
 	{
-		item_id = 100000,
+		state = "stop",
 		name = "神通(META)",
 		painting = "shentong",
 		boss_level_id = 166,
 		id = 12,
 		meta_id = 970205,
+		item_id = 100000,
 		description = {
 			{
 				"策謀の鉄壁",
@@ -386,32 +387,6 @@ pg.world_joint_boss_template = {
 				"戦闘開始50秒後下記の効果を得る：4秒経過するごとに、<color=#92fc63>戦闘終了時まで自身が受けるダメージが10％アップ</color>。"
 			}
 		},
-		state = {
-			{
-				{
-					2023,
-					8,
-					31
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2023,
-					12,
-					7
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		},
 		p_offset = {
 			-118.8,
 			585.5,
@@ -423,6 +398,102 @@ pg.world_joint_boss_template = {
 			587.7,
 			0.8,
 			0.8
+		}
+	},
+	{
+		state = "stop",
+		name = "キーロフ(META)",
+		painting = "jiluofu",
+		boss_level_id = 181,
+		id = 13,
+		meta_id = 970206,
+		item_id = 100000,
+		description = {
+			{
+				"マシナリー・サポート",
+				2,
+				"キーロフ(META)は2体の戦闘支援ユニット「フスプィーシカ」と「カミエータ」を召喚する。\n<color=#92fc63>「フスプィーシカ」は重装甲タイプ</color>のユニットで、近距離での電撃兵器と磁気榴弾ランチャーを装備し、自身が受ける雷撃属性のダメージが上昇する；<color=#92fc63>「カミエータ」は中装甲タイプ</color>のユニットで、長距離光線兵器と凍結爆弾を装備し、自身が受ける砲撃属性のダメージが上昇する。\n支援ユニットが破壊された場合、3秒後に破壊された支援ユニットが<color=#92fc63>再度召喚される</color>。"
+			},
+			{
+				"コンビネーション・フレームワーク",
+				1,
+				"戦闘可能な支援ユニット1体につき、キーロフ(META)の火力・雷装・命中が上昇する。支援ユニットが撃破される度に、キーロフ(META)の<color=#92fc63>防御力が戦闘終了時までダウンする</color>。"
+			}
+		},
+		p_offset = {
+			-118.8,
+			545.7,
+			0.8,
+			0.8
+		},
+		p_offset_other = {
+			426,
+			545.7,
+			0.8,
+			0.8
+		}
+	},
+	{
+		item_id = 100000,
+		name = "ロドニー(META)",
+		painting = "luodeni",
+		boss_level_id = 196,
+		id = 14,
+		meta_id = 970505,
+		description = {
+			{
+				"次元超越",
+				1,
+				"1.5秒以内で敵の「ロドニー」が射撃・航空攻撃を行った場合、ロドニー(META)は次元超越状態になり、<color=#92fc63>4秒間速力が上昇し、効果の対象にならずダメージを無効化する</color>。"
+			},
+			{
+				"「私」の投影",
+				3,
+				"戦闘開始時、戦場に「ロドニー」の投影を7体召喚する。\n投影は攻撃せず、受けるダメージが1になる。<color=#92fc63>「ロドニー」の投影が消滅するたびに、ロドニー(META)の与えるダメージがアップし、受けるダメージを軽減する</color>。\n戦闘時間が残り10秒になった場合、すべての「ロドニー」投影が消滅する。"
+			},
+			{
+				"「ロドニー」の終焉",
+				2,
+				"「ロドニー」の投影がすべて消滅した場合、ロドニー(META)は次元超越状態になり、その後<color=#92fc63>最後の一撃を放ち</color>戦闘を終了させる。"
+			}
+		},
+		state = {
+			{
+				{
+					2024,
+					3,
+					14
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					6,
+					13
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		p_offset = {
+			36.7,
+			679.8,
+			1,
+			1
+		},
+		p_offset_other = {
+			632,
+			679.8,
+			1,
+			1
 		}
 	},
 	all = {
@@ -437,6 +508,8 @@ pg.world_joint_boss_template = {
 		9,
 		10,
 		11,
-		12
+		12,
+		13,
+		14
 	}
 }

@@ -1,23 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "回复效果",
-	time = 3,
-	picture = "",
-	desc = "回复效果",
-	stack = 1,
-	id = 109223,
-	icon = 109220,
-	last_effect = "jingling_guang",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -39,5 +20,24 @@ return {
 				tag = "elfadd"
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "回复效果",
+	time = 3,
+	picture = "",
+	desc = "回复效果",
+	stack = 1,
+	id = 109223,
+	icon = 109220,
+	last_effect = "jingling_guang"
 }

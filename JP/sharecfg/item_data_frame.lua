@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.item_data_frame = {
 	[0] = {
 		time_limit_type = 0,
@@ -423,6 +423,33 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>「須臾の人生も代えがたし」</color>\n「須臾望月抄」に参加した指揮官に贈る",
 		scene = {}
 	},
+	[328] = {
+		time_limit_type = 0,
+		name = "光追う星穹",
+		gain_by = "星海逐光",
+		id = 328,
+		time_second = 0,
+		desc = "イベントで入手可能",
+		scene = {}
+	},
+	[329] = {
+		time_limit_type = 0,
+		name = "氷域の星",
+		gain_by = "銀界遊廻",
+		id = 329,
+		time_second = 0,
+		desc = "<color=#ffffff>「雪原を渡り、氷山を乗り越え、己を見つめ、未来を見届ける」</color>\n「銀界遊廻」に参加した指揮官に贈る",
+		scene = {}
+	},
+	[330] = {
+		time_limit_type = 0,
+		name = "幻夢の殉守者",
+		gain_by = "",
+		id = 330,
+		time_second = 0,
+		desc = "イベントで入手可能",
+		scene = {}
+	},
 	[401] = {
 		time_limit_type = 0,
 		name = "殿堂入り：エンタープライズ",
@@ -475,6 +502,33 @@ pg.item_data_frame = {
 		id = 410,
 		time_second = 0,
 		desc = "<color=#ffffff>前回人気投票殿堂入り艦船テーマのチャットフレーム</color>\n「アズールレーン人気投票2021」殿堂入りページで入手可能",
+		scene = {}
+	},
+	[416] = {
+		time_limit_type = 0,
+		name = "殿堂入り：チェシャー",
+		gain_by = "",
+		id = 416,
+		time_second = 0,
+		desc = "<color=#ffffff>前回人気投票殿堂入り艦船テーマのチャットフレーム</color>\n「アズールレーン人気投票2023」殿堂入りページで入手可能",
+		scene = {}
+	},
+	[418] = {
+		time_limit_type = 0,
+		name = "殿堂入り：信濃",
+		gain_by = "",
+		id = 418,
+		time_second = 0,
+		desc = "<color=#ffffff>前回人気投票殿堂入り艦船テーマのチャットフレーム</color>\n「アズールレーン人気投票2023」殿堂入りページで入手可能",
+		scene = {}
+	},
+	[419] = {
+		time_limit_type = 0,
+		name = "殿堂入り：能代",
+		gain_by = "",
+		id = 419,
+		time_second = 0,
+		desc = "<color=#ffffff>前回人気投票殿堂入り艦船テーマのチャットフレーム</color>\n「アズールレーン人気投票2023」殿堂入りページで入手可能",
 		scene = {}
 	},
 	[501] = {
@@ -567,6 +621,69 @@ pg.item_data_frame = {
 		desc = "<size=24><color=#ffffff>「てんびん座」限界挑戦ステージクリア記念。己の限界に挑む勇気のある指揮官に贈る</color>「限界挑戦」で入手可能（23.10.01-23.10.31）</size>",
 		scene = {}
 	},
+	[10006] = {
+		time_limit_type = 0,
+		name = "限界挑戦・サソリ座",
+		gain_by = "",
+		id = 10006,
+		time_second = 0,
+		desc = "<size=24><color=#ffffff>「サソリ座」限界挑戦ステージクリア記念。己の限界に挑む勇気のある指揮官に贈る</color>「限界挑戦」で入手可能（23.11.01-23.11.30）</size>",
+		scene = {}
+	},
+	[10007] = {
+		time_limit_type = 0,
+		name = "限界挑戦・いて座",
+		gain_by = "",
+		id = 10007,
+		time_second = 0,
+		desc = "<size=24><color=#ffffff>「いて座」限界挑戦ステージクリア記念。己の限界に挑む勇気のある指揮官に贈る</color>「限界挑戦」で入手可能（23.12.01-23.12.31）</size>",
+		scene = {}
+	},
+	[10008] = {
+		time_limit_type = 0,
+		name = "限界挑戦・やぎ座",
+		gain_by = "",
+		id = 10008,
+		time_second = 0,
+		desc = "<size=24><color=#ffffff>「やぎ座」限界挑戦ステージクリア記念。己の限界に挑む勇気のある指揮官に贈る</color>「限界挑戦」で入手可能（24.01.01-24.01.31）</size>",
+		scene = {}
+	},
+	[10009] = {
+		time_limit_type = 0,
+		name = "限界挑戦・みずかめ座",
+		gain_by = "",
+		id = 10009,
+		time_second = 0,
+		desc = "<size=24><color=#ffffff>「みずかめ座」限界挑戦ステージクリア記念。己の限界に挑む勇気のある指揮官に贈る</color>「限界挑戦」で入手可能 （24.02.01-24.02.29）</size>",
+		scene = {}
+	},
+	[10010] = {
+		time_limit_type = 0,
+		name = "限界挑戦・うお座",
+		gain_by = "",
+		id = 10010,
+		time_second = 0,
+		desc = "<size=24><color=#ffffff>「うお座」限界挑戦ステージクリア記念。己の限界に挑む勇気のある指揮官に贈る</color>「限界挑戦」で入手可能（24.03.01-24.03.31）</size>",
+		scene = {}
+	},
+	[10011] = {
+		time_limit_type = 0,
+		name = "限界挑戦・ひつじ座",
+		gain_by = "",
+		id = 10011,
+		time_second = 0,
+		desc = "<size=24><color=#ffffff>「ひつじ座」限界挑戦ステージクリア記念。己の限界に挑む勇気のある指揮官に贈る</color>「限界挑戦」で入手可能（24.04.01-24.04.30）</size>",
+		scene = {}
+	},
+	[10012] = {
+		time_limit_type = 0,
+		name = "限界挑戦・おうし座",
+		gain_by = "",
+		id = 10012,
+		time_second = 0,
+		desc = "<size=24><color=#ffffff>「おうし座」限界挑戦ステージクリア記念。己の限界に挑む勇気のある指揮官に贈る</color>「限界挑戦」で入手可能（24.05.01-24.05.31）</size>",
+		scene = {}
+	},
 	all = {
 		0,
 		101,
@@ -615,12 +732,18 @@ pg.item_data_frame = {
 		325,
 		326,
 		327,
+		328,
+		329,
+		330,
 		401,
 		402,
 		403,
 		408,
 		409,
 		410,
+		416,
+		418,
+		419,
 		501,
 		601,
 		602,
@@ -630,6 +753,13 @@ pg.item_data_frame = {
 		10002,
 		10003,
 		10004,
-		10005
+		10005,
+		10006,
+		10007,
+		10008,
+		10009,
+		10010,
+		10011,
+		10012
 	}
 }

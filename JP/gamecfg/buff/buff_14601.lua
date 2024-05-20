@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "oxyMax",
+				number = 2
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -148,17 +160,5 @@ return {
 	stack = 1,
 	id = 13851,
 	icon = 13850,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "oxyMax",
-				number = 2
-			}
-		}
-	}
+	last_effect = ""
 }

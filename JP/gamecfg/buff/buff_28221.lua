@@ -1,17 +1,4 @@
-return {
-	{
-		desc = "主炮每进行9次攻击，触发全弹发射-絮弗伦级I"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行9次攻击，触发全弹发射-絮弗伦级I",
-	stack = 1,
-	id = 28221,
-	icon = 20200,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -37,5 +24,18 @@ return {
 				countType = 28220
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行9次攻击，触发全弹发射-絮弗伦级I"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行9次攻击，触发全弹发射-絮弗伦级I",
+	stack = 1,
+	id = 28221,
+	icon = 20200,
+	last_effect = ""
 }

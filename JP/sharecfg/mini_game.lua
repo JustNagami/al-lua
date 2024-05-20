@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.mini_game = {
 	{
 		is_ranking = 0,
@@ -502,16 +502,16 @@ pg.mini_game = {
 		hub_id = 12,
 		request_data = 0,
 		simple_config_data = {
-			combo = 100,
-			perfecttime = 0.1,
-			misstime = 0.35,
-			good = 300,
 			special_combo = 0,
+			good = 300,
+			misstime = 0.35,
 			perfect = 600,
+			goodtime = 0.25,
+			combo = 100,
 			miss = 0,
 			laterperfecttime = 0.1,
 			speed_max = 100,
-			goodtime = 0.25,
+			perfecttime = 0.1,
 			special_score = 5000,
 			speed_min = 60,
 			latergoodtime = 0.2,
@@ -531,174 +531,6 @@ pg.mini_game = {
 				60,
 				80,
 				100
-			},
-			Blist = {
-				{
-					27180,
-					80220
-				},
-				{
-					25260,
-					41340
-				},
-				{
-					15620,
-					34140
-				},
-				{
-					29100,
-					61020
-				},
-				{
-					28380,
-					61980
-				},
-				{
-					27640,
-					55960
-				},
-				{
-					16480,
-					23080
-				},
-				{
-					16700,
-					52360
-				},
-				{
-					24760,
-					55480
-				},
-				{
-					24280,
-					43960
-				}
-			},
-			Alist = {
-				{
-					54360,
-					160440
-				},
-				{
-					50520,
-					82680
-				},
-				{
-					31240,
-					68280
-				},
-				{
-					58200,
-					122040
-				},
-				{
-					56760,
-					123960
-				},
-				{
-					55280,
-					111920
-				},
-				{
-					32960,
-					46160
-				},
-				{
-					33400,
-					104720
-				},
-				{
-					49520,
-					110960
-				},
-				{
-					48560,
-					87920
-				}
-			},
-			Slist = {
-				{
-					81540,
-					240660
-				},
-				{
-					75780,
-					124020
-				},
-				{
-					46860,
-					102420
-				},
-				{
-					87300,
-					183060
-				},
-				{
-					85140,
-					185940
-				},
-				{
-					82920,
-					167880
-				},
-				{
-					49440,
-					69240
-				},
-				{
-					50100,
-					157080
-				},
-				{
-					74280,
-					166440
-				},
-				{
-					72840,
-					131880
-				}
-			},
-			SSlist = {
-				{
-					108720,
-					320880
-				},
-				{
-					101040,
-					165360
-				},
-				{
-					62480,
-					136560
-				},
-				{
-					116400,
-					244080
-				},
-				{
-					113520,
-					247920
-				},
-				{
-					110560,
-					223840
-				},
-				{
-					65920,
-					92320
-				},
-				{
-					66800,
-					209440
-				},
-				{
-					99040,
-					221920
-				},
-				{
-					97120,
-					175840
-				}
 			}
 		}
 	},
@@ -1248,7 +1080,7 @@ pg.mini_game = {
 		name = "2021抚顺大冒险III",
 		config_csv = "",
 		id = 37,
-		hub_id = 29,
+		hub_id = 53,
 		request_data = 1
 	},
 	{
@@ -2088,6 +1920,237 @@ pg.mini_game = {
 			}
 		}
 	},
+	{
+		is_ranking = 0,
+		view_name = "SailBoatGameView",
+		type = 2,
+		game_room = 0,
+		mediator_name = "MiniHubMediator",
+		config_csv_key = "",
+		name = "帆船小游戏",
+		config_data = "",
+		config_csv = "",
+		id = 59,
+		hub_id = 50,
+		request_data = 0,
+		simple_config_data = {
+			drop_ids = {
+				{
+					2,
+					54003,
+					1
+				},
+				{
+					2,
+					50004,
+					5
+				},
+				{
+					3,
+					150160,
+					1
+				},
+				{
+					2,
+					54024,
+					2
+				},
+				{
+					2,
+					59355,
+					1
+				},
+				{
+					2,
+					20013,
+					2
+				},
+				{
+					5,
+					304106,
+					1
+				}
+			}
+		}
+	},
+	{
+		is_ranking = 0,
+		view_name = "CookGameView",
+		type = 2,
+		game_room = 0,
+		mediator_name = "MiniHubMediator",
+		config_csv_key = "",
+		name = "女仆蛋糕小游戏II",
+		config_data = "",
+		config_csv = "",
+		id = 60,
+		hub_id = 51,
+		request_data = 0,
+		simple_config_data = {
+			drop_ids = {
+				{
+					2,
+					59516,
+					15
+				},
+				{
+					2,
+					59516,
+					15
+				},
+				{
+					5,
+					306109,
+					1
+				},
+				{
+					2,
+					59516,
+					25
+				},
+				{
+					2,
+					59516,
+					25
+				},
+				{
+					2,
+					59516,
+					25
+				},
+				{
+					5,
+					306113,
+					1
+				}
+			}
+		}
+	},
+	{
+		is_ranking = 0,
+		view_name = "Shrine2022View",
+		type = 5,
+		game_room = 0,
+		mediator_name = "MiniHubMediator",
+		config_csv_key = "",
+		name = "2024神社舰娘许愿",
+		config_csv = "",
+		id = 61,
+		hub_id = 51,
+		request_data = 1,
+		simple_config_data = {
+			8,
+			59850,
+			1
+		},
+		config_data = {
+			0,
+			{
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80
+			},
+			1
+		}
+	},
+	{
+		is_ranking = 0,
+		view_name = "Shrine2022View",
+		type = 3,
+		game_room = 0,
+		mediator_name = "MiniHubMediator",
+		config_csv_key = "",
+		name = "2024神社指挥官许愿",
+		config_csv = "",
+		id = 62,
+		hub_id = 51,
+		request_data = 1,
+		simple_config_data = {
+			target = 100000,
+			shipGameID = 61
+		},
+		config_data = {
+			5,
+			{
+				10,
+				11,
+				12
+			},
+			2
+		}
+	},
+	{
+		is_ranking = 0,
+		view_name = "BeachGuardGameView",
+		type = 2,
+		game_room = 0,
+		mediator_name = "MiniHubMediator",
+		config_csv_key = "",
+		name = "PVZ小游戏复刻",
+		config_data = "",
+		config_csv = "",
+		id = 63,
+		hub_id = 52,
+		request_data = 0,
+		simple_config_data = {
+			drop = {
+				{
+					2,
+					54006,
+					1
+				},
+				{
+					2,
+					50004,
+					5
+				},
+				{
+					1,
+					2,
+					300
+				},
+				{
+					2,
+					54034,
+					1
+				},
+				{
+					2,
+					20013,
+					1
+				},
+				{
+					2,
+					54051,
+					1
+				},
+				{
+					7,
+					102233,
+					1
+				}
+			}
+		}
+	},
+	{
+		is_ranking = 0,
+		view_name = "LanternFestivalView",
+		type = 2,
+		game_room = 0,
+		mediator_name = "MiniHubMediator",
+		config_csv_key = "",
+		simple_config_data = "",
+		config_data = "",
+		name = "元宵答题2024",
+		config_csv = "activity_event_question",
+		id = 64,
+		hub_id = 54,
+		request_data = 1
+	},
 	[1001] = {
 		is_ranking = 0,
 		view_name = "GameRoomFushun3View",
@@ -2289,6 +2352,12 @@ pg.mini_game = {
 		56,
 		57,
 		58,
+		59,
+		60,
+		61,
+		62,
+		63,
+		64,
 		1001,
 		1002,
 		1003,

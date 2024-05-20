@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.class_upgrade_group = {
 	{
 		id = 201011,

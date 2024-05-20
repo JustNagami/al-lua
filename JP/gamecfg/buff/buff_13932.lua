@@ -1,4 +1,23 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "oxyMax",
+				number = 2
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -148,24 +167,5 @@ return {
 	stack = 1,
 	id = 13931,
 	icon = 13930,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "oxyMax",
-				number = 2
-			}
-		}
-	}
+	last_effect = ""
 }

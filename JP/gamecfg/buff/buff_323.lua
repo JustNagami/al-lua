@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "",
 	name = "苏俄冰锥减速",
 	time = 4,

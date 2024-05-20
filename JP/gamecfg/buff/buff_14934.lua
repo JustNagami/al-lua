@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "torpedoPower",
+				number = 1000
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -148,17 +160,5 @@ return {
 	stack = 1,
 	id = 14934,
 	icon = 14930,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "torpedoPower",
-				number = 1000
-			}
-		}
-	}
+	last_effect = ""
 }

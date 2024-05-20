@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "",
 	name = "起火",
 	time = 6.1,
@@ -42,6 +42,16 @@ return {
 			arg_list = {
 				skill_id = 61,
 				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				tag = "ChapayevSP"
 			}
 		}
 	}

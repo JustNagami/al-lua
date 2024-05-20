@@ -1,4 +1,60 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffCleanse",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				buff_id_list = {
+					12720
+				}
+			}
+		},
+		{
+			type = "BattleBuffShiftBullet",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				bullet_id = 19059,
+				index = {
+					1
+				}
+			}
+		},
+		{
+			type = "BattleBuffCancelBuff",
+			trigger = {
+				"onFire"
+			},
+			arg_list = {
+				delay = 1,
+				count = 1,
+				index = {
+					1
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onRemove"
+			},
+			arg_list = {
+				buff_id = 12720,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -518,61 +574,5 @@ return {
 	stack = 1,
 	id = 12721,
 	icon = 12720,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffCleanse",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				buff_id_list = {
-					12720
-				}
-			}
-		},
-		{
-			type = "BattleBuffShiftBullet",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				bullet_id = 19059,
-				index = {
-					1
-				}
-			}
-		},
-		{
-			type = "BattleBuffCancelBuff",
-			trigger = {
-				"onFire"
-			},
-			arg_list = {
-				delay = 1,
-				count = 1,
-				index = {
-					1
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onRemove"
-			},
-			arg_list = {
-				buff_id = 12720,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

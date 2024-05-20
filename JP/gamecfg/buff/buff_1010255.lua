@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "DMG_TAG_EHC_biaoqiangzhuanwu",
+				number = 0.01
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -157,18 +170,5 @@ return {
 	stack = 1,
 	id = 1010255,
 	icon = 10250,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "DMG_TAG_EHC_biaoqiangzhuanwu",
-				number = 0.01
-			}
-		}
-	}
+	last_effect = ""
 }

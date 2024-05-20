@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.effect_offset = {
 	bossguangxiao = {
 		mirror = false,
@@ -825,6 +825,39 @@ pg.effect_offset = {
 			0
 		}
 	},
+	music_huanraoyinfu_changliangdanchuan_2 = {
+		mirror = false,
+		y_scale = false,
+		container_index = 4,
+		top_cover_offset = false,
+		offset = {
+			0,
+			0.2,
+			0
+		}
+	},
+	music_huanraoyinfu_fusangdanchuan_2 = {
+		mirror = false,
+		y_scale = false,
+		container_index = 4,
+		top_cover_offset = false,
+		offset = {
+			0,
+			0.2,
+			0
+		}
+	},
+	music_huanraoyinfu_gaoxiongdanchuan_2 = {
+		mirror = false,
+		y_scale = false,
+		container_index = 4,
+		top_cover_offset = false,
+		offset = {
+			0,
+			0.2,
+			0
+		}
+	},
 	jiejie_dunpai = {
 		mirror = false,
 		y_scale = false,
@@ -1262,6 +1295,17 @@ pg.effect_offset = {
 		offset = {
 			0.3,
 			2.4,
+			-1.2
+		}
+	},
+	heiluodeni_shadow = {
+		mirror = false,
+		y_scale = false,
+		container_index = 1,
+		top_cover_offset = false,
+		offset = {
+			0.1,
+			2.5,
 			-1.2
 		}
 	},
@@ -1801,6 +1845,138 @@ pg.effect_offset = {
 		offset = {
 			0,
 			1.8,
+			0
+		}
+	},
+	jialimaoxianhao_hit = {
+		mirror = false,
+		y_scale = false,
+		container_index = 1,
+		top_cover_offset = true,
+		offset = {
+			2,
+			0,
+			4
+		}
+	},
+	shanluan_hudun = {
+		mirror = false,
+		y_scale = false,
+		container_index = 4,
+		top_cover_offset = false,
+		offset = {
+			0,
+			1.5,
+			0
+		}
+	},
+	lafei_biaoji = {
+		mirror = false,
+		y_scale = false,
+		container_index = 2,
+		top_cover_offset = false,
+		offset = {
+			0,
+			3.5,
+			0
+		}
+	},
+	enemy_jinli = {
+		mirror = false,
+		y_scale = false,
+		container_index = 3,
+		top_cover_offset = false,
+		offset = {
+			0,
+			-2,
+			3.25
+		}
+	},
+	enemy_xianhe = {
+		mirror = false,
+		y_scale = false,
+		container_index = 3,
+		top_cover_offset = false,
+		offset = {
+			0,
+			-2,
+			3.25
+		}
+	},
+	enemy_youyijiulaimu = {
+		mirror = false,
+		y_scale = false,
+		container_index = 3,
+		top_cover_offset = false,
+		offset = {
+			0,
+			-2,
+			4
+		}
+	},
+	feiyun_xiangyun = {
+		mirror = false,
+		y_scale = false,
+		container_index = -1,
+		top_cover_offset = false,
+		offset = {
+			0,
+			1.2,
+			0
+		}
+	},
+	enemy_dujiaoshou = {
+		mirror = false,
+		y_scale = false,
+		container_index = 3,
+		top_cover_offset = false,
+		offset = {
+			0.2,
+			-2,
+			2.4
+		}
+	},
+	juguangdeng_yinfu_STG = {
+		mirror = false,
+		y_scale = false,
+		container_index = 2,
+		top_cover_offset = false,
+		offset = {
+			-5,
+			8,
+			0
+		}
+	},
+	juguangdeng_huaduo_STG = {
+		mirror = false,
+		y_scale = false,
+		container_index = 2,
+		top_cover_offset = false,
+		offset = {
+			-5,
+			8,
+			0
+		}
+	},
+	juguangdeng_yinfu_BOSS = {
+		mirror = false,
+		y_scale = false,
+		container_index = 2,
+		top_cover_offset = false,
+		offset = {
+			2,
+			7.5,
+			0
+		}
+	},
+	juguangdeng_huaduo_BOSS = {
+		mirror = false,
+		y_scale = false,
+		container_index = 2,
+		top_cover_offset = false,
+		offset = {
+			2,
+			7.5,
 			0
 		}
 	}

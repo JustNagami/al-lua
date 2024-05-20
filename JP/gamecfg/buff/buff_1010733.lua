@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onAttach",
+				"onTorpedoWeaponBulletCreate"
+			},
+			arg_list = {
+				attr = "damageRatioByBulletTorpedo",
+				number = 0.01
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -157,18 +170,5 @@ return {
 	stack = 1,
 	id = 1010733,
 	icon = 1010730,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onAttach",
-				"onTorpedoWeaponBulletCreate"
-			},
-			arg_list = {
-				attr = "damageRatioByBulletTorpedo",
-				number = 0.01
-			}
-		}
-	}
+	last_effect = ""
 }

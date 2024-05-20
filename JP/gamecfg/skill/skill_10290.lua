@@ -1,4 +1,33 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 66040,
+				emitter = "BattleBulletEmitter"
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetPlayerMainFleet",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 10292
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -236,34 +265,5 @@ return {
 	id = 10290,
 	picture = "0",
 	castCV = "skill",
-	desc = "皇家舰队的荣耀",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 66040,
-				emitter = "BattleBulletEmitter"
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetPlayerMainFleet",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 10292
-			}
-		}
-	}
+	desc = "皇家舰队的荣耀"
 }

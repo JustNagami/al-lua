@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.ship_spine_shift = {
 	lulutiye_2 = {
 		spine = "lulutiye_2",
@@ -363,6 +363,55 @@ pg.ship_spine_shift = {
 		mainui_shift = {
 			-38.7,
 			8.3
+		}
+	},
+	jialimaoxian = {
+		spine = "jialimaoxian",
+		mainui_shift = {
+			0,
+			-30
+		}
+	},
+	songdiao = {
+		spine = "songdiao",
+		mainui_shift = {
+			-34,
+			12
+		}
+	},
+	songdiao_2 = {
+		spine = "songdiao_2",
+		mainui_shift = {
+			-34,
+			12
+		}
+	},
+	aierbin_4 = {
+		spine = "aierbin_4",
+		mainui_shift = {
+			21.1,
+			-10
+		}
+	},
+	jian_2 = {
+		spine = "jian_2",
+		mainui_shift = {
+			6.4,
+			-30
+		}
+	},
+	huanchang = {
+		spine = "huanchang",
+		mainui_shift = {
+			10,
+			0
+		}
+	},
+	huanchang_2 = {
+		spine = "huanchang_2",
+		mainui_shift = {
+			10,
+			0
 		}
 	}
 }

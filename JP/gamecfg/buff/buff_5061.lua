@@ -1,4 +1,27 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				check_target = "TargetShipTypeFriendly",
+				quota = 1,
+				skill_id = 5060,
+				maxTargetNumber = 1,
+				ship_type_list = {
+					2,
+					3,
+					9,
+					11,
+					18,
+					19,
+					23
+				}
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,27 +42,5 @@ return {
 	stack = 1,
 	id = 5061,
 	icon = 5060,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				check_target = "TargetShipTypeFriendly",
-				quota = 1,
-				skill_id = 5060,
-				maxTargetNumber = 1,
-				ship_type_list = {
-					2,
-					3,
-					9,
-					11,
-					18,
-					19
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

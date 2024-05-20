@@ -1,4 +1,24 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				attr = "dodgeRate",
+				number = 50
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -158,25 +178,5 @@ return {
 	stack = 3,
 	id = 105063,
 	icon = 105060,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				attr = "dodgeRate",
-				number = 50
-			}
-		}
-	}
+	last_effect = ""
 }

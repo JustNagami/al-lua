@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.weather_data_template = {
 	[101] = {
 		buff_desc = "夜の海は悪天候に見舞われている。味方前衛艦隊・敵が「隠蔽範囲」が獲得し、攻撃から狙われにくくなる",

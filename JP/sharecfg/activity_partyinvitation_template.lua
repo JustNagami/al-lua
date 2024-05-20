@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_partyinvitation_template = {
 	{
 		groupid = 10706,

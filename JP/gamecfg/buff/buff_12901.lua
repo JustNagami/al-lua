@@ -1,4 +1,18 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onTorpedoWeaponFire"
+			},
+			arg_list = {
+				rant = 1500,
+				target = "TargetSelf",
+				skill_id = 12901,
+				time = 10
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -169,19 +183,5 @@ return {
 	stack = 1,
 	id = 12901,
 	icon = 12900,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onTorpedoWeaponFire"
-			},
-			arg_list = {
-				rant = 1500,
-				target = "TargetSelf",
-				skill_id = 12901,
-				time = 10
-			}
-		}
-	}
+	last_effect = ""
 }

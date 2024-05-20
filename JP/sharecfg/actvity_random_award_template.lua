@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.actvity_random_award_template = {
 	all = {}
 }

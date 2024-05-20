@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.world_chapter_random = {
 	{
 		entrance_ui = 1,

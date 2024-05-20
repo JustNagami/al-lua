@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = 1250001,
 	map_id = 10001,
 	bgm = "azumaster-ins",

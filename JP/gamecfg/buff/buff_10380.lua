@@ -1,4 +1,15 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 10380
+			}
+		}
+	},
 	{
 		desc = "出击时，队伍中Z系驱逐的炮击、机动提高20.0%",
 		addition = {
@@ -69,16 +80,5 @@ return {
 	stack = 1,
 	id = 10380,
 	icon = 10380,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 10380
-			}
-		}
-	}
+	last_effect = ""
 }

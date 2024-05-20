@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "",
 	name = "神速雪球减速",
 	time = 5,

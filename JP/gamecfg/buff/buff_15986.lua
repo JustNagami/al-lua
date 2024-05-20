@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				tag = "jiuyunjianshang"
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,17 +31,5 @@ return {
 	stack = 1,
 	id = 15986,
 	icon = 15986,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddTag",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				tag = "jiuyunjianshang"
-			}
-		}
-	}
+	last_effect = ""
 }

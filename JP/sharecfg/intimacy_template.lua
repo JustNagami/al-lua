@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.intimacy_template = {
 	{
 		upper_bound = 3099,

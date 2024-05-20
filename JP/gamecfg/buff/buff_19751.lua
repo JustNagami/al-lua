@@ -1,4 +1,35 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffCleanse",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				buff_id_list = {
+					311
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "igniteReduce",
+				number = 2000
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -268,36 +299,5 @@ return {
 	stack = 1,
 	id = 19751,
 	icon = 19750,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffCleanse",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				buff_id_list = {
-					311
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "igniteReduce",
-				number = 2000
-			}
-		}
-	}
+	last_effect = ""
 }

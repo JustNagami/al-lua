@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				target = "TargetSelf",
+				time = 35,
+				skill_id = 10580
+			}
+		}
+	},
 	{
 		desc = "每隔35秒发射一轮额外鱼雷(3发)，造成伤害的20.0%回复自身耐久",
 		addition = {
@@ -199,18 +212,5 @@ return {
 	stack = 1,
 	id = 10580,
 	icon = 10580,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				target = "TargetSelf",
-				time = 35,
-				skill_id = 10580
-			}
-		}
-	}
+	last_effect = ""
 }

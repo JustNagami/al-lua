@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.name_code = {
 	{
 		name = "峯風",
@@ -1226,10 +1226,10 @@ pg.name_code = {
 		nation = 0
 	},
 	{
-		name = "赤城（μ兵装）",
+		name = "赤城(μ兵装)",
 		type = 1,
 		id = 176,
-		code = "赤城（μ兵装）",
+		code = "赤城(μ兵装)",
 		nation = 0
 	},
 	{
@@ -1324,10 +1324,10 @@ pg.name_code = {
 		nation = 0
 	},
 	{
-		name = "大鳳（μ兵装）",
+		name = "大鳳(μ兵装)",
 		type = 1,
 		id = 190,
-		code = "大鳳（μ兵装）",
+		code = "大鳳(μ兵装)",
 		nation = 0
 	},
 	{
@@ -1573,6 +1573,20 @@ pg.name_code = {
 		type = 1,
 		id = 226,
 		code = "酒匂",
+		nation = 0
+	},
+	[227] = {
+		name = "能代(μ兵装)",
+		type = 1,
+		id = 227,
+		code = "能代(μ兵装)",
+		nation = 0
+	},
+	[228] = {
+		name = "金剛(μ兵装)",
+		type = 1,
+		id = 228,
+		code = "金剛(μ兵装)",
 		nation = 0
 	},
 	[250] = {
@@ -2115,17 +2129,17 @@ pg.name_code = {
 		nation = 0
 	},
 	[451] = {
-		name = "アドミラル·ヒッパー（μ兵装）",
+		name = "アドミラル·ヒッパー(μ兵装)",
 		type = 1,
 		id = 451,
-		code = "アドミラル·ヒッパー（μ兵装）",
+		code = "アドミラル·ヒッパー(μ兵装)",
 		nation = 0
 	},
 	[452] = {
-		name = "ローン（μ兵装）",
+		name = "ローン(μ兵装)",
 		type = 1,
 		id = 452,
-		code = "ローン（μ兵装）",
+		code = "ローン(μ兵装)",
 		nation = 0
 	},
 	[453] = {
@@ -2658,6 +2672,48 @@ pg.name_code = {
 		type = 1,
 		id = 528,
 		code = "サンディエゴ改",
+		nation = 0
+	},
+	[529] = {
+		name = "ソビエツキー",
+		type = 1,
+		id = 529,
+		code = "ソビエツキー",
+		nation = 0
+	},
+	[530] = {
+		name = "ソユーズ",
+		type = 1,
+		id = 530,
+		code = "ソユーズ",
+		nation = 0
+	},
+	[531] = {
+		name = "フリードリヒ・カール",
+		type = 1,
+		id = 531,
+		code = "フリードリヒ・カール",
+		nation = 0
+	},
+	[532] = {
+		name = "プリンツ·オイゲン(μ兵装)",
+		type = 1,
+		id = 532,
+		code = "プリンツ·オイゲン(μ兵装)",
+		nation = 0
+	},
+	[533] = {
+		name = "ボイシ(μ兵装)",
+		type = 1,
+		id = 533,
+		code = "ボイシ(μ兵装)",
+		nation = 0
+	},
+	[534] = {
+		name = "信濃ちゃん",
+		type = 1,
+		id = 534,
+		code = "信濃ちゃん",
 		nation = 0
 	},
 	[10000] = {

@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "DMG_TAG_EHC_SMKZE",
+				number = 0.035
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -149,17 +161,5 @@ return {
 	stack = 1,
 	id = 14851,
 	icon = 14850,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "DMG_TAG_EHC_SMKZE",
-				number = 0.035
-			}
-		}
-	}
+	last_effect = ""
 }

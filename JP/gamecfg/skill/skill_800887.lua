@@ -1,4 +1,4 @@
-return {
+﻿return {
 	uiEffect = "",
 	name = "",
 	cd = 0,
@@ -24,7 +24,7 @@ return {
 				"TargetSelf"
 			},
 			arg_list = {
-				buff_id = 800887
+				buff_id = 800888
 			}
 		}
 	}
