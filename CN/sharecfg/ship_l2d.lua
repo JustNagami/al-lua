@@ -22599,25 +22599,24 @@ pg.ship_l2d = {
 		ignore_react = 1,
 		action_trigger_active = "",
 		gyro_y = 0,
-		limit_time = 0.1,
+		limit_time = 0.5,
 		drag_direct = 0,
-		parts_data = "",
+		offset_x = 0,
 		revert_action_index = 0,
 		draw_able_name = "TouchDrag17",
-		offset_x = 0,
-		mode = 1,
 		relation_parameter = "",
+		mode = 1,
+		start_value = 0,
 		gyro = 0,
 		gyro_x = 0,
 		react_pos_y = 0,
-		start_value = 0,
-		revert = -1,
 		offset_y = 0,
+		revert = -1,
 		ignore_action = 1,
 		react_pos_x = 0,
 		parameter = "touch_drag30",
 		shop_action = 0,
-		revert_idle_index = 0,
+		revert_idle_index = 1,
 		gyro_z = 0,
 		smooth = 100,
 		id = 10213433,
@@ -22627,6 +22626,12 @@ pg.ship_l2d = {
 		range = {
 			0,
 			1
+		},
+		parts_data = {
+			parts = {
+				0,
+				1
+			}
 		},
 		action_trigger = {
 			circle = true,
@@ -22638,25 +22643,24 @@ pg.ship_l2d = {
 		ignore_react = 1,
 		action_trigger_active = "",
 		gyro_y = 0,
-		limit_time = 0.1,
+		limit_time = 0.5,
 		drag_direct = 0,
-		parts_data = "",
+		offset_x = 0,
 		revert_action_index = 0,
 		draw_able_name = "TouchDrag18",
-		offset_x = 0,
-		mode = 1,
 		relation_parameter = "",
+		mode = 1,
+		start_value = 0,
 		gyro = 0,
 		gyro_x = 0,
 		react_pos_y = 0,
-		start_value = 0,
-		revert = -1,
 		offset_y = 0,
+		revert = -1,
 		ignore_action = 1,
 		react_pos_x = 0,
 		parameter = "touch_drag31",
 		shop_action = 0,
-		revert_idle_index = 0,
+		revert_idle_index = 1,
 		gyro_z = 0,
 		smooth = 100,
 		id = 10213434,
@@ -22666,6 +22670,12 @@ pg.ship_l2d = {
 		range = {
 			0,
 			1
+		},
+		parts_data = {
+			parts = {
+				0,
+				1
+			}
 		},
 		action_trigger = {
 			circle = true,
@@ -22677,25 +22687,24 @@ pg.ship_l2d = {
 		ignore_react = 1,
 		action_trigger_active = "",
 		gyro_y = 0,
-		limit_time = 0.1,
+		limit_time = 0.5,
 		drag_direct = 0,
-		parts_data = "",
+		offset_x = 0,
 		revert_action_index = 0,
 		draw_able_name = "TouchDrag19",
-		offset_x = 0,
-		mode = 1,
 		relation_parameter = "",
+		mode = 1,
+		start_value = 0,
 		gyro = 0,
 		gyro_x = 0,
 		react_pos_y = 0,
-		start_value = 0,
-		revert = -1,
 		offset_y = 0,
+		revert = -1,
 		ignore_action = 1,
 		react_pos_x = 0,
 		parameter = "touch_drag32",
 		shop_action = 0,
-		revert_idle_index = 0,
+		revert_idle_index = 1,
 		gyro_z = 0,
 		smooth = 100,
 		id = 10213435,
@@ -22705,6 +22714,12 @@ pg.ship_l2d = {
 		range = {
 			0,
 			1
+		},
+		parts_data = {
+			parts = {
+				0,
+				1
+			}
 		},
 		action_trigger = {
 			circle = true,
@@ -22716,7 +22731,7 @@ pg.ship_l2d = {
 		ignore_react = 1,
 		action_trigger_active = "",
 		gyro_y = 0,
-		limit_time = 0.1,
+		limit_time = 0.5,
 		drag_direct = 0,
 		parts_data = "",
 		revert_action_index = 0,
@@ -22755,7 +22770,7 @@ pg.ship_l2d = {
 		ignore_react = 1,
 		action_trigger_active = "",
 		gyro_y = 0,
-		limit_time = 0.1,
+		limit_time = 0.5,
 		drag_direct = 0,
 		parts_data = "",
 		revert_action_index = 0,
@@ -22794,7 +22809,7 @@ pg.ship_l2d = {
 		ignore_react = 1,
 		action_trigger_active = "",
 		gyro_y = 0,
-		limit_time = 0.1,
+		limit_time = 0.5,
 		drag_direct = 0,
 		parts_data = "",
 		revert_action_index = 0,
@@ -22966,7 +22981,7 @@ pg.ship_l2d = {
 		ignore_react = 1,
 		action_trigger_active = "",
 		gyro_y = 0,
-		limit_time = 0.1,
+		limit_time = 0.5,
 		drag_direct = 0,
 		parts_data = "",
 		revert_action_index = 0,
@@ -23145,25 +23160,24 @@ pg.ship_l2d = {
 		ignore_react = 1,
 		action_trigger_active = "",
 		gyro_y = 0,
-		limit_time = 0.1,
+		limit_time = 0.5,
 		drag_direct = 0,
-		parts_data = "",
+		offset_x = 0,
 		revert_action_index = 0,
 		draw_able_name = "TouchIdle12",
-		offset_x = 0,
-		mode = 1,
 		relation_parameter = "",
+		mode = 1,
+		start_value = 0,
 		gyro = 0,
 		gyro_x = 0,
 		react_pos_y = 0,
-		start_value = 0,
-		revert = -1,
 		offset_y = 0,
+		revert = -1,
 		ignore_action = 1,
 		react_pos_x = 0,
 		parameter = "touch_drag36",
 		shop_action = 0,
-		revert_idle_index = 0,
+		revert_idle_index = 1,
 		gyro_z = 0,
 		smooth = 100,
 		id = 10213447,
@@ -23173,6 +23187,12 @@ pg.ship_l2d = {
 		range = {
 			0,
 			1
+		},
+		parts_data = {
+			parts = {
+				0,
+				1
+			}
 		},
 		action_trigger = {
 			circle = true,
@@ -23184,25 +23204,24 @@ pg.ship_l2d = {
 		ignore_react = 1,
 		action_trigger_active = "",
 		gyro_y = 0,
-		limit_time = 0.1,
+		limit_time = 0.5,
 		drag_direct = 0,
-		parts_data = "",
+		offset_x = 0,
 		revert_action_index = 0,
 		draw_able_name = "TouchIdle13",
-		offset_x = 0,
-		mode = 1,
 		relation_parameter = "",
+		mode = 1,
+		start_value = 0,
 		gyro = 0,
 		gyro_x = 0,
 		react_pos_y = 0,
-		start_value = 0,
-		revert = -1,
 		offset_y = 0,
+		revert = -1,
 		ignore_action = 1,
 		react_pos_x = 0,
 		parameter = "touch_drag35",
 		shop_action = 0,
-		revert_idle_index = 0,
+		revert_idle_index = 1,
 		gyro_z = 0,
 		smooth = 100,
 		id = 10213448,
@@ -23212,6 +23231,12 @@ pg.ship_l2d = {
 		range = {
 			0,
 			1
+		},
+		parts_data = {
+			parts = {
+				0,
+				1
+			}
 		},
 		action_trigger = {
 			circle = true,
@@ -23297,7 +23322,7 @@ pg.ship_l2d = {
 		ignore_react = 1,
 		action_trigger_active = "",
 		gyro_y = 0,
-		limit_time = 0,
+		limit_time = 2,
 		drag_direct = 0,
 		parts_data = "",
 		revert_action_index = 0,
@@ -23308,9 +23333,8 @@ pg.ship_l2d = {
 		gyro = 0,
 		gyro_x = 0,
 		react_pos_y = 0,
-		action_trigger = "",
-		revert = -1,
 		start_value = 0,
+		revert = -1,
 		offset_y = 0,
 		ignore_action = 1,
 		react_pos_x = 0,
@@ -23326,6 +23350,11 @@ pg.ship_l2d = {
 		range = {
 			0,
 			1
+		},
+		action_trigger = {
+			circle = true,
+			target = 1,
+			type = 2
 		}
 	},
 	[90107102] = {

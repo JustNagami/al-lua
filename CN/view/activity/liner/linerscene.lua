@@ -446,17 +446,16 @@ function var_0_0.InitRandomChars(arg_49_0)
 		end
 	end
 
-	local var_49_0 = underscore.filter(arg_49_0.roomIds, function(arg_50_0)
-		return arg_50_0 ~= 4 or arg_50_0 ~= 31
-	end)
-	local var_49_1 = arg_49_0:GetRandomItems(var_49_0, var_0_0.FINISH_CHAR_CNT)
-	local var_49_2 = arg_49_0:GetRandomItems(arg_49_0.sdConfig, var_0_0.FINISH_CHAR_CNT)
+	local var_49_0 = arg_49_0:GetRandomItems(underscore.filter(arg_49_0.roomIds, function(arg_50_0)
+		return arg_50_0 ~= 4 and arg_50_0 ~= 31
+	end), var_0_0.FINISH_CHAR_CNT)
+	local var_49_1 = arg_49_0:GetRandomItems(arg_49_0.sdConfig, var_0_0.FINISH_CHAR_CNT)
 
-	for iter_49_2, iter_49_3 in ipairs(var_49_1) do
-		local var_49_3 = var_49_2[iter_49_2]
+	for iter_49_2, iter_49_3 in ipairs(var_49_0) do
+		local var_49_2 = var_49_1[iter_49_2]
 
-		PoolMgr.GetInstance():GetSpineChar(var_49_3, true, function(arg_51_0)
-			arg_49_0.roomChars[iter_49_3][1] = var_49_3
+		PoolMgr.GetInstance():GetSpineChar(var_49_2, true, function(arg_51_0)
+			arg_49_0.roomChars[iter_49_3][1] = var_49_2
 			arg_49_0.roomChars[iter_49_3][2] = arg_51_0
 
 			local var_51_0 = arg_49_0:findTF(iter_49_3 .. "/char", arg_49_0.roomsTF)
@@ -513,147 +512,149 @@ function var_0_0.FillRandomChars(arg_52_0)
 
 	local var_52_4 = var_0_0.FINISH_CHAR_CNT - var_52_2
 
-	arg_52_0.randomIds = arg_52_0:GetRandomItems(var_52_0, var_52_4)
+	arg_52_0.randomIds = arg_52_0:GetRandomItems(underscore.filter(var_52_0, function(arg_53_0)
+		return arg_53_0 ~= 4 and arg_53_0 ~= 31
+	end), var_52_4)
 
 	local var_52_5 = arg_52_0:GetRandomItems(var_52_1, var_52_4)
 
 	for iter_52_4, iter_52_5 in ipairs(arg_52_0.randomIds) do
 		local var_52_6 = var_52_5[iter_52_4]
 
-		PoolMgr.GetInstance():GetSpineChar(var_52_6, true, function(arg_53_0)
+		PoolMgr.GetInstance():GetSpineChar(var_52_6, true, function(arg_54_0)
 			arg_52_0.roomChars[iter_52_5][1] = var_52_6
-			arg_52_0.roomChars[iter_52_5][2] = arg_53_0
+			arg_52_0.roomChars[iter_52_5][2] = arg_54_0
 
-			local var_53_0 = arg_52_0:findTF(iter_52_5 .. "/char", arg_52_0.roomsTF)
+			local var_54_0 = arg_52_0:findTF(iter_52_5 .. "/char", arg_52_0.roomsTF)
 
-			setLocalScale(tf(arg_53_0), {
+			setLocalScale(tf(arg_54_0), {
 				x = LinerRoomCharPoint.SCALE,
 				y = LinerRoomCharPoint.SCALE
 			})
-			setParent(arg_53_0, var_53_0)
-			arg_52_0:InitCharBehavior(iter_52_5, tf(arg_53_0))
+			setParent(arg_54_0, var_54_0)
+			arg_52_0:InitCharBehavior(iter_52_5, tf(arg_54_0))
 		end)
 	end
 end
 
-function var_0_0.UpdateBg(arg_54_0, arg_54_1)
-	local var_54_0 = arg_54_1 or arg_54_0.curTime:GetBgType()
+function var_0_0.UpdateBg(arg_55_0, arg_55_1)
+	local var_55_0 = arg_55_1 or arg_55_0.curTime:GetBgType()
 
-	for iter_54_0, iter_54_1 in ipairs(arg_54_0.bgDiffList) do
-		eachChild(iter_54_1, function(arg_55_0)
-			setActive(arg_55_0, arg_55_0.name == var_54_0)
+	for iter_55_0, iter_55_1 in ipairs(arg_55_0.bgDiffList) do
+		eachChild(iter_55_1, function(arg_56_0)
+			setActive(arg_56_0, arg_56_0.name == var_55_0)
 		end)
 	end
 end
 
-function var_0_0.UpdateFinishTime(arg_56_0)
-	local var_56_0 = os.date("*t", os.time())
-	local var_56_1 = var_56_0.hour
-	local var_56_2 = var_56_0.min
-	local var_56_3 = var_56_1 < 12 and " AM" or " PM"
+function var_0_0.UpdateFinishTime(arg_57_0)
+	local var_57_0 = os.date("*t", os.time())
+	local var_57_1 = var_57_0.hour
+	local var_57_2 = var_57_0.min
+	local var_57_3 = var_57_1 < 12 and " AM" or " PM"
 
-	arg_56_0:UpdateBg(arg_56_0.activity:GetReallyTimeType(var_56_1))
+	arg_57_0:UpdateBg(arg_57_0.activity:GetReallyTimeType(var_57_1))
 
-	if var_56_1 > 12 then
-		var_56_1 = var_56_1 - 12
+	if var_57_1 > 12 then
+		var_57_1 = var_57_1 - 12
 	end
 
-	setText(arg_56_0.timeTF, string.format("%d:%02d ", var_56_1, var_56_2) .. var_56_3)
+	setText(arg_57_0.timeTF, string.format("%d:%02d ", var_57_1, var_57_2) .. var_57_3)
 end
 
-function var_0_0.UpdateTimeUI(arg_57_0)
-	if arg_57_0.isReallyTime then
-		eachChild(arg_57_0.targetTagTF, function(arg_58_0)
-			setActive(arg_58_0, false)
+function var_0_0.UpdateTimeUI(arg_58_0)
+	if arg_58_0.isReallyTime then
+		eachChild(arg_58_0.targetTagTF, function(arg_59_0)
+			setActive(arg_59_0, false)
 		end)
 
-		arg_57_0.targetLayoutCom.spacing = -60
+		arg_58_0.targetLayoutCom.spacing = -60
 
-		setText(arg_57_0.targetTF, i18n("liner_target_type5"))
+		setText(arg_58_0.targetTF, i18n("liner_target_type5"))
 
-		arg_57_0.finishTimer = Timer.New(function()
-			arg_57_0:UpdateFinishTime()
+		arg_58_0.finishTimer = Timer.New(function()
+			arg_58_0:UpdateFinishTime()
 		end, 60, -1)
 
-		arg_57_0.finishTimer:Start()
-		arg_57_0:UpdateFinishTime()
+		arg_58_0.finishTimer:Start()
+		arg_58_0:UpdateFinishTime()
 
 		return
 	end
 
-	setText(arg_57_0.timeTF, arg_57_0.curTime:GetStartTimeDesc())
+	setText(arg_58_0.timeTF, arg_58_0.curTime:GetStartTimeDesc())
 
-	local var_57_0 = arg_57_0.curTime:GetType()
+	local var_58_0 = arg_58_0.curTime:GetType()
 
-	eachChild(arg_57_0.targetTagTF, function(arg_60_0)
-		setActive(arg_60_0, not arg_57_0.isFinishAll and arg_60_0.name == "type" .. var_57_0)
+	eachChild(arg_58_0.targetTagTF, function(arg_61_0)
+		setActive(arg_61_0, not arg_58_0.isFinishAll and arg_61_0.name == "type" .. var_58_0)
 	end)
 
-	local var_57_1 = ""
+	local var_58_1 = ""
 
-	switch(var_57_0, {
+	switch(var_58_0, {
 		[LinerTime.TYPE.TARGET] = function()
-			var_57_1 = i18n("liner_target_type1", arg_57_0.rooms[arg_57_0.targetIds[1]]:GetName())
+			var_58_1 = i18n("liner_target_type1", arg_58_0.rooms[arg_58_0.targetIds[1]]:GetName())
 		end,
 		[LinerTime.TYPE.EXPLORE] = function()
-			local var_62_0 = arg_57_0.curTime:GetExploreCnt()
-			local var_62_1 = arg_57_0.activity:GetRemainExploreCnt()
+			local var_63_0 = arg_58_0.curTime:GetExploreCnt()
+			local var_63_1 = arg_58_0.activity:GetRemainExploreCnt()
 
-			var_57_1 = i18n("liner_target_type2") .. string.format("(%d/%d)", var_62_0 - var_62_1, var_62_0)
+			var_58_1 = i18n("liner_target_type2") .. string.format("(%d/%d)", var_63_0 - var_63_1, var_63_0)
 		end,
 		[LinerTime.TYPE.EVENT] = function()
-			local var_63_0 = #arg_57_0.curTime:GetTargetRoomIds()
-			local var_63_1 = arg_57_0.activity:GetRoomIdx() - 1
+			local var_64_0 = #arg_58_0.curTime:GetTargetRoomIds()
+			local var_64_1 = arg_58_0.activity:GetRoomIdx() - 1
 
-			if arg_57_0.isFinishAll then
-				var_63_1 = var_63_0
+			if arg_58_0.isFinishAll then
+				var_64_1 = var_64_0
 			end
 
-			var_57_1 = i18n("liner_target_type3") .. string.format("(%d/%d)", var_63_1, var_63_0)
+			var_58_1 = i18n("liner_target_type3") .. string.format("(%d/%d)", var_64_1, var_64_0)
 		end,
 		[LinerTime.TYPE.STORY] = function()
-			var_57_1 = i18n("liner_target_type4", arg_57_0.rooms[arg_57_0.targetIds[1]]:GetName())
+			var_58_1 = i18n("liner_target_type4", arg_58_0.rooms[arg_58_0.targetIds[1]]:GetName())
 		end
 	})
 
-	arg_57_0.targetLayoutCom.spacing = (var_57_0 == LinerTime.TYPE.EXPLORE or arg_57_0.isFinishAll) and -60 or -10
+	arg_58_0.targetLayoutCom.spacing = (var_58_0 == LinerTime.TYPE.EXPLORE or arg_58_0.isFinishAll) and -60 or -10
 
-	if arg_57_0.isFinishAll then
-		var_57_1 = i18n("liner_target_type4")
+	if arg_58_0.isFinishAll then
+		var_58_1 = i18n("liner_target_type4")
 	end
 
-	setText(arg_57_0.targetTF, var_57_1)
+	setText(arg_58_0.targetTF, var_58_1)
 end
 
-function var_0_0.CheckTime(arg_65_0)
-	local var_65_0 = arg_65_0.oldTime.id ~= arg_65_0.curTime.id
-	local var_65_1 = arg_65_0.activity:GetCurIdx()
-	local var_65_2 = math.max(var_65_1 - 1, 1)
+function var_0_0.CheckTime(arg_66_0)
+	local var_66_0 = arg_66_0.oldTime.id ~= arg_66_0.curTime.id
+	local var_66_1 = arg_66_0.activity:GetCurIdx()
+	local var_66_2 = math.max(var_66_1 - 1, 1)
 
-	if var_65_0 then
-		arg_65_0.timePage:ExecuteAction("ShowAnim", arg_65_0.activity, var_65_2, var_65_1, function()
-			arg_65_0:UpdateView()
+	if var_66_0 then
+		arg_66_0.timePage:ExecuteAction("ShowAnim", arg_66_0.activity, var_66_2, var_66_1, function()
+			arg_66_0:UpdateView()
 		end)
 	else
-		arg_65_0:UpdateView()
+		arg_66_0:UpdateView()
 	end
 end
 
-function var_0_0.UpdateView(arg_67_0, arg_67_1)
-	arg_67_0:UpdateBg()
-	arg_67_0:UpdateTimeUI()
-	arg_67_0:UpdateRooms()
-	arg_67_0:UpdateTips()
-	arg_67_0.floatItemList:align(#arg_67_0.targetIds)
+function var_0_0.UpdateView(arg_68_0, arg_68_1)
+	arg_68_0:UpdateBg()
+	arg_68_0:UpdateTimeUI()
+	arg_68_0:UpdateRooms()
+	arg_68_0:UpdateTips()
+	arg_68_0.floatItemList:align(#arg_68_0.targetIds)
 
-	if arg_67_0.curTime:GetType() ~= LinerTime.TYPE.EXPLORE and arg_67_0.targetIds[1] then
-		arg_67_0:FocusNode(arg_67_0.targetIds[1], arg_67_1)
+	if arg_68_0.curTime:GetType() ~= LinerTime.TYPE.EXPLORE and arg_68_0.targetIds[1] then
+		arg_68_0:FocusNode(arg_68_0.targetIds[1], arg_68_1)
 	else
-		arg_67_0:onDragFunction()
+		arg_68_0:onDragFunction()
 	end
 
-	if arg_67_0.curTime:GetType() == LinerTime.TYPE.EXPLORE and not pg.NewStoryMgr.GetInstance():IsPlayed("Liner_1") then
-		arg_67_0:FocusNode(var_0_0.GUIDE_ROOM_ID, function()
+	if arg_68_0.curTime:GetType() == LinerTime.TYPE.EXPLORE and not pg.NewStoryMgr.GetInstance():IsPlayed("Liner_1") then
+		arg_68_0:FocusNode(var_0_0.GUIDE_ROOM_ID, function()
 			pg.NewGuideMgr.GetInstance():Play("Liner_1")
 			pg.m02:sendNotification(GAME.STORY_UPDATE, {
 				storyId = "Liner_1"
@@ -661,244 +662,244 @@ function var_0_0.UpdateView(arg_67_0, arg_67_1)
 		end)
 	end
 
-	if arg_67_0.oldTime.id ~= arg_67_0.curTime.id then
-		arg_67_0:PlayBGM()
+	if arg_68_0.oldTime.id ~= arg_68_0.curTime.id then
+		arg_68_0:PlayBGM()
 	end
 end
 
-function var_0_0.UpdateData(arg_69_0)
-	arg_69_0.activity = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LINER)
+function var_0_0.UpdateData(arg_70_0)
+	arg_70_0.activity = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LINER)
 
-	assert(arg_69_0.activity and not arg_69_0.activity:isEnd(), "not exist liner act, type: " .. ActivityConst.ACTIVITY_TYPE_LINER)
+	assert(arg_70_0.activity and not arg_70_0.activity:isEnd(), "not exist liner act, type: " .. ActivityConst.ACTIVITY_TYPE_LINER)
 
-	arg_69_0.endingStory = arg_69_0.activity:getConfig("config_client").endingstory[1]
-	arg_69_0.timeConfig = arg_69_0.activity:getConfig("config_client").endingtime
-	arg_69_0.sdConfig = arg_69_0.activity:getConfig("config_client").sd
-	arg_69_0.isFinishAll = arg_69_0.activity:IsFinishAllTime()
-	arg_69_0.isReallyTime = arg_69_0.isFinishAll and pg.NewStoryMgr.GetInstance():IsPlayed(arg_69_0.endingStory)
-	arg_69_0.exploredRoomIds = arg_69_0.activity:GetExploredRoomIds()
-	arg_69_0.curEventInfos = arg_69_0.activity:GetCurEventInfo()
-	arg_69_0.oldTime = arg_69_0.curTime and Clone(arg_69_0.curTime) or nil
-	arg_69_0.curTime = arg_69_0.activity:GetCurTime()
+	arg_70_0.endingStory = arg_70_0.activity:getConfig("config_client").endingstory[1]
+	arg_70_0.timeConfig = arg_70_0.activity:getConfig("config_client").endingtime
+	arg_70_0.sdConfig = arg_70_0.activity:getConfig("config_client").sd
+	arg_70_0.isFinishAll = arg_70_0.activity:IsFinishAllTime()
+	arg_70_0.isReallyTime = arg_70_0.isFinishAll and pg.NewStoryMgr.GetInstance():IsPlayed(arg_70_0.endingStory)
+	arg_70_0.exploredRoomIds = arg_70_0.activity:GetExploredRoomIds()
+	arg_70_0.curEventInfos = arg_70_0.activity:GetCurEventInfo()
+	arg_70_0.oldTime = arg_70_0.curTime and Clone(arg_70_0.curTime) or nil
+	arg_70_0.curTime = arg_70_0.activity:GetCurTime()
 
-	if not arg_69_0.oldTime then
-		arg_69_0.oldTime = Clone(arg_69_0.curTime)
+	if not arg_70_0.oldTime then
+		arg_70_0.oldTime = Clone(arg_70_0.curTime)
 	end
 
-	if arg_69_0.isFinishAll then
-		if not arg_69_0.isReallyTime then
-			arg_69_0.targetIds = {
+	if arg_70_0.isFinishAll then
+		if not arg_70_0.isReallyTime then
+			arg_70_0.targetIds = {
 				var_0_0.FINISH_TARGET_ROOM_ID
 			}
 		else
-			arg_69_0.targetIds = {}
+			arg_70_0.targetIds = {}
 		end
-	elseif arg_69_0.curTime:GetType() == LinerTime.TYPE.EVENT then
-		arg_69_0.targetIds = {
-			arg_69_0:_getCurEventRoomId()
+	elseif arg_70_0.curTime:GetType() == LinerTime.TYPE.EVENT then
+		arg_70_0.targetIds = {
+			arg_70_0:_getCurEventRoomId()
 		}
 	else
-		arg_69_0.targetIds = arg_69_0.curTime:GetTargetRoomIds()
+		arg_70_0.targetIds = arg_70_0.curTime:GetTargetRoomIds()
 	end
 
-	if arg_69_0.needAutoCheck then
-		arg_69_0.needAutoCheck = false
+	if arg_70_0.needAutoCheck then
+		arg_70_0.needAutoCheck = false
 
-		arg_69_0:CheckTime()
+		arg_70_0:CheckTime()
 	end
 end
 
-function var_0_0._getCurEventRoomId(arg_70_0)
-	return arg_70_0.curTime:GetParamInfo()[arg_70_0.activity:GetRoomIdx()][1]
+function var_0_0._getCurEventRoomId(arg_71_0)
+	return arg_71_0.curTime:GetParamInfo()[arg_71_0.activity:GetRoomIdx()][1]
 end
 
-function var_0_0.UpdateTips(arg_71_0)
-	setActive(arg_71_0:findTF("tip", arg_71_0.logBtn), LinerLogBookLayer.IsTip())
+function var_0_0.UpdateTips(arg_72_0)
+	setActive(arg_72_0:findTF("tip", arg_72_0.logBtn), LinerLogBookLayer.IsTip())
 end
 
-function var_0_0.onDragFunction(arg_72_0)
+function var_0_0.onDragFunction(arg_73_0)
 	if not var_0_0.screenPoints then
 		var_0_0.screenPoints = {
-			Vector2(-arg_72_0.delta.x, arg_72_0.delta.y),
-			Vector2(arg_72_0.delta.x, arg_72_0.delta.y),
-			Vector2(arg_72_0.delta.x, -arg_72_0.delta.y),
-			Vector2(-arg_72_0.delta.x, -arg_72_0.delta.y)
+			Vector2(-arg_73_0.delta.x, arg_73_0.delta.y),
+			Vector2(arg_73_0.delta.x, arg_73_0.delta.y),
+			Vector2(arg_73_0.delta.x, -arg_73_0.delta.y),
+			Vector2(-arg_73_0.delta.x, -arg_73_0.delta.y)
 		}
 	end
 
-	for iter_72_0, iter_72_1 in ipairs(arg_72_0.targetIds) do
-		local var_72_0 = arg_72_0.roomsTF:Find(tostring(iter_72_1))
+	for iter_73_0, iter_73_1 in ipairs(arg_73_0.targetIds) do
+		local var_73_0 = arg_73_0.roomsTF:Find(tostring(iter_73_1))
 
-		if var_72_0 then
-			local var_72_1 = arg_72_0._tf:InverseTransformPoint(var_72_0.position)
-			local var_72_2
+		if var_73_0 then
+			local var_73_1 = arg_73_0._tf:InverseTransformPoint(var_73_0.position)
+			local var_73_2
 
-			for iter_72_2, iter_72_3 in ipairs(var_0_0.screenPoints) do
-				local var_72_3 = var_0_0.screenPoints[iter_72_2 % 4 + 1]
-				local var_72_4 = Vector2(var_72_1.x, var_72_1.y)
-				local var_72_5, var_72_6, var_72_7 = LineLine(Vector2.zero, var_72_4, iter_72_3, var_72_3)
+			for iter_73_2, iter_73_3 in ipairs(var_0_0.screenPoints) do
+				local var_73_3 = var_0_0.screenPoints[iter_73_2 % 4 + 1]
+				local var_73_4 = Vector2(var_73_1.x, var_73_1.y)
+				local var_73_5, var_73_6, var_73_7 = LineLine(Vector2.zero, var_73_4, iter_73_3, var_73_3)
 
-				if var_72_5 then
-					var_72_2 = var_72_4 * var_72_6
+				if var_73_5 then
+					var_73_2 = var_73_4 * var_73_6
 
 					break
 				end
 			end
 
-			local var_72_8 = arg_72_0.floatItemList.container:Find(tostring(iter_72_1))
-			local var_72_9 = var_72_8:GetComponent(typeof(CanvasGroup))
-			local var_72_10 = tobool(var_72_2)
+			local var_73_8 = arg_73_0.floatItemList.container:Find(tostring(iter_73_1))
+			local var_73_9 = var_73_8:GetComponent(typeof(CanvasGroup))
+			local var_73_10 = tobool(var_73_2)
 
-			var_72_9.interactable = var_72_10
-			var_72_9.blocksRaycasts = var_72_10
-			var_72_9.alpha = var_72_10 and 1 or 0
+			var_73_9.interactable = var_73_10
+			var_73_9.blocksRaycasts = var_73_10
+			var_73_9.alpha = var_73_10 and 1 or 0
 
-			setActive(arg_72_0:findTF(iter_72_1 .. "/tag", arg_72_0.roomsTF), not var_72_10)
+			setActive(arg_73_0:findTF(iter_73_1 .. "/tag", arg_73_0.roomsTF), not var_73_10)
 
-			if var_72_2 then
-				local var_72_11 = var_72_2 * (1 - 50 / var_72_2:Magnitude())
+			if var_73_2 then
+				local var_73_11 = var_73_2 * (1 - 50 / var_73_2:Magnitude())
 
-				setAnchoredPosition(var_72_8, var_72_11)
+				setAnchoredPosition(var_73_8, var_73_11)
 
-				local var_72_12 = math.rad2Deg * math.atan2(var_72_2.y, var_72_2.x)
+				local var_73_12 = math.rad2Deg * math.atan2(var_73_2.y, var_73_2.x)
 
-				setLocalEulerAngles(var_72_8:Find("arrow"), {
-					z = var_72_12
+				setLocalEulerAngles(var_73_8:Find("arrow"), {
+					z = var_73_12
 				})
 			end
 		end
 	end
 end
 
-function var_0_0.FocusNode(arg_73_0, arg_73_1, arg_73_2)
-	local var_73_0 = arg_73_0.roomsTF:Find(tostring(arg_73_1)).anchoredPosition * -1
+function var_0_0.FocusNode(arg_74_0, arg_74_1, arg_74_2)
+	local var_74_0 = arg_74_0.roomsTF:Find(tostring(arg_74_1)).anchoredPosition * -1
 
-	var_73_0.x = math.clamp(var_73_0.x, -arg_73_0.extendLimit.x, arg_73_0.extendLimit.x)
-	var_73_0.y = math.clamp(var_73_0.y, -arg_73_0.extendLimit.y, arg_73_0.extendLimit.y)
+	var_74_0.x = math.clamp(var_74_0.x, -arg_74_0.extendLimit.x, arg_74_0.extendLimit.x)
+	var_74_0.y = math.clamp(var_74_0.y, -arg_74_0.extendLimit.y, arg_74_0.extendLimit.y)
 
-	if arg_73_0.twFocusId then
-		LeanTween.cancel(arg_73_0.twFocusId)
+	if arg_74_0.twFocusId then
+		LeanTween.cancel(arg_74_0.twFocusId)
 
-		arg_73_0.twFocusId = nil
+		arg_74_0.twFocusId = nil
 	end
 
-	local var_73_1 = {}
+	local var_74_1 = {}
 
-	table.insert(var_73_1, function(arg_74_0)
-		SetCompomentEnabled(arg_73_0.mapTF, typeof(ScrollRect), false)
+	table.insert(var_74_1, function(arg_75_0)
+		SetCompomentEnabled(arg_74_0.mapTF, typeof(ScrollRect), false)
 
-		local var_74_0 = (arg_73_0.mapTF.anchoredPosition - var_73_0).magnitude
-		local var_74_1 = var_74_0 > 0 and var_74_0 / (40 * math.sqrt(var_74_0)) or 0
+		local var_75_0 = (arg_74_0.mapTF.anchoredPosition - var_74_0).magnitude
+		local var_75_1 = var_75_0 > 0 and var_75_0 / (40 * math.sqrt(var_75_0)) or 0
 
-		arg_73_0.twFocusId = LeanTween.move(arg_73_0.mapTF, Vector3(var_73_0.x, var_73_0.y, 0), var_74_1):setEase(LeanTweenType.easeInOutSine):setOnUpdate(System.Action_float(function(arg_75_0)
-			arg_73_0:onDragFunction()
-		end)):setOnComplete(System.Action(arg_74_0)).uniqueId
+		arg_74_0.twFocusId = LeanTween.move(arg_74_0.mapTF, Vector3(var_74_0.x, var_74_0.y, 0), var_75_1):setEase(LeanTweenType.easeInOutSine):setOnUpdate(System.Action_float(function(arg_76_0)
+			arg_74_0:onDragFunction()
+		end)):setOnComplete(System.Action(arg_75_0)).uniqueId
 	end)
-	seriesAsync(var_73_1, function()
-		SetCompomentEnabled(arg_73_0.mapTF, typeof(ScrollRect), true)
+	seriesAsync(var_74_1, function()
+		SetCompomentEnabled(arg_74_0.mapTF, typeof(ScrollRect), true)
 
-		if arg_73_2 then
-			arg_73_2()
+		if arg_74_2 then
+			arg_74_2()
 		end
 	end)
 end
 
-function var_0_0.SwitchMode(arg_77_0, arg_77_1, arg_77_2)
-	arg_77_0.mode = arg_77_1
+function var_0_0.SwitchMode(arg_78_0, arg_78_1, arg_78_2)
+	arg_78_0.mode = arg_78_1
 
-	local var_77_0 = arg_77_0.mode == var_0_0.MODE_NORMAL
+	local var_78_0 = arg_78_0.mode == var_0_0.MODE_NORMAL
 
-	setActive(arg_77_0.focusTF, var_77_0)
+	setActive(arg_78_0.focusTF, var_78_0)
 
-	local var_77_1 = arg_77_0.mapTF.localScale.x
-	local var_77_2 = var_77_0 and 1 or arg_77_0.fullFactor
+	local var_78_1 = arg_78_0.mapTF.localScale.x
+	local var_78_2 = var_78_0 and 1 or arg_78_0.fullFactor
 
-	arg_77_0:managedTween(LeanTween.value, nil, go(arg_77_0.mapTF), var_77_1, var_77_2, var_0_0.SCALE_ANIM_TIME):setEase(LeanTweenType.easeInOutSine):setOnUpdate(System.Action_float(function(arg_78_0)
-		setLocalScale(arg_77_0.mapTF, {
-			x = arg_78_0,
-			y = arg_78_0,
-			z = arg_78_0
+	arg_78_0:managedTween(LeanTween.value, nil, go(arg_78_0.mapTF), var_78_1, var_78_2, var_0_0.SCALE_ANIM_TIME):setEase(LeanTweenType.easeInOutSine):setOnUpdate(System.Action_float(function(arg_79_0)
+		setLocalScale(arg_78_0.mapTF, {
+			x = arg_79_0,
+			y = arg_79_0,
+			z = arg_79_0
 		})
 	end))
 
-	if not var_77_0 then
-		arg_77_0:managedTween(LeanTween.move, nil, go(arg_77_0.mapTF), Vector3(0, 0, 0), var_0_0.SCALE_ANIM_TIME):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(function()
-			if arg_77_2 then
-				arg_77_2()
+	if not var_78_0 then
+		arg_78_0:managedTween(LeanTween.move, nil, go(arg_78_0.mapTF), Vector3(0, 0, 0), var_0_0.SCALE_ANIM_TIME):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(function()
+			if arg_78_2 then
+				arg_78_2()
 			end
 		end))
-	elseif arg_77_2 then
-		arg_77_2()
+	elseif arg_78_2 then
+		arg_78_2()
 	end
 end
 
-function var_0_0.PlayAnim(arg_80_0, arg_80_1, arg_80_2)
+function var_0_0.PlayAnim(arg_81_0, arg_81_1, arg_81_2)
 	seriesAsync({
-		function(arg_81_0)
-			if not arg_80_0.swithAnimTF then
-				PoolMgr.GetInstance():GetUI("OtherworldCoverUI", true, function(arg_82_0)
-					arg_80_0.swithAnimTF = arg_82_0.transform
+		function(arg_82_0)
+			if not arg_81_0.swithAnimTF then
+				PoolMgr.GetInstance():GetUI("OtherworldCoverUI", true, function(arg_83_0)
+					arg_81_0.swithAnimTF = arg_83_0.transform
 
-					setParent(arg_80_0.swithAnimTF, arg_80_0._tf, false)
-					setActive(arg_80_0.swithAnimTF, false)
-					arg_81_0()
+					setParent(arg_81_0.swithAnimTF, arg_81_0._tf, false)
+					setActive(arg_81_0.swithAnimTF, false)
+					arg_82_0()
 				end)
 			else
-				arg_81_0()
+				arg_82_0()
 			end
 		end,
-		function(arg_83_0)
-			setActive(arg_80_0.swithAnimTF, true)
+		function(arg_84_0)
+			setActive(arg_81_0.swithAnimTF, true)
 
-			local var_83_0 = arg_80_0.swithAnimTF:Find("yuncaizhuanchang"):GetComponent(typeof(SpineAnimUI))
+			local var_84_0 = arg_81_0.swithAnimTF:Find("yuncaizhuanchang"):GetComponent(typeof(SpineAnimUI))
 
-			var_83_0:SetActionCallBack(function(arg_84_0)
-				if arg_84_0 == "finish" then
-					if arg_80_2 then
-						arg_80_2()
+			var_84_0:SetActionCallBack(function(arg_85_0)
+				if arg_85_0 == "finish" then
+					if arg_81_2 then
+						arg_81_2()
 					end
 
-					setActive(arg_80_0.swithAnimTF, false)
-				elseif arg_84_0 == "action" and arg_80_1 then
-					arg_80_1()
+					setActive(arg_81_0.swithAnimTF, false)
+				elseif arg_85_0 == "action" and arg_81_1 then
+					arg_81_1()
 				end
 			end)
-			var_83_0:SetAction("action", 0)
+			var_84_0:SetAction("action", 0)
 		end
 	}, function()
 		return
 	end)
 end
 
-function var_0_0.onBackPressed(arg_86_0)
-	if arg_86_0.timePage and arg_86_0.timePage:GetLoaded() and arg_86_0.timePage:isShowing() then
+function var_0_0.onBackPressed(arg_87_0)
+	if arg_87_0.timePage and arg_87_0.timePage:GetLoaded() and arg_87_0.timePage:isShowing() then
 		return
 	end
 
-	var_0_0.super.onBackPressed(arg_86_0)
+	var_0_0.super.onBackPressed(arg_87_0)
 end
 
-function var_0_0.willExit(arg_87_0)
-	arg_87_0.timePage:Destroy()
+function var_0_0.willExit(arg_88_0)
+	arg_88_0.timePage:Destroy()
 
-	arg_87_0.timePage = nil
+	arg_88_0.timePage = nil
 
-	arg_87_0.roomPage:Destroy()
+	arg_88_0.roomPage:Destroy()
 
-	arg_87_0.roomPage = nil
+	arg_88_0.roomPage = nil
 
-	for iter_87_0, iter_87_1 in pairs(arg_87_0.roomChars) do
-		if iter_87_1[1] and iter_87_1[2] then
-			PoolMgr.GetInstance():ReturnSpineChar(iter_87_1[1], iter_87_1[2])
+	for iter_88_0, iter_88_1 in pairs(arg_88_0.roomChars) do
+		if iter_88_1[1] and iter_88_1[2] then
+			PoolMgr.GetInstance():ReturnSpineChar(iter_88_1[1], iter_88_1[2])
 		end
 	end
 
-	arg_87_0.roomChars = nil
+	arg_88_0.roomChars = nil
 
-	if arg_87_0.finishTimer ~= nil then
-		arg_87_0.finishTimer:Stop()
+	if arg_88_0.finishTimer ~= nil then
+		arg_88_0.finishTimer:Stop()
 
-		arg_87_0.finishTimer = nil
+		arg_88_0.finishTimer = nil
 	end
 end
 

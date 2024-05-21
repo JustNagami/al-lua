@@ -22,7 +22,7 @@ function var_0_0.OnFirstFlush(arg_1_0)
 			setActive(var_2_3, arg_2_1 < arg_1_0.nday)
 		end
 	end)
-	setActive(arg_1_0.bg:Find("btn_more"), PLATFORM_CODE == PLATFORM_CH and LuaHelper.GetCHPackageType() == PACKAGE_TYPE_BILI and pg.TimeMgr.GetInstance():inTime(arg_1_0.activity:getConfig("config_client")[2]))
+	setActive(arg_1_0.bg:Find("btn_more"), false)
 	onButton(arg_1_0, arg_1_0.bg:Find("btn_more"), function()
 		Application.OpenURL(arg_1_0.activity:getConfig("config_client")[1])
 	end, SFX_CONFIRM)
