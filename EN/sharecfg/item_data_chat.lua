@@ -80,6 +80,14 @@ pg.item_data_chat = {
 		desc = "<color=#ffffff>A piece commemorating an unforgettable soirée night, awarded to those who gracefully delivered invitations far and wide.</color>\n<color=#A7A7AAFF>\"Castle of Celebrations\" event reward.</color>",
 		scene = {}
 	},
+	[606] = {
+		time_limit_type = 0,
+		name = "Ebbing Waves",
+		id = 606,
+		time_second = 0,
+		desc = "The waves flow and the winds blow at sea, the best place to be! \n<color=#A7A7AAFF>Obtained in the \"Pleasure, Leisure, and Treasure\" event.</color>",
+		scene = {}
+	},
 	[10001] = {
 		time_limit_type = 0,
 		name = "Extreme Challenge - Gemini",
@@ -187,6 +195,7 @@ pg.item_data_chat = {
 		301,
 		602,
 		603,
+		606,
 		10001,
 		10002,
 		10003,

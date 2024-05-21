@@ -36,6 +36,7 @@ function var_0_0.init(arg_2_0)
 
 	setActive(arg_2_0.emojiIconItem, false)
 
+	arg_2_0.parentTr = arg_2_0._tf.parent
 	arg_2_0.resource = arg_2_0:findTF("frame/resource")
 	arg_2_0.frame = arg_2_0:findTF("frame")
 	arg_2_0.frame.position = arg_2_0.contextData.pos or Vector3(0, 0, 0)
@@ -49,10 +50,15 @@ function var_0_0.didEnter(arg_3_0)
 		arg_3_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CANCEL)
 	arg_3_0:display()
-	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf, false, {
-		groupName = arg_3_0:getGroupNameFromData(),
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+
+	if getProxy(SettingsProxy):IsMellowStyle() then
+		setParent(arg_3_0._tf, pg.UIMgr.GetInstance().OverlayMain)
+	else
+		pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf, false, {
+			groupName = arg_3_0:getGroupNameFromData(),
+			weight = LayerWeightConst.SECOND_LAYER
+		})
+	end
 end
 
 function var_0_0.display(arg_5_0)
@@ -373,7 +379,12 @@ function var_0_0.willExit(arg_30_0)
 	_.each(arg_30_0.tplCaches, function(arg_32_0)
 		arg_30_0:clearItem(arg_32_0)
 	end)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_30_0._tf)
+
+	if getProxy(SettingsProxy):IsMellowStyle() then
+		setParent(arg_30_0._tf, arg_30_0.parentTr)
+	else
+		pg.UIMgr.GetInstance():UnblurPanel(arg_30_0._tf)
+	end
 end
 
 return var_0_0

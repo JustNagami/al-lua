@@ -121,7 +121,7 @@ function var_0_0.updateRed(arg_7_0)
 end
 
 function var_0_0.checkNotice(arg_8_0, arg_8_1)
-	return arg_8_1.type and arg_8_1.type > 0 and arg_8_1.type < 4 and (arg_8_1.paramType == nil or arg_8_1.paramType == 1 and type(arg_8_1.param) == "string" or arg_8_1.paramType == 2 and type(arg_8_1.param) == "table" or arg_8_1.paramType == 3 and type(arg_8_1.param) == "number")
+	return arg_8_1.type and arg_8_1.type > 0 and arg_8_1.type < 4 and (arg_8_1.paramType == nil or arg_8_1.paramType == 1 and type(arg_8_1.param) == "string" or arg_8_1.paramType == 2 and type(arg_8_1.param) == "string" or arg_8_1.paramType == 3 and type(arg_8_1.param) == "number")
 end
 
 function var_0_0.initNotices(arg_9_0, arg_9_1)
@@ -139,11 +139,7 @@ function var_0_0.initNotices(arg_9_0, arg_9_1)
 			if var_9_3 == 1 then
 				var_9_4 = string.match(var_9_0, "param%s*=%s*'(.*)'")
 			elseif var_9_3 == 2 then
-				var_9_4 = string.match(var_9_0, "param%s*=(.*)/>")
-
-				if var_9_4 then
-					var_9_4 = ParseTable(var_9_4) or var_9_4
-				end
+				var_9_4 = string.match(var_9_0, "param%s*=%s*'(.*)'")
 			elseif var_9_3 == 3 then
 				var_9_4 = string.match(var_9_0, "param%s*=%s*(%d+)")
 				var_9_4 = var_9_4 and tonumber(var_9_4) or var_9_4
@@ -346,11 +342,7 @@ function var_0_0.setNoticeDetail(arg_18_0, arg_18_1)
 					Application.OpenURL(arg_18_1.param)
 					arg_18_0:emit(NewBulletinBoardMediator.TRACK_OPEN_URL, arg_18_1.track)
 				elseif arg_18_1.paramType == 2 then
-					if #arg_18_1.param < 2 then
-						arg_18_0:emit(NewBulletinBoardMediator.GO_SCENE, arg_18_1.param[1])
-					else
-						arg_18_0:emit(NewBulletinBoardMediator.GO_SCENE, arg_18_1.param[1], arg_18_1.param[2])
-					end
+					arg_18_0:emit(NewBulletinBoardMediator.GO_SCENE, arg_18_1.param)
 				elseif arg_18_1.paramType == 3 then
 					arg_18_0:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.ACTIVITY, {
 						id = arg_18_1.param

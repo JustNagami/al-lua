@@ -258,6 +258,7 @@ var_0_2.FRIENDSCORE_ID_FIELD = var_0_0.FieldDescriptor()
 var_0_2.FRIENDSCORE_NAME_FIELD = var_0_0.FieldDescriptor()
 var_0_2.FRIENDSCORE_SCORE_FIELD = var_0_0.FieldDescriptor()
 var_0_2.FRIENDSCORE_DISPLAY_FIELD = var_0_0.FieldDescriptor()
+var_0_2.FRIENDSCORE_TIME_DATA_FIELD = var_0_0.FieldDescriptor()
 var_0_2.SC_26001_ID_FIELD.name = "id"
 var_0_2.SC_26001_ID_FIELD.full_name = "p26.sc_26001.id"
 var_0_2.SC_26001_ID_FIELD.number = 1
@@ -1768,7 +1769,7 @@ var_0_2.MINIGAMEHUB_MAXSCORES_FIELD.index = 4
 var_0_2.MINIGAMEHUB_MAXSCORES_FIELD.label = 3
 var_0_2.MINIGAMEHUB_MAXSCORES_FIELD.has_default_value = false
 var_0_2.MINIGAMEHUB_MAXSCORES_FIELD.default_value = {}
-var_0_2.MINIGAMEHUB_MAXSCORES_FIELD.message_type = var_0_1.KVDATA
+var_0_2.MINIGAMEHUB_MAXSCORES_FIELD.message_type = var_0_1.KVDATA2
 var_0_2.MINIGAMEHUB_MAXSCORES_FIELD.type = 11
 var_0_2.MINIGAMEHUB_MAXSCORES_FIELD.cpp_type = 10
 MINIGAMEHUB.name = "minigamehub"
@@ -2663,6 +2664,15 @@ var_0_2.FRIENDSCORE_DISPLAY_FIELD.default_value = nil
 var_0_2.FRIENDSCORE_DISPLAY_FIELD.message_type = var_0_1.DISPLAYINFO
 var_0_2.FRIENDSCORE_DISPLAY_FIELD.type = 11
 var_0_2.FRIENDSCORE_DISPLAY_FIELD.cpp_type = 10
+var_0_2.FRIENDSCORE_TIME_DATA_FIELD.name = "time_data"
+var_0_2.FRIENDSCORE_TIME_DATA_FIELD.full_name = "p26.friendscore.time_data"
+var_0_2.FRIENDSCORE_TIME_DATA_FIELD.number = 5
+var_0_2.FRIENDSCORE_TIME_DATA_FIELD.index = 4
+var_0_2.FRIENDSCORE_TIME_DATA_FIELD.label = 2
+var_0_2.FRIENDSCORE_TIME_DATA_FIELD.has_default_value = false
+var_0_2.FRIENDSCORE_TIME_DATA_FIELD.default_value = 0
+var_0_2.FRIENDSCORE_TIME_DATA_FIELD.type = 13
+var_0_2.FRIENDSCORE_TIME_DATA_FIELD.cpp_type = 3
 FRIENDSCORE.name = "friendscore"
 FRIENDSCORE.full_name = "p26.friendscore"
 FRIENDSCORE.nested_types = {}
@@ -2671,7 +2681,8 @@ FRIENDSCORE.fields = {
 	var_0_2.FRIENDSCORE_ID_FIELD,
 	var_0_2.FRIENDSCORE_NAME_FIELD,
 	var_0_2.FRIENDSCORE_SCORE_FIELD,
-	var_0_2.FRIENDSCORE_DISPLAY_FIELD
+	var_0_2.FRIENDSCORE_DISPLAY_FIELD,
+	var_0_2.FRIENDSCORE_TIME_DATA_FIELD
 }
 FRIENDSCORE.is_extendable = false
 FRIENDSCORE.extensions = {}

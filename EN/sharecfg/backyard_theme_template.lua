@@ -200,7 +200,7 @@ pg.backyard_theme_template = {
 	[7] = {
 		Cfg_1 = 5,
 		name = "Summer Fun",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 7,
 		comfortable = 104,
@@ -718,7 +718,7 @@ pg.backyard_theme_template = {
 	[20] = {
 		Cfg_1 = 5,
 		name = "Manjuu Park",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 20,
 		comfortable = 0,
@@ -795,7 +795,7 @@ pg.backyard_theme_template = {
 	[22] = {
 		Cfg_1 = 5,
 		name = "Royal Metropolis ",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 22,
 		comfortable = 0,
@@ -837,7 +837,7 @@ pg.backyard_theme_template = {
 	[23] = {
 		Cfg_1 = 5,
 		name = "Playground",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 23,
 		comfortable = 0,
@@ -877,7 +877,7 @@ pg.backyard_theme_template = {
 	[24] = {
 		Cfg_1 = 5,
 		name = "Cat Café",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 24,
 		comfortable = 0,
@@ -925,7 +925,7 @@ pg.backyard_theme_template = {
 	[27] = {
 		Cfg_1 = 5,
 		name = "Summer Water Park",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 27,
 		comfortable = 0,
@@ -1082,7 +1082,7 @@ pg.backyard_theme_template = {
 	[30] = {
 		Cfg_1 = 5,
 		name = "Rainbow Room",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 30,
 		comfortable = 0,
@@ -1835,7 +1835,7 @@ pg.backyard_theme_template = {
 	[47] = {
 		Cfg_1 = 5,
 		name = "The Big Leagues",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 47,
 		comfortable = 0,
@@ -2490,7 +2490,7 @@ pg.backyard_theme_template = {
 	[63] = {
 		Cfg_1 = 5,
 		name = "Manjuu Pizzeria ",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 63,
 		comfortable = 0,
@@ -2609,7 +2609,7 @@ pg.backyard_theme_template = {
 	[68] = {
 		Cfg_1 = 5,
 		name = "Manjuuversal Studios",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 68,
 		comfortable = 0,
@@ -3124,7 +3124,7 @@ pg.backyard_theme_template = {
 	[81] = {
 		Cfg_1 = 5,
 		name = "Manjuu High School",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 81,
 		comfortable = 0,
@@ -3343,7 +3343,7 @@ pg.backyard_theme_template = {
 	[86] = {
 		Cfg_1 = 5,
 		name = "Dragon Empery Estate",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 86,
 		comfortable = 0,
@@ -3382,7 +3382,7 @@ pg.backyard_theme_template = {
 	[87] = {
 		Cfg_1 = 5,
 		name = "Manjuu Campus",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 87,
 		comfortable = 0,
@@ -3418,7 +3418,7 @@ pg.backyard_theme_template = {
 	[88] = {
 		Cfg_1 = 5,
 		name = "The Count's Castle",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 88,
 		comfortable = 0,
@@ -3459,7 +3459,7 @@ pg.backyard_theme_template = {
 	[89] = {
 		Cfg_1 = 5,
 		name = "Empery Chic",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 89,
 		comfortable = 0,
@@ -3505,7 +3505,7 @@ pg.backyard_theme_template = {
 	[90] = {
 		Cfg_1 = 5,
 		name = "Fairy Tale Forest",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 90,
 		comfortable = 0,
@@ -3544,7 +3544,7 @@ pg.backyard_theme_template = {
 	[91] = {
 		Cfg_1 = 5,
 		name = "Manjuu Ballroom",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 91,
 		comfortable = 0,
@@ -3627,7 +3627,7 @@ pg.backyard_theme_template = {
 	[93] = {
 		Cfg_1 = 5,
 		name = "Breezy Summer",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 93,
 		comfortable = 0,
@@ -3666,7 +3666,7 @@ pg.backyard_theme_template = {
 	[94] = {
 		Cfg_1 = 5,
 		name = "Manjuu Academy Festival",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 94,
 		comfortable = 0,
@@ -3756,7 +3756,7 @@ pg.backyard_theme_template = {
 	[96] = {
 		Cfg_1 = 5,
 		name = "Beach Cabin",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 96,
 		comfortable = 0,
@@ -3796,7 +3796,7 @@ pg.backyard_theme_template = {
 	[97] = {
 		Cfg_1 = 5,
 		name = "Gourmet Garden",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 97,
 		comfortable = 0,
@@ -3838,7 +3838,7 @@ pg.backyard_theme_template = {
 	[98] = {
 		Cfg_1 = 5,
 		name = "Royal Academy",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 98,
 		comfortable = 0,
@@ -3897,7 +3897,7 @@ pg.backyard_theme_template = {
 	[99] = {
 		Cfg_1 = 5,
 		name = "Legendary Bathhouse",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 99,
 		comfortable = 0,
@@ -4031,7 +4031,7 @@ pg.backyard_theme_template = {
 	[102] = {
 		Cfg_1 = 5,
 		name = "Palais Élégant",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 102,
 		comfortable = 0,
@@ -4125,7 +4125,7 @@ pg.backyard_theme_template = {
 		new = 1,
 		icon = "hdcthemeicon",
 		deblocking = 1,
-		order = 105,
+		order = 98,
 		ids = {
 			304001,
 			304002,
@@ -4182,7 +4182,7 @@ pg.backyard_theme_template = {
 		new = 1,
 		icon = "slrzthemeicon",
 		deblocking = 1,
-		order = 106,
+		order = 99,
 		ids = {
 			305001,
 			305002,
@@ -4221,7 +4221,7 @@ pg.backyard_theme_template = {
 		new = 1,
 		icon = "yydthemeicon",
 		deblocking = 1,
-		order = 107,
+		order = 100,
 		ids = {
 			306001,
 			306002,
@@ -4253,7 +4253,7 @@ pg.backyard_theme_template = {
 		new = 1,
 		icon = "cj6themeicon",
 		deblocking = 1,
-		order = 108,
+		order = 101,
 		ids = {
 			307001,
 			307002,
@@ -4285,7 +4285,7 @@ pg.backyard_theme_template = {
 		new = 1,
 		icon = "qpthemeicon",
 		deblocking = 1,
-		order = 109,
+		order = 102,
 		ids = {
 			308001,
 			308002,
@@ -4327,7 +4327,7 @@ pg.backyard_theme_template = {
 		new = 1,
 		icon = "mwthemeicon",
 		deblocking = 1,
-		order = 110,
+		order = 103,
 		ids = {
 			309001,
 			309002,
@@ -4362,7 +4362,7 @@ pg.backyard_theme_template = {
 		new = 1,
 		icon = "ido3themeicon",
 		deblocking = 1,
-		order = 111,
+		order = 104,
 		ids = {
 			310001,
 			310002,
@@ -4391,6 +4391,41 @@ pg.backyard_theme_template = {
 			310308,
 			310309,
 			310310
+		}
+	},
+	[111] = {
+		Cfg_1 = 5,
+		name = "Holiday Cruise",
+		hot = 1,
+		is_view = 1,
+		id = 111,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "Take to the sea and feel the breeze, smell the air, and bask in luxury!",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "yothemeicon",
+		deblocking = 1,
+		order = 105,
+		ids = {
+			311001,
+			311002,
+			311101,
+			311102,
+			311103,
+			311104,
+			311105,
+			311106,
+			311107,
+			311108,
+			311109,
+			311110,
+			311111,
+			311112,
+			311113,
+			311114,
+			311115
 		}
 	},
 	all = {
@@ -4491,6 +4526,7 @@ pg.backyard_theme_template = {
 		107,
 		108,
 		109,
-		110
+		110,
+		111
 	}
 }

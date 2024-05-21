@@ -458,6 +458,5 @@ end
 
 function var_0_2.AddModel(arg_36_0, arg_36_1)
 	var_0_2.super.AddModel(arg_36_0, arg_36_1)
-
-	arg_36_0._tf.position = arg_36_0._unitData:GetPosition()
+	arg_36_0:UpdatePosition()
 end

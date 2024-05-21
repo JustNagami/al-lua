@@ -2223,7 +2223,30 @@ function temp()
 						a = {
 							d = {
 								o = {
-									this = true
+									this = true,
+									[" "] = {
+										["("] = {
+											R = {
+												e = {
+													t = {
+														r = {
+															o = {
+																f = {
+																	i = {
+																		t = {
+																			[")"] = {
+																				this = true
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
 								}
 							}
 						}
@@ -3156,6 +3179,13 @@ function temp()
 						i = {
 							this = true
 						}
+					},
+					d = {
+						o = {
+							r = {
+								this = true
+							}
+						}
 					}
 				}
 			}
@@ -3323,6 +3353,15 @@ function temp()
 								r = {
 									this = true
 								}
+							}
+						}
+					}
+				},
+				u = {
+					r = {
+						e = {
+							t = {
+								this = true
 							}
 						}
 					}
@@ -4074,6 +4113,15 @@ function temp()
 									}
 								}
 							}
+						}
+					}
+				}
+			},
+			s = {
+				a = {
+					c = {
+						e = {
+							this = true
 						}
 					}
 				}
@@ -4923,6 +4971,15 @@ function temp()
 						}
 					}
 				},
+				n = {
+					n = {
+						u = {
+							s = {
+								this = true
+							}
+						}
+					}
+				},
 				s = {
 					t = {
 						this = true
@@ -5096,7 +5153,18 @@ function temp()
 			a = {
 				r = {
 					n = {
-						this = true
+						this = true,
+						[" "] = {
+							M = {
+								E = {
+									T = {
+										A = {
+											this = true
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 			}
@@ -9008,6 +9076,13 @@ function temp()
 							}
 						}
 					}
+				}
+			}
+		},
+		p = {
+			é = {
+				e = {
+					this = true
 				}
 			}
 		}

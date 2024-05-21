@@ -943,4 +943,23 @@ function var_0_0.SetEducateCharacter(arg_96_0, arg_96_1)
 	arg_96_0.educateCharacter = arg_96_1
 end
 
+function var_0_0.CanGetResource(arg_97_0, arg_97_1)
+	local var_97_0 = id2res(arg_97_1)
+	local var_97_1
+
+	if arg_97_1 == 1 then
+		var_97_1 = arg_97_0:getLevelMaxGold()
+	elseif arg_97_1 == 2 then
+		var_97_1 = arg_97_0:getLevelMaxOil()
+	else
+		assert(false)
+	end
+
+	if var_97_1 <= arg_97_0[var_97_0] then
+		return false
+	end
+
+	return true
+end
+
 return var_0_0

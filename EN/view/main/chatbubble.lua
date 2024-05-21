@@ -18,6 +18,11 @@ function var_0_0.init(arg_2_0)
 	arg_2_0.dutyTF = findTF(arg_2_0.tf, "desc/duty")
 	arg_2_0.channel = findTF(arg_2_0.tf, "desc/channel")
 	arg_2_0.chatBgWidth = 665
+	arg_2_0.chatFrameTr = findTF(arg_2_0.tf, "chat_fram")
+
+	if IsNil(arg_2_0.chatFrameTr) then
+		arg_2_0.chatFrameTr = arg_2_0.tf
+	end
 end
 
 function var_0_0.update(arg_3_0, arg_3_1)
@@ -199,7 +204,7 @@ function var_0_0.update(arg_3_0, arg_3_1)
 				arg_7_0:GetComponent(typeof(LayoutElement)).preferredWidth = arg_3_0.chatBgWidth
 				arg_7_0.name = var_3_16
 
-				setParent(arg_7_0, arg_3_0.tf, false)
+				setParent(arg_7_0, arg_3_0.chatFrameTr, false)
 				tf(arg_7_0):SetAsFirstSibling()
 				Canvas.ForceUpdateCanvases()
 				arg_3_0:OnChatFrameLoaded(arg_7_0)
@@ -226,7 +231,7 @@ function var_0_0.dispose(arg_11_0)
 	end
 
 	if arg_11_0.isLoadChatBg then
-		local var_11_2 = arg_11_0.tf:GetChild(0).gameObject
+		local var_11_2 = arg_11_0.chatFrameTr:GetChild(0).gameObject
 
 		PoolMgr.GetInstance():ReturnPrefab("ChatFrame/" .. var_11_2.name, var_11_2.name, var_11_2)
 

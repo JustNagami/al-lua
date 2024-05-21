@@ -13,7 +13,14 @@ function var_0_0.Execute(arg_1_0, arg_1_1)
 	end
 
 	PlayerPrefs.Save()
+	arg_1_0:FixPlayerPrefsKey()
 	arg_1_1()
+end
+
+function var_0_0.FixPlayerPrefsKey(arg_2_0)
+	local var_2_0 = getProxy(PlayerProxy):getRawData()
+
+	USAGE_NEW_MAINUI = "USAGE_NEW_MAINUI" .. var_2_0.id
 end
 
 return var_0_0

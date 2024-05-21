@@ -3654,7 +3654,7 @@ pg.child_plan = {
 	},
 	[1210] = {
 		cost_resource2 = 4,
-		name = "Basic Art",
+		name = "Basic Sketching",
 		icon = "xingquban",
 		type = 2,
 		rare = 1,
@@ -3753,7 +3753,7 @@ pg.child_plan = {
 	},
 	[1211] = {
 		cost_resource2 = 5,
-		name = "Intermediate Art",
+		name = "Intermediate Sketching",
 		icon = "xingquban",
 		type = 2,
 		rare = 2,
@@ -3855,7 +3855,7 @@ pg.child_plan = {
 	},
 	[1212] = {
 		cost_resource2 = 5,
-		name = "Advanced Art",
+		name = "Advanced Sketching",
 		icon = "xingquban",
 		type = 2,
 		rare = 3,

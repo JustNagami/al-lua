@@ -20,12 +20,25 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.leisureCounter = arg_1_0._tf:Find("frame/counter/leisure/Text"):GetComponent(typeof(Text))
 
 	local var_1_0 = arg_1_0._tf:Find("list")
+	local var_1_1 = var_1_0:GetChild(0)
 
-	arg_1_0.uilist = UIItemList.New(var_1_0, var_1_0:GetChild(0))
+	arg_1_0.uilist = UIItemList.New(var_1_0, var_1_1)
 
 	setActive(arg_1_0.finishedCounterContainer, false)
 	setActive(arg_1_0.ongoingCounterContainer, false)
 	setActive(arg_1_0.leisureCounterContainer, false)
+
+	if getProxy(SettingsProxy):IsMellowStyle() then
+		setText(arg_1_0.goBtn:Find("Image"), i18n("commission_label_go_mellow"))
+		setText(arg_1_0.finishedBtn:Find("Image"), i18n("commission_label_finish_mellow"))
+		setText(var_1_1:Find("unlock/leisure/go_btn/Image"), i18n("commission_label_go_mellow"))
+		setText(var_1_1:Find("unlock/finished/finish_btn/Image"), i18n("commission_label_finish_mellow"))
+	else
+		setText(arg_1_0.goBtn:Find("Image"), i18n("commission_label_go"))
+		setText(arg_1_0.finishedBtn:Find("Image"), i18n("commission_label_finish"))
+		setText(var_1_1:Find("unlock/leisure/go_btn/Image"), i18n("commission_label_go"))
+		setText(var_1_1:Find("unlock/finished/finish_btn/Image"), i18n("commission_label_finish"))
+	end
 
 	arg_1_0.timers = {}
 end

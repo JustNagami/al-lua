@@ -12,7 +12,8 @@
 		{
 			type = "BattleBuffFixVelocity",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				group = 8003,

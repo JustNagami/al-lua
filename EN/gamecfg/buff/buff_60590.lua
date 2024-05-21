@@ -28,6 +28,16 @@
 				skill_id = 60590,
 				time = 10
 			}
+		},
+		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				tag = "StrangeDeviceD"
+			}
 		}
 	}
 }

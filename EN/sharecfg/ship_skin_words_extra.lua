@@ -260,7 +260,12 @@ pg.ship_skin_words_extra = setmetatable({
 		207053,
 		307140,
 		403140,
-		299020
+		299020,
+		805030,
+		901070,
+		803020,
+		901050,
+		901060
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -18059,6 +18064,381 @@ pg.base.ship_skin_words_extra = {
 			{
 				1100,
 				"Never would I have imagined this – that one day I, a loner with no one relying on her, would be mulling over my future together with you. Thank you, for accepting me and giving meaning to my life. You are my greatest love."
+			}
+		}
+	},
+	[805030] = {
+		feeling4 = "",
+		feeling3 = "",
+		feeling1 = "",
+		main = "",
+		battle = "",
+		profile = "",
+		unlock = "",
+		feeling2 = "",
+		skill = "",
+		hp_warning = "",
+		id = 805030,
+		lose = "",
+		login = {
+			{
+				1100,
+				"Good, you're back. One is ready to commit one's body to the holy task... of... Commit one's body to... I didn't mean to phrase it like that!"
+			}
+		},
+		win_mvp = {
+			{
+				1100,
+				"A holy task has been seen through. Now one shall– Whuah?! Y-you can't just appear in my line of sight without warning!"
+			}
+		},
+		home = {
+			{
+				1100,
+				"(No-no-no-no... You're going to lose control of your emotion module before the Commander even comes ba– Ohhh! Why?! Why does just imagining the Commander looking triumphant turn me on like this?!)"
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"Hahh... C-Commander... H-how long are you going to keep patting me?"
+			}
+		},
+		detail = {
+			{
+				1100,
+				"(The Commander just keeps ogling my unmasked face... I-I can't do this... One must get back to battle, to the holy tasks, before... before I start having the wildest fantasies...)"
+			}
+		},
+		upgrade = {
+			{
+				1100,
+				"One's emotion module has been upgraded... Even if it can only last one second longer, that still counts as an upgrade!"
+			}
+		},
+		main_extra = {
+			{
+				1100,
+				"I'm starting to feel... warm. H-h-how am I supposed to deal with the heat? Oh, I know! Transfer it to something with a colder surface temperature! C-Commander, I need your embrace!|\"The noble blade of the Orthodoxy and the Commander's protector.\" One could add that to one's preamble... Ahem. This one is a Sacrament of the unified Orthodoxy, an unreachable dream, the guardian of the Holy See, and the noble blade that protects the Commander!|Are there really no holy tasks for this one to perform? You know, I'd really like some holy tasks. A buuunch more... ♡|The secretary manual describes а procedure called \"the wake-up call\"... D-don't you think it's vulgar? ...What part of it? A-all of it, the whole thing!"
+			}
+		},
+		touch = {
+			{
+				1100,
+				"Ahh... C-Commander... Touch the darkness inside me... ♡"
+			}
+		},
+		expedition = {
+			{
+				1100,
+				"Come again? The commission team is back? Forgive me... I was wholly absorbed in beaming my brainwaves into you."
+			}
+		},
+		mission = {
+			{
+				1100,
+				"There are holy tasks to be done. The punishment for neglecting them is... Oh god... Stop thinking primal thoughts, brain! ...C-Commander?! Sorry for that... I got distracted."
+			}
+		},
+		mission_complete = {
+			{
+				1100,
+				"If one claims these rewards now, one shall receive a reward later... R-reward... Noooo! My emotion module and logic pathways are going to explode!"
+			}
+		},
+		mail = {
+			{
+				1100,
+				"A new letter? One wonders who it's from. Perhaps it's the very letter that this one wrote earlier... Don't open it! I need to read it first!"
+			}
+		},
+		touch2 = {
+			{
+				1100,
+				"Status... report... O-one has already overheated... Pl-please help repair my frame... ♡"
+			}
+		},
+		feeling5 = {
+			{
+				1100,
+				"Da-dim... Da-dum... Da-dim ––Now, to hack right into Commander's emotion module... Wh-why'd I take my mask off? Um... Well, it's to make you lower your guard... Ahaha! Ahh~♡ Ahhhn~♡... Haah... Commencing physical synchronization~♡!"
+			}
+		}
+	},
+	[901070] = {
+		upgrade = "",
+		feeling3 = "",
+		feeling4 = "",
+		main = "",
+		feeling1 = "",
+		win_mvp = "",
+		profile = "",
+		unlock = "",
+		feeling2 = "",
+		battle = "",
+		skill = "",
+		hp_warning = "",
+		id = 901070,
+		lose = "",
+		detail = "",
+		login = {
+			{
+				1100,
+				"Commandeeer, take off those stuffy clothes and get naked! Feel the cool air when you're working! Mmhh... Ahh..."
+			}
+		},
+		home = {
+			{
+				1100,
+				"Welcome back, Commander! Good job on that mission. *sniff sniff*... Aahh! I'll never get tired of your smell!"
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"Mmhh... Commander... That feels sooo good♥"
+			}
+		},
+		main_extra = {
+			{
+				1100,
+				"That's right, I'm the kind of girl who goes buck naked when she can. Heheh... What can I say? I'm sensitive to heat.|Since you don't mind how sweaty I am... if you want, I can do my work while sitting on your lap today.|*sniiiff*... *sniiiff*... You smell really good today... I could lick you clean... Ahah♥|Commander, can I engrave the phrase \"the path to salvation lies inside\" on my axe? ...I should write it on my cloak instead? You really think so?"
+			}
+		},
+		touch = {
+			{
+				1100,
+				"Commandeeer, touch me more! Heheh... Ahh... Ohh... Heheheh..."
+			}
+		},
+		expedition = {
+			{
+				1100,
+				"The commission team is back. Go talk to them and get back here quickly... so we can be alone♥"
+			}
+		},
+		mission = {
+			{
+				1100,
+				"Commaaander, how about you give me a rousing kind of mission?"
+			}
+		},
+		mission_complete = {
+			{
+				1100,
+				"Don't forget to claim your rewards after completing a mission. Speaking of rewards, I've got a reward for you that'll make your knees weak♥"
+			}
+		},
+		mail = {
+			{
+				1100,
+				"A letter for you. Heheh... My coat doesn't have any pockets, so I just carried it under my armpit♥"
+			}
+		},
+		touch2 = {
+			{
+				1100,
+				"Hahh... Ahh... Commandeeer! If I pass out, just keep holding me tightly... ♥"
+			}
+		},
+		feeling5 = {
+			{
+				1100,
+				"Commander, about my secretary work... Heheh... Same place, same time as usual. Doesn't matter if you come empty-handed, I'll relieve you of your troubles all the same♥"
+			}
+		}
+	},
+	[803020] = {
+		unlock = "",
+		feeling3 = "",
+		lose = "",
+		feeling4 = "",
+		expedition = "",
+		win_mvp = "",
+		feeling1 = "",
+		mission = "",
+		profile = "",
+		battle = "",
+		skill = "",
+		mail = "",
+		touch = "",
+		main = "",
+		upgrade = "",
+		mission_complete = "",
+		feeling2 = "",
+		hp_warning = "",
+		id = 803020,
+		detail = "",
+		login = {
+			{
+				1100,
+				"Greetings, Swordbearer. What are your plans for today?"
+			}
+		},
+		home = {
+			{
+				1100,
+				"Welcome back. You look like you're in a good mood. Another victory, I'm guessing?"
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"(whispering) How in the world did I come to enjoy this...?"
+			}
+		},
+		main_extra = {
+			{
+				1100,
+				"I'm lucky to be able to travel with you... Once this is all over, I'd like to see this world again.|When I let go for a moment and relax, I feel the world has changed... You say the way I talk to you has changed, too? I-I would ask that you not mention that!|Heehee, the strings I pull are just the laws of science... This is just a bit of sophistry on my part."
+			}
+		},
+		touch2 = {
+			{
+				1100,
+				"...I'm happy to do whatever you want..."
+			}
+		},
+		feeling5 = {
+			{
+				1100,
+				"Kh... Wh-why are these \"crane games\" so much more devious than even Sisyphus's trial?! S-stop laughing and help me, damn you!"
+			}
+		}
+	},
+	[901050] = {
+		unlock = "",
+		feeling3 = "",
+		feeling4 = "",
+		feeling1 = "",
+		expedition = "",
+		win_mvp = "",
+		profile = "",
+		mission = "",
+		battle = "",
+		skill = "",
+		mail = "",
+		lose = "",
+		main = "",
+		upgrade = "",
+		mission_complete = "",
+		headtouch = "",
+		feeling2 = "",
+		hp_warning = "",
+		id = 901050,
+		detail = "",
+		login = {
+			{
+				1100,
+				"Commander! I'm feeling reeeally needy today. Heehee... Does hearing that excite you? You really are a simple person."
+			}
+		},
+		home = {
+			{
+				1100,
+				"Welcome back. I made you tea! Whoa! You drank it all in one go. Heehee, not very scared that I spiked it with something, are you?"
+			}
+		},
+		main_extra = {
+			{
+				1100,
+				"When you'll get to see a new trick? Soon, I can tell you that much! I've been researching ways to make a part of your body \"disappear\" into something else. Look forward to it!|I've heard that resting your head on your partner's chest helps you relax! I wanna see if it's true or not! Oh, you could do it to me, too, if you want."
+			}
+		},
+		touch = {
+			{
+				1100,
+				"Hm? You saying you wanna chat with me?"
+			}
+		},
+		touch2 = {
+			{
+				1100,
+				"You've really figured out how to use those hands!"
+			}
+		},
+		feeling5 = {
+			{
+				1100,
+				"You think I've gotten more mischievous? Heheh, is that a problem? You know, we swore an oath together, which means I should be annoying you more, if anything... Yeah, right. Fine, I'm sorry! I apologize!"
+			}
+		}
+	},
+	[901060] = {
+		unlock = "",
+		feeling3 = "",
+		mail = "",
+		main = "",
+		feeling1 = "",
+		upgrade = "",
+		mission_complete = "",
+		mission = "",
+		feeling2 = "",
+		feeling4 = "",
+		skill = "",
+		hp_warning = "",
+		id = 901060,
+		lose = "",
+		profile = "",
+		battle = "",
+		login = {
+			{
+				1100,
+				"Commander, welcome back! Hehe, just seeing you makes me happy..."
+			}
+		},
+		win_mvp = {
+			{
+				1100,
+				"This isn't my victory. It's our Commander's... Ah! G-glory to the Commander!"
+			}
+		},
+		home = {
+			{
+				1100,
+				"Welcome back, Commander! Get this! I didn't trip or fall on my way to greet you this time!"
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"Phew... That's relaxing... *nuzzles*"
+			}
+		},
+		detail = {
+			{
+				1100,
+				"I-It's my holy duty to protect you, so I can't stray too far... I'm clumsy, though, so all I can do is try to help you have fun... Hm? Commander, why are you looking away?"
+			}
+		},
+		main_extra = {
+			{
+				1100,
+				"I-I haven't shredded any of your clothes lately, so I think I'm getting better...! Do you think so, too?|\"Templar Knight, Defender of the Commander, Épée!\" I-I'm wondering if I should make this my line for dramatic entrances... Commander?"
+			}
+		},
+		touch = {
+			{
+				1100,
+				"C-Commander... Do you wanna hold hands?"
+			}
+		},
+		expedition = {
+			{
+				1100,
+				"Thanking the commission team? I'll pass. You're better at... Ugh, yes, it might make me a better communicator, but..."
+			}
+		},
+		touch2 = {
+			{
+				1100,
+				"You're too sweet, Commander... Okay, you may... *blush*"
+			}
+		},
+		feeling5 = {
+			{
+				1100,
+				"C-Commander... No matter what happens, I'll never fear! If I'm clumsy, I'll do my best to fix things! A-after all, I'm your knight... Yeah, I am!"
 			}
 		}
 	}

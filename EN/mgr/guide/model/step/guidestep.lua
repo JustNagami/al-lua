@@ -199,8 +199,14 @@ function var_0_0.GenSearchData(arg_26_0, arg_26_1)
 		return nil
 	end
 
+	local var_26_0 = arg_26_1.path
+
+	if arg_26_1.dynamicPath then
+		var_26_0 = arg_26_1.dynamicPath()
+	end
+
 	return {
-		path = arg_26_1.path,
+		path = var_26_0,
 		delay = arg_26_1.delay,
 		pathIndex = arg_26_1.pathIndex,
 		conditionData = arg_26_1.conditionData

@@ -10231,6 +10231,75 @@ pg.auto_pilot_template = {
 			}
 		}
 	},
+	[70259] = {
+		id = 70259,
+		name = "2024阿尔萨斯活动 鲸鱼小范围随机移动",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 1,
+				type = 3,
+				param = {
+					Z1 = 40,
+					Z2 = 60,
+					X2 = -5,
+					moveCount = 60,
+					duration = -1,
+					X1 = -20,
+					stopCount = 0
+				}
+			}
+		}
+	},
+	[70260] = {
+		id = 70260,
+		name = "2024阿尔萨斯活动 鲸鱼去下方",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 2,
+				type = 1,
+				param = {
+					x = -45,
+					z = 22
+				}
+			},
+			{
+				index = 2,
+				to = 1,
+				type = 0,
+				param = {
+					duration = 0.5
+				}
+			}
+		}
+	},
+	[70261] = {
+		id = 70261,
+		name = "2024阿尔萨斯活动 鲸鱼去上方",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 2,
+				type = 1,
+				param = {
+					x = -45,
+					z = 78
+				}
+			},
+			{
+				index = 2,
+				to = 1,
+				type = 0,
+				param = {
+					duration = 0.5
+				}
+			}
+		}
+	},
 	[75001] = {
 		id = 75001,
 		name = "弹幕挑战1boss",

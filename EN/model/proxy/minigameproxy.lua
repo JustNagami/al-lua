@@ -67,23 +67,34 @@ function var_0_0.UpdataHubData(arg_7_0, arg_7_1)
 end
 
 function var_0_0.GetHighScore(arg_8_0, arg_8_1)
-	return arg_8_0:GetHubByGameId(arg_8_1).highScores[arg_8_1] or 0
+	return arg_8_0:GetHubByGameId(arg_8_1).highScores[arg_8_1] or {}
 end
 
 function var_0_0.UpdataHighScore(arg_9_0, arg_9_1, arg_9_2)
 	local var_9_0 = arg_9_0:GetHubByGameId(arg_9_1)
+	local var_9_1 = 0
 
-	if arg_9_2 > (var_9_0.highScores[arg_9_1] or 0) then
+	if var_9_0.highScores[arg_9_1] and var_9_0.highScores[arg_9_1][1] then
+		var_9_1 = var_9_0.highScores[arg_9_1][1]
+	end
+
+	if var_9_1 <= arg_9_2[1] then
 		var_9_0.highScores[arg_9_1] = arg_9_2
 
 		arg_9_0:UpdataHubData(var_9_0)
+
+		local var_9_2 = {
+			arg_9_1
+		}
+
+		for iter_9_0, iter_9_1 in ipairs(arg_9_2) do
+			table.insert(var_9_2, iter_9_1)
+		end
+
 		arg_9_0:sendNotification(GAME.SEND_MINI_GAME_OP, {
 			hubid = var_9_0.id,
 			cmd = MiniGameOPCommand.CMD_HIGH_SCORE,
-			args1 = {
-				arg_9_1,
-				arg_9_2
-			}
+			args1 = var_9_2
 		})
 	end
 end

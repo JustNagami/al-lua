@@ -38,7 +38,13 @@ function var_0_0.ReloadPanting(arg_5_0, arg_5_1)
 	if arg_5_0.displaySkinID and arg_5_0.displaySkinID == arg_5_1 then
 		local var_5_0 = arg_5_0:GetFlagShip()
 
-		setPaintingPrefabAsync(arg_5_0.painting, var_5_0:getPainting(), "kanban")
+		arg_5_0:ReturnPainting()
+
+		local var_5_1 = var_5_0:getPainting()
+
+		setPaintingPrefabAsync(arg_5_0.painting, var_5_1, "kanban")
+
+		arg_5_0.paintingName = var_5_1
 	end
 end
 
@@ -240,99 +246,115 @@ function var_0_0.UpdatePainting(arg_23_0, arg_23_1)
 	end
 
 	if not arg_23_0.displaySkinID or arg_23_0.displaySkinID ~= var_23_0.skinId or arg_23_1 then
-		setPaintingPrefabAsync(arg_23_0.painting, var_23_0:getPainting(), "kanban")
+		arg_23_0:ReturnPainting()
 
-		local var_23_4 = not HXSet.isHxSkin() and getProxy(ShipSkinProxy):HasFashion(var_23_0)
+		local var_23_4 = var_23_0:getPainting()
 
-		setActive(arg_23_0.switchSkinBtn, var_23_4 and not isa(var_23_0, VirtualEducateCharShip))
+		setPaintingPrefabAsync(arg_23_0.painting, var_23_4, "kanban")
+
+		arg_23_0.paintingName = var_23_4
+
+		local var_23_5 = not HXSet.isHxSkin() and getProxy(ShipSkinProxy):HasFashion(var_23_0)
+
+		setActive(arg_23_0.switchSkinBtn, var_23_5 and not isa(var_23_0, VirtualEducateCharShip))
 
 		arg_23_0.displaySkinID = var_23_0.skinId
 	end
 
-	local var_23_5 = var_23_0:getGroupId()
+	local var_23_6 = var_23_0:getGroupId()
 
-	setActive(arg_23_0.cryptolaliaBtn, getProxy(PlayerProxy):getRawData():ExistCryptolalia(var_23_5))
+	setActive(arg_23_0.cryptolaliaBtn, getProxy(PlayerProxy):getRawData():ExistCryptolalia(var_23_6))
 	arg_23_0:updateSwitchSkinBtnTag()
 	arg_23_0:checkShowResetL2dBtn()
 end
 
-function var_0_0.updateSwitchSkinBtnTag(arg_24_0)
-	local var_24_0 = arg_24_0:GetFlagShip()
+function var_0_0.ReturnPainting(arg_24_0)
+	if arg_24_0.paintingName then
+		retPaintingPrefab(arg_24_0.painting, arg_24_0.paintingName)
+	end
 
-	setActive(arg_24_0.switchSkinBtnTag, #PaintingGroupConst.GetPaintingNameListByShipVO(var_24_0) > 0)
+	arg_24_0.paintingName = nil
 end
 
-function var_0_0.onBackPressed(arg_25_0)
-	if arg_25_0.shipsPage and arg_25_0.shipsPage:GetLoaded() and arg_25_0.shipsPage:isShowing() then
-		triggerButton(arg_25_0.backBtn)
+function var_0_0.updateSwitchSkinBtnTag(arg_25_0)
+	local var_25_0 = arg_25_0:GetFlagShip()
 
-		return
-	end
-
-	if arg_25_0.contextData.renamePage and arg_25_0.contextData.renamePage:GetLoaded() and arg_25_0.contextData.renamePage:isShowing() then
-		arg_25_0.contextData.renamePage:Hide()
-
-		return
-	end
-
-	var_0_0.super.onBackPressed(arg_25_0)
+	setActive(arg_25_0.switchSkinBtnTag, #PaintingGroupConst.GetPaintingNameListByShipVO(var_25_0) > 0)
 end
 
-function var_0_0.checkShowResetL2dBtn(arg_26_0)
-	local var_26_0 = arg_26_0:GetFlagShip()
-
-	if var_26_0 and var_26_0:GetSkinConfig().spine_use_live2d == 1 then
-		setActive(arg_26_0.btnLive2dReset, false)
+function var_0_0.onBackPressed(arg_26_0)
+	if arg_26_0.shipsPage and arg_26_0.shipsPage:GetLoaded() and arg_26_0.shipsPage:isShowing() then
+		triggerButton(arg_26_0.backBtn)
 
 		return
 	end
 
-	local var_26_1 = "live2d/" .. string.lower(var_26_0:getPainting())
-	local var_26_2 = HXSet.autoHxShiftPath(var_26_1, nil, true)
-
-	if not PathMgr.FileExists(PathMgr.getAssetBundle(var_26_2)) then
-		setActive(arg_26_0.btnLive2dReset, false)
+	if arg_26_0.contextData.renamePage and arg_26_0.contextData.renamePage:GetLoaded() and arg_26_0.contextData.renamePage:isShowing() then
+		arg_26_0.contextData.renamePage:Hide()
 
 		return
 	end
 
-	setActive(arg_26_0.btnLive2dReset, true)
-	onButton(arg_26_0, arg_26_0.btnLive2dReset, function()
-		if arg_26_0:GetFlagShip() then
-			local var_27_0 = arg_26_0:GetFlagShip()
+	var_0_0.super.onBackPressed(arg_26_0)
+end
 
-			Live2dConst.ClearLive2dSave(var_27_0.skinId, var_27_0.id)
+function var_0_0.checkShowResetL2dBtn(arg_27_0)
+	local var_27_0 = arg_27_0:GetFlagShip()
+
+	if var_27_0 and var_27_0:GetSkinConfig().spine_use_live2d == 1 then
+		setActive(arg_27_0.btnLive2dReset, false)
+
+		return
+	end
+
+	local var_27_1 = "live2d/" .. string.lower(var_27_0:getPainting())
+	local var_27_2 = HXSet.autoHxShiftPath(var_27_1, nil, true)
+
+	if not PathMgr.FileExists(PathMgr.getAssetBundle(var_27_2)) then
+		setActive(arg_27_0.btnLive2dReset, false)
+
+		return
+	end
+
+	setActive(arg_27_0.btnLive2dReset, true)
+	onButton(arg_27_0, arg_27_0.btnLive2dReset, function()
+		if arg_27_0:GetFlagShip() then
+			local var_28_0 = arg_27_0:GetFlagShip()
+
+			Live2dConst.ClearLive2dSave(var_28_0.skinId, var_28_0.id)
 		end
 	end, SFX_CONFIRM)
 end
 
-function var_0_0.willExit(arg_28_0)
-	if LeanTween.isTweening(arg_28_0.painting.gameObject) then
-		LeanTween.cancel(arg_28_0.painting.gameObject)
+function var_0_0.willExit(arg_29_0)
+	arg_29_0:ReturnPainting()
+
+	if LeanTween.isTweening(arg_29_0.painting.gameObject) then
+		LeanTween.cancel(arg_29_0.painting.gameObject)
 	end
 
-	for iter_28_0, iter_28_1 in ipairs(arg_28_0.btns) do
-		iter_28_1:Dispose()
+	for iter_29_0, iter_29_1 in ipairs(arg_29_0.btns) do
+		iter_29_1:Dispose()
 	end
 
-	arg_28_0.btns = nil
+	arg_29_0.btns = nil
 
-	if arg_28_0.shipsPage then
-		arg_28_0.shipsPage:Destroy()
+	if arg_29_0.shipsPage then
+		arg_29_0.shipsPage:Destroy()
 
-		arg_28_0.shipsPage = nil
+		arg_29_0.shipsPage = nil
 	end
 
-	if arg_28_0.detailPage then
-		arg_28_0.detailPage:Destroy()
+	if arg_29_0.detailPage then
+		arg_29_0.detailPage:Destroy()
 
-		arg_28_0.detailPage = nil
+		arg_29_0.detailPage = nil
 	end
 
-	if arg_28_0.contextData.renamePage then
-		arg_28_0.contextData.renamePage:Destroy()
+	if arg_29_0.contextData.renamePage then
+		arg_29_0.contextData.renamePage:Destroy()
 
-		arg_28_0.contextData.renamePage = nil
+		arg_29_0.contextData.renamePage = nil
 	end
 end
 

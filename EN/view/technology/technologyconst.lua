@@ -165,7 +165,7 @@ var_0_0.MetaClassConfig = nil
 var_0_0.MotClassConfig = nil
 
 function var_0_0.CreateMetaClassConfig()
-	if var_0_0.MetaClassConfig and var_0_0.MotClassConfig then
+	if var_0_0.MetaClassConfig or var_0_0.MotClassConfig then
 		return
 	end
 

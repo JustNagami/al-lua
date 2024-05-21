@@ -2,7 +2,7 @@
 pg.expedition_constellation_challenge_template = {
 	[10001] = {
 		painting = "huashengdun",
-		button_style = 6,
+		button_style = 7,
 		information_icon = "huashengdun_constellation",
 		id = 10001,
 		dungeon_id = 5103,
@@ -31,7 +31,7 @@ pg.expedition_constellation_challenge_template = {
 	},
 	[10002] = {
 		painting = "huashengdun",
-		button_style = 6,
+		button_style = 7,
 		information_icon = "huashengdun_constellation",
 		id = 10002,
 		dungeon_id = 5102,
@@ -60,7 +60,7 @@ pg.expedition_constellation_challenge_template = {
 	},
 	[10003] = {
 		painting = "huashengdun",
-		button_style = 6,
+		button_style = 7,
 		information_icon = "huashengdun_constellation",
 		id = 10003,
 		dungeon_id = 5101,

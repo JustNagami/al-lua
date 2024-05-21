@@ -8,7 +8,13 @@
 			},
 			ui = {
 				delay = 1,
-				path = "OverlayCamera/Overlay/UIMain/main/frame/linkBtns/MainActMapBtn",
+				dynamicPath = function()
+					if getProxy(SettingsProxy):IsMellowStyle() then
+						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/right/1/MainActivityBtnMellowAdapt"
+					else
+						return "OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/linkBtns/MainActMapBtn"
+					end
+				end,
 				triggerType = {
 					1
 				},
@@ -18,7 +24,13 @@
 				}
 			},
 			baseui = {
-				path = "OverlayCamera/Overlay/UIMain/main/frame/linkBtns/MainActMapBtn"
+				dynamicPath = function()
+					if getProxy(SettingsProxy):IsMellowStyle() then
+						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/right/1/MainActivityBtnMellowAdapt"
+					else
+						return "OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/linkBtns/MainActMapBtn"
+					end
+				end
 			},
 			style = {
 				text = "These stages can be accessed through the stage select screen.",

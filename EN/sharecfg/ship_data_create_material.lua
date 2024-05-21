@@ -115,12 +115,13 @@ pg.ship_data_create_material = {
 		number_1 = 2,
 		id = 6,
 		icon = "build_6",
-		exchange_count = 0,
+		exchange_count = 2,
 		rate_tip = {
+			"<color=#ff5e39>Ultra Rare</color>: 1.2%",
 			"<color=#ffde38>Super Rare</color>: 7%",
 			"<color=#d797ff>Elite</color>: 12%",
 			"<color=#3dc6ff>Rare</color>: 51%",
-			"Common: 30%"
+			"Normal: 28.8%"
 		}
 	},
 	{
@@ -134,7 +135,7 @@ pg.ship_data_create_material = {
 		number_1 = 1,
 		id = 7,
 		icon = "build_7",
-		exchange_count = 0,
+		exchange_count = 1,
 		rate_tip = {
 			"<color=#ffde38>Super Rare</color>: 7%",
 			"<color=#d797ff>Elite</color>: 12%",
@@ -153,12 +154,13 @@ pg.ship_data_create_material = {
 		number_1 = 2,
 		id = 8,
 		icon = "build_8",
-		exchange_count = 0,
+		exchange_count = 2,
 		rate_tip = {
+			"<color=#ff5e39>Ultra Rare</color>: 1.2%",
 			"<color=#ffde38>Super Rare</color>: 7%",
 			"<color=#d797ff>Elite</color>: 12%",
 			"<color=#3dc6ff>Rare</color>: 51%",
-			"Common: 30%"
+			"Normal: 28.8%"
 		}
 	},
 	{
@@ -200,13 +202,13 @@ pg.ship_data_create_material = {
 			"<color=#3dc6ff>Rare</color>: 51%",
 			"Normal: 28.8%",
 			" ",
-			"<color=#ff5e39>Kronshtadt</color>: 1.2% (<color=#92fc63>up!</color>)",
+			"<color=#ff5e39>Alsace</color>: 1.2% (<color=#92fc63>up!</color>)",
 			" ",
-			"<color=#ffde38>Volga</color>: 2.0% (<color=#92fc63>up!</color>)",
+			"<color=#ffde38>Brennus</color>: 2.0% (<color=#92fc63>up!</color>)",
+			"",
+			"<color=#ffde38>Béarn META</color>: 0.5%",
 			" ",
-			"<color=#ffde38>Kiev</color>: 0.5%",
-			" ",
-			"<color=#d797ff>Arkhangelsk</color>: 2.5% (<color=#92fc63>up!</color>)"
+			"<color=#d797ff>Fleuret</color>: 2.5% (<color=#92fc63>up!</color>)"
 		}
 	},
 	{

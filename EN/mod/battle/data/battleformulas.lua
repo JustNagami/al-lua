@@ -888,64 +888,79 @@ function var_0_0.parseCompareUnitTemplate(arg_69_0, arg_69_1, arg_69_2)
 	return var_69_5(var_69_6, var_69_7)
 end
 
-function var_0_0.parseCompare(arg_70_0, arg_70_1)
+function var_0_0.parseCompareBuffAttachData(arg_70_0, arg_70_1)
 	local var_70_0, var_70_1 = string.find(arg_70_0, "%p+")
 	local var_70_2 = string.sub(arg_70_0, var_70_0, var_70_1)
 	local var_70_3 = string.sub(arg_70_0, 1, var_70_0 - 1)
-	local var_70_4 = string.sub(arg_70_0, var_70_1 + 1, #arg_70_0)
-	local var_70_5 = getCompareFuncByPunctuation(var_70_2)
-	local var_70_6 = tonumber(var_70_3) or arg_70_1:GetCurrent(var_70_3)
-	local var_70_7 = tonumber(var_70_4) or arg_70_1:GetCurrent(var_70_4)
 
-	return var_70_5(var_70_6, var_70_7)
+	if arg_70_1.__name ~= var_70_3 then
+		return true
+	end
+
+	local var_70_4 = tonumber(string.sub(arg_70_0, var_70_1 + 1, #arg_70_0))
+	local var_70_5 = arg_70_1:GetEffectAttachData()
+
+	return getCompareFuncByPunctuation(var_70_2)(var_70_5, var_70_4)
 end
 
-function var_0_0.parseFormula(arg_71_0, arg_71_1)
-	local var_71_0 = {}
-	local var_71_1 = {}
+function var_0_0.parseCompare(arg_71_0, arg_71_1)
+	local var_71_0, var_71_1 = string.find(arg_71_0, "%p+")
+	local var_71_2 = string.sub(arg_71_0, var_71_0, var_71_1)
+	local var_71_3 = string.sub(arg_71_0, 1, var_71_0 - 1)
+	local var_71_4 = string.sub(arg_71_0, var_71_1 + 1, #arg_71_0)
+	local var_71_5 = getCompareFuncByPunctuation(var_71_2)
+	local var_71_6 = tonumber(var_71_3) or arg_71_1:GetCurrent(var_71_3)
+	local var_71_7 = tonumber(var_71_4) or arg_71_1:GetCurrent(var_71_4)
 
-	for iter_71_0 in string.gmatch(arg_71_0, "%w+%.?%w*") do
-		table.insert(var_71_0, iter_71_0)
+	return var_71_5(var_71_6, var_71_7)
+end
+
+function var_0_0.parseFormula(arg_72_0, arg_72_1)
+	local var_72_0 = {}
+	local var_72_1 = {}
+
+	for iter_72_0 in string.gmatch(arg_72_0, "%w+%.?%w*") do
+		table.insert(var_72_0, iter_72_0)
 	end
 
-	for iter_71_1 in string.gmatch(arg_71_0, "[^%w%.]") do
-		table.insert(var_71_1, iter_71_1)
+	for iter_72_1 in string.gmatch(arg_72_0, "[^%w%.]") do
+		table.insert(var_72_1, iter_72_1)
 	end
 
-	local var_71_2 = {}
-	local var_71_3 = {}
-	local var_71_4 = 1
-	local var_71_5 = var_71_0[1]
+	local var_72_2 = {}
+	local var_72_3 = {}
+	local var_72_4 = 1
+	local var_72_5 = var_72_0[1]
 
-	var_71_5 = tonumber(var_71_5) or arg_71_1:GetCurrent(var_71_5)
+	var_72_5 = tonumber(var_72_5) or arg_72_1:GetCurrent(var_72_5)
 
-	for iter_71_2, iter_71_3 in ipairs(var_71_1) do
-		var_71_4 = var_71_4 + 1
+	for iter_72_2, iter_72_3 in ipairs(var_72_1) do
+		var_72_4 = var_72_4 + 1
 
-		local var_71_6 = tonumber(var_71_0[var_71_4]) or arg_71_1:GetCurrent(var_71_0[var_71_4])
+		local var_72_6 = tonumber(var_72_0[var_72_4]) or arg_72_1:GetCurrent(var_72_0[var_72_4])
 
-		if iter_71_3 == "+" or iter_71_3 == "-" then
-			table.insert(var_71_3, var_71_5)
+		if iter_72_3 == "+" or iter_72_3 == "-" then
+			table.insert(var_72_3, var_72_5)
 
-			var_71_5 = var_71_6
+			var_72_5 = var_72_6
 
-			table.insert(var_71_2, iter_71_3)
-		elseif iter_71_3 == "*" or iter_71_3 == "/" then
-			var_71_5 = getArithmeticFuncByOperator(iter_71_3)(var_71_5, var_71_6)
+			table.insert(var_72_2, iter_72_3)
+		elseif iter_72_3 == "*" or iter_72_3 == "/" then
+			var_72_5 = getArithmeticFuncByOperator(iter_72_3)(var_72_5, var_72_6)
 		end
 	end
 
-	table.insert(var_71_3, var_71_5)
+	table.insert(var_72_3, var_72_5)
 
-	local var_71_7 = 1
-	local var_71_8 = var_71_3[var_71_7]
+	local var_72_7 = 1
+	local var_72_8 = var_72_3[var_72_7]
 
-	while var_71_7 < #var_71_3 do
-		local var_71_9 = getArithmeticFuncByOperator(var_71_2[var_71_7])
+	while var_72_7 < #var_72_3 do
+		local var_72_9 = getArithmeticFuncByOperator(var_72_2[var_72_7])
 
-		var_71_7 = var_71_7 + 1
-		var_71_8 = var_71_9(var_71_8, var_71_3[var_71_7])
+		var_72_7 = var_72_7 + 1
+		var_72_8 = var_72_9(var_72_8, var_72_3[var_72_7])
 	end
 
-	return var_71_8
+	return var_72_8
 end

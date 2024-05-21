@@ -139,6 +139,8 @@ pg.furniture_data_template = setmetatable({
 			273,
 			274,
 			275,
+			276,
+			278,
 			100002,
 			100003,
 			100004,
@@ -3114,6 +3116,26 @@ pg.furniture_data_template = setmetatable({
 			310308,
 			310309,
 			310310
+		},
+		[111] = {
+			311001,
+			311002,
+			311101,
+			311102,
+			311103,
+			311104,
+			311105,
+			311106,
+			311107,
+			311108,
+			311109,
+			311110,
+			311111,
+			311112,
+			311113,
+			311114,
+			311115,
+			311116
 		}
 	},
 	get_id_list_by_tag = {
@@ -3303,7 +3325,9 @@ pg.furniture_data_template = setmetatable({
 			268,
 			271,
 			273,
-			275
+			275,
+			276,
+			278
 		},
 		[7] = {
 			211,
@@ -3493,7 +3517,8 @@ pg.furniture_data_template = setmetatable({
 			308119,
 			308305,
 			309113,
-			310116
+			310116,
+			311116
 		},
 		[4] = {
 			1001,
@@ -3591,7 +3616,8 @@ pg.furniture_data_template = setmetatable({
 			307001,
 			308001,
 			309001,
-			310001
+			310001,
+			311001
 		},
 		[3] = {
 			1002,
@@ -3690,7 +3716,8 @@ pg.furniture_data_template = setmetatable({
 			307002,
 			308002,
 			309002,
-			310002
+			310002,
+			311002
 		},
 		{
 			1101,
@@ -5547,7 +5574,22 @@ pg.furniture_data_template = setmetatable({
 			310112,
 			310113,
 			310114,
-			310115
+			310115,
+			311101,
+			311102,
+			311103,
+			311104,
+			311105,
+			311106,
+			311107,
+			311108,
+			311109,
+			311110,
+			311111,
+			311112,
+			311113,
+			311114,
+			311115
 		},
 		{
 			1108,
@@ -6168,6 +6210,8 @@ pg.furniture_data_template = setmetatable({
 			273,
 			274,
 			275,
+			276,
+			278,
 			100002,
 			100004,
 			100005,
@@ -8060,7 +8104,23 @@ pg.furniture_data_template = setmetatable({
 			310113,
 			310114,
 			310115,
-			310116
+			310116,
+			311101,
+			311102,
+			311103,
+			311104,
+			311105,
+			311106,
+			311107,
+			311108,
+			311109,
+			311110,
+			311111,
+			311112,
+			311113,
+			311114,
+			311115,
+			311116
 		},
 		[11] = {
 			131,
@@ -8224,7 +8284,8 @@ pg.furniture_data_template = setmetatable({
 			307001,
 			308001,
 			309001,
-			310001
+			310001,
+			311001
 		},
 		{
 			1002,
@@ -8323,7 +8384,8 @@ pg.furniture_data_template = setmetatable({
 			307002,
 			308002,
 			309002,
-			310002
+			310002,
+			311002
 		},
 		[5] = {
 			1101,
@@ -9139,6 +9201,8 @@ pg.furniture_data_template = setmetatable({
 		273,
 		274,
 		275,
+		276,
+		278,
 		100002,
 		100003,
 		100004,
@@ -11917,7 +11981,25 @@ pg.furniture_data_template = setmetatable({
 		310307,
 		310308,
 		310309,
-		310310
+		310310,
+		311001,
+		311002,
+		311101,
+		311102,
+		311103,
+		311104,
+		311105,
+		311106,
+		311107,
+		311108,
+		311109,
+		311110,
+		311111,
+		311112,
+		311113,
+		311114,
+		311115,
+		311116
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -18523,6 +18605,92 @@ pg.base.furniture_data_template = {
 		spine = {
 			{
 				"ido3xunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[276] = {
+		effect = "",
+		name = "Medal of the Martyrium",
+		gain_by = "Light of the Martyrium",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 1,
+		themeId = 0,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A miniature of the deathly city of gold and marble. The light of its glimmering crystal shines upon those accepting a noble death. Given to Commanders who participated in the \"Light of the Martyrium\" event.",
+		tag = 8,
+		icon = "huiguangxunzhangicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 5,
+		deblocking = 1,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 276,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"huiguangxunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[278] = {
+		effect = "",
+		name = "Pleasure Cruise Medal",
+		gain_by = "Pleasure, Leisure, and Treasure",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 1,
+		themeId = 0,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A miniature of the cruise ship the port built. The seagulls and wave ornaments remind you of all the fun you had. \nGiven to Commanders who participated in the \"Pleasure, Leisure, and Treasure\" event.",
+		tag = 8,
+		icon = "youlunxunzhangicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 5,
+		deblocking = 1,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 278,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"youlunxunzhang",
 				"normal"
 			}
 		},
@@ -141538,6 +141706,855 @@ pg.base.furniture_data_template = {
 					true
 				}
 			}
+		},
+		interAction_group = {}
+	},
+	[311001] = {
+		icon = "dibanyoicon",
+		name = "Cruise Ship Flooring",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		themeId = 111,
+		picture = "yo/dibanyo",
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		spine_extra = "",
+		level = 1,
+		describe = "All hands on deck! It feels really smooth.",
+		rarity = 4,
+		advice = 0,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		id = 311001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311002] = {
+		icon = "qiangbiyoicon",
+		name = "Cruise Ship Wallpaper",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		themeId = 111,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		spine_extra = "",
+		level = 5,
+		describe = "Blue sky above, blue ocean below. This is the life.",
+		rarity = 4,
+		advice = 0,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		id = 311002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbiyo",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[311101] = {
+		effect = "",
+		name = "Cruise Ship Bar",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "yo/bataiyo",
+		is_get_time_note = 0,
+		themeId = 111,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "What will it be? A beer for the road, or a pina colada for the pool?",
+		tag = 1,
+		icon = "bataiyoicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 311101,
+		can_rotate = 0,
+		size = {
+			9,
+			9
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-244,
+					-139
+				},
+				{
+					1,
+					1
+				}
+			},
+			{
+				"sit",
+				{
+					-158.7,
+					-176.7
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311102] = {
+		effect = "",
+		name = "Pearl Manjuu Statue",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 111,
+		is_get_time_note = 0,
+		picture = "yo/diaoxiang1yo",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Here we see the beautiful pearl emerge from its cocoon after pupating for so long.",
+		tag = 1,
+		icon = "diaoxiang1yoicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 311102,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311103] = {
+		effect = "",
+		name = "Mermaid Manjuu Statue",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 111,
+		is_get_time_note = 0,
+		picture = "yo/diaoxiang2yo",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A mermaidjuu statue, perhaps. Maybe even a mermaid statjuu?",
+		tag = 1,
+		icon = "diaoxiang2yoicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 311103,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311104] = {
+		effect = "",
+		name = "Deck Basket",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 111,
+		is_get_time_note = 0,
+		picture = "yo/lanziyo",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Squeeze the rubber ducky and get lucky.",
+		tag = 1,
+		icon = "lanziyoicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 311104,
+		can_rotate = 0,
+		size = {
+			1,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311105] = {
+		effect = "",
+		name = "Cruise Ship Parasol w/ Cat Ears",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 111,
+		is_get_time_note = 0,
+		picture = "yo/san1yo",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A safe zone for the sun-sensitive, like Torricelli and Vampire.",
+		tag = 1,
+		icon = "san1yoicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 311105,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311106] = {
+		effect = "",
+		name = "Cruise Ship Parasol",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 111,
+		is_get_time_note = 0,
+		picture = "yo/san2yo",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Dammit! Cheshire's been at it again!",
+		tag = 1,
+		icon = "san2yoicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 311106,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311107] = {
+		effect = "",
+		name = "Cruise Ship Couch (Large)",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "yo/shafayo",
+		is_get_time_note = 0,
+		themeId = 111,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Every bit as cushy as a beach without the annoyance of getting sand stuck to your feet.",
+		tag = 1,
+		icon = "shafayoicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 311107,
+		can_rotate = 0,
+		size = {
+			7,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-86,
+					59
+				},
+				{
+					1,
+					1
+				},
+				"yo/shafayo_using"
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311108] = {
+		effect = "",
+		name = "Cruise Ship Folding Chair",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "yo/tangyi1yo",
+		is_get_time_note = 0,
+		themeId = 111,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Found a better spot to sunbathe? Pack up and relocate!",
+		tag = 1,
+		icon = "tangyi1yoicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 311108,
+		can_rotate = 0,
+		size = {
+			3,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-38.7,
+					21.8
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311109] = {
+		effect = "",
+		name = "Sunlounger w/ Blanket",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "yo/tangyi2yo",
+		is_get_time_note = 0,
+		themeId = 111,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "For lounging in the sun. Sometimes a name is as simple as that.",
+		tag = 1,
+		icon = "tangyi2yoicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 311109,
+		can_rotate = 0,
+		size = {
+			3,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sleep",
+				{
+					-27.6,
+					36.1
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311110] = {
+		effect = "",
+		name = "Sunlounger w/ Pillow",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "yo/tangyi3yo",
+		is_get_time_note = 0,
+		themeId = 111,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "For lounging in the sun. Sometimes a name is as simple as that.",
+		tag = 1,
+		icon = "tangyi3yoicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 311110,
+		can_rotate = 0,
+		size = {
+			3,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sleep",
+				{
+					-36,
+					29
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311111] = {
+		effect = "",
+		name = "Succulent Fruit Cart",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 111,
+		is_get_time_note = 0,
+		picture = "yo/tuicheyo",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "It's à la carte. Get it?",
+		tag = 1,
+		icon = "tuicheyoicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 311111,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311112] = {
+		effect = "",
+		name = "Deck Table",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 111,
+		is_get_time_note = 0,
+		picture = "yo/xiaozhuoyo",
+		count = 2,
+		is_3d_obj = 0,
+		describe = "The staff will take care of your leftovers.",
+		tag = 1,
+		icon = "xiaozhuoyoicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		deblocking = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 311112,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311113] = {
+		effect = "",
+		name = "Deck Pool",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "yo/yongchiyo",
+		is_get_time_note = 0,
+		themeId = 111,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Filled with inflatables. Pick your favorite and let loose!",
+		tag = 1,
+		icon = "yongchiyoicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 311113,
+		can_rotate = 0,
+		size = {
+			11,
+			9
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"wash",
+				{
+					-2.9,
+					-110
+				},
+				{
+					1,
+					1
+				},
+				"yo/yongchiyo_using"
+			},
+			{
+				"sleep",
+				{
+					-167,
+					2
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311114] = {
+		effect = "",
+		name = "Deck Table & Chairs (Fruit Bowl)",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "yo/zuodeng1yo",
+		is_get_time_note = 0,
+		themeId = 111,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Sweeten up your holiday with something fruity.",
+		tag = 1,
+		icon = "zuodeng1yoicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 311114,
+		can_rotate = 0,
+		size = {
+			3,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-86,
+					59
+				},
+				{
+					1,
+					1
+				},
+				"yo/zuodeng1yo_using"
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311115] = {
+		effect = "",
+		name = "Deck Table & Chairs (Lemon Tea)",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "yo/zuodeng2yo",
+		is_get_time_note = 0,
+		themeId = 111,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Freshen up your day with something zesty.",
+		tag = 1,
+		icon = "zuodeng2yoicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 311115,
+		can_rotate = 0,
+		size = {
+			3,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-86,
+					59
+				},
+				{
+					1,
+					1
+				},
+				"yo/zuodeng2yo_using"
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311116] = {
+		effect = "",
+		name = "Open Air Jacuzzi",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Features a bubble mode and adjustable temperature!",
+		themeId = 111,
+		icon = "yugangyoicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 311116,
+		can_rotate = 0,
+		size = {
+			6,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yugangyoB",
+				"normal"
+			},
+			{
+				"yugangyoT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"wash"
+					},
+					{
+						"tuozhuai2"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{
+				{
+					15,
+					176
+				},
+				{
+					405,
+					413
+				},
+				"yo/yugangyo_mask"
+			},
+			{
+				-13,
+				-173
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
 		},
 		interAction_group = {}
 	}

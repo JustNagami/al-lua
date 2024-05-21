@@ -16,6 +16,10 @@ function var_0_0.OnInit(arg_1_0)
 	arg_1_0.linerBtn = arg_1_0:findTF("go", arg_1_0.linerTF)
 
 	setText(arg_1_0:findTF("lock/Text", arg_1_0.linerBtn), i18n("liner_sign_unlock_tip"))
+
+	if PLATFORM_CODE == PLATFORM_CH then
+		setActive(arg_1_0.linerBtn, false)
+	end
 end
 
 function var_0_0.OnDataSetting(arg_2_0)
@@ -23,6 +27,7 @@ function var_0_0.OnDataSetting(arg_2_0)
 	arg_2_0.taskProxy = getProxy(TaskProxy)
 	arg_2_0.taskGroup = underscore.flatten(arg_2_0.activity:getConfig("config_data"))
 	arg_2_0.taskConfig = pg.task_data_template
+	arg_2_0.preStory = arg_2_0.activity:getConfig("config_client").preStory
 
 	return updateActivityTaskStatus(arg_2_0.activity)
 end
@@ -121,6 +126,7 @@ function var_0_0.OnFirstFlush(arg_3_0)
 				actId = ActivityConst.LINER_NAMED_ID,
 				strValue = arg_11_0,
 				callback = function()
+					pg.TipsMgr.GetInstance():ShowTips(i18n("liner_name_modify"))
 					arg_3_0:OnUpdateFlush()
 				end
 			})
@@ -131,58 +137,68 @@ function var_0_0.OnFirstFlush(arg_3_0)
 			return
 		end
 
-		arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.LINER)
+		seriesAsync({
+			function(arg_14_0)
+				if arg_3_0.preStory and arg_3_0.preStory ~= "" and not pg.NewStoryMgr.GetInstance():IsPlayed(arg_3_0.preStory) then
+					pg.NewStoryMgr.GetInstance():Play(arg_3_0.preStory, arg_14_0)
+				else
+					arg_14_0()
+				end
+			end
+		}, function()
+			arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.LINER)
+		end)
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnUpdateFlush(arg_14_0)
-	arg_14_0.nday = arg_14_0.activity.data3
+function var_0_0.OnUpdateFlush(arg_16_0)
+	arg_16_0.nday = arg_16_0.activity.data3
 
-	local var_14_0 = arg_14_0:IsFinishSign()
+	local var_16_0 = arg_16_0:IsFinishSign()
 
-	setActive(arg_14_0.signTF, not var_14_0)
-	setActive(arg_14_0.namedTF, var_14_0 and not arg_14_0:IsNamed())
-	setActive(arg_14_0.linerTF, var_14_0 and arg_14_0:IsNamed())
-	setActive(arg_14_0:findTF("lock", arg_14_0.linerBtn), arg_14_0:IsLockLiner())
+	setActive(arg_16_0.signTF, not var_16_0)
+	setActive(arg_16_0.namedTF, var_16_0 and not arg_16_0:IsNamed())
+	setActive(arg_16_0.linerTF, var_16_0 and arg_16_0:IsNamed())
+	setActive(arg_16_0:findTF("lock", arg_16_0.linerBtn), arg_16_0:IsLockLiner())
 
-	if not var_14_0 then
-		local var_14_1 = arg_14_0.taskGroup[arg_14_0.nday]
+	if not var_16_0 then
+		local var_16_1 = arg_16_0.taskGroup[arg_16_0.nday]
 
-		arg_14_0.curTaskVO = arg_14_0.taskProxy:getTaskById(var_14_1) or arg_14_0.taskProxy:getFinishTaskById(var_14_1)
-		arg_14_0.remainCnt = math.min(arg_14_0.activity:getDayIndex(), #arg_14_0.taskGroup) - arg_14_0.nday
+		arg_16_0.curTaskVO = arg_16_0.taskProxy:getTaskById(var_16_1) or arg_16_0.taskProxy:getFinishTaskById(var_16_1)
+		arg_16_0.remainCnt = math.min(arg_16_0.activity:getDayIndex(), #arg_16_0.taskGroup) - arg_16_0.nday
 
-		if arg_14_0.curTaskVO:getTaskStatus() == 1 then
-			arg_14_0.remainCnt = arg_14_0.remainCnt + 1
+		if arg_16_0.curTaskVO:getTaskStatus() == 1 then
+			arg_16_0.remainCnt = arg_16_0.remainCnt + 1
 		end
 
-		setActive(arg_14_0.signBtn, arg_14_0.remainCnt > 0)
-		setActive(arg_14_0.signGreyBtn, arg_14_0.remainCnt <= 0)
-		setText(arg_14_0.countText, i18n("liner_sign_cnt_tip") .. arg_14_0.remainCnt)
-		arg_14_0.uilist:align(#arg_14_0.taskGroup)
+		setActive(arg_16_0.signBtn, arg_16_0.remainCnt > 0)
+		setActive(arg_16_0.signGreyBtn, arg_16_0.remainCnt <= 0)
+		setText(arg_16_0.countText, i18n("liner_sign_cnt_tip") .. arg_16_0.remainCnt)
+		arg_16_0.uilist:align(#arg_16_0.taskGroup)
 	else
-		arg_14_0.lastName = getProxy(ActivityProxy):getActivityById(ActivityConst.LINER_NAMED_ID):getStrData1()
+		arg_16_0.lastName = getProxy(ActivityProxy):getActivityById(ActivityConst.LINER_NAMED_ID):getStrData1()
 
-		setInputText(arg_14_0.linerInput, arg_14_0.lastName)
+		setInputText(arg_16_0.linerInput, arg_16_0.lastName)
 	end
 end
 
-function var_0_0.IsFinishSign(arg_15_0)
-	local var_15_0 = arg_15_0.taskGroup[#arg_15_0.taskGroup]
-	local var_15_1 = arg_15_0.taskProxy:getTaskById(var_15_0) or arg_15_0.taskProxy:getFinishTaskById(var_15_0)
+function var_0_0.IsFinishSign(arg_17_0)
+	local var_17_0 = arg_17_0.taskGroup[#arg_17_0.taskGroup]
+	local var_17_1 = arg_17_0.taskProxy:getTaskById(var_17_0) or arg_17_0.taskProxy:getFinishTaskById(var_17_0)
 
-	return var_15_1 and var_15_1:getTaskStatus() == 2
+	return var_17_1 and var_17_1:getTaskStatus() == 2
 end
 
-function var_0_0.IsNamed(arg_16_0)
-	local var_16_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.LINER_NAMED_ID)
+function var_0_0.IsNamed(arg_18_0)
+	local var_18_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.LINER_NAMED_ID)
 
-	return var_16_0 and not var_16_0:isEnd() and var_16_0:getStrData1() ~= ""
+	return var_18_0 and not var_18_0:isEnd() and var_18_0:getStrData1() ~= ""
 end
 
-function var_0_0.IsLockLiner(arg_17_0)
-	local var_17_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.LINER_ID)
+function var_0_0.IsLockLiner(arg_19_0)
+	local var_19_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.LINER_ID)
 
-	return not var_17_0 or var_17_0:isEnd()
+	return not var_19_0 or var_19_0:isEnd()
 end
 
 return var_0_0

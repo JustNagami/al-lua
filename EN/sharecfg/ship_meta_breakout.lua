@@ -114,6 +114,10 @@ pg.ship_meta_breakout = setmetatable({
 		9707032,
 		9707033,
 		9707034,
+		9707041,
+		9707042,
+		9707043,
+		9707044,
 		9708011,
 		9708012,
 		9708013,
@@ -1963,6 +1967,75 @@ pg.base.ship_meta_breakout = {
 		id = 9707034,
 		item1 = 21004,
 		pre_id = 9707033,
+		weapon_ids = {}
+	},
+	[9707041] = {
+		breakout_view = "Unlock Flickering Light - Béarn/All aircraft +1/Aircraft efficiency +3%",
+		gold = 1000,
+		breakout_id = 9707042,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9707041,
+		item1 = 21033,
+		pre_id = 0,
+		weapon_ids = {
+			60511,
+			54014
+		}
+	},
+	[9707042] = {
+		breakout_view = "Hangar capacity +1/Secondary Gun base +1/Aircraft efficiency +5%",
+		gold = 3000,
+		breakout_id = 9707043,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9707042,
+		item1 = 21033,
+		pre_id = 9707041,
+		weapon_ids = {
+			60512,
+			54014,
+			60512,
+			54014
+		}
+	},
+	[9707043] = {
+		breakout_view = "Improve Flickering Light - Béarn/All aircraft +1/Aircraft efficiency +7%",
+		gold = 10000,
+		breakout_id = 9707044,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9707043,
+		item1 = 21033,
+		pre_id = 9707042,
+		weapon_ids = {
+			60513,
+			54015,
+			60513,
+			54015
+		}
+	},
+	[9707044] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9707044,
+		item1 = 21033,
+		pre_id = 9707043,
 		weapon_ids = {}
 	},
 	[9708011] = {

@@ -23,6 +23,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 				pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddInimacy_ok", var_2_1:getName()))
 			end
 
+			getProxy(DormProxy):UpdateInimacyAndMoney()
 			arg_1_0:sendNotification(GAME.BACKYARD_ADD_INTIMACY_DONE, {
 				id = var_1_0
 			})

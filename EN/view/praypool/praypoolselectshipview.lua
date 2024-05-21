@@ -100,7 +100,7 @@ function var_0_0.initUI(arg_6_0)
 	local var_6_1 = arg_6_0:findTF("MaxRarity")
 	local var_6_2 = arg_6_0:findTF("Ratio")
 
-	for iter_6_0 = 2, 5 do
+	for iter_6_0 = 2, 6 do
 		local var_6_3 = getImageSprite(arg_6_0:findTF(tostring(iter_6_0), var_6_0))
 		local var_6_4 = getImageSprite(arg_6_0:findTF(tostring(iter_6_0), var_6_1))
 		local var_6_5 = getImageSprite(arg_6_0:findTF(tostring(iter_6_0), var_6_2))
@@ -452,11 +452,12 @@ function var_0_0.updateShipList(arg_19_0, arg_19_1)
 			setActive(var_20_2, false)
 		end
 
-		local var_20_4 = arg_19_0:findTF("BG/Frame", arg_20_1)
+		local var_20_4 = arg_19_0:findTF("BG/icon_bg/frame", arg_20_1)
 		local var_20_5 = pg.ship_data_statistics[var_20_0].rarity
 		local var_20_6 = ShipRarity.Rarity2Print(var_20_5)
 
 		setFrame(var_20_4, var_20_6)
+		setIconColorful(arg_19_0:findTF("BG", arg_20_1), var_20_5 - 1, {})
 
 		local var_20_7 = arg_19_0:findTF("BG", arg_20_1)
 
@@ -475,6 +476,10 @@ function var_0_0.updateShipList(arg_19_0, arg_19_1)
 			SetActive(var_20_10, false)
 		end
 
+		setBlackMask(tf(arg_20_1), var_20_5 == ShipRarity.SSR and arg_19_0:isSelectedSSR() and not isActive(var_20_10), {
+			recursive = true,
+			color = Color(0, 0, 0, 0.6)
+		})
 		onButton(arg_19_0, arg_20_1, function()
 			if arg_19_0.selectedCount < arg_19_0.pickUpNum then
 				if isActive(var_20_10) then
@@ -484,6 +489,9 @@ function var_0_0.updateShipList(arg_19_0, arg_19_1)
 
 					SetActive(var_20_10, false)
 					arg_19_0:updateSelectedShipList()
+					arg_19_0:updateShipList(arg_19_0.fliteList)
+				elseif var_20_5 == ShipRarity.SSR and arg_19_0:isSelectedSSR() then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("pray_build_UR_warning"))
 				else
 					arg_19_0.prayProxy:insertSelectedShipIDList(var_20_0)
 
@@ -491,6 +499,7 @@ function var_0_0.updateShipList(arg_19_0, arg_19_1)
 
 					SetActive(var_20_10, true)
 					arg_19_0:updateSelectedShipList()
+					arg_19_0:updateShipList(arg_19_0.fliteList)
 				end
 			elseif arg_19_0.selectedCount == arg_19_0.pickUpNum then
 				if isActive(var_20_10) then
@@ -500,6 +509,7 @@ function var_0_0.updateShipList(arg_19_0, arg_19_1)
 
 					SetActive(var_20_10, false)
 					arg_19_0:updateSelectedShipList()
+					arg_19_0:updateShipList(arg_19_0.fliteList)
 				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("error_pray_select_ship_max"))
 				end
@@ -561,6 +571,23 @@ end
 
 function var_0_0.isMinPrefs(arg_26_0)
 	return GroupHelper.GetGroupPrefsByName("PAINTING") == DMFileChecker.Prefs.Min
+end
+
+function var_0_0.isSelectedSSR(arg_27_0)
+	local var_27_0 = false
+	local var_27_1 = arg_27_0.prayProxy:getSelectedShipIDList()
+
+	if var_27_1 and #var_27_1 > 0 then
+		for iter_27_0, iter_27_1 in ipairs(var_27_1) do
+			if pg.ship_data_statistics[iter_27_1].rarity == ShipRarity.SSR then
+				var_27_0 = true
+
+				break
+			end
+		end
+	end
+
+	return var_27_0
 end
 
 return var_0_0

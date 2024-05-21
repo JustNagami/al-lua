@@ -1209,6 +1209,30 @@ pg.equip_skin_theme_template = {
 			967
 		}
 	},
+	[57] = {
+		id = 57,
+		name = "Pleasure Cruise",
+		ids = {
+			970,
+			971,
+			972,
+			973,
+			974,
+			975,
+			976,
+			977,
+			978,
+			979,
+			980,
+			981,
+			982,
+			983,
+			984,
+			985,
+			986,
+			987
+		}
+	},
 	[101] = {
 		id = 101,
 		name = "Power of the Stars",
@@ -1379,6 +1403,7 @@ pg.equip_skin_theme_template = {
 		54,
 		55,
 		56,
+		57,
 		101,
 		102,
 		103,

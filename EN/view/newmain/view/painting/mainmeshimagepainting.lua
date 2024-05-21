@@ -1,12 +1,12 @@
 ﻿local var_0_0 = class("MainMeshImagePainting", import(".MainBasePainting"))
 
-var_0_0.DEFAULT_HEIGHT = -10
+var_0_0.DEFAULT_HEIGHT = 0
 var_0_0.TOUCH_HEIGHT = 20
 var_0_0.TOUCH_LOOP = 1
 var_0_0.TOUCH_DURATION = 0.1
 var_0_0.CHAT_HEIGHT = 15
 var_0_0.CHAT_DURATION = 0.3
-var_0_0.BREATH_HEIGHT = -20
+var_0_0.BREATH_HEIGHT = -10
 var_0_0.BREATH_DURATION = 2.3
 var_0_0.PAINTING_VARIANT_NORMAL = 0
 var_0_0.PAINTING_VARIANT_EX = 1
@@ -61,9 +61,9 @@ function var_0_0.OnLoad(arg_4_0, arg_4_1)
 			ShipExpressionHelper.UpdateExpression(findTF(arg_4_0.container, "fitter"):GetChild(0), arg_4_0.paintingName, arg_4_0.expression)
 		end
 
+		arg_4_0:Breath()
 		arg_4_1()
 	end)
-	arg_4_0:Breath()
 end
 
 function var_0_0.GetCenterPos(arg_6_0)
@@ -71,9 +71,8 @@ function var_0_0.GetCenterPos(arg_6_0)
 		local var_6_0 = arg_6_0.container:Find("fitter"):GetChild(0)
 		local var_6_1 = (0.5 - var_6_0.pivot.x) * var_6_0.sizeDelta.x
 		local var_6_2 = var_6_0.localPosition + Vector3(var_6_1, 0, 0)
-		local var_6_3 = var_6_0:TransformPoint(var_6_2)
 
-		return arg_6_0.chatTf.parent:InverseTransformPoint(var_6_3)
+		return (var_6_0:TransformPoint(var_6_2))
 	else
 		return var_0_0.super.GetCenterPos(arg_6_0)
 	end
@@ -293,89 +292,118 @@ function var_0_0.OnTriggerEventAuto(arg_29_0)
 	arg_29_0:Shake(var_0_0.CHAT_HEIGHT, var_0_0.CHAT_DURATION)
 end
 
-function var_0_0.Shake(arg_30_0, arg_30_1, arg_30_2, arg_30_3)
-	local var_30_0, var_30_1, var_30_2 = getProxy(SettingsProxy):getSkinPosSetting(arg_30_0.ship)
-	local var_30_3 = arg_30_1
+function var_0_0.GetMeshPainting(arg_30_0)
+	local var_30_0 = findTF(arg_30_0.container, "fitter")
 
-	if var_30_1 then
-		var_30_3 = arg_30_1 - var_0_0.DEFAULT_HEIGHT + var_30_1
+	if var_30_0.childCount <= 0 then
+		return nil
 	end
 
-	arg_30_3 = arg_30_3 or math.random(3) - 1
+	return (var_30_0:GetChild(0))
+end
 
-	if arg_30_3 == 0 then
+function var_0_0.Shake(arg_31_0, arg_31_1, arg_31_2, arg_31_3)
+	local var_31_0
+	local var_31_1 = arg_31_1
+
+	if var_31_0 then
+		var_31_1 = arg_31_1 - var_0_0.DEFAULT_HEIGHT + var_31_0
+	end
+
+	arg_31_3 = arg_31_3 or math.random(3) - 1
+
+	if arg_31_3 == 0 then
 		return
 	end
 
-	LeanTween.cancel(go(arg_30_0.container))
-	LeanTween.moveY(rtf(arg_30_0.container), var_30_3, 0.1):setLoopPingPong(arg_30_3):setOnComplete(System.Action(function()
-		arg_30_0:Breath()
+	local var_31_2 = arg_31_0:GetMeshPainting()
+
+	if not var_31_2 then
+		return
+	end
+
+	LeanTween.cancel(go(var_31_2))
+	LeanTween.moveY(rtf(var_31_2), var_31_1, 0.1):setLoopPingPong(arg_31_3):setOnComplete(System.Action(function()
+		arg_31_0:Breath()
 	end))
 end
 
-function var_0_0.Breath(arg_32_0)
-	local var_32_0, var_32_1, var_32_2 = getProxy(SettingsProxy):getSkinPosSetting(arg_32_0.ship)
-	local var_32_3 = var_32_1 or var_0_0.BREATH_HEIGHT
-	local var_32_4 = var_32_1 and var_32_1 - 10 or var_0_0.DEFAULT_HEIGHT
+function var_0_0.Breath(arg_33_0)
+	local var_33_0 = arg_33_0:GetMeshPainting()
 
-	LeanTween.cancel(go(arg_32_0.container))
-	LeanTween.moveY(rtf(arg_32_0.container), var_32_4, var_0_0.BREATH_DURATION):setLoopPingPong():setEase(LeanTweenType.easeInOutCubic):setFrom(var_32_3)
-end
-
-function var_0_0.StopBreath(arg_33_0)
-	LeanTween.cancel(go(arg_33_0.container))
-end
-
-function var_0_0.OnEnableOrDisableDragAndZoom(arg_34_0, arg_34_1)
-	if arg_34_1 then
-		arg_34_0:StopBreath()
-	else
-		arg_34_0:Breath()
+	if not var_33_0 then
+		return
 	end
+
+	local var_33_1
+	local var_33_2 = var_33_1 or var_0_0.BREATH_HEIGHT
+	local var_33_3 = var_33_1 and var_33_1 - 10 or var_0_0.DEFAULT_HEIGHT
+
+	LeanTween.cancel(go(var_33_0))
+	LeanTween.moveY(rtf(var_33_0), var_33_3, var_0_0.BREATH_DURATION):setLoopPingPong():setEase(LeanTweenType.easeInOutCubic):setFrom(var_33_2)
 end
 
-function var_0_0.OnFold(arg_35_0, arg_35_1)
-	if not arg_35_1 then
+function var_0_0.StopBreath(arg_34_0)
+	local var_34_0 = arg_34_0:GetMeshPainting()
+
+	if not var_34_0 then
+		return
+	end
+
+	LeanTween.cancel(go(var_34_0))
+end
+
+function var_0_0.OnEnableOrDisableDragAndZoom(arg_35_0, arg_35_1)
+	if arg_35_1 then
+		arg_35_0:StopBreath()
+	else
 		arg_35_0:Breath()
 	end
 end
 
-function var_0_0.OnPuase(arg_36_0)
-	arg_36_0:StopBreath()
-end
-
-function var_0_0.OnResume(arg_37_0)
-	checkCullResume(arg_37_0.container:Find("fitter"):GetChild(0))
-	arg_37_0:Breath()
-end
-
-function var_0_0.Unload(arg_38_0)
-	var_0_0.super.Unload(arg_38_0)
-
-	arg_38_0.expression = nil
-end
-
-function var_0_0.OnUnload(arg_39_0)
-	if LeanTween.isTweening(go(arg_39_0.container)) then
-		LeanTween.cancel(go(arg_39_0.container))
-	end
-
-	arg_39_0:ClearSpecialDrag()
-
-	if arg_39_0.loadPaintingName then
-		retPaintingPrefab(arg_39_0.container, arg_39_0.loadPaintingName)
-
-		arg_39_0.loadPaintingName = nil
+function var_0_0.OnFold(arg_36_0, arg_36_1)
+	if not arg_36_1 then
+		arg_36_0:Breath()
 	end
 end
 
-function var_0_0.OnPuase(arg_40_0)
-	arg_40_0:ClearEffect()
+function var_0_0.GetOffset(arg_37_0)
+	return MainPaintingView.MESH_POSITION_X_OFFSET
 end
 
-function var_0_0.Dispose(arg_41_0)
-	var_0_0.super.Dispose(arg_41_0)
-	arg_41_0:ClearEffect()
+function var_0_0.OnPuase(arg_38_0)
+	arg_38_0:StopBreath()
+end
+
+function var_0_0.OnResume(arg_39_0)
+	checkCullResume(arg_39_0.container:Find("fitter"):GetChild(0))
+	arg_39_0:Breath()
+end
+
+function var_0_0.Unload(arg_40_0)
+	var_0_0.super.Unload(arg_40_0)
+
+	arg_40_0.expression = nil
+end
+
+function var_0_0.OnUnload(arg_41_0)
+	arg_41_0:StopBreath()
+	arg_41_0:ClearSpecialDrag()
+
+	if arg_41_0.loadPaintingName then
+		retPaintingPrefab(arg_41_0.container, arg_41_0.loadPaintingName)
+
+		arg_41_0.loadPaintingName = nil
+	end
+end
+
+function var_0_0.OnPuase(arg_42_0)
+	arg_42_0:ClearEffect()
+end
+
+function var_0_0.Dispose(arg_43_0)
+	var_0_0.super.Dispose(arg_43_0)
+	arg_43_0:ClearEffect()
 end
 
 return var_0_0

@@ -1583,5 +1583,25 @@ pg.voice_actor_CN = {
 	[404] = {
 		code = 404,
 		actor_name = "Kaoru Sakura"
+	},
+	[405] = {
+		code = 405,
+		actor_name = "Aki Toyosaki"
+	},
+	[406] = {
+		code = 406,
+		actor_name = "Mari Hino"
+	},
+	[407] = {
+		code = 407,
+		actor_name = "Sayaka Kikuchi"
+	},
+	[408] = {
+		code = 408,
+		actor_name = "Miria Takagishi"
+	},
+	[409] = {
+		code = 409,
+		actor_name = "Minami Kurisaka"
 	}
 }

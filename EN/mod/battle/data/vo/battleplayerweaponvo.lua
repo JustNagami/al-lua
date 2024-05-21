@@ -281,16 +281,7 @@ function var_0_3.Plus(arg_28_0, arg_28_1)
 end
 
 function var_0_3.Deduct(arg_29_0, arg_29_1)
-	arg_29_0.deleteElementFromArray(arg_29_1, arg_29_0._readyList)
-
-	arg_29_0._overHeatList[#arg_29_0._overHeatList + 1] = arg_29_1
-	arg_29_0._count = arg_29_0._count - 1
-
-	if arg_29_0._count < 0 then
-		arg_29_0._count = 0
-	end
-
-	arg_29_0:DispatchCountChange()
+	arg_29_0:readyToOverheat(arg_29_1)
 
 	if #arg_29_0._readyList ~= 0 then
 		arg_29_0._max = arg_29_0._GCD
@@ -311,144 +302,162 @@ function var_0_3.Deduct(arg_29_0, arg_29_1)
 	arg_29_0:DispatchOverLoadChange()
 end
 
-function var_0_3.Charge(arg_30_0, arg_30_1)
-	arg_30_0.deleteElementFromArray(arg_30_1, arg_30_0._overHeatList)
+function var_0_3.InitialDeduct(arg_30_0, arg_30_1)
+	arg_30_0:readyToOverheat(arg_30_1)
+	arg_30_0:DispatchOverLoadChange()
+end
 
-	arg_30_0._chargingList[#arg_30_0._chargingList + 1] = arg_30_1
+function var_0_3.Charge(arg_31_0, arg_31_1)
+	arg_31_0.deleteElementFromArray(arg_31_1, arg_31_0._overHeatList)
 
-	if #arg_30_0._readyList == 0 then
-		local var_30_0 = arg_30_0:GetNextTimeStamp()
+	arg_31_0._chargingList[#arg_31_0._chargingList + 1] = arg_31_1
 
-		arg_30_0._max = math.max(arg_30_0._GCD, var_30_0 - pg.TimeMgr.GetInstance():GetCombatTime())
+	if #arg_31_0._readyList == 0 then
+		local var_31_0 = arg_31_0:GetNextTimeStamp()
 
-		arg_30_0:resetCurrent()
+		arg_31_0._max = math.max(arg_31_0._GCD, var_31_0 - pg.TimeMgr.GetInstance():GetCombatTime())
+
+		arg_31_0:resetCurrent()
 	end
 end
 
-function var_0_3.ReloadBoost(arg_31_0, arg_31_1, arg_31_2)
-	local var_31_0, var_31_1 = arg_31_0:GetNextTimeStamp()
+function var_0_3.ReloadBoost(arg_32_0, arg_32_1, arg_32_2)
+	local var_32_0, var_32_1 = arg_32_0:GetNextTimeStamp()
 
-	arg_31_1:ReloadBoost(arg_31_2)
+	arg_32_1:ReloadBoost(arg_32_2)
 
-	local var_31_2, var_31_3 = arg_31_0:GetNextTimeStamp()
+	local var_32_2, var_32_3 = arg_32_0:GetNextTimeStamp()
 
-	if var_31_1 ~= arg_31_1 and var_31_3 ~= arg_31_1 then
+	if var_32_1 ~= arg_32_1 and var_32_3 ~= arg_32_1 then
 		-- block empty
-	elseif var_31_1 == arg_31_1 and var_31_3 == arg_31_1 then
-		arg_31_0:RefreshReloadingBar()
-	elseif var_31_1 ~= var_31_3 then
-		arg_31_0:RefreshReloadingBar()
+	elseif var_32_1 == arg_32_1 and var_32_3 == arg_32_1 then
+		arg_32_0:RefreshReloadingBar()
+	elseif var_32_1 ~= var_32_3 then
+		arg_32_0:RefreshReloadingBar()
 	end
 end
 
-function var_0_3.InstantCoolDown(arg_32_0, arg_32_1)
-	arg_32_0.deleteElementFromArray(arg_32_1, arg_32_0._overHeatList)
+function var_0_3.InstantCoolDown(arg_33_0, arg_33_1)
+	arg_33_0.deleteElementFromArray(arg_33_1, arg_33_0._overHeatList)
 
-	if arg_32_0._current >= arg_32_0._GCD then
-		arg_32_0._current = arg_32_0._max
-		arg_32_0._reloadStartTime = nil
+	if arg_33_0._current >= arg_33_0._GCD then
+		arg_33_0._current = arg_33_0._max
+		arg_33_0._reloadStartTime = nil
 	else
-		arg_32_0._max = arg_32_0._GCD - arg_32_0._current
+		arg_33_0._max = arg_33_0._GCD - arg_33_0._current
 
-		arg_32_0:resetCurrent()
+		arg_33_0:resetCurrent()
 	end
 
-	arg_32_0:Plus(arg_32_1)
+	arg_33_0:Plus(arg_33_1)
 end
 
-function var_0_3.DispatchBlink(arg_33_0, arg_33_1)
-	local var_33_0 = {
-		value = arg_33_1
+function var_0_3.DispatchBlink(arg_34_0, arg_34_1)
+	local var_34_0 = {
+		value = arg_34_1
 	}
-	local var_33_1 = var_0_0.Event.New(var_0_0.Battle.BattleEvent.WEAPON_BUTTON_BLINK, var_33_0)
+	local var_34_1 = var_0_0.Event.New(var_0_0.Battle.BattleEvent.WEAPON_BUTTON_BLINK, var_34_0)
 
-	arg_33_0:DispatchEvent(var_33_1)
+	arg_34_0:DispatchEvent(var_34_1)
 end
 
-function var_0_3.DispatchTotalChange(arg_34_0, arg_34_1)
-	local var_34_0 = var_0_0.Event.New(var_0_0.Battle.BattleEvent.WEAPON_TOTAL_CHANGE, {
-		index = arg_34_1
+function var_0_3.DispatchTotalChange(arg_35_0, arg_35_1)
+	local var_35_0 = var_0_0.Event.New(var_0_0.Battle.BattleEvent.WEAPON_TOTAL_CHANGE, {
+		index = arg_35_1
 	})
-
-	arg_34_0:DispatchEvent(var_34_0)
-end
-
-function var_0_3.DispatchOverLoadChange(arg_35_0)
-	local var_35_0 = var_0_0.Event.New(var_0_0.Battle.BattleEvent.OVER_LOAD_CHANGE)
 
 	arg_35_0:DispatchEvent(var_35_0)
 end
 
-function var_0_3.DispatchCountChange(arg_36_0)
-	local var_36_0 = var_0_0.Event.New(var_0_0.Battle.BattleEvent.COUNT_CHANGE)
+function var_0_3.DispatchOverLoadChange(arg_36_0)
+	local var_36_0 = var_0_0.Event.New(var_0_0.Battle.BattleEvent.OVER_LOAD_CHANGE)
 
 	arg_36_0:DispatchEvent(var_36_0)
 end
 
-function var_0_3.DispatchInitSubIcon(arg_37_0)
-	local var_37_0 = var_0_0.Event.New(var_0_0.Battle.BattleEvent.INIT_SUB_ICON)
+function var_0_3.DispatchCountChange(arg_37_0)
+	local var_37_0 = var_0_0.Event.New(var_0_0.Battle.BattleEvent.COUNT_CHANGE)
 
 	arg_37_0:DispatchEvent(var_37_0)
 end
 
-function var_0_3.StartJamming(arg_38_0)
-	arg_38_0._jammingStarTime = pg.TimeMgr.GetInstance():GetCombatTime()
+function var_0_3.DispatchInitSubIcon(arg_38_0)
+	local var_38_0 = var_0_0.Event.New(var_0_0.Battle.BattleEvent.INIT_SUB_ICON)
 
-	for iter_38_0, iter_38_1 in ipairs(arg_38_0._chargingList) do
-		iter_38_1:StartJamming()
+	arg_38_0:DispatchEvent(var_38_0)
+end
+
+function var_0_3.StartJamming(arg_39_0)
+	arg_39_0._jammingStarTime = pg.TimeMgr.GetInstance():GetCombatTime()
+
+	for iter_39_0, iter_39_1 in ipairs(arg_39_0._chargingList) do
+		iter_39_1:StartJamming()
 	end
 end
 
-function var_0_3.JammingEliminate(arg_39_0)
-	for iter_39_0, iter_39_1 in ipairs(arg_39_0._chargingList) do
-		iter_39_1:JammingEliminate()
+function var_0_3.JammingEliminate(arg_40_0)
+	for iter_40_0, iter_40_1 in ipairs(arg_40_0._chargingList) do
+		iter_40_1:JammingEliminate()
 	end
 
-	if arg_39_0._reloadStartTime then
-		local var_39_0 = pg.TimeMgr.GetInstance():GetCombatTime()
+	if arg_40_0._reloadStartTime then
+		local var_40_0 = pg.TimeMgr.GetInstance():GetCombatTime()
 
-		if #arg_39_0._readyList ~= 0 then
-			arg_39_0._max = arg_39_0._GCD
+		if #arg_40_0._readyList ~= 0 then
+			arg_40_0._max = arg_40_0._GCD
 		else
-			arg_39_0._max = arg_39_0:GetNextTimeStamp() - var_39_0 + arg_39_0._current
+			arg_40_0._max = arg_40_0:GetNextTimeStamp() - var_40_0 + arg_40_0._current
 		end
 
-		arg_39_0._reloadStartTime = arg_39_0._reloadStartTime + (var_39_0 - arg_39_0._jammingStarTime)
+		arg_40_0._reloadStartTime = arg_40_0._reloadStartTime + (var_40_0 - arg_40_0._jammingStarTime)
 	end
 
-	arg_39_0._jammingStarTime = nil
+	arg_40_0._jammingStarTime = nil
 end
 
-function var_0_3.Dispose(arg_40_0)
-	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_40_0._focusTimer)
+function var_0_3.Dispose(arg_41_0)
+	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_41_0._focusTimer)
 
-	arg_40_0._focusTimer = nil
+	arg_41_0._focusTimer = nil
 
-	var_0_0.EventDispatcher.DetachEventDispatcher(arg_40_0)
+	var_0_0.EventDispatcher.DetachEventDispatcher(arg_41_0)
 end
 
-function var_0_3.deleteElementFromArray(arg_41_0, arg_41_1)
-	local var_41_0
+function var_0_3.readyToOverheat(arg_42_0, arg_42_1)
+	arg_42_0.deleteElementFromArray(arg_42_1, arg_42_0._readyList)
 
-	for iter_41_0, iter_41_1 in ipairs(arg_41_1) do
-		if arg_41_0 == iter_41_1 then
-			var_41_0 = iter_41_0
+	arg_42_0._overHeatList[#arg_42_0._overHeatList + 1] = arg_42_1
+	arg_42_0._count = arg_42_0._count - 1
+
+	if arg_42_0._count < 0 then
+		arg_42_0._count = 0
+	end
+
+	arg_42_0:DispatchCountChange()
+end
+
+function var_0_3.deleteElementFromArray(arg_43_0, arg_43_1)
+	local var_43_0
+
+	for iter_43_0, iter_43_1 in ipairs(arg_43_1) do
+		if arg_43_0 == iter_43_1 then
+			var_43_0 = iter_43_0
 
 			break
 		end
 	end
 
-	if var_41_0 == nil then
+	if var_43_0 == nil then
 		return -1
 	end
 
-	for iter_41_2 = var_41_0, #arg_41_1 do
-		if arg_41_1[iter_41_2 + 1] ~= nil then
-			arg_41_1[iter_41_2] = arg_41_1[iter_41_2 + 1]
+	for iter_43_2 = var_43_0, #arg_43_1 do
+		if arg_43_1[iter_43_2 + 1] ~= nil then
+			arg_43_1[iter_43_2] = arg_43_1[iter_43_2 + 1]
 		else
-			arg_41_1[iter_41_2] = nil
+			arg_43_1[iter_43_2] = nil
 		end
 	end
 
-	return var_41_0
+	return var_43_0
 end

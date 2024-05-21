@@ -5579,7 +5579,7 @@ pg.child_task = {
 	},
 	[4029] = {
 		arg = 10,
-		name = "Complete Activity - Advanced Art - 10 times",
+		name = "Complete Activity - Advanced Sketching - 10 times",
 		type_2 = 1,
 		group = 9,
 		type_1 = 2,
@@ -10646,7 +10646,7 @@ pg.child_task = {
 	},
 	[10116] = {
 		arg = 1,
-		name = "I Want Activity - Basic Art/Basic Tea Making/Basic Acting",
+		name = "I Want Activity - Basic Sketching/Basic Tea Making/Basic Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -11057,7 +11057,7 @@ pg.child_task = {
 	},
 	[10126] = {
 		arg = 1,
-		name = "I Want Activity - Basic Art/Basic Tea Making/Basic Acting",
+		name = "I Want Activity - Basic Sketching/Basic Tea Making/Basic Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -11468,7 +11468,7 @@ pg.child_task = {
 	},
 	[10136] = {
 		arg = 1,
-		name = "I Want Activity - Basic Art/Basic Tea Making/Basic Acting",
+		name = "I Want Activity - Basic Sketching/Basic Tea Making/Basic Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -11905,7 +11905,7 @@ pg.child_task = {
 	},
 	[10146] = {
 		arg = 1,
-		name = "I Want Activity - Basic Art/Basic Tea Making/Basic Acting",
+		name = "I Want Activity - Basic Sketching/Basic Tea Making/Basic Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -12342,7 +12342,7 @@ pg.child_task = {
 	},
 	[10156] = {
 		arg = 1,
-		name = "I Want Activity - Basic Art/Basic Tea Making/Basic Acting",
+		name = "I Want Activity - Basic Sketching/Basic Tea Making/Basic Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -12779,7 +12779,7 @@ pg.child_task = {
 	},
 	[10166] = {
 		arg = 1,
-		name = "I Want Activity - Basic Art/Basic Tea Making/Basic Acting",
+		name = "I Want Activity - Basic Sketching/Basic Tea Making/Basic Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -13216,7 +13216,7 @@ pg.child_task = {
 	},
 	[10176] = {
 		arg = 1,
-		name = "I Want Activity - Basic Art/Basic Tea Making/Basic Acting",
+		name = "I Want Activity - Basic Sketching/Basic Tea Making/Basic Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -13653,7 +13653,7 @@ pg.child_task = {
 	},
 	[10186] = {
 		arg = 1,
-		name = "I Want Activity - Basic Art/Basic Tea Making/Basic Acting",
+		name = "I Want Activity - Basic Sketching/Basic Tea Making/Basic Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -14090,7 +14090,7 @@ pg.child_task = {
 	},
 	[10196] = {
 		arg = 1,
-		name = "I Want Activity - Basic Art/Basic Tea Making/Basic Acting",
+		name = "I Want Activity - Basic Sketching/Basic Tea Making/Basic Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -14527,7 +14527,7 @@ pg.child_task = {
 	},
 	[10226] = {
 		arg = 1,
-		name = "I Want Activity - Basic Art/Basic Tea Making/Basic Acting",
+		name = "I Want Activity - Basic Sketching/Basic Tea Making/Basic Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -14964,7 +14964,7 @@ pg.child_task = {
 	},
 	[10236] = {
 		arg = 1,
-		name = "I Want Activity - Basic Art/Basic Tea Making/Basic Acting",
+		name = "I Want Activity - Basic Sketching/Basic Tea Making/Basic Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -15401,7 +15401,7 @@ pg.child_task = {
 	},
 	[10246] = {
 		arg = 1,
-		name = "I Want Activity - Basic Art/Basic Tea Making/Basic Acting",
+		name = "I Want Activity - Basic Sketching/Basic Tea Making/Basic Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -15838,7 +15838,7 @@ pg.child_task = {
 	},
 	[10256] = {
 		arg = 1,
-		name = "I Want Activity - Basic Art/Basic Tea Making/Basic Acting",
+		name = "I Want Activity - Basic Sketching/Basic Tea Making/Basic Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -16275,7 +16275,7 @@ pg.child_task = {
 	},
 	[10266] = {
 		arg = 1,
-		name = "I Want Activity - Basic Art/Basic Tea Making/Basic Acting",
+		name = "I Want Activity - Basic Sketching/Basic Tea Making/Basic Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -16712,7 +16712,7 @@ pg.child_task = {
 	},
 	[10276] = {
 		arg = 1,
-		name = "I Want Activity - Basic Art/Basic Tea Making/Basic Acting",
+		name = "I Want Activity - Basic Sketching/Basic Tea Making/Basic Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -17149,7 +17149,7 @@ pg.child_task = {
 	},
 	[10286] = {
 		arg = 1,
-		name = "I Want Activity - Basic Art/Basic Tea Making/Basic Acting",
+		name = "I Want Activity - Basic Sketching/Basic Tea Making/Basic Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -17586,7 +17586,7 @@ pg.child_task = {
 	},
 	[10296] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -18023,7 +18023,7 @@ pg.child_task = {
 	},
 	[10306] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -18460,7 +18460,7 @@ pg.child_task = {
 	},
 	[10316] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -18897,7 +18897,7 @@ pg.child_task = {
 	},
 	[10326] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -19334,7 +19334,7 @@ pg.child_task = {
 	},
 	[10336] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -19771,7 +19771,7 @@ pg.child_task = {
 	},
 	[10346] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -20208,7 +20208,7 @@ pg.child_task = {
 	},
 	[10356] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -20645,7 +20645,7 @@ pg.child_task = {
 	},
 	[10366] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -21082,7 +21082,7 @@ pg.child_task = {
 	},
 	[10376] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -21519,7 +21519,7 @@ pg.child_task = {
 	},
 	[10386] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -21956,7 +21956,7 @@ pg.child_task = {
 	},
 	[10396] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -22393,7 +22393,7 @@ pg.child_task = {
 	},
 	[10406] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -22830,7 +22830,7 @@ pg.child_task = {
 	},
 	[10416] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -23267,7 +23267,7 @@ pg.child_task = {
 	},
 	[10426] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -23704,7 +23704,7 @@ pg.child_task = {
 	},
 	[10436] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -24141,7 +24141,7 @@ pg.child_task = {
 	},
 	[10446] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -24578,7 +24578,7 @@ pg.child_task = {
 	},
 	[10456] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -25015,7 +25015,7 @@ pg.child_task = {
 	},
 	[10466] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,
@@ -25452,7 +25452,7 @@ pg.child_task = {
 	},
 	[10476] = {
 		arg = 1,
-		name = "I Want Activity - Intermediate Art/Intermediate Tea Making/Intermediate Acting",
+		name = "I Want Activity - Intermediate Sketching/Intermediate Tea Making/Intermediate Acting",
 		type_2 = 1,
 		group = 0,
 		type_1 = 1,

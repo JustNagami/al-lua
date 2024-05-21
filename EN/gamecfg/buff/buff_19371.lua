@@ -63,6 +63,22 @@
 					"QUINT"
 				}
 			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				buff_id = 19345,
+				target = "TargetSelf",
+				minWeaponNumber = 1,
+				check_weapon = true,
+				label = {
+					"TP",
+					"TRI-DUO"
+				}
+			}
 		}
 	},
 	{},

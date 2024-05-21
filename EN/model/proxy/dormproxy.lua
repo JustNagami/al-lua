@@ -143,42 +143,46 @@ function var_0_0.addInimacyAndMoney(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
 	arg_15_0:updateDrom(arg_15_0.data, BackYardConst.DORM_UPDATE_TYPE_SHIP)
 end
 
-function var_0_0.clearInimacyAndMoney(arg_16_0, arg_16_1)
-	local var_16_0 = getProxy(BayProxy)
-	local var_16_1 = var_16_0:getShipById(arg_16_1)
-
-	if not var_16_1 then
-		return
-	end
-
-	var_16_1:addLikability(var_16_1.state_info_3)
-	getProxy(PlayerProxy):getRawData():addResources({
-		dormMoney = var_16_1.state_info_4
-	})
-	var_16_1:updateStateInfo34(0, 0)
-	var_16_0:updateShip(var_16_1)
+function var_0_0.UpdateInimacyAndMoney(arg_16_0)
 	arg_16_0:updateDrom(arg_16_0.data, BackYardConst.DORM_UPDATE_TYPE_SHIP)
 end
 
-function var_0_0.isLackOfFood(arg_17_0)
-	if arg_17_0:getTrainShipCount() == 0 then
+function var_0_0.clearInimacyAndMoney(arg_17_0, arg_17_1)
+	local var_17_0 = getProxy(BayProxy)
+	local var_17_1 = var_17_0:getShipById(arg_17_1)
+
+	if not var_17_1 then
+		return
+	end
+
+	var_17_1:addLikability(var_17_1.state_info_3)
+	getProxy(PlayerProxy):getRawData():addResources({
+		dormMoney = var_17_1.state_info_4
+	})
+	var_17_1:updateStateInfo34(0, 0)
+	var_17_0:updateShip(var_17_1)
+	arg_17_0:updateDrom(arg_17_0.data, BackYardConst.DORM_UPDATE_TYPE_SHIP)
+end
+
+function var_0_0.isLackOfFood(arg_18_0)
+	if arg_18_0:getTrainShipCount() == 0 then
 		return false
 	end
 
-	local var_17_0 = arg_17_0:getRestFood()
+	local var_18_0 = arg_18_0:getRestFood()
 
-	if not arg_17_0.isLoadExp then
-		var_17_0 = var_17_0 - arg_17_0.data.load_food
+	if not arg_18_0.isLoadExp then
+		var_18_0 = var_18_0 - arg_18_0.data.load_food
 	end
 
-	return var_17_0 <= 0
+	return var_18_0 <= 0
 end
 
-function var_0_0.havePopEvent(arg_18_0)
-	local var_18_0 = arg_18_0:getBackYardShips()
+function var_0_0.havePopEvent(arg_19_0)
+	local var_19_0 = arg_19_0:getBackYardShips()
 
-	for iter_18_0, iter_18_1 in pairs(var_18_0) do
-		if iter_18_1:hasStateInfo3Or4() then
+	for iter_19_0, iter_19_1 in pairs(var_19_0) do
+		if iter_19_1:hasStateInfo3Or4() then
 			return true
 		end
 	end
@@ -186,237 +190,237 @@ function var_0_0.havePopEvent(arg_18_0)
 	return false
 end
 
-function var_0_0.AddFurniture(arg_19_0, arg_19_1)
-	assert(isa(arg_19_1, Furniture))
-	arg_19_0.data:AddFurniture(arg_19_1)
-	arg_19_0:updateDrom(arg_19_0.data, BackYardConst.DORM_UPDATE_TYPE_FURNITURE)
-end
-
-function var_0_0.AddFurnitrues(arg_20_0, arg_20_1)
-	for iter_20_0, iter_20_1 in ipairs(arg_20_1) do
-		local var_20_0 = Furniture.New({
-			count = 1,
-			id = iter_20_1
-		})
-
-		arg_20_0.data:AddFurniture(var_20_0)
-	end
-
+function var_0_0.AddFurniture(arg_20_0, arg_20_1)
+	assert(isa(arg_20_1, Furniture))
+	arg_20_0.data:AddFurniture(arg_20_1)
 	arg_20_0:updateDrom(arg_20_0.data, BackYardConst.DORM_UPDATE_TYPE_FURNITURE)
 end
 
-function var_0_0.ClearNewFlag(arg_21_0)
-	local var_21_0 = arg_21_0.data:GetPurchasedFurnitures()
+function var_0_0.AddFurnitrues(arg_21_0, arg_21_1)
+	for iter_21_0, iter_21_1 in ipairs(arg_21_1) do
+		local var_21_0 = Furniture.New({
+			count = 1,
+			id = iter_21_1
+		})
 
-	for iter_21_0, iter_21_1 in pairs(var_21_0) do
-		iter_21_1:ClearNewFlag()
+		arg_21_0.data:AddFurniture(var_21_0)
+	end
+
+	arg_21_0:updateDrom(arg_21_0.data, BackYardConst.DORM_UPDATE_TYPE_FURNITURE)
+end
+
+function var_0_0.ClearNewFlag(arg_22_0)
+	local var_22_0 = arg_22_0.data:GetPurchasedFurnitures()
+
+	for iter_22_0, iter_22_1 in pairs(var_22_0) do
+		iter_22_1:ClearNewFlag()
 	end
 end
 
-function var_0_0._ClearNewFlag(arg_22_0, arg_22_1)
-	local var_22_0 = arg_22_0.data:GetPurchasedFurnitures()[arg_22_1]
+function var_0_0._ClearNewFlag(arg_23_0, arg_23_1)
+	local var_23_0 = arg_23_0.data:GetPurchasedFurnitures()[arg_23_1]
 
-	if var_22_0 then
-		var_22_0:ClearNewFlag()
+	if var_23_0 then
+		var_23_0:ClearNewFlag()
 	end
 end
 
-function var_0_0.addDorm(arg_23_0, arg_23_1)
-	assert(isa(arg_23_1, Dorm), "dorm should instance of Dorm")
-
-	arg_23_0.data = arg_23_1
-
-	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inBackyard")
-end
-
-function var_0_0.updateDrom(arg_24_0, arg_24_1, arg_24_2)
+function var_0_0.addDorm(arg_24_0, arg_24_1)
 	assert(isa(arg_24_1, Dorm), "dorm should instance of Dorm")
-	assert(arg_24_1, "drom should exist")
 
 	arg_24_0.data = arg_24_1
 
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inBackyard")
-	arg_24_0.facade:sendNotification(var_0_0.DORM_UPDATEED, {}, arg_24_2)
 end
 
-function var_0_0.getData(arg_25_0)
-	return (arg_25_0.data or Dorm.New({
+function var_0_0.updateDrom(arg_25_0, arg_25_1, arg_25_2)
+	assert(isa(arg_25_1, Dorm), "dorm should instance of Dorm")
+	assert(arg_25_1, "drom should exist")
+
+	arg_25_0.data = arg_25_1
+
+	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inBackyard")
+	arg_25_0.facade:sendNotification(var_0_0.DORM_UPDATEED, {}, arg_25_2)
+end
+
+function var_0_0.getData(arg_26_0)
+	return (arg_26_0.data or Dorm.New({
 		id = 1
 	})):clone()
 end
 
-function var_0_0.updateFood(arg_26_0, arg_26_1)
-	arg_26_0.data:consumeFood(arg_26_1)
-	arg_26_0.data:restNextTime()
-	arg_26_0:updateDrom(arg_26_0.data, BackYardConst.DORM_UPDATE_TYPE_UPDATEFOOD)
+function var_0_0.updateFood(arg_27_0, arg_27_1)
+	arg_27_0.data:consumeFood(arg_27_1)
+	arg_27_0.data:restNextTime()
+	arg_27_0:updateDrom(arg_27_0.data, BackYardConst.DORM_UPDATE_TYPE_UPDATEFOOD)
 end
 
-function var_0_0.getRestFood(arg_27_0)
-	return arg_27_0.data.food
+function var_0_0.getRestFood(arg_28_0)
+	return arg_28_0.data.food
 end
 
-function var_0_0.GetCustomThemeTemplates(arg_28_0)
-	return arg_28_0.customThemeTemplates
+function var_0_0.GetCustomThemeTemplates(arg_29_0)
+	return arg_29_0.customThemeTemplates
 end
 
-function var_0_0.SetCustomThemeTemplates(arg_29_0, arg_29_1)
-	arg_29_0.customThemeTemplates = arg_29_1
+function var_0_0.SetCustomThemeTemplates(arg_30_0, arg_30_1)
+	arg_30_0.customThemeTemplates = arg_30_1
 end
 
-function var_0_0.GetCustomThemeTemplateById(arg_30_0, arg_30_1)
-	return arg_30_0.customThemeTemplates[arg_30_1]
+function var_0_0.GetCustomThemeTemplateById(arg_31_0, arg_31_1)
+	return arg_31_0.customThemeTemplates[arg_31_1]
 end
 
-function var_0_0.UpdateCustomThemeTemplate(arg_31_0, arg_31_1)
-	arg_31_0.customThemeTemplates[arg_31_1.id] = arg_31_1
+function var_0_0.UpdateCustomThemeTemplate(arg_32_0, arg_32_1)
+	arg_32_0.customThemeTemplates[arg_32_1.id] = arg_32_1
 
-	arg_31_0:sendNotification(var_0_0.THEME_TEMPLATE_UPDATED, {
+	arg_32_0:sendNotification(var_0_0.THEME_TEMPLATE_UPDATED, {
 		type = BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM,
-		template = arg_31_1
+		template = arg_32_1
 	})
 end
 
-function var_0_0.DeleteCustomThemeTemplate(arg_32_0, arg_32_1)
-	arg_32_0.customThemeTemplates[arg_32_1] = nil
+function var_0_0.DeleteCustomThemeTemplate(arg_33_0, arg_33_1)
+	arg_33_0.customThemeTemplates[arg_33_1] = nil
 
-	arg_32_0:sendNotification(var_0_0.THEME_TEMPLATE_DELTETED, {
-		templateId = arg_32_1
+	arg_33_0:sendNotification(var_0_0.THEME_TEMPLATE_DELTETED, {
+		templateId = arg_33_1
 	})
 end
 
-function var_0_0.AddCustomThemeTemplate(arg_33_0, arg_33_1)
-	arg_33_0.customThemeTemplates[arg_33_1.id] = arg_33_1
+function var_0_0.AddCustomThemeTemplate(arg_34_0, arg_34_1)
+	arg_34_0.customThemeTemplates[arg_34_1.id] = arg_34_1
 
-	arg_33_0:sendNotification(var_0_0.THEME_TEMPLATE_ADDED, {
-		template = arg_33_1
+	arg_34_0:sendNotification(var_0_0.THEME_TEMPLATE_ADDED, {
+		template = arg_34_1
 	})
 end
 
-function var_0_0.GetUploadThemeTemplateCnt(arg_34_0)
-	local var_34_0 = 0
+function var_0_0.GetUploadThemeTemplateCnt(arg_35_0)
+	local var_35_0 = 0
 
-	for iter_34_0, iter_34_1 in pairs(arg_34_0.customThemeTemplates) do
-		if iter_34_1:IsPushed() then
-			var_34_0 = var_34_0 + 1
+	for iter_35_0, iter_35_1 in pairs(arg_35_0.customThemeTemplates) do
+		if iter_35_1:IsPushed() then
+			var_35_0 = var_35_0 + 1
 		end
 	end
 
-	return var_34_0
+	return var_35_0
 end
 
-function var_0_0.GetShopThemeTemplates(arg_35_0)
-	return arg_35_0.shopThemeTemplates
+function var_0_0.GetShopThemeTemplates(arg_36_0)
+	return arg_36_0.shopThemeTemplates
 end
 
-function var_0_0.SetShopThemeTemplates(arg_36_0, arg_36_1)
-	arg_36_0.shopThemeTemplates = arg_36_1
+function var_0_0.SetShopThemeTemplates(arg_37_0, arg_37_1)
+	arg_37_0.shopThemeTemplates = arg_37_1
 end
 
-function var_0_0.GetShopThemeTemplateById(arg_37_0, arg_37_1)
-	return arg_37_0.shopThemeTemplates[arg_37_1]
+function var_0_0.GetShopThemeTemplateById(arg_38_0, arg_38_1)
+	return arg_38_0.shopThemeTemplates[arg_38_1]
 end
 
-function var_0_0.IsInitShopThemeTemplates(arg_38_0)
-	return arg_38_0.shopThemeTemplates ~= nil
+function var_0_0.IsInitShopThemeTemplates(arg_39_0)
+	return arg_39_0.shopThemeTemplates ~= nil
 end
 
-function var_0_0.UpdateShopThemeTemplate(arg_39_0, arg_39_1)
-	arg_39_0.shopThemeTemplates[arg_39_1.id] = arg_39_1
+function var_0_0.UpdateShopThemeTemplate(arg_40_0, arg_40_1)
+	arg_40_0.shopThemeTemplates[arg_40_1.id] = arg_40_1
 
-	arg_39_0:sendNotification(var_0_0.THEME_TEMPLATE_UPDATED, {
+	arg_40_0:sendNotification(var_0_0.THEME_TEMPLATE_UPDATED, {
 		type = BackYardConst.THEME_TEMPLATE_TYPE_SHOP,
-		template = arg_39_1
+		template = arg_40_1
 	})
 end
 
-function var_0_0.DeleteShopThemeTemplate(arg_40_0, arg_40_1)
-	arg_40_0.shopThemeTemplates[arg_40_1] = nil
+function var_0_0.DeleteShopThemeTemplate(arg_41_0, arg_41_1)
+	arg_41_0.shopThemeTemplates[arg_41_1] = nil
 
-	arg_40_0:sendNotification(var_0_0.SHOP_THEME_TEMPLATE_DELETED, {
-		id = arg_40_1
+	arg_41_0:sendNotification(var_0_0.SHOP_THEME_TEMPLATE_DELETED, {
+		id = arg_41_1
 	})
 end
 
-function var_0_0.GetCollectionThemeTemplates(arg_41_0)
-	return arg_41_0.collectionThemeTemplates
+function var_0_0.GetCollectionThemeTemplates(arg_42_0)
+	return arg_42_0.collectionThemeTemplates
 end
 
-function var_0_0.SetCollectionThemeTemplates(arg_42_0, arg_42_1)
-	arg_42_0.collectionThemeTemplates = arg_42_1
+function var_0_0.SetCollectionThemeTemplates(arg_43_0, arg_43_1)
+	arg_43_0.collectionThemeTemplates = arg_43_1
 end
 
-function var_0_0.GetCollectionThemeTemplateById(arg_43_0, arg_43_1)
-	return arg_43_0.collectionThemeTemplates[arg_43_1]
+function var_0_0.GetCollectionThemeTemplateById(arg_44_0, arg_44_1)
+	return arg_44_0.collectionThemeTemplates[arg_44_1]
 end
 
-function var_0_0.AddCollectionThemeTemplate(arg_44_0, arg_44_1)
-	arg_44_0.collectionThemeTemplates[arg_44_1.id] = arg_44_1
+function var_0_0.AddCollectionThemeTemplate(arg_45_0, arg_45_1)
+	arg_45_0.collectionThemeTemplates[arg_45_1.id] = arg_45_1
 
-	arg_44_0:sendNotification(var_0_0.COLLECTION_THEME_TEMPLATE_ADDED, {
-		template = arg_44_1
+	arg_45_0:sendNotification(var_0_0.COLLECTION_THEME_TEMPLATE_ADDED, {
+		template = arg_45_1
 	})
 end
 
-function var_0_0.DeleteCollectionThemeTemplate(arg_45_0, arg_45_1)
-	arg_45_0.collectionThemeTemplates[arg_45_1] = nil
+function var_0_0.DeleteCollectionThemeTemplate(arg_46_0, arg_46_1)
+	arg_46_0.collectionThemeTemplates[arg_46_1] = nil
 
-	arg_45_0:sendNotification(var_0_0.COLLECTION_THEME_TEMPLATE_DELETED, {
-		id = arg_45_1
+	arg_46_0:sendNotification(var_0_0.COLLECTION_THEME_TEMPLATE_DELETED, {
+		id = arg_46_1
 	})
 end
 
-function var_0_0.GetThemeTemplateCollectionCnt(arg_46_0)
-	return table.getCount(arg_46_0.collectionThemeTemplates or {})
+function var_0_0.GetThemeTemplateCollectionCnt(arg_47_0)
+	return table.getCount(arg_47_0.collectionThemeTemplates or {})
 end
 
-function var_0_0.UpdateCollectionThemeTemplate(arg_47_0, arg_47_1)
-	arg_47_0.collectionThemeTemplates[arg_47_1.id] = arg_47_1
+function var_0_0.UpdateCollectionThemeTemplate(arg_48_0, arg_48_1)
+	arg_48_0.collectionThemeTemplates[arg_48_1.id] = arg_48_1
 
-	arg_47_0:sendNotification(var_0_0.THEME_TEMPLATE_UPDATED, {
+	arg_48_0:sendNotification(var_0_0.THEME_TEMPLATE_UPDATED, {
 		type = BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION,
-		template = arg_47_1
+		template = arg_48_1
 	})
 end
 
-function var_0_0.GetTemplateNewID(arg_48_0)
-	local var_48_0 = _.map(_.values(arg_48_0.customThemeTemplates or {}), function(arg_49_0)
-		return arg_49_0:GetPos()
+function var_0_0.GetTemplateNewID(arg_49_0)
+	local var_49_0 = _.map(_.values(arg_49_0.customThemeTemplates or {}), function(arg_50_0)
+		return arg_50_0:GetPos()
 	end)
 
-	for iter_48_0 = 1, 10 do
-		if not table.contains(var_48_0, iter_48_0) then
-			return iter_48_0
+	for iter_49_0 = 1, 10 do
+		if not table.contains(var_49_0, iter_49_0) then
+			return iter_49_0
 		end
 	end
 end
 
-function var_0_0.GetSystemThemes(arg_50_0)
-	if not arg_50_0.systemThemes or #arg_50_0.systemThemes == 0 then
-		local var_50_0 = pg.backyard_theme_template
+function var_0_0.GetSystemThemes(arg_51_0)
+	if not arg_51_0.systemThemes or #arg_51_0.systemThemes == 0 then
+		local var_51_0 = pg.backyard_theme_template
 
-		for iter_50_0, iter_50_1 in ipairs(var_50_0.all) do
-			if var_50_0[iter_50_1].is_view == 1 then
-				local var_50_1 = BackYardSystemTheme.New({
-					id = iter_50_1
+		for iter_51_0, iter_51_1 in ipairs(var_51_0.all) do
+			if var_51_0[iter_51_1].is_view == 1 then
+				local var_51_1 = BackYardSystemTheme.New({
+					id = iter_51_1
 				})
 
-				table.insert(arg_50_0.systemThemes, var_50_1)
+				table.insert(arg_51_0.systemThemes, var_51_1)
 			end
 		end
 	end
 
-	return arg_50_0.systemThemes
+	return arg_51_0.systemThemes
 end
 
-function var_0_0.ResetSystemTheme(arg_51_0, arg_51_1)
-	if not arg_51_0.systemThemes or #arg_51_0.systemThemes == 0 then
+function var_0_0.ResetSystemTheme(arg_52_0, arg_52_1)
+	if not arg_52_0.systemThemes or #arg_52_0.systemThemes == 0 then
 		return
 	end
 
-	for iter_51_0, iter_51_1 in ipairs(arg_51_0.systemThemes) do
-		if iter_51_1.id == arg_51_1 then
-			arg_51_0.systemThemes[iter_51_0] = BackYardSystemTheme.New({
-				id = arg_51_1
+	for iter_52_0, iter_52_1 in ipairs(arg_52_0.systemThemes) do
+		if iter_52_1.id == arg_52_1 then
+			arg_52_0.systemThemes[iter_52_0] = BackYardSystemTheme.New({
+				id = arg_52_1
 			})
 
 			break
@@ -424,15 +428,15 @@ function var_0_0.ResetSystemTheme(arg_51_0, arg_51_1)
 	end
 end
 
-function var_0_0.NeedRefreshThemeTemplateShop(arg_52_0)
-	if not arg_52_0.refreshThemeTemplateShopTime then
-		arg_52_0.refreshThemeTemplateShopTime = 0
+function var_0_0.NeedRefreshThemeTemplateShop(arg_53_0)
+	if not arg_53_0.refreshThemeTemplateShopTime then
+		arg_53_0.refreshThemeTemplateShopTime = 0
 	end
 
-	local var_52_0 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_53_0 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	if var_52_0 > arg_52_0.refreshThemeTemplateShopTime then
-		arg_52_0.refreshThemeTemplateShopTime = var_52_0 + BackYardConst.AUTO_REFRESH_THEME_TEMPLATE_TIME
+	if var_53_0 > arg_53_0.refreshThemeTemplateShopTime then
+		arg_53_0.refreshThemeTemplateShopTime = var_53_0 + BackYardConst.AUTO_REFRESH_THEME_TEMPLATE_TIME
 
 		return true
 	end
@@ -440,28 +444,28 @@ function var_0_0.NeedRefreshThemeTemplateShop(arg_52_0)
 	return false
 end
 
-function var_0_0.NeedCollectionTip(arg_53_0)
-	local var_53_0 = getProxy(PlayerProxy):getRawData().id
-	local var_53_1 = PlayerPrefs.GetInt("backyard_template" .. var_53_0, 0)
-	local var_53_2 = arg_53_0:GetThemeTemplateCollectionCnt()
-
-	if var_53_2 ~= var_53_1 then
-		PlayerPrefs.SetInt("backyard_template" .. var_53_0, var_53_2)
-		PlayerPrefs.Save()
-	end
-
-	if var_53_2 < var_53_1 then
-		return true
-	end
-
-	return false
-end
-
-function var_0_0.NeedShopShowHelp(arg_54_0)
+function var_0_0.NeedCollectionTip(arg_54_0)
 	local var_54_0 = getProxy(PlayerProxy):getRawData().id
+	local var_54_1 = PlayerPrefs.GetInt("backyard_template" .. var_54_0, 0)
+	local var_54_2 = arg_54_0:GetThemeTemplateCollectionCnt()
 
-	if not (PlayerPrefs.GetInt("backyard_template_help" .. var_54_0, 0) > 0) then
-		PlayerPrefs.SetInt("backyard_template_help" .. var_54_0, 1)
+	if var_54_2 ~= var_54_1 then
+		PlayerPrefs.SetInt("backyard_template" .. var_54_0, var_54_2)
+		PlayerPrefs.Save()
+	end
+
+	if var_54_2 < var_54_1 then
+		return true
+	end
+
+	return false
+end
+
+function var_0_0.NeedShopShowHelp(arg_55_0)
+	local var_55_0 = getProxy(PlayerProxy):getRawData().id
+
+	if not (PlayerPrefs.GetInt("backyard_template_help" .. var_55_0, 0) > 0) then
+		PlayerPrefs.SetInt("backyard_template_help" .. var_55_0, 1)
 		PlayerPrefs.Save()
 
 		return true
@@ -470,29 +474,29 @@ function var_0_0.NeedShopShowHelp(arg_54_0)
 	return false
 end
 
-function var_0_0.GetTag7Furnitures(arg_55_0)
-	local var_55_0 = {}
-	local var_55_1 = pg.furniture_data_template.get_id_list_by_tag[7]
+function var_0_0.GetTag7Furnitures(arg_56_0)
+	local var_56_0 = {}
+	local var_56_1 = pg.furniture_data_template.get_id_list_by_tag[7]
 
-	for iter_55_0, iter_55_1 in ipairs(var_55_1) do
-		local var_55_2 = pg.furniture_shop_template[iter_55_1]
+	for iter_56_0, iter_56_1 in ipairs(var_56_1) do
+		local var_56_2 = pg.furniture_shop_template[iter_56_1]
 
-		if var_55_2 and var_55_2.not_for_sale == 0 and pg.TimeMgr.GetInstance():inTime(var_55_2.time) then
-			table.insert(var_55_0, iter_55_1)
+		if var_56_2 and var_56_2.not_for_sale == 0 and pg.TimeMgr.GetInstance():inTime(var_56_2.time) then
+			table.insert(var_56_0, iter_56_1)
 		end
 	end
 
-	return var_55_0
+	return var_56_0
 end
 
-function var_0_0.IsShowRedDot(arg_56_0)
-	local var_56_0 = getProxy(PlayerProxy):getRawData()
-	local var_56_1 = pg.SystemOpenMgr.GetInstance():isOpenSystem(var_56_0.level, "CourtYardMediator")
-	local var_56_2 = getProxy(DormProxy)
-	local var_56_3 = var_56_2:isLackOfFood()
-	local var_56_4 = var_56_2:havePopEvent()
+function var_0_0.IsShowRedDot(arg_57_0)
+	local var_57_0 = getProxy(PlayerProxy):getRawData()
+	local var_57_1 = pg.SystemOpenMgr.GetInstance():isOpenSystem(var_57_0.level, "CourtYardMediator")
+	local var_57_2 = getProxy(DormProxy)
+	local var_57_3 = var_57_2:isLackOfFood()
+	local var_57_4 = var_57_2:havePopEvent()
 
-	return var_56_1 and (var_56_3 or var_56_4 or getProxy(SettingsProxy):IsTipNewTheme() or getProxy(SettingsProxy):IsTipNewGemFurniture())
+	return var_57_1 and (var_57_3 or var_57_4 or getProxy(SettingsProxy):IsTipNewTheme() or getProxy(SettingsProxy):IsTipNewGemFurniture())
 end
 
 return var_0_0

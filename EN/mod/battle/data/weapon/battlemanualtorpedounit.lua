@@ -74,7 +74,7 @@ end
 
 function var_0_2.InitialCD(arg_10_0)
 	var_0_2.super.InitialCD(arg_10_0)
-	arg_10_0._playerTorpedoVO:Deduct(arg_10_0)
+	arg_10_0._playerTorpedoVO:InitialDeduct(arg_10_0)
 	arg_10_0._playerTorpedoVO:Charge(arg_10_0)
 end
 

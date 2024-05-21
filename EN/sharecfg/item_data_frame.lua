@@ -453,7 +453,7 @@ pg.item_data_frame = {
 	[330] = {
 		time_limit_type = 0,
 		name = "Sigil of the Martyr",
-		gain_by = "",
+		gain_by = "绽放于辉光之城 ",
 		id = 330,
 		time_second = 0,
 		desc = "Obtained from an event.",
@@ -556,6 +556,15 @@ pg.item_data_frame = {
 		id = 605,
 		time_second = 0,
 		desc = "<color=#ffffff>Victory belongs to who reaches the goal fastest.</color>\nAwarded to Commanders who participated in the \"High-Speed Raceway\" event.",
+		scene = {}
+	},
+	[606] = {
+		time_limit_type = 0,
+		name = "Ring of Leisure",
+		gain_by = "",
+		id = 606,
+		time_second = 0,
+		desc = "<color=#ffffff>Feel the breeze, take in the sun, and enjoy yourself!</color> Obtained in the \"Pleasure, Leisure, and Treasure\" event.",
 		scene = {}
 	},
 	[10001] = {
@@ -729,6 +738,7 @@ pg.item_data_frame = {
 		602,
 		603,
 		605,
+		606,
 		10001,
 		10002,
 		10003,

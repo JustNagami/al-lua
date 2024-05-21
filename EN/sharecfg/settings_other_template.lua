@@ -162,6 +162,33 @@ pg.settings_other_template = {
 		title = "Fixed L2D Settings",
 		desc = "When toggled ON, the display state of L2D skins on the home screen will be set to standby, and the \"Login\" and \"Return to Port\" animations will no longer play when navigating to the home screen."
 	},
+	{
+		default = 1,
+		name = "USAGE_NEW_MAINUI",
+		type = 0,
+		alignment = 0,
+		id = 19,
+		title = "Use New Main Menu UI",
+		desc = "When toggled ON, the main menu will use the new user interface."
+	},
+	{
+		default = 1,
+		name = "MAINUI_NEVER_SLEEP",
+		type = 0,
+		alignment = 0,
+		id = 20,
+		title = "No Sleep Mode On Main Menu",
+		desc = "When toggled ON, sleep mode will not be triggered while you are on the main menu."
+	},
+	{
+		default = 0,
+		name = "MAINUI_RESET_L2D",
+		type = 0,
+		alignment = 0,
+		id = 21,
+		title = "Show L2D Reset Button",
+		desc = "When toggled ON, a L2D reset button will appear on the main menu."
+	},
 	all = {
 		1,
 		2,
@@ -180,6 +207,9 @@ pg.settings_other_template = {
 		15,
 		16,
 		17,
-		18
+		18,
+		19,
+		20,
+		21
 	}
 }

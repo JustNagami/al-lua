@@ -257,7 +257,12 @@ pg.strategy_data_template = setmetatable({
 		200903,
 		200905,
 		200907,
-		200908
+		200908,
+		200925,
+		200926,
+		200928,
+		200930,
+		200931
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -3119,6 +3124,61 @@ pg.base.strategy_data_template = {
 		icon = "200908",
 		buff_type = 0,
 		desc = "The battle will initiate in challenge mode if your Vanguard consists of only a single ship when the battle starts. This will increase the difficulty, but also increase the score you gain.\n\n- Challenge Mode Details -\n· Enemies deal significantly more DMG and any shields they deploy have infinite HP.\n· The more time passes, the more their DMG dealt increases.\n· The skills \"Quick Takeoff\" and \"Fiercer When Cornered\" are rendered ineffective.",
+		arg = {}
+	},
+	[200925] = {
+		buff_id = 200925,
+		name = "Death's Bridge",
+		iconSize = "",
+		type = 10,
+		id = 200925,
+		icon = "200925",
+		buff_type = 0,
+		desc = "Death's Bridge has been activated. \nDuring battle, Death's Bridge will launch supporting attacks against your fleet.",
+		arg = {}
+	},
+	[200926] = {
+		buff_id = 0,
+		name = "Mimic Entities",
+		iconSize = "",
+		type = 10,
+		id = 200926,
+		icon = "200926",
+		buff_type = 0,
+		desc = "/*Mimic beasts/* split into smaller segments when destroyed, propping up their ranks. \n\nSo-called */mimic beasts*/ have been sighted. What are these things?",
+		arg = {}
+	},
+	[200928] = {
+		buff_id = 200928,
+		name = "Martyrium of Death",
+		iconSize = "",
+		type = 10,
+		id = 200928,
+		icon = "200928",
+		buff_type = 0,
+		desc = "The concept of death has been anchored to the foundation, giving form to the Martyrium. \nDuring battle, whenever a ship in your fleet sinks an enemy, all of her stats increase by 1.0% (can be stacked up to 5 times).",
+		arg = {}
+	},
+	[200930] = {
+		buff_id = 200930,
+		name = "Martyrium of Noble Sacrifice",
+		iconSize = "",
+		type = 10,
+		id = 200930,
+		icon = "200930",
+		buff_type = 0,
+		desc = "The concept of death has blossomed, and the Martyrium extols its noble sacrifice. \nDuring battle, whenever a ship in your fleet sinks an enemy, all of her stats increase by 1.0% (can be stacked up to 5 times); when she has sunk 10 enemies, your fleet will receive a supporting barrage.",
+		arg = {}
+	},
+	[200931] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 200931,
+		icon = "200908",
+		buff_type = 0,
+		desc = "The battle will initiate in challenge mode if a ship in your fleet has the Enigmata \"D\" equipped when the battle starts. This will increase the difficulty, but also increase the score you gain.\n\n- Challenge Mode Details -\n· Enemies deal significantly more DMG. As time passes, the DMG taken by enemies gradually increases.\n· The skills \"Quick Takeoff\" and \"Fiercer When Cornered\" are rendered ineffective.",
 		arg = {}
 	}
 }

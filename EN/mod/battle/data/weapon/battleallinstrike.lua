@@ -197,7 +197,7 @@ end
 
 function var_0_6.InitialCD(arg_23_0)
 	arg_23_0:AddCDTimer(arg_23_0:GetReloadTime())
-	arg_23_0._allInWeaponVo:Deduct(arg_23_0)
+	arg_23_0._allInWeaponVo:InitialDeduct(arg_23_0)
 	arg_23_0._allInWeaponVo:Charge(arg_23_0)
 end
 

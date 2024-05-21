@@ -221,7 +221,7 @@ end
 
 function var_0_4.InitialCD(arg_19_0)
 	var_0_4.super.InitialCD(arg_19_0)
-	arg_19_0._playerChargeWeaponVo:Deduct(arg_19_0)
+	arg_19_0._playerChargeWeaponVo:InitialDeduct(arg_19_0)
 	arg_19_0._playerChargeWeaponVo:Charge(arg_19_0)
 end
 

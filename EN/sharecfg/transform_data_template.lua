@@ -138,6 +138,18 @@ pg.transform_data_template = setmetatable({
 		5309,
 		5310,
 		5311,
+		6001,
+		6002,
+		6003,
+		6004,
+		6005,
+		6006,
+		6007,
+		6008,
+		6009,
+		6010,
+		6011,
+		6012,
 		6201,
 		6202,
 		6203,
@@ -6315,6 +6327,473 @@ pg.base.transform_data_template = {
 		},
 		gear_score = {
 			50
+		}
+	},
+	[6001] = {
+		use_gold = 300,
+		name = "Hull Improvement Ⅰ",
+		star_limit = 2,
+		id = 6001,
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 1,
+		descrip = "",
+		icon = "hp_1",
+		skill_id = 0,
+		condition_id = {},
+		effect = {
+			{
+				durability = 70
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18021,
+					2
+				}
+			}
+		},
+		gear_score = {
+			10
+		}
+	},
+	[6002] = {
+		use_gold = 400,
+		name = "Hit Enhancement Ⅰ",
+		star_limit = 2,
+		id = 6002,
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 5,
+		descrip = "",
+		icon = "rl_1",
+		skill_id = 0,
+		condition_id = {
+			6001
+		},
+		effect = {
+			{
+				hit = 5
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18021,
+					3
+				}
+			}
+		},
+		gear_score = {
+			10
+		}
+	},
+	[6003] = {
+		use_gold = 600,
+		name = "Main Gun Improvement Ⅰ",
+		star_limit = 3,
+		id = 6003,
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 20,
+		descrip = "",
+		icon = "mgup_1",
+		skill_id = 0,
+		condition_id = {
+			6001
+		},
+		effect = {
+			{
+				equipment_proficiency_1 = 0.05
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18021,
+					3
+				}
+			}
+		},
+		gear_score = {
+			15
+		}
+	},
+	[6004] = {
+		use_gold = 800,
+		name = "Firepower Enhancement Ⅰ",
+		star_limit = 3,
+		id = 6004,
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 25,
+		descrip = "",
+		icon = "cn_1",
+		skill_id = 0,
+		condition_id = {
+			6003
+		},
+		effect = {
+			{
+				cannon = 10
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18021,
+					5
+				}
+			}
+		},
+		gear_score = {
+			15
+		}
+	},
+	[6005] = {
+		use_gold = 1000,
+		name = "Anti-Air Gun Improvement Ⅰ",
+		star_limit = 4,
+		id = 6005,
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 35,
+		descrip = "",
+		icon = "aaup_1",
+		skill_id = 0,
+		condition_id = {
+			6003
+		},
+		effect = {
+			{
+				equipment_proficiency_3 = 0.05
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18022,
+					3
+				}
+			}
+		},
+		gear_score = {
+			15
+		}
+	},
+	[6006] = {
+		use_gold = 1200,
+		name = "Anti-Air Enhancement Ⅰ",
+		star_limit = 4,
+		id = 6006,
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 40,
+		descrip = "",
+		icon = "aa_1",
+		skill_id = 0,
+		condition_id = {
+			6005
+		},
+		effect = {
+			{
+				antiaircraft = 10
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18022,
+					2
+				}
+			}
+		},
+		gear_score = {
+			15
+		}
+	},
+	[6007] = {
+		use_gold = 1500,
+		name = "Hull Improvement Ⅱ",
+		star_limit = 4,
+		id = 6007,
+		max_level = 2,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 50,
+		descrip = "",
+		icon = "hp_2",
+		skill_id = 0,
+		condition_id = {
+			6005
+		},
+		effect = {
+			{
+				durability = 70
+			},
+			{
+				durability = 100
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18022,
+					2
+				}
+			},
+			{
+				{
+					18022,
+					3
+				}
+			}
+		},
+		gear_score = {
+			10,
+			15
+		}
+	},
+	[6008] = {
+		use_gold = 1800,
+		name = "Hit Enhancement Ⅱ",
+		star_limit = 4,
+		id = 6008,
+		max_level = 2,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 55,
+		descrip = "",
+		icon = "rl_2",
+		skill_id = 0,
+		condition_id = {
+			6002,
+			6007
+		},
+		effect = {
+			{
+				hit = 5
+			},
+			{
+				hit = 10
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18022,
+					2
+				}
+			},
+			{
+				{
+					18022,
+					3
+				}
+			}
+		},
+		gear_score = {
+			10,
+			15
+		}
+	},
+	[6009] = {
+		use_gold = 2000,
+		name = "Main Gun Improvement Ⅱ",
+		star_limit = 5,
+		id = 6009,
+		max_level = 2,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 70,
+		descrip = "",
+		icon = "mgup_2",
+		skill_id = 0,
+		condition_id = {
+			6007
+		},
+		effect = {
+			{
+				equipment_proficiency_1 = 0.05
+			},
+			{
+				equipment_proficiency_1 = 0.05
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18023,
+					1
+				}
+			},
+			{
+				{
+					18023,
+					1
+				}
+			}
+		},
+		gear_score = {
+			10,
+			20
+		}
+	},
+	[6010] = {
+		use_gold = 2500,
+		name = "Firepower Enhancement Ⅱ",
+		star_limit = 5,
+		id = 6010,
+		max_level = 2,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 75,
+		descrip = "",
+		icon = "cn_2",
+		skill_id = 0,
+		condition_id = {
+			6008,
+			6009
+		},
+		effect = {
+			{
+				cannon = 5
+			},
+			{
+				cannon = 15
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18023,
+					1
+				},
+				{
+					17003,
+					5
+				}
+			},
+			{
+				{
+					18023,
+					2
+				},
+				{
+					17003,
+					15
+				}
+			}
+		},
+		gear_score = {
+			10,
+			20
+		}
+	},
+	[6011] = {
+		use_gold = 3000,
+		name = "Modernization",
+		star_limit = 5,
+		id = 6011,
+		max_level = 1,
+		skin_id = 105099,
+		use_ship = 1,
+		level_limit = 85,
+		descrip = "",
+		icon = "mt_yellow",
+		skill_id = 0,
+		condition_id = {
+			6006,
+			6009
+		},
+		effect = {
+			{
+				reload = 25,
+				antiaircraft = 20
+			}
+		},
+		ship_id = {
+			{
+				105094,
+				105214
+			}
+		},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18023,
+					3
+				}
+			}
+		},
+		gear_score = {
+			50
+		}
+	},
+	[6012] = {
+		use_gold = 3000,
+		name = "Tactical Learning",
+		star_limit = 5,
+		id = 6012,
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 90,
+		descrip = "",
+		icon = "skill_red",
+		skill_id = 17980,
+		condition_id = {
+			6011
+		},
+		effect = {
+			{
+				skill_id = 17980
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18023,
+					2
+				},
+				{
+					17003,
+					50
+				}
+			}
+		},
+		gear_score = {
+			30
 		}
 	},
 	[6201] = {

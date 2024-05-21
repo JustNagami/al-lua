@@ -1,129 +1,6 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_2 = {
-	[102020] = {
-		ship_group = 10202,
-		name = "Raleigh",
-		hand_id = 5,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "luoli",
-		illustrator = 6,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 102020,
-		voice_actor_2 = -1,
-		prefab = "luoli",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Omaha-class light cruiser – Raleigh, Hull Number CL-7!",
-		voice_actor = 62,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					-0.063,
-					0.526,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.15,
-					0.407,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					-0.376,
-					0.996,
-					0
-				},
-				{
-					0.52,
-					0.827,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				70,
-				{
-					{
-						"smoke",
-						{
-							-0.53,
-							0.3,
-							0
-						}
-					}
-				}
-			},
-			{
-				30,
-				{
-					{
-						"smoke",
-						{
-							0.42,
-							0.51,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
 	[102030] = {
 		ship_group = 10203,
 		name = "Brooklyn",
@@ -4692,6 +4569,191 @@ pg.base.ship_skin_template_2 = {
 				-30,
 				30
 			}
+		}
+	},
+	[102134] = {
+		ship_group = 10213,
+		name = "An Afternoon on the Lido Deck",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 4,
+		shop_id = 71010,
+		painting = "shengluyisi_5",
+		illustrator = 30,
+		shop_type_id = 6,
+		lip_smoothing = 0,
+		bg = "539",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 102134,
+		voice_actor_2 = -1,
+		prefab = "shengluyisi_5",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Commander, I've been waiting for you. Lazing about and enjoying the sights here does sound nice, but... Heheh, it just isn't the same without you by my side♪",
+		voice_actor = 114,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		show_skin = "stand",
+		tag = {
+			1,
+			2
+		},
+		live2d_offset = {
+			109,
+			-83,
+			0
+		},
+		live2d_offset_profile = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.307,
+					0.643,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.413,
+					0.689,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.282,
+					1.63,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.636,
+							2.392,
+							0
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			use_event = true
+		},
+		ship_l2d_id = {
+			10213401,
+			10213402,
+			10213403,
+			10213404,
+			10213405,
+			10213406,
+			10213407,
+			10213408,
+			10213409,
+			10213410,
+			10213411,
+			10213412,
+			10213413,
+			10213414,
+			10213415,
+			10213416,
+			10213417,
+			10213418,
+			10213419,
+			10213420,
+			10213421,
+			10213422,
+			10213423,
+			10213424,
+			10213425,
+			10213426,
+			10213427,
+			10213428,
+			10213429,
+			10213430,
+			10213431,
+			10213432,
+			10213433,
+			10213434,
+			10213435,
+			10213436,
+			10213437,
+			10213438,
+			10213439,
+			10213440,
+			10213441,
+			10213442,
+			10213443,
+			10213444,
+			10213445,
+			10213446,
+			10213447,
+			10213448,
+			10213449,
+			10213450
 		}
 	},
 	[102140] = {
@@ -12111,6 +12173,113 @@ pg.base.ship_skin_template_2 = {
 						{
 							-0.59,
 							2.3,
+							0.14
+						}
+					}
+				}
+			}
+		}
+	},
+	[103121] = {
+		ship_group = 10312,
+		name = "Evening Agricole",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70625,
+		painting = "xinaoerliang_2",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 16,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "145",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 103121,
+		voice_actor_2 = -1,
+		prefab = "xinaoerliang_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "To your prestige, and to your continued victories, Commander. Hehe, I do find myself in the mood for rum tonight. Care to keep me company for a while?",
+		voice_actor = 289,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.323,
+					1.22,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.301,
+					0.99,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.116,
+					0.045,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.57,
+							2.379,
 							0.14
 						}
 					}

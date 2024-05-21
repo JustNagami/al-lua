@@ -18,8 +18,14 @@ return {
 				text = var_0_0[1]
 			},
 			ui = {
-				path = "/OverlayCamera/Overlay/UIMain/main/frame/bottom/buildButton",
 				pathIndex = -1,
+				dynamicPath = function()
+					if getProxy(SettingsProxy):IsMellowStyle() then
+						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/bottom/frame/build"
+					else
+						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/bottom/buildButton"
+					end
+				end,
 				triggerType = {
 					1
 				},

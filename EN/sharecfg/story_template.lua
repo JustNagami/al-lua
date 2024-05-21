@@ -1,7 +1,7 @@
 ﻿pg = pg or {}
 pg.story_template = {
-	[4172] = {
-		id = 4172,
+	[4342] = {
+		id = 4342,
 		name = "E0-1",
 		icon = "story-doujichang",
 		story = "YUZHEDETIANPING2",
@@ -10,8 +10,8 @@ pg.story_template = {
 			0.3
 		}
 	},
-	[4173] = {
-		id = 4173,
+	[4343] = {
+		id = 4343,
 		name = "E0-2",
 		icon = "story-doujichang",
 		story = "YUZHEDETIANPING3",
@@ -20,8 +20,8 @@ pg.story_template = {
 			0.3
 		}
 	},
-	[4174] = {
-		id = 4174,
+	[4344] = {
+		id = 4344,
 		name = "E0-3",
 		icon = "story-doujichang",
 		story = "YUZHEDETIANPING4",
@@ -30,8 +30,8 @@ pg.story_template = {
 			0.3
 		}
 	},
-	[4175] = {
-		id = 4175,
+	[4350] = {
+		id = 4350,
 		name = "E1-1",
 		icon = "story-diluoyi",
 		story = "YUZHEDETIANPING10",
@@ -40,8 +40,8 @@ pg.story_template = {
 			0.14
 		}
 	},
-	[4176] = {
-		id = 4176,
+	[4351] = {
+		id = 4351,
 		name = "E1-2",
 		icon = "story-diluoyi",
 		story = "YUZHEDETIANPING11",
@@ -50,8 +50,8 @@ pg.story_template = {
 			0.136
 		}
 	},
-	[4177] = {
-		id = 4177,
+	[4352] = {
+		id = 4352,
 		name = "E1-3",
 		icon = "story-diluoyi",
 		story = "YUZHEDETIANPING12",
@@ -60,8 +60,8 @@ pg.story_template = {
 			0.355
 		}
 	},
-	[4178] = {
-		id = 4178,
+	[4353] = {
+		id = 4353,
 		name = "E1-4",
 		icon = "story-diluoyi",
 		story = "YUZHEDETIANPING13",
@@ -70,8 +70,8 @@ pg.story_template = {
 			0.296
 		}
 	},
-	[4179] = {
-		id = 4179,
+	[4354] = {
+		id = 4354,
 		name = "E1-5",
 		icon = "story-diluoyi",
 		story = "YUZHEDETIANPING14",
@@ -80,8 +80,8 @@ pg.story_template = {
 			0.276
 		}
 	},
-	[4180] = {
-		id = 4180,
+	[4355] = {
+		id = 4355,
 		name = "E1-6",
 		icon = "story-diluoyi",
 		story = "YUZHEDETIANPING15",
@@ -90,8 +90,8 @@ pg.story_template = {
 			0.412
 		}
 	},
-	[4181] = {
-		id = 4181,
+	[4356] = {
+		id = 4356,
 		name = "E1-7",
 		icon = "story-diluoyi",
 		story = "YUZHEDETIANPING16",
@@ -100,8 +100,8 @@ pg.story_template = {
 			0.391
 		}
 	},
-	[4182] = {
-		id = 4182,
+	[4368] = {
+		id = 4368,
 		name = "E2-1",
 		icon = "story-xinhaota",
 		story = "YUZHEDETIANPING28",
@@ -110,8 +110,8 @@ pg.story_template = {
 			0.114
 		}
 	},
-	[4183] = {
-		id = 4183,
+	[4369] = {
+		id = 4369,
 		name = "E2-2",
 		icon = "story-xinhaota",
 		story = "YUZHEDETIANPING29",
@@ -120,8 +120,8 @@ pg.story_template = {
 			0.33
 		}
 	},
-	[4184] = {
-		id = 4184,
+	[4370] = {
+		id = 4370,
 		name = "E2-3",
 		icon = "story-xinhaota",
 		story = "YUZHEDETIANPING30",
@@ -130,8 +130,8 @@ pg.story_template = {
 			0.341
 		}
 	},
-	[4185] = {
-		id = 4185,
+	[4371] = {
+		id = 4371,
 		name = "E2-4",
 		icon = "story-xinhaota",
 		story = "YUZHEDETIANPING31",
@@ -140,8 +140,8 @@ pg.story_template = {
 			0.152
 		}
 	},
-	[4186] = {
-		id = 4186,
+	[4372] = {
+		id = 4372,
 		name = "E2-5",
 		icon = "story-xinhaota",
 		story = "YUZHEDETIANPING32",
@@ -150,8 +150,8 @@ pg.story_template = {
 			0.176
 		}
 	},
-	[4187] = {
-		id = 4187,
+	[4373] = {
+		id = 4373,
 		name = "E2-6",
 		icon = "story-xinhaota",
 		story = "YUZHEDETIANPING33",
@@ -160,8 +160,8 @@ pg.story_template = {
 			0.358
 		}
 	},
-	[4192] = {
-		id = 4192,
+	[4374] = {
+		id = 4374,
 		name = "E2-7",
 		icon = "story-xinhaota",
 		story = "YUZHEDETIANPING34",
@@ -171,22 +171,22 @@ pg.story_template = {
 		}
 	},
 	all = {
-		4172,
-		4173,
-		4174,
-		4175,
-		4176,
-		4177,
-		4178,
-		4179,
-		4180,
-		4181,
-		4182,
-		4183,
-		4184,
-		4185,
-		4186,
-		4187,
-		4192
+		4342,
+		4343,
+		4344,
+		4350,
+		4351,
+		4352,
+		4353,
+		4354,
+		4355,
+		4356,
+		4368,
+		4369,
+		4370,
+		4371,
+		4372,
+		4373,
+		4374
 	}
 }

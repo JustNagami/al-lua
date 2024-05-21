@@ -21,7 +21,8 @@ function var_0_0.init(arg_5_0)
 	arg_5_0.pageContainer = arg_5_0:findTF("bg/main/pages")
 	arg_5_0.pageFootContainer = arg_5_0:findTF("bg/main/foots")
 
-	setActive(arg_5_0.pageFootContainer, false)
+	GetOrAddComponent(arg_5_0.pageFootContainer, typeof(CanvasGroup))
+	setCanvasGroupAlpha(arg_5_0.pageFootContainer, 0)
 end
 
 function var_0_0.didEnter(arg_6_0)
@@ -114,17 +115,15 @@ function var_0_0.initSummaryInfo(arg_9_0)
 			arg_9_0.inAniming = false
 
 			arg_9_0.loadingPage:Hide()
-			arg_9_0:registerFootEvent()
-			arg_9_0:registerDrag()
 			arg_13_0()
 		end
 	}, function()
-		setActive(arg_9_0.pageFootContainer, true)
-		arg_9_0:updatePageFoot(1)
+		arg_9_0:registerDrag()
+		arg_9_0:registerFootEvent(1)
 	end)
 end
 
-function var_0_0.registerFootEvent(arg_15_0)
+function var_0_0.registerFootEvent(arg_15_0, arg_15_1)
 	local var_15_0 = UIItemList.New(arg_15_0.pageFootContainer, arg_15_0.pageFootContainer:Find("dot"))
 
 	var_15_0:make(function(arg_16_0, arg_16_1, arg_16_2)
@@ -137,12 +136,14 @@ function var_0_0.registerFootEvent(arg_15_0)
 
 					arg_15_0.currPage = var_16_0
 				else
-					arg_15_0.pages[arg_15_0.currPage]:Hide()
+					arg_15_0.pages[var_16_0]:Hide()
 				end
 			end)
 		end
 	end)
 	var_15_0:align(#arg_15_0.pages)
+	setCanvasGroupAlpha(arg_15_0.pageFootContainer, 1)
+	triggerToggle(arg_15_0.pageFootContainer:GetChild(arg_15_1 - 1), true)
 end
 
 function var_0_0.registerDrag(arg_18_0)

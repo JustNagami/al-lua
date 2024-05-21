@@ -3079,6 +3079,17 @@ pg.fleet_tech_ship_class = {
 			80301
 		}
 	},
+	[80303] = {
+		shiptype = 3,
+		name = "Brennus",
+		nation = 8,
+		id = 80303,
+		t_level_1 = 137,
+		t_level = 8,
+		ships = {
+			80302
+		}
+	},
 	[80501] = {
 		shiptype = 5,
 		name = "Richelieu Class",
@@ -3110,6 +3121,17 @@ pg.fleet_tech_ship_class = {
 		t_level = 4,
 		ships = {
 			80502
+		}
+	},
+	[80504] = {
+		shiptype = 5,
+		name = "Alsace Class",
+		nation = 8,
+		id = 80504,
+		t_level_1 = 1,
+		t_level = 9,
+		ships = {
+			80503
 		}
 	},
 	[80701] = {
@@ -3190,6 +3212,29 @@ pg.fleet_tech_ship_class = {
 			90102,
 			90103,
 			90104
+		}
+	},
+	[90105] = {
+		shiptype = 1,
+		name = "Mogador Class",
+		nation = 9,
+		id = 90105,
+		t_level_1 = 1,
+		t_level = 9,
+		ships = {
+			90107
+		}
+	},
+	[90106] = {
+		shiptype = 1,
+		name = "L'Intrépide Class",
+		nation = 9,
+		id = 90106,
+		t_level_1 = 133,
+		t_level = 6,
+		ships = {
+			90105,
+			90106
 		}
 	},
 	[90201] = {
@@ -3657,6 +3702,17 @@ pg.fleet_tech_ship_class = {
 			970703
 		}
 	},
+	[970704] = {
+		shiptype = 7,
+		name = "Béarn META",
+		nation = 97,
+		id = 970704,
+		t_level_1 = 5,
+		t_level = 4,
+		ships = {
+			970704
+		}
+	},
 	[970801] = {
 		shiptype = 8,
 		name = "U-556 META",
@@ -3945,9 +4001,11 @@ pg.fleet_tech_ship_class = {
 		80203,
 		80301,
 		80302,
+		80303,
 		80501,
 		80502,
 		80503,
+		80504,
 		80701,
 		80702,
 		80801,
@@ -3955,6 +4013,8 @@ pg.fleet_tech_ship_class = {
 		90101,
 		90103,
 		90104,
+		90105,
+		90106,
 		90201,
 		90301,
 		90302,
@@ -3997,6 +4057,7 @@ pg.fleet_tech_ship_class = {
 		970701,
 		970702,
 		970703,
+		970704,
 		970801,
 		971201,
 		971301

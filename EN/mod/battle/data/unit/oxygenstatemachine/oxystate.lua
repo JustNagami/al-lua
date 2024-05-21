@@ -65,6 +65,8 @@ end
 
 function var_0_3.SetForceExpose(arg_6_0, arg_6_1)
 	arg_6_0._forceExpose = arg_6_1
+
+	arg_6_0._target:SetForceVisible()
 end
 
 function var_0_3.GetForceExpose(arg_7_0)
