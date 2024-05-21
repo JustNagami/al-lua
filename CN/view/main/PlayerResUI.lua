@@ -62,11 +62,10 @@ function var_0_0.Init(arg_6_0, arg_6_1)
 	arg_6_0.animation = arg_6_0._go:GetComponent(typeof(Animation))
 	arg_6_0.gemPos = arg_6_0.gemAddBtn.anchoredPosition
 	arg_6_0.oilPos = arg_6_0.oilAddBtn.anchoredPosition
+	arg_6_0.foldableHelper = MainFoldableHelper.New(arg_6_0._go.transform, Vector2(0, 1))
 
 	onButton(arg_6_0, arg_6_0.goldAddBtn, function()
-		if not pg.goldExchangeMgr then
-			pg.goldExchangeMgr = GoldExchangeView.New()
-		end
+		arg_6_0:ClickGold()
 	end, SFX_PANEL)
 	onButton(arg_6_0, arg_6_0.oilAddBtn, function()
 		arg_6_0:ClickOil()
@@ -172,17 +171,14 @@ function var_0_0.CustomSetting(arg_14_0, arg_14_1)
 end
 
 function var_0_0.DoAnimation(arg_15_0)
-	arg_15_0.posY = arg_15_0.posY or arg_15_0._go.transform.anchoredPosition.y
-
-	LeanTween.value(arg_15_0._go, arg_15_0.posY + 200, arg_15_0.posY, 0.5):setOnUpdate(System.Action_float(function(arg_16_0)
-		arg_15_0._go.transform.anchoredPosition = Vector3(arg_15_0._go.transform.anchoredPosition.x, arg_16_0, 0)
-	end)):setEase(LeanTweenType.easeInOutExpo)
+	arg_15_0.foldableHelper:Fold(true, 0)
+	arg_15_0.foldableHelper:Fold(false, 0.5)
 end
 
-function var_0_0.ClickGem(arg_17_0)
-	local var_17_0 = arg_17_0:GetPlayer()
+function var_0_0.ClickGem(arg_16_0)
+	local var_16_0 = arg_16_0:GetPlayer()
 
-	local function var_17_1()
+	local function var_16_1()
 		if not pg.m02:hasMediator(ChargeMediator.__cname) then
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
 				wrap = ChargeScene.TYPE_DIAMOND
@@ -196,13 +192,19 @@ function var_0_0.ClickGem(arg_17_0)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			fontSize = 23,
 			yesText = "text_buy",
-			content = i18n("word_diamond_tip", var_17_0:getFreeGem(), var_17_0:getChargeGem(), var_17_0:getTotalGem()),
-			onYes = var_17_1,
+			content = i18n("word_diamond_tip", var_16_0:getFreeGem(), var_16_0:getChargeGem(), var_16_0:getTotalGem()),
+			onYes = var_16_1,
 			alignment = TextAnchor.UpperLeft,
 			weight = LayerWeightConst.TOP_LAYER
 		})
 	else
-		var_17_1()
+		var_16_1()
+	end
+end
+
+function var_0_0.ClickGold(arg_18_0)
+	if not pg.goldExchangeMgr then
+		pg.goldExchangeMgr = GoldExchangeView.New()
 	end
 end
 
@@ -261,48 +263,48 @@ end
 
 function var_0_0.Flush(arg_21_0)
 	local var_21_0 = arg_21_0:GetPlayer()
-	local var_21_1 = var_21_0:getLevelMaxGold()
-	local var_21_2 = var_21_0:getLevelMaxOil()
 
-	arg_21_0.goldMax.text = "MAX: " .. var_21_1
-	arg_21_0.goldValue.text = var_21_0.gold
-	arg_21_0.oilMax.text = "MAX: " .. var_21_2
-	arg_21_0.oilValue.text = var_21_0.oil
-	arg_21_0.gemValue.text = var_21_0:getTotalGem()
-
+	var_0_0.StaticFlush(var_21_0, arg_21_0.goldMax, arg_21_0.goldValue, arg_21_0.oilMax, arg_21_0.oilValue, arg_21_0.gemValue)
 	arg_21_0:SetDirty(false)
 end
 
-function var_0_0.Dispose(arg_22_0)
-	pg.DelegateInfo.Dispose(arg_22_0)
-	arg_22_0:Disable()
-	pg.m02:removeMediator(arg_22_0.__cname)
-	PoolMgr.GetInstance():ReturnUI("ResPanel", arg_22_0._go)
+function var_0_0.StaticFlush(arg_22_0, arg_22_1, arg_22_2, arg_22_3, arg_22_4, arg_22_5)
+	local var_22_0 = arg_22_0:getLevelMaxGold()
+	local var_22_1 = arg_22_0:getLevelMaxOil()
 
-	arg_22_0.state = var_0_1
+	arg_22_1.text = "MAX: " .. var_22_0
+	arg_22_2.text = arg_22_0.gold
+	arg_22_3.text = "MAX: " .. var_22_1
+	arg_22_4.text = arg_22_0.oil
+	arg_22_5.text = arg_22_0:getTotalGem()
 end
 
-function var_0_0.SetDirty(arg_23_0, arg_23_1)
-	arg_23_0.dirty = arg_23_1
+function var_0_0.Dispose(arg_23_0)
+	pg.DelegateInfo.Dispose(arg_23_0)
+	arg_23_0:Disable()
+	pg.m02:removeMediator(arg_23_0.__cname)
+	PoolMgr.GetInstance():ReturnUI("ResPanel", arg_23_0._go)
+
+	arg_23_0.state = var_0_1
 end
 
-function var_0_0.IsDirty(arg_24_0)
-	return arg_24_0.dirty
+function var_0_0.SetDirty(arg_24_0, arg_24_1)
+	arg_24_0.dirty = arg_24_1
 end
 
-function var_0_0.Fold(arg_25_0, arg_25_1, arg_25_2)
-	if not arg_25_0:IsLoaded() then
+function var_0_0.IsDirty(arg_25_0)
+	return arg_25_0.dirty
+end
+
+function var_0_0.Fold(arg_26_0, arg_26_1, arg_26_2)
+	if not arg_26_0:IsLoaded() then
 		return
 	end
 
-	arg_25_0.lposY = arg_25_0.lposY or arg_25_0._go.transform.localPosition.y
-
-	local var_25_0 = arg_25_1 and arg_25_0.lposY + 200 or arg_25_0.lposY
-
-	LeanTween.moveLocalY(arg_25_0._go, var_25_0, arg_25_2):setEase(LeanTweenType.easeInOutExpo)
+	arg_26_0.foldableHelper:Fold(arg_26_1, arg_26_2)
 end
 
-function var_0_0.listNotificationInterests(arg_26_0)
+function var_0_0.listNotificationInterests(arg_27_0)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.GUILD_GET_USER_INFO_DONE,
@@ -313,35 +315,35 @@ function var_0_0.listNotificationInterests(arg_26_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_27_0, arg_27_1)
-	local var_27_0 = arg_27_1:getName()
+function var_0_0.handleNotification(arg_28_0, arg_28_1)
+	local var_28_0 = arg_28_1:getName()
 
-	if var_27_0 == PlayerResUI.CHANGE_TOUCH_ABLE then
-		local var_27_1 = arg_27_1:getBody()
-		local var_27_2 = GetComponent(tf(arg_27_0._go), typeof(CanvasGroup))
+	if var_28_0 == PlayerResUI.CHANGE_TOUCH_ABLE then
+		local var_28_1 = arg_28_1:getBody()
+		local var_28_2 = GetComponent(tf(arg_28_0._go), typeof(CanvasGroup))
 
-		var_27_2.interactable = var_27_1
-		var_27_2.blocksRaycasts = var_27_1
-
-		return
-	end
-
-	arg_27_0:updateResPanel(var_27_0)
-end
-
-function var_0_0.updateResPanel(arg_28_0, arg_28_1)
-	if not arg_28_0:IsEnable() then
-		arg_28_0:SetDirty(true)
+		var_28_2.interactable = var_28_1
+		var_28_2.blocksRaycasts = var_28_1
 
 		return
 	end
 
-	if arg_28_1 == PlayerProxy.UPDATED or arg_28_1 == GAME.GUILD_GET_USER_INFO_DONE or arg_28_1 == GAME.GET_PUBLIC_GUILD_USER_DATA_DONE then
-		arg_28_0:Flush()
+	arg_28_0:updateResPanel(var_28_0)
+end
+
+function var_0_0.updateResPanel(arg_29_0, arg_29_1)
+	if not arg_29_0:IsEnable() then
+		arg_29_0:SetDirty(true)
+
+		return
+	end
+
+	if arg_29_1 == PlayerProxy.UPDATED or arg_29_1 == GAME.GUILD_GET_USER_INFO_DONE or arg_29_1 == GAME.GET_PUBLIC_GUILD_USER_DATA_DONE then
+		arg_29_0:Flush()
 	end
 end
 
-function var_0_0.checkBackPressed(arg_29_0)
+function var_0_0.checkBackPressed(arg_30_0)
 	if pg.goldExchangeMgr then
 		pg.goldExchangeMgr:exit()
 

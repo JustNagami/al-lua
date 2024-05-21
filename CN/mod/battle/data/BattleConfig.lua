@@ -244,7 +244,7 @@ var_0_0.AMMO_DAMAGE_REDUCE = {
 	"damageReduceFromAmmoType_1",
 	"damageReduceFromAmmoType_2",
 	"damageReduceFromAmmoType_3",
-	nil,
+	"damageReduceFromAmmoType_4",
 	nil,
 	nil,
 	"damageReduceFromAmmoType_7"
@@ -403,8 +403,10 @@ var_0_0.AIM_BIAS_MAX_RANGE_MONSTER = 60
 var_0_0.AIM_BIAS_MAX_RANGE_SUB = 25
 var_0_0.AIM_BIAS_ENEMY_INIT_TIME = 1.5
 var_0_0.FLEET_ATTR_CAP = {
+	shenpanzhijian = 6,
 	yuanchou = 9,
 	ReisalinAP = 99,
+	Judgement = 12,
 	huohun = 5
 }
 var_0_0.TARGET_SELECT_PRIORITY = {

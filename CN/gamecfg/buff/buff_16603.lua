@@ -21,6 +21,16 @@
 				dotType = 2,
 				k = 0.7
 			}
+		},
+		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				tag = "flood"
+			}
 		}
 	}
 }

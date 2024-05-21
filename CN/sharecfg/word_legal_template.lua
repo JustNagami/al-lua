@@ -328,6 +328,13 @@ function temp()
 				this = true
 			}
 		},
+		加 = {
+			多 = {
+				尔 = {
+					this = true
+				}
+			}
+		},
 		妮 = {
 			卡 = {
 				this = true
@@ -846,7 +853,18 @@ function temp()
 		},
 		亚 = {
 			恩 = {
-				this = true
+				this = true,
+				· = {
+					M = {
+						E = {
+							T = {
+								A = {
+									this = true
+								}
+							}
+						}
+					}
+				}
 			}
 		},
 		露 = {
@@ -947,6 +965,11 @@ function temp()
 						this = true
 					}
 				}
+			},
+			努 = {
+				斯 = {
+					this = true
+				}
 			}
 		},
 		兰 = {
@@ -1019,7 +1042,12 @@ function temp()
 		罗 = {
 			拉 = {
 				多 = {
-					this = true
+					this = true,
+					· = {
+						改 = {
+							this = true
+						}
+					}
 				}
 			}
 		},
@@ -2128,6 +2156,11 @@ function temp()
 					}
 				}
 			},
+			萨 = {
+				斯 = {
+					this = true
+				}
+			},
 			及 = {
 				利 = {
 					亚 = {
@@ -2585,6 +2618,9 @@ temp()
 function temp()
 	var_0_1.花 = {
 		园 = {
+			this = true
+		},
+		剑 = {
 			this = true
 		}
 	}
@@ -6956,6 +6992,16 @@ function temp()
 			}
 		},
 		登 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.重 = {
+		剑 = {
 			this = true
 		}
 	}

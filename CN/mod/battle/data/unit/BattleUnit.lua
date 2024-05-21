@@ -1673,305 +1673,309 @@ function var_0_9.GetOxygenVisible(arg_211_0)
 	return arg_211_0._oxyState and arg_211_0._oxyState:GetBarVisible()
 end
 
-function var_0_9.Detected(arg_212_0, arg_212_1)
-	local var_212_0
+function var_0_9.SetForceVisible(arg_212_0)
+	arg_212_0:DispatchEvent(var_0_0.Event.New(var_0_1.SUBMARINE_FORCE_DETECTED))
+end
 
-	if arg_212_0._exposedToSnoar == false and not arg_212_0._exposedOverTimeStamp then
-		var_212_0 = true
+function var_0_9.Detected(arg_213_0, arg_213_1)
+	local var_213_0
+
+	if arg_213_0._exposedToSnoar == false and not arg_213_0._exposedOverTimeStamp then
+		var_213_0 = true
 	end
 
-	if arg_212_1 then
-		arg_212_0:updateExposeTimeStamp(arg_212_1)
+	if arg_213_1 then
+		arg_213_0:updateExposeTimeStamp(arg_213_1)
 	else
-		arg_212_0._exposedToSnoar = true
+		arg_213_0._exposedToSnoar = true
 	end
 
-	if var_212_0 then
-		arg_212_0:DispatchEvent(var_0_0.Event.New(var_0_1.SUBMARINE_DETECTED, {}))
-		arg_212_0:dispatchDetectedTrigger()
+	if var_213_0 then
+		arg_213_0:DispatchEvent(var_0_0.Event.New(var_0_1.SUBMARINE_DETECTED, {}))
+		arg_213_0:dispatchDetectedTrigger()
 	end
 end
 
-function var_0_9.Undetected(arg_213_0)
-	arg_213_0._exposedToSnoar = false
-
-	arg_213_0:updateExposeTimeStamp(var_0_5.SUB_EXPOSE_LASTING_DURATION)
-end
-
-function var_0_9.RemoveSonarExpose(arg_214_0)
+function var_0_9.Undetected(arg_214_0)
 	arg_214_0._exposedToSnoar = false
-	arg_214_0._exposedOverTimeStamp = nil
+
+	arg_214_0:updateExposeTimeStamp(var_0_5.SUB_EXPOSE_LASTING_DURATION)
 end
 
-function var_0_9.updateSonarExposeTag(arg_215_0)
-	if arg_215_0._exposedOverTimeStamp and not arg_215_0._exposedToSnoar and pg.TimeMgr.GetInstance():GetCombatTime() > arg_215_0._exposedOverTimeStamp then
-		arg_215_0._exposedOverTimeStamp = nil
+function var_0_9.RemoveSonarExpose(arg_215_0)
+	arg_215_0._exposedToSnoar = false
+	arg_215_0._exposedOverTimeStamp = nil
+end
 
-		arg_215_0:DispatchEvent(var_0_0.Event.New(var_0_1.SUBMARINE_DETECTED, {
+function var_0_9.updateSonarExposeTag(arg_216_0)
+	if arg_216_0._exposedOverTimeStamp and not arg_216_0._exposedToSnoar and pg.TimeMgr.GetInstance():GetCombatTime() > arg_216_0._exposedOverTimeStamp then
+		arg_216_0._exposedOverTimeStamp = nil
+
+		arg_216_0:DispatchEvent(var_0_0.Event.New(var_0_1.SUBMARINE_DETECTED, {
 			detected = false
 		}))
-		arg_215_0:dispatchDetectedTrigger()
+		arg_216_0:dispatchDetectedTrigger()
 	end
 end
 
-function var_0_9.updateExposeTimeStamp(arg_216_0, arg_216_1)
-	local var_216_0 = pg.TimeMgr.GetInstance():GetCombatTime() + arg_216_1
+function var_0_9.updateExposeTimeStamp(arg_217_0, arg_217_1)
+	local var_217_0 = pg.TimeMgr.GetInstance():GetCombatTime() + arg_217_1
 
-	arg_216_0._exposedOverTimeStamp = arg_216_0._exposedOverTimeStamp or 0
-	arg_216_0._exposedOverTimeStamp = var_216_0 < arg_216_0._exposedOverTimeStamp and arg_216_0._exposedOverTimeStamp or var_216_0
+	arg_217_0._exposedOverTimeStamp = arg_217_0._exposedOverTimeStamp or 0
+	arg_217_0._exposedOverTimeStamp = var_217_0 < arg_217_0._exposedOverTimeStamp and arg_217_0._exposedOverTimeStamp or var_217_0
 end
 
-function var_0_9.IsRunMode(arg_217_0)
-	return arg_217_0._oxyState and arg_217_0._oxyState:GetRundMode()
+function var_0_9.IsRunMode(arg_218_0)
+	return arg_218_0._oxyState and arg_218_0._oxyState:GetRundMode()
 end
 
-function var_0_9.GetDiveDetected(arg_218_0)
-	return arg_218_0:GetDiveInvisible() and (arg_218_0._exposedOverTimeStamp or arg_218_0._exposedToSnoar)
+function var_0_9.GetDiveDetected(arg_219_0)
+	return arg_219_0:GetDiveInvisible() and (arg_219_0._exposedOverTimeStamp or arg_219_0._exposedToSnoar)
 end
 
-function var_0_9.GetForceExpose(arg_219_0)
-	return arg_219_0._oxyState and arg_219_0._oxyState:GetForceExpose()
+function var_0_9.GetForceExpose(arg_220_0)
+	return arg_220_0._oxyState and arg_220_0._oxyState:GetForceExpose()
 end
 
-function var_0_9.dispatchDetectedTrigger(arg_220_0)
-	if arg_220_0:GetDiveDetected() then
-		arg_220_0:TriggerBuff(var_0_3.BuffEffectType.ON_SUB_DETECTED, {})
+function var_0_9.dispatchDetectedTrigger(arg_221_0)
+	if arg_221_0:GetDiveDetected() then
+		arg_221_0:TriggerBuff(var_0_3.BuffEffectType.ON_SUB_DETECTED, {})
 	else
-		arg_220_0:TriggerBuff(var_0_3.BuffEffectType.ON_SUB_UNDETECTED, {})
+		arg_221_0:TriggerBuff(var_0_3.BuffEffectType.ON_SUB_UNDETECTED, {})
 	end
 end
 
-function var_0_9.GetRaidDuration(arg_221_0)
-	return arg_221_0:GetAttrByName("oxyMax") / arg_221_0:GetAttrByName("oxyCost")
+function var_0_9.GetRaidDuration(arg_222_0)
+	return arg_222_0:GetAttrByName("oxyMax") / arg_222_0:GetAttrByName("oxyCost")
 end
 
-function var_0_9.EnterRaidRange(arg_222_0)
-	if arg_222_0:GetPosition().x > arg_222_0._subRaidLine then
+function var_0_9.EnterRaidRange(arg_223_0)
+	if arg_223_0:GetPosition().x > arg_223_0._subRaidLine then
 		return true
 	else
 		return false
 	end
 end
 
-function var_0_9.EnterRetreatRange(arg_223_0)
-	if arg_223_0:GetPosition().x < arg_223_0._subRetreatLine then
+function var_0_9.EnterRetreatRange(arg_224_0)
+	if arg_224_0:GetPosition().x < arg_224_0._subRetreatLine then
 		return true
 	else
 		return false
 	end
 end
 
-function var_0_9.GetOxyState(arg_224_0)
-	return arg_224_0._oxyState
+function var_0_9.GetOxyState(arg_225_0)
+	return arg_225_0._oxyState
 end
 
-function var_0_9.GetCurrentOxyState(arg_225_0)
-	if not arg_225_0._oxyState then
+function var_0_9.GetCurrentOxyState(arg_226_0)
+	if not arg_226_0._oxyState then
 		return var_0_3.OXY_STATE.FLOAT
 	else
-		return arg_225_0._oxyState:GetCurrentDiveState()
+		return arg_226_0._oxyState:GetCurrentDiveState()
 	end
 end
 
-function var_0_9.InitAntiSubState(arg_226_0, arg_226_1, arg_226_2)
-	arg_226_0._antiSubVigilanceState = var_0_0.Battle.AntiSubState.New(arg_226_0)
+function var_0_9.InitAntiSubState(arg_227_0, arg_227_1, arg_227_2)
+	arg_227_0._antiSubVigilanceState = var_0_0.Battle.AntiSubState.New(arg_227_0)
 
-	arg_226_0:DispatchEvent(var_0_0.Event.New(var_0_1.INIT_ANIT_SUB_VIGILANCE, {
-		sonarRange = arg_226_1
+	arg_227_0:DispatchEvent(var_0_0.Event.New(var_0_1.INIT_ANIT_SUB_VIGILANCE, {
+		sonarRange = arg_227_1
 	}))
 
-	return arg_226_0._antiSubVigilanceState
-end
-
-function var_0_9.GetAntiSubState(arg_227_0)
 	return arg_227_0._antiSubVigilanceState
 end
 
-function var_0_9.UpdateBlindInvisibleBySpectre(arg_228_0)
-	local var_228_0, var_228_1 = arg_228_0:IsSpectre()
+function var_0_9.GetAntiSubState(arg_228_0)
+	return arg_228_0._antiSubVigilanceState
+end
 
-	if var_228_1 <= var_0_5.SPECTRE_UNIT_TYPE and var_228_1 ~= var_0_5.VISIBLE_SPECTRE_UNIT_TYPE then
-		arg_228_0:SetBlindInvisible(true)
+function var_0_9.UpdateBlindInvisibleBySpectre(arg_229_0)
+	local var_229_0, var_229_1 = arg_229_0:IsSpectre()
+
+	if var_229_1 <= var_0_5.SPECTRE_UNIT_TYPE and var_229_1 ~= var_0_5.VISIBLE_SPECTRE_UNIT_TYPE then
+		arg_229_0:SetBlindInvisible(true)
 	else
-		arg_228_0:SetBlindInvisible(false)
+		arg_229_0:SetBlindInvisible(false)
 	end
 end
 
-function var_0_9.SetBlindInvisible(arg_229_0, arg_229_1)
-	arg_229_0._exposedList = arg_229_1 and {} or nil
-	arg_229_0._blindInvisible = arg_229_1
+function var_0_9.SetBlindInvisible(arg_230_0, arg_230_1)
+	arg_230_0._exposedList = arg_230_1 and {} or nil
+	arg_230_0._blindInvisible = arg_230_1
 
-	arg_229_0:DispatchEvent(var_0_0.Event.New(var_0_1.BLIND_VISIBLE))
+	arg_230_0:DispatchEvent(var_0_0.Event.New(var_0_1.BLIND_VISIBLE))
 end
 
-function var_0_9.GetBlindInvisible(arg_230_0)
-	return arg_230_0._blindInvisible
+function var_0_9.GetBlindInvisible(arg_231_0)
+	return arg_231_0._blindInvisible
 end
 
-function var_0_9.GetExposed(arg_231_0)
-	if not arg_231_0._blindInvisible then
-		return true
-	end
-
-	for iter_231_0, iter_231_1 in pairs(arg_231_0._exposedList) do
-		return true
-	end
-end
-
-function var_0_9.AppendExposed(arg_232_0, arg_232_1)
+function var_0_9.GetExposed(arg_232_0)
 	if not arg_232_0._blindInvisible then
-		return
+		return true
 	end
 
-	local var_232_0 = arg_232_0._exposedList[arg_232_1]
-
-	arg_232_0._exposedList[arg_232_1] = true
-
-	if not var_232_0 then
-		arg_232_0:DispatchEvent(var_0_0.Event.New(var_0_1.BLIND_EXPOSE))
+	for iter_232_0, iter_232_1 in pairs(arg_232_0._exposedList) do
+		return true
 	end
 end
 
-function var_0_9.RemoveExposed(arg_233_0, arg_233_1)
+function var_0_9.AppendExposed(arg_233_0, arg_233_1)
 	if not arg_233_0._blindInvisible then
 		return
 	end
 
-	arg_233_0._exposedList[arg_233_1] = nil
+	local var_233_0 = arg_233_0._exposedList[arg_233_1]
 
-	arg_233_0:DispatchEvent(var_0_0.Event.New(var_0_1.BLIND_EXPOSE))
-end
+	arg_233_0._exposedList[arg_233_1] = true
 
-function var_0_9.SetWorldDeathMark(arg_234_0)
-	arg_234_0._worldDeathMark = true
-end
-
-function var_0_9.GetWorldDeathMark(arg_235_0)
-	return arg_235_0._worldDeathMark
-end
-
-function var_0_9.InitCloak(arg_236_0)
-	arg_236_0._cloak = var_0_0.Battle.BattleUnitCloakComponent.New(arg_236_0)
-
-	arg_236_0:DispatchEvent(var_0_0.Event.New(var_0_1.INIT_CLOAK))
-
-	return arg_236_0._cloak
-end
-
-function var_0_9.CloakOnFire(arg_237_0, arg_237_1)
-	if arg_237_0._cloak then
-		arg_237_0._cloak:UpdateDotExpose(arg_237_1)
+	if not var_233_0 then
+		arg_233_0:DispatchEvent(var_0_0.Event.New(var_0_1.BLIND_EXPOSE))
 	end
 end
 
-function var_0_9.CloakExpose(arg_238_0, arg_238_1)
+function var_0_9.RemoveExposed(arg_234_0, arg_234_1)
+	if not arg_234_0._blindInvisible then
+		return
+	end
+
+	arg_234_0._exposedList[arg_234_1] = nil
+
+	arg_234_0:DispatchEvent(var_0_0.Event.New(var_0_1.BLIND_EXPOSE))
+end
+
+function var_0_9.SetWorldDeathMark(arg_235_0)
+	arg_235_0._worldDeathMark = true
+end
+
+function var_0_9.GetWorldDeathMark(arg_236_0)
+	return arg_236_0._worldDeathMark
+end
+
+function var_0_9.InitCloak(arg_237_0)
+	arg_237_0._cloak = var_0_0.Battle.BattleUnitCloakComponent.New(arg_237_0)
+
+	arg_237_0:DispatchEvent(var_0_0.Event.New(var_0_1.INIT_CLOAK))
+
+	return arg_237_0._cloak
+end
+
+function var_0_9.CloakOnFire(arg_238_0, arg_238_1)
 	if arg_238_0._cloak then
-		arg_238_0._cloak:AppendExpose(arg_238_1)
+		arg_238_0._cloak:UpdateDotExpose(arg_238_1)
 	end
 end
 
-function var_0_9.StrikeExpose(arg_239_0)
+function var_0_9.CloakExpose(arg_239_0, arg_239_1)
 	if arg_239_0._cloak then
-		arg_239_0._cloak:AppendStrikeExpose()
+		arg_239_0._cloak:AppendExpose(arg_239_1)
 	end
 end
 
-function var_0_9.BombardExpose(arg_240_0)
+function var_0_9.StrikeExpose(arg_240_0)
 	if arg_240_0._cloak then
-		arg_240_0._cloak:AppendBombardExpose()
+		arg_240_0._cloak:AppendStrikeExpose()
 	end
 end
 
-function var_0_9.UpdateCloak(arg_241_0, arg_241_1)
-	arg_241_0._cloak:Update(arg_241_1)
-end
-
-function var_0_9.UpdateCloakConfig(arg_242_0)
-	if arg_242_0._cloak then
-		arg_242_0._cloak:UpdateCloakConfig()
-		arg_242_0:DispatchEvent(var_0_0.Event.New(var_0_1.UPDATE_CLOAK_CONFIG))
+function var_0_9.BombardExpose(arg_241_0)
+	if arg_241_0._cloak then
+		arg_241_0._cloak:AppendBombardExpose()
 	end
 end
 
-function var_0_9.DispatchCloakStateUpdate(arg_243_0)
+function var_0_9.UpdateCloak(arg_242_0, arg_242_1)
+	arg_242_0._cloak:Update(arg_242_1)
+end
+
+function var_0_9.UpdateCloakConfig(arg_243_0)
 	if arg_243_0._cloak then
-		arg_243_0:DispatchEvent(var_0_0.Event.New(var_0_1.UPDATE_CLOAK_STATE))
+		arg_243_0._cloak:UpdateCloakConfig()
+		arg_243_0:DispatchEvent(var_0_0.Event.New(var_0_1.UPDATE_CLOAK_CONFIG))
 	end
 end
 
-function var_0_9.GetCloak(arg_244_0)
-	return arg_244_0._cloak
-end
-
-function var_0_9.AttachAimBias(arg_245_0, arg_245_1)
-	arg_245_0._aimBias = arg_245_1
-
-	arg_245_0:DispatchEvent(var_0_0.Event.New(var_0_1.INIT_AIMBIAS))
-end
-
-function var_0_9.DetachAimBias(arg_246_0)
-	arg_246_0:DispatchEvent(var_0_0.Event.New(var_0_1.REMOVE_AIMBIAS))
-	arg_246_0._aimBias:RemoveCrew(arg_246_0)
-
-	arg_246_0._aimBias = nil
-end
-
-function var_0_9.ExitSmokeArea(arg_247_0)
-	arg_247_0._aimBias:SmokeExitPause()
-end
-
-function var_0_9.UpdateAimBiasSkillState(arg_248_0)
-	if arg_248_0._aimBias and arg_248_0._aimBias:GetHost() == arg_248_0 then
-		arg_248_0._aimBias:UpdateSkillLock()
+function var_0_9.DispatchCloakStateUpdate(arg_244_0)
+	if arg_244_0._cloak then
+		arg_244_0:DispatchEvent(var_0_0.Event.New(var_0_1.UPDATE_CLOAK_STATE))
 	end
 end
 
-function var_0_9.HostAimBias(arg_249_0)
-	if arg_249_0._aimBias then
-		arg_249_0:DispatchEvent(var_0_0.Event.New(var_0_1.HOST_AIMBIAS))
+function var_0_9.GetCloak(arg_245_0)
+	return arg_245_0._cloak
+end
+
+function var_0_9.AttachAimBias(arg_246_0, arg_246_1)
+	arg_246_0._aimBias = arg_246_1
+
+	arg_246_0:DispatchEvent(var_0_0.Event.New(var_0_1.INIT_AIMBIAS))
+end
+
+function var_0_9.DetachAimBias(arg_247_0)
+	arg_247_0:DispatchEvent(var_0_0.Event.New(var_0_1.REMOVE_AIMBIAS))
+	arg_247_0._aimBias:RemoveCrew(arg_247_0)
+
+	arg_247_0._aimBias = nil
+end
+
+function var_0_9.ExitSmokeArea(arg_248_0)
+	arg_248_0._aimBias:SmokeExitPause()
+end
+
+function var_0_9.UpdateAimBiasSkillState(arg_249_0)
+	if arg_249_0._aimBias and arg_249_0._aimBias:GetHost() == arg_249_0 then
+		arg_249_0._aimBias:UpdateSkillLock()
 	end
 end
 
-function var_0_9.GetAimBias(arg_250_0)
-	return arg_250_0._aimBias
+function var_0_9.HostAimBias(arg_250_0)
+	if arg_250_0._aimBias then
+		arg_250_0:DispatchEvent(var_0_0.Event.New(var_0_1.HOST_AIMBIAS))
+	end
 end
 
-function var_0_9.SwitchSpine(arg_251_0, arg_251_1, arg_251_2)
-	arg_251_0:DispatchEvent(var_0_0.Event.New(var_0_1.SWITCH_SPINE, {
-		skin = arg_251_1,
-		HPBarOffset = arg_251_2
+function var_0_9.GetAimBias(arg_251_0)
+	return arg_251_0._aimBias
+end
+
+function var_0_9.SwitchSpine(arg_252_0, arg_252_1, arg_252_2)
+	arg_252_0:DispatchEvent(var_0_0.Event.New(var_0_1.SWITCH_SPINE, {
+		skin = arg_252_1,
+		HPBarOffset = arg_252_2
 	}))
 end
 
-function var_0_9.Freeze(arg_252_0)
-	for iter_252_0, iter_252_1 in ipairs(arg_252_0._totalWeapon) do
-		iter_252_1:StartJamming()
-	end
-
-	if arg_252_0._airAssistList then
-		for iter_252_2, iter_252_3 in ipairs(arg_252_0._airAssistList) do
-			iter_252_3:StartJamming()
-		end
-	end
-end
-
-function var_0_9.ActiveFreeze(arg_253_0)
+function var_0_9.Freeze(arg_253_0)
 	for iter_253_0, iter_253_1 in ipairs(arg_253_0._totalWeapon) do
-		iter_253_1:JammingEliminate()
+		iter_253_1:StartJamming()
 	end
 
 	if arg_253_0._airAssistList then
 		for iter_253_2, iter_253_3 in ipairs(arg_253_0._airAssistList) do
-			iter_253_3:JammingEliminate()
+			iter_253_3:StartJamming()
 		end
 	end
 end
 
-function var_0_9.ActiveWeaponSectorView(arg_254_0, arg_254_1, arg_254_2)
-	local var_254_0 = {
-		weapon = arg_254_1,
-		isActive = arg_254_2
+function var_0_9.ActiveFreeze(arg_254_0)
+	for iter_254_0, iter_254_1 in ipairs(arg_254_0._totalWeapon) do
+		iter_254_1:JammingEliminate()
+	end
+
+	if arg_254_0._airAssistList then
+		for iter_254_2, iter_254_3 in ipairs(arg_254_0._airAssistList) do
+			iter_254_3:JammingEliminate()
+		end
+	end
+end
+
+function var_0_9.ActiveWeaponSectorView(arg_255_0, arg_255_1, arg_255_2)
+	local var_255_0 = {
+		weapon = arg_255_1,
+		isActive = arg_255_2
 	}
 
-	arg_254_0:DispatchEvent(var_0_0.Event.New(var_0_1.WEAPON_SECTOR, var_254_0))
+	arg_255_0:DispatchEvent(var_0_0.Event.New(var_0_1.WEAPON_SECTOR, var_255_0))
 end

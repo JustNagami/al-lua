@@ -20689,6 +20689,60 @@ pg.map_event_template = {
 			}
 		}
 	},
+	[910] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 3,
+		preinstall = 3,
+		c_type = 0,
+		id = 910,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "aersasi_whale",
+		address = {
+			3,
+			0
+		},
+		effect = {}
+	},
+	[911] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 2,
+		preinstall = 3,
+		c_type = 0,
+		id = 911,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "fazhen01",
+		address = {
+			3,
+			3
+		},
+		effect = {}
+	},
+	[912] = {
+		grid_color = "",
+		memory = 0,
+		gametip = "",
+		type = 2,
+		preinstall = 3,
+		c_type = 0,
+		id = 912,
+		animation = "",
+		round_gametip = "",
+		ship_prefab = "",
+		icon = "fazhen01",
+		address = {
+			3,
+			3
+		},
+		effect = {}
+	},
 	all = {
 		20,
 		21,
@@ -21556,6 +21610,9 @@ pg.map_event_template = {
 		906,
 		907,
 		908,
-		909
+		909,
+		910,
+		911,
+		912
 	}
 }

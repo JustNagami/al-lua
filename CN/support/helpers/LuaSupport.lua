@@ -228,161 +228,141 @@ function String2Table(arg_23_0)
 	return var_23_0
 end
 
-function ParseTable(arg_24_0)
-	local function var_24_0(arg_25_0)
-		return load("return " .. arg_25_0)()
-	end
-
-	local function var_24_1(arg_26_0)
-		for iter_26_0, iter_26_1 in pairs(arg_26_0) do
-			if type(iter_26_1) == "table" then
-				arg_26_0[iter_26_0] = var_24_1(iter_26_1)
-			elseif type(iter_26_1) == "string" and iter_26_1:sub(1, 1) == "{" and iter_26_1:sub(-1) == "}" then
-				arg_26_0[iter_26_0] = var_24_0(iter_26_1)
-			end
-		end
-
-		return arg_26_0
-	end
-
-	return arg_24_0 and var_24_1(var_24_0(arg_24_0)) or nil
-end
-
 local var_0_7 = require("bit")
 
-function unicode_to_utf8(arg_27_0)
-	if type(arg_27_0) ~= "string" then
-		return arg_27_0
+function unicode_to_utf8(arg_24_0)
+	if type(arg_24_0) ~= "string" then
+		return arg_24_0
 	end
 
-	local var_27_0 = ""
-	local var_27_1 = 1
+	local var_24_0 = ""
+	local var_24_1 = 1
 
 	while true do
-		local var_27_2 = string.byte(arg_27_0, var_27_1)
-		local var_27_3
+		local var_24_2 = string.byte(arg_24_0, var_24_1)
+		local var_24_3
 
-		if var_27_2 ~= nil and string.sub(arg_27_0, var_27_1, var_27_1 + 1) == "\\u" then
-			var_27_3 = tonumber("0x" .. string.sub(arg_27_0, var_27_1 + 2, var_27_1 + 5))
-			var_27_1 = var_27_1 + 6
-		elseif var_27_2 ~= nil then
-			var_27_3 = var_27_2
-			var_27_1 = var_27_1 + 1
+		if var_24_2 ~= nil and string.sub(arg_24_0, var_24_1, var_24_1 + 1) == "\\u" then
+			var_24_3 = tonumber("0x" .. string.sub(arg_24_0, var_24_1 + 2, var_24_1 + 5))
+			var_24_1 = var_24_1 + 6
+		elseif var_24_2 ~= nil then
+			var_24_3 = var_24_2
+			var_24_1 = var_24_1 + 1
 		else
 			break
 		end
 
-		if var_27_3 <= 127 then
-			var_27_0 = var_27_0 .. string.char(var_0_7.band(var_27_3, 127))
-		elseif var_27_3 >= 128 and var_27_3 <= 2047 then
-			var_27_0 = var_27_0 .. string.char(var_0_7.bor(192, var_0_7.band(var_0_7.rshift(var_27_3, 6), 31)))
-			var_27_0 = var_27_0 .. string.char(var_0_7.bor(128, var_0_7.band(var_27_3, 63)))
-		elseif var_27_3 >= 2048 and var_27_3 <= 65535 then
-			var_27_0 = var_27_0 .. string.char(var_0_7.bor(224, var_0_7.band(var_0_7.rshift(var_27_3, 12), 15)))
-			var_27_0 = var_27_0 .. string.char(var_0_7.bor(128, var_0_7.band(var_0_7.rshift(var_27_3, 6), 63)))
-			var_27_0 = var_27_0 .. string.char(var_0_7.bor(128, var_0_7.band(var_27_3, 63)))
+		if var_24_3 <= 127 then
+			var_24_0 = var_24_0 .. string.char(var_0_7.band(var_24_3, 127))
+		elseif var_24_3 >= 128 and var_24_3 <= 2047 then
+			var_24_0 = var_24_0 .. string.char(var_0_7.bor(192, var_0_7.band(var_0_7.rshift(var_24_3, 6), 31)))
+			var_24_0 = var_24_0 .. string.char(var_0_7.bor(128, var_0_7.band(var_24_3, 63)))
+		elseif var_24_3 >= 2048 and var_24_3 <= 65535 then
+			var_24_0 = var_24_0 .. string.char(var_0_7.bor(224, var_0_7.band(var_0_7.rshift(var_24_3, 12), 15)))
+			var_24_0 = var_24_0 .. string.char(var_0_7.bor(128, var_0_7.band(var_0_7.rshift(var_24_3, 6), 63)))
+			var_24_0 = var_24_0 .. string.char(var_0_7.bor(128, var_0_7.band(var_24_3, 63)))
 		end
 	end
 
-	return var_27_0 .. "\x00"
+	return var_24_0 .. "\x00"
 end
 
-function utf8_to_unicode(arg_28_0)
-	if type(arg_28_0) ~= "string" then
-		return arg_28_0
+function utf8_to_unicode(arg_25_0)
+	if type(arg_25_0) ~= "string" then
+		return arg_25_0
 	end
 
-	local var_28_0 = ""
-	local var_28_1 = 1
-	local var_28_2 = string.byte(arg_28_0, var_28_1)
-	local var_28_3 = 0
+	local var_25_0 = ""
+	local var_25_1 = 1
+	local var_25_2 = string.byte(arg_25_0, var_25_1)
+	local var_25_3 = 0
 
-	while var_28_2 ~= nil do
-		local var_28_4
-		local var_28_5
+	while var_25_2 ~= nil do
+		local var_25_4
+		local var_25_5
 
-		if var_28_2 >= 0 and var_28_2 <= 127 then
-			var_28_4 = var_28_2
-			var_28_5 = 0
-		elseif var_0_7.band(var_28_2, 224) == 192 then
-			local var_28_6 = 0
-			local var_28_7 = 0
-			local var_28_8 = var_0_7.band(var_28_2, var_0_7.rshift(255, 3))
+		if var_25_2 >= 0 and var_25_2 <= 127 then
+			var_25_4 = var_25_2
+			var_25_5 = 0
+		elseif var_0_7.band(var_25_2, 224) == 192 then
+			local var_25_6 = 0
+			local var_25_7 = 0
+			local var_25_8 = var_0_7.band(var_25_2, var_0_7.rshift(255, 3))
 
-			var_28_1 = var_28_1 + 1
-			var_28_2 = string.byte(arg_28_0, var_28_1)
+			var_25_1 = var_25_1 + 1
+			var_25_2 = string.byte(arg_25_0, var_25_1)
 
-			local var_28_9 = var_0_7.band(var_28_2, var_0_7.rshift(255, 2))
+			local var_25_9 = var_0_7.band(var_25_2, var_0_7.rshift(255, 2))
 
-			var_28_4 = var_0_7.bor(var_28_9, var_0_7.lshift(var_0_7.band(var_28_8, var_0_7.rshift(255, 6)), 6))
-			var_28_5 = var_0_7.rshift(var_28_8, 2)
-		elseif var_0_7.band(var_28_2, 240) == 224 then
-			local var_28_10 = 0
-			local var_28_11 = 0
-			local var_28_12 = 0
-			local var_28_13 = var_0_7.band(var_28_2, var_0_7.rshift(255, 3))
+			var_25_4 = var_0_7.bor(var_25_9, var_0_7.lshift(var_0_7.band(var_25_8, var_0_7.rshift(255, 6)), 6))
+			var_25_5 = var_0_7.rshift(var_25_8, 2)
+		elseif var_0_7.band(var_25_2, 240) == 224 then
+			local var_25_10 = 0
+			local var_25_11 = 0
+			local var_25_12 = 0
+			local var_25_13 = var_0_7.band(var_25_2, var_0_7.rshift(255, 3))
 
-			var_28_1 = var_28_1 + 1
-			var_28_2 = string.byte(arg_28_0, var_28_1)
+			var_25_1 = var_25_1 + 1
+			var_25_2 = string.byte(arg_25_0, var_25_1)
 
-			local var_28_14 = var_0_7.band(var_28_2, var_0_7.rshift(255, 2))
+			local var_25_14 = var_0_7.band(var_25_2, var_0_7.rshift(255, 2))
 
-			var_28_1 = var_28_1 + 1
-			var_28_2 = string.byte(arg_28_0, var_28_1)
+			var_25_1 = var_25_1 + 1
+			var_25_2 = string.byte(arg_25_0, var_25_1)
 
-			local var_28_15 = var_0_7.band(var_28_2, var_0_7.rshift(255, 2))
+			local var_25_15 = var_0_7.band(var_25_2, var_0_7.rshift(255, 2))
 
-			var_28_4 = var_0_7.bor(var_0_7.lshift(var_0_7.band(var_28_14, var_0_7.rshift(255, 6)), 6), var_28_15)
-			var_28_5 = var_0_7.bor(var_0_7.lshift(var_28_13, 4), var_0_7.rshift(var_28_14, 2))
+			var_25_4 = var_0_7.bor(var_0_7.lshift(var_0_7.band(var_25_14, var_0_7.rshift(255, 6)), 6), var_25_15)
+			var_25_5 = var_0_7.bor(var_0_7.lshift(var_25_13, 4), var_0_7.rshift(var_25_14, 2))
 		end
 
-		var_28_0 = var_28_0 .. string.format("\\u%02x%02x", var_28_5, var_28_4)
+		var_25_0 = var_25_0 .. string.format("\\u%02x%02x", var_25_5, var_25_4)
 
-		if var_28_5 == 0 then
-			var_28_3 = var_28_3 + 1
+		if var_25_5 == 0 then
+			var_25_3 = var_25_3 + 1
 		else
-			var_28_3 = var_28_3 + 2
+			var_25_3 = var_25_3 + 2
 		end
 
-		var_28_1 = var_28_1 + 1
-		var_28_2 = string.byte(arg_28_0, var_28_1)
+		var_25_1 = var_25_1 + 1
+		var_25_2 = string.byte(arg_25_0, var_25_1)
 	end
 
-	return var_28_0, var_28_3
+	return var_25_0, var_25_3
 end
 
-function utf8_size(arg_29_0)
-	if not arg_29_0 then
+function utf8_size(arg_26_0)
+	if not arg_26_0 then
 		return 0
-	elseif arg_29_0 > 240 then
+	elseif arg_26_0 > 240 then
 		return 4
-	elseif arg_29_0 > 225 then
+	elseif arg_26_0 > 225 then
 		return 3
-	elseif arg_29_0 > 192 then
+	elseif arg_26_0 > 192 then
 		return 2
 	else
 		return 1
 	end
 end
 
-function utf8_len(arg_30_0)
-	local var_30_0 = 1
-	local var_30_1 = 0
-	local var_30_2 = #arg_30_0
+function utf8_len(arg_27_0)
+	local var_27_0 = 1
+	local var_27_1 = 0
+	local var_27_2 = #arg_27_0
 
-	while var_30_0 <= var_30_2 do
-		local var_30_3 = string.byte(arg_30_0, var_30_0)
+	while var_27_0 <= var_27_2 do
+		local var_27_3 = string.byte(arg_27_0, var_27_0)
 
-		var_30_0 = var_30_0 + utf8_size(var_30_3)
-		var_30_1 = var_30_1 + 1
+		var_27_0 = var_27_0 + utf8_size(var_27_3)
+		var_27_1 = var_27_1 + 1
 	end
 
-	return var_30_1
+	return var_27_1
 end
 
-function existCall(arg_31_0, ...)
-	if arg_31_0 and type(arg_31_0) == "function" then
-		return arg_31_0(...)
+function existCall(arg_28_0, ...)
+	if arg_28_0 and type(arg_28_0) == "function" then
+		return arg_28_0(...)
 	end
 end
 
@@ -393,42 +373,42 @@ function packEx(...)
 	}
 end
 
-function unpackEx(arg_33_0)
-	return unpack(arg_33_0, 1, arg_33_0.len)
+function unpackEx(arg_30_0)
+	return unpack(arg_30_0, 1, arg_30_0.len)
 end
 
 function printEx(...)
-	local var_34_0 = packEx(...)
+	local var_31_0 = packEx(...)
 
-	for iter_34_0 = 1, var_34_0.len do
-		var_34_0[iter_34_0] = tostring(var_34_0[iter_34_0])
+	for iter_31_0 = 1, var_31_0.len do
+		var_31_0[iter_31_0] = tostring(var_31_0[iter_31_0])
 	end
 
-	return table.concat(var_34_0, " ")
+	return table.concat(var_31_0, " ")
 end
 
-function envFunc(arg_35_0, arg_35_1, ...)
-	assert(type(arg_35_0) == "table")
+function envFunc(arg_32_0, arg_32_1, ...)
+	assert(type(arg_32_0) == "table")
 
-	local var_35_0 = getfenv(arg_35_1)
+	local var_32_0 = getfenv(arg_32_1)
 
-	warning(var_35_0 == _G)
-	setfenv(arg_35_1, setmetatable({}, {
-		__index = function(arg_36_0, arg_36_1)
-			if arg_35_0[arg_36_1] ~= nil then
-				return arg_35_0[arg_36_1]
+	warning(var_32_0 == _G)
+	setfenv(arg_32_1, setmetatable({}, {
+		__index = function(arg_33_0, arg_33_1)
+			if arg_32_0[arg_33_1] ~= nil then
+				return arg_32_0[arg_33_1]
 			else
-				return var_35_0[arg_36_1]
+				return var_32_0[arg_33_1]
 			end
 		end,
-		__newindex = function(arg_37_0, arg_37_1, arg_37_2)
-			arg_35_0[arg_37_1] = arg_37_2
+		__newindex = function(arg_34_0, arg_34_1, arg_34_2)
+			arg_32_0[arg_34_1] = arg_34_2
 		end
 	}))
 
-	local var_35_1 = packEx(arg_35_1(...))
+	local var_32_1 = packEx(arg_32_1(...))
 
-	setfenv(arg_35_1, var_35_0)
+	setfenv(arg_32_1, var_32_0)
 
-	return unpackEx(var_35_1)
+	return unpackEx(var_32_1)
 end

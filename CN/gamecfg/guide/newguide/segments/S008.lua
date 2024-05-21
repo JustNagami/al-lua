@@ -20,8 +20,14 @@ return {
 				text = var_0_0[1]
 			},
 			ui = {
-				path = "/OverlayCamera/Overlay/UIMain/main/frame/right/combatBtn",
 				pathIndex = -1,
+				dynamicPath = function()
+					if getProxy(SettingsProxy):IsMellowStyle() then
+						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/right/1/battle"
+					else
+						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/right/combatBtn"
+					end
+				end,
 				triggerType = {
 					1
 				},

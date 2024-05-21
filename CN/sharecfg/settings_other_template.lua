@@ -162,6 +162,33 @@ pg.settings_other_template = {
 		title = "秘书舰互动状态固定",
 		desc = "功能开启后，主界面L2D与特殊动态立绘换装的互动状态将固定为主界面待机动作；互动状态固定后，L2D换装的【登录】【回港】动画将不会播放"
 	},
+	{
+		default = 1,
+		name = "USAGE_NEW_MAINUI",
+		type = 0,
+		alignment = 0,
+		id = 19,
+		title = "使用新版主界面",
+		desc = "功能开启后，显示新版主界面"
+	},
+	{
+		default = 1,
+		name = "MAINUI_NEVER_SLEEP",
+		type = 0,
+		alignment = 0,
+		id = 20,
+		title = "位于主界面时屏幕常亮",
+		desc = "功能开启后，主界面不会随时间自动锁屏"
+	},
+	{
+		default = 0,
+		name = "MAINUI_RESET_L2D",
+		type = 0,
+		alignment = 0,
+		id = 21,
+		title = "主界面显示L2D重置按钮",
+		desc = "功能开启后，主界面出现l2d重置按钮"
+	},
 	all = {
 		1,
 		2,
@@ -180,6 +207,9 @@ pg.settings_other_template = {
 		15,
 		16,
 		17,
-		18
+		18,
+		19,
+		20,
+		21
 	}
 }

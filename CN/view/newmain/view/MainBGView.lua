@@ -1,4 +1,4 @@
-﻿local var_0_0 = class("MainBGView")
+﻿local var_0_0 = class("MainBGView", import("..base.MainBaseView"))
 local var_0_1 = {
 	{
 		{
@@ -58,12 +58,13 @@ function var_0_0.GetBgAndBgm()
 end
 
 function var_0_0.Ctor(arg_2_0, arg_2_1)
+	var_0_0.super.Ctor(arg_2_0, arg_2_1, nil)
+
 	arg_2_0._tf = arg_2_1
 	arg_2_0._go = arg_2_1.gameObject
 	arg_2_0.paintingCanvases = {
 		arg_2_1.parent.parent:Find("paintBg"):GetComponent(typeof(Canvas)),
-		arg_2_1.parent.parent:Find("paint"):GetComponent(typeof(Canvas)),
-		arg_2_1.parent.parent:Find("chat"):GetComponent(typeof(Canvas))
+		arg_2_1.parent.parent:Find("paint"):GetComponent(typeof(Canvas))
 	}
 	arg_2_0.isSpecialBg = false
 	arg_2_0.isloading = false
@@ -87,6 +88,7 @@ function var_0_0.Init(arg_4_0, arg_4_1)
 	if arg_4_0.isSpecialBg and var_4_2 then
 		arg_4_0:SetSpecailBg(var_4_0)
 		arg_4_0:ClearMapBg()
+		arg_4_0:ClearCommonBg()
 	elseif var_0_2 and var_0_2 ~= 0 then
 		local var_4_3 = pg.expedition_data_by_map[var_0_2]
 
@@ -101,115 +103,123 @@ function var_0_0.Init(arg_4_0, arg_4_1)
 
 			arg_4_0:SetMapBg(var_4_3.bg, var_4_3.ani_name)
 		end
+
+		arg_4_0:ClearCommonBg()
 	else
 		local var_4_5 = var_0_0.GetBgAndBgm()
 
+		if arg_4_0.commonBg == var_4_5 then
+			return
+		end
+
 		arg_4_0:SetCommonBg(var_4_5)
 		arg_4_0:ClearMapBg()
+
+		arg_4_0.commonBg = var_4_5
 	end
 end
 
-function var_0_0.Refresh(arg_5_0, arg_5_1)
-	arg_5_0:Init(arg_5_1)
+function var_0_0.ClearCommonBg(arg_5_0)
+	arg_5_0.commonBg = nil
 end
 
-function var_0_0.SetSpecailBg(arg_6_0, arg_6_1)
-	arg_6_0.isloading = true
+function var_0_0.Refresh(arg_6_0, arg_6_1)
+	arg_6_0:Init(arg_6_1)
+end
 
-	pg.DynamicBgMgr.GetInstance():LoadBg(arg_6_0, arg_6_1, arg_6_0._tf.parent, arg_6_0._tf, function(arg_7_0)
-		arg_6_0.isloading = false
-		arg_7_0.transform.localPosition = Vector3(0, 0, 200)
+function var_0_0.SetSpecailBg(arg_7_0, arg_7_1)
+	arg_7_0.isloading = true
+
+	pg.DynamicBgMgr.GetInstance():LoadBg(arg_7_0, arg_7_1, arg_7_0._tf.parent, arg_7_0._tf, function(arg_8_0)
+		arg_7_0.isloading = false
+		arg_8_0.transform.localPosition = Vector3(0, 0, 200)
 	end, function()
-		arg_6_0.isloading = false
+		arg_7_0.isloading = false
 	end)
 end
 
-function var_0_0.SetMapBg(arg_9_0, arg_9_1, arg_9_2)
-	arg_9_0.isloading = true
-	arg_9_0.effectGo = nil
+function var_0_0.SetMapBg(arg_10_0, arg_10_1, arg_10_2)
+	arg_10_0.isloading = true
+	arg_10_0.effectGo = nil
 
 	parallelAsync({
-		function(arg_10_0)
-			PoolMgr.GetInstance():GetSprite("levelmap/" .. arg_9_1, "", true, function(arg_11_0)
-				setImageSprite(arg_9_0._tf, arg_11_0)
-				arg_10_0()
+		function(arg_11_0)
+			PoolMgr.GetInstance():GetSprite("levelmap/" .. arg_10_1, "", true, function(arg_12_0)
+				setImageSprite(arg_10_0._tf, arg_12_0)
+				arg_11_0()
 			end)
 		end,
-		function(arg_12_0)
-			if not arg_9_2 or arg_9_2 == "" then
-				arg_12_0()
+		function(arg_13_0)
+			if not arg_10_2 or arg_10_2 == "" then
+				arg_13_0()
 
 				return
 			end
 
-			PoolMgr.GetInstance():GetPrefab("ui/" .. arg_9_2, "", true, function(arg_13_0)
-				setParent(arg_13_0, arg_9_0._tf)
-				arg_9_0:AdjustMapEffect(arg_13_0)
+			PoolMgr.GetInstance():GetPrefab("ui/" .. arg_10_2, "", true, function(arg_14_0)
+				setParent(arg_14_0, arg_10_0._tf)
+				arg_10_0:AdjustMapEffect(arg_14_0)
 
-				arg_9_0.effectGo = arg_13_0
+				arg_10_0.effectGo = arg_14_0
 
-				arg_12_0()
+				arg_13_0()
 			end)
 		end
 	}, function()
-		arg_9_0.isloading = false
+		arg_10_0.isloading = false
 	end)
 end
 
-function var_0_0.ClearMapBg(arg_15_0)
-	if not IsNil(arg_15_0.effectGo) then
-		Object.Destroy(arg_15_0.effectGo)
+function var_0_0.ClearMapBg(arg_16_0)
+	if not IsNil(arg_16_0.effectGo) then
+		Object.Destroy(arg_16_0.effectGo)
 
-		arg_15_0.effectGo = nil
+		arg_16_0.effectGo = nil
 	end
 
-	for iter_15_0, iter_15_1 in ipairs(arg_15_0.paintingCanvases) do
-		iter_15_1.overrideSorting = false
-		iter_15_1.sortingOrder = 0
+	for iter_16_0, iter_16_1 in ipairs(arg_16_0.paintingCanvases) do
+		iter_16_1.overrideSorting = false
+		iter_16_1.sortingOrder = 0
 	end
 
-	arg_15_0.mapLoaderKey = nil
+	arg_16_0.mapLoaderKey = nil
 end
 
-function var_0_0.AdjustMapEffect(arg_16_0, arg_16_1)
-	local var_16_0 = -math.huge
-	local var_16_1 = arg_16_1:GetComponentsInChildren(typeof(Canvas))
+function var_0_0.AdjustMapEffect(arg_17_0, arg_17_1)
+	local var_17_0 = -math.huge
+	local var_17_1 = arg_17_1:GetComponentsInChildren(typeof(Canvas))
 
-	for iter_16_0 = 1, var_16_1.Length do
-		local var_16_2 = var_16_1[iter_16_0 - 1]
+	for iter_17_0 = 1, var_17_1.Length do
+		local var_17_2 = var_17_1[iter_17_0 - 1]
 
-		if var_16_0 < var_16_2.sortingOrder then
-			var_16_0 = var_16_2.sortingOrder
+		if var_17_0 < var_17_2.sortingOrder then
+			var_17_0 = var_17_2.sortingOrder
 		end
 	end
 
-	local var_16_3 = arg_16_1:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer"))
+	local var_17_3 = arg_17_1:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer"))
 
-	for iter_16_1 = 1, var_16_3.Length do
-		local var_16_4 = var_16_3[iter_16_1 - 1]
-		local var_16_5 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", var_16_4)
+	for iter_17_1 = 1, var_17_3.Length do
+		local var_17_4 = var_17_3[iter_17_1 - 1]
+		local var_17_5 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", var_17_4)
 
-		if var_16_0 < var_16_5 then
-			var_16_0 = var_16_5
+		if var_17_0 < var_17_5 then
+			var_17_0 = var_17_5
 		end
 	end
 
-	for iter_16_2, iter_16_3 in ipairs(arg_16_0.paintingCanvases) do
-		iter_16_3.overrideSorting = true
-		iter_16_3.sortingOrder = var_16_0 + (iter_16_2 == 3 and 2 or 1)
+	for iter_17_2, iter_17_3 in ipairs(arg_17_0.paintingCanvases) do
+		iter_17_3.overrideSorting = true
+		iter_17_3.sortingOrder = var_17_0 + (iter_17_2 == 3 and 2 or 1)
 	end
 end
 
-function var_0_0.SetCommonBg(arg_17_0, arg_17_1)
-	setActive(arg_17_0._tf, true)
+function var_0_0.SetCommonBg(arg_18_0, arg_18_1)
+	setActive(arg_18_0._tf, true)
 
-	arg_17_0.isloading = true
+	local var_18_0 = LoadSprite("commonbg/" .. arg_18_1, "")
 
-	PoolMgr.GetInstance():GetSprite("commonbg/" .. arg_17_1, "", true, function(arg_18_0)
-		arg_17_0.isloading = false
-
-		setImageSprite(arg_17_0._tf, arg_18_0)
-	end)
+	setImageSprite(arg_18_0._tf, var_18_0)
 end
 
 function var_0_0.ClearSpecailBg(arg_19_0)
@@ -229,6 +239,7 @@ function var_0_0.Disable(arg_21_0)
 end
 
 function var_0_0.Dispose(arg_22_0)
+	var_0_0.super.Dispose(arg_22_0)
 	arg_22_0:ClearSpecailBg()
 	arg_22_0:ClearMapBg()
 end

@@ -45,7 +45,6 @@ function var_0_0.init(arg_8_0)
 	arg_8_0.infoTpl = arg_8_0:getTpl("infos/info_tpl")
 	arg_8_0.indicator = arg_8_0:findTF("load")
 	arg_8_0.bg = arg_8_0:findTF("BG")
-	arg_8_0.logo = arg_8_0:findTF("logo")
 
 	arg_8_0:displayBG(true)
 end
@@ -112,7 +111,6 @@ end
 
 function var_0_0.displayBG(arg_15_0, arg_15_1)
 	setActive(arg_15_0.bg, arg_15_1)
-	setActive(arg_15_0.logo, arg_15_1)
 
 	local var_15_0 = GetComponent(arg_15_0.bg, "Image")
 

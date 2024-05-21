@@ -72,6 +72,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>献给所有六年间持续奋斗在港区的指挥官们</color>\n通过参与六周年限定活动获取",
 		scene = {}
 	},
+	[109] = {
+		time_limit_type = 0,
+		name = "七周年纪念",
+		gain_by = "",
+		id = 109,
+		time_second = 0,
+		desc = "<color=#ffffff>献给所有七年间持续奋斗在港区的指挥官们</color>\n通过参与七周年限定活动获取",
+		scene = {}
+	},
 	[201] = {
 		time_limit_type = 0,
 		name = "限界的挑战者",
@@ -444,10 +453,10 @@ pg.item_data_frame = {
 	[330] = {
 		time_limit_type = 0,
 		name = "幻梦守护者 ",
-		gain_by = "",
+		gain_by = "绽放于辉光之城 ",
 		id = 330,
 		time_second = 0,
-		desc = "通过后续活动获得",
+		desc = "<color=#ffffff>「纵使身处幻梦之中，我将依然选择守护。」</color>\n「绽放于辉光之城」活动获取",
 		scene = {}
 	},
 	[401] = {
@@ -585,6 +594,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>以极速越过终点，取得比赛胜利的证明</color>\n通过参与「疾速赛道」活动获取",
 		scene = {}
 	},
+	[606] = {
+		time_limit_type = 0,
+		name = "假日与心跳之证",
+		gain_by = "",
+		id = 606,
+		time_second = 0,
+		desc = "<color=#ffffff>扬帆起航！豪华邮轮与心跳之旅！</color>通过参与七周年限定活动获取",
+		scene = {}
+	},
 	[10001] = {
 		time_limit_type = 0,
 		name = "限界的挑战者·双子座",
@@ -702,6 +720,7 @@ pg.item_data_frame = {
 		105,
 		107,
 		108,
+		109,
 		201,
 		202,
 		203,
@@ -759,6 +778,7 @@ pg.item_data_frame = {
 		603,
 		604,
 		605,
+		606,
 		10001,
 		10002,
 		10003,

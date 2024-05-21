@@ -11,7 +11,10 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.highScores = {}
 
 	underscore.each(arg_1_1.maxscores or {}, function(arg_2_0)
-		arg_1_0.highScores[arg_2_0.key] = arg_2_0.value
+		arg_1_0.highScores[arg_2_0.key] = {
+			arg_2_0.value1,
+			arg_2_0.value2
+		}
 	end)
 end
 
@@ -24,8 +27,13 @@ function var_0_0.UpdateData(arg_4_0, arg_4_1)
 	arg_4_0.usedtime = arg_4_1.used_cnt or arg_4_0.usedtime
 	arg_4_0.ultimate = arg_4_1.ultimate or arg_4_0.ultimate
 
+	local var_4_0 = arg_4_1.maxscores
+
 	underscore.each(arg_4_1.maxscores or {}, function(arg_5_0)
-		arg_4_0.highScores[arg_5_0.key] = arg_5_0.value
+		arg_4_0.highScores[arg_5_0.key] = {
+			arg_5_0.value1,
+			arg_5_0.value2
+		}
 	end)
 	print("Hub 更新", "ID:", tostring(arg_4_0.id), "Count:", tostring(arg_4_0.count), "UsedTime:", tostring(arg_4_0.usedtime), "Ultimate:", tostring(arg_4_0.ultimate))
 end

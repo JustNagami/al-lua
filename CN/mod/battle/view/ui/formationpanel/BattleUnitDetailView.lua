@@ -163,8 +163,8 @@ function var_0_6.updateHP(arg_5_0)
 
 	for iter_5_0, iter_5_1 in pairs(var_5_3) do
 		for iter_5_2, iter_5_3 in ipairs(iter_5_1:GetEffectList()) do
-			if iter_5_3.__name == "BattleBuffShield" then
-				var_5_4 = var_5_4 + math.max(0, iter_5_3._shield)
+			if iter_5_3.__name == "BattleBuffShield" or iter_5_3.__name == "BattleBuffRecordShield" then
+				var_5_4 = var_5_4 + math.max(0, iter_5_3:GetEffectAttachData())
 			end
 		end
 	end
@@ -470,8 +470,9 @@ function var_0_6.addSkillCaster(arg_17_0, arg_17_1)
 		setText(var_17_4:Find("skillID"), arg_17_1._skill_id)
 
 		local var_17_5 = var_17_3:Find("common/icon")
+		local var_17_6 = arg_17_1._srcBuff._tempData.icon or 10120
 
-		GetImageSpriteFromAtlasAsync("skillicon/" .. arg_17_1._srcBuff._tempData.icon, "", var_17_5)
+		GetImageSpriteFromAtlasAsync("skillicon/" .. var_17_6, "", var_17_5)
 		Canvas.ForceUpdateCanvases()
 
 		var_17_2 = {

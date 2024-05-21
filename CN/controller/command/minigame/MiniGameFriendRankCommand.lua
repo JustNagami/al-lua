@@ -20,7 +20,8 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 				player_id = arg_4_1.id,
 				name = arg_4_1.name,
 				score = arg_4_1.score,
-				display = arg_4_1.display
+				display = arg_4_1.display,
+				time_data = arg_4_1.time_data
 			}
 
 			arg_4_0[#arg_4_0 + 1] = var_4_0

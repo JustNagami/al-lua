@@ -10,9 +10,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 end
 
 function var_0_0.GetCenterPos(arg_2_0)
-	local var_2_0 = arg_2_0.spTF
-
-	return (arg_2_0.chatTf.parent:InverseTransformPoint(var_2_0.position))
+	return arg_2_0.spTF.position
 end
 
 function var_0_0.OnLoad(arg_3_0, arg_3_1)

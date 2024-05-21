@@ -1611,5 +1611,25 @@ pg.voice_actor_CN = {
 	[404] = {
 		code = 404,
 		actor_name = "佐仓薰"
+	},
+	[405] = {
+		code = 405,
+		actor_name = "丰崎爱生"
+	},
+	[406] = {
+		code = 406,
+		actor_name = "日野麻里"
+	},
+	[407] = {
+		code = 407,
+		actor_name = "菊池纱矢香"
+	},
+	[408] = {
+		code = 408,
+		actor_name = "高岸美里亚"
+	},
+	[409] = {
+		code = 409,
+		actor_name = "栗坂南美"
 	}
 }

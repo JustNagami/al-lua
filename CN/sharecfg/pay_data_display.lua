@@ -66,6 +66,8 @@ pg.pay_data_display = setmetatable({
 		66,
 		67,
 		68,
+		69,
+		70,
 		1000,
 		1001,
 		1002,
@@ -6704,6 +6706,232 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40925,
+				1
+			}
+		}
+	},
+	[69] = {
+		subject = "七周年泳装礼盒",
+		limit_group = 0,
+		descrip_extra = "*礼盒将发送到邮箱，请注意查收。\n*重复获得已拥有的换装时，则自动置换成等价的钻石。",
+		type = 1,
+		limit_arg = 1,
+		name = "七周年泳装礼盒",
+		name_display = "七周年泳装礼盒",
+		type_order = 2,
+		extra_gem = 0,
+		id = 69,
+		money = 198,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai13",
+		skin_inquire_relation = 86204,
+		id_str = "com.bilibili.blhx.zuanshi169",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "可获得一件角色换装，2024钻，和大量其他奖励",
+		airijp_id = "com.yostarjp.azurlane.diamond157",
+		extra_service_item = {
+			{
+				2,
+				86204,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					5,
+					21
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					6,
+					12
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86204,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81204,
+				1
+			}
+		}
+	},
+	[70] = {
+		subject = "六周年泳装礼盒复刻",
+		limit_group = 0,
+		descrip_extra = "*礼盒将发送到邮箱，请注意查收。\n*重复获得已拥有的换装时，则自动置换成等价的钻石。",
+		type = 1,
+		limit_arg = 1,
+		name = "六周年泳装礼盒复刻",
+		name_display = "六周年泳装礼盒复刻",
+		type_order = 2,
+		extra_gem = 0,
+		id = 70,
+		money = 198,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "lihecn6ss_l",
+		skin_inquire_relation = 69926,
+		id_str = "com.bilibili.blhx.zuanshi172",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "可获得一件角色换装，2023钻，和大量其他奖励",
+		airijp_id = "com.yostarjp.azurlane.diamond158",
+		extra_service_item = {
+			{
+				2,
+				69926,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42046,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					5,
+					21
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					6,
+					12
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				69926,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42046,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40926,
 				1
 			}
 		}

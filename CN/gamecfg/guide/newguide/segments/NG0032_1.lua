@@ -8,7 +8,13 @@
 			},
 			ui = {
 				delay = 1,
-				path = "OverlayCamera/Overlay/UIMain/main/frame/linkBtns/MainActAtelierBtn",
+				dynamicPath = function()
+					if getProxy(SettingsProxy):IsMellowStyle() then
+						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/right/activity/MainActAtelierBtn"
+					else
+						return "OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/linkBtns/MainActAtelierBtn"
+					end
+				end,
 				triggerType = {
 					1
 				},
@@ -18,7 +24,13 @@
 				}
 			},
 			baseui = {
-				path = "OverlayCamera/Overlay/UIMain/main/frame/linkBtns/MainActAtelierBtn"
+				dynamicPath = function()
+					if getProxy(SettingsProxy):IsMellowStyle() then
+						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/right/activity/MainActAtelierBtn"
+					else
+						return "OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/linkBtns/MainActAtelierBtn"
+					end
+				end
 			},
 			style = {
 				text = "让我们来看看炼金工坊出现了哪些可以调和的配方",

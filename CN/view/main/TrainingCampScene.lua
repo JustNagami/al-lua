@@ -272,13 +272,10 @@ function var_0_0.initTecPanel(arg_24_0)
 		local var_24_3 = var_24_1:GetChild(iter_24_1 - 1)
 		local var_24_4 = arg_24_0:findTF("TextImg", var_24_3)
 
-		print(tostring(var_24_3))
-		print(tostring(var_24_4))
 		setText(var_24_4, i18n("tec_catchup_" .. iter_24_1))
 
 		local var_24_5 = arg_24_0:findTF("Selected/TextImage", var_24_3)
 
-		print(tostring(var_24_5))
 		setText(var_24_5, i18n("tec_catchup_" .. iter_24_1))
 	end
 
@@ -627,6 +624,8 @@ function var_0_0.switchPanel(arg_55_0, arg_55_1, arg_55_2)
 	arg_55_0.activity = arg_55_1
 
 	if arg_55_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_GUIDE_TASKS then
+		arg_55_0:setPhrase()
+
 		if arg_55_2 then
 			arg_55_0:aniOnSwitch(arg_55_0.normalPanel, arg_55_0.tecPanel)
 		else
@@ -634,10 +633,11 @@ function var_0_0.switchPanel(arg_55_0, arg_55_1, arg_55_2)
 			setActive(arg_55_0.tecPanel, false)
 		end
 
-		arg_55_0:setPhrase()
 		arg_55_0:updateToggleDisable(arg_55_0.normalToggles)
 		triggerToggle(arg_55_0.normalToggles[arg_55_0.phaseId], true)
 	elseif arg_55_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_FRESH_TEC_CATCHUP then
+		arg_55_0:setPhrase()
+
 		if arg_55_2 then
 			arg_55_0:aniOnSwitch(arg_55_0.tecPanel, arg_55_0.normalPanel)
 		else
@@ -645,7 +645,6 @@ function var_0_0.switchPanel(arg_55_0, arg_55_1, arg_55_2)
 			setActive(arg_55_0.tecPanel, true)
 		end
 
-		arg_55_0:setPhrase()
 		arg_55_0:updateToggleDisable(arg_55_0.tecToggles)
 		triggerToggle(arg_55_0.tecToggles[arg_55_0.phaseId], true)
 	end

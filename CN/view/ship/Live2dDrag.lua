@@ -698,8 +698,6 @@ function var_0_0.updateTrigger(arg_33_0)
 end
 
 function var_0_0.triggerAction(arg_34_0)
-	print("set limit time = " .. arg_34_0.limitTime)
-
 	arg_34_0.nextTriggerTime = arg_34_0.limitTime
 
 	arg_34_0:setTriggerActionFlag(true)
