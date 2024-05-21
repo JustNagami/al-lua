@@ -40,12 +40,20 @@ function var_0_0.OnMiniGameSuccess(arg_3_0, arg_3_1)
 			return
 		end
 
+		local var_3_4
+
+		if arg_3_1 and type(arg_3_1) == "table" then
+			var_3_4 = arg_3_1
+		else
+			var_3_4 = {
+				arg_3_1
+			}
+		end
+
 		arg_3_0:sendNotification(GAME.SEND_MINI_GAME_OP, {
 			hubid = var_3_3.id,
 			cmd = MiniGameOPCommand.CMD_COMPLETE,
-			args1 = {
-				arg_3_1
-			},
+			args1 = var_3_4,
 			id = arg_3_0.miniGameId
 		})
 	end

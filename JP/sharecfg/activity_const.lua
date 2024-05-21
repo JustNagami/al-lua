@@ -13,7 +13,7 @@ pg.activity_const = {
 		act_id = 122
 	},
 	ACTIVITY_PRAY_POOL = {
-		act_id = 5010
+		act_id = 5339
 	},
 	ACT_NPC_SHIP_ID = {
 		act_id = 5320
@@ -1032,10 +1032,19 @@ pg.activity_const = {
 	LINER_SIGN_ID = {
 		act_id = 5324
 	},
+	SEVEN_INVITE_ID = {
+		act_id = 5350
+	},
 	LINER_NAMED_ID = {
 		act_id = 5322
 	},
 	LINER_ID = {
 		act_id = 5335
+	},
+	PIPE_GAME_ACT_ID = {
+		act_id = 5355
+	},
+	UR_EXCHANGE_MOGADOR_ID = {
+		act_id = 5351
 	}
 }

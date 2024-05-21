@@ -264,26 +264,9 @@ function var_0_1.BuffAttachDataCondition(arg_14_0, arg_14_1)
 
 	for iter_14_0, iter_14_1 in ipairs(var_14_1) do
 		for iter_14_2, iter_14_3 in ipairs(arg_14_0._effectAttachData) do
-			if iter_14_1.__name == iter_14_3.type then
-				local var_14_2 = iter_14_3.type
-				local var_14_3 = iter_14_3.value
-				local var_14_4 = iter_14_3.op
-				local var_14_5 = iter_14_1:GetEffectAttachData()
+			local var_14_2 = var_0_0.Battle.BattleFormulas.parseCompareBuffAttachData(iter_14_3, iter_14_1)
 
-				if var_14_4 == "equal" and var_14_5 ~= var_14_3 then
-					var_14_0 = false
-				elseif var_14_4 == "notequal" and var_14_5 == var_14_3 then
-					var_14_0 = false
-				elseif var_14_4 == "lessequal" and var_14_3 < var_14_5 then
-					var_14_0 = false
-				elseif var_14_4 == "greatequal" and var_14_5 < var_14_3 then
-					var_14_0 = false
-				elseif var_14_4 == "great" and var_14_5 <= var_14_3 then
-					var_14_0 = false
-				elseif var_14_4 == "less" and var_14_3 <= var_14_5 then
-					var_14_0 = false
-				end
-			end
+			var_14_0 = var_14_0 and var_14_2
 		end
 	end
 

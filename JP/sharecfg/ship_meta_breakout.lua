@@ -114,6 +114,10 @@ pg.ship_meta_breakout = setmetatable({
 		9707032,
 		9707033,
 		9707034,
+		9707041,
+		9707042,
+		9707043,
+		9707044,
 		9708011,
 		9708012,
 		9708013,
@@ -1963,6 +1967,75 @@ pg.base.ship_meta_breakout = {
 		id = 9707034,
 		item1 = 21004,
 		pre_id = 9707033,
+		weapon_ids = {}
+	},
+	[9707041] = {
+		breakout_view = "【揺灯の力・ベアルン】習得/艦載機数+1/艦載機補正+3%",
+		gold = 1000,
+		breakout_id = 9707042,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9707041,
+		item1 = 21033,
+		pre_id = 0,
+		weapon_ids = {
+			60511,
+			54014
+		}
+	},
+	[9707042] = {
+		breakout_view = "攻撃隊上限+1/副兵装砲座+1/艦載機補正+5%",
+		gold = 3000,
+		breakout_id = 9707043,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9707042,
+		item1 = 21033,
+		pre_id = 9707041,
+		weapon_ids = {
+			60512,
+			54014,
+			60512,
+			54014
+		}
+	},
+	[9707043] = {
+		breakout_view = "【揺灯の力・ベアルン】強化/艦載機数+1/艦載機補正+7%",
+		gold = 10000,
+		breakout_id = 9707044,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9707043,
+		item1 = 21033,
+		pre_id = 9707042,
+		weapon_ids = {
+			60513,
+			54015,
+			60513,
+			54015
+		}
+	},
+	[9707044] = {
+		breakout_view = "なし",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9707044,
+		item1 = 21033,
+		pre_id = 9707043,
 		weapon_ids = {}
 	},
 	[9708011] = {

@@ -56,6 +56,14 @@ pg.item_data_chat = {
 		desc = "Sixth　Anniversary！\n<color=#A7A7AAFF>六周年記念イベントで開放可能</color>",
 		scene = {}
 	},
+	[107] = {
+		time_limit_type = 0,
+		name = "七周年纪念",
+		id = 107,
+		time_second = 0,
+		desc = "献给所有七年间持续奋斗在港区的指挥官们\n<color=#A7A7AAFF>通过参与七周年限定活动获取</color>",
+		scene = {}
+	},
 	[300] = {
 		time_limit_type = 1,
 		name = "カリスマ指揮官",
@@ -86,6 +94,14 @@ pg.item_data_chat = {
 		id = 603,
 		time_second = 0,
 		desc = "<size=28>母港パーティーの参加記念。華麗に艦船たちに招待状を届けた指揮官に贈る<color=#A7A7AAFF>「宴会会場」イベントに参加した指揮官に贈る</color></size>",
+		scene = {}
+	},
+	[606] = {
+		time_limit_type = 0,
+		name = "碧き海の返し波",
+		id = 606,
+		time_second = 0,
+		desc = "<size=28>揺れる波の中でクルーズバカンスを楽しもう！\n<color=#A7A7AAFF>イベント「休日トキメク大航海」参加で入手可能</color></size>",
 		scene = {}
 	},
 	[10001] = {
@@ -192,10 +208,12 @@ pg.item_data_chat = {
 		104,
 		105,
 		106,
+		107,
 		300,
 		301,
 		602,
 		603,
+		606,
 		10001,
 		10002,
 		10003,

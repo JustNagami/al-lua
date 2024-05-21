@@ -115,7 +115,7 @@ pg.ship_data_create_material = {
 		number_1 = 2,
 		id = 6,
 		icon = "build_6",
-		exchange_count = 0,
+		exchange_count = 2,
 		rate_tip = {
 			"<color=#ffde38>SSレア</color>：7%",
 			"<color=#d797ff>Sレア</color>：12%",
@@ -134,7 +134,7 @@ pg.ship_data_create_material = {
 		number_1 = 1,
 		id = 7,
 		icon = "build_7",
-		exchange_count = 0,
+		exchange_count = 1,
 		rate_tip = {
 			"<color=#ffde38>SSレア</color>：7%",
 			"<color=#d797ff>Sレア</color>：12%",
@@ -153,7 +153,7 @@ pg.ship_data_create_material = {
 		number_1 = 2,
 		id = 8,
 		icon = "build_8",
-		exchange_count = 0,
+		exchange_count = 2,
 		rate_tip = {
 			"<color=#ffde38>SSレア</color>：7%",
 			"<color=#d797ff>Sレア</color>：12%",
@@ -200,13 +200,13 @@ pg.ship_data_create_material = {
 			"<color=#3dc6ff>レア</color>：51%",
 			"ノーマル：28.8%",
 			" ",
-			"<color=#ff5e39>クロンシュタット</color>：1.2%(<color=#92fc63>up!</color>)",
+			"<color=#ff5e39>アルザス</color>：1.2%(<color=#92fc63>up!</color>)",
 			" ",
-			"<color=#ffde38>ヴォルガ</color>：2.0%(<color=#92fc63>up!</color>)",
+			"<color=#ffde38>ブレンヌス</color>：2.0%(<color=#92fc63>up!</color>)",
 			" ",
-			"<color=#ffde38>キエフ</color>：0.5%",
+			"<color=#ffde38>ベアルン(META)</color>：0.5%",
 			" ",
-			"<color=#d797ff>アルハンゲリスク</color>：2.5%(<color=#92fc63>up!</color>)"
+			"<color=#d797ff>フルーレ</color>：2.5%(<color=#92fc63>up!</color>)"
 		}
 	},
 	{

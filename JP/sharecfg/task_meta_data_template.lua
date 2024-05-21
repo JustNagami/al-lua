@@ -227,6 +227,11 @@ pg.task_meta_data_template = setmetatable({
 		100183,
 		100184,
 		100185,
+		100191,
+		100192,
+		100193,
+		100194,
+		100195,
 		200001,
 		200002,
 		200003,
@@ -298,7 +303,11 @@ pg.task_meta_data_template = setmetatable({
 		200181,
 		200182,
 		200183,
-		200184
+		200184,
+		200191,
+		200192,
+		200193,
+		200194
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2103,6 +2112,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100191] = {
+		target_id_2 = "970704",
+		sub_type = 180,
+		desc = "ベアルン(META)を編成した艦隊で1回戦闘を勝利する",
+		id = 100191,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100192] = {
+		target_id_2 = "970704",
+		sub_type = 180,
+		desc = "ベアルン(META)を編成した艦隊でLv30+の敵艦隊を撃破する",
+		id = 100192,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100193] = {
+		target_id_2 = "970704",
+		sub_type = 180,
+		desc = "ベアルン(META)を編成した艦隊でLv55+の敵艦隊を撃破する",
+		id = 100193,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100194] = {
+		target_id_2 = "970704",
+		sub_type = 180,
+		desc = "ベアルン(META)を編成した艦隊でLv80+の敵艦隊を撃破する",
+		id = 100194,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100195] = {
+		target_id_2 = "970704",
+		sub_type = 180,
+		desc = "ベアルン(META)を編成した艦隊でLv100+の敵艦隊を撃破する",
+		id = 100195,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -2676,6 +2725,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "セイレーン作戦でヴァンパイア(META)を含めた艦隊でLv100+の敵を撃破",
 		id = 200184,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200191] = {
+		target_id_2 = "970704",
+		sub_type = 302,
+		desc = "セイレーン作戦でベアルン(META)を含めた艦隊で1回勝利する",
+		id = 200191,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200192] = {
+		target_id_2 = "970704",
+		sub_type = 302,
+		desc = "セイレーン作戦でベアルン(META)を含めた艦隊でLv70+の敵を撃破",
+		id = 200192,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200193] = {
+		target_id_2 = "970704",
+		sub_type = 302,
+		desc = "セイレーン作戦でベアルン(META)を含めた艦隊でLv90+の敵を撃破",
+		id = 200193,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200194] = {
+		target_id_2 = "970704",
+		sub_type = 302,
+		desc = "セイレーン作戦でベアルン(META)を含めた艦隊でLv100+の敵を撃破",
+		id = 200194,
 		target_num = 1,
 		target_id = "100"
 	}

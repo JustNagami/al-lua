@@ -179,27 +179,32 @@ function var_0_0.HandleMeteoDamage(arg_8_0, arg_8_1, arg_8_2)
 end
 
 function var_0_0.HandleDirectDamage(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
-	local var_9_0 = {
+	local var_9_0
+
+	if arg_9_3 then
+		var_9_0 = arg_9_3:GetAttrByName("id")
+	end
+
+	local var_9_1 = {
 		isMiss = false,
 		isCri = false,
 		isHeal = false,
-		damageReason = arg_9_4
+		damageReason = arg_9_4,
+		srcID = var_9_0
 	}
-	local var_9_1 = arg_9_1:GetAttrByName("id")
-	local var_9_2 = arg_9_1:UpdateHP(arg_9_2 * -1, var_9_0)
-	local var_9_3 = arg_9_1:IsAlive()
+	local var_9_2 = arg_9_1:GetAttrByName("id")
+	local var_9_3 = arg_9_1:UpdateHP(arg_9_2 * -1, var_9_1)
+	local var_9_4 = arg_9_1:IsAlive()
 
 	if arg_9_3 then
-		local var_9_4 = arg_9_3:GetAttrByName("id")
+		arg_9_0:DamageStatistics(var_9_0, var_9_2, -var_9_3)
 
-		arg_9_0:DamageStatistics(var_9_4, var_9_1, -var_9_2)
-
-		if not var_9_3 then
-			arg_9_0:KillCountStatistics(var_9_4, var_9_1)
+		if not var_9_4 then
+			arg_9_0:KillCountStatistics(var_9_0, var_9_2)
 		end
 	end
 
-	if not var_9_3 then
+	if not var_9_4 then
 		local var_9_5 = arg_9_1:GetUnitType()
 		local var_9_6 = true
 

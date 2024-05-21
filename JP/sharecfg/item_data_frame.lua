@@ -72,6 +72,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>Sixth　Anniversary！</color>\n　六周年記念イベントで開放可能",
 		scene = {}
 	},
+	[109] = {
+		time_limit_type = 0,
+		name = "七周年纪念",
+		gain_by = "",
+		id = 109,
+		time_second = 0,
+		desc = "<color=#ffffff>献给所有七年间持续奋斗在港区的指挥官们</color>\n通过参与七周年限定活动获取",
+		scene = {}
+	},
 	[201] = {
 		time_limit_type = 0,
 		name = "チャレンジャー",
@@ -444,7 +453,7 @@ pg.item_data_frame = {
 	[330] = {
 		time_limit_type = 0,
 		name = "幻夢の殉守者",
-		gain_by = "",
+		gain_by = "绽放于辉光之城 ",
 		id = 330,
 		time_second = 0,
 		desc = "イベントで入手可能",
@@ -576,6 +585,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>最速で終点まで行き、レースの勝利を手にしよう</color>\n「極速レース」イベントに参加した指揮官に贈る",
 		scene = {}
 	},
+	[606] = {
+		time_limit_type = 0,
+		name = "トキメクバカンス",
+		gain_by = "",
+		id = 606,
+		time_second = 0,
+		desc = "<color=#ffffff>帆を上げよう！クルーズ船トキメクの旅！</color>イベント「休日トキメク大航海」参加で入手可能",
+		scene = {}
+	},
 	[10001] = {
 		time_limit_type = 0,
 		name = "限界挑戦・ふたご座",
@@ -693,6 +711,7 @@ pg.item_data_frame = {
 		105,
 		107,
 		108,
+		109,
 		201,
 		202,
 		203,
@@ -749,6 +768,7 @@ pg.item_data_frame = {
 		602,
 		603,
 		605,
+		606,
 		10001,
 		10002,
 		10003,

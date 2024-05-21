@@ -8,6 +8,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.lockTF = arg_1_0._tf:Find("lock")
 
 	setActive(arg_1_0.lockTF, false)
+	setText(arg_1_0.lockTF:Find("Text"), i18n("commission_label_unlock_tech_tip"))
 end
 
 function var_0_0.CanOpen(arg_2_0)

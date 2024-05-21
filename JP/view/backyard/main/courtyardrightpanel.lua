@@ -6,6 +6,7 @@ end
 
 function var_0_0.init(arg_2_0)
 	arg_2_0.buffBtn = arg_2_0._tf:Find("buff")
+	arg_2_0.oneKeyBtn = arg_2_0._tf:Find("onekey")
 	arg_2_0.buffPage = CourtYardBuffPage.New(arg_2_0._tf.parent.parent, arg_2_0.parent)
 end
 
@@ -29,42 +30,45 @@ function var_0_0.OnRegister(arg_4_0)
 			arg_4_0.buffPage:ExecuteAction("Show", var_5_0)
 		end
 	end, SFX_PANEL)
+	onButton(arg_4_0, arg_4_0.oneKeyBtn, function()
+		arg_4_0:emit(CourtYardMediator.ONE_KEY)
+	end, SFX_PANEL)
 end
 
-function var_0_0.OnVisitRegister(arg_6_0)
-	setActive(arg_6_0._tf, false)
+function var_0_0.OnVisitRegister(arg_7_0)
+	setActive(arg_7_0._tf, false)
 end
 
-function var_0_0.OnFlush(arg_7_0, arg_7_1)
-	arg_7_1 = arg_7_1 or bit.bor(BackYardConst.DORM_UPDATE_TYPE_LEVEL, BackYardConst.DORM_UPDATE_TYPE_USEFOOD, BackYardConst.DORM_UPDATE_TYPE_SHIP)
+function var_0_0.OnFlush(arg_8_0, arg_8_1)
+	arg_8_1 = arg_8_1 or bit.bor(BackYardConst.DORM_UPDATE_TYPE_LEVEL, BackYardConst.DORM_UPDATE_TYPE_USEFOOD, BackYardConst.DORM_UPDATE_TYPE_SHIP)
 
-	local var_7_0 = arg_7_0.dorm
+	local var_8_0 = arg_8_0.dorm
 
-	if bit.band(arg_7_1, BackYardConst.DORM_UPDATE_TYPE_USEFOOD) > 0 and arg_7_0:IsInner() then
-		arg_7_0.buffList = arg_7_0:GenBuffData()
+	if bit.band(arg_8_1, BackYardConst.DORM_UPDATE_TYPE_USEFOOD) > 0 and arg_8_0:IsInner() then
+		arg_8_0.buffList = arg_8_0:GenBuffData()
 
-		setActive(arg_7_0.buffBtn, #arg_7_0.buffList > 0)
+		setActive(arg_8_0.buffBtn, #arg_8_0.buffList > 0)
 	end
 
-	if bit.band(arg_7_1, BackYardConst.DORM_UPDATE_TYPE_SHIP) > 0 then
-		-- block empty
+	if bit.band(arg_8_1, BackYardConst.DORM_UPDATE_TYPE_SHIP) > 0 then
+		setActive(arg_8_0.oneKeyBtn, var_8_0:AnyShipExistIntimacyOrMoney())
 	end
 end
 
-function var_0_0.GetMoveX(arg_8_0)
+function var_0_0.GetMoveX(arg_9_0)
 	return {
 		{
-			arg_8_0._tf,
+			arg_9_0._tf,
 			1
 		}
 	}
 end
 
-function var_0_0.OnDispose(arg_9_0)
-	if arg_9_0.buffPage then
-		arg_9_0.buffPage:Destroy()
+function var_0_0.OnDispose(arg_10_0)
+	if arg_10_0.buffPage then
+		arg_10_0.buffPage:Destroy()
 
-		arg_9_0.buffPage = nil
+		arg_10_0.buffPage = nil
 	end
 end
 

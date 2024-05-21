@@ -52,8 +52,6 @@ function var_0_0.PlayCpkMovie(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4
 		if arg_4_2 then
 			arg_4_2()
 		end
-
-		arg_4_0._ratioFitter = nil
 	end
 
 	local function var_4_1()
@@ -124,6 +122,9 @@ function var_0_0.PlayCpkMovie(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4
 			end
 
 			arg_4_0._parentTF = arg_4_0._parentTF or GameObject.Find("UICamera/Canvas")
+
+			setParent(arg_12_0, arg_4_0._parentTF)
+
 			arg_4_0._mainTF = arg_12_0
 
 			pg.UIMgr.GetInstance():OverlayPanel(arg_4_0._mainTF.transform, arg_4_7)

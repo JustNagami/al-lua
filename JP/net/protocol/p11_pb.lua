@@ -116,6 +116,12 @@ CS_11027 = var_0_0.Descriptor()
 var_0_2.CS_11027_SURVEY_ID_FIELD = var_0_0.FieldDescriptor()
 SC_11028 = var_0_0.Descriptor()
 var_0_2.SC_11028_RESULT_FIELD = var_0_0.FieldDescriptor()
+CS_11029 = var_0_0.Descriptor()
+var_0_2.CS_11029_TRACK_TYP_FIELD = var_0_0.FieldDescriptor()
+var_0_2.CS_11029_INT_ARG1_FIELD = var_0_0.FieldDescriptor()
+var_0_2.CS_11029_INT_ARG2_FIELD = var_0_0.FieldDescriptor()
+var_0_2.CS_11029_INT_ARG3_FIELD = var_0_0.FieldDescriptor()
+var_0_2.CS_11029_STR_ARG1_FIELD = var_0_0.FieldDescriptor()
 CS_11100 = var_0_0.Descriptor()
 var_0_2.CS_11100_CMD_FIELD = var_0_0.FieldDescriptor()
 var_0_2.CS_11100_ARG1_FIELD = var_0_0.FieldDescriptor()
@@ -168,6 +174,10 @@ var_0_2.SC_11209_RESULT_FIELD = var_0_0.FieldDescriptor()
 SC_11210 = var_0_0.Descriptor()
 var_0_2.SC_11210_PERMANENT_ACTIVITY_FIELD = var_0_0.FieldDescriptor()
 var_0_2.SC_11210_PERMANENT_NOW_FIELD = var_0_0.FieldDescriptor()
+CS_11212 = var_0_0.Descriptor()
+var_0_2.CS_11212_TRACK_TYP_FIELD = var_0_0.FieldDescriptor()
+var_0_2.CS_11212_SHIP_TID_FIELD = var_0_0.FieldDescriptor()
+var_0_2.CS_11212_FROM_FIELD = var_0_0.FieldDescriptor()
 GROUPINFO = var_0_0.Descriptor()
 var_0_2.GROUPINFO_ID_FIELD = var_0_0.FieldDescriptor()
 var_0_2.GROUPINFO_SHIP_LIST_FIELD = var_0_0.FieldDescriptor()
@@ -266,6 +276,7 @@ var_0_2.ACTIVITYINFO_COLLECTION_LIST_FIELD = var_0_0.FieldDescriptor()
 var_0_2.ACTIVITYINFO_TASK_LIST_FIELD = var_0_0.FieldDescriptor()
 var_0_2.ACTIVITYINFO_BUFF_LIST_FIELD = var_0_0.FieldDescriptor()
 var_0_2.ACTIVITYINFO_STR_DATA1_FIELD = var_0_0.FieldDescriptor()
+var_0_2.ACTIVITYINFO_DATA4_LIST_FIELD = var_0_0.FieldDescriptor()
 NOTICEINFO = var_0_0.Descriptor()
 var_0_2.NOTICEINFO_ID_FIELD = var_0_0.FieldDescriptor()
 var_0_2.NOTICEINFO_VERSION_FIELD = var_0_0.FieldDescriptor()
@@ -1435,6 +1446,64 @@ SC_11028.fields = {
 }
 SC_11028.is_extendable = false
 SC_11028.extensions = {}
+var_0_2.CS_11029_TRACK_TYP_FIELD.name = "track_typ"
+var_0_2.CS_11029_TRACK_TYP_FIELD.full_name = "p11.cs_11029.track_typ"
+var_0_2.CS_11029_TRACK_TYP_FIELD.number = 1
+var_0_2.CS_11029_TRACK_TYP_FIELD.index = 0
+var_0_2.CS_11029_TRACK_TYP_FIELD.label = 2
+var_0_2.CS_11029_TRACK_TYP_FIELD.has_default_value = false
+var_0_2.CS_11029_TRACK_TYP_FIELD.default_value = 0
+var_0_2.CS_11029_TRACK_TYP_FIELD.type = 13
+var_0_2.CS_11029_TRACK_TYP_FIELD.cpp_type = 3
+var_0_2.CS_11029_INT_ARG1_FIELD.name = "int_arg1"
+var_0_2.CS_11029_INT_ARG1_FIELD.full_name = "p11.cs_11029.int_arg1"
+var_0_2.CS_11029_INT_ARG1_FIELD.number = 2
+var_0_2.CS_11029_INT_ARG1_FIELD.index = 1
+var_0_2.CS_11029_INT_ARG1_FIELD.label = 2
+var_0_2.CS_11029_INT_ARG1_FIELD.has_default_value = false
+var_0_2.CS_11029_INT_ARG1_FIELD.default_value = 0
+var_0_2.CS_11029_INT_ARG1_FIELD.type = 13
+var_0_2.CS_11029_INT_ARG1_FIELD.cpp_type = 3
+var_0_2.CS_11029_INT_ARG2_FIELD.name = "int_arg2"
+var_0_2.CS_11029_INT_ARG2_FIELD.full_name = "p11.cs_11029.int_arg2"
+var_0_2.CS_11029_INT_ARG2_FIELD.number = 3
+var_0_2.CS_11029_INT_ARG2_FIELD.index = 2
+var_0_2.CS_11029_INT_ARG2_FIELD.label = 2
+var_0_2.CS_11029_INT_ARG2_FIELD.has_default_value = false
+var_0_2.CS_11029_INT_ARG2_FIELD.default_value = 0
+var_0_2.CS_11029_INT_ARG2_FIELD.type = 13
+var_0_2.CS_11029_INT_ARG2_FIELD.cpp_type = 3
+var_0_2.CS_11029_INT_ARG3_FIELD.name = "int_arg3"
+var_0_2.CS_11029_INT_ARG3_FIELD.full_name = "p11.cs_11029.int_arg3"
+var_0_2.CS_11029_INT_ARG3_FIELD.number = 4
+var_0_2.CS_11029_INT_ARG3_FIELD.index = 3
+var_0_2.CS_11029_INT_ARG3_FIELD.label = 2
+var_0_2.CS_11029_INT_ARG3_FIELD.has_default_value = false
+var_0_2.CS_11029_INT_ARG3_FIELD.default_value = 0
+var_0_2.CS_11029_INT_ARG3_FIELD.type = 13
+var_0_2.CS_11029_INT_ARG3_FIELD.cpp_type = 3
+var_0_2.CS_11029_STR_ARG1_FIELD.name = "str_arg1"
+var_0_2.CS_11029_STR_ARG1_FIELD.full_name = "p11.cs_11029.str_arg1"
+var_0_2.CS_11029_STR_ARG1_FIELD.number = 5
+var_0_2.CS_11029_STR_ARG1_FIELD.index = 4
+var_0_2.CS_11029_STR_ARG1_FIELD.label = 2
+var_0_2.CS_11029_STR_ARG1_FIELD.has_default_value = false
+var_0_2.CS_11029_STR_ARG1_FIELD.default_value = ""
+var_0_2.CS_11029_STR_ARG1_FIELD.type = 9
+var_0_2.CS_11029_STR_ARG1_FIELD.cpp_type = 9
+CS_11029.name = "cs_11029"
+CS_11029.full_name = "p11.cs_11029"
+CS_11029.nested_types = {}
+CS_11029.enum_types = {}
+CS_11029.fields = {
+	var_0_2.CS_11029_TRACK_TYP_FIELD,
+	var_0_2.CS_11029_INT_ARG1_FIELD,
+	var_0_2.CS_11029_INT_ARG2_FIELD,
+	var_0_2.CS_11029_INT_ARG3_FIELD,
+	var_0_2.CS_11029_STR_ARG1_FIELD
+}
+CS_11029.is_extendable = false
+CS_11029.extensions = {}
 var_0_2.CS_11100_CMD_FIELD.name = "cmd"
 var_0_2.CS_11100_CMD_FIELD.full_name = "p11.cs_11100.cmd"
 var_0_2.CS_11100_CMD_FIELD.number = 1
@@ -1937,6 +2006,44 @@ SC_11210.fields = {
 }
 SC_11210.is_extendable = false
 SC_11210.extensions = {}
+var_0_2.CS_11212_TRACK_TYP_FIELD.name = "track_typ"
+var_0_2.CS_11212_TRACK_TYP_FIELD.full_name = "p11.cs_11212.track_typ"
+var_0_2.CS_11212_TRACK_TYP_FIELD.number = 1
+var_0_2.CS_11212_TRACK_TYP_FIELD.index = 0
+var_0_2.CS_11212_TRACK_TYP_FIELD.label = 2
+var_0_2.CS_11212_TRACK_TYP_FIELD.has_default_value = false
+var_0_2.CS_11212_TRACK_TYP_FIELD.default_value = 0
+var_0_2.CS_11212_TRACK_TYP_FIELD.type = 13
+var_0_2.CS_11212_TRACK_TYP_FIELD.cpp_type = 3
+var_0_2.CS_11212_SHIP_TID_FIELD.name = "ship_tid"
+var_0_2.CS_11212_SHIP_TID_FIELD.full_name = "p11.cs_11212.ship_tid"
+var_0_2.CS_11212_SHIP_TID_FIELD.number = 2
+var_0_2.CS_11212_SHIP_TID_FIELD.index = 1
+var_0_2.CS_11212_SHIP_TID_FIELD.label = 2
+var_0_2.CS_11212_SHIP_TID_FIELD.has_default_value = false
+var_0_2.CS_11212_SHIP_TID_FIELD.default_value = 0
+var_0_2.CS_11212_SHIP_TID_FIELD.type = 13
+var_0_2.CS_11212_SHIP_TID_FIELD.cpp_type = 3
+var_0_2.CS_11212_FROM_FIELD.name = "from"
+var_0_2.CS_11212_FROM_FIELD.full_name = "p11.cs_11212.from"
+var_0_2.CS_11212_FROM_FIELD.number = 3
+var_0_2.CS_11212_FROM_FIELD.index = 2
+var_0_2.CS_11212_FROM_FIELD.label = 2
+var_0_2.CS_11212_FROM_FIELD.has_default_value = false
+var_0_2.CS_11212_FROM_FIELD.default_value = 0
+var_0_2.CS_11212_FROM_FIELD.type = 13
+var_0_2.CS_11212_FROM_FIELD.cpp_type = 3
+CS_11212.name = "cs_11212"
+CS_11212.full_name = "p11.cs_11212"
+CS_11212.nested_types = {}
+CS_11212.enum_types = {}
+CS_11212.fields = {
+	var_0_2.CS_11212_TRACK_TYP_FIELD,
+	var_0_2.CS_11212_SHIP_TID_FIELD,
+	var_0_2.CS_11212_FROM_FIELD
+}
+CS_11212.is_extendable = false
+CS_11212.extensions = {}
 var_0_2.GROUPINFO_ID_FIELD.name = "id"
 var_0_2.GROUPINFO_ID_FIELD.full_name = "p11.groupinfo.id"
 var_0_2.GROUPINFO_ID_FIELD.number = 1
@@ -2845,6 +2952,15 @@ var_0_2.ACTIVITYINFO_STR_DATA1_FIELD.has_default_value = false
 var_0_2.ACTIVITYINFO_STR_DATA1_FIELD.default_value = ""
 var_0_2.ACTIVITYINFO_STR_DATA1_FIELD.type = 9
 var_0_2.ACTIVITYINFO_STR_DATA1_FIELD.cpp_type = 9
+var_0_2.ACTIVITYINFO_DATA4_LIST_FIELD.name = "data4_list"
+var_0_2.ACTIVITYINFO_DATA4_LIST_FIELD.full_name = "p11.activityinfo.data4_list"
+var_0_2.ACTIVITYINFO_DATA4_LIST_FIELD.number = 17
+var_0_2.ACTIVITYINFO_DATA4_LIST_FIELD.index = 16
+var_0_2.ACTIVITYINFO_DATA4_LIST_FIELD.label = 3
+var_0_2.ACTIVITYINFO_DATA4_LIST_FIELD.has_default_value = false
+var_0_2.ACTIVITYINFO_DATA4_LIST_FIELD.default_value = {}
+var_0_2.ACTIVITYINFO_DATA4_LIST_FIELD.type = 13
+var_0_2.ACTIVITYINFO_DATA4_LIST_FIELD.cpp_type = 3
 ACTIVITYINFO.name = "activityinfo"
 ACTIVITYINFO.full_name = "p11.activityinfo"
 ACTIVITYINFO.nested_types = {}
@@ -2865,7 +2981,8 @@ ACTIVITYINFO.fields = {
 	var_0_2.ACTIVITYINFO_COLLECTION_LIST_FIELD,
 	var_0_2.ACTIVITYINFO_TASK_LIST_FIELD,
 	var_0_2.ACTIVITYINFO_BUFF_LIST_FIELD,
-	var_0_2.ACTIVITYINFO_STR_DATA1_FIELD
+	var_0_2.ACTIVITYINFO_STR_DATA1_FIELD,
+	var_0_2.ACTIVITYINFO_DATA4_LIST_FIELD
 }
 ACTIVITYINFO.is_extendable = false
 ACTIVITYINFO.extensions = {}
@@ -3884,11 +4001,13 @@ cs_11021 = var_0_0.Message(CS_11021)
 cs_11023 = var_0_0.Message(CS_11023)
 cs_11025 = var_0_0.Message(CS_11025)
 cs_11027 = var_0_0.Message(CS_11027)
+cs_11029 = var_0_0.Message(CS_11029)
 cs_11100 = var_0_0.Message(CS_11100)
 cs_11202 = var_0_0.Message(CS_11202)
 cs_11204 = var_0_0.Message(CS_11204)
 cs_11206 = var_0_0.Message(CS_11206)
 cs_11208 = var_0_0.Message(CS_11208)
+cs_11212 = var_0_0.Message(CS_11212)
 cs_11401 = var_0_0.Message(CS_11401)
 cs_11501 = var_0_0.Message(CS_11501)
 cs_11504 = var_0_0.Message(CS_11504)

@@ -86,7 +86,7 @@ function var_0_0.register(arg_1_0)
 		arg_1_0:sendNotification(GAME.GO_SCENE, arg_11_1, arg_11_2)
 	end)
 	arg_1_0:bind(var_0_0.GO_SNAPSHOT, function(arg_12_0)
-		local var_12_0 = arg_1_0.viewComponent.iconView.ship
+		local var_12_0 = arg_1_0.viewComponent.bgView.ship
 		local var_12_1 = var_12_0.skinId
 		local var_12_2 = arg_1_0.viewComponent.paintingView:IsLive2DState()
 		local var_12_3
@@ -100,7 +100,7 @@ function var_0_0.register(arg_1_0)
 			skinId = var_12_1,
 			live2d = var_12_2,
 			tbId = var_12_3,
-			propose = arg_1_0.viewComponent.iconView.propose
+			propose = arg_1_0.viewComponent.bgView.propose
 		})
 	end)
 	arg_1_0:bind(var_0_0.OPEN_MAIL, function(arg_13_0)
@@ -144,29 +144,31 @@ end
 function var_0_0.listNotificationInterests(arg_18_0)
 	local var_18_0 = {
 		GAME.REMOVE_LAYERS,
-		PlayerProxy.UPDATED,
+		GAME.GET_GUILD_INFO_DONE,
+		GAME.GET_GUILD_CHAT_LIST_DONE,
 		GAME.ON_OPEN_INS_LAYER,
+		GAME.BEGIN_STAGE_DONE,
+		GAME.SEND_MINI_GAME_OP_DONE,
+		GAME.FETCH_NPC_SHIP_DONE,
+		GAME.ZERO_HOUR_OP_DONE,
+		GAME.CONFIRM_GET_SHIP,
+		GAME.WILL_LOGOUT,
+		GAME.GET_FEAST_DATA_DONE,
+		GAME.FETCH_VOTE_INFO_DONE,
+		GAME.ROTATE_PAINTING_INDEX,
+		GAME.LOAD_LAYERS,
 		NotificationProxy.FRIEND_REQUEST_ADDED,
 		NotificationProxy.FRIEND_REQUEST_REMOVED,
 		FriendProxy.FRIEND_NEW_MSG,
 		FriendProxy.FRIEND_UPDATED,
+		PlayerProxy.UPDATED,
 		ChatProxy.NEW_MSG,
 		GuildProxy.NEW_MSG_ADDED,
-		GAME.GET_GUILD_INFO_DONE,
-		GAME.GET_GUILD_CHAT_LIST_DONE,
-		GAME.BEGIN_STAGE_DONE,
 		ChapterProxy.CHAPTER_TIMESUP,
 		TaskProxy.TASK_ADDED,
 		TechnologyConst.UPDATE_REDPOINT_ON_TOP,
 		MiniGameProxy.ON_HUB_DATA_UPDATE,
-		GAME.SEND_MINI_GAME_OP_DONE,
-		GAME.FETCH_NPC_SHIP_DONE,
-		GAME.ZERO_HOUR_OP_DONE,
-		var_0_0.REFRESH_VIEW,
-		GAME.CONFIRM_GET_SHIP,
-		GAME.WILL_LOGOUT,
-		GAME.GET_FEAST_DATA_DONE,
-		GAME.FETCH_VOTE_INFO_DONE
+		var_0_0.REFRESH_VIEW
 	}
 
 	for iter_18_0, iter_18_1 in pairs(pg.redDotHelper:GetNotifyType()) do
@@ -186,29 +188,18 @@ function var_0_0.handleNotification(arg_19_0, arg_19_1)
 
 	pg.redDotHelper:Notify(var_19_0)
 
-	if var_19_0 == GAME.REMOVE_LAYERS then
-		arg_19_0.viewComponent:emit(NewMainScene.ON_REMOVE_LAYER, var_19_1.context)
-	elseif var_19_0 == PlayerProxy.UPDATED then
-		arg_19_0.viewComponent:emit(NewMainScene.ON_PLAYER_UPDATE)
-	elseif var_19_0 == GAME.ON_OPEN_INS_LAYER then
+	if var_19_0 == GAME.ON_OPEN_INS_LAYER then
 		arg_19_0.viewComponent:emit(var_0_0.SKIP_INS)
 	elseif var_19_0 == NotificationProxy.FRIEND_REQUEST_ADDED or var_19_0 == NotificationProxy.FRIEND_REQUEST_REMOVED or var_19_0 == FriendProxy.FRIEND_NEW_MSG or var_19_0 == FriendProxy.FRIEND_UPDATED or var_19_0 == ChatProxy.NEW_MSG or var_19_0 == GuildProxy.NEW_MSG_ADDED or var_19_0 == GAME.GET_GUILD_INFO_DONE or var_19_0 == GAME.GET_GUILD_CHAT_LIST_DONE then
-		arg_19_0.viewComponent:emit(NewMainScene.ON_CHAT_MSG_UPDATE)
+		arg_19_0.viewComponent:emit(GAME.ANY_CHAT_MSG_UPDATE)
 	elseif var_19_0 == GAME.BEGIN_STAGE_DONE then
 		arg_19_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var_19_1)
 	elseif var_19_0 == ChapterProxy.CHAPTER_TIMESUP then
 		MainChapterTimeUpSequence.New():Execute()
-	elseif var_19_0 == TaskProxy.TASK_ADDED then
-		arg_19_0.viewComponent:emit(NewMainScene.ON_STOP_PAITING_VOICE)
 	elseif var_19_0 == TechnologyConst.UPDATE_REDPOINT_ON_TOP then
 		MainTechnologySequence.New():Execute(function()
 			return
 		end)
-	elseif var_19_0 == MiniGameProxy.ON_HUB_DATA_UPDATE or var_19_0 == GAME.SEND_MINI_GAME_OP_DONE then
-		arg_19_0.viewComponent:emit(NewMainScene.ON_ACT_BTN_UPDATE)
-		arg_19_0.viewComponent:emit(NewMainScene.ON_BUFF_UPDATE)
-	elseif var_19_0 == GAME.ZERO_HOUR_OP_DONE then
-		arg_19_0.viewComponent:emit(NewMainScene.ON_ZERO_HOUR)
 	elseif var_19_0 == GAME.FETCH_NPC_SHIP_DONE then
 		arg_19_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_19_1.items, var_19_1.callback)
 	elseif var_19_0 == var_0_0.REFRESH_VIEW then
@@ -223,11 +214,9 @@ function var_0_0.handleNotification(arg_19_0, arg_19_1)
 			},
 			onRemoved = var_19_1.callback
 		}))
-	elseif var_19_0 == GAME.WILL_LOGOUT then
-		arg_19_0.viewComponent:OnLogOut()
-	elseif var_19_0 == GAME.GET_FEAST_DATA_DONE or var_19_0 == GAME.FETCH_VOTE_INFO_DONE then
-		arg_19_0.viewComponent:emit(NewMainScene.ON_ACT_BTN_UPDATE)
 	end
+
+	arg_19_0.viewComponent:emit(var_19_0, var_19_1)
 end
 
 return var_0_0

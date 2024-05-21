@@ -42,6 +42,12 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.limitTime = arg_1_1.limit_time > 0 and arg_1_1.limit_time or var_0_1
 	arg_1_0.revertIdleIndex = arg_1_1.revert_idle_index == 1 and true or false
 	arg_1_0.revertActionIndex = arg_1_1.revert_action_index == 1 and true or false
+	arg_1_0.saveParameterFlag = true
+
+	if arg_1_1.save_parameter == -1 then
+		arg_1_0.saveParameterFlag = false
+	end
+
 	arg_1_0.randomAttitudeIndex = L2D_RANDOM_PARAM
 	arg_1_0._active = false
 	arg_1_0._parameterCom = nil
@@ -698,8 +704,6 @@ function var_0_0.updateTrigger(arg_33_0)
 end
 
 function var_0_0.triggerAction(arg_34_0)
-	print("set limit time = " .. arg_34_0.limitTime)
-
 	arg_34_0.nextTriggerTime = arg_34_0.limitTime
 
 	arg_34_0:setTriggerActionFlag(true)
@@ -791,7 +795,7 @@ function var_0_0.checkClickAction(arg_37_0)
 end
 
 function var_0_0.saveData(arg_38_0)
-	if arg_38_0.revert == -1 then
+	if arg_38_0.revert == -1 and arg_38_0.saveParameterFlag then
 		Live2dConst.SaveDragData(arg_38_0.id, arg_38_0.live2dData:GetShipSkinConfig().id, arg_38_0.live2dData.ship.id, arg_38_0.parameterTargetValue)
 	end
 
@@ -801,7 +805,7 @@ function var_0_0.saveData(arg_38_0)
 end
 
 function var_0_0.loadData(arg_39_0)
-	if arg_39_0.revert == -1 then
+	if arg_39_0.revert == -1 and arg_39_0.saveParameterFlag then
 		local var_39_0 = Live2dConst.GetDragData(arg_39_0.id, arg_39_0.live2dData:GetShipSkinConfig().id, arg_39_0.live2dData.ship.id)
 
 		if var_39_0 then

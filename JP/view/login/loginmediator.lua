@@ -89,11 +89,6 @@ function var_0_0.loginProcessHandler(arg_11_0)
 			arg_11_0.viewComponent:switchToAiriLogin()
 		end
 
-		if not IsUnityEditor then
-			arg_11_0:CheckMaintain()
-			coroutine.yield()
-		end
-
 		arg_11_0:CheckMaintain()
 
 		if arg_11_0.contextData.code then

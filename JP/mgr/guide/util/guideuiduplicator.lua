@@ -46,6 +46,10 @@ local function var_0_2(arg_4_0)
 			var_4_5.enabled = false
 		end
 	end
+
+	if var_4_3 then
+		setToggleEnabled(arg_4_0, true)
+	end
 end
 
 local function var_0_3(arg_5_0)

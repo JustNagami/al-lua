@@ -778,6 +778,15 @@ function temp()
 				}
 			}
 		},
+		ガ = {
+			ド = {
+				ー = {
+					ル = {
+						this = true
+					}
+				}
+			}
+		},
 		ニ = {
 			カ = {
 				this = true
@@ -975,6 +984,13 @@ function temp()
 							}
 						}
 					}
+				}
+			}
+		},
+		ル = {
+			ー = {
+				レ = {
+					this = true
 				}
 			}
 		},
@@ -1409,7 +1425,20 @@ function temp()
 		ア = {
 			ル = {
 				ン = {
-					this = true
+					this = true,
+					["("] = {
+						M = {
+							E = {
+								T = {
+									A = {
+										[")"] = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -1981,6 +2010,9 @@ function temp()
 					}
 				}
 			}
+		},
+		ペ = {
+			this = true
 		}
 	}
 end
@@ -2280,6 +2312,13 @@ function temp()
 						ン = {
 							this = true
 						}
+					}
+				}
+			},
+			ン = {
+				ヌ = {
+					ス = {
+						this = true
 					}
 				}
 			},
@@ -2725,6 +2764,11 @@ function temp()
 							}
 						}
 					}
+				}
+			},
+			ザ = {
+				ス = {
+					this = true
 				}
 			},
 			ジ = {
@@ -3273,7 +3317,10 @@ function temp()
 			},
 			ラ = {
 				ド = {
-					this = true
+					this = true,
+					改 = {
+						this = true
+					}
 				}
 			}
 		},
@@ -5950,7 +5997,18 @@ temp()
 function temp()
 	var_0_1.能 = {
 		代 = {
-			this = true
+			this = true,
+			["("] = {
+				μ = {
+					兵 = {
+						装 = {
+							[")"] = {
+								this = true
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 end
@@ -6123,7 +6181,18 @@ temp()
 function temp()
 	var_0_1.金 = {
 		剛 = {
-			this = true
+			this = true,
+			["("] = {
+				μ = {
+					兵 = {
+						装 = {
+							[")"] = {
+								this = true
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 end
@@ -6525,7 +6594,14 @@ temp()
 function temp()
 	var_0_1.信 = {
 		濃 = {
-			this = true
+			this = true,
+			ち = {
+				ゃ = {
+					ん = {
+						this = true
+					}
+				}
+			}
 		}
 	}
 end

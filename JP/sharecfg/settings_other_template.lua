@@ -162,6 +162,33 @@ pg.settings_other_template = {
 		title = "L2D設定保存",
 		desc = "ONにすると、メイン画面のL2D着せ替えの演出設定が保存され、またメイン画面遷移時の【ログイン】【母港帰還】演出が再生されなくなります"
 	},
+	{
+		default = 1,
+		name = "USAGE_NEW_MAINUI",
+		type = 0,
+		alignment = 0,
+		id = 19,
+		title = "メイン画面新UIを適用",
+		desc = "ONにすると、メイン画面は新しいUIが適用されます"
+	},
+	{
+		default = 1,
+		name = "MAINUI_NEVER_SLEEP",
+		type = 0,
+		alignment = 0,
+		id = 20,
+		title = "メイン画面滞在中に省エネモードを起動させない",
+		desc = "ONにすると、メイン画面滞在中スリープモードになりません"
+	},
+	{
+		default = 0,
+		name = "MAINUI_RESET_L2D",
+		type = 0,
+		alignment = 0,
+		id = 21,
+		title = "L2Dリセッㇳボタン表示",
+		desc = "ONにすると、メイン画面にL2D演出リセットボタンが表示されます"
+	},
 	all = {
 		1,
 		2,
@@ -180,6 +207,9 @@ pg.settings_other_template = {
 		15,
 		16,
 		17,
-		18
+		18,
+		19,
+		20,
+		21
 	}
 }

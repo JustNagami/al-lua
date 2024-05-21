@@ -9,7 +9,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.txt = arg_1_0._tf:Find("Text")
 	arg_1_0.like = arg_1_0._tf:Find("like/Text")
 	arg_1_0.tip = arg_1_0._tf:Find("head/tip")
-	arg_1_0.image = arg_1_0._tf:Find("image")
+	arg_1_0.image = arg_1_0._tf:Find("image"):GetComponent(typeof(RawImage))
 	arg_1_0.loading = false
 	arg_1_0.needRefresh = false
 end

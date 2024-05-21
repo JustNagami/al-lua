@@ -6,6 +6,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.lockTF = arg_1_0._tf:Find("lock")
 
 	setActive(arg_1_0.lockTF, false)
+	setText(arg_1_0.lockTF:Find("Text"), i18n("commission_label_unlock_event_tip"))
 end
 
 function var_0_0.CanOpen(arg_2_0)
@@ -90,7 +91,12 @@ function var_0_0.UpdateListItem(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
 		local var_10_1 = arg_10_0:GetChapterByCount(arg_10_1)
 
 		assert(var_10_1, arg_10_1)
-		setText(arg_10_3:Find("lock/Text"), i18n("commission_no_open") .. "\n" .. i18n("commission_open_tip", var_10_1.chapter_name))
+
+		if getProxy(SettingsProxy):IsMellowStyle() then
+			setText(arg_10_3:Find("lock/Text"), i18n("commission_open_tip", var_10_1.chapter_name))
+		else
+			setText(arg_10_3:Find("lock/Text"), i18n("commission_no_open") .. "\n" .. i18n("commission_open_tip", var_10_1.chapter_name))
+		end
 	else
 		arg_10_0:UpdateEventInfo(arg_10_3, arg_10_2)
 	end
@@ -194,8 +200,14 @@ function var_0_0.UpdateStyle(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
 		var_19_5 = "event_bg_act"
 	end
 
-	arg_19_1:Find("unlock/ongoging"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/commissioninfoui_atlas", var_19_5)
-	arg_19_1:Find("unlock/finished"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/commissioninfoui_atlas", var_19_5)
+	if getProxy(SettingsProxy):IsMellowStyle() then
+		var_19_5 = "frame_unlock"
+		arg_19_1:Find("unlock/ongoging"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/CommissionInfoUI4Mellow_atlas", var_19_5)
+		arg_19_1:Find("unlock/finished"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/CommissionInfoUI4Mellow_atlas", var_19_5)
+	else
+		arg_19_1:Find("unlock/ongoging"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/commissioninfoui_atlas", var_19_5)
+		arg_19_1:Find("unlock/finished"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/commissioninfoui_atlas", var_19_5)
+	end
 
 	local var_19_6 = Color.New(0.996078431372549, 0.7568627450980392, 0.9725490196078431, 1)
 	local var_19_7 = arg_19_2 and var_19_6 or Color.New(0.6039215686274509, 0.7843137254901961, 0.9607843137254902, 1)

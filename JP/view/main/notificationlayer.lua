@@ -13,7 +13,11 @@ var_0_0.ChannelBits = {
 }
 
 function var_0_0.getUIName(arg_1_0)
-	return "NotificationUI"
+	if getProxy(SettingsProxy):IsMellowStyle() then
+		return "NotificationUI4Mellow"
+	else
+		return "NotificationUI"
+	end
 end
 
 function var_0_0.getGroupName(arg_2_0)
@@ -71,6 +75,9 @@ function var_0_0.init(arg_6_0)
 	arg_6_0.roomBtn = arg_6_0.contain:Find("top/room")
 	arg_6_0.typeBtns = arg_6_0.contain:Find("top/type")
 	arg_6_0.inputTF = arg_6_0:findTF("frame/bg/InputField", arg_6_0.changeRoomPanel):GetComponent(typeof(InputField))
+	arg_6_0.switchTpl = arg_6_0:findTF("switch_tpl", arg_6_0.changeRoomPanel)
+	arg_6_0.switchNormalSprite = arg_6_0:findTF("switch_normal", arg_6_0.changeRoomPanel):GetComponent(typeof(Image)).sprite
+	arg_6_0.switchSelectedSprite = arg_6_0:findTF("switch_selected", arg_6_0.changeRoomPanel):GetComponent(typeof(Image)).sprite
 
 	setText(findTF(arg_6_0.changeRoomPanel, "frame/bg/label_send"), i18n("notice_label_send"))
 	setText(findTF(arg_6_0.changeRoomPanel, "frame/bg/label_recv"), i18n("notice_label_recv"))
@@ -86,9 +93,6 @@ function var_0_0.init(arg_6_0)
 	arg_6_0.bottomChannelTpl = arg_6_0:findTF("channel_tpl", arg_6_0.resource)
 	arg_6_0.bottomChannelNormalSprite = arg_6_0:findTF("channel_normal", arg_6_0.resource):GetComponent(typeof(Image)).sprite
 	arg_6_0.bottomChannelSelectedSprite = arg_6_0:findTF("channel_selected", arg_6_0.resource):GetComponent(typeof(Image)).sprite
-	arg_6_0.switchTpl = arg_6_0:findTF("switch_tpl", arg_6_0.resource)
-	arg_6_0.switchNormalSprite = arg_6_0:findTF("switch_normal", arg_6_0.resource):GetComponent(typeof(Image)).sprite
-	arg_6_0.switchSelectedSprite = arg_6_0:findTF("switch_selected", arg_6_0.resource):GetComponent(typeof(Image)).sprite
 
 	local var_6_1 = {
 		ChatConst.ChannelAll,
@@ -109,7 +113,7 @@ function var_0_0.init(arg_6_0)
 
 		arg_6_0.textSprites[iter_6_0] = arg_6_0:findTF("text_" .. var_6_2, arg_6_0.resource):GetComponent(typeof(Image)).sprite
 		arg_6_0.textSelectedSprites[iter_6_0] = arg_6_0:findTF("text_" .. var_6_2 .. "_selected", arg_6_0.resource):GetComponent(typeof(Image)).sprite
-		arg_6_0.switchTextSprites[iter_6_0] = arg_6_0:findTF("text_" .. var_6_2 .. "_switch", arg_6_0.resource):GetComponent(typeof(Image)).sprite
+		arg_6_0.switchTextSprites[iter_6_0] = arg_6_0:findTF("text_" .. var_6_2 .. "_switch", arg_6_0.changeRoomPanel):GetComponent(typeof(Image)).sprite
 
 		if table.contains(ChatConst.SendChannels, iter_6_0) then
 			arg_6_0.bottomChannelTextSprites[iter_6_0] = arg_6_0:findTF("channel_" .. var_6_2, arg_6_0.resource):GetComponent(typeof(Image)).sprite
@@ -147,33 +151,21 @@ function var_0_0.didEnter(arg_8_0)
 	arg_8_0.escFlag = false
 
 	onButton(arg_8_0, arg_8_0.close, function()
-		if arg_8_0.escFlag then
-			return
-		end
-
-		arg_8_0.escFlag = true
-
-		LeanTween.moveX(arg_8_0._tf, 700, 0.3):setFrom(arg_8_0._tf.localPosition.x):setEase(LeanTweenType.easeInOutQuad):setUseEstimatedTime(true)
-
-		local var_9_0 = arg_8_0._tf:GetComponent(typeof(CanvasGroup))
-
-		LeanTween.value(go(arg_8_0._tf), 1, 0, 0.3):setUseEstimatedTime(true):setOnUpdate(System.Action_float(function(arg_10_0)
-			var_9_0.alpha = arg_10_0
-		end)):setOnComplete(System.Action(function()
+		arg_8_0:PlayExitAnimation(function()
 			if arg_8_0.currentForm == var_0_0.FORM_BATTLE then
 				arg_8_0:emit(NotificationMediator.BATTLE_CHAT_CLOSE)
 			end
 
 			arg_8_0:emit(BaseUI.ON_CLOSE)
-		end))
+		end)
 	end, SFX_CANCEL)
 	onButton(arg_8_0, arg_8_0.emoji, function()
 		arg_8_0:displayEmojiPanel()
 	end, SFX_PANEL)
 	onButton(arg_8_0, arg_8_0.send, function()
-		local var_13_0 = arg_8_0.input.text
+		local var_12_0 = arg_8_0.input.text
 
-		if var_13_0 == "" then
+		if var_12_0 == "" then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("main_notificationLayer_sendButton"))
 
 			return
@@ -181,7 +173,7 @@ function var_0_0.didEnter(arg_8_0)
 
 		arg_8_0.input.text = ""
 
-		arg_8_0:emit(NotificationMediator.ON_SEND_PUBLIC, var_0_0.ChannelBits.send, var_13_0)
+		arg_8_0:emit(NotificationMediator.ON_SEND_PUBLIC, var_0_0.ChannelBits.send, var_12_0)
 	end, SFX_PANEL)
 	onButton(arg_8_0, arg_8_0.roomBtn, function()
 		arg_8_0:showChangeRoomPanel()
@@ -205,24 +197,24 @@ function var_0_0.didEnter(arg_8_0)
 		end
 	end)
 	pg.DelegateInfo.Add(arg_8_0, arg_8_0.scroll.onValueChanged)
-	arg_8_0.scroll.onValueChanged:AddListener(function(arg_19_0)
-		if arg_8_0.index > 1 and arg_19_0.y >= 1 then
-			local var_19_0 = arg_8_0.content.sizeDelta.y * arg_19_0.y
-			local var_19_1 = arg_8_0.scroll.velocity
-			local var_19_2 = math.max(1, arg_8_0.index - var_0_0.InitCount)
+	arg_8_0.scroll.onValueChanged:AddListener(function(arg_18_0)
+		if arg_8_0.index > 1 and arg_18_0.y >= 1 then
+			local var_18_0 = arg_8_0.content.sizeDelta.y * arg_18_0.y
+			local var_18_1 = arg_8_0.scroll.velocity
+			local var_18_2 = math.max(1, arg_8_0.index - var_0_0.InitCount)
 
-			for iter_19_0 = arg_8_0.index - 1, var_19_2, -1 do
-				arg_8_0:append(arg_8_0.filteredMessages[iter_19_0], 0)
+			for iter_18_0 = arg_8_0.index - 1, var_18_2, -1 do
+				arg_8_0:append(arg_8_0.filteredMessages[iter_18_0], 0)
 			end
 
 			Canvas.ForceUpdateCanvases()
 
-			arg_8_0.scroll.normalizedPosition = Vector2(0, var_19_0 / arg_8_0.content.sizeDelta.y)
+			arg_8_0.scroll.normalizedPosition = Vector2(0, var_18_0 / arg_8_0.content.sizeDelta.y)
 
 			arg_8_0.scroll.onValueChanged:Invoke(arg_8_0.scroll.normalizedPosition)
 
-			arg_8_0.scroll.velocity = var_19_1
-			arg_8_0.index = var_19_2
+			arg_8_0.scroll.velocity = var_18_1
+			arg_8_0.index = var_18_2
 		end
 	end)
 	arg_8_0:updateRoom()
@@ -236,25 +228,26 @@ function var_0_0.didEnter(arg_8_0)
 
 		rtf(arg_8_0.frame.transform).offsetMax = Vector2(0, -120)
 	else
-		pg.UIMgr.GetInstance():BlurPanel(arg_8_0._tf, false, {
-			groupName = arg_8_0:getGroupNameFromData(),
-			weight = arg_8_0:getWeightFromData() + 1
-		})
+		arg_8_0:BlurPanel()
 	end
 
-	LeanTween.moveX(arg_8_0._tf, arg_8_0._tf.localPosition.x, 0.3):setFrom(700):setEase(LeanTweenType.easeInOutQuad):setUseEstimatedTime(true)
-
-	local var_8_0 = arg_8_0._tf:GetComponent(typeof(CanvasGroup))
-
-	LeanTween.value(go(arg_8_0._tf), 0, 1, 0.3):setUseEstimatedTime(true):setOnUpdate(System.Action_float(function(arg_20_0)
-		var_8_0.alpha = arg_20_0
-	end))
 	LeanTween.delayedCall(go(arg_8_0._tf), 0.2, System.Action(function()
 		scrollToBottom(arg_8_0.content.parent)
 	end))
 
 	rtf(arg_8_0._tf).offsetMax = Vector2(0, 0)
 	rtf(arg_8_0._tf).offsetMin = Vector2(0, 0)
+end
+
+function var_0_0.BlurPanel(arg_20_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_20_0._tf, false, {
+		groupName = arg_20_0:getGroupNameFromData(),
+		weight = arg_20_0:getWeightFromData() + 1
+	})
+end
+
+function var_0_0.UnblurPanel(arg_21_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_21_0._tf)
 end
 
 function var_0_0.onBackPressed(arg_22_0)
@@ -282,8 +275,13 @@ function var_0_0.initFilter(arg_23_0)
 				local var_25_0 = _.filter(var_23_0, function(arg_26_0)
 					return arg_26_0 ~= ChatConst.ChannelGuild or arg_23_0.inGuild
 				end)
+				local var_25_1 = IndexConst.ToggleBits(var_0_0.ChannelBits.recv, var_25_0, ChatConst.ChannelAll, var_24_0)
 
-				var_0_0.ChannelBits.recv = IndexConst.ToggleBits(var_0_0.ChannelBits.recv, var_25_0, ChatConst.ChannelAll, var_24_0)
+				if var_0_0.ChannelBits.recv == var_25_1 then
+					return
+				end
+
+				var_0_0.ChannelBits.recv = var_25_1
 
 				arg_23_0:updateFilter()
 				arg_23_0:updateAll()
@@ -338,11 +336,16 @@ function var_0_0.updateChannelSendPop(arg_31_0)
 				setButtonEnabled(arg_33_1, false)
 			end
 
-			if var_0_0.ChannelBits.send == var_33_0 then
+			local var_33_1 = var_0_0.ChannelBits.send == var_33_0
+
+			if var_33_1 then
 				setImageSprite(arg_33_1:Find("bottom"), arg_31_0.bottomChannelSelectedSprite, true)
 			else
 				setImageSprite(arg_33_1:Find("bottom"), arg_31_0.bottomChannelNormalSprite, true)
 			end
+
+			setActive(arg_33_1:Find("selected"), var_33_1)
+			setActive(arg_33_1:Find("text"), not var_33_1)
 		end)
 	end
 
@@ -351,6 +354,7 @@ function var_0_0.updateChannelSendPop(arg_31_0)
 			local var_34_0 = var_31_0[arg_34_1 + 1]
 
 			setImageSprite(arg_34_2:Find("text"), arg_31_0.bottomChannelTextSprites[var_34_0], true)
+			setImageSprite(arg_34_2:Find("selected"), arg_31_0.bottomChannelTextSprites[var_34_0], true)
 			onButton(arg_31_0, arg_34_2, function()
 				setActive(arg_31_0.channelSendPop, false)
 
@@ -372,7 +376,7 @@ function var_0_0.updateRoom(arg_36_0)
 end
 
 function var_0_0.showChangeRoomPanel(arg_37_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_37_0._tf)
+	arg_37_0:UnblurPanel()
 	pg.UIMgr.GetInstance():BlurPanel(arg_37_0.changeRoomPanel, false, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
@@ -464,9 +468,7 @@ function var_0_0.closeChangeRoomPanel(arg_47_0)
 
 		rtf(arg_47_0.frame.transform).offsetMax = Vector2(0, -120)
 	else
-		pg.UIMgr.GetInstance():BlurPanel(arg_47_0._tf, false, {
-			weight = LayerWeightConst.SECOND_LAYER
-		})
+		arg_47_0:BlurPanel()
 	end
 
 	setActive(arg_47_0.changeRoomPanel, false)
@@ -669,7 +671,7 @@ function var_0_0.willExit(arg_62_0)
 			arg_62_0:closeChangeRoomPanel()
 		end
 	else
-		pg.UIMgr.GetInstance():UnblurPanel(arg_62_0._tf)
+		arg_62_0:UnblurPanel()
 	end
 
 	LeanTween.cancel(arg_62_0._go)

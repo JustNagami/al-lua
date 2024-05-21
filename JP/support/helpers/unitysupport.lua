@@ -903,7 +903,7 @@ function setBlackMask(arg_112_0, arg_112_1, arg_112_2)
 
 		var_112_1:SetColor("_Color", arg_112_2.color or Color(0, 0, 0, 0.2))
 
-		var_112_0.AjusterMaterial = var_112_1
+		var_112_0.adjusterMaterial = var_112_1
 		var_112_0.enabled = true
 	else
 		RemoveComponent(arg_112_0, "UIMaterialAdjuster")

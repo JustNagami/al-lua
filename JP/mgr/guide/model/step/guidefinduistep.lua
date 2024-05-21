@@ -59,12 +59,18 @@ function var_0_0.GenEventSearchData(arg_2_0, arg_2_1)
 		var_2_6 = arg_2_1.triggerType and arg_2_1.triggerType[2]
 	end
 
+	local var_2_7 = arg_2_1.eventPath
+
+	if arg_2_1.dynamicEventPath then
+		var_2_7 = arg_2_1.dynamicEventPath()
+	end
+
 	var_2_0.triggerData = {
 		type = var_2_5,
 		arg = var_2_6
 	}
 	var_2_0.childIndex = arg_2_1.eventIndex
-	var_2_0.eventPath = arg_2_1.eventPath
+	var_2_0.eventPath = var_2_7
 	var_2_0.fingerPos = arg_2_1.fingerPos
 	var_2_0.slipAnim = var_2_5 == var_0_0.SNAP_PAGE
 

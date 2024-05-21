@@ -389,96 +389,109 @@ function var_0_0.exit(arg_40_0)
 	end
 end
 
-function var_0_0.attach(arg_42_0, arg_42_1)
+function var_0_0.PlayExitAnimation(arg_42_0, arg_42_1)
+	local var_42_0 = arg_42_0._tf:GetComponent(typeof(Animation))
+	local var_42_1 = arg_42_0._tf:GetComponent(typeof(UIEventTrigger))
+
+	var_42_1.didExit:RemoveAllListeners()
+	var_42_1.didExit:AddListener(function()
+		var_42_1.didExit:RemoveAllListeners()
+		arg_42_1()
+	end)
+	var_42_0:Play("exit")
+end
+
+function var_0_0.attach(arg_44_0, arg_44_1)
 	return
 end
 
-function var_0_0.ClearTweens(arg_43_0, arg_43_1)
-	arg_43_0:cleanManagedTween(arg_43_1)
+function var_0_0.ClearTweens(arg_45_0, arg_45_1)
+	arg_45_0:cleanManagedTween(arg_45_1)
 end
 
-function var_0_0.RemoveTempCache(arg_44_0)
-	local var_44_0 = arg_44_0:getUIName()
+function var_0_0.RemoveTempCache(arg_46_0)
+	local var_46_0 = arg_46_0:getUIName()
 
-	PoolMgr.GetInstance():DelTempCache(var_44_0)
+	PoolMgr.GetInstance():DelTempCache(var_46_0)
 end
 
-function var_0_0.detach(arg_45_0, arg_45_1)
-	arg_45_0._isLoaded = false
+function var_0_0.detach(arg_47_0, arg_47_1)
+	arg_47_0._isLoaded = false
 
-	pg.LayerWeightMgr.GetInstance():DelFromOverlay(arg_45_0._tf)
-	pg.DynamicBgMgr.GetInstance():ClearBg(arg_45_0:getUIName())
-	arg_45_0:disposeEvent()
-	arg_45_0:ClearTweens(false)
+	pg.LayerWeightMgr.GetInstance():DelFromOverlay(arg_47_0._tf)
+	pg.DynamicBgMgr.GetInstance():ClearBg(arg_47_0:getUIName())
+	arg_47_0:disposeEvent()
+	arg_47_0:ClearTweens(false)
 
-	arg_45_0._tf = nil
+	arg_47_0._tf = nil
 
-	local var_45_0 = PoolMgr.GetInstance()
-	local var_45_1 = arg_45_0:getUIName()
+	local var_47_0 = PoolMgr.GetInstance()
+	local var_47_1 = arg_47_0:getUIName()
 
-	if arg_45_0._go ~= nil and var_45_1 then
-		var_45_0:ReturnUI(var_45_1, arg_45_0._go)
+	if arg_47_0._go ~= nil and var_47_1 then
+		var_47_0:ReturnUI(var_47_1, arg_47_0._go)
 
-		arg_45_0._go = nil
+		arg_47_0._go = nil
 	end
 end
 
-function var_0_0.findGO(arg_46_0, arg_46_1, arg_46_2)
-	assert(arg_46_0._go, "game object should exist")
+function var_0_0.findGO(arg_48_0, arg_48_1, arg_48_2)
+	assert(arg_48_0._go, "game object should exist")
 
-	return findGO(arg_46_2 or arg_46_0._go, arg_46_1)
+	return findGO(arg_48_2 or arg_48_0._go, arg_48_1)
 end
 
-function var_0_0.findTF(arg_47_0, arg_47_1, arg_47_2)
-	assert(arg_47_0._tf, "transform should exist")
+function var_0_0.findTF(arg_49_0, arg_49_1, arg_49_2)
+	assert(arg_49_0._tf, "transform should exist")
 
-	return findTF(arg_47_2 or arg_47_0._tf, arg_47_1)
+	return findTF(arg_49_2 or arg_49_0._tf, arg_49_1)
 end
 
-function var_0_0.getTpl(arg_48_0, arg_48_1, arg_48_2)
-	local var_48_0 = arg_48_0:findTF(arg_48_1, arg_48_2)
+function var_0_0.getTpl(arg_50_0, arg_50_1, arg_50_2)
+	local var_50_0 = arg_50_0:findTF(arg_50_1, arg_50_2)
 
-	var_48_0:SetParent(arg_48_0._tf, false)
-	SetActive(var_48_0, false)
+	var_50_0:SetParent(arg_50_0._tf, false)
+	SetActive(var_50_0, false)
 
-	return var_48_0
+	return var_50_0
 end
 
-function var_0_0.setSpriteTo(arg_49_0, arg_49_1, arg_49_2, arg_49_3)
-	local var_49_0 = arg_49_2:GetComponent(typeof(Image))
+function var_0_0.setSpriteTo(arg_51_0, arg_51_1, arg_51_2, arg_51_3)
+	local var_51_0 = arg_51_2:GetComponent(typeof(Image))
 
-	var_49_0.sprite = arg_49_0:findTF(arg_49_1):GetComponent(typeof(Image)).sprite
+	var_51_0.sprite = arg_51_0:findTF(arg_51_1):GetComponent(typeof(Image)).sprite
 
-	if arg_49_3 then
-		var_49_0:SetNativeSize()
+	if arg_51_3 then
+		var_51_0:SetNativeSize()
 	end
 end
 
-function var_0_0.setImageAmount(arg_50_0, arg_50_1, arg_50_2)
-	arg_50_1:GetComponent(typeof(Image)).fillAmount = arg_50_2
+function var_0_0.setImageAmount(arg_52_0, arg_52_1, arg_52_2)
+	arg_52_1:GetComponent(typeof(Image)).fillAmount = arg_52_2
 end
 
-function var_0_0.setVisible(arg_51_0, arg_51_1)
-	if arg_51_1 then
-		arg_51_0:OnVisible()
+function var_0_0.setVisible(arg_53_0, arg_53_1)
+	arg_53_0:ShowOrHideResUI(arg_53_1)
+
+	if arg_53_1 then
+		arg_53_0:OnVisible()
 	else
-		arg_51_0:OnDisVisible()
+		arg_53_0:OnDisVisible()
 	end
 
-	arg_51_0:ShowOrHideResUI(arg_51_1)
-	setActiveViaLayer(arg_51_0._tf, arg_51_1)
+	setActiveViaLayer(arg_53_0._tf, arg_53_1)
 end
 
-function var_0_0.OnVisible(arg_52_0)
+function var_0_0.OnVisible(arg_54_0)
 	return
 end
 
-function var_0_0.OnDisVisible(arg_53_0)
+function var_0_0.OnDisVisible(arg_55_0)
 	return
 end
 
-function var_0_0.onBackPressed(arg_54_0)
-	arg_54_0:emit(var_0_0.ON_BACK_PRESSED)
+function var_0_0.onBackPressed(arg_56_0)
+	arg_56_0:emit(var_0_0.ON_BACK_PRESSED)
 end
 
 return var_0_0

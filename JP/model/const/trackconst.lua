@@ -84,4 +84,60 @@ function var_0_0.Track(arg_9_0, arg_9_1, ...)
 	pg.m02:sendNotification(GAME.NEW_TRACK, var_9_3)
 end
 
+function var_0_0.TrackingExitSilentView(arg_10_0, arg_10_1, arg_10_2)
+	local var_10_0 = {
+		arg3 = 0,
+		trackType = 1,
+		arg1 = arg_10_0,
+		arg2 = arg_10_1,
+		arg4 = tostring(arg_10_2)
+	}
+
+	pg.m02:sendNotification(GAME.MAIN_SCENE_TRACK, var_10_0)
+end
+
+function var_0_0.TrackingTouchBanner(arg_11_0)
+	local var_11_0 = {
+		arg1 = 0,
+		trackType = 2,
+		arg2 = 0,
+		arg3 = 0,
+		arg4 = tostring(arg_11_0)
+	}
+
+	pg.m02:sendNotification(GAME.MAIN_SCENE_TRACK, var_11_0)
+end
+
+function var_0_0.TrackingSwitchPainting(arg_12_0, arg_12_1)
+	local var_12_0 = {
+		arg3 = 0,
+		trackType = 3,
+		arg4 = "",
+		arg1 = arg_12_0,
+		arg2 = arg_12_1
+	}
+
+	pg.m02:sendNotification(GAME.MAIN_SCENE_TRACK, var_12_0)
+end
+
+function var_0_0.TrackingUrExchangeFetch(arg_13_0, arg_13_1)
+	local var_13_0 = {
+		trackType = 1,
+		arg1 = arg_13_0,
+		arg2 = arg_13_1
+	}
+
+	pg.m02:sendNotification(GAME.UR_EXCHANGE_TRACK, var_13_0)
+end
+
+function var_0_0.TrackingUrExchangeJump(arg_14_0)
+	local var_14_0 = {
+		arg1 = 0,
+		trackType = 2,
+		arg2 = arg_14_0
+	}
+
+	pg.m02:sendNotification(GAME.UR_EXCHANGE_TRACK, var_14_0)
+end
+
 return var_0_0

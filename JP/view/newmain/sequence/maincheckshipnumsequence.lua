@@ -13,7 +13,7 @@ function var_0_0.Execute(arg_1_0, arg_1_1)
 end
 
 function var_0_0.Check(arg_3_0, arg_3_1)
-	local var_3_0 = getProxy(BayProxy):getShipCount()
+	local var_3_0 = getProxy(BayProxy):getRawShipCount()
 	local var_3_1 = arg_3_1 <= var_3_0
 
 	if not var_3_1 then

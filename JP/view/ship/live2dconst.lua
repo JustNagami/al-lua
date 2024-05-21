@@ -1,5 +1,7 @@
 ﻿local var_0_0 = class("Live2dConst")
 
+var_0_0.UnLoadL2dPating = nil
+
 function var_0_0.SaveL2dIdle(arg_1_0, arg_1_1, arg_1_2)
 	local var_1_0 = var_0_0.GetL2dIdleSaveName(arg_1_0, arg_1_1)
 

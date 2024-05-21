@@ -12,6 +12,7 @@ function var_0_2.Ctor(arg_1_0)
 	var_0_2.super.Ctor(arg_1_0)
 
 	arg_1_0._preCastBound = false
+	arg_1_0._prefabPos = Vector3(0, 0, 0)
 end
 
 function var_0_2.RegisterWeaponListener(arg_2_0, arg_2_1)
@@ -114,4 +115,12 @@ function var_0_2.UpdateAimBiasBar(arg_15_0)
 
 		arg_15_0._fogFx.transform.localScale = Vector3(var_15_0, var_15_0, 1)
 	end
+end
+
+function var_0_2.getCharacterPos(arg_16_0)
+	local var_16_0 = arg_16_0:GetUnitData():GetTemplate().prefab_offset
+
+	arg_16_0._prefabPos:Set(arg_16_0._characterPos.x + var_16_0[1], arg_16_0._characterPos.y + var_16_0[2], arg_16_0._characterPos.z + var_16_0[3])
+
+	return arg_16_0._prefabPos
 end

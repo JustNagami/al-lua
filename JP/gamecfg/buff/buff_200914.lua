@@ -7,6 +7,7 @@
 	desc = "",
 	stack = 1,
 	id = 200914,
+	icon = 200914,
 	last_effect = "",
 	effect_list = {
 		{

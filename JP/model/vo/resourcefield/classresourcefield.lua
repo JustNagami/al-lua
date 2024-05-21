@@ -81,4 +81,12 @@ function var_0_0.GetCanGetResCnt(arg_16_0)
 	return (math.min(var_16_0, var_16_2))
 end
 
+function var_0_0.CanGetRes(arg_17_0)
+	if arg_17_0:GetCanGetResCnt() <= 0 then
+		return false
+	end
+
+	return true
+end
+
 return var_0_0

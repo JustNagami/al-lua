@@ -1,4 +1,4 @@
-﻿local var_0_0 = class("MainBuffDescPage", import("...base.BaseSubView"))
+﻿local var_0_0 = class("MainBuffDescPage", import("view.base.BaseSubView"))
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)

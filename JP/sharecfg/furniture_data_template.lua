@@ -149,6 +149,8 @@ pg.furniture_data_template = setmetatable({
 			273,
 			274,
 			275,
+			276,
+			278,
 			100002,
 			100003,
 			100004,
@@ -3113,6 +3115,26 @@ pg.furniture_data_template = setmetatable({
 			310308,
 			310309,
 			310310
+		},
+		[111] = {
+			311001,
+			311002,
+			311101,
+			311102,
+			311103,
+			311104,
+			311105,
+			311106,
+			311107,
+			311108,
+			311109,
+			311110,
+			311111,
+			311112,
+			311113,
+			311114,
+			311115,
+			311116
 		}
 	},
 	get_id_list_by_tag = {
@@ -3324,7 +3346,9 @@ pg.furniture_data_template = setmetatable({
 			268,
 			271,
 			273,
-			275
+			275,
+			276,
+			278
 		},
 		[7] = {
 			223,
@@ -3512,7 +3536,8 @@ pg.furniture_data_template = setmetatable({
 			308119,
 			308305,
 			309113,
-			310116
+			310116,
+			311116
 		},
 		[4] = {
 			1001,
@@ -3609,7 +3634,8 @@ pg.furniture_data_template = setmetatable({
 			307001,
 			308001,
 			309001,
-			310001
+			310001,
+			311001
 		},
 		[3] = {
 			1002,
@@ -3707,7 +3733,8 @@ pg.furniture_data_template = setmetatable({
 			307002,
 			308002,
 			309002,
-			310002
+			310002,
+			311002
 		},
 		{
 			1101,
@@ -5553,7 +5580,22 @@ pg.furniture_data_template = setmetatable({
 			310112,
 			310113,
 			310114,
-			310115
+			310115,
+			311101,
+			311102,
+			311103,
+			311104,
+			311105,
+			311106,
+			311107,
+			311108,
+			311109,
+			311110,
+			311111,
+			311112,
+			311113,
+			311114,
+			311115
 		},
 		{
 			1108,
@@ -6179,6 +6221,8 @@ pg.furniture_data_template = setmetatable({
 			273,
 			274,
 			275,
+			276,
+			278,
 			100002,
 			100004,
 			100005,
@@ -8063,7 +8107,23 @@ pg.furniture_data_template = setmetatable({
 			310113,
 			310114,
 			310115,
-			310116
+			310116,
+			311101,
+			311102,
+			311103,
+			311104,
+			311105,
+			311106,
+			311107,
+			311108,
+			311109,
+			311110,
+			311111,
+			311112,
+			311113,
+			311114,
+			311115,
+			311116
 		},
 		[11] = {
 			143,
@@ -8559,7 +8619,8 @@ pg.furniture_data_template = setmetatable({
 			307001,
 			308001,
 			309001,
-			310001
+			310001,
+			311001
 		},
 		{
 			1002,
@@ -8657,7 +8718,8 @@ pg.furniture_data_template = setmetatable({
 			307002,
 			308002,
 			309002,
-			310002
+			310002,
+			311002
 		},
 		[5] = {
 			1101,
@@ -9150,6 +9212,8 @@ pg.furniture_data_template = setmetatable({
 		273,
 		274,
 		275,
+		276,
+		278,
 		100002,
 		100003,
 		100004,
@@ -11919,7 +11983,25 @@ pg.furniture_data_template = setmetatable({
 		310307,
 		310308,
 		310309,
-		310310
+		310310,
+		311001,
+		311002,
+		311101,
+		311102,
+		311103,
+		311104,
+		311105,
+		311106,
+		311107,
+		311108,
+		311109,
+		311110,
+		311111,
+		311112,
+		311113,
+		311114,
+		311115,
+		311116
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -19079,6 +19161,92 @@ pg.base.furniture_data_template = {
 		spine = {
 			{
 				"ido3xunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[276] = {
+		spine_extra = "",
+		describe = "鏡面海域マルティリウムの中央エリアのミニチュア。輝くクリスタルは尊き「死」をその光で讃頌するーー「赫輝のマルティリウム」に参加した指揮官に贈る",
+		gain_by = "赫輝のマルティリウム",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 5,
+		is_get_time_note = 1,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 8,
+		icon = "huiguangxunzhangicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "マルティリウムの記念城",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 276,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"huiguangxunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[278] = {
+		spine_extra = "",
+		describe = "母港のクルーズ船のミニチュア。かもめと波の飾りはバカンスの日々の楽しさを思い出させてくれる。\n——「休日トキメク大航海」に参加した指揮官に贈る",
+		gain_by = "トキメク休日　大航海！",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 5,
+		is_get_time_note = 1,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 8,
+		icon = "youlunxunzhangicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "クルーズバカンス記念章",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 278,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"youlunxunzhang",
 				"normal"
 			}
 		},
@@ -142226,6 +142394,855 @@ pg.base.furniture_data_template = {
 					true
 				}
 			}
+		},
+		interAction_group = {}
+	},
+	[311001] = {
+		spine_extra = "",
+		describe = "クルーズ船と一緒に彼方へと旅立とう！",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 111,
+		belong = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		deblocking = 1,
+		level = 1,
+		name = "クルーズ船の床",
+		effect = "",
+		advice = 0,
+		icon = "dibanyoicon",
+		spine_action_replace = "",
+		picture = "yo/dibanyo",
+		comfortable = 4,
+		canputon = 0,
+		id = 311001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311002] = {
+		spine_extra = "",
+		describe = "クルーズ船と一緒に彼方へと旅立とう！",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		themeId = 111,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		deblocking = 1,
+		level = 5,
+		name = "クルーズ船の壁",
+		effect = "",
+		advice = 0,
+		icon = "qiangbiyoicon",
+		spine_action_replace = "",
+		picture = "",
+		comfortable = 4,
+		canputon = 0,
+		id = 311002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbiyo",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[311101] = {
+		spine_extra = "",
+		describe = "遠慮せず好きなだけ召し上がるピョ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 111,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "bataiyoicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "クルーズバー",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "yo/bataiyo",
+		canputon = 0,
+		id = 311101,
+		can_rotate = 0,
+		size = {
+			9,
+			9
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-244,
+					-139
+				},
+				{
+					1,
+					1
+				}
+			},
+			{
+				"sit",
+				{
+					-158.7,
+					-176.7
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311102] = {
+		spine_extra = "",
+		describe = "キラキラしているパール饅頭の像",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 111,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "diaoxiang1yoicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "パール饅頭像",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "yo/diaoxiang1yo",
+		canputon = 0,
+		id = 311102,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311103] = {
+		spine_extra = "",
+		describe = "キラキラしているマーメイド饅頭の像",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 111,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "diaoxiang2yoicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "マーメイド饅頭像",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "yo/diaoxiang2yo",
+		canputon = 0,
+		id = 311103,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311104] = {
+		spine_extra = "",
+		describe = "使わないものはここに置いていいよ",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 111,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "lanziyoicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "デッキバスケット",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "yo/lanziyo",
+		canputon = 0,
+		id = 311104,
+		can_rotate = 0,
+		size = {
+			1,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311105] = {
+		spine_extra = "",
+		describe = "これで日焼けせずに済む！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 111,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "san1yoicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "クルーズパラソル",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "yo/san1yo",
+		canputon = 0,
+		id = 311105,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311106] = {
+		spine_extra = "",
+		describe = "これで日焼けせずに済む！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 111,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "san2yoicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "クルーズパラソル（猫耳）",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "yo/san2yo",
+		canputon = 0,
+		id = 311106,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311107] = {
+		spine_extra = "",
+		describe = "疲れたらゆっくり休もう！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 111,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "shafayoicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "クルーズソファ（大）",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "yo/shafayo",
+		canputon = 0,
+		id = 311107,
+		can_rotate = 0,
+		size = {
+			7,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-86,
+					59
+				},
+				{
+					1,
+					1
+				},
+				"yo/shafayo_using"
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311108] = {
+		spine_extra = "",
+		describe = "のんびりと日光浴～",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 111,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "tangyi1yoicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "クルーズチェア（毛布）",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "yo/tangyi1yo",
+		canputon = 0,
+		id = 311108,
+		can_rotate = 0,
+		size = {
+			3,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-38.7,
+					21.8
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311109] = {
+		spine_extra = "",
+		describe = "のんびりと日光浴～",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 111,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "tangyi2yoicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "クルーズチェア（枕）",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "yo/tangyi2yo",
+		canputon = 0,
+		id = 311109,
+		can_rotate = 0,
+		size = {
+			3,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sleep",
+				{
+					-27.6,
+					36.1
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311110] = {
+		spine_extra = "",
+		describe = "のんびりと日光浴～",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 111,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "tangyi3yoicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "クルーズチェア（折り畳み）",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "yo/tangyi3yo",
+		canputon = 0,
+		id = 311110,
+		can_rotate = 0,
+		size = {
+			3,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sleep",
+				{
+					-36,
+					29
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311111] = {
+		spine_extra = "",
+		describe = "美味しい果物がいっぱい入っているカート",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 111,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "tuicheyoicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "美味フルーツカート",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "yo/tuicheyo",
+		canputon = 0,
+		id = 311111,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311112] = {
+		spine_extra = "",
+		describe = "食べ残しはそのまま置いといて！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 111,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "xiaozhuoyoicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "デッキテーブル",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "yo/xiaozhuoyo",
+		canputon = 0,
+		id = 311112,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311113] = {
+		spine_extra = "",
+		describe = "プールにはエアー遊具がいっぱい。思いっきり遊ぼう！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 111,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "yongchiyoicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "デッキプール",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "yo/yongchiyo",
+		canputon = 0,
+		id = 311113,
+		can_rotate = 0,
+		size = {
+			11,
+			9
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"wash",
+				{
+					-2.9,
+					-110
+				},
+				{
+					1,
+					1
+				},
+				"yo/yongchiyo_using"
+			},
+			{
+				"sleep",
+				{
+					-167,
+					2
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311114] = {
+		spine_extra = "",
+		describe = "疲れたら座ってお茶にしない？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 111,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "zuodeng1yoicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "デッキレジャー（レモンティー）",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "yo/zuodeng1yo",
+		canputon = 0,
+		id = 311114,
+		can_rotate = 0,
+		size = {
+			3,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-86,
+					59
+				},
+				{
+					1,
+					1
+				},
+				"yo/zuodeng1yo_using"
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311115] = {
+		spine_extra = "",
+		describe = "疲れたら座ってフルーツにしない？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 111,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "zuodeng2yoicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "デッキレジャー（果物セット）",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "yo/zuodeng2yo",
+		canputon = 0,
+		id = 311115,
+		can_rotate = 0,
+		size = {
+			3,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-86,
+					59
+				},
+				{
+					1,
+					1
+				},
+				"yo/zuodeng2yo_using"
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[311116] = {
+		spine_extra = "",
+		describe = "ジェットマッサージ機能つきのプール？バス？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "露天ジャグジー",
+		themeId = 111,
+		icon = "yugangyoicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 311116,
+		can_rotate = 0,
+		size = {
+			6,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yugangyoB",
+				"normal"
+			},
+			{
+				"yugangyoT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"wash"
+					},
+					{
+						"tuozhuai2"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{
+				{
+					15,
+					176
+				},
+				{
+					405,
+					413
+				},
+				"yo/yugangyo_mask"
+			},
+			{
+				-13,
+				-173
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
 		},
 		interAction_group = {}
 	}

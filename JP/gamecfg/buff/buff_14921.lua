@@ -19,11 +19,7 @@
 				skill_id = 14921,
 				target = "TargetSelf",
 				effectAttachData = {
-					{
-						value = 0,
-						type = "BattleBuffShield",
-						op = "lessequal"
-					}
+					"BattleBuffShield<=0"
 				}
 			}
 		},
@@ -36,11 +32,7 @@
 				skill_id = 14922,
 				target = "TargetSelf",
 				effectAttachData = {
-					{
-						value = 0,
-						type = "BattleBuffShield",
-						op = "great"
-					}
+					"BattleBuffShield>0"
 				}
 			}
 		}
@@ -66,11 +58,7 @@
 					skill_id = 14921,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "lessequal"
-						}
+						"BattleBuffShield<=0"
 					}
 				}
 			},
@@ -83,11 +71,7 @@
 					skill_id = 14922,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "great"
-						}
+						"BattleBuffShield>0"
 					}
 				}
 			}
@@ -114,11 +98,7 @@
 					skill_id = 14921,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "lessequal"
-						}
+						"BattleBuffShield<=0"
 					}
 				}
 			},
@@ -131,11 +111,7 @@
 					skill_id = 14922,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "great"
-						}
+						"BattleBuffShield>0"
 					}
 				}
 			}
@@ -162,11 +138,7 @@
 					skill_id = 14921,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "lessequal"
-						}
+						"BattleBuffShield<=0"
 					}
 				}
 			},
@@ -179,11 +151,7 @@
 					skill_id = 14922,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "great"
-						}
+						"BattleBuffShield>0"
 					}
 				}
 			}
@@ -210,11 +178,7 @@
 					skill_id = 14921,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "lessequal"
-						}
+						"BattleBuffShield<=0"
 					}
 				}
 			},
@@ -227,11 +191,7 @@
 					skill_id = 14922,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "great"
-						}
+						"BattleBuffShield>0"
 					}
 				}
 			}
@@ -258,11 +218,7 @@
 					skill_id = 14921,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "lessequal"
-						}
+						"BattleBuffShield<=0"
 					}
 				}
 			},
@@ -275,11 +231,7 @@
 					skill_id = 14922,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "great"
-						}
+						"BattleBuffShield>0"
 					}
 				}
 			}
@@ -306,11 +258,7 @@
 					skill_id = 14921,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "lessequal"
-						}
+						"BattleBuffShield<=0"
 					}
 				}
 			},
@@ -323,11 +271,7 @@
 					skill_id = 14922,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "great"
-						}
+						"BattleBuffShield>0"
 					}
 				}
 			}
@@ -354,11 +298,7 @@
 					skill_id = 14921,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "lessequal"
-						}
+						"BattleBuffShield<=0"
 					}
 				}
 			},
@@ -371,11 +311,7 @@
 					skill_id = 14922,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "great"
-						}
+						"BattleBuffShield>0"
 					}
 				}
 			}
@@ -402,11 +338,7 @@
 					skill_id = 14921,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "lessequal"
-						}
+						"BattleBuffShield<=0"
 					}
 				}
 			},
@@ -419,11 +351,7 @@
 					skill_id = 14922,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "great"
-						}
+						"BattleBuffShield>0"
 					}
 				}
 			}
@@ -450,11 +378,7 @@
 					skill_id = 14921,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "lessequal"
-						}
+						"BattleBuffShield<=0"
 					}
 				}
 			},
@@ -467,11 +391,7 @@
 					skill_id = 14922,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "great"
-						}
+						"BattleBuffShield>0"
 					}
 				}
 			}
@@ -498,11 +418,7 @@
 					skill_id = 14921,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "lessequal"
-						}
+						"BattleBuffShield<=0"
 					}
 				}
 			},
@@ -515,11 +431,7 @@
 					skill_id = 14922,
 					target = "TargetSelf",
 					effectAttachData = {
-						{
-							value = 0,
-							type = "BattleBuffShield",
-							op = "great"
-						}
+						"BattleBuffShield>0"
 					}
 				}
 			}

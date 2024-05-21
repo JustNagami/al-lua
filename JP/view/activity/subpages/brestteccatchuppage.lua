@@ -20,7 +20,7 @@ end
 
 function var_0_0.OnFirstFlush(arg_3_0)
 	local var_3_0 = {
-		count = 1,
+		count = 0,
 		type = DROP_TYPE_ITEM,
 		id = arg_3_0.itemID
 	}
