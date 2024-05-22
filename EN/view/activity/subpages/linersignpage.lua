@@ -16,10 +16,6 @@ function var_0_0.OnInit(arg_1_0)
 	arg_1_0.linerBtn = arg_1_0:findTF("go", arg_1_0.linerTF)
 
 	setText(arg_1_0:findTF("lock/Text", arg_1_0.linerBtn), i18n("liner_sign_unlock_tip"))
-
-	if PLATFORM_CODE == PLATFORM_CH then
-		setActive(arg_1_0.linerBtn, false)
-	end
 end
 
 function var_0_0.OnDataSetting(arg_2_0)

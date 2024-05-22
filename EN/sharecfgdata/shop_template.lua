@@ -57493,7 +57493,7 @@ _G.pg.base.shop_template[31946] = {
 	resource_type = 1,
 	genre = "shopping_street",
 	type = 2,
-	desc = "Exchange 7000 Coins for 1 Cruise Gear Skin Box",
+	desc = "Exchange 7000 Coins for 1 Pleasure Cruise Gear Skin Box",
 	group_limit = 0,
 	group_buy_count = 0,
 	tag = 0,
@@ -57518,7 +57518,7 @@ _G.pg.base.shop_template[60496] = {
 	resource_type = 14,
 	genre = "gift_package",
 	type = 2,
-	desc = "880钻石购买限时建造补给(μ兵装三期版本)",
+	desc = "880钻石购买限时建造补给(阿尔萨斯版本)",
 	group_limit = 0,
 	group_buy_count = 0,
 	tag = 2,
@@ -57573,7 +57573,7 @@ _G.pg.base.shop_template[60497] = {
 	resource_type = 14,
 	genre = "gift_package",
 	type = 2,
-	desc = "120钻石购买限时攻略补给(μ兵装三期版本)",
+	desc = "120钻石购买限时攻略补给(阿尔萨斯版本)",
 	group_limit = 0,
 	group_buy_count = 0,
 	tag = 2,
@@ -57628,7 +57628,7 @@ _G.pg.base.shop_template[60498] = {
 	resource_type = 14,
 	genre = "gift_package",
 	type = 2,
-	desc = "500钻石购买家具币礼包(μ兵装三期版本)",
+	desc = "500钻石购买家具币礼包(阿尔萨斯版本)",
 	group_limit = 0,
 	group_buy_count = 0,
 	tag = 2,
@@ -57683,7 +57683,7 @@ _G.pg.base.shop_template[60499] = {
 	resource_type = 14,
 	genre = "gift_package",
 	type = 2,
-	desc = "300钻石购买心智单元礼包(μ兵装三期版本)",
+	desc = "300钻石购买心智单元礼包(阿尔萨斯版本)",
 	group_limit = 0,
 	group_buy_count = 0,
 	tag = 2,
@@ -58172,8 +58172,8 @@ _G.pg.base.shop_template[90273] = {
 		{
 			{
 				2024,
-				5,
-				29
+				6,
+				12
 			},
 			{
 				23,
@@ -58222,8 +58222,8 @@ _G.pg.base.shop_template[90274] = {
 		{
 			{
 				2024,
-				5,
-				29
+				6,
+				12
 			},
 			{
 				23,
@@ -58272,8 +58272,8 @@ _G.pg.base.shop_template[90275] = {
 		{
 			{
 				2024,
-				5,
-				29
+				6,
+				12
 			},
 			{
 				23,

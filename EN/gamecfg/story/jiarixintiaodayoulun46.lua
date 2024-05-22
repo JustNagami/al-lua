@@ -11,7 +11,7 @@
 			mode = 1,
 			sequence = {
 				{
-					"假日！心跳！大邮轮！\n\n<size=45>引航员的邀约</size>",
+					"Pleasure, Leisure, and Treasure\n\n<size=45>46 Duet of Guiding Stars</size>",
 					1
 				}
 			}
@@ -21,7 +21,7 @@
 			side = 2,
 			bgName = "star_level_bg_180",
 			hidePaintObj = true,
-			say = "露天阳台上，感受着海风吹过脸颊，旅途中的种种感触也在脑中回荡着。",
+			say = "On the balcony, I feel the gentle sea breeze caress my cheeks. Memories of the trip so far reverberate in my mind.",
 			bgm = "story-niceship-soft",
 			typewriter = {
 				speed = 0.05,
@@ -52,7 +52,7 @@
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
 			hideRecordIco = true,
-			say = "呼……",
+			say = "Phew...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -68,7 +68,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "可爱的人类，你是在叹气吗？「还是说，你是在期待着什么？」",
+			say = "Why do you sigh, my darling human? \"Is it an expectant sigh, perhaps?\"",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -105,7 +105,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "{namecode:448:埃姆登}又不知何时悄无声息地出现在我身边。",
+			say = "At some point, Emden – the cruise receptionists – had appeared to me without my notice.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -121,7 +121,7 @@
 			actor = 402073,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "{namecode:448:埃姆登}？现在不用去处理邮轮上的其它工作么？",
+			say = "Emden? Shouldn't you be busy managing the cruise?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -137,7 +137,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "那些小事当然不会难倒{namecode:448:埃姆登}。「哼。也就是说，早就处理完了呢，人类。」",
+			say = "Such trivial tasks are easy for Emden♪ \"We completed our duties long ago, human.\"",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -157,7 +157,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "好了，可爱的人类，你还没有回答{namecode:448:埃姆登}的问题呢。",
+			say = "More importantly, you've yet to answer our question.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -177,7 +177,7 @@
 			actor = 402073,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "……临近返航日，也就意味着假日快要结束了。",
+			say = "It's almost time to go back to port. Our vacation is almost over.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -193,7 +193,7 @@
 			actor = 402073,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "所以，或许在感慨之中叹了口气吧。",
+			say = "I was just getting a little emotional...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -208,7 +208,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "原来如此，可爱的人类是希望这趟旅途继续呢~「也并非不可实现。」",
+			say = "Aww... Do you wish this trip could go on forever, my darling human? \"We could make that happen.\"",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -228,7 +228,7 @@
 			actor = 402073,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "……所以{namecode:448:埃姆登}是怎么精准在这里找到我的？",
+			say = "Hey, how did you know I was here?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -243,7 +243,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "{namecode:448:埃姆登}作为接待者，知晓邮轮上所发生的一切。「这是理所应当的事，人类。」",
+			say = "We're the receptionists, so we know everything that happens on this cruise. \"Isn't that obvious?\"",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -263,7 +263,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "当然也包括……可爱的人类每分每秒的一举一动，呵呵~",
+			say = "Naturally, we know every little thing you do every second of the day. Heehee♡",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -283,7 +283,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "旅程将近尾声，我希望能从你的口中了解对此次航行的更多看法。",
+			say = "...That aside, as this vacation draws to a close, we would love to hear your thoughts on the voyage so far.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -302,7 +302,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "「你要毫无保留，把一切都告诉我。」",
+			say = "\"Tell Emden everything. Without reservation♥\"",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -322,7 +322,7 @@
 			actor = 402073,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "嗯……？",
+			say = "Is this a survey, or what?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -338,7 +338,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "只是记录下可爱的人类的感想。「这是{namecode:448:埃姆登}才拥有的特权。」",
+			say = "We just want to record your frank thoughts, my darling human... \"Yes, that is Emden's privilege alone.\"",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -358,7 +358,7 @@
 			actor = 402073,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "好吧。",
+			say = "Alright.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -374,7 +374,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "将这段时间的感想统统告诉了{namecode:448:埃姆登}，她不时拿笔在那本神秘的日程本上做着记录。",
+			say = "As I share my thoughts, they begin writing something in their notebook.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -407,7 +407,7 @@
 			actor = 402073,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "可以让我看看么？",
+			say = "Umm, can I see what you're writing...?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -423,7 +423,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "呵呵……「当然不可以。」",
+			say = "Heehee... \"Of course not.\"",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -442,7 +442,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "「这里的内容可是绝密。」毕竟是一些，相当直白的记录和资料呢……",
+			say = "\"Everything in here is top-secret♥\" They're all just boring notes and records, really♡",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -462,7 +462,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "带着浅浅笑意的淡蓝双眸盯着我。",
+			say = "Their blue eyes have a mischievous glint.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -478,7 +478,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "不过，如果可爱的人类想知道内容的话，{namecode:448:埃姆登}可以亲口告诉你。",
+			say = "If you simply must know, then Emden would be happy to tell you.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -498,7 +498,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "「没错，就恳求{namecode:448:埃姆登}告诉你吧，人类。」",
+			say = "\"That's right, human. All you have to do is beg♥\"",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -518,7 +518,7 @@
 			actor = 402073,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "你的意思是……？",
+			say = "Wait, you don't mean...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -533,7 +533,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "这些记录，是为了给可爱的人类量身定制一场专属的爱之旅而精心记录的宝贵资料。",
+			say = "Have you figured it out? Yes, these are all notes painstakingly recorded to plan the perfect, most loving vacation for you, my darling human.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -553,7 +553,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "「通往乐园的，只属于{namecode:448:埃姆登}和你的爱之旅。呵呵，你一定很期待吧，人类。」",
+			say = "\"A journey of love, just for you and Emden. A trip to paradise. You must be getting excited for it, heehee♥\"",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -573,7 +573,7 @@
 			actor = 402073,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "我们接下来还有这样的行程吗？",
+			say = "Are you planning another trip right after this one?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -589,7 +589,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "当然不。这是{namecode:448:埃姆登}正在筹划中的旅程。「虽然收集了许多资料，但效率太低了。」",
+			say = "No. Emden still has much to think about. \"We have collected much information, but our process has been inefficient...\"",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -609,7 +609,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "嗯～果然，还是换一种方法搜集比较好。「比起观察和记录，直接询问人类的身体，或许更快。」",
+			say = "As such, we're going to change our information-gathering method♡ \"Asking you directly is so much faster than observation and recording, after all♥\"",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -629,7 +629,7 @@
 			actor = 402073,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "什……什么意思？",
+			say = "Wh-what does that entail...?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -644,7 +644,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "可爱的人类，如果你今晚还有其他行程，恐怕需要取消了呢。",
+			say = "My adorable human, if you have any other plans tonight... you'd best cancel them now.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -664,7 +664,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "「因为接下来，可爱人类的一切都将属于我。」属于{namecode:448:埃姆登}哦……？",
+			say = "\"You belong to Emden for the rest of today♥\" Yes, Emden and Emden alone♡",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -683,7 +683,7 @@
 			actor = 402073,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "呵呵，为了让人类不再叹息……「今天就让{namecode:448:埃姆登}引领你，前往寻找“爱”的极乐之旅吧。」",
+			say = "Never will you have to sigh again... \"For Emden will guide you to pure paradise♥\"",
 			painting = {
 				alpha = 0.3,
 				time = 1

@@ -92095,7 +92095,7 @@ pg.base.skill_data_template = {
 		id = 17950,
 		type = 2,
 		max_level = 10,
-		desc = "When this ship has Iris Libre or Vichya Dominion gear equipped: increases this ship's FP by $1 of her base EVA (the total of her base stats + gear). \nIncreases this ship's Evasion Rate by $2. When this ship takes DMG, if the enemy that hit her has lower SPD than her: deploys a barrier (only 1 can be active at a time) that can negate DMG equal to up to 20.0% of the DMG taken from that attack. If this shield is destroyed: $3 chance to immediately fire this ship's Main Guns and restore 10 HP (3s cooldown between activations).",
+		desc = "When this ship has Iris Libre or Vichya Dominion gear equipped: increases this ship's FP by $1 of her base EVA (the total of her base stats + gear). \nIncreases this ship's Evasion Rate by $2. When this ship takes DMG, if the enemy that hit her has SPD no higher than her: deploys a barrier (only 1 can be active at a time) that can negate DMG equal to up to 20.0% of the DMG taken from that attack. If this shield is destroyed: $3 chance to immediately fire this ship's Main Guns and restore 10 HP (3s cooldown between activations).",
 		system_transform = {},
 		world_death_mark = {
 			1

@@ -63,6 +63,8 @@ pg.painting_filte_map = {
 			"painting/adaerbote_rw_tex",
 			"painting/adaerbote_n",
 			"painting/adaerbote_jz_tex",
+			"painting/adaerbote_3_n_tex",
+			"painting/adaerbote_3_n",
 			"painting/adaerbote"
 		}
 	},
@@ -74,13 +76,6 @@ pg.painting_filte_map = {
 			"painting/adaerbote_2_n_tex",
 			"painting/adaerbote_2_n",
 			"painting/adaerbote_2"
-		}
-	},
-	adaerbote_3 = {
-		key = "adaerbote_3",
-		res_list = {
-			"painting/adaerbote_3_n_tex",
-			"painting/adaerbote_3_n"
 		}
 	},
 	adiliao = {
@@ -2412,6 +2407,11 @@ pg.painting_filte_map = {
 		key = "chaijun",
 		res_list = {
 			"painting/chaijun_tex",
+			"painting/chaijun_5_rw_tex",
+			"painting/chaijun_5_rw_hx_tex",
+			"painting/chaijun_5_n_tex",
+			"painting/chaijun_5_n_hx",
+			"painting/chaijun_5_n",
 			"painting/chaijun"
 		}
 	},
@@ -2442,16 +2442,6 @@ pg.painting_filte_map = {
 			"painting/chaijun_4_n",
 			"painting/chaijun_4_bj_tex",
 			"painting/chaijun_4"
-		}
-	},
-	chaijun_5 = {
-		key = "chaijun_5",
-		res_list = {
-			"painting/chaijun_5_rw_tex",
-			"painting/chaijun_5_rw_hx_tex",
-			"painting/chaijun_5_n_tex",
-			"painting/chaijun_5_n_hx",
-			"painting/chaijun_5_n"
 		}
 	},
 	chaijun_younv = {
@@ -9719,6 +9709,42 @@ pg.painting_filte_map = {
 			"painting/niulunbao_2"
 		}
 	},
+	npcadaerbote_3 = {
+		key = "npcadaerbote_3",
+		res_list = {
+			"painting/npcadaerbote_3_n_tex"
+		}
+	},
+	npcaersasi_2 = {
+		key = "npcaersasi_2",
+		res_list = {
+			"painting/npcaersasi_2_n_tex",
+			"painting/npcaersasi_2_n"
+		}
+	},
+	npcchaijun_5 = {
+		key = "npcchaijun_5",
+		res_list = {
+			"painting/npcchaijun_5_rw_tex",
+			"painting/npcchaijun_5_n_tex",
+			"painting/npcchaijun_5_n"
+		}
+	},
+	npcedu_4 = {
+		key = "npcedu_4",
+		res_list = {
+			"painting/npcedu_4_n_tex",
+			"painting/npcedu_4_n"
+		}
+	},
+	npcshengluyisi_5 = {
+		key = "npcshengluyisi_5",
+		res_list = {
+			"painting/npcshengluyisi_5_tex",
+			"painting/npcshengluyisi_5_n_tex",
+			"painting/npcshengluyisi_5_n"
+		}
+	},
 	nubiyaren = {
 		key = "nubiyaren",
 		res_list = {
@@ -16418,7 +16444,6 @@ pg.painting_filte_map = {
 		"abuluqi_2",
 		"adaerbote",
 		"adaerbote_2",
-		"adaerbote_3",
 		"adiliao",
 		"adiliao_2",
 		"aerbien",
@@ -16706,7 +16731,6 @@ pg.painting_filte_map = {
 		"chaijun_2",
 		"chaijun_3",
 		"chaijun_4",
-		"chaijun_5",
 		"chaijun_younv",
 		"changbo",
 		"changbo_2",
@@ -17602,6 +17626,11 @@ pg.painting_filte_map = {
 		"niukasier_g",
 		"niulunbao",
 		"niulunbao_2",
+		"npcadaerbote_3",
+		"npcaersasi_2",
+		"npcchaijun_5",
+		"npcedu_4",
+		"npcshengluyisi_5",
 		"nubiyaren",
 		"nubiyaren_2",
 		"nuofuke",

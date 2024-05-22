@@ -3227,7 +3227,7 @@ pg.fleet_tech_ship_class = {
 	},
 	[90106] = {
 		shiptype = 1,
-		name = "L'Intrépide Class",
+		name = "Le Hardi Class",
 		nation = 9,
 		id = 90106,
 		t_level_1 = 133,

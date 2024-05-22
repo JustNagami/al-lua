@@ -2,9 +2,9 @@
 pg.activity_liner_time = {
 	{
 		type = 4,
-		desc_before = "Board the cruise ship.",
+		desc_before = "Rest time.",
 		id = 1,
-		desc_after = "Board the cruise ship.",
+		desc_after = "Rest time.",
 		bg_name = "night",
 		time = {
 			3,
@@ -47,9 +47,9 @@ pg.activity_liner_time = {
 	},
 	{
 		type = 1,
-		desc_before = "Have a drink at the balcony bar.",
+		desc_before = "Check out the aquarium.",
 		id = 4,
-		desc_after = "Cheshire's magic show was phenomenal.",
+		desc_after = "You had a leisurely time at the aquarium.",
 		bg_name = "day",
 		time = {
 			14,
@@ -62,9 +62,9 @@ pg.activity_liner_time = {
 	},
 	{
 		type = 1,
-		desc_before = "Check out the aquarium.",
+		desc_before = "Have a drink at the balcony bar.",
 		id = 5,
-		desc_after = "You had a leisurely time at the aquarium.",
+		desc_after = "Cheshire's magic show was phenomenal.",
 		bg_name = "dusk",
 		time = {
 			18,
@@ -123,9 +123,9 @@ pg.activity_liner_time = {
 	},
 	{
 		type = 1,
-		desc_before = "Check out the classroom.",
+		desc_before = "Check out the deck pool.",
 		id = 9,
-		desc_after = "The girls are studying hard out there.",
+		desc_after = "You carried Alsace to the medical bay after she overheated.",
 		bg_name = "day",
 		time = {
 			8,
@@ -168,9 +168,9 @@ pg.activity_liner_time = {
 	},
 	{
 		type = 1,
-		desc_before = "Check out the deck pool.",
+		desc_before = "Check out the classroom.",
 		id = 12,
-		desc_after = "You carried Alsace to the medical bay after she overheated.",
+		desc_after = "The girls are studying hard out there.",
 		bg_name = "dusk",
 		time = {
 			18,
@@ -416,9 +416,9 @@ pg.activity_liner_time = {
 	},
 	{
 		type = 1,
-		desc_before = "Visit the central kitchen.",
+		desc_before = "Speak to St. Louis at the deck pool.",
 		id = 24,
-		desc_after = "Mmm. Kitchen treats.",
+		desc_after = "The sunscreen worked, and the drinks were good.",
 		bg_name = "day",
 		time = {
 			14,
@@ -431,9 +431,9 @@ pg.activity_liner_time = {
 	},
 	{
 		type = 1,
-		desc_before = "Speak to St. Louis at the deck pool.",
+		desc_before = "Visit the central kitchen.",
 		id = 25,
-		desc_after = "The sunscreen worked, and the drinks were good.",
+		desc_after = "Mmm. Kitchen treats.",
 		bg_name = "dusk",
 		time = {
 			18,
@@ -922,7 +922,7 @@ pg.activity_liner_time = {
 		type = 1,
 		desc_before = "Attend the open-air barbecue.",
 		id = 52,
-		desc_after = "Aurora's barbecue party was a great success.",
+		desc_after = "Barbecue party under the aurora was a great success.",
 		bg_name = "aurora",
 		time = {
 			12,

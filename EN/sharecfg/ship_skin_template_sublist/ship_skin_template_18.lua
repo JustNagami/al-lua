@@ -9634,7 +9634,7 @@ pg.base.ship_skin_template_18 = {
 	},
 	[900434] = {
 		ship_group = 900434,
-		name = "{namecode:81}",
+		name = "Tosa",
 		hand_id = 1,
 		bgm = "",
 		l2d_drag_rate = "",
@@ -9746,7 +9746,7 @@ pg.base.ship_skin_template_18 = {
 	},
 	[900435] = {
 		ship_group = 900435,
-		name = "{namecode:455}",
+		name = "Prinz Adalbert",
 		hand_id = 1,
 		bgm = "",
 		l2d_drag_rate = "",
@@ -10082,7 +10082,7 @@ pg.base.ship_skin_template_18 = {
 	},
 	[900438] = {
 		ship_group = 900438,
-		name = "{namecode:297}",
+		name = "Natori",
 		hand_id = 0,
 		bgm = "",
 		l2d_drag_rate = "",

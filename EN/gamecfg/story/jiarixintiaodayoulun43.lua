@@ -11,7 +11,7 @@
 			mode = 1,
 			sequence = {
 				{
-					"假日！心跳！大邮轮！\n\n<size=45>奢享于盛夏之滨</size>",
+					"Pleasure, Leisure, and Treasure\n\n<size=45>43 Set Sail for Summer Treasure</size>",
 					1
 				}
 			}
@@ -21,7 +21,7 @@
 			side = 2,
 			bgName = "star_level_bg_133",
 			hidePaintObj = true,
-			say = "不知不觉间走到了露天泳池附近。",
+			say = "My legs take on a mind of their own and bring me to the lido pool.",
 			bgm = "story-niceship-soft",
 			typewriter = {
 				speed = 0.05,
@@ -55,7 +55,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "哟~这不是指挥官嘛。",
+			say = "Hey, if it isn't the Commander!",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -75,7 +75,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "是早起过来晒太阳吗？这会儿太阳晒起来还蛮舒服的。",
+			say = "Didja get up early to take in some sun? The rays feel great at this time of day.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -95,7 +95,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "过来躺到我边上，一起晒一会儿吧~",
+			say = "Get over here! Lie down with me and bask for a while.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -115,7 +115,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "躺在柔和的阳光下，脑海中还是浮现出这几日在邮轮上的所见所闻。",
+			say = "We bathe in the sun's gentle rays, and I reminisce on the past few days of the cruise.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -148,7 +148,7 @@
 			actor = 599012,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "这艘邮轮，确实是一个远超预期的巨大惊喜……",
+			say = "This cruise was more than just a surprise. It went far beyond what I expected.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -163,7 +163,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "怎么突然提这一茬？",
+			say = "This is awfully sudden. What's on your mind?",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -183,7 +183,7 @@
 			actor = 599012,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "就是突然想到了……",
+			say = "Nothing much. It just occurred to me, is all.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -198,7 +198,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "呵呵，好歹我也是邮轮建造委员会的人，既然你提起来了，那就多夸几句嘛~",
+			say = "Hahaha! Well, I am a member of the Construction Committee. Since you brought it up, maybe you should pay us a compliment or two!",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -218,7 +218,7 @@
 			actor = 599012,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "嗯……比如说豪华的餐厅和舒适的客房、应有尽有的娱乐设施。",
+			say = "Okay... Well, the restaurant is incredible, the cabins are comfortable, and I'm enjoying the wide array of leisure facilities.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -234,7 +234,7 @@
 			actor = 599012,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "还有这个露天泳池也布置得很有情调，水温恰到好处，边上的饮水区和休息区也都非常方便。",
+			say = "The pool is very tasteful, too, and the water temperature is perfect. It's convenient how you set up a rest area and drink bar right next to it, too.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -249,7 +249,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "说得好啊~我也很中意这片开阔的甲板。",
+			say = "Well said! Actually, I'm a big fan of the deck, myself.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -267,7 +267,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "材料优质，又经过了防滑处理，踩上去也非常舒服。",
+			say = "It's made of quality materials with slip-resistant treatment, so it's great to walk on.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -286,7 +286,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "看来当初提议说建造一艘新的，而不是直接买邮轮是个正确的决定啊~",
+			say = "I knew it was a great idea to build a new ship outright instead of buying a prebuilt one.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -305,7 +305,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "不过……你这么一夸，我倒是有了个新想法。",
+			say = "Hey, that gave me a great idea!",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -325,7 +325,7 @@
 			actor = 599012,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "嗯，怎么说……？",
+			say = "Oh?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -340,7 +340,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "嘿嘿~指挥官，接下来来跟我说说这艘邮轮你不满意的地方吧？",
+			say = "Ahaha! Tell me, Commander. What do you NOT like about the ship?",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -360,7 +360,7 @@
 			actor = 599012,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "……不满意的地方？这算是某种……“售后调查”么？",
+			say = "What I don't like? This is starting to sound like some kind of post-purchase survey...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -375,7 +375,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "哼哼~我刚才的新想法就和这个有关。",
+			say = "Hahaha! Call it that, if you want. It's related to that thing I just came up with, though.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -394,7 +394,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "这艘邮轮已经造完了，优点和缺点也已经固定了。",
+			say = "I mean, the ship's already built, right? Its strengths and flaws are already set in stone.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -413,7 +413,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "但是对于下艘邮轮来说，一切都还是未知哦？",
+			say = "But the next cruise ship is a bundle of infinite possibilities.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -433,7 +433,7 @@
 			actor = 599012,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "……下艘邮轮？",
+			say = "The next one?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -448,7 +448,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "没错哦，拓展你喜欢的部分，去掉你不喜欢的部分，以此为基础建造一艘新邮轮。",
+			say = "Yeah. We're gonna expand on the parts you like, and we'll fix up those flaws...",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -467,7 +467,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "然后，我再把那艘船作为礼物送给你怎么样——",
+			say = "And then, how about I give you the end result as a gift? Free of charge!",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -487,7 +487,7 @@
 			actor = 599012,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "可……现在不是已经有一艘了么？",
+			say = "But we have a cruise ship already.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -502,7 +502,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "哈哈~那是因为邮轮与邮轮亦有区别啊~",
+			say = "Hahaha! Every cruise ship is unique in its own way, y'know.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -521,7 +521,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "这艘是供大家一起出行度假用的，是承载着指挥官与同伴们的邮轮。",
+			say = "The one we're on right now is here for you to enjoy a vacation with all your friends.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -540,7 +540,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "而另一艘嘛……是我打算和指挥官你两个人用的。",
+			say = "As for the next one... That one can be just for the two of us.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -560,7 +560,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "{namecode:224:哈尔滨}爽朗地笑着，沉浸在自己的新想法中。",
+			say = "With a hearty laugh, Harbin immediately focuses herself on the prospect of a new ship.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -575,7 +575,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "有这么一艘船，咱们在上面想怎么玩就怎么玩，想去哪里就去哪里，岂不美哉？",
+			say = "With a ship just for you and me, we could go anywhere we wanted, hang out any time we wanted! Call that a win-win!",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -594,7 +594,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "想想看~只有咱们两人独享的海上甜蜜之旅~",
+			say = "A sweet little journey on the sea, just the two of us...",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -613,7 +613,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "如何，指挥官也开始期待了吧~？",
+			say = "Are you getting excited, Commander? Because I sure am!",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -632,7 +632,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "嘿嘿~那事儿就这么定了～等回去之后我就安排。",
+			say = "Alright, it's decided! When we get back, I'll get to work on that right away!",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -651,7 +651,7 @@
 			actor = 599012,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "你就耐心好好等着吧~！",
+			say = "It's gonna take some time, but just you wait!",
 			painting = {
 				alpha = 0.3,
 				time = 1

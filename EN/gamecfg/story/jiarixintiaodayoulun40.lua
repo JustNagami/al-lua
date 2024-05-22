@@ -11,7 +11,7 @@
 			mode = 1,
 			sequence = {
 				{
-					"假日！心跳！大邮轮！\n\n<size=45>静谧一隅的燥热</size>",
+					"Pleasure, Leisure, and Treasure\n\n<size=45>40 Locker Room Lechery</size>",
 					1
 				}
 			}
@@ -21,7 +21,7 @@
 			side = 2,
 			bgName = "star_level_bg_148",
 			hidePaintObj = true,
-			say = "原本这个时候，我应该已经和莫加多尔进入泳池游泳了才对。",
+			say = "I was supposed to get in the pool with Mogador around this time.",
 			bgm = "story-niceship-soft",
 			typewriter = {
 				speed = 0.05,
@@ -50,7 +50,7 @@
 			side = 2,
 			bgName = "star_level_bg_148",
 			hidePaintObj = true,
-			say = "然而此时此刻，却——",
+			say = "But at this time, I don't see–",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -64,7 +64,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = "login",
-			say = "嘿嘿……指挥官……帮我一下吧……",
+			say = "Aha♥ Commandeeer♥ Wanna give me a hand?",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -83,7 +83,7 @@
 			actor = 901071,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "少女的身上披着宽大的浴巾，神情忸怩。",
+			say = "I finally bump into her in the locker room. She has a big bath towel on, and she's wriggling excitedly.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -97,7 +97,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "人家怎么都穿不好那套泳衣……没办法……",
+			say = "I just can't get this swimsuit on by myself!",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -115,7 +115,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "只能让指挥官进更衣室帮人家穿好，这样才能出去游泳……",
+			say = "Heehee♥ So I waited until you came in here so I could get your help♥ Otherwise, we can't swim together, can we?",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -134,7 +134,7 @@
 			actor = 901071,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "她一边说着，一边缓缓拉开自己身上的浴巾。",
+			say = "Mogador slowly takes off the bath towel and walks over to the locker room door.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -149,7 +149,7 @@
 			actor = 901071,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "随后她将浴巾放在靠近门的地方。似乎能听到门锁被轻轻锁上的声音……",
+			say = "She then squats down and puts the towel down by the door. But then, I hear the door lock.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -164,7 +164,7 @@
 			actor = 901071,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "欸？？",
+			say = "Huh?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -178,7 +178,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "嘿嘿……抱歉哦指挥官……",
+			say = "Haha♥ Sorry, Commander...",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -196,7 +196,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "因为如果被其他同伴知道我连泳衣都穿不好的话，一定会被笑话的。",
+			say = "If everyone knew I didn't know how to put on a swimsuit, they'd all tease me.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -214,7 +214,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "所以……就只能把门锁起来了呢……",
+			say = "Sooo... I had to lock it♥",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -232,7 +232,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = "touch",
-			say = "在指挥官帮人家穿好泳衣之前，人家都是不会把门锁打开的哦～",
+			say = "Don't you daaare open it until I finally have it on.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -251,7 +251,7 @@
 			actor = 901071,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "原本包裹在莫加多尔身躯上的浴巾早已被她放置在一旁。",
+			say = "Now without her towel, Mogador turns back to me.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -266,7 +266,7 @@
 			actor = 901071,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "露出她身上白皙的肌肤，与那身歪歪斜斜的黑色布料。",
+			say = "Dark-purple fabric digs tightly into her fair, smooth skin.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -281,7 +281,7 @@
 			actor = 901071,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "平时被过长的额发遮挡住的紫眸，此刻也在更衣室的灯光下显得闪闪发亮。",
+			say = "Her purple eyes, normally hidden by her long bangs, shine brightly in the light of the dressing room.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -295,7 +295,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "那么……就请指挥官一点一点的，帮人家整理好吧~",
+			say = "Now... Commander, I want you to slooowly, bit by bit, fix my swimsuit for me.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -314,7 +314,7 @@
 			actor = 901071,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "回过神来，开始研究莫加多尔这复杂的泳装。",
+			say = "I shake off dirty thoughts and check the fit of her swimsuit.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -329,7 +329,7 @@
 			actor = 901071,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "虽然看起来是穿着没错，但莫加多尔似乎把各个扣子都以奇怪的方式胡乱扣在一起……",
+			say = "At a glance, it looks like she's wearing it right, but it's fastened so wrong that you'd almost think it was on purpose.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -344,7 +344,7 @@
 			actor = 901071,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "这样一来，恐怕只是简单的入水动作就能让它彻底“散架”。",
+			say = "Merely getting in the water would probably cause it to fall apart.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -359,7 +359,7 @@
 			actor = 901071,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "莫加多尔，你之前有试穿过这身泳衣么？",
+			say = "Mogador, have you ever tried this swimsuit on?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -373,7 +373,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = "main1",
-			say = "那是当然……不然就不会特意购买这一身了呢……",
+			say = "Of course~ I wouldn't buy it if I hadn't...",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -392,7 +392,7 @@
 			actor = 901071,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "还记得这件泳衣怎么穿么？",
+			say = "Do you remember how you wore it then?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -407,7 +407,7 @@
 			actor = 901071,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "抱歉，我实在不知道该把这些系带调整到哪个位置。",
+			say = "Really, even I can't figure out how to fix the straps...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -421,7 +421,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "嗯哼……那就让人家来指导指挥官该怎么做吧~",
+			say = "Heehee♥ I'll just have to teach you, then...",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -439,7 +439,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "首先用手指按住这里……然后从这边……",
+			say = "First, press this down with your finger... Then take this♥",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -457,7 +457,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "没错～就是这个位置哦～指挥官找得很准呢……",
+			say = "You did iiit! Perfect positioning. Wow, Commander, you're so good at this~",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -476,7 +476,7 @@
 			actor = 901071,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "根据莫加多尔的指引，我很快就调整好了她身上那些布料的位置。",
+			say = "With Mogador's instruction, I manage to fix her swimsuit.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -490,7 +490,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = "touch",
-			say = "呼……♡",
+			say = "Phew...",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -509,7 +509,7 @@
 			actor = 901071,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "这样就好了吧。",
+			say = "Good enough?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -523,7 +523,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "没错，这样就彻底好了哦。",
+			say = "Yep, it's perfect♥",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -542,14 +542,14 @@
 			actor = 901071,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "（她果然自己其实是能搞定的啊……）",
+			say = "(You definitely could've done that on your own...)",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			},
 			options = {
 				{
-					content = "沉默地看着莫加多尔",
+					content = "(Stare silently.)",
 					flag = 1
 				}
 			}
@@ -562,7 +562,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "嗯～？怎么了么？指挥官看向人家的眼神好热烈……",
+			say = "What's wrong? You've got such a passionate look in your eyes, Commandeeer♥",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -581,7 +581,7 @@
 			actor = 901071,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "莫加多尔其实能自己穿好泳衣的……对吧？",
+			say = "Mogador, you clearly know how to wear it right.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -595,7 +595,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "欸……这种漏洞百出的借口果然没办法瞒过指挥官呢～",
+			say = "Heehee♥ Guess my silly excuses won't get through you.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -613,7 +613,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "人家只是想多和指挥官单独相处一会儿罢了……",
+			say = "I just wanted to be alone with you♥",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -632,7 +632,7 @@
 			actor = 901071,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "她说着，呼吸声也变得渐渐沉重起来。",
+			say = "Mogador's breathing gets faster and rougher.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -647,7 +647,7 @@
 			actor = 901071,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "随着身体扭动摩擦，整个空间里也弥漫着一股若有若无的芬芳气息。",
+			say = "Every time she twists and wriggles, a sweet scent spreads through the room.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -661,7 +661,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = "main2",
-			say = "哎呀……不好，更衣室的空调好像出了问题呢……",
+			say = "Haha... I think the AC in here is broken...",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -679,7 +679,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "人家现在觉得好热啊……",
+			say = "I'm sooo hot right now.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -698,18 +698,18 @@
 			actor = 901071,
 			actorName = "{playername}",
 			hidePaintObj = true,
-			say = "这可糟了……",
+			say = "Yeah. This is no good.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			},
 			options = {
 				{
-					content = "夏日可不能没有空调！",
+					content = "Society needs AC to function in the summer!",
 					flag = 1
 				},
 				{
-					content = "我去叫维修团队来看看吧！",
+					content = "I'll go call the maintenance staff!",
 					flag = 2
 				}
 			}
@@ -722,7 +722,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "呵呵……指挥官你在说什么呢？",
+			say = "Heehee♥ What are you talking about, Commander?",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -740,7 +740,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "我听说，只要出的汗足够多，按照物极必反的道理，就能凉快下来哦~",
+			say = "I heard your body cools down when you sweat...",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -758,7 +758,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "所以……现在最需要的不是找维修团队……",
+			say = "So what we need isn't to fix the AC.",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -776,7 +776,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "而是让我们一起做一些……能让体温变得更高的事呢~",
+			say = "Just... get hotter and hotter with me~♥",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -795,7 +795,7 @@
 			actor = 901071,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "莫加多尔张开双臂，静静等待着。",
+			say = "Mogador opens her arms in apparent anticipation.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -809,7 +809,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			live2d = true,
-			say = "指挥官～你说呢……♡",
+			say = "Commandeeer♥ Your thoughts?♥",
 			painting = {
 				alpha = 0.3,
 				time = 1
@@ -828,7 +828,7 @@
 			actor = 901071,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "透过她发丝的间隙，看到了那双紫眸中充满了不眠不休意味的眼神……",
+			say = "The gleam in her eyes, peeking out from between her bangs, tells me that I won't be sleeping tonight...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

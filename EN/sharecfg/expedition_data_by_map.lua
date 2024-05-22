@@ -16992,7 +16992,7 @@ pg.base.expedition_data_by_map = {
 	},
 	[1810025] = {
 		map = 1810025,
-		name = "Light of the Martyrium·SP|| ||CHAPTER EX||E.X.",
+		name = "Light of the Martyrium - SP|| ||CHAPTER EX||E.X.",
 		level_limit = 1,
 		type = 8,
 		anchor = "",
@@ -17036,7 +17036,7 @@ pg.base.expedition_data_by_map = {
 	},
 	[1810026] = {
 		map = 1810026,
-		name = "Light of the Martyrium·EX|| ||CHAPTER EX||E.X.",
+		name = "Light of the Martyrium - EX|| ||CHAPTER EX||E.X.",
 		level_limit = 1,
 		type = 8,
 		anchor = "",

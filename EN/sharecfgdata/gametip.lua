@@ -10048,10 +10048,10 @@ _G.pg.base.gametip.pray_build_help = {
 			info = "Light Ships: <color=#ffde38>Super Rare</color>: 7%, <color=#d797ff>Elite</color>: 12%, <color=#3dc6ff>Rare</color>: 26%, Common: 55%"
 		},
 		{
-			info = "Heavy Ships: <color=#ff5e39>Ultra Rare</color>: 1.2%, <color=#ffde38>Super Rare</color>: 7%, <color=#d797ff>Elite</color>: 12%, <color=#3dc6ff>Rare</color>: 51%, Common: 30%"
+			info = "Heavy Ships: <color=#ff5e39>Ultra Rare</color>: 1.2%, <color=#ffde38>Super Rare</color>: 7%, <color=#d797ff>Elite</color>: 12%, <color=#3dc6ff>Rare</color>: 51%, Common: 28.8%"
 		},
 		{
-			info = "Special Ships: <color=#ff5e39>Ultra Rare</color>: 1.2%, <color=#ffde38>Super Rare</color>: 7%, <color=#d797ff>Elite</color>: 12%, <color=#3dc6ff>Rare</color>: 51%, Common: 30%"
+			info = "Special Ships: <color=#ff5e39>Ultra Rare</color>: 1.2%, <color=#ffde38>Super Rare</color>: 7%, <color=#d797ff>Elite</color>: 12%, <color=#3dc6ff>Rare</color>: 51%, Common: 28.8%"
 		},
 		{
 			info = "3. You can see a list of all ships available for construction in the Wishing Well."
@@ -23502,7 +23502,7 @@ _G.pg.base.gametip.ship_remould_warning_105214 = {
 	tip = "Completing the retrofit will upgrade the skill <color=#92fc63>Big Seven</color> into <color=#92fc63>Big Seven - Colorado</color>."
 }
 _G.pg.base.gametip.pray_build_UR_warning = {
-	tip = "You may only select 1 shipgirl of UR rarity."
+	tip = "You may only select 1 shipgirl of <color=#ff5e39>Ultra Rare</color> rarity."
 }
 _G.pg.base.gametip.backyard_shipAddInimacy_ships_ok = {
 	tip = "<color=#92fc63>$1 and others'</color> Affinity <color=#92fc63>increased</color>."
@@ -23511,16 +23511,16 @@ _G.pg.base.gametip.backyard_shipAddMoney_ships_ok = {
 	tip = "<color=#92fc63>$1 and others</color> made a surprising discovery! Decor Tokens <color=#92fc63>+$2</color>."
 }
 _G.pg.base.gametip.main_silent_tip_1 = {
-	tip = "X fleets have returned from a commission."
+	tip = "fleet(s) have returned from commission."
 }
 _G.pg.base.gametip.main_silent_tip_2 = {
-	tip = "X shipgirls have returned from a commission."
+	tip = "shipgirl(s) have finished construction."
 }
 _G.pg.base.gametip.main_silent_tip_3 = {
-	tip = "X research projects have been completed."
+	tip = "research project(s) have been completed."
 }
 _G.pg.base.gametip.main_silent_tip_4 = {
-	tip = "X characters' skills leveled up."
+	tip = "shipgirl(s) finished tactical training."
 }
 _G.pg.base.gametip.commission_label_go = {
 	tip = "Confirm"
@@ -23571,10 +23571,10 @@ _G.pg.base.gametip.liner_log_event_title = {
 	tip = "Investigate Case"
 }
 _G.pg.base.gametip.liner_schedule_award_tip1 = {
-	tip = "Day's Investigation Reward"
+	tip = "Day's Exploration Reward"
 }
 _G.pg.base.gametip.liner_schedule_award_tip2 = {
-	tip = "Day's Investigation Reward"
+	tip = "Day's Exploration Reward"
 }
 _G.pg.base.gametip.liner_room_award_tip = {
 	tip = "Area Investigation Reward"
