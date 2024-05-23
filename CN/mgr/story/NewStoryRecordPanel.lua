@@ -54,6 +54,7 @@ function var_0_0.Init(arg_7_0, arg_7_1)
 	arg_7_0.contentSizeFitter = arg_7_0._tf:Find("content"):GetComponent(typeof(ContentSizeFitter))
 
 	onButton(nil, arg_7_0.closeBtn, function()
+		setButtonEnabled(arg_7_0.closeBtn, false)
 		arg_7_0:Hide()
 	end, SFX_PANEL)
 	arg_7_0.pageAniEvent:SetEndEvent(function()
@@ -91,6 +92,7 @@ end
 
 local function var_0_8(arg_15_0)
 	setActive(arg_15_0._tf, true)
+	setButtonEnabled(arg_15_0.closeBtn, true)
 	arg_15_0.pageAnim:Play("anim_storyrecordUI_record_in")
 
 	arg_15_0.state = var_0_4
@@ -265,6 +267,7 @@ function var_0_0.OnHide(arg_28_0)
 	arg_28_0:Clear()
 	arg_28_0:UnblurPanel()
 	setActive(arg_28_0._tf, false)
+	setButtonEnabled(arg_28_0.closeBtn, true)
 
 	arg_28_0.state = var_0_5
 end

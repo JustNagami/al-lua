@@ -20,7 +20,7 @@ end
 function var_0_0.StaticGetPaintingName(arg_2_0)
 	local var_2_0 = arg_2_0
 
-	if PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_2_0 .. "_n")) and PlayerPrefs.GetInt("paint_hide_other_obj_" .. var_2_0, 0) ~= 0 then
+	if checkABExist("painting/" .. var_2_0 .. "_n") and PlayerPrefs.GetInt("paint_hide_other_obj_" .. var_2_0, 0) ~= 0 then
 		var_2_0 = var_2_0 .. "_n"
 	end
 
@@ -30,7 +30,7 @@ function var_0_0.StaticGetPaintingName(arg_2_0)
 
 	local var_2_1 = getProxy(SettingsProxy):GetMainPaintingVariantFlag(arg_2_0) == var_0_0.PAINTING_VARIANT_EX
 
-	if var_2_1 and not PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_2_0 .. "_ex")) then
+	if var_2_1 and not checkABExist("painting/" .. var_2_0 .. "_ex") then
 		return var_2_0
 	end
 

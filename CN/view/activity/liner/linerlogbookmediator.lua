@@ -7,29 +7,32 @@ var_0_0.GET_EVENT_AWARD = "LinerLogBookMediator.GET_EVENT_AWARD"
 var_0_0.ON_CLOSE = "LinerLogBookMediator.ON_CLOSE"
 
 function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.GET_SCHEDULE_AWARD, function(arg_2_0, arg_2_1, arg_2_2)
+	arg_1_0:bind(var_0_0.GET_SCHEDULE_AWARD, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 		arg_1_0:sendNotification(GAME.ACTIVITY_LINER_OP, {
 			cmd = 2,
 			activity_id = arg_2_1,
-			arg1 = arg_2_2
+			arg1 = arg_2_2,
+			drop = arg_2_3
 		})
 	end)
-	arg_1_0:bind(var_0_0.GET_ROOM_AWARD, function(arg_3_0, arg_3_1, arg_3_2)
+	arg_1_0:bind(var_0_0.GET_ROOM_AWARD, function(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
 		arg_1_0:sendNotification(GAME.ACTIVITY_LINER_OP, {
 			cmd = 3,
 			activity_id = arg_3_1,
-			arg1 = arg_3_2
+			arg1 = arg_3_2,
+			drop = arg_3_3
 		})
 	end)
 	arg_1_0:bind(var_0_0.ON_START_REASONING, function(arg_4_0, arg_4_1, arg_4_2)
 		arg_1_0.viewComponent:OnStartReasoning(arg_4_1, arg_4_2)
 	end)
-	arg_1_0:bind(var_0_0.GET_EVENT_AWARD, function(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	arg_1_0:bind(var_0_0.GET_EVENT_AWARD, function(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
 		arg_1_0:sendNotification(GAME.ACTIVITY_LINER_OP, {
 			cmd = 4,
 			activity_id = arg_5_1,
 			arg1 = arg_5_2,
-			arg2 = arg_5_3
+			arg2 = arg_5_3,
+			drop = arg_5_4
 		})
 	end)
 	arg_1_0:bind(var_0_0.ON_CLOSE, function()

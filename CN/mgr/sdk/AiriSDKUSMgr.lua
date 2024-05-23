@@ -590,7 +590,7 @@ function var_0_0.AiriPGSResultCodeHandler(arg_62_0, arg_62_1)
 end
 
 function var_0_0.AiriYoStarPassMigrateHandler(arg_69_0)
-	if arg_69_0.SHOW_MIGRATE_PAGE == 1 then
+	if arg_69_0.R_CODE == 0 and arg_69_0.SHOW_MIGRATE_PAGE == 1 then
 		var_0_0.BindYostarPass()
 
 		return true

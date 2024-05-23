@@ -38,6 +38,16 @@
 			target_choise = "TargetSelf",
 			targetAniEffect = "",
 			arg_list = {
+				buff_id = 17948,
+				delay = 0.1
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
 				buff_id = 17946,
 				delay = 0.4
 			}

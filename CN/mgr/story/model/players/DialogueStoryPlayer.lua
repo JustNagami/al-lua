@@ -622,9 +622,9 @@ function var_0_0.LoadPainting(arg_52_0, arg_52_1, arg_52_2, arg_52_3)
 	local var_52_0, var_52_1, var_52_2, var_52_3 = arg_52_0:GetSideTF(arg_52_1:GetSide())
 	local var_52_4, var_52_5 = arg_52_1:GetPaintingAndName()
 
-	if arg_52_1:IsLive2dPainting() and PathMgr.FileExists(PathMgr.getAssetBundle("live2d/" .. var_52_5)) then
+	if arg_52_1:IsLive2dPainting() and checkABExist("live2d/" .. var_52_5) then
 		arg_52_0:UpdateLive2dPainting(arg_52_1, var_52_0, arg_52_2, arg_52_3)
-	elseif arg_52_1:IsSpinePainting() and PathMgr.FileExists(PathMgr.getAssetBundle("spinepainting/" .. var_52_5)) then
+	elseif arg_52_1:IsSpinePainting() and checkABExist("spinepainting/" .. var_52_5) then
 		arg_52_0:UpdateSpinePainting(arg_52_1, var_52_0, arg_52_2, arg_52_3)
 	else
 		arg_52_0:UpdateMeshPainting(arg_52_1, var_52_0, var_52_3, arg_52_2, arg_52_3)
@@ -743,7 +743,7 @@ local function var_0_6(arg_57_0, arg_57_1, arg_57_2)
 	local var_57_10 = arg_57_2 - var_57_2 + 1
 
 	for iter_57_3 = 1, var_57_0.Length do
-		var_57_0[iter_57_3 - 1].sortingOrder = var_57_10
+		var_57_0[iter_57_3 - 1].sortingOrder = var_57_10 + (iter_57_3 - 1)
 	end
 
 	local var_57_11 = var_57_10 + 1
@@ -897,11 +897,11 @@ function var_0_0.UpdateMeshPainting(arg_63_0, arg_63_1, arg_63_2, arg_63_3, arg_
 	local var_63_1 = false
 
 	local function var_63_2()
-		if arg_63_1:IsShowNPainting() and PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_63_0 .. "_n")) then
+		if arg_63_1:IsShowNPainting() and checkABExist("painting/" .. var_63_0 .. "_n") then
 			var_63_0 = var_63_0 .. "_n"
 		end
 
-		if arg_63_1:IsShowWJZPainting() and PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_63_0 .. "_wjz")) then
+		if arg_63_1:IsShowWJZPainting() and checkABExist("painting/" .. var_63_0 .. "_wjz") then
 			var_63_0 = var_63_0 .. "_wjz"
 		end
 
@@ -952,7 +952,7 @@ end
 local function var_0_8(arg_65_0)
 	local var_65_0 = arg_65_0.name
 
-	if arg_65_0.showNPainting and PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_65_0 .. "_n")) then
+	if arg_65_0.showNPainting and checkABExist("painting/" .. var_65_0 .. "_n") then
 		var_65_0 = var_65_0 .. "_n"
 	end
 

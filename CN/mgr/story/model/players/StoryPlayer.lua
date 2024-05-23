@@ -1162,9 +1162,9 @@ function var_0_0.LoadEffects(arg_100_0, arg_100_1, arg_100_2)
 		else
 			local var_100_8 = ""
 
-			if PathMgr.FileExists(PathMgr.getAssetBundle("ui/" .. var_100_2)) then
+			if checkABExist("ui/" .. var_100_2) then
 				var_100_8 = "ui"
-			elseif PathMgr.FileExists(PathMgr.getAssetBundle("effect/" .. var_100_2)) then
+			elseif checkABExist("effect/" .. var_100_2) then
 				var_100_8 = "effect"
 			end
 

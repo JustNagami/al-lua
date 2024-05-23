@@ -24,7 +24,7 @@ function var_0_0.Update(arg_3_0)
 
 		local var_3_5 = pg.map_event_template[var_3_0.attachmentId].icon
 
-		if IsNil(arg_3_0.triggerUpper) and var_3_5 and #var_3_5 > 0 and PathMgr.FileExists(PathMgr.getAssetBundle("ui/" .. var_3_5 .. "_1shangceng")) then
+		if IsNil(arg_3_0.triggerUpper) and var_3_5 and #var_3_5 > 0 and checkABExist("ui/" .. var_3_5 .. "_1shangceng") then
 			arg_3_0.triggerUpper = HaloAttachmentView.New(arg_3_0.parent, var_3_2, var_3_3)
 
 			arg_3_0.triggerUpper:SetLoader(arg_3_0.loader)

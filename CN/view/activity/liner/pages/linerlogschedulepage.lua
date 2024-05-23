@@ -49,7 +49,7 @@ end
 function var_0_0.OnInit(arg_3_0)
 	arg_3_0:UpdateActivity()
 	onButton(arg_3_0, arg_3_0.getBtn, function()
-		arg_3_0:emit(LinerLogBookMediator.GET_SCHEDULE_AWARD, arg_3_0.activity.id, arg_3_0.curIdx)
+		arg_3_0:emit(LinerLogBookMediator.GET_SCHEDULE_AWARD, arg_3_0.activity.id, arg_3_0.curIdx, arg_3_0.groups[arg_3_0.curIdx]:GetDrop())
 	end, SFX_CONFIRM)
 	onButton(arg_3_0, arg_3_0.goBtn, function()
 		arg_3_0:emit(LinerLogBookMediator.ON_CLOSE)
@@ -133,11 +133,11 @@ function var_0_0._getLogDesc(arg_10_0, arg_10_1)
 		var_10_1 = var_10_1 - 24
 	end
 
-	local var_10_2 = var_10_0 <= 12 and "AM" or "PM"
+	local var_10_2 = var_10_0 < 12 and "AM" or "PM"
 	local var_10_3 = var_10_1 < 12 and "AM" or "PM"
 	local var_10_4
 
-	var_10_4, var_10_1 = var_10_0 <= 12 and var_10_0 or var_10_0 - 12, var_10_1 < 12 and var_10_1 or var_10_1 - 12
+	var_10_4, var_10_1 = var_10_0 > 12 and var_10_0 - 12 or var_10_0, var_10_1 > 12 and var_10_1 - 12 or var_10_1
 
 	return string.format("%d:00 %s~%d:59 %s", var_10_4, var_10_2, var_10_1, var_10_3)
 end

@@ -41,7 +41,7 @@ function var_0_0.OnInit(arg_3_0)
 
 			setText(arg_6_2:Find("Text"), arg_3_0.options[var_6_0])
 			onButton(arg_3_0, arg_6_2, function()
-				arg_3_0:emit(LinerLogBookMediator.GET_EVENT_AWARD, arg_3_0.actId, arg_3_0.groupIdx, var_6_0)
+				arg_3_0:emit(LinerLogBookMediator.GET_EVENT_AWARD, arg_3_0.actId, arg_3_0.groupIdx, var_6_0, arg_3_0.eventGroup:GetDrop())
 				arg_3_0:Hide()
 			end, SFX_CONFIRM)
 		end

@@ -479,7 +479,7 @@ local function var_0_1(arg_47_0)
 end
 
 function var_0_0.updateSkin(arg_48_0)
-	if arg_48_0.showType == var_0_0.SHOW_LIVE2D and (not ResourceMgr.Inst:AssetExist("live2d/" .. arg_48_0.paintSkin) or not PathMgr.FileExists(PathMgr.getAssetBundle("live2d/" .. arg_48_0.paintSkin))) then
+	if arg_48_0.showType == var_0_0.SHOW_LIVE2D and (not ResourceMgr.Inst:AssetExist("live2d/" .. arg_48_0.paintSkin) or not checkABExist("live2d/" .. arg_48_0.paintSkin)) then
 		arg_48_0.showType = var_0_0.SHOW_PAINT
 
 		arg_48_0:updateShowType()

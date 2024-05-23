@@ -301,7 +301,7 @@
 			side = 2,
 			bgName = "star_level_bg_179",
 			hidePaintObj = true,
-			say = "远远就听到{namecode:408:Z23}、加菲、标枪和{namecode:6:绫波}在讨论着无人岛上的事情。",
+			say = "远远就听到{namecode:408:Z23}、拉菲、标枪和{namecode:6:绫波}在讨论着无人岛上的事情。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

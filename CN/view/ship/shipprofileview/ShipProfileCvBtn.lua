@@ -109,7 +109,7 @@ function var_0_0.UpdateCvBtn(arg_4_0)
 end
 
 function var_0_0.UpdateIcon(arg_6_0)
-	local var_6_0 = arg_6_0.voice.key == "unlock" and PathMgr.FileExists(PathMgr.getAssetBundle("ui/skinunlockanim/star_level_unlock_anim_" .. arg_6_0.skin.id))
+	local var_6_0 = arg_6_0.voice.key == "unlock" and checkABExist("ui/skinunlockanim/star_level_unlock_anim_" .. arg_6_0.skin.id)
 
 	setActive(arg_6_0.playIcon, var_6_0)
 end

@@ -499,7 +499,7 @@ function var_0_0.ShiftSkin(arg_41_0, arg_41_1)
 
 	arg_41_0:LoadSkinBg(var_41_2)
 
-	arg_41_0.haveOp = PathMgr.FileExists(PathMgr.getAssetBundle("ui/skinunlockanim/star_level_unlock_anim_" .. arg_41_0.skin.id))
+	arg_41_0.haveOp = checkABExist("ui/skinunlockanim/star_level_unlock_anim_" .. arg_41_0.skin.id)
 end
 
 function var_0_0.UpdateCryptolaliaBtn(arg_43_0, arg_43_1)
@@ -824,7 +824,7 @@ end
 function var_0_0.playOpening(arg_70_0, arg_70_1)
 	local var_70_0 = "star_level_unlock_anim_" .. arg_70_0.skin.id
 
-	if PathMgr.FileExists(PathMgr.getAssetBundle("ui/skinunlockanim/" .. var_70_0)) then
+	if checkABExist("ui/skinunlockanim/" .. var_70_0) then
 		pg.CpkPlayMgr.GetInstance():PlayCpkMovie(function()
 			return
 		end, function()
@@ -840,7 +840,7 @@ end
 function var_0_0.updateSpinePaintingState(arg_73_0)
 	local var_73_0 = HXSet.autoHxShiftPath("spinepainting/" .. arg_73_0.paintingName)
 
-	if PathMgr.FileExists(PathMgr.getAssetBundle(var_73_0)) then
+	if checkABExist(var_73_0) then
 		setActive(arg_73_0.spinePaintingBtn, true)
 		setActive(arg_73_0.spinePaintingToggle:Find("on"), arg_73_0.spinePaintingisOn)
 		setActive(arg_73_0.spinePaintingToggle:Find("off"), not arg_73_0.spinePaintingisOn)

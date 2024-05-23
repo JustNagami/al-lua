@@ -153,7 +153,7 @@ function var_0_0.UpdateAllFashion(arg_12_0, arg_12_1)
 					var_13_1:updateUsing(arg_12_0:GetShipVO().skinId == iter_13_1.id)
 				end
 
-				local var_13_2 = PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_12_5.paintingName .. "_n"))
+				local var_13_2 = checkABExist("painting/" .. var_12_5.paintingName .. "_n")
 
 				setActive(arg_12_0.hideObjToggle, var_13_2)
 

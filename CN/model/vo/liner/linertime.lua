@@ -32,24 +32,34 @@ end
 
 function var_0_0.GetStartTimeDesc(arg_4_0)
 	local var_4_0 = arg_4_0:GetTime()[1]
+	local var_4_1 = var_4_0 < 12 and "AM" or "PM"
 
-	return var_4_0 <= 12 and var_4_0 .. ":00 AM" or var_4_0 - 12 .. ":00 PM"
+	if var_4_0 > 12 then
+		var_4_0 = var_4_0 - 12
+	end
+
+	return var_4_0 .. ":00 " .. var_4_1
 end
 
 function var_0_0.GetEndTimeDesc(arg_5_0)
 	local var_5_0 = arg_5_0:GetTime()[2]
+	local var_5_1 = var_5_0 < 12 and "AM" or "PM"
 
-	return var_5_0 <= 12 and var_5_0 .. ":00 AM" or var_5_0 - 12 .. ":00 PM"
+	if var_5_0 > 12 then
+		var_5_0 = var_5_0 - 12
+	end
+
+	return var_5_0 .. ":00 " .. var_5_1
 end
 
 function var_0_0.GetLogDesc(arg_6_0)
 	local var_6_0 = arg_6_0:GetTime()[1]
 	local var_6_1 = arg_6_0:GetTime()[2] - 1
-	local var_6_2 = var_6_0 <= 12 and "AM" or "PM"
-	local var_6_3 = var_6_1 <= 12 and "AM" or "PM"
+	local var_6_2 = var_6_0 < 12 and "AM" or "PM"
+	local var_6_3 = var_6_1 < 12 and "AM" or "PM"
 	local var_6_4
 
-	var_6_4, var_6_1 = var_6_0 < 12 and var_6_0 or var_6_0 - 12, var_6_1 < 12 and var_6_1 or var_6_1 - 12
+	var_6_4, var_6_1 = var_6_0 > 12 and var_6_0 - 12 or var_6_0, var_6_1 > 12 and var_6_1 - 12 or var_6_1
 
 	return string.format("%d:00 %s~%d:59 %s", var_6_4, var_6_2, var_6_1, var_6_3)
 end

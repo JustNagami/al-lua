@@ -8,7 +8,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_4 = getProxy(BayProxy)
 	local var_1_5 = var_1_4:getShips()
 
-	if getProxy(PlayerProxy):getData():getMaxShipBag() < #var_1_5 + var_1_0 then
+	if getProxy(PlayerProxy):getData():getMaxShipBag() < var_1_4:getShipCount() + var_1_0 then
 		NoPosMsgBox(i18n("switch_to_shop_tip_noDockyard"), openDockyardClear, gotoChargeScene, openDockyardIntensify)
 
 		return

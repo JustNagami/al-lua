@@ -252,7 +252,7 @@
 	init_effect = "jinengchufared",
 	color = "yellow",
 	picture = "",
-	desc = "提高装填、123槽暴击率",
+	desc = "",
 	stack = 1,
 	id = 150101,
 	icon = 150100,

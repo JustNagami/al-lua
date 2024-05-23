@@ -17,17 +17,6 @@
 				"onRemove"
 			},
 			arg_list = {}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "hammerDamagePrevent",
-				number = 0.8
-			}
 		}
 	}
 }

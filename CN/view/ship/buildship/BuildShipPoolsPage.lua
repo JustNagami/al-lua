@@ -34,7 +34,9 @@ function var_0_0.RefreshFreeBuildActivity(arg_4_0)
 end
 
 function var_0_0.RefreshRegularExchangeCount(arg_6_0)
-	arg_6_0:UpdateRegularBuildPoolExchange(arg_6_0.pool)
+	if arg_6_0.pool then
+		arg_6_0:UpdateRegularBuildPoolExchange(arg_6_0.pool)
+	end
 end
 
 function var_0_0.OnLoaded(arg_7_0)

@@ -63,7 +63,7 @@ function var_0_0.StartCheckUpdate(arg_7_0, arg_7_1)
 		arg_7_0:UpdateBtnState(true, false)
 		removeOnButton(arg_7_0.tf)
 	else
-		local var_7_3 = PathMgr.FileExists(PathMgr.getAssetBundle(arg_7_1))
+		local var_7_3 = checkABExist(arg_7_1)
 
 		arg_7_0:ShowOrHide(var_7_3)
 

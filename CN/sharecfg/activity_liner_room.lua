@@ -38,21 +38,21 @@ pg.activity_liner_room = {
 					30
 				},
 				"haerbin_3",
-				"walk"
+				"stand"
 			},
 			{
 				{
 					9
 				},
 				"aersasi_2",
-				"walk"
+				"stand"
 			},
 			{
 				{
 					24
 				},
 				"shengluyisi_5",
-				"walk"
+				"stand"
 			}
 		}
 	},
@@ -127,7 +127,7 @@ pg.activity_liner_room = {
 					51
 				},
 				"aimudeng_4",
-				"walk"
+				"stand"
 			}
 		}
 	},
@@ -152,21 +152,21 @@ pg.activity_liner_room = {
 					52
 				},
 				"zaoshen",
-				"walk"
+				"stand"
 			},
 			{
 				{
 					16
 				},
 				"xingzuo",
-				"walk"
+				"stand"
 			},
 			{
 				{
 					14
 				},
 				"bulisituoer",
-				"walk"
+				"stand"
 			}
 		}
 	},
@@ -248,7 +248,7 @@ pg.activity_liner_room = {
 					33
 				},
 				"sikula_3",
-				"walk"
+				"stand"
 			}
 		}
 	},
@@ -337,7 +337,7 @@ pg.activity_liner_room = {
 					5
 				},
 				"chaijun_5",
-				"walk"
+				"stand"
 			}
 		}
 	},
@@ -362,28 +362,28 @@ pg.activity_liner_room = {
 					17
 				},
 				"biaoqiang",
-				"walk"
+				"stand"
 			},
 			{
 				{
 					23
 				},
 				"huanchang",
-				"walk"
+				"stand"
 			},
 			{
 				{
 					31
 				},
 				"aierdeliqi",
-				"walk"
+				"stand"
 			},
 			{
 				{
 					55
 				},
 				"aisaikesi_6",
-				"walk"
+				"stand"
 			}
 		}
 	},
@@ -408,7 +408,7 @@ pg.activity_liner_room = {
 					11
 				},
 				"xinzexi_3",
-				"walk"
+				"stand"
 			}
 		}
 	},
@@ -578,7 +578,7 @@ pg.activity_liner_room = {
 					39
 				},
 				"aerjiliya",
-				"walk"
+				"stand"
 			}
 		}
 	},

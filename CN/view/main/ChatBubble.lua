@@ -5,6 +5,12 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.isLoadChatBg = false
 
 	arg_1_0:init()
+
+	arg_1_0.chatFrameTr = findTF(arg_1_0.tf, "chat_fram")
+
+	if IsNil(arg_1_0.chatFrameTr) then
+		arg_1_0.chatFrameTr = arg_1_0.tf
+	end
 end
 
 function var_0_0.init(arg_2_0)
@@ -18,11 +24,6 @@ function var_0_0.init(arg_2_0)
 	arg_2_0.dutyTF = findTF(arg_2_0.tf, "desc/duty")
 	arg_2_0.channel = findTF(arg_2_0.tf, "desc/channel")
 	arg_2_0.chatBgWidth = 665
-	arg_2_0.chatFrameTr = findTF(arg_2_0.tf, "chat_fram")
-
-	if IsNil(arg_2_0.chatFrameTr) then
-		arg_2_0.chatFrameTr = arg_2_0.tf
-	end
 end
 
 function var_0_0.update(arg_3_0, arg_3_1)

@@ -321,7 +321,7 @@ end
 function var_0_0.autoHxShift(arg_17_0, arg_17_1)
 	if var_0_0.isHx() then
 		if string.find(arg_17_0, "live2d") then
-			if PathMgr.FileExists(PathMgr.getAssetBundle(arg_17_0 .. arg_17_1 .. "_hx")) then
+			if checkABExist(arg_17_0 .. arg_17_1 .. "_hx") then
 				return arg_17_0, arg_17_1 .. "_hx"
 			elseif pg.l2dhx[arg_17_1] then
 				return arg_17_0, arg_17_1 .. "_hx"
@@ -331,7 +331,7 @@ function var_0_0.autoHxShift(arg_17_0, arg_17_1)
 		if var_0_0.needShift(arg_17_0) then
 			local var_17_0 = arg_17_0 .. arg_17_1
 
-			if PathMgr.FileExists(PathMgr.getAssetBundle(var_17_0 .. "_hx")) then
+			if checkABExist(var_17_0 .. "_hx") then
 				return arg_17_0, arg_17_1 .. "_hx"
 			end
 		end
@@ -349,7 +349,7 @@ function var_0_0.autoHxShiftPath(arg_18_0, arg_18_1, arg_18_2)
 				if pg.l2dhx[var_18_0] then
 					return arg_18_0 .. "_hx"
 				end
-			elseif PathMgr.FileExists(PathMgr.getAssetBundle(arg_18_0 .. "_hx")) then
+			elseif checkABExist(arg_18_0 .. "_hx") then
 				return arg_18_0 .. "_hx"
 			else
 				local var_18_1 = string.gsub(arg_18_0, "live2d/", "")
@@ -360,7 +360,7 @@ function var_0_0.autoHxShiftPath(arg_18_0, arg_18_1, arg_18_2)
 			end
 		end
 
-		if var_0_0.needShift(arg_18_0) and PathMgr.FileExists(PathMgr.getAssetBundle(arg_18_0 .. "_hx")) then
+		if var_0_0.needShift(arg_18_0) and checkABExist(arg_18_0 .. "_hx") then
 			if var_0_0.isFolderBundle(arg_18_0) then
 				return arg_18_0 .. "_hx", arg_18_1
 			elseif arg_18_1 and #arg_18_1 > 0 then

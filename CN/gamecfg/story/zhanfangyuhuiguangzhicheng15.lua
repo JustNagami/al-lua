@@ -84,13 +84,14 @@
 			}
 		},
 		{
-			actor = 9705050,
 			side = 2,
 			actorShadow = true,
-			hidePaintObj = true,
+			actorName = "？？？",
 			dir = 1,
 			blackBg = true,
+			actor = 9705050,
 			nameColor = "#BDBDBD",
+			hidePaintObj = true,
 			say = "前赴后继地迎向死亡……这就是你们的选择么。",
 			painting = {
 				alpha = 0.3,

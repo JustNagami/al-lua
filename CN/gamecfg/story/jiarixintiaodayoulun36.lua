@@ -223,7 +223,7 @@
 			bgName = "bg_story_room",
 			dir = 1,
 			optionFlag = 2,
-			actor = 901113,
+			actor = 900443,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "没错，白天睡觉反而更享受……",
@@ -321,7 +321,7 @@
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			actor = 901113,
+			actor = 900443,
 			say = "哈啊……结果我们都睡太多了，导致根本睡不着……",
 			painting = {
 				alpha = 0.3,
@@ -363,7 +363,7 @@
 			}
 		},
 		{
-			actor = 901113,
+			actor = 900443,
 			side = 2,
 			bgName = "bg_story_room",
 			hidePaintObj = true,
@@ -504,7 +504,7 @@
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			actor = 901113,
+			actor = 900443,
 			say = "我也是……不过机会难得，就让指挥官给我们讲睡前故事，怎么样？",
 			painting = {
 				alpha = 0.3,

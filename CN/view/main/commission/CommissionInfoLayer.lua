@@ -18,6 +18,9 @@ function var_0_0.init(arg_2_0)
 	arg_2_0.oilbubbleTF = arg_2_0:findTF("canteen/bubble", arg_2_0.resourcesTF)
 	arg_2_0.goldbubbleTF = arg_2_0:findTF("merchant/bubble", arg_2_0.resourcesTF)
 	arg_2_0.classbubbleTF = arg_2_0:findTF("class/bubble", arg_2_0.resourcesTF)
+	arg_2_0.oilbubbleCG = GetOrAddComponent(arg_2_0.oilbubbleTF, typeof(CanvasGroup))
+	arg_2_0.goldbubbleCG = GetOrAddComponent(arg_2_0.goldbubbleTF, typeof(CanvasGroup))
+	arg_2_0.classbubbleCG = GetOrAddComponent(arg_2_0.classbubbleTF, typeof(CanvasGroup))
 
 	local var_2_0 = getProxy(NavalAcademyProxy):GetClassVO():GetResourceType()
 	local var_2_1 = Item.getConfigData(var_2_0).icon
@@ -226,6 +229,13 @@ end
 
 function var_0_0.updateResource(arg_28_0, arg_28_1)
 	local var_28_0 = getProxy(NavalAcademyProxy):GetClassVO():GetGenResCnt()
+
+	arg_28_0.oilbubbleCG.alpha = 1
+	arg_28_0.goldbubbleCG.alpha = 1
+	arg_28_0.classbubbleCG.alpha = 1
+	arg_28_0.oilbubbleTF.localScale = Vector3.one
+	arg_28_0.goldbubbleTF.localScale = Vector3.one
+	arg_28_0.classbubbleTF.localScale = Vector3.one
 
 	setActive(arg_28_0.oilbubbleTF, arg_28_1.oilField ~= 0)
 	setActive(arg_28_0.goldbubbleTF, arg_28_1.goldField ~= 0)

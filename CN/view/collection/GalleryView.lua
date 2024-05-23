@@ -725,7 +725,7 @@ function var_0_0.initEmptyCard(arg_56_0, arg_56_1)
 		local var_56_5 = pg.gallery_config[iter_56_1].illustration .. "_t"
 		local var_56_6 = GalleryConst.CARD_PATH_PREFIX .. var_56_5
 
-		if PathMgr.FileExists(PathMgr.getAssetBundle(var_56_6)) then
+		if checkABExist(var_56_6) then
 			var_56_3 = var_56_6
 			var_56_4 = var_56_5
 

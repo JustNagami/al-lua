@@ -10,6 +10,34 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		return
 	end
 
+	local var_1_4 = var_1_0.drop
+
+	if var_1_4 then
+		local var_1_5 = getProxy(PlayerProxy):getData()
+
+		if var_1_4.type == DROP_TYPE_RESOURCE and var_1_4.id == 1 and var_1_5:GoldMax(var_1_4.count) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title"))
+
+			return
+		end
+
+		if var_1_4.type == DROP_TYPE_RESOURCE and var_1_4.id == 2 and var_1_5:OilMax(var_1_4.count) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title"))
+
+			return
+		end
+
+		if var_1_4.type == DROP_TYPE_ITEM then
+			local var_1_6 = Item.getConfigData(var_1_4.id)
+
+			if var_1_6.type == Item.EXP_BOOK_TYPE and getProxy(BagProxy):getItemCountById(var_1_4.id) + var_1_4.count > var_1_6.max_num then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("expbook_max_tip_title"))
+
+				return
+			end
+		end
+	end
+
 	pg.ConnectionMgr.GetInstance():Send(11202, {
 		activity_id = var_1_0.activity_id,
 		cmd = var_1_0.cmd or 0,

@@ -107,6 +107,7 @@ function var_0_0.Disable(arg_10_0)
 	arg_10_0.buffView:Disable()
 	arg_10_0.actBtnView:Disable()
 	arg_10_0.bannerView:Disable()
+	arg_10_0.wordView:Disable()
 	pg.LayerWeightMgr.GetInstance():SetVisibleViaLayer(arg_10_0._tf, false)
 end
 

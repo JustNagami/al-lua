@@ -120,13 +120,13 @@
 			}
 		},
 		{
-			expression = 8,
+			expression = 1,
 			side = 2,
 			bgName = "bg_huiguangzhicheng_1",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#5CE6FF",
-			actor = 805030,
+			actor = 901070,
 			say = "……因为，包围我们的人……有办法规避我们雷达的捕捉。",
 			painting = {
 				alpha = 0.3,

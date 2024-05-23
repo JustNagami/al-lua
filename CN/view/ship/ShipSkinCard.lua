@@ -201,7 +201,7 @@ end
 function var_0_0.loadPainting(arg_15_0)
 	arg_15_0.paintingName = arg_15_0.skin and arg_15_0.skin.painting or "unknown"
 
-	local var_15_0 = PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. arg_15_0.paintingName .. "_n"))
+	local var_15_0 = checkABExist("painting/" .. arg_15_0.paintingName .. "_n")
 
 	setActive(arg_15_0.hideObjToggle, var_15_0)
 

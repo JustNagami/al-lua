@@ -79,7 +79,7 @@ function var_0_0.OnUpdating(arg_8_0)
 end
 
 function var_0_0.OnUpdated(arg_9_0, arg_9_1, arg_9_2)
-	local var_9_0 = PathMgr.FileExists(PathMgr.getAssetBundle(arg_9_1))
+	local var_9_0 = checkABExist(arg_9_1)
 
 	setActive(arg_9_0.live2dBtn, var_9_0)
 	setActive(arg_9_0.live2dState, false)
