@@ -79,7 +79,7 @@ local function var_0_5(arg_1_0, arg_1_1, arg_1_2)
 				SetParent(arg_6_0._rectImg, arg_6_0._rectItem, false)
 
 				if arg_6_0._startTfPos then
-					arg_6_0._rectImg.anchoredPosition = arg_6_0._startTfPos
+					arg_6_0._rectImg.anchoredPosition = Vector2(0, 0)
 				end
 			end
 		end,

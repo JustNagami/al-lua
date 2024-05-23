@@ -178,6 +178,12 @@ function var_0_0.Ctor(arg_28_0, arg_28_1, arg_28_2)
 
 	function arg_28_0.mapItemCallback(arg_29_0, arg_29_1)
 		if var_0_0.CLICK_MAP_ITEM == arg_29_0 then
+			if arg_28_0._dragTempItem then
+				arg_28_0._dragTempItem:clear()
+
+				arg_28_0._dragTempItem = nil
+			end
+
 			arg_28_0._eventCallback(PipeGameEvent.STOP_RECT_DRAG)
 
 			if not arg_28_0._clickTempItem then

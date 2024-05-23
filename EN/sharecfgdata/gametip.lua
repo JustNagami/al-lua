@@ -23511,16 +23511,16 @@ _G.pg.base.gametip.backyard_shipAddMoney_ships_ok = {
 	tip = "<color=#92fc63>$1 and others</color> made a surprising discovery! Decor Tokens <color=#92fc63>+$2</color>."
 }
 _G.pg.base.gametip.main_silent_tip_1 = {
-	tip = "fleet(s) have returned from commission."
+	tip = "team(s) back from commission"
 }
 _G.pg.base.gametip.main_silent_tip_2 = {
-	tip = "shipgirl(s) have finished construction."
+	tip = "ship(s) finished construction"
 }
 _G.pg.base.gametip.main_silent_tip_3 = {
-	tip = "research project(s) have been completed."
+	tip = "research project(s) completed"
 }
 _G.pg.base.gametip.main_silent_tip_4 = {
-	tip = "shipgirl(s) finished tactical training."
+	tip = "ship(s) finished tactical training"
 }
 _G.pg.base.gametip.commission_label_go = {
 	tip = "Confirm"
@@ -23663,7 +23663,29 @@ _G.pg.base.gametip.liner_event_title3 = {
 	tip = "Clue 3"
 }
 _G.pg.base.gametip.liner_help = {
-	tip = ""
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/2024liner",
+				path = ""
+			}
+		},
+		disableScroll = true,
+		pageMode = true,
+		ImageMode = true,
+		defaultpage = 1,
+		windowSize = {
+			x = 1263,
+			y = 873
+		},
+		windowPos = {
+			y = -70
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024
+		}
+	}
 }
 _G.pg.base.gametip.liner_activity_lock = {
 	tip = "Unlocked by completing the Before the Voyage event."

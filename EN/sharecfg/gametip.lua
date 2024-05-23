@@ -25473,241 +25473,241 @@ cs.gametip = {
 	},
 	main_silent_tip_1 = {
 		966799,
-		120,
+		109,
 		true
 	},
 	main_silent_tip_2 = {
-		966919,
-		120,
+		966908,
+		110,
 		true
 	},
 	main_silent_tip_3 = {
-		967039,
-		121,
+		967018,
+		110,
 		true
 	},
 	main_silent_tip_4 = {
-		967160,
-		120,
+		967128,
+		115,
 		true
 	},
 	commission_label_go = {
-		967280,
+		967243,
 		90,
 		true
 	},
 	commission_label_finish = {
-		967370,
+		967333,
 		95,
 		true
 	},
 	commission_label_go_mellow = {
-		967465,
+		967428,
 		97,
 		true
 	},
 	commission_label_finish_mellow = {
-		967562,
+		967525,
 		102,
 		true
 	},
 	commission_label_unlock_event_tip = {
-		967664,
+		967627,
 		126,
 		true
 	},
 	commission_label_unlock_tech_tip = {
-		967790,
+		967753,
 		125,
 		true
 	},
 	specialshipyard_tip = {
-		967915,
+		967878,
 		165,
 		true
 	},
 	specialshipyard_name = {
-		968080,
+		968043,
 		97,
 		true
 	},
 	liner_sign_cnt_tip = {
-		968177,
+		968140,
 		103,
 		true
 	},
 	liner_sign_unlock_tip = {
-		968280,
+		968243,
 		100,
 		true
 	},
 	liner_target_type1 = {
-		968380,
+		968343,
 		93,
 		true
 	},
 	liner_target_type2 = {
-		968473,
+		968436,
 		91,
 		true
 	},
 	liner_target_type3 = {
-		968564,
+		968527,
 		98,
 		true
 	},
 	liner_target_type4 = {
-		968662,
+		968625,
 		97,
 		true
 	},
 	liner_target_type5 = {
-		968759,
+		968722,
 		112,
 		true
 	},
 	liner_log_schedule_title = {
-		968871,
+		968834,
 		103,
 		true
 	},
 	liner_log_room_title = {
-		968974,
+		968937,
 		109,
 		true
 	},
 	liner_log_event_title = {
-		969083,
+		969046,
 		101,
 		true
 	},
 	liner_schedule_award_tip1 = {
-		969184,
+		969147,
 		113,
 		true
 	},
 	liner_schedule_award_tip2 = {
-		969297,
+		969260,
 		113,
 		true
 	},
 	liner_room_award_tip = {
-		969410,
+		969373,
 		109,
 		true
 	},
 	liner_event_award_tip1 = {
-		969519,
+		969482,
 		152,
 		true
 	},
 	liner_log_event_group_title1 = {
-		969671,
+		969634,
 		102,
 		true
 	},
 	liner_log_event_group_title2 = {
-		969773,
+		969736,
 		102,
 		true
 	},
 	liner_log_event_group_title3 = {
-		969875,
+		969838,
 		102,
 		true
 	},
 	liner_log_event_group_title4 = {
-		969977,
+		969940,
 		102,
 		true
 	},
 	liner_event_award_tip2 = {
-		970079,
+		970042,
 		115,
 		true
 	},
 	liner_event_reasoning_title = {
-		970194,
+		970157,
 		107,
 		true
 	},
 	["7th_main_tip"] = {
-		970301,
+		970264,
 		850,
 		true
 	},
 	pipe_minigame_help = {
-		971151,
+		971114,
 		294,
 		true
 	},
 	pipe_minigame_rank = {
-		971445,
+		971408,
 		114,
 		true
 	},
 	liner_event_award_tip3 = {
-		971559,
+		971522,
 		128,
 		true
 	},
 	liner_room_get_tip = {
-		971687,
+		971650,
 		110,
 		true
 	},
 	liner_event_get_tip = {
-		971797,
+		971760,
 		101,
 		true
 	},
 	liner_event_lock = {
-		971898,
+		971861,
 		132,
 		true
 	},
 	liner_event_title1 = {
-		972030,
+		971993,
 		88,
 		true
 	},
 	liner_event_title2 = {
-		972118,
+		972081,
 		88,
 		true
 	},
 	liner_event_title3 = {
-		972206,
+		972169,
 		88,
 		true
 	},
 	liner_help = {
-		972294,
-		74,
+		972257,
+		282,
 		true
 	},
 	liner_activity_lock = {
-		972368,
+		972539,
 		135,
 		true
 	},
 	liner_name_modify = {
-		972503,
+		972674,
 		122,
 		true
 	},
 	UrExchange_Pt_NotEnough = {
-		972625,
+		972796,
 		125,
 		true
 	},
 	UrExchange_Pt_charges = {
-		972750,
+		972921,
 		105,
 		true
 	},
 	UrExchange_Pt_help = {
-		972855,
+		973026,
 		335,
 		true
 	}

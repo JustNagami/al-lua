@@ -73,10 +73,6 @@ function var_0_0.ShowAnim(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
 					arg_5_0.timeAnim:Play(var_5_6)
 				end, var_0_0.ANIM_TIME, nil)
 			else
-				local var_8_0
-
-				var_8_0 = var_5_4 <= 12 and " AM" or " PM"
-
 				arg_5_0:managedTween(LeanTween.value, nil, go(arg_5_0.rotateTF), var_5_11, var_5_12, var_0_0.ANIM_TIME):setOnUpdate(System.Action_float(function(arg_10_0)
 					setLocalEulerAngles(arg_5_0.rotateTF, {
 						z = -arg_10_0
