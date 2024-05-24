@@ -6,6 +6,16 @@
 	desc = "",
 	effect_list = {
 		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 17948,
+				delay = 0.1
+			}
+		},
+		{
 			type = "BattleSkillTeleport",
 			target_choise = {
 				"TargetAllHarm",
@@ -29,16 +39,6 @@
 			targetAniEffect = "",
 			arg_list = {
 				buff_id = 17944,
-				delay = 0.1
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 17948,
 				delay = 0.1
 			}
 		},
