@@ -601,7 +601,7 @@
 			bgName = "star_level_bg_542",
 			hidePaintObj = true,
 			nameColor = "#5CE6FF",
-			say = "(Who in the world...)",
+			say = "(...I did what?)",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

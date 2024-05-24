@@ -310,7 +310,7 @@ function setPaintingPrefab(arg_35_0, arg_35_1, arg_35_2, arg_35_3)
 
 	local var_35_2 = arg_35_1
 
-	if not arg_35_3 and PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. arg_35_1 .. "_n")) and PlayerPrefs.GetInt("paint_hide_other_obj_" .. arg_35_1, 0) ~= 0 then
+	if not arg_35_3 and checkABExist("painting/" .. arg_35_1 .. "_n") and PlayerPrefs.GetInt("paint_hide_other_obj_" .. arg_35_1, 0) ~= 0 then
 		arg_35_1 = arg_35_1 .. "_n"
 	end
 
@@ -338,7 +338,7 @@ local var_0_2 = {}
 function setPaintingPrefabAsync(arg_37_0, arg_37_1, arg_37_2, arg_37_3, arg_37_4)
 	local var_37_0 = arg_37_1
 
-	if PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. arg_37_1 .. "_n")) and PlayerPrefs.GetInt("paint_hide_other_obj_" .. arg_37_1, 0) ~= 0 then
+	if checkABExist("painting/" .. arg_37_1 .. "_n") and PlayerPrefs.GetInt("paint_hide_other_obj_" .. arg_37_1, 0) ~= 0 then
 		arg_37_1 = arg_37_1 .. "_n"
 	end
 
@@ -479,7 +479,7 @@ function checkPaintingPrefab(arg_44_0, arg_44_1, arg_44_2, arg_44_3, arg_44_4)
 	local var_44_2 = arg_44_4 or "painting/"
 	local var_44_3 = arg_44_1
 
-	if not arg_44_3 and PathMgr.FileExists(PathMgr.getAssetBundle(var_44_2 .. arg_44_1 .. "_n")) and PlayerPrefs.GetInt("paint_hide_other_obj_" .. arg_44_1, 0) ~= 0 then
+	if not arg_44_3 and checkABExist(var_44_2 .. arg_44_1 .. "_n") and PlayerPrefs.GetInt("paint_hide_other_obj_" .. arg_44_1, 0) ~= 0 then
 		arg_44_1 = arg_44_1 .. "_n"
 	end
 
@@ -4451,4 +4451,16 @@ function buildTempAB(arg_308_0, arg_308_1)
 	end
 
 	return var_308_0
+end
+
+function checkABExist(arg_311_0)
+	if EDITOR_TOOL then
+		return ReflectionHelp.RefCallMethod(typeof(ResourceMgr), "CheckAssetBundleExist", ResourceMgr.Inst, {
+			typeof("System.String")
+		}, {
+			arg_311_0
+		})
+	else
+		return PathMgr.FileExists(PathMgr.getAssetBundle(arg_311_0))
+	end
 end

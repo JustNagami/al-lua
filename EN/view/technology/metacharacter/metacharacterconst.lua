@@ -57,7 +57,7 @@ function var_0_0.GetMetaCharacterPaintPath(arg_2_0, arg_2_1)
 		local var_2_2 = arg_2_0 .. var_0_0.META_ACTIVE_LASTFIX .. var_0_0.HX_TAG
 		local var_2_3 = var_0_0.META_ART_RESOURCE_PERFIX .. var_2_2
 
-		if not PathMgr.FileExists(PathMgr.getAssetBundle(var_2_3)) then
+		if not checkABExist(var_2_3) then
 			var_2_2 = arg_2_0 .. var_0_0.META_ACTIVE_LASTFIX
 			var_2_3 = var_0_0.META_ART_RESOURCE_PERFIX .. var_2_2
 		end
@@ -67,7 +67,7 @@ function var_0_0.GetMetaCharacterPaintPath(arg_2_0, arg_2_1)
 		local var_2_4 = arg_2_0 .. var_0_0.META_DISACTIVE_LASTFIX .. var_0_0.HX_TAG
 		local var_2_5 = var_0_0.META_ART_RESOURCE_PERFIX .. var_2_4
 
-		if not PathMgr.FileExists(PathMgr.getAssetBundle(var_2_5)) then
+		if not checkABExist(var_2_5) then
 			var_2_4 = arg_2_0 .. var_0_0.META_DISACTIVE_LASTFIX
 			var_2_5 = var_0_0.META_ART_RESOURCE_PERFIX .. var_2_4
 		end

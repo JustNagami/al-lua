@@ -1090,7 +1090,7 @@
 			actorName = "Memphis META",
 			bgName = "bg_zhedie_10",
 			nameColor = "#a020f0",
-			say = "I silently pull Memphis into a hug.",
+			say = "*sniffle*... Helena...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -1355,7 +1355,7 @@
 			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "bg_zhedie_11",
-			say = "I silently pull Memphis into a hug.",
+			say = ".........",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -1830,7 +1830,7 @@
 			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "bg_zhedie_11",
-			say = "I silently pull Memphis into a hug.",
+			say = "\"...The last light has faded. And fight I will until everyone's safe.\"",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

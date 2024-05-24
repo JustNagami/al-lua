@@ -143,8 +143,8 @@ function var_0_0.PlayCpkMovie(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4
 				arg_4_0._criUsm.renderMode = ReflectionHelp.RefGetField(typeof("CriManaMovieMaterial+RenderMode"), "Always", nil)
 			end
 
-			if arg_4_0._usmImg and arg_4_0._usmImg.color.a == 0 then
-				arg_4_0._usmImg.color = Color.New(1, 1, 1, 0.1)
+			if arg_4_0._usmImg then
+				arg_4_0._usmImg.color = Color.New(1, 1, 1, 1)
 			end
 
 			arg_4_0:CpkDebug("Instantiate")
@@ -171,6 +171,11 @@ function var_0_0.CpkDebug(arg_14_0, arg_14_1)
 		warning("CriManaMovieMaterial.isMaterialAvailable ", arg_14_0._criCpk.isMaterialAvailable)
 		warning("CriManaMovieMaterial.player ", arg_14_0._criCpk.player)
 		warning("CriManaMovieMaterial.material ", arg_14_0._criCpk.material)
+
+		if arg_14_0._criCpk.material then
+			warning("Material.Shader", arg_14_0._criCpk.material.shader)
+			warning("Material.mainTexture", arg_14_0._criCpk.material.mainTexture)
+		end
 	end
 
 	if arg_14_0._usmImg then
@@ -180,7 +185,10 @@ function var_0_0.CpkDebug(arg_14_0, arg_14_1)
 	local var_14_0 = tf(arg_14_0._mainTF):Find("usm")
 
 	if var_14_0 then
+		warning("usmEnable", isActive(var_14_0))
 		warning("UsmPositon", var_14_0.transform.position)
+		warning("UsmScale", var_14_0.transform.localScale)
+		warning("UsmRotation", var_14_0.transform.localRotation)
 	end
 
 	local var_14_1 = var_14_0:GetComponent("AspectRatioFitter")

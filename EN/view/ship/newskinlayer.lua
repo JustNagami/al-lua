@@ -102,7 +102,7 @@ function var_0_0.setSkin(arg_7_0, arg_7_1)
 
 	local var_7_0 = "star_level_unlock_anim_" .. arg_7_1
 
-	if PathMgr.FileExists(PathMgr.getAssetBundle("ui/skinunlockanim/" .. var_7_0)) then
+	if checkABExist("ui/skinunlockanim/" .. var_7_0) then
 		arg_7_0:playOpening(function()
 			arg_7_0:setSkinPri(arg_7_1)
 		end, var_7_0)

@@ -1002,7 +1002,7 @@ function var_0_0.displayShipWord(arg_88_0, arg_88_1)
 end
 
 function var_0_0.useL2dOrPainting(arg_93_0)
-	return PathMgr.FileExists(PathMgr.getAssetBundle("live2d/" .. string.lower(arg_93_0.paintingName)))
+	return checkABExist("live2d/" .. string.lower(arg_93_0.paintingName))
 end
 
 function var_0_0.showStoryUI(arg_94_0, arg_94_1)
@@ -1140,7 +1140,7 @@ function var_0_0.loadChar(arg_104_0, arg_104_1, arg_104_2, arg_104_3)
 
 			local var_105_0 = arg_104_0.paintingName
 
-			if PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_105_0 .. "_n")) and PlayerPrefs.GetInt("paint_hide_other_obj_" .. var_105_0, 0) ~= 0 then
+			if checkABExist("painting/" .. var_105_0 .. "_n") and PlayerPrefs.GetInt("paint_hide_other_obj_" .. var_105_0, 0) ~= 0 then
 				var_105_0 = var_105_0 .. "_n"
 			end
 
@@ -1157,7 +1157,7 @@ function var_0_0.loadChar(arg_104_0, arg_104_1, arg_104_2, arg_104_3)
 				arg_105_0()
 			end)
 
-			if PathMgr.FileExists(PathMgr.getAssetBundle("live2d/" .. string.lower(arg_104_0.paintingName))) then
+			if checkABExist("live2d/" .. string.lower(arg_104_0.paintingName)) then
 				arg_104_0:createLive2D(arg_104_0.paintingName)
 			end
 		end)

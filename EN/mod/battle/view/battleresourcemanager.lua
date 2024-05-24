@@ -600,7 +600,7 @@ function var_0_5.StartPreload(arg_50_0, arg_50_1, arg_50_2)
 			local var_50_7 = false
 
 			if PlayerPrefs.GetInt(BATTLE_HIDE_BG, 1) > 0 then
-				var_50_7 = PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_50_3 .. "_n"))
+				var_50_7 = checkABExist("painting/" .. var_50_3 .. "_n")
 			else
 				var_50_7 = PlayerPrefs.GetInt("paint_hide_other_obj_" .. var_50_3, 0) ~= 0
 			end

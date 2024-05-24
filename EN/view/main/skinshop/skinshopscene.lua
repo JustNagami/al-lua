@@ -510,7 +510,7 @@ function var_0_0.updateMainView(arg_41_0, arg_41_1)
 	end
 
 	local var_41_3 = var_41_0.painting
-	local var_41_4 = PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_41_3 .. "_n"))
+	local var_41_4 = checkABExist("painting/" .. var_41_3 .. "_n")
 
 	setActive(arg_41_0.hideObjToggleTF, var_41_4)
 
@@ -563,7 +563,7 @@ function var_0_0.UpdateLiveToggle(arg_43_0, arg_43_1, arg_43_2)
 	local var_43_4 = getProxy(PlayerProxy):getRawData().id
 	local var_43_5 = PlayerPrefs.GetInt("skinShop#l2dPreViewToggle" .. var_43_4, 0) == 1
 	local var_43_6 = pg.ship_skin_template[var_43_0.id].painting
-	local var_43_7 = PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_43_6 .. "_n"))
+	local var_43_7 = checkABExist("painting/" .. var_43_6 .. "_n")
 	local var_43_8 = true
 
 	if var_43_3 then
@@ -610,7 +610,7 @@ function var_0_0.UpdateSpineState(arg_45_0, arg_45_1, arg_45_2)
 	local var_45_0 = pg.ship_skin_template[arg_45_1.id].painting
 	local var_45_1 = "SpinePainting/" .. string.lower(var_45_0)
 	local var_45_2 = HXSet.autoHxShiftPath(var_45_1, nil, true)
-	local var_45_3 = PathMgr.FileExists(PathMgr.getAssetBundle(var_45_2))
+	local var_45_3 = checkABExist(var_45_2)
 
 	setActive(arg_45_0.l2dUnDownload, not var_45_3)
 	setActive(arg_45_0.l2dDownloaded, var_45_3)
@@ -668,7 +668,7 @@ function var_0_0.UpdateLive2dDownloadState(arg_50_0, arg_50_1, arg_50_2)
 	local var_50_0 = pg.ship_skin_template[arg_50_1.id].painting
 	local var_50_1 = "live2d/" .. string.lower(var_50_0)
 	local var_50_2 = HXSet.autoHxShiftPath(var_50_1, nil, true)
-	local var_50_3 = PathMgr.FileExists(PathMgr.getAssetBundle(var_50_2))
+	local var_50_3 = checkABExist(var_50_2)
 
 	setActive(arg_50_0.l2dUnDownload, not var_50_3)
 	setActive(arg_50_0.l2dDownloaded, var_50_3)
@@ -1122,11 +1122,11 @@ function var_0_0.setPaintingPrefab(arg_82_0, arg_82_1, arg_82_2, arg_82_3, arg_8
 
 	local var_82_2 = arg_82_2
 
-	if not arg_82_4 and PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. arg_82_2 .. "_n")) then
+	if not arg_82_4 and checkABExist("painting/" .. arg_82_2 .. "_n") then
 		arg_82_2 = arg_82_2 .. "_n"
 	end
 
-	if PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. arg_82_2)) then
+	if checkABExist("painting/" .. arg_82_2) then
 		pg.UIMgr.GetInstance():LoadingOn()
 		PoolMgr.GetInstance():GetPainting(arg_82_2, true, function(arg_83_0)
 			pg.UIMgr.GetInstance():LoadingOff()

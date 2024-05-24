@@ -11,7 +11,7 @@ function var_0_0.LoadBg(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5, ar
 	local var_2_0 = "bg/star_level_bg_" .. arg_2_2
 	local var_2_1 = "ui/star_level_bg_" .. arg_2_2
 
-	if PathMgr.FileExists(PathMgr.getAssetBundle(var_2_1)) then
+	if checkABExist(var_2_1) then
 		arg_2_0:ClearBg(arg_2_1:getUIName())
 		PoolMgr.GetInstance():GetPrefab(var_2_1, "", true, function(arg_3_0)
 			if not arg_2_1.exited then

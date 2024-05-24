@@ -11,7 +11,7 @@ end
 function var_0_0.IsActive(arg_2_0, arg_2_1)
 	local var_2_0 = HXSet.autoHxShiftPath("spinepainting/" .. arg_2_1:getPainting())
 
-	return (PathMgr.FileExists(PathMgr.getAssetBundle(var_2_0)))
+	return (checkABExist(var_2_0))
 end
 
 function var_0_0.GetDefaultValue(arg_3_0)

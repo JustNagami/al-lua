@@ -84,13 +84,14 @@
 			}
 		},
 		{
-			actor = 9705050,
 			side = 2,
 			actorShadow = true,
-			hidePaintObj = true,
+			actorName = "？？？",
 			dir = 1,
 			blackBg = true,
+			actor = 9705050,
 			nameColor = "#BDBDBD",
+			hidePaintObj = true,
 			say = "Embracing death, one after the next... Is this what you chose?",
 			painting = {
 				alpha = 0.3,

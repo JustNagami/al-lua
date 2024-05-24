@@ -43,7 +43,7 @@ function var_0_0.Play(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
 	local var_3_0 = arg_3_0:getCpkName(arg_3_1.param[1]) or ""
 	local var_3_1 = arg_3_1.param[2] or 3
 
-	if PathMgr.FileExists(PathMgr.getAssetBundle("educateanim/" .. var_3_0)) then
+	if checkABExist("educateanim/" .. var_3_0) then
 		ResourceMgr.Inst:getAssetAsync("educateanim/" .. var_3_0, var_3_0, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_4_0)
 			local var_4_0 = Object.Instantiate(arg_4_0, arg_3_0.cpkParentTF)
 

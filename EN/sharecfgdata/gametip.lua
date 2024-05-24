@@ -3858,7 +3858,7 @@ _G.pg.base.gametip.buy_item_quest = {
 	tip = "Are you sure you want to buy this item?"
 }
 _G.pg.base.gametip.refresh_shopStreet_question = {
-	tip = "Spend $1 <color=#92fc63>$2</color> to refresh the list of items in the shop?\n\n<size=30>(Bought <size=30><color=#FF0000>$3</color></size> times today)</size>"
+	tip = "Spend $1 <color=#92fc63>$2</color><color=#92fc63>Gems</color> to refresh the list of items in the shop?\n\n<size=30>(Bought <size=30><color=#FF0000>$3</color></size> times today)</size>"
 }
 _G.pg.base.gametip.quota_shop_title = {
 	tip = "Core Shop (Ltd.)"
@@ -5753,7 +5753,7 @@ _G.pg.base.gametip.gold_buy_tip = {
 	tip = "<size=24>Spend </size><icon name=diamond w=0.7 h=0.7/><size=25><color=#92fc63>100</color></size> to buy <size=25><color=#92fc63>3000</color></size><size=24> Coins</size>"
 }
 _G.pg.base.gametip.oil_buy_tip = {
-	tip = "<size=24>Spend </size><icon name=diamond w=0.7 h=0.7/><size=25><color=#92fc63>$1</color></size> to buy <size=25><color=#92fc63>$2</color></size><size=24> Oil</size><size=2>\n\n</size><size=22>(Already bought <size=25><color=#FF0000>$3</color></size> times today)</size>"
+	tip = "<size=24>Spend </size><icon name=diamond w=0.7 h=0.7/><size=25><color=#92fc63>$1</color></size><size=25><color=#92fc63>Gems</color></size> to buy <size=25><color=#92fc63>$2</color></size><size=24> Oil</size><size=2>\n\n</size><size=22>(Already bought <size=25><color=#FF0000>$3</color></size> times today)</size>"
 }
 _G.pg.base.gametip.text_iknow = {
 	tip = "Got it"
@@ -8386,7 +8386,7 @@ _G.pg.base.gametip.Normalbuild_URexchange_confirm = {
 	tip = "Exchange 400 points for $1?"
 }
 _G.pg.base.gametip.open_skill_pos = {
-	tip = "It will cost you <icon name=diamond w=0.7 h=0.7 y=0.3 /><color=#ffff00>$1</color> to unlock another slot, Do you wish to proceed?"
+	tip = "It will cost you <icon name=diamond w=0.7 h=0.7 y=0.3 /><color=#ffff00>$1</color><color=#92fc63>Gems</color> to unlock another slot, Do you wish to proceed?"
 }
 _G.pg.base.gametip.open_skill_pos_discount = {
 	tip = "It will cost you <icon name=diamond w=0.7 h=0.7 y=0.3 /><color=grey>$1</color> <color=#ffff00>$2</color> to unlock the slot , \nDo you wish to proceed?"

@@ -202,7 +202,7 @@ function var_0_0.initEmpty(arg_16_0, arg_16_1)
 		local var_16_12 = pg.cartoon[iter_16_1].resource
 		local var_16_13 = MangaConst.MANGA_PATH_PREFIX .. var_16_12
 
-		if PathMgr.FileExists(PathMgr.getAssetBundle(var_16_13)) then
+		if checkABExist(var_16_13) then
 			var_16_10 = var_16_12
 			var_16_11 = var_16_13
 

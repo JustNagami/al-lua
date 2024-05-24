@@ -238,9 +238,9 @@ function var_0_0.GetAssistantStatus(arg_24_0)
 	local var_24_0 = arg_24_0:getPainting()
 	local var_24_1 = getProxy(SettingsProxy)
 	local var_24_2 = HXSet.autoHxShiftPath("spinepainting/" .. var_24_0)
-	local var_24_3 = PathMgr.FileExists(PathMgr.getAssetBundle(var_24_2))
+	local var_24_3 = checkABExist(var_24_2)
 	local var_24_4 = HXSet.autoHxShiftPath("live2d/" .. var_24_0)
-	local var_24_5 = var_0_0.Live2dIsDownload(var_24_4) and PathMgr.FileExists(PathMgr.getAssetBundle(var_24_4))
+	local var_24_5 = var_0_0.Live2dIsDownload(var_24_4) and checkABExist(var_24_4)
 	local var_24_6 = var_24_1:getCharacterSetting(arg_24_0.id, SHIP_FLAG_BG)
 
 	if var_24_1:getCharacterSetting(arg_24_0.id, SHIP_FLAG_SP) and var_24_3 then
