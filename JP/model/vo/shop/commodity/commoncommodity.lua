@@ -118,12 +118,16 @@ end
 function var_0_0.CanUseVoucherType(arg_13_0)
 	local var_13_0 = getProxy(BagProxy):GetSkinShopDiscountItemList()
 
-	if #var_13_0 <= 0 then
+	return arg_13_0:StaticCanUseVoucherType(var_13_0)
+end
+
+function var_0_0.StaticCanUseVoucherType(arg_14_0, arg_14_1)
+	if #arg_14_1 <= 0 then
 		return false
 	end
 
-	for iter_13_0, iter_13_1 in ipairs(var_13_0) do
-		if iter_13_1:CanUseForShop(arg_13_0.id) then
+	for iter_14_0, iter_14_1 in ipairs(arg_14_1) do
+		if iter_14_1:CanUseForShop(arg_14_0.id) then
 			return true
 		end
 	end
@@ -131,77 +135,77 @@ function var_0_0.CanUseVoucherType(arg_13_0)
 	return false
 end
 
-function var_0_0.GetVoucherIdList(arg_14_0)
-	local var_14_0 = {}
-	local var_14_1 = getProxy(BagProxy):GetSkinShopDiscountItemList()
+function var_0_0.GetVoucherIdList(arg_15_0)
+	local var_15_0 = {}
+	local var_15_1 = getProxy(BagProxy):GetSkinShopDiscountItemList()
 
-	for iter_14_0, iter_14_1 in pairs(var_14_1) do
-		if iter_14_1:CanUseForShop(arg_14_0.id) then
-			table.insert(var_14_0, iter_14_1.id)
+	for iter_15_0, iter_15_1 in pairs(var_15_1) do
+		if iter_15_1:CanUseForShop(arg_15_0.id) then
+			table.insert(var_15_0, iter_15_1.id)
 		end
 	end
 
-	return var_14_0
+	return var_15_0
 end
 
-function var_0_0.getLimitCount(arg_15_0)
-	local var_15_0 = arg_15_0:getConfig("limit_args") or {}
+function var_0_0.getLimitCount(arg_16_0)
+	local var_16_0 = arg_16_0:getConfig("limit_args") or {}
 
-	for iter_15_0, iter_15_1 in ipairs(var_15_0) do
-		if iter_15_1[1] == "time" then
-			return iter_15_1[2]
+	for iter_16_0, iter_16_1 in ipairs(var_16_0) do
+		if iter_16_1[1] == "time" then
+			return iter_16_1[2]
 		end
 	end
 
 	return 0
 end
 
-function var_0_0.GetDiscountItem(arg_16_0)
-	if arg_16_0:IsItemDiscountType() then
+function var_0_0.GetDiscountItem(arg_17_0)
+	if arg_17_0:IsItemDiscountType() then
 		return SkinCouponActivity.StaticGetItemConfig()
 	end
 
 	return nil
 end
 
-function var_0_0.isLevelLimit(arg_17_0, arg_17_1, arg_17_2)
-	local var_17_0, var_17_1 = arg_17_0:getLevelLimit()
+function var_0_0.isLevelLimit(arg_18_0, arg_18_1, arg_18_2)
+	local var_18_0, var_18_1 = arg_18_0:getLevelLimit()
 
-	if arg_17_2 and var_17_1 then
+	if arg_18_2 and var_18_1 then
 		return false
 	end
 
-	return var_17_0 > 0 and arg_17_1 < var_17_0
+	return var_18_0 > 0 and arg_18_1 < var_18_0
 end
 
-function var_0_0.getLevelLimit(arg_18_0)
-	local var_18_0 = arg_18_0:getConfig("limit_args")
+function var_0_0.getLevelLimit(arg_19_0)
+	local var_19_0 = arg_19_0:getConfig("limit_args")
 
-	for iter_18_0, iter_18_1 in ipairs(var_18_0) do
-		if type(iter_18_1) == "table" and iter_18_1[1] == "level" then
-			return iter_18_1[2], iter_18_1[3]
+	for iter_19_0, iter_19_1 in ipairs(var_19_0) do
+		if type(iter_19_1) == "table" and iter_19_1[1] == "level" then
+			return iter_19_1[2], iter_19_1[3]
 		end
 	end
 
 	return 0
 end
 
-function var_0_0.isTimeLimit(arg_19_0)
-	local var_19_0 = arg_19_0:getLimitCount()
+function var_0_0.isTimeLimit(arg_20_0)
+	local var_20_0 = arg_20_0:getLimitCount()
 
-	return var_19_0 <= 0 or var_19_0 < arg_19_0.buyCount
+	return var_20_0 <= 0 or var_20_0 < arg_20_0.buyCount
 end
 
-function var_0_0.getSkinId(arg_20_0)
-	if arg_20_0.type == Goods.TYPE_SKIN then
-		return arg_20_0:getConfig("effect_args")[1]
+function var_0_0.getSkinId(arg_21_0)
+	if arg_21_0.type == Goods.TYPE_SKIN then
+		return arg_21_0:getConfig("effect_args")[1]
 	end
 
 	assert(false)
 end
 
-function var_0_0.getDropInfo(arg_21_0)
-	local var_21_0 = switch(arg_21_0:getConfig("effect_args"), {
+function var_0_0.getDropInfo(arg_22_0)
+	local var_22_0 = switch(arg_22_0:getConfig("effect_args"), {
 		ship_bag_size = function()
 			return {
 				count = 1,
@@ -245,85 +249,85 @@ function var_0_0.getDropInfo(arg_21_0)
 			}
 		end
 	}, function()
-		if arg_21_0:getConfig("genre") == ShopArgs.WorldCollection then
+		if arg_22_0:getConfig("genre") == ShopArgs.WorldCollection then
 			return {
 				type = DROP_TYPE_WORLD_ITEM,
-				id = arg_21_0:getConfig("effect_args")[1],
-				count = arg_21_0:getConfig("num")
+				id = arg_22_0:getConfig("effect_args")[1],
+				count = arg_22_0:getConfig("num")
 			}
 		else
 			return {
-				type = arg_21_0:getConfig("type"),
-				id = arg_21_0:getConfig("effect_args")[1],
-				count = arg_21_0:getConfig("num")
+				type = arg_22_0:getConfig("type"),
+				id = arg_22_0:getConfig("effect_args")[1],
+				count = arg_22_0:getConfig("num")
 			}
 		end
 	end)
 
-	return Drop.New(var_21_0)
+	return Drop.New(var_22_0)
 end
 
-function var_0_0.GetDropList(arg_29_0)
-	local var_29_0 = {}
-	local var_29_1 = Item.getConfigData(arg_29_0:getConfig("effect_args")[1]).display_icon
+function var_0_0.GetDropList(arg_30_0)
+	local var_30_0 = {}
+	local var_30_1 = Item.getConfigData(arg_30_0:getConfig("effect_args")[1]).display_icon
 
-	if type(var_29_1) == "table" then
-		for iter_29_0, iter_29_1 in ipairs(var_29_1) do
-			table.insert(var_29_0, {
-				type = iter_29_1[1],
-				id = iter_29_1[2],
-				count = iter_29_1[3]
+	if type(var_30_1) == "table" then
+		for iter_30_0, iter_30_1 in ipairs(var_30_1) do
+			table.insert(var_30_0, {
+				type = iter_30_1[1],
+				id = iter_30_1[2],
+				count = iter_30_1[3]
 			})
 		end
 	end
 
-	return var_29_0
+	return var_30_0
 end
 
-function var_0_0.IsGroupLimit(arg_30_0)
-	if arg_30_0:getConfig("group") <= 0 then
+function var_0_0.IsGroupLimit(arg_31_0)
+	if arg_31_0:getConfig("group") <= 0 then
 		return false
 	end
 
-	local var_30_0 = arg_30_0:getConfig("group_limit")
+	local var_31_0 = arg_31_0:getConfig("group_limit")
 
-	return var_30_0 > 0 and var_30_0 <= (arg_30_0.groupCount or 0)
+	return var_31_0 > 0 and var_31_0 <= (arg_31_0.groupCount or 0)
 end
 
-function var_0_0.GetLimitDesc(arg_31_0)
-	local var_31_0 = arg_31_0:getLimitCount()
-	local var_31_1 = arg_31_0.buyCount or 0
+function var_0_0.GetLimitDesc(arg_32_0)
+	local var_32_0 = arg_32_0:getLimitCount()
+	local var_32_1 = arg_32_0.buyCount or 0
 
-	if var_31_0 > 0 then
-		return i18n("charge_limit_all", var_31_0 - var_31_1, var_31_0)
+	if var_32_0 > 0 then
+		return i18n("charge_limit_all", var_32_0 - var_32_1, var_32_0)
 	end
 
-	local var_31_2 = arg_31_0:getConfig("group_limit")
+	local var_32_2 = arg_32_0:getConfig("group_limit")
 
-	if var_31_2 > 0 then
-		local var_31_3 = arg_31_0:getConfig("group_type") or 0
+	if var_32_2 > 0 then
+		local var_32_3 = arg_32_0:getConfig("group_type") or 0
 
-		if var_31_3 == 1 then
-			return i18n("charge_limit_daily", var_31_2 - arg_31_0.groupCount, var_31_2)
-		elseif var_31_3 == 2 then
-			return i18n("charge_limit_weekly", var_31_2 - arg_31_0.groupCount, var_31_2)
-		elseif var_31_3 == 3 then
-			return i18n("charge_limit_monthly", var_31_2 - arg_31_0.groupCount, var_31_2)
+		if var_32_3 == 1 then
+			return i18n("charge_limit_daily", var_32_2 - arg_32_0.groupCount, var_32_2)
+		elseif var_32_3 == 2 then
+			return i18n("charge_limit_weekly", var_32_2 - arg_32_0.groupCount, var_32_2)
+		elseif var_32_3 == 3 then
+			return i18n("charge_limit_monthly", var_32_2 - arg_32_0.groupCount, var_32_2)
 		end
 	end
 
 	return ""
 end
 
-function var_0_0.GetGiftList(arg_32_0)
-	if arg_32_0:getConfig("genre") == ShopArgs.SkinShop then
-		local var_32_0 = arg_32_0:getSkinId()
+function var_0_0.GetGiftList(arg_33_0)
+	if arg_33_0:getConfig("genre") == ShopArgs.SkinShop then
+		local var_33_0 = arg_33_0:getSkinId()
 
 		return ShipSkin.New({
-			id = var_32_0
+			id = var_33_0
 		}):GetRewardList()
 	else
-		return var_0_0.super.GetGiftList(arg_32_0)
+		return var_0_0.super.GetGiftList(arg_33_0)
 	end
 end
 

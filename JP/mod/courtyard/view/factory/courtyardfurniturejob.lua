@@ -144,7 +144,7 @@ local function var_0_7(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
 	if arg_14_2:GetType() == Furniture.TYPE_ARCH then
 		local var_14_0 = arg_14_2:GetArchMask()
 
-		if not PathMgr.FileExists(PathMgr.getAssetBundle("furnitrues/" .. var_14_0)) then
+		if not checkABExist("furnitrues/" .. var_14_0) then
 			arg_14_3()
 
 			return

@@ -16,7 +16,7 @@
 			},
 			arg_list = {
 				minTargetNumber = 1,
-				buff_id = 200762,
+				buff_id = 200952,
 				target = "TargetSelf",
 				check_target = {
 					"TargetAllHarm",

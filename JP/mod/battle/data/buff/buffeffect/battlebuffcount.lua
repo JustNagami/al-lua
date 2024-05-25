@@ -159,7 +159,7 @@ function var_0_3.calcHPCount(arg_16_0, arg_16_1)
 	local var_16_0, var_16_1 = arg_16_1:GetHP()
 	local var_16_2, var_16_3 = arg_16_0._caster:GetHP()
 
-	arg_16_0._hpCountTarget = arg_16_0._casterMaxHPRatio * var_16_3 + arg_16_0._maxHPRatio * var_16_1 + arg_16_0._countTarget
+	arg_16_0._hpCountTarget = math.floor(arg_16_0._casterMaxHPRatio * var_16_3 + arg_16_0._maxHPRatio * var_16_1 + arg_16_0._countTarget)
 end
 
 function var_0_3.GetCountType(arg_17_0)

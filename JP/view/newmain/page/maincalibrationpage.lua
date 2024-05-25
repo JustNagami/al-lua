@@ -127,10 +127,10 @@ function var_0_0.ResetPostion(arg_16_0)
 
 	arg_16_0.spineContainer.anchoredPosition = var_16_5
 
-	if var_16_0 == var_0_0.STATE_L2D then
+	if var_16_0 == MainPaintingView.STATE_L2D then
 		arg_16_0._bgTf.localScale = var_16_4
 		arg_16_0.paintingTF.localScale = var_16_4
-	elseif var_16_0 == var_0_0.STATE_SPINE_PAINTING then
+	elseif var_16_0 == MainPaintingView.STATE_SPINE_PAINTING then
 		arg_16_0._bgTf.localScale = var_16_6
 		arg_16_0.paintingTF.localScale = var_16_6
 	else

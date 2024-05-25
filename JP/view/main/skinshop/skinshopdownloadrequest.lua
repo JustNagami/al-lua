@@ -38,7 +38,7 @@ function var_0_0.Refresh(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
 		var_3_3 = true
 	elseif var_3_4 == DownloadState.UpdateSuccess then
 		var_3_3 = true
-		var_3_2 = PathMgr.FileExists(PathMgr.getAssetBundle(arg_3_2))
+		var_3_2 = checkABExist(arg_3_2)
 	end
 
 	if arg_3_0.live2dTimer then

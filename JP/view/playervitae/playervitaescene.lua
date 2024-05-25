@@ -310,7 +310,7 @@ function var_0_0.checkShowResetL2dBtn(arg_27_0)
 	local var_27_1 = "live2d/" .. string.lower(var_27_0:getPainting())
 	local var_27_2 = HXSet.autoHxShiftPath(var_27_1, nil, true)
 
-	if not PathMgr.FileExists(PathMgr.getAssetBundle(var_27_2)) then
+	if not checkABExist(var_27_2) then
 		setActive(arg_27_0.btnLive2dReset, false)
 
 		return

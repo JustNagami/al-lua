@@ -36,7 +36,7 @@ end
 function var_0_0.OnInit(arg_3_0)
 	arg_3_0:UpdateActivity()
 	onButton(arg_3_0, arg_3_0.getBtn, function()
-		arg_3_0:emit(LinerLogBookMediator.GET_ROOM_AWARD, arg_3_0.activity.id, arg_3_0.curIdx)
+		arg_3_0:emit(LinerLogBookMediator.GET_ROOM_AWARD, arg_3_0.activity.id, arg_3_0.curIdx, arg_3_0.groups[arg_3_0.curIdx]:GetDrop())
 	end, SFX_CONFIRM)
 	onButton(arg_3_0, arg_3_0.goBtn, function()
 		arg_3_0:emit(LinerLogBookMediator.ON_CLOSE)

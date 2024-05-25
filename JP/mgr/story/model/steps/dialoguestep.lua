@@ -669,33 +669,23 @@ function var_0_0.OnClear(arg_73_0)
 	return
 end
 
-local function var_0_3(arg_74_0)
-	if IsUnityEditor or UnGamePlayState then
-		return true
-	else
-		return true
-	end
-end
+function var_0_0.GetUsingPaintingNames(arg_74_0)
+	local var_74_0 = {}
+	local var_74_1 = arg_74_0:GetPainting()
 
-function var_0_0.GetUsingPaintingNames(arg_75_0)
-	local var_75_0 = {}
-	local var_75_1 = arg_75_0:GetPainting()
-
-	if var_75_1 ~= nil and var_0_3(var_75_1) then
-		table.insert(var_75_0, var_75_1)
+	if var_74_1 ~= nil then
+		table.insert(var_74_0, var_74_1)
 	end
 
-	local var_75_2 = arg_75_0:GetSubPaintings()
+	local var_74_2 = arg_74_0:GetSubPaintings()
 
-	for iter_75_0, iter_75_1 in ipairs(var_75_2) do
-		local var_75_3 = iter_75_1.name
+	for iter_74_0, iter_74_1 in ipairs(var_74_2) do
+		local var_74_3 = iter_74_1.name
 
-		if var_0_3(var_75_3) then
-			table.insert(var_75_0, var_75_3)
-		end
+		table.insert(var_74_0, var_74_3)
 	end
 
-	return var_75_0
+	return var_74_0
 end
 
 return var_0_0

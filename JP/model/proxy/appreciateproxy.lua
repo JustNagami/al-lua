@@ -39,7 +39,7 @@ function var_0_0.checkPicFileState(arg_3_0)
 	for iter_3_0, iter_3_1 in ipairs(pg.gallery_config.all) do
 		local var_3_2 = pg.gallery_config[iter_3_1].illustration
 		local var_3_3 = GalleryConst.PIC_PATH_PREFIX .. var_3_2
-		local var_3_4 = PathMgr.FileExists(PathMgr.getAssetBundle(var_3_3))
+		local var_3_4 = checkABExist(var_3_3)
 
 		arg_3_0.galleryPicExistStateTable[iter_3_1] = var_3_4
 	end
@@ -52,7 +52,7 @@ function var_0_0.checkMusicFileState(arg_4_0)
 	for iter_4_0, iter_4_1 in ipairs(pg.music_collect_config.all) do
 		local var_4_2 = pg.music_collect_config[iter_4_1].music
 		local var_4_3 = MusicCollectionConst.MUSIC_SONG_PATH_PREFIX .. var_4_2 .. ".b"
-		local var_4_4 = PathMgr.FileExists(PathMgr.getAssetBundle(var_4_3))
+		local var_4_4 = checkABExist(var_4_3)
 
 		arg_4_0.musicExistStateTable[iter_4_1] = var_4_4
 	end

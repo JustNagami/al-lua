@@ -505,7 +505,7 @@ function var_0_0.updatePlateTF(arg_35_0, arg_35_1, arg_35_2)
 				setActive(var_35_6, false)
 				setActive(var_35_7, false)
 				setActive(var_35_8, true)
-			elseif PathMgr.FileExists(PathMgr.getAssetBundle(var_35_20)) then
+			elseif checkABExist(var_35_20) then
 				arg_35_0.appreciateProxy:updateMusicFileExistStateTable(var_35_13, true)
 				table.removebyvalue(arg_35_0.downloadCheckIDList, var_35_13, true)
 
@@ -667,7 +667,7 @@ function var_0_0.updateSongTF(arg_44_0, arg_44_1, arg_44_2)
 			setActive(var_44_5, false)
 			setActive(var_44_6, false)
 
-			if PathMgr.FileExists(PathMgr.getAssetBundle(var_44_14)) then
+			if checkABExist(var_44_14) then
 				var_44_16 = MusicCollectionConst.Color_Of_Normal_Song
 
 				arg_44_0.appreciateProxy:updateMusicFileExistStateTable(var_44_8, true)

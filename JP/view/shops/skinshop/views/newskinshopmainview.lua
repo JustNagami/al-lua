@@ -191,7 +191,7 @@ function var_0_0.FlushBG(arg_17_0, arg_17_1, arg_17_2)
 	local var_17_4 = var_17_3:getShipBgPrint(true)
 	local var_17_5 = pg.ship_skin_template[var_17_0].painting
 
-	if (arg_17_0.isToggleShowBg or not PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_17_5 .. "_n"))) and var_17_1.bg_sp ~= "" then
+	if (arg_17_0.isToggleShowBg or not checkABExist("painting/" .. var_17_5 .. "_n")) and var_17_1.bg_sp ~= "" then
 		var_17_4 = var_17_1.bg_sp
 	end
 
@@ -237,7 +237,7 @@ function var_0_0.FlushPaintingToggle(arg_21_0, arg_21_1)
 	local var_21_0 = ShipSkin.New({
 		id = arg_21_1:getSkinId()
 	})
-	local var_21_1 = PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_21_0:getConfig("painting") .. "_n"))
+	local var_21_1 = checkABExist("painting/" .. var_21_0:getConfig("painting") .. "_n")
 
 	if arg_21_0.isToggleShowBg and not var_21_1 then
 		triggerToggle(arg_21_0.showBgToggle, false)
@@ -311,14 +311,14 @@ function var_0_0.ExistL2dRes(arg_25_0, arg_25_1)
 	local var_25_0 = "live2d/" .. string.lower(arg_25_1)
 	local var_25_1 = HXSet.autoHxShiftPath(var_25_0, nil, true)
 
-	return PathMgr.FileExists(PathMgr.getAssetBundle(var_25_1)), var_25_1
+	return checkABExist(var_25_1), var_25_1
 end
 
 function var_0_0.ExistSpineRes(arg_26_0, arg_26_1)
 	local var_26_0 = "SpinePainting/" .. string.lower(arg_26_1)
 	local var_26_1 = HXSet.autoHxShiftPath(var_26_0, nil, true)
 
-	return PathMgr.FileExists(PathMgr.getAssetBundle(var_26_1)), var_26_1
+	return checkABExist(var_26_1), var_26_1
 end
 
 function var_0_0.FlushDynamicPaintingResState(arg_27_0, arg_27_1)
@@ -447,11 +447,11 @@ function var_0_0.LoadMeshPainting(arg_34_0, arg_34_1, arg_34_2)
 	local var_34_2 = pg.ship_skin_template[arg_34_1:getSkinId()].painting
 	local var_34_3 = var_34_2
 
-	if not arg_34_2 and PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_34_2 .. "_n")) then
+	if not arg_34_2 and checkABExist("painting/" .. var_34_2 .. "_n") then
 		var_34_2 = var_34_2 .. "_n"
 	end
 
-	if not PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_34_2)) then
+	if not checkABExist("painting/" .. var_34_2) then
 		return
 	end
 

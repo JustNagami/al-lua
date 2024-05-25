@@ -6,9 +6,10 @@
 				"onFleetAttrUpdate"
 			},
 			arg_list = {
+				quota = 1,
 				fleetAttr = "Judgement=12",
-				fleetAttrDelta = ">0",
-				skill_id = 150027
+				skill_id = 150027,
+				fleetAttrDelta = ">0"
 			}
 		},
 		{

@@ -488,7 +488,7 @@ function var_0_0.HasFashion(arg_40_0, arg_40_1)
 	if #var_40_0 == 1 then
 		local var_40_1 = var_40_0[1]
 
-		return (PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_40_1.painting .. "_n")))
+		return (checkABExist("painting/" .. var_40_1.painting .. "_n"))
 	end
 
 	return #var_40_0 > 1

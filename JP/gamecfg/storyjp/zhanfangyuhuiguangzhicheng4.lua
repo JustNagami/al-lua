@@ -192,7 +192,7 @@
 			bgName = "bg_camelot_15",
 			hidePaintObj = true,
 			nameColor = "#5CE6FF",
-			say = "――ええと、確か戦いがあったことで「空間衝壊現象」が起きて、それで「空間震動」が起きたのよね？",
+			say = "――ええと、確か戦いがあったことで「空間衝壊現象」が起きて、それで「空間震動」が起きたんだっけ？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
