@@ -151,9 +151,11 @@ function var_0_4.createBeam(arg_8_0, arg_8_1)
 	end
 
 	local function var_8_1(arg_10_0)
-		local var_10_0 = arg_8_0._dataProxy:GetUnitList()[arg_10_0.UID]
+		if arg_10_0.Active then
+			local var_10_0 = arg_8_0._dataProxy:GetUnitList()[arg_10_0.UID]
 
-		arg_8_1:RemoveCldUnit(var_10_0)
+			arg_8_1:RemoveCldUnit(var_10_0)
+		end
 	end
 
 	local var_8_2 = var_0_1.GetBarrageTmpDataFromID(arg_8_1:GetBeamInfoID())
