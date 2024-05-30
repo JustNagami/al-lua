@@ -210,6 +210,7 @@ pg.furniture_data_template = setmetatable({
 			100058,
 			100059,
 			100060,
+			100061,
 			200001,
 			200002,
 			200003,
@@ -3290,6 +3291,7 @@ pg.furniture_data_template = setmetatable({
 			100058,
 			100059,
 			100060,
+			100061,
 			31101,
 			54104,
 			54105
@@ -6268,7 +6270,8 @@ pg.furniture_data_template = setmetatable({
 			100056,
 			100057,
 			100058,
-			100059
+			100059,
+			100061
 		},
 		[2] = {
 			120,
@@ -9273,6 +9276,7 @@ pg.furniture_data_template = setmetatable({
 		100058,
 		100059,
 		100060,
+		100061,
 		200001,
 		200002,
 		200003,
@@ -23461,6 +23465,98 @@ pg.base.furniture_data_template = {
 		canputonGrid = {},
 		can_trigger = {
 			0
+		},
+		interAction_group = {}
+	},
+	[100061] = {
+		spine_extra = "",
+		describe = "ファンシーな見た目にファンタスティックな寝心地ーー布団の中から真珠が見つかりそう？",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "キラキラシェルキャビン",
+		themeId = 0,
+		icon = "zhenzhubeichuangicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 6,
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 100061,
+		can_rotate = 0,
+		size = {
+			4,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zhenzhubeichuangB",
+				"normal"
+			},
+			{
+				"zhenzhubeichuangT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sleep2",
+						nil,
+						"sleep"
+					}
+				},
+				{
+					[3] = {
+						"sleep1",
+						"sleep"
+					},
+					[4] = sleep
+				},
+				{
+					1
+				}
+			},
+			{
+				{
+					9.7,
+					19.4
+				},
+				{
+					203.06,
+					170.6
+				},
+				"chuanmo/zhenzhubeichuang_mask"
+			},
+			{
+				-17.6,
+				-27.1
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			1
 		},
 		interAction_group = {}
 	},

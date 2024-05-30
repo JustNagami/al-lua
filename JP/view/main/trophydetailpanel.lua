@@ -26,7 +26,9 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._preTrophyBtn = findTF(arg_1_0._stepper, "pre")
 	arg_1_0._postTrophyBtn = findTF(arg_1_0._stepper, "post")
 	arg_1_0._pageText = findTF(arg_1_0._stepper, "page")
+	arg_1_0._backTipsText = findTF(arg_1_0._tf, "center/backTips/GameObject (1)")
 
+	setText(arg_1_0._backTipsText, i18n("world_collection_back"))
 	onButton(arg_1_0, arg_1_0._postTrophyBtn, function()
 		local var_3_0 = arg_1_0._trophyGroup:getPostTrophy(arg_1_0._trophy)
 

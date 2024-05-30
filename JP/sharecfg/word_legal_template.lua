@@ -868,7 +868,20 @@ function temp()
 				},
 				シ = {
 					ュ = {
-						this = true
+						this = true,
+						["("] = {
+							M = {
+								E = {
+									T = {
+										A = {
+											[")"] = {
+												this = true
+											}
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 			},
@@ -979,6 +992,13 @@ function temp()
 												}
 											}
 										}
+									}
+								}
+							},
+							ち = {
+								ゃ = {
+									ん = {
+										this = true
 									}
 								}
 							}

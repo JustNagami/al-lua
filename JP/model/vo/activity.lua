@@ -753,18 +753,15 @@ function var_0_0.readyToAchieve(arg_21_0)
 				return false
 			end
 
-			local function var_68_0(arg_69_0, arg_69_1)
-				return getProxy(ShopsProxy):getActivityShopById(arg_69_0):GetCommodityById(arg_69_1):GetPurchasableCnt()
-			end
+			local var_68_0 = arg_68_0:getConfig("config_client")
+			local var_68_1 = getProxy(PlayerProxy):getData():getResource(var_68_0.uPtId)
+			local var_68_2 = #var_68_0.goodsId + 1
+			local var_68_3 = var_68_2 - _.reduce(var_68_0.goodsId, 0, function(arg_69_0, arg_69_1)
+				return arg_69_0 + getProxy(ShopsProxy):getActivityShopById(var_68_0.shopId):GetCommodityById(arg_69_1):GetPurchasableCnt()
+			end)
+			local var_68_4 = var_68_3 < var_68_2 and pg.activity_shop_template[var_68_0.goodsId[var_68_3]] or nil
 
-			local var_68_1 = arg_68_0:getConfig("config_client")
-			local var_68_2 = getProxy(PlayerProxy):getData():getResource(var_68_1.uPtId)
-			local var_68_3 = var_68_0(var_68_1.shopId, var_68_1.goodsId[1])
-			local var_68_4 = var_68_0(var_68_1.shopId, var_68_1.goodsId[2])
-			local var_68_5 = 3 - var_68_3 - var_68_4
-			local var_68_6 = var_68_5 < 3 and pg.activity_shop_template[var_68_1.goodsId[var_68_5]] or nil
-
-			return var_68_5 < 3 and var_68_2 >= var_68_6.resource_num
+			return var_68_3 < var_68_2 and var_68_1 >= var_68_4.resource_num
 		end
 	}
 
@@ -880,16 +877,13 @@ function var_0_0.isShow(arg_78_0)
 			return false
 		end
 
-		local function var_78_4(arg_80_0, arg_80_1)
-			return getProxy(ShopsProxy):getActivityShopById(arg_80_0):GetCommodityById(arg_80_1):GetPurchasableCnt()
-		end
+		local var_78_4 = arg_78_0:getConfig("config_client")
+		local var_78_5 = getProxy(PlayerProxy):getData():getResource(var_78_4.uPtId)
+		local var_78_6 = #var_78_4.goodsId + 1
 
-		local var_78_5 = arg_78_0:getConfig("config_client")
-		local var_78_6 = getProxy(PlayerProxy):getData():getResource(var_78_5.uPtId)
-		local var_78_7 = var_78_4(var_78_5.shopId, var_78_5.goodsId[1])
-		local var_78_8 = var_78_4(var_78_5.shopId, var_78_5.goodsId[2])
-
-		return 3 - var_78_7 - var_78_8 < 3
+		return var_78_6 > var_78_6 - _.reduce(var_78_4.goodsId, 0, function(arg_80_0, arg_80_1)
+			return arg_80_0 + getProxy(ShopsProxy):getActivityShopById(var_78_4.shopId):GetCommodityById(arg_80_1):GetPurchasableCnt()
+		end)
 	end
 
 	return true

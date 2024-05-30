@@ -38407,6 +38407,175 @@ pg.equip_skin_template = {
 			54014
 		}
 	},
+	[2071] = {
+		hit_sfx = "",
+		bullet_name = "paodan_fenghuolun",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		name = "ファイアリング砲弾",
+		themeid = 105,
+		desc = "リングラッシュは避けられる？",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_ui = "",
+		orbit_combat = "",
+		orbit_combat_anima_change = "",
+		icon = "96716",
+		miss_sfx = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "paodan_huoqiu_hit",
+		id = 2071,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	},
+	[2072] = {
+		hit_sfx = "",
+		bullet_name = "zidan_huixing01",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		name = "コメット弾",
+		themeid = 105,
+		desc = "コメットに撃たれるよりも痛いですよ",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_ui = "",
+		orbit_combat = "",
+		orbit_combat_anima_change = "",
+		icon = "96717",
+		miss_sfx = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "zidan_suipian_hit_1",
+		id = 2072,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			1,
+			2,
+			3
+		},
+		weapon_ids = {
+			101,
+			101
+		}
+	},
+	[2073] = {
+		hit_sfx = "",
+		bullet_name = "yulei_saozhou",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		name = "マジックホウキ魚雷",
+		themeid = 105,
+		desc = "シューティングスターホウキ2000、全速前進だ！",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_ui = "",
+		orbit_combat = "",
+		orbit_combat_anima_change = "",
+		icon = "96718",
+		miss_sfx = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "yulei_youling_hit",
+		id = 2073,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			5,
+			13
+		},
+		weapon_ids = {
+			107,
+			107
+		}
+	},
+	[2074] = {
+		hit_sfx = "",
+		bullet_name = "",
+		name = "ホーリーウィング",
+		type = 1,
+		preview_hit_distance = 0,
+		themeid = 105,
+		orbit_combat = "shebei_mofaguangyi",
+		desc = "魔力で作り出された翼――飛べないピョ？！",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_ui = "shebei_mofaguangyiui",
+		miss_sfx = "",
+		orbit_combat_anima_change = "",
+		icon = "96743",
+		orbit_ui_back = 1,
+		ship_skin_id = 0,
+		mirror = 0,
+		rarity = 4,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 2074,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				-0.23,
+				-1.5,
+				-0.91
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				-3,
+				40
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	},
 	[3001] = {
 		hit_sfx = "",
 		bullet_name = "",
@@ -39912,6 +40081,10 @@ pg.equip_skin_template = {
 		2068,
 		2069,
 		2070,
+		2071,
+		2072,
+		2073,
+		2074,
 		3001,
 		3002,
 		3003,

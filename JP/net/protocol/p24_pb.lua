@@ -62,6 +62,7 @@ SC_24021 = var_0_0.Descriptor()
 var_0_2.SC_24021_RESULT_FIELD = var_0_0.FieldDescriptor()
 var_0_2.SC_24021_TIMES_FIELD = var_0_0.FieldDescriptor()
 var_0_2.SC_24021_AWARDS_FIELD = var_0_0.FieldDescriptor()
+var_0_2.SC_24021_PASS_IDS_FIELD = var_0_0.FieldDescriptor()
 CS_24022 = var_0_0.Descriptor()
 var_0_2.CS_24022_CHALLENGEIDS_FIELD = var_0_0.FieldDescriptor()
 SC_24023 = var_0_0.Descriptor()
@@ -609,6 +610,15 @@ var_0_2.SC_24021_AWARDS_FIELD.default_value = {}
 var_0_2.SC_24021_AWARDS_FIELD.message_type = var_0_1.KVDATA
 var_0_2.SC_24021_AWARDS_FIELD.type = 11
 var_0_2.SC_24021_AWARDS_FIELD.cpp_type = 10
+var_0_2.SC_24021_PASS_IDS_FIELD.name = "pass_ids"
+var_0_2.SC_24021_PASS_IDS_FIELD.full_name = "p24.sc_24021.pass_ids"
+var_0_2.SC_24021_PASS_IDS_FIELD.number = 4
+var_0_2.SC_24021_PASS_IDS_FIELD.index = 3
+var_0_2.SC_24021_PASS_IDS_FIELD.label = 3
+var_0_2.SC_24021_PASS_IDS_FIELD.has_default_value = false
+var_0_2.SC_24021_PASS_IDS_FIELD.default_value = {}
+var_0_2.SC_24021_PASS_IDS_FIELD.type = 13
+var_0_2.SC_24021_PASS_IDS_FIELD.cpp_type = 3
 SC_24021.name = "sc_24021"
 SC_24021.full_name = "p24.sc_24021"
 SC_24021.nested_types = {}
@@ -616,7 +626,8 @@ SC_24021.enum_types = {}
 SC_24021.fields = {
 	var_0_2.SC_24021_RESULT_FIELD,
 	var_0_2.SC_24021_TIMES_FIELD,
-	var_0_2.SC_24021_AWARDS_FIELD
+	var_0_2.SC_24021_AWARDS_FIELD,
+	var_0_2.SC_24021_PASS_IDS_FIELD
 }
 SC_24021.is_extendable = false
 SC_24021.extensions = {}

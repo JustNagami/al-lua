@@ -590,7 +590,13 @@ function var_0_0.AiriPGSResultCodeHandler(arg_62_0, arg_62_1)
 end
 
 function var_0_0.AiriYoStarPassMigrateHandler(arg_69_0)
-	if arg_69_0.R_CODE == 0 and arg_69_0.SHOW_MIGRATE_PAGE == 1 then
+	local var_69_0 = {
+		0,
+		100204,
+		100206
+	}
+
+	if table.contains(var_69_0, arg_69_0.R_CODE:ToInt()) and arg_69_0.SHOW_MIGRATE_PAGE == 1 then
 		var_0_0.BindYostarPass()
 
 		return true

@@ -1,7 +1,6 @@
 ﻿local var_0_0 = class("PlayerProxy", import(".NetProxy"))
 
 var_0_0.UPDATED = "PlayerProxy.UPDATED"
-var_0_0.RESOURCE_UPDATED = "PlayerProxy.RESOURCE_UPDATED"
 
 function var_0_0.register(arg_1_0)
 	arg_1_0._flags = {}
@@ -139,20 +138,26 @@ function var_0_0.updatePlayer(arg_15_0, arg_15_1)
 	arg_15_0:sendNotification(var_0_0.UPDATED, arg_15_1:clone())
 end
 
-function var_0_0.UpdatePlayerRes(arg_16_0, arg_16_1, arg_16_2)
+function var_0_0.UpdatePlayerRes(arg_16_0, arg_16_1)
 	if not arg_16_0.data then
 		return
 	end
 
-	local var_16_0 = id2res(arg_16_1)
+	local var_16_0 = {}
+	local var_16_1 = {}
 
-	arg_16_0.data[var_16_0] = math.max(arg_16_0.data[var_16_0] + arg_16_2, 0)
+	for iter_16_0, iter_16_1 in ipairs(arg_16_1) do
+		local var_16_2 = id2res(iter_16_1.id)
 
-	arg_16_0:sendNotification(var_0_0.RESOURCE_UPDATED, {
-		id = arg_16_1,
-		diff = arg_16_2,
-		amount = arg_16_0.data[var_16_0]
-	})
+		if iter_16_1.count < 0 then
+			var_16_1[var_16_2] = defaultValue(var_16_1[var_16_2], 0) - iter_16_1.count
+		else
+			var_16_0[var_16_2] = defaultValue(var_16_0[var_16_2], 0) + iter_16_1.count
+		end
+	end
+
+	arg_16_0.data:addResources(var_16_0)
+	arg_16_0.data:consume(var_16_1)
 	arg_16_0:updatePlayer(arg_16_0.data)
 end
 

@@ -55,7 +55,7 @@ function var_0_0.BindConditions(arg_3_0)
 		return getProxy(TaskProxy):getCanReceiveCount() > 0 or getProxy(AvatarFrameProxy):getCanReceiveCount() > 0
 	end)
 	arg_3_0:BindCondition(var_0_0.TYPES.MAIL, function()
-		return getProxy(MailProxy):GetAttachmentCount()
+		return getProxy(MailProxy):GetUnreadCount()
 	end)
 	arg_3_0:BindCondition(var_0_0.TYPES.BUILD, function()
 		return getProxy(BuildShipProxy):getFinishCount() > 0 or tobool(getProxy(ActivityProxy):IsShowFreeBuildMark(true))

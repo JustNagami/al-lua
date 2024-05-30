@@ -10,17 +10,14 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
 	arg_1_0._maxBtn = arg_1_3
 	arg_1_0._numTxt = arg_1_4
 
-	local var_1_0, var_1_1 = pressPersistTrigger(arg_1_0._leftBtn, 0.5, function(arg_2_0)
+	pressPersistTrigger(arg_1_0._leftBtn, 0.5, function()
 		local var_2_0 = arg_1_0._curNum - arg_1_0._addNum
 
 		var_2_0 = var_2_0 <= 0 and arg_1_0._curNum or var_2_0
 
 		arg_1_0:setCurNum(var_2_0)
 	end, nil, true, true, 0.1, SFX_PANEL)
-
-	arg_1_0._leftRemoveTimer = var_1_1
-
-	local var_1_2, var_1_3 = pressPersistTrigger(arg_1_0._rightBtn, 0.5, function(arg_3_0)
+	pressPersistTrigger(arg_1_0._rightBtn, 0.5, function()
 		local var_3_0 = arg_1_0._curNum + arg_1_0._addNum
 
 		if arg_1_0._maxNum < 0 then
@@ -31,9 +28,6 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
 			arg_1_0:setCurNum(var_3_0)
 		end
 	end, nil, true, true, 0.1, SFX_PANEL)
-
-	arg_1_0._rightRemoveTimer = var_1_3
-
 	onButton(arg_1_0, arg_1_0._maxBtn, function()
 		if arg_1_0._maxNum < 0 then
 			-- block empty
@@ -81,8 +75,6 @@ function var_0_0.getCurNum(arg_10_0)
 end
 
 function var_0_0.Dispose(arg_11_0)
-	existCall(arg_11_0._leftRemoveTimer)
-	existCall(arg_11_0._rightRemoveTimer)
 	pg.DelegateInfo.Dispose(arg_11_0)
 end
 

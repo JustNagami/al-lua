@@ -306,9 +306,12 @@ function var_0_0.didEnter(arg_17_0)
 						end
 
 						pg.BgmMgr.GetInstance():ContinuePlay()
-					elseif iter_17_0 == var_0_0.MUSIC_INDEX and arg_17_0.musicView and arg_17_0.musicView:CheckState(BaseSubView.STATES.INITED) then
+					elseif iter_17_0 == var_0_0.MUSIC_INDEX then
 						pg.BgmMgr.GetInstance():StopPlay()
-						arg_17_0.musicView:tryPlayMusic()
+
+						if arg_17_0.musicView and arg_17_0.musicView:CheckState(BaseSubView.STATES.INITED) then
+							arg_17_0.musicView:tryPlayMusic()
+						end
 					end
 
 					if iter_17_0 ~= var_0_0.GALLERY_INDEX and arg_17_0.galleryView and arg_17_0.galleryView:CheckState(BaseSubView.STATES.INITED) then

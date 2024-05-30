@@ -133,7 +133,11 @@ pg.ship_meta_breakout = setmetatable({
 		9713011,
 		9713012,
 		9713013,
-		9713014
+		9713014,
+		9703031,
+		9703032,
+		9703033,
+		9703034
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2286,6 +2290,69 @@ pg.base.ship_meta_breakout = {
 		id = 9713014,
 		item1 = 21027,
 		pre_id = 9713013,
+		weapon_ids = {}
+	},
+	[9703031] = {
+		breakout_view = "【焔追の灰-フォッシュ】習得/主砲補正+5%",
+		gold = 500,
+		breakout_id = 9703032,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9703031,
+		item1 = 21034,
+		pre_id = 0,
+		weapon_ids = {
+			80281
+		}
+	},
+	[9703032] = {
+		breakout_view = "魚雷装填数+1/開始時魚雷+1/魚雷補正+10%",
+		gold = 1500,
+		breakout_id = 9703033,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9703032,
+		item1 = 21034,
+		pre_id = 9703031,
+		weapon_ids = {
+			106,
+			106
+		}
+	},
+	[9703033] = {
+		breakout_view = "【焔追の灰-フォッシュ】強化/魚雷補正+15%",
+		gold = 2500,
+		breakout_id = 9703034,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9703033,
+		item1 = 21034,
+		pre_id = 9703032,
+		weapon_ids = {
+			80282
+		}
+	},
+	[9703034] = {
+		breakout_view = "なし",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9703034,
+		item1 = 21034,
+		pre_id = 9703033,
 		weapon_ids = {}
 	}
 }

@@ -190,7 +190,7 @@ function var_0_0.CollectIdleEvents(arg_23_0, arg_23_1)
 			table.insert(var_23_0, "mission_complete")
 		end
 
-		if getProxy(MailProxy):GetAttachmentCount() > 0 and arg_23_1 ~= "mail" then
+		if getProxy(MailProxy):GetUnreadCount() > 0 and arg_23_1 ~= "mail" then
 			table.insert(var_23_0, "mail")
 		end
 

@@ -34,7 +34,7 @@ function var_0_0.OnInit(arg_2_0)
 			setText(arg_4_2:Find("calc/value"), arg_2_0.countList[arg_4_1])
 			setScrollText(arg_4_2:Find("name/Text"), var_4_0:getConfig("name"))
 			setText(arg_4_2:Find("kc"), i18n("tec_tip_material_stock") .. ":" .. var_4_0.count)
-			pressPersistTrigger(arg_4_2:Find("calc/plus"), 0.5, function(arg_6_0)
+			pressPersistTrigger(arg_4_2:Find("calc/plus"), 0.5, function()
 				if var_4_0.count > arg_2_0.countList[arg_4_1] and arg_2_0.count + var_4_1 <= arg_2_0.need then
 					arg_2_0.countList[arg_4_1] = arg_2_0.countList[arg_4_1] + 1
 
@@ -45,7 +45,7 @@ function var_0_0.OnInit(arg_2_0)
 					setText(arg_2_0.rtExchange:Find("bg/count"), setColorStr(arg_2_0.count, "#FFEC6E") .. "/" .. arg_2_0.need)
 				end
 			end, nil, true, true, 0.1, SFX_PANEL)
-			pressPersistTrigger(arg_4_2:Find("calc/minus"), 0.5, function(arg_7_0)
+			pressPersistTrigger(arg_4_2:Find("calc/minus"), 0.5, function()
 				if arg_2_0.countList[arg_4_1] > 0 then
 					arg_2_0.countList[arg_4_1] = arg_2_0.countList[arg_4_1] - 1
 

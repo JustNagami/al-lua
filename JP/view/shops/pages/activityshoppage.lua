@@ -234,10 +234,7 @@ function var_0_0.OnPurchase(arg_22_0, arg_22_1, arg_22_2)
 	local var_22_3 = arg_22_0.shop.activityId
 
 	arg_22_0:emit(NewShopsMediator.ON_ACT_SHOPPING, var_22_3, 1, arg_22_1.id, arg_22_2)
-
-	if var_22_1 == UrExchangeMogadorPage.UR_COMMODITY_ID then
-		TrackConst.TrackingUrExchangeFetch(var_22_1, 1)
-	end
+	arg_22_0:emit(NewShopsMediator.UR_EXCHANGE_TRACKING, var_22_1)
 end
 
 function var_0_0.OnClickCommodity(arg_23_0, arg_23_1, arg_23_2)

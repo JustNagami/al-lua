@@ -12,6 +12,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 
 			var_2_0:setTimeDataFromServer(arg_2_0.times)
 			var_2_0:setAwardedDataFromServer(arg_2_0.awards)
+			var_2_0:setCurMonthPassedIDList(arg_2_0.pass_ids)
 			arg_1_0:sendNotification(LimitChallengeConst.REQ_CHALLENGE_INFO_DONE)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))

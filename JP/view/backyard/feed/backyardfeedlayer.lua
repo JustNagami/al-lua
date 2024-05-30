@@ -177,9 +177,9 @@ function var_0_0.UpdateCapacityWithAnim(arg_18_0, arg_18_1, arg_18_2)
 	LeanTween.value(arg_18_0.capacityBar.gameObject, var_18_0, var_18_1, 0.396):setEase(LeanTweenType.easeInOutQuart):setOnUpdate(System.Action_float(function(arg_20_0)
 		arg_18_0.capacityBar.value = arg_20_0
 	end)):setOnComplete(System.Action(function()
-		arg_18_0.playing = false
-
 		arg_18_0:UpdateDorm()
+
+		arg_18_0.playing = false
 	end)):setDelay(0.069)
 end
 
@@ -193,6 +193,14 @@ local function var_0_2(arg_22_0, arg_22_1)
 	pressPersistTrigger(arg_22_1.icon, 0.5, function(arg_25_0)
 		arg_22_0:SimulateAddFood(arg_22_1.foodId, arg_25_0)
 	end, function()
+		if arg_22_0.simulateFood ~= arg_22_0.simulateCapacity and arg_22_0.simulateFood + arg_22_0.simulateAddition > arg_22_0.simulateCapacity and pg.TimeMgr.GetInstance():GetServerTime() > arg_22_0.remindEndTime then
+			arg_22_0:ShowCapcityTip(arg_22_1.foodId, arg_22_0.simulateFood, arg_22_0.simulateCapacity, arg_22_0.simulateAddition)
+		elseif arg_22_0.simulateFood >= arg_22_0.simulateCapacity then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardGranaryLayer_full"))
+		elseif arg_22_0.simulateItemCnt == 0 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardGranaryLayer_foodCountLimit"))
+		end
+
 		arg_22_0:TriggerAddFood(arg_22_1.foodId, arg_22_0.simulateUsageCnt)
 
 		arg_22_0.simulateFood = nil
@@ -248,7 +256,7 @@ function var_0_0.UpdateCards(arg_30_0)
 	end
 end
 
-function var_0_0.SimulateAddFood(arg_31_0, arg_31_1, arg_31_2)
+function var_0_0.SimulateAddFood(arg_31_0, arg_31_1)
 	if not arg_31_0.isSimulation then
 		local var_31_0 = getProxy(DormProxy):getRawData()
 
@@ -260,33 +268,7 @@ function var_0_0.SimulateAddFood(arg_31_0, arg_31_1, arg_31_2)
 		arg_31_0.isSimulation = true
 	end
 
-	if arg_31_0.simulateFood ~= arg_31_0.simulateCapacity and arg_31_0.simulateFood + arg_31_0.simulateAddition > arg_31_0.simulateCapacity and pg.TimeMgr.GetInstance():GetServerTime() > arg_31_0.remindEndTime then
-		arg_31_0:ShowCapcityTip(arg_31_1, arg_31_0.simulateFood, arg_31_0.simulateCapacity, arg_31_0.simulateAddition)
-
-		if arg_31_2 then
-			arg_31_2()
-		end
-
-		return
-	end
-
-	if arg_31_0.simulateFood >= arg_31_0.simulateCapacity then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardGranaryLayer_full"))
-
-		if arg_31_2 then
-			arg_31_2()
-		end
-
-		return
-	end
-
-	if arg_31_0.simulateItemCnt == 0 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardGranaryLayer_foodCountLimit"))
-
-		if arg_31_2 then
-			arg_31_2()
-		end
-
+	if arg_31_0.simulateFood ~= arg_31_0.simulateCapacity and arg_31_0.simulateFood + arg_31_0.simulateAddition > arg_31_0.simulateCapacity and pg.TimeMgr.GetInstance():GetServerTime() > arg_31_0.remindEndTime or arg_31_0.simulateFood >= arg_31_0.simulateCapacity or arg_31_0.simulateItemCnt == 0 then
 		return
 	end
 

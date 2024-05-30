@@ -150,6 +150,7 @@ function var_0_0.initNotices(arg_9_0, arg_9_1)
 		var_9_1.link = var_9_2
 		var_9_1.paramType = var_9_3
 		var_9_1.titleImage = var_9_0 and string.gsub(var_9_1.titleImage, var_9_0, "") or var_9_1.titleImage
+		var_9_1.code = var_9_1:prefKey()
 
 		if arg_9_0:checkNotice(var_9_1) then
 			table.insert(arg_9_0._noticeDic[var_9_1.type], var_9_1)

@@ -17,16 +17,11 @@ function var_0_0.OnFirstFlush(arg_3_0)
 	for iter_3_0 = 1, 7 do
 		local var_3_0 = cloneTplTo(arg_3_0.item, arg_3_0.items)
 		local var_3_1 = arg_3_0:findTF("item", var_3_0)
-		local var_3_2 = arg_3_0.config.front_drops[iter_3_0]
-		local var_3_3 = {
-			type = var_3_2[1],
-			id = var_3_2[2],
-			count = var_3_2[3]
-		}
+		local var_3_2 = Drop.Create(arg_3_0.config.front_drops[iter_3_0])
 
-		updateDrop(var_3_1, var_3_3)
+		updateDrop(var_3_1, var_3_2)
 		onButton(arg_3_0, var_3_0, function()
-			arg_3_0:emit(BaseUI.ON_DROP, var_3_3)
+			arg_3_0:emit(BaseUI.ON_DROP, var_3_2)
 		end, SFX_PANEL)
 	end
 end

@@ -233,19 +233,15 @@ function var_0_0.didEnter(arg_13_0)
 
 		arg_13_0:SetOperateCount(1)
 	end, SFX_PANEL)
-	pressPersistTrigger(arg_13_0.operateLeftButton, 0.5, function(arg_21_0)
+	pressPersistTrigger(arg_13_0.operateLeftButton, 0.5, function()
 		if not arg_13_0:UpdateCount(arg_13_0.operateCount - 1) then
-			arg_21_0()
-
 			return
 		end
 
 		arg_13_0:SetOperateCount(arg_13_0.operateCount - 1)
 	end, nil, true, true, 0.1, SFX_PANEL)
-	pressPersistTrigger(arg_13_0.operateRightButton, 0.5, function(arg_22_0)
+	pressPersistTrigger(arg_13_0.operateRightButton, 0.5, function()
 		if not arg_13_0:UpdateCount(arg_13_0.operateCount + 1) then
-			arg_22_0()
-
 			return
 		end
 

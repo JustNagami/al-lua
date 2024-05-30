@@ -3040,6 +3040,7 @@ pg.memory_template = setmetatable({
 		3642,
 		3643,
 		3644,
+		3651,
 		10000,
 		10001,
 		10002,
@@ -36623,6 +36624,17 @@ pg.base.memory_template = {
 		story = "ZHANFANGYUHUIGUANGZHICHENG35",
 		id = 3644,
 		icon = "memory_huiguangzhicheng2",
+		is_open = 0
+	},
+	[3651] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "翠園佳繍",
+		condition = "『翠園佳繍』を始める",
+		story = "CUIYUANJIAXIU",
+		id = 3651,
+		icon = "memory_cuiyuanjiaxiu",
 		is_open = 0
 	},
 	[10000] = {

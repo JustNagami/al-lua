@@ -6,7 +6,6 @@ var_0_0.RANDOM_DAILY = 3
 var_0_0.CHALLANGE = 4
 var_0_0.MINI_GAME = 5
 var_0_0.SHOP_BUY = 6
-var_0_0.UR_COMMODITY_ID = 901071
 
 local function var_0_1(...)
 	if false then
@@ -39,6 +38,7 @@ function var_0_0.OnDataSetting(arg_3_0)
 	arg_3_0.uPtId = arg_3_0.config.uPtId
 	arg_3_0.goodsId = arg_3_0.config.goodsId
 	arg_3_0.shopId = arg_3_0.config.shopId
+	arg_3_0.length = #arg_3_0.goodsId + 1
 	arg_3_0.actShop = arg_3_0.shopProxy:getActivityShopById(arg_3_0.shopId)
 end
 
@@ -257,23 +257,25 @@ end
 function var_0_0.UpdateExchangeStatus(arg_30_0)
 	arg_30_0.player = arg_30_0.playerProxy:getData()
 	arg_30_0.ptCount = arg_30_0.player:getResource(arg_30_0.uPtId)
-	arg_30_0.restExchange = arg_30_0:GetGoodsResCnt(arg_30_0.goodsId[1]) + arg_30_0:GetGoodsResCnt(arg_30_0.goodsId[2])
-	arg_30_0.exchangeState = 3 - arg_30_0.restExchange
-	arg_30_0.curGoods = arg_30_0.exchangeState < 3 and pg.activity_shop_template[arg_30_0.goodsId[arg_30_0.exchangeState]] or nil
-	arg_30_0.canExchange = arg_30_0.exchangeState < 3 and arg_30_0.ptCount >= arg_30_0.curGoods.resource_num
+	arg_30_0.restExchange = _.reduce(arg_30_0.goodsId, 0, function(arg_31_0, arg_31_1)
+		return arg_31_0 + arg_30_0.actShop:GetCommodityById(arg_31_1):GetPurchasableCnt()
+	end)
+	arg_30_0.exchangeState = arg_30_0.length - arg_30_0.restExchange
+	arg_30_0.curGoods = arg_30_0.exchangeState < arg_30_0.length and pg.activity_shop_template[arg_30_0.goodsId[arg_30_0.exchangeState]] or nil
+	arg_30_0.canExchange = arg_30_0.exchangeState < arg_30_0.length and arg_30_0.ptCount >= arg_30_0.curGoods.resource_num
 
 	var_0_1(arg_30_0.exchangeState, arg_30_0.curGoods, arg_30_0.canExchange)
 end
 
-function var_0_0.UpdatePtCount(arg_31_0)
-	local var_31_0 = ((arg_31_0.exchangeState < 3 and arg_31_0.ptCount < arg_31_0.curGoods.resource_num and "<color=red>" or "<color=#3689DE>") .. arg_31_0.ptCount .. "</color>/" .. (arg_31_0.exchangeState == 3 and "--" or arg_31_0.curGoods.resource_num)) .. i18n("UrExchange_Pt_charges", arg_31_0.restExchange)
+function var_0_0.UpdatePtCount(arg_32_0)
+	local var_32_0 = ((arg_32_0.exchangeState < arg_32_0.length and arg_32_0.ptCount < arg_32_0.curGoods.resource_num and "<color=red>" or "<color=#3689DE>") .. arg_32_0.ptCount .. "</color>/" .. (arg_32_0.exchangeState == 3 and "--" or arg_32_0.curGoods.resource_num)) .. i18n("UrExchange_Pt_charges", arg_32_0.restExchange)
 
-	setText(arg_31_0._ptText, var_31_0)
+	setText(arg_32_0._ptText, var_32_0)
 end
 
-function var_0_0.OnDestroy(arg_32_0)
-	eachChild(arg_32_0._tasksTF, function(arg_33_0)
-		Destroy(arg_33_0)
+function var_0_0.OnDestroy(arg_33_0)
+	eachChild(arg_33_0._tasksTF, function(arg_34_0)
+		Destroy(arg_34_0)
 	end)
 end
 

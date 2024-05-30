@@ -1334,6 +1334,9 @@ pg.ship_data_group = setmetatable({
 		[40505] = {
 			593
 		},
+		[40506] = {
+			647
+		},
 		[40601] = {
 			485
 		},
@@ -2125,6 +2128,9 @@ pg.ship_data_group = setmetatable({
 		},
 		[970704] = {
 			30033
+		},
+		[970303] = {
+			30034
 		}
 	},
 	get_id_list_by_handbook_type = {
@@ -2573,6 +2579,7 @@ pg.ship_data_group = setmetatable({
 			529,
 			545,
 			593,
+			647,
 			485,
 			526,
 			591,
@@ -2842,7 +2849,8 @@ pg.ship_data_group = setmetatable({
 			30030,
 			30031,
 			30032,
-			30033
+			30033,
+			30034
 		}
 	},
 	all = {
@@ -3290,6 +3298,7 @@ pg.ship_data_group = setmetatable({
 		529,
 		545,
 		593,
+		647,
 		485,
 		526,
 		591,
@@ -3553,7 +3562,8 @@ pg.ship_data_group = setmetatable({
 		30030,
 		30031,
 		30032,
-		30033
+		30033,
+		30034
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -23379,6 +23389,38 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
+	[647] = {
+		type = 5,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 4,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 446,
+		code = 647,
+		group_type = 40506,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"C",
+			"C",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"イベント：ママの演奏練習",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
 	[485] = {
 		type = 6,
 		redirect_id = 101,
@@ -32949,6 +32991,41 @@ pg.base.ship_data_group = {
 				"イベント：赫輝のマルティリウム",
 				{
 					""
+				},
+				0
+			}
+		}
+	},
+	[30034] = {
+		type = 3,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 97,
+		trans_skin = 0,
+		handbook_type = 3,
+		index_id = 30034,
+		code = 30034,
+		group_type = 970303,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"B",
+			"B",
+			"E",
+			"C",
+			"B",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"メタラボ・シーズン任務",
+				{
+					"METACHARACTER",
+					{
+						autoOpenShipConfigID = 9703031
+					}
 				},
 				0
 			}

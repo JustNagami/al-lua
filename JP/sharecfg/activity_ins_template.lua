@@ -12163,6 +12163,66 @@ pg.activity_ins_template = {
 		time_persist = {},
 		npc_discuss_persist = {}
 	},
+	[474] = {
+		ship_group = 20233,
+		name = "Scylla",
+		sculpture = "sikula_3",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 474,
+		id = 474,
+		is_active = 1,
+		time_persist = {},
+		npc_discuss_persist = {}
+	},
+	[475] = {
+		ship_group = 70104,
+		name = "Ташкент",
+		sculpture = "tashigan_4",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 475,
+		id = 475,
+		is_active = 1,
+		time_persist = {},
+		npc_discuss_persist = {}
+	},
+	[476] = {
+		ship_group = 29903,
+		name = "CaitSith",
+		sculpture = "chaijun_5",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 476,
+		id = 476,
+		is_active = 1,
+		time_persist = {},
+		npc_discuss_persist = {}
+	},
+	[477] = {
+		ship_group = 70302,
+		name = "Kursk",
+		sculpture = "kuersike_3",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 477,
+		id = 477,
+		is_active = 1,
+		time_persist = {},
+		npc_discuss_persist = {}
+	},
+	[478] = {
+		ship_group = 30508,
+		name = "Tosa",
+		sculpture = "tuzuo_3",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 478,
+		id = 478,
+		is_active = 1,
+		time_persist = {},
+		npc_discuss_persist = {}
+	},
 	all = {
 		1,
 		2,
@@ -12627,6 +12687,11 @@ pg.activity_ins_template = {
 		470,
 		471,
 		472,
-		473
+		473,
+		474,
+		475,
+		476,
+		477,
+		478
 	}
 }

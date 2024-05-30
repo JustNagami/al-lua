@@ -230,24 +230,29 @@ local function var_0_12(arg_14_0)
 		arg_14_0.drags[iter_14_0]:changeReactValue(var_14_1)
 		arg_14_0.drags[iter_14_0]:stepParameter()
 
-		if (arg_14_0.drags[iter_14_0]:getParameToTargetFlag() or arg_14_0.drags[iter_14_0]:getActive()) and arg_14_0.drags[iter_14_0]:getIgnoreReact() then
+		local var_14_2 = arg_14_0.drags[iter_14_0]:getParameToTargetFlag()
+		local var_14_3 = arg_14_0.drags[iter_14_0]:getActive()
+
+		if (var_14_2 or var_14_3) and arg_14_0.drags[iter_14_0]:getIgnoreReact() then
+			var_14_0 = true
+		elseif arg_14_0.drags[iter_14_0]:getReactCondition() then
 			var_14_0 = true
 		end
 
-		local var_14_2 = arg_14_0.drags[iter_14_0]:getParameter()
-		local var_14_3 = arg_14_0.drags[iter_14_0]:getParameterUpdateFlag()
+		local var_14_4 = arg_14_0.drags[iter_14_0]:getParameter()
+		local var_14_5 = arg_14_0.drags[iter_14_0]:getParameterUpdateFlag()
 
-		if var_14_2 and var_14_3 then
-			local var_14_4 = arg_14_0.drags[iter_14_0]:getParameterCom()
+		if var_14_4 and var_14_5 then
+			local var_14_6 = arg_14_0.drags[iter_14_0]:getParameterCom()
 
-			if var_14_4 then
-				arg_14_0.liveCom:ChangeParameterData(var_14_4, var_14_2)
+			if var_14_6 then
+				arg_14_0.liveCom:ChangeParameterData(var_14_6, var_14_4)
 			end
 		end
 
-		local var_14_5 = arg_14_0.drags[iter_14_0]:getRelationParameterList()
+		local var_14_7 = arg_14_0.drags[iter_14_0]:getRelationParameterList()
 
-		for iter_14_1, iter_14_2 in ipairs(var_14_5) do
+		for iter_14_1, iter_14_2 in ipairs(var_14_7) do
 			if iter_14_2.enable then
 				arg_14_0.liveCom:ChangeParameterData(iter_14_2.com, iter_14_2.value)
 			end
@@ -456,8 +461,10 @@ local function var_0_14(arg_25_0, arg_25_1)
 		arg_25_0._physics = GetComponent(arg_25_0._tf, "CubismPhysicsController")
 	end
 
-	arg_25_0._physics.enabled = false
-	arg_25_0._physics.enabled = true
+	if arg_25_0._physics then
+		arg_25_0._physics.enabled = false
+		arg_25_0._physics.enabled = true
+	end
 
 	if arg_25_0.live2dData.l2dDragRate and #arg_25_0.live2dData.l2dDragRate > 0 then
 		arg_25_0.liveCom.DragRateX = arg_25_0.live2dData.l2dDragRate[1] * var_0_2
