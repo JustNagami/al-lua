@@ -4133,46 +4133,57 @@ function GetItemsOverflowDic(arg_275_0)
 end
 
 function CheckOverflow(arg_281_0, arg_281_1)
-	local var_281_0 = arg_281_0[DROP_TYPE_RESOURCE][PlayerConst.ResGold] or 0
-	local var_281_1 = arg_281_0[DROP_TYPE_RESOURCE][PlayerConst.ResOil] or 0
-	local var_281_2 = arg_281_0[DROP_TYPE_EQUIP]
-	local var_281_3 = arg_281_0[DROP_TYPE_SHIP]
-	local var_281_4 = getProxy(PlayerProxy):getRawData()
-	local var_281_5 = false
+	local var_281_0 = {}
+	local var_281_1 = arg_281_0[DROP_TYPE_RESOURCE][PlayerConst.ResGold] or 0
+	local var_281_2 = arg_281_0[DROP_TYPE_RESOURCE][PlayerConst.ResOil] or 0
+	local var_281_3 = arg_281_0[DROP_TYPE_EQUIP]
+	local var_281_4 = arg_281_0[DROP_TYPE_SHIP]
+	local var_281_5 = getProxy(PlayerProxy):getRawData()
+	local var_281_6 = false
 
 	if arg_281_1 then
-		local var_281_6 = var_281_4:OverStore(PlayerConst.ResStoreGold, var_281_0)
-		local var_281_7 = var_281_4:OverStore(PlayerConst.ResStoreOil, var_281_1)
+		local var_281_7 = var_281_5:OverStore(PlayerConst.ResStoreGold, var_281_1)
+		local var_281_8 = var_281_5:OverStore(PlayerConst.ResStoreOil, var_281_2)
 
-		if var_281_6 > 0 or var_281_7 > 0 then
-			var_281_5 = {
-				var_281_6,
-				var_281_7
+		if var_281_7 > 0 or var_281_8 > 0 then
+			var_281_0.isStoreOverflow = {
+				var_281_7,
+				var_281_8
 			}
 		end
 	else
-		if var_281_0 > 0 and var_281_4:GoldMax(var_281_0) then
+		if var_281_1 > 0 and var_281_5:GoldMax(var_281_1) then
 			return false, "gold"
 		end
 
-		if var_281_1 > 0 and var_281_4:OilMax(var_281_1) then
+		if var_281_2 > 0 and var_281_5:OilMax(var_281_2) then
 			return false, "oil"
 		end
 	end
 
-	local var_281_8 = getProxy(EquipmentProxy):getCapacity()
+	var_281_0.isExpBookOverflow = {}
 
-	if var_281_2 > 0 and var_281_2 + var_281_8 > var_281_4:getMaxEquipmentBag() then
+	for iter_281_0, iter_281_1 in pairs(arg_281_0[DROP_TYPE_ITEM]) do
+		local var_281_9 = Item.getConfigData(iter_281_0)
+
+		if getProxy(BagProxy):getItemCountById(iter_281_0) + iter_281_1 > var_281_9.max_num then
+			table.insert(var_281_0.isExpBookOverflow, iter_281_0)
+		end
+	end
+
+	local var_281_10 = getProxy(EquipmentProxy):getCapacity()
+
+	if var_281_3 > 0 and var_281_3 + var_281_10 > var_281_5:getMaxEquipmentBag() then
 		return false, "equip"
 	end
 
-	local var_281_9 = getProxy(BayProxy):getShipCount()
+	local var_281_11 = getProxy(BayProxy):getShipCount()
 
-	if var_281_3 > 0 and var_281_3 + var_281_9 > var_281_4:getMaxShipBag() then
+	if var_281_4 > 0 and var_281_4 + var_281_11 > var_281_5:getMaxShipBag() then
 		return false, "ship"
 	end
 
-	return true, var_281_5
+	return true, var_281_0
 end
 
 function CheckShipExpOverflow(arg_282_0)
