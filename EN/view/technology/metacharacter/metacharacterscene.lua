@@ -934,6 +934,10 @@ end
 
 function var_0_0.switchPage(arg_50_0, arg_50_1)
 	if not arg_50_0.curPageIndex then
+		if arg_50_1 == 1 then
+			setActive(arg_50_0.toggleBtnsTF, true)
+		end
+
 		triggerToggle(arg_50_0.toggleList[arg_50_1], true)
 	end
 end

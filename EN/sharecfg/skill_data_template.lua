@@ -1144,6 +1144,8 @@ pg.skill_data_template = setmetatable({
 		150080,
 		150090,
 		150100,
+		150120,
+		150130,
 		18010,
 		18040,
 		18050,
@@ -2150,6 +2152,12 @@ pg.skill_data_template = setmetatable({
 		801232,
 		801235,
 		801237,
+		801240,
+		801250,
+		801261,
+		801262,
+		801263,
+		801264,
 		901010,
 		901020,
 		902010,
@@ -91998,7 +92006,7 @@ pg.base.skill_data_template = {
 		id = 17940,
 		type = 1,
 		max_level = 10,
-		desc = "Every 12s: performs a $1 special slashing attack on 1 random enemy; if that enemy did not sink, additionally performs a $1 special stabbing attack on the enemy (DMG is based on the skill's level; decreases this ship's ramming DMG taken by 80.0% while performing the stab). These attacks prioritize humanoid enemies. \nInflicts the Slashed status to enemies hit by these attacks, increasing their DMG taken from submarine, surface, and aircraft torpedoes by $2. \nWhen the stabbing attack activates, if Mogador is NOT affected by Burn, the attack deals guaranteed Crit DMG.",
+		desc = "Every 12s: performs a $1 special slashing attack on 1 random enemy; if that enemy did not sink, additionally performs a $1 special stabbing attack on the enemy (DMG is based on the skill's level). These attacks prioritize humanoid enemies. \nInflicts the Slashed status to enemies hit by these attacks for 12s, increasing their DMG taken from submarine, surface, and aircraft torpedoes by $2. \nWhen the stabbing attack activates, if Mogador is NOT affected by Burn, the attack deals guaranteed Crit DMG and she gains the Axe of Judgment status for 2.5s, granting the following buffs:\n1) Decreases her ramming DMG taken by 80.0%;\n2) She cannot take more than 5.0% of her max HP in DMG at once; if she takes this much DMG, she evades all enemy shells and cannot take ramming DMG until the buff wears off.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -93530,6 +93538,245 @@ pg.base.skill_data_template = {
 		},
 		desc_get_add = {},
 		desc_add = {}
+	},
+	[150120] = {
+		desc_get = "",
+		name = "Symphony Rehearsal",
+		id = 150120,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's FP by $1. When this ship takes DMG, or when an enemy gets within a certain range of her: fires a $2 special barrage (DMG is based on the skill's level; 15s cooldown between activations).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	},
+	[150130] = {
+		desc_get = "",
+		name = "Youthful Chorale",
+		id = 150130,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's AA by $1. When this ship fires her Main Guns: $2 chance for all your Little ships to fire a $3 special barrage (DMG is based on the skill's level and the AA stat of the ship firing the barrage).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"40.0%",
+				"70.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"40.0%",
+					"+3.3%"
+				},
+				{
+					"43.3%",
+					"+3.3%"
+				},
+				{
+					"46.6%",
+					"+3.3%"
+				},
+				{
+					"49.9%",
+					"+3.3%"
+				},
+				{
+					"53.2%",
+					"+3.3%"
+				},
+				{
+					"56.5%",
+					"+3.3%"
+				},
+				{
+					"59.8%",
+					"+3.3%"
+				},
+				{
+					"63.1%",
+					"+3.3%"
+				},
+				{
+					"66.4%",
+					"+3.6%"
+				},
+				{
+					"70.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
 	},
 	[18010] = {
 		desc_get = "",
@@ -138222,6 +138469,318 @@ pg.base.skill_data_template = {
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 8.0%.",
 		system_transform = {
 			[51] = 801237
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801240] = {
+		desc_get = "",
+		name = "Hellward Bladepoint",
+		id = 801240,
+		type = 1,
+		max_level = 10,
+		desc = "Every 15s: fires a $1 special barrage (DMG is based on the skill's level). Enemies hit by this barrage take $2 more cannon and torpedo DMG from Foch META.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			}
+		}
+	},
+	[801250] = {
+		desc_get = "",
+		name = "Unrelenting Warbringer",
+		id = 801250,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's FP by $1. When the fleet this ship is in sinks an enemy fleet: decreases this ship's DMG taken by $2 for the rest of the sortie (can be stacked up to 3 times). Decreases the DMG penalty on this ship from the Out of Ammo debuff by $3.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"1.5%",
+				"6.0%"
+			},
+			{
+				"15.0%",
+				"30.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"1.5%",
+					"+0.5%"
+				},
+				{
+					"2.0%",
+					"+0.5%"
+				},
+				{
+					"2.5%",
+					"+0.5%"
+				},
+				{
+					"3.0%",
+					"+0.5%"
+				},
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%"
+				}
+			},
+			{
+				{
+					"15.0%",
+					"+1.6%"
+				},
+				{
+					"16.6%",
+					"+1.6%"
+				},
+				{
+					"18.2%",
+					"+1.6%"
+				},
+				{
+					"19.8%",
+					"+1.6%"
+				},
+				{
+					"21.4%",
+					"+1.6%"
+				},
+				{
+					"23.0%",
+					"+1.6%"
+				},
+				{
+					"24.6%",
+					"+1.8%"
+				},
+				{
+					"26.4%",
+					"+1.8%"
+				},
+				{
+					"28.2%",
+					"+1.8%"
+				},
+				{
+					"30.0%"
+				}
+			}
+		}
+	},
+	[801261] = {
+		desc_get = "",
+		name = "Cinders of Hope - Foch",
+		id = 801261,
+		type = 3,
+		max_level = 1,
+		desc = "Every 9 times this ship fires her Main Guns: fires a special barrage.",
+		system_transform = {
+			[51] = 801265
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801262] = {
+		desc_get = "",
+		name = "Cinders of Hope - Foch",
+		id = 801262,
+		type = 3,
+		max_level = 1,
+		desc = "Every 6 times this ship fires her Main Guns: fires a special barrage.",
+		system_transform = {
+			[51] = 801267
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801263] = {
+		desc_get = "",
+		name = "Cinders of Hope - Foch",
+		id = 801263,
+		type = 3,
+		max_level = 1,
+		desc = "[Operation Siren]\nEvery 9 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
+		system_transform = {
+			[51] = 801265
+		},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[801264] = {
+		desc_get = "",
+		name = "Cinders of Hope - Foch",
+		id = 801264,
+		type = 3,
+		max_level = 1,
+		desc = "[Operation Siren]\nEvery 6 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
+		system_transform = {
+			[51] = 801267
 		},
 		world_death_mark = {
 			1

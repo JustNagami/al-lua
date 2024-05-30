@@ -112,10 +112,7 @@ function var_0_0.register(arg_1_0)
 				system = SYSTEM_DEBUG
 			})
 		else
-			arg_1_0:addSubLayers(Context.New({
-				mediator = MailMediator,
-				viewComponent = MailLayer
-			}))
+			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.MAIL)
 		end
 	end)
 	arg_1_0:bind(var_0_0.OPEN_NOTICE, function(arg_14_0)
@@ -160,6 +157,8 @@ function var_0_0.listNotificationInterests(arg_18_0)
 		GAME.FETCH_VOTE_INFO_DONE,
 		GAME.ROTATE_PAINTING_INDEX,
 		GAME.LOAD_LAYERS,
+		GAME.GUILD_GET_USER_INFO_DONE,
+		GAME.GET_PUBLIC_GUILD_USER_DATA_DONE,
 		NotificationProxy.FRIEND_REQUEST_ADDED,
 		NotificationProxy.FRIEND_REQUEST_REMOVED,
 		FriendProxy.FRIEND_NEW_MSG,

@@ -74,17 +74,13 @@ function var_0_0.on(arg_12_0, arg_12_1)
 
 	setImageAlpha(arg_12_0._tf, arg_12_1 and 0.01 or 0)
 
-	if arg_12_1 then
-		pg.TimeMgr.GetInstance():RemoveTimer(arg_12_0.delayTimer)
-
+	if not arg_12_1 then
+		setActive(arg_12_0.indicator, arg_12_1)
+	elseif not arg_12_0.delayTimer then
 		arg_12_0.delayTimer = pg.TimeMgr.GetInstance():AddTimer("loading", 1, 0, function()
 			setImageAlpha(arg_12_0._tf, 0.2)
 			setActive(arg_12_0.indicator, true)
-
-			arg_12_0.delayTimer = nil
 		end)
-	else
-		setActive(arg_12_0.indicator, false)
 	end
 
 	var_0_1 = var_0_1 + 1
@@ -102,9 +98,12 @@ function var_0_0.off(arg_14_0)
 		if var_0_1 == 0 then
 			setActive(arg_14_0._go, false)
 			setActive(arg_14_0.indicator, false)
-			pg.TimeMgr.GetInstance():RemoveTimer(arg_14_0.delayTimer)
 
-			arg_14_0.delayTimer = nil
+			if arg_14_0.delayTimer then
+				pg.TimeMgr.GetInstance():RemoveTimer(arg_14_0.delayTimer)
+
+				arg_14_0.delayTimer = nil
+			end
 		end
 	end
 end

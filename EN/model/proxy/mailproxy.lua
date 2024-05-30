@@ -4,217 +4,280 @@ var_0_0.MAIL_TOTAL = "mail total"
 var_0_0.MAIL_OPENNED = "mail openned"
 var_0_0.MAIL_ATTACHMENT_TAKEN = "mail attachment taken"
 var_0_0.UPDATE_ATTACHMENT_COUNT = "UPDATE_ATTACHMENT_COUNT"
+var_0_0.DEAL_CMD_LIST = {
+	"read",
+	"important",
+	"unimportant",
+	"delete",
+	"attachment",
+	"overflow",
+	"move"
+}
+var_0_0.MailMessageBoxType = {
+	ReceiveAward = 1,
+	ShowTips = 2,
+	OverflowConfirm = 3
+}
 
 function var_0_0.register(arg_1_0)
-	arg_1_0.init = false
-	arg_1_0.dirty = false
-	arg_1_0.unread = 0
+	arg_1_0.data = {}
 	arg_1_0.total = 0
+	arg_1_0.totalExist = 0
+	arg_1_0.totalExistMailId = nil
+	arg_1_0.ids = {}
+	arg_1_0.importantIds = nil
+	arg_1_0.rareIds = nil
+	arg_1_0.collectionData = {}
+	arg_1_0.collectionIds = nil
 
 	arg_1_0:on(30001, function(arg_2_0)
-		if arg_1_0.init then
-			arg_1_0.dirty = true
-		end
-
-		arg_1_0:unpdateExistAttachment(arg_2_0.unread_number)
+		arg_1_0:unpdateUnreadCount(arg_2_0.unread_number)
 		arg_1_0:updateTotal(arg_2_0.total_number)
 	end)
 end
 
-function var_0_0.resetData(arg_3_0)
-	arg_3_0.data = {}
-	arg_3_0.init = false
-	arg_3_0.dirty = false
+function var_0_0.getMail(arg_3_0, arg_3_1)
+	if arg_3_0.data[arg_3_1] ~= nil then
+		return arg_3_0.data[arg_3_1]:clone()
+	end
 end
 
-function var_0_0.addMail(arg_4_0, arg_4_1)
+function var_0_0.updateMail(arg_4_0, arg_4_1)
 	assert(isa(arg_4_1, Mail), "should be an instance of Mail")
-	assert(arg_4_0.data[arg_4_1.id] == nil, "mail already exist")
 
 	arg_4_0.data[arg_4_1.id] = arg_4_1:clone()
-
-	arg_4_0.data[arg_4_1.id]:display("added")
 end
 
-function var_0_0.getMails(arg_5_0)
-	local var_5_0 = {}
+function var_0_0.removeMail(arg_5_0, arg_5_1)
+	arg_5_0.total = arg_5_0.total - 1
 
-	for iter_5_0, iter_5_1 in pairs(arg_5_0.data) do
-		table.insert(var_5_0, iter_5_1)
+	if arg_5_0.totalExist > 0 and arg_5_1 <= arg_5_0.totalExistMailId then
+		arg_5_0.totalExist = arg_5_0.totalExist - 1
+
+		table.removebyvalue(arg_5_0.ids, arg_5_1)
 	end
 
-	return Clone(var_5_0)
-end
+	if arg_5_0.data[arg_5_1] then
+		if arg_5_0.importantIds and arg_5_0.data[arg_5_1].importantFlag then
+			table.removebyvalue(arg_5_0.importantIds, arg_5_1)
+		end
 
-function var_0_0.getMailById(arg_6_0, arg_6_1)
-	if arg_6_0.data[arg_6_1] ~= nil then
-		return arg_6_0.data[arg_6_1]:clone()
-	end
-end
-
-function var_0_0.GetAttachmentCount(arg_7_0)
-	return arg_7_0._existAttachmentCount
-end
-
-function var_0_0.getOldestMail(arg_8_0)
-	local var_8_0
-
-	for iter_8_0, iter_8_1 in pairs(arg_8_0.data) do
-		if not var_8_0 or var_8_0.id > iter_8_1.id then
-			var_8_0 = iter_8_1
+		if arg_5_0.rareIds and arg_5_0.data[arg_5_1]:IsRare() then
+			table.removebyvalue(arg_5_0.rareIds, arg_5_1)
 		end
 	end
 
-	return var_8_0 and var_8_0:clone()
+	arg_5_0.data[arg_5_1] = nil
 end
 
-function var_0_0.getNewestMail(arg_9_0)
-	local var_9_0
-
-	for iter_9_0, iter_9_1 in pairs(arg_9_0.data) do
-		if not var_9_0 or var_9_0.id < iter_9_1.id then
-			var_9_0 = iter_9_1
-		end
+function var_0_0.getCollecitonMail(arg_6_0, arg_6_1)
+	if arg_6_0.collectionData[arg_6_1] then
+		return arg_6_0.collectionData[arg_6_1]:clone()
 	end
-
-	return var_9_0 and var_9_0:clone()
 end
 
-function var_0_0.takeMailAttachment(arg_10_0, arg_10_1)
-	assert(isa(arg_10_1, Mail), "should be an instance of Mail")
+function var_0_0.updateCollectionMail(arg_7_0, arg_7_1)
+	assert(isa(arg_7_1, BaseMail), "should be an instance of BaseMail")
 
-	arg_10_1.isTaken = true
-
-	arg_10_0:updateMail(arg_10_1)
-	arg_10_0.facade:sendNotification(var_0_0.MAIL_ATTACHMENT_TAKEN, arg_10_1:clone())
+	arg_7_0.collectionData[arg_7_1.id] = arg_7_1:clone()
 end
 
-function var_0_0.updateMail(arg_11_0, arg_11_1)
-	assert(isa(arg_11_1, Mail), "should be an instance of Mail")
-	assert(arg_11_0.data[arg_11_1.id] ~= nil, "ship should exist")
+function var_0_0.removeCollectionMail(arg_8_0, arg_8_1)
+	assert(arg_8_0.collectionData[arg_8_1] ~= nil, "mail should exist")
 
-	arg_11_0.data[arg_11_1.id] = arg_11_1:clone()
+	arg_8_0.collectionData[arg_8_1] = nil
 
-	arg_11_0.data[arg_11_1.id]:display("updated")
+	table.removebyvalue(arg_8_0.collectionIds, arg_8_1)
 end
 
-function var_0_0.removeMail(arg_12_0, arg_12_1)
-	assert(isa(arg_12_1, Mail), "should be an instance of Mail")
-	arg_12_0:removeMailById(arg_12_1.id)
-end
+function var_0_0.DealMailOperation(arg_9_0, arg_9_1, arg_9_2)
+	switch(arg_9_2, {
+		read = function()
+			arg_9_0._existUnreadCount = arg_9_0._existUnreadCount - 1
 
-function var_0_0.removeMailById(arg_13_0, arg_13_1)
-	local var_13_0 = arg_13_0.data[arg_13_1]
-
-	assert(arg_13_0.data[arg_13_1] ~= nil, "mail should exist")
-	arg_13_0.data[var_13_0.id]:display("removed")
-
-	arg_13_0.data[var_13_0.id] = nil
-
-	arg_13_0:updateTotal(arg_13_0.total - 1)
-end
-
-function var_0_0.hasMailById(arg_14_0, arg_14_1)
-	return arg_14_0.data[arg_14_1] ~= nil
-end
-
-function var_0_0.unpdateExistAttachment(arg_15_0, arg_15_1)
-	arg_15_0._existAttachmentCount = arg_15_1
-
-	arg_15_0:sendNotification(var_0_0.UPDATE_ATTACHMENT_COUNT)
-end
-
-function var_0_0.updateTotal(arg_16_0, arg_16_1)
-	arg_16_0.total = arg_16_1
-
-	arg_16_0:sendNotification(var_0_0.MAIL_TOTAL, arg_16_0.total)
-end
-
-function var_0_0.getUnreadCount(arg_17_0)
-	return arg_17_0.unread
-end
-
-function var_0_0.GetAttchmentDic(arg_18_0)
-	local var_18_0 = {
-		[DROP_TYPE_ITEM] = {},
-		[DROP_TYPE_RESOURCE] = {},
-		[DROP_TYPE_EQUIP] = 0,
-		[DROP_TYPE_SHIP] = 0,
-		[DROP_TYPE_WORLD_ITEM] = 0
-	}
-
-	for iter_18_0, iter_18_1 in ipairs(arg_18_0:getMails()) do
-		if iter_18_1.attachFlag == Mail.ATTACHMENT_EXIST then
-			local var_18_1 = iter_18_1:GetAttchmentDic()
-
-			for iter_18_2, iter_18_3 in pairs(var_18_1) do
-				switch(iter_18_2, {
-					[DROP_TYPE_ITEM] = function()
-						for iter_19_0, iter_19_1 in pairs(iter_18_3) do
-							var_18_0[iter_18_2][iter_19_0] = defaultValue(var_18_0[iter_18_2][iter_19_0], 0) + iter_19_1
-						end
-					end,
-					[DROP_TYPE_RESOURCE] = function()
-						for iter_20_0, iter_20_1 in pairs(iter_18_3) do
-							var_18_0[iter_18_2][iter_20_0] = defaultValue(var_18_0[iter_18_2][iter_20_0], 0) + iter_20_1
-						end
-					end,
-					[DROP_TYPE_EQUIP] = function()
-						var_18_0[iter_18_2] = var_18_0[iter_18_2] + iter_18_3
-					end,
-					[DROP_TYPE_SHIP] = function()
-						var_18_0[iter_18_2] = var_18_0[iter_18_2] + iter_18_3
-					end,
-					[DROP_TYPE_WORLD_ITEM] = function()
-						var_18_0[iter_18_2] = var_18_0[iter_18_2] + iter_18_3
-					end
-				})
+			if arg_9_0.data[arg_9_1] then
+				arg_9_0.data[arg_9_1]:setReadFlag(true)
 			end
-		end
-	end
+		end,
+		important = function()
+			if arg_9_0.data[arg_9_1] then
+				arg_9_0.data[arg_9_1]:setImportantFlag(true)
 
-	return var_18_0
-end
-
-function var_0_0.getMailAttachments(arg_24_0)
-	local var_24_0 = {}
-	local var_24_1 = arg_24_0:getMails()
-
-	for iter_24_0, iter_24_1 in ipairs(var_24_1) do
-		if iter_24_1.attachFlag == Mail.ATTACHMENT_EXIST then
-			table.insert(var_24_0, iter_24_1)
-		end
-	end
-
-	return var_24_0
-end
-
-function var_0_0.getAllAttachment(arg_25_0)
-	local var_25_0 = {}
-	local var_25_1 = {}
-	local var_25_2 = arg_25_0:getMailAttachments()
-
-	_.each(var_25_2, function(arg_26_0)
-		_.each(arg_26_0.attachments or {}, function(arg_27_0)
-			if arg_27_0.type == DROP_TYPE_LOVE_LETTER then
-				table.insert(var_25_1, arg_27_0)
-			else
-				local var_27_0 = arg_27_0.type .. "_" .. arg_27_0.id
-
-				if var_25_0[var_27_0] then
-					var_25_0[var_27_0].count = var_25_0[var_27_0].count + arg_27_0.count
-				else
-					var_25_0[var_27_0] = arg_27_0
+				if arg_9_0.importantIds then
+					table.dichotomyInsert(arg_9_0.importantIds, arg_9_1)
 				end
 			end
-		end)
-	end)
+		end,
+		unimportant = function()
+			if arg_9_0.data[arg_9_1] then
+				arg_9_0.data[arg_9_1]:setImportantFlag(false)
 
-	for iter_25_0, iter_25_1 in pairs(var_25_0) do
-		table.insert(var_25_1, iter_25_1)
+				if arg_9_0.importantIds then
+					table.removebyvalue(arg_9_0.importantIds, arg_9_1)
+				end
+			end
+		end,
+		delete = function()
+			arg_9_0:removeMail(arg_9_1)
+		end,
+		attachment = function()
+			if arg_9_0.data[arg_9_1] then
+				arg_9_0.data[arg_9_1]:setAttachFlag(true)
+				arg_9_0.data[arg_9_1]:setReadFlag(true)
+			end
+		end,
+		overflow = function()
+			return
+		end,
+		move = function()
+			if arg_9_0.data[arg_9_1] then
+				local var_16_0 = arg_9_0.data[arg_9_1]
+
+				arg_9_0:removeMail(arg_9_1)
+				arg_9_0:updateCollectionMail(var_16_0)
+
+				if arg_9_0.collectionIds then
+					table.dichotomyInsert(arg_9_0.collectionIds, arg_9_1)
+				end
+			end
+		end
+	})
+end
+
+function var_0_0.IsDirty(arg_17_0)
+	return arg_17_0.totalExist < arg_17_0.total
+end
+
+function var_0_0.GetNewIndex(arg_18_0)
+	local var_18_0 = math.min(arg_18_0.total - arg_18_0.totalExist, SINGLE_MAIL_REQUIRE_SIZE)
+
+	return arg_18_0.total - var_18_0 + 1, arg_18_0.total
+end
+
+function var_0_0.GetNextIndex(arg_19_0)
+	local var_19_0 = math.min(arg_19_0.totalExist - #arg_19_0.ids, SINGLE_MAIL_REQUIRE_SIZE)
+	local var_19_1 = arg_19_0.totalExist - #arg_19_0.ids
+
+	return var_19_1 - var_19_0 + 1, var_19_1
+end
+
+function var_0_0.AddNewMails(arg_20_0, arg_20_1)
+	local var_20_0 = {}
+	local var_20_1 = {}
+
+	for iter_20_0, iter_20_1 in ipairs(arg_20_1) do
+		arg_20_0:updateMail(iter_20_1)
+
+		if iter_20_1.importantFlag then
+			table.insert(var_20_0, iter_20_1.id)
+		end
+
+		if iter_20_1:IsRare() then
+			table.insert(var_20_1, iter_20_1.id)
+		end
 	end
 
-	return var_25_1
+	arg_20_0.ids = table.mergeArray(arg_20_0.ids, underscore.map(arg_20_1, function(arg_21_0)
+		return arg_21_0.id
+	end))
+
+	if #var_20_0 > 0 and arg_20_0.importantIds then
+		arg_20_0.importantIds = table.mergeArray(arg_20_0.importantIds, var_20_0)
+	end
+
+	if #var_20_1 > 0 and arg_20_0.rareIds then
+		arg_20_0.rareIds = table.mergeArray(arg_20_0.rareIds, var_20_1)
+	end
+
+	arg_20_0.totalExist = arg_20_0.total
+
+	if arg_20_0.totalExist > 0 then
+		arg_20_0.totalExistMailId = arg_20_0.ids[#arg_20_0.ids]
+	end
+end
+
+function var_0_0.AddNextMails(arg_22_0, arg_22_1)
+	for iter_22_0, iter_22_1 in ipairs(arg_22_1) do
+		arg_22_0:updateMail(iter_22_1)
+	end
+
+	arg_22_0.ids = table.mergeArray(underscore.map(arg_22_1, function(arg_23_0)
+		return arg_23_0.id
+	end), arg_22_0.ids)
+end
+
+function var_0_0.SetImportantMails(arg_24_0, arg_24_1)
+	for iter_24_0, iter_24_1 in ipairs(arg_24_1) do
+		arg_24_0:updateMail(iter_24_1)
+	end
+
+	arg_24_0.importantIds = underscore.map(arg_24_1, function(arg_25_0)
+		return arg_25_0.id
+	end)
+end
+
+function var_0_0.SetRareMails(arg_26_0, arg_26_1)
+	for iter_26_0, iter_26_1 in ipairs(arg_26_1) do
+		arg_26_0:updateMail(iter_26_1)
+	end
+
+	arg_26_0.rareIds = underscore.map(arg_26_1, function(arg_27_0)
+		return arg_27_0.id
+	end)
+end
+
+function var_0_0.AddCollectionMails(arg_28_0, arg_28_1)
+	for iter_28_0, iter_28_1 in ipairs(arg_28_1) do
+		arg_28_0:updateCollectionMail(iter_28_1)
+	end
+
+	arg_28_0.collectionIds = table.mergeArray(arg_28_0.collectionIds, underscore.map(arg_28_1, function(arg_29_0)
+		return arg_29_0.id
+	end))
+end
+
+function var_0_0.GetMails(arg_30_0, arg_30_1)
+	return underscore.map(arg_30_1, function(arg_31_0)
+		return arg_30_0.data[arg_31_0]
+	end)
+end
+
+function var_0_0.GetCollectionMails(arg_32_0, arg_32_1)
+	return underscore.map(arg_32_1, function(arg_33_0)
+		return arg_32_0.collectionData[arg_33_0]
+	end)
+end
+
+function var_0_0.GetMailsAttachments(arg_34_0, arg_34_1)
+	local var_34_0 = {}
+
+	for iter_34_0, iter_34_1 in ipairs(arg_34_1) do
+		local var_34_1 = arg_34_0.data[iter_34_1]
+
+		if not var_34_1.attachFlag then
+			for iter_34_2, iter_34_3 in ipairs(var_34_1.attachments) do
+				table.insert(var_34_0, iter_34_3)
+			end
+		end
+	end
+
+	return PlayerConst.MergeSameDrops(var_34_0)
+end
+
+function var_0_0.GetUnreadCount(arg_35_0)
+	return arg_35_0._existUnreadCount
+end
+
+function var_0_0.unpdateUnreadCount(arg_36_0, arg_36_1)
+	arg_36_0._existUnreadCount = arg_36_1
+
+	arg_36_0:sendNotification(var_0_0.UPDATE_ATTACHMENT_COUNT)
+end
+
+function var_0_0.updateTotal(arg_37_0, arg_37_1)
+	arg_37_0.total = arg_37_1
+
+	arg_37_0:sendNotification(var_0_0.MAIL_TOTAL, arg_37_0.total)
 end
 
 return var_0_0

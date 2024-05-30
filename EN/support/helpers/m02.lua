@@ -868,6 +868,12 @@ local var_0_4 = {
 		-4,
 		-4
 	},
+	frame_store = {
+		-17,
+		-3,
+		-3,
+		-18
+	},
 	frame_prop = {
 		-11,
 		-12,
@@ -1036,6 +1042,8 @@ function updateItem(arg_90_0, arg_90_1, arg_90_2)
 
 	if arg_90_1:getConfig("type") == 9 then
 		var_90_1 = "frame_design"
+	elseif arg_90_2.frame then
+		var_90_1 = arg_90_2.frame
 	end
 
 	setFrame(findTF(arg_90_0, "icon_bg/frame"), var_90_0, var_90_1)
@@ -4171,34 +4179,58 @@ function GetItemsOverflowDic(arg_277_0)
 	return var_277_0
 end
 
-function CheckOverflow(arg_283_0)
-	local var_283_0 = arg_283_0[DROP_TYPE_RESOURCE][PlayerConst.ResGold] or 0
-	local var_283_1 = arg_283_0[DROP_TYPE_RESOURCE][PlayerConst.ResOil] or 0
-	local var_283_2 = arg_283_0[DROP_TYPE_EQUIP]
-	local var_283_3 = arg_283_0[DROP_TYPE_SHIP]
-	local var_283_4 = getProxy(PlayerProxy):getRawData()
+function CheckOverflow(arg_283_0, arg_283_1)
+	local var_283_0 = {}
+	local var_283_1 = arg_283_0[DROP_TYPE_RESOURCE][PlayerConst.ResGold] or 0
+	local var_283_2 = arg_283_0[DROP_TYPE_RESOURCE][PlayerConst.ResOil] or 0
+	local var_283_3 = arg_283_0[DROP_TYPE_EQUIP]
+	local var_283_4 = arg_283_0[DROP_TYPE_SHIP]
+	local var_283_5 = getProxy(PlayerProxy):getRawData()
+	local var_283_6 = false
 
-	if var_283_0 > 0 and var_283_4:GoldMax(var_283_0) then
-		return false, "gold"
+	if arg_283_1 then
+		local var_283_7 = var_283_5:OverStore(PlayerConst.ResStoreGold, var_283_1)
+		local var_283_8 = var_283_5:OverStore(PlayerConst.ResStoreOil, var_283_2)
+
+		if var_283_7 > 0 or var_283_8 > 0 then
+			var_283_0.isStoreOverflow = {
+				var_283_7,
+				var_283_8
+			}
+		end
+	else
+		if var_283_1 > 0 and var_283_5:GoldMax(var_283_1) then
+			return false, "gold"
+		end
+
+		if var_283_2 > 0 and var_283_5:OilMax(var_283_2) then
+			return false, "oil"
+		end
 	end
 
-	if var_283_1 > 0 and var_283_4:OilMax(var_283_1) then
-		return false, "oil"
+	var_283_0.isExpBookOverflow = {}
+
+	for iter_283_0, iter_283_1 in pairs(arg_283_0[DROP_TYPE_ITEM]) do
+		local var_283_9 = Item.getConfigData(iter_283_0)
+
+		if getProxy(BagProxy):getItemCountById(iter_283_0) + iter_283_1 > var_283_9.max_num then
+			table.insert(var_283_0.isExpBookOverflow, iter_283_0)
+		end
 	end
 
-	local var_283_5 = getProxy(EquipmentProxy):getCapacity()
+	local var_283_10 = getProxy(EquipmentProxy):getCapacity()
 
-	if var_283_2 > 0 and var_283_2 + var_283_5 > var_283_4:getMaxEquipmentBag() then
+	if var_283_3 > 0 and var_283_3 + var_283_10 > var_283_5:getMaxEquipmentBag() then
 		return false, "equip"
 	end
 
-	local var_283_6 = getProxy(BayProxy):getShipCount()
+	local var_283_11 = getProxy(BayProxy):getShipCount()
 
-	if var_283_3 > 0 and var_283_3 + var_283_6 > var_283_4:getMaxShipBag() then
+	if var_283_4 > 0 and var_283_4 + var_283_11 > var_283_5:getMaxShipBag() then
 		return false, "ship"
 	end
 
-	return true
+	return true, var_283_0
 end
 
 function CheckShipExpOverflow(arg_284_0)
@@ -4417,50 +4449,70 @@ function setDefaultZeroMetatable(arg_305_0)
 	})
 end
 
-local var_0_26 = {
-	__index = {
-		LoadAssetSync = function(arg_307_0, ...)
-			if EDITOR_TOOL then
+if EDITOR_TOOL then
+	local var_0_26 = {
+		__index = {
+			LoadAssetSync = function(arg_307_0, ...)
 				return ResourceMgr.Inst:getAssetSync(arg_307_0.path, ...)
-			else
-				return ResourceMgr.Inst:LoadAssetSync(arg_307_0.ab, ...)
+			end,
+			GetAllAssetNames = function(arg_308_0, ...)
+				return ReflectionHelp.RefCallMethod(typeof(ResourceMgr), "GetAssetBundleAllAssetNames", ResourceMgr.Inst, {
+					typeof("System.String")
+				}, {
+					arg_308_0.path
+				})
 			end
-		end
+		}
 	}
-}
 
-function buildTempAB(arg_308_0, arg_308_1)
-	local var_308_0 = setmetatable({
-		path = arg_308_0
-	}, var_0_26)
+	function buildTempAB(arg_309_0, arg_309_1)
+		local var_309_0 = setmetatable({
+			path = arg_309_0
+		}, var_0_26)
 
-	if EDITOR_TOOL then
-		if arg_308_1 then
+		if arg_309_1 then
 			onNextTick(function()
-				arg_308_1(var_308_0)
+				arg_309_1(var_309_0)
 			end)
 		end
-	elseif arg_308_1 then
-		ResourceMgr.Inst:loadAssetBundleAsync(arg_308_0, function(arg_310_0)
-			var_308_0.ab = arg_310_0
 
-			arg_308_1(var_308_0)
-		end)
-	else
-		var_308_0.ab = ResourceMgr.Inst:loadAssetBundleSync(arg_308_0)
+		return var_309_0
 	end
 
-	return var_308_0
-end
+	function checkABExist(arg_311_0)
+		return PathMgr.FileExists(PathMgr.getAssetBundle(arg_311_0)) or ResourceMgr.Inst:AssetExist(arg_311_0)
+	end
+else
+	local var_0_27 = {
+		__index = {
+			LoadAssetSync = function(arg_312_0, ...)
+				return ResourceMgr.Inst:LoadAssetSync(arg_312_0.ab, ...)
+			end,
+			GetAllAssetNames = function(arg_313_0, ...)
+				return arg_313_0.ab:GetAllAssetNames(...)
+			end
+		}
+	}
 
-function checkABExist(arg_311_0)
-	if EDITOR_TOOL then
-		return ReflectionHelp.RefCallMethod(typeof(ResourceMgr), "CheckAssetBundleExist", ResourceMgr.Inst, {
-			typeof("System.String")
-		}, {
-			arg_311_0
-		})
-	else
-		return PathMgr.FileExists(PathMgr.getAssetBundle(arg_311_0))
+	function buildTempAB(arg_314_0, arg_314_1)
+		local var_314_0 = setmetatable({
+			path = arg_314_0
+		}, var_0_27)
+
+		if arg_314_1 then
+			ResourceMgr.Inst:loadAssetBundleAsync(arg_314_0, function(arg_315_0)
+				var_314_0.ab = arg_315_0
+
+				arg_314_1(var_314_0)
+			end)
+		else
+			var_314_0.ab = ResourceMgr.Inst:loadAssetBundleSync(arg_314_0)
+		end
+
+		return var_314_0
+	end
+
+	function checkABExist(arg_316_0)
+		return PathMgr.FileExists(PathMgr.getAssetBundle(arg_316_0))
 	end
 end

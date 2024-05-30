@@ -1641,6 +1641,7 @@ pg.skill_data_display = setmetatable({
 		17890,
 		17891,
 		17911,
+		17942,
 		17952,
 		17961,
 		17970,
@@ -1675,6 +1676,7 @@ pg.skill_data_display = setmetatable({
 		150083,
 		150090,
 		150091,
+		150121,
 		18010,
 		18040,
 		18041,
@@ -9657,6 +9659,10 @@ pg.base.skill_data_display = {
 		id = 17911,
 		name = "Perfect Dazzling Stage"
 	},
+	[17942] = {
+		id = 17942,
+		name = "Cleaver of All Sin"
+	},
 	[17952] = {
 		id = 17952,
 		name = "Speed Follow-Up"
@@ -9792,6 +9798,10 @@ pg.base.skill_data_display = {
 	[150091] = {
 		id = 150091,
 		name = "Attack Command: Holy Judgment"
+	},
+	[150121] = {
+		id = 150121,
+		name = "Symphony Rehearsal"
 	},
 	[18010] = {
 		id = 18010,

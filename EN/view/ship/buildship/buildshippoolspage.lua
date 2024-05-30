@@ -151,12 +151,13 @@ function var_0_0.Flush(arg_13_0, arg_13_1, arg_13_2)
 
 		local var_13_6 = var_13_5:Find("frame")
 
+		removeOnToggle(var_13_6)
+		triggerToggle(var_13_6, false)
 		onToggle(arg_13_0, var_13_6, function(arg_16_0)
 			if arg_16_0 then
 				arg_13_0:SwitchPool(iter_13_1)
 			end
 		end, SFX_PANEL)
-		triggerToggle(var_13_6, false)
 
 		var_13_1[iter_13_1:GetPoolId()] = var_13_5
 	end

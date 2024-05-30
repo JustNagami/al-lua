@@ -111,6 +111,7 @@ function var_0_0.Ctor(arg_8_0, arg_8_1)
 	arg_8_0.banBackyardUploadTime = arg_8_1.theme_upload_not_allowed_time or 0
 	arg_8_0.rmb = arg_8_1.rmb or 0
 	arg_8_0.identityFlag = arg_8_1.gm_flag
+	arg_8_0.mailStoreLevel = arg_8_1.mail_storeroom_lv
 
 	local var_8_1 = getProxy(AppreciateProxy)
 
@@ -614,10 +615,6 @@ end
 function var_0_0.OilMax(arg_63_0, arg_63_1)
 	arg_63_1 = arg_63_1 or 0
 
-	if arg_63_1 < 0 then
-		arg_63_1 = 0
-	end
-
 	return pg.gameset.max_oil.key_value < arg_63_0.oil + arg_63_1
 end
 
@@ -627,121 +624,148 @@ function var_0_0.GoldMax(arg_64_0, arg_64_1)
 	return pg.gameset.max_gold.key_value < arg_64_0.gold + arg_64_1
 end
 
-function var_0_0.UpdateCommonFlag(arg_65_0, arg_65_1)
-	arg_65_0.commonFlagList[arg_65_1] = true
-end
+function var_0_0.ResLack(arg_65_0, arg_65_1, arg_65_2)
+	local var_65_0 = pg.gameset["max_" .. arg_65_1].key_value
 
-function var_0_0.GetCommonFlag(arg_66_0, arg_66_1)
-	return arg_66_0.commonFlagList[arg_66_1]
-end
-
-function var_0_0.CancelCommonFlag(arg_67_0, arg_67_1)
-	arg_67_0.commonFlagList[arg_67_1] = false
-end
-
-function var_0_0.SetCommonFlag(arg_68_0, arg_68_1, arg_68_2)
-	arg_68_0.commonFlagList[arg_68_1] = arg_68_2
-end
-
-function var_0_0.updateCommanderBagMax(arg_69_0, arg_69_1)
-	arg_69_0.commanderBagMax = arg_69_0.commanderBagMax + arg_69_1
-end
-
-function var_0_0.GetDaysFromRegister(arg_70_0)
-	local var_70_0 = pg.TimeMgr.GetInstance():GetServerTime()
-
-	return pg.TimeMgr.GetInstance():DiffDay(arg_70_0.registerTime, var_70_0)
-end
-
-function var_0_0.CanUploadBackYardThemeTemplate(arg_71_0)
-	return pg.TimeMgr.GetInstance():GetServerTime() >= arg_71_0.banBackyardUploadTime
-end
-
-function var_0_0.GetBanUploadBackYardThemeTemplateTime(arg_72_0)
-	return pg.TimeMgr.GetInstance():STimeDescC(arg_72_0.banBackyardUploadTime or 0)
-end
-
-function var_0_0.CheckIdentityFlag(arg_73_0)
-	return arg_73_0.identityFlag == 1
-end
-
-function var_0_0.GetRegisterTime(arg_74_0)
-	return arg_74_0.registerTime
-end
-
-function var_0_0.GetFlagShip(arg_75_0)
-	local var_75_0 = getProxy(SettingsProxy)
-	local var_75_1 = var_75_0:getCurrentSecretaryIndex()
-	local var_75_2
-
-	if var_75_0:IsOpenRandomFlagShip() then
-		var_75_2 = arg_75_0:GetRandomFlagShip(var_75_1)
+	if var_65_0 < arg_65_0[arg_65_1] then
+		return 0
 	else
-		var_75_2 = arg_75_0:GetNativeFlagShip(var_75_1)
+		return math.min(arg_65_2, var_65_0 - arg_65_0[arg_65_1])
 	end
-
-	return var_75_2
 end
 
-local function var_0_5(arg_76_0)
-	local var_76_0 = {}
-	local var_76_1 = {}
-	local var_76_2 = getProxy(SettingsProxy):GetFlagShipDisplayMode()
-	local var_76_3 = getProxy(PlayerProxy):getRawData():ExistEducateChar()
+function var_0_0.OverStore(arg_66_0, arg_66_1, arg_66_2)
+	arg_66_2 = arg_66_2 or 0
 
-	if var_76_2 == FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR and not var_76_3 then
-		var_76_2 = FlAG_SHIP_DISPLAY_ALL
+	local var_66_0 = id2res(arg_66_1)
+	local var_66_1 = pg.mail_storeroom[arg_66_0.mailStoreLevel]
+	local var_66_2 = switch(arg_66_1, {
+		[PlayerConst.ResStoreGold] = function()
+			return var_66_1.gold_store
+		end,
+		[PlayerConst.ResStoreOil] = function()
+			return var_66_1.oil_store
+		end
+	})
 
-		getProxy(SettingsProxy):SetFlagShipDisplayMode(var_76_2)
+	return arg_66_0[var_66_0] + arg_66_2 - var_66_2
+end
+
+function var_0_0.UpdateCommonFlag(arg_69_0, arg_69_1)
+	arg_69_0.commonFlagList[arg_69_1] = true
+end
+
+function var_0_0.GetCommonFlag(arg_70_0, arg_70_1)
+	return arg_70_0.commonFlagList[arg_70_1]
+end
+
+function var_0_0.CancelCommonFlag(arg_71_0, arg_71_1)
+	arg_71_0.commonFlagList[arg_71_1] = false
+end
+
+function var_0_0.SetCommonFlag(arg_72_0, arg_72_1, arg_72_2)
+	arg_72_0.commonFlagList[arg_72_1] = arg_72_2
+end
+
+function var_0_0.updateCommanderBagMax(arg_73_0, arg_73_1)
+	arg_73_0.commanderBagMax = arg_73_0.commanderBagMax + arg_73_1
+end
+
+function var_0_0.GetDaysFromRegister(arg_74_0)
+	local var_74_0 = pg.TimeMgr.GetInstance():GetServerTime()
+
+	return pg.TimeMgr.GetInstance():DiffDay(arg_74_0.registerTime, var_74_0)
+end
+
+function var_0_0.CanUploadBackYardThemeTemplate(arg_75_0)
+	return pg.TimeMgr.GetInstance():GetServerTime() >= arg_75_0.banBackyardUploadTime
+end
+
+function var_0_0.GetBanUploadBackYardThemeTemplateTime(arg_76_0)
+	return pg.TimeMgr.GetInstance():STimeDescC(arg_76_0.banBackyardUploadTime or 0)
+end
+
+function var_0_0.CheckIdentityFlag(arg_77_0)
+	return arg_77_0.identityFlag == 1
+end
+
+function var_0_0.GetRegisterTime(arg_78_0)
+	return arg_78_0.registerTime
+end
+
+function var_0_0.GetFlagShip(arg_79_0)
+	local var_79_0 = getProxy(SettingsProxy)
+	local var_79_1 = var_79_0:getCurrentSecretaryIndex()
+	local var_79_2
+
+	if var_79_0:IsOpenRandomFlagShip() then
+		var_79_2 = arg_79_0:GetRandomFlagShip(var_79_1)
+	else
+		var_79_2 = arg_79_0:GetNativeFlagShip(var_79_1)
 	end
 
-	if var_76_2 ~= FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR then
-		local var_76_4 = getProxy(BayProxy)
+	return var_79_2
+end
 
-		for iter_76_0, iter_76_1 in ipairs(arg_76_0) do
-			var_76_0[iter_76_0] = defaultValue(var_76_4:RawGetShipById(iter_76_1), false)
+local function var_0_5(arg_80_0)
+	local var_80_0 = {}
+	local var_80_1 = {}
+	local var_80_2 = getProxy(SettingsProxy):GetFlagShipDisplayMode()
+	local var_80_3 = getProxy(PlayerProxy):getRawData():ExistEducateChar()
 
-			table.insert(var_76_1, iter_76_0)
+	if var_80_2 == FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR and not var_80_3 then
+		var_80_2 = FlAG_SHIP_DISPLAY_ALL
+
+		getProxy(SettingsProxy):SetFlagShipDisplayMode(var_80_2)
+	end
+
+	if var_80_2 ~= FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR then
+		local var_80_4 = getProxy(BayProxy)
+
+		for iter_80_0, iter_80_1 in ipairs(arg_80_0) do
+			var_80_0[iter_80_0] = defaultValue(var_80_4:RawGetShipById(iter_80_1), false)
+
+			table.insert(var_80_1, iter_80_0)
 		end
 	end
 
-	if var_76_3 and var_76_2 ~= FlAG_SHIP_DISPLAY_ONLY_SHIP then
-		table.insert(var_76_1, PlayerVitaeShipsPage.EDUCATE_CHAR_SLOT_ID)
+	if var_80_3 and var_80_2 ~= FlAG_SHIP_DISPLAY_ONLY_SHIP then
+		table.insert(var_80_1, PlayerVitaeShipsPage.EDUCATE_CHAR_SLOT_ID)
 
-		local var_76_5 = getProxy(PlayerProxy):getRawData():GetEducateCharacter()
-		local var_76_6 = VirtualEducateCharShip.New(var_76_5)
+		local var_80_5 = getProxy(PlayerProxy):getRawData():GetEducateCharacter()
+		local var_80_6 = VirtualEducateCharShip.New(var_80_5)
 
-		var_76_0[PlayerVitaeShipsPage.EDUCATE_CHAR_SLOT_ID] = var_76_6
+		var_80_0[PlayerVitaeShipsPage.EDUCATE_CHAR_SLOT_ID] = var_80_6
 	end
 
-	return var_76_0, var_76_1
+	return var_80_0, var_80_1
 end
 
-function var_0_0.GetNativeFlagShip(arg_77_0, arg_77_1)
-	local var_77_0, var_77_1 = var_0_5(arg_77_0.characters)
-	local var_77_2 = getProxy(SettingsProxy)
+function var_0_0.GetNativeFlagShip(arg_81_0, arg_81_1)
+	local var_81_0, var_81_1 = var_0_5(arg_81_0.characters)
+	local var_81_2 = getProxy(SettingsProxy)
 
 	if getProxy(PlayerProxy):getFlag("battle") then
-		local var_77_3 = math.random(#var_77_1)
+		local var_81_3 = math.random(#var_81_1)
 
-		arg_77_1 = var_77_1[var_77_3]
+		arg_81_1 = var_81_1[var_81_3]
 
-		var_77_2:setCurrentSecretaryIndex(var_77_3)
+		var_81_2:setCurrentSecretaryIndex(var_81_3)
 	end
 
-	local var_77_4 = var_77_0[arg_77_1]
+	local var_81_4 = var_81_0[arg_81_1]
 
-	if not var_77_4 then
-		local var_77_5 = PlayerVitaeShipsPage.GetSlotIndexList()
-		local var_77_6 = table.indexof(var_77_5, arg_77_1)
+	if not var_81_4 then
+		local var_81_5 = PlayerVitaeShipsPage.GetSlotIndexList()
+		local var_81_6 = table.indexof(var_81_5, arg_81_1)
 
-		if var_77_6 and var_77_6 > 0 then
-			for iter_77_0 = var_77_6 + 1, #var_77_5 do
-				arg_77_1 = var_77_5[iter_77_0]
-				var_77_4 = var_77_0[arg_77_1]
+		if var_81_6 and var_81_6 > 0 then
+			for iter_81_0 = var_81_6 + 1, #var_81_5 do
+				arg_81_1 = var_81_5[iter_81_0]
+				var_81_4 = var_81_0[arg_81_1]
 
-				if var_77_4 then
-					var_77_2:setCurrentSecretaryIndex(iter_77_0)
+				if var_81_4 then
+					var_81_2:setCurrentSecretaryIndex(iter_81_0)
 
 					break
 				end
@@ -749,43 +773,43 @@ function var_0_0.GetNativeFlagShip(arg_77_0, arg_77_1)
 		end
 	end
 
-	if not var_77_4 then
-		arg_77_1 = 1
+	if not var_81_4 then
+		arg_81_1 = 1
 
-		var_77_2:setCurrentSecretaryIndex(arg_77_1)
+		var_81_2:setCurrentSecretaryIndex(arg_81_1)
 
-		var_77_4 = var_77_0[arg_77_1]
+		var_81_4 = var_81_0[arg_81_1]
 	end
 
-	return var_77_4
+	return var_81_4
 end
 
-function var_0_0.GetRandomFlagShip(arg_78_0, arg_78_1)
-	local var_78_0 = getProxy(SettingsProxy)
-	local var_78_1 = var_78_0:GetRandomFlagShipList()
-	local var_78_2, var_78_3 = var_0_5(var_78_1)
+function var_0_0.GetRandomFlagShip(arg_82_0, arg_82_1)
+	local var_82_0 = getProxy(SettingsProxy)
+	local var_82_1 = var_82_0:GetRandomFlagShipList()
+	local var_82_2, var_82_3 = var_0_5(var_82_1)
 
 	if getProxy(PlayerProxy):getFlag("battle") then
-		local var_78_4 = math.random(#var_78_3)
+		local var_82_4 = math.random(#var_82_3)
 
-		arg_78_1 = var_78_3[var_78_4]
+		arg_82_1 = var_82_3[var_82_4]
 
-		var_78_0:setCurrentSecretaryIndex(var_78_4)
+		var_82_0:setCurrentSecretaryIndex(var_82_4)
 	end
 
-	local var_78_5 = var_78_2[arg_78_1]
+	local var_82_5 = var_82_2[arg_82_1]
 
-	if not var_78_5 then
-		local var_78_6 = PlayerVitaeShipsPage.GetSlotIndexList()
-		local var_78_7 = table.indexof(var_78_6, arg_78_1)
+	if not var_82_5 then
+		local var_82_6 = PlayerVitaeShipsPage.GetSlotIndexList()
+		local var_82_7 = table.indexof(var_82_6, arg_82_1)
 
-		if var_78_7 and var_78_7 > 0 then
-			for iter_78_0 = var_78_7 + 1, #var_78_6 do
-				arg_78_1 = var_78_6[iter_78_0]
-				var_78_5 = var_78_2[arg_78_1]
+		if var_82_7 and var_82_7 > 0 then
+			for iter_82_0 = var_82_7 + 1, #var_82_6 do
+				arg_82_1 = var_82_6[iter_82_0]
+				var_82_5 = var_82_2[arg_82_1]
 
-				if var_78_5 then
-					var_78_0:setCurrentSecretaryIndex(iter_78_0)
+				if var_82_5 then
+					var_82_0:setCurrentSecretaryIndex(iter_82_0)
 
 					break
 				end
@@ -793,137 +817,137 @@ function var_0_0.GetRandomFlagShip(arg_78_0, arg_78_1)
 		end
 	end
 
-	if not var_78_5 then
-		local var_78_8 = {}
+	if not var_82_5 then
+		local var_82_8 = {}
 
-		for iter_78_1, iter_78_2 in pairs(var_78_2) do
-			if iter_78_2 then
-				table.insert(var_78_8, iter_78_1)
+		for iter_82_1, iter_82_2 in pairs(var_82_2) do
+			if iter_82_2 then
+				table.insert(var_82_8, iter_82_1)
 			end
 		end
 
-		if #var_78_8 > 0 then
-			arg_78_1 = var_78_8[math.random(1, #var_78_8)]
-			var_78_5 = var_78_2[arg_78_1]
+		if #var_82_8 > 0 then
+			arg_82_1 = var_82_8[math.random(1, #var_82_8)]
+			var_82_5 = var_82_2[arg_82_1]
 
-			local var_78_9 = table.indexof(var_78_3, arg_78_1)
+			local var_82_9 = table.indexof(var_82_3, arg_82_1)
 
-			if var_78_9 then
-				var_78_0:setCurrentSecretaryIndex(var_78_9)
+			if var_82_9 then
+				var_82_0:setCurrentSecretaryIndex(var_82_9)
 			end
 		end
 	end
 
-	if not var_78_5 then
-		arg_78_1 = 1
+	if not var_82_5 then
+		arg_82_1 = 1
 
-		var_78_0:setCurrentSecretaryIndex(arg_78_1)
+		var_82_0:setCurrentSecretaryIndex(arg_82_1)
 
-		var_78_5 = var_78_2[arg_78_1]
+		var_82_5 = var_82_2[arg_82_1]
 	end
 
-	return var_78_5
+	return var_82_5
 end
 
-function var_0_0.GetNextFlagShip(arg_79_0)
+function var_0_0.GetNextFlagShip(arg_83_0)
 	getProxy(SettingsProxy):rotateCurrentSecretaryIndex()
 
-	return arg_79_0:GetFlagShip()
+	return arg_83_0:GetFlagShip()
 end
 
-function var_0_0.IsOpenShipEvaluationImpeach(arg_80_0)
-	return not LOCK_IMPEACH and arg_80_0.level >= pg.gameset.report_level_limit.key_value
+function var_0_0.IsOpenShipEvaluationImpeach(arg_84_0)
+	return not LOCK_IMPEACH and arg_84_0.level >= pg.gameset.report_level_limit.key_value
 end
 
-function var_0_0.ShouldCheckCustomName(arg_81_0)
-	return arg_81_0:GetCommonFlag(REVERT_CUSTOM_NAME)
+function var_0_0.ShouldCheckCustomName(arg_85_0)
+	return arg_85_0:GetCommonFlag(REVERT_CUSTOM_NAME)
 end
 
-function var_0_0.WhetherServerModifiesName(arg_82_0)
-	return arg_82_0:GetCommonFlag(ILLEGALITY_PLAYER_NAME)
+function var_0_0.WhetherServerModifiesName(arg_86_0)
+	return arg_86_0:GetCommonFlag(ILLEGALITY_PLAYER_NAME)
 end
 
-function var_0_0.GetManifesto(arg_83_0)
-	return arg_83_0.manifesto or ""
+function var_0_0.GetManifesto(arg_87_0)
+	return arg_87_0.manifesto or ""
 end
 
-function var_0_0.GetName(arg_84_0)
-	return arg_84_0.name
+function var_0_0.GetName(arg_88_0)
+	return arg_88_0.name
 end
 
-function var_0_0.GetRandomFlagShipMode(arg_85_0)
-	if arg_85_0.randomShipMode <= 0 then
-		if arg_85_0:GetCommonFlag(RANDOM_FLAG_SHIP_MODE) then
-			arg_85_0.randomShipMode = SettingsRandomFlagShipAndSkinPanel.SHIP_LOCKED
+function var_0_0.GetRandomFlagShipMode(arg_89_0)
+	if arg_89_0.randomShipMode <= 0 then
+		if arg_89_0:GetCommonFlag(RANDOM_FLAG_SHIP_MODE) then
+			arg_89_0.randomShipMode = SettingsRandomFlagShipAndSkinPanel.SHIP_LOCKED
 		else
-			arg_85_0.randomShipMode = SettingsRandomFlagShipAndSkinPanel.SHIP_FREQUENTLYUSED
+			arg_89_0.randomShipMode = SettingsRandomFlagShipAndSkinPanel.SHIP_FREQUENTLYUSED
 		end
 	end
 
-	return arg_85_0.randomShipMode
+	return arg_89_0.randomShipMode
 end
 
-function var_0_0.UpdateRandomFlagShipMode(arg_86_0, arg_86_1)
-	arg_86_0.randomShipMode = arg_86_1
+function var_0_0.UpdateRandomFlagShipMode(arg_90_0, arg_90_1)
+	arg_90_0.randomShipMode = arg_90_1
 end
 
-function var_0_0.GetCustomRandomShipList(arg_87_0)
-	local var_87_0 = {}
-
-	for iter_87_0, iter_87_1 in ipairs(arg_87_0.customRandomShips) do
-		table.insert(var_87_0, iter_87_1)
-	end
-
-	return var_87_0
-end
-
-function var_0_0.UpdateCustomRandomShipList(arg_88_0, arg_88_1)
-	arg_88_0.customRandomShips = arg_88_1
-end
-
-function var_0_0.SetProposeShipId(arg_89_0, arg_89_1)
-	arg_89_0.proposeShipId = arg_89_1
-end
-
-function var_0_0.GetProposeShipId(arg_90_0)
-	return arg_90_0.proposeShipId
-end
-
-function var_0_0.GetCryptolaliaList(arg_91_0)
+function var_0_0.GetCustomRandomShipList(arg_91_0)
 	local var_91_0 = {}
-	local var_91_1 = {}
-	local var_91_2 = arg_91_0.unlockCryptolaliaList
 
-	for iter_91_0, iter_91_1 in ipairs(var_91_2) do
-		var_91_1[iter_91_1] = true
-	end
-
-	for iter_91_2, iter_91_3 in ipairs(pg.soundstory_template.all) do
-		local var_91_3 = Cryptolalia.New({
-			id = iter_91_3
-		})
-
-		if var_91_1[iter_91_3] then
-			var_91_3:Unlock()
-		end
-
-		table.insert(var_91_0, var_91_3)
+	for iter_91_0, iter_91_1 in ipairs(arg_91_0.customRandomShips) do
+		table.insert(var_91_0, iter_91_1)
 	end
 
 	return var_91_0
 end
 
-function var_0_0.UnlockCryptolalia(arg_92_0, arg_92_1)
-	if not table.contains(arg_92_0.unlockCryptolaliaList) then
-		table.insert(arg_92_0.unlockCryptolaliaList, arg_92_1)
+function var_0_0.UpdateCustomRandomShipList(arg_92_0, arg_92_1)
+	arg_92_0.customRandomShips = arg_92_1
+end
+
+function var_0_0.SetProposeShipId(arg_93_0, arg_93_1)
+	arg_93_0.proposeShipId = arg_93_1
+end
+
+function var_0_0.GetProposeShipId(arg_94_0)
+	return arg_94_0.proposeShipId
+end
+
+function var_0_0.GetCryptolaliaList(arg_95_0)
+	local var_95_0 = {}
+	local var_95_1 = {}
+	local var_95_2 = arg_95_0.unlockCryptolaliaList
+
+	for iter_95_0, iter_95_1 in ipairs(var_95_2) do
+		var_95_1[iter_95_1] = true
+	end
+
+	for iter_95_2, iter_95_3 in ipairs(pg.soundstory_template.all) do
+		local var_95_3 = Cryptolalia.New({
+			id = iter_95_3
+		})
+
+		if var_95_1[iter_95_3] then
+			var_95_3:Unlock()
+		end
+
+		table.insert(var_95_0, var_95_3)
+	end
+
+	return var_95_0
+end
+
+function var_0_0.UnlockCryptolalia(arg_96_0, arg_96_1)
+	if not table.contains(arg_96_0.unlockCryptolaliaList) then
+		table.insert(arg_96_0.unlockCryptolaliaList, arg_96_1)
 	end
 end
 
-function var_0_0.ExistCryptolalia(arg_93_0, arg_93_1)
-	local var_93_0 = arg_93_0:GetCryptolaliaList()
+function var_0_0.ExistCryptolalia(arg_97_0, arg_97_1)
+	local var_97_0 = arg_97_0:GetCryptolaliaList()
 
-	for iter_93_0, iter_93_1 in ipairs(var_93_0) do
-		if (iter_93_1:InTime() or not iter_93_1:IsLock()) and iter_93_1:IsSameGroup(arg_93_1) then
+	for iter_97_0, iter_97_1 in ipairs(var_97_0) do
+		if (iter_97_1:InTime() or not iter_97_1:IsLock()) and iter_97_1:IsSameGroup(arg_97_1) then
 			return true
 		end
 	end
@@ -931,35 +955,62 @@ function var_0_0.ExistCryptolalia(arg_93_0, arg_93_1)
 	return false
 end
 
-function var_0_0.ExistEducateChar(arg_94_0)
-	return arg_94_0.educateCharacter > 0
+function var_0_0.ExistEducateChar(arg_98_0)
+	return arg_98_0.educateCharacter > 0
 end
 
-function var_0_0.GetEducateCharacter(arg_95_0)
-	return arg_95_0.educateCharacter
+function var_0_0.GetEducateCharacter(arg_99_0)
+	return arg_99_0.educateCharacter
 end
 
-function var_0_0.SetEducateCharacter(arg_96_0, arg_96_1)
-	arg_96_0.educateCharacter = arg_96_1
+function var_0_0.SetEducateCharacter(arg_100_0, arg_100_1)
+	arg_100_0.educateCharacter = arg_100_1
 end
 
-function var_0_0.CanGetResource(arg_97_0, arg_97_1)
-	local var_97_0 = id2res(arg_97_1)
-	local var_97_1
+function var_0_0.CanGetResource(arg_101_0, arg_101_1)
+	local var_101_0 = id2res(arg_101_1)
+	local var_101_1
 
-	if arg_97_1 == 1 then
-		var_97_1 = arg_97_0:getLevelMaxGold()
-	elseif arg_97_1 == 2 then
-		var_97_1 = arg_97_0:getLevelMaxOil()
+	if arg_101_1 == 1 then
+		var_101_1 = arg_101_0:getLevelMaxGold()
+	elseif arg_101_1 == 2 then
+		var_101_1 = arg_101_0:getLevelMaxOil()
 	else
 		assert(false)
 	end
 
-	if var_97_1 <= arg_97_0[var_97_0] then
+	if var_101_1 <= arg_101_0[var_101_0] then
 		return false
 	end
 
 	return true
+end
+
+function var_0_0.GetExtendStoreCost(arg_102_0)
+	local var_102_0 = pg.mail_storeroom[arg_102_0.mailStoreLevel]
+	local var_102_1 = {}
+
+	if var_102_0.upgrade_gem > 0 then
+		var_102_1.diamond = Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = PlayerConst.ResDiamond,
+			count = var_102_0.upgrade_gem
+		})
+	end
+
+	if var_102_0.upgrade_gold > 0 then
+		var_102_1.gold = Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = PlayerConst.ResGold,
+			count = var_102_0.upgrade_gold
+		})
+	end
+
+	return var_102_1.diamond, var_102_1.gold
+end
+
+function var_0_0.IsStoreLevelMax(arg_103_0)
+	return not pg.mail_storeroom[arg_103_0.mailStoreLevel + 1]
 end
 
 return var_0_0

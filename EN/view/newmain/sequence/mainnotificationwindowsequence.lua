@@ -70,6 +70,29 @@ function var_0_0.Execute(arg_1_0, arg_1_1)
 		end
 	end
 
+	local var_1_7 = getProxy(MailProxy)
+
+	if not var_1_7.overTip and PlayerPrefs.GetString("mail_msg_tips", "") ~= pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d") and var_1_7.total > MAIL_COUNT_LIMIT then
+		PlayerPrefs.SetString("mail_msg_tips", pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d"))
+		table.insert(var_1_1, function(arg_5_0)
+			pg.m02:sendNotification(GAME.LOAD_LAYERS, {
+				parentContext = getProxy(ContextProxy):getCurrentContext(),
+				context = Context.New({
+					mediator = MailTipsWindowMediator,
+					viewComponent = MailTipsLayer,
+					data = {
+						onYes = function()
+							pg.m02:sendNotification(GAME.GO_SCENE, SCENE.MAIL)
+						end,
+						content = i18n("warning_mail_max_3", var_1_7.total)
+					}
+				})
+			})
+		end)
+	end
+
+	var_1_7.overTip = true
+
 	seriesAsync(var_1_1, arg_1_1)
 end
 

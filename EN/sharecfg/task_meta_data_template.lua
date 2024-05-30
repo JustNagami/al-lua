@@ -232,6 +232,11 @@ pg.task_meta_data_template = setmetatable({
 		100193,
 		100194,
 		100195,
+		100201,
+		100202,
+		100203,
+		100204,
+		100205,
 		200001,
 		200002,
 		200003,
@@ -307,7 +312,11 @@ pg.task_meta_data_template = setmetatable({
 		200191,
 		200192,
 		200193,
-		200194
+		200194,
+		200201,
+		200202,
+		200203,
+		200204
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2152,6 +2161,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100201] = {
+		target_id_2 = "970303",
+		sub_type = 180,
+		desc = "Win 1 battle with Foch META in your fleet.",
+		id = 100201,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100202] = {
+		target_id_2 = "970303",
+		sub_type = 180,
+		desc = "Defeat a Lv. 30+ fleet with Foch META in your fleet.",
+		id = 100202,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100203] = {
+		target_id_2 = "970303",
+		sub_type = 180,
+		desc = "Defeat a Lv. 55+ fleet with Foch META in your fleet.",
+		id = 100203,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100204] = {
+		target_id_2 = "970303",
+		sub_type = 180,
+		desc = "Defeat a Lv. 80+ fleet with Foch META in your fleet.",
+		id = 100204,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100205] = {
+		target_id_2 = "970303",
+		sub_type = 180,
+		desc = "Defeat a Lv. 100+ fleet with Foch META in your fleet.",
+		id = 100205,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -2757,6 +2806,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Béarn META in your fleet.",
 		id = 200194,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200201] = {
+		target_id_2 = "970303",
+		sub_type = 302,
+		desc = "Win 1 Operation Siren battle with Foch META in your fleet.",
+		id = 200201,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200202] = {
+		target_id_2 = "970303",
+		sub_type = 302,
+		desc = "Defeat a Lv. 70+ fleet in Operation Siren with Foch META in your fleet.",
+		id = 200202,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200203] = {
+		target_id_2 = "970303",
+		sub_type = 302,
+		desc = "Defeat a Lv. 90+ fleet in Operation Siren with Foch META in your fleet.",
+		id = 200203,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200204] = {
+		target_id_2 = "970303",
+		sub_type = 302,
+		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Foch META in your fleet.",
+		id = 200204,
 		target_num = 1,
 		target_id = "100"
 	}

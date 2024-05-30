@@ -265,7 +265,8 @@ pg.ship_skin_words_extra = setmetatable({
 		901070,
 		803020,
 		901050,
-		901060
+		901060,
+		405060
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -18439,6 +18440,59 @@ pg.base.ship_skin_words_extra = {
 			{
 				1100,
 				"C-Commander... No matter what happens, I'll never fear! If I'm clumsy, I'll do my best to fix things! A-after all, I'm your knight... Yeah, I am!"
+			}
+		}
+	},
+	[405060] = {
+		unlock = "",
+		feeling3 = "",
+		lose = "",
+		feeling4 = "",
+		expedition = "",
+		win_mvp = "",
+		feeling1 = "",
+		mission = "",
+		profile = "",
+		battle = "",
+		skill = "",
+		mail = "",
+		touch = "",
+		main = "",
+		upgrade = "",
+		mission_complete = "",
+		headtouch = "",
+		feeling2 = "",
+		hp_warning = "",
+		id = 405060,
+		detail = "",
+		login = {
+			{
+				1100,
+				"Object of my overwhelming love, what performance would you like to hear from me today?"
+			}
+		},
+		home = {
+			{
+				1100,
+				"Welcome. Heehee, listen to the triumphant melody I've composed for you!"
+			}
+		},
+		main_extra = {
+			{
+				1100,
+				"The songs recorded on a phonograph can be shared with others, like precious memories. My child, share your joys and your worries with me.|A song played by the heart that equally balances logic and sensibility, known as love... That's what I hear from you, my child."
+			}
+		},
+		touch2 = {
+			{
+				1100,
+				"Behold my passion, my child!"
+			}
+		},
+		feeling5 = {
+			{
+				1100,
+				"When I say that I'll accept all of you, that isn't just pretty words. Go on... Surrender all of yourself, everything, to me. I'll put you in the utmost place in my heart... Heeheehee..."
 			}
 		}
 	}

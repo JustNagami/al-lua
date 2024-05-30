@@ -906,19 +906,27 @@ function var_0_0.DestroySpinePainting(arg_77_0)
 end
 
 function var_0_0.onWeddingReview(arg_78_0, arg_78_1)
-	if arg_78_0.l2dChar then
-		arg_78_0.l2dChar:SetVisible(not arg_78_1)
-		arg_78_0.l2dChar:Reset()
+	if not arg_78_1 and arg_78_0.exitLoadL2d then
+		arg_78_0.exitLoadL2d = false
 
-		if not arg_78_1 then
-			arg_78_0.l2dChar:UpdateAtomSource()
-		else
-			arg_78_0.l2dActioning = false
-			arg_78_0.cvLoader.prevCvPath = nil
+		arg_78_0.live2DBtn:Update(arg_78_0.paintingName, true)
+	else
+		arg_78_0.live2DBtn:Update(arg_78_0.paintingName, false)
+	end
 
-			arg_78_0:StopDailogue()
-			arg_78_0.cvLoader:StopSound()
-		end
+	arg_78_0.live2DBtn:SetEnable(not arg_78_1)
+
+	if arg_78_0.l2dChar and arg_78_1 then
+		arg_78_0.l2dChar:Dispose()
+
+		arg_78_0.l2dChar = nil
+		arg_78_0.l2dActioning = false
+		arg_78_0.cvLoader.prevCvPath = nil
+
+		arg_78_0:StopDailogue()
+		arg_78_0.cvLoader:StopSound()
+
+		arg_78_0.exitLoadL2d = true
 	end
 end
 

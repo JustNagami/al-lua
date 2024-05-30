@@ -97,6 +97,12 @@ function var_0_0.addListeners(arg_4_0)
 			})
 		end
 	end)
+
+	local var_4_1 = PLATFORM_CODE == PLATFORM_CH and LOCK_NAMED
+
+	arg_4_0.nameInput:GetComponent(typeof(InputField)).interactable = not var_4_1
+
+	setActive(arg_4_0:findTF("name/edit", arg_4_0.topUI), not var_4_1)
 	onButton(arg_4_0, arg_4_0:findTF("back", arg_4_0.topUI), function()
 		arg_4_0:onBackPressed()
 	end, SFX_PANEL)

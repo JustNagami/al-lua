@@ -96,6 +96,8 @@ function var_0_1.__shieldTakeDamage(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
 			arg_7_3.damage = 0
 		else
 			arg_7_3.damage = -arg_7_0._shieldValue
+
+			arg_7_0:handleShieldExhaust(arg_7_2)
 		end
 	end
 end

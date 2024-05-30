@@ -9,6 +9,14 @@ function var_0_0.init(arg_2_0)
 	arg_2_0:initData()
 	arg_2_0:findUI()
 	arg_2_0:addListener()
+
+	for iter_2_0, iter_2_1 in ipairs(MetaCharacterConst.REPAIR_ATTRS) do
+		if not arg_2_0.curMetaCharacterVO:getAttrVO(iter_2_1):isLock() then
+			triggerToggle(arg_2_0.attrTFList[iter_2_1], true)
+
+			break
+		end
+	end
 end
 
 function var_0_0.didEnter(arg_3_0)
@@ -16,15 +24,6 @@ function var_0_0.didEnter(arg_3_0)
 	arg_3_0:updateAttrListPanel()
 	arg_3_0:updateRepairBtn(true)
 	arg_3_0:updateDetailPanel()
-
-	for iter_3_0, iter_3_1 in ipairs(MetaCharacterConst.REPAIR_ATTRS) do
-		if not arg_3_0.curMetaCharacterVO:getAttrVO(iter_3_1):isLock() then
-			triggerToggle(arg_3_0.attrTFList[iter_3_1], true)
-
-			break
-		end
-	end
-
 	arg_3_0:TryPlayGuide()
 end
 

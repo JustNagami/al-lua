@@ -469,7 +469,7 @@ end
 function var_0_0.filter(arg_37_0, arg_37_1, arg_37_2)
 	local var_37_0 = arg_37_0:isDefaultStatus() and "shaixuan_off" or "shaixuan_on"
 
-	GetSpriteFromAtlasAsync("ui/commonui_atlas", var_37_0, function(arg_38_0)
+	GetSpriteFromAtlasAsync("ui/share/index_atlas", var_37_0, function(arg_38_0)
 		setImageSprite(arg_37_0.indexBtn, arg_38_0, true)
 	end)
 
@@ -654,7 +654,7 @@ function var_0_0.showDesignDesc(arg_46_0, arg_46_1)
 	end
 
 	var_46_15(var_46_11)
-	pressPersistTrigger(findTF(var_46_0, "bg/calc/minus"), 0.5, function(arg_48_0)
+	pressPersistTrigger(findTF(var_46_0, "bg/calc/minus"), 0.5, function()
 		if var_46_11 <= 1 then
 			return
 		end
@@ -663,7 +663,7 @@ function var_0_0.showDesignDesc(arg_46_0, arg_46_1)
 
 		var_46_15(var_46_11)
 	end, nil, true, true, 0.1, SFX_PANEL)
-	pressPersistTrigger(findTF(var_46_0, "bg/calc/add"), 0.5, function(arg_49_0)
+	pressPersistTrigger(findTF(var_46_0, "bg/calc/add"), 0.5, function()
 		if var_46_11 == var_46_10 then
 			return
 		end

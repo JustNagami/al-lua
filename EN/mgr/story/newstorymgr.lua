@@ -590,6 +590,10 @@ function var_0_0.RegistRecordBtn(arg_57_0)
 			return
 		end
 
+		if not arg_57_0.recordPanel:CanOpen() then
+			return
+		end
+
 		local var_58_0 = "Show"
 
 		arg_57_0.recordPanel[var_58_0](arg_57_0.recordPanel, arg_57_0.recorder)

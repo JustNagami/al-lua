@@ -1127,6 +1127,11 @@ function var_0_0.InitSwitch()
 
 	var_0_0.UpdateDropCase = {
 		[DROP_TYPE_RESOURCE] = function(arg_163_0, arg_163_1, arg_163_2)
+			if arg_163_0.id == PlayerConst.ResStoreGold or arg_163_0.id == PlayerConst.ResStoreOil then
+				arg_163_2 = arg_163_2 or {}
+				arg_163_2.frame = "frame_store"
+			end
+
 			updateItem(arg_163_1, Item.New({
 				id = id2ItemId(arg_163_0.id)
 			}), arg_163_2)

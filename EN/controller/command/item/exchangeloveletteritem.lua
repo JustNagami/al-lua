@@ -31,7 +31,6 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 				var_2_1:removeItemById(var_2_0.id, var_2_0.count)
 			end
 
-			getProxy(MailProxy):resetData()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("loveletter_exchange_tip3"))
 		elseif arg_2_0.result == 20 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("loveletter_exchange_tip1"))

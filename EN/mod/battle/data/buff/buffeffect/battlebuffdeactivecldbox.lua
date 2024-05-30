@@ -16,9 +16,9 @@ function var_0_1.GetEffectType(arg_2_0)
 end
 
 function var_0_1.onAttach(arg_3_0, arg_3_1, arg_3_2)
-	arg_3_1:DeactiveCldBox()
+	arg_3_1:SetCldBoxImmune(true)
 end
 
 function var_0_1.onRemove(arg_4_0, arg_4_1, arg_4_2)
-	arg_4_1:ActiveCldBox()
+	arg_4_1:SetCldBoxImmune(false)
 end

@@ -25,44 +25,53 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	onButton(arg_1_0, findTF(arg_1_0._tf, "res/gem"), function()
 		pg.playerResUI:ClickGem()
 	end, SFX_PANEL)
+	arg_1_0:bind(PlayerProxy.UPDATED, function()
+		arg_1_0:Flush()
+	end)
+	arg_1_0:bind(GAME.GUILD_GET_USER_INFO_DONE, function()
+		arg_1_0:Flush()
+	end)
+	arg_1_0:bind(GAME.GET_PUBLIC_GUILD_USER_DATA_DONE, function()
+		arg_1_0:Flush()
+	end)
 end
 
-function var_0_0.Flush(arg_5_0, arg_5_1)
-	var_0_0.super.Flush(arg_5_0, arg_5_1)
-	arg_5_0:UpdateRes()
+function var_0_0.Flush(arg_8_0, arg_8_1)
+	var_0_0.super.Flush(arg_8_0, arg_8_1)
+	arg_8_0:UpdateRes()
 end
 
-function var_0_0.UpdateRes(arg_6_0)
-	local var_6_0 = getProxy(PlayerProxy):getRawData()
+function var_0_0.UpdateRes(arg_9_0)
+	local var_9_0 = getProxy(PlayerProxy):getRawData()
 
-	PlayerResUI.StaticFlush(var_6_0, arg_6_0.goldMax, arg_6_0.goldValue, arg_6_0.oilMax, arg_6_0.oilValue, arg_6_0.gemValue)
+	PlayerResUI.StaticFlush(var_9_0, arg_9_0.goldMax, arg_9_0.goldValue, arg_9_0.oilMax, arg_9_0.oilValue, arg_9_0.gemValue)
 end
 
-function var_0_0.UpdateExp(arg_7_0)
-	local var_7_0 = 0
-	local var_7_1 = getProxy(PlayerProxy):getRawData()
+function var_0_0.UpdateExp(arg_10_0)
+	local var_10_0 = 0
+	local var_10_1 = getProxy(PlayerProxy):getRawData()
 
-	arg_7_0.playerLevelTxt.text = var_7_1.level
-	arg_7_0.expTxt.text = var_7_1.level
+	arg_10_0.playerLevelTxt.text = var_10_1.level
+	arg_10_0.expTxt.text = var_10_1.level
 
-	local var_7_2
+	local var_10_2
 
-	if var_7_1.level == var_7_1:getMaxLevel() then
-		var_7_2 = 1
+	if var_10_1.level == var_10_1:getMaxLevel() then
+		var_10_2 = 1
 	else
-		local var_7_3 = getConfigFromLevel1(pg.user_level, var_7_1.level)
+		local var_10_3 = getConfigFromLevel1(pg.user_level, var_10_1.level)
 
-		var_7_2 = var_7_1.exp / var_7_3.exp_interval
+		var_10_2 = var_10_1.exp / var_10_3.exp_interval
 	end
 
-	local var_7_4 = 34 * var_7_2
+	local var_10_4 = 34 * var_10_2
 
-	arg_7_0.expTr.sizeDelta = Vector2(70, var_7_4)
+	arg_10_0.expTr.sizeDelta = Vector2(70, var_10_4)
 end
 
-function var_0_0.Dispose(arg_8_0)
-	var_0_0.super.Dispose(arg_8_0)
-	pg.DelegateInfo.Dispose(arg_8_0)
+function var_0_0.Dispose(arg_11_0)
+	var_0_0.super.Dispose(arg_11_0)
+	pg.DelegateInfo.Dispose(arg_11_0)
 end
 
 return var_0_0

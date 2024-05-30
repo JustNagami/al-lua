@@ -3460,7 +3460,18 @@ function temp()
 			},
 			c = {
 				h = {
-					this = true
+					this = true,
+					[" "] = {
+						M = {
+							E = {
+								T = {
+									A = {
+										this = true
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -5524,6 +5535,23 @@ function temp()
 																	e = {
 																		this = true
 																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									},
+									r = {
+										i = {
+											e = {
+												d = {
+													r = {
+														i = {
+															c = {
+																h = {
+																	this = true
 																}
 															}
 														}

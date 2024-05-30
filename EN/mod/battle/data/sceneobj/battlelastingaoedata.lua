@@ -49,7 +49,7 @@ function var_0_2.Settle(arg_3_0)
 	arg_3_0._cldComponent:GetCldData().func(var_3_0, obj)
 
 	for iter_3_2, iter_3_3 in pairs(arg_3_0._handledList) do
-		if not var_3_1[iter_3_2.UID] then
+		if not var_3_1[iter_3_2.UID] or iter_3_2.ImmuneCLD == true then
 			arg_3_0._exitCldFunc(iter_3_2)
 
 			arg_3_0._handledList[iter_3_2] = nil

@@ -109,7 +109,7 @@ end
 function var_0_7.HandlePlayerShipCld(arg_5_0, arg_5_1, arg_5_2)
 	local var_5_0 = arg_5_2:GetCldData()
 
-	if var_5_0.Active == false then
+	if var_5_0.Active == false or var_5_0.ImmuneCLD == true then
 		return
 	end
 
@@ -119,7 +119,7 @@ function var_0_7.HandlePlayerShipCld(arg_5_0, arg_5_1, arg_5_2)
 	for iter_5_0 = 1, var_5_1 do
 		local var_5_3 = arg_5_1[iter_5_0].data
 
-		if var_5_3.Active == false then
+		if var_5_3.Active == false or var_5_3.ImmuneCLD == true then
 			-- block empty
 		elseif var_5_3.UID == arg_5_2:GetUniqueID() then
 			-- block empty
@@ -138,7 +138,7 @@ end
 function var_0_7.HandleEnemyShipCld(arg_6_0, arg_6_1, arg_6_2)
 	local var_6_0 = arg_6_2:GetCldData()
 
-	if var_6_0.Active == false then
+	if var_6_0.Active == false or var_6_0.ImmuneCLD == true then
 		return
 	end
 
@@ -149,7 +149,7 @@ function var_0_7.HandleEnemyShipCld(arg_6_0, arg_6_1, arg_6_2)
 	for iter_6_0 = 1, var_6_3 do
 		local var_6_4 = arg_6_1[iter_6_0].data
 
-		if var_6_4.Active == false then
+		if var_6_4.Active == false or var_6_4.ImmuneCLD == true then
 			-- block empty
 		elseif var_6_4.UID == arg_6_2:GetUniqueID() then
 			-- block empty
@@ -177,7 +177,7 @@ function var_0_7.surfaceFilterCount(arg_7_0, arg_7_1)
 	for iter_7_0 = 1, var_7_2 do
 		local var_7_3 = arg_7_1[iter_7_0].data
 
-		if var_7_3.Active == true and var_7_3.UID ~= arg_7_0:GetUniqueID() and var_7_0.IFF ~= var_7_3.IFF and var_7_0.Surface == var_7_3.Surface then
+		if var_7_3.Active == true and var_7_3.ImmuneCLD == false and var_7_3.UID ~= arg_7_0:GetUniqueID() and var_7_0.IFF ~= var_7_3.IFF and var_7_0.Surface == var_7_3.Surface then
 			var_7_1 = var_7_1 + 1
 		end
 	end
@@ -208,7 +208,7 @@ function var_0_7.HandleBulletCldWithAircraft(arg_9_0, arg_9_1, arg_9_2)
 	for iter_9_0 = 1, var_9_0 do
 		local var_9_1 = arg_9_1[iter_9_0].data
 
-		if var_9_1.type == var_0_2.CldType.BULLET and var_9_1.Active == true then
+		if var_9_1.type == var_0_2.CldType.BULLET and var_9_1.Active == true and var_9_1.ImmuneCLD == false then
 			local var_9_2 = arg_9_0:GetBullet(var_9_1.UID)
 
 			arg_9_0._proxy:HandleBulletHit(var_9_2, arg_9_2)
@@ -287,7 +287,7 @@ function var_0_7.HandleBulletCldWithShip(arg_12_0, arg_12_1, arg_12_2)
 	for iter_12_0 = 1, var_12_0 do
 		local var_12_2 = arg_12_1[iter_12_0].data
 
-		if var_12_2.type == var_0_2.CldType.SHIP and var_12_2.Active == true then
+		if var_12_2.type == var_0_2.CldType.SHIP and var_12_2.Active == true and var_12_2.ImmuneCLD == false then
 			local var_12_3 = arg_12_0:GetShip(var_12_2.UID)
 			local var_12_4 = var_12_3:GetCurrentOxyState()
 			local var_12_5 = var_12_3:IsImmuneCommonBulletCLD()
@@ -387,20 +387,23 @@ function var_0_7.HandleAreaCldWithVehicle(arg_15_0, arg_15_1, arg_15_2)
 
 	for iter_15_0 = 1, var_15_2 do
 		local var_15_3 = arg_15_2[iter_15_0].data
-		local var_15_4 = arg_15_1:GetDiveFilter()
-		local var_15_5 = arg_15_0:GetShip(var_15_3.UID)
-		local var_15_6 = true
 
-		if var_15_4 then
-			local var_15_7 = var_15_5:GetCurrentOxyState()
+		if var_15_3.Active == true and var_15_3.ImmuneCLD == false then
+			local var_15_4 = arg_15_1:GetDiveFilter()
+			local var_15_5 = arg_15_0:GetShip(var_15_3.UID)
+			local var_15_6 = true
 
-			if table.contains(var_15_4, var_15_7) then
-				var_15_6 = false
+			if var_15_4 then
+				local var_15_7 = var_15_5:GetCurrentOxyState()
+
+				if table.contains(var_15_4, var_15_7) then
+					var_15_6 = false
+				end
 			end
-		end
 
-		if var_15_6 and not arg_15_1:IsOutOfAngle(var_15_5) then
-			arg_15_1:AppendCldObj(var_15_3)
+			if var_15_6 and not arg_15_1:IsOutOfAngle(var_15_5) then
+				arg_15_1:AppendCldObj(var_15_3)
+			end
 		end
 	end
 end
@@ -464,7 +467,7 @@ function var_0_7.HandleWallCldWithBullet(arg_19_0, arg_19_1, arg_19_2)
 	for iter_19_0 = 1, var_19_0 do
 		local var_19_1 = arg_19_2[iter_19_0].data
 
-		if var_19_1.type == var_0_2.CldType.BULLET and var_19_1.Active == true then
+		if var_19_1.type == var_0_2.CldType.BULLET and var_19_1.Active == true and var_19_1.ImmuneCLD == false then
 			local var_19_2 = arg_19_0:GetBullet(var_19_1.UID)
 
 			if not arg_19_0._proxy:HandleWallHitByBullet(arg_19_1, var_19_2) then
@@ -481,7 +484,7 @@ function var_0_7.HandleWllCldWithShip(arg_20_0, arg_20_1, arg_20_2)
 	for iter_20_0 = 1, var_20_0 do
 		local var_20_2 = arg_20_2[iter_20_0].data
 
-		if var_20_2.type == var_0_2.CldType.SHIP and var_20_2.Active == true then
+		if var_20_2.type == var_0_2.CldType.SHIP and var_20_2.Active == true and var_20_2.ImmuneCLD == false then
 			local var_20_3 = arg_20_0:GetShip(var_20_2.UID)
 
 			if var_20_3:GetCurrentOxyState() == var_0_4.DIVE then
