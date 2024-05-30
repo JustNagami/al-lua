@@ -256,7 +256,7 @@ function var_0_0.GetMailsAttachments(arg_34_0, arg_34_1)
 
 		if not var_34_1.attachFlag then
 			for iter_34_2, iter_34_3 in ipairs(var_34_1.attachments) do
-				table.insert(var_34_0, iter_34_3)
+				table.insert(var_34_0, Clone(iter_34_3))
 			end
 		end
 	end
