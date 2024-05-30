@@ -1,6 +1,120 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_5 = {
+	[201231] = {
+		ship_group = 20123,
+		name = "春之风",
+		hand_id = 15,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70044,
+		painting = "xixuegui_2",
+		illustrator = 10,
+		l2d_voice_calibrate = "",
+		shop_type_id = 3,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "102",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		id = 201231,
+		voice_actor_2 = -1,
+		prefab = "xixuegui_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "人家的新衣服怎么样？超喜欢？还是最喜欢？嘻嘻，答案都写在汝的脸上了哟，接下来……等、等等！人家还没穿袜子呢——",
+		voice_actor = 89,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.65,
+					1.04,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.82,
+					1.06,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.18,
+					0.07,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.64,
+					1.06,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.54,
+							2.31,
+							-0.18
+						}
+					}
+				}
+			}
+		}
+	},
 	[201232] = {
 		ship_group = 20123,
 		name = "白衣小恶魔",
@@ -12473,118 +12587,6 @@ pg.base.ship_skin_template_5 = {
 						{
 							-0.53,
 							2.185,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[202280] = {
-		ship_group = 20228,
-		name = "黛朵(μ兵装)",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "daiduo_idol",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "140",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 202280,
-		voice_actor_2 = -1,
-		prefab = "daiduo_idol",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "轻巡洋舰黛朵，现在正在进行μ兵装实验任务兼偶像活动。黛朵已经从各位伙伴那里学习了许多与偶像相关的知识，敬请…期待黛朵的表现！",
-		voice_actor = 169,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.244,
-					1.205,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.244,
-					1.138,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.001,
-					0.001,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.194,
-					1.204,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.39,
-							2.376,
 							0
 						}
 					}

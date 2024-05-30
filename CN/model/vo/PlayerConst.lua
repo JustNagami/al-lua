@@ -10,6 +10,8 @@ var_0_0.ResGoldField = 7
 var_0_0.ResGuildCoin = 8
 var_0_0.ResBlueprintFragment = 9
 var_0_0.ResClassField = 10
+var_0_0.ResStoreGold = 16
+var_0_0.ResStoreOil = 17
 var_0_0.ResBattery = 101
 var_0_0.ResPT = 102
 
@@ -21,7 +23,9 @@ local function var_0_2(arg_1_0)
 			local var_2_0 = getProxy(PlayerProxy)
 
 			if var_2_0 then
-				var_2_0:UpdatePlayerRes(arg_2_0.id, arg_2_0.count)
+				var_2_0:UpdatePlayerRes({
+					arg_2_0
+				})
 			end
 		end,
 		[DROP_TYPE_ITEM] = function(arg_3_0)

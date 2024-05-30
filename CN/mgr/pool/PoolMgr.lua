@@ -557,7 +557,7 @@ function var_0_0.DecreasSprite(arg_41_0, arg_41_1, arg_41_2)
 
 	if arg_41_0.pools_pack[var_41_0] and arg_41_0.pools_pack[var_41_0].type == var_41_1 then
 		if arg_41_0.pools_pack[var_41_0]:Remove(arg_41_2) then
-			var_0_5:ClearBundleRef(var_41_0, true, false)
+			var_0_5:ClearBundleRef(var_41_0, false, false)
 		end
 
 		if arg_41_0.pools_pack[var_41_0]:GetAmount() <= 0 then
@@ -580,7 +580,7 @@ function var_0_0.DestroySprite(arg_42_0, arg_42_1)
 		arg_42_0.pools_pack[var_42_0] = nil
 
 		for iter_42_0 = 1, var_42_2 do
-			var_0_5:ClearBundleRef(var_42_0, true, false)
+			var_0_5:ClearBundleRef(var_42_0, false, false)
 		end
 	end
 end
@@ -603,7 +603,7 @@ function var_0_0.DestroyAllSprite(arg_43_0)
 		arg_43_0.pools_pack[iter_43_2] = nil
 
 		for iter_43_4 = 1, var_43_2 do
-			var_0_5:ClearBundleRef(iter_43_2, true, false)
+			var_0_5:ClearBundleRef(iter_43_2, false, false)
 		end
 	end
 

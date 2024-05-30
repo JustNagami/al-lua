@@ -1,6 +1,7 @@
 ﻿local var_0_0 = class("LinerSignPage", import("view.base.BaseActivityPage"))
 
 function var_0_0.OnInit(arg_1_0)
+	arg_1_0.lockNamed = PLATFORM_CODE == PLATFORM_CH and LOCK_NAMED
 	arg_1_0.bg = arg_1_0:findTF("AD")
 	arg_1_0.signTF = arg_1_0:findTF("sign", arg_1_0.bg)
 	arg_1_0.items = arg_1_0:findTF("items", arg_1_0.signTF)
@@ -16,6 +17,14 @@ function var_0_0.OnInit(arg_1_0)
 	arg_1_0.linerBtn = arg_1_0:findTF("go", arg_1_0.linerTF)
 
 	setText(arg_1_0:findTF("lock/Text", arg_1_0.linerBtn), i18n("liner_sign_unlock_tip"))
+
+	arg_1_0.nameInput:GetComponent(typeof(InputField)).interactable = not arg_1_0.lockNamed
+
+	setActive(arg_1_0:findTF("input/pan", arg_1_0.namedTF), not arg_1_0.lockNamed)
+
+	arg_1_0.linerInput:GetComponent(typeof(InputField)).interactable = not arg_1_0.lockNamed
+
+	setActive(arg_1_0:findTF("name/edit", arg_1_0.linerTF), not arg_1_0.lockNamed)
 end
 
 function var_0_0.OnDataSetting(arg_2_0)

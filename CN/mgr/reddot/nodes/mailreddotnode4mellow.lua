@@ -18,10 +18,10 @@ function var_0_0.Init(arg_3_0)
 
 	local var_3_0 = getProxy(MailProxy)
 
-	if var_3_0.total >= 1000 then
+	if var_3_0.total >= MAIL_COUNT_LIMIT then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("warning_mail_max_2"))
-	elseif var_3_0.total >= 950 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("warning_mail_max_1", var_3_0.total))
+	elseif var_3_0.total > MAIL_COUNT_LIMIT * 0.9 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("warning_mail_max_1", var_3_0.total, MAIL_COUNT_LIMIT))
 	end
 end
 

@@ -232,6 +232,11 @@ pg.task_meta_data_template = setmetatable({
 		100193,
 		100194,
 		100195,
+		100201,
+		100202,
+		100203,
+		100204,
+		100205,
 		200001,
 		200002,
 		200003,
@@ -307,7 +312,11 @@ pg.task_meta_data_template = setmetatable({
 		200191,
 		200192,
 		200193,
-		200194
+		200194,
+		200201,
+		200202,
+		200203,
+		200204
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2152,6 +2161,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100201] = {
+		target_id_2 = "970303",
+		sub_type = 180,
+		desc = "使用福煦·META获得1次胜利",
+		id = 100201,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100202] = {
+		target_id_2 = "970303",
+		sub_type = 180,
+		desc = "使用福煦·META击破等级＞30的敌方1次",
+		id = 100202,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100203] = {
+		target_id_2 = "970303",
+		sub_type = 180,
+		desc = "使用福煦·META击破等级＞55的敌方1次",
+		id = 100203,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100204] = {
+		target_id_2 = "970303",
+		sub_type = 180,
+		desc = "使用福煦·META击破等级＞80的敌方1次",
+		id = 100204,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100205] = {
+		target_id_2 = "970303",
+		sub_type = 180,
+		desc = "使用福煦·META击破等级＞100的敌方1次",
+		id = 100205,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -2757,6 +2806,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "大型作战内使用贝亚恩·META击破等级＞100的敌方1次",
 		id = 200194,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200201] = {
+		target_id_2 = "970303",
+		sub_type = 302,
+		desc = "大型作战内使用福煦·META获得1次胜利",
+		id = 200201,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200202] = {
+		target_id_2 = "970303",
+		sub_type = 302,
+		desc = "大型作战内使用福煦·META击破等级＞70的敌方1次",
+		id = 200202,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200203] = {
+		target_id_2 = "970303",
+		sub_type = 302,
+		desc = "大型作战内使用福煦·META击破等级＞90的敌方1次",
+		id = 200203,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200204] = {
+		target_id_2 = "970303",
+		sub_type = 302,
+		desc = "大型作战内使用福煦·META击破等级＞100的敌方1次",
+		id = 200204,
 		target_num = 1,
 		target_id = "100"
 	}

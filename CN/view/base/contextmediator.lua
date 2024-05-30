@@ -6,7 +6,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 end
 
 function var_0_0.initNotificationHandleDic(arg_2_0)
-	arg_2_0.handleDic, arg_2_0.handElse = nil
+	arg_2_0.handleDic, arg_2_0.handleElse = nil
 end
 
 function var_0_0.listNotificationInterests(arg_3_0)
@@ -19,7 +19,7 @@ end
 
 function var_0_0.handleNotification(arg_4_0, arg_4_1)
 	if arg_4_0.handleDic then
-		switch(arg_4_1:getName(), arg_4_0.handleDic, arg_4_0.handElse, arg_4_0, arg_4_1)
+		switch(arg_4_1:getName(), arg_4_0.handleDic, arg_4_0.handleElse, arg_4_0, arg_4_1)
 	else
 		var_0_0.super.handleNotification(arg_4_0, arg_4_1)
 	end

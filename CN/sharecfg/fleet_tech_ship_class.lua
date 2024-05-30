@@ -3432,7 +3432,7 @@ pg.fleet_tech_ship_class = {
 		name = "吸血鬼·META",
 		nation = 97,
 		id = 970105,
-		t_level_1 = 1,
+		t_level_1 = 9,
 		t_level = 3,
 		ships = {
 			970105
@@ -3535,6 +3535,17 @@ pg.fleet_tech_ship_class = {
 		t_level = 3,
 		ships = {
 			970302
+		}
+	},
+	[970303] = {
+		shiptype = 3,
+		name = "福煦·META",
+		nation = 97,
+		id = 970303,
+		t_level_1 = 10,
+		t_level = 3,
+		ships = {
+			970303
 		}
 	},
 	[970401] = {
@@ -4042,6 +4053,7 @@ pg.fleet_tech_ship_class = {
 		970207,
 		970301,
 		970302,
+		970303,
 		970401,
 		970402,
 		970403,

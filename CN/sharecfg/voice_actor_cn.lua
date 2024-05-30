@@ -1631,5 +1631,25 @@ pg.voice_actor_CN = {
 	[409] = {
 		code = 409,
 		actor_name = "栗坂南美"
+	},
+	[410] = {
+		code = 410,
+		actor_name = "杨梦露"
+	},
+	[411] = {
+		code = 411,
+		actor_name = "陈雨"
+	},
+	[412] = {
+		code = 412,
+		actor_name = "四白"
+	},
+	[413] = {
+		code = 413,
+		actor_name = "陈婷婷"
+	},
+	[414] = {
+		code = 414,
+		actor_name = "刘雯"
 	}
 }

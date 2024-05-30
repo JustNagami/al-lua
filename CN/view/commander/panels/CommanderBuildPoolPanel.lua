@@ -107,8 +107,6 @@ function var_0_0.Show(arg_11_0, arg_11_1, arg_11_2)
 			local function var_13_1(arg_14_0)
 				if #arg_11_0.selected < var_0_1 and arg_11_0.counts[var_13_0.id] > 0 then
 					arg_11_0:ReduceCount(var_13_0.id, -1)
-				else
-					arg_14_0()
 				end
 			end
 

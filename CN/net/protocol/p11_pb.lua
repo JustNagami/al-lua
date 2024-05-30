@@ -61,6 +61,7 @@ var_0_2.SC_11003_MARRY_SHIP_FIELD = var_0_0.FieldDescriptor()
 var_0_2.SC_11003_TAKING_SHIP_LIST_FIELD = var_0_0.FieldDescriptor()
 var_0_2.SC_11003_SOUNDSTORY_FIELD = var_0_0.FieldDescriptor()
 var_0_2.SC_11003_CHILD_DISPLAY_FIELD = var_0_0.FieldDescriptor()
+var_0_2.SC_11003_MAIL_STOREROOM_LV_FIELD = var_0_0.FieldDescriptor()
 SC_11004 = var_0_0.Descriptor()
 var_0_2.SC_11004_RESOURCE_LIST_FIELD = var_0_0.FieldDescriptor()
 CS_11005 = var_0_0.Descriptor()
@@ -888,6 +889,15 @@ var_0_2.SC_11003_CHILD_DISPLAY_FIELD.has_default_value = false
 var_0_2.SC_11003_CHILD_DISPLAY_FIELD.default_value = 0
 var_0_2.SC_11003_CHILD_DISPLAY_FIELD.type = 13
 var_0_2.SC_11003_CHILD_DISPLAY_FIELD.cpp_type = 3
+var_0_2.SC_11003_MAIL_STOREROOM_LV_FIELD.name = "mail_storeroom_lv"
+var_0_2.SC_11003_MAIL_STOREROOM_LV_FIELD.full_name = "p11.sc_11003.mail_storeroom_lv"
+var_0_2.SC_11003_MAIL_STOREROOM_LV_FIELD.number = 48
+var_0_2.SC_11003_MAIL_STOREROOM_LV_FIELD.index = 46
+var_0_2.SC_11003_MAIL_STOREROOM_LV_FIELD.label = 2
+var_0_2.SC_11003_MAIL_STOREROOM_LV_FIELD.has_default_value = false
+var_0_2.SC_11003_MAIL_STOREROOM_LV_FIELD.default_value = 0
+var_0_2.SC_11003_MAIL_STOREROOM_LV_FIELD.type = 13
+var_0_2.SC_11003_MAIL_STOREROOM_LV_FIELD.cpp_type = 3
 SC_11003.name = "sc_11003"
 SC_11003.full_name = "p11.sc_11003"
 SC_11003.nested_types = {}
@@ -938,7 +948,8 @@ SC_11003.fields = {
 	var_0_2.SC_11003_MARRY_SHIP_FIELD,
 	var_0_2.SC_11003_TAKING_SHIP_LIST_FIELD,
 	var_0_2.SC_11003_SOUNDSTORY_FIELD,
-	var_0_2.SC_11003_CHILD_DISPLAY_FIELD
+	var_0_2.SC_11003_CHILD_DISPLAY_FIELD,
+	var_0_2.SC_11003_MAIL_STOREROOM_LV_FIELD
 }
 SC_11003.is_extendable = false
 SC_11003.extensions = {}

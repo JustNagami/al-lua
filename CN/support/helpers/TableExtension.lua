@@ -328,3 +328,34 @@ end
 function table.lastof(arg_28_0)
 	return arg_28_0[#arg_28_0]
 end
+
+function table.dichotomyInsert(arg_29_0, arg_29_1, arg_29_2)
+	arg_29_2 = defaultValue(arg_29_2, function(arg_30_0)
+		return arg_30_0
+	end)
+
+	assert(type(arg_29_2) == "function")
+
+	local var_29_0 = {}
+	local var_29_1 = 1
+	local var_29_2 = #arg_29_0
+	local var_29_3
+
+	local function var_29_4(arg_31_0)
+		var_29_0[arg_31_0] = var_29_0[arg_31_0] or arg_29_2(arg_31_0)
+
+		return var_29_0[arg_31_0]
+	end
+
+	while var_29_1 < var_29_2 do
+		local var_29_5 = math.floor((var_29_1 + var_29_2) / 2)
+
+		if var_29_4(arg_29_0[var_29_5]) < var_29_4(arg_29_1) then
+			var_29_1 = var_29_5 + 1
+		else
+			var_29_2 = var_29_5
+		end
+	end
+
+	table.insert(arg_29_0, var_29_1, arg_29_1)
+end

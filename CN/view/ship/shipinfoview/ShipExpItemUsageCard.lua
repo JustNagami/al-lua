@@ -8,22 +8,22 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.valueTxt = arg_1_1:Find("value/Text"):GetComponent(typeof(Text))
 	arg_1_0.value = 0
 
-	pressPersistTrigger(arg_1_1:Find("m10"), 0.5, function(arg_2_0)
+	pressPersistTrigger(arg_1_1:Find("m10"), 0.5, function()
 		arg_1_0.value = arg_1_0.value - 10
 
 		arg_1_0:UpdateValue(true)
 	end, nil, true, true, 0.15, SFX_PANEL)
-	pressPersistTrigger(arg_1_1:Find("a10"), 0.5, function(arg_3_0)
+	pressPersistTrigger(arg_1_1:Find("a10"), 0.5, function()
 		arg_1_0.value = arg_1_0.value + 10
 
 		arg_1_0:UpdateValue()
 	end, nil, true, true, 0.15, SFX_PANEL)
-	pressPersistTrigger(arg_1_1:Find("a1"), 0.5, function(arg_4_0)
+	pressPersistTrigger(arg_1_1:Find("a1"), 0.5, function()
 		arg_1_0.value = arg_1_0.value + 1
 
 		arg_1_0:UpdateValue()
 	end, nil, true, true, 0.15, SFX_PANEL)
-	pressPersistTrigger(arg_1_1:Find("m1"), 0.5, function(arg_5_0)
+	pressPersistTrigger(arg_1_1:Find("m1"), 0.5, function()
 		arg_1_0.value = arg_1_0.value - 1
 
 		arg_1_0:UpdateValue(true)

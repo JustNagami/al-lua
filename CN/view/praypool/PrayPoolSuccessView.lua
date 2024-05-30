@@ -214,6 +214,8 @@ function var_0_0.MsgBox(arg_14_0)
 	var_14_0.active = false
 
 	pg.DelegateInfo.New(var_14_0)
+	setText(findTF(var_14_0.cancenlBtn, "Image/Image (1)"), i18n("text_cancel"))
+	setText(findTF(var_14_0.confirmBtn, "Image/Image (1)"), i18n("text_confirm"))
 
 	local function var_14_1(arg_15_0, arg_15_1)
 		var_14_0.valueTxt.text = arg_15_0

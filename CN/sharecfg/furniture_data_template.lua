@@ -238,6 +238,7 @@ pg.furniture_data_template = setmetatable({
 			100059,
 			100060,
 			100061,
+			100062,
 			200001,
 			200002,
 			200003,
@@ -3507,6 +3508,7 @@ pg.furniture_data_template = setmetatable({
 			100059,
 			100060,
 			100061,
+			100062,
 			31101,
 			54101,
 			54102,
@@ -6662,7 +6664,8 @@ pg.furniture_data_template = setmetatable({
 			100057,
 			100058,
 			100059,
-			100061
+			100061,
+			100062
 		},
 		[2] = {
 			120,
@@ -9856,6 +9859,7 @@ pg.furniture_data_template = setmetatable({
 		100059,
 		100060,
 		100061,
+		100062,
 		200001,
 		200002,
 		200003,
@@ -25758,6 +25762,57 @@ pg.base.furniture_data_template = {
 		followBone = {
 			"char",
 			1
+		},
+		interAction_group = {}
+	},
+	[100062] = {
+		spine_extra = "",
+		describe = "用如影随形的纯真视线扫视四周啾！",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "jiujiubudaowengicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "啾啾不倒翁（纯真）",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 100062,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jiujiubudaoweng",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
 		},
 		interAction_group = {}
 	},

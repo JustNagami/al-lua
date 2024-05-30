@@ -30,7 +30,7 @@ function var_0_0.OnInit(arg_2_0)
 	onButton(arg_2_0, arg_2_0.cancelBtn, function()
 		arg_2_0:Hide()
 	end, SFX_PANEL)
-	pressPersistTrigger(arg_2_0.rightArr, 0.5, function(arg_5_0)
+	pressPersistTrigger(arg_2_0.rightArr, 0.5, function()
 		if not arg_2_0.itemVO then
 			return
 		end
@@ -39,7 +39,7 @@ function var_0_0.OnInit(arg_2_0)
 
 		arg_2_0:updateValue()
 	end, nil, true, true, 0.1, SFX_PANEL)
-	pressPersistTrigger(arg_2_0.leftArr, 0.5, function(arg_6_0)
+	pressPersistTrigger(arg_2_0.leftArr, 0.5, function()
 		if not arg_2_0.itemVO then
 			return
 		end

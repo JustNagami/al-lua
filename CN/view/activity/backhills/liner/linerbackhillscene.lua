@@ -70,7 +70,7 @@ function var_0_0.didEnter(arg_5_0)
 	end)
 	arg_5_0:InitFacilityCross(arg_5_0._dayTF, arg_5_0._nightTF, "btn_cruise", function()
 		arg_5_0:emit(LinerBackHillMediator.GO_SCENE, SCENE.LINER)
-		PlayerPrefs.SetInt("LinerBackHillScene" .. var_0_0.GetPrefsKey(), 1)
+		PlayerPrefs.SetString("LinerBackHillScene", var_0_0.GetDate())
 	end)
 	arg_5_0:InitFacilityCross(arg_5_0._dayTF, arg_5_0._nightTF, "btn_task", function()
 		arg_5_0:emit(LinerBackHillMediator.GO_SCENE, SCENE.ACTIVITY, {
@@ -109,7 +109,7 @@ function var_0_0.UpdateView(arg_12_0)
 	setActive(arg_12_0:findTF("tip", arg_12_0.night_btn_cruise), var_0_0.CruiseTip())
 end
 
-function var_0_0.GetPrefsKey()
+function var_0_0.GetDate()
 	return pg.TimeMgr.GetInstance():STimeDescC(pg.TimeMgr.GetInstance():GetServerTime(), "%Y/%m/%d")
 end
 
@@ -123,7 +123,7 @@ end
 
 function var_0_0.CruiseTip()
 	local var_16_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LINER):IsFinishAllTime()
-	local var_16_1 = PlayerPrefs.GetInt("LinerBackHillScene" .. var_0_0.GetPrefsKey(), 0) == 1
+	local var_16_1 = PlayerPrefs.GetString("LinerBackHillScene") == var_0_0.GetDate()
 
 	return not var_16_0 and not var_16_1
 end

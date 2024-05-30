@@ -149,8 +149,6 @@ function var_0_0.didEnter(arg_8_0)
 end
 
 function var_0_0.InitCounter(arg_22_0, arg_22_1, arg_22_2, arg_22_3, arg_22_4)
-	arg_22_0:DisposeCounter()
-
 	arg_22_2[2] = math.max(arg_22_2[1], arg_22_2[2])
 
 	local var_22_0 = arg_22_1
@@ -170,8 +168,7 @@ function var_0_0.InitCounter(arg_22_0, arg_22_1, arg_22_2, arg_22_3, arg_22_4)
 	end
 
 	var_22_2()
-
-	local var_22_3, var_22_4 = pressPersistTrigger(var_22_1:Find("Plus"), 0.5, function(arg_24_0)
+	pressPersistTrigger(var_22_1:Find("Plus"), 0.5, function(arg_24_0)
 		local var_24_0 = var_22_0
 
 		var_22_0 = var_22_0 + 1
@@ -179,40 +176,35 @@ function var_0_0.InitCounter(arg_22_0, arg_22_1, arg_22_2, arg_22_3, arg_22_4)
 
 		if var_24_0 == var_22_0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("workbench_tips3"))
-			arg_24_0()
 
 			return
 		end
 
 		var_22_2()
-	end, nil, true, true, 0.1, SFX_PANEL)
-
-	arg_22_0._rightRemoveTimer = var_22_4
-
-	local var_22_5, var_22_6 = pressPersistTrigger(var_22_1:Find("Minus"), 0.5, function(arg_25_0)
-		local var_25_0 = var_22_0
+	end, function()
+		if var_22_0 == arg_22_2[2] then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("workbench_tips3"))
+		end
+	end, true, true, 0.1, SFX_PANEL)
+	pressPersistTrigger(var_22_1:Find("Minus"), 0.5, function(arg_26_0)
+		local var_26_0 = var_22_0
 
 		var_22_0 = var_22_0 - 1
 		var_22_0 = math.clamp(var_22_0, arg_22_2[1], arg_22_2[2])
 
-		if var_25_0 == var_22_0 then
-			arg_25_0()
-
+		if var_26_0 == var_22_0 then
 			return
 		end
 
 		var_22_2()
 	end, nil, true, true, 0.1, SFX_PANEL)
-
-	arg_22_0._leftRemoveTimer = var_22_6
-
 	onButton(arg_22_0, var_22_1:Find("Plus10"), function()
-		local var_26_0 = var_22_0
+		local var_27_0 = var_22_0
 
 		var_22_0 = var_22_0 + 10
 		var_22_0 = math.clamp(var_22_0, arg_22_2[1], arg_22_2[2])
 
-		if var_26_0 == var_22_0 then
+		if var_27_0 == var_22_0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("workbench_tips3"))
 
 			return
@@ -229,16 +221,6 @@ function var_0_0.InitCounter(arg_22_0, arg_22_1, arg_22_2, arg_22_3, arg_22_4)
 	onButton(arg_22_0, arg_22_0.layerFormulaDetail:Find("Composite"), function()
 		existCall(arg_22_4, var_22_0)
 	end, SFX_PANEL)
-end
-
-function var_0_0.DisposeCounter(arg_29_0)
-	if arg_29_0._leftRemoveTimer then
-		arg_29_0._leftRemoveTimer()
-		arg_29_0._rightRemoveTimer()
-
-		arg_29_0._leftRemoveTimer = nil
-		arg_29_0._rightRemoveTimer = nil
-	end
 end
 
 local var_0_3 = {
@@ -616,7 +598,6 @@ function var_0_0.UpdateActivityDrop(arg_65_0, arg_65_1, arg_65_2, arg_65_3)
 end
 
 function var_0_0.willExit(arg_66_0)
-	arg_66_0:DisposeCounter()
 	arg_66_0.loader:Clear()
 end
 

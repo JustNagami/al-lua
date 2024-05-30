@@ -1836,6 +1836,20 @@ function temp()
 				}
 			}
 		},
+		腓 = {
+			特 = {
+				烈 = {
+					this = true
+				}
+			},
+			德 = {
+				雷 = {
+					卡 = {
+						this = true
+					}
+				}
+			}
+		},
 		齐 = {
 			柏 = {
 				林 = {
@@ -6870,7 +6884,18 @@ function temp()
 			}
 		},
 		煦 = {
-			this = true
+			this = true,
+			· = {
+				M = {
+					E = {
+						T = {
+							A = {
+								this = true
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 end

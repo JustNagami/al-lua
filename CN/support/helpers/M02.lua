@@ -829,6 +829,12 @@ local var_0_4 = {
 		-4,
 		-4
 	},
+	frame_store = {
+		-17,
+		-3,
+		-3,
+		-18
+	},
 	frame_prop = {
 		-11,
 		-12,
@@ -997,6 +1003,8 @@ function updateItem(arg_88_0, arg_88_1, arg_88_2)
 
 	if arg_88_1:getConfig("type") == 9 then
 		var_88_1 = "frame_design"
+	elseif arg_88_2.frame then
+		var_88_1 = arg_88_2.frame
 	end
 
 	setFrame(findTF(arg_88_0, "icon_bg/frame"), var_88_0, var_88_1)
@@ -4124,34 +4132,47 @@ function GetItemsOverflowDic(arg_275_0)
 	return var_275_0
 end
 
-function CheckOverflow(arg_281_0)
+function CheckOverflow(arg_281_0, arg_281_1)
 	local var_281_0 = arg_281_0[DROP_TYPE_RESOURCE][PlayerConst.ResGold] or 0
 	local var_281_1 = arg_281_0[DROP_TYPE_RESOURCE][PlayerConst.ResOil] or 0
 	local var_281_2 = arg_281_0[DROP_TYPE_EQUIP]
 	local var_281_3 = arg_281_0[DROP_TYPE_SHIP]
 	local var_281_4 = getProxy(PlayerProxy):getRawData()
+	local var_281_5 = false
 
-	if var_281_0 > 0 and var_281_4:GoldMax(var_281_0) then
-		return false, "gold"
+	if arg_281_1 then
+		local var_281_6 = var_281_4:OverStore(PlayerConst.ResStoreGold, var_281_0)
+		local var_281_7 = var_281_4:OverStore(PlayerConst.ResStoreOil, var_281_1)
+
+		if var_281_6 > 0 or var_281_7 > 0 then
+			var_281_5 = {
+				var_281_6,
+				var_281_7
+			}
+		end
+	else
+		if var_281_0 > 0 and var_281_4:GoldMax(var_281_0) then
+			return false, "gold"
+		end
+
+		if var_281_1 > 0 and var_281_4:OilMax(var_281_1) then
+			return false, "oil"
+		end
 	end
 
-	if var_281_1 > 0 and var_281_4:OilMax(var_281_1) then
-		return false, "oil"
-	end
+	local var_281_8 = getProxy(EquipmentProxy):getCapacity()
 
-	local var_281_5 = getProxy(EquipmentProxy):getCapacity()
-
-	if var_281_2 > 0 and var_281_2 + var_281_5 > var_281_4:getMaxEquipmentBag() then
+	if var_281_2 > 0 and var_281_2 + var_281_8 > var_281_4:getMaxEquipmentBag() then
 		return false, "equip"
 	end
 
-	local var_281_6 = getProxy(BayProxy):getShipCount()
+	local var_281_9 = getProxy(BayProxy):getShipCount()
 
-	if var_281_3 > 0 and var_281_3 + var_281_6 > var_281_4:getMaxShipBag() then
+	if var_281_3 > 0 and var_281_3 + var_281_9 > var_281_4:getMaxShipBag() then
 		return false, "ship"
 	end
 
-	return true
+	return true, var_281_5
 end
 
 function CheckShipExpOverflow(arg_282_0)
@@ -4370,50 +4391,70 @@ function setDefaultZeroMetatable(arg_303_0)
 	})
 end
 
-local var_0_26 = {
-	__index = {
-		LoadAssetSync = function(arg_305_0, ...)
-			if EDITOR_TOOL then
+if EDITOR_TOOL then
+	local var_0_26 = {
+		__index = {
+			LoadAssetSync = function(arg_305_0, ...)
 				return ResourceMgr.Inst:getAssetSync(arg_305_0.path, ...)
-			else
-				return ResourceMgr.Inst:LoadAssetSync(arg_305_0.ab, ...)
+			end,
+			GetAllAssetNames = function(arg_306_0, ...)
+				return ReflectionHelp.RefCallMethod(typeof(ResourceMgr), "GetAssetBundleAllAssetNames", ResourceMgr.Inst, {
+					typeof("System.String")
+				}, {
+					arg_306_0.path
+				})
 			end
-		end
+		}
 	}
-}
 
-function buildTempAB(arg_306_0, arg_306_1)
-	local var_306_0 = setmetatable({
-		path = arg_306_0
-	}, var_0_26)
+	function buildTempAB(arg_307_0, arg_307_1)
+		local var_307_0 = setmetatable({
+			path = arg_307_0
+		}, var_0_26)
 
-	if EDITOR_TOOL then
-		if arg_306_1 then
+		if arg_307_1 then
 			onNextTick(function()
-				arg_306_1(var_306_0)
+				arg_307_1(var_307_0)
 			end)
 		end
-	elseif arg_306_1 then
-		ResourceMgr.Inst:loadAssetBundleAsync(arg_306_0, function(arg_308_0)
-			var_306_0.ab = arg_308_0
 
-			arg_306_1(var_306_0)
-		end)
-	else
-		var_306_0.ab = ResourceMgr.Inst:loadAssetBundleSync(arg_306_0)
+		return var_307_0
 	end
 
-	return var_306_0
-end
+	function checkABExist(arg_309_0)
+		return PathMgr.FileExists(PathMgr.getAssetBundle(arg_309_0)) or ResourceMgr.Inst:AssetExist(arg_309_0)
+	end
+else
+	local var_0_27 = {
+		__index = {
+			LoadAssetSync = function(arg_310_0, ...)
+				return ResourceMgr.Inst:LoadAssetSync(arg_310_0.ab, ...)
+			end,
+			GetAllAssetNames = function(arg_311_0, ...)
+				return arg_311_0.ab:GetAllAssetNames(...)
+			end
+		}
+	}
 
-function checkABExist(arg_309_0)
-	if EDITOR_TOOL then
-		return ReflectionHelp.RefCallMethod(typeof(ResourceMgr), "CheckAssetBundleExist", ResourceMgr.Inst, {
-			typeof("System.String")
-		}, {
-			arg_309_0
-		})
-	else
-		return PathMgr.FileExists(PathMgr.getAssetBundle(arg_309_0))
+	function buildTempAB(arg_312_0, arg_312_1)
+		local var_312_0 = setmetatable({
+			path = arg_312_0
+		}, var_0_27)
+
+		if arg_312_1 then
+			ResourceMgr.Inst:loadAssetBundleAsync(arg_312_0, function(arg_313_0)
+				var_312_0.ab = arg_313_0
+
+				arg_312_1(var_312_0)
+			end)
+		else
+			var_312_0.ab = ResourceMgr.Inst:loadAssetBundleSync(arg_312_0)
+		end
+
+		return var_312_0
+	end
+
+	function checkABExist(arg_314_0)
+		return PathMgr.FileExists(PathMgr.getAssetBundle(arg_314_0))
 	end
 end
