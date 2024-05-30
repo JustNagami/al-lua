@@ -156599,6 +156599,167 @@ _G.pg.base.item_virtual_data_statistics[59577] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
+_G.pg.base.item_virtual_data_statistics[59579] = {
+	display = "用于「绽放于辉光之城」活动的常规兑换，活动结束后将会消失",
+	name = "辉光碎晶",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/huiguang_pt1",
+	id = 59579,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59580] = {
+	display = "用于「绽放于辉光之城」活动的特殊兑换，活动结束后将会消失",
+	name = "审判庭事件报告书",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 3,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/huiguang_pt2",
+	id = 59580,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59581] = {
+	display = "用于「司令部动员指令」活动累计奖励，活动结束后将会消失",
+	name = "集结点",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/union_pt",
+	id = 59581,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59582] = {
+	display = "参与「啾啾水管工」获得的纪念票，收集7张后可以兑换限定道具「7th庆典邀请函」",
+	name = "假日邮轮纪念票",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 3,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 99,
+	is_world = 0,
+	icon = "Props/59582",
+	id = 59582,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59583] = {
+	display = "参与「世界巡游」(2024.6.1~2024.7.31)获得的点数，累计一定程度可以领取奖励，活动结束后将会消失",
+	name = "巡游点数",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 7017,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "props/battlepass_pt",
+	id = 59583,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59584] = {
+	display = "不该被看到",
+	name = "通行证十七期对应虚拟道具",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 7017,
+	virtual_type = 21,
+	is_world = 0,
+	icon = "props/summer_stamp",
+	id = 59584,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59585] = {
+	display = "用于「今日的指挥练习」活动提升角色好感，活动结束后将会消失",
+	name = "友好度-{namecode:535}",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xiaofeitelie_pt",
+	id = 59585,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
 _G.pg.base.item_virtual_data_statistics[59601] = {
 	display = "三笠收藏的驱逐船模-{namecode:158}",
 	name = "船模-{namecode:158}",
@@ -168758,6 +168919,118 @@ _G.pg.base.item_virtual_data_statistics[86203] = {
 		}
 	}
 }
+_G.pg.base.item_virtual_data_statistics[86204] = {
+	display = "不会被看到",
+	name = "随机七周年泳装换装",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86204,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			805031,
+			1000
+		},
+		{
+			901071,
+			1000
+		},
+		{
+			102134,
+			1000
+		},
+		{
+			402073,
+			1000
+		},
+		{
+			599012,
+			1000
+		},
+		{
+			803021,
+			1800
+		},
+		{
+			901051,
+			1600
+		},
+		{
+			901061,
+			1600
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86205] = {
+	display = "不会被看到",
+	name = "随机七周年换装",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86205,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			299034,
+			1200
+		},
+		{
+			403102,
+			1200
+		},
+		{
+			701043,
+			1200
+		},
+		{
+			305082,
+			1200
+		},
+		{
+			202332,
+			1500
+		},
+		{
+			703022,
+			1400
+		},
+		{
+			302062,
+			1200
+		},
+		{
+			137031,
+			1100
+		}
+	}
+}
 _G.pg.base.item_virtual_data_statistics[100000] = {
 	display = "记录了信标的数据，达到指定数据量后可在我的信标界面对其进行解析。",
 	name = "信标数据",
@@ -178509,154 +178782,6 @@ _G.pg.base.item_virtual_data_statistics[200134] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
-_G.pg.base.item_virtual_data_statistics[59579] = {
-	display = "用于「绽放于辉光之城」活动的常规兑换，活动结束后将会消失",
-	name = "辉光碎晶",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/huiguang_pt1",
-	id = 59579,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59580] = {
-	display = "用于「绽放于辉光之城」活动的特殊兑换，活动结束后将会消失",
-	name = "审判庭事件报告书",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 3,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/huiguang_pt2",
-	id = 59580,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59581] = {
-	display = "用于「司令部动员指令」活动累计奖励，活动结束后将会消失",
-	name = "集结点",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/union_pt",
-	id = 59581,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59582] = {
-	display = "参与「啾啾水管工」获得的纪念票，收集7张后可以兑换限定道具「7th庆典邀请函」",
-	name = "假日邮轮纪念票",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 3,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 99,
-	is_world = 0,
-	icon = "Props/59582",
-	id = 59582,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86204] = {
-	display = "不会被看到",
-	name = "随机七周年泳装换装",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86204,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
-		{
-			805031,
-			1000
-		},
-		{
-			901071,
-			1000
-		},
-		{
-			102134,
-			1000
-		},
-		{
-			402073,
-			1000
-		},
-		{
-			599012,
-			1000
-		},
-		{
-			803021,
-			1800
-		},
-		{
-			901051,
-			1600
-		},
-		{
-			901061,
-			1600
-		}
-	}
-}
 _G.pg.base.item_virtual_data_statistics[200135] = {
 	display = "有几率获得以下设计图",
 	name = "未知设计图",
@@ -181655,131 +181780,6 @@ _G.pg.base.item_virtual_data_statistics[200173] = {
 			4,
 			107011,
 			1
-		}
-	}
-}
-_G.pg.base.item_virtual_data_statistics[59583] = {
-	display = "参与「世界巡游」(2024.6.1~2024.7.31)获得的点数，累计一定程度可以领取奖励，活动结束后将会消失",
-	name = "巡游点数",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 7017,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "props/battlepass_pt",
-	id = 59583,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59584] = {
-	display = "不该被看到",
-	name = "通行证十七期对应虚拟道具",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 7017,
-	virtual_type = 21,
-	is_world = 0,
-	icon = "props/summer_stamp",
-	id = 59584,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59585] = {
-	display = "用于「今日的指挥练习」活动提升角色好感，活动结束后将会消失",
-	name = "友好度-{namecode:535}",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/xiaofeitelie_pt",
-	id = 59585,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86205] = {
-	display = "不会被看到",
-	name = "随机七周年换装",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86205,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
-		{
-			299034,
-			1200
-		},
-		{
-			403102,
-			1200
-		},
-		{
-			701043,
-			1200
-		},
-		{
-			305082,
-			1200
-		},
-		{
-			202332,
-			1500
-		},
-		{
-			703022,
-			1400
-		},
-		{
-			302062,
-			1200
-		},
-		{
-			137031,
-			1100
 		}
 	}
 }

@@ -138,8 +138,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 					arg_1_0:sendNotification(GAME.MAIL_DOUBLE_CONFIREMATION_MSGBOX, {
 						type = MailProxy.MailMessageBoxType.ShowTips,
 						content = i18n("player_expResource_mail_overflow", Item.getConfigData(iter_13_1).name),
-						onYes = arg_15_0,
-						dropList = list
+						onYes = arg_15_0
 					})
 				end)
 			end

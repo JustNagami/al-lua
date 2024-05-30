@@ -1614,6 +1614,120 @@ _G.pg.base.gametip.mail_confirm_set_important_flag = {
 _G.pg.base.gametip.mail_confirm_cancel_important_flag = {
 	tip = "是否取消设定为重要邮件？"
 }
+_G.pg.base.gametip.mail_mail_page = {
+	tip = "邮件"
+}
+_G.pg.base.gametip.mail_storeroom_page = {
+	tip = "储藏室"
+}
+_G.pg.base.gametip.mail_boxroom_page = {
+	tip = "收藏室"
+}
+_G.pg.base.gametip.mail_all_page = {
+	tip = "全部"
+}
+_G.pg.base.gametip.mail_important_page = {
+	tip = "重要"
+}
+_G.pg.base.gametip.mail_rare_page = {
+	tip = "特殊附件"
+}
+_G.pg.base.gametip.mail_reward_got = {
+	tip = "已领取"
+}
+_G.pg.base.gametip.mail_reward_tips = {
+	tip = "邮件中存储的物资与石油会领取至储藏室"
+}
+_G.pg.base.gametip.mail_boxroom_extend_title = {
+	tip = "储藏室扩展"
+}
+_G.pg.base.gametip.mail_boxroom_extend_tips = {
+	tip = "储藏室容量提升"
+}
+_G.pg.base.gametip.mail_buy_button = {
+	tip = "购买"
+}
+_G.pg.base.gametip.mail_manager_title = {
+	tip = "邮件管理"
+}
+_G.pg.base.gametip.mail_manager_tips_2 = {
+	tip = "※邮件中存储的物资与石油会领取至储藏室"
+}
+_G.pg.base.gametip.mail_manager_all = {
+	tip = "所有邮件"
+}
+_G.pg.base.gametip.mail_manager_rare = {
+	tip = "附件中仅含以下道具的邮件"
+}
+_G.pg.base.gametip.mail_get_oneclick = {
+	tip = "一键领取"
+}
+_G.pg.base.gametip.mail_read_oneclick = {
+	tip = "一键已读"
+}
+_G.pg.base.gametip.mail_delete_oneclick = {
+	tip = "一键删除"
+}
+_G.pg.base.gametip.mail_search_new = {
+	tip = "点击搜索"
+}
+_G.pg.base.gametip.mail_receive_time = {
+	tip = "收件时间"
+}
+_G.pg.base.gametip.mail_move_oneclick = {
+	tip = "一键转移"
+}
+_G.pg.base.gametip.mail_deleteread_button = {
+	tip = "删除已读"
+}
+_G.pg.base.gametip.mail_manage_button = {
+	tip = "邮件管理"
+}
+_G.pg.base.gametip.mail_move_button = {
+	tip = "一键转移"
+}
+_G.pg.base.gametip.mail_delet_button = {
+	tip = "删除"
+}
+_G.pg.base.gametip.mail_moveone_button = {
+	tip = "邮件转移"
+}
+_G.pg.base.gametip.mail_getone_button = {
+	tip = "领取奖励"
+}
+_G.pg.base.gametip.mail_take_all_mail_msgbox = {
+	tip = "※是否领取所有选中的邮件"
+}
+_G.pg.base.gametip.mail_take_maildetail_msgbox = {
+	tip = "邮件详情"
+}
+_G.pg.base.gametip.mail_take_canget_msgbox = {
+	tip = "领取将获得："
+}
+_G.pg.base.gametip.mail_getbox_title = {
+	tip = "领取邮件"
+}
+_G.pg.base.gametip.mail_title_new = {
+	tip = "邮箱"
+}
+_G.pg.base.gametip.mail_boxtitle_information = {
+	tip = "信息"
+}
+_G.pg.base.gametip.mail_box_confirm = {
+	tip = "确定"
+}
+_G.pg.base.gametip.mail_box_cancel = {
+	tip = "取消"
+}
+_G.pg.base.gametip.mail_title_English = {
+	tip = "MAIL BOX"
+}
+_G.pg.base.gametip.mail_toggle_on = {
+	tip = "ON"
+}
+_G.pg.base.gametip.mail_toggle_off = {
+	tip = "OFF"
+}
 _G.pg.base.gametip.main_mailLayer_mailBoxClear = {
 	tip = "邮箱已被清空"
 }
@@ -1632,6 +1746,9 @@ _G.pg.base.gametip.main_mailLayer_attachTaken = {
 _G.pg.base.gametip.main_mailLayer_quest_clear = {
 	tip = "确定要删除所有已读邮件吗？<color=#238c40>（未领取附件的邮件将会保留）</color>"
 }
+_G.pg.base.gametip.main_mailLayer_quest_clear_choice = {
+	tip = "确定要删除选中的已读邮件吗？<color=#238c40>（未领取附件的邮件将会保留）</color>"
+}
 _G.pg.base.gametip.main_mailLayer_quest_deleteNotTakeAttach = {
 	tip = "<color=#92fc63>附件未领取</color>，真的要删除该邮件吗?"
 }
@@ -1643,6 +1760,12 @@ _G.pg.base.gametip.main_mailMediator_mailDelete = {
 }
 _G.pg.base.gametip.main_mailMediator_attachTaken = {
 	tip = "附件已领取"
+}
+_G.pg.base.gametip.main_mailMediator_mailread = {
+	tip = "邮件已阅读"
+}
+_G.pg.base.gametip.main_mailMediator_mailmove = {
+	tip = "邮件已转移"
 }
 _G.pg.base.gametip.main_mailMediator_notingToTake = {
 	tip = "并没有什么可领的"
@@ -5869,6 +5992,9 @@ _G.pg.base.gametip.ship_remould_warning_102284 = {
 _G.pg.base.gametip.ship_remould_warning_102304 = {
 	tip = "此次改造操作后<color=#92fc63>【主炮底座+1】</color>\n<color=#92fc63>【战争之殇】</color>技能将升级为<color=#92fc63>【战争之殇·改】</color>\n<color=#92fc63>【全弹发射II】</color>技能将升级为<color=#92fc63>【全弹发射III】</color>"
 }
+_G.pg.base.gametip.ship_remould_warning_105214 = {
+	tip = "此次改造操作后<color=#92fc63>【BIG SEVEN】</color>技能\n将升级为<color=#92fc63>【BIG SEVEN·科罗拉多】</color>"
+}
 _G.pg.base.gametip.ship_remould_warning_105234 = {
 	tip = "此次改造操作后<color=#92fc63>【BIG SEVEN】</color>技能\n将升级为<color=#92fc63>【BIG SEVEN·西弗吉尼亚】</color>"
 }
@@ -9794,6 +9920,116 @@ _G.pg.base.gametip.warning_mail_max_1 = {
 _G.pg.base.gametip.warning_mail_max_2 = {
 	tip = "邮件数已经达到上限，请注意整理！"
 }
+_G.pg.base.gametip.warning_mail_max_3 = {
+	tip = "邮件数量已达邮箱上限(<color=#FF5C5C>$1</color>/100)，将无法收到新邮件，请指挥官前往邮箱处进行清理"
+}
+_G.pg.base.gametip.warning_mail_max_4 = {
+	tip = "邮件已达邮箱上限(<color=#FF5C5C>$1</color>/100)，若不清理邮箱，将无法收到新邮件，是否确认退出？"
+}
+_G.pg.base.gametip.warning_mail_max_5 = {
+	tip = "※达到上限后无法收到新邮件"
+}
+_G.pg.base.gametip.mail_moveto_markroom_1 = {
+	tip = "是否确认将邮件转移至<color=#238c40>【收藏室】</color>\n该操作会领取邮件中所有附件并在邮箱中移出该邮件"
+}
+_G.pg.base.gametip.mail_moveto_markroom_2 = {
+	tip = "是否确认将所有重要邮件转移至<color=#238c40>【收藏室】</color>\n该操作会领取所有重要邮件中的附件并在邮箱中移出这些邮件"
+}
+_G.pg.base.gametip.mail_moveto_markroom_max = {
+	tip = "<color=#92fc63>【收藏室】</color>存储空间不足，转移失败"
+}
+_G.pg.base.gametip.mail_markroom_delete = {
+	tip = "是否确认删除 <color=#238c40>《$1》</color> 邮件"
+}
+_G.pg.base.gametip.mail_markroom_tip = {
+	tip = "※收藏室上限受指挥官等级影响"
+}
+_G.pg.base.gametip.mail_manage_1 = {
+	tip = "所有邮件"
+}
+_G.pg.base.gametip.mail_manage_2 = {
+	tip = "附件中仅包含以下道具的邮件"
+}
+_G.pg.base.gametip.mail_manage_3 = {
+	tip = "没有符合条件的邮件"
+}
+_G.pg.base.gametip.mail_manage_tip_1 = {
+	tip = "※一键删除仅会删除已领取附件的邮件"
+}
+_G.pg.base.gametip.mail_storeroom_tips = {
+	tip = "※邮件中存储的物资与石油会领取至储藏室"
+}
+_G.pg.base.gametip.mail_storeroom_noextend = {
+	tip = "储藏室存储容量已达上限，无法扩展"
+}
+_G.pg.base.gametip.mail_storeroom_extend = {
+	tip = "储藏室容量提升："
+}
+_G.pg.base.gametip.mail_storeroom_extend_1 = {
+	tip = "储藏室扩展成功"
+}
+_G.pg.base.gametip.mail_storeroom_taken_1 = {
+	tip = "储藏室取出成功"
+}
+_G.pg.base.gametip.mail_storeroom_max_1 = {
+	tip = "储藏室已满，本次领取会导致以下溢出资源消失，\n是否继续？"
+}
+_G.pg.base.gametip.mail_storeroom_max_2 = {
+	tip = "请输入<color=#238c40>$1</color>进行确认"
+}
+_G.pg.base.gametip.mail_storeroom_addgold = {
+	tip = "储藏物资："
+}
+_G.pg.base.gametip.mail_storeroom_addoil = {
+	tip = "储藏石油："
+}
+_G.pg.base.gametip.mail_search = {
+	tip = "点击输入"
+}
+_G.pg.base.gametip.mail_storeroom_resourcetaken = {
+	tip = "取出资源"
+}
+_G.pg.base.gametip.resource_max_tip_storeroom = {
+	tip = "当前数量已达上限"
+}
+_G.pg.base.gametip.mail_tip = {
+	tip = {
+		{
+			info = [[
+<color=#92fc63>邮件</color>
+1.邮箱上限为100封，重要邮件与特殊邮件共用此上限
+2.通过【邮件管理】可对全部或满足要求附件的邮件进行批量处理
+3.将普通邮件标记为重要可将其转移至【重要】分类下，重要邮件无法被删除
+4.含有除【物资】【石油】【功勋】【心智魔方】以外的附件会被自动标记为【特殊附件】邮件
+
+<color=#92fc63>储藏室</color>
+1.从邮件附件中领取的石油与物资会被存入【储藏室】
+2.可在【储藏室】取出指定数量的资源
+
+<color=#92fc63>收藏室</color>
+1.通过邮件转移功能可将邮件转移至【收藏室】，该邮件的附件会被自动领取，该邮件会在邮箱中被删除（石油与物资会被领取至储藏室）
+2.【收藏室】存储的邮件上限受指挥官等级影响]]
+		}
+	}
+}
+_G.pg.base.gametip.mail_page_1 = {
+	tip = "邮件"
+}
+_G.pg.base.gametip.mail_page_2 = {
+	tip = "储藏室"
+}
+_G.pg.base.gametip.mail_page_3 = {
+	tip = "收藏室"
+}
+_G.pg.base.gametip.mail_gold_res = {
+	tip = "物资"
+}
+_G.pg.base.gametip.mail_oil_res = {
+	tip = "石油"
+}
+_G.pg.base.gametip.mail_all_price = {
+	tip = "总价："
+}
 _G.pg.base.gametip.return_award_bind_success = {
 	tip = "绑定成功"
 }
@@ -9943,6 +10179,9 @@ _G.pg.base.gametip.pray_build_help = {
 			info = "11.进行祈愿建造也可以积累常驻UR兑换点数"
 		}
 	}
+}
+_G.pg.base.gametip.pray_build_UR_warning = {
+	tip = "仅能最多选择1名<color=#ff5e39>海上传奇舰船</color>角色"
 }
 _G.pg.base.gametip.bismarck_award_tip = {
 	tip = "完成所有条件后获得奖励"
@@ -10117,6 +10356,15 @@ _G.pg.base.gametip.list_empty_tip_taskscene = {
 }
 _G.pg.base.gametip.empty_tip_mailboxui = {
 	tip = "暂未收到任何邮件"
+}
+_G.pg.base.gametip.emptymarkroom_tip_mailboxui = {
+	tip = "暂未收藏任何邮件"
+}
+_G.pg.base.gametip.empty_tip_mailboxui_en = {
+	tip = "C O M M A N D E R ， N O   M A I L   H A S   B E E N   A C Q U I R E D   Y E T "
+}
+_G.pg.base.gametip.emptymarkroom_tip_mailboxui_en = {
+	tip = "C O M M A N D E R ， N O   M A I L   H A S   B E E N   A R C H I V E D   Y E T "
 }
 _G.pg.base.gametip.words_settings_unlock_ship = {
 	tip = "解锁角色"
@@ -13563,6 +13811,9 @@ _G.pg.base.gametip.destory_ship_before_tip = {
 _G.pg.base.gametip.destory_ship_input_erro = {
 	tip = "请输入正确的确认文本后进行拆解"
 }
+_G.pg.base.gametip.mail_input_erro = {
+	tip = "请输入正确的确认文本后进行领取"
+}
 _G.pg.base.gametip.destroy_ur_rarity_tip = {
 	tip = "包含<color=#92fc63>海上传奇舰船</color>，请输入<color=#92fc63>$1</color>进行确认"
 }
@@ -15636,6 +15887,9 @@ _G.pg.base.gametip.ship_exp_item_label_confirm = {
 }
 _G.pg.base.gametip.player_expResource_mail_fullBag = {
 	tip = "资源已经达到上限，继续会导致部分资源无法领取，是否继续？"
+}
+_G.pg.base.gametip.player_expResource_mail_overflow = {
+	tip = "$1已经达到上限，继续会导致部分资源无法领取，是否继续？"
 }
 _G.pg.base.gametip.tec_nation_award_finish = {
 	tip = "- 已领取 -"
@@ -17744,6 +17998,80 @@ _G.pg.base.gametip.cruise_task_help_2404 = {
 
 ·<color=#92fc63>开放时间</color>
     2024.3.31 0点 ~ 2024.5.31 23:59:59
+
+·<color=#92fc63>巡游任务分为两种</color>
+（1）每周任务
+    巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务。
+（2）S.P.任务
+    S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
+（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励
+
+·<color=#92fc63>「巡游任务快速完成券」说明</color>
+（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成每周巡游任务
+（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
+（3）每个巡游任务需要消耗的「巡游任务快速完成券」数量和其提供的「巡游点数」相关，与当前任务进度无关
+（4）「巡游任务快速完成券」<color=#92fc63>不会随本期活动结束而消失</color>]]
+		}
+	}
+}
+_G.pg.base.gametip.battlepass_main_tip_2406 = {
+	tip = "2024/6/1-2024/7/31期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「福煦·META」</color>在内的丰富奖励"
+}
+_G.pg.base.gametip.battlepass_main_help_2406 = {
+	tip = {
+		{
+			info = [[
+世界巡游(2024.6.1-2024.7.31)
+
+·<color=#92fc63>开放时间</color>
+    2024.6.1 0点 ~ 2024.7.31 23:59:59
+
+·<color=#92fc63>巡游进度说明</color>
+（1）活动期间，指挥官通过完成巡游任务，可获取「巡游点数」。
+（2）巡游任务随时间开放解锁。
+（3）每获取100点「巡游点数」即可增加1巡游进度
+（4）巡游进度提升后可以获取相应等级的奖励，巡游进度最高可达100。
+
+·<color=#92fc63>奖励规则</color>
+巡游进度奖励分为两种：
+（1）基础巡游奖励：包含<color=#ff5c5c>「福煦·META」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·六期</color>等奖励；
+    当巡游达到指定进度时，指挥官可以直接领取相应的基础巡游奖励。
+（2）特许巡游奖励：包含<color=#ff5c5c>阿蒂利奥·雷戈洛换装「云端降落的天使 </color>」、<color=#ff5c5c>钻石</color>等奖励；
+    购买「特许巡游凭证」，且巡游达到指定进度时，可以领取特许巡游奖励。
+    注：购买「特许巡游凭证」后，不会影响基础巡游奖励的领取。
+
+·<color=#92fc63>「特许巡游凭证」说明</color>
+（1）「特许巡游凭证」可于「商店」-「优惠礼包」中购买，购买后可立刻获得<color=#ff5c5c>1500点</color>「巡游点数」同时解锁特许巡游奖励。
+（2）「特许巡游凭证」将于<color=#ff5c5c>活动结束前一小时</color>停止售卖(即7.31 22:59:59停止)，请指挥官注意购买时间。
+
+·<color=#92fc63>任务说明</color>
+巡游任务分为两种：
+（1）每周任务 
+    巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务
+（2）S.P.任务
+    S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
+（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励。
+
+·<color=#92fc63>「巡游任务快速完成券」说明</color>
+（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成大部分巡游任务
+（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
+（3）每个巡游任务需要消耗的完成券数量固定，与当前任务进度无关
+（4）「巡游任务快速完成券」不会随本期活动结束而消失
+
+·<color=#ff5c5c>特别提示</color>
+（1）在本期世界巡游活动结束后，所有巡游任务将会无法继续完成，所有巡游奖励将会无法继续领取，请各位指挥官务必注意活动结束时间，提前领取奖励。
+（2）巡游进度、[特许巡游凭证]仅对本期世界巡游活动生效]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2406 = {
+	tip = {
+		{
+			info = [[
+巡游任务说明
+
+·<color=#92fc63>开放时间</color>
+    2024.5.31 0点 ~ 2024.7.31 23:59:59
 
 ·<color=#92fc63>巡游任务分为两种</color>
 （1）每周任务
@@ -23212,6 +23540,12 @@ _G.pg.base.gametip.vote_2023_reward_word_3 = {
 _G.pg.base.gametip.voting_page_reward = {
 	tip = "点击领取"
 }
+_G.pg.base.gametip.backyard_shipAddInimacy_ships_ok = {
+	tip = "<color=#92fc63>$1等舰船</color>亲密度<color=#92fc63>提高</color> "
+}
+_G.pg.base.gametip.backyard_shipAddMoney_ships_ok = {
+	tip = "<color=#92fc63>$1等舰船</color>有了意外的发现，家具币<color=#92fc63>+$2</color> "
+}
 _G.pg.base.gametip.idol3rd_houshan = {
 	tip = {
 		{
@@ -23319,24 +23653,6 @@ _G.pg.base.gametip.dorm3d_gift = {
 _G.pg.base.gametip.dorm3d_gift_owner_num = {
 	tip = "数量："
 }
-_G.pg.base.gametip.liner_sign_cnt_tip = {
-	tip = "剩余可签到次数："
-}
-_G.pg.base.gametip.liner_sign_unlock_tip = {
-	tip = "5.21维护后解锁"
-}
-_G.pg.base.gametip.ship_remould_warning_105214 = {
-	tip = "此次改造操作后<color=#92fc63>【BIG SEVEN】</color>技能\n将升级为<color=#92fc63>【BIG SEVEN·科罗拉多】</color>"
-}
-_G.pg.base.gametip.pray_build_UR_warning = {
-	tip = "仅能最多选择1名<color=#ff5e39>海上传奇舰船</color>角色"
-}
-_G.pg.base.gametip.backyard_shipAddInimacy_ships_ok = {
-	tip = "<color=#92fc63>$1等舰船</color>亲密度<color=#92fc63>提高</color> "
-}
-_G.pg.base.gametip.backyard_shipAddMoney_ships_ok = {
-	tip = "<color=#92fc63>$1等舰船</color>有了意外的发现，家具币<color=#92fc63>+$2</color> "
-}
 _G.pg.base.gametip.main_silent_tip_1 = {
 	tip = "支舰队已归航  "
 }
@@ -23372,6 +23688,12 @@ _G.pg.base.gametip.specialshipyard_tip = {
 }
 _G.pg.base.gametip.specialshipyard_name = {
 	tip = "特殊船坞："
+}
+_G.pg.base.gametip.liner_sign_cnt_tip = {
+	tip = "剩余可签到次数："
+}
+_G.pg.base.gametip.liner_sign_unlock_tip = {
+	tip = "5.21维护后解锁"
 }
 _G.pg.base.gametip.liner_target_type1 = {
 	tip = "度假时光"
@@ -23533,326 +23855,6 @@ _G.pg.base.gametip.UrExchange_Pt_help = {
 		}
 	}
 }
-_G.pg.base.gametip.mail_mail_page = {
-	tip = "邮件"
-}
-_G.pg.base.gametip.mail_storeroom_page = {
-	tip = "储藏室"
-}
-_G.pg.base.gametip.mail_boxroom_page = {
-	tip = "收藏室"
-}
-_G.pg.base.gametip.mail_all_page = {
-	tip = "全部"
-}
-_G.pg.base.gametip.mail_important_page = {
-	tip = "重要"
-}
-_G.pg.base.gametip.mail_rare_page = {
-	tip = "特殊附件"
-}
-_G.pg.base.gametip.mail_reward_got = {
-	tip = "已领取"
-}
-_G.pg.base.gametip.mail_reward_tips = {
-	tip = "邮件中存储的物资与石油会领取至储藏室"
-}
-_G.pg.base.gametip.mail_boxroom_extend_title = {
-	tip = "储藏室扩展"
-}
-_G.pg.base.gametip.mail_boxroom_extend_tips = {
-	tip = "储藏室容量提升"
-}
-_G.pg.base.gametip.mail_buy_button = {
-	tip = "购买"
-}
-_G.pg.base.gametip.mail_manager_title = {
-	tip = "邮件管理"
-}
-_G.pg.base.gametip.mail_manager_tips_2 = {
-	tip = "※邮件中存储的物资与石油会领取至储藏室"
-}
-_G.pg.base.gametip.mail_manager_all = {
-	tip = "所有邮件"
-}
-_G.pg.base.gametip.mail_manager_rare = {
-	tip = "附件中仅含以下道具的邮件"
-}
-_G.pg.base.gametip.mail_get_oneclick = {
-	tip = "一键领取"
-}
-_G.pg.base.gametip.mail_read_oneclick = {
-	tip = "一键已读"
-}
-_G.pg.base.gametip.mail_delete_oneclick = {
-	tip = "一键删除"
-}
-_G.pg.base.gametip.mail_search_new = {
-	tip = "点击搜索"
-}
-_G.pg.base.gametip.mail_receive_time = {
-	tip = "收件时间"
-}
-_G.pg.base.gametip.mail_move_oneclick = {
-	tip = "一键转移"
-}
-_G.pg.base.gametip.mail_deleteread_button = {
-	tip = "删除已读"
-}
-_G.pg.base.gametip.mail_manage_button = {
-	tip = "邮件管理"
-}
-_G.pg.base.gametip.mail_move_button = {
-	tip = "一键转移"
-}
-_G.pg.base.gametip.mail_delet_button = {
-	tip = "删除"
-}
-_G.pg.base.gametip.mail_moveone_button = {
-	tip = "邮件转移"
-}
-_G.pg.base.gametip.mail_getone_button = {
-	tip = "领取奖励"
-}
-_G.pg.base.gametip.mail_take_all_mail_msgbox = {
-	tip = "※是否领取所有选中的邮件"
-}
-_G.pg.base.gametip.mail_take_maildetail_msgbox = {
-	tip = "邮件详情"
-}
-_G.pg.base.gametip.mail_take_canget_msgbox = {
-	tip = "领取将获得："
-}
-_G.pg.base.gametip.mail_getbox_title = {
-	tip = "领取邮件"
-}
-_G.pg.base.gametip.mail_title_new = {
-	tip = "邮箱"
-}
-_G.pg.base.gametip.mail_boxtitle_information = {
-	tip = "信息"
-}
-_G.pg.base.gametip.mail_box_confirm = {
-	tip = "确定"
-}
-_G.pg.base.gametip.mail_box_cancel = {
-	tip = "取消"
-}
-_G.pg.base.gametip.mail_title_English = {
-	tip = "MAIL BOX"
-}
-_G.pg.base.gametip.mail_toggle_on = {
-	tip = "ON"
-}
-_G.pg.base.gametip.mail_toggle_off = {
-	tip = "OFF"
-}
-_G.pg.base.gametip.main_mailLayer_quest_clear_choice = {
-	tip = "确定要删除选中的已读邮件吗？<color=#238c40>（未领取附件的邮件将会保留）</color>"
-}
-_G.pg.base.gametip.main_mailMediator_mailread = {
-	tip = "邮件已阅读"
-}
-_G.pg.base.gametip.main_mailMediator_mailmove = {
-	tip = "邮件已转移"
-}
-_G.pg.base.gametip.warning_mail_max_3 = {
-	tip = "邮件数量已达邮箱上限(<color=#FF5C5C>$1</color>/100)，将无法收到新邮件，请指挥官前往邮箱处进行清理"
-}
-_G.pg.base.gametip.warning_mail_max_4 = {
-	tip = "邮件已达邮箱上限(<color=#FF5C5C>$1</color>/100)，若不清理邮箱，将无法收到新邮件，是否确认退出？"
-}
-_G.pg.base.gametip.warning_mail_max_5 = {
-	tip = "※达到上限后无法收到新邮件"
-}
-_G.pg.base.gametip.mail_moveto_markroom_1 = {
-	tip = "是否确认将邮件转移至<color=#238c40>【收藏室】</color>\n该操作会领取邮件中所有附件并在邮箱中移出该邮件"
-}
-_G.pg.base.gametip.mail_moveto_markroom_2 = {
-	tip = "是否确认将所有重要邮件转移至<color=#238c40>【收藏室】</color>\n该操作会领取所有重要邮件中的附件并在邮箱中移出这些邮件"
-}
-_G.pg.base.gametip.mail_moveto_markroom_max = {
-	tip = "<color=#92fc63>【收藏室】</color>存储空间不足，转移失败"
-}
-_G.pg.base.gametip.mail_markroom_delete = {
-	tip = "是否确认删除 <color=#238c40>《$1》</color> 邮件"
-}
-_G.pg.base.gametip.mail_markroom_tip = {
-	tip = "※收藏室上限受指挥官等级影响"
-}
-_G.pg.base.gametip.mail_manage_1 = {
-	tip = "所有邮件"
-}
-_G.pg.base.gametip.mail_manage_2 = {
-	tip = "附件中仅包含以下道具的邮件"
-}
-_G.pg.base.gametip.mail_manage_3 = {
-	tip = "没有符合条件的邮件"
-}
-_G.pg.base.gametip.mail_manage_tip_1 = {
-	tip = "※一键删除仅会删除已领取附件的邮件"
-}
-_G.pg.base.gametip.mail_storeroom_tips = {
-	tip = "※邮件中存储的物资与石油会领取至储藏室"
-}
-_G.pg.base.gametip.mail_storeroom_noextend = {
-	tip = "储藏室存储容量已达上限，无法扩展"
-}
-_G.pg.base.gametip.mail_storeroom_extend = {
-	tip = "储藏室容量提升："
-}
-_G.pg.base.gametip.mail_storeroom_extend_1 = {
-	tip = "储藏室扩展成功"
-}
-_G.pg.base.gametip.mail_storeroom_taken_1 = {
-	tip = "储藏室取出成功"
-}
-_G.pg.base.gametip.mail_storeroom_max_1 = {
-	tip = "储藏室已满，本次领取会导致以下溢出资源消失，\n是否继续？"
-}
-_G.pg.base.gametip.mail_storeroom_max_2 = {
-	tip = "请输入<color=#238c40>$1</color>进行确认"
-}
-_G.pg.base.gametip.mail_storeroom_addgold = {
-	tip = "储藏物资："
-}
-_G.pg.base.gametip.mail_storeroom_addoil = {
-	tip = "储藏石油："
-}
-_G.pg.base.gametip.mail_search = {
-	tip = "点击输入"
-}
-_G.pg.base.gametip.mail_storeroom_resourcetaken = {
-	tip = "取出资源"
-}
-_G.pg.base.gametip.resource_max_tip_storeroom = {
-	tip = "当前数量已达上限"
-}
-_G.pg.base.gametip.mail_tip = {
-	tip = {
-		{
-			info = [[
-<color=#92fc63>邮件</color>
-1.邮箱上限为100封，重要邮件与特殊邮件共用此上限
-2.通过【邮件管理】可对全部或满足要求附件的邮件进行批量处理
-3.将普通邮件标记为重要可将其转移至【重要】分类下，重要邮件无法被删除
-4.含有除【物资】【石油】【功勋】【心智魔方】以外的附件会被自动标记为【特殊附件】邮件
-
-<color=#92fc63>储藏室</color>
-1.从邮件附件中领取的石油与物资会被存入【储藏室】
-2.可在【储藏室】取出指定数量的资源
-3.储藏室存储的资源上限可进行扩展
-
-<color=#92fc63>收藏室</color>
-1.通过邮件转移功能可将邮件转移至【收藏室】，该邮件的附件会被自动领取，该邮件会在邮箱中被删除（石油与物资会被领取至储藏室）
-2.【收藏室】存储的邮件上限受指挥官等级影响]]
-		}
-	}
-}
-_G.pg.base.gametip.mail_page_1 = {
-	tip = "邮件"
-}
-_G.pg.base.gametip.mail_page_2 = {
-	tip = "储藏室"
-}
-_G.pg.base.gametip.mail_page_3 = {
-	tip = "收藏室"
-}
-_G.pg.base.gametip.mail_gold_res = {
-	tip = "物资"
-}
-_G.pg.base.gametip.mail_oil_res = {
-	tip = "石油"
-}
-_G.pg.base.gametip.mail_all_price = {
-	tip = "总价："
-}
-_G.pg.base.gametip.emptymarkroom_tip_mailboxui = {
-	tip = "暂未收藏任何邮件"
-}
-_G.pg.base.gametip.empty_tip_mailboxui_en = {
-	tip = "C O M M A N D E R ， N O   M A I L   H A S   B E E N   A C Q U I R E D   Y E T "
-}
-_G.pg.base.gametip.emptymarkroom_tip_mailboxui_en = {
-	tip = "C O M M A N D E R ， N O   M A I L   H A S   B E E N   A R C H I V E D   Y E T "
-}
-_G.pg.base.gametip.mail_input_erro = {
-	tip = "请输入正确的确认文本后进行领取"
-}
-_G.pg.base.gametip.battlepass_main_tip_2406 = {
-	tip = "2024/6/1-2024/7/31期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「福煦·META」</color>在内的丰富奖励"
-}
-_G.pg.base.gametip.battlepass_main_help_2406 = {
-	tip = {
-		{
-			info = [[
-世界巡游(2024.6.1-2024.7.31)
-
-·<color=#92fc63>开放时间</color>
-    2024.6.1 0点 ~ 2024.7.31 23:59:59
-
-·<color=#92fc63>巡游进度说明</color>
-（1）活动期间，指挥官通过完成巡游任务，可获取「巡游点数」。
-（2）巡游任务随时间开放解锁。
-（3）每获取100点「巡游点数」即可增加1巡游进度
-（4）巡游进度提升后可以获取相应等级的奖励，巡游进度最高可达100。
-
-·<color=#92fc63>奖励规则</color>
-巡游进度奖励分为两种：
-（1）基础巡游奖励：包含<color=#ff5c5c>「福煦·META」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·六期</color>等奖励；
-    当巡游达到指定进度时，指挥官可以直接领取相应的基础巡游奖励。
-（2）特许巡游奖励：包含<color=#ff5c5c>阿蒂利奥·雷戈洛换装「云端降落的天使 </color>」、<color=#ff5c5c>钻石</color>等奖励；
-    购买「特许巡游凭证」，且巡游达到指定进度时，可以领取特许巡游奖励。
-    注：购买「特许巡游凭证」后，不会影响基础巡游奖励的领取。
-
-·<color=#92fc63>「特许巡游凭证」说明</color>
-（1）「特许巡游凭证」可于「商店」-「优惠礼包」中购买，购买后可立刻获得<color=#ff5c5c>1500点</color>「巡游点数」同时解锁特许巡游奖励。
-（2）「特许巡游凭证」将于<color=#ff5c5c>活动结束前一小时</color>停止售卖(即7.31 22:59:59停止)，请指挥官注意购买时间。
-
-·<color=#92fc63>任务说明</color>
-巡游任务分为两种：
-（1）每周任务 
-    巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务
-（2）S.P.任务
-    S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
-（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励。
-
-·<color=#92fc63>「巡游任务快速完成券」说明</color>
-（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成大部分巡游任务
-（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
-（3）每个巡游任务需要消耗的完成券数量固定，与当前任务进度无关
-（4）「巡游任务快速完成券」不会随本期活动结束而消失
-
-·<color=#ff5c5c>特别提示</color>
-（1）在本期世界巡游活动结束后，所有巡游任务将会无法继续完成，所有巡游奖励将会无法继续领取，请各位指挥官务必注意活动结束时间，提前领取奖励。
-（2）巡游进度、[特许巡游凭证]仅对本期世界巡游活动生效]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_task_help_2406 = {
-	tip = {
-		{
-			info = [[
-巡游任务说明
-
-·<color=#92fc63>开放时间</color>
-    2024.5.31 0点 ~ 2024.7.31 23:59:59
-
-·<color=#92fc63>巡游任务分为两种</color>
-（1）每周任务
-    巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务。
-（2）S.P.任务
-    S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
-（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励
-
-·<color=#92fc63>「巡游任务快速完成券」说明</color>
-（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成每周巡游任务
-（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
-（3）每个巡游任务需要消耗的「巡游任务快速完成券」数量和其提供的「巡游点数」相关，与当前任务进度无关
-（4）「巡游任务快速完成券」<color=#92fc63>不会随本期活动结束而消失</color>]]
-		}
-	}
-}
 _G.pg.base.gametip.xiaodadi_npc = {
 	tip = {
 		{
@@ -23880,7 +23882,4 @@ _G.pg.base.gametip.xiaodadi_npc = {
 			info = "7.npc 角色无法参与大舰队作战中的事件派遣、攻坚队和首领战。"
 		}
 	}
-}
-_G.pg.base.gametip.player_expResource_mail_overflow = {
-	tip = "$1已经达到上限，继续会导致部分资源无法领取，是否继续？"
 }
