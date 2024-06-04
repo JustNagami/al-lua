@@ -186,7 +186,7 @@ pg.settings_other_template = {
 		type = 0,
 		alignment = 0,
 		id = 21,
-		title = "L2Dリセッㇳボタン表示",
+		title = "L2Dリセットボタン表示",
 		desc = "ONにすると、メイン画面にL2D演出リセットボタンが表示されます"
 	},
 	all = {

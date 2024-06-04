@@ -104,13 +104,13 @@ function var_0_0.Show(arg_11_0, arg_11_1, arg_11_2)
 		if arg_13_0 == UIItemList.EventUpdate then
 			local var_13_0 = var_11_0[arg_13_1 + 1]
 
-			local function var_13_1(arg_14_0)
+			pressPersistTrigger(arg_13_2:Find("icon"), 0.5, function(arg_14_0)
 				if #arg_11_0.selected < var_0_1 and arg_11_0.counts[var_13_0.id] > 0 then
 					arg_11_0:ReduceCount(var_13_0.id, -1)
+				else
+					arg_14_0()
 				end
-			end
-
-			pressPersistTrigger(arg_13_2:Find("icon"), 0.5, var_13_1, nil, true, true, 0.15, SFX_PANEL)
+			end, nil, true, true, 0.15, SFX_PANEL)
 			setText(arg_13_2:Find("name"), var_13_0:getName())
 
 			arg_11_0.boxesTxt[var_13_0.id] = arg_13_2:Find("Text")

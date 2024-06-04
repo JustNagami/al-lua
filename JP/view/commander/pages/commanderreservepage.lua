@@ -43,8 +43,10 @@ function var_0_0.OnInit(arg_2_0)
 
 		arg_2_0:Hide()
 	end, SFX_PANEL)
-	pressPersistTrigger(arg_2_0.minusBtn, 0.5, function()
+	pressPersistTrigger(arg_2_0.minusBtn, 0.5, function(arg_4_0)
 		if arg_2_0.currCnt == 1 then
+			arg_4_0()
+
 			return
 		end
 
@@ -52,8 +54,10 @@ function var_0_0.OnInit(arg_2_0)
 
 		arg_2_0:updateValue()
 	end, nil, true, true, 0.1, SFX_PANEL)
-	pressPersistTrigger(arg_2_0.addBtn, 0.5, function()
+	pressPersistTrigger(arg_2_0.addBtn, 0.5, function(arg_5_0)
 		if arg_2_0.currCnt > CommanderConst.MAX_GETBOX_CNT - arg_2_0.count - 1 then
+			arg_5_0()
+
 			return
 		end
 
