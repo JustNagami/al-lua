@@ -806,36 +806,38 @@ function pressPersistTrigger(arg_103_0, arg_103_1, arg_103_2, arg_103_3, arg_103
 
 	local var_103_1
 
+	local function var_103_2()
+		if var_103_1 then
+			var_103_1:Stop()
+
+			var_103_1 = nil
+
+			existCall(arg_103_3)
+		end
+	end
+
 	var_103_0:AddPointDownFunc(function()
 		var_103_1 = Timer.New(function()
 			if arg_103_5 then
-				local var_105_0 = math.max(var_103_1.duration - arg_103_1 / 10, arg_103_6)
+				local var_106_0 = math.max(var_103_1.duration - arg_103_1 / 10, arg_103_6)
 
-				var_103_1.duration = var_105_0
+				var_103_1.duration = var_106_0
 			end
 
-			existCall(arg_103_2)
+			existCall(arg_103_2, var_103_2)
 		end, arg_103_1, -1)
+
+		var_103_1:Start()
 
 		if arg_103_4 then
 			var_103_1.func()
 		end
 
-		var_103_1:Start()
-
 		if arg_103_7 and var_0_1 then
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg_103_7)
 		end
 	end)
-	var_103_0:AddPointUpFunc(function()
-		var_103_1:Stop()
-
-		var_103_1 = nil
-
-		if arg_103_3 then
-			arg_103_3()
-		end
-	end)
+	var_103_0:AddPointUpFunc(var_103_2)
 
 	return var_103_0
 end

@@ -654,8 +654,10 @@ function var_0_0.showDesignDesc(arg_46_0, arg_46_1)
 	end
 
 	var_46_15(var_46_11)
-	pressPersistTrigger(findTF(var_46_0, "bg/calc/minus"), 0.5, function()
+	pressPersistTrigger(findTF(var_46_0, "bg/calc/minus"), 0.5, function(arg_48_0)
 		if var_46_11 <= 1 then
+			arg_48_0()
+
 			return
 		end
 
@@ -663,8 +665,10 @@ function var_0_0.showDesignDesc(arg_46_0, arg_46_1)
 
 		var_46_15(var_46_11)
 	end, nil, true, true, 0.1, SFX_PANEL)
-	pressPersistTrigger(findTF(var_46_0, "bg/calc/add"), 0.5, function()
+	pressPersistTrigger(findTF(var_46_0, "bg/calc/add"), 0.5, function(arg_49_0)
 		if var_46_11 == var_46_10 then
+			arg_49_0()
+
 			return
 		end
 

@@ -125,8 +125,10 @@ function var_0_0.Resetcontrol(arg_9_0)
 					arg_9_0:Updatecontrol()
 				end
 			end)
-			pressPersistTrigger(var_10_1:Find("number_panel/left"), 0.5, function()
+			pressPersistTrigger(var_10_1:Find("number_panel/left"), 0.5, function(arg_13_0)
 				if var_10_0.curCount <= 0 then
+					arg_13_0()
+
 					return
 				end
 
@@ -134,8 +136,10 @@ function var_0_0.Resetcontrol(arg_9_0)
 
 				arg_9_0:Updatecontrol()
 			end, nil, true, true, 0.1, SFX_PANEL)
-			pressPersistTrigger(var_10_1:Find("number_panel/right"), 0.5, function()
+			pressPersistTrigger(var_10_1:Find("number_panel/right"), 0.5, function(arg_14_0)
 				if var_10_0.curCount >= var_10_0.maxCount then
+					arg_14_0()
+
 					return
 				end
 
