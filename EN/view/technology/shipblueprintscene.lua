@@ -1153,8 +1153,10 @@ function var_0_0.updateModPanel(arg_93_0)
 
 	local var_93_13 = math.min(var_93_6, var_93_10)
 
-	pressPersistTrigger(arg_93_0.calcMinusBtn, 0.5, function()
+	pressPersistTrigger(arg_93_0.calcMinusBtn, 0.5, function(arg_101_0)
 		if arg_93_0:inModAnim() or var_93_0:isMaxLevel() or var_93_5 == 0 then
+			arg_101_0()
+
 			return
 		end
 
@@ -1162,8 +1164,10 @@ function var_0_0.updateModPanel(arg_93_0)
 
 		var_93_7(var_93_5)
 	end, nil, true, true, 0.1, SFX_PANEL)
-	pressPersistTrigger(arg_93_0.calcPlusBtn, 0.5, function()
+	pressPersistTrigger(arg_93_0.calcPlusBtn, 0.5, function(arg_102_0)
 		if arg_93_0:inModAnim() or var_93_0:isMaxLevel() or var_93_5 == var_93_13 then
+			arg_102_0()
+
 			return
 		end
 
@@ -1361,8 +1365,10 @@ function var_0_0.updateFittingPanel(arg_109_0)
 
 	local var_109_13 = math.min(var_109_6, var_109_10)
 
-	pressPersistTrigger(arg_109_0.fittingCalcMinusBtn, 0.5, function()
+	pressPersistTrigger(arg_109_0.fittingCalcMinusBtn, 0.5, function(arg_119_0)
 		if arg_109_0:inModAnim() or var_109_0:isMaxFateLevel() or var_109_5 == 0 then
+			arg_119_0()
+
 			return
 		end
 
@@ -1370,8 +1376,10 @@ function var_0_0.updateFittingPanel(arg_109_0)
 
 		var_109_7(var_109_5)
 	end, nil, true, true, 0.1, SFX_PANEL)
-	pressPersistTrigger(arg_109_0.fittingCalcPlusBtn, 0.5, function()
+	pressPersistTrigger(arg_109_0.fittingCalcPlusBtn, 0.5, function(arg_120_0)
 		if arg_109_0:inModAnim() or var_109_0:isMaxFateLevel() or var_109_5 == var_109_13 then
+			arg_120_0()
+
 			return
 		end
 

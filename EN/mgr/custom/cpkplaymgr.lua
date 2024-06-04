@@ -77,7 +77,6 @@ function var_0_0.PlayCpkMovie(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4
 		if arg_4_0._criCpk then
 			arg_4_0._criCpk.player:SetVolume(PlayerPrefs.GetFloat("bgm_vol", DEFAULT_BGMVOLUME))
 			arg_4_0._criCpk.player:SetShaderDispatchCallback(function(arg_9_0, arg_9_1)
-				arg_4_0:CpkDebug("ShaderDispatchCallback")
 				arg_4_0:checkBgmStop(arg_9_0)
 
 				return nil
@@ -143,17 +142,10 @@ function var_0_0.PlayCpkMovie(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4
 				arg_4_0._criUsm.renderMode = ReflectionHelp.RefGetField(typeof("CriManaMovieMaterial+RenderMode"), "Always", nil)
 			end
 
-			if arg_4_0._usmImg then
-				arg_4_0._usmImg.color = Color.New(1, 1, 1, 1)
+			if arg_4_0._usmImg and arg_4_0._usmImg.color.a == 0 then
+				arg_4_0._usmImg.color = Color.New(1, 1, 1, 0.1)
 			end
 
-			arg_4_0:CpkDebug("Instantiate")
-
-			arg_4_0.debugTimer = Timer.New(function()
-				arg_4_0:CpkDebug("After 1s")
-			end, 1)
-
-			arg_4_0.debugTimer:Start()
 			var_4_1()
 		end)
 	else
@@ -161,88 +153,47 @@ function var_0_0.PlayCpkMovie(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4
 	end
 end
 
-function var_0_0.CpkDebug(arg_14_0, arg_14_1)
-	warning(arg_14_1)
+function var_0_0.checkBgmStop(arg_13_0, arg_13_1)
+	if arg_13_0._onPlaying then
+		local var_13_0 = arg_13_1.numAudioStreams
 
-	if arg_14_0._criCpk then
-		warning("CriManaMovieController.target ", arg_14_0._criCpk.target)
-		warning("CriManaMovieController.useOriginalMaterial ", arg_14_0._criCpk.useOriginalMaterial)
-		warning("CriManaMovieController.applyMask ", arg_14_0._criCpk.applyMask)
-		warning("CriManaMovieMaterial.isMaterialAvailable ", arg_14_0._criCpk.isMaterialAvailable)
-		warning("CriManaMovieMaterial.player ", arg_14_0._criCpk.player)
-		warning("CriManaMovieMaterial.material ", arg_14_0._criCpk.material)
-
-		if arg_14_0._criCpk.material then
-			warning("Material.Shader", arg_14_0._criCpk.material.shader)
-			warning("Material.mainTexture", arg_14_0._criCpk.material.mainTexture)
-		end
-	end
-
-	if arg_14_0._usmImg then
-		warning("usmImage", arg_14_0._usmImg.enabled)
-	end
-
-	local var_14_0 = tf(arg_14_0._mainTF):Find("usm")
-
-	if var_14_0 then
-		warning("usmEnable", isActive(var_14_0))
-		warning("UsmPositon", var_14_0.transform.position)
-		warning("UsmScale", var_14_0.transform.localScale)
-		warning("UsmRotation", var_14_0.transform.localRotation)
-	end
-
-	local var_14_1 = var_14_0:GetComponent("AspectRatioFitter")
-
-	if var_14_1 then
-		warning("AspectRatioFitter", var_14_1.enabled)
-	end
-
-	if arg_14_0._animator then
-		warning("Animator", arg_14_0._animator.enabled)
-	end
-end
-
-function var_0_0.checkBgmStop(arg_15_0, arg_15_1)
-	if arg_15_0._onPlaying then
-		local var_15_0 = arg_15_1.numAudioStreams
-
-		if var_15_0 and var_15_0 > 0 then
+		if var_13_0 and var_13_0 > 0 then
 			pg.BgmMgr.GetInstance():StopPlay()
 
-			arg_15_0._stopGameBGM = true
+			arg_13_0._stopGameBGM = true
 		end
 	end
 end
 
-function var_0_0.DisposeCpkMovie(arg_16_0)
-	if arg_16_0._onPlaying then
-		if arg_16_0._mainTF then
-			pg.UIMgr.GetInstance():UnOverlayPanel(arg_16_0._mainTF.transform, arg_16_0._tf)
-			Destroy(arg_16_0._mainTF)
+function var_0_0.DisposeCpkMovie(arg_14_0)
+	if arg_14_0._onPlaying then
+		if arg_14_0._mainTF then
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg_14_0._mainTF.transform, arg_14_0._tf)
+			Destroy(arg_14_0._mainTF)
 
-			if arg_16_0._animator ~= nil then
-				arg_16_0._animator.enabled = false
+			if arg_14_0._animator ~= nil then
+				arg_14_0._animator.enabled = false
 			end
 
-			if arg_16_0._timer ~= nil then
-				arg_16_0._timer:Stop()
+			if arg_14_0._timer ~= nil then
+				arg_14_0._timer:Stop()
 
-				arg_16_0._timer = nil
+				arg_14_0._timer = nil
 			end
 
-			if arg_16_0._criUsm then
-				arg_16_0._criUsm:Stop()
+			if arg_14_0._criUsm then
+				arg_14_0._criUsm:Stop()
 			end
 
-			if arg_16_0._stopGameBGM then
+			if arg_14_0._stopGameBGM then
 				pg.BgmMgr.GetInstance():ContinuePlay()
 			end
 
-			arg_16_0._onPlaying = false
+			arg_14_0._onPlaying = false
 
-			pg.DelegateInfo.Dispose(arg_16_0)
+			pg.DelegateInfo.Dispose(arg_14_0)
 		end
 
-		arg_16_0:Reset()
+		arg_14_0:Reset()
 	end
 end

@@ -809,8 +809,10 @@ function var_0_0.UpdateStore(arg_70_0)
 
 			setInputText(var_70_15, arg_70_0.withdrawal[var_70_6])
 		end)
-		pressPersistTrigger(var_70_14:Find("count/left"), 0.5, function()
+		pressPersistTrigger(var_70_14:Find("count/left"), 0.5, function(arg_75_0)
 			if arg_70_0.withdrawal[var_70_6] == 0 then
+				arg_75_0()
+
 				return
 			end
 
@@ -822,9 +824,10 @@ function var_0_0.UpdateStore(arg_70_0)
 				var_70_5()
 			end
 		end, nil, true, true, 0.15, SFX_PANEL)
-		pressPersistTrigger(var_70_14:Find("count/right"), 0.5, function()
+		pressPersistTrigger(var_70_14:Find("count/right"), 0.5, function(arg_76_0)
 			if arg_70_0.withdrawal[var_70_6] >= var_70_12 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("resource_max_tip_storeroom"))
+				arg_76_0()
 
 				return
 			end

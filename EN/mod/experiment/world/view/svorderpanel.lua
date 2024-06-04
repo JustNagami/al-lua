@@ -332,8 +332,10 @@ function var_0_0.ShowMsgbox(arg_31_0, arg_31_1)
 		local var_31_10 = arg_31_0.rtMsgExtra:Find("content/counter")
 
 		setText(var_31_10:Find("number/Text"), var_31_9)
-		pressPersistTrigger(var_31_10:Find("minus"), 0.5, function()
+		pressPersistTrigger(var_31_10:Find("minus"), 0.5, function(arg_37_0)
 			if var_31_9 == 0 then
+				arg_37_0()
+
 				return
 			end
 
@@ -342,8 +344,10 @@ function var_0_0.ShowMsgbox(arg_31_0, arg_31_1)
 			setText(var_31_10:Find("number/Text"), var_31_9)
 			arg_31_0:DisplayAutoSetting(true)
 		end, nil, true, true, 0.1, SFX_PANEL)
-		pressPersistTrigger(var_31_10:Find("plus"), 0.5, function()
+		pressPersistTrigger(var_31_10:Find("plus"), 0.5, function(arg_38_0)
 			if var_31_9 == var_31_8 then
+				arg_38_0()
+
 				return
 			end
 

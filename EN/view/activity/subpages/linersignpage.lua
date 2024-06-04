@@ -87,7 +87,10 @@ function var_0_0.OnFirstFlush(arg_3_0)
 			end
 		})
 	end, SFX_PANEL)
-	setInputText(arg_3_0.nameInput, getProxy(PlayerProxy):getRawData():GetName())
+
+	arg_3_0.defaultName = getProxy(PlayerProxy):getRawData():GetName()
+
+	setInputText(arg_3_0.nameInput, arg_3_0.defaultName)
 	onButton(arg_3_0, arg_3_0.sureBtn, function()
 		local var_9_0 = getInputText(arg_3_0.nameInput)
 
@@ -95,7 +98,7 @@ function var_0_0.OnFirstFlush(arg_3_0)
 			return
 		end
 
-		if not nameValidityCheck(var_9_0, 4, 14, {
+		if var_9_0 ~= arg_3_0.defaultName and not nameValidityCheck(var_9_0, 4, 14, {
 			"spece_illegal_tip",
 			"login_newPlayerScene_name_tooShort",
 			"login_newPlayerScene_name_tooLong",
@@ -117,7 +120,7 @@ function var_0_0.OnFirstFlush(arg_3_0)
 			return
 		end
 
-		if not nameValidityCheck(arg_11_0, 4, 14, {
+		if arg_11_0 ~= arg_3_0.defaultName and not nameValidityCheck(arg_11_0, 4, 14, {
 			"spece_illegal_tip",
 			"login_newPlayerScene_name_tooShort",
 			"login_newPlayerScene_name_tooLong",
