@@ -8400,7 +8400,7 @@ _G.pg.base.gametip.tec_notice_not_open_tip = {
 	tip = "完成前一阶段所有研发加速任务后开启"
 }
 _G.pg.base.gametip.apply_permission_camera_tip1 = {
-	tip = "为了ar相机的使用，需要有权限访问相机"
+	tip = "为了ar相机的使用，需要有权限访问相机、录音和媒体权限"
 }
 _G.pg.base.gametip.apply_permission_camera_tip2 = {
 	tip = "您关闭了相机权限，需要到setting界面确认权限开启"
@@ -8409,7 +8409,7 @@ _G.pg.base.gametip.apply_permission_camera_tip3 = {
 	tip = "您拒绝授权相机权限，这导致您无法使用ar相机"
 }
 _G.pg.base.gametip.apply_permission_record_audio_tip1 = {
-	tip = "为了ar录像的使用，需要有权限访问录音功能"
+	tip = "为了ar录像的使用，需要有权限访问相机、录音和媒体权限"
 }
 _G.pg.base.gametip.apply_permission_record_audio_tip2 = {
 	tip = "您关闭了录音权限，需要到setting界面确认权限开启"

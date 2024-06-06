@@ -327,6 +327,7 @@ pg.skill_data_template = setmetatable({
 		60570,
 		60580,
 		60590,
+		60600,
 		7000,
 		9010,
 		9020,
@@ -2168,8 +2169,8 @@ pg.skill_data_template = setmetatable({
 		801250,
 		801261,
 		801262,
-		801263,
-		801264,
+		801265,
+		801267,
 		901010,
 		901020,
 		902010,
@@ -12141,6 +12142,20 @@ pg.base.skill_data_template = {
 		type = 0,
 		max_level = 0,
 		desc = "战斗中会周期性发出音效的奇怪装置",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[60600] = {
+		desc_get = "",
+		name = "80mm98式连装高炮",
+		id = 60600,
+		type = 0,
+		max_level = 0,
+		desc = "先锋舰队的重樱角色装备时，自身炮击属性提高5%，防空炮开火后3秒内，属性增益效果减半",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -139684,10 +139699,10 @@ pg.base.skill_data_template = {
 		desc_get_add = {},
 		desc_add = {}
 	},
-	[801263] = {
+	[801265] = {
 		desc_get = "",
 		name = "逐光之焰·福煦I",
-		id = 801263,
+		id = 801265,
 		type = 3,
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行9次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
@@ -139700,10 +139715,10 @@ pg.base.skill_data_template = {
 		desc_get_add = {},
 		desc_add = {}
 	},
-	[801264] = {
+	[801267] = {
 		desc_get = "",
 		name = "逐光之焰·福煦II",
-		id = 801264,
+		id = 801267,
 		type = 3,
 		max_level = 1,
 		desc = "【大型作战效果】\n主炮每进行6次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
