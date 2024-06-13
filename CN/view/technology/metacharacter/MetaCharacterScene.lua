@@ -136,6 +136,8 @@ function var_0_0.findUI(arg_7_0)
 	arg_7_0.backBtn = arg_7_0:findTF("top/back", var_7_3)
 	arg_7_0.helpBtn = arg_7_0:findTF("top/help", var_7_3)
 	arg_7_0.toggleBtnsTF = arg_7_0:findTF("left/Btns", var_7_3)
+	arg_7_0.toggleGroupSC = GetComponent(arg_7_0.toggleBtnsTF, "ToggleGroup")
+	arg_7_0.toggleGroupSC.allowSwitchOff = true
 	arg_7_0.toggleList[1] = arg_7_0:findTF("Energy", arg_7_0.toggleBtnsTF)
 	arg_7_0.toggleList[2] = arg_7_0:findTF("Tactics", arg_7_0.toggleBtnsTF)
 	arg_7_0.toggleList[3] = arg_7_0:findTF("Repair", arg_7_0.toggleBtnsTF)
@@ -930,14 +932,13 @@ function var_0_0.enterMenuPage(arg_49_0, arg_49_1)
 	setActive(arg_49_0.hidePanel, not arg_49_1)
 	setActive(arg_49_0.indexBtn, not arg_49_1)
 	setActive(arg_49_0.toggleBtnsTF, arg_49_1)
+
+	arg_49_0.toggleGroupSC.allowSwitchOff = not arg_49_1
 end
 
 function var_0_0.switchPage(arg_50_0, arg_50_1)
 	if not arg_50_0.curPageIndex then
-		if arg_50_1 == 1 then
-			setActive(arg_50_0.toggleBtnsTF, true)
-		end
-
+		setActive(arg_50_0.toggleBtnsTF, true)
 		triggerToggle(arg_50_0.toggleList[arg_50_1], true)
 	end
 end

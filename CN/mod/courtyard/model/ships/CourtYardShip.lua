@@ -108,151 +108,155 @@ function var_0_0.StartInteraction(arg_14_0, arg_14_1, arg_14_2)
 	end
 end
 
-function var_0_0.UpdateInteraction(arg_15_0, ...)
-	arg_15_0:DispatchEvent(CourtYardEvent.SHIP_UPDATE_INTERACTION, ...)
+function var_0_0.OnPreheatActionEnd(arg_15_0)
+	return
 end
 
-function var_0_0.ClearInteraction(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
-	arg_16_0.interactionSlot = nil
+function var_0_0.UpdateInteraction(arg_16_0, ...)
+	arg_16_0:DispatchEvent(CourtYardEvent.SHIP_UPDATE_INTERACTION, ...)
+end
 
-	if not arg_16_3 then
-		arg_16_0:ChangeState(var_0_0.STATE_CANCEL_INTERACT)
-		arg_16_0:DispatchEvent(CourtYardEvent.SHIP_STOP_INTERACTION, arg_16_1)
+function var_0_0.ClearInteraction(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
+	arg_17_0.interactionSlot = nil
+
+	if not arg_17_3 then
+		arg_17_0:ChangeState(var_0_0.STATE_CANCEL_INTERACT)
+		arg_17_0:DispatchEvent(CourtYardEvent.SHIP_STOP_INTERACTION, arg_17_1)
 	end
 end
 
-function var_0_0.OnStateIdle(arg_17_0)
-	arg_17_0:_ChangeState(var_0_0.STATE_IDLE)
+function var_0_0.OnStateIdle(arg_18_0)
+	arg_18_0:_ChangeState(var_0_0.STATE_IDLE)
 
-	arg_17_0.timer = Timer.New(function()
-		arg_17_0.moveCnt = math.random(1, 5)
+	arg_18_0.timer = Timer.New(function()
+		arg_18_0.moveCnt = math.random(1, 5)
 
-		arg_17_0:_ChangeState(var_0_0.STATE_MOVE)
+		arg_18_0:_ChangeState(var_0_0.STATE_MOVE)
 	end, math.random(10, 20), 1)
 
-	arg_17_0.timer:Start()
+	arg_18_0.timer:Start()
 end
 
-function var_0_0.OnStateMoveOne(arg_19_0)
-	arg_19_0:_ChangeState(var_0_0.STATE_MOVING_ONE)
-	arg_19_0:ClearMarkPosition()
+function var_0_0.OnStateMoveOne(arg_20_0)
+	arg_20_0:_ChangeState(var_0_0.STATE_MOVING_ONE)
+	arg_20_0:ClearMarkPosition()
 
-	arg_19_0.timer = Timer.New(function()
-		arg_19_0.moveCnt = arg_19_0.moveCnt - 1
+	arg_20_0.timer = Timer.New(function()
+		arg_20_0.moveCnt = arg_20_0.moveCnt - 1
 
-		if arg_19_0.moveCnt <= 0 then
-			arg_19_0:ChangeState(var_0_0.STATE_IDLE)
+		if arg_20_0.moveCnt <= 0 then
+			arg_20_0:ChangeState(var_0_0.STATE_IDLE)
 		else
-			arg_19_0:_ChangeState(var_0_0.STATE_MOVE)
+			arg_20_0:_ChangeState(var_0_0.STATE_MOVE)
 		end
-	end, arg_19_0.moveTime * 0.5, 1)
+	end, arg_20_0.moveTime * 0.5, 1)
 
-	arg_19_0.timer:Start()
+	arg_20_0.timer:Start()
 end
 
-function var_0_0.OnInterAction(arg_21_0, arg_21_1)
-	arg_21_0.interactionSlot = arg_21_1
+function var_0_0.OnInterAction(arg_22_0, arg_22_1)
+	arg_22_0.interactionSlot = arg_22_1
 
-	arg_21_0:_ChangeState(var_0_0.STATE_INTERACT)
-	arg_21_0:DispatchEvent(CourtYardEvent.SHIP_START_INTERACTION, arg_21_1)
+	arg_22_0:_ChangeState(var_0_0.STATE_INTERACT)
+	arg_22_0:DispatchEvent(CourtYardEvent.SHIP_START_INTERACTION, arg_22_1)
 end
 
-function var_0_0.GetInterActionData(arg_22_0)
-	return arg_22_0.interactionSlot
+function var_0_0.GetInterActionData(arg_23_0)
+	return arg_23_0.interactionSlot
 end
 
-function var_0_0.Move(arg_23_0, arg_23_1)
-	arg_23_0:MarkPosition(arg_23_1)
-	arg_23_0:ChangeState(var_0_0.STATE_MOVING_ZERO)
+function var_0_0.Move(arg_24_0, arg_24_1)
+	arg_24_0:MarkPosition(arg_24_1)
+	arg_24_0:ChangeState(var_0_0.STATE_MOVING_ZERO)
 
-	arg_23_0.timer = Timer.New(function()
-		arg_23_0:ChangeState(var_0_0.STATE_MOVING_HALF)
-	end, arg_23_0.moveTime * 0.5, 1)
+	arg_24_0.timer = Timer.New(function()
+		arg_24_0:ChangeState(var_0_0.STATE_MOVING_HALF)
+	end, arg_24_0.moveTime * 0.5, 1)
 
-	arg_23_0.timer:Start()
-	arg_23_0:DispatchEvent(CourtYardEvent.SHIP_MOVE, arg_23_1, arg_23_0:GetOffset())
+	arg_24_0.timer:Start()
+	arg_24_0:DispatchEvent(CourtYardEvent.SHIP_MOVE, arg_24_1, arg_24_0:GetOffset())
 end
 
-function var_0_0.GetState(arg_25_0)
-	return arg_25_0.state
+function var_0_0.GetState(arg_26_0)
+	return arg_26_0.state
 end
 
-function var_0_0.GetPrefab(arg_26_0)
-	return arg_26_0.prefab
+function var_0_0.GetPrefab(arg_27_0)
+	return arg_27_0.prefab
 end
 
-function var_0_0.getPrefab(arg_27_0)
-	return arg_27_0:GetPrefab()
+function var_0_0.getPrefab(arg_28_0)
+	return arg_28_0:GetPrefab()
 end
 
-function var_0_0.getAttachmentPrefab(arg_28_0)
-	return arg_28_0.attachments
+function var_0_0.getAttachmentPrefab(arg_29_0)
+	return arg_29_0.attachments
 end
 
-function var_0_0.GetMoveTime(arg_29_0)
-	return arg_29_0.moveTime
+function var_0_0.GetMoveTime(arg_30_0)
+	return arg_30_0.moveTime
 end
 
-function var_0_0.Clear(arg_30_0)
-	if arg_30_0.timer then
-		arg_30_0.timer:Stop()
+function var_0_0.Clear(arg_31_0)
+	if arg_31_0.timer then
+		arg_31_0.timer:Stop()
 
-		arg_30_0.timer = nil
+		arg_31_0.timer = nil
 	end
 end
 
-function var_0_0.ChangeInimacy(arg_31_0, arg_31_1)
-	arg_31_0.inimacy = arg_31_1
+function var_0_0.ChangeInimacy(arg_32_0, arg_32_1)
+	arg_32_0.inimacy = arg_32_1
 
-	arg_31_0:DispatchEvent(CourtYardEvent.SHIP_INIMACY_CHANGE, arg_31_1)
+	arg_32_0:DispatchEvent(CourtYardEvent.SHIP_INIMACY_CHANGE, arg_32_1)
 end
 
-function var_0_0.ChangeCoin(arg_32_0, arg_32_1)
-	arg_32_0.coin = arg_32_1
+function var_0_0.ChangeCoin(arg_33_0, arg_33_1)
+	arg_33_0.coin = arg_33_1
 
-	arg_32_0:DispatchEvent(CourtYardEvent.SHIP_COIN_CHANGE, arg_32_1)
+	arg_33_0:DispatchEvent(CourtYardEvent.SHIP_COIN_CHANGE, arg_33_1)
 end
 
-function var_0_0.ClearInimacy(arg_33_0)
-	local var_33_0 = arg_33_0.inimacy
-
-	if var_33_0 <= 0 then
-		return
-	end
-
-	arg_33_0:ChangeInimacy(0)
-	arg_33_0:ChangeState(var_0_0.STATE_GETAWARD)
-	arg_33_0:DispatchEvent(CourtYardEvent.SHIP_GET_AWARD, var_33_0, 2)
-end
-
-function var_0_0.ClearCoin(arg_34_0)
-	local var_34_0 = arg_34_0.coin
+function var_0_0.ClearInimacy(arg_34_0)
+	local var_34_0 = arg_34_0.inimacy
 
 	if var_34_0 <= 0 then
 		return
 	end
 
-	arg_34_0:ChangeCoin(0)
+	arg_34_0:ChangeInimacy(0)
 	arg_34_0:ChangeState(var_0_0.STATE_GETAWARD)
-	arg_34_0:DispatchEvent(CourtYardEvent.SHIP_GET_AWARD, var_34_0, 1)
+	arg_34_0:DispatchEvent(CourtYardEvent.SHIP_GET_AWARD, var_34_0, 2)
 end
 
-function var_0_0.AddExp(arg_35_0, arg_35_1)
-	arg_35_0:DispatchEvent(CourtYardEvent.SHIP_GET_AWARD, arg_35_1, 3)
+function var_0_0.ClearCoin(arg_35_0)
+	local var_35_0 = arg_35_0.coin
+
+	if var_35_0 <= 0 then
+		return
+	end
+
+	arg_35_0:ChangeCoin(0)
+	arg_35_0:ChangeState(var_0_0.STATE_GETAWARD)
+	arg_35_0:DispatchEvent(CourtYardEvent.SHIP_GET_AWARD, var_35_0, 1)
 end
 
-function var_0_0.GetInterActionBgm(arg_36_0)
+function var_0_0.AddExp(arg_36_0, arg_36_1)
+	arg_36_0:DispatchEvent(CourtYardEvent.SHIP_GET_AWARD, arg_36_1, 3)
+end
+
+function var_0_0.GetInterActionBgm(arg_37_0)
 	return nil
 end
 
-function var_0_0.Dispose(arg_37_0)
-	var_0_0.super.Dispose(arg_37_0)
-	arg_37_0:Clear()
+function var_0_0.Dispose(arg_38_0)
+	var_0_0.super.Dispose(arg_38_0)
+	arg_38_0:Clear()
 
-	local var_37_0 = arg_37_0:GetInterActionData()
+	local var_38_0 = arg_38_0:GetInterActionData()
 
-	if var_37_0 then
-		var_37_0:Stop()
+	if var_38_0 then
+		var_38_0:Stop()
 	end
 end
 

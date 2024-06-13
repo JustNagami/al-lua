@@ -189,6 +189,15 @@ pg.settings_other_template = {
 		title = "主界面显示L2D重置按钮",
 		desc = "功能开启后，主界面出现l2d重置按钮"
 	},
+	{
+		default = 0,
+		name = "LOCK_NEW_SHIP",
+		type = 1,
+		alignment = 0,
+		id = 22,
+		title = "自动锁定新获得角色",
+		desc = "功能开启后，自动锁定新获得角色，不再弹出锁定提示"
+	},
 	all = {
 		1,
 		2,
@@ -210,6 +219,7 @@ pg.settings_other_template = {
 		18,
 		19,
 		20,
-		21
+		21,
+		22
 	}
 }

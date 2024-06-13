@@ -237,6 +237,11 @@ pg.task_meta_data_template = setmetatable({
 		100203,
 		100204,
 		100205,
+		100301,
+		100302,
+		100303,
+		100304,
+		100305,
 		200001,
 		200002,
 		200003,
@@ -316,7 +321,11 @@ pg.task_meta_data_template = setmetatable({
 		200201,
 		200202,
 		200203,
-		200204
+		200204,
+		200211,
+		200212,
+		200213,
+		200214
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2201,6 +2210,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100301] = {
+		target_id_2 = "970304",
+		sub_type = 180,
+		desc = "使用威奇塔·META获得1次胜利",
+		id = 100301,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100302] = {
+		target_id_2 = "970304",
+		sub_type = 180,
+		desc = "使用威奇塔·META击破等级＞30的敌方1次",
+		id = 100302,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100303] = {
+		target_id_2 = "970304",
+		sub_type = 180,
+		desc = "使用威奇塔·META击破等级＞55的敌方1次",
+		id = 100303,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100304] = {
+		target_id_2 = "970304",
+		sub_type = 180,
+		desc = "使用威奇塔·META击破等级＞80的敌方1次",
+		id = 100304,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100305] = {
+		target_id_2 = "970304",
+		sub_type = 180,
+		desc = "使用威奇塔·META击破等级＞100的敌方1次",
+		id = 100305,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -2838,6 +2887,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "大型作战内使用福煦·META击破等级＞100的敌方1次",
 		id = 200204,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200211] = {
+		target_id_2 = "970304",
+		sub_type = 302,
+		desc = "大型作战内使用威奇塔·META获得1次胜利",
+		id = 200211,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200212] = {
+		target_id_2 = "970304",
+		sub_type = 302,
+		desc = "大型作战内使用威奇塔·META击破等级＞70的敌方1次",
+		id = 200212,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200213] = {
+		target_id_2 = "970304",
+		sub_type = 302,
+		desc = "大型作战内使用威奇塔·META击破等级＞90的敌方1次",
+		id = 200213,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200214] = {
+		target_id_2 = "970304",
+		sub_type = 302,
+		desc = "大型作战内使用威奇塔·META击破等级＞100的敌方1次",
+		id = 200214,
 		target_num = 1,
 		target_id = "100"
 	}

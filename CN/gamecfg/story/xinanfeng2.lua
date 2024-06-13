@@ -184,13 +184,12 @@
 			}
 		},
 		{
-			expression = 0,
+			actor = 601050,
 			side = 2,
 			bgName = "bg_story_task",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			actor = 601050,
 			say = "我知道的！整理文件就是把盖过章的放一边，需要确认的放在另一边——",
 			painting = {
 				alpha = 0.3,

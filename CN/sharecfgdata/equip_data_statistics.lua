@@ -136491,7 +136491,7 @@ _G.pg.base.equip_data_statistics[91220] = {
 	tech = 0,
 	ammo = 5,
 	nationality = 8,
-	descrip = "说明未填写",
+	descrip = "鸢尾以D.520战斗机为基础尝试研发的舰载机型",
 	id = 91220,
 	torpedo_ammo = 0,
 	value_3 = 0,
@@ -136755,7 +136755,7 @@ _G.pg.base.equip_data_statistics[91240] = {
 	tech = 0,
 	ammo = 5,
 	nationality = 8,
-	descrip = "说明未填写",
+	descrip = "鸢尾以BR.690攻击机为基础尝试研发的舰载机型，采用了双发设计",
 	id = 91240,
 	torpedo_ammo = 0,
 	value_3 = 0,
@@ -137115,7 +137115,7 @@ _G.pg.base.equip_data_statistics[91260] = {
 	value_2 = 2,
 	ammo = 10,
 	nationality = 10,
-	descrip = "说明未填写",
+	descrip = "战斗天使的羽翼，象征着无畏、奉献与忠诚。",
 	rarity = 5,
 	attribute_1 = "air",
 	value_3 = 0,
@@ -150332,6 +150332,57 @@ _G.pg.base.equip_data_statistics[46451] = {
 	base = 46440,
 	weapon_id = {
 		46451
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80291] = {
+	type = 1,
+	name = "专属弹幕-威奇塔METAI",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80291,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170511
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80292] = {
+	id = 80292,
+	name = "专属弹幕-威奇塔METAII",
+	base = 80291,
+	weapon_id = {
+		170512
 	},
 	hidden_skill_id = {}
 }

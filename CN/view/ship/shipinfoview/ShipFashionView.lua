@@ -275,15 +275,16 @@ function var_0_0.UpdateFashionDetail(arg_17_0, arg_17_1)
 	local var_17_11 = getProxy(ShipSkinProxy):InForbiddenSkinListAndShow(arg_17_1.id)
 	local var_17_12 = var_17_8 and var_17_10 and var_17_10:isExpireType()
 
-	setGray(var_17_0.confirm, false)
 	setActive(var_17_0.using, false)
 	setActive(var_17_0.change, false)
 	setActive(var_17_0.buy, false)
 	setActive(var_17_0.experience, false)
 
 	if var_17_12 then
+		setGray(var_17_0.confirm, false)
 		setActive(var_17_0.experience, true)
 	elseif var_17_8 then
+		setGray(var_17_0.confirm, false)
 		setActive(var_17_0.using, true)
 	elseif var_17_9 and ShipSkin.IsShareSkin(arg_17_0:GetShipVO(), arg_17_1.id) and not ShipSkin.CanUseShareSkinForShip(arg_17_0:GetShipVO(), arg_17_1.id) then
 		setActive(var_17_0.change, true)

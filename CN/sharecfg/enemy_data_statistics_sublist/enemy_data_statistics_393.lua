@@ -1,5 +1,41 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_393 = {
+	[295019] = {
+		cannon = 125,
+		name = "皇家方舟·META(Tier.4)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 330,
+		hit_growth = 0,
+		dodge = 12,
+		base = 90521,
+		durability_growth = 0,
+		antiaircraft = 231,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 10,
+		hit = 45,
+		antisub_growth = 0,
+		air_growth = 0,
+		fog_fx = "",
+		torpedo = 0,
+		durability = 70000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		id = 295019,
+		buff_list = {
+			{
+				ID = 8830,
+				LV = 2
+			}
+		}
+	},
 	[295020] = {
 		cannon = 135,
 		name = "皇家方舟·META(Tier.5)",
@@ -893,42 +929,6 @@ pg.enemy_data_statistics_393 = {
 		armor = 0,
 		antisub = 0,
 		id = 295044,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			}
-		}
-	},
-	[295045] = {
-		cannon = 297,
-		name = "海伦娜·META(Tier.15)",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 375,
-		hit_growth = 0,
-		dodge = 45,
-		base = 90541,
-		durability_growth = 0,
-		antiaircraft = 396,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 20,
-		hit = 105,
-		antisub_growth = 0,
-		air_growth = 0,
-		fog_fx = "",
-		torpedo = 0,
-		durability = 1320000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		id = 295045,
 		buff_list = {
 			{
 				ID = 8830,

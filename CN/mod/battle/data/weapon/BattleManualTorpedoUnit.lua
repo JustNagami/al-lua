@@ -61,9 +61,7 @@ function var_0_2.Fire(arg_8_0, arg_8_1)
 		arg_8_0._botAutoAimAngle = arg_8_0:GetBaseAngle()
 	end
 
-	var_0_2.super.Fire(arg_8_0)
-
-	return true
+	return var_0_2.super.Fire(arg_8_0)
 end
 
 function var_0_2.DoAttack(arg_9_0)
@@ -135,12 +133,18 @@ function var_0_2.QuickCoolDown(arg_17_0)
 end
 
 function var_0_2.Prepar(arg_18_0)
-	arg_18_0._currentState = arg_18_0.STATE_PRECAST
+	if arg_18_0._host:IsCease() then
+		return false
+	else
+		arg_18_0._currentState = arg_18_0.STATE_PRECAST
 
-	local var_18_0 = {}
-	local var_18_1 = var_0_0.Event.New(var_0_1.TORPEDO_WEAPON_PREPAR, var_18_0)
+		local var_18_0 = {}
+		local var_18_1 = var_0_0.Event.New(var_0_1.TORPEDO_WEAPON_PREPAR, var_18_0)
 
-	arg_18_0:DispatchEvent(var_18_1)
+		arg_18_0:DispatchEvent(var_18_1)
+
+		return true
+	end
 end
 
 function var_0_2.Cancel(arg_19_0)

@@ -175,24 +175,46 @@ end
 function var_0_0.GetActions(arg_16_0)
 	local var_16_0
 	local var_16_1
+	local var_16_2
 
 	if arg_16_0.preheatAction and type(arg_16_0.preheatAction) == "string" then
-		var_16_0 = arg_16_0.preheatAction
+		var_16_0, var_16_2 = arg_16_0.preheatAction, false
 	elseif arg_16_0.preheatAction and type(arg_16_0.preheatAction) == "table" then
-		var_16_0, var_16_1 = arg_16_0.preheatAction[1], arg_16_0.preheatAction[2]
+		local var_16_3 = {}
+
+		if type(arg_16_0.preheatAction[1]) == "table" then
+			for iter_16_0, iter_16_1 in ipairs(arg_16_0.preheatAction[1]) do
+				table.insert(var_16_3, iter_16_1)
+			end
+		else
+			table.insert(var_16_3, arg_16_0.preheatAction[1])
+		end
+
+		local var_16_4 = 1
+		local var_16_5 = arg_16_0:GetOwner()
+
+		if isa(var_16_5, CourtYardFurniture) then
+			var_16_4 = #var_16_5:GetUsingSlots()
+		end
+
+		var_16_0, var_16_1, var_16_2 = var_16_3[var_16_4], arg_16_0.preheatAction[2], arg_16_0.preheatAction[3]
 	end
 
-	local var_16_2
-	local var_16_3
-	local var_16_4
+	local var_16_6
+	local var_16_7
+	local var_16_8
 
 	if arg_16_0.strategyType == var_0_4 then
-		var_16_2, var_16_3, var_16_4 = var_0_5(arg_16_0)
+		var_16_6, var_16_7, var_16_8 = var_0_5(arg_16_0)
 	else
-		var_16_2, var_16_3, var_16_4 = var_0_6(arg_16_0)
+		var_16_6, var_16_7, var_16_8 = var_0_6(arg_16_0)
 	end
 
-	return var_16_2, var_16_3, var_16_4, var_16_0, var_16_1, arg_16_0.tailAction
+	if var_16_2 then
+		var_16_8[0] = true
+	end
+
+	return var_16_6, var_16_7, var_16_8, var_16_0, var_16_1, arg_16_0.tailAction
 end
 
 function var_0_0.OnAwake(arg_17_0)

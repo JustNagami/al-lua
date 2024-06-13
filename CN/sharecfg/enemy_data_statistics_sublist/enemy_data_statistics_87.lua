@@ -1,5 +1,104 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_87 = {
+	[10013601] = {
+		cannon = 460,
+		antiaircraft_growth = 0,
+		fog_fx = "",
+		speed_growth = 0,
+		rarity = 6,
+		air = 0,
+		speed = 30,
+		dodge = 22,
+		luck = 50,
+		id = 10013601,
+		cannon_growth = 0,
+		reload_growth = 0,
+		dodge_growth = 284,
+		reload = 150,
+		star = 6,
+		hit = 9999,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 300,
+		base = 90233,
+		durability = 250000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		battle_unit_type = 95,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 999,
+		antisub = 0,
+		hit_growth = 210,
+		cld_box = {
+			5.5,
+			7.5,
+			8
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.28,
+					1.19,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.28,
+					1.19,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.29,
+					0.09,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.28,
+					1.19,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							-0.74,
+							0.86,
+							-0.18
+						}
+					}
+				}
+			},
+			{
+				40,
+				{
+					{
+						"smoke",
+						{
+							0.03,
+							2.66,
+							-1.22
+						}
+					}
+				}
+			}
+		},
+		appear_fx = {
+			"bossguangxiao",
+			"appearQ"
+		}
+	},
 	[10020001] = {
 		cannon = 3,
 		battle_unit_type = 20,
@@ -1052,47 +1151,6 @@ pg.enemy_data_statistics_87 = {
 		air_growth = 0,
 		reload = 150,
 		base = 90205,
-		durability = 1080,
-		armor_growth = 0,
-		torpedo_growth = 2250,
-		luck_growth = 0,
-		hit_growth = 210,
-		luck = 0,
-		torpedo = 27,
-		durability_growth = 43000,
-		antisub = 0,
-		antiaircraft = 28,
-		antiaircraft_growth = 2340,
-		appear_fx = {
-			"appearQ"
-		},
-		equipment_list = {
-			100202,
-			100522,
-			100422
-		}
-	},
-	[10020026] = {
-		cannon = 20,
-		battle_unit_type = 60,
-		fog_fx = "",
-		speed_growth = 0,
-		pilot_ai_template_id = 20002,
-		air = 0,
-		speed = 18,
-		dodge = 6,
-		id = 10020026,
-		cannon_growth = 1638,
-		rarity = 3,
-		reload_growth = 0,
-		dodge_growth = 84,
-		armor = 0,
-		star = 4,
-		hit = 14,
-		antisub_growth = 0,
-		air_growth = 0,
-		reload = 150,
-		base = 90206,
 		durability = 1080,
 		armor_growth = 0,
 		torpedo_growth = 2250,

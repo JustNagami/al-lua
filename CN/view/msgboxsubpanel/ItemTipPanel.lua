@@ -55,7 +55,10 @@ function var_0_0.ShowItemTipbyID(...)
 end
 
 function var_0_0.CanShowTip(arg_4_0)
-	return tobool(var_0_0.DetailConfig[arg_4_0])
+	return tobool(var_0_0.GetDropLackConfig(Drop.New({
+		type = DROP_TYPE_ITEM,
+		id = arg_4_0
+	})))
 end
 
 function var_0_0.ShowRingBuyTip()

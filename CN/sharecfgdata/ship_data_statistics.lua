@@ -298446,7 +298446,8 @@ _G.pg.base.ship_data_statistics[901111] = {
 		{}
 	},
 	tag_list = {
-		"Le Fantasque-Class"
+		"Le Fantasque-Class",
+		"LeMalin"
 	}
 }
 _G.pg.base.ship_data_statistics[901112] = {
@@ -298570,7 +298571,8 @@ _G.pg.base.ship_data_statistics[901112] = {
 		{}
 	},
 	tag_list = {
-		"Le Fantasque-Class"
+		"Le Fantasque-Class",
+		"LeMalin"
 	}
 }
 _G.pg.base.ship_data_statistics[901113] = {
@@ -298694,7 +298696,8 @@ _G.pg.base.ship_data_statistics[901113] = {
 		{}
 	},
 	tag_list = {
-		"Le Fantasque-Class"
+		"Le Fantasque-Class",
+		"LeMalin"
 	}
 }
 _G.pg.base.ship_data_statistics[901114] = {
@@ -298818,7 +298821,8 @@ _G.pg.base.ship_data_statistics[901114] = {
 		{}
 	},
 	tag_list = {
-		"Le Fantasque-Class"
+		"Le Fantasque-Class",
+		"LeMalin"
 	}
 }
 _G.pg.base.ship_data_statistics[901121] = {
@@ -358838,7 +358842,8 @@ _G.pg.base.ship_data_statistics[9702031] = {
 	},
 	tag_list = {
 		"Sheffield.META",
-		"Town-Class"
+		"Town-Class",
+		"Sheffield"
 	}
 }
 _G.pg.base.ship_data_statistics[9702032] = {
@@ -358966,7 +358971,8 @@ _G.pg.base.ship_data_statistics[9702032] = {
 	},
 	tag_list = {
 		"Sheffield.META",
-		"Town-Class"
+		"Town-Class",
+		"Sheffield"
 	}
 }
 _G.pg.base.ship_data_statistics[9702033] = {
@@ -359094,7 +359100,8 @@ _G.pg.base.ship_data_statistics[9702033] = {
 	},
 	tag_list = {
 		"Sheffield.META",
-		"Town-Class"
+		"Town-Class",
+		"Sheffield"
 	}
 }
 _G.pg.base.ship_data_statistics[9702034] = {
@@ -359222,7 +359229,8 @@ _G.pg.base.ship_data_statistics[9702034] = {
 	},
 	tag_list = {
 		"Sheffield.META",
-		"Town-Class"
+		"Town-Class",
+		"Sheffield"
 	}
 }
 _G.pg.base.ship_data_statistics[9702041] = {
@@ -423056,5 +423064,501 @@ _G.pg.base.ship_data_statistics[999024] = {
 	},
 	tag_list = {
 		"Plan-Class"
+	}
+}
+_G.pg.base.ship_data_statistics[9703041] = {
+	raid_distance = 0,
+	oxy_max = 0,
+	name = "威奇塔·META",
+	type = 3,
+	oxy_cost = 0,
+	skin_id = 9703040,
+	english_name = "Wichita.META",
+	oxy_recovery_surface = 0,
+	attack_duration = 0,
+	star = 3,
+	oxy_recovery = 0,
+	backyard_speed = "0.3",
+	rarity = 5,
+	nationality = 97,
+	oxy_recovery_bench = 0,
+	ammo = 0,
+	armor_type = 1,
+	huntingrange_level = 0,
+	id = 9703041,
+	summon_offset = 0,
+	scale = 100,
+	attrs = {
+		662,
+		54,
+		0,
+		43,
+		0,
+		69,
+		0,
+		35,
+		7,
+		26,
+		70,
+		0
+	},
+	attrs_growth = {
+		11389,
+		727,
+		0,
+		588,
+		0,
+		478,
+		0,
+		528,
+		284,
+		0,
+		0,
+		0
+	},
+	attrs_growth_extra = {
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	},
+	lock = {
+		"torpedo",
+		"air",
+		"antisub"
+	},
+	cld_box = {
+		4,
+		5,
+		5
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	aim_offset = {
+		0,
+		0,
+		0
+	},
+	position_offset = {
+		0,
+		0,
+		0
+	},
+	fix_equip_list = {},
+	default_equip_list = {
+		102,
+		100,
+		104
+	},
+	depth_charge_list = {},
+	base_list = {
+		1,
+		1,
+		1
+	},
+	parallel_max = {
+		1,
+		1,
+		1
+	},
+	preload_count = {
+		0,
+		0,
+		0
+	},
+	equipment_proficiency = {
+		1.1,
+		0.5,
+		1
+	},
+	strategy_list = {},
+	hunting_range = {
+		{}
+	},
+	tag_list = {
+		"WichitaMETA"
+	}
+}
+_G.pg.base.ship_data_statistics[9703042] = {
+	raid_distance = 0,
+	oxy_max = 0,
+	name = "威奇塔·META",
+	type = 3,
+	oxy_cost = 0,
+	skin_id = 9703040,
+	english_name = "Wichita.META",
+	oxy_recovery_surface = 0,
+	attack_duration = 0,
+	star = 4,
+	oxy_recovery = 0,
+	backyard_speed = "0.3",
+	rarity = 5,
+	nationality = 97,
+	oxy_recovery_bench = 0,
+	ammo = 0,
+	armor_type = 1,
+	huntingrange_level = 0,
+	id = 9703042,
+	summon_offset = 0,
+	scale = 100,
+	attrs = {
+		823,
+		67,
+		0,
+		54,
+		0,
+		69,
+		0,
+		35,
+		7,
+		26,
+		70,
+		0
+	},
+	attrs_growth = {
+		11389,
+		727,
+		0,
+		588,
+		0,
+		478,
+		0,
+		528,
+		284,
+		0,
+		0,
+		0
+	},
+	attrs_growth_extra = {
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	},
+	lock = {
+		"torpedo",
+		"air",
+		"antisub"
+	},
+	cld_box = {
+		4,
+		5,
+		5
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	aim_offset = {
+		0,
+		0,
+		0
+	},
+	position_offset = {
+		0,
+		0,
+		0
+	},
+	fix_equip_list = {},
+	default_equip_list = {
+		102,
+		100,
+		104
+	},
+	depth_charge_list = {},
+	base_list = {
+		1,
+		1,
+		1
+	},
+	parallel_max = {
+		1,
+		1,
+		1
+	},
+	preload_count = {
+		0,
+		0,
+		0
+	},
+	equipment_proficiency = {
+		1.15,
+		0.5,
+		1
+	},
+	strategy_list = {},
+	hunting_range = {
+		{}
+	},
+	tag_list = {
+		"WichitaMETA"
+	}
+}
+_G.pg.base.ship_data_statistics[9703043] = {
+	raid_distance = 0,
+	oxy_max = 0,
+	name = "威奇塔·META",
+	type = 3,
+	oxy_cost = 0,
+	skin_id = 9703040,
+	english_name = "Wichita.META",
+	oxy_recovery_surface = 0,
+	attack_duration = 0,
+	star = 5,
+	oxy_recovery = 0,
+	backyard_speed = "0.3",
+	rarity = 5,
+	nationality = 97,
+	oxy_recovery_bench = 0,
+	ammo = 0,
+	armor_type = 1,
+	huntingrange_level = 0,
+	id = 9703043,
+	summon_offset = 0,
+	scale = 100,
+	attrs = {
+		1146,
+		94,
+		0,
+		75,
+		0,
+		69,
+		0,
+		35,
+		7,
+		26,
+		70,
+		0
+	},
+	attrs_growth = {
+		11389,
+		727,
+		0,
+		588,
+		0,
+		478,
+		0,
+		528,
+		284,
+		0,
+		0,
+		0
+	},
+	attrs_growth_extra = {
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	},
+	lock = {
+		"torpedo",
+		"air",
+		"antisub"
+	},
+	cld_box = {
+		4,
+		5,
+		5
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	aim_offset = {
+		0,
+		0,
+		0
+	},
+	position_offset = {
+		0,
+		0,
+		0
+	},
+	fix_equip_list = {},
+	default_equip_list = {
+		102,
+		100,
+		104
+	},
+	depth_charge_list = {},
+	base_list = {
+		2,
+		1,
+		1
+	},
+	parallel_max = {
+		1,
+		1,
+		1
+	},
+	preload_count = {
+		0,
+		0,
+		0
+	},
+	equipment_proficiency = {
+		1.25,
+		0.5,
+		1
+	},
+	strategy_list = {},
+	hunting_range = {
+		{}
+	},
+	tag_list = {
+		"WichitaMETA"
+	}
+}
+_G.pg.base.ship_data_statistics[9703044] = {
+	raid_distance = 0,
+	oxy_max = 0,
+	name = "威奇塔·META",
+	type = 3,
+	oxy_cost = 0,
+	skin_id = 9703040,
+	english_name = "Wichita.META",
+	oxy_recovery_surface = 0,
+	attack_duration = 0,
+	star = 6,
+	oxy_recovery = 0,
+	backyard_speed = "0.3",
+	rarity = 5,
+	nationality = 97,
+	oxy_recovery_bench = 0,
+	ammo = 0,
+	armor_type = 1,
+	huntingrange_level = 0,
+	id = 9703044,
+	summon_offset = 0,
+	scale = 100,
+	attrs = {
+		1630,
+		134,
+		0,
+		107,
+		0,
+		69,
+		0,
+		35,
+		7,
+		26,
+		70,
+		0
+	},
+	attrs_growth = {
+		11389,
+		727,
+		0,
+		588,
+		0,
+		478,
+		0,
+		528,
+		284,
+		0,
+		0,
+		0
+	},
+	attrs_growth_extra = {
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	},
+	lock = {
+		"torpedo",
+		"air",
+		"antisub"
+	},
+	cld_box = {
+		4,
+		5,
+		5
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	aim_offset = {
+		0,
+		0,
+		0
+	},
+	position_offset = {
+		0,
+		0,
+		0
+	},
+	fix_equip_list = {},
+	default_equip_list = {
+		102,
+		100,
+		104
+	},
+	depth_charge_list = {},
+	base_list = {
+		2,
+		1,
+		1
+	},
+	parallel_max = {
+		1,
+		1,
+		1
+	},
+	preload_count = {
+		0,
+		0,
+		0
+	},
+	equipment_proficiency = {
+		1.3,
+		0.55,
+		1.05
+	},
+	strategy_list = {},
+	hunting_range = {
+		{}
+	},
+	tag_list = {
+		"WichitaMETA"
 	}
 }
