@@ -14,7 +14,7 @@
 			target_choise = "TargetNil",
 			targetAniEffect = "",
 			arg_list = {
-				weapon_id = 170512,
+				weapon_id = 170513,
 				emitter = "BattleBulletEmitter"
 			}
 		}
@@ -27,7 +27,7 @@
 				target_choise = "TargetNil",
 				targetAniEffect = "",
 				arg_list = {
-					weapon_id = 170512,
+					weapon_id = 170513,
 					emitter = "BattleBulletEmitter"
 				}
 			},
