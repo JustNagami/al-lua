@@ -102,6 +102,7 @@ function var_0_0.NotifyIns(arg_9_0, arg_9_1, arg_9_2)
 	setActive(arg_9_0.activityInsBtn, var_9_0)
 
 	if var_9_0 then
+		setActive(arg_9_0.activityInsBtn:Find("tip"), arg_9_1:ShouldShowTip())
 		onButton(arg_9_0, arg_9_0.activityInsBtn, function()
 			arg_9_0:emit(CommissionInfoMediator.ON_INS)
 		end, SFX_PANEL)

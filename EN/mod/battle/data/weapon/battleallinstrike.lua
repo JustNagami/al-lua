@@ -141,17 +141,23 @@ function var_0_6.GetType(arg_15_0)
 end
 
 function var_0_6.Fire(arg_16_0)
-	arg_16_0._host:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_ALL_IN_STRIKE_STEADY, {})
+	if arg_16_0._host:IsCease() then
+		return false
+	else
+		arg_16_0._host:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_ALL_IN_STRIKE_STEADY, {})
 
-	for iter_16_0, iter_16_1 in ipairs(arg_16_0._hiveList) do
-		iter_16_1:SingleFire()
+		for iter_16_0, iter_16_1 in ipairs(arg_16_0._hiveList) do
+			iter_16_1:SingleFire()
+		end
+
+		arg_16_0._skill:Cast(arg_16_0._host)
+		arg_16_0._host:StrikeExpose()
+		arg_16_0._host:StateChange(var_0_0.Battle.UnitState.STATE_ATTACK, "attack")
+		arg_16_0:DispatchEvent(var_0_0.Event.New(var_0_3.MANUAL_WEAPON_FIRE, {}))
+		arg_16_0._host:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_ALL_IN_STRIKE, {})
 	end
 
-	arg_16_0._skill:Cast(arg_16_0._host)
-	arg_16_0._host:StrikeExpose()
-	arg_16_0._host:StateChange(var_0_0.Battle.UnitState.STATE_ATTACK, "attack")
-	arg_16_0:DispatchEvent(var_0_0.Event.New(var_0_3.MANUAL_WEAPON_FIRE, {}))
-	arg_16_0._host:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_ALL_IN_STRIKE, {})
+	return true
 end
 
 function var_0_6.TriggerBuffOnReady(arg_17_0)

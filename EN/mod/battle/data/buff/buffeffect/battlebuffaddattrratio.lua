@@ -22,10 +22,6 @@ function var_0_1.SetArgs(arg_3_0, arg_3_1, arg_3_2)
 	local var_3_0 = arg_3_0._tempData.arg_list.convertAttr or arg_3_0._attr
 	local var_3_1 = var_0_0.Battle.BattleAttr.GetBase(arg_3_1, var_3_0)
 
-	if not arg_3_0._tempData.arg_list.gurantee then
-		local var_3_2 = 0
-	end
-
 	arg_3_0._number = arg_3_0._tempData.arg_list.number * var_3_1 * 0.0001
 	arg_3_0._numberBase = arg_3_0._number
 

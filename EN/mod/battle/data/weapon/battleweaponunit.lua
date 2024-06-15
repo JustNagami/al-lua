@@ -691,7 +691,9 @@ function var_0_9.PreCast(arg_59_0)
 end
 
 function var_0_9.Fire(arg_60_0, arg_60_1)
-	if not arg_60_0._host:IsCease() then
+	if arg_60_0._host:IsCease() then
+		return false
+	else
 		arg_60_0:DispatchGCD()
 
 		arg_60_0._currentState = arg_60_0.STATE_ATTACK

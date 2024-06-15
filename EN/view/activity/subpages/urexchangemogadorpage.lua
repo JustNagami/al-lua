@@ -44,6 +44,12 @@ end
 
 function var_0_0.OnFirstFlush(arg_4_0)
 	setText(arg_4_0._tipText, i18n("UrExchange_Pt_NotEnough"))
+
+	local var_4_0 = getProxy(ActivityProxy):getActivityById(arg_4_0.config.activitytime)
+
+	arg_4_0.isLinkActOpen = var_4_0 and not var_4_0:isEnd()
+
+	setActive(arg_4_0._tasksTF, arg_4_0.isLinkActOpen)
 	arg_4_0.uilist:make(function(arg_5_0, arg_5_1, arg_5_2)
 		if arg_5_0 == UIItemList.EventUpdate then
 			arg_4_0:UpdateTask(arg_5_1, arg_5_2)
@@ -220,6 +226,10 @@ var_0_0.taskTypeDic = {
 }
 
 function var_0_0.UpdateTask(arg_26_0, arg_26_1, arg_26_2)
+	if not arg_26_0.isLinkActOpen then
+		return
+	end
+
 	local var_26_0 = arg_26_1 + 1
 	local var_26_1 = arg_26_0.taskConfig[var_26_0][1]
 	local var_26_2 = arg_26_0.taskConfig[var_26_0][2]

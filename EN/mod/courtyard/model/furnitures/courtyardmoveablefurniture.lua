@@ -8,6 +8,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
 
 	arg_1_0.moveState = var_0_1
+	arg_1_0.playPreheatAction = false
 end
 
 function var_0_0.IsCar(arg_2_0)
@@ -141,63 +142,108 @@ function var_0_0.ChangeMoveState(arg_19_0, arg_19_1)
 	arg_19_0.moveState = arg_19_1
 end
 
-function var_0_0.StartInteraction(arg_20_0, arg_20_1)
-	var_0_0.super.StartInteraction(arg_20_0, arg_20_1)
-
-	if arg_20_0:IsMoveableSlot(arg_20_1) then
-		arg_20_0:ChangeMoveState(var_0_2)
+function var_0_0.IsSpineSlotAndExistPreheatAction(arg_20_0, arg_20_1)
+	if not isa(arg_20_1, CourtYardFurnitureSpineSlot) then
+		return false
 	end
+
+	return arg_20_1.preheatAction ~= nil
 end
 
-function var_0_0.ClearInteraction(arg_21_0, arg_21_1)
-	var_0_0.super.ClearInteraction(arg_21_0, arg_21_1)
+function var_0_0.StartInteraction(arg_21_0, arg_21_1)
+	if arg_21_0:IsSpineSlotAndExistPreheatAction(arg_21_1) then
+		arg_21_0.playPreheatAction = true
 
-	if arg_21_0:IsMoveableSlot(arg_21_1) then
+		arg_21_0:_ChangeState(CourtYardFurniture.STATE_INTERACT)
+		arg_21_0:DispatchEvent(CourtYardEvent.FURNITURE_START_INTERACTION, arg_21_1)
 		arg_21_0:Idle()
+	else
+		var_0_0.super.StartInteraction(arg_21_0, arg_21_1)
+
+		if arg_21_0:IsMoveableSlot(arg_21_1) then
+			arg_21_0:ChangeMoveState(var_0_2)
+		end
 	end
 end
 
-function var_0_0.RemoveTimer(arg_22_0)
-	if arg_22_0.moveTimer then
-		arg_22_0.moveTimer:Stop()
+function var_0_0.OnPreheatActionEnd(arg_22_0, arg_22_1)
+	if arg_22_0:IsSpineSlotAndExistPreheatAction(arg_22_1) then
+		arg_22_0.playPreheatAction = false
 
-		arg_22_0.moveTimer = nil
+		arg_22_0:ChangeMoveState(var_0_2)
 	end
 end
 
-function var_0_0.IsDifferentDirectionForCard(arg_23_0, arg_23_1)
-	local var_23_0 = arg_23_0:GetPosition()
-	local var_23_1 = arg_23_0.config.dir == 1 and {
+function var_0_0.CanInterAction(arg_23_0)
+	if arg_23_0.playPreheatAction then
+		return false
+	end
+
+	return var_0_0.super.CanInterAction(arg_23_0)
+end
+
+function var_0_0.ClearInteraction(arg_24_0, arg_24_1)
+	if arg_24_0:IsSpineSlotAndExistPreheatAction(arg_24_1) then
+		if #_.select(arg_24_0.slots, function(arg_25_0)
+			return arg_25_0.id ~= arg_24_1.id and arg_25_0:IsUsing()
+		end) == 0 then
+			arg_24_0:_ChangeState(CourtYardFurniture.STATE_IDLE)
+			arg_24_0:Idle()
+		end
+
+		arg_24_0:DispatchEvent(CourtYardEvent.FURNITURE_STOP_INTERACTION, arg_24_1)
+	else
+		var_0_0.super.ClearInteraction(arg_24_0, arg_24_1)
+
+		if arg_24_0:IsMoveableSlot(arg_24_1) then
+			arg_24_0:Idle()
+		end
+	end
+end
+
+function var_0_0.RemoveTimer(arg_26_0)
+	if arg_26_0.moveTimer then
+		arg_26_0.moveTimer:Stop()
+
+		arg_26_0.moveTimer = nil
+	end
+end
+
+function var_0_0.IsDifferentDirectionForCard(arg_27_0, arg_27_1)
+	local var_27_0 = arg_27_0:GetPosition()
+	local var_27_1 = arg_27_0.config.dir == 1 and {
 		1,
 		2
 	} or {
 		2,
 		1
 	}
-	local var_23_2
+	local var_27_2
 
-	if arg_23_1.x > var_23_0.x then
-		var_23_2 = var_23_1[1]
-	elseif arg_23_1.y > var_23_0.y then
-		var_23_2 = var_23_1[2]
+	if arg_27_1.x > var_27_0.x then
+		var_27_2 = var_27_1[1]
+	elseif arg_27_1.y > var_27_0.y then
+		var_27_2 = var_27_1[2]
 	else
-		var_23_2 = (arg_23_1.x < var_23_0.x and arg_23_1.y == var_23_0.y or arg_23_1.y > var_23_0.y and arg_23_1.x == var_23_0.x) and var_23_1[1] or var_23_1[2]
+		var_27_2 = (arg_27_1.x < var_27_0.x and arg_27_1.y == var_27_0.y or arg_27_1.y > var_27_0.y and arg_27_1.x == var_27_0.x) and var_27_1[1] or var_27_1[2]
 	end
 
-	return arg_23_0.dir ~= var_23_2
+	return arg_27_0.dir ~= var_27_2
 end
 
-function var_0_0.IsDifferentDirection(arg_24_0, arg_24_1)
-	if arg_24_0:IsCar() then
-		return arg_24_0:IsDifferentDirectionForCard(arg_24_1)
+function var_0_0.IsDifferentDirection(arg_28_0, arg_28_1)
+	if arg_28_0:IsCar() then
+		return arg_28_0:IsDifferentDirectionForCard(arg_28_1)
 	else
-		return var_0_0.super.IsDifferentDirection(arg_24_0, arg_24_1)
+		return var_0_0.super.IsDifferentDirection(arg_28_0, arg_28_1)
 	end
 end
 
-function var_0_0.Dispose(arg_25_0)
-	var_0_0.super.Dispose(arg_25_0)
-	arg_25_0:RemoveTimer()
+function var_0_0.Dispose(arg_29_0)
+	var_0_0.super.Dispose(arg_29_0)
+	arg_29_0:RemoveTimer()
+
+	arg_29_0.playPreheatAction = false
 end
 
 return var_0_0

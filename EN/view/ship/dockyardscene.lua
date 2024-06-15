@@ -1865,29 +1865,66 @@ end
 
 function var_0_0.checkDestroyShips(arg_140_0, arg_140_1, arg_140_2)
 	local var_140_0 = {}
-	local var_140_1, var_140_2 = ShipCalcHelper.GetEliteAndHightLevelShips(arg_140_1)
 
-	if #var_140_1 > 0 or #var_140_2 > 0 then
-		table.insert(var_140_0, function(arg_141_0)
-			local var_141_0 = false
+	if PlayerPrefs.GetInt("RetireProtect", 1) == 0 then
+		local var_140_1 = {}
+
+		for iter_140_0, iter_140_1 in pairs(arg_140_1) do
+			local var_140_2 = 0
+
+			for iter_140_2, iter_140_3 in pairs(arg_140_1) do
+				if iter_140_3:getGroupId() == iter_140_1:getGroupId() then
+					var_140_2 = var_140_2 + 1
+				end
+			end
+
+			if #getProxy(BayProxy):findShipsByGroup(iter_140_1:getGroupId()) == var_140_2 then
+				local var_140_3 = false
+
+				for iter_140_4, iter_140_5 in pairs(var_140_1) do
+					if iter_140_5:getGroupId() == iter_140_1:getGroupId() then
+						var_140_3 = true
+
+						break
+					end
+				end
+
+				if not var_140_3 then
+					table.insert(var_140_1, iter_140_1)
+				end
+			end
+		end
+
+		if #var_140_1 > 0 then
+			table.insert(var_140_0, function(arg_141_0)
+				arg_140_0.destroyConfirmWindow:ExecuteAction("ShowOneShipProtect", var_140_1, arg_141_0)
+			end)
+		end
+	end
+
+	local var_140_4, var_140_5 = ShipCalcHelper.GetEliteAndHightLevelShips(arg_140_1)
+
+	if #var_140_4 > 0 or #var_140_5 > 0 then
+		table.insert(var_140_0, function(arg_142_0)
+			local var_142_0 = false
 
 			if arg_140_0.contextData.mode == var_0_0.MODE_DESTROY then
-				var_141_0 = ({
+				var_142_0 = ({
 					ShipCalcHelper.CalcDestoryRes(arg_140_1)
 				})[4]
 			end
 
-			arg_140_0.destroyConfirmWindow:ExecuteAction("Show", var_140_1, var_140_2, var_141_0, arg_141_0)
+			arg_140_0.destroyConfirmWindow:ExecuteAction("Show", var_140_4, var_140_5, var_142_0, arg_142_0)
 		end)
 	end
 
-	local var_140_3 = underscore.filter(arg_140_1, function(arg_142_0)
-		return arg_142_0:getFlag("inElite")
+	local var_140_6 = underscore.filter(arg_140_1, function(arg_143_0)
+		return arg_143_0:getFlag("inElite")
 	end)
 
-	if #var_140_3 > 0 then
-		table.insert(var_140_0, function(arg_143_0)
-			arg_140_0.destroyConfirmWindow:ExecuteAction("ShowEliteTag", var_140_3, arg_143_0)
+	if #var_140_6 > 0 then
+		table.insert(var_140_0, function(arg_144_0)
+			arg_140_0.destroyConfirmWindow:ExecuteAction("ShowEliteTag", var_140_6, arg_144_0)
 		end)
 	end
 
