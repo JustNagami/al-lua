@@ -4285,7 +4285,20 @@ function temp()
 		ィ = {
 			チ = {
 				タ = {
-					this = true
+					this = true,
+					["("] = {
+						M = {
+							E = {
+								T = {
+									A = {
+										[")"] = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			},
 			ダ = {

@@ -1,5 +1,47 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_97 = {
+	[10045004] = {
+		cannon = 60,
+		name = "量産型フブキ級",
+		antiaircraft_growth = 0,
+		speed_growth = 0,
+		pilot_ai_template_id = 20005,
+		air = 0,
+		air_growth = 0,
+		dodge = 0,
+		luck = 0,
+		id = 10045004,
+		cannon_growth = 0,
+		reload_growth = 0,
+		dodge_growth = 0,
+		reload = 150,
+		star = 2,
+		hit = 35,
+		antisub_growth = 0,
+		rarity = 1,
+		fog_fx = "",
+		base = 90102,
+		durability = 730,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		antiaircraft = 130,
+		hit_growth = 0,
+		armor = 0,
+		speed = 15,
+		torpedo = 290,
+		antisub = 0,
+		durability_growth = 16000,
+		luck_growth = 0,
+		battle_unit_type = 25,
+		appear_fx = {
+			"appearsmall"
+		},
+		equipment_list = {
+			100217,
+			510149,
+			313091
+		}
+	},
 	[10045005] = {
 		cannon = 55,
 		name = "量産型ムツキ級",
@@ -1175,44 +1217,6 @@ pg.enemy_data_statistics_97 = {
 			514041,
 			514042,
 			514043
-		}
-	},
-	[10045032] = {
-		cannon = 260,
-		name = "ユウバリ",
-		reload = 150,
-		cannon_growth = 0,
-		hit_growth = 0,
-		air = 0,
-		speed_growth = 0,
-		dodge = 36,
-		base = 90185,
-		speed = 25,
-		luck = 0,
-		reload_growth = 0,
-		dodge_growth = 0,
-		luck_growth = 0,
-		star = 3,
-		hit = 47,
-		antisub_growth = 0,
-		rarity = 2,
-		air_growth = 0,
-		torpedo = 490,
-		durability = 2100,
-		armor_growth = 0,
-		durability_growth = 68000,
-		antiaircraft = 410,
-		antiaircraft_growth = 0,
-		armor = 0,
-		id = 10045032,
-		battle_unit_type = 55,
-		antisub = 0,
-		torpedo_growth = 0,
-		fog_fx = "",
-		equipment_list = {
-			514044,
-			514045,
-			514046
 		}
 	}
 }

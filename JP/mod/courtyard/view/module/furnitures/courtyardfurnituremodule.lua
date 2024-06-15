@@ -211,6 +211,10 @@ function var_0_0.OnUpdateInteraction(arg_22_0, arg_22_1)
 		setActive(var_22_2, false)
 		setActive(var_22_2, true)
 	end
+
+	if arg_22_1.block then
+		arg_22_0.cg.blocksRaycasts = false
+	end
 end
 
 function var_0_0.OnStopInterAction(arg_23_0, arg_23_1)
@@ -242,6 +246,8 @@ function var_0_0.OnStopInterAction(arg_23_0, arg_23_1)
 end
 
 function var_0_0.OnAnimtionFinish(arg_24_0, arg_24_1)
+	arg_24_0.cg.blocksRaycasts = true
+
 	arg_24_0:Emit("FurnitureAnimtionFinish", arg_24_0.data.id, arg_24_1)
 end
 

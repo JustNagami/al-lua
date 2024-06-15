@@ -33,10 +33,10 @@ function var_0_0.DoPreheatStep(arg_4_0, arg_4_1, arg_4_2)
 	if arg_4_1 then
 		arg_4_0.preheatProcess = true
 
-		arg_4_0.host:GetOwner():UpdateInteraction(arg_4_0:PackData(arg_4_1))
+		arg_4_0.host:GetOwner():UpdateInteraction(arg_4_0:PackData(arg_4_1, true))
 
 		if arg_4_2 then
-			arg_4_0.host:GetUser():UpdateInteraction(arg_4_0:PackData(arg_4_2))
+			arg_4_0.host:GetUser():UpdateInteraction(arg_4_0:PackData(arg_4_2, true))
 		end
 	else
 		arg_4_0:DoStep()
@@ -75,7 +75,7 @@ function var_0_0.DoTailStep(arg_8_0)
 	arg_8_0.host:GetOwner():UpdateInteraction(arg_8_0:PackData(arg_8_0.tailAction))
 end
 
-function var_0_0.PackData(arg_9_0, arg_9_1)
+function var_0_0.PackData(arg_9_0, arg_9_1, arg_9_2)
 	local var_9_0 = arg_9_0.index / arg_9_0.total
 
 	return {
@@ -85,12 +85,14 @@ function var_0_0.PackData(arg_9_0, arg_9_1)
 		progress = var_9_0,
 		total = arg_9_0.total,
 		index = arg_9_0.index,
-		isReset = arg_9_0.isReset
+		isReset = arg_9_0.isReset,
+		block = arg_9_2
 	}
 end
 
 function var_0_0.StepEnd(arg_10_0, arg_10_1)
 	if arg_10_0.preheatProcess then
+		arg_10_0:OnPreheatDone()
 		arg_10_0:DoStep()
 	else
 		if arg_10_0.index == 0 then
@@ -103,52 +105,56 @@ function var_0_0.StepEnd(arg_10_0, arg_10_1)
 	end
 end
 
-function var_0_0.AllStepEnd(arg_11_0)
-	if arg_11_0.loop and arg_11_0.total > 1 then
-		arg_11_0.isReset = true
-		arg_11_0.index = 0
+function var_0_0.OnPreheatDone(arg_11_0)
+	arg_11_0.host:GetOwner():OnPreheatActionEnd(arg_11_0.host)
+end
 
-		arg_11_0:DoStep()
-	elseif arg_11_0.loop and arg_11_0.total == 1 then
+function var_0_0.AllStepEnd(arg_12_0)
+	if arg_12_0.loop and arg_12_0.total > 1 then
+		arg_12_0.isReset = true
+		arg_12_0.index = 0
+
+		arg_12_0:DoStep()
+	elseif arg_12_0.loop and arg_12_0.total == 1 then
 		-- block empty
-	elseif not arg_11_0.loop and arg_11_0.tailAction then
-		arg_11_0:DoTailStep()
+	elseif not arg_12_0.loop and arg_12_0.tailAction then
+		arg_12_0:DoTailStep()
 	else
-		arg_11_0.host:End()
-		arg_11_0:Clear()
+		arg_12_0.host:End()
+		arg_12_0:Clear()
 	end
 end
 
-function var_0_0.Clear(arg_12_0)
-	arg_12_0.index = 0
-	arg_12_0.states = {}
-	arg_12_0.total = 0
-	arg_12_0.loop = nil
+function var_0_0.Clear(arg_13_0)
+	arg_13_0.index = 0
+	arg_13_0.states = {}
+	arg_13_0.total = 0
+	arg_13_0.loop = nil
 end
 
-function var_0_0.GetIndex(arg_13_0)
-	return arg_13_0.index
+function var_0_0.GetIndex(arg_14_0)
+	return arg_14_0.index
 end
 
-function var_0_0.IsCompleteStep(arg_14_0)
-	return arg_14_0:IsCompleteUserStep() and arg_14_0:IsCompleteOwnerStep()
+function var_0_0.IsCompleteStep(arg_15_0)
+	return arg_15_0:IsCompleteUserStep() and arg_15_0:IsCompleteOwnerStep()
 end
 
-function var_0_0.IsCompleteUserStep(arg_15_0)
-	return arg_15_0.states[arg_15_0.host.user] == true
+function var_0_0.IsCompleteUserStep(arg_16_0)
+	return arg_16_0.states[arg_16_0.host.user] == true
 end
 
-function var_0_0.IsCompleteOwnerStep(arg_16_0)
-	return arg_16_0.states[arg_16_0.host.owner] == true
+function var_0_0.IsCompleteOwnerStep(arg_17_0)
+	return arg_17_0.states[arg_17_0.host.owner] == true
 end
 
-function var_0_0.OnStepEnd(arg_17_0)
-	if arg_17_0:IsCompleteStep() then
-		arg_17_0:DoStep()
+function var_0_0.OnStepEnd(arg_18_0)
+	if arg_18_0:IsCompleteStep() then
+		arg_18_0:DoStep()
 	end
 end
 
-function var_0_0.Reset(arg_18_0)
+function var_0_0.Reset(arg_19_0)
 	return
 end
 

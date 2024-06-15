@@ -56,14 +56,6 @@ pg.item_data_chat = {
 		desc = "Sixth　Anniversary！\n<color=#A7A7AAFF>六周年記念イベントで開放可能</color>",
 		scene = {}
 	},
-	[107] = {
-		time_limit_type = 0,
-		name = "七周年纪念",
-		id = 107,
-		time_second = 0,
-		desc = "献给所有七年间持续奋斗在港区的指挥官们\n<color=#A7A7AAFF>通过参与七周年限定活动获取</color>",
-		scene = {}
-	},
 	[300] = {
 		time_limit_type = 1,
 		name = "カリスマ指揮官",
@@ -208,7 +200,6 @@ pg.item_data_chat = {
 		104,
 		105,
 		106,
-		107,
 		300,
 		301,
 		602,

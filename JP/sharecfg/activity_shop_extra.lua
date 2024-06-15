@@ -3979,8 +3979,45 @@ pg.activity_shop_extra = {
 			{
 				{
 					2024,
+					7,
+					31
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[121] = {
+		commodity_id = 501052,
+		activity = 5364,
+		scene = "",
+		num = 1,
+		num_limit = 1,
+		end_by_maintenance = 1,
+		commodity_type = 7,
+		id = 121,
+		order = 5,
+		time = {
+			{
+				{
+					2024,
 					6,
-					30
+					6
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					6,
+					20
 				},
 				{
 					23,
@@ -4104,7 +4141,8 @@ pg.activity_shop_extra = {
 			117,
 			118,
 			119,
-			120
+			120,
+			121
 		}
 	},
 	all = {
@@ -4220,6 +4258,7 @@ pg.activity_shop_extra = {
 		117,
 		118,
 		119,
-		120
+		120,
+		121
 	}
 }

@@ -72,8 +72,11 @@ function var_0_0.addListeners(arg_4_0)
 	arg_4_0.linerName = var_4_0:getStrData1()
 
 	setInputText(arg_4_0.nameInput, arg_4_0.linerName)
+
+	arg_4_0.defaultName = getProxy(PlayerProxy):getRawData():GetName()
+
 	onInputEndEdit(arg_4_0, arg_4_0.nameInput, function(arg_5_0)
-		if not nameValidityCheck(arg_5_0, 4, 14, {
+		if arg_5_0 ~= arg_4_0.defaultName and not nameValidityCheck(arg_5_0, 4, 14, {
 			"spece_illegal_tip",
 			"login_newPlayerScene_name_tooShort",
 			"login_newPlayerScene_name_tooLong",

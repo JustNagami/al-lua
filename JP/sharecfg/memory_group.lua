@@ -196,6 +196,7 @@ pg.memory_group = setmetatable({
 		288,
 		289,
 		290,
+		291,
 		501,
 		502,
 		503,
@@ -292,6 +293,7 @@ pg.memory_group = setmetatable({
 		596,
 		597,
 		598,
+		599,
 		1000,
 		1001,
 		1002
@@ -4674,6 +4676,17 @@ pg.base.memory_group = {
 			3651
 		}
 	},
+	[291] = {
+		id = 291,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5364,
+		title = "悠然碧海行",
+		memories = {
+			3661
+		}
+	},
 	[501] = {
 		id = 501,
 		subtype = 0,
@@ -6317,6 +6330,23 @@ pg.base.memory_group = {
 			3535,
 			3536,
 			3537
+		}
+	},
+	[599] = {
+		id = 599,
+		subtype = 0,
+		icon = "title_chara_aijier",
+		type = 3,
+		link_event = 0,
+		title = "激動する荒海の主",
+		memories = {
+			3671,
+			3672,
+			3673,
+			3674,
+			3675,
+			3676,
+			3677
 		}
 	},
 	[1000] = {

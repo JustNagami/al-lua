@@ -864,17 +864,20 @@ function var_0_8.QuickTagChrageWeapon(arg_79_0, arg_79_1)
 		return
 	end
 
-	local var_79_0 = arg_79_0._chargeWeaponVO:GetCurrentWeapon()
+	local var_79_0
+	local var_79_1 = arg_79_0._chargeWeaponVO:GetCurrentWeapon()
 
-	if var_79_0 ~= nil and var_79_0:GetCurrentState() == var_79_0.STATE_READY then
-		var_79_0:QuickTag()
+	if var_79_1 ~= nil and var_79_1:GetCurrentState() == var_79_1.STATE_READY then
+		var_79_1:QuickTag()
 
-		if #var_79_0:GetLockList() <= 0 then
-			var_79_0:CancelQuickTag()
+		if #var_79_1:GetLockList() <= 0 then
+			var_79_1:CancelQuickTag()
 		else
-			arg_79_0:fireChargeWeapon(var_79_0, arg_79_1)
+			var_79_0 = arg_79_0:fireChargeWeapon(var_79_1, arg_79_1)
 		end
 	end
+
+	return var_79_0
 end
 
 function var_0_8.fireChargeWeapon(arg_80_0, arg_80_1, arg_80_2, arg_80_3)
@@ -908,19 +911,23 @@ function var_0_8.UnleashAllInStrike(arg_83_0)
 		return
 	end
 
-	local var_83_0 = arg_83_0._airAssistVO:GetCurrentWeapon()
+	local var_83_0
+	local var_83_1 = arg_83_0._airAssistVO:GetCurrentWeapon()
 
-	if var_83_0 and var_83_0:GetCurrentState() == var_83_0.STATE_READY then
-		local var_83_1 = var_83_0:GetHost()
+	if var_83_1 and var_83_1:GetCurrentState() == var_83_1.STATE_READY then
+		local var_83_2 = var_83_1:GetHost()
 
-		if arg_83_0._IFF == var_0_5.FRIENDLY_CODE and var_83_1:IsMainFleetUnit() then
-			arg_83_0._airAssistVO:PlayCutIn(var_83_1, 1)
+		if arg_83_0._IFF == var_0_5.FRIENDLY_CODE and var_83_2:IsMainFleetUnit() then
+			arg_83_0._airAssistVO:PlayCutIn(var_83_2, 1)
 		end
 
-		var_83_0:CLSBullet()
-		var_83_0:DispatchBlink()
-		var_83_0:Fire()
+		var_83_1:CLSBullet()
+		var_83_1:DispatchBlink()
+
+		var_83_0 = var_83_1:Fire()
 	end
+
+	return var_83_0
 end
 
 function var_0_8.CastTorpedo(arg_84_0)
@@ -930,8 +937,7 @@ function var_0_8.CastTorpedo(arg_84_0)
 
 	local var_84_0 = arg_84_0._torpedoWeaponVO:GetCurrentWeapon()
 
-	if var_84_0 ~= nil and var_84_0:GetCurrentState() == var_84_0.STATE_READY then
-		var_84_0:Prepar()
+	if var_84_0 ~= nil and var_84_0:GetCurrentState() == var_84_0.STATE_READY and var_84_0:Prepar() then
 		arg_84_0:FleetBuffTrigger(var_0_4.BuffEffectType.ON_TORPEDO_BUTTON_PUSH)
 	end
 end
@@ -963,11 +969,14 @@ function var_0_8.QuickCastTorpedo(arg_87_0)
 		return
 	end
 
-	local var_87_0 = arg_87_0._torpedoWeaponVO:GetCurrentWeapon()
+	local var_87_0
+	local var_87_1 = arg_87_0._torpedoWeaponVO:GetCurrentWeapon()
 
-	if var_87_0 ~= nil and var_87_0:GetCurrentState() == var_87_0.STATE_READY then
-		var_87_0:Fire(true)
+	if var_87_1 ~= nil and var_87_1:GetCurrentState() == var_87_1.STATE_READY then
+		var_87_0 = var_87_1:Fire(true)
 	end
+
+	return var_87_0
 end
 
 function var_0_8.RemoveManunalTorpedo(arg_88_0, arg_88_1, arg_88_2)

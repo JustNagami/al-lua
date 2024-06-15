@@ -184,13 +184,12 @@
 			}
 		},
 		{
-			expression = 0,
+			actor = 601050,
 			side = 2,
 			bgName = "bg_story_task",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			actor = 601050,
 			say = "ふふん、つまりハンコが押されているのをこっちに、まだなのをそっちに分けて――",
 			painting = {
 				alpha = 0.3,

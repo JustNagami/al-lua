@@ -497,89 +497,93 @@ function var_0_0.StartInteraction(arg_61_0, arg_61_1)
 	arg_61_0:DispatchEvent(CourtYardEvent.FURNITURE_START_INTERACTION, arg_61_1)
 end
 
-function var_0_0.UpdateInteraction(arg_63_0, ...)
-	arg_63_0:DispatchEvent(CourtYardEvent.FURNITURE_UPDATE_INTERACTION, ...)
+function var_0_0.OnPreheatActionEnd(arg_63_0)
+	return
 end
 
-function var_0_0.AnySlotIsUsing(arg_64_0)
-	return _.any(arg_64_0.slots, function(arg_65_0)
-		return arg_65_0:IsUsing()
+function var_0_0.UpdateInteraction(arg_64_0, ...)
+	arg_64_0:DispatchEvent(CourtYardEvent.FURNITURE_UPDATE_INTERACTION, ...)
+end
+
+function var_0_0.AnySlotIsUsing(arg_65_0)
+	return _.any(arg_65_0.slots, function(arg_66_0)
+		return arg_66_0:IsUsing()
 	end)
 end
 
-function var_0_0.ClearInteraction(arg_66_0, arg_66_1)
-	local var_66_0 = _.select(arg_66_0.slots, function(arg_67_0)
-		return arg_67_0.id ~= arg_66_1.id and arg_67_0:IsUsing()
+function var_0_0.ClearInteraction(arg_67_0, arg_67_1)
+	local var_67_0 = _.select(arg_67_0.slots, function(arg_68_0)
+		return arg_68_0.id ~= arg_67_1.id and arg_68_0:IsUsing()
 	end)
 
-	for iter_66_0, iter_66_1 in ipairs(var_66_0) do
-		iter_66_1:Reset()
+	for iter_67_0, iter_67_1 in ipairs(var_67_0) do
+		iter_67_1:Reset()
 	end
 
-	if #var_66_0 <= 0 then
-		arg_66_0:_ChangeState(var_0_0.STATE_IDLE)
+	if #var_67_0 <= 0 then
+		arg_67_0:_ChangeState(var_0_0.STATE_IDLE)
 	end
 
 	onNextTick(function()
-		arg_66_0:DispatchEvent(CourtYardEvent.FURNITURE_STOP_INTERACTION, arg_66_1)
+		arg_67_0:DispatchEvent(CourtYardEvent.FURNITURE_STOP_INTERACTION, arg_67_1)
 	end)
 end
 
-function var_0_0.GetUsingSlots(arg_69_0)
-	local var_69_0 = {}
+function var_0_0.GetUsingSlots(arg_70_0)
+	local var_70_0 = {}
 
-	for iter_69_0, iter_69_1 in ipairs(arg_69_0.slots) do
-		if iter_69_1:IsUsing() then
-			table.insert(var_69_0, iter_69_1)
+	for iter_70_0, iter_70_1 in ipairs(arg_70_0.slots) do
+		if iter_70_1:IsUsing() then
+			table.insert(var_70_0, iter_70_1)
 		end
 	end
 
-	return var_69_0
+	return var_70_0
 end
 
-function var_0_0.GetSlotCnt(arg_70_0)
-	return #arg_70_0.slots
+function var_0_0.GetSlotCnt(arg_71_0)
+	return #arg_71_0.slots
 end
 
-function var_0_0.GetMusicData(arg_71_0)
-	return arg_71_0.musicData
+function var_0_0.GetMusicData(arg_72_0)
+	return arg_72_0.musicData
 end
 
-function var_0_0.GetInterActionBgm(arg_72_0)
-	local var_72_0 = type(arg_72_0.config.interaction_bgm)
+function var_0_0.GetInterActionBgm(arg_73_0)
+	local var_73_0 = type(arg_73_0.config.interaction_bgm)
 
-	if var_72_0 == "string" then
-		return arg_72_0.config.interaction_bgm, 0
-	elseif var_72_0 == "table" then
-		return arg_72_0.config.interaction_bgm[2], arg_72_0.config.interaction_bgm[1]
+	if var_73_0 == "string" then
+		return arg_73_0.config.interaction_bgm, 0
+	elseif var_73_0 == "table" then
+		return arg_73_0.config.interaction_bgm[2], arg_73_0.config.interaction_bgm[1]
 	else
 		return nil
 	end
 end
 
-function var_0_0.CanClickWhenExitEditMode(arg_73_0)
-	return arg_73_0:HasDescription() or arg_73_0:CanTouch()
+function var_0_0.CanClickWhenExitEditMode(arg_74_0)
+	return arg_74_0:HasDescription() or arg_74_0:CanTouch()
 end
 
-function var_0_0.Dispose(arg_74_0)
-	var_0_0.super.Dispose(arg_74_0)
+function var_0_0.Dispose(arg_75_0)
+	var_0_0.super.Dispose(arg_75_0)
 
-	for iter_74_0, iter_74_1 in ipairs(arg_74_0:GetUsingSlots()) do
-		iter_74_1:Stop()
+	for iter_75_0, iter_75_1 in ipairs(arg_75_0:GetUsingSlots()) do
+		iter_75_1:Stop()
 	end
 end
 
-function var_0_0.ToTable(arg_75_0)
-	local var_75_0 = arg_75_0:GetPosition()
+function var_0_0.ToTable(arg_76_0)
+	local var_76_0 = arg_76_0:GetPosition()
 
 	return {
-		id = arg_75_0.id,
-		configId = arg_75_0.configId,
-		dir = arg_75_0.dir,
-		position = var_75_0,
-		x = var_75_0.x,
-		y = var_75_0.y,
-		parent = arg_75_0.parent and arg_75_0.parent.id or 0,
+		id = arg_76_0.id,
+		configId = arg_76_0.configId,
+		dir = arg_76_0.dir,
+		position = var_76_0,
+		x = var_76_0.x,
+		y = var_76_0.y,
+		parent = arg_76_0.parent and arg_76_0.parent.id or 0,
 		child = {}
 	}
 end
