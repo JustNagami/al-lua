@@ -279,7 +279,7 @@ function var_0_0.Play(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
 				return
 			end
 
-			arg_8_0:RegisetEvent(arg_24_0)
+			arg_8_0:RegisetEvent(var_8_0, arg_24_0)
 			arg_8_0:TriggerEventIfAuto(var_8_3)
 		end,
 		function(arg_25_0)
@@ -855,7 +855,7 @@ function var_0_0.ClearMoveNodes(arg_79_0, arg_79_1)
 		if iter_79_1:GetComponent(typeof(SpineAnimUI)) ~= nil then
 			PoolMgr.GetInstance():ReturnSpineChar(iter_79_1.name, iter_79_1.gameObject)
 		else
-			Object.Destroy(iter_79_1.gameObject)
+			Destroy(iter_79_1.gameObject)
 		end
 	end
 
@@ -1003,7 +1003,7 @@ function var_0_0.setPaintingAlpha(arg_89_0, arg_89_1, arg_89_2)
 	end
 end
 
-function var_0_0.RegisetEvent(arg_90_0, arg_90_1)
+function var_0_0.RegisetEvent(arg_90_0, arg_90_1, arg_90_2)
 	setButtonEnabled(arg_90_0._go, not arg_90_0.autoNext)
 	onButton(arg_90_0, arg_90_0._go, function()
 		if arg_90_0.pause or arg_90_0.stop then
@@ -1011,7 +1011,7 @@ function var_0_0.RegisetEvent(arg_90_0, arg_90_1)
 		end
 
 		removeOnButton(arg_90_0._go)
-		arg_90_1()
+		arg_90_2()
 	end, SFX_PANEL)
 end
 
@@ -1248,21 +1248,9 @@ end
 
 function var_0_0.ClearEffectInterlayer(arg_105_0, arg_105_1)
 	if arg_105_0.activeInterLayer == arg_105_1 then
-		local var_105_0 = arg_105_0.actorTr:GetComponent(typeof(Canvas))
-		local var_105_1 = arg_105_0.frontTr:GetComponent(typeof(Canvas))
-		local var_105_2 = arg_105_0.frontTr:GetComponent(typeof(GraphicRaycaster))
-
-		if var_105_0 then
-			Object.Destroy(var_105_0)
-		end
-
-		if var_105_2 then
-			Object.Destroy(var_105_2)
-		end
-
-		if var_105_1 then
-			Object.Destroy(var_105_1)
-		end
+		RemoveComponent(arg_105_0.actorTr, "Canvas")
+		RemoveComponent(arg_105_0.frontTr, "Canvas")
+		RemoveComponent(arg_105_0.frontTr, "GraphicRaycaster")
 
 		arg_105_0.activeInterLayer = nil
 	end
