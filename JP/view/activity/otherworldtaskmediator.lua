@@ -8,7 +8,7 @@ var_0_0.SHOW_DETAIL = "activity task show detail"
 function var_0_0.register(arg_1_0)
 	arg_1_0:bind(var_0_0.SUBMIT_TASK_ALL, function(arg_2_0, arg_2_1)
 		arg_1_0:checkActStory(arg_2_1.activityId, arg_2_1.ids, function()
-			arg_1_0:sendNotification(GAME.AVATAR_FRAME_AWARD, {
+			arg_1_0:sendNotification(GAME.SUBMIT_ACTIVITY_TASK, {
 				act_id = arg_2_1.activityId,
 				task_ids = arg_2_1.ids
 			})
@@ -18,7 +18,7 @@ function var_0_0.register(arg_1_0)
 		arg_1_0:checkActStory(arg_4_1.activityId, {
 			arg_4_1.id
 		}, function()
-			arg_1_0:sendNotification(GAME.AVATAR_FRAME_AWARD, {
+			arg_1_0:sendNotification(GAME.SUBMIT_ACTIVITY_TASK, {
 				act_id = arg_4_1.activityId,
 				task_ids = {
 					arg_4_1.id
@@ -91,7 +91,7 @@ end
 
 function var_0_0.listNotificationInterests(arg_12_0)
 	return {
-		GAME.SUBMIT_AVATAR_TASK_DONE,
+		GAME.SUBMIT_ACTIVITY_TASK_DONE,
 		GAME.ZERO_HOUR_OP_DONE
 	}
 end
@@ -100,7 +100,7 @@ function var_0_0.handleNotification(arg_13_0, arg_13_1)
 	local var_13_0 = arg_13_1:getName()
 	local var_13_1 = arg_13_1:getBody()
 
-	if var_13_0 == GAME.SUBMIT_AVATAR_TASK_DONE then
+	if var_13_0 == GAME.SUBMIT_ACTIVITY_TASK_DONE then
 		if #var_13_1.awards > 0 then
 			arg_13_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_13_1.awards)
 		end

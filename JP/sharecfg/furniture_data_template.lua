@@ -151,6 +151,8 @@ pg.furniture_data_template = setmetatable({
 			275,
 			276,
 			278,
+			280,
+			281,
 			100002,
 			100003,
 			100004,
@@ -211,6 +213,7 @@ pg.furniture_data_template = setmetatable({
 			100059,
 			100060,
 			100061,
+			100062,
 			200001,
 			200002,
 			200003,
@@ -3232,6 +3235,8 @@ pg.furniture_data_template = setmetatable({
 			265,
 			269,
 			274,
+			280,
+			281,
 			100002,
 			100003,
 			100004,
@@ -3292,6 +3297,7 @@ pg.furniture_data_template = setmetatable({
 			100059,
 			100060,
 			100061,
+			100062,
 			31101,
 			54104,
 			54105
@@ -6225,6 +6231,7 @@ pg.furniture_data_template = setmetatable({
 			275,
 			276,
 			278,
+			280,
 			100002,
 			100004,
 			100005,
@@ -6271,7 +6278,8 @@ pg.furniture_data_template = setmetatable({
 			100057,
 			100058,
 			100059,
-			100061
+			100061,
+			100062
 		},
 		[2] = {
 			120,
@@ -8133,6 +8141,7 @@ pg.furniture_data_template = setmetatable({
 			215,
 			233,
 			244,
+			281,
 			100003,
 			100008,
 			100021,
@@ -9217,6 +9226,8 @@ pg.furniture_data_template = setmetatable({
 		275,
 		276,
 		278,
+		280,
+		281,
 		100002,
 		100003,
 		100004,
@@ -9277,6 +9288,7 @@ pg.furniture_data_template = setmetatable({
 		100059,
 		100060,
 		100061,
+		100062,
 		200001,
 		200002,
 		200003,
@@ -19160,7 +19172,15 @@ pg.base.furniture_data_template = {
 		offset = {},
 		canputonGrid = {},
 		can_trigger = {
-			1
+			2,
+			{
+				"song11",
+				"song12"
+			},
+			{
+				"normal",
+				"normal"
+			}
 		},
 		spine = {
 			{
@@ -19252,6 +19272,207 @@ pg.base.furniture_data_template = {
 			{
 				"youlunxunzhang",
 				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[280] = {
+		spine_extra = "",
+		describe = "カラフルスライダーでわんぱくトラベル！",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 0,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "youeryuanhuatiicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "リトルスライダー",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "chuanmo/youeryuanhuati",
+		canputon = 0,
+		id = 280,
+		can_rotate = 0,
+		size = {
+			6,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[281] = {
+		rarity = 4,
+		describe = "速くて便利なスクールバスで遅刻からおさらば、しよう！",
+		gain_by = "",
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		belong = 1,
+		is_get_time_note = 0,
+		count = 1,
+		name = "リトルスクールバス",
+		is_3d_obj = 0,
+		advice = 0,
+		themeId = 0,
+		icon = "youeryuanxiaocheicon",
+		deblocking = 1,
+		level = 1,
+		tag = 6,
+		effect = "",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 281,
+		can_rotate = 0,
+		size = {
+			4,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"youeryuanxiaocheB",
+				"normal",
+				nil,
+				1
+			},
+			{
+				"youeryuanxiaocheT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit1",
+						nil,
+						"sit"
+					}
+				},
+				{
+					nil,
+					1,
+					{
+						{
+							"walk1",
+							"walk2",
+							"walk3"
+						},
+						"walk",
+						1
+					}
+				},
+				{
+					1
+				},
+				{
+					{
+						"sit1"
+					},
+					{
+						"sit2"
+					},
+					{
+						"sit3"
+					}
+				}
+			},
+			{
+				{
+					-40.1,
+					28.6
+				},
+				{
+					192,
+					172
+				},
+				"chuanmo/youeryuanxiaoche_mask1"
+			},
+			{
+				30.6,
+				-14.2
+			},
+			{
+				1,
+				1
+			}
+		},
+		spine_extra = {
+			{
+				{
+					{
+						-6.5,
+						34.9
+					},
+					{
+						96,
+						125
+					},
+					"chuanmo/youeryuanxiaoche_mask2"
+				},
+				{
+					5.1,
+					-37
+				},
+				{
+					1,
+					1
+				}
+			},
+			{
+				{
+					{
+						-6.5,
+						34.9
+					},
+					{
+						100,
+						132
+					},
+					"chuanmo/youeryuanxiaoche_mask2"
+				},
+				{
+					5.1,
+					-37
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		followBone = {
+			{
+				"char1",
+				1
+			},
+			{
+				"char2",
+				1
+			},
+			{
+				"char3",
+				1
 			}
 		},
 		interAction_group = {}
@@ -23557,6 +23778,57 @@ pg.base.furniture_data_template = {
 		followBone = {
 			"char",
 			1
+		},
+		interAction_group = {}
+	},
+	[100062] = {
+		spine_extra = "",
+		describe = "リトルなアイで周りをキョロキョロするピョ！",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "jiujiubudaowengicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "饅頭だるま（リトル）",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 100062,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jiujiubudaoweng",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
 		},
 		interAction_group = {}
 	},

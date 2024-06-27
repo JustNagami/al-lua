@@ -12740,17 +12740,16 @@ pg.base.expedition_data_by_map = {
 		name = "吟ずる瑠璃の楽章·前編|| ||CHAPTER EX||E.X.",
 		level_limit = 1,
 		type = 4,
-		anchor = "",
+		enter_story = "HONGCAIDEZHONGMUQU1",
 		title = "EX",
 		drop_by_map_display = "",
 		bgm = "theme-highseasfleet",
-		enter_story = "HONGCAIDEZHONGMUQU1",
 		ani_name = "Map_1640001",
-		guide_id = "",
 		ani_controller = "",
+		guide_id = "",
 		cloud_suffix = "",
 		uifx = "",
-		on_activity = 4320,
+		on_activity = 5374,
 		ui_type = 1,
 		bg = "Map_1630001",
 		destory_icon_suffix = "blue",
@@ -12777,6 +12776,10 @@ pg.base.expedition_data_by_map = {
 				0,
 				-465
 			}
+		},
+		anchor = {
+			0.5,
+			0.5
 		}
 	},
 	[1640002] = {
@@ -12784,17 +12787,16 @@ pg.base.expedition_data_by_map = {
 		name = "吟ずる瑠璃の楽章·後編|| ||CHAPTER EX||E.X.",
 		level_limit = 1,
 		type = 4,
-		anchor = "",
+		enter_story = "HONGCAIDEZHONGMUQU17",
 		title = "EX",
 		drop_by_map_display = "",
 		bgm = "battle-highseasfleet-reborn",
-		enter_story = "HONGCAIDEZHONGMUQU17",
 		ani_name = "Map_1640002",
-		guide_id = "",
 		ani_controller = "",
+		guide_id = "",
 		cloud_suffix = "",
 		uifx = "",
-		on_activity = 4320,
+		on_activity = 5374,
 		ui_type = 1,
 		bg = "Map_1630002",
 		destory_icon_suffix = "blue",
@@ -12821,6 +12823,10 @@ pg.base.expedition_data_by_map = {
 				0,
 				-465
 			}
+		},
+		anchor = {
+			0.5,
+			0.5
 		}
 	},
 	[1640011] = {
@@ -12828,17 +12834,16 @@ pg.base.expedition_data_by_map = {
 		name = "吟ずる瑠璃の楽章·前編|| ||CHAPTER EX||E.X.",
 		level_limit = 1,
 		type = 5,
-		anchor = "",
+		enter_story = "HONGCAIDEZHONGMUQU1",
 		title = "EX",
 		drop_by_map_display = "",
 		bgm = "theme-highseasfleet",
-		enter_story = "HONGCAIDEZHONGMUQU1",
 		ani_name = "Map_1640003",
-		guide_id = "",
 		ani_controller = "",
+		guide_id = "",
 		cloud_suffix = "",
 		uifx = "",
-		on_activity = 4320,
+		on_activity = 5374,
 		ui_type = 1,
 		bg = "Map_1630003",
 		destory_icon_suffix = "blue",
@@ -12865,6 +12870,10 @@ pg.base.expedition_data_by_map = {
 				0,
 				-465
 			}
+		},
+		anchor = {
+			0.5,
+			0.5
 		}
 	},
 	[1640012] = {
@@ -12872,17 +12881,16 @@ pg.base.expedition_data_by_map = {
 		name = "吟ずる瑠璃の楽章·後編|| ||CHAPTER EX||E.X.",
 		level_limit = 1,
 		type = 5,
-		anchor = "",
+		enter_story = "HONGCAIDEZHONGMUQU17",
 		title = "EX",
 		drop_by_map_display = "",
 		bgm = "battle-highseasfleet-reborn",
-		enter_story = "HONGCAIDEZHONGMUQU17",
 		ani_name = "Map_1640004",
-		guide_id = "",
 		ani_controller = "",
+		guide_id = "",
 		cloud_suffix = "",
 		uifx = "",
-		on_activity = 4320,
+		on_activity = 5374,
 		ui_type = 1,
 		bg = "Map_1630004",
 		destory_icon_suffix = "blue",
@@ -12909,6 +12917,10 @@ pg.base.expedition_data_by_map = {
 				0,
 				-465
 			}
+		},
+		anchor = {
+			0.5,
+			0.5
 		}
 	},
 	[1640025] = {
@@ -12916,17 +12928,16 @@ pg.base.expedition_data_by_map = {
 		name = "吟ずる瑠璃の楽章·SP|| ||CHAPTER EX||E.X.",
 		level_limit = 1,
 		type = 8,
-		anchor = "",
+		enter_story = "",
 		title = "EX",
 		drop_by_map_display = "",
 		bgm = "theme-frederick",
-		enter_story = "",
 		ani_name = "Map_1640004",
-		guide_id = "",
 		ani_controller = "",
+		guide_id = "",
 		cloud_suffix = "",
 		uifx = "",
-		on_activity = 4320,
+		on_activity = 5374,
 		ui_type = 1,
 		bg = "Map_1630004",
 		destory_icon_suffix = "blue",
@@ -12953,6 +12964,10 @@ pg.base.expedition_data_by_map = {
 				0,
 				-465
 			}
+		},
+		anchor = {
+			0.5,
+			0.5
 		}
 	},
 	[1640026] = {
@@ -12960,17 +12975,16 @@ pg.base.expedition_data_by_map = {
 		name = "吟ずる瑠璃の楽章·EX|| ||CHAPTER EX||E.X.",
 		level_limit = 1,
 		type = 8,
-		anchor = "",
+		enter_story = "",
 		title = "EX",
 		drop_by_map_display = "",
 		bgm = "theme-frederick",
-		enter_story = "",
 		ani_name = "Map_1640004",
-		guide_id = "",
 		ani_controller = "",
+		guide_id = "",
 		cloud_suffix = "",
 		uifx = "",
-		on_activity = 4320,
+		on_activity = 5374,
 		ui_type = 1,
 		bg = "Map_1630004",
 		destory_icon_suffix = "blue",
@@ -12997,6 +13011,10 @@ pg.base.expedition_data_by_map = {
 				0,
 				-465
 			}
+		},
+		anchor = {
+			0.5,
+			0.5
 		}
 	},
 	[1650001] = {

@@ -17,7 +17,7 @@ end
 
 function var_0_0.listNotificationInterests(arg_4_0)
 	return {
-		GAME.SUBMIT_AVATAR_TASK_DONE
+		GAME.SUBMIT_ACTIVITY_TASK_DONE
 	}
 end
 
@@ -25,7 +25,7 @@ function var_0_0.handleNotification(arg_5_0, arg_5_1)
 	local var_5_0 = arg_5_1:getName()
 	local var_5_1 = arg_5_1:getBody()
 
-	if var_5_0 == GAME.SUBMIT_AVATAR_TASK_DONE then
+	if var_5_0 == GAME.SUBMIT_ACTIVITY_TASK_DONE then
 		arg_5_0.viewComponent:closeView()
 	end
 end

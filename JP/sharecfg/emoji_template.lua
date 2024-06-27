@@ -442,6 +442,32 @@ pg.emoji_template = {
 			1
 		}
 	},
+	{
+		achieve = 1,
+		item_desc = "スタンプ：つかまえた～。チャットのデフォルトスタンプセットで使用可能",
+		item_name = "スタンプ：つかまえた～",
+		id = 35,
+		index = 75,
+		icon = "",
+		pic = "35",
+		desc = "<color=#92fc63>[つかまえた～]</color>",
+		type = {
+			1
+		}
+	},
+	{
+		achieve = 1,
+		item_desc = "スタンプ：あっつーい。チャットのデフォルトスタンプセットで使用可能",
+		item_name = "スタンプ：あっつーい",
+		id = 36,
+		index = 76,
+		icon = "",
+		pic = "36",
+		desc = "<color=#92fc63>[あっつーい]</color>",
+		type = {
+			1
+		}
+	},
 	[41] = {
 		achieve = 0,
 		item_desc = "",
@@ -2141,6 +2167,8 @@ pg.emoji_template = {
 		32,
 		33,
 		34,
+		35,
+		36,
 		41,
 		42,
 		43,

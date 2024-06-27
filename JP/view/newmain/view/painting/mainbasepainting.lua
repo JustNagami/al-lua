@@ -45,6 +45,8 @@ function var_0_0.Load(arg_6_0, arg_6_1)
 
 		if arg_6_0.triggerWhenLoaded then
 			arg_6_0:TriggerEventAtFirstTime()
+		else
+			arg_6_0:TriggerNextEventAuto()
 		end
 
 		arg_6_0:InitClickEvent()
@@ -219,342 +221,360 @@ function var_0_0.TriggerNextEventAuto(arg_23_0)
 	arg_23_0:RemoveTimer()
 
 	arg_23_0.timer = Timer.New(function()
-		local var_24_0 = arg_23_0:CollectIdleEvents(arg_23_0.lastChatEvent)
-
-		arg_23_0.lastChatEvent = var_24_0[math.ceil(math.random(#var_24_0))]
-
-		arg_23_0:_TriggerEvent(arg_23_0.lastChatEvent)
-		arg_23_0:OnTriggerEventAuto()
-		arg_23_0:RemoveTimer()
+		arg_23_0:OnTimerTriggerEvent()
 	end, 30, 1, true)
 
 	arg_23_0.timer:Start()
 end
 
-function var_0_0.OnStartChatting(arg_25_0)
-	arg_25_0.chatting = true
+function var_0_0.OnTimerTriggerEvent(arg_25_0)
+	if arg_25_0:OnEnableTimerEvent() then
+		local var_25_0 = arg_25_0:CollectIdleEvents(arg_25_0.lastChatEvent)
+
+		arg_25_0.lastChatEvent = var_25_0[math.ceil(math.random(#var_25_0))]
+
+		arg_25_0:_TriggerEvent(arg_25_0.lastChatEvent)
+		arg_25_0:OnTriggerEventAuto()
+		arg_25_0:RemoveTimer()
+	end
 end
 
-function var_0_0.OnEndChatting(arg_26_0)
-	arg_26_0.chatting = false
+function var_0_0.OnEnableTimerEvent(arg_26_0)
+	return true
 end
 
-function var_0_0.GetWordAndCv(arg_27_0, arg_27_1, arg_27_2)
-	local var_27_0, var_27_1, var_27_2, var_27_3, var_27_4, var_27_5 = ShipWordHelper.GetCvDataForShip(arg_27_0.ship, arg_27_2)
-
-	return var_27_0, var_27_1, var_27_2, var_27_3, var_27_4, var_27_5
+function var_0_0.OnStartChatting(arg_27_0)
+	arg_27_0.chatting = true
 end
 
-function var_0_0.DisplayWord(arg_28_0, arg_28_1)
-	arg_28_0:OnStartChatting()
+function var_0_0.OnEndChatting(arg_28_0)
+	arg_28_0.chatting = false
+end
 
-	local var_28_0, var_28_1, var_28_2, var_28_3, var_28_4, var_28_5 = arg_28_0:GetWordAndCv(arg_28_0.ship, arg_28_1)
+function var_0_0.GetWordAndCv(arg_29_0, arg_29_1, arg_29_2)
+	local var_29_0, var_29_1, var_29_2, var_29_3, var_29_4, var_29_5 = ShipWordHelper.GetCvDataForShip(arg_29_0.ship, arg_29_2)
 
-	if not var_28_2 or var_28_2 == nil or var_28_2 == "" or var_28_2 == "nil" then
-		arg_28_0:OnEndChatting()
+	return var_29_0, var_29_1, var_29_2, var_29_3, var_29_4, var_29_5
+end
+
+function var_0_0.DisplayWord(arg_30_0, arg_30_1)
+	arg_30_0:OnStartChatting()
+
+	local var_30_0, var_30_1, var_30_2, var_30_3, var_30_4, var_30_5 = arg_30_0:GetWordAndCv(arg_30_0.ship, arg_30_1)
+
+	if not var_30_2 or var_30_2 == nil or var_30_2 == "" or var_30_2 == "nil" then
+		arg_30_0:OnEndChatting()
 
 		return
 	end
 
-	arg_28_0:OnDisplayWorld(arg_28_1)
-	arg_28_0:emit(MainWordView.SET_CONTENT, arg_28_1, var_28_2)
-	arg_28_0:PlayCvAndAnimation(var_28_4, var_28_3, var_28_1)
+	arg_30_0:OnDisplayWorld(arg_30_1)
+	arg_30_0:emit(MainWordView.SET_CONTENT, arg_30_1, var_30_2)
+	arg_30_0:PlayCvAndAnimation(var_30_4, var_30_3, var_30_1)
 end
 
-function var_0_0.PlayCvAndAnimation(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
+function var_0_0.PlayCvAndAnimation(arg_31_0, arg_31_1, arg_31_2, arg_31_3)
 	if getProxy(ContextProxy):getContextByMediator(NewShipMediator) then
-		arg_29_0:OnEndChatting()
+		arg_31_0:OnEndChatting()
 
 		return
 	end
 
-	local var_29_0 = -1
+	local var_31_0 = -1
 
 	seriesAsync({
-		function(arg_30_0)
-			if not arg_29_3 or not not pg.NewStoryMgr.GetInstance():IsRunning() then
-				arg_30_0()
+		function(arg_32_0)
+			if not arg_31_3 or not not pg.NewStoryMgr.GetInstance():IsRunning() then
+				arg_32_0()
 
 				return
 			end
 
-			arg_29_0:PlayCV(arg_29_1, arg_29_2, arg_29_3, function(arg_31_0)
-				var_29_0 = arg_31_0
+			arg_31_0:PlayCV(arg_31_1, arg_31_2, arg_31_3, function(arg_33_0)
+				var_31_0 = arg_33_0
 
-				arg_30_0()
+				arg_32_0()
 			end)
 		end,
-		function(arg_32_0)
-			arg_29_0:StartChatAnimtion(var_29_0, arg_32_0)
+		function(arg_34_0)
+			arg_31_0:StartChatAnimtion(var_31_0, arg_34_0)
 		end
 	}, function()
-		arg_29_0:OnDisplayWordEnd()
+		arg_31_0:OnDisplayWordEnd()
 	end)
 end
 
-function var_0_0.OnDisplayWordEnd(arg_34_0)
-	arg_34_0:TriggerNextEventAuto()
+function var_0_0.OnDisplayWordEnd(arg_36_0)
+	arg_36_0:TriggerNextEventAuto()
 end
 
-function var_0_0.PlayCV(arg_35_0, arg_35_1, arg_35_2, arg_35_3, arg_35_4)
-	local var_35_0 = ShipWordHelper.RawGetCVKey(arg_35_0.ship.skinId)
-	local var_35_1 = pg.CriMgr.GetCVBankName(var_35_0)
+function var_0_0.PlayCV(arg_37_0, arg_37_1, arg_37_2, arg_37_3, arg_37_4)
+	local var_37_0 = ShipWordHelper.RawGetCVKey(arg_37_0.ship.skinId)
+	local var_37_1 = pg.CriMgr.GetCVBankName(var_37_0)
 
-	arg_35_0.cvLoader:Load(var_35_1, arg_35_3, 0, arg_35_4)
+	arg_37_0.cvLoader:Load(var_37_1, arg_37_3, 0, arg_37_4)
 end
 
-function var_0_0.StartChatAnimtion(arg_36_0, arg_36_1, arg_36_2)
-	local var_36_0 = 0.3
-	local var_36_1 = arg_36_1 > 0 and arg_36_1 or 3
+function var_0_0.StartChatAnimtion(arg_38_0, arg_38_1, arg_38_2)
+	local var_38_0 = 0.3
+	local var_38_1 = arg_38_1 > 0 and arg_38_1 or 3
 
-	arg_36_0:emit(MainWordView.START_ANIMATION, var_36_0, var_36_1)
-	arg_36_0:AddCharTimer(function()
-		if arg_36_0:IsUnload() then
+	arg_38_0:emit(MainWordView.START_ANIMATION, var_38_0, var_38_1)
+	arg_38_0:AddCharTimer(function()
+		if arg_38_0:IsUnload() then
 			return
 		end
 
-		arg_36_2()
-	end, var_36_0 * 3 + var_36_1)
+		arg_38_2()
+	end, var_38_0 * 3 + var_38_1)
 end
 
-function var_0_0.AddCharTimer(arg_38_0, arg_38_1, arg_38_2)
-	arg_38_0:RemoveChatTimer()
+function var_0_0.AddCharTimer(arg_40_0, arg_40_1, arg_40_2)
+	arg_40_0:RemoveChatTimer()
 
-	arg_38_0.chatTimer = Timer.New(arg_38_1, arg_38_2, 1)
+	arg_40_0.chatTimer = Timer.New(arg_40_1, arg_40_2, 1)
 
-	arg_38_0.chatTimer:Start()
+	arg_40_0.chatTimer:Start()
 end
 
-function var_0_0.RemoveChatTimer(arg_39_0)
-	if arg_39_0.chatTimer then
-		arg_39_0.chatTimer:Stop()
+function var_0_0.RemoveChatTimer(arg_41_0)
+	if arg_41_0.chatTimer then
+		arg_41_0.chatTimer:Stop()
 
-		arg_39_0.chatTimer = nil
+		arg_41_0.chatTimer = nil
 	end
 end
 
-function var_0_0.StopChatAnimtion(arg_40_0)
-	arg_40_0:emit(MainWordView.STOP_ANIMATION)
-	arg_40_0:OnEndChatting()
+function var_0_0.StopChatAnimtion(arg_42_0)
+	arg_42_0:emit(MainWordView.STOP_ANIMATION)
+	arg_42_0:OnEndChatting()
 end
 
-function var_0_0.OnStopVoice(arg_41_0)
-	arg_41_0.cvLoader:Stop()
+function var_0_0.OnStopVoice(arg_43_0)
+	arg_43_0.cvLoader:Stop()
 end
 
-function var_0_0.CollectIdleEvents(arg_42_0, arg_42_1)
-	local var_42_0 = {}
+function var_0_0.CollectIdleEvents(arg_44_0, arg_44_1)
+	local var_44_0 = {}
 
-	if getProxy(EventProxy):hasFinishState() and arg_42_1 ~= "event_complete" then
-		table.insert(var_42_0, "event_complete")
+	if getProxy(EventProxy):hasFinishState() and arg_44_1 ~= "event_complete" then
+		table.insert(var_44_0, "event_complete")
 	else
-		if getProxy(TaskProxy):getCanReceiveCount() > 0 and arg_42_1 ~= "mission_complete" then
-			table.insert(var_42_0, "mission_complete")
+		if getProxy(TaskProxy):getCanReceiveCount() > 0 and arg_44_1 ~= "mission_complete" then
+			table.insert(var_44_0, "mission_complete")
 		end
 
-		if getProxy(MailProxy):GetUnreadCount() > 0 and arg_42_1 ~= "mail" then
-			table.insert(var_42_0, "mail")
+		if getProxy(MailProxy):GetUnreadCount() > 0 and arg_44_1 ~= "mail" then
+			table.insert(var_44_0, "mail")
 		end
 
-		if #var_42_0 == 0 then
-			local var_42_1 = arg_42_0.ship:getCVIntimacy()
+		if #var_44_0 == 0 then
+			local var_44_1 = arg_44_0.ship:getCVIntimacy()
 
-			var_42_0 = var_0_5.filterAssistantEvents(Clone(var_0_5.IdleEvents), arg_42_0.ship.skinId, var_42_1)
+			var_44_0 = var_0_5.filterAssistantEvents(Clone(var_0_5.IdleEvents), arg_44_0.ship.skinId, var_44_1)
 
-			if getProxy(TaskProxy):getNotFinishCount() and getProxy(TaskProxy):getNotFinishCount() > 0 and arg_42_1 ~= "mission" then
-				table.insert(var_42_0, "mission")
+			if getProxy(TaskProxy):getNotFinishCount() and getProxy(TaskProxy):getNotFinishCount() > 0 and arg_44_1 ~= "mission" then
+				table.insert(var_44_0, "mission")
 			end
 		end
 	end
 
-	return var_42_0
+	return var_44_0
 end
 
-function var_0_0.CollectTouchEvents(arg_43_0)
-	local var_43_0 = arg_43_0.ship:getCVIntimacy()
+function var_0_0.CollectTouchEvents(arg_45_0)
+	local var_45_0 = arg_45_0.ship:getCVIntimacy()
 
-	return (var_0_5.filterAssistantEvents(var_0_5.PaintingTouchEvents, arg_43_0.ship.skinId, var_43_0))
+	return (var_0_5.filterAssistantEvents(var_0_5.PaintingTouchEvents, arg_45_0.ship.skinId, var_45_0))
 end
 
-function var_0_0.GetTouchEvent(arg_44_0, arg_44_1)
-	return (var_0_5.filterAssistantEvents(var_0_5.getAssistantTouchEvents(arg_44_1, arg_44_0.ship.skinId), arg_44_0.ship.skinId, 0))
+function var_0_0.GetTouchEvent(arg_46_0, arg_46_1)
+	return (var_0_5.filterAssistantEvents(var_0_5.getAssistantTouchEvents(arg_46_1, arg_46_0.ship.skinId), arg_46_0.ship.skinId, 0))
 end
 
-function var_0_0.GetIdleEvents(arg_45_0)
-	return (var_0_5.filterAssistantEvents(var_0_5.IdleEvents, arg_45_0.ship.skinId, 0))
+function var_0_0.GetIdleEvents(arg_47_0)
+	return (var_0_5.filterAssistantEvents(var_0_5.IdleEvents, arg_47_0.ship.skinId, 0))
 end
 
-function var_0_0.GetEventConfig(arg_46_0, arg_46_1)
-	return var_0_5.assistantEvents[arg_46_1]
+function var_0_0.GetEventConfig(arg_48_0, arg_48_1)
+	return var_0_5.assistantEvents[arg_48_1]
 end
 
-function var_0_0.GetSpecialTouchEvent(arg_47_0, arg_47_1)
-	return var_0_5.getPaintingTouchEvents(arg_47_1)
+function var_0_0.GetSpecialTouchEvent(arg_49_0, arg_49_1)
+	return var_0_5.getPaintingTouchEvents(arg_49_1)
 end
 
-function var_0_0.RemoveTimer(arg_48_0)
-	if arg_48_0.timer then
-		arg_48_0.timer:Stop()
+function var_0_0.RemoveTimer(arg_50_0)
+	if arg_50_0.timer then
+		arg_50_0.timer:Stop()
 
-		arg_48_0.timer = nil
+		arg_50_0.timer = nil
 	end
 end
 
-function var_0_0.IsExited(arg_49_0)
-	return arg_49_0.isExited
+function var_0_0.IsExited(arg_51_0)
+	return arg_51_0.isExited
 end
 
-function var_0_0.Fold(arg_50_0, arg_50_1, arg_50_2)
-	arg_50_0.isFoldState = arg_50_1
-
-	arg_50_0:RemoveMoveTimer()
-	arg_50_0:OnFold(arg_50_1)
-end
-
-function var_0_0.RemoveMoveTimer(arg_51_0)
-	if arg_51_0.moveTimer then
-		arg_51_0.moveTimer:Stop()
-
-		arg_51_0.moveTimer = nil
-	end
-end
-
-function var_0_0.EnableOrDisableMove(arg_52_0, arg_52_1)
-	arg_52_0.isDragAndZoomState = arg_52_1
+function var_0_0.Fold(arg_52_0, arg_52_1, arg_52_2)
+	arg_52_0.isFoldState = arg_52_1
 
 	arg_52_0:RemoveMoveTimer()
-
-	if arg_52_1 then
-		arg_52_0:StopChatAnimtion()
-		arg_52_0:RemoveTimer()
-		arg_52_0.cvLoader:Stop()
-	else
-		arg_52_0:TriggerNextEventAuto()
-	end
-
-	arg_52_0:OnEnableOrDisableDragAndZoom(arg_52_1)
+	arg_52_0:OnFold(arg_52_1)
 end
 
-function var_0_0.GetOffset(arg_53_0)
+function var_0_0.RemoveMoveTimer(arg_53_0)
+	if arg_53_0.moveTimer then
+		arg_53_0.moveTimer:Stop()
+
+		arg_53_0.moveTimer = nil
+	end
+end
+
+function var_0_0.EnableOrDisableMove(arg_54_0, arg_54_1)
+	arg_54_0.isDragAndZoomState = arg_54_1
+
+	arg_54_0:RemoveMoveTimer()
+
+	if arg_54_1 then
+		arg_54_0:StopChatAnimtion()
+		arg_54_0:RemoveTimer()
+		arg_54_0.cvLoader:Stop()
+	else
+		arg_54_0:TriggerNextEventAuto()
+	end
+
+	arg_54_0:OnEnableOrDisableDragAndZoom(arg_54_1)
+end
+
+function var_0_0.GetOffset(arg_55_0)
 	return 0
 end
 
-function var_0_0.IslimitYPos(arg_54_0)
+function var_0_0.IslimitYPos(arg_56_0)
 	return false
 end
 
-function var_0_0.PauseForSilent(arg_55_0)
-	if arg_55_0:IsLoaded() then
-		arg_55_0:_Pause()
+function var_0_0.PauseForSilent(arg_57_0)
+	if SettingsMainScenePanel.IsEnableFlagShipInteraction() then
+		return
+	end
+
+	if arg_57_0:IsLoaded() then
+		arg_57_0:_Pause()
 	end
 end
 
-function var_0_0._Pause(arg_56_0)
-	arg_56_0.isPuase = true
+function var_0_0._Pause(arg_58_0)
+	arg_58_0.isPuase = true
 
-	arg_56_0:RemoveMoveTimer()
-	arg_56_0:StopChatAnimtion()
-	arg_56_0:RemoveChatTimer()
-	arg_56_0:RemoveTimer()
-	arg_56_0.cvLoader:Stop()
+	arg_58_0:RemoveMoveTimer()
+	arg_58_0:StopChatAnimtion()
+	arg_58_0:RemoveChatTimer()
+	arg_58_0:RemoveTimer()
+	arg_58_0.cvLoader:Stop()
 end
 
-function var_0_0.Puase(arg_57_0)
-	arg_57_0:_Pause()
-	arg_57_0:OnPuase()
+function var_0_0.Puase(arg_59_0)
+	arg_59_0:_Pause()
+	arg_59_0:OnPuase()
 end
 
-function var_0_0.ResumeForSilent(arg_58_0)
-	if arg_58_0:IsLoaded() then
-		arg_58_0:_Resume()
+function var_0_0.ResumeForSilent(arg_60_0)
+	if SettingsMainScenePanel.IsEnableFlagShipInteraction() then
+		return
+	end
+
+	if arg_60_0:IsLoaded() then
+		arg_60_0:_Resume()
 	end
 end
 
-function var_0_0._Resume(arg_59_0)
-	arg_59_0.isPuase = false
+function var_0_0._Resume(arg_61_0)
+	arg_61_0.isPuase = false
 
-	arg_59_0:TriggerNextEventAuto()
+	arg_61_0:TriggerNextEventAuto()
 end
 
-function var_0_0.Resume(arg_60_0)
-	arg_60_0:_Resume()
-	arg_60_0:OnResume()
+function var_0_0.Resume(arg_62_0)
+	arg_62_0:_Resume()
+	arg_62_0:OnResume()
 end
 
-function var_0_0.updateShip(arg_61_0, arg_61_1)
-	if arg_61_1 and arg_61_0.ship.id == arg_61_1.id then
-		arg_61_0.ship = arg_61_1
+function var_0_0.updateShip(arg_63_0, arg_63_1)
+	if arg_63_1 and arg_63_0.ship.id == arg_63_1.id then
+		arg_63_0.ship = arg_63_1
 	end
 
-	arg_61_0:OnUpdateShip(arg_61_1)
+	arg_63_0:OnUpdateShip(arg_63_1)
 end
 
-function var_0_0.OnUpdateShip(arg_62_0, arg_62_1)
+function var_0_0.OnUpdateShip(arg_64_0, arg_64_1)
 	return
 end
 
-function var_0_0.Dispose(arg_63_0)
-	arg_63_0:disposeEvent()
+function var_0_0.Dispose(arg_65_0)
+	arg_65_0:disposeEvent()
 
-	arg_63_0.isExited = true
+	arg_65_0.isExited = true
 
-	pg.DelegateInfo.Dispose(arg_63_0)
+	pg.DelegateInfo.Dispose(arg_65_0)
 
-	if arg_63_0.state == var_0_3 then
-		arg_63_0:UnLoad()
+	if arg_65_0.state == var_0_3 then
+		arg_65_0:UnLoad()
 	end
 
-	arg_63_0.cvLoader:Dispose()
+	arg_65_0.cvLoader:Dispose()
 
-	arg_63_0.cvLoader = nil
-	arg_63_0.triggerWhenLoaded = false
+	arg_65_0.cvLoader = nil
+	arg_65_0.triggerWhenLoaded = false
 
-	arg_63_0:RemoveTimer()
-	arg_63_0:RemoveMoveTimer()
-	arg_63_0:RemoveChatTimer()
+	arg_65_0:RemoveTimer()
+	arg_65_0:RemoveMoveTimer()
+	arg_65_0:RemoveChatTimer()
 end
 
-function var_0_0.OnLoad(arg_64_0, arg_64_1)
-	arg_64_1()
+function var_0_0.OnLoad(arg_66_0, arg_66_1)
+	arg_66_1()
 end
 
-function var_0_0.OnUnload(arg_65_0)
+function var_0_0.OnUnload(arg_67_0)
 	return
 end
 
-function var_0_0.OnClick(arg_66_0)
+function var_0_0.OnClick(arg_68_0)
 	return
 end
 
-function var_0_0.OnLongPress(arg_67_0)
+function var_0_0.OnLongPress(arg_69_0)
 	return
 end
 
-function var_0_0.OnTriggerEvent(arg_68_0)
+function var_0_0.OnTriggerEvent(arg_70_0)
 	return
 end
 
-function var_0_0.OnTriggerEventAuto(arg_69_0)
+function var_0_0.OnTriggerEventAuto(arg_71_0)
 	return
 end
 
-function var_0_0.OnDisplayWorld(arg_70_0, arg_70_1)
+function var_0_0.OnDisplayWorld(arg_72_0, arg_72_1)
 	return
 end
 
-function var_0_0.OnFold(arg_71_0, arg_71_1)
+function var_0_0.OnFold(arg_73_0, arg_73_1)
 	return
 end
 
-function var_0_0.OnEnableOrDisableDragAndZoom(arg_72_0, arg_72_1)
+function var_0_0.OnEnableOrDisableDragAndZoom(arg_74_0, arg_74_1)
 	return
 end
 
-function var_0_0.OnPuase(arg_73_0)
+function var_0_0.OnPuase(arg_75_0)
 	return
 end
 
-function var_0_0.OnResume(arg_74_0)
+function var_0_0.OnResume(arg_76_0)
 	return
 end
 

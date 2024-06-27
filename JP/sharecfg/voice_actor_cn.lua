@@ -1548,6 +1548,10 @@ pg.voice_actor_CN = {
 		code = 400,
 		actor_name = "Marika"
 	},
+	[401] = {
+		code = 401,
+		actor_name = "西田望見"
+	},
 	[402] = {
 		code = 402,
 		actor_name = "岩井映美里"
@@ -1579,5 +1583,9 @@ pg.voice_actor_CN = {
 	[409] = {
 		code = 409,
 		actor_name = "栗坂南美"
+	},
+	[415] = {
+		code = 415,
+		actor_name = "鷲見友美ジェナ"
 	}
 }

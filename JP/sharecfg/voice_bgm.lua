@@ -163,10 +163,10 @@ pg.voice_bgm = {
 		bgm = "idol-BlueSpirit-inst"
 	},
 	NewShopsScene = {
-		default_bgm = "story-startravel",
+		default_bgm = "theme-highseasfleet",
 		special_bgm = "",
 		time = "",
-		bgm = "story-startravel"
+		bgm = "theme-highseasfleet"
 	},
 	SkinShopScene = {
 		default_bgm = "main",
@@ -1612,5 +1612,53 @@ pg.voice_bgm = {
 		special_bgm = "",
 		time = "",
 		bgm = "story-musicanniversary-gorgeous"
+	},
+	GonghaiLoginPage = {
+		default_bgm = "battle-highseasfleet-reborn",
+		special_bgm = "",
+		time = "",
+		bgm = "battle-highseasfleet-reborn"
+	},
+	GongHaiMainPage = {
+		default_bgm = "battle-highseasfleet-reborn",
+		special_bgm = "",
+		time = "",
+		bgm = "battle-highseasfleet-reborn"
+	},
+	GongHaiPtRePage = {
+		default_bgm = "theme-highseasfleet",
+		special_bgm = "",
+		time = "",
+		bgm = "theme-highseasfleet"
+	},
+	DexiV4FrameReRePage = {
+		default_bgm = "theme-frederick",
+		special_bgm = "",
+		time = "",
+		bgm = "theme-frederick"
+	},
+	ChildishnessMainPage = {
+		default_bgm = "story-richang-7",
+		special_bgm = "",
+		time = "",
+		bgm = "story-richang-7"
+	},
+	KindergartenScene = {
+		default_bgm = "story-richang-9",
+		special_bgm = "",
+		time = "",
+		bgm = "story-richang-9"
+	},
+	TongXinSpringLayer = {
+		default_bgm = "story-richang-10",
+		special_bgm = "",
+		time = "",
+		bgm = "story-richang-10"
+	},
+	BossRushAlvitScene = {
+		default_bgm = "story-richang-12",
+		special_bgm = "story-richang-11",
+		time = "",
+		bgm = "story-richang-12"
 	}
 }

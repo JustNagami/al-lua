@@ -22,7 +22,7 @@ end
 function var_0_0.didEnter(arg_3_0)
 	arg_3_0:doRepairProgressPanelAni()
 	arg_3_0:updateAttrListPanel()
-	arg_3_0:updateRepairBtn(true)
+	arg_3_0:updateRepairBtn()
 	arg_3_0:updateDetailPanel()
 	arg_3_0:TryPlayGuide()
 end

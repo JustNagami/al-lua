@@ -20,6 +20,33 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 		arg_1_0.title = var_1_0[1]
 		arg_1_0.pageTitle = var_1_0[1]
 	end
+
+	local var_1_1 = string.match(arg_1_0.titleImage, "<config.*/>")
+
+	arg_1_0.link = var_1_1 and string.match(var_1_1, "link%s*=%s*([^%s]+)") or nil
+	arg_1_0.paramType = var_1_1 and tonumber(string.match(var_1_1, "type%s*=%s*(%d+)")) or nil
+
+	if arg_1_0.paramType then
+		if arg_1_0.paramType == 1 then
+			arg_1_0.param = string.match(var_1_1, "param%s*=%s*'(.*)'")
+		elseif arg_1_0.paramType == 2 then
+			arg_1_0.param = string.match(var_1_1, "param%s*=%s*'(.*)'")
+		elseif arg_1_0.paramType == 3 then
+			arg_1_0.param = string.match(var_1_1, "param%s*=%s*(%d+)")
+			arg_1_0.param = arg_1_0.param and tonumber(arg_1_0.param) or arg_1_0.param
+		elseif arg_1_0.paramType == 4 then
+			arg_1_0.param = string.match(var_1_1, "param%s*=%s*(%d+)")
+			arg_1_0.param = arg_1_0.param and tonumber(arg_1_0.param) or arg_1_0.param
+		end
+	end
+
+	if var_1_1 then
+		local var_1_2, var_1_3 = string.find(arg_1_0.titleImage, var_1_1, 1, true)
+
+		arg_1_0.titleImage = string.sub(arg_1_0.titleImage, var_1_3 + 1, -1)
+	end
+
+	arg_1_0.code = arg_1_0:prefKey()
 end
 
 function var_0_0.prefKey(arg_2_0)

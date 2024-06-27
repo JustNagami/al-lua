@@ -426,10 +426,10 @@ pg.item_data_frame = {
 	[328] = {
 		time_limit_type = 0,
 		name = "光追う星穹",
-		gain_by = "星海逐光",
+		gain_by = "光追う星の海",
 		id = 328,
 		time_second = 0,
-		desc = "イベントで入手可能",
+		desc = "<size=23><color=#ffffff>「事象を覆う天穹、世界を再現する因果。禁絶を越えたその暁には、世界に永遠の真実が刻印される」</color>「光追う星の海」に参加した指揮官に贈る</size>",
 		scene = {}
 	},
 	[329] = {
@@ -444,10 +444,10 @@ pg.item_data_frame = {
 	[330] = {
 		time_limit_type = 0,
 		name = "幻夢の殉守者",
-		gain_by = "绽放于辉光之城 ",
+		gain_by = "赫輝のマルティリウム",
 		id = 330,
 		time_second = 0,
-		desc = "イベントで入手可能",
+		desc = "<color=#ffffff>「夢幻の中にいようと、守ることを選びつづける」</color>\n「赫輝のマルティリウム」に参加した指揮官に贈る",
 		scene = {}
 	},
 	[401] = {

@@ -12,15 +12,31 @@ function var_0_0.Execute(arg_1_0, arg_1_1)
 		end
 	end
 
+	arg_1_0:FixMainSceneSettings()
 	PlayerPrefs.Save()
 	arg_1_0:FixPlayerPrefsKey()
 	arg_1_1()
 end
 
-function var_0_0.FixPlayerPrefsKey(arg_2_0)
-	local var_2_0 = getProxy(PlayerProxy):getRawData()
+function var_0_0.FixMainSceneSettings(arg_2_0)
+	local var_2_0 = {
+		SettingsMainScenePanel.STANDBY_MODE_KEY,
+		SettingsMainScenePanel.FLAGSHIP_INTERACTION_KEY
+	}
 
-	USAGE_NEW_MAINUI = "USAGE_NEW_MAINUI" .. var_2_0.id
+	for iter_2_0, iter_2_1 in ipairs(var_2_0) do
+		local var_2_1 = iter_2_1 .. "_" .. getProxy(PlayerProxy):getRawData().id
+
+		if not PlayerPrefs.HasKey(var_2_1) then
+			PlayerPrefs.SetInt(var_2_1, 1)
+		end
+	end
+end
+
+function var_0_0.FixPlayerPrefsKey(arg_3_0)
+	local var_3_0 = getProxy(PlayerProxy):getRawData()
+
+	USAGE_NEW_MAINUI = "USAGE_NEW_MAINUI" .. var_3_0.id
 end
 
 return var_0_0

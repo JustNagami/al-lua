@@ -203,7 +203,7 @@
 			}
 		},
 		{
-			expression = 5,
+			expression = 1,
 			side = 2,
 			bgName = "bg_port_chongdong",
 			hidePaintObj = true,
@@ -238,7 +238,7 @@
 			}
 		},
 		{
-			expression = 5,
+			expression = 1,
 			side = 2,
 			bgName = "bg_port_chongdong",
 			hidePaintObj = true,
@@ -496,7 +496,7 @@
 			}
 		},
 		{
-			expression = 5,
+			expression = 1,
 			side = 2,
 			bgName = "bg_port_chongdong",
 			hidePaintObj = true,

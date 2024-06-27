@@ -8243,7 +8243,7 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "アビリティPtが不足しています"
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "限定建造を累計200回行うと「アルザス」が確定で入手可能！（最大4回まで）"
+	tip = "「アルヴィト」「Z47」など出現率アップ！"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
 	tip = "「フォッシュ」常設実装！"
@@ -13430,7 +13430,7 @@ _G.pg.base.gametip.guild_office_tip = {
 ・大艦隊司令/副司令は、大艦隊資金を消費し「貢献」にて「大艦隊補給」を購入することができます。
 ・「大艦隊補給」が購入されますと、購入日からの14日間、全ての大艦隊メンバーは毎日「大艦隊補給」にて資源を受け取ることができます。
 ・また、「大艦隊補給」の受取可能回数は最大3回（3日分）までストックすることができます。
-・新たに大艦隊に参加したメンバーは参加初日、大艦隊補給を購入酒るうことが出来ません。]]
+・新たに大艦隊に参加したメンバーは参加初日、大艦隊補給を購入することができません。]]
 		}
 	}
 }
@@ -24306,4 +24306,42 @@ _G.pg.base.gametip.unique_ship_tip2 = {
 }
 _G.pg.base.gametip.lock_new_ship = {
 	tip = "新登録艦船自動ロック"
+}
+_G.pg.base.gametip.main_scene_settings = {
+	tip = "待機画面設定"
+}
+_G.pg.base.gametip.settings_enable_standby_mode = {
+	tip = "待機画面を有効にする"
+}
+_G.pg.base.gametip.settings_time_system = {
+	tip = "待機画面時刻表示"
+}
+_G.pg.base.gametip.settings_flagship_interaction = {
+	tip = "待機画面セリフ再生"
+}
+_G.pg.base.gametip.settings_enter_standby_mode_time = {
+	tip = "待機画面自動移行"
+}
+_G.pg.base.gametip["202406_wenquan_unlock"] = {
+	tip = "リトルスター増築チケットを$1消費し、施設を増築しますか？"
+}
+_G.pg.base.gametip["202406_wenquan_unlock_tip2"] = {
+	tip = "必要な資源が不足しています"
+}
+_G.pg.base.gametip["202406_main_help"] = {
+	tip = {
+		{
+			info = [[
+遊び方：
+ <color=#92fc63>6.27-7.11メンテ</color>まで、期間限定イベント「リトル学園へようこそ」が開催されます！
+ 限定任務をこなし、艦隊を編成し限定ステージをクリアすることで、「カラフルらくがき」を集めて報酬を手に入れましょう！
+
+  ①画面左下のボタンで「ストーリー」と「特別戦闘」画面を切り替えることができます。
+ ②「特別戦闘」では、艦隊を編成しSPステージに挑戦でき、収集Ptアイテム「カラフルらくがき」を入手できます
+ 　「カラフルらくがき」は累計入手数報酬でSR艦船<color=#92fc63>「U-31」</color>、<color=#92fc63>「533mm四連装磁気魚雷改」</color>などを入手できます
+ ③「限定任務」では、イベント開催期間に登場するイベント任務を確認し報酬を受け取ることができます。
+ ④「ストーリー」では特別ストーリーを読むことができます。ストーリーを全部読むと、記念装備外装を入手できます
+ ⑤「遊び場」に艦船を配置すると、配置された艦船のコンディション回復速度を上げることができます。イベントで入手できる「リトルスター増築チケット」を消費すると、配置枠を増やすことができます]]
+		}
+	}
 }
