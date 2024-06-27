@@ -215,7 +215,7 @@ function var_0_0.GeneralPackage(arg_12_0, arg_12_1)
 			local var_12_10 = GuildAssaultFleet.GetUserId(var_12_8.id)
 			local var_12_11 = math.floor(var_12_8.bp)
 			local var_12_12 = math.floor(var_12_8.output)
-			local var_12_13 = math.floor(var_12_8.damage)
+			local var_12_13 = math.max(0, math.floor(var_12_8.damage))
 			local var_12_14 = math.floor(var_12_8.maxDamageOnce)
 			local var_12_15 = math.floor(var_12_8.gearScore)
 			local var_12_16 = var_12_10 ~= var_12_7 and var_12_2 or var_12_1

@@ -193,7 +193,9 @@ function var_0_0.SetUpSilentChecker(arg_27_0)
 	arg_27_0.defaultSleepTimeout = Screen.sleepTimeout
 	Screen.sleepTimeout = var_27_0
 
-	arg_27_0.silentChecker:SetUp()
+	if SettingsMainScenePanel.IsEnableStandbyMode() then
+		arg_27_0.silentChecker:SetUp()
+	end
 end
 
 function var_0_0.RevertSleepTimeout(arg_28_0)

@@ -42,6 +42,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = 0
 	arg_1_0.placeholderType = 0
 	arg_1_0.defaultTb = arg_1_1.defaultTb
+	arg_1_0.optionIndex = 0
 end
 
 function var_0_0.ShouldShake(arg_2_0)
@@ -474,44 +475,52 @@ function var_0_0.IsImport(arg_59_0)
 	return arg_59_0.important
 end
 
-function var_0_0.GetOptions(arg_60_0)
-	return _.map(arg_60_0.options or {}, function(arg_61_0)
-		local var_61_0 = arg_61_0.content
+function var_0_0.SetOptionIndex(arg_60_0, arg_60_1)
+	arg_60_0.optionIndex = arg_60_1
+end
 
-		if arg_60_0:ShouldReplacePlayer() then
-			var_61_0 = arg_60_0:ReplacePlayerName(var_61_0)
+function var_0_0.GetOptionIndex(arg_61_0)
+	return arg_61_0.optionIndex
+end
+
+function var_0_0.GetOptions(arg_62_0)
+	return _.map(arg_62_0.options or {}, function(arg_63_0)
+		local var_63_0 = arg_63_0.content
+
+		if arg_62_0:ShouldReplacePlayer() then
+			var_63_0 = arg_62_0:ReplacePlayerName(var_63_0)
 		end
 
-		if arg_60_0:ShouldReplaceTb() then
-			var_61_0 = arg_60_0:ReplaceTbName(var_61_0)
+		if arg_62_0:ShouldReplaceTb() then
+			var_63_0 = arg_62_0:ReplaceTbName(var_63_0)
 		end
 
-		local var_61_1 = HXSet.hxLan(var_61_0)
+		local var_63_1 = HXSet.hxLan(var_63_0)
 
 		return {
-			var_61_1,
-			arg_61_0.flag
+			var_63_1,
+			arg_63_0.flag
 		}
 	end)
 end
 
-function var_0_0.ShouldJumpToNextScript(arg_62_0)
-	return arg_62_0.nextScriptName ~= nil
+function var_0_0.ShouldJumpToNextScript(arg_64_0)
+	return arg_64_0.nextScriptName ~= nil
 end
 
-function var_0_0.GetNextScriptName(arg_63_0)
-	return arg_63_0.nextScriptName
+function var_0_0.GetNextScriptName(arg_65_0)
+	return arg_65_0.nextScriptName
 end
 
-function var_0_0.ShouldDelayEvent(arg_64_0)
-	return arg_64_0.eventDelay and arg_64_0.eventDelay > 0
+function var_0_0.ShouldDelayEvent(arg_66_0)
+	return arg_66_0.eventDelay and arg_66_0.eventDelay > 0
 end
 
-function var_0_0.GetEventDelayTime(arg_65_0)
-	return arg_65_0.eventDelay
+function var_0_0.GetEventDelayTime(arg_67_0)
+	return arg_67_0.eventDelay
 end
 
-function var_0_0.GetUsingPaintingNames(arg_66_0)
+function var_0_0.GetUsingPaintingNames(arg_68_0)
 	return {}
 end
 

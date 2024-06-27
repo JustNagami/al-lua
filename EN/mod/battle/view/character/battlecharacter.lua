@@ -1136,16 +1136,28 @@ function var_0_6.AddOrbit(arg_85_0, arg_85_1, arg_85_2)
 	local var_85_2 = arg_85_2.orbit_hidden_action
 
 	arg_85_1.transform.localPosition = Vector3(var_85_1[1], var_85_1[2], var_85_1[3])
-	SpineAnim.AddFollower(var_85_0, arg_85_0._tf, arg_85_1.transform):GetComponent("Spine.Unity.BoneFollower").followBoneRotation = false
+
+	local var_85_3 = SpineAnim.AddFollower(var_85_0, arg_85_0._tf, arg_85_1.transform):GetComponent("Spine.Unity.BoneFollower")
+
+	if arg_85_2.orbit_rotate then
+		var_85_3.followBoneRotation = true
+
+		local var_85_4 = arg_85_1.transform.localEulerAngles
+
+		arg_85_1.transform.localEulerAngles = Vector3(var_85_4.x, var_85_4.y, var_85_4.z - 90)
+	else
+		var_85_3.followBoneRotation = false
+	end
+
 	arg_85_0._orbitList[arg_85_1] = {
 		hiddenAction = var_85_2,
 		boundBone = var_85_0
 	}
 
-	local var_85_3 = arg_85_2.orbit_combat_anima_change.default
+	local var_85_5 = arg_85_2.orbit_combat_anima_change.default
 
-	if var_85_3 then
-		arg_85_0:changeOrbitAction(arg_85_1, var_85_3)
+	if var_85_5 then
+		arg_85_0:changeOrbitAction(arg_85_1, var_85_5)
 
 		for iter_85_0, iter_85_1 in ipairs(arg_85_2.orbit_combat_anima_change.change) do
 			if iter_85_1.condition.type == 1 then

@@ -244959,3 +244959,1775 @@ _G.pg.base.task_data_template[500017] = {
 		}
 	}
 }
+_G.pg.base.task_data_template[20224] = {
+	name = "『公海舰队复刻』-日常建造",
+	guild_coin_award = 0,
+	award = 902525,
+	type = 36,
+	desc = "Build 3 ships.",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20224,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			59587,
+			300
+		}
+	}
+}
+_G.pg.base.task_data_template[20225] = {
+	name = "『公海舰队复刻』-日常出击",
+	guild_coin_award = 0,
+	award = 902526,
+	type = 36,
+	desc = "Sortie and obtain 15 victories.",
+	count_inherit = 0,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20225,
+	target_num = 15,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			59587,
+			300
+		},
+		{
+			2,
+			59590,
+			1
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[20226] = {
+	name = "『公海舰队复刻』-日常困难本",
+	guild_coin_award = 0,
+	award = 902527,
+	type = 36,
+	desc = "Sortie and clear 1 non-event Hard Mode Stage.",
+	count_inherit = 0,
+	sub_type = 182,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "10101",
+	scene = "",
+	id = 20226,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			59587,
+			150
+		}
+	}
+}
+_G.pg.base.task_data_template[20227] = {
+	name = "『公海舰队复刻』-日常活动关卡",
+	guild_coin_award = 0,
+	award = 902528,
+	type = 36,
+	desc = "Clear any event stage 1 time.",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20227,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1640001,
+		1640002,
+		1640003,
+		1640004,
+		1640005,
+		1640006,
+		1640021,
+		1640022,
+		1640023,
+		1640024,
+		1640025,
+		1640026,
+		1640041,
+		1640051
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			59587,
+			300
+		},
+		{
+			2,
+			54006,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5375
+		}
+	}
+}
+_G.pg.base.task_data_template[20228] = {
+	name = "『公海舰队复刻』通关A1/C1",
+	guild_coin_award = 0,
+	award = 902529,
+	type = 6,
+	desc = "Clear A1 or C1 1 time.",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20228,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1640001,
+		1640021
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			2,
+			59590,
+			1
+		},
+		{
+			2,
+			59587,
+			200
+		},
+		{
+			1,
+			1,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5374
+		}
+	}
+}
+_G.pg.base.task_data_template[20229] = {
+	name = "『公海舰队复刻』通关A2/C2",
+	guild_coin_award = 0,
+	award = 902530,
+	type = 6,
+	desc = "Clear A2 or C2 1 time.",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20229,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1640002,
+		1640022
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			2,
+			59590,
+			1
+		},
+		{
+			2,
+			59587,
+			400
+		},
+		{
+			1,
+			1,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5374
+		}
+	}
+}
+_G.pg.base.task_data_template[20230] = {
+	name = "『公海舰队复刻』通关A3/C3",
+	guild_coin_award = 0,
+	award = 902531,
+	type = 6,
+	desc = "Clear A3 or C3 1 time.",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20230,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1640003,
+		1640023
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			2,
+			59590,
+			1
+		},
+		{
+			2,
+			59587,
+			600
+		},
+		{
+			1,
+			1,
+			1500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5374
+		}
+	}
+}
+_G.pg.base.task_data_template[20231] = {
+	name = "『公海舰队复刻』通关B1/D1",
+	guild_coin_award = 0,
+	award = 902532,
+	type = 6,
+	desc = "Clear B1 or D1 1 time.",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20231,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1640004,
+		1640024
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			2,
+			59590,
+			1
+		},
+		{
+			2,
+			59587,
+			400
+		},
+		{
+			1,
+			1,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5375
+		}
+	}
+}
+_G.pg.base.task_data_template[20232] = {
+	name = "『公海舰队复刻』通关B2/D2",
+	guild_coin_award = 0,
+	award = 902533,
+	type = 6,
+	desc = "Clear B2 or D2 1 time.",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20232,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1640005,
+		1640025
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			2,
+			59590,
+			1
+		},
+		{
+			2,
+			59587,
+			600
+		},
+		{
+			1,
+			1,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5375
+		}
+	}
+}
+_G.pg.base.task_data_template[20233] = {
+	name = "『公海舰队复刻』通关B3/D3",
+	guild_coin_award = 0,
+	award = 902534,
+	type = 6,
+	desc = "Clear B3 or D3 1 time.",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20233,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1640006,
+		1640026
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			2,
+			59590,
+			1
+		},
+		{
+			2,
+			59587,
+			800
+		},
+		{
+			1,
+			1,
+			1500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5375
+		}
+	}
+}
+_G.pg.base.task_data_template[20234] = {
+	name = "『公海舰队复刻』通关SP",
+	guild_coin_award = 0,
+	award = 902535,
+	type = 6,
+	desc = "Clear SP.",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1640041",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20234,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			2,
+			59590,
+			1
+		},
+		{
+			1,
+			1,
+			1500
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1640025,
+			chapterId = 1640041
+		}
+	}
+}
+_G.pg.base.task_data_template[20235] = {
+	name = "『公海舰队复刻』通关D3",
+	guild_coin_award = 0,
+	award = 902536,
+	type = 6,
+	desc = "Clear D3 Stage<color=#92fc63> (can only be obtained once) </color>",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1640026",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20235,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			5,
+			225,
+			1
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1640012,
+			chapterId = 1640026
+		}
+	}
+}
+_G.pg.base.task_data_template[20236] = {
+	name = "『公海舰队复刻』通关EX",
+	guild_coin_award = 0,
+	award = 902537,
+	type = 6,
+	desc = "Clear EX.",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1640051",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20236,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			15008,
+			500
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1640026,
+			chapterId = 1640051
+		}
+	}
+}
+_G.pg.base.task_data_template[20237] = {
+	name = "『公海舰队复刻』A1/C1的3星",
+	guild_coin_award = 0,
+	award = 902538,
+	type = 6,
+	desc = "Complete A1 or C1 with 3 stars.",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20238",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20237,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1640001,
+		1640021
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			2,
+			500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5374
+		}
+	}
+}
+_G.pg.base.task_data_template[20238] = {
+	name = "『公海舰队复刻』A2/C2的3星",
+	guild_coin_award = 0,
+	award = 902539,
+	type = 6,
+	desc = "Complete A2 or C2 with 3 stars.",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20239",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20238,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1640002,
+		1640022
+	},
+	open_need = {},
+	award_display = {
+		{
+			4,
+			100001,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5374
+		}
+	}
+}
+_G.pg.base.task_data_template[20239] = {
+	name = "『公海舰队复刻』A3/C3的3星",
+	guild_coin_award = 0,
+	award = 902540,
+	type = 6,
+	desc = "Complete A3 or C3 with 3 stars.",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20240",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20239,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1640003,
+		1640023
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			18013,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5374
+		}
+	}
+}
+_G.pg.base.task_data_template[20240] = {
+	name = "『公海舰队复刻』B1/D1的3星",
+	guild_coin_award = 0,
+	award = 902541,
+	type = 6,
+	desc = "Complete B1 or D1 with 3 stars.",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20241",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20240,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1640004,
+		1640024
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			2,
+			500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5375
+		}
+	}
+}
+_G.pg.base.task_data_template[20241] = {
+	name = "『公海舰队复刻』B2/D2的3星",
+	guild_coin_award = 0,
+	award = 902542,
+	type = 6,
+	desc = "Complete B2 or D2 with 3 stars.",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20242",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20241,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1640005,
+		1640025
+	},
+	open_need = {},
+	award_display = {
+		{
+			4,
+			100011,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5375
+		}
+	}
+}
+_G.pg.base.task_data_template[20242] = {
+	name = "『公海舰队复刻』B3/D3的3星",
+	guild_coin_award = 0,
+	award = 902543,
+	type = 6,
+	desc = "Complete B3 or D3 with 3 stars.",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20242,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1640006,
+		1640026
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			18013,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5375
+		}
+	}
+}
+_G.pg.base.task_data_template[20243] = {
+	name = "『公海舰队复刻』登录送皮肤体验券活动",
+	guild_coin_award = 0,
+	award = 902544,
+	type = 6,
+	desc = "Log in once.",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20243,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			416,
+			3
+		}
+	}
+}
+_G.pg.base.task_data_template[20301] = {
+	name = "『亚尔薇特』多队出击挑战1",
+	guild_coin_award = 0,
+	award = 902653,
+	type = 6,
+	desc = "Complete Arts Cluster - Hard using multiple fleets without a DD or DDG.",
+	count_inherit = 0,
+	sub_type = 107,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20301,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			1,
+			20,
+			21
+		},
+		2003
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			17023,
+			20
+		},
+		{
+			2,
+			42056,
+			1
+		},
+		{
+			2,
+			15008,
+			200
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[20302] = {
+	name = "『亚尔薇特』多队出击挑战2",
+	guild_coin_award = 0,
+	award = 902654,
+	type = 6,
+	desc = "Complete Arts Cluster - Hard using multiple fleets without a CL.",
+	count_inherit = 0,
+	sub_type = 107,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20302,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			2
+		},
+		2003
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			17033,
+			20
+		},
+		{
+			2,
+			42056,
+			1
+		},
+		{
+			2,
+			15008,
+			200
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[20303] = {
+	name = "『亚尔薇特』多队出击挑战3",
+	guild_coin_award = 0,
+	award = 902655,
+	type = 6,
+	desc = "Complete Arts Cluster - Hard using multiple fleets without a CA or CB.",
+	count_inherit = 0,
+	sub_type = 107,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20303,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			3,
+			18
+		},
+		2003
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			17003,
+			20
+		},
+		{
+			2,
+			42056,
+			1
+		},
+		{
+			2,
+			15008,
+			200
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[20304] = {
+	name = "『亚尔薇特』多队出击挑战4",
+	guild_coin_award = 0,
+	award = 902656,
+	type = 6,
+	desc = "Complete Arts Cluster - Hard using multiple fleets without a CV or CVL.",
+	count_inherit = 0,
+	sub_type = 107,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20304,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			6,
+			7
+		},
+		2003
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			17043,
+			20
+		},
+		{
+			2,
+			42056,
+			2
+		},
+		{
+			2,
+			15012,
+			20
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[20305] = {
+	name = "『亚尔薇特』多队出击挑战5",
+	guild_coin_award = 0,
+	award = 902657,
+	type = 6,
+	desc = "Complete Arts Cluster - Hard using multiple fleets without a BB, BC, or BM.",
+	count_inherit = 0,
+	sub_type = 107,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20305,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			4,
+			5,
+			13
+		},
+		2003
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			17013,
+			20
+		},
+		{
+			2,
+			42056,
+			2
+		},
+		{
+			2,
+			15012,
+			20
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[20306] = {
+	name = "『亚尔薇特』EX挑战",
+	guild_coin_award = 0,
+	award = 902658,
+	type = 6,
+	desc = "Win a battle on EX difficulty.",
+	count_inherit = 0,
+	sub_type = 108,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20306,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			15008,
+			500
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[20307] = {
+	name = "『亚尔薇特』登录送皮肤体验券活动",
+	guild_coin_award = 0,
+	award = 902577,
+	type = 6,
+	desc = "Log in to the game.",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20307,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			417,
+			3
+		}
+	}
+}
+_G.pg.base.task_data_template[20308] = {
+	name = "『亚尔薇特』剧情送装备",
+	guild_coin_award = 0,
+	award = 902645,
+	type = 6,
+	desc = "Read the entire event story.",
+	count_inherit = 0,
+	sub_type = 1005,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20308,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		6101
+	},
+	open_need = {},
+	award_display = {
+		{
+			9,
+			4019,
+			1
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN",
+		{
+			displayMode = 2
+		}
+	}
+}
+_G.pg.base.task_data_template[20309] = {
+	name = "『亚尔薇特』-日常建造",
+	guild_coin_award = 0,
+	award = 902646,
+	type = 36,
+	desc = "(Daily) Build 3 ships.",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20309,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			421,
+			300
+		}
+	}
+}
+_G.pg.base.task_data_template[20310] = {
+	name = "『亚尔薇特』-日常出击",
+	guild_coin_award = 0,
+	award = 902647,
+	type = 36,
+	desc = "(Daily) Sortie and obtain 15 victories.",
+	count_inherit = 0,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20310,
+	target_num = 15,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			421,
+			300
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[20311] = {
+	name = "『亚尔薇特』外观装备箱保底",
+	guild_coin_award = 0,
+	award = 902576,
+	type = 6,
+	desc = "Open 20 Gear Skin Boxes (Little).",
+	count_inherit = 0,
+	sub_type = 52,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "30358",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20311,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30542,
+			1
+		}
+	},
+	scene = {
+		"SHOP",
+		{
+			warp = "shopstreet"
+		}
+	}
+}
+_G.pg.base.task_data_template[20312] = {
+	name = "『亚尔薇特』-日常困难本",
+	guild_coin_award = 0,
+	award = 902648,
+	type = 36,
+	desc = "(Daily) Sortie and clear 1 non-event Hard Mode Stage.",
+	count_inherit = 0,
+	sub_type = 182,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "10101",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20312,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			421,
+			150
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[20313] = {
+	name = "累计PT达到5000点",
+	guild_coin_award = 0,
+	award = 902649,
+	type = 6,
+	desc = "Collect 5,000 Colorful Doodles.",
+	count_inherit = 0,
+	sub_type = 1001,
+	target_id_2 = "5408",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "421",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20313,
+	target_num = 5000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59593,
+			1
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[20314] = {
+	name = "累计PT达到10000点",
+	guild_coin_award = 0,
+	award = 902650,
+	type = 6,
+	desc = "Collect 10,000 Colorful Doodles.",
+	count_inherit = 0,
+	sub_type = 1001,
+	target_id_2 = "5408",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "421",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20314,
+	target_num = 10000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59593,
+			1
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[20315] = {
+	name = "累计PT达到15000点",
+	guild_coin_award = 0,
+	award = 902651,
+	type = 6,
+	desc = "Collect 15,000 Colorful Doodles.",
+	count_inherit = 0,
+	sub_type = 1001,
+	target_id_2 = "5408",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "421",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20315,
+	target_num = 15000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59593,
+			1
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[20316] = {
+	name = "累计PT达到20000点",
+	guild_coin_award = 0,
+	award = 902652,
+	type = 6,
+	desc = "Collect 20,000 Colorful Doodles.",
+	count_inherit = 0,
+	sub_type = 1001,
+	target_id_2 = "5408",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "421",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20316,
+	target_num = 20000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			5,
+			280,
+			1
+		},
+		{
+			8,
+			59593,
+			1
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}

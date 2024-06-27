@@ -186,7 +186,18 @@ function var_0_0.attachOrbit(arg_10_0)
 				local var_11_2 = var_10_0.orbit_combat_bound[2]
 
 				var_11_0.transform.localPosition = Vector3(var_11_2[1], var_11_2[2], var_11_2[3])
-				SpineAnim.AddFollower(var_11_1, arg_10_0.seaCharacter.transform, var_11_0.transform):GetComponent("Spine.Unity.BoneFollower").followBoneRotation = false
+
+				local var_11_3 = SpineAnim.AddFollower(var_11_1, arg_10_0.seaCharacter.transform, var_11_0.transform):GetComponent("Spine.Unity.BoneFollower")
+
+				if var_10_0.orbit_rotate then
+					var_11_3.followBoneRotation = true
+
+					local var_11_4 = var_11_0.transform.localEulerAngles
+
+					var_11_0.transform.localEulerAngles = Vector3(var_11_4.x, var_11_4.y, var_11_4.z - 90)
+				else
+					var_11_3.followBoneRotation = false
+				end
 			end
 		end), true, true)
 	end

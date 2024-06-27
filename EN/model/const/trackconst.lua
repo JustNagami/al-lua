@@ -39,6 +39,7 @@ end
 local var_0_1 = 1
 local var_0_2 = 1
 local var_0_3 = 2
+local var_0_4 = 3
 
 function var_0_0.StoryStart(arg_7_0)
 	if not arg_7_0 then
@@ -54,7 +55,7 @@ function var_0_0.StoryStart(arg_7_0)
 	pg.m02:sendNotification(GAME.NEW_TRACK, var_7_0)
 end
 
-function var_0_0.StorySkip(arg_8_0)
+function var_0_0.StorySkip(arg_8_0, arg_8_1)
 	if not arg_8_0 then
 		return
 	end
@@ -62,82 +63,98 @@ function var_0_0.StorySkip(arg_8_0)
 	local var_8_0 = {
 		type = var_0_1,
 		eventId = var_0_3,
-		para1 = tostring(arg_8_0)
+		para1 = tostring(arg_8_0),
+		para2 = tostring(arg_8_1 or "0")
 	}
 
 	pg.m02:sendNotification(GAME.NEW_TRACK, var_8_0)
 end
 
+function var_0_0.StoryOption(arg_9_0, arg_9_1)
+	if not arg_9_0 then
+		return
+	end
+
+	local var_9_0 = {
+		type = var_0_4,
+		eventId = var_0_4,
+		para1 = tostring(arg_9_0),
+		para2 = tostring(arg_9_1 or "0_0")
+	}
+
+	pg.m02:sendNotification(GAME.NEW_TRACK, var_9_0)
+end
+
 var_0_0.TRACK_NEW_BULLETIN_OPEN_URL = 2
 var_0_0.EVENT_NEW_BULLETIN_OPEN_URL = 1
 
-function var_0_0.Track(arg_9_0, arg_9_1, ...)
-	local var_9_0, var_9_1, var_9_2 = ...
-	local var_9_3 = {
-		type = arg_9_0,
-		eventId = arg_9_1,
-		para1 = var_9_0,
-		para2 = var_9_1,
-		para3 = var_9_2
+function var_0_0.Track(arg_10_0, arg_10_1, ...)
+	local var_10_0, var_10_1, var_10_2 = ...
+	local var_10_3 = {
+		type = arg_10_0,
+		eventId = arg_10_1,
+		para1 = var_10_0,
+		para2 = var_10_1,
+		para3 = var_10_2
 	}
 
-	pg.m02:sendNotification(GAME.NEW_TRACK, var_9_3)
+	pg.m02:sendNotification(GAME.NEW_TRACK, var_10_3)
 end
 
-function var_0_0.TrackingExitSilentView(arg_10_0, arg_10_1, arg_10_2)
-	local var_10_0 = {
+function var_0_0.TrackingExitSilentView(arg_11_0, arg_11_1, arg_11_2)
+	local var_11_0 = {
 		arg3 = 0,
 		trackType = 1,
-		arg1 = arg_10_0,
-		arg2 = arg_10_1,
-		arg4 = tostring(arg_10_2)
-	}
-
-	pg.m02:sendNotification(GAME.MAIN_SCENE_TRACK, var_10_0)
-end
-
-function var_0_0.TrackingTouchBanner(arg_11_0)
-	local var_11_0 = {
-		arg1 = 0,
-		trackType = 2,
-		arg2 = 0,
-		arg3 = 0,
-		arg4 = tostring(arg_11_0)
+		arg1 = arg_11_0,
+		arg2 = arg_11_1,
+		arg4 = tostring(arg_11_2)
 	}
 
 	pg.m02:sendNotification(GAME.MAIN_SCENE_TRACK, var_11_0)
 end
 
-function var_0_0.TrackingSwitchPainting(arg_12_0, arg_12_1)
+function var_0_0.TrackingTouchBanner(arg_12_0)
 	local var_12_0 = {
+		arg1 = 0,
+		trackType = 2,
+		arg2 = 0,
 		arg3 = 0,
-		trackType = 3,
-		arg4 = "",
-		arg1 = arg_12_0,
-		arg2 = arg_12_1
+		arg4 = tostring(arg_12_0)
 	}
 
 	pg.m02:sendNotification(GAME.MAIN_SCENE_TRACK, var_12_0)
 end
 
-function var_0_0.TrackingUrExchangeFetch(arg_13_0, arg_13_1)
+function var_0_0.TrackingSwitchPainting(arg_13_0, arg_13_1)
 	local var_13_0 = {
-		trackType = 1,
+		arg3 = 0,
+		trackType = 3,
+		arg4 = "",
 		arg1 = arg_13_0,
 		arg2 = arg_13_1
 	}
 
-	pg.m02:sendNotification(GAME.UR_EXCHANGE_TRACK, var_13_0)
+	pg.m02:sendNotification(GAME.MAIN_SCENE_TRACK, var_13_0)
 end
 
-function var_0_0.TrackingUrExchangeJump(arg_14_0)
+function var_0_0.TrackingUrExchangeFetch(arg_14_0, arg_14_1)
 	local var_14_0 = {
-		arg1 = 0,
-		trackType = 2,
-		arg2 = arg_14_0
+		trackType = 1,
+		arg1 = arg_14_0,
+		arg2 = arg_14_1
 	}
 
 	pg.m02:sendNotification(GAME.UR_EXCHANGE_TRACK, var_14_0)
+end
+
+function var_0_0.TrackingUrExchangeJump(arg_15_0)
+	local var_15_0 = {
+		arg1 = 0,
+		trackType = 2,
+		arg2 = arg_15_0
+	}
+
+	pg.m02:sendNotification(GAME.UR_EXCHANGE_TRACK, var_15_0)
 end
 
 return var_0_0
