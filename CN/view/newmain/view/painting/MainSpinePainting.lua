@@ -92,17 +92,25 @@ function var_0_0.InitSpecialTouch(arg_6_0)
 					if math.abs(arg_6_0.dragOffset.x) < 200 or math.abs(arg_6_0.dragOffset.y) < 200 then
 						arg_6_0.dragUp = arg_9_1.position
 
-						local var_9_0 = arg_6_0.uiCam:ScreenToWorldPoint(arg_9_1.position)
+						if arg_6_0.spinePainting:isInAction() then
+							return
+						end
 
-						for iter_9_0 = 1, #arg_6_0.specialClickDic do
-							local var_9_1 = arg_6_0.specialClickDic[iter_9_0]
-							local var_9_2 = var_9_1.tf:InverseTransformPoint(var_9_0)
+						if arg_6_0.spinePainting:DoDragClick() then
+							return
+						else
+							local var_9_0 = arg_6_0.uiCam:ScreenToWorldPoint(arg_9_1.position)
 
-							if not arg_6_0.spinePainting:isInAction() and math.abs(var_9_2.x) < var_9_1.bound.x / 2 and math.abs(var_9_2.y) < var_9_1.bound.y / 2 then
-								arg_6_0:TriggerEvent(var_9_1.name)
-								arg_6_0:TriggerPersonalTask(var_9_1.task)
+							for iter_9_0 = 1, #arg_6_0.specialClickDic do
+								local var_9_1 = arg_6_0.specialClickDic[iter_9_0]
+								local var_9_2 = var_9_1.tf:InverseTransformPoint(var_9_0)
 
-								return
+								if math.abs(var_9_2.x) < var_9_1.bound.x / 2 and math.abs(var_9_2.y) < var_9_1.bound.y / 2 then
+									arg_6_0:TriggerEvent(var_9_1.name)
+									arg_6_0:TriggerPersonalTask(var_9_1.task)
+
+									return
+								end
 							end
 						end
 					end
@@ -144,6 +152,10 @@ function var_0_0.InitSpecialTouch(arg_6_0)
 			end
 
 			onButton(arg_6_0, arg_7_0, function()
+				if arg_6_0.spinePainting:isInAction() then
+					return
+				end
+
 				local var_11_0 = arg_6_0:GetSpecialTouchEvent(arg_7_0.name)
 
 				if arg_7_0.name == "special" then
@@ -185,12 +197,14 @@ function var_0_0.OnDisplayWorld(arg_14_0, arg_14_1)
 
 	if var_14_1 ~= "" then
 		arg_14_0.spinePainting:SetAction(var_14_1, 1)
+		arg_14_0.spinePainting:displayWord(true)
 	end
 end
 
 function var_0_0.OnDisplayWordEnd(arg_15_0)
 	var_0_0.super.OnDisplayWordEnd(arg_15_0)
 	arg_15_0.spinePainting:SetEmptyAction(1)
+	arg_15_0.spinePainting:displayWord(false)
 end
 
 function var_0_0.OnLongPress(arg_16_0)

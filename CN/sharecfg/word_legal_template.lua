@@ -740,7 +740,16 @@ function temp()
 			德 = {
 				里 = {
 					奇 = {
-						this = true
+						this = true,
+						["-"] = {
+							幼 = {
+								儿 = {
+									园 = {
+										this = true
+									}
+								}
+							}
+						}
 					}
 				}
 			},
@@ -1481,6 +1490,22 @@ function temp()
 				妮 = {
 					亚 = {
 						this = true
+					}
+				}
+			}
+		},
+		尔 = {
+			薇 = {
+				特 = {
+					this = true,
+					— = {
+						幼 = {
+							儿 = {
+								园 = {
+									this = true
+								}
+							}
+						}
 					}
 				}
 			}
@@ -2768,7 +2793,16 @@ function temp()
 			},
 			公 = {
 				爵 = {
-					this = true
+					this = true,
+					— = {
+						幼 = {
+							儿 = {
+								园 = {
+									this = true
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -5668,8 +5702,32 @@ function temp()
 			}
 		},
 		["4"] = {
+			["3"] = {
+				this = true,
+				— = {
+					幼 = {
+						儿 = {
+							园 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
 			["6"] = {
 				this = true
+			},
+			["7"] = {
+				this = true,
+				— = {
+					幼 = {
+						儿 = {
+							园 = {
+								this = true
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -5756,7 +5814,13 @@ temp()
 
 function temp()
 	var_0_1.希 = {
+		咪 = {
+			this = true
+		},
 		露 = {
+			this = true
+		},
+		娜 = {
 			this = true
 		},
 		佩 = {
@@ -6267,6 +6331,9 @@ function temp()
 			["3"] = {
 				["7"] = {
 					this = true
+				},
+				["1"] = {
+					this = true
 				}
 			}
 		}
@@ -6354,6 +6421,11 @@ function temp()
 				丽 = {
 					this = true
 				}
+			}
+		},
+		咪 = {
+			伊 = {
+				this = true
 			}
 		}
 	}

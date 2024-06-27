@@ -2,13 +2,12 @@
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	var_0_0.super.Ctor(arg_1_0, arg_1_1)
-
-	arg_1_0.inactivityTimeout = pg.gameset.main_scene_silent_time.key_value
 end
 
 function var_0_0.SetUp(arg_2_0)
 	arg_2_0:Clear()
 
+	arg_2_0.inactivityTimeout = SettingsMainScenePanel.GetEnterFlagShipTime()
 	arg_2_0.lastActivityTime = Time.time
 
 	if not arg_2_0.handle then

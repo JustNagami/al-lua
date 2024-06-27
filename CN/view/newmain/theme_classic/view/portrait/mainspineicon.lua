@@ -52,6 +52,7 @@ end
 
 function var_0_0.Unload(arg_6_0)
 	if arg_6_0.name and arg_6_0.shipModel then
+		arg_6_0.spineAnim:Resume()
 		PoolMgr.GetInstance():ReturnSpineChar(arg_6_0.name, arg_6_0.shipModel)
 
 		arg_6_0.spineAnim = nil

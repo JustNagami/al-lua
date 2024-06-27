@@ -9,6 +9,7 @@ var_0_0.ON_BATCH_SUBMIT_WEEK_TASK = "TaskMediator:ON_BATCH_SUBMIT_WEEK_TASK"
 var_0_0.ON_SUBMIT_WEEK_TASK = "TaskMediator:ON_SUBMIT_WEEK_TASK"
 var_0_0.CLICK_GET_ALL = "TaskMediator:CLICK_GET_ALL"
 var_0_0.ON_DROP = "TaskMediator:ON_DROP"
+var_0_0.STORE_ACTIVITY_AWARDS = "TaskMediator:STORE_ACTIVITY_AWARDS"
 
 function var_0_0.register(arg_1_0)
 	arg_1_0:bind(var_0_0.ON_SUBMIT_WEEK_TASK, function(arg_2_0, arg_2_1)
@@ -17,8 +18,8 @@ function var_0_0.register(arg_1_0)
 		})
 	end)
 	arg_1_0:bind(var_0_0.ON_SUBMIT_AVATAR_TASK, function(arg_3_0, arg_3_1)
-		arg_1_0:sendNotification(GAME.AVATAR_FRAME_AWARD, {
-			act_id = arg_3_1.actId,
+		arg_1_0:sendNotification(GAME.SUBMIT_ACTIVITY_TASK, {
+			act_id = arg_3_1:getActId(),
 			task_ids = {
 				arg_3_1.id
 			}
@@ -96,6 +97,9 @@ function var_0_0.register(arg_1_0)
 			taskVO = arg_9_1
 		})
 	end)
+	arg_1_0:bind(var_0_0.STORE_ACTIVITY_AWARDS, function(arg_10_0, arg_10_1)
+		arg_1_0.storeActivityAwardFlag = arg_10_1
+	end)
 	arg_1_0:SetTaskVOs()
 
 	local var_1_0 = getProxy(TaskProxy)
@@ -103,44 +107,44 @@ function var_0_0.register(arg_1_0)
 	arg_1_0.viewComponent:SetWeekTaskProgressInfo(var_1_0:GetWeekTaskProgressInfo())
 end
 
-function var_0_0.SetTaskVOs(arg_10_0)
-	local var_10_0 = getProxy(TaskProxy):getData()
-	local var_10_1 = getProxy(BagProxy)
+function var_0_0.SetTaskVOs(arg_11_0)
+	local var_11_0 = getProxy(TaskProxy):getData()
+	local var_11_1 = getProxy(BagProxy)
 
-	for iter_10_0, iter_10_1 in pairs(var_10_0) do
-		if iter_10_1:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_ITEM then
-			local var_10_2 = tonumber(iter_10_1:getConfig("target_id"))
+	for iter_11_0, iter_11_1 in pairs(var_11_0) do
+		if iter_11_1:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_ITEM then
+			local var_11_2 = tonumber(iter_11_1:getConfig("target_id"))
 
-			iter_10_1.progress = var_10_1:getItemCountById(tonumber(var_10_2))
-		elseif iter_10_1:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_VIRTUAL_ITEM then
-			local var_10_3 = tonumber(iter_10_1:getConfig("target_id"))
+			iter_11_1.progress = var_11_1:getItemCountById(tonumber(var_11_2))
+		elseif iter_11_1:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_VIRTUAL_ITEM then
+			local var_11_3 = tonumber(iter_11_1:getConfig("target_id"))
 
-			iter_10_1.progress = getProxy(ActivityProxy):getVirtualItemNumber(var_10_3)
+			iter_11_1.progress = getProxy(ActivityProxy):getVirtualItemNumber(var_11_3)
 		end
 	end
 
-	arg_10_0.viewComponent:setTaskVOs(var_10_0)
+	arg_11_0.viewComponent:setTaskVOs(var_11_0)
 end
 
-function var_0_0.enterLevel(arg_11_0, arg_11_1)
-	local var_11_0 = getProxy(ChapterProxy):getChapterById(arg_11_1)
+function var_0_0.enterLevel(arg_12_0, arg_12_1)
+	local var_12_0 = getProxy(ChapterProxy):getChapterById(arg_12_1)
 
-	if var_11_0 then
-		local var_11_1 = {
-			mapIdx = var_11_0:getConfig("map")
+	if var_12_0 then
+		local var_12_1 = {
+			mapIdx = var_12_0:getConfig("map")
 		}
 
-		if var_11_0.active then
-			var_11_1.chapterId = var_11_0.id
+		if var_12_0.active then
+			var_12_1.chapterId = var_12_0.id
 		else
-			var_11_1.openChapterId = arg_11_1
+			var_12_1.openChapterId = arg_12_1
 		end
 
-		arg_11_0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var_11_1)
+		arg_12_0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var_12_1)
 	end
 end
 
-function var_0_0.listNotificationInterests(arg_12_0)
+function var_0_0.listNotificationInterests(arg_13_0)
 	return {
 		TaskProxy.TASK_ADDED,
 		TaskProxy.TASK_UPDATED,
@@ -154,6 +158,7 @@ function var_0_0.listNotificationInterests(arg_12_0)
 		TaskProxy.WEEK_TASKS_DELETED,
 		GAME.SUBMIT_WEEK_TASK_DONE,
 		GAME.SUBMIT_WEEK_TASK_PROGRESS_DONE,
+		GAME.SUBMIT_ACTIVITY_TASK_DONE,
 		GAME.SUBMIT_AVATAR_TASK_DONE,
 		TaskProxy.WEEK_TASK_RESET,
 		GAME.MERGE_TASK_ONE_STEP_AWARD_DONE,
@@ -161,169 +166,228 @@ function var_0_0.listNotificationInterests(arg_12_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_13_0, arg_13_1)
-	local var_13_0 = arg_13_1:getName()
-	local var_13_1 = arg_13_1:getBody()
+function var_0_0.handleNotification(arg_14_0, arg_14_1)
+	local var_14_0 = arg_14_1:getName()
+	local var_14_1 = arg_14_1:getBody()
 
-	if var_13_0 == TaskProxy.TASK_ADDED then
-		if var_13_1:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_ITEM then
-			local var_13_2 = tonumber(var_13_1:getConfig("target_id"))
+	if var_14_0 == TaskProxy.TASK_ADDED then
+		if var_14_1:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_ITEM then
+			local var_14_2 = tonumber(var_14_1:getConfig("target_id"))
 
-			var_13_1.progress = getProxy(BagProxy):getItemCountById(tonumber(var_13_2))
-		elseif var_13_1:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_VIRTUAL_ITEM then
-			local var_13_3 = tonumber(var_13_1:getConfig("target_id"))
+			var_14_1.progress = getProxy(BagProxy):getItemCountById(tonumber(var_14_2))
+		elseif var_14_1:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_VIRTUAL_ITEM then
+			local var_14_3 = tonumber(var_14_1:getConfig("target_id"))
 
-			var_13_1.progress = getProxy(ActivityProxy):getVirtualItemNumber(var_13_3)
+			var_14_1.progress = getProxy(ActivityProxy):getVirtualItemNumber(var_14_3)
 		end
 
-		arg_13_0.viewComponent:addTask(var_13_1)
-	elseif var_13_0 == GAME.CHAPTER_OP_DONE then
-		if arg_13_0.chapterId then
-			arg_13_0:enterLevel(arg_13_0.chapterId)
+		arg_14_0.viewComponent:addTask(var_14_1)
+	elseif var_14_0 == GAME.CHAPTER_OP_DONE then
+		if arg_14_0.chapterId then
+			arg_14_0:enterLevel(arg_14_0.chapterId)
 
-			arg_13_0.chapterId = nil
+			arg_14_0.chapterId = nil
 		end
-	elseif var_13_0 == TaskProxy.TASK_UPDATED then
-		if var_13_1:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_ITEM then
-			local var_13_4 = tonumber(var_13_1:getConfig("target_id"))
+	elseif var_14_0 == TaskProxy.TASK_UPDATED then
+		if var_14_1:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_ITEM then
+			local var_14_4 = tonumber(var_14_1:getConfig("target_id"))
 
-			var_13_1.progress = getProxy(BagProxy):getItemCountById(tonumber(var_13_4))
-		elseif var_13_1:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_VIRTUAL_ITEM then
-			local var_13_5 = tonumber(var_13_1:getConfig("target_id"))
+			var_14_1.progress = getProxy(BagProxy):getItemCountById(tonumber(var_14_4))
+		elseif var_14_1:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_VIRTUAL_ITEM then
+			local var_14_5 = tonumber(var_14_1:getConfig("target_id"))
 
-			var_13_1.progress = getProxy(ActivityProxy):getVirtualItemNumber(var_13_5)
+			var_14_1.progress = getProxy(ActivityProxy):getVirtualItemNumber(var_14_5)
 		end
 
-		arg_13_0.viewComponent:updateTask(var_13_1)
-	elseif var_13_0 == TaskProxy.TASK_REMOVED then
-		arg_13_0.viewComponent:removeTask(var_13_1)
-	elseif var_13_0 == var_0_0.TASK_FILTER then
-		arg_13_0.viewComponent:GoToFilter(var_13_1)
-	elseif var_13_0 == GAME.SUBMIT_TASK_DONE then
-		local var_13_6 = arg_13_1:getType()
-		local var_13_7 = getProxy(TaskProxy)
+		arg_14_0.viewComponent:updateTask(var_14_1)
+	elseif var_14_0 == TaskProxy.TASK_REMOVED then
+		arg_14_0.viewComponent:removeTask(var_14_1)
+	elseif var_14_0 == var_0_0.TASK_FILTER then
+		arg_14_0.viewComponent:GoToFilter(var_14_1)
+	elseif var_14_0 == GAME.SUBMIT_TASK_DONE then
+		local var_14_6 = arg_14_1:getType()
+		local var_14_7 = var_14_1
+		local var_14_8 = getProxy(TaskProxy)
 
-		arg_13_0.viewComponent.onShowAwards = true
+		arg_14_0.viewComponent.onShowAwards = true
 
-		arg_13_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_13_1, function()
-			arg_13_0.viewComponent.onShowAwards = nil
+		if arg_14_0.activityAwards and #arg_14_0.activityAwards > 0 then
+			for iter_14_0, iter_14_1 in ipairs(arg_14_0.activityAwards) do
+				table.insert(var_14_7, iter_14_1)
+			end
 
-			arg_13_0:accepetActivityTask()
-			arg_13_0.viewComponent:updateOneStepBtn()
+			arg_14_0.activityAwards = {}
+		end
 
-			local var_14_0 = {}
+		arg_14_0:addAwardShow(var_14_7, function()
+			arg_14_0.viewComponent.onShowAwards = nil
 
-			for iter_14_0, iter_14_1 in ipairs(var_13_6) do
-				table.insert(var_14_0, function(arg_15_0)
-					arg_13_0:PlayStoryForTaskAct(iter_14_1, arg_15_0)
+			arg_14_0:accepetActivityTask()
+			arg_14_0.viewComponent:refreshPage()
+			arg_14_0.viewComponent:updateOneStepBtn()
+
+			local var_15_0 = {}
+
+			for iter_15_0, iter_15_1 in ipairs(var_14_6) do
+				table.insert(var_15_0, function(arg_16_0)
+					arg_14_0:PlayStoryForTaskAct(iter_15_1, arg_16_0)
 				end)
 			end
 
-			if arg_13_0.refreshWeekTaskPageFlag then
-				arg_13_0.viewComponent:RefreshWeekTaskPage()
+			if arg_14_0.refreshWeekTaskPageFlag then
+				arg_14_0.viewComponent:RefreshWeekTaskPage()
 
-				arg_13_0.refreshWeekTaskPageFlag = nil
+				arg_14_0.refreshWeekTaskPageFlag = nil
 			end
 
-			table.insert(var_14_0, function(arg_16_0)
-				getProxy(FeastProxy):HandleTaskStories(var_13_6, arg_16_0)
+			table.insert(var_15_0, function(arg_17_0)
+				getProxy(FeastProxy):HandleTaskStories(var_14_6, arg_17_0)
 			end)
 
-			if #var_14_0 > 0 then
-				seriesAsync(var_14_0)
+			if #var_15_0 > 0 then
+				seriesAsync(var_15_0)
 			end
 		end)
-	elseif var_13_0 == GAME.BEGIN_STAGE_DONE then
-		arg_13_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var_13_1)
-	elseif var_13_0 == TaskProxy.WEEK_TASKS_ADDED or var_13_0 == TaskProxy.WEEK_TASKS_DELETED or var_13_0 == TaskProxy.WEEK_TASK_UPDATED then
-		arg_13_0.viewComponent:RefreshWeekTaskPage()
-	elseif var_13_0 == GAME.SUBMIT_WEEK_TASK_DONE then
-		arg_13_0.viewComponent:RefreshWeekTaskPageBefore(var_13_1.id)
+	elseif var_14_0 == GAME.BEGIN_STAGE_DONE then
+		arg_14_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var_14_1)
+	elseif var_14_0 == TaskProxy.WEEK_TASKS_ADDED or var_14_0 == TaskProxy.WEEK_TASKS_DELETED or var_14_0 == TaskProxy.WEEK_TASK_UPDATED then
+		arg_14_0.viewComponent:RefreshWeekTaskPage()
+	elseif var_14_0 == GAME.SUBMIT_WEEK_TASK_DONE then
+		arg_14_0.viewComponent:RefreshWeekTaskPageBefore(var_14_1.id)
 
-		local function var_13_8()
-			arg_13_0.viewComponent:RefreshWeekTaskPage()
+		local function var_14_9()
+			arg_14_0.viewComponent:RefreshWeekTaskPage()
 		end
 
-		if #var_13_1.awards > 0 then
-			arg_13_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_13_1.awards, var_13_8)
+		if #var_14_1.awards > 0 then
+			arg_14_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_14_1.awards, var_14_9)
 		else
-			var_13_8()
+			var_14_9()
 		end
-	elseif var_13_0 == GAME.SUBMIT_WEEK_TASK_PROGRESS_DONE then
-		local function var_13_9()
-			arg_13_0.viewComponent:RefreshWeekTaskProgress()
+	elseif var_14_0 == GAME.SUBMIT_WEEK_TASK_PROGRESS_DONE then
+		local function var_14_10()
+			arg_14_0.viewComponent:RefreshWeekTaskProgress()
 		end
 
-		if #var_13_1.awards > 0 then
-			arg_13_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_13_1.awards, var_13_9)
+		if #var_14_1.awards > 0 then
+			arg_14_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_14_1.awards, var_14_10)
 		else
-			var_13_9()
+			var_14_10()
 		end
-	elseif var_13_0 == GAME.SUBMIT_AVATAR_TASK_DONE then
-		local function var_13_10()
-			arg_13_0.viewComponent:refreshPage()
+	elseif var_14_0 == GAME.SUBMIT_AVATAR_TASK_DONE or var_14_0 == GAME.SUBMIT_ACTIVITY_TASK_DONE then
+		local function var_14_11()
+			arg_14_0.viewComponent:refreshPage()
+		end
 
-			if var_13_1.callback then
-				var_13_1.callback()
+		if #var_14_1.awards > 0 then
+			if arg_14_0.storeActivityAwardFlag then
+				if not arg_14_0.activityAwards then
+					arg_14_0.activityAwards = {}
+				end
+
+				for iter_14_2, iter_14_3 in ipairs(var_14_1.awards) do
+					table.insert(arg_14_0.activityAwards, iter_14_3)
+				end
+			else
+				arg_14_0:addAwardShow(var_14_1.awards, var_14_11)
 			end
-		end
-
-		if #var_13_1.awards > 0 then
-			arg_13_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_13_1.awards, var_13_10)
 		else
-			var_13_10()
+			var_14_11()
 		end
-	elseif var_13_0 == TaskProxy.WEEK_TASK_RESET then
-		arg_13_0:SetTaskVOs()
-		arg_13_0.viewComponent:ResetWeekTaskPage()
-	elseif var_13_0 == GAME.MERGE_TASK_ONE_STEP_AWARD_DONE then
-		arg_13_0.refreshWeekTaskPageFlag = true
+	elseif var_14_0 == TaskProxy.WEEK_TASK_RESET then
+		arg_14_0:SetTaskVOs()
+		arg_14_0.viewComponent:ResetWeekTaskPage()
+	elseif var_14_0 == GAME.MERGE_TASK_ONE_STEP_AWARD_DONE then
+		arg_14_0.refreshWeekTaskPageFlag = true
 
-		arg_13_0:sendNotification(GAME.SUBMIT_TASK_DONE, var_13_1.awards, var_13_1.taskIds)
-	elseif var_13_0 == AvatarFrameProxy.FRAME_TASK_TIME_OUT then
-		arg_13_0.viewComponent:refreshPage()
+		arg_14_0:sendNotification(GAME.SUBMIT_TASK_DONE, var_14_1.awards, var_14_1.taskIds)
+	elseif var_14_0 == AvatarFrameProxy.FRAME_TASK_TIME_OUT then
+		arg_14_0.viewComponent:refreshPage()
 	end
 end
 
-function var_0_0.accepetActivityTask(arg_20_0)
-	arg_20_0:sendNotification(GAME.ACCEPT_ACTIVITY_TASK)
+function var_0_0.addAwardShow(arg_21_0, arg_21_1, arg_21_2)
+	if not arg_21_1 or #arg_21_1 == 0 then
+		return
+	end
+
+	if not arg_21_0.awardsShowList then
+		arg_21_0.awardsShowList = {}
+	end
+
+	table.insert(arg_21_0.awardsShowList, {
+		awards = arg_21_1,
+		callback = arg_21_2
+	})
+
+	if arg_21_0.isShowAwardFlag then
+		return
+	else
+		arg_21_0:showAwardList()
+	end
 end
 
-function var_0_0.PlayStoryForTaskAct(arg_21_0, arg_21_1, arg_21_2)
-	local var_21_0 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST)
-	local var_21_1
+function var_0_0.showAwardList(arg_22_0)
+	if arg_22_0.isShowAwardFlag then
+		return
+	end
 
-	for iter_21_0, iter_21_1 in ipairs(var_21_0) do
-		if iter_21_1 and not iter_21_1:isEnd() then
-			local var_21_2 = iter_21_1:getConfig("config_data")
-			local var_21_3 = 0
-			local var_21_4 = 0
+	if arg_22_0.awardsShowList and #arg_22_0.awardsShowList > 0 then
+		arg_22_0.isShowAwardFlag = true
 
-			for iter_21_2, iter_21_3 in ipairs(var_21_2) do
-				for iter_21_4, iter_21_5 in ipairs(iter_21_3) do
-					if iter_21_5 == arg_21_1 then
-						var_21_3 = iter_21_2
-						var_21_4 = iter_21_4
+		local var_22_0 = table.remove(arg_22_0.awardsShowList, 1)
+
+		arg_22_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_22_0.awards, function()
+			if var_22_0.callback then
+				var_22_0.callback()
+			end
+
+			arg_22_0.isShowAwardFlag = false
+
+			arg_22_0:showAwardList()
+		end)
+	end
+end
+
+function var_0_0.accepetActivityTask(arg_24_0)
+	arg_24_0:sendNotification(GAME.ACCEPT_ACTIVITY_TASK)
+end
+
+function var_0_0.PlayStoryForTaskAct(arg_25_0, arg_25_1, arg_25_2)
+	local var_25_0 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST)
+	local var_25_1
+
+	for iter_25_0, iter_25_1 in ipairs(var_25_0) do
+		if iter_25_1 and not iter_25_1:isEnd() then
+			local var_25_2 = iter_25_1:getConfig("config_data")
+			local var_25_3 = 0
+			local var_25_4 = 0
+
+			for iter_25_2, iter_25_3 in ipairs(var_25_2) do
+				for iter_25_4, iter_25_5 in ipairs(iter_25_3) do
+					if iter_25_5 == arg_25_1 then
+						var_25_3 = iter_25_2
+						var_25_4 = iter_25_4
 					end
 				end
 			end
 
-			local var_21_5 = iter_21_1:getConfig("config_client").story or {}
+			local var_25_5 = iter_25_1:getConfig("config_client").story or {}
 
-			if var_21_5[var_21_3] then
-				local var_21_6 = var_21_5[var_21_3][var_21_4]
+			if var_25_5[var_25_3] then
+				local var_25_6 = var_25_5[var_25_3][var_25_4]
 
-				if var_21_6 and not pg.NewStoryMgr.GetInstance():IsPlayed(var_21_6) then
-					var_21_1 = var_21_6
+				if var_25_6 and not pg.NewStoryMgr.GetInstance():IsPlayed(var_25_6) then
+					var_25_1 = var_25_6
 				end
 			end
 		end
 	end
 
-	if var_21_1 then
-		pg.NewStoryMgr.GetInstance():Play(var_21_1, arg_21_2)
+	if var_25_1 then
+		pg.NewStoryMgr.GetInstance():Play(var_25_1, arg_25_2)
 	else
-		arg_21_2()
+		arg_25_2()
 	end
 end
 

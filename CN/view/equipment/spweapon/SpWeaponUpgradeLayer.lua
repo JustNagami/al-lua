@@ -1039,6 +1039,7 @@ end
 
 function var_0_0.willExit(arg_60_0)
 	pg.UIMgr.GetInstance():UnblurPanel(arg_60_0._tf)
+	ClearLScrollrect(arg_60_0.leftPanelEquipScrollComp)
 	arg_60_0.loader:Clear()
 end
 

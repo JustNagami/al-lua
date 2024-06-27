@@ -45,6 +45,8 @@ function var_0_0.Load(arg_6_0, arg_6_1)
 
 		if arg_6_0.triggerWhenLoaded then
 			arg_6_0:TriggerEventAtFirstTime()
+		else
+			arg_6_0:TriggerNextEventAuto()
 		end
 
 		arg_6_0:InitClickEvent()
@@ -454,6 +456,10 @@ function var_0_0.IslimitYPos(arg_56_0)
 end
 
 function var_0_0.PauseForSilent(arg_57_0)
+	if SettingsMainScenePanel.IsEnableFlagShipInteraction() then
+		return
+	end
+
 	if arg_57_0:IsLoaded() then
 		arg_57_0:_Pause()
 	end
@@ -475,6 +481,10 @@ function var_0_0.Puase(arg_59_0)
 end
 
 function var_0_0.ResumeForSilent(arg_60_0)
+	if SettingsMainScenePanel.IsEnableFlagShipInteraction() then
+		return
+	end
+
 	if arg_60_0:IsLoaded() then
 		arg_60_0:_Resume()
 	end
