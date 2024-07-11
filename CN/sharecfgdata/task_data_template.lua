@@ -120793,8 +120793,8 @@ _G.pg.base.task_data_template[43118] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -120835,8 +120835,8 @@ _G.pg.base.task_data_template[43119] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -120874,8 +120874,8 @@ _G.pg.base.task_data_template[43120] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -120913,8 +120913,8 @@ _G.pg.base.task_data_template[43121] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -120951,8 +120951,8 @@ _G.pg.base.task_data_template[43122] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -120996,8 +120996,8 @@ _G.pg.base.task_data_template[43123] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121042,8 +121042,8 @@ _G.pg.base.task_data_template[43124] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -121080,8 +121080,8 @@ _G.pg.base.task_data_template[43125] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -121122,8 +121122,8 @@ _G.pg.base.task_data_template[43126] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -121161,8 +121161,8 @@ _G.pg.base.task_data_template[43127] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -121200,8 +121200,8 @@ _G.pg.base.task_data_template[43128] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121238,8 +121238,8 @@ _G.pg.base.task_data_template[43129] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -121280,8 +121280,8 @@ _G.pg.base.task_data_template[43130] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121326,8 +121326,8 @@ _G.pg.base.task_data_template[43131] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -121364,8 +121364,8 @@ _G.pg.base.task_data_template[43132] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -121406,8 +121406,8 @@ _G.pg.base.task_data_template[43133] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -121445,8 +121445,8 @@ _G.pg.base.task_data_template[43134] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -121484,8 +121484,8 @@ _G.pg.base.task_data_template[43135] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121523,8 +121523,8 @@ _G.pg.base.task_data_template[43136] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121562,8 +121562,8 @@ _G.pg.base.task_data_template[43137] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121608,8 +121608,8 @@ _G.pg.base.task_data_template[43138] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -121647,8 +121647,8 @@ _G.pg.base.task_data_template[43139] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -121686,8 +121686,8 @@ _G.pg.base.task_data_template[43140] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -121725,8 +121725,8 @@ _G.pg.base.task_data_template[43141] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -121764,8 +121764,8 @@ _G.pg.base.task_data_template[43142] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121803,8 +121803,8 @@ _G.pg.base.task_data_template[43143] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121841,8 +121841,8 @@ _G.pg.base.task_data_template[43144] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -121890,8 +121890,8 @@ _G.pg.base.task_data_template[43145] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -121929,8 +121929,8 @@ _G.pg.base.task_data_template[43146] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -121967,8 +121967,8 @@ _G.pg.base.task_data_template[43147] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -122012,8 +122012,8 @@ _G.pg.base.task_data_template[43148] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -122050,8 +122050,8 @@ _G.pg.base.task_data_template[43149] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -122092,8 +122092,8 @@ _G.pg.base.task_data_template[43150] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -122131,8 +122131,8 @@ _G.pg.base.task_data_template[43151] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -122177,8 +122177,8 @@ _G.pg.base.task_data_template[43152] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -122216,8 +122216,8 @@ _G.pg.base.task_data_template[43153] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -122254,8 +122254,8 @@ _G.pg.base.task_data_template[43154] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -122296,8 +122296,8 @@ _G.pg.base.task_data_template[43155] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -122334,8 +122334,8 @@ _G.pg.base.task_data_template[43156] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -122376,8 +122376,8 @@ _G.pg.base.task_data_template[43157] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -122415,8 +122415,8 @@ _G.pg.base.task_data_template[43158] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -122461,8 +122461,8 @@ _G.pg.base.task_data_template[43159] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -122500,8 +122500,8 @@ _G.pg.base.task_data_template[43160] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -122539,8 +122539,8 @@ _G.pg.base.task_data_template[43161] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -122578,8 +122578,8 @@ _G.pg.base.task_data_template[43162] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -122616,8 +122616,8 @@ _G.pg.base.task_data_template[43163] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -122658,8 +122658,8 @@ _G.pg.base.task_data_template[43164] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -122697,8 +122697,8 @@ _G.pg.base.task_data_template[43165] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -122743,8 +122743,8 @@ _G.pg.base.task_data_template[43166] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -122782,8 +122782,8 @@ _G.pg.base.task_data_template[43167] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -122821,8 +122821,8 @@ _G.pg.base.task_data_template[43168] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -122859,8 +122859,8 @@ _G.pg.base.task_data_template[43169] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -122901,8 +122901,8 @@ _G.pg.base.task_data_template[43170] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -122940,8 +122940,8 @@ _G.pg.base.task_data_template[43171] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -122979,8 +122979,8 @@ _G.pg.base.task_data_template[43172] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123025,8 +123025,8 @@ _G.pg.base.task_data_template[43173] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -123063,8 +123063,8 @@ _G.pg.base.task_data_template[43174] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -123104,8 +123104,8 @@ _G.pg.base.task_data_template[43175] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -123145,8 +123145,8 @@ _G.pg.base.task_data_template[43176] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -123186,8 +123186,8 @@ _G.pg.base.task_data_template[43177] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -123227,8 +123227,8 @@ _G.pg.base.task_data_template[43178] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -123268,8 +123268,8 @@ _G.pg.base.task_data_template[43179] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -123309,8 +123309,8 @@ _G.pg.base.task_data_template[43180] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -123350,8 +123350,8 @@ _G.pg.base.task_data_template[43181] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -123391,8 +123391,8 @@ _G.pg.base.task_data_template[43182] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	},
@@ -123433,8 +123433,8 @@ _G.pg.base.task_data_template[43183] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123472,8 +123472,8 @@ _G.pg.base.task_data_template[43184] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123511,8 +123511,8 @@ _G.pg.base.task_data_template[43185] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123550,8 +123550,8 @@ _G.pg.base.task_data_template[43186] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123589,8 +123589,8 @@ _G.pg.base.task_data_template[43187] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123628,8 +123628,8 @@ _G.pg.base.task_data_template[43188] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123667,8 +123667,8 @@ _G.pg.base.task_data_template[43189] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123706,8 +123706,8 @@ _G.pg.base.task_data_template[43190] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123745,8 +123745,8 @@ _G.pg.base.task_data_template[43191] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123784,8 +123784,8 @@ _G.pg.base.task_data_template[43192] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123823,8 +123823,8 @@ _G.pg.base.task_data_template[43193] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123862,8 +123862,8 @@ _G.pg.base.task_data_template[43194] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123901,8 +123901,8 @@ _G.pg.base.task_data_template[43195] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123940,8 +123940,8 @@ _G.pg.base.task_data_template[43196] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123979,8 +123979,8 @@ _G.pg.base.task_data_template[43197] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			180
 		}
 	}
@@ -124018,8 +124018,8 @@ _G.pg.base.task_data_template[43198] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			180
 		}
 	}
@@ -124057,8 +124057,8 @@ _G.pg.base.task_data_template[43199] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			180
 		}
 	}
@@ -124096,8 +124096,8 @@ _G.pg.base.task_data_template[43200] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			180
 		}
 	}
@@ -124134,8 +124134,8 @@ _G.pg.base.task_data_template[43201] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -124175,8 +124175,8 @@ _G.pg.base.task_data_template[43202] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -124216,8 +124216,8 @@ _G.pg.base.task_data_template[43203] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -124257,8 +124257,8 @@ _G.pg.base.task_data_template[43204] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -124298,8 +124298,8 @@ _G.pg.base.task_data_template[43205] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -124339,8 +124339,8 @@ _G.pg.base.task_data_template[43206] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -124380,8 +124380,8 @@ _G.pg.base.task_data_template[43207] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -124421,8 +124421,8 @@ _G.pg.base.task_data_template[43208] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -124462,8 +124462,8 @@ _G.pg.base.task_data_template[43209] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	},
@@ -124503,8 +124503,8 @@ _G.pg.base.task_data_template[43210] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	},
@@ -124545,8 +124545,8 @@ _G.pg.base.task_data_template[43211] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -124584,8 +124584,8 @@ _G.pg.base.task_data_template[43212] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -124623,8 +124623,8 @@ _G.pg.base.task_data_template[43213] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -124662,8 +124662,8 @@ _G.pg.base.task_data_template[43214] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -124701,8 +124701,8 @@ _G.pg.base.task_data_template[43215] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -124740,8 +124740,8 @@ _G.pg.base.task_data_template[43216] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -124779,8 +124779,8 @@ _G.pg.base.task_data_template[43217] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -124818,8 +124818,8 @@ _G.pg.base.task_data_template[43218] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -124856,8 +124856,8 @@ _G.pg.base.task_data_template[43318] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -124898,8 +124898,8 @@ _G.pg.base.task_data_template[43319] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -124937,8 +124937,8 @@ _G.pg.base.task_data_template[43320] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -124976,8 +124976,8 @@ _G.pg.base.task_data_template[43321] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125014,8 +125014,8 @@ _G.pg.base.task_data_template[43322] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -125059,8 +125059,8 @@ _G.pg.base.task_data_template[43323] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125105,8 +125105,8 @@ _G.pg.base.task_data_template[43324] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -125143,8 +125143,8 @@ _G.pg.base.task_data_template[43325] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -125185,8 +125185,8 @@ _G.pg.base.task_data_template[43326] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -125224,8 +125224,8 @@ _G.pg.base.task_data_template[43327] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -125263,8 +125263,8 @@ _G.pg.base.task_data_template[43328] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125301,8 +125301,8 @@ _G.pg.base.task_data_template[43329] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -125343,8 +125343,8 @@ _G.pg.base.task_data_template[43330] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125389,8 +125389,8 @@ _G.pg.base.task_data_template[43331] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -125427,8 +125427,8 @@ _G.pg.base.task_data_template[43332] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -125469,8 +125469,8 @@ _G.pg.base.task_data_template[43333] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -125508,8 +125508,8 @@ _G.pg.base.task_data_template[43334] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -125547,8 +125547,8 @@ _G.pg.base.task_data_template[43335] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125586,8 +125586,8 @@ _G.pg.base.task_data_template[43336] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125625,8 +125625,8 @@ _G.pg.base.task_data_template[43337] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125671,8 +125671,8 @@ _G.pg.base.task_data_template[43338] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -125710,8 +125710,8 @@ _G.pg.base.task_data_template[43339] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -125749,8 +125749,8 @@ _G.pg.base.task_data_template[43340] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -125788,8 +125788,8 @@ _G.pg.base.task_data_template[43341] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -125827,8 +125827,8 @@ _G.pg.base.task_data_template[43342] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125866,8 +125866,8 @@ _G.pg.base.task_data_template[43343] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125904,8 +125904,8 @@ _G.pg.base.task_data_template[43344] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -125953,8 +125953,8 @@ _G.pg.base.task_data_template[43345] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -125992,8 +125992,8 @@ _G.pg.base.task_data_template[43346] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -126030,8 +126030,8 @@ _G.pg.base.task_data_template[43347] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -126075,8 +126075,8 @@ _G.pg.base.task_data_template[43348] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -126113,8 +126113,8 @@ _G.pg.base.task_data_template[43349] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -126155,8 +126155,8 @@ _G.pg.base.task_data_template[43350] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -126194,8 +126194,8 @@ _G.pg.base.task_data_template[43351] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -126240,8 +126240,8 @@ _G.pg.base.task_data_template[43352] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -126279,8 +126279,8 @@ _G.pg.base.task_data_template[43353] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -126317,8 +126317,8 @@ _G.pg.base.task_data_template[43354] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -126359,8 +126359,8 @@ _G.pg.base.task_data_template[43355] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -126397,8 +126397,8 @@ _G.pg.base.task_data_template[43356] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -126439,8 +126439,8 @@ _G.pg.base.task_data_template[43357] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -126478,8 +126478,8 @@ _G.pg.base.task_data_template[43358] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -126524,8 +126524,8 @@ _G.pg.base.task_data_template[43359] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -126563,8 +126563,8 @@ _G.pg.base.task_data_template[43360] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -126602,8 +126602,8 @@ _G.pg.base.task_data_template[43361] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -126641,8 +126641,8 @@ _G.pg.base.task_data_template[43362] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -126679,8 +126679,8 @@ _G.pg.base.task_data_template[43363] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -126721,8 +126721,8 @@ _G.pg.base.task_data_template[43364] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -126760,8 +126760,8 @@ _G.pg.base.task_data_template[43365] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -126806,8 +126806,8 @@ _G.pg.base.task_data_template[43366] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -126845,8 +126845,8 @@ _G.pg.base.task_data_template[43367] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -126884,8 +126884,8 @@ _G.pg.base.task_data_template[43368] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -126922,8 +126922,8 @@ _G.pg.base.task_data_template[43369] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -126964,8 +126964,8 @@ _G.pg.base.task_data_template[43370] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -127003,8 +127003,8 @@ _G.pg.base.task_data_template[43371] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -127042,8 +127042,8 @@ _G.pg.base.task_data_template[43372] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -127088,8 +127088,8 @@ _G.pg.base.task_data_template[43373] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -127126,8 +127126,8 @@ _G.pg.base.task_data_template[43374] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -127167,8 +127167,8 @@ _G.pg.base.task_data_template[43375] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -127208,8 +127208,8 @@ _G.pg.base.task_data_template[43376] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -127249,8 +127249,8 @@ _G.pg.base.task_data_template[43377] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -127290,8 +127290,8 @@ _G.pg.base.task_data_template[43378] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -127331,8 +127331,8 @@ _G.pg.base.task_data_template[43379] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -127372,8 +127372,8 @@ _G.pg.base.task_data_template[43380] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -127413,8 +127413,8 @@ _G.pg.base.task_data_template[43381] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -127454,8 +127454,8 @@ _G.pg.base.task_data_template[43382] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	},
@@ -127496,8 +127496,8 @@ _G.pg.base.task_data_template[43383] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -127535,8 +127535,8 @@ _G.pg.base.task_data_template[43384] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -127574,8 +127574,8 @@ _G.pg.base.task_data_template[43385] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -127613,8 +127613,8 @@ _G.pg.base.task_data_template[43386] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -127652,8 +127652,8 @@ _G.pg.base.task_data_template[43387] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -127691,8 +127691,8 @@ _G.pg.base.task_data_template[43388] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -127730,8 +127730,8 @@ _G.pg.base.task_data_template[43389] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -127769,8 +127769,8 @@ _G.pg.base.task_data_template[43390] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -127808,8 +127808,8 @@ _G.pg.base.task_data_template[43391] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -127847,8 +127847,8 @@ _G.pg.base.task_data_template[43392] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -127886,8 +127886,8 @@ _G.pg.base.task_data_template[43393] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -127925,8 +127925,8 @@ _G.pg.base.task_data_template[43394] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -127964,8 +127964,8 @@ _G.pg.base.task_data_template[43395] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -128003,8 +128003,8 @@ _G.pg.base.task_data_template[43396] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -128042,8 +128042,8 @@ _G.pg.base.task_data_template[43397] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			180
 		}
 	}
@@ -128081,8 +128081,8 @@ _G.pg.base.task_data_template[43398] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			180
 		}
 	}
@@ -128120,8 +128120,8 @@ _G.pg.base.task_data_template[43399] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			180
 		}
 	}
@@ -128159,8 +128159,8 @@ _G.pg.base.task_data_template[43400] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			180
 		}
 	}
@@ -128197,8 +128197,8 @@ _G.pg.base.task_data_template[43401] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -128238,8 +128238,8 @@ _G.pg.base.task_data_template[43402] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -128279,8 +128279,8 @@ _G.pg.base.task_data_template[43403] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -128320,8 +128320,8 @@ _G.pg.base.task_data_template[43404] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -128361,8 +128361,8 @@ _G.pg.base.task_data_template[43405] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -128402,8 +128402,8 @@ _G.pg.base.task_data_template[43406] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -128443,8 +128443,8 @@ _G.pg.base.task_data_template[43407] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -128484,8 +128484,8 @@ _G.pg.base.task_data_template[43408] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -128525,8 +128525,8 @@ _G.pg.base.task_data_template[43409] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	},
@@ -128566,8 +128566,8 @@ _G.pg.base.task_data_template[43410] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	},
@@ -128608,8 +128608,8 @@ _G.pg.base.task_data_template[43411] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -128647,8 +128647,8 @@ _G.pg.base.task_data_template[43412] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -128686,8 +128686,8 @@ _G.pg.base.task_data_template[43413] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -128725,8 +128725,8 @@ _G.pg.base.task_data_template[43414] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -128764,8 +128764,8 @@ _G.pg.base.task_data_template[43415] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -128803,8 +128803,8 @@ _G.pg.base.task_data_template[43416] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -128842,8 +128842,8 @@ _G.pg.base.task_data_template[43417] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -128881,8 +128881,8 @@ _G.pg.base.task_data_template[43418] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -128919,8 +128919,8 @@ _G.pg.base.task_data_template[43518] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -128961,8 +128961,8 @@ _G.pg.base.task_data_template[43519] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -129000,8 +129000,8 @@ _G.pg.base.task_data_template[43520] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -129039,8 +129039,8 @@ _G.pg.base.task_data_template[43521] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -129077,8 +129077,8 @@ _G.pg.base.task_data_template[43522] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -129122,8 +129122,8 @@ _G.pg.base.task_data_template[43523] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -129168,8 +129168,8 @@ _G.pg.base.task_data_template[43524] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -129206,8 +129206,8 @@ _G.pg.base.task_data_template[43525] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -129248,8 +129248,8 @@ _G.pg.base.task_data_template[43526] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -129287,8 +129287,8 @@ _G.pg.base.task_data_template[43527] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -129326,8 +129326,8 @@ _G.pg.base.task_data_template[43528] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -129364,8 +129364,8 @@ _G.pg.base.task_data_template[43529] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -129406,8 +129406,8 @@ _G.pg.base.task_data_template[43530] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -129452,8 +129452,8 @@ _G.pg.base.task_data_template[43531] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -129490,8 +129490,8 @@ _G.pg.base.task_data_template[43532] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -129532,8 +129532,8 @@ _G.pg.base.task_data_template[43533] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -129571,8 +129571,8 @@ _G.pg.base.task_data_template[43534] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -129610,8 +129610,8 @@ _G.pg.base.task_data_template[43535] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -129649,8 +129649,8 @@ _G.pg.base.task_data_template[43536] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -129688,8 +129688,8 @@ _G.pg.base.task_data_template[43537] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -129734,8 +129734,8 @@ _G.pg.base.task_data_template[43538] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -129773,8 +129773,8 @@ _G.pg.base.task_data_template[43539] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -129812,8 +129812,8 @@ _G.pg.base.task_data_template[43540] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -129851,8 +129851,8 @@ _G.pg.base.task_data_template[43541] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -129890,8 +129890,8 @@ _G.pg.base.task_data_template[43542] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -129929,8 +129929,8 @@ _G.pg.base.task_data_template[43543] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -129967,8 +129967,8 @@ _G.pg.base.task_data_template[43544] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -130016,8 +130016,8 @@ _G.pg.base.task_data_template[43545] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -130055,8 +130055,8 @@ _G.pg.base.task_data_template[43546] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -130093,8 +130093,8 @@ _G.pg.base.task_data_template[43547] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -130138,8 +130138,8 @@ _G.pg.base.task_data_template[43548] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -130176,8 +130176,8 @@ _G.pg.base.task_data_template[43549] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -130218,8 +130218,8 @@ _G.pg.base.task_data_template[43550] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -130257,8 +130257,8 @@ _G.pg.base.task_data_template[43551] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -130303,8 +130303,8 @@ _G.pg.base.task_data_template[43552] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -130342,8 +130342,8 @@ _G.pg.base.task_data_template[43553] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -130380,8 +130380,8 @@ _G.pg.base.task_data_template[43554] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -130422,8 +130422,8 @@ _G.pg.base.task_data_template[43555] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -130460,8 +130460,8 @@ _G.pg.base.task_data_template[43556] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -130502,8 +130502,8 @@ _G.pg.base.task_data_template[43557] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -130541,8 +130541,8 @@ _G.pg.base.task_data_template[43558] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -130587,8 +130587,8 @@ _G.pg.base.task_data_template[43559] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -130626,8 +130626,8 @@ _G.pg.base.task_data_template[43560] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -130665,8 +130665,8 @@ _G.pg.base.task_data_template[43561] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -130704,8 +130704,8 @@ _G.pg.base.task_data_template[43562] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -130742,8 +130742,8 @@ _G.pg.base.task_data_template[43563] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -130784,8 +130784,8 @@ _G.pg.base.task_data_template[43564] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -130823,8 +130823,8 @@ _G.pg.base.task_data_template[43565] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -130869,8 +130869,8 @@ _G.pg.base.task_data_template[43566] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -130908,8 +130908,8 @@ _G.pg.base.task_data_template[43567] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -130947,8 +130947,8 @@ _G.pg.base.task_data_template[43568] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -130985,8 +130985,8 @@ _G.pg.base.task_data_template[43569] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -131027,8 +131027,8 @@ _G.pg.base.task_data_template[43570] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -131066,8 +131066,8 @@ _G.pg.base.task_data_template[43571] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -131105,8 +131105,8 @@ _G.pg.base.task_data_template[43572] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -131151,8 +131151,8 @@ _G.pg.base.task_data_template[43573] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -131189,8 +131189,8 @@ _G.pg.base.task_data_template[43574] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -131230,8 +131230,8 @@ _G.pg.base.task_data_template[43575] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -131271,8 +131271,8 @@ _G.pg.base.task_data_template[43576] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -131312,8 +131312,8 @@ _G.pg.base.task_data_template[43577] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -131353,8 +131353,8 @@ _G.pg.base.task_data_template[43578] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -131394,8 +131394,8 @@ _G.pg.base.task_data_template[43579] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -131435,8 +131435,8 @@ _G.pg.base.task_data_template[43580] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -131476,8 +131476,8 @@ _G.pg.base.task_data_template[43581] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -131517,8 +131517,8 @@ _G.pg.base.task_data_template[43582] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	},
@@ -131559,8 +131559,8 @@ _G.pg.base.task_data_template[43583] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -131598,8 +131598,8 @@ _G.pg.base.task_data_template[43584] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -131637,8 +131637,8 @@ _G.pg.base.task_data_template[43585] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -131676,8 +131676,8 @@ _G.pg.base.task_data_template[43586] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -131715,8 +131715,8 @@ _G.pg.base.task_data_template[43587] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -131754,8 +131754,8 @@ _G.pg.base.task_data_template[43588] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -131793,8 +131793,8 @@ _G.pg.base.task_data_template[43589] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -131832,8 +131832,8 @@ _G.pg.base.task_data_template[43590] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -131871,8 +131871,8 @@ _G.pg.base.task_data_template[43591] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -131910,8 +131910,8 @@ _G.pg.base.task_data_template[43592] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -131949,8 +131949,8 @@ _G.pg.base.task_data_template[43593] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -131988,8 +131988,8 @@ _G.pg.base.task_data_template[43594] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -132027,8 +132027,8 @@ _G.pg.base.task_data_template[43595] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -132066,8 +132066,8 @@ _G.pg.base.task_data_template[43596] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -132105,8 +132105,8 @@ _G.pg.base.task_data_template[43597] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			180
 		}
 	}
@@ -132144,8 +132144,8 @@ _G.pg.base.task_data_template[43598] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			180
 		}
 	}
@@ -132183,8 +132183,8 @@ _G.pg.base.task_data_template[43599] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			180
 		}
 	}
@@ -132222,8 +132222,8 @@ _G.pg.base.task_data_template[43600] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			180
 		}
 	}
@@ -132260,8 +132260,8 @@ _G.pg.base.task_data_template[43601] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -132301,8 +132301,8 @@ _G.pg.base.task_data_template[43602] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -132342,8 +132342,8 @@ _G.pg.base.task_data_template[43603] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -132383,8 +132383,8 @@ _G.pg.base.task_data_template[43604] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -132424,8 +132424,8 @@ _G.pg.base.task_data_template[43605] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -132465,8 +132465,8 @@ _G.pg.base.task_data_template[43606] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -132506,8 +132506,8 @@ _G.pg.base.task_data_template[43607] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -132547,8 +132547,8 @@ _G.pg.base.task_data_template[43608] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -132588,8 +132588,8 @@ _G.pg.base.task_data_template[43609] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	},
@@ -132629,8 +132629,8 @@ _G.pg.base.task_data_template[43610] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	},
@@ -132671,8 +132671,8 @@ _G.pg.base.task_data_template[43611] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -132710,8 +132710,8 @@ _G.pg.base.task_data_template[43612] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -132749,8 +132749,8 @@ _G.pg.base.task_data_template[43613] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -132788,8 +132788,8 @@ _G.pg.base.task_data_template[43614] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -132827,8 +132827,8 @@ _G.pg.base.task_data_template[43615] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -132866,8 +132866,8 @@ _G.pg.base.task_data_template[43616] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -132905,8 +132905,8 @@ _G.pg.base.task_data_template[43617] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -132944,8 +132944,8 @@ _G.pg.base.task_data_template[43618] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -171101,5 +171101,2937 @@ _G.pg.base.task_data_template[20316] = {
 	},
 	scene = {
 		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[20320] = {
+	name = "『海天皮肤赠送』七日任务1",
+	guild_coin_award = 0,
+	award = 902680,
+	type = 26,
+	desc = "<color=#ffd649>(第1天)</color>舰队出征，以S评价通关10次",
+	count_inherit = 0,
+	sub_type = 24,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20320,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[20321] = {
+	name = "『海天皮肤赠送』七日任务2",
+	guild_coin_award = 0,
+	award = 902681,
+	type = 26,
+	desc = "<color=#ffd649>(第1天)</color>登录游戏",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20321,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54049,
+			2
+		}
+	}
+}
+_G.pg.base.task_data_template[20322] = {
+	name = "『海天皮肤赠送』七日任务3",
+	guild_coin_award = 0,
+	award = 902682,
+	type = 26,
+	desc = "<color=#ffd649>(第2天)</color>进行2次演习",
+	count_inherit = 0,
+	sub_type = 27,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20322,
+	target_num = 2,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54049,
+			2
+		}
+	}
+}
+_G.pg.base.task_data_template[20323] = {
+	name = "『海天皮肤赠送』七日任务4",
+	guild_coin_award = 0,
+	award = 902683,
+	type = 26,
+	desc = "<color=#ffd649>(第2天)</color>完成军事委托2次",
+	count_inherit = 0,
+	sub_type = 80,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20323,
+	target_num = 2,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20324] = {
+	name = "『海天皮肤赠送』七日任务5",
+	guild_coin_award = 0,
+	award = 902684,
+	type = 26,
+	desc = "<color=#ffd649>(第3天)</color>舰船退役2次",
+	count_inherit = 0,
+	sub_type = 31,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20324,
+	target_num = 2,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54015,
+			5
+		}
+	}
+}
+_G.pg.base.task_data_template[20325] = {
+	name = "『海天皮肤赠送』七日任务6",
+	guild_coin_award = 0,
+	award = 902685,
+	type = 26,
+	desc = "<color=#ffd649>(第3天)</color>完成3次每日挑战",
+	count_inherit = 0,
+	sub_type = 26,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20325,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20326] = {
+	name = "『海天皮肤赠送』七日任务7",
+	guild_coin_award = 0,
+	award = 902686,
+	type = 26,
+	desc = "<color=#ffd649>(第4天)</color>舰船强化5次",
+	count_inherit = 0,
+	sub_type = 34,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20326,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54033,
+			2
+		}
+	}
+}
+_G.pg.base.task_data_template[20327] = {
+	name = "『海天皮肤赠送』七日任务8",
+	guild_coin_award = 0,
+	award = 902687,
+	type = 26,
+	desc = "<color=#ffd649>(第4天)</color>进行战术训练2次",
+	count_inherit = 0,
+	sub_type = 71,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20327,
+	target_num = 2,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20328] = {
+	name = "『海天皮肤赠送』七日任务9",
+	guild_coin_award = 0,
+	award = 902688,
+	type = 26,
+	desc = "<color=#ffd649>(第5天)</color>击沉任意敌人20艘",
+	count_inherit = 0,
+	sub_type = 11,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20328,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20329] = {
+	name = "『海天皮肤赠送』七日任务10",
+	guild_coin_award = 0,
+	award = 902689,
+	type = 26,
+	desc = "<color=#ffd649>(第5天)</color>后宅补充食物5次",
+	count_inherit = 0,
+	sub_type = 61,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20329,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			17003,
+			10
+		}
+	}
+}
+_G.pg.base.task_data_template[20330] = {
+	name = "『海天皮肤赠送』七日任务11",
+	guild_coin_award = 0,
+	award = 902690,
+	type = 26,
+	desc = "<color=#ffd649>(第6天)</color>建造舰船2次",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20330,
+	target_num = 2,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54006,
+			5
+		}
+	}
+}
+_G.pg.base.task_data_template[20331] = {
+	name = "『海天皮肤赠送』七日任务12",
+	guild_coin_award = 0,
+	award = 902691,
+	type = 26,
+	desc = "<color=#ffd649>(第6天)</color>打开任意科技箱1个",
+	count_inherit = 0,
+	sub_type = 50,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20331,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20332] = {
+	name = "『海天皮肤赠送』七日任务13",
+	guild_coin_award = 0,
+	award = 902692,
+	type = 26,
+	desc = "<color=#ffd649>(第7天)</color>进行2次战术训练",
+	count_inherit = 0,
+	sub_type = 71,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20332,
+	target_num = 2,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20333] = {
+	name = "『海天皮肤赠送』七日任务14",
+	guild_coin_award = 0,
+	award = 902693,
+	type = 26,
+	desc = "<color=#ffd649>(第7天)</color>击败旗舰3次 ",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20333,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			7,
+			502074,
+			1
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[60331] = {
+	name = "哈尔福德开启研发前置任务",
+	guild_coin_award = 0,
+	award = 0,
+	type = 9,
+	desc = "",
+	count_inherit = 0,
+	sub_type = 1050,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1",
+	scene = "",
+	id = 60331,
+	target_num = 950,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60332] = {
+	name = "白鹰先锋技术测试I ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>为确保研发工程的顺利进行，获取足够多的测试数据是非常有必要的，而最真实有效的数据，无疑来自实战</color>\n\n——使用白鹰先锋角色，在任意关卡中累计获得<color=#92fc63>100万</color>经验（不同角色可累加）",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60332,
+	target_num = 1000000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			1,
+			1
+		},
+		{
+			1,
+			2
+		},
+		{
+			1,
+			3
+		},
+		{
+			1,
+			18
+		},
+		{
+			1,
+			19
+		},
+		{
+			1,
+			20
+		}
+	},
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60333] = {
+	name = "大型技术理论I ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>每一次的研发都意味着大量新技术的引入。在此之前，工程师们已经积累了大量的研发理论，如果能证明这些理论的可行性，势必将加速研发的进程 </color>\n\n——完成<color=#92fc63>5次</color>科研项目的研发",
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60333,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60334] = {
+	name = "先锋技术突破I ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>大量的实战数据和前沿理论让研发工作迎来了一次突破，这将会是一件完全不同与以往的工程，但在细节部分还需要参考之前的设计图进行比照确认 </color>\n\n——提交<color=#92fc63>10张</color>驱逐改造图T2",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18002",
+	scene = "",
+	id = 60334,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60335] = {
+	name = "白鹰先锋技术测试II ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#a2a2a2><color=#92fc63>「需先完成白鹰先锋技术测试I」</color>
+研发进入了新的阶段，尽管改良后的设计方案在理论上具有更出色的性能，但纸面数据终究不如实战测试来得可靠 </color>
+
+——使用白鹰先锋角色，在任意关卡中累计获得<color=#92fc63>200万</color>经验（不同角色可累加）]],
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60335,
+	target_num = 2000000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			1,
+			1
+		},
+		{
+			1,
+			2
+		},
+		{
+			1,
+			3
+		},
+		{
+			1,
+			18
+		},
+		{
+			1,
+			19
+		},
+		{
+			1,
+			20
+		}
+	},
+	open_need = {
+		60332
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60336] = {
+	name = "大型技术理论II ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#a2a2a2><color=#92fc63>「需先完成大型技术理论I」</color>
+支撑技术不断革新的理论建设从来没有停下过脚步，工程师们的脑海中无时无刻不在迸发更为大胆、更为激进的想法，现在是时候将这些想法落地了 </color>
+
+——完成<color=#92fc63>8次</color>科研项目的研发]],
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60336,
+	target_num = 8,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {
+		60333
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60337] = {
+	name = "先锋技术突破II ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>在更多的数据和理论的帮助下，研发工作迎来了一次巨大的突破，在诸多领域应用了全新的技术。但有几个点，工程师们并没有达成一致，他们需要以往的技术资料进行参考 </color>\n\n——提交<color=#92fc63>5张</color>驱逐改造图T3",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18003",
+	scene = "",
+	id = 60337,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60338] = {
+	name = "哈尔福德舰体塑造I",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>漫长而又艰辛的研发工程终于来到了终点，现在只需要完成最后的舰体部分，就能享受来自港区山呼海啸般的祝贺了 </color>\n\n——提交<color=#92fc63>2万</color>物资",
+	count_inherit = 0,
+	sub_type = 1002,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1",
+	scene = "",
+	id = 60338,
+	target_num = 20000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60339] = {
+	name = "哈尔福德舰体塑造II",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>漫长而又艰辛的研发工程终于来到了终点，现在只需要完成最后的舰体部分，就能享受来自港区山呼海啸般的祝贺了 </color>\n\n——提交<color=#92fc63>5个</color>心智魔方",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "20001",
+	scene = "",
+	id = 60339,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60341] = {
+	name = "{namecode:299}开启研发前置任务",
+	guild_coin_award = 0,
+	award = 0,
+	type = 9,
+	desc = "",
+	count_inherit = 0,
+	sub_type = 1050,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "3",
+	scene = "",
+	id = 60341,
+	target_num = 950,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60342] = {
+	name = "重樱主力技术测试I ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>为确保研发工程的顺利进行，获取足够多的测试数据是非常有必要的，而最真实有效的数据，无疑来自实战</color>\n\n——使用重樱主力角色，在任意关卡中累计获得<color=#92fc63>100万</color>经验（不同角色可累加）",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60342,
+	target_num = 1000000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			3,
+			4
+		},
+		{
+			3,
+			5
+		},
+		{
+			3,
+			6
+		},
+		{
+			3,
+			7
+		},
+		{
+			3,
+			9
+		},
+		{
+			3,
+			10
+		},
+		{
+			3,
+			12
+		},
+		{
+			3,
+			13
+		},
+		{
+			3,
+			21
+		}
+	},
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60343] = {
+	name = "大型技术理论I ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>每一次的研发都意味着大量新技术的引入。在此之前，工程师们已经积累了大量的研发理论，如果能证明这些理论的可行性，势必将加速研发的进程 </color>\n\n——完成<color=#92fc63>5次</color>科研项目的研发",
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60343,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60344] = {
+	name = "战列技术突破I ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>大量的实战数据和前沿理论让研发工作迎来了一次突破，这将会是一件完全不同与以往的工程，但在细节部分还需要参考之前的设计图进行比照确认 </color>\n\n——提交<color=#92fc63>10张</color>战列改造图T2",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18022",
+	scene = "",
+	id = 60344,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60345] = {
+	name = "重樱主力技术测试II ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#a2a2a2><color=#92fc63>「需先完成重樱主力技术测试I」</color>
+研发进入了新的阶段，尽管改良后的设计方案在理论上具有更出色的性能，但纸面数据终究不如实战测试来得可靠 </color>
+
+——使用重樱主力角色，在任意关卡中累计获得<color=#92fc63>200万</color>经验（不同角色可累加）]],
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60345,
+	target_num = 2000000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			3,
+			4
+		},
+		{
+			3,
+			5
+		},
+		{
+			3,
+			6
+		},
+		{
+			3,
+			7
+		},
+		{
+			3,
+			9
+		},
+		{
+			3,
+			10
+		},
+		{
+			3,
+			12
+		},
+		{
+			3,
+			13
+		},
+		{
+			3,
+			21
+		}
+	},
+	open_need = {
+		60342
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60346] = {
+	name = "大型技术理论II ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#a2a2a2><color=#92fc63>「需先完成大型技术理论I」</color>
+支撑技术不断革新的理论建设从来没有停下过脚步，工程师们的脑海中无时无刻不在迸发更为大胆、更为激进的想法，现在是时候将这些想法落地了 </color>
+
+——完成<color=#92fc63>8次</color>科研项目的研发]],
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60346,
+	target_num = 8,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {
+		60343
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60347] = {
+	name = "战列技术突破II ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>在更多的数据和理论的帮助下，研发工作迎来了一次巨大的突破，在诸多领域应用了全新的技术。但有几个点，工程师们并没有达成一致，他们需要以往的技术资料进行参考 </color>\n\n——提交<color=#92fc63>5张</color>战列改造图T3",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18023",
+	scene = "",
+	id = 60347,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60348] = {
+	name = "{namecode:299}舰体塑造I",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>漫长而又艰辛的研发工程终于来到了终点，现在只需要完成最后的舰体部分，就能享受来自港区山呼海啸般的祝贺了 </color>\n\n——提交3万物资",
+	count_inherit = 0,
+	sub_type = 1002,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1",
+	scene = "",
+	id = 60348,
+	target_num = 30000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60349] = {
+	name = "{namecode:299}舰体塑造II",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>漫长而又艰辛的研发工程终于来到了终点，现在只需要完成最后的舰体部分，就能享受来自港区山呼海啸般的祝贺了 </color>\n\n——提交<color=#92fc63>5个</color>心智魔方",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "20001",
+	scene = "",
+	id = 60349,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60350] = {
+	name = "那不勒斯开启研发前置任务",
+	guild_coin_award = 0,
+	award = 0,
+	type = 9,
+	desc = "",
+	count_inherit = 0,
+	sub_type = 1050,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "6",
+	scene = "",
+	id = 60350,
+	target_num = 300,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60351] = {
+	name = "那不勒斯开启研发前置任务",
+	guild_coin_award = 0,
+	award = 0,
+	type = 9,
+	desc = "",
+	count_inherit = 0,
+	sub_type = 1050,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "7",
+	scene = "",
+	id = 60351,
+	target_num = 200,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60352] = {
+	name = "撒丁先锋技术测试I ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>为确保研发工程的顺利进行，获取足够多的测试数据是非常有必要的，而最真实有效的数据，无疑来自实战</color>\n\n——使用撒丁帝国或北方联合先锋角色，在任意关卡中累计获得<color=#92fc63>120万</color>经验（不同角色可累加）",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60352,
+	target_num = 1200000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			6,
+			1
+		},
+		{
+			6,
+			2
+		},
+		{
+			6,
+			3
+		},
+		{
+			6,
+			18
+		},
+		{
+			6,
+			19
+		},
+		{
+			6,
+			20
+		},
+		{
+			7,
+			1
+		},
+		{
+			7,
+			2
+		},
+		{
+			7,
+			3
+		},
+		{
+			7,
+			18
+		},
+		{
+			7,
+			19
+		},
+		{
+			7,
+			20
+		}
+	},
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60353] = {
+	name = "大型技术理论I ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>每一次的研发都意味着大量新技术的引入。在此之前，工程师们已经积累了大量的研发理论，如果能证明这些理论的可行性，势必将加速研发的进程 </color>\n\n——完成<color=#92fc63>8次</color>科研项目的研发",
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60353,
+	target_num = 8,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60354] = {
+	name = "先锋技术突破I ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>大量的实战数据和前沿理论让研发工作迎来了一次突破，这将会是一件完全不同与以往的工程，但在细节部分还需要参考之前的设计图进行比照确认 </color>\n\n——提交<color=#92fc63>3张</color>巡洋改造图T3",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18013",
+	scene = "",
+	id = 60354,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60355] = {
+	name = "撒丁先锋技术测试II ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#a2a2a2><color=#92fc63>「需先完成撒丁先锋技术测试I」</color>
+研发进入了新的阶段，尽管改良后的设计方案在理论上具有更出色的性能，但纸面数据终究不如实战测试来得可靠 </color>
+
+——使用撒丁帝国或北方联合先锋角色，在任意关卡中累计获得<color=#92fc63>240万</color>经验（不同角色可累加）]],
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60355,
+	target_num = 2400000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			6,
+			1
+		},
+		{
+			6,
+			2
+		},
+		{
+			6,
+			3
+		},
+		{
+			6,
+			18
+		},
+		{
+			6,
+			19
+		},
+		{
+			6,
+			20
+		},
+		{
+			7,
+			1
+		},
+		{
+			7,
+			2
+		},
+		{
+			7,
+			3
+		},
+		{
+			7,
+			18
+		},
+		{
+			7,
+			19
+		},
+		{
+			7,
+			20
+		}
+	},
+	open_need = {
+		60352
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60356] = {
+	name = "大型技术理论II ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#a2a2a2><color=#92fc63>「需先完成大型技术理论I」</color>
+支撑技术不断革新的理论建设从来没有停下过脚步，工程师们的脑海中无时无刻不在迸发更为大胆、更为激进的想法，现在是时候将这些想法落地了 </color>
+
+——完成<color=#92fc63>12次</color>科研项目的研发]],
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60356,
+	target_num = 12,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {
+		60353
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60357] = {
+	name = "先锋技术突破II ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>在更多的数据和理论的帮助下，研发工作迎来了一次巨大的突破，在诸多领域应用了全新的技术。但有几个点，工程师们并没有达成一致，他们需要以往的技术资料进行参考 </color>\n\n——提交<color=#92fc63>8张</color>巡洋改造图T3",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18013",
+	scene = "",
+	id = 60357,
+	target_num = 8,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60358] = {
+	name = "那不勒斯舰体塑造I",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>漫长而又艰辛的研发工程终于来到了终点，现在只需要完成最后的舰体部分，就能享受来自港区山呼海啸般的祝贺了 </color>\n\n——提交<color=#92fc63>4万</color>物资",
+	count_inherit = 0,
+	sub_type = 1002,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1",
+	scene = "",
+	id = 60358,
+	target_num = 40000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60359] = {
+	name = "那不勒斯舰体塑造II",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>漫长而又艰辛的研发工程终于来到了终点，现在只需要完成最后的舰体部分，就能享受来自港区山呼海啸般的祝贺了 </color>\n\n——提交<color=#92fc63>10个</color>心智魔方",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "20001",
+	scene = "",
+	id = 60359,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60360] = {
+	name = "纳希莫夫海军上将开启研发前置任务",
+	guild_coin_award = 0,
+	award = 0,
+	type = 9,
+	desc = "",
+	count_inherit = 0,
+	sub_type = 1050,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "7",
+	scene = "",
+	id = 60360,
+	target_num = 300,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60361] = {
+	name = "纳希莫夫海军上将开启研发前置任务",
+	guild_coin_award = 0,
+	award = 0,
+	type = 9,
+	desc = "",
+	count_inherit = 0,
+	sub_type = 1050,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "6",
+	scene = "",
+	id = 60361,
+	target_num = 200,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60362] = {
+	name = "北联主力技术测试I ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>为确保研发工程的顺利进行，获取足够多的测试数据是非常有必要的，而最真实有效的数据，无疑来自实战</color>\n\n——使用北联或撒丁主力角色，在任意关卡中累计获得<color=#92fc63>120万</color>经验（不同角色可累加）",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60362,
+	target_num = 1200000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			6,
+			4
+		},
+		{
+			6,
+			5
+		},
+		{
+			6,
+			6
+		},
+		{
+			6,
+			7
+		},
+		{
+			6,
+			9
+		},
+		{
+			6,
+			10
+		},
+		{
+			6,
+			12
+		},
+		{
+			6,
+			13
+		},
+		{
+			6,
+			21
+		},
+		{
+			7,
+			4
+		},
+		{
+			7,
+			5
+		},
+		{
+			7,
+			6
+		},
+		{
+			7,
+			7
+		},
+		{
+			7,
+			9
+		},
+		{
+			7,
+			10
+		},
+		{
+			7,
+			12
+		},
+		{
+			7,
+			13
+		},
+		{
+			7,
+			21
+		}
+	},
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60363] = {
+	name = "大型技术理论I ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>每一次的研发都意味着大量新技术的引入。在此之前，工程师们已经积累了大量的研发理论，如果能证明这些理论的可行性，势必将加速研发的进程 </color>\n\n——完成<color=#92fc63>8次</color>科研项目的研发",
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60363,
+	target_num = 8,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60364] = {
+	name = "主力技术突破I ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>大量的实战数据和前沿理论让研发工作迎来了一次突破，这将会是一件完全不同与以往的工程，但在细节部分还需要参考之前的设计图进行比照确认 </color>\n\n——提交<color=#92fc63>3张</color>航母改造图T3",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18033",
+	scene = "",
+	id = 60364,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60365] = {
+	name = "北联主力技术测试II ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#a2a2a2><color=#92fc63>「需先完成北联主力技术测试I」</color>
+研发进入了新的阶段，尽管改良后的设计方案在理论上具有更出色的性能，但纸面数据终究不如实战测试来得可靠 </color>
+
+——使用北联或撒丁主力角色，在任意关卡中累计获得<color=#92fc63>240万</color>经验（不同角色可累加）]],
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60365,
+	target_num = 2400000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			6,
+			4
+		},
+		{
+			6,
+			5
+		},
+		{
+			6,
+			6
+		},
+		{
+			6,
+			7
+		},
+		{
+			6,
+			9
+		},
+		{
+			6,
+			10
+		},
+		{
+			6,
+			12
+		},
+		{
+			6,
+			13
+		},
+		{
+			6,
+			21
+		},
+		{
+			7,
+			4
+		},
+		{
+			7,
+			5
+		},
+		{
+			7,
+			6
+		},
+		{
+			7,
+			7
+		},
+		{
+			7,
+			9
+		},
+		{
+			7,
+			10
+		},
+		{
+			7,
+			12
+		},
+		{
+			7,
+			13
+		},
+		{
+			7,
+			21
+		}
+	},
+	open_need = {
+		60362
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60366] = {
+	name = "大型技术理论II ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#a2a2a2><color=#92fc63>「需先完成大型技术理论I」</color>
+支撑技术不断革新的理论建设从来没有停下过脚步，工程师们的脑海中无时无刻不在迸发更为大胆、更为激进的想法，现在是时候将这些想法落地了 </color>
+
+——完成<color=#92fc63>12次</color>科研项目的研发]],
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60366,
+	target_num = 12,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {
+		60363
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60367] = {
+	name = "主力技术突破II",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>在更多的数据和理论的帮助下，研发工作迎来了一次巨大的突破，在诸多领域应用了全新的技术。但有几个点，工程师们并没有达成一致，他们需要以往的技术资料进行参考 </color>\n\n——提交<color=#92fc63>8张</color>航母改造图T3",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18033",
+	scene = "",
+	id = 60367,
+	target_num = 8,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60368] = {
+	name = "纳希莫夫海军上将舰体塑造I",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>漫长而又艰辛的研发工程终于来到了终点，现在只需要完成最后的舰体部分，就能享受来自港区山呼海啸般的祝贺了 </color>\n\n——提交<color=#92fc63>5万</color>物资",
+	count_inherit = 0,
+	sub_type = 1002,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1",
+	scene = "",
+	id = 60368,
+	target_num = 50000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60369] = {
+	name = "纳希莫夫海军上将舰体塑造II",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>漫长而又艰辛的研发工程终于来到了终点，现在只需要完成最后的舰体部分，就能享受来自港区山呼海啸般的祝贺了 </color>\n\n——提交<color=#92fc63>10个</color>心智魔方",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "20001",
+	scene = "",
+	id = 60369,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60371] = {
+	name = "贝亚德开启研发前置任务",
+	guild_coin_award = 0,
+	award = 0,
+	type = 9,
+	desc = "",
+	count_inherit = 0,
+	sub_type = 1050,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "8",
+	scene = "",
+	id = 60371,
+	target_num = 230,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60372] = {
+	name = "鸢尾先锋技术测试I",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>为确保研发工程的顺利进行，获取足够多的测试数据是非常有必要的，而最真实有效的数据，无疑来自实战</color>\n\n——使用自由鸢尾或维希教廷先锋角色，在任意关卡中累计获得<color=#92fc63>100万</color>经验（不同角色可累加）",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60372,
+	target_num = 1000000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			8,
+			1
+		},
+		{
+			8,
+			2
+		},
+		{
+			8,
+			3
+		},
+		{
+			8,
+			18
+		},
+		{
+			8,
+			19
+		},
+		{
+			8,
+			20
+		},
+		{
+			9,
+			1
+		},
+		{
+			9,
+			2
+		},
+		{
+			9,
+			3
+		},
+		{
+			9,
+			18
+		},
+		{
+			9,
+			19
+		},
+		{
+			9,
+			20
+		}
+	},
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60373] = {
+	name = "大型技术理论I ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>每一次的研发都意味着大量新技术的引入。在此之前，工程师们已经积累了大量的研发理论，如果能证明这些理论的可行性，势必将加速研发的进程</color>\n\n——完成<color=#92fc63>5次</color>科研项目的研发",
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60373,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60374] = {
+	name = "先锋技术突破I ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>大量的实战数据和前沿理论让研发工作迎来了一次突破，这将会是一件完全不同与以往的工程，但在细节部分还需要参考之前的设计图进行比照确认</color>\n\n——提交<color=#92fc63>10张</color>巡洋改造图T2",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18012",
+	scene = "",
+	id = 60374,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60375] = {
+	name = "鸢尾先锋技术测试II ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#a2a2a2><color=#92fc63>「需先完成鸢尾先锋技术测试I」</color>
+研发进入了新的阶段，尽管改良后的设计方案在理论上具有更出色的性能，但纸面数据终究不如实战测试来得可靠</color>
+
+——使用自由鸢尾或维希教廷先锋角色，在任意关卡中累计获得<color=#92fc63>200万</color>经验（不同角色可累加）]],
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60375,
+	target_num = 2000000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			8,
+			1
+		},
+		{
+			8,
+			2
+		},
+		{
+			8,
+			3
+		},
+		{
+			8,
+			18
+		},
+		{
+			8,
+			19
+		},
+		{
+			8,
+			20
+		},
+		{
+			9,
+			1
+		},
+		{
+			9,
+			2
+		},
+		{
+			9,
+			3
+		},
+		{
+			9,
+			18
+		},
+		{
+			9,
+			19
+		},
+		{
+			9,
+			20
+		}
+	},
+	open_need = {
+		60372
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60376] = {
+	name = "大型技术理论II ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#a2a2a2><color=#92fc63>「需先完成大型技术理论I」</color>
+支撑技术不断革新的理论建设从来没有停下过脚步，工程师们的脑海中无时无刻不在迸发更为大胆、更为激进的想法，现在是时候将这些想法落地了</color>
+
+——完成<color=#92fc63>8次</color>科研项目的研发]],
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60376,
+	target_num = 8,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {
+		60373
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60377] = {
+	name = "先锋技术突破II ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>在更多的数据和理论的帮助下，研发工作迎来了一次巨大的突破，在诸多领域应用了全新的技术。但有几个点，工程师们并没有达成一致，他们需要以往的技术资料进行参考</color>\n\n——提交<color=#92fc63>5张</color>巡洋改造图T3",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18013",
+	scene = "",
+	id = 60377,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60378] = {
+	name = "贝亚德舰体塑造I",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>漫长而又艰辛的研发工程终于来到了终点，现在只需要完成最后的舰体部分，就能享受来自港区山呼海啸般的祝贺了</color>\n\n——提交<color=#92fc63>2万</color>物资",
+	count_inherit = 0,
+	sub_type = 1002,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1",
+	scene = "",
+	id = 60378,
+	target_num = 20000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60379] = {
+	name = "贝亚德舰体塑造II",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>漫长而又艰辛的研发工程终于来到了终点，现在只需要完成最后的舰体部分，就能享受来自港区山呼海啸般的祝贺了</color>\n\n——提交<color=#92fc63>5个</color>心智魔方",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "20001",
+	scene = "",
+	id = 60379,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[500021] = {
+	name = "完美的守护之剑",
+	guild_coin_award = 0,
+	award = 500021,
+	type = 5,
+	desc = "提交3个《鱼雷天妇罗》",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "aersasi",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "50003",
+	next_task = "500022",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "AERSASI1",
+	id = 500021,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	},
+	scene = {
+		"BACKYARD"
+	}
+}
+_G.pg.base.task_data_template[500022] = {
+	name = "秘书舰当然不在话下……？",
+	guild_coin_award = 0,
+	award = 500022,
+	type = 5,
+	desc = "强化任意角色10次",
+	count_inherit = 0,
+	sub_type = 34,
+	target_id_2 = "",
+	story_icon = "aersasi",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "AERSASI2",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500023",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 500022,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500023] = {
+	name = "帅气的阿尔萨斯？",
+	guild_coin_award = 0,
+	award = 500023,
+	type = 5,
+	desc = "阿尔萨斯上阵出击(关卡)胜利20次",
+	count_inherit = 0,
+	sub_type = 18,
+	target_id_2 = "",
+	story_icon = "aersasi",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "AERSASI3",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500024",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "80503",
+	scene = "",
+	id = 500023,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500024] = {
+	name = "室外训练……开始？",
+	guild_coin_award = 0,
+	award = 500024,
+	type = 5,
+	desc = "累计消耗石油500",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "aersasi",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "AERSASI4",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500025",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 500024,
+	target_num = 500,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500025] = {
+	name = "冰淇淋降温法！",
+	guild_coin_award = 0,
+	award = 500025,
+	type = 5,
+	desc = "阿尔萨斯好感度达到100",
+	count_inherit = 0,
+	sub_type = 1012,
+	target_id_2 = "",
+	story_icon = "aersasi",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "AERSASI5",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500026",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "80503",
+	scene = "",
+	id = 500025,
+	target_num = 10000,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			5
+		},
+		{
+			2,
+			18023,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[500026] = {
+	name = "脱敏训练法！",
+	guild_coin_award = 0,
+	award = 500026,
+	type = 5,
+	desc = "阿尔萨斯突破至满星",
+	count_inherit = 0,
+	sub_type = 33,
+	target_id_2 = "",
+	story_icon = "aersasi",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "AERSASI6",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500027",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "80503",
+	scene = "",
+	id = 500026,
+	target_num = 6,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			10
+		},
+		{
+			2,
+			18023,
+			2
+		}
+	}
+}
+_G.pg.base.task_data_template[500027] = {
+	name = "“最终手段”",
+	guild_coin_award = 0,
+	award = 500027,
+	type = 5,
+	desc = "阿尔萨斯等级达到100",
+	count_inherit = 0,
+	sub_type = 1013,
+	target_id_2 = "",
+	story_icon = "aersasi",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "AERSASI7",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "80503",
+	scene = "",
+	id = 500027,
+	target_num = 100,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			10
+		},
+		{
+			2,
+			16004,
+			1
+		}
 	}
 }

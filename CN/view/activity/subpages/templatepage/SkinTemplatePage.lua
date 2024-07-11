@@ -70,41 +70,61 @@ function var_0_0.UpdateTask(arg_5_0, arg_5_1, arg_5_2)
 		arg_5_0:emit(ActivityMediator.ON_TASK_GO, var_5_3)
 	end, SFX_PANEL)
 	onButton(arg_5_0, var_5_12, function()
-		arg_5_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_5_3)
+		local var_8_0 = {}
+		local var_8_1 = var_5_3:getConfig("award_display")
+		local var_8_2 = getProxy(PlayerProxy):getRawData()
+		local var_8_3 = pg.gameset.urpt_chapter_max.description[1]
+		local var_8_4 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var_8_3)
+		local var_8_5, var_8_6 = Task.StaticJudgeOverflow(var_8_2.gold, var_8_2.oil, var_8_4, true, true, var_8_1)
+
+		if var_8_5 then
+			table.insert(var_8_0, function(arg_9_0)
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					type = MSGBOX_TYPE_ITEM_BOX,
+					content = i18n("award_max_warning"),
+					items = var_8_6,
+					onYes = arg_9_0
+				})
+			end)
+		end
+
+		seriesAsync(var_8_0, function()
+			arg_5_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_5_3)
+		end)
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnUpdateFlush(arg_9_0)
-	arg_9_0.nday = arg_9_0.activity.data3
+function var_0_0.OnUpdateFlush(arg_11_0)
+	arg_11_0.nday = arg_11_0.activity.data3
 
-	arg_9_0:PlayStory()
+	arg_11_0:PlayStory()
 
-	if arg_9_0.dayTF then
-		setText(arg_9_0.dayTF, tostring(arg_9_0.nday))
+	if arg_11_0.dayTF then
+		setText(arg_11_0.dayTF, tostring(arg_11_0.nday))
 	end
 
-	arg_9_0.uilist:align(#arg_9_0.taskGroup[arg_9_0.nday])
+	arg_11_0.uilist:align(#arg_11_0.taskGroup[arg_11_0.nday])
 end
 
-function var_0_0.PlayStory(arg_10_0)
-	local var_10_0 = arg_10_0.activity:getConfig("config_client").story
+function var_0_0.PlayStory(arg_12_0)
+	local var_12_0 = arg_12_0.activity:getConfig("config_client").story
 
-	if checkExist(var_10_0, {
-		arg_10_0.nday
+	if checkExist(var_12_0, {
+		arg_12_0.nday
 	}, {
 		1
 	}) then
-		pg.NewStoryMgr.GetInstance():Play(var_10_0[arg_10_0.nday][1])
+		pg.NewStoryMgr.GetInstance():Play(var_12_0[arg_12_0.nday][1])
 	end
 end
 
-function var_0_0.OnDestroy(arg_11_0)
-	eachChild(arg_11_0.items, function(arg_12_0)
-		Destroy(arg_12_0)
+function var_0_0.OnDestroy(arg_13_0)
+	eachChild(arg_13_0.items, function(arg_14_0)
+		Destroy(arg_14_0)
 	end)
 end
 
-function var_0_0.GetProgressColor(arg_13_0)
+function var_0_0.GetProgressColor(arg_15_0)
 	return nil
 end
 

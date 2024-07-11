@@ -27,89 +27,100 @@ function var_0_0.register(arg_1_0)
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inEvent")
 		arg_1_0.facade:sendNotification(GAME.EVENT_LIST_UPDATE)
 	end)
-
-	arg_1_0.timer = Timer.New(function()
-		arg_1_0:updateTime()
-	end, 1, -1)
-
-	arg_1_0.timer:Start()
 end
 
-function var_0_0.remove(arg_5_0)
-	if arg_5_0.timer then
-		arg_5_0.timer:Stop()
+function var_0_0.timeCall(arg_4_0)
+	return {
+		[ProxyRegister.DayCall] = function(arg_5_0)
+			local var_5_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLLECTION_EVENT)
 
-		arg_5_0.timer = nil
-	end
-end
-
-function var_0_0.updateInfo(arg_6_0, arg_6_1)
-	arg_6_0.eventList = {}
-
-	for iter_6_0, iter_6_1 in ipairs(arg_6_1) do
-		table.insert(arg_6_0.eventList, EventInfo.New(iter_6_1))
-	end
-
-	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inEvent")
-	arg_6_0.facade:sendNotification(GAME.EVENT_LIST_UPDATE)
-end
-
-function var_0_0.updateNightInfo(arg_7_0, arg_7_1)
-	for iter_7_0, iter_7_1 in ipairs(arg_7_1) do
-		table.insert(arg_7_0.eventList, EventInfo.New(iter_7_1))
-	end
-
-	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inEvent")
-	arg_7_0.facade:sendNotification(GAME.EVENT_LIST_UPDATE)
-end
-
-function var_0_0.getActiveShipIds(arg_8_0)
-	local var_8_0 = {}
-
-	for iter_8_0, iter_8_1 in ipairs(arg_8_0.eventList) do
-		if iter_8_1.state ~= EventInfo.StateNone then
-			for iter_8_2, iter_8_3 in ipairs(iter_8_1.shipIds) do
-				table.insert(var_8_0, iter_8_3)
+			if not var_5_0 or var_5_0:isEnd() then
+				return
 			end
-		end
-	end
 
-	return var_8_0
+			local var_5_1, var_5_2 = arg_4_0:GetEventByActivityId(var_5_0.id)
+
+			if not var_5_1 or var_5_1 and not var_5_1:IsStarting() then
+				if var_5_1 and var_5_2 then
+					table.remove(arg_4_0.eventList, var_5_2)
+				end
+
+				local var_5_3 = var_5_0:getConfig("config_data")
+				local var_5_4 = var_5_0:getDayIndex()
+
+				if var_5_4 > 0 and var_5_4 <= #var_5_3 then
+					arg_4_0:AddActivityEvent(EventInfo.New({
+						finish_time = 0,
+						over_time = 0,
+						id = var_5_3[var_5_4],
+						ship_id_list = {},
+						activity_id = var_5_0.id
+					}))
+				end
+
+				pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inEvent")
+				arg_4_0:sendNotification(GAME.EVENT_LIST_UPDATE)
+			end
+		end,
+		[ProxyRegister.SecondCall] = function(arg_6_0)
+			arg_4_0:updateTime()
+		end
+	}
 end
 
-function var_0_0.findInfoById(arg_9_0, arg_9_1)
-	for iter_9_0, iter_9_1 in ipairs(arg_9_0.eventList) do
-		if iter_9_1.id == arg_9_1 then
-			return iter_9_1, iter_9_0
-		end
-	end
-
-	return nil, -1
+function var_0_0.remove(arg_7_0)
+	return
 end
 
-function var_0_0.countByState(arg_10_0, arg_10_1)
-	local var_10_0 = 0
+function var_0_0.updateInfo(arg_8_0, arg_8_1)
+	arg_8_0.eventList = {}
+
+	for iter_8_0, iter_8_1 in ipairs(arg_8_1) do
+		table.insert(arg_8_0.eventList, EventInfo.New(iter_8_1))
+	end
+
+	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inEvent")
+	arg_8_0.facade:sendNotification(GAME.EVENT_LIST_UPDATE)
+end
+
+function var_0_0.updateNightInfo(arg_9_0, arg_9_1)
+	for iter_9_0, iter_9_1 in ipairs(arg_9_1) do
+		table.insert(arg_9_0.eventList, EventInfo.New(iter_9_1))
+	end
+
+	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inEvent")
+	arg_9_0.facade:sendNotification(GAME.EVENT_LIST_UPDATE)
+end
+
+function var_0_0.getActiveShipIds(arg_10_0)
+	local var_10_0 = {}
 
 	for iter_10_0, iter_10_1 in ipairs(arg_10_0.eventList) do
-		if iter_10_1.state == arg_10_1 then
-			var_10_0 = var_10_0 + 1
+		if iter_10_1.state ~= EventInfo.StateNone then
+			for iter_10_2, iter_10_3 in ipairs(iter_10_1.shipIds) do
+				table.insert(var_10_0, iter_10_3)
+			end
 		end
 	end
 
 	return var_10_0
 end
 
-function var_0_0.hasFinishState(arg_11_0)
-	if arg_11_0:countByState(EventInfo.StateFinish) > 0 then
-		return true
+function var_0_0.findInfoById(arg_11_0, arg_11_1)
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.eventList) do
+		if iter_11_1.id == arg_11_1 then
+			return iter_11_1, iter_11_0
+		end
 	end
+
+	return nil, -1
 end
 
-function var_0_0.countBusyFleetNums(arg_12_0)
+function var_0_0.countByState(arg_12_0, arg_12_1)
 	local var_12_0 = 0
 
 	for iter_12_0, iter_12_1 in ipairs(arg_12_0.eventList) do
-		if not iter_12_1:IsActivityType() and iter_12_1.state ~= EventInfo.StateNone then
+		if iter_12_1.state == arg_12_1 then
 			var_12_0 = var_12_0 + 1
 		end
 	end
@@ -117,134 +128,152 @@ function var_0_0.countBusyFleetNums(arg_12_0)
 	return var_12_0
 end
 
-function var_0_0.updateTime(arg_13_0)
-	local var_13_0 = false
+function var_0_0.hasFinishState(arg_13_0)
+	if arg_13_0:countByState(EventInfo.StateFinish) > 0 then
+		return true
+	end
+end
 
-	for iter_13_0, iter_13_1 in pairs(arg_13_0.eventList) do
-		if iter_13_1:updateTime() then
-			var_13_0 = true
+function var_0_0.countBusyFleetNums(arg_14_0)
+	local var_14_0 = 0
+
+	for iter_14_0, iter_14_1 in ipairs(arg_14_0.eventList) do
+		if not iter_14_1:IsActivityType() and iter_14_1.state ~= EventInfo.StateNone then
+			var_14_0 = var_14_0 + 1
 		end
 	end
 
-	if var_13_0 then
+	return var_14_0
+end
+
+function var_0_0.updateTime(arg_15_0)
+	local var_15_0 = false
+
+	for iter_15_0, iter_15_1 in pairs(arg_15_0.eventList) do
+		if iter_15_1:updateTime() then
+			var_15_0 = true
+		end
+	end
+
+	if var_15_0 then
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inEvent")
-		arg_13_0:sendNotification(GAME.EVENT_LIST_UPDATE)
+		arg_15_0:sendNotification(GAME.EVENT_LIST_UPDATE)
 	end
 end
 
-function var_0_0.getEventList(arg_14_0)
-	return Clone(arg_14_0.eventList)
+function var_0_0.getEventList(arg_16_0)
+	return Clone(arg_16_0.eventList)
 end
 
-function var_0_0.getActiveEvents(arg_15_0)
-	local var_15_0 = {}
+function var_0_0.getActiveEvents(arg_17_0)
+	local var_17_0 = {}
 
-	for iter_15_0, iter_15_1 in ipairs(arg_15_0.eventList) do
-		if iter_15_1.finishTime >= pg.TimeMgr.GetInstance():GetServerTime() then
-			table.insert(var_15_0, iter_15_1)
+	for iter_17_0, iter_17_1 in ipairs(arg_17_0.eventList) do
+		if iter_17_1.finishTime >= pg.TimeMgr.GetInstance():GetServerTime() then
+			table.insert(var_17_0, iter_17_1)
 		end
 	end
 
-	return var_15_0
+	return var_17_0
 end
 
-function var_0_0.fillRecommendShip(arg_16_0, arg_16_1)
-	local var_16_0 = getProxy(BayProxy):getDelegationRecommendShips(arg_16_1)
+function var_0_0.fillRecommendShip(arg_18_0, arg_18_1)
+	local var_18_0 = getProxy(BayProxy):getDelegationRecommendShips(arg_18_1)
 
-	for iter_16_0, iter_16_1 in ipairs(var_16_0) do
-		table.insert(arg_16_1.shipIds, iter_16_1)
+	for iter_18_0, iter_18_1 in ipairs(var_18_0) do
+		table.insert(arg_18_1.shipIds, iter_18_1)
 	end
 end
 
-function var_0_0.fillRecommendShipLV1(arg_17_0, arg_17_1)
-	local var_17_0 = getProxy(BayProxy):getDelegationRecommendShipsLV1(arg_17_1)
+function var_0_0.fillRecommendShipLV1(arg_19_0, arg_19_1)
+	local var_19_0 = getProxy(BayProxy):getDelegationRecommendShipsLV1(arg_19_1)
 
-	for iter_17_0, iter_17_1 in ipairs(var_17_0) do
-		table.insert(arg_17_1.shipIds, iter_17_1)
+	for iter_19_0, iter_19_1 in ipairs(var_19_0) do
+		table.insert(arg_19_1.shipIds, iter_19_1)
 	end
 end
 
-function var_0_0.checkNightEvent(arg_18_0)
-	local var_18_0 = pg.TimeMgr.GetInstance():GetServerHour()
+function var_0_0.checkNightEvent(arg_20_0)
+	local var_20_0 = pg.TimeMgr.GetInstance():GetServerHour()
 
-	return (var_18_0 >= pg.gameset.night_collection_begin.key_value and var_18_0 < 24 or var_18_0 >= 0 and var_18_0 < pg.gameset.night_collection_end.key_value) and not _.any(arg_18_0.eventList, function(arg_19_0)
-		local var_19_0 = arg_19_0:GetCountDownTime()
+	return (var_20_0 >= pg.gameset.night_collection_begin.key_value and var_20_0 < 24 or var_20_0 >= 0 and var_20_0 < pg.gameset.night_collection_end.key_value) and not _.any(arg_20_0.eventList, function(arg_21_0)
+		local var_21_0 = arg_21_0:GetCountDownTime()
 
-		return arg_19_0.template.type == EventConst.EVENT_TYPE_NIGHT and (not var_19_0 or var_19_0 > 0)
+		return arg_21_0.template.type == EventConst.EVENT_TYPE_NIGHT and (not var_21_0 or var_21_0 > 0)
 	end)
 end
 
-function var_0_0.AddActivityEvents(arg_20_0, arg_20_1, arg_20_2)
-	for iter_20_0 = #arg_20_0.eventList, 1, -1 do
-		local var_20_0 = arg_20_0.eventList[iter_20_0]
+function var_0_0.AddActivityEvents(arg_22_0, arg_22_1, arg_22_2)
+	for iter_22_0 = #arg_22_0.eventList, 1, -1 do
+		local var_22_0 = arg_22_0.eventList[iter_22_0]
 
-		if var_20_0:IsActivityType() and var_20_0:BelongActivity(arg_20_2) then
-			table.remove(arg_20_0.eventList, iter_20_0)
+		if var_22_0:IsActivityType() and var_22_0:BelongActivity(arg_22_2) then
+			table.remove(arg_22_0.eventList, iter_22_0)
 		end
 	end
 
-	for iter_20_1, iter_20_2 in ipairs(arg_20_1) do
-		print("add collection-----------", iter_20_2.id)
-		table.insert(arg_20_0.eventList, iter_20_2)
+	for iter_22_1, iter_22_2 in ipairs(arg_22_1) do
+		print("add collection-----------", iter_22_2.id)
+		table.insert(arg_22_0.eventList, iter_22_2)
 	end
 
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inEvent")
 end
 
-function var_0_0.AddActivityEvent(arg_21_0, arg_21_1)
-	print("zero add collection-----------", arg_21_1.id)
-	table.insert(arg_21_0.eventList, arg_21_1)
+function var_0_0.AddActivityEvent(arg_23_0, arg_23_1)
+	print("zero add collection-----------", arg_23_1.id)
+	table.insert(arg_23_0.eventList, arg_23_1)
 end
 
-function var_0_0.CanJoinEvent(arg_22_0, arg_22_1)
-	if not arg_22_1:reachNum() then
-		return false, i18n("event_minimus_ship_numbers", arg_22_1.template.ship_num)
+function var_0_0.CanJoinEvent(arg_24_0, arg_24_1)
+	if not arg_24_1:reachNum() then
+		return false, i18n("event_minimus_ship_numbers", arg_24_1.template.ship_num)
 	end
 
-	if not arg_22_1:reachLevel() then
+	if not arg_24_1:reachLevel() then
 		return false, i18n("event_level_unreached")
 	end
 
-	if not arg_22_1:reachTypes() then
+	if not arg_24_1:reachTypes() then
 		return false, i18n("event_type_unreached")
 	end
 
-	if not arg_22_1:IsActivityType() and arg_22_0.busyFleetNums >= arg_22_0.maxFleetNums then
+	if not arg_24_1:IsActivityType() and arg_24_0.busyFleetNums >= arg_24_0.maxFleetNums then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("event_fleet_busy"))
 
 		return
 	end
 
-	local var_22_0 = arg_22_1:GetCountDownTime()
+	local var_24_0 = arg_24_1:GetCountDownTime()
 
-	if var_22_0 and var_22_0 < 0 then
+	if var_24_0 and var_24_0 < 0 then
 		return false, i18n("event_over_time_expired")
 	end
 
-	local var_22_1 = getProxy(PlayerProxy):getData()
+	local var_24_1 = getProxy(PlayerProxy):getData()
 
-	if arg_22_1:getOilConsume() > var_22_1.oil then
-		local var_22_2
+	if arg_24_1:getOilConsume() > var_24_1.oil then
+		local var_24_2
 
-		if not ItemTipPanel.ShowOilBuyTip(arg_22_1:getOilConsume()) then
-			var_22_2 = i18n("common_no_oil")
+		if not ItemTipPanel.ShowOilBuyTip(arg_24_1:getOilConsume()) then
+			var_24_2 = i18n("common_no_oil")
 		end
 
-		return false, var_22_2
+		return false, var_24_2
 	end
 
-	local var_22_3 = pg.collection_template[arg_22_1.id]
+	local var_24_3 = pg.collection_template[arg_24_1.id]
 
-	if var_22_3 then
-		local var_22_4 = var_22_3.drop_oil_max or 0
+	if var_24_3 then
+		local var_24_4 = var_24_3.drop_oil_max or 0
 
-		if var_22_1:OilMax(var_22_4) then
+		if var_24_1:OilMax(var_24_4) then
 			return false, i18n("oil_max_tip_title") .. i18n("resource_max_tip_eventstart")
 		end
 
-		local var_22_5 = var_22_3.drop_gold_max or 0
+		local var_24_5 = var_24_3.drop_gold_max or 0
 
-		if var_22_1:GoldMax(var_22_5) then
+		if var_24_1:GoldMax(var_24_5) then
 			return false, i18n("gold_max_tip_title") .. i18n("resource_max_tip_eventstart")
 		end
 	end
@@ -252,74 +281,74 @@ function var_0_0.CanJoinEvent(arg_22_0, arg_22_1)
 	return true
 end
 
-function var_0_0.CanFinishEvent(arg_23_0, arg_23_1)
-	local var_23_0 = arg_23_1.template
+function var_0_0.CanFinishEvent(arg_25_0, arg_25_1)
+	local var_25_0 = arg_25_1.template
 
-	if not var_23_0 then
+	if not var_25_0 then
 		return false
 	end
 
-	local var_23_1 = getProxy(PlayerProxy):getData()
-	local var_23_2 = var_23_0.drop_oil_max or 0
+	local var_25_1 = getProxy(PlayerProxy):getData()
+	local var_25_2 = var_25_0.drop_oil_max or 0
 
-	if var_23_1:OilMax(var_23_2) then
+	if var_25_1:OilMax(var_25_2) then
 		return false, i18n("oil_max_tip_title") .. i18n("resource_max_tip_event")
 	end
 
-	local var_23_3 = var_23_0.drop_gold_max or 0
+	local var_25_3 = var_25_0.drop_gold_max or 0
 
-	if var_23_1:GoldMax(var_23_3) then
+	if var_25_1:GoldMax(var_25_3) then
 		return false, i18n("gold_max_tip_title") .. i18n("resource_max_tip_event")
 	end
 
 	return true
 end
 
-function var_0_0.GetEventByActivityId(arg_24_0, arg_24_1)
-	for iter_24_0, iter_24_1 in ipairs(arg_24_0.eventList) do
-		if iter_24_1:BelongActivity(arg_24_1) then
-			return iter_24_1, iter_24_0
+function var_0_0.GetEventByActivityId(arg_26_0, arg_26_1)
+	for iter_26_0, iter_26_1 in ipairs(arg_26_0.eventList) do
+		if iter_26_1:BelongActivity(arg_26_1) then
+			return iter_26_1, iter_26_0
 		end
 	end
 end
 
-function var_0_0.GetEventListForCommossionInfo(arg_25_0)
-	local var_25_0 = arg_25_0:getEventList()
-	local var_25_1 = 0
-	local var_25_2 = 0
-	local var_25_3 = 0
-	local var_25_4 = 0
-	local var_25_5 = 0
-	local var_25_6 = 0
-	local var_25_7 = {}
+function var_0_0.GetEventListForCommossionInfo(arg_27_0)
+	local var_27_0 = arg_27_0:getEventList()
+	local var_27_1 = 0
+	local var_27_2 = 0
+	local var_27_3 = 0
+	local var_27_4 = 0
+	local var_27_5 = 0
+	local var_27_6 = 0
+	local var_27_7 = {}
 
-	_.each(var_25_0, function(arg_26_0)
-		if arg_26_0:IsActivityType() then
-			if arg_26_0.state == EventInfo.StateNone then
-				var_25_6 = var_25_6 + 1
-			elseif arg_26_0.state == EventInfo.StateActive then
-				var_25_5 = var_25_5 + 1
-			elseif arg_26_0.state == EventInfo.StateFinish then
-				var_25_4 = var_25_4 + 1
+	_.each(var_27_0, function(arg_28_0)
+		if arg_28_0:IsActivityType() then
+			if arg_28_0.state == EventInfo.StateNone then
+				var_27_6 = var_27_6 + 1
+			elseif arg_28_0.state == EventInfo.StateActive then
+				var_27_5 = var_27_5 + 1
+			elseif arg_28_0.state == EventInfo.StateFinish then
+				var_27_4 = var_27_4 + 1
 			end
-		elseif arg_26_0.state == EventInfo.StateNone then
+		elseif arg_28_0.state == EventInfo.StateNone then
 			-- block empty
-		elseif arg_26_0.state == EventInfo.StateActive then
-			var_25_2 = var_25_2 + 1
+		elseif arg_28_0.state == EventInfo.StateActive then
+			var_27_2 = var_27_2 + 1
 
-			table.insert(var_25_7, arg_26_0)
-		elseif arg_26_0.state == EventInfo.StateFinish then
-			var_25_1 = var_25_1 + 1
+			table.insert(var_27_7, arg_28_0)
+		elseif arg_28_0.state == EventInfo.StateFinish then
+			var_27_1 = var_27_1 + 1
 
-			table.insert(var_25_7, arg_26_0)
+			table.insert(var_27_7, arg_28_0)
 		end
 	end)
 
-	local var_25_8 = var_25_1 + var_25_4
-	local var_25_9 = var_25_2 + var_25_5
-	local var_25_10 = arg_25_0.maxFleetNums - (var_25_1 + var_25_2) + var_25_6
+	local var_27_8 = var_27_1 + var_27_4
+	local var_27_9 = var_27_2 + var_27_5
+	local var_27_10 = arg_27_0.maxFleetNums - (var_27_1 + var_27_2) + var_27_6
 
-	return var_25_7, var_25_8, var_25_9, var_25_10
+	return var_27_7, var_27_8, var_27_9, var_27_10
 end
 
 return var_0_0

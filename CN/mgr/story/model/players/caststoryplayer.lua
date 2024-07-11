@@ -148,8 +148,8 @@ function var_0_0.SpeedUp(arg_18_0, arg_18_1, arg_18_2)
 	arg_18_0:PlayAnimation(arg_18_1 * 0.2, arg_18_2)
 end
 
-function var_0_0.RegisetEvent(arg_19_0, arg_19_1)
-	var_0_0.super.RegisetEvent(arg_19_0, arg_19_1)
+function var_0_0.RegisetEvent(arg_19_0, arg_19_1, arg_19_2)
+	var_0_0.super.RegisetEvent(arg_19_0, arg_19_1, arg_19_2)
 	triggerButton(arg_19_0._go)
 end
 

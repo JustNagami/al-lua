@@ -116,10 +116,10 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 					end
 				end
 
+				var_0_0.OnSubmitSuccess(var_1_9, var_1_1)
 				pg.m02:sendNotification(GAME.SUBMIT_TASK_DONE, var_6_0, {
 					var_1_9.id
 				})
-				var_0_0.OnSubmitSuccess(var_1_9, var_1_1)
 			else
 				pg.TipsMgr.GetInstance():ShowTips(errorTip("task_submitTask", arg_6_0.result))
 

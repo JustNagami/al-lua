@@ -54,7 +54,7 @@ function var_0_0.UpdateStudent(arg_4_0, arg_4_1, arg_4_2)
 	local var_4_2 = arg_4_1:getShipVO()
 	local var_4_3
 
-	setText(arg_4_2:Find("unlock/name_bg/Text"), arg_4_1:getSkillName())
+	setText(arg_4_2:Find("unlock/name_bg/Text"), shortenString(arg_4_1:getSkillName(), 7))
 
 	if var_4_1 < var_4_0 then
 		arg_4_0:AddTimer(arg_4_1, arg_4_2)

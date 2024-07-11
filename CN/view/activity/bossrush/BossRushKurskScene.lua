@@ -146,7 +146,7 @@ function var_0_0.getBGM(arg_19_0)
 	end
 
 	local var_19_1 = var_19_0.bgm
-	local var_19_2 = var_19_0.special_bgm
+	local var_19_2 = "battle-deepecho"
 	local var_19_3 = arg_19_0.contextData.displayMode
 
 	if var_19_3 == var_0_0.DISPLAY.BATTLE then

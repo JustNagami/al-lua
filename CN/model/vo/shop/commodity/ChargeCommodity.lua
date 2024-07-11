@@ -75,10 +75,10 @@ function var_0_0.GetExtraServiceItem(arg_15_0)
 
 	if arg_15_0:isPassItem() then
 		local var_15_1 = arg_15_0:getConfig("sub_display")[1]
-		local var_15_2 = pg.battlepass_event_pt[var_15_1].drop_client_pay
+		local var_15_2 = pg.battlepass_event_pt[var_15_1].award_pay
 
 		var_15_0 = PlayerConst.MergePassItemDrop(underscore.map(var_15_2, function(arg_16_0)
-			return Drop.Create(arg_16_0)
+			return Drop.Create(pg.battlepass_event_award[arg_16_0].drop_client)
 		end))
 	else
 		local var_15_3 = arg_15_0:getConfig("extra_service_item")

@@ -29,7 +29,9 @@ function var_0_0.didEnter(arg_3_0)
 	arg_3_0.animEvent:SetEndEvent(function()
 		arg_3_0:closeView()
 	end)
-	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf, false, {
+		weight = LayerWeightConst.SECOND_LAYER
+	})
 end
 
 function var_0_0.Show(arg_7_0)

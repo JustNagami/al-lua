@@ -5,7 +5,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_1 = var_1_0:getSeasonInfo()
 	local var_1_2 = var_1_1:getconsumeGem()
 
-	if var_1_1:getFlashCount() > MAX_REPLACE_RIVAL_COUNT then
+	if var_1_1:getFlashCount() >= MAX_REPLACE_RIVAL_COUNT then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_refresh_count_insufficient"))
 
 		return

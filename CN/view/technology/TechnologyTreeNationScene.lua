@@ -13,12 +13,15 @@ function var_0_0.didEnter(arg_3_0)
 	arg_3_0:addListener()
 	arg_3_0:updateTecItemList()
 	arg_3_0:updateOneStepBtn()
+	arg_3_0.nationProxy:setRedPointIgnoreTecCampUpgrade()
 end
 
 function var_0_0.willExit(arg_4_0)
 	for iter_4_0, iter_4_1 in pairs(arg_4_0.timerList) do
 		iter_4_1:Stop()
 	end
+
+	arg_4_0.nationProxy:refreshRedPoint()
 end
 
 function var_0_0.initData(arg_5_0)

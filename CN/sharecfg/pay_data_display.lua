@@ -113,6 +113,10 @@ pg.pay_data_display = setmetatable({
 		2024,
 		2025,
 		2026,
+		2027,
+		2028,
+		2029,
+		2030,
 		5001,
 		5002,
 		5003,
@@ -8900,7 +8904,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name = "即刻出战礼包",
 		name_display = "即刻出战礼包",
-		type_order = 0,
+		type_order = 2,
 		extra_gem = 0,
 		id = 2009,
 		money = 30,
@@ -10282,7 +10286,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name = "日常补给礼包",
 		name_display = "日常补给礼包",
-		type_order = 0,
+		type_order = 3,
 		extra_gem = 0,
 		id = 2025,
 		money = 6,
@@ -10436,6 +10440,232 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40023,
+				1
+			}
+		}
+	},
+	[2027] = {
+		subject = "最高方案研发礼包(四期)",
+		limit_group = 4,
+		descrip_extra = "此处不会被看到",
+		type = 0,
+		limit_arg = 0,
+		name = "最高方案研发礼包(四期)",
+		name_display = "最高方案研发礼包(四期)",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2027,
+		money = 108,
+		tag = 2,
+		gem = 0,
+		limit_type = 3,
+		time = "always",
+		picture = "tech4_display",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.keyan",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "可获得最高方案快速研发券·四期*1、定向蓝图·四期*343",
+		airijp_id = "com.yostarjp.azurlane.tech",
+		extra_service_item = {
+			{
+				2,
+				40139,
+				1
+			},
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				40139,
+				1
+			},
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {}
+	},
+	[2028] = {
+		subject = "最高方案研发礼包(四期)高级版",
+		limit_group = 4,
+		descrip_extra = "*最高方案快速研发券·四期奖励可能发生变化，点击道具查看详情",
+		type = 0,
+		limit_arg = 1,
+		name = "最高方案研发礼包(四期)高级版",
+		name_display = "高级版",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2028,
+		money = 108,
+		tag = 2,
+		gem = 0,
+		limit_type = 3,
+		time = "always",
+		picture = "tech4_promotion",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.keyan10",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "礼包内容",
+		airijp_id = "com.yostarjp.azurlane.tech10",
+		extra_service_item = {
+			{
+				2,
+				40139,
+				1
+			},
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				40139,
+				1
+			},
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40044,
+				1
+			}
+		}
+	},
+	[2029] = {
+		subject = "最高方案研发礼包(四期)标准版",
+		limit_group = 4,
+		descrip_extra = "*最高方案快速研发券·四期奖励可能发生变化，点击道具查看详情",
+		type = 0,
+		limit_arg = 2,
+		name = "最高方案研发礼包(四期)标准版",
+		name_display = "标准版",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2029,
+		money = 68,
+		tag = 2,
+		gem = 0,
+		limit_type = 3,
+		time = "always",
+		picture = "tech4_normal",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.keyan11",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "礼包内容",
+		airijp_id = "com.yostarjp.azurlane.tech11",
+		extra_service_item = {
+			{
+				2,
+				40139,
+				1
+			}
+		},
+		display = {
+			{
+				2,
+				40139,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40045,
+				1
+			}
+		}
+	},
+	[2030] = {
+		subject = "最高方案研发礼包(四期)升级版",
+		limit_group = 4,
+		descrip_extra = "升级为高级版后可获得定向蓝图·四期x343",
+		type = 0,
+		limit_arg = 3,
+		name = "最高方案研发礼包(四期)升级版",
+		name_display = "高级版",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2030,
+		money = 40,
+		tag = 2,
+		gem = 0,
+		limit_type = 3,
+		time = "always",
+		picture = "tech4_promotion",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.keyan12",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "礼包内容",
+		airijp_id = "com.yostarjp.azurlane.tech12",
+		extra_service_item = {
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40046,
 				1
 			}
 		}

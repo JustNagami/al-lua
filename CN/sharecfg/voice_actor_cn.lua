@@ -1659,5 +1659,13 @@ pg.voice_actor_CN = {
 	{
 		code = 415,
 		actor_name = "鹫见友美Jiena"
+	},
+	{
+		code = 416,
+		actor_name = "伊驹百合绘"
+	},
+	{
+		code = 417,
+		actor_name = "立花日菜"
 	}
 }

@@ -156716,7 +156716,7 @@ _G.pg.base.item_virtual_data_statistics[59583] = {
 }
 _G.pg.base.item_virtual_data_statistics[59584] = {
 	display = "不该被看到",
-	name = "通行证十七期对应虚拟道具",
+	name = "通行证十七期礼包商店购买支付标记",
 	max_num = 0,
 	type = 0,
 	time_limit = 0,
@@ -182089,6 +182089,157 @@ _G.pg.base.item_virtual_data_statistics[200177] = {
 			1
 		}
 	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[52081] = {
+	display = "有几率获得以下蓝图",
+	name = "未知蓝图",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/52001",
+	id = 52081,
+	order = 0,
+	display_icon = {
+		{
+			2,
+			42061,
+			1
+		},
+		{
+			2,
+			42062,
+			1
+		},
+		{
+			2,
+			42063,
+			1
+		},
+		{
+			2,
+			42064,
+			1
+		},
+		{
+			2,
+			42065,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[52082] = {
+	display = "有几率获得以下设计图",
+	name = "未知限定装备设计图",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/55000",
+	id = 52082,
+	order = 0,
+	display_icon = {
+		{
+			2,
+			13043,
+			1
+		},
+		{
+			2,
+			13044,
+			1
+		},
+		{
+			2,
+			13045,
+			1
+		},
+		{
+			2,
+			13046,
+			1
+		},
+		{
+			2,
+			13047,
+			1
+		},
+		{
+			2,
+			13048,
+			1
+		},
+		{
+			2,
+			13024,
+			1
+		},
+		{
+			2,
+			13007,
+			1
+		},
+		{
+			2,
+			13010,
+			1
+		},
+		{
+			2,
+			13009,
+			1
+		},
+		{
+			2,
+			13011,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59599] = {
+	display = "参与「世界巡游」获得的点数，累计一定程度可以领取奖励，活动结束后将会消失",
+	name = "巡游点数",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 26,
+	is_world = 0,
+	icon = "props/battlepass_pt",
+	id = 59599,
+	order = 0,
+	display_icon = {},
 	price = {},
 	index = {},
 	shiptrans_id = {},

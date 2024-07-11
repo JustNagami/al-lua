@@ -26,7 +26,8 @@ function var_0_0.InitBtns(arg_2_0)
 		MainActAprilFoolBtn.New(arg_2_0.actBtnTpl, arg_2_0.event),
 		MainActMedalCollectionBtn.New(arg_2_0.actBtnTpl, arg_2_0.event),
 		MainActSenranBtn.New(arg_2_0.actBtnTpl, arg_2_0.event),
-		MainActBossSingleBtn.New(tpl, event)
+		MainActBossSingleBtn.New(arg_2_0.actBtnTpl, arg_2_0.event),
+		MainActLayerBtn.New(arg_2_0.actBtnTpl, arg_2_0.event)
 	}
 	arg_2_0.specailBtns = {
 		MainActInsBtn.New(arg_2_0._tf, arg_2_0.event),

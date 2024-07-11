@@ -13,7 +13,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.rank = arg_1_1.rank
 	arg_1_0.fightCount = arg_1_1.fight_count
 	arg_1_0.resetTime = arg_1_1.fight_count_reset_time
-	arg_1_0.flashTargetCount = arg_1_1.flash_target_count + 1
+	arg_1_0.flashTargetCount = arg_1_1.flash_target_count
 	arg_1_0.score = arg_1_0.score + var_0_0.INIT_POINT
 
 	local var_1_0 = {}
