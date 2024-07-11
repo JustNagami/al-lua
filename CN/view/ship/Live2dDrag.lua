@@ -982,6 +982,8 @@ end
 
 function var_0_0.clearData(arg_49_0)
 	if arg_49_0.revert == -1 then
+		arg_49_0.actionListIndex = 1
+
 		arg_49_0:setParameterValue(arg_49_0.startValue)
 		arg_49_0:setTargetValue(arg_49_0.startValue)
 	end
