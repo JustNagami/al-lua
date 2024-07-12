@@ -46,7 +46,18 @@ end
 function var_0_0.updateTaskLayers(arg_9_0)
 	local var_9_0 = getProxy(TaskProxy)
 	local var_9_1 = underscore.map(arg_9_0.activity:getConfig("config_data"), function(arg_10_0)
-		return var_9_0:getTaskVO(arg_10_0)
+		local var_10_0 = var_9_0:getTaskVO(arg_10_0)
+
+		if not var_10_0 then
+			var_10_0 = Task.New({
+				submit_time = 1,
+				id = arg_10_0
+			})
+
+			var_10_0:updateProgress(var_10_0:getConfig("target_num"))
+		end
+
+		return var_10_0
 	end)
 
 	for iter_9_0, iter_9_1 in ipairs(var_9_1) do

@@ -392,101 +392,121 @@ function var_0_1.CalcMonthDays(arg_43_0, arg_43_1, arg_43_2)
 	return var_43_0
 end
 
-function var_0_1.inTime(arg_44_0, arg_44_1, arg_44_2)
-	if not arg_44_1 then
-		return true
-	end
-
-	if type(arg_44_1) == "string" then
+function var_0_1.inPeriod(arg_44_0, arg_44_1, arg_44_2)
+	if arg_44_1 and type(arg_44_1) == "string" then
 		return arg_44_1 == "always"
 	end
 
-	if type(arg_44_1[1]) == "string" then
-		arg_44_1 = {
-			arg_44_1[2],
-			arg_44_1[3]
-		}
+	if not arg_44_1 or not arg_44_2 then
+		return true
 	end
 
 	local function var_44_0(arg_45_0)
-		return {
-			year = arg_45_0[1][1],
-			month = arg_45_0[1][2],
-			day = arg_45_0[1][3],
-			hour = arg_45_0[2][1],
-			min = arg_45_0[2][2],
-			sec = arg_45_0[2][3]
-		}
+		return arg_45_0[1] * var_0_2 + arg_45_0[2] * 60 + arg_45_0[3]
 	end
 
-	local var_44_1
+	local var_44_1 = (arg_44_0:GetServerTime() - arg_44_0._sAnchorTime) % var_0_3
+	local var_44_2 = var_44_0(arg_44_1)
+	local var_44_3 = var_44_0(arg_44_2)
 
-	if #arg_44_1 > 0 then
-		var_44_1 = var_44_0(arg_44_1[1] or {
-			{
-				2000,
-				1,
-				1
-			},
-			{
-				0,
-				0,
-				0
-			}
-		})
-	end
-
-	local var_44_2
-
-	if #arg_44_1 > 1 then
-		var_44_2 = var_44_0(arg_44_1[2] or {
-			{
-				2000,
-				1,
-				1
-			},
-			{
-				0,
-				0,
-				0
-			}
-		})
-	end
-
-	local var_44_3
-
-	if var_44_1 and var_44_2 then
-		local var_44_4 = arg_44_2 or arg_44_0:GetServerTime()
-		local var_44_5 = arg_44_0:Table2ServerTime(var_44_1)
-		local var_44_6 = arg_44_0:Table2ServerTime(var_44_2)
-
-		if var_44_4 < var_44_5 then
-			return false, var_44_1
-		end
-
-		if var_44_6 < var_44_4 then
-			return false, nil
-		end
-
-		var_44_3 = var_44_2
-	end
-
-	return true, var_44_3
+	return var_44_2 <= var_44_1 and var_44_1 <= var_44_3
 end
 
-function var_0_1.passTime(arg_46_0, arg_46_1)
+function var_0_1.inTime(arg_46_0, arg_46_1, arg_46_2)
 	if not arg_46_1 then
 		return true
 	end
 
-	local var_46_0 = (function(arg_47_0)
-		local var_47_0 = {}
+	if type(arg_46_1) == "string" then
+		return arg_46_1 == "always"
+	end
 
-		var_47_0.year, var_47_0.month, var_47_0.day = unpack(arg_47_0[1])
-		var_47_0.hour, var_47_0.min, var_47_0.sec = unpack(arg_47_0[2])
+	if type(arg_46_1[1]) == "string" then
+		arg_46_1 = {
+			arg_46_1[2],
+			arg_46_1[3]
+		}
+	end
 
-		return var_47_0
-	end)(arg_46_1 or {
+	local function var_46_0(arg_47_0)
+		return {
+			year = arg_47_0[1][1],
+			month = arg_47_0[1][2],
+			day = arg_47_0[1][3],
+			hour = arg_47_0[2][1],
+			min = arg_47_0[2][2],
+			sec = arg_47_0[2][3]
+		}
+	end
+
+	local var_46_1
+
+	if #arg_46_1 > 0 then
+		var_46_1 = var_46_0(arg_46_1[1] or {
+			{
+				2000,
+				1,
+				1
+			},
+			{
+				0,
+				0,
+				0
+			}
+		})
+	end
+
+	local var_46_2
+
+	if #arg_46_1 > 1 then
+		var_46_2 = var_46_0(arg_46_1[2] or {
+			{
+				2000,
+				1,
+				1
+			},
+			{
+				0,
+				0,
+				0
+			}
+		})
+	end
+
+	local var_46_3
+
+	if var_46_1 and var_46_2 then
+		local var_46_4 = arg_46_2 or arg_46_0:GetServerTime()
+		local var_46_5 = arg_46_0:Table2ServerTime(var_46_1)
+		local var_46_6 = arg_46_0:Table2ServerTime(var_46_2)
+
+		if var_46_4 < var_46_5 then
+			return false, var_46_1
+		end
+
+		if var_46_6 < var_46_4 then
+			return false, nil
+		end
+
+		var_46_3 = var_46_2
+	end
+
+	return true, var_46_3
+end
+
+function var_0_1.passTime(arg_48_0, arg_48_1)
+	if not arg_48_1 then
+		return true
+	end
+
+	local var_48_0 = (function(arg_49_0)
+		local var_49_0 = {}
+
+		var_49_0.year, var_49_0.month, var_49_0.day = unpack(arg_49_0[1])
+		var_49_0.hour, var_49_0.min, var_49_0.sec = unpack(arg_49_0[2])
+
+		return var_49_0
+	end)(arg_48_1 or {
 		{
 			2000,
 			1,
@@ -499,8 +519,8 @@ function var_0_1.passTime(arg_46_0, arg_46_1)
 		}
 	})
 
-	if var_46_0 then
-		return arg_46_0:GetServerTime() > arg_46_0:Table2ServerTime(var_46_0)
+	if var_48_0 then
+		return arg_48_0:GetServerTime() > arg_48_0:Table2ServerTime(var_48_0)
 	end
 
 	return true

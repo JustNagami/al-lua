@@ -84,10 +84,15 @@ function var_0_0.updateUI(arg_10_0)
 		if iter_10_0 <= var_10_1 then
 			if var_10_0[iter_10_0] and var_10_0[iter_10_0] ~= 0 then
 				local var_10_7 = getProxy(BayProxy):RawGetShipById(var_10_0[iter_10_0])
-				local var_10_8 = LoadSprite("qicon/" .. var_10_7:getPainting())
 
-				setImageSprite(findTF(var_10_6, "mask/icon"), var_10_8)
-				setActive(var_10_6, true)
+				if var_10_7 then
+					local var_10_8 = LoadSprite("qicon/" .. var_10_7:getPainting())
+
+					setImageSprite(findTF(var_10_6, "mask/icon"), var_10_8)
+					setActive(var_10_6, true)
+				else
+					setActive(var_10_4, true)
+				end
 			else
 				setActive(var_10_4, true)
 			end

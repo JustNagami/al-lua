@@ -1364,6 +1364,9 @@ pg.ship_data_group = setmetatable({
 		[40702] = {
 			385
 		},
+		[40813] = {
+			650
+		},
 		[40810] = {
 			484
 		},
@@ -1399,9 +1402,6 @@ pg.ship_data_group = setmetatable({
 		},
 		[40812] = {
 			528
-		},
-		[40813] = {
-			650
 		},
 		[50101] = {
 			253
@@ -2024,6 +2024,21 @@ pg.ship_data_group = setmetatable({
 		[99902] = {
 			20032
 		},
+		[19905] = {
+			20033
+		},
+		[39907] = {
+			20034
+		},
+		[69902] = {
+			20035
+		},
+		[79902] = {
+			20036
+		},
+		[89904] = {
+			20037
+		},
 		[970701] = {
 			30001
 		},
@@ -2586,6 +2601,7 @@ pg.ship_data_group = setmetatable({
 			252,
 			482,
 			385,
+			650,
 			484,
 			343,
 			387,
@@ -2598,7 +2614,6 @@ pg.ship_data_group = setmetatable({
 			386,
 			344,
 			528,
-			650,
 			253,
 			254,
 			255,
@@ -2809,7 +2824,12 @@ pg.ship_data_group = setmetatable({
 			20029,
 			20030,
 			20031,
-			20032
+			20032,
+			20033,
+			20034,
+			20035,
+			20036,
+			20037
 		},
 		{
 			30001,
@@ -3304,6 +3324,7 @@ pg.ship_data_group = setmetatable({
 		252,
 		482,
 		385,
+		650,
 		484,
 		343,
 		387,
@@ -3316,7 +3337,6 @@ pg.ship_data_group = setmetatable({
 		386,
 		344,
 		528,
-		650,
 		253,
 		254,
 		255,
@@ -3524,6 +3544,11 @@ pg.ship_data_group = setmetatable({
 		20030,
 		20031,
 		20032,
+		20033,
+		20034,
+		20035,
+		20036,
+		20037,
 		30001,
 		30002,
 		30003,
@@ -11472,6 +11497,17 @@ pg.base.ship_data_group = {
 				"Event: Counterattack Within the Fjord",
 				{
 					""
+				},
+				0
+			},
+			{
+				"Light ship Construction",
+				{
+					"GETBOAT",
+					{
+						projectName = "light",
+						page = 1
+					}
 				},
 				0
 			}
@@ -23853,7 +23889,7 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
-	[484] = {
+	[650] = {
 		type = 8,
 		redirect_id = 101,
 		hide = 0,
@@ -23861,6 +23897,38 @@ pg.base.ship_data_group = {
 		trans_skin = 0,
 		handbook_type = 0,
 		index_id = 457,
+		code = 650,
+		group_type = 40813,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"D",
+			"S",
+			"E",
+			"D",
+			"E",
+			"D"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: Welcome to Little Academy",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[484] = {
+		type = 8,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 4,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 458,
 		code = 484,
 		group_type = 40810,
 		trans_type = 0,
@@ -23902,7 +23970,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 458,
+		index_id = 459,
 		code = 343,
 		group_type = 40802,
 		trans_type = 0,
@@ -23945,7 +24013,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 459,
+		index_id = 460,
 		code = 387,
 		group_type = 40805,
 		trans_type = 0,
@@ -23997,7 +24065,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 460,
+		index_id = 461,
 		code = 341,
 		group_type = 40801,
 		trans_type = 0,
@@ -24033,7 +24101,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 461,
+		index_id = 462,
 		code = 467,
 		group_type = 40809,
 		trans_type = 0,
@@ -24085,7 +24153,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 462,
+		index_id = 463,
 		code = 399,
 		group_type = 40806,
 		trans_type = 0,
@@ -24121,7 +24189,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 463,
+		index_id = 464,
 		code = 416,
 		group_type = 40808,
 		trans_type = 0,
@@ -24164,7 +24232,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 464,
+		index_id = 465,
 		code = 492,
 		group_type = 40811,
 		trans_type = 0,
@@ -24196,7 +24264,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 465,
+		index_id = 466,
 		code = 400,
 		group_type = 40807,
 		trans_type = 0,
@@ -24232,7 +24300,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 466,
+		index_id = 467,
 		code = 386,
 		group_type = 40804,
 		trans_type = 0,
@@ -24284,7 +24352,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 467,
+		index_id = 468,
 		code = 344,
 		group_type = 40803,
 		trans_type = 0,
@@ -24336,7 +24404,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 468,
+		index_id = 469,
 		code = 528,
 		group_type = 40812,
 		trans_type = 0,
@@ -24354,38 +24422,6 @@ pg.base.ship_data_group = {
 		description = {
 			{
 				"Event: Tower of Transcendence",
-				{
-					""
-				},
-				0
-			}
-		}
-	},
-	[650] = {
-		type = 8,
-		redirect_id = 101,
-		hide = 0,
-		nationality = 4,
-		trans_skin = 0,
-		handbook_type = 0,
-		index_id = 469,
-		code = 650,
-		group_type = 40813,
-		trans_type = 0,
-		share_group_id = {},
-		property_hexagon = {
-			"D",
-			"S",
-			"E",
-			"D",
-			"E",
-			"D"
-		},
-		trans_radar_chart = {},
-		trans_skill = {},
-		description = {
-			{
-				"Event: Welcome to Little Academy",
 				{
 					""
 				},
@@ -31902,6 +31938,181 @@ pg.base.ship_data_group = {
 					"SHIPBLUEPRINT",
 					{
 						shipGroupId = 99902
+					}
+				},
+				0
+			}
+		}
+	},
+	[20033] = {
+		type = 1,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 1,
+		trans_skin = 0,
+		handbook_type = 2,
+		index_id = 20033,
+		code = 20033,
+		group_type = 19905,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"C",
+			"B",
+			"B",
+			"D",
+			"C"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Research and Development",
+				{
+					"SHIPBLUEPRINT",
+					{
+						shipGroupId = 19905
+					}
+				},
+				0
+			}
+		}
+	},
+	[20034] = {
+		type = 5,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 3,
+		trans_skin = 0,
+		handbook_type = 2,
+		index_id = 20034,
+		code = 20034,
+		group_type = 39907,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"S",
+			"C",
+			"E",
+			"C",
+			"D",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Research and Development",
+				{
+					"SHIPBLUEPRINT",
+					{
+						shipGroupId = 39907
+					}
+				},
+				0
+			}
+		}
+	},
+	[20035] = {
+		type = 3,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 6,
+		trans_skin = 0,
+		handbook_type = 2,
+		index_id = 20035,
+		code = 20035,
+		group_type = 69902,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"C",
+			"E",
+			"B",
+			"C",
+			"S"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Research and Development",
+				{
+					"SHIPBLUEPRINT",
+					{
+						shipGroupId = 69902
+					}
+				},
+				0
+			}
+		}
+	},
+	[20036] = {
+		type = 7,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 7,
+		trans_skin = 0,
+		handbook_type = 2,
+		index_id = 20036,
+		code = 20036,
+		group_type = 79902,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"E",
+			"E",
+			"S",
+			"C",
+			"B",
+			"S"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Research and Development",
+				{
+					"SHIPBLUEPRINT",
+					{
+						shipGroupId = 79902
+					}
+				},
+				0
+			}
+		}
+	},
+	[20037] = {
+		type = 2,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 8,
+		trans_skin = 0,
+		handbook_type = 2,
+		index_id = 20037,
+		code = 20037,
+		group_type = 89904,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"B",
+			"A",
+			"E",
+			"B",
+			"B",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Research and Development",
+				{
+					"SHIPBLUEPRINT",
+					{
+						shipGroupId = 89904
 					}
 				},
 				0

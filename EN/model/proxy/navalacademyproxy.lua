@@ -69,383 +69,393 @@ function var_0_0.register(arg_1_0)
 	end)
 end
 
-function var_0_0.GetRecentShips(arg_4_0)
-	if #arg_4_0.recentShips > 0 then
-		for iter_4_0 = #arg_4_0.recentShips, 1, -1 do
-			local var_4_0 = arg_4_0.recentShips[iter_4_0]
-			local var_4_1 = getProxy(BayProxy):RawGetShipById(var_4_0)
-
-			if not var_4_1 or _.all(var_4_1:getSkillList(), function(arg_5_0)
-				return ShipSkill.New(var_4_1.skills[arg_5_0]):IsMaxLevel()
-			end) then
-				table.remove(arg_4_0.recentShips, iter_4_0)
-			end
+function var_0_0.timeCall(arg_4_0)
+	return {
+		[ProxyRegister.DayCall] = function(arg_5_0)
+			arg_4_0:setCourse(arg_4_0.course)
+			arg_4_0:sendNotification(GAME.CLASS_FORCE_UPDATE)
+			getProxy(NavalAcademyProxy):resetUsedDailyFinishCnt()
 		end
-
-		return arg_4_0.recentShips
-	end
-
-	local var_4_2 = getProxy(PlayerProxy):getRawData().id
-	local var_4_3 = PlayerPrefs.GetString("NavTacticsRecentShipId" .. var_4_2)
-	local var_4_4 = string.split(var_4_3, "#")
-
-	for iter_4_1, iter_4_2 in ipairs(var_4_4) do
-		local var_4_5 = tonumber(iter_4_2) or 0
-
-		if var_4_5 > 0 then
-			local var_4_6 = getProxy(BayProxy):RawGetShipById(var_4_5)
-
-			if var_4_6 and not table.contains(arg_4_0.recentShips, var_4_5) and _.any(var_4_6:getSkillList(), function(arg_6_0)
-				return not ShipSkill.New(var_4_6.skills[arg_6_0]):IsMaxLevel()
-			end) then
-				table.insert(arg_4_0.recentShips, var_4_5)
-			end
-		end
-	end
-
-	return arg_4_0.recentShips
+	}
 end
 
-function var_0_0.SaveRecentShip(arg_7_0, arg_7_1)
-	if not table.contains(arg_7_0.recentShips, arg_7_1) then
-		table.insert(arg_7_0.recentShips, arg_7_1)
+function var_0_0.GetRecentShips(arg_6_0)
+	if #arg_6_0.recentShips > 0 then
+		for iter_6_0 = #arg_6_0.recentShips, 1, -1 do
+			local var_6_0 = arg_6_0.recentShips[iter_6_0]
+			local var_6_1 = getProxy(BayProxy):RawGetShipById(var_6_0)
 
-		for iter_7_0 = 1, #arg_7_0.recentShips - 11 do
-			table.remove(arg_7_0.recentShips, iter_7_0)
+			if not var_6_1 or _.all(var_6_1:getSkillList(), function(arg_7_0)
+				return ShipSkill.New(var_6_1.skills[arg_7_0]):IsMaxLevel()
+			end) then
+				table.remove(arg_6_0.recentShips, iter_6_0)
+			end
 		end
 
-		local var_7_0 = table.concat(arg_7_0.recentShips, "#")
-		local var_7_1 = getProxy(PlayerProxy):getRawData().id
+		return arg_6_0.recentShips
+	end
 
-		PlayerPrefs.SetString("NavTacticsRecentShipId" .. var_7_1, var_7_0)
+	local var_6_2 = getProxy(PlayerProxy):getRawData().id
+	local var_6_3 = PlayerPrefs.GetString("NavTacticsRecentShipId" .. var_6_2)
+	local var_6_4 = string.split(var_6_3, "#")
+
+	for iter_6_1, iter_6_2 in ipairs(var_6_4) do
+		local var_6_5 = tonumber(iter_6_2) or 0
+
+		if var_6_5 > 0 then
+			local var_6_6 = getProxy(BayProxy):RawGetShipById(var_6_5)
+
+			if var_6_6 and not table.contains(arg_6_0.recentShips, var_6_5) and _.any(var_6_6:getSkillList(), function(arg_8_0)
+				return not ShipSkill.New(var_6_6.skills[arg_8_0]):IsMaxLevel()
+			end) then
+				table.insert(arg_6_0.recentShips, var_6_5)
+			end
+		end
+	end
+
+	return arg_6_0.recentShips
+end
+
+function var_0_0.SaveRecentShip(arg_9_0, arg_9_1)
+	if not table.contains(arg_9_0.recentShips, arg_9_1) then
+		table.insert(arg_9_0.recentShips, arg_9_1)
+
+		for iter_9_0 = 1, #arg_9_0.recentShips - 11 do
+			table.remove(arg_9_0.recentShips, iter_9_0)
+		end
+
+		local var_9_0 = table.concat(arg_9_0.recentShips, "#")
+		local var_9_1 = getProxy(PlayerProxy):getRawData().id
+
+		PlayerPrefs.SetString("NavTacticsRecentShipId" .. var_9_1, var_9_0)
 		PlayerPrefs.Save()
 	end
 end
 
-function var_0_0.getSkillClassNum(arg_8_0)
-	return arg_8_0.skillClassNum
+function var_0_0.getSkillClassNum(arg_10_0)
+	return arg_10_0.skillClassNum
 end
 
 var_0_0.MAX_SKILL_CLASS_NUM = 4
 
-function var_0_0.inCreaseKillClassNum(arg_9_0)
-	arg_9_0.skillClassNum = math.min(arg_9_0.skillClassNum + 1, var_0_0.MAX_SKILL_CLASS_NUM)
+function var_0_0.inCreaseKillClassNum(arg_11_0)
+	arg_11_0.skillClassNum = math.min(arg_11_0.skillClassNum + 1, var_0_0.MAX_SKILL_CLASS_NUM)
 
-	arg_9_0:sendNotification(var_0_0.SKILL_CLASS_POS_UPDATED, arg_9_0.skillClassNum)
+	arg_11_0:sendNotification(var_0_0.SKILL_CLASS_POS_UPDATED, arg_11_0.skillClassNum)
 end
 
-function var_0_0.onRemove(arg_10_0)
-	for iter_10_0, iter_10_1 in pairs(arg_10_0.timers) do
-		iter_10_1:Stop()
+function var_0_0.onRemove(arg_12_0)
+	for iter_12_0, iter_12_1 in pairs(arg_12_0.timers) do
+		iter_12_1:Stop()
 	end
 
-	arg_10_0.timers = nil
+	arg_12_0.timers = nil
 
-	var_0_0.super.onRemove(arg_10_0)
+	var_0_0.super.onRemove(arg_12_0)
 end
 
-function var_0_0.ExistStudent(arg_11_0, arg_11_1)
-	return arg_11_0.students[arg_11_1] ~= nil
+function var_0_0.ExistStudent(arg_13_0, arg_13_1)
+	return arg_13_0.students[arg_13_1] ~= nil
 end
 
-function var_0_0.getStudentById(arg_12_0, arg_12_1)
-	if arg_12_0.students[arg_12_1] then
-		return arg_12_0.students[arg_12_1]:clone()
+function var_0_0.getStudentById(arg_14_0, arg_14_1)
+	if arg_14_0.students[arg_14_1] then
+		return arg_14_0.students[arg_14_1]:clone()
 	end
 end
 
-function var_0_0.getStudentIdByShipId(arg_13_0, arg_13_1)
-	for iter_13_0, iter_13_1 in pairs(arg_13_0.students) do
-		if iter_13_1.shipId == arg_13_1 then
-			return iter_13_1.id
+function var_0_0.getStudentIdByShipId(arg_15_0, arg_15_1)
+	for iter_15_0, iter_15_1 in pairs(arg_15_0.students) do
+		if iter_15_1.shipId == arg_15_1 then
+			return iter_15_1.id
 		end
 	end
 end
 
-function var_0_0.getStudentByShipId(arg_14_0, arg_14_1)
-	for iter_14_0, iter_14_1 in pairs(arg_14_0.students) do
-		if iter_14_1.shipId == arg_14_1 then
-			return iter_14_1
+function var_0_0.getStudentByShipId(arg_16_0, arg_16_1)
+	for iter_16_0, iter_16_1 in pairs(arg_16_0.students) do
+		if iter_16_1.shipId == arg_16_1 then
+			return iter_16_1
 		end
 	end
 end
 
-function var_0_0.setStudents(arg_15_0, arg_15_1)
-	arg_15_0.students = arg_15_1
+function var_0_0.setStudents(arg_17_0, arg_17_1)
+	arg_17_0.students = arg_17_1
 
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inTactics")
 end
 
-function var_0_0.getStudents(arg_16_0)
-	return Clone(arg_16_0.students)
+function var_0_0.getStudents(arg_18_0)
+	return Clone(arg_18_0.students)
 end
 
-function var_0_0.RawGetStudentList(arg_17_0)
-	return arg_17_0.students
+function var_0_0.RawGetStudentList(arg_19_0)
+	return arg_19_0.students
 end
 
-function var_0_0.addStudent(arg_18_0, arg_18_1)
-	arg_18_0.students[arg_18_1.id] = arg_18_1
+function var_0_0.addStudent(arg_20_0, arg_20_1)
+	arg_20_0.students[arg_20_1.id] = arg_20_1
 
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inTactics")
-	arg_18_0:sendNotification(var_0_0.START_LEARN_TACTICS, Clone(arg_18_1))
+	arg_20_0:sendNotification(var_0_0.START_LEARN_TACTICS, Clone(arg_20_1))
 end
 
-function var_0_0.updateStudent(arg_19_0, arg_19_1)
-	arg_19_0.students[arg_19_1.id] = arg_19_1
+function var_0_0.updateStudent(arg_21_0, arg_21_1)
+	arg_21_0.students[arg_21_1.id] = arg_21_1
 
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inTactics")
 end
 
-function var_0_0.deleteStudent(arg_20_0, arg_20_1)
-	arg_20_0.students[arg_20_1] = nil
+function var_0_0.deleteStudent(arg_22_0, arg_22_1)
+	arg_22_0.students[arg_22_1] = nil
 
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inTactics")
-	arg_20_0:sendNotification(var_0_0.CANCEL_LEARN_TACTICS, arg_20_1)
+	arg_22_0:sendNotification(var_0_0.CANCEL_LEARN_TACTICS, arg_22_1)
 end
 
-function var_0_0.GetOilVO(arg_21_0)
-	return arg_21_0._oilVO
+function var_0_0.GetOilVO(arg_23_0)
+	return arg_23_0._oilVO
 end
 
-function var_0_0.GetGoldVO(arg_22_0)
-	return arg_22_0._goldVO
+function var_0_0.GetGoldVO(arg_24_0)
+	return arg_24_0._goldVO
 end
 
-function var_0_0.GetClassVO(arg_23_0)
-	return arg_23_0._classVO
+function var_0_0.GetClassVO(arg_25_0)
+	return arg_25_0._classVO
 end
 
-function var_0_0.getCourse(arg_24_0)
-	return Clone(arg_24_0.course)
+function var_0_0.getCourse(arg_26_0)
+	return Clone(arg_26_0.course)
 end
 
-function var_0_0.setCourse(arg_25_0, arg_25_1)
-	arg_25_0.course = arg_25_1
+function var_0_0.setCourse(arg_27_0, arg_27_1)
+	arg_27_0.course = arg_27_1
 
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inClass")
 end
 
-function var_0_0.GetShipIDs(arg_26_0)
+function var_0_0.GetShipIDs(arg_28_0)
 	return {}
 end
 
-function var_0_0.CheckResFields(arg_27_0)
-	if arg_27_0._oilVO:IsStarting() then
-		arg_27_0:AddResFieldListener(arg_27_0._oilVO)
+function var_0_0.CheckResFields(arg_29_0)
+	if arg_29_0._oilVO:IsStarting() then
+		arg_29_0:AddResFieldListener(arg_29_0._oilVO)
 	end
 
-	if arg_27_0._goldVO:IsStarting() then
-		arg_27_0:AddResFieldListener(arg_27_0._goldVO)
+	if arg_29_0._goldVO:IsStarting() then
+		arg_29_0:AddResFieldListener(arg_29_0._goldVO)
 	end
 
-	if arg_27_0._classVO:IsStarting() then
-		arg_27_0:AddResFieldListener(arg_27_0._classVO)
+	if arg_29_0._classVO:IsStarting() then
+		arg_29_0:AddResFieldListener(arg_29_0._classVO)
 	end
 end
 
-function var_0_0.StartUpGradeSuccess(arg_28_0, arg_28_1)
-	local var_28_0 = arg_28_1:bindConfigTable()[arg_28_1:GetLevel()].time
+function var_0_0.StartUpGradeSuccess(arg_30_0, arg_30_1)
+	local var_30_0 = arg_30_1:bindConfigTable()[arg_30_1:GetLevel()].time
 
-	arg_28_1:SetUpgradeTimeStamp(pg.TimeMgr.GetInstance():GetServerTime() + var_28_0)
-	arg_28_0:AddResFieldListener(arg_28_1)
-	arg_28_0.facade:sendNotification(var_0_0.RESOURCE_UPGRADE, {
-		resVO = arg_28_1
+	arg_30_1:SetUpgradeTimeStamp(pg.TimeMgr.GetInstance():GetServerTime() + var_30_0)
+	arg_30_0:AddResFieldListener(arg_30_1)
+	arg_30_0.facade:sendNotification(var_0_0.RESOURCE_UPGRADE, {
+		resVO = arg_30_1
 	})
 end
 
-function var_0_0.AddResFieldListener(arg_29_0, arg_29_1)
-	local var_29_0 = arg_29_1._upgradeTimeStamp - pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.AddResFieldListener(arg_31_0, arg_31_1)
+	local var_31_0 = arg_31_1._upgradeTimeStamp - pg.TimeMgr.GetInstance():GetServerTime()
 
-	if var_29_0 > 0 then
-		local var_29_1 = arg_29_1:GetUpgradeType()
+	if var_31_0 > 0 then
+		local var_31_1 = arg_31_1:GetUpgradeType()
 
-		if arg_29_0.timers[var_29_1] then
-			arg_29_0.timers[var_29_1]:Stop()
+		if arg_31_0.timers[var_31_1] then
+			arg_31_0.timers[var_31_1]:Stop()
 
-			arg_29_0.timers[var_29_1] = nil
+			arg_31_0.timers[var_31_1] = nil
 		end
 
-		arg_29_0.timers[var_29_1] = Timer.New(function()
-			arg_29_0:UpgradeFinish()
-			arg_29_0.timers[var_29_1]:Stop()
+		arg_31_0.timers[var_31_1] = Timer.New(function()
+			arg_31_0:UpgradeFinish()
+			arg_31_0.timers[var_31_1]:Stop()
 
-			arg_29_0.timers[var_29_1] = nil
-		end, var_29_0, 1)
+			arg_31_0.timers[var_31_1] = nil
+		end, var_31_0, 1)
 
-		arg_29_0.timers[var_29_1]:Start()
+		arg_31_0.timers[var_31_1]:Start()
 	end
 end
 
-function var_0_0.UpgradeFinish(arg_31_0)
-	if arg_31_0._goldVO:GetDuration() and arg_31_0._goldVO:GetDuration() <= 0 then
-		local var_31_0 = arg_31_0._goldVO:bindConfigTable()[arg_31_0._goldVO:GetLevel()].store
+function var_0_0.UpgradeFinish(arg_33_0)
+	if arg_33_0._goldVO:GetDuration() and arg_33_0._goldVO:GetDuration() <= 0 then
+		local var_33_0 = arg_33_0._goldVO:bindConfigTable()[arg_33_0._goldVO:GetLevel()].store
 
-		arg_31_0._goldVO:SetLevel(arg_31_0._goldVO:GetLevel() + 1)
-		arg_31_0._goldVO:SetUpgradeTimeStamp(0)
+		arg_33_0._goldVO:SetLevel(arg_33_0._goldVO:GetLevel() + 1)
+		arg_33_0._goldVO:SetUpgradeTimeStamp(0)
 
-		local var_31_1 = arg_31_0._goldVO:bindConfigTable()[arg_31_0._goldVO:GetLevel()].store
+		local var_33_1 = arg_33_0._goldVO:bindConfigTable()[arg_33_0._goldVO:GetLevel()].store
 
-		arg_31_0:sendNotification(var_0_0.RESOURCE_UPGRADE_DONE, {
-			field = arg_31_0._goldVO,
-			value = var_31_1 - var_31_0
+		arg_33_0:sendNotification(var_0_0.RESOURCE_UPGRADE_DONE, {
+			field = arg_33_0._goldVO,
+			value = var_33_1 - var_33_0
 		})
 	end
 
-	if arg_31_0._oilVO:GetDuration() and arg_31_0._oilVO:GetDuration() <= 0 then
-		local var_31_2 = arg_31_0._oilVO:bindConfigTable()[arg_31_0._oilVO:GetLevel()].store
+	if arg_33_0._oilVO:GetDuration() and arg_33_0._oilVO:GetDuration() <= 0 then
+		local var_33_2 = arg_33_0._oilVO:bindConfigTable()[arg_33_0._oilVO:GetLevel()].store
 
-		arg_31_0._oilVO:SetLevel(arg_31_0._oilVO:GetLevel() + 1)
-		arg_31_0._oilVO:SetUpgradeTimeStamp(0)
+		arg_33_0._oilVO:SetLevel(arg_33_0._oilVO:GetLevel() + 1)
+		arg_33_0._oilVO:SetUpgradeTimeStamp(0)
 
-		local var_31_3 = arg_31_0._oilVO:bindConfigTable()[arg_31_0._oilVO:GetLevel()].store
+		local var_33_3 = arg_33_0._oilVO:bindConfigTable()[arg_33_0._oilVO:GetLevel()].store
 
-		arg_31_0:sendNotification(var_0_0.RESOURCE_UPGRADE_DONE, {
-			field = arg_31_0._oilVO,
-			value = var_31_3 - var_31_2
+		arg_33_0:sendNotification(var_0_0.RESOURCE_UPGRADE_DONE, {
+			field = arg_33_0._oilVO,
+			value = var_33_3 - var_33_2
 		})
 	end
 
-	if arg_31_0._classVO:GetDuration() and arg_31_0._classVO:GetDuration() <= 0 then
-		local var_31_4 = arg_31_0._classVO:bindConfigTable()[arg_31_0._classVO:GetLevel()].store
-		local var_31_5 = arg_31_0._classVO:bindConfigTable()[arg_31_0._classVO:GetLevel()].proficency_get_percent
-		local var_31_6 = arg_31_0._classVO:bindConfigTable()[arg_31_0._classVO:GetLevel()].proficency_cost_per_min
+	if arg_33_0._classVO:GetDuration() and arg_33_0._classVO:GetDuration() <= 0 then
+		local var_33_4 = arg_33_0._classVO:bindConfigTable()[arg_33_0._classVO:GetLevel()].store
+		local var_33_5 = arg_33_0._classVO:bindConfigTable()[arg_33_0._classVO:GetLevel()].proficency_get_percent
+		local var_33_6 = arg_33_0._classVO:bindConfigTable()[arg_33_0._classVO:GetLevel()].proficency_cost_per_min
 
-		arg_31_0._classVO:SetLevel(arg_31_0._classVO:GetLevel() + 1)
-		arg_31_0._classVO:SetUpgradeTimeStamp(0)
+		arg_33_0._classVO:SetLevel(arg_33_0._classVO:GetLevel() + 1)
+		arg_33_0._classVO:SetUpgradeTimeStamp(0)
 
-		local var_31_7 = arg_31_0._classVO:bindConfigTable()[arg_31_0._classVO:GetLevel()].store
-		local var_31_8 = arg_31_0._classVO:bindConfigTable()[arg_31_0._classVO:GetLevel()].proficency_get_percent
-		local var_31_9 = arg_31_0._classVO:bindConfigTable()[arg_31_0._classVO:GetLevel()].proficency_cost_per_min
+		local var_33_7 = arg_33_0._classVO:bindConfigTable()[arg_33_0._classVO:GetLevel()].store
+		local var_33_8 = arg_33_0._classVO:bindConfigTable()[arg_33_0._classVO:GetLevel()].proficency_get_percent
+		local var_33_9 = arg_33_0._classVO:bindConfigTable()[arg_33_0._classVO:GetLevel()].proficency_cost_per_min
 
-		arg_31_0:sendNotification(var_0_0.RESOURCE_UPGRADE_DONE, {
-			field = arg_31_0._classVO,
-			value = var_31_7 - var_31_4,
-			rate = var_31_8 - var_31_5,
-			exp = (var_31_9 - var_31_6) * 60
+		arg_33_0:sendNotification(var_0_0.RESOURCE_UPGRADE_DONE, {
+			field = arg_33_0._classVO,
+			value = var_33_7 - var_33_4,
+			rate = var_33_8 - var_33_5,
+			exp = (var_33_9 - var_33_6) * 60
 		})
 	end
 end
 
-function var_0_0.isResourceFieldUpgradeConditionSatisfy(arg_32_0)
-	local var_32_0 = getProxy(PlayerProxy):getData()
+function var_0_0.isResourceFieldUpgradeConditionSatisfy(arg_34_0)
+	local var_34_0 = getProxy(PlayerProxy):getData()
 
-	if arg_32_0:GetOilVO():CanUpgrade(var_32_0.level, var_32_0.gold) or arg_32_0:GetGoldVO():CanUpgrade(var_32_0.level, var_32_0.gold) or arg_32_0:GetClassVO():CanUpgrade(var_32_0.level, var_32_0.gold) then
+	if arg_34_0:GetOilVO():CanUpgrade(var_34_0.level, var_34_0.gold) or arg_34_0:GetGoldVO():CanUpgrade(var_34_0.level, var_34_0.gold) or arg_34_0:GetClassVO():CanUpgrade(var_34_0.level, var_34_0.gold) then
 		return true
 	end
 
 	return false
 end
 
-function var_0_0.AddCourseProficiency(arg_33_0, arg_33_1)
-	local var_33_0 = arg_33_0:getCourse()
-	local var_33_1 = arg_33_0:GetClassVO()
-	local var_33_2 = var_33_1:GetExp2ProficiencyRatio() * var_33_0:getExtraRate()
-	local var_33_3 = var_33_0:GetProficiency() + math.floor(arg_33_1 * var_33_2 * 0.01)
-	local var_33_4 = math.min(var_33_3, var_33_1:GetMaxProficiency())
+function var_0_0.AddCourseProficiency(arg_35_0, arg_35_1)
+	local var_35_0 = arg_35_0:getCourse()
+	local var_35_1 = arg_35_0:GetClassVO()
+	local var_35_2 = var_35_1:GetExp2ProficiencyRatio() * var_35_0:getExtraRate()
+	local var_35_3 = var_35_0:GetProficiency() + math.floor(arg_35_1 * var_35_2 * 0.01)
+	local var_35_4 = math.min(var_35_3, var_35_1:GetMaxProficiency())
 
-	var_33_0:SetProficiency(var_33_4)
-	arg_33_0:setCourse(var_33_0)
+	var_35_0:SetProficiency(var_35_4)
+	arg_35_0:setCourse(var_35_0)
 end
 
-function var_0_0.fillStudens(arg_34_0, arg_34_1)
-	local var_34_0 = pg.gameset.academy_random_ship_count.key_value
-	local var_34_1 = {}
+function var_0_0.fillStudens(arg_36_0, arg_36_1)
+	local var_36_0 = pg.gameset.academy_random_ship_count.key_value
+	local var_36_1 = {}
 
-	for iter_34_0, iter_34_1 in pairs(arg_34_1) do
-		var_34_1[iter_34_1.groupId] = true
-		var_34_0 = var_34_0 - 1
+	for iter_36_0, iter_36_1 in pairs(arg_36_1) do
+		var_36_1[iter_36_1.groupId] = true
+		var_36_0 = var_36_0 - 1
 	end
 
-	local var_34_2 = pg.gameset.academy_random_ship_coldtime.key_value
+	local var_36_2 = pg.gameset.academy_random_ship_coldtime.key_value
 
-	if not arg_34_0._timeStamp or var_34_2 < os.time() - arg_34_0._timeStamp then
-		arg_34_0._studentsFiller = nil
+	if not arg_36_0._timeStamp or var_36_2 < os.time() - arg_36_0._timeStamp then
+		arg_36_0._studentsFiller = nil
 	end
 
-	if not arg_34_0._studentsFiller then
-		local var_34_3 = math.random(1, var_34_0)
+	if not arg_36_0._studentsFiller then
+		local var_36_3 = math.random(1, var_36_0)
 
-		arg_34_0._timeStamp = os.time()
-		arg_34_0._studentsFiller = {}
+		arg_36_0._timeStamp = os.time()
+		arg_36_0._studentsFiller = {}
 
-		local var_34_4 = getProxy(CollectionProxy):getGroups()
-		local var_34_5 = getProxy(BayProxy)
-		local var_34_6 = getProxy(ShipSkinProxy):getSkinList()
-		local var_34_7 = {}
+		local var_36_4 = getProxy(CollectionProxy):getGroups()
+		local var_36_5 = getProxy(BayProxy)
+		local var_36_6 = getProxy(ShipSkinProxy):getSkinList()
+		local var_36_7 = {}
 
-		for iter_34_2, iter_34_3 in pairs(var_34_4) do
-			if not table.contains(var_34_1, iter_34_2) then
-				var_34_7[#var_34_7 + 1] = iter_34_2
+		for iter_36_2, iter_36_3 in pairs(var_36_4) do
+			if not table.contains(var_36_1, iter_36_2) then
+				var_36_7[#var_36_7 + 1] = iter_36_2
 			end
 		end
 
-		local var_34_8 = #var_34_7
+		local var_36_8 = #var_36_7
 
-		while var_34_3 > 0 and var_34_8 > 0 do
-			local var_34_9 = math.random(#var_34_7)
-			local var_34_10 = var_34_7[var_34_9]
-			local var_34_11 = var_34_4[var_34_10]
-			local var_34_12 = var_34_10 * 10 + 1
-			local var_34_13 = 10000000000 + var_34_12
-			local var_34_14 = ShipGroup.getSkinList(var_34_10)
-			local var_34_15 = {}
-			local var_34_16
-			local var_34_17 = {}
+		while var_36_3 > 0 and var_36_8 > 0 do
+			local var_36_9 = math.random(#var_36_7)
+			local var_36_10 = var_36_7[var_36_9]
+			local var_36_11 = var_36_4[var_36_10]
+			local var_36_12 = var_36_10 * 10 + 1
+			local var_36_13 = 10000000000 + var_36_12
+			local var_36_14 = ShipGroup.getSkinList(var_36_10)
+			local var_36_15 = {}
+			local var_36_16
+			local var_36_17 = {}
 
-			for iter_34_4, iter_34_5 in ipairs(var_34_14) do
-				local var_34_18 = iter_34_5.skin_type
+			for iter_36_4, iter_36_5 in ipairs(var_36_14) do
+				local var_36_18 = iter_36_5.skin_type
 
-				if var_34_18 == ShipSkin.SKIN_TYPE_DEFAULT or table.contains(var_34_6, iter_34_5.id) or var_34_18 == ShipSkin.SKIN_TYPE_REMAKE and var_34_11.trans or var_34_18 == ShipSkin.SKIN_TYPE_PROPOSE and var_34_11.married == 1 then
-					var_34_17[#var_34_17 + 1] = iter_34_5.id
+				if var_36_18 == ShipSkin.SKIN_TYPE_DEFAULT or table.contains(var_36_6, iter_36_5.id) or var_36_18 == ShipSkin.SKIN_TYPE_REMAKE and var_36_11.trans or var_36_18 == ShipSkin.SKIN_TYPE_PROPOSE and var_36_11.married == 1 then
+					var_36_17[#var_36_17 + 1] = iter_36_5.id
 				end
 
-				var_34_16 = var_34_17[math.random(#var_34_17)]
+				var_36_16 = var_36_17[math.random(#var_36_17)]
 			end
 
-			local var_34_19 = {
-				id = var_34_13,
-				groupId = var_34_10,
-				configId = var_34_12,
-				skin_id = var_34_16
+			local var_36_19 = {
+				id = var_36_13,
+				groupId = var_36_10,
+				configId = var_36_12,
+				skin_id = var_36_16
 			}
 
-			table.remove(var_34_7, var_34_9)
+			table.remove(var_36_7, var_36_9)
 
-			var_34_8 = var_34_8 - 1
-			var_34_3 = var_34_3 - 1
-			arg_34_0._studentsFiller[#arg_34_0._studentsFiller + 1] = var_34_19
+			var_36_8 = var_36_8 - 1
+			var_36_3 = var_36_3 - 1
+			arg_36_0._studentsFiller[#arg_36_0._studentsFiller + 1] = var_36_19
 		end
 	end
 
-	for iter_34_6, iter_34_7 in ipairs(arg_34_0._studentsFiller) do
-		arg_34_1[#arg_34_1 + 1] = Ship.New(iter_34_7)
+	for iter_36_6, iter_36_7 in ipairs(arg_36_0._studentsFiller) do
+		arg_36_1[#arg_36_1 + 1] = Ship.New(iter_36_7)
 	end
 
-	return arg_34_1
+	return arg_36_1
 end
 
-function var_0_0.IsShowTip(arg_35_0)
-	local var_35_0 = getProxy(PlayerProxy)
+function var_0_0.IsShowTip(arg_37_0)
+	local var_37_0 = getProxy(PlayerProxy)
 
-	if var_35_0 and var_35_0:getData() and arg_35_0:isResourceFieldUpgradeConditionSatisfy() then
+	if var_37_0 and var_37_0:getData() and arg_37_0:isResourceFieldUpgradeConditionSatisfy() then
 		return true
 	end
 
-	local var_35_1 = getProxy(ShopsProxy)
+	local var_37_1 = getProxy(ShopsProxy)
 
-	if var_35_1 then
-		local var_35_2 = var_35_1:getShopStreet()
+	if var_37_1 then
+		local var_37_2 = var_37_1:getShopStreet()
 
-		if var_35_2 and var_35_2:isUpdateGoods() then
+		if var_37_2 and var_37_2:isUpdateGoods() then
 			return true
 		end
 	end
 
-	local var_35_3 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_37_3 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	for iter_35_0, iter_35_1 in pairs(arg_35_0.students) do
-		if var_35_3 >= iter_35_1:getFinishTime() then
+	for iter_37_0, iter_37_1 in pairs(arg_37_0.students) do
+		if var_37_3 >= iter_37_1:getFinishTime() then
 			return true
 		end
 	end
@@ -454,15 +464,15 @@ function var_0_0.IsShowTip(arg_35_0)
 		return true
 	end
 
-	local var_35_4 = getProxy(TaskProxy)
+	local var_37_4 = getProxy(TaskProxy)
 
-	if _.any(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST), function(arg_36_0)
-		local var_36_0 = arg_36_0:getTaskShip()
-		local var_36_1 = var_36_0 and var_35_4:getAcademyTask(var_36_0.groupId) or nil
-		local var_36_2 = var_35_4:getTaskById(var_36_1)
-		local var_36_3 = var_35_4:getFinishTaskById(var_36_1)
+	if _.any(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST), function(arg_38_0)
+		local var_38_0 = arg_38_0:getTaskShip()
+		local var_38_1 = var_38_0 and var_37_4:getAcademyTask(var_38_0.groupId) or nil
+		local var_38_2 = var_37_4:getTaskById(var_38_1)
+		local var_38_3 = var_37_4:getFinishTaskById(var_38_1)
 
-		return var_36_0 and (var_36_1 and not var_36_2 and not var_36_3 or var_36_2 and var_36_2:isFinish())
+		return var_38_0 and (var_38_1 and not var_38_2 and not var_38_3 or var_38_2 and var_38_2:isFinish())
 	end) then
 		return true
 	end
@@ -470,20 +480,20 @@ function var_0_0.IsShowTip(arg_35_0)
 	return false
 end
 
-function var_0_0.getDailyFinishCnt(arg_37_0)
-	local var_37_0 = _.detect(BuffHelper.GetBuffsByActivityType(ActivityConst.ACTIVITY_TYPE_BUFF), function(arg_38_0)
-		return arg_38_0:getConfig("benefit_type") == "skill_learn_time"
+function var_0_0.getDailyFinishCnt(arg_39_0)
+	local var_39_0 = _.detect(BuffHelper.GetBuffsByActivityType(ActivityConst.ACTIVITY_TYPE_BUFF), function(arg_40_0)
+		return arg_40_0:getConfig("benefit_type") == "skill_learn_time"
 	end)
 
-	return (var_37_0 and tonumber(var_37_0:getConfig("benefit_effect")) or 0) - arg_37_0.dailyFinsihCnt
+	return (var_39_0 and tonumber(var_39_0:getConfig("benefit_effect")) or 0) - arg_39_0.dailyFinsihCnt
 end
 
-function var_0_0.updateUsedDailyFinishCnt(arg_39_0)
-	arg_39_0.dailyFinsihCnt = arg_39_0.dailyFinsihCnt + 1
+function var_0_0.updateUsedDailyFinishCnt(arg_41_0)
+	arg_41_0.dailyFinsihCnt = arg_41_0.dailyFinsihCnt + 1
 end
 
-function var_0_0.resetUsedDailyFinishCnt(arg_40_0)
-	arg_40_0.dailyFinsihCnt = 0
+function var_0_0.resetUsedDailyFinishCnt(arg_42_0)
+	arg_42_0.dailyFinsihCnt = 0
 end
 
 return var_0_0

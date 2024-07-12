@@ -37,4 +37,8 @@ function var_0_0.getData(arg_8_0)
 	return Clone(arg_8_0.data)
 end
 
+function var_0_0.timeCall(arg_9_0)
+	return {}
+end
+
 return var_0_0

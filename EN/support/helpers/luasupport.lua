@@ -392,7 +392,6 @@ function envFunc(arg_32_0, arg_32_1, ...)
 
 	local var_32_0 = getfenv(arg_32_1)
 
-	warning(var_32_0 == _G)
 	setfenv(arg_32_1, setmetatable({}, {
 		__index = function(arg_33_0, arg_33_1)
 			if arg_32_0[arg_33_1] ~= nil then
