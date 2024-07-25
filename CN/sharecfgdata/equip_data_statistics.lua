@@ -152430,3 +152430,207 @@ _G.pg.base.equip_data_statistics[170554] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[80331] = {
+	type = 1,
+	name = "专属弹幕-果敢I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80331,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61671
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80332] = {
+	id = 80332,
+	name = "专属弹幕-果敢II",
+	base = 80331,
+	weapon_id = {
+		61672
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150340] = {
+	type = 10,
+	name = "联合演习纪念币（限定版）",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "由撒丁帝国和鸢尾教国联名制作的限定版纪念币，只赠送给最尊贵的客人。",
+	nationality = 0,
+	rarity = 4,
+	id = 150340,
+	value_3 = 0,
+	attribute_1 = "durability",
+	icon = "150340",
+	value_1 = "200",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60650
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150341] = {
+	id = 150341,
+	value_1 = "230",
+	base = 150340,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150342] = {
+	id = 150342,
+	value_1 = "260",
+	base = 150340,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150343] = {
+	id = 150343,
+	value_1 = "290",
+	base = 150340,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150344] = {
+	id = 150344,
+	value_1 = "320",
+	base = 150340,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150345] = {
+	id = 150345,
+	value_1 = "350",
+	base = 150340,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150346] = {
+	id = 150346,
+	value_1 = "380",
+	base = 150340,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150347] = {
+	id = 150347,
+	value_1 = "410",
+	base = 150340,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150348] = {
+	id = 150348,
+	value_1 = "440",
+	base = 150340,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150349] = {
+	id = 150349,
+	value_1 = "470",
+	base = 150340,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150350] = {
+	id = 150350,
+	value_1 = "500",
+	base = 150340,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150351] = {
+	id = 150351,
+	anti_siren = 100,
+	value_1 = "530",
+	base = 150340,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[170571] = {
+	type = 1,
+	name = "构造之理-霞 I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 170571,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170571
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[170572] = {
+	id = 170572,
+	name = "构造之理-霞 II",
+	base = 170571,
+	weapon_id = {
+		170572,
+		170573
+	},
+	hidden_skill_id = {}
+}

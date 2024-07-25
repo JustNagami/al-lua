@@ -494,6 +494,162 @@ pg.soundstory_template = {
 			}
 		}
 	},
+	{
+		CV_JP = "贯井柚佳",
+		audition_resource_CN = "ss-50602-1",
+		audition_text = "您说我胆子变大了？在这谁都看不到的地方……大胆一些也没关系吧。",
+		story_resource_CN = "soundStory12_CN",
+		story_pic = "",
+		overview = "为了与华甲继续进行捉鬼游戏，\n两人躲进了一个狭窄的柜子里……",
+		name = "藏匿在暗处的亲昵",
+		ship_id = 50602,
+		audition_resource_JP = "ss-50602-2",
+		CV_CN = "村雨",
+		id = 12,
+		story_resource_JP = "soundStory12_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					7,
+					25
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					7,
+					31
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		CV_JP = "安野希世乃",
+		audition_resource_CN = "",
+		audition_text = "我的指挥官…今天就一直陪在我身边吧？",
+		story_resource_CN = "",
+		story_pic = "",
+		overview = "在这个灼热的夏夜，\n与腓德雷卡·卡尔一同品味「爱」的真谛。",
+		name = "微醺之爱的夏夜邂逅",
+		ship_id = 40314,
+		audition_resource_JP = "ss-40314-1",
+		CV_CN = "",
+		id = 13,
+		story_resource_JP = "soundStory13_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					7,
+					25
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					7,
+					31
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		CV_JP = "田中爱美",
+		audition_resource_CN = "",
+		audition_text = "嗯？不管嘴上怎么说，身体的反应还是很诚实嘛。一看就知道被香味吸引了呢？",
+		story_resource_CN = "",
+		story_pic = "",
+		overview = "寻找着宝藏却因意外一同落入陷阱的少女，\n于黑暗中展露了“真实的面目”。",
+		name = "受困于甜蜜陷阱",
+		ship_id = 960001,
+		audition_resource_JP = "ss-960001-1",
+		CV_CN = "",
+		id = 14,
+		story_resource_JP = "soundStory14_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					7,
+					25
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					7,
+					31
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -505,6 +661,9 @@ pg.soundstory_template = {
 		8,
 		9,
 		10,
-		11
+		11,
+		12,
+		13,
+		14
 	}
 }

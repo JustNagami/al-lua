@@ -7,6 +7,10 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_3 = var_1_0.system
 	local var_1_4 = var_0_0.GetAutoBotMark(var_1_3)
 
+	arg_1_0:sendNotification(BattleMediator.UPDATE_AUTO_COUNT, {
+		isOn = var_1_1
+	})
+
 	if var_0_0.autoBotSatisfied() then
 		if PlayerPrefs.GetInt("autoBotIsAcitve" .. var_1_4, 0) == not var_1_1 then
 			-- block empty

@@ -1599,14 +1599,36 @@ function var_0_0.getNextMaxLevel(arg_123_0)
 end
 
 function var_0_0.canUpgrade(arg_124_0)
-	if arg_124_0:isMetaShip() or arg_124_0:isBluePrintShip() then
+	if arg_124_0:isBluePrintShip() then
 		return false
+	end
+
+	if arg_124_0:isMetaShip() then
+		local var_124_0 = arg_124_0:getMetaCharacter()
+
+		if not var_124_0 then
+			return false
+		end
+
+		local var_124_1 = var_124_0:getBreakOutInfo()
+
+		if not var_124_1:hasNextInfo() then
+			return false
+		end
+
+		local var_124_2, var_124_3 = var_124_1:getLimited()
+
+		if var_124_2 > arg_124_0.level then
+			return false
+		end
+
+		return true
 	else
-		local var_124_0 = var_0_8[arg_124_0.configId]
+		local var_124_4 = var_0_8[arg_124_0.configId]
 
-		assert(var_124_0, "不存在配置" .. arg_124_0.configId)
+		assert(var_124_4, "不存在配置" .. arg_124_0.configId)
 
-		return not arg_124_0:isMaxStar() and arg_124_0.level >= var_124_0.level
+		return not arg_124_0:isMaxStar() and arg_124_0.level >= var_124_4.level
 	end
 end
 

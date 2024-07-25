@@ -1712,6 +1712,9 @@ pg.ship_data_group = setmetatable({
 		[90112] = {
 			481
 		},
+		[90114] = {
+			653
+		},
 		[90201] = {
 			456
 		},
@@ -1724,8 +1727,14 @@ pg.ship_data_group = setmetatable({
 		[90302] = {
 			455
 		},
+		[90303] = {
+			654
+		},
 		[90401] = {
 			352
+		},
+		[90402] = {
+			652
 		},
 		[90501] = {
 			353
@@ -2167,6 +2176,9 @@ pg.ship_data_group = setmetatable({
 		},
 		[970304] = {
 			30035
+		},
+		[970106] = {
+			30036
 		}
 	},
 	get_id_list_by_handbook_type = {
@@ -2741,11 +2753,14 @@ pg.ship_data_group = setmetatable({
 			394,
 			556,
 			481,
+			653,
 			456,
 			598,
 			524,
 			455,
+			654,
 			352,
+			652,
 			353,
 			604,
 			418,
@@ -2898,7 +2913,8 @@ pg.ship_data_group = setmetatable({
 			30032,
 			30033,
 			30034,
-			30035
+			30035,
+			30036
 		}
 	},
 	all = {
@@ -3472,11 +3488,14 @@ pg.ship_data_group = setmetatable({
 		394,
 		556,
 		481,
+		653,
 		456,
 		598,
 		524,
 		455,
+		654,
 		352,
+		652,
 		353,
 		604,
 		418,
@@ -3623,7 +3642,8 @@ pg.ship_data_group = setmetatable({
 		30032,
 		30033,
 		30034,
-		30035
+		30035,
+		30036
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -28096,6 +28116,38 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
+	[653] = {
+		type = 1,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 9,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 573,
+		code = 653,
+		group_type = 90114,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"C",
+			"E",
+			"A",
+			"D",
+			"D"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"限时活动：幻梦间奏曲",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
 	[456] = {
 		type = 2,
 		redirect_id = 101,
@@ -28103,7 +28155,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 573,
+		index_id = 574,
 		code = 456,
 		group_type = 90201,
 		trans_type = 0,
@@ -28145,7 +28197,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 574,
+		index_id = 575,
 		code = 598,
 		group_type = 90202,
 		trans_type = 0,
@@ -28177,7 +28229,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 575,
+		index_id = 576,
 		code = 524,
 		group_type = 90301,
 		trans_type = 0,
@@ -28220,7 +28272,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 576,
+		index_id = 577,
 		code = 455,
 		group_type = 90302,
 		trans_type = 0,
@@ -28256,6 +28308,38 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
+	[654] = {
+		type = 3,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 9,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 578,
+		code = 654,
+		group_type = 90303,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"B",
+			"B",
+			"E",
+			"C",
+			"B",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"限时活动：幻梦间奏曲",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
 	[352] = {
 		type = 4,
 		redirect_id = 101,
@@ -28263,7 +28347,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 577,
+		index_id = 579,
 		code = 352,
 		group_type = 90401,
 		trans_type = 0,
@@ -28299,6 +28383,38 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
+	[652] = {
+		type = 4,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 9,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 580,
+		code = 652,
+		group_type = 90402,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"C",
+			"D",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"限时活动：幻梦间奏曲",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
 	[353] = {
 		type = 5,
 		redirect_id = 101,
@@ -28306,7 +28422,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 578,
+		index_id = 581,
 		code = 353,
 		group_type = 90501,
 		trans_type = 0,
@@ -28358,7 +28474,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 579,
+		index_id = 582,
 		code = 604,
 		group_type = 90502,
 		trans_type = 0,
@@ -28390,7 +28506,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 580,
+		index_id = 583,
 		code = 418,
 		group_type = 90503,
 		trans_type = 0,
@@ -28435,7 +28551,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 581,
+		index_id = 584,
 		code = 555,
 		group_type = 90701,
 		trans_type = 0,
@@ -28478,7 +28594,7 @@ pg.base.ship_data_group = {
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 582,
+		index_id = 585,
 		code = 571,
 		group_type = 960001,
 		trans_type = 0,
@@ -28520,7 +28636,7 @@ pg.base.ship_data_group = {
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 583,
+		index_id = 586,
 		code = 613,
 		group_type = 960002,
 		trans_type = 0,
@@ -28552,7 +28668,7 @@ pg.base.ship_data_group = {
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 584,
+		index_id = 587,
 		code = 610,
 		group_type = 960003,
 		trans_type = 0,
@@ -28584,7 +28700,7 @@ pg.base.ship_data_group = {
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 585,
+		index_id = 588,
 		code = 611,
 		group_type = 960004,
 		trans_type = 0,
@@ -28616,7 +28732,7 @@ pg.base.ship_data_group = {
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 586,
+		index_id = 589,
 		code = 614,
 		group_type = 960005,
 		trans_type = 0,
@@ -28648,7 +28764,7 @@ pg.base.ship_data_group = {
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 587,
+		index_id = 590,
 		code = 612,
 		group_type = 960006,
 		trans_type = 0,
@@ -33262,6 +33378,41 @@ pg.base.ship_data_group = {
 					"METACHARACTER",
 					{
 						autoOpenShipConfigID = 9703041
+					}
+				},
+				0
+			}
+		}
+	},
+	[30036] = {
+		type = 1,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 97,
+		trans_skin = 0,
+		handbook_type = 3,
+		index_id = 30036,
+		code = 30036,
+		group_type = 970106,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"C",
+			"S",
+			"E",
+			"A",
+			"D",
+			"C"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"限时活动：世界巡游",
+				{
+					"METACHARACTER",
+					{
+						autoOpenShipConfigID = 9701061
 					}
 				},
 				0

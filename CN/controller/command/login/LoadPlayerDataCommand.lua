@@ -7,7 +7,9 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 
 	originalPrint("loading player data: " .. var_1_2)
 
-	pg.proxyRegister = ProxyRegister.New({
+	pg.proxyRegister = ProxyRegister.New()
+
+	pg.proxyRegister:RgisterProxy(arg_1_0.facade, {
 		{
 			PlayerProxy,
 			true
@@ -236,14 +238,13 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 			true
 		}
 	})
-
-	pg.proxyRegister:RgisterProxy(arg_1_0.facade)
 	pg.ConnectionMgr.GetInstance():setPacketIdx(1)
 	pg.ConnectionMgr.GetInstance():Send(11001, {
 		timestamp = 0
 	}, 11002, function(arg_2_0)
 		originalPrint("player loaded: " .. arg_2_0.timestamp)
 		pg.TimeMgr.GetInstance():SetServerTime(arg_2_0.timestamp, arg_2_0.monday_0oclock_timestamp)
+		pg.proxyRegister:Start()
 
 		local var_2_0 = getProxy(PlayerProxy):getRawData()
 		local var_2_1, var_2_2 = getProxy(ActivityProxy):isSurveyOpen()

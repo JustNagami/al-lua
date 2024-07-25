@@ -273,6 +273,8 @@ function var_0_0.setItem(arg_8_0, arg_8_1)
 			arg_8_0:closeView()
 		end, SFX_PANEL)
 		setActive(arg_8_0.okBtn, true)
+	else
+		setActive(arg_8_0.okBtn, true)
 	end
 end
 
@@ -614,6 +616,32 @@ function var_0_0.PlayOpenBox(arg_46_0, arg_46_1, arg_46_2)
 		end)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_EQUIPMENT_OPEN)
 	end)
+end
+
+function var_0_0.inOutAnim(arg_52_0, arg_52_1, arg_52_2)
+	if arg_52_1 then
+		local var_52_0 = arg_52_0:findTF("window/bg_decorations"):GetComponent(typeof(Animation))
+
+		var_52_0:Stop()
+		var_52_0:Play("anim_window_bg")
+
+		local var_52_1 = arg_52_0:findTF("window/top"):GetComponent(typeof(Animation))
+
+		var_52_1:Stop()
+		var_52_1:Play("anim_top")
+
+		local var_52_2 = arg_52_0:findTF("window"):GetComponent(typeof(Animation))
+
+		var_52_2:Stop()
+		var_52_2:Play("anim_content")
+
+		local var_52_3 = arg_52_0:findTF("bg"):GetComponent(typeof(Animation))
+
+		var_52_3:Stop()
+		var_52_3:Play("anim_bg_plus")
+	end
+
+	arg_52_2()
 end
 
 return var_0_0

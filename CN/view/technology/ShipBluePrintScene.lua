@@ -2191,7 +2191,12 @@ function var_0_0.openPreView(arg_152_0)
 
 			onToggle(arg_152_0, var_152_3, function(arg_153_0)
 				if arg_153_0 then
-					setText(arg_152_0.breakView, var_0_3[var_152_1].breakout_view)
+					if PLATFORM_CODE == PLATFORM_US then
+						changeToScrollText(arg_152_0.breakView, var_0_3[var_152_1].breakout_view)
+					else
+						setText(arg_152_0.breakView, var_0_3[var_152_1].breakout_view)
+					end
+
 					arg_152_0:switchStage(var_152_1)
 				end
 			end, SFX_PANEL)
