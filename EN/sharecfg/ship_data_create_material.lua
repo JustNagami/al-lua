@@ -76,11 +76,11 @@ pg.ship_data_create_material = {
 			"<color=#d797ff>Elite</color>: 12%",
 			"<color=#3dc6ff>Rare</color>: 51%",
 			"Normal: 30%",
-			"<color=#ffde38>Alvitr</color>: 2.0% <color=#92FC63>(up!)</color>",
+			"<color=#ffde38>Strasbourg</color>: 2.0% <color=#92FC63>(up!)</color>",
 			" ",
-			"<color=#ffde38>Z47</color>: 2.0% <color=#92FC63>(up!)</color>",
+			"<color=#ffde38>L'Audacieux</color>: 0.5%",
 			" ",
-			"<color=#d797ff>U-31</color>: 2.5% <color=#92FC63>(up!)</color>"
+			"<color=#d797ff>Dupleix</color>: 2.5% <color=#92FC63>(up!)</color>"
 		}
 	},
 	{
@@ -200,13 +200,13 @@ pg.ship_data_create_material = {
 			"<color=#3dc6ff>Rare</color>: 51%",
 			"Normal: 28.8%",
 			" ",
-			"<color=#ff5e39>Alsace</color>: 1.2% (<color=#92fc63>up!</color>)",
+			"<color=#ff5e39>Vanguard</color>: 1.2% (<color=#92fc63>up!</color>)",
 			" ",
-			"<color=#ffde38>Brennus</color>: 2.0% (<color=#92fc63>up!</color>)",
-			"",
-			"<color=#ffde38>Béarn META</color>: 0.5%",
+			"<color=#ffde38>Indomitable</color>: 2.0% (<color=#92fc63>up!</color>)",
 			" ",
-			"<color=#d797ff>Fleuret</color>: 2.5% (<color=#92fc63>up!</color>)"
+			"<color=#ffde38>Jervis</color>: 0.5%",
+			" ",
+			"<color=#d797ff>Revenge</color>: 2.5% (<color=#92fc63>up!</color>)"
 		}
 	},
 	{

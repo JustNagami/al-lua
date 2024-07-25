@@ -7,7 +7,7 @@ end
 function var_0_0.preload(arg_2_0, arg_2_1)
 	local var_2_0 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
 
-	GetSpriteFromAtlasAsync("crusingwindow/" .. var_2_0:getConfig("config_client").map_name, "", function(arg_3_0)
+	GetSpriteFromAtlasAsync("crusingwindow/map_20" .. pg.battlepass_event_pt[var_2_0.id].map_name, "", function(arg_3_0)
 		arg_2_0.windowSprite = arg_3_0
 
 		arg_2_1()
@@ -22,7 +22,8 @@ function var_0_0.init(arg_4_0)
 	arg_4_0.btnGo = arg_4_0._tf:Find("panel/btn_go")
 	arg_4_0.itemContent = arg_4_0._tf:Find("panel/content")
 
-	local var_4_0 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING):getConfig("config_client").equip_skin or {}
+	local var_4_0 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
+	local var_4_1 = pg.battlepass_event_pt[var_4_0.id].equip_skin or {}
 
 	arg_4_0.itemList = UIItemList.New(arg_4_0.itemContent, arg_4_0.itemContent:GetChild(0))
 
@@ -32,7 +33,7 @@ function var_0_0.init(arg_4_0)
 		if arg_5_0 == UIItemList.EventUpdate then
 			local var_5_0 = {}
 
-			var_5_0.type, var_5_0.id, var_5_0.count = unpack(var_4_0[arg_5_1])
+			var_5_0.type, var_5_0.id, var_5_0.count = unpack(var_4_1[arg_5_1])
 
 			updateDrop(arg_5_2, var_5_0)
 			onButton(arg_4_0, arg_5_2, function()
@@ -40,7 +41,7 @@ function var_0_0.init(arg_4_0)
 			end, SFX_PANEL)
 		end
 	end)
-	arg_4_0.itemList:align(#var_4_0)
+	arg_4_0.itemList:align(#var_4_1)
 end
 
 function var_0_0.didEnter(arg_7_0)

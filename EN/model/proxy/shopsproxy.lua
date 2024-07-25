@@ -56,7 +56,7 @@ end
 
 function var_0_0.timeCall(arg_4_0)
 	return {
-		[ProxyRegister.DayCall] = function(arg_5_0)
+		[ProxyRegister.DayCall] = function(arg_5_0, arg_5_1)
 			local var_5_0 = arg_4_0:getShopStreet()
 
 			if var_5_0 then
@@ -73,9 +73,9 @@ function var_0_0.timeCall(arg_4_0)
 			end
 
 			if arg_5_0 == 1 then
-				arg_4_0.shamShop:update(date.month, {})
+				arg_4_0.shamShop:update(arg_5_1.month, {})
 				arg_4_0:AddShamShop(arg_4_0.shamShop)
-				arg_4_0.fragmentShop:Reset(date.month)
+				arg_4_0.fragmentShop:Reset(arg_5_1.month)
 				arg_4_0:AddFragmentShop(arg_4_0.fragmentShop)
 
 				if not LOCK_UR_SHIP then

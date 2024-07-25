@@ -27,12 +27,13 @@ function var_0_0.Entrance(arg_1_0, arg_1_1)
 	local var_1_11 = var_1_2:getSortShipsByFleet(var_1_9)
 	local var_1_12 = var_1_1:getData()
 	local var_1_13 = arg_1_0.bossId
-	local var_1_14 = var_1_8:GetBossProxy()
-	local var_1_15 = var_1_14:GetBossById(var_1_13)
-	local var_1_16 = var_1_15:GetStageID()
+	local var_1_14 = arg_1_0.hpRate
+	local var_1_15 = var_1_8:GetBossProxy()
+	local var_1_16 = var_1_15:GetBossById(var_1_13)
+	local var_1_17 = var_1_16:GetStageID()
 
-	if var_1_14:IsSelfBoss(var_1_15) and var_1_15:GetSelfFightCnt() > 0 then
-		var_1_7 = var_1_15:GetOilConsume()
+	if var_1_15:IsSelfBoss(var_1_16) and var_1_16:GetSelfFightCnt() > 0 then
+		var_1_7 = var_1_16:GetOilConsume()
 	end
 
 	if var_1_4 and var_1_7 > var_1_12.oil then
@@ -43,7 +44,7 @@ function var_0_0.Entrance(arg_1_0, arg_1_1)
 
 	arg_1_1.ShipVertify()
 
-	local function var_1_17(arg_2_0)
+	local function var_1_18(arg_2_0)
 		if var_1_4 then
 			var_1_12:consume({
 				gold = 0,
@@ -60,14 +61,14 @@ function var_0_0.Entrance(arg_1_0, arg_1_1)
 			end
 		end
 
-		if var_1_14:IsSelfBoss(var_1_15) then
-			var_1_15:IncreaseFightCnt()
+		if var_1_15:IsSelfBoss(var_1_16) then
+			var_1_16:IncreaseFightCnt()
 		else
-			if WorldBossConst._IsCurrBoss(var_1_15) then
-				var_1_14:reducePt()
+			if WorldBossConst._IsCurrBoss(var_1_16) then
+				var_1_15:reducePt()
 			end
 
-			var_1_14:LockCacheBoss(var_1_13)
+			var_1_15:LockCacheBoss(var_1_13)
 		end
 
 		var_1_1:updatePlayer(var_1_12)
@@ -76,20 +77,21 @@ function var_0_0.Entrance(arg_1_0, arg_1_1)
 			prefabFleet = {},
 			bossId = var_1_13,
 			actId = var_1_0,
-			stageId = var_1_16,
+			stageId = var_1_17,
 			system = SYSTEM_WORLD_BOSS,
 			token = arg_2_0.key,
-			bossLevel = var_1_15:GetLevel(),
-			bossConfigId = var_1_15:GetConfigID()
+			bossLevel = var_1_16:GetLevel(),
+			bossConfigId = var_1_16:GetConfigID(),
+			hpRate = var_1_14
 		}
 
 		arg_1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var_2_1)
 	end
 
-	local function var_1_18(arg_3_0)
+	local function var_1_19(arg_3_0)
 		local function var_3_0()
-			var_1_14:UnlockCacheBoss()
-			var_1_14:RemoveCacheBoss(var_1_15.id)
+			var_1_15:UnlockCacheBoss()
+			var_1_15:RemoveCacheBoss(var_1_16.id)
 			pg.m02:sendNotification(GAME.WORLD_BOSS_START_BATTLE_FIALED)
 		end
 
@@ -116,7 +118,7 @@ function var_0_0.Entrance(arg_1_0, arg_1_1)
 
 	BeginStageCommand.SendRequest(SYSTEM_WORLD_BOSS, var_1_5, {
 		var_1_13
-	}, var_1_17, var_1_18)
+	}, var_1_18, var_1_19)
 end
 
 function var_0_0.Exit(arg_5_0, arg_5_1)

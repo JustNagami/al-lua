@@ -1,4 +1,4 @@
-﻿local var_0_0 = class("ExchangeLoveLetterItem", pm.SimpleCommand)
+﻿local var_0_0 = class("ExchangeLoveLetterItemCommand", pm.SimpleCommand)
 
 function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_0 = arg_1_1:getBody()
@@ -25,10 +25,8 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 					id = iter_2_1.id,
 					count = iter_2_1.number
 				}):getSubClass()
-				local var_2_1 = getProxy(BagProxy)
 
-				var_2_1:removeExtraData(var_2_0.id, var_2_0.extra)
-				var_2_1:removeItemById(var_2_0.id, var_2_0.count)
+				getProxy(BagProxy):removeItemById(var_2_0.id, var_2_0.count, var_2_0.extra)
 			end
 
 			pg.TipsMgr.GetInstance():ShowTips(i18n("loveletter_exchange_tip3"))

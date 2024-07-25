@@ -76,9 +76,9 @@ pg.voice_bgm = {
 		bgm = "main"
 	},
 	LoginScene = {
-		default_bgm = "login",
+		default_bgm = "story-richang-light",
 		special_bgm = "",
-		bgm = "login"
+		bgm = "story-richang-light"
 	},
 	NewMainScene = {
 		default_bgm = "main",
@@ -136,9 +136,9 @@ pg.voice_bgm = {
 		bgm = "idol-BlueSpirit-inst"
 	},
 	NewShopsScene = {
-		default_bgm = "theme-highseasfleet",
+		default_bgm = "theme-clemenceau",
 		special_bgm = "",
-		bgm = "theme-highseasfleet"
+		bgm = "theme-clemenceau"
 	},
 	SkinShopScene = {
 		default_bgm = "main",
@@ -1479,5 +1479,50 @@ pg.voice_bgm = {
 		default_bgm = "story-china",
 		special_bgm = "",
 		bgm = "story-china"
+	},
+	YingxiV3MainPage = {
+		default_bgm = "theme-vanguard",
+		special_bgm = "",
+		bgm = "theme-vanguard"
+	},
+	YingxiV3PtRePage = {
+		default_bgm = "theme-royalknights-battle",
+		special_bgm = "",
+		bgm = "theme-royalknights-battle"
+	},
+	YingxiV3FrameRePage = {
+		default_bgm = "level03",
+		special_bgm = "",
+		bgm = "level03"
+	},
+	LoginSignRe2Page = {
+		default_bgm = "theme-partydress",
+		special_bgm = "",
+		bgm = "theme-partydress"
+	},
+	HuanMengMainPtHybridPage = {
+		default_bgm = "theme-clemenceau",
+		special_bgm = "",
+		bgm = "theme-clemenceau"
+	},
+	SkinMagazinePageSummerRacing = {
+		default_bgm = "story-richang-light",
+		special_bgm = "",
+		bgm = "story-richang-light"
+	},
+	MonopolyCar2024Page = {
+		default_bgm = "votefes-start",
+		special_bgm = "",
+		bgm = "votefes-start"
+	},
+	MonopolyCar2024Scene = {
+		default_bgm = "votefes-up",
+		special_bgm = "",
+		bgm = "votefes-up"
+	},
+	JamaicaSkinRePage = {
+		default_bgm = "level",
+		special_bgm = "",
+		bgm = "level"
 	}
 }

@@ -8,6 +8,7 @@ var_0_0.TYPEBISMARCK = 5
 var_0_0.TYPESSSS = 6
 var_0_0.TYPEATELIER = 7
 var_0_0.TYPESENRANKAGURA = 8
+var_0_0.TYPESP = 9
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2.event, arg_1_2.contextData)
@@ -24,6 +25,8 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 				if arg_2_1 == "UpdateMapItems" and underscore.any(arg_1_0._funcQueue, function(arg_4_0)
 					return arg_4_0.funcName == arg_2_1
 				end) then
+					errorMsg("Multiple Calls of function 'UpdateMapItems' in Mapbuilder")
+
 					return
 				end
 
@@ -56,130 +59,162 @@ function var_0_0.Load(arg_8_0)
 	local var_8_0 = PoolMgr.GetInstance()
 	local var_8_1
 
-	parallelAsync({
-		function(arg_9_0)
-			var_8_0:GetUI(arg_8_0:getUIName(), true, function(arg_10_0)
-				if arg_8_0._state == var_0_0.STATES.DESTROY then
-					pg.UIMgr.GetInstance():LoadingOff()
-					var_8_0:ReturnUI(arg_8_0:getUIName(), arg_10_0)
-				else
-					var_8_1 = arg_10_0
-
-					arg_9_0()
-				end
-			end)
-		end,
-		function(arg_11_0)
-			arg_8_0:preload(arg_11_0)
-		end
-	}, function()
-		arg_8_0:Loaded(var_8_1)
-		arg_8_0:Init()
+	var_8_0:GetUI(arg_8_0:getUIName(), false, function(arg_9_0)
+		var_8_1 = arg_9_0
 	end)
+	arg_8_0:Loaded(var_8_1)
+	arg_8_0:Init()
 end
 
-function var_0_0.preload(arg_13_0, arg_13_1)
-	arg_13_1()
+function var_0_0.isfrozen(arg_10_0)
+	return arg_10_0.isFrozen
 end
 
-function var_0_0.isfrozen(arg_14_0)
-	return arg_14_0.isFrozen
-end
-
-function var_0_0.DoFunction(arg_15_0, arg_15_1)
-	arg_15_1()
-end
-
-function var_0_0.InvokeParent(arg_16_0, arg_16_1, ...)
-	local var_16_0 = arg_16_0.sceneParent[arg_16_1]
-
-	if var_16_0 then
-		return var_16_0(arg_16_0.sceneParent, ...)
-	end
-end
-
-function var_0_0.GetType(arg_17_0)
+function var_0_0.GetType(arg_11_0)
 	return 0
 end
 
-function var_0_0.OnLoaded(arg_18_0)
-	arg_18_0._tf:SetParent(arg_18_0.float, false)
-end
-
-function var_0_0.Destroy(arg_19_0)
-	if arg_19_0._state == var_0_0.STATES.INITED then
-		arg_19_0:Hide()
+function var_0_0.Destroy(arg_12_0)
+	if arg_12_0._state == var_0_0.STATES.INITED then
+		arg_12_0:Hide()
 	end
 
-	var_0_0.super.Destroy(arg_19_0)
+	var_0_0.super.Destroy(arg_12_0)
 end
 
-function var_0_0.OnDestroy(arg_20_0)
-	arg_20_0.tweens = nil
+function var_0_0.OnDestroy(arg_13_0)
+	arg_13_0.tweens = nil
 end
 
-function var_0_0.Show(arg_21_0)
-	setActive(arg_21_0._tf, true)
-	arg_21_0:OnShow()
+function var_0_0.Show(arg_14_0)
+	var_0_0.super.Show(arg_14_0)
+	arg_14_0:OnShow()
 end
 
-function var_0_0.Hide(arg_22_0)
-	arg_22_0:OnHide()
-	setActive(arg_22_0._tf, false)
+function var_0_0.Hide(arg_15_0)
+	arg_15_0:OnHide()
+	var_0_0.super.Hide(arg_15_0)
 end
 
-function var_0_0.OnShow(arg_23_0)
+function var_0_0.OnShow(arg_16_0)
 	return
 end
 
-function var_0_0.OnHide(arg_24_0)
-	for iter_24_0, iter_24_1 in pairs(arg_24_0.tweens) do
-		LeanTween.cancel(iter_24_1)
+function var_0_0.OnHide(arg_17_0)
+	for iter_17_0, iter_17_1 in pairs(arg_17_0.tweens) do
+		LeanTween.cancel(iter_17_1)
 	end
 
-	arg_24_0.tweens = {}
+	arg_17_0.tweens = {}
 end
 
-function var_0_0.ShowButtons(arg_25_0)
+function var_0_0.UpdateMapVO(arg_18_0, arg_18_1)
+	arg_18_0.data = arg_18_1
+end
+
+function var_0_0.UpdateView(arg_19_0)
+	arg_19_0:UpdateButtons()
+end
+
+function var_0_0.UpdateButtons(arg_20_0)
 	return
 end
 
-function var_0_0.HideButtons(arg_26_0)
+function var_0_0.UpdateMapItems(arg_21_0)
 	return
 end
 
-function var_0_0.Update(arg_27_0, arg_27_1)
-	arg_27_0.data = arg_27_1
-end
-
-function var_0_0.UpdateButtons(arg_28_0)
+function var_0_0.HideFloat(arg_22_0)
 	return
 end
 
-function var_0_0.PostUpdateMap(arg_29_0, arg_29_1)
+function var_0_0.ShowFloat(arg_23_0)
 	return
 end
 
-function var_0_0.UpdateMapItems(arg_30_0)
-	return
+function var_0_0.RecordTween(arg_24_0, arg_24_1, arg_24_2)
+	arg_24_0.tweens[arg_24_1] = arg_24_2
 end
 
-function var_0_0.RecordTween(arg_31_0, arg_31_1, arg_31_2)
-	arg_31_0.tweens[arg_31_1] = arg_31_2
-end
+function var_0_0.DeleteTween(arg_25_0, arg_25_1)
+	local var_25_0 = arg_25_0.tweens[arg_25_1]
 
-function var_0_0.DeleteTween(arg_32_0, arg_32_1)
-	local var_32_0 = arg_32_0.tweens[arg_32_1]
+	if var_25_0 then
+		LeanTween.cancel(var_25_0)
 
-	if var_32_0 then
-		LeanTween.cancel(var_32_0)
-
-		arg_32_0.tweens[arg_32_1] = nil
+		arg_25_0.tweens[arg_25_1] = nil
 	end
 end
 
-function var_0_0.TryOpenChapter(arg_33_0, arg_33_1)
-	assert(false)
+function var_0_0.UpdateChapterTF(arg_26_0, arg_26_1)
+	return
+end
+
+function var_0_0.TryOpenChapter(arg_27_0, arg_27_1)
+	errorMsg("Not Implent TryOpenChapter in " .. arg_27_0.__cname)
+end
+
+function var_0_0.TryOpenChapterInfo(arg_28_0, arg_28_1, arg_28_2, arg_28_3)
+	if arg_28_0:isfrozen() then
+		return
+	end
+
+	local var_28_0 = getProxy(ChapterProxy):getChapterById(arg_28_1, true)
+
+	if var_28_0.active then
+		arg_28_0.sceneParent:switchToChapter(var_28_0)
+
+		return
+	end
+
+	if not var_28_0:isUnlock() then
+		local var_28_1 = var_28_0:GetPrevChapterNames()
+
+		if #var_28_1 == 1 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_tracking_error_pre", var_28_1[1]))
+		else
+			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_tracking_error_pre_2", var_28_1[1], var_28_1[2]))
+		end
+
+		return
+	end
+
+	if not getProxy(ChapterProxy):getMapById(var_28_0:getConfig("map")):isRemaster() and not var_28_0:inActTime() then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("battle_levelScene_close"))
+
+		return
+	end
+
+	local var_28_2 = var_28_0:getConfig("unlocklevel")
+
+	if var_28_2 > getProxy(PlayerProxy):getRawData().level then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_chapter_level_limit", var_28_2))
+
+		return
+	end
+
+	local var_28_3 = getProxy(ChapterProxy):getActiveChapter(true)
+
+	if var_28_3 and var_28_3.id ~= arg_28_1 then
+		arg_28_0:emit(LevelMediator2.ON_STRATEGYING_CHAPTER)
+
+		return
+	end
+
+	if var_28_0:IsSpChapter() then
+		SettingsProxy.SetActivityMapSPTip()
+		arg_28_0:UpdateChapterTF(arg_28_1)
+	end
+
+	if not arg_28_3 then
+		arg_28_0.sceneParent:DisplayLevelInfoPanel(arg_28_1, arg_28_2)
+	else
+		arg_28_0.sceneParent:DisplayLevelInfoSPPanel(arg_28_1, arg_28_3, arg_28_2)
+	end
+end
+
+function var_0_0.OnSubmitTaskDone(arg_29_0)
+	return
 end
 
 return var_0_0

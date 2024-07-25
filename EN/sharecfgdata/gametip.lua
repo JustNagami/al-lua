@@ -8309,16 +8309,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "This Meowfficer does not have any Talent Points."
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Rate UP for Alvitr, Z47, and more!"
+	tip = "Rate UP for Strasbourg, Dupleix!"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "Foch added to standard build pool!"
+	tip = "Shimakaze, Chikuma added to standard build pool!"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "Eskimo added to standard build pool!"
+	tip = "Yura, Umikaze added to standard build pool!"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "Joffre added to standard build pool!"
+	tip = "Shimakaze, Katsuragi added to standard build pool!"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -24129,4 +24129,217 @@ Equipment: <color=#92fc63>
 Prototype Carrier-Based La-9
 Prototype Carrier-Based La-9
 Prototype VIT-2 (Mode Change)</color></size>]]
+}
+_G.pg.base.gametip.mail_confirm_delete_important_flag = {
+	tip = "Important mail cannot be deleted."
+}
+_G.pg.base.gametip.mail_delet_button_1 = {
+	tip = "Delete Mail"
+}
+_G.pg.base.gametip.mail_storeroom_max_3 = {
+	tip = "Claiming this Oil will put you over your max capacity."
+}
+_G.pg.base.gametip.mail_storeroom_max_4 = {
+	tip = "Claiming these Coins will put you over your max capacity."
+}
+_G.pg.base.gametip.mail_storeroom_collect = {
+	tip = "After claiming you will receive the following items:"
+}
+_G.pg.base.gametip.battlepass_main_tip_2408 = {
+	tip = "Complete Cruise Missions between 8/1/2024 00:00 – 9/30/2024 23:59 to receive <color=#854747>La Kasumi META</color> and other rewards!"
+}
+_G.pg.base.gametip.battlepass_main_help_2408 = {
+	tip = {
+		{
+			info = [[
+Cruise Missions Seasonal Campaign
+8/1/2024 00:00 – 9/30/2024 23:59
+
+- Overview -
+"Cruise Missions" is a seasonal campaign where you can complete special missions, collect Progress Pts., and obtain great rewards for reaching certain Progress milestones.
+Additionally, you can unlock an additional set of "Fair Winds Cruise" rewards by purchasing the "Fair Winds Cruise Pass" item from Akashi's shop.
+Kasumi META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfit for Roma, "Vacation Upon the Tiber."
+
+- How to Play -
+· Two types of missions will be released at the same time at the start of the campaign season:
+a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
+b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
+· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
+· If you purchase a Fair Winds Cruise Pass, you will automatically receive 15 levels worth of progress (1500 Progress Pts).
+· You can receive rewards for reaching certain Progress milestones. There are two types of rewards:
+a) Cruise Rewards - Rewards that can be obtained based on the total number of accumulated Progress Pts. There are a total of 100 levels.
+b) Fair Winds Rewards - An additional set of rewards that will be unlocked when you purchase a Fair Winds Cruise Pass. As with the regular Cruise Rewards, there are a total of 100 levels, and they can be collected alongside Cruise Rewards at the same Progress level.
+· When the campaign season ends, your Progress Pts will be reset.
+
+- Tips - 
+· Play at your own pace
+Cruise Missions have a total of 100 Progress levels, and are not meant to be cleared in one session. We recommend that you complete them at your own pace.
+
+· Fair Winds Cruise Pass
+If. you purchase a Fair Winds Cruise Pass from Akashi's shop, you will automatically earn 1500 Progress Pts and unlock access to valuable rewards. Furthermore, there is an exclusive outfit available only through the Fair Winds rewards, so please plan accordingly.
+
+· Skipping Missions (not recommended)
+You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
+We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
+Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2408 = {
+	tip = {
+		{
+			info = [[
+- Regarding Cruise Missions - 
+· Two types of missions will be released at the same time at the start of the campaign season:
+a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
+b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
+
+· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
+
+· You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
+We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
+Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
+		}
+	}
+}
+_G.pg.base.gametip.loveletter_recover_tip1 = {
+	tip = "You need to scan your mail before you can use the resend feature."
+}
+_G.pg.base.gametip.loveletter_recover_tip2 = {
+	tip = "Incorrect character."
+}
+_G.pg.base.gametip.loveletter_recover_tip3 = {
+	tip = "This Valentine's mail already exists in your mailbox or Archive."
+}
+_G.pg.base.gametip.loveletter_recover_tip4 = {
+	tip = "This character was not available during the year selected."
+}
+_G.pg.base.gametip.loveletter_recover_tip5 = {
+	tip = "Your Archive is full. You need to manage your Archive before you can resend mail."
+}
+_G.pg.base.gametip.loveletter_recover_tip6 = {
+	tip = "Your mail has been scanned. You can resend Valentine's mail from $1."
+}
+_G.pg.base.gametip.loveletter_recover_tip7 = {
+	tip = "Your mail has been scanned. Your Valentine's mail already exists in your mailbox or Archive."
+}
+_G.pg.base.gametip.loveletter_recover_bottom1 = {
+	tip = "Scan"
+}
+_G.pg.base.gametip.loveletter_recover_bottom2 = {
+	tip = "Resend"
+}
+_G.pg.base.gametip.loveletter_recover_bottom3 = {
+	tip = "$1"
+}
+_G.pg.base.gametip.loveletter_recover_text1 = {
+	tip = "You can use the <color=#ffde38>resend mail</color> feature to resend <color=#ffde38>$2</color>'s Valentine's Mail from <color=#ffde38>$1</color> to your Archive (without any of the attached items). \n* You can only use the mail resend feature once per commemorative item."
+}
+_G.pg.base.gametip.loveletter_recover_text2 = {
+	tip = "Select the <color=#ffde38>year</color> of the mail you'd like to resend. <color=#ffde38>$1</color>'s Valentine mail from the selected year will be sent to your Archive (without any of the attached items). \n* You can only use the mail resend feature once "
+}
+_G.pg.base.gametip.battle_text_common_4 = {
+	tip = "<color=#f1f102>Enemies deal significantly more DMG. Their shells ignore shields and penetrate through targets.</color>"
+}
+_G.pg.base.gametip.MonopolyCar2024Game_title1 = {
+	tip = "Laps"
+}
+_G.pg.base.gametip.MonopolyCar2024Game_title2 = {
+	tip = "Progress"
+}
+_G.pg.base.gametip.help_monopoly_car2024 = {
+	tip = {
+		{
+			info = "- Overview -"
+		},
+		{
+			info = "Log in daily during the event to receive three dice rolls, allowing you to accelerate on the board. Clearing event-limited daily missions can give you up to another two extra dice rolls."
+		},
+		{
+			info = "You can pick one of three shipgirls as your crew at the starting location. She will comment on your progress, based on how many tiles you advanced or what type of tile you landed on."
+		},
+		{
+			info = "Once you've finished three laps around the track, you'll receive a limited piece of furniture. Each lap finished with a different crewmate will also reward you with 2,000 Coins."
+		},
+		{
+			info = "The effects of each tile is as follows:"
+		},
+		{
+			info = " : Obtain a sum of Coins;",
+			icon = {
+				path = "saichejinbi",
+				atlas = "attricon",
+				posY = 0,
+				scale = 0.19,
+				posX = 0
+			}
+		},
+		{
+			info = " : Obtain a sum of Oil;",
+			icon = {
+				path = "saicheshiyou",
+				atlas = "attricon",
+				posY = 0,
+				scale = 0.19,
+				posX = 0
+			}
+		},
+		{
+			info = " : Trigger a random event;",
+			icon = {
+				path = "saicheminyun",
+				atlas = "attricon",
+				posY = 0,
+				scale = 0.19,
+				posX = 0
+			}
+		},
+		{
+			info = " : Obtain a random reward;",
+			icon = {
+				path = "saichedaoju",
+				atlas = "attricon",
+				posY = 0,
+				scale = 0.19,
+				posX = 0
+			}
+		},
+		{
+			info = " : Trigger a random movement-based event;",
+			icon = {
+				path = "saicheteshu",
+				atlas = "attricon",
+				posY = 0,
+				scale = 0.19,
+				posX = 0
+			}
+		}
+	}
+}
+_G.pg.base.gametip.MonopolyCar2024Game_pick_tip = {
+	tip = "You can pick a crewmate at the starting line. Completing a lap with a crewmate can yield a reward."
+}
+_G.pg.base.gametip.MonopolyCar2024Game_sel_label = {
+	tip = "Choose"
+}
+_G.pg.base.gametip.MonopolyCar2024Game_total_award_title = {
+	tip = "Total Obtained"
+}
+_G.pg.base.gametip.MonopolyCar2024Game_lock_auto_tip = {
+	tip = "Accelerate 10 times to unlock auto-advance mode (progress: $1)."
+}
+_G.pg.base.gametip.MonopolyCar2024Game_open_auto_tip = {
+	tip = "You have unlocked auto-advance mode. You will automatically pick a new crewmate when you pass the starting line."
+}
+_G.pg.base.gametip.MonopolyCar2024Game_total_num_tip = {
+	tip = "Attempts: $1"
+}
+_G.pg.base.gametip.sitelasibao_expup_name = {
+	tip = "EXP Boost"
+}
+_G.pg.base.gametip.sitelasibao_expup_desc = {
+	tip = "During the event period, <color=#92fc63>Strasbourg, L'Audacieux, Dupleix, Z23, Hermione, and Pompeo Magno</color> receive <color=#92fc63>20% more EXP</color> from sorties."
+}
+_G.pg.base.gametip.levelScene_tracking_error_pre_2 = {
+	tip = "Unlocked by clearing $1 or $2."
 }

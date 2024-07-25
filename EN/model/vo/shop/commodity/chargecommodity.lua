@@ -142,7 +142,7 @@ function var_0_0.GetExtraDrop(arg_20_0)
 		local var_20_3 = pg.battlepass_event_pt[var_20_2].pt
 
 		var_20_0 = Drop.New({
-			type = DROP_TYPE_RESOURCE,
+			type = DROP_TYPE_VITEM,
 			id = pg.battlepass_event_pt[var_20_2].pt,
 			count = var_20_1[2]
 		})

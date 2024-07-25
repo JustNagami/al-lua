@@ -57,6 +57,7 @@ function var_0_0.findUI(arg_6_0)
 	arg_6_0.detailPanel = arg_6_0:findTF("DetailPanel")
 	arg_6_0.baseImg = arg_6_0:findTF("Info/BaseImg", arg_6_0.detailPanel)
 	arg_6_0.modelImg = arg_6_0:findTF("ModelImg", arg_6_0.baseImg)
+	arg_6_0.modelImgCom = arg_6_0.modelImg:GetComponent(typeof(Image))
 	arg_6_0.top = arg_6_0:findTF("Info/top", arg_6_0.detailPanel)
 	arg_6_0.levelImg = arg_6_0:findTF("LevelImg", arg_6_0.top)
 	arg_6_0.typeTextImg = arg_6_0:findTF("TypeTextImg", arg_6_0.top)
@@ -85,11 +86,14 @@ function var_0_0.addListener(arg_8_0)
 end
 
 function var_0_0.updateDetail(arg_10_0)
+	arg_10_0.modelImgCom.enabled = false
+
 	LoadSpriteAsync("shipmodels/" .. arg_10_0.shipPaintName, function(arg_11_0)
 		if arg_11_0 then
 			setImageSprite(arg_10_0.modelImg, arg_11_0, true)
 
 			rtf(arg_10_0.modelImg).pivot = getSpritePivot(arg_11_0)
+			arg_10_0.modelImgCom.enabled = true
 		end
 	end)
 	setImageSprite(arg_10_0.baseImg, GetSpriteFromAtlas("shipraritybaseicon", "base_" .. arg_10_0.rarity))

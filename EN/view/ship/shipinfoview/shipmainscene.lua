@@ -1047,7 +1047,10 @@ function var_0_0.loadPainting(arg_85_0, arg_85_1, arg_85_2)
 			arg_85_0.nowPainting = var_85_6
 
 			LoadPaintingPrefabAsync(var_85_6, var_85_0, arg_85_0.paintingCode, arg_85_0.paintingFrameName or "chuanwu", function()
-				ShipExpressionHelper.SetExpression(findTF(var_85_6, "fitter"):GetChild(0), arg_85_0.paintingCode)
+				local var_89_0 = arg_85_0.shipVO:getCVIntimacy()
+				local var_89_1 = arg_85_0:getInitmacyWords()
+
+				ShipExpressionHelper.SetExpression(findTF(var_85_6, "fitter"):GetChild(0), arg_85_0.paintingCode, var_89_1, var_89_0)
 				arg_88_0()
 			end)
 		end)

@@ -1,15 +1,14 @@
-﻿local var_0_0 = import(".MapBuilder")
-local var_0_1 = class("MapBuilderSkirmish", var_0_0)
+﻿local var_0_0 = class("MapBuilderSkirmish", import(".MapBuilderPermanent"))
 
-function var_0_1.GetType(arg_1_0)
-	return var_0_0.TYPESKIRMISH
+function var_0_0.GetType(arg_1_0)
+	return MapBuilder.TYPESKIRMISH
 end
 
-function var_0_1.getUIName(arg_2_0)
+function var_0_0.getUIName(arg_2_0)
 	return "skirmish_levels"
 end
 
-function var_0_1.Update(arg_3_0, ...)
+function var_0_0.UpdateView(arg_3_0)
 	local var_3_0 = arg_3_0._tf
 	local var_3_1 = 0.21875
 
@@ -34,16 +33,16 @@ function var_0_1.Update(arg_3_0, ...)
 
 	arg_3_0._tf.localScale = Vector3(var_3_5, var_3_5, var_3_5)
 
-	var_0_1.super.Update(arg_3_0, ...)
+	var_0_0.super.UpdateView(arg_3_0)
 end
 
-local var_0_2 = Vector2(-193.5, 120.6)
-local var_0_3 = Vector2(211.3, 116.5263)
-local var_0_4 = Vector2(0, -622)
-local var_0_5 = Vector2(-114, -372)
+local var_0_1 = Vector2(-193.5, 120.6)
+local var_0_2 = Vector2(211.3, 116.5263)
+local var_0_3 = Vector2(0, -622)
+local var_0_4 = Vector2(-114, -372)
 
-function var_0_1.UpdateMapItems(arg_4_0)
-	var_0_1.super.UpdateMapItems(arg_4_0)
+function var_0_0.UpdateMapItems(arg_4_0)
+	var_0_0.super.UpdateMapItems(arg_4_0)
 
 	local var_4_0 = getProxy(SkirmishProxy)
 
@@ -117,7 +116,7 @@ function var_0_1.UpdateMapItems(arg_4_0)
 
 		local var_4_14 = var_4_10:getConfig("task_id")
 
-		onButton(arg_4_0.sceneParent, var_4_11, function()
+		onButton(arg_4_0, var_4_11, function()
 			if var_4_12 ~= SkirmishVO.StateWorking then
 				return
 			end
@@ -129,23 +128,22 @@ function var_0_1.UpdateMapItems(arg_4_0)
 				if tonumber(var_7_1) then
 					var_7_1 = tonumber(var_7_1)
 
-					local var_7_2 = arg_4_0.sceneParent.contextData
+					local var_7_2 = arg_4_0.contextData
 
-					arg_4_0:InvokeParent("emit", LevelMediator2.ON_PERFORM_COMBAT, var_7_1, function()
+					arg_4_0:emit(LevelMediator2.ON_PERFORM_COMBAT, var_7_1, function()
 						var_7_2.preparedTaskList = var_7_2.preparedTaskList or {}
 
 						table.insert(var_7_2.preparedTaskList, var_4_14)
 					end)
 				else
 					pg.NewStoryMgr.GetInstance():Play(var_7_1, function()
-						arg_4_0:InvokeParent("emit", LevelMediator2.ON_SUBMIT_TASK, var_4_14)
+						arg_4_0:emit(LevelMediator2.ON_SUBMIT_TASK, var_4_14)
 					end)
 				end
 			elseif var_7_0 == SkirmishVO.TypeChapter then
 				local var_7_3 = tonumber(var_7_1)
-				local var_7_4 = getProxy(ChapterProxy):getChapterById(var_7_3)
 
-				arg_4_0:InvokeParent("TrySwitchChapter", var_7_4)
+				arg_4_0:TryOpenChapterInfo(var_7_3)
 			end
 		end)
 	end
@@ -155,13 +153,13 @@ function var_0_1.UpdateMapItems(arg_4_0)
 
 		local var_4_15 = var_4_2:GetChild(var_4_6 - 1)
 
-		var_4_4.anchoredPosition = var_4_15.anchoredPosition:Add(var_4_6 == 3 and var_0_3 or var_0_2)
+		var_4_4.anchoredPosition = var_4_15.anchoredPosition:Add(var_4_6 == 3 and var_0_2 or var_0_1)
 
 		setActive(var_4_4:Find("line1"), var_4_6 ~= 3)
 		setActive(var_4_4:Find("line2"), var_4_6 == 3)
 		setText(var_4_4:Find("info/position"), string.format("POSITION  %02d", var_4_6))
 		setText(var_4_4:Find("info/name"), var_4_5[var_4_6]:getConfig("name"))
-		onButton(arg_4_0.sceneParent, var_4_4, function()
+		onButton(arg_4_0, var_4_4, function()
 			triggerButton(var_4_15)
 		end)
 	else
@@ -170,28 +168,27 @@ function var_0_1.UpdateMapItems(arg_4_0)
 
 	local var_4_16 = var_4_1:Find("cloud")
 
-	var_4_16.anchoredPosition = var_0_4
+	var_4_16.anchoredPosition = var_0_3
 
-	LeanTween.value(go(var_4_16), var_0_4, var_0_5, 30):setOnUpdateVector2(function(arg_11_0)
+	LeanTween.value(go(var_4_16), var_0_3, var_0_4, 30):setOnUpdateVector2(function(arg_11_0)
 		var_4_16.anchoredPosition = arg_11_0
 	end)
 
 	arg_4_0.sceneParent.skirmishBar:Find("text"):GetComponent(typeof(Text)).text = var_4_8 - var_4_9
 end
 
-function var_0_1.OnShow(arg_12_0)
+function var_0_0.OnShow(arg_12_0)
+	var_0_0.super.OnShow(arg_12_0)
 	setActive(arg_12_0.sceneParent.topChapter:Find("type_skirmish"), true)
 	setActive(arg_12_0.sceneParent.skirmishBar, true)
 	setActive(arg_12_0.sceneParent.leftChapter:Find("buttons"), false)
-	setActive(arg_12_0.sceneParent.eventContainer, false)
 	setActive(arg_12_0.sceneParent.rightChapter, false)
 end
 
-function var_0_1.OnHide(arg_13_0)
+function var_0_0.OnHide(arg_13_0)
 	setActive(arg_13_0.sceneParent.topChapter:Find("type_skirmish"), false)
 	setActive(arg_13_0.sceneParent.skirmishBar, false)
 	setActive(arg_13_0.sceneParent.leftChapter:Find("buttons"), true)
-	setActive(arg_13_0.sceneParent.eventContainer, true)
 	setActive(arg_13_0.sceneParent.rightChapter, true)
 
 	local var_13_0 = arg_13_0._tf:Find("skirmish_items")
@@ -205,6 +202,15 @@ function var_0_1.OnHide(arg_13_0)
 	local var_13_2 = arg_13_0._tf:Find("cloud")
 
 	LeanTween.cancel(go(var_13_2))
+	var_0_0.super.OnHide(arg_13_0)
 end
 
-return var_0_1
+function var_0_0.HideFloat(arg_14_0)
+	setActive(arg_14_0._tf:Find("skirmish_items"), false)
+end
+
+function var_0_0.ShowFloat(arg_15_0)
+	setActive(arg_15_0._tf:Find("skirmish_items"), true)
+end
+
+return var_0_0

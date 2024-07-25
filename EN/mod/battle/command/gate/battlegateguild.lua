@@ -245,6 +245,9 @@ function var_0_0.GeneralPackage(arg_12_0, arg_12_1)
 		})
 	end
 
+	local var_12_20 = math.fmod(arg_12_0.statistics._autoCount, 2)
+	local var_12_21 = math.fmod(var_12_20 + arg_12_0.statistics._autoInit, 2)
+
 	return {
 		system = var_12_3,
 		data = var_12_4,
@@ -258,7 +261,10 @@ function var_0_0.GeneralPackage(arg_12_0, arg_12_1)
 		extra_param = var_12_0,
 		file_check = var_12_18,
 		enemy_info = var_12_19,
-		data2 = {}
+		data2 = {},
+		auto_before = arg_12_0.statistics._autoInit,
+		auto_switch_time = arg_12_0.statistics._autoCount,
+		auto_after = var_12_21
 	}
 end
 

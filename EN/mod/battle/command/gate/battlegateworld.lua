@@ -44,10 +44,11 @@ function var_0_0.Entrance(arg_1_0, arg_1_1)
 	local var_1_19 = arg_1_0.stageId
 	local var_1_20 = pg.expedition_data_template[var_1_19].dungeon_id
 	local var_1_21 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(var_1_20).fleet_prefab
+	local var_1_22 = arg_1_0.hpRate
 
 	arg_1_1.ShipVertify()
 
-	local function var_1_22(arg_2_0)
+	local function var_1_23(arg_2_0)
 		if var_1_4 then
 			var_1_18:consume({
 				gold = 0,
@@ -70,19 +71,20 @@ function var_0_0.Entrance(arg_1_0, arg_1_1)
 			prefabFleet = var_1_21,
 			stageId = var_1_19,
 			system = SYSTEM_WORLD,
-			token = arg_2_0.key
+			token = arg_2_0.key,
+			hpRate = var_1_22
 		}
 
 		arg_1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var_2_1)
 	end
 
-	local function var_1_23(arg_3_0)
+	local function var_1_24(arg_3_0)
 		arg_1_1:RequestFailStandardProcess(arg_3_0)
 	end
 
 	BeginStageCommand.SendRequest(SYSTEM_WORLD, var_1_5, {
 		var_1_19
-	}, var_1_22, var_1_23)
+	}, var_1_23, var_1_24)
 end
 
 function var_0_0.Exit(arg_4_0, arg_4_1)

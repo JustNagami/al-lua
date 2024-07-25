@@ -14,6 +14,8 @@ local var_0_5 = var_0_0.Battle.BattleShrapnelBulletFactory
 var_0_5.INHERIT_NONE = 0
 var_0_5.INHERIT_ANGLE = 1
 var_0_5.INHERIT_SPEED_NORMALIZE = 2
+var_0_5.FRAGILE_DAMAGE_NOT_SPLIT = 1
+var_0_5.FRAGILE_NOT_DAMAGE_NOT_SPLIT = 2
 
 function var_0_5.Ctor(arg_1_0)
 	var_0_5.super.Ctor(arg_1_0)
@@ -49,9 +51,21 @@ function var_0_5.onBulletHitFunc(arg_4_0, arg_4_1, arg_4_2)
 	local var_4_2 = var_4_1:GetCurrentState()
 	local var_4_3 = var_4_1:GetTemplate()
 	local var_4_4 = var_4_3.extra_param.shrapnel
+	local var_4_5 = var_4_3.extra_param.fragile
+	local var_4_6 = var_4_3.extra_param.hitSplitOnly
 
-	if var_4_3.extra_param.fragile and arg_4_1 then
-		var_0_0.Battle.BattleCannonBulletFactory.onBulletHitFunc(arg_4_0, arg_4_1, arg_4_2)
+	if not arg_4_1 and var_4_6 then
+		var_4_0:RemoveBulletUnit(var_4_1:GetUniqueID())
+
+		return
+	end
+
+	if var_4_5 and arg_4_1 then
+		if var_4_5 == var_0_5.FRAGILE_DAMAGE_NOT_SPLIT then
+			var_0_0.Battle.BattleCannonBulletFactory.onBulletHitFunc(arg_4_0, arg_4_1, arg_4_2)
+		elseif var_4_5 == var_0_5.FRAGILE_NOT_DAMAGE_NOT_SPLIT then
+			var_4_0:RemoveBulletUnit(var_4_1:GetUniqueID())
+		end
 
 		return
 	end
@@ -67,22 +81,22 @@ function var_0_5.onBulletHitFunc(arg_4_0, arg_4_1, arg_4_2)
 	end
 
 	if arg_4_1 ~= nil and arg_4_2 ~= nil then
-		local var_4_5
+		local var_4_7
 
 		if table.contains(var_0_3, arg_4_2) then
-			var_4_5 = var_0_5.GetSceneMediator():GetAircraft(arg_4_1)
+			var_4_7 = var_0_5.GetSceneMediator():GetAircraft(arg_4_1)
 		elseif table.contains(var_0_4, arg_4_2) then
-			var_4_5 = var_0_5.GetSceneMediator():GetCharacter(arg_4_1)
+			var_4_7 = var_0_5.GetSceneMediator():GetCharacter(arg_4_1)
 		end
 
-		local var_4_6 = var_4_5:GetUnitData()
-		local var_4_7 = var_4_5:AddFX(arg_4_0:GetFXID())
+		local var_4_8 = var_4_7:GetUnitData()
+		local var_4_9 = var_4_7:AddFX(arg_4_0:GetFXID())
 
-		if var_4_6:GetIFF() == var_4_0:GetFoeCode() then
-			local var_4_8 = var_4_7.transform
-			local var_4_9 = var_4_8.localRotation
+		if var_4_8:GetIFF() == var_4_0:GetFoeCode() then
+			local var_4_10 = var_4_9.transform
+			local var_4_11 = var_4_10.localRotation
 
-			var_4_8.localRotation = Vector3(var_4_9.x, 180, var_4_9.z)
+			var_4_10.localRotation = Vector3(var_4_11.x, 180, var_4_11.z)
 		end
 	end
 

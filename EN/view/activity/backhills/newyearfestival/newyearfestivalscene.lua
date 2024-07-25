@@ -115,7 +115,7 @@ function var_0_0.didEnter(arg_4_0)
 			page = 1
 		})
 	end)
-	pg.UIMgr.GetInstance():OverlayPanel(arg_4_0.top, false)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_4_0.top)
 
 	arg_4_0.academyStudents = {}
 
