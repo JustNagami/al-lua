@@ -297,4 +297,28 @@ function var_0_0.getIcon(arg_36_0)
 	return arg_36_0:getConfig("Icon")
 end
 
+local var_0_1
+
+function var_0_0.IsLoveLetterCheckItem(arg_37_0)
+	if not var_0_1 then
+		var_0_1 = {}
+
+		for iter_37_0, iter_37_1 in ipairs(getGameset("loveletter_item_old_year")[2]) do
+			local var_37_0, var_37_1 = unpack(iter_37_1)
+
+			var_0_1[var_37_0] = underscore.flatten({
+				var_37_1
+			})
+		end
+
+		for iter_37_2, iter_37_3 in ipairs(pg.loveletter_2018_2021.all) do
+			var_0_1[iter_37_3] = {
+				pg.loveletter_2018_2021[iter_37_3].year
+			}
+		end
+	end
+
+	return var_0_1[arg_37_0]
+end
+
 return var_0_0

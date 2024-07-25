@@ -95,7 +95,8 @@ function var_0_0.register(arg_1_0)
 		arg_1_0:sendNotification(GAME.BEGIN_STAGE, {
 			actId = 0,
 			bossId = arg_1_0.contextData.bossId,
-			system = SYSTEM_WORLD_BOSS
+			system = SYSTEM_WORLD_BOSS,
+			hpRate = arg_1_0.contextData.hpRate
 		})
 	end)
 	arg_1_0:bind(var_0_0.CHANGE_FLEET_SHIP, function(arg_8_0, arg_8_1, arg_8_2, arg_8_3)

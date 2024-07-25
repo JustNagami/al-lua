@@ -16,7 +16,8 @@ var_0_0.DEAL_CMD_LIST = {
 var_0_0.MailMessageBoxType = {
 	ReceiveAward = 1,
 	ShowTips = 2,
-	OverflowConfirm = 3
+	OverflowConfirm = 3,
+	RewardStoreroom = 4
 }
 
 function var_0_0.register(arg_1_0)

@@ -369,12 +369,48 @@ function var_0_0.init(arg_6_0)
 		})
 	end, SFX_PANEL)
 
+	arg_6_0.rtBtnRightDelte = arg_6_0.rtMailRight:Find("bottom/btn_delete")
+
+	onButton(arg_6_0, arg_6_0.rtBtnRightDelte, function()
+		assert(arg_6_0.selectMailId)
+
+		local var_40_0 = arg_6_0.proxy:getMail(arg_6_0.selectMailId)
+
+		if var_40_0.importantFlag == true then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("mail_confirm_delete_important_flag"))
+
+			return
+		end
+
+		seriesAsync({
+			function(arg_41_0)
+				arg_6_0:ShowDoubleConfiremationMsgBox({
+					type = MailProxy.MailMessageBoxType.ShowTips,
+					content = i18n("mail_markroom_delete", var_40_0.title),
+					onYes = arg_41_0
+				})
+			end
+		}, function()
+			arg_6_0:emit(MailMediator.ON_OPERATION, {
+				noAttachTip = true,
+				cmd = "delete",
+				filter = {
+					type = "ids",
+					list = {
+						arg_6_0.selectMailId
+					}
+				}
+			})
+		end)
+	end, SFX_PANEL)
+
 	arg_6_0.rtMailEmpty = var_6_1:Find("empty")
 	arg_6_0.rtStore = var_6_1:Find("store")
 	arg_6_0.mailMgrSubView = MailMgrWindow.New(arg_6_0._tf, arg_6_0.event, arg_6_0.contextData)
 	arg_6_0.storeUpgradeSubView = StoreUpgradeWindow.New(arg_6_0._tf, arg_6_0.event, arg_6_0.contextData)
 	arg_6_0.mailConfirmationSubView = MailConfirmationWindow.New(arg_6_0._tf, arg_6_0.event, arg_6_0.contextData)
 	arg_6_0.mailOverflowWindowSubView = MailOverflowWindow.New(arg_6_0._tf, arg_6_0.event, arg_6_0.contextData)
+	arg_6_0.mailStoreroomRewardSubView = MailRewardWindow.New(arg_6_0._tf, arg_6_0.event, arg_6_0.contextData)
 
 	setText(arg_6_0.rtBtnLeftDeleteAll:Find("Text"), i18n("mail_deleteread_button"))
 	setText(arg_6_0.rtBtnLeftManager:Find("Text"), i18n("mail_manage_button"))
@@ -383,70 +419,71 @@ function var_0_0.init(arg_6_0)
 	setText(arg_6_0.rtBtnLeftDeleteCollection:Find("Text"), i18n("mail_delet_button"))
 	setText(arg_6_0.rtBtnRightMove:Find("Text"), i18n("mail_moveone_button"))
 	setText(arg_6_0.rtBtnRightGet:Find("Text"), i18n("mail_getone_button"))
+	setText(arg_6_0.rtBtnRightDelte:Find("Text"), i18n("mail_delet_button_1"))
 	setText(arg_6_0.rtMailRight:Find("main/title/matter/on/Text"), i18n("mail_toggle_on"))
 	setText(arg_6_0.rtMailRight:Find("main/title/matter/off/Text"), i18n("mail_toggle_off"))
 	arg_6_0:InitResBar()
 end
 
-function var_0_0.SetPage(arg_40_0, arg_40_1)
-	if arg_40_0.page == arg_40_1 then
+function var_0_0.SetPage(arg_43_0, arg_43_1)
+	if arg_43_0.page == arg_43_1 then
 		return
 	end
 
-	arg_40_0.page = arg_40_1
+	arg_43_0.page = arg_43_1
 
-	setActive(arg_40_0.rightSelect, arg_40_1 == "mail")
-	setActive(arg_40_0.rtSearch, arg_40_1 == "collection")
-	setActive(arg_40_0.rtStore, arg_40_1 == "store")
+	setActive(arg_43_0.rightSelect, arg_43_1 == "mail")
+	setActive(arg_43_0.rtSearch, arg_43_1 == "collection")
+	setActive(arg_43_0.rtStore, arg_43_1 == "store")
 
-	if arg_40_1 == "store" then
-		setActive(arg_40_0.rtMailEmpty, false)
-		setActive(arg_40_0.rtMailLeft, false)
-		setActive(arg_40_0.rtMailRight, false)
+	if arg_43_1 == "store" then
+		setActive(arg_43_0.rtMailEmpty, false)
+		setActive(arg_43_0.rtMailLeft, false)
+		setActive(arg_43_0.rtMailRight, false)
 
-		arg_40_0.mailToggle = nil
+		arg_43_0.mailToggle = nil
 
-		arg_40_0:UpdateStore()
-		setText(arg_40_0.rtTip, i18n("mail_storeroom_tips"))
-	elseif arg_40_1 == "mail" then
-		triggerToggle(arg_40_0.rtToggles:Find("btn_all"), true)
-		setText(arg_40_0.rtTip, i18n("warning_mail_max_5"))
-	elseif arg_40_1 == "collection" then
-		local var_40_0 = {}
+		arg_43_0:UpdateStore()
+		setText(arg_43_0.rtTip, i18n("mail_storeroom_tips"))
+	elseif arg_43_1 == "mail" then
+		triggerToggle(arg_43_0.rtToggles:Find("btn_all"), true)
+		setText(arg_43_0.rtTip, i18n("warning_mail_max_5"))
+	elseif arg_43_1 == "collection" then
+		local var_43_0 = {}
 
-		if not arg_40_0.proxy.collectionIds then
-			table.insert(var_40_0, function(arg_41_0)
-				arg_40_0:emit(MailMediator.ON_REQUIRE, "collection", arg_41_0)
+		if not arg_43_0.proxy.collectionIds then
+			table.insert(var_43_0, function(arg_44_0)
+				arg_43_0:emit(MailMediator.ON_REQUIRE, "collection", arg_44_0)
 			end)
 		end
 
-		seriesAsync(var_40_0, function()
-			arg_40_0.selectMailId = nil
+		seriesAsync(var_43_0, function()
+			arg_43_0.selectMailId = nil
 
-			arg_40_0:UpdateMailList("collection", 0)
+			arg_43_0:UpdateMailList("collection", 0)
 		end)
-		setText(arg_40_0.rtTip, i18n("mail_markroom_tip"))
+		setText(arg_43_0.rtTip, i18n("mail_markroom_tip"))
 	end
 end
 
-function var_0_0.didEnter(arg_43_0)
+function var_0_0.didEnter(arg_46_0)
 	onNextTick(function()
-		arg_43_0.lsrMailList.enabled = true
+		arg_46_0.lsrMailList.enabled = true
 
-		triggerToggle(arg_43_0.rtLabels:Find("mail"), true)
+		triggerToggle(arg_46_0.rtLabels:Find("mail"), true)
 	end)
 end
 
-function var_0_0.RequrereNextToIndex(arg_45_0, arg_45_1)
-	if arg_45_0.mailToggle == "all" and not arg_45_0.inRequire and #arg_45_0.proxy.ids < arg_45_0.proxy.totalExist and arg_45_1 > #arg_45_0.proxy.ids then
-		arg_45_0.inRequire = true
+function var_0_0.RequrereNextToIndex(arg_48_0, arg_48_1)
+	if arg_48_0.mailToggle == "all" and not arg_48_0.inRequire and #arg_48_0.proxy.ids < arg_48_0.proxy.totalExist and arg_48_1 > #arg_48_0.proxy.ids then
+		arg_48_0.inRequire = true
 
 		pg.UIMgr.GetInstance():LoadingOn()
-		arg_45_0:emit(MailMediator.ON_REQUIRE, arg_45_1, function()
-			arg_45_0.inRequire = nil
+		arg_48_0:emit(MailMediator.ON_REQUIRE, arg_48_1, function()
+			arg_48_0.inRequire = nil
 
-			if arg_45_0.mailToggle == "all" then
-				arg_45_0:UpdateMailList(arg_45_0.mailToggle)
+			if arg_48_0.mailToggle == "all" then
+				arg_48_0:UpdateMailList(arg_48_0.mailToggle)
 			end
 
 			pg.UIMgr.GetInstance():LoadingOff()
@@ -454,229 +491,233 @@ function var_0_0.RequrereNextToIndex(arg_45_0, arg_45_1)
 	end
 end
 
-function var_0_0.UpdateMailList(arg_47_0, arg_47_1, arg_47_2)
-	arg_47_0.mailToggle = arg_47_1
+function var_0_0.UpdateMailList(arg_50_0, arg_50_1, arg_50_2)
+	arg_50_0.mailToggle = arg_50_1
 
-	local var_47_0, var_47_1 = switch(arg_47_1, {
+	local var_50_0, var_50_1 = switch(arg_50_1, {
 		all = function()
-			return arg_47_0.proxy.ids, string.format("<color=%s>%d</color>/<color=%s>%d</color>", arg_47_0.proxy.totalExist > MAIL_COUNT_LIMIT and COLOR_RED or COLOR_WHITE, arg_47_0.proxy.totalExist, "#181E32", MAIL_COUNT_LIMIT)
+			return arg_50_0.proxy.ids, string.format("<color=%s>%d</color>/<color=%s>%d</color>", arg_50_0.proxy.totalExist > MAIL_COUNT_LIMIT and COLOR_RED or COLOR_WHITE, arg_50_0.proxy.totalExist, "#181E32", MAIL_COUNT_LIMIT)
 		end,
 		important = function()
-			return arg_47_0.proxy.importantIds, string.format("<color=#FFFFFF>%d</color>", #arg_47_0.proxy.importantIds)
+			return arg_50_0.proxy.importantIds, string.format("<color=#FFFFFF>%d</color>", #arg_50_0.proxy.importantIds)
 		end,
 		rare = function()
-			return arg_47_0.proxy.rareIds, string.format("<color=#FFFFFF>%d</color>", #arg_47_0.proxy.rareIds)
+			return arg_50_0.proxy.rareIds, string.format("<color=#FFFFFF>%d</color>", #arg_50_0.proxy.rareIds)
 		end,
 		collection = function()
-			return arg_47_0.proxy.collectionIds, string.format("<color=#FFFFFF>%d</color>/%d", #arg_47_0.proxy.collectionIds, getProxy(PlayerProxy):getRawData():getConfig("max_markmail"))
+			return arg_50_0.proxy.collectionIds, string.format("<color=#FFFFFF>%d</color>/%d", #arg_50_0.proxy.collectionIds, getProxy(PlayerProxy):getRawData():getConfig("max_markmail"))
 		end
 	})
 
-	if arg_47_1 == "collection" then
-		arg_47_0.filterMails = arg_47_0.proxy:GetCollectionMails(var_47_0)
+	if arg_50_1 == "collection" then
+		arg_50_0.filterMails = arg_50_0.proxy:GetCollectionMails(var_50_0)
 
-		if arg_47_0.collectionFilterStr then
-			arg_47_0.filterMails = underscore.filter(arg_47_0.filterMails, function(arg_52_0)
-				return arg_52_0:IsMatchKey(arg_47_0.collectionFilterStr)
+		if arg_50_0.collectionFilterStr then
+			arg_50_0.filterMails = underscore.filter(arg_50_0.filterMails, function(arg_55_0)
+				return arg_55_0:IsMatchKey(arg_50_0.collectionFilterStr)
 			end)
 		end
 
-		table.sort(arg_47_0.filterMails, CompareFuncs({
-			function(arg_53_0)
-				return (arg_47_0.collectionSortToggle and 1 or -1) * arg_53_0.id
+		table.sort(arg_50_0.filterMails, CompareFuncs({
+			function(arg_56_0)
+				return (arg_50_0.collectionSortToggle and 1 or -1) * arg_56_0.date
+			end,
+			function(arg_57_0)
+				return (arg_50_0.collectionSortToggle and 1 or -1) * arg_57_0.id
 			end
 		}))
-	elseif arg_47_1 == "all" then
-		arg_47_0.filterMails = arg_47_0.proxy:GetMails(var_47_0)
+	elseif arg_50_1 == "all" then
+		arg_50_0.filterMails = arg_50_0.proxy:GetMails(var_50_0)
 
-		table.sort(arg_47_0.filterMails, CompareFuncs({
-			function(arg_54_0)
-				return -arg_54_0.id
+		table.sort(arg_50_0.filterMails, CompareFuncs({
+			function(arg_58_0)
+				return -arg_58_0.id
 			end
 		}))
 
-		for iter_47_0 = #var_47_0 + 1, arg_47_0.proxy.totalExist do
-			table.insert(arg_47_0.filterMails, {
+		for iter_50_0 = #var_50_0 + 1, arg_50_0.proxy.totalExist do
+			table.insert(arg_50_0.filterMails, {
 				id = 0
 			})
 		end
 	else
-		arg_47_0.filterMails = arg_47_0.proxy:GetMails(var_47_0)
+		arg_50_0.filterMails = arg_50_0.proxy:GetMails(var_50_0)
 
-		table.sort(arg_47_0.filterMails, CompareFuncs({
-			function(arg_55_0)
-				return -arg_55_0.id
+		table.sort(arg_50_0.filterMails, CompareFuncs({
+			function(arg_59_0)
+				return -arg_59_0.id
 			end
 		}))
 	end
 
-	if arg_47_0.mailToggle == "all" and #arg_47_0.proxy.ids < arg_47_0.proxy.totalExist and #arg_47_0.proxy.ids < SINGLE_MAIL_REQUIRE_SIZE then
-		arg_47_0.inRequire = true
+	if arg_50_0.mailToggle == "all" and #arg_50_0.proxy.ids < arg_50_0.proxy.totalExist and #arg_50_0.proxy.ids < SINGLE_MAIL_REQUIRE_SIZE then
+		arg_50_0.inRequire = true
 
-		arg_47_0:emit(MailMediator.ON_REQUIRE, "next", function()
-			if arg_47_0.mailToggle == "all" then
-				arg_47_0:UpdateMailList(arg_47_0.mailToggle)
+		arg_50_0:emit(MailMediator.ON_REQUIRE, "next", function()
+			if arg_50_0.mailToggle == "all" then
+				arg_50_0:UpdateMailList(arg_50_0.mailToggle)
 			end
 
-			arg_47_0.inRequire = nil
+			arg_50_0.inRequire = nil
 		end)
-	elseif #arg_47_0.filterMails == 0 then
-		setActive(arg_47_0.rtMailLeft, false)
-		setActive(arg_47_0.rtMailRight, false)
-		setActive(arg_47_0.rtMailEmpty, true)
+	elseif #arg_50_0.filterMails == 0 then
+		setActive(arg_50_0.rtMailLeft, false)
+		setActive(arg_50_0.rtMailRight, false)
+		setActive(arg_50_0.rtMailEmpty, true)
 
-		if arg_47_0.mailToggle == "collection" then
-			setText(arg_47_0.rtMailEmpty:Find("Text"), i18n("emptymarkroom_tip_mailboxui"))
-			setText(arg_47_0.rtMailEmpty:Find("Text_en"), i18n("emptymarkroom_tip_mailboxui_en"))
+		if arg_50_0.mailToggle == "collection" then
+			setText(arg_50_0.rtMailEmpty:Find("Text"), i18n("emptymarkroom_tip_mailboxui"))
+			setText(arg_50_0.rtMailEmpty:Find("Text_en"), i18n("emptymarkroom_tip_mailboxui_en"))
 		else
-			setText(arg_47_0.rtMailEmpty:Find("Text"), i18n("empty_tip_mailboxui"))
-			setText(arg_47_0.rtMailEmpty:Find("Text_en"), i18n("empty_tip_mailboxui_en"))
+			setText(arg_50_0.rtMailEmpty:Find("Text"), i18n("empty_tip_mailboxui"))
+			setText(arg_50_0.rtMailEmpty:Find("Text_en"), i18n("empty_tip_mailboxui_en"))
 		end
 	else
-		setActive(arg_47_0.rtMailLeft, true)
-		setActive(arg_47_0.rtMailRight, true)
-		setActive(arg_47_0.rtMailEmpty, false)
+		setActive(arg_50_0.rtMailLeft, true)
+		setActive(arg_50_0.rtMailRight, true)
+		setActive(arg_50_0.rtMailEmpty, false)
 
-		if not arg_47_0.selectMailId then
-			arg_47_0:UpdateMailContent(arg_47_0.filterMails[1])
+		if not arg_50_0.selectMailId then
+			arg_50_0:UpdateMailContent(arg_50_0.filterMails[1])
 		end
 
-		arg_47_0.lsrMailList:SetTotalCount(#arg_47_0.filterMails, arg_47_2 or -1)
-		setText(arg_47_0.rtMailCount, var_47_1)
-		setActive(arg_47_0.rtBtnLeftManager, arg_47_0.mailToggle == "all")
-		setActive(arg_47_0.rtBtnLeftMoveAll, arg_47_0.mailToggle == "important")
-		setActive(arg_47_0.rtBtnLeftDeleteCollection, arg_47_0.mailToggle == "collection")
-		setActive(arg_47_0.rtBtnLeftDeleteAll, arg_47_0.mailToggle == "all" or arg_47_0.mailToggle == "rare")
-		setActive(arg_47_0.rtBtnLeftGetAll, arg_47_0.mailToggle == "important" or arg_47_0.mailToggle == "rare")
+		arg_50_0.lsrMailList:SetTotalCount(#arg_50_0.filterMails, arg_50_2 or -1)
+		setText(arg_50_0.rtMailCount, var_50_1)
+		setActive(arg_50_0.rtBtnLeftManager, arg_50_0.mailToggle == "all")
+		setActive(arg_50_0.rtBtnLeftMoveAll, arg_50_0.mailToggle == "important")
+		setActive(arg_50_0.rtBtnLeftDeleteCollection, arg_50_0.mailToggle == "collection")
+		setActive(arg_50_0.rtBtnLeftDeleteAll, arg_50_0.mailToggle == "all" or arg_50_0.mailToggle == "rare")
+		setActive(arg_50_0.rtBtnLeftGetAll, arg_50_0.mailToggle == "important" or arg_50_0.mailToggle == "rare")
 	end
 end
 
-function var_0_0.UpdateMailTpl(arg_57_0, arg_57_1)
-	local var_57_0 = arg_57_0.mailTplDic[arg_57_1.id]
+function var_0_0.UpdateMailTpl(arg_61_0, arg_61_1)
+	local var_61_0 = arg_61_0.mailTplDic[arg_61_1.id]
 
-	if not var_57_0 then
+	if not var_61_0 then
 		return
 	end
 
-	local var_57_1 = var_57_0:Find("content")
+	local var_61_1 = var_61_0:Find("content")
 
-	setActive(var_57_1:Find("icon/no_attachment"), #arg_57_1.attachments == 0)
-	setActive(var_57_1:Find("icon/IconTpl"), #arg_57_1.attachments > 0)
+	setActive(var_61_1:Find("icon/no_attachment"), #arg_61_1.attachments == 0)
+	setActive(var_61_1:Find("icon/IconTpl"), #arg_61_1.attachments > 0)
 
-	if #arg_57_1.attachments > 0 then
-		updateDrop(var_57_1:Find("icon/IconTpl"), arg_57_1.attachments[1])
+	if #arg_61_1.attachments > 0 then
+		updateDrop(var_61_1:Find("icon/IconTpl"), arg_61_1.attachments[1])
 	end
 
-	setText(var_57_1:Find("info/title/Text"), shortenString(arg_57_1.title, 10))
-	setActive(var_57_1:Find("info/title/mark"), arg_57_1.importantFlag and arg_57_0.mailToggle ~= "collection")
-	setText(var_57_1:Find("info/time/Text"), os.date("%Y-%m-%d", arg_57_1.date))
-	setActive(var_57_1:Find("info/time/out_time"), false)
+	setText(var_61_1:Find("info/title/Text"), shortenString(arg_61_1.title, 10))
+	setActive(var_61_1:Find("info/title/mark"), arg_61_1.importantFlag and arg_61_0.mailToggle ~= "collection")
+	setText(var_61_1:Find("info/time/Text"), os.date("%Y-%m-%d", arg_61_1.date))
+	setActive(var_61_1:Find("info/time/out_time"), false)
 
-	local var_57_2 = #arg_57_1.attachments > 0 and arg_57_1.attachFlag
+	local var_61_2 = #arg_61_1.attachments > 0 and arg_61_1.attachFlag
 
-	setActive(var_57_0:Find("got_mark"), arg_57_0.mailToggle ~= "collection" and var_57_2)
-	setText(var_57_0:Find("got_mark/got_text"), i18n("mail_reward_got"))
-	triggerToggle(var_57_0, arg_57_0.selectMailId == arg_57_1.id)
+	setActive(var_61_0:Find("got_mark"), arg_61_0.mailToggle ~= "collection" and var_61_2)
+	setText(var_61_0:Find("got_mark/got_text"), i18n("mail_reward_got"))
+	triggerToggle(var_61_0, arg_61_0.selectMailId == arg_61_1.id)
 
-	local var_57_3 = arg_57_1.readFlag or arg_57_0.mailToggle == "collection"
+	local var_61_3 = arg_61_1.readFlag or arg_61_0.mailToggle == "collection"
 
-	setActive(var_57_0:Find("hasread_bg"), var_57_3)
-	setActive(var_57_0:Find("noread_bg"), not var_57_3)
+	setActive(var_61_0:Find("hasread_bg"), var_61_3)
+	setActive(var_61_0:Find("noread_bg"), not var_61_3)
 
-	local var_57_4 = SummerFeastScene.TransformColor(var_57_3 and "FFFFFF" or "181E32")
+	local var_61_4 = SummerFeastScene.TransformColor(var_61_3 and "FFFFFF" or "181E32")
 
-	setTextColor(var_57_1:Find("info/title/Text"), var_57_4)
-	setTextColor(var_57_1:Find("info/time/Text"), var_57_4)
+	setTextColor(var_61_1:Find("info/title/Text"), var_61_4)
+	setTextColor(var_61_1:Find("info/time/Text"), var_61_4)
 end
 
-function var_0_0.UpdateMailContent(arg_58_0, arg_58_1)
-	eachChild(arg_58_0.rtMailRight, function(arg_59_0)
-		setActive(arg_59_0, tobool(arg_58_1))
+function var_0_0.UpdateMailContent(arg_62_0, arg_62_1)
+	eachChild(arg_62_0.rtMailRight, function(arg_63_0)
+		setActive(arg_63_0, tobool(arg_62_1))
 	end)
 
-	if not arg_58_1 then
-		arg_58_0.selectMailId = nil
+	if not arg_62_1 then
+		arg_62_0.selectMailId = nil
 
 		return
 	end
 
-	arg_58_0.selectMailId = arg_58_1.id
+	arg_62_0.selectMailId = arg_62_1.id
 
-	changeToScrollText(arg_58_0.rtMailRight:Find("main/title/info/Text"), i18n2(arg_58_1.title))
-	setText(arg_58_0.rtMailRight:Find("main/from/Text"), arg_58_1.sender)
-	setText(arg_58_0.rtMailRight:Find("main/time/Text"), os.date("%Y-%m-%d", arg_58_1.date))
-	setText(arg_58_0.rtMailRight:Find("main/view/content/text/Text"), arg_58_1.content)
+	changeToScrollText(arg_62_0.rtMailRight:Find("main/title/info/Text"), i18n2(arg_62_1.title))
+	setText(arg_62_0.rtMailRight:Find("main/from/Text"), arg_62_1.sender)
+	setText(arg_62_0.rtMailRight:Find("main/time/Text"), os.date("%Y-%m-%d", arg_62_1.date))
+	setText(arg_62_0.rtMailRight:Find("main/view/content/text/Text"), arg_62_1.content)
 
-	local var_58_0 = arg_58_0.rtMailRight:Find("main/title/matter")
+	local var_62_0 = arg_62_0.rtMailRight:Find("main/title/matter")
 
-	setActive(var_58_0, arg_58_0.mailToggle ~= "collection")
+	setActive(var_62_0, arg_62_0.mailToggle ~= "collection")
 
-	if arg_58_0.mailToggle ~= "collection" then
-		onToggle(arg_58_0, arg_58_0.rtMailRight:Find("main/title/matter"), function(arg_60_0)
-			if arg_60_0 ~= arg_58_1.importantFlag then
-				arg_58_0:emit(MailMediator.ON_OPERATION, {
-					cmd = arg_60_0 and "important" or "unimportant",
+	if arg_62_0.mailToggle ~= "collection" then
+		onToggle(arg_62_0, arg_62_0.rtMailRight:Find("main/title/matter"), function(arg_64_0)
+			if arg_64_0 ~= arg_62_1.importantFlag then
+				arg_62_0:emit(MailMediator.ON_OPERATION, {
+					cmd = arg_64_0 and "important" or "unimportant",
 					filter = {
 						type = "ids",
 						list = {
-							arg_58_1.id
+							arg_62_1.id
 						}
 					}
 				})
 			end
 		end, SFX_CONFIRM)
-		triggerToggle(arg_58_0.rtMailRight:Find("main/title/matter"), arg_58_1.importantFlag)
+		triggerToggle(arg_62_0.rtMailRight:Find("main/title/matter"), arg_62_1.importantFlag)
 	end
 
-	local var_58_1 = arg_58_0.rtMailRight:Find("main/view/content/attachment")
+	local var_62_1 = arg_62_0.rtMailRight:Find("main/view/content/attachment")
 
-	setText(var_58_1:Find("got/Text"), i18n("main_mailLayer_attachTaken"))
-	setActive(var_58_1, #arg_58_1.attachments > 0)
+	setText(var_62_1:Find("got/Text"), i18n("main_mailLayer_attachTaken"))
+	setActive(var_62_1, #arg_62_1.attachments > 0)
 
-	if #arg_58_1.attachments > 0 then
-		local var_58_2 = var_58_1:Find("content")
+	if #arg_62_1.attachments > 0 then
+		local var_62_2 = var_62_1:Find("content")
 
-		UIItemList.StaticAlign(var_58_2, var_58_2:Find("IconTpl"), #arg_58_1.attachments, function(arg_61_0, arg_61_1, arg_61_2)
-			arg_61_1 = arg_61_1 + 1
+		UIItemList.StaticAlign(var_62_2, var_62_2:Find("IconTpl"), #arg_62_1.attachments, function(arg_65_0, arg_65_1, arg_65_2)
+			arg_65_1 = arg_65_1 + 1
 
-			if arg_61_0 == UIItemList.EventUpdate then
-				local var_61_0 = arg_58_1.attachments[arg_61_1]
+			if arg_65_0 == UIItemList.EventUpdate then
+				local var_65_0 = arg_62_1.attachments[arg_65_1]
 
-				updateDrop(arg_61_2, var_61_0)
-				onButton(arg_58_0, arg_61_2, function()
-					arg_58_0:emit(var_0_0.ON_DROP, var_61_0)
+				updateDrop(arg_65_2, var_65_0)
+				onButton(arg_62_0, arg_65_2, function()
+					arg_62_0:emit(var_0_0.ON_DROP, var_65_0)
 				end, SFX_PANEL)
 			end
 		end)
 
-		local var_58_3 = arg_58_0.mailToggle == "collection" or arg_58_1.attachFlag
+		local var_62_3 = arg_62_0.mailToggle == "collection" or arg_62_1.attachFlag
 
-		setCanvasGroupAlpha(var_58_2, var_58_3 and 0.5 or 1)
-		setActive(var_58_1:Find("got"), var_58_3)
+		setCanvasGroupAlpha(var_62_2, var_62_3 and 0.5 or 1)
+		setActive(var_62_1:Find("got"), var_62_3)
 	end
 
-	setActive(arg_58_0.rtBtnRightMove, arg_58_0.mailToggle ~= "collection")
-	setActive(arg_58_0.rtBtnRightGet, arg_58_0.mailToggle ~= "collection" and not arg_58_1.attachFlag)
+	setActive(arg_62_0.rtBtnRightMove, arg_62_0.mailToggle ~= "collection")
+	setActive(arg_62_0.rtBtnRightGet, arg_62_0.mailToggle ~= "collection" and not arg_62_1.attachFlag)
+	setActive(arg_62_0.rtBtnRightDelte, arg_62_0.mailToggle ~= "collection" and arg_62_1.attachFlag)
 
-	if arg_58_0.mailToggle ~= "collection" and not arg_58_1.readFlag then
-		arg_58_0:emit(MailMediator.ON_OPERATION, {
+	if arg_62_0.mailToggle ~= "collection" and not arg_62_1.readFlag then
+		arg_62_0:emit(MailMediator.ON_OPERATION, {
 			cmd = "read",
 			ignoreTips = true,
 			filter = {
 				type = "ids",
 				list = {
-					arg_58_1.id
+					arg_62_1.id
 				}
 			}
 		})
 	end
 end
 
-function var_0_0.UpdateOperationDeal(arg_63_0, arg_63_1, arg_63_2, arg_63_3)
-	if #arg_63_2 == 0 then
+function var_0_0.UpdateOperationDeal(arg_67_0, arg_67_1, arg_67_2, arg_67_3)
+	if #arg_67_2 == 0 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("mail_manage_3"))
-	elseif not arg_63_3 then
-		local var_63_0 = switch(arg_63_1, {
+	elseif not arg_67_3 then
+		local var_67_0 = switch(arg_67_1, {
 			delete = function()
 				return i18n("main_mailMediator_mailDelete")
 			end,
@@ -691,73 +732,83 @@ function var_0_0.UpdateOperationDeal(arg_63_0, arg_63_1, arg_63_2, arg_63_3)
 			end
 		})
 
-		if var_63_0 then
-			pg.TipsMgr.GetInstance():ShowTips(var_63_0)
+		if var_67_0 then
+			pg.TipsMgr.GetInstance():ShowTips(var_67_0)
 		end
 	end
 
-	local var_63_1 = {}
+	local var_67_1 = {}
 
-	for iter_63_0, iter_63_1 in ipairs(arg_63_2) do
-		var_63_1[iter_63_1] = true
+	for iter_67_0, iter_67_1 in ipairs(arg_67_2) do
+		var_67_1[iter_67_1] = true
 	end
 
-	arg_63_0:UpdateMailList(arg_63_0.mailToggle)
+	arg_67_0:UpdateMailList(arg_67_0.mailToggle)
 
-	if var_63_1[arg_63_0.selectMailId] then
-		arg_63_0:UpdateMailContent(underscore.detect(arg_63_0.filterMails, function(arg_68_0)
-			return arg_68_0.id == arg_63_0.selectMailId
+	if var_67_1[arg_67_0.selectMailId] then
+		arg_67_0:UpdateMailContent(underscore.detect(arg_67_0.filterMails, function(arg_72_0)
+			return arg_72_0.id == arg_67_0.selectMailId
 		end))
 	end
 end
 
-function var_0_0.UpdateCollectionDelete(arg_69_0, arg_69_1)
-	arg_69_0:UpdateMailList(arg_69_0.mailToggle)
+function var_0_0.UpdateCollectionDelete(arg_73_0, arg_73_1)
+	arg_73_0:UpdateMailList(arg_73_0.mailToggle)
 
-	if arg_69_0.selectMailId == arg_69_1 then
-		arg_69_0:UpdateMailContent(nil)
+	if arg_73_0.selectMailId == arg_73_1 then
+		arg_73_0:UpdateMailContent(nil)
 	end
 end
 
-function var_0_0.UpdateStore(arg_70_0)
-	arg_70_0.withdrawal = {
+function var_0_0.UpdateStore(arg_74_0)
+	arg_74_0.withdrawal = {
 		gold = 0,
 		oil = 0
 	}
 
-	local var_70_0 = getProxy(PlayerProxy):getRawData()
-	local var_70_1 = pg.mail_storeroom[var_70_0.mailStoreLevel]
+	local var_74_0 = getProxy(PlayerProxy):getRawData()
+	local var_74_1 = pg.mail_storeroom[var_74_0.mailStoreLevel]
 
-	setText(arg_70_0.rtStore:Find("gold/Text/count"), string.format("%d/%d", var_70_0:getResource(PlayerConst.ResStoreGold), var_70_1.gold_store))
+	setText(arg_74_0.rtStore:Find("gold/Text/count"), string.format("%d/%d", var_74_0:getResource(PlayerConst.ResStoreGold), var_74_1.gold_store))
 
-	local var_70_2 = var_70_0:IsStoreLevelMax()
-	local var_70_3 = arg_70_0.rtStore:Find("bottom/btn_extend")
+	local var_74_2 = var_74_0:IsStoreLevelMax()
+	local var_74_3 = arg_74_0.rtStore:Find("bottom/btn_extend")
 
-	SetActive(var_70_3, not var_70_2)
-	onButton(arg_70_0, var_70_3, function()
-		if var_70_2 then
+	SetActive(var_74_3, not var_74_2)
+	onButton(arg_74_0, var_74_3, function()
+		if var_74_2 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("mail_storeroom_noextend"))
 		else
-			arg_70_0.storeUpgradeSubView:ExecuteAction("Show")
+			arg_74_0.storeUpgradeSubView:ExecuteAction("Show")
 		end
 	end, SFX_PANEL)
 
-	local var_70_4 = arg_70_0.rtStore:Find("bottom/btn_get")
+	local var_74_4 = arg_74_0.rtStore:Find("bottom/btn_get")
 
-	onButton(arg_70_0, var_70_4, function()
-		arg_70_0:emit(MailMediator.ON_WITHDRAWAL, arg_70_0.withdrawal)
+	onButton(arg_74_0, var_74_4, function()
+		seriesAsync({
+			function(arg_77_0)
+				arg_74_0:ShowDoubleConfiremationMsgBox({
+					type = MailProxy.MailMessageBoxType.RewardStoreroom,
+					content = arg_74_0.withdrawal,
+					onYes = arg_77_0
+				})
+			end
+		}, function()
+			arg_74_0:emit(MailMediator.ON_WITHDRAWAL, arg_74_0.withdrawal)
+		end)
 	end, SFX_CONFIRM)
 
-	local function var_70_5()
-		local var_73_0 = arg_70_0.withdrawal.oil ~= 0 or arg_70_0.withdrawal.gold ~= 0
+	local function var_74_5()
+		local var_79_0 = arg_74_0.withdrawal.oil ~= 0 or arg_74_0.withdrawal.gold ~= 0
 
-		setButtonEnabled(var_70_4, var_73_0)
-		setGray(var_70_4, not var_73_0)
+		setButtonEnabled(var_74_4, var_79_0)
+		setGray(var_74_4, not var_79_0)
 	end
 
-	var_70_5()
+	var_74_5()
 
-	for iter_70_0, iter_70_1 in pairs({
+	for iter_74_0, iter_74_1 in pairs({
 		{
 			"oil",
 			PlayerConst.ResOil,
@@ -773,153 +824,158 @@ function var_0_0.UpdateStore(arg_70_0)
 			"max_gold"
 		}
 	}) do
-		local var_70_6, var_70_7, var_70_8, var_70_9, var_70_10 = unpack(iter_70_1)
-		local var_70_11 = pg.gameset[var_70_10].key_value - var_70_0:getResource(var_70_7)
-		local var_70_12 = math.max(var_70_11, 0)
-		local var_70_13 = var_70_0:getResource(var_70_8)
+		local var_74_6, var_74_7, var_74_8, var_74_9, var_74_10 = unpack(iter_74_1)
+		local var_74_11 = pg.gameset[var_74_10].key_value - var_74_0:getResource(var_74_7)
+		local var_74_12 = math.max(var_74_11, 0)
+		local var_74_13 = var_74_0:getResource(var_74_8)
 
-		setText(arg_70_0.rtStore:Find(var_70_6 .. "/tips"), i18n("mail_reward_tips"))
-		setText(arg_70_0.rtStore:Find(var_70_6 .. "/Text/count"), string.format("<color=%s>%d</color>/%d", var_70_9, var_70_13, var_70_1[var_70_6 .. "_store"]))
+		setText(arg_74_0.rtStore:Find(var_74_6 .. "/tips"), i18n("mail_reward_tips"))
+		setText(arg_74_0.rtStore:Find(var_74_6 .. "/Text/count"), string.format("<color=%s>%d</color>/%d", var_74_9, var_74_13, var_74_1[var_74_6 .. "_store"]))
 
-		local var_70_14 = arg_70_0.rtStore:Find(var_70_6 .. "/calc")
-		local var_70_15 = var_70_14:Find("count/count")
+		local var_74_14 = arg_74_0.rtStore:Find(var_74_6 .. "/calc")
+		local var_74_15 = var_74_14:Find("count/count")
 
-		setText(var_70_15:Find("tip"), i18n("mail_storeroom_resourcetaken"))
-		setInputText(var_70_15, arg_70_0.withdrawal[var_70_6])
-		onInputEndEdit(arg_70_0, var_70_15, function()
-			local var_74_0 = getInputText(var_70_15)
+		setText(var_74_15:Find("tip"), i18n("mail_storeroom_resourcetaken"))
+		setInputText(var_74_15, arg_74_0.withdrawal[var_74_6])
+		onInputEndEdit(arg_74_0, var_74_15, function()
+			local var_80_0 = getInputText(var_74_15)
 
-			if var_74_0 == "" or var_74_0 == nil then
-				var_74_0 = 0
+			if var_80_0 == "" or var_80_0 == nil then
+				var_80_0 = 0
 			end
 
-			local var_74_1 = math.clamp(tonumber(var_74_0), 0, var_70_13)
+			local var_80_1 = math.clamp(tonumber(var_80_0), 0, var_74_13)
 
-			if var_74_1 >= var_70_12 then
-				var_74_1 = var_70_12
+			if var_80_1 >= var_74_12 then
+				var_80_1 = var_74_12
 
 				pg.TipsMgr.GetInstance():ShowTips(i18n("resource_max_tip_storeroom"))
 			end
 
-			if arg_70_0.withdrawal[var_70_6] ~= var_74_1 then
-				arg_70_0.withdrawal[var_70_6] = var_74_1
+			if arg_74_0.withdrawal[var_74_6] ~= var_80_1 then
+				arg_74_0.withdrawal[var_74_6] = var_80_1
 
-				var_70_5()
+				var_74_5()
 			end
 
-			setInputText(var_70_15, arg_70_0.withdrawal[var_70_6])
+			setInputText(var_74_15, arg_74_0.withdrawal[var_74_6])
 		end)
-		pressPersistTrigger(var_70_14:Find("count/left"), 0.5, function(arg_75_0)
-			if arg_70_0.withdrawal[var_70_6] == 0 then
-				arg_75_0()
+		pressPersistTrigger(var_74_14:Find("count/left"), 0.5, function(arg_81_0)
+			if arg_74_0.withdrawal[var_74_6] == 0 then
+				arg_81_0()
 
 				return
 			end
 
-			arg_70_0.withdrawal[var_70_6] = math.max(arg_70_0.withdrawal[var_70_6] - 100, 0)
+			arg_74_0.withdrawal[var_74_6] = math.max(arg_74_0.withdrawal[var_74_6] - 100, 0)
 
-			setInputText(var_70_15, arg_70_0.withdrawal[var_70_6])
+			setInputText(var_74_15, arg_74_0.withdrawal[var_74_6])
 
-			if arg_70_0.withdrawal[var_70_6] == 0 then
-				var_70_5()
+			if arg_74_0.withdrawal[var_74_6] == 0 then
+				var_74_5()
 			end
 		end, nil, true, true, 0.15, SFX_PANEL)
-		pressPersistTrigger(var_70_14:Find("count/right"), 0.5, function(arg_76_0)
-			if arg_70_0.withdrawal[var_70_6] >= var_70_12 then
+		pressPersistTrigger(var_74_14:Find("count/right"), 0.5, function(arg_82_0)
+			if arg_74_0.withdrawal[var_74_6] >= var_74_12 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("resource_max_tip_storeroom"))
-				arg_76_0()
+				arg_82_0()
 
 				return
 			end
 
-			if arg_70_0.withdrawal[var_70_6] == var_70_13 then
+			if arg_74_0.withdrawal[var_74_6] == var_74_13 then
 				return
 			end
 
-			local var_76_0 = arg_70_0.withdrawal[var_70_6]
+			local var_82_0 = arg_74_0.withdrawal[var_74_6]
 
-			arg_70_0.withdrawal[var_70_6] = math.min(arg_70_0.withdrawal[var_70_6] + 100, var_70_13)
+			arg_74_0.withdrawal[var_74_6] = math.min(arg_74_0.withdrawal[var_74_6] + 100, var_74_13)
 
-			if arg_70_0.withdrawal[var_70_6] >= var_70_12 then
-				arg_70_0.withdrawal[var_70_6] = var_70_12
+			if arg_74_0.withdrawal[var_74_6] >= var_74_12 then
+				arg_74_0.withdrawal[var_74_6] = var_74_12
 
 				pg.TipsMgr.GetInstance():ShowTips(i18n("resource_max_tip_storeroom"))
 			end
 
-			setInputText(var_70_15, arg_70_0.withdrawal[var_70_6])
+			setInputText(var_74_15, arg_74_0.withdrawal[var_74_6])
 
-			if var_76_0 == 0 then
-				var_70_5()
+			if var_82_0 == 0 then
+				var_74_5()
 			end
 		end, nil, true, true, 0.15, SFX_PANEL)
-		onButton(arg_70_0, var_70_14:Find("max"), function()
-			arg_70_0.withdrawal[var_70_6] = getProxy(PlayerProxy):getRawData():ResLack(var_70_6, var_70_13)
+		onButton(arg_74_0, var_74_14:Find("max"), function()
+			arg_74_0.withdrawal[var_74_6] = getProxy(PlayerProxy):getRawData():ResLack(var_74_6, var_74_13)
 
-			if arg_70_0.withdrawal[var_70_6] >= var_70_12 then
-				arg_70_0.withdrawal[var_70_6] = var_70_12
+			if arg_74_0.withdrawal[var_74_6] >= var_74_12 then
+				arg_74_0.withdrawal[var_74_6] = var_74_12
 
 				pg.TipsMgr.GetInstance():ShowTips(i18n("resource_max_tip_storeroom"))
 			end
 
-			setInputText(var_70_15, arg_70_0.withdrawal[var_70_6])
-			var_70_5()
+			setInputText(var_74_15, arg_74_0.withdrawal[var_74_6])
+			var_74_5()
 		end, SFX_PANEL)
 	end
 end
 
-function var_0_0.onBackPressed(arg_78_0)
-	if arg_78_0.mailMgrSubView:isShowing() then
-		arg_78_0.mailMgrSubView:Hide()
-	elseif arg_78_0.storeUpgradeSubView:isShowing() then
-		arg_78_0.storeUpgradeSubView:Hide()
-	elseif arg_78_0.mailConfirmationSubView:isShowing() then
-		arg_78_0.mailConfirmationSubView:Hide()
-	elseif arg_78_0.mailOverflowWindowSubView:isShowing() then
-		arg_78_0.mailOverflowWindowSubView:Hide()
+function var_0_0.onBackPressed(arg_84_0)
+	if arg_84_0.mailMgrSubView:isShowing() then
+		arg_84_0.mailMgrSubView:Hide()
+	elseif arg_84_0.storeUpgradeSubView:isShowing() then
+		arg_84_0.storeUpgradeSubView:Hide()
+	elseif arg_84_0.mailConfirmationSubView:isShowing() then
+		arg_84_0.mailConfirmationSubView:Hide()
+	elseif arg_84_0.mailOverflowWindowSubView:isShowing() then
+		arg_84_0.mailOverflowWindowSubView:Hide()
+	elseif arg_84_0.mailStoreroomRewardSubView:isShowing() then
+		arg_84_0.mailStoreroomRewardSubView:Hide()
 	else
-		triggerButton(arg_78_0.rtAdapt:Find("top/back_btn"))
+		triggerButton(arg_84_0.rtAdapt:Find("top/back_btn"))
 	end
 end
 
-function var_0_0.willExit(arg_79_0)
-	arg_79_0.mailMgrSubView:Destroy()
-	arg_79_0.storeUpgradeSubView:Destroy()
-	arg_79_0.mailConfirmationSubView:Destroy()
-	arg_79_0.mailOverflowWindowSubView:Destroy()
+function var_0_0.willExit(arg_85_0)
+	arg_85_0.mailMgrSubView:Destroy()
+	arg_85_0.storeUpgradeSubView:Destroy()
+	arg_85_0.mailConfirmationSubView:Destroy()
+	arg_85_0.mailOverflowWindowSubView:Destroy()
+	arg_85_0.mailStoreroomRewardSubView:Destroy()
 end
 
-function var_0_0.ShowDoubleConfiremationMsgBox(arg_80_0, arg_80_1)
-	if arg_80_1.type == MailProxy.MailMessageBoxType.OverflowConfirm then
-		arg_80_0.mailOverflowWindowSubView:ExecuteAction("Show", arg_80_1)
+function var_0_0.ShowDoubleConfiremationMsgBox(arg_86_0, arg_86_1)
+	if arg_86_1.type == MailProxy.MailMessageBoxType.OverflowConfirm then
+		arg_86_0.mailOverflowWindowSubView:ExecuteAction("Show", arg_86_1)
+	elseif arg_86_1.type == MailProxy.MailMessageBoxType.RewardStoreroom then
+		arg_86_0.mailStoreroomRewardSubView:ExecuteAction("Show", arg_86_1)
 	else
-		arg_80_0.mailConfirmationSubView:ExecuteAction("Show", arg_80_1)
+		arg_86_0.mailConfirmationSubView:ExecuteAction("Show", arg_86_1)
 	end
 end
 
-function var_0_0.InitResBar(arg_81_0)
-	arg_81_0.resBar = arg_81_0._tf:Find("adapt/top/res")
-	arg_81_0.goldMax = arg_81_0.resBar:Find("gold/max"):GetComponent(typeof(Text))
-	arg_81_0.goldValue = arg_81_0.resBar:Find("gold/Text"):GetComponent(typeof(Text))
-	arg_81_0.oilMax = arg_81_0.resBar:Find("oil/max"):GetComponent(typeof(Text))
-	arg_81_0.oilValue = arg_81_0.resBar:Find("oil/Text"):GetComponent(typeof(Text))
-	arg_81_0.gemValue = arg_81_0.resBar:Find("gem/Text"):GetComponent(typeof(Text))
+function var_0_0.InitResBar(arg_87_0)
+	arg_87_0.resBar = arg_87_0._tf:Find("adapt/top/res")
+	arg_87_0.goldMax = arg_87_0.resBar:Find("gold/max"):GetComponent(typeof(Text))
+	arg_87_0.goldValue = arg_87_0.resBar:Find("gold/Text"):GetComponent(typeof(Text))
+	arg_87_0.oilMax = arg_87_0.resBar:Find("oil/max"):GetComponent(typeof(Text))
+	arg_87_0.oilValue = arg_87_0.resBar:Find("oil/Text"):GetComponent(typeof(Text))
+	arg_87_0.gemValue = arg_87_0.resBar:Find("gem/Text"):GetComponent(typeof(Text))
 
-	onButton(arg_81_0, arg_81_0.resBar:Find("gold"), function()
+	onButton(arg_87_0, arg_87_0.resBar:Find("gold"), function()
 		pg.playerResUI:ClickGold()
 	end, SFX_PANEL)
-	onButton(arg_81_0, arg_81_0.resBar:Find("oil"), function()
+	onButton(arg_87_0, arg_87_0.resBar:Find("oil"), function()
 		pg.playerResUI:ClickOil()
 	end, SFX_PANEL)
-	onButton(arg_81_0, arg_81_0.resBar:Find("gem"), function()
+	onButton(arg_87_0, arg_87_0.resBar:Find("gem"), function()
 		pg.playerResUI:ClickGem()
 	end, SFX_PANEL)
-	arg_81_0:UpdateRes()
+	arg_87_0:UpdateRes()
 end
 
-function var_0_0.UpdateRes(arg_85_0)
-	local var_85_0 = getProxy(PlayerProxy):getRawData()
+function var_0_0.UpdateRes(arg_91_0)
+	local var_91_0 = getProxy(PlayerProxy):getRawData()
 
-	PlayerResUI.StaticFlush(var_85_0, arg_85_0.goldMax, arg_85_0.goldValue, arg_85_0.oilMax, arg_85_0.oilValue, arg_85_0.gemValue)
+	PlayerResUI.StaticFlush(var_91_0, arg_91_0.goldMax, arg_91_0.goldValue, arg_91_0.oilMax, arg_91_0.oilValue, arg_91_0.gemValue)
 end
 
 return var_0_0

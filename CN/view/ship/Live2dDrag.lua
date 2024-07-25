@@ -112,17 +112,17 @@ function var_0_0.onListenerEvent(arg_2_0, arg_2_1, arg_2_2)
 						end
 
 						if var_2_13 then
-							local var_2_14 = true
-							local var_2_15 = arg_2_0:fixParameterTargetValue(var_2_13, arg_2_0.range, arg_2_0.rangeAbs, arg_2_0.dragDirect)
+							var_2_6 = true
 
-							arg_2_0:setTargetValue(var_2_15)
-							arg_2_0:setParameterValue(var_2_15)
+							local var_2_14 = arg_2_0:fixParameterTargetValue(var_2_13, arg_2_0.range, arg_2_0.rangeAbs, arg_2_0.dragDirect)
+
+							arg_2_0:setTargetValue(var_2_14)
+							arg_2_0:setParameterValue(var_2_14)
 							print("数值变更为" .. arg_2_0.parameterTargetValue)
 						end
 
 						if var_2_12 and var_2_12 > 0 then
-							local var_2_16 = true
-
+							var_2_6 = true
 							arg_2_0.actionListIndex = var_2_12
 						end
 					end
@@ -131,25 +131,25 @@ function var_0_0.onListenerEvent(arg_2_0, arg_2_1, arg_2_2)
 		end
 
 		if arg_2_0.listenerApply and #arg_2_0.listenerApply > 0 then
-			local var_2_17 = arg_2_0.listenerApply[1]
-			local var_2_18 = arg_2_0.listenerApply[2]
+			local var_2_15 = arg_2_0.listenerApply[1]
+			local var_2_16 = arg_2_0.listenerApply[2]
 
-			if var_2_17 == 1 then
-				local var_2_19 = arg_2_0.parameterTargetValue
-				local var_2_20
+			if var_2_15 == 1 and var_2_6 then
+				local var_2_17 = arg_2_0.parameterTargetValue
+				local var_2_18
 
-				for iter_2_1 = 1, #var_2_18 do
-					local var_2_21 = var_2_18[iter_2_1]
+				for iter_2_1 = 1, #var_2_16 do
+					local var_2_19 = var_2_16[iter_2_1]
 
-					if var_2_19 >= var_2_21[1] and var_2_19 < var_2_21[2] then
-						var_2_20 = var_2_21[3]
+					if var_2_17 >= var_2_19[1] and var_2_17 < var_2_19[2] then
+						var_2_18 = var_2_19[3]
 					end
 				end
 
-				if var_2_20 then
+				if var_2_18 then
 					arg_2_0:onEventCallback(Live2D.EVENT_CHANGE_IDLE_INDEX, {
 						id = arg_2_0.id,
-						idle = var_2_20,
+						idle = var_2_18,
 						activeData = arg_2_0.actionTriggerActive
 					})
 				end

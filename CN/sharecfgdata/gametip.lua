@@ -8266,16 +8266,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "天赋点不足"
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "亚尔薇特、{namecode:494}等角色建造概率UP！"
+	tip = "每累计建造200次可获得海上传奇舰船 前卫(最多4次)"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "福煦 建造追加！"
+	tip = "{namecode:18}、{namecode:62} 建造追加！"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "不屈、进取 建造追加！"
+	tip = "{namecode:206}、{namecode:150} 建造追加！"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "霞飞 建造追加！"
+	tip = "{namecode:18} 、{namecode:208}建造追加！"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -23977,9 +23977,9 @@ _G.pg.base.gametip.blueprint_simulation_confirm_89904 = {
 是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，
 <color=#ff5c5c>实际性能以获得舰船为准</color>）
 使用装备：<color=#92fc63>
-试作型三联装254mm主炮Model1939
-试作型三联装152mm主炮Model1936
-试作型双联90mm高角炮Model1939
+三联装152mm主炮Mle1930(高爆弹)
+三联装550mm鱼雷
+双联装57mm/L60博福斯对空机炮Mle1951
 </color></size>]]
 }
 _G.pg.base.gametip.blueprint_simulation_confirm_79902 = {
@@ -23992,4 +23992,55 @@ _G.pg.base.gametip.blueprint_simulation_confirm_79902 = {
 试作舰载型La-9
 试作型VIT-2（模式调整）
 </color></size>]]
+}
+_G.pg.base.gametip.mail_confirm_delete_important_flag = {
+	tip = "无法删除重要邮件"
+}
+_G.pg.base.gametip.mail_delet_button_1 = {
+	tip = "删除邮件"
+}
+_G.pg.base.gametip.mail_storeroom_max_3 = {
+	tip = "※本次领取后，将无法领取来自食堂的石油"
+}
+_G.pg.base.gametip.mail_storeroom_max_4 = {
+	tip = "※本次领取后，将无法领取来自小卖部的物资"
+}
+_G.pg.base.gametip.mail_storeroom_collect = {
+	tip = "本次领取将会获得以下资源："
+}
+_G.pg.base.gametip.loveletter_recover_tip1 = {
+	tip = "需要检查邮箱/收藏室内是否存在对应邮件后使用恢复功能"
+}
+_G.pg.base.gametip.loveletter_recover_tip2 = {
+	tip = "角色错误"
+}
+_G.pg.base.gametip.loveletter_recover_tip3 = {
+	tip = "邮箱内已有该年份的情人节邮件"
+}
+_G.pg.base.gametip.loveletter_recover_tip4 = {
+	tip = "该角色不在该年份情人节邮件列表内"
+}
+_G.pg.base.gametip.loveletter_recover_tip5 = {
+	tip = "邮箱收藏室已满，请整理收藏室后进行恢复邮件"
+}
+_G.pg.base.gametip.loveletter_recover_tip6 = {
+	tip = "检查完毕，可以进行$1年的情人节邮件恢复"
+}
+_G.pg.base.gametip.loveletter_recover_tip7 = {
+	tip = "检查完毕，邮箱中已有对应的情人节邮件，不可使用恢复功能。"
+}
+_G.pg.base.gametip.loveletter_recover_bottom1 = {
+	tip = "检查邮件"
+}
+_G.pg.base.gametip.loveletter_recover_bottom2 = {
+	tip = "恢复邮件"
+}
+_G.pg.base.gametip.loveletter_recover_bottom3 = {
+	tip = "$1年"
+}
+_G.pg.base.gametip.loveletter_recover_text1 = {
+	tip = "是否确认使用<color=#ffde38>恢复邮件</color>功能，使用后邮箱收藏室将获得一封<color=#ffde38>$1</color>年由<color=#ffde38>$2</color>角色向您发送的情人节邮件（不包含附件内容）\n*每件情人节礼物的恢复邮件功能仅能使用一次"
+}
+_G.pg.base.gametip.loveletter_recover_text2 = {
+	tip = "请选择<color=#ffde38>恢复年份</color>。选择后，邮箱收藏室将获得一封由<color=#ffde38>$1</color>角色向您发送的所选年份情人节邮件（不包含附件内容）\n*每件情人节礼物的恢复邮件功能仅能使用一次"
 }
