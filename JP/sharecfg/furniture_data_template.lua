@@ -153,6 +153,8 @@ pg.furniture_data_template = setmetatable({
 			278,
 			280,
 			281,
+			282,
+			283,
 			100002,
 			100003,
 			100004,
@@ -214,6 +216,7 @@ pg.furniture_data_template = setmetatable({
 			100060,
 			100061,
 			100062,
+			100063,
 			200001,
 			200002,
 			200003,
@@ -3139,6 +3142,27 @@ pg.furniture_data_template = setmetatable({
 			311114,
 			311115,
 			311116
+		},
+		[112] = {
+			312001,
+			312002,
+			312101,
+			312102,
+			312103,
+			312104,
+			312105,
+			312106,
+			312107,
+			312108,
+			312109,
+			312110,
+			312111,
+			312112,
+			312113,
+			312114,
+			312115,
+			312301,
+			312302
 		}
 	},
 	get_id_list_by_tag = {
@@ -3237,6 +3261,7 @@ pg.furniture_data_template = setmetatable({
 			274,
 			280,
 			281,
+			282,
 			100002,
 			100003,
 			100004,
@@ -3298,6 +3323,7 @@ pg.furniture_data_template = setmetatable({
 			100060,
 			100061,
 			100062,
+			100063,
 			31101,
 			54104,
 			54105
@@ -3356,7 +3382,8 @@ pg.furniture_data_template = setmetatable({
 			273,
 			275,
 			276,
-			278
+			278,
+			283
 		},
 		[7] = {
 			223,
@@ -3545,7 +3572,9 @@ pg.furniture_data_template = setmetatable({
 			308305,
 			309113,
 			310116,
-			311116
+			311116,
+			312114,
+			312115
 		},
 		[4] = {
 			1001,
@@ -3643,7 +3672,8 @@ pg.furniture_data_template = setmetatable({
 			308001,
 			309001,
 			310001,
-			311001
+			311001,
+			312001
 		},
 		[3] = {
 			1002,
@@ -3742,7 +3772,8 @@ pg.furniture_data_template = setmetatable({
 			308002,
 			309002,
 			310002,
-			311002
+			311002,
+			312002
 		},
 		{
 			1101,
@@ -5603,7 +5634,20 @@ pg.furniture_data_template = setmetatable({
 			311112,
 			311113,
 			311114,
-			311115
+			311115,
+			312101,
+			312102,
+			312103,
+			312104,
+			312105,
+			312106,
+			312107,
+			312108,
+			312109,
+			312110,
+			312111,
+			312112,
+			312113
 		},
 		{
 			1108,
@@ -6098,7 +6142,9 @@ pg.furniture_data_template = setmetatable({
 			310307,
 			310308,
 			310309,
-			310310
+			310310,
+			312301,
+			312302
 		}
 	},
 	get_id_list_by_type = {
@@ -6232,6 +6278,7 @@ pg.furniture_data_template = setmetatable({
 			276,
 			278,
 			280,
+			283,
 			100002,
 			100004,
 			100005,
@@ -8134,7 +8181,21 @@ pg.furniture_data_template = setmetatable({
 			311113,
 			311114,
 			311115,
-			311116
+			311116,
+			312101,
+			312102,
+			312103,
+			312104,
+			312105,
+			312106,
+			312107,
+			312108,
+			312109,
+			312110,
+			312111,
+			312112,
+			312113,
+			312114
 		},
 		[11] = {
 			143,
@@ -8142,6 +8203,7 @@ pg.furniture_data_template = setmetatable({
 			233,
 			244,
 			281,
+			282,
 			100003,
 			100008,
 			100021,
@@ -8149,6 +8211,7 @@ pg.furniture_data_template = setmetatable({
 			100030,
 			100034,
 			100042,
+			100063,
 			30123,
 			35128,
 			36125,
@@ -8178,7 +8241,8 @@ pg.furniture_data_template = setmetatable({
 			90104,
 			90117,
 			94119,
-			301105
+			301105,
+			312115
 		},
 		[14] = {
 			214,
@@ -8522,7 +8586,8 @@ pg.furniture_data_template = setmetatable({
 			310307,
 			310308,
 			310309,
-			310310
+			310310,
+			312302
 		},
 		[13] = {
 			100015,
@@ -8632,7 +8697,8 @@ pg.furniture_data_template = setmetatable({
 			308001,
 			309001,
 			310001,
-			311001
+			311001,
+			312001
 		},
 		{
 			1002,
@@ -8731,7 +8797,8 @@ pg.furniture_data_template = setmetatable({
 			308002,
 			309002,
 			310002,
-			311002
+			311002,
+			312002
 		},
 		[5] = {
 			1101,
@@ -9069,7 +9136,8 @@ pg.furniture_data_template = setmetatable({
 			310302,
 			310303,
 			310304,
-			310305
+			310305,
+			312301
 		},
 		[12] = {
 			46131
@@ -9228,6 +9296,8 @@ pg.furniture_data_template = setmetatable({
 		278,
 		280,
 		281,
+		282,
+		283,
 		100002,
 		100003,
 		100004,
@@ -9289,6 +9359,7 @@ pg.furniture_data_template = setmetatable({
 		100060,
 		100061,
 		100062,
+		100063,
 		200001,
 		200002,
 		200003,
@@ -12017,7 +12088,26 @@ pg.furniture_data_template = setmetatable({
 		311113,
 		311114,
 		311115,
-		311116
+		311116,
+		312001,
+		312002,
+		312101,
+		312102,
+		312103,
+		312104,
+		312105,
+		312106,
+		312107,
+		312108,
+		312109,
+		312110,
+		312111,
+		312112,
+		312113,
+		312114,
+		312115,
+		312301,
+		312302
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -19477,6 +19567,130 @@ pg.base.furniture_data_template = {
 		},
 		interAction_group = {}
 	},
+	[282] = {
+		spine_extra = "",
+		describe = "閃くマシンサンダー、コースを雷電の如く突き抜ける！",
+		gain_by = "",
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "マシンサンダー",
+		themeId = 0,
+		icon = "cheleidianicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 6,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 282,
+		can_rotate = 0,
+		size = {
+			4,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"cheleidianB",
+				"normal",
+				nil,
+				1
+			},
+			{
+				"cheleidianT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{
+				{
+					5.8,
+					19.8
+				},
+				{
+					192,
+					172
+				},
+				"chuanmo/cheleidian_mask"
+			},
+			{
+				-0.5,
+				-15.5
+			},
+			{
+				1,
+				1
+			},
+			0.2
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[283] = {
+		spine_extra = "",
+		describe = "審判廷製の聖堂施設のミニチュア。構内の草木の一本一本をよく再現している。",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 5,
+		is_get_time_note = 1,
+		themeId = 0,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 8,
+		icon = "shengmixieershanicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "岩山聖堂のミニチュア",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "chuanmo/shengmixieershan",
+		canputon = 0,
+		id = 283,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		interAction_group = {}
+	},
 	[100002] = {
 		belong = 1,
 		describe = "ゆゆゆ友情パワーだぴょぴょぴょぴょ………",
@@ -23819,6 +24033,57 @@ pg.base.furniture_data_template = {
 		spine = {
 			{
 				"jiujiubudaoweng",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[100063] = {
+		spine_extra = "",
+		describe = "衝撃的な可愛さです！",
+		gain_by = "",
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "jiguangyantuicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ホッキョクウサギ",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 100063,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jiguangyantu",
 				"normal",
 				{
 					"action2",
@@ -143635,6 +143900,850 @@ pg.base.furniture_data_template = {
 		followBone = {
 			"char",
 			-1
+		},
+		interAction_group = {}
+	},
+	[312001] = {
+		spine_extra = "",
+		describe = "スピード！パッション！マフラーでブォォっと！",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 112,
+		belong = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		deblocking = 1,
+		level = 1,
+		name = "レーシングカフェの床",
+		effect = "",
+		advice = 0,
+		icon = "dibancar2icon",
+		spine_action_replace = "",
+		picture = "car2/dibancar2",
+		comfortable = 4,
+		canputon = 0,
+		id = 312001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[312002] = {
+		spine_extra = "",
+		describe = "スピード！パッション！マフラーでブォォっと！",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		themeId = 112,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		deblocking = 1,
+		level = 5,
+		name = "レーシングカフェの壁",
+		effect = "",
+		advice = 0,
+		icon = "qiangbicar2icon",
+		spine_action_replace = "",
+		picture = "",
+		comfortable = 4,
+		canputon = 0,
+		id = 312002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbicar2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[312101] = {
+		spine_extra = "",
+		describe = "情熱と速さの濃厚な味ピョ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 112,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "bataicar2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "レーシングカウンター",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 312101,
+		can_rotate = 0,
+		size = {
+			7,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"bataicar2",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[312102] = {
+		spine_extra = "",
+		describe = "アイスのドリンクもホットに沸かす！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 112,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "chajicar2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "レーシングテーブル",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "car2/chajicar2",
+		canputon = 0,
+		id = 312102,
+		can_rotate = 0,
+		size = {
+			3,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[312103] = {
+		spine_extra = "",
+		describe = "応援グッズが置かれているテーブル。上に乗っちゃダメだよ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 112,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "lianpaizhuozicar2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "レーシングロングテーブル",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "car2/lianpaizhuozicar2",
+		canputon = 0,
+		id = 312103,
+		can_rotate = 0,
+		size = {
+			15,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[312104] = {
+		spine_extra = "",
+		describe = "装飾用のタイヤ。トラックに運んじゃダメだよ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 112,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "luntaicar2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "レーシングタイヤ",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "car2/luntaicar2",
+		canputon = 0,
+		id = 312104,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[312105] = {
+		spine_extra = "",
+		describe = "オモチャじゃない！レーシングマシンだ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 112,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "paodaozhuocar2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "レーシングサーキット",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 312105,
+		can_rotate = 0,
+		size = {
+			9,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"paodaozhuocar2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[312106] = {
+		spine_extra = "",
+		describe = "勝利はもうすぐ！…部屋の中ではダッシュ厳禁！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 112,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "saicheqizhicar2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "勝利フラッグ（装飾用）",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "car2/saicheqizhicar2",
+		canputon = 0,
+		id = 312106,
+		can_rotate = 1,
+		size = {
+			3,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[312107] = {
+		spine_extra = "",
+		describe = "レースの合間に背中を預けて休憩しよう！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 112,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "shafa1car2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "レーシングソファ（軟式）",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "car2/shafa1car2",
+		canputon = 0,
+		id = 312107,
+		can_rotate = 0,
+		size = {
+			4,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sleep",
+				{
+					22.6,
+					21.4
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[312108] = {
+		spine_extra = "",
+		describe = "レースの合間に背中を預けて…かたーい！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 112,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "shafa2car2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "レーシングソファ（硬式）",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "car2/shafa2car2",
+		canputon = 0,
+		id = 312108,
+		can_rotate = 0,
+		size = {
+			4,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[312109] = {
+		spine_extra = "",
+		describe = "スピードとパッションをシミュレーション！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "レーシングシミュレーター",
+		themeId = 112,
+		icon = "vrsaichecar2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 312109,
+		can_rotate = 0,
+		size = {
+			3,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"vrsaichecar2B",
+				"normal"
+			},
+			{
+				"vrsaichecar2T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[312110] = {
+		spine_extra = "",
+		describe = "模擬レースを観戦しよう！開始はこのあとすぐ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 112,
+		is_3d_obj = 0,
+		count = 4,
+		tag = 1,
+		icon = "yizi1car2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "レーシングチェア1",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "car2/yizi1car2",
+		canputon = 0,
+		id = 312110,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-19.4,
+					19.2
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[312111] = {
+		spine_extra = "",
+		describe = "模擬レースを観戦しよう！開始はこのあとすぐ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 112,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "yizi2car2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "レーシングチェア2",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "car2/yizi2car2",
+		canputon = 0,
+		id = 312111,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[312112] = {
+		spine_extra = "",
+		describe = "レース観戦に最高の席！燃えてきた！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 112,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "yizi3car2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "レーシングチェックチェア1",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "car2/yizi3car2",
+		canputon = 0,
+		id = 312112,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					16.2,
+					27.2
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[312113] = {
+		spine_extra = "",
+		describe = "レース観戦に最高の席！燃えてきた！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 112,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "yizi4car2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "レーシングチェックチェア2",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "car2/yizi4car2",
+		canputon = 0,
+		id = 312113,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[312114] = {
+		spine_extra = "",
+		describe = "ガチャポコとマシンメンテを終わらすぞ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 112,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 7,
+		icon = "jixiebicar2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "レーシングアーム",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 312114,
+		can_rotate = 0,
+		size = {
+			7,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jixiebicar2",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[312115] = {
+		spine_extra = "",
+		describe = "ラブ&ピースでヴィクトリーへGO！",
+		gain_by = "",
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "ハートブーストカー",
+		themeId = 112,
+		icon = "laoyechecar2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 312115,
+		can_rotate = 0,
+		size = {
+			4,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"laoyechecar2B",
+				"normal",
+				nil,
+				true
+			},
+			{
+				"laoyechecar2T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			},
+			0.5
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[312301] = {
+		spine_extra = "",
+		describe = "盛り上がるレースには、美味しいドリンクを！",
+		gain_by = "",
+		type = 10,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 112,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "caidancar2icon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "レーシングメニュー",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "car2/caidancar2",
+		canputon = 0,
+		id = 312301,
+		can_rotate = 0,
+		size = {
+			8,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[312302] = {
+		spine_extra = "",
+		describe = "これは燃やしちゃダメだってば！",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 112,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "kafeidoucar2icon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "レーシングディスペンサー",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "car2/kafeidoucar2",
+		canputon = 0,
+		id = 312302,
+		can_rotate = 0,
+		size = {
+			6,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
 		},
 		interAction_group = {}
 	}

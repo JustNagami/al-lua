@@ -270,32 +270,30 @@ local function var_0_1()
 end
 
 function var_0_0.ShowExtraChapterActSocre(arg_18_0, arg_18_1)
-	local var_18_0 = getProxy(ChapterProxy)
-	local var_18_1 = var_18_0:getActiveChapter()
-	local var_18_2 = var_18_1 and var_18_0:getMapById(var_18_1:getConfig("map"))
-	local var_18_3 = var_0_1()
+	local var_18_0 = getProxy(ChapterProxy):getActiveChapter()
+	local var_18_1 = var_0_1()
 
-	for iter_18_0, iter_18_1 in ipairs(var_18_3) do
-		local var_18_4 = iter_18_1:getConfig("config_data")
-		local var_18_5 = arg_18_1.stageId
+	for iter_18_0, iter_18_1 in ipairs(var_18_1) do
+		local var_18_2 = iter_18_1:getConfig("config_data")
+		local var_18_3 = arg_18_1.stageId
 
-		if var_18_4[1] == var_18_5 and var_18_2 and var_18_2:isActExtra() then
-			local var_18_6 = math.floor(arg_18_1.statistics._totalTime)
-			local var_18_7 = ActivityLevelConst.getShipsPower(arg_18_1.prefabFleet or arg_18_1.oldMainShips)
-			local var_18_8, var_18_9 = ActivityLevelConst.getExtraChapterSocre(var_18_5, var_18_6, var_18_7, iter_18_1)
-			local var_18_10 = var_18_9 < var_18_8 and i18n("extra_chapter_record_updated") or i18n("extra_chapter_record_not_updated")
+		if var_18_2[1] == var_18_3 and var_18_0:IsEXChapter() then
+			local var_18_4 = math.floor(arg_18_1.statistics._totalTime)
+			local var_18_5 = ActivityLevelConst.getShipsPower(arg_18_1.prefabFleet or arg_18_1.oldMainShips)
+			local var_18_6, var_18_7 = ActivityLevelConst.getExtraChapterSocre(var_18_3, var_18_4, var_18_5, iter_18_1)
+			local var_18_8 = var_18_7 < var_18_6 and i18n("extra_chapter_record_updated") or i18n("extra_chapter_record_not_updated")
 
-			if var_18_9 < var_18_8 then
-				iter_18_1.data1 = var_18_8
+			if var_18_7 < var_18_6 then
+				iter_18_1.data1 = var_18_6
 
 				getProxy(ActivityProxy):updateActivity(iter_18_1)
 
-				var_18_9 = var_18_8
+				var_18_7 = var_18_6
 			end
 
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = true,
-				content = i18n("extra_chapter_socre_tip", var_18_8, var_18_9, var_18_10),
+				content = i18n("extra_chapter_socre_tip", var_18_6, var_18_7, var_18_8),
 				weight = LayerWeightConst.SECOND_LAYER
 			})
 		end

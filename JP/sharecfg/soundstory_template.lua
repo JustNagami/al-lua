@@ -494,6 +494,162 @@ pg.soundstory_template = {
 			}
 		}
 	},
+	{
+		CV_JP = "貫井柚佳",
+		audition_resource_CN = "ss-50602-1",
+		audition_text = "「大胆になった？」ですか？ふふふ、ここには他に誰もいませんから。少しぐらいなら…と思いまして♪",
+		story_resource_CN = "soundStory12_CN",
+		story_pic = "",
+		overview = "華甲と鬼ごっこ。隠れた場所はなんと…ロッカー？！",
+		name = "楽しいことをこっそりと",
+		ship_id = 50602,
+		audition_resource_JP = "ss-50602-2",
+		CV_CN = "村雨",
+		id = 12,
+		story_resource_JP = "soundStory12_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					7,
+					25
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					7,
+					31
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		CV_JP = "安野希世乃",
+		audition_resource_CN = "",
+		audition_text = "ねぇ、ボク…今日はずっと、一緒にいてちょうだい",
+		story_resource_CN = "",
+		story_pic = "",
+		overview = "暑い夏の夜に、フリードリヒ・カールと「愛」を語ろう。",
+		name = "夏のほろ酔いランデヴー",
+		ship_id = 40314,
+		audition_resource_JP = "ss-40314-1",
+		CV_CN = "",
+		id = 13,
+		story_resource_JP = "soundStory13_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					7,
+					25
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					7,
+					31
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		CV_JP = "田中あいみ",
+		audition_resource_CN = "",
+		audition_text = "あれ？なんだかんだ言いつつ身体は正直みたい。匂いにつられてるよ？",
+		story_resource_CN = "",
+		story_pic = "",
+		overview = "お宝探し中に罠に落ちたあなたの前で、海賊少女は「正体」を現した。",
+		name = "あまーい罠に落っこちて",
+		ship_id = 960001,
+		audition_resource_JP = "ss-960001-1",
+		CV_CN = "",
+		id = 14,
+		story_resource_JP = "soundStory14_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					7,
+					25
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					7,
+					31
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -505,6 +661,9 @@ pg.soundstory_template = {
 		8,
 		9,
 		10,
-		11
+		11,
+		12,
+		13,
+		14
 	}
 }

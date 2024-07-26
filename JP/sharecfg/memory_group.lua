@@ -198,6 +198,8 @@ pg.memory_group = setmetatable({
 		290,
 		291,
 		292,
+		293,
+		294,
 		501,
 		502,
 		503,
@@ -295,6 +297,7 @@ pg.memory_group = setmetatable({
 		597,
 		598,
 		599,
+		600,
 		1000,
 		1001,
 		1002
@@ -4708,6 +4711,39 @@ pg.base.memory_group = {
 			3690
 		}
 	},
+	[293] = {
+		id = 293,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5501,
+		title = "夢幻の間奏曲",
+		memories = {
+			3701,
+			3702,
+			3703,
+			3704,
+			3705,
+			3706,
+			3707,
+			3708,
+			3709,
+			3710
+		}
+	},
+	[294] = {
+		id = 294,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5504,
+		title = "着せ替え特集  サマーレース",
+		memories = {
+			3711,
+			3712,
+			3713
+		}
+	},
 	[501] = {
 		id = 501,
 		subtype = 0,
@@ -6368,6 +6404,23 @@ pg.base.memory_group = {
 			3675,
 			3676,
 			3677
+		}
+	},
+	[600] = {
+		id = 600,
+		subtype = 0,
+		icon = "title_chara_aersasi",
+		type = 3,
+		link_event = 0,
+		title = "アルザス、オーバーヒート！",
+		memories = {
+			3691,
+			3692,
+			3693,
+			3694,
+			3695,
+			3696,
+			3697
 		}
 	},
 	[1000] = {

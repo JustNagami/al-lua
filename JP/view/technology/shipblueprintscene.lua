@@ -368,8 +368,14 @@ function var_0_0.didEnter(arg_11_0)
 			if arg_32_0 == UIItemList.EventUpdate then
 				arg_32_2.name = "version_" .. arg_32_1
 
-				GetImageSpriteFromAtlasAsync("ui/shipblueprintui_atlas", "version_" .. arg_32_1, arg_32_2:Find("image"))
-				setText(arg_32_2:Find("number/Text"), string.format("%02d", arg_32_1))
+				GetImageSpriteFromAtlasAsync("ui/shipblueprintui_atlas", "newVersion_" .. arg_32_1, arg_32_2:Find("image"))
+
+				if arg_11_0.version == arg_32_1 then
+					setActive(arg_32_2:Find("choose"), true)
+				else
+					setActive(arg_32_2:Find("choose"), false)
+				end
+
 				onButton(arg_11_0, arg_32_2, function()
 					arg_11_0.version = arg_32_1
 
@@ -380,6 +386,7 @@ function var_0_0.didEnter(arg_11_0)
 					GetImageSpriteFromAtlasAsync("ui/shipblueprintui_atlas", "version_" .. arg_11_0.version, arg_11_0.versionBtn)
 					arg_11_0:initShips()
 					arg_11_0:updateVersionBtnTip()
+					var_11_3:align(var_11_0)
 					pg.UIMgr.GetInstance():UnblurPanel(arg_11_0.versionPanel, arg_11_0._tf)
 					setActive(arg_11_0.versionPanel, false)
 				end, SFX_CANCEL)
@@ -1810,18 +1817,19 @@ function var_0_0.updateTasksProgress(arg_130_0)
 end
 
 function var_0_0.updatePainting(arg_131_0)
-	local var_131_0 = arg_131_0.contextData.shipBluePrintVO:getShipVO()
+	local var_131_0 = arg_131_0.contextData.shipBluePrintVO:getShipVO():getPainting()
 
-	if arg_131_0.lastPaintingName and arg_131_0.lastPaintingName ~= var_131_0:getPainting() then
+	if PLATFORM_CODE == PLATFORM_CH and checkABExist("painting/" .. var_131_0 .. "_blueprint") then
+		var_131_0 = var_131_0 .. "_blueprint"
+	end
+
+	if arg_131_0.lastPaintingName and arg_131_0.lastPaintingName ~= var_131_0 then
 		retPaintingPrefab(arg_131_0.painting, arg_131_0.lastPaintingName)
 	end
 
-	local var_131_1 = var_131_0:getPainting()
+	arg_131_0.lastPaintingName = var_131_0
 
-	setPaintingPrefab(arg_131_0.painting, var_131_1, "tuzhi")
-
-	arg_131_0.lastPaintingName = var_131_1
-
+	setPaintingPrefab(arg_131_0.painting, var_131_0, "tuzhi")
 	arg_131_0:paintBreath()
 end
 
@@ -2183,7 +2191,12 @@ function var_0_0.openPreView(arg_152_0)
 
 			onToggle(arg_152_0, var_152_3, function(arg_153_0)
 				if arg_153_0 then
-					setText(arg_152_0.breakView, var_0_3[var_152_1].breakout_view)
+					if PLATFORM_CODE == PLATFORM_US then
+						changeToScrollText(arg_152_0.breakView, var_0_3[var_152_1].breakout_view)
+					else
+						setText(arg_152_0.breakView, var_0_3[var_152_1].breakout_view)
+					end
+
 					arg_152_0:switchStage(var_152_1)
 				end
 			end, SFX_PANEL)

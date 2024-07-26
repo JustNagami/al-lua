@@ -242,6 +242,11 @@ pg.task_meta_data_template = setmetatable({
 		100303,
 		100304,
 		100305,
+		100311,
+		100312,
+		100313,
+		100314,
+		100315,
 		200001,
 		200002,
 		200003,
@@ -325,7 +330,11 @@ pg.task_meta_data_template = setmetatable({
 		200211,
 		200212,
 		200213,
-		200214
+		200214,
+		200221,
+		200222,
+		200223,
+		200224
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2250,6 +2259,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100311] = {
+		target_id_2 = "970106",
+		sub_type = 180,
+		desc = "霞(META)を編成した艦隊で1回戦闘を勝利する",
+		id = 100311,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100312] = {
+		target_id_2 = "970106",
+		sub_type = 180,
+		desc = "霞(META)を編成した艦隊でLv30+の敵艦隊を撃破する",
+		id = 100312,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100313] = {
+		target_id_2 = "970106",
+		sub_type = 180,
+		desc = "霞(META)を編成した艦隊でLv55+の敵艦隊を撃破する",
+		id = 100313,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100314] = {
+		target_id_2 = "970106",
+		sub_type = 180,
+		desc = "霞(META)を編成した艦隊でLv80+の敵艦隊を撃破する",
+		id = 100314,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100315] = {
+		target_id_2 = "970106",
+		sub_type = 180,
+		desc = "霞(META)を編成した艦隊でLv100+の敵艦隊を撃破する",
+		id = 100315,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -2919,6 +2968,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "セイレーン作戦でウィチタ(META)を含めた艦隊でLv100+の敵を撃破",
 		id = 200214,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200221] = {
+		target_id_2 = "970106",
+		sub_type = 302,
+		desc = "セイレーン作戦で霞(META)を含めた艦隊で1回勝利する",
+		id = 200221,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200222] = {
+		target_id_2 = "970106",
+		sub_type = 302,
+		desc = "セイレーン作戦で霞(META)を含めた艦隊でLv70+の敵を撃破",
+		id = 200222,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200223] = {
+		target_id_2 = "970106",
+		sub_type = 302,
+		desc = "セイレーン作戦で霞(META)を含めた艦隊でLv90+の敵を撃破",
+		id = 200223,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200224] = {
+		target_id_2 = "970106",
+		sub_type = 302,
+		desc = "セイレーン作戦で霞(META)を含めた艦隊でLv100+の敵を撃破",
+		id = 200224,
 		target_num = 1,
 		target_id = "100"
 	}

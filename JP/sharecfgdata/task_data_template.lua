@@ -118367,8 +118367,8 @@ _G.pg.base.task_data_template[43118] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -118409,8 +118409,8 @@ _G.pg.base.task_data_template[43119] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -118448,8 +118448,8 @@ _G.pg.base.task_data_template[43120] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -118487,8 +118487,8 @@ _G.pg.base.task_data_template[43121] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -118525,8 +118525,8 @@ _G.pg.base.task_data_template[43122] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -118570,8 +118570,8 @@ _G.pg.base.task_data_template[43123] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -118616,8 +118616,8 @@ _G.pg.base.task_data_template[43124] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -118654,8 +118654,8 @@ _G.pg.base.task_data_template[43125] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -118696,8 +118696,8 @@ _G.pg.base.task_data_template[43126] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -118735,8 +118735,8 @@ _G.pg.base.task_data_template[43127] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -118774,8 +118774,8 @@ _G.pg.base.task_data_template[43128] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -118812,8 +118812,8 @@ _G.pg.base.task_data_template[43129] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -118854,8 +118854,8 @@ _G.pg.base.task_data_template[43130] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -118900,8 +118900,8 @@ _G.pg.base.task_data_template[43131] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -118938,8 +118938,8 @@ _G.pg.base.task_data_template[43132] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -118980,8 +118980,8 @@ _G.pg.base.task_data_template[43133] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -119019,8 +119019,8 @@ _G.pg.base.task_data_template[43134] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -119058,8 +119058,8 @@ _G.pg.base.task_data_template[43135] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -119097,8 +119097,8 @@ _G.pg.base.task_data_template[43136] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -119136,8 +119136,8 @@ _G.pg.base.task_data_template[43137] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -119182,8 +119182,8 @@ _G.pg.base.task_data_template[43138] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -119221,8 +119221,8 @@ _G.pg.base.task_data_template[43139] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -119260,8 +119260,8 @@ _G.pg.base.task_data_template[43140] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -119299,8 +119299,8 @@ _G.pg.base.task_data_template[43141] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -119338,8 +119338,8 @@ _G.pg.base.task_data_template[43142] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -119377,8 +119377,8 @@ _G.pg.base.task_data_template[43143] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -119415,8 +119415,8 @@ _G.pg.base.task_data_template[43144] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -119464,8 +119464,8 @@ _G.pg.base.task_data_template[43145] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -119503,8 +119503,8 @@ _G.pg.base.task_data_template[43146] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -119541,8 +119541,8 @@ _G.pg.base.task_data_template[43147] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -119586,8 +119586,8 @@ _G.pg.base.task_data_template[43148] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -119624,8 +119624,8 @@ _G.pg.base.task_data_template[43149] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -119666,8 +119666,8 @@ _G.pg.base.task_data_template[43150] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -119705,8 +119705,8 @@ _G.pg.base.task_data_template[43151] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -119751,8 +119751,8 @@ _G.pg.base.task_data_template[43152] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -119790,8 +119790,8 @@ _G.pg.base.task_data_template[43153] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -119828,8 +119828,8 @@ _G.pg.base.task_data_template[43154] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -119870,8 +119870,8 @@ _G.pg.base.task_data_template[43155] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -119908,8 +119908,8 @@ _G.pg.base.task_data_template[43156] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -119950,8 +119950,8 @@ _G.pg.base.task_data_template[43157] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -119989,8 +119989,8 @@ _G.pg.base.task_data_template[43158] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -120035,8 +120035,8 @@ _G.pg.base.task_data_template[43159] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -120074,8 +120074,8 @@ _G.pg.base.task_data_template[43160] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -120113,8 +120113,8 @@ _G.pg.base.task_data_template[43161] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -120152,8 +120152,8 @@ _G.pg.base.task_data_template[43162] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -120190,8 +120190,8 @@ _G.pg.base.task_data_template[43163] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -120232,8 +120232,8 @@ _G.pg.base.task_data_template[43164] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -120271,8 +120271,8 @@ _G.pg.base.task_data_template[43165] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -120317,8 +120317,8 @@ _G.pg.base.task_data_template[43166] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -120356,8 +120356,8 @@ _G.pg.base.task_data_template[43167] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -120395,8 +120395,8 @@ _G.pg.base.task_data_template[43168] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -120433,8 +120433,8 @@ _G.pg.base.task_data_template[43169] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -120475,8 +120475,8 @@ _G.pg.base.task_data_template[43170] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -120514,8 +120514,8 @@ _G.pg.base.task_data_template[43171] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -120553,8 +120553,8 @@ _G.pg.base.task_data_template[43172] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -120599,8 +120599,8 @@ _G.pg.base.task_data_template[43173] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -120637,8 +120637,8 @@ _G.pg.base.task_data_template[43174] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -120678,8 +120678,8 @@ _G.pg.base.task_data_template[43175] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -120719,8 +120719,8 @@ _G.pg.base.task_data_template[43176] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -120760,8 +120760,8 @@ _G.pg.base.task_data_template[43177] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	},
@@ -120801,8 +120801,8 @@ _G.pg.base.task_data_template[43178] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -120842,8 +120842,8 @@ _G.pg.base.task_data_template[43179] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -120883,8 +120883,8 @@ _G.pg.base.task_data_template[43180] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -120924,8 +120924,8 @@ _G.pg.base.task_data_template[43181] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -120965,8 +120965,8 @@ _G.pg.base.task_data_template[43182] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	},
@@ -121007,8 +121007,8 @@ _G.pg.base.task_data_template[43183] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121046,8 +121046,8 @@ _G.pg.base.task_data_template[43184] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121085,8 +121085,8 @@ _G.pg.base.task_data_template[43185] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121124,8 +121124,8 @@ _G.pg.base.task_data_template[43186] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121163,8 +121163,8 @@ _G.pg.base.task_data_template[43187] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121202,8 +121202,8 @@ _G.pg.base.task_data_template[43188] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121241,8 +121241,8 @@ _G.pg.base.task_data_template[43189] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121280,8 +121280,8 @@ _G.pg.base.task_data_template[43190] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121319,8 +121319,8 @@ _G.pg.base.task_data_template[43191] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121358,8 +121358,8 @@ _G.pg.base.task_data_template[43192] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121397,8 +121397,8 @@ _G.pg.base.task_data_template[43193] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121436,8 +121436,8 @@ _G.pg.base.task_data_template[43194] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121475,8 +121475,8 @@ _G.pg.base.task_data_template[43195] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121514,8 +121514,8 @@ _G.pg.base.task_data_template[43196] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -121553,8 +121553,8 @@ _G.pg.base.task_data_template[43197] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			180
 		}
 	}
@@ -121592,8 +121592,8 @@ _G.pg.base.task_data_template[43198] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			180
 		}
 	}
@@ -121631,8 +121631,8 @@ _G.pg.base.task_data_template[43199] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			180
 		}
 	}
@@ -121670,8 +121670,8 @@ _G.pg.base.task_data_template[43200] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			180
 		}
 	}
@@ -121708,8 +121708,8 @@ _G.pg.base.task_data_template[43201] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -121749,8 +121749,8 @@ _G.pg.base.task_data_template[43202] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -121790,8 +121790,8 @@ _G.pg.base.task_data_template[43203] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -121831,8 +121831,8 @@ _G.pg.base.task_data_template[43204] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -121872,8 +121872,8 @@ _G.pg.base.task_data_template[43205] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -121913,8 +121913,8 @@ _G.pg.base.task_data_template[43206] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -121954,8 +121954,8 @@ _G.pg.base.task_data_template[43207] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -121995,8 +121995,8 @@ _G.pg.base.task_data_template[43208] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	},
@@ -122036,8 +122036,8 @@ _G.pg.base.task_data_template[43209] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	},
@@ -122077,8 +122077,8 @@ _G.pg.base.task_data_template[43210] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	},
@@ -122119,8 +122119,8 @@ _G.pg.base.task_data_template[43211] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -122158,8 +122158,8 @@ _G.pg.base.task_data_template[43212] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -122197,8 +122197,8 @@ _G.pg.base.task_data_template[43213] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -122236,8 +122236,8 @@ _G.pg.base.task_data_template[43214] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			60
 		}
 	}
@@ -122275,8 +122275,8 @@ _G.pg.base.task_data_template[43215] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -122314,8 +122314,8 @@ _G.pg.base.task_data_template[43216] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			120
 		}
 	}
@@ -122353,8 +122353,8 @@ _G.pg.base.task_data_template[43217] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -122392,8 +122392,8 @@ _G.pg.base.task_data_template[43218] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4015,
+			8,
+			59599,
 			240
 		}
 	}
@@ -122430,8 +122430,8 @@ _G.pg.base.task_data_template[43318] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -122472,8 +122472,8 @@ _G.pg.base.task_data_template[43319] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -122511,8 +122511,8 @@ _G.pg.base.task_data_template[43320] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -122550,8 +122550,8 @@ _G.pg.base.task_data_template[43321] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -122588,8 +122588,8 @@ _G.pg.base.task_data_template[43322] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -122633,8 +122633,8 @@ _G.pg.base.task_data_template[43323] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -122679,8 +122679,8 @@ _G.pg.base.task_data_template[43324] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -122717,8 +122717,8 @@ _G.pg.base.task_data_template[43325] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -122759,8 +122759,8 @@ _G.pg.base.task_data_template[43326] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -122798,8 +122798,8 @@ _G.pg.base.task_data_template[43327] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -122837,8 +122837,8 @@ _G.pg.base.task_data_template[43328] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -122875,8 +122875,8 @@ _G.pg.base.task_data_template[43329] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -122917,8 +122917,8 @@ _G.pg.base.task_data_template[43330] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -122963,8 +122963,8 @@ _G.pg.base.task_data_template[43331] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -123001,8 +123001,8 @@ _G.pg.base.task_data_template[43332] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -123043,8 +123043,8 @@ _G.pg.base.task_data_template[43333] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -123082,8 +123082,8 @@ _G.pg.base.task_data_template[43334] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -123121,8 +123121,8 @@ _G.pg.base.task_data_template[43335] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123160,8 +123160,8 @@ _G.pg.base.task_data_template[43336] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123199,8 +123199,8 @@ _G.pg.base.task_data_template[43337] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123245,8 +123245,8 @@ _G.pg.base.task_data_template[43338] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -123284,8 +123284,8 @@ _G.pg.base.task_data_template[43339] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -123323,8 +123323,8 @@ _G.pg.base.task_data_template[43340] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -123362,8 +123362,8 @@ _G.pg.base.task_data_template[43341] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -123401,8 +123401,8 @@ _G.pg.base.task_data_template[43342] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123440,8 +123440,8 @@ _G.pg.base.task_data_template[43343] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123478,8 +123478,8 @@ _G.pg.base.task_data_template[43344] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -123527,8 +123527,8 @@ _G.pg.base.task_data_template[43345] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -123566,8 +123566,8 @@ _G.pg.base.task_data_template[43346] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -123604,8 +123604,8 @@ _G.pg.base.task_data_template[43347] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -123649,8 +123649,8 @@ _G.pg.base.task_data_template[43348] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -123687,8 +123687,8 @@ _G.pg.base.task_data_template[43349] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -123729,8 +123729,8 @@ _G.pg.base.task_data_template[43350] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123768,8 +123768,8 @@ _G.pg.base.task_data_template[43351] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -123814,8 +123814,8 @@ _G.pg.base.task_data_template[43352] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -123853,8 +123853,8 @@ _G.pg.base.task_data_template[43353] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -123891,8 +123891,8 @@ _G.pg.base.task_data_template[43354] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -123933,8 +123933,8 @@ _G.pg.base.task_data_template[43355] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -123971,8 +123971,8 @@ _G.pg.base.task_data_template[43356] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -124013,8 +124013,8 @@ _G.pg.base.task_data_template[43357] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -124052,8 +124052,8 @@ _G.pg.base.task_data_template[43358] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -124098,8 +124098,8 @@ _G.pg.base.task_data_template[43359] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -124137,8 +124137,8 @@ _G.pg.base.task_data_template[43360] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -124176,8 +124176,8 @@ _G.pg.base.task_data_template[43361] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -124215,8 +124215,8 @@ _G.pg.base.task_data_template[43362] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -124253,8 +124253,8 @@ _G.pg.base.task_data_template[43363] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -124295,8 +124295,8 @@ _G.pg.base.task_data_template[43364] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -124334,8 +124334,8 @@ _G.pg.base.task_data_template[43365] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -124380,8 +124380,8 @@ _G.pg.base.task_data_template[43366] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -124419,8 +124419,8 @@ _G.pg.base.task_data_template[43367] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -124458,8 +124458,8 @@ _G.pg.base.task_data_template[43368] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -124496,8 +124496,8 @@ _G.pg.base.task_data_template[43369] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -124538,8 +124538,8 @@ _G.pg.base.task_data_template[43370] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -124577,8 +124577,8 @@ _G.pg.base.task_data_template[43371] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -124616,8 +124616,8 @@ _G.pg.base.task_data_template[43372] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -124662,8 +124662,8 @@ _G.pg.base.task_data_template[43373] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -124700,8 +124700,8 @@ _G.pg.base.task_data_template[43374] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -124741,8 +124741,8 @@ _G.pg.base.task_data_template[43375] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -124782,8 +124782,8 @@ _G.pg.base.task_data_template[43376] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -124823,8 +124823,8 @@ _G.pg.base.task_data_template[43377] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	},
@@ -124864,8 +124864,8 @@ _G.pg.base.task_data_template[43378] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -124905,8 +124905,8 @@ _G.pg.base.task_data_template[43379] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -124946,8 +124946,8 @@ _G.pg.base.task_data_template[43380] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -124987,8 +124987,8 @@ _G.pg.base.task_data_template[43381] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -125028,8 +125028,8 @@ _G.pg.base.task_data_template[43382] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	},
@@ -125070,8 +125070,8 @@ _G.pg.base.task_data_template[43383] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125109,8 +125109,8 @@ _G.pg.base.task_data_template[43384] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125148,8 +125148,8 @@ _G.pg.base.task_data_template[43385] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125187,8 +125187,8 @@ _G.pg.base.task_data_template[43386] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125226,8 +125226,8 @@ _G.pg.base.task_data_template[43387] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125265,8 +125265,8 @@ _G.pg.base.task_data_template[43388] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125304,8 +125304,8 @@ _G.pg.base.task_data_template[43389] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125343,8 +125343,8 @@ _G.pg.base.task_data_template[43390] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125382,8 +125382,8 @@ _G.pg.base.task_data_template[43391] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125421,8 +125421,8 @@ _G.pg.base.task_data_template[43392] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125460,8 +125460,8 @@ _G.pg.base.task_data_template[43393] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125499,8 +125499,8 @@ _G.pg.base.task_data_template[43394] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125538,8 +125538,8 @@ _G.pg.base.task_data_template[43395] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125577,8 +125577,8 @@ _G.pg.base.task_data_template[43396] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -125616,8 +125616,8 @@ _G.pg.base.task_data_template[43397] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			180
 		}
 	}
@@ -125655,8 +125655,8 @@ _G.pg.base.task_data_template[43398] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			180
 		}
 	}
@@ -125694,8 +125694,8 @@ _G.pg.base.task_data_template[43399] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			180
 		}
 	}
@@ -125733,8 +125733,8 @@ _G.pg.base.task_data_template[43400] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			180
 		}
 	}
@@ -125771,8 +125771,8 @@ _G.pg.base.task_data_template[43401] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -125812,8 +125812,8 @@ _G.pg.base.task_data_template[43402] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -125853,8 +125853,8 @@ _G.pg.base.task_data_template[43403] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -125894,8 +125894,8 @@ _G.pg.base.task_data_template[43404] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -125935,8 +125935,8 @@ _G.pg.base.task_data_template[43405] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -125976,8 +125976,8 @@ _G.pg.base.task_data_template[43406] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -126017,8 +126017,8 @@ _G.pg.base.task_data_template[43407] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -126058,8 +126058,8 @@ _G.pg.base.task_data_template[43408] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	},
@@ -126099,8 +126099,8 @@ _G.pg.base.task_data_template[43409] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	},
@@ -126140,8 +126140,8 @@ _G.pg.base.task_data_template[43410] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	},
@@ -126182,8 +126182,8 @@ _G.pg.base.task_data_template[43411] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -126221,8 +126221,8 @@ _G.pg.base.task_data_template[43412] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -126260,8 +126260,8 @@ _G.pg.base.task_data_template[43413] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -126299,8 +126299,8 @@ _G.pg.base.task_data_template[43414] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			60
 		}
 	}
@@ -126338,8 +126338,8 @@ _G.pg.base.task_data_template[43415] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -126377,8 +126377,8 @@ _G.pg.base.task_data_template[43416] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			120
 		}
 	}
@@ -126416,8 +126416,8 @@ _G.pg.base.task_data_template[43417] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -126455,8 +126455,8 @@ _G.pg.base.task_data_template[43418] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4016,
+			8,
+			59599,
 			240
 		}
 	}
@@ -154022,8 +154022,8 @@ _G.pg.base.task_data_template[43518] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -154064,8 +154064,8 @@ _G.pg.base.task_data_template[43519] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -154103,8 +154103,8 @@ _G.pg.base.task_data_template[43520] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -154142,8 +154142,8 @@ _G.pg.base.task_data_template[43521] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -154180,8 +154180,8 @@ _G.pg.base.task_data_template[43522] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -154225,8 +154225,8 @@ _G.pg.base.task_data_template[43523] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -154271,8 +154271,8 @@ _G.pg.base.task_data_template[43524] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -154309,8 +154309,8 @@ _G.pg.base.task_data_template[43525] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -154351,8 +154351,8 @@ _G.pg.base.task_data_template[43526] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -154390,8 +154390,8 @@ _G.pg.base.task_data_template[43527] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -154429,8 +154429,8 @@ _G.pg.base.task_data_template[43528] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -154467,8 +154467,8 @@ _G.pg.base.task_data_template[43529] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -154509,8 +154509,8 @@ _G.pg.base.task_data_template[43530] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -154555,8 +154555,8 @@ _G.pg.base.task_data_template[43531] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -154593,8 +154593,8 @@ _G.pg.base.task_data_template[43532] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -154635,8 +154635,8 @@ _G.pg.base.task_data_template[43533] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -154674,8 +154674,8 @@ _G.pg.base.task_data_template[43534] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -154713,8 +154713,8 @@ _G.pg.base.task_data_template[43535] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -154752,8 +154752,8 @@ _G.pg.base.task_data_template[43536] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -154791,8 +154791,8 @@ _G.pg.base.task_data_template[43537] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -154837,8 +154837,8 @@ _G.pg.base.task_data_template[43538] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -154876,8 +154876,8 @@ _G.pg.base.task_data_template[43539] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -154915,8 +154915,8 @@ _G.pg.base.task_data_template[43540] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -154954,8 +154954,8 @@ _G.pg.base.task_data_template[43541] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -154993,8 +154993,8 @@ _G.pg.base.task_data_template[43542] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -155032,8 +155032,8 @@ _G.pg.base.task_data_template[43543] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -155070,8 +155070,8 @@ _G.pg.base.task_data_template[43544] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -155119,8 +155119,8 @@ _G.pg.base.task_data_template[43545] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -155158,8 +155158,8 @@ _G.pg.base.task_data_template[43546] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -155196,8 +155196,8 @@ _G.pg.base.task_data_template[43547] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -155241,8 +155241,8 @@ _G.pg.base.task_data_template[43548] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -155279,8 +155279,8 @@ _G.pg.base.task_data_template[43549] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -155321,8 +155321,8 @@ _G.pg.base.task_data_template[43550] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -155360,8 +155360,8 @@ _G.pg.base.task_data_template[43551] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -155406,8 +155406,8 @@ _G.pg.base.task_data_template[43552] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -155445,8 +155445,8 @@ _G.pg.base.task_data_template[43553] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -155483,8 +155483,8 @@ _G.pg.base.task_data_template[43554] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -155525,8 +155525,8 @@ _G.pg.base.task_data_template[43555] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -155563,8 +155563,8 @@ _G.pg.base.task_data_template[43556] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -155605,8 +155605,8 @@ _G.pg.base.task_data_template[43557] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -155644,8 +155644,8 @@ _G.pg.base.task_data_template[43558] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -155690,8 +155690,8 @@ _G.pg.base.task_data_template[43559] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -155729,8 +155729,8 @@ _G.pg.base.task_data_template[43560] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -155768,8 +155768,8 @@ _G.pg.base.task_data_template[43561] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -155807,8 +155807,8 @@ _G.pg.base.task_data_template[43562] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -155845,8 +155845,8 @@ _G.pg.base.task_data_template[43563] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -155887,8 +155887,8 @@ _G.pg.base.task_data_template[43564] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -155926,8 +155926,8 @@ _G.pg.base.task_data_template[43565] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -155972,8 +155972,8 @@ _G.pg.base.task_data_template[43566] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -156011,8 +156011,8 @@ _G.pg.base.task_data_template[43567] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -156050,8 +156050,8 @@ _G.pg.base.task_data_template[43568] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -156088,8 +156088,8 @@ _G.pg.base.task_data_template[43569] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -156130,8 +156130,8 @@ _G.pg.base.task_data_template[43570] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -156169,8 +156169,8 @@ _G.pg.base.task_data_template[43571] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -156208,8 +156208,8 @@ _G.pg.base.task_data_template[43572] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -156254,8 +156254,8 @@ _G.pg.base.task_data_template[43573] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -156292,8 +156292,8 @@ _G.pg.base.task_data_template[43574] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -156333,8 +156333,8 @@ _G.pg.base.task_data_template[43575] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -156374,8 +156374,8 @@ _G.pg.base.task_data_template[43576] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -156415,8 +156415,8 @@ _G.pg.base.task_data_template[43577] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	},
@@ -156456,8 +156456,8 @@ _G.pg.base.task_data_template[43578] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -156497,8 +156497,8 @@ _G.pg.base.task_data_template[43579] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -156538,8 +156538,8 @@ _G.pg.base.task_data_template[43580] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -156579,8 +156579,8 @@ _G.pg.base.task_data_template[43581] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -156620,8 +156620,8 @@ _G.pg.base.task_data_template[43582] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	},
@@ -156662,8 +156662,8 @@ _G.pg.base.task_data_template[43583] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -156701,8 +156701,8 @@ _G.pg.base.task_data_template[43584] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -156740,8 +156740,8 @@ _G.pg.base.task_data_template[43585] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -156779,8 +156779,8 @@ _G.pg.base.task_data_template[43586] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -156818,8 +156818,8 @@ _G.pg.base.task_data_template[43587] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -156857,8 +156857,8 @@ _G.pg.base.task_data_template[43588] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -156896,8 +156896,8 @@ _G.pg.base.task_data_template[43589] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -156935,8 +156935,8 @@ _G.pg.base.task_data_template[43590] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -156974,8 +156974,8 @@ _G.pg.base.task_data_template[43591] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -157013,8 +157013,8 @@ _G.pg.base.task_data_template[43592] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -157052,8 +157052,8 @@ _G.pg.base.task_data_template[43593] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -157091,8 +157091,8 @@ _G.pg.base.task_data_template[43594] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -157130,8 +157130,8 @@ _G.pg.base.task_data_template[43595] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -157169,8 +157169,8 @@ _G.pg.base.task_data_template[43596] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -157208,8 +157208,8 @@ _G.pg.base.task_data_template[43597] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			180
 		}
 	}
@@ -157247,8 +157247,8 @@ _G.pg.base.task_data_template[43598] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			180
 		}
 	}
@@ -157286,8 +157286,8 @@ _G.pg.base.task_data_template[43599] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			180
 		}
 	}
@@ -157325,8 +157325,8 @@ _G.pg.base.task_data_template[43600] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			180
 		}
 	}
@@ -157363,8 +157363,8 @@ _G.pg.base.task_data_template[43601] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -157404,8 +157404,8 @@ _G.pg.base.task_data_template[43602] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -157445,8 +157445,8 @@ _G.pg.base.task_data_template[43603] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -157486,8 +157486,8 @@ _G.pg.base.task_data_template[43604] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -157527,8 +157527,8 @@ _G.pg.base.task_data_template[43605] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -157568,8 +157568,8 @@ _G.pg.base.task_data_template[43606] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -157609,8 +157609,8 @@ _G.pg.base.task_data_template[43607] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -157650,8 +157650,8 @@ _G.pg.base.task_data_template[43608] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	},
@@ -157691,8 +157691,8 @@ _G.pg.base.task_data_template[43609] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	},
@@ -157732,8 +157732,8 @@ _G.pg.base.task_data_template[43610] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	},
@@ -157774,8 +157774,8 @@ _G.pg.base.task_data_template[43611] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -157813,8 +157813,8 @@ _G.pg.base.task_data_template[43612] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -157852,8 +157852,8 @@ _G.pg.base.task_data_template[43613] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -157891,8 +157891,8 @@ _G.pg.base.task_data_template[43614] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			60
 		}
 	}
@@ -157930,8 +157930,8 @@ _G.pg.base.task_data_template[43615] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -157969,8 +157969,8 @@ _G.pg.base.task_data_template[43616] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			120
 		}
 	}
@@ -158008,8 +158008,8 @@ _G.pg.base.task_data_template[43617] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -158047,8 +158047,8 @@ _G.pg.base.task_data_template[43618] = {
 	open_need = {},
 	award_display = {
 		{
-			1,
-			4017,
+			8,
+			59599,
 			240
 		}
 	}
@@ -162053,5 +162053,9252 @@ _G.pg.base.task_data_template[20316] = {
 	},
 	scene = {
 		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[20320] = {
+	name = "『海天皮肤赠送』七日任务1",
+	guild_coin_award = 0,
+	award = 902680,
+	type = 26,
+	desc = "艦隊を出撃させ、10回S評価で勝利せよ！",
+	count_inherit = 0,
+	sub_type = 24,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20320,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[20321] = {
+	name = "『海天皮肤赠送』七日任务2",
+	guild_coin_award = 0,
+	award = 902681,
+	type = 26,
+	desc = "ゲームにログインせよ！",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20321,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54049,
+			2
+		}
+	}
+}
+_G.pg.base.task_data_template[20322] = {
+	name = "『海天皮肤赠送』七日任务3",
+	guild_coin_award = 0,
+	award = 902682,
+	type = 26,
+	desc = "演習を2回行う",
+	count_inherit = 0,
+	sub_type = 27,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20322,
+	target_num = 2,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54049,
+			2
+		}
+	}
+}
+_G.pg.base.task_data_template[20323] = {
+	name = "『海天皮肤赠送』七日任务4",
+	guild_coin_award = 0,
+	award = 902683,
+	type = 26,
+	desc = "「軍事委託」を2回遂行する",
+	count_inherit = 0,
+	sub_type = 80,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20323,
+	target_num = 2,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20324] = {
+	name = "『海天皮肤赠送』七日任务5",
+	guild_coin_award = 0,
+	award = 902684,
+	type = 26,
+	desc = "艦を2隻「退役」して、艦隊を再編せよ！",
+	count_inherit = 0,
+	sub_type = 31,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20324,
+	target_num = 2,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54015,
+			5
+		}
+	}
+}
+_G.pg.base.task_data_template[20325] = {
+	name = "『海天皮肤赠送』七日任务6",
+	guild_coin_award = 0,
+	award = 902685,
+	type = 26,
+	desc = "「デイリーチャレンジ」を3回行う",
+	count_inherit = 0,
+	sub_type = 26,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20325,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20326] = {
+	name = "『海天皮肤赠送』七日任务7",
+	guild_coin_award = 0,
+	award = 902686,
+	type = 26,
+	desc = "艦を5回強化する",
+	count_inherit = 0,
+	sub_type = 34,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20326,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54033,
+			2
+		}
+	}
+}
+_G.pg.base.task_data_template[20327] = {
+	name = "『海天皮肤赠送』七日任务8",
+	guild_coin_award = 0,
+	award = 902687,
+	type = 26,
+	desc = "戦術教室で戦術訓練を2回行う",
+	count_inherit = 0,
+	sub_type = 71,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20327,
+	target_num = 2,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20328] = {
+	name = "『海天皮肤赠送』七日任务9",
+	guild_coin_award = 0,
+	award = 902688,
+	type = 26,
+	desc = "任意の敵艦を20隻撃破する",
+	count_inherit = 0,
+	sub_type = 11,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20328,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20329] = {
+	name = "『海天皮肤赠送』七日任务10",
+	guild_coin_award = 0,
+	award = 902689,
+	type = 26,
+	desc = "寮舎で食糧を5回補充する",
+	count_inherit = 0,
+	sub_type = 61,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20329,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			17003,
+			10
+		}
+	}
+}
+_G.pg.base.task_data_template[20330] = {
+	name = "『海天皮肤赠送』七日任务11",
+	guild_coin_award = 0,
+	award = 902690,
+	type = 26,
+	desc = "艦を2隻「建造」せよ！",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20330,
+	target_num = 2,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54006,
+			5
+		}
+	}
+}
+_G.pg.base.task_data_template[20331] = {
+	name = "『海天皮肤赠送』七日任务12",
+	guild_coin_award = 0,
+	award = 902691,
+	type = 26,
+	desc = "装備箱を1個開ける",
+	count_inherit = 0,
+	sub_type = 50,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20331,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20332] = {
+	name = "『海天皮肤赠送』七日任务13",
+	guild_coin_award = 0,
+	award = 902692,
+	type = 26,
+	desc = "戦術教室で戦術訓練を2回遂行せよ！",
+	count_inherit = 0,
+	sub_type = 71,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20332,
+	target_num = 2,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20333] = {
+	name = "『海天皮肤赠送』七日任务14",
+	guild_coin_award = 0,
+	award = 902693,
+	type = 26,
+	desc = "艦隊を出撃させ、敵中枢艦隊を3回撃破せよ！",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20333,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			7,
+			502074,
+			1
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[20340] = {
+	name = "『前卫复刻』-日常建造",
+	guild_coin_award = 0,
+	award = 902725,
+	type = 36,
+	desc = "3回建造する",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20340,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			59594,
+			300
+		}
+	}
+}
+_G.pg.base.task_data_template[20341] = {
+	name = "『前卫复刻』-日常出击",
+	guild_coin_award = 0,
+	award = 902726,
+	type = 36,
+	desc = "艦隊を出撃させ、15回勝利せよ！",
+	count_inherit = 0,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20341,
+	target_num = 15,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			59594,
+			300
+		},
+		{
+			2,
+			59597,
+			1
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[20342] = {
+	name = "『前卫复刻』-日常困难本",
+	guild_coin_award = 0,
+	award = 902727,
+	type = 36,
+	desc = "任意のハードステージを1回クリアせよ",
+	count_inherit = 0,
+	sub_type = 182,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "10101",
+	scene = "",
+	id = 20342,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			59594,
+			150
+		}
+	}
+}
+_G.pg.base.task_data_template[20343] = {
+	name = "『前卫复刻』-日常活动关卡",
+	guild_coin_award = 0,
+	award = 902728,
+	type = 36,
+	desc = "任意のイベントステージを1回クリア",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20343,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1650001,
+		1650002,
+		1650003,
+		1650004,
+		1650005,
+		1650006,
+		1650021,
+		1650022,
+		1650023,
+		1650024,
+		1650025,
+		1650026,
+		1650041,
+		1650051
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			59594,
+			300
+		},
+		{
+			2,
+			54006,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5428
+		}
+	}
+}
+_G.pg.base.task_data_template[20344] = {
+	name = "『前卫复刻』通关A1/C1",
+	guild_coin_award = 0,
+	award = 902729,
+	type = 6,
+	desc = "A1かC1を1回クリアする",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20344,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1650001,
+		1650021
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			2,
+			59597,
+			1
+		},
+		{
+			2,
+			59594,
+			200
+		},
+		{
+			1,
+			1,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5427
+		}
+	}
+}
+_G.pg.base.task_data_template[20345] = {
+	name = "『前卫复刻』通关A2/C2",
+	guild_coin_award = 0,
+	award = 902730,
+	type = 6,
+	desc = "A2かC2を1回クリアする",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20345,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1650002,
+		1650022
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			2,
+			59597,
+			1
+		},
+		{
+			2,
+			59594,
+			400
+		},
+		{
+			1,
+			1,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5427
+		}
+	}
+}
+_G.pg.base.task_data_template[20346] = {
+	name = "『前卫复刻』通关A3/C3",
+	guild_coin_award = 0,
+	award = 902731,
+	type = 6,
+	desc = "A3かC3を1回クリアする",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20346,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1650003,
+		1650023
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			2,
+			59597,
+			2
+		},
+		{
+			2,
+			59594,
+			600
+		},
+		{
+			1,
+			1,
+			1500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5427
+		}
+	}
+}
+_G.pg.base.task_data_template[20347] = {
+	name = "『前卫复刻』通关B1/D1",
+	guild_coin_award = 0,
+	award = 902732,
+	type = 6,
+	desc = "B1かD1を1回クリアする",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20347,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1650004,
+		1650024
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			2,
+			59597,
+			1
+		},
+		{
+			2,
+			59594,
+			400
+		},
+		{
+			1,
+			1,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5428
+		}
+	}
+}
+_G.pg.base.task_data_template[20348] = {
+	name = "『前卫复刻』通关B2/D2",
+	guild_coin_award = 0,
+	award = 902733,
+	type = 6,
+	desc = "B2かD2を1回クリアする",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20348,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1650005,
+		1650025
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			2,
+			59597,
+			1
+		},
+		{
+			2,
+			59594,
+			600
+		},
+		{
+			1,
+			1,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5428
+		}
+	}
+}
+_G.pg.base.task_data_template[20349] = {
+	name = "『前卫复刻』通关B3/D3",
+	guild_coin_award = 0,
+	award = 902734,
+	type = 6,
+	desc = "B3かD3を1回クリアする",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20349,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1650006,
+		1650026
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			2,
+			59597,
+			2
+		},
+		{
+			2,
+			59594,
+			800
+		},
+		{
+			1,
+			1,
+			1500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5428
+		}
+	}
+}
+_G.pg.base.task_data_template[20350] = {
+	name = "『前卫复刻』通关SP",
+	guild_coin_award = 0,
+	award = 902735,
+	type = 6,
+	desc = "イベントステージSPをクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1650041",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20350,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			2,
+			59597,
+			3
+		},
+		{
+			1,
+			1,
+			1500
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1650025,
+			chapterId = 1650041
+		}
+	}
+}
+_G.pg.base.task_data_template[20351] = {
+	name = "『前卫复刻』通关D3",
+	guild_coin_award = 0,
+	award = 902736,
+	type = 6,
+	desc = "D3クリア(2個目は取得できません)",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1650026",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20351,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			5,
+			226,
+			1
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1650012,
+			chapterId = 1650026
+		}
+	}
+}
+_G.pg.base.task_data_template[20352] = {
+	name = "『前卫复刻』通关EX",
+	guild_coin_award = 0,
+	award = 902737,
+	type = 6,
+	desc = "EXステージをクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1650051",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20352,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			15008,
+			500
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1650026,
+			chapterId = 1650051
+		}
+	}
+}
+_G.pg.base.task_data_template[20353] = {
+	name = "『前卫复刻』A1/C1的3星",
+	guild_coin_award = 0,
+	award = 902738,
+	type = 6,
+	desc = "A1かC1の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20354",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20353,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1650001,
+		1650021
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			2,
+			500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5427
+		}
+	}
+}
+_G.pg.base.task_data_template[20354] = {
+	name = "『前卫复刻』A2/C2的3星",
+	guild_coin_award = 0,
+	award = 902739,
+	type = 6,
+	desc = "A2かC2の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20355",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20354,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1650002,
+		1650022
+	},
+	open_need = {},
+	award_display = {
+		{
+			4,
+			100001,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5427
+		}
+	}
+}
+_G.pg.base.task_data_template[20355] = {
+	name = "『前卫复刻』A3/C3的3星",
+	guild_coin_award = 0,
+	award = 902740,
+	type = 6,
+	desc = "A3かC3の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20356",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20355,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1650003,
+		1650023
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			18013,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5427
+		}
+	}
+}
+_G.pg.base.task_data_template[20356] = {
+	name = "『前卫复刻』B1/D1的3星",
+	guild_coin_award = 0,
+	award = 902741,
+	type = 6,
+	desc = "B1かD1の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20357",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20356,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1650004,
+		1650024
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			2,
+			500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5428
+		}
+	}
+}
+_G.pg.base.task_data_template[20357] = {
+	name = "『前卫复刻』B2/D2的3星",
+	guild_coin_award = 0,
+	award = 902742,
+	type = 6,
+	desc = "B2かD2の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20358",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20357,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1650005,
+		1650025
+	},
+	open_need = {},
+	award_display = {
+		{
+			4,
+			100011,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5428
+		}
+	}
+}
+_G.pg.base.task_data_template[20358] = {
+	name = "『前卫复刻』B3/D3的3星",
+	guild_coin_award = 0,
+	award = 902743,
+	type = 6,
+	desc = "B3かD3の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20358,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1650006,
+		1650026
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			18013,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5428
+		}
+	}
+}
+_G.pg.base.task_data_template[20359] = {
+	name = "『前卫复刻』登录送皮肤体验券活动",
+	guild_coin_award = 0,
+	award = 902744,
+	type = 6,
+	desc = "ゲームにログインせよ！",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20359,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			424,
+			3
+		}
+	}
+}
+_G.pg.base.task_data_template[20360] = {
+	name = "『前卫复刻』外观装备箱保底",
+	guild_coin_award = 0,
+	award = 902776,
+	type = 6,
+	desc = "装備外装箱（東煌モダン）を20個開ける",
+	count_inherit = 0,
+	sub_type = 52,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "30334",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20360,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30504,
+			1
+		}
+	},
+	scene = {
+		"SHOP",
+		{
+			warp = "shopstreet"
+		}
+	}
+}
+_G.pg.base.task_data_template[20361] = {
+	name = "『斯特拉斯堡SP』登录送皮肤体验券活动",
+	guild_coin_award = 0,
+	award = 902777,
+	type = 6,
+	desc = "ゲームにログインせよ！",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20361,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			425,
+			3
+		}
+	}
+}
+_G.pg.base.task_data_template[20370] = {
+	name = "『斯特拉斯堡SP』皮肤剧情签到活动1",
+	guild_coin_award = 0,
+	award = 902785,
+	type = 14,
+	desc = "ゲームにログインせよ！",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20370,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			58996,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[20371] = {
+	name = "『斯特拉斯堡SP』皮肤剧情签到活动2",
+	guild_coin_award = 0,
+	award = 902785,
+	type = 14,
+	desc = "ゲームにログインせよ！",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20371,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			58996,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[20372] = {
+	name = "『斯特拉斯堡SP』皮肤剧情签到活动3",
+	guild_coin_award = 0,
+	award = 902785,
+	type = 14,
+	desc = "ゲームにログインせよ！",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20372,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			58996,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[20373] = {
+	name = "『斯特拉斯堡SP』大富翁耗油任务",
+	guild_coin_award = 0,
+	award = 902816,
+	type = 36,
+	desc = "累計燃料消費$1/300",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20373,
+	target_num = 300,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65002,
+			2
+		}
+	}
+}
+_G.pg.base.task_data_template[20374] = {
+	name = "『斯特拉斯堡SP』剧情送装备",
+	guild_coin_award = 0,
+	award = 902820,
+	type = 6,
+	desc = "ストーリーモードですべてのストーリーを読む",
+	count_inherit = 0,
+	sub_type = 1005,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20374,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		6136
+	},
+	open_need = {},
+	award_display = {
+		{
+			3,
+			150340,
+			1
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1820001,
+			displayMode = 2
+		}
+	}
+}
+_G.pg.base.task_data_template[20375] = {
+	name = "牙买加皮肤任务复刻1",
+	guild_coin_award = 0,
+	award = 902823,
+	type = 26,
+	desc = "任意の敵艦を100隻撃破する",
+	count_inherit = 0,
+	sub_type = 11,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20375,
+	target_num = 100,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20376] = {
+	name = "牙买加皮肤任务复刻2",
+	guild_coin_award = 0,
+	award = 902824,
+	type = 26,
+	desc = "任意の敵艦を150隻撃破する",
+	count_inherit = 0,
+	sub_type = 11,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20376,
+	target_num = 150,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			17003,
+			5
+		}
+	}
+}
+_G.pg.base.task_data_template[20377] = {
+	name = "牙买加皮肤任务复刻3",
+	guild_coin_award = 0,
+	award = 902825,
+	type = 26,
+	desc = "任意の敵艦を150隻撃破する",
+	count_inherit = 0,
+	sub_type = 11,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20377,
+	target_num = 150,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			300
+		}
+	}
+}
+_G.pg.base.task_data_template[20378] = {
+	name = "牙买加皮肤任务复刻4",
+	guild_coin_award = 0,
+	award = 902826,
+	type = 26,
+	desc = "任意の敵艦を200隻撃破する",
+	count_inherit = 0,
+	sub_type = 11,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20378,
+	target_num = 200,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			17003,
+			5
+		}
+	}
+}
+_G.pg.base.task_data_template[20379] = {
+	name = "牙买加皮肤任务复刻5",
+	guild_coin_award = 0,
+	award = 902827,
+	type = 26,
+	desc = "任意の敵艦を250隻撃破する",
+	count_inherit = 0,
+	sub_type = 11,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20379,
+	target_num = 250,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			500
+		}
+	}
+}
+_G.pg.base.task_data_template[20380] = {
+	name = "牙买加皮肤任务复刻6",
+	guild_coin_award = 0,
+	award = 902828,
+	type = 26,
+	desc = "任意の敵艦を300隻撃破する",
+	count_inherit = 0,
+	sub_type = 11,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20380,
+	target_num = 300,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			17003,
+			10
+		}
+	}
+}
+_G.pg.base.task_data_template[20381] = {
+	name = "牙买加皮肤任务复刻7",
+	guild_coin_award = 0,
+	award = 902829,
+	type = 26,
+	desc = "任意の敵艦を300隻撃破する",
+	count_inherit = 0,
+	sub_type = 11,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20381,
+	target_num = 300,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			7,
+			202172,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[20382] = {
+	name = "『斯特拉斯堡SP』-日常建造",
+	guild_coin_award = 0,
+	award = 902870,
+	type = 36,
+	desc = "3回建造する",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20382,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			426,
+			300
+		}
+	}
+}
+_G.pg.base.task_data_template[20383] = {
+	name = "『斯特拉斯堡SP』-日常出击",
+	guild_coin_award = 0,
+	award = 902871,
+	type = 36,
+	desc = "艦隊を出撃させ、15回勝利せよ！",
+	count_inherit = 0,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20383,
+	target_num = 15,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			426,
+			300
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[20384] = {
+	name = "『斯特拉斯堡SP』-日常困难本",
+	guild_coin_award = 0,
+	award = 902872,
+	type = 36,
+	desc = "任意のハードステージを1回クリアせよ",
+	count_inherit = 0,
+	sub_type = 182,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "10101",
+	scene = "",
+	id = 20384,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			426,
+			150
+		}
+	}
+}
+_G.pg.base.task_data_template[20385] = {
+	name = "『斯特拉斯堡SP』通关T1/HT1",
+	guild_coin_award = 0,
+	award = 902873,
+	type = 6,
+	desc = "イベントステージT1かHT1をクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20386",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20385,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1820001,
+		1820021
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			1,
+			600
+		},
+		{
+			1,
+			426,
+			400
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5501
+		}
+	}
+}
+_G.pg.base.task_data_template[20386] = {
+	name = "『斯特拉斯堡SP』通关T2/HT2",
+	guild_coin_award = 0,
+	award = 902874,
+	type = 6,
+	desc = "イベントステージT2かHT2をクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20387",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20386,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1820002,
+		1820022
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			1,
+			600
+		},
+		{
+			1,
+			426,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5501
+		}
+	}
+}
+_G.pg.base.task_data_template[20387] = {
+	name = "『斯特拉斯堡SP』通关T3/HT3",
+	guild_coin_award = 0,
+	award = 902875,
+	type = 6,
+	desc = "イベントステージT3かHT3をクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20388",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20387,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1820003,
+		1820023
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			1,
+			1,
+			1500
+		},
+		{
+			1,
+			426,
+			800
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5501
+		}
+	}
+}
+_G.pg.base.task_data_template[20388] = {
+	name = "『斯特拉斯堡SP』通关SP",
+	guild_coin_award = 0,
+	award = 902876,
+	type = 6,
+	desc = "イベントステージSPをクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1820041",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20388,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			1,
+			1,
+			1500
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1820001,
+			chapterId = 1820041
+		}
+	}
+}
+_G.pg.base.task_data_template[20389] = {
+	name = "『斯特拉斯堡SP』通关EX",
+	guild_coin_award = 0,
+	award = 902877,
+	type = 6,
+	desc = "EXステージをクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1820051",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20389,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			15008,
+			500
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1820001,
+			chapterId = 1820051
+		}
+	}
+}
+_G.pg.base.task_data_template[20390] = {
+	name = "『斯特拉斯堡SP』T1/HT1的3星",
+	guild_coin_award = 0,
+	award = 902878,
+	type = 6,
+	desc = "T1かHT1の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20391",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20390,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1820001,
+		1820021
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			2,
+			500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5501
+		}
+	}
+}
+_G.pg.base.task_data_template[20391] = {
+	name = "『斯特拉斯堡SP』T2/HT2的3星",
+	guild_coin_award = 0,
+	award = 902879,
+	type = 6,
+	desc = "T2かHT2の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20392",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20391,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1820002,
+		1820022
+	},
+	open_need = {},
+	award_display = {
+		{
+			4,
+			100011,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5501
+		}
+	}
+}
+_G.pg.base.task_data_template[20392] = {
+	name = "『斯特拉斯堡SP』T3/HT3的3星",
+	guild_coin_award = 0,
+	award = 902880,
+	type = 6,
+	desc = "T3かHT3の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20392,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1820003,
+		1820023
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			18023,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5501
+		}
+	}
+}
+_G.pg.base.task_data_template[20393] = {
+	name = "『斯特拉斯堡SP』通关任务10次",
+	guild_coin_award = 0,
+	award = 902881,
+	type = 6,
+	desc = "『夢幻の間奏曲』特別ステージ10回クリア",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 20393,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1820001,
+		1820002,
+		1820003,
+		1820021,
+		1820022,
+		1820023,
+		1820041
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			426,
+			500
+		}
+	}
+}
+_G.pg.base.task_data_template[20394] = {
+	name = "『斯特拉斯堡SP』通关任务30次",
+	guild_coin_award = 0,
+	award = 902882,
+	type = 6,
+	desc = "『夢幻の間奏曲』特別ステージ30回クリア",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 20394,
+	target_num = 30,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1820001,
+		1820002,
+		1820003,
+		1820021,
+		1820022,
+		1820023,
+		1820041
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			426,
+			1500
+		}
+	}
+}
+_G.pg.base.task_data_template[20395] = {
+	name = "『斯特拉斯堡SP』通关任务60次",
+	guild_coin_award = 0,
+	award = 902883,
+	type = 6,
+	desc = "『夢幻の間奏曲』特別ステージ60回クリア",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 20395,
+	target_num = 60,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1820001,
+		1820002,
+		1820003,
+		1820021,
+		1820022,
+		1820023,
+		1820041
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			426,
+			3000
+		}
+	}
+}
+_G.pg.base.task_data_template[43701] = {
+	name = "十八期·【通行证第一周】任务1",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "艦隊を出撃させ、60回A評価で勝利せよ！",
+	count_inherit = 0,
+	sub_type = 23,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43701,
+	target_num = 60,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[43702] = {
+	name = "十八期·【通行证第一周】任务2",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "装備を10回強化する",
+	count_inherit = 0,
+	sub_type = 40,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43702,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43703] = {
+	name = "十八期·【通行证第一周】任务3",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "寮舎食料を30000補充する",
+	count_inherit = 0,
+	sub_type = 60,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43703,
+	target_num = 30000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43704] = {
+	name = "十八期·【通行证第一周】任务4",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "任意の装備箱を20個開けよ！",
+	count_inherit = 0,
+	sub_type = 50,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43704,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43705] = {
+	name = "十八期·【通行证第一周】任务5",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "「艦船経験値パックT1」を40個使用する",
+	count_inherit = 0,
+	sub_type = 120,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "16501",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43705,
+	target_num = 40,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"DOCKYARD",
+		{
+			mode = "overview"
+		}
+	}
+}
+_G.pg.base.task_data_template[43706] = {
+	name = "十八期·【通行证第一周】任务6",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "装備を60回「廃棄」せよ！",
+	count_inherit = 0,
+	sub_type = 41,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43706,
+	target_num = 60,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43707] = {
+	name = "十八期·【通行证第一周】任务7",
+	guild_coin_award = 0,
+	award = 104335,
+	type = 6,
+	desc = "シーズン任務の週次任務（一週目）を全クリア",
+	count_inherit = 0,
+	sub_type = 90,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	scene = "",
+	id = 43707,
+	target_num = 6,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		43701,
+		43702,
+		43703,
+		43704,
+		43705,
+		43706
+	},
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			240
+		}
+	}
+}
+_G.pg.base.task_data_template[43708] = {
+	name = "十八期·【通行证第二周】任务1",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "艦隊を出撃させ、敵中枢艦隊を20回撃破せよ！",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43708,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[43709] = {
+	name = "十八期·【通行证第二周】任务2",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "コアデータを累計150個入手する",
+	count_inherit = 0,
+	sub_type = 130,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "59900",
+	scene = "",
+	id = 43709,
+	target_num = 150,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43710] = {
+	name = "十八期·【通行证第二周】任务3",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "軍事委託を15回行う",
+	count_inherit = 0,
+	sub_type = 80,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43710,
+	target_num = 15,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43711] = {
+	name = "十八期·【通行证第二周】任务4",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "デイリーチャレンジを12回行う",
+	count_inherit = 0,
+	sub_type = 26,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43711,
+	target_num = 12,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43712] = {
+	name = "十八期·【通行证第二周】任务5",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "高速建造材を20個消費する",
+	count_inherit = 0,
+	sub_type = 120,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "15003",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43712,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"GETBOAT"
+	}
+}
+_G.pg.base.task_data_template[43713] = {
+	name = "十八期·【通行证第二周】任务6",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "物資拠出Ⅰ任務を12回クリアする",
+	count_inherit = 0,
+	sub_type = 402,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43713,
+	target_num = 12,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43714] = {
+	name = "十八期·【通行证第二周】任务7",
+	guild_coin_award = 0,
+	award = 104335,
+	type = 6,
+	desc = "シーズン任務の週次任務（二週目）を全クリア",
+	count_inherit = 0,
+	sub_type = 90,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	scene = "",
+	id = 43714,
+	target_num = 6,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		43708,
+		43709,
+		43710,
+		43711,
+		43712,
+		43713
+	},
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			240
+		}
+	}
+}
+_G.pg.base.task_data_template[43715] = {
+	name = "十八期·【通行证第三周】任务1",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "艦隊を出撃させ、80回勝利せよ！",
+	count_inherit = 0,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43715,
+	target_num = 80,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[43716] = {
+	name = "十八期·【通行证第三周】任务2",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "5回建造する",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43716,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43717] = {
+	name = "十八期·【通行证第三周】任务3",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "キューブを10個入手する",
+	count_inherit = 0,
+	sub_type = 130,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "20001",
+	scene = "",
+	id = 43717,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43718] = {
+	name = "十八期·【通行证第三周】任务4",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "通常海域ハードを12回クリアする",
+	count_inherit = 0,
+	sub_type = 182,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "10101",
+	scene = "",
+	id = 43718,
+	target_num = 12,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43719] = {
+	name = "十八期·【通行证第三周】任务5",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "戦術訓練（スキル強化）を20回行う",
+	count_inherit = 0,
+	sub_type = 71,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43719,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43720] = {
+	name = "十八期·【通行证第三周】任务6",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "演習を30回行おう！",
+	count_inherit = 0,
+	sub_type = 27,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43720,
+	target_num = 30,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43721] = {
+	name = "十八期·【通行证第三周】任务7",
+	guild_coin_award = 0,
+	award = 104335,
+	type = 6,
+	desc = "シーズン任務の週次任務（三週目）を全クリア",
+	count_inherit = 0,
+	sub_type = 90,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	scene = "",
+	id = 43721,
+	target_num = 6,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		43715,
+		43716,
+		43717,
+		43718,
+		43719,
+		43720
+	},
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			240
+		}
+	}
+}
+_G.pg.base.task_data_template[43722] = {
+	name = "十八期·【通行证第四周】任务1",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "セイレーン作戦のエリアに出撃し、5回戦闘を行う",
+	count_inherit = 0,
+	sub_type = 304,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43722,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43723] = {
+	name = "十八期·【通行证第四周】任务2",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "艦を15隻退役する",
+	count_inherit = 0,
+	sub_type = 31,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43723,
+	target_num = 15,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43724] = {
+	name = "十八期·【通行证第四周】任务3",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "科学研究を10回行う",
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43724,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43725] = {
+	name = "十八期·【通行证第四周】任务4",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "任意の敵を1600隻撃破する",
+	count_inherit = 0,
+	sub_type = 11,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43725,
+	target_num = 1600,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43726] = {
+	name = "十八期·【通行证第四周】任务5",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "オフニャを20回訓練する",
+	count_inherit = 0,
+	sub_type = 170,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43726,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43727] = {
+	name = "十八期·【通行证第四周】任务6",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "ウィークリー任務Ptを800貯める",
+	count_inherit = 0,
+	sub_type = 161,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43727,
+	target_num = 800,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"TASK"
+	}
+}
+_G.pg.base.task_data_template[43728] = {
+	name = "十八期·【通行证第四周】任务7",
+	guild_coin_award = 0,
+	award = 104335,
+	type = 6,
+	desc = "シーズン任務の週次任務（四週目）を全クリア",
+	count_inherit = 0,
+	sub_type = 90,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	scene = "",
+	id = 43728,
+	target_num = 6,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		43722,
+		43723,
+		43724,
+		43725,
+		43726,
+		43727
+	},
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			240
+		}
+	}
+}
+_G.pg.base.task_data_template[43729] = {
+	name = "十八期·【通行证第五周】任务1",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "任意の装備箱を10個開けよ！",
+	count_inherit = 0,
+	sub_type = 50,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43729,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43730] = {
+	name = "十八期·【通行证第五周】任务2",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "「艦船経験値パックT1」を20個使用する",
+	count_inherit = 0,
+	sub_type = 120,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "16501",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43730,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	},
+	scene = {
+		"DOCKYARD",
+		{
+			mode = "overview"
+		}
+	}
+}
+_G.pg.base.task_data_template[43731] = {
+	name = "十八期·【通行证第五周】任务3",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "装備を30回「廃棄」せよ！",
+	count_inherit = 0,
+	sub_type = 41,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43731,
+	target_num = 30,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43732] = {
+	name = "十八期·【通行证第五周】任务4",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦隊を出撃させ、120回A評価で勝利せよ！",
+	count_inherit = 0,
+	sub_type = 23,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43732,
+	target_num = 120,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[43733] = {
+	name = "十八期·【通行证第五周】任务5",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "装備を20回強化する",
+	count_inherit = 0,
+	sub_type = 40,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43733,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43734] = {
+	name = "十八期·【通行证第五周】任务6",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "寮舎食料を60000補充する",
+	count_inherit = 0,
+	sub_type = 60,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43734,
+	target_num = 60000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43735] = {
+	name = "十八期·【通行证第五周】任务7",
+	guild_coin_award = 0,
+	award = 104335,
+	type = 6,
+	desc = "シーズン任務の週次任務（五週目）を全クリア",
+	count_inherit = 0,
+	sub_type = 90,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	scene = "",
+	id = 43735,
+	target_num = 6,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		43729,
+		43730,
+		43731,
+		43732,
+		43733,
+		43734
+	},
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			240
+		}
+	}
+}
+_G.pg.base.task_data_template[43736] = {
+	name = "十八期·【通行证第六周】任务1",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "デイリーチャレンジを6回行う",
+	count_inherit = 0,
+	sub_type = 26,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43736,
+	target_num = 6,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43737] = {
+	name = "十八期·【通行证第六周】任务2",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "高速建造材を10個消費する",
+	count_inherit = 0,
+	sub_type = 120,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "15003",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43737,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	},
+	scene = {
+		"GETBOAT"
+	}
+}
+_G.pg.base.task_data_template[43738] = {
+	name = "十八期·【通行证第六周】任务3",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "物資拠出Ⅰ任務を6回クリアする",
+	count_inherit = 0,
+	sub_type = 402,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43738,
+	target_num = 6,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43739] = {
+	name = "十八期·【通行证第六周】任务4",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦隊を出撃させ、敵中枢艦隊を40回撃破せよ！",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43739,
+	target_num = 40,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[43740] = {
+	name = "十八期·【通行证第六周】任务5",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "コアデータを累計300個入手する",
+	count_inherit = 0,
+	sub_type = 130,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "59900",
+	scene = "",
+	id = 43740,
+	target_num = 300,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43741] = {
+	name = "十八期·【通行证第六周】任务6",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "軍事委託を30回行う",
+	count_inherit = 0,
+	sub_type = 80,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43741,
+	target_num = 30,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43742] = {
+	name = "十八期·【通行证第六周】任务7",
+	guild_coin_award = 0,
+	award = 104335,
+	type = 6,
+	desc = "シーズン任務の週次任務（六週目）を全クリア",
+	count_inherit = 0,
+	sub_type = 90,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	scene = "",
+	id = 43742,
+	target_num = 6,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		43736,
+		43737,
+		43738,
+		43739,
+		43740,
+		43741
+	},
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			240
+		}
+	}
+}
+_G.pg.base.task_data_template[43743] = {
+	name = "十八期·【通行证第七周】任务1",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "通常海域ハードを6回クリアする",
+	count_inherit = 0,
+	sub_type = 182,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "10101",
+	scene = "",
+	id = 43743,
+	target_num = 6,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43744] = {
+	name = "十八期·【通行证第七周】任务2",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "戦術訓練（スキル強化）を10回行う",
+	count_inherit = 0,
+	sub_type = 71,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43744,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43745] = {
+	name = "十八期·【通行证第七周】任务3",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "演習を15回行おう！",
+	count_inherit = 0,
+	sub_type = 27,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43745,
+	target_num = 15,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43746] = {
+	name = "十八期·【通行证第七周】任务4",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦隊を出撃させ、160回勝利せよ！",
+	count_inherit = 0,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43746,
+	target_num = 160,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[43747] = {
+	name = "十八期·【通行证第七周】任务5",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦を10隻「建造」せよ！",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43747,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43748] = {
+	name = "十八期·【通行证第七周】任务6",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "キューブを20個入手する",
+	count_inherit = 0,
+	sub_type = 130,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "20001",
+	scene = "",
+	id = 43748,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43749] = {
+	name = "十八期·【通行证第七周】任务7",
+	guild_coin_award = 0,
+	award = 104335,
+	type = 6,
+	desc = "シーズン任務の週次任務（七週目）を全クリア",
+	count_inherit = 0,
+	sub_type = 90,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	scene = "",
+	id = 43749,
+	target_num = 6,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		43743,
+		43744,
+		43745,
+		43746,
+		43747,
+		43748
+	},
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			240
+		}
+	}
+}
+_G.pg.base.task_data_template[43750] = {
+	name = "十八期·【通行证第八周】任务1",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "任意の敵を800隻撃破する",
+	count_inherit = 0,
+	sub_type = 11,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43750,
+	target_num = 800,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43751] = {
+	name = "十八期·【通行证第八周】任务2",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "オフニャを10回訓練する",
+	count_inherit = 0,
+	sub_type = 170,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43751,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43752] = {
+	name = "十八期·【通行证第八周】任务3",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "ウィークリー任務Ptを400貯める",
+	count_inherit = 0,
+	sub_type = 161,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 1,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43752,
+	target_num = 400,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	},
+	scene = {
+		"TASK"
+	}
+}
+_G.pg.base.task_data_template[43753] = {
+	name = "十八期·【通行证第八周】任务4",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "セイレーン作戦のエリアに出撃し、10回戦闘を行う",
+	count_inherit = 0,
+	sub_type = 304,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43753,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43754] = {
+	name = "十八期·【通行证第八周】任务5",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦を30隻退役する",
+	count_inherit = 0,
+	sub_type = 31,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43754,
+	target_num = 30,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43755] = {
+	name = "十八期·【通行证第八周】任务6",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "科学研究を20回行う",
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 2,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43755,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43756] = {
+	name = "十八期·【通行证第八周】任务7",
+	guild_coin_award = 0,
+	award = 104335,
+	type = 6,
+	desc = "シーズン任務の週次任務（八週目）を全クリア",
+	count_inherit = 0,
+	sub_type = 90,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	scene = "",
+	id = 43756,
+	target_num = 6,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		43750,
+		43751,
+		43752,
+		43753,
+		43754,
+		43755
+	},
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			240
+		}
+	}
+}
+_G.pg.base.task_data_template[43757] = {
+	name = "十八期·【通行证SP】累计周任务PT1",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "ウィークリー任務Ptを100貯める",
+	count_inherit = 0,
+	sub_type = 161,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43757,
+	target_num = 100,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	},
+	scene = {
+		"TASK"
+	}
+}
+_G.pg.base.task_data_template[43758] = {
+	name = "十八期·【通行证SP】累计周任务PT2",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "ウィークリー任務Ptを300貯める",
+	count_inherit = 0,
+	sub_type = 161,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43758,
+	target_num = 300,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	},
+	scene = {
+		"TASK"
+	}
+}
+_G.pg.base.task_data_template[43759] = {
+	name = "十八期·【通行证SP】累计周任务PT3",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "ウィークリー任務Ptを600貯める",
+	count_inherit = 0,
+	sub_type = 161,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43759,
+	target_num = 600,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	},
+	scene = {
+		"TASK"
+	}
+}
+_G.pg.base.task_data_template[43760] = {
+	name = "十八期·【通行证SP】累计周任务PT4",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "ウィークリー任務Ptを1000貯める",
+	count_inherit = 0,
+	sub_type = 161,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43760,
+	target_num = 1000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	},
+	scene = {
+		"TASK"
+	}
+}
+_G.pg.base.task_data_template[43761] = {
+	name = "十八期·【通行证SP】累计周任务PT5",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "ウィークリー任務Ptを1500貯める",
+	count_inherit = 0,
+	sub_type = 161,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43761,
+	target_num = 1500,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"TASK"
+	}
+}
+_G.pg.base.task_data_template[43762] = {
+	name = "十八期·【通行证SP】累计周任务PT6",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "ウィークリー任務Ptを2000貯める",
+	count_inherit = 0,
+	sub_type = 161,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43762,
+	target_num = 2000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"TASK"
+	}
+}
+_G.pg.base.task_data_template[43763] = {
+	name = "十八期·【通行证SP】累计周任务PT7",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "ウィークリー任務Ptを2500貯める",
+	count_inherit = 0,
+	sub_type = 161,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43763,
+	target_num = 2500,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"TASK"
+	}
+}
+_G.pg.base.task_data_template[43764] = {
+	name = "十八期·【通行证SP】累计周任务PT8",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "ウィークリー任務Ptを3000貯める",
+	count_inherit = 0,
+	sub_type = 161,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43764,
+	target_num = 3000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"TASK"
+	}
+}
+_G.pg.base.task_data_template[43765] = {
+	name = "十八期·【通行证SP】累计周任务PT9",
+	guild_coin_award = 0,
+	award = 104335,
+	type = 6,
+	desc = "ウィークリー任務Ptを4000貯める",
+	count_inherit = 0,
+	sub_type = 161,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43765,
+	target_num = 4000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			240
+		}
+	},
+	scene = {
+		"TASK"
+	}
+}
+_G.pg.base.task_data_template[43766] = {
+	name = "十八期·【通行证SP】累计建造1",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦を10隻「建造」せよ！",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43766,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43767] = {
+	name = "十八期·【通行证SP】累计建造2",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦を20隻「建造」せよ！",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43767,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43768] = {
+	name = "十八期·【通行证SP】累计建造3",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦を30隻「建造」せよ！",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43768,
+	target_num = 30,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43769] = {
+	name = "十八期·【通行证SP】累计建造4",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦を40隻「建造」せよ！",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43769,
+	target_num = 40,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43770] = {
+	name = "十八期·【通行证SP】累计建造5",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦を50隻「建造」せよ！",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43770,
+	target_num = 50,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43771] = {
+	name = "十八期·【通行证SP】累计建造6",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦を60隻「建造」せよ！",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43771,
+	target_num = 60,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43772] = {
+	name = "十八期·【通行证SP】累计建造7",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦を70隻「建造」せよ！",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43772,
+	target_num = 70,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43773] = {
+	name = "十八期·【通行证SP】累计建造8",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦を80隻「建造」せよ！",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43773,
+	target_num = 80,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43774] = {
+	name = "十八期·【通行证SP】累计消耗石油1",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "累計燃料消費2000",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43774,
+	target_num = 2000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43775] = {
+	name = "十八期·【通行证SP】累计消耗石油2",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "累計燃料消費4000",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43775,
+	target_num = 4000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43776] = {
+	name = "十八期·【通行证SP】累计消耗石油3",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "累計燃料消費6000",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43776,
+	target_num = 6000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43777] = {
+	name = "十八期·【通行证SP】累计消耗石油4",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "累計燃料消費8000",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43777,
+	target_num = 8000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43778] = {
+	name = "十八期·【通行证SP】累计消耗石油5",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "累計燃料消費10000",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43778,
+	target_num = 10000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43779] = {
+	name = "十八期·【通行证SP】累计消耗石油6",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "累計燃料消費12000",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43779,
+	target_num = 12000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43780] = {
+	name = "十八期·【通行证SP】累计消耗石油7",
+	guild_coin_award = 0,
+	award = 104332,
+	type = 6,
+	desc = "累計燃料消費15000",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43780,
+	target_num = 15000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			180
+		}
+	}
+}
+_G.pg.base.task_data_template[43781] = {
+	name = "十八期·【通行证SP】累计消耗石油8",
+	guild_coin_award = 0,
+	award = 104332,
+	type = 6,
+	desc = "累計燃料消費18000",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43781,
+	target_num = 18000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			180
+		}
+	}
+}
+_G.pg.base.task_data_template[43782] = {
+	name = "十八期·【通行证SP】累计消耗石油9",
+	guild_coin_award = 0,
+	award = 104332,
+	type = 6,
+	desc = "累計燃料消費21000",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43782,
+	target_num = 21000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			180
+		}
+	}
+}
+_G.pg.base.task_data_template[43783] = {
+	name = "十八期·【通行证SP】累计消耗石油10",
+	guild_coin_award = 0,
+	award = 104332,
+	type = 6,
+	desc = "累計燃料消費24000",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43783,
+	target_num = 24000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			180
+		}
+	}
+}
+_G.pg.base.task_data_template[43784] = {
+	name = "十八期·【通行证SP】累计获取舰船经验1",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦隊を出撃させ、累計獲得経験値を25万蓄積させる",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43784,
+	target_num = 250000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[43785] = {
+	name = "十八期·【通行证SP】累计获取舰船经验2",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦隊を出撃させ、累計獲得経験値を50万蓄積させる",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43785,
+	target_num = 500000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[43786] = {
+	name = "十八期·【通行证SP】累计获取舰船经验3",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦隊を出撃させ、累計獲得経験値を75万蓄積させる",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43786,
+	target_num = 750000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[43787] = {
+	name = "十八期·【通行证SP】累计获取舰船经验4",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦隊を出撃させ、累計獲得経験値を100万蓄積させる",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43787,
+	target_num = 1000000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[43788] = {
+	name = "十八期·【通行证SP】累计获取舰船经验5",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦隊を出撃させ、累計獲得経験値を125万蓄積させる",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43788,
+	target_num = 1250000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[43789] = {
+	name = "十八期·【通行证SP】累计获取舰船经验6",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦隊を出撃させ、累計獲得経験値を150万蓄積させる",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43789,
+	target_num = 1500000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[43790] = {
+	name = "十八期·【通行证SP】累计获取舰船经验7",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦隊を出撃させ、累計獲得経験値を175万蓄積させる",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43790,
+	target_num = 1750000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[43791] = {
+	name = "十八期·【通行证SP】累计获取舰船经验8",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "艦隊を出撃させ、累計獲得経験値を200万蓄積させる",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43791,
+	target_num = 2000000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[43792] = {
+	name = "十八期·【通行证SP】累计获取舰船经验9",
+	guild_coin_award = 0,
+	award = 104335,
+	type = 6,
+	desc = "艦隊を出撃させ、累計獲得経験値を250万蓄積させる",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43792,
+	target_num = 2500000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			240
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[43793] = {
+	name = "十八期·【通行证SP】累计获取舰船经验10",
+	guild_coin_award = 0,
+	award = 104335,
+	type = 6,
+	desc = "艦隊を出撃させ、累計獲得経験値を300万蓄積させる",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	story_id = "",
+	id = 43793,
+	target_num = 3000000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			240
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[43794] = {
+	name = "十八期·【通行证SP】累计登陆1",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "月ログインスタンプを1回押す",
+	count_inherit = 0,
+	sub_type = 106,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43794,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43795] = {
+	name = "十八期·【通行证SP】累计登陆2",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "月ログインスタンプを3回押す",
+	count_inherit = 0,
+	sub_type = 106,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43795,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43796] = {
+	name = "十八期·【通行证SP】累计登陆3",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "月ログインスタンプを5回押す",
+	count_inherit = 0,
+	sub_type = 106,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43796,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43797] = {
+	name = "十八期·【通行证SP】累计登陆4",
+	guild_coin_award = 0,
+	award = 104333,
+	type = 6,
+	desc = "月ログインスタンプを7回押す",
+	count_inherit = 0,
+	sub_type = 106,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43797,
+	target_num = 7,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			60
+		}
+	}
+}
+_G.pg.base.task_data_template[43798] = {
+	name = "十八期·【通行证SP】累计登陆5",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "月ログインスタンプを10回押す",
+	count_inherit = 0,
+	sub_type = 106,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43798,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43799] = {
+	name = "十八期·【通行证SP】累计登陆6",
+	guild_coin_award = 0,
+	award = 104334,
+	type = 6,
+	desc = "月ログインスタンプを14回押す",
+	count_inherit = 0,
+	sub_type = 106,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43799,
+	target_num = 14,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			120
+		}
+	}
+}
+_G.pg.base.task_data_template[43800] = {
+	name = "十八期·【通行证SP】累计登陆7",
+	guild_coin_award = 0,
+	award = 104335,
+	type = 6,
+	desc = "月ログインスタンプを21回押す",
+	count_inherit = 0,
+	sub_type = 106,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43800,
+	target_num = 21,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			240
+		}
+	}
+}
+_G.pg.base.task_data_template[43801] = {
+	name = "十八期·【通行证SP】累计登陆8",
+	guild_coin_award = 0,
+	award = 104335,
+	type = 6,
+	desc = "月ログインスタンプを28回押す",
+	count_inherit = 0,
+	sub_type = 106,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 43801,
+	target_num = 28,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			59599,
+			240
+		}
+	}
+}
+_G.pg.base.task_data_template[60331] = {
+	name = "哈尔福德开启研发前置任务（前置任务都不用翻译，前端不显示）",
+	guild_coin_award = 0,
+	award = 0,
+	type = 9,
+	desc = "",
+	count_inherit = 0,
+	sub_type = 1050,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1",
+	scene = "",
+	id = 60331,
+	target_num = 950,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60332] = {
+	name = "戦術データ収集Ⅰ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>開発作業を円滑に進めるためには、十分な実験データの入手が必要不可欠であり、蓄積された実戦経験が最も有効だと考えられる。</color>\n\n――艦隊を出撃させ、ユニオン所属前衛艦隊の累計獲得経験値を<color=#92fc63>1000000</color>蓄積させる",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60332,
+	target_num = 1000000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			1,
+			1
+		},
+		{
+			1,
+			2
+		},
+		{
+			1,
+			3
+		},
+		{
+			1,
+			18
+		},
+		{
+			1,
+			19
+		},
+		{
+			1,
+			20
+		}
+	},
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60333] = {
+	name = "技術理論研究Ⅰ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>開発による具現化には技術投資が欠かせない。基礎研究の成果を先端技術に応用できれば、開発を大いに加速させられるはずだ。</color>\n\n――「科学研究」で任意の研究項目を<color=#92fc63>5回</color>完了する",
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60333,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60334] = {
+	name = "超越技術設計Ⅰ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>戦術データによるフィードバックと最先端の技術理論を組み合わせ、開発はようやく製図段階に進むことができた。しかし、設計の細部を詰めるには既存の図面設計との比較を徹底的に行わなければならない。</color>\n\n――駆逐改造図T2を<color=#92fc63>10枚</color>集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18002",
+	scene = "",
+	id = 60334,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60335] = {
+	name = "戦術データ収集Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#92fc63>「戦術データ収集Ⅰ」を完了する必要がある</color>
+<color=#a2a2a2>図面設計の初稿が完成した。カタログスペックは果たしてどこまで実現できるのか、その検証にはさらなる戦術データの収集が必要不可欠である。</color>
+
+――艦隊を出撃させ、ユニオン所属前衛艦隊の累計獲得経験値を<color=#92fc63>2000000</color>蓄積させる]],
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60335,
+	target_num = 2000000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			1,
+			1
+		},
+		{
+			1,
+			2
+		},
+		{
+			1,
+			3
+		},
+		{
+			1,
+			18
+		},
+		{
+			1,
+			19
+		},
+		{
+			1,
+			20
+		}
+	},
+	open_need = {
+		60332
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60336] = {
+	name = "技術理論研究Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#92fc63>「技術理論研究Ⅰ」を完了する必要がある</color>
+<color=#a2a2a2>基本設計の次は修正·改善·最適化。初期段階で実現できなかったアイデアを実現させる最大のチャンスが訪れる。</color>
+
+――「科学研究」で任意の研究項目を<color=#92fc63>8回</color>完了する]],
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60336,
+	target_num = 8,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {
+		60333
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60337] = {
+	name = "超越技術設計Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>技術理論と実戦データ、堅実な設計と大胆な発想を組み合わせた特別計画（プライオリティプラン）艦の設計がついに完成に近づいた。残った問題点を解決し、最高の完成度を目指そう。</color>\n\n――駆逐改造図T3を<color=#92fc63>5枚</color>集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18003",
+	scene = "",
+	id = 60337,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60338] = {
+	name = "艦体建造",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>長きにわたる設計作業はついに完了した。残るは艦体の建造のみ。さあ、特別計画艦を完成させよ！シャンパンを開ける準備も忘れずに！</color>\n\n――資金<color=#92fc63>20000</color>を集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1002,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1",
+	scene = "",
+	id = 60338,
+	target_num = 20000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60339] = {
+	name = "艦体建造Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>長きにわたる設計作業はついに完了した。残るは艦体の建造のみ。さあ、特別計画艦を完成させよ！シャンパンを開ける準備も忘れずに！</color>\n\n――メンタルキューブ<color=#92fc63>5個</color>を集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "20001",
+	scene = "",
+	id = 60339,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60341] = {
+	name = "{namecode:299}开启研发前置任务",
+	guild_coin_award = 0,
+	award = 0,
+	type = 9,
+	desc = "",
+	count_inherit = 0,
+	sub_type = 1050,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "3",
+	scene = "",
+	id = 60341,
+	target_num = 950,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60342] = {
+	name = "戦術データ収集Ⅰ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>開発作業を円滑に進めるためには、十分な実験データの入手が必要不可欠であり、蓄積された実戦経験が最も有効だと考えられる。</color>\n\n――艦隊を出撃させ、重桜所属主力艦隊の累計獲得経験値を<color=#92fc63>1000000</color>蓄積させる",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60342,
+	target_num = 1000000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			3,
+			4
+		},
+		{
+			3,
+			5
+		},
+		{
+			3,
+			6
+		},
+		{
+			3,
+			7
+		},
+		{
+			3,
+			9
+		},
+		{
+			3,
+			10
+		},
+		{
+			3,
+			12
+		},
+		{
+			3,
+			13
+		},
+		{
+			3,
+			21
+		}
+	},
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60343] = {
+	name = "技術理論研究Ⅰ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>開発による具現化には技術投資が欠かせない。基礎研究の成果を先端技術に応用できれば、開発を大いに加速させられるはずだ。</color>\n\n――「科学研究」で任意の研究項目を<color=#92fc63>5回</color>完了する",
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60343,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60344] = {
+	name = "超越技術設計Ⅰ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>戦術データによるフィードバックと最先端の技術理論を組み合わせ、開発はようやく製図段階に進むことができた。しかし、設計の細部を詰めるには既存の図面設計との比較を徹底的に行わなければならない。</color>\n\n――戦艦改造図T2を<color=#92fc63>10枚</color>集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18022",
+	scene = "",
+	id = 60344,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60345] = {
+	name = "戦術データ収集Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#92fc63>「戦術データ収集Ⅰ」を完了する必要がある</color>
+<color=#a2a2a2>図面設計の初稿が完成した。カタログスペックは果たしてどこまで実現できるのか、その検証にはさらなる戦術データの収集が必要不可欠である。</color>
+
+――艦隊を出撃させ、重桜所属主力艦隊の累計獲得経験値を<color=#92fc63>2000000</color>蓄積させる]],
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60345,
+	target_num = 2000000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			3,
+			4
+		},
+		{
+			3,
+			5
+		},
+		{
+			3,
+			6
+		},
+		{
+			3,
+			7
+		},
+		{
+			3,
+			9
+		},
+		{
+			3,
+			10
+		},
+		{
+			3,
+			12
+		},
+		{
+			3,
+			13
+		},
+		{
+			3,
+			21
+		}
+	},
+	open_need = {
+		60342
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60346] = {
+	name = "技術理論研究Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#92fc63>「技術理論研究Ⅰ」を完了する必要がある</color>
+<color=#a2a2a2>基本設計の次は修正·改善·最適化。初期段階で実現できなかったアイデアを実現させる最大のチャンスが訪れる。</color>
+
+――「科学研究」で任意の研究項目を<color=#92fc63>8回</color>完了する]],
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60346,
+	target_num = 8,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {
+		60343
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60347] = {
+	name = "超越技術設計Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>技術理論と実戦データ、堅実な設計と大胆な発想を組み合わせた特別計画（プライオリティプラン）艦の設計がついに完成に近づいた。残った問題点を解決し、最高の完成度を目指そう。</color>\n\n――戦艦改造図T3を<color=#92fc63>5枚</color>集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18023",
+	scene = "",
+	id = 60347,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60348] = {
+	name = "艦体建造",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>長きにわたる設計作業はついに完了した。残るは艦体の建造のみ。さあ、特別計画艦を完成させよ！シャンパンを開ける準備も忘れずに！</color>\n\n――資金<color=#92fc63>30000</color>を集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1002,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1",
+	scene = "",
+	id = 60348,
+	target_num = 30000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60349] = {
+	name = "艦体建造Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>長きにわたる設計作業はついに完了した。残るは艦体の建造のみ。さあ、特別計画艦を完成させよ！シャンパンを開ける準備も忘れずに！</color>\n\n――メンタルキューブ<color=#92fc63>5個</color>を集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "20001",
+	scene = "",
+	id = 60349,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60350] = {
+	name = "那不勒斯开启研发前置任务",
+	guild_coin_award = 0,
+	award = 0,
+	type = 9,
+	desc = "",
+	count_inherit = 0,
+	sub_type = 1050,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "6",
+	scene = "",
+	id = 60350,
+	target_num = 300,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60351] = {
+	name = "那不勒斯开启研发前置任务",
+	guild_coin_award = 0,
+	award = 0,
+	type = 9,
+	desc = "",
+	count_inherit = 0,
+	sub_type = 1050,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "7",
+	scene = "",
+	id = 60351,
+	target_num = 200,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60352] = {
+	name = "戦術データ収集Ⅰ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>開発作業を円滑に進めるためには、十分な実験データの入手が必要不可欠であり、蓄積された実戦経験が最も有効だと考えられる。</color>\n\n――艦隊を出撃させ、サディアもしくは北方連合所属前衛艦隊の累計獲得経験値を<color=#92fc63>1200000</color>蓄積させる",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60352,
+	target_num = 1200000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			6,
+			1
+		},
+		{
+			6,
+			2
+		},
+		{
+			6,
+			3
+		},
+		{
+			6,
+			18
+		},
+		{
+			6,
+			19
+		},
+		{
+			6,
+			20
+		},
+		{
+			7,
+			1
+		},
+		{
+			7,
+			2
+		},
+		{
+			7,
+			3
+		},
+		{
+			7,
+			18
+		},
+		{
+			7,
+			19
+		},
+		{
+			7,
+			20
+		}
+	},
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60353] = {
+	name = "技術理論研究Ⅰ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>開発による具現化には技術投資が欠かせない。基礎研究の成果を先端技術に応用できれば、開発を大いに加速させられるはずだ。</color>\n\n――「科学研究」で任意の研究項目を<color=#92fc63>8回</color>完了する",
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60353,
+	target_num = 8,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60354] = {
+	name = "超越技術設計Ⅰ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>戦術データによるフィードバックと最先端の技術理論を組み合わせ、開発はようやく製図段階に進むことができた。しかし、設計の細部を詰めるには既存の図面設計との比較を徹底的に行わなければならない。</color>\n\n――巡洋改造図T3を<color=#92fc63>3枚</color>集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18013",
+	scene = "",
+	id = 60354,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60355] = {
+	name = "戦術データ収集Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#92fc63>「戦術データ収集Ⅰ」を完了する必要がある</color>
+<color=#a2a2a2>図面設計の初稿が完成した。カタログスペックは果たしてどこまで実現できるのか、その検証にはさらなる戦術データの収集が必要不可欠である。</color>
+
+――艦隊を出撃させ、サディアもしくは北方連合所属前衛艦隊の累計獲得経験値を<color=#92fc63>2400000</color>蓄積させる]],
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60355,
+	target_num = 2400000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			6,
+			1
+		},
+		{
+			6,
+			2
+		},
+		{
+			6,
+			3
+		},
+		{
+			6,
+			18
+		},
+		{
+			6,
+			19
+		},
+		{
+			6,
+			20
+		},
+		{
+			7,
+			1
+		},
+		{
+			7,
+			2
+		},
+		{
+			7,
+			3
+		},
+		{
+			7,
+			18
+		},
+		{
+			7,
+			19
+		},
+		{
+			7,
+			20
+		}
+	},
+	open_need = {
+		60352
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60356] = {
+	name = "技術理論研究Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#92fc63>「技術理論研究Ⅰ」を完了する必要がある</color>
+<color=#a2a2a2>基本設計の次は修正·改善·最適化。初期段階で実現できなかったアイデアを実現させる最大のチャンスが訪れる。</color>
+
+――「科学研究」で任意の研究項目を<color=#92fc63>12回</color>完了する]],
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60356,
+	target_num = 12,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {
+		60353
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60357] = {
+	name = "超越技術設計Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>技術理論と実戦データ、堅実な設計と大胆な発想を組み合わせた特別計画（プライオリティプラン）艦の設計がついに完成に近づいた。残った問題点を解決し、最高の完成度を目指そう。</color>\n\n――巡洋改造図T3を<color=#92fc63>8枚</color>集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18013",
+	scene = "",
+	id = 60357,
+	target_num = 8,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60358] = {
+	name = "艦体建造",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>長きにわたる設計作業はついに完了した。残るは艦体の建造のみ。さあ、特別計画艦を完成させよ！シャンパンを開ける準備も忘れずに！</color>\n\n――資金<color=#92fc63>40000</color>を集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1002,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1",
+	scene = "",
+	id = 60358,
+	target_num = 40000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60359] = {
+	name = "艦体建造Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>長きにわたる設計作業はついに完了した。残るは艦体の建造のみ。さあ、特別計画艦を完成させよ！シャンパンを開ける準備も忘れずに！</color>\n\n――メンタルキューブ<color=#92fc63>10個</color>を集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "20001",
+	scene = "",
+	id = 60359,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60360] = {
+	name = "纳希莫夫海军上将开启研发前置任务",
+	guild_coin_award = 0,
+	award = 0,
+	type = 9,
+	desc = "",
+	count_inherit = 0,
+	sub_type = 1050,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "7",
+	scene = "",
+	id = 60360,
+	target_num = 300,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60361] = {
+	name = "纳希莫夫海军上将开启研发前置任务",
+	guild_coin_award = 0,
+	award = 0,
+	type = 9,
+	desc = "",
+	count_inherit = 0,
+	sub_type = 1050,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "6",
+	scene = "",
+	id = 60361,
+	target_num = 200,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60362] = {
+	name = "戦術データ収集Ⅰ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>開発作業を円滑に進めるためには、十分な実験データの入手が必要不可欠であり、蓄積された実戦経験が最も有効だと考えられる。</color>\n\n――艦隊を出撃させ、サディアもしくは北方連合所属主力艦隊の累計獲得経験値を<color=#92fc63>1200000</color>蓄積させる",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60362,
+	target_num = 1200000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			6,
+			4
+		},
+		{
+			6,
+			5
+		},
+		{
+			6,
+			6
+		},
+		{
+			6,
+			7
+		},
+		{
+			6,
+			9
+		},
+		{
+			6,
+			10
+		},
+		{
+			6,
+			12
+		},
+		{
+			6,
+			13
+		},
+		{
+			6,
+			21
+		},
+		{
+			7,
+			4
+		},
+		{
+			7,
+			5
+		},
+		{
+			7,
+			6
+		},
+		{
+			7,
+			7
+		},
+		{
+			7,
+			9
+		},
+		{
+			7,
+			10
+		},
+		{
+			7,
+			12
+		},
+		{
+			7,
+			13
+		},
+		{
+			7,
+			21
+		}
+	},
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60363] = {
+	name = "技術理論研究Ⅰ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>開発による具現化には技術投資が欠かせない。基礎研究の成果を先端技術に応用できれば、開発を大いに加速させられるはずだ。</color>\n\n――「科学研究」で任意の研究項目を<color=#92fc63>8回</color>完了する",
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60363,
+	target_num = 8,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60364] = {
+	name = "超越技術設計Ⅰ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>戦術データによるフィードバックと最先端の技術理論を組み合わせ、開発はようやく製図段階に進むことができた。しかし、設計の細部を詰めるには既存の図面設計との比較を徹底的に行わなければならない。</color>\n\n――空母改造図T3を<color=#92fc63>3枚</color>集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18033",
+	scene = "",
+	id = 60364,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60365] = {
+	name = "戦術データ収集Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#92fc63>「戦術データ収集Ⅰ」を完了する必要がある</color>
+<color=#a2a2a2>図面設計の初稿が完成した。カタログスペックは果たしてどこまで実現できるのか、その検証にはさらなる戦術データの収集が必要不可欠である。</color>
+
+――艦隊を出撃させ、サディアもしくは北方連合所属主力艦隊の累計獲得経験値を<color=#92fc63>2400000</color>蓄積させる]],
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60365,
+	target_num = 2400000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			6,
+			4
+		},
+		{
+			6,
+			5
+		},
+		{
+			6,
+			6
+		},
+		{
+			6,
+			7
+		},
+		{
+			6,
+			9
+		},
+		{
+			6,
+			10
+		},
+		{
+			6,
+			12
+		},
+		{
+			6,
+			13
+		},
+		{
+			6,
+			21
+		},
+		{
+			7,
+			4
+		},
+		{
+			7,
+			5
+		},
+		{
+			7,
+			6
+		},
+		{
+			7,
+			7
+		},
+		{
+			7,
+			9
+		},
+		{
+			7,
+			10
+		},
+		{
+			7,
+			12
+		},
+		{
+			7,
+			13
+		},
+		{
+			7,
+			21
+		}
+	},
+	open_need = {
+		60362
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60366] = {
+	name = "技術理論研究Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#92fc63>「技術理論研究Ⅰ」を完了する必要がある</color>
+<color=#a2a2a2>基本設計の次は修正·改善·最適化。初期段階で実現できなかったアイデアを実現させる最大のチャンスが訪れる。</color>
+
+――「科学研究」で任意の研究項目を<color=#92fc63>12回</color>完了する]],
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60366,
+	target_num = 12,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {
+		60363
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60367] = {
+	name = "超越技術設計Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>技術理論と実戦データ、堅実な設計と大胆な発想を組み合わせた特別計画（プライオリティプラン）艦の設計がついに完成に近づいた。残った問題点を解決し、最高の完成度を目指そう。</color>\n\n――空母改造図T3を<color=#92fc63>8枚</color>集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18033",
+	scene = "",
+	id = 60367,
+	target_num = 8,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60368] = {
+	name = "艦体建造",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>長きにわたる設計作業はついに完了した。残るは艦体の建造のみ。さあ、特別計画艦を完成させよ！シャンパンを開ける準備も忘れずに！</color>\n\n――資金<color=#92fc63>50000</color>を集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1002,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1",
+	scene = "",
+	id = 60368,
+	target_num = 50000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60369] = {
+	name = "艦体建造Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>長きにわたる設計作業はついに完了した。残るは艦体の建造のみ。さあ、特別計画艦を完成させよ！シャンパンを開ける準備も忘れずに！</color>\n\n――メンタルキューブ<color=#92fc63>10個</color>を集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "20001",
+	scene = "",
+	id = 60369,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60371] = {
+	name = "贝亚德开启研发前置任务",
+	guild_coin_award = 0,
+	award = 0,
+	type = 9,
+	desc = "",
+	count_inherit = 0,
+	sub_type = 1050,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "8",
+	scene = "",
+	id = 60371,
+	target_num = 230,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60372] = {
+	name = "戦術データ収集Ⅰ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>開発作業を円滑に進めるためには、十分な実験データの入手が必要不可欠であり、蓄積された実戦経験が最も有効だと考えられる。</color>\n\n――艦隊を出撃させ、アイリスもしくはヴィシア所属前衛艦隊の累計獲得経験値を<color=#92fc63>1000000</color>蓄積させる",
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60372,
+	target_num = 1000000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			8,
+			1
+		},
+		{
+			8,
+			2
+		},
+		{
+			8,
+			3
+		},
+		{
+			8,
+			18
+		},
+		{
+			8,
+			19
+		},
+		{
+			8,
+			20
+		},
+		{
+			9,
+			1
+		},
+		{
+			9,
+			2
+		},
+		{
+			9,
+			3
+		},
+		{
+			9,
+			18
+		},
+		{
+			9,
+			19
+		},
+		{
+			9,
+			20
+		}
+	},
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60373] = {
+	name = "技術理論研究Ⅰ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>開発による具現化には技術投資が欠かせない。基礎研究の成果を先端技術に応用できれば、開発を大いに加速させられるはずだ。</color>\n\n――「科学研究」で任意の研究項目を<color=#92fc63>5回</color>完了する",
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60373,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60374] = {
+	name = "超越技術設計Ⅰ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>戦術データによるフィードバックと最先端の技術理論を組み合わせ、開発はようやく製図段階に進むことができた。しかし、設計の細部を詰めるには既存の図面設計との比較を徹底的に行わなければならない。</color>\n\n――巡洋改造図T2を<color=#92fc63>10枚</color>集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18012",
+	scene = "",
+	id = 60374,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60375] = {
+	name = "戦術データ収集Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#92fc63>「戦術データ収集Ⅰ」を完了する必要がある</color>
+<color=#a2a2a2>図面設計の初稿が完成した。カタログスペックは果たしてどこまで実現できるのか、その検証にはさらなる戦術データの収集が必要不可欠である。</color>
+
+――艦隊を出撃させ、アイリスもしくはヴィシア所属前衛艦隊の累計獲得経験値を<color=#92fc63>2000000</color>蓄積させる]],
+	count_inherit = 0,
+	sub_type = 1041,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 60375,
+	target_num = 2000000,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			8,
+			1
+		},
+		{
+			8,
+			2
+		},
+		{
+			8,
+			3
+		},
+		{
+			8,
+			18
+		},
+		{
+			8,
+			19
+		},
+		{
+			8,
+			20
+		},
+		{
+			9,
+			1
+		},
+		{
+			9,
+			2
+		},
+		{
+			9,
+			3
+		},
+		{
+			9,
+			18
+		},
+		{
+			9,
+			19
+		},
+		{
+			9,
+			20
+		}
+	},
+	open_need = {
+		60372
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60376] = {
+	name = "技術理論研究Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = [[
+<color=#92fc63>「技術理論研究Ⅰ」を完了する必要がある</color>
+<color=#a2a2a2>基本設計の次は修正·改善·最適化。初期段階で実現できなかったアイデアを実現させる最大のチャンスが訪れる。</color>
+
+――「科学研究」で任意の研究項目を<color=#92fc63>8回</color>完了する]],
+	count_inherit = 0,
+	sub_type = 110,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 60376,
+	target_num = 8,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {
+		60373
+	},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60377] = {
+	name = "超越技術設計Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>技術理論と実戦データ、堅実な設計と大胆な発想を組み合わせた特別計画（プライオリティプラン）艦の設計がついに完成に近づいた。残った問題点を解決し、最高の完成度を目指そう。</color>\n\n――巡洋改造図T3を<color=#92fc63>5枚</color>集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "18013",
+	scene = "",
+	id = 60377,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60378] = {
+	name = "艦体建造",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>長きにわたる設計作業はついに完了した。残るは艦体の建造のみ。さあ、特別計画艦を完成させよ！シャンパンを開ける準備も忘れずに！</color>\n\n――資金<color=#92fc63>20000</color>を集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1002,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1",
+	scene = "",
+	id = 60378,
+	target_num = 20000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[60379] = {
+	name = "艦体建造Ⅱ",
+	guild_coin_award = 0,
+	award = 0,
+	type = 8,
+	desc = "<color=#a2a2a2>長きにわたる設計作業はついに完了した。残るは艦体の建造のみ。さあ、特別計画艦を完成させよ！シャンパンを開ける準備も忘れずに！</color>\n\n――メンタルキューブ<color=#92fc63>5個</color>を集める（「完了」をタップすると消費されます）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 30,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "20001",
+	scene = "",
+	id = 60379,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {}
+}
+_G.pg.base.task_data_template[500021] = {
+	name = "守りし剣は完璧なり",
+	guild_coin_award = 0,
+	award = 500021,
+	type = 5,
+	desc = "魚雷天ぷらを3個準備する（消費）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "aersasi",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "50003",
+	next_task = "500022",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "AERSASI1",
+	id = 500021,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	},
+	scene = {
+		"BACKYARD"
+	}
+}
+_G.pg.base.task_data_template[500022] = {
+	name = "秘書艦だから大丈夫……？",
+	guild_coin_award = 0,
+	award = 500022,
+	type = 5,
+	desc = "任意の艦を10回強化する",
+	count_inherit = 0,
+	sub_type = 34,
+	target_id_2 = "",
+	story_icon = "aersasi",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "AERSASI2",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500023",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 500022,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500023] = {
+	name = "カッコいい…アルザス？",
+	guild_coin_award = 0,
+	award = 500023,
+	type = 5,
+	desc = "アルザスを含めた艦隊で出撃し、20回勝利する",
+	count_inherit = 0,
+	sub_type = 18,
+	target_id_2 = "",
+	story_icon = "aersasi",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "AERSASI3",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500024",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "80503",
+	scene = "",
+	id = 500023,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500024] = {
+	name = "室外訓練…開始！",
+	guild_coin_award = 0,
+	award = 500024,
+	type = 5,
+	desc = "燃料を500消費する",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "aersasi",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "AERSASI4",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500025",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 500024,
+	target_num = 500,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500025] = {
+	name = "アイス・クールダウン！",
+	guild_coin_award = 0,
+	award = 500025,
+	type = 5,
+	desc = "アルザスの親密度が100に到達",
+	count_inherit = 0,
+	sub_type = 1012,
+	target_id_2 = "",
+	story_icon = "aersasi",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "AERSASI5",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500026",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "80503",
+	scene = "",
+	id = 500025,
+	target_num = 10000,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			5
+		},
+		{
+			2,
+			18023,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[500026] = {
+	name = "減感ソリューション！",
+	guild_coin_award = 0,
+	award = 500026,
+	type = 5,
+	desc = "アルザスを3回限界突破する",
+	count_inherit = 0,
+	sub_type = 33,
+	target_id_2 = "",
+	story_icon = "aersasi",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "AERSASI6",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500027",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "80503",
+	scene = "",
+	id = 500026,
+	target_num = 6,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			10
+		},
+		{
+			2,
+			18023,
+			2
+		}
+	}
+}
+_G.pg.base.task_data_template[500027] = {
+	name = "最終…手段？",
+	guild_coin_award = 0,
+	award = 500027,
+	type = 5,
+	desc = "アルザスのレベルが100に到達",
+	count_inherit = 0,
+	sub_type = 1013,
+	target_id_2 = "",
+	story_icon = "aersasi",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "AERSASI7",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "80503",
+	scene = "",
+	id = 500027,
+	target_num = 100,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			10
+		},
+		{
+			2,
+			16004,
+			1
+		}
 	}
 }

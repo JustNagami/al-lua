@@ -41,8 +41,8 @@ function var_0_0.OnInit(arg_4_0)
 end
 
 function var_0_0.InitTransformMapBtn(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
-	onButton(arg_5_0.sceneParent, arg_5_1, function()
-		if arg_5_0.sceneParent:isfrozen() then
+	onButton(arg_5_0, arg_5_1, function()
+		if arg_5_0:isfrozen() then
 			return
 		end
 
@@ -69,28 +69,31 @@ function var_0_0.InitTransformMapBtn(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
 	end)
 end
 
-function var_0_0.PostUpdateMap(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_0.contextData.map:getConfig("type") == Map.ACT_EXTRA
+function var_0_0.UpdateButtons(arg_10_0)
+	var_0_0.super.UpdateButtons(arg_10_0)
+
+	local var_10_0 = arg_10_0.contextData.map
+	local var_10_1 = var_10_0:getConfig("type") == Map.ACT_EXTRA
 
 	setActive(arg_10_0.buttonUp, false)
 	setActive(arg_10_0.effectUp, false)
 	setActive(arg_10_0.buttonDown, false)
 	setActive(arg_10_0.effectDown, false)
 
-	if not var_10_0 then
+	if not var_10_1 then
 		setActive(arg_10_0.sceneParent.btnPrev, false)
 		setActive(arg_10_0.sceneParent.btnNext, false)
 
-		local var_10_1 = getProxy(ChapterProxy):getMapsByActivities()
-		local var_10_2 = _.detect(var_10_1, function(arg_11_0)
-			return arg_11_0.id == arg_10_1.id + 1
+		local var_10_2 = getProxy(ChapterProxy):getMapsByActivities()
+		local var_10_3 = _.detect(var_10_2, function(arg_11_0)
+			return arg_11_0.id == var_10_0.id + 1
 		end)
-		local var_10_3 = _.detect(var_10_1, function(arg_12_0)
-			return arg_12_0.id == arg_10_1.id - 1
+		local var_10_4 = _.detect(var_10_2, function(arg_12_0)
+			return arg_12_0.id == var_10_0.id - 1
 		end)
 
-		setActive(arg_10_0.buttonDown, var_10_2)
-		setActive(arg_10_0.buttonUp, var_10_3)
+		setActive(arg_10_0.buttonDown, var_10_3)
+		setActive(arg_10_0.buttonUp, var_10_4)
 		LeanTween.cancel(go(arg_10_0.buttonUp), true)
 		LeanTween.cancel(go(arg_10_0.buttonDown), true)
 	end
@@ -189,101 +192,62 @@ function var_0_0.UpdateMapItem(arg_13_0, arg_13_1, arg_13_2)
 	end
 
 	local var_13_21 = findTF(var_13_1, "triesLimit")
+	local var_13_22 = arg_13_2:isTriesLimit()
 
-	setActive(var_13_21, false)
+	setActive(var_13_21, var_13_22)
 
-	if arg_13_2:isTriesLimit() then
-		local var_13_22 = arg_13_2:getConfig("count")
-		local var_13_23 = var_13_22 - arg_13_2:getTodayDefeatCount() .. "/" .. var_13_22
+	if var_13_22 then
+		local var_13_23 = arg_13_2:getConfig("count")
+		local var_13_24 = var_13_23 - arg_13_2:getTodayDefeatCount() .. "/" .. var_13_23
 
 		setText(var_13_21:Find("label"), i18n("levelScene_chapter_count_tip"))
-		setText(var_13_21:Find("Text"), setColorStr(var_13_23, var_13_22 <= arg_13_2:getTodayDefeatCount() and COLOR_RED or COLOR_GREEN))
+		setText(var_13_21:Find("Text"), setColorStr(var_13_24, var_13_23 <= arg_13_2:getTodayDefeatCount() and COLOR_RED or COLOR_GREEN))
 	end
 
-	local var_13_24 = arg_13_2:GetDailyBonusQuota()
-	local var_13_25 = findTF(var_13_1, "mark")
+	local var_13_25 = arg_13_2:GetDailyBonusQuota()
+	local var_13_26 = findTF(var_13_1, "mark")
 
-	setActive(var_13_25:Find("bonus"), var_13_24)
-	setActive(var_13_25, var_13_24)
+	setActive(var_13_26:Find("bonus"), var_13_25)
+	setActive(var_13_26, var_13_25)
 
-	if var_13_24 then
-		local var_13_26 = var_13_25:GetComponent(typeof(CanvasGroup))
-		local var_13_27 = arg_13_0.sceneParent.contextData.map:getConfig("type") == Map.ACTIVITY_HARD and "bonus_us_hard" or "bonus_us"
+	if var_13_25 then
+		local var_13_27 = var_13_26:GetComponent(typeof(CanvasGroup))
+		local var_13_28 = arg_13_0.contextData.map:getConfig("type") == Map.ACTIVITY_HARD and "bonus_us_hard" or "bonus_us"
 
-		arg_13_0.sceneParent.loader:GetSprite("ui/levelmainscene_atlas", var_13_27, var_13_25:Find("bonus"))
-		LeanTween.cancel(go(var_13_25), true)
+		arg_13_0.sceneParent.loader:GetSprite("ui/levelmainscene_atlas", var_13_28, var_13_26:Find("bonus"))
+		LeanTween.cancel(go(var_13_26), true)
 
-		local var_13_28 = var_13_25.anchoredPosition.y
+		local var_13_29 = var_13_26.anchoredPosition.y
 
-		var_13_26.alpha = 0
+		var_13_27.alpha = 0
 
-		LeanTween.value(go(var_13_25), 0, 1, 0.2):setOnUpdate(System.Action_float(function(arg_14_0)
-			var_13_26.alpha = arg_14_0
+		LeanTween.value(go(var_13_26), 0, 1, 0.2):setOnUpdate(System.Action_float(function(arg_14_0)
+			var_13_27.alpha = arg_14_0
 
-			local var_14_0 = var_13_25.anchoredPosition
+			local var_14_0 = var_13_26.anchoredPosition
 
-			var_14_0.y = var_13_28 * arg_14_0
-			var_13_25.anchoredPosition = var_14_0
+			var_14_0.y = var_13_29 * arg_14_0
+			var_13_26.anchoredPosition = var_14_0
 		end)):setOnComplete(System.Action(function()
-			var_13_26.alpha = 1
+			var_13_27.alpha = 1
 
-			local var_15_0 = var_13_25.anchoredPosition
+			local var_15_0 = var_13_26.anchoredPosition
 
-			var_15_0.y = var_13_28
-			var_13_25.anchoredPosition = var_15_0
+			var_15_0.y = var_13_29
+			var_13_26.anchoredPosition = var_15_0
 		end)):setEase(LeanTweenType.easeOutSine):setDelay(0.7)
 	end
 
-	local var_13_29 = arg_13_2.id
+	local var_13_30 = arg_13_2.id
 
-	onButton(arg_13_0.sceneParent, var_13_1, function()
-		if arg_13_0:InvokeParent("isfrozen") then
+	onButton(arg_13_0, var_13_1, function()
+		if arg_13_0.chaptersInBackAnimating[var_13_30] then
 			return
 		end
 
-		if arg_13_0.chaptersInBackAnimating[var_13_29] then
-			return
-		end
+		local var_16_0 = arg_13_1.localPosition
 
-		local var_16_0 = getProxy(ChapterProxy):getChapterById(var_13_29)
-
-		if not var_16_0:isUnlock() then
-			local var_16_1 = var_16_0:getPrevChapterName()
-
-			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_tracking_error_pre", var_16_1))
-
-			return
-		end
-
-		if not getProxy(ChapterProxy):getMapById(var_16_0:getConfig("map")):isRemaster() and not var_16_0:inActTime() then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("battle_levelScene_close"))
-
-			return
-		end
-
-		local var_16_2 = var_16_0:getConfig("unlocklevel")
-
-		if var_16_2 > arg_13_0.sceneParent.player.level then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_chapter_level_limit", var_16_2))
-
-			return
-		end
-
-		local var_16_3 = getProxy(ChapterProxy):getActiveChapter(true)
-
-		if var_16_3 and var_16_3.id ~= var_13_29 then
-			arg_13_0:InvokeParent("emit", LevelMediator2.ON_STRATEGYING_CHAPTER)
-
-			return
-		end
-
-		if var_16_0.active then
-			arg_13_0:InvokeParent("switchToChapter", var_16_0)
-		else
-			local var_16_4 = arg_13_1.localPosition
-
-			arg_13_0:InvokeParent("displayChapterPanel", var_16_0, Vector3(var_16_4.x - 10, var_16_4.y + 150))
-		end
+		arg_13_0:TryOpenChapterInfo(var_13_30, Vector3(var_16_0.x - 10, var_16_0.y + 150))
 	end, SFX_UI_WEIGHANCHOR_SELECT)
 end
 

@@ -1587,5 +1587,25 @@ pg.voice_actor_CN = {
 	[415] = {
 		code = 415,
 		actor_name = "鷲見友美ジェナ"
+	},
+	[416] = {
+		code = 416,
+		actor_name = "伊駒ゆりえ"
+	},
+	[417] = {
+		code = 417,
+		actor_name = "立花日菜"
+	},
+	[418] = {
+		code = 418,
+		actor_name = "潘めぐみ"
+	},
+	[419] = {
+		code = 419,
+		actor_name = "宮咲あかり"
+	},
+	[420] = {
+		code = 420,
+		actor_name = "平山笑美"
 	}
 }

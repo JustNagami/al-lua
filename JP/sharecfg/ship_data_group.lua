@@ -1364,6 +1364,9 @@ pg.ship_data_group = setmetatable({
 		[40702] = {
 			385
 		},
+		[40813] = {
+			650
+		},
 		[40810] = {
 			484
 		},
@@ -1399,9 +1402,6 @@ pg.ship_data_group = setmetatable({
 		},
 		[40812] = {
 			528
-		},
-		[40813] = {
-			650
 		},
 		[50101] = {
 			253
@@ -1712,6 +1712,9 @@ pg.ship_data_group = setmetatable({
 		[90112] = {
 			481
 		},
+		[90114] = {
+			653
+		},
 		[90201] = {
 			456
 		},
@@ -1724,8 +1727,14 @@ pg.ship_data_group = setmetatable({
 		[90302] = {
 			455
 		},
+		[90303] = {
+			654
+		},
 		[90401] = {
 			352
+		},
+		[90402] = {
+			652
 		},
 		[90501] = {
 			353
@@ -2042,6 +2051,21 @@ pg.ship_data_group = setmetatable({
 		[99902] = {
 			20032
 		},
+		[19905] = {
+			20033
+		},
+		[39907] = {
+			20034
+		},
+		[69902] = {
+			20035
+		},
+		[79902] = {
+			20036
+		},
+		[89904] = {
+			20037
+		},
 		[970701] = {
 			30001
 		},
@@ -2146,6 +2170,9 @@ pg.ship_data_group = setmetatable({
 		},
 		[970304] = {
 			30035
+		},
+		[970106] = {
+			30036
 		}
 	},
 	get_id_list_by_handbook_type = {
@@ -2604,6 +2631,7 @@ pg.ship_data_group = setmetatable({
 			252,
 			482,
 			385,
+			650,
 			484,
 			343,
 			387,
@@ -2616,7 +2644,6 @@ pg.ship_data_group = setmetatable({
 			386,
 			344,
 			528,
-			650,
 			253,
 			254,
 			255,
@@ -2720,11 +2747,14 @@ pg.ship_data_group = setmetatable({
 			394,
 			556,
 			481,
+			653,
 			456,
 			598,
 			524,
 			455,
+			654,
 			352,
+			652,
 			353,
 			604,
 			418,
@@ -2833,7 +2863,12 @@ pg.ship_data_group = setmetatable({
 			20029,
 			20030,
 			20031,
-			20032
+			20032,
+			20033,
+			20034,
+			20035,
+			20036,
+			20037
 		},
 		{
 			30001,
@@ -2870,7 +2905,8 @@ pg.ship_data_group = setmetatable({
 			30032,
 			30033,
 			30034,
-			30035
+			30035,
+			30036
 		}
 	},
 	all = {
@@ -3328,6 +3364,7 @@ pg.ship_data_group = setmetatable({
 		252,
 		482,
 		385,
+		650,
 		484,
 		343,
 		387,
@@ -3340,7 +3377,6 @@ pg.ship_data_group = setmetatable({
 		386,
 		344,
 		528,
-		650,
 		253,
 		254,
 		255,
@@ -3444,11 +3480,14 @@ pg.ship_data_group = setmetatable({
 		394,
 		556,
 		481,
+		653,
 		456,
 		598,
 		524,
 		455,
+		654,
 		352,
+		652,
 		353,
 		604,
 		418,
@@ -3554,6 +3593,11 @@ pg.ship_data_group = setmetatable({
 		20030,
 		20031,
 		20032,
+		20033,
+		20034,
+		20035,
+		20036,
+		20037,
 		30001,
 		30002,
 		30003,
@@ -3588,7 +3632,8 @@ pg.ship_data_group = setmetatable({
 		30032,
 		30033,
 		30034,
-		30035
+		30035,
+		30036
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -16632,6 +16677,17 @@ pg.base.ship_data_group = {
 					""
 				},
 				0
+			},
+			{
+				"小型艦建造",
+				{
+					"GETBOAT",
+					{
+						projectName = "light",
+						page = 1
+					}
+				},
+				0
 			}
 		}
 	},
@@ -16662,6 +16718,16 @@ pg.base.ship_data_group = {
 				"イベント：駆けよ 碧海の吹き風",
 				{
 					""
+				},
+				0
+			},
+			{
+				"特別補給（ランダム出現）",
+				{
+					"SHOP",
+					{
+						warp = "supplies"
+					}
 				},
 				0
 			}
@@ -17928,9 +17994,31 @@ pg.base.ship_data_group = {
 		trans_skill = {},
 		description = {
 			{
-				"イベント：駆けよ 碧海の吹き風",
+				"限定イベント：駆けよ 碧海の吹き風",
 				{
 					""
+				},
+				0
+			},
+			{
+				"大型艦建造・特型艦建造",
+				{
+					"GETBOAT",
+					{
+						projectName = "special",
+						page = 1
+					}
+				},
+				0
+			},
+			{
+				"常設Uレア艦船交換",
+				{
+					"GETBOAT",
+					{
+						projectName = "heavy",
+						page = 1
+					}
 				},
 				0
 			}
@@ -18075,6 +18163,17 @@ pg.base.ship_data_group = {
 				"イベント：駆けよ 碧海の吹き風",
 				{
 					""
+				},
+				0
+			},
+			{
+				"小型艦建造",
+				{
+					"GETBOAT",
+					{
+						projectName = "light",
+						page = 1
+					}
 				},
 				0
 			}
@@ -18872,6 +18971,17 @@ pg.base.ship_data_group = {
 				"イベント：駆けよ 碧海の吹き風",
 				{
 					""
+				},
+				0
+			},
+			{
+				"大型艦建造",
+				{
+					"GETBOAT",
+					{
+						projectName = "heavy",
+						page = 1
+					}
 				},
 				0
 			}
@@ -21088,6 +21198,17 @@ pg.base.ship_data_group = {
 				"イベント：駆けよ 碧海の吹き風",
 				{
 					""
+				},
+				0
+			},
+			{
+				"特型艦建造",
+				{
+					"GETBOAT",
+					{
+						projectName = "special",
+						page = 1
+					}
 				},
 				0
 			}
@@ -23789,7 +23910,7 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
-	[484] = {
+	[650] = {
 		type = 8,
 		redirect_id = 101,
 		hide = 0,
@@ -23797,6 +23918,38 @@ pg.base.ship_data_group = {
 		trans_skin = 0,
 		handbook_type = 0,
 		index_id = 457,
+		code = 650,
+		group_type = 40813,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"D",
+			"S",
+			"E",
+			"D",
+			"E",
+			"D"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"イベント：リトル学園へようこそ",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[484] = {
+		type = 8,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 4,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 458,
 		code = 484,
 		group_type = 40810,
 		trans_type = 0,
@@ -23839,7 +23992,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 458,
+		index_id = 459,
 		code = 343,
 		group_type = 40802,
 		trans_type = 0,
@@ -23892,7 +24045,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 459,
+		index_id = 460,
 		code = 387,
 		group_type = 40805,
 		trans_type = 0,
@@ -23944,7 +24097,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 460,
+		index_id = 461,
 		code = 341,
 		group_type = 40801,
 		trans_type = 0,
@@ -23980,7 +24133,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 461,
+		index_id = 462,
 		code = 467,
 		group_type = 40809,
 		trans_type = 0,
@@ -24032,7 +24185,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 462,
+		index_id = 463,
 		code = 399,
 		group_type = 40806,
 		trans_type = 0,
@@ -24068,7 +24221,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 463,
+		index_id = 464,
 		code = 416,
 		group_type = 40808,
 		trans_type = 0,
@@ -24111,7 +24264,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 464,
+		index_id = 465,
 		code = 492,
 		group_type = 40811,
 		trans_type = 0,
@@ -24143,7 +24296,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 465,
+		index_id = 466,
 		code = 400,
 		group_type = 40807,
 		trans_type = 0,
@@ -24179,7 +24332,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 466,
+		index_id = 467,
 		code = 386,
 		group_type = 40804,
 		trans_type = 0,
@@ -24231,7 +24384,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 467,
+		index_id = 468,
 		code = 344,
 		group_type = 40803,
 		trans_type = 0,
@@ -24283,7 +24436,7 @@ pg.base.ship_data_group = {
 		nationality = 4,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 468,
+		index_id = 469,
 		code = 528,
 		group_type = 40812,
 		trans_type = 0,
@@ -24301,38 +24454,6 @@ pg.base.ship_data_group = {
 		description = {
 			{
 				"イベント：遡望せし虹彩の塔",
-				{
-					""
-				},
-				0
-			}
-		}
-	},
-	[650] = {
-		type = 8,
-		redirect_id = 101,
-		hide = 0,
-		nationality = 4,
-		trans_skin = 0,
-		handbook_type = 0,
-		index_id = 469,
-		code = 650,
-		group_type = 40813,
-		trans_type = 0,
-		share_group_id = {},
-		property_hexagon = {
-			"D",
-			"S",
-			"E",
-			"D",
-			"E",
-			"D"
-		},
-		trans_radar_chart = {},
-		trans_skill = {},
-		description = {
-			{
-				"イベント：リトル学園へようこそ",
 				{
 					""
 				},
@@ -28330,6 +28451,38 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
+	[653] = {
+		type = 1,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 9,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 573,
+		code = 653,
+		group_type = 90114,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"C",
+			"E",
+			"A",
+			"D",
+			"D"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"イベント：夢幻の間奏曲",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
 	[456] = {
 		type = 2,
 		redirect_id = 101,
@@ -28337,7 +28490,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 573,
+		index_id = 574,
 		code = 456,
 		group_type = 90201,
 		trans_type = 0,
@@ -28379,7 +28532,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 574,
+		index_id = 575,
 		code = 598,
 		group_type = 90202,
 		trans_type = 0,
@@ -28411,7 +28564,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 575,
+		index_id = 576,
 		code = 524,
 		group_type = 90301,
 		trans_type = 0,
@@ -28454,7 +28607,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 576,
+		index_id = 577,
 		code = 455,
 		group_type = 90302,
 		trans_type = 0,
@@ -28490,6 +28643,38 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
+	[654] = {
+		type = 3,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 9,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 578,
+		code = 654,
+		group_type = 90303,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"B",
+			"B",
+			"E",
+			"C",
+			"B",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"イベント：夢幻の間奏曲",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
 	[352] = {
 		type = 4,
 		redirect_id = 101,
@@ -28497,7 +28682,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 577,
+		index_id = 579,
 		code = 352,
 		group_type = 90401,
 		trans_type = 0,
@@ -28533,6 +28718,38 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
+	[652] = {
+		type = 4,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 9,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 580,
+		code = 652,
+		group_type = 90402,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"C",
+			"D",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"イベント：夢幻の間奏曲",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
 	[353] = {
 		type = 5,
 		redirect_id = 101,
@@ -28540,7 +28757,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 578,
+		index_id = 581,
 		code = 353,
 		group_type = 90501,
 		trans_type = 0,
@@ -28592,7 +28809,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 579,
+		index_id = 582,
 		code = 604,
 		group_type = 90502,
 		trans_type = 0,
@@ -28624,7 +28841,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 580,
+		index_id = 583,
 		code = 418,
 		group_type = 90503,
 		trans_type = 0,
@@ -28669,7 +28886,7 @@ pg.base.ship_data_group = {
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 581,
+		index_id = 584,
 		code = 555,
 		group_type = 90701,
 		trans_type = 0,
@@ -28712,7 +28929,7 @@ pg.base.ship_data_group = {
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 582,
+		index_id = 585,
 		code = 571,
 		group_type = 960001,
 		trans_type = 0,
@@ -28754,7 +28971,7 @@ pg.base.ship_data_group = {
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 583,
+		index_id = 586,
 		code = 613,
 		group_type = 960002,
 		trans_type = 0,
@@ -28786,7 +29003,7 @@ pg.base.ship_data_group = {
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 584,
+		index_id = 587,
 		code = 610,
 		group_type = 960003,
 		trans_type = 0,
@@ -28818,7 +29035,7 @@ pg.base.ship_data_group = {
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 585,
+		index_id = 588,
 		code = 611,
 		group_type = 960004,
 		trans_type = 0,
@@ -28850,7 +29067,7 @@ pg.base.ship_data_group = {
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 586,
+		index_id = 589,
 		code = 614,
 		group_type = 960005,
 		trans_type = 0,
@@ -28882,7 +29099,7 @@ pg.base.ship_data_group = {
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 587,
+		index_id = 590,
 		code = 612,
 		group_type = 960006,
 		trans_type = 0,
@@ -32047,6 +32264,181 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
+	[20033] = {
+		type = 1,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 1,
+		trans_skin = 0,
+		handbook_type = 2,
+		index_id = 20033,
+		code = 20033,
+		group_type = 19905,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"C",
+			"B",
+			"B",
+			"D",
+			"C"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"研究ドック",
+				{
+					"SHIPBLUEPRINT",
+					{
+						shipGroupId = 19905
+					}
+				},
+				0
+			}
+		}
+	},
+	[20034] = {
+		type = 5,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 3,
+		trans_skin = 0,
+		handbook_type = 2,
+		index_id = 20034,
+		code = 20034,
+		group_type = 39907,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"S",
+			"C",
+			"E",
+			"C",
+			"D",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"研究ドック",
+				{
+					"SHIPBLUEPRINT",
+					{
+						shipGroupId = 39907
+					}
+				},
+				0
+			}
+		}
+	},
+	[20035] = {
+		type = 3,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 6,
+		trans_skin = 0,
+		handbook_type = 2,
+		index_id = 20035,
+		code = 20035,
+		group_type = 69902,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"C",
+			"E",
+			"B",
+			"C",
+			"S"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"研究ドック",
+				{
+					"SHIPBLUEPRINT",
+					{
+						shipGroupId = 69902
+					}
+				},
+				0
+			}
+		}
+	},
+	[20036] = {
+		type = 7,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 7,
+		trans_skin = 0,
+		handbook_type = 2,
+		index_id = 20036,
+		code = 20036,
+		group_type = 79902,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"E",
+			"E",
+			"S",
+			"C",
+			"B",
+			"S"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"研究ドック",
+				{
+					"SHIPBLUEPRINT",
+					{
+						shipGroupId = 79902
+					}
+				},
+				0
+			}
+		}
+	},
+	[20037] = {
+		type = 2,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 8,
+		trans_skin = 0,
+		handbook_type = 2,
+		index_id = 20037,
+		code = 20037,
+		group_type = 89904,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"B",
+			"A",
+			"E",
+			"B",
+			"B",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"研究ドック",
+				{
+					"SHIPBLUEPRINT",
+					{
+						shipGroupId = 89904
+					}
+				},
+				0
+			}
+		}
+	},
 	[30001] = {
 		type = 7,
 		redirect_id = 101,
@@ -33257,6 +33649,41 @@ pg.base.ship_data_group = {
 					"METACHARACTER",
 					{
 						autoOpenShipConfigID = 9703041
+					}
+				},
+				0
+			}
+		}
+	},
+	[30036] = {
+		type = 1,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 97,
+		trans_skin = 0,
+		handbook_type = 3,
+		index_id = 30036,
+		code = 30036,
+		group_type = 970106,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"C",
+			"S",
+			"E",
+			"A",
+			"D",
+			"C"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"メタラボ・シーズン任務",
+				{
+					"METACHARACTER",
+					{
+						autoOpenShipConfigID = 9701061
 					}
 				},
 				0

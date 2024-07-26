@@ -48,7 +48,7 @@ function var_0_0.didEnter(arg_5_0)
 	onButton(arg_5_0, arg_5_0.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = i18n(arg_5_0.activity:getConfig("config_client").tips[3])
+			helps = i18n("cruise_task_help_" .. pg.battlepass_event_pt[arg_5_0.activity.id].map_name)
 		})
 	end, SFX_PANEL)
 
@@ -145,7 +145,7 @@ function var_0_0.didEnter(arg_5_0)
 
 	arg_5_0:updatePhaseInfo()
 	LoadImageSpriteAtlasAsync(Drop.New({
-		type = DROP_TYPE_RESOURCE,
+		type = DROP_TYPE_VITEM,
 		id = arg_5_0.ptId
 	}):getIcon(), "", arg_5_0.sliderPt:Find("icon"), true)
 	onButton(arg_5_0, arg_5_0.itemQuick, function()

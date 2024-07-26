@@ -57,7 +57,7 @@ function var_0_0.OnInit(arg_9_0)
 end
 
 function var_0_0.CommonToggleSetting(arg_10_0, arg_10_1, arg_10_2, arg_10_3, arg_10_4, arg_10_5)
-	setText(arg_10_1:Find("mask/Text"), arg_10_3)
+	setScrollText(arg_10_1:Find("mask/Text"), arg_10_3)
 
 	local var_10_0 = arg_10_1:Find("on")
 	local var_10_1 = arg_10_1:Find("off")
@@ -130,7 +130,7 @@ end
 function var_0_0.InitEnterStandbyModeTime(arg_18_0)
 	local var_18_0 = arg_18_0._tf:Find("time")
 
-	setText(var_18_0:Find("notify_tpl/mask/Text"), i18n("settings_enter_standby_mode_time"))
+	setScrollText(var_18_0:Find("notify_tpl/mask/Text"), i18n("settings_enter_standby_mode_time"))
 
 	local var_18_1 = {
 		[0] = var_18_0:Find("notify_tpl/1"),

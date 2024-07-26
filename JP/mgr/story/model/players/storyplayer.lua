@@ -31,6 +31,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.bgImage = arg_1_0:findTF("image", arg_1_0.bgPanel):GetComponent(typeof(Image))
 	arg_1_0.mainImg = arg_1_0._tf:GetComponent(typeof(Image))
 	arg_1_0.castPanel = arg_1_0:findTF("front/cast_panel")
+	arg_1_0.spAnimPanel = arg_1_0:findTF("front/sp_anim_panel")
 	arg_1_0.centerPanel = arg_1_0._tf:Find("center")
 	arg_1_0.actorPanel = arg_1_0:findTF("actor")
 	arg_1_0.dialoguePanel = arg_1_0:findTF("front/dialogue")
@@ -856,7 +857,7 @@ function var_0_0.ClearMoveNodes(arg_79_0, arg_79_1)
 		if iter_79_1:GetComponent(typeof(SpineAnimUI)) ~= nil then
 			PoolMgr.GetInstance():ReturnSpineChar(iter_79_1.name, iter_79_1.gameObject)
 		else
-			Destroy(iter_79_1.gameObject)
+			Destroy(arg_79_0.movePanel:GetChild(iter_79_0 - 1))
 		end
 	end
 
@@ -1321,6 +1322,7 @@ function var_0_0.PlayVoice(arg_110_0, arg_110_1)
 end
 
 function var_0_0.Reset(arg_113_0, arg_113_1, arg_113_2, arg_113_3)
+	setActive(arg_113_0.spAnimPanel, false)
 	setActive(arg_113_0.castPanel, false)
 	setActive(arg_113_0.bgPanel, false)
 	setActive(arg_113_0.dialoguePanel, false)

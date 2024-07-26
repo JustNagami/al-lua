@@ -87,6 +87,7 @@ pg.pay_data_display = setmetatable({
 		1014,
 		1015,
 		1016,
+		1017,
 		2001,
 		2002,
 		2003,
@@ -111,6 +112,11 @@ pg.pay_data_display = setmetatable({
 		2024,
 		2025,
 		2026,
+		2027,
+		2028,
+		2029,
+		2030,
+		2031,
 		5001,
 		5002,
 		5003,
@@ -8508,6 +8514,81 @@ pg.base.pay_data_display = {
 		limit_args = {},
 		drop_item = {}
 	},
+	[1017] = {
+		subject = "クルーズパス(24夏)",
+		limit_group = 0,
+		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
+		type = 0,
+		limit_arg = 1,
+		name = "クルーズパス(24夏)",
+		name_display = "クルーズパス(24夏)",
+		type_order = 4,
+		extra_gem = 0,
+		id = 1017,
+		money = 1200,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "battlepass_1",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.battlepass19",
+		first_pay_double = 0,
+		extra_service = 4,
+		descrip = "購入すると、シーズン任務進捗Pt1500を入手し、さらにSP報酬を開放",
+		airijp_id = "com.yostarjp.azurlane.seasonpass18",
+		extra_service_item = {
+			{
+				1,
+				4018,
+				1500
+			},
+			{
+				8,
+				65001,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					8,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					9,
+					30
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				1,
+				4018,
+				1500
+			}
+		},
+		sub_display = {
+			7018,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
 	[2001] = {
 		subject = "PR特別計画艦パック・Ⅰ期",
 		limit_group = 1,
@@ -8968,7 +9049,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name = "指揮官レベルアップパック",
 		name_display = "指揮官レベルアップパック",
-		type_order = 0,
+		type_order = 2,
 		extra_gem = 0,
 		id = 2009,
 		money = 650,
@@ -10134,7 +10215,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name = "お得パック(デイリー)",
 		name_display = "お得パック(デイリー)",
-		type_order = 0,
+		type_order = 3,
 		extra_gem = 0,
 		id = 2025,
 		money = 120,
@@ -10288,6 +10369,330 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40023,
+				1
+			}
+		}
+	},
+	[2027] = {
+		subject = "PR特別計画艦パック・Ⅳ期",
+		limit_group = 4,
+		descrip_extra = "此处不会被看到",
+		type = 0,
+		limit_arg = 0,
+		name = "PR特別計画艦パック·Ⅳ期",
+		name_display = "PR特別計画艦パック·Ⅳ期",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2027,
+		money = 2000,
+		tag = 2,
+		gem = 0,
+		limit_type = 3,
+		time = "always",
+		picture = "tech4_display",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.keyan",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "特別計画艦・Ⅳ期と交換できるアイテムなどを入手できます",
+		airijp_id = "com.yostarjp.azurlane.tech",
+		extra_service_item = {
+			{
+				2,
+				40139,
+				1
+			},
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				40139,
+				1
+			},
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {}
+	},
+	[2028] = {
+		subject = "PR艦船Ⅳ期交換アイテム＋強化ユニットセット",
+		limit_group = 4,
+		descrip_extra = "*既にPR艦船・Ⅳ期をすべて所持している場合、使用時にアイテムに変換されます（アイコンタップで確認）",
+		type = 0,
+		limit_arg = 1,
+		name = "PR艦船Ⅳ期交換アイテム＋強化ユニットセット",
+		name_display = "PR艦船Ⅳ期交換アイテム\n＋強化ユニットセット",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2028,
+		money = 2000,
+		tag = 2,
+		gem = 0,
+		limit_type = 3,
+		time = "always",
+		picture = "tech4_promotion",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.keyan10",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "内容",
+		airijp_id = "com.yostarjp.azurlane.tech10",
+		extra_service_item = {
+			{
+				2,
+				40139,
+				1
+			},
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				40139,
+				1
+			},
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40044,
+				1
+			}
+		}
+	},
+	[2029] = {
+		subject = "PR艦船Ⅳ期交換アイテム",
+		limit_group = 4,
+		descrip_extra = "*既にPR艦船・Ⅳ期をすべて所持している場合、使用時にアイテムに変換されます（アイコンタップで確認）",
+		type = 0,
+		limit_arg = 2,
+		name = "PR艦船Ⅳ期交換アイテム",
+		name_display = "PR艦船Ⅳ期交換アイテム",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2029,
+		money = 1200,
+		tag = 2,
+		gem = 0,
+		limit_type = 3,
+		time = "always",
+		picture = "tech4_normal",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.keyan11",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "内容",
+		airijp_id = "com.yostarjp.azurlane.tech11",
+		extra_service_item = {
+			{
+				2,
+				40139,
+				1
+			}
+		},
+		display = {
+			{
+				2,
+				40139,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40045,
+				1
+			}
+		}
+	},
+	[2030] = {
+		subject = "強化ユニット",
+		limit_group = 4,
+		descrip_extra = "購入すると指向型強化ユニット・Ⅳ期×343個を入手可能",
+		type = 0,
+		limit_arg = 3,
+		name = "PR特別計画艦Ⅳ期強化ユニットセット",
+		name_display = "強化ユニット",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2030,
+		money = 1000,
+		tag = 2,
+		gem = 0,
+		limit_type = 3,
+		time = "always",
+		picture = "tech4_promotion",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.keyan12",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "内容",
+		airijp_id = "com.yostarjp.azurlane.tech12",
+		extra_service_item = {
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				42030,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40046,
+				1
+			}
+		}
+	},
+	[2031] = {
+		subject = "選べるUR着せ替え福袋②",
+		limit_group = 0,
+		descrip_extra = "※購入したアイテムはメールボックスに送られます",
+		type = 0,
+		limit_arg = 1,
+		name = "選べるUR着せ替え福袋②",
+		name_display = "選べるUR着せ替え福袋②",
+		type_order = 0,
+		extra_gem = 0,
+		id = 2031,
+		money = 2600,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		sub_display = "",
+		picture = "daofeng_package",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.libao119",
+		first_pay_double = 0,
+		extra_service = 3,
+		descrip = "選べる着せ替えチケット、キューブ、経験値パックT2などを入手可能",
+		airijp_id = "com.yostarjp.azurlane.package119",
+		extra_service_item = {
+			{
+				2,
+				59553,
+				1
+			},
+			{
+				2,
+				20001,
+				40
+			},
+			{
+				1,
+				1,
+				30000
+			},
+			{
+				2,
+				16502,
+				50
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					7,
+					18
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					8,
+					14
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				59553,
+				1
+			},
+			{
+				2,
+				20001,
+				40
+			},
+			{
+				2,
+				16502,
+				50
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40047,
 				1
 			}
 		}

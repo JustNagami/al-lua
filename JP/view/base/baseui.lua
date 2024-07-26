@@ -16,6 +16,7 @@ var_0_0.ON_ITEM_EXTRA = "BaseUI.ON_ITEM_EXTRA"
 var_0_0.ON_SHIP = "BaseUI:ON_SHIP"
 var_0_0.ON_AWARD = "BaseUI:ON_AWARD"
 var_0_0.ON_ACHIEVE = "BaseUI:ON_ACHIEVE"
+var_0_0.ON_ACHIEVE_AUTO = "BaseUI:ON_ACHIEVE_AUTO"
 var_0_0.ON_WORLD_ACHIEVE = "BaseUI:ON_WORLD_ACHIEVE"
 var_0_0.ON_EQUIPMENT = "BaseUI:ON_EQUIPMENT"
 var_0_0.ON_SPWEAPON = "BaseUI:ON_SPWEAPON"
@@ -317,34 +318,7 @@ function var_0_0.enter(arg_34_0)
 		end)
 	end
 
-	local var_34_1 = false
-
-	if not IsNil(arg_34_0._tf:GetComponent(typeof(Animation))) then
-		arg_34_0.animTF = arg_34_0._tf
-	else
-		arg_34_0.animTF = arg_34_0:findTF("blur_panel")
-	end
-
-	if arg_34_0.animTF ~= nil then
-		local var_34_2 = arg_34_0.animTF:GetComponent(typeof(Animation))
-		local var_34_3 = arg_34_0.animTF:GetComponent(typeof(UIEventTrigger))
-
-		if var_34_2 ~= nil and var_34_3 ~= nil then
-			if var_34_2:get_Item("enter") == nil then
-				originalPrint("cound not found enter animation")
-			else
-				var_34_2:Play("enter")
-			end
-		elseif var_34_2 ~= nil then
-			originalPrint("cound not found [UIEventTrigger] component")
-		elseif var_34_3 ~= nil then
-			originalPrint("cound not found [Animation] component")
-		end
-	end
-
-	if not var_34_1 then
-		var_34_0()
-	end
+	arg_34_0:inOutAnim(true, var_34_0)
 end
 
 function var_0_0.closeView(arg_37_0)
@@ -382,116 +356,145 @@ function var_0_0.exit(arg_40_0)
 		arg_40_0:emit(var_0_0.DID_EXIT)
 	end
 
-	local var_40_1 = false
+	arg_40_0:inOutAnim(false, var_40_0)
+end
 
-	if not var_40_1 then
-		var_40_0()
+function var_0_0.inOutAnim(arg_42_0, arg_42_1, arg_42_2)
+	local var_42_0 = false
+
+	if arg_42_1 then
+		if not IsNil(arg_42_0._tf:GetComponent(typeof(Animation))) then
+			arg_42_0.animTF = arg_42_0._tf
+		else
+			arg_42_0.animTF = arg_42_0:findTF("blur_panel")
+		end
+
+		if arg_42_0.animTF ~= nil then
+			local var_42_1 = arg_42_0.animTF:GetComponent(typeof(Animation))
+			local var_42_2 = arg_42_0.animTF:GetComponent(typeof(UIEventTrigger))
+
+			if var_42_1 ~= nil and var_42_2 ~= nil then
+				if var_42_1:get_Item("enter") == nil then
+					originalPrint("cound not found enter animation")
+				else
+					var_42_1:Play("enter")
+				end
+			elseif var_42_1 ~= nil then
+				originalPrint("cound not found [UIEventTrigger] component")
+			elseif var_42_2 ~= nil then
+				originalPrint("cound not found [Animation] component")
+			end
+		end
+	end
+
+	if not var_42_0 then
+		arg_42_2()
 	end
 end
 
-function var_0_0.PlayExitAnimation(arg_42_0, arg_42_1)
-	local var_42_0 = arg_42_0._tf:GetComponent(typeof(Animation))
-	local var_42_1 = arg_42_0._tf:GetComponent(typeof(UIEventTrigger))
+function var_0_0.PlayExitAnimation(arg_43_0, arg_43_1)
+	local var_43_0 = arg_43_0._tf:GetComponent(typeof(Animation))
+	local var_43_1 = arg_43_0._tf:GetComponent(typeof(UIEventTrigger))
 
-	var_42_1.didExit:RemoveAllListeners()
-	var_42_1.didExit:AddListener(function()
-		var_42_1.didExit:RemoveAllListeners()
-		arg_42_1()
+	var_43_1.didExit:RemoveAllListeners()
+	var_43_1.didExit:AddListener(function()
+		var_43_1.didExit:RemoveAllListeners()
+		arg_43_1()
 	end)
-	var_42_0:Play("exit")
+	var_43_0:Play("exit")
 end
 
-function var_0_0.attach(arg_44_0, arg_44_1)
+function var_0_0.attach(arg_45_0, arg_45_1)
 	return
 end
 
-function var_0_0.ClearTweens(arg_45_0, arg_45_1)
-	arg_45_0:cleanManagedTween(arg_45_1)
+function var_0_0.ClearTweens(arg_46_0, arg_46_1)
+	arg_46_0:cleanManagedTween(arg_46_1)
 end
 
-function var_0_0.RemoveTempCache(arg_46_0)
-	local var_46_0 = arg_46_0:getUIName()
+function var_0_0.RemoveTempCache(arg_47_0)
+	local var_47_0 = arg_47_0:getUIName()
 
-	PoolMgr.GetInstance():DelTempCache(var_46_0)
+	PoolMgr.GetInstance():DelTempCache(var_47_0)
 end
 
-function var_0_0.detach(arg_47_0, arg_47_1)
-	arg_47_0._isLoaded = false
+function var_0_0.detach(arg_48_0, arg_48_1)
+	arg_48_0._isLoaded = false
 
-	pg.LayerWeightMgr.GetInstance():DelFromOverlay(arg_47_0._tf)
-	pg.DynamicBgMgr.GetInstance():ClearBg(arg_47_0:getUIName())
-	arg_47_0:disposeEvent()
-	arg_47_0:ClearTweens(false)
+	pg.LayerWeightMgr.GetInstance():DelFromOverlay(arg_48_0._tf)
+	pg.DynamicBgMgr.GetInstance():ClearBg(arg_48_0:getUIName())
+	arg_48_0:disposeEvent()
+	arg_48_0:ClearTweens(false)
 
-	arg_47_0._tf = nil
+	arg_48_0._tf = nil
 
-	local var_47_0 = PoolMgr.GetInstance()
-	local var_47_1 = arg_47_0:getUIName()
+	local var_48_0 = PoolMgr.GetInstance()
+	local var_48_1 = arg_48_0:getUIName()
 
-	if arg_47_0._go ~= nil and var_47_1 then
-		var_47_0:ReturnUI(var_47_1, arg_47_0._go)
+	if arg_48_0._go ~= nil and var_48_1 then
+		var_48_0:ReturnUI(var_48_1, arg_48_0._go)
 
-		arg_47_0._go = nil
+		arg_48_0._go = nil
 	end
 end
 
-function var_0_0.findGO(arg_48_0, arg_48_1, arg_48_2)
-	assert(arg_48_0._go, "game object should exist")
+function var_0_0.findGO(arg_49_0, arg_49_1, arg_49_2)
+	assert(arg_49_0._go, "game object should exist")
 
-	return findGO(arg_48_2 or arg_48_0._go, arg_48_1)
+	return findGO(arg_49_2 or arg_49_0._go, arg_49_1)
 end
 
-function var_0_0.findTF(arg_49_0, arg_49_1, arg_49_2)
-	assert(arg_49_0._tf, "transform should exist")
+function var_0_0.findTF(arg_50_0, arg_50_1, arg_50_2)
+	assert(arg_50_0._tf, "transform should exist")
 
-	return findTF(arg_49_2 or arg_49_0._tf, arg_49_1)
+	return findTF(arg_50_2 or arg_50_0._tf, arg_50_1)
 end
 
-function var_0_0.getTpl(arg_50_0, arg_50_1, arg_50_2)
-	local var_50_0 = arg_50_0:findTF(arg_50_1, arg_50_2)
+function var_0_0.getTpl(arg_51_0, arg_51_1, arg_51_2)
+	local var_51_0 = arg_51_0:findTF(arg_51_1, arg_51_2)
 
-	var_50_0:SetParent(arg_50_0._tf, false)
-	SetActive(var_50_0, false)
+	var_51_0:SetParent(arg_51_0._tf, false)
+	SetActive(var_51_0, false)
 
-	return var_50_0
+	return var_51_0
 end
 
-function var_0_0.setSpriteTo(arg_51_0, arg_51_1, arg_51_2, arg_51_3)
-	local var_51_0 = arg_51_2:GetComponent(typeof(Image))
+function var_0_0.setSpriteTo(arg_52_0, arg_52_1, arg_52_2, arg_52_3)
+	local var_52_0 = arg_52_2:GetComponent(typeof(Image))
 
-	var_51_0.sprite = arg_51_0:findTF(arg_51_1):GetComponent(typeof(Image)).sprite
+	var_52_0.sprite = arg_52_0:findTF(arg_52_1):GetComponent(typeof(Image)).sprite
 
-	if arg_51_3 then
-		var_51_0:SetNativeSize()
+	if arg_52_3 then
+		var_52_0:SetNativeSize()
 	end
 end
 
-function var_0_0.setImageAmount(arg_52_0, arg_52_1, arg_52_2)
-	arg_52_1:GetComponent(typeof(Image)).fillAmount = arg_52_2
+function var_0_0.setImageAmount(arg_53_0, arg_53_1, arg_53_2)
+	arg_53_1:GetComponent(typeof(Image)).fillAmount = arg_53_2
 end
 
-function var_0_0.setVisible(arg_53_0, arg_53_1)
-	arg_53_0:ShowOrHideResUI(arg_53_1)
+function var_0_0.setVisible(arg_54_0, arg_54_1)
+	arg_54_0:ShowOrHideResUI(arg_54_1)
 
-	if arg_53_1 then
-		arg_53_0:OnVisible()
+	if arg_54_1 then
+		arg_54_0:OnVisible()
 	else
-		arg_53_0:OnDisVisible()
+		arg_54_0:OnDisVisible()
 	end
 
-	setActiveViaLayer(arg_53_0._tf, arg_53_1)
+	setActiveViaLayer(arg_54_0._tf, arg_54_1)
 end
 
-function var_0_0.OnVisible(arg_54_0)
+function var_0_0.OnVisible(arg_55_0)
 	return
 end
 
-function var_0_0.OnDisVisible(arg_55_0)
+function var_0_0.OnDisVisible(arg_56_0)
 	return
 end
 
-function var_0_0.onBackPressed(arg_56_0)
-	arg_56_0:emit(var_0_0.ON_BACK_PRESSED)
+function var_0_0.onBackPressed(arg_57_0)
+	arg_57_0:emit(var_0_0.ON_BACK_PRESSED)
 end
 
 return var_0_0

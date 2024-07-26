@@ -482,7 +482,7 @@ function var_0_0.UpdateCrusing(arg_40_0, arg_40_1, arg_40_2, arg_40_3)
 
 	local var_40_3 = tf(arg_40_0:GetAndSet(arg_40_1.type, arg_40_0.container))
 	local var_40_4 = Drop.New({
-		type = DROP_TYPE_RESOURCE,
+		type = DROP_TYPE_VITEM,
 		id = var_40_1
 	})
 

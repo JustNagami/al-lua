@@ -27,6 +27,16 @@
 				"onRemove"
 			},
 			arg_list = {
+				tag = "naximofubeilianjiansu"
+			}
+		},
+		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
 				tag = "boertawaSP"
 			}
 		}

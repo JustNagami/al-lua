@@ -16,7 +16,7 @@ function var_0_0.preload(arg_2_0, arg_2_1)
 	local var_2_2 = {}
 
 	table.insert(var_2_2, function(arg_3_0)
-		local var_3_0 = CrusingMapInfo.VersionInfo[var_2_0:getConfig("config_client").map_name]
+		local var_3_0 = pg.battlepass_event_pt[var_2_0.id].crusing_map
 
 		var_2_1:GetPrefab("crusingmap/" .. var_3_0, "", true, function(arg_4_0)
 			arg_2_0.rtMap = tf(arg_4_0)
@@ -26,7 +26,7 @@ function var_0_0.preload(arg_2_0, arg_2_1)
 		end)
 	end)
 	table.insert(var_2_2, function(arg_5_0)
-		var_2_1:GetSpineChar(var_2_0:getConfig("config_client").spine_name, true, function(arg_6_0)
+		var_2_1:GetSpineChar(pg.battlepass_event_pt[var_2_0.id].spine_name, true, function(arg_6_0)
 			arg_2_0.rtModel = tf(arg_6_0)
 
 			arg_5_0()
@@ -125,7 +125,7 @@ function var_0_0.didEnter(arg_10_0)
 	onButton(arg_10_0, arg_10_0.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = i18n(arg_10_0.activity:getConfig("config_client").tips[2])
+			helps = i18n("battlepass_main_help_" .. pg.battlepass_event_pt[arg_10_0.activity.id].map_name)
 		})
 	end, SFX_PANEL)
 
@@ -162,10 +162,10 @@ function var_0_0.didEnter(arg_10_0)
 	end
 
 	GetComponent(arg_10_0.textTip, "RichText"):AddSprite("pt", GetSpriteFromAtlas(Drop.New({
-		type = DROP_TYPE_RESOURCE,
+		type = DROP_TYPE_VITEM,
 		id = arg_10_0.ptId
 	}):getIcon(), ""))
-	setText(arg_10_0.textTip, i18n(arg_10_0.activity:getConfig("config_client").tips[1]))
+	setText(arg_10_0.textTip, i18n("battlepass_main_tip_" .. pg.battlepass_event_pt[arg_10_0.activity.id].map_name))
 
 	local var_10_1 = arg_10_0.activity.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
 
@@ -209,7 +209,7 @@ function var_0_0.didEnter(arg_10_0)
 
 	arg_10_0:updateMapStatus()
 	LoadImageSpriteAtlasAsync(Drop.New({
-		type = DROP_TYPE_RESOURCE,
+		type = DROP_TYPE_VITEM,
 		id = arg_10_0.ptId
 	}):getIcon(), "", arg_10_0.sliderPt:Find("Text/icon"), true)
 	arg_10_0:updateMapWay()
@@ -223,8 +223,8 @@ function var_0_0.willExit(arg_24_0)
 	end
 
 	local var_24_0 = PoolMgr.GetInstance()
-	local var_24_1 = CrusingMapInfo.VersionInfo[arg_24_0.activity:getConfig("config_client").map_name]
-	local var_24_2 = arg_24_0.activity:getConfig("config_client").spine_name
+	local var_24_1 = pg.battlepass_event_pt[arg_24_0.activity.id].crusing_map
+	local var_24_2 = pg.battlepass_event_pt[arg_24_0.activity.id].spine_name
 
 	for iter_24_2, iter_24_3 in ipairs(arg_24_0.maps) do
 		setParent(iter_24_3.rtLine, iter_24_3._tf, true)
@@ -508,12 +508,12 @@ function var_0_0.openBuyPanel(arg_42_0)
 	local var_42_6 = var_42_5[1]
 	local var_42_7 = pg.battlepass_event_pt[var_42_6].pt
 	local var_42_8 = Drop.New({
-		type = DROP_TYPE_RESOURCE,
-		id = pg.battlepass_event_pt[var_42_6].pt,
+		type = DROP_TYPE_VITEM,
+		id = var_42_7,
 		count = var_42_5[2]
 	})
-	local var_42_9 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[var_42_6].drop_client_pay, function(arg_44_0)
-		return Drop.Create(arg_44_0)
+	local var_42_9 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[var_42_6].award_pay, function(arg_44_0)
+		return Drop.Create(pg.battlepass_event_award[arg_44_0].drop_client)
 	end))
 	local var_42_10 = var_42_1:getConfig("gem") + var_42_1:getConfig("extra_gem")
 	local var_42_11

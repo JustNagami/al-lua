@@ -114,7 +114,7 @@ end
 function var_0_0.AdjustChatPosition(arg_18_0, arg_18_1, arg_18_2)
 	local var_18_0 = arg_18_0.chatTxt
 
-	if #var_18_0.text > CHAT_POP_STR_LEN then
+	if #arg_18_2 > CHAT_POP_STR_LEN then
 		var_18_0.alignment = TextAnchor.MiddleLeft
 	else
 		var_18_0.alignment = TextAnchor.MiddleCenter

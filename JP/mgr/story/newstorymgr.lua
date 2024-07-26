@@ -260,7 +260,8 @@ function var_0_0._Init(arg_23_0, arg_23_1, arg_23_2)
 		BgStoryPlayer.New(arg_23_1),
 		CarouselPlayer.New(arg_23_1),
 		VedioStoryPlayer.New(arg_23_1),
-		CastStoryPlayer.New(arg_23_1)
+		CastStoryPlayer.New(arg_23_1),
+		SpAnimStoryPlayer.New(arg_23_1)
 	}
 	arg_23_0.setSpeedPanel = StorySetSpeedPanel.New(arg_23_0._tf)
 	arg_23_0.recordPanel = NewStoryRecordPanel.New()
@@ -726,7 +727,7 @@ function var_0_0.TrackingOption(arg_70_0, arg_70_1, arg_70_2)
 
 	local var_70_0 = arg_70_0:StoryName2StoryId(arg_70_0.storyScript:GetName())
 
-	TrackConst.StoryOption(var_70_0, arg_70_1 .. "_" .. arg_70_2 or 0)
+	TrackConst.StoryOption(var_70_0, arg_70_1 .. "_" .. (arg_70_2 or 0))
 end
 
 function var_0_0.ClearStoryEvent(arg_71_0)

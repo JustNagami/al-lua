@@ -1,5 +1,8 @@
 ﻿local var_0_0 = class("Live2dDrag")
 local var_0_1 = 4
+local var_0_2 = {
+	Live2D.DRAG_DOWN_ACTION
+}
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.live2dData = arg_1_2
@@ -185,14 +188,11 @@ function var_0_0.startDrag(arg_4_0)
 
 	if not arg_4_0._active then
 		arg_4_0._active = true
-
-		print("激活，id=" .. arg_4_0.id)
-
 		arg_4_0.mouseInputDown = Input.mousePosition
 		arg_4_0.mouseInputDownTime = Time.time
 		arg_4_0.triggerActionTime = 0
 
-		if arg_4_0.actionTrigger.type == Live2D.DRAG_DOWN_ACTION then
+		if table.contains(var_0_2, arg_4_0.actionTrigger.type) then
 			arg_4_0.actionListIndex = 1
 		end
 
@@ -321,22 +321,23 @@ function var_0_0.onEventCallback(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
 
 			if arg_15_0.actionTriggerActive.active_list and arg_15_0.actionListIndex <= #arg_15_0.actionTriggerActive.active_list then
 				var_15_0 = arg_15_0.actionTriggerActive.active_list[arg_15_0.actionListIndex]
+			else
+				var_15_0 = arg_15_0.actionTriggerActive
 			end
 
 			var_15_2 = var_15_6.focus or true
 			var_15_3 = var_15_6.target or nil
 			var_15_4 = var_15_6.react or nil
 
+			arg_15_0:triggerAction()
+
 			if arg_15_0.actionListIndex == #arg_15_0.actionTrigger.action_list then
-				arg_15_0:triggerAction()
 				arg_15_0:stopDrag()
 
 				arg_15_0.actionListIndex = 1
 			else
 				arg_15_0.actionListIndex = arg_15_0.actionListIndex + 1
 			end
-
-			print("id = " .. arg_15_0.id .. " action list index = " .. arg_15_0.actionListIndex)
 		elseif not arg_15_0.actionTrigger.action then
 			var_15_1 = arg_15_0:fillterAction(arg_15_0.actionTrigger.action)
 			var_15_0 = arg_15_0.actionTriggerActive
@@ -355,13 +356,15 @@ function var_0_0.onEventCallback(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
 
 		if var_15_0.idle then
 			if type(var_15_0.idle) == "number" then
-				if var_15_0.idle == arg_15_0.l2dIdleIndex and not var_15_0.repeatFlag then
+				if var_15_0.idle == arg_15_0.l2dIdleIndex and not var_15_0.repeat_flag then
 					return
 				end
-			elseif type(var_15_0.idle) == "table" and #var_15_0.idle == 1 and var_15_0.idle[1] == arg_15_0.l2dIdleIndex and not var_15_0.repeatFlag then
+			elseif type(var_15_0.idle) == "table" and #var_15_0.idle == 1 and var_15_0.idle[1] == arg_15_0.l2dIdleIndex and not var_15_0.repeat_flag then
 				return
 			end
 		end
+
+		print("执行aplly数据 id = " .. arg_15_0.id .. "播放action = " .. tostring(var_15_1) .. "active idle is " .. tostring(var_15_0.idle))
 
 		if var_15_3 then
 			arg_15_0:setTargetValue(var_15_3)
@@ -385,7 +388,7 @@ function var_0_0.onEventCallback(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
 	elseif arg_15_1 == Live2D.EVENT_ACTION_ABLE then
 		-- block empty
 	elseif arg_15_1 == Live2D.EVENT_CHANGE_IDLE_INDEX then
-		print("CHANGE idle")
+		print("change idle")
 	end
 
 	arg_15_0._eventCallback(arg_15_1, arg_15_2)
@@ -393,7 +396,7 @@ end
 
 function var_0_0.fillterAction(arg_17_0, arg_17_1)
 	if type(arg_17_1) == "table" then
-		return arg_17_1[math.random(1, #arg_17_0.actionTrigger.action)]
+		return arg_17_1[math.random(1, arg_17_1)]
 	else
 		return arg_17_1
 	end
@@ -786,7 +789,7 @@ function var_0_0.updateTrigger(arg_38_0)
 		end
 	elseif var_38_0 == Live2D.DRAG_DOWN_ACTION then
 		if arg_38_0._active then
-			if arg_38_0.firstActive then
+			if not arg_38_0.ableFalg then
 				arg_38_0.ableFalg = true
 
 				arg_38_0:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
@@ -795,6 +798,7 @@ function var_0_0.updateTrigger(arg_38_0)
 			end
 
 			if var_38_2 <= Time.time - arg_38_0.mouseInputDownTime then
+				print("触发按压动作")
 				arg_38_0:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
 					ableFlag = false
 				})
@@ -806,6 +810,16 @@ function var_0_0.updateTrigger(arg_38_0)
 						arg_38_0:onEventNotice(Live2D.ON_ACTION_DOWN)
 					end
 				end)
+
+				if arg_38_0.actionListIndex ~= 1 then
+					arg_38_0:setTriggerActionFlag(false)
+				end
+
+				arg_38_0.ableFalg = true
+
+				arg_38_0:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
+					ableFlag = true
+				})
 
 				arg_38_0.mouseInputDownTime = Time.time
 			end
@@ -961,6 +975,7 @@ function var_0_0.saveData(arg_47_0)
 	end
 
 	if arg_47_0.actionTrigger.type == Live2D.DRAG_CLICK_MANY then
+		print("保存actionListIndex" .. arg_47_0.actionListIndex)
 		Live2dConst.SetDragActionIndex(arg_47_0.id, arg_47_0.live2dData:GetShipSkinConfig().id, arg_47_0.live2dData.ship.id, arg_47_0.actionListIndex)
 	end
 end
@@ -982,6 +997,8 @@ end
 
 function var_0_0.clearData(arg_49_0)
 	if arg_49_0.revert == -1 then
+		arg_49_0.actionListIndex = 1
+
 		arg_49_0:setParameterValue(arg_49_0.startValue)
 		arg_49_0:setTargetValue(arg_49_0.startValue)
 	end

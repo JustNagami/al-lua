@@ -829,7 +829,7 @@ pg.enemy_data_statistics_27 = {
 		speed = 15,
 		luck = 0,
 		antisub = 0,
-		scale = 180,
+		scale = 160,
 		wave_fx = "danchuanlanghuazhong3",
 		prefab = "kuangfengdanchuan",
 		cannon_growth = 0,
@@ -935,7 +935,7 @@ pg.enemy_data_statistics_27 = {
 				0
 			},
 			{
-				1.25,
+				2,
 				0,
 				1.353
 			},
@@ -1491,7 +1491,7 @@ pg.enemy_data_statistics_27 = {
 		speed = 15,
 		luck = 0,
 		antisub = 0,
-		scale = 200,
+		scale = 180,
 		wave_fx = "danchuanlanghuazhong3",
 		prefab = "beiyaendanchuan",
 		cannon_growth = 0,

@@ -68,6 +68,8 @@ function var_0_0.GeneralPackage(arg_3_0, arg_3_1)
 	end
 
 	local var_3_13, var_3_14 = GetBattleCheckResult(var_3_5, arg_3_0.token, arg_3_0.statistics._totalTime)
+	local var_3_15 = math.fmod(arg_3_0.statistics._autoCount, 2)
+	local var_3_16 = math.fmod(var_3_15 + arg_3_0.statistics._autoInit, 2)
 
 	return {
 		system = var_3_2,
@@ -82,7 +84,10 @@ function var_0_0.GeneralPackage(arg_3_0, arg_3_1)
 		file_check = var_3_14,
 		boss_hp = arg_3_0.statistics._maxBossHP,
 		enemy_info = {},
-		data2 = {}
+		data2 = {},
+		auto_before = arg_3_0.statistics._autoInit,
+		auto_switch_time = arg_3_0.statistics._autoCount,
+		auto_after = var_3_16
 	}
 end
 

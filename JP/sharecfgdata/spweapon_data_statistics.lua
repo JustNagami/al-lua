@@ -18867,3 +18867,282 @@ _G.pg.base.spweapon_data_statistics[13170] = {
 		}
 	}
 }
+_G.pg.base.spweapon_data_statistics[13180] = {
+	tech = 0,
+	name = "麗しき森の朝風",
+	value_2_random = 10,
+	type = 7,
+	value_1_random = 10,
+	value_1 = 17,
+	effect_id_display = 902280,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 13181,
+	upgrade_id = 101,
+	value_2 = 6,
+	icon = "13180",
+	effect_id = 902280,
+	attribute_2 = "reload",
+	id = 13180,
+	rarity = 4,
+	unique = 20604,
+	important = 2,
+	prev = 0,
+	attribute_1 = "air",
+	usability = {
+		6
+	},
+	skill_upgrade = {
+		{
+			0,
+			1011590
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13181] = {
+	prev = 13180,
+	base = 13180,
+	next = 13182,
+	upgrade_id = 102,
+	id = 13181,
+	value_2 = 6,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13182] = {
+	prev = 13181,
+	base = 13180,
+	next = 13183,
+	upgrade_id = 103,
+	id = 13182,
+	value_2 = 7,
+	value_1 = 18,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13183] = {
+	prev = 13182,
+	base = 13180,
+	next = 13184,
+	upgrade_id = 104,
+	id = 13183,
+	value_2 = 8,
+	value_1 = 18,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13184] = {
+	prev = 13183,
+	base = 13180,
+	next = 13185,
+	upgrade_id = 105,
+	id = 13184,
+	value_2 = 9,
+	value_1 = 19,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13185] = {
+	prev = 13184,
+	base = 13180,
+	next = 13186,
+	upgrade_id = 106,
+	id = 13185,
+	value_2 = 10,
+	value_1 = 20,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13186] = {
+	prev = 13185,
+	base = 13180,
+	next = 13187,
+	upgrade_id = 107,
+	id = 13186,
+	value_2 = 11,
+	value_1 = 21,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13187] = {
+	prev = 13186,
+	base = 13180,
+	next = 13188,
+	upgrade_id = 108,
+	id = 13187,
+	value_2 = 12,
+	value_1 = 22,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13188] = {
+	prev = 13187,
+	base = 13180,
+	next = 13189,
+	upgrade_id = 109,
+	id = 13188,
+	value_2 = 13,
+	value_1 = 23,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13189] = {
+	prev = 13188,
+	base = 13180,
+	next = 13190,
+	upgrade_id = 110,
+	id = 13189,
+	value_2 = 14,
+	value_1 = 24,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13190] = {
+	base = 13180,
+	prev = 13189,
+	next = 0,
+	upgrade_id = 111,
+	id = 13190,
+	value_2 = 15,
+	value_1 = 25,
+	level = 11,
+	skill_upgrade = {
+		{
+			11590,
+			1011590
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[13200] = {
+	tech = 0,
+	name = "おさかなきゅん",
+	value_2_random = 10,
+	type = 2,
+	value_1_random = 10,
+	value_1 = 14,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "特殊装備コアで製造できる艦船の専用兵装 ",
+	uncraftable = 0,
+	next = 13201,
+	upgrade_id = 101,
+	value_2 = 8,
+	icon = "13200",
+	effect_id = 901010,
+	attribute_2 = "antiaircraft",
+	id = 13200,
+	rarity = 4,
+	unique = 40204,
+	important = 2,
+	prev = 0,
+	attribute_1 = "torpedo",
+	usability = {
+		2
+	},
+	skill_upgrade = {
+		{
+			0,
+			1090270
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13201] = {
+	prev = 13200,
+	base = 13200,
+	next = 13202,
+	upgrade_id = 102,
+	id = 13201,
+	value_2 = 9,
+	value_1 = 16,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13202] = {
+	prev = 13201,
+	base = 13200,
+	next = 13203,
+	upgrade_id = 103,
+	id = 13202,
+	value_2 = 10,
+	value_1 = 18,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13203] = {
+	prev = 13202,
+	base = 13200,
+	next = 13204,
+	upgrade_id = 104,
+	id = 13203,
+	value_2 = 11,
+	value_1 = 20,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13204] = {
+	prev = 13203,
+	base = 13200,
+	next = 13205,
+	upgrade_id = 105,
+	id = 13204,
+	value_2 = 12,
+	value_1 = 22,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13205] = {
+	prev = 13204,
+	base = 13200,
+	next = 13206,
+	upgrade_id = 106,
+	id = 13205,
+	value_2 = 14,
+	value_1 = 24,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13206] = {
+	prev = 13205,
+	base = 13200,
+	next = 13207,
+	upgrade_id = 107,
+	id = 13206,
+	value_2 = 15,
+	value_1 = 26,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13207] = {
+	prev = 13206,
+	base = 13200,
+	next = 13208,
+	upgrade_id = 108,
+	id = 13207,
+	value_2 = 16,
+	value_1 = 28,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13208] = {
+	prev = 13207,
+	base = 13200,
+	next = 13209,
+	upgrade_id = 109,
+	id = 13208,
+	value_2 = 17,
+	value_1 = 30,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13209] = {
+	prev = 13208,
+	base = 13200,
+	next = 13210,
+	upgrade_id = 110,
+	id = 13209,
+	value_2 = 18,
+	value_1 = 32,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13210] = {
+	base = 13200,
+	prev = 13209,
+	next = 0,
+	upgrade_id = 111,
+	id = 13210,
+	value_2 = 20,
+	value_1 = 35,
+	level = 11,
+	skill_upgrade = {
+		{
+			1052,
+			1090270
+		}
+	}
+}

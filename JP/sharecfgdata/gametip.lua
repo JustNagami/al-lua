@@ -3692,7 +3692,7 @@ _G.pg.base.gametip.world_complete_item_tip = {
 	tip = "すでに全エリアが確保済であるため、購入できません"
 }
 _G.pg.base.gametip.task_notfound_error = {
-	tip = "ステージ情報が見つかりませんでした。エラーid:"
+	tip = "任務データが見つかりませんでした。ゲームを再起動しデータの更新をお願い致します。エラーid:"
 }
 _G.pg.base.gametip.task_submitTask_error = {
 	tip = "任務完了失敗:"
@@ -7644,22 +7644,22 @@ _G.pg.base.gametip.help_shipblueprintui = {
 2. 強化には艦の「強化ユニット」を消費します。
 3. 「強化ユニット」は科学研究室で研究を行うことにより入手出来ます。
 4. 強化を行うことで「特別計画」艦の性能を向上させられます。また、一定の強化レベルに達するとさらなる強化効果を獲得できます。（new!）5.一部の特別計画艦は、「強化ユニット」を所持していない場合でも、代わりに資金を消費して強化もしくは竜骨編纂を行うことができます。
-　　※注意
-　　資金による特別計画艦の強化・竜骨編纂は毎日、DRとPRそれぞれ最初の15個分まで資金消費が割引されます。
+※注意
+資金による特別計画艦の強化・竜骨編纂は毎日、DRとPRそれぞれ最初の15個分まで資金消費が割引されます。
 
- PR特別計画艦について：   
-   0個目～2個目：無料
-　　3個目～4個目：消費資金10%
-       5個目～7個目：消費資金20%
-       8個目～10個目：消費資金40%
-      11個目～15個目：消費資金70%
-　　16個目以降：消費資金100% = 1個分につき1500消費
-n DR特別計画艦について：   
-   0個目～2個目：無料
-　　3個目～6個目：消費資金10%
-       7個目～10個目：消費資金20%
-      11個目～15個目：消費資金50%
-　　16個目以降：消費資金100% = 1個分につき6000消費
+ PR特別計画艦について：
+0個目～2個目：無料
+3個目～4個目：消費資金10%
+5個目～7個目：消費資金20%
+8個目～10個目：消費資金40%
+11個目～15個目：消費資金70%
+16個目以降：消費資金100% = 1個分につき1500消費
+DR特別計画艦について：
+0個目～2個目：無料
+3個目～6個目：消費資金10%
+ 7個目～10個目：消費資金20%
+11個目～15個目：消費資金50%
+16個目以降：消費資金100% = 1個分につき6000消費
 　資金消費量は強化時の強化ユニット使用数選択画面で自動で計算されます。
 割引分強化回数のリセットは毎日4:00になります。
 
@@ -7674,7 +7674,7 @@ n DR特別計画艦について：
 (new!)・一部の特別計画艦は、「強化ユニット」を所持していない場合でも、代わりに資金を消費して竜骨編纂を進捗させることができます。
 
 弾幕確認機能とは
- ・特別計画艦Ⅱ期・Ⅲ期・Ⅳ期の「弾幕仕様」を確認できる機能になります。
+ ・特別計画艦Ⅱ期・Ⅲ期・Ⅳ期・Ⅴ期・Ⅵ期・Ⅶ期の「弾幕仕様」を確認できる機能になります。
  ・「弾幕確認」をタップすると、該当の艦を使用した模擬戦（イベントバトル）が始まります。
   ※模擬戦における艦の耐久・装填などの性能は実際の性能とは異なります。]]
 		}
@@ -8243,16 +8243,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "アビリティPtが不足しています"
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "「アルヴィト」「Z47」など出現率アップ！"
+	tip = "「ストラスブール」「デュプレクス」出現率UP！"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "「フォッシュ」常設実装！"
+	tip = "「島風」「筑摩」常設実装！"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "「ランドンターブル」「エンタープライズ（軽巡）」常設実装！"
+	tip = "「由良」「海風」常設実装！"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "「ジョッフル」常設実装！"
+	tip = "「島風」「葛城」常設実装！"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -24344,4 +24344,272 @@ _G.pg.base.gametip["202406_main_help"] = {
  ⑤「遊び場」に艦船を配置すると、配置された艦船のコンディション回復速度を上げることができます。イベントで入手できる「リトルスター増築チケット」を消費すると、配置枠を増やすことができます]]
 		}
 	}
+}
+_G.pg.base.gametip.mail_confirm_delete_important_flag = {
+	tip = "重要メールは削除できません"
+}
+_G.pg.base.gametip.mail_delet_button_1 = {
+	tip = "メール削除"
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_19905 = {
+	tip = [[
+<size=28>弾幕確認機能（模擬戦）を起動しますか？
+(※実際の艦の性能とは異なります）
+使用兵装：<color=#ff5c5c>
+127mm単装砲
+五連装533mm魚雷
+試作型F8Fベアキャット（フロート）</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_39907 = {
+	tip = [[
+<size=28>弾幕確認機能（模擬戦）を起動しますか？
+(※実際の艦の性能とは異なります）
+使用兵装：<color=#ff5c5c>
+試作型410mm連装砲Mod.A
+140mm単装砲
+試作型五式40mm高射機関砲</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_69902 = {
+	tip = [[
+<size=28>弾幕確認機能（模擬戦）を起動しますか？
+(※実際の艦の性能とは異なります）
+使用兵装：<color=#ff5c5c>
+試作型254mm三連装砲Mod1939
+試作型152mm三連装砲Model1936
+試作型90mm連装高角砲Model1939</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_89904 = {
+	tip = [[
+<size=28>弾幕確認機能（模擬戦）を起動しますか？
+(※実際の艦の性能とは異なります）
+使用兵装：<color=#ff5c5c>
+152mm三連装砲Mle1930（榴弾）
+三連装550mm魚雷
+二連装57mm／L60ボフォース対空機関砲Mle1951</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_79902 = {
+	tip = [[
+<size=28>弾幕確認機能（模擬戦）を起動しますか？
+(※実際の艦の性能とは異なります）
+使用兵装：<color=#ff5c5c>
+試作型艦上式La-9
+試作型艦上式La-9
+試作型VIT-2（モードチェンジ）
+</color></size>]]
+}
+_G.pg.base.gametip.mail_storeroom_max_3 = {
+	tip = "※受け取ると、燃料所持数が所持上限を超えてしまいます"
+}
+_G.pg.base.gametip.mail_storeroom_max_4 = {
+	tip = "※受け取ると、資金所持数が所持上限を超えてしまいます"
+}
+_G.pg.base.gametip.mail_storeroom_collect = {
+	tip = "受け取ると下記のアイテムを入手できます："
+}
+_G.pg.base.gametip.battlepass_main_tip_2408 = {
+	tip = "<size=23> 2024.8.1-2024.9.30キャンペーン期間中、シーズン任務報酬で<color=#854747>「霞(META)」</color>などを入手可能！</size>"
+}
+_G.pg.base.gametip.battlepass_main_help_2408 = {
+	tip = {
+		{
+			info = [[
+■キャンペーン開催期間
+ 2024.8.1（木）0:00～2024.9.30（月）23:59
+
+■概要
+「シーズン任務」とは、キャンペーン開催中の任務をクリアし「進捗Pt」を集め、入手した進捗Ptに応じた累計獲得数報酬が手に入るキャンペーンになります。
+また、通常の累計獲得数報酬に追加する形で「SP報酬」が存在し、ショップアイテム「クルーズパス」を購入すると、SP報酬も入手可能となります。
+通常報酬からは艦船「霞(META)」、SP報酬からは戦艦「ローマ」の限定着せ替え「デヴェレの休日」を入手できます。
+
+■遊び方
+・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
+　①週次開放任務
+　キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
+　②全期間任務
+　最初から全開放される任務。全1グループ
+・上記「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
+　さらに「クルーズパス」を購入すると、15段階分の報酬（進捗Pt1500）が入手可能となります。
+・「進捗Pt」の累計入手数に応じて、進捗Pt累計獲得数報酬を入手できます。累計獲得数報酬は2種類存在します。
+　①通常報酬
+　「進捗Pt」の入手数に応じて獲得できる報酬。全100段階となります
+　②SP報酬
+　「クルーズパス」を購入すると開放される追加報酬。通常報酬と同じく全100段階存在し、通常報酬と同じ段階のSP報酬が入手入手できます。
+・キャンペーンが終了すると、入手済みの進捗Ptはリセットされます。
+
+■Tips
+・プレイスタイル
+　シーズン任務は全100段階あり、いきなり最後まではクリアできない仕様になっております。いつものクエストをくりしながら任務をこなしていくか、狙いの報酬を決めて最短ペースでクリアしていくかなど、自分のプレイスタイルに合わせてプレイすることをオススメします。
+
+・クルーズパス
+　ショップで「クルーズパス」を購入すると、お得なアイテムとともに「進捗Pt」を1500Pt入手できます。また、追加の限定着せ替えは「クルーズパス」を購入して開放される「SP報酬」でのみ入手できます。要注意。
+
+・任務のスキップ（オススメしません）
+　「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
+　ダイヤを消費しますので、オススメしません。
+　「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2408 = {
+	tip = {
+		{
+			info = [[
+■シーズン任務について
+・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
+　①週次開放任務
+　キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
+　②全期間任務
+　最初から全開放される任務。全1グループ
+
+・「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
+
+・「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
+　ダイヤを消費しますので、オススメしません……
+　「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
+		}
+	}
+}
+_G.pg.base.gametip.loveletter_recover_tip1 = {
+	tip = "メール再送機能を使用するには「メール確認」を先に行う必要があります"
+}
+_G.pg.base.gametip.loveletter_recover_tip2 = {
+	tip = "キャラクターが間違っています"
+}
+_G.pg.base.gametip.loveletter_recover_tip3 = {
+	tip = "既にバレンタインメールがメールボックス/保管庫に存在しています"
+}
+_G.pg.base.gametip.loveletter_recover_tip4 = {
+	tip = "その年にはまだ未実装だったキャラです"
+}
+_G.pg.base.gametip.loveletter_recover_tip5 = {
+	tip = "メール保管庫がいっぱいです。保管庫を整理するとメールを再送できます"
+}
+_G.pg.base.gametip.loveletter_recover_tip6 = {
+	tip = "メール確認が終了しました。$1年のバレンタインメールを再送できます"
+}
+_G.pg.base.gametip.loveletter_recover_tip7 = {
+	tip = "メール確認が終了しました。既にバレンタインメールがメールボックス/保管庫に存在しています"
+}
+_G.pg.base.gametip.loveletter_recover_bottom1 = {
+	tip = "メール確認"
+}
+_G.pg.base.gametip.loveletter_recover_bottom2 = {
+	tip = "メール再送"
+}
+_G.pg.base.gametip.loveletter_recover_bottom3 = {
+	tip = "$1年"
+}
+_G.pg.base.gametip.loveletter_recover_text1 = {
+	tip = "<color=#ffde38>メール再送</color>を行うと、メール保管庫に<color=#ffde38>$1</color>年の<color=#ffde38>$2</color>からのバレンタインメール（添付アイテムは含まれない）が再送されます\n*メール再送機能は記念アイテム毎に1回しか使用できません"
+}
+_G.pg.base.gametip.loveletter_recover_text2 = {
+	tip = "再送してほしい<color=#ffde38>年</color>を選択してください。再送すると、メール保管庫に<color=#ffde38>$1</color>からのバレンタインメール（添付アイテムは含まれない）が再送されます\n*メール再送機能は記念アイテム毎に1回しか使用できません"
+}
+_G.pg.base.gametip.battle_text_common_4 = {
+	tip = "<color=#f1f102>敵が与えるダメージが大幅に上昇。敵弾がシールドを無視し、射線上の全ての味方艦船にダメージを与える</color>"
+}
+_G.pg.base.gametip.MonopolyCar2024Game_title1 = {
+	tip = "クリア回数"
+}
+_G.pg.base.gametip.MonopolyCar2024Game_title2 = {
+	tip = "現在進捗"
+}
+_G.pg.base.gametip.help_monopoly_car2024 = {
+	tip = {
+		{
+			info = " ■遊び方："
+		},
+		{
+			info = "1. 毎日ログインするとサイコロ（前進回数）を3つ、イベントデイリー任務をクリアすることでさらにサイコロを2つ入手できます；"
+		},
+		{
+			info = "2. 開始地点を通過すると、3人の艦船から一人スタッフとして選択することができます；"
+		},
+		{
+			info = "3. 前進するマス数、また踏むマスの内容によって様々なスタッフセリフが表示されます；"
+		},
+		{
+			info = "4. 開始地点を3回通過すると、限定家具を入手できます。違うスタッフと一緒に開始地点を通過すると資金2000を入手できます "
+		},
+		{
+			info = "5. 踏むマスに応じて下記の効果を獲得します "
+		},
+		{
+			info = "    ：資金を少し入手できます；",
+			icon = {
+				path = "jinbi",
+				atlas = "attricon",
+				posY = 0,
+				scale = 0.19,
+				posX = 0
+			}
+		},
+		{
+			info = "    ：燃料を少し入手できます；",
+			icon = {
+				path = "shiyou",
+				atlas = "attricon",
+				posY = 0,
+				scale = 0.19,
+				posX = 0
+			}
+		},
+		{
+			info = "    ：ちょっとしたイベントが発生します；",
+			icon = {
+				path = "minyun",
+				atlas = "attricon",
+				posY = 0,
+				scale = 0.19,
+				posX = 0
+			}
+		},
+		{
+			info = "    ：ランダムな報酬を入手できます；",
+			icon = {
+				path = "daoju",
+				atlas = "attricon",
+				posY = 0,
+				scale = 0.19,
+				posX = 0
+			}
+		},
+		{
+			info = "    ：何マスか前進します；",
+			icon = {
+				path = "jiasu",
+				atlas = "attricon",
+				posY = 0,
+				scale = 0.19,
+				posX = 0
+			}
+		}
+	}
+}
+_G.pg.base.gametip.MonopolyCar2024Game_pick_tip = {
+	tip = "開始地点を通過するとスタッフを変更でき、スタッフと一緒にクリアすると報酬を入手可能"
+}
+_G.pg.base.gametip.MonopolyCar2024Game_sel_label = {
+	tip = "選択"
+}
+_G.pg.base.gametip.MonopolyCar2024Game_total_award_title = {
+	tip = "合計入手"
+}
+_G.pg.base.gametip.MonopolyCar2024Game_lock_auto_tip = {
+	tip = "10回前進すると自動前進モードが開放されます（進捗$1）"
+}
+_G.pg.base.gametip.MonopolyCar2024Game_open_auto_tip = {
+	tip = "自動前進モード開放。開始地点を通過する時、スタッフが自動で変更されます"
+}
+_G.pg.base.gametip.MonopolyCar2024Game_total_num_tip = {
+	tip = "残り前進回数:$1"
+}
+_G.pg.base.gametip.sitelasibao_expup_name = {
+	tip = "経験強化"
+}
+_G.pg.base.gametip.sitelasibao_expup_desc = {
+	tip = "イベント期間中、<color=#92fc63>ストラスブール、ローダシュー、デュプレクス、Z23、ハーマイオニー、ポンペオ・マーニョ</color>が出撃で得られる経験値が<color=#92fc63>20%</color>アップ"
+}
+_G.pg.base.gametip.levelScene_tracking_error_pre_2 = {
+	tip = "$1か$2クリアで開放"
 }

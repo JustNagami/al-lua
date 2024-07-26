@@ -119,7 +119,7 @@ function var_0_0.didEnter(arg_6_0)
 	arg_6_0:InitFacilityCross(arg_6_0._map, arg_6_0._upper, "pifushangdian", function()
 		arg_6_0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.SKINSHOP)
 	end)
-	pg.UIMgr.GetInstance():OverlayPanel(arg_6_0.top, false)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_6_0.top)
 	arg_6_0:InitStudents(ActivityConst.ACTIVITY_478, 3, 5)
 	arg_6_0:UpdateView()
 end

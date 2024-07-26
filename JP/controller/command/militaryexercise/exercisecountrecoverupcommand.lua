@@ -18,7 +18,8 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	var_1_2:updateResetTime(var_1_0() + pg.TimeMgr.GetInstance():GetServerTime())
 	var_1_2:updateExerciseCount(SeasonInfo.RECOVER_UP_COUNT)
 	var_1_1:updateSeasonInfo(var_1_2)
-	var_1_1:addRefreshCountTimer()
+
+	var_1_1.waiting = false
 end
 
 return var_0_0
