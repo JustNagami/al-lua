@@ -453,22 +453,23 @@ function var_0_0.createCharData(arg_15_0, arg_15_1)
 	local var_15_4 = var_15_0.speed_able
 	local var_15_5 = arg_15_0._gameData.cake_num
 	local var_15_6 = var_15_0.name
+	local var_15_7 = arg_15_0._gameData.char_path .. "cookgame" .. var_15_6 .. "_atlas"
 
 	if var_15_3 then
 		for iter_15_0 = 0, var_15_5 do
 			for iter_15_1 = 0, var_15_5 do
-				local var_15_7
+				local var_15_8
 
 				if iter_15_0 == 0 and iter_15_1 == 0 or iter_15_0 ~= 0 then
-					var_15_7 = var_15_6 .. "_L" .. iter_15_0 .. "_R" .. iter_15_1
+					var_15_8 = var_15_6 .. "_L" .. iter_15_0 .. "_R" .. iter_15_1
 				end
 
-				if var_15_7 then
-					local var_15_8 = ResourceMgr.Inst:getAssetSync(arg_15_0._gameData.char_path .. "/" .. var_15_6, var_15_7, typeof(RuntimeAnimatorController), false, false)
+				if var_15_8 then
+					local var_15_9 = ResourceMgr.Inst:getAssetSync(var_15_7, var_15_8, typeof(RuntimeAnimatorController), false, false)
 
 					table.insert(var_15_2, {
-						runtimeAnimator = var_15_8,
-						name = var_15_7
+						runtimeAnimator = var_15_9,
+						name = var_15_8
 					})
 				end
 			end
@@ -476,23 +477,23 @@ function var_0_0.createCharData(arg_15_0, arg_15_1)
 	elseif var_15_4 then
 		for iter_15_2 = 0, var_15_5 do
 			for iter_15_3 = 0, arg_15_0._gameData.speed_num do
-				local var_15_9 = var_15_6 .. "_L" .. iter_15_2 .. "_" .. iter_15_3
-				local var_15_10 = ResourceMgr.Inst:getAssetSync(arg_15_0._gameData.char_path .. "/" .. var_15_6, var_15_9, typeof(RuntimeAnimatorController), false, false)
+				local var_15_10 = var_15_6 .. "_L" .. iter_15_2 .. "_" .. iter_15_3
+				local var_15_11 = ResourceMgr.Inst:getAssetSync(var_15_7, var_15_10, typeof(RuntimeAnimatorController), false, false)
 
 				table.insert(var_15_2, {
-					runtimeAnimator = var_15_10,
-					name = var_15_9
+					runtimeAnimator = var_15_11,
+					name = var_15_10
 				})
 			end
 		end
 	else
 		for iter_15_4 = 0, var_15_5 do
-			local var_15_11 = var_15_6 .. "_L" .. iter_15_4
-			local var_15_12 = ResourceMgr.Inst:getAssetSync(arg_15_0._gameData.char_path .. "/" .. var_15_6, var_15_11, typeof(RuntimeAnimatorController), false, false)
+			local var_15_12 = var_15_6 .. "_L" .. iter_15_4
+			local var_15_13 = ResourceMgr.Inst:getAssetSync(var_15_7, var_15_12, typeof(RuntimeAnimatorController), false, false)
 
 			table.insert(var_15_2, {
-				runtimeAnimator = var_15_12,
-				name = var_15_11
+				runtimeAnimator = var_15_13,
+				name = var_15_12
 			})
 		end
 	end

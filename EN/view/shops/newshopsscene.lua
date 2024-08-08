@@ -421,24 +421,33 @@ function var_0_0.ActiveDefaultCategory(arg_29_0)
 	elseif var_29_0 == var_0_0.TYPE_ACTIVITY and (not arg_29_0.shops[var_0_0.TYPE_ACTIVITY] or #(arg_29_0.shops[var_0_0.TYPE_ACTIVITY] or {}) <= 0) then
 		var_29_0 = var_0_0.TYPE_SHOP_STREET
 		var_29_2 = 1
+	elseif var_29_0 == var_0_0.TYPE_ACTIVITY and arg_29_0.shops[var_0_0.TYPE_ACTIVITY] and #(arg_29_0.shops[var_0_0.TYPE_ACTIVITY] or {}) > 0 and not arg_29_0.contextData.actId then
+		local var_29_3 = 1
+		local var_29_4 = arg_29_0.shops[var_29_0][var_29_3].activityId
+
+		for iter_29_2, iter_29_3 in ipairs(arg_29_0.shops[var_29_0] or {}) do
+			if var_29_4 < iter_29_3.activityId then
+				local var_29_5 = iter_29_2
+			end
+		end
 	end
 
-	local var_29_3
+	local var_29_6
 
-	for iter_29_2, iter_29_3 in pairs(var_0_1) do
-		if table.contains(iter_29_3, var_29_0) then
-			var_29_3 = iter_29_2
+	for iter_29_4, iter_29_5 in pairs(var_0_1) do
+		if table.contains(iter_29_5, var_29_0) then
+			var_29_6 = iter_29_4
 
 			break
 		end
 	end
 
-	assert(var_29_3 and arg_29_0.categoryTrs[var_29_3])
+	assert(var_29_6 and arg_29_0.categoryTrs[var_29_6])
 
 	arg_29_0.shopType = var_29_0
 	arg_29_0.shopIndex = var_29_2
 
-	triggerToggle(arg_29_0.categoryTrs[var_29_3], true)
+	triggerToggle(arg_29_0.categoryTrs[var_29_6], true)
 end
 
 function var_0_0.ActiveDefaultShop(arg_30_0)

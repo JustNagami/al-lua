@@ -114,6 +114,10 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 			var_1_7 = true
 		end
 
+		if LaunchBallGameVo.game_room_flag then
+			var_1_7 = true
+		end
+
 		setActive(findTF(var_1_5, "ad/mask"), not var_1_7)
 		setScrollText(findTF(var_1_5, "ad/skillPanel/skill1/text"), i18n(var_1_4.skill_1))
 		setScrollText(findTF(var_1_5, "ad/skillPanel/skill2/text"), i18n(var_1_4.skill_2))

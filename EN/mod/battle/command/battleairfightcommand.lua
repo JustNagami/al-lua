@@ -38,6 +38,7 @@ function var_0_3.DoPrologue(arg_4_0)
 	end
 
 	arg_4_0._uiMediator:SeaSurfaceShift(1, 15, nil, var_4_0)
+	arg_4_0._dataProxy:AutoStatistics(0)
 
 	local var_4_1 = arg_4_0._state:GetSceneMediator()
 

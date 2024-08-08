@@ -239358,3 +239358,351 @@ _G.pg.base.aircraft_template[3178006] = {
 		}
 	}
 }
+_G.pg.base.aircraft_template[164921] = {
+	attack_power = 2,
+	name = "长岛技能轰炸机Lv1",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sbdwuwei",
+	ACC_growth = 0,
+	crash_DMG = 156,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 1,
+	id = 164921,
+	icon = "sbdwuwei",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1183,
+	speed = 46,
+	max_hp = 35,
+	scale = 1,
+	weapon_ID = {
+		164941
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.68,
+				-0.667,
+				0
+			},
+			{
+				0.97,
+				0.584,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0.72,
+			-0.15,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[164922] = {
+	id = 164922,
+	name = "长岛技能轰炸机Lv2",
+	hp_growth = 1345,
+	base = 164921,
+	max_hp = 39,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164942
+	}
+}
+_G.pg.base.aircraft_template[164923] = {
+	id = 164923,
+	name = "长岛技能轰炸机Lv3",
+	hp_growth = 1507,
+	base = 164921,
+	max_hp = 43,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164943
+	}
+}
+_G.pg.base.aircraft_template[164924] = {
+	id = 164924,
+	name = "长岛技能轰炸机Lv4",
+	hp_growth = 1669,
+	base = 164921,
+	max_hp = 47,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164944
+	}
+}
+_G.pg.base.aircraft_template[164925] = {
+	id = 164925,
+	name = "长岛技能轰炸机Lv5",
+	hp_growth = 1831,
+	base = 164921,
+	max_hp = 51,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164945
+	}
+}
+_G.pg.base.aircraft_template[164926] = {
+	id = 164926,
+	name = "长岛技能轰炸机Lv6",
+	hp_growth = 1994,
+	base = 164921,
+	max_hp = 55,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164946
+	}
+}
+_G.pg.base.aircraft_template[164927] = {
+	id = 164927,
+	name = "长岛技能轰炸机Lv7",
+	hp_growth = 2157,
+	base = 164921,
+	max_hp = 59,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164947
+	}
+}
+_G.pg.base.aircraft_template[164928] = {
+	id = 164928,
+	name = "长岛技能轰炸机Lv8",
+	hp_growth = 2320,
+	base = 164921,
+	max_hp = 63,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164948
+	}
+}
+_G.pg.base.aircraft_template[164929] = {
+	id = 164929,
+	name = "长岛技能轰炸机Lv9",
+	hp_growth = 2483,
+	base = 164921,
+	max_hp = 68,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164949
+	}
+}
+_G.pg.base.aircraft_template[164930] = {
+	id = 164930,
+	name = "长岛技能轰炸机Lv10",
+	hp_growth = 2646,
+	base = 164921,
+	max_hp = 73,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164950
+	}
+}
+_G.pg.base.aircraft_template[164931] = {
+	attack_power = 2,
+	name = "长岛技能强化轰炸机Lv1",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sbdwuwei",
+	ACC_growth = 0,
+	crash_DMG = 156,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 1,
+	id = 164931,
+	icon = "sbdwuwei",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1183,
+	speed = 46,
+	max_hp = 35,
+	scale = 1,
+	weapon_ID = {
+		164951
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.68,
+				-0.667,
+				0
+			},
+			{
+				0.97,
+				0.584,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0.72,
+			-0.15,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[164932] = {
+	id = 164932,
+	name = "长岛技能强化轰炸机Lv2",
+	hp_growth = 1345,
+	base = 164931,
+	max_hp = 39,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164952
+	}
+}
+_G.pg.base.aircraft_template[164933] = {
+	id = 164933,
+	name = "长岛技能强化轰炸机Lv3",
+	hp_growth = 1507,
+	base = 164931,
+	max_hp = 43,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164953
+	}
+}
+_G.pg.base.aircraft_template[164934] = {
+	id = 164934,
+	name = "长岛技能强化轰炸机Lv4",
+	hp_growth = 1669,
+	base = 164931,
+	max_hp = 47,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164954
+	}
+}
+_G.pg.base.aircraft_template[164935] = {
+	id = 164935,
+	name = "长岛技能强化轰炸机Lv5",
+	hp_growth = 1831,
+	base = 164931,
+	max_hp = 51,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164955
+	}
+}
+_G.pg.base.aircraft_template[164936] = {
+	id = 164936,
+	name = "长岛技能强化轰炸机Lv6",
+	hp_growth = 1994,
+	base = 164931,
+	max_hp = 55,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164956
+	}
+}
+_G.pg.base.aircraft_template[164937] = {
+	id = 164937,
+	name = "长岛技能强化轰炸机Lv7",
+	hp_growth = 2157,
+	base = 164931,
+	max_hp = 59,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164957
+	}
+}
+_G.pg.base.aircraft_template[164938] = {
+	id = 164938,
+	name = "长岛技能强化轰炸机Lv8",
+	hp_growth = 2320,
+	base = 164931,
+	max_hp = 63,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164958
+	}
+}
+_G.pg.base.aircraft_template[164939] = {
+	id = 164939,
+	name = "长岛技能强化轰炸机Lv9",
+	hp_growth = 2483,
+	base = 164931,
+	max_hp = 68,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164959
+	}
+}
+_G.pg.base.aircraft_template[164940] = {
+	id = 164940,
+	name = "长岛技能强化轰炸机Lv10",
+	hp_growth = 2646,
+	base = 164931,
+	max_hp = 73,
+	spawn_brownian = 1,
+	weapon_ID = {
+		164960
+	}
+}

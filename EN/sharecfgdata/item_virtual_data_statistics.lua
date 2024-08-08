@@ -182687,3 +182687,26 @@ _G.pg.base.item_virtual_data_statistics[200198] = {
 		}
 	}
 }
+_G.pg.base.item_virtual_data_statistics[65004] = {
+	display = "Used to exchange for a portrait frame. Removed after the event ends.",
+	name = "Training Pts",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xunliandianshu_mv5",
+	id = 65004,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}

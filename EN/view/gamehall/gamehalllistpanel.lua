@@ -1,6 +1,8 @@
 ﻿local var_0_0 = class("GameHallListPanel")
 local var_0_1 = false
 
+var_0_0.ScrollPosition = nil
+
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._tf = arg_1_1
 	arg_1_0._event = arg_1_2
@@ -54,6 +56,8 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 		setText(findTF(var_1_1, "txtScore"), var_1_6)
 		setImageSprite(findTF(var_1_1, "mask/gameIcon"), LoadSprite("gamehallicon/" .. var_1_3), true)
 		onButton(arg_1_0._event, var_1_1, function()
+			var_0_0.ScrollPosition = arg_1_0.content.anchoredPosition
+
 			arg_1_0._event:emit(GameHallMediator.OPEN_MINI_GAME, var_1_2)
 		end, SFX_CANCEL)
 	end
@@ -77,6 +81,10 @@ function var_0_0.setVisible(arg_3_0, arg_3_1)
 					arg_3_0:setVisible(false)
 				end
 			})
+		end
+
+		if var_0_0.ScrollPosition then
+			arg_3_0.content.anchoredPosition = var_0_0.ScrollPosition
 		end
 	end
 end

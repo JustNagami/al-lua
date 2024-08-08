@@ -24146,7 +24146,7 @@ _G.pg.base.gametip.mail_storeroom_collect = {
 	tip = "After claiming you will receive the following items:"
 }
 _G.pg.base.gametip.battlepass_main_tip_2408 = {
-	tip = "Complete Cruise Missions between 8/1/2024 00:00 – 9/30/2024 23:59 to receive <color=#854747>La Kasumi META</color> and other rewards!"
+	tip = "Complete Cruise Missions between 8/1/2024 00:00 – 9/30/2024 23:59 to receive <color=#854747>Kasumi META</color> and other rewards!"
 }
 _G.pg.base.gametip.battlepass_main_help_2408 = {
 	tip = {
