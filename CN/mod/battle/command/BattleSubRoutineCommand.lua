@@ -37,6 +37,8 @@ function var_0_4.DoPrologue(arg_3_0)
 		arg_3_0._dataProxy:TirggerBattleStartBuffs()
 	end
 
+	arg_3_0._dataProxy:AutoStatistics(0)
+
 	local var_3_1 = arg_3_0._userFleet:GetUnitList()
 
 	for iter_3_0, iter_3_1 in ipairs(var_3_1) do

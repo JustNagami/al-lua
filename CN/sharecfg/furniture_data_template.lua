@@ -21776,7 +21776,7 @@ pg.base.furniture_data_template = {
 	},
 	[283] = {
 		spine_extra = "",
-		describe = "由审判庭制作的圣米歇尔山圣坛微缩模型，细致还原了山上的一草一木。",
+		describe = "由审判庭制作的圣米歇尔山圣堂微缩模型，细致还原了山上的一草一木。",
 		gain_by = "",
 		type = 7,
 		dir = 0,
@@ -21793,7 +21793,7 @@ pg.base.furniture_data_template = {
 		level = 1,
 		advice = 0,
 		effect = "",
-		name = "圣米歇尔山圣坛微缩模型",
+		name = "圣米歇尔山圣堂微缩模型",
 		comfortable = 0,
 		spine_action_replace = "",
 		picture = "chuanmo/shengmixieershan",

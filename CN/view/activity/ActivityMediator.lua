@@ -50,13 +50,14 @@ var_0_0.GO_MONOPOLY2024 = "ActivityMediator:GO_MONOPOLY2024"
 function var_0_0.register(arg_1_0)
 	arg_1_0.UIAvalibleCallbacks = {}
 
-	arg_1_0:bind(var_0_0.GO_MONOPOLY2024, function(arg_2_0, arg_2_1)
+	arg_1_0:bind(var_0_0.GO_MONOPOLY2024, function(arg_2_0, arg_2_1, arg_2_2)
 		arg_1_0:addSubLayers(Context.New({
 			mediator = MonopolyCar2024Mediator,
 			viewComponent = MonopolyCar2024Scene,
 			data = {
 				actId = arg_2_1
-			}
+			},
+			onRemoved = arg_2_2
 		}))
 	end)
 	arg_1_0:bind(var_0_0.ON_AWARD_WINDOW, function(arg_3_0, arg_3_1, arg_3_2, arg_3_3)

@@ -299,12 +299,14 @@ function var_0_0.onEventCallback(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
 		local var_15_3
 		local var_15_4
 		local var_15_5
+		local var_15_6 = false
 
 		if arg_15_0.actionTrigger.action then
 			var_15_1 = arg_15_0:fillterAction(arg_15_0.actionTrigger.action)
 			var_15_0 = arg_15_0.actionTriggerActive
 			var_15_2 = arg_15_0.actionTrigger.focus or false
 			var_15_3 = arg_15_0.actionTrigger.target or nil
+			var_15_6 = arg_15_0.actionTrigger.target_focus == 1 and true or false
 
 			if (arg_15_0.actionTrigger.circle or nil) and var_15_3 and var_15_3 == arg_15_0.parameterTargetValue then
 				var_15_3 = arg_15_0.startValue
@@ -315,9 +317,9 @@ function var_0_0.onEventCallback(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
 			arg_15_0:triggerAction()
 			arg_15_0:stopDrag()
 		elseif arg_15_0.actionTrigger.action_list then
-			local var_15_6 = arg_15_0.actionTrigger.action_list[arg_15_0.actionListIndex]
+			local var_15_7 = arg_15_0.actionTrigger.action_list[arg_15_0.actionListIndex]
 
-			var_15_1 = arg_15_0:fillterAction(var_15_6.action)
+			var_15_1 = arg_15_0:fillterAction(var_15_7.action)
 
 			if arg_15_0.actionTriggerActive.active_list and arg_15_0.actionListIndex <= #arg_15_0.actionTriggerActive.active_list then
 				var_15_0 = arg_15_0.actionTriggerActive.active_list[arg_15_0.actionListIndex]
@@ -325,9 +327,10 @@ function var_0_0.onEventCallback(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
 				var_15_0 = arg_15_0.actionTriggerActive
 			end
 
-			var_15_2 = var_15_6.focus or true
-			var_15_3 = var_15_6.target or nil
-			var_15_4 = var_15_6.react or nil
+			var_15_2 = var_15_7.focus or true
+			var_15_3 = var_15_7.target or nil
+			var_15_6 = var_15_7.target_focus == 1 and true or false
+			var_15_4 = var_15_7.react or nil
 
 			arg_15_0:triggerAction()
 
@@ -343,6 +346,7 @@ function var_0_0.onEventCallback(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
 			var_15_0 = arg_15_0.actionTriggerActive
 			var_15_2 = arg_15_0.actionTrigger.focus or false
 			var_15_3 = arg_15_0.actionTrigger.target or nil
+			var_15_6 = arg_15_0.actionTrigger.target_focus == 1 and true or false
 
 			if (arg_15_0.actionTrigger.circle or nil) and var_15_3 and var_15_3 == arg_15_0.parameterTargetValue then
 				var_15_3 = arg_15_0.startValue
@@ -368,6 +372,10 @@ function var_0_0.onEventCallback(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
 
 		if var_15_3 then
 			arg_15_0:setTargetValue(var_15_3)
+
+			if var_15_6 then
+				arg_15_0:setParameterValue(var_15_3)
+			end
 
 			if not var_15_1 then
 				arg_15_0.revertResetFlag = true
@@ -396,7 +404,7 @@ end
 
 function var_0_0.fillterAction(arg_17_0, arg_17_1)
 	if type(arg_17_1) == "table" then
-		return arg_17_1[math.random(1, arg_17_1)]
+		return arg_17_1[math.random(1, #arg_17_1)]
 	else
 		return arg_17_1
 	end
