@@ -9,5 +9,6 @@ var_0_0.moveSpeed = 43
 var_0_0.downTime = 7000
 var_0_0.gameTime = 60000
 var_0_0.finishGameTime = 180000
+var_0_0.ui_atlas = "ui/minigameui/rollingBallGame_atlas"
 
 return var_0_0

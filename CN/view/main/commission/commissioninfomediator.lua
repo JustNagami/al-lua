@@ -144,7 +144,7 @@ function var_0_0.handleNotification(arg_22_0, arg_22_1)
 	local var_22_1 = arg_22_1:getBody()
 
 	if var_22_0 == PlayerProxy.UPDATED then
-		arg_22_0.viewComponent:setPlayer(var_22_1)
+		arg_22_0.viewComponent:OnPlayerUpdate(var_22_1)
 	elseif var_22_0 == GAME.HARVEST_RES_DONE then
 		local var_22_2
 

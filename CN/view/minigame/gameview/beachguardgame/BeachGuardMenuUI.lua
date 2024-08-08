@@ -168,7 +168,9 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	onButton(arg_1_0._event, findTF(arg_1_0.menuUI, "ad/btnGameBook"), function()
 		if isActive(arg_1_0.bookUI) then
 			setActive(arg_1_0.bookUI, false)
+			arg_1_0._event:emit(BeachGuardGameView.OPEN_BOOK, false)
 		else
+			arg_1_0._event:emit(BeachGuardGameView.OPEN_BOOK, true)
 			setActive(arg_1_0.bookUI, true)
 		end
 	end, SFX_CANCEL)

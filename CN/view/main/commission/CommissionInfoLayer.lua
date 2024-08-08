@@ -125,10 +125,6 @@ end
 
 function var_0_0.didEnter(arg_12_0)
 	onButton(arg_12_0, arg_12_0.oilbubbleTF, function()
-		if arg_12_0.isPaying then
-			return
-		end
-
 		if not getProxy(PlayerProxy):getRawData():CanGetResource(PlayerConst.ResOil) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("player_harvestResource_error_fullBag"))
 
@@ -140,10 +136,6 @@ function var_0_0.didEnter(arg_12_0)
 		end)
 	end, SFX_PANEL)
 	onButton(arg_12_0, arg_12_0.goldbubbleTF, function()
-		if arg_12_0.isPaying then
-			return
-		end
-
 		if not getProxy(PlayerProxy):getRawData():CanGetResource(PlayerConst.ResGold) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("player_harvestResource_error_fullBag"))
 
@@ -155,10 +147,6 @@ function var_0_0.didEnter(arg_12_0)
 		end)
 	end, SFX_PANEL)
 	onButton(arg_12_0, arg_12_0.classbubbleTF, function()
-		if arg_12_0.isPaying then
-			return
-		end
-
 		if not getProxy(NavalAcademyProxy):GetClassVO():CanGetRes() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("player_harvestResource_error_fullBag"))
 
@@ -225,45 +213,76 @@ end
 function var_0_0.setPlayer(arg_27_0, arg_27_1)
 	arg_27_0.playerVO = arg_27_1
 
-	arg_27_0:updateResource(arg_27_1)
+	arg_27_0:UpdateOilRes(arg_27_1)
+	arg_27_0:UpdateGoldRes(arg_27_1)
+	arg_27_0:UpdateClassRes()
 end
 
-function var_0_0.updateResource(arg_28_0, arg_28_1)
-	local var_28_0 = getProxy(NavalAcademyProxy):GetClassVO():GetGenResCnt()
+function var_0_0.OnPlayerUpdate(arg_28_0, arg_28_1)
+	local var_28_0 = arg_28_0.playerVO
+	local var_28_1 = arg_28_1
 
-	arg_28_0.oilbubbleCG.alpha = 1
-	arg_28_0.goldbubbleCG.alpha = 1
-	arg_28_0.classbubbleCG.alpha = 1
-	arg_28_0.oilbubbleTF.localScale = Vector3.one
-	arg_28_0.goldbubbleTF.localScale = Vector3.one
-	arg_28_0.classbubbleTF.localScale = Vector3.one
-
-	setActive(arg_28_0.oilbubbleTF, arg_28_1.oilField ~= 0)
-	setActive(arg_28_0.goldbubbleTF, arg_28_1.goldField ~= 0)
-	setActive(arg_28_0.classbubbleTF, var_28_0 > 0)
-
-	arg_28_0.oilTF.text = arg_28_1.oilField
-	arg_28_0.goldTF.text = arg_28_1.goldField
-	arg_28_0.classTF.text = var_28_0
-end
-
-function var_0_0.onBackPressed(arg_29_0)
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-	triggerButton(arg_29_0._tf)
-end
-
-function var_0_0.willExit(arg_30_0)
-	arg_30_0:UnBlurPanel()
-
-	for iter_30_0, iter_30_1 in ipairs(arg_30_0.items) do
-		iter_30_1:Dispose()
+	if var_28_1.oilField ~= var_28_0.oilField then
+		arg_28_0:UpdateOilRes(var_28_1)
 	end
 
-	arg_30_0.items = nil
+	if var_28_1.goldField ~= var_28_0.goldField then
+		arg_28_0:UpdateOilRes(var_28_1)
+	end
 
-	arg_30_0.metaBossBtn:Dispose()
+	if var_28_1.expField ~= var_28_0.expField then
+		arg_28_0:UpdateClassRes()
+	end
 
-	arg_30_0.metaBossBtn = nil
+	arg_28_0.playerVO = var_28_1
+end
+
+function var_0_0.UpdateOilRes(arg_29_0, arg_29_1)
+	arg_29_0.oilbubbleCG.alpha = 1
+	arg_29_0.oilbubbleTF.localScale = Vector3.one
+
+	setActive(arg_29_0.oilbubbleTF, arg_29_1.oilField ~= 0)
+
+	arg_29_0.oilTF.text = arg_29_1.oilField
+end
+
+function var_0_0.UpdateGoldRes(arg_30_0, arg_30_1)
+	arg_30_0.goldbubbleCG.alpha = 1
+	arg_30_0.goldbubbleTF.localScale = Vector3.one
+
+	setActive(arg_30_0.goldbubbleTF, arg_30_1.goldField ~= 0)
+
+	arg_30_0.goldTF.text = arg_30_1.goldField
+end
+
+function var_0_0.UpdateClassRes(arg_31_0)
+	local var_31_0 = getProxy(NavalAcademyProxy):GetClassVO():GetGenResCnt()
+
+	arg_31_0.classbubbleCG.alpha = 1
+	arg_31_0.classbubbleTF.localScale = Vector3.one
+
+	setActive(arg_31_0.classbubbleTF, var_31_0 > 0)
+
+	arg_31_0.classTF.text = var_31_0
+end
+
+function var_0_0.onBackPressed(arg_32_0)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
+	triggerButton(arg_32_0._tf)
+end
+
+function var_0_0.willExit(arg_33_0)
+	arg_33_0:UnBlurPanel()
+
+	for iter_33_0, iter_33_1 in ipairs(arg_33_0.items) do
+		iter_33_1:Dispose()
+	end
+
+	arg_33_0.items = nil
+
+	arg_33_0.metaBossBtn:Dispose()
+
+	arg_33_0.metaBossBtn = nil
 end
 
 return var_0_0

@@ -9,7 +9,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 end
 
 function var_0_0.changeImage(arg_2_0)
-	GetSpriteFromAtlasAsync("ui/rollingBallGame_atlas", "grid_" .. arg_2_0.type, function(arg_3_0)
+	GetSpriteFromAtlasAsync(RollingBallConst.ui_atlas, "grid_" .. arg_2_0.type, function(arg_3_0)
 		setImageSprite(arg_2_0.gridTf, arg_3_0, true)
 	end)
 end
