@@ -150433,3 +150433,257 @@ _G.pg.base.equip_data_statistics[170572] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[492] = {
+	tech = 0,
+	name = "埃尔德里奇改造 自带刺猬弹（强化）",
+	speciality = "<[ASW]>",
+	type = 14,
+	descrip = "说明未填写",
+	ammo = 9,
+	damage = "186 ~ 372",
+	nationality = 1,
+	rarity = 5,
+	id = 492,
+	value_3 = 0,
+	torpedo_ammo = 0,
+	value_2 = 45,
+	icon = "1",
+	attribute_2 = "antisub",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {
+		{
+			7,
+			9008
+		}
+	},
+	equip_info = {
+		1,
+		2,
+		6,
+		10,
+		11,
+		12
+	},
+	weapon_id = {
+		468
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {
+		"DC"
+	}
+}
+_G.pg.base.equip_data_statistics[80341] = {
+	type = 1,
+	name = "专属弹幕-法戈I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80341,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170581
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80342] = {
+	id = 80342,
+	name = "专属弹幕-法戈II",
+	base = 80341,
+	weapon_id = {
+		170582
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150360] = {
+	type = 10,
+	name = "輸送用高速ドローン",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 8,
+	ammo = 10,
+	nationality = 1,
+	descrip = "量産型の輸送用高速ドローン。高い航続力と信頼度を誇る",
+	rarity = 5,
+	attribute_1 = "cannon",
+	value_3 = 0,
+	torpedo_ammo = 0,
+	id = 150360,
+	icon = "150360",
+	value_1 = "15",
+	attribute_2 = "antiaircraft",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60660
+	},
+	hidden_skill_id = {
+		201017
+	},
+	part_main = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		10,
+		11,
+		12,
+		13,
+		18,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		10,
+		11,
+		12,
+		13,
+		18,
+		19,
+		20,
+		21
+	},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150361] = {
+	id = 150361,
+	value_1 = "16",
+	base = 150360
+}
+_G.pg.base.equip_data_statistics[150362] = {
+	id = 150362,
+	value_2 = 9,
+	value_1 = "17",
+	base = 150360
+}
+_G.pg.base.equip_data_statistics[150363] = {
+	id = 150363,
+	value_2 = 10,
+	value_1 = "18",
+	base = 150360
+}
+_G.pg.base.equip_data_statistics[150364] = {
+	id = 150364,
+	value_2 = 11,
+	value_1 = "19",
+	base = 150360
+}
+_G.pg.base.equip_data_statistics[150365] = {
+	id = 150365,
+	value_2 = 12,
+	value_1 = "20",
+	base = 150360
+}
+_G.pg.base.equip_data_statistics[150366] = {
+	id = 150366,
+	value_2 = 13,
+	value_1 = "21",
+	base = 150360
+}
+_G.pg.base.equip_data_statistics[150367] = {
+	id = 150367,
+	value_2 = 14,
+	value_1 = "22",
+	base = 150360
+}
+_G.pg.base.equip_data_statistics[150368] = {
+	id = 150368,
+	value_2 = 16,
+	value_1 = "23",
+	base = 150360
+}
+_G.pg.base.equip_data_statistics[150369] = {
+	id = 150369,
+	value_2 = 18,
+	value_1 = "24",
+	base = 150360
+}
+_G.pg.base.equip_data_statistics[150370] = {
+	id = 150370,
+	value_2 = 20,
+	value_1 = "25",
+	base = 150360
+}
+_G.pg.base.equip_data_statistics[150371] = {
+	value_2 = 22,
+	anti_siren = 100,
+	base = 150360,
+	id = 150371,
+	value_1 = "26"
+}
+_G.pg.base.equip_data_statistics[150372] = {
+	value_2 = 24,
+	anti_siren = 200,
+	base = 150360,
+	id = 150372,
+	value_1 = "27"
+}
+_G.pg.base.equip_data_statistics[150373] = {
+	value_2 = 26,
+	anti_siren = 300,
+	base = 150360,
+	id = 150373,
+	value_1 = "28"
+}

@@ -2,7 +2,7 @@
 pg.activity_banner = {
 	{
 		id = 1,
-		pic = "temp4",
+		pic = "temp1",
 		type = 2,
 		param = {
 			"scene skinshop",
@@ -12,8 +12,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					7,
-					25
+					8,
+					15
 				},
 				{
 					0,
@@ -25,7 +25,7 @@ pg.activity_banner = {
 				{
 					2024,
 					8,
-					7
+					28
 				},
 				{
 					23,
@@ -36,16 +36,21 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "5505",
 		id = 2,
-		pic = "temp3",
-		type = 3,
+		pic = "temp2",
+		type = 2,
+		param = {
+			"scene charge",
+			{
+				wrap = 2
+			}
+		},
 		time = {
 			{
 				{
 					2024,
-					7,
-					25
+					8,
+					8
 				},
 				{
 					0,
@@ -57,7 +62,7 @@ pg.activity_banner = {
 				{
 					2024,
 					8,
-					8
+					28
 				},
 				{
 					23,
@@ -72,18 +77,17 @@ pg.activity_banner = {
 		pic = "temp8",
 		type = 2,
 		param = {
-			"scene get boat",
+			"shipblueprint",
 			{
-				projectName = "new",
-				page = 1
+				shipGroupId = 19903
 			}
 		},
 		time = {
 			{
 				{
 					2024,
-					7,
-					25
+					8,
+					15
 				},
 				{
 					0,
@@ -95,7 +99,7 @@ pg.activity_banner = {
 				{
 					2024,
 					8,
-					8
+					28
 				},
 				{
 					23,
@@ -106,16 +110,16 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "5460",
+		param = "5521",
 		id = 4,
-		pic = "temp2",
+		pic = "temp3",
 		type = 3,
 		time = {
 			{
 				{
 					2024,
-					7,
-					25
+					8,
+					15
 				},
 				{
 					0,
@@ -127,7 +131,7 @@ pg.activity_banner = {
 				{
 					2024,
 					8,
-					8
+					29
 				},
 				{
 					23,
@@ -139,6 +143,44 @@ pg.activity_banner = {
 	},
 	{
 		id = 5,
+		pic = "temp4",
+		type = 2,
+		param = {
+			"scene get boat",
+			{
+				projectName = "new",
+				page = 1
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					8,
+					15
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					8,
+					29
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 6,
 		pic = "temp5",
 		type = 2,
 		param = {
@@ -151,8 +193,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					7,
-					25
+					8,
+					15
 				},
 				{
 					0,
@@ -164,7 +206,7 @@ pg.activity_banner = {
 				{
 					2024,
 					8,
-					7
+					28
 				},
 				{
 					23,
@@ -175,30 +217,16 @@ pg.activity_banner = {
 		}
 	},
 	{
-		id = 6,
-		pic = "temp1",
-		time = "stop",
-		type = 2,
-		param = {
-			"scene shop",
-			{
-				warp = "shopstreet"
-			}
-		}
-	},
-	{
+		param = "5537",
 		id = 7,
-		pic = "temp9",
-		type = 2,
-		param = {
-			"crusing"
-		},
+		pic = "temp6",
+		type = 3,
 		time = {
 			{
 				{
 					2024,
-					7,
-					25
+					8,
+					15
 				},
 				{
 					0,
@@ -210,7 +238,7 @@ pg.activity_banner = {
 				{
 					2024,
 					8,
-					15
+					29
 				},
 				{
 					23,
@@ -225,14 +253,14 @@ pg.activity_banner = {
 		pic = "temp7",
 		type = 2,
 		param = {
-			"scene court yard"
+			"COWBOY_TOWN_BACKHILL"
 		},
 		time = {
 			{
 				{
 					2024,
-					7,
-					25
+					8,
+					15
 				},
 				{
 					0,
@@ -244,7 +272,7 @@ pg.activity_banner = {
 				{
 					2024,
 					8,
-					8
+					29
 				},
 				{
 					23,
@@ -255,16 +283,18 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "5436",
 		id = 9,
-		pic = "temp6",
-		type = 3,
+		pic = "temp9",
+		type = 2,
+		param = {
+			"scene court yard"
+		},
 		time = {
 			{
 				{
 					2024,
-					7,
-					25
+					8,
+					15
 				},
 				{
 					0,
@@ -276,7 +306,7 @@ pg.activity_banner = {
 				{
 					2024,
 					8,
-					8
+					28
 				},
 				{
 					23,
@@ -295,8 +325,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					7,
-					25
+					8,
+					15
 				},
 				{
 					0,
@@ -308,7 +338,7 @@ pg.activity_banner = {
 				{
 					2024,
 					8,
-					7
+					28
 				},
 				{
 					23,
@@ -341,8 +371,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					7,
-					25
+					8,
+					15
 				},
 				{
 					0,
@@ -354,7 +384,7 @@ pg.activity_banner = {
 				{
 					2024,
 					8,
-					7
+					28
 				},
 				{
 					23,
@@ -388,16 +418,16 @@ pg.activity_banner = {
 	get_id_list_by_type = {
 		[2] = {
 			1,
+			2,
 			3,
 			5,
 			6,
-			7,
-			8
+			8,
+			9
 		},
 		[3] = {
-			2,
 			4,
-			9
+			7
 		},
 		[9] = {
 			90,

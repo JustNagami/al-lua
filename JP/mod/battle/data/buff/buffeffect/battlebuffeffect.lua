@@ -219,13 +219,14 @@ end
 function var_0_3.fleetAttrRequire(arg_26_0, arg_26_1, arg_26_2)
 	if arg_26_0._fleetAttrRequire then
 		local var_26_0, var_26_1 = string.find(arg_26_0._fleetAttrRequire, "%p+")
+		local var_26_2 = string.sub(arg_26_0._fleetAttrRequire, 1, var_26_0 - 1)
 
-		if string.sub(arg_26_0._fleetAttrRequire, 1, var_26_0 - 1) ~= arg_26_2 then
+		if arg_26_2 ~= nil and var_26_2 ~= arg_26_2 then
 			return false
 		elseif arg_26_1:GetFleetVO() then
-			local var_26_2 = arg_26_1:GetFleetVO():GetFleetAttr()
+			local var_26_3 = arg_26_1:GetFleetVO():GetFleetAttr()
 
-			return var_0_1.parseCompare(arg_26_0._fleetAttrRequire, var_26_2)
+			return var_0_1.parseCompare(arg_26_0._fleetAttrRequire, var_26_3)
 		else
 			return false
 		end

@@ -125,6 +125,12 @@ function var_0_0.displayBG(arg_15_0, arg_15_1)
 
 			var_15_1:SetParent(arg_15_0.bg.transform, false)
 			var_15_1:SetAsFirstSibling()
+
+			local var_15_2 = arg_15_0.criBgGo:GetComponent("AspectRatioFitter")
+
+			if var_15_2 then
+				var_15_2.enabled = true
+			end
 		end
 	else
 		if not arg_15_0.isCri then

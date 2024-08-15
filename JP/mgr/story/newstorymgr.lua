@@ -261,7 +261,8 @@ function var_0_0._Init(arg_23_0, arg_23_1, arg_23_2)
 		CarouselPlayer.New(arg_23_1),
 		VedioStoryPlayer.New(arg_23_1),
 		CastStoryPlayer.New(arg_23_1),
-		SpAnimStoryPlayer.New(arg_23_1)
+		SpAnimStoryPlayer.New(arg_23_1),
+		BlinkStoryPlayer.New(arg_23_1)
 	}
 	arg_23_0.setSpeedPanel = StorySetSpeedPanel.New(arg_23_0._tf)
 	arg_23_0.recordPanel = NewStoryRecordPanel.New()
@@ -695,6 +696,10 @@ function var_0_0.OnStart(arg_67_0)
 end
 
 function var_0_0.TrackingStart(arg_68_0)
+	if not getProxy(PlayerProxy) or not getProxy(PlayerProxy):getRawData() then
+		return
+	end
+
 	arg_68_0.trackFlag = false
 
 	if not arg_68_0.storyScript then

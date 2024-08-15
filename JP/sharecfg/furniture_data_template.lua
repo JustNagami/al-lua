@@ -155,6 +155,8 @@ pg.furniture_data_template = setmetatable({
 			281,
 			282,
 			283,
+			284,
+			285,
 			100002,
 			100003,
 			100004,
@@ -3163,6 +3165,26 @@ pg.furniture_data_template = setmetatable({
 			312115,
 			312301,
 			312302
+		},
+		[113] = {
+			313001,
+			313002,
+			313101,
+			313102,
+			313103,
+			313104,
+			313105,
+			313106,
+			313107,
+			313108,
+			313109,
+			313110,
+			313111,
+			313112,
+			313113,
+			313301,
+			313302,
+			313303
 		}
 	},
 	get_id_list_by_tag = {
@@ -3262,6 +3284,7 @@ pg.furniture_data_template = setmetatable({
 			280,
 			281,
 			282,
+			285,
 			100002,
 			100003,
 			100004,
@@ -3383,7 +3406,8 @@ pg.furniture_data_template = setmetatable({
 			275,
 			276,
 			278,
-			283
+			283,
+			284
 		},
 		[7] = {
 			223,
@@ -3574,7 +3598,8 @@ pg.furniture_data_template = setmetatable({
 			310116,
 			311116,
 			312114,
-			312115
+			312115,
+			313113
 		},
 		[4] = {
 			1001,
@@ -3673,7 +3698,8 @@ pg.furniture_data_template = setmetatable({
 			309001,
 			310001,
 			311001,
-			312001
+			312001,
+			313001
 		},
 		[3] = {
 			1002,
@@ -3773,7 +3799,8 @@ pg.furniture_data_template = setmetatable({
 			309002,
 			310002,
 			311002,
-			312002
+			312002,
+			313002
 		},
 		{
 			1101,
@@ -5647,7 +5674,19 @@ pg.furniture_data_template = setmetatable({
 			312110,
 			312111,
 			312112,
-			312113
+			312113,
+			313101,
+			313102,
+			313103,
+			313104,
+			313105,
+			313106,
+			313107,
+			313108,
+			313109,
+			313110,
+			313111,
+			313112
 		},
 		{
 			1108,
@@ -6144,7 +6183,10 @@ pg.furniture_data_template = setmetatable({
 			310309,
 			310310,
 			312301,
-			312302
+			312302,
+			313301,
+			313302,
+			313303
 		}
 	},
 	get_id_list_by_type = {
@@ -6279,6 +6321,8 @@ pg.furniture_data_template = setmetatable({
 			278,
 			280,
 			283,
+			284,
+			285,
 			100002,
 			100004,
 			100005,
@@ -8195,7 +8239,20 @@ pg.furniture_data_template = setmetatable({
 			312111,
 			312112,
 			312113,
-			312114
+			312114,
+			313101,
+			313102,
+			313103,
+			313104,
+			313105,
+			313106,
+			313107,
+			313108,
+			313109,
+			313110,
+			313111,
+			313112,
+			313113
 		},
 		[11] = {
 			143,
@@ -8587,7 +8644,10 @@ pg.furniture_data_template = setmetatable({
 			310308,
 			310309,
 			310310,
-			312302
+			312302,
+			313301,
+			313302,
+			313303
 		},
 		[13] = {
 			100015,
@@ -8698,7 +8758,8 @@ pg.furniture_data_template = setmetatable({
 			309001,
 			310001,
 			311001,
-			312001
+			312001,
+			313001
 		},
 		{
 			1002,
@@ -8798,7 +8859,8 @@ pg.furniture_data_template = setmetatable({
 			309002,
 			310002,
 			311002,
-			312002
+			312002,
+			313002
 		},
 		[5] = {
 			1101,
@@ -9298,6 +9360,8 @@ pg.furniture_data_template = setmetatable({
 		281,
 		282,
 		283,
+		284,
+		285,
 		100002,
 		100003,
 		100004,
@@ -12107,7 +12171,25 @@ pg.furniture_data_template = setmetatable({
 		312114,
 		312115,
 		312301,
-		312302
+		312302,
+		313001,
+		313002,
+		313101,
+		313102,
+		313103,
+		313104,
+		313105,
+		313106,
+		313107,
+		313108,
+		313109,
+		313110,
+		313111,
+		313112,
+		313113,
+		313301,
+		313302,
+		313303
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -19688,6 +19770,92 @@ pg.base.furniture_data_template = {
 		canputonGrid = {},
 		can_trigger = {
 			1
+		},
+		interAction_group = {}
+	},
+	[284] = {
+		spine_extra = "",
+		describe = "嵐の檻を突き破り、未来へと向かう。遠い道のりでも、努力を続けるのみーー「錬翼空翔」に参加した指揮官に贈る",
+		gain_by = "錬翼空翔",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 5,
+		is_get_time_note = 1,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 8,
+		icon = "chongpofengbaoxunzhangicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "記念「破嵐満帆」",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 284,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"chongpofengbaoxunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[285] = {
+		spine_extra = "",
+		describe = "フリーダム・トレイン、未知の荒野を往く。ーー「荒野休日開拓記」に参加した指揮官に贈る",
+		gain_by = "荒野假日开拓记",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 1,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "zhengqihuocheicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "荒野開拓記念",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 285,
+		can_rotate = 0,
+		size = {
+			6,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"zhengqihuoche",
+				"normal"
+			}
 		},
 		interAction_group = {}
 	},
@@ -144738,6 +144906,777 @@ pg.base.furniture_data_template = {
 		can_rotate = 0,
 		size = {
 			6,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313001] = {
+		spine_extra = "",
+		describe = "宿の中では喧嘩禁止ピョ！",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 113,
+		belong = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		deblocking = 1,
+		level = 1,
+		name = "ウェスタン宿屋の床",
+		effect = "",
+		advice = 0,
+		icon = "dibanxbicon",
+		spine_action_replace = "",
+		picture = "xb/dibanxb",
+		comfortable = 4,
+		canputon = 0,
+		id = 313001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313002] = {
+		spine_extra = "",
+		describe = "宿の中では喧嘩禁止ピョ！",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		themeId = 113,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		deblocking = 1,
+		level = 5,
+		name = "ウェスタン宿屋の壁",
+		effect = "",
+		advice = 0,
+		icon = "qiangbixbicon",
+		spine_action_replace = "",
+		picture = "",
+		comfortable = 4,
+		canputon = 0,
+		id = 313002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbixb",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[313101] = {
+		spine_extra = "",
+		describe = "ご飯を食べながらゲームでもしよう。ただしイカサマはだめだぞ？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 113,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "dayuanzhuoxbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "宿屋の円卓",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "xb/dayuanzhuoxb",
+		canputon = 0,
+		id = 313101,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313102] = {
+		spine_extra = "",
+		describe = "注文したものを届けるピョ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 113,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "fuwujiuxbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "宿屋ウェイトレス饅頭",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "xb/fuwujiuxb",
+		canputon = 0,
+		id = 313102,
+		can_rotate = 0,
+		size = {
+			2,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313103] = {
+		spine_extra = "",
+		describe = "どうぞごゆっくり。まずは一杯注文してあなたの物語を聞かせて？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 113,
+		is_3d_obj = 0,
+		count = 3,
+		tag = 1,
+		icon = "gaojiaoyixbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "宿屋のカウンターチェア",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "xb/gaojiaoyixb",
+		canputon = 0,
+		id = 313103,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					7.3,
+					35.2
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313104] = {
+		spine_extra = "",
+		describe = "変なやつを見かけたらすぐに通報するピョ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 113,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "jingguanjiuxbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "宿屋の保安官饅頭",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "xb/jingguanjiuxb",
+		canputon = 0,
+		id = 313104,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313105] = {
+		spine_extra = "",
+		describe = "2階も当然喧嘩禁止ピョ",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 113,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "loutixbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "宿屋の階段",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "xb/loutixb",
+		canputon = 0,
+		id = 313105,
+		can_rotate = 0,
+		size = {
+			5,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313106] = {
+		spine_extra = "",
+		describe = "樽……じゃなくて樽椅子だ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 113,
+		is_3d_obj = 0,
+		count = 6,
+		tag = 1,
+		icon = "mutongyixbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "宿屋の樽椅子",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "xb/mutongyixb",
+		canputon = 0,
+		id = 313106,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					6.4,
+					45.9
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313107] = {
+		spine_extra = "",
+		describe = "座ってOK。振り回すのは禁止",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 113,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "yizi1xbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "宿屋の木椅子（裏）",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "xb/yizi1xb",
+		canputon = 0,
+		id = 313107,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313108] = {
+		spine_extra = "",
+		describe = "座ってOK。振り回すのは禁止",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 113,
+		is_3d_obj = 0,
+		count = 3,
+		tag = 1,
+		icon = "yizi2xbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "宿屋の木椅子（正面）",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "xb/yizi2xb",
+		canputon = 0,
+		id = 313108,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					23.3,
+					20.1
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313109] = {
+		spine_extra = "",
+		describe = "使えるものは何でも使う。なにせ「使える」からな",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 113,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "jiutongzhuoxbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "宿屋の樽テーブル",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "xb/jiutongzhuoxb",
+		canputon = 0,
+		id = 313109,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313110] = {
+		spine_extra = "",
+		describe = "なにか隠れてない？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 113,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "zhuangshitongxbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "目立たない樽たち",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 313110,
+		can_rotate = 0,
+		size = {
+			2,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zhuangshitongxb",
+				"normal",
+				{
+					"action1",
+					false,
+					{
+						"action2"
+					}
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[313111] = {
+		spine_extra = "",
+		describe = "新しい懸賞だピョ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 113,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "tongjilingxbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "宿屋の手配状",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 313111,
+		can_rotate = 1,
+		size = {
+			2,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"tongjilingxb",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[313112] = {
+		spine_extra = "",
+		describe = "おかわりピョ？それとも話を聞きたいピョ？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 113,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "bataixbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "宿屋のカウンター",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "xb/bataixb",
+		canputon = 0,
+		id = 313112,
+		can_rotate = 0,
+		size = {
+			4,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313113] = {
+		spine_extra = "",
+		describe = "手に取って荒野のレジェンドになろう！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "レジェンド拳銃セット",
+		themeId = 113,
+		icon = "shouqiangjiaxbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 313113,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shouqiangjiaxbB",
+				"normal"
+			},
+			{
+				"shouqiangjiaxbT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"walk"
+					},
+					{
+						"yun"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[313301] = {
+		spine_extra = "",
+		describe = "お客さん、今日はどれにするピョ？",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 113,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "jiujiaxbicon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "宿屋のカウンター棚",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "xb/jiujiaxb",
+		canputon = 0,
+		id = 313301,
+		can_rotate = 0,
+		size = {
+			6,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313302] = {
+		spine_extra = "",
+		describe = "宿屋のありきたりな壁飾り",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 113,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 5,
+		icon = "guahuaxbicon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "宿屋の額縁",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "xb/guahuaxb",
+		canputon = 0,
+		id = 313302,
+		can_rotate = 0,
+		size = {
+			2,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[313303] = {
+		spine_extra = "",
+		describe = "非売品につき触れるの禁止",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 113,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 5,
+		icon = "chuguixbicon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "宿屋の収納",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "xb/chuguixb",
+		canputon = 0,
+		id = 313303,
+		can_rotate = 0,
+		size = {
+			4,
 			0
 		},
 		offset = {},

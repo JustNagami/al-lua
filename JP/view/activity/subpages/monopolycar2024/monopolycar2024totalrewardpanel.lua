@@ -43,7 +43,9 @@ function var_0_0.UpdateItem(arg_9_0, arg_9_1, arg_9_2)
 end
 
 function var_0_0.OnDestroy(arg_10_0)
-	return
+	if arg_10_0:isShowing() then
+		arg_10_0:Hide()
+	end
 end
 
 return var_0_0

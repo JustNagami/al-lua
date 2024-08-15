@@ -82,6 +82,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.offsetDragTargetY = arg_1_0.startValue
 	arg_1_0.parameterComAdd = true
 	arg_1_0.reactConditionFlag = false
+	arg_1_0.loadL2dStep = true
 end
 
 function var_0_0.onListenerEvent(arg_2_0, arg_2_1, arg_2_2)
@@ -299,12 +300,14 @@ function var_0_0.onEventCallback(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
 		local var_15_3
 		local var_15_4
 		local var_15_5
+		local var_15_6 = false
 
 		if arg_15_0.actionTrigger.action then
 			var_15_1 = arg_15_0:fillterAction(arg_15_0.actionTrigger.action)
 			var_15_0 = arg_15_0.actionTriggerActive
 			var_15_2 = arg_15_0.actionTrigger.focus or false
 			var_15_3 = arg_15_0.actionTrigger.target or nil
+			var_15_6 = arg_15_0.actionTrigger.target_focus == 1 and true or false
 
 			if (arg_15_0.actionTrigger.circle or nil) and var_15_3 and var_15_3 == arg_15_0.parameterTargetValue then
 				var_15_3 = arg_15_0.startValue
@@ -315,9 +318,9 @@ function var_0_0.onEventCallback(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
 			arg_15_0:triggerAction()
 			arg_15_0:stopDrag()
 		elseif arg_15_0.actionTrigger.action_list then
-			local var_15_6 = arg_15_0.actionTrigger.action_list[arg_15_0.actionListIndex]
+			local var_15_7 = arg_15_0.actionTrigger.action_list[arg_15_0.actionListIndex]
 
-			var_15_1 = arg_15_0:fillterAction(var_15_6.action)
+			var_15_1 = arg_15_0:fillterAction(var_15_7.action)
 
 			if arg_15_0.actionTriggerActive.active_list and arg_15_0.actionListIndex <= #arg_15_0.actionTriggerActive.active_list then
 				var_15_0 = arg_15_0.actionTriggerActive.active_list[arg_15_0.actionListIndex]
@@ -325,9 +328,10 @@ function var_0_0.onEventCallback(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
 				var_15_0 = arg_15_0.actionTriggerActive
 			end
 
-			var_15_2 = var_15_6.focus or true
-			var_15_3 = var_15_6.target or nil
-			var_15_4 = var_15_6.react or nil
+			var_15_2 = var_15_7.focus or true
+			var_15_3 = var_15_7.target or nil
+			var_15_6 = var_15_7.target_focus == 1 and true or false
+			var_15_4 = var_15_7.react or nil
 
 			arg_15_0:triggerAction()
 
@@ -343,6 +347,7 @@ function var_0_0.onEventCallback(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
 			var_15_0 = arg_15_0.actionTriggerActive
 			var_15_2 = arg_15_0.actionTrigger.focus or false
 			var_15_3 = arg_15_0.actionTrigger.target or nil
+			var_15_6 = arg_15_0.actionTrigger.target_focus == 1 and true or false
 
 			if (arg_15_0.actionTrigger.circle or nil) and var_15_3 and var_15_3 == arg_15_0.parameterTargetValue then
 				var_15_3 = arg_15_0.startValue
@@ -368,6 +373,10 @@ function var_0_0.onEventCallback(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
 
 		if var_15_3 then
 			arg_15_0:setTargetValue(var_15_3)
+
+			if var_15_6 then
+				arg_15_0:setParameterValue(var_15_3)
+			end
 
 			if not var_15_1 then
 				arg_15_0.revertResetFlag = true
@@ -396,7 +405,7 @@ end
 
 function var_0_0.fillterAction(arg_17_0, arg_17_1)
 	if type(arg_17_1) == "table" then
-		return arg_17_1[math.random(1, arg_17_1)]
+		return arg_17_1[math.random(1, #arg_17_1)]
 	else
 		return arg_17_1
 	end
@@ -452,6 +461,8 @@ function var_0_0.stepParameter(arg_24_0)
 	arg_24_0:updateParameterValue()
 	arg_24_0:updateRelationValue()
 	arg_24_0:checkReset()
+
+	arg_24_0.loadL2dStep = false
 end
 
 function var_0_0.updateParameterUpdateFlag(arg_25_0)
@@ -622,33 +633,64 @@ function var_0_0.updateRelationValue(arg_31_0)
 		local var_31_0 = iter_31_1.data
 		local var_31_1 = var_31_0.type
 		local var_31_2 = var_31_0.relation_value
-		local var_31_3
+		local var_31_3 = var_31_0.target
 		local var_31_4
 		local var_31_5
 
 		if var_31_1 == Live2D.relation_type_drag_x then
-			var_31_3 = arg_31_0.offsetDragX or iter_31_1.start or arg_31_0.startValue or 0
+			var_31_4 = arg_31_0.offsetDragX or iter_31_1.start or arg_31_0.startValue or 0
 			var_31_5 = true
 		elseif var_31_1 == Live2D.relation_type_drag_y then
-			var_31_3 = arg_31_0.offsetDragY or iter_31_1.start or arg_31_0.startValue or 0
+			var_31_4 = arg_31_0.offsetDragY or iter_31_1.start or arg_31_0.startValue or 0
 			var_31_5 = true
 		elseif var_31_1 == Live2D.relation_type_action_index then
-			var_31_3 = var_31_2[arg_31_0.actionListIndex]
-			var_31_3 = var_31_3 or 0
+			var_31_4 = var_31_2[arg_31_0.actionListIndex]
+			var_31_4 = var_31_4 or 0
 			var_31_5 = true
+		elseif var_31_1 == Live2D.relation_type_idle then
+			if arg_31_0.loadL2dStep and arg_31_0.l2dIdleIndex == var_31_0.idle then
+				var_31_5 = true
+			end
+
+			if arg_31_0.l2dIsPlaying then
+				if arg_31_0.l2dPlayActionName == arg_31_0.actionTrigger.action then
+					arg_31_0.relationActive = true
+				end
+			else
+				arg_31_0.relationActive = false
+				arg_31_0.relationCountTime = nil
+			end
+
+			if not var_31_5 and arg_31_0.relationActive and arg_31_0.l2dIdleIndex == var_31_0.idle then
+				if not arg_31_0.relationCountTime then
+					arg_31_0.relationCountTime = Time.GetTimestamp() + var_31_0.time
+				end
+
+				if arg_31_0.relationCountTime and Time.GetTimestamp() >= arg_31_0.relationCountTime then
+					var_31_5 = true
+				end
+			end
 		else
-			var_31_3 = arg_31_0.parameterTargetValue
+			var_31_4 = arg_31_0.parameterTargetValue
 			var_31_5 = false
 		end
 
-		local var_31_6 = iter_31_1.value or arg_31_0.startValue
-		local var_31_7 = arg_31_0:fixRelationParameter(var_31_3, var_31_0)
-		local var_31_8 = iter_31_1.parameterSmooth or 0
-		local var_31_9 = var_31_0.smooth and var_31_0.smooth / 1000 or arg_31_0.smooth
-		local var_31_10, var_31_11 = Mathf.SmoothDamp(var_31_6, var_31_7, var_31_8, var_31_9)
+		local var_31_6
+		local var_31_7
 
-		iter_31_1.value = var_31_10
-		iter_31_1.parameterSmooth = var_31_11
+		if var_31_3 then
+			var_31_6 = var_31_3
+		else
+			local var_31_8 = arg_31_0:fixRelationParameter(var_31_4, var_31_0)
+			local var_31_9 = iter_31_1.value or arg_31_0.startValue
+			local var_31_10 = iter_31_1.parameterSmooth or 0
+			local var_31_11 = var_31_0.smooth and var_31_0.smooth / 1000 or arg_31_0.smooth
+
+			var_31_6, var_31_7 = Mathf.SmoothDamp(var_31_9, var_31_8, var_31_10, var_31_11)
+		end
+
+		iter_31_1.value = var_31_6
+		iter_31_1.parameterSmooth = var_31_7
 		iter_31_1.enable = var_31_5
 		iter_31_1.comId = arg_31_0.id
 	end
@@ -995,27 +1037,31 @@ function var_0_0.loadData(arg_48_0)
 	end
 end
 
-function var_0_0.clearData(arg_49_0)
-	if arg_49_0.revert == -1 then
-		arg_49_0.actionListIndex = 1
+function var_0_0.loadL2dFinal(arg_49_0)
+	arg_49_0.loadL2dStep = true
+end
 
-		arg_49_0:setParameterValue(arg_49_0.startValue)
-		arg_49_0:setTargetValue(arg_49_0.startValue)
+function var_0_0.clearData(arg_50_0)
+	if arg_50_0.revert == -1 then
+		arg_50_0.actionListIndex = 1
+
+		arg_50_0:setParameterValue(arg_50_0.startValue)
+		arg_50_0:setTargetValue(arg_50_0.startValue)
 	end
 end
 
-function var_0_0.setTriggerActionFlag(arg_50_0, arg_50_1)
-	arg_50_0.isTriggerAtion = arg_50_1
+function var_0_0.setTriggerActionFlag(arg_51_0, arg_51_1)
+	arg_51_0.isTriggerAtion = arg_51_1
 end
 
-function var_0_0.dispose(arg_51_0)
-	arg_51_0._active = false
-	arg_51_0._parameterCom = nil
-	arg_51_0.parameterValue = arg_51_0.startValue
-	arg_51_0.parameterTargetValue = 0
-	arg_51_0.parameterSmooth = 0
-	arg_51_0.mouseInputDown = Vector2(0, 0)
-	arg_51_0.live2dData = nil
+function var_0_0.dispose(arg_52_0)
+	arg_52_0._active = false
+	arg_52_0._parameterCom = nil
+	arg_52_0.parameterValue = arg_52_0.startValue
+	arg_52_0.parameterTargetValue = 0
+	arg_52_0.parameterSmooth = 0
+	arg_52_0.mouseInputDown = Vector2(0, 0)
+	arg_52_0.live2dData = nil
 end
 
 return var_0_0

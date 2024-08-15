@@ -1,11 +1,12 @@
 ﻿local var_0_0 = class("MainBaseActivityBtn")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
 	arg_1_0.tpl = arg_1_1
 
 	pg.DelegateInfo.New(arg_1_0)
 
 	arg_1_0.event = arg_1_2
+	arg_1_0.hideSubImg = arg_1_4
 
 	if arg_1_3 then
 		arg_1_0._tf = arg_1_0.tpl
@@ -107,8 +108,13 @@ function var_0_0.InitImage(arg_13_0, arg_13_1)
 		return
 	end
 
+	arg_13_0.imgName = var_13_0
+
 	LoadSpriteAtlasAsync(arg_13_0:ResPath() .. "/" .. var_13_0, "", function(arg_14_0)
-		arg_13_0.imgName = var_13_0
+		if IsNil(arg_13_0.image) then
+			return
+		end
+
 		arg_13_0.image.sprite = arg_14_0
 
 		arg_13_0.image:SetNativeSize()
@@ -117,6 +123,12 @@ function var_0_0.InitImage(arg_13_0, arg_13_1)
 end
 
 function var_0_0.InitSubImage(arg_15_0)
+	if arg_15_0.hideSubImg then
+		setActive(arg_15_0.subImage.gameObject, false)
+
+		return
+	end
+
 	local var_15_0 = arg_15_0.config.text_pic
 
 	setActive(arg_15_0.subImage.gameObject, var_15_0 ~= nil and var_15_0 ~= "")
@@ -125,106 +137,100 @@ function var_0_0.InitSubImage(arg_15_0)
 		return
 	end
 
-	LoadSpriteAtlasAsync(arg_15_0:ResPath() .. "/" .. var_15_0, "", function(arg_16_0)
-		arg_15_0.subImgName = var_15_0
-		arg_15_0.subImage.sprite = arg_16_0
+	arg_15_0.subImgName = var_15_0
 
-		arg_15_0.subImage:SetNativeSize()
-	end)
+	GetImageSpriteFromAtlasAsync(arg_15_0:ResPath() .. "/" .. var_15_0, "", arg_15_0.subImage, true)
 end
 
-function var_0_0.GetTipImage(arg_17_0)
+function var_0_0.GetTipImage(arg_16_0)
 	return "tip"
 end
 
-function var_0_0.InitTipImage(arg_18_0)
-	local var_18_0 = arg_18_0:GetTipImage()
+function var_0_0.InitTipImage(arg_17_0)
+	local var_17_0 = arg_17_0:GetTipImage()
 
-	if not var_18_0 or var_18_0 == arg_18_0.tipImageName then
+	if not var_17_0 or var_17_0 == arg_17_0.tipImageName then
 		return
 	end
 
-	LoadSpriteAtlasAsync("LinkButton/" .. var_18_0, "", function(arg_19_0)
-		arg_18_0.tipImageName = var_18_0
-		arg_18_0.tipTr.sprite = arg_19_0
+	arg_17_0.tipImageName = var_17_0
 
-		arg_18_0.tipTr:SetNativeSize()
-	end)
+	GetImageSpriteFromAtlasAsync("LinkButton/" .. var_17_0, "", arg_17_0.tipTr, true)
 end
 
-function var_0_0.UpdatePosition(arg_20_0, arg_20_1)
-	local var_20_0 = -20
-	local var_20_1 = -150 - (arg_20_1 - 1) * (arg_20_0._tf.sizeDelta.y + var_20_0)
+function var_0_0.UpdatePosition(arg_18_0, arg_18_1)
+	local var_18_0 = -20
+	local var_18_1 = -150 - (arg_18_1 - 1) * (arg_18_0._tf.sizeDelta.y + var_18_0)
 
-	arg_20_0._tf.anchoredPosition = Vector2(arg_20_0._tf.anchoredPosition.x, var_20_1, 0)
+	arg_18_0._tf.anchoredPosition = Vector2(arg_18_0._tf.anchoredPosition.x, var_18_1, 0)
 end
 
-function var_0_0.Clear(arg_21_0)
+function var_0_0.Clear(arg_19_0)
+	if arg_19_0._tf then
+		setActive(arg_19_0._tf, false)
+	end
+end
+
+function var_0_0.emit(arg_20_0, ...)
+	arg_20_0.event:emit(...)
+end
+
+function var_0_0.Dispose(arg_21_0)
+	pg.DelegateInfo.Dispose(arg_21_0)
+
 	if arg_21_0._tf then
-		setActive(arg_21_0._tf, false)
+		Destroy(arg_21_0._tf.gameObject)
+
+		arg_21_0._tf = nil
 	end
 end
 
-function var_0_0.emit(arg_22_0, ...)
-	arg_22_0.event:emit(...)
-end
-
-function var_0_0.Dispose(arg_23_0)
-	pg.DelegateInfo.Dispose(arg_23_0)
-
-	if arg_23_0._tf then
-		Destroy(arg_23_0._tf.gameObject)
-
-		arg_23_0._tf = nil
-	end
-end
-
-function var_0_0.Skip(arg_24_0, arg_24_1)
-	if arg_24_1.type == GAMEUI_BANNER_1 then
-		Application.OpenURL(arg_24_1.param)
-	elseif arg_24_1.type == GAMEUI_BANNER_2 then
-		arg_24_0:emit(NewMainMediator.SKIP_SCENE, arg_24_1.param)
-	elseif arg_24_1.type == GAMEUI_BANNER_3 then
-		arg_24_0:emit(NewMainMediator.SKIP_ACTIVITY, tonumber(arg_24_1.param))
-	elseif arg_24_1.type == GAMEUI_BANNER_4 then
-		arg_24_0:emit(NewMainMediator.SKIP_SHOP, arg_24_1.param)
-	elseif arg_24_1.type == GAMEUI_BANNER_5 then
+function var_0_0.Skip(arg_22_0, arg_22_1)
+	if arg_22_1.type == GAMEUI_BANNER_1 then
+		Application.OpenURL(arg_22_1.param)
+	elseif arg_22_1.type == GAMEUI_BANNER_2 then
+		arg_22_0:emit(NewMainMediator.SKIP_SCENE, arg_22_1.param)
+	elseif arg_22_1.type == GAMEUI_BANNER_3 then
+		arg_22_0:emit(NewMainMediator.SKIP_ACTIVITY, tonumber(arg_22_1.param))
+	elseif arg_22_1.type == GAMEUI_BANNER_4 then
+		arg_22_0:emit(NewMainMediator.SKIP_SHOP, arg_22_1.param)
+	elseif arg_22_1.type == GAMEUI_BANNER_5 then
 		-- block empty
-	elseif arg_24_1.type == GAMEUI_BANNER_6 then
-		arg_24_0:emit(NewMainMediator.GO_SCENE, SCENE.SELTECHNOLOGY)
-	elseif arg_24_1.type == GAMEUI_BANNER_7 then
-		arg_24_0:emit(NewMainMediator.GO_MINI_GAME, arg_24_1.param[1])
-	elseif arg_24_1.type == GAMEUI_BANNER_8 then
+	elseif arg_22_1.type == GAMEUI_BANNER_6 then
+		arg_22_0:emit(NewMainMediator.GO_SCENE, SCENE.SELTECHNOLOGY)
+	elseif arg_22_1.type == GAMEUI_BANNER_7 then
+		arg_22_0:emit(NewMainMediator.GO_MINI_GAME, arg_22_1.param[1])
+	elseif arg_22_1.type == GAMEUI_BANNER_8 then
 		if getProxy(GuildProxy):getRawData() then
-			arg_24_0:emit(NewMainMediator.GO_SCENE, SCENE.GUILD)
+			arg_22_0:emit(NewMainMediator.GO_SCENE, SCENE.GUILD)
 		else
-			arg_24_0:emit(NewMainMediator.GO_SCENE, SCENE.NEWGUILD)
+			arg_22_0:emit(NewMainMediator.GO_SCENE, SCENE.NEWGUILD)
 		end
-	elseif arg_24_1.type == GAMEUI_BANNER_14 then
-		arg_24_0:emit(NewMainMediator.OPEN_KINK_BUTTON_LAYER, Context.New({
-			mediator = _G[arg_24_1.param.mediator],
-			viewComponent = _G[arg_24_1.param.view]
+	elseif arg_22_1.type == GAMEUI_BANNER_14 then
+		arg_22_0:emit(NewMainMediator.OPEN_KINK_BUTTON_LAYER, Context.New({
+			mediator = _G[arg_22_1.param.mediator],
+			viewComponent = _G[arg_22_1.param.view]
 		}))
 	end
 end
 
-function var_0_0.ResPath(arg_25_0)
+function var_0_0.ResPath(arg_23_0)
 	return "LinkButton"
 end
 
-function var_0_0.GetActivityID(arg_26_0)
+function var_0_0.GetActivityID(arg_24_0)
 	assert(false, "策划配置default类型 必须重写这个方法")
 end
 
-function var_0_0.CustomOnClick(arg_27_0)
+function var_0_0.CustomOnClick(arg_25_0)
 	assert(false, "策划配置type = 0 这个按钮必须自己定义跳转行为")
 end
 
-function var_0_0.GetEventName(arg_28_0)
+function var_0_0.GetEventName(arg_26_0)
 	assert(false, "overwrite me !!!")
 end
 
-function var_0_0.OnInit(arg_29_0)
+function var_0_0.OnInit(arg_27_0)
 	return
 end
 

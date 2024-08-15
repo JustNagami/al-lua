@@ -734,6 +734,7 @@ end
 function var_0_0.initData(arg_51_0)
 	local var_51_0 = Application.targetFrameRate or 60
 
+	arg_51_0.storylist = arg_51_0:GetMGHubData():GetSimpleValue("story")
 	arg_51_0.timer = Timer.New(function()
 		arg_51_0:onTimer()
 	end, 1 / var_51_0, -1)
@@ -1149,6 +1150,14 @@ function var_0_0.showSettlement(arg_92_0)
 	setText(var_92_4, var_92_1)
 
 	if arg_92_0:getGameTimes() and arg_92_0:getGameTimes() > 0 then
+		local var_92_5 = arg_92_0:getGameUsedTimes() + 1
+		local var_92_6 = pg.NewStoryMgr.GetInstance()
+		local var_92_7 = arg_92_0.storylist[var_92_5] and arg_92_0.storylist[var_92_5][1] or nil
+
+		if var_92_7 and not var_92_6:IsPlayed(var_92_7) then
+			var_92_6:Play(var_92_7)
+		end
+
 		arg_92_0.sendSuccessFlag = true
 
 		arg_92_0:SendSuccess(0)

@@ -1607,5 +1607,21 @@ pg.voice_actor_CN = {
 	[420] = {
 		code = 420,
 		actor_name = "平山笑美"
+	},
+	[421] = {
+		code = 421,
+		actor_name = "斉藤佑圭"
+	},
+	[422] = {
+		code = 422,
+		actor_name = "小市眞琴"
+	},
+	[423] = {
+		code = 423,
+		actor_name = "美坂朱音"
+	},
+	[424] = {
+		code = 424,
+		actor_name = "伊藤ゆいな"
 	}
 }

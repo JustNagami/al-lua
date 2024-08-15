@@ -175,6 +175,16 @@ function var_0_1.castSkill(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
 		return "check fleet attr"
 	end
 
+	if arg_8_0._fleetAttrRequire then
+		if arg_8_2 then
+			if not arg_8_0:fleetAttrRequire(arg_8_1, arg_8_2.attr) then
+				return
+			end
+		elseif not arg_8_0:fleetAttrRequire(arg_8_1) then
+			return "check fleet attr"
+		end
+	end
+
 	if arg_8_0._fleetAttrDeltaRequire and arg_8_2 and not arg_8_0:fleetAttrDelatRequire(arg_8_2.delta) then
 		return "check fleet attr delta"
 	end

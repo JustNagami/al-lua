@@ -1647,10 +1647,6 @@ end
 
 function var_0_0.updateMap(arg_115_0, arg_115_1)
 	local var_115_0 = arg_115_0.contextData.map
-
-	arg_115_0:SwitchMapBG(var_115_0, arg_115_1)
-	arg_115_0:PlayBGM()
-
 	local var_115_1 = var_115_0:getConfig("anchor")
 	local var_115_2
 
@@ -1676,6 +1672,8 @@ function var_0_0.updateMap(arg_115_0, arg_115_1)
 	arg_115_0.mapBuilder:UpdateMapVO(var_115_0)
 	arg_115_0.mapBuilder:UpdateView()
 	arg_115_0.mapBuilder:UpdateMapItems()
+	arg_115_0:SwitchMapBG(var_115_0, arg_115_1)
+	arg_115_0:PlayBGM()
 end
 
 function var_0_0.UpdateSwitchMapButton(arg_116_0)

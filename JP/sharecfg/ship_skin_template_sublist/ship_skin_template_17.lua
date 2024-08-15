@@ -1,111 +1,6 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_17 = {
-	[900205] = {
-		ship_group = 900205,
-		name = "クリーブランド(μ兵装)",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "kelifulan_idolns",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 900205,
-		voice_actor_2 = -1,
-		prefab = "kelifulan_idol",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "克利夫兰μ无舰装版",
-		voice_actor = 40,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.13,
-					1.088,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.14,
-					1.04,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.114,
-					1.107,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.369,
-							2.43,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
 	[900206] = {
 		ship_group = 900206,
 		name = "アドミラル・ヒッパー(μ兵装)",
@@ -12359,6 +12254,234 @@ pg.base.ship_skin_template_17 = {
 						{
 							0.293,
 							0.826,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[900324] = {
+		ship_group = 900324,
+		name = "試作型ブリMKII",
+		hand_id = 0,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "kin",
+		illustrator = 1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 900324,
+		voice_actor_2 = -1,
+		prefab = "kin",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "試作型ブリMKII。SSレアのキャラの限界突破に使用可能。",
+		voice_actor = 72,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					-0.02,
+					0.6,
+					0
+				}
+			},
+			torpedo = {
+				{
+					-0.02,
+					0.6,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					-0.02,
+					0.6,
+					0
+				}
+			},
+			remote = {
+				-30,
+				0,
+				0
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							0.266,
+							0.329,
+							0
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							-0.436,
+							2.45,
+							-0.16
+						}
+					}
+				}
+			}
+		}
+	},
+	[900325] = {
+		ship_group = 900325,
+		name = "544845544F574552",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "sairenboss14_jz",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 900325,
+		voice_actor_2 = -1,
+		prefab = "sairenboss14_jz",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "544845544F574552",
+		voice_actor = -1,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.7,
+					1.23,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.65,
+					1.23,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.69,
+							2.05,
 							0
 						}
 					}

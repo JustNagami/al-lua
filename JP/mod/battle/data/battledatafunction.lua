@@ -145,32 +145,40 @@ function var_0_3.GetBuffBulletRes(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
 	var_9_3(var_9_2.buff_list)
 	var_9_3(var_9_2.hide_buff_list)
 
-	local var_9_4 = var_9_2.airassist_time
+	local var_9_4 = {}
 
-	for iter_9_0, iter_9_1 in ipairs(var_9_4) do
-		local var_9_5 = var_0_3.GetResFromSkill(iter_9_1, 1, nil, arg_9_3)
+	for iter_9_0, iter_9_1 in pairs(arg_9_1) do
+		table.insert(var_9_4, iter_9_0)
+	end
 
-		for iter_9_2, iter_9_3 in ipairs(var_9_5) do
-			var_9_0[#var_9_0 + 1] = iter_9_3
+	var_9_3(var_9_4)
+
+	local var_9_5 = var_9_2.airassist_time
+
+	for iter_9_2, iter_9_3 in ipairs(var_9_5) do
+		local var_9_6 = var_0_3.GetResFromSkill(iter_9_3, 1, nil, arg_9_3)
+
+		for iter_9_4, iter_9_5 in ipairs(var_9_6) do
+			var_9_0[#var_9_0 + 1] = iter_9_5
 		end
 	end
 
-	local var_9_6 = var_0_3.GetShipTransformDataTemplate(arg_9_0)
+	local var_9_7 = var_0_3.GetShipTransformDataTemplate(arg_9_0)
 
-	if var_9_6 and var_9_6.skill_id ~= 0 and pg.transform_data_template[var_9_6.skill_id].skill_id ~= 0 then
-		local var_9_7 = pg.transform_data_template[var_9_6.skill_id].skill_id
-		local var_9_8
+	if var_9_7 and var_9_7.skill_id ~= 0 and pg.transform_data_template[var_9_7.skill_id].skill_id ~= 0 then
+		local var_9_8 = pg.transform_data_template[var_9_7.skill_id].skill_id
+		local var_9_9
 
-		if arg_9_1[var_9_7] then
-			var_9_8 = arg_9_1[var_9_7].level
+		if arg_9_1[var_9_8] then
+			var_9_9 = arg_9_1[var_9_8].level
 		else
-			var_9_8 = 1
+			var_9_9 = 1
 		end
 
-		local var_9_9 = var_0_3.GetResFromBuff(var_9_7, var_9_8, var_9_1, arg_9_3)
+		local var_9_10 = var_0_3.GetResFromBuff(var_9_8, var_9_9, var_9_1, arg_9_3)
 
-		for iter_9_4, iter_9_5 in ipairs(var_9_9) do
-			var_9_0[#var_9_0 + 1] = iter_9_5
+		for iter_9_6, iter_9_7 in ipairs(var_9_10) do
+			var_9_0[#var_9_0 + 1] = iter_9_7
 		end
 	end
 
@@ -356,6 +364,10 @@ function var_0_3.GetResFromSkill(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
 
 	local function var_14_2(arg_15_0)
 		for iter_15_0, iter_15_1 in ipairs(arg_15_0) do
+			if iter_15_1.type == "BattleBuffShieldWall" then
+				print(iter_15_1.arg_list.effect)
+			end
+
 			if iter_15_1.type == var_0_0.Battle.BattleSkillGridmanFloat.__name then
 				table.insert(var_14_0, "UI/combatgridmanskillfloat")
 			end

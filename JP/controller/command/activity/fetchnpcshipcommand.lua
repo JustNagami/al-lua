@@ -4,25 +4,26 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_0 = arg_1_1:getBody()
 	local var_1_1 = var_1_0.taskId
 	local var_1_2 = var_1_0.callback
-	local var_1_3 = getProxy(TaskProxy)
-	local var_1_4 = var_1_3:getTaskById(var_1_1)
+	local var_1_3 = getProxy(TaskProxy):getTaskById(var_1_1)
 
-	if not var_1_4 then
+	if not var_1_3 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("task_is_not_existence", var_1_1))
 
 		return
 	end
 
-	if not var_1_4:isFinish() then
+	if not var_1_3:isFinish() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("task_submitTask_error_notFinish"))
 
 		return
 	end
 
-	pg.ConnectionMgr.GetInstance():Send(20005, {
-		id = var_1_4.id,
-		choice_award = {}
-	}, 20006, function(arg_2_0)
+	pg.ConnectionMgr.GetInstance():Send(20205, {
+		act_id = var_1_3:getActId(),
+		task_ids = {
+			var_1_3.id
+		}
+	}, 20206, function(arg_2_0)
 		if arg_2_0.result == 0 then
 			local var_2_0 = {}
 
@@ -34,9 +35,6 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 				}))
 			end
 
-			var_1_4.submitTime = 1
-
-			var_1_3:updateTask(var_1_4)
 			arg_1_0:sendNotification(GAME.FETCH_NPC_SHIP_DONE, {
 				items = var_2_0,
 				callback = var_1_2

@@ -76,9 +76,9 @@ pg.voice_bgm = {
 		bgm = "main"
 	},
 	LoginScene = {
-		default_bgm = "story-richang-light",
+		default_bgm = "login",
 		special_bgm = "",
-		bgm = "story-richang-light"
+		bgm = "login"
 	},
 	NewMainScene = {
 		default_bgm = "main",
@@ -136,14 +136,9 @@ pg.voice_bgm = {
 		bgm = "idol-BlueSpirit-inst"
 	},
 	NewShopsScene = {
-		default_bgm = "theme-clemenceau",
+		default_bgm = "story-island-soft",
 		special_bgm = "",
-		bgm = "theme-clemenceau"
-	},
-	SkinShopScene = {
-		default_bgm = "main",
-		special_bgm = "",
-		bgm = "main"
+		bgm = "story-island-soft"
 	},
 	BuildShipScene = {
 		default_bgm = "main",
@@ -1524,5 +1519,40 @@ pg.voice_bgm = {
 		default_bgm = "level",
 		special_bgm = "",
 		bgm = "level"
+	},
+	RupprechtTecCatchupPage = {
+		default_bgm = "theme-designshipVI",
+		special_bgm = "",
+		bgm = "theme-designshipVI"
+	},
+	OutPostTaskPage = {
+		default_bgm = "theme-akagi-inside",
+		special_bgm = "",
+		bgm = "theme-akagi-inside"
+	},
+	MeixiV5FramePage = {
+		default_bgm = "theme-akagi-inside",
+		special_bgm = "",
+		bgm = "theme-akagi-inside"
+	},
+	MetalWingMainPage = {
+		default_bgm = "battle-eagleunion",
+		special_bgm = "",
+		bgm = "battle-eagleunion"
+	},
+	PittsburghPtPage = {
+		default_bgm = "theme-designfleet-VII",
+		special_bgm = "",
+		bgm = "theme-designfleet-VII"
+	},
+	CowboyTownBackHillScene = {
+		default_bgm = "story-richang-westdaily",
+		special_bgm = "",
+		bgm = "story-richang-westdaily"
+	},
+	TownScene = {
+		default_bgm = "story-richang-westdaily",
+		special_bgm = "",
+		bgm = "story-richang-westdaily"
 	}
 }

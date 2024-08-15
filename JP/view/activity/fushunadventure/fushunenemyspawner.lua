@@ -12,7 +12,6 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0.targetTime = 0
 	arg_1_0.delta = 0
 	arg_1_0.starting = false
-	arg_1_0.fushunLoader = arg_1_3
 end
 
 function var_0_0.Start(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
@@ -69,18 +68,20 @@ function var_0_0.Spawn(arg_6_0)
 	local var_6_2 = arg_6_0:GetConfigByScore(arg_6_0.score)
 
 	assert(var_6_2)
-	arg_6_0.fushunLoader:GetPrefab("FushunAdventure/" .. var_6_2.name, "", function(arg_7_0)
-		arg_7_0.transform:SetParent(arg_6_0.parent, false)
+	ResourceMgr.Inst:getAssetAsync("FushunAdventure/" .. var_6_2.name, "", function(arg_7_0)
+		local var_7_0 = instantiate(arg_7_0)
+
+		var_7_0.transform:SetParent(arg_6_0.parent, false)
 
 		if arg_6_0.OnSpawn then
 			arg_6_0.OnSpawn({
-				go = arg_7_0,
+				go = var_7_0,
 				config = var_6_2,
 				speed = var_6_0 == var_0_1 and var_6_2.speed or var_6_2.crazy_speed,
 				index = var_6_1
 			})
 		end
-	end, var_6_2.name)
+	end, true, true)
 end
 
 function var_0_0.GetConfigByScore(arg_8_0, arg_8_1)

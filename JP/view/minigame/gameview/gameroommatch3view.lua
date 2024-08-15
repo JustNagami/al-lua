@@ -257,7 +257,7 @@ function var_0_0.updateData(arg_20_0)
 
 	local var_20_0 = arg_20_0:GetMGData():GetRuntimeData("elements")
 
-	arg_20_0.best = var_20_0 and var_20_0[1] or 0
+	arg_20_0.best = getProxy(GameRoomProxy):getRoomScore(arg_20_0:getGameRoomData().id)
 end
 
 function var_0_0.index2pos(arg_21_0, arg_21_1, arg_21_2)

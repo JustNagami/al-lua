@@ -450,6 +450,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>「夢幻の中にいようと、守ることを選びつづける」</color>\n「赫輝のマルティリウム」に参加した指揮官に贈る",
 		scene = {}
 	},
+	[331] = {
+		time_limit_type = 0,
+		name = "スプレンディド・ハート",
+		gain_by = "錬翼空翔",
+		id = 331,
+		time_second = 0,
+		desc = "<color=#ffffff>「止まらぬスプレンディド・ハート。波を駆けるアイアン・ウィンド」</color>\n「錬翼空翔」に参加した指揮官に贈る",
+		scene = {}
+	},
 	[401] = {
 		time_limit_type = 0,
 		name = "殿堂入り：エンタープライズ",
@@ -583,6 +592,15 @@ pg.item_data_frame = {
 		id = 606,
 		time_second = 0,
 		desc = "<color=#ffffff>帆を上げよう！クルーズ船トキメクの旅！</color>イベント「休日トキメク大航海」参加で入手可能",
+		scene = {}
+	},
+	[607] = {
+		time_limit_type = 0,
+		name = "とある荒野の旅",
+		gain_by = "",
+		id = 607,
+		time_second = 0,
+		desc = "<color=#ffffff>誰も己の物語から逃れることができない。例え自由のライダーでもーー</color>「荒野休日開拓記」に参加した指揮官に贈る",
 		scene = {}
 	},
 	[10001] = {
@@ -744,6 +762,7 @@ pg.item_data_frame = {
 		328,
 		329,
 		330,
+		331,
 		401,
 		402,
 		403,
@@ -759,6 +778,7 @@ pg.item_data_frame = {
 		603,
 		605,
 		606,
+		607,
 		10001,
 		10002,
 		10003,

@@ -1,6 +1,348 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_10 = {
+	[303181] = {
+		ship_group = 30318,
+		name = "ファンシーウェーブ",
+		hand_id = 14,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70407,
+		painting = "xiongye_2",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 6,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "106",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 303181,
+		voice_actor_2 = -1,
+		prefab = "xiongye_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "熊野の水着姿、新登場！んなんちゃって☆あそこにいる指揮官は～ど・こ・に目を釘付けにしてんのぉ～あは♡",
+		voice_actor = 181,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.16,
+					1.144,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.13,
+					1.188,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.002,
+					-0.013,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.11,
+					1.065,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.45,
+							2.329,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[303182] = {
+		ship_group = 30318,
+		name = "激オニ☆勝負パーティ",
+		hand_id = 14,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "1101",
+		l2d_ignore_drag = 0,
+		group_index = 2,
+		shop_id = 70610,
+		painting = "xiongye_3",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 20,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "109",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 303182,
+		voice_actor_2 = -1,
+		prefab = "xiongye_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "ほら、指揮官の番だよ！どれを引くのかな～～ってそのカードで本当にいいのー？って鈴谷！指揮官に教えないでってば！",
+		voice_actor = 181,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.127,
+					1.144,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.13,
+					1.128,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.037,
+					1.112,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.55,
+							2.329,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[303183] = {
+		ship_group = 30318,
+		name = "一夜千夜の願い",
+		hand_id = 14,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 3,
+		shop_id = 70723,
+		painting = "xiongye_4",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 21,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "159",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 303183,
+		voice_actor_2 = -1,
+		prefab = "xiongye_4",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "じゃーん！熊野の……踊り子？の格好、どうかな？あはは♡指揮官さぁ…なーに目をそらしてんの？まさか熊野が気づかないとでも思った？",
+		voice_actor = 181,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			4
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.28,
+					0.72,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.28,
+					0.72,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.22,
+					1.09,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.79,
+							1.95,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[303190] = {
 		ship_group = 30319,
 		name = "雲仙",
@@ -12006,204 +12348,6 @@ pg.base.ship_skin_template_10 = {
 						{
 							-0.52,
 							2.44,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[307032] = {
-		ship_group = 30703,
-		name = "廊下の風紀委員",
-		hand_id = 2,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 2,
-		shop_id = 70052,
-		painting = "canglong_3",
-		illustrator = 12,
-		l2d_voice_calibrate = "",
-		shop_type_id = 4,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "103",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 307032,
-		voice_actor_2 = -1,
-		prefab = "canglong_3",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "風紀委員の蒼龍です。学園の風紀と勉学に励む姿勢を正し、それと……コホン！とにかく、学園の風紀はこの蒼龍にお任せください！",
-		voice_actor = 15,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			antiaircraft = {
-				{
-					0.78,
-					0.969,
-					0
-				}
-			},
-			plane = {
-				{
-					2.12,
-					2.67,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				40,
-				{
-					{
-						"smoke",
-						{
-							-0.45,
-							2.36,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[307039] = {
-		ship_group = 30703,
-		name = "蒼龍改",
-		hand_id = 2,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 9,
-		shop_id = 0,
-		painting = "canglong_g",
-		illustrator = 12,
-		l2d_voice_calibrate = "",
-		shop_type_id = 9997,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 2,
-		id = 307039,
-		voice_actor_2 = -1,
-		prefab = "canglong_g",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "これで強くなったというのなら……指揮官、何をジロジロ見ているのですか？まだやるべき仕事があるでしょう？",
-		voice_actor = 15,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			antiaircraft = {
-				{
-					0.78,
-					0.969,
-					0
-				}
-			},
-			plane = {
-				{
-					1.14,
-					2.32,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				40,
-				{
-					{
-						"smoke",
-						{
-							-0.45,
-							2.36,
 							0
 						}
 					}

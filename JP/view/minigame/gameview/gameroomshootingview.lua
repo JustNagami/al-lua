@@ -353,9 +353,7 @@ end
 function var_0_0.updateCount(arg_33_0)
 	setText(arg_33_0.ticketTF, arg_33_0:GetMGHubData().count)
 
-	arg_33_0.bestScore = checkExist(arg_33_0:GetMGData():GetRuntimeData("elements"), {
-		1
-	}) or 0
+	arg_33_0.bestScore = getProxy(GameRoomProxy):getRoomScore(arg_33_0:getGameRoomData().id)
 
 	setText(arg_33_0.bestScoreTF, arg_33_0.bestScore)
 end

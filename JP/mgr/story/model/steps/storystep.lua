@@ -35,9 +35,9 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	}
 	arg_1_0.location = arg_1_1.location
 	arg_1_0.icon = arg_1_1.icon
-	arg_1_0.autoShowOption = defaultValue(arg_1_1.autoShowOption, false)
 	arg_1_0.dispatcher = arg_1_1.dispatcher
 	arg_1_0.shakeTime = defaultValue(arg_1_1.shakeTime, 0)
+	arg_1_0.autoShowOption = defaultValue(arg_1_1.autoShowOption, false)
 	arg_1_0.selectedBranchCode = 0
 	arg_1_0.id = 0
 	arg_1_0.placeholderType = 0

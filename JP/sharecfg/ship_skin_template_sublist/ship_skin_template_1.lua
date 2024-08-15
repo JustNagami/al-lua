@@ -6285,6 +6285,120 @@ pg.base.ship_skin_template_1 = {
 			}
 		}
 	},
+	[101269] = {
+		ship_group = 10126,
+		name = "エルドリッジ改",
+		hand_id = 5,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 9,
+		shop_id = 0,
+		painting = "aierdeliqi_g",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9997,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 2,
+		id = 101269,
+		voice_actor_2 = -1,
+		prefab = "aierdeliqi_g",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "エルドリッジ…新しい装備で、あいさつ…指揮官、今のエルドリッジ、すごく強い……",
+		voice_actor = 54,
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.204,
+					1.038,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.141,
+					1.017,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.63,
+							2.25,
+							0
+						}
+					}
+				}
+			}
+		},
+		spine_offset = {
+			{
+				142,
+				4,
+				0
+			},
+			{
+				0.45
+			}
+		}
+	},
 	[101270] = {
 		ship_group = 10127,
 		name = "ベイリー",
@@ -12048,10 +12162,10 @@ pg.base.ship_skin_template_1 = {
 			10151122
 		}
 	},
-	[102010] = {
-		ship_group = 10201,
-		name = "オマハ",
-		hand_id = 13,
+	[101520] = {
+		ship_group = 10152,
+		name = "ベル",
+		hand_id = 1,
 		bgm = "",
 		l2d_drag_rate = "",
 		illustrator2 = -1,
@@ -12059,24 +12173,24 @@ pg.base.ship_skin_template_1 = {
 		l2d_ignore_drag = 0,
 		group_index = 0,
 		shop_id = 0,
-		painting = "aomaha",
-		illustrator = 6,
+		painting = "beier",
+		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
 		lip_smoothing = 0,
 		l2d_animations = "",
 		bg = "",
 		spine_use_live2d = 0,
-		spine_action_offset = false,
+		spine_action_offset = true,
 		skin_type = -1,
-		id = 102010,
+		id = 101520,
 		voice_actor_2 = -1,
-		prefab = "aomaha",
+		prefab = "beier",
 		l2d_se = "",
 		main_UI_FX = "",
 		special_effects = "",
-		desc = "オマハ級軽巡洋艦・オマハ（CL-4)",
-		voice_actor = 62,
+		desc = "フレッチャー級駆逐艦-ベル",
+		voice_actor = 424,
 		spine_offset = "",
 		gyro = 0,
 		rarity_bg = "",
@@ -12117,53 +12231,42 @@ pg.base.ship_skin_template_1 = {
 		bound_bone = {
 			cannon = {
 				{
-					-0.317,
-					0.665,
+					1.89,
+					1.061,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.96,
+					1.095,
 					0
 				}
 			},
 			torpedo = {
 				{
-					-0.016,
-					0.582,
+					-0.164,
+					0.026,
 					0
 				}
 			},
 			antiaircraft = {
 				{
-					-0.59,
-					1.125,
-					0
-				},
-				{
-					0.429,
-					0.906,
+					1.762,
+					1.145,
 					0
 				}
 			}
 		},
 		smoke = {
 			{
-				70,
+				50,
 				{
 					{
 						"smoke",
 						{
-							-0.559,
-							0.397,
-							0
-						}
-					}
-				}
-			},
-			{
-				30,
-				{
-					{
-						"smoke",
-						{
-							0.42,
-							0.51,
+							-0.274,
+							2.494,
 							0
 						}
 					}
@@ -12171,35 +12274,35 @@ pg.base.ship_skin_template_1 = {
 			}
 		}
 	},
-	[102020] = {
-		ship_group = 10202,
-		name = "ローリー",
-		hand_id = 5,
+	[101521] = {
+		ship_group = 10152,
+		name = "サルーン・アクシデント",
+		hand_id = 1,
 		bgm = "",
 		l2d_drag_rate = "",
 		illustrator2 = -1,
 		bg_sp = "",
 		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "luoli",
-		illustrator = 6,
+		group_index = 1,
+		shop_id = 71038,
+		painting = "beier_2",
+		illustrator = -1,
 		l2d_voice_calibrate = "",
-		shop_type_id = 0,
+		shop_type_id = 25,
 		lip_smoothing = 0,
 		l2d_animations = "",
-		bg = "",
+		bg = "176",
 		spine_use_live2d = 0,
 		spine_action_offset = false,
-		skin_type = -1,
-		id = 102020,
+		skin_type = 0,
+		id = 101521,
 		voice_actor_2 = -1,
-		prefab = "luoli",
+		prefab = "beier_2",
 		l2d_se = "",
 		main_UI_FX = "",
 		special_effects = "",
-		desc = "オマハ級軽巡洋艦・ローリー（CL-7)",
-		voice_actor = 62,
+		desc = "ようこそ酒場へ……って、わわ！？ジョッキが落ちちゃう！……し、指揮官…い、今来たの…？",
+		voice_actor = 424,
 		spine_offset = "",
 		gyro = 0,
 		rarity_bg = "",
@@ -12209,7 +12312,9 @@ pg.base.ship_skin_template_1 = {
 		live2d_offset_profile = "",
 		show_skin = "stand",
 		ship_l2d_id = "",
-		tag = {},
+		tag = {
+			2
+		},
 		live2d_offset = {
 			0,
 			0,
@@ -12240,53 +12345,42 @@ pg.base.ship_skin_template_1 = {
 		bound_bone = {
 			cannon = {
 				{
-					-0.063,
-					0.526,
+					1.674,
+					0.853,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.623,
+					0.879,
 					0
 				}
 			},
 			torpedo = {
 				{
-					0.15,
-					0.407,
+					-0.147,
+					0.069,
 					0
 				}
 			},
 			antiaircraft = {
 				{
-					-0.376,
-					0.996,
-					0
-				},
-				{
-					0.52,
-					0.827,
+					1.615,
+					0.955,
 					0
 				}
 			}
 		},
 		smoke = {
 			{
-				70,
+				50,
 				{
 					{
 						"smoke",
 						{
-							-0.53,
-							0.3,
-							0
-						}
-					}
-				}
-			},
-			{
-				30,
-				{
-					{
-						"smoke",
-						{
-							0.42,
-							0.51,
+							-0.023,
+							2.486,
 							0
 						}
 					}

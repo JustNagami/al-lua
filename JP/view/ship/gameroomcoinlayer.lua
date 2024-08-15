@@ -11,6 +11,7 @@ function var_0_0.init(arg_2_0)
 end
 
 function var_0_0.didEnter(arg_3_0)
+	arg_3_0.ad = findTF(arg_3_0._tf, "ad")
 	arg_3_0.window = findTF(arg_3_0._tf, "ad/window")
 	arg_3_0.text = findTF(arg_3_0._tf, "ad/window/text")
 

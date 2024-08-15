@@ -1,120 +1,6 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_15 = {
-	[702034] = {
-		ship_group = 70203,
-		name = "白騎兵のメロディヤ",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 4,
-		shop_id = 70860,
-		painting = "qiabayefu_5",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 7,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "159",
-		spine_use_live2d = 0,
-		spine_action_offset = "",
-		skin_type = 0,
-		id = 702034,
-		voice_actor_2 = -1,
-		prefab = "qiabayefu_5",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "どうしてこんなところまで？って、理由を聞くのは無粋ね。気分転換かもしれないし、音に引き寄せられたのかもしれないし、指揮官と私の想いが通じた……と思うとなんだか嬉しい気持ちになれるわね。ふふふ",
-		voice_actor = 223,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.076,
-					1.138,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.005,
-					1,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.001,
-					1,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.441,
-							2.327,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
 	[702040] = {
 		ship_group = 70204,
 		name = "キーロフ",
@@ -9388,6 +9274,133 @@ pg.base.ship_skin_template_15 = {
 			}
 		}
 	},
+	[807022] = {
+		ship_group = 80702,
+		name = "フレーシュに幸あれ",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 2,
+		shop_id = 71041,
+		painting = "banerwei_3",
+		illustrator = -1,
+		shop_type_id = 6,
+		lip_smoothing = 0,
+		bg = "133",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 807022,
+		voice_actor_2 = -1,
+		prefab = "banerwei_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "はむっ…んっ…おいしいです！パンルヴェの祈りが届いて、指揮官が気に入ってくれるお味になっているはず…ふふ、後であーんしてあげれば――……ひゃぅ！？し、指揮官？い、今の聞こえてました…？///",
+		voice_actor = 354,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		l2d_voice_calibrate = "",
+		tag = {
+			1,
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.49,
+					1.229,
+					0
+				}
+			},
+			plane = {
+				{
+					1.41,
+					1.26,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.67,
+							2.28,
+							-1.85
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_special",
+			"touch_head"
+		},
+		ship_l2d_id = {
+			80702201,
+			80702202,
+			80702203,
+			80702204
+		}
+	},
 	[808010] = {
 		ship_group = 80801,
 		name = "シュルクーフ",
@@ -11239,6 +11252,130 @@ pg.base.ship_skin_template_15 = {
 			},
 			{
 				0.44
+			}
+		}
+	},
+	[901042] = {
+		ship_group = 90104,
+		name = "聖なる憐れみは悪しからず？",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 2,
+		shop_id = 71039,
+		painting = "kaiersheng_3",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 25,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "176",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 901042,
+		voice_actor_2 = -1,
+		prefab = "kaiersheng_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "し、指揮官さま、は、早くこの子を止めてください！このままでは！指揮官さまに！怪我を！させて…うわああ！あ、危なかった…ああ…アイリスに感謝を…うぅ……",
+		voice_actor = 380,
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			6,
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.53,
+					1.49,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.5,
+					1.41,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.41,
+					1.41,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.6,
+							2.26,
+							0
+						}
+					}
+				}
+			}
+		},
+		spine_offset = {
+			{
+				-44,
+				-939,
+				0
+			},
+			{
+				0.55
 			}
 		}
 	},
