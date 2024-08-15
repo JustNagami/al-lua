@@ -143,14 +143,14 @@ function var_0_0.TweenValue(arg_16_0, arg_16_1, arg_16_2, arg_16_3, arg_16_4, ar
 	arg_16_0:DelayCall(arg_16_5, var_16_0)
 end
 
-function var_0_0.TweenValueLoop(arg_19_0, arg_19_1, arg_19_2, arg_19_3, arg_19_4, arg_19_5, arg_19_6, arg_19_7)
+function var_0_0.TweenValueWithEase(arg_19_0, arg_19_1, arg_19_2, arg_19_3, arg_19_4, arg_19_5, arg_19_6, arg_19_7, arg_19_8)
 	local function var_19_0()
-		local var_20_0 = LeanTween.value(go(arg_19_1), arg_19_2, arg_19_3, arg_19_4 * arg_19_0.timeScale):setOnUpdate(System.Action_float(arg_19_6)):setLoopClamp()
+		local var_20_0 = LeanTween.value(go(arg_19_1), arg_19_2, arg_19_3, arg_19_4 * arg_19_0.timeScale):setOnUpdate(System.Action_float(arg_19_7)):setEase(arg_19_6)
 
-		if arg_19_7 then
+		if arg_19_8 then
 			var_20_0:setOnComplete(System.Action(function()
-				if arg_19_7 then
-					arg_19_7()
+				if arg_19_8 then
+					arg_19_8()
 				end
 			end))
 		end
@@ -161,189 +161,207 @@ function var_0_0.TweenValueLoop(arg_19_0, arg_19_1, arg_19_2, arg_19_3, arg_19_4
 	arg_19_0:DelayCall(arg_19_5, var_19_0)
 end
 
-function var_0_0.TweenTextAlpha(arg_22_0, arg_22_1, arg_22_2, arg_22_3, arg_22_4, arg_22_5)
+function var_0_0.TweenValueLoop(arg_22_0, arg_22_1, arg_22_2, arg_22_3, arg_22_4, arg_22_5, arg_22_6, arg_22_7)
 	local function var_22_0()
-		local var_23_0 = LeanTween.textAlpha(arg_22_1, arg_22_2, (arg_22_3 or 1) * arg_22_0.timeScale)
+		local var_23_0 = LeanTween.value(go(arg_22_1), arg_22_2, arg_22_3, arg_22_4 * arg_22_0.timeScale):setOnUpdate(System.Action_float(arg_22_6)):setLoopClamp()
 
-		if arg_22_5 then
-			var_23_0:setOnComplete(System.Action(arg_22_5))
+		if arg_22_7 then
+			var_23_0:setOnComplete(System.Action(function()
+				if arg_22_7 then
+					arg_22_7()
+				end
+			end))
 		end
 
 		table.insert(arg_22_0.tweens, arg_22_1)
 	end
 
-	arg_22_0:DelayCall(arg_22_4, var_22_0)
+	arg_22_0:DelayCall(arg_22_5, var_22_0)
 end
 
-function var_0_0.TweenAlpha(arg_24_0, arg_24_1, arg_24_2, arg_24_3, arg_24_4, arg_24_5, arg_24_6)
-	local function var_24_0()
-		local var_25_0 = LeanTween.alpha(arg_24_1, arg_24_3, arg_24_4 * arg_24_0.timeScale):setFrom(arg_24_2)
+function var_0_0.TweenTextAlpha(arg_25_0, arg_25_1, arg_25_2, arg_25_3, arg_25_4, arg_25_5)
+	local function var_25_0()
+		local var_26_0 = LeanTween.textAlpha(arg_25_1, arg_25_2, (arg_25_3 or 1) * arg_25_0.timeScale)
 
-		if arg_24_6 then
-			var_25_0:setOnComplete(System.Action(arg_24_6))
+		if arg_25_5 then
+			var_26_0:setOnComplete(System.Action(arg_25_5))
 		end
 
-		table.insert(arg_24_0.tweens, arg_24_1)
+		table.insert(arg_25_0.tweens, arg_25_1)
 	end
 
-	arg_24_0:DelayCall(arg_24_5, var_24_0)
+	arg_25_0:DelayCall(arg_25_4, var_25_0)
 end
 
-function var_0_0.TweenMovex(arg_26_0, arg_26_1, arg_26_2, arg_26_3, arg_26_4, arg_26_5, arg_26_6, arg_26_7)
-	local function var_26_0()
-		local var_27_0 = LeanTween.moveX(arg_26_1, arg_26_2, arg_26_4 * arg_26_0.timeScale):setFrom(arg_26_3)
+function var_0_0.TweenAlpha(arg_27_0, arg_27_1, arg_27_2, arg_27_3, arg_27_4, arg_27_5, arg_27_6)
+	local function var_27_0()
+		local var_28_0 = LeanTween.alpha(arg_27_1, arg_27_3, arg_27_4 * arg_27_0.timeScale):setFrom(arg_27_2)
 
-		if arg_26_6 then
-			var_27_0:setLoopPingPong(arg_26_6)
+		if arg_27_6 then
+			var_28_0:setOnComplete(System.Action(arg_27_6))
 		end
 
-		if arg_26_7 then
-			var_27_0:setOnComplete(System.Action(arg_26_7))
-		end
-
-		table.insert(arg_26_0.tweens, arg_26_1)
+		table.insert(arg_27_0.tweens, arg_27_1)
 	end
 
-	arg_26_0:DelayCall(arg_26_5, var_26_0)
+	arg_27_0:DelayCall(arg_27_5, var_27_0)
 end
 
-function var_0_0.TweenMovey(arg_28_0, arg_28_1, arg_28_2, arg_28_3, arg_28_4, arg_28_5, arg_28_6, arg_28_7)
-	local function var_28_0()
-		local var_29_0 = LeanTween.moveY(arg_28_1, arg_28_2, arg_28_4 * arg_28_0.timeScale):setFrom(arg_28_3)
+function var_0_0.TweenMovex(arg_29_0, arg_29_1, arg_29_2, arg_29_3, arg_29_4, arg_29_5, arg_29_6, arg_29_7)
+	local function var_29_0()
+		local var_30_0 = LeanTween.moveX(arg_29_1, arg_29_2, arg_29_4 * arg_29_0.timeScale):setFrom(arg_29_3)
 
-		if arg_28_6 then
-			var_29_0:setLoopPingPong(arg_28_6)
+		if arg_29_6 then
+			var_30_0:setLoopPingPong(arg_29_6)
 		end
 
-		if arg_28_7 then
-			var_29_0:setOnComplete(System.Action(arg_28_7))
+		if arg_29_7 then
+			var_30_0:setOnComplete(System.Action(arg_29_7))
 		end
 
-		table.insert(arg_28_0.tweens, arg_28_1)
+		table.insert(arg_29_0.tweens, arg_29_1)
 	end
 
-	arg_28_0:DelayCall(arg_28_5, var_28_0)
+	arg_29_0:DelayCall(arg_29_5, var_29_0)
 end
 
-function var_0_0.IsTweening(arg_30_0, arg_30_1)
-	return LeanTween.isTweening(arg_30_1)
+function var_0_0.TweenMovey(arg_31_0, arg_31_1, arg_31_2, arg_31_3, arg_31_4, arg_31_5, arg_31_6, arg_31_7)
+	local function var_31_0()
+		local var_32_0 = LeanTween.moveY(arg_31_1, arg_31_2, arg_31_4 * arg_31_0.timeScale):setFrom(arg_31_3)
+
+		if arg_31_6 then
+			var_32_0:setLoopPingPong(arg_31_6)
+		end
+
+		if arg_31_7 then
+			var_32_0:setOnComplete(System.Action(arg_31_7))
+		end
+
+		table.insert(arg_31_0.tweens, arg_31_1)
+	end
+
+	arg_31_0:DelayCall(arg_31_5, var_31_0)
 end
 
-function var_0_0.CancelTween(arg_31_0, arg_31_1)
-	if arg_31_0:IsTweening(arg_31_1) then
-		LeanTween.cancel(arg_31_1)
+function var_0_0.IsTweening(arg_33_0, arg_33_1)
+	return LeanTween.isTweening(arg_33_1)
+end
+
+function var_0_0.CancelTween(arg_34_0, arg_34_1)
+	if arg_34_0:IsTweening(arg_34_1) then
+		LeanTween.cancel(arg_34_1)
 	end
 end
 
-function var_0_0.DelayCall(arg_32_0, arg_32_1, arg_32_2)
-	if not arg_32_1 or arg_32_1 <= 0 then
-		arg_32_2()
+function var_0_0.DelayCall(arg_35_0, arg_35_1, arg_35_2)
+	if not arg_35_1 or arg_35_1 <= 0 then
+		arg_35_2()
 
 		return
 	end
 
-	arg_32_0.timers[arg_32_2] = StoryTimer.New(function()
-		arg_32_0.timers[arg_32_2]:Stop()
+	arg_35_0.timers[arg_35_2] = StoryTimer.New(function()
+		arg_35_0.timers[arg_35_2]:Stop()
 
-		arg_32_0.timers[arg_32_2] = nil
+		arg_35_0.timers[arg_35_2] = nil
 
-		arg_32_2()
-	end, arg_32_1 * arg_32_0.timeScale, 1)
+		arg_35_2()
+	end, arg_35_1 * arg_35_0.timeScale, 1)
 
-	arg_32_0.timers[arg_32_2]:Start()
+	arg_35_0.timers[arg_35_2]:Start()
 end
 
-function var_0_0.UnscaleDelayCall(arg_34_0, arg_34_1, arg_34_2)
-	if arg_34_1 <= 0 then
-		arg_34_2()
+function var_0_0.UnscaleDelayCall(arg_37_0, arg_37_1, arg_37_2)
+	if arg_37_1 <= 0 then
+		arg_37_2()
 
 		return
 	end
 
-	arg_34_0.timers[arg_34_2] = StoryTimer.New(function()
-		arg_34_0.timers[arg_34_2]:Stop()
+	arg_37_0.timers[arg_37_2] = StoryTimer.New(function()
+		arg_37_0.timers[arg_37_2]:Stop()
 
-		arg_34_0.timers[arg_34_2] = nil
+		arg_37_0.timers[arg_37_2] = nil
 
-		arg_34_2()
-	end, arg_34_1, 1)
+		arg_37_2()
+	end, arg_37_1, 1)
 
-	arg_34_0.timers[arg_34_2]:Start()
+	arg_37_0.timers[arg_37_2]:Start()
 end
 
-function var_0_0.CreateDelayTimer(arg_36_0, arg_36_1, arg_36_2)
-	if arg_36_1 == 0 then
-		arg_36_2()
+function var_0_0.CreateDelayTimer(arg_39_0, arg_39_1, arg_39_2)
+	if arg_39_1 == 0 then
+		arg_39_2()
 
 		return nil
 	end
 
-	local var_36_0 = StoryTimer.New(arg_36_2, arg_36_1 * arg_36_0.timeScale, 1)
+	local var_39_0 = StoryTimer.New(arg_39_2, arg_39_1 * arg_39_0.timeScale, 1)
 
-	var_36_0:Start()
+	var_39_0:Start()
 
-	return var_36_0
+	return var_39_0
 end
 
-function var_0_0.PauseAllTween(arg_37_0)
-	for iter_37_0, iter_37_1 in ipairs(arg_37_0.tweens) do
-		if not IsNil(iter_37_1) and arg_37_0:IsTweening(iter_37_1.gameObject) then
-			LeanTween.pause(iter_37_1.gameObject)
+function var_0_0.PauseAllTween(arg_40_0)
+	for iter_40_0, iter_40_1 in ipairs(arg_40_0.tweens) do
+		if not IsNil(iter_40_1) and arg_40_0:IsTweening(iter_40_1.gameObject) then
+			LeanTween.pause(iter_40_1.gameObject)
 		end
 	end
 end
 
-function var_0_0.ResumeAllTween(arg_38_0)
-	for iter_38_0, iter_38_1 in ipairs(arg_38_0.tweens) do
-		if not IsNil(iter_38_1) then
-			LeanTween.resume(iter_38_1.gameObject)
+function var_0_0.ResumeAllTween(arg_41_0)
+	for iter_41_0, iter_41_1 in ipairs(arg_41_0.tweens) do
+		if not IsNil(iter_41_1) then
+			LeanTween.resume(iter_41_1.gameObject)
 		end
 	end
 end
 
-function var_0_0.PauseAllTimer(arg_39_0)
-	for iter_39_0, iter_39_1 in pairs(arg_39_0.timers) do
-		iter_39_1:Pause()
+function var_0_0.PauseAllTimer(arg_42_0)
+	for iter_42_0, iter_42_1 in pairs(arg_42_0.timers) do
+		iter_42_1:Pause()
 	end
 end
 
-function var_0_0.ResumeAllTimer(arg_40_0)
-	for iter_40_0, iter_40_1 in pairs(arg_40_0.timers) do
-		iter_40_1:Resume()
+function var_0_0.ResumeAllTimer(arg_43_0)
+	for iter_43_0, iter_43_1 in pairs(arg_43_0.timers) do
+		iter_43_1:Resume()
 	end
 end
 
-function var_0_0.ResumeAllAnimation(arg_41_0)
-	arg_41_0:ResumeAllTween()
-	arg_41_0:ResumeAllTimer()
+function var_0_0.ResumeAllAnimation(arg_44_0)
+	arg_44_0:ResumeAllTween()
+	arg_44_0:ResumeAllTimer()
 end
 
-function var_0_0.PauseAllAnimation(arg_42_0)
-	arg_42_0:PauseAllTween()
-	arg_42_0:PauseAllTimer()
+function var_0_0.PauseAllAnimation(arg_45_0)
+	arg_45_0:PauseAllTween()
+	arg_45_0:PauseAllTimer()
 end
 
-function var_0_0.ClearAllTween(arg_43_0)
-	for iter_43_0, iter_43_1 in ipairs(arg_43_0.tweens) do
-		if not IsNil(iter_43_1) and arg_43_0:IsTweening(iter_43_1.gameObject) then
-			LeanTween.cancel(iter_43_1.gameObject)
+function var_0_0.ClearAllTween(arg_46_0)
+	for iter_46_0, iter_46_1 in ipairs(arg_46_0.tweens) do
+		if not IsNil(iter_46_1) and arg_46_0:IsTweening(iter_46_1.gameObject) then
+			LeanTween.cancel(iter_46_1.gameObject)
 		end
 	end
 
-	arg_43_0.tweens = {}
+	arg_46_0.tweens = {}
 end
 
-function var_0_0.ClearAllTimers(arg_44_0)
-	for iter_44_0, iter_44_1 in pairs(arg_44_0.timers) do
-		iter_44_1:Stop()
+function var_0_0.ClearAllTimers(arg_47_0)
+	for iter_47_0, iter_47_1 in pairs(arg_47_0.timers) do
+		iter_47_1:Stop()
 	end
 
-	arg_44_0.timers = {}
+	arg_47_0.timers = {}
 end
 
-function var_0_0.ClearAnimation(arg_45_0)
-	arg_45_0:ClearAllTween()
-	arg_45_0:ClearAllTimers()
+function var_0_0.ClearAnimation(arg_48_0)
+	arg_48_0:ClearAllTween()
+	arg_48_0:ClearAllTimers()
 end
 
 return var_0_0

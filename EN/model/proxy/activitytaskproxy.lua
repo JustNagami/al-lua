@@ -101,7 +101,7 @@ function var_0_0.removeActList(arg_6_0, arg_6_1, arg_6_2)
 
 				for iter_6_3 = #var_6_0, 1, -1 do
 					if var_6_0[iter_6_3].id == iter_6_1.id then
-						if not var_6_0[iter_6_3]:isRepeated() then
+						if not var_6_0[iter_6_3]:isCircle() then
 							var_6_0[iter_6_3]:updateProgress(0)
 						end
 

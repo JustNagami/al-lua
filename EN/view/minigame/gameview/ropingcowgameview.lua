@@ -1,5 +1,5 @@
 ﻿local var_0_0 = class("RopingCowGameView", import("..BaseMiniGameView"))
-local var_0_1 = "SailAwayJustice-inst"
+local var_0_1 = "story-richang-westdaily"
 local var_0_2 = "event:/ui/ddldaoshu2"
 local var_0_3 = "event:/ui/niujiao"
 local var_0_4 = "event:/ui/taosheng"
@@ -572,6 +572,8 @@ function var_0_0.onEventHandle(arg_39_0, arg_39_1)
 end
 
 function var_0_0.initData(arg_40_0)
+	arg_40_0.storylist = pg.mini_game[arg_40_0:GetMGData().id].simple_config_data.story
+
 	local var_40_0 = Application.targetFrameRate or 60
 
 	if var_40_0 > 60 then
@@ -689,7 +691,7 @@ function var_0_0.initUI(arg_42_0)
 		local var_42_6 = {
 			type = var_42_2[iter_42_0][1],
 			id = var_42_2[iter_42_0][2],
-			amount = var_42_2[iter_42_0][3]
+			count = var_42_2[iter_42_0][3]
 		}
 
 		updateDrop(var_42_5, var_42_6)
@@ -1029,59 +1031,71 @@ function var_0_0.showSettlement(arg_81_0)
 	setText(var_81_4, var_81_1)
 
 	if arg_81_0:getGameTimes() and arg_81_0:getGameTimes() > 0 then
-		arg_81_0.sendSuccessFlag = true
+		local var_81_5 = arg_81_0:getGameUsedTimes() + 1
+		local var_81_6 = pg.NewStoryMgr.GetInstance()
+		local var_81_7 = arg_81_0.storylist[var_81_5] and arg_81_0.storylist[var_81_5][1] or nil
 
-		arg_81_0:SendSuccess(0)
+		if var_81_7 and not var_81_6:IsPlayed(var_81_7) then
+			arg_81_0.sendSuccessFlag = true
+
+			var_81_6:Play(var_81_7, function()
+				arg_81_0:SendSuccess(0)
+			end)
+		else
+			arg_81_0.sendSuccessFlag = true
+
+			arg_81_0:SendSuccess(0)
+		end
 	end
 end
 
-function var_0_0.resumeGame(arg_82_0)
-	arg_82_0.gameStop = false
+function var_0_0.resumeGame(arg_83_0)
+	arg_83_0.gameStop = false
 
-	setActive(arg_82_0.leaveUI, false)
-	arg_82_0:changeSpeed(1)
-	arg_82_0:timerStart()
+	setActive(arg_83_0.leaveUI, false)
+	arg_83_0:changeSpeed(1)
+	arg_83_0:timerStart()
 end
 
-function var_0_0.stopGame(arg_83_0)
-	arg_83_0.gameStop = true
+function var_0_0.stopGame(arg_84_0)
+	arg_84_0.gameStop = true
 
-	arg_83_0:timerStop()
-	arg_83_0:changeSpeed(0)
+	arg_84_0:timerStop()
+	arg_84_0:changeSpeed(0)
 end
 
-function var_0_0.onBackPressed(arg_84_0)
-	if not arg_84_0.gameStartFlag then
-		arg_84_0:emit(var_0_0.ON_BACK_PRESSED)
+function var_0_0.onBackPressed(arg_85_0)
+	if not arg_85_0.gameStartFlag then
+		arg_85_0:emit(var_0_0.ON_BACK_PRESSED)
 	else
-		if arg_84_0.settlementFlag then
+		if arg_85_0.settlementFlag then
 			return
 		end
 
-		if isActive(arg_84_0.pauseUI) then
-			setActive(arg_84_0.pauseUI, false)
+		if isActive(arg_85_0.pauseUI) then
+			setActive(arg_85_0.pauseUI, false)
 		end
 
-		arg_84_0:stopGame()
-		setActive(arg_84_0.leaveUI, true)
+		arg_85_0:stopGame()
+		setActive(arg_85_0.leaveUI, true)
 	end
 end
 
-function var_0_0.willExit(arg_85_0)
-	if arg_85_0.handle then
-		UpdateBeat:RemoveListener(arg_85_0.handle)
+function var_0_0.willExit(arg_86_0)
+	if arg_86_0.handle then
+		UpdateBeat:RemoveListener(arg_86_0.handle)
 	end
 
-	if arg_85_0._tf and LeanTween.isTweening(go(arg_85_0._tf)) then
-		LeanTween.cancel(go(arg_85_0._tf))
+	if arg_86_0._tf and LeanTween.isTweening(go(arg_86_0._tf)) then
+		LeanTween.cancel(go(arg_86_0._tf))
 	end
 
-	if arg_85_0.timer and arg_85_0.timer.running then
-		arg_85_0.timer:Stop()
+	if arg_86_0.timer and arg_86_0.timer.running then
+		arg_86_0.timer:Stop()
 	end
 
 	Time.timeScale = 1
-	arg_85_0.timer = nil
+	arg_86_0.timer = nil
 end
 
 return var_0_0
