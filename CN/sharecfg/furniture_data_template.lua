@@ -21939,7 +21939,7 @@ pg.base.furniture_data_template = {
 	[285] = {
 		spine_extra = "",
 		describe = "自由的火车，即将驶向未知的荒野。——「荒野假日开拓记」活动纪念",
-		gain_by = "",
+		gain_by = "荒野假日开拓记",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
@@ -154436,7 +154436,7 @@ pg.base.furniture_data_template = {
 		picture = "",
 		canputon = 0,
 		id = 313111,
-		can_rotate = 0,
+		can_rotate = 1,
 		size = {
 			2,
 			7

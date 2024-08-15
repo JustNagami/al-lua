@@ -192,7 +192,7 @@ end
 
 function var_0_0.UpdateBubbles(arg_21_0)
 	for iter_21_0, iter_21_1 in ipairs(arg_21_0.shipIds) do
-		if iter_21_1 > 0 then
+		if iter_21_1 > 0 and getProxy(BayProxy):RawGetShipById(iter_21_1) then
 			local var_21_0 = arg_21_0.activity:GetBubbleCntByPos(iter_21_0)
 			local var_21_1 = arg_21_0:findTF(iter_21_0 .. "/bubble", arg_21_0.slotTFs)
 

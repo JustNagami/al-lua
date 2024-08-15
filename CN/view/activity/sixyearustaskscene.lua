@@ -168,42 +168,52 @@ function var_0_0.checkAwardOverFlow(arg_16_0, arg_16_1, arg_16_2)
 			end
 
 			if not var_16_4 then
-				table.insert(var_16_1, var_16_3)
+				table.insert(var_16_1, {
+					var_16_3[1],
+					var_16_3[2],
+					var_16_3[3]
+				})
 			end
 		end
 	end
 
-	local var_16_5 = getProxy(PlayerProxy):getRawData()
-	local var_16_6 = pg.gameset.urpt_chapter_max.description[1]
-	local var_16_7 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var_16_6)
-	local var_16_8, var_16_9 = Task.StaticJudgeOverflow(var_16_5.gold, var_16_5.oil, var_16_7, true, true, var_16_1)
+	local var_16_5 = 0
+
+	for iter_16_6, iter_16_7 in ipairs(var_16_1) do
+		if iter_16_7[2] == var_0_2 then
+			var_16_5 = iter_16_7[3]
+		end
+	end
+
+	local var_16_6, var_16_7 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TOWN):IsOverGold(var_16_5)
+	local var_16_8
+
+	if var_16_6 then
+		var_16_8 = {
+			id = var_0_2,
+			type = DROP_TYPE_VITEM,
+			count = "<color=#FF5C5CFF>" .. math.abs(var_16_7) .. "</color>"
+		}
+	end
+
+	local var_16_9 = getProxy(PlayerProxy):getRawData()
+	local var_16_10 = pg.gameset.urpt_chapter_max.description[1]
+	local var_16_11 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var_16_10)
+	local var_16_12, var_16_13 = Task.StaticJudgeOverflow(var_16_9.gold, var_16_9.oil, var_16_11, true, true, var_16_1)
+
+	var_16_13 = var_16_13 or {}
 
 	if var_16_8 then
+		table.insert(var_16_13, var_16_8)
+	end
+
+	if var_16_12 or var_16_6 then
 		table.insert(var_16_0, function(arg_17_0)
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_ITEM_BOX,
 				content = i18n("award_max_warning"),
-				items = var_16_9,
+				items = var_16_13,
 				onYes = arg_17_0
-			})
-		end)
-	end
-
-	local var_16_10 = 0
-
-	for iter_16_6, iter_16_7 in ipairs(var_16_1) do
-		if iter_16_7[2] == var_0_2 then
-			var_16_10 = iter_16_7[3]
-		end
-	end
-
-	local var_16_11, var_16_12 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TOWN):IsOverGold(var_16_10)
-
-	if var_16_11 then
-		table.insert(var_16_0, function(arg_18_0)
-			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("town_gold_tip"),
-				onYes = arg_18_0
 			})
 		end)
 	end
@@ -211,89 +221,89 @@ function var_0_0.checkAwardOverFlow(arg_16_0, arg_16_1, arg_16_2)
 	seriesAsync(var_16_0, arg_16_2)
 end
 
-function var_0_0.updateAwards(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
-	local var_19_0 = _.slice(arg_19_1, 1, 3)
+function var_0_0.updateAwards(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
+	local var_18_0 = _.slice(arg_18_1, 1, 3)
 
-	for iter_19_0 = arg_19_2.childCount, #var_19_0 - 1 do
-		cloneTplTo(arg_19_3, arg_19_2)
+	for iter_18_0 = arg_18_2.childCount, #var_18_0 - 1 do
+		cloneTplTo(arg_18_3, arg_18_2)
 	end
 
-	local var_19_1 = arg_19_2.childCount
+	local var_18_1 = arg_18_2.childCount
 
-	for iter_19_1 = 1, var_19_1 do
-		local var_19_2 = arg_19_2:GetChild(iter_19_1 - 1)
-		local var_19_3 = iter_19_1 <= #var_19_0
+	for iter_18_1 = 1, var_18_1 do
+		local var_18_2 = arg_18_2:GetChild(iter_18_1 - 1)
+		local var_18_3 = iter_18_1 <= #var_18_0
 
-		setActive(var_19_2, var_19_3)
+		setActive(var_18_2, var_18_3)
 
-		if var_19_3 then
-			local var_19_4 = var_19_0[iter_19_1]
-			local var_19_5 = {
-				type = var_19_4[1],
-				id = var_19_4[2],
-				count = var_19_4[3]
+		if var_18_3 then
+			local var_18_4 = var_18_0[iter_18_1]
+			local var_18_5 = {
+				type = var_18_4[1],
+				id = var_18_4[2],
+				count = var_18_4[3]
 			}
 
-			updateDrop(arg_19_0:findTF("mask", var_19_2), var_19_5)
+			updateDrop(arg_18_0:findTF("mask", var_18_2), var_18_5)
 
-			if var_19_5.type == DROP_TYPE_EQUIPMENT_SKIN then
-				setActive(arg_19_0:findTF("specialFrame", var_19_2), true)
+			if var_18_5.type == DROP_TYPE_EQUIPMENT_SKIN then
+				setActive(arg_18_0:findTF("specialFrame", var_18_2), true)
 			else
-				setActive(arg_19_0:findTF("specialFrame", var_19_2), false)
+				setActive(arg_18_0:findTF("specialFrame", var_18_2), false)
 			end
 
-			onButton(arg_19_0, var_19_2, function()
-				arg_19_0:emit(BaseUI.ON_DROP, var_19_5)
+			onButton(arg_18_0, var_18_2, function()
+				arg_18_0:emit(BaseUI.ON_DROP, var_18_5)
 			end, SFX_PANEL)
 		end
 	end
 end
 
-function var_0_0.UpdateTaskData(arg_21_0)
-	local var_21_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.SIX_YEAR_US_TASK_ACT_ID)
-	local var_21_1 = getProxy(ActivityProxy):getActivityById(ActivityConst.SIX_YEAR_US_TASK_2_ACT_ID)
+function var_0_0.UpdateTaskData(arg_20_0)
+	local var_20_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.SIX_YEAR_US_TASK_ACT_ID)
+	local var_20_1 = getProxy(ActivityProxy):getActivityById(ActivityConst.SIX_YEAR_US_TASK_2_ACT_ID)
 
-	arg_21_0.taskVOs = {}
+	arg_20_0.taskVOs = {}
 
-	if var_21_0 and not var_21_0:isEnd() then
-		local var_21_2 = var_21_0:getConfig("config_data")
+	if var_20_0 and not var_20_0:isEnd() then
+		local var_20_2 = var_20_0:getConfig("config_data")
 
-		for iter_21_0, iter_21_1 in pairs(var_21_2) do
-			table.insert(arg_21_0.taskVOs, getProxy(TaskProxy):getTaskVO(iter_21_1))
+		for iter_20_0, iter_20_1 in pairs(var_20_2) do
+			table.insert(arg_20_0.taskVOs, getProxy(TaskProxy):getTaskVO(iter_20_1))
 		end
 	end
 
-	if var_21_1 and not var_21_1:isEnd() then
-		local var_21_3 = var_21_1:getConfig("config_data")
+	if var_20_1 and not var_20_1:isEnd() then
+		local var_20_3 = var_20_1:getConfig("config_data")
 
-		for iter_21_2, iter_21_3 in pairs(var_21_3) do
-			table.insert(arg_21_0.taskVOs, getProxy(TaskProxy):getTaskVO(iter_21_3))
+		for iter_20_2, iter_20_3 in pairs(var_20_3) do
+			table.insert(arg_20_0.taskVOs, getProxy(TaskProxy):getTaskVO(iter_20_3))
 		end
 	end
 end
 
-function var_0_0.getTaskProgress(arg_22_0, arg_22_1)
+function var_0_0.getTaskProgress(arg_21_0, arg_21_1)
+	for iter_21_0, iter_21_1 in ipairs(var_0_1) do
+		if iter_21_1[1] == arg_21_1:getConfig("type") and iter_21_1[2] == arg_21_1:getConfig("sub_type") then
+			return arg_21_1:getProgress() / 1000, string.format("%.2d", arg_21_1:getProgress() / 1000)
+		end
+	end
+
+	return arg_21_1:getProgress(), tostring(arg_21_1:getProgress())
+end
+
+function var_0_0.getTaskTarget(arg_22_0, arg_22_1)
 	for iter_22_0, iter_22_1 in ipairs(var_0_1) do
 		if iter_22_1[1] == arg_22_1:getConfig("type") and iter_22_1[2] == arg_22_1:getConfig("sub_type") then
-			return arg_22_1:getProgress() / 1000, string.format("%.2d", arg_22_1:getProgress() / 1000)
+			return arg_22_1:getConfig("target_num") / 1000, string.format("%.2d", arg_22_1:getConfig("target_num") / 1000)
 		end
 	end
 
-	return arg_22_1:getProgress(), tostring(arg_22_1:getProgress())
+	return arg_22_1:getConfig("target_num"), tostring(arg_22_1:getConfig("target_num"))
 end
 
-function var_0_0.getTaskTarget(arg_23_0, arg_23_1)
-	for iter_23_0, iter_23_1 in ipairs(var_0_1) do
-		if iter_23_1[1] == arg_23_1:getConfig("type") and iter_23_1[2] == arg_23_1:getConfig("sub_type") then
-			return arg_23_1:getConfig("target_num") / 1000, string.format("%.2d", arg_23_1:getConfig("target_num") / 1000)
-		end
-	end
-
-	return arg_23_1:getConfig("target_num"), tostring(arg_23_1:getConfig("target_num"))
-end
-
-function var_0_0.willExit(arg_24_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_24_0._tf)
+function var_0_0.willExit(arg_23_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_23_0._tf)
 end
 
 return var_0_0

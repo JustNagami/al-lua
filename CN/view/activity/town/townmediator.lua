@@ -54,6 +54,7 @@ end
 function var_0_0.OnSelShips(arg_7_0, arg_7_1, arg_7_2)
 	local var_7_0 = arg_7_0:GetSelectedShipIds(arg_7_2)
 	local var_7_1 = {
+		selectedMin = 0,
 		callbackQuit = true,
 		selectedMax = arg_7_0.activity:GetUnlockSlotCnt(),
 		quitTeam = arg_7_2 ~= nil,
@@ -85,156 +86,124 @@ end
 
 function var_0_0.OnSelected(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
 	local var_10_0 = Clone(arg_10_0.activity:GetShipIds())
-
-	_.each(_.range(arg_10_0.activity:GetUnlockSlotCnt()), function(arg_11_0)
-		var_10_0[arg_11_0] = var_10_0[arg_11_0] or 0
-	end)
+	local var_10_1 = {}
+	local var_10_2 = {}
 
 	if arg_10_2 == nil or #arg_10_2 == 0 then
-		if var_10_0[arg_10_1] > 0 then
-			arg_10_0:ChangeShips({
-				{
+		for iter_10_0, iter_10_1 in ipairs(var_10_0) do
+			if iter_10_1 > 0 then
+				table.insert(var_10_2, {
 					value = 0,
-					key = arg_10_1
-				}
-			})
-		end
-
-		existCall(arg_10_3)
-
-		return
-	end
-
-	local var_10_1 = _.filter(arg_10_2, function(arg_12_0)
-		return not table.contains(var_10_0, arg_12_0)
-	end)
-
-	table.Foreach(var_10_0, function(arg_13_0, arg_13_1)
-		if arg_13_1 == 0 or table.contains(arg_10_2, arg_13_1) then
-			return
-		end
-
-		var_10_0[arg_13_0] = 0
-	end)
-
-	if #var_10_1 == 1 and var_10_0[arg_10_1] == 0 then
-		var_10_0[arg_10_1] = var_10_1[1]
-	else
-		local var_10_2 = 0
-
-		_.each(var_10_1, function(arg_14_0)
-			while var_10_2 <= #var_10_0 do
-				var_10_2 = var_10_2 + 1
-
-				if var_10_0[var_10_2] == 0 then
-					break
-				end
+					key = iter_10_0
+				})
 			end
+		end
+	else
+		for iter_10_2, iter_10_3 in ipairs(var_10_0) do
+			local var_10_3 = arg_10_2[iter_10_2]
 
-			var_10_0[var_10_2] = arg_14_0
-		end)
+			if not var_10_3 then
+				table.insert(var_10_2, {
+					value = 0,
+					key = iter_10_2
+				})
+			elseif var_10_3 ~= iter_10_3 then
+				table.insert(var_10_2, {
+					key = iter_10_2,
+					value = var_10_3
+				})
+			end
+		end
 	end
 
-	local var_10_3 = {}
-	local var_10_4 = arg_10_0.activity:GetShipIds()
-
-	table.Foreach(var_10_0, function(arg_15_0, arg_15_1)
-		if (var_10_4[arg_15_0] or 0) ~= arg_15_1 then
-			table.insert(var_10_3, {
-				key = arg_15_0,
-				value = arg_15_1
-			})
-		end
-	end)
-
-	if #var_10_3 > 0 then
-		arg_10_0:ChangeShips(var_10_3)
+	if #var_10_2 > 0 then
+		arg_10_0:ChangeShips(var_10_2)
 	end
 
 	existCall(arg_10_3)
 end
 
-function var_0_0.GetSelectedShipIds(arg_16_0, arg_16_1)
-	local var_16_0 = arg_16_1 and arg_16_1.id or -1
-	local var_16_1 = {}
+function var_0_0.GetSelectedShipIds(arg_11_0, arg_11_1)
+	local var_11_0 = arg_11_1 and arg_11_1.id or -1
+	local var_11_1 = {}
 
-	for iter_16_0, iter_16_1 in ipairs(arg_16_0.activity:GetShipIds()) do
-		local var_16_2 = iter_16_1 > 0 and getProxy(BayProxy):RawGetShipById(iter_16_1)
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.activity:GetShipIds()) do
+		local var_11_2 = iter_11_1 > 0 and getProxy(BayProxy):RawGetShipById(iter_11_1)
 
-		if var_16_2 and var_16_2.id ~= var_16_0 then
-			table.insert(var_16_1, var_16_2.id)
+		if var_11_2 and var_11_2.id ~= var_11_0 then
+			table.insert(var_11_1, var_11_2.id)
 		end
 	end
 
-	return var_16_1
+	return var_11_1
 end
 
-function var_0_0.listNotificationInterests(arg_17_0)
+function var_0_0.listNotificationInterests(arg_12_0)
 	return {
 		GAME.ACTIVITY_TOWN_OP_DONE,
 		ActivityProxy.ACTIVITY_UPDATED
 	}
 end
 
-function var_0_0.handleNotification(arg_18_0, arg_18_1)
-	local var_18_0 = arg_18_1:getName()
-	local var_18_1 = arg_18_1:getBody()
+function var_0_0.handleNotification(arg_13_0, arg_13_1)
+	local var_13_0 = arg_13_1:getName()
+	local var_13_1 = arg_13_1:getBody()
 
-	if var_18_0 == GAME.ACTIVITY_TOWN_OP_DONE then
-		switch(var_18_1.cmd, {
+	if var_13_0 == GAME.ACTIVITY_TOWN_OP_DONE then
+		switch(var_13_1.cmd, {
 			[TownActivity.OPERATION.UPGRADE_TOWN] = function()
-				local var_19_0 = pg.activity_town_level[arg_18_0.activity:GetTownLevel()]
+				local var_14_0 = pg.activity_town_level[arg_13_0.activity:GetTownLevel()]
 
 				seriesAsync({
-					function(arg_20_0)
-						local var_20_0 = var_19_0.unlock_story
+					function(arg_15_0)
+						local var_15_0 = var_14_0.unlock_story
 
-						if var_20_0 ~= "" then
-							pg.NewStoryMgr.GetInstance():Play(var_20_0, arg_20_0)
+						if var_15_0 ~= "" then
+							pg.NewStoryMgr.GetInstance():Play(var_15_0, arg_15_0)
 						else
-							arg_20_0()
+							arg_15_0()
 						end
 					end,
-					function(arg_21_0)
-						local var_21_0 = var_19_0.unlock_work
+					function(arg_16_0)
+						local var_16_0 = var_14_0.unlock_work
 
-						if #var_21_0[1] > 0 or #var_21_0[2] > 0 then
-							arg_18_0:addSubLayers(Context.New({
+						if #var_16_0[1] > 0 or #var_16_0[2] > 0 then
+							arg_13_0:addSubLayers(Context.New({
 								mediator = TownUnlockMediator,
 								viewComponent = TownUnlockLayer,
 								data = {
-									newIds = var_21_0[1],
-									limitIds = var_21_0[2],
-									removeFunc = arg_21_0
+									newIds = var_16_0[1],
+									limitIds = var_16_0[2],
+									removeFunc = arg_16_0
 								}
 							}))
 						else
-							arg_21_0()
+							arg_16_0()
 						end
 					end
 				}, function()
 					return
 				end)
-				arg_18_0.viewComponent:OnTownUpgrade()
+				arg_13_0.viewComponent:OnTownUpgrade()
 			end,
 			[TownActivity.OPERATION.UPGRADE_PLACE] = function()
-				arg_18_0.viewComponent:UpdateInfoPage()
+				arg_13_0.viewComponent:UpdateInfoPage()
 			end,
 			[TownActivity.OPERATION.CHANGE_SHIPS] = function()
-				arg_18_0.viewComponent:UpdateShips()
-				arg_18_0.viewComponent:UpdateInfoPage()
+				arg_13_0.viewComponent:UpdateShips()
+				arg_13_0.viewComponent:UpdateInfoPage()
 			end,
 			[TownActivity.OPERATION.CLICK_BUBBLE] = function()
-				arg_18_0.viewComponent:UpdateBubbles()
+				arg_13_0.viewComponent:UpdateBubbles()
 			end
 		})
-		arg_18_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_18_1.awards)
-	elseif var_18_0 == ActivityProxy.ACTIVITY_UPDATED and var_18_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TOWN then
-		arg_18_0.activity = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TOWN)
+		arg_13_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_13_1.awards)
+	elseif var_13_0 == ActivityProxy.ACTIVITY_UPDATED and var_13_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TOWN then
+		arg_13_0.activity = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TOWN)
 
-		arg_18_0.viewComponent:SetActivity(arg_18_0.activity)
-		arg_18_0.viewComponent:UpdateGold()
-		arg_18_0.viewComponent:OnExpUpdate()
+		arg_13_0.viewComponent:SetActivity(arg_13_0.activity)
+		arg_13_0.viewComponent:UpdateGold()
+		arg_13_0.viewComponent:OnExpUpdate()
 	end
 end
 

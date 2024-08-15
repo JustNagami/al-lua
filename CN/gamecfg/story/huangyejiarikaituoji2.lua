@@ -117,7 +117,7 @@
 			}
 		},
 		{
-			actor = 900396,
+			actor = 999010,
 			side = 2,
 			bgName = "star_level_bg_546",
 			hidePaintObj = true,
@@ -130,7 +130,7 @@
 			}
 		},
 		{
-			actor = 900396,
+			actor = 999010,
 			side = 2,
 			bgName = "star_level_bg_546",
 			hidePaintObj = true,
