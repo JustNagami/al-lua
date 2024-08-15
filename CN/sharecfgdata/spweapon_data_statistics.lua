@@ -19287,7 +19287,7 @@ _G.pg.base.spweapon_data_statistics[13230] = {
 }
 _G.pg.base.spweapon_data_statistics[13240] = {
 	tech = 0,
-	name = "风味特调（勿饮） ",
+	name = "风味特调（勿饮）",
 	value_2_random = 5,
 	type = 8,
 	value_1_random = 10,

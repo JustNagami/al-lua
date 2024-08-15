@@ -1846,23 +1846,22 @@ function var_0_0.showSettlement(arg_156_0)
 	setActive(arg_156_0.settlementUI, true)
 	GetComponent(findTF(arg_156_0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
-	local var_156_0 = arg_156_0:GetMGData():GetRuntimeData("elements")
-	local var_156_1 = arg_156_0.scoreNum
-	local var_156_2 = var_156_0 and #var_156_0 > 0 and var_156_0[1] or 0
+	local var_156_0 = arg_156_0.scoreNum
+	local var_156_1 = getProxy(GameRoomProxy):getRoomScore(arg_156_0:getGameRoomData().id)
 
-	if var_156_2 <= var_156_1 then
-		var_156_2 = var_156_1
+	if var_156_1 <= var_156_0 then
+		var_156_1 = var_156_0
 
 		arg_156_0:StoreDataToServer({
-			var_156_2
+			var_156_1
 		})
 	end
 
-	local var_156_3 = findTF(arg_156_0.settlementUI, "ad/highText")
-	local var_156_4 = findTF(arg_156_0.settlementUI, "ad/currentText")
+	local var_156_2 = findTF(arg_156_0.settlementUI, "ad/highText")
+	local var_156_3 = findTF(arg_156_0.settlementUI, "ad/currentText")
 
-	setText(var_156_3, var_156_2)
-	setText(var_156_4, var_156_1)
+	setText(var_156_2, var_156_1)
+	setText(var_156_3, var_156_0)
 end
 
 function var_0_0.lostCandy(arg_157_0)

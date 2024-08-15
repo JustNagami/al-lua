@@ -1774,27 +1774,26 @@ function var_0_0.showSettlement(arg_177_0)
 	setActive(arg_177_0.settlementUI, true)
 	GetComponent(findTF(arg_177_0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
-	local var_177_0 = arg_177_0:GetMGData():GetRuntimeData("elements")
-	local var_177_1 = arg_177_0.scoreNum
-	local var_177_2 = var_177_0 and #var_177_0 > 0 and var_177_0[1] or 0
+	local var_177_0 = arg_177_0.scoreNum
+	local var_177_1 = getProxy(GameRoomProxy):getRoomScore(arg_177_0:getGameRoomData().id)
 
-	if var_177_2 <= var_177_1 then
-		var_177_2 = var_177_1
+	if var_177_1 <= var_177_0 then
+		var_177_1 = var_177_0
 
 		arg_177_0:StoreDataToServer({
-			var_177_2
+			var_177_1
 		})
 	end
 
-	local var_177_3 = findTF(arg_177_0.settlementUI, "ad/highText")
-	local var_177_4 = findTF(arg_177_0.settlementUI, "ad/currentText")
+	local var_177_2 = findTF(arg_177_0.settlementUI, "ad/highText")
+	local var_177_3 = findTF(arg_177_0.settlementUI, "ad/currentText")
 
-	setText(var_177_3, var_177_2)
-	setText(var_177_4, var_177_1)
+	setText(var_177_2, var_177_1)
+	setText(var_177_3, var_177_0)
 
 	arg_177_0.sendSuccessFlag = true
 
-	arg_177_0:SendSuccess(var_177_1 or 0)
+	arg_177_0:SendSuccess(var_177_0 or 0)
 end
 
 function var_0_0.resumeGame(arg_178_0)

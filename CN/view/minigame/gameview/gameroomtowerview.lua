@@ -38,8 +38,6 @@ function var_0_0.Start(arg_6_0)
 	arg_6_0.controller.view:SetUI(arg_6_0._go)
 
 	local function var_6_0(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
-		local var_9_0 = arg_6_0:GetMGData():GetRuntimeData("elements")
-
 		arg_6_0.sendSuccessFlag = true
 
 		arg_6_0:SendSuccess(arg_9_0)
@@ -57,13 +55,16 @@ function var_0_0.Start(arg_6_0)
 end
 
 function var_0_0.updateHighScore(arg_11_0)
-	local var_11_0 = arg_11_0:GetMGData():GetRuntimeData("elements") or {}
+	local var_11_0 = getProxy(GameRoomProxy):getRoomScore(arg_11_0:getGameRoomData().id)
+	local var_11_1 = {
+		var_11_0,
+		var_11_0,
+		var_11_0
+	} or {}
 
 	if arg_11_0.controller then
-		-- block empty
+		arg_11_0.controller:updateHighScore(var_11_1)
 	end
-
-	arg_11_0.controller:updateHighScore(var_11_0)
 end
 
 function var_0_0.OnSendMiniGameOPDone(arg_12_0, arg_12_1)
@@ -81,9 +82,9 @@ function var_0_0.GetTowerClimbingPageAndScore(arg_14_0)
 	local var_14_0 = 0
 	local var_14_1 = 1
 	local var_14_2 = {
-		0,
-		0,
-		0
+		arg_14_0,
+		arg_14_0,
+		arg_14_0
 	}
 
 	return var_14_0, var_14_1, var_14_2
@@ -100,12 +101,11 @@ end
 function var_0_0.PackData(arg_17_0)
 	local var_17_0 = arg_17_0._tf.rect.width
 	local var_17_1 = arg_17_0._tf.rect.height
-	local var_17_2 = arg_17_0:GetMGData():GetRuntimeData("elements")
-	local var_17_3, var_17_4, var_17_5 = var_0_0.GetTowerClimbingPageAndScore(var_17_2)
+	local var_17_2, var_17_3, var_17_4 = var_0_0.GetTowerClimbingPageAndScore(getProxy(GameRoomProxy):getRoomScore(arg_17_0:getGameRoomData().id))
 
-	print(var_17_3, "-", var_17_4)
+	print(var_17_2, "-", var_17_3)
 
-	local var_17_6 = var_0_0.GetAwardScores()
+	local var_17_5 = var_0_0.GetAwardScores()
 
 	return {
 		shipId = 107031,
@@ -113,10 +113,10 @@ function var_0_0.PackData(arg_17_0)
 		life = 3,
 		screenWidth = var_17_0,
 		screenHeight = var_17_1,
-		higestscore = var_17_3,
-		pageIndex = var_17_4,
-		mapScores = var_17_5,
-		awards = var_17_6
+		higestscore = var_17_2,
+		pageIndex = var_17_3,
+		mapScores = var_17_4,
+		awards = var_17_5
 	}
 end
 

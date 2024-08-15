@@ -143,67 +143,43 @@ function var_0_0.changeNew(arg_18_0)
 	end
 end
 
-function var_0_0.isCircle(arg_19_0)
-	if arg_19_0.actType == ActivityConst.ACTIVITY_TYPE_TASK_RYZA then
-		if arg_19_0.type == 16 and arg_19_0.subType == 1006 then
-			return true
-		elseif arg_19_0:isRepeated() then
-			return true
-		end
-	end
-
+function var_0_0.ShowOnTaskScene(arg_19_0)
 	return false
 end
 
-function var_0_0.isRepeated(arg_20_0)
-	if arg_20_0.type == 16 and arg_20_0.subType == 20 then
-		return true
-	end
+function var_0_0.getConfig(arg_20_0, arg_20_1)
+	return arg_20_0.configData[arg_20_1]
+end
 
+function var_0_0.isAvatarTask(arg_21_0)
 	return false
 end
 
-function var_0_0.isDaily(arg_21_0)
-	return arg_21_0.subType == 415 or arg_21_0.subType == 412
-end
+function var_0_0.initConfig(arg_22_0)
+	arg_22_0.actConfig = pg.activity_template[arg_22_0.actId]
 
-function var_0_0.ShowOnTaskScene(arg_22_0)
-	return false
-end
-
-function var_0_0.getConfig(arg_23_0, arg_23_1)
-	return arg_23_0.configData[arg_23_1]
-end
-
-function var_0_0.isAvatarTask(arg_24_0)
-	return false
-end
-
-function var_0_0.initConfig(arg_25_0)
-	arg_25_0.actConfig = pg.activity_template[arg_25_0.actId]
-
-	local var_25_0 = Activity.Create({
-		id = arg_25_0.actId
+	local var_22_0 = Activity.Create({
+		id = arg_22_0.actId
 	})
 
-	arg_25_0.actType = arg_25_0.actConfig.type
-	arg_25_0.groups = var_25_0:GetTaskIdsByDay()
+	arg_22_0.actType = arg_22_0.actConfig.type
+	arg_22_0.groups = var_22_0:GetTaskIdsByDay()
 
-	for iter_25_0 = 1, #arg_25_0.groups do
-		if table.contains(arg_25_0.groups[iter_25_0], arg_25_0.id) then
-			arg_25_0.groupIndex = iter_25_0
+	for iter_22_0 = 1, #arg_22_0.groups do
+		if table.contains(arg_22_0.groups[iter_22_0], arg_22_0.id) then
+			arg_22_0.groupIndex = iter_22_0
 		end
 	end
 
-	arg_25_0.configData = pg.task_data_template[arg_25_0.id]
-	arg_25_0.target = arg_25_0.configData.target_num
-	arg_25_0.type = arg_25_0.configData.type
-	arg_25_0.subType = arg_25_0.configData.sub_type
-	arg_25_0.targetId1 = arg_25_0.configData.target_id
-	arg_25_0.targetId2 = arg_25_0.configData.target_id_2
-	arg_25_0.autoCommit = arg_25_0.configData.auto_commit == 1
+	arg_22_0.configData = pg.task_data_template[arg_22_0.id]
+	arg_22_0.target = arg_22_0.configData.target_num
+	arg_22_0.type = arg_22_0.configData.type
+	arg_22_0.subType = arg_22_0.configData.sub_type
+	arg_22_0.targetId1 = arg_22_0.configData.target_id
+	arg_22_0.targetId2 = arg_22_0.configData.target_id_2
+	arg_22_0.autoCommit = arg_22_0.configData.auto_commit == 1
 
-	if arg_25_0.actType == ActivityConst.ACTIVITY_TYPE_TASK_RYZA then
+	if arg_22_0.actType == ActivityConst.ACTIVITY_TYPE_TASK_RYZA then
 		-- block empty
 	end
 end

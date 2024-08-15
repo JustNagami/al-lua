@@ -51,6 +51,7 @@ var_0_0.EVENT_CHANGE_IDLE_INDEX = "event change idle index"
 var_0_0.relation_type_drag_x = 101
 var_0_0.relation_type_drag_y = 102
 var_0_0.relation_type_action_index = 103
+var_0_0.relation_type_idle = 104
 
 local var_0_6 = {
 	CubismParameterBlendMode.Override,
@@ -174,7 +175,7 @@ local function var_0_11(arg_11_0, arg_11_1, arg_11_2)
 	if not arg_11_0.isPlaying or arg_11_2 then
 		local var_11_1 = var_0_1.action2Id[arg_11_1]
 
-		print("action id " .. tostring(arg_11_1) .. " play action " .. tostring(var_11_1))
+		print("action id " .. tostring(arg_11_1) .. " → 开始播放动作" .. tostring(var_11_1))
 
 		if var_11_1 then
 			arg_11_0.playActionName = arg_11_1
@@ -275,19 +276,19 @@ local function var_0_14(arg_14_0, arg_14_1, arg_14_2)
 	end
 end
 
-local function var_0_15(arg_15_0)
+local function var_0_15(arg_15_0, arg_15_1)
 	if not arg_15_0._l2dCharEnable then
 		return
 	end
 
-	if arg_15_0._readlyToStop then
+	if arg_15_0._readlyToStop and not arg_15_1 then
 		return
 	end
 
 	arg_15_0._listenerParametersValue = {}
 
 	if arg_15_0._listenerStepIndex and arg_15_0._listenerStepIndex == 0 then
-		arg_15_0._listenerStepIndex = 10
+		arg_15_0._listenerStepIndex = 5
 
 		for iter_15_0, iter_15_1 in ipairs(arg_15_0._listenerParameters) do
 			arg_15_0._listenerParametersValue[iter_15_1.name] = iter_15_1.Value
@@ -672,7 +673,10 @@ function var_0_0.SetVisible(arg_34_0, arg_34_1)
 		arg_34_0:loadLive2dData()
 	else
 		arg_34_0:saveLive2dData()
+		arg_34_0:loadLive2dData()
 	end
+
+	var_0_15(arg_34_0, true)
 
 	arg_34_0._animator.speed = 1
 end
@@ -686,6 +690,7 @@ function var_0_0.loadLive2dData(arg_37_0)
 		if arg_37_0.drags then
 			for iter_37_0 = 1, #arg_37_0.drags do
 				arg_37_0.drags[iter_37_0]:clearData()
+				arg_37_0.drags[iter_37_0]:loadL2dFinal()
 			end
 		end
 
@@ -693,8 +698,6 @@ function var_0_0.loadLive2dData(arg_37_0)
 		arg_37_0._animator:Play("idle")
 
 		arg_37_0.saveActionAbleId = nil
-
-		var_0_15(arg_37_0)
 
 		return
 	end
@@ -750,10 +753,9 @@ function var_0_0.loadLive2dData(arg_37_0)
 	if arg_37_0.drags then
 		for iter_37_5 = 1, #arg_37_0.drags do
 			arg_37_0.drags[iter_37_5]:loadData()
+			arg_37_0.drags[iter_37_5]:loadL2dFinal()
 		end
 	end
-
-	var_0_15(arg_37_0)
 end
 
 function var_0_0.saveLive2dData(arg_38_0)

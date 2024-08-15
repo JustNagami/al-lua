@@ -104,6 +104,14 @@ pg.item_data_chat = {
 		desc = "在水波荡漾之中，尽情享受假日邮轮之旅吧~！\n<color=#A7A7AAFF>通过参与七周年限定活动获取</color>",
 		scene = {}
 	},
+	[607] = {
+		time_limit_type = 0,
+		name = "荒野的追忆",
+		id = 607,
+		time_second = 0,
+		desc = "荒野、开拓与假日的回忆纪念。\n<color=#A7A7AAFF>通过参与「荒野假日开拓记」活动获取</color>",
+		scene = {}
+	},
 	[10001] = {
 		time_limit_type = 0,
 		name = "限界的挑战者·双子座",
@@ -214,6 +222,7 @@ pg.item_data_chat = {
 		602,
 		603,
 		606,
+		607,
 		10001,
 		10002,
 		10003,

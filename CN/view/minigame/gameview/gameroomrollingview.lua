@@ -128,22 +128,21 @@ function var_0_0.getGameTimes(arg_10_0)
 end
 
 function var_0_0.showScoreUI(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_0:GetMGData():GetRuntimeData("elements")
-	local var_11_1 = var_11_0 and #var_11_0 > 0 and var_11_0[1] or 0
+	local var_11_0 = getProxy(GameRoomProxy):getRoomScore(arg_11_0:getGameRoomData().id)
 
-	if var_11_1 < arg_11_1 then
+	if var_11_0 < arg_11_1 then
 		setActive(arg_11_0.scoreNew, true)
 	else
 		setActive(arg_11_0.scoreNew, false)
 	end
 
-	var_11_1 = arg_11_1 < var_11_1 and var_11_1 or arg_11_1
+	var_11_0 = arg_11_1 < var_11_0 and var_11_0 or arg_11_1
 
 	setActive(arg_11_0.scoreUI, true)
 	setText(arg_11_0.labelCurScore, arg_11_1)
-	setText(arg_11_0.labelHigh, var_11_1)
+	setText(arg_11_0.labelHigh, var_11_0)
 	arg_11_0:StoreDataToServer({
-		var_11_1
+		var_11_0
 	})
 	arg_11_0:SendSuccess(arg_11_1)
 end

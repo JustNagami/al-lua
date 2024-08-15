@@ -22,12 +22,6 @@ function var_0_0.didEnter(arg_3_0)
 	local var_3_0 = arg_3_0:PackData()
 
 	arg_3_0.controller:SetUp(var_3_0, function(arg_5_0, arg_5_1)
-		if arg_5_1 < arg_5_0 then
-			arg_3_0:StoreDataToServer({
-				arg_5_0
-			})
-		end
-
 		local var_5_0 = arg_3_0:GetMGHubData()
 
 		arg_3_0:SendSuccess(arg_5_0)
@@ -38,15 +32,14 @@ function var_0_0.didEnter(arg_3_0)
 end
 
 function var_0_0.PackData(arg_7_0)
-	local var_7_0 = arg_7_0:GetMGData():GetRuntimeData("elements")
-	local var_7_1 = var_7_0 and var_7_0[1] or 0
+	local var_7_0 = getProxy(GameRoomProxy):getRoomScore(arg_7_0:getGameRoomData().id)
 
 	if arg_7_0:getGameRoomData() then
 		arg_7_0.gameHelpTip = arg_7_0:getGameRoomData().game_help
 	end
 
 	return {
-		highestScore = var_7_1,
+		highestScore = var_7_0,
 		screen = Vector2(arg_7_0._tf.rect.width, arg_7_0._tf.rect.height),
 		tip = arg_7_0.gameHelpTip
 	}
