@@ -711,7 +711,7 @@
 			}
 		},
 		{
-			actorName = "大黄蜂",
+			actorName = "Hornet",
 			side = 2,
 			bgName = "star_level_bg_178",
 			factiontag = "Pineapple-Loving Gunslinger",

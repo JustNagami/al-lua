@@ -20571,15 +20571,15 @@ pg.activity_template = {
 			ui_name = "SurveyPage"
 		}
 	},
-	[7102] = {
-		mark = 20240222,
+	[7103] = {
+		mark = 20240815,
 		config_client = "",
 		title_res_tag = "survey",
 		type = 101,
 		login_pop = 0,
-		config_id = 1002,
+		config_id = 1003,
 		is_show = 35,
-		id = 7102,
+		id = 7103,
 		config_data = {
 			1,
 			30
@@ -20590,7 +20590,7 @@ pg.activity_template = {
 				{
 					2024,
 					8,
-					15
+					21
 				},
 				{
 					0,
@@ -20602,7 +20602,7 @@ pg.activity_template = {
 				{
 					2024,
 					8,
-					28
+					27
 				},
 				{
 					23,
@@ -45810,7 +45810,7 @@ pg.activity_template = {
 		},
 		[101] = {
 			7101,
-			7102
+			7103
 		},
 		[19] = {
 			1069,
@@ -46386,7 +46386,7 @@ pg.activity_template = {
 		7017,
 		7018,
 		7101,
-		7102,
+		7103,
 		8009,
 		8010,
 		8050,

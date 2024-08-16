@@ -39991,7 +39991,7 @@ _G.pg.base.shop_template[70890] = {
 			{
 				2024,
 				8,
-				8
+				15
 			},
 			{
 				0,
@@ -40042,7 +40042,7 @@ _G.pg.base.shop_template[70891] = {
 			{
 				2024,
 				8,
-				8
+				15
 			},
 			{
 				0,
@@ -40093,7 +40093,7 @@ _G.pg.base.shop_template[70892] = {
 			{
 				2024,
 				8,
-				8
+				15
 			},
 			{
 				0,
@@ -40144,7 +40144,7 @@ _G.pg.base.shop_template[70893] = {
 			{
 				2024,
 				8,
-				8
+				15
 			},
 			{
 				0,
@@ -40195,7 +40195,7 @@ _G.pg.base.shop_template[70894] = {
 			{
 				2024,
 				8,
-				8
+				15
 			},
 			{
 				0,
@@ -40246,7 +40246,7 @@ _G.pg.base.shop_template[70895] = {
 			{
 				2024,
 				8,
-				8
+				15
 			},
 			{
 				0,
@@ -40297,7 +40297,7 @@ _G.pg.base.shop_template[70896] = {
 			{
 				2024,
 				8,
-				8
+				15
 			},
 			{
 				0,
@@ -40348,7 +40348,7 @@ _G.pg.base.shop_template[70897] = {
 			{
 				2024,
 				8,
-				8
+				15
 			},
 			{
 				0,
@@ -40399,7 +40399,7 @@ _G.pg.base.shop_template[70898] = {
 			{
 				2024,
 				8,
-				8
+				15
 			},
 			{
 				0,
@@ -62363,7 +62363,7 @@ _G.pg.base.shop_template[71034] = {
 	tag = 2,
 	limit_args2 = "",
 	time_second = 0,
-	order = 3,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -62414,7 +62414,7 @@ _G.pg.base.shop_template[71035] = {
 	tag = 2,
 	limit_args2 = "",
 	time_second = 0,
-	order = 4,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -62465,7 +62465,7 @@ _G.pg.base.shop_template[71036] = {
 	tag = 2,
 	limit_args2 = "",
 	time_second = 0,
-	order = 2,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -62516,7 +62516,7 @@ _G.pg.base.shop_template[71037] = {
 	tag = 2,
 	limit_args2 = "",
 	time_second = 0,
-	order = 4,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -62567,7 +62567,7 @@ _G.pg.base.shop_template[71038] = {
 	tag = 2,
 	limit_args2 = "",
 	time_second = 0,
-	order = 4,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -62618,7 +62618,7 @@ _G.pg.base.shop_template[71039] = {
 	tag = 2,
 	limit_args2 = "",
 	time_second = 0,
-	order = 4,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -62669,7 +62669,7 @@ _G.pg.base.shop_template[71040] = {
 	tag = 2,
 	limit_args2 = "",
 	time_second = 0,
-	order = 4,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -62720,7 +62720,7 @@ _G.pg.base.shop_template[71041] = {
 	tag = 2,
 	limit_args2 = "",
 	time_second = 0,
-	order = 4,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -62771,7 +62771,7 @@ _G.pg.base.shop_template[71042] = {
 	tag = 2,
 	limit_args2 = "",
 	time_second = 0,
-	order = 4,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
