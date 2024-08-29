@@ -857,8 +857,10 @@ function var_0_0.TriggerAction(arg_49_0, arg_49_1, arg_49_2, arg_49_3, arg_49_4)
 	arg_49_0.finishActionCB = arg_49_2
 	arg_49_0.animEventCB = arg_49_4
 
-	if not var_0_11(arg_49_0, arg_49_1, arg_49_3) and arg_49_0.animEventCB then
-		arg_49_0.animEventCB(false)
+	local var_49_0 = var_0_11(arg_49_0, arg_49_1, arg_49_3)
+
+	if arg_49_0.animEventCB then
+		arg_49_0.animEventCB(var_49_0)
 
 		arg_49_0.animEventCB = nil
 	end

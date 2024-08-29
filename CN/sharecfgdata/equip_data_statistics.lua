@@ -152667,7 +152667,7 @@ _G.pg.base.equip_data_statistics[492] = {
 		12
 	},
 	weapon_id = {
-		468
+		492
 	},
 	skill_id = {},
 	hidden_skill_id = {},
@@ -152805,6 +152805,7 @@ _G.pg.base.equip_data_statistics[150360] = {
 	},
 	equip_parameters = {},
 	label = {
+		"USS",
 		"DEV"
 	}
 }
