@@ -115,116 +115,119 @@ function var_0_0.Exit(arg_4_0, arg_4_1)
 	local var_4_5 = 0
 	local var_4_6 = {}
 	local var_4_7 = var_4_2:getActiveChapter()
-	local var_4_8 = var_4_7.fleet
-	local var_4_9 = var_4_8:getShips(true)
+	local var_4_8 = var_4_7:getPlayType() == ChapterConst.TypeExtra
+	local var_4_9 = var_4_7.fleet
+	local var_4_10 = var_4_9:getShips(true)
 
-	for iter_4_0, iter_4_1 in ipairs(var_4_9) do
+	for iter_4_0, iter_4_1 in ipairs(var_4_10) do
 		table.insert(var_4_6, iter_4_1)
 	end
 
-	local var_4_10 = arg_4_0.stageId
-	local var_4_11, var_4_12 = var_4_7:getFleetCost(var_4_8, var_4_10)
-	local var_4_13 = var_4_12.gold
-	local var_4_14 = var_4_12.oil
-	local var_4_15 = var_4_7:GetExtraCostRate()
+	local var_4_11 = arg_4_0.stageId
+	local var_4_12, var_4_13 = var_4_7:getFleetCost(var_4_9, var_4_11)
+	local var_4_14 = var_4_13.gold
+	local var_4_15 = var_4_13.oil
+	local var_4_16 = var_4_7:GetExtraCostRate()
 
 	if arg_4_0.statistics.submarineAid then
-		local var_4_16 = var_4_7:GetSubmarineFleet()
+		local var_4_17 = var_4_7:GetSubmarineFleet()
 
-		if var_4_16 then
-			local var_4_17 = 0
+		if var_4_17 then
+			local var_4_18 = 0
 
-			for iter_4_2, iter_4_3 in ipairs(var_4_16:getShipsByTeam(TeamType.Submarine, true)) do
+			for iter_4_2, iter_4_3 in ipairs(var_4_17:getShipsByTeam(TeamType.Submarine, true)) do
 				if arg_4_0.statistics[iter_4_3.id] then
 					table.insert(var_4_6, iter_4_3)
 
-					var_4_17 = var_4_17 + iter_4_3:getEndBattleExpend()
+					var_4_18 = var_4_18 + iter_4_3:getEndBattleExpend()
 				end
 			end
 
-			var_4_14 = var_4_14 + math.min(var_4_17, var_4_7:GetLimitOilCost(true)) * var_4_15
+			if var_4_8 then
+				var_4_18 = 0
+			end
+
+			var_4_15 = var_4_15 + math.min(var_4_18, var_4_7:GetLimitOilCost(true)) * var_4_16
 		else
 			originalPrint("finish stage error: can not find submarine fleet.")
 		end
 	end
 
-	local var_4_18 = var_4_3 > ys.Battle.BattleConst.BattleScore.C
+	local var_4_19 = var_4_3 > ys.Battle.BattleConst.BattleScore.C
 
-	var_4_7:writeBack(var_4_18, arg_4_0)
+	var_4_7:writeBack(var_4_19, arg_4_0)
 	var_4_2:updateChapter(var_4_7)
 
-	local var_4_19 = arg_4_1.GeneralPackage(arg_4_0, var_4_6)
+	local var_4_20 = arg_4_1.GeneralPackage(arg_4_0, var_4_6)
 
-	local function var_4_20(arg_5_0)
-		local var_5_0 = var_4_7:getPlayType() == ChapterConst.TypeExtra
-
+	local function var_4_21(arg_5_0)
 		arg_4_1.addShipsExp(arg_5_0.ship_exp_list, arg_4_0.statistics, true)
 
-		local var_5_1 = arg_4_1.GenerateCommanderExp(arg_5_0, var_4_2:getActiveChapter().fleet, var_4_7:GetSubmarineFleet())
+		local var_5_0 = arg_4_1.GenerateCommanderExp(arg_5_0, var_4_2:getActiveChapter().fleet, var_4_7:GetSubmarineFleet())
 
 		arg_4_0.statistics.mvpShipID = arg_5_0.mvp
 
-		local var_5_2, var_5_3 = arg_4_1:GeneralLoot(arg_5_0)
+		local var_5_1, var_5_2 = arg_4_1:GeneralLoot(arg_5_0)
 
-		arg_4_1.GeneralPlayerCosume(SYSTEM_SCENARIO, var_4_18, var_4_14, arg_5_0.player_exp, var_5_0)
+		arg_4_1.GeneralPlayerCosume(SYSTEM_SCENARIO, var_4_19, var_4_15, arg_5_0.player_exp, var_4_8)
 
-		local var_5_4 = {
+		local var_5_3 = {
 			system = SYSTEM_SCENARIO,
 			statistics = arg_4_0.statistics,
 			score = var_4_3,
-			drops = var_5_2,
-			commanderExps = var_5_1,
+			drops = var_5_1,
+			commanderExps = var_5_0,
 			result = arg_5_0.result,
-			extraDrops = var_5_3,
+			extraDrops = var_5_2,
 			exitCallback = arg_4_0.exitCallback
 		}
 
 		var_4_2:updateActiveChapterShips()
 
-		local var_5_5 = var_4_2:getActiveChapter()
+		local var_5_4 = var_4_2:getActiveChapter()
 
-		var_5_5:writeDrops(var_5_2)
-		var_4_2:updateChapter(var_5_5)
+		var_5_4:writeDrops(var_5_1)
+		var_4_2:updateChapter(var_5_4)
 
-		if PlayerConst.CanDropItem(var_5_2) then
-			local var_5_6 = {}
+		if PlayerConst.CanDropItem(var_5_1) then
+			local var_5_5 = {}
 
-			for iter_5_0, iter_5_1 in ipairs(var_5_2) do
-				table.insert(var_5_6, iter_5_1)
+			for iter_5_0, iter_5_1 in ipairs(var_5_1) do
+				table.insert(var_5_5, iter_5_1)
 			end
 
-			for iter_5_2, iter_5_3 in ipairs(var_5_3) do
+			for iter_5_2, iter_5_3 in ipairs(var_5_2) do
 				iter_5_3.riraty = true
 
-				table.insert(var_5_6, iter_5_3)
+				table.insert(var_5_5, iter_5_3)
 			end
 
-			local var_5_7 = getProxy(ChapterProxy):getActiveChapter(true)
+			local var_5_6 = getProxy(ChapterProxy):getActiveChapter(true)
 
-			if var_5_7 then
-				if var_5_7:isLoop() then
-					getProxy(ChapterProxy):AddExtendChapterDataArray(var_5_7.id, "TotalDrops", var_5_6)
+			if var_5_6 then
+				if var_5_6:isLoop() then
+					getProxy(ChapterProxy):AddExtendChapterDataArray(var_5_6.id, "TotalDrops", var_5_5)
 				end
 
-				var_5_7:writeDrops(var_5_6)
+				var_5_6:writeDrops(var_5_5)
 			end
 		end
 
+		local var_5_7 = var_4_2:getLastUnlockMap().id
 		local var_5_8 = var_4_2:getLastUnlockMap().id
-		local var_5_9 = var_4_2:getLastUnlockMap().id
 
-		if Map.lastMap and var_5_9 ~= var_5_8 and var_5_8 < var_5_9 then
+		if Map.lastMap and var_5_8 ~= var_5_7 and var_5_7 < var_5_8 then
 			Map.autoNextPage = true
 		end
 
 		arg_4_1:sendNotification(GAME.CHAPTER_BATTLE_RESULT_REQUEST, {
 			callback = function()
-				arg_4_1:sendNotification(GAME.FINISH_STAGE_DONE, var_5_4)
+				arg_4_1:sendNotification(GAME.FINISH_STAGE_DONE, var_5_3)
 			end
 		})
 	end
 
-	arg_4_1:SendRequest(var_4_19, var_4_20)
+	arg_4_1:SendRequest(var_4_20, var_4_21)
 end
 
 return var_0_0

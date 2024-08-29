@@ -102,7 +102,7 @@ function var_0_0.timeCall(arg_12_0)
 	}
 end
 
-function var_0_0.initTaskInfo(arg_14_0, arg_14_1, arg_14_2)
+function var_0_0.initTaskInfo(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
 	for iter_14_0, iter_14_1 in ipairs(arg_14_1) do
 		local var_14_0 = Task.New(iter_14_1)
 
@@ -121,13 +121,31 @@ function var_0_0.initTaskInfo(arg_14_0, arg_14_1, arg_14_2)
 			Debugger.LogWarning("Missing Task Config, id :" .. tostring(iter_14_1.id))
 		end
 	end
+
+	if arg_14_3 and #arg_14_3 > 0 then
+		for iter_14_2, iter_14_3 in ipairs(arg_14_3) do
+			local var_14_1 = Task.New({
+				id = iter_14_3
+			})
+
+			if var_14_1:getConfigTable() ~= nil then
+				var_14_1:display("loaded")
+
+				arg_14_0.finishData[var_14_1.id] = var_14_1
+
+				var_14_1:setActId(arg_14_2)
+				var_14_1:setTaskFinish()
+			else
+				pg.TipsMgr.GetInstance():ShowTips(i18n("task_notfound_error") .. tostring(iter_14_3.id))
+				Debugger.LogWarning("Missing Task Config, id :" .. tostring(iter_14_3.id))
+			end
+		end
+	end
 end
 
 function var_0_0.updateProgress(arg_15_0, arg_15_1)
 	for iter_15_0, iter_15_1 in ipairs(arg_15_1) do
 		local var_15_0 = arg_15_0.data[iter_15_1.id]
-
-		print("任务id" .. iter_15_1.id .. "更新")
 
 		if var_15_0 ~= nil then
 			local var_15_1 = var_15_0:isFinish()
@@ -143,8 +161,8 @@ function var_0_0.updateProgress(arg_15_0, arg_15_1)
 	end
 end
 
-function var_0_0.initActData(arg_16_0, arg_16_1, arg_16_2)
-	arg_16_0:initTaskInfo(arg_16_2, arg_16_1)
+function var_0_0.initActData(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
+	arg_16_0:initTaskInfo(arg_16_2, arg_16_1, arg_16_3)
 end
 
 function var_0_0.updateActProgress(arg_17_0, arg_17_1, arg_17_2)
@@ -483,7 +501,8 @@ function var_0_0.pushAutoSubmitTask(arg_44_0)
 end
 
 function var_0_0.checkAutoSubmitTask(arg_45_0, arg_45_1)
-	if arg_45_1:getConfig("auto_commit") == 1 and arg_45_1:isFinish() then
+	if arg_45_1:getConfig("auto_commit") == 1 and arg_45_1:isFinish() and not arg_45_1:getAutoSubmit() then
+		arg_45_1:setAutoSubmit(true)
 		arg_45_0:sendNotification(GAME.SUBMIT_TASK, arg_45_1.id)
 	end
 end

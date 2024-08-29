@@ -1056,7 +1056,7 @@ end
 function var_0_0.preload(arg_124_0, arg_124_1)
 	var_0_17 = {}
 
-	buildTempAB("ui/blackwhitegrid_atlas", function(arg_125_0)
+	AssetBundleHelper.loadAssetBundleAsync("ui/blackwhitegrid_atlas", function(arg_125_0)
 		for iter_125_0 = 0, 4 do
 			var_0_17[iter_125_0] = {}
 

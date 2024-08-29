@@ -39,7 +39,8 @@ function var_0_0.listNotificationInterests(arg_7_0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		BagProxy.ITEM_UPDATED,
-		GAME.SUBMIT_TASK_DONE
+		GAME.SUBMIT_TASK_DONE,
+		GAME.SUBMIT_ACTIVITY_TASK_DONE
 	}
 end
 
@@ -63,7 +64,7 @@ function var_0_0.handleNotification(arg_8_0, arg_8_1)
 		if var_8_1.id == Item.QUICK_TASK_PASS_TICKET_ID then
 			arg_8_0.viewComponent:updateItemInfo()
 		end
-	elseif var_8_0 == GAME.SUBMIT_TASK_DONE then
+	elseif var_8_0 == GAME.SUBMIT_TASK_DONE or var_8_0 == GAME.SUBMIT_ACTIVITY_TASK_DONE then
 		local var_8_3 = {}
 
 		for iter_8_0, iter_8_1 in ipairs(var_8_2) do
