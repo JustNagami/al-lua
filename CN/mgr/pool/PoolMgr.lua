@@ -19,7 +19,7 @@ function var_0_0.Ctor(arg_1_0)
 	arg_1_0.singleIndex = 0
 	arg_1_0.paintingCount = 0
 	arg_1_0.commanderPaintingCount = 0
-	arg_1_0.preloads = {
+	arg_1_0.preloadSprites = {
 		shiptype = {
 			"battle_hangmu",
 			"battle_qingxun",
@@ -113,10 +113,20 @@ function var_0_0.Ctor(arg_1_0)
 			"express_2",
 			"express_3",
 			"express_4"
-		},
-		shipstatus = {},
-		channel = {},
-		["painting/mat"] = {}
+		}
+	}
+	arg_1_0.preloadAbs = {
+		"shipstatus",
+		"channel",
+		"painting/mat",
+		"ui/commonui_atlas",
+		"skinicon",
+		"attricon",
+		"artresource/effect/chuanwukuang/duang_6_mask",
+		"artresource/effect/communicationjamming/line5",
+		"artresource/effect/communicationjamming/line6",
+		"artresource/effect/wupinkuang/iconcolorfulmask",
+		"artresource/effect/wupinkuang/iconcolorfulwave01"
 	}
 	arg_1_0.ui_tempCache = {}
 end
@@ -125,7 +135,7 @@ function var_0_0.Init(arg_2_0, arg_2_1)
 	print("initializing pool manager...")
 
 	local var_2_0 = 0
-	local var_2_1 = table.getCount(arg_2_0.preloads)
+	local var_2_1 = table.getCount(arg_2_0.preloadSprites) + #arg_2_0.preloadAbs
 
 	local function var_2_2()
 		var_2_0 = var_2_0 + 1
@@ -135,7 +145,7 @@ function var_0_0.Init(arg_2_0, arg_2_1)
 		end
 	end
 
-	for iter_2_0, iter_2_1 in pairs(arg_2_0.preloads) do
+	for iter_2_0, iter_2_1 in pairs(arg_2_0.preloadSprites) do
 		if #iter_2_1 > 0 then
 			local var_2_3 = typeof(Sprite)
 			local var_2_4 = false
@@ -144,7 +154,7 @@ function var_0_0.Init(arg_2_0, arg_2_1)
 				return
 			end
 
-			buildTempAB(iter_2_0, function(arg_5_0)
+			AssetBundleHelper.loadAssetBundleAsync(iter_2_0, function(arg_5_0)
 				for iter_5_0, iter_5_1 in ipairs(iter_2_1) do
 					local var_5_0 = arg_5_0:LoadAssetSync(iter_5_1, var_2_3, var_2_4, false)
 					local var_5_1 = iter_2_0
@@ -167,11 +177,13 @@ function var_0_0.Init(arg_2_0, arg_2_1)
 
 				var_2_2()
 			end)
-		else
-			buildTempAB(iter_2_0, function(arg_6_0)
-				var_2_2()
-			end)
 		end
+	end
+
+	for iter_2_2, iter_2_3 in ipairs(arg_2_0.preloadAbs) do
+		AssetBundleHelper.loadAssetBundleAsync(iter_2_3, function(arg_6_0)
+			var_2_2()
+		end)
 	end
 end
 
@@ -606,7 +618,7 @@ function var_0_0.DestroyAllSprite(arg_44_0)
 	local var_44_1 = typeof(Sprite)
 
 	for iter_44_0, iter_44_1 in pairs(arg_44_0.pools_pack) do
-		if iter_44_1.type == var_44_1 and not arg_44_0.preloads[iter_44_0] then
+		if iter_44_1.type == var_44_1 and not arg_44_0.preloadSprites[iter_44_0] then
 			var_44_0[iter_44_0] = iter_44_1
 		end
 	end

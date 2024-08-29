@@ -53,92 +53,121 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	end
 
 	seriesAsync(var_1_6, function()
-		pg.ConnectionMgr.GetInstance():Send(20013, {
-			id = var_1_5.id,
-			item_cost = var_1_5:getConfig("quick_finish")
-		}, 20014, function(arg_5_0)
-			var_1_4:removeSubmittingTask(var_1_3)
+		local var_4_0 = false
+		local var_4_1
 
-			if arg_5_0.result == 0 then
-				local var_5_0 = Item.QUICK_TASK_PASS_TICKET_ID
-				local var_5_1 = var_1_5:getConfig("quick_finish")
+		if var_1_5:isActivityTask() then
+			var_4_1 = var_1_5:getActId()
 
-				getProxy(BagProxy):removeItemById(tonumber(var_5_0), tonumber(var_5_1))
-				var_0_0.AddGuildLivness(var_1_5)
+			local var_4_2 = pg.activity_template[var_4_1].type
 
-				local var_5_2 = PlayerConst.addTranDrop(arg_5_0.award_list, {
-					taskId = var_1_5.id
-				})
-
-				if var_1_5:getConfig("type") ~= 8 then
-					var_1_4:removeTask(var_1_5)
-				else
-					var_1_5.submitTime = 1
-
-					var_1_4:updateTask(var_1_5)
-				end
-
-				pg.TipsMgr.GetInstance():ShowTips(i18n("battlepass_task_quickfinish3"))
-				arg_1_0:sendNotification(GAME.SUBMIT_TASK_DONE, var_5_2, {
-					var_1_5.id
-				})
-
-				local var_5_3 = getProxy(ActivityProxy)
-				local var_5_4 = var_5_3:getActivityByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST_MONITOR)
-
-				if var_5_4 and not var_5_4:isEnd() then
-					local var_5_5 = var_5_4:getConfig("config_data")[1] or {}
-
-					if table.contains(var_5_5, var_1_5.id) then
-						var_5_3:monitorTaskList(var_5_4)
-					end
-				end
-
-				if var_1_1 then
-					var_1_1(true)
-				end
-			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("task_submitTask", arg_5_0.result))
-
-				if var_1_1 then
-					var_1_1(false)
-				end
+			if table.contains(TotalTaskProxy.normal_task_type, var_4_2) then
+				var_4_0 = true
 			end
-		end)
+		end
+
+		if var_4_0 then
+			pg.ConnectionMgr.GetInstance():Send(20207, {
+				act_id = var_4_1,
+				task_id = var_1_5.id,
+				item_cost = var_1_5:getConfig("quick_finish")
+			}, 20208, function(arg_5_0)
+				QuickTaskCommand.OnQuickTaskComplete(arg_5_0, var_1_5, var_1_1)
+			end)
+		else
+			pg.ConnectionMgr.GetInstance():Send(20013, {
+				id = var_1_5.id,
+				item_cost = var_1_5:getConfig("quick_finish")
+			}, 20014, function(arg_6_0)
+				QuickTaskCommand.OnQuickTaskComplete(arg_6_0, var_1_5, var_1_1)
+			end)
+		end
 	end)
 end
 
-function var_0_0.AddGuildLivness(arg_6_0)
-	if arg_6_0:IsGuildAddLivnessType() then
-		local var_6_0 = getProxy(GuildProxy)
-		local var_6_1 = var_6_0:getData()
-		local var_6_2 = 0
-		local var_6_3 = false
+function var_0_0.OnQuickTaskComplete(arg_7_0, arg_7_1, arg_7_2)
+	local var_7_0 = getProxy(TaskProxy)
 
-		if var_6_1 and arg_6_0:isGuildTask() then
-			var_6_1:setWeeklyTaskFlag(1)
+	var_7_0:removeSubmittingTask(arg_7_1.id)
 
-			local var_6_4 = var_6_1:getWeeklyTask()
+	if arg_7_0.result == 0 then
+		local var_7_1 = Item.QUICK_TASK_PASS_TICKET_ID
+		local var_7_2 = arg_7_1:getConfig("quick_finish")
 
-			if var_6_4 then
-				var_6_2 = var_6_4:GetLivenessAddition()
+		getProxy(BagProxy):removeItemById(tonumber(var_7_1), tonumber(var_7_2))
+		QuickTaskCommand.AddGuildLivness(arg_7_1)
+
+		local var_7_3 = PlayerConst.addTranDrop(arg_7_0.award_list, {
+			taskId = arg_7_1.id
+		})
+
+		if arg_7_1:getConfig("type") ~= 8 then
+			var_7_0:removeTask(arg_7_1)
+		else
+			arg_7_1.submitTime = 1
+
+			var_7_0:updateTask(arg_7_1)
+		end
+
+		pg.TipsMgr.GetInstance():ShowTips(i18n("battlepass_task_quickfinish3"))
+		pg.m02:sendNotification(GAME.SUBMIT_TASK_DONE, var_7_3, {
+			arg_7_1.id
+		})
+
+		local var_7_4 = getProxy(ActivityProxy)
+		local var_7_5 = var_7_4:getActivityByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST_MONITOR)
+
+		if var_7_5 and not var_7_5:isEnd() then
+			local var_7_6 = var_7_5:getConfig("config_data")[1] or {}
+
+			if table.contains(var_7_6, arg_7_1.id) then
+				var_7_4:monitorTaskList(var_7_5)
+			end
+		end
+
+		if arg_7_2 then
+			arg_7_2(true)
+		end
+	else
+		pg.TipsMgr.GetInstance():ShowTips(errorTip("task_submitTask", arg_7_0.result))
+
+		if arg_7_2 then
+			arg_7_2(false)
+		end
+	end
+end
+
+function var_0_0.AddGuildLivness(arg_8_0)
+	if arg_8_0:IsGuildAddLivnessType() then
+		local var_8_0 = getProxy(GuildProxy)
+		local var_8_1 = var_8_0:getData()
+		local var_8_2 = 0
+		local var_8_3 = false
+
+		if var_8_1 and arg_8_0:isGuildTask() then
+			var_8_1:setWeeklyTaskFlag(1)
+
+			local var_8_4 = var_8_1:getWeeklyTask()
+
+			if var_8_4 then
+				var_8_2 = var_8_4:GetLivenessAddition()
 			end
 
-			var_6_3 = true
-		elseif arg_6_0:IsRoutineType() then
-			var_6_2 = pg.guildset.new_daily_task_guild_active.key_value
-		elseif arg_6_0:IsWeeklyType() then
-			var_6_2 = pg.guildset.new_weekly_task_guild_active.key_value
+			var_8_3 = true
+		elseif arg_8_0:IsRoutineType() then
+			var_8_2 = pg.guildset.new_daily_task_guild_active.key_value
+		elseif arg_8_0:IsWeeklyType() then
+			var_8_2 = pg.guildset.new_weekly_task_guild_active.key_value
 		end
 
-		if var_6_1 and var_6_2 and var_6_2 > 0 then
-			var_6_1:getMemberById(getProxy(PlayerProxy):getRawData().id):AddLiveness(var_6_2)
+		if var_8_1 and var_8_2 and var_8_2 > 0 then
+			var_8_1:getMemberById(getProxy(PlayerProxy):getRawData().id):AddLiveness(var_8_2)
 
-			var_6_3 = true
+			var_8_3 = true
 		end
 
-		if var_6_3 then
-			var_6_0:updateGuild(var_6_1)
+		if var_8_3 then
+			var_8_0:updateGuild(var_8_1)
 		end
 	end
 end

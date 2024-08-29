@@ -5476,6 +5476,16 @@ end
 temp()
 
 function temp()
+	var_0_1.鹳 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.鹞 = {
 		this = {
 			this = true

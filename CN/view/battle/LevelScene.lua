@@ -1226,7 +1226,7 @@ function var_0_0.updateActivityBtns(arg_80_0)
 		setActive(arg_80_0.actEliteBtn, var_80_11 and var_80_5 ~= Map.ACTIVITY_HARD)
 		setActive(arg_80_0.actNormalBtn, var_80_5 ~= Map.ACTIVITY_EASY)
 		setActive(arg_80_0.actExtraRank, var_80_5 == Map.ACT_EXTRA)
-		setActive(arg_80_0.actExchangeShopBtn, not ActivityConst.HIDE_PT_PANELS and not var_80_2 and var_80_1)
+		setActive(arg_80_0.actExchangeShopBtn, not ActivityConst.HIDE_PT_PANELS and not var_80_2 and var_80_1 and arg_80_0:IsActShopActive())
 		setActive(arg_80_0.ptTotal, not ActivityConst.HIDE_PT_PANELS and not var_80_2 and var_80_1 and arg_80_0.ptActivity and not arg_80_0.ptActivity:isEnd())
 		arg_80_0:updateActivityRes()
 	else
@@ -3603,96 +3603,111 @@ function var_0_0.RecordLastMapOnExit(arg_300_0)
 	end
 end
 
-function var_0_0.willExit(arg_301_0)
-	arg_301_0:ClearMapTransitions()
-	arg_301_0.loader:Clear()
+function var_0_0.IsActShopActive(arg_301_0)
+	local var_301_0 = pg.gameset.activity_res_id.key_value
+	local var_301_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOTTERY)
 
-	if arg_301_0.contextData.chapterVO then
-		pg.UIMgr.GetInstance():UnblurPanel(arg_301_0.topPanel, arg_301_0._tf)
+	if var_301_1 and not var_301_1:isEnd() and var_301_1:getConfig("config_client").resId == var_301_0 then
+		return true
+	end
+
+	if _.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function(arg_302_0)
+		return not arg_302_0:isEnd() and arg_302_0:getConfig("config_client").pt_id == var_301_0
+	end) then
+		return true
+	end
+end
+
+function var_0_0.willExit(arg_303_0)
+	arg_303_0:ClearMapTransitions()
+	arg_303_0.loader:Clear()
+
+	if arg_303_0.contextData.chapterVO then
+		pg.UIMgr.GetInstance():UnblurPanel(arg_303_0.topPanel, arg_303_0._tf)
 		pg.playerResUI:SetActive({
 			active = false
 		})
 	end
 
-	if arg_301_0.levelFleetView and arg_301_0.levelFleetView.selectIds then
-		arg_301_0.contextData.selectedFleetIDs = {}
+	if arg_303_0.levelFleetView and arg_303_0.levelFleetView.selectIds then
+		arg_303_0.contextData.selectedFleetIDs = {}
 
-		for iter_301_0, iter_301_1 in pairs(arg_301_0.levelFleetView.selectIds) do
-			for iter_301_2, iter_301_3 in pairs(iter_301_1) do
-				arg_301_0.contextData.selectedFleetIDs[#arg_301_0.contextData.selectedFleetIDs + 1] = iter_301_3
+		for iter_303_0, iter_303_1 in pairs(arg_303_0.levelFleetView.selectIds) do
+			for iter_303_2, iter_303_3 in pairs(iter_303_1) do
+				arg_303_0.contextData.selectedFleetIDs[#arg_303_0.contextData.selectedFleetIDs + 1] = iter_303_3
 			end
 		end
 	end
 
-	arg_301_0:destroyChapterPanel()
-	arg_301_0:DestroyLevelInfoSPPanel()
-	arg_301_0:destroyFleetEdit()
-	arg_301_0:destroyCommanderPanel()
-	arg_301_0:DestroyLevelStageView()
-	arg_301_0:hideRepairWindow()
-	arg_301_0:hideStrategyInfo()
-	arg_301_0:hideRemasterPanel()
-	arg_301_0:hideSpResult()
-	arg_301_0:destroyGrid()
-	arg_301_0:destroyAmbushWarn()
-	arg_301_0:destroyAirStrike()
-	arg_301_0:destroyTorpedo()
-	arg_301_0:destroyStrikeAnim()
-	arg_301_0:destroyTracking()
-	arg_301_0:destroyUIAnims()
+	arg_303_0:destroyChapterPanel()
+	arg_303_0:DestroyLevelInfoSPPanel()
+	arg_303_0:destroyFleetEdit()
+	arg_303_0:destroyCommanderPanel()
+	arg_303_0:DestroyLevelStageView()
+	arg_303_0:hideRepairWindow()
+	arg_303_0:hideStrategyInfo()
+	arg_303_0:hideRemasterPanel()
+	arg_303_0:hideSpResult()
+	arg_303_0:destroyGrid()
+	arg_303_0:destroyAmbushWarn()
+	arg_303_0:destroyAirStrike()
+	arg_303_0:destroyTorpedo()
+	arg_303_0:destroyStrikeAnim()
+	arg_303_0:destroyTracking()
+	arg_303_0:destroyUIAnims()
 	PoolMgr.GetInstance():DestroyPrefab("chapter/cell_quad_mark", "")
 	PoolMgr.GetInstance():DestroyPrefab("chapter/cell_quad", "")
 	PoolMgr.GetInstance():DestroyPrefab("chapter/cell", "")
 	PoolMgr.GetInstance():DestroyPrefab("chapter/plane", "")
 
-	for iter_301_4, iter_301_5 in pairs(arg_301_0.mbDict) do
-		iter_301_5:Destroy()
+	for iter_303_4, iter_303_5 in pairs(arg_303_0.mbDict) do
+		iter_303_5:Destroy()
 	end
 
-	arg_301_0.mbDict = nil
+	arg_303_0.mbDict = nil
 
-	for iter_301_6, iter_301_7 in pairs(arg_301_0.tweens) do
-		LeanTween.cancel(iter_301_7)
+	for iter_303_6, iter_303_7 in pairs(arg_303_0.tweens) do
+		LeanTween.cancel(iter_303_7)
 	end
 
-	arg_301_0.tweens = nil
+	arg_303_0.tweens = nil
 
-	if arg_301_0.cloudTimer then
-		_.each(arg_301_0.cloudTimer, function(arg_302_0)
-			LeanTween.cancel(arg_302_0)
+	if arg_303_0.cloudTimer then
+		_.each(arg_303_0.cloudTimer, function(arg_304_0)
+			LeanTween.cancel(arg_304_0)
 		end)
 
-		arg_301_0.cloudTimer = nil
+		arg_303_0.cloudTimer = nil
 	end
 
-	if arg_301_0.newChapterCDTimer then
-		arg_301_0.newChapterCDTimer:Stop()
+	if arg_303_0.newChapterCDTimer then
+		arg_303_0.newChapterCDTimer:Stop()
 
-		arg_301_0.newChapterCDTimer = nil
+		arg_303_0.newChapterCDTimer = nil
 	end
 
-	for iter_301_8, iter_301_9 in ipairs(arg_301_0.damageTextActive) do
-		LeanTween.cancel(iter_301_9)
+	for iter_303_8, iter_303_9 in ipairs(arg_303_0.damageTextActive) do
+		LeanTween.cancel(iter_303_9)
 	end
 
-	LeanTween.cancel(go(arg_301_0.avoidText))
+	LeanTween.cancel(go(arg_303_0.avoidText))
 
-	arg_301_0.map.localScale = Vector3.one
-	arg_301_0.map.pivot = Vector2(0.5, 0.5)
-	arg_301_0.float.localScale = Vector3.one
-	arg_301_0.float.pivot = Vector2(0.5, 0.5)
+	arg_303_0.map.localScale = Vector3.one
+	arg_303_0.map.pivot = Vector2(0.5, 0.5)
+	arg_303_0.float.localScale = Vector3.one
+	arg_303_0.float.pivot = Vector2(0.5, 0.5)
 
-	for iter_301_10, iter_301_11 in ipairs(arg_301_0.mapTFs) do
-		clearImageSprite(iter_301_11)
+	for iter_303_10, iter_303_11 in ipairs(arg_303_0.mapTFs) do
+		clearImageSprite(iter_303_11)
 	end
 
-	_.each(arg_301_0.cloudRTFs, function(arg_303_0)
-		clearImageSprite(arg_303_0)
+	_.each(arg_303_0.cloudRTFs, function(arg_305_0)
+		clearImageSprite(arg_305_0)
 	end)
 	PoolMgr.GetInstance():DestroyAllSprite()
-	Destroy(arg_301_0.enemyTpl)
-	arg_301_0:RecordLastMapOnExit()
-	arg_301_0.levelRemasterView:Destroy()
+	Destroy(arg_303_0.enemyTpl)
+	arg_303_0:RecordLastMapOnExit()
+	arg_303_0.levelRemasterView:Destroy()
 end
 
 return var_0_0

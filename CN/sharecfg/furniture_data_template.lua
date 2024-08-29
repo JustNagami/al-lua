@@ -247,6 +247,7 @@ pg.furniture_data_template = setmetatable({
 			100062,
 			100063,
 			100064,
+			100065,
 			200001,
 			200002,
 			200003,
@@ -3564,6 +3565,7 @@ pg.furniture_data_template = setmetatable({
 			100062,
 			100063,
 			100064,
+			100065,
 			31101,
 			54101,
 			54102,
@@ -6763,7 +6765,8 @@ pg.furniture_data_template = setmetatable({
 			100058,
 			100059,
 			100061,
-			100062
+			100062,
+			100065
 		},
 		[2] = {
 			120,
@@ -10007,6 +10010,7 @@ pg.furniture_data_template = setmetatable({
 		100062,
 		100063,
 		100064,
+		100065,
 		200001,
 		200002,
 		200003,
@@ -26552,6 +26556,57 @@ pg.base.furniture_data_template = {
 		followBone = {
 			"char",
 			1
+		},
+		interAction_group = {}
+	},
+	[100065] = {
+		spine_extra = "",
+		describe = "小心！寄宿在里面的强大力量即将现身！",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "linghumianjuicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "赤狐面具",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 100065,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"linghumianju",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
 		},
 		interAction_group = {}
 	},

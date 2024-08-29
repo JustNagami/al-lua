@@ -1,6 +1,232 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_15 = {
+	[702050] = {
+		ship_group = 70205,
+		name = "古比雪夫",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "gubixuefu",
+		illustrator = 1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 702050,
+		voice_actor_2 = -1,
+		prefab = "gubixuefu",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "恰巴耶夫级轻巡洋舰—古比雪夫",
+		voice_actor = 351,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					2.009,
+					1.338,
+					0
+				}
+			},
+			vicegun = {
+				{
+					2.005,
+					1.364,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					2,
+					1.326,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.526,
+							2.357,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[702051] = {
+		ship_group = 70205,
+		name = "银弦的向导兵",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70805,
+		painting = "gubixuefu_2",
+		illustrator = 1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 3,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "152",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		id = 702051,
+		voice_actor_2 = -1,
+		prefab = "gubixuefu_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "…演奏到此结束。算是为东煌的春节献上了绵薄之力…指挥官也是来听演奏的吗？那…刚才曲子的感想如何？呵呵~",
+		voice_actor = 351,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			4
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					2.009,
+					1.338,
+					0
+				}
+			},
+			vicegun = {
+				{
+					2.005,
+					1.364,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					2,
+					1.326,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.526,
+							2.357,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[702060] = {
 		ship_group = 70206,
 		name = "摩尔曼斯克",
@@ -12769,264 +12995,6 @@ pg.base.ship_skin_template_15 = {
 					}
 				}
 			}
-		}
-	},
-	[902012] = {
-		ship_group = 90201,
-		name = "春晓醉梦",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "1102",
-		l2d_ignore_drag = 0,
-		group_index = 2,
-		shop_id = 70489,
-		painting = "jialisuoniye_4",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 3,
-		lip_smoothing = 0,
-		bg = "144",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		id = 902012,
-		voice_actor_2 = -1,
-		prefab = "jialisuoniye_4",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "新春愉快，来试试交杯酒吧~嗯？不应该叫交杯酒吗？东煌的文化博大精深，我还没有掌握好呢~",
-		voice_actor = 238,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			1,
-			4
-		},
-		live2d_offset = {
-			0,
-			15,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.578,
-					0.995,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.571,
-					1.009,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					-0.007,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.568,
-					0.999,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.485,
-							2.461,
-							0
-						}
-					}
-				}
-			}
-		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_head"
-		}
-	},
-	[902013] = {
-		ship_group = 90201,
-		name = "黑猫与南瓜之夜",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "1102",
-		l2d_ignore_drag = 0,
-		group_index = 3,
-		shop_id = 70611,
-		painting = "jialisuoniye_3",
-		illustrator = -1,
-		shop_type_id = 8,
-		lip_smoothing = 0,
-		bg = "119",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		id = 902013,
-		voice_actor_2 = -1,
-		prefab = "jialisuoniye_3",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "我是会魔法的黑猫，不听话的话就把你变成一颗南瓜！嗯…万圣节，是这样的感觉吗？算了，随便啦，一起来找点节日的乐子吧，指挥官。",
-		voice_actor = 238,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			1,
-			2
-		},
-		live2d_offset = {
-			45,
-			-90,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.11,
-					1.174,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.099,
-					1.101,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.152,
-					1.308,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.527,
-							2.419,
-							0
-						}
-					}
-				}
-			}
-		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_head"
-		},
-		l2d_voice_calibrate = {
-			use_event = true
 		}
 	}
 }

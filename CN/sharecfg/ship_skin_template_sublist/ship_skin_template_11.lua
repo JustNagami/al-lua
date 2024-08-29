@@ -1,6 +1,217 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_11 = {
+	[307040] = {
+		ship_group = 30704,
+		name = "{namecode:94}",
+		hand_id = 2,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "feilong",
+		illustrator = 12,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 307040,
+		voice_actor_2 = -1,
+		prefab = "feilong",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "{namecode:94}号航空母舰",
+		voice_actor = 30,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					0.628,
+					0.908,
+					0
+				}
+			},
+			plane = {
+				{
+					-1.188,
+					0.832,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							-0.456,
+							0.32,
+							0
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							-0.118,
+							0.905,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[307041] = {
+		ship_group = 30704,
+		name = "放学后的极道少女",
+		hand_id = 2,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70053,
+		painting = "feilong_2",
+		illustrator = 12,
+		l2d_voice_calibrate = "",
+		shop_type_id = 4,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "103",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		id = 307041,
+		voice_actor_2 = -1,
+		prefab = "feilong_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "有了风纪委员，就得有不良少女呢，那么，在被姐姐抓到前，先在学校大闹一番吧！",
+		voice_actor = 30,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.01,
+					1.14,
+					0
+				}
+			},
+			plane = {
+				{
+					1.13,
+					1.24,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				40,
+				{
+					{
+						"smoke",
+						{
+							-0.6,
+							2.26,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[307049] = {
 		ship_group = 30704,
 		name = "{namecode:94}.改",
@@ -12316,256 +12527,6 @@ pg.base.ship_skin_template_11 = {
 							-0.41,
 							2.33,
 							-0.14
-						}
-					}
-				}
-			}
-		}
-	},
-	[402010] = {
-		ship_group = 40201,
-		name = "{namecode:421}",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "kenisibao",
-		illustrator = 8,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 402010,
-		voice_actor_2 = -1,
-		prefab = "kenisibao",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "{namecode:421}级轻巡洋舰—{namecode:421}",
-		voice_actor = 78,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					-0.425,
-					0.786,
-					0
-				}
-			},
-			vicegun = {
-				{
-					-0.425,
-					0.786,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.369,
-					0.232,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					-0.425,
-					0.786,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				70,
-				{
-					{
-						"smoke",
-						{
-							-0.531,
-							0.427,
-							0
-						}
-					}
-				}
-			},
-			{
-				30,
-				{
-					{
-						"smoke",
-						{
-							0.24,
-							2.74,
-							-0.46
-						}
-					}
-				}
-			}
-		}
-	},
-	[402020] = {
-		ship_group = 40202,
-		name = "{namecode:422}",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "kaersilue",
-		illustrator = 8,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 402020,
-		voice_actor_2 = -1,
-		prefab = "kaersilue",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "{namecode:421}级轻巡洋舰—{namecode:422}",
-		voice_actor = 78,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					-0.36,
-					0.73,
-					0
-				}
-			},
-			vicegun = {
-				{
-					-0.36,
-					0.73,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.16,
-					0.17,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					-0.35,
-					0.73,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				70,
-				{
-					{
-						"smoke",
-						{
-							-0.82,
-							0.86,
-							-0.31
-						}
-					}
-				}
-			},
-			{
-				30,
-				{
-					{
-						"smoke",
-						{
-							0.6,
-							2.59,
-							-0.38
 						}
 					}
 				}

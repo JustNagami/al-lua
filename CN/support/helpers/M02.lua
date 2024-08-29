@@ -257,7 +257,7 @@ function SetActionCallback(arg_31_0, arg_31_1)
 end
 
 function emojiText(arg_32_0, arg_32_1)
-	local var_32_0 = buildTempAB("emojis", false)
+	local var_32_0 = AssetBundleHelper.loadAssetBundleSync("emojis")
 	local var_32_1 = GetComponent(arg_32_0, "TextMesh")
 	local var_32_2 = GetComponent(arg_32_0, "MeshRenderer")
 	local var_32_3 = Shader.Find("UI/Unlit/Transparent")
@@ -4456,70 +4456,10 @@ function setDefaultZeroMetatable(arg_313_0)
 	})
 end
 
-if EDITOR_TOOL then
-	local var_0_26 = {
-		__index = {
-			LoadAssetSync = function(arg_315_0, ...)
-				return ResourceMgr.Inst:getAssetSync(arg_315_0.path, ...)
-			end,
-			GetAllAssetNames = function(arg_316_0, ...)
-				return ReflectionHelp.RefCallMethod(typeof(ResourceMgr), "GetAssetBundleAllAssetNames", ResourceMgr.Inst, {
-					typeof("System.String")
-				}, {
-					arg_316_0.path
-				})
-			end
-		}
-	}
-
-	function buildTempAB(arg_317_0, arg_317_1)
-		local var_317_0 = setmetatable({
-			path = arg_317_0
-		}, var_0_26)
-
-		if arg_317_1 then
-			onNextTick(function()
-				arg_317_1(var_317_0)
-			end)
-		end
-
-		return var_317_0
-	end
-
-	function checkABExist(arg_319_0)
-		return PathMgr.FileExists(PathMgr.getAssetBundle(arg_319_0)) or ResourceMgr.Inst:AssetExist(arg_319_0)
-	end
-else
-	local var_0_27 = {
-		__index = {
-			LoadAssetSync = function(arg_320_0, ...)
-				return ResourceMgr.Inst:LoadAssetSync(arg_320_0.ab, ...)
-			end,
-			GetAllAssetNames = function(arg_321_0, ...)
-				return arg_321_0.ab:GetAllAssetNames(...)
-			end
-		}
-	}
-
-	function buildTempAB(arg_322_0, arg_322_1)
-		local var_322_0 = setmetatable({
-			path = arg_322_0
-		}, var_0_27)
-
-		if arg_322_1 then
-			ResourceMgr.Inst:loadAssetBundleAsync(arg_322_0, function(arg_323_0)
-				var_322_0.ab = arg_323_0
-
-				arg_322_1(var_322_0)
-			end)
-		else
-			var_322_0.ab = ResourceMgr.Inst:loadAssetBundleSync(arg_322_0)
-		end
-
-		return var_322_0
-	end
-
-	function checkABExist(arg_324_0)
-		return PathMgr.FileExists(PathMgr.getAssetBundle(arg_324_0))
+function checkABExist(arg_315_0)
+	if EDITOR_TOOL then
+		return PathMgr.FileExists(PathMgr.getAssetBundle(arg_315_0)) or ResourceMgr.Inst:AssetExist(arg_315_0)
+	else
+		return PathMgr.FileExists(PathMgr.getAssetBundle(arg_315_0))
 	end
 end

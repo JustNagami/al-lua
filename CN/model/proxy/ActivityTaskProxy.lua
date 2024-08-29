@@ -5,22 +5,34 @@ function var_0_0.register(arg_1_0)
 	arg_1_0.autoSubmitTasks = {}
 end
 
-function var_0_0.initActList(arg_2_0, arg_2_1, arg_2_2)
+function var_0_0.initActList(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 	if not arg_2_2 then
 		return {}
 	end
 
 	local var_2_0 = {}
+	local var_2_1 = {}
 
 	for iter_2_0, iter_2_1 in ipairs(arg_2_2) do
-		local var_2_1 = arg_2_0:createTask(arg_2_1, iter_2_1)
+		local var_2_2 = arg_2_0:createTask(arg_2_1, iter_2_1)
 
-		table.insert(var_2_0, var_2_1)
+		table.insert(var_2_0, var_2_2)
+	end
+
+	if arg_2_3 and #arg_2_3 > 0 then
+		for iter_2_2, iter_2_3 in ipairs(arg_2_3) do
+			local var_2_3 = arg_2_0:createTask(arg_2_1, {
+				id = iter_2_3
+			})
+
+			table.insert(var_2_1, var_2_3)
+		end
 	end
 
 	table.insert(arg_2_0.actTasks, {
 		actId = arg_2_1,
-		tasks = var_2_0
+		tasks = var_2_0,
+		finish_tasks = var_2_1
 	})
 	arg_2_0:checkAutoSubmit()
 end

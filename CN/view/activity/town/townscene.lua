@@ -220,7 +220,7 @@ function var_0_0.UpdateShip(arg_24_0, arg_24_1, arg_24_2)
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("town_gold_tip"),
 				onYes = function()
-					arg_24_0:emit(TownMediator.CLICK_BUBBLE, arg_24_1)
+					arg_24_0:emit(TownMediator.CLICK_BUBBLE, arg_24_0.bubblesPosList)
 				end
 			})
 		else
