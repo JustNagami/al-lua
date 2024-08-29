@@ -947,7 +947,7 @@ _G.pg.base.gametip.word_primary_weapons = {
 	tip = "Main Weapon"
 }
 _G.pg.base.gametip.word_main_cannons = {
-	tip = "Main Gun"
+	tip = "Main Gun "
 }
 _G.pg.base.gametip.word_shipboard_aircraft = {
 	tip = "Aircraft"
