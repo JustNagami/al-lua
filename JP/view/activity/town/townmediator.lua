@@ -26,7 +26,7 @@ function var_0_0.register(arg_1_0)
 		arg_1_0:sendNotification(GAME.ACTIVITY_TOWN_OP, {
 			activity_id = arg_1_0.activity.id,
 			cmd = TownActivity.OPERATION.CLICK_BUBBLE,
-			arg1 = arg_5_1
+			arg_list = arg_5_1
 		})
 	end)
 
@@ -156,38 +156,49 @@ function var_0_0.handleNotification(arg_13_0, arg_13_1)
 
 				seriesAsync({
 					function(arg_15_0)
-						local var_15_0 = var_14_0.unlock_story
-
-						if var_15_0 ~= "" then
-							pg.NewStoryMgr.GetInstance():Play(var_15_0, arg_15_0)
-						else
-							arg_15_0()
-						end
+						arg_13_0.viewComponent:OnTownUpgrade(arg_15_0)
 					end,
 					function(arg_16_0)
-						local var_16_0 = var_14_0.unlock_work
+						local var_16_0 = var_14_0.unlock_story
 
-						if #var_16_0[1] > 0 or #var_16_0[2] > 0 then
+						if var_16_0 ~= "" then
+							pg.NewStoryMgr.GetInstance():Play(var_16_0, arg_16_0)
+						else
+							arg_16_0()
+						end
+					end,
+					function(arg_17_0)
+						local var_17_0 = var_14_0.unlock_work
+
+						if #var_17_0[1] > 0 or #var_17_0[2] > 0 then
 							arg_13_0:addSubLayers(Context.New({
 								mediator = TownUnlockMediator,
 								viewComponent = TownUnlockLayer,
 								data = {
-									newIds = var_16_0[1],
-									limitIds = var_16_0[2],
-									removeFunc = arg_16_0
+									newIds = var_17_0[1],
+									limitIds = var_17_0[2],
+									removeFunc = arg_17_0
 								}
 							}))
 						else
-							arg_16_0()
+							arg_17_0()
 						end
 					end
 				}, function()
 					return
 				end)
-				arg_13_0.viewComponent:OnTownUpgrade()
 			end,
 			[TownActivity.OPERATION.UPGRADE_PLACE] = function()
-				arg_13_0.viewComponent:UpdateInfoPage()
+				seriesAsync({
+					function(arg_20_0)
+						arg_13_0.viewComponent:OnPlaceUpgrade(arg_20_0)
+					end,
+					function(arg_21_0)
+						arg_13_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_13_1.awards)
+					end
+				}, function()
+					return
+				end)
 			end,
 			[TownActivity.OPERATION.CHANGE_SHIPS] = function()
 				arg_13_0.viewComponent:UpdateShips()
@@ -195,9 +206,9 @@ function var_0_0.handleNotification(arg_13_0, arg_13_1)
 			end,
 			[TownActivity.OPERATION.CLICK_BUBBLE] = function()
 				arg_13_0.viewComponent:UpdateBubbles()
+				arg_13_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_13_1.awards)
 			end
 		})
-		arg_13_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_13_1.awards)
 	elseif var_13_0 == ActivityProxy.ACTIVITY_UPDATED and var_13_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TOWN then
 		arg_13_0.activity = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TOWN)
 

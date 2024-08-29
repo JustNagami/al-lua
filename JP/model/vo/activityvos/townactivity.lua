@@ -282,7 +282,9 @@ function var_0_0.OnChangeShips(arg_26_0, arg_26_1)
 end
 
 function var_0_0.OnGetBubbleAward(arg_27_0, arg_27_1, arg_27_2)
-	arg_27_0.slotData[arg_27_1]:ResetStartTime(arg_27_2)
+	for iter_27_0, iter_27_1 in ipairs(arg_27_1) do
+		arg_27_0.slotData[iter_27_1]:ResetStartTime(arg_27_2[iter_27_0])
+	end
 end
 
 function var_0_0.OnSettleGold(arg_28_0, arg_28_1)
@@ -362,6 +364,7 @@ function var_0_0.subVitemNumber(arg_37_0, arg_37_1, arg_37_2)
 	assert(pg.item_virtual_data_statistics[arg_37_1].link_id == arg_37_0.id)
 
 	arg_37_0.settleGold = math.max(0, arg_37_0.settleGold - arg_37_2)
+	arg_37_0.totalGold = arg_37_0.settleGold
 end
 
 function var_0_0.addVitemNumber(arg_38_0, arg_38_1, arg_38_2)

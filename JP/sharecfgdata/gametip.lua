@@ -8246,13 +8246,13 @@ _G.pg.base.gametip.buildship_new_tip = {
 	tip = "「ピッツバーグ」「インディアナ」など出現率UP!"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "「島風」「筑摩」常設実装！"
+	tip = "「ヴィットリオ・ヴェネト」常設追加！"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "「由良」「海風」常設実装！"
+	tip = "「ドゥーカ・デッリ・アブルッツィ」など常設追加！"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "「島風」「葛城」常設実装！"
+	tip = "「アクィラ」常設追加！"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {

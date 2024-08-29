@@ -1155,8 +1155,11 @@ function var_0_0.LoadEffects(arg_100_0, arg_100_1, arg_100_2)
 				arg_100_0:UpdateEffectInterLayer(var_100_2, var_100_7)
 			end
 
-			if var_100_3 == false then
+			if not var_100_3 then
 				arg_100_0:ClearEffectInterlayer(var_100_2)
+			elseif isActive(var_100_7) then
+				setActive(var_100_7, false)
+				setActive(var_100_7, true)
 			end
 
 			if var_100_6 then

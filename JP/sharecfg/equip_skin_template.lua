@@ -33830,7 +33830,7 @@ pg.equip_skin_template = {
 		desc = "無邪気なままで育つように  童心を永遠に忘れないように",
 		ship_config_id = 100011,
 		derivate_boom = "",
-		orbit_rotate = "1",
+		orbit_rotate = false,
 		miss_sfx = "",
 		orbit_combat_anima_change = "",
 		icon = "100071",
@@ -33856,16 +33856,16 @@ pg.equip_skin_template = {
 		orbit_combat_bound = {
 			"face",
 			{
-				2.22,
-				-0.09,
+				0.26,
+				2.26,
 				-2.93
 			}
 		},
 		orbit_ui_bound = {
 			"face",
 			{
-				-10,
-				0
+				2.43,
+				-7.26
 			}
 		},
 		orbit_hidden_action = {
@@ -33884,7 +33884,7 @@ pg.equip_skin_template = {
 		desc = "狐面を被り、紅き夢に堕ちる",
 		ship_config_id = 100011,
 		derivate_boom = "",
-		orbit_rotate = "1",
+		orbit_rotate = false,
 		miss_sfx = "",
 		orbit_combat_anima_change = "",
 		icon = "100072",
@@ -33910,16 +33910,16 @@ pg.equip_skin_template = {
 		orbit_combat_bound = {
 			"face",
 			{
-				2.22,
-				-0.25,
+				0.26,
+				2.26,
 				-2.93
 			}
 		},
 		orbit_ui_bound = {
 			"face",
 			{
-				-10,
-				0
+				2.43,
+				-7.26
 			}
 		},
 		orbit_hidden_action = {
@@ -34624,6 +34624,60 @@ pg.equip_skin_template = {
 		weapon_ids = {
 			61501,
 			54014
+		}
+	},
+	[4039] = {
+		hit_sfx = "",
+		bullet_name = "",
+		name = "青の狐面",
+		type = 1,
+		preview_hit_distance = 0,
+		themeid = 47,
+		orbit_ui = "shebei_qinglanhumianui",
+		desc = "狐面を被り、青き夢で足掻け",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = false,
+		miss_sfx = "",
+		orbit_combat_anima_change = "",
+		icon = "100073",
+		orbit_combat = "shebei_qinglanhumian",
+		orbit_ui_back = 0,
+		mirror = 0,
+		rarity = 4,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 4039,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				0.26,
+				2.26,
+				-2.93
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				2.43,
+				-7.26
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
 		}
 	},
 	[1001] = {
@@ -42664,6 +42718,7 @@ pg.equip_skin_template = {
 		4036,
 		4037,
 		4038,
+		4039,
 		1001,
 		1002,
 		1003,

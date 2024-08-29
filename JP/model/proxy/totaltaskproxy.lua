@@ -1,6 +1,5 @@
 ﻿local var_0_0 = class("TotalTaskProxy", import(".NetProxy"))
 
-var_0_0.TOTAL_TASK_UPDATED = "total task updated"
 var_0_0.avatar_task_type = {
 	ActivityConst.ACTIVITY_TYPE_PT_OTHER
 }
@@ -9,7 +8,8 @@ var_0_0.activity_task_type = {
 	ActivityConst.ACTIVITY_TYPE_HOTSPRING_2
 }
 var_0_0.normal_task_type = {
-	ActivityConst.ACTIVITY_TYPE_TASKS
+	ActivityConst.ACTIVITY_TYPE_TASKS,
+	ActivityConst.ACTIVITY_TYPE_PT_CRUSING
 }
 
 function var_0_0.register(arg_1_0)
@@ -20,14 +20,15 @@ function var_0_0.register(arg_1_0)
 		for iter_2_0, iter_2_1 in ipairs(arg_2_0.info) do
 			local var_2_0 = iter_2_1.act_id
 			local var_2_1 = iter_2_1.tasks
-			local var_2_2 = pg.activity_template[var_2_0].type
+			local var_2_2 = iter_2_1.finish_ids
+			local var_2_3 = pg.activity_template[var_2_0].type
 
-			if table.contains(TotalTaskProxy.avatar_task_type, var_2_2) then
-				getProxy(AvatarFrameProxy):initListData(var_2_0, var_2_1)
-			elseif table.contains(TotalTaskProxy.activity_task_type, var_2_2) then
-				getProxy(ActivityTaskProxy):initActList(var_2_0, var_2_1)
-			elseif table.contains(TotalTaskProxy.normal_task_type, var_2_2) then
-				getProxy(TaskProxy):initActData(var_2_0, var_2_1)
+			if table.contains(TotalTaskProxy.avatar_task_type, var_2_3) then
+				getProxy(AvatarFrameProxy):initListData(var_2_0, var_2_1, var_2_2)
+			elseif table.contains(TotalTaskProxy.activity_task_type, var_2_3) then
+				getProxy(ActivityTaskProxy):initActList(var_2_0, var_2_1, var_2_2)
+			elseif table.contains(TotalTaskProxy.normal_task_type, var_2_3) then
+				getProxy(TaskProxy):initActData(var_2_0, var_2_1, var_2_2)
 			end
 		end
 	end)
@@ -46,7 +47,7 @@ function var_0_0.register(arg_1_0)
 			end
 		end
 
-		arg_1_0.facade:sendNotification(var_0_0.TOTAL_TASK_UPDATED)
+		arg_1_0.facade:sendNotification(GAME.TOTAL_TASK_UPDATED)
 	end)
 	arg_1_0:on(20203, function(arg_4_0)
 		for iter_4_0, iter_4_1 in ipairs(arg_4_0.info) do
@@ -63,7 +64,7 @@ function var_0_0.register(arg_1_0)
 			end
 		end
 
-		arg_1_0.facade:sendNotification(var_0_0.TOTAL_TASK_UPDATED)
+		arg_1_0.facade:sendNotification(GAME.TOTAL_TASK_UPDATED)
 	end)
 	arg_1_0:on(20204, function(arg_5_0)
 		for iter_5_0, iter_5_1 in ipairs(arg_5_0.info) do
@@ -80,7 +81,7 @@ function var_0_0.register(arg_1_0)
 			end
 		end
 
-		arg_1_0.facade:sendNotification(var_0_0.TOTAL_TASK_UPDATED)
+		arg_1_0.facade:sendNotification(GAME.TOTAL_TASK_UPDATED)
 	end)
 end
 

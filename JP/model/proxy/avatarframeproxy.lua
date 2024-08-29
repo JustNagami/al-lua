@@ -8,20 +8,33 @@ function var_0_0.register(arg_1_0)
 	arg_1_0.actTasks = {}
 end
 
-function var_0_0.initListData(arg_2_0, arg_2_1, arg_2_2)
+function var_0_0.initListData(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 	arg_2_0.avatarFrames = {}
 
 	local var_2_0 = {}
+	local var_2_1 = {}
 
 	for iter_2_0, iter_2_1 in ipairs(arg_2_2) do
-		local var_2_1 = arg_2_0:createAvatarFrameTask(arg_2_1, iter_2_1)
+		local var_2_2 = arg_2_0:createAvatarFrameTask(arg_2_1, iter_2_1)
 
-		table.insert(var_2_0, var_2_1)
+		table.insert(var_2_0, var_2_2)
+	end
+
+	if arg_2_3 and #arg_2_3 then
+		for iter_2_2, iter_2_3 in ipairs(arg_2_3) do
+			local var_2_3 = arg_2_0:createAvatarFrameTask(arg_2_1, {
+				id = iter_2_3
+			})
+
+			var_2_3:setTaskFinish()
+			table.insert(var_2_1, var_2_3)
+		end
 	end
 
 	table.insert(arg_2_0.avatarFrames, {
 		actId = arg_2_1,
-		tasks = var_2_0
+		tasks = var_2_0,
+		finish_tasks = finishTask
 	})
 end
 

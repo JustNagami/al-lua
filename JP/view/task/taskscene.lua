@@ -191,16 +191,12 @@ function var_0_0.UpdatePage(arg_14_0, arg_14_1)
 end
 
 function var_0_0.addTask(arg_17_0, arg_17_1)
-	print("add task " .. arg_17_1.id)
-
 	arg_17_0.contextData.taskVOsById[arg_17_1.id] = arg_17_1
 
 	arg_17_0:UpdatePage(arg_17_0._currentToggleType)
 end
 
 function var_0_0.removeTask(arg_18_0, arg_18_1)
-	print("revemo task " .. arg_18_1.id)
-
 	arg_18_0.contextData.taskVOsById[arg_18_1.id] = nil
 
 	arg_18_0:UpdatePage(arg_18_0._currentToggleType)

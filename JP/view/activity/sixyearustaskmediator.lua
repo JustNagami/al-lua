@@ -90,7 +90,8 @@ end
 
 function var_0_0.listNotificationInterests(arg_14_0)
 	return {
-		GAME.SUBMIT_ACTIVITY_TASK_DONE
+		GAME.SUBMIT_ACTIVITY_TASK_DONE,
+		GAME.ACTIVITY_UPDATED
 	}
 end
 
@@ -114,6 +115,8 @@ function var_0_0.handleNotification(arg_15_0, arg_15_1)
 
 			arg_15_0.showAwards = {}
 		end
+	elseif var_15_0 == GAME.ACTIVITY_UPDATED then
+		arg_15_0.viewComponent:Show()
 	end
 end
 

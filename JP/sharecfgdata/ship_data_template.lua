@@ -144933,3 +144933,197 @@ _G.pg.base.ship_data_template[900449] = {
 	},
 	hide_buff_list = {}
 }
+_G.pg.base.ship_data_template[306041] = {
+	oil_at_end = 6,
+	star_max = 6,
+	oil_at_start = 1,
+	type = 6,
+	max_level = 70,
+	strengthen_id = 30604,
+	equip_id_3 = 0,
+	equip_id_2 = 38000,
+	equip_id_1 = 37100,
+	group_type = 30604,
+	id = 306041,
+	can_get_proficency = 0,
+	star = 3,
+	energy = 150,
+	specific_type = {},
+	equip_1 = {
+		7
+	},
+	equip_2 = {
+		8
+	},
+	equip_3 = {
+		6
+	},
+	equip_4 = {
+		10,
+		15
+	},
+	equip_5 = {
+		10,
+		15
+	},
+	airassist_time = {
+		20
+	},
+	buff_list = {
+		150400,
+		150410
+	},
+	buff_list_display = {
+		150400,
+		150410
+	},
+	hide_buff_list = {
+		340
+	}
+}
+_G.pg.base.ship_data_template[306042] = {
+	oil_at_end = 8,
+	star_max = 6,
+	oil_at_start = 1,
+	type = 6,
+	max_level = 80,
+	strengthen_id = 30604,
+	equip_id_3 = 0,
+	equip_id_2 = 0,
+	equip_id_1 = 0,
+	group_type = 30604,
+	id = 306042,
+	can_get_proficency = 0,
+	star = 4,
+	energy = 150,
+	specific_type = {},
+	equip_1 = {
+		7
+	},
+	equip_2 = {
+		8
+	},
+	equip_3 = {
+		6
+	},
+	equip_4 = {
+		10,
+		15
+	},
+	equip_5 = {
+		10,
+		15
+	},
+	airassist_time = {
+		21
+	},
+	buff_list = {
+		150400,
+		150410
+	},
+	buff_list_display = {
+		150400,
+		150410
+	},
+	hide_buff_list = {
+		340
+	}
+}
+_G.pg.base.ship_data_template[306043] = {
+	oil_at_end = 10,
+	star_max = 6,
+	oil_at_start = 1,
+	type = 6,
+	max_level = 90,
+	strengthen_id = 30604,
+	equip_id_3 = 0,
+	equip_id_2 = 0,
+	equip_id_1 = 0,
+	group_type = 30604,
+	id = 306043,
+	can_get_proficency = 0,
+	star = 5,
+	energy = 150,
+	specific_type = {},
+	equip_1 = {
+		7
+	},
+	equip_2 = {
+		8
+	},
+	equip_3 = {
+		6
+	},
+	equip_4 = {
+		10,
+		15
+	},
+	equip_5 = {
+		10,
+		15
+	},
+	airassist_time = {
+		21,
+		21
+	},
+	buff_list = {
+		150400,
+		150410
+	},
+	buff_list_display = {
+		150400,
+		150410
+	},
+	hide_buff_list = {
+		340
+	}
+}
+_G.pg.base.ship_data_template[306044] = {
+	oil_at_end = 12,
+	star_max = 6,
+	oil_at_start = 1,
+	type = 6,
+	max_level = 100,
+	strengthen_id = 30604,
+	equip_id_3 = 0,
+	equip_id_2 = 0,
+	equip_id_1 = 0,
+	group_type = 30604,
+	id = 306044,
+	can_get_proficency = 1,
+	star = 6,
+	energy = 150,
+	specific_type = {},
+	equip_1 = {
+		7
+	},
+	equip_2 = {
+		8
+	},
+	equip_3 = {
+		6
+	},
+	equip_4 = {
+		10,
+		15
+	},
+	equip_5 = {
+		10,
+		15
+	},
+	airassist_time = {
+		22,
+		22
+	},
+	buff_list = {
+		150400,
+		150410
+	},
+	buff_list_display = {
+		150400,
+		150410
+	},
+	hide_buff_list = {
+		340
+	}
+}

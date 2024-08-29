@@ -13,7 +13,7 @@ pg.activity_banner = {
 				{
 					2024,
 					8,
-					15
+					29
 				},
 				{
 					0,
@@ -24,8 +24,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					8,
-					28
+					9,
+					11
 				},
 				{
 					23,
@@ -38,79 +38,29 @@ pg.activity_banner = {
 	{
 		id = 2,
 		pic = "temp2",
+		time = "stop",
 		type = 2,
 		param = {
 			"scene charge",
 			{
 				wrap = 2
 			}
-		},
-		time = {
-			{
-				{
-					2024,
-					8,
-					8
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					8,
-					28
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	},
 	{
 		id = 3,
 		pic = "temp8",
+		time = "stop",
 		type = 2,
 		param = {
 			"shipblueprint",
 			{
 				shipGroupId = 19903
 			}
-		},
-		time = {
-			{
-				{
-					2024,
-					8,
-					15
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					8,
-					28
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	},
 	{
-		param = "5521",
+		param = "5543",
 		id = 4,
 		pic = "temp3",
 		type = 3,
@@ -119,7 +69,7 @@ pg.activity_banner = {
 				{
 					2024,
 					8,
-					15
+					29
 				},
 				{
 					0,
@@ -130,8 +80,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					8,
-					29
+					9,
+					12
 				},
 				{
 					23,
@@ -148,7 +98,7 @@ pg.activity_banner = {
 		param = {
 			"scene get boat",
 			{
-				projectName = "new",
+				projectName = "special",
 				page = 1
 			}
 		},
@@ -157,7 +107,7 @@ pg.activity_banner = {
 				{
 					2024,
 					8,
-					15
+					29
 				},
 				{
 					0,
@@ -168,8 +118,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					8,
-					29
+					9,
+					12
 				},
 				{
 					23,
@@ -184,17 +134,15 @@ pg.activity_banner = {
 		pic = "temp5",
 		type = 2,
 		param = {
-			"scene charge",
-			{
-				wrap = 2
-			}
+			"scene skinshop",
+			{}
 		},
 		time = {
 			{
 				{
 					2024,
 					8,
-					15
+					29
 				},
 				{
 					0,
@@ -205,8 +153,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					8,
-					28
+					9,
+					12
 				},
 				{
 					23,
@@ -217,16 +165,21 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "5537",
 		id = 7,
 		pic = "temp6",
-		type = 3,
+		type = 2,
+		param = {
+			"scene level",
+			{
+				open_remaster = true
+			}
+		},
 		time = {
 			{
 				{
 					2024,
 					8,
-					15
+					29
 				},
 				{
 					0,
@@ -237,8 +190,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					8,
-					29
+					9,
+					12
 				},
 				{
 					23,
@@ -251,69 +204,19 @@ pg.activity_banner = {
 	{
 		id = 8,
 		pic = "temp7",
+		time = "stop",
 		type = 2,
 		param = {
 			"COWBOY_TOWN_BACKHILL"
-		},
-		time = {
-			{
-				{
-					2024,
-					8,
-					15
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					8,
-					29
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	},
 	{
 		id = 9,
 		pic = "temp9",
+		time = "stop",
 		type = 2,
 		param = {
 			"scene court yard"
-		},
-		time = {
-			{
-				{
-					2024,
-					8,
-					15
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					8,
-					28
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	},
 	[90] = {
@@ -326,7 +229,7 @@ pg.activity_banner = {
 				{
 					2024,
 					8,
-					15
+					29
 				},
 				{
 					0,
@@ -337,8 +240,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					8,
-					28
+					9,
+					11
 				},
 				{
 					23,
@@ -364,35 +267,10 @@ pg.activity_banner = {
 	},
 	[99] = {
 		param = "",
-		id = 99,
-		pic = "limit_skin",
+		time = "stop",
 		type = 12,
-		time = {
-			{
-				{
-					2024,
-					8,
-					15
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					8,
-					28
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
+		id = 99,
+		pic = "limit_skin"
 	},
 	[100] = {
 		param = "水餃子|東煌で有名な食べ物<color=#92fc63>（60分間寮舎経験値効率が5%アップ）</color>",
@@ -422,12 +300,12 @@ pg.activity_banner = {
 			3,
 			5,
 			6,
+			7,
 			8,
 			9
 		},
 		[3] = {
-			4,
-			7
+			4
 		},
 		[9] = {
 			90,

@@ -1,55 +1,20 @@
 ﻿local var_0_0 = class("TownScene", import("view.base.BaseUI"))
 
 var_0_0.RANDOM_POS = {
-	{
-		x = 111.3,
-		y = 150
-	},
-	{
-		x = -235.9,
-		y = 113.2
-	},
-	{
-		x = 570,
-		y = 424.5
-	},
-	{
-		x = -790.3,
-		y = 569.9
-	},
-	{
-		x = -440.7,
-		y = -26.8
-	},
-	{
-		x = -1206.2,
-		y = 2
-	},
-	{
-		x = -705.8,
-		y = -379
-	},
-	{
-		x = -1021.7,
-		y = -153.9
-	},
-	{
-		x = -385.6,
-		y = -479.7
-	},
-	{
-		x = 367.1,
-		y = -749
-	},
-	{
-		x = 107.6,
-		y = -684.9
-	},
-	{
-		x = 338.7,
-		y = 150
-	}
+	Vector2.New(111.3, 150),
+	Vector2.New(-235.9, 113.2),
+	Vector2.New(570, 424.5),
+	Vector2.New(-790.3, 569.9),
+	Vector2.New(-440.7, -26.8),
+	Vector2.New(-1206.2, 2),
+	Vector2.New(-705.8, -379),
+	Vector2.New(-1021.7, -153.9),
+	Vector2.New(-385.6, -479.7),
+	Vector2.New(367.1, -749),
+	Vector2.New(107.6, -684.9),
+	Vector2.New(338.7, 150)
 }
+var_0_0.STATIC_POS = Vector2.New(-440.7, -26.8)
 var_0_0.SDScale = 0.5
 
 function var_0_0.getUIName(arg_1_0)
@@ -94,7 +59,6 @@ function var_0_0.didEnter(arg_4_0)
 
 	arg_4_0.timeCfg = arg_4_0.activity:getConfig("config_client").endingtime
 	arg_4_0.spineRoles = {}
-	arg_4_0.randomPos = arg_4_0:GetRandomPos()
 
 	arg_4_0:UpdateShips()
 
@@ -149,7 +113,7 @@ function var_0_0.GetRandomPos(arg_15_0)
 
 	local var_15_1 = {}
 
-	for iter_15_1 = 1, 9 do
+	for iter_15_1 = 1, 8 do
 		table.insert(var_15_1, var_0_0.RANDOM_POS[var_15_0[iter_15_1]])
 	end
 
@@ -191,6 +155,8 @@ function var_0_0.UpdateGold(arg_20_0)
 end
 
 function var_0_0.UpdateBubbles(arg_21_0)
+	arg_21_0.bubblesPosList = {}
+
 	for iter_21_0, iter_21_1 in ipairs(arg_21_0.shipIds) do
 		if iter_21_1 > 0 and getProxy(BayProxy):RawGetShipById(iter_21_1) then
 			local var_21_0 = arg_21_0.activity:GetBubbleCntByPos(iter_21_0)
@@ -199,6 +165,7 @@ function var_0_0.UpdateBubbles(arg_21_0)
 			setActive(var_21_1, var_21_0 > 0)
 
 			if var_21_0 > 0 then
+				table.insert(arg_21_0.bubblesPosList, iter_21_0)
 				eachChild(var_21_1, function(arg_22_0)
 					setActive(arg_22_0, tonumber(arg_22_0.name) == var_21_0)
 				end)
@@ -209,6 +176,8 @@ end
 
 function var_0_0.UpdateShips(arg_23_0)
 	arg_23_0:CleanSpines()
+
+	arg_23_0.randomPos = Clone(var_0_0.RANDOM_POS)
 
 	for iter_23_0, iter_23_1 in ipairs(arg_23_0.shipIds) do
 		arg_23_0:UpdateShip(iter_23_0, iter_23_1)
@@ -232,37 +201,50 @@ function var_0_0.UpdateShip(arg_24_0, arg_24_1, arg_24_2)
 
 	var_24_0 = var_24_0 or cloneTplTo(arg_24_0.slotTpl, arg_24_0.slotTFs, arg_24_1)
 
-	setAnchoredPosition(var_24_0, arg_24_0.randomPos[arg_24_1])
+	if arg_24_0.activity:GetBubbleCntByPos(arg_24_1) > 0 and table.contains(arg_24_0.randomPos, var_0_0.STATIC_POS) then
+		setAnchoredPosition(var_24_0, var_0_0.STATIC_POS)
+		table.removebyvalue(arg_24_0.randomPos, var_0_0.STATIC_POS)
+	else
+		local var_24_2 = arg_24_0.randomPos[#arg_24_0.randomPos]
+
+		setAnchoredPosition(var_24_0, var_24_2)
+		table.removebyvalue(arg_24_0.randomPos, var_24_2)
+	end
+
 	onButton(arg_24_0, arg_24_0:findTF("bubble", var_24_0), function()
+		if not arg_24_0.bubblesPosList or #arg_24_0.bubblesPosList <= 0 then
+			return
+		end
+
 		if arg_24_0.activity:HasMaxGold() then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("town_gold_tip"),
 				onYes = function()
-					arg_24_0:emit(TownMediator.CLICK_BUBBLE, arg_24_1)
+					arg_24_0:emit(TownMediator.CLICK_BUBBLE, arg_24_0.bubblesPosList)
 				end
 			})
 		else
-			arg_24_0:emit(TownMediator.CLICK_BUBBLE, arg_24_1)
+			arg_24_0:emit(TownMediator.CLICK_BUBBLE, arg_24_0.bubblesPosList)
 		end
 	end, SFX_PANEL)
 
-	local var_24_2 = SpineRole.New()
+	local var_24_3 = SpineRole.New()
 
-	var_24_2:SetData(var_24_1:getPrefab())
-	var_24_2:Load(function()
-		local var_27_0 = var_24_2.modelRoot
+	var_24_3:SetData(var_24_1:getPrefab())
+	var_24_3:Load(function()
+		local var_27_0 = var_24_3.modelRoot
 
 		var_27_0.name = "model"
 		var_27_0.transform.localScale = Vector2.New(var_0_0.SDScale, var_0_0.SDScale)
 		rtf(var_27_0).sizeDelta = Vector2.New(200, 500)
 
 		SetParent(var_27_0, var_24_0)
-		var_24_2:SetAction("stand")
+		var_24_3:SetAction("stand")
 		var_27_0.transform:SetAsFirstSibling()
 		setActive(var_24_0, true)
 	end, true)
 
-	arg_24_0.spineRoles[arg_24_1] = var_24_2
+	arg_24_0.spineRoles[arg_24_1] = var_24_3
 end
 
 function var_0_0.CleanSpines(arg_28_0)
@@ -283,42 +265,46 @@ function var_0_0.OnExpUpdate(arg_31_0)
 	arg_31_0.infoPage:ExecuteAction("OnExpUpdate")
 end
 
-function var_0_0.OnTownUpgrade(arg_32_0)
-	arg_32_0.infoPage:ExecuteAction("OnTownUpgrade")
+function var_0_0.OnTownUpgrade(arg_32_0, arg_32_1)
+	arg_32_0.infoPage:ExecuteAction("OnTownUpgrade", arg_32_1)
 end
 
-function var_0_0.willExit(arg_33_0)
-	arg_33_0.infoPage:Destroy()
+function var_0_0.OnPlaceUpgrade(arg_33_0, arg_33_1)
+	arg_33_0.infoPage:ExecuteAction("OnPlaceUpgrade", arg_33_1)
+end
 
-	arg_33_0.infoPage = nil
+function var_0_0.willExit(arg_34_0)
+	arg_34_0.infoPage:Destroy()
 
-	if arg_33_0.timer then
-		arg_33_0.timer:Stop()
+	arg_34_0.infoPage = nil
 
-		arg_33_0.timer = nil
+	if arg_34_0.timer then
+		arg_34_0.timer:Stop()
+
+		arg_34_0.timer = nil
 	end
 
-	arg_33_0:CleanSpines()
+	arg_34_0:CleanSpines()
 end
 
-function var_0_0.ShowEntranceTip(arg_34_0)
-	local var_34_0 = arg_34_0 or getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TOWN)
-
-	if not var_34_0 or var_34_0:isEnd() then
-		return false
-	end
-
-	return var_0_0.ShowMainTip(var_34_0) or var_34_0:ShowBubbleTip()
-end
-
-function var_0_0.ShowMainTip(arg_35_0)
+function var_0_0.ShowEntranceTip(arg_35_0)
 	local var_35_0 = arg_35_0 or getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TOWN)
 
 	if not var_35_0 or var_35_0:isEnd() then
 		return false
 	end
 
-	return var_35_0:CanCostGold() or var_35_0:HasEmptySlot()
+	return var_0_0.ShowMainTip(var_35_0) or var_35_0:ShowBubbleTip()
+end
+
+function var_0_0.ShowMainTip(arg_36_0)
+	local var_36_0 = arg_36_0 or getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TOWN)
+
+	if not var_36_0 or var_36_0:isEnd() then
+		return false
+	end
+
+	return var_36_0:CanCostGold() or var_36_0:HasEmptySlot()
 end
 
 return var_0_0

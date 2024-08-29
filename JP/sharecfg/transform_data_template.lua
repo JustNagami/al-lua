@@ -4076,7 +4076,7 @@ pg.base.transform_data_template = {
 	},
 	[2810] = {
 		use_gold = 5000,
-		name = "雷撃強化Ⅲ",
+		name = "火力強化Ⅲ",
 		star_limit = 6,
 		id = 2810,
 		max_level = 3,

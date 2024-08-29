@@ -1,7 +1,10 @@
 ﻿return {
-	id = "HUANGYEJIARIKAITUOJI11",
-	mode = 2,
 	fadeOut = 1.5,
+	mode = 2,
+	id = "HUANGYEJIARIKAITUOJI11",
+	placeholder = {
+		"playername"
+	},
 	scripts = {
 		{
 			expression = 2,
@@ -37,9 +40,12 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
+			actor = 807022,
 			side = 2,
 			bgName = "star_level_bg_133",
+			live2d = true,
+			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "声の方角に振り向くと、そこにはプールのエアベッドに横たわって、こちらに手を振っているパンルヴェの姿が見えた。",
 			typewriter = {
@@ -103,12 +109,15 @@
 			}
 		},
 		{
-			actor = 0,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_133",
-			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			live2d = true,
 			optionFlag = 1,
+			hideRecordIco = true,
+			actor = 807022,
+			actorName = "{playername}",
+			hidePaintObj = true,
 			say = "――デート？",
 			typewriter = {
 				speed = 0.05,
@@ -148,12 +157,15 @@
 			}
 		},
 		{
-			actor = 0,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_133",
-			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			live2d = true,
 			optionFlag = 2,
+			hideRecordIco = true,
+			actor = 807022,
+			actorName = "{playername}",
+			hidePaintObj = true,
 			say = "――そうだな。だって予定が変わって珍しくこの時間に休めたし",
 			typewriter = {
 				speed = 0.05,
@@ -161,12 +173,15 @@
 			}
 		},
 		{
-			actor = 0,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_133",
-			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			live2d = true,
 			optionFlag = 2,
+			hideRecordIco = true,
+			actor = 807022,
+			actorName = "{playername}",
+			hidePaintObj = true,
 			say = "――パンルヴェに会えたのももちろん、幸運なことに入るよ",
 			typewriter = {
 				speed = 0.05,
@@ -220,9 +235,12 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
+			actor = 807022,
 			side = 2,
 			bgName = "star_level_bg_133",
+			live2d = true,
+			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "誘われてプールに足を入れると、ひんやりとした水がすぐ暑さを消し飛ばしてくれた。",
 			typewriter = {
@@ -231,9 +249,12 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
+			actor = 807022,
 			side = 2,
 			bgName = "star_level_bg_133",
+			live2d = true,
+			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "そのままエアベッドに体を乗せて、パンルヴェのそばまで行った。",
 			typewriter = {
@@ -272,9 +293,12 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
+			actor = 807022,
 			side = 2,
 			bgName = "star_level_bg_133",
+			live2d = true,
+			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "片手にパフェを持っていながら、片手で胸元に落ちたクリームを拭こうとするパンルヴェ。",
 			typewriter = {
@@ -283,11 +307,14 @@
 			}
 		},
 		{
-			actor = 0,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_133",
+			live2d = true,
+			hideRecordIco = true,
+			actor = 807022,
+			actorName = "{playername}",
 			hidePaintObj = true,
-			nameColor = "#A9F548FF",
 			say = "――任せて。パンルヴェは先に拭いてて",
 			typewriter = {
 				speed = 0.05,
@@ -310,9 +337,12 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
+			actor = 807022,
 			side = 2,
 			bgName = "star_level_bg_133",
+			live2d = true,
+			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "パフェのグラスをこちらに渡すと、パンルヴェは再び自身の胸に集中した。",
 			typewriter = {
@@ -351,9 +381,12 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
+			actor = 807022,
 			side = 2,
 			bgName = "star_level_bg_133",
+			live2d = true,
+			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "拭きやすくしようとパンルヴェはプールから水をすくい、そのままクリームのついた場所を濡らした。",
 			typewriter = {
@@ -362,9 +395,12 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
+			actor = 807022,
 			side = 2,
 			bgName = "star_level_bg_133",
+			live2d = true,
+			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "滴る水で水着が濡れ、そして白い生地の部分も少女の肌に密着し、半分透けているように見えた。",
 			typewriter = {
@@ -388,9 +424,12 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
+			actor = 807022,
 			side = 2,
 			bgName = "star_level_bg_133",
+			live2d = true,
+			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "姿勢を正したパンルヴェにパフェを返す。",
 			typewriter = {
@@ -414,9 +453,12 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
+			actor = 807022,
 			side = 2,
 			bgName = "star_level_bg_133",
+			live2d = true,
+			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "パフェを受け取ったパンルヴェは恥ずかしそうに微笑み、頬を赤らめた。",
 			typewriter = {
@@ -439,11 +481,14 @@
 			}
 		},
 		{
-			actor = 0,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_133",
+			live2d = true,
+			hideRecordIco = true,
+			actor = 807022,
+			actorName = "{playername}",
 			hidePaintObj = true,
-			nameColor = "#A9F548FF",
 			say = "――分けてくれるの？",
 			typewriter = {
 				speed = 0.05,
@@ -481,9 +526,12 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
+			actor = 807022,
 			side = 2,
 			bgName = "star_level_bg_133",
+			live2d = true,
+			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "口に入れてもらうと、いちごとクリームの甘さが舌を撫でた。",
 			typewriter = {
@@ -517,12 +565,15 @@
 			}
 		},
 		{
-			actor = 0,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_133",
-			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			live2d = true,
 			optionFlag = 1,
+			hideRecordIco = true,
+			actor = 807022,
+			actorName = "{playername}",
+			hidePaintObj = true,
 			say = "――確かに美味しいな",
 			typewriter = {
 				speed = 0.05,
@@ -546,12 +597,15 @@
 			}
 		},
 		{
-			actor = 0,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_133",
-			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			live2d = true,
 			optionFlag = 2,
+			hideRecordIco = true,
+			actor = 807022,
+			actorName = "{playername}",
+			hidePaintObj = true,
 			say = "――もう一口味あわせてほしいな",
 			typewriter = {
 				speed = 0.05,
@@ -575,9 +629,12 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
+			actor = 807022,
 			side = 2,
 			bgName = "star_level_bg_133",
+			live2d = true,
+			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "こうして、「幸あるいちごパフェ」を二人で食べながらゆっくりと午後を過ごした――",
 			typewriter = {

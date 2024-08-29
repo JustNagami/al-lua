@@ -2470,6 +2470,13 @@ function temp()
 					}
 				}
 			}
+		},
+		リ = {
+			ン = {
+				グ = {
+					this = true
+				}
+			}
 		}
 	}
 end
@@ -5075,20 +5082,6 @@ function temp()
 			},
 			マ = {
 				ス = {
-					this = true
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.へ = {
-		リ = {
-			ン = {
-				グ = {
 					this = true
 				}
 			}

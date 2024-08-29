@@ -121,76 +121,55 @@ function var_0_0.Init(arg_1_0, arg_1_1)
 	setActive(arg_1_0.uiCamera, false)
 	seriesAsync({
 		function(arg_6_0)
-			buildTempAB("ui/commonui_atlas", function(arg_7_0)
-				arg_1_0._common_ui_bundle = arg_7_0
-
-				arg_6_0()
-			end)
-		end,
-		function(arg_8_0)
-			buildTempAB("skinicon", function(arg_9_0)
-				arg_1_0._skinicon_bundle = arg_9_0
-
-				arg_8_0()
-			end)
-		end,
-		function(arg_10_0)
-			buildTempAB("attricon", function(arg_11_0)
-				arg_1_0._attricon_bundle = arg_11_0
-
-				arg_10_0()
-			end)
-		end,
-		function(arg_12_0)
 			setActive(arg_1_0.uiCamera, true)
 
-			arg_1_0._loadPanel = LoadingPanel.New(arg_12_0)
+			arg_1_0._loadPanel = LoadingPanel.New(arg_6_0)
 		end,
-		function(arg_13_0)
-			PoolMgr.GetInstance():GetUI("ClickEffect", true, function(arg_14_0)
-				setParent(arg_14_0, arg_1_0.OverlayEffect)
+		function(arg_7_0)
+			PoolMgr.GetInstance():GetUI("ClickEffect", true, function(arg_8_0)
+				setParent(arg_8_0, arg_1_0.OverlayEffect)
 
-				local var_14_0 = PlayerPrefs.GetInt(SHOW_TOUCH_EFFECT, 1) > 0
+				local var_8_0 = PlayerPrefs.GetInt(SHOW_TOUCH_EFFECT, 1) > 0
 
-				SetActive(arg_1_0.OverlayEffect, var_14_0)
-				arg_13_0()
+				SetActive(arg_1_0.OverlayEffect, var_8_0)
+				arg_7_0()
 			end)
 		end
 	}, arg_1_1)
 end
 
-function var_0_0.Loading(arg_15_0, arg_15_1)
-	arg_15_0._loadPanel:appendInfo(arg_15_1)
+function var_0_0.Loading(arg_9_0, arg_9_1)
+	arg_9_0._loadPanel:appendInfo(arg_9_1)
 end
 
-function var_0_0.LoadingOn(arg_16_0, arg_16_1)
-	arg_16_0._loadPanel:on(arg_16_1)
+function var_0_0.LoadingOn(arg_10_0, arg_10_1)
+	arg_10_0._loadPanel:on(arg_10_1)
 end
 
-function var_0_0.displayLoadingBG(arg_17_0, arg_17_1)
-	arg_17_0._loadPanel:displayBG(arg_17_1)
+function var_0_0.displayLoadingBG(arg_11_0, arg_11_1)
+	arg_11_0._loadPanel:displayBG(arg_11_1)
 end
 
-function var_0_0.LoadingOff(arg_18_0)
-	arg_18_0._loadPanel:off()
+function var_0_0.LoadingOff(arg_12_0)
+	arg_12_0._loadPanel:off()
 end
 
-function var_0_0.OnLoading(arg_19_0)
-	return arg_19_0._loadPanel:onLoading()
+function var_0_0.OnLoading(arg_13_0)
+	return arg_13_0._loadPanel:onLoading()
 end
 
-function var_0_0.LoadingRetainCount(arg_20_0)
-	return arg_20_0._loadPanel:getRetainCount()
+function var_0_0.LoadingRetainCount(arg_14_0)
+	return arg_14_0._loadPanel:getRetainCount()
 end
 
-function var_0_0.AddDebugButton(arg_21_0, arg_21_1, arg_21_2)
-	arg_21_0._debugPanel:addCustomBtn(arg_21_1, arg_21_2)
+function var_0_0.AddDebugButton(arg_15_0, arg_15_1, arg_15_2)
+	arg_15_0._debugPanel:addCustomBtn(arg_15_1, arg_15_2)
 end
 
-function var_0_0.AddWorldTestButton(arg_22_0, arg_22_1, arg_22_2)
-	arg_22_0._debugPanel:addCustomBtn(arg_22_1, function()
-		arg_22_0._debugPanel:hidePanel()
-		arg_22_2()
+function var_0_0.AddWorldTestButton(arg_16_0, arg_16_1, arg_16_2)
+	arg_16_0._debugPanel:addCustomBtn(arg_16_1, function()
+		arg_16_0._debugPanel:hidePanel()
+		arg_16_2()
 	end)
 end
 
@@ -206,240 +185,240 @@ var_0_0._normalColor = Color(255, 255, 255, 1)
 var_0_0._darkColor = Color(255, 255, 255, 0.5)
 var_0_0._firstPos = Vector3.zero
 
-function var_0_0.AttachStickOb(arg_24_0, arg_24_1)
-	arg_24_0.hrz = 0
-	arg_24_0.vtc = 0
-	arg_24_0.fingerId = -1
+function var_0_0.AttachStickOb(arg_18_0, arg_18_1)
+	arg_18_0.hrz = 0
+	arg_18_0.vtc = 0
+	arg_18_0.fingerId = -1
 
-	local var_24_0 = arg_24_1:Find("Area")
+	local var_18_0 = arg_18_1:Find("Area")
 
-	arg_24_0._stick = var_24_0:Find("Stick")
-	arg_24_0._areaImg = var_24_0:GetComponent(typeof(Image))
-	arg_24_0._stickImg = arg_24_0._stick:GetComponent(typeof(Image))
-	arg_24_0._stickCom = arg_24_1:GetComponent(typeof(StickController))
-	arg_24_0._stickCom.StickBorderRate = 1
+	arg_18_0._stick = var_18_0:Find("Stick")
+	arg_18_0._areaImg = var_18_0:GetComponent(typeof(Image))
+	arg_18_0._stickImg = arg_18_0._stick:GetComponent(typeof(Image))
+	arg_18_0._stickCom = arg_18_1:GetComponent(typeof(StickController))
+	arg_18_0._stickCom.StickBorderRate = 1
 
-	arg_24_0._stickCom:SetStickFunc(function(arg_25_0, arg_25_1)
-		arg_24_0:UpdateStick(arg_25_0, arg_25_1)
+	arg_18_0._stickCom:SetStickFunc(function(arg_19_0, arg_19_1)
+		arg_18_0:UpdateStick(arg_19_0, arg_19_1)
 	end)
 
-	arg_24_0._firstPos = var_24_0.localPosition
-	arg_24_0.vtc = 0
+	arg_18_0._firstPos = var_18_0.localPosition
+	arg_18_0.vtc = 0
 
-	arg_24_0:SetActive(true)
+	arg_18_0:SetActive(true)
 end
 
-function var_0_0.SetActive(arg_26_0, arg_26_1)
-	arg_26_0._stickActive = arg_26_1
+function var_0_0.SetActive(arg_20_0, arg_20_1)
+	arg_20_0._stickActive = arg_20_1
 end
 
-function var_0_0.Marching(arg_27_0)
-	local var_27_0 = ys.Battle.BattleConfig
+function var_0_0.Marching(arg_21_0)
+	local var_21_0 = ys.Battle.BattleConfig
 
-	LeanTween.value(go(arg_27_0._stick), 0, 0.625, 1.8):setOnUpdate(System.Action_float(function(arg_28_0)
-		arg_27_0.hrz = var_27_0.START_SPEED_CONST_B * (arg_28_0 - var_27_0.START_SPEED_CONST_A) * (arg_28_0 - var_27_0.START_SPEED_CONST_A)
+	LeanTween.value(go(arg_21_0._stick), 0, 0.625, 1.8):setOnUpdate(System.Action_float(function(arg_22_0)
+		arg_21_0.hrz = var_21_0.START_SPEED_CONST_B * (arg_22_0 - var_21_0.START_SPEED_CONST_A) * (arg_22_0 - var_21_0.START_SPEED_CONST_A)
 	end)):setOnComplete(System.Action(function()
-		arg_27_0.hrz = 0
+		arg_21_0.hrz = 0
 	end))
 end
 
-function var_0_0.UpdateStick(arg_30_0, arg_30_1, arg_30_2)
-	if not arg_30_0._stickActive then
+function var_0_0.UpdateStick(arg_24_0, arg_24_1, arg_24_2)
+	if not arg_24_0._stickActive then
 		return
 	end
 
-	if arg_30_2 == -2 then
-		arg_30_0:SetOutput(arg_30_1.x, arg_30_1.y, -2)
+	if arg_24_2 == -2 then
+		arg_24_0:SetOutput(arg_24_1.x, arg_24_1.y, -2)
 
 		return
-	elseif arg_30_2 == -1 then
-		arg_30_0:SetOutput(0, 0, arg_30_2)
+	elseif arg_24_2 == -1 then
+		arg_24_0:SetOutput(0, 0, arg_24_2)
 
 		return
 	end
 
-	local var_30_0 = arg_30_1
+	local var_24_0 = arg_24_1
 
-	var_30_0.z = 0
+	var_24_0.z = 0
 
-	local var_30_1 = var_30_0:SqrMagnitude()
+	local var_24_1 = var_24_0:SqrMagnitude()
 
-	if var_30_1 > arg_30_0._maxbianjieSqr then
-		var_30_0 = var_30_0 / math.sqrt(var_30_1)
+	if var_24_1 > arg_24_0._maxbianjieSqr then
+		var_24_0 = var_24_0 / math.sqrt(var_24_1)
 
-		local var_30_2 = var_30_0 * arg_30_0._maxbianjie
+		local var_24_2 = var_24_0 * arg_24_0._maxbianjie
 
-		if arg_30_1 - var_30_2 ~= arg_30_0._firstPos then
-			local var_30_3 = arg_30_0._firstPos
+		if arg_24_1 - var_24_2 ~= arg_24_0._firstPos then
+			local var_24_3 = arg_24_0._firstPos
 		end
 
-		arg_30_0._stick.localPosition = var_30_2
+		arg_24_0._stick.localPosition = var_24_2
 
-		arg_30_0:SetOutput(var_30_0.x, var_30_0.y, arg_30_2)
+		arg_24_0:SetOutput(var_24_0.x, var_24_0.y, arg_24_2)
 	else
-		arg_30_0._stick.localPosition = arg_30_1
+		arg_24_0._stick.localPosition = arg_24_1
 
-		arg_30_0:SetOutput(var_30_0.x * arg_30_0._maxbianjieInv, var_30_0.y * arg_30_0._maxbianjieInv, arg_30_2)
+		arg_24_0:SetOutput(var_24_0.x * arg_24_0._maxbianjieInv, var_24_0.y * arg_24_0._maxbianjieInv, arg_24_2)
 	end
 end
 
-function var_0_0.SetOutput(arg_31_0, arg_31_1, arg_31_2, arg_31_3)
-	arg_31_0.hrz = arg_31_1
-	arg_31_0.vtc = arg_31_2
+function var_0_0.SetOutput(arg_25_0, arg_25_1, arg_25_2, arg_25_3)
+	arg_25_0.hrz = arg_25_1
+	arg_25_0.vtc = arg_25_2
 
-	local var_31_0 = (arg_31_3 >= 0 and 1 or 0) - (arg_31_0.fingerId >= 0 and 1 or 0)
+	local var_25_0 = (arg_25_3 >= 0 and 1 or 0) - (arg_25_0.fingerId >= 0 and 1 or 0)
 
-	if var_31_0 ~= 0 and arg_31_0._areaImg and arg_31_0._stickImg then
-		arg_31_0._areaImg.color = var_31_0 > 0 and var_0_0._normalColor or var_0_0._darkColor
-		arg_31_0._stickImg.color = var_31_0 > 0 and var_0_0._normalColor or var_0_0._darkColor
+	if var_25_0 ~= 0 and arg_25_0._areaImg and arg_25_0._stickImg then
+		arg_25_0._areaImg.color = var_25_0 > 0 and var_0_0._normalColor or var_0_0._darkColor
+		arg_25_0._stickImg.color = var_25_0 > 0 and var_0_0._normalColor or var_0_0._darkColor
 	end
 
-	if arg_31_3 < 0 then
-		arg_31_0._stick.localPosition = Vector3.zero
+	if arg_25_3 < 0 then
+		arg_25_0._stick.localPosition = Vector3.zero
 	end
 
-	arg_31_0.fingerId = arg_31_3
+	arg_25_0.fingerId = arg_25_3
 end
 
-function var_0_0.ClearStick(arg_32_0)
-	arg_32_0._stick.localPosition = Vector3.zero
+function var_0_0.ClearStick(arg_26_0)
+	arg_26_0._stick.localPosition = Vector3.zero
 
-	arg_32_0._stickCom:ClearStickFunc()
+	arg_26_0._stickCom:ClearStickFunc()
 
-	arg_32_0._stick = nil
-	arg_32_0._areaImg = nil
-	arg_32_0._stickImg = nil
-	arg_32_0._stickCom = nil
+	arg_26_0._stick = nil
+	arg_26_0._areaImg = nil
+	arg_26_0._stickImg = nil
+	arg_26_0._stickCom = nil
 end
 
 local var_0_2 = {}
 local var_0_3 = false
 
-function var_0_0.OverlayPanel(arg_33_0, arg_33_1, arg_33_2)
-	arg_33_2 = arg_33_2 or {}
-	arg_33_2.globalBlur = false
+function var_0_0.OverlayPanel(arg_27_0, arg_27_1, arg_27_2)
+	arg_27_2 = arg_27_2 or {}
+	arg_27_2.globalBlur = false
 
-	var_0_1.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_SUB, arg_33_1, arg_33_2)
+	var_0_1.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_SUB, arg_27_1, arg_27_2)
 end
 
-function var_0_0.UnOverlayPanel(arg_34_0, arg_34_1, arg_34_2)
-	var_0_1.LayerWeightMgr.GetInstance():DelFromOverlay(arg_34_1, arg_34_2 or arg_34_0.UIMain)
+function var_0_0.UnOverlayPanel(arg_28_0, arg_28_1, arg_28_2)
+	var_0_1.LayerWeightMgr.GetInstance():DelFromOverlay(arg_28_1, arg_28_2 or arg_28_0.UIMain)
 end
 
-function var_0_0.BlurPanel(arg_35_0, arg_35_1, arg_35_2, arg_35_3)
-	arg_35_3 = arg_35_3 or {}
-	arg_35_3.globalBlur = true
-	arg_35_3.staticBlur = arg_35_2
+function var_0_0.BlurPanel(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
+	arg_29_3 = arg_29_3 or {}
+	arg_29_3.globalBlur = true
+	arg_29_3.staticBlur = arg_29_2
 
-	var_0_1.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_SUB, arg_35_1, arg_35_3)
+	var_0_1.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_SUB, arg_29_1, arg_29_3)
 end
 
-function var_0_0.UnblurPanel(arg_36_0, arg_36_1, arg_36_2)
-	var_0_1.LayerWeightMgr.GetInstance():DelFromOverlay(arg_36_1, arg_36_2 or arg_36_0.UIMain)
+function var_0_0.UnblurPanel(arg_30_0, arg_30_1, arg_30_2)
+	var_0_1.LayerWeightMgr.GetInstance():DelFromOverlay(arg_30_1, arg_30_2 or arg_30_0.UIMain)
 end
 
-function var_0_0.OverlayPanelPB(arg_37_0, arg_37_1, arg_37_2)
-	arg_37_2 = arg_37_2 or {}
-	arg_37_2.globalBlur = false
+function var_0_0.OverlayPanelPB(arg_31_0, arg_31_1, arg_31_2)
+	arg_31_2 = arg_31_2 or {}
+	arg_31_2.globalBlur = false
 
-	var_0_1.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_SUB, arg_37_1, arg_37_2)
+	var_0_1.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_SUB, arg_31_1, arg_31_2)
 end
 
-function var_0_0.PartialBlurTfs(arg_38_0, arg_38_1)
+function var_0_0.PartialBlurTfs(arg_32_0, arg_32_1)
 	var_0_3 = true
-	var_0_2 = arg_38_1
+	var_0_2 = arg_32_1
 
-	arg_38_0:UpdatePBEnable(true)
+	arg_32_0:UpdatePBEnable(true)
 end
 
-function var_0_0.ShutdownPartialBlur(arg_39_0)
+function var_0_0.ShutdownPartialBlur(arg_33_0)
 	var_0_3 = false
 	var_0_2 = {}
 
-	arg_39_0:UpdatePBEnable(false)
+	arg_33_0:UpdatePBEnable(false)
 end
 
-function var_0_0.RevertPBMaterial(arg_40_0, arg_40_1)
-	for iter_40_0, iter_40_1 in ipairs(arg_40_1) do
-		local var_40_0 = iter_40_1:GetComponent(typeof(Image))
+function var_0_0.RevertPBMaterial(arg_34_0, arg_34_1)
+	for iter_34_0, iter_34_1 in ipairs(arg_34_1) do
+		local var_34_0 = iter_34_1:GetComponent(typeof(Image))
 
-		assert(var_40_0, "mask should be an image.")
+		assert(var_34_0, "mask should be an image.")
 
-		var_40_0.material = arg_40_0.defaultMaterial
+		var_34_0.material = arg_34_0.defaultMaterial
 	end
 end
 
-function var_0_0.UpdatePBEnable(arg_41_0, arg_41_1)
-	if arg_41_1 then
+function var_0_0.UpdatePBEnable(arg_35_0, arg_35_1)
+	if arg_35_1 then
 		if var_0_2 ~= nil then
-			for iter_41_0, iter_41_1 in ipairs(var_0_2) do
-				local var_41_0 = iter_41_1:GetComponent(typeof(Image))
+			for iter_35_0, iter_35_1 in ipairs(var_0_2) do
+				local var_35_0 = iter_35_1:GetComponent(typeof(Image))
 
-				assert(var_41_0, "mask should be an image.")
+				assert(var_35_0, "mask should be an image.")
 
-				var_41_0.material = arg_41_1 and arg_41_0.partialBlurMaterial or nil
+				var_35_0.material = arg_35_1 and arg_35_0.partialBlurMaterial or nil
 			end
 		end
 
-		if arg_41_0.levelCameraComp.enabled then
-			arg_41_0.cameraBlurs[var_0_0.CameraLevel][var_0_0.PartialBlur].enabled = true
-			arg_41_0.cameraBlurs[var_0_0.CameraUI][var_0_0.PartialBlur].enabled = false
+		if arg_35_0.levelCameraComp.enabled then
+			arg_35_0.cameraBlurs[var_0_0.CameraLevel][var_0_0.PartialBlur].enabled = true
+			arg_35_0.cameraBlurs[var_0_0.CameraUI][var_0_0.PartialBlur].enabled = false
 		else
-			arg_41_0.cameraBlurs[var_0_0.CameraLevel][var_0_0.PartialBlur].enabled = false
-			arg_41_0.cameraBlurs[var_0_0.CameraUI][var_0_0.PartialBlur].enabled = true
+			arg_35_0.cameraBlurs[var_0_0.CameraLevel][var_0_0.PartialBlur].enabled = false
+			arg_35_0.cameraBlurs[var_0_0.CameraUI][var_0_0.PartialBlur].enabled = true
 		end
 	else
-		for iter_41_2, iter_41_3 in ipairs(arg_41_0.cameraBlurs) do
-			if iter_41_3[var_0_0.PartialBlur] then
-				iter_41_3[var_0_0.PartialBlur].enabled = false
+		for iter_35_2, iter_35_3 in ipairs(arg_35_0.cameraBlurs) do
+			if iter_35_3[var_0_0.PartialBlur] then
+				iter_35_3[var_0_0.PartialBlur].enabled = false
 			end
 		end
 	end
 end
 
-function var_0_0.BlurCamera(arg_42_0, arg_42_1, arg_42_2, arg_42_3)
-	if not arg_42_0.camLockStatus[arg_42_1] or arg_42_3 then
-		local var_42_0 = arg_42_0.cameraBlurs[arg_42_1][var_0_0.OptimizedBlur]
-		local var_42_1 = arg_42_0.cameraBlurs[arg_42_1][var_0_0.StaticBlur]
+function var_0_0.BlurCamera(arg_36_0, arg_36_1, arg_36_2, arg_36_3)
+	if not arg_36_0.camLockStatus[arg_36_1] or arg_36_3 then
+		local var_36_0 = arg_36_0.cameraBlurs[arg_36_1][var_0_0.OptimizedBlur]
+		local var_36_1 = arg_36_0.cameraBlurs[arg_36_1][var_0_0.StaticBlur]
 
-		if arg_42_2 then
-			var_42_0.enabled = true
-			var_42_0.staticBlur = true
-			var_42_1.enabled = false
+		if arg_36_2 then
+			var_36_0.enabled = true
+			var_36_0.staticBlur = true
+			var_36_1.enabled = false
 		else
-			var_42_0.enabled = true
-			var_42_0.staticBlur = false
-			var_42_1.enabled = false
+			var_36_0.enabled = true
+			var_36_0.staticBlur = false
+			var_36_1.enabled = false
 		end
 
-		if arg_42_3 then
-			arg_42_0.camLockStatus[arg_42_1] = true
-		end
-	end
-end
-
-function var_0_0.UnblurCamera(arg_43_0, arg_43_1, arg_43_2)
-	if not arg_43_0.camLockStatus[arg_43_1] or arg_43_2 then
-		local var_43_0 = arg_43_0.cameraBlurs[arg_43_1][var_0_0.OptimizedBlur]
-
-		arg_43_0.cameraBlurs[arg_43_1][var_0_0.StaticBlur].enabled = false
-		var_43_0.enabled = false
-
-		if arg_43_2 then
-			arg_43_0.camLockStatus[arg_43_1] = false
+		if arg_36_3 then
+			arg_36_0.camLockStatus[arg_36_1] = true
 		end
 	end
 end
 
-function var_0_0.GetStaticRtt(arg_44_0, arg_44_1)
-	local var_44_0 = arg_44_0.cameraBlurs[arg_44_1][var_0_0.OptimizedBlur]
+function var_0_0.UnblurCamera(arg_37_0, arg_37_1, arg_37_2)
+	if not arg_37_0.camLockStatus[arg_37_1] or arg_37_2 then
+		local var_37_0 = arg_37_0.cameraBlurs[arg_37_1][var_0_0.OptimizedBlur]
 
-	return (ReflectionHelp.RefGetField(typeof("UnityStandardAssets.ImageEffects.BlurOptimized"), "staticRtt", var_44_0))
+		arg_37_0.cameraBlurs[arg_37_1][var_0_0.StaticBlur].enabled = false
+		var_37_0.enabled = false
+
+		if arg_37_2 then
+			arg_37_0.camLockStatus[arg_37_1] = false
+		end
+	end
 end
 
-function var_0_0.SetMainCamBlurTexture(arg_45_0, arg_45_1)
-	local var_45_0 = arg_45_0.mainCamera:GetComponent(typeof(Camera))
-	local var_45_1 = ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "GetTemporary", {
+function var_0_0.GetStaticRtt(arg_38_0, arg_38_1)
+	local var_38_0 = arg_38_0.cameraBlurs[arg_38_1][var_0_0.OptimizedBlur]
+
+	return (ReflectionHelp.RefGetField(typeof("UnityStandardAssets.ImageEffects.BlurOptimized"), "staticRtt", var_38_0))
+end
+
+function var_0_0.SetMainCamBlurTexture(arg_39_0, arg_39_1)
+	local var_39_0 = arg_39_0.mainCamera:GetComponent(typeof(Camera))
+	local var_39_1 = ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "GetTemporary", {
 		typeof("System.Int32"),
 		typeof("System.Int32"),
 		typeof("System.Int32")
@@ -449,26 +428,26 @@ function var_0_0.SetMainCamBlurTexture(arg_45_0, arg_45_1)
 		0
 	})
 
-	var_45_0.targetTexture = var_45_1
+	var_39_0.targetTexture = var_39_1
 
-	var_45_0:Render()
+	var_39_0:Render()
 
-	local var_45_2 = var_0_1.ShaderMgr.GetInstance():BlurTexture(var_45_1)
+	local var_39_2 = var_0_1.ShaderMgr.GetInstance():BlurTexture(var_39_1)
 
-	var_45_0.targetTexture = nil
+	var_39_0.targetTexture = nil
 
 	ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "ReleaseTemporary", {
 		typeof("UnityEngine.RenderTexture")
 	}, {
-		var_45_1
+		var_39_1
 	})
 
-	arg_45_1.uvRect = var_45_0.rect
-	arg_45_1.texture = var_45_2
+	arg_39_1.uvRect = var_39_0.rect
+	arg_39_1.texture = var_39_2
 
-	return var_45_2
+	return var_39_2
 end
 
-function var_0_0.GetMainCamera(arg_46_0)
-	return arg_46_0.mainCamera
+function var_0_0.GetMainCamera(arg_40_0)
+	return arg_40_0.mainCamera
 end

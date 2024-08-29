@@ -5351,7 +5351,7 @@ pg.base.ship_skin_template_4 = {
 	},
 	[108090] = {
 		ship_group = 10809,
-		name = "へリング",
+		name = "ヘリング",
 		hand_id = 3,
 		bgm = "",
 		l2d_drag_rate = "",

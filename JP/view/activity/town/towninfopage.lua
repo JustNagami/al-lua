@@ -95,212 +95,253 @@ function var_0_0.OnExpUpdate(arg_11_0)
 	setText(arg_11_0.needExp, "/" .. (isMaxLv and 0 or var_11_1))
 end
 
-function var_0_0.OnTownUpgrade(arg_12_0)
-	arg_12_0.townPanel:GetComponent(typeof(Animation)):Play("anim_cowboy_info_town_lvup")
-	arg_12_0:managedTween(LeanTween.delayedCall, function()
-		arg_12_0:FlushTownPanel()
-	end, 0.265, nil)
-	arg_12_0:managedTween(LeanTween.delayedCall, function()
-		arg_12_0:Flush()
-	end, 0.56, nil)
-end
+function var_0_0.OnTownUpgrade(arg_12_0, arg_12_1)
+	local var_12_0 = arg_12_0.townPanel:GetComponent(typeof(DftAniEvent))
 
-function var_0_0.UpdateTownStatus(arg_15_0)
-	local var_15_0, var_15_1, var_15_2 = arg_15_0.activity:CanUpgradeTown()
+	var_12_0:SetEndEvent(function()
+		if arg_12_1 then
+			arg_12_1()
+		end
 
-	setActive(arg_15_0.townTip, var_15_0)
-	eachChild(arg_15_0.townUpgradeTF, function(arg_16_0)
-		setActive(arg_16_0, arg_16_0.name == var_15_1)
+		arg_12_0.inTownAnim = false
+
+		var_12_0:SetEndEvent(nil)
 	end)
-	onButton(arg_15_0, arg_15_0:findTF("normal", arg_15_0.townUpgradeTF), function()
-		if not var_15_0 then
+	var_12_0:SetTriggerEvent(function()
+		arg_12_0:Flush()
+		var_12_0:SetTriggerEvent(nil)
+	end)
+	arg_12_0.townPanel:GetComponent(typeof(Animation)):Play("anim_cowboy_info_town_lvup")
+
+	arg_12_0.inTownAnim = true
+
+	arg_12_0:managedTween(LeanTween.delayedCall, function()
+		arg_12_0:FlushTownWithoutLv()
+	end, 0.265, nil)
+end
+
+function var_0_0.OnPlaceUpgrade(arg_16_0, arg_16_1)
+	arg_16_0.townUpgradeCb = arg_16_1
+
+	arg_16_0:Flush()
+end
+
+function var_0_0.UpdateTownStatus(arg_17_0)
+	local var_17_0, var_17_1, var_17_2 = arg_17_0.activity:CanUpgradeTown()
+
+	setActive(arg_17_0.townTip, var_17_0)
+	eachChild(arg_17_0.townUpgradeTF, function(arg_18_0)
+		setActive(arg_18_0, arg_18_0.name == var_17_1)
+	end)
+	onButton(arg_17_0, arg_17_0:findTF("normal", arg_17_0.townUpgradeTF), function()
+		if not var_17_0 or arg_17_0.inTownAnim then
 			return
 		end
 
-		arg_15_0:emit(TownMediator.UPGRADE_TOWN)
+		arg_17_0:emit(TownMediator.UPGRADE_TOWN)
 	end, SFX_PANEL)
 
-	if var_15_1 == "no_story" then
-		setText(arg_15_0:findTF("no_story/content/value/cur", arg_15_0.townUpgradeTF), var_15_2[1])
-		setText(arg_15_0:findTF("no_story/content/value/need", arg_15_0.townUpgradeTF), "/" .. var_15_2[2])
-	elseif var_15_1 == "no_exp_or_gold" then
-		setTextColor(arg_15_0:findTF("no_exp_or_gold/cost/Text", arg_15_0.townUpgradeTF), Color.NewHex(var_15_2 == "no_gold" and "FF756E" or "FFEBC9"))
+	if var_17_1 == "no_story" then
+		setText(arg_17_0:findTF("no_story/content/value/cur", arg_17_0.townUpgradeTF), var_17_2[1])
+		setText(arg_17_0:findTF("no_story/content/value/need", arg_17_0.townUpgradeTF), "/" .. var_17_2[2])
+	elseif var_17_1 == "no_exp_or_gold" then
+		setTextColor(arg_17_0:findTF("no_exp_or_gold/cost/Text", arg_17_0.townUpgradeTF), Color.NewHex(var_17_2 == "no_gold" and "FF756E" or "FFEBC9"))
 	end
 end
 
-function var_0_0.FlushTownPanel(arg_18_0)
-	arg_18_0.townLv = arg_18_0.activity:GetTownLevel()
+function var_0_0.FlushTownWithoutLv(arg_20_0)
+	arg_20_0:OnExpUpdate()
 
-	local var_18_0 = arg_18_0.activity:IsMaxTownLevel()
+	local var_20_0 = arg_20_0.activity:GetGoldOutput()
 
-	setText(arg_18_0.townLevelNow, "LV." .. (var_18_0 and "MAX" or arg_18_0.townLv))
-	setText(arg_18_0.townLevelNext, "LV." .. (var_18_0 and "MAX" or arg_18_0.townLv + 1))
-	arg_18_0:OnExpUpdate()
+	setText(arg_20_0.goldOutput, string.format("+%s/H", TownActivity.GoldToShow(var_20_0)))
 
-	local var_18_1 = arg_18_0.activity:GetGoldOutput()
+	local var_20_1 = arg_20_0.activity:GetLimitGold()
 
-	setText(arg_18_0.goldOutput, string.format("+%s/H", TownActivity.GoldToShow(var_18_1)))
+	setText(arg_20_0.goldLimit, TownActivity.GoldToShow(var_20_1))
 
-	local var_18_2 = arg_18_0.activity:GetLimitGold()
+	local var_20_2 = TownActivity.GoldToShow(pg.activity_town_level[arg_20_0.townLv].gold)
 
-	setText(arg_18_0.goldLimit, TownActivity.GoldToShow(var_18_2))
-
-	local var_18_3 = TownActivity.GoldToShow(pg.activity_town_level[arg_18_0.townLv].gold)
-
-	setText(arg_18_0:findTF("normal/cost/Text", arg_18_0.townUpgradeTF), var_18_3)
-	setText(arg_18_0:findTF("no_exp_or_gold/cost/Text", arg_18_0.townUpgradeTF), var_18_3)
-	arg_18_0:UpdateTownStatus()
+	setText(arg_20_0:findTF("normal/cost/Text", arg_20_0.townUpgradeTF), var_20_2)
+	setText(arg_20_0:findTF("no_exp_or_gold/cost/Text", arg_20_0.townUpgradeTF), var_20_2)
+	arg_20_0:UpdateTownStatus()
 end
 
-function var_0_0.FlushShipPanel(arg_19_0)
-	arg_19_0.shipIds = arg_19_0.activity:GetShipIds()
-	arg_19_0.unlockCnt = arg_19_0.activity:GetUnlockSlotCnt()
+function var_0_0.FlushTownPanel(arg_21_0)
+	arg_21_0.townLv = arg_21_0.activity:GetTownLevel()
 
-	arg_19_0.shipUIList:align(var_0_0.SLOT_CNT)
-	setActive(arg_19_0.shipTip, arg_19_0.activity:HasEmptySlot())
+	local var_21_0 = arg_21_0.activity:IsMaxTownLevel()
+
+	setText(arg_21_0.townLevelNow, "LV." .. (var_21_0 and "MAX" or arg_21_0.townLv))
+	setText(arg_21_0.townLevelNext, "LV." .. (var_21_0 and "MAX" or arg_21_0.townLv + 1))
+	arg_21_0:FlushTownWithoutLv()
 end
 
-function var_0_0.UpdateShip(arg_20_0, arg_20_1, arg_20_2)
-	local var_20_0 = arg_20_1 + 1
-	local var_20_1 = var_20_0 > arg_20_0.unlockCnt
+function var_0_0.FlushShipPanel(arg_22_0)
+	arg_22_0.shipIds = arg_22_0.activity:GetShipIds()
+	arg_22_0.unlockCnt = arg_22_0.activity:GetUnlockSlotCnt()
 
-	setActive(arg_20_0:findTF("lock", arg_20_2), var_20_1)
+	arg_22_0.shipUIList:align(var_0_0.SLOT_CNT)
+	setActive(arg_22_0.shipTip, arg_22_0.activity:HasEmptySlot())
+end
 
-	if var_20_1 then
-		setText(arg_20_0:findTF("lock/Text", arg_20_2), i18n("town_lock_level", "LV" .. arg_20_0.slotUnlockLv[var_20_0]))
+function var_0_0.UpdateShip(arg_23_0, arg_23_1, arg_23_2)
+	local var_23_0 = arg_23_1 + 1
+	local var_23_1 = var_23_0 > arg_23_0.unlockCnt
+
+	setActive(arg_23_0:findTF("lock", arg_23_2), var_23_1)
+
+	if var_23_1 then
+		setText(arg_23_0:findTF("lock/Text", arg_23_2), i18n("town_lock_level", "LV" .. arg_23_0.slotUnlockLv[var_23_0]))
 	end
 
-	local var_20_2 = arg_20_0.shipIds[var_20_0]
-	local var_20_3 = not var_20_2 or var_20_2 == 0
+	local var_23_2 = arg_23_0.shipIds[var_23_0]
+	local var_23_3 = not var_23_2 or var_23_2 == 0
 
-	setActive(arg_20_0:findTF("empty", arg_20_2), var_20_3)
-	setActive(arg_20_0:findTF("mask", arg_20_2), not var_20_3)
+	setActive(arg_23_0:findTF("empty", arg_23_2), var_23_3)
+	setActive(arg_23_0:findTF("mask", arg_23_2), not var_23_3)
 
-	local var_20_4
+	local var_23_4
 
-	if not var_20_3 then
-		local var_20_5 = getProxy(BayProxy):RawGetShipById(var_20_2)
+	if not var_23_3 then
+		local var_23_5 = getProxy(BayProxy):RawGetShipById(var_23_2)
 
-		if var_20_5 then
-			local var_20_6 = LoadSprite("qicon/" .. var_20_5:getPainting())
+		if var_23_5 then
+			local var_23_6 = LoadSprite("qicon/" .. var_23_5:getPainting())
 
-			setImageSprite(arg_20_0:findTF("mask/icon", arg_20_2), var_20_6, true)
+			setImageSprite(arg_23_0:findTF("mask/icon", arg_23_2), var_23_6, true)
 		else
-			setActive(arg_20_0:findTF("empty", arg_20_2), true)
-			setActive(arg_20_0:findTF("mask", arg_20_2), false)
+			setActive(arg_23_0:findTF("empty", arg_23_2), true)
+			setActive(arg_23_0:findTF("mask", arg_23_2), false)
 		end
 	end
 
-	onButton(arg_20_0, arg_20_2, function()
-		if var_20_1 then
+	onButton(arg_23_0, arg_23_2, function()
+		if var_23_1 then
 			return
 		end
 
-		arg_20_0:emit(TownMediator.OPEN_CHUANWU, var_20_0, var_20_4)
+		arg_23_0:emit(TownMediator.OPEN_CHUANWU, var_23_0, var_23_4)
 	end, SFX_PANEL)
 end
 
-function var_0_0.FlushPlacePanel(arg_22_0)
-	arg_22_0.placeList = arg_22_0.activity:GetPlaceList()
+function var_0_0.FlushPlacePanel(arg_25_0)
+	arg_25_0.placeList = arg_25_0.activity:GetPlaceList()
 
-	table.sort(arg_22_0.placeList, CompareFuncs({
-		function(arg_23_0)
-			return arg_23_0:GetNextId() and 0 or 1
+	table.sort(arg_25_0.placeList, CompareFuncs({
+		function(arg_26_0)
+			return arg_26_0:GetNextId() and 0 or 1
 		end,
-		function(arg_24_0)
-			return arg_24_0.id
+		function(arg_27_0)
+			return arg_27_0.id
 		end
 	}))
-	arg_22_0.placeUIList:align(#arg_22_0.placeList)
+	arg_25_0.placeUIList:align(#arg_25_0.placeList)
 end
 
-function var_0_0.UpdatePlaceStatus(arg_25_0, arg_25_1, arg_25_2)
-	local var_25_0 = arg_25_0:findTF("upgrade_status", arg_25_2)
-	local var_25_1 = TownActivity.GoldToShow(arg_25_1:GetCostGold())
+function var_0_0.UpdatePlaceStatus(arg_28_0, arg_28_1, arg_28_2)
+	local var_28_0 = arg_28_0:findTF("upgrade_status", arg_28_2)
+	local var_28_1 = TownActivity.GoldToShow(arg_28_1:GetCostGold())
 
-	setText(arg_25_0:findTF("normal/cost/Text", var_25_0), var_25_1)
-	setText(arg_25_0:findTF("no_gold/cost/Text", var_25_0), var_25_1)
+	setText(arg_28_0:findTF("normal/cost/Text", var_28_0), var_28_1)
+	setText(arg_28_0:findTF("no_gold/cost/Text", var_28_0), var_28_1)
 
-	local var_25_2, var_25_3 = arg_25_0.activity:CanUpgradePlace(arg_25_1.id)
+	local var_28_2, var_28_3 = arg_28_0.activity:CanUpgradePlace(arg_28_1.id)
 
-	if var_25_2 then
-		arg_25_0.isShowPlaceTip = true
+	if var_28_2 then
+		arg_28_0.isShowPlaceTip = true
 	end
 
-	eachChild(var_25_0, function(arg_26_0)
-		setActive(arg_26_0, arg_26_0.name == var_25_3)
+	eachChild(var_28_0, function(arg_29_0)
+		setActive(arg_29_0, arg_29_0.name == var_28_3)
 	end)
-	onButton(arg_25_0, arg_25_0:findTF("normal", var_25_0), function()
-		if not var_25_2 then
+	onButton(arg_28_0, arg_28_0:findTF("normal", var_28_0), function()
+		if not var_28_2 or arg_28_0.inPlaceAnim then
 			return
 		end
 
-		arg_25_0.upgradePlaceName = arg_25_2.name
+		arg_28_0.upgradePlaceName = arg_28_2.name
 
-		arg_25_0:emit(TownMediator.UPGRADE_WORKPLACE, arg_25_1.id)
+		arg_28_0:emit(TownMediator.UPGRADE_WORKPLACE, arg_28_1.id)
 	end, SFX_PANEL)
 
-	if var_25_3 == "no_level" then
-		setText(arg_25_0:findTF("no_level/Text", var_25_0), i18n("town_lock_level", "LV" .. arg_25_1:GetNeedTownLv()))
+	if var_28_3 == "no_level" then
+		setText(arg_28_0:findTF("no_level/Text", var_28_0), i18n("town_lock_level", "LV" .. arg_28_1:GetNeedTownLv()))
 	end
 end
 
-function var_0_0.UpdatePlace(arg_28_0, arg_28_1, arg_28_2)
-	local var_28_0 = arg_28_0.placeList[arg_28_1 + 1]
+function var_0_0.UpdatePlace(arg_31_0, arg_31_1, arg_31_2)
+	local var_31_0 = arg_31_0.placeList[arg_31_1 + 1]
 
-	arg_28_2.name = arg_28_1 + 1
+	arg_31_2.name = arg_31_1 + 1
 
-	setImageSprite(arg_28_0:findTF("info/icon", arg_28_2), GetSpriteFromAtlas("ui/townui_atlas", var_28_0:GetIcon()), true)
-	setText(arg_28_0:findTF("info/name", arg_28_2), var_28_0:GetName())
-	setText(arg_28_0:findTF("info/gold/Text", arg_28_2), var_28_0:GetEffectStr())
+	setImageSprite(arg_31_0:findTF("info/icon", arg_31_2), GetSpriteFromAtlas("ui/townui_atlas", var_31_0:GetIcon()), true)
+	setText(arg_31_0:findTF("info/name", arg_31_2), var_31_0:GetName())
+	setText(arg_31_0:findTF("info/gold/Text", arg_31_2), var_31_0:GetEffectStr())
 	seriesAsync({
-		function(arg_29_0)
-			if arg_28_0.upgradePlaceName and arg_28_2.name == arg_28_0.upgradePlaceName then
-				arg_28_2:GetComponent(typeof(Animation)):Play("anim_cowboy_info_place_lvup")
-				arg_28_0:managedTween(LeanTween.delayedCall, function()
-					arg_29_0()
+		function(arg_32_0)
+			if arg_31_0.upgradePlaceName and arg_31_2.name == arg_31_0.upgradePlaceName then
+				local var_32_0 = arg_31_2:GetComponent(typeof(DftAniEvent))
+
+				var_32_0:SetEndEvent(function()
+					if arg_31_0.townUpgradeCb then
+						arg_31_0.townUpgradeCb()
+
+						arg_31_0.townUpgradeCb = nil
+					end
+
+					arg_31_0.inPlaceAnim = false
+
+					var_32_0:SetEndEvent(nil)
+				end)
+				arg_31_2:GetComponent(typeof(Animation)):Play("anim_cowboy_info_place_lvup")
+
+				arg_31_0.inPlaceAnim = true
+
+				arg_31_0:managedTween(LeanTween.delayedCall, function()
+					arg_32_0()
 				end, 0.2, nil)
 
-				arg_28_0.upgradePlaceName = nil
+				arg_31_0.upgradePlaceName = nil
 			else
-				arg_29_0()
+				arg_32_0()
 			end
 		end,
-		function(arg_31_0)
-			local var_31_0 = var_28_0:GetNextId()
-			local var_31_1 = not var_31_0
+		function(arg_35_0)
+			local var_35_0 = var_31_0:GetNextId()
+			local var_35_1 = not var_35_0
 
-			setActive(arg_28_0:findTF("next", arg_28_2), not var_31_1)
+			setActive(arg_31_0:findTF("next", arg_31_2), not var_35_1)
 
-			if not var_31_1 then
-				setText(arg_28_0:findTF("next/infos/exp/value", arg_28_2), "+" .. var_28_0:GetAddExp())
+			if not var_35_1 then
+				setText(arg_31_0:findTF("next/infos/exp/value", arg_31_2), "+" .. var_31_0:GetAddExp())
 
-				local var_31_2 = TownWorkplace.New(var_31_0)
+				local var_35_2 = TownWorkplace.New(var_35_0)
 
-				setText(arg_28_0:findTF("next/infos/gold/value", arg_28_2), var_31_2:GetEffectStr())
+				setText(arg_31_0:findTF("next/infos/gold/value", arg_31_2), var_35_2:GetEffectStr())
 			end
 		end
 	}, function()
 		return
 	end)
-	setActive(arg_28_0:findTF("info/gold", arg_28_2), var_28_0:GetGroup() ~= arg_28_0.specialWorkGroup)
-	setActive(arg_28_0:findTF("next/infos/gold", arg_28_2), var_28_0:GetGroup() ~= arg_28_0.specialWorkGroup)
-	arg_28_0:UpdatePlaceStatus(var_28_0, arg_28_2)
+	setActive(arg_31_0:findTF("info/gold", arg_31_2), var_31_0:GetGroup() ~= arg_31_0.specialWorkGroup)
+	setActive(arg_31_0:findTF("next/infos/gold", arg_31_2), var_31_0:GetGroup() ~= arg_31_0.specialWorkGroup)
+	arg_31_0:UpdatePlaceStatus(var_31_0, arg_31_2)
 end
 
-function var_0_0.OnUpdateTime(arg_33_0)
-	arg_33_0:UpdateTownStatus()
+function var_0_0.OnUpdateTime(arg_37_0)
+	arg_37_0:UpdateTownStatus()
 
-	arg_33_0.isShowPlaceTip = false
+	arg_37_0.isShowPlaceTip = false
 
-	for iter_33_0, iter_33_1 in ipairs(arg_33_0.placeList) do
-		arg_33_0:UpdatePlaceStatus(iter_33_1, arg_33_0:findTF(iter_33_0, arg_33_0.placeUIList.container))
+	for iter_37_0, iter_37_1 in ipairs(arg_37_0.placeList) do
+		arg_37_0:UpdatePlaceStatus(iter_37_1, arg_37_0:findTF(iter_37_0, arg_37_0.placeUIList.container))
 	end
 
-	setActive(arg_33_0.placeTip, arg_33_0.isShowPlaceTip)
+	setActive(arg_37_0.placeTip, arg_37_0.isShowPlaceTip)
 end
 
-function var_0_0.OnDestroy(arg_34_0)
+function var_0_0.OnDestroy(arg_38_0)
 	return
 end
 
