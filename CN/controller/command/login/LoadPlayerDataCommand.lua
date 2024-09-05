@@ -236,6 +236,10 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		{
 			ApartmentProxy,
 			true
+		},
+		{
+			LivingAreaCoverProxy,
+			true
 		}
 	})
 	pg.ConnectionMgr.GetInstance():setPacketIdx(1)

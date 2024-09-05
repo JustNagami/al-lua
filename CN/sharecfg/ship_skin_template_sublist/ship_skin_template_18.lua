@@ -1,6 +1,118 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_18 = {
+	[900329] = {
+		ship_group = 900329,
+		name = "罗马",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "luoma_ghost",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 900329,
+		voice_actor_2 = -1,
+		prefab = "luoma_ghost",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "罗马",
+		voice_actor = -1,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					2.002,
+					1.011,
+					0
+				}
+			},
+			vicegun = {
+				{
+					2.011,
+					1.019,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					2.006,
+					0.986,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.483,
+							2.531,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[900330] = {
 		ship_group = 900330,
 		name = "{namecode:84}",
@@ -8722,6 +8834,118 @@ pg.base.ship_skin_template_18 = {
 			}
 		}
 	},
+	[900452] = {
+		ship_group = 900452,
+		name = "皇家方舟",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "huangjiafangzhou_6",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 900452,
+		voice_actor_2 = -1,
+		prefab = "huangjiafangzhou_6",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "无描述",
+		voice_actor = -1,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.742,
+					1.616,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.729,
+					1.626,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.634,
+					1.744,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.374,
+							2.451,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[9600010] = {
 		ship_group = 960001,
 		name = "皇家财富号",
@@ -12318,216 +12542,6 @@ pg.base.ship_skin_template_18 = {
 				{
 					1.33,
 					1.58,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.39,
-							2.26,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[9704030] = {
-		ship_group = 970403,
-		name = "反击·META",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "fanji_alter",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 9704030,
-		voice_actor_2 = -1,
-		prefab = "fanji_alter",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "声望级战列巡洋舰，反击哦。经历过各种各样的事情…不管怎么说，我现在也是这个港区的一员了，嗯，有什么事就尽管吩咐我好了。",
-		voice_actor = 41,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.53,
-					0.76,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.57,
-					0.86,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.59,
-					0.84,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.39,
-							2.26,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[9704040] = {
-		ship_group = 970404,
-		name = "声望·META",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "shengwang_alter",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 9704040,
-		voice_actor_2 = -1,
-		prefab = "shengwang_alter",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "战列巡洋舰声望向您致敬，指挥官。愿我这饱经磨砺的剑锋能助你一臂之力。",
-		voice_actor = 183,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.53,
-					0.76,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.57,
-					0.86,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.59,
-					0.84,
 					0
 				}
 			}

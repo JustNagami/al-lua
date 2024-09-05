@@ -1,5 +1,50 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_400 = {
+	[295142] = {
+		cannon = 251,
+		name = "伊丽莎白·META(Tier.7)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 46,
+		base = 90748,
+		durability_growth = 0,
+		antiaircraft = 230,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 17,
+		hit = 65,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 250000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295142,
+		buff_list = {
+			{
+				ID = 8830,
+				LV = 2
+			},
+			{
+				ID = 50510,
+				LV = 3
+			},
+			{
+				ID = 200380,
+				LV = 1
+			}
+		}
+	},
 	[295143] = {
 		cannon = 271,
 		name = "伊丽莎白·META(Tier.8)",
@@ -3434,6 +3479,471 @@ pg.enemy_data_statistics_400 = {
 				LV = 1
 			}
 		}
+	},
+	[295226] = {
+		cannon = 135,
+		name = "鲨·META(Tier.1)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 25,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 105,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 35,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 50000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295226
+	},
+	[295227] = {
+		cannon = 154,
+		name = "鲨·META(Tier.2)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 28,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 120,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 40,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 54000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295227
+	},
+	[295228] = {
+		cannon = 174,
+		name = "鲨·META(Tier.3)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 32,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 135,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 45,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 58000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295228
+	},
+	[295229] = {
+		cannon = 193,
+		name = "鲨·META(Tier.4)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 35,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 50,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 70000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295229
+	},
+	[295230] = {
+		cannon = 212,
+		name = "鲨·META(Tier.5)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 39,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 166,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 55,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 110000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295230
+	},
+	[295231] = {
+		cannon = 232,
+		name = "鲨·META(Tier.6)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 42,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 181,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 60,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 150000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295231
+	},
+	[295232] = {
+		cannon = 251,
+		name = "鲨·META(Tier.7)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 46,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 196,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 65,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 230000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295232
+	},
+	[295233] = {
+		cannon = 270,
+		name = "鲨·META(Tier.8)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 50,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 211,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 70,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 310000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295233
+	},
+	[295234] = {
+		cannon = 290,
+		name = "鲨·META(Tier.9)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 53,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 226,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 75,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 390000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295234
+	},
+	[295235] = {
+		cannon = 309,
+		name = "鲨·META(Tier.10)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 57,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 241,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 80,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 480000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295235
+	},
+	[295236] = {
+		cannon = 328,
+		name = "鲨·META(Tier.11)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 60,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 256,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 85,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 600000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295236
+	},
+	[295237] = {
+		cannon = 348,
+		name = "鲨·META(Tier.12)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 64,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 271,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 90,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 760000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295237
+	},
+	[295238] = {
+		cannon = 367,
+		name = "鲨·META(Tier.13)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 67,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 286,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 95,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 950000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295238
+	},
+	[295239] = {
+		cannon = 386,
+		name = "鲨·META(Tier.14)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 71,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 301,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 100,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 1170000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295239
+	},
+	[295240] = {
+		cannon = 406,
+		name = "鲨·META(Tier.15)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 75,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 317,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 110,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 1420000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295240
 	},
 	[295901] = {
 		cannon = 115,
@@ -11507,6 +12017,1521 @@ pg.enemy_data_statistics_400 = {
 			},
 			{
 				ID = 200713,
+				LV = 1
+			}
+		}
+	},
+	[296231] = {
+		cannon = 133,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		pilot_ai_template_id = 70270,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		id = 296231,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
+		antisub = 0,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201050,
+				LV = 1
+			}
+		}
+	},
+	[296232] = {
+		cannon = 152,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		pilot_ai_template_id = 70270,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		id = 296232,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
+		antisub = 0,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201050,
+				LV = 1
+			}
+		}
+	},
+	[296233] = {
+		cannon = 171,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		pilot_ai_template_id = 70270,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		id = 296233,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
+		antisub = 0,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201050,
+				LV = 1
+			}
+		}
+	},
+	[296234] = {
+		cannon = 190,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		pilot_ai_template_id = 70270,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		id = 296234,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
+		antisub = 0,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201050,
+				LV = 1
+			}
+		}
+	},
+	[296235] = {
+		cannon = 209,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		pilot_ai_template_id = 70270,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		id = 296235,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
+		antisub = 0,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201050,
+				LV = 1
+			}
+		}
+	},
+	[296236] = {
+		cannon = 228,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		pilot_ai_template_id = 70270,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		id = 296236,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
+		antisub = 0,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201050,
+				LV = 1
+			}
+		}
+	},
+	[296237] = {
+		cannon = 247,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		pilot_ai_template_id = 70270,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		id = 296237,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
+		antisub = 0,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201050,
+				LV = 1
+			}
+		}
+	},
+	[296238] = {
+		cannon = 266,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		pilot_ai_template_id = 70270,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		id = 296238,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
+		antisub = 0,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201050,
+				LV = 1
+			}
+		}
+	},
+	[296239] = {
+		cannon = 285,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		pilot_ai_template_id = 70270,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		id = 296239,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
+		antisub = 0,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201050,
+				LV = 1
+			}
+		}
+	},
+	[296240] = {
+		cannon = 304,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		pilot_ai_template_id = 70270,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		id = 296240,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
+		antisub = 0,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201050,
+				LV = 1
+			}
+		}
+	},
+	[296241] = {
+		cannon = 323,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		pilot_ai_template_id = 70270,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		id = 296241,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
+		antisub = 0,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201050,
+				LV = 1
+			}
+		}
+	},
+	[296242] = {
+		cannon = 342,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		pilot_ai_template_id = 70270,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		id = 296242,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
+		antisub = 0,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201050,
+				LV = 1
+			}
+		}
+	},
+	[296243] = {
+		cannon = 361,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		pilot_ai_template_id = 70270,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		id = 296243,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
+		antisub = 0,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201050,
+				LV = 1
+			}
+		}
+	},
+	[296244] = {
+		cannon = 380,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		pilot_ai_template_id = 70270,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		id = 296244,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
+		antisub = 0,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201050,
+				LV = 1
+			}
+		}
+	},
+	[296245] = {
+		cannon = 400,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		pilot_ai_template_id = 70270,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		id = 296245,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
+		antisub = 0,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201050,
+				LV = 1
+			}
+		}
+	},
+	[296246] = {
+		cannon = 133,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296246,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296247] = {
+		cannon = 152,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296247,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296248] = {
+		cannon = 171,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296248,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296249] = {
+		cannon = 190,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296249,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296250] = {
+		cannon = 209,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296250,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296251] = {
+		cannon = 228,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296251,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296252] = {
+		cannon = 247,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296252,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296253] = {
+		cannon = 266,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296253,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296254] = {
+		cannon = 285,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296254,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296255] = {
+		cannon = 304,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296255,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296256] = {
+		cannon = 323,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296256,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296257] = {
+		cannon = 342,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296257,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296258] = {
+		cannon = 361,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296258,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296259] = {
+		cannon = 380,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296259,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296260] = {
+		cannon = 400,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296260,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
 				LV = 1
 			}
 		}

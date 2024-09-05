@@ -171,7 +171,8 @@ function var_0_0.listNotificationInterests(arg_19_0)
 		TaskProxy.TASK_ADDED,
 		TechnologyConst.UPDATE_REDPOINT_ON_TOP,
 		MiniGameProxy.ON_HUB_DATA_UPDATE,
-		var_0_0.REFRESH_VIEW
+		var_0_0.REFRESH_VIEW,
+		GAME.CHANGE_LIVINGAREA_COVER_DONE
 	}
 
 	for iter_19_0, iter_19_1 in pairs(pg.redDotHelper:GetNotifyType()) do
@@ -217,6 +218,8 @@ function var_0_0.handleNotification(arg_20_0, arg_20_1)
 			},
 			onRemoved = var_20_1.callback
 		}))
+	elseif var_20_0 == GAME.CHANGE_LIVINGAREA_COVER_DONE then
+		arg_20_0.viewComponent:emit(NewMainScene.UPDATE_COVER)
 	end
 
 	arg_20_0.viewComponent:emit(var_20_0, var_20_1)

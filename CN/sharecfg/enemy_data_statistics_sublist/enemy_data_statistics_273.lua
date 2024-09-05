@@ -1,5 +1,47 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_273 = {
+	[16003301] = {
+		cannon = 240,
+		name = "勒马尔~Incarnation Of Mars~",
+		type = 5,
+		speed_growth = 0,
+		hit_growth = 330,
+		air = 0,
+		durability = 86200,
+		armor = 0,
+		antisub = 0,
+		reload = 150,
+		luck_growth = 0,
+		battle_unit_type = 95,
+		dodge_growth = 196,
+		antisub_growth = 0,
+		air_growth = 0,
+		base = 90668,
+		icon_type = 5,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		speed = 16,
+		luck = 25,
+		id = 16003301,
+		scale = 180,
+		cannon_growth = 0,
+		pilot_ai_template_id = 10001,
+		fog_fx = "",
+		dodge = 14,
+		reload_growth = 0,
+		hit = 38,
+		torpedo = 130,
+		durability_growth = 0,
+		antiaircraft = 260,
+		antiaircraft_growth = 0,
+		armor_type = 3,
+		specific_fx_scale = {},
+		appear_fx = {
+			"bossguangxiao",
+			"appearQ"
+		},
+		equipment_list = {}
+	},
 	[16003302] = {
 		cannon = 160,
 		name = "竞技神~Incarnation Of Mercury~",
@@ -1017,46 +1059,6 @@ pg.enemy_data_statistics_273 = {
 			1100010,
 			680012,
 			1100505
-		}
-	},
-	[16100102] = {
-		cannon = 20,
-		reload = 150,
-		speed_growth = 0,
-		cannon_growth = 936,
-		pilot_ai_template_id = 10001,
-		air = 0,
-		battle_unit_type = 55,
-		dodge = 11,
-		base = 90671,
-		durability_growth = 23120,
-		antiaircraft = 28,
-		reload_growth = 0,
-		dodge_growth = 162,
-		speed = 25,
-		luck = 0,
-		hit = 14,
-		antisub_growth = 0,
-		air_growth = 0,
-		antiaircraft_growth = 3744,
-		torpedo = 27,
-		durability = 630,
-		armor_growth = 0,
-		torpedo_growth = 3366,
-		luck_growth = 0,
-		hit_growth = 210,
-		armor = 0,
-		id = 16100102,
-		fog_fx = "",
-		antisub = 0,
-		appear_fx = {
-			"appearQ"
-		},
-		equipment_list = {
-			1100020,
-			1100100,
-			1100185,
-			1100475
 		}
 	}
 }

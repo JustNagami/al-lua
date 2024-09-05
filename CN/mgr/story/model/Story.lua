@@ -81,6 +81,10 @@ function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5)
 		local var_2_4 = iter_2_3.mode or arg_2_0.mode
 		local var_2_5 = var_0_0.GetStoryStepCls(var_2_4).New(iter_2_3)
 
+		if var_2_5:IsDialogueMode() and arg_2_0:IsDialogueStyle2() then
+			var_2_5:SetDefaultSide()
+		end
+
 		var_2_5:SetId(iter_2_2)
 		var_2_5:SetPlaceholderType(arg_2_0:GetPlaceholder())
 		var_2_5:SetDefaultTb(arg_2_0.defaultTb)
@@ -228,196 +232,207 @@ function var_0_0.IsDialogueStyle2(arg_12_0)
 	return arg_12_0:GetDialogueStyleName() == 2
 end
 
-function var_0_0.GetTriggerDelayTime(arg_13_0)
-	local var_13_0 = table.indexof(var_0_0.STORY_AUTO_SPEED, arg_13_0.speed)
+function var_0_0.GetAnimPrefix(arg_13_0)
+	return switch(arg_13_0:GetDialogueStyleName(), {
+		function()
+			return "anim_storydialogue_optiontpl_"
+		end,
+		function()
+			return "anim_newstory_dialogue2_"
+		end
+	})
+end
 
-	if var_13_0 then
-		return var_0_0.TRIGGER_DELAY_TIME[var_13_0] or 0
+function var_0_0.GetTriggerDelayTime(arg_16_0)
+	local var_16_0 = table.indexof(var_0_0.STORY_AUTO_SPEED, arg_16_0.speed)
+
+	if var_16_0 then
+		return var_0_0.TRIGGER_DELAY_TIME[var_16_0] or 0
 	end
 
 	return 0
 end
 
-function var_0_0.SetAutoPlay(arg_14_0)
-	arg_14_0.isAuto = true
+function var_0_0.SetAutoPlay(arg_17_0)
+	arg_17_0.isAuto = true
 
-	arg_14_0:SetPlaySpeed(arg_14_0.speedData)
+	arg_17_0:SetPlaySpeed(arg_17_0.speedData)
 end
 
-function var_0_0.UpdatePlaySpeed(arg_15_0)
-	local var_15_0 = getProxy(SettingsProxy):GetStorySpeed() or 0
+function var_0_0.UpdatePlaySpeed(arg_18_0)
+	local var_18_0 = getProxy(SettingsProxy):GetStorySpeed() or 0
 
-	arg_15_0:SetPlaySpeed(var_15_0)
+	arg_18_0:SetPlaySpeed(var_18_0)
 end
 
-function var_0_0.GetPlaySpeed(arg_16_0)
-	return arg_16_0.speed
+function var_0_0.GetPlaySpeed(arg_19_0)
+	return arg_19_0.speed
 end
 
-function var_0_0.StopAutoPlay(arg_17_0)
-	arg_17_0.isAuto = false
+function var_0_0.StopAutoPlay(arg_20_0)
+	arg_20_0.isAuto = false
 
-	arg_17_0:ResetSpeed()
+	arg_20_0:ResetSpeed()
 end
 
-function var_0_0.SetPlaySpeed(arg_18_0, arg_18_1)
-	arg_18_0.speed = arg_18_1
+function var_0_0.SetPlaySpeed(arg_21_0, arg_21_1)
+	arg_21_0.speed = arg_21_1
 end
 
-function var_0_0.ResetSpeed(arg_19_0)
-	arg_19_0.speed = 0
+function var_0_0.ResetSpeed(arg_22_0)
+	arg_22_0.speed = 0
 end
 
-function var_0_0.GetPlaySpeed(arg_20_0)
-	return arg_20_0.speed
+function var_0_0.GetPlaySpeed(arg_23_0)
+	return arg_23_0.speed
 end
 
-function var_0_0.GetAutoPlayFlag(arg_21_0)
-	return arg_21_0.isAuto
+function var_0_0.GetAutoPlayFlag(arg_24_0)
+	return arg_24_0.isAuto
 end
 
-function var_0_0.ShowSkipTip(arg_22_0)
-	return arg_22_0.skipTip
+function var_0_0.ShowSkipTip(arg_25_0)
+	return arg_25_0.skipTip
 end
 
-function var_0_0.ShouldWaitFadeout(arg_23_0)
-	return not arg_23_0.noWaitFade
+function var_0_0.ShouldWaitFadeout(arg_26_0)
+	return not arg_26_0.noWaitFade
 end
 
-function var_0_0.ShouldHideSkip(arg_24_0)
-	return arg_24_0.hideSkip
+function var_0_0.ShouldHideSkip(arg_27_0)
+	return arg_27_0.hideSkip
 end
 
-function var_0_0.CanPlay(arg_25_0)
-	return arg_25_0.force or not arg_25_0.isPlayed
+function var_0_0.CanPlay(arg_28_0)
+	return arg_28_0.force or not arg_28_0.isPlayed
 end
 
-function var_0_0.GetId(arg_26_0)
-	return arg_26_0.name
+function var_0_0.GetId(arg_29_0)
+	return arg_29_0.name
 end
 
-function var_0_0.GetName(arg_27_0)
-	return arg_27_0.name
+function var_0_0.GetName(arg_30_0)
+	return arg_30_0.name
 end
 
-function var_0_0.GetStepByIndex(arg_28_0, arg_28_1)
-	local var_28_0 = arg_28_0.steps[arg_28_1]
+function var_0_0.GetStepByIndex(arg_31_0, arg_31_1)
+	local var_31_0 = arg_31_0.steps[arg_31_1]
 
-	if not var_28_0 or arg_28_0.branchCode and not var_28_0:IsSameBranch(arg_28_0.branchCode) then
+	if not var_31_0 or arg_31_0.branchCode and not var_31_0:IsSameBranch(arg_31_0.branchCode) then
 		return nil
 	end
 
-	return var_28_0
+	return var_31_0
 end
 
-function var_0_0.GetNextStep(arg_29_0, arg_29_1)
-	if arg_29_1 >= #arg_29_0.steps then
+function var_0_0.GetNextStep(arg_32_0, arg_32_1)
+	if arg_32_1 >= #arg_32_0.steps then
 		return nil
 	end
 
-	local var_29_0 = arg_29_1 + 1
-	local var_29_1 = arg_29_0:GetStepByIndex(var_29_0)
+	local var_32_0 = arg_32_1 + 1
+	local var_32_1 = arg_32_0:GetStepByIndex(var_32_0)
 
-	if not var_29_1 and var_29_0 < #arg_29_0.steps then
-		return arg_29_0:GetNextStep(var_29_0)
+	if not var_32_1 and var_32_0 < #arg_32_0.steps then
+		return arg_32_0:GetNextStep(var_32_0)
 	else
-		return var_29_1
+		return var_32_1
 	end
 end
 
-function var_0_0.GetPrevStep(arg_30_0, arg_30_1)
-	if arg_30_1 <= 1 then
+function var_0_0.GetPrevStep(arg_33_0, arg_33_1)
+	if arg_33_1 <= 1 then
 		return nil
 	end
 
-	local var_30_0 = arg_30_1 - 1
-	local var_30_1 = arg_30_0:GetStepByIndex(var_30_0)
+	local var_33_0 = arg_33_1 - 1
+	local var_33_1 = arg_33_0:GetStepByIndex(var_33_0)
 
-	if not var_30_1 and var_30_0 > 1 then
-		return arg_30_0:GetPrevStep(var_30_0)
+	if not var_33_1 and var_33_0 > 1 then
+		return arg_33_0:GetPrevStep(var_33_0)
 	else
-		return var_30_1
+		return var_33_1
 	end
 end
 
-function var_0_0.ShouldFadeout(arg_31_0)
-	return arg_31_0.fadeOut ~= nil
+function var_0_0.ShouldFadeout(arg_34_0)
+	return arg_34_0.fadeOut ~= nil
 end
 
-function var_0_0.GetFadeoutTime(arg_32_0)
-	return arg_32_0.fadeOut
+function var_0_0.GetFadeoutTime(arg_35_0)
+	return arg_35_0.fadeOut
 end
 
-function var_0_0.IsPlayed(arg_33_0)
-	return arg_33_0.isPlayed
+function var_0_0.IsPlayed(arg_36_0)
+	return arg_36_0.isPlayed
 end
 
-function var_0_0.SetBranchCode(arg_34_0, arg_34_1)
-	arg_34_0.branchCode = arg_34_1
+function var_0_0.SetBranchCode(arg_37_0, arg_37_1)
+	arg_37_0.branchCode = arg_37_1
 end
 
-function var_0_0.GetBranchCode(arg_35_0)
-	return arg_35_0.branchCode
+function var_0_0.GetBranchCode(arg_38_0)
+	return arg_38_0.branchCode
 end
 
-function var_0_0.GetNextScriptName(arg_36_0)
-	return arg_36_0.nextScriptName
+function var_0_0.GetNextScriptName(arg_39_0)
+	return arg_39_0.nextScriptName
 end
 
-function var_0_0.SetNextScriptName(arg_37_0, arg_37_1)
-	arg_37_0.nextScriptName = arg_37_1
+function var_0_0.SetNextScriptName(arg_40_0, arg_40_1)
+	arg_40_0.nextScriptName = arg_40_1
 end
 
-function var_0_0.SkipAll(arg_38_0)
-	arg_38_0.skipAll = true
+function var_0_0.SkipAll(arg_41_0)
+	arg_41_0.skipAll = true
 end
 
-function var_0_0.StopSkip(arg_39_0)
-	arg_39_0.skipAll = false
+function var_0_0.StopSkip(arg_42_0)
+	arg_42_0.skipAll = false
 end
 
-function var_0_0.ShouldSkipAll(arg_40_0)
-	return arg_40_0.skipAll
+function var_0_0.ShouldSkipAll(arg_43_0)
+	return arg_43_0.skipAll
 end
 
-function var_0_0.GetUsingPaintingNames(arg_41_0)
-	local var_41_0 = {}
+function var_0_0.GetUsingPaintingNames(arg_44_0)
+	local var_44_0 = {}
 
-	for iter_41_0, iter_41_1 in ipairs(arg_41_0.steps) do
-		local var_41_1 = iter_41_1:GetUsingPaintingNames()
+	for iter_44_0, iter_44_1 in ipairs(arg_44_0.steps) do
+		local var_44_1 = iter_44_1:GetUsingPaintingNames()
 
-		for iter_41_2, iter_41_3 in ipairs(var_41_1) do
-			var_41_0[iter_41_3] = true
+		for iter_44_2, iter_44_3 in ipairs(var_44_1) do
+			var_44_0[iter_44_3] = true
 		end
 	end
 
-	local var_41_2 = {}
+	local var_44_2 = {}
 
-	for iter_41_4, iter_41_5 in pairs(var_41_0) do
-		table.insert(var_41_2, iter_41_4)
+	for iter_44_4, iter_44_5 in pairs(var_44_0) do
+		table.insert(var_44_2, iter_44_4)
 	end
 
-	return var_41_2
+	return var_44_2
 end
 
-function var_0_0.GetAllStepDispatcherRecallName(arg_42_0)
-	local var_42_0 = {}
+function var_0_0.GetAllStepDispatcherRecallName(arg_45_0)
+	local var_45_0 = {}
 
-	for iter_42_0, iter_42_1 in ipairs(arg_42_0.steps) do
-		local var_42_1 = iter_42_1:GetDispatcherRecallName()
+	for iter_45_0, iter_45_1 in ipairs(arg_45_0.steps) do
+		local var_45_1 = iter_45_1:GetDispatcherRecallName()
 
-		if var_42_1 then
-			var_42_0[var_42_1] = true
+		if var_45_1 then
+			var_45_0[var_45_1] = true
 		end
 	end
 
-	local var_42_2 = {}
+	local var_45_2 = {}
 
-	for iter_42_2, iter_42_3 in pairs(var_42_0) do
-		table.insert(var_42_2, iter_42_2)
+	for iter_45_2, iter_45_3 in pairs(var_45_0) do
+		table.insert(var_45_2, iter_45_2)
 	end
 
-	return var_42_2
+	return var_45_2
 end
 
 return var_0_0

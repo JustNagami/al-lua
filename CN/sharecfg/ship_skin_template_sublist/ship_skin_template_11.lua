@@ -1,6 +1,104 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_11 = {
+	[307039] = {
+		ship_group = 30703,
+		name = "{namecode:93}.改",
+		hand_id = 2,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 9,
+		shop_id = 0,
+		painting = "canglong_g",
+		illustrator = 12,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9997,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 2,
+		id = 307039,
+		voice_actor_2 = -1,
+		prefab = "canglong_g",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "如果这样就能变得更强的话……指挥官，您在看什么呢？应该还有要做的事情吧？",
+		voice_actor = 15,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					0.78,
+					0.969,
+					0
+				}
+			},
+			plane = {
+				{
+					1.14,
+					2.32,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				40,
+				{
+					{
+						"smoke",
+						{
+							-0.45,
+							2.36,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[307040] = {
 		ship_group = 30704,
 		name = "{namecode:94}",
@@ -12346,120 +12444,6 @@ pg.base.ship_skin_template_11 = {
 		show_skin = "stand",
 		ship_l2d_id = "",
 		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.13,
-					0.53,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.11,
-					0.53,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.82,
-					0.4,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.41,
-							2.33,
-							-0.14
-						}
-					}
-				}
-			}
-		}
-	},
-	[401991] = {
-		ship_group = 40199,
-		name = "猎物与陷阱？",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "1102",
-		l2d_ignore_drag = 0,
-		group_index = 1,
-		shop_id = 70846,
-		painting = "aotuo_2",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 6,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "158",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		id = 401991,
-		voice_actor_2 = -1,
-		prefab = "aotuo_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "哼，别以为这种简单的陷阱就能困住我！不需要你帮忙，我自己就能挣脱！……怎、怎么回事？为什么挣脱不了？！",
-		voice_actor = 364,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
 		live2d_offset = {
 			0,
 			0,

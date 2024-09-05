@@ -1,5 +1,46 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_399 = {
+	[295115] = {
+		cannon = 274,
+		name = "声望·META(Tier.10)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 20,
+		base = 90675,
+		durability_growth = 0,
+		antiaircraft = 296,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 60,
+		luck = 20,
+		hit = 80,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 480000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295115,
+		buff_list = {
+			{
+				ID = 8830,
+				LV = 2
+			},
+			{
+				ID = 50500,
+				LV = 4
+			}
+		}
+	},
 	[295116] = {
 		cannon = 291,
 		name = "声望·META(Tier.11)",
@@ -1083,51 +1124,6 @@ pg.enemy_data_statistics_399 = {
 			{
 				ID = 50510,
 				LV = 2
-			},
-			{
-				ID = 200380,
-				LV = 1
-			}
-		}
-	},
-	[295142] = {
-		cannon = 251,
-		name = "伊丽莎白·META(Tier.7)",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 46,
-		base = 90748,
-		durability_growth = 0,
-		antiaircraft = 230,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 30,
-		luck = 17,
-		hit = 65,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 250000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295142,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 3
 			},
 			{
 				ID = 200380,

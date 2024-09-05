@@ -21,6 +21,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		dialog_id = var_1_1
 	}, 28016, function(arg_2_0)
 		if arg_2_0.result == 0 then
+			var_1_5 = var_1_4:getApartment(var_1_3)
 			var_1_5.talkDic[var_1_1] = true
 
 			var_1_4:updateApartment(var_1_5)

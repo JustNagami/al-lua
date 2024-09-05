@@ -1,6 +1,120 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_10 = {
+	[303183] = {
+		ship_group = 30318,
+		name = "一千零一夜之愿",
+		hand_id = 14,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 3,
+		shop_id = 70723,
+		painting = "xiongye_4",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 21,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "159",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		id = 303183,
+		voice_actor_2 = -1,
+		prefab = "xiongye_4",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "锵！{namecode:60}的……舞女？打扮感觉怎么样呀？啊哈哈♡指挥官…为什么要移开视线呀？莫非以为{namecode:60}没发现吗？",
+		voice_actor = 181,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			4
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.28,
+					0.72,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.28,
+					0.72,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.22,
+					1.09,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.79,
+							1.95,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[303190] = {
 		ship_group = 30319,
 		name = "{namecode:294}",
@@ -12312,104 +12426,6 @@ pg.base.ship_skin_template_10 = {
 				{
 					2.12,
 					2.67,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				40,
-				{
-					{
-						"smoke",
-						{
-							-0.45,
-							2.36,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[307039] = {
-		ship_group = 30703,
-		name = "{namecode:93}.改",
-		hand_id = 2,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 9,
-		shop_id = 0,
-		painting = "canglong_g",
-		illustrator = 12,
-		l2d_voice_calibrate = "",
-		shop_type_id = 9997,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 2,
-		id = 307039,
-		voice_actor_2 = -1,
-		prefab = "canglong_g",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "如果这样就能变得更强的话……指挥官，您在看什么呢？应该还有要做的事情吧？",
-		voice_actor = 15,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			antiaircraft = {
-				{
-					0.78,
-					0.969,
-					0
-				}
-			},
-			plane = {
-				{
-					1.14,
-					2.32,
 					0
 				}
 			}

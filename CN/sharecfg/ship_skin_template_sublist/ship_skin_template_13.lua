@@ -1,6 +1,106 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_13 = {
+	[407032] = {
+		ship_group = 40703,
+		name = "Weiß Uhrzeiger",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "1101",
+		l2d_ignore_drag = 0,
+		group_index = 2,
+		shop_id = 70600,
+		painting = "shitelasai_3",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 7,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "146",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		id = 407032,
+		voice_actor_2 = -1,
+		prefab = "shitelasai_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "你要知道，为了换上这身衣服，可是占用了我不少宝贵的时间…就拿你的那份时间来清掉这笔账好了。我会充分享受的，呵呵~",
+		voice_actor = 254,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.91,
+					1.19,
+					0
+				}
+			},
+			plane = {
+				{
+					1.76,
+					1.42,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.54,
+							2.58,
+							-1.89
+						}
+					}
+				}
+			}
+		}
+	},
 	[407033] = {
 		ship_group = 40703,
 		name = "书房的守护骑士",
@@ -10663,7 +10763,7 @@ pg.base.ship_skin_template_13 = {
 		painting = "haitian_h",
 		illustrator = -1,
 		l2d_voice_calibrate = "",
-		shop_type_id = 0,
+		shop_type_id = 9998,
 		lip_smoothing = 0,
 		l2d_animations = "",
 		bg = "",
@@ -12265,116 +12365,6 @@ pg.base.ship_skin_template_13 = {
 			},
 			{
 				1.416
-			}
-		}
-	},
-	[519010] = {
-		ship_group = 51901,
-		name = "定安",
-		hand_id = 9,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "dingan",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 519010,
-		voice_actor_2 = 367,
-		prefab = "dingan",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "运输舰—定安",
-		voice_actor = 353,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			antiaircraft = {
-				{
-					1.16,
-					1.14,
-					0
-				}
-			},
-			cannon = {
-				{
-					1.04,
-					0.8800001,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.19,
-					1.11,
-					0
-				}
-			},
-			remote = {
-				-50,
-				0,
-				0
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.36,
-							2.36,
-							0
-						}
-					}
-				}
 			}
 		}
 	}

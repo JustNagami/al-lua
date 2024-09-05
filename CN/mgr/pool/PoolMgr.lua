@@ -121,12 +121,7 @@ function var_0_0.Ctor(arg_1_0)
 		"painting/mat",
 		"ui/commonui_atlas",
 		"skinicon",
-		"attricon",
-		"artresource/effect/chuanwukuang/duang_6_mask",
-		"artresource/effect/communicationjamming/line5",
-		"artresource/effect/communicationjamming/line6",
-		"artresource/effect/wupinkuang/iconcolorfulmask",
-		"artresource/effect/wupinkuang/iconcolorfulwave01"
+		"attricon"
 	}
 	arg_1_0.ui_tempCache = {}
 end

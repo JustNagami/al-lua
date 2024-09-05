@@ -1,5 +1,43 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_340 = {
+	[16593304] = {
+		cannon = 290,
+		name = "水星纪念~Shadow Of Hierophant~",
+		hit_growth = 210,
+		speed_growth = 0,
+		pilot_ai_template_id = 10001,
+		air = 290,
+		speed = 16,
+		dodge = 22,
+		antisub = 0,
+		cannon_growth = 0,
+		fog_fx = "",
+		reload_growth = 0,
+		dodge_growth = 312,
+		luck = 25,
+		reload = 150,
+		hit = 45,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 190,
+		base = 90886,
+		durability = 106000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 410,
+		id = 16593304,
+		battle_unit_type = 95,
+		scale = 180,
+		appear_fx = {
+			"bossguangxiao",
+			"appearQ"
+		},
+		equipment_list = {}
+	},
 	[16593305] = {
 		cannon = 330,
 		name = "水星纪念~Shadow Of Hierophant~",
@@ -949,40 +987,6 @@ pg.enemy_data_statistics_340 = {
 				ID = 200822,
 				LV = 1
 			}
-		}
-	},
-	[16599008] = {
-		cannon = 5,
-		reload = 150,
-		speed_growth = 0,
-		cannon_growth = 300,
-		pilot_ai_template_id = 75027,
-		air = 0,
-		battle_unit_type = 30,
-		dodge = 0,
-		base = 90906,
-		durability_growth = 4000,
-		antiaircraft = 25,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 15,
-		luck = 0,
-		hit = 10,
-		antisub_growth = 0,
-		air_growth = 0,
-		antiaircraft_growth = 800,
-		torpedo = 27,
-		durability = 105,
-		armor_growth = 0,
-		torpedo_growth = 3000,
-		luck_growth = 0,
-		hit_growth = 144,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 16599008,
-		equipment_list = {
-			3139105
 		}
 	}
 }

@@ -38,6 +38,7 @@ end
 function var_0_0.GetPanels(arg_5_0)
 	local var_5_0 = {
 		SettingsFpsPanle,
+		SettingsGraphicsPanle,
 		SettingsNotificationPanel,
 		SettingsWorldPanle,
 		SettingsRandomFlagShipAndSkinPanel,

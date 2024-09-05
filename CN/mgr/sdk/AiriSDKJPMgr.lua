@@ -498,7 +498,7 @@ function BindYostarPassResult(arg_61_0, arg_61_1)
 	}
 
 	if var_0_0.AiriResultCodeHandler(var_61_0) then
-		pg.TipsMgr.GetInstance():ShowTips("Bind Success.")
+		pg.TipsMgr.GetInstance():ShowTips(i18n("new_airi_error_code_0"))
 	end
 end
 

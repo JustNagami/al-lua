@@ -234,21 +234,29 @@ function var_0_0.UpdateDialogue(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
 
 	local var_29_2 = var_29_0.counsellor
 
-	seriesAsync({
-		function(arg_30_0)
-			arg_29_0:LoadCounsellor(var_29_2.name, arg_30_0)
-		end,
-		function(arg_31_0)
-			local var_31_0 = arg_29_0.counsellors[var_29_2.name]
+	if var_29_2 then
+		seriesAsync({
+			function(arg_30_0)
+				arg_29_0:LoadCounsellor(var_29_2.name, arg_30_0)
+			end,
+			function(arg_31_0)
+				local var_31_0 = arg_29_0.counsellors[var_29_2.name]
 
-			setActive(var_31_0, true)
+				setActive(var_31_0, true)
 
-			var_31_0.localPosition = arg_29_2.localPosition + Vector3(var_29_2.position.x, var_29_2.position.y, 0)
-			var_31_0.localScale = Vector3(var_29_2.scale.x, var_29_2.scale.y, 1)
+				var_31_0.localPosition = arg_29_2.localPosition + Vector3(var_29_2.position.x, var_29_2.position.y, 0)
+				var_31_0.localScale = Vector3(var_29_2.scale.x, var_29_2.scale.y, 1)
 
-			arg_31_0()
+				arg_31_0()
+			end
+		}, arg_29_3)
+	else
+		for iter_29_0, iter_29_1 in pairs(arg_29_0.counsellors) do
+			setActive(iter_29_1, false)
 		end
-	}, arg_29_3)
+
+		arg_29_3()
+	end
 end
 
 function var_0_0.LoadCounsellor(arg_32_0, arg_32_1, arg_32_2)
@@ -303,7 +311,7 @@ local function var_0_2(arg_38_0, arg_38_1, arg_38_2, arg_38_3)
 			clearAllEvent = true
 		})
 	elseif arg_38_3.type == GuideStep.HIGH_TYPE_LINE then
-		local var_38_0 = arg_38_1.isWorld and 15 or 55
+		local var_38_0 = arg_38_1:GetHighlightLength()
 		local var_38_1 = arg_38_0._tf:InverseTransformPoint(arg_38_2.position)
 		local var_38_2 = (arg_38_2.pivot.x - 0.5) * var_38_0
 		local var_38_3 = (arg_38_2.pivot.y - 0.5) * var_38_0
@@ -313,7 +321,7 @@ local function var_0_2(arg_38_0, arg_38_1, arg_38_2, arg_38_3)
 			position = Vector3(var_38_1.x, var_38_1.y, 0) + Vector3(var_38_2, var_38_3, 0),
 			sizeDelta = var_38_4,
 			pivot = arg_38_2.pivot,
-			isWorld = arg_38_1.isWorld
+			name = arg_38_1:GetHighlightName()
 		})
 	end
 end

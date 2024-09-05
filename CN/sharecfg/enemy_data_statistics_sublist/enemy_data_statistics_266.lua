@@ -1,5 +1,41 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_266 = {
+	[15903003] = {
+		cannon = 18,
+		reload = 150,
+		speed_growth = 0,
+		cannon_growth = 1800,
+		battle_unit_type = 35,
+		air = 0,
+		base = 90460,
+		dodge = 0,
+		durability_growth = 35200,
+		antiaircraft = 95,
+		speed = 15,
+		reload_growth = 0,
+		dodge_growth = 0,
+		luck = 0,
+		antiaircraft_growth = 1400,
+		hit = 10,
+		antisub_growth = 0,
+		air_growth = 0,
+		antisub = 0,
+		torpedo = 17,
+		durability = 1190,
+		armor_growth = 0,
+		torpedo_growth = 1250,
+		luck_growth = 0,
+		hit_growth = 144,
+		armor = 0,
+		fog_fx = "",
+		id = 15903003,
+		specific_fx_scale = {},
+		equipment_list = {
+			1003029,
+			1003034,
+			1003039
+		}
+	},
 	[15903004] = {
 		cannon = 43,
 		reload = 150,
@@ -1091,49 +1127,6 @@ pg.enemy_data_statistics_266 = {
 			1000808,
 			1000818,
 			1000823
-		}
-	},
-	[15903131] = {
-		cannon = 22,
-		name = "噩梦投射-「驱逐舰」",
-		type = 1,
-		speed_growth = 0,
-		hit_growth = 280,
-		air = 0,
-		durability = 3060,
-		armor = 0,
-		antisub = 0,
-		reload = 150,
-		luck_growth = 0,
-		battle_unit_type = 50,
-		dodge_growth = 360,
-		antisub_growth = 0,
-		air_growth = 0,
-		base = 90639,
-		icon_type = 1,
-		armor_growth = 0,
-		torpedo_growth = 5200,
-		speed = 36,
-		luck = 0,
-		id = 15903131,
-		cannon_growth = 626,
-		pilot_ai_template_id = 10001,
-		fog_fx = "",
-		dodge = 22,
-		reload_growth = 0,
-		hit = 25,
-		torpedo = 94,
-		durability_growth = 21600,
-		antiaircraft = 72,
-		antiaircraft_growth = 3000,
-		armor_type = 1,
-		appear_fx = {
-			"heisewuqi_stg"
-		},
-		equipment_list = {
-			873901,
-			873902,
-			1100018
 		}
 	}
 }

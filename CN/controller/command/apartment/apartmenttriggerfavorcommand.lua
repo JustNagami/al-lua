@@ -6,12 +6,9 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_2 = var_1_0.triggerId
 	local var_1_3 = getProxy(ApartmentProxy)
 	local var_1_4 = var_1_3:getApartment(var_1_1)
+	local var_1_5 = pg.dorm3d_favor_trigger[var_1_2]
 
-	if pg.dorm3d_favor_trigger[var_1_2].is_repeat > 0 then
-		if var_1_4.daily >= getDorm3dGameset("daily_exp_max")[1] then
-			return
-		end
-	elseif var_1_4.triggerCountDic[var_1_2] > 0 then
+	if var_1_5.is_repeat == 0 and var_1_4.triggerCountDic[var_1_2] > 0 or var_1_3.stamina < var_1_5.is_daily_max then
 		return
 	end
 
@@ -20,13 +17,11 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		trigger_id = var_1_2
 	}, 28004, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			var_1_4 = var_1_3:getApartment(var_1_1)
+			local var_2_0 = var_1_3:triggerFavor(var_1_1, var_1_2)
 
-			local var_2_0 = var_1_4:addFavor(var_1_2)
-
-			var_1_3:updateApartment(var_1_4)
 			arg_1_0:sendNotification(GAME.APARTMENT_TRIGGER_FAVOR_DONE, {
 				triggerId = var_1_2,
+				cost = var_1_5.is_daily_max,
 				delta = var_2_0,
 				apartment = var_1_4
 			})

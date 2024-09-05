@@ -19,15 +19,17 @@ var_0_0.TYPES = {
 	COMMANDER = 10,
 	RYZA_TASK = 21,
 	BLUEPRINT = 14,
-	BUILD = 4,
+	DORM3D_GIFT = 23,
 	SERVER = 12,
 	ISLAND = 22,
+	TASK = 2,
 	ACT_NEWBIE = 17,
 	EVENT = 15,
 	ATTIRE = 6,
 	FRIEND = 8,
 	NEW_SERVER = 20,
-	TASK = 2,
+	BUILD = 4,
+	DORM3D_FURNITURE = 24,
 	MAIL = 3,
 	GUILD = 5,
 	SETTTING = 11,
@@ -141,6 +143,8 @@ function var_0_0.BindConditions(arg_3_0)
 
 		return Activity.IsActivityReady(var_25_0)
 	end)
+	arg_3_0:BindCondition(var_0_0.TYPES.DORM3D_GIFT, Dorm3dGift.NeedViewTip)
+	arg_3_0:BindCondition(var_0_0.TYPES.DORM3D_FURNITURE, Dorm3dFurniture.NeedViewTip)
 end
 
 function var_0_0.BindCondition(arg_26_0, arg_26_1, arg_26_2)

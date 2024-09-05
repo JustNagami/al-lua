@@ -156,6 +156,10 @@ function var_0_1.CheckFModeEvent(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
 		var_19_0 = "educate-" .. arg_22_0
 		var_19_1 = arg_22_1
 	end)
+	string.gsub(arg_19_1, "event:/dorm/(.+)/(.+)", function(arg_23_0, arg_23_1)
+		var_19_0 = arg_23_0
+		var_19_1 = arg_23_1
+	end)
 
 	if string.find(arg_19_1, "event:/educate%-cv/") then
 		local var_19_2 = string.split(arg_19_1, "/")
@@ -175,255 +179,255 @@ function var_0_1.CheckFModeEvent(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
 	end
 end
 
-function var_0_1.CheckHasCue(arg_23_0, arg_23_1, arg_23_2)
-	local var_23_0 = CriAtom.GetCueSheet(arg_23_1)
+function var_0_1.CheckHasCue(arg_24_0, arg_24_1, arg_24_2)
+	local var_24_0 = CriAtom.GetCueSheet(arg_24_1)
 
-	return var_23_0 ~= nil and var_23_0.acb:Exists(arg_23_2)
+	return var_24_0 ~= nil and var_24_0.acb:Exists(arg_24_2)
 end
 
-function var_0_1.PlaySoundEffect_V3(arg_24_0, arg_24_1, arg_24_2)
-	arg_24_0:CheckFModeEvent(arg_24_1, function(arg_25_0, arg_25_1)
-		arg_24_0:PlayCV_V3(arg_25_0, arg_25_1, arg_24_2)
-	end, function(arg_26_0)
-		arg_24_0:PlaySE_V3(arg_26_0, arg_24_2)
+function var_0_1.PlaySoundEffect_V3(arg_25_0, arg_25_1, arg_25_2)
+	arg_25_0:CheckFModeEvent(arg_25_1, function(arg_26_0, arg_26_1)
+		arg_25_0:PlayCV_V3(arg_26_0, arg_26_1, arg_25_2)
+	end, function(arg_27_0)
+		arg_25_0:PlaySE_V3(arg_27_0, arg_25_2)
 	end)
 end
 
-function var_0_1.PlayMultipleSound_V3(arg_27_0, arg_27_1, arg_27_2)
-	arg_27_0:CheckFModeEvent(arg_27_1, function(arg_28_0, arg_28_1)
-		arg_27_0:CreateCvMultipleHandler(arg_28_0, arg_28_1, arg_27_2)
-	end, function(arg_29_0)
-		arg_27_0:PlaySE_V3(arg_29_0, arg_27_2)
+function var_0_1.PlayMultipleSound_V3(arg_28_0, arg_28_1, arg_28_2)
+	arg_28_0:CheckFModeEvent(arg_28_1, function(arg_29_0, arg_29_1)
+		arg_28_0:CreateCvMultipleHandler(arg_29_0, arg_29_1, arg_28_2)
+	end, function(arg_30_0)
+		arg_28_0:PlaySE_V3(arg_30_0, arg_28_2)
 	end)
 end
 
-function var_0_1.StopSoundEffect_V3(arg_30_0, arg_30_1)
-	arg_30_0:CheckFModeEvent(arg_30_1, function(arg_31_0, arg_31_1)
-		arg_30_0:StopCV_V3()
-	end, function(arg_32_0)
-		arg_30_0:StopSE_V3()
+function var_0_1.StopSoundEffect_V3(arg_31_0, arg_31_1)
+	arg_31_0:CheckFModeEvent(arg_31_1, function(arg_32_0, arg_32_1)
+		arg_31_0:StopCV_V3()
+	end, function(arg_33_0)
+		arg_31_0:StopSE_V3()
 	end)
 end
 
-function var_0_1.UnloadSoundEffect_V3(arg_33_0, arg_33_1)
-	arg_33_0:CheckFModeEvent(arg_33_1, function(arg_34_0, arg_34_1)
-		arg_33_0:UnloadCueSheet(arg_34_0)
-	end, function(arg_35_0)
-		arg_33_0:StopSE_V3()
+function var_0_1.UnloadSoundEffect_V3(arg_34_0, arg_34_1)
+	arg_34_0:CheckFModeEvent(arg_34_1, function(arg_35_0, arg_35_1)
+		arg_34_0:UnloadCueSheet(arg_35_0)
+	end, function(arg_36_0)
+		arg_34_0:StopSE_V3()
 	end)
 end
 
-function var_0_1.PlayCV_V3(arg_36_0, arg_36_1, arg_36_2, arg_36_3)
-	assert(arg_36_1, "cueSheetName can not be nil.")
-	assert(arg_36_2, "cueName can not be nil.")
-	arg_36_0.criInst:PlayVoice(arg_36_2, CriWareMgr.CRI_FADE_TYPE.NONE, arg_36_1, function(arg_37_0)
-		if arg_36_3 ~= nil then
-			arg_36_3(arg_37_0)
+function var_0_1.PlayCV_V3(arg_37_0, arg_37_1, arg_37_2, arg_37_3)
+	assert(arg_37_1, "cueSheetName can not be nil.")
+	assert(arg_37_2, "cueName can not be nil.")
+	arg_37_0.criInst:PlayVoice(arg_37_2, CriWareMgr.CRI_FADE_TYPE.NONE, arg_37_1, function(arg_38_0)
+		if arg_37_3 ~= nil then
+			arg_37_3(arg_38_0)
 		end
 	end)
 end
 
-function var_0_1.CreateCvMultipleHandler(arg_38_0, arg_38_1, arg_38_2, arg_38_3)
-	if not arg_38_0.luHandle then
-		arg_38_0.luHandle = LateUpdateBeat:CreateListener(arg_38_0.LateCvHandler, arg_38_0)
+function var_0_1.CreateCvMultipleHandler(arg_39_0, arg_39_1, arg_39_2, arg_39_3)
+	if not arg_39_0.luHandle then
+		arg_39_0.luHandle = LateUpdateBeat:CreateListener(arg_39_0.LateCvHandler, arg_39_0)
 
-		LateUpdateBeat:AddListener(arg_38_0.luHandle)
+		LateUpdateBeat:AddListener(arg_39_0.luHandle)
 	end
 
-	arg_38_0.cvCacheDataList = arg_38_0.cvCacheDataList or {}
+	arg_39_0.cvCacheDataList = arg_39_0.cvCacheDataList or {}
 
-	local var_38_0 = true
+	local var_39_0 = true
 
-	for iter_38_0, iter_38_1 in ipairs(arg_38_0.cvCacheDataList) do
-		if iter_38_1[1] == arg_38_1 and iter_38_1[2] == arg_38_2 then
-			var_38_0 = false
+	for iter_39_0, iter_39_1 in ipairs(arg_39_0.cvCacheDataList) do
+		if iter_39_1[1] == arg_39_1 and iter_39_1[2] == arg_39_2 then
+			var_39_0 = false
 
 			break
 		end
 	end
 
-	if var_38_0 then
-		arg_38_0.cvCacheDataList[#arg_38_0.cvCacheDataList + 1] = {
-			arg_38_1,
-			arg_38_2,
-			arg_38_3
+	if var_39_0 then
+		arg_39_0.cvCacheDataList[#arg_39_0.cvCacheDataList + 1] = {
+			arg_39_1,
+			arg_39_2,
+			arg_39_3
 		}
 	end
 end
 
-function var_0_1.LateCvHandler(arg_39_0)
-	for iter_39_0, iter_39_1 in ipairs(arg_39_0.cvCacheDataList) do
-		local var_39_0 = iter_39_1[1]
-		local var_39_1 = iter_39_1[2]
-		local var_39_2 = iter_39_1[3]
+function var_0_1.LateCvHandler(arg_40_0)
+	for iter_40_0, iter_40_1 in ipairs(arg_40_0.cvCacheDataList) do
+		local var_40_0 = iter_40_1[1]
+		local var_40_1 = iter_40_1[2]
+		local var_40_2 = iter_40_1[3]
 
-		if iter_39_0 == 1 then
-			arg_39_0.criInst:PlayVoice(var_39_1, CriWareMgr.CRI_FADE_TYPE.NONE, var_39_0, function(arg_40_0)
-				if var_39_2 ~= nil then
-					var_39_2(arg_40_0)
+		if iter_40_0 == 1 then
+			arg_40_0.criInst:PlayVoice(var_40_1, CriWareMgr.CRI_FADE_TYPE.NONE, var_40_0, function(arg_41_0)
+				if var_40_2 ~= nil then
+					var_40_2(arg_41_0)
 				end
 			end)
 		else
-			local var_39_3 = CueData.GetCueData()
+			local var_40_3 = CueData.GetCueData()
 
-			var_39_3.cueSheetName = var_39_0
-			var_39_3.channelName = var_0_1.C_BATTLE_CV_EXTRA
-			var_39_3.cueName = var_39_1
+			var_40_3.cueSheetName = var_40_0
+			var_40_3.channelName = var_0_1.C_BATTLE_CV_EXTRA
+			var_40_3.cueName = var_40_1
 
 			onDelayTick(function()
-				arg_39_0.criInst:PlaySound(var_39_3, CriWareMgr.CRI_FADE_TYPE.FADE_CROSS, function(arg_42_0)
-					if var_39_2 ~= nil then
-						var_39_2(arg_42_0)
+				arg_40_0.criInst:PlaySound(var_40_3, CriWareMgr.CRI_FADE_TYPE.FADE_CROSS, function(arg_43_0)
+					if var_40_2 ~= nil then
+						var_40_2(arg_43_0)
 					end
 				end)
-			end, iter_39_0 * 0.4)
+			end, iter_40_0 * 0.4)
 		end
 	end
 
-	arg_39_0.cvCacheDataList = nil
+	arg_40_0.cvCacheDataList = nil
 
-	if arg_39_0.luHandle then
-		LateUpdateBeat:RemoveListener(arg_39_0.luHandle)
+	if arg_40_0.luHandle then
+		LateUpdateBeat:RemoveListener(arg_40_0.luHandle)
 
-		arg_39_0.luHandle = nil
+		arg_40_0.luHandle = nil
 	end
 end
 
-function var_0_1.StopCV_V3(arg_43_0)
-	arg_43_0.criInst:GetChannelData(var_0_1.C_VOICE).channelPlayer:Stop()
+function var_0_1.StopCV_V3(arg_44_0)
+	arg_44_0.criInst:GetChannelData(var_0_1.C_VOICE).channelPlayer:Stop()
 end
 
-function var_0_1.PlaySE_V3(arg_44_0, arg_44_1, arg_44_2)
-	assert(arg_44_1, "cueName can not be nil.")
-	arg_44_0.criInst:PlayAnySE(arg_44_1, nil, function(arg_45_0)
-		if arg_44_2 ~= nil then
-			arg_44_2(arg_45_0)
+function var_0_1.PlaySE_V3(arg_45_0, arg_45_1, arg_45_2)
+	assert(arg_45_1, "cueName can not be nil.")
+	arg_45_0.criInst:PlayAnySE(arg_45_1, nil, function(arg_46_0)
+		if arg_45_2 ~= nil then
+			arg_45_2(arg_46_0)
 		end
 	end)
 end
 
-function var_0_1.StopSE_V3(arg_46_0)
-	arg_46_0.criInst:GetChannelData(var_0_1.C_SE).channelPlayer:Stop()
-	arg_46_0.criInst:GetChannelData(var_0_1.C_BATTLE_SE).channelPlayer:Stop()
-end
-
-function var_0_1.StopSEBattle_V3(arg_47_0)
+function var_0_1.StopSE_V3(arg_47_0)
+	arg_47_0.criInst:GetChannelData(var_0_1.C_SE).channelPlayer:Stop()
 	arg_47_0.criInst:GetChannelData(var_0_1.C_BATTLE_SE).channelPlayer:Stop()
 end
 
-function var_0_1.LoadCueSheet(arg_48_0, arg_48_1, arg_48_2)
-	local var_48_0 = CueData.GetCueData()
+function var_0_1.StopSEBattle_V3(arg_48_0)
+	arg_48_0.criInst:GetChannelData(var_0_1.C_BATTLE_SE).channelPlayer:Stop()
+end
 
-	var_48_0.cueSheetName = arg_48_1
+function var_0_1.LoadCueSheet(arg_49_0, arg_49_1, arg_49_2)
+	local var_49_0 = CueData.GetCueData()
 
-	arg_48_0.criInst:LoadCueSheet(var_48_0, function(arg_49_0)
-		arg_48_2(arg_49_0)
+	var_49_0.cueSheetName = arg_49_1
+
+	arg_49_0.criInst:LoadCueSheet(var_49_0, function(arg_50_0)
+		arg_49_2(arg_50_0)
 	end, true)
 end
 
-function var_0_1.UnloadCueSheet(arg_50_0, arg_50_1)
-	arg_50_0.criInst:UnloadCueSheet(arg_50_1)
+function var_0_1.UnloadCueSheet(arg_51_0, arg_51_1)
+	arg_51_0.criInst:UnloadCueSheet(arg_51_1)
 end
 
-function var_0_1.getCVVolume(arg_51_0)
+function var_0_1.getCVVolume(arg_52_0)
 	return PlayerPrefs.GetFloat("cv_vol", DEFAULT_CVVOLUME)
 end
 
-function var_0_1.setCVVolume(arg_52_0, arg_52_1)
-	PlayerPrefs.SetFloat("cv_vol", arg_52_1)
-	CriAtom.SetCategoryVolume(var_0_1.Category_CV, arg_52_1)
+function var_0_1.setCVVolume(arg_53_0, arg_53_1)
+	PlayerPrefs.SetFloat("cv_vol", arg_53_1)
+	CriAtom.SetCategoryVolume(var_0_1.Category_CV, arg_53_1)
 end
 
-function var_0_1.getBGMVolume(arg_53_0)
+function var_0_1.getBGMVolume(arg_54_0)
 	return PlayerPrefs.GetFloat("bgm_vol", DEFAULT_BGMVOLUME)
 end
 
-function var_0_1.setBGMVolume(arg_54_0, arg_54_1)
-	PlayerPrefs.SetFloat("bgm_vol", arg_54_1)
-	CriAtom.SetCategoryVolume(var_0_1.Category_BGM, arg_54_1)
+function var_0_1.setBGMVolume(arg_55_0, arg_55_1)
+	PlayerPrefs.SetFloat("bgm_vol", arg_55_1)
+	CriAtom.SetCategoryVolume(var_0_1.Category_BGM, arg_55_1)
 end
 
-function var_0_1.getSEVolume(arg_55_0)
+function var_0_1.getSEVolume(arg_56_0)
 	return PlayerPrefs.GetFloat("se_vol", DEFAULT_SEVOLUME)
 end
 
-function var_0_1.setSEVolume(arg_56_0, arg_56_1)
-	PlayerPrefs.SetFloat("se_vol", arg_56_1)
-	CriAtom.SetCategoryVolume(var_0_1.Category_SE, arg_56_1)
+function var_0_1.setSEVolume(arg_57_0, arg_57_1)
+	PlayerPrefs.SetFloat("se_vol", arg_57_1)
+	CriAtom.SetCategoryVolume(var_0_1.Category_SE, arg_57_1)
 end
 
-function var_0_1.InitBgmCfg(arg_57_0, arg_57_1)
-	arg_57_0.isDefaultBGM = false
+function var_0_1.InitBgmCfg(arg_58_0, arg_58_1)
+	arg_58_0.isDefaultBGM = false
 
 	if OPEN_SPECIAL_IP_BGM and PLATFORM_CODE == PLATFORM_US then
 		if Application.isEditor then
-			if arg_57_1 then
-				arg_57_1()
+			if arg_58_1 then
+				arg_58_1()
 			end
 
 			return
 		end
 
-		local var_57_0 = {
+		local var_58_0 = {
 			"Malaysia",
 			"Indonesia"
 		}
-		local var_57_1 = "https://pro.ip-api.com/json/?key=TShzQlq7O9KuthI"
-		local var_57_2 = ""
+		local var_58_1 = "https://pro.ip-api.com/json/?key=TShzQlq7O9KuthI"
+		local var_58_2 = ""
 
-		local function var_57_3(arg_58_0)
-			local var_58_0 = "\"country\":\""
-			local var_58_1 = "\","
-			local var_58_2, var_58_3 = string.find(arg_58_0, var_58_0)
+		local function var_58_3(arg_59_0)
+			local var_59_0 = "\"country\":\""
+			local var_59_1 = "\","
+			local var_59_2, var_59_3 = string.find(arg_59_0, var_59_0)
 
-			if var_58_3 then
-				arg_58_0 = string.sub(arg_58_0, var_58_3 + 1)
+			if var_59_3 then
+				arg_59_0 = string.sub(arg_59_0, var_59_3 + 1)
 			end
 
-			local var_58_4 = string.find(arg_58_0, var_58_1)
+			local var_59_4 = string.find(arg_59_0, var_59_1)
 
-			if var_58_4 then
-				arg_58_0 = string.sub(arg_58_0, 1, var_58_4 - 1)
+			if var_59_4 then
+				arg_59_0 = string.sub(arg_59_0, 1, var_59_4 - 1)
 			end
 
-			return arg_58_0
+			return arg_59_0
 		end
 
-		local function var_57_4(arg_59_0)
-			local var_59_0 = false
+		local function var_58_4(arg_60_0)
+			local var_60_0 = false
 
-			for iter_59_0, iter_59_1 in ipairs(var_57_0) do
-				if iter_59_1 == arg_59_0 then
-					var_59_0 = true
+			for iter_60_0, iter_60_1 in ipairs(var_58_0) do
+				if iter_60_1 == arg_60_0 then
+					var_60_0 = true
 				end
 			end
 
-			return var_59_0
+			return var_60_0
 		end
 
-		VersionMgr.Inst:WebRequest(var_57_1, function(arg_60_0, arg_60_1)
-			local var_60_0 = var_57_3(arg_60_1)
+		VersionMgr.Inst:WebRequest(var_58_1, function(arg_61_0, arg_61_1)
+			local var_61_0 = var_58_3(arg_61_1)
 
-			originalPrint("content: " .. arg_60_1)
-			originalPrint("country is: " .. var_60_0)
+			originalPrint("content: " .. arg_61_1)
+			originalPrint("country is: " .. var_61_0)
 
-			arg_57_0.isDefaultBGM = var_57_4(var_60_0)
+			arg_58_0.isDefaultBGM = var_58_4(var_61_0)
 
-			originalPrint("IP limit: " .. tostring(arg_57_0.isDefaultBGM))
+			originalPrint("IP limit: " .. tostring(arg_58_0.isDefaultBGM))
 
-			if arg_57_1 then
-				arg_57_1()
+			if arg_58_1 then
+				arg_58_1()
 			end
 		end)
-	elseif arg_57_1 then
-		arg_57_1()
+	elseif arg_58_1 then
+		arg_58_1()
 	end
 end
 
-function var_0_1.IsDefaultBGM(arg_61_0)
-	return arg_61_0.isDefaultBGM
+function var_0_1.IsDefaultBGM(arg_62_0)
+	return arg_62_0.isDefaultBGM
 end
 
-function var_0_1.getAtomSource(arg_62_0, arg_62_1)
-	return GetComponent(GameObject.Find("CRIWARE/" .. arg_62_1), "CriAtomSource")
+function var_0_1.getAtomSource(arg_63_0, arg_63_1)
+	return GetComponent(GameObject.Find("CRIWARE/" .. arg_63_1), "CriAtomSource")
 end

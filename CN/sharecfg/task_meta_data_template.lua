@@ -247,6 +247,11 @@ pg.task_meta_data_template = setmetatable({
 		100313,
 		100314,
 		100315,
+		100321,
+		100322,
+		100323,
+		100324,
+		100325,
 		200001,
 		200002,
 		200003,
@@ -334,7 +339,11 @@ pg.task_meta_data_template = setmetatable({
 		200221,
 		200222,
 		200223,
-		200224
+		200224,
+		200231,
+		200232,
+		200233,
+		200234
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2262,7 +2271,7 @@ pg.base.task_meta_data_template = {
 	[100311] = {
 		target_id_2 = "970106",
 		sub_type = 180,
-		desc = "使用霞·META获得1次胜利",
+		desc = "使用{namecode:229}获得1次胜利",
 		id = 100311,
 		target_num = 1,
 		target_id = "0"
@@ -2270,7 +2279,7 @@ pg.base.task_meta_data_template = {
 	[100312] = {
 		target_id_2 = "970106",
 		sub_type = 180,
-		desc = "使用霞·META击破等级＞30的敌方1次",
+		desc = "使用{namecode:229}击破等级＞30的敌方1次",
 		id = 100312,
 		target_num = 1,
 		target_id = "30"
@@ -2278,7 +2287,7 @@ pg.base.task_meta_data_template = {
 	[100313] = {
 		target_id_2 = "970106",
 		sub_type = 180,
-		desc = "使用霞·META击破等级＞55的敌方1次",
+		desc = "使用{namecode:229}击破等级＞55的敌方1次",
 		id = 100313,
 		target_num = 1,
 		target_id = "55"
@@ -2286,7 +2295,7 @@ pg.base.task_meta_data_template = {
 	[100314] = {
 		target_id_2 = "970106",
 		sub_type = 180,
-		desc = "使用霞·META击破等级＞80的敌方1次",
+		desc = "使用{namecode:229}击破等级＞80的敌方1次",
 		id = 100314,
 		target_num = 1,
 		target_id = "80"
@@ -2294,8 +2303,48 @@ pg.base.task_meta_data_template = {
 	[100315] = {
 		target_id_2 = "970106",
 		sub_type = 180,
-		desc = "使用霞·META击破等级＞100的敌方1次",
+		desc = "使用{namecode:229}击破等级＞100的敌方1次",
 		id = 100315,
+		target_num = 1,
+		target_id = "100"
+	},
+	[100321] = {
+		target_id_2 = "970506",
+		sub_type = 180,
+		desc = "使用{namecode:230}获得1次胜利",
+		id = 100321,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100322] = {
+		target_id_2 = "970506",
+		sub_type = 180,
+		desc = "使用{namecode:230}击破等级＞30的敌方1次",
+		id = 100322,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100323] = {
+		target_id_2 = "970506",
+		sub_type = 180,
+		desc = "使用{namecode:230}击破等级＞55的敌方1次",
+		id = 100323,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100324] = {
+		target_id_2 = "970506",
+		sub_type = 180,
+		desc = "使用{namecode:230}击破等级＞80的敌方1次",
+		id = 100324,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100325] = {
+		target_id_2 = "970506",
+		sub_type = 180,
+		desc = "使用{namecode:230}击破等级＞100的敌方1次",
+		id = 100325,
 		target_num = 1,
 		target_id = "100"
 	},
@@ -2974,7 +3023,7 @@ pg.base.task_meta_data_template = {
 	[200221] = {
 		target_id_2 = "970106",
 		sub_type = 302,
-		desc = "大型作战内使用霞·META获得1次胜利",
+		desc = "大型作战内使用{namecode:229}获得1次胜利",
 		id = 200221,
 		target_num = 1,
 		target_id = "0"
@@ -2982,7 +3031,7 @@ pg.base.task_meta_data_template = {
 	[200222] = {
 		target_id_2 = "970106",
 		sub_type = 302,
-		desc = "大型作战内使用霞·META击破等级＞70的敌方1次",
+		desc = "大型作战内使用{namecode:229}击破等级＞70的敌方1次",
 		id = 200222,
 		target_num = 1,
 		target_id = "70"
@@ -2990,7 +3039,7 @@ pg.base.task_meta_data_template = {
 	[200223] = {
 		target_id_2 = "970106",
 		sub_type = 302,
-		desc = "大型作战内使用霞·META击破等级＞90的敌方1次",
+		desc = "大型作战内使用{namecode:229}击破等级＞90的敌方1次",
 		id = 200223,
 		target_num = 1,
 		target_id = "90"
@@ -2998,8 +3047,40 @@ pg.base.task_meta_data_template = {
 	[200224] = {
 		target_id_2 = "970106",
 		sub_type = 302,
-		desc = "大型作战内使用霞·META击破等级＞100的敌方1次",
+		desc = "大型作战内使用{namecode:229}击破等级＞100的敌方1次",
 		id = 200224,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200231] = {
+		target_id_2 = "970506",
+		sub_type = 302,
+		desc = "大型作战内使用{namecode:230}获得1次胜利",
+		id = 200231,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200232] = {
+		target_id_2 = "970506",
+		sub_type = 302,
+		desc = "大型作战内使用{namecode:230}击破等级＞70的敌方1次",
+		id = 200232,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200233] = {
+		target_id_2 = "970506",
+		sub_type = 302,
+		desc = "大型作战内使用{namecode:230}击破等级＞90的敌方1次",
+		id = 200233,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200234] = {
+		target_id_2 = "970506",
+		sub_type = 302,
+		desc = "大型作战内使用{namecode:230}击破等级＞100的敌方1次",
+		id = 200234,
 		target_num = 1,
 		target_id = "100"
 	}

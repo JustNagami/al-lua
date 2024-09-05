@@ -935,10 +935,10 @@
 		{
 			actor = 306040,
 			side = 2,
-			nameColor = "#A9F548FF",
+			bgName = "star_level_bg_191",
 			hidePaintObj = true,
 			dir = 1,
-			blackBg = true,
+			nameColor = "#A9F548FF",
 			say = "欸嘿嘿，不愧是{namecode:96:瑞鹤}姐姐，一下子就猜到是我了~",
 			typewriter = {
 				speed = 0.05,
@@ -965,10 +965,10 @@
 		{
 			actor = 307060,
 			side = 2,
-			nameColor = "#A9F548FF",
+			bgName = "star_level_bg_191",
 			hidePaintObj = true,
 			dir = 1,
-			blackBg = true,
+			nameColor = "#A9F548FF",
 			say = "嘘——嘘！你吓死我了！！",
 			typewriter = {
 				speed = 0.05,
@@ -983,11 +983,11 @@
 		{
 			expression = 2,
 			side = 2,
-			actor = 306040,
+			bgName = "star_level_bg_191",
 			hidePaintObj = true,
 			dir = 1,
-			blackBg = true,
 			nameColor = "#A9F548FF",
+			actor = 306040,
 			say = "嘿嘿~没关系啦，刚才这点动静里面是听不到的。",
 			typewriter = {
 				speed = 0.05,
@@ -997,10 +997,10 @@
 		{
 			actor = 306040,
 			side = 2,
-			nameColor = "#A9F548FF",
+			bgName = "star_level_bg_191",
 			hidePaintObj = true,
 			dir = 1,
-			blackBg = true,
+			nameColor = "#A9F548FF",
 			say = "怎么样，调查有收获么？和我说说嘛~",
 			typewriter = {
 				speed = 0.05,
@@ -1010,10 +1010,10 @@
 		{
 			actor = 307060,
 			side = 2,
-			nameColor = "#A9F548FF",
+			bgName = "star_level_bg_191",
 			hidePaintObj = true,
 			dir = 1,
-			blackBg = true,
+			nameColor = "#A9F548FF",
 			say = "有一些，不过这里不是说话的好地方……你来找我，是要准备下山了么？",
 			typewriter = {
 				speed = 0.05,
@@ -1023,10 +1023,10 @@
 		{
 			actor = 306040,
 			side = 2,
-			nameColor = "#A9F548FF",
+			bgName = "star_level_bg_191",
 			hidePaintObj = true,
 			dir = 1,
-			blackBg = true,
+			nameColor = "#A9F548FF",
 			say = "嗯~{namecode:20:不知火}突然有工作要做，我就不方便继续打扰她啦。{namecode:96:瑞鹤}姐姐呢，走不走呀？",
 			typewriter = {
 				speed = 0.05,
@@ -1036,10 +1036,10 @@
 		{
 			actor = 307060,
 			side = 2,
-			nameColor = "#A9F548FF",
+			bgName = "star_level_bg_191",
 			hidePaintObj = true,
 			dir = 1,
-			blackBg = true,
+			nameColor = "#A9F548FF",
 			say = "走，我们车上聊。",
 			typewriter = {
 				speed = 0.05,

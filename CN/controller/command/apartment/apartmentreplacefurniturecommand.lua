@@ -26,7 +26,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 
 		var_3_0:ReplaceFurnitures(var_1_2)
 		getProxy(ApartmentProxy):updateApartment(var_3_0)
-		pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_replace_furniture_sucess"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_furniture_save_success"))
 		arg_1_0:sendNotification(GAME.APARTMENT_REPLACE_FURNITURE_DONE)
 	end)
 end

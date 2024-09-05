@@ -52,7 +52,7 @@ function var_0_0.reloadScene(arg_5_0, arg_5_1, arg_5_2)
 
 	seriesAsync({
 		function(arg_6_0)
-			pg.UIMgr.GetInstance():LoadingOn(arg_5_1.data.showLoading)
+			pg.UIMgr.GetInstance():LoadingOn()
 			var_5_1:removeLayerMediator(arg_5_0.facade, arg_5_1, function(arg_7_0)
 				var_5_2 = arg_7_0
 
@@ -136,7 +136,7 @@ function var_0_0.loadScene(arg_20_0, arg_20_1, arg_20_2, arg_20_3, arg_20_4)
 
 	seriesAsync({
 		function(arg_21_0)
-			pg.UIMgr.GetInstance():LoadingOn(arg_20_1.data.showLoading)
+			pg.UIMgr.GetInstance():LoadingOn()
 
 			if arg_20_2 ~= nil then
 				arg_20_1:extendData({
@@ -235,7 +235,7 @@ function var_0_0.loadLayer(arg_35_0, arg_35_1, arg_35_2, arg_35_3, arg_35_4)
 
 	seriesAsync({
 		function(arg_36_0)
-			pg.UIMgr.GetInstance():LoadingOn(arg_35_1.data.showLoading)
+			pg.UIMgr.GetInstance():LoadingOn()
 
 			if arg_35_3 ~= nil then
 				table.ParallelIpairsAsync(arg_35_3, function(arg_37_0, arg_37_1, arg_37_2)

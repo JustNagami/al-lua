@@ -8,6 +8,10 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_4 = var_1_3:getApartment(var_1_1)
 
 	if var_1_4.collectItemDic[var_1_2] then
+		arg_1_0:sendNotification(GAME.APARTMENT_COLLECTION_ITEM_DONE, {
+			itemId = var_1_2
+		})
+
 		return
 	end
 
@@ -17,20 +21,19 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		collection_id = var_1_2
 	}, 28012, function(arg_2_0)
 		if arg_2_0.result == 0 then
+			var_1_4 = var_1_3:getApartment(var_1_1)
 			var_1_4.collectItemDic[var_1_2] = true
 
 			var_1_3:updateApartment(var_1_4)
 
 			local var_2_0 = pg.dorm3d_collection_template[var_1_2].award
+			local var_2_1 = var_1_3:triggerFavor(var_1_1, var_2_0)
 
-			var_1_4 = var_1_3:getApartment(var_1_1)
-
-			local var_2_1 = var_1_4:addFavor(var_2_0)
-
-			var_1_3:updateApartment(var_1_4)
 			arg_1_0:sendNotification(GAME.APARTMENT_COLLECTION_ITEM_DONE, {
+				isNew = true,
 				itemId = var_1_2
 			})
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCollectionItem(var_1_2, 2))
 		else
 			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end

@@ -297,7 +297,7 @@ pg.world_joint_boss_template = {
 		}
 	},
 	{
-		state = "stop",
+		state = "always",
 		name = "伊丽莎白女王·META",
 		painting = "yilishabainvwang",
 		boss_level_id = 136,
@@ -472,12 +472,13 @@ pg.world_joint_boss_template = {
 		}
 	},
 	{
-		item_id = 100000,
+		state = "stop",
 		name = "威奇塔·META",
 		painting = "weiqita",
 		boss_level_id = 211,
 		id = 15,
 		meta_id = 970304,
+		item_id = 100000,
 		description = {
 			{
 				"愈战愈勇",
@@ -495,12 +496,44 @@ pg.world_joint_boss_template = {
 				"战斗的末尾会启用理事会制式MKXIII型外置轨道炮，对战场全域造成巨额伤害。"
 			}
 		},
+		p_offset = {
+			10,
+			679.8,
+			1,
+			1
+		},
+		p_offset_other = {
+			615,
+			679.8,
+			1,
+			1
+		}
+	},
+	{
+		item_id = 100000,
+		name = "鲨·META",
+		painting = "changmen",
+		boss_level_id = 226,
+		id = 16,
+		meta_id = 970506,
+		description = {
+			{
+				"月亏月盈",
+				1,
+				"整个海域会<color=#92fc63>周期性在月亏与月盈状态之间切换</color>，每15秒轮换一次。\n月亏状态下，鲨·META对我方造成的伤害降低20%，同时我方受到的治疗效果降低50%。\n月盈状态下，鲨·META对我方造成的伤害提高20%，同时我方受到治疗效果额外增加100%。"
+			},
+			{
+				"樱花结界",
+				2,
+				"战斗中会出现樱花结界，<color=#92fc63>结界的效果会跟随月亏月盈的状态发生变化</color>。\n月亏状态下，我方角色身处于樱花结界中时会持续损失耐久。\n月盈状态下，我方角色身处于樱花结界中时会减少受到的伤害。"
+			}
+		},
 		state = {
 			{
 				{
 					2024,
-					6,
-					13
+					9,
+					5
 				},
 				{
 					0,
@@ -511,8 +544,8 @@ pg.world_joint_boss_template = {
 			{
 				{
 					2024,
-					9,
-					5
+					12,
+					12
 				},
 				{
 					23,
@@ -522,14 +555,14 @@ pg.world_joint_boss_template = {
 			}
 		},
 		p_offset = {
-			10,
-			679.8,
+			-50,
+			680,
 			1,
 			1
 		},
 		p_offset_other = {
-			615,
-			679.8,
+			630,
+			620,
 			1,
 			1
 		}
@@ -549,6 +582,7 @@ pg.world_joint_boss_template = {
 		12,
 		13,
 		14,
-		15
+		15,
+		16
 	}
 }

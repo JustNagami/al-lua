@@ -39,6 +39,7 @@ function var_0_0.handleNotification(arg_4_0, arg_4_1)
 	elseif var_4_0 == GAME.ON_SOCIAL_LINKED or var_4_0 == GAME.ON_SOCIAL_UNLINKED then
 		arg_4_0.viewComponent:OnCheckAllAccountState()
 		arg_4_0.viewComponent:CloseYostarAlertView()
+		pg.UIMgr.GetInstance():LoadingOff()
 	elseif var_4_0 == var_0_0.ON_SECON_PWD_STATE_CHANGE then
 		arg_4_0.viewComponent:OnSecondPwdStateChange()
 	elseif var_4_0 == var_0_0.OPEN_YOSTAR_ALERT_VIEW then

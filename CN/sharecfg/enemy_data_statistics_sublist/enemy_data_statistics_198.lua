@@ -1,5 +1,89 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_198 = {
+	[14002301] = {
+		cannon = 242,
+		name = "测试者",
+		type = 10,
+		speed_growth = 0,
+		antiaircraft_growth = 0,
+		air = 90,
+		rarity = 6,
+		icon_type = 5,
+		armor = 0,
+		antisub = 0,
+		reload = 150,
+		luck_growth = 0,
+		dodge_growth = 256,
+		battle_unit_type = 95,
+		star = 6,
+		antisub_growth = 0,
+		air_growth = 0,
+		base = 90247,
+		durability = 49500,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		speed = 18,
+		luck = 18,
+		id = 14002301,
+		scale = 120,
+		cannon_growth = 0,
+		pilot_ai_template_id = 10001,
+		fog_fx = "",
+		dodge = 20,
+		reload_growth = 0,
+		hit = 20,
+		torpedo = 135,
+		durability_growth = 0,
+		antiaircraft = 306,
+		hit_growth = 210,
+		bound_bone = {
+			cannon = {
+				{
+					-0.27,
+					0.64,
+					0
+				}
+			},
+			vicegun = {
+				{
+					3.87,
+					4.63,
+					0
+				}
+			},
+			torpedo = {
+				{
+					-0.13,
+					0.12,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					3.87,
+					4.63,
+					0
+				}
+			},
+			plane = {
+				{
+					0.94,
+					4.3,
+					0
+				}
+			}
+		},
+		appear_fx = {
+			"bossguangxiao",
+			"appearQ"
+		},
+		buff_list = {
+			{
+				ID = 50500,
+				LV = 3
+			}
+		}
+	},
 	[14002302] = {
 		cannon = 212,
 		reload = 150,
@@ -1052,50 +1136,6 @@ pg.enemy_data_statistics_198 = {
 			1001144,
 			1001149,
 			1001154
-		}
-	},
-	[14003114] = {
-		cannon = 78,
-		reload = 150,
-		speed_growth = 0,
-		cannon_growth = 3400,
-		rarity = 3,
-		air = 0,
-		torpedo = 0,
-		dodge = 11,
-		durability_growth = 65600,
-		antiaircraft = 106,
-		luck = 0,
-		reload_growth = 0,
-		dodge_growth = 136,
-		hit_growth = 280,
-		star = 4,
-		hit = 25,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 65,
-		base = 90276,
-		durability = 6630,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		speed = 14,
-		armor = 0,
-		id = 14003114,
-		antiaircraft_growth = 4680,
-		antisub = 0,
-		fog_fx = "",
-		equipment_list = {
-			1001159,
-			1001164,
-			1001169,
-			1001174
-		},
-		buff_list = {
-			{
-				ID = 50510,
-				LV = 4
-			}
 		}
 	}
 }

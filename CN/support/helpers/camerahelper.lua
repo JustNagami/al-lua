@@ -62,3 +62,54 @@ function var_0_0.RequestCamera(arg_3_0, arg_3_1)
 		arg_3_0()
 	end
 end
+
+function var_0_0.Request3DDorm(arg_6_0, arg_6_1)
+	if var_0_0.IsAndroid() then
+		local var_6_0 = {
+			"android.permission.RECORD_AUDIO"
+		}
+
+		if PathMgr.getOSVersionNum() < 10 then
+			table.insert(var_6_0, "android.permission.WRITE_EXTERNAL_STORAGE")
+		end
+
+		local function var_6_1(arg_7_0, arg_7_1)
+			local var_7_0 = true
+			local var_7_1 = arg_7_1.Length
+
+			for iter_7_0 = 0, var_7_1 - 1 do
+				if not arg_7_1[iter_7_0] then
+					var_7_0 = false
+
+					break
+				end
+			end
+
+			if var_7_0 then
+				if arg_6_0 then
+					arg_6_0()
+				end
+			elseif arg_6_1 then
+				arg_6_1()
+			end
+		end
+
+		var_0_1:RequestMulti(var_6_0, var_6_1)
+	elseif var_0_0.IsIOS() then
+		local var_6_2 = "camera"
+
+		local function var_6_3(arg_8_0, arg_8_1)
+			if arg_8_1 then
+				if arg_6_0 then
+					arg_6_0()
+				end
+			elseif arg_6_1 then
+				arg_6_1()
+			end
+		end
+
+		var_0_1:RequestSingle(var_6_2, var_6_3)
+	elseif arg_6_0 then
+		arg_6_0()
+	end
+end

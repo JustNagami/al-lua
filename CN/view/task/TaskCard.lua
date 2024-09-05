@@ -57,6 +57,7 @@ function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2)
 	arg_2_0.lockBg = arg_2_0._tf:Find("lock_bg")
 	arg_2_0.lockTxt = arg_2_0.lockBg:Find("btn/Text"):GetComponent(typeof(Text))
 	arg_2_0.sIconOldPosition = Vector2(0, 20)
+	arg_2_0.framePos = arg_2_0.frame.localPosition
 end
 
 function var_0_0.update(arg_3_0, arg_3_1)
@@ -119,6 +120,8 @@ function var_0_0.update(arg_3_0, arg_3_1)
 
 	setActive(arg_3_0.frame, true)
 	setActive(arg_3_0._go, true)
+
+	arg_3_0.frame.transform.localPosition = arg_3_0.framePos
 end
 
 function var_0_0.UpdateStoryIconPosition(arg_6_0, arg_6_1)

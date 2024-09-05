@@ -1,6 +1,118 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_9 = {
+	[301820] = {
+		ship_group = 30182,
+		name = "{namecode:29}",
+		hand_id = 14,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "huayue",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 301820,
+		voice_actor_2 = -1,
+		prefab = "huayue",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "{namecode:26}级驱逐舰十三番舰—{namecode:29}",
+		voice_actor = 232,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.338,
+					1.155,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.238,
+					1.188,
+					0
+				}
+			},
+			torpedo = {
+				{
+					-0.005,
+					-0.025,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.215,
+					1.193,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.46,
+							2.39,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[301821] = {
 		ship_group = 30182,
 		name = "白昼月、盛夏之华",
@@ -12993,120 +13105,6 @@ pg.base.ship_skin_template_9 = {
 						{
 							-0.55,
 							2.329,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[303183] = {
-		ship_group = 30318,
-		name = "一千零一夜之愿",
-		hand_id = 14,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 3,
-		shop_id = 70723,
-		painting = "xiongye_4",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 21,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "159",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		id = 303183,
-		voice_actor_2 = -1,
-		prefab = "xiongye_4",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "锵！{namecode:60}的……舞女？打扮感觉怎么样呀？啊哈哈♡指挥官…为什么要移开视线呀？莫非以为{namecode:60}没发现吗？",
-		voice_actor = 181,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.28,
-					0.72,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.28,
-					0.72,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.22,
-					1.09,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.79,
-							1.95,
 							0
 						}
 					}

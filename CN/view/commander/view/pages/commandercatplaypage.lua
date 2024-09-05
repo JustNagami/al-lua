@@ -209,7 +209,7 @@ end
 function var_0_0.UpdateCommanderTF(arg_25_0, arg_25_1)
 	local var_25_0, var_25_1 = arg_25_0:SimulateAddCommanderExp(arg_25_1)
 
-	arg_25_0:emit(CommanderCatScene.EVENT_PREVIEW, var_25_0)
+	arg_25_0:emit(CommanderCatScene.EVENT_PREVIEW_REVERSE, var_25_1, var_25_0)
 
 	arg_25_0.commanderLvTxt.text = "LV." .. var_25_1.level
 

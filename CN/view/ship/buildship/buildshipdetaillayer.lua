@@ -342,6 +342,8 @@ function var_0_0.playGetShipAnimate(arg_31_0, arg_31_1, arg_31_2)
 		if var_31_0 and var_31_0.build_voice ~= "" then
 			arg_31_0:playCV(var_31_0.build_voice)
 		end
+
+		warning("BuildingCPK PlayCallBack", pg.CpkPlayMgr.GetInstance()._ratioFitter.enabled)
 	end, function()
 		arg_31_0.isPlayAnim = false
 		arg_31_0.canvasgroup.blocksRaycasts = true

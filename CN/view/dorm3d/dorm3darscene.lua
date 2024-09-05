@@ -1,12 +1,12 @@
 ﻿local var_0_0 = class("Dorm3dARScene", import("view.base.BaseUI"))
-local var_0_1 = "dorm3d/scenesres/scenes/arscene/arscene_scene"
+local var_0_1 = "dorm3d/scenesres/scenes/common/ar/arscene"
 
 function var_0_0.getUIName(arg_1_0)
 	return "Dorm3DARUI"
 end
 
 function var_0_0.preload(arg_2_0, arg_2_1)
-	arg_2_0.sceneName = "ARScene"
+	arg_2_0.sceneName = "arscene"
 
 	seriesAsync({
 		function(arg_3_0)
@@ -33,6 +33,7 @@ function var_0_0.didEnter(arg_7_0)
 end
 
 function var_0_0.willExit(arg_8_0)
+	arg_8_0.aiHelperSC:Destroy()
 	SceneOpMgr.Inst:UnloadSceneAsync(string.lower(var_0_1), arg_8_0.sceneName)
 end
 
@@ -41,6 +42,7 @@ function var_0_0.findUI(arg_9_0)
 
 	local var_9_0 = arg_9_0:findTF("MenuList")
 
+	arg_9_0.initARBtn = arg_9_0:findTF("InitARBtn", var_9_0)
 	arg_9_0.resetBtn = arg_9_0:findTF("ResetBtn", var_9_0)
 	arg_9_0.showPlaneBtn = arg_9_0:findTF("ShowPlaneBtn", var_9_0)
 	arg_9_0.hidePlaneBtn = arg_9_0:findTF("HidePlaneBtn", var_9_0)
@@ -58,7 +60,7 @@ function var_0_0.findUI(arg_9_0)
 	setActive(arg_9_0.tipInsPrefab, false)
 	setActive(arg_9_0.tipDistance, false)
 
-	local var_9_2 = GameObject.Find("ScriptHander")
+	local var_9_2 = GameObject.Find("ARScriptHandle")
 
 	arg_9_0.aiHelperSC = GetComponent(var_9_2, "ARHelper")
 end
@@ -66,6 +68,9 @@ end
 function var_0_0.addListener(arg_10_0)
 	onButton(arg_10_0, arg_10_0.backBtn, function()
 		arg_10_0:closeView()
+	end, SFX_PANEL)
+	onButton(arg_10_0, arg_10_0.initARBtn, function()
+		arg_10_0.aiHelperSC:Init()
 	end, SFX_PANEL)
 	onButton(arg_10_0, arg_10_0.resetBtn, function()
 		arg_10_0.aiHelperSC:ResetAll()
@@ -77,18 +82,22 @@ function var_0_0.addListener(arg_10_0)
 		arg_10_0.aiHelperSC:ShowAllPlane(false)
 	end, SFX_PANEL)
 
-	function arg_10_0.aiHelperSC.planeCountCB(arg_15_0, arg_15_1)
-		local var_15_0 = arg_15_0 > 0
+	function arg_10_0.aiHelperSC.planeCountCB(arg_16_0, arg_16_1)
+		local var_16_0 = arg_16_0 > 0
 
-		setActive(arg_10_0.tipCheckPlane, not var_15_0)
-		setActive(arg_10_0.tipInsPrefab, var_15_0 and not arg_15_1)
+		setActive(arg_10_0.tipCheckPlane, not var_16_0)
+		setActive(arg_10_0.tipInsPrefab, var_16_0 and not arg_16_1)
 	end
 
-	function arg_10_0.aiHelperSC.distanceCB(arg_16_0)
-		pg.TipsMgr.GetInstance():ShowTips("距离过近，以后会隐藏")
+	function arg_10_0.aiHelperSC.distanceCB(arg_17_0)
+		if arg_17_0 < 0.3 then
+			warning("距离过近，以后会隐藏")
+			pg.TipsMgr.GetInstance():ShowTips("距离过近，以后会隐藏")
+		end
 	end
 
 	function arg_10_0.aiHelperSC.insPrefabFailCB()
+		warning("距离过近，呼出角色失败")
 		pg.TipsMgr.GetInstance():ShowTips("距离过近，呼出角色失败")
 	end
 

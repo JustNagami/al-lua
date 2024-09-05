@@ -81,10 +81,15 @@ function var_0_0.InitDuplication(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
 		var_7_1.raycastTarget = true
 	end
 
-	local var_7_2 = arg_7_1:GetComponent(typeof(Animator))
+	for iter_7_0, iter_7_1 in ipairs({
+		Animator,
+		Animation
+	}) do
+		local var_7_2 = arg_7_1:GetComponent(typeof(iter_7_1))
 
-	if var_7_2 then
-		var_7_2.enabled = false
+		if var_7_2 then
+			var_7_2.enabled = false
+		end
 	end
 
 	if var_0_1(arg_7_1) or arg_7_3.clearChildEvent then
@@ -96,8 +101,8 @@ function var_0_0.InitDuplication(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
 	if not arg_7_3.keepScrollTxt then
 		local var_7_3 = arg_7_1:GetComponentsInChildren(typeof(ScrollText))
 
-		for iter_7_0 = 1, var_7_3.Length do
-			local var_7_4 = var_7_3[iter_7_0 - 1]
+		for iter_7_2 = 1, var_7_3.Length do
+			local var_7_4 = var_7_3[iter_7_2 - 1]
 
 			setActive(var_7_4.gameObject, false)
 		end
@@ -107,7 +112,9 @@ function var_0_0.InitDuplication(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
 		GetOrAddComponent(arg_7_1, typeof(GraphicRaycaster))
 	end
 
-	arg_7_1.sizeDelta = arg_7_2.sizeDelta
+	arg_7_1.anchorMax = arg_7_1.pivot
+	arg_7_1.anchorMin = arg_7_1.pivot
+	arg_7_1.sizeDelta = arg_7_2.rect.size
 end
 
 function var_0_0.UpdateSettings(arg_8_0, arg_8_1, arg_8_2, arg_8_3)

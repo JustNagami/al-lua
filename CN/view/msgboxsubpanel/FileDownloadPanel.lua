@@ -22,6 +22,7 @@ function var_0_0.UpdateView(arg_3_0, arg_3_1)
 
 	rtf(arg_3_0.viewParent._window).sizeDelta = Vector2.New(1000, 638)
 
+	setActive(arg_3_0.toggleTF, not arg_3_1.hideToggle)
 	arg_3_0:PostRefresh(arg_3_1)
 end
 

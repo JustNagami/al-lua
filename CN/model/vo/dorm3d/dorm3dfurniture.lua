@@ -73,4 +73,90 @@ function var_0_0.GetAcesses(arg_12_0)
 	return var_12_0
 end
 
+function var_0_0.GetShopID(arg_13_0)
+	local var_13_0 = arg_13_0:getConfig("shop_id")
+	local var_13_1 = getProxy(ApartmentProxy):GetFurnitureShopCount(arg_13_0:GetConfigID())
+
+	for iter_13_0 = 1, #var_13_0 - 1 do
+		local var_13_2 = var_13_0[iter_13_0]
+		local var_13_3 = pg.shop_template[var_13_2].limit_args[1]
+
+		if not var_13_3 then
+			return var_13_2
+		elseif var_13_3[1] == "dailycount" or var_13_3[1] == "count" then
+			if var_13_1 < var_13_3[3] then
+				return var_13_2
+			end
+		else
+			return var_13_2
+		end
+	end
+
+	return var_13_0[#var_13_0]
+end
+
+function var_0_0.IsValuable(arg_14_0)
+	return arg_14_0:getConfig("is_exclusive") == 1
+end
+
+function var_0_0.NeedViewTip(arg_15_0)
+	local var_15_0 = var_0_0.bindConfigTable()
+	local var_15_1 = _.keys(var_15_0.get_id_list_by_char_id)
+
+	return _.any(var_15_1, function(arg_16_0)
+		if arg_16_0 == 0 then
+			return false
+		end
+
+		if arg_15_0 and arg_15_0 > 0 and arg_16_0 ~= arg_15_0 then
+			return false
+		end
+
+		local var_16_0 = var_15_0.get_id_list_by_char_id[arg_16_0]
+		local var_16_1 = getProxy(ApartmentProxy):getApartment(arg_16_0)
+
+		if not var_16_1 then
+			return false
+		end
+
+		local var_16_2 = var_16_1:GetFurnitures()
+
+		return _.any(_.reverse(var_16_0), function(arg_17_0)
+			local var_17_0 = Dorm3dFurniture.New({
+				configId = arg_17_0
+			})
+
+			if not var_17_0:GetShopID() then
+				return
+			end
+
+			if not _.detect(var_16_2, function(arg_18_0)
+				return arg_18_0:GetConfigID() == var_17_0:GetConfigID()
+			end) then
+				return
+			end
+
+			return Dorm3dFurniture.GetViewedFlag(arg_17_0) == 0
+		end)
+	end)
+end
+
+function var_0_0.GetViewedFlag(arg_19_0)
+	local var_19_0 = getProxy(PlayerProxy):getRawData().id
+
+	return PlayerPrefs.GetInt(var_19_0 .. "_dorm3dFurnitureViewed_" .. arg_19_0, 0)
+end
+
+function var_0_0.SetViewedFlag(arg_20_0)
+	if var_0_0.GetViewedFlag(arg_20_0) > 0 then
+		return
+	end
+
+	local var_20_0 = getProxy(PlayerProxy):getRawData().id
+
+	PlayerPrefs.SetInt(var_20_0 .. "_dorm3dFurnitureViewed_" .. arg_20_0, arg_20_0)
+
+	return true
+end
+
 return var_0_0

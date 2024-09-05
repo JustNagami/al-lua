@@ -1,0 +1,93 @@
+﻿return {
+	fadeOut = 1.5,
+	dialogbox = 2,
+	hideRecord = true,
+	mode = 2,
+	alpha = 0,
+	id = "DORM3DDAILYCONVERSATION45",
+	hideSkip = true,
+	hideAuto = true,
+	scripts = {
+		{
+			side = 2,
+			actorName = "天狼星",
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "主人是想了解，天狼星是从什么时候开始对您怀抱这样的情愫的？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			},
+			dispatcher = {
+				name = STORY_EVENT.TEST,
+				data = {
+					op_list = {
+						{
+							param = "Play",
+							name = "sikao2",
+							time = 0,
+							type = "action",
+							skip = true
+						},
+						{
+							skip = false,
+							time = 1,
+							type = "wait"
+						}
+					}
+				},
+				callbackData = {
+					hideUI = false,
+					name = STORY_EVENT.TEST_DONE
+				}
+			}
+		},
+		{
+			side = 2,
+			actorName = "天狼星",
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "其实从见到您的瞬间，天狼星就……",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			side = 2,
+			actorName = "天狼星",
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "主人您呢？您是何时开始对天狼星……",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			},
+			options = {
+				{
+					content = "和天狼星一样。",
+					flag = 1
+				},
+				{
+					content = "不知不觉就……",
+					flag = 2
+				}
+			}
+		},
+		{
+			side = 2,
+			actorName = "天狼星",
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "没想到能从您这里得到这个问题的答案……天狼星十分开心哦，我骄傲的主人。",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		}
+	}
+}

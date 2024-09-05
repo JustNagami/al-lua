@@ -11,6 +11,7 @@ var_0_0.TYPE_META = "Meta"
 var_0_0.TYPE_CRUSING = "Crusing"
 var_0_0.TYPE_VOTE = "Vote"
 var_0_0.TYPE_EMOJI = "Emoji"
+var_0_0.TYPE_COVER = "Cover"
 var_0_0.ToastInfo = {
 	[var_0_0.TYPE_ATTIRE] = {
 		Attire = "attire_tpl"
@@ -34,6 +35,9 @@ var_0_0.ToastInfo = {
 	},
 	[var_0_0.TYPE_EMOJI] = {
 		Emoji = "emoji_tpl"
+	},
+	[var_0_0.TYPE_COVER] = {
+		Cover = "cover_tpl"
 	}
 }
 
@@ -546,11 +550,38 @@ function var_0_0.UpdateVote(arg_43_0, arg_43_1, arg_43_2, arg_43_3)
 	end))
 end
 
-function var_0_0.Dispose(arg_46_0)
-	setActive(arg_46_0._tf, false)
-	arg_46_0:ResetUIDandHistory()
+function var_0_0.UpdateCover(arg_46_0, arg_46_1, arg_46_2, arg_46_3)
+	local var_46_0 = arg_46_0:GetAndSet(arg_46_1.type, arg_46_0.container)
+	local var_46_1 = var_46_0:GetComponent(typeof(DftAniEvent))
 
-	for iter_46_0, iter_46_1 in pairs(arg_46_0.pools) do
-		iter_46_1:Clear(false)
+	var_46_1:SetTriggerEvent(function(arg_47_0)
+		if arg_46_2 then
+			arg_46_2()
+		end
+
+		var_46_1:SetTriggerEvent(nil)
+	end)
+	var_46_1:SetEndEvent(function(arg_48_0)
+		setActive(var_46_0, false)
+		arg_46_0.pools[arg_46_1.type .. "Tpl"]:Enqueue(var_46_0)
+		var_46_1:SetEndEvent(nil)
+
+		if arg_46_3 then
+			arg_46_3()
+		end
+	end)
+	var_46_0:GetComponent(typeof(Animation)):Play("attire")
+
+	local var_46_2 = arg_46_1.info
+
+	setText(var_46_0.transform:Find("bg/Text"), HXSet.hxLan(var_46_2:getConfig("name")))
+end
+
+function var_0_0.Dispose(arg_49_0)
+	setActive(arg_49_0._tf, false)
+	arg_49_0:ResetUIDandHistory()
+
+	for iter_49_0, iter_49_1 in pairs(arg_49_0.pools) do
+		iter_49_1:Clear(false)
 	end
 end

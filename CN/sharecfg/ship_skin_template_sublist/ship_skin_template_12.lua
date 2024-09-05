@@ -1,6 +1,120 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_12 = {
+	[401991] = {
+		ship_group = 40199,
+		name = "猎物与陷阱？",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "1102",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70846,
+		painting = "aotuo_2",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 6,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "158",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		id = 401991,
+		voice_actor_2 = -1,
+		prefab = "aotuo_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "哼，别以为这种简单的陷阱就能困住我！不需要你帮忙，我自己就能挣脱！……怎、怎么回事？为什么挣脱不了？！",
+		voice_actor = 364,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.13,
+					0.53,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.11,
+					0.53,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.82,
+					0.4,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.41,
+							2.33,
+							-0.14
+						}
+					}
+				}
+			}
+		}
+	},
 	[402010] = {
 		ship_group = 40201,
 		name = "{namecode:421}",
@@ -13043,106 +13157,6 @@ pg.base.ship_skin_template_12 = {
 			"mail",
 			"touch_body",
 			"touch_head"
-		}
-	},
-	[407032] = {
-		ship_group = 40703,
-		name = "Weiß Uhrzeiger",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "1101",
-		l2d_ignore_drag = 0,
-		group_index = 2,
-		shop_id = 70600,
-		painting = "shitelasai_3",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 7,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "146",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		id = 407032,
-		voice_actor_2 = -1,
-		prefab = "shitelasai_3",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "你要知道，为了换上这身衣服，可是占用了我不少宝贵的时间…就拿你的那份时间来清掉这笔账好了。我会充分享受的，呵呵~",
-		voice_actor = 254,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.91,
-					1.19,
-					0
-				}
-			},
-			plane = {
-				{
-					1.76,
-					1.42,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.54,
-							2.58,
-							-1.89
-						}
-					}
-				}
-			}
 		}
 	}
 }
