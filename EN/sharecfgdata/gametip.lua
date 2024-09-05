@@ -24406,3 +24406,67 @@ _G.pg.base.gametip.town_gold_tip = {
 _G.pg.base.gametip.award_max_warning_minigame = {
 	tip = "Any rewards that <color=#ff5c5c>exceed your max storage capacity</color> will be discarded if you claim them. Do you wish to continue?"
 }
+_G.pg.base.gametip.help_dorm3d_info = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_1",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_2",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_3",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_4",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_5",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_6",
+				path = ""
+			}
+		},
+		disableScroll = true,
+		pageMode = true,
+		ImageMode = true,
+		defaultpage = 1,
+		windowSize = {
+			x = 1263,
+			y = 873
+		},
+		windowPos = {
+			y = -70
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024
+		}
+	}
+}
+_G.pg.base.gametip.report_cannot_comment_level_1 = {
+	tip = "You may write comments after reaching Commander Level $1."
+}
+_G.pg.base.gametip.report_cannot_comment_level_2 = {
+	tip = "You currently cannot write comments."
+}
+_G.pg.base.gametip.commander_exp_limit = {
+	tip = "This Meowfficer has reached max level and cannot be added here."
+}

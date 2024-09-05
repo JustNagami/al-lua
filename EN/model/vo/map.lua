@@ -252,6 +252,13 @@ function var_0_0.GetChapterList(arg_28_0)
 	return arg_28_0.chapterIds
 end
 
+var_0_0.NOT_REAR_CHAPTERS = {
+	2100328,
+	2100338,
+	2100327,
+	2100337
+}
+
 function var_0_0.GetRearChaptersOfRemaster(arg_29_0)
 	if not arg_29_0 or arg_29_0 == 0 then
 		return
@@ -277,7 +284,7 @@ function var_0_0.GetRearChaptersOfRemaster(arg_29_0)
 			return arg_32_0
 		end)
 		local var_31_1 = _.filter(arg_31_1, function(arg_33_0)
-			return not var_31_0[arg_33_0]
+			return not var_31_0[arg_33_0] and not table.contains(var_0_0.NOT_REAR_CHAPTERS, arg_33_0)
 		end)
 
 		table.insert(var_29_2, _.max(var_31_1))

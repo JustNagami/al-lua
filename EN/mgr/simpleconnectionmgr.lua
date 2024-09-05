@@ -102,7 +102,6 @@ function var_0_1.SetErrorCB(arg_7_0, arg_7_1)
 end
 
 function var_0_1.onError(arg_8_0)
-	var_0_0.UIMgr.GetInstance():LoadingOff()
 	var_0_1.stopTimer()
 
 	arg_8_0 = tostring(arg_8_0)

@@ -277,6 +277,8 @@ function var_0_0.handleNotification(arg_14_0, arg_14_1)
 	elseif var_14_0 == GAME.SUBMIT_AVATAR_TASK_DONE or var_14_0 == GAME.SUBMIT_ACTIVITY_TASK_DONE then
 		local function var_14_11()
 			arg_14_0.viewComponent:refreshPage()
+
+			arg_14_0.refreshWeekTaskPageFlag = true
 		end
 
 		if #var_14_1.awards > 0 then

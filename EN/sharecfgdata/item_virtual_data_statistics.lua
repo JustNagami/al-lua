@@ -186604,3 +186604,49 @@ _G.pg.base.item_virtual_data_statistics[200246] = {
 		}
 	}
 }
+_G.pg.base.item_virtual_data_statistics[60486] = {
+	display = "A Clef to Paradise collectible item. Removed after the event ends.",
+	name = "Dreamland Renovation Plans",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 99,
+	is_world = 0,
+	icon = "Props/60486",
+	id = 60486,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65016] = {
+	display = "Used to exchange for a portrait frame. Removed after the event ends.",
+	name = "Training Pts",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xunliandianshu_20240905",
+	id = 65016,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
