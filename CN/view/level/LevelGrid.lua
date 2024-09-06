@@ -29,7 +29,7 @@ function var_0_0.init(arg_1_0)
 	arg_1_0.missileStrikeTargetLine = nil
 	arg_1_0.cellEdges = {}
 	arg_1_0.walls = {}
-	arg_1_0.material_Add = LoadAny("ui/commonUI_atlas", "add", typeof(Material))
+	arg_1_0.material_Add = LoadAny("artresource/effect/common/material/add", "", typeof(Material))
 	arg_1_0.loader = AutoLoader.New()
 end
 
