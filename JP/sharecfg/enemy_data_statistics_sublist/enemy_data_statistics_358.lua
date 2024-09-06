@@ -1,5 +1,51 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_358 = {
+	[16643205] = {
+		cannon = 135,
+		battle_unit_type = 90,
+		fog_fx = "",
+		speed_growth = 0,
+		pilot_ai_template_id = 10001,
+		air = 254,
+		speed = 20,
+		dodge = 11,
+		id = 16643205,
+		cannon_growth = 0,
+		rarity = 3,
+		reload_growth = 0,
+		dodge_growth = 156,
+		luck = 18,
+		star = 4,
+		hit = 20,
+		antisub_growth = 0,
+		air_growth = 3500,
+		reload = 150,
+		base = 90968,
+		durability = 17240,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		hit_growth = 210,
+		armor = 0,
+		torpedo = 0,
+		durability_growth = 312000,
+		antisub = 0,
+		antiaircraft = 275,
+		antiaircraft_growth = 3250,
+		specific_fx_scale = {},
+		appear_fx = {
+			"appearQ"
+		},
+		equipment_list = {
+			1003478,
+			1003483,
+			1003488,
+			1003493,
+			1003498,
+			1003558
+		},
+		buff_list = {}
+	},
 	[16643301] = {
 		cannon = 280,
 		hit_growth = 330,
@@ -1082,44 +1128,5 @@ pg.enemy_data_statistics_358 = {
 		random_equipment_list = {},
 		random_nub = {},
 		buff_list = {}
-	},
-	[16645101] = {
-		cannon = 60,
-		reload = 150,
-		rarity = 2,
-		cannon_growth = 0,
-		torpedo = 0,
-		air = 0,
-		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		luck = 0,
-		hit_growth = 120,
-		reload_growth = 0,
-		dodge_growth = 0,
-		icon = "wuxingzhixi",
-		star = 2,
-		hit = 9999,
-		antisub_growth = 0,
-		air_growth = 0,
-		speed_growth = 0,
-		base = 90535,
-		durability = 99999,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		speed = 15,
-		armor = 0,
-		id = 16645101,
-		antiaircraft_growth = 0,
-		antisub = 0,
-		fog_fx = "",
-		equipment_list = {},
-		buff_list = {
-			{
-				ID = 200983,
-				LV = 1
-			}
-		}
 	}
 }

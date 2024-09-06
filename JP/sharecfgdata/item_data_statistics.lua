@@ -14197,9 +14197,9 @@ _G.pg.base.item_data_statistics[30012] = {
 	open_directly = 0,
 	name = "クロキッド装備箱T2",
 	display = [[
-ユニオン装備がランダムで一つ出現する：
-低確率で<color=#3dc6ff>レア装備</color>が出現する
-高確率でノーマル装備が出現する
+ユニオン装備をランダムで一つ獲得する：
+40%で<color=#3dc6ff>レア装備</color>を獲得する
+60%でノーマル装備を獲得する
 *<color=#ffde38>5つ</color>で<color=#d797ff>クロキッド装備箱T3</color>に合成可能]],
 	type = 5,
 	display_effect = "OpenBox",
@@ -14232,7 +14232,7 @@ _G.pg.base.item_data_statistics[30012] = {
 _G.pg.base.item_data_statistics[30013] = {
 	open_directly = 0,
 	name = "クロキッド装備箱T3",
-	display = "ユニオン装備がランダムで一つ出現する：\n低確率で<color=#d797ff>Sレア装備</color>が出現する\n高確率で<color=#3dc6ff>レア装備</color>が出現する",
+	display = "ユニオン装備をランダムで一つ獲得する：\n25%で<color=#d797ff>Sレア装備</color>を獲得する\n75%で<color=#3dc6ff>レア装備</color>を獲得する",
 	type = 5,
 	display_effect = "OpenBox",
 	id = 30013,
@@ -14264,7 +14264,7 @@ _G.pg.base.item_data_statistics[30013] = {
 _G.pg.base.item_data_statistics[30014] = {
 	open_directly = 0,
 	name = "クロキッド装備箱T4",
-	display = "ユニオン装備がランダムで一つ出現する：\n低確率で<color=#ffde38>SSレア装備</color>が出現する\n高確率で<color=#d797ff>Sレア装備</color>が出現する",
+	display = "ユニオン装備をランダムで一つ獲得する：\n15%で<color=#ffde38>SSレア装備</color>を獲得する\n85%で<color=#d797ff>Sレア装備</color>を獲得する",
 	type = 5,
 	display_effect = "OpenBox",
 	id = 30014,
@@ -14361,9 +14361,9 @@ _G.pg.base.item_data_statistics[30022] = {
 	open_directly = 0,
 	name = "ヴィスカー装備箱T2",
 	display = [[
-ロイヤル装備がランダムで一つ出現する：
-低確率で<color=#3dc6ff>レア装備</color>が出現する
-高確率でノーマル装備が出現する
+ロイヤル装備をランダムで一つ獲得する：
+40%で<color=#3dc6ff>レア装備</color>を獲得する
+60%でノーマル装備を獲得する
 *<color=#ffde38>5つ</color>で<color=#d797ff>ヴィスカー装備箱T3</color>に合成可能]],
 	type = 5,
 	display_effect = "OpenBox",
@@ -14396,7 +14396,7 @@ _G.pg.base.item_data_statistics[30022] = {
 _G.pg.base.item_data_statistics[30023] = {
 	open_directly = 0,
 	name = "ヴィスカー装備箱T3",
-	display = "ロイヤル装備がランダムで一つ出現する：\n低確率で<color=#d797ff>Sレア装備</color>が出現する\n高確率で<color=#3dc6ff>レア装備</color>が出現する",
+	display = "ロイヤル装備をランダムで一つ獲得する：\n25%で<color=#d797ff>Sレア装備</color>を獲得する\n75%で<color=#3dc6ff>レア装備</color>を獲得する",
 	type = 5,
 	display_effect = "OpenBox",
 	id = 30023,
@@ -14428,7 +14428,7 @@ _G.pg.base.item_data_statistics[30023] = {
 _G.pg.base.item_data_statistics[30024] = {
 	open_directly = 0,
 	name = "ヴィスカー装備箱T4",
-	display = "ロイヤル装備がランダムで一つ出現する：\n低確率で<color=#ffde38>SSレア装備</color>が出現する\n高確率で<color=#d797ff>Sレア装備</color>が出現する",
+	display = "ロイヤル装備をランダムで一つ獲得する：\n15%で<color=#ffde38>SSレア装備</color>を獲得する\n85%で<color=#d797ff>Sレア装備</color>を獲得する",
 	type = 5,
 	display_effect = "OpenBox",
 	id = 30024,
@@ -14525,9 +14525,9 @@ _G.pg.base.item_data_statistics[30032] = {
 	open_directly = 0,
 	name = "蔵王重工装備箱T2",
 	display = [[
-重桜装備がランダムで一つ出現する：
-低確率で<color=#3dc6ff>レア装備</color>が出現する
-高確率でノーマル装備が出現する
+重桜装備をランダムで一つ獲得する：
+40%で<color=#3dc6ff>レア装備</color>を獲得する
+60%でノーマル装備を獲得する
 *<color=#ffde38>5つ</color>で<color=#d797ff>蔵王重工装備箱T3</color>に合成可能]],
 	type = 5,
 	display_effect = "OpenBox",
@@ -14560,7 +14560,7 @@ _G.pg.base.item_data_statistics[30032] = {
 _G.pg.base.item_data_statistics[30033] = {
 	open_directly = 0,
 	name = "蔵王重工装備箱T3",
-	display = "重桜装備がランダムで一つ出現する：\n低確率で<color=#d797ff>Sレア装備</color>が出現する\n高確率で<color=#3dc6ff>レア装備</color>が出現する",
+	display = "重桜装備をランダムで一つ獲得する：\n25%で<color=#d797ff>Sレア装備</color>を獲得する\n75%で<color=#3dc6ff>レア装備</color>を獲得する",
 	type = 5,
 	display_effect = "OpenBox",
 	id = 30033,
@@ -14592,7 +14592,7 @@ _G.pg.base.item_data_statistics[30033] = {
 _G.pg.base.item_data_statistics[30034] = {
 	open_directly = 0,
 	name = "蔵王重工装備箱T4",
-	display = "重桜装備がランダムで一つ出現する：\n低確率で<color=#ffde38>SSレア装備</color>が出現する\n高確率で<color=#d797ff>Sレア装備</color>が出現する",
+	display = "重桜装備をランダムで一つ獲得する：\n15%で<color=#ffde38>SSレア装備</color>を獲得する\n85%で<color=#d797ff>Sレア装備</color>を獲得する",
 	type = 5,
 	display_effect = "OpenBox",
 	id = 30034,
@@ -14689,9 +14689,9 @@ _G.pg.base.item_data_statistics[30042] = {
 	open_directly = 0,
 	name = "クラップ装備箱T2",
 	display = [[
-鉄血装備がランダムで一つ出現する：
-低確率で<color=#3dc6ff>レア装備</color>が出現する
-高確率でノーマル装備が出現する
+鉄血装備をランダムで一つ獲得する：
+40%で<color=#3dc6ff>レア装備</color>を獲得する
+60%でノーマル装備を獲得する
 *<color=#ffde38>5つ</color>で<color=#d797ff>クラップ装備箱T3</color>に合成可能]],
 	type = 5,
 	display_effect = "OpenBox",
@@ -14724,7 +14724,7 @@ _G.pg.base.item_data_statistics[30042] = {
 _G.pg.base.item_data_statistics[30043] = {
 	open_directly = 0,
 	name = "クラップ装備箱T3",
-	display = "鉄血装備がランダムで一つ出現する：\n低確率で<color=#d797ff>Sレア装備</color>が出現する\n高確率で<color=#3dc6ff>レア装備</color>が出現する",
+	display = "鉄血装備をランダムで一つ獲得する：\n25%で<color=#d797ff>Sレア装備</color>を獲得する\n75%で<color=#3dc6ff>レア装備</color>を獲得する",
 	type = 5,
 	display_effect = "OpenBox",
 	id = 30043,
@@ -14756,7 +14756,7 @@ _G.pg.base.item_data_statistics[30043] = {
 _G.pg.base.item_data_statistics[30044] = {
 	open_directly = 0,
 	name = "クラップ装備箱T4",
-	display = "鉄血装備がランダムで一つ出現する：\n低確率で<color=#ffde38>SSレア装備</color>が出現する\n高確率で<color=#d797ff>Sレア装備</color>が出現する",
+	display = "鉄血装備をランダムで一つ獲得する：\n15%で<color=#ffde38>SSレア装備</color>を獲得する\n85%で<color=#d797ff>Sレア装備</color>を獲得する",
 	type = 5,
 	display_effect = "OpenBox",
 	id = 30044,
@@ -98044,5 +98044,95 @@ _G.pg.base.item_data_statistics[59853] = {
 	shiptrans_id = {
 		101994
 	},
+	combination_display = {}
+}
+_G.pg.base.item_data_statistics[21037] = {
+	open_directly = 0,
+	name = "結晶：長門(META)",
+	display = "長門(META)の能力を上昇させるアイテム。メタラボの限界突破に使用可能",
+	type = 4,
+	display_effect = "",
+	id = 21037,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_undefined",
+	link_id = 0,
+	icon = "Props/21037",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	limit = "[]",
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_data_statistics[21916] = {
+	open_directly = 0,
+	name = "長門(META)解析Pt",
+	display = "長門(META)の解析ポイント",
+	type = 4,
+	display_effect = "",
+	id = 21916,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_undefined",
+	link_id = 0,
+	icon = "Props/21916",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	limit = "[]",
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_data_statistics[30206] = {
+	open_directly = 0,
+	name = "蔵王重工装備箱T3（販促ダミー）",
+	display = "使用すると重桜兵装を入手できます：\n<color=#d797ff>Sレア</color>装備を100%で入手できます",
+	type = 5,
+	display_effect = "OpenBox",
+	id = 30206,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "Props/30206",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	limit = "[]",
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "79721",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {
+		1,
+		100
+	},
+	index = {},
+	shiptrans_id = {},
 	combination_display = {}
 }

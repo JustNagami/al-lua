@@ -1,5 +1,47 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_295 = {
+	[16514304] = {
+		cannon = 330,
+		name = "オミッターγ",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 300,
+		hit_growth = 320,
+		dodge = 24,
+		base = 90428,
+		antiaircraft = 400,
+		speed = 18,
+		reload_growth = 0,
+		dodge_growth = 228,
+		luck = 30,
+		battle_unit_type = 95,
+		hit = 30,
+		antisub_growth = 0,
+		air_growth = 0,
+		antisub = 0,
+		torpedo = 190,
+		durability = 175000,
+		armor_growth = 0,
+		durability_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		torpedo_growth = 0,
+		fog_fx = "",
+		id = 16514304,
+		appear_fx = {
+			"bossguangxiao",
+			"appearQ"
+		},
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 50500,
+				LV = 4
+			}
+		}
+	},
 	[16515001] = {
 		cannon = 8,
 		reload = 150,
@@ -1022,38 +1064,6 @@ pg.enemy_data_statistics_295 = {
 			"bossguangxiao",
 			"appearQ"
 		},
-		equipment_list = {},
-		buff_list = {}
-	},
-	[16517008] = {
-		cannon = 1000,
-		reload = 150,
-		speed_growth = 0,
-		cannon_growth = 0,
-		base = 90535,
-		air = 0,
-		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		speed = 10,
-		luck = 0,
-		reload_growth = 0,
-		dodge_growth = 0,
-		icon = "qingchuzhe",
-		antiaircraft_growth = 0,
-		hit = 10,
-		antisub_growth = 0,
-		air_growth = 0,
-		antisub = 250,
-		torpedo = 0,
-		durability = 999999,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		hit_growth = 120,
-		armor = 0,
-		fog_fx = "",
-		id = 16517008,
 		equipment_list = {},
 		buff_list = {}
 	}

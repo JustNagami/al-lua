@@ -1,5 +1,51 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_280 = {
+	[16306001] = {
+		cannon = 750,
+		name = "古代遺跡守護者マックスパワー",
+		hit_growth = 210,
+		speed_growth = 0,
+		pilot_ai_template_id = 10001,
+		air = 0,
+		speed = 25,
+		dodge = 0,
+		antisub = 0,
+		cannon_growth = 0,
+		fog_fx = "",
+		reload_growth = 0,
+		dodge_growth = 198,
+		luck = 0,
+		reload = 150,
+		hit = 9999,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 500,
+		base = 90716,
+		durability = 500000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 600,
+		id = 16306001,
+		battle_unit_type = 95,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		appear_fx = {
+			"bossguangxiao",
+			"appearQ"
+		},
+		equipment_list = {}
+	},
 	[16306002] = {
 		cannon = 750,
 		name = "古代遺跡守護者マックスパワー-第二形態",
@@ -1224,44 +1270,6 @@ pg.enemy_data_statistics_280 = {
 		equipment_list = {
 			1006001,
 			1006006,
-			1006011
-		}
-	},
-	[16401002] = {
-		cannon = 10,
-		reload = 150,
-		speed_growth = 0,
-		cannon_growth = 800,
-		rarity = 2,
-		air = 0,
-		torpedo = 22,
-		dodge = 0,
-		durability_growth = 5920,
-		antiaircraft = 45,
-		luck = 0,
-		reload_growth = 0,
-		dodge_growth = 0,
-		hit_growth = 144,
-		star = 2,
-		hit = 10,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 30,
-		base = 90720,
-		durability = 180,
-		armor_growth = 0,
-		torpedo_growth = 2000,
-		luck_growth = 0,
-		speed = 15,
-		armor = 0,
-		id = 16401002,
-		antiaircraft_growth = 1600,
-		antisub = 0,
-		fog_fx = "",
-		equipment_list = {
-			1006016,
-			1006021,
-			1006031,
 			1006011
 		}
 	}

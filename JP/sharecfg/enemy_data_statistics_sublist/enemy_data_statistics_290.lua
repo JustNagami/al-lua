@@ -1,5 +1,52 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_290 = {
+	[16502203] = {
+		cannon = 82,
+		name = "ル・マルス駒式統御武装「Wander」",
+		type = 3,
+		speed_growth = 0,
+		pilot_ai_template_id = 10001,
+		air = 0,
+		fog_fx = "",
+		dodge = 12,
+		speed = 20,
+		luck = 15,
+		antisub = 0,
+		reload_growth = 0,
+		dodge_growth = 170,
+		antiaircraft_growth = 3200,
+		reload = 150,
+		hit = 16,
+		antisub_growth = 0,
+		air_growth = 0,
+		cannon_growth = 1600,
+		base = 90279,
+		icon_type = 3,
+		armor_growth = 0,
+		torpedo_growth = 1500,
+		antiaircraft = 155,
+		hit_growth = 210,
+		armor = 0,
+		durability = 12040,
+		torpedo = 75,
+		id = 16502203,
+		durability_growth = 249600,
+		luck_growth = 0,
+		battle_unit_type = 90,
+		specific_fx_scale = {
+			yuanchou_kandao = 0.04
+		},
+		appear_fx = {
+			"appearQ",
+			"yuanchou_kandao"
+		},
+		equipment_list = {
+			1101092,
+			1101097,
+			1101102,
+			1101107
+		}
+	},
 	[16502204] = {
 		cannon = 140,
 		name = "ル・マルス駒式統御武装「Guard」",
@@ -1213,41 +1260,5 @@ pg.enemy_data_statistics_290 = {
 			1000818,
 			1000823
 		}
-	},
-	[16503301] = {
-		cannon = 170,
-		reload = 150,
-		speed_growth = 0,
-		cannon_growth = 0,
-		pilot_ai_template_id = 10001,
-		air = 0,
-		battle_unit_type = 95,
-		dodge = 14,
-		base = 90741,
-		durability_growth = 0,
-		antiaircraft = 260,
-		reload_growth = 0,
-		dodge_growth = 196,
-		speed = 35,
-		luck = 25,
-		hit = 38,
-		antisub_growth = 0,
-		air_growth = 0,
-		antiaircraft_growth = 0,
-		torpedo = 125,
-		durability = 86200,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		hit_growth = 330,
-		armor = 0,
-		id = 16503301,
-		fog_fx = "",
-		antisub = 0,
-		appear_fx = {
-			"bossguangxiao",
-			"appearQ"
-		},
-		equipment_list = {}
 	}
 }

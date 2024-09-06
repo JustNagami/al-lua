@@ -1,5 +1,46 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_244 = {
+	[15602104] = {
+		cannon = 78,
+		reload = 150,
+		speed_growth = 0,
+		cannon_growth = 3400,
+		battle_unit_type = 65,
+		air = 0,
+		base = 90251,
+		dodge = 11,
+		durability_growth = 65600,
+		antiaircraft = 106,
+		speed = 14,
+		reload_growth = 0,
+		dodge_growth = 136,
+		luck = 0,
+		antiaircraft_growth = 4680,
+		hit = 25,
+		antisub_growth = 0,
+		air_growth = 0,
+		antisub = 0,
+		torpedo = 0,
+		durability = 6630,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		hit_growth = 280,
+		armor = 0,
+		fog_fx = "",
+		id = 15602104,
+		equipment_list = {
+			1000777,
+			1000782,
+			1000787
+		},
+		buff_list = {
+			{
+				ID = 50510,
+				LV = 3
+			}
+		}
+	},
 	[15602105] = {
 		cannon = 36,
 		reload = 150,
@@ -1181,59 +1222,6 @@ pg.enemy_data_statistics_244 = {
 				ID = 50500,
 				LV = 4
 			},
-			{
-				ID = 8924,
-				LV = 1
-			}
-		}
-	},
-	[15603204] = {
-		cannon = 122,
-		name = "演算投影「重巡洋艦」",
-		type = 3,
-		speed_growth = 0,
-		antiaircraft_growth = 3200,
-		air = 0,
-		rarity = 4,
-		armor = 0,
-		id = 15603204,
-		reload = 150,
-		luck_growth = 0,
-		battle_unit_type = 90,
-		dodge_growth = 156,
-		star = 4,
-		antisub_growth = 0,
-		air_growth = 0,
-		base = 90618,
-		durability = 13670,
-		armor_growth = 0,
-		torpedo_growth = 1500,
-		speed = 20,
-		luck = 18,
-		antisub = 0,
-		cannon_growth = 1700,
-		fog_fx = "",
-		dodge = 11,
-		reload_growth = 0,
-		hit = 20,
-		torpedo = 105,
-		durability_growth = 249600,
-		antiaircraft = 205,
-		hit_growth = 210,
-		armor_type = 2,
-		specific_fx_scale = {},
-		appear_fx = {
-			"heisewuqi_stg",
-			"appearQ"
-		},
-		equipment_list = {
-			1101103,
-			873906,
-			873907,
-			873908,
-			873905
-		},
-		buff_list = {
 			{
 				ID = 8924,
 				LV = 1

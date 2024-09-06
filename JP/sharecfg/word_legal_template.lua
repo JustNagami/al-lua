@@ -5746,7 +5746,20 @@ function temp()
 			this = true
 		},
 		門 = {
-			this = true
+			this = true,
+			["("] = {
+				M = {
+					E = {
+						T = {
+							A = {
+								[")"] = {
+									this = true
+								}
+							}
+						}
+					}
+				}
+			}
 		},
 		春 = {
 			this = true,
@@ -6792,6 +6805,9 @@ function temp()
 	var_0_1.瑞 = {
 		鶴 = {
 			this = true
+		},
+		鳳 = {
+			this = true
 		}
 	}
 end
@@ -7651,6 +7667,16 @@ temp()
 function temp()
 	var_0_1.吾 = {
 		妻 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.陸 = {
+		奧 = {
 			this = true
 		}
 	}

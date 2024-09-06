@@ -1,5 +1,50 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_395 = {
+	[295171] = {
+		cannon = 187,
+		name = "神通(META)-Tier.6",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 42,
+		base = 90805,
+		durability_growth = 0,
+		antiaircraft = 170,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 40,
+		hit = 60,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 201,
+		durability = 150000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295171,
+		buff_list = {
+			{
+				ID = 200575,
+				LV = 1
+			},
+			{
+				ID = 200577,
+				LV = 1
+			},
+			{
+				ID = 200579,
+				LV = 1
+			}
+		}
+	},
 	[295172] = {
 		cannon = 203,
 		name = "神通(META)-Tier.7",
@@ -1031,47 +1076,6 @@ pg.enemy_data_statistics_395 = {
 		antisub = 0,
 		fog_fx = "",
 		id = 295197,
-		buff_list = {
-			{
-				ID = 200786,
-				LV = 1
-			},
-			{
-				ID = 50510,
-				LV = 1
-			}
-		}
-	},
-	[295198] = {
-		cannon = 176,
-		name = "ロドニー(META)-Tier.3",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 32,
-		base = 90888,
-		durability_growth = 0,
-		antiaircraft = 155,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 50,
-		luck = 50,
-		hit = 45,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 491000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295198,
 		buff_list = {
 			{
 				ID = 200786,
