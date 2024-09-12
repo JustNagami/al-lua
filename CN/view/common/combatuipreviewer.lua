@@ -3,6 +3,11 @@ local var_0_1 = Vector3(0, 1, 40)
 local var_0_2 = Vector3(35, 1, 40)
 local var_0_3 = Vector3(30, 0, 0)
 local var_0_4 = Vector3(330, 0, 0)
+local var_0_5 = Vector3(-532, 157, -675)
+local var_0_6 = Vector3(-665, 70, -675)
+local var_0_7 = Vector3(473, 157, -675)
+local var_0_8 = Vector3(-791, 70, -675)
+local var_0_9 = Vector3(464, 70, -675)
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.rawImage = arg_1_1
@@ -289,42 +294,20 @@ end
 
 function var_0_0.updateBarPos(arg_20_0)
 	if arg_20_0.seaCharacter then
-		local var_20_0 = Vector3(arg_20_0.seaCharacter.transform.localPosition.x, arg_20_0.seaCharacter.transform.localPosition.y, arg_20_0.seaCharacter.transform.localPosition.z)
-
-		ys.Battle.BattleVariable.CameraPosToUICameraByRef(var_20_0)
-
-		var_20_0.x = var_20_0.x - 7.88
-		var_20_0.y = var_20_0.y + 12.8
-		var_20_0.z = 0
-		arg_20_0.heroBar.position = var_20_0
-
-		local var_20_1 = Clone(var_20_0)
-
-		var_20_1.y = var_20_1.y - 1.5
-		arg_20_0.flagShipMark.position = var_20_1
-
-		if arg_20_0.chatPopGo.activeSelf then
-			local var_20_2 = Clone(var_20_1)
-
-			var_20_2.x = var_20_2.x - 1.5
-			arg_20_0.chatPop.position = var_20_2
-		end
+		arg_20_0.heroBar.localPosition = var_0_5
+		arg_20_0.flagShipMark.localPosition = var_0_6
 	end
 
 	if arg_20_0.seaEnemy then
-		local var_20_3 = Vector3(arg_20_0.seaEnemy.transform.localPosition.x, arg_20_0.seaEnemy.transform.localPosition.y, arg_20_0.seaEnemy.transform.localPosition.z)
-
-		ys.Battle.BattleVariable.CameraPosToUICameraByRef(var_20_3)
-
-		var_20_3.x = var_20_3.x - 6.98
-		var_20_3.y = var_20_3.y + 12.8
-		var_20_3.z = 0
-		arg_20_0.enemyBar.position = var_20_3
+		arg_20_0.enemyBar.localPosition = var_0_7
 	end
 end
 
 function var_0_0.updatePopUp(arg_21_0)
 	setActive(arg_21_0.chatPop, true)
+
+	arg_21_0.chatPop.localPosition = var_0_8
+
 	LeanTween.cancel(arg_21_0.chatPop)
 
 	if arg_21_0.chatPop.transform:GetComponent(typeof(Animation)) then
@@ -381,112 +364,101 @@ function var_0_0.updateHPPop(arg_25_0)
 	end
 
 	local var_25_0 = math.random(1, 4)
-	local var_25_1
-
-	var_25_1 = math.random(1, 2) > 1
-
-	local var_25_2 = arg_25_0._popNumBundle:GetPop(false, true, false, 114, {
+	local var_25_1 = math.random(1, 2) > 1
+	local var_25_2 = arg_25_0._popNumBundle:GetPop(false, var_25_1, false, 114, {
 		var_25_0,
 		1
 	})
 
-	;({}).GetReferenceVector = function()
-		return arg_25_0.seaEnemy.transform.localPosition
-	end
-
-	local var_25_3 = Clone(arg_25_0.enemyBar.position)
-
-	var_25_3.x = var_25_3.x - 1.5
-	var_25_3.y = var_25_3.y - 1.5
-	var_25_2._tf.position = var_25_3
+	var_25_2._tf.localPosition = var_0_9
 
 	var_25_2:Play()
 end
 
-function var_0_0.SeaUpdate(arg_27_0)
-	local var_27_0 = -20
-	local var_27_1 = 60
-	local var_27_2 = 0
-	local var_27_3 = 60
-	local var_27_4 = ys.Battle.BattleConfig
-	local var_27_5 = ys.Battle.BattleConst
+function var_0_0.SeaUpdate(arg_26_0)
+	local var_26_0 = -20
+	local var_26_1 = 60
+	local var_26_2 = 0
+	local var_26_3 = 60
+	local var_26_4 = ys.Battle.BattleConfig
+	local var_26_5 = ys.Battle.BattleConst
 
-	local function var_27_6()
-		arg_27_0:updateBarPos()
+	local function var_26_6()
+		arg_26_0:updateBarPos()
 	end
 
-	pg.TimeMgr.GetInstance():AddBattleTimer("barrageUpdateTimer", -1, 0.033, var_27_6)
+	pg.TimeMgr.GetInstance():AddBattleTimer("barrageUpdateTimer", -1, 0.033, var_26_6)
 
-	local function var_27_7()
-		arg_27_0:updatePopUp()
+	local function var_26_7()
+		arg_26_0:updatePopUp()
 	end
 
-	pg.TimeMgr.GetInstance():AddBattleTimer("popupUpdateTimer", -1, 10, var_27_7)
+	pg.TimeMgr.GetInstance():AddBattleTimer("popupUpdateTimer", -1, 10, var_26_7)
 
-	local function var_27_8()
-		arg_27_0:updateSkillFloat()
+	local function var_26_8()
+		arg_26_0:updateSkillFloat()
 	end
 
-	pg.TimeMgr.GetInstance():AddBattleTimer("skillFloatUpdateTimer", -1, 10, var_27_8)
+	pg.TimeMgr.GetInstance():AddBattleTimer("skillFloatUpdateTimer", -1, 10, var_26_8)
 
-	local function var_27_9()
-		arg_27_0:updateHPPop()
+	local function var_26_9()
+		arg_26_0:updateHPPop()
 	end
 
-	pg.TimeMgr.GetInstance():AddBattleTimer("HPPopUpdateTimer", -1, 3, var_27_9)
+	pg.TimeMgr.GetInstance():AddBattleTimer("HPPopUpdateTimer", -1, 3, var_26_9)
 end
 
-function var_0_0.clear(arg_32_0)
+function var_0_0.clear(arg_31_0)
 	pg.TimeMgr.GetInstance():RemoveAllBattleTimer()
-	Destroy(arg_32_0.seaCharacter)
-	Destroy(arg_32_0.seaEnemy)
-	Destroy(arg_32_0.uiGO)
-	Destroy(arg_32_0.hpBarGO)
-	Destroy(arg_32_0.enemyBarGO)
+	Destroy(arg_31_0.seaCharacter)
+	Destroy(arg_31_0.seaEnemy)
+	Destroy(arg_31_0.uiGO)
+	Destroy(arg_31_0.hpBarGO)
+	Destroy(arg_31_0.enemyBarGO)
 
-	if arg_32_0.seaView then
-		arg_32_0.seaView:Dispose()
+	if arg_31_0.seaView then
+		arg_31_0.seaView:Dispose()
 
-		arg_32_0.seaView = nil
+		arg_31_0.seaView = nil
 	end
 
-	if arg_32_0._popNumMgr then
-		arg_32_0._popNumMgr:Clear()
+	if arg_31_0._popNumMgr then
+		arg_31_0._popNumMgr:Clear()
 	end
 
-	if arg_32_0.weaponList then
-		for iter_32_0, iter_32_1 in ipairs(arg_32_0.weaponList) do
-			for iter_32_2, iter_32_3 in ipairs(iter_32_1.emitterList) do
-				iter_32_3:Destroy()
+	if arg_31_0.weaponList then
+		for iter_31_0, iter_31_1 in ipairs(arg_31_0.weaponList) do
+			for iter_31_2, iter_31_3 in ipairs(iter_31_1.emitterList) do
+				iter_31_3:Destroy()
 			end
 		end
 
-		arg_32_0.weaponList = nil
+		arg_31_0.weaponList = nil
 	end
 
-	if arg_32_0.seaFXPool then
-		arg_32_0.seaFXPool:Clear()
+	if arg_31_0.seaFXPool then
+		arg_31_0.seaFXPool:Clear()
 
-		arg_32_0.seaFXPool = nil
+		arg_31_0.seaFXPool = nil
 	end
 
-	if arg_32_0.seaFXContainersPool then
-		arg_32_0.seaFXContainersPool:Clear()
+	if arg_31_0.seaFXContainersPool then
+		arg_31_0.seaFXContainersPool:Clear()
 
-		arg_32_0.seaFXContainersPool = nil
+		arg_31_0.seaFXContainersPool = nil
 	end
 
 	ys.Battle.BattleResourceManager.GetInstance():Clear()
 
-	arg_32_0.seaCameraGO.tag = "Untagged"
-	arg_32_0.seaCameraGO = nil
-	arg_32_0.seaCamera = nil
+	arg_31_0.seaCameraGO.tag = "Untagged"
+	arg_31_0.seaCameraGO = nil
+	arg_31_0.seaCamera = nil
 
-	arg_32_0.mainCameraGO:SetActive(true)
+	arg_31_0.mainCameraGO:SetActive(true)
 
-	arg_32_0.mainCameraGO = nil
-	arg_32_0.loading = false
-	arg_32_0.loaded = false
+	arg_31_0.mainCameraGO = nil
+	arg_31_0.loading = false
+	arg_31_0.loaded = false
 end
 
 return var_0_0

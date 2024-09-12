@@ -7,7 +7,7 @@
 			},
 			arg_list = {
 				quota = 1,
-				time = 20,
+				time = 15,
 				target = "TargetSelf",
 				skill_id = 150474
 			}

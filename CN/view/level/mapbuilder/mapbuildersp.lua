@@ -1186,7 +1186,7 @@ function var_0_0.PlayStory(arg_61_0, arg_61_1, arg_61_2, arg_61_3)
 			local var_62_0 = tonumber(arg_61_1)
 
 			if var_62_0 and var_62_0 > 0 then
-				arg_61_0:emit(LevelMediator2.ON_PERFORM_COMBAT, var_62_0)
+				arg_61_0:emit(LevelMediator2.ON_PERFORM_COMBAT, var_62_0, nil, var_61_1)
 			else
 				var_61_0:Play(arg_61_1, arg_62_0, arg_61_3)
 			end

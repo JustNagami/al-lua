@@ -559,7 +559,7 @@
 			}
 		},
 		{
-			actor = 304050,
+			actor = 307151,
 			side = 2,
 			hidePainting = true,
 			hidePaintObj = true,
@@ -598,7 +598,7 @@
 			}
 		},
 		{
-			actor = 304050,
+			actor = 307151,
 			side = 2,
 			hidePainting = true,
 			hidePaintObj = true,
@@ -612,7 +612,7 @@
 			}
 		},
 		{
-			actor = 304050,
+			actor = 307151,
 			side = 2,
 			hidePainting = true,
 			hidePaintObj = true,
@@ -650,7 +650,7 @@
 			}
 		},
 		{
-			actor = 304050,
+			actor = 307151,
 			side = 2,
 			hidePainting = true,
 			hidePaintObj = true,
@@ -688,7 +688,7 @@
 			}
 		},
 		{
-			actor = 304050,
+			actor = 307151,
 			side = 2,
 			bgName = "bg_fantasyland_cg2",
 			hidePaintObj = true,
@@ -719,7 +719,7 @@
 			}
 		},
 		{
-			actor = 304050,
+			actor = 307151,
 			side = 2,
 			hidePainting = true,
 			hidePaintObj = true,
@@ -747,7 +747,7 @@
 			}
 		},
 		{
-			actor = 304050,
+			actor = 307151,
 			side = 2,
 			hidePainting = true,
 			hidePaintObj = true,
@@ -790,7 +790,7 @@
 			}
 		},
 		{
-			actor = 304050,
+			actor = 307151,
 			side = 2,
 			hidePainting = true,
 			hidePaintObj = true,

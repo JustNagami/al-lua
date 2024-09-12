@@ -11264,13 +11264,13 @@ pg.base.pay_data_display = {
 		drop_item = {}
 	},
 	[2033] = {
-		name = "梦幻霓虹主题礼包(基础版)",
+		name = "梦幻霓虹主题礼包（基础版）",
 		limit_group = 101,
 		descrip_extra = "*礼包将发送到邮箱，请注意查收。",
 		type = 0,
-		subject = "梦幻霓虹主题礼包(基础版)",
+		subject = "梦幻霓虹主题礼包（基础版）",
 		limit_arg = 1,
-		name_display = "梦幻霓虹主题礼包(基础版)",
+		name_display = "梦幻霓虹主题礼包（基础版）",
 		show_group = "uigift",
 		type_order = 2,
 		extra_service = 3,
@@ -11338,13 +11338,13 @@ pg.base.pay_data_display = {
 		}
 	},
 	[2034] = {
-		name = "梦幻霓虹主题礼包(豪华版)",
+		name = "梦幻霓虹主题礼包（豪华版）",
 		limit_group = 101,
 		descrip_extra = "*礼包将发送到邮箱，请注意查收。",
 		type = 0,
-		subject = "梦幻霓虹主题礼包(豪华版)",
+		subject = "梦幻霓虹主题礼包（豪华版）",
 		limit_arg = 1,
-		name_display = "梦幻霓虹主题礼包(豪华版)",
+		name_display = "梦幻霓虹主题礼包（豪华版）",
 		show_group = "uigift",
 		type_order = 2,
 		extra_service = 3,

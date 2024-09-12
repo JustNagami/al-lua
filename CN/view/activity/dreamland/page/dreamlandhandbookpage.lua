@@ -151,8 +151,9 @@ end
 
 function var_0_0.GetLineCunt(arg_16_0, arg_16_1)
 	local var_16_0 = arg_16_1.gameObject.transform.sizeDelta.y
+	local var_16_1 = arg_16_0.lineUIList.container:GetComponent(typeof(VerticalLayoutGroup)).spacing
 
-	return math.max(math.ceil(var_16_0 / 48), 4)
+	return math.max(math.ceil(var_16_0 / var_16_1), 4)
 end
 
 function var_0_0.UpdateArea(arg_17_0, arg_17_1)

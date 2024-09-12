@@ -418,9 +418,9 @@ function var_0_0.filterLimitTypeGoods(arg_37_0, arg_37_1)
 
 			for iter_38_0, iter_38_1 in ipairs(arg_37_1:getSameLimitGroupTecGoods()) do
 				if iter_38_1:getConfig("limit_arg") == 1 then
-					var_38_0 = iter_38_1
-				elseif iter_38_1:getConfig("limit_arg") == 2 then
 					var_38_1 = iter_38_1
+				elseif iter_38_1:getConfig("limit_arg") == 2 then
+					var_38_0 = iter_38_1
 				elseif iter_38_1:getConfig("limit_arg") == 3 then
 					var_38_2 = iter_38_1
 				end

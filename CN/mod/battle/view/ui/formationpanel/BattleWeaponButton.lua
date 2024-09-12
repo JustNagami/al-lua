@@ -87,6 +87,8 @@ function var_0_1.ConfigSkin(arg_7_0, arg_7_1)
 	var_7_0:GetComponent("DftAniEvent"):SetEndEvent(function(arg_8_0)
 		SetActive(arg_7_0._filledEffect, false)
 	end)
+
+	arg_7_0._animtor = arg_7_1:GetComponent(typeof(Animator))
 end
 
 function var_0_1.GetSkin(arg_9_0)
@@ -136,13 +138,29 @@ function var_0_1.OnfilledEffect(arg_15_0)
 	SetActive(arg_15_0._filledEffect, true)
 end
 
-function var_0_1.OnOverLoadChange(arg_16_0)
+function var_0_1.OnOverLoadChange(arg_16_0, arg_16_1)
 	if arg_16_0._progressInfo:IsOverLoad() then
 		arg_16_0._block:SetActive(true)
 		arg_16_0:OnUnfill()
 	else
 		arg_16_0._block:SetActive(false)
 		arg_16_0:OnFilled()
+
+		if arg_16_1 and arg_16_1.Data then
+			local var_16_0 = arg_16_1.Data.preCast
+
+			if var_16_0 then
+				if var_16_0 == 0 then
+					quickCheckAndPlayAnimator(arg_16_0._skin, "weapon_button_progress_filled")
+				elseif var_16_0 > 0 then
+					quickCheckAndPlayAnimator(arg_16_0._skin, "weapon_button_progress_charge")
+				end
+			end
+		end
+	end
+
+	if arg_16_1 and arg_16_1.Data and arg_16_1.Data.postCast then
+		quickCheckAndPlayAnimator(arg_16_0._skin, "weapon_button_progress_use")
 	end
 
 	if arg_16_0._progressInfo:GetTotal() > 0 then

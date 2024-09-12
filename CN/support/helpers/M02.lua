@@ -4080,62 +4080,71 @@ function quickPlayAnimator(arg_282_0, arg_282_1)
 	arg_282_0:GetComponent(typeof(Animator)):Play(arg_282_1, -1, 0)
 end
 
-function quickPlayAnimation(arg_283_0, arg_283_1)
-	arg_283_0:GetComponent(typeof(Animation)):Play(arg_283_1)
+function quickCheckAndPlayAnimator(arg_283_0, arg_283_1)
+	local var_283_0 = arg_283_0:GetComponent(typeof(Animator))
+	local var_283_1 = Animator.StringToHash(arg_283_1)
+
+	if var_283_0:HasState(0, var_283_1) then
+		var_283_0:Play(arg_283_1, -1, 0)
+	end
 end
 
-function getSurveyUrl(arg_284_0)
-	local var_284_0 = pg.survey_data_template[arg_284_0]
-	local var_284_1
+function quickPlayAnimation(arg_284_0, arg_284_1)
+	arg_284_0:GetComponent(typeof(Animation)):Play(arg_284_1)
+end
+
+function getSurveyUrl(arg_285_0)
+	local var_285_0 = pg.survey_data_template[arg_285_0]
+	local var_285_1
 
 	if not IsUnityEditor then
 		if PLATFORM_CODE == PLATFORM_CH then
-			local var_284_2 = getProxy(UserProxy):GetCacheGatewayInServerLogined()
+			local var_285_2 = getProxy(UserProxy):GetCacheGatewayInServerLogined()
 
-			if var_284_2 == PLATFORM_ANDROID then
+			if var_285_2 == PLATFORM_ANDROID then
 				if LuaHelper.GetCHPackageType() == PACKAGE_TYPE_BILI then
-					var_284_1 = var_284_0.main_url
+					var_285_1 = var_285_0.main_url
 				else
-					var_284_1 = var_284_0.uo_url
+					var_285_1 = var_285_0.uo_url
 				end
-			elseif var_284_2 == PLATFORM_IPHONEPLAYER then
-				var_284_1 = var_284_0.ios_url
+			elseif var_285_2 == PLATFORM_IPHONEPLAYER then
+				var_285_1 = var_285_0.ios_url
 			end
 		elseif PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
-			var_284_1 = var_284_0.main_url
+			var_285_1 = var_285_0.main_url
 		end
 	else
-		var_284_1 = var_284_0.main_url
+		var_285_1 = var_285_0.main_url
 	end
 
-	local var_284_3 = getProxy(PlayerProxy):getRawData().id
-	local var_284_4 = getProxy(UserProxy):getRawData().arg2 or ""
-	local var_284_5
-	local var_284_6 = PLATFORM == PLATFORM_ANDROID and 1 or PLATFORM == PLATFORM_IPHONEPLAYER and 2 or 3
-	local var_284_7 = getProxy(UserProxy):getRawData()
-	local var_284_8 = getProxy(ServerProxy):getRawData()[var_284_7 and var_284_7.server or 0]
-	local var_284_9 = var_284_8 and var_284_8.id or ""
-	local var_284_10 = getProxy(PlayerProxy):getRawData().level
-	local var_284_11 = var_284_3 .. "_" .. arg_284_0
-	local var_284_12 = var_284_1
-	local var_284_13 = {
-		var_284_3,
-		var_284_4,
-		var_284_6,
-		var_284_9,
-		var_284_10,
-		var_284_11
+	local var_285_3 = getProxy(PlayerProxy):getRawData().id
+	local var_285_4 = getProxy(UserProxy):getRawData().arg2 or ""
+	local var_285_5
+	local var_285_6 = PLATFORM == PLATFORM_ANDROID and 1 or PLATFORM == PLATFORM_IPHONEPLAYER and 2 or 3
+	local var_285_7 = getProxy(UserProxy):getRawData()
+	local var_285_8 = getProxy(ServerProxy):getRawData()[var_285_7 and var_285_7.server or 0]
+	local var_285_9 = var_285_8 and var_285_8.id or ""
+	local var_285_10 = getProxy(PlayerProxy):getRawData().level
+	local var_285_11 = var_285_3 .. "_" .. arg_285_0
+	local var_285_12 = var_285_1
+	local var_285_13 = {
+		var_285_3,
+		var_285_4,
+		var_285_6,
+		var_285_9,
+		var_285_10,
+		var_285_11
 	}
 
-	if var_284_12 then
-		for iter_284_0, iter_284_1 in ipairs(var_284_13) do
-			var_284_12 = string.gsub(var_284_12, "$" .. iter_284_0, tostring(iter_284_1))
+	if var_285_12 then
+		for iter_285_0, iter_285_1 in ipairs(var_285_13) do
+			var_285_12 = string.gsub(var_285_12, "$" .. iter_285_0, tostring(iter_285_1))
 		end
 	end
 
-	warning(var_284_12)
+	warning(var_285_12)
 
-	return var_284_12
+	return var_285_12
 end
 
 function GetMoneySymbol()
@@ -4154,42 +4163,42 @@ function GetMoneySymbol()
 	return ""
 end
 
-function FilterVarchar(arg_286_0)
-	assert(type(arg_286_0) == "string" or type(arg_286_0) == "table")
+function FilterVarchar(arg_287_0)
+	assert(type(arg_287_0) == "string" or type(arg_287_0) == "table")
 
-	if arg_286_0 == "" then
+	if arg_287_0 == "" then
 		return nil
 	end
 
-	return arg_286_0
+	return arg_287_0
 end
 
-function getGameset(arg_287_0)
-	local var_287_0 = pg.gameset[arg_287_0]
-
-	assert(var_287_0)
-
-	return {
-		var_287_0.key_value,
-		var_287_0.description
-	}
-end
-
-function getDorm3dGameset(arg_288_0)
-	local var_288_0 = pg.dorm3d_set[arg_288_0]
+function getGameset(arg_288_0)
+	local var_288_0 = pg.gameset[arg_288_0]
 
 	assert(var_288_0)
 
 	return {
-		var_288_0.key_value_int,
-		var_288_0.key_value_varchar
+		var_288_0.key_value,
+		var_288_0.description
 	}
 end
 
-function GetItemsOverflowDic(arg_289_0)
-	arg_289_0 = arg_289_0 or {}
+function getDorm3dGameset(arg_289_0)
+	local var_289_0 = pg.dorm3d_set[arg_289_0]
 
-	local var_289_0 = {
+	assert(var_289_0)
+
+	return {
+		var_289_0.key_value_int,
+		var_289_0.key_value_varchar
+	}
+end
+
+function GetItemsOverflowDic(arg_290_0)
+	arg_290_0 = arg_290_0 or {}
+
+	local var_290_0 = {
 		[DROP_TYPE_ITEM] = {},
 		[DROP_TYPE_RESOURCE] = {},
 		[DROP_TYPE_EQUIP] = 0,
@@ -4197,100 +4206,100 @@ function GetItemsOverflowDic(arg_289_0)
 		[DROP_TYPE_WORLD_ITEM] = 0
 	}
 
-	while #arg_289_0 > 0 do
-		local var_289_1 = table.remove(arg_289_0)
+	while #arg_290_0 > 0 do
+		local var_290_1 = table.remove(arg_290_0)
 
-		switch(var_289_1.type, {
+		switch(var_290_1.type, {
 			[DROP_TYPE_ITEM] = function()
-				if var_289_1:getConfig("open_directly") == 1 then
-					for iter_290_0, iter_290_1 in ipairs(var_289_1:getConfig("display_icon")) do
-						local var_290_0 = Drop.Create(iter_290_1)
+				if var_290_1:getConfig("open_directly") == 1 then
+					for iter_291_0, iter_291_1 in ipairs(var_290_1:getConfig("display_icon")) do
+						local var_291_0 = Drop.Create(iter_291_1)
 
-						var_290_0.count = var_290_0.count * var_289_1.count
+						var_291_0.count = var_291_0.count * var_290_1.count
 
-						table.insert(arg_289_0, var_290_0)
+						table.insert(arg_290_0, var_291_0)
 					end
-				elseif var_289_1:getSubClass():IsShipExpType() then
-					var_289_0[var_289_1.type][var_289_1.id] = defaultValue(var_289_0[var_289_1.type][var_289_1.id], 0) + var_289_1.count
+				elseif var_290_1:getSubClass():IsShipExpType() then
+					var_290_0[var_290_1.type][var_290_1.id] = defaultValue(var_290_0[var_290_1.type][var_290_1.id], 0) + var_290_1.count
 				end
 			end,
 			[DROP_TYPE_RESOURCE] = function()
-				var_289_0[var_289_1.type][var_289_1.id] = defaultValue(var_289_0[var_289_1.type][var_289_1.id], 0) + var_289_1.count
+				var_290_0[var_290_1.type][var_290_1.id] = defaultValue(var_290_0[var_290_1.type][var_290_1.id], 0) + var_290_1.count
 			end,
 			[DROP_TYPE_EQUIP] = function()
-				var_289_0[var_289_1.type] = var_289_0[var_289_1.type] + var_289_1.count
+				var_290_0[var_290_1.type] = var_290_0[var_290_1.type] + var_290_1.count
 			end,
 			[DROP_TYPE_SHIP] = function()
-				var_289_0[var_289_1.type] = var_289_0[var_289_1.type] + var_289_1.count
+				var_290_0[var_290_1.type] = var_290_0[var_290_1.type] + var_290_1.count
 			end,
 			[DROP_TYPE_WORLD_ITEM] = function()
-				var_289_0[var_289_1.type] = var_289_0[var_289_1.type] + var_289_1.count
+				var_290_0[var_290_1.type] = var_290_0[var_290_1.type] + var_290_1.count
 			end
 		})
 	end
 
-	return var_289_0
+	return var_290_0
 end
 
-function CheckOverflow(arg_295_0, arg_295_1)
-	local var_295_0 = {}
-	local var_295_1 = arg_295_0[DROP_TYPE_RESOURCE][PlayerConst.ResGold] or 0
-	local var_295_2 = arg_295_0[DROP_TYPE_RESOURCE][PlayerConst.ResOil] or 0
-	local var_295_3 = arg_295_0[DROP_TYPE_EQUIP]
-	local var_295_4 = arg_295_0[DROP_TYPE_SHIP]
-	local var_295_5 = getProxy(PlayerProxy):getRawData()
-	local var_295_6 = false
+function CheckOverflow(arg_296_0, arg_296_1)
+	local var_296_0 = {}
+	local var_296_1 = arg_296_0[DROP_TYPE_RESOURCE][PlayerConst.ResGold] or 0
+	local var_296_2 = arg_296_0[DROP_TYPE_RESOURCE][PlayerConst.ResOil] or 0
+	local var_296_3 = arg_296_0[DROP_TYPE_EQUIP]
+	local var_296_4 = arg_296_0[DROP_TYPE_SHIP]
+	local var_296_5 = getProxy(PlayerProxy):getRawData()
+	local var_296_6 = false
 
-	if arg_295_1 then
-		local var_295_7 = var_295_5:OverStore(PlayerConst.ResStoreGold, var_295_1)
-		local var_295_8 = var_295_5:OverStore(PlayerConst.ResStoreOil, var_295_2)
+	if arg_296_1 then
+		local var_296_7 = var_296_5:OverStore(PlayerConst.ResStoreGold, var_296_1)
+		local var_296_8 = var_296_5:OverStore(PlayerConst.ResStoreOil, var_296_2)
 
-		if var_295_7 > 0 or var_295_8 > 0 then
-			var_295_0.isStoreOverflow = {
-				var_295_7,
-				var_295_8
+		if var_296_7 > 0 or var_296_8 > 0 then
+			var_296_0.isStoreOverflow = {
+				var_296_7,
+				var_296_8
 			}
 		end
 	else
-		if var_295_1 > 0 and var_295_5:GoldMax(var_295_1) then
+		if var_296_1 > 0 and var_296_5:GoldMax(var_296_1) then
 			return false, "gold"
 		end
 
-		if var_295_2 > 0 and var_295_5:OilMax(var_295_2) then
+		if var_296_2 > 0 and var_296_5:OilMax(var_296_2) then
 			return false, "oil"
 		end
 	end
 
-	var_295_0.isExpBookOverflow = {}
+	var_296_0.isExpBookOverflow = {}
 
-	for iter_295_0, iter_295_1 in pairs(arg_295_0[DROP_TYPE_ITEM]) do
-		local var_295_9 = Item.getConfigData(iter_295_0)
+	for iter_296_0, iter_296_1 in pairs(arg_296_0[DROP_TYPE_ITEM]) do
+		local var_296_9 = Item.getConfigData(iter_296_0)
 
-		if getProxy(BagProxy):getItemCountById(iter_295_0) + iter_295_1 > var_295_9.max_num then
-			table.insert(var_295_0.isExpBookOverflow, iter_295_0)
+		if getProxy(BagProxy):getItemCountById(iter_296_0) + iter_296_1 > var_296_9.max_num then
+			table.insert(var_296_0.isExpBookOverflow, iter_296_0)
 		end
 	end
 
-	local var_295_10 = getProxy(EquipmentProxy):getCapacity()
+	local var_296_10 = getProxy(EquipmentProxy):getCapacity()
 
-	if var_295_3 > 0 and var_295_3 + var_295_10 > var_295_5:getMaxEquipmentBag() then
+	if var_296_3 > 0 and var_296_3 + var_296_10 > var_296_5:getMaxEquipmentBag() then
 		return false, "equip"
 	end
 
-	local var_295_11 = getProxy(BayProxy):getShipCount()
+	local var_296_11 = getProxy(BayProxy):getShipCount()
 
-	if var_295_4 > 0 and var_295_4 + var_295_11 > var_295_5:getMaxShipBag() then
+	if var_296_4 > 0 and var_296_4 + var_296_11 > var_296_5:getMaxShipBag() then
 		return false, "ship"
 	end
 
-	return true, var_295_0
+	return true, var_296_0
 end
 
-function CheckShipExpOverflow(arg_296_0)
-	local var_296_0 = getProxy(BagProxy)
+function CheckShipExpOverflow(arg_297_0)
+	local var_297_0 = getProxy(BagProxy)
 
-	for iter_296_0, iter_296_1 in pairs(arg_296_0[DROP_TYPE_ITEM]) do
-		if var_296_0:getItemCountById(iter_296_0) + iter_296_1 > Item.getConfigData(iter_296_0).max_num then
+	for iter_297_0, iter_297_1 in pairs(arg_297_0[DROP_TYPE_ITEM]) do
+		if var_297_0:getItemCountById(iter_297_0) + iter_297_1 > Item.getConfigData(iter_297_0).max_num then
 			return false
 		end
 	end
@@ -4306,26 +4315,26 @@ local var_0_25 = {
 	[13] = "item_type13_tip2"
 }
 
-function RegisterDetailButton(arg_297_0, arg_297_1, arg_297_2)
-	Drop.Change(arg_297_2)
-	switch(arg_297_2.type, {
+function RegisterDetailButton(arg_298_0, arg_298_1, arg_298_2)
+	Drop.Change(arg_298_2)
+	switch(arg_298_2.type, {
 		[DROP_TYPE_ITEM] = function()
-			if arg_297_2:getConfig("type") == Item.SKIN_ASSIGNED_TYPE then
-				local var_298_0 = Item.getConfigData(arg_297_2.id).usage_arg
-				local var_298_1 = var_298_0[3]
+			if arg_298_2:getConfig("type") == Item.SKIN_ASSIGNED_TYPE then
+				local var_299_0 = Item.getConfigData(arg_298_2.id).usage_arg
+				local var_299_1 = var_299_0[3]
 
-				if Item.InTimeLimitSkinAssigned(arg_297_2.id) then
-					var_298_1 = table.mergeArray(var_298_0[2], var_298_1, true)
+				if Item.InTimeLimitSkinAssigned(arg_298_2.id) then
+					var_299_1 = table.mergeArray(var_299_0[2], var_299_1, true)
 				end
 
-				local var_298_2 = {}
+				local var_299_2 = {}
 
-				for iter_298_0, iter_298_1 in ipairs(var_298_0[2]) do
-					var_298_2[iter_298_1] = true
+				for iter_299_0, iter_299_1 in ipairs(var_299_0[2]) do
+					var_299_2[iter_299_1] = true
 				end
 
-				onButton(arg_297_0, arg_297_1, function()
-					arg_297_0:closeView()
+				onButton(arg_298_0, arg_298_1, function()
+					arg_298_0:closeView()
 					pg.m02:sendNotification(GAME.LOAD_LAYERS, {
 						parentContext = getProxy(ContextProxy):getCurrentContext(),
 						context = Context.New({
@@ -4333,100 +4342,100 @@ function RegisterDetailButton(arg_297_0, arg_297_1, arg_297_2)
 							mediator = SkinAtlasMediator,
 							data = {
 								mode = SelectSkinLayer.MODE_VIEW,
-								itemId = arg_297_2.id,
-								selectableSkinList = underscore.map(var_298_1, function(arg_300_0)
+								itemId = arg_298_2.id,
+								selectableSkinList = underscore.map(var_299_1, function(arg_301_0)
 									return SelectableSkin.New({
-										id = arg_300_0,
-										isTimeLimit = var_298_2[arg_300_0] or false
+										id = arg_301_0,
+										isTimeLimit = var_299_2[arg_301_0] or false
 									})
 								end)
 							}
 						})
 					})
 				end, SFX_PANEL)
-				setActive(arg_297_1, true)
+				setActive(arg_298_1, true)
 			else
-				local var_298_3 = getProxy(TechnologyProxy):getItemCanUnlockBluePrint(arg_297_2.id) and "tech" or arg_297_2:getConfig("type")
+				local var_299_3 = getProxy(TechnologyProxy):getItemCanUnlockBluePrint(arg_298_2.id) and "tech" or arg_298_2:getConfig("type")
 
-				if var_0_25[var_298_3] then
-					local var_298_4 = {
+				if var_0_25[var_299_3] then
+					local var_299_4 = {
 						item2Row = true,
-						content = i18n(var_0_25[var_298_3]),
-						itemList = underscore.map(arg_297_2:getConfig("display_icon"), function(arg_301_0)
-							return Drop.Create(arg_301_0)
+						content = i18n(var_0_25[var_299_3]),
+						itemList = underscore.map(arg_298_2:getConfig("display_icon"), function(arg_302_0)
+							return Drop.Create(arg_302_0)
 						end)
 					}
 
-					if var_298_3 == 11 then
-						onButton(arg_297_0, arg_297_1, function()
-							arg_297_0:emit(BaseUI.ON_DROP_LIST_OWN, var_298_4)
+					if var_299_3 == 11 then
+						onButton(arg_298_0, arg_298_1, function()
+							arg_298_0:emit(BaseUI.ON_DROP_LIST_OWN, var_299_4)
 						end, SFX_PANEL)
 					else
-						onButton(arg_297_0, arg_297_1, function()
-							arg_297_0:emit(BaseUI.ON_DROP_LIST, var_298_4)
+						onButton(arg_298_0, arg_298_1, function()
+							arg_298_0:emit(BaseUI.ON_DROP_LIST, var_299_4)
 						end, SFX_PANEL)
 					end
 				end
 
-				setActive(arg_297_1, tobool(var_0_25[var_298_3]))
+				setActive(arg_298_1, tobool(var_0_25[var_299_3]))
 			end
 		end,
 		[DROP_TYPE_EQUIP] = function()
-			onButton(arg_297_0, arg_297_1, function()
-				arg_297_0:emit(BaseUI.ON_DROP, arg_297_2)
+			onButton(arg_298_0, arg_298_1, function()
+				arg_298_0:emit(BaseUI.ON_DROP, arg_298_2)
 			end, SFX_PANEL)
-			setActive(arg_297_1, true)
+			setActive(arg_298_1, true)
 		end,
 		[DROP_TYPE_SPWEAPON] = function()
-			onButton(arg_297_0, arg_297_1, function()
-				arg_297_0:emit(BaseUI.ON_DROP, arg_297_2)
+			onButton(arg_298_0, arg_298_1, function()
+				arg_298_0:emit(BaseUI.ON_DROP, arg_298_2)
 			end, SFX_PANEL)
-			setActive(arg_297_1, true)
+			setActive(arg_298_1, true)
 		end
 	}, function()
-		setActive(arg_297_1, false)
+		setActive(arg_298_1, false)
 	end)
 end
 
-function UpdateOwnDisplay(arg_309_0, arg_309_1)
-	local var_309_0, var_309_1 = arg_309_1:getOwnedCount()
+function UpdateOwnDisplay(arg_310_0, arg_310_1)
+	local var_310_0, var_310_1 = arg_310_1:getOwnedCount()
 
-	setActive(arg_309_0, var_309_1 and var_309_0 > 0)
+	setActive(arg_310_0, var_310_1 and var_310_0 > 0)
 
-	if var_309_1 and var_309_0 > 0 then
-		setText(arg_309_0:Find("label"), i18n("word_own1"))
-		setText(arg_309_0:Find("Text"), var_309_0)
+	if var_310_1 and var_310_0 > 0 then
+		setText(arg_310_0:Find("label"), i18n("word_own1"))
+		setText(arg_310_0:Find("Text"), var_310_0)
 	end
 end
 
-function Damp(arg_310_0, arg_310_1, arg_310_2)
-	arg_310_1 = Mathf.Max(1, arg_310_1)
+function Damp(arg_311_0, arg_311_1, arg_311_2)
+	arg_311_1 = Mathf.Max(1, arg_311_1)
 
-	local var_310_0 = Mathf.Epsilon
+	local var_311_0 = Mathf.Epsilon
 
-	if arg_310_1 < var_310_0 or var_310_0 > Mathf.Abs(arg_310_0) then
-		return arg_310_0
+	if arg_311_1 < var_311_0 or var_311_0 > Mathf.Abs(arg_311_0) then
+		return arg_311_0
 	end
 
-	if arg_310_2 < var_310_0 then
+	if arg_311_2 < var_311_0 then
 		return 0
 	end
 
-	local var_310_1 = -4.605170186
+	local var_311_1 = -4.605170186
 
-	return arg_310_0 * (1 - Mathf.Exp(var_310_1 * arg_310_2 / arg_310_1))
+	return arg_311_0 * (1 - Mathf.Exp(var_311_1 * arg_311_2 / arg_311_1))
 end
 
-function checkCullResume(arg_311_0)
-	if not ReflectionHelp.RefCallMethodEx(typeof("UnityEngine.CanvasRenderer"), "GetMaterial", GetComponent(arg_311_0, "CanvasRenderer"), {
+function checkCullResume(arg_312_0)
+	if not ReflectionHelp.RefCallMethodEx(typeof("UnityEngine.CanvasRenderer"), "GetMaterial", GetComponent(arg_312_0, "CanvasRenderer"), {
 		typeof("System.Int32")
 	}, {
 		0
 	}) then
-		local var_311_0 = arg_311_0:GetComponentsInChildren(typeof(MeshImage))
+		local var_312_0 = arg_312_0:GetComponentsInChildren(typeof(MeshImage))
 
-		for iter_311_0 = 1, var_311_0.Length do
-			var_311_0[iter_311_0 - 1]:SetVerticesDirty()
+		for iter_312_0 = 1, var_312_0.Length do
+			var_312_0[iter_312_0 - 1]:SetVerticesDirty()
 		end
 
 		return false
@@ -4435,66 +4444,66 @@ function checkCullResume(arg_311_0)
 	return true
 end
 
-function parseEquipCode(arg_312_0)
-	local var_312_0 = {}
+function parseEquipCode(arg_313_0)
+	local var_313_0 = {}
 
-	if arg_312_0 and arg_312_0 ~= "" then
-		local var_312_1 = base64.dec(arg_312_0)
+	if arg_313_0 and arg_313_0 ~= "" then
+		local var_313_1 = base64.dec(arg_313_0)
 
-		var_312_0 = string.split(var_312_1, "/")
-		var_312_0[5], var_312_0[6] = unpack(string.split(var_312_0[5], "\\"))
+		var_313_0 = string.split(var_313_1, "/")
+		var_313_0[5], var_313_0[6] = unpack(string.split(var_313_0[5], "\\"))
 
-		if #var_312_0 < 6 or arg_312_0 ~= base64.enc(table.concat({
-			table.concat(underscore.first(var_312_0, 5), "/"),
-			var_312_0[6]
+		if #var_313_0 < 6 or arg_313_0 ~= base64.enc(table.concat({
+			table.concat(underscore.first(var_313_0, 5), "/"),
+			var_313_0[6]
 		}, "\\")) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("equipcode_illegal"))
 
-			var_312_0 = {}
+			var_313_0 = {}
 		end
 	end
 
-	for iter_312_0 = 1, 6 do
-		var_312_0[iter_312_0] = var_312_0[iter_312_0] and tonumber(var_312_0[iter_312_0], 32) or 0
+	for iter_313_0 = 1, 6 do
+		var_313_0[iter_313_0] = var_313_0[iter_313_0] and tonumber(var_313_0[iter_313_0], 32) or 0
 	end
 
-	return var_312_0
+	return var_313_0
 end
 
-function buildEquipCode(arg_313_0)
-	local var_313_0 = underscore.map(arg_313_0:getAllEquipments(), function(arg_314_0)
-		return ConversionBase(32, arg_314_0 and arg_314_0.id or 0)
+function buildEquipCode(arg_314_0)
+	local var_314_0 = underscore.map(arg_314_0:getAllEquipments(), function(arg_315_0)
+		return ConversionBase(32, arg_315_0 and arg_315_0.id or 0)
 	end)
-	local var_313_1 = {
-		table.concat(var_313_0, "/"),
-		ConversionBase(32, checkExist(arg_313_0:GetSpWeapon(), {
+	local var_314_1 = {
+		table.concat(var_314_0, "/"),
+		ConversionBase(32, checkExist(arg_314_0:GetSpWeapon(), {
 			"id"
 		}) or 0)
 	}
 
-	return base64.enc(table.concat(var_313_1, "\\"))
+	return base64.enc(table.concat(var_314_1, "\\"))
 end
 
-function setDirectorSpeed(arg_315_0, arg_315_1)
-	GetComponent(arg_315_0, "TimelineSpeed"):SetTimelineSpeed(arg_315_1)
+function setDirectorSpeed(arg_316_0, arg_316_1)
+	GetComponent(arg_316_0, "TimelineSpeed"):SetTimelineSpeed(arg_316_1)
 end
 
-function setDefaultZeroMetatable(arg_316_0)
-	return setmetatable(arg_316_0, {
-		__index = function(arg_317_0, arg_317_1)
-			if rawget(arg_317_0, arg_317_1) == nil then
-				arg_317_0[arg_317_1] = 0
+function setDefaultZeroMetatable(arg_317_0)
+	return setmetatable(arg_317_0, {
+		__index = function(arg_318_0, arg_318_1)
+			if rawget(arg_318_0, arg_318_1) == nil then
+				arg_318_0[arg_318_1] = 0
 			end
 
-			return arg_317_0[arg_317_1]
+			return arg_318_0[arg_318_1]
 		end
 	})
 end
 
-function checkABExist(arg_318_0)
+function checkABExist(arg_319_0)
 	if EDITOR_TOOL then
-		return PathMgr.FileExists(PathMgr.getAssetBundle(arg_318_0)) or ResourceMgr.Inst:AssetExist(arg_318_0)
+		return PathMgr.FileExists(PathMgr.getAssetBundle(arg_319_0)) or ResourceMgr.Inst:AssetExist(arg_319_0)
 	else
-		return PathMgr.FileExists(PathMgr.getAssetBundle(arg_318_0))
+		return PathMgr.FileExists(PathMgr.getAssetBundle(arg_319_0))
 	end
 end

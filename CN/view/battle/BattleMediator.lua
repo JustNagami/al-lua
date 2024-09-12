@@ -361,7 +361,7 @@ function var_0_0.warnFunc(arg_27_0, arg_27_1)
 		var_27_3 = i18n("battle_battleMediator_quest_exist")
 	end
 
-	function resumeFuncDeco()
+	local function var_27_6()
 		if arg_27_1 then
 			arg_27_1()
 		end
@@ -378,11 +378,11 @@ function var_0_0.warnFunc(arg_27_0, arg_27_1)
 		hideNo = true,
 		hideYes = true,
 		content = var_27_3,
-		onClose = resumeFuncDeco,
+		onClose = var_27_6,
 		custom = {
 			{
 				text = "text_cancel",
-				onCallback = resumeFuncDeco,
+				onCallback = var_27_6,
 				sound = SFX_CANCEL
 			},
 			{
@@ -580,6 +580,7 @@ function var_0_0.GenBattleData(arg_35_0)
 	var_35_0.battleType = arg_35_0.contextData.system
 	var_35_0.StageTmpId = arg_35_0.contextData.stageId
 	var_35_0.CMDArgs = arg_35_0.contextData.cmdArgs
+	var_35_0.isMemory = arg_35_0.contextData.memory
 	var_35_0.MainUnitList = {}
 	var_35_0.VanguardUnitList = {}
 	var_35_0.SubUnitList = {}

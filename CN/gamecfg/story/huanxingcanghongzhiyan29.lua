@@ -82,16 +82,16 @@
 					name = "chongying_m_boss01",
 					spine = {
 						action = "",
-						scale = 2.5
+						scale = 2
 					},
 					path = {
 						{
 							0,
-							-200
+							-300
 						},
 						{
 							0,
-							-200
+							-300
 						}
 					}
 				}

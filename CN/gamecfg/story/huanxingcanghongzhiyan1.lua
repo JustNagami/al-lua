@@ -300,7 +300,7 @@
 			dir = 1,
 			nameColor = "#FEF15E",
 			bgName = "bg_canghongzhiyan_cg1",
-			say = "哟~你真的{namecode:50:能代}替你的“指挥官”做这么重要的决定？",
+			say = "哟~你真的能代替你的“指挥官”做这么重要的决定？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
