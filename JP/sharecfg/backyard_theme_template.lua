@@ -4345,6 +4345,36 @@ pg.backyard_theme_template = {
 			313303
 		}
 	},
+	[114] = {
+		Cfg_1 = 5,
+		name = "楽園ドリーム",
+		hot = 1,
+		is_view = 1,
+		id = 114,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "楽園の夢、ドリームランド！",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "mlythemeicon",
+		deblocking = 1,
+		order = 115,
+		ids = {
+			314001,
+			314002,
+			314101,
+			314102,
+			314103,
+			314104,
+			314105,
+			314107,
+			314108,
+			314109,
+			314110,
+			314111
+		}
+	},
 	all = {
 		1,
 		2,
@@ -4445,6 +4475,7 @@ pg.backyard_theme_template = {
 		110,
 		111,
 		112,
-		113
+		113,
+		114
 	}
 }

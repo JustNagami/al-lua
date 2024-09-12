@@ -207,10 +207,25 @@ function var_0_0.Ctor(arg_8_0, arg_8_1)
 	arg_8_0.attireInfo = {}
 	arg_8_0.attireInfo[AttireConst.TYPE_ICON_FRAME] = arg_8_0.iconFrame
 	arg_8_0.attireInfo[AttireConst.TYPE_CHAT_FRAME] = arg_8_0.chatFrame
+
+	originalPrint("login player data")
+	arg_8_0:updateAttireFrame(AttireConst.TYPE_COMBAT_UI_STYLE, arg_8_1.battle_ui or 0)
 end
 
 function var_0_0.updateAttireFrame(arg_9_0, arg_9_1, arg_9_2)
 	arg_9_0.attireInfo[arg_9_1] = arg_9_2
+
+	originalPrint("login set " .. arg_9_2)
+
+	if arg_9_1 == AttireConst.TYPE_COMBAT_UI_STYLE then
+		COMBAT_SKIN_KEY = pg.item_data_battleui[arg_9_2].key
+
+		if COMBAT_SKIN_KEY == nil then
+			originalPrint("login style empty")
+		else
+			originalPrint("login style" .. COMBAT_SKIN_KEY)
+		end
+	end
 end
 
 function var_0_0.getAttireByType(arg_10_0, arg_10_1)

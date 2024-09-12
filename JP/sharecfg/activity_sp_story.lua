@@ -424,6 +424,707 @@ pg.activity_sp_story = {
 			}
 		}
 	},
+	[31] = {
+		story_type = 1,
+		pre_event = "",
+		name = "EP1-1 オブザーバーとの取引",
+		unlock_conditions = "",
+		change_prefab = "",
+		change_background = "star_level_bg_504",
+		story = "HUANXINGCANGHONGZHIYAN1",
+		change_bgm = "battle-eagleunion",
+		id = 31,
+		lock = ""
+	},
+	[32] = {
+		story_type = 1,
+		name = "EP1-2 テスターの消滅",
+		unlock_conditions = "EP1-1をクリア",
+		change_bgm = "battle-eagleunion",
+		change_prefab = "",
+		change_background = "star_level_bg_504",
+		id = 32,
+		story = "HUANXINGCANGHONGZHIYAN2",
+		pre_event = {
+			31
+		},
+		lock = {
+			{
+				4,
+				31
+			}
+		}
+	},
+	[33] = {
+		story_type = 1,
+		name = "EP1-3 オミッターの消滅",
+		unlock_conditions = "EP1-2をクリア",
+		change_bgm = "battle-eagleunion",
+		change_prefab = "",
+		change_background = "star_level_bg_504",
+		id = 33,
+		story = "HUANXINGCANGHONGZHIYAN3",
+		pre_event = {
+			31
+		},
+		lock = {
+			{
+				4,
+				32
+			}
+		}
+	},
+	[34] = {
+		story_type = 1,
+		name = "EP1-4 ピュリファイアーの消滅",
+		unlock_conditions = "EP1-3をクリア",
+		change_bgm = "story-commander-up",
+		change_prefab = "",
+		change_background = "bg_story_task",
+		id = 34,
+		story = "HUANXINGCANGHONGZHIYAN4",
+		pre_event = {
+			31
+		},
+		lock = {
+			{
+				4,
+				33
+			}
+		}
+	},
+	[35] = {
+		story_type = 1,
+		name = "EP2-1 特異点へ",
+		unlock_conditions = "EP1-4をクリア",
+		change_bgm = "bsm-2",
+		change_prefab = "",
+		change_background = "bg_port_chongdong",
+		id = 35,
+		story = "HUANXINGCANGHONGZHIYAN5",
+		pre_event = {
+			32,
+			33,
+			34
+		},
+		lock = {
+			{
+				4,
+				34
+			}
+		}
+	},
+	[36] = {
+		story_type = 1,
+		name = "EP2-2 「再現」のサンプル",
+		unlock_conditions = "EP2-1をクリア",
+		change_bgm = "battle-eagleunion",
+		change_prefab = "",
+		change_background = "star_level_bg_504",
+		id = 36,
+		story = "HUANXINGCANGHONGZHIYAN6",
+		pre_event = {
+			35
+		},
+		lock = {
+			{
+				4,
+				35
+			}
+		}
+	},
+	[37] = {
+		story_type = 1,
+		name = "EP2-3 出発",
+		unlock_conditions = "EP2-2をクリア",
+		change_bgm = "story-finalbattle-unity",
+		change_prefab = "",
+		change_background = "star_level_bg_507",
+		id = 37,
+		story = "HUANXINGCANGHONGZHIYAN7",
+		pre_event = {
+			36
+		},
+		lock = {
+			{
+				4,
+				36
+			}
+		}
+	},
+	[38] = {
+		story_type = 1,
+		name = "EP3-1 エウロパの戦場",
+		unlock_conditions = "EP2-3をクリア",
+		change_bgm = "story-newsakura",
+		change_prefab = "",
+		change_background = "bg_port_chuanwu1",
+		id = 38,
+		story = "HUANXINGCANGHONGZHIYAN8",
+		pre_event = {
+			37
+		},
+		lock = {
+			{
+				4,
+				37
+			}
+		}
+	},
+	[39] = {
+		story_type = 1,
+		name = "EP3-2 浮きドック再び",
+		unlock_conditions = "EP3-1をクリア",
+		change_bgm = "story-nailuo-theme",
+		change_prefab = "",
+		change_background = "bg_canghongzhifeng_1",
+		id = 39,
+		story = "HUANXINGCANGHONGZHIYAN9",
+		pre_event = {
+			38
+		},
+		lock = {
+			{
+				4,
+				38
+			}
+		}
+	},
+	[40] = {
+		story_type = 1,
+		name = "EP4-1 異常のMETA",
+		unlock_conditions = "EP3-2をクリア",
+		change_bgm = "story-nailuo-theme",
+		change_prefab = "",
+		change_background = "bg_canghongzhifeng_1",
+		id = 40,
+		story = "HUANXINGCANGHONGZHIYAN10",
+		pre_event = {
+			37
+		},
+		lock = {
+			{
+				4,
+				39
+			}
+		}
+	},
+	[41] = {
+		story_type = 2,
+		name = "EP4-2 ナラクでの邂逅",
+		unlock_conditions = "EP4-1をクリア",
+		change_bgm = "story-nailuo-theme",
+		change_prefab = "",
+		change_background = "bg_canghongzhifeng_1",
+		id = 41,
+		story = "1856001",
+		pre_event = {
+			40
+		},
+		lock = {
+			{
+				4,
+				40
+			}
+		}
+	},
+	[42] = {
+		story_type = 1,
+		name = "EP4-3 邂逅と会話",
+		unlock_conditions = "EP4-2をクリア",
+		change_bgm = "battle-nightmare-theme",
+		change_prefab = "",
+		change_background = "bg_bianzhihua_3",
+		id = 42,
+		story = "HUANXINGCANGHONGZHIYAN12",
+		pre_event = {
+			41
+		},
+		lock = {
+			{
+				4,
+				41
+			}
+		}
+	},
+	[43] = {
+		story_type = 1,
+		name = "EPS-1 切り開かれた道",
+		unlock_conditions = "EP4-3をクリア",
+		change_bgm = "story-darkplan",
+		change_prefab = "",
+		change_background = "star_level_bg_499",
+		id = 43,
+		story = "HUANXINGCANGHONGZHIYAN13",
+		pre_event = {
+			39,
+			42
+		},
+		lock = {
+			{
+				4,
+				42
+			}
+		}
+	},
+	[44] = {
+		story_type = 1,
+		name = "EPS-2 天城の夢",
+		unlock_conditions = "EPS-1をクリア",
+		change_bgm = "story-tiancheng",
+		change_prefab = "",
+		change_background = "bg_canghongzhifeng_2",
+		id = 44,
+		story = "HUANXINGCANGHONGZHIYAN14",
+		pre_event = {
+			43
+		},
+		lock = {
+			{
+				4,
+				43
+			}
+		}
+	},
+	[45] = {
+		story_type = 1,
+		name = "EP5-1 帰郷",
+		unlock_conditions = "EPS-2をクリア",
+		change_bgm = "story-tiancheng",
+		change_prefab = "",
+		change_background = "bg_canghongzhifeng_2 ",
+		id = 45,
+		story = "HUANXINGCANGHONGZHIYAN15",
+		pre_event = {
+			44
+		},
+		lock = {
+			{
+				4,
+				44
+			}
+		}
+	},
+	[46] = {
+		story_type = 1,
+		name = "EP5-2 団円",
+		unlock_conditions = "EP5-1をクリア",
+		change_bgm = "theme-amagi-cv",
+		change_prefab = "",
+		change_background = "star_level_bg_111",
+		id = 46,
+		story = "HUANXINGCANGHONGZHIYAN16",
+		pre_event = {
+			45
+		},
+		lock = {
+			{
+				4,
+				45
+			}
+		}
+	},
+	[47] = {
+		story_type = 1,
+		name = "EP5-3 対局",
+		unlock_conditions = "EP5-2をクリア",
+		change_bgm = "theme-amagi-cv",
+		change_prefab = "",
+		change_background = "bg_canghongzhifeng_3",
+		id = 47,
+		story = "HUANXINGCANGHONGZHIYAN17",
+		pre_event = {
+			46
+		},
+		lock = {
+			{
+				4,
+				46
+			}
+		}
+	},
+	[48] = {
+		story_type = 2,
+		name = "EP5-4 意外",
+		unlock_conditions = "EP5-3をクリア",
+		change_bgm = "story-nailuo-theme",
+		change_prefab = "",
+		change_background = "bg_canghongzhifeng_1",
+		id = 48,
+		story = "1856002",
+		pre_event = {
+			47
+		},
+		lock = {
+			{
+				4,
+				47
+			}
+		}
+	},
+	[49] = {
+		story_type = 1,
+		name = "EP5-5 対応",
+		unlock_conditions = "EP5-4をクリア",
+		change_bgm = "theme-nagato-meta",
+		change_prefab = "",
+		change_background = "bg_canghongzhifeng_1",
+		id = 49,
+		story = "HUANXINGCANGHONGZHIYAN19",
+		pre_event = {
+			48
+		},
+		lock = {
+			{
+				4,
+				53
+			}
+		}
+	},
+	[50] = {
+		story_type = 1,
+		name = "EP5-6 逆転",
+		unlock_conditions = "EP5-5をクリア",
+		change_bgm = "theme-nagato-meta",
+		change_prefab = "",
+		change_background = "bg_canghongzhifeng_1",
+		id = 50,
+		story = "HUANXINGCANGHONGZHIYAN20",
+		pre_event = {
+			49
+		},
+		lock = {
+			{
+				4,
+				49
+			}
+		}
+	},
+	[51] = {
+		story_type = 1,
+		name = "EP6-1 ナラクの「検視」",
+		unlock_conditions = "EP5-6をクリア",
+		change_bgm = "theme-amagi-cv",
+		change_prefab = "",
+		change_background = "star_level_bg_191",
+		id = 51,
+		story = "HUANXINGCANGHONGZHIYAN21",
+		pre_event = {
+			44
+		},
+		lock = {
+			{
+				4,
+				48
+			}
+		}
+	},
+	[52] = {
+		story_type = 2,
+		name = "EP6-2 偽物真形",
+		unlock_conditions = "EP6-1をクリア",
+		change_bgm = "theme-amagi-cv",
+		change_prefab = "",
+		change_background = "star_level_bg_192",
+		id = 52,
+		story = "1856003",
+		pre_event = {
+			51
+		},
+		lock = {
+			{
+				4,
+				51
+			}
+		}
+	},
+	[53] = {
+		story_type = 1,
+		name = "EP6-3 浄化",
+		unlock_conditions = "EP6-2をクリア",
+		change_bgm = "theme-akagi-meta",
+		change_prefab = "",
+		change_background = "bg_canghongzhifeng_4",
+		id = 53,
+		story = "HUANXINGCANGHONGZHIYAN23",
+		pre_event = {
+			52
+		},
+		lock = {
+			{
+				4,
+				52
+			}
+		}
+	},
+	[54] = {
+		story_type = 1,
+		name = "EPS-3 心と思いと",
+		unlock_conditions = "EP6-3をクリア",
+		change_bgm = "battle-unknown-approaching",
+		change_prefab = "",
+		change_background = "star_level_bg_504",
+		id = 54,
+		story = "HUANXINGCANGHONGZHIYAN24",
+		pre_event = {
+			50,
+			53
+		},
+		lock = {
+			{
+				4,
+				50
+			}
+		}
+	},
+	[55] = {
+		story_type = 1,
+		name = "EP7-1 破片",
+		unlock_conditions = "EPS-3をクリア",
+		change_bgm = "story-amagi-up",
+		change_prefab = "",
+		change_background = "bg_canghongzhifeng_4",
+		id = 55,
+		story = "HUANXINGCANGHONGZHIYAN25",
+		pre_event = {
+			54
+		},
+		lock = {
+			{
+				4,
+				59
+			}
+		}
+	},
+	[56] = {
+		story_type = 2,
+		name = "EP7-2 灼心",
+		unlock_conditions = "EP7-1をクリア",
+		change_bgm = "theme-akagi-meta",
+		change_prefab = "",
+		change_background = "bg_canghongzhifeng_4",
+		id = 56,
+		story = "1856004",
+		pre_event = {
+			55
+		},
+		lock = {
+			{
+				4,
+				55
+			}
+		}
+	},
+	[57] = {
+		story_type = 1,
+		name = "EP7-3 熔解",
+		unlock_conditions = "EP7-2をクリア",
+		change_bgm = "story-flowerdust-soft",
+		change_prefab = "",
+		change_background = "bg_canghongzhifeng_4",
+		id = 57,
+		story = "HUANXINGCANGHONGZHIYAN27",
+		pre_event = {
+			56
+		},
+		lock = {
+			{
+				4,
+				56
+			}
+		}
+	},
+	[58] = {
+		story_type = 1,
+		name = "EP7-4 大団円",
+		unlock_conditions = "EP7-3をクリア",
+		change_bgm = "battle-eagleunion",
+		change_prefab = "",
+		change_background = "star_level_bg_504",
+		id = 58,
+		story = "HUANXINGCANGHONGZHIYAN28",
+		pre_event = {
+			57
+		},
+		lock = {
+			{
+				4,
+				60
+			}
+		}
+	},
+	[59] = {
+		story_type = 1,
+		name = "EP8-1 ナラク制圧戦",
+		unlock_conditions = "EP7-4をクリア",
+		change_bgm = "theme-amagi-cv",
+		change_prefab = "",
+		change_background = "bg_canghongzhifeng_6",
+		id = 59,
+		story = "HUANXINGCANGHONGZHIYAN29",
+		pre_event = {
+			54
+		},
+		lock = {
+			{
+				4,
+				54
+			}
+		}
+	},
+	[60] = {
+		story_type = 1,
+		name = "EP8-2 NA中央海域制圧戦",
+		unlock_conditions = "EP8-1をクリア",
+		change_bgm = "battle-donghuang-static",
+		change_prefab = "",
+		change_background = "star_level_bg_504",
+		id = 60,
+		story = "HUANXINGCANGHONGZHIYAN30",
+		pre_event = {
+			59
+		},
+		lock = {
+			{
+				4,
+				57
+			}
+		}
+	},
+	[61] = {
+		story_type = 1,
+		name = "EP8-3 千鈞一髮",
+		unlock_conditions = "EP8-2をクリア",
+		change_bgm = "story-newsakura",
+		change_prefab = "",
+		change_background = "bg_canghongzhifeng_6",
+		id = 61,
+		story = "HUANXINGCANGHONGZHIYAN31",
+		pre_event = {
+			60
+		},
+		lock = {
+			{
+				4,
+				58
+			}
+		}
+	},
+	[62] = {
+		story_type = 1,
+		name = "EP9-1 帰途",
+		unlock_conditions = "EP8-3をクリア",
+		change_bgm = "story-startravel",
+		change_prefab = "",
+		change_background = "bg_port_chongdong",
+		id = 62,
+		story = "HUANXINGCANGHONGZHIYAN32",
+		pre_event = {
+			58,
+			61
+		},
+		lock = {
+			{
+				4,
+				61
+			}
+		}
+	},
+	[63] = {
+		story_type = 1,
+		name = "EX-1 予備脱出経路F",
+		unlock_conditions = "EP9-1をクリア",
+		change_bgm = "story-darkplan",
+		change_prefab = "",
+		change_background = "star_level_bg_503",
+		id = 63,
+		story = "HUANXINGCANGHONGZHIYAN33",
+		pre_event = {
+			62
+		},
+		lock = {
+			{
+				4,
+				62
+			}
+		}
+	},
+	[64] = {
+		story_type = 1,
+		name = "EX-2 誤差",
+		unlock_conditions = "EX-1をクリア",
+		change_bgm = "theme-thetowerXVI",
+		change_prefab = "",
+		change_background = "bg_port_chongdong",
+		id = 64,
+		story = "HUANXINGCANGHONGZHIYAN34",
+		pre_event = {
+			63
+		},
+		lock = {
+			{
+				4,
+				63
+			}
+		}
+	},
+	[65] = {
+		story_type = 1,
+		name = "EX-3 「タワー」",
+		unlock_conditions = "EX-2をクリア",
+		change_bgm = "bsm-2",
+		change_prefab = "",
+		change_background = "bg_story_tower",
+		id = 65,
+		story = "HUANXINGCANGHONGZHIYAN35",
+		pre_event = {
+			64
+		},
+		lock = {
+			{
+				4,
+				64
+			}
+		}
+	},
+	[66] = {
+		story_type = 1,
+		name = "EX-4 オブザーバーの独白",
+		unlock_conditions = "EX-3をクリア",
+		change_bgm = "theme-themagicianI",
+		change_prefab = "",
+		change_background = "bg_port_chongdong",
+		id = 66,
+		story = "HUANXINGCANGHONGZHIYAN36",
+		pre_event = {
+			65
+		},
+		lock = {
+			{
+				4,
+				65
+			}
+		}
+	},
+	[67] = {
+		story_type = 1,
+		name = "EX-5 世界の幻影",
+		unlock_conditions = "EX-4をクリア",
+		change_bgm = "theme-akagi-meta",
+		change_prefab = "Map_1850004",
+		change_background = "bg_canghongzhifeng_6",
+		id = 67,
+		story = "HUANXINGCANGHONGZHIYAN37",
+		pre_event = {
+			66
+		},
+		lock = {
+			{
+				4,
+				66
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -447,6 +1148,43 @@ pg.activity_sp_story = {
 		20,
 		21,
 		22,
-		23
+		23,
+		31,
+		32,
+		33,
+		34,
+		35,
+		36,
+		37,
+		38,
+		39,
+		40,
+		41,
+		42,
+		43,
+		44,
+		45,
+		46,
+		47,
+		48,
+		49,
+		50,
+		51,
+		52,
+		53,
+		54,
+		55,
+		56,
+		57,
+		58,
+		59,
+		60,
+		61,
+		62,
+		63,
+		64,
+		65,
+		66,
+		67
 	}
 }

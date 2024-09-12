@@ -93,7 +93,7 @@ function var_0_0.IsLegalForPlay(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
 		return false, nil
 	end
 
-	if not arg_9_0:CheckFullExp(arg_9_1, arg_9_2) then
+	if not arg_9_0:CheckFullExp(arg_9_1, arg_9_2) and not arg_9_1:isSameGroup(arg_9_2.groupId) then
 		return false, i18n("commander_exp_limit")
 	end
 

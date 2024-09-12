@@ -54,7 +54,9 @@ function var_0_1.DoWave(arg_3_0)
 			end
 		end
 
-		ChapterOpCommand.PlayChapterStory(arg_3_0._storyID, var_3_4, var_3_1)
+		local var_3_5 = var_0_0.Battle.BattleDataProxy.GetInstance():GetInitData().isMemory
+
+		ChapterOpCommand.PlayChapterStory(arg_3_0._storyID, var_3_4, var_3_1, var_3_5)
 		gcAll()
 	else
 		arg_3_0:doPass()

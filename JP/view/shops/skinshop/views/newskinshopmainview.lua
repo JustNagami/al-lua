@@ -844,6 +844,7 @@ function var_0_0.OnItemPurchase(arg_65_0, arg_65_1)
 
 	arg_65_0.voucherMsgBox:ExecuteAction("Show", {
 		itemList = var_65_0,
+		skinId = var_65_1,
 		skinName = var_65_3,
 		price = arg_65_1:GetPrice(),
 		onYes = function(arg_66_0)

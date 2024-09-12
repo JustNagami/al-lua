@@ -214,7 +214,9 @@ function var_0_0._TriggerEvent(arg_16_0, arg_16_1)
 			var_16_1(true)
 		end
 
-		arg_16_0.live2dChar:TriggerAction(var_16_8, nil, nil, var_16_1)
+		if not arg_16_0.live2dChar:TriggerAction(var_16_8, nil, nil, var_16_1) then
+			arg_16_0.actionWaiting = false
+		end
 	end
 end
 

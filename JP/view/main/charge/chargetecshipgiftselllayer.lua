@@ -23,17 +23,17 @@ end
 function var_0_0.initData(arg_5_0)
 	arg_5_0.showGoodVO = arg_5_0.contextData.showGoodVO
 	arg_5_0.chargedList = arg_5_0.contextData.chargedList
-	arg_5_0.goodVOList = arg_5_0.showGoodVO:getSameGroupTecShipGift()
+	arg_5_0.goodVOList = arg_5_0.showGoodVO:getSameLimitGroupTecGoods()
 	arg_5_0.normalGoodVO = nil
 	arg_5_0.highGoodVO = nil
 	arg_5_0.upGoodVO = nil
 
 	for iter_5_0, iter_5_1 in ipairs(arg_5_0.goodVOList) do
-		if iter_5_1:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.Normal then
-			arg_5_0.normalGoodVO = iter_5_1
-		elseif iter_5_1:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.High then
+		if iter_5_1:getConfig("limit_arg") == 1 then
 			arg_5_0.highGoodVO = iter_5_1
-		elseif iter_5_1:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.Up then
+		elseif iter_5_1:getConfig("limit_arg") == 2 then
+			arg_5_0.normalGoodVO = iter_5_1
+		elseif iter_5_1:getConfig("limit_arg") == 3 then
 			arg_5_0.upGoodVO = iter_5_1
 		end
 	end
@@ -106,19 +106,19 @@ function var_0_0.updateGiftTF(arg_11_0, arg_11_1, arg_11_2)
 	local var_11_8 = arg_11_0:findTF("Desc1", arg_11_1)
 	local var_11_9 = arg_11_0:findTF("Desc2", arg_11_1)
 	local var_11_10 = arg_11_0:findTF("List", arg_11_1)
-	local var_11_11 = arg_11_2:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.Normal
-	local var_11_12 = arg_11_2:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.High
-	local var_11_13 = arg_11_2:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.Up
+	local var_11_11 = arg_11_2:getConfig("limit_arg") == 1
+	local var_11_12 = arg_11_2:getConfig("limit_arg") == 2
+	local var_11_13 = arg_11_2:getConfig("limit_arg") == 3
 	local var_11_14 = ChargeConst.getBuyCount(arg_11_0.chargedList, arg_11_0.normalGoodVO.id) > 0
 
-	setActive(var_11_0, var_11_11)
-	setActive(var_11_1, not var_11_11)
-	setActive(var_11_2, var_11_11 and not var_11_14)
-	setActive(var_11_3, var_11_12)
+	setActive(var_11_0, var_11_12)
+	setActive(var_11_1, not var_11_12)
+	setActive(var_11_2, var_11_12 and not var_11_14)
+	setActive(var_11_3, var_11_11)
 	setActive(var_11_4, var_11_13)
-	setActive(var_11_5, var_11_11 and var_11_14)
+	setActive(var_11_5, var_11_12 and var_11_14)
 
-	if var_11_11 and var_11_14 then
+	if var_11_12 and var_11_14 then
 		setGray(arg_11_1, true, true)
 	end
 

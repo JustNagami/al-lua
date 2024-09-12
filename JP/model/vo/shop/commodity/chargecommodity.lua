@@ -71,7 +71,7 @@ function var_0_0.GetDropList(arg_14_0)
 end
 
 function var_0_0.GetExtraServiceItem(arg_15_0)
-	local var_15_0 = {}
+	local var_15_0
 
 	if arg_15_0:isPassItem() then
 		local var_15_1 = arg_15_0:getConfig("sub_display")[1]
@@ -81,20 +81,18 @@ function var_0_0.GetExtraServiceItem(arg_15_0)
 			return Drop.Create(pg.battlepass_event_award[arg_16_0].drop_client)
 		end))
 	else
-		local var_15_3 = arg_15_0:getConfig("extra_service_item")
-
-		var_15_0 = underscore.map(var_15_3, function(arg_17_0)
+		var_15_0 = underscore.map(arg_15_0:getConfig("extra_service_item"), function(arg_17_0)
 			return Drop.Create(arg_17_0)
 		end)
 	end
 
-	local var_15_4 = arg_15_0:GetGemCnt()
+	local var_15_3 = arg_15_0:GetGemCnt()
 
-	if not arg_15_0:isMonthCard() and var_15_4 > 0 then
+	if not arg_15_0:isMonthCard() and var_15_3 > 0 then
 		table.insert(var_15_0, Drop.New({
 			type = DROP_TYPE_RESOURCE,
 			id = PlayerConst.ResDiamond,
-			count = var_15_4
+			count = var_15_3
 		}))
 	end
 
@@ -102,19 +100,15 @@ function var_0_0.GetExtraServiceItem(arg_15_0)
 end
 
 function var_0_0.GetBonusItem(arg_18_0)
-	local var_18_0
-
 	if arg_18_0:isMonthCard() then
-		local var_18_1 = arg_18_0:GetGemCnt()
-
-		var_18_0 = {
-			id = 4,
-			type = 1,
-			count = var_18_1
-		}
+		return Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = PlayerConst.ResDiamond,
+			count = arg_18_0:GetGemCnt()
+		})
 	end
 
-	return var_18_0
+	return nil
 end
 
 function var_0_0.GetChargeTip(arg_19_0)
@@ -137,14 +131,13 @@ function var_0_0.GetExtraDrop(arg_20_0)
 	local var_20_0
 
 	if arg_20_0:isPassItem() then
-		local var_20_1 = arg_20_0:getConfig("sub_display")
-		local var_20_2 = var_20_1[1]
-		local var_20_3 = pg.battlepass_event_pt[var_20_2].pt
+		local var_20_1, var_20_2 = unpack(arg_20_0:getConfig("sub_display"))
+		local var_20_3 = pg.battlepass_event_pt[var_20_1].pt
 
 		var_20_0 = Drop.New({
 			type = DROP_TYPE_VITEM,
-			id = pg.battlepass_event_pt[var_20_2].pt,
-			count = var_20_1[2]
+			id = pg.battlepass_event_pt[var_20_1].pt,
+			count = var_20_2
 		})
 	end
 
@@ -199,50 +192,38 @@ function var_0_0.getLevelLimit(arg_25_0)
 	return 0
 end
 
-function var_0_0.isTecShipGift(arg_26_0)
-	if arg_26_0:getConfig("limit_type") == Goods.Tec_Ship_Gift_Type then
-		return true
-	else
-		return false
-	end
-end
+function var_0_0.getSameLimitGroupTecGoods(arg_26_0)
+	local var_26_0 = {}
+	local var_26_1 = arg_26_0:getConfig("limit_group")
+	local var_26_2 = arg_26_0:bindConfigTable()
 
-function var_0_0.isTecShipShowGift(arg_27_0)
-	if arg_27_0:isTecShipGift() then
-		if arg_27_0:getConfig("limit_arg") == Goods.Tec_Ship_Gift_Arg.Show then
-			return true
-		else
-			return false
-		end
-	else
-		return false
-	end
-end
-
-function var_0_0.getSameGroupTecShipGift(arg_28_0)
-	local var_28_0 = {}
-	local var_28_1 = arg_28_0:getConfig("limit_group")
-	local var_28_2 = arg_28_0:bindConfigTable()
-
-	for iter_28_0, iter_28_1 in ipairs(var_28_2.all) do
-		local var_28_3 = var_28_2[iter_28_1]
-
-		if var_28_3.limit_type == Goods.Tec_Ship_Gift_Type and var_28_3.limit_group == var_28_1 then
-			local var_28_4 = Goods.Create({
-				shop_id = iter_28_1
+	for iter_26_0, iter_26_1 in ipairs(var_26_2.all) do
+		if var_26_2[iter_26_1].limit_group == var_26_1 then
+			local var_26_3 = Goods.Create({
+				shop_id = iter_26_1
 			}, Goods.TYPE_CHARGE)
 
-			table.insert(var_28_0, var_28_4)
+			table.insert(var_26_0, var_26_3)
 		end
 	end
 
-	return var_28_0
+	return var_26_0
 end
 
-function var_0_0.CanViewSkinProbability(arg_29_0)
-	local var_29_0 = arg_29_0:getConfig("skin_inquire_relation")
+function var_0_0.getShowType(arg_27_0)
+	local var_27_0 = arg_27_0:getConfig("show_group")
 
-	if not var_29_0 or var_29_0 <= 0 then
+	if var_27_0 == "" then
+		-- block empty
+	end
+
+	return var_27_0
+end
+
+function var_0_0.CanViewSkinProbability(arg_28_0)
+	local var_28_0 = arg_28_0:getConfig("skin_inquire_relation")
+
+	if not var_28_0 or var_28_0 <= 0 then
 		return false
 	end
 
@@ -253,61 +234,61 @@ function var_0_0.CanViewSkinProbability(arg_29_0)
 	return true
 end
 
-function var_0_0.GetSkinProbability(arg_30_0)
-	local var_30_0 = {}
+function var_0_0.GetSkinProbability(arg_29_0)
+	local var_29_0 = {}
 
-	if arg_30_0:CanViewSkinProbability() then
-		local var_30_1 = arg_30_0:getConfig("skin_inquire_relation")
+	if arg_29_0:CanViewSkinProbability() then
+		local var_29_1 = arg_29_0:getConfig("skin_inquire_relation")
 
-		var_30_0 = Item.getConfigData(var_30_1).combination_display
+		var_29_0 = Item.getConfigData(var_29_1).combination_display
 	end
 
-	return var_30_0
+	return var_29_0
 end
 
-function var_0_0.GetSkinProbabilityItem(arg_31_0)
-	if not arg_31_0:CanViewSkinProbability() then
+function var_0_0.GetSkinProbabilityItem(arg_30_0)
+	if not arg_30_0:CanViewSkinProbability() then
 		return nil
 	end
 
-	local var_31_0 = arg_31_0:getConfig("skin_inquire_relation")
+	local var_30_0 = arg_30_0:getConfig("skin_inquire_relation")
 
 	return {
 		count = 1,
 		type = DROP_TYPE_ITEM,
-		id = var_31_0
+		id = var_30_0
 	}
 end
 
-function var_0_0.GetDropItem(arg_32_0)
-	local var_32_0 = arg_32_0:getConfig("drop_item")
+function var_0_0.GetDropItem(arg_31_0)
+	local var_31_0 = arg_31_0:getConfig("drop_item")
 
-	if #var_32_0 > 0 then
-		return var_32_0
+	if #var_31_0 > 0 then
+		return var_31_0
 	else
 		assert(false, "should exist drop item")
 	end
 end
 
-function var_0_0.GetLimitDesc(arg_33_0)
-	local var_33_0 = arg_33_0:getLimitCount()
-	local var_33_1 = arg_33_0.buyCount or 0
+function var_0_0.GetLimitDesc(arg_32_0)
+	local var_32_0 = arg_32_0:getLimitCount()
+	local var_32_1 = arg_32_0.buyCount or 0
 
-	if var_33_0 > 0 then
-		return i18n("charge_limit_all", var_33_0 - var_33_1, var_33_0)
+	if var_32_0 > 0 then
+		return i18n("charge_limit_all", var_32_0 - var_32_1, var_32_0)
 	end
 
-	local var_33_2 = arg_33_0:getConfig("group_limit")
+	local var_32_2 = arg_32_0:getConfig("group_limit")
 
-	if var_33_2 > 0 then
-		local var_33_3 = arg_33_0:getConfig("group_type") or 0
+	if var_32_2 > 0 then
+		local var_32_3 = arg_32_0:getConfig("group_type") or 0
 
-		if var_33_3 == 1 then
-			return i18n("charge_limit_daily", var_33_2 - arg_33_0.groupCount, var_33_2)
-		elseif var_33_3 == 2 then
-			return i18n("charge_limit_weekly", var_33_2 - arg_33_0.groupCount, var_33_2)
-		elseif var_33_3 == 3 then
-			return i18n("charge_limit_monthly", var_33_2 - arg_33_0.groupCount, var_33_2)
+		if var_32_3 == 1 then
+			return i18n("charge_limit_daily", var_32_2 - arg_32_0.groupCount, var_32_2)
+		elseif var_32_3 == 2 then
+			return i18n("charge_limit_weekly", var_32_2 - arg_32_0.groupCount, var_32_2)
+		elseif var_32_3 == 3 then
+			return i18n("charge_limit_monthly", var_32_2 - arg_32_0.groupCount, var_32_2)
 		end
 	end
 

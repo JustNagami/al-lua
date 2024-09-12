@@ -51,7 +51,7 @@ end
 function var_0_0.update(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 	arg_2_0.goods = arg_2_1
 
-	local var_2_0 = arg_2_1:isChargeType() and arg_2_1:isTecShipShowGift()
+	local var_2_0 = arg_2_1:isChargeType() and arg_2_1:getShowType() ~= ""
 
 	setActive(arg_2_0.desc, true)
 	setText(arg_2_0.desc, "")
@@ -235,7 +235,7 @@ function var_0_0.updateCharge(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
 	arg_3_0.iconTF.sprite = GetSpriteFromAtlas("chargeicon/1", "")
 
 	LoadSpriteAsync("chargeicon/" .. arg_3_1:getConfig("picture"), function(arg_5_0)
-		if arg_5_0 then
+		if arg_5_0 and not IsNil(arg_3_0.iconTF) then
 			arg_3_0.iconTF.sprite = arg_5_0
 
 			arg_3_0.iconTF:SetNativeSize()
@@ -366,7 +366,7 @@ function var_0_0.updateGemItem(arg_6_0, arg_6_1, arg_6_2)
 		arg_6_0.iconTF.sprite = GetSpriteFromAtlas("chargeicon/1", "")
 
 		LoadSpriteAsync(var_6_15.icon, function(arg_8_0)
-			if arg_8_0 then
+			if arg_8_0 and not IsNil(arg_6_0.iconTF) then
 				arg_6_0.iconTF.sprite = arg_8_0
 
 				arg_6_0.iconTF:SetNativeSize()

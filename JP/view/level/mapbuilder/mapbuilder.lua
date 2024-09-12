@@ -9,6 +9,7 @@ var_0_0.TYPESSSS = 6
 var_0_0.TYPEATELIER = 7
 var_0_0.TYPESENRANKAGURA = 8
 var_0_0.TYPESP = 9
+var_0_0.TYPESPFULL = 10
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2.event, arg_1_2.contextData)

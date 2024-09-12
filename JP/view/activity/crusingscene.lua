@@ -500,48 +500,25 @@ function var_0_0.openBuyPanel(arg_42_0)
 		shop_id = var_42_0
 	}, Goods.TYPE_CHARGE)
 	local var_42_2 = var_42_1:getConfig("tag")
-	local var_42_3 = underscore.map(var_42_1:getConfig("extra_service_item"), function(arg_43_0)
-		return Drop.Create(arg_43_0)
-	end)
-	local var_42_4
-	local var_42_5 = var_42_1:getConfig("sub_display")
-	local var_42_6 = var_42_5[1]
-	local var_42_7 = pg.battlepass_event_pt[var_42_6].pt
-	local var_42_8 = Drop.New({
-		type = DROP_TYPE_VITEM,
-		id = var_42_7,
-		count = var_42_5[2]
-	})
-	local var_42_9 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[var_42_6].award_pay, function(arg_44_0)
-		return Drop.Create(pg.battlepass_event_award[arg_44_0].drop_client)
-	end))
-	local var_42_10 = var_42_1:getConfig("gem") + var_42_1:getConfig("extra_gem")
-	local var_42_11
-
-	if var_42_10 > 0 then
-		table.insert(var_42_9, Drop.New({
-			type = DROP_TYPE_RESOURCE,
-			id = PlayerConst.ResDiamond,
-			count = var_42_10
-		}))
-	end
-
-	local var_42_12
-	local var_42_13
-	local var_42_14 = i18n("battlepass_pay_tip")
-	local var_42_15 = {
+	local var_42_3 = var_42_1:GetExtraServiceItem()
+	local var_42_4 = var_42_1:GetExtraDrop()
+	local var_42_5
+	local var_42_6
+	local var_42_7
+	local var_42_8 = i18n("battlepass_pay_tip")
+	local var_42_9 = {
 		isChargeType = true,
 		icon = "chargeicon/" .. var_42_1:getConfig("picture"),
 		name = var_42_1:getConfig("name_display"),
-		tipExtra = var_42_14,
-		extraItems = var_42_9,
+		tipExtra = var_42_8,
+		extraItems = var_42_3,
 		price = var_42_1:getConfig("money"),
 		isLocalPrice = var_42_1:IsLocalPrice(),
 		tagType = var_42_2,
 		isMonthCard = var_42_1:isMonthCard(),
-		tipBonus = var_42_13,
-		bonusItem = var_42_11,
-		extraDrop = var_42_8,
+		tipBonus = var_42_7,
+		bonusItem = var_42_5,
+		extraDrop = var_42_4,
 		descExtra = var_42_1:getConfig("descrip_extra"),
 		onYes = function()
 			if ChargeConst.isNeedSetBirth() then
@@ -554,25 +531,25 @@ function var_0_0.openBuyPanel(arg_42_0)
 		end
 	}
 
-	arg_42_0:emit(CrusingMediator.EVENT_GO_CHARGE, var_42_15)
+	arg_42_0:emit(CrusingMediator.EVENT_GO_CHARGE, var_42_9)
 end
 
-function var_0_0.getPassID(arg_46_0)
-	local var_46_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
+function var_0_0.getPassID(arg_44_0)
+	local var_44_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
 
-	if var_46_0 and not var_46_0:isEnd() then
-		for iter_46_0, iter_46_1 in ipairs(pg.pay_data_display.all) do
-			local var_46_1 = pg.pay_data_display[iter_46_1]
+	if var_44_0 and not var_44_0:isEnd() then
+		for iter_44_0, iter_44_1 in ipairs(pg.pay_data_display.all) do
+			local var_44_1 = pg.pay_data_display[iter_44_1]
 
-			if var_46_1.sub_display and type(var_46_1.sub_display) == "table" and var_46_1.sub_display[1] == var_46_0.id then
-				return iter_46_1
+			if var_44_1.sub_display and type(var_44_1.sub_display) == "table" and var_44_1.sub_display[1] == var_44_0.id then
+				return iter_44_1
 			end
 		end
 	end
 end
 
-function var_0_0.OnChargeSuccess(arg_47_0, arg_47_1)
-	arg_47_0.chargeTipWindow:ExecuteAction("Show", arg_47_1)
+function var_0_0.OnChargeSuccess(arg_45_0, arg_45_1)
+	arg_45_0.chargeTipWindow:ExecuteAction("Show", arg_45_1)
 end
 
 return var_0_0

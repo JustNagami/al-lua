@@ -55,6 +55,11 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 			{}
 		},
 		{
+			CompensateProxy,
+			true,
+			{}
+		},
+		{
 			NavalAcademyProxy,
 			true,
 			{}

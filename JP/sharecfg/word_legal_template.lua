@@ -3814,7 +3814,10 @@ function temp()
 				ラ = {
 					ン = {
 						ド = {
-							this = true
+							this = true,
+							改 = {
+								this = true
+							}
 						}
 					}
 				}
@@ -5746,20 +5749,7 @@ function temp()
 			this = true
 		},
 		門 = {
-			this = true,
-			["("] = {
-				M = {
-					E = {
-						T = {
-							A = {
-								[")"] = {
-									this = true
-								}
-							}
-						}
-					}
-				}
-			}
+			this = true
 		},
 		春 = {
 			this = true,
@@ -5809,6 +5799,11 @@ function temp()
 		},
 		圻 = {
 			this = true
+		},
+		伦 = {
+			娜 = {
+				this = true
+			}
 		}
 	}
 end
@@ -6805,9 +6800,6 @@ function temp()
 	var_0_1.瑞 = {
 		鶴 = {
 			this = true
-		},
-		鳳 = {
-			this = true
 		}
 	}
 end
@@ -7349,6 +7341,18 @@ end
 temp()
 
 function temp()
+	var_0_1.孟 = {
+		菲 = {
+			斯 = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.ナ = {
 		ポ = {
 			リ = {
@@ -7667,16 +7671,6 @@ temp()
 function temp()
 	var_0_1.吾 = {
 		妻 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.陸 = {
-		奧 = {
 			this = true
 		}
 	}

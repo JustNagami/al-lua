@@ -10,6 +10,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.type = arg_1_1.tag_type
 	arg_1_0.icon = arg_1_1.icon
 	arg_1_0.track = arg_1_1.track
+	arg_1_0.priority = arg_1_1.priority
 
 	local var_1_0 = string.split(arg_1_0.title, "&")
 
@@ -23,7 +24,6 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 
 	local var_1_1 = string.match(arg_1_0.titleImage, "<config.*/>")
 
-	arg_1_0.link = var_1_1 and string.match(var_1_1, "link%s*=%s*([^%s]+)") or nil
 	arg_1_0.paramType = var_1_1 and tonumber(string.match(var_1_1, "type%s*=%s*(%d+)")) or nil
 
 	if arg_1_0.paramType then
