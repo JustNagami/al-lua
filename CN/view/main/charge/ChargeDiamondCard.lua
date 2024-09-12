@@ -90,51 +90,37 @@ function var_0_0.updateForMonthTF(arg_4_0, arg_4_1, arg_4_2)
 		setActive(var_4_7, not arg_4_1:IsLocalPrice())
 	end
 
-	local var_4_9 = arg_4_1:getConfig("display")
+	local var_4_9 = arg_4_1:GetDropList()
 
-	if #var_4_9 == 0 then
-		var_4_9 = arg_4_1:getConfig("extra_service_item")
-	end
+	if #var_4_9 > 0 then
+		local var_4_10 = UIItemList.New(var_4_4, var_4_3)
 
-	if var_4_9 and #var_4_9 > 0 then
-		local var_4_10 = {}
-
-		for iter_4_0, iter_4_1 in ipairs(var_4_9) do
-			table.insert(var_4_10, {
-				type = iter_4_1[1],
-				id = iter_4_1[2],
-				count = iter_4_1[3]
-			})
-		end
-
-		local var_4_11 = UIItemList.New(var_4_4, var_4_3)
-
-		var_4_11:make(function(arg_5_0, arg_5_1, arg_5_2)
+		var_4_10:make(function(arg_5_0, arg_5_1, arg_5_2)
 			if arg_5_0 == UIItemList.EventUpdate then
-				updateDrop(arg_5_2, var_4_10[arg_5_1 + 1])
+				updateDrop(arg_5_2, var_4_9[arg_5_1 + 1])
 			end
 		end)
-		var_4_11:align(#var_4_10)
+		var_4_10:align(#var_4_9)
 	end
 
-	local var_4_12 = arg_4_2:getCardById(VipCard.MONTH)
+	local var_4_11 = arg_4_2:getCardById(VipCard.MONTH)
 
-	if var_4_12 and not var_4_12:isExpire() then
-		local var_4_13 = var_4_12:getLeftDate()
-		local var_4_14 = pg.TimeMgr.GetInstance():GetServerTime()
-		local var_4_15 = math.floor((var_4_13 - var_4_14) / 86400)
-		local var_4_16 = arg_4_1:getConfig("limit_arg") or 0
+	if var_4_11 and not var_4_11:isExpire() then
+		local var_4_12 = var_4_11:getLeftDate()
+		local var_4_13 = pg.TimeMgr.GetInstance():GetServerTime()
+		local var_4_14 = math.floor((var_4_12 - var_4_13) / 86400)
+		local var_4_15 = arg_4_1:getConfig("limit_arg") or 0
 
-		setActive(var_4_5, var_4_16 < var_4_15)
-		setText(var_4_6, i18n("charge_month_card_lefttime_tip", var_4_15))
+		setActive(var_4_5, var_4_15 < var_4_14)
+		setText(var_4_6, i18n("charge_month_card_lefttime_tip", var_4_14))
 	else
 		setActive(var_4_5, false)
 	end
 
-	local var_4_17 = MonthCardOutDateTipPanel.GetShowMonthCardTag()
+	local var_4_16 = MonthCardOutDateTipPanel.GetShowMonthCardTag()
 
-	setActive(arg_4_0.monthTF:Find("monthcard_tag"), var_4_17)
-	setActive(arg_4_0.monthTF:Find("NewTag"), not var_4_17)
+	setActive(arg_4_0.monthTF:Find("monthcard_tag"), var_4_16)
+	setActive(arg_4_0.monthTF:Find("NewTag"), not var_4_16)
 	onButton(arg_4_0.parentContext, var_4_0, function()
 		triggerButton(arg_4_0.tr)
 	end, SFX_PANEL)

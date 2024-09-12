@@ -1699,5 +1699,13 @@ pg.voice_actor_CN = {
 	{
 		code = 425,
 		actor_name = "月城日花"
+	},
+	{
+		code = 426,
+		actor_name = "直田姬奈"
+	},
+	{
+		code = 427,
+		actor_name = "涩谷彩乃"
 	}
 }

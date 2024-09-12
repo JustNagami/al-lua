@@ -26,13 +26,8 @@ var_0_0.EQUIP_BAG_SIZE_ITEM = 59100
 var_0_0.SHIP_BAG_SIZE_ITEM = 59101
 var_0_0.COMMANDER_BAG_SIZE_ITEM = 59114
 var_0_0.SPWEAPON_BAG_SIZE_ITEM = 59360
-var_0_0.Tec_Ship_Gift_Type = 3
-var_0_0.Tec_Ship_Gift_Arg = {
-	High = 1,
-	Up = 3,
-	Show = 0,
-	Normal = 2
-}
+var_0_0.SHOW_TYPE_TECH = "tech"
+var_0_0.SHOW_TYPE_BATTLE_UI = "uigift"
 var_0_0.CUR_PACKET_ID = 27
 
 function var_0_0.Ctor(arg_1_0)

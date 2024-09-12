@@ -450,6 +450,7 @@ function var_0_3.GetResFromSkill(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
 
 	if type(var_14_1.painting) == "string" then
 		var_14_0[#var_14_0 + 1] = var_0_0.Battle.BattleResourceManager.GetHrzIcon(var_14_1.painting)
+		var_14_0[#var_14_0 + 1] = var_0_0.Battle.BattleResourceManager.GetSquareIcon(var_14_1.painting)
 	end
 
 	if type(var_14_1.castCV) == "table" then

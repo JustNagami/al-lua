@@ -29,7 +29,6 @@
 			},
 			arg_list = {
 				buff_id = 15932,
-				quota = 1,
 				time = 10,
 				target = "TargetSelf"
 			}

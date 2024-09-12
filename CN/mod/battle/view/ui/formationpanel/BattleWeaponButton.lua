@@ -42,20 +42,22 @@ function var_0_1.SetJam(arg_4_0, arg_4_1)
 	SetActive(arg_4_0._progress, not arg_4_1)
 end
 
-function var_0_1.SwitchIcon(arg_5_0, arg_5_1)
+function var_0_1.SwitchIcon(arg_5_0, arg_5_1, arg_5_2)
 	arg_5_0._iconIndex = arg_5_1
 
 	local var_5_0 = var_0_1.ICON_BY_INDEX[arg_5_1]
+	local var_5_1 = arg_5_2 or var_0_0.Battle.BattleState.GetCombatSkinKey()
 
-	setImageSprite(arg_5_0._unfill, LoadSprite("ui/CombatUI_atlas", "weapon_unfill_" .. var_5_0))
-	setImageSprite(arg_5_0._filled, LoadSprite("ui/CombatUI_atlas", "filled_combined_" .. var_5_0))
+	setImageSprite(arg_5_0._unfill, LoadSprite("ui/CombatUI" .. var_5_1 .. "_atlas", "weapon_unfill_" .. var_5_0))
+	setImageSprite(arg_5_0._filled, LoadSprite("ui/CombatUI" .. var_5_1 .. "_atlas", "filled_combined_" .. var_5_0))
 end
 
-function var_0_1.SwitchIconEffect(arg_6_0, arg_6_1)
+function var_0_1.SwitchIconEffect(arg_6_0, arg_6_1, arg_6_2)
 	local var_6_0 = var_0_1.ICON_BY_INDEX[arg_6_1]
+	local var_6_1 = arg_6_2 or var_0_0.Battle.BattleState.GetCombatSkinKey()
 
-	setImageSprite(arg_6_0._filledEffect, LoadSprite("ui/CombatUI_atlas", "filled_effect_" .. var_6_0), true)
-	setImageSprite(arg_6_0._jam, LoadSprite("ui/CombatUI_atlas", "skill_jam_" .. var_6_0), true)
+	setImageSprite(arg_6_0._filledEffect, LoadSprite("ui/CombatUI" .. var_6_1 .. "_atlas", "filled_effect_" .. var_6_0), true)
+	setImageSprite(arg_6_0._jam, LoadSprite("ui/CombatUI" .. var_6_1 .. "_atlas", "skill_jam_" .. var_6_0), true)
 end
 
 function var_0_1.ConfigSkin(arg_7_0, arg_7_1)
@@ -281,27 +283,43 @@ function var_0_1.Update(arg_29_0)
 	end
 end
 
-function var_0_1.updateProgressBar(arg_30_0)
-	local var_30_0 = arg_30_0._progressInfo:GetCurrent() / arg_30_0._progressInfo:GetMax()
+function var_0_1.SetToCombatUIPreview(arg_30_0, arg_30_1)
+	if arg_30_1 then
+		SetActive(arg_30_0._filled, true)
+		SetActive(arg_30_0._unfill, false)
 
-	arg_30_0._progressBar.fillAmount = var_30_0
+		arg_30_0._progressBar.fillAmount = 1
+		arg_30_0._countTxt.text = "1/1"
+	else
+		SetActive(arg_30_0._unfill, true)
+		SetActive(arg_30_0._filled, false)
+
+		arg_30_0._progressBar.fillAmount = 0
+		arg_30_0._countTxt.text = "0/0"
+	end
 end
 
-function var_0_1.Dispose(arg_31_0)
-	if arg_31_0.eventTriggers then
-		for iter_31_0, iter_31_1 in pairs(arg_31_0.eventTriggers) do
-			ClearEventTrigger(iter_31_0)
+function var_0_1.updateProgressBar(arg_31_0)
+	local var_31_0 = arg_31_0._progressInfo:GetCurrent() / arg_31_0._progressInfo:GetMax()
+
+	arg_31_0._progressBar.fillAmount = var_31_0
+end
+
+function var_0_1.Dispose(arg_32_0)
+	if arg_32_0.eventTriggers then
+		for iter_32_0, iter_32_1 in pairs(arg_32_0.eventTriggers) do
+			ClearEventTrigger(iter_32_0)
 		end
 
-		arg_31_0.eventTriggers = nil
+		arg_32_0.eventTriggers = nil
 	end
 
-	arg_31_0._progress = nil
-	arg_31_0._progressBar = nil
+	arg_32_0._progress = nil
+	arg_32_0._progressBar = nil
 
-	arg_31_0._progressInfo:UnregisterEventListener(arg_31_0, var_0_0.Battle.BattleEvent.OVER_LOAD_CHANGE)
-	arg_31_0._progressInfo:UnregisterEventListener(arg_31_0, var_0_0.Battle.BattleEvent.WEAPON_TOTAL_CHANGE)
-	arg_31_0._progressInfo:UnregisterEventListener(arg_31_0, var_0_0.Battle.BattleEvent.WEAPON_COUNT_PLUS)
-	arg_31_0._progressInfo:UnregisterEventListener(arg_31_0, var_0_0.Battle.BattleEvent.COUNT_CHANGE)
-	var_0_0.EventListener.DetachEventListener(arg_31_0)
+	arg_32_0._progressInfo:UnregisterEventListener(arg_32_0, var_0_0.Battle.BattleEvent.OVER_LOAD_CHANGE)
+	arg_32_0._progressInfo:UnregisterEventListener(arg_32_0, var_0_0.Battle.BattleEvent.WEAPON_TOTAL_CHANGE)
+	arg_32_0._progressInfo:UnregisterEventListener(arg_32_0, var_0_0.Battle.BattleEvent.WEAPON_COUNT_PLUS)
+	arg_32_0._progressInfo:UnregisterEventListener(arg_32_0, var_0_0.Battle.BattleEvent.COUNT_CHANGE)
+	var_0_0.EventListener.DetachEventListener(arg_32_0)
 end

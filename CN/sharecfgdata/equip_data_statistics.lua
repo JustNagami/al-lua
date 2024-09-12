@@ -152936,3 +152936,101 @@ _G.pg.base.equip_data_statistics[61105] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[61111] = {
+	type = 99,
+	name = "航空攻击展示-天城I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "航母空袭展示用",
+	id = 61111,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61111
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[61112] = {
+	id = 61112,
+	name = "航空攻击展示-天城II",
+	base = 61111,
+	weapon_id = {
+		61112
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[61113] = {
+	id = 61113,
+	name = "航空攻击展示-天城II",
+	base = 61111,
+	weapon_id = {
+		61113
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80351] = {
+	type = 1,
+	name = "专属弹幕-渡良濑I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80351,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61681
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80352] = {
+	id = 80352,
+	name = "专属弹幕-渡良濑II",
+	base = 80351,
+	weapon_id = {
+		61682
+	},
+	hidden_skill_id = {}
+}

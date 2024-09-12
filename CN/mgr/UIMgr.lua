@@ -209,6 +209,7 @@ function var_0_0.AttachStickOb(arg_16_0, arg_16_1)
 
 	arg_16_0._firstPos = var_16_0.localPosition
 	arg_16_0.vtc = 0
+	arg_16_0._stickTailPS = arg_16_0._stick:Find("tailGizmos")
 
 	arg_16_0:SetActive(true)
 end
@@ -230,6 +231,16 @@ end
 function var_0_0.UpdateStick(arg_22_0, arg_22_1, arg_22_2)
 	if not arg_22_0._stickActive then
 		return
+	end
+
+	if arg_22_0._stickTailPS then
+		if arg_22_2 == -1 then
+			if arg_22_2 ~= arg_22_0.fingerId then
+				setActive(arg_22_0._stickTailPS, false)
+			end
+		elseif arg_22_2 > 0 and arg_22_2 ~= arg_22_0.fingerId then
+			setActive(arg_22_0._stickTailPS, true)
+		end
 	end
 
 	if arg_22_2 == -2 then
