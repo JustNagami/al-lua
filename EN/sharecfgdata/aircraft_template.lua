@@ -244060,3 +244060,4547 @@ _G.pg.base.aircraft_template[3193004] = {
 		}
 	}
 }
+_G.pg.base.aircraft_template[165211] = {
+	attack_power = 2,
+	name = "天城零战二一型Lv1",
+	type = 1,
+	accuracy = 23,
+	model_ID = "lingzhan21",
+	ACC_growth = 0,
+	crash_DMG = 106,
+	dodge = 0.315,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 165211,
+	icon = "lingzhan21",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 9,
+	hp_growth = 1826,
+	speed = 52,
+	max_hp = 47,
+	scale = 1,
+	weapon_ID = {
+		50042,
+		50542,
+		165241
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.68,
+				-0.667,
+				0
+			},
+			{
+				0.97,
+				0.584,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0.27,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[165212] = {
+	id = 165212,
+	name = "天城零战二一型Lv2",
+	hp_growth = 2036,
+	base = 165211,
+	max_hp = 53,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50043,
+		50543,
+		165242
+	}
+}
+_G.pg.base.aircraft_template[165213] = {
+	id = 165213,
+	name = "天城零战二一型Lv3",
+	hp_growth = 2247,
+	base = 165211,
+	max_hp = 58,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50044,
+		50544,
+		165243
+	}
+}
+_G.pg.base.aircraft_template[165214] = {
+	id = 165214,
+	name = "天城零战二一型Lv4",
+	hp_growth = 2458,
+	base = 165211,
+	max_hp = 64,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50045,
+		50545,
+		165244
+	}
+}
+_G.pg.base.aircraft_template[165215] = {
+	id = 165215,
+	name = "天城零战二一型Lv5",
+	hp_growth = 2669,
+	base = 165211,
+	max_hp = 69,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50046,
+		50546,
+		165245
+	}
+}
+_G.pg.base.aircraft_template[165216] = {
+	id = 165216,
+	name = "天城零战二一型Lv6",
+	hp_growth = 2879,
+	base = 165211,
+	max_hp = 75,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50047,
+		50547,
+		165246
+	}
+}
+_G.pg.base.aircraft_template[165217] = {
+	id = 165217,
+	name = "天城零战二一型Lv7",
+	hp_growth = 3090,
+	base = 165211,
+	max_hp = 80,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50048,
+		50548,
+		165247
+	}
+}
+_G.pg.base.aircraft_template[165218] = {
+	id = 165218,
+	name = "天城零战二一型Lv8",
+	hp_growth = 3301,
+	base = 165211,
+	max_hp = 86,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50049,
+		50549,
+		165248
+	}
+}
+_G.pg.base.aircraft_template[165219] = {
+	id = 165219,
+	name = "天城零战二一型Lv9",
+	hp_growth = 3511,
+	base = 165211,
+	max_hp = 91,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50050,
+		50550,
+		165249
+	}
+}
+_G.pg.base.aircraft_template[165220] = {
+	id = 165220,
+	name = "天城零战二一型Lv10",
+	hp_growth = 3722,
+	base = 165211,
+	max_hp = 97,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50051,
+		50551,
+		165250
+	}
+}
+_G.pg.base.aircraft_template[165221] = {
+	attack_power = 2,
+	name = "天城九九式舰爆Lv1",
+	type = 3,
+	accuracy = 23,
+	model_ID = "99shijianbao1",
+	ACC_growth = 0,
+	crash_DMG = 180,
+	dodge = 3.33,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 165221,
+	icon = "99shijianbao1",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 1,
+	hp_growth = 1913,
+	speed = 45,
+	max_hp = 50,
+	scale = 1,
+	weapon_ID = {
+		50042,
+		165251,
+		165241
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[165222] = {
+	id = 165222,
+	name = "天城九九式舰爆Lv2",
+	hp_growth = 2133,
+	base = 165221,
+	max_hp = 55,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50043,
+		165252,
+		165242
+	}
+}
+_G.pg.base.aircraft_template[165223] = {
+	id = 165223,
+	name = "天城九九式舰爆Lv3",
+	hp_growth = 2354,
+	base = 165221,
+	max_hp = 61,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50044,
+		165253,
+		165243
+	}
+}
+_G.pg.base.aircraft_template[165224] = {
+	id = 165224,
+	name = "天城九九式舰爆Lv4",
+	hp_growth = 2575,
+	base = 165221,
+	max_hp = 67,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50045,
+		165254,
+		165244
+	}
+}
+_G.pg.base.aircraft_template[165225] = {
+	id = 165225,
+	name = "天城九九式舰爆Lv5",
+	hp_growth = 2796,
+	base = 165221,
+	max_hp = 73,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50046,
+		165255,
+		165245
+	}
+}
+_G.pg.base.aircraft_template[165226] = {
+	id = 165226,
+	name = "天城九九式舰爆Lv6",
+	hp_growth = 3016,
+	base = 165221,
+	max_hp = 78,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50047,
+		165256,
+		165246
+	}
+}
+_G.pg.base.aircraft_template[165227] = {
+	id = 165227,
+	name = "天城九九式舰爆Lv7",
+	hp_growth = 3237,
+	base = 165221,
+	max_hp = 84,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50048,
+		165257,
+		165247
+	}
+}
+_G.pg.base.aircraft_template[165228] = {
+	id = 165228,
+	name = "天城九九式舰爆Lv8",
+	hp_growth = 3458,
+	base = 165221,
+	max_hp = 90,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50049,
+		165258,
+		165248
+	}
+}
+_G.pg.base.aircraft_template[165229] = {
+	id = 165229,
+	name = "天城九九式舰爆Lv9",
+	hp_growth = 3678,
+	base = 165221,
+	max_hp = 96,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50050,
+		165259,
+		165249
+	}
+}
+_G.pg.base.aircraft_template[165230] = {
+	id = 165230,
+	name = "天城九九式舰爆Lv10",
+	hp_growth = 3899,
+	base = 165221,
+	max_hp = 101,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50051,
+		165260,
+		165250
+	}
+}
+_G.pg.base.aircraft_template[165231] = {
+	attack_power = 2,
+	name = "天城九七式舰攻lv1",
+	type = 2,
+	accuracy = 23,
+	model_ID = "97jiangong",
+	ACC_growth = 0,
+	crash_DMG = 148,
+	dodge = 1.17,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 165231,
+	icon = "97jiangong",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 4,
+	hp_growth = 1913,
+	speed = 48,
+	max_hp = 47,
+	scale = 1,
+	weapon_ID = {
+		50042,
+		165261
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.68,
+				-0.667,
+				0
+			},
+			{
+				0.97,
+				0.584,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0.54,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[165232] = {
+	id = 165232,
+	name = "天城九七式舰攻lv2",
+	hp_growth = 2133,
+	base = 165231,
+	max_hp = 53,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50043,
+		165262
+	}
+}
+_G.pg.base.aircraft_template[165233] = {
+	id = 165233,
+	name = "天城九七式舰攻lv3",
+	hp_growth = 2354,
+	base = 165231,
+	max_hp = 58,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50044,
+		165263
+	}
+}
+_G.pg.base.aircraft_template[165234] = {
+	id = 165234,
+	name = "天城九七式舰攻lv4",
+	hp_growth = 2575,
+	base = 165231,
+	max_hp = 64,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50045,
+		165264
+	}
+}
+_G.pg.base.aircraft_template[165235] = {
+	id = 165235,
+	name = "天城九七式舰攻lv5",
+	hp_growth = 2796,
+	base = 165231,
+	max_hp = 69,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50046,
+		165265
+	}
+}
+_G.pg.base.aircraft_template[165236] = {
+	id = 165236,
+	name = "天城九七式舰攻lv6",
+	hp_growth = 3016,
+	base = 165231,
+	max_hp = 75,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50047,
+		165266
+	}
+}
+_G.pg.base.aircraft_template[165237] = {
+	id = 165237,
+	name = "天城九七式舰攻lv7",
+	hp_growth = 3237,
+	base = 165231,
+	max_hp = 80,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50048,
+		165267
+	}
+}
+_G.pg.base.aircraft_template[165238] = {
+	id = 165238,
+	name = "天城九七式舰攻lv8",
+	hp_growth = 3458,
+	base = 165231,
+	max_hp = 86,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50049,
+		165268
+	}
+}
+_G.pg.base.aircraft_template[165239] = {
+	id = 165239,
+	name = "天城九七式舰攻lv9",
+	hp_growth = 3678,
+	base = 165231,
+	max_hp = 91,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50050,
+		165269
+	}
+}
+_G.pg.base.aircraft_template[165240] = {
+	id = 165240,
+	name = "天城九七式舰攻lv10",
+	hp_growth = 3899,
+	base = 165231,
+	max_hp = 97,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50051,
+		165270
+	}
+}
+_G.pg.base.aircraft_template[165281] = {
+	attack_power = 2,
+	name = "天城九九舰爆lv1-跨队",
+	type = 3,
+	accuracy = 23,
+	model_ID = "99shijianbao1",
+	ACC_growth = 0,
+	crash_DMG = 180,
+	dodge = 3.33,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 165281,
+	icon = "99shijianbao1",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 1,
+	hp_growth = 1913,
+	speed = 45,
+	max_hp = 50,
+	scale = 1,
+	weapon_ID = {
+		50042,
+		165251,
+		165241
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[165282] = {
+	id = 165282,
+	name = "天城九九舰爆lv2-跨队",
+	hp_growth = 2133,
+	base = 165281,
+	max_hp = 55,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50043,
+		165252,
+		165242
+	}
+}
+_G.pg.base.aircraft_template[165283] = {
+	id = 165283,
+	name = "天城九九舰爆lv3-跨队",
+	hp_growth = 2354,
+	base = 165281,
+	max_hp = 61,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50044,
+		165253,
+		165243
+	}
+}
+_G.pg.base.aircraft_template[165284] = {
+	id = 165284,
+	name = "天城九九舰爆lv4-跨队",
+	hp_growth = 2575,
+	base = 165281,
+	max_hp = 67,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50045,
+		165254,
+		165244
+	}
+}
+_G.pg.base.aircraft_template[165285] = {
+	id = 165285,
+	name = "天城九九舰爆lv5-跨队",
+	hp_growth = 2796,
+	base = 165281,
+	max_hp = 73,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50046,
+		165255,
+		165245
+	}
+}
+_G.pg.base.aircraft_template[165286] = {
+	id = 165286,
+	name = "天城九九舰爆lv6-跨队",
+	hp_growth = 3016,
+	base = 165281,
+	max_hp = 78,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50047,
+		165256,
+		165246
+	}
+}
+_G.pg.base.aircraft_template[165287] = {
+	id = 165287,
+	name = "天城九九舰爆lv7-跨队",
+	hp_growth = 3237,
+	base = 165281,
+	max_hp = 84,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50048,
+		165257,
+		165247
+	}
+}
+_G.pg.base.aircraft_template[165288] = {
+	id = 165288,
+	name = "天城九九舰爆lv8-跨队",
+	hp_growth = 3458,
+	base = 165281,
+	max_hp = 90,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50049,
+		165258,
+		165248
+	}
+}
+_G.pg.base.aircraft_template[165289] = {
+	id = 165289,
+	name = "天城九九舰爆lv9-跨队",
+	hp_growth = 3678,
+	base = 165281,
+	max_hp = 96,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50050,
+		165259,
+		165249
+	}
+}
+_G.pg.base.aircraft_template[165290] = {
+	id = 165290,
+	name = "天城九九舰爆lv10-跨队",
+	hp_growth = 3899,
+	base = 165281,
+	max_hp = 101,
+	spawn_brownian = 1,
+	weapon_ID = {
+		50051,
+		165260,
+		165250
+	}
+}
+_G.pg.base.aircraft_template[3200101] = {
+	attack_power = 2,
+	name = "【2024天城航母活动A2】BOSS 假面赤城 轰炸机",
+	type = 1,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3200101,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 33,
+	max_hp = 86,
+	scale = 0.75,
+	weapon_ID = {
+		3200103
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3200102] = {
+	attack_power = 2,
+	name = "【2024天城航母活动A2】BOSS 假面赤城 鱼雷机",
+	type = 2,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 72,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3200102,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 2380,
+	speed = 30,
+	max_hp = 99,
+	scale = 0.75,
+	weapon_ID = {
+		3200104
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3202101] = {
+	attack_power = 2,
+	name = "【2024天城航母活动C2】BOSS 假面赤城 轰炸机",
+	type = 1,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3202101,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 33,
+	max_hp = 86,
+	scale = 0.75,
+	weapon_ID = {
+		3202103
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3202102] = {
+	attack_power = 2,
+	name = "【2024天城航母活动C2】BOSS 假面赤城 鱼雷机",
+	type = 2,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 72,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3202102,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 2380,
+	speed = 30,
+	max_hp = 99,
+	scale = 0.75,
+	weapon_ID = {
+		3202104
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3201008] = {
+	attack_power = 2,
+	name = "【2024天城航母活动B1】BOSS 加贺灵狐 第三波 零散慢速战斗机",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_2",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3201008,
+	icon = "feilong_02",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 25,
+	max_hp = 86,
+	scale = 0.75,
+	weapon_ID = {
+		3201009
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3201104] = {
+	attack_power = 2,
+	name = "【2024天城航母活动B2】BOSS 赤城灵狐 第三波 高速冲撞飞机（无弹幕）",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_1",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3201104,
+	icon = "feilong_01",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 86,
+	scale = 0.75,
+	weapon_ID = {},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3201108] = {
+	attack_power = 2,
+	name = "【2024天城航母活动B2】BOSS 赤城灵狐 第三波 轰炸机",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_1",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3201108,
+	icon = "feilong_01",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 33,
+	max_hp = 86,
+	scale = 0.75,
+	weapon_ID = {
+		3201110
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3201109] = {
+	attack_power = 2,
+	name = "【2024天城航母活动B2】BOSS 赤城灵狐 第三波 鱼雷机",
+	type = 2,
+	accuracy = 23,
+	model_ID = "shishenfeiji_1",
+	ACC_growth = 0,
+	crash_DMG = 72,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3201109,
+	icon = "feilong_01",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 2380,
+	speed = 30,
+	max_hp = 99,
+	scale = 0.75,
+	weapon_ID = {
+		3201111
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3201208] = {
+	attack_power = 2,
+	name = "【2024天城航母活动B3】BOSS 赤城meta 第二波 加贺灵体 轰炸机",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_2",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3201208,
+	icon = "feilong_02",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 33,
+	max_hp = 86,
+	scale = 0.75,
+	weapon_ID = {
+		3201210
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3201209] = {
+	attack_power = 2,
+	name = "【2024天城航母活动B3】BOSS 赤城meta 第二波 加贺灵体 鱼雷机",
+	type = 2,
+	accuracy = 23,
+	model_ID = "shishenfeiji_2",
+	ACC_growth = 0,
+	crash_DMG = 72,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3201209,
+	icon = "feilong_02",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 2380,
+	speed = 30,
+	max_hp = 99,
+	scale = 0.75,
+	weapon_ID = {
+		3201211
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3201214] = {
+	attack_power = 2,
+	name = "【2024天城航母活动B3】BOSS 赤城meta 第三波 乌鸦战斗机 四方向",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 15,
+	dodge = 1,
+	nationality = 3,
+	id = 3201214,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 0,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 0,
+	speed = 30,
+	max_hp = 300,
+	scale = 0.75,
+	funnel_behavior = {
+		AI = 70167
+	},
+	weapon_ID = {
+		3201218
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3201215] = {
+	attack_power = 2,
+	name = "【2024天城航母活动B3】BOSS 赤城meta 第三波 乌鸦战斗机 四方向",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 15,
+	dodge = 1,
+	nationality = 3,
+	id = 3201215,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 0,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 0,
+	speed = 30,
+	max_hp = 300,
+	scale = 0.75,
+	funnel_behavior = {
+		AI = 70168
+	},
+	weapon_ID = {
+		3201218
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3201216] = {
+	attack_power = 2,
+	name = "【2024天城航母活动B3】BOSS 赤城meta 第三波 乌鸦战斗机 四方向",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 15,
+	dodge = 1,
+	nationality = 3,
+	id = 3201216,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 0,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 0,
+	speed = 30,
+	max_hp = 300,
+	scale = 0.75,
+	funnel_behavior = {
+		AI = 70169
+	},
+	weapon_ID = {
+		3201218
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3201217] = {
+	attack_power = 2,
+	name = "【2024天城航母活动B3】BOSS 赤城meta 第三波 乌鸦战斗机 四方向",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 15,
+	dodge = 1,
+	nationality = 3,
+	id = 3201217,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 0,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 0,
+	speed = 30,
+	max_hp = 300,
+	scale = 0.75,
+	funnel_behavior = {
+		AI = 70170
+	},
+	weapon_ID = {
+		3201218
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3201219] = {
+	attack_power = 2,
+	name = "【2024天城航母活动B3】BOSS 赤城meta 第三波 高速轰炸机",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_1",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3201219,
+	icon = "feilong_01",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 100,
+	scale = 0.75,
+	weapon_ID = {
+		3201220
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3203008] = {
+	attack_power = 2,
+	name = "【2024天城航母活动D1】BOSS 加贺灵狐 第三波 零散慢速战斗机",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_2",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3203008,
+	icon = "feilong_02",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 25,
+	max_hp = 86,
+	scale = 0.75,
+	weapon_ID = {
+		3203009
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3203104] = {
+	attack_power = 2,
+	name = "【2024天城航母活动D2】BOSS 赤城灵狐 第三波 高速冲撞飞机（无弹幕）",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_1",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3203104,
+	icon = "feilong_01",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 86,
+	scale = 0.75,
+	weapon_ID = {},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3203108] = {
+	attack_power = 2,
+	name = "【2024天城航母活动D2】BOSS 赤城灵狐 第三波 轰炸机",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_1",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3203108,
+	icon = "feilong_01",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 33,
+	max_hp = 86,
+	scale = 0.75,
+	weapon_ID = {
+		3203110
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3203109] = {
+	attack_power = 2,
+	name = "【2024天城航母活动D2】BOSS 赤城灵狐 第三波 鱼雷机",
+	type = 2,
+	accuracy = 23,
+	model_ID = "shishenfeiji_1",
+	ACC_growth = 0,
+	crash_DMG = 72,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3203109,
+	icon = "feilong_01",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 2380,
+	speed = 30,
+	max_hp = 99,
+	scale = 0.75,
+	weapon_ID = {
+		3203111
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3203208] = {
+	attack_power = 2,
+	name = "【2024天城航母活动D3】BOSS 赤城meta 第二波 加贺灵体 轰炸机",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_2",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3203208,
+	icon = "feilong_02",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 33,
+	max_hp = 86,
+	scale = 0.75,
+	weapon_ID = {
+		3203210
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3203209] = {
+	attack_power = 2,
+	name = "【2024天城航母活动D3】BOSS 赤城meta 第二波 加贺灵体 鱼雷机",
+	type = 2,
+	accuracy = 23,
+	model_ID = "shishenfeiji_2",
+	ACC_growth = 0,
+	crash_DMG = 72,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3203209,
+	icon = "feilong_02",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 2380,
+	speed = 30,
+	max_hp = 99,
+	scale = 0.75,
+	weapon_ID = {
+		3203211
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3203214] = {
+	attack_power = 2,
+	name = "【2024天城航母活动D3】BOSS 赤城meta 第三波 乌鸦战斗机 四方向",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 15,
+	dodge = 1,
+	nationality = 3,
+	id = 3203214,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 0,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 0,
+	speed = 30,
+	max_hp = 300,
+	scale = 0.75,
+	funnel_behavior = {
+		AI = 70167
+	},
+	weapon_ID = {
+		3203218
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3203215] = {
+	attack_power = 2,
+	name = "【2024天城航母活动D3】BOSS 赤城meta 第三波 乌鸦战斗机 四方向",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 15,
+	dodge = 1,
+	nationality = 3,
+	id = 3203215,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 0,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 0,
+	speed = 30,
+	max_hp = 300,
+	scale = 0.75,
+	funnel_behavior = {
+		AI = 70168
+	},
+	weapon_ID = {
+		3203218
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3203216] = {
+	attack_power = 2,
+	name = "【2024天城航母活动D3】BOSS 赤城meta 第三波 乌鸦战斗机 四方向",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 15,
+	dodge = 1,
+	nationality = 3,
+	id = 3203216,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 0,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 0,
+	speed = 30,
+	max_hp = 300,
+	scale = 0.75,
+	funnel_behavior = {
+		AI = 70169
+	},
+	weapon_ID = {
+		3203218
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3203217] = {
+	attack_power = 2,
+	name = "【2024天城航母活动D3】BOSS 赤城meta 第三波 乌鸦战斗机 四方向",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 15,
+	dodge = 1,
+	nationality = 3,
+	id = 3203217,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 0,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 0,
+	speed = 30,
+	max_hp = 300,
+	scale = 0.75,
+	funnel_behavior = {
+		AI = 70170
+	},
+	weapon_ID = {
+		3203218
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3203219] = {
+	attack_power = 2,
+	name = "【2024天城航母活动D3】BOSS 赤城meta 第三波 高速轰炸机",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_1",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3203219,
+	icon = "feilong_01",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 100,
+	scale = 0.75,
+	weapon_ID = {
+		3203220
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3205006] = {
+	attack_power = 2,
+	name = "【2024天城航母活动EX 普通】BOSS 赤城meta 一阶段 鱼雷机",
+	type = 2,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 150,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3205006,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 40,
+	max_hp = 200,
+	scale = 0.75,
+	weapon_ID = {
+		3205007
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3205009] = {
+	attack_power = 2,
+	name = "【2024天城航母活动EX 普通】BOSS 赤城meta 二阶段 加贺灵体 轰炸机",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_2",
+	ACC_growth = 0,
+	crash_DMG = 150,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3205009,
+	icon = "feilong_02",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 33,
+	max_hp = 200,
+	scale = 0.75,
+	weapon_ID = {
+		3205010
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3205019] = {
+	attack_power = 2,
+	name = "【2024天城航母活动EX 普通】BOSS 赤城meta 三阶段 乌鸦战斗机 四方向",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 50,
+	dodge = 1,
+	nationality = 3,
+	id = 3205019,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 0,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 250,
+	scale = 0.75,
+	funnel_behavior = {
+		AI = 70167
+	},
+	weapon_ID = {
+		3205023,
+		3205024
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3205020] = {
+	attack_power = 2,
+	name = "【2024天城航母活动EX 普通】BOSS 赤城meta 三阶段 乌鸦战斗机 四方向",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 50,
+	dodge = 1,
+	nationality = 3,
+	id = 3205020,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 0,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 250,
+	scale = 0.75,
+	funnel_behavior = {
+		AI = 70168
+	},
+	weapon_ID = {
+		3205023,
+		3205024
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3205021] = {
+	attack_power = 2,
+	name = "【2024天城航母活动EX 普通】BOSS 赤城meta 三阶段 乌鸦战斗机 四方向",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 50,
+	dodge = 1,
+	nationality = 3,
+	id = 3205021,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 0,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 250,
+	scale = 0.75,
+	funnel_behavior = {
+		AI = 70169
+	},
+	weapon_ID = {
+		3205023,
+		3205024
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3205022] = {
+	attack_power = 2,
+	name = "【2024天城航母活动EX 普通】BOSS 赤城meta 三阶段 乌鸦战斗机 四方向",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 50,
+	dodge = 1,
+	nationality = 3,
+	id = 3205022,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 0,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 250,
+	scale = 0.75,
+	funnel_behavior = {
+		AI = 70170
+	},
+	weapon_ID = {
+		3205023,
+		3205024
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3205025] = {
+	attack_power = 2,
+	name = "【2024天城航母活动EX 普通】BOSS 赤城meta 三阶段 高速鱼雷机",
+	type = 2,
+	accuracy = 23,
+	model_ID = "shishenfeiji_1",
+	ACC_growth = 0,
+	crash_DMG = 50,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3205025,
+	icon = "feilong_01",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 200,
+	scale = 0.75,
+	weapon_ID = {
+		3205026
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3205106] = {
+	attack_power = 2,
+	name = "【2024天城航母活动EX 困难】BOSS 赤城meta 一阶段 鱼雷机",
+	type = 2,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 150,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3205106,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 40,
+	max_hp = 200,
+	scale = 0.75,
+	weapon_ID = {
+		3205107
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3205109] = {
+	attack_power = 2,
+	name = "【2024天城航母活动EX 困难】BOSS 赤城meta 二阶段 加贺灵体 轰炸机",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_2",
+	ACC_growth = 0,
+	crash_DMG = 150,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3205109,
+	icon = "feilong_02",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 33,
+	max_hp = 200,
+	scale = 0.75,
+	weapon_ID = {
+		3205110
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3205119] = {
+	attack_power = 2,
+	name = "【2024天城航母活动EX 困难】BOSS 赤城meta 三阶段 乌鸦战斗机 四方向",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 50,
+	dodge = 1,
+	nationality = 3,
+	id = 3205119,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 0,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 300,
+	scale = 0.75,
+	funnel_behavior = {
+		AI = 70167
+	},
+	weapon_ID = {
+		3205123,
+		3205124
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3205120] = {
+	attack_power = 2,
+	name = "【2024天城航母活动EX 困难】BOSS 赤城meta 三阶段 乌鸦战斗机 四方向",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 50,
+	dodge = 1,
+	nationality = 3,
+	id = 3205120,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 0,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 300,
+	scale = 0.75,
+	funnel_behavior = {
+		AI = 70168
+	},
+	weapon_ID = {
+		3205123,
+		3205124
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3205121] = {
+	attack_power = 2,
+	name = "【2024天城航母活动EX 困难】BOSS 赤城meta 三阶段 乌鸦战斗机 四方向",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 50,
+	dodge = 1,
+	nationality = 3,
+	id = 3205121,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 0,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 300,
+	scale = 0.75,
+	funnel_behavior = {
+		AI = 70169
+	},
+	weapon_ID = {
+		3205123,
+		3205124
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3205122] = {
+	attack_power = 2,
+	name = "【2024天城航母活动EX 困难】BOSS 赤城meta 三阶段 乌鸦战斗机 四方向",
+	type = 3,
+	accuracy = 23,
+	model_ID = "sairenfeiji_wuxing",
+	ACC_growth = 0,
+	crash_DMG = 50,
+	dodge = 1,
+	nationality = 3,
+	id = 3205122,
+	icon = "sairenfeiji_wuxing",
+	spawn_brownian = 0,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 300,
+	scale = 0.75,
+	funnel_behavior = {
+		AI = 70170
+	},
+	weapon_ID = {
+		3205123,
+		3205124
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3205125] = {
+	attack_power = 2,
+	name = "【2024天城航母活动EX 困难】BOSS 赤城meta 三阶段 高速鱼雷机",
+	type = 2,
+	accuracy = 23,
+	model_ID = "shishenfeiji_1",
+	ACC_growth = 0,
+	crash_DMG = 50,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3205125,
+	icon = "feilong_01",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 100,
+	scale = 0.75,
+	weapon_ID = {
+		3205126
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3207105] = {
+	attack_power = 2,
+	name = "【2024天城航母活动B】精英 加贺灵狐 零散慢速战斗机",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_2",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3207105,
+	icon = "feilong_02",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 25,
+	max_hp = 86,
+	scale = 0.75,
+	weapon_ID = {
+		3207106
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3207115] = {
+	attack_power = 2,
+	name = "【2024天城航母活动B】精英 赤城灵狐 高速冲撞飞机（无弹幕）",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_1",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3207115,
+	icon = "feilong_01",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 86,
+	scale = 0.75,
+	weapon_ID = {},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3207305] = {
+	attack_power = 2,
+	name = "【2024天城航母活动D】精英 加贺灵狐 零散慢速战斗机",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_2",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3207305,
+	icon = "feilong_02",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 25,
+	max_hp = 86,
+	scale = 0.75,
+	weapon_ID = {
+		3207306
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3207315] = {
+	attack_power = 2,
+	name = "【2024天城航母活动D】精英 赤城灵狐 高速冲撞飞机（无弹幕）",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_1",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3207315,
+	icon = "feilong_01",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 86,
+	scale = 0.75,
+	weapon_ID = {},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3207405] = {
+	attack_power = 2,
+	name = "【2024天城航母活动SP】精英 加贺灵狐 零散慢速战斗机",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_2",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3207405,
+	icon = "feilong_02",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 25,
+	max_hp = 86,
+	scale = 0.75,
+	weapon_ID = {
+		3207406
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3207415] = {
+	attack_power = 2,
+	name = "【2024天城航母活动SP】精英 赤城灵狐 高速冲撞飞机（无弹幕）",
+	type = 1,
+	accuracy = 23,
+	model_ID = "shishenfeiji_1",
+	ACC_growth = 0,
+	crash_DMG = 48,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3207415,
+	icon = "feilong_01",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1960,
+	speed = 60,
+	max_hp = 86,
+	scale = 0.75,
+	weapon_ID = {},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3207531] = {
+	attack_power = 2,
+	name = "【2024天城航母活动B】我方支援弹幕 苍红之炎 飞机",
+	type = 3,
+	accuracy = 23,
+	model_ID = "feiji_tianchenghongzha",
+	ACC_growth = 0,
+	crash_DMG = 10,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3207531,
+	icon = "feiji_huoyanfenghuang",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1680,
+	speed = 60,
+	max_hp = 80,
+	scale = 0.75,
+	weapon_ID = {
+		3207532
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3207533] = {
+	attack_power = 2,
+	name = "【2024天城航母活动D】我方支援弹幕 苍红之炎 飞机",
+	type = 3,
+	accuracy = 23,
+	model_ID = "feiji_tianchenghongzha",
+	ACC_growth = 0,
+	crash_DMG = 10,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3207533,
+	icon = "feiji_huoyanfenghuang",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1680,
+	speed = 60,
+	max_hp = 80,
+	scale = 0.75,
+	weapon_ID = {
+		3207534
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3207535] = {
+	attack_power = 2,
+	name = "【2024天城航母活动SP】我方支援弹幕 苍红之炎 飞机",
+	type = 3,
+	accuracy = 23,
+	model_ID = "feiji_tianchenghongzha",
+	ACC_growth = 0,
+	crash_DMG = 10,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3207535,
+	icon = "feiji_huoyanfenghuang",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1680,
+	speed = 60,
+	max_hp = 80,
+	scale = 0.75,
+	weapon_ID = {
+		3207536
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3207537] = {
+	attack_power = 2,
+	name = "【2024天城航母活动】我方支援弹幕 苍红之炎 飞机（装饰用陪飞的，无挂载武器）",
+	type = 3,
+	accuracy = 23,
+	model_ID = "feiji_tianchenghongzha",
+	ACC_growth = 0,
+	crash_DMG = 10,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3207537,
+	icon = "feiji_huoyanfenghuang",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1680,
+	speed = 60,
+	max_hp = 80,
+	scale = 0.75,
+	weapon_ID = {},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}

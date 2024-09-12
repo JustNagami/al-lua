@@ -18,6 +18,7 @@ var_0_0.GO_SINGLE_ACTIVITY = "NewMainMediator:GO_SINGLE_ACTIVITY"
 var_0_0.REFRESH_VIEW = "NewMainMediator:REFRESH_VIEW"
 var_0_0.OPEN_DORM_SELECT_LAYER = "NewMainMediator.OPEN_DORM_SELECT_LAYER"
 var_0_0.OPEN_KINK_BUTTON_LAYER = "NewMainMediator.OPEN_KINK_BUTTON_LAYER"
+var_0_0.OPEN_Compensate = "NewMainMediator:OPEN_Compensate"
 
 function var_0_0.register(arg_1_0)
 	arg_1_0:bind(var_0_0.GO_SINGLE_ACTIVITY, function(arg_2_0, arg_2_1)
@@ -116,19 +117,22 @@ function var_0_0.register(arg_1_0)
 			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.MAIL)
 		end
 	end)
-	arg_1_0:bind(var_0_0.OPEN_NOTICE, function(arg_14_0)
+	arg_1_0:bind(var_0_0.OPEN_Compensate, function(arg_14_0)
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.Compensate)
+	end)
+	arg_1_0:bind(var_0_0.OPEN_NOTICE, function(arg_15_0)
 		arg_1_0:addSubLayers(Context.New({
 			mediator = NewBulletinBoardMediator,
 			viewComponent = NewBulletinBoardLayer
 		}))
 	end)
-	arg_1_0:bind(var_0_0.OPEN_COMMISION, function(arg_15_0)
+	arg_1_0:bind(var_0_0.OPEN_COMMISION, function(arg_16_0)
 		arg_1_0:addSubLayers(Context.New({
 			viewComponent = CommissionInfoLayer,
 			mediator = CommissionInfoMediator
 		}))
 	end)
-	arg_1_0:bind(var_0_0.OPEN_CHATVIEW, function(arg_16_0)
+	arg_1_0:bind(var_0_0.OPEN_CHATVIEW, function(arg_17_0)
 		arg_1_0:addSubLayers(Context.New({
 			mediator = NotificationMediator,
 			viewComponent = NotificationLayer,
@@ -137,16 +141,16 @@ function var_0_0.register(arg_1_0)
 			}
 		}))
 	end)
-	arg_1_0:bind(var_0_0.OPEN_DORM_SELECT_LAYER, function(arg_17_0)
+	arg_1_0:bind(var_0_0.OPEN_DORM_SELECT_LAYER, function(arg_18_0)
 		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.DORM3DSELECT)
 	end)
-	arg_1_0:bind(var_0_0.OPEN_KINK_BUTTON_LAYER, function(arg_18_0, arg_18_1)
-		arg_1_0:addSubLayers(arg_18_1)
+	arg_1_0:bind(var_0_0.OPEN_KINK_BUTTON_LAYER, function(arg_19_0, arg_19_1)
+		arg_1_0:addSubLayers(arg_19_1)
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_19_0)
-	local var_19_0 = {
+function var_0_0.listNotificationInterests(arg_20_0)
+	local var_20_0 = {
 		GAME.REMOVE_LAYERS,
 		GAME.GET_GUILD_INFO_DONE,
 		GAME.GET_GUILD_CHAT_LIST_DONE,
@@ -174,55 +178,57 @@ function var_0_0.listNotificationInterests(arg_19_0)
 		TaskProxy.TASK_ADDED,
 		TechnologyConst.UPDATE_REDPOINT_ON_TOP,
 		MiniGameProxy.ON_HUB_DATA_UPDATE,
-		var_0_0.REFRESH_VIEW
+		var_0_0.REFRESH_VIEW,
+		CompensateProxy.UPDATE_ATTACHMENT_COUNT,
+		CompensateProxy.All_Compensate_Remove
 	}
 
-	for iter_19_0, iter_19_1 in pairs(pg.redDotHelper:GetNotifyType()) do
-		for iter_19_2, iter_19_3 in pairs(iter_19_1) do
-			if not table.contains(var_19_0, iter_19_3) then
-				table.insert(var_19_0, iter_19_3)
+	for iter_20_0, iter_20_1 in pairs(pg.redDotHelper:GetNotifyType()) do
+		for iter_20_2, iter_20_3 in pairs(iter_20_1) do
+			if not table.contains(var_20_0, iter_20_3) then
+				table.insert(var_20_0, iter_20_3)
 			end
 		end
 	end
 
-	return var_19_0
+	return var_20_0
 end
 
-function var_0_0.handleNotification(arg_20_0, arg_20_1)
-	local var_20_0 = arg_20_1:getName()
-	local var_20_1 = arg_20_1:getBody()
+function var_0_0.handleNotification(arg_21_0, arg_21_1)
+	local var_21_0 = arg_21_1:getName()
+	local var_21_1 = arg_21_1:getBody()
 
-	pg.redDotHelper:Notify(var_20_0)
+	pg.redDotHelper:Notify(var_21_0)
 
-	if var_20_0 == GAME.ON_OPEN_INS_LAYER then
-		arg_20_0.viewComponent:emit(var_0_0.SKIP_INS)
-	elseif var_20_0 == NotificationProxy.FRIEND_REQUEST_ADDED or var_20_0 == NotificationProxy.FRIEND_REQUEST_REMOVED or var_20_0 == FriendProxy.FRIEND_NEW_MSG or var_20_0 == FriendProxy.FRIEND_UPDATED or var_20_0 == ChatProxy.NEW_MSG or var_20_0 == GuildProxy.NEW_MSG_ADDED or var_20_0 == GAME.GET_GUILD_INFO_DONE or var_20_0 == GAME.GET_GUILD_CHAT_LIST_DONE then
-		arg_20_0.viewComponent:emit(GAME.ANY_CHAT_MSG_UPDATE)
-	elseif var_20_0 == GAME.BEGIN_STAGE_DONE then
-		arg_20_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var_20_1)
-	elseif var_20_0 == ChapterProxy.CHAPTER_TIMESUP then
+	if var_21_0 == GAME.ON_OPEN_INS_LAYER then
+		arg_21_0.viewComponent:emit(var_0_0.SKIP_INS)
+	elseif var_21_0 == NotificationProxy.FRIEND_REQUEST_ADDED or var_21_0 == NotificationProxy.FRIEND_REQUEST_REMOVED or var_21_0 == FriendProxy.FRIEND_NEW_MSG or var_21_0 == FriendProxy.FRIEND_UPDATED or var_21_0 == ChatProxy.NEW_MSG or var_21_0 == GuildProxy.NEW_MSG_ADDED or var_21_0 == GAME.GET_GUILD_INFO_DONE or var_21_0 == GAME.GET_GUILD_CHAT_LIST_DONE then
+		arg_21_0.viewComponent:emit(GAME.ANY_CHAT_MSG_UPDATE)
+	elseif var_21_0 == GAME.BEGIN_STAGE_DONE then
+		arg_21_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var_21_1)
+	elseif var_21_0 == ChapterProxy.CHAPTER_TIMESUP then
 		MainChapterTimeUpSequence.New():Execute()
-	elseif var_20_0 == TechnologyConst.UPDATE_REDPOINT_ON_TOP then
+	elseif var_21_0 == TechnologyConst.UPDATE_REDPOINT_ON_TOP then
 		MainTechnologySequence.New():Execute(function()
 			return
 		end)
-	elseif var_20_0 == GAME.FETCH_NPC_SHIP_DONE then
-		arg_20_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_20_1.items, var_20_1.callback)
-	elseif var_20_0 == var_0_0.REFRESH_VIEW then
-		arg_20_0.viewComponent:setVisible(false)
-		arg_20_0.viewComponent:setVisible(true)
-	elseif var_20_0 == GAME.CONFIRM_GET_SHIP then
-		arg_20_0:addSubLayers(Context.New({
+	elseif var_21_0 == GAME.FETCH_NPC_SHIP_DONE then
+		arg_21_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_21_1.items, var_21_1.callback)
+	elseif var_21_0 == var_0_0.REFRESH_VIEW then
+		arg_21_0.viewComponent:setVisible(false)
+		arg_21_0.viewComponent:setVisible(true)
+	elseif var_21_0 == GAME.CONFIRM_GET_SHIP then
+		arg_21_0:addSubLayers(Context.New({
 			mediator = BuildShipRemindMediator,
 			viewComponent = BuildShipRemindLayer,
 			data = {
-				ships = var_20_1.ships
+				ships = var_21_1.ships
 			},
-			onRemoved = var_20_1.callback
+			onRemoved = var_21_1.callback
 		}))
 	end
 
-	arg_20_0.viewComponent:emit(var_20_0, var_20_1)
+	arg_21_0.viewComponent:emit(var_21_0, var_21_1)
 end
 
 return var_0_0

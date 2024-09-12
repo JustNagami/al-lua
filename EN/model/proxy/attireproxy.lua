@@ -6,7 +6,8 @@ var_0_0.ATTIREFRAME_EXPIRED = "AttireProxy:ATTIREFRAME_EXPIRED"
 
 local var_0_1 = pg.item_data_frame
 local var_0_2 = pg.item_data_chat
-local var_0_3 = false
+local var_0_3 = pg.item_data_battleui
+local var_0_4 = false
 
 function var_0_0.register(arg_1_0)
 	arg_1_0.data = {}
@@ -14,6 +15,7 @@ function var_0_0.register(arg_1_0)
 	arg_1_0.expiredChaces = {}
 	arg_1_0.data.iconFrames = {}
 	arg_1_0.data.chatFrames = {}
+	arg_1_0.data.combatUIStyles = {}
 
 	for iter_1_0, iter_1_1 in ipairs(var_0_1.all) do
 		if iter_1_1 == 0 then
@@ -41,6 +43,25 @@ function var_0_0.register(arg_1_0)
 		end
 	end
 
+	for iter_1_4, iter_1_5 in ipairs(var_0_3.all) do
+		arg_1_0.data.combatUIStyles[iter_1_5] = CombatUIStyle.New({
+			id = iter_1_5
+		})
+	end
+
+	local var_1_0 = PlayerPrefs.GetString("new_auto_unlock_combat_ui")
+
+	if pg.gameset.new_auto_unlock_combat_ui.description ~= var_1_0 then
+		local var_1_1 = string.split(pg.gameset.new_auto_unlock_combat_ui.description, "|")
+
+		for iter_1_6, iter_1_7 in ipairs(var_1_1) do
+			iter_1_7 = tonumber(iter_1_7)
+
+			arg_1_0.data.combatUIStyles[iter_1_7]:setNew()
+		end
+	end
+
+	PlayerPrefs.SetString("new_auto_unlock_combat_ui", pg.gameset.new_auto_unlock_combat_ui.description)
 	arg_1_0:on(11003, function(arg_2_0)
 		for iter_2_0, iter_2_1 in ipairs(arg_2_0.icon_frame_list) do
 			local var_2_0 = arg_1_0.data.iconFrames[iter_2_1.id]
@@ -57,9 +78,23 @@ function var_0_0.register(arg_1_0)
 			arg_1_0:updateAttireFrame(var_2_1)
 			arg_1_0:addExpiredTimer(var_2_1)
 		end
+
+		for iter_2_4, iter_2_5 in ipairs(arg_2_0.battle_ui_list or {}) do
+			local var_2_2 = arg_1_0.data.combatUIStyles[iter_2_5]
+
+			var_2_2:setUnlock()
+			arg_1_0:updateAttireFrame(var_2_2)
+			arg_1_0:addExpiredTimer(var_2_2)
+		end
+
+		for iter_2_6, iter_2_7 in pairs(arg_1_0.data.combatUIStyles) do
+			if not iter_2_7:isOwned() then
+				iter_2_7:setLock()
+			end
+		end
 	end)
 
-	if var_0_3 then
+	if var_0_4 then
 		arg_1_0.timer = Timer.New(function()
 			local var_3_0 = {}
 			local var_3_1 = {
@@ -115,6 +150,10 @@ function var_0_0.clearNew(arg_5_0)
 	for iter_5_2, iter_5_3 in pairs(arg_5_0.data.chatFrames) do
 		iter_5_3:clearNew()
 	end
+
+	for iter_5_4, iter_5_5 in pairs(arg_5_0.data.combatUIStyles) do
+		iter_5_5:clearNew()
+	end
 end
 
 function var_0_0.getExpiredChaces(arg_6_0)
@@ -136,6 +175,8 @@ function var_0_0.getAttireFrame(arg_7_0, arg_7_1, arg_7_2)
 		var_7_0 = arg_7_0.data.iconFrames[arg_7_2]
 	elseif arg_7_1 == AttireConst.TYPE_CHAT_FRAME then
 		var_7_0 = arg_7_0.data.chatFrames[arg_7_2]
+	elseif arg_7_1 == AttireConst.TYPE_COMBAT_UI_STYLE then
+		var_7_0 = arg_7_0.data.combatUIStyles[arg_7_2]
 	end
 
 	return var_7_0
@@ -155,6 +196,8 @@ function var_0_0.addAttireFrame(arg_8_0, arg_8_1)
 		arg_8_0.data.iconFrames[arg_8_1.id] = arg_8_1
 	elseif var_8_0 == AttireConst.TYPE_CHAT_FRAME then
 		arg_8_0.data.chatFrames[arg_8_1.id] = arg_8_1
+	elseif var_8_0 == AttireConst.TYPE_COMBAT_UI_STYLE then
+		arg_8_0.data.combatUIStyles[arg_8_1.id] = arg_8_1
 	end
 
 	arg_8_0:addExpiredTimer(arg_8_1)
@@ -172,6 +215,10 @@ function var_0_0.updateAttireFrame(arg_9_0, arg_9_1)
 		assert(arg_9_0.data.chatFrames[arg_9_1.id])
 
 		arg_9_0.data.chatFrames[arg_9_1.id] = arg_9_1
+	elseif var_9_0 == AttireConst.TYPE_COMBAT_UI_STYLE then
+		assert(arg_9_0.data.combatUIStyles[arg_9_1.id])
+
+		arg_9_0.data.combatUIStyles[arg_9_1.id] = arg_9_1
 	end
 
 	arg_9_0:sendNotification(var_0_0.ATTIREFRAME_UPDATED, arg_9_1:clone())
@@ -232,13 +279,14 @@ function var_0_0.remove(arg_14_0)
 	arg_14_0.timers = {}
 end
 
-function var_0_0.needTip(arg_15_0)
+function var_0_0.needTip(arg_15_0, arg_15_1)
 	local var_15_0 = {}
-	local var_15_1 = arg_15_0:getDataAndTrophys()
+	local var_15_1 = arg_15_1 or arg_15_0:getDataAndTrophys()
 	local var_15_2 = {
 		var_15_1.iconFrames,
 		var_15_1.chatFrames,
-		var_15_1.trophys
+		var_15_1.trophys,
+		var_15_1.combatUIStyles
 	}
 
 	local function var_15_3(arg_16_0)
@@ -256,10 +304,10 @@ function var_0_0.needTip(arg_15_0)
 	end
 
 	for iter_15_0, iter_15_1 in ipairs(var_15_2) do
-		if iter_15_0 == 1 or iter_15_0 == 2 then
-			table.insert(var_15_0, var_15_3(iter_15_1))
-		else
+		if iter_15_0 == 3 then
 			table.insert(var_15_0, false)
+		else
+			table.insert(var_15_0, var_15_3(iter_15_1))
 		end
 	end
 

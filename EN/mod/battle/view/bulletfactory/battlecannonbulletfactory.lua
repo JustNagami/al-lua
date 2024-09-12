@@ -37,53 +37,61 @@ function var_0_4.onBulletHitFunc(arg_3_0, arg_3_1, arg_3_2)
 	end
 
 	local var_3_4 = var_3_3:GetUnitData()
-	local var_3_5, var_3_6 = var_3_0:HandleDamage(var_3_1, var_3_4)
-	local var_3_7
+	local var_3_5 = {
+		_bullet = var_3_1,
+		equipIndex = var_3_1:GetWeapon():GetEquipmentIndex(),
+		bulletTag = var_3_1:GetExtraTag()
+	}
+
+	var_3_1:BuffTrigger(var_0_0.Battle.BattleConst.BuffEffectType.ON_BULLET_COLLIDE_BEFORE, var_3_5)
+
+	local var_3_6, var_3_7 = var_3_0:HandleDamage(var_3_1, var_3_4)
+	local var_3_8
 
 	if var_3_3:GetGO() then
-		if var_3_5 then
-			local var_3_8, var_3_9 = var_0_4.GetFXPool():GetFX(arg_3_0:GetMissFXID())
-			local var_3_10 = var_3_3:GetUnitData():GetBoxSize()
-			local var_3_11 = math.random(0, 1)
+		if var_3_6 then
+			local var_3_9, var_3_10 = var_0_4.GetFXPool():GetFX(arg_3_0:GetMissFXID())
+			local var_3_11 = var_3_3:GetUnitData():GetBoxSize()
+			local var_3_12 = math.random(0, 1)
 
-			if var_3_11 == 0 then
-				var_3_11 = -1
+			if var_3_12 == 0 then
+				var_3_12 = -1
 			end
 
-			local var_3_12 = (math.random() - 0.5) * var_3_10.x
-			local var_3_13 = Vector3(var_3_12, 0, var_3_10.z * var_3_11):Add(var_3_3:GetPosition())
+			local var_3_13 = (math.random() - 0.5) * var_3_11.x
+			local var_3_14 = Vector3(var_3_13, 0, var_3_11.z * var_3_12):Add(var_3_3:GetPosition())
 
-			pg.EffectMgr.GetInstance():PlayBattleEffect(var_3_8, var_3_13:Add(var_3_9), true)
+			pg.EffectMgr.GetInstance():PlayBattleEffect(var_3_9, var_3_14:Add(var_3_10), true)
 			var_0_0.Battle.PlayBattleSFX(var_3_1:GetMissSFX())
 		else
-			var_3_7 = var_3_3:AddFX(arg_3_0:GetFXID())
+			var_3_8 = var_3_3:AddFX(arg_3_0:GetFXID())
 
 			var_0_0.Battle.PlayBattleSFX(var_3_1:GetHitSFX())
 
-			local var_3_14 = var_3_4:GetDirection()
-			local var_3_15 = arg_3_0:GetPosition() - var_3_3:GetPosition()
+			local var_3_15 = var_3_4:GetDirection()
+			local var_3_16 = arg_3_0:GetPosition() - var_3_3:GetPosition()
 
-			var_3_15.x = var_3_15.x * var_3_14
+			var_3_16.x = var_3_16.x * var_3_15
 
-			local var_3_16 = var_3_7.transform.localPosition
-			local var_3_17 = (var_0_5 * var_3_3:GetTf().localRotation).eulerAngles.x
+			local var_3_17 = var_3_8.transform.localPosition
+			local var_3_18 = (var_0_5 * var_3_3:GetTf().localRotation).eulerAngles.x
 
-			var_3_15.y = math.cos(math.deg2Rad * var_3_17) * var_3_15.z
-			var_3_15.z = 0
+			var_3_16.y = math.cos(math.deg2Rad * var_3_18) * var_3_16.z
+			var_3_16.z = 0
 
-			local var_3_18 = var_3_15 / var_3_3:GetInitScale()
+			local var_3_19 = var_3_16 / var_3_3:GetInitScale()
 
-			var_3_16:Add(var_3_18)
+			var_3_17:Add(var_3_19)
 
-			var_3_7.transform.localPosition = var_3_16
+			var_3_8.transform.localPosition = var_3_17
 		end
 	end
 
-	if var_3_7 and var_3_4:GetIFF() == var_3_0:GetFoeCode() then
-		local var_3_19 = var_3_7.transform
-		local var_3_20 = var_3_19.localRotation
+	if var_3_8 and var_3_4:GetIFF() == var_3_0:GetFoeCode() then
+		local var_3_20 = var_3_8.transform
+		local var_3_21 = var_3_20.localRotation
 
-		var_3_19.localRotation = Vector3(var_3_20.x, 180, var_3_20.z)
+		var_3_20.localRotation = Vector3(var_3_21.x, 180, var_3_21.z)
 	end
 
 	if var_3_1:GetPierceCount() <= 0 then

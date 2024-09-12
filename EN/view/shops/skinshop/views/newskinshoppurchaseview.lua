@@ -10,6 +10,7 @@ function var_0_0.OnLoaded(arg_2_0)
 	arg_2_0.toggle = arg_2_0:findTF("frame")
 	arg_2_0.title = arg_2_0:findTF("frame/title")
 	arg_2_0.text = arg_2_0:findTF("frame/bg/Text"):GetComponent(typeof(Text))
+	arg_2_0.tipText = arg_2_0:findTF("frame/bg/tipText")
 	arg_2_0.textWithGift = arg_2_0:findTF("frame/gift_bg/Text"):GetComponent(typeof(Text))
 	arg_2_0.dropsList = UIItemList.New(arg_2_0:findTF("frame/gift_bg/gift/drops"), arg_2_0:findTF("frame/gift_bg/gift/drops/item"))
 end
@@ -66,6 +67,7 @@ function var_0_0.Flush(arg_9_0, arg_9_1)
 
 	var_9_2.text = i18n("skin_shop_buy_confirm", var_9_6, var_9_4, var_9_5)
 
+	arg_9_0:SetTipText(arg_9_1:getSkinId())
 	arg_9_0:FlushGift(var_9_0)
 end
 
@@ -88,17 +90,53 @@ function var_0_0.FlushGift(arg_10_0, arg_10_1)
 	arg_10_0.dropsList:align(#arg_10_1)
 end
 
-function var_0_0.Hide(arg_13_0)
-	var_0_0.super.Hide(arg_13_0)
-	arg_13_0:emit(NewSkinShopMainView.EVT_SHOW_OR_HIDE_PURCHASE_VIEW, false)
+function var_0_0.SetTipText(arg_13_0, arg_13_1)
+	local var_13_0 = pg.ship_skin_template[arg_13_1].ship_group
+	local var_13_1 = pg.gameset.no_share_skin_tip.description
+	local var_13_2
+	local var_13_3
+
+	for iter_13_0, iter_13_1 in ipairs(var_13_1) do
+		for iter_13_2, iter_13_3 in ipairs(iter_13_1) do
+			if var_13_0 == iter_13_3[1] then
+				var_13_2 = iter_13_1
+				var_13_3 = iter_13_2
+
+				break
+			end
+		end
+	end
+
+	setActive(arg_13_0.tipText, var_13_3)
+
+	if var_13_3 then
+		local var_13_4 = ""
+
+		for iter_13_4, iter_13_5 in ipairs(var_13_2) do
+			if iter_13_4 ~= var_13_3 then
+				if var_13_4 == "" then
+					var_13_4 = i18n(iter_13_5[2])
+				else
+					var_13_4 = var_13_4 .. "、" .. i18n(iter_13_5[2])
+				end
+			end
+		end
+
+		setText(arg_13_0.tipText, i18n("no_share_skin_gametip", i18n(var_13_2[var_13_3][2]), var_13_4))
+	end
+end
+
+function var_0_0.Hide(arg_14_0)
+	var_0_0.super.Hide(arg_14_0)
+	arg_14_0:emit(NewSkinShopMainView.EVT_SHOW_OR_HIDE_PURCHASE_VIEW, false)
 	setAnchoredPosition(pg.playerResUI.gemAddBtn, {
 		x = -155
 	})
 
-	arg_13_0.commodity = nil
+	arg_14_0.commodity = nil
 end
 
-function var_0_0.OnDestroy(arg_14_0)
+function var_0_0.OnDestroy(arg_15_0)
 	return
 end
 

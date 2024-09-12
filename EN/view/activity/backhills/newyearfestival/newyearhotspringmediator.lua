@@ -51,144 +51,148 @@ function var_0_0.register(arg_1_0)
 	end)
 end
 
-function var_0_0.OnSelShips(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0 = arg_6_0:GetSelectedShipIds(arg_6_2)
-	local var_6_1 = {
+function var_0_0.GetGetSlotCount(arg_6_0)
+	return arg_6_0.activity:GetSlotCount()
+end
+
+function var_0_0.OnSelShips(arg_7_0, arg_7_1, arg_7_2)
+	local var_7_0 = arg_7_0:GetSelectedShipIds(arg_7_2)
+	local var_7_1 = {
 		callbackQuit = true,
-		selectedMax = arg_6_0.activity:GetSlotCount(),
-		quitTeam = arg_6_2 ~= nil,
+		selectedMax = arg_7_0:GetGetSlotCount(),
+		quitTeam = arg_7_2 ~= nil,
 		ignoredIds = pg.ShipFlagMgr.GetInstance():FilterShips({
 			isActivityNpc = true
 		}),
-		selectedIds = Clone(var_6_0),
-		preView = arg_6_0.viewComponent.__cname,
+		selectedIds = Clone(var_7_0),
+		preView = arg_7_0.viewComponent.__cname,
 		hideTagFlags = ShipStatus.TAG_HIDE_BACKYARD,
 		blockTagFlags = ShipStatus.TAG_BLOCK_BACKYARD,
-		onShip = function(arg_7_0, arg_7_1, arg_7_2)
-			return arg_6_0:OnShip(arg_7_0, arg_7_1, arg_7_2)
+		onShip = function(arg_8_0, arg_8_1, arg_8_2)
+			return arg_7_0:OnShip(arg_8_0, arg_8_1, arg_8_2)
 		end,
-		onSelected = function(arg_8_0, arg_8_1)
-			arg_6_0:OnSelected(arg_6_1, arg_8_0, arg_8_1)
+		onSelected = function(arg_9_0, arg_9_1)
+			arg_7_0:OnSelected(arg_7_1, arg_9_0, arg_9_1)
 		end,
-		priorEquipUpShipIDList = _.filter(arg_6_0.activity:GetShipIds(), function(arg_9_0)
-			return arg_9_0 > 0
+		priorEquipUpShipIDList = _.filter(arg_7_0.activity:GetShipIds(), function(arg_10_0)
+			return arg_10_0 > 0
 		end),
 		leftTopWithFrameInfo = i18n("backyard_longpress_ship_tip")
 	}
 
-	var_6_1.isLayer = true
-	var_6_1.energyDisplay = true
+	var_7_1.isLayer = true
+	var_7_1.energyDisplay = true
 
-	arg_6_0:addSubLayers(Context.New({
+	arg_7_0:addSubLayers(Context.New({
 		viewComponent = DockyardScene,
 		mediator = DockyardMediator,
-		data = var_6_1
+		data = var_7_1
 	}))
 end
 
-function var_0_0.GetSelectedShipIds(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_1 and arg_10_1.id or -1
-	local var_10_1 = {}
+function var_0_0.GetSelectedShipIds(arg_11_0, arg_11_1)
+	local var_11_0 = arg_11_1 and arg_11_1.id or -1
+	local var_11_1 = {}
 
-	for iter_10_0, iter_10_1 in ipairs(arg_10_0.activity:GetShipIds()) do
-		local var_10_2 = iter_10_1 > 0 and getProxy(BayProxy):RawGetShipById(iter_10_1)
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.activity:GetShipIds()) do
+		local var_11_2 = iter_11_1 > 0 and getProxy(BayProxy):RawGetShipById(iter_11_1)
 
-		if var_10_2 and var_10_2.id ~= var_10_0 then
-			table.insert(var_10_1, var_10_2.id)
+		if var_11_2 and var_11_2.id ~= var_11_0 then
+			table.insert(var_11_1, var_11_2.id)
 		end
 	end
 
-	return var_10_1
+	return var_11_1
 end
 
-function var_0_0.OnShip(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
-	local var_11_0, var_11_1 = ShipStatus.ShipStatusCheck("inBackyard", arg_11_1, function(arg_12_0)
-		arg_11_2()
+function var_0_0.OnShip(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
+	local var_12_0, var_12_1 = ShipStatus.ShipStatusCheck("inBackyard", arg_12_1, function(arg_13_0)
+		arg_12_2()
 	end)
 
-	return var_11_0, var_11_1
+	return var_12_0, var_12_1
 end
 
-function var_0_0.OnSelected(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
-	local var_13_0 = Clone(arg_13_0.activity:GetShipIds())
+function var_0_0.OnSelected(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
+	local var_14_0 = Clone(arg_14_0.activity:GetShipIds())
 
-	_.each(_.range(arg_13_0.activity:GetSlotCount()), function(arg_14_0)
-		var_13_0[arg_14_0] = var_13_0[arg_14_0] or 0
+	_.each(_.range(arg_14_0.activity:GetSlotCount()), function(arg_15_0)
+		var_14_0[arg_15_0] = var_14_0[arg_15_0] or 0
 	end)
 
-	if arg_13_2 == nil or #arg_13_2 == 0 then
-		if var_13_0[arg_13_1] > 0 then
-			arg_13_0:sendNotification(GAME.ACTIVITY_OPERATION, {
-				activity_id = arg_13_0.activity.id,
+	if arg_14_2 == nil or #arg_14_2 == 0 then
+		if var_14_0[arg_14_1] > 0 then
+			arg_14_0:sendNotification(GAME.ACTIVITY_OPERATION, {
+				activity_id = arg_14_0.activity.id,
 				cmd = SpringActivity.OPERATION_SETSHIP,
 				kvargs1 = {
 					{
 						value = 0,
-						key = arg_13_1
+						key = arg_14_1
 					}
 				}
 			})
 		end
 
-		existCall(arg_13_3)
+		existCall(arg_14_3)
 
 		return
 	end
 
-	local var_13_1 = _.filter(arg_13_2, function(arg_15_0)
-		return not table.contains(var_13_0, arg_15_0)
+	local var_14_1 = _.filter(arg_14_2, function(arg_16_0)
+		return not table.contains(var_14_0, arg_16_0)
 	end)
 
-	table.Foreach(var_13_0, function(arg_16_0, arg_16_1)
-		if arg_16_1 == 0 or table.contains(arg_13_2, arg_16_1) then
+	table.Foreach(var_14_0, function(arg_17_0, arg_17_1)
+		if arg_17_1 == 0 or table.contains(arg_14_2, arg_17_1) then
 			return
 		end
 
-		var_13_0[arg_16_0] = 0
+		var_14_0[arg_17_0] = 0
 	end)
 
-	if #var_13_1 == 1 and var_13_0[arg_13_1] == 0 then
-		var_13_0[arg_13_1] = var_13_1[1]
+	if #var_14_1 == 1 and var_14_0[arg_14_1] == 0 then
+		var_14_0[arg_14_1] = var_14_1[1]
 	else
-		local var_13_2 = 0
+		local var_14_2 = 0
 
-		_.each(var_13_1, function(arg_17_0)
-			while var_13_2 <= #var_13_0 do
-				var_13_2 = var_13_2 + 1
+		_.each(var_14_1, function(arg_18_0)
+			while var_14_2 <= #var_14_0 do
+				var_14_2 = var_14_2 + 1
 
-				if var_13_0[var_13_2] == 0 then
+				if var_14_0[var_14_2] == 0 then
 					break
 				end
 			end
 
-			var_13_0[var_13_2] = arg_17_0
+			var_14_0[var_14_2] = arg_18_0
 		end)
 	end
 
-	local var_13_3 = {}
-	local var_13_4 = arg_13_0.activity:GetShipIds()
+	local var_14_3 = {}
+	local var_14_4 = arg_14_0.activity:GetShipIds()
 
-	table.Foreach(var_13_0, function(arg_18_0, arg_18_1)
-		if (var_13_4[arg_18_0] or 0) ~= arg_18_1 then
-			table.insert(var_13_3, {
-				key = arg_18_0,
-				value = arg_18_1
+	table.Foreach(var_14_0, function(arg_19_0, arg_19_1)
+		if (var_14_4[arg_19_0] or 0) ~= arg_19_1 then
+			table.insert(var_14_3, {
+				key = arg_19_0,
+				value = arg_19_1
 			})
 		end
 	end)
 
-	if #var_13_3 > 0 then
-		arg_13_0:sendNotification(GAME.ACTIVITY_OPERATION, {
-			activity_id = arg_13_0.activity.id,
+	if #var_14_3 > 0 then
+		arg_14_0:sendNotification(GAME.ACTIVITY_OPERATION, {
+			activity_id = arg_14_0.activity.id,
 			cmd = SpringActivity.OPERATION_SETSHIP,
-			kvargs1 = var_13_3
+			kvargs1 = var_14_3
 		})
 	end
 
-	arg_13_3()
+	arg_14_3()
 end
 
-function var_0_0.listNotificationInterests(arg_19_0)
+function var_0_0.listNotificationInterests(arg_20_0)
 	return {
 		PlayerProxy.UPDATED,
 		ActivityProxy.ACTIVITY_UPDATED,
@@ -198,29 +202,29 @@ function var_0_0.listNotificationInterests(arg_19_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_20_0, arg_20_1)
-	local var_20_0 = arg_20_1:getName()
-	local var_20_1 = arg_20_1:getBody()
+function var_0_0.handleNotification(arg_21_0, arg_21_1)
+	local var_21_0 = arg_21_1:getName()
+	local var_21_1 = arg_21_1:getBody()
 
-	if var_20_0 == nil then
+	if var_21_0 == nil then
 		-- block empty
-	elseif var_20_0 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
-		arg_20_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_20_1.awards, var_20_1.callback)
-	elseif var_20_0 == ActivityProxy.ACTIVITY_UPDATED then
-		if var_20_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_HOTSPRING then
-			arg_20_0.activity = var_20_1
+	elseif var_21_0 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
+		arg_21_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_21_1.awards, var_21_1.callback)
+	elseif var_21_0 == ActivityProxy.ACTIVITY_UPDATED then
+		if var_21_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_HOTSPRING then
+			arg_21_0.activity = var_21_1
 
-			arg_20_0.viewComponent:SetActivity(var_20_1)
-			arg_20_0.viewComponent:UpdateView()
+			arg_21_0.viewComponent:SetActivity(var_21_1)
+			arg_21_0.viewComponent:UpdateView()
 		end
-	elseif var_20_0 == var_0_0.OPEN_CHUANWU then
-		arg_20_0.viewComponent:emit(var_0_0.OPEN_CHUANWU, unpack(var_20_1))
-	elseif var_20_0 == var_0_0.UNLOCK_SLOT then
-		arg_20_0.viewComponent:emit(var_0_0.UNLOCK_SLOT, var_20_1)
+	elseif var_21_0 == var_0_0.OPEN_CHUANWU then
+		arg_21_0.viewComponent:emit(var_0_0.OPEN_CHUANWU, unpack(var_21_1))
+	elseif var_21_0 == var_0_0.UNLOCK_SLOT then
+		arg_21_0.viewComponent:emit(var_0_0.UNLOCK_SLOT, var_21_1)
 	end
 end
 
-function var_0_0.remove(arg_21_0)
+function var_0_0.remove(arg_22_0)
 	return
 end
 

@@ -51,7 +51,7 @@ end
 function var_0_0.update(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 	arg_2_0.goods = arg_2_1
 
-	local var_2_0 = arg_2_1:isChargeType() and arg_2_1:isTecShipShowGift()
+	local var_2_0 = arg_2_1:isChargeType() and arg_2_1:getShowType() ~= ""
 
 	setActive(arg_2_0.desc, true)
 	setText(arg_2_0.desc, "")

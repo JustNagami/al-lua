@@ -1533,119 +1533,152 @@ function var_0_6.SetPopup(arg_125_0, arg_125_1, arg_125_2, arg_125_3)
 
 	if arg_125_0._popGO then
 		LeanTween.cancel(arg_125_0._popGO)
-		LeanTween.scale(rtf(arg_125_0._popGO.gameObject), Vector3.New(0, 0, 1), 0.1):setEase(LeanTweenType.easeInBack):setOnComplete(System.Action(function()
-			arg_125_0:chatPop(arg_125_1, arg_125_2)
-		end))
+
+		local var_125_0 = arg_125_0._popGO.transform:GetComponent(typeof(Animation))
+
+		if var_125_0 then
+			var_125_0:Play("popup_out")
+			arg_125_0._popGO:GetComponent("DftAniEvent"):SetEndEvent(function(arg_126_0)
+				arg_125_0.ChatPopAnimation(arg_125_0._popGO, arg_125_1, arg_125_2)
+			end)
+		else
+			LeanTween.cancel(arg_125_0._popGO)
+			LeanTween.scale(rtf(arg_125_0._popGO.gameObject), Vector3.New(0, 0, 1), 0.1):setEase(LeanTweenType.easeInBack):setOnComplete(System.Action(function()
+				arg_125_0.ChatPop(arg_125_0._popGO, arg_125_1, arg_125_2)
+			end))
+		end
 	else
 		arg_125_0._popGO = arg_125_0._factory:MakePopup()
 		arg_125_0._popTF = arg_125_0._popGO.transform
-		arg_125_0._popTF.localScale = Vector3(0, 0, 0)
 
-		arg_125_0:chatPop(arg_125_1, arg_125_2)
+		if arg_125_0._popGO.transform:GetComponent(typeof(Animation)) then
+			arg_125_0.ChatPopAnimation(arg_125_0._popGO, arg_125_1, arg_125_2)
+		else
+			arg_125_0._popTF.localScale = Vector3(0, 0, 0)
+
+			arg_125_0.ChatPop(arg_125_0._popGO, arg_125_1, arg_125_2)
+		end
 	end
 
 	SetActive(arg_125_0._popGO, true)
 end
 
-function var_0_6.chatPop(arg_127_0, arg_127_1, arg_127_2)
-	arg_127_2 = arg_127_2 or 2.5
+function var_0_6.ChatPopAnimation(arg_128_0, arg_128_1, arg_128_2)
+	var_0_6.setChatText(arg_128_0, arg_128_1)
 
-	local var_127_0 = findTF(arg_127_0._popGO, "Text"):GetComponent(typeof(Text))
+	local var_128_0 = arg_128_0.transform:GetComponent(typeof(Animation))
 
-	setTextEN(var_127_0, arg_127_1)
+	var_128_0:Play("popup_in")
+	LeanTween.delayedCall(arg_128_0.gameObject, arg_128_2, System.Action(function()
+		var_128_0:Play("popup_out")
+		arg_128_0:GetComponent("DftAniEvent"):SetEndEvent(function(arg_130_0)
+			SetActive(arg_128_0, false)
+		end)
+	end))
+end
 
-	if #var_127_0.text > CHAT_POP_STR_LEN then
-		var_127_0.alignment = TextAnchor.MiddleLeft
-	else
-		var_127_0.alignment = TextAnchor.MiddleCenter
-	end
+function var_0_6.ChatPop(arg_131_0, arg_131_1, arg_131_2)
+	arg_131_2 = arg_131_2 or 2.5
 
-	LeanTween.scale(rtf(arg_127_0._popGO.gameObject), Vector3.New(1, 1, 1), 0.3):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
-		LeanTween.scale(rtf(arg_127_0._popGO.gameObject), Vector3.New(0, 0, 1), 0.3):setEase(LeanTweenType.easeInBack):setDelay(arg_127_2):setOnComplete(System.Action(function()
-			SetActive(arg_127_0._popGO, false)
+	var_0_6.setChatText(arg_131_0, arg_131_1)
+	LeanTween.scale(rtf(arg_131_0.gameObject), Vector3.New(1, 1, 1), 0.3):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
+		LeanTween.scale(rtf(arg_131_0.gameObject), Vector3.New(0, 0, 1), 0.3):setEase(LeanTweenType.easeInBack):setDelay(arg_131_2):setOnComplete(System.Action(function()
+			SetActive(arg_131_0, false)
 		end))
 	end))
 end
 
-function var_0_6.Voice(arg_130_0, arg_130_1, arg_130_2)
-	if arg_130_0._voiceTimer then
+function var_0_6.setChatText(arg_134_0, arg_134_1)
+	local var_134_0 = findTF(arg_134_0, "Text"):GetComponent(typeof(Text))
+
+	var_134_0.text = arg_134_1
+
+	if #var_134_0.text > CHAT_POP_STR_LEN then
+		var_134_0.alignment = TextAnchor.MiddleLeft
+	else
+		var_134_0.alignment = TextAnchor.MiddleCenter
+	end
+end
+
+function var_0_6.Voice(arg_135_0, arg_135_1, arg_135_2)
+	if arg_135_0._voiceTimer then
 		return
 	end
 
-	pg.CriMgr.GetInstance():PlayMultipleSound_V3(arg_130_1, function(arg_131_0)
-		if arg_131_0 then
-			arg_130_0._voiceKey = arg_130_2
-			arg_130_0._voicePlaybackInfo = arg_131_0
-			arg_130_0._voiceTimer = pg.TimeMgr.GetInstance():AddBattleTimer("", 0, arg_130_0._voicePlaybackInfo:GetLength() * 0.001, function()
-				pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_130_0._voiceTimer)
+	pg.CriMgr.GetInstance():PlayMultipleSound_V3(arg_135_1, function(arg_136_0)
+		if arg_136_0 then
+			arg_135_0._voiceKey = arg_135_2
+			arg_135_0._voicePlaybackInfo = arg_136_0
+			arg_135_0._voiceTimer = pg.TimeMgr.GetInstance():AddBattleTimer("", 0, arg_135_0._voicePlaybackInfo:GetLength() * 0.001, function()
+				pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_135_0._voiceTimer)
 
-				arg_130_0._voiceTimer = nil
-				arg_130_0._voiceKey = nil
-				arg_130_0._voicePlaybackInfo = nil
+				arg_135_0._voiceTimer = nil
+				arg_135_0._voiceKey = nil
+				arg_135_0._voicePlaybackInfo = nil
 			end)
 		end
 	end)
 end
 
-function var_0_6.SonarAcitve(arg_133_0, arg_133_1)
+function var_0_6.SonarAcitve(arg_138_0, arg_138_1)
 	return
 end
 
-function var_0_6.SwitchShader(arg_134_0, arg_134_1, arg_134_2, arg_134_3)
-	LeanTween.cancel(arg_134_0._go)
+function var_0_6.SwitchShader(arg_139_0, arg_139_1, arg_139_2, arg_139_3)
+	LeanTween.cancel(arg_139_0._go)
 
-	arg_134_2 = arg_134_2 or Color.New(0, 0, 0, 0)
+	arg_139_2 = arg_139_2 or Color.New(0, 0, 0, 0)
 
-	if arg_134_1 then
-		local var_134_0 = var_0_4.GetInstance():GetShader(arg_134_1)
+	if arg_139_1 then
+		local var_139_0 = var_0_4.GetInstance():GetShader(arg_139_1)
 
-		arg_134_0._animator:ShiftShader(var_134_0, arg_134_2)
+		arg_139_0._animator:ShiftShader(var_139_0, arg_139_2)
 
-		if arg_134_3 then
-			arg_134_0:spineSemiTransparentFade(0, arg_134_3.invisible, 0)
+		if arg_139_3 then
+			arg_139_0:spineSemiTransparentFade(0, arg_139_3.invisible, 0)
 		end
 	end
 
-	arg_134_0._shaderType = arg_134_1
-	arg_134_0._color = arg_134_2
+	arg_139_0._shaderType = arg_139_1
+	arg_139_0._color = arg_139_2
 end
 
-function var_0_6.PauseActionAnimation(arg_135_0, arg_135_1)
-	local var_135_0 = arg_135_1 and 0 or 1
+function var_0_6.PauseActionAnimation(arg_140_0, arg_140_1)
+	local var_140_0 = arg_140_1 and 0 or 1
 
-	arg_135_0._animator:GetAnimationState().TimeScale = var_135_0
+	arg_140_0._animator:GetAnimationState().TimeScale = var_140_0
 end
 
-function var_0_6.GetFactory(arg_136_0)
-	return arg_136_0._factory
+function var_0_6.GetFactory(arg_141_0)
+	return arg_141_0._factory
 end
 
-function var_0_6.SetFactory(arg_137_0, arg_137_1)
-	arg_137_0._factory = arg_137_1
+function var_0_6.SetFactory(arg_142_0, arg_142_1)
+	arg_142_0._factory = arg_142_1
 end
 
-function var_0_6.onSwitchSpine(arg_138_0, arg_138_1)
-	local var_138_0 = arg_138_1.Data
-	local var_138_1 = var_138_0.skin
+function var_0_6.onSwitchSpine(arg_143_0, arg_143_1)
+	local var_143_0 = arg_143_1.Data
+	local var_143_1 = var_143_0.skin
 
-	arg_138_0._coverSpineHPBarOffset = var_138_0.HPBarOffset or 0
+	arg_143_0._coverSpineHPBarOffset = var_143_0.HPBarOffset or 0
 
-	arg_138_0:SwitchSpine(var_138_1)
+	arg_143_0:SwitchSpine(var_143_1)
 end
 
-function var_0_6.SwitchSpine(arg_139_0, arg_139_1)
-	for iter_139_0, iter_139_1 in pairs(arg_139_0._blinkDict) do
-		SpineAnim.RemoveBlink(arg_139_0._go, iter_139_0)
+function var_0_6.SwitchSpine(arg_144_0, arg_144_1)
+	for iter_144_0, iter_144_1 in pairs(arg_144_0._blinkDict) do
+		SpineAnim.RemoveBlink(arg_144_0._go, iter_144_0)
 	end
 
-	arg_139_0._factory:SwitchCharacterSpine(arg_139_0, arg_139_1)
+	arg_144_0._factory:SwitchCharacterSpine(arg_144_0, arg_144_1)
 end
 
-function var_0_6.onSwitchShader(arg_140_0, arg_140_1)
-	local var_140_0 = arg_140_1.Data
-	local var_140_1 = var_140_0.shader
-	local var_140_2 = var_140_0.color
-	local var_140_3 = var_140_0.args
+function var_0_6.onSwitchShader(arg_145_0, arg_145_1)
+	local var_145_0 = arg_145_1.Data
+	local var_145_1 = var_145_0.shader
+	local var_145_2 = var_145_0.color
+	local var_145_3 = var_145_0.args
 
-	arg_140_0:SwitchShader(var_140_1, var_140_2, var_140_3)
+	arg_145_0:SwitchShader(var_145_1, var_145_2, var_145_3)
 end

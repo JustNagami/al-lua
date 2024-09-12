@@ -573,45 +573,83 @@ function var_0_0.InitPrivateAndLicence(arg_48_0)
 	end
 end
 
-function var_0_0.playExtraVoice(arg_51_0)
+local function var_0_2()
 	local var_51_0 = pg.gameset.login_extra_voice.description
 
 	if var_51_0 and #var_51_0 > 0 then
 		local var_51_1 = var_51_0[math.clamp(math.floor(math.random() * #var_51_0) + 1, 1, #var_51_0)]
-		local var_51_2 = "cv-" .. var_51_1
-		local var_51_3 = pg.CriMgr.GetInstance()
 
-		arg_51_0.loginCueSheet = var_51_2
+		return "cv-" .. var_51_1, "extra"
+	end
 
-		var_51_3:PlayCV_V3(var_51_2, "extra")
+	return nil, nil
+end
+
+local function var_0_3(arg_52_0)
+	local var_52_0 = arg_52_0.description[1]
+	local var_52_1 = arg_52_0.description[2]
+	local var_52_2 = arg_52_0.description[3]
+
+	if pg.TimeMgr.GetInstance():inTime(var_52_1) then
+		local var_52_3 = math.random(1, var_52_2)
+
+		return var_52_0, "extra" .. var_52_3
+	end
+
+	return nil, nil
+end
+
+function var_0_0.GetExtraVoiceSheetAndCue(arg_53_0)
+	local var_53_0
+	local var_53_1
+	local var_53_2 = pg.gameset.new_login_extra_voice
+
+	if var_53_2 then
+		var_53_0, var_53_1 = var_0_3(var_53_2)
+	end
+
+	if not var_53_0 or not var_53_1 then
+		var_53_0, var_53_1 = var_0_2()
+	end
+
+	return var_53_0, var_53_1
+end
+
+function var_0_0.playExtraVoice(arg_54_0)
+	local var_54_0, var_54_1 = arg_54_0:GetExtraVoiceSheetAndCue()
+
+	if var_54_0 and var_54_1 then
+		arg_54_0.loginCueSheet = var_54_0
+
+		pg.CriMgr.GetInstance():PlayCV_V3(var_54_0, var_54_1)
 	end
 end
 
-function var_0_0.unloadExtraVoice(arg_52_0)
-	if arg_52_0.loginCueSheet then
-		pg.CriMgr.GetInstance():UnloadCueSheet(arg_52_0.loginCueSheet)
+function var_0_0.unloadExtraVoice(arg_55_0)
+	if arg_55_0.loginCueSheet then
+		pg.CriMgr.GetInstance():UnloadCueSheet(arg_55_0.loginCueSheet)
 
-		arg_52_0.loginCueSheet = nil
+		arg_55_0.loginCueSheet = nil
 	end
 end
 
-function var_0_0.autoLogin(arg_53_0)
-	if arg_53_0.shareData.lastLoginUser then
-		if arg_53_0.shareData.autoLoginEnabled then
-			arg_53_0.event:emit(LoginMediator.ON_LOGIN, arg_53_0.shareData.lastLoginUser)
+function var_0_0.autoLogin(arg_56_0)
+	if arg_56_0.shareData.lastLoginUser then
+		if arg_56_0.shareData.autoLoginEnabled then
+			arg_56_0.event:emit(LoginMediator.ON_LOGIN, arg_56_0.shareData.lastLoginUser)
 		end
 
-		if arg_53_0.loginPanelView:GetLoaded() then
-			if arg_53_0.shareData.lastLoginUser.type == 1 then
-				arg_53_0.loginPanelView:SetContent(arg_53_0.shareData.lastLoginUser.arg2, arg_53_0.shareData.lastLoginUser.arg3)
-			elseif arg_53_0.shareData.lastLoginUser.type == 2 then
-				arg_53_0.loginPanelView:SetContent(arg_53_0.shareData.lastLoginUser.arg1, arg_53_0.shareData.lastLoginUser.arg2)
+		if arg_56_0.loginPanelView:GetLoaded() then
+			if arg_56_0.shareData.lastLoginUser.type == 1 then
+				arg_56_0.loginPanelView:SetContent(arg_56_0.shareData.lastLoginUser.arg2, arg_56_0.shareData.lastLoginUser.arg3)
+			elseif arg_56_0.shareData.lastLoginUser.type == 2 then
+				arg_56_0.loginPanelView:SetContent(arg_56_0.shareData.lastLoginUser.arg1, arg_56_0.shareData.lastLoginUser.arg2)
 			end
 		end
 	end
 end
 
-local var_0_2 = {
+local var_0_4 = {
 	{
 		0.403921568627451,
 		1,
@@ -638,123 +676,123 @@ local var_0_2 = {
 	}
 }
 
-function var_0_0.updateServerTF(arg_54_0, arg_54_1, arg_54_2)
-	setText(findTF(arg_54_1, "name"), "-  " .. arg_54_2.name .. "  -")
-	setImageSprite(findTF(arg_54_1, "statu"), arg_54_0.iconSpries[arg_54_2.status + 1], true)
+function var_0_0.updateServerTF(arg_57_0, arg_57_1, arg_57_2)
+	setText(findTF(arg_57_1, "name"), "-  " .. arg_57_2.name .. "  -")
+	setImageSprite(findTF(arg_57_1, "statu"), arg_57_0.iconSpries[arg_57_2.status + 1], true)
 
-	findTF(arg_54_1, "statu_1"):GetComponent("Image").color = Color.New(var_0_2[arg_54_2.status + 1][1], var_0_2[arg_54_2.status + 1][2], var_0_2[arg_54_2.status + 1][3], var_0_2[arg_54_2.status + 1][4])
+	findTF(arg_57_1, "statu_1"):GetComponent("Image").color = Color.New(var_0_4[arg_57_2.status + 1][1], var_0_4[arg_57_2.status + 1][2], var_0_4[arg_57_2.status + 1][3], var_0_4[arg_57_2.status + 1][4])
 
-	setActive(findTF(arg_54_1, "mark"), arg_54_2.isLogined)
-	setActive(arg_54_0:findTF("tag_new", arg_54_1), arg_54_2.isNew)
-	setActive(arg_54_0:findTF("tag_hot", arg_54_1), arg_54_2.isHot)
-	onButton(arg_54_0, arg_54_1, function()
-		if arg_54_2.status == Server.STATUS.VINDICATE then
+	setActive(findTF(arg_57_1, "mark"), arg_57_2.isLogined)
+	setActive(arg_57_0:findTF("tag_new", arg_57_1), arg_57_2.isNew)
+	setActive(arg_57_0:findTF("tag_hot", arg_57_1), arg_57_2.isHot)
+	onButton(arg_57_0, arg_57_1, function()
+		if arg_57_2.status == Server.STATUS.VINDICATE then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("login_loginScene_server_vindicate"))
 
 			return
 		end
 
-		if arg_54_2.status == Server.STATUS.FULL then
+		if arg_57_2.status == Server.STATUS.FULL then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("login_loginScene_server_full"))
 
 			return
 		end
 
-		arg_54_0:setLastLoginServer(arg_54_2)
-		pg.UIMgr.GetInstance():UnblurPanel(arg_54_0.serversPanel, arg_54_0._tf)
-		setActive(arg_54_0.serversPanel, false)
+		arg_57_0:setLastLoginServer(arg_57_2)
+		pg.UIMgr.GetInstance():UnblurPanel(arg_57_0.serversPanel, arg_57_0._tf)
+		setActive(arg_57_0.serversPanel, false)
 	end, SFX_CONFIRM)
 end
 
-function var_0_0.updateAdviceServer(arg_56_0)
-	if not arg_56_0.recentTF or not arg_56_0.adviceTF then
+function var_0_0.updateAdviceServer(arg_59_0)
+	if not arg_59_0.recentTF or not arg_59_0.adviceTF then
 		return
 	end
 
-	setActive(arg_56_0.recentTF, arg_56_0.shareData.lastLoginServer)
+	setActive(arg_59_0.recentTF, arg_59_0.shareData.lastLoginServer)
 
-	if arg_56_0.shareData.lastLoginServer then
-		local var_56_0 = findTF(arg_56_0.recentTF, "server")
+	if arg_59_0.shareData.lastLoginServer then
+		local var_59_0 = findTF(arg_59_0.recentTF, "server")
 
-		arg_56_0:updateServerTF(var_56_0, arg_56_0.shareData.lastLoginServer)
+		arg_59_0:updateServerTF(var_59_0, arg_59_0.shareData.lastLoginServer)
 	end
 
-	local var_56_1 = getProxy(ServerProxy).firstServer
+	local var_59_1 = getProxy(ServerProxy).firstServer
 
-	setActive(arg_56_0.adviceTF, var_56_1)
+	setActive(arg_59_0.adviceTF, var_59_1)
 
-	if var_56_1 then
-		local var_56_2 = findTF(arg_56_0.adviceTF, "server")
+	if var_59_1 then
+		local var_59_2 = findTF(arg_59_0.adviceTF, "server")
 
-		arg_56_0:updateServerTF(var_56_2, var_56_1)
+		arg_59_0:updateServerTF(var_59_2, var_59_1)
 	end
 end
 
-function var_0_0.updateServerList(arg_57_0, arg_57_1)
-	arg_57_0.serverList = arg_57_1
+function var_0_0.updateServerList(arg_60_0, arg_60_1)
+	arg_60_0.serverList = arg_60_1
 
-	local var_57_0 = _.sort(_.values(arg_57_1), function(arg_58_0, arg_58_1)
-		return arg_58_0.sortIndex < arg_58_1.sortIndex
+	local var_60_0 = _.sort(_.values(arg_60_1), function(arg_61_0, arg_61_1)
+		return arg_61_0.sortIndex < arg_61_1.sortIndex
 	end)
 
-	removeAllChildren(arg_57_0.servers)
+	removeAllChildren(arg_60_0.servers)
 
 	if IsUnityEditor then
-		table.sort(var_57_0, function(arg_59_0, arg_59_1)
-			local var_59_0 = string.lower(arg_59_0.name)
-			local var_59_1 = string.lower(arg_59_1.name)
+		table.sort(var_60_0, function(arg_62_0, arg_62_1)
+			local var_62_0 = string.lower(arg_62_0.name)
+			local var_62_1 = string.lower(arg_62_1.name)
 
-			return string.byte(var_59_0, 1) > string.byte(var_59_1, 1)
+			return string.byte(var_62_0, 1) > string.byte(var_62_1, 1)
 		end)
 	end
 
-	arg_57_0.serversDic = {}
+	arg_60_0.serversDic = {}
 
-	for iter_57_0, iter_57_1 in pairs(var_57_0) do
-		local var_57_1 = cloneTplTo(arg_57_0.serverTpl, arg_57_0.servers)
+	for iter_60_0, iter_60_1 in pairs(var_60_0) do
+		local var_60_1 = cloneTplTo(arg_60_0.serverTpl, arg_60_0.servers)
 
-		arg_57_0:updateServerTF(var_57_1, iter_57_1)
-		table.insert(arg_57_0.serversDic, {
-			server = iter_57_1,
-			tf = var_57_1,
-			id = iter_57_1.id
+		arg_60_0:updateServerTF(var_60_1, iter_60_1)
+		table.insert(arg_60_0.serversDic, {
+			server = iter_60_1,
+			tf = var_60_1,
+			id = iter_60_1.id
 		})
 	end
 end
 
-function var_0_0.fillterRefundServer(arg_60_0)
-	local var_60_0 = getProxy(UserProxy)
-	local var_60_1 = {}
+function var_0_0.fillterRefundServer(arg_63_0)
+	local var_63_0 = getProxy(UserProxy)
+	local var_63_1 = {}
 
-	if var_60_0.data.limitServerIds and #var_60_0.data.limitServerIds > 0 and arg_60_0.serverList and #arg_60_0.serverList > 0 then
-		local var_60_2 = var_60_0.data.limitServerIds
-		local var_60_3
+	if var_63_0.data.limitServerIds and #var_63_0.data.limitServerIds > 0 and arg_63_0.serverList and #arg_63_0.serverList > 0 then
+		local var_63_2 = var_63_0.data.limitServerIds
+		local var_63_3
 
-		for iter_60_0, iter_60_1 in pairs(arg_60_0.serverList) do
-			local var_60_4 = iter_60_1.id
-			local var_60_5 = false
+		for iter_63_0, iter_63_1 in pairs(arg_63_0.serverList) do
+			local var_63_4 = iter_63_1.id
+			local var_63_5 = false
 
-			for iter_60_2, iter_60_3 in pairs(var_60_2) do
-				if var_60_2[iter_60_2] == var_60_4 and not var_60_5 then
-					if not var_60_3 then
-						var_60_3 = "\n" .. iter_60_1.name
+			for iter_63_2, iter_63_3 in pairs(var_63_2) do
+				if var_63_2[iter_63_2] == var_63_4 and not var_63_5 then
+					if not var_63_3 then
+						var_63_3 = "\n" .. iter_63_1.name
 					else
-						var_60_3 = var_60_3 .. "," .. iter_60_1.name
+						var_63_3 = var_63_3 .. "," .. iter_63_1.name
 					end
 
-					table.insert(var_60_1, iter_60_1)
+					table.insert(var_63_1, iter_63_1)
 
-					var_60_5 = true
+					var_63_5 = true
 				end
 			end
 		end
 
-		arg_60_0:updateServerList(var_60_1)
+		arg_63_0:updateServerList(var_63_1)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			modal = true,
 			hideNo = true,
 			hideClose = true,
-			content = i18n("login_arrears_tips", var_60_3),
+			content = i18n("login_arrears_tips", var_63_3),
 			onYes = function()
 				return
 			end
@@ -762,42 +800,42 @@ function var_0_0.fillterRefundServer(arg_60_0)
 	end
 end
 
-function var_0_0.switchToTencentLogin(arg_62_0)
-	arg_62_0:switchSubView({
+function var_0_0.switchToTencentLogin(arg_65_0)
+	arg_65_0:switchSubView({
 		LoginSceneConst.DEFINE.TENCENT_LOGIN_VIEW
 	})
 end
 
-function var_0_0.switchToAiriLogin(arg_63_0)
-	arg_63_0:switchSubView({
+function var_0_0.switchToAiriLogin(arg_66_0)
+	arg_66_0:switchSubView({
 		LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW,
 		LoginSceneConst.DEFINE.PRESS_TO_LOGIN
 	})
 end
 
-function var_0_0.switchToLogin(arg_64_0)
-	arg_64_0:switchSubView({
+function var_0_0.switchToLogin(arg_67_0)
+	arg_67_0:switchSubView({
 		LoginSceneConst.DEFINE.LOGIN_PANEL_VIEW
 	})
 end
 
-function var_0_0.switchToRegister(arg_65_0)
-	arg_65_0:switchSubView({
+function var_0_0.switchToRegister(arg_68_0)
+	arg_68_0:switchSubView({
 		LoginSceneConst.DEFINE.REGISTER_PANEL_VIEW
 	})
 end
 
-function var_0_0.switchToServer(arg_66_0)
-	arg_66_0:updateAdviceServer()
+function var_0_0.switchToServer(arg_69_0)
+	arg_69_0:updateAdviceServer()
 
 	if pg.SdkMgr.GetInstance():GetLoginType() ~= LoginType.PLATFORM_INNER and PLATFORM_CODE ~= PLATFORM_KR then
-		arg_66_0:switchSubView({
+		arg_69_0:switchSubView({
 			LoginSceneConst.DEFINE.PRESS_TO_LOGIN,
 			LoginSceneConst.DEFINE.CURRENT_SERVER,
 			LoginSceneConst.DEFINE.BG_LAY
 		})
 	else
-		arg_66_0:switchSubView({
+		arg_69_0:switchSubView({
 			LoginSceneConst.DEFINE.ACCOUNT_BTN,
 			LoginSceneConst.DEFINE.PRESS_TO_LOGIN,
 			LoginSceneConst.DEFINE.CURRENT_SERVER,
@@ -806,80 +844,80 @@ function var_0_0.switchToServer(arg_66_0)
 	end
 end
 
-function var_0_0.SwitchToWaitPanel(arg_67_0, arg_67_1)
-	local var_67_0 = arg_67_0:findTF("Msgbox")
-	local var_67_1 = arg_67_0:findTF("window/content", var_67_0)
+function var_0_0.SwitchToWaitPanel(arg_70_0, arg_70_1)
+	local var_70_0 = arg_70_0:findTF("Msgbox")
+	local var_70_1 = arg_70_0:findTF("window/content", var_70_0)
 
-	arg_67_0.waitTimer = nil
+	arg_70_0.waitTimer = nil
 
-	local var_67_2 = 0
-	local var_67_3 = arg_67_1
+	local var_70_2 = 0
+	local var_70_3 = arg_70_1
 
-	arg_67_0.waitTimer = Timer.New(function()
-		setText(var_67_1, i18n("login_wait_tip", var_67_3))
+	arg_70_0.waitTimer = Timer.New(function()
+		setText(var_70_1, i18n("login_wait_tip", var_70_3))
 
-		arg_67_1 = arg_67_1 - 1
+		arg_70_1 = arg_70_1 - 1
 
 		if math.random(0, 1) == 1 then
-			var_67_3 = arg_67_1
+			var_70_3 = arg_70_1
 		end
 
-		if arg_67_1 <= 0 then
-			triggerButton(arg_67_0:findTF("background"))
-			arg_67_0.waitTimer:Stop()
+		if arg_70_1 <= 0 then
+			triggerButton(arg_70_0:findTF("background"))
+			arg_70_0.waitTimer:Stop()
 
-			arg_67_0.waitTimer = nil
+			arg_70_0.waitTimer = nil
 		end
 	end, 1, -1)
 
-	arg_67_0.waitTimer:Start()
-	arg_67_0.waitTimer.func()
-	setActive(var_67_0, true)
+	arg_70_0.waitTimer:Start()
+	arg_70_0.waitTimer.func()
+	setActive(var_70_0, true)
 end
 
-function var_0_0.willExit(arg_69_0)
-	if arg_69_0.waitTimer then
-		arg_69_0.waitTimer:Stop()
+function var_0_0.willExit(arg_72_0)
+	if arg_72_0.waitTimer then
+		arg_72_0.waitTimer:Stop()
 
-		arg_69_0.waitTimer = nil
+		arg_72_0.waitTimer = nil
 	end
 
 	pg.CpkPlayMgr.GetInstance():DisposeCpkMovie()
-	arg_69_0.loginPanelView:Destroy()
-	arg_69_0.registerPanelView:Destroy()
-	arg_69_0.tencentLoginPanelView:Destroy()
-	arg_69_0.airiLoginPanelView:Destroy()
-	arg_69_0.transcodeAlertView:Destroy()
-	arg_69_0.yostarAlertView:Destroy()
-	arg_69_0.switchGatewayBtn:Dispose()
+	arg_72_0.loginPanelView:Destroy()
+	arg_72_0.registerPanelView:Destroy()
+	arg_72_0.tencentLoginPanelView:Destroy()
+	arg_72_0.airiLoginPanelView:Destroy()
+	arg_72_0.transcodeAlertView:Destroy()
+	arg_72_0.yostarAlertView:Destroy()
+	arg_72_0.switchGatewayBtn:Dispose()
 end
 
-function var_0_0.playOpening(arg_70_0, arg_70_1)
+function var_0_0.playOpening(arg_73_0, arg_73_1)
 	pg.CpkPlayMgr.GetInstance():PlayCpkMovie(function()
-		if not arg_70_0.cg then
-			arg_70_0.cg = GetOrAddComponent(arg_70_0._tf, "CanvasGroup")
+		if not arg_73_0.cg then
+			arg_73_0.cg = GetOrAddComponent(arg_73_0._tf, "CanvasGroup")
 		end
 
-		arg_70_0.cg.alpha = 0
+		arg_73_0.cg.alpha = 0
 	end, function()
-		arg_70_0.cg.alpha = 1
+		arg_73_0.cg.alpha = 1
 
-		if arg_70_1 then
-			arg_70_1()
+		if arg_73_1 then
+			arg_73_1()
 		end
 	end, "ui", "opening", true, false, nil)
 
-	arg_70_0.onPlayingOP = true
+	arg_73_0.onPlayingOP = true
 end
 
-function var_0_0.closeYostarAlertView(arg_73_0)
-	if arg_73_0.yostarAlertView and arg_73_0.yostarAlertView:CheckState(BaseSubView.STATES.INITED) then
-		arg_73_0.yostarAlertView:Destroy()
+function var_0_0.closeYostarAlertView(arg_76_0)
+	if arg_76_0.yostarAlertView and arg_76_0.yostarAlertView:CheckState(BaseSubView.STATES.INITED) then
+		arg_76_0.yostarAlertView:Destroy()
 	end
 end
 
-function var_0_0.onLoadDataDone(arg_74_0)
-	arg_74_0:unloadExtraVoice()
+function var_0_0.onLoadDataDone(arg_77_0)
+	arg_77_0:unloadExtraVoice()
 
 	if getProxy(PlayerProxy) then
 		getProxy(PlayerProxy):setFlag("login", true)
