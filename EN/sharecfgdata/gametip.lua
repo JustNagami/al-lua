@@ -11665,7 +11665,7 @@ _G.pg.base.gametip.index_propose_skin = {
 	tip = "Pledge Outfit "
 }
 _G.pg.base.gametip.index_not_obtained = {
-	tip = "Not Obtained"
+	tip = "Unacquired"
 }
 _G.pg.base.gametip.index_no_limit = {
 	tip = "No Limit"
@@ -20021,7 +20021,7 @@ _G.pg.base.gametip.series_enemy_storyunlock = {
 	tip = "Until next story chapter unlock"
 }
 _G.pg.base.gametip.series_enemy_storyreward = {
-	tip = "Unlocked:"
+	tip = "Unlocked:   "
 }
 _G.pg.base.gametip.series_enemy_help = {
 	tip = [[
@@ -24361,7 +24361,7 @@ _G.pg.base.gametip.battle_text_pizibao_2 = {
 	tip = "The supporting fleet <color=#f1f102>has been destroyed</color>! The battle will get tougher!"
 }
 _G.pg.base.gametip.town_lock_level = {
-	tip = "Reach Frontier Town Lv. $1"
+	tip = "This will unlock after you read the story."
 }
 _G.pg.base.gametip.town_place_next_title = {
 	tip = "On the next level:"
@@ -24482,7 +24482,7 @@ _G.pg.base.gametip.battle_text_tianchengCV_2 = {
 	tip = "\"Ahahahaha! <color=#ff1800>Red spider lilies</color>, bloom and burn them to ashes!\""
 }
 _G.pg.base.gametip.battle_text_tianchengCV_3 = {
-	tip = "A powerful attack is coming! Activate the magic circle and call for support!"
+	tip = "A powerful attack is coming! Activate the <color=#f1f102>magic circle</color> and call for support!"
 }
 _G.pg.base.gametip.dreamland_label_day = {
 	tip = "Day"
@@ -24506,7 +24506,7 @@ _G.pg.base.gametip.dreamland_area_lock_tip = {
 	tip = "- Area unlocks after reading the story -"
 }
 _G.pg.base.gametip.dreamland_spring_lock_tip = {
-	tip = "This will unlock after you read the story."
+	tip = "Unlocks after reading story"
 }
 _G.pg.base.gametip.dreamland_spring_tip = {
 	tip = "Dream Park Morale Recovery: $1/h"
@@ -24620,7 +24620,7 @@ _G.pg.base.gametip.compensate_ui_nothing2 = {
 	tip = "No compensation received yet"
 }
 _G.pg.base.gametip.attire_combatui_preview = {
-	tip = "Check Preview"
+	tip = "Preview"
 }
 _G.pg.base.gametip.attire_combatui_confirm = {
 	tip = "Apply"

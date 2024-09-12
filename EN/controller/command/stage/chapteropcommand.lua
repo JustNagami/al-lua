@@ -249,10 +249,10 @@ function var_0_0.PrepareChapterRetreat(arg_4_0)
 	}, arg_4_0)
 end
 
-function var_0_0.PlayChapterStory(arg_8_0, arg_8_1, arg_8_2)
+function var_0_0.PlayChapterStory(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
 	local var_8_0 = pg.NewStoryMgr.GetInstance()
 
-	var_8_0:Play(arg_8_0, arg_8_1)
+	var_8_0:Play(arg_8_0, arg_8_1, arg_8_3)
 
 	if not getProxy(SettingsProxy):GetStoryAutoPlayFlag() and arg_8_2 and var_8_0:IsRunning() then
 		var_8_0:Puase()

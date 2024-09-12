@@ -580,6 +580,7 @@ function var_0_0.GenBattleData(arg_35_0)
 	var_35_0.battleType = arg_35_0.contextData.system
 	var_35_0.StageTmpId = arg_35_0.contextData.stageId
 	var_35_0.CMDArgs = arg_35_0.contextData.cmdArgs
+	var_35_0.isMemory = arg_35_0.contextData.memory
 	var_35_0.MainUnitList = {}
 	var_35_0.VanguardUnitList = {}
 	var_35_0.SubUnitList = {}

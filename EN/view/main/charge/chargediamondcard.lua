@@ -63,7 +63,7 @@ function var_0_0.update(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 	end
 
 	LoadSpriteAsync("chargeicon/" .. arg_2_1:getConfig("picture"), function(arg_3_0)
-		if arg_3_0 then
+		if arg_3_0 and not IsNil(arg_2_0.iconImg) then
 			setImageSprite(arg_2_0.iconImg, arg_3_0, true)
 		end
 	end)
