@@ -14583,7 +14583,7 @@ pg.activity_template = {
 		type = 18,
 		login_pop = 0,
 		config_id = 0,
-		is_show = 48,
+		is_show = 47,
 		config_data = {
 			{
 				20510
@@ -14670,7 +14670,11 @@ pg.activity_template = {
 			496,
 			497,
 			498,
-			499
+			499,
+			500,
+			501,
+			502,
+			503
 		},
 		time = {
 			"timer",
@@ -14751,7 +14755,7 @@ pg.activity_template = {
 		type = 18,
 		login_pop = 0,
 		config_id = 3,
-		is_show = 43,
+		is_show = 42,
 		config_data = {
 			{
 				20515,
@@ -14846,7 +14850,7 @@ pg.activity_template = {
 		type = 87,
 		login_pop = 0,
 		config_id = 22,
-		is_show = 42,
+		is_show = 41,
 		id = 5552,
 		config_data = {},
 		time = {
@@ -14986,7 +14990,7 @@ pg.activity_template = {
 		type = 12,
 		login_pop = 0,
 		config_id = 0,
-		is_show = 49,
+		is_show = 48,
 		config_data = {
 			1850001,
 			1850002,
@@ -15168,7 +15172,7 @@ pg.activity_template = {
 		type = 74,
 		login_pop = 0,
 		config_id = 5566,
-		is_show = 47,
+		is_show = 46,
 		id = 5566,
 		config_data = {},
 		time = {
@@ -15249,7 +15253,7 @@ pg.activity_template = {
 		type = 70,
 		login_pop = 0,
 		config_id = 0,
-		is_show = 46,
+		is_show = 45,
 		config_data = {},
 		time = {
 			"timer",
@@ -15295,7 +15299,7 @@ pg.activity_template = {
 		type = 3,
 		login_pop = 0,
 		config_id = 62,
-		is_show = 44,
+		is_show = 43,
 		id = 5569,
 		config_data = {},
 		time = {
@@ -15337,7 +15341,7 @@ pg.activity_template = {
 		type = 56,
 		login_pop = 0,
 		config_id = 1,
-		is_show = 45,
+		is_show = 44,
 		id = 5570,
 		config_data = {},
 		time = {
@@ -15724,6 +15728,89 @@ pg.activity_template = {
 					59,
 					59
 				}
+			}
+		}
+	},
+	[5581] = {
+		mark = 20240919,
+		id = 5581,
+		title_res_tag = "TianlangxingEmoji",
+		type = 18,
+		login_pop = 0,
+		config_id = 3,
+		is_show = 49,
+		config_data = {
+			{
+				20596,
+				20597
+			},
+			{
+				20598,
+				20599
+			},
+			{
+				20600,
+				20601
+			},
+			{
+				20602,
+				20603
+			},
+			{
+				20604,
+				20605
+			},
+			{
+				20606,
+				20607
+			},
+			{
+				20608,
+				20609
+			}
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					9,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					9,
+					29
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "TianlangxingEmojiPage",
+			ui_name = "TianlangxingEmojiPage"
+		},
+		config_client = {
+			story = {
+				{
+					"HUANRAOXINJIANZHIWU"
+				},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{}
 			}
 		}
 	},
@@ -22021,6 +22108,7 @@ pg.activity_template = {
 			5537,
 			5548,
 			5551,
+			5581,
 			6000,
 			6001,
 			6002,
@@ -23041,6 +23129,7 @@ pg.activity_template = {
 		5576,
 		5577,
 		5579,
+		5581,
 		7011,
 		7012,
 		7013,

@@ -191123,3 +191123,82 @@ _G.pg.base.item_virtual_data_statistics[200285] = {
 		}
 	}
 }
+_G.pg.base.item_virtual_data_statistics[65024] = {
+	display = "获得后立刻自动开启，开启可获得天狼星多彩时刻系列限定表情（6个）\n可在表情选项的「默认」选项卡中找到并发出此系列表情",
+	name = "多彩时刻表情组",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/65024",
+	id = 65024,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[86207] = {
+	display = "不会被看到",
+	name = "随机梦幻乐园换装II",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86207,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			305102,
+			1200
+		},
+		{
+			202204,
+			1200
+		},
+		{
+			103245,
+			1200
+		},
+		{
+			319014,
+			1200
+		},
+		{
+			202102,
+			1200
+		},
+		{
+			499072,
+			1430
+		},
+		{
+			306063,
+			1300
+		},
+		{
+			519012,
+			1270
+		}
+	}
+}

@@ -1613,6 +1613,123 @@ pg.base.ship_skin_template_3 = {
 			}
 		}
 	},
+	[103245] = {
+		ship_group = 10324,
+		name = "特别的治愈时间",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 5,
+		shop_id = 71055,
+		painting = "bulaimodun_6",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 26,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "180",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		id = 103245,
+		voice_actor_2 = -1,
+		prefab = "bulaimodun_6",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "指挥官，不要再乱动啦～这个姿势如果你不放松的话我也无法好好操作哦，所以就乖乖地把疲惫的身体交给我吧――嗯，从手到胳膊，再到脖子和肩膀，用力地按下去！",
+		voice_actor = 134,
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			6,
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.202,
+					1.03,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.22,
+					1.132,
+					0
+				}
+			},
+			torpedo = {
+				{
+					-0.009,
+					-0.004,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.47,
+							2.213,
+							0.14
+						}
+					}
+				}
+			}
+		},
+		spine_offset = {
+			{
+				2,
+				-369,
+				0
+			},
+			{
+				0.37
+			}
+		}
+	},
 	[103248] = {
 		ship_group = 10324,
 		name = "幸福的轨迹",
@@ -12659,104 +12776,6 @@ pg.base.ship_skin_template_3 = {
 			},
 			{
 				0.45
-			}
-		}
-	},
-	[107096] = {
-		ship_group = 10709,
-		name = "赛道88之风",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 6,
-		shop_id = 70914,
-		painting = "aisaikesi_8",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 14,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		id = 107096,
-		voice_actor_2 = -1,
-		prefab = "aisaikesi_8",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "埃塞克斯，感谢巡场顺利结束！指挥官看到我的活跃了吗？欸嘿嘿，真是太感谢你为比赛提供的各种帮助了！",
-		voice_actor = 149,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			antiaircraft = {
-				{
-					1.048,
-					1.32,
-					0
-				}
-			},
-			plane = {
-				{
-					1.368,
-					0.472,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.86,
-							1.98,
-							0
-						}
-					}
-				}
 			}
 		}
 	}

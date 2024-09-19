@@ -237,9 +237,10 @@ function var_0_1.ShotAndSave(arg_12_0, arg_12_1)
 	local var_12_3 = ScreenShooter.New(Screen.width, Screen.height, TextureFormat.ARGB32)
 
 	if (PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US) and var_0_0.SdkMgr.GetInstance():GetIsPlatform() then
-		local var_12_4 = arg_12_0:TakeTexture(arg_12_1, var_12_3, var_12_2):EncodeToJPG()
+		local var_12_4 = arg_12_0:TakeTexture(arg_12_1, var_12_3, var_12_2)
+		local var_12_5 = Tex2DExtension.EncodeToJPG(var_12_4)
 
-		arg_12_0:SaveImageWithBytes(var_12_4)
+		arg_12_0:SaveImageWithBytes(var_12_5)
 
 		return true
 	elseif PLATFORM_CODE == PLATFORM_CHT then
@@ -272,7 +273,7 @@ function var_0_1.ShowSharePanel(arg_13_0, arg_13_1, arg_13_2, arg_13_3, arg_13_4
 		local var_13_2 = System.IO.File.ReadAllBytes(arg_13_0.screenshotPath)
 		local var_13_3 = UnityEngine.Texture2D.New(Screen.width, Screen.height, TextureFormat.ARGB32, false)
 
-		var_13_3:LoadImage(var_13_2)
+		Tex2DExtension.LoadImage(var_13_3, var_13_2)
 		var_0_0.SdkMgr.GetInstance():GameShare(var_13_0.description, var_13_3)
 		var_0_0.UIMgr.GetInstance():LoadingOn()
 		onDelayTick(function()
@@ -376,7 +377,7 @@ end
 function var_0_1.Dispose(arg_24_0)
 	arg_24_0.go:SetActive(false)
 
-	if not arg_24_0.noBlur then
+	if arg_24_0.panel and not arg_24_0.noBlur then
 		var_0_0.UIMgr.GetInstance():UnblurPanel(arg_24_0.panel, arg_24_0.tr)
 	end
 
@@ -389,6 +390,8 @@ function var_0_1.Dispose(arg_24_0)
 end
 
 function var_0_1.SaveImageWithBytes(arg_25_0, arg_25_1)
+	BackYardThemeTempalteUtil.CheckSaveDirectory()
+
 	local var_25_0 = arg_25_0.screenshotPath
 
 	System.IO.File.WriteAllBytes(var_25_0, arg_25_1)

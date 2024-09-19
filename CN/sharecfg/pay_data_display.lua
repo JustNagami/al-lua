@@ -72,6 +72,8 @@ pg.pay_data_display = setmetatable({
 		72,
 		73,
 		74,
+		75,
+		76,
 		1000,
 		1001,
 		1002,
@@ -7253,7 +7255,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "梦幻乐园换装礼盒I",
 		show_group = "",
-		type_order = 2,
+		type_order = 3,
 		extra_service = 3,
 		money = 198,
 		id = 73,
@@ -7367,7 +7369,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "金秋礼盒2023复刻",
 		show_group = "",
-		type_order = 2,
+		type_order = 3,
 		extra_service = 3,
 		money = 198,
 		id = 74,
@@ -7468,6 +7470,234 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40928,
+				1
+			}
+		}
+	},
+	[75] = {
+		name = "梦幻乐园换装礼盒II",
+		limit_group = 0,
+		descrip_extra = "*礼盒将发送到邮箱，请注意查收。\n*重复获得已拥有的换装时，则自动置换成等价的钻石。",
+		type = 1,
+		subject = "梦幻乐园换装礼盒II",
+		limit_arg = 1,
+		name_display = "梦幻乐园换装礼盒II",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 198,
+		id = 75,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai16",
+		skin_inquire_relation = 86207,
+		id_str = "com.bilibili.blhx.zuanshi175",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "可获得一件角色换装，2024钻，和大量其他奖励",
+		airijp_id = "com.yostarjp.azurlane.diamond163",
+		extra_service_item = {
+			{
+				2,
+				86207,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					9,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86207,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42066,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81207,
+				1
+			}
+		}
+	},
+	[76] = {
+		name = "金秋庆典礼盒(2023)复刻",
+		limit_group = 0,
+		descrip_extra = "*礼盒将发送到邮箱，请注意查收。\n*重复获得已拥有的换装时，则自动置换成等价的钻石。",
+		type = 1,
+		subject = "金秋庆典礼盒(2023)复刻",
+		limit_arg = 1,
+		name_display = "金秋庆典礼盒(2023)复刻",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 198,
+		id = 76,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "lihejp6lf_l",
+		skin_inquire_relation = 69929,
+		id_str = "com.bilibili.blhx.zuanshi176",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "可获得一件角色换装，2023钻，和大量其他奖励",
+		airijp_id = "com.yostarjp.azurlane.diamond164",
+		extra_service_item = {
+			{
+				2,
+				69929,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42056,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					9,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				69929,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42056,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40929,
 				1
 			}
 		}
@@ -8773,7 +9003,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "特许巡游凭证",
 		show_group = "",
-		type_order = 4,
+		type_order = 5,
 		extra_service = 4,
 		money = 68,
 		id = 1017,
@@ -9309,7 +9539,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "即刻出战礼包",
 		show_group = "",
-		type_order = 3,
+		type_order = 5,
 		extra_service = 3,
 		money = 30,
 		id = 2009,
@@ -11204,7 +11434,7 @@ pg.base.pay_data_display = {
 		limit_arg = 0,
 		name_display = "梦幻霓虹主题礼包",
 		show_group = "uigift",
-		type_order = 2,
+		type_order = 4,
 		extra_service = 3,
 		money = 78,
 		id = 2032,
@@ -11272,7 +11502,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "梦幻霓虹主题礼包（基础版）",
 		show_group = "uigift",
-		type_order = 2,
+		type_order = 4,
 		extra_service = 3,
 		money = 78,
 		id = 2033,
@@ -11346,7 +11576,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "梦幻霓虹主题礼包（豪华版）",
 		show_group = "uigift",
-		type_order = 2,
+		type_order = 4,
 		extra_service = 3,
 		money = 258,
 		id = 2034,

@@ -361,16 +361,40 @@ function var_0_0.ExistAnyMapAward(arg_47_0)
 	end)
 end
 
-function var_0_0.ExistAnyExploreAward(arg_49_0)
-	local var_49_0 = arg_49_0:GetAllMapId()
+local var_0_2 = "DREAMLAND_KEY"
 
-	return _.any(var_49_0, function(arg_50_0)
-		return arg_49_0:IsFinishMapExplore(arg_50_0) and not arg_49_0:IsReceiveExploreAward(arg_50_0)
-	end)
+function var_0_0.FirstTimeExplore(arg_49_0)
+	local var_49_0 = getProxy(PlayerProxy):getRawData().id
+	local var_49_1 = PlayerPrefs.GetInt(var_0_2 .. var_49_0, 0) == 0
+	local var_49_2 = #arg_49_0:FindUnlockMaps() > 0
+	local var_49_3 = table.getCount(arg_49_0.exploreAwards) == 0
+
+	return var_49_1 and var_49_2 and var_49_3
 end
 
-function var_0_0.ExistAnyMapOrExploreAward(arg_51_0)
-	return arg_51_0:ExistAnyMapAward() or arg_51_0:ExistAnyExploreAward()
+function var_0_0.ExistAnyExploreAward(arg_50_0)
+	local var_50_0 = arg_50_0:GetAllMapId()
+
+	return _.any(var_50_0, function(arg_51_0)
+		return arg_50_0:IsFinishMapExplore(arg_51_0) and not arg_50_0:IsReceiveExploreAward(arg_51_0)
+	end) or arg_50_0:FirstTimeExplore()
+end
+
+function var_0_0.MarkExploreState(arg_52_0)
+	if arg_52_0:FirstTimeExplore() then
+		local var_52_0 = getProxy(PlayerProxy):getRawData().id
+
+		PlayerPrefs.SetInt(var_0_2 .. var_52_0, 1)
+		PlayerPrefs.Save()
+
+		return true
+	end
+
+	return false
+end
+
+function var_0_0.ExistAnyMapOrExploreAward(arg_53_0)
+	return arg_53_0:ExistAnyMapAward() or arg_53_0:ExistAnyExploreAward() or arg_53_0:IsFirstEvent()
 end
 
 return var_0_0
