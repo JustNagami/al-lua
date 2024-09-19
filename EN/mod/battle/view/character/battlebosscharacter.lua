@@ -94,9 +94,8 @@ function var_0_2.SetTemplateInfo(arg_8_0)
 		var_8_1 = var_8_0.name
 	end
 
-	changeToScrollText(arg_8_0._HPBarTf:Find("BossName"), var_8_1)
-
-	arg_8_0._HPBarTf:Find("BossLv"):GetComponent(typeof(Text)).text = "Lv." .. arg_8_0._unitData:GetLevel()
+	arg_8_0._HPBarTf:Find("BossNameBG/BossName"):GetComponent(typeof(Text)).text = var_8_1
+	arg_8_0._HPBarTf:Find("BossNameBG/BossLv"):GetComponent(typeof(Text)).text = "Lv." .. arg_8_0._unitData:GetLevel()
 
 	local var_8_2 = pg.enemy_data_by_type[var_8_0.type].type
 	local var_8_3 = GetSpriteFromAtlas("shiptype", shipType2Battleprint(var_8_2))

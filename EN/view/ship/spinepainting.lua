@@ -361,7 +361,9 @@ function var_0_0.changeSpecialIdle(arg_38_0, arg_38_1)
 end
 
 function var_0_0.SetAction(arg_39_0, arg_39_1, arg_39_2, arg_39_3)
-	if arg_39_0:getMultipFaceFlag() then
+	local var_39_0, var_39_1 = arg_39_0:getMultipFaceFlag()
+
+	if var_39_0 then
 		arg_39_1 = arg_39_0:getMultipFaceAction(arg_39_1, arg_39_2)
 	end
 
@@ -405,8 +407,6 @@ function var_0_0.SetActionWithFinishCallback(arg_41_0, arg_41_1, arg_41_2, arg_4
 end
 
 function var_0_0.SetEmptyAction(arg_43_0, arg_43_1)
-	arg_43_0:SetVisible(true)
-
 	for iter_43_0, iter_43_1 in ipairs(arg_43_0.spineAnimList) do
 		local var_43_0 = iter_43_1:GetAnimationState()
 
@@ -418,23 +418,32 @@ function var_0_0.SetEmptyAction(arg_43_0, arg_43_1)
 end
 
 function var_0_0.getMultipFaceFlag(arg_44_0)
+	local var_44_0 = false
+	local var_44_1 = 0
+
 	if arg_44_0.shipDragData and arg_44_0.shipDragData.multiple_face then
-		return table.contains(arg_44_0.shipDragData.multiple_face, arg_44_0.mainSpineAnim.name)
+		var_44_0 = table.contains(arg_44_0.shipDragData.multiple_face, arg_44_0.mainSpineAnim.name)
 	end
 
-	return false
+	if arg_44_0.shipDragData and arg_44_0.shipDragData.multiple_count then
+		var_44_1 = arg_44_0.shipDragData.multiple_count
+	end
+
+	return var_44_0, var_44_1
 end
 
 function var_0_0.getMultipFaceAction(arg_45_0, arg_45_1, arg_45_2)
-	if arg_45_0:getMultipFaceFlag() and arg_45_0.idleName == "ex" and arg_45_2 == 1 then
+	local var_45_0, var_45_1 = arg_45_0:getMultipFaceFlag()
+
+	if var_45_0 and arg_45_0.idleName == "ex" and arg_45_2 == 1 then
 		if arg_45_0.inAction then
 			return nil
 		end
 
-		local var_45_0 = tonumber(arg_45_1)
+		local var_45_2 = tonumber(arg_45_1)
 
-		if var_45_0 then
-			arg_45_1 = tostring(var_45_0 + 5)
+		if var_45_2 then
+			arg_45_1 = tostring(var_45_2 + var_45_1)
 		end
 	end
 

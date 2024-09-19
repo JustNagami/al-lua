@@ -56,15 +56,10 @@ function var_0_0.Load(arg_8_0)
 	arg_8_0._state = var_0_0.STATES.LOADING
 
 	pg.UIMgr.GetInstance():LoadingOn()
-
-	local var_8_0 = PoolMgr.GetInstance()
-	local var_8_1
-
-	var_8_0:GetUI(arg_8_0:getUIName(), false, function(arg_9_0)
-		var_8_1 = arg_9_0
+	PoolMgr.GetInstance():GetUI(arg_8_0:getUIName(), true, function(arg_9_0)
+		arg_8_0:Loaded(arg_9_0)
+		arg_8_0:Init()
 	end)
-	arg_8_0:Loaded(var_8_1)
-	arg_8_0:Init()
 end
 
 function var_0_0.isfrozen(arg_10_0)

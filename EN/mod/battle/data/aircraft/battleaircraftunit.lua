@@ -521,8 +521,16 @@ function var_0_6.GetDeadFX(arg_71_0)
 	return arg_71_0._deadFX
 end
 
+var_0_6.AIRCRAFT_TRIGGER = {
+	var_0_0.Battle.BattleConst.BuffEffectType.ON_BULLET_COLLIDE_BEFORE,
+	var_0_0.Battle.BattleConst.BuffEffectType.ON_BOMB_BULLET_BANG,
+	var_0_0.Battle.BattleConst.BuffEffectType.ON_TORPEDO_BULLET_BANG
+}
+
 function var_0_6.TriggerBuff(arg_72_0, arg_72_1, arg_72_2)
-	return
+	if table.contains(var_0_6.AIRCRAFT_TRIGGER, arg_72_1) and arg_72_0._motherUnit and arg_72_0._motherUnit:IsAlive() then
+		arg_72_0._motherUnit:TriggerBuff(arg_72_1, arg_72_2)
+	end
 end
 
 function var_0_6.AddCreateTimer(arg_73_0, arg_73_1, arg_73_2)
@@ -586,26 +594,22 @@ function var_0_6.RemoveBuff(arg_81_0)
 	return
 end
 
-function var_0_6.TriggerBuff(arg_82_0)
+function var_0_6.CloakExpose(arg_82_0)
 	return
 end
 
-function var_0_6.CloakExpose(arg_83_0)
-	return
-end
-
-function var_0_6.GetCurrentOxyState(arg_84_0)
+function var_0_6.GetCurrentOxyState(arg_83_0)
 	return nil
 end
 
-function var_0_6.RemoveRemoteBoundBone(arg_85_0)
+function var_0_6.RemoveRemoteBoundBone(arg_84_0)
 	return
 end
 
-function var_0_6.SetRemoteBoundBone(arg_86_0)
+function var_0_6.SetRemoteBoundBone(arg_85_0)
 	return
 end
 
-function var_0_6.GetRemoteBoundBone(arg_87_0)
+function var_0_6.GetRemoteBoundBone(arg_86_0)
 	return
 end
