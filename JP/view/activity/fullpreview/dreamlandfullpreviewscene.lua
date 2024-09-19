@@ -68,6 +68,10 @@ function var_0_0.UpdateView(arg_9_0)
 
 	setActive(arg_9_0:findTF("dreamland", arg_9_0.dreamlandBtn), arg_9_0.isFinishPre)
 	setActive(arg_9_0:findTF("pre_act", arg_9_0.dreamlandBtn), not arg_9_0.isFinishPre)
+
+	local var_9_0 = getProxy(ActivityProxy):getActivityById(arg_9_0.preActId)
+
+	setActive(arg_9_0:findTF("pre_act/tip", arg_9_0.dreamlandBtn), var_0_0.ActivityTip(var_9_0))
 end
 
 function var_0_0.MiniGameTip()
@@ -81,7 +85,26 @@ function var_0_0.DreamlandTip()
 	return DreamlandData.New(var_11_0, var_11_1):ExistAnyMapOrExploreAward()
 end
 
-function var_0_0.IsShowMainTip(arg_12_0)
+function var_0_0.ActivityTip(arg_12_0)
+	if not arg_12_0 or arg_12_0:isEnd() then
+		return false
+	end
+
+	local var_12_0 = getProxy(TaskProxy)
+	local var_12_1 = underscore.flatten(arg_12_0:getConfig("config_data"))
+	local var_12_2 = arg_12_0.data3
+	local var_12_3 = var_12_1[var_12_2]
+	local var_12_4 = var_12_0:getTaskById(var_12_3) or var_12_0:getFinishTaskById(var_12_3)
+	local var_12_5 = math.min(arg_12_0:getDayIndex(), #var_12_1) - var_12_2
+
+	if var_12_4:getTaskStatus() == 1 then
+		var_12_5 = var_12_5 + 1
+	end
+
+	return var_12_5 > 0
+end
+
+function var_0_0.IsShowMainTip(arg_13_0)
 	return var_0_0.MiniGameTip() or var_0_0.DreamlandTip()
 end
 

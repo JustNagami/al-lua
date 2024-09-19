@@ -208,6 +208,7 @@ pg.memory_group = setmetatable({
 		300,
 		301,
 		302,
+		303,
 		501,
 		502,
 		503,
@@ -307,6 +308,7 @@ pg.memory_group = setmetatable({
 		599,
 		600,
 		601,
+		602,
 		1000,
 		1001,
 		1002
@@ -4979,6 +4981,17 @@ pg.base.memory_group = {
 			3907
 		}
 	},
+	[303] = {
+		id = 303,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5581,
+		title = "ハート・ダンシング",
+		memories = {
+			3908
+		}
+	},
 	[501] = {
 		id = 501,
 		subtype = 0,
@@ -6673,6 +6686,23 @@ pg.base.memory_group = {
 			3725,
 			3726,
 			3727
+		}
+	},
+	[602] = {
+		id = 602,
+		subtype = 0,
+		icon = "title_chara_gaoxiong",
+		type = 3,
+		link_event = 0,
+		title = "タカオ・スタディー",
+		memories = {
+			3911,
+			3912,
+			3913,
+			3914,
+			3915,
+			3916,
+			3917
 		}
 	},
 	[1000] = {

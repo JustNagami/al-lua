@@ -72,6 +72,8 @@ pg.pay_data_display = setmetatable({
 		72,
 		73,
 		74,
+		75,
+		76,
 		1000,
 		1001,
 		1002,
@@ -7321,7 +7323,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "七周年福袋① ",
 		show_group = "",
-		type_order = 2,
+		type_order = 3,
 		extra_service = 3,
 		money = 3800,
 		id = 73,
@@ -7435,7 +7437,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "六周年福袋①(復刻)",
 		show_group = "",
-		type_order = 2,
+		type_order = 3,
 		extra_service = 3,
 		money = 3800,
 		id = 74,
@@ -7536,6 +7538,234 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40928,
+				1
+			}
+		}
+	},
+	[75] = {
+		name = "七周年福袋② ",
+		limit_group = 0,
+		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
+		type = 1,
+		subject = "七周年福袋② ",
+		limit_arg = 1,
+		name_display = "七周年福袋② ",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 3800,
+		id = 75,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai16",
+		skin_inquire_relation = 86207,
+		id_str = "com.bilibili.blhx.zuanshi175",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "アイテム・資源とランダムな着せ替え衣装を入手可能",
+		airijp_id = "com.yostarjp.azurlane.diamond163",
+		extra_service_item = {
+			{
+				2,
+				86207,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					9,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86207,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42066,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81207,
+				1
+			}
+		}
+	},
+	[76] = {
+		name = "六周年福袋②(復刻)",
+		limit_group = 0,
+		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
+		type = 1,
+		subject = "六周年福袋②(復刻)",
+		limit_arg = 1,
+		name_display = "六周年福袋②(復刻)",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 3800,
+		id = 76,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "lihejp6lf_l",
+		skin_inquire_relation = 69929,
+		id_str = "com.bilibili.blhx.zuanshi176",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "アイテム・資源とランダムな着せ替え衣装を入手可能",
+		airijp_id = "com.yostarjp.azurlane.diamond164",
+		extra_service_item = {
+			{
+				2,
+				69929,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42056,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					9,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				69929,
+				1
+			},
+			{
+				1,
+				14,
+				2023
+			},
+			{
+				2,
+				42056,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40929,
 				1
 			}
 		}
@@ -8841,7 +9071,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "クルーズパス(24夏)",
 		show_group = "",
-		type_order = 4,
+		type_order = 5,
 		extra_service = 4,
 		money = 1200,
 		id = 1017,
@@ -9377,7 +9607,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "指揮官レベルアップパック",
 		show_group = "",
-		type_order = 3,
+		type_order = 5,
 		extra_service = 3,
 		money = 650,
 		id = 2009,
@@ -11054,7 +11284,7 @@ pg.base.pay_data_display = {
 		limit_arg = 0,
 		name_display = "戦闘UI・レインボー",
 		show_group = "uigift",
-		type_order = 2,
+		type_order = 4,
 		extra_service = 3,
 		money = 1600,
 		id = 2032,
@@ -11122,7 +11352,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "戦闘UI・レインボー（単品）",
 		show_group = "uigift",
-		type_order = 2,
+		type_order = 4,
 		extra_service = 3,
 		money = 1600,
 		id = 2033,
@@ -11196,7 +11426,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "戦闘UI・レインボー（セット）",
 		show_group = "uigift",
-		type_order = 2,
+		type_order = 4,
 		extra_service = 3,
 		money = 4700,
 		id = 2034,

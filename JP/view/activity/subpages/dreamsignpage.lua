@@ -11,6 +11,7 @@ function var_0_0.OnInit(arg_1_0)
 	arg_1_0.lock = arg_1_0:findTF("lock", arg_1_0.signTF)
 	arg_1_0.countText = arg_1_0:findTF("count", arg_1_0.signBtn)
 	arg_1_0.signRed = arg_1_0:findTF("tip", arg_1_0.signBtn)
+	arg_1_0.dreamRed = arg_1_0:findTF("tip", arg_1_0.goBtn)
 end
 
 function var_0_0.OnDataSetting(arg_2_0)
@@ -97,6 +98,7 @@ function var_0_0.OnUpdateFlush(arg_10_0)
 	setActive(arg_10_0.goBtn, var_10_1)
 	setActive(arg_10_0.lock, var_10_1 and arg_10_0:IsLock())
 	setActive(arg_10_0.signRed, arg_10_0.remainCnt > 0)
+	setActive(arg_10_0.dreamRed, DreamlandFullPreviewScene.DreamlandTip())
 	setText(arg_10_0.countText, i18n("liner_sign_cnt_tip") .. arg_10_0.remainCnt)
 	arg_10_0.uilist:align(#arg_10_0.taskGroup)
 end

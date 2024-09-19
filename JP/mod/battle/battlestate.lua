@@ -96,12 +96,6 @@ function var_0_2.Ctor(arg_1_0)
 end
 
 function var_0_2.GetCombatSkinKey()
-	if COMBAT_SKIN_KEY then
-		originalPrint("~~~~~~~~~~~combat get" .. COMBAT_SKIN_KEY)
-	else
-		originalPrint("~~~~~~~~~~~combat get empty")
-	end
-
 	return COMBAT_SKIN_KEY or "Standard"
 end
 

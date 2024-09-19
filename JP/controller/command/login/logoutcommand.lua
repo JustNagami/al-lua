@@ -74,10 +74,12 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 			data = var_1_0
 		}),
 		callback = function()
-			pg.proxyRegister:Stop()
-			pg.proxyRegister:RemoveProxy(arg_1_0.facade)
+			if pg.proxyRegister then
+				pg.proxyRegister:Stop()
+				pg.proxyRegister:RemoveProxy(arg_1_0.facade)
 
-			pg.proxyRegister = nil
+				pg.proxyRegister = nil
+			end
 
 			arg_1_0.facade:removeCommand(GAME.LOAD_SCENE_DONE)
 		end

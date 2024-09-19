@@ -2,6 +2,7 @@
 
 local var_0_0 = ys.Battle.BattleConfig
 
+var_0_0.COMBAT_DELAY_ACTIVE = 0.6
 var_0_0.calcFPS = 30
 var_0_0.viewFPS = 30
 var_0_0.AIFPS = 10
