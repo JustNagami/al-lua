@@ -34,7 +34,7 @@
 			alpha = 0,
 			notifies = {
 				{
-					notify = "Dorm3dSceneMediator.GUIDE_CLICK_LADY",
+					notify = "Dorm3dRoomMediator.GUIDE_CLICK_LADY",
 					body = {}
 				}
 			}
@@ -78,7 +78,7 @@
 		{
 			notifies = {
 				{
-					notify = "Dorm3dSceneMediator.GUIDE_CHECK_LEVEL_UP",
+					notify = "Dorm3dRoomMediator.GUIDE_CHECK_LEVEL_UP",
 					body = {}
 				}
 			}

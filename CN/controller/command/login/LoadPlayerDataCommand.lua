@@ -305,6 +305,12 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		if MainCheckShipNumSequence.New():Check(arg_2_0.ship_count) then
 			arg_1_0:sendNotification(GAME.LOAD_PLAYER_DATA_DONE)
 		end
+
+		if Dorm3dRoomTemplateScene.FirstDefaultSetting then
+			arg_1_0:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGraphics(Dorm3dRoomTemplateScene.FirstDefaultSetting))
+
+			Dorm3dRoomTemplateScene.FirstDefaultSetting = nil
+		end
 	end, nil, 60)
 end
 

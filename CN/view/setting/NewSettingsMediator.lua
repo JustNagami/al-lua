@@ -4,6 +4,8 @@ var_0_0.SHOW_DESC = "NewSettingsMediator:SHOW_DESC"
 var_0_0.ON_LOGOUT = "NewSettingsMediator:ON_LOGOUT"
 var_0_0.ON_SECON_PWD_STATE_CHANGE = "NewSettingsMediator:ON_SECON_PWD_STATE_CHANGE"
 var_0_0.OPEN_YOSTAR_ALERT_VIEW = "NewSettingsMediator:OPEN_YOSTAR_ALERT_VIEW"
+var_0_0.SelectGraphicSettingLevel = "NewSettingsMediator:SelectGraphicSettingLevel"
+var_0_0.SelectCustomGraphicSetting = "NewSettingsMediator:SelectCustomGraphicSetting"
 
 function var_0_0.register(arg_1_0)
 	arg_1_0:bind(var_0_0.ON_LOGOUT, function(arg_2_0)
@@ -18,6 +20,8 @@ function var_0_0.listNotificationInterests(arg_3_0)
 		var_0_0.SHOW_DESC,
 		var_0_0.ON_SECON_PWD_STATE_CHANGE,
 		var_0_0.OPEN_YOSTAR_ALERT_VIEW,
+		var_0_0.SelectGraphicSettingLevel,
+		var_0_0.SelectCustomGraphicSetting,
 		GAME.EXCHANGECODE_USE_SUCCESS,
 		GAME.ON_GET_TRANSCODE,
 		GAME.ON_SOCIAL_LINKED,
@@ -46,6 +50,10 @@ function var_0_0.handleNotification(arg_4_0, arg_4_1)
 		arg_4_0.viewComponent:OpenYostarAlertView()
 	elseif var_4_0 == GAME.CHANGE_RANDOM_SHIP_MODE_DONE then
 		arg_4_0.viewComponent:OnRandomFlagShipModeUpdate()
+	elseif var_4_0 == var_0_0.SelectGraphicSettingLevel then
+		arg_4_0.viewComponent:OnSelectGraphicSettingLevel()
+	elseif var_4_0 == var_0_0.SelectCustomGraphicSetting then
+		arg_4_0.viewComponent:OnSelectCustomGraphicSetting()
 	end
 end
 

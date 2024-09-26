@@ -34,51 +34,57 @@ function var_0_0.GetName(arg_6_0)
 	return arg_6_0:getConfig("name")
 end
 
-function var_0_0.GetShipGroupId(arg_7_0)
-	return arg_7_0:getConfig("char_id")
+function var_0_0.GetWatchCameraName(arg_7_0)
+	return arg_7_0:getConfig("watch_camera")
 end
 
-function var_0_0.GetWatchCameraName(arg_8_0)
-	return arg_8_0:getConfig("watch_camera")
+function var_0_0.GetRegularAnimIDList(arg_8_0)
+	return arg_8_0:getConfig("regular_anim") or {}
 end
 
-function var_0_0.GetRegularAnimIDList(arg_9_0)
-	return arg_9_0:getConfig("regular_anim") or {}
+function var_0_0.GetRegularAnims(arg_9_0)
+	return arg_9_0.regulaAnims
 end
 
-function var_0_0.GetRegularAnims(arg_10_0)
-	return arg_10_0.regulaAnims
+function var_0_0.GetSpecialFurnitureIDList(arg_10_0)
+	return arg_10_0:getConfig("special_furniture") or {}
 end
 
-function var_0_0.GetSpecialFurnitureIDList(arg_11_0)
-	return arg_11_0:getConfig("special_furniture") or {}
-end
+function var_0_0.GetAllSpecialList(arg_11_0, arg_11_1)
+	local var_11_0 = {}
 
-function var_0_0.GetAllSpecialList(arg_12_0)
-	local var_12_0 = {}
+	for iter_11_0, iter_11_1 in pairs(pg.dorm3d_camera_anim_template.get_id_list_by_furniture_id) do
+		local function var_11_1(arg_12_0)
+			if pg.dorm3d_furniture_template[arg_12_0].room_id == arg_11_1 then
+				return true
+			end
 
-	for iter_12_0, iter_12_1 in pairs(pg.dorm3d_camera_anim_template.get_id_list_by_furniture_id) do
-		if iter_12_0 ~= 0 and not arg_12_0.specialFurnitureDic[iter_12_0] then
-			local var_12_1 = {}
+			return false
+		end
 
-			for iter_12_2, iter_12_3 in ipairs(iter_12_1) do
-				table.insert(var_12_1, Dorm3dCameraAnim.New({
-					configId = iter_12_3
+		if iter_11_0 ~= 0 and var_11_1(iter_11_0) and not arg_11_0.specialFurnitureDic[iter_11_0] then
+			local var_11_2 = {}
+
+			for iter_11_2, iter_11_3 in ipairs(iter_11_1) do
+				table.insert(var_11_2, Dorm3dCameraAnim.New({
+					configId = iter_11_3
 				}))
 			end
 
-			table.insert(var_12_0, {
-				furnitureId = iter_12_0,
-				anims = var_12_1
+			table.insert(var_11_0, {
+				furnitureId = iter_11_0,
+				anims = var_11_2
 			})
 		end
 	end
 
-	for iter_12_4, iter_12_5 in ipairs(arg_12_0.specialAnims) do
-		table.insert(var_12_0, iter_12_4, iter_12_5)
+	if arg_11_0.specialAnims then
+		for iter_11_4, iter_11_5 in ipairs(arg_11_0.specialAnims) do
+			table.insert(var_11_0, iter_11_4, iter_11_5)
+		end
 	end
 
-	return var_12_0
+	return var_11_0
 end
 
 function var_0_0.CheckFurnitureIdInZone(arg_13_0, arg_13_1)

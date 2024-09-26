@@ -16,6 +16,7 @@ var_0_0.ACTIVITY_SHOP_GOODS_UPDATED = "ShopsProxy:ACTIVITY_SHOP_GOODS_UPDATED"
 var_0_0.META_SHOP_GOODS_UPDATED = "ShopsProxy:META_SHOP_GOODS_UPDATED"
 var_0_0.MEDAL_SHOP_UPDATED = "ShopsProxy:MEDAL_SHOP_UPDATED"
 var_0_0.QUOTA_SHOP_UPDATED = "ShopsProxy:QUOTA_SHOP_UPDATED"
+var_0_0.CRUISE_SHOP_UPDATED = "ShopsProxy:CRUISE_SHOP_UPDATED"
 
 function var_0_0.register(arg_1_0)
 	arg_1_0.shopStreet = nil
@@ -447,84 +448,100 @@ function var_0_0.updateQuotaShop(arg_58_0, arg_58_1, arg_58_2)
 	})
 end
 
-function var_0_0.remove(arg_59_0)
-	for iter_59_0, iter_59_1 in pairs(arg_59_0.timers) do
-		iter_59_1:Stop()
+function var_0_0.SetCruiseShop(arg_59_0, arg_59_1)
+	arg_59_0.cruiseShop = arg_59_1
+end
+
+function var_0_0.UpdateCruiseShop(arg_60_0)
+	arg_60_0.cruiseShop = CruiseShop.New(arg_60_0:GetNormalList(), arg_60_0:GetNormalGroupList())
+
+	arg_60_0:sendNotification(var_0_0.CRUISE_SHOP_UPDATED, {
+		shop = arg_60_0.cruiseShop
+	})
+end
+
+function var_0_0.GetCruiseShop(arg_61_0)
+	return arg_61_0.cruiseShop
+end
+
+function var_0_0.remove(arg_62_0)
+	for iter_62_0, iter_62_1 in pairs(arg_62_0.timers) do
+		iter_62_1:Stop()
 	end
 
-	arg_59_0.timers = nil
+	arg_62_0.timers = nil
 
-	arg_59_0:removeWaitTimer()
+	arg_62_0:removeWaitTimer()
 end
 
-function var_0_0.ShouldRefreshChargeList(arg_60_0)
-	local var_60_0 = arg_60_0:getFirstChargeList()
-	local var_60_1 = arg_60_0:getChargedList()
-	local var_60_2 = arg_60_0:GetNormalList()
-	local var_60_3 = arg_60_0:GetNormalGroupList()
+function var_0_0.ShouldRefreshChargeList(arg_63_0)
+	local var_63_0 = arg_63_0:getFirstChargeList()
+	local var_63_1 = arg_63_0:getChargedList()
+	local var_63_2 = arg_63_0:GetNormalList()
+	local var_63_3 = arg_63_0:GetNormalGroupList()
 
-	return not var_60_0 or not var_60_1 or not var_60_2 or not var_60_3 or arg_60_0.refreshChargeList
+	return not var_63_0 or not var_63_1 or not var_63_2 or not var_63_3 or arg_63_0.refreshChargeList
 end
 
-function var_0_0.GetRecommendCommodities(arg_61_0)
-	local var_61_0 = arg_61_0:getChargedList()
-	local var_61_1 = arg_61_0:GetNormalList()
-	local var_61_2 = arg_61_0:GetNormalGroupList()
+function var_0_0.GetRecommendCommodities(arg_64_0)
+	local var_64_0 = arg_64_0:getChargedList()
+	local var_64_1 = arg_64_0:GetNormalList()
+	local var_64_2 = arg_64_0:GetNormalGroupList()
 
-	if not var_61_0 or not var_61_1 or not var_61_2 then
+	if not var_64_0 or not var_64_1 or not var_64_2 then
 		return {}
 	end
 
-	local var_61_3 = {}
+	local var_64_3 = {}
 
-	for iter_61_0, iter_61_1 in ipairs(pg.recommend_shop.all) do
-		local var_61_4 = pg.recommend_shop[iter_61_1].time
+	for iter_64_0, iter_64_1 in ipairs(pg.recommend_shop.all) do
+		local var_64_4 = pg.recommend_shop[iter_64_1].time
 
-		if pg.TimeMgr.GetInstance():inTime(var_61_4) then
-			local var_61_5 = RecommendCommodity.New({
-				id = iter_61_1,
-				chargedList = var_61_0,
-				normalList = var_61_1,
-				normalGroupList = var_61_2
+		if pg.TimeMgr.GetInstance():inTime(var_64_4) then
+			local var_64_5 = RecommendCommodity.New({
+				id = iter_64_1,
+				chargedList = var_64_0,
+				normalList = var_64_1,
+				normalGroupList = var_64_2
 			})
 
-			if var_61_5:CanShow() then
-				table.insert(var_61_3, var_61_5)
+			if var_64_5:CanShow() then
+				table.insert(var_64_3, var_64_5)
 			end
 		end
 	end
 
-	table.sort(var_61_3, function(arg_62_0, arg_62_1)
-		return arg_62_0:GetOrder() < arg_62_1:GetOrder()
+	table.sort(var_64_3, function(arg_65_0, arg_65_1)
+		return arg_65_0:GetOrder() < arg_65_1:GetOrder()
 	end)
 
-	return var_61_3
+	return var_64_3
 end
 
-function var_0_0.GetGiftCommodity(arg_63_0, arg_63_1, arg_63_2)
-	local var_63_0 = Goods.Create({
-		shop_id = arg_63_1
-	}, arg_63_2)
+function var_0_0.GetGiftCommodity(arg_66_0, arg_66_1, arg_66_2)
+	local var_66_0 = Goods.Create({
+		shop_id = arg_66_1
+	}, arg_66_2)
 
-	if var_63_0:isChargeType() then
-		local var_63_1 = ChargeConst.getBuyCount(arg_63_0.chargeList, var_63_0.id)
+	if var_66_0:isChargeType() then
+		local var_66_1 = ChargeConst.getBuyCount(arg_66_0.chargeList, var_66_0.id)
 
-		var_63_0:updateBuyCount(var_63_1)
+		var_66_0:updateBuyCount(var_66_1)
 	else
-		local var_63_2 = ChargeConst.getBuyCount(arg_63_0.normalList, var_63_0.id)
+		local var_66_2 = ChargeConst.getBuyCount(arg_66_0.normalList, var_66_0.id)
 
-		var_63_0:updateBuyCount(var_63_2)
+		var_66_0:updateBuyCount(var_66_2)
 
-		local var_63_3 = var_63_0:getConfig("group") or 0
+		local var_66_3 = var_66_0:getConfig("group") or 0
 
-		if var_63_3 > 0 then
-			local var_63_4 = ChargeConst.getGroupLimit(arg_63_0.normalGroupList, var_63_3)
+		if var_66_3 > 0 then
+			local var_66_4 = ChargeConst.getGroupLimit(arg_66_0.normalGroupList, var_66_3)
 
-			var_63_0:updateGroupCount(var_63_4)
+			var_66_0:updateGroupCount(var_66_4)
 		end
 	end
 
-	return var_63_0
+	return var_66_0
 end
 
 return var_0_0

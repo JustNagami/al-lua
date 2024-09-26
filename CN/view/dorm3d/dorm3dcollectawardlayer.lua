@@ -44,10 +44,15 @@ function var_0_0.didEnter(arg_7_0)
 	setText(arg_7_0._tf:Find("panel/name/Text"), var_7_0.name)
 	setText(arg_7_0._tf:Find("panel/desc/content/desc"), var_7_0.desc)
 
-	local var_7_1 = pg.dorm3d_favor_trigger[var_7_0.award].num
+	if var_7_0.award > 0 then
+		local var_7_1 = pg.dorm3d_favor_trigger[var_7_0.award].num
 
-	setText(arg_7_0._tf:Find("panel/favor/Text"), i18n("dorm3d_collect_favor_plus") .. var_7_1)
-	setActive(arg_7_0._tf:Find("panel/favor"), arg_7_0.contextData.isNew)
+		setText(arg_7_0._tf:Find("panel/favor/Text"), i18n("dorm3d_collect_favor_plus") .. var_7_1)
+		setActive(arg_7_0._tf:Find("panel/favor"), arg_7_0.contextData.isNew)
+	else
+		setActive(arg_7_0._tf:Find("panel/favor"), false)
+	end
+
 	setImageSprite(arg_7_0._tf:Find("panel/icon"), arg_7_0.iconSprite, true)
 	LeanTween.delayedCall(1.5, System.Action(function()
 		arg_7_0.isBlock = false

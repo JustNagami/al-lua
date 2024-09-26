@@ -38,9 +38,9 @@
 	TEMPESTA_MEDAL_COLLECTION = "tempesta medal collection",
 	TECHNOLOGY = "technology",
 	BACKHILL_FIFTH_ANNIVERSARY = "BACKHILL FIFTH ANNIVERSARY",
-	DORM3D = "dorm 3d",
-	EQUIP_CODE = "equip code",
 	SPRING_FESTIVAL_BACKHILL_2024 = "SPRING_FESTIVAL_BACKHILL_2024",
+	EQUIP_CODE = "equip code",
+	HOLOLIVE_LINKLINK_SELECT_SCENE = "hololive linklink select scene",
 	TRANSITION = "scene transition",
 	COLLECTSHIP = "scene collect ship",
 	REFLUX = "reflux",
@@ -48,63 +48,63 @@
 	SPWEAPON_STOREHOUSE = "spweapon storehouse",
 	BATTLE = "scene battle",
 	PROPINFO = "scene prop info",
-	HOLOLIVE_LINKLINK_SELECT_SCENE = "hololive linklink select scene",
-	OTHER_WORLD_TEMPLE_SCENE = "other world temple scene",
 	ISLAND_TASK = "island task",
+	OTHER_WORLD_TEMPLE_SCENE = "other world temple scene",
 	OTHERWORLD_MAP = "OTHERWORLD_MAP",
 	MUSIC_FESTIVAL3 = "music festival 3",
-	NEWGUILD = "scene newguild",
 	LINER_BACKHILL = "LINER_BACKHILL",
+	NEWGUILD = "scene newguild",
 	MAINUI = "scene mainUI",
+	COWBOY_TOWN_BACKHILL = "COWBOY_TOWN_BACKHILL",
 	ACTIVITY = "scene activity",
 	REDPACKEYLOTTERY = "scene RED PACKEY LOTTERY",
 	BULLETINBOARD = "scene bulletinboard",
-	COWBOY_TOWN_BACKHILL = "COWBOY_TOWN_BACKHILL",
-	IDOL_MEDAL_COLLECTION_SCENE = "idol medal collection scene",
 	DORM3D_VOLLEYBALL = "dorm 3d volleyball",
-	BACKYARD = "scene court yard",
+	IDOL_MEDAL_COLLECTION_SCENE = "idol medal collection scene",
 	SINGLE_ACTIVITY = "single activity",
-	RYZA_URBAN_AREA = "RYZA_URBAN_AREA",
+	BACKYARD = "scene court yard",
 	BACKYARD_THEME_TEMPLATE = "backyard theme template",
+	RYZA_URBAN_AREA = "RYZA_URBAN_AREA",
 	CHUZHENG = "scene chuzheng",
 	NEWYEAR_BACKHILL_2022 = "scene NEWYEAR BACKHILL 2022",
-	NEWYEAR_BACKHILL = "scene NEWYEAR BACKHILL",
 	ACT_BOSS_SPF = "act boss spf",
+	NEWYEAR_BACKHILL = "scene NEWYEAR BACKHILL",
+	ATELIER_COMPOSITE = "ATELIER_COMPOSITE",
 	WORLD_FLEET_SELECT = "world fleet select",
 	DREAMLAND_PREVIEW = "DREAMLAND_PREVIEW",
 	SPRING_FESTIVAL_BACKHILL_2023 = "SPRING FESTIVAL BackHill 2023",
-	ATELIER_COMPOSITE = "ATELIER_COMPOSITE",
-	SECRET_SHIPYARD = "SECRET_SHIPYARD",
 	RYZA_TASK = "ryza task scene",
+	SECRET_SHIPYARD = "SECRET_SHIPYARD",
 	ANNIVERSARY_ISLAND_WORKBENCH = "anniversary island workbench",
+	FRIEND = "scene friend",
 	RESOLVEEQUIP = "scene resolve equip",
 	DOCKYARD = "scene dockyard",
 	TASK = "scene task",
 	JIUJIU_EXPEDITION = "jiujiu expedition ",
-	FRIEND = "scene friend",
 	RANDOM_DOCKYARD = "random dockyard",
+	HOLOLIVE_MEDAL = "hololive medal",
 	SENRANKAGURA_TRAIN = "senrankagura train",
 	CHALLENGE_MAIN_SCENE = "challenge main scene",
 	OTHERWORLD_BACKHILL = "OTHERWORLD_BACKHILL",
-	HOLOLIVE_MEDAL = "hololive medal",
 	BACKHILL_SUMMERPARK_2022 = "BACKHILL_SUMMERPARK_2022",
 	IDOLMASTER_MEDAL_COLLECTION_SCENE = "idolmaster medal collection scent",
 	PUBLIC_GUILD = "public guild",
+	DOA2_MEDAL_COLLECTION_SCENE = "scene doa2 medal collection",
 	WORLD_COLLECTION = "world collection",
 	SNAPSHOT = "snapshot",
 	DORM3D_AR = "DORM3D_AR",
-	DOA2_MEDAL_COLLECTION_SCENE = "scene doa2 medal collection",
-	SELTECHNOLOGY = "seltechnology",
 	CREATE_PLAYER = "scene create player",
+	SELTECHNOLOGY = "seltechnology",
+	WORLDINPICTURE = "world in picture",
 	INVITATION = "scene invitation",
 	UPGRADESTAR = "scene upgrade star",
-	WORLDINPICTURE = "world in picture",
 	SIXTH_ANNIVERSARY_JP_DARK = "SIXTH_ANNIVERSARY_JP_DARK",
+	WORLD = "scene world",
 	CHARGE_MENU = "scene charge_menu",
 	HOTSPRING = "hotSpring",
 	EQUIPSCENE = "scene equip",
-	WORLD = "scene world",
 	SELECT_SKIN = "scene select skin",
+	BACKHILL_CAMPUSFESTIVAL_2022 = "BACKHILL_CAMPUSFESTIVAL_2022",
 	TECHNOLOGY_TREE_SCENE = "technology tree scene",
 	FEAST = "scene Feast",
 	NEWYEAR_BACKHILL_2023 = "NEWYEAR BACKHILL 2023",
@@ -175,7 +175,7 @@
 	EDUCATE_PROFILE = "EDUCATE_PROFILE",
 	SHIPINFO = "scene shipinfo",
 	DEPOTSCENE = "scene depot scene",
-	BACKHILL_CAMPUSFESTIVAL_2022 = "BACKHILL_CAMPUSFESTIVAL_2022",
+	DORM3D_ROOM = "dorm 3d room",
 	ANNIVERSARY_ISLAND_SEA = "anniversary island sea",
 	AIRFORCE_DRAGONEMPERY = "scene AirForceOfDragonEmpery",
 	SPRING_FESTIVAL_BACKHILL_2022 = "springfestival BackHill 2022",
@@ -645,8 +645,8 @@ local var_0_0 = {
 		arg_110_0.viewComponent = IdolMasterMedalCollectionView
 	end,
 	[SCENE.CRUSING] = function(arg_111_0, arg_111_1)
-		arg_111_0.mediator = CrusingMediator
-		arg_111_0.viewComponent = CrusingScene
+		arg_111_0.mediator = WorldCruiseMediator
+		arg_111_0.viewComponent = WorldCruiseScene
 	end,
 	[SCENE.SSSS_ACADEMY] = function(arg_112_0, arg_112_1)
 		arg_112_0.mediator = BackHillMediatorTemplate
@@ -839,9 +839,10 @@ local var_0_0 = {
 		arg_153_0.mediator = BackHillMediatorTemplate
 		arg_153_0.viewComponent = SenrankaguraBackHillScene
 	end,
-	[SCENE.DORM3D] = function(arg_154_0, arg_154_1)
-		arg_154_0.mediator = Dorm3dSceneMediator
-		arg_154_0.viewComponent = Dorm3dScene
+	[SCENE.DORM3D_ROOM] = function(arg_154_0, arg_154_1)
+		arg_154_0.mediator = Dorm3dRoomMediator
+		arg_154_0.viewComponent = Dorm3dRoomScene
+		arg_154_0.cleanChild = true
 	end,
 	[SCENE.DORM3D_VOLLEYBALL] = function(arg_155_0, arg_155_1)
 		arg_155_0.mediator = Dorm3dGameMediatorTemplate
@@ -886,6 +887,7 @@ local var_0_0 = {
 	[SCENE.DORM3DSELECT] = function(arg_165_0, arg_165_1)
 		arg_165_0.mediator = SelectDorm3DMediator
 		arg_165_0.viewComponent = SelectDorm3DScene
+		arg_165_0.cleanChild = true
 	end,
 	[SCENE.DORM3D_AR] = function(arg_166_0, arg_166_1)
 		arg_166_0.mediator = Dorm3dARMediator
@@ -1238,58 +1240,77 @@ local var_0_1 = {
 
 		arg_206_1()
 	end,
-	Dorm3dSceneMediator = function(arg_207_0, arg_207_1)
-		local var_207_0 = {}
-		local var_207_1 = arg_207_0.context.data
+	Dorm3dRoomMediator = function(arg_207_0, arg_207_1)
+		local var_207_0 = arg_207_0.context.data
 
-		if not var_207_1.timeIndex then
-			table.insert(var_207_0, function(arg_208_0)
-				local var_208_0 = PlayerPrefs.GetInt("DORM3D_SCENE_LOCK_TIME", 0)
+		if not var_207_0.timeIndex then
+			if var_207_0.roomId == 1 then
+				local var_207_1 = PlayerPrefs.GetInt(ApartmentProxy.GetTimePPName(), 1)
 
-				if var_208_0 == 0 then
-					var_208_0 = ApartmentProxy.GetTimeIndex(tonumber(pg.TimeMgr.GetInstance():CurrentSTimeDesc("%H")))
+				if var_207_1 == 0 then
+					var_207_1 = ApartmentProxy.GetTimeIndex(tonumber(pg.TimeMgr.GetInstance():CurrentSTimeDesc("%H")))
 				end
 
-				var_207_1.timeIndex = var_208_0
+				var_207_0.timeIndex = var_207_1
+			else
+				var_207_0.timeIndex = 1
+			end
 
-				arg_208_0()
-			end)
+			var_207_0.pendingDic = ApartmentProxy.PendingRandom(var_207_0.roomId, var_207_0.groupIds)
 		end
 
-		table.insert(var_207_0, function(arg_209_0)
-			local var_209_0 = getProxy(ApartmentProxy):getApartment(var_207_1.groupId)
+		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataEnter(1))
+		getProxy(ApartmentProxy):RecordEnterTime()
 
-			var_207_1.sceneData = var_209_0:GetSceneData()
+		local var_207_2 = arg_207_0.context.onRemoved
 
-			if not var_207_1.hasEnterCheck then
-				var_207_1.inFurnitureName = var_209_0:getConfig("default_zone")
+		function arg_207_0.context.onRemoved()
+			local var_208_0 = 0
+			local var_208_1 = getProxy(ApartmentProxy):GetEnterTime()
+
+			if var_208_1 then
+				var_208_0 = pg.TimeMgr.GetInstance():GetServerTime() - var_208_1
 			end
 
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataEnter(1))
-			getProxy(ApartmentProxy):RecordEnterTime()
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataEnter(2, var_208_0))
+			existCall(var_207_2)
+		end
 
-			local var_209_1 = arg_207_0.context.onRemoved
-
-			function arg_207_0.context.onRemoved()
-				local var_210_0 = 0
-				local var_210_1 = getProxy(ApartmentProxy):GetEnterTime()
-
-				if var_210_1 then
-					var_210_0 = pg.TimeMgr.GetInstance():GetServerTime() - var_210_1
-				end
-
-				pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataEnter(2, var_210_0))
-				existCall(var_209_1)
-			end
-
-			arg_209_0()
-		end)
-		seriesAsync(var_207_0, arg_207_1)
+		arg_207_1()
+	end,
+	SelectDorm3DMediator = function(arg_209_0, arg_209_1)
+		if LOCK_DORM3D_SYSTEM then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_system_switch"))
+		else
+			arg_209_1()
+		end
 	end
 }
 
-function SCENE.CheckPreloadData(arg_211_0, arg_211_1)
-	switch(arg_211_0.context.mediator.__cname, var_0_1, function(arg_212_0, arg_212_1)
-		arg_212_1()
-	end, arg_211_0, arg_211_1)
+function SCENE.CheckPreloadData(arg_210_0, arg_210_1)
+	local var_210_0 = {}
+
+	table.insert(var_210_0, function(arg_211_0)
+		switch(arg_210_0.context.mediator.__cname, var_0_1, function(arg_212_0, arg_212_1)
+			arg_212_1()
+		end, arg_210_0, arg_211_0)
+	end)
+
+	local var_210_1 = arg_210_0.context.viewComponent:loadingQueue()
+
+	if var_210_1 then
+		table.insert(var_210_0, function(arg_213_0)
+			local var_213_0 = arg_210_0.context.data
+
+			arg_210_0.context.irregularSequence = true
+
+			var_210_1(function(arg_214_0)
+				var_213_0.resumeCallback = arg_214_0
+
+				arg_213_0()
+			end)
+		end)
+	end
+
+	seriesAsync(var_210_0, arg_210_1)
 end

@@ -494,6 +494,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	arg_1_0.facade:registerCommand(GAME.SINGLE_EVENT_TRIGGER, SingleEventTriggerCommand)
 	arg_1_0.facade:registerCommand(GAME.SINGLE_EVENT_REFRESH, SingleEventRefreshCommand)
 	arg_1_0.facade:registerCommand(GAME.APARTMENT_ROOM_UNLOCK, ApartmentRoomUnlockCommand)
+	arg_1_0.facade:registerCommand(GAME.APARTMENT_ROOM_INVITE_UNLOCK, ApartmentRoomInviteUnlockCommand)
 	arg_1_0.facade:registerCommand(GAME.APARTMENT_TRIGGER_FAVOR, ApartmentTriggerFavorCommand)
 	arg_1_0.facade:registerCommand(GAME.APARTMENT_LEVEL_UP, ApartmentLevelUpCommand)
 	arg_1_0.facade:registerCommand(GAME.APARTMENT_GIVE_GIFT, ApartmentGiveGiftCommand)
@@ -502,6 +503,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	arg_1_0.facade:registerCommand(GAME.APARTMENT_DO_TALK, ApartmentDoTalkCommand)
 	arg_1_0.facade:registerCommand(GAME.APARTMENT_COLLECTION_ITEM, ApartmentCollectionItemCommand)
 	arg_1_0.facade:registerCommand(GAME.APARTMENT_TRACK, Dorm3dTrackCommand)
+	arg_1_0.facade:registerCommand(GAME.SELECT_DORM_ENTER, SelectDorm3dEnterCommand)
 end
 
 return var_0_0

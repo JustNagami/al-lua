@@ -21,7 +21,7 @@ function var_0_0.GetShipGroupId(arg_2_0)
 	return arg_2_0:getConfig("char_id")
 end
 
-function var_0_0.GetControllerName(arg_3_0)
+function var_0_0.GetControllerPath(arg_3_0)
 	return arg_3_0:getConfig("controller")
 end
 
@@ -77,6 +77,44 @@ function var_0_0.GetTriggerRect(arg_11_0)
 	local var_11_0 = arg_11_0:getConfig("trigger_rect")
 
 	return (UnityEngine.Rect.New(unpack(var_11_0)))
+end
+
+function var_0_0.GetPlaneRotations(arg_12_0)
+	local var_12_0 = arg_12_0:getConfig("plane_rotation")
+
+	return _.map(var_12_0, function(arg_13_0)
+		return Quaternion.New(unpack(arg_13_0))
+	end)
+end
+
+function var_0_0.GetPlaneScales(arg_14_0)
+	local var_14_0 = arg_14_0:getConfig("plane_scale")
+
+	return _.map(var_14_0, function(arg_15_0)
+		return Vector3.New(unpack(arg_15_0))
+	end)
+end
+
+function var_0_0.GetRevertTime(arg_16_0)
+	return arg_16_0:getConfig("back_time")
+end
+
+function var_0_0.GetHeadTrackPath(arg_17_0)
+	return arg_17_0:getConfig("head_track")
+end
+
+function var_0_0.GetTriggerFaceAnim(arg_18_0)
+	return arg_18_0:getConfig("action_emote")
+end
+
+function var_0_0.GetIKTipOffset(arg_19_0)
+	local var_19_0 = arg_19_0:getConfig("tip_offset")
+
+	if type(var_19_0) ~= "table" then
+		return Vector2.zero
+	end
+
+	return Vector2.New(unpack(var_19_0))
 end
 
 return var_0_0

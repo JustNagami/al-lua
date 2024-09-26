@@ -514,7 +514,7 @@ function var_0_0.createEmitterCannon(arg_28_0, arg_28_1, arg_28_2, arg_28_3)
 		var_29_14:SetBulletData(var_29_1)
 
 		local function var_29_15(arg_31_0)
-			var_29_14:SetGO(arg_31_0)
+			var_29_14:AddModel(arg_31_0)
 			var_29_14:AddRotateScript()
 
 			local var_31_0 = tf(arg_31_0)

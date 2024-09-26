@@ -1411,7 +1411,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 307010,
-			say = "还是说，你是来讲跟我笑话的？",
+			say = "还是说，你是来跟我讲笑话的？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

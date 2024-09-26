@@ -1,56 +1,57 @@
 ﻿local var_0_0 = class("SettingsGraphicsPanle", import(".SettingsBasePanel"))
 
+var_0_0.EVT_UPDTAE = "SettingsGraphicsPanle:EVT_UPDTAE"
+
 function var_0_0.GetUIName(arg_1_0)
 	return "SettingsStorySpeed"
 end
 
 function var_0_0.GetTitle(arg_2_0)
-	return "3d宿舍画质设置"
+	return i18n("grapihcs3d_setting_quality")
 end
 
 function var_0_0.GetTitleEn(arg_3_0)
-	return "  / GRAPHICS SETTING"
+	return "  / STANDBY MODE SETTINGS"
 end
 
 function var_0_0.OnInit(arg_4_0)
-	local var_4_0 = CustomIndexLayer.Clone2Full(arg_4_0._tf:Find("speeds"), 3)
+	local var_4_0 = CustomIndexLayer.Clone2Full(arg_4_0._tf:Find("speeds"), 4)
 
 	arg_4_0.lowToggle = var_4_0[1]
 	arg_4_0.mediumToggle = var_4_0[2]
 	arg_4_0.highToggle = var_4_0[3]
+	arg_4_0.playerToggle = var_4_0[4]
 
-	onToggle(arg_4_0, arg_4_0.lowToggle, function(arg_5_0)
-		if arg_5_0 then
-			PlayerPrefs.SetInt("dorm3d_graphics_settings", 1)
-			Dorm3dScene.SettingQuality()
-		end
-	end, SFX_UI_TAG, SFX_UI_TAG)
-	onToggle(arg_4_0, arg_4_0.mediumToggle, function(arg_6_0)
-		if arg_6_0 then
-			PlayerPrefs.SetInt("dorm3d_graphics_settings", 2)
-			Dorm3dScene.SettingQuality()
-		end
-	end, SFX_UI_TAG, SFX_UI_TAG)
-	onToggle(arg_4_0, arg_4_0.highToggle, function(arg_7_0)
-		if arg_7_0 then
-			PlayerPrefs.SetInt("dorm3d_graphics_settings", 3)
-			Dorm3dScene.SettingQuality()
-		end
-	end, SFX_UI_TAG, SFX_UI_TAG)
-	setText(arg_4_0.lowToggle:Find("Text"), "低画质720p")
-	setText(arg_4_0.mediumToggle:Find("Text"), "中画质1080p")
-	setText(arg_4_0.highToggle:Find("Text"), "高画质2k")
+	for iter_4_0 = 1, 4 do
+		onToggle(arg_4_0, var_4_0[iter_4_0], function(arg_5_0)
+			if arg_5_0 then
+				if PlayerPrefs.GetInt("dorm3d_graphics_settings", 0) ~= iter_4_0 then
+					pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGraphics(iter_4_0))
+					PlayerPrefs.SetInt("dorm3d_graphics_settings", iter_4_0)
+				end
+
+				pg.m02:sendNotification(NewSettingsMediator.SelectGraphicSettingLevel)
+			end
+		end, SFX_UI_TAG, SFX_UI_TAG)
+	end
+
+	setText(arg_4_0.lowToggle:Find("Text"), i18n("grapihcs3d_setting_quality_option_low"))
+	setText(arg_4_0.mediumToggle:Find("Text"), i18n("grapihcs3d_setting_quality_option_medium"))
+	setText(arg_4_0.highToggle:Find("Text"), i18n("grapihcs3d_setting_quality_option_high"))
+	setText(arg_4_0.playerToggle:Find("Text"), i18n("grapihcs3d_setting_quality_option_custom"))
 end
 
-function var_0_0.OnUpdate(arg_8_0)
-	local var_8_0 = PlayerPrefs.GetInt("dorm3d_graphics_settings", 2)
+function var_0_0.OnUpdate(arg_6_0)
+	local var_6_0 = PlayerPrefs.GetInt("dorm3d_graphics_settings", 2)
 
-	if var_8_0 == 1 then
-		triggerToggle(arg_8_0.lowToggle, true)
-	elseif var_8_0 == 2 then
-		triggerToggle(arg_8_0.mediumToggle, true)
-	elseif var_8_0 == 3 then
-		triggerToggle(arg_8_0.highToggle, true)
+	if var_6_0 == 1 then
+		triggerToggle(arg_6_0.lowToggle, true)
+	elseif var_6_0 == 2 then
+		triggerToggle(arg_6_0.mediumToggle, true)
+	elseif var_6_0 == 3 then
+		triggerToggle(arg_6_0.highToggle, true)
+	else
+		triggerToggle(arg_6_0.playerToggle, true)
 	end
 end
 

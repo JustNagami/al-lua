@@ -114,7 +114,7 @@ function var_0_0.updateTrophyList(arg_9_0)
 					if not var_9_5:IsPlaying() then
 						arg_9_0:emit(TrophyGalleryMediator.ON_TROPHY_CLAIM, var_10_1.id)
 					end
-				else
+				elseif not var_9_5:IsPlaying() then
 					arg_9_0:openTrophyDetail(var_10_0, var_10_1)
 				end
 			end)

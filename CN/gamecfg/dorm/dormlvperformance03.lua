@@ -1,22 +1,14 @@
 ﻿return {
 	{
-		type = 9,
-		name = "load",
+		type = 6,
 		params = {
-			name = "Tianlangxing03_Shafakanshu"
+			1
 		}
 	},
 	{
 		type = 1,
 		params = {
 			10031
-		}
-	},
-	{
-		type = 9,
-		name = "unload",
-		params = {
-			name = "Tianlangxing03_Shafakanshu"
 		}
 	}
 }

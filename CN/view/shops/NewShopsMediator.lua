@@ -24,12 +24,13 @@ var_0_0.MINI_GAME_SHOP_BUY_DONE = "NewShopsMediator:MINI_GAME_SHOP_BUY_DONE"
 var_0_0.UR_EXCHANGE_TRACKING = "NewShopsMediator:UR_EXCHANGE_TRACKING"
 
 function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_META_SHOP, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
+	arg_1_0:bind(var_0_0.ON_META_SHOP, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5)
 		arg_1_0:sendNotification(GAME.ON_META_SHOPPING, {
 			activity_id = arg_2_1,
 			cmd = arg_2_2,
 			arg1 = arg_2_3,
-			arg2 = arg_2_4
+			arg2 = arg_2_4,
+			kvargs1 = arg_2_5
 		})
 	end)
 	arg_1_0:bind(var_0_0.ON_GUILD_SHOPPING, function(arg_3_0, arg_3_1, arg_3_2)

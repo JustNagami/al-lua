@@ -6,9 +6,11 @@ local var_0_1 = singletonClass("NewStyleMsgboxMgr")
 var_0_0.NewStyleMsgboxMgr = var_0_1
 var_0_1.TYPE_MSGBOX = 1
 var_0_1.TYPE_DROP = 2
+var_0_1.TYPE_DROP_CLIENT = 3
 var_0_1.UI_NAME_DIC = {
 	[var_0_1.TYPE_MSGBOX] = "DormStyleMsgboxUI",
-	[var_0_1.TYPE_DROP] = "DormStyleDropMsgboxUI"
+	[var_0_1.TYPE_DROP] = "DormStyleDropMsgboxUI",
+	[var_0_1.TYPE_DROP_CLIENT] = "DormStyleDropMsgboxUI"
 }
 var_0_1.BUTTON_TYPE = {
 	confirm = "btn_confirm",
@@ -180,29 +182,41 @@ function var_0_1.DisplaySetting(arg_19_0, arg_19_1, arg_19_2)
 			if var_21_3 then
 				setText(var_21_1:Find("info/count"), i18n("dorm3d_item_num") .. string.format("<color=#39bfff>%d</color>", var_21_2))
 			end
+		end,
+		[var_0_1.TYPE_DROP_CLIENT] = function(arg_22_0)
+			local var_22_0 = arg_19_0._tf:Find("window/middle")
+
+			Dorm3dIconHelper.UpdateDorm3dIcon(var_22_0:Find("Dorm3dIconTpl"), arg_22_0.data)
+			setActive(var_22_0:Find("info/count"), false)
+			setActive(var_22_0:Find("Dorm3dIconTpl/count"), false)
+
+			local var_22_1 = Dorm3dIconHelper.Data2Config(arg_22_0.data)
+
+			setText(var_22_0:Find("info/name"), var_22_1.name)
+			setText(var_22_0:Find("info/desc"), var_22_1.desc)
 		end
 	}, nil, arg_19_2)
 end
 
-function var_0_1.emit(arg_22_0, arg_22_1, ...)
-	if not arg_22_0.analogyMediator then
-		arg_22_0.analogyMediator = {
-			addSubLayers = function(arg_23_0, arg_23_1)
+function var_0_1.emit(arg_23_0, arg_23_1, ...)
+	if not arg_23_0.analogyMediator then
+		arg_23_0.analogyMediator = {
+			addSubLayers = function(arg_24_0, arg_24_1)
 				var_0_0.m02:sendNotification(GAME.LOAD_LAYERS, {
 					parentContext = getProxy(ContextProxy):getCurrentContext(),
-					context = arg_23_1
+					context = arg_24_1
 				})
 			end,
-			sendNotification = function(arg_24_0, ...)
+			sendNotification = function(arg_25_0, ...)
 				var_0_0.m02:sendNotification(...)
 			end,
-			viewComponent = arg_22_0
+			viewComponent = arg_23_0
 		}
 	end
 
-	return ContextMediator.CommonBindDic[arg_22_1](arg_22_0.analogyMediator, arg_22_1, ...)
+	return ContextMediator.CommonBindDic[arg_23_1](arg_23_0.analogyMediator, arg_23_1, ...)
 end
 
-function var_0_1.closeView(arg_25_0)
-	arg_25_0:hide()
+function var_0_1.closeView(arg_26_0)
+	arg_26_0:hide()
 end

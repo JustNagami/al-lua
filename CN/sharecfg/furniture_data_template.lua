@@ -250,6 +250,7 @@ pg.furniture_data_template = setmetatable({
 			100063,
 			100064,
 			100065,
+			100066,
 			200001,
 			200002,
 			200003,
@@ -3586,6 +3587,7 @@ pg.furniture_data_template = setmetatable({
 			100063,
 			100064,
 			100065,
+			100066,
 			31101,
 			54101,
 			54102,
@@ -8814,6 +8816,7 @@ pg.furniture_data_template = setmetatable({
 			100042,
 			100063,
 			100064,
+			100066,
 			30123,
 			35128,
 			36125,
@@ -10066,6 +10069,7 @@ pg.furniture_data_template = setmetatable({
 		100063,
 		100064,
 		100065,
+		100066,
 		200001,
 		200002,
 		200003,
@@ -26788,6 +26792,53 @@ pg.base.furniture_data_template = {
 					nil,
 					nil,
 					"action1"
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[100066] = {
+		spine_extra = "",
+		describe = "记录回放”启动！……什么？该功能还未实装？！",
+		gain_by = "",
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "bulisituoerjiqirenicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "DATA-857（仿制品）",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 100066,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"bulisituoerjiqiren",
+				"normal",
+				{
+					"action",
+					true
 				}
 			}
 		},

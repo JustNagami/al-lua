@@ -42,4 +42,8 @@ function var_0_0.GetZoneIcon(arg_10_0)
 	return arg_10_0:getConfig("icon")
 end
 
+function var_0_0.GetStartPoint(arg_11_0)
+	return arg_11_0:getConfig("staypoint")
+end
+
 return var_0_0

@@ -4,13 +4,10 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_0 = arg_1_1:getBody()
 	local var_1_1 = var_1_0.groupId
 	local var_1_2 = var_1_0.triggerId
-
-	warning("levelupcmd")
-
 	local var_1_3 = getProxy(ApartmentProxy)
 	local var_1_4 = var_1_3:getApartment(var_1_1)
 
-	if var_1_4.level >= getDorm3dGameset("favor_level")[1] or var_1_4.favor < var_1_4:getNextExp() then
+	if not var_1_4:canLevelUp() then
 		return
 	end
 
@@ -18,13 +15,10 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		ship_group = var_1_1
 	}, 28006, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			warning("levelup")
-
 			var_1_4 = var_1_3:getApartment(var_1_1)
 
 			var_1_4:addLevel()
 			var_1_3:updateApartment(var_1_4)
-			warning(var_1_4.favor, var_1_4.level, var_1_4:getNextExp())
 
 			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.drop_list)
 

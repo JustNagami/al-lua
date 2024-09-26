@@ -31,12 +31,18 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 				reducePlayerOwn(iter_4_1)
 			end
 
-			var_1_3:updateRoom(ApartmentRoom.New({
-				id = var_1_0
-			}))
+			local var_4_0 = ApartmentRoom.New(arg_4_0.room)
 
-			if var_1_1.type == 2 then
-				var_1_3:updateApartment(Apartment.New(arg_4_0.ship))
+			var_1_3:updateRoom(var_4_0)
+
+			if var_4_0:isPersonalRoom() then
+				var_1_3:updateApartment(Apartment.New({
+					cur_skin = 0,
+					daily_favor = 0,
+					favor_lv = 1,
+					favor_exp = 0,
+					ship_group = var_4_0:getPersonalGroupId()
+				}))
 			end
 
 			;(function()

@@ -98,7 +98,11 @@ function var_0_0.Request3DDorm(arg_6_0, arg_6_1)
 	elseif var_0_0.IsIOS() then
 		local var_6_2 = "camera"
 
+		warning("ios开始录像权限判断")
+
 		local function var_6_3(arg_8_0, arg_8_1)
+			warning("ios返回的isGranted" .. tostring(arg_8_1))
+
 			if arg_8_1 then
 				if arg_6_0 then
 					arg_6_0()

@@ -5526,6 +5526,17 @@ function temp()
 	var_0_1.凤 = {
 		this = {
 			this = true
+		},
+		· = {
+			M = {
+				E = {
+					T = {
+						A = {
+							this = true
+						}
+					}
+				}
+			}
 		}
 	}
 end

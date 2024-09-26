@@ -39,7 +39,7 @@ function var_0_0.GetUnlockText(arg_8_0)
 end
 
 function var_0_0.GetIcon(arg_9_0)
-	return "livingareacover/" .. arg_9_0:getConfig("icon")
+	return "livingareacover/" .. arg_9_0:getConfig("icon_res")
 end
 
 function var_0_0.GetBg(arg_10_0, arg_10_1)

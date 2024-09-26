@@ -4,7 +4,7 @@
 		name = "load",
 		params = {
 			wait_timeline = true,
-			name = "Tianlangxing01_Jinmenjieshao"
+			name = "Qihe_Jinmenjieshao"
 		}
 	},
 	{
@@ -14,6 +14,12 @@
 			scene = "map_siriushostel_01",
 			sceneRoot = "Tianlangxing_DB/SiriusHostel",
 			point = "DormLvPerfomance01"
+		}
+	},
+	{
+		type = 6,
+		params = {
+			1
 		}
 	},
 	{
@@ -31,9 +37,24 @@
 		}
 	},
 	{
+		type = 6,
+		params = {
+			1
+		}
+	},
+	{
 		type = 1,
 		params = {
 			10012
+		}
+	},
+	{
+		type = 12,
+		name = "show",
+		params = {
+			color = "#FFFFFF",
+			delay = 0,
+			time = 0
 		}
 	},
 	{
@@ -44,7 +65,11 @@
 		type = 9,
 		name = "unload",
 		params = {
-			name = "Tianlangxing01_Jinmenjieshao"
+			name = "Qihe_Jinmenjieshao"
 		}
+	},
+	{
+		type = 12,
+		name = "hide"
 	}
 }

@@ -605,7 +605,7 @@ function var_0_0.UpdateCover(arg_48_0, arg_48_1, arg_48_2, arg_48_3)
 
 	local var_48_2 = arg_48_1.info
 
-	setText(var_48_0.transform:Find("bg/Text"), HXSet.hxLan(var_48_2:getConfig("name")))
+	setText(var_48_0.transform:Find("bg/Text"), HXSet.hxLan(var_48_2:getConfig("get_tips")))
 end
 
 function var_0_0.Dispose(arg_51_0)

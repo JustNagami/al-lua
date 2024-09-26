@@ -293,6 +293,12 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 									count = var_1_2
 								}
 							})
+						end,
+						[ShopArgs.CruiseSkin] = function()
+							var_1_9:GetNormalByID(var_1_1):increaseBuyCount()
+						end,
+						[ShopArgs.CruiseGearSkin] = function()
+							var_1_9:GetNormalByID(var_1_1):increaseBuyCount()
 						end
 					})
 				end
@@ -301,6 +307,10 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 
 				if var_1_3.group > 0 then
 					var_1_9:updateNormalGroupList(var_1_3.group, var_1_3.group_buy_count)
+				end
+
+				if var_1_3.genre == ShopArgs.CruiseSkin or var_1_3.genre == ShopArgs.CruiseGearSkin then
+					var_1_9:UpdateCruiseShop()
 				end
 
 				switch(var_1_3.effect_args, {

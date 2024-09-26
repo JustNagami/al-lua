@@ -311,16 +311,13 @@ local function var_0_2(arg_38_0, arg_38_1, arg_38_2, arg_38_3)
 			clearAllEvent = true
 		})
 	elseif arg_38_3.type == GuideStep.HIGH_TYPE_LINE then
-		local var_38_0 = arg_38_1:GetHighlightLength()
+		local var_38_0 = arg_38_2.rect
 		local var_38_1 = arg_38_0._tf:InverseTransformPoint(arg_38_2.position)
-		local var_38_2 = (arg_38_2.pivot.x - 0.5) * var_38_0
-		local var_38_3 = (arg_38_2.pivot.y - 0.5) * var_38_0
-		local var_38_4 = Vector2(arg_38_2.sizeDelta.x + var_38_0, arg_38_2.sizeDelta.y + var_38_0)
 
 		arg_38_0.uiLoader:LoadHighLightArea({
-			position = Vector3(var_38_1.x, var_38_1.y, 0) + Vector3(var_38_2, var_38_3, 0),
-			sizeDelta = var_38_4,
-			pivot = arg_38_2.pivot,
+			position = Vector3(var_38_1.x, var_38_1.y, 0) + Vector3(var_38_0.x, var_38_0.y, 0),
+			size = Vector2(var_38_0.width, var_38_0.height),
+			length = arg_38_1:GetHighlightLength(),
 			name = arg_38_1:GetHighlightName()
 		})
 	end

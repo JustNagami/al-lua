@@ -17,11 +17,11 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		trigger_id = var_1_2
 	}, 28004, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			local var_2_0 = var_1_3:triggerFavor(var_1_1, var_1_2)
+			local var_2_0, var_2_1 = var_1_3:triggerFavor(var_1_1, var_1_2)
 
 			arg_1_0:sendNotification(GAME.APARTMENT_TRIGGER_FAVOR_DONE, {
 				triggerId = var_1_2,
-				cost = var_1_5.is_daily_max,
+				cost = var_2_1,
 				delta = var_2_0,
 				apartment = var_1_4
 			})

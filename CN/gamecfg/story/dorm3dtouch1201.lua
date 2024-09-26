@@ -26,7 +26,7 @@
 						},
 						{
 							param = "Play",
-							name = "Face_jingya",
+							name = "Face_weixiao",
 							time = 0,
 							type = "action",
 							skip = true

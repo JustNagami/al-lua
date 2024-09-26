@@ -38,6 +38,12 @@ function var_0_0.CheckArgLimit(arg_3_0)
 			if not var_3_1 then
 				return var_3_1, var_3_2, i18n("meta_shop_exchange_limit_2"), var_3_3
 			end
+		elseif var_3_2 == ShopArgs.LIMIT_ARGS_UNIQUE_SHIP then
+			var_3_1 = getProxy(BayProxy):findShipByGroup(var_3_3) == nil
+
+			if not var_3_1 then
+				return var_3_1, var_3_2, i18n("quota_shop_good_limit"), var_3_3
+			end
 		elseif var_3_2 == "pass" then
 			local var_3_5 = getProxy(ChapterProxy):getChapterById(var_3_3)
 
@@ -103,20 +109,25 @@ function var_0_0.CheckTimeLimit(arg_6_0)
 	local var_6_2 = false
 	local var_6_3 = arg_6_0:getConfig("commodity_type")
 	local var_6_4 = arg_6_0:getConfig("commodity_id")
-	local var_6_5 = Item.getConfigData(var_6_4)
 
-	if var_6_3 == DROP_TYPE_VITEM and var_6_5.virtual_type == 22 then
-		var_6_0 = true
-		var_6_2 = true
+	if var_6_4 == 0 then
+		-- block empty
+	else
+		local var_6_5 = Item.getConfigData(var_6_4)
 
-		local var_6_6 = getProxy(ActivityProxy):getActivityById(var_6_5.link_id)
+		if var_6_3 == DROP_TYPE_VITEM and var_6_5.virtual_type == 22 then
+			var_6_0 = true
+			var_6_2 = true
 
-		if var_6_6 and not var_6_6:isEnd() then
+			local var_6_6 = getProxy(ActivityProxy):getActivityById(var_6_5.link_id)
+
+			if var_6_6 and not var_6_6:isEnd() then
+				var_6_1 = true
+			end
+		elseif var_6_3 == DROP_TYPE_ITEM and var_6_5.time_limit == 1 then
+			var_6_0 = false
 			var_6_1 = true
 		end
-	elseif var_6_3 == DROP_TYPE_ITEM and var_6_5.time_limit == 1 then
-		var_6_0 = false
-		var_6_1 = true
 	end
 
 	return var_6_0, var_6_1, var_6_2
@@ -184,6 +195,10 @@ function var_0_0.GetConsume(arg_12_0)
 		id = arg_12_0:getConfig("resource_type"),
 		count = arg_12_0:getConfig("resource_num")
 	})
+end
+
+function var_0_0.Selectable(arg_13_0)
+	return false
 end
 
 return var_0_0

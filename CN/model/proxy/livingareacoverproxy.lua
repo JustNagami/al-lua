@@ -27,35 +27,38 @@ function var_0_0.GetCoverId(arg_3_0)
 end
 
 function var_0_0.GetCurCover(arg_4_0)
-	return arg_4_0:GetCover(arg_4_0:GetCoverId()) or {
-		id = 0,
-		GetBg = function(arg_5_0)
-			if arg_5_0 == LivingAreaCover.TYPE_DAY then
-				return "livingareaCover/0_bg_day"
-			else
-				return "livingareaCover/0_bg_night"
-			end
-		end
-	}
+	return arg_4_0:GetCover(arg_4_0:GetCoverId())
 end
 
-function var_0_0.UpdateCoverId(arg_6_0, arg_6_1)
-	arg_6_0.coverId = arg_6_1
+function var_0_0.UpdateCoverId(arg_5_0, arg_5_1)
+	arg_5_0.coverId = arg_5_1
+end
+
+function var_0_0.GetCover(arg_6_0, arg_6_1)
+	return arg_6_0.data[arg_6_1]
 end
 
 function var_0_0.GetCover(arg_7_0, arg_7_1)
 	return arg_7_0.data[arg_7_1]
 end
 
-function var_0_0.GetCover(arg_8_0, arg_8_1)
-	return arg_8_0.data[arg_8_1]
+function var_0_0.GetUnlockList(arg_8_0)
+	local var_8_0 = {}
+
+	for iter_8_0, iter_8_1 in pairs(arg_8_0.data) do
+		if iter_8_1:IsUnlock() then
+			table.insert(var_8_0, iter_8_1)
+		end
+	end
+
+	return var_8_0
 end
 
-function var_0_0.GetUnlockList(arg_9_0)
+function var_0_0.GetLockList(arg_9_0)
 	local var_9_0 = {}
 
 	for iter_9_0, iter_9_1 in pairs(arg_9_0.data) do
-		if iter_9_1:IsUnlock() then
+		if not iter_9_1:IsUnlock() then
 			table.insert(var_9_0, iter_9_1)
 		end
 	end
@@ -63,27 +66,15 @@ function var_0_0.GetUnlockList(arg_9_0)
 	return var_9_0
 end
 
-function var_0_0.GetLockList(arg_10_0)
-	local var_10_0 = {}
+function var_0_0.UpdateCover(arg_10_0, arg_10_1)
+	arg_10_0.data[arg_10_1.id] = arg_10_1
 
-	for iter_10_0, iter_10_1 in pairs(arg_10_0.data) do
-		if not iter_10_1:IsUnlock() then
-			table.insert(var_10_0, iter_10_1)
-		end
-	end
-
-	return var_10_0
+	arg_10_0:sendNotification(var_0_0.ON_UPDATE)
 end
 
-function var_0_0.UpdateCover(arg_11_0, arg_11_1)
-	arg_11_0.data[arg_11_1.id] = arg_11_1
-
-	arg_11_0:sendNotification(var_0_0.ON_UPDATE)
-end
-
-function var_0_0.IsTip(arg_12_0)
-	for iter_12_0, iter_12_1 in pairs(arg_12_0.data) do
-		if iter_12_1:IsNew() then
+function var_0_0.IsTip(arg_11_0)
+	for iter_11_0, iter_11_1 in pairs(arg_11_0.data) do
+		if iter_11_1:IsNew() then
 			return true
 		end
 	end
@@ -91,7 +82,7 @@ function var_0_0.IsTip(arg_12_0)
 	return false
 end
 
-function var_0_0.remove(arg_13_0)
+function var_0_0.remove(arg_12_0)
 	return
 end
 
