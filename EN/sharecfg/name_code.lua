@@ -1645,6 +1645,13 @@ pg.name_code = {
 		code = "Suzunami",
 		nation = 0
 	},
+	[237] = {
+		name = "Houshou META",
+		type = 1,
+		id = 237,
+		code = "Houshou META",
+		nation = 0
+	},
 	[250] = {
 		name = "I-9",
 		type = 1,

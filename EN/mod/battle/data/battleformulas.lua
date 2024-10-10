@@ -170,7 +170,7 @@ function var_0_0.CreateContextCalculateDamage(arg_11_0)
 			var_12_28 = true
 		else
 			local var_12_29 = var_12_4[1] + var_12_27 / (var_12_27 + var_12_14.dodgeRate + var_12_4[2]) + (var_12_25 + var_12_17) * var_0_6.PERCENT1
-			local var_12_30 = var_0_3.GetCurrent(arg_12_1, "accuracyRateExtra")
+			local var_12_30 = var_0_3.GetCurrent(arg_12_0, "accuracyRateExtra")
 			local var_12_31 = var_0_3.GetCurrent(arg_12_0, var_0_14[arg_12_1:GetTemplate().type])
 			local var_12_32 = var_0_3.GetCurrent(arg_12_1, "dodgeRateExtra")
 			local var_12_33 = math.max(var_12_3[5], math.min(var_12_0, var_12_29 + var_12_30 + var_12_31 - var_12_32))
@@ -683,284 +683,261 @@ function var_0_0.UnilateralCrush()
 	return 0, 100000
 end
 
-function var_0_0.FriendInvincibleDamage(arg_53_0, arg_53_1, ...)
-	local var_53_0 = arg_53_1:GetIFF()
-
-	if var_53_0 == ys.Battle.BattleConfig.FRIENDLY_CODE then
-		return 1, {
-			isMiss = false,
-			isCri = false,
-			isDamagePrevent = false
-		}
-	elseif var_53_0 == ys.Battle.BattleConfig.FOE_CODE then
-		return var_0_0.CalculateDamage(arg_53_0, arg_53_1, ...)
-	end
+function var_0_0.ChapterRepressReduce(arg_53_0)
+	return 1 - arg_53_0 * 0.01
 end
 
-function var_0_0.FriendInvincibleCrashDamage(arg_54_0, arg_54_1)
-	local var_54_0, var_54_1 = var_0_0.CalculateCrashDamage(arg_54_0, arg_54_1)
-	local var_54_2 = 1
-
-	var_54_1 = arg_54_1:GetIFF() == ys.Battle.BattleConfig.FRIENDLY_CODE and 1 or var_54_1
-
-	return var_54_2, var_54_1
-end
-
-function var_0_0.ChapterRepressReduce(arg_55_0)
-	return 1 - arg_55_0 * 0.01
-end
-
-function var_0_0.IsHappen(arg_56_0)
-	if arg_56_0 <= 0 then
+function var_0_0.IsHappen(arg_54_0)
+	if arg_54_0 <= 0 then
 		return false
-	elseif arg_56_0 >= 10000 then
+	elseif arg_54_0 >= 10000 then
 		return true
 	else
-		return arg_56_0 >= math.random(10000)
+		return arg_54_0 >= math.random(10000)
 	end
 end
 
-function var_0_0.WeightRandom(arg_57_0)
-	local var_57_0, var_57_1 = var_0_0.GenerateWeightList(arg_57_0)
+function var_0_0.WeightRandom(arg_55_0)
+	local var_55_0, var_55_1 = var_0_0.GenerateWeightList(arg_55_0)
 
-	return (var_0_0.WeightListRandom(var_57_0, var_57_1))
+	return (var_0_0.WeightListRandom(var_55_0, var_55_1))
 end
 
-function var_0_0.WeightListRandom(arg_58_0, arg_58_1)
-	local var_58_0 = math.random(0, arg_58_1)
+function var_0_0.WeightListRandom(arg_56_0, arg_56_1)
+	local var_56_0 = math.random(0, arg_56_1)
 
-	for iter_58_0, iter_58_1 in pairs(arg_58_0) do
-		local var_58_1 = iter_58_0.min
-		local var_58_2 = iter_58_0.max
+	for iter_56_0, iter_56_1 in pairs(arg_56_0) do
+		local var_56_1 = iter_56_0.min
+		local var_56_2 = iter_56_0.max
 
-		if var_58_1 <= var_58_0 and var_58_0 <= var_58_2 then
-			return iter_58_1
+		if var_56_1 <= var_56_0 and var_56_0 <= var_56_2 then
+			return iter_56_1
 		end
 	end
 end
 
-function var_0_0.GenerateWeightList(arg_59_0)
-	local var_59_0 = {}
-	local var_59_1 = -1
+function var_0_0.GenerateWeightList(arg_57_0)
+	local var_57_0 = {}
+	local var_57_1 = -1
 
-	for iter_59_0, iter_59_1 in ipairs(arg_59_0) do
-		local var_59_2 = iter_59_1.weight
-		local var_59_3 = iter_59_1.rst
-		local var_59_4 = var_59_1 + 1
-		local var_59_5
+	for iter_57_0, iter_57_1 in ipairs(arg_57_0) do
+		local var_57_2 = iter_57_1.weight
+		local var_57_3 = iter_57_1.rst
+		local var_57_4 = var_57_1 + 1
+		local var_57_5
 
-		var_59_1 = var_59_1 + var_59_2
+		var_57_1 = var_57_1 + var_57_2
 
-		local var_59_6 = var_59_1
+		local var_57_6 = var_57_1
 
-		var_59_0[{
-			min = var_59_4,
-			max = var_59_6
-		}] = var_59_3
+		var_57_0[{
+			min = var_57_4,
+			max = var_57_6
+		}] = var_57_3
 	end
 
-	return var_59_0, var_59_1
+	return var_57_0, var_57_1
 end
 
-function var_0_0.IsListHappen(arg_60_0)
-	for iter_60_0, iter_60_1 in ipairs(arg_60_0) do
-		if var_0_0.IsHappen(iter_60_1[1]) then
-			return true, iter_60_1[2]
+function var_0_0.IsListHappen(arg_58_0)
+	for iter_58_0, iter_58_1 in ipairs(arg_58_0) do
+		if var_0_0.IsHappen(iter_58_1[1]) then
+			return true, iter_58_1[2]
 		end
 	end
 
 	return false, nil
 end
 
-function var_0_0.BulletYAngle(arg_61_0, arg_61_1)
-	return math.rad2Deg * math.atan2(arg_61_1.z - arg_61_0.z, arg_61_1.x - arg_61_0.x)
+function var_0_0.BulletYAngle(arg_59_0, arg_59_1)
+	return math.rad2Deg * math.atan2(arg_59_1.z - arg_59_0.z, arg_59_1.x - arg_59_0.x)
 end
 
-function var_0_0.RandomPosNull(arg_62_0, arg_62_1)
-	arg_62_1 = arg_62_1 or 10
+function var_0_0.RandomPosNull(arg_60_0, arg_60_1)
+	arg_60_1 = arg_60_1 or 10
 
-	local var_62_0 = arg_62_0.distance or 10
-	local var_62_1 = var_62_0 * var_62_0
-	local var_62_2 = ys.Battle.BattleTargetChoise.TargetAll()
-	local var_62_3
-	local var_62_4
+	local var_60_0 = arg_60_0.distance or 10
+	local var_60_1 = var_60_0 * var_60_0
+	local var_60_2 = ys.Battle.BattleTargetChoise.TargetAll()
+	local var_60_3
+	local var_60_4
 
-	for iter_62_0 = 1, arg_62_1 do
-		local var_62_5 = true
-		local var_62_6 = var_0_0.RandomPos(arg_62_0)
+	for iter_60_0 = 1, arg_60_1 do
+		local var_60_5 = true
+		local var_60_6 = var_0_0.RandomPos(arg_60_0)
 
-		for iter_62_1, iter_62_2 in pairs(var_62_2) do
-			local var_62_7 = iter_62_2:GetPosition()
+		for iter_60_1, iter_60_2 in pairs(var_60_2) do
+			local var_60_7 = iter_60_2:GetPosition()
 
-			if var_62_1 > Vector3.SqrDistance(var_62_6, var_62_7) then
-				var_62_5 = false
+			if var_60_1 > Vector3.SqrDistance(var_60_6, var_60_7) then
+				var_60_5 = false
 
 				break
 			end
 		end
 
-		if var_62_5 then
-			return var_62_6
+		if var_60_5 then
+			return var_60_6
 		end
 	end
 
 	return nil
 end
 
-function var_0_0.RandomPos(arg_63_0)
-	local var_63_0 = arg_63_0[1] or 0
-	local var_63_1 = arg_63_0[2] or 0
-	local var_63_2 = arg_63_0[3] or 0
+function var_0_0.RandomPos(arg_61_0)
+	local var_61_0 = arg_61_0[1] or 0
+	local var_61_1 = arg_61_0[2] or 0
+	local var_61_2 = arg_61_0[3] or 0
 
-	if arg_63_0.rangeX or arg_63_0.rangeY or arg_63_0.rangeZ then
-		local var_63_3 = var_0_0.RandomDelta(arg_63_0.rangeX)
-		local var_63_4 = var_0_0.RandomDelta(arg_63_0.rangeY)
-		local var_63_5 = var_0_0.RandomDelta(arg_63_0.rangeZ)
+	if arg_61_0.rangeX or arg_61_0.rangeY or arg_61_0.rangeZ then
+		local var_61_3 = var_0_0.RandomDelta(arg_61_0.rangeX)
+		local var_61_4 = var_0_0.RandomDelta(arg_61_0.rangeY)
+		local var_61_5 = var_0_0.RandomDelta(arg_61_0.rangeZ)
 
-		return Vector3(var_63_0 + var_63_3, var_63_1 + var_63_4, var_63_2 + var_63_5)
+		return Vector3(var_61_0 + var_61_3, var_61_1 + var_61_4, var_61_2 + var_61_5)
 	else
-		local var_63_6 = var_0_0.RandomPosXYZ(arg_63_0, "X1", "X2")
-		local var_63_7 = var_0_0.RandomPosXYZ(arg_63_0, "Y1", "Y2")
-		local var_63_8 = var_0_0.RandomPosXYZ(arg_63_0, "Z1", "Z2")
+		local var_61_6 = var_0_0.RandomPosXYZ(arg_61_0, "X1", "X2")
+		local var_61_7 = var_0_0.RandomPosXYZ(arg_61_0, "Y1", "Y2")
+		local var_61_8 = var_0_0.RandomPosXYZ(arg_61_0, "Z1", "Z2")
 
-		return Vector3(var_63_0 + var_63_6, var_63_1 + var_63_7, var_63_2 + var_63_8)
+		return Vector3(var_61_0 + var_61_6, var_61_1 + var_61_7, var_61_2 + var_61_8)
 	end
 end
 
-function var_0_0.RandomPosXYZ(arg_64_0, arg_64_1, arg_64_2)
-	arg_64_1 = arg_64_0[arg_64_1]
-	arg_64_2 = arg_64_0[arg_64_2]
+function var_0_0.RandomPosXYZ(arg_62_0, arg_62_1, arg_62_2)
+	arg_62_1 = arg_62_0[arg_62_1]
+	arg_62_2 = arg_62_0[arg_62_2]
 
-	if arg_64_1 and arg_64_2 then
-		return math.random(arg_64_1, arg_64_2)
-	else
-		return 0
-	end
-end
-
-function var_0_0.RandomPosCenterRange(arg_65_0)
-	local var_65_0 = var_0_0.RandomDelta(arg_65_0.rangeX)
-	local var_65_1 = var_0_0.RandomDelta(arg_65_0.rangeY)
-	local var_65_2 = var_0_0.RandomDelta(arg_65_0.rangeZ)
-
-	return Vector3(var_65_0, var_65_1, var_65_2)
-end
-
-function var_0_0.RandomDelta(arg_66_0)
-	if arg_66_0 and arg_66_0 > 0 then
-		return math.random(arg_66_0 + arg_66_0) - arg_66_0
+	if arg_62_1 and arg_62_2 then
+		return math.random(arg_62_1, arg_62_2)
 	else
 		return 0
 	end
 end
 
-function var_0_0.simpleCompare(arg_67_0, arg_67_1)
+function var_0_0.RandomPosCenterRange(arg_63_0)
+	local var_63_0 = var_0_0.RandomDelta(arg_63_0.rangeX)
+	local var_63_1 = var_0_0.RandomDelta(arg_63_0.rangeY)
+	local var_63_2 = var_0_0.RandomDelta(arg_63_0.rangeZ)
+
+	return Vector3(var_63_0, var_63_1, var_63_2)
+end
+
+function var_0_0.RandomDelta(arg_64_0)
+	if arg_64_0 and arg_64_0 > 0 then
+		return math.random(arg_64_0 + arg_64_0) - arg_64_0
+	else
+		return 0
+	end
+end
+
+function var_0_0.simpleCompare(arg_65_0, arg_65_1)
+	local var_65_0, var_65_1 = string.find(arg_65_0, "%p+")
+	local var_65_2 = string.sub(arg_65_0, var_65_0, var_65_1)
+	local var_65_3 = string.sub(arg_65_0, var_65_1 + 1, #arg_65_0)
+	local var_65_4 = getCompareFuncByPunctuation(var_65_2)
+	local var_65_5 = tonumber(var_65_3)
+
+	return var_65_4(arg_65_1, var_65_5)
+end
+
+function var_0_0.parseCompareUnitAttr(arg_66_0, arg_66_1, arg_66_2)
+	local var_66_0, var_66_1 = string.find(arg_66_0, "%p+")
+	local var_66_2 = string.sub(arg_66_0, var_66_0, var_66_1)
+	local var_66_3 = string.sub(arg_66_0, 1, var_66_0 - 1)
+	local var_66_4 = string.sub(arg_66_0, var_66_1 + 1, #arg_66_0)
+	local var_66_5 = getCompareFuncByPunctuation(var_66_2)
+	local var_66_6 = tonumber(var_66_3) or arg_66_1:GetAttrByName(var_66_3)
+	local var_66_7 = tonumber(var_66_4) or arg_66_2:GetAttrByName(var_66_4)
+
+	return var_66_5(var_66_6, var_66_7)
+end
+
+function var_0_0.parseCompareUnitTemplate(arg_67_0, arg_67_1, arg_67_2)
 	local var_67_0, var_67_1 = string.find(arg_67_0, "%p+")
 	local var_67_2 = string.sub(arg_67_0, var_67_0, var_67_1)
-	local var_67_3 = string.sub(arg_67_0, var_67_1 + 1, #arg_67_0)
-	local var_67_4 = getCompareFuncByPunctuation(var_67_2)
-	local var_67_5 = tonumber(var_67_3)
+	local var_67_3 = string.sub(arg_67_0, 1, var_67_0 - 1)
+	local var_67_4 = string.sub(arg_67_0, var_67_1 + 1, #arg_67_0)
+	local var_67_5 = getCompareFuncByPunctuation(var_67_2)
+	local var_67_6 = tonumber(var_67_3) or arg_67_1:GetTemplateValue(var_67_3)
+	local var_67_7 = tonumber(var_67_4) or arg_67_2:GetTemplateValue(var_67_4)
 
-	return var_67_4(arg_67_1, var_67_5)
+	return var_67_5(var_67_6, var_67_7)
 end
 
-function var_0_0.parseCompareUnitAttr(arg_68_0, arg_68_1, arg_68_2)
+function var_0_0.parseCompareBuffAttachData(arg_68_0, arg_68_1)
 	local var_68_0, var_68_1 = string.find(arg_68_0, "%p+")
 	local var_68_2 = string.sub(arg_68_0, var_68_0, var_68_1)
 	local var_68_3 = string.sub(arg_68_0, 1, var_68_0 - 1)
-	local var_68_4 = string.sub(arg_68_0, var_68_1 + 1, #arg_68_0)
-	local var_68_5 = getCompareFuncByPunctuation(var_68_2)
-	local var_68_6 = tonumber(var_68_3) or arg_68_1:GetAttrByName(var_68_3)
-	local var_68_7 = tonumber(var_68_4) or arg_68_2:GetAttrByName(var_68_4)
 
-	return var_68_5(var_68_6, var_68_7)
+	if arg_68_1.__name ~= var_68_3 then
+		return true
+	end
+
+	local var_68_4 = tonumber(string.sub(arg_68_0, var_68_1 + 1, #arg_68_0))
+	local var_68_5 = arg_68_1:GetEffectAttachData()
+
+	return getCompareFuncByPunctuation(var_68_2)(var_68_5, var_68_4)
 end
 
-function var_0_0.parseCompareUnitTemplate(arg_69_0, arg_69_1, arg_69_2)
+function var_0_0.parseCompare(arg_69_0, arg_69_1)
 	local var_69_0, var_69_1 = string.find(arg_69_0, "%p+")
 	local var_69_2 = string.sub(arg_69_0, var_69_0, var_69_1)
 	local var_69_3 = string.sub(arg_69_0, 1, var_69_0 - 1)
 	local var_69_4 = string.sub(arg_69_0, var_69_1 + 1, #arg_69_0)
 	local var_69_5 = getCompareFuncByPunctuation(var_69_2)
-	local var_69_6 = tonumber(var_69_3) or arg_69_1:GetTemplateValue(var_69_3)
-	local var_69_7 = tonumber(var_69_4) or arg_69_2:GetTemplateValue(var_69_4)
+	local var_69_6 = tonumber(var_69_3) or arg_69_1:GetCurrent(var_69_3)
+	local var_69_7 = tonumber(var_69_4) or arg_69_1:GetCurrent(var_69_4)
 
 	return var_69_5(var_69_6, var_69_7)
 end
 
-function var_0_0.parseCompareBuffAttachData(arg_70_0, arg_70_1)
-	local var_70_0, var_70_1 = string.find(arg_70_0, "%p+")
-	local var_70_2 = string.sub(arg_70_0, var_70_0, var_70_1)
-	local var_70_3 = string.sub(arg_70_0, 1, var_70_0 - 1)
+function var_0_0.parseFormula(arg_70_0, arg_70_1)
+	local var_70_0 = {}
+	local var_70_1 = {}
 
-	if arg_70_1.__name ~= var_70_3 then
-		return true
+	for iter_70_0 in string.gmatch(arg_70_0, "%w+%.?%w*") do
+		table.insert(var_70_0, iter_70_0)
 	end
 
-	local var_70_4 = tonumber(string.sub(arg_70_0, var_70_1 + 1, #arg_70_0))
-	local var_70_5 = arg_70_1:GetEffectAttachData()
-
-	return getCompareFuncByPunctuation(var_70_2)(var_70_5, var_70_4)
-end
-
-function var_0_0.parseCompare(arg_71_0, arg_71_1)
-	local var_71_0, var_71_1 = string.find(arg_71_0, "%p+")
-	local var_71_2 = string.sub(arg_71_0, var_71_0, var_71_1)
-	local var_71_3 = string.sub(arg_71_0, 1, var_71_0 - 1)
-	local var_71_4 = string.sub(arg_71_0, var_71_1 + 1, #arg_71_0)
-	local var_71_5 = getCompareFuncByPunctuation(var_71_2)
-	local var_71_6 = tonumber(var_71_3) or arg_71_1:GetCurrent(var_71_3)
-	local var_71_7 = tonumber(var_71_4) or arg_71_1:GetCurrent(var_71_4)
-
-	return var_71_5(var_71_6, var_71_7)
-end
-
-function var_0_0.parseFormula(arg_72_0, arg_72_1)
-	local var_72_0 = {}
-	local var_72_1 = {}
-
-	for iter_72_0 in string.gmatch(arg_72_0, "%w+%.?%w*") do
-		table.insert(var_72_0, iter_72_0)
+	for iter_70_1 in string.gmatch(arg_70_0, "[^%w%.]") do
+		table.insert(var_70_1, iter_70_1)
 	end
 
-	for iter_72_1 in string.gmatch(arg_72_0, "[^%w%.]") do
-		table.insert(var_72_1, iter_72_1)
-	end
+	local var_70_2 = {}
+	local var_70_3 = {}
+	local var_70_4 = 1
+	local var_70_5 = var_70_0[1]
 
-	local var_72_2 = {}
-	local var_72_3 = {}
-	local var_72_4 = 1
-	local var_72_5 = var_72_0[1]
+	var_70_5 = tonumber(var_70_5) or arg_70_1:GetCurrent(var_70_5)
 
-	var_72_5 = tonumber(var_72_5) or arg_72_1:GetCurrent(var_72_5)
+	for iter_70_2, iter_70_3 in ipairs(var_70_1) do
+		var_70_4 = var_70_4 + 1
 
-	for iter_72_2, iter_72_3 in ipairs(var_72_1) do
-		var_72_4 = var_72_4 + 1
+		local var_70_6 = tonumber(var_70_0[var_70_4]) or arg_70_1:GetCurrent(var_70_0[var_70_4])
 
-		local var_72_6 = tonumber(var_72_0[var_72_4]) or arg_72_1:GetCurrent(var_72_0[var_72_4])
+		if iter_70_3 == "+" or iter_70_3 == "-" then
+			table.insert(var_70_3, var_70_5)
 
-		if iter_72_3 == "+" or iter_72_3 == "-" then
-			table.insert(var_72_3, var_72_5)
+			var_70_5 = var_70_6
 
-			var_72_5 = var_72_6
-
-			table.insert(var_72_2, iter_72_3)
-		elseif iter_72_3 == "*" or iter_72_3 == "/" then
-			var_72_5 = getArithmeticFuncByOperator(iter_72_3)(var_72_5, var_72_6)
+			table.insert(var_70_2, iter_70_3)
+		elseif iter_70_3 == "*" or iter_70_3 == "/" then
+			var_70_5 = getArithmeticFuncByOperator(iter_70_3)(var_70_5, var_70_6)
 		end
 	end
 
-	table.insert(var_72_3, var_72_5)
+	table.insert(var_70_3, var_70_5)
 
-	local var_72_7 = 1
-	local var_72_8 = var_72_3[var_72_7]
+	local var_70_7 = 1
+	local var_70_8 = var_70_3[var_70_7]
 
-	while var_72_7 < #var_72_3 do
-		local var_72_9 = getArithmeticFuncByOperator(var_72_2[var_72_7])
+	while var_70_7 < #var_70_3 do
+		local var_70_9 = getArithmeticFuncByOperator(var_70_2[var_70_7])
 
-		var_72_7 = var_72_7 + 1
-		var_72_8 = var_72_9(var_72_8, var_72_3[var_72_7])
+		var_70_7 = var_70_7 + 1
+		var_70_8 = var_70_9(var_70_8, var_70_3[var_70_7])
 	end
 
-	return var_72_8
+	return var_70_8
 end

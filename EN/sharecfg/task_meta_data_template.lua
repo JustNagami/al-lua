@@ -257,6 +257,11 @@ pg.task_meta_data_template = setmetatable({
 		100333,
 		100334,
 		100335,
+		100341,
+		100342,
+		100343,
+		100344,
+		100345,
 		200001,
 		200002,
 		200003,
@@ -352,7 +357,11 @@ pg.task_meta_data_template = setmetatable({
 		200241,
 		200242,
 		200243,
-		200244
+		200244,
+		200251,
+		200252,
+		200253,
+		200254
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2397,6 +2406,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100341] = {
+		target_id_2 = "970604",
+		sub_type = 180,
+		desc = "Win 1 battle with Houshou META in your fleet.",
+		id = 100341,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100342] = {
+		target_id_2 = "970604",
+		sub_type = 180,
+		desc = "Defeat a Lv. 30+ fleet with Houshou META in your fleet.",
+		id = 100342,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100343] = {
+		target_id_2 = "970604",
+		sub_type = 180,
+		desc = "Defeat a Lv. 55+ fleet with Houshou META in your fleet.",
+		id = 100343,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100344] = {
+		target_id_2 = "970604",
+		sub_type = 180,
+		desc = "Defeat a Lv. 80+ fleet with Houshou META in your fleet.",
+		id = 100344,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100345] = {
+		target_id_2 = "970604",
+		sub_type = 180,
+		desc = "Defeat a Lv. 100+ fleet with Houshou META in your fleet.",
+		id = 100345,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -3162,6 +3211,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Hiei META in your fleet.",
 		id = 200244,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200251] = {
+		target_id_2 = "970604",
+		sub_type = 302,
+		desc = "Win 1 Operation Siren battle with Houshou META in your fleet.",
+		id = 200251,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200252] = {
+		target_id_2 = "970604",
+		sub_type = 302,
+		desc = "Defeat a Lv. 70+ fleet in Operation Siren with Houshou META in your fleet.",
+		id = 200252,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200253] = {
+		target_id_2 = "970604",
+		sub_type = 302,
+		desc = "Defeat a Lv. 90+ fleet in Operation Siren with Houshou META in your fleet.",
+		id = 200253,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200254] = {
+		target_id_2 = "970604",
+		sub_type = 302,
+		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Houshou META in your fleet.",
+		id = 200254,
 		target_num = 1,
 		target_id = "100"
 	}

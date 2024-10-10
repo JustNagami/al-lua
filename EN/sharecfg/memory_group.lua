@@ -201,6 +201,7 @@ pg.memory_group = setmetatable({
 		301,
 		302,
 		303,
+		304,
 		501,
 		502,
 		503,
@@ -301,6 +302,7 @@ pg.memory_group = setmetatable({
 		600,
 		601,
 		602,
+		603,
 		1000,
 		1001,
 		1002
@@ -4812,6 +4814,17 @@ pg.base.memory_group = {
 			3908
 		}
 	},
+	[304] = {
+		id = 304,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 0,
+		title = "The Dorm Extension Project",
+		memories = {
+			3921
+		}
+	},
 	[501] = {
 		id = 501,
 		subtype = 0,
@@ -6523,6 +6536,23 @@ pg.base.memory_group = {
 			3915,
 			3916,
 			3917
+		}
+	},
+	[603] = {
+		id = 603,
+		subtype = 0,
+		icon = "title_chara_weidahao",
+		type = 3,
+		link_event = 0,
+		title = "Set Sail - Treasure Voyage!",
+		memories = {
+			3931,
+			3932,
+			3933,
+			3934,
+			3935,
+			3936,
+			3937
 		}
 	},
 	[1000] = {

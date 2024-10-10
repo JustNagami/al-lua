@@ -149,10 +149,12 @@ function table.Ipairs(arg_12_0, arg_12_1)
 end
 
 function table.IpairsCArray(arg_13_0, arg_13_1)
-	for iter_13_0 = 0, arg_13_0.Length - 1 do
-		v = arg_13_0[iter_13_0]
+	local var_13_0
 
-		arg_13_1(iter_13_0, v)
+	for iter_13_0 = 0, arg_13_0.Length - 1 do
+		local var_13_1 = arg_13_0[iter_13_0]
+
+		arg_13_1(iter_13_0, var_13_1)
 	end
 end
 
@@ -358,4 +360,53 @@ function table.dichotomyInsert(arg_29_0, arg_29_1, arg_29_2)
 	end
 
 	table.insert(arg_29_0, var_29_1, arg_29_1)
+end
+
+function table.CastToString(arg_32_0)
+	if arg_32_0 == nil then
+		return "nil"
+	end
+
+	if type(arg_32_0) == "string" then
+		return "'" .. tostring(arg_32_0) .. "'"
+	end
+
+	if type(arg_32_0) ~= "table" then
+		return tostring(arg_32_0)
+	end
+
+	local var_32_0 = "{"
+	local var_32_1 = #arg_32_0
+	local var_32_2 = false
+
+	for iter_32_0, iter_32_1 in ipairs(arg_32_0) do
+		if var_32_2 then
+			var_32_0 = var_32_0 .. ","
+		end
+
+		var_32_2 = true
+		var_32_0 = var_32_0 .. table.CastToString(iter_32_1)
+	end
+
+	for iter_32_2, iter_32_3 in pairs(arg_32_0) do
+		if type(iter_32_2) == "number" then
+			if var_32_1 < iter_32_2 then
+				if var_32_2 then
+					var_32_0 = var_32_0 .. ","
+				end
+
+				var_32_2 = true
+				var_32_0 = var_32_0 .. string.format("[%s]=%s", iter_32_2, table.CastToString(iter_32_3))
+			end
+		else
+			if var_32_2 then
+				var_32_0 = var_32_0 .. ","
+			end
+
+			var_32_2 = true
+			var_32_0 = var_32_0 .. string.format("%s=%s", iter_32_2, table.CastToString(iter_32_3))
+		end
+	end
+
+	return var_32_0 .. "}"
 end

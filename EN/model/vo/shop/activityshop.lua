@@ -49,9 +49,9 @@ function var_0_0.getSortGoods(arg_5_0)
 
 	table.sort(var_5_0, CompareFuncs({
 		function(arg_6_0)
-			local var_6_0, var_6_1 = arg_6_0:CheckArgLimit()
+			local var_6_0 = arg_6_0:CheckArgLimit()
 
-			return (arg_6_0:canPurchase() or var_6_1) and 0 or 1
+			return (arg_6_0:canPurchase() or var_6_0) and arg_6_0:CheckCntLimit() and 0 or 1
 		end,
 		function(arg_7_0)
 			local var_7_0, var_7_1, var_7_2 = arg_7_0:CheckTimeLimit()

@@ -88,7 +88,7 @@ function var_0_0.onRegister(arg_5_0)
 		local var_13_0 = {}
 
 		if _.all(arg_13_1.items, function(arg_14_0)
-			return arg_14_0.type == DROP_TYPE_ICON_FRAME or arg_14_0.type == DROP_TYPE_CHAT_FRAME
+			return arg_14_0.type == DROP_TYPE_ICON_FRAME or arg_14_0.type == DROP_TYPE_CHAT_FRAME or arg_14_0.type == DROP_TYPE_LIVINGAREA_COVER
 		end) then
 			table.insert(var_13_0, function(arg_15_0)
 				onNextTick(arg_15_0)
@@ -455,6 +455,15 @@ function var_0_0.commonBind(arg_37_0)
 				viewComponent = EquipmentInfoLayer,
 				data = arg_48_2
 			}))
+		end,
+		[BaseUI.ON_NEW_DROP] = function(arg_49_0, arg_49_1, arg_49_2)
+			pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_DROP, setmetatable(arg_49_2, {
+				__index = {
+					blurParams = {
+						weight = LayerWeightConst.TOP_LAYER
+					}
+				}
+			}))
 		end
 	}
 
@@ -465,85 +474,60 @@ function var_0_0.commonBind(arg_37_0)
 	end
 end
 
-function var_0_0.register(arg_50_0)
+function var_0_0.register(arg_51_0)
 	return
 end
 
-function var_0_0.onUIAvalible(arg_51_0)
+function var_0_0.onUIAvalible(arg_52_0)
 	return
 end
 
-function var_0_0.setContextData(arg_52_0, arg_52_1)
-	arg_52_0.contextData = arg_52_1
+function var_0_0.setContextData(arg_53_0, arg_53_1)
+	arg_53_0.contextData = arg_53_1
 end
 
-function var_0_0.bind(arg_53_0, arg_53_1, arg_53_2)
-	arg_53_0.viewComponent.event:connect(arg_53_1, arg_53_2)
-	table.insert(arg_53_0.event, {
-		event = arg_53_1,
-		callback = arg_53_2
+function var_0_0.bind(arg_54_0, arg_54_1, arg_54_2)
+	arg_54_0.viewComponent.event:connect(arg_54_1, arg_54_2)
+	table.insert(arg_54_0.event, {
+		event = arg_54_1,
+		callback = arg_54_2
 	})
 end
 
-function var_0_0.onRemove(arg_54_0)
-	arg_54_0:remove()
+function var_0_0.onRemove(arg_55_0)
+	arg_55_0:remove()
 
-	for iter_54_0, iter_54_1 in ipairs(arg_54_0.event) do
-		arg_54_0.viewComponent.event:disconnect(iter_54_1.event, iter_54_1.callback)
+	for iter_55_0, iter_55_1 in ipairs(arg_55_0.event) do
+		arg_55_0.viewComponent.event:disconnect(iter_55_1.event, iter_55_1.callback)
 	end
 
-	arg_54_0.event = {}
+	arg_55_0.event = {}
 end
 
-function var_0_0.remove(arg_55_0)
+function var_0_0.remove(arg_56_0)
 	return
 end
 
-function var_0_0.addSubLayers(arg_56_0, arg_56_1, arg_56_2, arg_56_3, arg_56_4)
-	assert(isa(arg_56_1, Context), "should be an instance of Context")
-
-	local var_56_0 = arg_56_0:GetContext()
-
-	if arg_56_2 then
-		while var_56_0.parent do
-			var_56_0 = var_56_0.parent
-		end
-	end
-
-	local var_56_1 = {
-		parentContext = var_56_0,
-		context = arg_56_1,
-		callback = arg_56_3
-	}
-
-	var_56_1 = arg_56_4 and table.merge(var_56_1, arg_56_4) or var_56_1
-
-	arg_56_0:sendNotification(GAME.LOAD_LAYERS, var_56_1)
-end
-
-function var_0_0.switchLayersOnParent(arg_57_0, arg_57_1, arg_57_2)
+function var_0_0.addSubLayers(arg_57_0, arg_57_1, arg_57_2, arg_57_3, arg_57_4)
 	assert(isa(arg_57_1, Context), "should be an instance of Context")
 
 	local var_57_0 = arg_57_0:GetContext()
-	local var_57_1 = var_57_0.parent
 
-	if not arg_57_1.data.isSubView then
-		while var_57_1.data.isSubView do
-			var_57_1 = var_57_1.parent
+	if arg_57_2 then
+		while var_57_0.parent do
+			var_57_0 = var_57_0.parent
 		end
 	end
 
-	local var_57_2 = {
-		parentContext = var_57_1,
+	local var_57_1 = {
+		parentContext = var_57_0,
 		context = arg_57_1,
-		removeContexts = {
-			var_57_0
-		}
+		callback = arg_57_3
 	}
 
-	var_57_2 = arg_57_2 and table.merge(var_57_2, arg_57_2) or var_57_2
+	var_57_1 = arg_57_4 and table.merge(var_57_1, arg_57_4) or var_57_1
 
-	arg_57_0:sendNotification(GAME.LOAD_LAYERS, var_57_2)
+	arg_57_0:sendNotification(GAME.LOAD_LAYERS, var_57_1)
 end
 
 function var_0_0.GetContext(arg_58_0)

@@ -91378,3 +91378,377 @@ _G.pg.base.item_data_statistics[81207] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
+_G.pg.base.item_data_statistics[15022] = {
+	open_directly = 0,
+	name = "Beach Area Permit",
+	display = "The construction permit needed to expand the Common Area.",
+	type = 100,
+	display_effect = "",
+	id = 15022,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_undefined",
+	link_id = 0,
+	icon = "Props/15022",
+	order = 0,
+	rarity = 3,
+	max_num = 0,
+	time_limit = 0,
+	limit = "[]",
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_data_statistics[21039] = {
+	open_directly = 0,
+	name = "META Crystal – Houshou META",
+	display = "An item that increases the potential of Houshou META. Used in the META Lab during Somatic Activation.",
+	type = 4,
+	display_effect = "",
+	id = 21039,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_undefined",
+	link_id = 0,
+	icon = "Props/21039",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	limit = "[]",
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_data_statistics[30423] = {
+	open_directly = 1,
+	name = "Random Gear Skin Box",
+	display = "Contains 1 random Cruise Mission gear skin.",
+	type = 11,
+	display_effect = "",
+	id = 30423,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "Props/appearanceboxshijiexunyou",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	limit = "[]",
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "30423",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			9,
+			2079,
+			1
+		},
+		{
+			9,
+			2080,
+			1
+		},
+		{
+			9,
+			2081,
+			1
+		},
+		{
+			9,
+			2082,
+			1
+		},
+		{
+			9,
+			2083,
+			1
+		},
+		{
+			9,
+			2084,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_data_statistics[30424] = {
+	open_directly = 1,
+	name = "Forerunner UAV",
+	display = "Use to receive 1 Forerunner UAV (Torpedo), 1 Forerunner UAV (Fighter), and 1 Forerunner UAV (Bomber).",
+	type = 11,
+	display_effect = "",
+	id = 30424,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "Equips/96808",
+	order = 0,
+	rarity = 3,
+	max_num = 0,
+	time_limit = 0,
+	limit = "[]",
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "30424",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			9,
+			2082,
+			1
+		},
+		{
+			9,
+			2083,
+			1
+		},
+		{
+			9,
+			2084,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_data_statistics[30546] = {
+	open_directly = 0,
+	name = "Selection Gear Box (Blood Moon)",
+	display = "Can be used to receive one Blood Moon-themed gear skin of your choosing.",
+	type = 13,
+	display_effect = "",
+	id = 30546,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop_appointed",
+	link_id = 0,
+	icon = "Props/appearanceboxhongyuezixuan",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	limit = "[]",
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			9,
+			540,
+			1
+		},
+		{
+			9,
+			541,
+			1
+		},
+		{
+			9,
+			542,
+			1
+		},
+		{
+			9,
+			543,
+			1
+		},
+		{
+			9,
+			544,
+			1
+		},
+		{
+			9,
+			545,
+			1
+		},
+		{
+			9,
+			546,
+			1
+		},
+		{
+			9,
+			547,
+			1
+		},
+		{
+			9,
+			548,
+			1
+		},
+		{
+			9,
+			549,
+			1
+		},
+		{
+			9,
+			550,
+			1
+		},
+		{
+			9,
+			551,
+			1
+		},
+		{
+			9,
+			552,
+			1
+		},
+		{
+			9,
+			553,
+			1
+		},
+		{
+			9,
+			554,
+			1
+		},
+		{
+			9,
+			555,
+			1
+		},
+		{
+			9,
+			556,
+			1
+		},
+		{
+			9,
+			557,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			9,
+			540,
+			1
+		},
+		{
+			9,
+			541,
+			1
+		},
+		{
+			9,
+			542,
+			1
+		},
+		{
+			9,
+			543,
+			1
+		},
+		{
+			9,
+			544,
+			1
+		},
+		{
+			9,
+			545,
+			1
+		},
+		{
+			9,
+			546,
+			1
+		},
+		{
+			9,
+			547,
+			1
+		},
+		{
+			9,
+			548,
+			1
+		},
+		{
+			9,
+			549,
+			1
+		},
+		{
+			9,
+			550,
+			1
+		},
+		{
+			9,
+			551,
+			1
+		},
+		{
+			9,
+			552,
+			1
+		},
+		{
+			9,
+			553,
+			1
+		},
+		{
+			9,
+			554,
+			1
+		},
+		{
+			9,
+			555,
+			1
+		},
+		{
+			9,
+			556,
+			1
+		},
+		{
+			9,
+			557,
+			1
+		}
+	}
+}

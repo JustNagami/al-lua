@@ -90,6 +90,10 @@ function var_0_1.Add2Overlay(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
 		arg_5_0:ClearBlurData(var_5_1)
 		table.insert(arg_5_0.storeUIs, arg_5_3)
 		arg_5_0:CreateRefreshHandler()
+
+		if arg_5_3.force then
+			arg_5_0:Refresh()
+		end
 	end
 end
 
@@ -369,31 +373,15 @@ end
 
 function var_0_1.SortStoreUIs(arg_15_0)
 	arg_15_0:Log("-----------------------------------------")
-
-	local var_15_0 = {}
+	mergeSort(arg_15_0.storeUIs, CompareFuncs({
+		function(arg_16_0)
+			return arg_16_0.weight
+		end
+	}, true))
 
 	for iter_15_0, iter_15_1 in ipairs(arg_15_0.storeUIs) do
-		if not table.contains(var_15_0, iter_15_1.weight) then
-			table.insert(var_15_0, iter_15_1.weight)
-		end
+		arg_15_0:Log(iter_15_1.ui.gameObject.name .. "   globalBlur:" .. tostring(iter_15_1.globalBlur))
 	end
-
-	table.sort(var_15_0, function(arg_16_0, arg_16_1)
-		return arg_16_0 < arg_16_1
-	end)
-
-	local var_15_1 = {}
-
-	for iter_15_2, iter_15_3 in ipairs(var_15_0) do
-		for iter_15_4, iter_15_5 in ipairs(arg_15_0.storeUIs) do
-			if iter_15_3 == iter_15_5.weight then
-				table.insert(var_15_1, iter_15_5)
-				arg_15_0:Log(iter_15_5.ui.gameObject.name .. "   globalBlur:" .. tostring(iter_15_5.globalBlur))
-			end
-		end
-	end
-
-	arg_15_0.storeUIs = var_15_1
 
 	arg_15_0:Log("-----------------------------------------")
 end

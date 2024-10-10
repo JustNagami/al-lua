@@ -180956,7 +180956,7 @@ _G.pg.base.item_virtual_data_statistics[65001] = {
 	link_id = 7018,
 	virtual_type = 21,
 	is_world = 0,
-	icon = "props/summer_stamp",
+	icon = "props/battlepass_pt",
 	id = 65001,
 	order = 0,
 	display_icon = {},
@@ -189831,4 +189831,27 @@ _G.pg.base.item_virtual_data_statistics[86207] = {
 			1270
 		}
 	}
+}
+_G.pg.base.item_virtual_data_statistics[65028] = {
+	display = "不该被看到",
+	name = "通行证十九期对应虚拟道具",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 7019,
+	virtual_type = 21,
+	is_world = 0,
+	icon = "props/battlepass_pt",
+	id = 65028,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
 }

@@ -4,11 +4,11 @@ local var_0_0 = CameraHelper
 local var_0_1 = YSTool.YSPermissionTool.Inst
 
 function var_0_0.IsAndroid()
-	return getProxy(UserProxy):GetCacheGatewayInServerLogined() == PLATFORM_ANDROID
+	return PLATFORM == PLATFORM_ANDROID
 end
 
 function var_0_0.IsIOS()
-	return getProxy(UserProxy):GetCacheGatewayInServerLogined() == PLATFORM_IPHONEPLAYER
+	return PLATFORM == PLATFORM_IPHONEPLAYER
 end
 
 function var_0_0.RequestCamera(arg_3_0, arg_3_1)
@@ -47,6 +47,14 @@ function var_0_0.RequestCamera(arg_3_0, arg_3_1)
 	elseif var_0_0.IsIOS() then
 		local var_3_2 = "camera"
 
+		originalPrint("ios camera " .. tostring(var_0_1:IsPermissionGranted(var_3_2)) .. " " .. tostring(var_0_1:GetPermissionStatusCode(var_3_2)))
+
+		if var_0_1:IsPermissionGranted(var_3_2) then
+			arg_3_0()
+
+			return
+		end
+
 		local function var_3_3(arg_5_0, arg_5_1)
 			if arg_5_1 then
 				if arg_3_0 then
@@ -60,5 +68,67 @@ function var_0_0.RequestCamera(arg_3_0, arg_3_1)
 		var_0_1:RequestSingle(var_3_2, var_3_3)
 	elseif arg_3_0 then
 		arg_3_0()
+	end
+end
+
+function var_0_0.Request3DDorm(arg_6_0, arg_6_1)
+	if var_0_0.IsAndroid() then
+		local var_6_0 = {
+			"android.permission.RECORD_AUDIO"
+		}
+
+		if PathMgr.getOSVersionNum() < 10 then
+			table.insert(var_6_0, "android.permission.WRITE_EXTERNAL_STORAGE")
+		end
+
+		local function var_6_1(arg_7_0, arg_7_1)
+			local var_7_0 = true
+			local var_7_1 = arg_7_1.Length
+
+			for iter_7_0 = 0, var_7_1 - 1 do
+				if not arg_7_1[iter_7_0] then
+					var_7_0 = false
+
+					break
+				end
+			end
+
+			if var_7_0 then
+				if arg_6_0 then
+					arg_6_0()
+				end
+			elseif arg_6_1 then
+				arg_6_1()
+			end
+		end
+
+		var_0_1:RequestMulti(var_6_0, var_6_1)
+	elseif var_0_0.IsIOS() then
+		local var_6_2 = "camera"
+
+		originalPrint("ios开始录像权限判断")
+		originalPrint("ios camera " .. tostring(var_0_1:IsPermissionGranted(var_6_2)) .. " " .. tostring(var_0_1:GetPermissionStatusCode(var_6_2)))
+
+		if var_0_1:IsPermissionGranted(var_6_2) then
+			arg_6_0()
+
+			return
+		end
+
+		local function var_6_3(arg_8_0, arg_8_1)
+			originalPrint("ios返回的isGranted" .. tostring(arg_8_1))
+
+			if arg_8_1 then
+				if arg_6_0 then
+					arg_6_0()
+				end
+			elseif arg_6_1 then
+				arg_6_1()
+			end
+		end
+
+		var_0_1:RequestSingle(var_6_2, var_6_3)
+	elseif arg_6_0 then
+		arg_6_0()
 	end
 end

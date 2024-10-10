@@ -22,11 +22,11 @@ function var_0_0.Ctor(arg_2_0, arg_2_1)
 	arg_2_0.steps = {}
 
 	for iter_2_0, iter_2_1 in ipairs(arg_2_1.events) do
-		local var_2_0 = arg_2_0:Data2GuideStep(iter_2_1)
-
 		if arg_2_1.isWorld ~= nil then
-			var_2_0:UpdateIsWorld(arg_2_1.isWorld)
+			iter_2_1.isWorld = arg_2_1.isWorld
 		end
+
+		local var_2_0 = arg_2_0:Data2GuideStep(iter_2_1)
 
 		table.insert(arg_2_0.steps, var_2_0)
 	end

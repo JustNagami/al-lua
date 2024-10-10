@@ -248604,3 +248604,177 @@ _G.pg.base.aircraft_template[3207537] = {
 		}
 	}
 }
+_G.pg.base.aircraft_template[165411] = {
+	attack_power = 2,
+	name = "凤翔META技能鱼雷机Lv1",
+	type = 2,
+	accuracy = 23,
+	model_ID = "97jiangong",
+	ACC_growth = 0,
+	crash_DMG = 148,
+	dodge = 1.17,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 165411,
+	icon = "97jiangong",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 4,
+	hp_growth = 1155,
+	speed = 48,
+	max_hp = 30,
+	scale = 1,
+	weapon_ID = {
+		165421
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.68,
+				-0.667,
+				0
+			},
+			{
+				0.97,
+				0.584,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0.54,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[165412] = {
+	id = 165412,
+	name = "凤翔META技能鱼雷机Lv2",
+	hp_growth = 1345,
+	base = 165411,
+	max_hp = 39,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165422
+	}
+}
+_G.pg.base.aircraft_template[165413] = {
+	id = 165413,
+	name = "凤翔META技能鱼雷机Lv3",
+	hp_growth = 1507,
+	base = 165411,
+	max_hp = 43,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165423
+	}
+}
+_G.pg.base.aircraft_template[165414] = {
+	id = 165414,
+	name = "凤翔META技能鱼雷机Lv4",
+	hp_growth = 1669,
+	base = 165411,
+	max_hp = 47,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165424
+	}
+}
+_G.pg.base.aircraft_template[165415] = {
+	id = 165415,
+	name = "凤翔META技能鱼雷机Lv5",
+	hp_growth = 1831,
+	base = 165411,
+	max_hp = 51,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165425
+	}
+}
+_G.pg.base.aircraft_template[165416] = {
+	id = 165416,
+	name = "凤翔META技能鱼雷机Lv6",
+	hp_growth = 1994,
+	base = 165411,
+	max_hp = 55,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165426
+	}
+}
+_G.pg.base.aircraft_template[165417] = {
+	id = 165417,
+	name = "凤翔META技能鱼雷机Lv7",
+	hp_growth = 2157,
+	base = 165411,
+	max_hp = 59,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165427
+	}
+}
+_G.pg.base.aircraft_template[165418] = {
+	id = 165418,
+	name = "凤翔META技能鱼雷机Lv8",
+	hp_growth = 2320,
+	base = 165411,
+	max_hp = 63,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165428
+	}
+}
+_G.pg.base.aircraft_template[165419] = {
+	id = 165419,
+	name = "凤翔META技能鱼雷机Lv9",
+	hp_growth = 2483,
+	base = 165411,
+	max_hp = 68,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165429
+	}
+}
+_G.pg.base.aircraft_template[165420] = {
+	id = 165420,
+	name = "凤翔META技能鱼雷机Lv10",
+	hp_growth = 2646,
+	base = 165411,
+	max_hp = 73,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165430
+	}
+}

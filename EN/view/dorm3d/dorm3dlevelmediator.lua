@@ -2,6 +2,7 @@
 
 var_0_0.CHANGE_SKIN = "Dorm3dLevelMediator.CHANGE_SKIN"
 var_0_0.CHAMGE_TIME = "Dorm3dLevelMediator.CHAMGE_TIME"
+var_0_0.ON_DROP_CLIENT = "Dorm3dLevelMediator.ON_DROP_CLIENT"
 
 function var_0_0.register(arg_1_0)
 	arg_1_0:bind(var_0_0.CHANGE_SKIN, function(arg_2_0, arg_2_1, arg_2_2)
@@ -12,19 +13,22 @@ function var_0_0.register(arg_1_0)
 		arg_1_0.viewComponent:closeView()
 	end)
 	arg_1_0:bind(var_0_0.CHAMGE_TIME, function(arg_3_0, arg_3_1)
-		arg_1_0:sendNotification(Dorm3dSceneMediator.CHAMGE_TIME_RELOAD_SCENE, {
+		arg_1_0:sendNotification(Dorm3dRoomMediator.CHAMGE_TIME_RELOAD_SCENE, {
 			timeIndex = arg_3_1
 		})
 		arg_1_0.viewComponent:closeView()
 	end)
-	arg_1_0.viewComponent:SetApartment(getProxy(ApartmentProxy):getApartment(arg_1_0.contextData.groupId))
+	arg_1_0:bind(var_0_0.ON_DROP_CLIENT, function(arg_4_0, arg_4_1)
+		pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_DROP_CLIENT, arg_4_1)
+	end)
+	arg_1_0.viewComponent:SetApartment(arg_1_0.contextData.apartment)
 end
 
-function var_0_0.initNotificationHandleDic(arg_4_0)
-	arg_4_0.handleDic = {}
+function var_0_0.initNotificationHandleDic(arg_5_0)
+	arg_5_0.handleDic = {}
 end
 
-function var_0_0.remove(arg_5_0)
+function var_0_0.remove(arg_6_0)
 	return
 end
 

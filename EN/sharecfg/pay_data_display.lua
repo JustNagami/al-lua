@@ -75,6 +75,7 @@ pg.pay_data_display = setmetatable({
 		1015,
 		1016,
 		1017,
+		1018,
 		2001,
 		2002,
 		2003,
@@ -7200,7 +7201,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "Fair Winds Cruise Pass",
 		show_group = "",
-		type_order = 5,
+		type_order = 4,
 		extra_service = 4,
 		money = 999,
 		id = 1017,
@@ -7261,6 +7262,82 @@ pg.base.pay_data_display = {
 		},
 		sub_display = {
 			7018,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[1018] = {
+		name = "Fair Winds Cruise Pass (2024.10)",
+		limit_group = 0,
+		descrip_extra = "You must complete certain missions to obtain these rewards.",
+		type = 0,
+		subject = "Fair Winds Cruise Pass",
+		limit_arg = 1,
+		name_display = "Fair Winds Cruise Pass",
+		show_group = "",
+		type_order = 4,
+		extra_service = 4,
+		money = 999,
+		id = 1018,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "battlepass_1",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.passport21",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Purchase to immediately gain 1,500 Progress Points, and also unlock additional Fair Winds Cruise rewards.",
+		airijp_id = "com.yostaren.azurlane.passport21",
+		extra_service_item = {
+			{
+				1,
+				4019,
+				1500
+			},
+			{
+				8,
+				65028,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					10,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					11,
+					30
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				1,
+				4019,
+				1500
+			}
+		},
+		sub_display = {
+			7019,
 			1500
 		},
 		ignorePlatform = {},

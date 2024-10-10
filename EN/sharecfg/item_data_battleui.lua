@@ -24,6 +24,18 @@ pg.item_data_battleui = {
 		icon = "101",
 		scene = {}
 	},
+	[102] = {
+		key = "SkinNormal_20240912",
+		name = "Cyber",
+		desc = "A UI for enthusiasts of science-fiction. Features some animations and light effects in places.",
+		display_icon = "ui_102",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "Cruise Missions S19",
+		id = 102,
+		icon = "102",
+		scene = {}
+	},
 	[103] = {
 		key = "SkinNormal_20240913",
 		name = "Iridescent Fantasy",
@@ -39,6 +51,7 @@ pg.item_data_battleui = {
 	all = {
 		0,
 		101,
+		102,
 		103
 	}
 }

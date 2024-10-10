@@ -177,7 +177,7 @@ pg.activity_template = {
 		}
 	},
 	[40] = {
-		mark = 20240418,
+		mark = 20241010,
 		time = "stop",
 		page_info = "",
 		type = 0,
@@ -271,7 +271,7 @@ pg.activity_template = {
 	},
 	[4877] = {
 		mark = 20230525,
-		time = "always",
+		time = "stop",
 		page_info = "",
 		type = 14,
 		login_pop = 0,
@@ -19706,7 +19706,8 @@ pg.activity_template = {
 			500,
 			501,
 			502,
-			503
+			503,
+			504
 		},
 		time = {
 			"timer",
@@ -20048,7 +20049,7 @@ pg.activity_template = {
 		type = 12,
 		login_pop = 0,
 		config_id = 0,
-		is_show = 48,
+		is_show = 46,
 		config_data = {
 			1850001,
 			1850002,
@@ -20230,7 +20231,7 @@ pg.activity_template = {
 		type = 74,
 		login_pop = 0,
 		config_id = 5566,
-		is_show = 46,
+		is_show = 45,
 		id = 5566,
 		config_data = {},
 		time = {
@@ -20311,7 +20312,7 @@ pg.activity_template = {
 		type = 3,
 		login_pop = 0,
 		config_id = 62,
-		is_show = 43,
+		is_show = 42,
 		id = 5569,
 		config_data = {},
 		time = {
@@ -20705,7 +20706,7 @@ pg.activity_template = {
 		type = 18,
 		login_pop = 0,
 		config_id = 3,
-		is_show = 49,
+		is_show = 47,
 		config_data = {
 			{
 				20596,
@@ -20820,6 +20821,148 @@ pg.activity_template = {
 					59
 				}
 			}
+		}
+	},
+	[5583] = {
+		mark = 20240926,
+		config_client = "",
+		title_res_tag = "Javelin_dressSkin",
+		type = 18,
+		login_pop = 0,
+		config_id = 3,
+		is_show = 48,
+		id = 5583,
+		config_data = {
+			{
+				20618,
+				20619
+			},
+			{
+				20620,
+				20621
+			},
+			{
+				20622,
+				20623
+			},
+			{
+				20624,
+				20625
+			},
+			{
+				20626,
+				20627
+			},
+			{
+				20628,
+				20629
+			},
+			{
+				20630,
+				20631
+			}
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					9,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					10,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "JavelinDressSkinPage",
+			ui_name = "JavelinDressSkinPage"
+		}
+	},
+	[5585] = {
+		mark = 20241010,
+		config_client = "",
+		title_res_tag = "jifu_skin",
+		type = 18,
+		login_pop = 0,
+		config_id = 3,
+		is_show = 49,
+		id = 5585,
+		config_data = {
+			{
+				20632,
+				20633
+			},
+			{
+				20634,
+				20635
+			},
+			{
+				20636,
+				20637
+			},
+			{
+				20638,
+				20639
+			},
+			{
+				20640,
+				20641
+			},
+			{
+				20642,
+				20643
+			},
+			{
+				20644,
+				20645
+			}
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					10,
+					10
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					10,
+					23
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "SaDingSkinPage",
+			ui_name = "SaDingSkinPage"
 		}
 	},
 	[7011] = {
@@ -21448,6 +21591,58 @@ pg.activity_template = {
 			ui_name = "CrusingDisplayActPage18"
 		}
 	},
+	[7019] = {
+		mark = 20240926,
+		config_client = "",
+		title_res_tag = "CrusingDisplayAct",
+		type = 54,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 14,
+		id = 7019,
+		config_data = {
+			180,
+			181,
+			182,
+			183,
+			184,
+			185,
+			186,
+			187,
+			188
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					10,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					11,
+					30
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "CrusingDisplayActPage",
+			ui_name = "CrusingDisplayActPage19"
+		}
+	},
 	[7101] = {
 		mark = 20230511,
 		config_client = "",
@@ -21536,6 +21731,109 @@ pg.activity_template = {
 		page_info = {
 			class_name = "SurveyPage",
 			ui_name = "SurveyPage"
+		}
+	},
+	[7104] = {
+		mark = 20240926,
+		time = "always",
+		page_info = "",
+		type = 119,
+		login_pop = 0,
+		config_id = 1,
+		is_show = 0,
+		title_res_tag = "",
+		id = 7104,
+		config_data = {
+			12011,
+			12012,
+			12013,
+			12014,
+			12015,
+			12016,
+			12017,
+			12018,
+			12019,
+			12020,
+			12021,
+			12022
+		},
+		config_client = {
+			"commonbg/meta_shop_bg",
+			{
+				1,
+				1,
+				1,
+				1
+			},
+			painting = {
+				"zaoshen_meta_pt",
+				"hailunna_meta_pt",
+				"mengfeisi_meta_pt"
+			}
+		}
+	},
+	[7501] = {
+		mark = 20240926,
+		config_client = "",
+		title_res_tag = "dorm3D_Sign-in1",
+		type = 89,
+		login_pop = 99,
+		config_id = 0,
+		is_show = 48,
+		id = 7501,
+		config_data = {
+			{
+				20611
+			},
+			{
+				20612
+			},
+			{
+				20613
+			},
+			{
+				20614
+			},
+			{
+				20615
+			},
+			{
+				20616
+			},
+			{
+				20617
+			}
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					9,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2034,
+					12,
+					27
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "DormSignPage",
+			ui_name = "DormSignPage"
 		}
 	},
 	[8009] = {
@@ -28843,7 +29141,7 @@ pg.activity_template = {
 		id = 30116
 	},
 	[30117] = {
-		mark = 20240418,
+		mark = 20241010,
 		title_res_tag = "",
 		page_info = "",
 		type = 0,
@@ -28858,8 +29156,8 @@ pg.activity_template = {
 			{
 				{
 					2024,
-					4,
-					19
+					10,
+					11
 				},
 				{
 					0,
@@ -28870,8 +29168,8 @@ pg.activity_template = {
 			{
 				{
 					2024,
-					4,
-					28
+					10,
+					20
 				},
 				{
 					23,
@@ -46076,6 +46374,8 @@ pg.activity_template = {
 			5548,
 			5551,
 			5581,
+			5583,
+			5585,
 			6000,
 			6001,
 			6002,
@@ -46711,7 +47011,8 @@ pg.activity_template = {
 			5260
 		},
 		[89] = {
-			5261
+			5261,
+			7501
 		},
 		[22] = {
 			5264,
@@ -46763,11 +47064,15 @@ pg.activity_template = {
 			7015,
 			7016,
 			7017,
-			7018
+			7018,
+			7019
 		},
 		[101] = {
 			7101,
 			7103
+		},
+		[119] = {
+			7104
 		},
 		[19] = {
 			1069,
@@ -47365,6 +47670,8 @@ pg.activity_template = {
 		5578,
 		5581,
 		5582,
+		5583,
+		5585,
 		7011,
 		7012,
 		7013,
@@ -47373,8 +47680,11 @@ pg.activity_template = {
 		7016,
 		7017,
 		7018,
+		7019,
 		7101,
 		7103,
+		7104,
+		7501,
 		8009,
 		8010,
 		8050,
