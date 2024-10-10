@@ -9,7 +9,7 @@ pg.dorm3d_accompany = {
 		image = "tianlangxing_accompany_room",
 		sceneInfo = "map_siriushostel_01|Tianlangxing_DB/SiriusHostel",
 		favor = {
-			10,
+			300,
 			{
 				1015,
 				1016,
@@ -28,7 +28,7 @@ pg.dorm3d_accompany = {
 		image = "tianlangxing_accompany_beach",
 		sceneInfo = "map_beach_02|Common/Beach",
 		favor = {
-			10,
+			300,
 			{
 				1015,
 				1016,
@@ -36,7 +36,11 @@ pg.dorm3d_accompany = {
 			}
 		},
 		jump_trigger = {},
-		unlock = {}
+		unlock = {
+			5,
+			4,
+			20220
+		}
 	},
 	get_id_list_by_ship_id = {
 		[20220] = {

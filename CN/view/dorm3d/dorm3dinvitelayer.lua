@@ -168,7 +168,7 @@ function var_0_0.ShowSelectPanel(arg_11_0)
 end
 
 function var_0_0.UpdateSelectableCard(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
-	GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_%d", arg_17_2), "", arg_17_1:Find("Image"))
+	GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_%d_%d", arg_17_2, arg_17_0.contextData.roomId), "", arg_17_1:Find("Image"))
 	GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_name_%d", arg_17_2), "", arg_17_1:Find("name"))
 
 	local var_17_0 = getProxy(ApartmentProxy):getApartment(arg_17_2)

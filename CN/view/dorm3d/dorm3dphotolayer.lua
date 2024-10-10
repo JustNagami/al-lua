@@ -181,6 +181,10 @@ function var_0_0.didEnter(arg_6_0)
 		if not arg_6_0.recordState then
 			local function var_13_1(arg_15_0)
 				if arg_15_0 ~= -1 then
+					var_13_0(true)
+
+					arg_6_0.recordState = false
+
 					LeanTween.moveX(arg_6_0.stopRecBtn, arg_6_0.stopRecBtn.rect.width, 0.15)
 				end
 			end

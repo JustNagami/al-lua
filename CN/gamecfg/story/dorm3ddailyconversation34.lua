@@ -9,16 +9,10 @@
 	hideAuto = true,
 	scripts = {
 		{
-			optionFlag = 1,
+			actor = 0,
 			side = 0,
-			say = "!!!!!选项放第一句 say是什么呢？!!!!!!",
-			hidePaintObj = true,
-			options = {
-				{
-					content = "要出去走走吗？",
-					flag = 1
-				}
-			}
+			say = "要出去走走吗？",
+			hidePaintObj = true
 		},
 		{
 			side = 2,

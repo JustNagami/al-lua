@@ -15,7 +15,7 @@
 			hidePaintObj = true,
 			dir = 1,
 			say = "主人好像会用这个抱枕……\n所以抱枕上面也有主人的气味了。",
-			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_wait_table1",
+			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_wait_chair1",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

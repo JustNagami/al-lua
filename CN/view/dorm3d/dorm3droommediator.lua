@@ -296,11 +296,16 @@ function var_0_0.initNotificationHandleDic(arg_30_0)
 			local var_51_0 = arg_51_1:getBody()
 
 			arg_51_0.viewComponent:HandleGameNotification(EatFoodMediator.LEAVE_GAME, var_51_0)
+		end,
+		[ApartmentProxy.ZERO_HOUR_REFRESH] = function(arg_52_0, arg_52_1)
+			local var_52_0 = arg_52_1:getBody()
+
+			arg_52_0.viewComponent:UpdateFavorDisplay()
 		end
 	}
 end
 
-function var_0_0.remove(arg_52_0)
+function var_0_0.remove(arg_53_0)
 	return
 end
 

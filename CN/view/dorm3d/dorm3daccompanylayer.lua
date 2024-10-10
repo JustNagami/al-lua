@@ -28,38 +28,45 @@ end
 function var_0_0.didEnter(arg_6_0)
 	arg_6_0.room = getProxy(ApartmentProxy):getRoom(arg_6_0.contextData.roomId)
 
-	local var_6_0 = underscore.filter(pg.dorm3d_accompany.get_id_list_by_ship_id[arg_6_0.contextData.groupId], function(arg_7_0)
-		return ApartmentProxy.CheckUnlockConfig(pg.dorm3d_accompany[arg_7_0].unlock)
-	end)
+	local var_6_0 = pg.dorm3d_accompany.get_id_list_by_ship_id[arg_6_0.contextData.groupId]
 	local var_6_1 = arg_6_0.rtPanel:Find("window/content")
 
-	UIItemList.StaticAlign(var_6_1, var_6_1:GetChild(0), 3, function(arg_8_0, arg_8_1, arg_8_2)
-		arg_8_1 = arg_8_1 + 1
+	UIItemList.StaticAlign(var_6_1, var_6_1:GetChild(0), 3, function(arg_7_0, arg_7_1, arg_7_2)
+		arg_7_1 = arg_7_1 + 1
 
-		if arg_8_0 == UIItemList.EventUpdate then
-			local var_8_0 = var_6_0[arg_8_1]
+		if arg_7_0 == UIItemList.EventUpdate then
+			local var_7_0 = var_6_0[arg_7_1]
 
-			setActive(arg_8_2:Find("empty"), not var_8_0)
-			setActive(arg_8_2:Find("Image"), var_8_0)
+			setActive(arg_7_2:Find("empty"), not var_7_0)
+			setActive(arg_7_2:Find("Image"), var_7_0)
 
-			if var_8_0 then
-				local var_8_1 = pg.dorm3d_accompany[var_8_0]
+			if var_7_0 then
+				local var_7_1 = pg.dorm3d_accompany[var_7_0]
+				local var_7_2, var_7_3 = ApartmentProxy.CheckUnlockConfig(var_7_1.unlock)
 
-				GetImageSpriteFromAtlasAsync("dorm3daccompany/" .. var_8_1.image, "", arg_8_2:Find("Image"))
-				onButton(arg_6_0, arg_8_2:Find("Image"), function()
-					arg_6_0.contextData.confirmFunc(var_8_0)
-					arg_6_0:closeView()
+				GetImageSpriteFromAtlasAsync("dorm3daccompany/" .. var_7_1.image, "", arg_7_2:Find("Image"))
+				setGray(arg_7_2:Find("Image"), not var_7_2, false)
+				setActive(arg_7_2:Find("Image/mask"), not var_7_2)
+				onButton(arg_6_0, arg_7_2:Find("Image"), function()
+					if var_7_2 then
+						arg_6_0.contextData.confirmFunc(var_7_0)
+						arg_6_0:closeView()
+					else
+						pg.TipsMgr.GetInstance():ShowTips(var_7_3)
+					end
 				end, SFX_CONFIRM)
 				setText(arg_6_0.rtPanel:Find("window/Text"), i18n("dorm3d_collection_cost_tip"))
 			else
-				setText(arg_8_2:Find("empty/Image/Text"), i18n("dorm3d_accompany_locked"))
+				setText(arg_7_2:Find("empty/Image/Text"), i18n("dorm3d_accompany_locked"))
 			end
 		end
 	end)
+	pg.BrightnessMgr.GetInstance():SetScreenNeverSleep(true)
 end
 
-function var_0_0.willExit(arg_10_0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_10_0.rtPanel, arg_10_0.rtLayer)
+function var_0_0.willExit(arg_9_0)
+	pg.BrightnessMgr.GetInstance():SetScreenNeverSleep(false)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_9_0.rtPanel, arg_9_0.rtLayer)
 end
 
 return var_0_0

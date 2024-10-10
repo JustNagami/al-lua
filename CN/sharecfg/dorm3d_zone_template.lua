@@ -1,21 +1,18 @@
 ﻿pg = pg or {}
 pg.dorm3d_zone_template = {
 	[1000] = {
-		special_action = "",
-		name = "全局区域",
-		lazy_action = "",
-		special_talk = "",
-		room_id = 1,
 		is_global = 1,
+		name = "全局区域",
 		type_prioritys = "",
+		room_id = 1,
 		id = 1000,
 		touch_id = "",
-		watch_camera = ""
+		watch_camera = "",
+		special_action = ""
 	},
 	[1001] = {
 		is_global = 0,
 		name = "卧室",
-		lazy_action = "",
 		id = 1001,
 		room_id = 1,
 		watch_camera = "Bed",
@@ -39,22 +36,11 @@ pg.dorm3d_zone_template = {
 					"dianshouzhi"
 				}
 			}
-		},
-		special_talk = {
-			{
-				20220,
-				{
-					1301,
-					1302,
-					1303
-				}
-			}
 		}
 	},
 	[1002] = {
 		is_global = 0,
 		name = "餐厅",
-		lazy_action = "",
 		type_prioritys = "",
 		id = 1002,
 		room_id = 1,
@@ -71,16 +57,6 @@ pg.dorm3d_zone_template = {
 				{
 					"jinzhang",
 					"dianshouzhi"
-				}
-			}
-		},
-		special_talk = {
-			{
-				20220,
-				{
-					1301,
-					1302,
-					1303
 				}
 			}
 		}
@@ -106,32 +82,11 @@ pg.dorm3d_zone_template = {
 					"dianshouzhi"
 				}
 			}
-		},
-		special_talk = {
-			{
-				20220,
-				{
-					1301,
-					1302,
-					1303
-				}
-			}
-		},
-		lazy_action = {
-			{
-				20220,
-				{
-					"SitStart",
-					"SitEnd",
-					"Sit"
-				}
-			}
 		}
 	},
 	[4001] = {
 		is_global = 0,
 		name = "入口",
-		lazy_action = "",
 		type_prioritys = "",
 		id = 4001,
 		room_id = 4,
@@ -150,22 +105,11 @@ pg.dorm3d_zone_template = {
 					"dianshouzhi"
 				}
 			}
-		},
-		special_talk = {
-			{
-				20220,
-				{
-					1301,
-					1302,
-					1303
-				}
-			}
 		}
 	},
 	[4002] = {
 		is_global = 0,
 		name = "沙滩椅",
-		lazy_action = "",
 		type_prioritys = "",
 		id = 4002,
 		room_id = 4,
@@ -182,16 +126,6 @@ pg.dorm3d_zone_template = {
 				{
 					"jinzhang",
 					"dianshouzhi"
-				}
-			}
-		},
-		special_talk = {
-			{
-				20220,
-				{
-					1301,
-					1302,
-					1303
 				}
 			}
 		}

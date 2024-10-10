@@ -45,7 +45,7 @@ function var_0_0.GetGetObjectives(arg_2_0)
 		value = setColorStr(-var_2_1.lose, COLOR_BLUE)
 	})
 
-	local var_2_4 = i18n("fighterplane_destroy_tip")
+	local var_2_4 = i18n("fighterplane_score_tip")
 
 	table.insert(var_2_0, {
 		text = setColorStr(var_2_4, "#FFFFFFFF"),

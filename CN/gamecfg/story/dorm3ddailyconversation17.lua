@@ -9,16 +9,10 @@
 	hideAuto = true,
 	scripts = {
 		{
-			optionFlag = 1,
+			actor = 0,
 			side = 0,
-			say = "!!!!!选项放第一句 say是什么呢？!!!!!!",
-			hidePaintObj = true,
-			options = {
-				{
-					content = "天狼星现在在想什么？",
-					flag = 1
-				}
-			}
+			say = "天狼星现在在想什么？",
+			hidePaintObj = true
 		},
 		{
 			side = 2,

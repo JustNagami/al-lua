@@ -15,7 +15,7 @@
 			hidePaintObj = true,
 			dir = 1,
 			say = "怎么了，主人？\n天狼星正在整理床铺哦……以便您随时想休息一会。",
-			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_wait_table1",
+			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_wait_bed1",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

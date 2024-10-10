@@ -173,7 +173,7 @@ function var_0_1.DisplaySetting(arg_19_0, arg_19_1, arg_19_2)
 
 			updateDorm3dIcon(var_21_1:Find("Dorm3dIconTpl"), arg_21_0.drop)
 			setText(var_21_1:Find("info/name"), var_21_0:getName())
-			setText(var_21_1:Find("info/desc"), var_21_0.desc)
+			setText(var_21_1:Find("info/desc"), cancelColorRich(var_21_0.desc))
 
 			local var_21_2, var_21_3 = var_21_0:getOwnedCount()
 

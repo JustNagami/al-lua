@@ -92,7 +92,7 @@ pg.dorm3d_welcome = {
 		welcome_idle = "changdaiji_shatan_wanshui_start",
 		id = 202200107,
 		item_shield = "",
-		weight = 0
+		weight = 20
 	},
 	get_id_list_by_room_id = {
 		{

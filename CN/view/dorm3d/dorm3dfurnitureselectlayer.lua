@@ -567,7 +567,7 @@ function var_0_0.UpdateViewFurnitureItem(arg_53_0, arg_53_1)
 		end
 	end)
 
-	local var_53_7 = var_53_1.template:GetShopID()
+	local var_53_7 = var_53_1.count == 0 and var_53_1.template:GetShopID() or nil
 
 	setActive(var_53_2:Find("GO"), var_53_7)
 
@@ -717,6 +717,7 @@ function var_0_0.AutoReplaceFurniture(arg_65_0)
 			furnitureId = var_66_4:GetConfigID()
 		})
 	end)
+	arg_65_0:UpdateDataDisplayFurnitures()
 	arg_65_0:UpdateView()
 end
 

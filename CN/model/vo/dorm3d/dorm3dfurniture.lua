@@ -73,22 +73,7 @@ function var_0_0.GetShopID(arg_12_0)
 	local var_12_0 = arg_12_0:getConfig("shop_id")
 	local var_12_1 = getProxy(ApartmentProxy):GetFurnitureShopCount(arg_12_0:GetConfigID())
 
-	for iter_12_0 = 1, #var_12_0 - 1 do
-		local var_12_2 = var_12_0[iter_12_0]
-		local var_12_3 = pg.shop_template[var_12_2].limit_args[1]
-
-		if not var_12_3 then
-			return var_12_2
-		elseif var_12_3[1] == "dailycount" or var_12_3[1] == "count" then
-			if var_12_1 < var_12_3[3] then
-				return var_12_2
-			end
-		else
-			return var_12_2
-		end
-	end
-
-	return var_12_0[#var_12_0]
+	return var_12_0[1]
 end
 
 function var_0_0.IsValuable(arg_13_0)

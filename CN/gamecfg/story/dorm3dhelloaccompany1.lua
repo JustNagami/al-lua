@@ -14,7 +14,7 @@
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "\"唔……主人？\n不，天狼星没有睡着哦？\"",
+			say = "唔……主人？\n不，天狼星没有睡着哦？",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_wait_table1",
 			typewriter = {
 				speed = 0.05,

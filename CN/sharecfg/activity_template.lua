@@ -138,7 +138,7 @@ pg.activity_template = {
 		}
 	},
 	[40] = {
-		mark = 20240418,
+		mark = 20241010,
 		title_res_tag = "",
 		page_info = "",
 		type = 0,
@@ -153,8 +153,8 @@ pg.activity_template = {
 			{
 				{
 					2024,
-					4,
-					19
+					10,
+					11
 				},
 				{
 					0,
@@ -165,8 +165,8 @@ pg.activity_template = {
 			{
 				{
 					2024,
-					4,
-					28
+					10,
+					20
 				},
 				{
 					23,
@@ -15817,12 +15817,13 @@ pg.activity_template = {
 	},
 	[5583] = {
 		mark = 20240926,
-		config_client = "",
 		title_res_tag = "Javelin_dressSkin",
+		time = "stop",
 		type = 18,
 		login_pop = 0,
 		config_id = 3,
 		is_show = 48,
+		config_client = "",
 		id = 5583,
 		config_data = {
 			{
@@ -15854,13 +15855,57 @@ pg.activity_template = {
 				20631
 			}
 		},
+		page_info = {
+			class_name = "JavelinDressSkinPage",
+			ui_name = "JavelinDressSkinPage"
+		}
+	},
+	[5585] = {
+		mark = 20241010,
+		config_client = "",
+		title_res_tag = "jifu_skin",
+		type = 18,
+		login_pop = 0,
+		config_id = 3,
+		is_show = 49,
+		id = 5585,
+		config_data = {
+			{
+				20632,
+				20633
+			},
+			{
+				20634,
+				20635
+			},
+			{
+				20636,
+				20637
+			},
+			{
+				20638,
+				20639
+			},
+			{
+				20640,
+				20641
+			},
+			{
+				20642,
+				20643
+			},
+			{
+				20644,
+				20645
+			}
+		},
 		time = {
 			"timer",
 			{
 				{
 					2024,
-					9,
-					26
+					10,
+					10
 				},
 				{
 					0,
@@ -15872,7 +15917,7 @@ pg.activity_template = {
 				{
 					2024,
 					10,
-					10
+					24
 				},
 				{
 					23,
@@ -15882,8 +15927,8 @@ pg.activity_template = {
 			}
 		},
 		page_info = {
-			class_name = "JavelinDressSkinPage",
-			ui_name = "JavelinDressSkinPage"
+			class_name = "SaDingSkinPage",
+			ui_name = "SaDingSkinPage"
 		}
 	},
 	[7011] = {
@@ -16470,15 +16515,15 @@ pg.activity_template = {
 		is_show = 14,
 		id = 7019,
 		config_data = {
-			170,
-			171,
-			172,
-			173,
-			174,
-			175,
-			176,
-			177,
-			178
+			180,
+			181,
+			182,
+			183,
+			184,
+			185,
+			186,
+			187,
+			188
 		},
 		time = {
 			"timer",
@@ -16648,7 +16693,7 @@ pg.activity_template = {
 		type = 89,
 		login_pop = 99,
 		config_id = 0,
-		is_show = 49,
+		is_show = 48,
 		id = 7501,
 		config_data = {
 			{
@@ -22337,6 +22382,7 @@ pg.activity_template = {
 			5551,
 			5581,
 			5583,
+			5585,
 			6000,
 			6001,
 			6002,
@@ -23364,6 +23410,7 @@ pg.activity_template = {
 		5579,
 		5581,
 		5583,
+		5585,
 		7011,
 		7012,
 		7013,

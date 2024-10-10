@@ -192,6 +192,10 @@ function var_0_0.didEnter(arg_7_0)
 		if not arg_7_0.recordState then
 			local function var_15_1(arg_17_0)
 				if arg_17_0 ~= -1 then
+					var_15_0(true)
+
+					arg_7_0.recordState = false
+
 					LeanTween.moveX(arg_7_0.stopRecBtn, arg_7_0.stopRecBtn.rect.width, 0.15)
 				end
 			end
@@ -292,8 +296,6 @@ function var_0_0.didEnter(arg_7_0)
 		quickPlayAnimation(arg_7_0._tf:Find("RightTop"), "anim_dorm3d_photo_FtoS")
 	end, SFX_PANEL)
 	onButton(arg_7_0, arg_7_0._tf:Find("RightTop/Shot/Shot"), function()
-		arg_7_0:emit(Dorm3dPhotoARMediator.ACTIVE_AR_UI, false)
-
 		local function var_32_0(arg_33_0)
 			setActive(arg_7_0.centerPanel, arg_33_0)
 			setActive(arg_7_0._tf:Find("RightTop"), arg_33_0)

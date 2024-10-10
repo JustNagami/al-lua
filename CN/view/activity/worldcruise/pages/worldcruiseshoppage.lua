@@ -89,36 +89,41 @@ end
 function var_0_0.UpdateSkinItem(arg_10_0, arg_10_1, arg_10_2)
 	local var_10_0 = arg_10_0.skinGoods[arg_10_1 + 1]
 	local var_10_1 = var_10_0:getDropInfo()
+	local var_10_2 = var_10_0:GetName() or "??"
 
-	setText(arg_10_2:Find("skin_name"), var_10_0:GetName())
+	if string.match(var_10_2, "(%d+)") then
+		setText(arg_10_2:Find("skin_name"), shortenString(var_10_2, 7))
+	else
+		setText(arg_10_2:Find("skin_name"), shortenString(var_10_2, 8))
+	end
 
-	local var_10_2 = var_10_1:getConfig("ship_group")
-	local var_10_3 = tonumber(var_10_2 .. "1")
+	local var_10_3 = var_10_1:getConfig("ship_group")
+	local var_10_4 = tonumber(var_10_3 .. "1")
 
-	setText(arg_10_2:Find("name"), pg.ship_data_statistics[var_10_3].name)
+	setText(arg_10_2:Find("name"), pg.ship_data_statistics[var_10_4].name)
 	setText(arg_10_2:Find("buy/Text"), var_10_0:GetPrice())
 
-	local var_10_4 = arg_10_2:Find("icon_mask/painting")
-	local var_10_5 = var_10_1:getConfig("painting")
+	local var_10_5 = arg_10_2:Find("icon_mask/painting")
+	local var_10_6 = var_10_1:getConfig("painting")
 
-	if arg_10_0.idx2Painting[arg_10_1] ~= var_10_5 then
-		retPaintingPrefab(var_10_4, var_10_5, "pifu")
-		setPaintingPrefabAsync(var_10_4, var_10_5, "pifu", function()
-			setLocalPosition(var_10_4, {
+	if arg_10_0.idx2Painting[arg_10_1] ~= var_10_6 then
+		retPaintingPrefab(var_10_5, var_10_6, "pifu")
+		setPaintingPrefabAsync(var_10_5, var_10_6, "pifu", function()
+			setLocalPosition(var_10_5, {
 				x = 0,
 				y = 40
 			})
 
-			arg_10_0.paintingList[var_10_5] = var_10_4
-			arg_10_0.idx2Painting[arg_10_1] = var_10_5
+			arg_10_0.paintingList[var_10_6] = var_10_5
+			arg_10_0.idx2Painting[arg_10_1] = var_10_6
 		end)
 	end
 
-	local var_10_6 = var_10_0:canPurchase()
+	local var_10_7 = var_10_0:canPurchase()
 
-	setActive(arg_10_2:Find("mask"), not var_10_6)
+	setActive(arg_10_2:Find("mask"), not var_10_7)
 	onButton(arg_10_0, arg_10_2, function()
-		if not var_10_6 then
+		if not var_10_7 then
 			return
 		end
 
@@ -142,15 +147,23 @@ function var_0_0.UpdateEquipSkinItem(arg_14_0, arg_14_1, arg_14_2)
 	local var_14_1 = var_14_0:getDropInfo()
 
 	updateDrop(arg_14_2:Find("IconTpl"), var_14_1)
-	setText(arg_14_2:Find("name"), var_14_0:GetName())
+
+	local var_14_2 = var_14_0:GetName() or "??"
+
+	if string.match(var_14_2, "(%d+)") then
+		setText(arg_14_2:Find("name"), shortenString(var_14_2, 5))
+	else
+		setText(arg_14_2:Find("name"), shortenString(var_14_2, 6))
+	end
+
 	setText(arg_14_2:Find("buy/Text"), var_14_0:GetPrice())
 	setText(arg_14_2:Find("Text"), i18n("common_already owned") .. string.format("%s/%s", var_14_0:GetOwnedCnt(), var_14_0:getLimitCount()))
 
-	local var_14_2 = var_14_0:canPurchase()
+	local var_14_3 = var_14_0:canPurchase()
 
-	setActive(arg_14_2:Find("mask"), not var_14_2)
+	setActive(arg_14_2:Find("mask"), not var_14_3)
 	onButton(arg_14_0, arg_14_2, function()
-		if not var_14_2 then
+		if not var_14_3 then
 			return
 		end
 
@@ -161,7 +174,7 @@ function var_0_0.UpdateEquipSkinItem(arg_14_0, arg_14_1, arg_14_2)
 				return
 			end
 
-			if not var_14_2 then
+			if not var_14_3 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 
 				return

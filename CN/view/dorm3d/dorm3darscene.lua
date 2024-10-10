@@ -340,160 +340,176 @@ function var_0_0.InitARPlane(arg_37_0)
 		arg_37_0:InitARFinish()
 		arg_37_0:EnabledDrag()
 	end
+
+	if PLATFORM == PLATFORM_WINDOWSEDITOR then
+		arg_37_0:InitARFinish()
+	end
 end
 
-function var_0_0.InitARFinish(arg_38_0)
-	arg_38_0:emit(Dorm3dARMediator.AR_INIT_FINISH)
-	arg_38_0:InitCharacter(arg_38_0.contextData.groupId)
+function var_0_0.Reset(arg_38_0)
+	arg_38_0._initState = true
 
-	if arg_38_0.ARCheck then
-		local var_38_0 = GameObject.Find("Tpl(Clone)").transform
+	if arg_38_0.lady then
+		setActive(arg_38_0.lady, false)
+	end
 
-		arg_38_0.lady:SetParent(var_38_0)
+	arg_38_0:SetARUIActiveWhenInit(false)
+	arg_38_0.aiHelperSC:ResetAll()
+end
+
+function var_0_0.InitARFinish(arg_39_0)
+	setActive(arg_39_0.tipsLabel, false)
+	arg_39_0:emit(Dorm3dARMediator.AR_INIT_FINISH)
+	arg_39_0:InitCharacter(arg_39_0.contextData.groupId)
+
+	if arg_39_0.ARCheck then
+		local var_39_0 = GameObject.Find("Tpl(Clone)").transform
+
+		arg_39_0.lady:SetParent(var_39_0)
 	else
-		arg_38_0.lady:SetParent(arg_38_0.tpl)
+		arg_39_0.lady:SetParent(arg_39_0.tpl)
 	end
 
-	arg_38_0:ResetCharPos()
-	arg_38_0:SetARUIActiveWhenInit(true)
+	arg_39_0:ResetCharPos()
+	arg_39_0:SetARUIActiveWhenInit(true)
 
-	arg_38_0._initState = false
+	arg_39_0._initState = false
 end
 
-function var_0_0.willExit(arg_39_0)
-	arg_39_0.loader:Clear()
-	arg_39_0.aiHelperSC:Destroy()
+function var_0_0.willExit(arg_40_0)
+	arg_40_0.loader:Clear()
+	arg_40_0.aiHelperSC:Destroy()
 
-	local var_39_0, var_39_1 = unpack(string.split(string.lower(var_0_1), "|"))
+	local var_40_0, var_40_1 = unpack(string.split(string.lower(var_0_1), "|"))
 
-	SceneOpMgr.Inst:UnloadSceneAsync(var_39_1, var_39_0)
-	LateUpdateBeat:RemoveListener(arg_39_0.luHandle)
+	SceneOpMgr.Inst:UnloadSceneAsync(var_40_1, var_40_0)
+
+	if arg_40_0.luHandle then
+		LateUpdateBeat:RemoveListener(arg_40_0.luHandle)
+	end
 end
 
-function var_0_0.findUI(arg_40_0)
-	arg_40_0.backBtn = arg_40_0:findTF("BackBtn")
-	arg_40_0.menuListTF = arg_40_0:findTF("MenuList")
-	arg_40_0.initARBtn = arg_40_0:findTF("InitARBtn", arg_40_0.menuListTF)
-	arg_40_0.resetBtn = arg_40_0:findTF("ResetBtn", arg_40_0.menuListTF)
-	arg_40_0.tipTextTF = arg_40_0:findTF("TipText")
-	arg_40_0.tipsLabel = arg_40_0:findTF("tipsText", arg_40_0.tipTextTF)
-	arg_40_0.tipsText = arg_40_0:findTF("tipsText/text", arg_40_0.tipTextTF)
+function var_0_0.findUI(arg_41_0)
+	arg_41_0.backBtn = arg_41_0:findTF("BackBtn")
+	arg_41_0.menuListTF = arg_41_0:findTF("MenuList")
+	arg_41_0.initARBtn = arg_41_0:findTF("InitARBtn", arg_41_0.menuListTF)
+	arg_41_0.resetBtn = arg_41_0:findTF("ResetBtn", arg_41_0.menuListTF)
+	arg_41_0.tipTextTF = arg_41_0:findTF("TipText")
+	arg_41_0.tipsLabel = arg_41_0:findTF("tipsText", arg_41_0.tipTextTF)
+	arg_41_0.tipsText = arg_41_0:findTF("tipsText/text", arg_41_0.tipTextTF)
 
-	setActive(arg_40_0.tipsLabel, false)
+	setActive(arg_41_0.tipsLabel, false)
 
-	arg_40_0.snapShot = GameObject.Find("ARCanvas").transform
-	arg_40_0.arCamera = GameObject.Find("AR Camera"):GetComponent("Camera")
+	arg_41_0.snapShot = GameObject.Find("ARCanvas").transform
+	arg_41_0.arCamera = GameObject.Find("AR Camera"):GetComponent("Camera")
 
-	setActive(arg_40_0.snapShot, false)
+	setActive(arg_41_0.snapShot, false)
 
-	arg_40_0.drag = arg_40_0:findTF("drag")
+	arg_41_0.drag = arg_41_0:findTF("drag")
 
-	local var_40_0 = GameObject.Find("ARScriptHandle")
+	local var_41_0 = GameObject.Find("ARScriptHandle")
 
-	arg_40_0.aiHelperSC = GetComponent(var_40_0, "ARHelper")
-	arg_40_0.aiHelperSC.tplPrefab = GameObject.Find("Tpl")
-	arg_40_0.tpl = GameObject.Find("Tpl").transform
+	arg_41_0.aiHelperSC = GetComponent(var_41_0, "ARHelper")
+	arg_41_0.aiHelperSC.tplPrefab = GameObject.Find("Tpl")
+	arg_41_0.tpl = GameObject.Find("Tpl").transform
 end
 
-function var_0_0.addListener(arg_41_0)
-	onButton(arg_41_0, arg_41_0.backBtn, function()
-		arg_41_0:closeView()
+function var_0_0.addListener(arg_42_0)
+	onButton(arg_42_0, arg_42_0.backBtn, function()
+		arg_42_0:closeView()
 	end, SFX_PANEL)
-	onButton(arg_41_0, arg_41_0.resetBtn, function()
-		arg_41_0.aiHelperSC:ResetAll()
-		arg_41_0:InitARPlane()
+	onButton(arg_42_0, arg_42_0.resetBtn, function()
+		arg_42_0:Reset()
 	end, SFX_PANEL)
 
-	function arg_41_0.aiHelperSC.planeCountCB(arg_44_0, arg_44_1)
-		local var_44_0 = arg_44_0 > 0
+	function arg_42_0.aiHelperSC.planeCountCB(arg_45_0, arg_45_1)
+		local var_45_0 = arg_45_0 > 0
 
-		setActive(arg_41_0.tipsLabel, true)
-		arg_41_0.aiHelperSC:ShowAllPlane(true)
+		setActive(arg_42_0.tipsLabel, true)
+		arg_42_0.aiHelperSC:ShowAllPlane(true)
 
-		if not var_44_0 then
-			setText(arg_41_0.tipsText, i18n("AR_plane_check"))
-		elseif not arg_44_1 then
-			setText(arg_41_0.tipsText, i18n("AR_plane_long_press_to_summon"))
-		else
-			if arg_41_0._initState then
-				arg_41_0:InitARFinish()
-			end
-
-			setActive(arg_41_0.tipsLabel, false)
+		if not var_45_0 then
+			setText(arg_42_0.tipsText, i18n("AR_plane_check"))
+		elseif not arg_45_1 then
+			setText(arg_42_0.tipsText, i18n("AR_plane_long_press_to_summon"))
+		elseif arg_42_0._initState then
+			arg_42_0:InitARFinish()
 		end
 	end
 
-	function arg_41_0.aiHelperSC.distanceCB(arg_45_0)
-		if arg_45_0 < 0.3 then
-			arg_41_0.distanceFlag = true
+	function arg_42_0.aiHelperSC.distanceCB(arg_46_0)
+		if arg_46_0 < 0.3 then
+			arg_42_0.distanceFlag = true
 
-			setActive(arg_41_0.lady, false)
-			pg.TipsMgr.GetInstance():ShowTips(i18n("AR_plane_distance_near"))
-		elseif arg_41_0.distanceFlag then
-			setActive(arg_41_0.lady, true)
+			setActive(arg_42_0.lady, false)
+			setActive(arg_42_0.tipsLabel, true)
+			setText(arg_42_0.tipsText, i18n("AR_plane_distance_near"))
+		elseif arg_42_0.distanceFlag then
+			setActive(arg_42_0.tipsLabel, false)
+			setActive(arg_42_0.lady, true)
 
-			arg_41_0.distanceFlag = false
+			arg_42_0.distanceFlag = false
 		end
 	end
 
-	function arg_41_0.aiHelperSC.insPrefabFailCB()
+	function arg_42_0.aiHelperSC.insPrefabFailCB()
 		warning("距离过近，呼出角色失败")
 		pg.TipsMgr.GetInstance():ShowTips(i18n("AR_plane_summon_fail_by_near"))
 	end
 
-	function arg_41_0.aiHelperSC.insPrefabSuccCB()
-		arg_41_0.aiHelperSC:ShowAllPlane(false)
+	function arg_42_0.aiHelperSC.insPrefabSuccCB()
+		arg_42_0.aiHelperSC:ShowAllPlane(false)
 		pg.TipsMgr.GetInstance():ShowTips(i18n("AR_plane_summon_success"))
-		arg_41_0.aiHelperSC:StopPlaneCheck()
+		arg_42_0.aiHelperSC:StopPlaneCheck()
 	end
 end
 
-function var_0_0.EnabledDrag(arg_48_0)
-	arg_48_0.lady.localScale = Vector3(5, 5, 5)
+function var_0_0.EnabledDrag(arg_49_0)
+	arg_49_0.lady.localScale = Vector3(5, 5, 5)
 
-	local var_48_0 = LuaHelper.GetWorldCorners(arg_48_0._tf:GetComponent("RectTransform"))
-	local var_48_1 = var_48_0[2].x - var_48_0[0].x
-	local var_48_2 = var_48_0[2].y - var_48_0[0].y
+	local var_49_0 = LuaHelper.GetWorldCorners(arg_49_0._tf:GetComponent("RectTransform"))
+	local var_49_1 = var_49_0[2].x - var_49_0[0].x
+	local var_49_2 = var_49_0[2].y - var_49_0[0].y
 
-	arg_48_0.widthRate = var_48_1 / pg.CameraFixMgr.GetInstance().actualWidth
-	arg_48_0.heightRate = var_48_2 / pg.CameraFixMgr.GetInstance().actualHeight
-	arg_48_0.halfWidth = var_48_1 / 2
-	arg_48_0.halfHeight = var_48_2 / 2
-	arg_48_0.isEnableDrag = true
+	arg_49_0.widthRate = var_49_1 / pg.CameraFixMgr.GetInstance().actualWidth
+	arg_49_0.heightRate = var_49_2 / pg.CameraFixMgr.GetInstance().actualHeight
+	arg_49_0.halfWidth = var_49_1 / 2
+	arg_49_0.halfHeight = var_49_2 / 2
+	arg_49_0.isEnableDrag = true
 
-	local var_48_3 = arg_48_0.drag.gameObject
+	local var_49_3 = arg_49_0.drag.gameObject
 
-	arg_48_0.zoom = GetOrAddComponent(arg_48_0._tf, typeof(PinchZoom))
-	arg_48_0.zoom.enabled = true
+	arg_49_0.zoom = GetOrAddComponent(arg_49_0._tf, typeof(PinchZoom))
+	arg_49_0.zoom.enabled = true
 
-	local var_48_4 = GetOrAddComponent(var_48_3, typeof(EventTriggerListener))
-	local var_48_5 = Vector3(0, 0, 0)
+	local var_49_4 = GetOrAddComponent(var_49_3, typeof(EventTriggerListener))
+	local var_49_5 = Vector3(0, 0, 0)
 
-	var_48_4:AddBeginDragFunc(function(arg_49_0, arg_49_1)
+	var_49_4:AddBeginDragFunc(function(arg_50_0, arg_50_1)
 		if Application.isEditor and Input.GetMouseButton(2) then
 			return
 		end
 
-		if arg_48_0.zoom.processing then
+		if arg_49_0.zoom.processing then
 			return
 		end
 
-		setButtonEnabled(var_48_3, false)
+		setButtonEnabled(var_49_3, false)
 
 		if Input.touchCount > 1 then
 			return
 		end
 
-		local var_49_0 = var_0_0.Screen2Local(var_48_3.transform.parent, arg_49_1.position)
+		local var_50_0 = var_0_0.Screen2Local(var_49_3.transform.parent, arg_50_1.position)
 
-		var_48_5 = arg_48_0.drag.localPosition - var_49_0
+		var_49_5 = arg_49_0.drag.localPosition - var_50_0
 	end)
-	var_48_4:AddDragFunc(function(arg_50_0, arg_50_1)
+	var_49_4:AddDragFunc(function(arg_51_0, arg_51_1)
 		if Application.isEditor and Input.GetMouseButton(2) then
 			return
 		end
 
-		if arg_48_0.zoom.processing then
+		if arg_49_0.zoom.processing then
 			return
 		end
 
@@ -501,43 +517,43 @@ function var_0_0.EnabledDrag(arg_48_0)
 			return
 		end
 
-		local var_50_0 = var_0_0.Screen2Local(var_48_3.transform.parent, arg_50_1.position)
+		local var_51_0 = var_0_0.Screen2Local(var_49_3.transform.parent, arg_51_1.position)
 
-		arg_48_0.drag.localPosition = Vector3(var_50_0.x, var_50_0.y, 0) + var_48_5
-		arg_48_0.tpl.localPosition = arg_48_0:GetUI2Char(arg_50_1.position)
+		arg_49_0.drag.localPosition = Vector3(var_51_0.x, var_51_0.y, 0) + var_49_5
+		arg_49_0.tpl.localPosition = arg_49_0:GetUI2Char(arg_51_1.position)
 	end)
-	var_48_4:AddDragEndFunc(function()
-		setButtonEnabled(var_48_3, true)
+	var_49_4:AddDragEndFunc(function()
+		setButtonEnabled(var_49_3, true)
 	end)
 
-	var_48_4.enabled = true
+	var_49_4.enabled = true
 	Input.multiTouchEnabled = true
-	arg_48_0.arCamera.orthographicSize = 8
-	arg_48_0.arCamera.orthographic = true
-	arg_48_0.luHandle = LateUpdateBeat:CreateListener(function()
-		if arg_48_0.zoom.processing then
-			local var_52_0 = arg_48_0.drag.localScale.x
+	arg_49_0.arCamera.orthographicSize = 8
+	arg_49_0.arCamera.orthographic = true
+	arg_49_0.luHandle = LateUpdateBeat:CreateListener(function()
+		if arg_49_0.zoom.processing then
+			local var_53_0 = arg_49_0.drag.localScale.x
 
-			arg_48_0.tpl.localScale = Vector3(var_52_0, var_52_0, var_52_0)
+			arg_49_0.tpl.localScale = Vector3(var_53_0, var_53_0, var_53_0)
 		end
-	end, arg_48_0)
+	end, arg_49_0)
 
-	LateUpdateBeat:AddListener(arg_48_0.luHandle)
+	LateUpdateBeat:AddListener(arg_49_0.luHandle)
 end
 
-function var_0_0.GetUI2Char(arg_53_0, arg_53_1)
-	local var_53_0 = arg_53_0.widthRate * arg_53_1.x - arg_53_0.halfWidth
-	local var_53_1 = arg_53_0.heightRate * arg_53_1.y - arg_53_0.halfHeight
+function var_0_0.GetUI2Char(arg_54_0, arg_54_1)
+	local var_54_0 = arg_54_0.widthRate * arg_54_1.x - arg_54_0.halfWidth
+	local var_54_1 = arg_54_0.heightRate * arg_54_1.y - arg_54_0.halfHeight
 
-	return Vector3(var_53_0, var_53_1, 2)
+	return Vector3(var_54_0, var_54_1, 2)
 end
 
-function var_0_0.Screen2Local(arg_54_0, arg_54_1)
-	local var_54_0 = GameObject.Find("UICamera"):GetComponent("Camera")
-	local var_54_1 = arg_54_0:GetComponent("RectTransform")
-	local var_54_2 = LuaHelper.ScreenToLocal(var_54_1, arg_54_1, var_54_0)
+function var_0_0.Screen2Local(arg_55_0, arg_55_1)
+	local var_55_0 = GameObject.Find("UICamera"):GetComponent("Camera")
+	local var_55_1 = arg_55_0:GetComponent("RectTransform")
+	local var_55_2 = LuaHelper.ScreenToLocal(var_55_1, arg_55_1, var_55_0)
 
-	return Vector3(var_54_2.x, var_54_2.y, 0)
+	return Vector3(var_55_2.x, var_55_2.y, 0)
 end
 
 return var_0_0

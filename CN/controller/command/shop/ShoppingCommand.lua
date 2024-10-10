@@ -134,12 +134,28 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		end
 	end
 
+	if var_1_3.group_limit > 0 and (var_1_3.type == DROP_TYPE_DORM3D_FURNITURE or var_1_3.type == DROP_TYPE_DORM3D_GIFT) then
+		local var_1_18 = 0
+
+		if var_1_3.type == DROP_TYPE_DORM3D_FURNITURE then
+			var_1_18 = getProxy(ApartmentProxy):GetFurnitureShopCount(var_1_3.effect_args[1])
+		elseif var_1_3.type == DROP_TYPE_DORM3D_GIFT then
+			var_1_18 = getProxy(ApartmentProxy):GetGiftShopCount(var_1_3.effect_args[1])
+		end
+
+		if var_1_18 >= var_1_3.group_limit then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
+
+			return
+		end
+	end
+
 	if var_1_3.discount ~= 0 and CommonCommodity.InCommodityDiscountTime(var_1_3.id) then
 		var_1_12 = var_1_12 * ((100 - var_1_3.discount) / 100)
 	end
 
 	if var_1_12 > var_1_5[id2res(var_1_3.resource_type)] then
-		local var_1_18 = Drop.New({
+		local var_1_19 = Drop.New({
 			type = DROP_TYPE_RESOURCE,
 			id = var_1_3.resource_type
 		}):getName()
@@ -155,15 +171,15 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		elseif var_1_3.resource_type == 4 or var_1_3.resource_type == 14 then
 			GoShoppingMsgBox(i18n("switch_to_shop_tip_3", i18n("word_gem")), ChargeScene.TYPE_DIAMOND)
 		elseif not ItemTipPanel.ShowItemTip(DROP_TYPE_RESOURCE, var_1_3.resource_type) then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("buyProp_noResource_error", var_1_18))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("buyProp_noResource_error", var_1_19))
 		end
 
 		return
 	end
 
-	local var_1_19 = {}
+	local var_1_20 = {}
 
-	table.insert(var_1_19, function(arg_5_0)
+	table.insert(var_1_20, function(arg_5_0)
 		if var_1_3.genre == ShopArgs.GiftPackage or var_1_3.genre == ShopArgs.NewServerShop then
 			local var_5_0 = Drop.New({
 				count = 1,
@@ -206,7 +222,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 
 		arg_5_0()
 	end)
-	seriesAsync(var_1_19, function()
+	seriesAsync(var_1_20, function()
 		pg.ConnectionMgr.GetInstance():Send(16001, {
 			id = var_1_1,
 			number = var_1_2
@@ -331,13 +347,13 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 				if var_1_3.limit_args then
 					for iter_11_0, iter_11_1 in ipairs(var_1_3.limit_args) do
 						if type(iter_11_1) == "table" and (var_1_3.type == DROP_TYPE_DORM3D_FURNITURE or var_1_3.type == DROP_TYPE_DORM3D_GIFT) then
-							if iter_11_1[1] == "count" then
+							if iter_11_1[1] == "dailycount" then
 								if var_1_3.type == DROP_TYPE_DORM3D_FURNITURE then
 									getProxy(ApartmentProxy):AddDailyFurnitureShopCount(var_1_3.effect_args[1], var_1_3.effect_args[2] or 1)
 								elseif var_1_3.type == DROP_TYPE_DORM3D_GIFT then
 									getProxy(ApartmentProxy):AddDailyGiftShopCount(var_1_3.effect_args[1], var_1_3.effect_args[2] or 1)
 								end
-							elseif iter_11_1[1] == "dailycount" then
+							elseif iter_11_1[1] == "count" then
 								if var_1_3.type == DROP_TYPE_DORM3D_FURNITURE then
 									getProxy(ApartmentProxy):AddPermanentFurnitureShopCount(var_1_3.effect_args[1], var_1_3.effect_args[2] or 1)
 								elseif var_1_3.type == DROP_TYPE_DORM3D_GIFT then
@@ -345,6 +361,14 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 								end
 							end
 						end
+					end
+				end
+
+				if var_1_3.group_limit > 0 and (var_1_3.type == DROP_TYPE_DORM3D_FURNITURE or var_1_3.type == DROP_TYPE_DORM3D_GIFT) then
+					if var_1_3.type == DROP_TYPE_DORM3D_FURNITURE then
+						getProxy(ApartmentProxy):AddDailyFurnitureShopCount(var_1_3.effect_args[1], var_1_3.effect_args[2] or 1)
+					elseif var_1_3.type == DROP_TYPE_DORM3D_GIFT then
+						getProxy(ApartmentProxy):AddDailyGiftShopCount(var_1_3.effect_args[1], var_1_3.effect_args[2] or 1)
 					end
 				end
 

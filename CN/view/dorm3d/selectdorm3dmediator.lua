@@ -87,6 +87,11 @@ function var_0_0.initNotificationHandleDic(arg_7_0)
 			local var_15_0 = arg_15_1:getBody()
 
 			arg_15_0:sendNotification(GAME.GO_SCENE, SCENE.DORM3D_ROOM, var_15_0)
+		end,
+		[ApartmentProxy.ZERO_HOUR_REFRESH] = function(arg_16_0, arg_16_1)
+			local var_16_0 = arg_16_1:getBody()
+
+			arg_16_0.viewComponent:UpdateStamina()
 		end
 	}
 end

@@ -183,21 +183,27 @@ function var_0_0.Execute(arg_27_0, arg_27_1)
 		return
 	end
 
-	local var_27_0 = _.detect(var_0_1, function(arg_28_0)
+	local var_27_0 = getProxy(ContextProxy):getCurrentContext()
+
+	if var_27_0 and var_27_0.mediator.__cname ~= "NewMainMediator" then
+		return
+	end
+
+	local var_27_1 = _.detect(var_0_1, function(arg_28_0)
 		local var_28_0 = arg_28_0.id
 		local var_28_1 = arg_28_0.condition
 
 		return not pg.NewStoryMgr.GetInstance():IsPlayed(var_28_0) and var_28_1()
 	end)
 
-	if not var_27_0 then
+	if not var_27_1 then
 		arg_27_1()
 
 		return
 	end
 
-	local var_27_1 = var_27_0.id
-	local var_27_2 = var_27_0.args()
+	local var_27_2 = var_27_1.id
+	local var_27_3 = var_27_1.args()
 
 	if pg.SeriesGuideMgr.GetInstance():isRunning() then
 		arg_27_1()
@@ -212,20 +218,20 @@ function var_0_0.Execute(arg_27_0, arg_27_1)
 	end
 
 	pg.m02:sendNotification(GAME.STORY_UPDATE, {
-		storyId = var_27_1
+		storyId = var_27_2
 	})
 
-	if var_27_1 == "DORM3D_GUIDE_01" then
-		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(1, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var_27_1)))
+	if var_27_2 == "DORM3D_GUIDE_01" then
+		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(1, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var_27_2)))
 	end
 
-	pg.NewGuideMgr.GetInstance():Play(var_27_1, var_27_2, function()
-		if var_27_1 == "DORM3D_GUIDE_01" then
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(2, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var_27_1)))
+	pg.NewGuideMgr.GetInstance():Play(var_27_2, var_27_3, function()
+		if var_27_2 == "DORM3D_GUIDE_01" then
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(2, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var_27_2)))
 		end
 
-		if var_27_0.nextOne then
-			local var_29_0, var_29_1 = var_27_0.nextOne()
+		if var_27_1.nextOne then
+			local var_29_0, var_29_1 = var_27_1.nextOne()
 
 			arg_27_0:PlayNextOne(var_29_0, var_29_1)
 		end

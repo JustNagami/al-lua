@@ -60,7 +60,7 @@ pg.dorm3d_favor_trigger = {
 		is_repeat = 0,
 		type = 5,
 		id = 1007,
-		num = 30,
+		num = 100,
 		is_daily_max = 0
 	},
 	[1008] = {
@@ -69,7 +69,7 @@ pg.dorm3d_favor_trigger = {
 		is_repeat = 0,
 		type = 6,
 		id = 1008,
-		num = 80,
+		num = 100,
 		is_daily_max = 0
 	},
 	[1009] = {
@@ -78,7 +78,7 @@ pg.dorm3d_favor_trigger = {
 		is_repeat = 1,
 		type = 3,
 		id = 1009,
-		num = 150,
+		num = 50,
 		is_daily_max = 0
 	},
 	[1010] = {
@@ -87,7 +87,7 @@ pg.dorm3d_favor_trigger = {
 		is_repeat = 1,
 		type = 3,
 		id = 1010,
-		num = 200,
+		num = 150,
 		is_daily_max = 0
 	},
 	[1011] = {
@@ -123,7 +123,7 @@ pg.dorm3d_favor_trigger = {
 		is_repeat = 1,
 		type = 7,
 		id = 1014,
-		num = 50,
+		num = 40,
 		is_daily_max = 1
 	},
 	[1015] = {
@@ -132,7 +132,7 @@ pg.dorm3d_favor_trigger = {
 		is_repeat = 1,
 		type = 1,
 		id = 1015,
-		num = 10,
+		num = 40,
 		is_daily_max = 1
 	},
 	[1016] = {
@@ -141,7 +141,7 @@ pg.dorm3d_favor_trigger = {
 		is_repeat = 1,
 		type = 1,
 		id = 1016,
-		num = 20,
+		num = 80,
 		is_daily_max = 2
 	},
 	[1017] = {
@@ -150,7 +150,7 @@ pg.dorm3d_favor_trigger = {
 		is_repeat = 1,
 		type = 1,
 		id = 1017,
-		num = 30,
+		num = 120,
 		is_daily_max = 3
 	},
 	[1018] = {
@@ -168,7 +168,7 @@ pg.dorm3d_favor_trigger = {
 		is_repeat = 1,
 		type = 3,
 		id = 1019,
-		num = 600,
+		num = 300,
 		is_daily_max = 0
 	},
 	all = {

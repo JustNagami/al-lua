@@ -1259,10 +1259,12 @@ local var_0_1 = {
 			var_207_0.pendingDic = ApartmentProxy.PendingRandom(var_207_0.roomId, var_207_0.groupIds)
 		end
 
-		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataEnter(1))
+		local var_207_2 = arg_207_0.context.data.roomId
+
+		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataEnter(var_207_2, 1))
 		getProxy(ApartmentProxy):RecordEnterTime()
 
-		local var_207_2 = arg_207_0.context.onRemoved
+		local var_207_3 = arg_207_0.context.onRemoved
 
 		function arg_207_0.context.onRemoved()
 			local var_208_0 = 0
@@ -1272,8 +1274,8 @@ local var_0_1 = {
 				var_208_0 = pg.TimeMgr.GetInstance():GetServerTime() - var_208_1
 			end
 
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataEnter(2, var_208_0))
-			existCall(var_207_2)
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataEnter(var_207_2, 2, var_208_0))
+			existCall(var_207_3)
 		end
 
 		arg_207_1()

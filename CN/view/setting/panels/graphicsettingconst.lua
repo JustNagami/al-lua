@@ -151,6 +151,12 @@ var_0_0.settings = {
 			Off = 1,
 			On = 2,
 			HighQuality = 3
+		},
+		childList = {
+			16,
+			17,
+			18,
+			19
 		}
 	},
 	{
@@ -193,7 +199,7 @@ function var_0_0.HandleCustomSetting()
 		local var_1_4 = PlayerPrefs.GetInt(iter_1_1.playerPrefsname, 0)
 
 		if var_1_4 ~= 0 then
-			if iter_1_1.displayType == var_0_1.toggle then
+			if var_1_3.displayType == var_0_1.toggle then
 				var_1_4 = var_1_4 == 2 and true or false
 			end
 		else
@@ -201,17 +207,21 @@ function var_0_0.HandleCustomSetting()
 		end
 
 		if var_1_3.displayType == var_0_1.select then
-			for iter_1_2, iter_1_3 in pairs(iter_1_1.Enum) do
-				if iter_1_3 == var_1_4 then
-					var_1_4 = iter_1_2
+			if iter_1_1.childList ~= nil and var_1_4 == 1 then
+				print(123)
+			else
+				for iter_1_2, iter_1_3 in pairs(iter_1_1.Enum) do
+					if iter_1_3 == var_1_4 then
+						var_1_4 = iter_1_2
 
-					break
+						break
+					end
 				end
+
+				local var_1_5 = ReflectionHelp.RefGetField(typeof("BLHX.Rendering." .. iter_1_1.EnumType), tostring(var_1_4), nil)
+
+				ReflectionHelp.RefSetField(var_1_2:GetType(), iter_1_1.CsharpValue, var_1_2, var_1_5)
 			end
-
-			local var_1_5 = ReflectionHelp.RefGetField(typeof("BLHX.Rendering." .. iter_1_1.EnumType), tostring(var_1_4), nil)
-
-			ReflectionHelp.RefSetField(var_1_2:GetType(), iter_1_1.CsharpValue, var_1_2, var_1_5)
 		else
 			ReflectionHelp.RefSetField(var_1_2:GetType(), iter_1_1.CsharpValue, var_1_2, var_1_4)
 		end

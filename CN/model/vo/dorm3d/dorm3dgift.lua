@@ -30,12 +30,17 @@ function var_0_0.GetShopID(arg_7_0)
 
 	for iter_7_0 = 1, #var_7_0 - 1 do
 		local var_7_2 = var_7_0[iter_7_0]
-		local var_7_3 = pg.shop_template[var_7_2].limit_args[1]
+		local var_7_3 = pg.shop_template[var_7_2]
+		local var_7_4 = var_7_3.limit_args[1]
 
-		if not var_7_3 then
+		if not var_7_4 and var_7_3.group_type == 0 then
 			return var_7_2
-		elseif var_7_3[1] == "dailycount" or var_7_3[1] == "count" then
-			if var_7_1 < var_7_3[3] then
+		elseif var_7_4 and (var_7_4[1] == "dailycount" or var_7_4[1] == "count") then
+			if var_7_1 < var_7_4[3] then
+				return var_7_2
+			end
+		elseif var_7_3.group_type == 2 then
+			if var_7_1 < var_7_3.group_limit then
 				return var_7_2
 			end
 		else

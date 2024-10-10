@@ -544,4 +544,14 @@ function var_0_0.GetGiftCommodity(arg_66_0, arg_66_1, arg_66_2)
 	return var_66_0
 end
 
+function var_0_0.GetGroupPayCount(arg_67_0, arg_67_1)
+	for iter_67_0, iter_67_1 in ipairs(arg_67_0.normalGroupList) do
+		if iter_67_1.shop_id == arg_67_1 then
+			return arg_67_0.normalGroupList[iter_67_0].pay_count or 0
+		end
+	end
+
+	return 0
+end
+
 return var_0_0

@@ -3,7 +3,7 @@
 	dialogbox = 2,
 	mode = 2,
 	alpha = 0,
-	id = "DORM3DTOUCH1303",
+	id = "DORM3DTOUCH1304",
 	hideSkip = true,
 	hideAuto = true,
 	scripts = {

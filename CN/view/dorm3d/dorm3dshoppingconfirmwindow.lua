@@ -68,6 +68,18 @@ function var_0_0.didEnter(arg_5_0)
 		var_5_0 = i18n("dorm3d_purchase_confirm_original", arg_5_0.contextData.content.icon, arg_5_0.contextData.content.cost, arg_5_0.contextData.content.name)
 	end
 
+	switch(arg_5_0.contextData.drop.__cname, {
+		Dorm3dGift = function()
+			local var_9_0 = arg_5_0.contextData.content.weekLimit
+
+			if var_9_0 then
+				var_5_0 = var_5_0 .. i18n("dorm3d_purchase_weekly_limit", var_9_0[1], var_9_0[2])
+			end
+		end,
+		Dorm3dFurniture = function()
+			return
+		end
+	})
 	setText(arg_5_0._tf:Find("Window/Content"), var_5_0)
 	setText(arg_5_0._tf:Find("Window/Confirm/Text"), i18n("msgbox_text_confirm"))
 	setText(arg_5_0._tf:Find("Window/Cancel/Text"), i18n("msgbox_text_cancel"))
@@ -76,53 +88,53 @@ function var_0_0.didEnter(arg_5_0)
 	})
 end
 
-function var_0_0.InitBanner(arg_9_0)
-	for iter_9_0 = 1, #arg_9_0.unlockBanners do
-		local var_9_0 = arg_9_0.scrollSnap:AddChild()
+function var_0_0.InitBanner(arg_11_0)
+	for iter_11_0 = 1, #arg_11_0.unlockBanners do
+		local var_11_0 = arg_11_0.scrollSnap:AddChild()
 
-		LoadImageSpriteAsync("dorm3dbanner/" .. arg_9_0.unlockBanners[iter_9_0], var_9_0)
+		LoadImageSpriteAsync("dorm3dbanner/" .. arg_11_0.unlockBanners[iter_11_0], var_11_0)
 	end
 
-	arg_9_0.scrollSnap:SetUp()
+	arg_11_0.scrollSnap:SetUp()
 end
 
-function var_0_0.InitUIList(arg_10_0)
-	arg_10_0.bubbleList:make(function(arg_11_0, arg_11_1, arg_11_2)
-		if arg_11_0 == UIItemList.EventInit then
-			local var_11_0 = arg_11_1 + 1
-			local var_11_1 = arg_10_0.unlockTips[var_11_0]
+function var_0_0.InitUIList(arg_12_0)
+	arg_12_0.bubbleList:make(function(arg_13_0, arg_13_1, arg_13_2)
+		if arg_13_0 == UIItemList.EventInit then
+			local var_13_0 = arg_13_1 + 1
+			local var_13_1 = arg_12_0.unlockTips[var_13_0]
 
-			LoadImageSpriteAtlasAsync("ui/shoptip_atlas", "icon_" .. var_11_1, arg_11_2:Find("icon/icon"), true)
-			setText(arg_11_2:Find("bubble/Text"), i18n("dorm3d_shop_tag" .. var_11_1))
-			setActive(arg_11_2:Find("bubble"), false)
-			onToggle(arg_10_0, arg_11_2, function(arg_12_0)
-				setActive(arg_11_2:Find("icon/select"), arg_12_0)
-				setActive(arg_11_2:Find("icon/unselect"), not arg_12_0)
-				setActive(arg_11_2:Find("bubble"), arg_12_0)
+			LoadImageSpriteAtlasAsync("ui/shoptip_atlas", "icon_" .. var_13_1, arg_13_2:Find("icon/icon"), true)
+			setText(arg_13_2:Find("bubble/Text"), i18n("dorm3d_shop_tag" .. var_13_1))
+			setActive(arg_13_2:Find("bubble"), false)
+			onToggle(arg_12_0, arg_13_2, function(arg_14_0)
+				setActive(arg_13_2:Find("icon/select"), arg_14_0)
+				setActive(arg_13_2:Find("icon/unselect"), not arg_14_0)
+				setActive(arg_13_2:Find("bubble"), arg_14_0)
 			end)
 		end
 	end)
-	arg_10_0.bubbleList:align(#arg_10_0.unlockTips)
+	arg_12_0.bubbleList:align(#arg_12_0.unlockTips)
 end
 
-function var_0_0.InitDropIcon(arg_13_0)
-	LoadImageSpriteAtlasAsync(arg_13_0.contextData.drop:GetIcon(), "", arg_13_0._tf:Find("Window/Item/Dorm3dIconTpl/icon"), true)
-	GetImageSpriteFromAtlasAsync("weaponframes", "dorm3d_" .. ItemRarity.Rarity2Print(arg_13_0.contextData.drop:GetRarity()), arg_13_0._tf:Find("Window/Item/Dorm3dIconTpl"))
-	setActive(arg_13_0._tf:Find("Window/Item/sp"), arg_13_0.isSP)
-	setText(arg_13_0._tf:Find("Window/Item/sp/Text"), i18n("dorm3d_purchase_confirm_tip"))
+function var_0_0.InitDropIcon(arg_15_0)
+	LoadImageSpriteAtlasAsync(arg_15_0.contextData.drop:GetIcon(), "", arg_15_0._tf:Find("Window/Item/Dorm3dIconTpl/icon"), true)
+	GetImageSpriteFromAtlasAsync("weaponframes", "dorm3d_" .. ItemRarity.Rarity2Print(arg_15_0.contextData.drop:GetRarity()), arg_15_0._tf:Find("Window/Item/Dorm3dIconTpl"))
+	setActive(arg_15_0._tf:Find("Window/Item/sp"), arg_15_0.isSP)
+	setText(arg_15_0._tf:Find("Window/Item/sp/Text"), i18n("dorm3d_purchase_confirm_tip"))
 
-	if arg_13_0.addFavor then
-		setActive(arg_13_0._tf:Find("Window/Item/gift"), true)
-		setText(arg_13_0._tf:Find("Window/Item/gift/Text"), "+" .. arg_13_0.addFavor)
+	if arg_15_0.addFavor then
+		setActive(arg_15_0._tf:Find("Window/Item/gift"), true)
+		setText(arg_15_0._tf:Find("Window/Item/gift/Text"), "+" .. arg_15_0.addFavor)
 	end
 end
 
-function var_0_0.willExit(arg_14_0)
-	arg_14_0.scrollSnap:Dispose()
+function var_0_0.willExit(arg_16_0)
+	arg_16_0.scrollSnap:Dispose()
 
-	arg_14_0.scrollSnap = nil
+	arg_16_0.scrollSnap = nil
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_14_0._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_16_0._tf)
 end
 
 return var_0_0

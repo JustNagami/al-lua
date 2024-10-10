@@ -24685,7 +24685,7 @@ _G.pg.base.gametip.volleyball_end_tip = {
 	tip = "和天狼星度过了美好的下午"
 }
 _G.pg.base.gametip.volleyball_end_award = {
-	tip = "精力-1，天狼星契合度+20"
+	tip = "精力-1，天狼星契合度+40"
 }
 _G.pg.base.gametip.sure_exit_volleyball = {
 	tip = "是否确认退出沙滩排球"
@@ -24785,7 +24785,7 @@ _G.pg.base.gametip.dorm3d_furniture_save_success = {
 	tip = "家具保存成功"
 }
 _G.pg.base.gametip.dorm3d_removable = {
-	tip = "(滑动屏幕左侧移动，靠近角色吧）"
+	tip = "(拖动屏幕左侧移动，靠近角色吧）"
 }
 _G.pg.base.gametip.grapihcs3d_setting_quality = {
 	tip = "画质品质"
@@ -24902,7 +24902,7 @@ _G.pg.base.gametip.cruise_shop_title = {
 	tip = "往期商店"
 }
 _G.pg.base.gametip.dorm3d_favor_level_story = {
-	tip = "特殊剧情"
+	tip = "契合度剧情"
 }
 _G.pg.base.gametip.dorm3d_already_gifted = {
 	tip = "已赠送"
@@ -24950,7 +24950,7 @@ _G.pg.base.gametip.dorm3d_gift_maximum = {
 	tip = "已达到最大数量限制"
 }
 _G.pg.base.gametip.dorm3d_need_construct_item = {
-	tip = "缺少建设开发券"
+	tip = "缺少建设券"
 }
 _G.pg.base.gametip.AR_plane_check = {
 	tip = "请检测一个平面"
@@ -24966,4 +24966,25 @@ _G.pg.base.gametip.AR_plane_summon_fail_by_near = {
 }
 _G.pg.base.gametip.AR_plane_summon_success = {
 	tip = "呼出角色成功"
+}
+_G.pg.base.gametip.dorm3d_day_night_switching1 = {
+	tip = "当前已经为白天"
+}
+_G.pg.base.gametip.dorm3d_day_night_switching2 = {
+	tip = "当前已经为夜晚"
+}
+_G.pg.base.gametip.dorm3d_download_complete = {
+	tip = "资源下载成功"
+}
+_G.pg.base.gametip.dorm3d_resource_downloading = {
+	tip = "资源正在下载中"
+}
+_G.pg.base.gametip.dorm3d_resource_delete = {
+	tip = "资源删除成功"
+}
+_G.pg.base.gametip.dorm3d_favor_maximize = {
+	tip = "契合度已满，是否继续赠礼？"
+}
+_G.pg.base.gametip.dorm3d_purchase_weekly_limit = {
+	tip = "（本周购买$1/$2）"
 }
