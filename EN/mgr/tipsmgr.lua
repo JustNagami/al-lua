@@ -16,7 +16,7 @@ function var_0_1.Init(arg_2_0, arg_2_1)
 	arg_2_0._count = 0
 	arg_2_0._tipTable = {}
 
-	PoolMgr.GetInstance():GetUI("TipPanel", true, function(arg_3_0)
+	LoadAndInstantiateAsync("ui", "TipPanel", function(arg_3_0)
 		arg_2_0._go = arg_3_0
 
 		arg_2_0._go:SetActive(false)
@@ -30,7 +30,7 @@ function var_0_1.Init(arg_2_0, arg_2_1)
 		arg_2_0._grid = arg_2_0._go.transform:Find("Grid")
 
 		arg_2_1()
-	end)
+	end, true)
 end
 
 function var_0_1.ShowTips(arg_4_0, arg_4_1, arg_4_2, arg_4_3)

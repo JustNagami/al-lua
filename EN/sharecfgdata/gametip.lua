@@ -7823,12 +7823,6 @@ _G.pg.base.gametip.help_level_ui = {
 	tip = {
 		{
 			icon = {
-				atlas = "helpbg/level_ui_help_1",
-				path = ""
-			}
-		},
-		{
-			icon = {
 				atlas = "helpbg/level_ui_help_2",
 				path = ""
 			}
@@ -8311,16 +8305,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "This Meowfficer does not have any Talent Points."
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Get Amagi(CV) guaranteed with every 200 event builds (can be done up to 4 times)!"
+	tip = "Rate UP for Roma, Leonardo da Vincil!"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "Vittorio Veneto added to standard build pool!"
+	tip = "Ulrich von Hutten, Prinz Adalbert added to standard build pool!"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "Duca degli Abruzzi and others added to standard build pool!"
+	tip = "Madgeburg added to standard build pool!"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "Aquila added to standard build pool!"
+	tip = "Ulrich von Hutten, Elbe added to standard build pool!"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -25158,4 +25152,10 @@ _G.pg.base.gametip.dorm3d_favor_maximize = {
 }
 _G.pg.base.gametip.dorm3d_purchase_weekly_limit = {
 	tip = "(Weekly purchase: $1/$2)"
+}
+_G.pg.base.gametip.battle_battleMediator_remainTime = {
+	tip = "Time Remaining"
+}
+_G.pg.base.gametip.world_file_tip = {
+	tip = "* Scroll the page by sliding the screen. Close the page by tapping the screen."
 }

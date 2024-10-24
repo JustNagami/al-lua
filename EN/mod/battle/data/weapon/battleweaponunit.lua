@@ -217,11 +217,11 @@ function var_0_9.setBulletSkin(arg_17_0, arg_17_1, arg_17_2)
 	if arg_17_0._derivateSkinID then
 		local var_17_0 = var_0_6.GetBulletTmpDataFromID(arg_17_2).type
 
-		if var_17_0 == var_0_1.BulletType.BOMB then
+		if var_17_0 == var_0_1.BulletType.BOMB and arg_17_0._derivateBoom ~= "" then
 			arg_17_1:SetModleID(arg_17_0._derivateBoom, nil, arg_17_0._derviateHitFX)
-		elseif var_17_0 == var_0_1.BulletType.TORPEDO then
+		elseif var_17_0 == var_0_1.BulletType.TORPEDO and arg_17_0._derivateTorpedo ~= "" then
 			arg_17_1:SetModleID(arg_17_0._derivateTorpedo, nil, arg_17_0._derviateHitFX)
-		else
+		elseif arg_17_0._derivateBullet ~= "" then
 			arg_17_1:SetModleID(arg_17_0._derivateBullet, nil, arg_17_0._derviateHitFX)
 		end
 

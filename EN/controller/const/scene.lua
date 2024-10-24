@@ -1286,33 +1286,37 @@ local var_0_1 = {
 		else
 			arg_209_1()
 		end
+	end,
+	Dorm3dGiftMediator = function(arg_210_0, arg_210_1)
+		getProxy(ApartmentProxy):InitGiftDaily()
+		arg_210_1()
 	end
 }
 
-function SCENE.CheckPreloadData(arg_210_0, arg_210_1)
-	local var_210_0 = {}
+function SCENE.CheckPreloadData(arg_211_0, arg_211_1)
+	local var_211_0 = {}
 
-	table.insert(var_210_0, function(arg_211_0)
-		switch(arg_210_0.context.mediator.__cname, var_0_1, function(arg_212_0, arg_212_1)
-			arg_212_1()
-		end, arg_210_0, arg_211_0)
+	table.insert(var_211_0, function(arg_212_0)
+		switch(arg_211_0.context.mediator.__cname, var_0_1, function(arg_213_0, arg_213_1)
+			arg_213_1()
+		end, arg_211_0, arg_212_0)
 	end)
 
-	local var_210_1 = arg_210_0.context.viewComponent:loadingQueue()
+	local var_211_1 = arg_211_0.context.viewComponent:loadingQueue()
 
-	if var_210_1 then
-		table.insert(var_210_0, function(arg_213_0)
-			local var_213_0 = arg_210_0.context.data
+	if var_211_1 then
+		table.insert(var_211_0, function(arg_214_0)
+			local var_214_0 = arg_211_0.context.data
 
-			arg_210_0.context.irregularSequence = true
+			arg_211_0.context.irregularSequence = true
 
-			var_210_1(function(arg_214_0)
-				var_213_0.resumeCallback = arg_214_0
+			var_211_1(function(arg_215_0)
+				var_214_0.resumeCallback = arg_215_0
 
-				arg_213_0()
+				arg_214_0()
 			end)
 		end)
 	end
 
-	seriesAsync(var_210_0, arg_210_1)
+	seriesAsync(var_211_0, arg_211_1)
 end

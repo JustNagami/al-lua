@@ -31,7 +31,7 @@ function var_0_0.register(arg_1_0)
 			pg.TrackerMgr.GetInstance():Tracking(TRACKING_7D_RETENTION)
 		end
 
-		var_3_0:updateAttireFrame(AttireConst.TYPE_COMBAT_UI_STYLE, arg_3_0.battle_ui or 0)
+		arg_1_0.data:updateAttireFrame(AttireConst.TYPE_COMBAT_UI_STYLE, arg_3_0.battle_ui or 0)
 	end)
 	arg_1_0:on(11004, function(arg_4_0)
 		if not arg_1_0.data then

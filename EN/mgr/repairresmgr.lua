@@ -9,7 +9,7 @@ var_0_0.TYPE_PAINTING = 8
 var_0_0.TYPE_CIPHER = 16
 
 function var_0_0.Init(arg_1_0, arg_1_1)
-	PoolMgr.GetInstance():GetUI("RepairUI", true, function(arg_2_0)
+	LoadAndInstantiateAsync("ui", "RepairUI", function(arg_2_0)
 		arg_1_0._go = arg_2_0
 		arg_1_0._tf = arg_1_0._go.transform
 
@@ -31,7 +31,7 @@ function var_0_0.Init(arg_1_0, arg_1_1)
 
 		setText(arg_1_0._tf:Find("window/top/title"), i18n("msgbox_repair_title"))
 		arg_1_1()
-	end)
+	end, true, true)
 end
 
 function var_0_0.InitDefaultResBtn(arg_3_0)

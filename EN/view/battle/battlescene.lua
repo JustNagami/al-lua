@@ -550,6 +550,10 @@ function var_0_0.initPauseWindow(arg_31_0)
 	arg_31_0.mainTFs = {}
 	arg_31_0.vanTFs = {}
 
+	setText(arg_31_0:findTF("label", arg_31_0.LeftTimeContainer), i18n("battle_battleMediator_remainTime"))
+	setText(arg_31_0:findTF("window/van/power/title", arg_31_0.pauseWindow), i18n("word_vanguard_fleet"))
+	setText(arg_31_0:findTF("window/main/power/title", arg_31_0.pauseWindow), i18n("word_main_fleet"))
+
 	local function var_31_0(arg_32_0, arg_32_1, arg_32_2)
 		for iter_32_0 = 1, 3 do
 			local var_32_0 = arg_32_1:Find("ship_" .. iter_32_0)
@@ -585,6 +589,9 @@ function var_0_0.initPauseWindow(arg_31_0)
 
 	arg_31_0.continueBtn = arg_31_0:findTF("window/button_container/continue", arg_31_0.pauseWindow)
 	arg_31_0.leaveBtn = arg_31_0:findTF("window/button_container/leave", arg_31_0.pauseWindow)
+
+	setText(arg_31_0:findTF("pic", arg_31_0.continueBtn), i18n("battle_battleMediator_goOnFight"))
+	setText(arg_31_0:findTF("pic", arg_31_0.leaveBtn), i18n("battle_battleMediator_existFight"))
 
 	local var_31_4 = var_31_1:GetBattleType()
 

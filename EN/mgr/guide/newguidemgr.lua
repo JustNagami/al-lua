@@ -45,7 +45,7 @@ function var_0_0.Init(arg_4_0, arg_4_1)
 	arg_4_0.sceneRecords = {}
 	arg_4_0.state = var_0_2
 
-	PoolMgr.GetInstance():GetUI("NewGuideUI", true, function(arg_5_0)
+	LoadAndInstantiateAsync("ui", "NewGuideUI", function(arg_5_0)
 		arg_4_0._go = arg_5_0
 		arg_4_0._tf = arg_4_0._go.transform
 
@@ -65,7 +65,7 @@ function var_0_0.Init(arg_4_0, arg_4_1)
 
 		var_0_9(arg_4_0, arg_4_0._tf)
 		arg_4_1()
-	end)
+	end, true, true)
 end
 
 function var_0_0.PlayNothing(arg_6_0)
