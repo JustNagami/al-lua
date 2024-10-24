@@ -25,6 +25,7 @@ function var_0_0.Ctor(arg_1_0)
 		MainMetaSkillSequence.New(),
 		MainCrusingActSequence.New(),
 		MainReceiveBossRushAwardsSequence.New(),
+		MainActivateInsTopicSequence.New(),
 		MainNotificationWindowSequence.New(),
 		MainRequestFeastActDataSequence.New(),
 		MainActDataExpirationReminderSequence.New(),

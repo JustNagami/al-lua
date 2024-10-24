@@ -248778,3 +248778,426 @@ _G.pg.base.aircraft_template[165420] = {
 		165430
 	}
 }
+_G.pg.base.aircraft_template[165511] = {
+	attack_power = 2,
+	name = "冈依沙瓦号祈雨Lv1",
+	type = 3,
+	accuracy = 23,
+	model_ID = "xiafei_yingxing",
+	ACC_growth = 0,
+	crash_DMG = 1,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 2,
+	id = 165511,
+	icon = "huixing",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1605,
+	speed = 60,
+	max_hp = 42,
+	scale = 1,
+	weapon_ID = {
+		165521
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0.64,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[165512] = {
+	id = 165512,
+	name = "冈依沙瓦号祈雨Lv2",
+	hp_growth = 1846,
+	base = 165511,
+	max_hp = 48,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165522
+	}
+}
+_G.pg.base.aircraft_template[165513] = {
+	id = 165513,
+	name = "冈依沙瓦号祈雨Lv3",
+	hp_growth = 2087,
+	base = 165511,
+	max_hp = 54,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165523
+	}
+}
+_G.pg.base.aircraft_template[165514] = {
+	id = 165514,
+	name = "冈依沙瓦号祈雨Lv4",
+	hp_growth = 2327,
+	base = 165511,
+	max_hp = 61,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165524
+	}
+}
+_G.pg.base.aircraft_template[165515] = {
+	id = 165515,
+	name = "冈依沙瓦号祈雨Lv5",
+	hp_growth = 2568,
+	base = 165511,
+	max_hp = 67,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165525
+	}
+}
+_G.pg.base.aircraft_template[165516] = {
+	id = 165516,
+	name = "冈依沙瓦号祈雨Lv6",
+	hp_growth = 2809,
+	base = 165511,
+	max_hp = 73,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165526
+	}
+}
+_G.pg.base.aircraft_template[165517] = {
+	id = 165517,
+	name = "冈依沙瓦号祈雨Lv7",
+	hp_growth = 3050,
+	base = 165511,
+	max_hp = 79,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165527
+	}
+}
+_G.pg.base.aircraft_template[165518] = {
+	id = 165518,
+	name = "冈依沙瓦号祈雨Lv8",
+	hp_growth = 3290,
+	base = 165511,
+	max_hp = 86,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165528
+	}
+}
+_G.pg.base.aircraft_template[165519] = {
+	id = 165519,
+	name = "冈依沙瓦号祈雨Lv9",
+	hp_growth = 3531,
+	base = 165511,
+	max_hp = 92,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165529
+	}
+}
+_G.pg.base.aircraft_template[165520] = {
+	id = 165520,
+	name = "冈依沙瓦号祈雨Lv10",
+	hp_growth = 3772,
+	base = 165511,
+	max_hp = 98,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165530
+	}
+}
+_G.pg.base.aircraft_template[165531] = {
+	attack_power = 2,
+	name = "冈依沙瓦号爆金币Lv1",
+	type = 3,
+	accuracy = 23,
+	model_ID = "xiafei_yingxing",
+	ACC_growth = 0,
+	crash_DMG = 1,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 2,
+	id = 165531,
+	icon = "huixing",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1605,
+	speed = 60,
+	max_hp = 42,
+	scale = 1,
+	weapon_ID = {
+		165541
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0.64,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[165532] = {
+	id = 165532,
+	name = "冈依沙瓦号爆金币Lv2",
+	hp_growth = 1846,
+	base = 165531,
+	max_hp = 48,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165542
+	}
+}
+_G.pg.base.aircraft_template[165533] = {
+	id = 165533,
+	name = "冈依沙瓦号爆金币Lv3",
+	hp_growth = 2087,
+	base = 165531,
+	max_hp = 54,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165543
+	}
+}
+_G.pg.base.aircraft_template[165534] = {
+	id = 165534,
+	name = "冈依沙瓦号爆金币Lv4",
+	hp_growth = 2327,
+	base = 165531,
+	max_hp = 61,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165544
+	}
+}
+_G.pg.base.aircraft_template[165535] = {
+	id = 165535,
+	name = "冈依沙瓦号爆金币Lv5",
+	hp_growth = 2568,
+	base = 165531,
+	max_hp = 67,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165545
+	}
+}
+_G.pg.base.aircraft_template[165536] = {
+	id = 165536,
+	name = "冈依沙瓦号爆金币Lv6",
+	hp_growth = 2809,
+	base = 165531,
+	max_hp = 73,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165546
+	}
+}
+_G.pg.base.aircraft_template[165537] = {
+	id = 165537,
+	name = "冈依沙瓦号爆金币Lv7",
+	hp_growth = 3050,
+	base = 165531,
+	max_hp = 79,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165547
+	}
+}
+_G.pg.base.aircraft_template[165538] = {
+	id = 165538,
+	name = "冈依沙瓦号爆金币Lv8",
+	hp_growth = 3290,
+	base = 165531,
+	max_hp = 86,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165548
+	}
+}
+_G.pg.base.aircraft_template[165539] = {
+	id = 165539,
+	name = "冈依沙瓦号爆金币Lv9",
+	hp_growth = 3531,
+	base = 165531,
+	max_hp = 92,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165549
+	}
+}
+_G.pg.base.aircraft_template[165540] = {
+	id = 165540,
+	name = "冈依沙瓦号爆金币Lv10",
+	hp_growth = 3772,
+	base = 165531,
+	max_hp = 98,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165550
+	}
+}
+_G.pg.base.aircraft_template[3218501] = {
+	attack_power = 2,
+	name = "【2024风帆二期】我方支援弹幕 光明女神的怜悯 隐形飞机",
+	type = 3,
+	accuracy = 23,
+	model_ID = "xiafei_yingxing",
+	ACC_growth = 0,
+	crash_DMG = 1,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 2,
+	id = 3218501,
+	icon = "huixing",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 3772,
+	speed = 60,
+	max_hp = 98,
+	scale = 1,
+	weapon_ID = {
+		3218502
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0.64,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}

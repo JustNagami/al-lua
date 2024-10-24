@@ -3,7 +3,7 @@
 var_0_0.optionsPath = {
 	"main/top/btn_home"
 }
-var_0_0.ACT_ID = 5023
+var_0_0.ACT_ID = 5625
 var_0_0.GAME_ID = 59
 var_0_0.ANIMATIONS = {
 	"Phase_00",

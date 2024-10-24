@@ -6,6 +6,7 @@ var_0_0.CMD_SPECIAL_GAME = 3
 var_0_0.CMD_HIGH_SCORE = 4
 var_0_0.CMD_PLAY = 5
 var_0_0.CMD_SPECIAL_TRACK = 100
+var_0_0.CMD_SUCCESS_DATA = 101
 
 function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_0 = arg_1_1:getBody()

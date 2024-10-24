@@ -313,6 +313,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	arg_1_0.facade:registerCommand(GAME.ACT_BOSS_EXCHANGE_TICKET, ActivityBossExchangeTicketCommand)
 	arg_1_0.facade:registerCommand(GAME.ACT_INSTAGRAM_OP, InstagramActivityCommand)
 	arg_1_0.facade:registerCommand(GAME.ACT_INSTAGRAM_FETCH, InstagramFetchCommand)
+	arg_1_0.facade:registerCommand(GAME.ACT_INSTAGRAM_CHAT, InstagramChatCommand)
 	arg_1_0.facade:registerCommand(GAME.ACT_BEAT_MONSTER_NIAN, ActivityBeatMonsterNianCommand)
 	arg_1_0.facade:registerCommand(GAME.PUZZLE_PIECE_OP, ActivityPuzzlePicecOPCommand)
 	arg_1_0.facade:registerCommand(GAME.ACTIVITY_BUILD_POOL_EXCHANGE, BuildPoolExchangeCommand)
@@ -504,6 +505,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	arg_1_0.facade:registerCommand(GAME.APARTMENT_COLLECTION_ITEM, ApartmentCollectionItemCommand)
 	arg_1_0.facade:registerCommand(GAME.APARTMENT_TRACK, Dorm3dTrackCommand)
 	arg_1_0.facade:registerCommand(GAME.SELECT_DORM_ENTER, SelectDorm3dEnterCommand)
+	arg_1_0.facade:registerCommand(GAME.DORM_SET_CALL, DormSetCallCommand)
 end
 
 return var_0_0

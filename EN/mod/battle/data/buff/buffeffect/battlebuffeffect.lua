@@ -371,7 +371,7 @@ function var_0_3.onFriendlyAircraftDying(arg_49_0, arg_49_1, arg_49_2, arg_49_3)
 	end
 end
 
-function var_0_3.onFriendlyShipDying(arg_50_0, arg_50_1, arg_50_2)
+function var_0_3.onTeammateShipDying(arg_50_0, arg_50_1, arg_50_2)
 	arg_50_0:onTrigger(arg_50_1, arg_50_2)
 end
 

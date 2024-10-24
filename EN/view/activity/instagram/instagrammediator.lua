@@ -6,6 +6,10 @@ var_0_0.ON_COMMENT = "InstagramMediator:ON_COMMENT"
 var_0_0.ON_REPLY_UPDATE = "InstagramMediator:ON_REPLY_UPDATE"
 var_0_0.ON_READED = "InstagramMediator:ON_READED"
 var_0_0.ON_COMMENT_LIST_UPDATE = "InstagramMediator:ON_COMMENT_LIST_UPDATE"
+var_0_0.ON_REFRESH_TIP = "InstagramMediator:ON_REFRESH_TIP"
+var_0_0.CLOSE_ALL = "InstagramMediator:CLOSE_ALL"
+var_0_0.CLOSE_DETAIL = "InstagramMediator:CLOSE_DETAIL"
+var_0_0.BACK_PRESSED = "InstagramMediator:BACK_PRESSED"
 
 function var_0_0.register(arg_1_0)
 	getProxy(InstagramProxy):InitLocalConfigs()
@@ -56,42 +60,52 @@ function var_0_0.register(arg_1_0)
 		end
 	end)
 	arg_1_0.viewComponent:SetProxy(getProxy(InstagramProxy))
+	arg_1_0:bind(var_0_0.CLOSE_ALL, function(arg_9_0)
+		arg_1_0:sendNotification(InstagramMainMediator.CLOSE_ALL)
+	end)
 end
 
-function var_0_0.listNotificationInterests(arg_9_0)
+function var_0_0.listNotificationInterests(arg_10_0)
 	return {
-		GAME.ACT_INSTAGRAM_OP_DONE
+		GAME.ACT_INSTAGRAM_OP_DONE,
+		var_0_0.CLOSE_DETAIL,
+		var_0_0.BACK_PRESSED
 	}
 end
 
-function var_0_0.handleNotification(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_1:getName()
-	local var_10_1 = arg_10_1:getBody()
+function var_0_0.handleNotification(arg_11_0, arg_11_1)
+	local var_11_0 = arg_11_1:getName()
+	local var_11_1 = arg_11_1:getBody()
 
-	local function var_10_2()
-		arg_10_0.viewComponent:SetProxy(getProxy(InstagramProxy))
-		arg_10_0.viewComponent:UpdateInstagram(var_10_1.id)
-		arg_10_0.viewComponent:UpdateSelectedInstagram(var_10_1.id)
+	local function var_11_2()
+		arg_11_0.viewComponent:SetProxy(getProxy(InstagramProxy))
+		arg_11_0.viewComponent:UpdateInstagram(var_11_1.id)
+		arg_11_0.viewComponent:UpdateSelectedInstagram(var_11_1.id)
+		arg_11_0:sendNotification(InstagramMainMediator.CHANGE_JUUS_TIP)
 	end
 
-	if var_10_0 == GAME.ACT_INSTAGRAM_OP_DONE then
-		arg_10_0.viewComponent:SetProxy(getProxy(InstagramProxy))
+	if var_11_0 == GAME.ACT_INSTAGRAM_OP_DONE then
+		arg_11_0.viewComponent:SetProxy(getProxy(InstagramProxy))
 
-		if var_10_1.cmd == ActivityConst.INSTAGRAM_OP_SHARE then
+		if var_11_1.cmd == ActivityConst.INSTAGRAM_OP_SHARE then
 			pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeInstagram)
-		elseif var_10_1.cmd == ActivityConst.INSTAGRAM_OP_LIKE then
-			var_10_2()
-			arg_10_0.viewComponent:UpdateLikeBtn()
+		elseif var_11_1.cmd == ActivityConst.INSTAGRAM_OP_LIKE then
+			var_11_2()
+			arg_11_0.viewComponent:UpdateLikeBtn()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ins_click_like_success"))
-		elseif var_10_1.cmd == ActivityConst.INSTAGRAM_OP_COMMENT then
+		elseif var_11_1.cmd == ActivityConst.INSTAGRAM_OP_COMMENT then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ins_push_comment_success"))
-			var_10_2()
-		elseif var_10_1.cmd == ActivityConst.INSTAGRAM_OP_ACTIVE or var_10_1.cmd == ActivityConst.INSTAGRAM_OP_UPDATE then
-			arg_10_0.viewComponent:InitList()
-			var_10_2()
-		elseif var_10_1.cmd == ActivityConst.INSTAGRAM_OP_MARK_READ then
-			var_10_2()
+			var_11_2()
+		elseif var_11_1.cmd == ActivityConst.INSTAGRAM_OP_ACTIVE or var_11_1.cmd == ActivityConst.INSTAGRAM_OP_UPDATE then
+			arg_11_0.viewComponent:InitList()
+			var_11_2()
+		elseif var_11_1.cmd == ActivityConst.INSTAGRAM_OP_MARK_READ then
+			var_11_2()
 		end
+	elseif var_11_0 == var_0_0.CLOSE_DETAIL then
+		arg_11_0.viewComponent:CloseDetail()
+	elseif var_11_0 == var_0_0.BACK_PRESSED then
+		arg_11_0.viewComponent:onBackPressed()
 	end
 end
 

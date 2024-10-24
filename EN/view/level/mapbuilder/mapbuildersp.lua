@@ -337,6 +337,8 @@ function var_0_0.UpdateMapItem(arg_27_0, arg_27_1, arg_27_2)
 			var_27_6 = table.indexof(var_27_4.list, arg_27_2.id) + 1
 		elseif arg_27_2:IsSpChapter() or arg_27_2:IsEXChapter() then
 			var_27_6 = 3
+		elseif arg_27_0.contextData.map:isHardMap() then
+			var_27_6 = 3
 		end
 	end
 

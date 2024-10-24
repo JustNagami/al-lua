@@ -845,7 +845,8 @@ function var_0_0.IsShowTipById(arg_70_0)
 		[ActivityConst.NEWMEIXIV4_SKIRMISH_ID] = NewMeixiV4SkirmishPage.IsShowRed,
 		[ActivityConst.JIUJIU_YOYO_ID] = JiujiuYoyoPage.IsShowRed,
 		[ActivityConst.SENRANKAGURA_TRAIN_ACT_ID] = SenrankaguraTrainScene.IsShowRed,
-		[ActivityConst.DORM_SIGN_ID] = DormSignPage.IsShowRed
+		[ActivityConst.DORM_SIGN_ID] = DormSignPage.IsShowRed,
+		[ActivityConst.GOASTSTORYACTIVITY_ID] = GhostSkinPageLayer.IsShowRed
 	}
 
 	local var_70_0 = var_0_0.ShowTipTableById[arg_70_0.id]

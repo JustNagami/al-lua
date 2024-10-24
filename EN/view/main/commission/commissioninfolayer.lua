@@ -96,193 +96,184 @@ function var_0_0.updateCrusingEntrance(arg_7_0)
 	end, SFX_PANEL)
 end
 
-function var_0_0.NotifyIns(arg_9_0, arg_9_1, arg_9_2)
-	local var_9_0 = arg_9_1:ExistMsg() and (not arg_9_2 or arg_9_2:isEnd())
-
-	setActive(arg_9_0.activityInsBtn, var_9_0)
-
-	if var_9_0 then
-		setActive(arg_9_0.activityInsBtn:Find("tip"), arg_9_1:ShouldShowTip())
-		onButton(arg_9_0, arg_9_0.activityInsBtn, function()
-			arg_9_0:emit(CommissionInfoMediator.ON_INS)
-		end, SFX_PANEL)
-	end
+function var_0_0.NotifyIns(arg_9_0)
+	setActive(arg_9_0.activityInsBtn, false)
 end
 
-function var_0_0.UpdateLinkPanel(arg_11_0)
-	local var_11_0 = false
+function var_0_0.UpdateLinkPanel(arg_10_0)
+	local var_10_0 = false
 
-	for iter_11_0 = 1, arg_11_0.linkBtnPanel.childCount do
-		if isActive(arg_11_0.linkBtnPanel:GetChild(iter_11_0 - 1)) then
-			var_11_0 = true
+	for iter_10_0 = 1, arg_10_0.linkBtnPanel.childCount do
+		if isActive(arg_10_0.linkBtnPanel:GetChild(iter_10_0 - 1)) then
+			var_10_0 = true
 
 			break
 		end
 	end
 
-	setActive(arg_11_0.linkBtnPanel.parent, var_11_0)
+	setActive(arg_10_0.linkBtnPanel.parent, var_10_0)
 end
 
-function var_0_0.didEnter(arg_12_0)
-	onButton(arg_12_0, arg_12_0.oilbubbleTF, function()
+function var_0_0.didEnter(arg_11_0)
+	onButton(arg_11_0, arg_11_0.oilbubbleTF, function()
 		if not getProxy(PlayerProxy):getRawData():CanGetResource(PlayerConst.ResOil) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("player_harvestResource_error_fullBag"))
 
 			return
 		end
 
-		arg_12_0:PlayGetResAnimation(arg_12_0.oilbubbleTF, function()
-			arg_12_0:emit(CommissionInfoMediator.GET_OIL_RES)
+		arg_11_0:PlayGetResAnimation(arg_11_0.oilbubbleTF, function()
+			arg_11_0:emit(CommissionInfoMediator.GET_OIL_RES)
 		end)
 	end, SFX_PANEL)
-	onButton(arg_12_0, arg_12_0.goldbubbleTF, function()
+	onButton(arg_11_0, arg_11_0.goldbubbleTF, function()
 		if not getProxy(PlayerProxy):getRawData():CanGetResource(PlayerConst.ResGold) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("player_harvestResource_error_fullBag"))
 
 			return
 		end
 
-		arg_12_0:PlayGetResAnimation(arg_12_0.goldbubbleTF, function()
-			arg_12_0:emit(CommissionInfoMediator.GET_GOLD_RES)
+		arg_11_0:PlayGetResAnimation(arg_11_0.goldbubbleTF, function()
+			arg_11_0:emit(CommissionInfoMediator.GET_GOLD_RES)
 		end)
 	end, SFX_PANEL)
-	onButton(arg_12_0, arg_12_0.classbubbleTF, function()
+	onButton(arg_11_0, arg_11_0.classbubbleTF, function()
 		if not getProxy(NavalAcademyProxy):GetClassVO():CanGetRes() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("player_harvestResource_error_fullBag"))
 
 			return
 		end
 
-		arg_12_0:PlayGetResAnimation(arg_12_0.classbubbleTF, function()
-			arg_12_0:emit(CommissionInfoMediator.GET_CLASS_RES)
+		arg_11_0:PlayGetResAnimation(arg_11_0.classbubbleTF, function()
+			arg_11_0:emit(CommissionInfoMediator.GET_CLASS_RES)
 		end)
 	end, SFX_PANEL)
-	onButton(arg_12_0, arg_12_0._tf, function()
-		if arg_12_0.contextData.inFinished then
+	onButton(arg_11_0, arg_11_0._tf, function()
+		if arg_11_0.contextData.inFinished then
 			return
 		end
 
-		arg_12_0.isPaying = true
+		arg_11_0.isPaying = true
 
-		arg_12_0:PlayExitAnimation(function()
-			arg_12_0:emit(var_0_0.ON_CLOSE)
+		arg_11_0:PlayExitAnimation(function()
+			arg_11_0:emit(var_0_0.ON_CLOSE)
 
-			arg_12_0.isPaying = false
+			arg_11_0.isPaying = false
 		end)
 	end, SOUND_BACK)
-	arg_12_0:InitItems()
-	arg_12_0:UpdateUrItemEntrance()
-	arg_12_0:updateCrusingEntrance()
-	arg_12_0.metaBossBtn:Flush()
+	arg_11_0:InitItems()
+	arg_11_0:UpdateUrItemEntrance()
+	arg_11_0:updateCrusingEntrance()
+	arg_11_0.metaBossBtn:Flush()
 end
 
-function var_0_0.PlayGetResAnimation(arg_21_0, arg_21_1, arg_21_2)
-	arg_21_0.isPaying = true
+function var_0_0.PlayGetResAnimation(arg_20_0, arg_20_1, arg_20_2)
+	arg_20_0.isPaying = true
 
-	local var_21_0 = arg_21_1:GetComponent(typeof(Animation))
-	local var_21_1 = arg_21_1:GetComponent(typeof(DftAniEvent))
+	local var_20_0 = arg_20_1:GetComponent(typeof(Animation))
+	local var_20_1 = arg_20_1:GetComponent(typeof(DftAniEvent))
 
-	var_21_1:SetEndEvent(nil)
-	var_21_1:SetEndEvent(function()
-		var_21_1:SetEndEvent(nil)
-		arg_21_2()
+	var_20_1:SetEndEvent(nil)
+	var_20_1:SetEndEvent(function()
+		var_20_1:SetEndEvent(nil)
+		arg_20_2()
 
-		arg_21_0.isPaying = false
+		arg_20_0.isPaying = false
 	end)
-	var_21_0:Play("anim_commission_bubble_get")
+	var_20_0:Play("anim_commission_bubble_get")
 end
 
-function var_0_0.InitItems(arg_23_0)
-	for iter_23_0, iter_23_1 in ipairs(arg_23_0.items) do
-		iter_23_1:Init()
+function var_0_0.InitItems(arg_22_0)
+	for iter_22_0, iter_22_1 in ipairs(arg_22_0.items) do
+		iter_22_1:Init()
 	end
 end
 
-function var_0_0.OnUpdateEventInfo(arg_24_0)
-	arg_24_0.items[1]:Update()
+function var_0_0.OnUpdateEventInfo(arg_23_0)
+	arg_23_0.items[1]:Update()
 end
 
-function var_0_0.OnUpdateClass(arg_25_0)
-	arg_25_0.items[2]:Update()
+function var_0_0.OnUpdateClass(arg_24_0)
+	arg_24_0.items[2]:Update()
 end
 
-function var_0_0.OnUpdateTechnology(arg_26_0)
-	arg_26_0.items[3]:Update()
+function var_0_0.OnUpdateTechnology(arg_25_0)
+	arg_25_0.items[3]:Update()
 end
 
-function var_0_0.setPlayer(arg_27_0, arg_27_1)
-	arg_27_0.playerVO = arg_27_1
+function var_0_0.setPlayer(arg_26_0, arg_26_1)
+	arg_26_0.playerVO = arg_26_1
 
-	arg_27_0:UpdateOilRes(arg_27_1)
-	arg_27_0:UpdateGoldRes(arg_27_1)
-	arg_27_0:UpdateClassRes()
+	arg_26_0:UpdateOilRes(arg_26_1)
+	arg_26_0:UpdateGoldRes(arg_26_1)
+	arg_26_0:UpdateClassRes()
 end
 
-function var_0_0.OnPlayerUpdate(arg_28_0, arg_28_1)
-	local var_28_0 = arg_28_0.playerVO
-	local var_28_1 = arg_28_1
+function var_0_0.OnPlayerUpdate(arg_27_0, arg_27_1)
+	local var_27_0 = arg_27_0.playerVO
+	local var_27_1 = arg_27_1
 
-	if var_28_1.oilField ~= var_28_0.oilField then
-		arg_28_0:UpdateOilRes(var_28_1)
+	if var_27_1.oilField ~= var_27_0.oilField then
+		arg_27_0:UpdateOilRes(var_27_1)
 	end
 
-	if var_28_1.goldField ~= var_28_0.goldField then
-		arg_28_0:UpdateGoldRes(var_28_1)
+	if var_27_1.goldField ~= var_27_0.goldField then
+		arg_27_0:UpdateGoldRes(var_27_1)
 	end
 
-	if var_28_1.expField ~= var_28_0.expField then
-		arg_28_0:UpdateClassRes()
+	if var_27_1.expField ~= var_27_0.expField then
+		arg_27_0:UpdateClassRes()
 	end
 
-	arg_28_0.playerVO = var_28_1
+	arg_27_0.playerVO = var_27_1
 end
 
-function var_0_0.UpdateOilRes(arg_29_0, arg_29_1)
-	arg_29_0.oilbubbleCG.alpha = 1
-	arg_29_0.oilbubbleTF.localScale = Vector3.one
+function var_0_0.UpdateOilRes(arg_28_0, arg_28_1)
+	arg_28_0.oilbubbleCG.alpha = 1
+	arg_28_0.oilbubbleTF.localScale = Vector3.one
 
-	setActive(arg_29_0.oilbubbleTF, arg_29_1.oilField ~= 0)
+	setActive(arg_28_0.oilbubbleTF, arg_28_1.oilField ~= 0)
 
-	arg_29_0.oilTF.text = arg_29_1.oilField
+	arg_28_0.oilTF.text = arg_28_1.oilField
 end
 
-function var_0_0.UpdateGoldRes(arg_30_0, arg_30_1)
-	arg_30_0.goldbubbleCG.alpha = 1
-	arg_30_0.goldbubbleTF.localScale = Vector3.one
+function var_0_0.UpdateGoldRes(arg_29_0, arg_29_1)
+	arg_29_0.goldbubbleCG.alpha = 1
+	arg_29_0.goldbubbleTF.localScale = Vector3.one
 
-	setActive(arg_30_0.goldbubbleTF, arg_30_1.goldField ~= 0)
+	setActive(arg_29_0.goldbubbleTF, arg_29_1.goldField ~= 0)
 
-	arg_30_0.goldTF.text = arg_30_1.goldField
+	arg_29_0.goldTF.text = arg_29_1.goldField
 end
 
-function var_0_0.UpdateClassRes(arg_31_0)
-	local var_31_0 = getProxy(NavalAcademyProxy):GetClassVO():GetGenResCnt()
+function var_0_0.UpdateClassRes(arg_30_0)
+	local var_30_0 = getProxy(NavalAcademyProxy):GetClassVO():GetGenResCnt()
 
-	arg_31_0.classbubbleCG.alpha = 1
-	arg_31_0.classbubbleTF.localScale = Vector3.one
+	arg_30_0.classbubbleCG.alpha = 1
+	arg_30_0.classbubbleTF.localScale = Vector3.one
 
-	setActive(arg_31_0.classbubbleTF, var_31_0 > 0)
+	setActive(arg_30_0.classbubbleTF, var_30_0 > 0)
 
-	arg_31_0.classTF.text = var_31_0
+	arg_30_0.classTF.text = var_30_0
 end
 
-function var_0_0.onBackPressed(arg_32_0)
+function var_0_0.onBackPressed(arg_31_0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-	triggerButton(arg_32_0._tf)
+	triggerButton(arg_31_0._tf)
 end
 
-function var_0_0.willExit(arg_33_0)
-	arg_33_0:UnBlurPanel()
+function var_0_0.willExit(arg_32_0)
+	arg_32_0:UnBlurPanel()
 
-	for iter_33_0, iter_33_1 in ipairs(arg_33_0.items) do
-		iter_33_1:Dispose()
+	for iter_32_0, iter_32_1 in ipairs(arg_32_0.items) do
+		iter_32_1:Dispose()
 	end
 
-	arg_33_0.items = nil
+	arg_32_0.items = nil
 
-	arg_33_0.metaBossBtn:Dispose()
+	arg_32_0.metaBossBtn:Dispose()
 
-	arg_33_0.metaBossBtn = nil
+	arg_32_0.metaBossBtn = nil
 end
 
 return var_0_0

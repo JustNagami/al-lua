@@ -378,689 +378,703 @@ function var_0_7.ShowAirFightScoreBar(arg_45_0)
 	arg_45_0._scoreBarView:SetActive(true)
 end
 
-function var_0_7.onStageInit(arg_46_0, arg_46_1)
-	arg_46_0:InitJoystick()
-	arg_46_0:InitScene()
-	arg_46_0:InitTimer()
-	arg_46_0:InitEnemyHpBar()
-	arg_46_0:InitAirStrikeIcon()
-	arg_46_0:InitCommonWarning()
-	arg_46_0:InitAutoBtn()
-	arg_46_0:InitMainDamagedView()
+function var_0_7.ScaleUISpeed(arg_46_0, arg_46_1)
+	local var_46_0 = arg_46_0._ui:findTF("AutoBtn/on"):GetComponent(typeof(Animation))
+
+	if var_46_0 then
+		var_46_0:get_Item("autobtn_toOn").speed = arg_46_1
+	end
+
+	local var_46_1 = arg_46_0._ui:findTF("AutoBtn/off"):GetComponent(typeof(Animation))
+
+	if var_46_1 then
+		var_46_1:get_Item("autobtn_toOff").speed = arg_46_1
+	end
 end
 
-function var_0_7.onEnemyHit(arg_47_0, arg_47_1)
-	local var_47_0 = arg_47_1.Data
+function var_0_7.onStageInit(arg_47_0, arg_47_1)
+	arg_47_0:InitJoystick()
+	arg_47_0:InitScene()
+	arg_47_0:InitTimer()
+	arg_47_0:InitEnemyHpBar()
+	arg_47_0:InitAirStrikeIcon()
+	arg_47_0:InitCommonWarning()
+	arg_47_0:InitAutoBtn()
+	arg_47_0:InitMainDamagedView()
+end
 
-	if var_47_0:GetDiveInvisible() and not var_47_0:GetDiveDetected() then
+function var_0_7.onEnemyHit(arg_48_0, arg_48_1)
+	local var_48_0 = arg_48_1.Data
+
+	if var_48_0:GetDiveInvisible() and not var_48_0:GetDiveDetected() then
 		return
 	end
 
-	local var_47_1 = arg_47_0._enemyHpBar:GetCurrentTarget()
+	local var_48_1 = arg_48_0._enemyHpBar:GetCurrentTarget()
 
-	if var_47_1 then
-		if var_47_1 ~= var_47_0 then
-			arg_47_0._enemyHpBar:SwitchTarget(var_47_0, arg_47_0._dataProxy:GetUnitList())
+	if var_48_1 then
+		if var_48_1 ~= var_48_0 then
+			arg_48_0._enemyHpBar:SwitchTarget(var_48_0, arg_48_0._dataProxy:GetUnitList())
 		end
 	else
-		arg_47_0._enemyHpBar:SwitchTarget(var_47_0, arg_47_0._dataProxy:GetUnitList())
+		arg_48_0._enemyHpBar:SwitchTarget(var_48_0, arg_48_0._dataProxy:GetUnitList())
 	end
 end
 
-function var_0_7.onEnemyHpUpdate(arg_48_0, arg_48_1)
-	local var_48_0 = arg_48_1.Dispatcher
+function var_0_7.onEnemyHpUpdate(arg_49_0, arg_49_1)
+	local var_49_0 = arg_49_1.Dispatcher
 
-	if var_48_0 == arg_48_0._enemyHpBar:GetCurrentTarget() and (not var_48_0:GetDiveInvisible() or var_48_0:GetDiveDetected()) then
-		arg_48_0._enemyHpBar:UpdateHpBar()
+	if var_49_0 == arg_49_0._enemyHpBar:GetCurrentTarget() and (not var_49_0:GetDiveInvisible() or var_49_0:GetDiveDetected()) then
+		arg_49_0._enemyHpBar:UpdateHpBar()
 	end
 end
 
-function var_0_7.onPlayerMainUnitHpUpdate(arg_49_0, arg_49_1)
-	if arg_49_1.Data.dHP < 0 then
-		arg_49_0._mainDamagedView:Play()
+function var_0_7.onPlayerMainUnitHpUpdate(arg_50_0, arg_50_1)
+	if arg_50_1.Data.dHP < 0 then
+		arg_50_0._mainDamagedView:Play()
 	end
 end
 
-function var_0_7.onSkillFloat(arg_50_0, arg_50_1)
-	local var_50_0 = arg_50_1.Data
-	local var_50_1 = var_50_0.coverHrzIcon
-	local var_50_2 = var_50_0.commander
-	local var_50_3 = var_50_0.skillName
-	local var_50_4 = arg_50_1.Dispatcher
+function var_0_7.onSkillFloat(arg_51_0, arg_51_1)
+	local var_51_0 = arg_51_1.Data
+	local var_51_1 = var_51_0.coverHrzIcon
+	local var_51_2 = var_51_0.commander
+	local var_51_3 = var_51_0.skillName
+	local var_51_4 = arg_51_1.Dispatcher
 
-	if var_50_1 then
-		arg_50_0:ShowSkillFloatCover(var_50_4, var_50_3, var_50_1)
+	if var_51_1 then
+		arg_51_0:ShowSkillFloatCover(var_51_4, var_51_3, var_51_1)
 	else
-		arg_50_0:ShowSkillFloat(var_50_4, var_50_3, var_50_2)
+		arg_51_0:ShowSkillFloat(var_51_4, var_51_3, var_51_2)
 	end
 end
 
-function var_0_7.onCommonInit(arg_51_0, arg_51_1)
-	arg_51_0._skillView = var_0_0.Battle.BattleSkillView.New(arg_51_0, arg_51_1.Data)
-	arg_51_0._updateViewList[arg_51_0._skillView] = true
-	arg_51_0._userFleet = arg_51_0._dataProxy:GetFleetByIFF(var_0_5.FRIENDLY_CODE)
+function var_0_7.onCommonInit(arg_52_0, arg_52_1)
+	arg_52_0._skillView = var_0_0.Battle.BattleSkillView.New(arg_52_0, arg_52_1.Data)
+	arg_52_0._updateViewList[arg_52_0._skillView] = true
+	arg_52_0._userFleet = arg_52_0._dataProxy:GetFleetByIFF(var_0_5.FRIENDLY_CODE)
 
-	arg_51_0._userFleet:RegisterEventListener(arg_51_0, var_0_1.SHOW_BUFFER, arg_51_0.onShowBuffer)
-	arg_51_0._userFleet:RegisterEventListener(arg_51_0, var_0_2.POINT_HIT_CHARGE, arg_51_0.onPointHitSight)
-	arg_51_0._userFleet:RegisterEventListener(arg_51_0, var_0_2.POINT_HIT_CANCEL, arg_51_0.onPointHitSight)
-	arg_51_0._userFleet:RegisterEventListener(arg_51_0, var_0_1.MANUAL_SUBMARINE_SHIFT, arg_51_0.onManualSubShift)
-	arg_51_0._userFleet:RegisterEventListener(arg_51_0, var_0_1.FLEET_BLIND, arg_51_0.onFleetBlind)
-	arg_51_0._userFleet:RegisterEventListener(arg_51_0, var_0_1.UPDATE_FLEET_ATTR, arg_51_0.onFleetAttrUpdate)
+	arg_52_0._userFleet:RegisterEventListener(arg_52_0, var_0_1.SHOW_BUFFER, arg_52_0.onShowBuffer)
+	arg_52_0._userFleet:RegisterEventListener(arg_52_0, var_0_2.POINT_HIT_CHARGE, arg_52_0.onPointHitSight)
+	arg_52_0._userFleet:RegisterEventListener(arg_52_0, var_0_2.POINT_HIT_CANCEL, arg_52_0.onPointHitSight)
+	arg_52_0._userFleet:RegisterEventListener(arg_52_0, var_0_1.MANUAL_SUBMARINE_SHIFT, arg_52_0.onManualSubShift)
+	arg_52_0._userFleet:RegisterEventListener(arg_52_0, var_0_1.FLEET_BLIND, arg_52_0.onFleetBlind)
+	arg_52_0._userFleet:RegisterEventListener(arg_52_0, var_0_1.UPDATE_FLEET_ATTR, arg_52_0.onFleetAttrUpdate)
 
-	arg_51_0._sightView = var_0_0.Battle.BattleOpticalSightView.New(arg_51_0._ui:findTF("ChargeAreaContainer"))
+	arg_52_0._sightView = var_0_0.Battle.BattleOpticalSightView.New(arg_52_0._ui:findTF("ChargeAreaContainer"))
 
-	arg_51_0._sightView:SetFleetVO(arg_51_0._userFleet)
+	arg_52_0._sightView:SetFleetVO(arg_52_0._userFleet)
 
-	local var_51_0, var_51_1, var_51_2, var_51_3 = arg_51_0._dataProxy:GetTotalBounds()
+	local var_52_0, var_52_1, var_52_2, var_52_3 = arg_52_0._dataProxy:GetTotalBounds()
 
-	arg_51_0._sightView:SetAreaBound(var_51_2, var_51_3)
+	arg_52_0._sightView:SetAreaBound(var_52_2, var_52_3)
 
-	local var_51_4
-	local var_51_5
+	local var_52_4
+	local var_52_5
 
-	if arg_51_0._dataProxy:GetInitData().ChapterBuffIDs then
-		for iter_51_0, iter_51_1 in ipairs(arg_51_0._dataProxy:GetInitData().ChapterBuffIDs) do
-			if iter_51_1 == 9727 then
-				var_51_4 = true
+	if arg_52_0._dataProxy:GetInitData().ChapterBuffIDs then
+		for iter_52_0, iter_52_1 in ipairs(arg_52_0._dataProxy:GetInitData().ChapterBuffIDs) do
+			if iter_52_1 == 9727 then
+				var_52_4 = true
 
 				break
 			end
 		end
 	end
 
-	if #arg_51_0._dataProxy:GetFleetByIFF(var_0_5.FRIENDLY_CODE):GetSupportUnitList() > 0 then
-		var_51_5 = true
+	if #arg_52_0._dataProxy:GetFleetByIFF(var_0_5.FRIENDLY_CODE):GetSupportUnitList() > 0 then
+		var_52_5 = true
 	end
 
-	if var_51_5 and not var_51_4 then
-		arg_51_0._airAdavantageTF = arg_51_0._airSupportTF:Find("player_advantage")
-	elseif var_51_4 and not var_51_5 then
-		arg_51_0._airAdavantageTF = arg_51_0._airSupportTF:Find("enemy_advantage")
-	elseif var_51_4 and var_51_5 then
-		arg_51_0._airAdavantageTF = arg_51_0._airSupportTF:Find("draw")
+	if var_52_5 and not var_52_4 then
+		arg_52_0._airAdavantageTF = arg_52_0._airSupportTF:Find("player_advantage")
+	elseif var_52_4 and not var_52_5 then
+		arg_52_0._airAdavantageTF = arg_52_0._airSupportTF:Find("enemy_advantage")
+	elseif var_52_4 and var_52_5 then
+		arg_52_0._airAdavantageTF = arg_52_0._airSupportTF:Find("draw")
 	end
 end
 
-function var_0_7.onAddFleet(arg_52_0, arg_52_1)
-	local var_52_0 = arg_52_1.Data.fleetVO
+function var_0_7.onAddFleet(arg_53_0, arg_53_1)
+	local var_53_0 = arg_53_1.Data.fleetVO
 
 	if PlayerPrefs.GetInt(BATTLE_EXPOSE_LINE, 1) == 1 then
-		arg_52_0:SetFleetCloakLine(var_52_0)
+		arg_53_0:SetFleetCloakLine(var_53_0)
 	end
 end
 
-function var_0_7.SetFleetCloakLine(arg_53_0, arg_53_1)
-	if #arg_53_1:GetCloakList() > 0 then
-		local var_53_0 = arg_53_1:GetIFF()
-		local var_53_1 = arg_53_1:GetFleetVisionLine()
-		local var_53_2 = arg_53_1:GetFleetExposeLine()
+function var_0_7.SetFleetCloakLine(arg_54_0, arg_54_1)
+	if #arg_54_1:GetCloakList() > 0 then
+		local var_54_0 = arg_54_1:GetIFF()
+		local var_54_1 = arg_54_1:GetFleetVisionLine()
+		local var_54_2 = arg_54_1:GetFleetExposeLine()
 
-		arg_53_0._seaView:SetExposeLine(var_53_0, var_53_1, var_53_2)
+		arg_54_0._seaView:SetExposeLine(var_54_0, var_54_1, var_54_2)
 	end
 end
 
-function var_0_7.onAddUnit(arg_54_0, arg_54_1)
-	local var_54_0 = arg_54_1.Data.type
-	local var_54_1 = arg_54_1.Data.unit
+function var_0_7.onAddUnit(arg_55_0, arg_55_1)
+	local var_55_0 = arg_55_1.Data.type
+	local var_55_1 = arg_55_1.Data.unit
 
-	if var_54_0 == var_0_3.UnitType.PLAYER_UNIT or var_54_0 == var_0_3.UnitType.ENEMY_UNIT or var_54_0 == var_0_3.UnitType.BOSS_UNIT then
-		arg_54_0:registerUnitEvent(var_54_1)
+	if var_55_0 == var_0_3.UnitType.PLAYER_UNIT or var_55_0 == var_0_3.UnitType.ENEMY_UNIT or var_55_0 == var_0_3.UnitType.BOSS_UNIT then
+		arg_55_0:registerUnitEvent(var_55_1)
 	end
 
-	if var_54_1:IsBoss() and arg_54_0._dataProxy:GetActiveBossCount() == 1 then
-		arg_54_0:AddBossWarningUI()
-	elseif var_54_0 == var_0_3.UnitType.ENEMY_UNIT then
-		arg_54_0:registerNPCUnitEvent(var_54_1)
-	elseif var_54_0 == var_0_3.UnitType.PLAYER_UNIT and var_54_1:IsMainFleetUnit() and var_54_1:GetIFF() == var_0_5.FRIENDLY_CODE then
-		arg_54_0:registerPlayerMainUnitEvent(var_54_1)
+	if var_55_1:IsBoss() and arg_55_0._dataProxy:GetActiveBossCount() == 1 then
+		arg_55_0:AddBossWarningUI()
+	elseif var_55_0 == var_0_3.UnitType.ENEMY_UNIT then
+		arg_55_0:registerNPCUnitEvent(var_55_1)
+	elseif var_55_0 == var_0_3.UnitType.PLAYER_UNIT and var_55_1:IsMainFleetUnit() and var_55_1:GetIFF() == var_0_5.FRIENDLY_CODE then
+		arg_55_0:registerPlayerMainUnitEvent(var_55_1)
 	end
 
-	local var_54_2 = var_54_1:GetTemplate().nationality
+	local var_55_2 = var_55_1:GetTemplate().nationality
 
-	if table.contains(var_0_5.ALCHEMIST_AP_UI, var_54_2) and var_54_1:GetIFF() == var_0_5.FRIENDLY_CODE then
-		arg_54_0:InitAlchemistAPView()
-	end
-end
-
-function var_0_7.onSubmarineDetected(arg_55_0, arg_55_1)
-	local var_55_0 = arg_55_1.Dispatcher
-
-	if arg_55_0._enemyHpBar:GetCurrentTarget() and arg_55_0._enemyHpBar:GetCurrentTarget() == var_55_0 and var_55_0:GetDiveDetected() == false then
-		arg_55_0._enemyHpBar:RemoveUnit()
+	if table.contains(var_0_5.ALCHEMIST_AP_UI, var_55_2) and var_55_1:GetIFF() == var_0_5.FRIENDLY_CODE then
+		arg_55_0:InitAlchemistAPView()
 	end
 end
 
-function var_0_7.onRemoveUnit(arg_56_0, arg_56_1)
-	local var_56_0 = arg_56_1.Data.unit
-	local var_56_1 = arg_56_1.Data.type
+function var_0_7.onSubmarineDetected(arg_56_0, arg_56_1)
+	local var_56_0 = arg_56_1.Dispatcher
 
-	if var_56_1 == var_0_3.UnitType.PLAYER_UNIT or var_56_1 == var_0_3.UnitType.ENEMY_UNIT or var_56_1 == var_0_3.UnitType.BOSS_UNIT then
-		arg_56_0:unregisterUnitEvent(var_56_0)
-	end
-
-	if var_56_1 == var_0_3.UnitType.ENEMY_UNIT and not var_56_0:IsBoss() then
-		arg_56_0:unregisterNPCUnitEvent(var_56_0)
-	elseif var_56_0:GetIFF() == var_0_5.FRIENDLY_CODE and var_56_0:IsMainFleetUnit() then
-		arg_56_0:unregisterPlayerMainUnitEvent(var_56_0)
-	end
-
-	if arg_56_1.Data.deadReason == var_0_3.UnitDeathReason.LEAVE and arg_56_0._enemyHpBar:GetCurrentTarget() and arg_56_0._enemyHpBar:GetCurrentTarget() == arg_56_1.Data.unit then
-		arg_56_0._enemyHpBar:RemoveUnit(arg_56_1.Data.deadReason)
+	if arg_56_0._enemyHpBar:GetCurrentTarget() and arg_56_0._enemyHpBar:GetCurrentTarget() == var_56_0 and var_56_0:GetDiveDetected() == false then
+		arg_56_0._enemyHpBar:RemoveUnit()
 	end
 end
 
-function var_0_7.onUpdateCountDown(arg_57_0, arg_57_1)
-	arg_57_0._timerView:SetCountDownText(arg_57_0._dataProxy:GetCountDown())
+function var_0_7.onRemoveUnit(arg_57_0, arg_57_1)
+	local var_57_0 = arg_57_1.Data.unit
+	local var_57_1 = arg_57_1.Data.type
+
+	if var_57_1 == var_0_3.UnitType.PLAYER_UNIT or var_57_1 == var_0_3.UnitType.ENEMY_UNIT or var_57_1 == var_0_3.UnitType.BOSS_UNIT then
+		arg_57_0:unregisterUnitEvent(var_57_0)
+	end
+
+	if var_57_1 == var_0_3.UnitType.ENEMY_UNIT and not var_57_0:IsBoss() then
+		arg_57_0:unregisterNPCUnitEvent(var_57_0)
+	elseif var_57_0:GetIFF() == var_0_5.FRIENDLY_CODE and var_57_0:IsMainFleetUnit() then
+		arg_57_0:unregisterPlayerMainUnitEvent(var_57_0)
+	end
+
+	if arg_57_1.Data.deadReason == var_0_3.UnitDeathReason.LEAVE and arg_57_0._enemyHpBar:GetCurrentTarget() and arg_57_0._enemyHpBar:GetCurrentTarget() == arg_57_1.Data.unit then
+		arg_57_0._enemyHpBar:RemoveUnit(arg_57_1.Data.deadReason)
+	end
 end
 
-function var_0_7.onUpdateDodgemScore(arg_58_0, arg_58_1)
-	local var_58_0 = arg_58_1.Data.totalScore
-
-	arg_58_0._scoreBarView:UpdateScore(var_58_0)
+function var_0_7.onUpdateCountDown(arg_58_0, arg_58_1)
+	arg_58_0._timerView:SetCountDownText(arg_58_0._dataProxy:GetCountDown())
 end
 
-function var_0_7.onUpdateDodgemCombo(arg_59_0, arg_59_1)
-	local var_59_0 = arg_59_1.Data.combo
+function var_0_7.onUpdateDodgemScore(arg_59_0, arg_59_1)
+	local var_59_0 = arg_59_1.Data.totalScore
 
-	arg_59_0._scoreBarView:UpdateCombo(var_59_0)
+	arg_59_0._scoreBarView:UpdateScore(var_59_0)
 end
 
-function var_0_7.onAddAirStrike(arg_60_0, arg_60_1)
-	local var_60_0 = arg_60_1.Data.index
-	local var_60_1 = arg_60_0._dataProxy:GetAirFighterInfo(var_60_0)
+function var_0_7.onUpdateDodgemCombo(arg_60_0, arg_60_1)
+	local var_60_0 = arg_60_1.Data.combo
 
-	arg_60_0._airStrikeView:AppendIcon(var_60_0, var_60_1)
+	arg_60_0._scoreBarView:UpdateCombo(var_60_0)
 end
 
-function var_0_7.onRemoveAirStrike(arg_61_0, arg_61_1)
+function var_0_7.onAddAirStrike(arg_61_0, arg_61_1)
 	local var_61_0 = arg_61_1.Data.index
 	local var_61_1 = arg_61_0._dataProxy:GetAirFighterInfo(var_61_0)
 
-	arg_61_0._airStrikeView:RemoveIcon(var_61_0, var_61_1)
+	arg_61_0._airStrikeView:AppendIcon(var_61_0, var_61_1)
 end
 
-function var_0_7.onUpdateAirSupportLabel(arg_62_0, arg_62_1)
-	local var_62_0 = arg_62_0._dataProxy:GetAirFighterList()
-	local var_62_1 = 0
+function var_0_7.onRemoveAirStrike(arg_62_0, arg_62_1)
+	local var_62_0 = arg_62_1.Data.index
+	local var_62_1 = arg_62_0._dataProxy:GetAirFighterInfo(var_62_0)
 
-	for iter_62_0, iter_62_1 in ipairs(var_62_0) do
-		var_62_1 = var_62_1 + iter_62_1.totalNumber
+	arg_62_0._airStrikeView:RemoveIcon(var_62_0, var_62_1)
+end
+
+function var_0_7.onUpdateAirSupportLabel(arg_63_0, arg_63_1)
+	local var_63_0 = arg_63_0._dataProxy:GetAirFighterList()
+	local var_63_1 = 0
+
+	for iter_63_0, iter_63_1 in ipairs(var_63_0) do
+		var_63_1 = var_63_1 + iter_63_1.totalNumber
 	end
 
-	if var_62_1 == 0 or arg_62_0._warningView:GetCount() > 0 then
-		eachChild(arg_62_0._airSupportTF, function(arg_63_0)
-			setActive(arg_63_0, false)
+	if var_63_1 == 0 or arg_63_0._warningView:GetCount() > 0 then
+		eachChild(arg_63_0._airSupportTF, function(arg_64_0)
+			setActive(arg_64_0, false)
 		end)
-	elseif arg_62_0._airAdavantageTF then
-		setActive(arg_62_0._airAdavantageTF, true)
+	elseif arg_63_0._airAdavantageTF then
+		setActive(arg_63_0._airAdavantageTF, true)
 	end
 end
 
-function var_0_7.onUpdateHostileSubmarine(arg_64_0, arg_64_1)
-	local var_64_0 = arg_64_0._dataProxy:GetEnemySubmarineCount()
+function var_0_7.onUpdateHostileSubmarine(arg_65_0, arg_65_1)
+	local var_65_0 = arg_65_0._dataProxy:GetEnemySubmarineCount()
 
-	arg_64_0._warningView:UpdateHostileSubmarineCount(var_64_0)
-	arg_64_0:onUpdateAirSupportLabel()
+	arg_65_0._warningView:UpdateHostileSubmarineCount(var_65_0)
+	arg_65_0:onUpdateAirSupportLabel()
 end
 
-function var_0_7.onUpdateEnvironmentWarning(arg_65_0, arg_65_1)
-	if arg_65_1.Data.isActive then
-		arg_65_0._warningView:ActiveWarning(arg_65_0._warningView.WARNING_TYPE_ARTILLERY)
+function var_0_7.onUpdateEnvironmentWarning(arg_66_0, arg_66_1)
+	if arg_66_1.Data.isActive then
+		arg_66_0._warningView:ActiveWarning(arg_66_0._warningView.WARNING_TYPE_ARTILLERY)
 	else
-		arg_65_0._warningView:DeactiveWarning(arg_65_0._warningView.WARNING_TYPE_ARTILLERY)
+		arg_66_0._warningView:DeactiveWarning(arg_66_0._warningView.WARNING_TYPE_ARTILLERY)
 	end
 end
 
-function var_0_7.onCameraFocus(arg_66_0, arg_66_1)
-	local var_66_0 = arg_66_1.Data
+function var_0_7.onCameraFocus(arg_67_0, arg_67_1)
+	local var_67_0 = arg_67_1.Data
 
-	if var_66_0.unit ~= nil then
-		local var_66_1 = var_66_0.skill or false
+	if var_67_0.unit ~= nil then
+		local var_67_1 = var_67_0.skill or false
 
-		arg_66_0:EnableComponent(false)
-		arg_66_0:EnableSkillFloat(var_66_1)
+		arg_67_0:EnableComponent(false)
+		arg_67_0:EnableSkillFloat(var_67_1)
 	else
-		local var_66_2 = var_66_0.duration + var_66_0.extraBulletTime
+		local var_67_2 = var_67_0.duration + var_67_0.extraBulletTime
 
-		LeanTween.delayedCall(arg_66_0._ui._go, var_66_2, System.Action(function()
-			arg_66_0:EnableComponent(true)
-			arg_66_0:EnableSkillFloat(true)
+		LeanTween.delayedCall(arg_67_0._ui._go, var_67_2, System.Action(function()
+			arg_67_0:EnableComponent(true)
+			arg_67_0:EnableSkillFloat(true)
 		end))
 	end
 end
 
-function var_0_7.onShowPainting(arg_68_0, arg_68_1)
-	local var_68_0 = arg_68_1.Data
-
-	arg_68_0:ShowSkillPainting(var_68_0.caster, var_68_0.skill, var_68_0.speed)
-end
-
-function var_0_7.onBulletTime(arg_69_0, arg_69_1)
+function var_0_7.onShowPainting(arg_69_0, arg_69_1)
 	local var_69_0 = arg_69_1.Data
-	local var_69_1 = var_69_0.key
-	local var_69_2 = var_69_0.rate
 
-	if var_69_2 then
-		var_0_4.AppendMapFactor(var_69_1, var_69_2)
+	arg_69_0:ShowSkillPainting(var_69_0.caster, var_69_0.skill, var_69_0.speed)
+end
+
+function var_0_7.onBulletTime(arg_70_0, arg_70_1)
+	local var_70_0 = arg_70_1.Data
+	local var_70_1 = var_70_0.key
+	local var_70_2 = var_70_0.rate
+
+	if var_70_2 then
+		var_0_4.AppendMapFactor(var_70_1, var_70_2)
 	else
-		var_0_4.RemoveMapFactor(var_69_1)
+		var_0_4.RemoveMapFactor(var_70_1)
 	end
 
-	arg_69_0._seaView:UpdateSpeedScaler()
+	arg_70_0._seaView:UpdateSpeedScaler()
 end
 
-function var_0_7.onShowBuffer(arg_70_0, arg_70_1)
-	local var_70_0 = arg_70_1.Data.dist
+function var_0_7.onShowBuffer(arg_71_0, arg_71_1)
+	local var_71_0 = arg_71_1.Data.dist
 
-	arg_70_0._seaView:UpdateBufferAlpha(var_70_0)
+	arg_71_0._seaView:UpdateBufferAlpha(var_71_0)
 end
 
-function var_0_7.onManualSubShift(arg_71_0, arg_71_1)
-	local var_71_0 = arg_71_1.Data.state
+function var_0_7.onManualSubShift(arg_72_0, arg_72_1)
+	local var_72_0 = arg_72_1.Data.state
 
-	arg_71_0._skillView:ShiftSubmarineManualButton(var_71_0)
+	arg_72_0._skillView:ShiftSubmarineManualButton(var_72_0)
 end
 
-function var_0_7.onPointHitSight(arg_72_0, arg_72_1)
-	local var_72_0 = arg_72_1.ID
+function var_0_7.onPointHitSight(arg_73_0, arg_73_1)
+	local var_73_0 = arg_73_1.ID
 
-	if var_72_0 == var_0_2.POINT_HIT_CHARGE then
-		arg_72_0._sightView:SetActive(true)
+	if var_73_0 == var_0_2.POINT_HIT_CHARGE then
+		arg_73_0._sightView:SetActive(true)
 
-		arg_72_0._updateViewList[arg_72_0._sightView] = true
-	elseif var_72_0 == var_0_2.POINT_HIT_CANCEL then
-		arg_72_0._sightView:SetActive(false)
+		arg_73_0._updateViewList[arg_73_0._sightView] = true
+	elseif var_73_0 == var_0_2.POINT_HIT_CANCEL then
+		arg_73_0._sightView:SetActive(false)
 
-		arg_72_0._updateViewList[arg_72_0._sightView] = nil
-	end
-end
-
-function var_0_7.onFleetBlind(arg_73_0, arg_73_1)
-	local var_73_0 = arg_73_1.Data.isBlind
-	local var_73_1 = arg_73_1.Dispatcher
-
-	if not arg_73_0._inkView then
-		arg_73_0:InitInkView(var_73_1)
-	end
-
-	if var_73_0 then
-		local var_73_2 = var_73_1:GetUnitList()
-
-		arg_73_0._inkView:SetActive(true, var_73_2)
-		arg_73_0._skillView:HideSkillButton(true)
-
-		arg_73_0._updateViewList[arg_73_0._inkView] = true
-	else
-		arg_73_0._inkView:SetActive(false)
-		arg_73_0._skillView:HideSkillButton(false)
-
-		arg_73_0._updateViewList[arg_73_0._inkView] = nil
+		arg_73_0._updateViewList[arg_73_0._sightView] = nil
 	end
 end
 
-function var_0_7.onFleetHorizonUpdate(arg_74_0, arg_74_1)
+function var_0_7.onFleetBlind(arg_74_0, arg_74_1)
+	local var_74_0 = arg_74_1.Data.isBlind
+	local var_74_1 = arg_74_1.Dispatcher
+
 	if not arg_74_0._inkView then
+		arg_74_0:InitInkView(var_74_1)
+	end
+
+	if var_74_0 then
+		local var_74_2 = var_74_1:GetUnitList()
+
+		arg_74_0._inkView:SetActive(true, var_74_2)
+		arg_74_0._skillView:HideSkillButton(true)
+
+		arg_74_0._updateViewList[arg_74_0._inkView] = true
+	else
+		arg_74_0._inkView:SetActive(false)
+		arg_74_0._skillView:HideSkillButton(false)
+
+		arg_74_0._updateViewList[arg_74_0._inkView] = nil
+	end
+end
+
+function var_0_7.onFleetHorizonUpdate(arg_75_0, arg_75_1)
+	if not arg_75_0._inkView then
 		return
 	end
 
-	local var_74_0 = arg_74_1.Dispatcher:GetUnitList()
+	local var_75_0 = arg_75_1.Dispatcher:GetUnitList()
 
-	arg_74_0._inkView:UpdateHollow(var_74_0)
+	arg_75_0._inkView:UpdateHollow(var_75_0)
 end
 
-function var_0_7.onFleetAttrUpdate(arg_75_0, arg_75_1)
-	if arg_75_0._alchemistAP then
-		local var_75_0 = arg_75_1.Dispatcher
-		local var_75_1 = arg_75_1.Data.attr
-		local var_75_2 = arg_75_1.Data.value
+function var_0_7.onFleetAttrUpdate(arg_76_0, arg_76_1)
+	if arg_76_0._alchemistAP then
+		local var_76_0 = arg_76_1.Dispatcher
+		local var_76_1 = arg_76_1.Data.attr
+		local var_76_2 = arg_76_1.Data.value
 
-		if var_75_1 == arg_75_0._alchemistAP:GetAttrName() then
-			arg_75_0._alchemistAP:UpdateAP(var_75_2)
+		if var_76_1 == arg_76_0._alchemistAP:GetAttrName() then
+			arg_76_0._alchemistAP:UpdateAP(var_76_2)
 		end
 	end
 end
 
-function var_0_7.OnAddUIFX(arg_76_0, arg_76_1)
-	local var_76_0 = arg_76_1.Data.FXID
-	local var_76_1 = arg_76_1.Data.position
-	local var_76_2 = arg_76_1.Data.localScale
-	local var_76_3 = arg_76_1.Data.orderDiff
+function var_0_7.OnAddUIFX(arg_77_0, arg_77_1)
+	local var_77_0 = arg_77_1.Data.FXID
+	local var_77_1 = arg_77_1.Data.position
+	local var_77_2 = arg_77_1.Data.localScale
+	local var_77_3 = arg_77_1.Data.orderDiff
 
-	arg_76_0:AddUIFX(var_76_3, var_76_0, var_76_1, var_76_2)
+	arg_77_0:AddUIFX(var_77_3, var_77_0, var_77_1, var_77_2)
 end
 
-function var_0_7.AddUIFX(arg_77_0, arg_77_1, arg_77_2, arg_77_3, arg_77_4)
-	local var_77_0 = arg_77_0._fxPool:GetFX(arg_77_2)
+function var_0_7.AddUIFX(arg_78_0, arg_78_1, arg_78_2, arg_78_3, arg_78_4)
+	local var_78_0 = arg_78_0._fxPool:GetFX(arg_78_2)
 
-	arg_77_1 = arg_77_1 or 1
+	arg_78_1 = arg_78_1 or 1
 
-	local var_77_1
+	local var_78_1
 
-	var_77_1 = arg_77_1 > 0
+	var_78_1 = arg_78_1 > 0
 
-	local var_77_2 = arg_77_0._ui:AddUIFX(var_77_0, arg_77_1)
+	local var_78_2 = arg_78_0._ui:AddUIFX(var_78_0, arg_78_1)
 
-	arg_77_4 = arg_77_4 or 1
-	var_77_0.transform.localScale = Vector3(arg_77_4 / var_77_2.x, arg_77_4 / var_77_2.y, arg_77_4 / var_77_2.z)
+	arg_78_4 = arg_78_4 or 1
+	var_78_0.transform.localScale = Vector3(arg_78_4 / var_78_2.x, arg_78_4 / var_78_2.y, arg_78_4 / var_78_2.z)
 
-	pg.EffectMgr.GetInstance():PlayBattleEffect(var_77_0, arg_77_3, true)
+	pg.EffectMgr.GetInstance():PlayBattleEffect(var_78_0, arg_78_3, true)
 end
 
-function var_0_7.AddBossWarningUI(arg_78_0)
-	arg_78_0._dataProxy:BlockManualCast(true)
+function var_0_7.AddBossWarningUI(arg_79_0)
+	arg_79_0._dataProxy:BlockManualCast(true)
 
-	local var_78_0 = var_0_0.Battle.BattleResourceManager.GetInstance()
+	local var_79_0 = var_0_0.Battle.BattleResourceManager.GetInstance()
 
-	arg_78_0._appearEffect = var_78_0:InstBossWarningUI()
+	arg_79_0._appearEffect = var_79_0:InstBossWarningUI()
 
-	local var_78_1 = arg_78_0._appearEffect:GetComponent(typeof(Animator))
-	local var_78_2 = {
+	local var_79_1 = arg_79_0._appearEffect:GetComponent(typeof(Animator))
+	local var_79_2 = {
 		Pause = function()
-			var_78_1.speed = 0
+			var_79_1.speed = 0
 		end,
 		Resume = function()
-			var_78_1.speed = 1
+			var_79_1.speed = 1
 		end
 	}
 
-	arg_78_0._state:SetTakeoverProcess(var_78_2)
+	arg_79_0._state:SetTakeoverProcess(var_79_2)
 
-	var_78_1.speed = 1 / arg_78_0._state:GetTimeScaleRate()
+	var_79_1.speed = 1 / arg_79_0._state:GetTimeScaleRate()
 
-	setParent(arg_78_0._appearEffect, arg_78_0._ui.uiCanvas, false)
-	arg_78_0._appearEffect:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_81_0)
-		arg_78_0._userFleet:CoupleEncourage()
-		arg_78_0._dataProxy:BlockManualCast(false)
-		arg_78_0._state:ClearTakeoverProcess()
-		var_78_0:DestroyOb(arg_78_0._appearEffect)
+	setParent(arg_79_0._appearEffect, arg_79_0._ui.uiCanvas, false)
+	arg_79_0._appearEffect:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_82_0)
+		arg_79_0._userFleet:CoupleEncourage()
+		arg_79_0._dataProxy:BlockManualCast(false)
+		arg_79_0._state:ClearTakeoverProcess()
+		var_79_0:DestroyOb(arg_79_0._appearEffect)
 
-		arg_78_0._appearEffect = nil
+		arg_79_0._appearEffect = nil
 	end)
-	SetActive(arg_78_0._appearEffect, true)
+	SetActive(arg_79_0._appearEffect, true)
 end
 
-function var_0_7.OnHideButtons(arg_82_0, arg_82_1)
-	local var_82_0 = arg_82_1.Data.isActive
+function var_0_7.OnHideButtons(arg_83_0, arg_83_1)
+	local var_83_0 = arg_83_1.Data.isActive
 
-	arg_82_0._skillView:HideSkillButton(not var_82_0)
-	SetActive(arg_82_0._autoBtn.transform, var_82_0)
+	arg_83_0._skillView:HideSkillButton(not var_83_0)
+	SetActive(arg_83_0._autoBtn.transform, var_83_0)
 end
 
-function var_0_7.onEditCustomWarning(arg_83_0, arg_83_1)
-	local var_83_0 = arg_83_1.Data.labelData
+function var_0_7.onEditCustomWarning(arg_84_0, arg_84_1)
+	local var_84_0 = arg_84_1.Data.labelData
 
-	arg_83_0._warningView:EditCustomWarning(var_83_0)
+	arg_84_0._warningView:EditCustomWarning(var_84_0)
 end
 
-function var_0_7.onGridmanSkillFloat(arg_84_0, arg_84_1)
-	if not arg_84_0._gridmanSkillFloat then
-		local var_84_0 = var_0_0.Battle.BattleResourceManager.GetInstance():InstGridmanSkillUI()
+function var_0_7.onGridmanSkillFloat(arg_85_0, arg_85_1)
+	if not arg_85_0._gridmanSkillFloat then
+		local var_85_0 = var_0_0.Battle.BattleResourceManager.GetInstance():InstGridmanSkillUI()
 
-		arg_84_0._gridmanSkillFloat = var_0_0.Battle.BattleGridmanSkillFloatView.New(var_84_0)
+		arg_85_0._gridmanSkillFloat = var_0_0.Battle.BattleGridmanSkillFloatView.New(var_85_0)
 
-		setParent(var_84_0, arg_84_0._ui.uiCanvas, false)
+		setParent(var_85_0, arg_85_0._ui.uiCanvas, false)
 	end
 
-	local var_84_1 = arg_84_1.Data
-	local var_84_2 = var_84_1.type
-	local var_84_3 = var_84_1.IFF
+	local var_85_1 = arg_85_1.Data
+	local var_85_2 = var_85_1.type
+	local var_85_3 = var_85_1.IFF
 
-	if var_84_2 == 5 then
-		arg_84_0._gridmanSkillFloat:DoFusionFloat(var_84_3)
+	if var_85_2 == 5 then
+		arg_85_0._gridmanSkillFloat:DoFusionFloat(var_85_3)
 	else
-		arg_84_0._gridmanSkillFloat:DoSkillFloat(var_84_2, var_84_3)
+		arg_85_0._gridmanSkillFloat:DoSkillFloat(var_85_2, var_85_3)
 	end
 end
 
-function var_0_7.registerUnitEvent(arg_85_0, arg_85_1)
-	arg_85_1:RegisterEventListener(arg_85_0, var_0_2.SKILL_FLOAT, arg_85_0.onSkillFloat)
-	arg_85_1:RegisterEventListener(arg_85_0, var_0_2.CUT_INT, arg_85_0.onShowPainting)
+function var_0_7.registerUnitEvent(arg_86_0, arg_86_1)
+	arg_86_1:RegisterEventListener(arg_86_0, var_0_2.SKILL_FLOAT, arg_86_0.onSkillFloat)
+	arg_86_1:RegisterEventListener(arg_86_0, var_0_2.CUT_INT, arg_86_0.onShowPainting)
 end
 
-function var_0_7.registerNPCUnitEvent(arg_86_0, arg_86_1)
-	arg_86_1:RegisterEventListener(arg_86_0, var_0_2.UPDATE_HP, arg_86_0.onEnemyHpUpdate)
+function var_0_7.registerNPCUnitEvent(arg_87_0, arg_87_1)
+	arg_87_1:RegisterEventListener(arg_87_0, var_0_2.UPDATE_HP, arg_87_0.onEnemyHpUpdate)
 
-	local var_86_0 = arg_86_1:GetTemplate().type
+	local var_87_0 = arg_87_1:GetTemplate().type
 
-	if table.contains(TeamType.SubShipType, var_86_0) then
-		arg_86_1:RegisterEventListener(arg_86_0, var_0_2.SUBMARINE_DETECTED, arg_86_0.onSubmarineDetected)
+	if table.contains(TeamType.SubShipType, var_87_0) then
+		arg_87_1:RegisterEventListener(arg_87_0, var_0_2.SUBMARINE_DETECTED, arg_87_0.onSubmarineDetected)
 	end
 end
 
-function var_0_7.registerPlayerMainUnitEvent(arg_87_0, arg_87_1)
-	arg_87_1:RegisterEventListener(arg_87_0, var_0_2.UPDATE_HP, arg_87_0.onPlayerMainUnitHpUpdate)
+function var_0_7.registerPlayerMainUnitEvent(arg_88_0, arg_88_1)
+	arg_88_1:RegisterEventListener(arg_88_0, var_0_2.UPDATE_HP, arg_88_0.onPlayerMainUnitHpUpdate)
 end
 
-function var_0_7.unregisterUnitEvent(arg_88_0, arg_88_1)
-	arg_88_1:UnregisterEventListener(arg_88_0, var_0_2.SKILL_FLOAT)
-	arg_88_1:UnregisterEventListener(arg_88_0, var_0_2.CUT_INT)
-end
-
-function var_0_7.unregisterNPCUnitEvent(arg_89_0, arg_89_1)
+function var_0_7.unregisterUnitEvent(arg_89_0, arg_89_1)
 	arg_89_1:UnregisterEventListener(arg_89_0, var_0_2.SKILL_FLOAT)
 	arg_89_1:UnregisterEventListener(arg_89_0, var_0_2.CUT_INT)
-	arg_89_1:UnregisterEventListener(arg_89_0, var_0_2.UPDATE_HP)
-
-	local var_89_0 = arg_89_1:GetTemplate().type
-
-	if table.contains(TeamType.SubShipType, var_89_0) then
-		arg_89_1:UnregisterEventListener(arg_89_0, var_0_2.SUBMARINE_DETECTED)
-	end
 end
 
-function var_0_7.unregisterPlayerMainUnitEvent(arg_90_0, arg_90_1)
+function var_0_7.unregisterNPCUnitEvent(arg_90_0, arg_90_1)
+	arg_90_1:UnregisterEventListener(arg_90_0, var_0_2.SKILL_FLOAT)
+	arg_90_1:UnregisterEventListener(arg_90_0, var_0_2.CUT_INT)
 	arg_90_1:UnregisterEventListener(arg_90_0, var_0_2.UPDATE_HP)
+
+	local var_90_0 = arg_90_1:GetTemplate().type
+
+	if table.contains(TeamType.SubShipType, var_90_0) then
+		arg_90_1:UnregisterEventListener(arg_90_0, var_0_2.SUBMARINE_DETECTED)
+	end
 end
 
-function var_0_7.Dispose(arg_91_0)
-	LeanTween.cancel(arg_91_0._ui._go)
-	arg_91_0._uiMGR:ClearStick()
+function var_0_7.unregisterPlayerMainUnitEvent(arg_91_0, arg_91_1)
+	arg_91_1:UnregisterEventListener(arg_91_0, var_0_2.UPDATE_HP)
+end
 
-	arg_91_0._uiMGR = nil
+function var_0_7.Dispose(arg_92_0)
+	LeanTween.cancel(arg_92_0._ui._go)
+	arg_92_0._uiMGR:ClearStick()
 
-	if arg_91_0._appearEffect then
-		Destroy(arg_91_0._appearEffect)
+	arg_92_0._uiMGR = nil
+
+	if arg_92_0._appearEffect then
+		Destroy(arg_92_0._appearEffect)
 	end
 
-	arg_91_0:RemoveUIEvent()
+	arg_92_0:RemoveUIEvent()
 
-	arg_91_0._updateViewList = nil
+	arg_92_0._updateViewList = nil
 
-	arg_91_0._timerView:Dispose()
-	arg_91_0._enemyHpBar:Dispose()
-	arg_91_0._skillView:Dispose()
-	arg_91_0._seaView:Dispose()
-	arg_91_0._airStrikeView:Dispose()
-	arg_91_0._sightView:Dispose()
-	arg_91_0._mainDamagedView:Dispose()
-	arg_91_0._warningView:Dispose()
+	arg_92_0._timerView:Dispose()
+	arg_92_0._enemyHpBar:Dispose()
+	arg_92_0._skillView:Dispose()
+	arg_92_0._seaView:Dispose()
+	arg_92_0._airStrikeView:Dispose()
+	arg_92_0._sightView:Dispose()
+	arg_92_0._mainDamagedView:Dispose()
+	arg_92_0._warningView:Dispose()
 
-	arg_91_0._seaView = nil
-	arg_91_0._enemyHpBar = nil
-	arg_91_0._skillView = nil
-	arg_91_0._timerView = nil
-	arg_91_0._joystick = nil
-	arg_91_0._airStrikeView = nil
-	arg_91_0._warningView = nil
-	arg_91_0._mainDamagedView = nil
+	arg_92_0._seaView = nil
+	arg_92_0._enemyHpBar = nil
+	arg_92_0._skillView = nil
+	arg_92_0._timerView = nil
+	arg_92_0._joystick = nil
+	arg_92_0._airStrikeView = nil
+	arg_92_0._warningView = nil
+	arg_92_0._mainDamagedView = nil
 
-	if arg_91_0._duelRateBar then
-		arg_91_0._duelRateBar:Dispose()
+	if arg_92_0._duelRateBar then
+		arg_92_0._duelRateBar:Dispose()
 
-		arg_91_0._duelRateBar = nil
+		arg_92_0._duelRateBar = nil
 	end
 
-	if arg_91_0._simulationBuffCountView then
-		arg_91_0._simulationBuffCountView:Dispose()
+	if arg_92_0._simulationBuffCountView then
+		arg_92_0._simulationBuffCountView:Dispose()
 
-		arg_91_0._simulationBuffCountView = nil
+		arg_92_0._simulationBuffCountView = nil
 	end
 
-	if arg_91_0._jammingView then
-		arg_91_0._jammingView:Dispose()
+	if arg_92_0._jammingView then
+		arg_92_0._jammingView:Dispose()
 
-		arg_91_0._jammingView = nil
+		arg_92_0._jammingView = nil
 	end
 
-	if arg_91_0._inkView then
-		arg_91_0._inkView:Dispose()
+	if arg_92_0._inkView then
+		arg_92_0._inkView:Dispose()
 
-		arg_91_0._inkView = nil
+		arg_92_0._inkView = nil
 	end
 
-	if arg_91_0._alchemistAP then
-		arg_91_0._alchemistAP:Dispose()
+	if arg_92_0._alchemistAP then
+		arg_92_0._alchemistAP:Dispose()
 
-		arg_91_0._alchemistAP = nil
+		arg_92_0._alchemistAP = nil
 	end
 
-	if arg_91_0._gridmanSkillFloat then
-		arg_91_0._gridmanSkillFloat:Dispose()
+	if arg_92_0._gridmanSkillFloat then
+		arg_92_0._gridmanSkillFloat:Dispose()
 	end
 
-	if go(arg_91_0._ui:findTF("CardPuzzleConsole")).activeSelf then
-		arg_91_0:DisposeCardPuzzleComponent()
+	if go(arg_92_0._ui:findTF("CardPuzzleConsole")).activeSelf then
+		arg_92_0:DisposeCardPuzzleComponent()
 	end
 
-	var_0_7.super.Dispose(arg_91_0)
+	var_0_7.super.Dispose(arg_92_0)
 end
 
-function var_0_7.OnCardPuzzleInit(arg_92_0, arg_92_1)
-	arg_92_0._cardPuzzleComponent = arg_92_0._dataProxy:GetFleetByIFF(var_0_5.FRIENDLY_CODE):GetCardPuzzleComponent()
+function var_0_7.OnCardPuzzleInit(arg_93_0, arg_93_1)
+	arg_93_0._cardPuzzleComponent = arg_93_0._dataProxy:GetFleetByIFF(var_0_5.FRIENDLY_CODE):GetCardPuzzleComponent()
 
-	arg_92_0:ShowCardPuzzleComponent()
-	arg_92_0:RegisterCardPuzzleEvent()
+	arg_93_0:ShowCardPuzzleComponent()
+	arg_93_0:RegisterCardPuzzleEvent()
 end
 
-function var_0_7.RegisterCardPuzzleEvent(arg_93_0)
-	arg_93_0._cardPuzzleComponent:RegisterEventListener(arg_93_0, var_0_6.UPDATE_FLEET_SHIP, arg_93_0.onUpdateFleetShip)
-	arg_93_0._cardPuzzleComponent:RegisterEventListener(arg_93_0, var_0_6.COMMON_BUTTON_ENABLE, arg_93_0.onBlockCommonButton)
-	arg_93_0._cardPuzzleComponent:RegisterEventListener(arg_93_0, var_0_6.LONG_PRESS_BULLET_TIME, arg_93_0.onLongPressBulletTime)
-	arg_93_0._cardPuzzleComponent:RegisterEventListener(arg_93_0, var_0_6.SHOW_CARD_DETAIL, arg_93_0.onShowCardDetail)
+function var_0_7.RegisterCardPuzzleEvent(arg_94_0)
+	arg_94_0._cardPuzzleComponent:RegisterEventListener(arg_94_0, var_0_6.UPDATE_FLEET_SHIP, arg_94_0.onUpdateFleetShip)
+	arg_94_0._cardPuzzleComponent:RegisterEventListener(arg_94_0, var_0_6.COMMON_BUTTON_ENABLE, arg_94_0.onBlockCommonButton)
+	arg_94_0._cardPuzzleComponent:RegisterEventListener(arg_94_0, var_0_6.LONG_PRESS_BULLET_TIME, arg_94_0.onLongPressBulletTime)
+	arg_94_0._cardPuzzleComponent:RegisterEventListener(arg_94_0, var_0_6.SHOW_CARD_DETAIL, arg_94_0.onShowCardDetail)
 end
 
-function var_0_7.ShowCardPuzzleComponent(arg_94_0)
-	setActive(arg_94_0._ui:findTF("CardPuzzleConsole"), true)
-	arg_94_0:InitCardPuzzleCommonHPBar()
-	arg_94_0:InitCardPuzzleEnergyBar()
-	arg_94_0:IntCardPuzzleFleetHead()
-	arg_94_0:InitCameraCardBoardClicker()
-	arg_94_0:InitCardPuzzleMovePile()
-	arg_94_0:InitCardPuzzleDeckPile()
-	arg_94_0:InitCardPuzzleIconList()
-	arg_94_0:InitCardPuzzleHandBoard()
-	arg_94_0:InitCardPuzzleCardDetail()
-	arg_94_0:InitCardPuzzleGoalRemind()
+function var_0_7.ShowCardPuzzleComponent(arg_95_0)
+	setActive(arg_95_0._ui:findTF("CardPuzzleConsole"), true)
+	arg_95_0:InitCardPuzzleCommonHPBar()
+	arg_95_0:InitCardPuzzleEnergyBar()
+	arg_95_0:IntCardPuzzleFleetHead()
+	arg_95_0:InitCameraCardBoardClicker()
+	arg_95_0:InitCardPuzzleMovePile()
+	arg_95_0:InitCardPuzzleDeckPile()
+	arg_95_0:InitCardPuzzleIconList()
+	arg_95_0:InitCardPuzzleHandBoard()
+	arg_95_0:InitCardPuzzleCardDetail()
+	arg_95_0:InitCardPuzzleGoalRemind()
 end
 
-function var_0_7.InitCardPuzzleCommonHPBar(arg_95_0)
-	arg_95_0._cardPuzzleHPBar = var_0_0.Battle.CardPuzzleCommonHPBar.New(arg_95_0._ui:findTF("CardPuzzleConsole/commonHP"))
+function var_0_7.InitCardPuzzleCommonHPBar(arg_96_0)
+	arg_96_0._cardPuzzleHPBar = var_0_0.Battle.CardPuzzleCommonHPBar.New(arg_96_0._ui:findTF("CardPuzzleConsole/commonHP"))
 
-	arg_95_0._cardPuzzleHPBar:SetCardPuzzleComponent(arg_95_0._cardPuzzleComponent)
+	arg_96_0._cardPuzzleHPBar:SetCardPuzzleComponent(arg_96_0._cardPuzzleComponent)
 
-	arg_95_0._updateViewList[arg_95_0._cardPuzzleHPBar] = true
+	arg_96_0._updateViewList[arg_96_0._cardPuzzleHPBar] = true
 end
 
-function var_0_7.InitCardPuzzleEnergyBar(arg_96_0)
-	arg_96_0._cardPuzzleEnergyBar = var_0_0.Battle.CardPuzzleEnergyBar.New(arg_96_0._ui:findTF("CardPuzzleConsole/energy_block"))
+function var_0_7.InitCardPuzzleEnergyBar(arg_97_0)
+	arg_97_0._cardPuzzleEnergyBar = var_0_0.Battle.CardPuzzleEnergyBar.New(arg_97_0._ui:findTF("CardPuzzleConsole/energy_block"))
 
-	arg_96_0._cardPuzzleEnergyBar:SetCardPuzzleComponent(arg_96_0._cardPuzzleComponent)
+	arg_97_0._cardPuzzleEnergyBar:SetCardPuzzleComponent(arg_97_0._cardPuzzleComponent)
 
-	arg_96_0._updateViewList[arg_96_0._cardPuzzleEnergyBar] = true
+	arg_97_0._updateViewList[arg_97_0._cardPuzzleEnergyBar] = true
 end
 
-function var_0_7.InitCameraCardBoardClicker(arg_97_0)
-	arg_97_0._cardPuzzleBoardClicker = var_0_0.Battle.CardPuzzleBoardClicker.New(arg_97_0._ui:findTF("CardBoardController"))
+function var_0_7.InitCameraCardBoardClicker(arg_98_0)
+	arg_98_0._cardPuzzleBoardClicker = var_0_0.Battle.CardPuzzleBoardClicker.New(arg_98_0._ui:findTF("CardBoardController"))
 
-	arg_97_0._cardPuzzleBoardClicker:SetCardPuzzleComponent(arg_97_0._cardPuzzleComponent)
+	arg_98_0._cardPuzzleBoardClicker:SetCardPuzzleComponent(arg_98_0._cardPuzzleComponent)
 end
 
-function var_0_7.IntCardPuzzleFleetHead(arg_98_0)
-	arg_98_0._cardPuzzleFleetHead = var_0_0.Battle.CardPuzzleFleetHead.New(arg_98_0._ui:findTF("CardPuzzleConsole/fleet"))
+function var_0_7.IntCardPuzzleFleetHead(arg_99_0)
+	arg_99_0._cardPuzzleFleetHead = var_0_0.Battle.CardPuzzleFleetHead.New(arg_99_0._ui:findTF("CardPuzzleConsole/fleet"))
 
-	arg_98_0._cardPuzzleFleetHead:SetCardPuzzleComponent(arg_98_0._cardPuzzleComponent)
+	arg_99_0._cardPuzzleFleetHead:SetCardPuzzleComponent(arg_99_0._cardPuzzleComponent)
 end
 
-function var_0_7.InitCardPuzzleMovePile(arg_99_0)
-	arg_99_0._cardPuzzleMovePile = var_0_0.Battle.CardPuzzleMovePile.New(arg_99_0._ui:findTF("CardPuzzleConsole/movedeck"))
+function var_0_7.InitCardPuzzleMovePile(arg_100_0)
+	arg_100_0._cardPuzzleMovePile = var_0_0.Battle.CardPuzzleMovePile.New(arg_100_0._ui:findTF("CardPuzzleConsole/movedeck"))
 
-	arg_99_0._cardPuzzleMovePile:SetCardPuzzleComponent(arg_99_0._cardPuzzleComponent)
+	arg_100_0._cardPuzzleMovePile:SetCardPuzzleComponent(arg_100_0._cardPuzzleComponent)
 
-	arg_99_0._updateViewList[arg_99_0._cardPuzzleMovePile] = true
+	arg_100_0._updateViewList[arg_100_0._cardPuzzleMovePile] = true
 end
 
-function var_0_7.InitCardPuzzleDeckPile(arg_100_0)
-	arg_100_0._cardPuzzleDeckPile = var_0_0.Battle.CardPuzzleDeckPool.New(arg_100_0._ui:findTF("CardPuzzleConsole/deck"))
+function var_0_7.InitCardPuzzleDeckPile(arg_101_0)
+	arg_101_0._cardPuzzleDeckPile = var_0_0.Battle.CardPuzzleDeckPool.New(arg_101_0._ui:findTF("CardPuzzleConsole/deck"))
 
-	arg_100_0._cardPuzzleDeckPile:SetCardPuzzleComponent(arg_100_0._cardPuzzleComponent)
+	arg_101_0._cardPuzzleDeckPile:SetCardPuzzleComponent(arg_101_0._cardPuzzleComponent)
 end
 
-function var_0_7.InitCardPuzzleIconList(arg_101_0)
-	arg_101_0._cardPuzzleStatusIcon = var_0_0.Battle.CardPuzzleFleetIconList.New(arg_101_0._ui:findTF("CardPuzzleConsole/statusIcon"))
+function var_0_7.InitCardPuzzleIconList(arg_102_0)
+	arg_102_0._cardPuzzleStatusIcon = var_0_0.Battle.CardPuzzleFleetIconList.New(arg_102_0._ui:findTF("CardPuzzleConsole/statusIcon"))
 
-	arg_101_0._cardPuzzleStatusIcon:SetCardPuzzleComponent(arg_101_0._cardPuzzleComponent)
+	arg_102_0._cardPuzzleStatusIcon:SetCardPuzzleComponent(arg_102_0._cardPuzzleComponent)
 
-	arg_101_0._updateViewList[arg_101_0._cardPuzzleStatusIcon] = true
+	arg_102_0._updateViewList[arg_102_0._cardPuzzleStatusIcon] = true
 end
 
-function var_0_7.InitCardPuzzleHandBoard(arg_102_0)
-	arg_102_0._cardPuzzleHandBoard = var_0_0.Battle.CardPuzzleHandBoard.New(arg_102_0._ui:findTF("CardPuzzleConsole/cardboard"), arg_102_0._ui:findTF("CardPuzzleConsole/hand"))
+function var_0_7.InitCardPuzzleHandBoard(arg_103_0)
+	arg_103_0._cardPuzzleHandBoard = var_0_0.Battle.CardPuzzleHandBoard.New(arg_103_0._ui:findTF("CardPuzzleConsole/cardboard"), arg_103_0._ui:findTF("CardPuzzleConsole/hand"))
 
-	arg_102_0._cardPuzzleHandBoard:SetCardPuzzleComponent(arg_102_0._cardPuzzleComponent)
+	arg_103_0._cardPuzzleHandBoard:SetCardPuzzleComponent(arg_103_0._cardPuzzleComponent)
 
-	arg_102_0._updateViewList[arg_102_0._cardPuzzleHandBoard] = true
+	arg_103_0._updateViewList[arg_103_0._cardPuzzleHandBoard] = true
 end
 
-function var_0_7.InitCardPuzzleGoalRemind(arg_103_0)
-	arg_103_0._cardPuzzleGoalRemind = var_0_0.Battle.CardPuzzleGoalRemind.New(arg_103_0._ui:findTF("CardPuzzleConsole/goal"))
+function var_0_7.InitCardPuzzleGoalRemind(arg_104_0)
+	arg_104_0._cardPuzzleGoalRemind = var_0_0.Battle.CardPuzzleGoalRemind.New(arg_104_0._ui:findTF("CardPuzzleConsole/goal"))
 
-	arg_103_0._cardPuzzleGoalRemind:SetCardPuzzleComponent(arg_103_0._cardPuzzleComponent)
+	arg_104_0._cardPuzzleGoalRemind:SetCardPuzzleComponent(arg_104_0._cardPuzzleComponent)
 end
 
-function var_0_7.InitCardPuzzleCardDetail(arg_104_0)
-	arg_104_0._cardPuzzleCardDetail = var_0_0.Battle.CardPuzzleCardDetail.New(arg_104_0._ui:findTF("CardPuzzleConsole/cardDetail"))
+function var_0_7.InitCardPuzzleCardDetail(arg_105_0)
+	arg_105_0._cardPuzzleCardDetail = var_0_0.Battle.CardPuzzleCardDetail.New(arg_105_0._ui:findTF("CardPuzzleConsole/cardDetail"))
 end
 
-function var_0_7.DisposeCardPuzzleComponent(arg_105_0)
-	arg_105_0._cardPuzzleHPBar:Dispose()
-	arg_105_0._cardPuzzleEnergyBar:Dispose()
-	arg_105_0._cardPuzzleBoardClicker:Dispose()
-	arg_105_0._cardPuzzleFleetHead:Dispose()
-	arg_105_0._cardPuzzleMovePile:Dispose()
-	arg_105_0._cardPuzzleDeckPile:Dispose()
-	arg_105_0._cardPuzzleStatusIcon:Dispose()
-	arg_105_0._cardPuzzleHandBoard:Dispose()
-	arg_105_0._cardPuzzleGoalRemind:Dispose()
-	arg_105_0._cardPuzzleCardDetail:Dispose()
+function var_0_7.DisposeCardPuzzleComponent(arg_106_0)
+	arg_106_0._cardPuzzleHPBar:Dispose()
+	arg_106_0._cardPuzzleEnergyBar:Dispose()
+	arg_106_0._cardPuzzleBoardClicker:Dispose()
+	arg_106_0._cardPuzzleFleetHead:Dispose()
+	arg_106_0._cardPuzzleMovePile:Dispose()
+	arg_106_0._cardPuzzleDeckPile:Dispose()
+	arg_106_0._cardPuzzleStatusIcon:Dispose()
+	arg_106_0._cardPuzzleHandBoard:Dispose()
+	arg_106_0._cardPuzzleGoalRemind:Dispose()
+	arg_106_0._cardPuzzleCardDetail:Dispose()
 end
 
-function var_0_7.onUpdateFleetBuff(arg_106_0)
+function var_0_7.onUpdateFleetBuff(arg_107_0)
 	return
 end
 
-function var_0_7.onUpdateFleetShip(arg_107_0, arg_107_1)
-	arg_107_0._cardPuzzleFleetHead:UpdateShipIcon(arg_107_1.Data.teamType)
+function var_0_7.onUpdateFleetShip(arg_108_0, arg_108_1)
+	arg_108_0._cardPuzzleFleetHead:UpdateShipIcon(arg_108_1.Data.teamType)
 end
 
-function var_0_7.onBlockCommonButton(arg_108_0, arg_108_1)
-	local var_108_0 = arg_108_1.Data.flag
+function var_0_7.onBlockCommonButton(arg_109_0, arg_109_1)
+	local var_109_0 = arg_109_1.Data.flag
 
-	arg_108_0:EnableComponent(var_108_0)
+	arg_109_0:EnableComponent(var_109_0)
 end
 
-function var_0_7.onLongPressBulletTime(arg_109_0, arg_109_1)
-	local var_109_0 = arg_109_1.Data.timeScale
+function var_0_7.onLongPressBulletTime(arg_110_0, arg_110_1)
+	local var_110_0 = arg_110_1.Data.timeScale
 
-	arg_109_0._state:ScaleTimer(var_109_0)
+	arg_110_0._state:ScaleTimer(var_110_0)
 end
 
-function var_0_7.onShowCardDetail(arg_110_0, arg_110_1)
-	local var_110_0 = arg_110_1.Data.card
+function var_0_7.onShowCardDetail(arg_111_0, arg_111_1)
+	local var_111_0 = arg_111_1.Data.card
 
-	if var_110_0 then
-		arg_110_0._cardPuzzleCardDetail:Active(true)
-		arg_110_0._cardPuzzleCardDetail:SetReferenceCard(var_110_0)
+	if var_111_0 then
+		arg_111_0._cardPuzzleCardDetail:Active(true)
+		arg_111_0._cardPuzzleCardDetail:SetReferenceCard(var_111_0)
 	else
-		arg_110_0._cardPuzzleCardDetail:Active(false)
+		arg_111_0._cardPuzzleCardDetail:Active(false)
 	end
 end
