@@ -1,5 +1,6 @@
 ﻿local var_0_0 = class("BoatAdGamePopUI")
 local var_0_1
+local var_0_2
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._tf = arg_1_1
@@ -62,8 +63,6 @@ function var_0_0.initSettlementUI(arg_10_0)
 	end, SFX_CANCEL)
 end
 
-local var_0_2
-
 function var_0_0.initAdWindow(arg_12_0)
 	arg_12_0.adUI = findTF(arg_12_0._tf, "pop/AdUI")
 
@@ -74,6 +73,7 @@ function var_0_0.initAdWindow(arg_12_0)
 	arg_12_0.btnStop = findTF(arg_12_0.adUI, "ad/movie/btnStop")
 	arg_12_0.btnRepeat = findTF(arg_12_0.adUI, "ad/movie/btnRepeat")
 
+	setActive(arg_12_0.btnRepeat, false)
 	onButton(arg_12_0._event, findTF(arg_12_0.adUI, "ad/bottom"), function()
 		if var_0_2 and Time.realtimeSinceStartup - var_0_2 < 1 then
 			return
@@ -85,18 +85,12 @@ function var_0_0.initAdWindow(arg_12_0)
 			return
 		end
 
-		if arg_12_0.playHandle then
-			arg_12_0.playHandle()
-
-			arg_12_0.playHandle = nil
-		end
-
 		setActive(arg_12_0.adUI, false)
 		arg_12_0:clearMovie()
 		arg_12_0._event:emit(BoatAdGameEvent.CLOSE_AD_UI)
 	end, SFX_CANCEL)
 	onButton(arg_12_0._event, findTF(arg_12_0.adUI, "ad/bgClose"), function()
-		if var_0_2 and Time.realtimeSinceStartup - var_0_2 < 1 then
+		if var_0_2 and Time.realtimeSinceStartup - var_0_2 < 2 then
 			return
 		end
 
@@ -106,209 +100,190 @@ function var_0_0.initAdWindow(arg_12_0)
 			return
 		end
 
-		if arg_12_0.playHandle then
-			arg_12_0.playHandle()
-
-			arg_12_0.playHandle = nil
-		end
-
 		setActive(arg_12_0.adUI, false)
 		arg_12_0:clearMovie()
 		arg_12_0._event:emit(BoatAdGameEvent.CLOSE_AD_UI)
 	end, SFX_CANCEL)
-	onButton(arg_12_0._event, arg_12_0.btnPlay, function()
-		return
-	end)
-	onButton(arg_12_0._event, arg_12_0.btnStop, function()
-		return
-	end)
 	onButton(arg_12_0._event, arg_12_0.btnRepeat, function()
-		if var_0_2 and Time.realtimeSinceStartup - var_0_2 < 1 then
+		if var_0_2 and Time.realtimeSinceStartup - var_0_2 < 2 then
 			return
 		end
 
 		var_0_2 = Time.realtimeSinceStartup
 
 		if arg_12_0.mvManaCpkUI and arg_12_0.mvCompleteFlag then
-			print("重新播放")
 			arg_12_0:loadMv()
 		end
 	end)
 end
 
-function var_0_0.clearMovie(arg_18_0)
-	if arg_18_0.mvGo then
-		arg_18_0.mvManaCpkUI:SetPlayEndHandler(nil)
-		arg_18_0.mvManaCpkUI:StopCpk()
-		destroy(arg_18_0.mvGo)
+function var_0_0.clearMovie(arg_16_0)
+	if arg_16_0.mvGo then
+		arg_16_0.mvManaCpkUI:SetPlayEndHandler(nil)
+		arg_16_0.mvManaCpkUI:StopCpk()
+		destroy(arg_16_0.mvGo)
 
-		arg_18_0.mvManaCpkUI = nil
-		arg_18_0.mvGo = nil
-		arg_18_0.mvName = nil
+		arg_16_0.mvManaCpkUI = nil
+		arg_16_0.mvGo = nil
+		arg_16_0.mvName = nil
 	end
 end
 
-function var_0_0.loadMv(arg_19_0)
-	arg_19_0:clearMovie()
+function var_0_0.loadMv(arg_17_0)
+	arg_17_0:clearMovie()
 
-	if arg_19_0.isLoading then
+	if arg_17_0.isLoading then
 		return
 	end
 
-	local var_19_0 = "BoatAdMvUI"
+	local var_17_0 = "BoatAdMvUI"
 
-	arg_19_0.isLoading = true
+	arg_17_0.isLoading = true
+	arg_17_0.mvCompleteFlag = false
 
-	PoolMgr.GetInstance():GetUI(var_19_0, true, function(arg_20_0)
-		arg_19_0.mvGo = arg_20_0
-		arg_19_0.mvName = var_19_0
-		arg_19_0.mvManaCpkUI = GetComponent(findTF(arg_19_0.mvGo, "video/cpk"), typeof(CriManaCpkUI))
+	PoolMgr.GetInstance():GetUI(var_17_0, true, function(arg_18_0)
+		arg_17_0.mvGo = arg_18_0
+		arg_17_0.mvName = var_17_0
+		arg_17_0.mvManaCpkUI = GetComponent(findTF(arg_17_0.mvGo, "video/cpk"), typeof(CriManaCpkUI))
 
-		arg_19_0.mvManaCpkUI:SetPlayEndHandler(System.Action(function()
-			arg_19_0:mvComplete()
-
-			if arg_19_0.playHandle then
-				arg_19_0.playHandle()
-
-				arg_19_0.playHandle = nil
-			end
+		arg_17_0.mvManaCpkUI:SetPlayEndHandler(System.Action(function()
+			arg_17_0:mvComplete()
 		end))
-		arg_19_0.mvManaCpkUI.player:SetVolume(PlayerPrefs.GetFloat("bgm_vol", DEFAULT_BGMVOLUME))
-		setActive(arg_19_0.btnPlay, false)
-		setActive(arg_19_0.btnStop, true)
-		setActive(arg_19_0.btnRepeat, false)
+		arg_17_0.mvManaCpkUI:PlayCpk()
 
-		if arg_19_0.isLoading == false then
-			arg_19_0:clearMovie()
+		local var_18_0 = PlayerPrefs.GetFloat("bgm_vol", DEFAULT_BGMVOLUME) or 1
+
+		arg_17_0.mvManaCpkUI.player:SetVolume(var_18_0)
+		setActive(arg_17_0.btnPlay, false)
+		setActive(arg_17_0.btnStop, true)
+		setActive(arg_17_0.btnRepeat, false)
+
+		if arg_17_0.isLoading == false then
+			arg_17_0:clearMovie()
 		else
-			arg_19_0.isLoading = false
+			arg_17_0.isLoading = false
 
-			setParent(arg_19_0.mvGo, arg_19_0.mvContent)
-			setActive(arg_19_0.mvGo, true)
+			setParent(arg_17_0.mvGo, arg_17_0.mvContent)
+			setActive(arg_17_0.mvGo, true)
 		end
-
-		arg_19_0.mvCompleteFlag = false
-
-		arg_19_0.mvManaCpkUI:PlayCpk()
 	end)
 end
 
-function var_0_0.mvComplete(arg_22_0)
+function var_0_0.mvComplete(arg_20_0)
 	print("播放完成")
 
-	arg_22_0.mvCompleteFlag = true
+	arg_20_0.mvCompleteFlag = true
 
-	arg_22_0:onPlayerEnd()
-
-	if arg_22_0.mvIndex == arg_22_0.nday then
-		-- block empty
-	end
+	arg_20_0:onPlayerEnd()
 end
 
-function var_0_0.onPlayerEnd(arg_23_0)
+function var_0_0.onPlayerEnd(arg_21_0)
+	setActive(arg_21_0.btnPlay, false)
+	setActive(arg_21_0.btnStop, false)
+	setActive(arg_21_0.btnRepeat, true)
+end
+
+function var_0_0.onPlayerStop(arg_22_0)
+	setActive(arg_22_0.btnPlay, true)
+	setActive(arg_22_0.btnStop, false)
+	setActive(arg_22_0.btnRepeat, false)
+end
+
+function var_0_0.onPlayerStart(arg_23_0)
 	setActive(arg_23_0.btnPlay, false)
-	setActive(arg_23_0.btnStop, false)
-	setActive(arg_23_0.btnRepeat, true)
+	setActive(arg_23_0.btnStop, true)
+	setActive(arg_23_0.btnRepeat, false)
 end
 
-function var_0_0.onPlayerStop(arg_24_0)
-	setActive(arg_24_0.btnPlay, true)
-	setActive(arg_24_0.btnStop, false)
-	setActive(arg_24_0.btnRepeat, false)
+function var_0_0.oepnAd(arg_24_0)
+	setActive(arg_24_0.adUI, true)
+
+	var_0_2 = Time.realtimeSinceStartup
+
+	arg_24_0:loadMv()
 end
 
-function var_0_0.onPlayerStart(arg_25_0)
-	setActive(arg_25_0.btnPlay, false)
-	setActive(arg_25_0.btnStop, true)
-	setActive(arg_25_0.btnRepeat, false)
-end
+function var_0_0.updateSettlementUI(arg_25_0)
+	GetComponent(findTF(arg_25_0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
-function var_0_0.oepnAd(arg_26_0)
-	setActive(arg_26_0.adUI, true)
-	arg_26_0:loadMv()
-end
+	local var_25_0 = var_0_1.GetMiniGameData():GetRuntimeData("elements")
+	local var_25_1 = var_0_1.scoreNum
+	local var_25_2 = var_25_0 and #var_25_0 > 0 and var_25_0[1] or 0
 
-function var_0_0.updateSettlementUI(arg_27_0)
-	GetComponent(findTF(arg_27_0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
+	setActive(findTF(arg_25_0.settlementUI, "ad/new"), var_25_2 < var_25_1)
 
-	local var_27_0 = var_0_1.GetMiniGameData():GetRuntimeData("elements")
-	local var_27_1 = var_0_1.scoreNum
-	local var_27_2 = var_27_0 and #var_27_0 > 0 and var_27_0[1] or 0
+	if var_25_2 < var_25_1 then
+		var_25_2 = var_25_1
 
-	setActive(findTF(arg_27_0.settlementUI, "ad/new"), var_27_2 < var_27_1)
-
-	if var_27_2 < var_27_1 then
-		var_27_2 = var_27_1
-
-		arg_27_0._event:emit(SimpleMGEvent.STORE_SERVER, var_27_2)
+		arg_25_0._event:emit(SimpleMGEvent.STORE_SERVER, var_25_2)
 	end
 
-	local var_27_3 = findTF(arg_27_0.settlementUI, "ad/highText")
-	local var_27_4 = findTF(arg_27_0.settlementUI, "ad/currentText")
+	local var_25_3 = findTF(arg_25_0.settlementUI, "ad/highText")
+	local var_25_4 = findTF(arg_25_0.settlementUI, "ad/currentText")
 
-	setText(var_27_3, var_27_2)
-	setText(var_27_4, var_27_1)
-	arg_27_0._event:emit(SimpleMGEvent.SUBMIT_GAME_SUCCESS)
+	setText(var_25_3, var_25_2)
+	setText(var_25_4, var_25_1)
+	arg_25_0._event:emit(SimpleMGEvent.SUBMIT_GAME_SUCCESS)
 end
 
-function var_0_0.backPressed(arg_28_0)
-	if isActive(arg_28_0.pauseUI) then
-		arg_28_0:resumeGame()
-		arg_28_0._event:emit(SimpleMGEvent.PAUSE_GAME, false)
-	elseif isActive(arg_28_0.leaveUI) then
-		arg_28_0:resumeGame()
-		arg_28_0._event:emit(SimpleMGEvent.LEVEL_GAME, false)
-	elseif not isActive(arg_28_0.pauseUI) and not isActive(arg_28_0.pauseUI) then
-		arg_28_0:popPauseUI()
-		arg_28_0._event:emit(SimpleMGEvent.PAUSE_GAME, true)
+function var_0_0.backPressed(arg_26_0)
+	if isActive(arg_26_0.pauseUI) then
+		arg_26_0:resumeGame()
+		arg_26_0._event:emit(SimpleMGEvent.PAUSE_GAME, false)
+	elseif isActive(arg_26_0.leaveUI) then
+		arg_26_0:resumeGame()
+		arg_26_0._event:emit(SimpleMGEvent.LEVEL_GAME, false)
+	elseif not isActive(arg_26_0.pauseUI) and not isActive(arg_26_0.pauseUI) then
+		arg_26_0:popPauseUI()
+		arg_26_0._event:emit(SimpleMGEvent.PAUSE_GAME, true)
 	else
-		arg_28_0:resumeGame()
+		arg_26_0:resumeGame()
 	end
 end
 
-function var_0_0.resumeGame(arg_29_0)
-	setActive(arg_29_0.leaveUI, false)
-	setActive(arg_29_0.pauseUI, false)
+function var_0_0.resumeGame(arg_27_0)
+	setActive(arg_27_0.leaveUI, false)
+	setActive(arg_27_0.pauseUI, false)
 end
 
-function var_0_0.popLeaveUI(arg_30_0)
-	if isActive(arg_30_0.pauseUI) then
-		setActive(arg_30_0.pauseUI, false)
+function var_0_0.popLeaveUI(arg_28_0)
+	if isActive(arg_28_0.pauseUI) then
+		setActive(arg_28_0.pauseUI, false)
 	end
 
-	setActive(arg_30_0.leaveUI, true)
+	setActive(arg_28_0.leaveUI, true)
 end
 
-function var_0_0.popPauseUI(arg_31_0)
-	if isActive(arg_31_0.leaveUI) then
-		setActive(arg_31_0.leaveUI, false)
+function var_0_0.popPauseUI(arg_29_0)
+	if isActive(arg_29_0.leaveUI) then
+		setActive(arg_29_0.leaveUI, false)
 	end
 
-	setActive(arg_31_0.pauseUI, true)
+	setActive(arg_29_0.pauseUI, true)
 end
 
-function var_0_0.updateGameUI(arg_32_0, arg_32_1)
-	setText(arg_32_0.scoreTf, arg_32_1.scoreNum)
-	setText(arg_32_0.gameTimeS, math.ceil(arg_32_1.gameTime))
+function var_0_0.updateGameUI(arg_30_0, arg_30_1)
+	setText(arg_30_0.scoreTf, arg_30_1.scoreNum)
+	setText(arg_30_0.gameTimeS, math.ceil(arg_30_1.gameTime))
 end
 
-function var_0_0.readyStart(arg_33_0)
-	arg_33_0:popCountUI(true)
-	arg_33_0.countAnimator:Play("count")
+function var_0_0.readyStart(arg_31_0)
+	arg_31_0:popCountUI(true)
+	arg_31_0.countAnimator:Play("count")
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_1.SFX_COUNT_DOWN)
 end
 
-function var_0_0.popCountUI(arg_34_0, arg_34_1)
-	setActive(arg_34_0.countUI, arg_34_1)
+function var_0_0.popCountUI(arg_32_0, arg_32_1)
+	setActive(arg_32_0.countUI, arg_32_1)
 end
 
-function var_0_0.popSettlementUI(arg_35_0, arg_35_1)
-	setActive(arg_35_0.settlementUI, arg_35_1)
+function var_0_0.popSettlementUI(arg_33_0, arg_33_1)
+	setActive(arg_33_0.settlementUI, arg_33_1)
 end
 
-function var_0_0.clearUI(arg_36_0)
-	setActive(arg_36_0.settlementUI, false)
-	setActive(arg_36_0.countUI, false)
+function var_0_0.clearUI(arg_34_0)
+	setActive(arg_34_0.settlementUI, false)
+	setActive(arg_34_0.countUI, false)
 end
 
 return var_0_0

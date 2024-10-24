@@ -91882,8 +91882,8 @@ _G.pg.base.item_data_statistics[11056] = {
 }
 _G.pg.base.item_data_statistics[30361] = {
 	open_directly = 1,
-	name = "外观装备箱(恐怖狂潮)",
-	display = "可以获得一件随机的恐怖狂潮风格外观装备",
+	name = "Gear Skin Box (Halloween Horrors)",
+	display = "Contains a random gear skin.",
 	type = 11,
 	display_effect = "",
 	id = 30361,
@@ -92005,8 +92005,8 @@ _G.pg.base.item_data_statistics[30361] = {
 }
 _G.pg.base.item_data_statistics[30547] = {
 	open_directly = 1,
-	name = "定向外观装备箱(恐怖狂潮)",
-	display = "使用后可从「恐怖狂潮」主题外观装备中任意选择一种获得1个",
+	name = "Selection Gear Skin Box (Halloween Horrors)",
+	display = "Can be opened to receive 1 Halloween Horrors-themed gear skin of your choosing.",
 	type = 13,
 	display_effect = "",
 	id = 30547,

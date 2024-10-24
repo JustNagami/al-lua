@@ -79,6 +79,7 @@ function var_0_0.init(arg_2_0)
 	setText(arg_2_0:findTF("panel/backgroundScroll/Viewport/Content/background/selected/Text", arg_2_0.backgroundUI), i18n("juuschat_label1"))
 	setText(arg_2_0:findTF("panel/detail/title", arg_2_0.redPacketUI), i18n("juuschat_redpacket_detail"))
 	setText(arg_2_0:findTF("main/noFilteredMessageBg/Text"), i18n("juuschat_filter_empty"))
+	setText(arg_2_0:findTF("panel/backgroundScroll/Viewport/Content/background/lockFrame/Text", arg_2_0.backgroundUI), i18n("juuschat_background_tip1"))
 
 	arg_2_0.redPacketGot = arg_2_0:findTF("panel/got", arg_2_0.redPacketUI)
 
@@ -1075,7 +1076,11 @@ function var_0_0.SetBackgroundPanel(arg_60_0, arg_60_1)
 				local var_62_2 = var_62_0.painting
 
 				LoadImageSpriteAsync("herohrzicon/" .. var_62_2, arg_62_2:Find("skinMask/skin"), false)
-				setText(arg_62_2:Find("skinMask/Panel/Text"), var_62_0.name)
+				setScrollText(arg_62_2:Find("skinMask/Panel/mask/Text"), var_62_0.name)
+
+				local var_62_3 = var_62_0.skin_type ~= ShipSkin.SKIN_TYPE_DEFAULT and not getProxy(ShipSkinProxy):hasSkin(var_62_0.id)
+
+				SetActive(arg_62_2:Find("lockFrame"), var_62_3)
 				SetActive(arg_62_2:Find("selectedFrame"), arg_60_1.skinId == var_62_1)
 				SetActive(arg_62_2:Find("selected"), arg_60_1.skinId == var_62_1)
 
@@ -1084,17 +1089,21 @@ function var_0_0.SetBackgroundPanel(arg_60_0, arg_60_1)
 				end
 
 				onButton(arg_60_0, arg_62_2, function()
-					SetActive(arg_62_2:Find("selectedFrame"), true)
+					if not var_62_3 then
+						SetActive(arg_62_2:Find("selectedFrame"), true)
 
-					for iter_63_0 = 1, #arg_60_1.skins do
-						if iter_63_0 ~= arg_62_1 + 1 then
-							local var_63_0 = arg_60_0:findTF("panel/backgroundScroll/Viewport/Content", arg_60_0.backgroundUI):GetChild(iter_63_0 - 1)
+						for iter_63_0 = 1, #arg_60_1.skins do
+							if iter_63_0 ~= arg_62_1 + 1 then
+								local var_63_0 = arg_60_0:findTF("panel/backgroundScroll/Viewport/Content", arg_60_0.backgroundUI):GetChild(iter_63_0 - 1)
 
-							SetActive(arg_60_0:findTF("selectedFrame", var_63_0), false)
+								SetActive(arg_60_0:findTF("selectedFrame", var_63_0), false)
+							end
 						end
-					end
 
-					arg_60_0.currentBgId = var_62_1
+						arg_60_0.currentBgId = var_62_1
+					else
+						pg.TipsMgr.GetInstance():ShowTips(i18n("juuschat_background_tip2"))
+					end
 				end, SFX_PANEL)
 			end
 		end)

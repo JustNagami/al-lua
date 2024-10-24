@@ -189949,7 +189949,7 @@ _G.pg.base.item_virtual_data_statistics[65034] = {
 }
 _G.pg.base.item_virtual_data_statistics[58997] = {
 	display = "Can be used to obtain 1 random Halloween Horrors-themed gear skin.",
-	name = "外观装备(恐怖狂潮)",
+	name = "Gear Skin Box (Halloween Horrors)",
 	max_num = 0,
 	type = 99,
 	time_limit = 0,
@@ -190062,7 +190062,7 @@ _G.pg.base.item_virtual_data_statistics[58997] = {
 	combination_display = {}
 }
 _G.pg.base.item_virtual_data_statistics[65035] = {
-	display = "用于「飓风与沉眠之海」活动兑换，活动结束后将会消失",
+	display = "Used to exchange for items in \"Tempesta and the Sleeping Sea.\" Will be removed after the event ends.",
 	name = "Sea Map Piece",
 	max_num = 0,
 	type = 0,

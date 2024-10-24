@@ -25182,7 +25182,7 @@ _G.pg.base.gametip.juuschat_filter_tip2 = {
 	tip = "Answered"
 }
 _G.pg.base.gametip.juuschat_filter_tip3 = {
-	tip = "Unanswered"
+	tip = "Unreplied"
 }
 _G.pg.base.gametip.juuschat_filter_tip4 = {
 	tip = "Private"
@@ -25203,7 +25203,7 @@ _G.pg.base.gametip.juuschat_chattip2 = {
 	tip = "[Presents]"
 }
 _G.pg.base.gametip.juuschat_chattip3 = {
-	tip = "[Unanswered]"
+	tip = "[Unreplied]"
 }
 _G.pg.base.gametip.juuschat_reddot_title = {
 	tip = "FleetChat"
@@ -25277,4 +25277,10 @@ _G.pg.base.gametip.activity_1024_memory = {
 }
 _G.pg.base.gametip.activity_1024_memory_get = {
 	tip = "- Claimed -"
+}
+_G.pg.base.gametip.juuschat_background_tip1 = {
+	tip = "Not Owned"
+}
+_G.pg.base.gametip.juuschat_background_tip2 = {
+	tip = "You don't own this skin."
 }
