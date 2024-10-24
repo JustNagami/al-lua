@@ -571,6 +571,8 @@ function var_0_0.updateIntimacyEnergy(arg_22_0, arg_22_1)
 
 		setImageSprite(var_22_0:Find("icon/img"), var_22_2, true)
 		setText(var_22_0:Find("Text"), var_22_1:getEnergy())
+		setActive(var_22_0:Find("Text"), false)
+		setActive(var_22_0:Find("Text"), true)
 	end
 end
 

@@ -234,12 +234,12 @@ end
 function var_0_0.Init(arg_21_0, arg_21_1)
 	arg_21_0.state = var_0_1
 
-	PoolMgr.GetInstance():GetUI("NewStoryUI", true, function(arg_22_0)
+	LoadAndInstantiateAsync("ui", "NewStoryUI", function(arg_22_0)
 		arg_21_0.UIOverlay = GameObject.Find("Overlay/UIOverlay")
 
 		arg_22_0.transform:SetParent(arg_21_0.UIOverlay.transform, false)
 		arg_21_0:_Init(arg_22_0, arg_21_1)
-	end)
+	end, true, true)
 end
 
 function var_0_0._Init(arg_23_0, arg_23_1, arg_23_2)

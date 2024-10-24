@@ -178,16 +178,17 @@ function var_0_0.BuildCameraMsg(arg_12_0, arg_12_1, arg_12_2, arg_12_3, arg_12_4
 	end), "_")
 end
 
-function var_0_0.BuildDataCamera(arg_14_0, arg_14_1, arg_14_2)
+function var_0_0.BuildDataCamera(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
 	return {
 		trackType = var_0_0.TYPE_DORM_CAMERA,
 		args = {
 			arg_14_0,
 			arg_14_1,
-			Count = 2
+			arg_14_2,
+			Count = 3
 		},
 		strs = {
-			arg_14_2,
+			arg_14_3,
 			Count = 1
 		}
 	}

@@ -277,7 +277,7 @@ function var_0_0.didEnter(arg_6_0)
 							configId = arg_6_0.animID
 						})
 
-						pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCamera(arg_6_0.room:GetConfigID(), 2, Dorm3dTrackCommand.BuildCameraMsg(var_26_0:GetName(), var_26_1:GetStateName(), arg_6_0.cameraSettings.depthOfField.focusDistance.value, arg_6_0.cameraSettings.depthOfField.blurRadius.value, arg_6_0.cameraSettings.postExposure.value, arg_6_0.cameraSettings.contrast.value, arg_6_0.cameraSettings.saturate.value)))
+						pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCamera(arg_6_0.scene.apartment:GetConfigID(), 2, arg_6_0.room:GetConfigID(), Dorm3dTrackCommand.BuildCameraMsg(var_26_0:GetName(), var_26_1:GetStateName(), arg_6_0.cameraSettings.depthOfField.focusDistance.value, arg_6_0.cameraSettings.depthOfField.blurRadius.value, arg_6_0.cameraSettings.postExposure.value, arg_6_0.cameraSettings.contrast.value, arg_6_0.cameraSettings.saturate.value)))
 					end
 				})
 			end))
@@ -316,7 +316,7 @@ function var_0_0.didEnter(arg_6_0)
 				configId = arg_6_0.animID
 			})
 
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCamera(arg_6_0.room:GetConfigID(), 1, Dorm3dTrackCommand.BuildCameraMsg(var_33_0:GetName(), var_33_1:GetStateName(), arg_6_0.cameraSettings.depthOfField.focusDistance.value, arg_6_0.cameraSettings.depthOfField.blurRadius.value, arg_6_0.cameraSettings.postExposure.value, arg_6_0.cameraSettings.contrast.value, arg_6_0.cameraSettings.saturate.value)))
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCamera(arg_6_0.scene.apartment:GetConfigID(), 1, arg_6_0.room:GetConfigID(), Dorm3dTrackCommand.BuildCameraMsg(var_33_0:GetName(), var_33_1:GetStateName(), arg_6_0.cameraSettings.depthOfField.focusDistance.value, arg_6_0.cameraSettings.depthOfField.blurRadius.value, arg_6_0.cameraSettings.postExposure.value, arg_6_0.cameraSettings.contrast.value, arg_6_0.cameraSettings.saturate.value)))
 		end
 
 		local var_30_3 = ScreenShooter.New(Screen.width, Screen.height, TextureFormat.ARGB32):TakePhoto(arg_6_0.mainCamera)

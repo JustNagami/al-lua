@@ -9,7 +9,7 @@ end
 
 function var_0_0.Init(arg_2_0, arg_2_1)
 	print("initializing sceneanim manager...")
-	PoolMgr.GetInstance():GetUI("SceneAnimUI", true, function(arg_3_0)
+	LoadAndInstantiateAsync("ui", "SceneAnimUI", function(arg_3_0)
 		arg_2_0._go = arg_3_0
 
 		arg_2_0._go:SetActive(false)
@@ -23,7 +23,7 @@ function var_0_0.Init(arg_2_0, arg_2_1)
 		if arg_2_1 then
 			arg_2_1()
 		end
-	end)
+	end, true, true)
 end
 
 function var_0_0.SixthAnniversaryJPCoverGoScene(arg_4_0, arg_4_1)

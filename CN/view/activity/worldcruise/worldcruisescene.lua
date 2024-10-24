@@ -67,7 +67,7 @@ function var_0_0.init(arg_7_0)
 	setText(arg_7_0.phaseTF:Find("progress"), i18n("cruise_phase_title"))
 
 	arg_7_0.pages = {
-		[var_0_0.PAGE_AWARD] = WorldCruiseAwardPage.New(arg_7_0._tf:Find("frame/award_container"), arg_7_0.event),
+		[var_0_0.PAGE_AWARD] = WorldCruiseAwardPage.New(arg_7_0._tf:Find("frame/award_container"), arg_7_0.event, arg_7_0.contextData),
 		[var_0_0.PAGE_TASK] = WorldCruiseTaskPage.New(arg_7_0._tf:Find("frame/task_container"), arg_7_0.event, arg_7_0.contextData),
 		[var_0_0.PAGE_SHOP] = WorldCruiseShopPage.New(arg_7_0._tf:Find("frame/shop_container"), arg_7_0.event, arg_7_0.contextData)
 	}
@@ -93,8 +93,7 @@ function var_0_0.init(arg_7_0)
 	setActive(var_7_1:Find("lock"), var_7_0)
 	setText(var_7_1:Find("lock/Text"), i18n("cruise_shop_no_open"))
 
-	arg_7_0.chargeTipWindow = ChargeTipWindow.New(arg_7_0._tf, arg_7_0.event)
-	arg_7_0.contextData.windowForESkin = EquipmentSkinInfoUIForShopWindow.New(arg_7_0._tf, arg_7_0.event)
+	arg_7_0.contextData.windowForCharge = WorldCruiseChargePage.New(arg_7_0._tf, arg_7_0.event)
 end
 
 function var_0_0.didEnter(arg_11_0)
@@ -103,8 +102,7 @@ function var_0_0.didEnter(arg_11_0)
 		arg_11_0:closeView()
 	end, SFX_CANCEL)
 	onButton(arg_11_0, arg_11_0.helpBtn, function()
-		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			type = MSGBOX_TYPE_HELP,
+		pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_COMMON_HELP, {
 			helps = i18n("battlepass_main_help_" .. pg.battlepass_event_pt[arg_11_0.activity.id].map_name)
 		})
 	end, SFX_PANEL)
@@ -112,7 +110,7 @@ function var_0_0.didEnter(arg_11_0)
 		pg.playerResUI:ClickGem()
 	end, SFX_PANEL)
 	onButton(arg_11_0, arg_11_0.ticketResBtn, function()
-		shoppingBatch(61017, {
+		shoppingBatchNewStyle(Goods.CRUISE_QUICK_TASK_TICKET_ID, {
 			id = Item.QUICK_TASK_PASS_TICKET_ID
 		}, 20, "build_ship_quickly_buy_stone")
 	end, SFX_PANEL)
@@ -151,7 +149,7 @@ function var_0_0.UpdatePhase(arg_17_0)
 end
 
 function var_0_0.OnChargeSuccess(arg_18_0, arg_18_1)
-	arg_18_0.chargeTipWindow:ExecuteAction("Show", arg_18_1)
+	arg_18_0.contextData.windowForCharge:ExecuteAction("ShowUnlockWindow", arg_18_1)
 end
 
 function var_0_0.UpdateAwardTip(arg_19_0)
@@ -202,23 +200,27 @@ function var_0_0.UpdateShopPage(arg_25_0)
 	arg_25_0:UpdateView()
 end
 
-function var_0_0.willExit(arg_26_0)
-	if arg_26_0.chargeTipWindow then
-		arg_26_0.chargeTipWindow:Destroy()
+function var_0_0.onBackPressed(arg_26_0)
+	if arg_26_0.contextData.windowForCharge and arg_26_0.contextData.windowForCharge:GetLoaded() and arg_26_0.contextData.windowForCharge:isShowing() then
+		arg_26_0.contextData.windowForCharge:Hide()
 
-		arg_26_0.chargeTipWindow = nil
+		return
 	end
 
-	if arg_26_0.contextData.windowForESkin then
-		arg_26_0.contextData.windowForESkin:Destroy()
+	var_0_0.super.onBackPressed(arg_26_0)
+end
 
-		arg_26_0.contextData.windowForESkin = nil
+function var_0_0.willExit(arg_27_0)
+	if arg_27_0.contextData.windowForCharge then
+		arg_27_0.contextData.windowForCharge:Destroy()
+
+		arg_27_0.contextData.windowForCharge = nil
 	end
 
-	for iter_26_0, iter_26_1 in pairs(arg_26_0.pages) do
-		iter_26_1:Destroy()
+	for iter_27_0, iter_27_1 in pairs(arg_27_0.pages) do
+		iter_27_1:Destroy()
 
-		iter_26_1 = nil
+		iter_27_1 = nil
 	end
 end
 

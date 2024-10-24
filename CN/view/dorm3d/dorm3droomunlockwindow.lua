@@ -73,7 +73,7 @@ function var_0_0.didEnter(arg_3_0)
 		if var_3_7:needDownload() then
 			local var_3_8, var_3_9 = var_3_7:getDownloadNeedSize()
 
-			setText(arg_3_0._tf:Find("Window/Download"), i18n("dorm3d_beach_download", var_3_8))
+			setText(arg_3_0._tf:Find("Window/Download"), i18n("dorm3d_beach_download", var_3_9))
 		else
 			setText(arg_3_0._tf:Find("Window/Download"), "")
 		end

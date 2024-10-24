@@ -7773,12 +7773,6 @@ _G.pg.base.gametip.help_level_ui = {
 	tip = {
 		{
 			icon = {
-				atlas = "helpbg/level_ui_help_1",
-				path = ""
-			}
-		},
-		{
-			icon = {
 				atlas = "helpbg/level_ui_help_2",
 				path = ""
 			}
@@ -8266,16 +8260,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "天赋点不足"
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "每累计建造200次可获得海上传奇舰船 {namecode:161}(最多4次)"
+	tip = "罗马、莱昂纳多·达·芬奇等角色 建造概率UP！"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "维托里奥·维内托 建造追加！"
+	tip = "{namecode:463}、{namecode:455} 等角色建造追加！"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "阿布鲁齐公爵 等角色建造追加！"
+	tip = "{namecode:447} 建造追加！"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "天鹰 建造追加！"
+	tip = "{namecode:463}、{namecode:468} 等角色建造追加！"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -24655,7 +24649,7 @@ _G.pg.base.gametip.dorm3d_beach_role = {
 	tip = "解锁后可以与<color=#39bfff>$1</color>进行互动"
 }
 _G.pg.base.gametip.dorm3d_beach_download = {
-	tip = "需要下载$1M的资源"
+	tip = "需要下载$1的资源"
 }
 _G.pg.base.gametip.dorm3d_role_check_in = {
 	tip = "是否让<color=#39bfff>$1</color>入住该房间"
@@ -24987,4 +24981,10 @@ _G.pg.base.gametip.dorm3d_favor_maximize = {
 }
 _G.pg.base.gametip.dorm3d_purchase_weekly_limit = {
 	tip = "（本周购买$1/$2）"
+}
+_G.pg.base.gametip.battle_battleMediator_remainTime = {
+	tip = "剩余作战时间"
+}
+_G.pg.base.gametip.world_file_tip = {
+	tip = "※上下滑动查看，点击空白处关闭"
 }

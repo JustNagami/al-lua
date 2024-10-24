@@ -181,26 +181,7 @@ function var_0_0.UpdateTaskGroup(arg_16_0, arg_16_1, arg_16_2)
 	arg_16_0:UpdateTaskDisplay(var_16_0, var_16_2)
 	setActive(var_16_0:Find("quick"), var_16_2:getConfig("quick_finish") > 0 and var_16_2:getTaskStatus() == 0)
 	onButton(arg_16_0, var_16_0:Find("quick"), function()
-		local var_17_0 = getProxy(BagProxy):getItemCountById(Item.QUICK_TASK_PASS_TICKET_ID)
-		local var_17_1 = var_16_2:getConfig("quick_finish")
-
-		if var_17_0 < var_17_1 then
-			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("battlepass_task_quickfinish2", var_17_1 - var_17_0),
-				onYes = function()
-					shoppingBatch(61017, {
-						id = Item.QUICK_TASK_PASS_TICKET_ID
-					}, 20, "build_ship_quickly_buy_stone")
-				end
-			})
-		else
-			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("battlepass_task_quickfinish1", var_17_1, var_17_0),
-				onYes = function()
-					arg_16_0:emit(WorldCruiseMediator.ON_TASK_QUICK_SUBMIT, var_16_2)
-				end
-			})
-		end
+		arg_16_0:OnQuickClick(var_16_2)
 	end, SFX_CONFIRM)
 	setActive(var_16_0:Find("toggle_mark"), #var_16_1 > 0)
 
@@ -208,69 +189,75 @@ function var_0_0.UpdateTaskGroup(arg_16_0, arg_16_1, arg_16_2)
 		local var_16_3 = arg_16_1:Find("content")
 		local var_16_4 = UIItemList.New(var_16_3, var_16_3:Find("extend_tpl"))
 
-		var_16_4:make(function(arg_20_0, arg_20_1, arg_20_2)
-			arg_20_1 = arg_20_1 + 1
+		var_16_4:make(function(arg_18_0, arg_18_1, arg_18_2)
+			arg_18_1 = arg_18_1 + 1
 
-			if arg_20_0 == UIItemList.EventUpdate then
-				arg_16_0:UpdateTaskDisplay(arg_20_2, var_16_1[arg_20_1])
+			if arg_18_0 == UIItemList.EventUpdate then
+				arg_16_0:UpdateTaskDisplay(arg_18_2, var_16_1[arg_18_1])
 			end
 		end)
 		var_16_4:align(#var_16_1)
 	end
 end
 
-function var_0_0.UpdateTaskDisplay(arg_21_0, arg_21_1, arg_21_2)
-	local var_21_0 = arg_21_2:getProgress()
-	local var_21_1 = arg_21_2:getConfig("target_num")
+function var_0_0.UpdateTaskDisplay(arg_19_0, arg_19_1, arg_19_2)
+	local var_19_0 = arg_19_2:getProgress()
+	local var_19_1 = arg_19_2:getConfig("target_num")
 
-	setSlider(arg_21_1:Find("Slider"), 0, var_21_1, var_21_0)
-	setText(arg_21_1:Find("desc"), string.format("%s(%d/%d)", arg_21_2:getConfig("desc"), var_21_0, var_21_1))
+	setSlider(arg_19_1:Find("Slider"), 0, var_19_1, var_19_0)
+	setText(arg_19_1:Find("desc"), string.format("%s(%d/%d)", arg_19_2:getConfig("desc"), var_19_0, var_19_1))
 
-	local var_21_2 = Drop.Create(arg_21_2:getConfig("award_display")[1])
+	local var_19_2 = Drop.Create(arg_19_2:getConfig("award_display")[1])
 
-	updateDrop(arg_21_1:Find("outline/mask/IconTpl"), var_21_2)
-	onButton(arg_21_0, arg_21_1:Find("outline/mask/IconTpl"), function()
-		arg_21_0:emit(BaseUI.ON_DROP, var_21_2)
+	updateDrop(arg_19_1:Find("outline/mask/IconTpl"), var_19_2)
+	onButton(arg_19_0, arg_19_1:Find("outline/mask/IconTpl"), function()
+		arg_19_0:emit(BaseUI.ON_NEW_STYLE_DROP, {
+			drop = var_19_2
+		})
 	end, SFX_PANEL)
 
-	local var_21_3 = arg_21_0.finishAll and 2 or arg_21_2:getTaskStatus()
+	local var_19_3 = arg_19_0.finishAll and 2 or arg_19_2:getTaskStatus()
 
-	setActive(arg_21_1:Find("go"), var_21_3 == 0)
-	setActive(arg_21_1:Find("get"), var_21_3 == 1)
-	setActive(arg_21_1:Find("got"), var_21_3 == 2)
-	setActive(arg_21_1:Find("outline/mask/IconTpl/mask"), var_21_3 == 2)
-	onButton(arg_21_0, arg_21_1:Find("go"), function()
-		arg_21_0:emit(WorldCruiseMediator.ON_TASK_GO, arg_21_2)
+	setActive(arg_19_1:Find("go"), var_19_3 == 0)
+	setActive(arg_19_1:Find("get"), var_19_3 == 1)
+	setActive(arg_19_1:Find("got"), var_19_3 == 2)
+	setActive(arg_19_1:Find("outline/mask/IconTpl/mask"), var_19_3 == 2)
+	onButton(arg_19_0, arg_19_1:Find("go"), function()
+		arg_19_0:emit(WorldCruiseMediator.ON_TASK_GO, arg_19_2)
 	end, SFX_PANEL)
-	onButton(arg_21_0, arg_21_1:Find("get"), function()
-		arg_21_0:emit(WorldCruiseMediator.ON_TASK_SUBMIT, arg_21_2)
+	onButton(arg_19_0, arg_19_1:Find("get"), function()
+		arg_19_0:emit(WorldCruiseMediator.ON_TASK_SUBMIT, arg_19_2)
 	end, SFX_CONFIRM)
-	setActive(arg_21_1:Find("quick"), arg_21_2:getConfig("quick_finish") > 0 and arg_21_2:getTaskStatus() == 0)
-	onButton(arg_21_0, arg_21_1:Find("quick"), function()
-		local var_25_0 = getProxy(BagProxy):getItemCountById(Item.QUICK_TASK_PASS_TICKET_ID)
-		local var_25_1 = arg_21_2:getConfig("quick_finish")
-
-		if var_25_0 < var_25_1 then
-			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("battlepass_task_quickfinish2", var_25_1 - var_25_0),
-				onYes = function()
-					shoppingBatch(61017, {
-						id = Item.QUICK_TASK_PASS_TICKET_ID
-					}, 20, "build_ship_quickly_buy_stone")
-				end
-			})
-		else
-			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("battlepass_task_quickfinish1", var_25_1, var_25_0),
-				onYes = function()
-					arg_21_0:emit(WorldCruiseMediator.ON_TASK_QUICK_SUBMIT, arg_21_2)
-				end
-			})
-		end
+	setActive(arg_19_1:Find("quick"), arg_19_2:getConfig("quick_finish") > 0 and arg_19_2:getTaskStatus() == 0)
+	onButton(arg_19_0, arg_19_1:Find("quick"), function()
+		arg_19_0:OnQuickClick(arg_19_2)
 	end, SFX_CONFIRM)
 end
 
-function var_0_0.OnDestroy(arg_28_0)
+function var_0_0.OnQuickClick(arg_24_0, arg_24_1)
+	local var_24_0 = getProxy(BagProxy):getItemCountById(Item.QUICK_TASK_PASS_TICKET_ID)
+	local var_24_1 = arg_24_1:getConfig("quick_finish")
+
+	if var_24_0 < var_24_1 then
+		pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_COMMON_MSGBOX, {
+			contentText = i18n("battlepass_task_quickfinish2", var_24_1 - var_24_0),
+			onConfirm = function()
+				shoppingBatchNewStyle(Goods.CRUISE_QUICK_TASK_TICKET_ID, {
+					id = Item.QUICK_TASK_PASS_TICKET_ID
+				}, 20, "build_ship_quickly_buy_stone")
+			end
+		})
+	else
+		pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_COMMON_MSGBOX, {
+			contentText = i18n("battlepass_task_quickfinish1", var_24_1, var_24_0),
+			onConfirm = function()
+				arg_24_0:emit(WorldCruiseMediator.ON_TASK_QUICK_SUBMIT, arg_24_1)
+			end
+		})
+	end
+end
+
+function var_0_0.OnDestroy(arg_27_0)
 	return
 end
 
