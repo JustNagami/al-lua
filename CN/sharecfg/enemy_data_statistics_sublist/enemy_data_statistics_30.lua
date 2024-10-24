@@ -1,5 +1,161 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_30 = {
+	[90872] = {
+		cannon = 0,
+		name = "闪流",
+		type = 25,
+		speed_growth = 0,
+		air_growth = 0,
+		air = 0,
+		battle_unit_type = 49,
+		durability = 99999,
+		armor = 0,
+		friendly_cld = 0,
+		id = 90872,
+		bubble_fx = "",
+		dodge_growth = 0,
+		icon = "shuguangjixie_shanliu",
+		star = 0,
+		fog_fx = "",
+		antisub_growth = 0,
+		rarity = 0,
+		torpedo = 0,
+		luck_growth = 0,
+		icon_type = 25,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		hit_growth = 0,
+		speed = 28,
+		luck = 0,
+		antisub = 0,
+		scale = 150,
+		wave_fx = "movewave",
+		prefab = "shuguangjixie_shanliu",
+		cannon_growth = 0,
+		pilot_ai_template_id = 70017,
+		reload = 150,
+		dodge = 0,
+		reload_growth = 0,
+		hit = 0,
+		nationality = 97,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		armor_type = 3,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		prefab_offset = {
+			0,
+			0,
+			0
+		},
+		cld_box = {
+			10,
+			7.5,
+			8
+		},
+		cld_offset = {
+			0,
+			0,
+			0
+		},
+		aim_offset = {
+			0,
+			0,
+			0
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.558,
+					1.084,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.623,
+					1.027,
+					0
+				}
+			},
+			lighting = {
+				{
+					2,
+					8.5,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.595,
+					1.143,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.54,
+							2.43,
+							0
+						}
+					}
+				}
+			}
+		},
+		fx_container = {
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		specific_fx_scale = {},
+		appear_fx = {
+			"appearQ"
+		},
+		position_offset = {
+			0,
+			0,
+			0
+		},
+		hp_bar = {
+			150,
+			5
+		},
+		equipment_list = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
+	},
 	[90873] = {
 		cannon = 0,
 		name = "彗星",
@@ -4093,148 +4249,6 @@ pg.enemy_data_statistics_30 = {
 		hp_bar = {
 			200,
 			5
-		},
-		equipment_list = {},
-		random_equipment_list = {},
-		random_nub = {},
-		buff_list = {}
-	},
-	[90902] = {
-		cannon = 0,
-		name = "黑暗啾莱姆骑士",
-		type = 5,
-		speed_growth = 0,
-		air_growth = 0,
-		air = 0,
-		battle_unit_type = 49,
-		durability = 99999,
-		armor = 0,
-		friendly_cld = 1,
-		id = 90902,
-		bubble_fx = "",
-		dodge_growth = 0,
-		icon = "jiulaimu_zhanlie",
-		star = 0,
-		fog_fx = "",
-		antisub_growth = 0,
-		rarity = 0,
-		torpedo = 0,
-		luck_growth = 0,
-		icon_type = 5,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		hit_growth = 0,
-		speed = 15,
-		luck = 0,
-		antisub = 0,
-		scale = 200,
-		wave_fx = "",
-		prefab = "jiulaimu_zhanlie",
-		cannon_growth = 0,
-		pilot_ai_template_id = 20004,
-		reload = 150,
-		dodge = 0,
-		reload_growth = 0,
-		hit = 0,
-		nationality = 98,
-		durability_growth = 0,
-		antiaircraft = 0,
-		antiaircraft_growth = 0,
-		armor_type = 3,
-		world_enhancement = {
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		},
-		prefab_offset = {
-			0,
-			0,
-			0
-		},
-		cld_box = {
-			18.7,
-			7.5,
-			9
-		},
-		cld_offset = {
-			0,
-			0,
-			0
-		},
-		aim_offset = {
-			0,
-			0,
-			0
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.188,
-					0.917,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.694,
-					0.853,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.088,
-					0.917,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.096,
-					3.156,
-					0
-				}
-			}
-		},
-		smoke = {},
-		fx_container = {
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		specific_fx_scale = {},
-		appear_fx = {
-			"appearsmall"
-		},
-		position_offset = {
-			0,
-			0,
-			0
-		},
-		hp_bar = {
-			200,
-			6
 		},
 		equipment_list = {},
 		random_equipment_list = {},

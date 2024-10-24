@@ -7,10 +7,13 @@
 	id = "DORM3DDAILYCONVERSATION30",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -45,7 +48,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -57,7 +60,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -80,11 +83,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "就是……没办法像在指挥室一样，在晚上也侍奉主人呢……",
+			say = "就是……没办法像在指挥室一样，在晚上也侍奉{dorm3d}呢……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

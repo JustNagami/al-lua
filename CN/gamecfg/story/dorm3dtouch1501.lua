@@ -2,15 +2,19 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DTOUCH1501",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "天狼星",
 			nameColor = "#FFFFFF",
+			actorName = 20220,
 			say = "有一种不可思议的感觉呢。",
+			voice = "event:/dorm/Tianlangxing_dorm3d_tone/touch07",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

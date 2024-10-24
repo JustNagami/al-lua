@@ -1,5 +1,159 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_18 = {
+	[90510] = {
+		cannon = 0,
+		name = "Z24",
+		type = 1,
+		speed_growth = 0,
+		air_growth = 0,
+		air = 0,
+		battle_unit_type = 49,
+		durability = 99999,
+		armor = 0,
+		friendly_cld = 0,
+		id = 90510,
+		bubble_fx = "",
+		dodge_growth = 0,
+		icon = "Z24",
+		star = 0,
+		fog_fx = "",
+		antisub_growth = 0,
+		rarity = 0,
+		torpedo = 0,
+		luck_growth = 0,
+		icon_type = 1,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		hit_growth = 0,
+		speed = 15,
+		luck = 0,
+		antisub = 0,
+		scale = 150,
+		wave_fx = "movewave",
+		prefab = "Z24",
+		cannon_growth = 0,
+		pilot_ai_template_id = 20001,
+		reload = 150,
+		dodge = 0,
+		reload_growth = 0,
+		hit = 0,
+		nationality = 4,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		armor_type = 1,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		prefab_offset = {
+			0,
+			0,
+			0
+		},
+		cld_box = {
+			5.5,
+			7.5,
+			8
+		},
+		cld_offset = {
+			0,
+			0,
+			0
+		},
+		aim_offset = {
+			0,
+			0,
+			0
+		},
+		bound_bone = {
+			cannon = {
+				{
+					-0.13,
+					0.97,
+					0
+				}
+			},
+			vicegun = {
+				{
+					-0.12,
+					0.91,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.1,
+					0.07,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					-0.17,
+					0.91,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.58,
+							2.14,
+							-1.05
+						}
+					}
+				}
+			}
+		},
+		fx_container = {
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		specific_fx_scale = {},
+		appear_fx = {},
+		position_offset = {
+			0,
+			0,
+			0
+		},
+		hp_bar = {
+			150,
+			4
+		},
+		equipment_list = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
+	},
 	[90511] = {
 		cannon = 0,
 		name = "Z28",
@@ -4197,173 +4351,6 @@ pg.enemy_data_statistics_18 = {
 							-0.45,
 							2.37,
 							-0.16
-						}
-					}
-				}
-			}
-		},
-		fx_container = {
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		specific_fx_scale = {},
-		appear_fx = {
-			"appearQ"
-		},
-		position_offset = {
-			0,
-			0,
-			0
-		},
-		hp_bar = {
-			150,
-			4
-		},
-		equipment_list = {},
-		random_equipment_list = {},
-		random_nub = {},
-		buff_list = {}
-	},
-	[90538] = {
-		cannon = 0,
-		name = "亚特兰大",
-		type = 2,
-		speed_growth = 0,
-		air_growth = 0,
-		air = 0,
-		battle_unit_type = 49,
-		durability = 99999,
-		armor = 0,
-		friendly_cld = 0,
-		id = 90538,
-		bubble_fx = "",
-		dodge_growth = 0,
-		icon = "yatelanda",
-		star = 0,
-		fog_fx = "",
-		antisub_growth = 0,
-		rarity = 0,
-		torpedo = 0,
-		luck_growth = 0,
-		icon_type = 2,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		hit_growth = 0,
-		speed = 20,
-		luck = 0,
-		antisub = 0,
-		scale = 150,
-		wave_fx = "movewave",
-		prefab = "yatelanda",
-		cannon_growth = 0,
-		pilot_ai_template_id = 20001,
-		reload = 150,
-		dodge = 0,
-		reload_growth = 0,
-		hit = 0,
-		nationality = 1,
-		durability_growth = 0,
-		antiaircraft = 0,
-		antiaircraft_growth = 0,
-		armor_type = 1,
-		world_enhancement = {
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		},
-		prefab_offset = {
-			0,
-			0,
-			0
-		},
-		cld_box = {
-			5.5,
-			7.5,
-			8
-		},
-		cld_offset = {
-			0,
-			0,
-			0
-		},
-		aim_offset = {
-			0,
-			0,
-			0
-		},
-		bound_bone = {
-			cannon = {
-				{
-					-0.257,
-					0.783,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.119,
-					0.702,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					-0.464,
-					1.052,
-					0
-				},
-				{
-					-0.439,
-					1.353,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				70,
-				{
-					{
-						"smoke",
-						{
-							-0.63,
-							0.67,
-							0
-						}
-					}
-				}
-			},
-			{
-				30,
-				{
-					{
-						"smoke",
-						{
-							0.32,
-							0.67,
-							0
 						}
 					}
 				}

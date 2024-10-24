@@ -81,6 +81,8 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 
 					if var_1_0.type == ChapterConst.OpRetreat then
 						if not var_1_0.id then
+							local var_3_5 = var_3_0:getMapById(var_3_1:getConfig("map")):getMapType()
+
 							var_1_0.win = arg_1_0.chapter:CheckChapterWillWin()
 
 							if var_1_0.win then
@@ -88,10 +90,9 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 								var_3_0:addRemasterPassCount(arg_1_0.chapter.id)
 							end
 
-							local var_3_5 = pg.TimeMgr.GetInstance()
-							local var_3_6 = var_3_0:getMapById(var_3_1:getConfig("map"))
+							local var_3_6 = pg.TimeMgr.GetInstance()
 
-							if var_1_0.win and var_3_6:getMapType() == Map.ELITE and var_3_5:IsSameDay(var_3_1:getStartTime(), var_3_5:GetServerTime()) then
+							if var_1_0.win and var_3_5 == Map.ELITE and var_3_6:IsSameDay(var_3_1:getStartTime(), var_3_6:GetServerTime()) then
 								getProxy(DailyLevelProxy):EliteCountPlus()
 							end
 

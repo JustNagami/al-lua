@@ -7,10 +7,13 @@
 	id = "DORM3DDAILYCONVERSATION16",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -45,11 +48,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "感谢您赐予天狼星这个机会，我骄傲的主人。",
+			say = "感谢您赐予天狼星这个机会，我骄傲的{dorm3d}。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -68,11 +71,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "比如……能够与主人这样长时间的近距离接触，能够第一时间回应主人的需求……",
+			say = "比如……能够与{dorm3d}这样长时间的近距离接触，能够第一时间回应{dorm3d}的需求……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -80,7 +83,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,

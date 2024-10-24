@@ -7,10 +7,13 @@
 	id = "DORM3DDAILYCONVERSATION37",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -51,11 +54,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "是的，因为和我骄傲的主人独处一室，实在是令天狼星心潮澎湃，接下来的时间，不如就……",
+			say = "是的，因为和我骄傲的{dorm3d}独处一室，实在是令天狼星心潮澎湃，接下来的时间，不如就……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -63,7 +66,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,

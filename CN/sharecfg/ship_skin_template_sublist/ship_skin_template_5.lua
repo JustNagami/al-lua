@@ -1,370 +1,6 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_5 = {
-	[201235] = {
-		ship_group = 20123,
-		name = "错乱的节日之宴",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 5,
-		shop_id = 0,
-		painting = "xixuegui_6",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 1,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "125",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		id = 201235,
-		voice_actor_2 = -1,
-		prefab = "xixuegui_6",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "汝一脸惊讶的表情，指挥官，快过来，不是约好一起吃圣诞大餐吗，还是说，汝要向人家献上血液？也不是不可以哦~",
-		voice_actor = 89,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.43,
-					0.921,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.48,
-					0.974,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.331,
-					1.05,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.238,
-							2.484,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[201238] = {
-		ship_group = 20123,
-		name = "以罗伊的赐福",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 8,
-		shop_id = 0,
-		painting = "xixuegui_h",
-		illustrator = 10,
-		l2d_voice_calibrate = "",
-		shop_type_id = 9998,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 1,
-		id = 201238,
-		voice_actor_2 = -1,
-		prefab = "xixuegui_h",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "爱上吸血鬼的人，必将遭受七倍的迷恋。毕竟，爱乃致死之毒",
-		voice_actor = 89,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.599,
-					0.621,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.599,
-					0.621,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.139,
-					0.066,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.599,
-					0.621,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				70,
-				{
-					{
-						"smoke",
-						{
-							-0.1,
-							0.8,
-							-0.13
-						}
-					}
-				}
-			},
-			{
-				30,
-				{
-					{
-						"smoke",
-						{
-							-0.8,
-							2.31,
-							-0.57
-						}
-					}
-				}
-			}
-		}
-	},
-	[201240] = {
-		ship_group = 20124,
-		name = "丘比特",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "qiubite",
-		illustrator = 40,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 201240,
-		voice_actor_2 = -1,
-		prefab = "qiubite",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "J级驱逐舰—丘比特，舷号F85",
-		voice_actor = 102,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.66,
-					0.57,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.66,
-					0.57,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.09,
-					0.11,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.66,
-					0.57,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				70,
-				{
-					{
-						"smoke",
-						{
-							-0.5,
-							0.55,
-							0
-						}
-					}
-				}
-			},
-			{
-				30,
-				{
-					{
-						"smoke",
-						{
-							0.3,
-							0.87,
-							-0.4
-						}
-					}
-				}
-			}
-		}
-	},
 	[201241] = {
 		ship_group = 20124,
 		name = "新番组之夜",
@@ -13197,6 +12833,476 @@ pg.base.ship_skin_template_5 = {
 			antiaircraft = {
 				{
 					1.01,
+					1.022,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.413,
+							2.335,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[202301] = {
+		ship_group = 20230,
+		name = "治愈的红闺",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70651,
+		painting = "kalvbudisi_2",
+		illustrator = -1,
+		shop_type_id = 3,
+		lip_smoothing = 0,
+		bg = "144",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		id = 202301,
+		voice_actor_2 = -1,
+		prefab = "kalvbudisi_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "（拍大腿）主人累了吧～？工作很努力了呢～呼呼，快过来这里，让我为治愈一番吧～",
+		voice_actor = 303,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			1,
+			4
+		},
+		live2d_offset = {
+			47,
+			20,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.117,
+					0.971,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.019,
+					1.013,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.045,
+					1.111,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.405,
+							2.441,
+							0
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			use_event = true
+		}
+	},
+	[202302] = {
+		ship_group = 20230,
+		name = "霞辉之华裳",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "1101",
+		l2d_ignore_drag = 0,
+		group_index = 2,
+		shop_id = 70750,
+		painting = "kalvbudisi_3",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 7,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "155",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		id = 202302,
+		voice_actor_2 = -1,
+		prefab = "kalvbudisi_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "欢迎莅临，主人。今天就由我，卡律布狄斯陪伴您吧…啊，刚才只是学着“优雅大小姐”的感觉试着说说看而已！请不要露出这样担心的表情！",
+		voice_actor = 303,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.929,
+					0.94,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.896,
+					0.921,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.108,
+					1.161,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.8,
+							1.752,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[202303] = {
+		ship_group = 20230,
+		name = "清凉的水花",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 3,
+		shop_id = 70786,
+		painting = "kalvbudisi_4",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 6,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "133",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		id = 202303,
+		voice_actor_2 = -1,
+		prefab = "kalvbudisi_4",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "今天治愈的主题是，大海！…应该？呵呵，主人，虽然平时已经看惯大海了，不过今天请想着这是“用来玩耍的大海”，然后好好享受哦♪",
+		voice_actor = 303,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.108,
+					0.998,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.063,
+					1.013,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.01,
+					1.022,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.413,
+							2.335,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[202310] = {
+		ship_group = 20231,
+		name = "司战女神",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "sizhannvshen",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 202310,
+		voice_actor_2 = -1,
+		prefab = "sizhannvshen",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "司战女神级轻巡洋舰—司战女神",
+		voice_actor = 319,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.25,
+					0.998,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.28,
+					1.013,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.29,
 					1.022,
 					0
 				}

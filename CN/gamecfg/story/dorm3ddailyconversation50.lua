@@ -7,14 +7,17 @@
 	id = "DORM3DDAILYCONVERSATION50",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "主人，可以告诉天狼星，您眼中最美丽的风景在哪里吗？",
+			say = "{dorm3d}，可以告诉天狼星，您眼中最美丽的风景在哪里吗？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -45,7 +48,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -68,7 +71,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -80,7 +83,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,

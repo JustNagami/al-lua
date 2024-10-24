@@ -7,14 +7,17 @@
 	id = "DORM3DDAILYCONVERSATION41",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "主人，请您不要乱动。",
+			say = "{dorm3d}，请您不要乱动。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -45,7 +48,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -57,7 +60,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -69,7 +72,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,

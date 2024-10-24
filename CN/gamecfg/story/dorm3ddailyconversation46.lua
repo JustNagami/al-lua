@@ -7,14 +7,17 @@
 	id = "DORM3DDAILYCONVERSATION46",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "主人，天狼星已经仔细打扫过地毯了，偶尔在地毯上坐下休息也是很舒服的哦。",
+			say = "{dorm3d}，天狼星已经仔细打扫过地毯了，偶尔在地毯上坐下休息也是很舒服的哦。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -45,11 +48,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "当、当然，如果主人想在地毯上与天狼星……天狼星也没问题的！",
+			say = "当、当然，如果{dorm3d}想在地毯上与天狼星……天狼星也没问题的！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

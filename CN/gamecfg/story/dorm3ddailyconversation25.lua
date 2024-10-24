@@ -7,14 +7,17 @@
 	id = "DORM3DDAILYCONVERSATION25",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "主人，天狼星在想能不能和您拍一张合照呢？",
+			say = "{dorm3d}，天狼星在想能不能和您拍一张合照呢？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -55,11 +58,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "感谢您！我温柔的主人。",
+			say = "感谢您！我温柔的{dorm3d}。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -67,11 +70,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "这样天狼星就可以时时刻刻看到自己依偎在主人身旁的幸福模样了，欸嘿嘿。",
+			say = "这样天狼星就可以时时刻刻看到自己依偎在{dorm3d}身旁的幸福模样了，欸嘿嘿。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

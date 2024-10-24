@@ -2,13 +2,16 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DDAILYCONVERSATION77",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "哼哼♪~",
 			typewriter = {
@@ -50,9 +53,9 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "是的，因为主人您来和天狼星见面了。",
+			say = "是的，因为{dorm3d}您来和天狼星见面了。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -82,7 +85,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "这是天狼星最为期待，也是最为开心的时刻。",
 			typewriter = {
@@ -91,16 +94,16 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "和我骄傲的主人独处一室，实在是令天狼星心潮澎湃……",
+			say = "和我骄傲的{dorm3d}独处一室，实在是令天狼星心潮澎湃……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "接下来的时间，不如就……",
 			typewriter = {
@@ -142,7 +145,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "欸、欸？难道您还没有这方面的想法吗？",
 			typewriter = {
@@ -174,9 +177,9 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "抱歉……我的主人，是天狼星太心急了。",
+			say = "抱歉……我的{dorm3d}，是天狼星太心急了。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -2,10 +2,13 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3TIMELINE04",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			bgm = "theme-room-rosy",

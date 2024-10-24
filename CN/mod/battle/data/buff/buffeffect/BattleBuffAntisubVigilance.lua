@@ -64,7 +64,7 @@ function var_0_1.onAntiSubHateChain(arg_5_0)
 	arg_5_0._vigilantState:HateChain()
 end
 
-function var_0_1.onFriendlyShipDying(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+function var_0_1.onTeammateShipDying(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
 	arg_6_0._vigilantState:MineExplode()
 end
 

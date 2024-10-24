@@ -28,7 +28,8 @@ function var_0_0.InitBtns(arg_2_0)
 		MainActSenranBtn.New(arg_2_0.actBtnTpl, arg_2_0.event),
 		MainActBossSingleBtn.New(arg_2_0.actBtnTpl, arg_2_0.event),
 		MainActLayerBtn.New(arg_2_0.actBtnTpl, arg_2_0.event),
-		MainActDreamlandBtn.New(arg_2_0.actBtnTpl, arg_2_0.event)
+		MainActDreamlandBtn.New(arg_2_0.actBtnTpl, arg_2_0.event),
+		MainActBoatAdBtn.New(arg_2_0.actBtnTpl, arg_2_0.event)
 	}
 	arg_2_0.specailBtns = {
 		MainActInsBtn.New(arg_2_0._tf, arg_2_0.event),
@@ -96,7 +97,7 @@ function var_0_0.OnRemoveLayer(arg_13_0, arg_13_1)
 
 	if arg_13_1.mediator == LotteryMediator then
 		var_13_0 = arg_13_0:GetBtn(MainActLotteryBtn)
-	elseif arg_13_1.mediator == InstagramMediator then
+	elseif arg_13_1.mediator == InstagramMainMediator then
 		var_13_0 = arg_13_0:GetBtn(MainActInsBtn)
 	end
 

@@ -7,6 +7,9 @@
 	id = "DORM3DDAILYCONVERSATION39",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			actor = 0,
@@ -21,11 +24,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "嗯？主人问这个……是您想去泡温泉吗？",
+			say = "嗯？{dorm3d}问这个……是您想去泡温泉吗？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -56,11 +59,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "那事不宜迟，我的骄傲的主人，您有这个想法的话……",
+			say = "那事不宜迟，我的骄傲的{dorm3d}，您有这个想法的话……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -68,7 +71,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,

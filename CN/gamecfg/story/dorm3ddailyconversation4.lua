@@ -7,6 +7,9 @@
 	id = "DORM3DDAILYCONVERSATION4",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			actor = 0,
@@ -31,11 +34,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "感谢您的关怀和慷慨，不过天狼星目前还不需要这些，我的主人。",
+			say = "感谢您的关怀和慷慨，不过天狼星目前还不需要这些，我的{dorm3d}。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -66,7 +69,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,

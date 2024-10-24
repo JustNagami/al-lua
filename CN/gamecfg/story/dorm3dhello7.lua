@@ -2,15 +2,19 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DHELLO7",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "天狼星",
 			nameColor = "#FFFFFF",
-			say = "我骄傲的主人，见到您之后，天狼星的心情都变得雀跃而明媚了呢。不知道您会不会产生同样的想法呢……？",
+			actorName = 20220,
+			say = "我骄傲的{dorm3d}，见到您之后，天狼星的心情都变得雀跃而明媚了呢。不知道您会不会产生同样的想法呢……？",
+			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_hello7",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -2,13 +2,16 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DGIFTFEEDBACK8",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "天狼星会将它好好珍藏起来的。",
 			typewriter = {

@@ -7,14 +7,17 @@
 	id = "DORM3DDAILYCONVERSATION40",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "嗯？主人手里拿着梳子，是想要帮天狼星梳头发……？",
+			say = "嗯？{dorm3d}手里拿着梳子，是想要帮天狼星梳头发……？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -45,7 +48,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -57,7 +60,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -69,11 +72,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "总、总之，请您为天狼星梳头吧，我骄傲的主人！",
+			say = "总、总之，请您为天狼星梳头吧，我骄傲的{dorm3d}！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

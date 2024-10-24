@@ -2,13 +2,16 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DDAILYCONVERSATION88",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "嗯？您想知道天狼星是不是已经忘记了怎么跳舞……？",
 			typewriter = {
@@ -40,7 +43,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "当然没有忘记！",
 			typewriter = {
@@ -49,9 +52,9 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "主人，天狼星可是一刻都没有疏于练习哦。",
+			say = "{dorm3d}，天狼星可是一刻都没有疏于练习哦。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -88,7 +91,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "如果您还愿意让天狼星成为您的舞伴的话……",
 			typewriter = {
@@ -107,7 +110,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "太好了！那……天狼星想占用您一点时间，来复习与您的双人舞。",
 			typewriter = {
@@ -146,7 +149,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "如果您觉得单纯跳舞有些乏味的话，还可以直接……",
 			typewriter = {
@@ -155,7 +158,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "欸？您现在只想和天狼星跳舞？呜……好、好吧……！",
 			typewriter = {

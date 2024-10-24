@@ -2,15 +2,19 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DHELLO14",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "天狼星",
 			nameColor = "#FFFFFF",
-			say = "我最爱的主人，您的到来是天狼星最大的幸福。如果可以的话……请允许天狼星拥抱您。",
+			actorName = 20220,
+			say = "我最爱的{dorm3d}，您的到来是天狼星最大的幸福。如果可以的话……请允许天狼星拥抱您。",
+			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_hello14",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

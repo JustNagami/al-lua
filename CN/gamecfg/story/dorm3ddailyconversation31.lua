@@ -7,10 +7,13 @@
 	id = "DORM3DDAILYCONVERSATION31",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -45,7 +48,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -68,11 +71,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "嗯！那天狼星希望能和主人……",
+			say = "嗯！那天狼星希望能和{dorm3d}……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -80,11 +83,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "啊，剩下的说出来就实现不了了……还请主人原谅天狼星在这一点上对您保密哦。",
+			say = "啊，剩下的说出来就实现不了了……还请{dorm3d}原谅天狼星在这一点上对您保密哦。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

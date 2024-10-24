@@ -2,15 +2,18 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DDAILYCONVERSATION95",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "因为主人您总是加班处理工作文件，所以很少有机会能看到夕阳吧。",
+			say = "因为{dorm3d}您总是加班处理工作文件，所以很少有机会能看到夕阳吧。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -46,7 +49,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "可惜……？是因为错失了景色的可惜吗？天狼星不太明白。",
 			typewriter = {
@@ -55,7 +58,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "欸？您说夕阳是白天与晚上的重要分界线，错过了就觉得一天过得很混沌？",
 			typewriter = {
@@ -64,7 +67,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "那，天狼星可以之后去帮您处理工作，或者接您下班吗？",
 			typewriter = {
@@ -103,16 +106,16 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "天狼星想让您看到夕阳，我的主人。",
+			say = "天狼星想让您看到夕阳，我的{dorm3d}。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "哪怕只是工作途中片刻的休息，天狼星也想实现您的愿望。",
 			typewriter = {
@@ -121,9 +124,9 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "天狼星，想为您做些什么……我骄傲的主人。",
+			say = "天狼星，想为您做些什么……我骄傲的{dorm3d}。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

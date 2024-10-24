@@ -52,8 +52,6 @@
 		type = 12,
 		name = "show",
 		params = {
-			color = "#FFFFFF",
-			delay = 0,
 			time = 0
 		}
 	},

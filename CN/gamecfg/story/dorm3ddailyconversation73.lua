@@ -2,13 +2,16 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DDAILYCONVERSATION73",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "这间宿舍的感觉怎么样……？",
 			typewriter = {
@@ -40,7 +43,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "很好哦……因为和您的见面频率和独处时间都大大增加了，所以天狼星觉得很幸福。",
 			typewriter = {
@@ -49,7 +52,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "不过还是有一点不太方便呢。",
 			typewriter = {
@@ -87,9 +90,9 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "就是……夜间想要侍奉主人的话……（小声）",
+			say = "就是……夜间想要侍奉{dorm3d}的话……（小声）",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -102,7 +105,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "……不，好像没什么不方便的，是天狼星没想明白。",
 			typewriter = {
@@ -134,7 +137,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "……呵呵。",
 			typewriter = {

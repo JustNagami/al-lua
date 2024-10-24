@@ -2,13 +2,16 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DDAILYCONVERSATION81",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "嗯……",
 			typewriter = {
@@ -46,7 +49,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "在想云朵的形状。",
 			typewriter = {
@@ -55,7 +58,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "天狼星在您来之前，在走廊上看云。",
 			typewriter = {
@@ -64,7 +67,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "因为听其他人说，在看云的时候所见到的云朵形状，就代表着人内心最期待的事物。",
 			typewriter = {
@@ -79,9 +82,9 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "主人……您是在明知故问哦。",
+			say = "{dorm3d}……您是在明知故问哦。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

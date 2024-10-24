@@ -7,10 +7,13 @@
 	id = "DORM3DDAILYCONVERSATION36",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -55,7 +58,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -67,11 +70,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "虽然作为女仆侍奉在主人身边就很幸福了，但贪心的天狼星还想在这方面再好好钻研一下呢。",
+			say = "虽然作为女仆侍奉在{dorm3d}身边就很幸福了，但贪心的天狼星还想在这方面再好好钻研一下呢。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -79,11 +82,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "请您好好见证天狼星未来的蜕变吧，我的主人。",
+			say = "请您好好见证天狼星未来的蜕变吧，我的{dorm3d}。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

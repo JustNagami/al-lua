@@ -58,7 +58,7 @@
 		{
 			type = "BattleBuffAddBuff",
 			trigger = {
-				"onFriendlyShipDying"
+				"onTeammateShipDying"
 			},
 			arg_list = {
 				buff_id = 200505,

@@ -7,15 +7,18 @@
 	id = "DORM3DHELLOACCOMPANYBEACH1",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "唔……主人……\n海水凉凉的，这样非常舒服哦……主人也想试试吗？",
-			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_wait_table1",
+			say = "唔……{dorm3d}……\n海水凉凉的，这样非常舒服哦……{dorm3d}也想试试吗？",
+			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/dorm3d_sirus_wait_table1",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -656,12 +656,17 @@ function var_0_0.initPauseWindow(arg_31_0)
 		local var_34_1 = arg_31_0.pauseWindow:GetComponent(typeof(Animation))
 
 		if var_34_1 then
-			var_34_1:Play("msgbox_out")
-			arg_31_0.pauseWindow:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_35_0)
-				setActive(arg_31_0.pauseWindow, false)
-				pg.UIMgr.GetInstance():UnblurPanel(arg_31_0.pauseWindow, arg_31_0._tf)
-				var_31_1:Resume()
-			end)
+			if var_34_1:IsPlaying("msgbox_out") then
+				var_34_1:Stop("msgbox_out")
+				var_34_1:Play("msgbox_in")
+			else
+				var_34_1:Play("msgbox_out")
+				arg_31_0.pauseWindow:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_35_0)
+					setActive(arg_31_0.pauseWindow, false)
+					pg.UIMgr.GetInstance():UnblurPanel(arg_31_0.pauseWindow, arg_31_0._tf)
+					var_31_1:Resume()
+				end)
+			end
 		else
 			setActive(arg_31_0.pauseWindow, false)
 			pg.UIMgr.GetInstance():UnblurPanel(arg_31_0.pauseWindow, arg_31_0._tf)

@@ -7,6 +7,9 @@
 	id = "DORM3DDAILYCONVERSATION13",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			actor = 0,
@@ -21,11 +24,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "呵呵，那是因为主人的脚步声和气息对于天狼星而言，实在是太好辨别了。",
+			say = "呵呵，那是因为{dorm3d}的脚步声和气息对于天狼星而言，实在是太好辨别了。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -56,11 +59,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "不过，天狼星还是觉得这个应该算作是一种和主人您的心有灵犀呢~",
+			say = "不过，天狼星还是觉得这个应该算作是一种和{dorm3d}您的心有灵犀呢~",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

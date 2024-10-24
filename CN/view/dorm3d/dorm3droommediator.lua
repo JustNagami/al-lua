@@ -25,6 +25,7 @@ var_0_0.GUIDE_CHECK_LEVEL_UP = "Dorm3dRoomMediator.GUIDE_CHECK_LEVEL_UP"
 var_0_0.Camera_Pinch_Value_Change = "Dorm3dRoomMediator.Camera_Pinch_Value_Change"
 var_0_0.ENTER_VOLLEYBALL = "Dorm3dRoomMediator.ENTER_VOLLEYBALL"
 var_0_0.ON_DROP_CLIENT = "Dorm3dRoomMediator.ON_DROP_CLIENT"
+var_0_0.UPDATE_FAVOR_DISPLAY = "Dorm3dRoomMediator.UPDATE_FAVOR_DISPLAY"
 
 function var_0_0.register(arg_1_0)
 	arg_1_0:bind(var_0_0.TRIGGER_FAVOR, function(arg_2_0, arg_2_1, arg_2_2)
@@ -220,92 +221,101 @@ function var_0_0.initNotificationHandleDic(arg_30_0)
 		[var_0_0.OTHER_DO_TALK] = function(arg_37_0, arg_37_1)
 			local var_37_0 = arg_37_1:getBody()
 
-			arg_37_0.viewComponent:DoTalk(var_37_0.talkId, var_37_0.callback)
-		end,
-		[var_0_0.OTHER_POP_UNLOCK] = function(arg_38_0, arg_38_1)
-			local var_38_0 = arg_38_1:getBody()
+			arg_37_0.viewComponent.inReplayTalk = true
 
-			arg_38_0.viewComponent:AddUnlockDisplay(var_38_0)
-		end,
-		[GAME.APARTMENT_DO_TALK_DONE] = function(arg_39_0, arg_39_1)
-			arg_39_0.viewComponent:UpdateBtnState()
-		end,
-		[GAME.APARTMENT_COLLECTION_ITEM_DONE] = function(arg_40_0, arg_40_1)
-			local var_40_0 = arg_40_1:getBody()
+			arg_37_0.viewComponent:DoTalk(var_37_0.talkId, function()
+				arg_37_0.viewComponent.inReplayTalk = false
 
-			arg_40_0:addSubLayers(Context.New({
+				existCall(var_37_0.callback)
+			end)
+		end,
+		[var_0_0.OTHER_POP_UNLOCK] = function(arg_39_0, arg_39_1)
+			local var_39_0 = arg_39_1:getBody()
+
+			arg_39_0.viewComponent:AddUnlockDisplay(var_39_0)
+		end,
+		[GAME.APARTMENT_DO_TALK_DONE] = function(arg_40_0, arg_40_1)
+			arg_40_0.viewComponent:UpdateBtnState()
+		end,
+		[GAME.APARTMENT_COLLECTION_ITEM_DONE] = function(arg_41_0, arg_41_1)
+			local var_41_0 = arg_41_1:getBody()
+
+			arg_41_0:addSubLayers(Context.New({
 				viewComponent = Dorm3dCollectAwardLayer,
 				mediator = Dorm3dCollectAwardMediator,
 				data = {
-					itemId = var_40_0.itemId,
-					isNew = var_40_0.isNew
+					itemId = var_41_0.itemId,
+					isNew = var_41_0.isNew
 				}
 			}))
-			arg_40_0.viewComponent:UpdateBtnState()
+			arg_41_0.viewComponent:UpdateBtnState()
 		end,
-		[var_0_0.CHAMGE_TIME_RELOAD_SCENE] = function(arg_41_0, arg_41_1)
-			local var_41_0 = arg_41_1:getBody()
+		[var_0_0.CHAMGE_TIME_RELOAD_SCENE] = function(arg_42_0, arg_42_1)
+			local var_42_0 = arg_42_1:getBody()
 
-			arg_41_0.contextData.timeIndex = var_41_0.timeIndex
+			arg_42_0.contextData.timeIndex = var_42_0.timeIndex
 
-			arg_41_0.viewComponent:SwitchDayNight(arg_41_0.contextData.timeIndex)
+			arg_42_0.viewComponent:SwitchDayNight(arg_42_0.contextData.timeIndex)
 			onNextTick(function()
-				arg_41_0.viewComponent:RefreshSlots()
+				arg_42_0.viewComponent:RefreshSlots()
 			end)
-			arg_41_0.viewComponent:UpdateContactState()
+			arg_42_0.viewComponent:UpdateContactState()
 		end,
-		[GAME.APARTMENT_GIVE_GIFT_DONE] = function(arg_43_0, arg_43_1)
-			local var_43_0 = arg_43_1:getBody()
+		[GAME.APARTMENT_GIVE_GIFT_DONE] = function(arg_44_0, arg_44_1)
+			local var_44_0 = arg_44_1:getBody()
 
-			arg_43_0.viewComponent:PlayHeartFX(var_43_0.groupId)
-			arg_43_0.viewComponent:UpdateBtnState()
+			arg_44_0.viewComponent:PlayHeartFX(var_44_0.groupId)
+			arg_44_0.viewComponent:UpdateBtnState()
 		end,
-		[var_0_0.GUIDE_CLICK_LADY] = function(arg_44_0, arg_44_1)
+		[var_0_0.GUIDE_CLICK_LADY] = function(arg_45_0, arg_45_1)
 			warning("this.GUIDE_CLICK_LADY")
-			arg_44_0.viewComponent:EnterWatchMode()
+			arg_45_0.viewComponent:EnterWatchMode()
 		end,
-		[var_0_0.GUIDE_CHECK_GUIDE] = function(arg_45_0, arg_45_1)
-			arg_45_0.viewComponent:CheckGuide()
+		[var_0_0.GUIDE_CHECK_GUIDE] = function(arg_46_0, arg_46_1)
+			arg_46_0.viewComponent:CheckGuide()
 		end,
-		[var_0_0.GUIDE_CHECK_LEVEL_UP] = function(arg_46_0, arg_46_1)
-			arg_46_0.viewComponent:CheckLevelUp()
+		[var_0_0.GUIDE_CHECK_LEVEL_UP] = function(arg_47_0, arg_47_1)
+			arg_47_0.viewComponent:CheckLevelUp()
 		end,
-		[ApartmentProxy.UPDATE_ROOM] = function(arg_47_0, arg_47_1)
-			local var_47_0 = arg_47_1:getBody()
-
-			if var_47_0:GetConfigID() == arg_47_0.viewComponent.room:GetConfigID() then
-				arg_47_0.viewComponent:SetRoom(var_47_0)
-			end
-		end,
-		[Dorm3dInviteMediator.ON_DORM] = function(arg_48_0, arg_48_1)
+		[ApartmentProxy.UPDATE_ROOM] = function(arg_48_0, arg_48_1)
 			local var_48_0 = arg_48_1:getBody()
 
-			arg_48_0:sendNotification(GAME.CHANGE_SCENE, SCENE.DORM3D_ROOM, var_48_0)
+			if var_48_0:GetConfigID() == arg_48_0.viewComponent.room:GetConfigID() then
+				arg_48_0.viewComponent:SetRoom(var_48_0)
+			end
 		end,
-		[EatFoodMediator.HIT_AREA] = function(arg_49_0, arg_49_1)
+		[Dorm3dInviteMediator.ON_DORM] = function(arg_49_0, arg_49_1)
 			local var_49_0 = arg_49_1:getBody()
 
-			arg_49_0.viewComponent:HandleGameNotification(EatFoodMediator.HIT_AREA, var_49_0)
+			arg_49_0:sendNotification(GAME.CHANGE_SCENE, SCENE.DORM3D_ROOM, var_49_0)
 		end,
-		[EatFoodMediator.RESULT] = function(arg_50_0, arg_50_1)
+		[EatFoodMediator.HIT_AREA] = function(arg_50_0, arg_50_1)
 			local var_50_0 = arg_50_1:getBody()
 
-			arg_50_0.viewComponent:HandleGameNotification(EatFoodMediator.RESULT, var_50_0)
+			arg_50_0.viewComponent:HandleGameNotification(EatFoodMediator.HIT_AREA, var_50_0)
 		end,
-		[EatFoodMediator.LEAVE_GAME] = function(arg_51_0, arg_51_1)
+		[EatFoodMediator.RESULT] = function(arg_51_0, arg_51_1)
 			local var_51_0 = arg_51_1:getBody()
 
-			arg_51_0.viewComponent:HandleGameNotification(EatFoodMediator.LEAVE_GAME, var_51_0)
+			arg_51_0.viewComponent:HandleGameNotification(EatFoodMediator.RESULT, var_51_0)
 		end,
-		[ApartmentProxy.ZERO_HOUR_REFRESH] = function(arg_52_0, arg_52_1)
+		[EatFoodMediator.LEAVE_GAME] = function(arg_52_0, arg_52_1)
 			local var_52_0 = arg_52_1:getBody()
 
-			arg_52_0.viewComponent:UpdateFavorDisplay()
+			arg_52_0.viewComponent:HandleGameNotification(EatFoodMediator.LEAVE_GAME, var_52_0)
+		end,
+		[ApartmentProxy.ZERO_HOUR_REFRESH] = function(arg_53_0, arg_53_1)
+			local var_53_0 = arg_53_1:getBody()
+
+			arg_53_0.viewComponent:UpdateFavorDisplay()
+		end,
+		[var_0_0.UPDATE_FAVOR_DISPLAY] = function(arg_54_0, arg_54_1)
+			arg_54_0.viewComponent:UpdateFavorDisplay()
 		end
 	}
 end
 
-function var_0_0.remove(arg_53_0)
+function var_0_0.remove(arg_55_0)
 	return
 end
 

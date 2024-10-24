@@ -2,15 +2,18 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DTOUCH1302",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "主人，这里……还、还请您不要捉弄天狼星。",
+			say = "{dorm3d}，这里……还、还请您不要捉弄天狼星。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

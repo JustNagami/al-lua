@@ -7,14 +7,17 @@
 	id = "DORM3DDAILYCONVERSATION12",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "主人！天狼星最近在女仆长的帮助下，在做料理方面有一点点自信了……！",
+			say = "{dorm3d}！天狼星最近在女仆长的帮助下，在做料理方面有一点点自信了……！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -45,7 +48,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -57,11 +60,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "不过天狼星会努力克服这种紧张的情绪！争取早日做出让主人赞不绝口的料理的！",
+			say = "不过天狼星会努力克服这种紧张的情绪！争取早日做出让{dorm3d}赞不绝口的料理的！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

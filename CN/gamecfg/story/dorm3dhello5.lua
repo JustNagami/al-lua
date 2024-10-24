@@ -2,15 +2,19 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DHELLO5",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "天狼星",
 			nameColor = "#FFFFFF",
-			say = "呵呵，其实天狼星知道主人会在这个时候前来呢，所以已经做好了万全的侍奉准备。嗯……该怎么说呢，这可能也是我和主人形成的某种默契吧？",
+			actorName = 20220,
+			say = "呵呵，其实天狼星知道{dorm3d}会在这个时候前来呢，所以已经做好了万全的侍奉准备。嗯……该怎么说呢，这可能也是我和{dorm3d}形成的某种默契吧？",
+			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_hello5",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

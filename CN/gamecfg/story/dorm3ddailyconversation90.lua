@@ -2,15 +2,18 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DDAILYCONVERSATION90",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "主人，您的脸有些红呢……是因为工作方面的应酬导致的吗？",
+			say = "{dorm3d}，您的脸有些红呢……是因为工作方面的应酬导致的吗？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -57,7 +60,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			optionFlag = 1,
 			say = "摸上去也很烫……要不要天狼星帮您降降温呢？",
@@ -73,7 +76,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			optionFlag = 2,
 			say = "那，要不要天狼星帮您降降温呢？",
@@ -89,9 +92,9 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "主人，请您放松一些，天狼星要解开您的制服……",
+			say = "{dorm3d}，请您放松一些，天狼星要解开您的制服……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -121,7 +124,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "您的制服系得很规整，布料又厚实，这也是导致您体温上升的原因之一呢。",
 			typewriter = {
@@ -130,7 +133,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "接下来天狼星会用毛巾包裹住冰块，为您擦拭身体。",
 			typewriter = {
@@ -172,7 +175,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "完全不会哦！",
 			typewriter = {
@@ -204,9 +207,9 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "如果主人担心着凉的话，天狼星会用自己的体温给主人保暖的！",
+			say = "如果{dorm3d}担心着凉的话，天狼星会用自己的体温给{dorm3d}保暖的！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -243,9 +246,9 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "您只要安心接受天狼星的侍奉就好了，我骄傲的主人。",
+			say = "您只要安心接受天狼星的侍奉就好了，我骄傲的{dorm3d}。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

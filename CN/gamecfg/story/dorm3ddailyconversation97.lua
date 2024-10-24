@@ -2,15 +2,18 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DDAILYCONVERSATION97",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "主人，您平时会做备忘录……或者别的记录吗？",
+			say = "{dorm3d}，您平时会做备忘录……或者别的记录吗？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -50,7 +53,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "原来是这样啊。",
 			typewriter = {
@@ -82,7 +85,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "您作为指挥官，真是辛苦……",
 			typewriter = {
@@ -91,7 +94,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "其实，天狼星最近也尝试在做一些记录清单了。",
 			typewriter = {
@@ -100,7 +103,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "但是不知道以什么格式记录比较好。",
 			typewriter = {
@@ -141,7 +144,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "如果是以工作文书的规格对待，会显得有些太生疏了。",
 			typewriter = {
@@ -150,7 +153,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "毕竟天狼星想记录下来的是，您在一些事情上的喜好和习惯，以便更好地侍奉您。",
 			typewriter = {
@@ -192,7 +195,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "很有必要哦，让您有舒适的体验也是天狼星的职责和追求所在！",
 			typewriter = {
@@ -231,7 +234,7 @@
 			}
 		},
 		{
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "就这么决定了……记录格式的事，天狼星还是自己独立完成比较好！",
 			typewriter = {

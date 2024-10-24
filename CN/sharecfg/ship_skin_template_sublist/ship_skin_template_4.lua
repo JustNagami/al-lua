@@ -1,221 +1,6 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_4 = {
-	[107096] = {
-		ship_group = 10709,
-		name = "赛道88之风",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 6,
-		shop_id = 70914,
-		painting = "aisaikesi_8",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 14,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		id = 107096,
-		voice_actor_2 = -1,
-		prefab = "aisaikesi_8",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "埃塞克斯，感谢巡场顺利结束！指挥官看到我的活跃了吗？欸嘿嘿，真是太感谢你为比赛提供的各种帮助了！",
-		voice_actor = 149,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			antiaircraft = {
-				{
-					1.048,
-					1.32,
-					0
-				}
-			},
-			plane = {
-				{
-					1.368,
-					0.472,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.86,
-							1.98,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[107100] = {
-		ship_group = 10710,
-		name = "约克城II",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		illustrator = -1,
-		painting = "yuekechengII",
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 107100,
-		voice_actor_2 = -1,
-		prefab = "yuekechengII",
-		l2d_se = "",
-		main_UI_FX = "",
-		shop_id = 0,
-		desc = "埃塞克斯级航空母舰—约克城II，舷号CV-10",
-		voice_actor = 42,
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			antiaircraft = {
-				{
-					1.3,
-					1.4,
-					0
-				}
-			},
-			plane = {
-				{
-					1.41,
-					1.11,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.51,
-							2.31,
-							0
-						}
-					}
-				}
-			}
-		},
-		spine_offset = {
-			{
-				-83,
-				-1643,
-				0
-			},
-			{
-				0.88
-			}
-		},
-		special_effects = {
-			"lihui_yuekechengII",
-			{
-				2418,
-				-99,
-				0
-			},
-			{
-				2
-			}
-		}
-	},
 	[107101] = {
 		ship_group = 10710,
 		name = "白昼美人鱼",
@@ -12347,6 +12132,370 @@ pg.base.ship_skin_template_4 = {
 							-0.381,
 							2.446,
 							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[201235] = {
+		ship_group = 20123,
+		name = "错乱的节日之宴",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 5,
+		shop_id = 0,
+		painting = "xixuegui_6",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 1,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "125",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		id = 201235,
+		voice_actor_2 = -1,
+		prefab = "xixuegui_6",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "汝一脸惊讶的表情，指挥官，快过来，不是约好一起吃圣诞大餐吗，还是说，汝要向人家献上血液？也不是不可以哦~",
+		voice_actor = 89,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			4
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.43,
+					0.921,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.48,
+					0.974,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.331,
+					1.05,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.238,
+							2.484,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[201238] = {
+		ship_group = 20123,
+		name = "以罗伊的赐福",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 8,
+		shop_id = 0,
+		painting = "xixuegui_h",
+		illustrator = 10,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9998,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 1,
+		id = 201238,
+		voice_actor_2 = -1,
+		prefab = "xixuegui_h",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "爱上吸血鬼的人，必将遭受七倍的迷恋。毕竟，爱乃致死之毒",
+		voice_actor = 89,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.599,
+					0.621,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.599,
+					0.621,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.139,
+					0.066,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.599,
+					0.621,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							-0.1,
+							0.8,
+							-0.13
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							-0.8,
+							2.31,
+							-0.57
+						}
+					}
+				}
+			}
+		}
+	},
+	[201240] = {
+		ship_group = 20124,
+		name = "丘比特",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "qiubite",
+		illustrator = 40,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 201240,
+		voice_actor_2 = -1,
+		prefab = "qiubite",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "J级驱逐舰—丘比特，舷号F85",
+		voice_actor = 102,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.66,
+					0.57,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.66,
+					0.57,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.09,
+					0.11,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.66,
+					0.57,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							-0.5,
+							0.55,
+							0
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							0.3,
+							0.87,
+							-0.4
 						}
 					}
 				}

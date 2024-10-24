@@ -7,14 +7,17 @@
 	id = "DORM3DDAILYCONVERSATION11",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "主人看上去好像状态不错，是遇到了什么开心的事吗？",
+			say = "{dorm3d}看上去好像状态不错，是遇到了什么开心的事吗？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -51,7 +54,7 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -63,11 +66,11 @@
 		},
 		{
 			side = 2,
-			actorName = "天狼星",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "和主人见面，也是天狼星一天中最开心的事。",
+			say = "和{dorm3d}见面，也是天狼星一天中最开心的事。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

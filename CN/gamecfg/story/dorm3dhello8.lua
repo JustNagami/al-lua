@@ -2,15 +2,19 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DHELLO8",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "天狼星",
 			nameColor = "#FFFFFF",
-			say = "能够见到您真是太好了，我骄傲的主人！今天的天狼星也会全力为您献上侍奉。不论是泡茶、按摩，还是……呵呵，天狼星都会第一时间满足您的所有需要哦！",
+			actorName = 20220,
+			say = "能够见到您真是太好了，我骄傲的{dorm3d}！今天的天狼星也会全力为您献上侍奉。不论是泡茶、按摩，还是……呵呵，天狼星都会第一时间满足您的所有需要哦！",
+			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_hello8",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
