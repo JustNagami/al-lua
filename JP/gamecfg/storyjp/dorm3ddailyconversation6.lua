@@ -1,38 +1,23 @@
 ﻿return {
-	hideRecord = true,
+	fadeOut = 1.5,
 	dialogbox = 2,
+	hideRecord = true,
 	mode = 2,
 	alpha = 0,
 	id = "DORM3DDAILYCONVERSATION6",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			say = "主人，今天想要和天狼星探讨什么呢？",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			},
-			options = {
-				{
-					content = "当然是关于“爱”的话题",
-					flag = 1
-				},
-				{
-					content = "——天狼星以为我会这么说吗？",
-					flag = 2
-				}
-			}
-		},
-		{
-			say = "……！！",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			say = "原、原来主人已经看穿了天狼星的想法吗……真不愧是您，我敏锐的主人。",
+			side = 2,
+			actorName = 20220,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "そういえば、「ロイヤルの人はみなお茶会がお好き」というステレオタイプがありますね",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -43,9 +28,15 @@
 					op_list = {
 						{
 							param = "Play",
-							name = "shy",
+							name = "sikao2",
 							time = 0,
-							type = "action"
+							type = "action",
+							skip = true
+						},
+						{
+							skip = false,
+							time = 1,
+							type = "wait"
 						}
 					}
 				},
@@ -56,7 +47,35 @@
 			}
 		},
 		{
-			say = "如果主人下次想探讨这个话题，天狼星……也是随时都可以的……",
+			actor = 0,
+			side = 2,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			say = "――シリアスはお茶会は好き？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			side = 2,
+			actorName = 20220,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "シリアスは……強いて言えば、お茶会の警備を担当する方が好きかもしれません",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			side = 2,
+			actorName = 20220,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "シリアスはこのような平和で穏やかな時間を守る者になりたいのです。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

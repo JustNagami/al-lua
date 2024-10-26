@@ -52,7 +52,6 @@ function var_0_0.handleNotification(arg_2_0, arg_2_1)
 
 		if var_2_1 == SCENE.LOGIN then
 			pg.UIMgr.GetInstance():displayLoadingBG(false)
-			pg.UIMgr.GetInstance():LoadingOff()
 		end
 	elseif var_2_0 == GAME.SEND_CMD_DONE then
 		-- block empty

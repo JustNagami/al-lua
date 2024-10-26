@@ -38,7 +38,7 @@ function var_0_0.Show(arg_7_0, arg_7_1)
 end
 
 function var_0_0.Open(arg_8_0, arg_8_1, arg_8_2)
-	local var_8_0 = arg_8_1:getConfig("commodity_id")
+	local var_8_0 = arg_8_1:getConfig("commodity_id") or arg_8_1:getConfig("effect_args")[1]
 
 	onButton(arg_8_0, arg_8_0.confirmBtn, function()
 		local var_9_0 = pg.equip_skin_template[var_8_0].name

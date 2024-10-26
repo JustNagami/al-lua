@@ -248,10 +248,6 @@ function var_0_0.initShip(arg_26_0)
 	arg_26_0.initChatBgH = arg_26_0.chatBg.sizeDelta.y
 	arg_26_0.initChatTextH = arg_26_0.chatText.sizeDelta.y
 	arg_26_0.initfontSize = arg_26_0.chatText:GetComponent(typeof(Text)).fontSize
-
-	pg.UIMgr.GetInstance():OverlayPanel(arg_26_0.chat, {
-		groupName = LayerWeightConst.GROUP_SHIPINFOUI
-	})
 end
 
 function var_0_0.initPages(arg_27_0)
@@ -448,6 +444,9 @@ function var_0_0.didEnter(arg_40_0)
 	onButton(arg_40_0, arg_40_0.energyTF, function()
 		arg_40_0:showEnergyDesc()
 	end)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_40_0.chat, {
+		groupName = LayerWeightConst.GROUP_SHIPINFOUI
+	})
 	pg.UIMgr.GetInstance():OverlayPanel(arg_40_0.blurPanel, {
 		groupName = LayerWeightConst.GROUP_SHIPINFOUI
 	})

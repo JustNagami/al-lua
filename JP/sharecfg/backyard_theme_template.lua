@@ -4375,6 +4375,38 @@ pg.backyard_theme_template = {
 			314111
 		}
 	},
+	[115] = {
+		Cfg_1 = 5,
+		name = "シャドウポート",
+		hot = 1,
+		is_view = 1,
+		id = 115,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "影の港で恐れ慄くがいい！",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "gbthemeicon",
+		deblocking = 1,
+		order = 116,
+		ids = {
+			315001,
+			315002,
+			315101,
+			315102,
+			315103,
+			315104,
+			315105,
+			315106,
+			315107,
+			315108,
+			315109,
+			315110,
+			315111,
+			315112
+		}
+	},
 	all = {
 		1,
 		2,
@@ -4476,6 +4508,7 @@ pg.backyard_theme_template = {
 		111,
 		112,
 		113,
-		114
+		114,
+		115
 	}
 }

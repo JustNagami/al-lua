@@ -2,13 +2,18 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DTOUCH1102",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			say = "主人想让天狼星提供怎样的侍奉呢？",
+			actorName = 20220,
+			nameColor = "#FFFFFF",
+			say = "誇らしきご主人様、シリアスの格好にご興味でも？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -18,14 +23,26 @@
 				data = {
 					op_list = {
 						{
-							skip = false,
-							name = "Bow",
+							skip = true,
+							name = "swim01_tou",
 							type = "action"
+						},
+						{
+							param = "Play",
+							name = "Face_danxin",
+							time = 0,
+							type = "action",
+							skip = true
+						},
+						{
+							skip = false,
+							time = 2,
+							type = "wait"
 						}
 					}
 				},
 				callbackData = {
-					hideUI = true,
+					hideUI = false,
 					name = STORY_EVENT.TEST_DONE
 				}
 			}

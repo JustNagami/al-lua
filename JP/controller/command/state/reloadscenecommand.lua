@@ -6,8 +6,8 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 
 	var_1_1:extendData(var_1_0)
 	arg_1_0:sendNotification(GAME.LOAD_SCENE, {
-		isReload = true,
-		context = var_1_1
+		context = var_1_1,
+		prevContext = var_1_1
 	})
 end
 

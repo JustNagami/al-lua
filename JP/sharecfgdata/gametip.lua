@@ -7200,10 +7200,10 @@ _G.pg.base.gametip.activity_switch_award_pool_failed = {
 	tip = "次の段階は目玉報酬を全部交換したことで開放されます"
 }
 _G.pg.base.gametip.shop_street_activity_tip = {
-	tip = "※<size=28><color=#A1E400FF>$1</COLOR>では<color=#A1E400FF>装備外装箱</color>が100%出現します</size>"
+	tip = "※<color=#A1E400FF>$1</COLOR>では<color=#A1E400FF>装備外装箱</color>が100%出現します"
 }
 _G.pg.base.gametip.shop_street_Equipment_skin_box_help = {
-	tip = "<color=#A1E400FF>$1</COLOR> 販売期間：<color=#A1E400FF>$2</COLOR>"
+	tip = "<color=#A1E400FF>$1</COLOR>\n販売期間：<color=#A1E400FF>$2</COLOR>"
 }
 _G.pg.base.gametip.twitter_link_title = {
 	tip = "連携中のツイッター：$1"
@@ -7751,12 +7751,6 @@ _G.pg.base.gametip.help_level_ui = {
 	tip = {
 		{
 			icon = {
-				atlas = "helpbg/level_ui_help_1",
-				path = ""
-			}
-		},
-		{
-			icon = {
 				atlas = "helpbg/level_ui_help_2",
 				path = ""
 			}
@@ -8243,16 +8237,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "アビリティPtが不足しています"
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "期間限定建造を累計200回行うと「天城(空母)」を確定で入手可能！（最大4隻まで）"
+	tip = "「ローマ」「レオナルド・ダ・ヴィンチ」など出現率アップ！"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "「ヴィットリオ・ヴェネト」常設追加！"
+	tip = "「ウルリッヒ・フォン・フッテン」常設実装！"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "「ドゥーカ・デッリ・アブルッツィ」など常設追加！"
+	tip = "「マクデブルク」常設実装！"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "「アクィラ」常設追加！"
+	tip = "「ウルリッヒ・フォン・フッテン」常設実装！"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -9914,7 +9908,7 @@ _G.pg.base.gametip.input_returner_code = {
 	tip = "UID入力"
 }
 _G.pg.base.gametip.dress_up_success = {
-	tip = "チャット設定変更成功"
+	tip = "装飾設定変更成功"
 }
 _G.pg.base.gametip.already_have_the_skin = {
 	tip = "入手済の着せ替えです"
@@ -10898,14 +10892,24 @@ _G.pg.base.gametip.music_main = {
 _G.pg.base.gametip.music_juus = {
 	tip = {
 		{
-			info = "■艦船通信とは"
-		},
-		{
 			info = [[
- 艦船通信とは、母港の艦船たちが利用しているSNSであり、艦船たちの投稿を読み、「いいね」を推したり、コメント（内容は固定ですが…）したりすることができます。
- 艦船による投稿は一定時間ごと自動で行われます。
+「艦チャット＆艦船通信」について：
 
- 艦船通信をチェックし、彼女たちの日常の垣間を楽しもう！]]
+  艦チャットと艦船通信とは母港の艦船たちが利用しているSNSであり、艦船たちの投稿を読み「いいね」を押したり、艦船とチャットする会話コンテンツを楽しめるシステムになります。
+ 画面左下のボタンで「艦チャット」「艦船通信」を切り替えることができます。
+
+  艦チャットについて
+ 1.艦チャットでは「個人チャンネル」「グループチャンネル」それぞれで艦船とのチャット（会話）を楽しむことができます
+ 2.未読メッセージが存在する場合、「艦チャット＆艦船通信」ボタンにアイコンが表示されます
+ 3.チャンネルは画面左のチャンネルバーをタップして切り替える事ができます
+ 4.チャット画面右上のハートアイコンをタップすると、チャンネルバーの表示優先順位を上げる事ができます。また、右上のボタンをタップすると話題切り替え、チャット背景の変更が可能です
+
+
+  艦船通信について
+ 1.艦船通信で艦船たちの投稿を読み、「いいね」を押したり、コメントしたりすることができます。
+ 2.艦船による投稿は一定時間毎に自動で行われます。
+ 3.「艦チャット＆艦船通信」ボタンにアイコンが表示されます
+]]
 		}
 	}
 }
@@ -11869,7 +11873,7 @@ _G.pg.base.gametip.index_no_limit = {
 	tip = "すべて"
 }
 _G.pg.base.gametip.index_awakening = {
-	tip = "<size=36>認識覚醒可</size>"
+	tip = "<size=32>認識覚醒可</size>"
 }
 _G.pg.base.gametip.index_not_lvmax = {
 	tip = "ﾚﾍﾞﾙMAX未満"
@@ -16094,7 +16098,7 @@ _G.pg.base.gametip.formationScene_use_oil_limit_tip = {
 	tip = "燃料消費上限:"
 }
 _G.pg.base.gametip.index_awakening2 = {
-	tip = "<size=36>認識覚醒可</size><size=30>＋</size>"
+	tip = "<size=32>認識覚醒可</size><size=30>＋</size>"
 }
 _G.pg.base.gametip.index_upgrade = {
 	tip = "限界突破可"
@@ -22002,18 +22006,14 @@ _G.pg.base.gametip.shipyard_phase_1 = {
 		{
 			info = [[
 イベント概要：
-「テンペスタの秘密造船所」とは、任務イベント「テンペスタの秘密造船所」で造った船を操縦し、大海原で敵を倒したり、お宝を回収したりしつつ終点を目指し、スコアを稼ぐミニゲームになります。
-ミニゲームは<color=#92fc63>10月26日（木）～-11月9日（木）23:59</color>まで開催されます。
+ 「テンペスタの秘密造船所」とは、任務イベント「テンペスタの秘密造船所」で造った船を操縦し、大海原で敵を倒したり、お宝を回収したりしつつ終点を目指し、スコアを稼ぐミニゲームになります。
+ イベントは<color=#92fc63>10月24日（木）～-11月7日（木）23:59</color>まで開催されます。
 
-遊び方：
-・「テンペスタの秘密造船所」では様々な任務が出現します。すべての任務をクリアすると、ミニゲームで使用する船が完成します。
-・ミニゲームでは、ステージを選択し、更に装備したい兵装を選択すると、海戦ゲームをプレイすることができます。
-・ミニゲームは11月1日（水）まで毎日新しいステージが開放されます。
-・ステージをクリアすると、それぞれのステージで1度だけクリア報酬を入手できます。
-　  ステージ3 テンペスタ用設備「果物の補給」
-     ステージ5 テンペスタ用装備セット 
-     ステージ7 限定家具「始まりの冒険船」
-・ステージ7をクリアすると、任意のステージを選択してプレイすることができます]]
+  遊び方：
+ ・10月30日（水）まで、毎日限定任務が開放されます。開放されたすべての限定任務をクリアすると、ミニゲームで使用する船が完成します。
+ ・ミニゲームでは、ステージを選択し、更に装備したい兵装を選択すると、海戦ゲームをプレイすることができます。
+ ・ミニゲームのステージをクリアすると、それぞれのステージで1度だけクリア報酬を入手でき、さらに7つのステージを全部クリアすると、限定家具「始まりの冒険船」をGETできます。
+ ・ステージ7をクリアすると、任意のステージを選択してプレイすることができます]]
 		}
 	}
 }
@@ -22027,7 +22027,7 @@ _G.pg.base.gametip.shipyard_button_2 = {
 	tip = "「テンペスタ秘密造船所」すべての任務クリアで解放"
 }
 _G.pg.base.gametip.shipyard_introduce = {
-	tip = "<size=30>任務は10/25（水）まで毎日2個ずつ開放されます\n開放から七日間、毎日開放される任務をクリアし、\n限定兵装<color=#ff9892>「テンペスタ・フラッグ」 </color>をGET!</size>"
+	tip = "任務は10/30（水）まで毎日2個ずつ開放されます\n開放から7日間、毎日開放される任務をクリアすると、限定兵装<color=#ff9892>「テンペスタ・フラッグ」 </color>を入手可能！"
 }
 _G.pg.base.gametip.help_supportfleet = {
 	tip = {
@@ -22657,7 +22657,7 @@ _G.pg.base.gametip.commander_lock_setting_title = {
 	tip = "訓練完了時、下記の条件を満たすオフニャのロックを確認する"
 }
 _G.pg.base.gametip.skin_exchange_confirm = {
-	tip = " <color=#92fc63>$1 *1</color> を消費して <color=#92fc63>$2</color>と交換しますか"
+	tip = "<color=#92fc63>$1*1</color>を消費して<color=#92fc63>$2</color>と交換しますか"
 }
 _G.pg.base.gametip.skin_purchase_confirm = {
 	tip = "<size=32><color=#92fc63>$1*1</color>を消費し、割引価格\n<icon name=gem w=0.6 h=0.6/><color=#FFDE38FF>$2</color>で<color=#92fc63>$3</color>着せ替えを購入しますか？</size>"
@@ -22927,22 +22927,22 @@ _G.pg.base.gametip.senrankagura_backhill_help = {
 	}
 }
 _G.pg.base.gametip.dorm3d_furnitrue_type_wallpaper = {
-	tip = "墙纸"
+	tip = "壁紙"
 }
 _G.pg.base.gametip.dorm3d_furnitrue_type_floor = {
-	tip = "地板"
-}
-_G.pg.base.gametip.dorm3d_furnitrue_type_decoration = {
-	tip = "装饰"
-}
-_G.pg.base.gametip.dorm3d_furnitrue_type_bed = {
 	tip = "床"
 }
+_G.pg.base.gametip.dorm3d_furnitrue_type_decoration = {
+	tip = "装飾"
+}
+_G.pg.base.gametip.dorm3d_furnitrue_type_bed = {
+	tip = "ベッド"
+}
 _G.pg.base.gametip.dorm3d_furnitrue_type_couch = {
-	tip = "沙发"
+	tip = "ソファ"
 }
 _G.pg.base.gametip.dorm3d_furnitrue_type_table = {
-	tip = "桌子"
+	tip = "テーブル"
 }
 _G.pg.base.gametip.vote_lable_not_start = {
 	tip = "未開放"
@@ -23687,49 +23687,49 @@ _G.pg.base.gametip.idol3rd_practice = {
 	}
 }
 _G.pg.base.gametip.dorm3d_furniture_window_acesses = {
-	tip = "获取途径"
+	tip = "入手方法"
 }
 _G.pg.base.gametip.dorm3d_furniture_count = {
 	tip = "数量：$1"
 }
 _G.pg.base.gametip.dorm3d_furniture_used = {
-	tip = "<color=#00a3ef>[已摆放]</color>"
+	tip = "<color=#00a3ef>[配置済み]</color>"
 }
 _G.pg.base.gametip.dorm3d_furniture_unfit = {
-	tip = "不可使用"
+	tip = "適用不可"
 }
 _G.pg.base.gametip.dorm3d_waiting = {
-	tip = "等待入住"
+	tip = "準備中"
 }
 _G.pg.base.gametip.dorm3d_daily_favor = {
-	tip = "今日互动默契值"
+	tip = "本日ボーナス親愛度"
 }
 _G.pg.base.gametip.dorm3d_favor_level = {
-	tip = "当前默契值等级："
+	tip = "親愛度LV："
 }
 _G.pg.base.gametip.dorm3d_time_choose = {
-	tip = "选择时间"
+	tip = "時間選択"
 }
 _G.pg.base.gametip.dorm3d_now_time = {
-	tip = "当前时间"
+	tip = "現在時間"
 }
 _G.pg.base.gametip.dorm3d_is_auto_time = {
-	tip = "随时间自动切换昼夜装扮"
+	tip = "昼夜配置自動変更"
 }
 _G.pg.base.gametip.dorm3d_clothing_choose = {
-	tip = "选择换装"
+	tip = "衣装選択"
 }
 _G.pg.base.gametip.dorm3d_now_clothing = {
-	tip = "当前"
+	tip = "現在"
 }
 _G.pg.base.gametip.dorm3d_talk = {
-	tip = "对话"
+	tip = "会話"
 }
 _G.pg.base.gametip.dorm3d_touch = {
-	tip = "互动"
+	tip = "タッチ"
 }
 _G.pg.base.gametip.dorm3d_gift = {
-	tip = "赠礼"
+	tip = "プレゼント"
 }
 _G.pg.base.gametip.dorm3d_gift_owner_num = {
 	tip = "数量："
@@ -24849,4 +24849,663 @@ _G.pg.base.gametip.attire_combatui_preview = {
 }
 _G.pg.base.gametip.attire_combatui_confirm = {
 	tip = "装飾"
+}
+_G.pg.base.gametip.battle_battleMediator_remainTime = {
+	tip = "残り時間"
+}
+_G.pg.base.gametip.battlepass_main_tip_2410 = {
+	tip = "2024/10/1-2024/11/30キャンペーン期間中、シーズン任務累計<icon name=pt w=0.5 h=0.5/>入手報酬で<color=#854747>「鳳翔(META)」</color>などを入手可能"
+}
+_G.pg.base.gametip.battlepass_main_help_2410 = {
+	tip = {
+		{
+			info = [[
+■キャンペーン開催期間
+ 2024.10.1（火）0:00～2024.11.30（土）23:59
+
+■概要
+「シーズン任務」とは、キャンペーン開催中の任務をクリアし「進捗Pt」を集め、入手した進捗Ptに応じた累計獲得数報酬が手に入るキャンペーンになります。
+また、通常の累計獲得数報酬に追加する形で「SP報酬」が存在し、ショップアイテム「クルーズパス」を購入すると、SP報酬も入手可能となります。
+通常報酬からは艦船「鳳翔(META)」、SP報酬からは戦艦「シュフラン」の限定着せ替え「華やかに極まれ」を入手できます。
+
+■遊び方
+・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
+　①週次開放任務
+　キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
+　②全期間任務
+　最初から全開放される任務。全1グループ
+・上記「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
+　さらに「クルーズパス」を購入すると、15段階分の報酬（進捗Pt1500）が入手可能となります。
+・「進捗Pt」の累計入手数に応じて、進捗Pt累計獲得数報酬を入手できます。累計獲得数報酬は2種類存在します。
+　①通常報酬
+　「進捗Pt」の入手数に応じて獲得できる報酬。全100段階となります
+　②SP報酬
+　「クルーズパス」を購入すると開放される追加報酬。通常報酬と同じく全100段階存在し、通常報酬と同じ段階のSP報酬が入手できます。
+・キャンペーンが終了すると、入手済みの進捗Ptはリセットされます。
+
+■Tips
+・プレイスタイル
+　シーズン任務は全100段階あり、いきなり最後まではクリアできない仕様になっております。いつものクエストをくり返しながら任務をこなしていくか、狙いの報酬を決めて最短ペースでクリアしていくかなど、自分のプレイスタイルに合わせてプレイすることをオススメします。
+
+・クルーズパス
+　ショップで「クルーズパス」を購入すると、お得なアイテムとともに「進捗Pt」を1500Pt入手できます。また、追加の限定着せ替えは「クルーズパス」を購入して開放される「SP報酬」でのみ入手できます。要注意。
+
+・任務のスキップ（オススメしません）
+　「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
+　ダイヤを消費しますので、オススメしません。
+　「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2410 = {
+	tip = {
+		{
+			info = [[
+■シーズン任務について
+・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
+　①週次開放任務
+　キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
+　②全期間任務
+　最初から全開放される任務。全1グループ
+
+・「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
+
+・「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
+　ダイヤを消費しますので、オススメしません……
+　「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
+		}
+	}
+}
+_G.pg.base.gametip.dorm3d_unlock_tips = {
+	tip = "親愛度$1で開放"
+}
+_G.pg.base.gametip.dorm3d_daily_favor_tips = {
+	tip = "本日ボーナス親愛度"
+}
+_G.pg.base.gametip.dorm3d_photo_len = {
+	tip = "カメラ"
+}
+_G.pg.base.gametip.dorm3d_photo_depthoffield = {
+	tip = "ぼかし"
+}
+_G.pg.base.gametip.dorm3d_photo_focusdistance = {
+	tip = "ぼかし距離"
+}
+_G.pg.base.gametip.dorm3d_photo_focusstrength = {
+	tip = "ぼかし強さ"
+}
+_G.pg.base.gametip.dorm3d_photo_paramaters = {
+	tip = "設定"
+}
+_G.pg.base.gametip.dorm3d_photo_postexposure = {
+	tip = "露光量"
+}
+_G.pg.base.gametip.dorm3d_photo_saturation = {
+	tip = "彩度"
+}
+_G.pg.base.gametip.dorm3d_photo_contrast = {
+	tip = "コントラスト"
+}
+_G.pg.base.gametip.dorm3d_photo_Others = {
+	tip = "その他"
+}
+_G.pg.base.gametip.dorm3d_photo_hidecharacter = {
+	tip = "キャラ非表示"
+}
+_G.pg.base.gametip.dorm3d_photo_facecamera = {
+	tip = "カメラ目線"
+}
+_G.pg.base.gametip.dorm3d_photo_lighting = {
+	tip = "ライティング"
+}
+_G.pg.base.gametip.dorm3d_photo_filter = {
+	tip = "フィルター"
+}
+_G.pg.base.gametip.dorm3d_photo_alpha = {
+	tip = "透明度"
+}
+_G.pg.base.gametip.dorm3d_photo_strength = {
+	tip = "深度"
+}
+_G.pg.base.gametip.dorm3d_photo_regular_anim = {
+	tip = "基本"
+}
+_G.pg.base.gametip.dorm3d_photo_special_anim = {
+	tip = "SP"
+}
+_G.pg.base.gametip.dorm3d_photo_animspeed = {
+	tip = "モーション$1x"
+}
+_G.pg.base.gametip.dorm3d_photo_furniture_lock = {
+	tip = "dorm3d_photo_furniture_lock"
+}
+_G.pg.base.gametip.dorm3d_shop_gift = {
+	tip = " <color=#169fff>$2</color>を$1消費して、<color=#169fff>$3</color>を購入しますか？"
+}
+_G.pg.base.gametip.dorm3d_shop_gift_tip = {
+	tip = "<color=#7c7e81>購入すると<color=#169fff>特別ストーリー</color>を開放できます</color>"
+}
+_G.pg.base.gametip.word_unlock = {
+	tip = "開放済"
+}
+_G.pg.base.gametip.word_lock = {
+	tip = "未開放"
+}
+_G.pg.base.gametip.dorm3d_collect_favor_plus = {
+	tip = "ボーナス：親愛度+"
+}
+_G.pg.base.gametip.dorm3d_collect_nothing = {
+	tip = "- まだ入手していません -"
+}
+_G.pg.base.gametip.dorm3d_collect_locked = {
+	tip = "親愛度Lv$1で開放"
+}
+_G.pg.base.gametip.dorm3d_collect_not_found = {
+	tip = "$1で入手可能"
+}
+_G.pg.base.gametip.dorm3d_sirius_table = {
+	tip = "ダイニング"
+}
+_G.pg.base.gametip.dorm3d_sirius_chair = {
+	tip = "リビング"
+}
+_G.pg.base.gametip.dorm3d_sirius_bed = {
+	tip = "寝室"
+}
+_G.pg.base.gametip.dorm3d_sirius_bath = {
+	tip = "更衣室"
+}
+_G.pg.base.gametip.dorm3d_collection_beach = {
+	tip = "ビーチ"
+}
+_G.pg.base.gametip.dorm3d_reload_unlock = {
+	tip = "- 未開放 -"
+}
+_G.pg.base.gametip.dorm3d_reload_unlock_name = {
+	tip = "?????"
+}
+_G.pg.base.gametip.dorm3d_reload_favor = {
+	tip = "親愛度ストーリー"
+}
+_G.pg.base.gametip.dorm3d_reload_gift = {
+	tip = "専用贈り物ストーリー"
+}
+_G.pg.base.gametip.dorm3d_collect_unlock = {
+	tip = "- 未開放 -"
+}
+_G.pg.base.gametip.dorm3d_pledge_favor = {
+	tip = "ケッコンしていると親愛度100上昇"
+}
+_G.pg.base.gametip.dorm3d_own_favor = {
+	tip = "所持していると親愛度100上昇"
+}
+_G.pg.base.gametip.dorm3d_role_choose = {
+	tip = "部屋選択"
+}
+_G.pg.base.gametip.dorm3d_beach_buy = {
+	tip = "<color=#39bfff>$1</color>を消費して、 <color=#169fff>ビーチ</color>を開放しますか？"
+}
+_G.pg.base.gametip.dorm3d_beach_role = {
+	tip = "開放すると<color=#39bfff>$1</color>を配置することが可能です"
+}
+_G.pg.base.gametip.dorm3d_beach_download = {
+	tip = "必要アセットダウンロード：$1"
+}
+_G.pg.base.gametip.dorm3d_role_check_in = {
+	tip = "<color=#39bfff>$1</color>の部屋を開放しますか？"
+}
+_G.pg.base.gametip.dorm3d_data_choose = {
+	tip = "デート選択"
+}
+_G.pg.base.gametip.dorm3d_role_manage = {
+	tip = "宿舎管理"
+}
+_G.pg.base.gametip.dorm3d_role_manage_role = {
+	tip = "キャラ"
+}
+_G.pg.base.gametip.dorm3d_role_manage_public_area = {
+	tip = "公共エリア"
+}
+_G.pg.base.gametip.dorm3d_data_go = {
+	tip = "<color=#39bfff>$1</color>配置キャラを選択"
+}
+_G.pg.base.gametip.dorm3d_role_assets_delete = {
+	tip = "<color=#39bfff>$1</color>の部屋のアセットを一時削除しますか？"
+}
+_G.pg.base.gametip.dorm3d_role_assets_download = {
+	tip = "<color=#39bfff>$1</color>の部屋を開放しますか？\nアセットダウンロード：$2"
+}
+_G.pg.base.gametip.volleyball_end_tip = {
+	tip = "シリアスと楽しい午後を過ごした"
+}
+_G.pg.base.gametip.volleyball_end_award = {
+	tip = "行動力-1、シリアス親愛度+40"
+}
+_G.pg.base.gametip.sure_exit_volleyball = {
+	tip = "ミニゲームを終了しますか？"
+}
+_G.pg.base.gametip.dorm3d_photo_active_zone = {
+	tip = "$1エリア専用"
+}
+_G.pg.base.gametip.apartment_level_unenough = {
+	tip = "親愛度Lv$1で開放"
+}
+_G.pg.base.gametip.help_dorm3d_info = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_1",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_2",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_3",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_4",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_5",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_6",
+				path = ""
+			}
+		},
+		disableScroll = true,
+		pageMode = true,
+		ImageMode = true,
+		defaultpage = 1,
+		windowSize = {
+			x = 1263,
+			y = 873
+		},
+		windowPos = {
+			y = -70
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024
+		}
+	}
+}
+_G.pg.base.gametip.dorm3d_shop_gift_already_given = {
+	tip = "すでにプレゼントした贈り物です"
+}
+_G.pg.base.gametip.dorm3d_shop_gift_not_owned = {
+	tip = "未所持の贈り物です"
+}
+_G.pg.base.gametip.dorm3d_select_tip = {
+	tip = "公共エリア配置"
+}
+_G.pg.base.gametip.dorm3d_volleyball_title = {
+	tip = "ビーチ"
+}
+_G.pg.base.gametip.dorm3d_minigame_again = {
+	tip = "もう一回"
+}
+_G.pg.base.gametip.dorm3d_minigame_close = {
+	tip = "戻る"
+}
+_G.pg.base.gametip.dorm3d_data_Invite_lack = {
+	tip = "配置キャラが不足しています"
+}
+_G.pg.base.gametip.dorm3d_item_num = {
+	tip = "入手済："
+}
+_G.pg.base.gametip.dorm3d_collect_not_owned = {
+	tip = "まだ入手していません"
+}
+_G.pg.base.gametip.dorm3d_furniture_sure_save = {
+	tip = "家具配置を保存しますか？"
+}
+_G.pg.base.gametip.dorm3d_furniture_save_success = {
+	tip = "家具配置を保存しました"
+}
+_G.pg.base.gametip.dorm3d_removable = {
+	tip = "（画面左側ドラッグで移動し、キャラに近づいてください）"
+}
+_G.pg.base.gametip.grapihcs3d_setting_quality = {
+	tip = "グラフィック設定"
+}
+_G.pg.base.gametip.grapihcs3d_setting_quality_option_low = {
+	tip = "低画質"
+}
+_G.pg.base.gametip.grapihcs3d_setting_quality_option_medium = {
+	tip = "中画質"
+}
+_G.pg.base.gametip.grapihcs3d_setting_quality_option_high = {
+	tip = "高画質"
+}
+_G.pg.base.gametip.grapihcs3d_setting_quality_option_custom = {
+	tip = "カスタム"
+}
+_G.pg.base.gametip.grapihcs3d_setting_universal = {
+	tip = "汎用3D設定"
+}
+_G.pg.base.gametip.grapihcs3d_setting_gpgpu_warning = {
+	tip = "ONにすると、一部の機種では強制終了してしまう可能性があります"
+}
+_G.pg.base.gametip.dorm3d_shop_tag1 = {
+	tip = "専用タッチを開放"
+}
+_G.pg.base.gametip.dorm3d_shop_tag2 = {
+	tip = "撮影モーションを開放"
+}
+_G.pg.base.gametip.dorm3d_shop_tag3 = {
+	tip = "ときめきモードモーション開放"
+}
+_G.pg.base.gametip.dorm3d_shop_tag4 = {
+	tip = "特殊ストーリー開放"
+}
+_G.pg.base.gametip.dorm3d_shop_tag5 = {
+	tip = "会話内容開放"
+}
+_G.pg.base.gametip.dorm3d_shop_tag6 = {
+	tip = "ミニゲーム開放"
+}
+_G.pg.base.gametip.dorm3d_system_switch = {
+	tip = "宿舎準備中……"
+}
+_G.pg.base.gametip.dorm3d_beach_switch = {
+	tip = "ビーチ準備中……"
+}
+_G.pg.base.gametip.dorm3d_AR_switch = {
+	tip = "AR機能メンテナンス中…"
+}
+_G.pg.base.gametip.dorm3d_invite_confirm_original = {
+	tip = "$1<color=#39bfff>$2</color>を消費し、<color=#39bfff>$3</color>の$4配置を開放しますか？"
+}
+_G.pg.base.gametip.dorm3d_invite_confirm_discount = {
+	tip = "$1<color=#39bfff>$2</color>（割引前価格$3）を消費し、<color=#39bfff>$4</color>の$5配置を開放しますか？"
+}
+_G.pg.base.gametip.dorm3d_invite_confirm_free = {
+	tip = "$1<color=#fc4670><size=34>無料</size></color>(割引前価格$2)で<color=#39bfff>$3</color>の$4配置を解放しますか？"
+}
+_G.pg.base.gametip.dorm3d_purchase_confirm_original = {
+	tip = "$1<color=#39bfff>$2</color>を消費し、<color=#39bfff>$3</color>を購入しますか？"
+}
+_G.pg.base.gametip.dorm3d_purchase_confirm_discount = {
+	tip = "$1<color=#39bfff>$2</color>（割引前価格$3）を消費し、<color=#39bfff>$4</color>を購入しますか？"
+}
+_G.pg.base.gametip.dorm3d_purchase_confirm_free = {
+	tip = "$1<color=#fc4670><size=34>無料</size></color>(割引前価格$2)で<color=#39bfff>$3</color>を購入しますか？"
+}
+_G.pg.base.gametip.dorm3d_purchase_confirm_tip = {
+	tip = "専用"
+}
+_G.pg.base.gametip.cruise_phase_title = {
+	tip = "段階"
+}
+_G.pg.base.gametip.cruise_title_2410 = {
+	tip = "シーズン任務・19期"
+}
+_G.pg.base.gametip.battlepass_main_time_title = {
+	tip = "今期残り時間："
+}
+_G.pg.base.gametip.cruise_shop_no_open = {
+	tip = "10/1 0時開放予定"
+}
+_G.pg.base.gametip.cruise_btn_pay = {
+	tip = "追加報酬開放"
+}
+_G.pg.base.gametip.cruise_btn_all = {
+	tip = "一括受取"
+}
+_G.pg.base.gametip.task_go = {
+	tip = "確認"
+}
+_G.pg.base.gametip.task_got = {
+	tip = "完了"
+}
+_G.pg.base.gametip.cruise_shop_title_skin = {
+	tip = "着せ替え"
+}
+_G.pg.base.gametip.cruise_shop_title_equip_skin = {
+	tip = "外装"
+}
+_G.pg.base.gametip.cruise_shop_lock_tip = {
+	tip = "開催中シーズン任務Lv50達成"
+}
+_G.pg.base.gametip.cruise_shop_limit_tip = {
+	tip = "今月残り購入可能回数："
+}
+_G.pg.base.gametip.cruise_limit_count = {
+	tip = "今月はこれ以上購入できません"
+}
+_G.pg.base.gametip.cruise_title_2408 = {
+	tip = "シーズン任務・18期"
+}
+_G.pg.base.gametip.cruise_shop_title = {
+	tip = "復刻ショップ"
+}
+_G.pg.base.gametip.dorm3d_favor_level_story = {
+	tip = "特別ストーリー"
+}
+_G.pg.base.gametip.dorm3d_already_gifted = {
+	tip = "プレゼント済"
+}
+_G.pg.base.gametip.dorm3d_story_unlock_tip = {
+	tip = "開放済ストーリー"
+}
+_G.pg.base.gametip.dorm3d_skin_locked = {
+	tip = "未開放衣装"
+}
+_G.pg.base.gametip.dorm3d_photo_no_role = {
+	tip = "キャラ未開放"
+}
+_G.pg.base.gametip.dorm3d_furniture_locked = {
+	tip = "家具未開放"
+}
+_G.pg.base.gametip.dorm3d_accompany_locked = {
+	tip = "未開放"
+}
+_G.pg.base.gametip.dorm3d_role_locked = {
+	tip = "キャラを開放しておく必要があります"
+}
+_G.pg.base.gametip.dorm3d_volleyball_button = {
+	tip = "ビーチバレー"
+}
+_G.pg.base.gametip.dorm3d_minigame_button1 = {
+	tip = "ミニゲーム"
+}
+_G.pg.base.gametip.dorm3d_collection_title_en = {
+	tip = "Azur Lane"
+}
+_G.pg.base.gametip.dorm3d_collection_cost_tip = {
+	tip = "お伴5分で<icon name=stamina/>行動力-1、親愛度<color=#fc4670>+40</color>"
+}
+_G.pg.base.gametip.dorm3d_gift_story_unlock = {
+	tip = "特別ストーリー開放済"
+}
+_G.pg.base.gametip.dorm3d_furniture_replace_tip = {
+	tip = "対応の家具を配置してください"
+}
+_G.pg.base.gametip.dorm3d_recall_locked = {
+	tip = "未開放？？？？？？"
+}
+_G.pg.base.gametip.dorm3d_gift_maximum = {
+	tip = "最大数量に達しています"
+}
+_G.pg.base.gametip.dorm3d_need_construct_item = {
+	tip = "開放チケットが不足しています"
+}
+_G.pg.base.gametip.AR_plane_check = {
+	tip = "平面を検出してください"
+}
+_G.pg.base.gametip.AR_plane_long_press_to_summon = {
+	tip = "平面を長押しして、キャラを呼び出してください"
+}
+_G.pg.base.gametip.AR_plane_distance_near = {
+	tip = "距離が近すぎるとキャラが非表示になります"
+}
+_G.pg.base.gametip.AR_plane_summon_fail_by_near = {
+	tip = "距離が近すぎるため、キャラの呼び出しに失敗しました"
+}
+_G.pg.base.gametip.AR_plane_summon_success = {
+	tip = "キャラの呼び出しに成功しました"
+}
+_G.pg.base.gametip.dorm3d_day_night_switching1 = {
+	tip = "すでに昼になっています"
+}
+_G.pg.base.gametip.dorm3d_day_night_switching2 = {
+	tip = "すでに夜になっています"
+}
+_G.pg.base.gametip.dorm3d_download_complete = {
+	tip = "アセットダウンロード完了しました"
+}
+_G.pg.base.gametip.dorm3d_resource_downloading = {
+	tip = "アセットダウンロード中です"
+}
+_G.pg.base.gametip.dorm3d_resource_delete = {
+	tip = "アセットを削除しました"
+}
+_G.pg.base.gametip.dorm3d_favor_maximize = {
+	tip = "親愛度がmaxになっています。操作を続けますか？"
+}
+_G.pg.base.gametip.dorm3d_purchase_weekly_limit = {
+	tip = "\n（今週購入回数$1/$2）"
+}
+_G.pg.base.gametip.world_file_tip = {
+	tip = "※画面スライドでページスクロール可能。画面タップで閉じる"
+}
+_G.pg.base.gametip.levelscene_mapselect_part1 = {
+	tip = "前編"
+}
+_G.pg.base.gametip.levelscene_mapselect_part2 = {
+	tip = "後編"
+}
+_G.pg.base.gametip.levelscene_mapselect_sp = {
+	tip = "SP"
+}
+_G.pg.base.gametip.levelscene_mapselect_ex = {
+	tip = "EX"
+}
+_G.pg.base.gametip.juuschat_filter_title = {
+	tip = "絞り込み"
+}
+_G.pg.base.gametip.juuschat_filter_tip1 = {
+	tip = "全て"
+}
+_G.pg.base.gametip.juuschat_filter_tip2 = {
+	tip = "返信済"
+}
+_G.pg.base.gametip.juuschat_filter_tip3 = {
+	tip = "未返信"
+}
+_G.pg.base.gametip.juuschat_filter_tip4 = {
+	tip = "個人"
+}
+_G.pg.base.gametip.juuschat_filter_tip5 = {
+	tip = "グループ"
+}
+_G.pg.base.gametip.juuschat_label1 = {
+	tip = "使用中"
+}
+_G.pg.base.gametip.juuschat_label2 = {
+	tip = "確認中"
+}
+_G.pg.base.gametip.juuschat_chattip1 = {
+	tip = "[ボイスメッセージ]"
+}
+_G.pg.base.gametip.juuschat_chattip2 = {
+	tip = "[プレゼント]"
+}
+_G.pg.base.gametip.juuschat_chattip3 = {
+	tip = "[返信待ち]"
+}
+_G.pg.base.gametip.juuschat_reddot_title = {
+	tip = "艦チャット"
+}
+_G.pg.base.gametip.juuschat_filter_subtitle1 = {
+	tip = "既読・未読"
+}
+_G.pg.base.gametip.juuschat_filter_subtitle2 = {
+	tip = "個人・グループ"
+}
+_G.pg.base.gametip.juuschat_filter_subtitle3 = {
+	tip = "陣営"
+}
+_G.pg.base.gametip.juuschat_redpacket_detail = {
+	tip = "受取内容"
+}
+_G.pg.base.gametip.juuschat_filter_empty = {
+	tip = "当該チャットは存在しません"
+}
+_G.pg.base.gametip.dorm3d_appellation_title = {
+	tip = "呼び方変更"
+}
+_G.pg.base.gametip.dorm3d_appellation_cd = {
+	tip = "$1後呼び方を再度変更可能"
+}
+_G.pg.base.gametip.dorm3d_appellation_interval = {
+	tip = "呼び方は48時間に1度変更できます"
+}
+_G.pg.base.gametip.dorm3d_appellation_waring1 = {
+	tip = "NGワードが含まれています"
+}
+_G.pg.base.gametip.dorm3d_appellation_waring2 = {
+	tip = "呼び方テキストが長すぎです"
+}
+_G.pg.base.gametip.dorm3d_appellation_waring3 = {
+	tip = "呼び方テキストが短すぎです"
+}
+_G.pg.base.gametip.dorm3d_appellation_waring4 = {
+	tip = "現在呼び方を変更できません"
+}
+_G.pg.base.gametip.dorm3d_shop_gift_owned = {
+	tip = "これ以上は購入できません"
+}
+_G.pg.base.gametip.BoatAdGame_minigame_help = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/boatadgame_minigame_help",
+				path = ""
+			}
+		},
+		disableScroll = true,
+		pageMode = true,
+		ImageMode = true,
+		defaultpage = 1,
+		windowSize = {
+			x = 1263,
+			y = 873
+		},
+		windowPos = {
+			y = -70
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024
+		}
+	}
+}
+_G.pg.base.gametip.activity_1024_memory = {
+	tip = "「ハロウィンページ」が不足しています。限定任務をクリアして集めましょう！"
+}
+_G.pg.base.gametip.activity_1024_memory_get = {
+	tip = "- 受取済 -"
+}
+_G.pg.base.gametip.juuschat_background_tip1 = {
+	tip = "未所持"
+}
+_G.pg.base.gametip.juuschat_background_tip2 = {
+	tip = "着せ替え未所持"
 }

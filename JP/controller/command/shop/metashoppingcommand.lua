@@ -50,7 +50,8 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		cmd = var_1_0.cmd,
 		arg1 = var_1_0.arg1,
 		arg2 = var_1_0.arg2,
-		arg_list = {}
+		arg_list = {},
+		kvargs1 = var_1_0.kvargs1 or {}
 	}, 11203, function(arg_2_0)
 		if arg_2_0.result == 0 then
 			local var_2_0 = var_1_1:GetMetaShop()

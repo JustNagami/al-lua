@@ -57,6 +57,8 @@ function var_0_4.SetArgs(arg_3_0, arg_3_1, arg_3_2)
 	if arg_3_0._cloakExpose and arg_3_0._cloakExpose > 0 then
 		arg_3_1:CloakExpose(arg_3_0._cloakExpose)
 	end
+
+	arg_3_0._proxy = var_0_0.Battle.BattleDataProxy.GetInstance()
 end
 
 function var_0_4.onStack(arg_4_0, arg_4_1, arg_4_2)
@@ -66,14 +68,8 @@ end
 function var_0_4.onUpdate(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
 	if arg_5_3.timeStamp >= arg_5_0._nextEffectTime then
 		local var_5_0 = arg_5_0:CalcNumber(arg_5_1, arg_5_2)
-		local var_5_1 = {
-			isMiss = false,
-			isCri = false,
-			isHeal = false
-		}
-		local var_5_2 = arg_5_1:UpdateHP(-var_5_0, var_5_1)
 
-		var_0_0.Battle.BattleDataProxy.GetInstance():DamageStatistics(nil, arg_5_1:GetAttrByName("id"), -var_5_2)
+		arg_5_0._proxy:HandleDirectDamage(arg_5_1, var_5_0)
 
 		if arg_5_1:IsAlive() then
 			arg_5_0._nextEffectTime = arg_5_0._nextEffectTime + arg_5_0._time
@@ -83,14 +79,8 @@ end
 
 function var_0_4.onRemove(arg_6_0, arg_6_1, arg_6_2)
 	local var_6_0 = arg_6_0:CalcNumber(arg_6_1, arg_6_2)
-	local var_6_1 = {
-		isMiss = false,
-		isCri = false,
-		isHeal = false
-	}
-	local var_6_2 = arg_6_1:UpdateHP(-var_6_0, var_6_1)
 
-	var_0_0.Battle.BattleDataProxy.GetInstance():DamageStatistics(nil, arg_6_1:GetAttrByName("id"), -var_6_2)
+	arg_6_0._proxy:HandleDirectDamage(arg_6_1, var_6_0)
 end
 
 function var_0_4.CalcNumber(arg_7_0, arg_7_1, arg_7_2)

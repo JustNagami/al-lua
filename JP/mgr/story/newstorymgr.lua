@@ -234,12 +234,12 @@ end
 function var_0_0.Init(arg_21_0, arg_21_1)
 	arg_21_0.state = var_0_1
 
-	PoolMgr.GetInstance():GetUI("NewStoryUI", true, function(arg_22_0)
+	LoadAndInstantiateAsync("ui", "NewStoryUI", function(arg_22_0)
 		arg_21_0.UIOverlay = GameObject.Find("Overlay/UIOverlay")
 
 		arg_22_0.transform:SetParent(arg_21_0.UIOverlay.transform, false)
 		arg_21_0:_Init(arg_22_0, arg_21_1)
-	end)
+	end, true, true)
 end
 
 function var_0_0._Init(arg_23_0, arg_23_1, arg_23_2)
@@ -340,6 +340,10 @@ function var_0_0.Stop(arg_29_0)
 	if arg_29_0.state ~= var_0_3 then
 		var_0_11("state is not 'running'")
 
+		return
+	end
+
+	if arg_29_0.currPlayer and arg_29_0.currPlayer:WaitForEvent() then
 		return
 	end
 
@@ -635,6 +639,8 @@ end
 function var_0_0.ForEscPress(arg_64_0)
 	if arg_64_0.recordPanel:IsShowing() then
 		arg_64_0.recordPanel:Hide()
+	elseif arg_64_0.currPlayer and arg_64_0.currPlayer:WaitForEvent() or arg_64_0.currPlayer and arg_64_0.storyScript and arg_64_0.storyScript.hideSkip then
+		-- block empty
 	else
 		arg_64_0:TriggerSkipBtn()
 	end
@@ -925,8 +931,13 @@ function var_0_0.Quit(arg_89_0)
 	arg_89_0.recordPanel:Dispose()
 	arg_89_0.setSpeedPanel:Dispose()
 
+	if arg_89_0.currPlayer and arg_89_0.currPlayer:WaitForEvent() then
+		arg_89_0:Clear()
+	end
+
 	arg_89_0.state = var_0_7
 	arg_89_0.storyScript = nil
+	arg_89_0.currPlayer = nil
 	arg_89_0.playQueue = {}
 	arg_89_0.playedList = {}
 	arg_89_0.scenes = {}

@@ -339,7 +339,7 @@ pg.gameset = {
 	},
 	activity_res_id = {
 		description = "",
-		key_value = 431
+		key_value = 435
 	},
 	chapter_move_speed_1 = {
 		description = "",
@@ -1923,7 +1923,7 @@ pg.gameset = {
 	},
 	skin_ticket = {
 		description = "",
-		key_value = 432
+		key_value = 436
 	},
 	order_pt_max = {
 		key_value = 0,
@@ -3725,6 +3725,12 @@ pg.gameset = {
 		description = "",
 		key_value = 8
 	},
+	weekly_fixed_task = {
+		key_value = 0,
+		description = {
+			7311
+		}
+	},
 	new_login_extra_voice = {
 		key_value = 0,
 		description = {
@@ -3787,5 +3793,21 @@ pg.gameset = {
 	new_auto_unlock_combat_ui = {
 		description = "101|103",
 		key_value = 0
+	},
+	cuise_shop_type2_limit_num = {
+		description = "",
+		key_value = 4
+	},
+	battlepass_level = {
+		description = "",
+		key_value = 50
+	},
+	juuschat_entering_time = {
+		description = "",
+		key_value = 2000
+	},
+	juuschat_dialogue_trigger_time = {
+		description = "",
+		key_value = 3000
 	}
 }

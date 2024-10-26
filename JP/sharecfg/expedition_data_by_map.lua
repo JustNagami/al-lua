@@ -392,6 +392,10 @@ pg.expedition_data_by_map = setmetatable({
 		1850012,
 		1850025,
 		1850026,
+		1860001,
+		1860002,
+		1860003,
+		1860004,
 		2100000,
 		2100001,
 		2100010,
@@ -476,6 +480,10 @@ pg.expedition_data_by_map = setmetatable({
 		2100402,
 		2100411,
 		2100412,
+		2100421,
+		2100422,
+		2100431,
+		2100432,
 		2200000,
 		2200010,
 		2200020,
@@ -14900,7 +14908,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4471,
+		on_activity = 5597,
 		ui_type = 1,
 		bg = "Map_1660001",
 		story_id = "",
@@ -14949,7 +14957,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4471,
+		on_activity = 5597,
 		ui_type = 1,
 		bg = "Map_1660002",
 		story_id = "",
@@ -14998,7 +15006,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4471,
+		on_activity = 5597,
 		ui_type = 1,
 		bg = "Map_1660003",
 		story_id = "",
@@ -15047,7 +15055,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4471,
+		on_activity = 5597,
 		ui_type = 1,
 		bg = "Map_1660004",
 		story_id = "",
@@ -15096,7 +15104,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4471,
+		on_activity = 5597,
 		ui_type = 1,
 		bg = "Map_1660005",
 		story_id = "",
@@ -15145,7 +15153,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4471,
+		on_activity = 5597,
 		ui_type = 1,
 		bg = "Map_1660005",
 		story_id = "",
@@ -20923,6 +20931,322 @@ pg.base.expedition_data_by_map = {
 			67
 		}
 	},
+	[1860001] = {
+		map = 1860001,
+		name = "テンペスタと眠りし海·前編|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "story-tempest-marching",
+		enter_story = "",
+		ani_name = "Map_1760002",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		default_background = "bg_underwater",
+		default_bgm = "theme-SeaAndSun-soft",
+		uifx = "",
+		on_activity = 5621,
+		ui_type = 10,
+		bg = "Map_1760002",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 0,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				1860001
+			},
+			{
+				1860002
+			},
+			{
+				1860003
+			}
+		},
+		story_id = {
+			68,
+			69,
+			70,
+			71,
+			72,
+			73,
+			74,
+			75,
+			76,
+			77,
+			78,
+			79,
+			80,
+			81,
+			82,
+			83,
+			84,
+			85,
+			86,
+			87,
+			88,
+			89
+		}
+	},
+	[1860002] = {
+		map = 1860002,
+		name = "テンペスタと眠りし海·後編|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "battle-nightmare-theme",
+		enter_story = "",
+		ani_name = "Map_1860001",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		default_background = "bg_underwater",
+		default_bgm = "theme-SeaAndSun-soft",
+		uifx = "",
+		on_activity = 5621,
+		ui_type = 10,
+		bg = "Map_1860001",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 0,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				1860004
+			},
+			{
+				1860005
+			},
+			{
+				1860006
+			}
+		},
+		story_id = {
+			68,
+			69,
+			70,
+			71,
+			72,
+			73,
+			74,
+			75,
+			76,
+			77,
+			78,
+			79,
+			80,
+			81,
+			82,
+			83,
+			84,
+			85,
+			86,
+			87,
+			88,
+			89
+		}
+	},
+	[1860003] = {
+		map = 1860003,
+		name = "テンペスタと眠りし海·SP|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 8,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "theme-tempest-up",
+		enter_story = "",
+		ani_name = "Map_1860002",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		default_background = "bg_underwater",
+		default_bgm = "theme-SeaAndSun-soft",
+		uifx = "",
+		on_activity = 5621,
+		ui_type = 10,
+		bg = "Map_1860002",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 1860002,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				1860041
+			}
+		},
+		story_id = {
+			68,
+			69,
+			70,
+			71,
+			72,
+			73,
+			74,
+			75,
+			76,
+			77,
+			78,
+			79,
+			80,
+			81,
+			82,
+			83,
+			84,
+			85,
+			86,
+			87,
+			88,
+			89
+		}
+	},
+	[1860004] = {
+		map = 1860004,
+		name = "テンペスタと眠りし海·EX|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 8,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "theme-ganjisawai",
+		enter_story = "",
+		ani_name = "Map_1860002",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		default_background = "bg_underwater",
+		default_bgm = "theme-SeaAndSun-soft",
+		uifx = "",
+		on_activity = 5621,
+		ui_type = 10,
+		bg = "Map_1860002",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 1860002,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				1860051
+			}
+		},
+		story_id = {
+			68,
+			69,
+			70,
+			71,
+			72,
+			73,
+			74,
+			75,
+			76,
+			77,
+			78,
+			79,
+			80,
+			81,
+			82,
+			83,
+			84,
+			85,
+			86,
+			87,
+			88,
+			89
+		}
+	},
 	[2100000] = {
 		map = 2100000,
 		name = "『紅染の来訪者』-前編|| ||CHAPTER EX||E.X.",
@@ -24932,6 +25256,202 @@ pg.base.expedition_data_by_map = {
 		story_inactive_color = "",
 		animtor = 1,
 		bind_map = 2100402,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100421] = {
+		map = 2100421,
+		name = "遡望せし虹彩の塔·前編|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "story-midgard",
+		enter_story = "NIZHUANCAIHONGZHITA1",
+		ani_name = "Map_1600001",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		default_background = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1600001",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 1600011,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100422] = {
+		map = 2100422,
+		name = "遡望せし虹彩の塔·後編|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "battle-midgard-hunting",
+		enter_story = "NIZHUANCAIHONGZHITA16",
+		ani_name = "Map_1600002",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		default_background = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1600002",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 1600012,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100431] = {
+		map = 2100431,
+		name = "遡望せし虹彩の塔·前編|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "story-midgard",
+		enter_story = "NIZHUANCAIHONGZHITA1",
+		ani_name = "Map_1600003",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		default_background = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1600003",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 1600001,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100432] = {
+		map = 2100432,
+		name = "遡望せし虹彩の塔·後編|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "battle-midgard-hunting",
+		enter_story = "NIZHUANCAIHONGZHITA16",
+		ani_name = "Map_1600004",
+		guide_id = "",
+		ani_controller = "",
+		cloud_suffix = "",
+		default_background = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1600004",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 1600002,
 		clouds_pos = {
 			{
 				332,

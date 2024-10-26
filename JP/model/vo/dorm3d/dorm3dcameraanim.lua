@@ -32,4 +32,18 @@ function var_0_0.GetFurnitureID(arg_8_0)
 	return arg_8_0:getConfig("furniture_id")
 end
 
+function var_0_0.GetZoneName(arg_9_0)
+	local var_9_0 = tonumber(arg_9_0:getConfig("zone"))
+
+	return pg.dorm3d_camera_zone_template[var_9_0].name
+end
+
+function var_0_0.GetZoneIcon(arg_10_0)
+	return arg_10_0:getConfig("icon")
+end
+
+function var_0_0.GetStartPoint(arg_11_0)
+	return arg_11_0:getConfig("staypoint")
+end
+
 return var_0_0

@@ -550,6 +550,10 @@ function var_0_0.initPauseWindow(arg_31_0)
 	arg_31_0.mainTFs = {}
 	arg_31_0.vanTFs = {}
 
+	setText(arg_31_0:findTF("label", arg_31_0.LeftTimeContainer), i18n("battle_battleMediator_remainTime"))
+	setText(arg_31_0:findTF("window/van/power/title", arg_31_0.pauseWindow), i18n("word_vanguard_fleet"))
+	setText(arg_31_0:findTF("window/main/power/title", arg_31_0.pauseWindow), i18n("word_main_fleet"))
+
 	local function var_31_0(arg_32_0, arg_32_1, arg_32_2)
 		for iter_32_0 = 1, 3 do
 			local var_32_0 = arg_32_1:Find("ship_" .. iter_32_0)
@@ -585,6 +589,9 @@ function var_0_0.initPauseWindow(arg_31_0)
 
 	arg_31_0.continueBtn = arg_31_0:findTF("window/button_container/continue", arg_31_0.pauseWindow)
 	arg_31_0.leaveBtn = arg_31_0:findTF("window/button_container/leave", arg_31_0.pauseWindow)
+
+	setText(arg_31_0:findTF("pic", arg_31_0.continueBtn), i18n("battle_battleMediator_goOnFight"))
+	setText(arg_31_0:findTF("pic", arg_31_0.leaveBtn), i18n("battle_battleMediator_existFight"))
 
 	local var_31_4 = var_31_1:GetBattleType()
 
@@ -649,12 +656,17 @@ function var_0_0.initPauseWindow(arg_31_0)
 		local var_34_1 = arg_31_0.pauseWindow:GetComponent(typeof(Animation))
 
 		if var_34_1 then
-			var_34_1:Play("msgbox_out")
-			arg_31_0.pauseWindow:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_35_0)
-				setActive(arg_31_0.pauseWindow, false)
-				pg.UIMgr.GetInstance():UnblurPanel(arg_31_0.pauseWindow, arg_31_0._tf)
-				var_31_1:Resume()
-			end)
+			if var_34_1:IsPlaying("msgbox_out") then
+				var_34_1:Stop("msgbox_out")
+				var_34_1:Play("msgbox_in")
+			else
+				var_34_1:Play("msgbox_out")
+				arg_31_0.pauseWindow:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_35_0)
+					setActive(arg_31_0.pauseWindow, false)
+					pg.UIMgr.GetInstance():UnblurPanel(arg_31_0.pauseWindow, arg_31_0._tf)
+					var_31_1:Resume()
+				end)
+			end
 		else
 			setActive(arg_31_0.pauseWindow, false)
 			pg.UIMgr.GetInstance():UnblurPanel(arg_31_0.pauseWindow, arg_31_0._tf)
@@ -776,6 +788,7 @@ function var_0_0.willExit(arg_44_0)
 	arg_44_0._skillFloatCMDPool:Dispose()
 	ys.Battle.BattleState.GetInstance():ExitBattle()
 	pg.UIMgr.GetInstance():UnblurPanel(arg_44_0.pauseWindow, arg_44_0._tf)
+	ys.Battle.BattleCameraUtil.GetInstance().ActiveMainCemera(false)
 	pg.CameraFixMgr.GetInstance():disconnect(arg_44_0.camEventId)
 end
 

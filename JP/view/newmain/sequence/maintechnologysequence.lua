@@ -35,7 +35,6 @@ function var_0_0.Execute(arg_1_0, arg_1_1)
 			weight = LayerWeightConst.SECOND_LAYER,
 			onYes = function()
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SHIPBLUEPRINT)
-				arg_1_1()
 			end,
 			onNo = function()
 				var_0_0.DontNotifyBluePrintTaskAgain = true

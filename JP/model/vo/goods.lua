@@ -17,6 +17,8 @@ var_0_0.TYPE_NEW_SERVER = 15
 var_0_0.TYPE_MINI_GAME = 16
 var_0_0.TYPE_QUOTA = 17
 var_0_0.TYPE_WORLD_NSHOP = 18
+var_0_0.TYPE_CRUISE = 19
+var_0_0.TYPE_ACTIVITY_SELECTABLE = 20
 var_0_0.GEM = 0
 var_0_0.GIFT_BOX = 1
 var_0_0.MONTH_CARD = 2
@@ -26,6 +28,7 @@ var_0_0.EQUIP_BAG_SIZE_ITEM = 59100
 var_0_0.SHIP_BAG_SIZE_ITEM = 59101
 var_0_0.COMMANDER_BAG_SIZE_ITEM = 59114
 var_0_0.SPWEAPON_BAG_SIZE_ITEM = 59360
+var_0_0.CRUISE_QUICK_TASK_TICKET_ID = 61017
 var_0_0.SHOW_TYPE_TECH = "tech"
 var_0_0.SHOW_TYPE_BATTLE_UI = "uigift"
 var_0_0.CUR_PACKET_ID = 27
@@ -67,35 +70,38 @@ local var_0_1 = {
 	end,
 	[var_0_0.TYPE_WORLD_NSHOP] = function(arg_12_0, arg_12_1)
 		return WorldNShopCommodity.New(arg_12_0, arg_12_1)
+	end,
+	[var_0_0.TYPE_ACTIVITY_SELECTABLE] = function(arg_13_0, arg_13_1)
+		return ActivitySelectableCommodity.New(arg_13_0, arg_13_1)
 	end
 }
 
-function var_0_0.Create(arg_13_0, arg_13_1)
-	return switch(arg_13_1, var_0_1, function(arg_14_0, arg_14_1)
-		return CommonCommodity.New(arg_14_0, arg_14_1)
-	end, arg_13_0, arg_13_1)
+function var_0_0.Create(arg_14_0, arg_14_1)
+	return switch(arg_14_1, var_0_1, function(arg_15_0, arg_15_1)
+		return CommonCommodity.New(arg_15_0, arg_15_1)
+	end, arg_14_0, arg_14_1)
 end
 
-function var_0_0.ExistFurniture(arg_15_0)
-	return pg.shop_furniture_relation[arg_15_0] ~= nil
+function var_0_0.ExistFurniture(arg_16_0)
+	return pg.shop_furniture_relation[arg_16_0] ~= nil
 end
 
-function var_0_0.Id2FurnitureId(arg_16_0)
-	return pg.shop_furniture_relation[arg_16_0].fur_id
+function var_0_0.Id2FurnitureId(arg_17_0)
+	return pg.shop_furniture_relation[arg_17_0].fur_id
 end
 
-function var_0_0.FurnitureId2Id(arg_17_0)
-	local var_17_0 = pg.shop_furniture_relation.get_id_list_by_fur_id[arg_17_0]
+function var_0_0.FurnitureId2Id(arg_18_0)
+	local var_18_0 = pg.shop_furniture_relation.get_id_list_by_fur_id[arg_18_0]
 
-	return var_17_0 and var_17_0[1]
+	return var_18_0 and var_18_0[1]
 end
 
-function var_0_0.GetFurnitureConfig(arg_18_0)
-	return pg.shop_furniture_relation[arg_18_0]
+function var_0_0.GetFurnitureConfig(arg_19_0)
+	return pg.shop_furniture_relation[arg_19_0]
 end
 
-function var_0_0.Id2ShipSkinId(arg_19_0)
-	return pg.shop_template[arg_19_0].effect_args[1]
+function var_0_0.Id2ShipSkinId(arg_20_0)
+	return pg.shop_template[arg_20_0].effect_args[1]
 end
 
 return var_0_0

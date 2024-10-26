@@ -92,6 +92,7 @@ pg.pay_data_display = setmetatable({
 		1015,
 		1016,
 		1017,
+		1018,
 		2001,
 		2002,
 		2003,
@@ -124,6 +125,7 @@ pg.pay_data_display = setmetatable({
 		2032,
 		2033,
 		2034,
+		2035,
 		5001,
 		5002,
 		5003,
@@ -9071,7 +9073,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "クルーズパス(24夏)",
 		show_group = "",
-		type_order = 5,
+		type_order = 4,
 		extra_service = 4,
 		money = 1200,
 		id = 1017,
@@ -9132,6 +9134,82 @@ pg.base.pay_data_display = {
 		},
 		sub_display = {
 			7018,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[1018] = {
+		name = "クルーズパス(24秋)",
+		limit_group = 0,
+		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
+		type = 0,
+		subject = "クルーズパス(24秋)",
+		limit_arg = 1,
+		name_display = "クルーズパス(24秋)",
+		show_group = "",
+		type_order = 4,
+		extra_service = 4,
+		money = 1200,
+		id = 1018,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "battlepass_1",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.battlepass20",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "購入すると、シーズン任務進捗Pt1500を入手し、さらにSP報酬を開放",
+		airijp_id = "com.yostarjp.azurlane.seasonpass19",
+		extra_service_item = {
+			{
+				1,
+				4019,
+				1500
+			},
+			{
+				8,
+				65028,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					10,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					11,
+					30
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				1,
+				4019,
+				1500
+			}
+		},
+		sub_display = {
+			7019,
 			1500
 		},
 		ignorePlatform = {},
@@ -9607,7 +9685,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "指揮官レベルアップパック",
 		show_group = "",
-		type_order = 5,
+		type_order = 7,
 		extra_service = 3,
 		money = 650,
 		id = 2009,
@@ -10787,7 +10865,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "お得パック(デイリー)",
 		show_group = "",
-		type_order = 4,
+		type_order = 6,
 		extra_service = 3,
 		money = 120,
 		id = 2025,
@@ -11497,6 +11575,105 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40049,
+				1
+			}
+		}
+	},
+	[2035] = {
+		name = "選べるUR着せ替え福袋③",
+		limit_group = 0,
+		descrip_extra = "※購入したアイテムはメールボックスに送られます",
+		type = 0,
+		subject = "選べるUR着せ替え福袋③",
+		limit_arg = 1,
+		name_display = "選べるUR着せ替え福袋③",
+		show_group = "",
+		type_order = 5,
+		extra_service = 3,
+		money = 2600,
+		id = 2035,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		sub_display = "",
+		picture = "huteng_package",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.libao120",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "選べる着せ替えチケット、キューブ、経験値パックT2などを入手可能",
+		airijp_id = "com.yostarjp.azurlane.package120",
+		extra_service_item = {
+			{
+				2,
+				59554,
+				1
+			},
+			{
+				2,
+				20001,
+				40
+			},
+			{
+				1,
+				1,
+				30000
+			},
+			{
+				2,
+				16502,
+				50
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					10,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					11,
+					13
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				59554,
+				1
+			},
+			{
+				2,
+				20001,
+				40
+			},
+			{
+				2,
+				16502,
+				50
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40050,
 				1
 			}
 		}

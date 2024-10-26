@@ -38,7 +38,9 @@ function var_0_0.didEnter(arg_5_0)
 
 			updateDorm3dIcon(arg_6_2, var_6_0)
 			onButton(arg_5_0, arg_6_2, function()
-				arg_5_0:emit(BaseUI.ON_DROP, var_6_0)
+				arg_5_0:emit(BaseUI.ON_NEW_DROP, {
+					drop = var_6_0
+				})
 			end, SFX_PANEL)
 		end
 	end)
@@ -64,6 +66,7 @@ function var_0_0.didEnter(arg_5_0)
 			arg_5_0.inAnimPlaying = false
 		end, 0.066, nil)
 	end)
+	pg.CriMgr.GetInstance():PlaySE_V3("ui-dorm_reward")
 end
 
 function var_0_0.onBackPressed(arg_13_0)

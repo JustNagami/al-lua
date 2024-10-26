@@ -203,7 +203,7 @@ function var_0_0.GetMetaShops(arg_34_0, arg_34_1)
 
 	if not var_34_1 then
 		table.insert(var_34_0, function(arg_35_0)
-			local var_35_0 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP)
+			local var_35_0 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP_SELECTABLE)
 
 			for iter_35_0, iter_35_1 in ipairs(var_35_0) do
 				if iter_35_1 and not iter_35_1:isEnd() and iter_35_1:getConfig("config_id") == 1 then

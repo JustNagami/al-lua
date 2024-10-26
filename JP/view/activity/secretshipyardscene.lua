@@ -3,7 +3,7 @@
 var_0_0.optionsPath = {
 	"main/top/btn_home"
 }
-var_0_0.ACT_ID = 5023
+var_0_0.ACT_ID = 5625
 var_0_0.GAME_ID = 59
 var_0_0.ANIMATIONS = {
 	"Phase_00",
@@ -59,6 +59,10 @@ function var_0_0.didEnter(arg_3_0)
 		})
 	end, SFX_PANEL)
 	onButton(arg_3_0, arg_3_0.gameButton, function()
+		if not arg_3_0:checkTaskFinish() or not arg_3_0:checkMinigame() then
+			return
+		end
+
 		arg_3_0:emit(SecretShipyardMediator.GO_MINI_GAME, var_0_0.GAME_ID)
 	end, SFX_PANEL)
 	onButton(arg_3_0, arg_3_0.gameButtonLock, function()

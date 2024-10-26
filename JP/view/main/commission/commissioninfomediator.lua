@@ -102,9 +102,7 @@ function var_0_0.register(arg_1_0)
 end
 
 function var_0_0.Notify(arg_19_0)
-	local var_19_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_INSTAGRAM)
-
-	arg_19_0.viewComponent:NotifyIns(getProxy(InstagramProxy), var_19_0)
+	arg_19_0.viewComponent:NotifyIns()
 	arg_19_0.viewComponent:UpdateLinkPanel()
 end
 

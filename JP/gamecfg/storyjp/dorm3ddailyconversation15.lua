@@ -1,47 +1,23 @@
 ﻿return {
-	hideRecord = true,
+	fadeOut = 1.5,
 	dialogbox = 2,
+	hideRecord = true,
 	mode = 2,
 	alpha = 0,
 	id = "DORM3DDAILYCONVERSATION15",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			say = "泡芙和可丽饼，您更喜欢哪一种呢？我的主人。",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			},
-			options = {
-				{
-					content = "天狼星要下厨吗？",
-					flag = 1
-				}
-			}
-		},
-		{
-			say = "其实是在请教了女仆长以后，天狼星觉得用泡芙招待您应该不会出错……",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			say = "只需要把裱花嘴放进去，把内部的孔洞填满后不断注入奶油，直到溢出就可以了。",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			},
-			options = {
-				{
-					content = "可是泡芙的酥皮谁来做呢？",
-					flag = 1
-				}
-			}
-		},
-		{
-			say = "欸？酥皮……？",
+			side = 2,
+			actorName = 20220,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "誇らしきご主人様、なんだか疲れていて元気がないように見えます…お仕事が大変だったからでしょうか…",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -51,20 +27,62 @@
 				data = {
 					op_list = {
 						{
+							param = "Play",
+							name = "shy",
+							time = 0,
+							type = "action",
+							skip = true
+						},
+						{
 							skip = false,
-							name = "surprise1",
-							type = "action"
+							time = 1,
+							type = "wait"
 						}
 					}
 				},
 				callbackData = {
-					hideUI = true,
+					hideUI = false,
 					name = STORY_EVENT.TEST_DONE
 				}
 			}
 		},
 		{
-			say = "（好吧，看来是完全没有理解女仆长的教导呢……）",
+			side = 2,
+			actorName = 20220,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "シリアス、ご主人様の元気を素早く回復させる方法があるんです！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			},
+			options = {
+				{
+					content = "――どんな方法かな？",
+					flag = 1
+				}
+			}
+		},
+		{
+			side = 2,
+			actorName = 20220,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "それは――疲れを感じたらすぐにお風呂に入ること、です！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			side = 2,
+			actorName = 20220,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "今すぐご主人様のお風呂の準備をいたします！…まずはお洋服を脱がさせていただきます！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

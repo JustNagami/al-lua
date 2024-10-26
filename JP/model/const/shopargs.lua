@@ -31,6 +31,8 @@ var_0_0.SkinShopTimeLimit = "skin_shop_timelimit"
 var_0_0.WorldShop = "world"
 var_0_0.WorldCollection = "world_collection_task"
 var_0_0.NewServerShop = "new_server_shop"
+var_0_0.CruiseSkin = "cruise_skin"
+var_0_0.CruiseGearSkin = "cruise_gearskin"
 var_0_0.ShopStreet = 1
 var_0_0.MilitaryShop = 2
 var_0_0.ShopActivity = 3
@@ -41,10 +43,12 @@ var_0_0.ShopFragment = 7
 var_0_0.ShopMedal = 8
 var_0_0.ShopMiniGame = 9
 var_0_0.ShopQuota = 10
+var_0_0.ShopCruise = 11
 var_0_0.DORM_FLOOR_ID = 19
 var_0_0.LIMIT_ARGS_META_SHIP_EXISTENCE = 1
 var_0_0.LIMIT_ARGS_SALE_START_TIME = 2
 var_0_0.LIMIT_ARGS_TRAN_ITEM_WHEN_FULL = 3
+var_0_0.LIMIT_ARGS_UNIQUE_SHIP = "uniqueship"
 
 function var_0_0.getOilByLevel(arg_1_0)
 	return 500 + arg_1_0 * 3

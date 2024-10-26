@@ -2,18 +2,17 @@
 pg.activity_banner = {
 	{
 		id = 1,
-		pic = "temp3",
+		pic = "temp9",
 		type = 2,
 		param = {
-			"scene skinshop",
-			{}
+			"dorm 3d select"
 		},
 		time = {
 			{
 				{
 					2024,
-					9,
-					19
+					10,
+					24
 				},
 				{
 					0,
@@ -24,8 +23,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					10,
-					2
+					11,
+					7
 				},
 				{
 					23,
@@ -37,20 +36,18 @@ pg.activity_banner = {
 	},
 	{
 		id = 2,
-		pic = "temp7",
+		pic = "temp1",
 		type = 2,
 		param = {
-			"scene charge",
-			{
-				wrap = 2
-			}
+			"scene skinshop",
+			{}
 		},
 		time = {
 			{
 				{
 					2024,
-					9,
-					19
+					10,
+					24
 				},
 				{
 					0,
@@ -61,8 +58,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					10,
-					2
+					11,
+					6
 				},
 				{
 					23,
@@ -73,16 +70,16 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "5581",
+		param = "5621",
 		id = 3,
-		pic = "temp8",
+		pic = "temp2",
 		type = 3,
 		time = {
 			{
 				{
 					2024,
-					9,
-					12
+					10,
+					24
 				},
 				{
 					0,
@@ -93,8 +90,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					9,
-					29
+					11,
+					7
 				},
 				{
 					23,
@@ -106,7 +103,7 @@ pg.activity_banner = {
 	},
 	{
 		id = 4,
-		pic = "temp1",
+		pic = "temp3",
 		type = 2,
 		param = {
 			"scene charge",
@@ -118,8 +115,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					9,
-					12
+					10,
+					24
 				},
 				{
 					0,
@@ -130,8 +127,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					10,
-					2
+					11,
+					6
 				},
 				{
 					23,
@@ -142,77 +139,8 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "5562",
 		id = 5,
-		pic = "temp2",
-		type = 3,
-		time = {
-			{
-				{
-					2024,
-					9,
-					12
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					10,
-					2
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		id = 6,
 		pic = "temp4",
-		type = 2,
-		param = {
-			"scene charge",
-			{
-				wrap = 2
-			}
-		},
-		time = {
-			{
-				{
-					2024,
-					9,
-					12
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					10,
-					2
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		id = 7,
-		pic = "temp5",
 		type = 2,
 		param = {
 			"scene get boat",
@@ -225,8 +153,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					9,
-					12
+					10,
+					24
 				},
 				{
 					0,
@@ -237,8 +165,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					10,
-					2
+					11,
+					7
 				},
 				{
 					23,
@@ -249,21 +177,21 @@ pg.activity_banner = {
 		}
 	},
 	{
-		id = 8,
-		pic = "temp6",
+		id = 6,
+		pic = "temp5",
 		type = 2,
 		param = {
-			"scene charge",
+			"scene shop",
 			{
-				wrap = 2
+				warp = "shopstreet"
 			}
 		},
 		time = {
 			{
 				{
 					2024,
-					9,
-					12
+					10,
+					24
 				},
 				{
 					0,
@@ -274,8 +202,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					10,
-					2
+					11,
+					6
 				},
 				{
 					23,
@@ -286,8 +214,8 @@ pg.activity_banner = {
 		}
 	},
 	{
-		id = 9,
-		pic = "temp9",
+		id = 7,
+		pic = "temp8",
 		type = 2,
 		param = {
 			"scene court yard"
@@ -296,8 +224,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					9,
-					12
+					10,
+					24
 				},
 				{
 					0,
@@ -308,8 +236,72 @@ pg.activity_banner = {
 			{
 				{
 					2024,
+					11,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		param = "5623",
+		id = 8,
+		pic = "temp6",
+		type = 3,
+		time = {
+			{
+				{
+					2024,
 					10,
-					2
+					24
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					11,
+					7
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		param = "",
+		id = 9,
+		pic = "temp7",
+		type = 15,
+		time = {
+			{
+				{
+					2024,
+					10,
+					24
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					11,
+					7
 				},
 				{
 					23,
@@ -328,8 +320,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					9,
-					19
+					10,
+					24
 				},
 				{
 					0,
@@ -340,8 +332,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					10,
-					2
+					11,
+					6
 				},
 				{
 					23,
@@ -374,8 +366,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					9,
-					19
+					10,
+					24
 				},
 				{
 					0,
@@ -386,8 +378,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					10,
-					2
+					11,
+					6
 				},
 				{
 					23,
@@ -399,35 +391,10 @@ pg.activity_banner = {
 	},
 	[100] = {
 		param = "桂花糯|「桂花糯…もぐもぐ～中秋節、良い祝日！」<color=#92fc63>（60分間寮舎経験値効率が5%アップ）</color>",
-		id = 100,
-		pic = "guihuagao",
+		time = "stop",
 		type = 10,
-		time = {
-			{
-				{
-					2024,
-					9,
-					12
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					9,
-					19
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
+		id = 100,
+		pic = "guihuagao"
 	},
 	[200] = {
 		param = "",
@@ -448,14 +415,16 @@ pg.activity_banner = {
 			1,
 			2,
 			4,
+			5,
 			6,
-			7,
-			8,
-			9
+			7
 		},
 		[3] = {
 			3,
-			5
+			8
+		},
+		[15] = {
+			9
 		},
 		[9] = {
 			90,

@@ -862,6 +862,13 @@ function temp()
 				ゴ = {
 					this = true
 				}
+			},
+			ン = {
+				シ = {
+					ー = {
+						this = true
+					}
+				}
 			}
 		},
 		ラ = {
@@ -3149,6 +3156,13 @@ function temp()
 				}
 			}
 		},
+		ミ = {
+			テ = {
+				ィ = {
+					this = true
+				}
+			}
+		},
 		ウ = {
 			グ = {
 				ス = {
@@ -4204,6 +4218,31 @@ function temp()
 			},
 			ラ = {
 				this = true
+			},
+			ツ = {
+				マ = {
+					ウ = {
+						ス = {
+							・ = {
+								ア = {
+									ド = {
+										ベ = {
+											ン = {
+												チ = {
+													ャ = {
+														ー = {
+															this = true
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		},
 		ン = {
@@ -5126,6 +5165,15 @@ function temp()
 						this = true
 					}
 				}
+			},
+			ズ = {
+				ウ = {
+					ェ = {
+						イ = {
+							this = true
+						}
+					}
+				}
 			}
 		},
 		ス = {
@@ -5254,6 +5302,15 @@ function temp()
 								}
 							}
 						}
+					}
+				}
+			}
+		},
+		ル = {
+			フ = {
+				ィ = {
+					ン = {
+						this = true
 					}
 				}
 			}
@@ -5439,6 +5496,9 @@ temp()
 function temp()
 	var_0_1.綾 = {
 		波 = {
+			this = true
+		},
+		瀬 = {
 			this = true
 		}
 	}
@@ -5749,7 +5809,20 @@ function temp()
 			this = true
 		},
 		門 = {
-			this = true
+			this = true,
+			["("] = {
+				M = {
+					E = {
+						T = {
+							A = {
+								[")"] = {
+									this = true
+								}
+							}
+						}
+					}
+				}
+			}
 		},
 		春 = {
 			this = true,
@@ -6088,6 +6161,9 @@ function temp()
 	var_0_1.涼 = {
 		月 = {
 			this = true
+		},
+		波 = {
+			this = true
 		}
 	}
 end
@@ -6234,6 +6310,18 @@ function temp()
 	var_0_1.酒 = {
 		匂 = {
 			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.渡 = {
+		良 = {
+			瀬 = {
+				this = true
+			}
 		}
 	}
 end
@@ -6422,6 +6510,19 @@ function temp()
 				ゃ = {
 					ん = {
 						this = true
+					}
+				}
+			},
+			["("] = {
+				M = {
+					E = {
+						T = {
+							A = {
+								[")"] = {
+									this = true
+								}
+							}
+						}
 					}
 				}
 			}
@@ -6687,6 +6788,32 @@ temp()
 function temp()
 	var_0_1.鳳 = {
 		翔 = {
+			this = true,
+			["("] = {
+				M = {
+					E = {
+						T = {
+							A = {
+								[")"] = {
+									this = true
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.瑞 = {
+		鳳 = {
+			this = true
+		},
+		鶴 = {
 			this = true
 		}
 	}
@@ -6788,16 +6915,6 @@ temp()
 
 function temp()
 	var_0_1.翔 = {
-		鶴 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.瑞 = {
 		鶴 = {
 			this = true
 		}

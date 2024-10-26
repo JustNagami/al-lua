@@ -5,6 +5,8 @@ function var_0_0.getUIName(arg_1_0)
 end
 
 function var_0_0.OnInit(arg_2_0)
+	arg_2_0.loader = AutoLoader.New()
+
 	arg_2_0:InitUI()
 end
 
@@ -21,6 +23,8 @@ function var_0_0.OnDestroy(arg_3_0)
 
 		arg_3_0.LTid = nil
 	end
+
+	arg_3_0.loader:Clear()
 end
 
 function var_0_0.Show(arg_4_0)

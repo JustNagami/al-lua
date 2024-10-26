@@ -204,7 +204,9 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 				else
 					var_11_0 = PlayerConst.addTranDrop(arg_11_0.drop_list)
 
-					pg.TipsMgr.GetInstance():ShowTips(i18n("common_buy_success"))
+					if not var_1_0.silentTip then
+						pg.TipsMgr.GetInstance():ShowTips(i18n("common_buy_success"))
+					end
 				end
 
 				local var_11_1 = var_1_4:getData()
@@ -273,6 +275,12 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 									count = var_1_2
 								}
 							})
+						end,
+						[ShopArgs.CruiseSkin] = function()
+							var_1_9:GetNormalByID(var_1_1):increaseBuyCount()
+						end,
+						[ShopArgs.CruiseGearSkin] = function()
+							var_1_9:GetNormalByID(var_1_1):increaseBuyCount()
 						end
 					})
 				end
@@ -281,6 +289,10 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 
 				if var_1_3.group > 0 then
 					var_1_9:updateNormalGroupList(var_1_3.group, var_1_3.group_buy_count)
+				end
+
+				if var_1_3.genre == ShopArgs.CruiseSkin or var_1_3.genre == ShopArgs.CruiseGearSkin then
+					var_1_9:UpdateCruiseShop()
 				end
 
 				switch(var_1_3.effect_args, {
@@ -297,6 +309,34 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 						pg.TipsMgr.GetInstance():ShowTips(i18n("shop_spweapon_success"))
 					end
 				})
+
+				if var_1_3.limit_args then
+					for iter_11_0, iter_11_1 in ipairs(var_1_3.limit_args) do
+						if type(iter_11_1) == "table" and (var_1_3.type == DROP_TYPE_DORM3D_FURNITURE or var_1_3.type == DROP_TYPE_DORM3D_GIFT) then
+							if iter_11_1[1] == "dailycount" then
+								if var_1_3.type == DROP_TYPE_DORM3D_FURNITURE then
+									getProxy(ApartmentProxy):AddDailyFurnitureShopCount(var_1_3.effect_args[1], var_1_3.effect_args[2] or 1)
+								elseif var_1_3.type == DROP_TYPE_DORM3D_GIFT then
+									getProxy(ApartmentProxy):AddDailyGiftShopCount(var_1_3.effect_args[1], var_1_3.effect_args[2] or 1)
+								end
+							elseif iter_11_1[1] == "count" then
+								if var_1_3.type == DROP_TYPE_DORM3D_FURNITURE then
+									getProxy(ApartmentProxy):AddPermanentFurnitureShopCount(var_1_3.effect_args[1], var_1_3.effect_args[2] or 1)
+								elseif var_1_3.type == DROP_TYPE_DORM3D_GIFT then
+									getProxy(ApartmentProxy):AddPermanentGiftShopCount(var_1_3.effect_args[1], var_1_3.effect_args[2] or 1)
+								end
+							end
+						end
+					end
+				end
+
+				if var_1_3.group_limit > 0 and (var_1_3.type == DROP_TYPE_DORM3D_FURNITURE or var_1_3.type == DROP_TYPE_DORM3D_GIFT) then
+					if var_1_3.type == DROP_TYPE_DORM3D_FURNITURE then
+						getProxy(ApartmentProxy):AddDailyFurnitureShopCount(var_1_3.effect_args[1], var_1_3.effect_args[2] or 1)
+					elseif var_1_3.type == DROP_TYPE_DORM3D_GIFT then
+						getProxy(ApartmentProxy):AddDailyGiftShopCount(var_1_3.effect_args[1], var_1_3.effect_args[2] or 1)
+					end
+				end
 
 				if not var_1_0.isQuickShopping then
 					arg_1_0:sendNotification(GAME.SHOPPING_DONE, {

@@ -2,16 +2,50 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DHELLO3",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			say = "主人，能够见到您真是太好了。以这身体和灵魂宣言，今天天狼星也会全力侍奉您。",
+			nameColor = "#FFFFFF",
+			actorName = 20220,
+			say = "お越しくださっただけでそれはシリアスの仕事への賛辞になります。誇らしきご主人様。本日も失望させたりはしません",
+			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_hello3",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
+			},
+			dispatcher = {
+				name = STORY_EVENT.TEST,
+				data = {
+					op_list = {
+						{
+							skip = true,
+							name = "Bow",
+							type = "action"
+						},
+						{
+							param = "Play",
+							name = "Face_weixiao",
+							time = 0,
+							type = "action",
+							skip = true
+						},
+						{
+							skip = false,
+							time = 1,
+							type = "wait"
+						}
+					}
+				},
+				callbackData = {
+					hideUI = false,
+					name = STORY_EVENT.TEST_DONE
+				}
 			}
 		}
 	}

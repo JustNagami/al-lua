@@ -1125,6 +1125,417 @@ pg.activity_sp_story = {
 			}
 		}
 	},
+	[68] = {
+		story_type = 1,
+		pre_event = "",
+		name = "EP1-1コンパスの導き",
+		unlock_conditions = "",
+		change_prefab = "",
+		change_background = "bg_jufengv1_2",
+		story = "JUFENGYUCHENMIANZHIHAI1",
+		change_bgm = "theme-tempest-up",
+		id = 68,
+		lock = ""
+	},
+	[69] = {
+		story_type = 1,
+		name = "EP1-2海賊団との再会",
+		unlock_conditions = "EP1-1をクリア",
+		change_bgm = "theme-tempest-up",
+		change_prefab = "",
+		change_background = "bg_jufengv1_2",
+		id = 69,
+		story = "JUFENGYUCHENMIANZHIHAI2",
+		pre_event = {
+			68
+		},
+		lock = {
+			{
+				4,
+				68
+			}
+		}
+	},
+	[70] = {
+		story_type = 1,
+		name = "EP1-3テンペスタ、集まれ！",
+		unlock_conditions = "EP1-2をクリア",
+		change_bgm = "theme-tempest",
+		change_prefab = "",
+		change_background = "star_level_bg_504",
+		id = 70,
+		story = "JUFENGYUCHENMIANZHIHAI3",
+		pre_event = {
+			69
+		},
+		lock = {
+			{
+				4,
+				69
+			}
+		}
+	},
+	[71] = {
+		story_type = 2,
+		name = "EP1-4トレジャーハンター",
+		unlock_conditions = "EP1-3をクリア",
+		change_bgm = "story-temepest-2",
+		change_prefab = "",
+		change_background = "star_level_bg_162",
+		id = 71,
+		story = "1868001",
+		pre_event = {
+			70
+		},
+		lock = {
+			{
+				4,
+				70
+			}
+		}
+	},
+	[72] = {
+		story_type = 1,
+		name = "EP2-1復活と永遠の命",
+		unlock_conditions = "EP1-4をクリア",
+		change_bgm = "story-temepest-2",
+		change_prefab = "",
+		change_background = "bg_jufengv2_cg1",
+		id = 72,
+		story = "JUFENGYUCHENMIANZHIHAI5",
+		pre_event = {
+			71
+		},
+		lock = {
+			{
+				4,
+				71
+			}
+		}
+	},
+	[73] = {
+		story_type = 2,
+		name = "EP2-2宝船の巡航",
+		unlock_conditions = "EP2-1をクリア",
+		change_bgm = "theme-tempest-up",
+		change_prefab = "",
+		change_background = "bg_jufengv1_2",
+		id = 73,
+		story = "1868002",
+		pre_event = {
+			72
+		},
+		lock = {
+			{
+				4,
+				72
+			}
+		}
+	},
+	[74] = {
+		story_type = 1,
+		name = "EP2-3新入り",
+		unlock_conditions = "EP2-2をクリア",
+		change_bgm = "theme-SeaAndSun-soft",
+		change_prefab = "",
+		change_background = "bg_jufengv2_cg4",
+		id = 74,
+		story = "JUFENGYUCHENMIANZHIHAI7",
+		pre_event = {
+			73
+		},
+		lock = {
+			{
+				4,
+				73
+			}
+		}
+	},
+	[75] = {
+		story_type = 1,
+		name = "EP2-4ひっそりこっそり",
+		unlock_conditions = "EP2-3をクリア",
+		change_bgm = "theme-tempest",
+		change_prefab = "",
+		change_background = "bg_jufengv1_1",
+		id = 75,
+		story = "JUFENGYUCHENMIANZHIHAI8",
+		pre_event = {
+			74
+		},
+		lock = {
+			{
+				4,
+				74
+			}
+		}
+	},
+	[76] = {
+		story_type = 1,
+		name = "EP3-1手がかり",
+		unlock_conditions = "EP2-4をクリア",
+		change_bgm = "battle-nightmare-theme",
+		change_prefab = "",
+		change_background = "bg_jufengv2_1",
+		id = 76,
+		story = "JUFENGYUCHENMIANZHIHAI9",
+		pre_event = {
+			75
+		},
+		lock = {
+			{
+				4,
+				75
+			}
+		}
+	},
+	[77] = {
+		story_type = 1,
+		name = "EP3-2眠りし海",
+		unlock_conditions = "EP3-1をクリア",
+		change_bgm = "battle-nightmare-theme",
+		change_prefab = "",
+		change_background = "bg_jufengv2_1",
+		id = 77,
+		story = "JUFENGYUCHENMIANZHIHAI10",
+		pre_event = {
+			76
+		},
+		lock = {
+			{
+				4,
+				76
+			}
+		}
+	},
+	[78] = {
+		story_type = 2,
+		name = "EP3-3風雨の司祭",
+		unlock_conditions = "EP3-2をクリア",
+		change_bgm = "battle-nightmare-theme",
+		change_prefab = "",
+		change_background = "bg_jufengv2_1",
+		id = 78,
+		story = "1868003",
+		pre_event = {
+			77
+		},
+		lock = {
+			{
+				4,
+				77
+			}
+		}
+	},
+	[79] = {
+		story_type = 1,
+		name = "EP3-4嵐と聖殿",
+		unlock_conditions = "EP3-3をクリア",
+		change_bgm = "story-temepest-2",
+		change_prefab = "",
+		change_background = "star_level_bg_525",
+		id = 79,
+		story = "JUFENGYUCHENMIANZHIHAI12",
+		pre_event = {
+			78
+		},
+		lock = {
+			{
+				4,
+				78
+			}
+		}
+	},
+	[80] = {
+		story_type = 1,
+		name = "EP4-1深淵に蠢くもの",
+		unlock_conditions = "EP3-4をクリア",
+		change_bgm = "story-temepest-2",
+		change_prefab = "",
+		change_background = "bg_jufengv2_cg6",
+		id = 80,
+		story = "JUFENGYUCHENMIANZHIHAI13",
+		pre_event = {
+			79
+		},
+		lock = {
+			{
+				4,
+				79
+			}
+		}
+	},
+	[81] = {
+		story_type = 2,
+		name = "EP4-2静寂の魂",
+		unlock_conditions = "EP4-1をクリア",
+		change_bgm = "battle-nightmare-theme",
+		change_prefab = "",
+		change_background = "bg_jufengv2_2",
+		id = 81,
+		story = "1868004",
+		pre_event = {
+			80
+		},
+		lock = {
+			{
+				4,
+				80
+			}
+		}
+	},
+	[82] = {
+		story_type = 1,
+		name = "EP4-3女神主機",
+		unlock_conditions = "EP4-2をクリア",
+		change_bgm = "battle-nightmare-theme",
+		change_prefab = "",
+		change_background = "bg_jufengv2_2",
+		id = 82,
+		story = "JUFENGYUCHENMIANZHIHAI15",
+		pre_event = {
+			81
+		},
+		lock = {
+			{
+				4,
+				81
+			}
+		}
+	},
+	[83] = {
+		story_type = 1,
+		name = "EP4-4テンペスタの選択",
+		unlock_conditions = "EP4-3をクリア",
+		change_bgm = "theme-ganjisawai",
+		change_prefab = "",
+		change_background = "star_level_bg_524",
+		id = 83,
+		story = "JUFENGYUCHENMIANZHIHAI16",
+		pre_event = {
+			82
+		},
+		lock = {
+			{
+				4,
+				82
+			}
+		}
+	},
+	[84] = {
+		story_type = 1,
+		name = "EP5-1風雨の闇",
+		unlock_conditions = "EP4-4をクリア",
+		change_bgm = "theme-ganjisawai",
+		change_prefab = "",
+		change_background = "bg_jufengv2_cg7",
+		id = 84,
+		story = "JUFENGYUCHENMIANZHIHAI17",
+		pre_event = {
+			83
+		},
+		lock = {
+			{
+				4,
+				83
+			}
+		}
+	},
+	[85] = {
+		story_type = 1,
+		name = "EP5-2風雨の交響",
+		unlock_conditions = "EP5-1をクリア",
+		change_bgm = "theme-SeaAndSun-soft",
+		change_prefab = "",
+		change_background = "bg_underwater",
+		id = 85,
+		story = "JUFENGYUCHENMIANZHIHAI18",
+		pre_event = {
+			84
+		},
+		lock = {
+			{
+				4,
+				84
+			}
+		}
+	},
+	[86] = {
+		story_type = 1,
+		name = "EP5-3戻されたコンパス",
+		unlock_conditions = "EP5-2をクリア",
+		change_bgm = "story-temepest-1",
+		change_prefab = "",
+		change_background = "star_level_bg_539",
+		id = 86,
+		story = "JUFENGYUCHENMIANZHIHAI19",
+		pre_event = {
+			85
+		},
+		lock = {
+			{
+				4,
+				85
+			}
+		}
+	},
+	[87] = {
+		story_type = 1,
+		name = "EX-1眠りし海の伝説",
+		unlock_conditions = "EP5-3をクリア",
+		change_bgm = "theme-tempest-up",
+		change_prefab = "",
+		change_background = "star_level_bg_162",
+		id = 87,
+		story = "JUFENGYUCHENMIANZHIHAI20",
+		pre_event = {
+			86
+		},
+		lock = {
+			{
+				4,
+				86
+			}
+		}
+	},
+	[88] = {
+		story_type = 1,
+		name = "EX-2テンペスタのメッセージ",
+		unlock_conditions = "EX-1をクリア",
+		change_bgm = "theme-ganjisawai",
+		change_prefab = "",
+		change_background = "star_level_bg_524",
+		id = 88,
+		story = "JUFENGYUCHENMIANZHIHAI21",
+		pre_event = {
+			87
+		},
+		lock = {
+			{
+				4,
+				87
+			}
+		}
+	},
+	[89] = {
+		story_type = 1,
+		name = "EX-3司祭と使者",
+		unlock_conditions = "EX-2をクリア",
+		change_bgm = "battle-nightmare-theme",
+		change_prefab = "Map_1860001",
+		change_background = "bg_jufengv2_1",
+		id = 89,
+		story = "JUFENGYUCHENMIANZHIHAI22",
+		pre_event = {
+			88
+		},
+		lock = {
+			{
+				4,
+				88
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -1185,6 +1596,28 @@ pg.activity_sp_story = {
 		64,
 		65,
 		66,
-		67
+		67,
+		68,
+		69,
+		70,
+		71,
+		72,
+		73,
+		74,
+		75,
+		76,
+		77,
+		78,
+		79,
+		80,
+		81,
+		82,
+		83,
+		84,
+		85,
+		86,
+		87,
+		88,
+		89
 	}
 }

@@ -2,16 +2,50 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DHELLO1",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			say = "我骄傲的主人，天狼星欢迎您的到来。今天有什么任务要交给我吗？",
+			nameColor = "#FFFFFF",
+			actorName = 20220,
+			say = "ご機嫌麗しゅうございます、誇らしきご主人様。シリアスは今日どのようなお手伝いをしたらよいでしょうか？どのようなご要望でもシリアスにお申し付けくださいませ",
+			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_hello1",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
+			},
+			dispatcher = {
+				name = STORY_EVENT.TEST,
+				data = {
+					op_list = {
+						{
+							skip = true,
+							name = "Bow",
+							type = "action"
+						},
+						{
+							param = "Play",
+							name = "Face_weixiao",
+							time = 0,
+							type = "action",
+							skip = true
+						},
+						{
+							skip = false,
+							time = 1,
+							type = "wait"
+						}
+					}
+				},
+				callbackData = {
+					hideUI = false,
+					name = STORY_EVENT.TEST_DONE
+				}
 			}
 		}
 	}

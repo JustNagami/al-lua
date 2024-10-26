@@ -2,20 +2,28 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DGIFTFEEDBACK2",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			say = "嗯……！有了这个工具箱，之后的清理工作也会变得更加得心应手吧。",
+			actorName = 20220,
+			nameColor = "#FFFFFF",
+			say = "はい…！このツールボックスがあれば、掃除の効率も格段に上がることでしょう！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "感谢您，我骄傲的主人，天狼星一定会用它将您的房间打扫得一尘不染。",
+			nameColor = "#FFFFFF",
+			actorName = 20220,
+			say = "誇らしきご主人様、ありがとうございます。こちらを使って、お部屋をピッカピカにさせていただきますね",
+			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/dorm3d_sirus_wait_table1",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -25,14 +33,24 @@
 				data = {
 					op_list = {
 						{
-							skip = false,
-							name = "Bow",
+							skip = true,
+							name = "ganjin",
 							type = "action"
+						},
+						{
+							skip = true,
+							name = "Face_gaoxing",
+							type = "action"
+						},
+						{
+							skip = false,
+							time = 2,
+							type = "wait"
 						}
 					}
 				},
 				callbackData = {
-					hideUI = true,
+					hideUI = false,
 					name = STORY_EVENT.TEST_DONE
 				}
 			}

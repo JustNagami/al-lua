@@ -213,4 +213,8 @@ function var_0_0.OnSubmitTaskDone(arg_29_0)
 	return
 end
 
+function var_0_0.PlayEnterAnim(arg_30_0)
+	return
+end
+
 return var_0_0

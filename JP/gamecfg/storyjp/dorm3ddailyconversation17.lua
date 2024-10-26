@@ -1,38 +1,29 @@
 ﻿return {
-	hideRecord = true,
+	fadeOut = 1.5,
 	dialogbox = 2,
+	hideRecord = true,
 	mode = 2,
 	alpha = 0,
 	id = "DORM3DDAILYCONVERSATION17",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			say = "（这段时间天狼星都没提过什么要求……还是问问她吧。）",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			},
-			options = {
-				{
-					content = "要不要添置一些家具？",
-					flag = 1
-				},
-				{
-					content = "有没有想要的东西？",
-					flag = 2
-				}
-			}
+			actor = 0,
+			side = 0,
+			say = "――シリアス、何か考え込んでいる？",
+			hidePaintObj = true
 		},
 		{
-			say = "感谢您的关怀和慷慨，不过天狼星目前还不需要这些，我的主人。",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			say = "只要能够留在这里，并且还能够这样侍奉您，天狼星就满足了。",
+			side = 2,
+			actorName = 20220,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "ええと…雲の形について考えています",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -43,9 +34,15 @@
 					op_list = {
 						{
 							param = "Play",
-							name = "Bow",
+							name = "sikao2",
 							time = 0,
-							type = "action"
+							type = "action",
+							skip = true
+						},
+						{
+							skip = false,
+							time = 1,
+							type = "wait"
 						}
 					}
 				},
@@ -53,6 +50,36 @@
 					hideUI = false,
 					name = STORY_EVENT.TEST_DONE
 				}
+			}
+		},
+		{
+			side = 2,
+			actorName = 20220,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "見えた雲の形は、心の中で最も期待していることを表している…と、仲間から聞きまして",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			},
+			options = {
+				{
+					content = "――じゃあシリアスが今一番期待していることは？",
+					flag = 1
+				}
+			}
+		},
+		{
+			side = 2,
+			actorName = 20220,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "ご主人様…わかっていて聞くのですね",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
 			}
 		}
 	}

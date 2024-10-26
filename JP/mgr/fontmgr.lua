@@ -31,11 +31,9 @@ function var_0_0.FontMgr.Init(arg_1_0, arg_1_1)
 		weijichuanFont = "weijichuanFont"
 	}) do
 		table.insert(var_1_0, function(arg_2_0)
-			ResourceMgr.Inst:getAssetAsync("font/" .. iter_1_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_3_0)
-				arg_1_0.fonts[iter_1_0] = arg_3_0
-
+			ResourceMgr.Inst:loadAssetBundleAsync("font/" .. iter_1_1, function(arg_3_0)
 				arg_2_0()
-			end), false, false)
+			end)
 		end)
 	end
 

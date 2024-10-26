@@ -4,12 +4,12 @@ pg.SceneAnimMgr = singletonClass("SceneAnimMgr")
 local var_0_0 = pg.SceneAnimMgr
 
 function var_0_0.Ctor(arg_1_0)
-	return
+	arg_1_0.dormCallbackList = {}
 end
 
 function var_0_0.Init(arg_2_0, arg_2_1)
 	print("initializing sceneanim manager...")
-	PoolMgr.GetInstance():GetUI("SceneAnimUI", true, function(arg_3_0)
+	LoadAndInstantiateAsync("ui", "SceneAnimUI", function(arg_3_0)
 		arg_2_0._go = arg_3_0
 
 		arg_2_0._go:SetActive(false)
@@ -23,7 +23,7 @@ function var_0_0.Init(arg_2_0, arg_2_1)
 		if arg_2_1 then
 			arg_2_1()
 		end
-	end)
+	end, true, true)
 end
 
 function var_0_0.SixthAnniversaryJPCoverGoScene(arg_4_0, arg_4_1)
@@ -88,42 +88,93 @@ function var_0_0.OtherWorldCoverGoScene(arg_7_0, arg_7_1, arg_7_2)
 	end)
 end
 
-function var_0_0.Dorm3DSceneChange(arg_10_0, arg_10_1)
-	setActive(arg_10_0._tf, true)
+function var_0_0.RegisterDormNextCall(arg_10_0, arg_10_1)
+	function arg_10_0.dormNextCall()
+		arg_10_0.dormNextCall = nil
 
-	local var_10_0 = "SixthAnniversaryJPCoverUI"
+		return arg_10_1()
+	end
+end
 
-	PoolMgr.GetInstance():GetUI(var_10_0, true, function(arg_11_0)
-		local var_11_0 = arg_11_0.transform
+function var_0_0.Dorm3DSceneChange(arg_12_0, arg_12_1)
+	table.insert(arg_12_0.dormCallbackList, arg_12_1)
 
-		setParent(var_11_0, arg_10_0.container, false)
+	if not arg_12_0.playing then
+		pg.UIMgr.GetInstance():LoadingOn(false)
+		arg_12_0:DoDorm3DSceneChange()
+	end
 
-		local var_11_1 = var_11_0:Find("houshanyunwu"):GetComponent(typeof(SpineAnimUI))
+	existCall(arg_12_0.dormNextCall)
+end
 
-		var_11_1:SetActionCallBack(function(arg_12_0)
-			if arg_12_0 == "action" then
-				var_11_1:Pause()
-				arg_10_1(function()
-					var_11_1:Resume()
-				end)
-			elseif arg_12_0 == "finish" then
-				PoolMgr.GetInstance():ReturnUI(var_10_0, arg_11_0)
+function var_0_0.DoDorm3DSceneChange(arg_13_0, arg_13_1)
+	arg_13_0.playing = true
 
-				arg_10_0.playing = nil
+	setActive(arg_13_0._tf, true)
 
-				setActive(arg_10_0._tf, false)
+	local var_13_0 = "Dorm3DLoading"
+	local var_13_1 = {}
+
+	if not arg_13_1 then
+		table.insert(var_13_1, function(arg_14_0)
+			PoolMgr.GetInstance():GetUI(var_13_0, true, function(arg_15_0)
+				arg_13_1 = arg_15_0.transform
+
+				setParent(arg_13_1, arg_13_0.container, false)
+				arg_14_0()
+			end)
+		end)
+	end
+
+	seriesAsync(var_13_1, function()
+		local var_16_0 = arg_13_1:Find("bg"):GetComponent(typeof(Image)).material
+		local var_16_1 = arg_13_1:GetComponent("DftAniEvent")
+
+		var_16_1:SetTriggerEvent(function(arg_17_0)
+			local var_17_0
+
+			local function var_17_1()
+				if #arg_13_0.dormCallbackList > 0 then
+					table.remove(arg_13_0.dormCallbackList, 1)(var_17_1)
+				else
+					GetComponent(arg_13_1, typeof(Animator)):SetBool("Finish", true)
+					var_16_0:SetInt("_DissolveTexFlip", 0)
+					LeanTween.value(0, 1, 0.6):setOnUpdate(System.Action_float(function(arg_19_0)
+						var_16_0:SetFloat("_Dissolve", arg_19_0)
+					end)):setEase(LeanTweenType.easeInOutCubic)
+				end
+			end
+
+			var_17_1()
+			pg.CriMgr.GetInstance():PlaySE_V3("ui-dorm_loading_loop")
+		end)
+		var_16_1:SetEndEvent(function(arg_20_0)
+			if #arg_13_0.dormCallbackList > 0 then
+				quickPlayAnimator(arg_13_1, "anim_dorm3d_loading_in")
+				arg_13_0:DoDorm3DSceneChange(arg_13_1)
+			else
+				PoolMgr.GetInstance():ReturnUI(var_13_0, arg_13_1.gameObject)
+
+				arg_13_0.playing = nil
+
+				setActive(arg_13_0._tf, false)
+				pg.UIMgr.GetInstance():LoadingOff()
 			end
 		end)
-		var_11_1:SetAction("action", 0)
+		GetComponent(arg_13_1, typeof(Animator)):SetBool("Finish", false)
+		var_16_0:SetInt("_DissolveTexFlip", 1)
+		LeanTween.value(1, 0, 0.6):setOnUpdate(System.Action_float(function(arg_21_0)
+			var_16_0:SetFloat("_Dissolve", arg_21_0)
+		end)):setEase(LeanTweenType.easeOutCubic)
 	end)
 end
 
-function var_0_0.IsPlaying(arg_14_0)
-	return arg_14_0.playing
+function var_0_0.IsPlaying(arg_22_0)
+	return arg_22_0.playing
 end
 
-function var_0_0.Dispose(arg_15_0)
-	setActive(arg_15_0._tf, false)
+function var_0_0.Dispose(arg_23_0)
+	setActive(arg_23_0._tf, false)
 
-	arg_15_0.playing = nil
+	arg_23_0.playing = nil
 end

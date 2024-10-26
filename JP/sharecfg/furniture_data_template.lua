@@ -159,6 +159,7 @@ pg.furniture_data_template = setmetatable({
 			285,
 			287,
 			288,
+			289,
 			100002,
 			100003,
 			100004,
@@ -222,6 +223,8 @@ pg.furniture_data_template = setmetatable({
 			100062,
 			100063,
 			100064,
+			100065,
+			100066,
 			200001,
 			200002,
 			200003,
@@ -3205,6 +3208,23 @@ pg.furniture_data_template = setmetatable({
 			314111,
 			314112,
 			314113
+		},
+		[115] = {
+			315001,
+			315002,
+			315101,
+			315102,
+			315103,
+			315104,
+			315105,
+			315106,
+			315107,
+			315108,
+			315109,
+			315110,
+			315111,
+			315112,
+			315113
 		}
 	},
 	get_id_list_by_tag = {
@@ -3369,6 +3389,8 @@ pg.furniture_data_template = setmetatable({
 			100062,
 			100063,
 			100064,
+			100065,
+			100066,
 			31101,
 			54104,
 			54105
@@ -3430,7 +3452,8 @@ pg.furniture_data_template = setmetatable({
 			278,
 			283,
 			284,
-			287
+			287,
+			289
 		},
 		[7] = {
 			223,
@@ -3623,7 +3646,8 @@ pg.furniture_data_template = setmetatable({
 			312114,
 			312115,
 			313113,
-			314113
+			314113,
+			315113
 		},
 		[4] = {
 			1001,
@@ -3724,7 +3748,8 @@ pg.furniture_data_template = setmetatable({
 			311001,
 			312001,
 			313001,
-			314001
+			314001,
+			315001
 		},
 		[3] = {
 			1002,
@@ -3826,7 +3851,8 @@ pg.furniture_data_template = setmetatable({
 			311002,
 			312002,
 			313002,
-			314002
+			314002,
+			315002
 		},
 		{
 			1101,
@@ -5723,7 +5749,19 @@ pg.furniture_data_template = setmetatable({
 			314108,
 			314109,
 			314110,
-			314111
+			314111,
+			315101,
+			315102,
+			315103,
+			315104,
+			315105,
+			315106,
+			315107,
+			315108,
+			315109,
+			315110,
+			315111,
+			315112
 		},
 		{
 			1108,
@@ -6363,6 +6401,7 @@ pg.furniture_data_template = setmetatable({
 			285,
 			287,
 			288,
+			289,
 			100002,
 			100004,
 			100005,
@@ -6410,7 +6449,8 @@ pg.furniture_data_template = setmetatable({
 			100058,
 			100059,
 			100061,
-			100062
+			100062,
+			100065
 		},
 		[2] = {
 			120,
@@ -8303,7 +8343,20 @@ pg.furniture_data_template = setmetatable({
 			314109,
 			314110,
 			314111,
-			314113
+			314113,
+			315101,
+			315102,
+			315103,
+			315104,
+			315105,
+			315106,
+			315107,
+			315108,
+			315109,
+			315110,
+			315111,
+			315112,
+			315113
 		},
 		[11] = {
 			143,
@@ -8321,6 +8374,7 @@ pg.furniture_data_template = setmetatable({
 			100042,
 			100063,
 			100064,
+			100066,
 			30123,
 			35128,
 			36125,
@@ -8813,7 +8867,8 @@ pg.furniture_data_template = setmetatable({
 			311001,
 			312001,
 			313001,
-			314001
+			314001,
+			315001
 		},
 		{
 			1002,
@@ -8915,7 +8970,8 @@ pg.furniture_data_template = setmetatable({
 			311002,
 			312002,
 			313002,
-			314002
+			314002,
+			315002
 		},
 		[5] = {
 			1101,
@@ -9420,6 +9476,7 @@ pg.furniture_data_template = setmetatable({
 		285,
 		287,
 		288,
+		289,
 		100002,
 		100003,
 		100004,
@@ -9483,6 +9540,8 @@ pg.furniture_data_template = setmetatable({
 		100062,
 		100063,
 		100064,
+		100065,
+		100066,
 		200001,
 		200002,
 		200003,
@@ -12263,7 +12322,22 @@ pg.furniture_data_template = setmetatable({
 		314110,
 		314111,
 		314112,
-		314113
+		314113,
+		315001,
+		315002,
+		315101,
+		315102,
+		315103,
+		315104,
+		315105,
+		315106,
+		315107,
+		315108,
+		315109,
+		315110,
+		315111,
+		315112,
+		315113
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -20046,6 +20120,49 @@ pg.base.furniture_data_template = {
 		},
 		interAction_group = {}
 	},
+	[289] = {
+		spine_extra = "",
+		describe = "眠りし海で捕獲した謎のエネルギー体。今は静かに装置の中で泳いでいる\n「テンペスタと眠りし海」に参加した指揮官に贈る",
+		gain_by = "テンペスタと眠りし海",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 5,
+		is_get_time_note = 1,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 8,
+		icon = "fengfan2xunzhangicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "「静寂の渦」収集装置",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 289,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"fengfan2xunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
 	[100002] = {
 		belong = 1,
 		describe = "ゆゆゆ友情パワーだぴょぴょぴょぴょ………",
@@ -24534,6 +24651,104 @@ pg.base.furniture_data_template = {
 		followBone = {
 			"char",
 			1
+		},
+		interAction_group = {}
+	},
+	[100065] = {
+		spine_extra = "",
+		describe = "中に潜む力が今にも現れるわ！気をつけて！",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "linghumianjuicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "赤き狐面（家具）",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 100065,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"linghumianju",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[100066] = {
+		spine_extra = "",
+		describe = "「レコード再生機能、起動！……え？！まだ実装されていないの？！」",
+		gain_by = "",
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "bulisituoerjiqirenicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "DATA-857（レプリカ）",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 100066,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"bulisituoerjiqiren",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
 		},
 		interAction_group = {}
 	},
@@ -146870,6 +147085,745 @@ pg.base.furniture_data_template = {
 						"dance1",
 						"dance2",
 						"dance3"
+					}
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[315001] = {
+		spine_extra = "",
+		describe = "影の港で恐れ慄くがいい！",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 115,
+		belong = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		deblocking = 1,
+		level = 1,
+		name = "ポートの床",
+		effect = "",
+		advice = 0,
+		icon = "dibangbicon",
+		spine_action_replace = "",
+		picture = "gb/dibangb",
+		comfortable = 4,
+		canputon = 0,
+		id = 315001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[315002] = {
+		spine_extra = "",
+		describe = "影の港で恐れ慄くがいい！",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		themeId = 115,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		deblocking = 1,
+		level = 5,
+		name = "ポートの壁",
+		effect = "",
+		advice = 0,
+		icon = "qiangbigbicon",
+		spine_action_replace = "",
+		picture = "",
+		comfortable = 4,
+		canputon = 0,
+		id = 315002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbigb",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[315101] = {
+		spine_extra = "",
+		describe = "宝箱に噛まれると痛いピョ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 115,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "baoxianggbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ポートのミミック",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 315101,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"baoxianggb",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[315102] = {
+		spine_extra = "",
+		describe = "見た目からして危なそうな古城。中にヤバいやつがいるかもしれないぞ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 115,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "chengbaogbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "不気味な城",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 315102,
+		can_rotate = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"chengbaogb",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[315103] = {
+		spine_extra = "",
+		describe = "古の守護者かもしれない…",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 115,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "diaoxianggbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ポートの彫像",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "gb/diaoxianggb",
+		canputon = 0,
+		id = 315103,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[315104] = {
+		spine_extra = "",
+		describe = "こいつに乗りゃ…どこに連れて行かれるだろうな",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 115,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "fanchuangbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ポートの帆船",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 315104,
+		can_rotate = 0,
+		size = {
+			2,
+			8
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"fanchuangb",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[315105] = {
+		spine_extra = "",
+		describe = "すでにボロボロになっている民家。*おおっと*",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 115,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "fangwu1gbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ポートの民家①",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "gb/fangwu1gb",
+		canputon = 0,
+		id = 315105,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[315106] = {
+		spine_extra = "",
+		describe = "蜘蛛の巣に覆われている民家。*おおっと*",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 115,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "fangwu2gbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ポートの民家②",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "gb/fangwu2gb",
+		canputon = 0,
+		id = 315106,
+		can_rotate = 0,
+		size = {
+			3,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[315107] = {
+		spine_extra = "",
+		describe = "ここで迎えるのは深きより出でし恐怖なり",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 115,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "gangkougbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ポートの埠頭",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 315107,
+		can_rotate = 0,
+		size = {
+			5,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"gangkougb",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[315108] = {
+		spine_extra = "",
+		describe = "行方不明者の捜索依頼と触手の目撃報告でいっぱい",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 115,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "gonggaolangbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ポートの回覧板",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "gb/gonggaolangb",
+		canputon = 0,
+		id = 315108,
+		can_rotate = 0,
+		size = {
+			2,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[315109] = {
+		spine_extra = "",
+		describe = "移動したほうが良いかもしれない！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "ポートの岩礁",
+		themeId = 115,
+		icon = "jiaoshigbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 315109,
+		can_rotate = 0,
+		size = {
+			4,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jiaoshigbB",
+				"normal"
+			},
+			{
+				"jiaoshigbT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance"
+					},
+					{
+						"tuozhuai2"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[315110] = {
+		spine_extra = "",
+		describe = "怖くなったら中に入ってしばし休めよう",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 2,
+		is_3d_obj = 0,
+		name = "ポートの酒場",
+		themeId = 115,
+		icon = "jiuguangbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 315110,
+		can_rotate = 0,
+		size = {
+			4,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jiuguangbB",
+				"normal"
+			},
+			{
+				"jiuguangbT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[315111] = {
+		spine_extra = "",
+		describe = "価値ある情報が見つかるかも？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 115,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "shuconggbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "不気味の草むら",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 315111,
+		can_rotate = 0,
+		size = {
+			4,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shuconggb",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[315112] = {
+		spine_extra = "",
+		describe = "微かな光では、恐怖の闇を振り払えない",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "不気味の街灯",
+		themeId = 115,
+		icon = "zawuduigbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 315112,
+		can_rotate = 0,
+		size = {
+			2,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zawuduigbB",
+				"normal"
+			},
+			{
+				"zawuduigbT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sleep"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[315113] = {
+		spine_extra = "",
+		describe = "何が出るのかは運命のみぞ知る",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "ポートの祭壇",
+		themeId = 115,
+		icon = "jitangbicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 315113,
+		can_rotate = 0,
+		size = {
+			5,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jitangbB",
+				"normal"
+			},
+			{
+				"jitangbT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"action1",
+						nil,
+						"tuozhuai2"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				},
+				{
+					{
+						"action1",
+						"action2",
+						"action3"
 					}
 				}
 			},

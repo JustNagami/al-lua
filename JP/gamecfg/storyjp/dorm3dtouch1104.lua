@@ -2,13 +2,18 @@
 	hideRecord = true,
 	dialogbox = 2,
 	mode = 2,
-	alpha = 0,
 	id = "DORM3DTOUCH1104",
+	alpha = 0,
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			say = "主人，请您再离天狼星近一些……",
+			actorName = 20220,
+			nameColor = "#FFFFFF",
+			say = "誇らしきご主人様、そこは……あ、あまりからかわないでくださいませ",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -18,14 +23,26 @@
 				data = {
 					op_list = {
 						{
-							skip = false,
-							name = "surprise2",
+							skip = true,
+							name = "swim02_jian",
 							type = "action"
+						},
+						{
+							param = "Play",
+							name = "Face_renzhen",
+							time = 0,
+							type = "action",
+							skip = true
+						},
+						{
+							skip = false,
+							time = 2,
+							type = "wait"
 						}
 					}
 				},
 				callbackData = {
-					hideUI = true,
+					hideUI = false,
 					name = STORY_EVENT.TEST_DONE
 				}
 			}

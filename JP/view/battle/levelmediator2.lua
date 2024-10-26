@@ -135,18 +135,10 @@ function var_0_0.register(arg_1_0)
 		arg_1_0:sendNotification(GAME.CHAPTER_OP, arg_13_1)
 	end)
 	arg_1_0:bind(var_0_0.ON_SWITCH_NORMAL_MAP, function(arg_14_0)
-		local var_14_0 = getProxy(ChapterProxy)
-		local var_14_1
-		local var_14_2 = Map.lastMap and var_14_0:getMapById(Map.lastMap)
+		local var_14_0 = getProxy(ChapterProxy):GetLastNormalMap()
 
-		if var_14_2 and var_14_2:isUnlock() and var_14_2:getMapType() == Map.SCENARIO then
-			var_14_1 = Map.lastMap
-		else
-			var_14_1 = var_14_0:getLastUnlockMap().id
-		end
-
-		if var_14_1 then
-			arg_1_0.viewComponent:setMap(var_14_1)
+		if var_14_0 then
+			arg_1_0.viewComponent:setMap(var_14_0)
 		end
 	end)
 	arg_1_0:bind(var_0_0.ON_RESUME_SUBSTATE, function(arg_15_0, arg_15_1)

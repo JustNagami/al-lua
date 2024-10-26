@@ -136,9 +136,9 @@ pg.voice_bgm = {
 		bgm = "idol-BlueSpirit-inst"
 	},
 	NewShopsScene = {
-		default_bgm = "story-flowerdust-soft",
+		default_bgm = "story-tempest-marching",
 		special_bgm = "",
-		bgm = "story-flowerdust-soft"
+		bgm = "story-tempest-marching"
 	},
 	BuildShipScene = {
 		default_bgm = "main",
@@ -1609,5 +1609,90 @@ pg.voice_bgm = {
 		default_bgm = "story-fantasyland-light",
 		special_bgm = "",
 		bgm = "story-fantasyland-light"
+	},
+	Dorm3dVolleyballScene = {
+		default_bgm = "main-SeaAndSun",
+		special_bgm = "",
+		bgm = "main-SeaAndSun"
+	},
+	Dorm3dRoomScene = {
+		default_bgm = "story-room-sirius",
+		special_bgm = "",
+		bgm = "story-room-sirius"
+	},
+	DormSignPage = {
+		default_bgm = "story-room-sirius",
+		special_bgm = "",
+		bgm = "story-room-sirius"
+	},
+	JavelinDressSkinPage = {
+		default_bgm = "theme-partydress",
+		special_bgm = "",
+		bgm = "theme-partydress"
+	},
+	WorldCruiseTaskPage = {
+		default_bgm = "blueocean-image",
+		special_bgm = "",
+		bgm = "blueocean-image"
+	},
+	WorldCruiseShopPage = {
+		default_bgm = "theme-SeaAndSun-soft",
+		special_bgm = "",
+		bgm = "theme-SeaAndSun-soft"
+	},
+	WorldCruiseAwardPage = {
+		default_bgm = "blueocean-image",
+		special_bgm = "",
+		bgm = "blueocean-image"
+	},
+	EatFoodLayer = {
+		default_bgm = "bar-soft",
+		special_bgm = "",
+		bgm = "bar-soft"
+	},
+	SaDingSkinPage = {
+		default_bgm = "story-richang-11",
+		special_bgm = "",
+		bgm = "story-richang-11"
+	},
+	YidaliV3FrameRePage = {
+		default_bgm = "story-italy",
+		special_bgm = "",
+		bgm = "story-italy"
+	},
+	Yidaliv3LoginRePage = {
+		default_bgm = "battle-boss-italy",
+		special_bgm = "",
+		bgm = "battle-boss-italy"
+	},
+	YidaliV3MainRePage = {
+		default_bgm = "story-roma-inside",
+		special_bgm = "",
+		bgm = "story-roma-inside"
+	},
+	YidaliV3PtRePage = {
+		default_bgm = "story-roma-outside",
+		special_bgm = "",
+		bgm = "story-roma-outside"
+	},
+	YidaliV3SkinRePage = {
+		default_bgm = "story-italy",
+		special_bgm = "",
+		bgm = "story-italy"
+	},
+	StormSeaMainPage = {
+		default_bgm = "theme-ganjisawai",
+		special_bgm = "",
+		bgm = "theme-ganjisawai"
+	},
+	StormSeaPtPage = {
+		default_bgm = "battle-nightmare-theme",
+		special_bgm = "",
+		bgm = "battle-nightmare-theme"
+	},
+	GhostSkinStoryActPage = {
+		default_bgm = "story-ghostnight-fascinsting",
+		special_bgm = "",
+		bgm = "story-ghostnight-fascinsting"
 	}
 }

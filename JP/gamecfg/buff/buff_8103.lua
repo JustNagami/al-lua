@@ -14,7 +14,7 @@
 			trigger = {
 				"onAttach",
 				"onUpdate",
-				"onFriendlyShipDying",
+				"onTeammateShipDying",
 				"onSubmarinFreeFloat",
 				"onAntiSubHateChain"
 			},

@@ -929,8 +929,10 @@ function var_0_5.GetEnemyResource(arg_69_0)
 
 				if var_70_2 == 1 then
 					var_69_0[#var_69_0 + 1] = var_0_5.GetHrzIcon(var_69_5.icon)
+					var_69_0[#var_69_0 + 1] = var_0_5.GetSquareIcon(var_69_5.icon)
 				elseif type(var_70_2) == "string" then
 					var_69_0[#var_69_0 + 1] = var_0_5.GetHrzIcon(var_70_2)
+					var_69_0[#var_69_0 + 1] = var_0_5.GetSquareIcon(var_70_2)
 				end
 			end
 

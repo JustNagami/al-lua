@@ -522,7 +522,7 @@ function var_0_0.openBuyPanel(arg_42_0)
 		descExtra = var_42_1:getConfig("descrip_extra"),
 		onYes = function()
 			if ChargeConst.isNeedSetBirth() then
-				arg_42_0:emit(ChargeMediator.OPEN_CHARGE_BIRTHDAY)
+				arg_42_0:emit(CrusingMediator.EVENT_OPEN_BIRTHDAY)
 			else
 				pg.m02:sendNotification(GAME.CHARGE_OPERATION, {
 					shopId = var_42_1.id

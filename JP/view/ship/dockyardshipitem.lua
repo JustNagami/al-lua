@@ -353,7 +353,7 @@ function var_0_0.flushDetail(arg_14_0)
 			local var_14_10 = var_14_7:GetChild(1):GetComponent("Text")
 
 			var_14_9.alignment = TextAnchor.MiddleLeft
-			var_14_10.alignment = TextAnchor.MiddleRight
+			var_14_10.alignment = TextAnchor.LowerRight
 
 			local var_14_11 = var_14_3[arg_14_0.detailType][iter_14_0]
 
@@ -571,6 +571,8 @@ function var_0_0.updateIntimacyEnergy(arg_22_0, arg_22_1)
 
 		setImageSprite(var_22_0:Find("icon/img"), var_22_2, true)
 		setText(var_22_0:Find("Text"), var_22_1:getEnergy())
+		setActive(var_22_0:Find("Text"), false)
+		setActive(var_22_0:Find("Text"), true)
 	end
 end
 

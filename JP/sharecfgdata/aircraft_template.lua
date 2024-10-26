@@ -248604,3 +248604,600 @@ _G.pg.base.aircraft_template[3207537] = {
 		}
 	}
 }
+_G.pg.base.aircraft_template[165411] = {
+	attack_power = 2,
+	name = "凤翔META技能鱼雷机Lv1",
+	type = 2,
+	accuracy = 23,
+	model_ID = "97jiangong",
+	ACC_growth = 0,
+	crash_DMG = 148,
+	dodge = 1.17,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 165411,
+	icon = "97jiangong",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 4,
+	hp_growth = 1155,
+	speed = 48,
+	max_hp = 30,
+	scale = 1,
+	weapon_ID = {
+		165421
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.68,
+				-0.667,
+				0
+			},
+			{
+				0.97,
+				0.584,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0.54,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[165412] = {
+	id = 165412,
+	name = "凤翔META技能鱼雷机Lv2",
+	hp_growth = 1345,
+	base = 165411,
+	max_hp = 39,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165422
+	}
+}
+_G.pg.base.aircraft_template[165413] = {
+	id = 165413,
+	name = "凤翔META技能鱼雷机Lv3",
+	hp_growth = 1507,
+	base = 165411,
+	max_hp = 43,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165423
+	}
+}
+_G.pg.base.aircraft_template[165414] = {
+	id = 165414,
+	name = "凤翔META技能鱼雷机Lv4",
+	hp_growth = 1669,
+	base = 165411,
+	max_hp = 47,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165424
+	}
+}
+_G.pg.base.aircraft_template[165415] = {
+	id = 165415,
+	name = "凤翔META技能鱼雷机Lv5",
+	hp_growth = 1831,
+	base = 165411,
+	max_hp = 51,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165425
+	}
+}
+_G.pg.base.aircraft_template[165416] = {
+	id = 165416,
+	name = "凤翔META技能鱼雷机Lv6",
+	hp_growth = 1994,
+	base = 165411,
+	max_hp = 55,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165426
+	}
+}
+_G.pg.base.aircraft_template[165417] = {
+	id = 165417,
+	name = "凤翔META技能鱼雷机Lv7",
+	hp_growth = 2157,
+	base = 165411,
+	max_hp = 59,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165427
+	}
+}
+_G.pg.base.aircraft_template[165418] = {
+	id = 165418,
+	name = "凤翔META技能鱼雷机Lv8",
+	hp_growth = 2320,
+	base = 165411,
+	max_hp = 63,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165428
+	}
+}
+_G.pg.base.aircraft_template[165419] = {
+	id = 165419,
+	name = "凤翔META技能鱼雷机Lv9",
+	hp_growth = 2483,
+	base = 165411,
+	max_hp = 68,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165429
+	}
+}
+_G.pg.base.aircraft_template[165420] = {
+	id = 165420,
+	name = "凤翔META技能鱼雷机Lv10",
+	hp_growth = 2646,
+	base = 165411,
+	max_hp = 73,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165430
+	}
+}
+_G.pg.base.aircraft_template[165511] = {
+	attack_power = 2,
+	name = "冈依沙瓦号祈雨Lv1",
+	type = 3,
+	accuracy = 23,
+	model_ID = "xiafei_yingxing",
+	ACC_growth = 0,
+	crash_DMG = 1,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 2,
+	id = 165511,
+	icon = "huixing",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1605,
+	speed = 60,
+	max_hp = 42,
+	scale = 1,
+	weapon_ID = {
+		165521
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0.64,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[165512] = {
+	id = 165512,
+	name = "冈依沙瓦号祈雨Lv2",
+	hp_growth = 1846,
+	base = 165511,
+	max_hp = 48,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165522
+	}
+}
+_G.pg.base.aircraft_template[165513] = {
+	id = 165513,
+	name = "冈依沙瓦号祈雨Lv3",
+	hp_growth = 2087,
+	base = 165511,
+	max_hp = 54,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165523
+	}
+}
+_G.pg.base.aircraft_template[165514] = {
+	id = 165514,
+	name = "冈依沙瓦号祈雨Lv4",
+	hp_growth = 2327,
+	base = 165511,
+	max_hp = 61,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165524
+	}
+}
+_G.pg.base.aircraft_template[165515] = {
+	id = 165515,
+	name = "冈依沙瓦号祈雨Lv5",
+	hp_growth = 2568,
+	base = 165511,
+	max_hp = 67,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165525
+	}
+}
+_G.pg.base.aircraft_template[165516] = {
+	id = 165516,
+	name = "冈依沙瓦号祈雨Lv6",
+	hp_growth = 2809,
+	base = 165511,
+	max_hp = 73,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165526
+	}
+}
+_G.pg.base.aircraft_template[165517] = {
+	id = 165517,
+	name = "冈依沙瓦号祈雨Lv7",
+	hp_growth = 3050,
+	base = 165511,
+	max_hp = 79,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165527
+	}
+}
+_G.pg.base.aircraft_template[165518] = {
+	id = 165518,
+	name = "冈依沙瓦号祈雨Lv8",
+	hp_growth = 3290,
+	base = 165511,
+	max_hp = 86,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165528
+	}
+}
+_G.pg.base.aircraft_template[165519] = {
+	id = 165519,
+	name = "冈依沙瓦号祈雨Lv9",
+	hp_growth = 3531,
+	base = 165511,
+	max_hp = 92,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165529
+	}
+}
+_G.pg.base.aircraft_template[165520] = {
+	id = 165520,
+	name = "冈依沙瓦号祈雨Lv10",
+	hp_growth = 3772,
+	base = 165511,
+	max_hp = 98,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165530
+	}
+}
+_G.pg.base.aircraft_template[165531] = {
+	attack_power = 2,
+	name = "冈依沙瓦号爆金币Lv1",
+	type = 3,
+	accuracy = 23,
+	model_ID = "xiafei_yingxing",
+	ACC_growth = 0,
+	crash_DMG = 1,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 2,
+	id = 165531,
+	icon = "huixing",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1605,
+	speed = 60,
+	max_hp = 42,
+	scale = 1,
+	weapon_ID = {
+		165541
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0.64,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[165532] = {
+	id = 165532,
+	name = "冈依沙瓦号爆金币Lv2",
+	hp_growth = 1846,
+	base = 165531,
+	max_hp = 48,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165542
+	}
+}
+_G.pg.base.aircraft_template[165533] = {
+	id = 165533,
+	name = "冈依沙瓦号爆金币Lv3",
+	hp_growth = 2087,
+	base = 165531,
+	max_hp = 54,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165543
+	}
+}
+_G.pg.base.aircraft_template[165534] = {
+	id = 165534,
+	name = "冈依沙瓦号爆金币Lv4",
+	hp_growth = 2327,
+	base = 165531,
+	max_hp = 61,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165544
+	}
+}
+_G.pg.base.aircraft_template[165535] = {
+	id = 165535,
+	name = "冈依沙瓦号爆金币Lv5",
+	hp_growth = 2568,
+	base = 165531,
+	max_hp = 67,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165545
+	}
+}
+_G.pg.base.aircraft_template[165536] = {
+	id = 165536,
+	name = "冈依沙瓦号爆金币Lv6",
+	hp_growth = 2809,
+	base = 165531,
+	max_hp = 73,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165546
+	}
+}
+_G.pg.base.aircraft_template[165537] = {
+	id = 165537,
+	name = "冈依沙瓦号爆金币Lv7",
+	hp_growth = 3050,
+	base = 165531,
+	max_hp = 79,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165547
+	}
+}
+_G.pg.base.aircraft_template[165538] = {
+	id = 165538,
+	name = "冈依沙瓦号爆金币Lv8",
+	hp_growth = 3290,
+	base = 165531,
+	max_hp = 86,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165548
+	}
+}
+_G.pg.base.aircraft_template[165539] = {
+	id = 165539,
+	name = "冈依沙瓦号爆金币Lv9",
+	hp_growth = 3531,
+	base = 165531,
+	max_hp = 92,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165549
+	}
+}
+_G.pg.base.aircraft_template[165540] = {
+	id = 165540,
+	name = "冈依沙瓦号爆金币Lv10",
+	hp_growth = 3772,
+	base = 165531,
+	max_hp = 98,
+	spawn_brownian = 1,
+	weapon_ID = {
+		165550
+	}
+}
+_G.pg.base.aircraft_template[3218501] = {
+	attack_power = 2,
+	name = "【2024风帆二期】我方支援弹幕 光明女神的怜悯 隐形飞机",
+	type = 3,
+	accuracy = 23,
+	model_ID = "xiafei_yingxing",
+	ACC_growth = 0,
+	crash_DMG = 1,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 2,
+	id = 3218501,
+	icon = "huixing",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 3772,
+	speed = 60,
+	max_hp = 98,
+	scale = 1,
+	weapon_ID = {
+		3218502
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0.64,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}

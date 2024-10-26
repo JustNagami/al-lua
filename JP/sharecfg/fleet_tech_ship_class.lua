@@ -3485,6 +3485,61 @@ pg.fleet_tech_ship_class = {
 			960006
 		}
 	},
+	[960007] = {
+		shiptype = 24,
+		name = "ガンズウェイ",
+		nation = 96,
+		id = 960007,
+		t_level_1 = 1,
+		t_level = 2,
+		ships = {
+			960007
+		}
+	},
+	[960008] = {
+		shiptype = 23,
+		name = "ファンシー",
+		nation = 96,
+		id = 960008,
+		t_level_1 = 1,
+		t_level = 1,
+		ships = {
+			960008
+		}
+	},
+	[960009] = {
+		shiptype = 22,
+		name = "アミティ",
+		nation = 96,
+		id = 960009,
+		t_level_1 = 9,
+		t_level = 1,
+		ships = {
+			960009
+		}
+	},
+	[960010] = {
+		shiptype = 23,
+		name = "ポーツマウス・アドベンチャー",
+		nation = 96,
+		id = 960010,
+		t_level_1 = 6,
+		t_level = 1,
+		ships = {
+			960010
+		}
+	},
+	[960011] = {
+		shiptype = 22,
+		name = "ドルフィン",
+		nation = 96,
+		id = 960011,
+		t_level_1 = 10,
+		t_level = 1,
+		ships = {
+			960011
+		}
+	},
 	[970101] = {
 		shiptype = 1,
 		name = "ハンター(META)",
@@ -3824,6 +3879,17 @@ pg.fleet_tech_ship_class = {
 		t_level = 1,
 		ships = {
 			970603
+		}
+	},
+	[970604] = {
+		shiptype = 6,
+		name = "鳳翔(META)",
+		nation = 97,
+		id = 970604,
+		t_level_1 = 3,
+		t_level = 5,
+		ships = {
+			970604
 		}
 	},
 	[970701] = {
@@ -4193,6 +4259,11 @@ pg.fleet_tech_ship_class = {
 		960004,
 		960005,
 		960006,
+		960007,
+		960008,
+		960009,
+		960010,
+		960011,
 		970101,
 		970102,
 		970103,
@@ -4224,6 +4295,7 @@ pg.fleet_tech_ship_class = {
 		970601,
 		970602,
 		970603,
+		970604,
 		970701,
 		970702,
 		970703,

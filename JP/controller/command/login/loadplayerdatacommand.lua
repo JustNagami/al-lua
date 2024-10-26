@@ -199,6 +199,10 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 			true
 		},
 		{
+			InstagramChatProxy,
+			true
+		},
+		{
 			AppreciateProxy,
 			true
 		},
@@ -240,6 +244,10 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		},
 		{
 			ApartmentProxy,
+			true
+		},
+		{
+			LivingAreaCoverProxy,
 			true
 		}
 	})
@@ -290,6 +298,9 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 			arg_1_0:sendNotification(GAME.EDUCATE_REQUEST)
 		end
 
+		arg_1_0:sendNotification(GAME.ACT_INSTAGRAM_CHAT, {
+			operation = ActivityConst.INSTAGRAM_CHAT_GET_DATA
+		})
 		pg.SdkMgr.GetInstance():BindCPU()
 		pg.SecondaryPWDMgr.GetInstance():FetchData()
 		MonthCardOutDateTipPanel.SetMonthCardEndDateLocal()
@@ -300,6 +311,12 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 
 		if MainCheckShipNumSequence.New():Check(arg_2_0.ship_count) then
 			arg_1_0:sendNotification(GAME.LOAD_PLAYER_DATA_DONE)
+		end
+
+		if Dorm3dRoomTemplateScene.FirstDefaultSetting then
+			arg_1_0:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGraphics(Dorm3dRoomTemplateScene.FirstDefaultSetting))
+
+			Dorm3dRoomTemplateScene.FirstDefaultSetting = nil
 		end
 	end, nil, 60)
 end

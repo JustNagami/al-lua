@@ -2,6 +2,8 @@
 
 var_0_0.SHOW_CONFIRM_WINDOW = "SHOW_CONFIRM_WINDOW"
 var_0_0.SHOW_FURNITURE_ACESSES = "SHOW_FURNITURE_ACESSES"
+var_0_0.OPEN_DROP_LAYER = "OPEN_DROP_LAYER"
+var_0_0.SHOW_SHOPPING_CONFIRM_WINDOW = "SHOW_SHOPPING_CONFIRM_WINDOW"
 
 function var_0_0.register(arg_1_0)
 	arg_1_0:bind(GAME.APARTMENT_REPLACE_FURNITURE, function(arg_2_0, arg_2_1)
@@ -21,40 +23,75 @@ function var_0_0.register(arg_1_0)
 			data = arg_4_1
 		}))
 	end)
+	arg_1_0:bind(var_0_0.SHOW_SHOPPING_CONFIRM_WINDOW, function(arg_5_0, arg_5_1)
+		arg_1_0:addSubLayers(Context.New({
+			mediator = Dorm3dShoppingConfirmWindowMediator,
+			viewComponent = Dorm3dShoppingConfirmWindow,
+			data = arg_5_1
+		}))
+	end)
+	arg_1_0:bind(GAME.SHOPPING, function(arg_6_0, arg_6_1)
+		arg_1_0:sendNotification(GAME.SHOPPING, {
+			id = arg_6_1.shopId,
+			count = arg_6_1.count,
+			silentTip = arg_6_1.silentTip
+		})
+	end)
+	arg_1_0:bind(var_0_0.OPEN_DROP_LAYER, function(arg_7_0, arg_7_1, arg_7_2)
+		arg_1_0:addSubLayers(Context.New({
+			viewComponent = Dorm3dAwardInfoLayer,
+			mediator = Dorm3dAwardInfoMediator,
+			data = {
+				items = arg_7_1
+			},
+			onRemoved = arg_7_2
+		}))
+	end)
 
-	local var_1_0 = pg.m02:retrieveMediator(Dorm3dSceneMediator.__cname):getViewComponent()
+	local var_1_0 = pg.m02:retrieveMediator(Dorm3dRoomMediator.__cname):getViewComponent()
 
 	arg_1_0.viewComponent:SetSceneRoot(var_1_0)
-
-	local var_1_1 = var_1_0:GetApartment()
-
-	arg_1_0.viewComponent:SetApartment(var_1_1)
+	arg_1_0.viewComponent:SetRoom(var_1_0.room)
 end
 
-function var_0_0.listNotificationInterests(arg_5_0)
+function var_0_0.listNotificationInterests(arg_8_0)
 	return {
-		Dorm3dSceneMediator.ON_CLICK_FURNITURE_SLOT,
+		Dorm3dRoomMediator.ON_CLICK_FURNITURE_SLOT,
 		GAME.APARTMENT_REPLACE_FURNITURE_DONE,
-		GAME.APARTMENT_REPLACE_FURNITURE_ERROR
+		GAME.APARTMENT_REPLACE_FURNITURE_ERROR,
+		GAME.SHOPPING_DONE
 	}
 end
 
-function var_0_0.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1:getName()
-	local var_6_1 = arg_6_1:getBody()
+function var_0_0.handleNotification(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_1:getName()
+	local var_9_1 = arg_9_1:getBody()
 
-	if var_6_0 == ApartmentProxy.UPDATE_APARTMENT then
+	if var_9_0 == ApartmentProxy.UPDATE_ROOM then
 		-- block empty
-	elseif var_6_0 == Dorm3dSceneMediator.ON_CLICK_FURNITURE_SLOT then
-		arg_6_0.viewComponent:OnClickFurnitureSlot(var_6_1)
-	elseif var_6_0 == GAME.APARTMENT_REPLACE_FURNITURE_DONE then
-		arg_6_0.viewComponent:OnReplaceFurnitureDone()
-	elseif var_6_0 == GAME.APARTMENT_REPLACE_FURNITURE_ERROR then
-		arg_6_0.viewComponent:OnReplaceFurnitureError()
+	elseif var_9_0 == Dorm3dRoomMediator.ON_CLICK_FURNITURE_SLOT then
+		arg_9_0.viewComponent:OnClickFurnitureSlot(var_9_1)
+	elseif var_9_0 == GAME.APARTMENT_REPLACE_FURNITURE_DONE then
+		arg_9_0.viewComponent:OnReplaceFurnitureDone()
+	elseif var_9_0 == GAME.APARTMENT_REPLACE_FURNITURE_ERROR then
+		arg_9_0.viewComponent:OnReplaceFurnitureError()
+	elseif var_9_0 == GAME.SHOPPING_DONE then
+		local var_9_2 = var_9_1.awards
+
+		if var_9_2 and #var_9_2 > 0 then
+			arg_9_0.viewComponent:emit(var_0_0.OPEN_DROP_LAYER, var_9_2, function()
+				local var_10_0 = arg_9_1:getBody().id
+				local var_10_1 = pg.shop_template[var_10_0].effect_args[1]
+
+				arg_9_0.viewComponent.room:AddFurnitureByID(var_10_1)
+				arg_9_0.viewComponent:UpdateDataDisplayFurnitures()
+				arg_9_0.viewComponent:UpdateView()
+			end)
+		end
 	end
 end
 
-function var_0_0.remove(arg_7_0)
+function var_0_0.remove(arg_11_0)
 	return
 end
 
