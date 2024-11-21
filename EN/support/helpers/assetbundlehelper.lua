@@ -29,9 +29,9 @@ end
 function var_0_0.AutoUnloadAssetBundle(arg_4_0, arg_4_1)
 	onNextTick(function()
 		if arg_4_1 then
-			arg_4_0:ClearDependenciesBundle()
-		else
 			arg_4_0:Dispose()
+		else
+			arg_4_0:ClearDependenciesBundle()
 		end
 	end)
 end

@@ -71,8 +71,7 @@ function var_0_5.__index(arg_5_0, arg_5_1)
 end
 
 function gcAll(arg_6_0)
-	PoolMgr.GetInstance():ExcessPainting()
-	ResourceMgr.Inst:unloadUnusedAssetBundles()
+	PoolMgr.GetInstance():ExcessPainting(true)
 	GCThread.GetInstance():GC(arg_6_0)
 end
 

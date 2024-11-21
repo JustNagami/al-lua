@@ -53,12 +53,22 @@ function var_0_0.IsEmpty(arg_7_0)
 end
 
 function var_0_0.GetDefaultLangType(arg_8_0)
-	if not var_0_0.IsEmpty(arg_8_0:GetJpCpkName()) then
-		return var_0_0.LANG_TYPE_JP
-	end
+	if PLATFORM_CODE == PLATFORM_CH or PLATFORM_CHT then
+		if not var_0_0.IsEmpty(arg_8_0:GetCnCpkName()) then
+			return var_0_0.LANG_TYPE_CH
+		end
 
-	if not var_0_0.IsEmpty(arg_8_0:GetCnCpkName()) then
-		return var_0_0.LANG_TYPE_CH
+		if not var_0_0.IsEmpty(arg_8_0:GetJpCpkName()) then
+			return var_0_0.LANG_TYPE_JP
+		end
+	else
+		if not var_0_0.IsEmpty(arg_8_0:GetJpCpkName()) then
+			return var_0_0.LANG_TYPE_JP
+		end
+
+		if not var_0_0.IsEmpty(arg_8_0:GetCnCpkName()) then
+			return var_0_0.LANG_TYPE_CH
+		end
 	end
 end
 
@@ -320,6 +330,10 @@ function var_0_0.GetResSize(arg_49_0, arg_49_1)
 	end
 
 	return arg_49_0.sizes[arg_49_1] or 0
+end
+
+function var_0_0.GetCaptionsColor(arg_50_0)
+	return arg_50_0:getConfig("captions_color")
 end
 
 return var_0_0

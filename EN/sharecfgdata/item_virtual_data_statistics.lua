@@ -192137,3 +192137,1785 @@ _G.pg.base.item_virtual_data_statistics[86408] = {
 		}
 	}
 }
+_G.pg.base.item_virtual_data_statistics[58999] = {
+	display = "Use to obtain a random gear skin.",
+	name = "Gear Skin (To LOVE-Ru)",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/equipskin_drop_display",
+	id = 58999,
+	order = 0,
+	display_icon = {
+		{
+			9,
+			1450,
+			1
+		},
+		{
+			9,
+			1451,
+			1
+		},
+		{
+			9,
+			1452,
+			1
+		},
+		{
+			9,
+			1453,
+			1
+		},
+		{
+			9,
+			1454,
+			1
+		},
+		{
+			9,
+			1455,
+			1
+		},
+		{
+			9,
+			1456,
+			1
+		},
+		{
+			9,
+			1457,
+			1
+		},
+		{
+			9,
+			1458,
+			1
+		},
+		{
+			9,
+			1459,
+			1
+		},
+		{
+			9,
+			1460,
+			1
+		},
+		{
+			9,
+			1461,
+			1
+		},
+		{
+			9,
+			1462,
+			1
+		},
+		{
+			9,
+			1463,
+			1
+		},
+		{
+			9,
+			1464,
+			1
+		},
+		{
+			9,
+			1465,
+			1
+		},
+		{
+			9,
+			1466,
+			1
+		},
+		{
+			9,
+			1467,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65047] = {
+	display = "Dangerous Inventions Incoming! event currency. Will be removed after the event ends.",
+	name = "Energy Stone",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/tolove_pt",
+	id = 65047,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65048] = {
+	display = "Crystal fragments with mysterious power inside. Used to unlock Help me, Miss Lala! requests.",
+	name = "Energy Fragment",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/tolove_jigsaw_pt",
+	id = 65048,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65049] = {
+	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
+	name = "Data Chip L",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_lala",
+	id = 65049,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65050] = {
+	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
+	name = "Data Chip N",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_nana",
+	id = 65050,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65051] = {
+	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
+	name = "Data Chip M",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_momo",
+	id = 65051,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65052] = {
+	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
+	name = "Data Chip K",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_yami",
+	id = 65052,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65053] = {
+	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
+	name = "Data Chip H",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_haruna",
+	id = 65053,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65054] = {
+	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
+	name = "Data Chip Y",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_yui",
+	id = 65054,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65055] = {
+	display = "Newcomers' Support Campaign shop currency. Removed after the campaign ends.",
+	name = "Campaign Pts",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/newserver_pt",
+	id = 65055,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65056] = {
+	display = "Can be used to build shipgirls in the Campaign pool. Acquired through the Newcomers' Support Campaign.",
+	name = "Newcomers' Build Ticket",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 8081,
+	virtual_type = 22,
+	is_world = 0,
+	icon = "Props/buildTicket_newserver",
+	id = 65056,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65057] = {
+	display = "",
+	name = "巡游点数",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 7020,
+	virtual_type = 21,
+	is_world = 0,
+	icon = "props/battlepass_pt",
+	id = 65057,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65058] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	name = "Rental Outfit Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65058,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[200307] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200307,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10038,
+			1
+		},
+		{
+			2,
+			21,
+			1
+		},
+		{
+			2,
+			18,
+			1
+		},
+		{
+			2,
+			4,
+			1
+		},
+		{
+			2,
+			3,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200308] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200308,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10050,
+			1
+		},
+		{
+			2,
+			10051,
+			1
+		},
+		{
+			2,
+			67,
+			1
+		},
+		{
+			2,
+			42,
+			1
+		},
+		{
+			2,
+			5,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200309] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200309,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10014,
+			1
+		},
+		{
+			2,
+			10035,
+			1
+		},
+		{
+			2,
+			10015,
+			1
+		},
+		{
+			2,
+			13,
+			1
+		},
+		{
+			2,
+			46,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200310] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200310,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10037,
+			1
+		},
+		{
+			2,
+			10045,
+			1
+		},
+		{
+			2,
+			10046,
+			1
+		},
+		{
+			2,
+			10003,
+			1
+		},
+		{
+			2,
+			2,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200311] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200311,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			11015,
+			1
+		},
+		{
+			2,
+			10042,
+			1
+		},
+		{
+			2,
+			10034,
+			1
+		},
+		{
+			2,
+			10006,
+			1
+		},
+		{
+			2,
+			10011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200312] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200312,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			11015,
+			1
+		},
+		{
+			2,
+			10042,
+			1
+		},
+		{
+			2,
+			10034,
+			1
+		},
+		{
+			2,
+			10006,
+			1
+		},
+		{
+			2,
+			10011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200313] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200313,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10038,
+			1
+		},
+		{
+			2,
+			21,
+			1
+		},
+		{
+			2,
+			18,
+			1
+		},
+		{
+			2,
+			4,
+			1
+		},
+		{
+			2,
+			3,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200314] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200314,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10050,
+			1
+		},
+		{
+			2,
+			10051,
+			1
+		},
+		{
+			2,
+			67,
+			1
+		},
+		{
+			2,
+			42,
+			1
+		},
+		{
+			2,
+			5,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200315] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200315,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10014,
+			1
+		},
+		{
+			2,
+			10035,
+			1
+		},
+		{
+			2,
+			10015,
+			1
+		},
+		{
+			2,
+			13,
+			1
+		},
+		{
+			2,
+			46,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200316] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200316,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10037,
+			1
+		},
+		{
+			2,
+			10045,
+			1
+		},
+		{
+			2,
+			10046,
+			1
+		},
+		{
+			2,
+			10003,
+			1
+		},
+		{
+			2,
+			2,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200317] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200317,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10042,
+			1
+		},
+		{
+			2,
+			10034,
+			1
+		},
+		{
+			2,
+			10006,
+			1
+		},
+		{
+			2,
+			10011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200318] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200318,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10042,
+			1
+		},
+		{
+			2,
+			10034,
+			1
+		},
+		{
+			2,
+			10006,
+			1
+		},
+		{
+			2,
+			10011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200319] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200319,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			205031,
+			1
+		},
+		{
+			4,
+			203011,
+			1
+		},
+		{
+			4,
+			201221,
+			1
+		},
+		{
+			4,
+			102061,
+			1
+		},
+		{
+			4,
+			305021,
+			1
+		},
+		{
+			4,
+			202021,
+			1
+		},
+		{
+			4,
+			105071,
+			1
+		},
+		{
+			4,
+			201101,
+			1
+		},
+		{
+			4,
+			102111,
+			1
+		},
+		{
+			4,
+			202011,
+			1
+		},
+		{
+			4,
+			201091,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			103021,
+			1
+		},
+		{
+			4,
+			102021,
+			1
+		},
+		{
+			4,
+			201081,
+			1
+		},
+		{
+			4,
+			103011,
+			1
+		},
+		{
+			4,
+			201111,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		},
+		{
+			4,
+			105011,
+			1
+		},
+		{
+			4,
+			107011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200320] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200320,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			107051,
+			1
+		},
+		{
+			4,
+			206031,
+			1
+		},
+		{
+			4,
+			201221,
+			1
+		},
+		{
+			4,
+			102061,
+			1
+		},
+		{
+			4,
+			305021,
+			1
+		},
+		{
+			4,
+			202021,
+			1
+		},
+		{
+			4,
+			105071,
+			1
+		},
+		{
+			4,
+			201101,
+			1
+		},
+		{
+			4,
+			102111,
+			1
+		},
+		{
+			4,
+			202011,
+			1
+		},
+		{
+			4,
+			201091,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			103021,
+			1
+		},
+		{
+			4,
+			102021,
+			1
+		},
+		{
+			4,
+			201081,
+			1
+		},
+		{
+			4,
+			103011,
+			1
+		},
+		{
+			4,
+			201111,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		},
+		{
+			4,
+			105011,
+			1
+		},
+		{
+			4,
+			107011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200321] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200321,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			201231,
+			1
+		},
+		{
+			4,
+			201141,
+			1
+		},
+		{
+			4,
+			201221,
+			1
+		},
+		{
+			4,
+			102061,
+			1
+		},
+		{
+			4,
+			305021,
+			1
+		},
+		{
+			4,
+			202021,
+			1
+		},
+		{
+			4,
+			105071,
+			1
+		},
+		{
+			4,
+			201101,
+			1
+		},
+		{
+			4,
+			102111,
+			1
+		},
+		{
+			4,
+			202011,
+			1
+		},
+		{
+			4,
+			201091,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			103021,
+			1
+		},
+		{
+			4,
+			102021,
+			1
+		},
+		{
+			4,
+			201081,
+			1
+		},
+		{
+			4,
+			103011,
+			1
+		},
+		{
+			4,
+			201111,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		},
+		{
+			4,
+			105011,
+			1
+		},
+		{
+			4,
+			107011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200322] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200322,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			102091,
+			1
+		},
+		{
+			4,
+			202111,
+			1
+		},
+		{
+			4,
+			201221,
+			1
+		},
+		{
+			4,
+			102061,
+			1
+		},
+		{
+			4,
+			305021,
+			1
+		},
+		{
+			4,
+			202021,
+			1
+		},
+		{
+			4,
+			105071,
+			1
+		},
+		{
+			4,
+			201101,
+			1
+		},
+		{
+			4,
+			102111,
+			1
+		},
+		{
+			4,
+			202011,
+			1
+		},
+		{
+			4,
+			201091,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			103021,
+			1
+		},
+		{
+			4,
+			102021,
+			1
+		},
+		{
+			4,
+			201081,
+			1
+		},
+		{
+			4,
+			103011,
+			1
+		},
+		{
+			4,
+			201111,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		},
+		{
+			4,
+			105011,
+			1
+		},
+		{
+			4,
+			107011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200323] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200323,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			11100031,
+			1
+		},
+		{
+			4,
+			205011,
+			1
+		},
+		{
+			4,
+			203071,
+			1
+		},
+		{
+			4,
+			201221,
+			1
+		},
+		{
+			4,
+			102061,
+			1
+		},
+		{
+			4,
+			305021,
+			1
+		},
+		{
+			4,
+			202021,
+			1
+		},
+		{
+			4,
+			105071,
+			1
+		},
+		{
+			4,
+			201101,
+			1
+		},
+		{
+			4,
+			102111,
+			1
+		},
+		{
+			4,
+			202011,
+			1
+		},
+		{
+			4,
+			201091,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			103021,
+			1
+		},
+		{
+			4,
+			102021,
+			1
+		},
+		{
+			4,
+			201081,
+			1
+		},
+		{
+			4,
+			103011,
+			1
+		},
+		{
+			4,
+			201111,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		},
+		{
+			4,
+			105011,
+			1
+		},
+		{
+			4,
+			107011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200324] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200324,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			11100031,
+			1
+		},
+		{
+			4,
+			205011,
+			1
+		},
+		{
+			4,
+			203071,
+			1
+		},
+		{
+			4,
+			201221,
+			1
+		},
+		{
+			4,
+			102061,
+			1
+		},
+		{
+			4,
+			305021,
+			1
+		},
+		{
+			4,
+			202021,
+			1
+		},
+		{
+			4,
+			105071,
+			1
+		},
+		{
+			4,
+			201101,
+			1
+		},
+		{
+			4,
+			102111,
+			1
+		},
+		{
+			4,
+			202011,
+			1
+		},
+		{
+			4,
+			201091,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			103021,
+			1
+		},
+		{
+			4,
+			102021,
+			1
+		},
+		{
+			4,
+			201081,
+			1
+		},
+		{
+			4,
+			103011,
+			1
+		},
+		{
+			4,
+			201111,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		},
+		{
+			4,
+			105011,
+			1
+		},
+		{
+			4,
+			107011,
+			1
+		}
+	}
+}

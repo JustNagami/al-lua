@@ -261,7 +261,7 @@ end
 
 function var_0_0.LoadCounsellor(arg_32_0, arg_32_1, arg_32_2)
 	if not arg_32_0.counsellors[arg_32_1] then
-		ResourceMgr.Inst:getAssetAsync("guideitem/" .. arg_32_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_33_0)
+		LoadAnyAsync("guideitem/" .. arg_32_1, "", nil, function(arg_33_0)
 			if IsNil(arg_33_0) then
 				return
 			end
@@ -271,14 +271,14 @@ function var_0_0.LoadCounsellor(arg_32_0, arg_32_1, arg_32_2)
 			arg_32_0.counsellors[arg_32_1] = var_33_0.transform
 
 			arg_32_2()
-		end), true, true)
+		end)
 	else
 		arg_32_2()
 	end
 end
 
 function var_0_0.LoadDialogueWindow(arg_34_0, arg_34_1, arg_34_2)
-	ResourceMgr.Inst:getAssetAsync("guideitem/window_" .. arg_34_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_35_0)
+	LoadAnyAsync("guideitem/window_" .. arg_34_1, "", nil, function(arg_35_0)
 		if IsNil(arg_35_0) then
 			return
 		end
@@ -290,7 +290,7 @@ function var_0_0.LoadDialogueWindow(arg_34_0, arg_34_1, arg_34_2)
 		if arg_34_2 then
 			arg_34_2()
 		end
-	end), true, true)
+	end)
 end
 
 function var_0_0.ActiveDialogueWindow(arg_36_0, arg_36_1)

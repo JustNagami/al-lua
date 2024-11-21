@@ -26,18 +26,21 @@ function var_0_0.Ctor(arg_3_0, arg_3_1)
 	arg_3_0.text = nil
 	arg_3_0.subtile = nil
 	arg_3_0.player = nil
+	arg_3_0.nowTime = nil
+	arg_3_0.endTime = nil
 
 	UpdateBeat:AddListener(arg_3_0.handle)
 end
 
-function var_0_0.Play(arg_4_0, arg_4_1, arg_4_2)
+function var_0_0.Play(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
 	if not arg_4_0:CheckCpkAndSubtitle(arg_4_1, next) then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("Resource does not exist"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("资源不存在"))
 
 		return
 	end
 
-	arg_4_0.onExit = arg_4_2
+	arg_4_0.captionsColor = arg_4_2
+	arg_4_0.onExit = arg_4_3
 
 	seriesAsync({
 		function(arg_5_0)
@@ -73,184 +76,312 @@ function var_0_0.RegisterEvent(arg_8_0)
 	onButton(arg_8_0, arg_8_0._go, function()
 		arg_8_0:Pause()
 	end, SFX_PANEL)
+	onToggle(arg_8_0, arg_8_0.loop, function(arg_12_0)
+		getProxy(CryptolaliaProxy):SetLoop(arg_12_0)
+		setActive(arg_8_0.loopOn, arg_12_0)
+		setActive(arg_8_0.loopOff, not arg_12_0)
+	end)
+	triggerToggle(arg_8_0.loop, getProxy(CryptolaliaProxy):GetLoop())
 end
 
-function var_0_0._Play(arg_12_0)
-	if arg_12_0.state == var_0_3 then
-		arg_12_0.player:Pause(false)
-	elseif arg_12_0.state == var_0_4 then
-		arg_12_0.subtile = Clone(arg_12_0.subtileBackUp)
+function var_0_0._Play(arg_13_0)
+	if arg_13_0.state == var_0_3 then
+		arg_13_0.player:Pause(false)
+	elseif arg_13_0.state == var_0_4 then
+		arg_13_0.subtile = Clone(arg_13_0.subtileBackUp)
 
-		arg_12_0.player.player:SetSeekPosition(0)
-		arg_12_0.player.player:Start()
+		if arg_13_0.targetFrame then
+			arg_13_0.player.player:SetSeekPosition(arg_13_0.targetFrame)
+		else
+			arg_13_0.player.player:SetSeekPosition(0)
+		end
+
+		arg_13_0.player.player:Start()
 	else
-		arg_12_0.subtile = Clone(arg_12_0.subtileBackUp)
+		arg_13_0.subtile = Clone(arg_13_0.subtileBackUp)
 
-		arg_12_0.player:PlayCpk()
+		arg_13_0.player:PlayCpk()
 	end
 
-	setActive(arg_12_0.playBtn, false)
-	setActive(arg_12_0.backBtn, false)
+	setActive(arg_13_0.playBtn, false)
+	setActive(arg_13_0.backBtn, false)
+	setActive(arg_13_0.bottom, false)
 
-	arg_12_0.state = var_0_2
+	arg_13_0.state = var_0_2
 end
 
-function var_0_0.Pause(arg_13_0)
-	if arg_13_0.state ~= var_0_2 then
-		return
-	end
-
-	arg_13_0.state = var_0_3
-
-	setActive(arg_13_0.playBtn, true)
-	arg_13_0.player:Pause(true)
-	setActive(arg_13_0.backBtn, true)
-end
-
-function var_0_0.Stop(arg_14_0)
-	arg_14_0:Dispose()
-
-	arg_14_0.state = var_0_5
-end
-
-function var_0_0.CheckCpkAndSubtitle(arg_15_0, arg_15_1, arg_15_2)
-	return PathMgr.FileExists(var_0_7(arg_15_1)) and PathMgr.FileExists(var_0_6(arg_15_1))
-end
-
-function var_0_0.DownloadCpkAndSubtitle(arg_16_0, arg_16_1, arg_16_2)
-	arg_16_2()
-end
-
-local function var_0_8(arg_17_0)
-	local var_17_0 = var_0_6(arg_17_0)
-	local var_17_1 = PathMgr.ReadAllLines(var_17_0)
-	local var_17_2 = {}
-
-	for iter_17_0 = 1, var_17_1.Length do
-		local var_17_3 = var_17_1[iter_17_0 - 1]
-		local var_17_4 = string.match(var_17_3, "#%d+#%d+$")
-		local var_17_5 = string.split(var_17_4, "#")
-		local var_17_6 = var_17_5[2]
-		local var_17_7 = var_17_5[3]
-		local var_17_8 = string.gsub(var_17_3, var_17_4, "")
-
-		table.insert(var_17_2, {
-			startTime = tonumber(var_17_6),
-			endTime = tonumber(var_17_7),
-			content = var_17_8
-		})
-	end
-
-	return var_17_2
-end
-
-function var_0_0.LoadVedioPlayer(arg_18_0, arg_18_1, arg_18_2)
-	ResourceMgr.Inst:getAssetAsync("Cryptolalia/" .. arg_18_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_19_0)
-		local var_19_0 = Object.Instantiate(arg_19_0, arg_18_0.root)
-
-		arg_18_0.text = var_19_0.transform:Find("Text"):GetComponent(typeof(Text))
-		arg_18_0.subtileBackUp = var_0_8(arg_18_1)
-		arg_18_0.player = var_19_0.transform:Find("cpk"):GetComponent(typeof(CriManaCpkUI))
-		arg_18_0.playBtn = var_19_0.transform:Find("play")
-		arg_18_0.backBtn = var_19_0.transform:Find("back")
-		arg_18_0._go = var_19_0
-
-		arg_18_0:_Play()
-		arg_18_2()
-	end), true, true)
-end
-
-function var_0_0.OnPlayEnd(arg_20_0)
-	arg_20_0.player.player.frameInfo.frameNo = 0
-	arg_20_0.state = var_0_4
-
-	setActive(arg_20_0.playBtn, true)
-	setActive(arg_20_0.backBtn, true)
-end
-
-local function var_0_9(arg_21_0)
-	if not arg_21_0.frameInfo then
+local function var_0_8(arg_14_0)
+	if not arg_14_0.frameInfo then
 		return 0
 	end
 
-	local var_21_0 = arg_21_0.frameInfo
+	local var_14_0 = arg_14_0.frameInfo
 
-	return var_21_0.frameNo / var_21_0.framerateN / var_21_0.framerateD * 1000000
+	return var_14_0.frameNo / var_14_0.framerateN / var_14_0.framerateD * 1000000
 end
 
-local function var_0_10(arg_22_0, arg_22_1)
-	if not arg_22_0 or #arg_22_0 <= 0 then
+local function var_0_9(arg_15_0, arg_15_1)
+	if not arg_15_0 or #arg_15_0 <= 0 then
 		return ""
 	end
 
-	local var_22_0 = arg_22_0[1]
+	local var_15_0 = arg_15_0[1]
 
-	if arg_22_1 >= var_22_0.startTime and arg_22_1 <= var_22_0.endTime then
-		table.remove(arg_22_0, 1)
+	if arg_15_1 >= var_15_0.startTime and arg_15_1 <= var_15_0.endTime then
+		table.remove(arg_15_0, 1)
 
-		return var_22_0.content, var_22_0.endTime
-	elseif arg_22_1 > var_22_0.startTime and arg_22_1 > var_22_0.endTime then
-		table.remove(arg_22_0, 1)
+		return var_15_0.content, var_15_0.endTime
+	elseif arg_15_1 > var_15_0.startTime and arg_15_1 > var_15_0.endTime then
+		table.remove(arg_15_0, 1)
 	end
 
 	return ""
 end
 
-function var_0_0.Update(arg_23_0)
-	if arg_23_0.text == nil or arg_23_0.subtile == nil or arg_23_0.player == nil or arg_23_0.player.player.frameInfo == nil then
-		return
+local function var_0_10(arg_16_0, arg_16_1)
+	if not arg_16_0 or #arg_16_0 <= 0 then
+		return ""
 	end
 
-	if arg_23_0.state == var_0_3 or arg_23_0.state == var_0_4 then
-		return
-	end
+	while #arg_16_0 > 0 do
+		local var_16_0 = arg_16_0[1]
 
-	if arg_23_0.player.player.frameInfo.frameNo >= arg_23_0.player.player.movieInfo.totalFrames - 1 then
-		arg_23_0:OnPlayEnd()
+		if arg_16_1 < var_16_0.startTime then
+			return ""
+		elseif arg_16_1 >= var_16_0.startTime and arg_16_1 <= var_16_0.endTime then
+			table.remove(arg_16_0, 1)
 
-		return
-	end
-
-	local var_23_0 = var_0_9(arg_23_0.player.player)
-	local var_23_1, var_23_2 = var_0_10(arg_23_0.subtile, var_23_0)
-
-	if var_23_1 and var_23_1 ~= "" then
-		arg_23_0.hideTime = var_23_2
-		arg_23_0.text.text = var_23_1
-
-		setActive(arg_23_0.text.gameObject, true)
-	elseif arg_23_0.hideTime and var_23_0 >= arg_23_0.hideTime then
-		arg_23_0.text.text = ""
-		arg_23_0.hideTime = nil
-
-		setActive(arg_23_0.text.gameObject, false)
+			return var_16_0.content, var_16_0.endTime
+		elseif arg_16_1 > var_16_0.endTime then
+			table.remove(arg_16_0, 1)
+		end
 	end
 end
 
-function var_0_0.Dispose(arg_24_0)
-	if arg_24_0.state == var_0_5 then
+function var_0_0.Pause(arg_17_0)
+	if arg_17_0.state ~= var_0_2 then
 		return
 	end
 
-	pg.DelegateInfo.Dispose(arg_24_0)
+	arg_17_0.state = var_0_3
 
-	if arg_24_0.player then
-		arg_24_0.player:SetPlayEndHandler(nil)
-		arg_24_0.player.player:Stop()
+	setActive(arg_17_0.playBtn, true)
+	arg_17_0.player:Pause(true)
+	setActive(arg_17_0.backBtn, true)
+	setActive(arg_17_0.bottom, true)
+
+	local var_17_0 = var_0_8(arg_17_0.player.player)
+	local var_17_1 = math.ceil(var_17_0)
+
+	setText(arg_17_0.nowTime, math.floor(var_17_1 / 60) .. ":" .. string.format("%02d", var_17_1 % 60))
+
+	local var_17_2 = arg_17_0.progress:GetComponent(typeof(Slider))
+
+	var_17_2.onValueChanged:RemoveAllListeners()
+
+	var_17_2.value = var_17_1 / arg_17_0.totalTime
+
+	var_17_2.onValueChanged:AddListener(function(arg_18_0)
+		if arg_17_0.state ~= var_0_4 then
+			arg_17_0.state = var_0_4
+			arg_17_0.totalFrames = arg_17_0.player.player.movieInfo.totalFrames
+		end
+
+		arg_17_0.player.player:StopForSeek()
+
+		arg_17_0.targetFrame = math.floor(arg_18_0 * arg_17_0.totalFrames)
+
+		if arg_17_0.targetFrame == arg_17_0.totalFrames then
+			arg_17_0.targetFrame = arg_17_0.totalFrames - 10
+		end
+
+		local var_18_0 = arg_17_0.totalTime * arg_18_0
+
+		setText(arg_17_0.nowTime, math.floor(var_18_0 / 60) .. ":" .. string.format("%02d", var_18_0 % 60))
+
+		arg_17_0.subtile = Clone(arg_17_0.subtileBackUp)
+
+		local var_18_1, var_18_2 = var_0_10(arg_17_0.subtile, var_18_0)
+
+		local function var_18_3()
+			arg_17_0.timeStamp = nil
+
+			arg_17_0.player.player:SetSeekPosition(arg_17_0.targetFrame)
+			arg_17_0.player.player:Start()
+
+			arg_17_0.hasStopped = false
+
+			if var_18_1 and var_18_1 ~= "" then
+				arg_17_0.hideTime = var_18_2
+				arg_17_0.text.text = "<color=" .. arg_17_0.captionsColor .. ">" .. var_18_1 .. "</color>"
+
+				setActive(arg_17_0.text.gameObject, true)
+			else
+				arg_17_0.hideTime = nil
+				arg_17_0.text.text = ""
+
+				setActive(arg_17_0.text.gameObject, false)
+			end
+		end
+
+		arg_17_0:RemoveTimer()
+		arg_17_0:StartTimer(var_18_3, 0.5)
+	end)
+end
+
+function var_0_0.Stop(arg_20_0)
+	arg_20_0:Dispose()
+
+	arg_20_0.state = var_0_5
+end
+
+function var_0_0.CheckCpkAndSubtitle(arg_21_0, arg_21_1, arg_21_2)
+	return PathMgr.FileExists(var_0_7(arg_21_1)) and PathMgr.FileExists(var_0_6(arg_21_1))
+end
+
+function var_0_0.DownloadCpkAndSubtitle(arg_22_0, arg_22_1, arg_22_2)
+	arg_22_2()
+end
+
+local function var_0_11(arg_23_0)
+	local var_23_0 = var_0_6(arg_23_0)
+	local var_23_1 = PathMgr.ReadAllLines(var_23_0)
+	local var_23_2 = {}
+
+	for iter_23_0 = 1, var_23_1.Length do
+		local var_23_3 = var_23_1[iter_23_0 - 1]
+		local var_23_4 = string.match(var_23_3, "#%d+#%d+$")
+		local var_23_5 = string.split(var_23_4, "#")
+		local var_23_6 = var_23_5[2]
+		local var_23_7 = var_23_5[3]
+		local var_23_8 = string.gsub(var_23_3, var_23_4, "")
+
+		table.insert(var_23_2, {
+			startTime = tonumber(var_23_6),
+			endTime = tonumber(var_23_7),
+			content = var_23_8
+		})
 	end
 
-	if arg_24_0.player and not IsNil(arg_24_0.player.gameObject) then
-		Object.Destroy(arg_24_0.player.gameObject.transform.parent.gameObject)
+	return var_23_2
+end
+
+function var_0_0.LoadVedioPlayer(arg_24_0, arg_24_1, arg_24_2)
+	ResourceMgr.Inst:getAssetAsync("Cryptolalia/" .. arg_24_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_25_0)
+		local var_25_0 = Object.Instantiate(arg_25_0, arg_24_0.root)
+
+		arg_24_0.text = var_25_0.transform:Find("Text"):GetComponent(typeof(Text))
+		arg_24_0.subtileBackUp = var_0_11(arg_24_1)
+		arg_24_0.player = var_25_0.transform:Find("cpk"):GetComponent(typeof(CriManaCpkUI))
+		arg_24_0.playBtn = var_25_0.transform:Find("play")
+		arg_24_0.backBtn = var_25_0.transform:Find("back")
+		arg_24_0.bottom = var_25_0.transform:Find("bottom")
+		arg_24_0.nowTime = var_25_0.transform:Find("bottom/nowTime")
+		arg_24_0.endTime = var_25_0.transform:Find("bottom/endTime")
+		arg_24_0.progress = var_25_0.transform:Find("bottom/progress")
+		arg_24_0.loop = var_25_0.transform:Find("bottom/loop")
+		arg_24_0.loopOff = var_25_0.transform:Find("bottom/loop/off")
+		arg_24_0.loopOn = var_25_0.transform:Find("bottom/loop/on")
+		arg_24_0._go = var_25_0
+
+		arg_24_0.player:SetCpkTotalTimeCallback(function(arg_26_0)
+			arg_24_0.totalTime = math.ceil(arg_26_0)
+
+			setText(arg_24_0.endTime, math.floor(arg_24_0.totalTime / 60) .. ":" .. string.format("%02d", arg_24_0.totalTime % 60))
+		end)
+		arg_24_0:_Play()
+		arg_24_2()
+	end), true, true)
+end
+
+function var_0_0.OnPlayEnd(arg_27_0)
+	if getProxy(CryptolaliaProxy):GetLoop() then
+		arg_27_0.player.player:Stop()
+
+		arg_27_0.subtile = Clone(arg_27_0.subtileBackUp)
+
+		arg_27_0.player.player:SetSeekPosition(0)
+		arg_27_0.player:PlayCpk()
+	else
+		triggerButton(arg_27_0.backBtn)
+	end
+end
+
+function var_0_0.Update(arg_28_0)
+	if arg_28_0.text == nil or arg_28_0.subtile == nil or arg_28_0.player == nil or arg_28_0.player.player.frameInfo == nil then
+		return
 	end
 
-	arg_24_0.onExit = nil
-	arg_24_0.text = nil
-	arg_24_0.subtile = nil
-	arg_24_0.player = nil
-	arg_24_0.hideTime = nil
+	if arg_28_0.state == var_0_4 and arg_28_0.player.player.frameInfo.frameNo == arg_28_0.targetFrame and not arg_28_0.hasStopped then
+		arg_28_0.hasStopped = true
 
-	if arg_24_0.handle then
-		UpdateBeat:RemoveListener(arg_24_0.handle)
+		arg_28_0.player.player:StopForSeek()
+	end
+
+	if arg_28_0.state == var_0_3 or arg_28_0.state == var_0_4 then
+		return
+	end
+
+	if arg_28_0.player.player.frameInfo.frameNo >= arg_28_0.player.player.movieInfo.totalFrames - 1 then
+		arg_28_0:OnPlayEnd()
+
+		return
+	end
+
+	local var_28_0 = var_0_8(arg_28_0.player.player)
+	local var_28_1, var_28_2 = var_0_9(arg_28_0.subtile, var_28_0)
+
+	if var_28_1 and var_28_1 ~= "" then
+		arg_28_0.hideTime = var_28_2
+		arg_28_0.text.text = "<color=" .. arg_28_0.captionsColor .. ">" .. var_28_1 .. "</color>"
+
+		setActive(arg_28_0.text.gameObject, true)
+	elseif arg_28_0.hideTime and var_28_0 >= arg_28_0.hideTime then
+		arg_28_0.text.text = ""
+		arg_28_0.hideTime = nil
+
+		setActive(arg_28_0.text.gameObject, false)
+	end
+end
+
+function var_0_0.Dispose(arg_29_0)
+	if arg_29_0.state == var_0_5 then
+		return
+	end
+
+	pg.DelegateInfo.Dispose(arg_29_0)
+
+	if arg_29_0.player then
+		arg_29_0.player:SetPlayEndHandler(nil)
+		arg_29_0.player.player:Stop()
+	end
+
+	if arg_29_0.player and not IsNil(arg_29_0.player.gameObject) then
+		Object.Destroy(arg_29_0.player.gameObject.transform.parent.gameObject)
+	end
+
+	arg_29_0.onExit = nil
+	arg_29_0.text = nil
+	arg_29_0.nowTime = nil
+	arg_29_0.endTime = nil
+	arg_29_0.subtile = nil
+	arg_29_0.player = nil
+	arg_29_0.hideTime = nil
+
+	if arg_29_0.handle then
+		UpdateBeat:RemoveListener(arg_29_0.handle)
+	end
+end
+
+function var_0_0.StartTimer(arg_30_0, arg_30_1, arg_30_2)
+	arg_30_0.timer = Timer.New(arg_30_1, arg_30_2, 1)
+
+	arg_30_0.timer:Start()
+end
+
+function var_0_0.RemoveTimer(arg_31_0)
+	if arg_31_0.timer then
+		arg_31_0.timer:Stop()
 	end
 end
 

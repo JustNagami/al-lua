@@ -21382,3 +21382,843 @@ _G.pg.base.spweapon_data_statistics[13430] = {
 		}
 	}
 }
+_G.pg.base.spweapon_data_statistics[13660] = {
+	tech = 0,
+	name = "Omnitool",
+	value_2_random = 0,
+	type = 4,
+	value_1_random = 0,
+	value_1 = 23,
+	effect_id_display = 111200,
+	level = 1,
+	descrip = "Lala Satalin Deviluke's Augment Module",
+	uncraftable = 1,
+	next = 13661,
+	upgrade_id = 10001,
+	value_2 = 6,
+	icon = "13660",
+	effect_id = 111200,
+	attribute_2 = "hit",
+	id = 13660,
+	rarity = 4,
+	unique = 1110001,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		3
+	},
+	skill_upgrade = {
+		{
+			0,
+			111030
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13661] = {
+	prev = 13660,
+	base = 13660,
+	next = 13662,
+	upgrade_id = 10002,
+	id = 13661,
+	value_2 = 6,
+	value_1 = 24,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13662] = {
+	prev = 13661,
+	base = 13660,
+	next = 13663,
+	upgrade_id = 10003,
+	id = 13662,
+	value_2 = 7,
+	value_1 = 25,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13663] = {
+	prev = 13662,
+	base = 13660,
+	next = 13664,
+	upgrade_id = 10004,
+	id = 13663,
+	value_2 = 8,
+	value_1 = 26,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13664] = {
+	prev = 13663,
+	base = 13660,
+	next = 13665,
+	upgrade_id = 10005,
+	id = 13664,
+	value_2 = 9,
+	value_1 = 27,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13665] = {
+	prev = 13664,
+	base = 13660,
+	next = 13666,
+	upgrade_id = 10006,
+	id = 13665,
+	value_2 = 10,
+	value_1 = 28,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13666] = {
+	prev = 13665,
+	base = 13660,
+	next = 13667,
+	upgrade_id = 10007,
+	id = 13666,
+	value_2 = 11,
+	value_1 = 29,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13667] = {
+	prev = 13666,
+	base = 13660,
+	next = 13668,
+	upgrade_id = 10008,
+	id = 13667,
+	value_2 = 12,
+	value_1 = 30,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13668] = {
+	prev = 13667,
+	base = 13660,
+	next = 13669,
+	upgrade_id = 10009,
+	id = 13668,
+	value_2 = 13,
+	value_1 = 31,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13669] = {
+	prev = 13668,
+	base = 13660,
+	next = 13670,
+	upgrade_id = 10010,
+	id = 13669,
+	value_2 = 14,
+	value_1 = 33,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13670] = {
+	base = 13660,
+	prev = 13669,
+	next = 0,
+	upgrade_id = 10011,
+	id = 13670,
+	value_2 = 15,
+	value_1 = 35,
+	level = 11,
+	skill_upgrade = {
+		{
+			111020,
+			111030
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[13680] = {
+	tech = 0,
+	name = "Animal Attack",
+	value_2_random = 0,
+	type = 1,
+	value_1_random = 0,
+	value_1 = 21,
+	effect_id_display = 111210,
+	level = 1,
+	descrip = "Nana Astar Deviluke's Augment Module",
+	uncraftable = 1,
+	next = 13681,
+	upgrade_id = 10001,
+	value_2 = 12,
+	icon = "13680",
+	effect_id = 111210,
+	attribute_2 = "hit",
+	id = 13680,
+	rarity = 4,
+	unique = 1110002,
+	important = 2,
+	prev = 0,
+	attribute_1 = "torpedo",
+	usability = {
+		1
+	},
+	skill_upgrade = {
+		{
+			0,
+			111060
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13681] = {
+	prev = 13680,
+	base = 13680,
+	next = 13682,
+	upgrade_id = 10002,
+	id = 13681,
+	value_2 = 13,
+	value_1 = 22,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13682] = {
+	prev = 13681,
+	base = 13680,
+	next = 13683,
+	upgrade_id = 10003,
+	id = 13682,
+	value_2 = 13,
+	value_1 = 23,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13683] = {
+	prev = 13682,
+	base = 13680,
+	next = 13684,
+	upgrade_id = 10004,
+	id = 13683,
+	value_2 = 14,
+	value_1 = 24,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13684] = {
+	prev = 13683,
+	base = 13680,
+	next = 13685,
+	upgrade_id = 10005,
+	id = 13684,
+	value_2 = 14,
+	value_1 = 25,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13685] = {
+	prev = 13684,
+	base = 13680,
+	next = 13686,
+	upgrade_id = 10006,
+	id = 13685,
+	value_2 = 15,
+	value_1 = 26,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13686] = {
+	prev = 13685,
+	base = 13680,
+	next = 13687,
+	upgrade_id = 10007,
+	id = 13686,
+	value_2 = 15,
+	value_1 = 27,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13687] = {
+	prev = 13686,
+	base = 13680,
+	next = 13688,
+	upgrade_id = 10008,
+	id = 13687,
+	value_2 = 16,
+	value_1 = 28,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13688] = {
+	prev = 13687,
+	base = 13680,
+	next = 13689,
+	upgrade_id = 10009,
+	id = 13688,
+	value_2 = 16,
+	value_1 = 29,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13689] = {
+	prev = 13688,
+	base = 13680,
+	next = 13690,
+	upgrade_id = 10010,
+	id = 13689,
+	value_2 = 17,
+	value_1 = 30,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13690] = {
+	base = 13680,
+	prev = 13689,
+	next = 0,
+	upgrade_id = 10011,
+	id = 13690,
+	value_2 = 18,
+	value_1 = 32,
+	level = 11,
+	skill_upgrade = {
+		{
+			111040,
+			111060
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[13700] = {
+	tech = 0,
+	name = "Burst Flower",
+	value_2_random = 0,
+	type = 2,
+	value_1_random = 0,
+	value_1 = 21,
+	effect_id_display = 111220,
+	level = 1,
+	descrip = "Momo Belia Deviluke's Augment Module",
+	uncraftable = 1,
+	next = 13701,
+	upgrade_id = 10001,
+	value_2 = 11,
+	icon = "13700",
+	effect_id = 111220,
+	attribute_2 = "reload",
+	id = 13700,
+	rarity = 4,
+	unique = 1110003,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		2
+	},
+	skill_upgrade = {
+		{
+			0,
+			111080
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13701] = {
+	prev = 13700,
+	base = 13700,
+	next = 13702,
+	upgrade_id = 10002,
+	id = 13701,
+	value_2 = 11,
+	value_1 = 22,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13702] = {
+	prev = 13701,
+	base = 13700,
+	next = 13703,
+	upgrade_id = 10003,
+	id = 13702,
+	value_2 = 12,
+	value_1 = 23,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13703] = {
+	prev = 13702,
+	base = 13700,
+	next = 13704,
+	upgrade_id = 10004,
+	id = 13703,
+	value_2 = 13,
+	value_1 = 24,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13704] = {
+	prev = 13703,
+	base = 13700,
+	next = 13705,
+	upgrade_id = 10005,
+	id = 13704,
+	value_2 = 14,
+	value_1 = 25,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13705] = {
+	prev = 13704,
+	base = 13700,
+	next = 13706,
+	upgrade_id = 10006,
+	id = 13705,
+	value_2 = 15,
+	value_1 = 26,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13706] = {
+	prev = 13705,
+	base = 13700,
+	next = 13707,
+	upgrade_id = 10007,
+	id = 13706,
+	value_2 = 16,
+	value_1 = 27,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13707] = {
+	prev = 13706,
+	base = 13700,
+	next = 13708,
+	upgrade_id = 10008,
+	id = 13707,
+	value_2 = 17,
+	value_1 = 28,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13708] = {
+	prev = 13707,
+	base = 13700,
+	next = 13709,
+	upgrade_id = 10009,
+	id = 13708,
+	value_2 = 18,
+	value_1 = 29,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13709] = {
+	prev = 13708,
+	base = 13700,
+	next = 13710,
+	upgrade_id = 10010,
+	id = 13709,
+	value_2 = 19,
+	value_1 = 30,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13710] = {
+	base = 13700,
+	prev = 13709,
+	next = 0,
+	upgrade_id = 10011,
+	id = 13710,
+	value_2 = 20,
+	value_1 = 32,
+	level = 11,
+	skill_upgrade = {
+		{
+			111070,
+			111080
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[13720] = {
+	tech = 0,
+	name = "Golden Slash",
+	value_2_random = 0,
+	type = 6,
+	value_1_random = 0,
+	value_1 = 20,
+	effect_id_display = 111230,
+	level = 1,
+	descrip = "Golden Darkness' Augment Module",
+	uncraftable = 1,
+	next = 13721,
+	upgrade_id = 10001,
+	value_2 = 6,
+	icon = "13720",
+	effect_id = 111230,
+	attribute_2 = "hit",
+	id = 13720,
+	rarity = 4,
+	unique = 1110004,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		5
+	},
+	skill_upgrade = {
+		{
+			0,
+			111110
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13721] = {
+	prev = 13720,
+	base = 13720,
+	next = 13722,
+	upgrade_id = 10002,
+	id = 13721,
+	value_2 = 6,
+	value_1 = 21,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13722] = {
+	prev = 13721,
+	base = 13720,
+	next = 13723,
+	upgrade_id = 10003,
+	id = 13722,
+	value_2 = 7,
+	value_1 = 22,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13723] = {
+	prev = 13722,
+	base = 13720,
+	next = 13724,
+	upgrade_id = 10004,
+	id = 13723,
+	value_2 = 8,
+	value_1 = 23,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13724] = {
+	prev = 13723,
+	base = 13720,
+	next = 13725,
+	upgrade_id = 10005,
+	id = 13724,
+	value_2 = 9,
+	value_1 = 24,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13725] = {
+	prev = 13724,
+	base = 13720,
+	next = 13726,
+	upgrade_id = 10006,
+	id = 13725,
+	value_2 = 10,
+	value_1 = 25,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13726] = {
+	prev = 13725,
+	base = 13720,
+	next = 13727,
+	upgrade_id = 10007,
+	id = 13726,
+	value_2 = 11,
+	value_1 = 26,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13727] = {
+	prev = 13726,
+	base = 13720,
+	next = 13728,
+	upgrade_id = 10008,
+	id = 13727,
+	value_2 = 12,
+	value_1 = 27,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13728] = {
+	prev = 13727,
+	base = 13720,
+	next = 13729,
+	upgrade_id = 10009,
+	id = 13728,
+	value_2 = 13,
+	value_1 = 28,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13729] = {
+	prev = 13728,
+	base = 13720,
+	next = 13730,
+	upgrade_id = 10010,
+	id = 13729,
+	value_2 = 14,
+	value_1 = 29,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13730] = {
+	base = 13720,
+	prev = 13729,
+	next = 0,
+	upgrade_id = 10011,
+	id = 13730,
+	value_2 = 15,
+	value_1 = 30,
+	level = 11,
+	skill_upgrade = {
+		{
+			111100,
+			111110
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[13740] = {
+	tech = 0,
+	name = "Emergency Fire Extinguisher",
+	value_2_random = 0,
+	type = 6,
+	value_1_random = 0,
+	value_1 = 20,
+	effect_id_display = 111240,
+	level = 1,
+	descrip = "Haruna Sairenji's Augment Module",
+	uncraftable = 1,
+	next = 13741,
+	upgrade_id = 10001,
+	value_2 = 6,
+	icon = "13740",
+	effect_id = 111240,
+	attribute_2 = "hit",
+	id = 13740,
+	rarity = 4,
+	unique = 1110005,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		4
+	},
+	skill_upgrade = {
+		{
+			0,
+			111130
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13741] = {
+	prev = 13740,
+	base = 13740,
+	next = 13742,
+	upgrade_id = 10002,
+	id = 13741,
+	value_2 = 6,
+	value_1 = 21,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13742] = {
+	prev = 13741,
+	base = 13740,
+	next = 13743,
+	upgrade_id = 10003,
+	id = 13742,
+	value_2 = 7,
+	value_1 = 22,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13743] = {
+	prev = 13742,
+	base = 13740,
+	next = 13744,
+	upgrade_id = 10004,
+	id = 13743,
+	value_2 = 8,
+	value_1 = 23,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13744] = {
+	prev = 13743,
+	base = 13740,
+	next = 13745,
+	upgrade_id = 10005,
+	id = 13744,
+	value_2 = 9,
+	value_1 = 24,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13745] = {
+	prev = 13744,
+	base = 13740,
+	next = 13746,
+	upgrade_id = 10006,
+	id = 13745,
+	value_2 = 10,
+	value_1 = 25,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13746] = {
+	prev = 13745,
+	base = 13740,
+	next = 13747,
+	upgrade_id = 10007,
+	id = 13746,
+	value_2 = 11,
+	value_1 = 26,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13747] = {
+	prev = 13746,
+	base = 13740,
+	next = 13748,
+	upgrade_id = 10008,
+	id = 13747,
+	value_2 = 12,
+	value_1 = 27,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13748] = {
+	prev = 13747,
+	base = 13740,
+	next = 13749,
+	upgrade_id = 10009,
+	id = 13748,
+	value_2 = 13,
+	value_1 = 28,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13749] = {
+	prev = 13748,
+	base = 13740,
+	next = 13750,
+	upgrade_id = 10010,
+	id = 13749,
+	value_2 = 14,
+	value_1 = 29,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13750] = {
+	base = 13740,
+	prev = 13749,
+	next = 0,
+	upgrade_id = 10011,
+	id = 13750,
+	value_2 = 15,
+	value_1 = 30,
+	level = 11,
+	skill_upgrade = {
+		{
+			111130,
+			111140
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[13760] = {
+	tech = 0,
+	name = "Banner of Order",
+	value_2_random = 0,
+	type = 7,
+	value_1_random = 0,
+	value_1 = 14,
+	effect_id_display = 111270,
+	level = 1,
+	descrip = "Yui Kotegawa's Augment Module",
+	uncraftable = 1,
+	next = 13761,
+	upgrade_id = 10001,
+	value_2 = 6,
+	icon = "13760",
+	effect_id = 111270,
+	attribute_2 = "hit",
+	id = 13760,
+	rarity = 4,
+	unique = 1110006,
+	important = 2,
+	prev = 0,
+	attribute_1 = "air",
+	usability = {
+		7
+	},
+	skill_upgrade = {
+		{
+			0,
+			111170
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13761] = {
+	prev = 13760,
+	base = 13760,
+	next = 13762,
+	upgrade_id = 10002,
+	id = 13761,
+	value_2 = 7,
+	value_1 = 16,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13762] = {
+	prev = 13761,
+	base = 13760,
+	next = 13763,
+	upgrade_id = 10003,
+	id = 13762,
+	value_2 = 8,
+	value_1 = 18,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13763] = {
+	prev = 13762,
+	base = 13760,
+	next = 13764,
+	upgrade_id = 10004,
+	id = 13763,
+	value_2 = 9,
+	value_1 = 20,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13764] = {
+	prev = 13763,
+	base = 13760,
+	next = 13765,
+	upgrade_id = 10005,
+	id = 13764,
+	value_2 = 10,
+	value_1 = 22,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13765] = {
+	prev = 13764,
+	base = 13760,
+	next = 13766,
+	upgrade_id = 10006,
+	id = 13765,
+	value_2 = 11,
+	value_1 = 24,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13766] = {
+	prev = 13765,
+	base = 13760,
+	next = 13767,
+	upgrade_id = 10007,
+	id = 13766,
+	value_2 = 12,
+	value_1 = 26,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13767] = {
+	prev = 13766,
+	base = 13760,
+	next = 13768,
+	upgrade_id = 10008,
+	id = 13767,
+	value_2 = 13,
+	value_1 = 28,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13768] = {
+	prev = 13767,
+	base = 13760,
+	next = 13769,
+	upgrade_id = 10009,
+	id = 13768,
+	value_2 = 14,
+	value_1 = 30,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13769] = {
+	prev = 13768,
+	base = 13760,
+	next = 13770,
+	upgrade_id = 10010,
+	id = 13769,
+	value_2 = 15,
+	value_1 = 32,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13770] = {
+	base = 13760,
+	prev = 13769,
+	next = 0,
+	upgrade_id = 10011,
+	id = 13770,
+	value_2 = 17,
+	value_1 = 35,
+	level = 11,
+	skill_upgrade = {
+		{
+			111160,
+			111170
+		}
+	}
+}

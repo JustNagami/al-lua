@@ -83,7 +83,7 @@ function var_0_0.GetLatestCharacterWord(arg_5_0)
 	local var_5_1 = ""
 
 	for iter_5_0 = #arg_5_0.displayWordList, 1, -1 do
-		if arg_5_0.displayWordList[iter_5_0].ship_group ~= 0 then
+		if arg_5_0.displayWordList[iter_5_0].ship_group ~= 0 or arg_5_0:IsCompleted() then
 			var_5_0 = arg_5_0.displayWordList[iter_5_0]
 
 			break

@@ -361,6 +361,12 @@ function var_0_5.InstFX(arg_32_0, arg_32_1, arg_32_2)
 		arg_32_0._resCacheList[var_32_0] = var_32_1
 	end
 
+	local var_32_4 = tf(var_32_1):Find("bullet")
+
+	if var_32_4 and var_32_4:GetComponent(typeof(SpineAnim)) then
+		var_32_4:GetComponent(typeof(SpineAnim)):SetAction("normal", 0, false)
+	end
+
 	return var_32_1
 end
 

@@ -121,7 +121,7 @@ function var_0_0.Ctor(arg_10_0, arg_10_1, arg_10_2)
 			if var_13_0 ~= nil then
 				local var_13_1 = "ui/" .. var_13_0
 
-				arg_10_0._loader:LoadPrefab(var_13_1, var_13_0, function(arg_14_0)
+				arg_10_0._loader:LoadPrefab(var_13_1, "", function(arg_14_0)
 					var_0_3(arg_10_0, arg_14_0)
 					arg_13_0()
 				end, var_13_1)
