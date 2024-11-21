@@ -12,11 +12,11 @@ function var_0_0.__call(arg_1_0)
 			local var_2_0 = arg_1_0.path
 
 			xpcall(function()
-				AssetBundleHelper.loadAssetBundleAsync(var_2_0, function(arg_4_0)
+				AssetBundleHelper.StoreAssetBundle(var_2_0, true, true, function(arg_4_0)
 					pg.UIMgr.GetInstance():LoadingOff()
 
 					if arg_1_0.stopped then
-						ResourceMgr.Inst:ClearBundleRef(var_2_0, false, false)
+						AssetBundleHelper.UnstoreAssetBundle(var_2_0)
 
 						return
 					end

@@ -59,12 +59,11 @@
 			}
 		},
 		{
-			expression = 4,
+			actor = 501020,
 			side = 2,
 			bgName = "star_level_bg_153",
 			factiontag = "寻找本日的刺激",
 			dir = 1,
-			actor = 501020,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "简直就像魔法一样……",

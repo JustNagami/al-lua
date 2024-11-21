@@ -12,6 +12,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.dropItems = {}
 	arg_1_0.lastText = findTF(arg_1_0.menuUI, "last/text")
 
+	GetComponent(findTF(arg_1_0.menuUI, "desc"), typeof(Image)):SetNativeSize()
 	onButton(arg_1_0._event, findTF(arg_1_0.menuUI, "rightPanelBg/arrowUp"), function()
 		local var_2_0 = arg_1_0.battleScrollRect.normalizedPosition.y + 1 / (arg_1_0.totalTimes - 4)
 

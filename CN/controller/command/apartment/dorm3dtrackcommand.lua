@@ -34,11 +34,11 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		return var_1_0.strs[arg_3_0] or ""
 	end) or {}
 
-	pg.ConnectionMgr.GetInstance():Send(28090, {
+	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildDorm3d({
 		track_typ = var_1_0.trackType,
 		int_args = var_1_1,
 		str_args = var_1_2
-	})
+	}))
 end
 
 function var_0_0.BuildDataEnter(arg_4_0, arg_4_1, arg_4_2)

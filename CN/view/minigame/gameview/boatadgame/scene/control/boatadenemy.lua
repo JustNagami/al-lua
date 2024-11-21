@@ -64,7 +64,7 @@ function var_0_0.start(arg_5_0)
 	arg_5_0._destroyFlag = false
 	arg_5_0._stopFlag = false
 	arg_5_0._battleFlag = false
-	arg_5_0._ad.anchoredPosition.x = 0
+	arg_5_0._ad.anchoredPosition = Vector2(0, 0)
 	arg_5_0._battleSubHp = arg_5_0:getConfig("boss") and var_0_2.battle_sub_hp_boss or var_0_2.battle_sub_hp
 
 	arg_5_0:speedDown(false)

@@ -573,14 +573,13 @@
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "？？？",
-			actor = 900407,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900407,
+			actorName = "？？？",
 			hidePaintObj = true,
 			say = "怎么说呢，愿意拿出私人飞机执行这个方案的你也很厉害……",
 			painting = {
@@ -729,14 +728,13 @@
 			}
 		},
 		{
-			expression = 0,
-			side = 2,
-			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			actorName = "？？？",
 			actor = 900407,
 			nameColor = "#A9F548FF",
+			bgName = "star_level_bg_170",
 			hidePaintObj = true,
+			side = 2,
+			actorName = "？？？",
+			oldPhoto = true,
 			say = "在脱离信号区前，我们有大约两小时通话时间。",
 			typewriter = {
 				speed = 0.05,
@@ -823,14 +821,13 @@
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "？？",
-			actor = 900332,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900332,
+			actorName = "？？",
 			hidePaintObj = true,
 			say = "哇啊啊啊……！！！",
 			painting = {
@@ -863,14 +860,13 @@
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "？？",
-			actor = 900332,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900332,
+			actorName = "？？",
 			hidePaintObj = true,
 			say = "当、当时都说了！只是些随便乱想，不要当真！",
 			painting = {
@@ -883,14 +879,13 @@
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "？？",
-			actor = 900332,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900332,
+			actorName = "？？",
 			hidePaintObj = true,
 			say = "你怎么还背下来了……",
 			painting = {
@@ -903,14 +898,13 @@
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "？？",
-			actor = 900332,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900332,
+			actorName = "？？",
 			hidePaintObj = true,
 			say = "好了好了，还是快把话题收回来，回到我们的首要问题——{namecode:529:苏维埃同盟}。",
 			painting = {
@@ -923,14 +917,13 @@
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "？？",
-			actor = 900332,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900332,
+			actorName = "？？",
 			hidePaintObj = true,
 			say = "那艘在人们的记忆中留有姓名，却从未真正完工过的军舰上吧——",
 			painting = {

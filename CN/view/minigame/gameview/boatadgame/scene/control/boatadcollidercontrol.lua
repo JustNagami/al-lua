@@ -57,20 +57,29 @@ function var_0_0.step(arg_3_0, arg_3_1)
 			end
 
 			if var_3_9:getHp() ~= 0 then
+				if var_3_9:getHp() < 0 or var_3_9:getConfig("hp_type") == var_0_2.hp_type_div then
+					pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_1.SFX_SOUND_SHIBAI)
+				elseif not var_3_16 then
+					pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_1.SFX_SOUND_GREAT)
+				end
+
 				var_3_0:changeHp(var_3_9:getHp(), var_3_9:getConfig("hp_type"))
 			end
 
 			var_3_0:setLine(var_3_9:getLine())
 
 			if var_3_16 then
+				pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_1.SFX_SOUND_PERFECT)
 				arg_3_0._eventCall(BoatAdGameEvent.PLAY_AD)
 			end
 
 			if var_3_17 then
+				pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_1.SFX_SOUND_GREAT)
 				var_3_0:addGuard(var_3_17)
 			end
 
 			if var_3_18 then
+				pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_1.SFX_SOUND_GREAT)
 				arg_3_0._eventCall(BoatAdGameEvent.SPEED_DOWN, var_3_18)
 			end
 

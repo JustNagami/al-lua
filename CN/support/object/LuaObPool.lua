@@ -1,12 +1,11 @@
 ﻿pg = pg or {}
 
 local var_0_0 = pg
-local var_0_1 = require("Mgr/Pool/PoolUtil")
-local var_0_2 = class("LuaObPool")
+local var_0_1 = class("LuaObPool")
 
-var_0_0.LuaObPool = var_0_2
+var_0_0.LuaObPool = var_0_1
 
-function var_0_2.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	assert(arg_1_1.Init, "template should have func Init")
 	assert(arg_1_1.Recycle, "template should have func Recycle")
 	assert(arg_1_1.Dispose, "template should have func Dispose")
@@ -23,7 +22,7 @@ function var_0_2.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0.usedEnd = 0
 end
 
-function var_0_2.GetObject(arg_2_0)
+function var_0_1.GetObject(arg_2_0)
 	local var_2_0 = arg_2_0.list
 	local var_2_1 = arg_2_0.usedEnd
 	local var_2_2
@@ -43,7 +42,7 @@ function var_0_2.GetObject(arg_2_0)
 	return var_2_4
 end
 
-function var_0_2.Recycle(arg_3_0, arg_3_1)
+function var_0_1.Recycle(arg_3_0, arg_3_1)
 	local var_3_0 = arg_3_0.ob2index[arg_3_1]
 	local var_3_1 = arg_3_0.usedEnd
 	local var_3_2 = arg_3_0.list
@@ -61,11 +60,11 @@ function var_0_2.Recycle(arg_3_0, arg_3_1)
 	arg_3_0.usedEnd = var_3_1 - 1
 end
 
-function var_0_2.UpdateInfo(arg_4_0, arg_4_1, arg_4_2)
+function var_0_1.UpdateInfo(arg_4_0, arg_4_1, arg_4_2)
 	arg_4_0.info[arg_4_1] = arg_4_2
 end
 
-function var_0_2.Dispose(arg_5_0)
+function var_0_1.Dispose(arg_5_0)
 	for iter_5_0, iter_5_1 in ipairs(arg_5_0.list) do
 		iter_5_1:Dispose()
 	end

@@ -76,9 +76,9 @@ pg.voice_bgm = {
 		bgm = "main"
 	},
 	LoginScene = {
-		default_bgm = "login",
+		default_bgm = "tl-theme-1",
 		special_bgm = "",
-		bgm = "login"
+		bgm = "tl-theme-1"
 	},
 	NewMainScene = {
 		default_bgm = "main",
@@ -136,19 +136,14 @@ pg.voice_bgm = {
 		bgm = "idol-BlueSpirit-inst"
 	},
 	NewShopsScene = {
-		default_bgm = "story-tempest-marching",
+		default_bgm = "story-richang-refreshing-short",
 		special_bgm = "",
-		bgm = "story-tempest-marching"
+		bgm = "story-richang-refreshing-short"
 	},
 	BuildShipScene = {
-		default_bgm = "main",
+		default_bgm = "story-richang-refreshing-short",
 		special_bgm = "",
-		bgm = "main"
-	},
-	AirForceOfDragonEmperyUI = {
-		default_bgm = "story-richang",
-		special_bgm = "",
-		bgm = "story-richang"
+		bgm = "story-richang-refreshing-short"
 	},
 	VolleyballGameView = {
 		default_bgm = "doa_minigame",
@@ -1694,5 +1689,105 @@ pg.voice_bgm = {
 		default_bgm = "story-ghostnight-fascinsting",
 		special_bgm = "",
 		bgm = "story-ghostnight-fascinsting"
+	},
+	AirForceActivityPage = {
+		default_bgm = "theme-donghuang",
+		special_bgm = "",
+		bgm = "theme-donghuang"
+	},
+	AirForceOfDragonEmperyUI = {
+		default_bgm = "theme-donghuang",
+		special_bgm = "",
+		bgm = "theme-donghuang"
+	},
+	JapanV3REMainPage = {
+		default_bgm = "story-maystorm",
+		special_bgm = "",
+		bgm = "story-maystorm"
+	},
+	JapanV3PtPage = {
+		default_bgm = "story-mayrain",
+		special_bgm = "",
+		bgm = "story-mayrain"
+	},
+	JapanV3FrameRePage = {
+		default_bgm = "theme-misaka",
+		special_bgm = "",
+		bgm = "theme-misaka"
+	},
+	RuoyueLoginRePage = {
+		default_bgm = "musashi-1",
+		special_bgm = "",
+		bgm = "musashi-1"
+	},
+	JapanV3SkinPage = {
+		default_bgm = "story-richang-light",
+		special_bgm = "",
+		bgm = "story-richang-light"
+	},
+	BlackFridaySalesScene = {
+		default_bgm = "story-musicanniversary-gorgeous",
+		special_bgm = "",
+		bgm = "story-musicanniversary-gorgeous"
+	},
+	BlackFridayWithManualSignPage_2024 = {
+		default_bgm = "story-musicanniversary-gorgeous",
+		special_bgm = "",
+		bgm = "story-musicanniversary-gorgeous"
+	},
+	CryptolaliaScene = {
+		default_bgm = "story-richang-quiet",
+		special_bgm = "",
+		bgm = "story-richang-quiet"
+	},
+	WorldMediaCollectionEntranceScene = {
+		default_bgm = "main",
+		special_bgm = "",
+		bgm = "main"
+	},
+	WorldMediaCollectionMemoryLayer = {
+		default_bgm = "main",
+		special_bgm = "",
+		bgm = "main"
+	},
+	WorldMediaCollectionRecordLayer = {
+		default_bgm = "main",
+		special_bgm = "",
+		bgm = "main"
+	},
+	WorldMediaCollectionFileLayer = {
+		default_bgm = "main",
+		special_bgm = "",
+		bgm = "main"
+	},
+	ToLoveMainPage = {
+		default_bgm = "story-richang-rosy-short",
+		special_bgm = "",
+		bgm = "story-richang-rosy-short"
+	},
+	ToLovePtPage = {
+		default_bgm = "story-richang-rosy-short",
+		special_bgm = "",
+		bgm = "story-richang-rosy-short"
+	},
+	ToloveCollectPage = {
+		default_bgm = "story-richang-rosy-short",
+		special_bgm = "",
+		bgm = "story-richang-rosy-short"
+	},
+	ToLoveCollabBackHillScene = {
+		default_bgm = "tl-battle",
+		special_bgm = "",
+		bgm = "tl-battle"
+	},
+	PuzzleConnectLayer = {
+		default_bgm = "story-richang-refreshing",
+		special_bgm = "",
+		bgm = "story-richang-refreshing"
+	},
+	PuzzleConnectPlayingUI = {
+		default_bgm = "story-richang-refreshing",
+		special_bgm = "",
+		bgm = "story-richang-refreshing"
 	}
 }

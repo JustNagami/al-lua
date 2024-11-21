@@ -110,7 +110,7 @@ function var_0_0.OnUpdateItem(arg_11_0, arg_11_1, arg_11_2)
 end
 
 function var_0_0.FetchShop(arg_12_0, arg_12_1)
-	local var_12_0 = getProxy(ShopsProxy):GetNewServerShop()
+	local var_12_0 = getProxy(ShopsProxy):GetNewServerShop(ActivityConst.ACTIVITY_TYPE_NEWSERVER_SHOP)
 
 	if not var_12_0 then
 		pg.m02:sendNotification(GAME.GET_NEW_SERVER_SHOP, {

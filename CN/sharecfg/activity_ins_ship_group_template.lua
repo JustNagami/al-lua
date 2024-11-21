@@ -597,7 +597,7 @@ pg.activity_ins_ship_group_template = {
 		name = "Enterprise",
 		background = "",
 		sculpture = "qiye",
-		nationality = 1,
+		nationality = 0,
 		type = 1
 	},
 	[40146] = {
@@ -981,7 +981,7 @@ pg.activity_ins_ship_group_template = {
 		name = "Howe_Cookies",
 		background = "",
 		sculpture = "hao",
-		nationality = 0,
+		nationality = 2,
 		type = 1
 	},
 	[20606] = {
@@ -2469,7 +2469,7 @@ pg.activity_ins_ship_group_template = {
 		name = "U.V.Hutten",
 		background = "",
 		sculpture = "wuerlixi_2",
-		nationality = 0,
+		nationality = 4,
 		type = 1
 	},
 	[40310] = {
@@ -2845,7 +2845,7 @@ pg.activity_ins_ship_group_template = {
 		name = "August.V.Parseval",
 		background = "",
 		sculpture = "aogusite",
-		nationality = 0,
+		nationality = 4,
 		type = 1
 	},
 	[90101] = {
@@ -3557,7 +3557,7 @@ pg.activity_ins_ship_group_template = {
 		name = "Whydah",
 		background = "",
 		sculpture = "weida",
-		nationality = 0,
+		nationality = 10,
 		type = 1
 	},
 	[10103] = {
@@ -3861,7 +3861,7 @@ pg.activity_ins_ship_group_template = {
 		name = "Liverpool",
 		background = "",
 		sculpture = "liwupu",
-		nationality = 2,
+		nationality = 0,
 		type = 1
 	},
 	[20313] = {
@@ -3893,7 +3893,7 @@ pg.activity_ins_ship_group_template = {
 		name = "Fleuret",
 		background = "",
 		sculpture = "huajian",
-		nationality = 9,
+		nationality = 0,
 		type = 1
 	},
 	[90106] = {
@@ -3933,7 +3933,7 @@ pg.activity_ins_ship_group_template = {
 		name = "Hervör alvitr",
 		background = "",
 		sculpture = "yaerweite_2",
-		nationality = 4,
+		nationality = 0,
 		type = 1
 	},
 	[40147] = {
@@ -4293,6 +4293,62 @@ pg.activity_ins_ship_group_template = {
 		name = "Admiral Nakhimov",
 		background = "",
 		sculpture = "naximofu",
+		nationality = 0,
+		type = 1
+	},
+	[1110001] = {
+		ship_group = 1110001,
+		name = "Lala Satalin Deviluke",
+		background = "",
+		sculpture = "lala_tolove",
+		nationality = 0,
+		type = 1
+	},
+	[1110002] = {
+		ship_group = 1110002,
+		name = "Nana Asta Deviluke",
+		background = "",
+		sculpture = "nana_tolove",
+		nationality = 0,
+		type = 1
+	},
+	[1110003] = {
+		ship_group = 1110003,
+		name = "Momo Belia Deviluke",
+		background = "",
+		sculpture = "mengmeng_tolove",
+		nationality = 0,
+		type = 1
+	},
+	[1110004] = {
+		ship_group = 1110004,
+		name = "Konjiki no Yami",
+		background = "",
+		sculpture = "jinseanying_tolove",
+		nationality = 0,
+		type = 1
+	},
+	[1110005] = {
+		ship_group = 1110005,
+		name = "Sairenji Haruna",
+		background = "",
+		sculpture = "xiliansi_tolove",
+		nationality = 0,
+		type = 1
+	},
+	[1110006] = {
+		ship_group = 1110006,
+		name = "Kotegawa Yui",
+		background = "",
+		sculpture = "gushouchuan_tolove",
+		nationality = 0,
+		type = 1
+	},
+	[30141] = {
+		ship_group = 30141,
+		name = "Mikazuki",
+		background = "",
+		sculpture = "sanriyue",
 		nationality = 0,
 		type = 1
 	},
@@ -4833,6 +4889,13 @@ pg.activity_ins_ship_group_template = {
 		69901,
 		30506,
 		20223,
-		79902
+		79902,
+		1110001,
+		1110002,
+		1110003,
+		1110004,
+		1110005,
+		1110006,
+		30141
 	}
 }

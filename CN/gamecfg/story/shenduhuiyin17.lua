@@ -9,7 +9,7 @@
 		{
 			say = "意识正在飞翔。",
 			side = 2,
-			bgName = "star_level_bg_1104 ",
+			bgName = "star_level_bg_1104",
 			dir = 1,
 			bgmDelay = 1,
 			bgm = "echo-loop",
@@ -34,7 +34,7 @@
 		{
 			dir = 1,
 			side = 2,
-			bgName = "star_level_bg_1104 ",
+			bgName = "star_level_bg_1104",
 			say = "明明躺倒在固定的座椅上，却逐渐产生了一种飞行的体验。",
 			typewriter = {
 				speed = 0.05,
@@ -48,7 +48,7 @@
 		{
 			dir = 1,
 			side = 2,
-			bgName = "star_level_bg_1104 ",
+			bgName = "star_level_bg_1104",
 			say = "就好像喝了一桶伏特加之后又去冰面上来了几十圈大回转一样。",
 			typewriter = {
 				speed = 0.05,
@@ -62,7 +62,7 @@
 		{
 			dir = 1,
 			side = 2,
-			bgName = "star_level_bg_1104 ",
+			bgName = "star_level_bg_1104",
 			say = "无数或熟悉或陌生的画面在眼前高速移动着，奇怪的噪音如同乌云一般挤压着身边的每一寸空气。",
 			typewriter = {
 				speed = 0.05,
@@ -90,7 +90,7 @@
 		{
 			dir = 1,
 			side = 2,
-			bgName = "star_level_bg_1104 ",
+			bgName = "star_level_bg_1104",
 			say = "终于，一切逐渐停止，喀琅施塔得感觉自己的双脚踏在了水面上。",
 			typewriter = {
 				speed = 0.05,

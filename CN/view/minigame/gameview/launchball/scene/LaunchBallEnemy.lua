@@ -400,7 +400,7 @@ function var_0_0.Ctor(arg_33_0, arg_33_1, arg_33_2, arg_33_3, arg_33_4)
 	arg_33_0.enemyDatas = {}
 
 	for iter_33_0, iter_33_1 in pairs(LaunchBallGameConst.enemy_data) do
-		local var_33_0 = ResourceMgr.Inst:getAssetSync(LaunchBallGameVo.ui_atlas, iter_33_1.name, typeof(RuntimeAnimatorController), false, false)
+		local var_33_0 = LoadAny(LaunchBallGameVo.ui_atlas, iter_33_1.name, typeof(RuntimeAnimatorController))
 
 		table.insert(arg_33_0.enemyDatas, {
 			animator = var_33_0,

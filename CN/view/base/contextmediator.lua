@@ -466,16 +466,24 @@ function var_0_0.commonBind(arg_37_0)
 			}))
 		end,
 		[BaseUI.ON_NEW_STYLE_DROP] = function(arg_50_0, arg_50_1, arg_50_2)
-			pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_COMMON_DROP, setmetatable(arg_50_2, {
+			local var_50_0 = pg.NewStyleMsgboxMgr.TYPE_COMMON_DROP
+			local var_50_1 = setmetatable(arg_50_2, {
 				__index = {
 					blurParams = {
 						weight = LayerWeightConst.TOP_LAYER
 					}
 				}
-			}))
+			})
+
+			if arg_50_2.useDeepShow then
+				pg.NewStyleMsgboxMgr.GetInstance():DeepShow(var_50_0, var_50_1)
+			else
+				pg.NewStyleMsgboxMgr.GetInstance():Show(var_50_0, var_50_1)
+			end
 		end,
 		[BaseUI.ON_NEW_STYLE_ITEMS] = function(arg_51_0, arg_51_1, arg_51_2)
-			pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_COMMON_ITEMS, setmetatable(arg_51_2, {
+			local var_51_0 = pg.NewStyleMsgboxMgr.TYPE_COMMON_ITEMS
+			local var_51_1 = setmetatable(arg_51_2, {
 				__index = {
 					btnList = {
 						{
@@ -491,11 +499,18 @@ function var_0_0.commonBind(arg_37_0)
 					content = arg_51_2.content,
 					itemFunc = function(arg_52_0)
 						arg_51_0.viewComponent:emit(BaseUI.ON_NEW_STYLE_DROP, {
+							useDeepShow = true,
 							drop = arg_52_0
 						})
 					end
 				}
-			}))
+			})
+
+			if arg_51_2.useDeepShow then
+				pg.NewStyleMsgboxMgr.GetInstance():DeepShow(var_51_0, var_51_1)
+			else
+				pg.NewStyleMsgboxMgr.GetInstance():Show(var_51_0, var_51_1)
+			end
 		end
 	}
 

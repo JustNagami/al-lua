@@ -1,6 +1,7 @@
 ﻿local var_0_0 = class("BoatAdChar")
 local var_0_1
 local var_0_2
+local var_0_3 = 0.5
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	var_0_1 = BoatAdGameVo
@@ -74,10 +75,14 @@ function var_0_0.start(arg_6_0)
 	arg_6_0:updateCharMoveCount()
 	arg_6_0:updateUI()
 	arg_6_0:updateChange(false)
+
+	arg_6_0.stepSound = 0
 end
 
 function var_0_0.step(arg_7_0, arg_7_1)
 	local var_7_0 = false
+
+	arg_7_0.stepSound = arg_7_0.stepSound - arg_7_1
 
 	if arg_7_0._battleHp > 0 then
 		local var_7_1 = arg_7_0._battleHp > arg_7_0._battleSubHp and arg_7_0._battleSubHp or arg_7_0._battleHp
@@ -94,6 +99,12 @@ function var_0_0.step(arg_7_0, arg_7_1)
 		local var_7_2 = true
 
 		arg_7_0:updateUI()
+
+		if arg_7_0.stepSound <= 0 then
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_1.SFX_SOUND_BATTLE)
+
+			arg_7_0.stepSound = var_0_3
+		end
 	end
 
 	if arg_7_0:getLife() and arg_7_0._battleHp == 0 then

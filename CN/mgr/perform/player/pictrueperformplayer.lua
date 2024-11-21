@@ -23,7 +23,7 @@ function var_0_0.Play(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 	local var_2_1 = arg_2_1.param[2] or 3
 
 	setActive(arg_2_0.bgTF, false)
-	ResourceMgr.Inst:getAssetAsync("educatepicture/" .. var_2_0, "", typeof(Sprite), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_3_0)
+	LoadAnyAsync("educatepicture/" .. var_2_0, "", typeof(Sprite), function(arg_3_0)
 		arg_2_0.imageCom.sprite = arg_3_0
 
 		setActive(arg_2_0.bgTF, true)
@@ -35,7 +35,7 @@ function var_0_0.Play(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 		end, var_2_1)
 
 		arg_2_0.timer:Start()
-	end), true, true)
+	end)
 end
 
 function var_0_0.Clear(arg_5_0)

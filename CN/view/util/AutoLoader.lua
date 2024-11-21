@@ -253,7 +253,7 @@ function var_0_0.LoadLive2D(arg_21_0, arg_21_1, arg_21_2, arg_21_3)
 	arg_21_3 = arg_21_3 or arg_21_0:GenerateUID4LoadingRequest()
 
 	local var_21_4
-	local var_21_5 = var_0_5.New(var_21_3, arg_21_1, function(arg_22_0)
+	local var_21_5 = var_0_5.New(var_21_3, "", function(arg_22_0)
 		arg_21_0._loadingRequest[arg_21_3] = nil
 
 		if arg_21_2 then

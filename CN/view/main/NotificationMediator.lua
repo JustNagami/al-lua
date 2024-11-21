@@ -95,7 +95,7 @@ function var_0_0.register(arg_1_0)
 					arg_1_0:sendNotification(GAME.GUILD_SEND_MSG, var_2_9)
 				end
 
-				TrackConst.EmojiSend(var_2_9)
+				pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildEmoji(var_2_9))
 			end
 		end
 	end)

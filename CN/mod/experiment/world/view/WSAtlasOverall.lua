@@ -20,6 +20,7 @@ function var_0_0.Dispose(arg_1_0)
 end
 
 function var_0_0.LoadScene(arg_2_0, arg_2_1)
+	gcAll(true)
 	SceneOpMgr.Inst:LoadSceneAsync("scenes/worldoverview", "worldoverview", LoadSceneMode.Additive, function(arg_3_0, arg_3_1)
 		arg_2_0.transform = tf(arg_3_0:GetRootGameObjects()[0])
 

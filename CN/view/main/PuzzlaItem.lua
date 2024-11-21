@@ -27,7 +27,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
 	setParent(arg_1_0.textTF, arg_1_0.mask)
 
 	tf(arg_1_0.textTF).pivot = Vector2(0, 1)
-	arg_1_0.textTFText.font = pg.FontMgr.GetInstance().fonts.heiti
+	arg_1_0.textTFText.font = LoadAny("font/zhunyuan", "", nil)
 	arg_1_0.textTFText.fontSize = 18
 	arg_1_0.textTFText.alignment = TextAnchor.MiddleCenter
 end

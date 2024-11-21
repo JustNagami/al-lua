@@ -176,7 +176,7 @@ function var_0_0.attachOrbit(arg_10_0)
 
 		local var_10_1 = ys.Battle.BattleResourceManager.GetOrbitPath(var_10_0.orbit_combat)
 
-		ResourceMgr.Inst:getAssetAsync(var_10_1, var_10_0.orbit_combat, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_11_0)
+		ResourceMgr.Inst:getAssetAsync(var_10_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_11_0)
 			if arg_10_0.seaCharacter then
 				local var_11_0 = Object.Instantiate(arg_11_0)
 

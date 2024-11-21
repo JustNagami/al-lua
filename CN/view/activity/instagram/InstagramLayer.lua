@@ -42,6 +42,9 @@ function var_0_0.init(arg_4_0)
 	arg_4_0.commentPanel = arg_4_0:findTF("main/right_panel/last/bg2")
 	arg_4_0.optionalPanel = arg_4_0:findTF("main/right_panel/last/bg2/option")
 	arg_4_0.scroll = arg_4_0:findTF("main/right_panel/center/bottom/scroll")
+
+	setText(arg_4_0:findTF("closeBtn/Text"), i18n("word_back"))
+
 	arg_4_0.sprites = {}
 	arg_4_0.timers = {}
 	arg_4_0.toDownloadList = {}

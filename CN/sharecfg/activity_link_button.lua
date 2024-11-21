@@ -1,7 +1,7 @@
 ﻿pg = pg or {}
 pg.activity_link_button = {
 	{
-		param = "5621",
+		param = "5679",
 		name = "event_all",
 		type = 3,
 		text_pic = "text_event_all",
@@ -11,7 +11,7 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			5621
+			5679
 		}
 	},
 	{
@@ -52,17 +52,14 @@ pg.activity_link_button = {
 	[20] = {
 		type = 2,
 		name = "event_minigame",
+		time = "stop",
 		text_pic = "text_event_minigame",
 		id = 20,
 		group_id = 5,
 		pic = "event_minigame",
 		order = 1,
-		time = {
-			"default",
-			5560
-		},
 		param = {
-			"DREAMLAND_PREVIEW"
+			"TOLOVE_COLLAB_BACKHILL"
 		}
 	},
 	[30] = {
@@ -235,6 +232,38 @@ pg.activity_link_button = {
 			68
 		}
 	},
+	[106] = {
+		type = 2,
+		name = "event_blackFriday",
+		text_pic = "text_event_blackfriday",
+		id = 106,
+		group_id = 11,
+		pic = "event_blackfriday",
+		order = 1,
+		time = {
+			"default",
+			5650
+		},
+		param = {
+			"BlackFridaySales"
+		}
+	},
+	[107] = {
+		type = 2,
+		name = "event_tolove",
+		text_pic = "text_event_minigame",
+		id = 107,
+		group_id = 12,
+		pic = "event_minigame",
+		order = 1,
+		time = {
+			"default",
+			5679
+		},
+		param = {
+			"TOLOVE_COLLAB_BACKHILL"
+		}
+	},
 	get_id_list_by_name = {
 		event_all = {
 			1,
@@ -282,6 +311,12 @@ pg.activity_link_button = {
 		},
 		event_boat_ad_game = {
 			105
+		},
+		event_blackFriday = {
+			106
+		},
+		event_tolove = {
+			107
 		}
 	},
 	all = {
@@ -301,6 +336,8 @@ pg.activity_link_button = {
 		102,
 		103,
 		104,
-		105
+		105,
+		106,
+		107
 	}
 }

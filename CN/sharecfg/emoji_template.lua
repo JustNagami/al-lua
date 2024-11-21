@@ -468,6 +468,32 @@ pg.emoji_template = {
 			1
 		}
 	},
+	{
+		achieve = 0,
+		item_desc = "聊天表情：还不睡，可以在表情选项的「默认」选项卡中找到并发出此表情。",
+		item_name = "聊天表情：还不睡",
+		id = 37,
+		index = 77,
+		icon = "",
+		pic = "37",
+		desc = "<color=#92fc63>[还不睡]</color>",
+		type = {
+			1
+		}
+	},
+	{
+		achieve = 0,
+		item_desc = "聊天表情：眠眠，可以在表情选项的「默认」选项卡中找到并发出此表情。",
+		item_name = "聊天表情：眠眠",
+		id = 38,
+		index = 78,
+		icon = "",
+		pic = "38",
+		desc = "<color=#92fc63>[眠眠]</color>",
+		type = {
+			1
+		}
+	},
 	[41] = {
 		achieve = 0,
 		item_desc = "",
@@ -2234,6 +2260,8 @@ pg.emoji_template = {
 		34,
 		35,
 		36,
+		37,
+		38,
 		41,
 		42,
 		43,

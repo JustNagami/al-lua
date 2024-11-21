@@ -247,7 +247,7 @@ function var_0_0.OnUpdate(arg_20_0)
 
 	local var_20_0 = var_0_2[PlayerPrefs.GetInt("dorm3d_graphics_settings", 2)]
 
-	arg_20_0.qualitySettingAsset = ResourceMgr.Inst:getAssetSync("three3dquaitysettings/defaultsettings", var_20_0, nil, true, true)
+	arg_20_0.qualitySettingAsset = LoadAny("three3dquaitysettings/defaultsettings", var_20_0)
 	arg_20_0.qualitySettingAssetType = arg_20_0.qualitySettingAsset:GetType()
 	arg_20_0.list = arg_20_0:GetList()
 

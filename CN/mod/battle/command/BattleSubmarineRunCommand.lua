@@ -119,7 +119,7 @@ function var_0_4.onWillDie(arg_15_0, arg_15_1)
 
 	if var_15_1 == var_0_0.Battle.BattleConst.UnitDeathReason.KILLED or var_15_1 == var_0_0.Battle.BattleConst.UnitDeathReason.DESTRUCT then
 		for iter_15_0, iter_15_1 in pairs(arg_15_0._unitDataList) do
-			iter_15_1:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_FRIENDLY_SHIP_DYING, {
+			iter_15_1:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_TEAMMATE_SHIP_DYING, {
 				unit = iter_15_1
 			})
 		end

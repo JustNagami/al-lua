@@ -3,7 +3,7 @@
 function var_0_0.LoadBG(arg_1_0, arg_1_1)
 	local var_1_0 = "CommonBg"
 
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. var_1_0, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_2_0)
+	LoadAnyAsync("BattleResultItems/" .. var_1_0, "", nil, function(arg_2_0)
 		if arg_1_0.exited or IsNil(arg_2_0) then
 			if arg_1_1 then
 				arg_1_1()
@@ -17,7 +17,7 @@ function var_0_0.LoadBG(arg_1_0, arg_1_1)
 		if arg_1_1 then
 			arg_1_1()
 		end
-	end), false, false)
+	end)
 end
 
 function var_0_0.RegisterEvent(arg_3_0, arg_3_1)
@@ -76,7 +76,7 @@ function var_0_0.GetGetObjectives(arg_12_0)
 end
 
 function var_0_0.LoadPainitingContainer(arg_13_0, arg_13_1)
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/Painting", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_14_0)
+	LoadAny("BattleResultItems/Painting", "", nil, function(arg_14_0)
 		if arg_13_0.exited then
 			return
 		end
@@ -84,7 +84,7 @@ function var_0_0.LoadPainitingContainer(arg_13_0, arg_13_1)
 		local var_14_0 = Object.Instantiate(arg_14_0, arg_13_0.bgTr)
 
 		arg_13_0:UpdatePainting(var_14_0, arg_13_1)
-	end), true, true)
+	end)
 end
 
 function var_0_0.UpdatePainting(arg_15_0, arg_15_1, arg_15_2)

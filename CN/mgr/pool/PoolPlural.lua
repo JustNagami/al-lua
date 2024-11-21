@@ -54,15 +54,15 @@ function var_0_1.AllReturned(arg_5_0)
 	return arg_5_0.balance == 0
 end
 
-function var_0_1.ClearPrefab(arg_6_0, arg_6_1)
-	var_0_0.Destroy(arg_6_0.prefab, arg_6_1)
+function var_0_1.ClearPrefab(arg_6_0)
+	var_0_0.Destroy(arg_6_0.prefab)
 
 	arg_6_0.prefab = nil
 end
 
-function var_0_1.ClearItems(arg_7_0, arg_7_1)
+function var_0_1.ClearItems(arg_7_0)
 	for iter_7_0 = 1, #arg_7_0.items do
-		var_0_0.Destroy(arg_7_0.items[iter_7_0], arg_7_1)
+		var_0_0.Destroy(arg_7_0.items[iter_7_0])
 	end
 
 	table.clear(arg_7_0.items)
@@ -70,9 +70,9 @@ function var_0_1.ClearItems(arg_7_0, arg_7_1)
 	arg_7_0.balance = 0
 end
 
-function var_0_1.Clear(arg_8_0, arg_8_1)
-	arg_8_0:ClearPrefab(arg_8_1)
-	arg_8_0:ClearItems(arg_8_1)
+function var_0_1.Clear(arg_8_0)
+	arg_8_0:ClearPrefab()
+	arg_8_0:ClearItems()
 end
 
 return var_0_1

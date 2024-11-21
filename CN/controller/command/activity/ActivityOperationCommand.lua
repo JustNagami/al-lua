@@ -240,9 +240,9 @@ function var_0_0.updateActivityData(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 			end
 		end
 	elseif var_3_0 == ActivityConst.ACTIVITY_TYPE_PUZZLA then
-		if arg_3_1.cmd == 1 then
+		if arg_3_1.cmd == PuzzleActivity.CMD_COMPLETE then
 			arg_3_3.data1 = 1
-		elseif arg_3_1.cmd == 4 then
+		elseif arg_3_1.cmd == PuzzleActivity.CMD_EARN_EXTRA then
 			arg_3_3.data1 = 2
 		end
 
@@ -570,6 +570,30 @@ function var_0_0.updateActivityData(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 		end
 
 		getProxy(ActivityProxy):updateActivity(arg_3_3)
+	elseif var_3_0 == ActivityConst.ACTIVITY_TYPE_PUZZLE_CONNECT then
+		local var_3_46 = getProxy(ActivityProxy)
+		local var_3_47 = arg_3_3.data1_list
+		local var_3_48 = arg_3_3.data2_list
+		local var_3_49 = arg_3_3.data3_list
+
+		if arg_3_1.cmd == 1 then
+			local var_3_50 = pg.activity_tolove_jigsaw[arg_3_1.arg1].need[2]
+			local var_3_51 = pg.player_resource[var_3_50].name
+			local var_3_52 = pg.activity_tolove_jigsaw[arg_3_1.arg1].need[3]
+			local var_3_53 = var_3_1:getData()
+
+			var_3_53:consume({
+				[var_3_51] = var_3_52
+			})
+			var_3_1:updatePlayer(var_3_53)
+			table.insert(var_3_47, arg_3_1.arg1)
+		elseif arg_3_1.cmd == 2 then
+			table.insert(var_3_48, arg_3_1.arg1)
+		elseif arg_3_1.cmd == 3 then
+			table.insert(var_3_49, arg_3_1.arg1)
+		end
+
+		var_3_46:updateActivity(arg_3_3)
 	end
 
 	return arg_3_3

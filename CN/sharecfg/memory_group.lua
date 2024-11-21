@@ -214,6 +214,10 @@ pg.memory_group = setmetatable({
 		305,
 		306,
 		307,
+		308,
+		309,
+		310,
+		311,
 		501,
 		502,
 		503,
@@ -315,6 +319,7 @@ pg.memory_group = setmetatable({
 		601,
 		602,
 		603,
+		604,
 		1000,
 		1001,
 		1002
@@ -5036,7 +5041,7 @@ pg.base.memory_group = {
 		subtype = 2,
 		icon = "title_event",
 		type = 2,
-		link_event = 0,
+		link_event = 5625,
 		title = "飓风与沉眠之海",
 		memories = {
 			3951,
@@ -5068,7 +5073,7 @@ pg.base.memory_group = {
 		subtype = 3,
 		icon = "title_event",
 		type = 2,
-		link_event = 0,
+		link_event = 5623,
 		title = "《港区假日鬼怪故事集》",
 		memories = {
 			3981,
@@ -5079,6 +5084,78 @@ pg.base.memory_group = {
 			3986,
 			3987,
 			3988
+		}
+	},
+	[308] = {
+		id = 308,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5654,
+		title = "新型促销来袭！",
+		memories = {
+			4011
+		}
+	},
+	[309] = {
+		id = 309,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5679,
+		title = "「危险发明迫近中！」-关卡篇",
+		memories = {
+			4021,
+			4022,
+			4023,
+			4024,
+			4025,
+			4026,
+			4027,
+			4028,
+			4029,
+			4030,
+			4031,
+			4032,
+			4033,
+			4034,
+			4035,
+			4036,
+			4037
+		}
+	},
+	[310] = {
+		id = 310,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5681,
+		title = "「危险发明迫近中！」-日常篇",
+		memories = {
+			4041,
+			4042,
+			4043,
+			4044,
+			4045,
+			4046
+		}
+	},
+	[311] = {
+		id = 311,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5691,
+		title = "「危险发明迫近中！」-委托篇",
+		memories = {
+			4051,
+			4052,
+			4053,
+			4054,
+			4055,
+			4056,
+			4057,
+			4058
 		}
 	},
 	[501] = {
@@ -6809,6 +6886,23 @@ pg.base.memory_group = {
 			3935,
 			3936,
 			3937
+		}
+	},
+	[604] = {
+		id = 604,
+		subtype = 0,
+		icon = "title_chara_hao",
+		type = 3,
+		link_event = 0,
+		title = "属于彼此的甜蜜饼干",
+		memories = {
+			3991,
+			3992,
+			3993,
+			3994,
+			3995,
+			3996,
+			3997
 		}
 	},
 	[1000] = {

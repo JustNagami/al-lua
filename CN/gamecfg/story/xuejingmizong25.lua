@@ -1054,13 +1054,12 @@
 			}
 		},
 		{
-			expression = 0,
+			actor = 705020,
 			side = 2,
 			bgName = "star_level_bg_505",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			actor = 705020,
 			say = "那接下来，我们一同寻找离开这里的方法吧。",
 			painting = {
 				alpha = 0.3,
