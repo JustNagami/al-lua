@@ -13,7 +13,7 @@
 		{
 			nameColor = "#FFFFFF",
 			actorName = 20220,
-			say = "会いに来てくださることが、シリアスにとって最大の幸せです。最愛のご主人様もしよろしければ…シリアスがあなたを抱きしめることをお許しくださいませ…",
+			say = "会いに来てくださることが、シリアスにとって最大の幸せです。最愛の{dorm3d}もしよろしければ…シリアスがあなたを抱きしめることをお許しくださいませ…",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_hello14",
 			typewriter = {
 				speed = 0.05,

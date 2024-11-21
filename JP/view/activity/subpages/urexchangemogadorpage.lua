@@ -86,7 +86,7 @@ function var_0_0.OnFirstFlush(arg_4_0)
 				}),
 				onYes = function()
 					arg_4_0:emit(ActivityMediator.ON_ACT_SHOPPING, arg_4_0.shopId, 1, arg_4_0.curGoods.id, 1)
-					TrackConst.TrackingUrExchangeFetch(arg_4_0.curGoods.commodity_id, 2)
+					pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildUrRedeem(arg_4_0.curGoods.commodity_id, 2))
 				end
 			})
 		else
@@ -244,7 +244,7 @@ function var_0_0.UpdateTask(arg_26_0, arg_26_1, arg_26_2)
 	if var_26_5 then
 		onButton(arg_26_0, arg_26_0:findTF("btn_go", arg_26_2), function()
 			var_26_5()
-			TrackConst.TrackingUrExchangeJump(var_26_1)
+			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildUrJump(var_26_1))
 		end)
 	end
 end

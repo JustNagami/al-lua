@@ -2000,6 +2000,24 @@ pg.ship_data_group = setmetatable({
 		[1100007] = {
 			10107
 		},
+		[1110001] = {
+			10111
+		},
+		[1110002] = {
+			10112
+		},
+		[1110003] = {
+			10113
+		},
+		[1110004] = {
+			10114
+		},
+		[1110005] = {
+			10115
+		},
+		[1110006] = {
+			10116
+		},
 		[29901] = {
 			20001
 		},
@@ -2227,6 +2245,9 @@ pg.ship_data_group = setmetatable({
 		},
 		[970604] = {
 			30039
+		},
+		[970507] = {
+			30040
 		}
 	},
 	get_id_list_by_handbook_type = {
@@ -2898,7 +2919,13 @@ pg.ship_data_group = setmetatable({
 			10104,
 			10105,
 			10106,
-			10107
+			10107,
+			10111,
+			10112,
+			10113,
+			10114,
+			10115,
+			10116
 		},
 		{
 			20001,
@@ -2978,7 +3005,8 @@ pg.ship_data_group = setmetatable({
 			30036,
 			30037,
 			30038,
-			30039
+			30039,
+			30040
 		}
 	},
 	all = {
@@ -3648,6 +3676,12 @@ pg.ship_data_group = setmetatable({
 		10105,
 		10106,
 		10107,
+		10111,
+		10112,
+		10113,
+		10114,
+		10115,
+		10116,
 		20001,
 		20002,
 		20003,
@@ -3723,7 +3757,8 @@ pg.ship_data_group = setmetatable({
 		30036,
 		30037,
 		30038,
-		30039
+		30039,
+		30040
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -11820,6 +11855,17 @@ pg.base.ship_data_group = {
 					""
 				},
 				0
+			},
+			{
+				"小型艦建造",
+				{
+					"GETBOAT",
+					{
+						projectName = "light",
+						page = 1
+					}
+				},
+				0
 			}
 		}
 	},
@@ -12584,6 +12630,17 @@ pg.base.ship_data_group = {
 				"イベント：戦え！ロイヤルメイド隊3rd",
 				{
 					""
+				},
+				0
+			},
+			{
+				"小型艦建造",
+				{
+					"GETBOAT",
+					{
+						projectName = "light",
+						page = 1
+					}
 				},
 				0
 			}
@@ -15043,6 +15100,17 @@ pg.base.ship_data_group = {
 				"イベント：戦え！ロイヤルメイド隊3rd",
 				{
 					""
+				},
+				0
+			},
+			{
+				"特型艦建造",
+				{
+					"GETBOAT",
+					{
+						projectName = "special",
+						page = 1
+					}
 				},
 				0
 			}
@@ -31867,6 +31935,198 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
+	[10111] = {
+		type = 3,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 111,
+		trans_skin = 0,
+		handbook_type = 1,
+		index_id = 10111,
+		code = 10111,
+		group_type = 1110001,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"B",
+			"E",
+			"E",
+			"C",
+			"B",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"イベント：危険発明接近中！",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[10112] = {
+		type = 1,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 111,
+		trans_skin = 0,
+		handbook_type = 1,
+		index_id = 10112,
+		code = 10112,
+		group_type = 1110002,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"C",
+			"A",
+			"E",
+			"A",
+			"D",
+			"D"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"イベント：危険発明接近中！",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[10113] = {
+		type = 2,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 111,
+		trans_skin = 0,
+		handbook_type = 1,
+		index_id = 10113,
+		code = 10113,
+		group_type = 1110003,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"B",
+			"A",
+			"E",
+			"B",
+			"B",
+			"C"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"イベント：危険発明接近中！",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[10114] = {
+		type = 5,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 111,
+		trans_skin = 0,
+		handbook_type = 1,
+		index_id = 10114,
+		code = 10114,
+		group_type = 1110004,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"S",
+			"E",
+			"E",
+			"D",
+			"C",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"イベント：危険発明接近中！",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[10115] = {
+		type = 4,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 111,
+		trans_skin = 0,
+		handbook_type = 1,
+		index_id = 10115,
+		code = 10115,
+		group_type = 1110005,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"C",
+			"C",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"イベント：危険発明接近中！",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[10116] = {
+		type = 7,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 111,
+		trans_skin = 0,
+		handbook_type = 1,
+		index_id = 10116,
+		code = 10116,
+		group_type = 1110006,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"E",
+			"E",
+			"S",
+			"C",
+			"B",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"イベント：危険発明接近中！",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
 	[20001] = {
 		type = 2,
 		redirect_id = 101,
@@ -34513,6 +34773,41 @@ pg.base.ship_data_group = {
 					"METACHARACTER",
 					{
 						autoOpenShipConfigID = 9706041
+					}
+				},
+				0
+			}
+		}
+	},
+	[30040] = {
+		type = 5,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 97,
+		trans_skin = 0,
+		handbook_type = 3,
+		index_id = 30040,
+		code = 30040,
+		group_type = 970507,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"D",
+			"D",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"メタラボ・シーズン任務",
+				{
+					"METACHARACTER",
+					{
+						autoOpenShipConfigID = 9705071
 					}
 				},
 				0

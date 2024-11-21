@@ -59,12 +59,11 @@
 			}
 		},
 		{
-			expression = 4,
+			actor = 501020,
 			side = 2,
 			bgName = "star_level_bg_153",
 			factiontag = "今日も刺激を求めて",
 			dir = 1,
-			actor = 501020,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "はくちゅん！臨場感強すぎるよー！",

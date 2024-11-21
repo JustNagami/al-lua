@@ -5,6 +5,10 @@ function var_0_0.getUIName(arg_1_0)
 end
 
 function var_0_0.OnRefreshMission(arg_2_0, arg_2_1)
+	if not arg_2_0.mission or arg_2_0.mission.id ~= arg_2_1.id then
+		return
+	end
+
 	arg_2_0:Flush(arg_2_1)
 end
 

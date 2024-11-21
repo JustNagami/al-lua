@@ -573,14 +573,13 @@
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "？？？",
-			actor = 900407,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900407,
+			actorName = "？？？",
 			hidePaintObj = true,
 			say = "それもそうですが、チャーター機まで持ち出したアンジュのほうもとんでもないですね",
 			painting = {
@@ -729,14 +728,13 @@
 			}
 		},
 		{
-			expression = 0,
-			side = 2,
-			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			actorName = "？？？",
 			actor = 900407,
 			nameColor = "#A9F548FF",
+			bgName = "star_level_bg_170",
 			hidePaintObj = true,
+			side = 2,
+			actorName = "？？？",
+			oldPhoto = true,
 			say = "電波が届かないエリアに出るまで約2時間程度は話せますね",
 			typewriter = {
 				speed = 0.05,
@@ -823,14 +821,13 @@
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "？？",
-			actor = 900332,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900332,
+			actorName = "？？",
 			hidePaintObj = true,
 			say = "ああああ……！",
 			painting = {
@@ -863,14 +860,13 @@
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "？？",
-			actor = 900332,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900332,
+			actorName = "？？",
 			hidePaintObj = true,
 			say = "あ、あのね！ぱっと思いついただけだから本気にするなって言ったじゃない！",
 			painting = {
@@ -883,14 +879,13 @@
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "？？",
-			actor = 900332,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900332,
+			actorName = "？？",
 			hidePaintObj = true,
 			say = "なんでそんなことをわざわざ覚えてるわけ？",
 			painting = {
@@ -903,14 +898,13 @@
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "？？",
-			actor = 900332,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900332,
+			actorName = "？？",
 			hidePaintObj = true,
 			say = "はいはい。話題を逸してごめんなさい。改めまして本題の――ソビエツキー・ソユーズに戻りましょう",
 			painting = {
@@ -923,14 +917,13 @@
 			}
 		},
 		{
-			expression = 0,
+			oldPhoto = true,
 			side = 2,
 			bgName = "star_level_bg_170",
-			oldPhoto = true,
-			dir = 1,
-			actorName = "？？",
-			actor = 900332,
 			nameColor = "#A9F548FF",
+			dir = 1,
+			actor = 900332,
+			actorName = "？？",
 			hidePaintObj = true,
 			say = "「名前」は存在しても、最終的に竣工しなかったフネについて――",
 			painting = {

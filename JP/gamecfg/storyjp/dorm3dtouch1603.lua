@@ -13,7 +13,7 @@
 		{
 			nameColor = "#FFFFFF",
 			actorName = 20220,
-			say = "ふふ…誇らしきご主人様の好みは分かりやすいですね",
+			say = "ふふ…誇らしき{dorm3d}の好みは分かりやすいですね",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone/touch16",
 			typewriter = {
 				speed = 0.05,

@@ -13,7 +13,7 @@
 		{
 			nameColor = "#FFFFFF",
 			actorName = 20220,
-			say = "ご主人様のお顔を見るたびに、シリアス、心に無限の喜びが湧き上がります。どうかこれからもご主人様に付き添い、精一杯守らせてください。誇らしきご主人様",
+			say = "{dorm3d}のお顔を見るたびに、シリアス、心に無限の喜びが湧き上がります。どうかこれからも{dorm3d}に付き添い、精一杯守らせてください。誇らしき{dorm3d}",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_hello12",
 			typewriter = {
 				speed = 0.05,

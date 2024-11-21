@@ -78,7 +78,7 @@ function var_0_0.AttachOrbit(arg_6_0, arg_6_1)
 		if var_6_2 ~= "" then
 			local var_6_3 = ys.Battle.BattleResourceManager.GetOrbitPath(var_6_2)
 
-			ResourceMgr.Inst:getAssetAsync(var_6_3, var_6_2, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_7_0)
+			ResourceMgr.Inst:getAssetAsync(var_6_3, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_7_0)
 				if arg_6_0.state == var_0_0.STATE_DISPOSE then
 					-- block empty
 				else
@@ -86,32 +86,37 @@ function var_0_0.AttachOrbit(arg_6_0, arg_6_1)
 					local var_7_1 = iter_6_1[var_7_0][1]
 					local var_7_2 = iter_6_1[var_7_0][2]
 					local var_7_3 = Object.Instantiate(arg_7_0)
+					local var_7_4 = var_7_3:GetComponentsInChildren(typeof(Spine.Unity.SkeletonGraphic))
+
+					for iter_7_0 = 1, var_7_4.Length do
+						var_7_4[iter_7_0 - 1].raycastTarget = false
+					end
 
 					var_7_3.transform.localPosition = Vector2(var_7_2[1], var_7_2[2])
 
-					local var_7_4 = SpineAnimUI.AddFollower(var_7_1, arg_6_0.model.transform, var_7_3.transform)
+					local var_7_5 = SpineAnimUI.AddFollower(var_7_1, arg_6_0.model.transform, var_7_3.transform)
 
 					var_7_3.transform.localScale = Vector3.one
-					arg_6_0._attachmentList[var_7_4] = iter_6_1.orbit_hidden_action
+					arg_6_0._attachmentList[var_7_5] = iter_6_1.orbit_hidden_action
 
-					local var_7_5 = var_7_4:GetComponent("Spine.Unity.BoneFollowerGraphic")
+					local var_7_6 = var_7_5:GetComponent("Spine.Unity.BoneFollowerGraphic")
 
 					if iter_6_1.orbit_rotate then
-						var_7_5.followBoneRotation = true
+						var_7_6.followBoneRotation = true
 
-						local var_7_6 = var_7_3.transform.localEulerAngles
+						local var_7_7 = var_7_3.transform.localEulerAngles
 
-						var_7_3.transform.localEulerAngles = Vector3(var_7_6.x, var_7_6.y, var_7_6.z - 90)
+						var_7_3.transform.localEulerAngles = Vector3(var_7_7.x, var_7_7.y, var_7_7.z - 90)
 					else
-						var_7_5.followBoneRotation = false
+						var_7_6.followBoneRotation = false
 					end
 
 					if iter_6_1.orbit_ui_back == 1 then
-						var_7_4:SetParent(arg_6_0.modelRoot.transform, false)
-						var_7_4:SetAsFirstSibling()
+						var_7_5:SetParent(arg_6_0.modelRoot.transform, false)
+						var_7_5:SetAsFirstSibling()
 					else
-						var_7_4:SetParent(arg_6_0.modelRoot.transform, false)
-						var_7_4:SetAsLastSibling()
+						var_7_5:SetParent(arg_6_0.modelRoot.transform, false)
+						var_7_5:SetAsLastSibling()
 					end
 
 					SetActive(var_7_3, arg_6_0._visible)

@@ -13,7 +13,7 @@
 		{
 			nameColor = "#FFFFFF",
 			actorName = 20220,
-			say = "ご機嫌麗しゅうございます、誇らしきご主人様。シリアスは今日どのようなお手伝いをしたらよいでしょうか？どのようなご要望でもシリアスにお申し付けくださいませ",
+			say = "ご機嫌麗しゅうございます、誇らしき{dorm3d}。シリアスは今日どのようなお手伝いをしたらよいでしょうか？どのようなご要望でもシリアスにお申し付けくださいませ",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_hello1",
 			typewriter = {
 				speed = 0.05,

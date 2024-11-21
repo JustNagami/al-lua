@@ -58,7 +58,9 @@ function var_0_0.FlushInfo(arg_7_0)
 			local var_8_1 = var_8_0[1]
 			local var_8_2 = var_8_0[2]
 
-			arg_8_2:Find("color"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/WorldBossUI_atlas", "color_" .. var_8_2)
+			GetSpriteFromAtlasAsync("ui/WorldBossUI_atlas", "color_" .. var_8_2, function(arg_9_0)
+				arg_8_2:Find("color"):GetComponent(typeof(Image)).sprite = arg_9_0
+			end)
 
 			local var_8_3 = arg_8_2:Find("color/Text")
 
@@ -68,143 +70,143 @@ function var_0_0.FlushInfo(arg_7_0)
 	arg_7_0.infoSkillList:align(#var_7_0)
 end
 
-function var_0_0.ResetInfoLayout(arg_9_0)
-	local var_9_0 = 28
-	local var_9_1 = arg_9_0.boss.config.description
+function var_0_0.ResetInfoLayout(arg_10_0)
+	local var_10_0 = 28
+	local var_10_1 = arg_10_0.boss.config.description
 
 	onNextTick(function()
-		if arg_9_0.exited then
+		if arg_10_0.exited then
 			return
 		end
 
-		arg_9_0.infoSkillList:each(function(arg_11_0, arg_11_1)
-			local var_11_0 = var_9_1[arg_11_0 + 1][3]
-			local var_11_1 = arg_11_1:Find("color/Text")
-			local var_11_2 = "　"
-			local var_11_3, var_11_4 = math.modf(var_11_1.sizeDelta.x / var_9_0)
-			local var_11_5 = math.ceil(var_9_0 * var_11_4)
+		arg_10_0.infoSkillList:each(function(arg_12_0, arg_12_1)
+			local var_12_0 = var_10_1[arg_12_0 + 1][3]
+			local var_12_1 = arg_12_1:Find("color/Text")
+			local var_12_2 = "　"
+			local var_12_3, var_12_4 = math.modf(var_12_1.sizeDelta.x / var_10_0)
+			local var_12_5 = math.ceil(var_10_0 * var_12_4)
 
-			for iter_11_0 = 1, var_11_3 do
-				var_11_2 = var_11_2 .. "　"
+			for iter_12_0 = 1, var_12_3 do
+				var_12_2 = var_12_2 .. "　"
 			end
 
-			if var_11_4 > 0 then
-				var_11_2 = var_11_2 .. "<size=" .. var_11_5 .. ">　</size>"
+			if var_12_4 > 0 then
+				var_12_2 = var_12_2 .. "<size=" .. var_12_5 .. ">　</size>"
 			end
 
-			setText(arg_11_1:Find("Text"), var_11_2 .. var_11_0)
+			setText(arg_12_1:Find("Text"), var_12_2 .. var_12_0)
 		end)
 	end)
 end
 
-function var_0_0.FlushRank(arg_12_0)
-	local var_12_0 = arg_12_0.boss
+function var_0_0.FlushRank(arg_13_0)
+	local var_13_0 = arg_13_0.boss
 
-	if not var_12_0 then
+	if not var_13_0 then
 		return
 	end
 
-	local var_12_1 = arg_12_0.proxy:GetRank(var_12_0.id)
-	local var_12_2 = 0
+	local var_13_1 = arg_13_0.proxy:GetRank(var_13_0.id)
+	local var_13_2 = 0
 
-	if not var_12_1 then
-		arg_12_0:emit(WorldBossMediator.ON_RANK_LIST, var_12_0.id)
+	if not var_13_1 then
+		arg_13_0:emit(WorldBossMediator.ON_RANK_LIST, var_13_0.id)
 	else
-		arg_12_0.rankList:make(function(arg_13_0, arg_13_1, arg_13_2)
-			if arg_13_0 == UIItemList.EventUpdate then
-				local var_13_0 = var_12_1[arg_13_1 + 1]
+		arg_13_0.rankList:make(function(arg_14_0, arg_14_1, arg_14_2)
+			if arg_14_0 == UIItemList.EventUpdate then
+				local var_14_0 = var_13_1[arg_14_1 + 1]
 
-				arg_12_0:UpdateRankTF(arg_13_2, var_13_0, arg_13_1 + 1)
+				arg_13_0:UpdateRankTF(arg_14_2, var_14_0, arg_14_1 + 1)
 			end
 		end)
-		arg_12_0.rankList:align(math.min(#var_12_1, 3))
-		arg_12_0:UpdateSelfRank(var_12_1)
+		arg_13_0.rankList:align(math.min(#var_13_1, 3))
+		arg_13_0:UpdateSelfRank(var_13_1)
 
-		var_12_2 = #var_12_1
+		var_13_2 = #var_13_1
 	end
 
-	arg_12_0.rankCnt1.text = var_12_2 .. "<color=#A2A2A2>/" .. arg_12_0.maxRankCnt .. "</color>"
+	arg_13_0.rankCnt1.text = var_13_2 .. "<color=#A2A2A2>/" .. arg_13_0.maxRankCnt .. "</color>"
 
-	if arg_12_0.flushRankCallback then
-		arg_12_0.flushRankCallback(var_12_2, arg_12_0.maxRankCnt)
+	if arg_13_0.flushRankCallback then
+		arg_13_0.flushRankCallback(var_13_2, arg_13_0.maxRankCnt)
 	end
 
-	arg_12_0:AddWaitResultTimer()
+	arg_13_0:AddWaitResultTimer()
 end
 
-function var_0_0.AddWaitResultTimer(arg_14_0)
-	arg_14_0:RemoveWaitTimer()
+function var_0_0.AddWaitResultTimer(arg_15_0)
+	arg_15_0:RemoveWaitTimer()
 
-	local var_14_0 = arg_14_0.boss
-	local var_14_1 = var_14_0:ShouldWaitForResult()
+	local var_15_0 = arg_15_0.boss
+	local var_15_1 = var_15_0:ShouldWaitForResult()
 
-	setActive(arg_14_0.maskTF, var_14_1)
+	setActive(arg_15_0.maskTF, var_15_1)
 
-	if var_14_1 then
-		local var_14_2 = var_14_0:GetWaitForResultTime()
+	if var_15_1 then
+		local var_15_2 = var_15_0:GetWaitForResultTime()
 
-		arg_14_0.waitTimer = Timer.New(function()
-			local var_15_0 = pg.TimeMgr.GetInstance():GetServerTime()
-			local var_15_1 = var_14_2 - var_15_0
+		arg_15_0.waitTimer = Timer.New(function()
+			local var_16_0 = pg.TimeMgr.GetInstance():GetServerTime()
+			local var_16_1 = var_15_2 - var_16_0
 
-			if var_15_1 < 0 then
-				arg_14_0:AddWaitResultTimer()
+			if var_16_1 < 0 then
+				arg_15_0:AddWaitResultTimer()
 
-				if arg_14_0.callback then
-					arg_14_0.callback(false)
+				if arg_15_0.callback then
+					arg_15_0.callback(false)
 				end
 			else
-				arg_14_0.maskTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var_15_1)
+				arg_15_0.maskTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var_16_1)
 			end
 		end, 1, -1)
 
-		arg_14_0.waitTimer:Start()
+		arg_15_0.waitTimer:Start()
 
-		if arg_14_0.callback then
-			arg_14_0.callback(true)
+		if arg_15_0.callback then
+			arg_15_0.callback(true)
 		end
 	end
 end
 
-function var_0_0.RemoveWaitTimer(arg_16_0)
-	if arg_16_0.waitTimer then
-		arg_16_0.waitTimer:Stop()
+function var_0_0.RemoveWaitTimer(arg_17_0)
+	if arg_17_0.waitTimer then
+		arg_17_0.waitTimer:Stop()
 
-		arg_16_0.waitTimer = nil
+		arg_17_0.waitTimer = nil
 	end
 end
 
-function var_0_0.UpdateRankTF(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
-	setText(arg_17_1:Find("name"), arg_17_2.name)
-	setText(arg_17_1:Find("value/Text"), arg_17_2.damage)
-	setText(arg_17_1:Find("number"), arg_17_2.number or arg_17_3)
-	setActive(arg_17_1:Find("value/view"), not arg_17_2.isSelf)
-	onButton(arg_17_0, arg_17_1:Find("value/view"), function()
-		local var_18_0 = arg_17_0.boss
+function var_0_0.UpdateRankTF(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
+	setText(arg_18_1:Find("name"), arg_18_2.name)
+	setText(arg_18_1:Find("value/Text"), arg_18_2.damage)
+	setText(arg_18_1:Find("number"), arg_18_2.number or arg_18_3)
+	setActive(arg_18_1:Find("value/view"), not arg_18_2.isSelf)
+	onButton(arg_18_0, arg_18_1:Find("value/view"), function()
+		local var_19_0 = arg_18_0.boss
 
-		arg_17_0:emit(WorldBossMediator.FETCH_RANK_FORMATION, arg_17_2.id, var_18_0.id)
+		arg_18_0:emit(WorldBossMediator.FETCH_RANK_FORMATION, arg_18_2.id, var_19_0.id)
 	end, SFX_PANEL)
 end
 
-function var_0_0.UpdateSelfRank(arg_19_0, arg_19_1)
-	local var_19_0
+function var_0_0.UpdateSelfRank(arg_20_0, arg_20_1)
+	local var_20_0
 
-	for iter_19_0, iter_19_1 in ipairs(arg_19_1) do
-		if iter_19_1.isSelf then
-			var_19_0 = iter_19_1
-			var_19_0.number = iter_19_0
+	for iter_20_0, iter_20_1 in ipairs(arg_20_1) do
+		if iter_20_1.isSelf then
+			var_20_0 = iter_20_1
+			var_20_0.number = iter_20_0
 
 			break
 		end
 	end
 
-	if var_19_0 then
-		arg_19_0:UpdateRankTF(arg_19_0.myRankTF, var_19_0)
+	if var_20_0 then
+		arg_20_0:UpdateRankTF(arg_20_0.myRankTF, var_20_0)
 	end
 end
 
-function var_0_0.OnDestroy(arg_20_0)
-	arg_20_0:RemoveWaitTimer()
+function var_0_0.OnDestroy(arg_21_0)
+	arg_21_0:RemoveWaitTimer()
 end
 
 return var_0_0

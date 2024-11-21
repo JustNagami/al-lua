@@ -51,11 +51,15 @@ function var_0_0.OnInit(arg_4_0)
 		container = arg_4_0.containerTF,
 		iconSP = getImageSprite(arg_4_0.iconTF:Find("MANGA"))
 	})
-	arg_4_0.dormBtn = SettingsDormBtn.New({
-		tpl = arg_4_0.tpl,
-		container = arg_4_0.containerTF,
-		iconSP = getImageSprite(arg_4_0.iconTF:Find("DORM"))
-	})
+
+	if not LOCK_3DDORM_RES_DOWNLOAD_BTN then
+		arg_4_0.dormBtn = SettingsDormBtn.New({
+			tpl = arg_4_0.tpl,
+			container = arg_4_0.containerTF,
+			iconSP = getImageSprite(arg_4_0.iconTF:Find("DORM"))
+		})
+	end
+
 	arg_4_0.repairBtn = SettingsResRepairBtn.New({
 		tpl = arg_4_0.tpl,
 		container = arg_4_0.containerTF,
@@ -91,9 +95,11 @@ function var_0_0.Dispose(arg_5_0)
 
 		arg_5_0.mangaBtn = nil
 
-		arg_5_0.dormBtn:Dispose()
+		if arg_5_0.dormBtn then
+			arg_5_0.dormBtn:Dispose()
 
-		arg_5_0.dormBtn = nil
+			arg_5_0.dormBtn = nil
+		end
 
 		if arg_5_0.mainGroupBtn then
 			arg_5_0.mainGroupBtn:Dispose()

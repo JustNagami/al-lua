@@ -5,7 +5,7 @@ function var_0_0.__call(arg_1_0)
 		return
 	end
 
-	ResourceMgr.Inst:ClearBundleRef(arg_1_0.path, true, true)
+	AssetBundleHelper.UnstoreAssetBundle(arg_1_0.path, true)
 
 	return arg_1_0
 end

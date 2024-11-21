@@ -186117,3 +186117,5206 @@ _G.pg.base.task_data_template[500057] = {
 		115
 	}
 }
+_G.pg.base.task_data_template[20750] = {
+	name = "『武藏复刻』-日常建造",
+	guild_coin_award = 0,
+	award = 904221,
+	type = 36,
+	desc = "3回建造する",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20750,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65041,
+			300
+		}
+	}
+}
+_G.pg.base.task_data_template[20751] = {
+	name = "『武藏复刻』-日常出击",
+	guild_coin_award = 0,
+	award = 904222,
+	type = 36,
+	desc = "艦隊を出撃させ、15回勝利せよ！",
+	count_inherit = 0,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20751,
+	target_num = 15,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65041,
+			300
+		},
+		{
+			2,
+			65044,
+			1
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[20752] = {
+	name = "『武藏复刻』-日常困难本",
+	guild_coin_award = 0,
+	award = 904223,
+	type = 36,
+	desc = "任意のハードステージを1回クリアせよ",
+	count_inherit = 0,
+	sub_type = 182,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "10101",
+	scene = "",
+	id = 20752,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65041,
+			150
+		}
+	}
+}
+_G.pg.base.task_data_template[20753] = {
+	name = "『武藏复刻』-日常活动关卡",
+	guild_coin_award = 0,
+	award = 904224,
+	type = 36,
+	desc = "任意のイベントステージを1回クリア",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20753,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1680001,
+		1680002,
+		1680003,
+		1680004,
+		1680005,
+		1680006,
+		1680021,
+		1680022,
+		1680023,
+		1680024,
+		1680025,
+		1680026,
+		1680041,
+		1680051
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65041,
+			300
+		},
+		{
+			2,
+			54006,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5642
+		}
+	}
+}
+_G.pg.base.task_data_template[20754] = {
+	name = "『武藏复刻』通关A1/C1",
+	guild_coin_award = 0,
+	award = 904225,
+	type = 6,
+	desc = "A1かC1を1回クリアする",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20754,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1680001,
+		1680021
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			2,
+			65044,
+			1
+		},
+		{
+			2,
+			65041,
+			200
+		},
+		{
+			1,
+			1,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5641
+		}
+	}
+}
+_G.pg.base.task_data_template[20755] = {
+	name = "『武藏复刻』通关A2/C2",
+	guild_coin_award = 0,
+	award = 904226,
+	type = 6,
+	desc = "A2かC2を1回クリアする",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20755,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1680002,
+		1680022
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			2,
+			65044,
+			1
+		},
+		{
+			2,
+			65041,
+			400
+		},
+		{
+			1,
+			1,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5641
+		}
+	}
+}
+_G.pg.base.task_data_template[20756] = {
+	name = "『武藏复刻』通关A3/C3",
+	guild_coin_award = 0,
+	award = 904227,
+	type = 6,
+	desc = "A3かC3を1回クリアする",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20756,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1680003,
+		1680023
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			2,
+			65044,
+			2
+		},
+		{
+			2,
+			65041,
+			600
+		},
+		{
+			1,
+			1,
+			1500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5641
+		}
+	}
+}
+_G.pg.base.task_data_template[20757] = {
+	name = "『武藏复刻』通关B1/D1",
+	guild_coin_award = 0,
+	award = 904228,
+	type = 6,
+	desc = "B1かD1を1回クリアする",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20757,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1680004,
+		1680024
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			2,
+			65044,
+			1
+		},
+		{
+			2,
+			65041,
+			400
+		},
+		{
+			1,
+			1,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5642
+		}
+	}
+}
+_G.pg.base.task_data_template[20758] = {
+	name = "『武藏复刻』通关B2/D2",
+	guild_coin_award = 0,
+	award = 904229,
+	type = 6,
+	desc = "B2かD2を1回クリアする",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20758,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1680005,
+		1680025
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			2,
+			65044,
+			1
+		},
+		{
+			2,
+			65041,
+			600
+		},
+		{
+			1,
+			1,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5642
+		}
+	}
+}
+_G.pg.base.task_data_template[20759] = {
+	name = "『武藏复刻』通关B3/D3",
+	guild_coin_award = 0,
+	award = 904230,
+	type = 6,
+	desc = "B3かD3を1回クリアする",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 10,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20759,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1680006,
+		1680026
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			2,
+			65044,
+			2
+		},
+		{
+			2,
+			65041,
+			800
+		},
+		{
+			1,
+			1,
+			1500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5642
+		}
+	}
+}
+_G.pg.base.task_data_template[20760] = {
+	name = "『武藏复刻』通关SP",
+	guild_coin_award = 0,
+	award = 904231,
+	type = 6,
+	desc = "イベントステージSPをクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1680041",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20760,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			2,
+			65044,
+			3
+		},
+		{
+			1,
+			1,
+			1500
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1680025,
+			chapterId = 1680041
+		}
+	}
+}
+_G.pg.base.task_data_template[20761] = {
+	name = "『武藏复刻』通关D3",
+	guild_coin_award = 0,
+	award = 904232,
+	type = 6,
+	desc = "D3クリア(2個目は取得できません)",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1680026",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20761,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			5,
+			234,
+			1
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1680012,
+			chapterId = 1680026
+		}
+	}
+}
+_G.pg.base.task_data_template[20762] = {
+	name = "『武藏复刻』通关EX",
+	guild_coin_award = 0,
+	award = 904233,
+	type = 6,
+	desc = "EXステージをクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1680051",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20762,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			15008,
+			500
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1680026,
+			chapterId = 1680051
+		}
+	}
+}
+_G.pg.base.task_data_template[20763] = {
+	name = "『武藏复刻』A1/C1的3星",
+	guild_coin_award = 0,
+	award = 904234,
+	type = 6,
+	desc = "A1かC1の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20764",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20763,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1680001,
+		1680021
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			2,
+			500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5641
+		}
+	}
+}
+_G.pg.base.task_data_template[20764] = {
+	name = "『武藏复刻』A2/C2的3星",
+	guild_coin_award = 0,
+	award = 904235,
+	type = 6,
+	desc = "A2かC2の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20765",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20764,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1680002,
+		1680022
+	},
+	open_need = {},
+	award_display = {
+		{
+			4,
+			100001,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5641
+		}
+	}
+}
+_G.pg.base.task_data_template[20765] = {
+	name = "『武藏复刻』A3/C3的3星",
+	guild_coin_award = 0,
+	award = 904236,
+	type = 6,
+	desc = "A3かC3の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20766",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20765,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1680003,
+		1680023
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			18023,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5641
+		}
+	}
+}
+_G.pg.base.task_data_template[20766] = {
+	name = "『武藏复刻』B1/D1的3星",
+	guild_coin_award = 0,
+	award = 904237,
+	type = 6,
+	desc = "B1かD1の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20767",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20766,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1680004,
+		1680024
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			2,
+			500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5642
+		}
+	}
+}
+_G.pg.base.task_data_template[20767] = {
+	name = "『武藏复刻』B2/D2的3星",
+	guild_coin_award = 0,
+	award = 904238,
+	type = 6,
+	desc = "B2かD2の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20768",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20767,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1680005,
+		1680025
+	},
+	open_need = {},
+	award_display = {
+		{
+			4,
+			100011,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5642
+		}
+	}
+}
+_G.pg.base.task_data_template[20768] = {
+	name = "『武藏复刻』B3/D3的3星",
+	guild_coin_award = 0,
+	award = 904239,
+	type = 6,
+	desc = "B3かD3の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20768,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1680006,
+		1680026
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			18023,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5642
+		}
+	}
+}
+_G.pg.base.task_data_template[20769] = {
+	name = "『武藏复刻』外观装备箱保底",
+	guild_coin_award = 0,
+	award = 904240,
+	type = 6,
+	desc = "装備外装箱（学園祭）を20個開ける",
+	count_inherit = 0,
+	sub_type = 52,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "30338",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20769,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30510,
+			1
+		}
+	},
+	scene = {
+		"SHOP",
+		{
+			warp = "shopstreet"
+		}
+	}
+}
+_G.pg.base.task_data_template[20770] = {
+	name = "『武藏复刻』登录送皮肤体验券活动",
+	guild_coin_award = 0,
+	award = 904241,
+	type = 6,
+	desc = "ゲームにログインせよ！",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20770,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			438,
+			3
+		}
+	}
+}
+_G.pg.base.task_data_template[20771] = {
+	name = "『武藏复刻』前哨站剧情活动任务1",
+	guild_coin_award = 0,
+	award = 904273,
+	type = 26,
+	desc = "艦隊を出撃させ、10回S評価で勝利せよ！",
+	count_inherit = 0,
+	sub_type = 24,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20771,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[20772] = {
+	name = "『武藏复刻』前哨站剧情活动任务2",
+	guild_coin_award = 0,
+	award = 904274,
+	type = 26,
+	desc = "演習を2回行う",
+	count_inherit = 0,
+	sub_type = 27,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20772,
+	target_num = 2,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54049,
+			2
+		}
+	}
+}
+_G.pg.base.task_data_template[20773] = {
+	name = "『武藏复刻』前哨站剧情活动任务3",
+	guild_coin_award = 0,
+	award = 904275,
+	type = 26,
+	desc = "「デイリーチャレンジ」を三回行う ",
+	count_inherit = 0,
+	sub_type = 26,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20773,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54015,
+			5
+		}
+	}
+}
+_G.pg.base.task_data_template[20774] = {
+	name = "『武藏复刻』前哨站剧情活动任务4",
+	guild_coin_award = 0,
+	award = 904276,
+	type = 26,
+	desc = "戦術教室で戦術訓練を2回行う",
+	count_inherit = 0,
+	sub_type = 71,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20774,
+	target_num = 2,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54033,
+			2
+		}
+	}
+}
+_G.pg.base.task_data_template[20775] = {
+	name = "『武藏复刻』前哨站剧情活动任务5",
+	guild_coin_award = 0,
+	award = 904277,
+	type = 26,
+	desc = "艦を2隻「建造」せよ！",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20775,
+	target_num = 2,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			17003,
+			10
+		}
+	}
+}
+_G.pg.base.task_data_template[20776] = {
+	name = "『武藏复刻』前哨站剧情活动任务6",
+	guild_coin_award = 0,
+	award = 904278,
+	type = 26,
+	desc = "任意の敵艦を20隻撃破する",
+	count_inherit = 0,
+	sub_type = 11,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20776,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54006,
+			5
+		}
+	}
+}
+_G.pg.base.task_data_template[20777] = {
+	name = "『武藏复刻』前哨站剧情活动任务7",
+	guild_coin_award = 0,
+	award = 904279,
+	type = 26,
+	desc = "艦隊を出撃させ、敵中枢艦隊を3回撃破せよ！",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20777,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			3,
+			3620,
+			1
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[20820] = {
+	name = "『tolove联动』小游戏更换祝福任务1",
+	guild_coin_award = 0,
+	award = 904357,
+	type = 6,
+	desc = "特訓バフ「シールドUP！」を選択している状態でゲームをクリア",
+	count_inherit = 0,
+	sub_type = 2003,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1",
+	scene = "",
+	id = 20820,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			21,
+			13680,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[20821] = {
+	name = "『tolove联动』小游戏更换祝福任务2",
+	guild_coin_award = 0,
+	award = 904358,
+	type = 6,
+	desc = "特訓バフ「スコアUP！」を選択している状態でゲームをクリア",
+	count_inherit = 0,
+	sub_type = 2003,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "2",
+	scene = "",
+	id = 20821,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			2,
+			200
+		}
+	}
+}
+_G.pg.base.task_data_template[20822] = {
+	name = "『tolove联动』小游戏更换祝福任务3",
+	guild_coin_award = 0,
+	award = 904359,
+	type = 6,
+	desc = "特訓バフ「制限時間UP！」を選択している状態でゲームをクリア",
+	count_inherit = 0,
+	sub_type = 2003,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "3",
+	scene = "",
+	id = 20822,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30362,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[20823] = {
+	name = "『tolove联动』小游戏更换祝福任务4",
+	guild_coin_award = 0,
+	award = 904360,
+	type = 6,
+	desc = "特訓バフ「シールド超UP！」を選択している状態でゲームをクリア",
+	count_inherit = 0,
+	sub_type = 2003,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "4",
+	scene = "",
+	id = 20823,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			500
+		}
+	}
+}
+_G.pg.base.task_data_template[20824] = {
+	name = "『tolove联动』小游戏更换祝福任务5",
+	guild_coin_award = 0,
+	award = 904361,
+	type = 6,
+	desc = "特訓バフ「スコア超UP！」を選択している状態でゲームをクリア",
+	count_inherit = 0,
+	sub_type = 2003,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "5",
+	scene = "",
+	id = 20824,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30362,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[20825] = {
+	name = "『tolove联动』小游戏更换祝福任务6",
+	guild_coin_award = 0,
+	award = 904362,
+	type = 6,
+	desc = "特訓バフ「制限時間超UP！」を選択している状態でゲームをクリア",
+	count_inherit = 0,
+	sub_type = 2003,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "6",
+	scene = "",
+	id = 20825,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54006,
+			2
+		}
+	}
+}
+_G.pg.base.task_data_template[20826] = {
+	name = "『tolove联动』小游戏更换祝福任务7",
+	guild_coin_award = 0,
+	award = 904363,
+	type = 6,
+	desc = "特訓バフ「オールUP！」を選択している状態でゲームをクリア",
+	count_inherit = 0,
+	sub_type = 2003,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "7",
+	scene = "",
+	id = 20826,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65050,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[20827] = {
+	name = "『tolove联动』小游戏使用不同祝福得分任务1",
+	guild_coin_award = 0,
+	award = 904364,
+	type = 6,
+	desc = "特訓バフ「シールドUP！」を選択している状態でスコア2000以上でクリアする",
+	count_inherit = 0,
+	sub_type = 2004,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1",
+	scene = "",
+	id = 20827,
+	target_num = 2000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65047,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20828] = {
+	name = "『tolove联动』小游戏使用不同祝福得分任务2",
+	guild_coin_award = 0,
+	award = 904365,
+	type = 6,
+	desc = "特訓バフ「スコアUP！」を選択している状態でスコア2000以上でクリアする",
+	count_inherit = 0,
+	sub_type = 2004,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "2",
+	scene = "",
+	id = 20828,
+	target_num = 2000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65047,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20829] = {
+	name = "『tolove联动』小游戏使用不同祝福得分任务3",
+	guild_coin_award = 0,
+	award = 904366,
+	type = 6,
+	desc = "特訓バフ「制限時間UP！」を選択している状態でスコア2000以上でクリアする",
+	count_inherit = 0,
+	sub_type = 2004,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "3",
+	scene = "",
+	id = 20829,
+	target_num = 2000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65047,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20830] = {
+	name = "『tolove联动』小游戏使用不同祝福得分任务4",
+	guild_coin_award = 0,
+	award = 904367,
+	type = 6,
+	desc = "特訓バフ「シールド超UP！」を選択している状態でスコア2000以上でクリアする",
+	count_inherit = 0,
+	sub_type = 2004,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "4",
+	scene = "",
+	id = 20830,
+	target_num = 2000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65047,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20831] = {
+	name = "『tolove联动』小游戏使用不同祝福得分任务5",
+	guild_coin_award = 0,
+	award = 904368,
+	type = 6,
+	desc = "特訓バフ「スコア超UP！」を選択している状態でスコア2000以上でクリアする",
+	count_inherit = 0,
+	sub_type = 2004,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "5",
+	scene = "",
+	id = 20831,
+	target_num = 2000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65047,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20832] = {
+	name = "『tolove联动』小游戏使用不同祝福得分任务6",
+	guild_coin_award = 0,
+	award = 904369,
+	type = 6,
+	desc = "特訓バフ「制限時間超UP！」を選択している状態でスコア2000以上でクリアする",
+	count_inherit = 0,
+	sub_type = 2004,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "6",
+	scene = "",
+	id = 20832,
+	target_num = 2000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65047,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20833] = {
+	name = "『tolove联动』小游戏使用不同祝福得分任务7",
+	guild_coin_award = 0,
+	award = 904370,
+	type = 6,
+	desc = "特訓バフ「オールUP！」を選択している状態でスコア2000以上でクリアする",
+	count_inherit = 0,
+	sub_type = 2004,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "7",
+	scene = "",
+	id = 20833,
+	target_num = 2000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65047,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[20834] = {
+	name = "『tolove联动』拼图连线任务1",
+	guild_coin_award = 0,
+	award = 904415,
+	type = 6,
+	desc = "「助けて！ララさん」で依頼を1つ達成する",
+	count_inherit = 0,
+	sub_type = 9005,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20834,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			21,
+			13660,
+			1
+		}
+	},
+	scene = {
+		"PUZZLE_CONNECT"
+	}
+}
+_G.pg.base.task_data_template[20835] = {
+	name = "『tolove联动』拼图连线任务2",
+	guild_coin_award = 0,
+	award = 904416,
+	type = 6,
+	desc = "「助けて！ララさん」で依頼を2つ達成する",
+	count_inherit = 0,
+	sub_type = 9005,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "2",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20835,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			500
+		}
+	},
+	scene = {
+		"PUZZLE_CONNECT"
+	}
+}
+_G.pg.base.task_data_template[20836] = {
+	name = "『tolove联动』拼图连线任务3",
+	guild_coin_award = 0,
+	award = 904417,
+	type = 6,
+	desc = "「助けて！ララさん」で依頼を3つ達成する",
+	count_inherit = 0,
+	sub_type = 9005,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "3",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20836,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30362,
+			1
+		}
+	},
+	scene = {
+		"PUZZLE_CONNECT"
+	}
+}
+_G.pg.base.task_data_template[20837] = {
+	name = "『tolove联动』拼图连线任务4",
+	guild_coin_award = 0,
+	award = 904418,
+	type = 6,
+	desc = "「助けて！ララさん」で依頼を4つ達成する",
+	count_inherit = 0,
+	sub_type = 9005,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "4",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20837,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54006,
+			1
+		}
+	},
+	scene = {
+		"PUZZLE_CONNECT"
+	}
+}
+_G.pg.base.task_data_template[20838] = {
+	name = "『tolove联动』拼图连线任务5",
+	guild_coin_award = 0,
+	award = 904419,
+	type = 6,
+	desc = "「助けて！ララさん」で依頼を5つ達成する",
+	count_inherit = 0,
+	sub_type = 9005,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "5",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20838,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30362,
+			1
+		}
+	},
+	scene = {
+		"PUZZLE_CONNECT"
+	}
+}
+_G.pg.base.task_data_template[20839] = {
+	name = "『tolove联动』拼图连线任务6",
+	guild_coin_award = 0,
+	award = 904420,
+	type = 6,
+	desc = "「助けて！ララさん」で依頼を6つ達成する",
+	count_inherit = 0,
+	sub_type = 9005,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "6",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20839,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54033,
+			1
+		}
+	},
+	scene = {
+		"PUZZLE_CONNECT"
+	}
+}
+_G.pg.base.task_data_template[20840] = {
+	name = "『tolove联动』拼图连线任务7",
+	guild_coin_award = 0,
+	award = 904421,
+	type = 6,
+	desc = "「助けて！ララさん」で依頼を7つ達成する",
+	count_inherit = 0,
+	sub_type = 9005,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "7",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20840,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65049,
+			1
+		}
+	},
+	scene = {
+		"PUZZLE_CONNECT"
+	}
+}
+_G.pg.base.task_data_template[20841] = {
+	name = "『tolove联动』通关活动关卡T1",
+	guild_coin_award = 0,
+	award = 904422,
+	type = 6,
+	desc = "「危険発明接近中！」ステージT1をクリア",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20841,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1870001
+	},
+	open_need = {},
+	award_display = {
+		{
+			21,
+			13760,
+			1
+		},
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			440,
+			200
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20842] = {
+	name = "『tolove联动』通关活动关卡T2",
+	guild_coin_award = 0,
+	award = 904423,
+	type = 6,
+	desc = "「危険発明接近中！」ステージT2をクリア",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20842,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1870002
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			440,
+			400
+		},
+		{
+			1,
+			1,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20843] = {
+	name = "『tolove联动』通关活动关卡T3",
+	guild_coin_award = 0,
+	award = 904424,
+	type = 6,
+	desc = "「危険発明接近中！」ステージT3をクリア",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20843,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1870003
+	},
+	open_need = {},
+	award_display = {
+		{
+			5,
+			316308,
+			1
+		},
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			1,
+			440,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20844] = {
+	name = "『tolove联动』通关活动关卡T4",
+	guild_coin_award = 0,
+	award = 904425,
+	type = 6,
+	desc = "「危険発明接近中！」ステージT4をクリア",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20844,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1870004
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			440,
+			400
+		},
+		{
+			1,
+			1,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20845] = {
+	name = "『tolove联动』通关活动关卡T5",
+	guild_coin_award = 0,
+	award = 904426,
+	type = 6,
+	desc = "「危険発明接近中！」ステージT5をクリア",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20845,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1870005
+	},
+	open_need = {},
+	award_display = {
+		{
+			5,
+			316309,
+			1
+		},
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			440,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20846] = {
+	name = "『tolove联动』通关活动关卡TTL1",
+	guild_coin_award = 0,
+	award = 904427,
+	type = 6,
+	desc = "「危険発明接近中！」チャレンジステージTTL1をクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1870021",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20846,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			440,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1870002,
+			chapterId = 1870021
+		}
+	}
+}
+_G.pg.base.task_data_template[20847] = {
+	name = "『tolove联动』通关活动关卡TTL2",
+	guild_coin_award = 0,
+	award = 904428,
+	type = 6,
+	desc = "「危険発明接近中！」チャレンジステージTTL2をクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1870022",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20847,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			440,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1870002,
+			chapterId = 1870022
+		}
+	}
+}
+_G.pg.base.task_data_template[20848] = {
+	name = "『tolove联动』通关活动关卡TTL3",
+	guild_coin_award = 0,
+	award = 904429,
+	type = 6,
+	desc = "「危険発明接近中！」チャレンジステージTTL3をクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1870023",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20848,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			440,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1870002,
+			chapterId = 1870023
+		}
+	}
+}
+_G.pg.base.task_data_template[20849] = {
+	name = "『tolove联动』通关活动关卡TTL4",
+	guild_coin_award = 0,
+	award = 904430,
+	type = 6,
+	desc = "「危険発明接近中！」チャレンジステージTTL4をクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1870024",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20849,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			440,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1870002,
+			chapterId = 1870024
+		}
+	}
+}
+_G.pg.base.task_data_template[20850] = {
+	name = "『tolove联动』通关活动关卡TTL5",
+	guild_coin_award = 0,
+	award = 904431,
+	type = 6,
+	desc = "「危険発明接近中！」チャレンジステージTTL5をクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1870025",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20850,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			440,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1870002,
+			chapterId = 1870025
+		}
+	}
+}
+_G.pg.base.task_data_template[20851] = {
+	name = "『tolove联动』通关活动关卡SP",
+	guild_coin_award = 0,
+	award = 904432,
+	type = 6,
+	desc = "「危険発明接近中！」SPステージをクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1870041",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20851,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65054,
+			1
+		},
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			1,
+			1,
+			1500
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1870003,
+			chapterId = 1870041
+		}
+	}
+}
+_G.pg.base.task_data_template[20852] = {
+	name = "『tolove联动』通关活动关卡EX",
+	guild_coin_award = 0,
+	award = 904433,
+	type = 6,
+	desc = "「危険発明接近中！」EXステージをクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1870051",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20852,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			15008,
+			500
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1870004,
+			chapterId = 1870051
+		}
+	}
+}
+_G.pg.base.task_data_template[20853] = {
+	name = "『tolove联动』3星通关活动关卡T1",
+	guild_coin_award = 0,
+	award = 904434,
+	type = 6,
+	desc = "「危険発明接近中！」ステージT1を☆3達成する",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1870001",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20853,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			21,
+			13720,
+			1
+		},
+		{
+			2,
+			30362,
+			1
+		},
+		{
+			1,
+			2,
+			500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20854] = {
+	name = "『tolove联动』3星通关活动关卡T2",
+	guild_coin_award = 0,
+	award = 904435,
+	type = 6,
+	desc = "「危険発明接近中！」ステージT2を☆3達成する",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1870002",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20854,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			4,
+			100001,
+			1
+		},
+		{
+			2,
+			30362,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20855] = {
+	name = "『tolove联动』3星通关活动关卡T3",
+	guild_coin_award = 0,
+	award = 904436,
+	type = 6,
+	desc = "「危険発明接近中！」ステージT3を☆3達成する",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1870003",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20855,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			5,
+			316110,
+			1
+		},
+		{
+			5,
+			316111,
+			1
+		},
+		{
+			2,
+			18013,
+			1
+		},
+		{
+			2,
+			30362,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20856] = {
+	name = "『tolove联动』3星通关活动关卡T4",
+	guild_coin_award = 0,
+	award = 904437,
+	type = 6,
+	desc = "「危険発明接近中！」ステージT4を☆3達成する",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1870004",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20856,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30362,
+			1
+		},
+		{
+			1,
+			2,
+			500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20857] = {
+	name = "『tolove联动』3星通关活动关卡T5",
+	guild_coin_award = 0,
+	award = 904438,
+	type = 6,
+	desc = "「危険発明接近中！」ステージT5を☆3達成する",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1870005",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20857,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65052,
+			1
+		},
+		{
+			4,
+			100011,
+			1
+		},
+		{
+			2,
+			30362,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20858] = {
+	name = "『tolove联动』累计通关5次",
+	guild_coin_award = 0,
+	award = 904439,
+	type = 6,
+	desc = "「危険発明接近中！」ステージを5回クリアする",
+	count_inherit = 20859,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20859",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20858,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1870001,
+		1870002,
+		1870003,
+		1870004,
+		1870005,
+		1870021,
+		1870022,
+		1870023,
+		1870024,
+		1870025,
+		1870041
+	},
+	open_need = {},
+	award_display = {
+		{
+			21,
+			13700,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20859] = {
+	name = "『tolove联动』累计通关10次",
+	guild_coin_award = 0,
+	award = 904440,
+	type = 6,
+	desc = "「危険発明接近中！」ステージを10回クリアする",
+	count_inherit = 20860,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20860",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20859,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1870001,
+		1870002,
+		1870003,
+		1870004,
+		1870005,
+		1870021,
+		1870022,
+		1870023,
+		1870024,
+		1870025,
+		1870041
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			2,
+			200
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20860] = {
+	name = "『tolove联动』累计通关20次",
+	guild_coin_award = 0,
+	award = 904441,
+	type = 6,
+	desc = "「危険発明接近中！」ステージを20回クリアする",
+	count_inherit = 20861,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20861",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20860,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1870001,
+		1870002,
+		1870003,
+		1870004,
+		1870005,
+		1870021,
+		1870022,
+		1870023,
+		1870024,
+		1870025,
+		1870041
+	},
+	open_need = {},
+	award_display = {
+		{
+			5,
+			316120,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20861] = {
+	name = "『tolove联动』累计通关30次",
+	guild_coin_award = 0,
+	award = 904442,
+	type = 6,
+	desc = "「危険発明接近中！」ステージを30回クリアする",
+	count_inherit = 20862,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20862",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20861,
+	target_num = 30,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1870001,
+		1870002,
+		1870003,
+		1870004,
+		1870005,
+		1870021,
+		1870022,
+		1870023,
+		1870024,
+		1870025,
+		1870041
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54017,
+			5
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20862] = {
+	name = "『tolove联动』累计通关40次",
+	guild_coin_award = 0,
+	award = 904443,
+	type = 6,
+	desc = "「危険発明接近中！」ステージを40回クリアする",
+	count_inherit = 20863,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20863",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20862,
+	target_num = 40,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1870001,
+		1870002,
+		1870003,
+		1870004,
+		1870005,
+		1870021,
+		1870022,
+		1870023,
+		1870024,
+		1870025,
+		1870041
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30362,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20863] = {
+	name = "『tolove联动』累计通关50次",
+	guild_coin_award = 0,
+	award = 904444,
+	type = 6,
+	desc = "「危険発明接近中！」ステージを50回クリアする",
+	count_inherit = 20864,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20864",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20863,
+	target_num = 50,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1870001,
+		1870002,
+		1870003,
+		1870004,
+		1870005,
+		1870021,
+		1870022,
+		1870023,
+		1870024,
+		1870025,
+		1870041
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			16023,
+			2
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20864] = {
+	name = "『tolove联动』累计通关60次",
+	guild_coin_award = 0,
+	award = 904445,
+	type = 6,
+	desc = "「危険発明接近中！」ステージを60回クリアする",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20864,
+	target_num = 60,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1870001,
+		1870002,
+		1870003,
+		1870004,
+		1870005,
+		1870021,
+		1870022,
+		1870023,
+		1870024,
+		1870025,
+		1870041
+	},
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65051,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20866] = {
+	name = "『tolove联动』累计消耗3000pt",
+	guild_coin_award = 0,
+	award = 904447,
+	type = 6,
+	desc = "ショップで「エナジーストーン」を3000消費する",
+	count_inherit = 20867,
+	sub_type = 123,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "5686",
+	next_task = "20867",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20866,
+	target_num = 3000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			21,
+			13740,
+			1
+		}
+	},
+	scene = {
+		"SHOP",
+		{}
+	}
+}
+_G.pg.base.task_data_template[20867] = {
+	name = "『tolove联动』累计消耗6000pt",
+	guild_coin_award = 0,
+	award = 904448,
+	type = 6,
+	desc = "ショップで「エナジーストーン」を6000消費する",
+	count_inherit = 20868,
+	sub_type = 123,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "5686",
+	next_task = "20868",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20867,
+	target_num = 6000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54017,
+			5
+		}
+	},
+	scene = {
+		"SHOP",
+		{}
+	}
+}
+_G.pg.base.task_data_template[20868] = {
+	name = "『tolove联动』累计消耗9000pt",
+	guild_coin_award = 0,
+	award = 904449,
+	type = 6,
+	desc = "ショップで「エナジーストーン」を9000消費する",
+	count_inherit = 20869,
+	sub_type = 123,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "5686",
+	next_task = "20869",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20868,
+	target_num = 9000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			5,
+			316119,
+			1
+		}
+	},
+	scene = {
+		"SHOP",
+		{}
+	}
+}
+_G.pg.base.task_data_template[20869] = {
+	name = "『tolove联动』累计消耗12000pt",
+	guild_coin_award = 0,
+	award = 904450,
+	type = 6,
+	desc = "ショップで「エナジーストーン」を12000消費する",
+	count_inherit = 20870,
+	sub_type = 123,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "5686",
+	next_task = "20870",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20869,
+	target_num = 12000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30362,
+			1
+		}
+	},
+	scene = {
+		"SHOP",
+		{}
+	}
+}
+_G.pg.base.task_data_template[20870] = {
+	name = "『tolove联动』累计消耗24000pt",
+	guild_coin_award = 0,
+	award = 904451,
+	type = 6,
+	desc = "ショップで「エナジーストーン」を24000消費する",
+	count_inherit = 20871,
+	sub_type = 123,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "5686",
+	next_task = "20871",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20870,
+	target_num = 24000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			16003,
+			2
+		}
+	},
+	scene = {
+		"SHOP",
+		{}
+	}
+}
+_G.pg.base.task_data_template[20871] = {
+	name = "『tolove联动』累计消耗36000pt",
+	guild_coin_award = 0,
+	award = 904452,
+	type = 6,
+	desc = "ショップで「エナジーストーン」を36000消費する",
+	count_inherit = 20872,
+	sub_type = 123,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "5686",
+	next_task = "20872",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20871,
+	target_num = 36000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30362,
+			1
+		}
+	},
+	scene = {
+		"SHOP",
+		{}
+	}
+}
+_G.pg.base.task_data_template[20872] = {
+	name = "『tolove联动』累计消耗48000pt",
+	guild_coin_award = 0,
+	award = 904453,
+	type = 6,
+	desc = "ショップで「エナジーストーン」を48000消費する",
+	count_inherit = 0,
+	sub_type = 123,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "5686",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20872,
+	target_num = 48000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65053,
+			1
+		}
+	},
+	scene = {
+		"SHOP",
+		{}
+	}
+}
+_G.pg.base.task_data_template[20873] = {
+	name = "『tolove联动』累计杀敌50次",
+	guild_coin_award = 0,
+	award = 904454,
+	type = 6,
+	desc = "「危険発明接近中！」で量産型の敵を50体撃破する",
+	count_inherit = 20874,
+	sub_type = 12,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20874",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20873,
+	target_num = 50,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		16680001,
+		16680002,
+		16680003,
+		16680004,
+		16680005,
+		16680006,
+		16680007,
+		16681001,
+		16681002,
+		16681003,
+		16681004,
+		16681005,
+		16681006,
+		16681007,
+		16682001,
+		16682002,
+		16682003,
+		16682004,
+		16682005,
+		16682006,
+		16682007,
+		16683001,
+		16683002,
+		16683003,
+		16683004,
+		16683005,
+		16683006,
+		16683007,
+		16684001,
+		16684002,
+		16684003,
+		16684004,
+		16684005,
+		16684006,
+		16684007,
+		16685001,
+		16685002,
+		16685003,
+		16685004,
+		16685005,
+		16685006,
+		16685007
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			1000
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20874] = {
+	name = "『tolove联动』累计杀敌150次",
+	guild_coin_award = 0,
+	award = 904455,
+	type = 6,
+	desc = "「危険発明接近中！」で量産型の敵を150体撃破する",
+	count_inherit = 20875,
+	sub_type = 12,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20875",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20874,
+	target_num = 150,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		16680001,
+		16680002,
+		16680003,
+		16680004,
+		16680005,
+		16680006,
+		16680007,
+		16681001,
+		16681002,
+		16681003,
+		16681004,
+		16681005,
+		16681006,
+		16681007,
+		16682001,
+		16682002,
+		16682003,
+		16682004,
+		16682005,
+		16682006,
+		16682007,
+		16683001,
+		16683002,
+		16683003,
+		16683004,
+		16683005,
+		16683006,
+		16683007,
+		16684001,
+		16684002,
+		16684003,
+		16684004,
+		16684005,
+		16684006,
+		16684007,
+		16685001,
+		16685002,
+		16685003,
+		16685004,
+		16685005,
+		16685006,
+		16685007
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30362,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20875] = {
+	name = "『tolove联动』累计杀敌250次",
+	guild_coin_award = 0,
+	award = 904456,
+	type = 6,
+	desc = "「危険発明接近中！」で量産型の敵を250体撃破する",
+	count_inherit = 0,
+	sub_type = 12,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20875,
+	target_num = 250,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		16680001,
+		16680002,
+		16680003,
+		16680004,
+		16680005,
+		16680006,
+		16680007,
+		16681001,
+		16681002,
+		16681003,
+		16681004,
+		16681005,
+		16681006,
+		16681007,
+		16682001,
+		16682002,
+		16682003,
+		16682004,
+		16682005,
+		16682006,
+		16682007,
+		16683001,
+		16683002,
+		16683003,
+		16683004,
+		16683005,
+		16683006,
+		16683007,
+		16684001,
+		16684002,
+		16684003,
+		16684004,
+		16684005,
+		16684006,
+		16684007,
+		16685001,
+		16685002,
+		16685003,
+		16685004,
+		16685005,
+		16685006,
+		16685007
+	},
+	open_need = {},
+	award_display = {
+		{
+			5,
+			316108,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20876] = {
+	name = "『tolove联动』累计杀敌10次（精英）",
+	guild_coin_award = 0,
+	award = 904457,
+	type = 6,
+	desc = "「危険発明接近中！」で人型コピー体を10体撃破する",
+	count_inherit = 20877,
+	sub_type = 12,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20877",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20876,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		16680201,
+		16681201,
+		16681202,
+		16682201,
+		16682202,
+		16683201,
+		16683202,
+		16684201,
+		16684202,
+		16685201,
+		16685202
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			16013,
+			2
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20877] = {
+	name = "『tolove联动』累计杀敌20次（精英）",
+	guild_coin_award = 0,
+	award = 904458,
+	type = 6,
+	desc = "「危険発明接近中！」で人型コピー体を20体撃破する",
+	count_inherit = 20878,
+	sub_type = 12,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "20878",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20877,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		16680201,
+		16681201,
+		16681202,
+		16682201,
+		16682202,
+		16683201,
+		16683202,
+		16684201,
+		16684202,
+		16685201,
+		16685202
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			15016,
+			2
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20878] = {
+	name = "『tolove联动』累计杀敌30次（精英）",
+	guild_coin_award = 0,
+	award = 904459,
+	type = 6,
+	desc = "「危険発明接近中！」で人型コピー体を30体撃破する",
+	count_inherit = 0,
+	sub_type = 12,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20878,
+	target_num = 30,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		16680201,
+		16681201,
+		16681202,
+		16682201,
+		16682202,
+		16683201,
+		16683202,
+		16684201,
+		16684202,
+		16685201,
+		16685202
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30362,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20879] = {
+	name = "『tolove联动』累计杀敌10次（boss）",
+	guild_coin_award = 0,
+	award = 904460,
+	type = 6,
+	desc = "「危険発明接近中！」でボスのコピー体を10体撃破する",
+	count_inherit = 0,
+	sub_type = 12,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20879,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		16680301,
+		16681301,
+		16682301,
+		16683301,
+		16684301,
+		16685301,
+		16686001,
+		16686002,
+		16686003,
+		16686004,
+		16686005
+	},
+	open_need = {},
+	award_display = {
+		{
+			5,
+			316102,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20880] = {
+	name = "『tolove联动』累计收集200个能量晶屑",
+	guild_coin_award = 0,
+	award = 904461,
+	type = 6,
+	desc = "「エネルギーの破片」を200個集める(コラボ通常・SP・メイン海域ノーマル3章以降のステージで入手)",
+	count_inherit = 20881,
+	sub_type = 1001,
+	target_id_2 = "5694",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "441",
+	next_task = "20881",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20880,
+	target_num = 200,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54049,
+			2
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20881] = {
+	name = "『tolove联动』累计收集400个能量晶屑",
+	guild_coin_award = 0,
+	award = 904462,
+	type = 6,
+	desc = "「エネルギーの破片」を400個集める(コラボ通常・SP・メイン海域ノーマル3章以降のステージで入手)",
+	count_inherit = 20882,
+	sub_type = 1001,
+	target_id_2 = "5694",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "441",
+	next_task = "20882",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20881,
+	target_num = 400,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			2,
+			300
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20882] = {
+	name = "『tolove联动』累计收集600个能量晶屑",
+	guild_coin_award = 0,
+	award = 904463,
+	type = 6,
+	desc = "「エネルギーの破片」を600個集める(コラボ通常・SP・メイン海域ノーマル3章以降のステージで入手)",
+	count_inherit = 20883,
+	sub_type = 1001,
+	target_id_2 = "5694",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "441",
+	next_task = "20883",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20882,
+	target_num = 600,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			3000
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20883] = {
+	name = "『tolove联动』累计收集800个能量晶屑",
+	guild_coin_award = 0,
+	award = 904464,
+	type = 6,
+	desc = "「エネルギーの破片」を800個集める(コラボ通常・SP・メイン海域ノーマル3章以降のステージで入手)",
+	count_inherit = 20884,
+	sub_type = 1001,
+	target_id_2 = "5694",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "441",
+	next_task = "20884",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20883,
+	target_num = 800,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			15016,
+			5
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20884] = {
+	name = "『tolove联动』累计收集1000个能量晶屑",
+	guild_coin_award = 0,
+	award = 904465,
+	type = 6,
+	desc = "「エネルギーの破片」を1000個集める(コラボ通常・SP・メイン海域ノーマル3章以降のステージで入手)",
+	count_inherit = 20885,
+	sub_type = 1001,
+	target_id_2 = "5694",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "441",
+	next_task = "20885",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20884,
+	target_num = 1000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			54006,
+			5
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20885] = {
+	name = "『tolove联动』累计收集1200个能量晶屑",
+	guild_coin_award = 0,
+	award = 904466,
+	type = 6,
+	desc = "「エネルギーの破片」を1200個集める(コラボ通常・SP・メイン海域ノーマル3章以降のステージで入手)",
+	count_inherit = 20886,
+	sub_type = 1001,
+	target_id_2 = "5694",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "441",
+	next_task = "20886",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20885,
+	target_num = 1200,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			2,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20886] = {
+	name = "『tolove联动』累计收集1400个能量晶屑",
+	guild_coin_award = 0,
+	award = 904467,
+	type = 6,
+	desc = "「エネルギーの破片」を1400個集める(コラボ通常・SP・メイン海域ノーマル3章以降のステージで入手)",
+	count_inherit = 0,
+	sub_type = 1001,
+	target_id_2 = "5694",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "441",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20886,
+	target_num = 1400,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			5,
+			316113,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20887] = {
+	name = "『tolove联动』取得活动纪念家具",
+	guild_coin_award = 0,
+	award = 904468,
+	type = 6,
+	desc = "イベント記念家具（記念章）を入手する",
+	count_inherit = 0,
+	sub_type = 63,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "292",
+	scene = "",
+	id = 20887,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[20888] = {
+	name = "『tolove联动』开启20个外观箱",
+	guild_coin_award = 0,
+	award = 904469,
+	type = 6,
+	desc = "装備外装箱（コラボ）を20個開ける",
+	count_inherit = 0,
+	sub_type = 52,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "30362",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20888,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30548,
+			1
+		}
+	},
+	scene = {
+		"SHOP",
+		{
+			warp = "shopstreet"
+		}
+	}
+}
+_G.pg.base.task_data_template[20889] = {
+	name = "『tolove联动』活动日常建造",
+	guild_coin_award = 0,
+	award = 904470,
+	type = 36,
+	desc = "(毎日)建造を3回行う",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20889,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			440,
+			300
+		}
+	}
+}
+_G.pg.base.task_data_template[20890] = {
+	name = "『tolove联动』活动日常出击",
+	guild_coin_award = 0,
+	award = 904471,
+	type = 36,
+	desc = "(毎日)艦隊を出撃させ、15回勝利する",
+	count_inherit = 0,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20890,
+	target_num = 15,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			440,
+			300
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5679
+		}
+	}
+}
+_G.pg.base.task_data_template[20891] = {
+	name = "『tolove联动』活动日常困难关卡",
+	guild_coin_award = 0,
+	award = 904472,
+	type = 36,
+	desc = "(毎日)メイン海域ハードステージを1回勝利する",
+	count_inherit = 0,
+	sub_type = 182,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "10101",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20891,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			440,
+			100
+		}
+	},
+	scene = {
+		"HARD_MAP"
+	}
+}
+_G.pg.base.task_data_template[20892] = {
+	name = "『tolove联动』剧情模式通关",
+	guild_coin_award = 0,
+	award = 904473,
+	type = 6,
+	desc = "コラボステージのストーリーをすべて開放する",
+	count_inherit = 0,
+	sub_type = 1005,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20892,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		6465
+	},
+	open_need = {},
+	award_display = {
+		{
+			5,
+			316106,
+			1
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1870001,
+			displayMode = 2
+		}
+	}
+}
+_G.pg.base.task_data_template[20893] = {
+	name = "『tolove联动』通关任意挑战关卡",
+	guild_coin_award = 0,
+	award = 904474,
+	type = 6,
+	desc = "任意のコラボステージを1回クリアする",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 20893,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1870021,
+		1870022,
+		1870023,
+		1870024,
+		1870025
+	},
+	open_need = {},
+	award_display = {
+		{
+			5,
+			316103,
+			1
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1870002,
+			chapterId = 1870021
+		}
+	}
+}
+_G.pg.base.task_data_template[20894] = {
+	name = "『tolove联动』登录送皮肤体验券活动",
+	guild_coin_award = 0,
+	award = 904488,
+	type = 6,
+	desc = "ゲームにログインせよ！",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 20894,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			443,
+			3
+		}
+	}
+}
+_G.pg.base.task_data_template[500061] = {
+	name = "二人だけのはじまり",
+	guild_coin_award = 0,
+	award = 500061,
+	type = 5,
+	desc = "魚雷天ぷらを3個準備する（消費）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "hao",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "50003",
+	next_task = "500062",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "HAO1",
+	id = 500061,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	},
+	scene = {
+		"BACKYARD"
+	}
+}
+_G.pg.base.task_data_template[500062] = {
+	name = "これで手を繋げるね",
+	guild_coin_award = 0,
+	award = 500062,
+	type = 5,
+	desc = "任意の艦を10回強化する",
+	count_inherit = 0,
+	sub_type = 34,
+	target_id_2 = "",
+	story_icon = "hao",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "HAO2",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500063",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 500062,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500063] = {
+	name = "エプロンを付けよう！",
+	guild_coin_award = 0,
+	award = 500063,
+	type = 5,
+	desc = "ハウを含めた艦隊で出撃し、20回勝利する",
+	count_inherit = 0,
+	sub_type = 18,
+	target_id_2 = "",
+	story_icon = "hao",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "HAO3",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500064",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "20509",
+	scene = "",
+	id = 500063,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500064] = {
+	name = "ミスと笑顔",
+	guild_coin_award = 0,
+	award = 500064,
+	type = 5,
+	desc = "燃料を500消費する",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "hao",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "HAO4",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500065",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 500064,
+	target_num = 500,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500065] = {
+	name = "休憩タイム",
+	guild_coin_award = 0,
+	award = 500065,
+	type = 5,
+	desc = "ハウの親密度が100に到達",
+	count_inherit = 0,
+	sub_type = 1012,
+	target_id_2 = "",
+	story_icon = "hao",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "HAO5",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500066",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "20509",
+	scene = "",
+	id = 500065,
+	target_num = 10000,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			5
+		},
+		{
+			2,
+			16002,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[500066] = {
+	name = "想いはヤケド寸前",
+	guild_coin_award = 0,
+	award = 500066,
+	type = 5,
+	desc = "ハウを3回限界突破する",
+	count_inherit = 0,
+	sub_type = 33,
+	target_id_2 = "",
+	story_icon = "hao",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "HAO6",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500067",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "20509",
+	scene = "",
+	id = 500066,
+	target_num = 6,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			10
+		},
+		{
+			2,
+			18022,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[500067] = {
+	name = "二人だけのスイートクッキー",
+	guild_coin_award = 0,
+	award = 500067,
+	type = 5,
+	desc = "ハウのレベルが100に到達",
+	count_inherit = 0,
+	sub_type = 1013,
+	target_id_2 = "",
+	story_icon = "hao",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "HAO7",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "20509",
+	scene = "",
+	id = 500067,
+	target_num = 100,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			10
+		},
+		{
+			2,
+			18023,
+			1
+		}
+	}
+}

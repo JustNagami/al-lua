@@ -13,7 +13,7 @@
 		{
 			nameColor = "#FFFFFF",
 			actorName = 20220,
-			say = "ワガママなご主人様♪",
+			say = "ワガママな{dorm3d}♪",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_ik_tone4",
 			typewriter = {
 				speed = 0.05,

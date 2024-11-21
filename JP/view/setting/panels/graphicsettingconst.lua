@@ -47,8 +47,9 @@ var_0_0.settings = {
 	},
 	{
 		CsharpValue = "msaaSamples",
-		playerPrefsname = "msaaSamples",
+		special = true,
 		cfgId = 5,
+		playerPrefsname = "msaaSamples",
 		EnumType = "MSAASamples",
 		Enum = {
 			None = 1,
@@ -188,7 +189,7 @@ var_0_0.settings = {
 function var_0_0.HandleCustomSetting()
 	local var_1_0 = PlayerPrefs.GetInt("dorm3d_graphics_settings", 2)
 	local var_1_1 = var_0_0.assetPath[var_1_0]
-	local var_1_2 = ResourceMgr.Inst:getAssetSync("three3dquaitysettings/defaultsettings", var_1_1, nil, true, true)
+	local var_1_2 = LoadAny("three3dquaitysettings/defaultsettings", var_1_1)
 
 	if var_1_0 ~= 4 then
 		return var_1_2
@@ -210,6 +211,10 @@ function var_0_0.HandleCustomSetting()
 			if iter_1_1.childList ~= nil and var_1_4 == 1 then
 				print(123)
 			else
+				if iter_1_1.special then
+					var_1_4 = 1
+				end
+
 				for iter_1_2, iter_1_3 in pairs(iter_1_1.Enum) do
 					if iter_1_3 == var_1_4 then
 						var_1_4 = iter_1_2

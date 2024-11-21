@@ -13,7 +13,7 @@
 		{
 			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "誇らしきご主人様はここがお気に入りですか？",
+			say = "誇らしき{dorm3d}はここがお気に入りですか？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

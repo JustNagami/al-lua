@@ -17,7 +17,7 @@
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "ご主人様、この炎天下ですから、アイスクリームを一緒に食べませんか？",
+			say = "{dorm3d}、この炎天下ですから、アイスクリームを一緒に食べませんか？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

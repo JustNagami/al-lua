@@ -17,7 +17,7 @@
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "ご主人様…ダンスの練習のために少々お時間をいただけないでしょうか…？",
+			say = "{dorm3d}…ダンスの練習のために少々お時間をいただけないでしょうか…？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

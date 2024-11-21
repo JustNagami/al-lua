@@ -1,7 +1,8 @@
 ﻿local var_0_0 = class("Dorm3dPhotoMediator", import("view.base.ContextMediator"))
 
 var_0_0.SHARE_PANEL = "Dorm3dPhotoMediator:SHARE_PANEL"
-var_0_0.Camera_Pinch_Value_Change = "Camera_Pinch_Value_Change"
+var_0_0.CAMERA_LIFT_CHANGED = "CAMERA_LIFT_CHANGED"
+var_0_0.CAMERA_STICK_MOVE = "CAMERA_STICK_MOVE"
 var_0_0.GO_AR = "Dorm3dPhotoMediator:GO_AR"
 
 function var_0_0.register(arg_1_0)
@@ -70,7 +71,8 @@ end
 function var_0_0.listNotificationInterests(arg_8_0)
 	return {
 		ApartmentProxy.UPDATE_APARTMENT,
-		var_0_0.Camera_Pinch_Value_Change
+		var_0_0.CAMERA_LIFT_CHANGED,
+		var_0_0.CAMERA_STICK_MOVE
 	}
 end
 
@@ -80,8 +82,10 @@ function var_0_0.handleNotification(arg_9_0, arg_9_1)
 
 	if var_9_0 == ApartmentProxy.UPDATE_APARTMENT then
 		-- block empty
-	elseif var_9_0 == var_0_0.Camera_Pinch_Value_Change then
-		-- block empty
+	elseif var_9_0 == var_0_0.CAMERA_LIFT_CHANGED then
+		arg_9_0.viewComponent:SetPhotoCameraSliderValue(var_9_1.value)
+	elseif var_9_0 == var_0_0.CAMERA_STICK_MOVE then
+		arg_9_0.viewComponent:SetPhotoStickDelta(var_9_1)
 	end
 end
 

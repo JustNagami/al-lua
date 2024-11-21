@@ -43,16 +43,7 @@ function var_0_0.GCFinal(arg_4_0)
 	if arg_4_0.needUnityGC then
 		arg_4_0.needUnityGC = false
 
-		local var_4_0 = PoolMgr.GetInstance()
-		local var_4_1 = var_4_0:SpriteMemUsage()
-		local var_4_2 = 24
-
-		originalPrint("cached sprite size: " .. math.ceil(var_4_1 * 10) / 10 .. "/" .. var_4_2 .. "MB")
-
-		if var_4_2 < var_4_1 then
-			var_4_0:DestroyAllSprite()
-		end
-
+		PoolMgr.GetInstance():DestroyAllSprite()
 		ResourceMgr.Inst:ResUnloadAsync()
 		LuaHelper.UnityGC()
 	end

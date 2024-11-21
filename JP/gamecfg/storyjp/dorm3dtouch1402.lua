@@ -13,7 +13,7 @@
 		{
 			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "シリアスは責任を持って誇らしきご主人様をお守りします。不審な輩は近づけさせません",
+			say = "シリアスは責任を持って誇らしき{dorm3d}をお守りします。不審な輩は近づけさせません",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

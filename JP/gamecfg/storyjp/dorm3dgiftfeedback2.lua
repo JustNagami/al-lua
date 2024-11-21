@@ -22,7 +22,7 @@
 		{
 			nameColor = "#FFFFFF",
 			actorName = 20220,
-			say = "誇らしきご主人様、ありがとうございます。こちらを使って、お部屋をピッカピカにさせていただきますね",
+			say = "誇らしき{dorm3d}、ありがとうございます。こちらを使って、お部屋をピッカピカにさせていただきますね",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/dorm3d_sirus_wait_table1",
 			typewriter = {
 				speed = 0.05,

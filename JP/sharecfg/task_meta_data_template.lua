@@ -262,6 +262,11 @@ pg.task_meta_data_template = setmetatable({
 		100343,
 		100344,
 		100345,
+		100351,
+		100352,
+		100353,
+		100354,
+		100355,
 		200001,
 		200002,
 		200003,
@@ -361,7 +366,11 @@ pg.task_meta_data_template = setmetatable({
 		200251,
 		200252,
 		200253,
-		200254
+		200254,
+		200261,
+		200262,
+		200263,
+		200264
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2446,6 +2455,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100351] = {
+		target_id_2 = "970507",
+		sub_type = 180,
+		desc = "ジュリオ・チェザーレ(META)を編成した艦隊で1回戦闘に勝利する",
+		id = 100351,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100352] = {
+		target_id_2 = "970507",
+		sub_type = 180,
+		desc = "ジュリオ・チェザーレ(META)を編成した艦隊でLV30+の敵艦隊を撃破する",
+		id = 100352,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100353] = {
+		target_id_2 = "970507",
+		sub_type = 180,
+		desc = "ジュリオ・チェザーレ(META)を編成した艦隊でLV55+の敵艦隊を撃破する",
+		id = 100353,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100354] = {
+		target_id_2 = "970507",
+		sub_type = 180,
+		desc = "ジュリオ・チェザーレ(META)を編成した艦隊でLV80+の敵艦隊を撃破する",
+		id = 100354,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100355] = {
+		target_id_2 = "970507",
+		sub_type = 180,
+		desc = "ジュリオ・チェザーレ(META)を編成した艦隊でLV100+の敵艦隊を撃破する",
+		id = 100355,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -3243,6 +3292,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "セイレーン作戦で鳳翔(META)を含めた艦隊でLv100+の敵を撃破",
 		id = 200254,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200261] = {
+		target_id_2 = "970507",
+		sub_type = 302,
+		desc = "セイレーン作戦でジュリオ・チェザーレ(META)を含む艦隊で1回戦闘に勝利する",
+		id = 200261,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200262] = {
+		target_id_2 = "970507",
+		sub_type = 302,
+		desc = "<size=24>セイレーン作戦でジュリオ・チェザーレ(META)を含む艦隊でLV70+の敵を撃破する</size>",
+		id = 200262,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200263] = {
+		target_id_2 = "970507",
+		sub_type = 302,
+		desc = "<size=24>セイレーン作戦でジュリオ・チェザーレ(META)を含む艦隊でLV90+の敵を撃破する</size>",
+		id = 200263,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200264] = {
+		target_id_2 = "970507",
+		sub_type = 302,
+		desc = "<size=24>セイレーン作戦でジュリオ・チェザーレ(META)を含む艦隊でLV100+の敵を撃破する</size>",
+		id = 200264,
 		target_num = 1,
 		target_id = "100"
 	}

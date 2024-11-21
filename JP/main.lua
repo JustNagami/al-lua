@@ -51,6 +51,8 @@ if IsUnityEditor then
 	end
 end
 
+ResourceMgr.Inst.enableAssetNameFinder = false
+
 if PLATFORM_CODE == PLATFORM_CHT and PLATFORM == 8 then
 	pg.SdkMgr.GetInstance():InitSDK()
 end
@@ -79,6 +81,10 @@ end
 
 function OnApplicationExit()
 	originalPrint("OnApplicationExit")
+
+	if pg.GameTrackerMgr then
+		pg.GameTrackerMgr.GetInstance():Synchronization()
+	end
 
 	if pg.FileDownloadMgr.GetInstance():IsRunning() then
 		return
@@ -332,6 +338,9 @@ local function var_0_1(arg_12_0)
 		end,
 		function(arg_40_0)
 			pg.CameraRTMgr.GetInstance():Init(arg_40_0)
+		end,
+		function(arg_41_0)
+			pg.GameTrackerMgr.GetInstance():Init(arg_41_0)
 		end
 	}, arg_12_0)
 end
@@ -341,24 +350,24 @@ local var_0_2 = os.clock()
 seriesAsync({
 	var_0_0,
 	var_0_1
-}, function(arg_41_0)
+}, function(arg_42_0)
 	pg.SdkMgr.GetInstance():QueryWithProduct()
 	print("loading cost: " .. os.clock() - var_0_2)
 	VersionMgr.Inst:DestroyUI()
 
-	local var_41_0 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
+	local var_42_0 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
 
-	if not IsNil(var_41_0) then
-		Object.Destroy(var_41_0)
+	if not IsNil(var_42_0) then
+		Object.Destroy(var_42_0)
 	end
 
 	Screen.sleepTimeout = SleepTimeout.SystemSetting
 
 	pg.UIMgr.GetInstance():displayLoadingBG(true)
 
-	if arg_41_0 then
-		pg.UIMgr.GetInstance():Loading(arg_41_0)
-		error(arg_41_0)
+	if arg_42_0 then
+		pg.UIMgr.GetInstance():Loading(arg_42_0)
+		error(arg_42_0)
 
 		return
 	end

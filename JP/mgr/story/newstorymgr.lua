@@ -502,7 +502,7 @@ function var_0_0.CheckResDownload(arg_47_0, arg_47_1, arg_47_2)
 end
 
 local function var_0_15(arg_48_0, arg_48_1)
-	ResourceMgr.Inst:getAssetAsync("ui/" .. arg_48_0, arg_48_0, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_49_0)
+	ResourceMgr.Inst:getAssetAsync("ui/" .. arg_48_0, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_49_0)
 		arg_48_1(arg_49_0)
 	end), true, true)
 end
@@ -714,8 +714,8 @@ function var_0_0.TrackingStart(arg_68_0)
 
 	local var_68_0 = arg_68_0:StoryName2StoryId(arg_68_0.storyScript:GetName())
 
-	if not arg_68_0:GetPlayedFlag(var_68_0) then
-		TrackConst.StoryStart(var_68_0)
+	if var_68_0 and not arg_68_0:GetPlayedFlag(var_68_0) then
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildStoryStart(var_68_0, 0))
 
 		arg_68_0.trackFlag = true
 	end
@@ -728,7 +728,9 @@ function var_0_0.TrackingSkip(arg_69_0)
 
 	local var_69_0 = arg_69_0:StoryName2StoryId(arg_69_0.storyScript:GetName())
 
-	TrackConst.StorySkip(var_69_0, arg_69_0.progress or 0)
+	if var_69_0 then
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildStorySkip(var_69_0, arg_69_0.progress or 0))
+	end
 end
 
 function var_0_0.TrackingOption(arg_70_0, arg_70_1, arg_70_2)
@@ -738,7 +740,9 @@ function var_0_0.TrackingOption(arg_70_0, arg_70_1, arg_70_2)
 
 	local var_70_0 = arg_70_0:StoryName2StoryId(arg_70_0.storyScript:GetName())
 
-	TrackConst.StoryOption(var_70_0, arg_70_1 .. "_" .. (arg_70_2 or 0))
+	if var_70_0 then
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildStoryOption(var_70_0, arg_70_1 .. "_" .. (arg_70_2 or 0)))
+	end
 end
 
 function var_0_0.ClearStoryEvent(arg_71_0)

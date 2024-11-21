@@ -11,7 +11,7 @@ end
 function var_0_0.LoadBG(arg_2_0, arg_2_1)
 	local var_2_0 = "CommonBg"
 
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. var_2_0, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_3_0)
+	LoadAnyAsync("BattleResultItems/" .. var_2_0, "", nil, function(arg_3_0)
 		if arg_2_0.exited or IsNil(arg_3_0) then
 			if arg_2_1 then
 				arg_2_1()
@@ -29,7 +29,7 @@ function var_0_0.LoadBG(arg_2_0, arg_2_1)
 		if arg_2_1 then
 			arg_2_1()
 		end
-	end), true, true)
+	end)
 end
 
 function var_0_0.UpdateOutput(arg_4_0, arg_4_1)
@@ -37,7 +37,7 @@ function var_0_0.UpdateOutput(arg_4_0, arg_4_1)
 end
 
 function var_0_0.UpdateCommanders(arg_5_0, arg_5_1)
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/Worldboss", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_6_0)
+	LoadAnyAsync("BattleResultItems/Worldboss", "", nil, function(arg_6_0)
 		if arg_5_0.exited or IsNil(arg_6_0) then
 			arg_5_1()
 
@@ -48,7 +48,7 @@ function var_0_0.UpdateCommanders(arg_5_0, arg_5_1)
 
 		arg_5_0:UpdateOutput(var_6_0.transform)
 		arg_5_1()
-	end), true, true)
+	end)
 end
 
 function var_0_0.UpdatePlayer(arg_7_0)

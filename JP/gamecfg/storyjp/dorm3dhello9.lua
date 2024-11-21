@@ -13,7 +13,7 @@
 		{
 			nameColor = "#FFFFFF",
 			actorName = 20220,
-			say = "誇らしきご主人様、ようやくいらっしゃいましたね。ご主人様と過ごす時間をシリアス、楽しみにしておりました。では、まずはマッサージで疲れを取り除いて差し上げましょう",
+			say = "誇らしき{dorm3d}、ようやくいらっしゃいましたね。{dorm3d}と過ごす時間をシリアス、楽しみにしておりました。では、まずはマッサージで疲れを取り除いて差し上げましょう",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_hello9",
 			typewriter = {
 				speed = 0.05,

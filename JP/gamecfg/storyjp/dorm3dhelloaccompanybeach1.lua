@@ -17,7 +17,7 @@
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "ふぅ……ご主人さま……海がひんやりしていて気持ちいいです……ご主人様もいかがですか？",
+			say = "ふぅ……{dorm3d}……海がひんやりしていて気持ちいいです……{dorm3d}もいかがですか？",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/dorm3d_sirus_wait_table1",
 			typewriter = {
 				speed = 0.05,

@@ -13,7 +13,7 @@
 		{
 			actorName = 20220,
 			nameColor = "#FFFFFF",
-			say = "誇らしきご主人様、これ以上撫でられますと髪が乱れてしまいます……",
+			say = "誇らしき{dorm3d}、これ以上撫でられますと髪が乱れてしまいます……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

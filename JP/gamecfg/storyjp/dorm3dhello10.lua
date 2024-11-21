@@ -13,7 +13,7 @@
 		{
 			nameColor = "#FFFFFF",
 			actorName = 20220,
-			say = "ご主人様をお迎えするよう、本日はシリアスは、愛情を込めてお菓子を用意いたしました…！見た目は良くないかもしれませんが、きっと食べられるはずです……！",
+			say = "{dorm3d}をお迎えするよう、本日はシリアスは、愛情を込めてお菓子を用意いたしました…！見た目は良くないかもしれませんが、きっと食べられるはずです……！",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_hello10",
 			typewriter = {
 				speed = 0.05,

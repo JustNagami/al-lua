@@ -93,6 +93,7 @@ pg.pay_data_display = setmetatable({
 		1016,
 		1017,
 		1018,
+		1019,
 		2001,
 		2002,
 		2003,
@@ -126,6 +127,7 @@ pg.pay_data_display = setmetatable({
 		2033,
 		2034,
 		2035,
+		2036,
 		5001,
 		5002,
 		5003,
@@ -9216,6 +9218,82 @@ pg.base.pay_data_display = {
 		limit_args = {},
 		drop_item = {}
 	},
+	[1019] = {
+		name = "クルーズパス(24初冬)",
+		limit_group = 0,
+		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
+		type = 0,
+		subject = "クルーズパス(24初冬)",
+		limit_arg = 1,
+		name_display = "クルーズパス(24初冬)",
+		show_group = "",
+		type_order = 4,
+		extra_service = 4,
+		money = 1200,
+		id = 1019,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "battlepass_1",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.battlepass21",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "購入すると、シーズン任務進捗Pt1500を入手し、さらにSP報酬を開放",
+		airijp_id = "com.yostarjp.azurlane.seasonpass20",
+		extra_service_item = {
+			{
+				1,
+				4020,
+				1500
+			},
+			{
+				8,
+				65057,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					12,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					1,
+					31
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				1,
+				4020,
+				1500
+			}
+		},
+		sub_display = {
+			7020,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
 	[2001] = {
 		name = "PR特別計画艦パック・Ⅰ期",
 		limit_group = 1,
@@ -11674,6 +11752,115 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40050,
+				1
+			}
+		}
+	},
+	[2036] = {
+		name = "教科書パック",
+		limit_group = 0,
+		descrip_extra = "※購入したアイテムはメールボックスに送られます",
+		type = 0,
+		subject = "教科書パック",
+		limit_arg = 4,
+		name_display = "教科書パック",
+		show_group = "",
+		type_order = 0,
+		extra_service = 3,
+		money = 480,
+		id = 2036,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "boxSkill",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.libao121",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "購入すると教科書を大量に入手可能",
+		airijp_id = "com.yostarjp.azurlane.package121",
+		extra_service_item = {
+			{
+				2,
+				16004,
+				1
+			},
+			{
+				2,
+				16014,
+				1
+			},
+			{
+				2,
+				16024,
+				1
+			},
+			{
+				2,
+				16003,
+				3
+			},
+			{
+				2,
+				16013,
+				3
+			},
+			{
+				2,
+				16023,
+				3
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					11,
+					21
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					4,
+					16
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				16004,
+				1
+			},
+			{
+				2,
+				16014,
+				1
+			},
+			{
+				2,
+				16024,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40023,
 				1
 			}
 		}

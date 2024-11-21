@@ -170,7 +170,7 @@ function var_0_0.LoadBG(arg_16_0, arg_16_1)
 	else
 		local var_16_1 = NewBattleResultUtil.Score2Bg(arg_16_0.contextData.score)
 
-		ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. var_16_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_17_0)
+		LoadAnyAsync("BattleResultItems/" .. var_16_1, "", nil, function(arg_17_0)
 			if arg_16_0.exited or IsNil(arg_17_0) then
 				if arg_16_1 then
 					arg_16_1()
@@ -188,7 +188,7 @@ function var_0_0.LoadBG(arg_16_0, arg_16_1)
 			if arg_16_1 then
 				arg_16_1()
 			end
-		end), true, true)
+		end)
 	end
 end
 
@@ -237,9 +237,6 @@ local function var_0_5(arg_26_0, arg_26_1)
 
 		arg_26_0.metaExpView = BattleResultMetaExpView.New(arg_26_0._tf, arg_26_0.event, arg_26_0.contextData)
 
-		arg_26_0.metaExpView:Reset()
-		arg_26_0.metaExpView:Load()
-
 		local var_27_0 = getProxy(MetaCharacterProxy):getLastMetaSkillExpInfoList()
 
 		arg_26_0.metaExpView:setData(var_27_0, function()
@@ -249,6 +246,8 @@ local function var_0_5(arg_26_0, arg_26_1)
 
 			arg_26_0.metaExpView = nil
 		end)
+		arg_26_0.metaExpView:Reset()
+		arg_26_0.metaExpView:Load()
 		arg_26_0.metaExpView:ActionInvoke("Show")
 		arg_26_0.metaExpView:ActionInvoke("openPanel")
 	end, SFX_PANEL)
@@ -258,7 +257,7 @@ function var_0_0.UpdateMetaBtn(arg_29_0)
 	local var_29_0 = getProxy(MetaCharacterProxy):getLastMetaSkillExpInfoList()
 
 	if var_29_0 and #var_29_0 > 0 then
-		ResourceMgr.Inst:getAssetAsync("BattleResultItems/MetaBtn", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_30_0)
+		LoadAnyAsync("BattleResultItems/MetaBtn", "", nil, function(arg_30_0)
 			if arg_29_0.exited or IsNil(arg_30_0) then
 				return
 			end
@@ -266,7 +265,7 @@ function var_0_0.UpdateMetaBtn(arg_29_0)
 			local var_30_0 = Object.Instantiate(arg_30_0, arg_29_0._tf)
 
 			var_0_5(arg_29_0, var_30_0.transform)
-		end), true, true)
+		end)
 	end
 end
 
@@ -362,19 +361,19 @@ local function var_0_7(arg_40_0, arg_40_1)
 	local var_40_0 = arg_40_1:Find("MVP")
 
 	if IsNil(var_40_0) then
-		ResourceMgr.Inst:getAssetAsync("BattleResultItems/MVP", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_41_0)
+		LoadAnyAsync("BattleResultItems/MVP", "", nil, function(arg_41_0)
 			if arg_40_0.exited or IsNil(arg_41_0) then
 				return
 			end
 
 			Object.Instantiate(arg_41_0, arg_40_1).name = "MVP"
-		end), true, true)
+		end)
 	end
 
 	local var_40_1 = arg_40_1:Find("MVPBG")
 
 	if IsNil(var_40_1) then
-		ResourceMgr.Inst:getAssetAsync("BattleResultItems/MVPBG", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_42_0)
+		LoadAnyAsync("BattleResultItems/MVPBG", "", nil, function(arg_42_0)
 			if arg_40_0.exited or IsNil(arg_42_0) then
 				return
 			end
@@ -384,7 +383,7 @@ local function var_0_7(arg_40_0, arg_40_1)
 			var_42_0.name = "MVPBG"
 
 			var_42_0.transform:SetAsFirstSibling()
-		end), true, true)
+		end)
 	end
 end
 
@@ -392,13 +391,13 @@ local function var_0_8(arg_43_0, arg_43_1)
 	local var_43_0 = arg_43_1:Find("LevelUp")
 
 	if IsNil(var_43_0) then
-		ResourceMgr.Inst:getAssetAsync("BattleResultItems/LevelUp", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_44_0)
+		LoadAnyAsync("BattleResultItems/LevelUp", "", nil, function(arg_44_0)
 			if arg_43_0.exited or IsNil(arg_44_0) then
 				return
 			end
 
 			Object.Instantiate(arg_44_0, arg_43_1).name = "LevelUp"
-		end), true, true)
+		end)
 	end
 end
 
@@ -494,321 +493,337 @@ end
 function var_0_0.LoadShipTpls(arg_53_0, arg_53_1, arg_53_2, arg_53_3)
 	local var_53_0 = {}
 
-	for iter_53_0 = #arg_53_1 + 1, #arg_53_2 do
+	if #arg_53_1 < #arg_53_2 then
 		table.insert(var_53_0, function(arg_54_0)
-			local var_54_0 = iter_53_0 == #arg_53_2
-
-			ResourceMgr.Inst:getAssetAsync("BattleResultItems/Ship", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_55_0)
+			LoadAnyAsync("BattleResultItems/Ship", "", nil, function(arg_55_0)
 				if arg_53_0.exited or IsNil(arg_55_0) then
 					arg_54_0()
 
 					return
 				end
 
-				local var_55_0 = Object.Instantiate(arg_55_0, arg_53_0.shipContainer).transform
+				arg_54_0(arg_55_0)
+			end)
+		end)
+		table.insert(var_53_0, function(arg_56_0, arg_56_1)
+			if not arg_56_1 then
+				return
+			end
 
-				var_55_0:GetComponent(typeof(CanvasGroup)).alpha = 0
+			for iter_56_0 = #arg_53_1 + 1, #arg_53_2 do
+				local var_56_0 = Object.Instantiate(arg_56_1, arg_53_0.shipContainer).transform
 
-				table.insert(arg_53_1, var_55_0)
-				arg_54_0()
-			end), var_54_0, var_54_0)
+				var_56_0:GetComponent(typeof(CanvasGroup)).alpha = 0
+
+				table.insert(arg_53_1, var_56_0)
+			end
+
+			arg_56_0()
 		end)
 	end
 
 	seriesAsync(var_53_0, arg_53_3)
 end
 
-function var_0_0.StartShipsEnterAnimation(arg_56_0, arg_56_1, arg_56_2, arg_56_3)
-	if arg_56_2 <= 0 then
-		for iter_56_0, iter_56_1 in ipairs(arg_56_1) do
-			iter_56_1.anchoredPosition = arg_56_0:GetShipSlotShrinkPosition(iter_56_0)
+function var_0_0.StartShipsEnterAnimation(arg_57_0, arg_57_1, arg_57_2, arg_57_3)
+	if arg_57_2 <= 0 then
+		for iter_57_0, iter_57_1 in ipairs(arg_57_1) do
+			iter_57_1.anchoredPosition = arg_57_0:GetShipSlotShrinkPosition(iter_57_0)
 		end
 
 		return
 	end
 
-	local var_56_0 = {}
+	local var_57_0 = {}
 
-	for iter_56_2, iter_56_3 in ipairs(arg_56_1) do
-		local var_56_1 = iter_56_3:GetComponent(typeof(CanvasGroup))
+	for iter_57_2, iter_57_3 in ipairs(arg_57_1) do
+		local var_57_1 = iter_57_3:GetComponent(typeof(CanvasGroup))
 
-		var_56_1.alpha = 0
+		var_57_1.alpha = 0
 
-		local var_56_2 = arg_56_0:GetShipSlotExpandPosition(iter_56_2)
-		local var_56_3 = arg_56_0:GetShipSlotShrinkPosition(iter_56_2)
+		local var_57_2 = arg_57_0:GetShipSlotExpandPosition(iter_57_2)
+		local var_57_3 = arg_57_0:GetShipSlotShrinkPosition(iter_57_2)
 
-		table.insert(var_56_0, function(arg_57_0)
-			if arg_56_0.exited then
+		table.insert(var_57_0, function(arg_58_0)
+			if arg_57_0.exited then
 				return
 			end
 
-			var_56_1.alpha = 1
+			var_57_1.alpha = 1
 
-			LeanTween.value(iter_56_3.gameObject, var_56_2.x, var_56_3.x, arg_56_2 - (iter_56_2 - 1) * 0.1):setOnUpdate(System.Action_float(function(arg_58_0)
-				iter_56_3.anchoredPosition = Vector3(arg_58_0, iter_56_3.anchoredPosition.y, 0)
+			LeanTween.value(iter_57_3.gameObject, var_57_2.x, var_57_3.x, arg_57_2 - (iter_57_2 - 1) * 0.1):setOnUpdate(System.Action_float(function(arg_59_0)
+				iter_57_3.anchoredPosition = Vector3(arg_59_0, iter_57_3.anchoredPosition.y, 0)
 			end))
-			onDelayTick(arg_57_0, 0.1)
+			onDelayTick(arg_58_0, 0.1)
 		end)
 	end
 
-	seriesAsync(var_56_0, arg_56_3)
+	seriesAsync(var_57_0, arg_57_3)
 end
 
-function var_0_0.UpdateSwitchBtn(arg_59_0)
-	local var_59_0 = NewBattleResultUtil.HasSubShip(arg_59_0.contextData.oldMainShips)
-	local var_59_1 = NewBattleResultUtil.HasSurfaceShip(arg_59_0.contextData.oldMainShips)
+function var_0_0.UpdateSwitchBtn(arg_60_0)
+	local var_60_0 = NewBattleResultUtil.HasSubShip(arg_60_0.contextData.oldMainShips)
+	local var_60_1 = NewBattleResultUtil.HasSurfaceShip(arg_60_0.contextData.oldMainShips)
 
-	setActive(arg_59_0.mainFleetBtn, arg_59_0.teamType == var_0_2 and var_59_1 and var_59_0)
-	setActive(arg_59_0.subFleetBtn, arg_59_0.teamType == var_0_1 and var_59_1 and var_59_0)
+	setActive(arg_60_0.mainFleetBtn, arg_60_0.teamType == var_0_2 and var_60_1 and var_60_0)
+	setActive(arg_60_0.subFleetBtn, arg_60_0.teamType == var_0_1 and var_60_1 and var_60_0)
 
-	if not var_59_1 then
-		arg_59_0.teamType = var_0_2
+	if not var_60_1 then
+		arg_60_0.teamType = var_0_2
 	end
 end
 
-function var_0_0.UpdateMvpPainting(arg_60_0, arg_60_1)
-	local var_60_0 = arg_60_0.contextData.oldMainShips
-	local var_60_1, var_60_2, var_60_3, var_60_4 = NewBattleResultUtil.SeparateMvpShip(var_60_0, arg_60_0.contextData.statistics.mvpShipID, arg_60_0.contextData.statistics._flagShipID)
+function var_0_0.UpdateMvpPainting(arg_61_0, arg_61_1)
+	local var_61_0 = arg_61_0.contextData.oldMainShips
+	local var_61_1, var_61_2, var_61_3, var_61_4 = NewBattleResultUtil.SeparateMvpShip(var_61_0, arg_61_0.contextData.statistics.mvpShipID, arg_61_0.contextData.statistics._flagShipID)
 
-	var_60_4 = var_60_4 or var_60_0[#var_60_0 - 1]
+	var_61_4 = var_61_4 or var_61_0[#var_61_0 - 1]
 
-	local var_60_5 = arg_60_0.resultPaintingTr
-	local var_60_6 = var_60_4:getPainting()
+	local var_61_5 = arg_61_0.resultPaintingTr
+	local var_61_6 = var_61_4:getPainting()
 
-	setPaintingPrefabAsync(var_60_5, var_60_6, "jiesuan", function()
-		ShipExpressionHelper.SetExpression(findTF(var_60_5, "fitter"):GetChild(0), var_60_6, ShipWordHelper.WORD_TYPE_MVP, var_60_4:getCVIntimacy())
-		arg_60_0:RecordPainting(arg_60_1)
+	setPaintingPrefabAsync(var_61_5, var_61_6, "jiesuan", function()
+		ShipExpressionHelper.SetExpression(findTF(var_61_5, "fitter"):GetChild(0), var_61_6, ShipWordHelper.WORD_TYPE_MVP, var_61_4:getCVIntimacy())
+		arg_61_0:RecordPainting(arg_61_1)
 	end)
-	arg_60_0:DisplayShipDialogue(var_60_4)
+	arg_61_0:DisplayShipDialogue(var_61_4)
 end
 
-function var_0_0.RecordPainting(arg_62_0, arg_62_1)
+function var_0_0.RecordPainting(arg_63_0, arg_63_1)
 	onNextTick(function()
-		local var_63_0 = arg_62_0.resultPaintingTr:Find("fitter"):GetChild(0)
+		local var_64_0 = arg_63_0.resultPaintingTr:Find("fitter"):GetChild(0)
 
-		if not IsNil(var_63_0) then
-			arg_62_0.resultPaintingData = {
-				position = Vector2(var_63_0.position.x, var_63_0.position.y),
-				pivot = rtf(var_63_0).pivot,
-				scale = Vector2(var_63_0.localScale.x, var_63_0.localScale.y)
+		if not IsNil(var_64_0) then
+			arg_63_0.resultPaintingData = {
+				position = Vector2(var_64_0.position.x, var_64_0.position.y),
+				pivot = rtf(var_64_0).pivot,
+				scale = Vector2(var_64_0.localScale.x, var_64_0.localScale.y)
 			}
 
-			SetParent(var_63_0, arg_62_0.paintingTr:Find("painting/fitter"), true)
+			SetParent(var_64_0, arg_63_0.paintingTr:Find("painting/fitter"), true)
 		end
 
-		arg_62_1()
+		arg_63_1()
 	end)
 end
 
-function var_0_0.UpdateFailedPainting(arg_64_0, arg_64_1)
-	local var_64_0 = arg_64_0.contextData.oldMainShips
+function var_0_0.UpdateFailedPainting(arg_65_0, arg_65_1)
+	local var_65_0 = arg_65_0.contextData.oldMainShips
 
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/FailedPainting", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_65_0)
-		if arg_64_0.exited or IsNil(arg_65_0) then
-			arg_64_1()
+	LoadAnyAsync("BattleResultItems/FailedPainting", "", nil, function(arg_66_0)
+		if arg_65_0.exited or IsNil(arg_66_0) then
+			arg_65_1()
 
 			return
 		end
 
-		Object.Instantiate(arg_65_0, arg_64_0.paintingTr).transform:SetAsFirstSibling()
-		arg_64_1()
-	end), true, true)
-	arg_64_0:DisplayShipDialogue(var_64_0[math.random(#var_64_0)])
+		Object.Instantiate(arg_66_0, arg_65_0.paintingTr).transform:SetAsFirstSibling()
+		arg_65_1()
+	end)
+	arg_65_0:DisplayShipDialogue(var_65_0[math.random(#var_65_0)])
 end
 
-function var_0_0.GetPaintingPosition(arg_66_0)
-	local var_66_0 = arg_66_0.contextData.oldMainShips
+function var_0_0.GetPaintingPosition(arg_67_0)
+	local var_67_0 = arg_67_0.contextData.oldMainShips
 
-	return (NewBattleResultDisplayPaintingsPage.StaticGetFinalExpandPosition(#var_66_0))
+	return (NewBattleResultDisplayPaintingsPage.StaticGetFinalExpandPosition(#var_67_0))
 end
 
-function var_0_0.UpdatePaintingPosition(arg_67_0)
-	local var_67_0 = arg_67_0:GetPaintingPosition()
+function var_0_0.UpdatePaintingPosition(arg_68_0)
+	local var_68_0 = arg_68_0:GetPaintingPosition()
 
-	arg_67_0.paintingTr.localPosition = var_67_0
+	arg_68_0.paintingTr.localPosition = var_68_0
 end
 
-function var_0_0.UpdatePainting(arg_68_0, arg_68_1)
-	arg_68_0:UpdatePaintingPosition()
-
-	if arg_68_0.contextData.score > 1 then
-		arg_68_0:UpdateMvpPainting(arg_68_1)
-	else
-		arg_68_0:UpdateFailedPainting(arg_68_1)
-	end
-end
-
-function var_0_0.DisplayShipDialogue(arg_69_0, arg_69_1)
-	local var_69_0
-	local var_69_1
-	local var_69_2
+function var_0_0.UpdatePainting(arg_69_0, arg_69_1)
+	arg_69_0:UpdatePaintingPosition()
 
 	if arg_69_0.contextData.score > 1 then
-		local var_69_3, var_69_4
-
-		var_69_3, var_69_4, var_69_1 = ShipWordHelper.GetWordAndCV(arg_69_1.skinId, ShipWordHelper.WORD_TYPE_MVP, nil, nil, arg_69_1:getCVIntimacy())
+		arg_69_0:UpdateMvpPainting(arg_69_1)
 	else
-		local var_69_5, var_69_6
-
-		var_69_5, var_69_6, var_69_1 = ShipWordHelper.GetWordAndCV(arg_69_1.skinId, ShipWordHelper.WORD_TYPE_LOSE, nil, nil, arg_69_1:getCVIntimacy())
+		arg_69_0:UpdateFailedPainting(arg_69_1)
 	end
-
-	arg_69_0.chatText.text = var_69_1
-	arg_69_0.chatText.alignment = #var_69_1 > CHAT_POP_STR_LEN and TextAnchor.MiddleLeft or TextAnchor.MiddleCenter
-
-	arg_69_0:PlayMvpShipVoice()
 end
 
-function var_0_0.PlayMvpShipVoice(arg_70_0)
-	if not arg_70_0.contextData.statistics.mvpShipID or type(arg_70_0.contextData.statistics.mvpShipID) == "number" and arg_70_0.contextData.statistics.mvpShipID <= 0 then
+function var_0_0.DisplayShipDialogue(arg_70_0, arg_70_1)
+	local var_70_0
+	local var_70_1
+	local var_70_2
+
+	if arg_70_0.contextData.score > 1 then
+		local var_70_3, var_70_4
+
+		var_70_3, var_70_4, var_70_1 = ShipWordHelper.GetWordAndCV(arg_70_1.skinId, ShipWordHelper.WORD_TYPE_MVP, nil, nil, arg_70_1:getCVIntimacy())
+	else
+		local var_70_5, var_70_6
+
+		var_70_5, var_70_6, var_70_1 = ShipWordHelper.GetWordAndCV(arg_70_1.skinId, ShipWordHelper.WORD_TYPE_LOSE, nil, nil, arg_70_1:getCVIntimacy())
+	end
+
+	arg_70_0.chatText.text = var_70_1
+	arg_70_0.chatText.alignment = #var_70_1 > CHAT_POP_STR_LEN and TextAnchor.MiddleLeft or TextAnchor.MiddleCenter
+
+	arg_70_0:PlayMvpShipVoice()
+end
+
+function var_0_0.PlayMvpShipVoice(arg_71_0)
+	if not arg_71_0.contextData.statistics.mvpShipID or type(arg_71_0.contextData.statistics.mvpShipID) == "number" and arg_71_0.contextData.statistics.mvpShipID <= 0 then
 		return
 	end
 
-	local var_70_0 = _.detect(arg_70_0.contextData.oldMainShips, function(arg_71_0)
-		return arg_71_0.id == arg_70_0.contextData.statistics.mvpShipID
+	local var_71_0 = _.detect(arg_71_0.contextData.oldMainShips, function(arg_72_0)
+		return arg_72_0.id == arg_71_0.contextData.statistics.mvpShipID
 	end)
 
-	assert(var_70_0)
+	assert(var_71_0)
 
-	local var_70_1
-	local var_70_2
-	local var_70_3
+	local var_71_1
+	local var_71_2
+	local var_71_3
 
-	if arg_70_0.contextData.score > 1 then
-		local var_70_4, var_70_5
+	if arg_71_0.contextData.score > 1 then
+		local var_71_4, var_71_5
 
-		var_70_4, var_70_3, var_70_5 = ShipWordHelper.GetWordAndCV(var_70_0.skinId, ShipWordHelper.WORD_TYPE_MVP, nil, nil, var_70_0:getCVIntimacy())
+		var_71_4, var_71_3, var_71_5 = ShipWordHelper.GetWordAndCV(var_71_0.skinId, ShipWordHelper.WORD_TYPE_MVP, nil, nil, var_71_0:getCVIntimacy())
 	else
-		local var_70_6, var_70_7
+		local var_71_6, var_71_7
 
-		var_70_6, var_70_3, var_70_7 = ShipWordHelper.GetWordAndCV(var_70_0.skinId, ShipWordHelper.WORD_TYPE_LOSE)
+		var_71_6, var_71_3, var_71_7 = ShipWordHelper.GetWordAndCV(var_71_0.skinId, ShipWordHelper.WORD_TYPE_LOSE)
 	end
 
-	if var_70_3 then
-		arg_70_0:StopVoice()
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_70_3, function(arg_72_0)
-			arg_70_0._currentVoice = arg_72_0
+	if var_71_3 then
+		arg_71_0:StopVoice()
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_71_3, function(arg_73_0)
+			arg_71_0._currentVoice = arg_73_0
 		end)
 	end
 end
 
-function var_0_0.StopVoice(arg_73_0)
-	if arg_73_0._currentVoice then
-		arg_73_0._currentVoice:PlaybackStop()
+function var_0_0.StopVoice(arg_74_0)
+	if arg_74_0._currentVoice then
+		arg_74_0._currentVoice:PlaybackStop()
 
-		arg_73_0._currentVoice = nil
+		arg_74_0._currentVoice = nil
 	end
 end
 
-function var_0_0.UpdateGrade(arg_74_0)
-	local var_74_0, var_74_1 = NewBattleResultUtil.Score2Grade(arg_74_0.contextData.score, arg_74_0.contextData._scoreMark)
+function var_0_0.UpdateGrade(arg_75_0)
+	local var_75_0, var_75_1 = NewBattleResultUtil.Score2Grade(arg_75_0.contextData.score, arg_75_0.contextData._scoreMark)
 
-	LoadImageSpriteAsync(var_74_0, arg_74_0.gradeIcon, false)
-	LoadImageSpriteAsync(var_74_1, arg_74_0.gradeTxt, false)
+	LoadImageSpriteAsync(var_75_0, arg_75_0.gradeIcon, false)
+	LoadImageSpriteAsync(var_75_1, arg_75_0.gradeTxt, false)
 end
 
-function var_0_0.UpdateChapterName(arg_75_0)
-	local var_75_0 = NewBattleResultUtil.GetChapterName(arg_75_0.contextData)
+function var_0_0.UpdateChapterName(arg_76_0)
+	local var_76_0 = NewBattleResultUtil.GetChapterName(arg_76_0.contextData)
 
-	arg_75_0.chapterName.text = var_75_0
+	arg_76_0.chapterName.text = var_76_0
 
-	setActive(arg_75_0.opBonus, NewBattleResultUtil.IsOpBonus(arg_75_0.contextData.extraBuffList))
+	setActive(arg_76_0.opBonus, NewBattleResultUtil.IsOpBonus(arg_76_0.contextData.extraBuffList))
 end
 
-function var_0_0.UpdatePlayer(arg_76_0)
-	local var_76_0 = arg_76_0.contextData.oldPlayer
-	local var_76_1 = getProxy(PlayerProxy):getRawData()
+function var_0_0.UpdatePlayer(arg_77_0)
+	local var_77_0 = arg_77_0.contextData.oldPlayer
+	local var_77_1 = getProxy(PlayerProxy):getRawData()
 
-	arg_76_0.playerName.text = var_76_1:GetName()
+	arg_77_0.playerName.text = var_77_1:GetName()
 
-	local function var_76_2()
-		arg_76_0.playerLv.text = "Lv." .. var_76_1.level
+	local function var_77_2()
+		arg_77_0.playerLv.text = "Lv." .. var_77_1.level
 
-		local var_77_0 = NewBattleResultUtil.GetPlayerExpOffset(var_76_0, var_76_1)
+		local var_78_0 = NewBattleResultUtil.GetPlayerExpOffset(var_77_0, var_77_1)
 
-		arg_76_0.playerExp.text = "+" .. var_77_0
-		arg_76_0.playerExpLabel.text = "EXP"
-		arg_76_0.playerExpBar.fillAmount = var_76_1.level == var_76_1:getMaxLevel() and 1 or var_76_1.exp / getConfigFromLevel1(pg.user_level, var_76_1.level).exp_interval
+		arg_77_0.playerExp.text = "+" .. var_78_0
+		arg_77_0.playerExpLabel.text = "EXP"
+		arg_77_0.playerExpBar.fillAmount = var_77_1.level == var_77_1:getMaxLevel() and 1 or var_77_1.exp / getConfigFromLevel1(pg.user_level, var_77_1.level).exp_interval
 	end
 
-	if not arg_76_0.contextData.autoSkipFlag then
-		local var_76_3 = NewBattleResultPlayerAniamtion.New(arg_76_0.playerLv, arg_76_0.playerExp, arg_76_0.playerExpBar, var_76_1, var_76_0)
+	if not arg_77_0.contextData.autoSkipFlag then
+		local var_77_3 = NewBattleResultPlayerAniamtion.New(arg_77_0.playerLv, arg_77_0.playerExp, arg_77_0.playerExpBar, var_77_1, var_77_0)
 
-		var_76_3:SetUp(var_76_2)
+		var_77_3:SetUp(var_77_2)
 
-		arg_76_0.playerAniamtion = var_76_3
+		arg_77_0.playerAniamtion = var_77_3
 	else
-		var_76_2()
+		var_77_2()
 	end
 end
 
-local function var_0_11(arg_78_0, arg_78_1, arg_78_2)
-	GetImageSpriteFromAtlasAsync("commandericon/" .. arg_78_2:getPainting(), "", arg_78_0:Find("icon"))
-	setText(arg_78_0:Find("name_text"), arg_78_2:getName())
-	setText(arg_78_0:Find("lv_text"), "Lv." .. arg_78_2.level)
-	setText(arg_78_0:Find("exp"), "+" .. arg_78_1.exp)
+local function var_0_11(arg_79_0, arg_79_1, arg_79_2)
+	GetImageSpriteFromAtlasAsync("commandericon/" .. arg_79_2:getPainting(), "", arg_79_0:Find("icon"))
+	setText(arg_79_0:Find("name_text"), arg_79_2:getName())
+	setText(arg_79_0:Find("lv_text"), "Lv." .. arg_79_2.level)
+	setText(arg_79_0:Find("exp"), "+" .. arg_79_1.exp)
 
-	local var_78_0 = arg_78_2:isMaxLevel() and 1 or arg_78_1.curExp / arg_78_2:getNextLevelExp()
+	local var_79_0 = arg_79_2:isMaxLevel() and 1 or arg_79_1.curExp / arg_79_2:getNextLevelExp()
 
-	arg_78_0:Find("exp_bar/progress"):GetComponent(typeof(Image)).fillAmount = var_78_0
+	arg_79_0:Find("exp_bar/progress"):GetComponent(typeof(Image)).fillAmount = var_79_0
 end
 
-function var_0_0.UpdateCommanders(arg_79_0, arg_79_1)
-	local var_79_0 = arg_79_0.teamType
-	local var_79_1 = arg_79_0.contextData.commanderExps or {}
-	local var_79_2 = var_79_0 == var_0_1 and var_79_1.surfaceCMD or var_79_1.submarineCMD
+function var_0_0.UpdateCommanders(arg_80_0, arg_80_1)
+	local var_80_0 = arg_80_0.teamType
+	local var_80_1 = arg_80_0.contextData.commanderExps or {}
+	local var_80_2 = var_80_0 == var_0_1 and var_80_1.surfaceCMD or var_80_1.submarineCMD
 
-	var_79_2 = var_79_2 or {}
+	var_80_2 = var_80_2 or {}
 
-	local function var_79_3()
-		for iter_80_0 = 1, #var_79_2 do
-			local var_80_0 = getProxy(CommanderProxy):getCommanderById(var_79_2[iter_80_0].commander_id)
+	local function var_80_3()
+		for iter_81_0 = 1, #var_80_2 do
+			local var_81_0 = getProxy(CommanderProxy):getCommanderById(var_80_2[iter_81_0].commander_id)
 
-			setActive(arg_79_0.commaderTpls[iter_80_0], true)
-			var_0_11(arg_79_0.commaderTpls[iter_80_0], var_79_2[iter_80_0], var_80_0)
+			setActive(arg_80_0.commaderTpls[iter_81_0], true)
+			var_0_11(arg_80_0.commaderTpls[iter_81_0], var_80_2[iter_81_0], var_81_0)
 		end
 
-		for iter_80_1 = #arg_79_0.commaderTpls, #var_79_2 + 1, -1 do
-			setActive(arg_79_0.commaderTpls[iter_80_1], false)
+		for iter_81_1 = #arg_80_0.commaderTpls, #var_80_2 + 1, -1 do
+			setActive(arg_80_0.commaderTpls[iter_81_1], false)
 		end
 	end
 
-	for iter_79_0 = 1, #arg_79_0.emptyTpls do
-		setActive(arg_79_0.emptyTpls[iter_79_0], var_79_2[iter_79_0] == nil)
+	for iter_80_0 = 1, #arg_80_0.emptyTpls do
+		setActive(arg_80_0.emptyTpls[iter_80_0], var_80_2[iter_80_0] == nil)
 	end
 
-	arg_79_0:LoadCommanderTpls(#var_79_2, var_79_3)
-	arg_79_1()
+	arg_80_0:LoadCommanderTpls(#var_80_2, var_80_3)
+	arg_80_1()
 end
 
-function var_0_0.LoadCommanderTpls(arg_81_0, arg_81_1, arg_81_2)
-	local var_81_0 = {}
+function var_0_0.LoadCommanderTpls(arg_82_0, arg_82_1, arg_82_2)
+	local var_82_0 = {}
 
-	for iter_81_0 = #arg_81_0.commaderTpls + 1, arg_81_1 do
-		table.insert(var_81_0, function(arg_82_0)
-			local var_82_0 = iter_81_0 == arg_81_1
-
-			ResourceMgr.Inst:getAssetAsync("BattleResultItems/Commander", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_83_0)
-				if arg_81_0.exited or IsNil(arg_83_0) then
-					arg_82_0()
+	if arg_82_1 > #arg_82_0.commaderTpls then
+		table.insert(var_82_0, function(arg_83_0)
+			LoadAnyAsync("BattleResultItems/Commander", "", nil, function(arg_84_0)
+				if arg_82_0.exited or IsNil(arg_84_0) then
+					arg_83_0()
 
 					return
 				end
 
-				table.insert(arg_81_0.commaderTpls, Object.Instantiate(arg_83_0, arg_81_0.commmanderContainer).transform)
-				arg_82_0()
-			end), var_82_0, var_82_0)
+				arg_83_0(arg_84_0)
+			end)
+		end)
+		table.insert(var_82_0, function(arg_85_0, arg_85_1)
+			if not arg_85_1 then
+				return
+			end
+
+			for iter_85_0 = #arg_82_0.commaderTpls + 1, arg_82_1 do
+				table.insert(arg_82_0.commaderTpls, Object.Instantiate(arg_85_1, arg_82_0.commmanderContainer).transform)
+			end
+
+			arg_85_0()
 		end)
 	end
 
-	parallelAsync(var_81_0, arg_81_2)
+	parallelAsync(var_82_0, arg_82_2)
 end
 
-function var_0_0.onBackPressed(arg_84_0)
-	if arg_84_0.metaExpView then
-		arg_84_0.metaExpView:closePanel()
+function var_0_0.onBackPressed(arg_86_0)
+	if arg_86_0.metaExpView then
+		arg_86_0.metaExpView:closePanel()
 
-		arg_84_0.metaExpView = nil
+		arg_86_0.metaExpView = nil
 
 		return true
 	end
@@ -816,59 +831,59 @@ function var_0_0.onBackPressed(arg_84_0)
 	return false
 end
 
-function var_0_0.OnDestroy(arg_85_0)
-	arg_85_0.exited = true
+function var_0_0.OnDestroy(arg_87_0)
+	arg_87_0.exited = true
 
-	if arg_85_0.metaExpView then
-		arg_85_0.metaExpView:Destroy()
+	if arg_87_0.metaExpView then
+		arg_87_0.metaExpView:Destroy()
 
-		arg_85_0.metaExpView = nil
+		arg_87_0.metaExpView = nil
 	end
 
-	if arg_85_0:isShowing() then
-		arg_85_0:Hide()
+	if arg_87_0:isShowing() then
+		arg_87_0:Hide()
 	end
 
-	if arg_85_0.animation then
-		arg_85_0.animation:Dispose()
+	if arg_87_0.animation then
+		arg_87_0.animation:Dispose()
 	end
 
-	arg_85_0.animation = nil
+	arg_87_0.animation = nil
 
-	if LeanTween.isTweening(arg_85_0.topPanel.gameObject) then
-		LeanTween.cancel(arg_85_0.topPanel.gameObject)
+	if LeanTween.isTweening(arg_87_0.topPanel.gameObject) then
+		LeanTween.cancel(arg_87_0.topPanel.gameObject)
 	end
 
-	if LeanTween.isTweening(arg_85_0.bottomPanel.gameObject) then
-		LeanTween.cancel(arg_85_0.bottomPanel.gameObject)
+	if LeanTween.isTweening(arg_87_0.bottomPanel.gameObject) then
+		LeanTween.cancel(arg_87_0.bottomPanel.gameObject)
 	end
 
-	if arg_85_0.surfaceShipTpls then
-		for iter_85_0, iter_85_1 in ipairs(arg_85_0.surfaceShipTpls) do
-			if LeanTween.isTweening(iter_85_1.gameObject) then
-				LeanTween.cancel(iter_85_1.gameObject)
+	if arg_87_0.surfaceShipTpls then
+		for iter_87_0, iter_87_1 in ipairs(arg_87_0.surfaceShipTpls) do
+			if LeanTween.isTweening(iter_87_1.gameObject) then
+				LeanTween.cancel(iter_87_1.gameObject)
 			end
 		end
 	end
 
-	if arg_85_0.subShipTpls then
-		for iter_85_2, iter_85_3 in ipairs(arg_85_0.subShipTpls) do
-			if LeanTween.isTweening(iter_85_3.gameObject) then
-				LeanTween.cancel(iter_85_3.gameObject)
+	if arg_87_0.subShipTpls then
+		for iter_87_2, iter_87_3 in ipairs(arg_87_0.subShipTpls) do
+			if LeanTween.isTweening(iter_87_3.gameObject) then
+				LeanTween.cancel(iter_87_3.gameObject)
 			end
 		end
 	end
 
-	if arg_85_0.numeberAnimations then
-		for iter_85_4, iter_85_5 in ipairs(arg_85_0.numeberAnimations) do
-			iter_85_5:Dispose()
+	if arg_87_0.numeberAnimations then
+		for iter_87_4, iter_87_5 in ipairs(arg_87_0.numeberAnimations) do
+			iter_87_5:Dispose()
 		end
 	end
 
-	if arg_85_0.playerAniamtion then
-		arg_85_0.playerAniamtion:Dispose()
+	if arg_87_0.playerAniamtion then
+		arg_87_0.playerAniamtion:Dispose()
 
-		arg_85_0.playerAniamtion = nil
+		arg_87_0.playerAniamtion = nil
 	end
 end
 

@@ -468,6 +468,32 @@ pg.emoji_template = {
 			1
 		}
 	},
+	{
+		achieve = 1,
+		item_desc = "スタンプ：まだ寝ないの。チャットの「デフォルト」から使用できます",
+		item_name = "スタンプ：まだ寝ないの",
+		id = 37,
+		index = 77,
+		icon = "",
+		pic = "37",
+		desc = "<color=#92fc63>[まだ寝ないの]</color>",
+		type = {
+			1
+		}
+	},
+	{
+		achieve = 1,
+		item_desc = "スタンプ：ねむねむ。チャットの「デフォルト」から使用できます",
+		item_name = "スタンプ：ねむねむ",
+		id = 38,
+		index = 78,
+		icon = "",
+		pic = "38",
+		desc = "<color=#92fc63>[ねむねむ]</color>",
+		type = {
+			1
+		}
+	},
 	[41] = {
 		achieve = 0,
 		item_desc = "",
@@ -2247,6 +2273,8 @@ pg.emoji_template = {
 		34,
 		35,
 		36,
+		37,
+		38,
 		41,
 		42,
 		43,

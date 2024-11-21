@@ -17,7 +17,7 @@
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "ご主人様、シリアスは最近生け花の練習をしていて、よければ後ほどご意見やアドバイスをいただけますでしょうか？",
+			say = "{dorm3d}、シリアスは最近生け花の練習をしていて、よければ後ほどご意見やアドバイスをいただけますでしょうか？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

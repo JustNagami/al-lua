@@ -9,7 +9,7 @@
 		{
 			say = "辺りが真っ白になっている中、意識だけが浮遊する。",
 			side = 2,
-			bgName = "star_level_bg_1104 ",
+			bgName = "star_level_bg_1104",
 			dir = 1,
 			bgmDelay = 1,
 			bgm = "echo-loop",
@@ -34,7 +34,7 @@
 		{
 			dir = 1,
 			side = 2,
-			bgName = "star_level_bg_1104 ",
+			bgName = "star_level_bg_1104",
 			say = "ついさっきまで潜航艦の暗い船室の「ベッド」に横たわっていたにも関わらず、今はまるで空を飛んでいるように体の実感がない。",
 			typewriter = {
 				speed = 0.05,
@@ -48,7 +48,7 @@
 		{
 			dir = 1,
 			side = 2,
-			bgName = "star_level_bg_1104 ",
+			bgName = "star_level_bg_1104",
 			say = "作戦の打ち上げでついヴォッカを樽で飲んでしまい、そのままヨロヨロと冬の氷原に繰り出したときの感触に近い。",
 			typewriter = {
 				speed = 0.05,
@@ -62,7 +62,7 @@
 		{
 			dir = 1,
 			side = 2,
-			bgName = "star_level_bg_1104 ",
+			bgName = "star_level_bg_1104",
 			say = "気づけば、目の前には無数の「情報」――重なる画面はモザイクに、重なる声はノイズと化して、濁流のように流れてくる。",
 			typewriter = {
 				speed = 0.05,
@@ -90,7 +90,7 @@
 		{
 			dir = 1,
 			side = 2,
-			bgName = "star_level_bg_1104 ",
+			bgName = "star_level_bg_1104",
 			say = "濁流に飲み込まれぬよう必死に意識を保ち続け、クロンシュタットの両足は再び「地面」に戻った。",
 			typewriter = {
 				speed = 0.05,

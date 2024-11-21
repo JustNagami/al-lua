@@ -17,7 +17,7 @@
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "ふぅ…ん？ご主人様？ シリアスと一緒に何かなさいますか？",
+			say = "ふぅ…ん？{dorm3d}？ シリアスと一緒に何かなさいますか？",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/dorm3d_sirus_wait_bed2",
 			typewriter = {
 				speed = 0.05,

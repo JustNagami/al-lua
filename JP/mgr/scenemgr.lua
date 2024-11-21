@@ -8,7 +8,7 @@ local var_0_1 = var_0_0.SceneMgr
 
 function var_0_1.Ctor(arg_1_0)
 	arg_1_0._cacheUI = {}
-	arg_1_0._gcLimit = 3
+	arg_1_0._gcLimit = 7
 	arg_1_0._gcCounter = 0
 end
 
@@ -284,15 +284,13 @@ function var_0_1.gc(arg_20_0, arg_20_1)
 
 	arg_20_1.exited = true
 
-	if not GCThread.GetInstance().running then
+	if var_20_0 or arg_20_0._gcCounter >= arg_20_0._gcLimit then
+		arg_20_0._gcCounter = 0
+
+		gcAll(false)
+	else
 		arg_20_0._gcCounter = arg_20_0._gcCounter + 1
 
-		if arg_20_0._gcCounter >= arg_20_0._gcLimit or var_20_0 then
-			arg_20_0._gcCounter = 0
-
-			gcAll(false)
-		else
-			GCThread.GetInstance():LuaGC(false)
-		end
+		GCThread.GetInstance():LuaGC(false)
 	end
 end

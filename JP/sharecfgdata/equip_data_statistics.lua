@@ -151444,3 +151444,931 @@ _G.pg.base.equip_data_statistics[3217501] = {
 		"MG"
 	}
 }
+_G.pg.base.equip_data_statistics[150440] = {
+	type = 10,
+	name = "ぐつぐつ料理くん",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 1,
+	ammo = 10,
+	nationality = 111,
+	descrip = "ミクロレベルで食材を美味しく調理できるよ！",
+	rarity = 5,
+	attribute_1 = "durability",
+	value_3 = 0,
+	torpedo_ammo = 0,
+	id = 150440,
+	icon = "150440",
+	value_1 = "200",
+	attribute_2 = "luck",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60730
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150441] = {
+	id = 150441,
+	value_1 = "230",
+	base = 150440
+}
+_G.pg.base.equip_data_statistics[150442] = {
+	id = 150442,
+	value_1 = "260",
+	base = 150440
+}
+_G.pg.base.equip_data_statistics[150443] = {
+	id = 150443,
+	value_1 = "290",
+	base = 150440
+}
+_G.pg.base.equip_data_statistics[150444] = {
+	id = 150444,
+	value_1 = "320",
+	base = 150440
+}
+_G.pg.base.equip_data_statistics[150445] = {
+	id = 150445,
+	value_1 = "350",
+	base = 150440
+}
+_G.pg.base.equip_data_statistics[150446] = {
+	id = 150446,
+	value_1 = "380",
+	base = 150440
+}
+_G.pg.base.equip_data_statistics[150447] = {
+	id = 150447,
+	value_1 = "410",
+	base = 150440
+}
+_G.pg.base.equip_data_statistics[150448] = {
+	id = 150448,
+	value_1 = "440",
+	base = 150440
+}
+_G.pg.base.equip_data_statistics[150449] = {
+	id = 150449,
+	value_1 = "470",
+	base = 150440
+}
+_G.pg.base.equip_data_statistics[150450] = {
+	id = 150450,
+	value_2 = 2,
+	value_1 = "500",
+	base = 150440
+}
+_G.pg.base.equip_data_statistics[150451] = {
+	value_2 = 2,
+	anti_siren = 100,
+	base = 150440,
+	id = 150451,
+	value_1 = "530"
+}
+_G.pg.base.equip_data_statistics[150452] = {
+	value_2 = 2,
+	anti_siren = 200,
+	base = 150440,
+	id = 150452,
+	value_1 = "560"
+}
+_G.pg.base.equip_data_statistics[150453] = {
+	value_2 = 2,
+	anti_siren = 300,
+	base = 150440,
+	id = 150453,
+	value_1 = "590"
+}
+_G.pg.base.equip_data_statistics[150460] = {
+	type = 10,
+	name = "売上アップマシン",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 16,
+	ammo = 10,
+	nationality = 111,
+	descrip = "気持ちと心の声を読み取れるすごい発明だけど、悪用しちゃだめだよ！",
+	rarity = 5,
+	attribute_1 = "dodge",
+	value_3 = 0,
+	torpedo_ammo = 0,
+	id = 150460,
+	icon = "150460",
+	value_1 = "6",
+	attribute_2 = "hit",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60740
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150461] = {
+	id = 150461,
+	value_1 = "7",
+	base = 150460
+}
+_G.pg.base.equip_data_statistics[150462] = {
+	id = 150462,
+	value_2 = 17,
+	value_1 = "7",
+	base = 150460
+}
+_G.pg.base.equip_data_statistics[150463] = {
+	id = 150463,
+	value_2 = 18,
+	value_1 = "8",
+	base = 150460
+}
+_G.pg.base.equip_data_statistics[150464] = {
+	id = 150464,
+	value_2 = 19,
+	value_1 = "9",
+	base = 150460
+}
+_G.pg.base.equip_data_statistics[150465] = {
+	id = 150465,
+	value_2 = 20,
+	value_1 = "10",
+	base = 150460
+}
+_G.pg.base.equip_data_statistics[150466] = {
+	id = 150466,
+	value_2 = 21,
+	value_1 = "11",
+	base = 150460
+}
+_G.pg.base.equip_data_statistics[150467] = {
+	id = 150467,
+	value_2 = 22,
+	value_1 = "12",
+	base = 150460
+}
+_G.pg.base.equip_data_statistics[150468] = {
+	id = 150468,
+	value_2 = 23,
+	value_1 = "13",
+	base = 150460
+}
+_G.pg.base.equip_data_statistics[150469] = {
+	id = 150469,
+	value_2 = 24,
+	value_1 = "14",
+	base = 150460
+}
+_G.pg.base.equip_data_statistics[150470] = {
+	id = 150470,
+	value_2 = 25,
+	value_1 = "15",
+	base = 150460
+}
+_G.pg.base.equip_data_statistics[150471] = {
+	value_2 = 26,
+	anti_siren = 100,
+	base = 150460,
+	id = 150471,
+	value_1 = "16"
+}
+_G.pg.base.equip_data_statistics[150472] = {
+	value_2 = 27,
+	anti_siren = 200,
+	base = 150460,
+	id = 150472,
+	value_1 = "17"
+}
+_G.pg.base.equip_data_statistics[150473] = {
+	value_2 = 28,
+	anti_siren = 300,
+	base = 150460,
+	id = 150473,
+	value_1 = "18"
+}
+_G.pg.base.equip_data_statistics[150480] = {
+	type = 10,
+	name = "存在感消去スプレー",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 1,
+	ammo = 10,
+	nationality = 111,
+	descrip = "存在感を一気に消せるよ！使いすぎると大変なことになるかも…？",
+	rarity = 5,
+	attribute_1 = "dodge",
+	value_3 = 0,
+	torpedo_ammo = 0,
+	id = 150480,
+	icon = "150480",
+	value_1 = "13",
+	attribute_2 = "speed",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60750
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150481] = {
+	id = 150481,
+	value_1 = "14",
+	base = 150480
+}
+_G.pg.base.equip_data_statistics[150482] = {
+	id = 150482,
+	value_1 = "15",
+	base = 150480
+}
+_G.pg.base.equip_data_statistics[150483] = {
+	id = 150483,
+	value_2 = 2,
+	value_1 = "16",
+	base = 150480
+}
+_G.pg.base.equip_data_statistics[150484] = {
+	id = 150484,
+	value_2 = 2,
+	value_1 = "17",
+	base = 150480
+}
+_G.pg.base.equip_data_statistics[150485] = {
+	id = 150485,
+	value_2 = 2,
+	value_1 = "18",
+	base = 150480
+}
+_G.pg.base.equip_data_statistics[150486] = {
+	id = 150486,
+	value_2 = 3,
+	value_1 = "20",
+	base = 150480
+}
+_G.pg.base.equip_data_statistics[150487] = {
+	id = 150487,
+	value_2 = 3,
+	value_1 = "22",
+	base = 150480
+}
+_G.pg.base.equip_data_statistics[150488] = {
+	id = 150488,
+	value_2 = 4,
+	value_1 = "24",
+	base = 150480
+}
+_G.pg.base.equip_data_statistics[150489] = {
+	id = 150489,
+	value_2 = 4,
+	value_1 = "26",
+	base = 150480
+}
+_G.pg.base.equip_data_statistics[150490] = {
+	id = 150490,
+	value_2 = 5,
+	value_1 = "28",
+	base = 150480
+}
+_G.pg.base.equip_data_statistics[150491] = {
+	value_2 = 5,
+	anti_siren = 100,
+	base = 150480,
+	id = 150491,
+	value_1 = "30"
+}
+_G.pg.base.equip_data_statistics[150492] = {
+	value_2 = 5,
+	anti_siren = 200,
+	base = 150480,
+	id = 150492,
+	value_1 = "32"
+}
+_G.pg.base.equip_data_statistics[150493] = {
+	value_2 = 5,
+	anti_siren = 300,
+	base = 150480,
+	id = 150493,
+	value_1 = "34"
+}
+_G.pg.base.equip_data_statistics[150500] = {
+	type = 10,
+	name = "仕事が楽しくなるメカ",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 6,
+	ammo = 10,
+	nationality = 111,
+	descrip = "疲労を抑えるだけじゃなく、楽しい気分にもさせるよ！残業にピッタリだね！",
+	rarity = 5,
+	attribute_1 = "hit",
+	value_3 = 0,
+	torpedo_ammo = 0,
+	id = 150500,
+	icon = "150500",
+	value_1 = "10",
+	attribute_2 = "cannon",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60760
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150501] = {
+	id = 150501,
+	value_2 = 7,
+	value_1 = "11",
+	base = 150500
+}
+_G.pg.base.equip_data_statistics[150502] = {
+	id = 150502,
+	value_2 = 8,
+	value_1 = "13",
+	base = 150500
+}
+_G.pg.base.equip_data_statistics[150503] = {
+	id = 150503,
+	value_2 = 9,
+	value_1 = "14",
+	base = 150500
+}
+_G.pg.base.equip_data_statistics[150504] = {
+	id = 150504,
+	value_2 = 10,
+	value_1 = "16",
+	base = 150500
+}
+_G.pg.base.equip_data_statistics[150505] = {
+	id = 150505,
+	value_2 = 11,
+	value_1 = "17",
+	base = 150500
+}
+_G.pg.base.equip_data_statistics[150506] = {
+	id = 150506,
+	value_2 = 12,
+	value_1 = "19",
+	base = 150500
+}
+_G.pg.base.equip_data_statistics[150507] = {
+	id = 150507,
+	value_2 = 13,
+	value_1 = "20",
+	base = 150500
+}
+_G.pg.base.equip_data_statistics[150508] = {
+	id = 150508,
+	value_2 = 14,
+	value_1 = "22",
+	base = 150500
+}
+_G.pg.base.equip_data_statistics[150509] = {
+	id = 150509,
+	value_2 = 15,
+	value_1 = "23",
+	base = 150500
+}
+_G.pg.base.equip_data_statistics[150510] = {
+	id = 150510,
+	value_2 = 17,
+	value_1 = "25",
+	base = 150500
+}
+_G.pg.base.equip_data_statistics[150511] = {
+	value_2 = 18,
+	anti_siren = 100,
+	base = 150500,
+	id = 150511,
+	value_1 = "26"
+}
+_G.pg.base.equip_data_statistics[150512] = {
+	value_2 = 19,
+	anti_siren = 200,
+	base = 150500,
+	id = 150512,
+	value_1 = "28"
+}
+_G.pg.base.equip_data_statistics[150513] = {
+	value_2 = 20,
+	anti_siren = 300,
+	base = 150500,
+	id = 150513,
+	value_1 = "29"
+}
+_G.pg.base.equip_data_statistics[150520] = {
+	type = 10,
+	name = "ぐんぐんグロースくん",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "対象をぐんぐん成長させるビームが出せるよ！",
+	nationality = 111,
+	rarity = 5,
+	id = 150520,
+	value_3 = 0,
+	attribute_1 = "cannon",
+	icon = "150520",
+	value_1 = "10",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60770
+	},
+	hidden_skill_id = {},
+	part_main = {
+		3,
+		4,
+		5,
+		10,
+		13,
+		18,
+		19
+	},
+	part_sub = {
+		3,
+		4,
+		5,
+		10,
+		13,
+		18,
+		19
+	},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150521] = {
+	id = 150521,
+	value_1 = "12",
+	base = 150520,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150522] = {
+	id = 150522,
+	value_1 = "14",
+	base = 150520,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150523] = {
+	id = 150523,
+	value_1 = "16",
+	base = 150520,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150524] = {
+	id = 150524,
+	value_1 = "18",
+	base = 150520,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150525] = {
+	id = 150525,
+	value_1 = "20",
+	base = 150520,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150526] = {
+	id = 150526,
+	value_1 = "22",
+	base = 150520,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150527] = {
+	id = 150527,
+	value_1 = "24",
+	base = 150520,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150528] = {
+	id = 150528,
+	value_1 = "26",
+	base = 150520,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150529] = {
+	id = 150529,
+	value_1 = "28",
+	base = 150520,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150530] = {
+	id = 150530,
+	value_1 = "30",
+	base = 150520,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150531] = {
+	id = 150531,
+	anti_siren = 100,
+	value_1 = "32",
+	base = 150520,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150532] = {
+	id = 150532,
+	anti_siren = 200,
+	value_1 = "34",
+	base = 150520,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150533] = {
+	id = 150533,
+	anti_siren = 300,
+	value_1 = "35",
+	base = 150520,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150540] = {
+	type = 10,
+	name = "もくもくホラーくん",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 4,
+	ammo = 10,
+	nationality = 111,
+	descrip = "使用者の感情をモニタリングし、ゾッとする雰囲気を定期的に作り出せるよ！",
+	rarity = 5,
+	attribute_1 = "cannon",
+	value_3 = 0,
+	torpedo_ammo = 0,
+	id = 150540,
+	icon = "150540",
+	value_1 = "18",
+	attribute_2 = "hit",
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60780
+	},
+	hidden_skill_id = {},
+	part_main = {
+		4,
+		5,
+		10,
+		13
+	},
+	part_sub = {
+		4,
+		5,
+		10,
+		13
+	},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150541] = {
+	id = 150541,
+	value_2 = 4,
+	value_1 = "20",
+	base = 150540,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150542] = {
+	id = 150542,
+	value_2 = 5,
+	value_1 = "23",
+	base = 150540,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150543] = {
+	id = 150543,
+	value_2 = 5,
+	value_1 = "26",
+	base = 150540,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150544] = {
+	id = 150544,
+	value_2 = 6,
+	value_1 = "28",
+	base = 150540,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150545] = {
+	id = 150545,
+	value_2 = 7,
+	value_1 = "31",
+	base = 150540,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150546] = {
+	id = 150546,
+	value_2 = 7,
+	value_1 = "34",
+	base = 150540,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150547] = {
+	id = 150547,
+	value_2 = 8,
+	value_1 = "36",
+	base = 150540,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150548] = {
+	id = 150548,
+	value_2 = 8,
+	value_1 = "39",
+	base = 150540,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150549] = {
+	id = 150549,
+	value_2 = 9,
+	value_1 = "42",
+	base = 150540,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150550] = {
+	id = 150550,
+	value_2 = 10,
+	value_1 = "45",
+	base = 150540,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150551] = {
+	value_2 = 10,
+	anti_siren = 100,
+	base = 150540,
+	id = 150551,
+	value_1 = "47",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150552] = {
+	value_2 = 11,
+	anti_siren = 200,
+	base = 150540,
+	id = 150552,
+	value_1 = "50",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150553] = {
+	value_2 = 11,
+	anti_siren = 300,
+	base = 150540,
+	id = 150553,
+	value_1 = "53",
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150560] = {
+	type = 10,
+	name = "でるでるオーラくん",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "ロイヤルの気品を纏い、強烈なオーラを放つ一品。ロイヤル以外の人でも使用可能だよ！",
+	nationality = 111,
+	rarity = 5,
+	id = 150560,
+	value_3 = 0,
+	attribute_1 = "durability",
+	icon = "150560",
+	value_1 = "250",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60790
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150561] = {
+	id = 150561,
+	value_1 = "280",
+	base = 150560
+}
+_G.pg.base.equip_data_statistics[150562] = {
+	id = 150562,
+	value_1 = "310",
+	base = 150560
+}
+_G.pg.base.equip_data_statistics[150563] = {
+	id = 150563,
+	value_1 = "340",
+	base = 150560
+}
+_G.pg.base.equip_data_statistics[150564] = {
+	id = 150564,
+	value_1 = "370",
+	base = 150560
+}
+_G.pg.base.equip_data_statistics[150565] = {
+	id = 150565,
+	value_1 = "400",
+	base = 150560
+}
+_G.pg.base.equip_data_statistics[150566] = {
+	id = 150566,
+	value_1 = "430",
+	base = 150560
+}
+_G.pg.base.equip_data_statistics[150567] = {
+	id = 150567,
+	value_1 = "460",
+	base = 150560
+}
+_G.pg.base.equip_data_statistics[150568] = {
+	id = 150568,
+	value_1 = "490",
+	base = 150560
+}
+_G.pg.base.equip_data_statistics[150569] = {
+	id = 150569,
+	value_1 = "520",
+	base = 150560
+}
+_G.pg.base.equip_data_statistics[150570] = {
+	id = 150570,
+	value_1 = "550",
+	base = 150560
+}
+_G.pg.base.equip_data_statistics[150571] = {
+	id = 150571,
+	anti_siren = 100,
+	value_1 = "580",
+	base = 150560
+}
+_G.pg.base.equip_data_statistics[150572] = {
+	id = 150572,
+	anti_siren = 200,
+	value_1 = "610",
+	base = 150560
+}
+_G.pg.base.equip_data_statistics[150573] = {
+	id = 150573,
+	anti_siren = 300,
+	value_1 = "640",
+	base = 150560
+}
+_G.pg.base.equip_data_statistics[3227202] = {
+	id = 3227202,
+	name = "【2024tolove联动 剧情战】菈菈 重巡主炮",
+	base = 43160,
+	weapon_id = {
+		3227202
+	}
+}
+_G.pg.base.equip_data_statistics[3227203] = {
+	id = 3227203,
+	name = "【2024tolove联动 剧情战】菈菈 重巡副炮",
+	base = 11260,
+	weapon_id = {
+		3227203
+	}
+}
+_G.pg.base.equip_data_statistics[3227204] = {
+	id = 3227204,
+	name = "【2024tolove联动 剧情战】娜娜 驱逐主炮",
+	base = 90160,
+	weapon_id = {
+		3227204
+	}
+}
+_G.pg.base.equip_data_statistics[3227205] = {
+	id = 3227205,
+	name = "【2024tolove联动 剧情战】娜娜 驱逐鱼雷",
+	base = 5660,
+	weapon_id = {
+		3227205
+	}
+}
+_G.pg.base.equip_data_statistics[3227206] = {
+	id = 3227206,
+	name = "【2024tolove联动 剧情战】梦梦 轻巡主炮",
+	base = 32260,
+	weapon_id = {
+		3227206
+	}
+}
+_G.pg.base.equip_data_statistics[3227207] = {
+	id = 3227207,
+	name = "【2024tolove联动 剧情战】梦梦 轻巡鱼雷",
+	base = 5640,
+	weapon_id = {
+		3227207
+	}
+}
+_G.pg.base.equip_data_statistics[3227208] = {
+	id = 3227208,
+	name = "【2024tolove联动 剧情战】金色暗影 战列主炮",
+	base = 44500,
+	weapon_id = {
+		3227208
+	}
+}
+_G.pg.base.equip_data_statistics[3227209] = {
+	id = 3227209,
+	name = "【2024tolove联动 剧情战】金色暗影 战列副炮",
+	base = 32260,
+	weapon_id = {
+		3227209
+	}
+}
+_G.pg.base.equip_data_statistics[3227210] = {
+	id = 3227210,
+	name = "【2024tolove联动 剧情战】春菜 战巡主炮",
+	base = 34180,
+	weapon_id = {
+		3227210
+	}
+}
+_G.pg.base.equip_data_statistics[3227211] = {
+	id = 3227211,
+	name = "【2024tolove联动 剧情战】春菜 战巡副炮",
+	base = 32360,
+	weapon_id = {
+		3227211
+	}
+}
+_G.pg.base.equip_data_statistics[3227212] = {
+	id = 3227212,
+	name = "【2024tolove联动 剧情战】唯 战斗机",
+	base = 47160,
+	weapon_id = {
+		3227212
+	}
+}
+_G.pg.base.equip_data_statistics[3227213] = {
+	id = 3227213,
+	name = "【2024tolove联动 剧情战】唯 轰炸机",
+	base = 49040,
+	weapon_id = {
+		3227213
+	}
+}
+_G.pg.base.equip_data_statistics[3227214] = {
+	id = 3227214,
+	name = "【2024tolove联动 剧情战】唯 鱼雷机",
+	base = 38240,
+	weapon_id = {
+		3227214
+	}
+}

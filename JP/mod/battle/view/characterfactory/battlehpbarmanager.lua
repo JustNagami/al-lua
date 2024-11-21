@@ -1,40 +1,39 @@
 ﻿ys = ys or {}
 
 local var_0_0 = ys
-local var_0_1 = require("Mgr/Pool/PoolUtil")
-local var_0_2 = singletonClass("BattleHPBarManager")
+local var_0_1 = singletonClass("BattleHPBarManager")
 
-var_0_0.Battle.BattleHPBarManager = var_0_2
-var_0_2.__name = "BattleHPBarManager"
-var_0_2.ROOT_NAME = "HPBarContainer"
-var_0_2.HP_BAR_FRIENDLY = "heroBlood"
-var_0_2.HP_BAR_FOE = "enemyBlood"
-var_0_2.ORIGIN_BAR_WIDTH = {
+var_0_0.Battle.BattleHPBarManager = var_0_1
+var_0_1.__name = "BattleHPBarManager"
+var_0_1.ROOT_NAME = "HPBarContainer"
+var_0_1.HP_BAR_FRIENDLY = "heroBlood"
+var_0_1.HP_BAR_FOE = "enemyBlood"
+var_0_1.ORIGIN_BAR_WIDTH = {
 	heroBlood = 70,
 	enemyBlood = 154
 }
-var_0_2.ORIGIN_PROGRESS_WIDTH = {
+var_0_1.ORIGIN_PROGRESS_WIDTH = {
 	heroBlood = 66,
 	enemyBlood = 153
 }
 
-function var_0_2.Ctor(arg_1_0)
+function var_0_1.Ctor(arg_1_0)
 	return
 end
 
-function var_0_2.Init(arg_2_0, arg_2_1, arg_2_2)
+function var_0_1.Init(arg_2_0, arg_2_1, arg_2_2)
 	arg_2_0._allPool = {}
 	arg_2_0._ob2Pool = {}
-	arg_2_0._allPool[var_0_2.HP_BAR_FRIENDLY] = var_0_2.generateTempPool(var_0_2.HP_BAR_FRIENDLY, arg_2_2, arg_2_1, 3, 10)
-	arg_2_0._allPool[var_0_2.HP_BAR_FOE] = var_0_2.generateTempPool(var_0_2.HP_BAR_FOE, arg_2_2, arg_2_1, 8, 10)
+	arg_2_0._allPool[var_0_1.HP_BAR_FRIENDLY] = var_0_1.generateTempPool(var_0_1.HP_BAR_FRIENDLY, arg_2_2, arg_2_1, 3, 10)
+	arg_2_0._allPool[var_0_1.HP_BAR_FOE] = var_0_1.generateTempPool(var_0_1.HP_BAR_FOE, arg_2_2, arg_2_1, 8, 10)
 end
 
-function var_0_2.InitialPoolRoot(arg_3_0, arg_3_1)
-	arg_3_0._allPool[var_0_2.HP_BAR_FRIENDLY]:ResetParent(arg_3_1)
-	arg_3_0._allPool[var_0_2.HP_BAR_FOE]:ResetParent(arg_3_1)
+function var_0_1.InitialPoolRoot(arg_3_0, arg_3_1)
+	arg_3_0._allPool[var_0_1.HP_BAR_FRIENDLY]:ResetParent(arg_3_1)
+	arg_3_0._allPool[var_0_1.HP_BAR_FOE]:ResetParent(arg_3_1)
 end
 
-function var_0_2.Clear(arg_4_0)
+function var_0_1.Clear(arg_4_0)
 	for iter_4_0, iter_4_1 in pairs(arg_4_0._allPool) do
 		iter_4_1:Dispose()
 	end
@@ -43,7 +42,7 @@ function var_0_2.Clear(arg_4_0)
 	arg_4_0._allPool = {}
 end
 
-function var_0_2.GetHPBar(arg_5_0, arg_5_1)
+function var_0_1.GetHPBar(arg_5_0, arg_5_1)
 	local var_5_0 = arg_5_0._allPool[arg_5_1]
 	local var_5_1 = var_5_0:GetObject()
 
@@ -74,7 +73,7 @@ function var_0_2.GetHPBar(arg_5_0, arg_5_1)
 	return var_5_1
 end
 
-function var_0_2.DestroyObj(arg_6_0, arg_6_1)
+function var_0_1.DestroyObj(arg_6_0, arg_6_1)
 	if arg_6_1 == nil then
 		return
 	end
@@ -88,22 +87,22 @@ function var_0_2.DestroyObj(arg_6_0, arg_6_1)
 	end
 end
 
-local var_0_3 = Vector3(0, 10000, 0)
+local var_0_2 = Vector3(0, 10000, 0)
 
-function var_0_2.HideBullet(arg_7_0)
-	arg_7_0.transform.position = var_0_3
+function var_0_1.HideBullet(arg_7_0)
+	arg_7_0.transform.position = var_0_2
 end
 
-function var_0_2.generateTempPool(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4)
+function var_0_1.generateTempPool(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4)
 	local var_8_0 = arg_8_2.transform:Find(arg_8_0).gameObject
 
-	var_8_0.transform.position = var_0_3
+	var_8_0.transform.position = var_0_2
 
 	var_8_0:SetActive(true)
 
 	local var_8_1 = pg.Pool.New(arg_8_1, var_8_0, arg_8_3, arg_8_4, true, true)
 
-	var_8_1:SetRecycleFuncs(var_0_2.HideBullet)
+	var_8_1:SetRecycleFuncs(var_0_1.HideBullet)
 	var_8_1:InitSize()
 
 	return var_8_1

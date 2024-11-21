@@ -13,7 +13,7 @@
 		{
 			nameColor = "#FFFFFF",
 			actorName = 20220,
-			say = "永遠の忠誠を誓ったご主人様、シリアス、今日だけは時が少しでも長く続いてくれればと…なぜなら…シリアス、全身全霊であなたにお仕え、愛しておりますから…",
+			say = "永遠の忠誠を誓った{dorm3d}、シリアス、今日だけは時が少しでも長く続いてくれればと…なぜなら…シリアス、全身全霊であなたにお仕え、愛しておりますから…",
 			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_sirus_hello15",
 			typewriter = {
 				speed = 0.05,

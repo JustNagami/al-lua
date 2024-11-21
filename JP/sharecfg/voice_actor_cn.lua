@@ -1655,5 +1655,13 @@ pg.voice_actor_CN = {
 	[432] = {
 		code = 432,
 		actor_name = "汐入あすか"
+	},
+	[433] = {
+		code = 433,
+		actor_name = "伊藤かな恵"
+	},
+	[434] = {
+		code = 434,
+		actor_name = "名塚佳織"
 	}
 }

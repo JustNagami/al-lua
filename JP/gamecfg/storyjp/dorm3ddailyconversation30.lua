@@ -17,7 +17,7 @@
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "――ここでの生活はどうかな？",
+			say = "ここでの生活ですか？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -52,7 +52,7 @@
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "はい、本当に素晴らしい場所です。特に誇らしきご主人さまを目にする機会も二人きりでいられる時間も大幅に増えて…シリアス、とても幸せに存じます",
+			say = "はい、本当に素晴らしい場所です。特に誇らしき{dorm3d}を目にする機会も二人きりでいられる時間も大幅に増えて…シリアス、とても幸せに存じます",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

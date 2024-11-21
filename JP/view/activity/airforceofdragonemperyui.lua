@@ -5,12 +5,14 @@ function var_0_0.getUIName(arg_1_0)
 end
 
 local var_0_1 = {
+	"J-20",
 	"J-10",
 	"J-15",
 	"FC-1",
 	"FC-31"
 }
 local var_0_2 = {
+	"fighterplane_J20_tip",
 	"fighterplane_J10_tip",
 	"fighterplane_J15_tip",
 	"fighterplane_FC1_tip",
@@ -35,12 +37,6 @@ function var_0_0.init(arg_2_0)
 	setImageAlpha(arg_2_0.currentFighterImage, 0)
 
 	arg_2_0.BattleTimes = arg_2_0._tf:Find("BattleTimes")
-
-	local var_2_1 = arg_2_0._tf:GetComponent(typeof(ItemList)).prefabItem
-	local var_2_2 = tf(Instantiate(var_2_1[0]))
-
-	setParent(var_2_2, arg_2_0._tf)
-
 	arg_2_0.loader = AutoLoader.New()
 end
 
@@ -56,18 +52,20 @@ function var_0_0.GetFighterData(arg_4_0, arg_4_1)
 end
 
 function var_0_0.GetActivityProgress(arg_5_0)
-	local var_5_0 = 0
-	local var_5_1 = arg_5_0.activity:getConfig("config_client")[1]
+	local var_5_0 = arg_5_0.activity:GetMaxProgress()
+	local var_5_1 = arg_5_0.activity:GetPerDayCount()
+	local var_5_2 = 0
+	local var_5_3 = arg_5_0.activity:GetLevelCount()
 
-	for iter_5_0 = 1, var_5_1 do
-		var_5_0 = var_5_0 + arg_5_0:GetFighterData(iter_5_0)
+	for iter_5_0 = 1, var_5_3 do
+		var_5_2 = var_5_2 + (arg_5_0.activity:getKVPList(1, iter_5_0) or 0)
 	end
 
-	local var_5_2 = pg.TimeMgr.GetInstance()
-	local var_5_3 = var_5_2:DiffDay(arg_5_0.activity.data1, var_5_2:GetServerTime()) + 1
-	local var_5_4 = math.min(var_5_3 * 2, var_5_1 * 3)
+	local var_5_4 = pg.TimeMgr.GetInstance()
+	local var_5_5 = var_5_4:DiffDay(arg_5_0.activity.data1, var_5_4:GetServerTime()) + 1
+	local var_5_6 = math.min(var_5_5 * var_5_1, var_5_0)
 
-	return var_5_0, var_5_4
+	return var_5_2, var_5_6
 end
 
 function var_0_0.didEnter(arg_6_0)
@@ -83,20 +81,20 @@ function var_0_0.didEnter(arg_6_0)
 	end, SFX_PANEL)
 	onButton(arg_6_0, arg_6_0._tf:Find("Battle"), function()
 		local var_9_0 = arg_6_0.contextData.index
-		local var_9_1 = arg_6_0:GetFighterData(arg_6_0.contextData.index)
+		local var_9_1 = arg_6_0:GetFighterData(var_9_0)
 
 		local function var_9_2()
-			local var_10_0 = arg_6_0.activity:getConfig("config_client")[1]
-			local var_10_1 = arg_6_0.activity:getConfig("config_client")[2]
+			local var_10_0 = arg_6_0.activity:GetLevelCount()
+			local var_10_1 = arg_6_0.activity:getConfig("config_client").stages
 			local var_10_2 = math.floor(#var_10_1 / var_10_0)
-			local var_10_3 = var_10_2 * (arg_6_0.contextData.index - 1) + 1
+			local var_10_3 = var_10_2 * (var_9_0 - 1) + 1
 			local var_10_4 = math.min(var_10_3 + var_10_2 - 1, #var_10_1)
 			local var_10_5 = var_10_1[math.random(var_10_3, var_10_4)]
 
 			arg_6_0:emit(AirForceOfDragonEmperyMediator.ON_BATTLE, var_10_5)
 		end
 
-		if var_9_1 >= 3 then
+		if var_9_1 >= arg_6_0.activity:GetPerLevelProgress() then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("fighterplane_complete_tip"),
 				onYes = var_9_2,
@@ -240,8 +238,9 @@ function var_0_0.SwitchIndex(arg_14_0, arg_14_1)
 
 	local var_14_2, var_14_3 = arg_14_0:GetFighterData(arg_14_1)
 	local var_14_4 = arg_14_0.currentFighterDesc:Find("Progress")
+	local var_14_5 = arg_14_0.activity:GetPerLevelProgress()
 
-	UIItemList.StaticAlign(var_14_4, var_14_4:GetChild(0), 3, function(arg_24_0, arg_24_1, arg_24_2)
+	UIItemList.StaticAlign(var_14_4, var_14_4:GetChild(0), var_14_5, function(arg_24_0, arg_24_1, arg_24_2)
 		if not arg_24_0 == UIItemList.EventUpdate then
 			return
 		end
@@ -251,10 +250,10 @@ function var_0_0.SwitchIndex(arg_14_0, arg_14_1)
 		arg_24_2:GetChild(0).localScale = Vector3(0, 1, 1)
 	end)
 	LeanTween.cancel(go(var_14_4))
-	LeanTween.value(go(var_14_4), 0, 1, 0.6000000000000001):setOnUpdate(System.Action_float(function(arg_25_0)
+	LeanTween.value(go(var_14_4), 0, 1, var_14_5 * 0.2):setOnUpdate(System.Action_float(function(arg_25_0)
 		for iter_25_0 = 0, 2 do
 			local var_25_0 = var_14_4:GetChild(iter_25_0)
-			local var_25_1 = math.clamp(3 * arg_25_0 - iter_25_0, 0, 1)
+			local var_25_1 = math.clamp(var_14_5 * arg_25_0 - iter_25_0, 0, 1)
 
 			var_25_0:GetChild(0).localScale = Vector3(var_25_1, 1, 1)
 		end
@@ -269,7 +268,7 @@ function var_0_0.UpdateFighter(arg_26_0, arg_26_1)
 	UIItemList.StaticAlign(var_26_2:Find("Progress"), var_26_2:Find("Progress"):GetChild(0), var_26_0)
 
 	local var_26_3 = arg_26_0.currentFighterDesc
-	local var_26_4 = arg_26_0.activity:getConfig("config_client")[3][arg_26_1]
+	local var_26_4 = arg_26_0.activity:getConfig("config_client").awards[arg_26_1]
 	local var_26_5 = {
 		type = var_26_4[1],
 		id = var_26_4[2],
@@ -284,12 +283,13 @@ function var_0_0.UpdateFighter(arg_26_0, arg_26_1)
 end
 
 function var_0_0.CheckActivityUpdate(arg_28_0)
-	local var_28_0 = arg_28_0.activity:getConfig("config_client")[1]
+	local var_28_0 = arg_28_0.activity:GetPerLevelProgress()
+	local var_28_1 = arg_28_0.activity:GetLevelCount()
 
-	for iter_28_0 = 1, var_28_0 do
-		local var_28_1, var_28_2 = arg_28_0:GetFighterData(iter_28_0)
+	for iter_28_0 = 1, var_28_1 do
+		local var_28_2, var_28_3 = arg_28_0:GetFighterData(iter_28_0)
 
-		if var_28_1 >= 3 and not var_28_2 then
+		if var_28_0 <= var_28_2 and not var_28_3 then
 			arg_28_0:emit(AirForceOfDragonEmperyMediator.ON_ACTIVITY_OPREATION, {
 				cmd = 2,
 				activity_id = arg_28_0.activity.id,
