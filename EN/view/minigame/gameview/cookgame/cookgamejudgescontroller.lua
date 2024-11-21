@@ -20,7 +20,7 @@ function var_0_0.init(arg_2_0)
 
 	for iter_2_0 = 1, #CookGameConst.judge_data do
 		local var_2_0 = CookGameConst.judge_data[iter_2_0]
-		local var_2_1 = ResourceMgr.Inst:getAssetSync(arg_2_0._gameData.path, var_2_0.name, typeof(RuntimeAnimatorController), false, false)
+		local var_2_1 = LoadAny(arg_2_0._gameData.path, var_2_0.name, typeof(RuntimeAnimatorController))
 
 		table.insert(arg_2_0._judgeDatas, {
 			data = Clone(var_2_0),

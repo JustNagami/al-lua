@@ -205,6 +205,7 @@ pg.memory_group = setmetatable({
 		305,
 		306,
 		307,
+		308,
 		501,
 		502,
 		503,
@@ -306,6 +307,7 @@ pg.memory_group = setmetatable({
 		601,
 		602,
 		603,
+		604,
 		1000,
 		1001,
 		1002
@@ -4889,6 +4891,17 @@ pg.base.memory_group = {
 			3988
 		}
 	},
+	[308] = {
+		id = 308,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5654,
+		title = "A Brand New Sales Campaign!",
+		memories = {
+			4011
+		}
+	},
 	[501] = {
 		id = 501,
 		subtype = 0,
@@ -6617,6 +6630,23 @@ pg.base.memory_group = {
 			3935,
 			3936,
 			3937
+		}
+	},
+	[604] = {
+		id = 604,
+		subtype = 0,
+		icon = "title_chara_hao",
+		type = 3,
+		link_event = 0,
+		title = "Our Sweet Cookies",
+		memories = {
+			3991,
+			3992,
+			3993,
+			3994,
+			3995,
+			3996,
+			3997
 		}
 	},
 	[1000] = {

@@ -7,6 +7,9 @@
 	id = "DORM3DDAILYCONVERSATION17",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
 			optionFlag = 1,
@@ -22,7 +25,7 @@
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -57,7 +60,7 @@
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
@@ -75,11 +78,11 @@
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "Master... I think you already know the answer.",
+			say = "{dorm3d}... I think you already know the answer.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

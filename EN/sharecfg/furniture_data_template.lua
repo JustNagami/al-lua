@@ -151,6 +151,7 @@ pg.furniture_data_template = setmetatable({
 			287,
 			288,
 			289,
+			291,
 			100002,
 			100003,
 			100004,
@@ -3321,6 +3322,7 @@ pg.furniture_data_template = setmetatable({
 			285,
 			286,
 			288,
+			291,
 			100002,
 			100003,
 			100004,
@@ -6452,6 +6454,7 @@ pg.furniture_data_template = setmetatable({
 			238,
 			240,
 			242,
+			291,
 			200001,
 			200002,
 			200003,
@@ -9470,6 +9473,7 @@ pg.furniture_data_template = setmetatable({
 		287,
 		288,
 		289,
+		291,
 		100002,
 		100003,
 		100004,
@@ -19741,6 +19745,86 @@ pg.base.furniture_data_template = {
 				"fengfan2xunzhang",
 				"normal"
 			}
+		},
+		interAction_group = {}
+	},
+	[291] = {
+		effect = "",
+		name = "Traditional Garapon Wheel",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Pull the lever and you might get a big prize!",
+		themeId = 0,
+		icon = "choujiangtuicheicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 6,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 291,
+		can_rotate = 0,
+		size = {
+			4,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"choujiangtuiche",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance1",
+						nil,
+						"dance"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				},
+				{
+					{
+						"dance1",
+						"dance2",
+						"dance3"
+					}
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			-1
 		},
 		interAction_group = {}
 	},
@@ -146765,7 +146849,7 @@ pg.base.furniture_data_template = {
 	},
 	[315101] = {
 		effect = "",
-		name = "Creepy Castle",
+		name = "Shadowy Mimic",
 		gain_by = "",
 		type = 2,
 		dir = 0,
@@ -146775,7 +146859,7 @@ pg.base.furniture_data_template = {
 		themeId = 115,
 		count = 1,
 		is_3d_obj = 0,
-		describe = "They say that under the castle lies the darkest dungeon in all the land.",
+		describe = "Treasure can be enticing, but never jump headfirst into a chest!",
 		tag = 1,
 		icon = "baoxianggbicon",
 		spine_extra = "",
@@ -146808,7 +146892,7 @@ pg.base.furniture_data_template = {
 	},
 	[315102] = {
 		effect = "",
-		name = "Shadowy Statue",
+		name = "Creepy Castle",
 		gain_by = "",
 		type = 2,
 		dir = 0,
@@ -146818,7 +146902,7 @@ pg.base.furniture_data_template = {
 		themeId = 115,
 		count = 1,
 		is_3d_obj = 0,
-		describe = "This one may be an ancient guardian.",
+		describe = "They say that under the castle lies the darkest dungeon in all the land.",
 		tag = 1,
 		icon = "chengbaogbicon",
 		spine_extra = "",
@@ -146851,7 +146935,7 @@ pg.base.furniture_data_template = {
 	},
 	[315103] = {
 		effect = "",
-		name = "Shadowy Mimic",
+		name = "Shadowy Statue",
 		gain_by = "",
 		type = 2,
 		dir = 0,
@@ -146861,7 +146945,7 @@ pg.base.furniture_data_template = {
 		picture = "gb/diaoxianggb",
 		count = 1,
 		is_3d_obj = 0,
-		describe = "Treasure can be enticing, but never jump headfirst into a chest!",
+		describe = "This one may be an ancient guardian.",
 		tag = 1,
 		icon = "diaoxianggbicon",
 		spine_extra = "",
@@ -146898,7 +146982,7 @@ pg.base.furniture_data_template = {
 		themeId = 115,
 		count = 1,
 		is_3d_obj = 0,
-		describe = "\"You best start believing in ghost stories. You're in one.\"",
+		describe = "You best start believing in ghost stories. You're in one.",
 		tag = 1,
 		icon = "fanchuangbicon",
 		spine_extra = "",
@@ -147165,7 +147249,7 @@ pg.base.furniture_data_template = {
 	},
 	[315110] = {
 		effect = "",
-		name = "Shadowy Altar",
+		name = "Shadowy Tavern",
 		gain_by = "",
 		type = 2,
 		dir = 0,
@@ -147175,7 +147259,7 @@ pg.base.furniture_data_template = {
 		deblocking = 1,
 		count = 2,
 		is_3d_obj = 0,
-		describe = "Only the fates know what purpose it serves.",
+		describe = "Likely the best place to seek refuge from the frightening night.",
 		themeId = 115,
 		icon = "jiuguangbicon",
 		spine_extra = "",
@@ -147235,7 +147319,7 @@ pg.base.furniture_data_template = {
 	},
 	[315111] = {
 		effect = "",
-		name = "Shadowy Tavern",
+		name = "Shadowy Bushes",
 		gain_by = "",
 		type = 2,
 		dir = 0,
@@ -147245,7 +147329,7 @@ pg.base.furniture_data_template = {
 		themeId = 115,
 		count = 1,
 		is_3d_obj = 0,
-		describe = "Likely the best place to seek refuge from the frightening night.",
+		describe = "There may be valuable clues hidden in there...",
 		tag = 1,
 		icon = "shuconggbicon",
 		spine_extra = "",
@@ -147278,7 +147362,7 @@ pg.base.furniture_data_template = {
 	},
 	[315112] = {
 		effect = "",
-		name = "Shadowy Bushes",
+		name = "Creepy Streetlight",
 		gain_by = "",
 		type = 2,
 		dir = 0,
@@ -147288,7 +147372,7 @@ pg.base.furniture_data_template = {
 		deblocking = 1,
 		count = 1,
 		is_3d_obj = 0,
-		describe = "There may be valuable clues hidden in there...",
+		describe = "Such a dim light can scarcely ward off the darkness.",
 		themeId = 115,
 		icon = "zawuduigbicon",
 		spine_extra = "",
@@ -147348,7 +147432,7 @@ pg.base.furniture_data_template = {
 	},
 	[315113] = {
 		effect = "",
-		name = "Creepy Streetlight",
+		name = "Shadowy Altar",
 		gain_by = "",
 		type = 2,
 		dir = 0,
@@ -147358,7 +147442,7 @@ pg.base.furniture_data_template = {
 		deblocking = 1,
 		count = 1,
 		is_3d_obj = 0,
-		describe = "Such a dim light can scarcely ward off the darkness.",
+		describe = "Only the fates know what purpose it serves.",
 		themeId = 115,
 		icon = "jitangbicon",
 		spine_extra = "",

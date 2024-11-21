@@ -33,7 +33,7 @@ function var_0_0.initChar(arg_2_0)
 		table.insert(arg_2_0.raycastPoints, Vector3(0, 0, 0))
 	end
 
-	CastleGameVo.LoadSkeletonData(var_0_2, function(arg_3_0)
+	CastleGameVo.LoadSkeletonData("Assets/ArtResource/UI/MiniGameUI/CastleGameUI/scene/qiye_6/qiye_6_SkeletonData.asset", function(arg_3_0)
 		arg_3_0.transform.localScale = Vector3(1, 1, 1)
 		arg_3_0.transform.localPosition = Vector3(0, 0, 0)
 

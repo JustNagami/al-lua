@@ -30,7 +30,6 @@ function var_0_0.OnInit(arg_3_0)
 
 		pg.m02:sendNotification(GAME.PUZZLE_PIECE_OP, {
 			cmd = 2,
-			isPickUp = true,
 			actId = var_3_0.id,
 			id = var_4_0,
 			callback = function()

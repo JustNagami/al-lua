@@ -191805,3 +191805,335 @@ _G.pg.base.item_virtual_data_statistics[200306] = {
 		}
 	}
 }
+_G.pg.base.item_virtual_data_statistics[58998] = {
+	display = "Contains 1x Skin Discount Coupon (300 Gems Off), 10x Wisdom Cubes. The Skin Discount Coupon can be used to get a one-time 300-Gem discount when purchasing an eligible skin with Gems. After 12/04 23:59:59, this coupon can still be used when purchasing an eligible permanent skin added before 11/14. This coupon expires on 12/11, 23:59:59.",
+	name = "Black Friday Coupon & Cubes (2024)",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skin_300_pack",
+	id = 58998,
+	order = 0,
+	display_icon = {
+		{
+			2,
+			65045,
+			1
+		},
+		{
+			2,
+			20001,
+			10
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65041] = {
+	display = "Used to exchange for items in \"Violet Tempest, Blooming Lycoris Rerun\" Will be removed after the event ends.",
+	name = "Violet Go Stone",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/rixiv3_pt",
+	id = 65041,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65042] = {
+	display = "Used to exchange for a portrait frame. Removed after the event ends.",
+	name = "Training Pts",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 99,
+	is_world = 0,
+	icon = "Props/xunliandianshu_s",
+	id = 65042,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65043] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	name = "Rental Outfit Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65043,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65044] = {
+	display = "A limited construction ticket for use during the \"Violet Tempest, Blooming Lycoris Rerun\" event. Removed after the event ends.",
+	name = "Shipbuilding Support Ticket",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5639,
+	virtual_type = 22,
+	is_world = 0,
+	icon = "Props/buildTicket",
+	id = 65044,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65045] = {
+	display = "During the Black Friday event (11/14-12/04), this coupon can be used to get a one-time 300-Gem discount when purchasing an eligible skin with Gems. After 12/04 23:59:59, this coupon can still be used when purchasing an eligible permanent skin added before 11/14. This coupon expires on 12/11, 23:59:59.",
+	name = "Skin Discount Coupon (300 Gems Off)",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5652,
+	virtual_type = 13,
+	is_world = 0,
+	icon = "Props/skin_300",
+	id = 65045,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65046] = {
+	display = "Event currency of 2024 Black Friday Akashi's Fire Sale. Removed after the event ends.",
+	name = "Black Friday PT",
+	drop_oil_max = 0,
+	type = 0,
+	virtual_type = 0,
+	id = 65046,
+	shop_id = -1,
+	replace_item = 0,
+	link_id = 0,
+	icon = "Props/65046",
+	price = "",
+	order = 0,
+	rarity = 2,
+	max_num = 0,
+	time_limit = 0,
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[86407] = {
+	display = [[
+Contains a random unowned Live2D skin of from the list. Commanders that have owned all Live2D skins will get 1080 Gems instead.
+The probability of acquiring any unowned skin is the same. The list is as followed:
+Roma - White Heron of Darkest Night (L2D);
+Ulrich von Hutten - Ignition Matrician (L2D);
+Albion - Scent of Spring in the Red Pavilion (L2D);
+Anchorage - Moonlit Boat Ride (L2D);
+Cheshire - The Cat in the Magic Hat (L2D);
+Reno - Reno Bunnino (L2D);
+North Carolina - The Heart's Desire (L2D);
+Kronshtadt - Begin the Rush! (L2D);
+Kirov - Drifting Justice (L2D);
+Emden - White-Black Partita (L2D);
+Lützow - Everlasting Blood Banquet (L2D);
+Vanguard - Half-Hearted Masquerade (L2D);
+Prinz Eugen - Kindred Evening Spirits (L2D);
+Ägir - Iron Blood's Dragon Maid (L2D);
+Taihou - Sweet Time After School (L2D);
+Sakawa - The Colors of Love (L2D);
+Bremerton - Relaxation Consultation (L2D);
+Northampton II - Swimming Star (L2D);
+Brest - Marine Muse (L2D);
+Prinz Heinrich - Rabbit on Watch (L2D);
+Noshiro - Unwinding in the Sunshine (L2D);
+Prinz Rupprecht - The Gate Dragon's Advent (L2D);
+Ägir - Golden Dragon Among Auspicious Clouds (L2D);
+Kursk - Lone Wolf Amid the Steam (L2D);
+Regensburg - Dark Dragon, Brilliant Beach (L2D);
+New Jersey - Midsummer Leisure (L2D);
+Taihou - Seaside Daydreams (L2D);
+Anchorage - Dolphins and Swim Lessons (L2D);
+Amagi - Red Kite Respite (L2D);
+Gorizia - Unrequited Office Love? (L2D);
+Clemenceau - Splendid Breeze (L2D);
+Enterprise - Diving Under Blue Skies (L2D);
+Hakuryuu - Flash of Silk and Strings (L2D);
+Hatsuzuki - August's First Romance (L2D);
+Shinano - Dreamy White Sands (L2D);
+Unzen - Sojourn Through Clear Seas (L2D);
+Golden Hind - Forlorn Femme Fatale (L2D);
+Guam - Stage-Setting Charmer (L2D);
+Laffey II - Sleepy on a Busy Day (L2D);
+Kazagumo - Diligent Domestic Discipline (L2D);
+Kearsarge - All-Night Charge (L2D);
+Hindenburg - Delirious Duel (L2D);
+Perseus - Spring's Lackadaisical Leisure (L2D);
+Sovetsky Soyuz - Skyfall Agent (L2D);
+Formidable - The Lover's Heart Flutters On Duty (L2D);
+Alsace - Heat-Beating Summer Sacrament (L2D);
+Mogador - Locker Room Lechery (L2D);
+Prinz Adalbert - Bathroom Slip-Up (L2D);
+Aurora - Heritage of Yu City (L2D);
+Lung Wu - Ascendant Dragon's Spring Feast (L2D);
+Honolulu - Among the Stalls (L2D);
+Vampire - Night Princess's Regalia (L2D);
+Abercrombie - Mischief on the Rocks (L2D);
+Grozny - Shadowy Syndicate Showdown (L2D);
+Ying Swei - Frolicking Flowers, Verse I (L2D);
+Chao Ho - Frolicking Flowers, Verse II (L2D);
+Elbe - Pure-Hearted Bad Girl (L2D);
+Grozny - Bunny in the Banya (L2D);
+Helena - Shimmering Triangle Wave (L2D);
+Kashino - Robust Floral Strings (L2D);
+Cleveland - Knight of the Pop-Up Shop;
+Devonshire - Sadistic Demon;
+St. Louis - An Afternoon on the Lido Deck.]],
+	name = "Random Skin",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86407,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[86408] = {
+	display = "不会被看到",
+	name = "Random Skin",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86408,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			307083,
+			840
+		},
+		{
+			303191,
+			840
+		},
+		{
+			805031,
+			830
+		},
+		{
+			499091,
+			840
+		},
+		{
+			901071,
+			830
+		},
+		{
+			102134,
+			830
+		},
+		{
+			118021,
+			830
+		},
+		{
+			137060,
+			830
+		},
+		{
+			102053,
+			830
+		},
+		{
+			301891,
+			830
+		},
+		{
+			319013,
+			830
+		},
+		{
+			199041,
+			840
+		}
+	}
+}

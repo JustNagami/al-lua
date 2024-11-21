@@ -23,10 +23,9 @@ function var_0_0.OnInit(arg_2_0)
 		local var_3_0 = arg_2_0.pieceId
 
 		pg.m02:sendNotification(GAME.PUZZLE_PIECE_OP, {
-			cmd = 2,
-			isPickUp = true,
 			actId = var_2_0.id,
 			id = var_3_0,
+			cmd = PuzzleActivity.CMD_ACTIVATE,
 			callback = function()
 				seriesAsync({
 					function(arg_5_0)

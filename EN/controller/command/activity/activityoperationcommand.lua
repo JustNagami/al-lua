@@ -242,9 +242,9 @@ function var_0_0.updateActivityData(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 			end
 		end
 	elseif var_3_0 == ActivityConst.ACTIVITY_TYPE_PUZZLA then
-		if arg_3_1.cmd == 1 then
+		if arg_3_1.cmd == PuzzleActivity.CMD_COMPLETE then
 			arg_3_3.data1 = 1
-		elseif arg_3_1.cmd == 4 then
+		elseif arg_3_1.cmd == PuzzleActivity.CMD_EARN_EXTRA then
 			arg_3_3.data1 = 2
 		end
 

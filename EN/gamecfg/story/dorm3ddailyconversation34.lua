@@ -7,26 +7,23 @@
 	id = "DORM3DDAILYCONVERSATION34",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			optionFlag = 1,
+			actor = 0,
 			side = 0,
-			say = "!!!!!选项放第一句 say是什么呢？!!!!!!",
-			hidePaintObj = true,
-			options = {
-				{
-					content = "Do you want to go outside?",
-					flag = 1
-				}
-			}
+			say = "Do you want to go outside?",
+			hidePaintObj = true
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "I will gladly accompany you, my honourable Master! You aren't, um... feeling bored, are you?",
+			say = "I will gladly accompany you, my honourable {dorm3d}! You aren't, um... feeling bored, are you?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -67,7 +64,7 @@
 		},
 		{
 			side = 2,
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,

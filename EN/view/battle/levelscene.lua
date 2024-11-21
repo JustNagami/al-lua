@@ -1228,7 +1228,11 @@ function var_0_0.updateActivityBtns(arg_79_0)
 			local var_86_0 = arg_86_0:getConfig("config_data")[1]
 
 			return _.any(var_79_0:getChapters(), function(arg_87_0)
-				return arg_87_0:IsEXChapter() and arg_87_0:getConfig("boss_expedition_id") == var_86_0
+				if not arg_87_0:IsEXChapter() then
+					return false
+				end
+
+				return table.contains(arg_87_0:getConfig("boss_expedition_id"), var_86_0)
 			end)
 		end))
 		setActive(arg_79_0.actExchangeShopBtn, not ActivityConst.HIDE_PT_PANELS and not var_79_3 and var_79_2 and arg_79_0:IsActShopActive())

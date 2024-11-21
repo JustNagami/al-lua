@@ -237,9 +237,6 @@ local function var_0_5(arg_26_0, arg_26_1)
 
 		arg_26_0.metaExpView = BattleResultMetaExpView.New(arg_26_0._tf, arg_26_0.event, arg_26_0.contextData)
 
-		arg_26_0.metaExpView:Reset()
-		arg_26_0.metaExpView:Load()
-
 		local var_27_0 = getProxy(MetaCharacterProxy):getLastMetaSkillExpInfoList()
 
 		arg_26_0.metaExpView:setData(var_27_0, function()
@@ -249,6 +246,8 @@ local function var_0_5(arg_26_0, arg_26_1)
 
 			arg_26_0.metaExpView = nil
 		end)
+		arg_26_0.metaExpView:Reset()
+		arg_26_0.metaExpView:Load()
 		arg_26_0.metaExpView:ActionInvoke("Show")
 		arg_26_0.metaExpView:ActionInvoke("openPanel")
 	end, SFX_PANEL)

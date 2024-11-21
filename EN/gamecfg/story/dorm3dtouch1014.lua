@@ -8,7 +8,7 @@
 	hideAuto = true,
 	scripts = {
 		{
-			actorName = "Sirius",
+			actorName = 20220,
 			nameColor = "#FFFFFF",
 			say = "Sirius想和您更近一些，我的主人。",
 			typewriter = {

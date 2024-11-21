@@ -112,7 +112,7 @@ function var_0_0.Tracking(arg_18_0, arg_18_1)
 	local var_18_2 = arg_18_0.changeSkinCount
 	local var_18_3 = arg_18_1
 
-	TrackConst.TrackingExitSilentView(var_18_1, var_18_0, var_18_3)
+	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildExitSilentView(var_18_1, var_18_0, var_18_3))
 end
 
 function var_0_0.TrackingSwitchShip(arg_19_0)
@@ -136,7 +136,7 @@ function var_0_0.TrackingSwitchShip(arg_19_0)
 	local var_19_3 = pg.TimeMgr.GetInstance():GetServerTime()
 	local var_19_4 = var_19_3 - arg_19_0.paintingTime
 
-	TrackConst.TrackingSwitchPainting(var_19_2, var_19_4)
+	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildSwitchPainting(var_19_2, var_19_4))
 
 	arg_19_0.paintingTime = var_19_3
 end

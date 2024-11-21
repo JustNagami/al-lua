@@ -145,7 +145,7 @@ local function var_0_8(arg_17_0)
 end
 
 function var_0_0.LoadVedioPlayer(arg_18_0, arg_18_1, arg_18_2)
-	ResourceMgr.Inst:getAssetAsync("Cryptolalia/" .. arg_18_1, arg_18_1, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_19_0)
+	ResourceMgr.Inst:getAssetAsync("Cryptolalia/" .. arg_18_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_19_0)
 		local var_19_0 = Object.Instantiate(arg_19_0, arg_18_0.root)
 
 		arg_18_0.text = var_19_0.transform:Find("Text"):GetComponent(typeof(Text))

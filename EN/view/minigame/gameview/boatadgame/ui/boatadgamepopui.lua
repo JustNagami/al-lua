@@ -75,7 +75,7 @@ function var_0_0.initAdWindow(arg_12_0)
 
 	setActive(arg_12_0.btnRepeat, false)
 	onButton(arg_12_0._event, findTF(arg_12_0.adUI, "ad/bottom"), function()
-		if var_0_2 and Time.realtimeSinceStartup - var_0_2 < 1 then
+		if var_0_2 and Time.realtimeSinceStartup - var_0_2 < 3 then
 			return
 		end
 
@@ -90,7 +90,7 @@ function var_0_0.initAdWindow(arg_12_0)
 		arg_12_0._event:emit(BoatAdGameEvent.CLOSE_AD_UI)
 	end, SFX_CANCEL)
 	onButton(arg_12_0._event, findTF(arg_12_0.adUI, "ad/bgClose"), function()
-		if var_0_2 and Time.realtimeSinceStartup - var_0_2 < 2 then
+		if var_0_2 and Time.realtimeSinceStartup - var_0_2 < 3 then
 			return
 		end
 
@@ -105,7 +105,7 @@ function var_0_0.initAdWindow(arg_12_0)
 		arg_12_0._event:emit(BoatAdGameEvent.CLOSE_AD_UI)
 	end, SFX_CANCEL)
 	onButton(arg_12_0._event, arg_12_0.btnRepeat, function()
-		if var_0_2 and Time.realtimeSinceStartup - var_0_2 < 2 then
+		if var_0_2 and Time.realtimeSinceStartup - var_0_2 < 3 then
 			return
 		end
 
@@ -141,6 +141,9 @@ function var_0_0.loadMv(arg_17_0)
 	arg_17_0.isLoading = true
 	arg_17_0.mvCompleteFlag = false
 
+	setActive(arg_17_0.btnPlay, false)
+	setActive(arg_17_0.btnStop, false)
+	setActive(arg_17_0.btnRepeat, false)
 	PoolMgr.GetInstance():GetUI(var_17_0, true, function(arg_18_0)
 		arg_17_0.mvGo = arg_18_0
 		arg_17_0.mvName = var_17_0
@@ -154,9 +157,6 @@ function var_0_0.loadMv(arg_17_0)
 		local var_18_0 = PlayerPrefs.GetFloat("bgm_vol", DEFAULT_BGMVOLUME) or 1
 
 		arg_17_0.mvManaCpkUI.player:SetVolume(var_18_0)
-		setActive(arg_17_0.btnPlay, false)
-		setActive(arg_17_0.btnStop, true)
-		setActive(arg_17_0.btnRepeat, false)
 
 		if arg_17_0.isLoading == false then
 			arg_17_0:clearMovie()
@@ -170,8 +170,6 @@ function var_0_0.loadMv(arg_17_0)
 end
 
 function var_0_0.mvComplete(arg_20_0)
-	print("播放完成")
-
 	arg_20_0.mvCompleteFlag = true
 
 	arg_20_0:onPlayerEnd()

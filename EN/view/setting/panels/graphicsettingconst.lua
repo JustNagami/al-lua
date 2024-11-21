@@ -188,7 +188,7 @@ var_0_0.settings = {
 function var_0_0.HandleCustomSetting()
 	local var_1_0 = PlayerPrefs.GetInt("dorm3d_graphics_settings", 2)
 	local var_1_1 = var_0_0.assetPath[var_1_0]
-	local var_1_2 = ResourceMgr.Inst:getAssetSync("three3dquaitysettings/defaultsettings", var_1_1, nil, true, true)
+	local var_1_2 = LoadAny("three3dquaitysettings/defaultsettings", var_1_1)
 
 	if var_1_0 ~= 4 then
 		return var_1_2

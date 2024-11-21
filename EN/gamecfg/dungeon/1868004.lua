@@ -436,9 +436,9 @@
 				}
 			},
 			{
-				tmpID = 900461,
-				configId = 900461,
-				skinId = 9600010,
+				tmpID = 900462,
+				configId = 900462,
+				skinId = 9600040,
 				id = 2,
 				level = 100,
 				equipment = {
@@ -461,15 +461,11 @@
 				},
 				skills = {
 					{
-						id = 16180,
+						id = 17160,
 						level = 10
 					},
 					{
-						id = 16190,
-						level = 10
-					},
-					{
-						id = 29962,
+						id = 30132,
 						level = 10
 					}
 				}
@@ -563,9 +559,9 @@
 				}
 			},
 			{
-				tmpID = 900464,
-				configId = 900464,
-				skinId = 9600030,
+				tmpID = 900463,
+				configId = 900463,
+				skinId = 9600020,
 				id = 2,
 				level = 100,
 				equipment = {
@@ -588,15 +584,11 @@
 				},
 				skills = {
 					{
-						id = 17240,
+						id = 17190,
 						level = 10
 					},
 					{
-						id = 17250,
-						level = 10
-					},
-					{
-						id = 30152,
+						id = 17200,
 						level = 10
 					},
 					{
