@@ -193521,8 +193521,8 @@ _G.pg.base.item_virtual_data_statistics[65056] = {
 	combination_display = {}
 }
 _G.pg.base.item_virtual_data_statistics[65057] = {
-	display = "不该被看到",
-	name = "通行证二十期对应虚拟道具",
+	display = "参与「世界巡游」获得的点数，累计一定程度可以领取奖励，活动结束后将会消失 ",
+	name = "巡游点数",
 	max_num = 0,
 	type = 0,
 	time_limit = 0,

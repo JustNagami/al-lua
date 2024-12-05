@@ -3315,7 +3315,6 @@ pg.memory_template = setmetatable({
 		3995,
 		3996,
 		3997,
-		4011,
 		4021,
 		4022,
 		4023,
@@ -3347,6 +3346,13 @@ pg.memory_template = setmetatable({
 		4056,
 		4057,
 		4058,
+		4061,
+		4062,
+		4063,
+		4064,
+		4065,
+		4066,
+		4067,
 		10011,
 		10012,
 		10013,
@@ -39933,17 +39939,6 @@ pg.base.memory_template = {
 		icon = "memory_hao",
 		is_open = 0
 	},
-	[4011] = {
-		type = 1,
-		subtitle = "",
-		mask = "bg/bg_memory",
-		title = "新型促销方式探索",
-		condition = "解锁「新型促销来袭！」",
-		story = "XINXINGCUXIAOLAIXI1",
-		id = 4011,
-		icon = "memory_xinxingcuxiaolaixi",
-		is_open = 0
-	},
 	[4021] = {
 		type = 1,
 		subtitle = "",
@@ -40283,6 +40278,83 @@ pg.base.memory_template = {
 		story = "WEIXIANFAMINGPOJINZHONGWEITUO8",
 		id = 4058,
 		icon = "memory_weixianfamingpojinzhong3",
+		is_open = 0
+	},
+	[4061] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "失眠的{namecode:461}小姐",
+		condition = "解锁「夺回甜蜜美梦！」任务1",
+		story = "LVZUOFU1",
+		id = 4061,
+		icon = "memory_lvzuofu",
+		is_open = 0
+	},
+	[4062] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "疲惫的{namecode:461}小姐",
+		condition = "解锁「夺回甜蜜美梦！」任务2",
+		story = "LVZUOFU2",
+		id = 4062,
+		icon = "memory_lvzuofu",
+		is_open = 0
+	},
+	[4063] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "针对失眠的“处方”",
+		condition = "解锁「夺回甜蜜美梦！」任务3",
+		story = "LVZUOFU3",
+		id = 4063,
+		icon = "memory_lvzuofu",
+		is_open = 0
+	},
+	[4064] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "林荫道上的{namecode:461}小姐",
+		condition = "解锁「夺回甜蜜美梦！」任务4",
+		story = "LVZUOFU4",
+		id = 4064,
+		icon = "memory_lvzuofu",
+		is_open = 0
+	},
+	[4065] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "安睡时刻",
+		condition = "解锁「夺回甜蜜美梦！」任务5",
+		story = "LVZUOFU5",
+		id = 4065,
+		icon = "memory_lvzuofu",
+		is_open = 0
+	},
+	[4066] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "深夜的守候",
+		condition = "解锁「夺回甜蜜美梦！」任务6",
+		story = "LVZUOFU6",
+		id = 4066,
+		icon = "memory_lvzuofu",
+		is_open = 0
+	},
+	[4067] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "晚安，{namecode:461}小姐",
+		condition = "解锁「夺回甜蜜美梦！」任务7",
+		story = "LVZUOFU7",
+		id = 4067,
+		icon = "memory_lvzuofu",
 		is_open = 0
 	},
 	[10011] = {

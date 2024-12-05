@@ -24,7 +24,7 @@
 			side = 2,
 			bgName = "bg_tolove_2",
 			say = "在第二信号点，梦梦、西连寺春菜以及天狼星、黛朵、斯库拉等人组成的搜索队，也遭遇了敌人的袭击。",
-			bgm = "tl-battle-inst",
+			bgm = "story-richang-refreshing",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

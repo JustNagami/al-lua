@@ -250361,3 +250361,177 @@ _G.pg.base.aircraft_template[3227217] = {
 	name = "【2024tolove联动 剧情战】支援弹幕 光辉鱼雷机",
 	base = 28433
 }
+_G.pg.base.aircraft_template[166891] = {
+	attack_power = 2,
+	name = "凤翔技能鱼雷机lv.1",
+	type = 2,
+	accuracy = 23,
+	model_ID = "97jiangong",
+	ACC_growth = 0,
+	crash_DMG = 148,
+	dodge = 1.17,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 166891,
+	icon = "97jiangong",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 4,
+	hp_growth = 1155,
+	speed = 48,
+	max_hp = 30,
+	scale = 1,
+	weapon_ID = {
+		166901
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.68,
+				-0.667,
+				0
+			},
+			{
+				0.97,
+				0.584,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0.54,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[166892] = {
+	id = 166892,
+	name = "凤翔技能鱼雷机lv.2",
+	hp_growth = 1345,
+	base = 166891,
+	max_hp = 39,
+	spawn_brownian = 1,
+	weapon_ID = {
+		166902
+	}
+}
+_G.pg.base.aircraft_template[166893] = {
+	id = 166893,
+	name = "凤翔技能鱼雷机lv.3",
+	hp_growth = 1507,
+	base = 166891,
+	max_hp = 43,
+	spawn_brownian = 1,
+	weapon_ID = {
+		166903
+	}
+}
+_G.pg.base.aircraft_template[166894] = {
+	id = 166894,
+	name = "凤翔技能鱼雷机lv.4",
+	hp_growth = 1669,
+	base = 166891,
+	max_hp = 47,
+	spawn_brownian = 1,
+	weapon_ID = {
+		166904
+	}
+}
+_G.pg.base.aircraft_template[166895] = {
+	id = 166895,
+	name = "凤翔技能鱼雷机lv.5",
+	hp_growth = 1831,
+	base = 166891,
+	max_hp = 51,
+	spawn_brownian = 1,
+	weapon_ID = {
+		166905
+	}
+}
+_G.pg.base.aircraft_template[166896] = {
+	id = 166896,
+	name = "凤翔技能鱼雷机lv.6",
+	hp_growth = 1994,
+	base = 166891,
+	max_hp = 55,
+	spawn_brownian = 1,
+	weapon_ID = {
+		166906
+	}
+}
+_G.pg.base.aircraft_template[166897] = {
+	id = 166897,
+	name = "凤翔技能鱼雷机lv.7",
+	hp_growth = 2157,
+	base = 166891,
+	max_hp = 59,
+	spawn_brownian = 1,
+	weapon_ID = {
+		166907
+	}
+}
+_G.pg.base.aircraft_template[166898] = {
+	id = 166898,
+	name = "凤翔技能鱼雷机lv.8",
+	hp_growth = 2320,
+	base = 166891,
+	max_hp = 63,
+	spawn_brownian = 1,
+	weapon_ID = {
+		166908
+	}
+}
+_G.pg.base.aircraft_template[166899] = {
+	id = 166899,
+	name = "凤翔技能鱼雷机lv.9",
+	hp_growth = 2483,
+	base = 166891,
+	max_hp = 68,
+	spawn_brownian = 1,
+	weapon_ID = {
+		166909
+	}
+}
+_G.pg.base.aircraft_template[166900] = {
+	id = 166900,
+	name = "凤翔技能鱼雷机lv.10",
+	hp_growth = 2646,
+	base = 166891,
+	max_hp = 73,
+	spawn_brownian = 1,
+	weapon_ID = {
+		166910
+	}
+}

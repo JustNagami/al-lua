@@ -22626,26 +22626,26 @@ pg.base.furniture_data_template = {
 		interAction_group = {}
 	},
 	[292] = {
-		rarity = 5,
+		spine_extra = "",
 		describe = "乘坐飞碟，开始一场新的冒险吧！ ",
 		gain_by = "危险发明迫近中！",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
-		belong = 1,
+		rarity = 5,
 		is_get_time_note = 1,
+		belong = 1,
 		themeId = 0,
-		count = 1,
 		is_3d_obj = 0,
-		name = "戴比路克风纪念章",
+		count = 1,
 		tag = 8,
 		icon = "tolovexunzhangicon",
-		spine_extra = "",
+		deblocking = 1,
 		level = 1,
 		advice = 0,
 		effect = "",
+		name = "戴比路克风纪念章",
 		comfortable = 0,
-		deblocking = 1,
 		spine_action_replace = "",
 		picture = "",
 		canputon = 0,
@@ -22658,17 +22658,16 @@ pg.base.furniture_data_template = {
 		offset = {},
 		canputonGrid = {},
 		can_trigger = {
-			1
+			2,
+			{
+				"story-richang-rosy-short"
+			}
 		},
 		spine = {
 			{
 				"tolovexunzhang",
 				"normal"
 			}
-		},
-		interaction_bgm = {
-			0,
-			"story-richang-rosy-short"
 		},
 		interAction_group = {}
 	},

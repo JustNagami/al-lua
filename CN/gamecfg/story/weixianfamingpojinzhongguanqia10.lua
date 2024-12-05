@@ -20,7 +20,7 @@
 			side = 2,
 			bgName = "bg_tolove_2",
 			say = "由娜娜和古手川唯，以及利物浦、德文郡、努比亚人三名皇家女仆所组成的搜索队正在搜索着附近海域。",
-			bgm = "tl-battle-inst",
+			bgm = "story-richang-refreshing",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -99,7 +99,7 @@
 			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "bg_tolove_2",
-			say = "然而，就在这时的远处数枚炮弹呼啸接近并炸开，接着远处的敌人朝着众人发起了攻击。",
+			say = "然而，就在这时远处的数枚炮弹呼啸接近并炸开，接着远处的敌人朝着众人发起了攻击。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

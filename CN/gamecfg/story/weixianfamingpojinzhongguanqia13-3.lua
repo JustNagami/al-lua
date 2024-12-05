@@ -8,7 +8,7 @@
 			side = 2,
 			bgName = "star_level_bg_504",
 			say = "在敌人的重围下，撤退之路并非一帆风顺。",
-			bgm = "tl-battle-inst",
+			bgm = "story-richang-refreshing",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

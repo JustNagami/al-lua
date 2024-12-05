@@ -8,7 +8,7 @@
 			side = 2,
 			bgName = "star_level_bg_504",
 			say = "经过一番奋战，众人终于来到了信号所示的位置。",
-			bgm = "tl-theme-2",
+			bgm = "story-richang-7",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

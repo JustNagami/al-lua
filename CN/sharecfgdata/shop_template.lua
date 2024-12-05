@@ -75623,3 +75623,35 @@ _G.pg.base.shop_template[260302] = {
 		2022002
 	}
 }
+_G.pg.base.shop_template[100107] = {
+	type_order = 0,
+	collaboration_skin_time = "",
+	resource_type = 3002,
+	type = 20,
+	genre = "world_collection_task",
+	desc = "档案坐标记录仪8",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	time_second = 0,
+	order = 1,
+	time = "always",
+	group = 0,
+	num = 1,
+	discount = 0,
+	group_type = 0,
+	id = 100107,
+	resource_num = 800,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			1
+		}
+	},
+	effect_args = {
+		2057,
+		10070
+	}
+}

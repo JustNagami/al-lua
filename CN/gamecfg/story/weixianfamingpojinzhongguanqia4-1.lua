@@ -10,7 +10,7 @@
 			nameColor = "#A9F548FF",
 			dir = 1,
 			say = "哇啊——！姐姐小心！",
-			bgm = "tl-battle-inst",
+			bgm = "story-richang-refreshing",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -8,7 +8,7 @@
 			side = 2,
 			bgName = "bg_tolove_2",
 			say = "在众人的掩护下，金色暗影成功救回了唯和春菜。",
-			bgm = "tl-battle",
+			bgm = "story-richang-6",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

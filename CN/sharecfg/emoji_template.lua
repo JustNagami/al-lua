@@ -469,7 +469,7 @@ pg.emoji_template = {
 		}
 	},
 	{
-		achieve = 0,
+		achieve = 1,
 		item_desc = "聊天表情：还不睡，可以在表情选项的「默认」选项卡中找到并发出此表情。",
 		item_name = "聊天表情：还不睡",
 		id = 37,
@@ -482,7 +482,7 @@ pg.emoji_template = {
 		}
 	},
 	{
-		achieve = 0,
+		achieve = 1,
 		item_desc = "聊天表情：眠眠，可以在表情选项的「默认」选项卡中找到并发出此表情。",
 		item_name = "聊天表情：眠眠",
 		id = 38,

@@ -214,7 +214,6 @@ pg.memory_group = setmetatable({
 		305,
 		306,
 		307,
-		308,
 		309,
 		310,
 		311,
@@ -320,6 +319,7 @@ pg.memory_group = setmetatable({
 		602,
 		603,
 		604,
+		605,
 		1000,
 		1001,
 		1002
@@ -5086,17 +5086,6 @@ pg.base.memory_group = {
 			3988
 		}
 	},
-	[308] = {
-		id = 308,
-		subtype = 3,
-		icon = "title_event",
-		type = 2,
-		link_event = 5654,
-		title = "新型促销来袭！",
-		memories = {
-			4011
-		}
-	},
 	[309] = {
 		id = 309,
 		subtype = 2,
@@ -6903,6 +6892,23 @@ pg.base.memory_group = {
 			3995,
 			3996,
 			3997
+		}
+	},
+	[605] = {
+		id = 605,
+		subtype = 0,
+		icon = "title_chara_lvzuofu",
+		type = 3,
+		link_event = 0,
+		title = "夺回甜蜜美梦！",
+		memories = {
+			4061,
+			4062,
+			4063,
+			4064,
+			4065,
+			4066,
+			4067
 		}
 	},
 	[1000] = {

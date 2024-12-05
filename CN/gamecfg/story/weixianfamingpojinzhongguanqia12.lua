@@ -25,7 +25,7 @@
 			bgName = "bg_tolove_2",
 			hidePaintObj = true,
 			say = "由菈菈，金色暗影、伊丽莎白女王以及贝尔法斯特组成的搜索舰队主力，正朝着第三个能量反应点前进着。",
-			bgm = "tl-battle-inst",
+			bgm = "story-richang-refreshing",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

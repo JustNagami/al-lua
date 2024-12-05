@@ -121,6 +121,8 @@ function var_0_0.FetchCache(arg_12_0)
 		return
 	end
 
+	arg_12_0.readBuffer = {}
+
 	local var_12_2 = string.split(var_12_1, var_0_4)
 	local var_12_3 = _.map(var_12_2, function(arg_13_0)
 		return GameTrackerBuilder.DeSerializedItem(arg_13_0)

@@ -8,7 +8,7 @@
 			side = 2,
 			bgName = "star_level_bg_539",
 			say = "战斗还在继续，港口周边的海域已被炮火和硝烟所笼罩。",
-			bgm = "tl-battle-inst",
+			bgm = "story-richang-refreshing",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -146,6 +146,10 @@ function var_0_0.didEnter(arg_6_0)
 	end)
 	setActive(var_6_0, false)
 
+	local var_6_1 = arg_6_0._tf:Find("Center/Stick")
+
+	setActive(var_6_1, false)
+
 	arg_6_0.activeSetting = false
 
 	onButton(arg_6_0, arg_6_0._tf:Find("Center/Normal/Settings"), function()
@@ -379,6 +383,7 @@ function var_0_0.didEnter(arg_6_0)
 		arg_6_0.freeMode = not arg_6_0.freeMode
 
 		setActive(var_6_0, arg_6_0.freeMode)
+		setActive(var_6_1, arg_6_0.freeMode)
 		setActive(arg_6_0.btnMove:Find("Selected"), arg_6_0.freeMode)
 	end)
 	onButton(arg_6_0, arg_6_0.btnMenuSmall, function()
@@ -399,7 +404,7 @@ function var_0_0.didEnter(arg_6_0)
 
 	arg_6_0.activePanel = 1
 
-	local var_6_1 = {
+	local var_6_2 = {
 		{
 			btn = arg_6_0.btnAction,
 			On = function()
@@ -429,13 +434,13 @@ function var_0_0.didEnter(arg_6_0)
 		}
 	}
 
-	table.Ipairs(var_6_1, function(arg_52_0, arg_52_1)
+	table.Ipairs(var_6_2, function(arg_52_0, arg_52_1)
 		onToggle(arg_6_0, arg_52_1.btn, function(arg_53_0)
 			if not arg_53_0 then
 				return
 			end
 
-			table.Ipairs(var_6_1, function(arg_54_0, arg_54_1)
+			table.Ipairs(var_6_2, function(arg_54_0, arg_54_1)
 				if arg_54_0 == arg_52_0 then
 					return
 				end
@@ -468,7 +473,7 @@ function var_0_0.didEnter(arg_6_0)
 
 	arg_6_0:InitData()
 	arg_6_0:FirstEnterZone()
-	triggerToggle(var_6_1[arg_6_0.activePanel].btn, true)
+	triggerToggle(var_6_2[arg_6_0.activePanel].btn, true)
 	arg_6_0:UpdateZoneList()
 end
 
@@ -1437,6 +1442,14 @@ function var_0_0.willExit(arg_135_0)
 		arg_135_0.timerAnim = nil
 	end
 
+	local var_135_0 = arg_135_0.scene.apartment:GetConfigID()
+	local var_135_1 = arg_135_0.scene.ladyDict[var_135_0]
+	local var_135_2 = var_135_1.skinIdList
+
+	if var_135_1.skinId ~= var_135_2[1] then
+		arg_135_0.scene.SwitchCharacterSkin(var_135_1, var_135_0, var_135_2[1])
+	end
+
 	if arg_135_0.animSpeed ~= 1 then
 		arg_135_0.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "SetCharacterAnimSpeed", 1)
 	end
@@ -1460,6 +1473,17 @@ function var_0_0.SetPhotoCameraSliderValue(arg_136_0, arg_136_1)
 	local var_136_0 = arg_136_0.normalPanel:Find("Zoom/Slider")
 
 	setSlider(var_136_0, 0, 1, arg_136_1)
+end
+
+function var_0_0.SetPhotoStickDelta(arg_137_0, arg_137_1)
+	arg_137_1 = arg_137_1 * 0.5
+
+	local var_137_0 = arg_137_0._tf:Find("Center/Stick")
+	local var_137_1 = var_137_0.rect.height
+	local var_137_2 = var_137_0.rect.width
+	local var_137_3 = var_137_0:Find("Handler")
+
+	setAnchoredPosition(var_137_3, Vector2.New(var_137_1 * arg_137_1.x, var_137_2 * arg_137_1.y))
 end
 
 return var_0_0

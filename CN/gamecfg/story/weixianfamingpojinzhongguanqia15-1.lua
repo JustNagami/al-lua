@@ -8,7 +8,7 @@
 			side = 2,
 			bgName = "star_level_bg_504",
 			say = "众人根据超级游戏制作机显示的数据，来到了一处陌生的海域。",
-			bgm = "tl-theme-2",
+			bgm = "story-richang-7",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

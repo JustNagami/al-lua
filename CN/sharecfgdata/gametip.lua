@@ -25125,7 +25125,7 @@ _G.pg.base.gametip.battlepass_main_help_2412 = {
 	tip = {
 		{
 			info = [[
-世界巡游(2024.12.1-2025.1.30)
+世界巡游(2024.12.1-2025.1.31)
 
 ·<color=#92fc63>开放时间</color>
  2024.12.1 0点 ~ 2025.1.31 23:59:59
@@ -25138,7 +25138,7 @@ _G.pg.base.gametip.battlepass_main_help_2412 = {
 
 ·<color=#92fc63>奖励规则</color>
 巡游进度奖励分为两种：
-（1）基础巡游奖励：包含<color=#ff5c5c>「朱利奥·凯撒·META」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·七期</color>售卖(即11.30 22:59:59停止)，请指挥官注意购买时间。
+（1）基础巡游奖励：包含<color=#ff5c5c>「朱利奥·凯撒·META」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·七期</color>售卖(即1.31 22:59:59停止)，请指挥官注意购买时间。
 
 ·<color=#92fc63>任务说明</color>
 巡游任务分为两种：
@@ -25446,4 +25446,19 @@ _G.pg.base.gametip.tolovegame_puzzle_line_tip = {
 }
 _G.pg.base.gametip.tolovegame_puzzle_puzzle_tip = {
 	tip = "所有元器件都需要放在点位上哦"
+}
+_G.pg.base.gametip.maintenance_message_text = {
+	tip = "服务器将于$1后进行维护，届时将强制下线，请指挥官合理安排游戏规划。"
+}
+_G.pg.base.gametip.maintenance_message_stop_text = {
+	tip = "服务器正在关闭中"
+}
+_G.pg.base.gametip.task_get = {
+	tip = "领取"
+}
+_G.pg.base.gametip.notify_clock_tip = {
+	tip = "未开启闹钟权限，无法进行通知"
+}
+_G.pg.base.gametip.notify_clock_button = {
+	tip = "开启闹钟权限"
 }

@@ -8,7 +8,7 @@
 			side = 2,
 			bgName = "bg_tolove_1",
 			say = "复制体菈菈被彻底消灭后，它被击碎的核心处生成了大量能量石。",
-			bgm = "tl-theme-1",
+			bgm = "story-richang-8",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
