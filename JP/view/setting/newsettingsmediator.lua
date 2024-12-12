@@ -26,7 +26,8 @@ function var_0_0.listNotificationInterests(arg_3_0)
 		GAME.ON_GET_TRANSCODE,
 		GAME.ON_SOCIAL_LINKED,
 		GAME.ON_SOCIAL_UNLINKED,
-		GAME.CHANGE_RANDOM_SHIP_MODE_DONE
+		GAME.CHANGE_RANDOM_SHIP_MODE_DONE,
+		GAME.ON_APPLICATION_PAUSE
 	}
 end
 
@@ -54,6 +55,8 @@ function var_0_0.handleNotification(arg_4_0, arg_4_1)
 		arg_4_0.viewComponent:OnSelectGraphicSettingLevel()
 	elseif var_4_0 == var_0_0.SelectCustomGraphicSetting then
 		arg_4_0.viewComponent:OnSelectCustomGraphicSetting()
+	elseif var_4_0 == GAME.ON_APPLICATION_PAUSE then
+		arg_4_0.viewComponent:OnApplicationPause()
 	end
 end
 

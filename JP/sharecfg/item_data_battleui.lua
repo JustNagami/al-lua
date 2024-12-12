@@ -48,10 +48,23 @@ pg.item_data_battleui = {
 		icon = "103",
 		scene = {}
 	},
+	[104] = {
+		key = "SkinNormal_20241107",
+		name = "ネオン",
+		desc = "煌めくネオンにリズミックなビーム演出で流れるような体験をもたらす",
+		display_icon = "Ui_104",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "クルーズパス20期報酬",
+		id = 104,
+		icon = "104",
+		scene = {}
+	},
 	all = {
 		0,
 		101,
 		102,
-		103
+		103,
+		104
 	}
 }

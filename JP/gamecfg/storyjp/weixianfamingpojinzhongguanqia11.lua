@@ -24,7 +24,7 @@
 			side = 2,
 			bgName = "bg_tolove_2",
 			say = "第二チェックポイントで、モモと春菜、そしてシリアス、ダイドー、シラのメイドたちで構成された探索隊も、敵の襲来に見舞われていた。",
-			bgm = "tl-battle-inst",
+			bgm = "story-richang-refreshing",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -8,7 +8,7 @@
 			side = 2,
 			bgName = "star_level_bg_504",
 			say = "一行はゲームメーカーグレートに表示された座標を元に、見知らぬ海域へと足を踏み入れた。",
-			bgm = "tl-theme-2",
+			bgm = "story-richang-7",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

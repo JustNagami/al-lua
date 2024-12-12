@@ -8,7 +8,7 @@
 			side = 2,
 			bgName = "bg_tolove_2",
 			say = "金色の闇の活躍と皆の援護により、唯と春菜は無事、救出された。",
-			bgm = "tl-battle",
+			bgm = "story-richang-6",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

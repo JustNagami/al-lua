@@ -8,7 +8,7 @@
 			side = 2,
 			bgName = "bg_tolove_1",
 			say = "コピー体ララが完全に消滅すると、コアがあった部分からポロポロと大量のエナジーストーンが落ちてきた。",
-			bgm = "tl-theme-1",
+			bgm = "story-richang-8",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

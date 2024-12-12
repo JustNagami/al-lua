@@ -35764,7 +35764,7 @@ _G.pg.base.shop_template[70728] = {
 	tag = 1,
 	limit_args2 = "",
 	time_second = 0,
-	order = 12,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -35780,7 +35780,7 @@ _G.pg.base.shop_template[70728] = {
 		{
 			{
 				2024,
-				9,
+				12,
 				12
 			},
 			{
@@ -35792,8 +35792,8 @@ _G.pg.base.shop_template[70728] = {
 		{
 			{
 				2024,
-				10,
-				2
+				12,
+				19
 			},
 			{
 				23,
@@ -40619,7 +40619,7 @@ _G.pg.base.shop_template[70845] = {
 	tag = 1,
 	limit_args2 = "",
 	time_second = 0,
-	order = 12,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -40635,7 +40635,7 @@ _G.pg.base.shop_template[70845] = {
 		{
 			{
 				2024,
-				9,
+				12,
 				12
 			},
 			{
@@ -40647,8 +40647,8 @@ _G.pg.base.shop_template[70845] = {
 		{
 			{
 				2024,
-				10,
-				2
+				12,
+				19
 			},
 			{
 				23,
@@ -44342,7 +44342,7 @@ _G.pg.base.shop_template[70937] = {
 	tag = 1,
 	limit_args2 = "",
 	time_second = 0,
-	order = 12,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -44358,7 +44358,7 @@ _G.pg.base.shop_template[70937] = {
 		{
 			{
 				2024,
-				9,
+				12,
 				12
 			},
 			{
@@ -44370,8 +44370,8 @@ _G.pg.base.shop_template[70937] = {
 		{
 			{
 				2024,
-				10,
-				2
+				12,
+				19
 			},
 			{
 				23,
@@ -44393,7 +44393,7 @@ _G.pg.base.shop_template[70938] = {
 	tag = 1,
 	limit_args2 = "",
 	time_second = 0,
-	order = 12,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -44409,7 +44409,7 @@ _G.pg.base.shop_template[70938] = {
 		{
 			{
 				2024,
-				9,
+				12,
 				12
 			},
 			{
@@ -44421,8 +44421,8 @@ _G.pg.base.shop_template[70938] = {
 		{
 			{
 				2024,
-				10,
-				2
+				12,
+				19
 			},
 			{
 				23,
@@ -59145,7 +59145,7 @@ _G.pg.base.shop_template[100001] = {
 	resource_type = 3002,
 	type = 2,
 	genre = "world",
-	desc = "資金",
+	desc = "大作戦指令書n",
 	group_limit = 0,
 	group_buy_count = 0,
 	tag = 0,
@@ -59176,7 +59176,7 @@ _G.pg.base.shop_template[100002] = {
 	resource_type = 3002,
 	type = 1,
 	genre = "world",
-	desc = "大作戦指令書",
+	desc = "資金n",
 	group_limit = 0,
 	group_buy_count = 0,
 	tag = 0,
@@ -69057,5 +69057,37 @@ _G.pg.base.shop_template[260302] = {
 	},
 	effect_args = {
 		2022002
+	}
+}
+_G.pg.base.shop_template[100107] = {
+	type_order = 0,
+	collaboration_skin_time = "",
+	resource_type = 3002,
+	type = 20,
+	genre = "world_collection_task",
+	desc = "档案坐标记录仪8",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	time_second = 0,
+	order = 1,
+	time = "always",
+	group = 0,
+	num = 1,
+	discount = 0,
+	group_type = 0,
+	id = 100107,
+	resource_num = 800,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			1
+		}
+	},
+	effect_args = {
+		2057,
+		10070
 	}
 }

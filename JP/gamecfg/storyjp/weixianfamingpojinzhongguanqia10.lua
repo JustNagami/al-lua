@@ -20,7 +20,7 @@
 			side = 2,
 			bgName = "bg_tolove_2",
 			say = "ナナと唯、そしてリヴァプール、デヴォンシャー、ヌビアンの3人のロイヤルメイドで構成された探索隊が、周辺海域の捜索を行っている。",
-			bgm = "tl-battle-inst",
+			bgm = "story-richang-refreshing",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

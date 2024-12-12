@@ -2735,8 +2735,9 @@ pg.base.ship_skin_template_3 = {
 		bg_sp = "",
 		l2d_ignore_drag = 0,
 		group_index = 1,
-		illustrator = -1,
+		shop_id = 70938,
 		painting = "xingzuo_2",
+		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 16,
 		lip_smoothing = 0,
@@ -2750,7 +2751,7 @@ pg.base.ship_skin_template_3 = {
 		prefab = "xingzuo_2",
 		l2d_se = "",
 		main_UI_FX = "",
-		shop_id = 70938,
+		special_effects = "",
 		desc = "いらっしゃいませ、指揮官。コンステレーションに注文するなら艦船通信での1ヶ月分の星座占いを――ふふ、冗談。…指揮官が知りたいことならコンステレーション、なんでも教えてあげる",
 		voice_actor = 390,
 		gyro = 0,
@@ -2839,23 +2840,12 @@ pg.base.ship_skin_template_3 = {
 		},
 		spine_offset = {
 			{
-				47,
-				-506,
+				17,
+				-577,
 				0
 			},
 			{
-				0.8
-			}
-		},
-		special_effects = {
-			"lihui_xingzuo_2",
-			{
-				-64,
-				-142,
-				0
-			},
-			{
-				0.8
+				1.14
 			}
 		}
 	},

@@ -3,35 +3,12 @@ pg.activity_banner = {
 	{
 		id = 1,
 		pic = "temp1",
+		time = "stop",
 		type = 2,
 		param = {
-			"scene Cryptolalia",
-			{}
-		},
-		time = {
+			"scene charge",
 			{
-				{
-					2024,
-					11,
-					21
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					11,
-					27
-				},
-				{
-					23,
-					59,
-					59
-				}
+				wrap = 2
 			}
 		}
 	},
@@ -47,8 +24,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					11,
-					21
+					12,
+					12
 				},
 				{
 					0,
@@ -60,7 +37,7 @@ pg.activity_banner = {
 				{
 					2024,
 					12,
-					4
+					19
 				},
 				{
 					23,
@@ -73,55 +50,24 @@ pg.activity_banner = {
 	{
 		id = 3,
 		pic = "temp3",
+		time = "stop",
 		type = 2,
 		param = {
 			"scene skinshop",
 			{}
-		},
-		time = {
-			{
-				{
-					2024,
-					11,
-					21
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					12,
-					4
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	},
 	{
+		param = "5699",
 		id = 4,
 		pic = "temp4",
-		type = 2,
-		param = {
-			"scene get boat",
-			{
-				projectName = "new",
-				page = 1
-			}
-		},
+		type = 3,
 		time = {
 			{
 				{
 					2024,
-					11,
-					21
+					12,
+					12
 				},
 				{
 					0,
@@ -131,9 +77,9 @@ pg.activity_banner = {
 			},
 			{
 				{
-					2024,
-					12,
-					5
+					2025,
+					1,
+					8
 				},
 				{
 					23,
@@ -144,18 +90,16 @@ pg.activity_banner = {
 		}
 	},
 	{
+		param = "5700",
 		id = 5,
-		pic = "temp5",
-		type = 2,
-		param = {
-			"puzzle connect"
-		},
+		pic = "temp6",
+		type = 3,
 		time = {
 			{
 				{
 					2024,
-					11,
-					21
+					12,
+					12
 				},
 				{
 					0,
@@ -165,9 +109,9 @@ pg.activity_banner = {
 			},
 			{
 				{
-					2024,
-					12,
-					5
+					2025,
+					1,
+					8
 				},
 				{
 					23,
@@ -178,18 +122,16 @@ pg.activity_banner = {
 		}
 	},
 	{
+		param = "5698",
 		id = 6,
-		pic = "temp6",
-		type = 2,
-		param = {
-			"TOLOVE_COLLAB_BACKHILL"
-		},
+		pic = "temp5",
+		type = 3,
 		time = {
 			{
 				{
 					2024,
-					11,
-					21
+					12,
+					12
 				},
 				{
 					0,
@@ -199,9 +141,9 @@ pg.activity_banner = {
 			},
 			{
 				{
-					2024,
-					12,
-					5
+					2025,
+					1,
+					8
 				},
 				{
 					23,
@@ -214,6 +156,40 @@ pg.activity_banner = {
 	{
 		id = 7,
 		pic = "temp7",
+		type = 2,
+		param = {
+			"metacharacter"
+		},
+		time = {
+			{
+				{
+					2024,
+					12,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					1,
+					8
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 8,
+		pic = "temp8",
 		type = 2,
 		param = {
 			"crusing"
@@ -235,41 +211,7 @@ pg.activity_banner = {
 				{
 					2024,
 					12,
-					12
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		id = 8,
-		pic = "temp8",
-		type = 2,
-		param = {
-			"scene court yard"
-		},
-		time = {
-			{
-				{
-					2024,
-					11,
-					21
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					12,
-					4
+					19
 				},
 				{
 					23,
@@ -284,14 +226,18 @@ pg.activity_banner = {
 		pic = "temp9",
 		type = 2,
 		param = {
-			"dorm 3d select"
+			"scene equip",
+			{
+				designPage = 2,
+				warp = "WARP_TO_DESIGN"
+			}
 		},
 		time = {
 			{
 				{
 					2024,
-					11,
-					21
+					12,
+					5
 				},
 				{
 					0,
@@ -303,7 +249,7 @@ pg.activity_banner = {
 				{
 					2024,
 					12,
-					5
+					19
 				},
 				{
 					23,
@@ -322,8 +268,8 @@ pg.activity_banner = {
 			{
 				{
 					2024,
-					11,
-					21
+					12,
+					12
 				},
 				{
 					0,
@@ -335,7 +281,7 @@ pg.activity_banner = {
 				{
 					2024,
 					12,
-					4
+					19
 				},
 				{
 					23,
@@ -361,35 +307,10 @@ pg.activity_banner = {
 	},
 	[99] = {
 		param = "",
-		id = 99,
-		pic = "limit_skin",
+		time = "stop",
 		type = 12,
-		time = {
-			{
-				{
-					2024,
-					11,
-					21
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2024,
-					12,
-					4
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
+		id = 99,
+		pic = "limit_skin"
 	},
 	[100] = {
 		param = "桂花糯|「桂花糯…もぐもぐ～中秋節、良い祝日！」<color=#92fc63>（60分間寮舎経験値効率が5%アップ）</color>",
@@ -417,12 +338,14 @@ pg.activity_banner = {
 			1,
 			2,
 			3,
-			4,
-			5,
-			6,
 			7,
 			8,
 			9
+		},
+		[3] = {
+			4,
+			5,
+			6
 		},
 		[9] = {
 			90,

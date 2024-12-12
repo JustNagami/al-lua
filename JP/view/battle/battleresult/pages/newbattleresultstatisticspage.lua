@@ -496,7 +496,7 @@ function var_0_0.LoadShipTpls(arg_53_0, arg_53_1, arg_53_2, arg_53_3)
 	if #arg_53_1 < #arg_53_2 then
 		table.insert(var_53_0, function(arg_54_0)
 			LoadAnyAsync("BattleResultItems/Ship", "", nil, function(arg_55_0)
-				if arg_53_0.exited or IsNil(arg_55_0) then
+				if arg_53_0.exited then
 					arg_54_0()
 
 					return
@@ -507,6 +507,8 @@ function var_0_0.LoadShipTpls(arg_53_0, arg_53_1, arg_53_2, arg_53_3)
 		end)
 		table.insert(var_53_0, function(arg_56_0, arg_56_1)
 			if not arg_56_1 then
+				arg_56_0()
+
 				return
 			end
 
@@ -794,7 +796,7 @@ function var_0_0.LoadCommanderTpls(arg_82_0, arg_82_1, arg_82_2)
 	if arg_82_1 > #arg_82_0.commaderTpls then
 		table.insert(var_82_0, function(arg_83_0)
 			LoadAnyAsync("BattleResultItems/Commander", "", nil, function(arg_84_0)
-				if arg_82_0.exited or IsNil(arg_84_0) then
+				if arg_82_0.exited then
 					arg_83_0()
 
 					return
@@ -805,6 +807,8 @@ function var_0_0.LoadCommanderTpls(arg_82_0, arg_82_1, arg_82_2)
 		end)
 		table.insert(var_82_0, function(arg_85_0, arg_85_1)
 			if not arg_85_1 then
+				arg_85_0()
+
 				return
 			end
 
@@ -816,7 +820,7 @@ function var_0_0.LoadCommanderTpls(arg_82_0, arg_82_1, arg_82_2)
 		end)
 	end
 
-	parallelAsync(var_82_0, arg_82_2)
+	seriesAsync(var_82_0, arg_82_2)
 end
 
 function var_0_0.onBackPressed(arg_86_0)

@@ -267,6 +267,11 @@ pg.task_meta_data_template = setmetatable({
 		100353,
 		100354,
 		100355,
+		100361,
+		100362,
+		100363,
+		100364,
+		100365,
 		200001,
 		200002,
 		200003,
@@ -370,7 +375,11 @@ pg.task_meta_data_template = setmetatable({
 		200261,
 		200262,
 		200263,
-		200264
+		200264,
+		200271,
+		200272,
+		200273,
+		200274
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2495,6 +2504,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100361] = {
+		target_id_2 = "970705",
+		sub_type = 180,
+		desc = "大鳳(META)を編成した艦隊で1回戦闘を勝利する",
+		id = 100361,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100362] = {
+		target_id_2 = "970705",
+		sub_type = 180,
+		desc = "大鳳(META)を編成した艦隊でLv30+の敵艦隊を撃破する",
+		id = 100362,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100363] = {
+		target_id_2 = "970705",
+		sub_type = 180,
+		desc = "大鳳(META)を編成した艦隊でLv55+の敵艦隊を撃破する",
+		id = 100363,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100364] = {
+		target_id_2 = "970705",
+		sub_type = 180,
+		desc = "大鳳(META)を編成した艦隊でLv80+の敵艦隊を撃破する",
+		id = 100364,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100365] = {
+		target_id_2 = "970705",
+		sub_type = 180,
+		desc = "大鳳(META)を編成した艦隊でLv100+の敵艦隊を撃破する",
+		id = 100365,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -3324,6 +3373,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "<size=24>セイレーン作戦でジュリオ・チェザーレ(META)を含む艦隊でLV100+の敵を撃破する</size>",
 		id = 200264,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200271] = {
+		target_id_2 = "970705",
+		sub_type = 302,
+		desc = "セイレーン作戦で大鳳(META)を含めた艦隊で1回勝利する",
+		id = 200271,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200272] = {
+		target_id_2 = "970705",
+		sub_type = 302,
+		desc = "セイレーン作戦で大鳳(META)を含めた艦隊でLv70+の敵を撃破",
+		id = 200272,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200273] = {
+		target_id_2 = "970705",
+		sub_type = 302,
+		desc = "セイレーン作戦で大鳳(META)を含めた艦隊でLv90+の敵を撃破",
+		id = 200273,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200274] = {
+		target_id_2 = "970705",
+		sub_type = 302,
+		desc = "セイレーン作戦で大鳳(META)を含めた艦隊でLv100+の敵を撃破",
+		id = 200274,
 		target_num = 1,
 		target_id = "100"
 	}

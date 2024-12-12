@@ -117,6 +117,9 @@ function var_0_0.update(arg_13_0, arg_13_1)
 				if arg_16_0 then
 					arg_13_0.selectedIndex = arg_15_1
 					arg_13_0.selectedItem = arg_15_2
+				elseif arg_13_0.selectedIndex == arg_15_1 then
+					arg_13_0.selectedIndex = nil
+					arg_13_0.selectedItem = nil
 				end
 			end, SFX_PANEL)
 			setScrollText(arg_15_2:Find("name_bg/Text"), arg_13_0.displayDrops[arg_15_1]:getConfig("name"))

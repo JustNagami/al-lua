@@ -25,7 +25,7 @@
 			bgName = "bg_tolove_2",
 			hidePaintObj = true,
 			say = "ララと金色の闇、そしてクイーン・エリザベスとベルファストで構成された主力の探索隊は、第三チェックポイントに向かって進んでいた。",
-			bgm = "tl-battle-inst",
+			bgm = "story-richang-refreshing",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -143,6 +143,8 @@ function var_0_0.SetVisible(arg_16_0, arg_16_1)
 	setActive(arg_16_0._spinePaintingData.effectParent, arg_16_1)
 	setActiveViaLayer(arg_16_0._spinePaintingData.effectParent, arg_16_1)
 
+	arg_16_0._skeletonGraphic.timeScale = arg_16_1 and 1 or 0
+
 	if not arg_16_1 then
 		arg_16_0.mainSpineAnim:SetActionCallBack(nil)
 

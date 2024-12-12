@@ -4,7 +4,7 @@
 	fadeOut = 1.5,
 	scripts = {
 		{
-			bgm = "tl-theme-2",
+			bgm = "story-richang-7",
 			side = 2,
 			bgName = "star_level_bg_504",
 			nameColor = "#A9F548FF",
