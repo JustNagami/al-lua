@@ -214,9 +214,11 @@ pg.memory_group = setmetatable({
 		305,
 		306,
 		307,
+		308,
 		309,
 		310,
 		311,
+		312,
 		501,
 		502,
 		503,
@@ -5086,6 +5088,17 @@ pg.base.memory_group = {
 			3988
 		}
 	},
+	[308] = {
+		id = 308,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5654,
+		title = "新型促销来袭！",
+		memories = {
+			4011
+		}
+	},
 	[309] = {
 		id = 309,
 		subtype = 2,
@@ -5145,6 +5158,25 @@ pg.base.memory_group = {
 			4056,
 			4057,
 			4058
+		}
+	},
+	[312] = {
+		id = 312,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 5699,
+		title = "领域外的归途",
+		memories = {
+			4071,
+			4072,
+			4073,
+			4074,
+			4075,
+			4076,
+			4077,
+			4078,
+			4079
 		}
 	},
 	[501] = {

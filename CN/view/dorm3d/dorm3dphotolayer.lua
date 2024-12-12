@@ -1363,6 +1363,8 @@ function var_0_0.UpdateSkinList(arg_126_0)
 						arg_126_0.scene.SwitchCharacterSkin(var_126_1, var_126_0, var_130_2, arg_131_0)
 					end,
 					function(arg_132_0)
+						setActive(var_126_1.ladySafeCollider, true)
+
 						if not arg_126_0.animInfo then
 							return arg_132_0()
 						end
@@ -1391,10 +1393,7 @@ function var_0_0.UpdateSkinList(arg_126_0)
 						local var_132_4 = var_132_3:GetAnimTime()
 
 						arg_126_0.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "PlaySingleAction", var_132_3:GetStateName())
-
-						local var_132_5 = arg_126_0.scene.apartment:GetConfigID()
-
-						arg_126_0.scene.ladyDict[var_132_5].ladyAnimator:Update(var_132_4)
+						arg_126_0.scene.ladyDict[var_126_0].ladyAnimator:Update(var_132_4)
 						arg_126_0.timerAnim:Stop()
 
 						arg_126_0.timerAnim = nil

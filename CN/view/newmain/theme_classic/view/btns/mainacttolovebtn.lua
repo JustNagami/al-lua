@@ -40,6 +40,8 @@ function var_0_0.OnInit(arg_4_0)
 		local var_4_1 = ToLoveCollabBackHillScene.IsShowMainTip()
 
 		setActive(arg_4_0.tipTr.gameObject, var_4_1)
+	else
+		setActive(arg_4_0.tipTr.gameObject, false)
 	end
 end
 

@@ -9598,7 +9598,7 @@ pg.world_task_data = {
 	},
 	[10078] = {
 		server_type = 4,
-		name = "档案任务144-11 144-12",
+		name = "档案任务144-11",
 		continuity = 1,
 		type = 6,
 		log_text = "",

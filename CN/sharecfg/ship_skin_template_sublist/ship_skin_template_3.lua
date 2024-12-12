@@ -2622,8 +2622,9 @@ pg.base.ship_skin_template_3 = {
 		bg_sp = "",
 		l2d_ignore_drag = 0,
 		group_index = 1,
-		illustrator = -1,
+		shop_id = 70938,
 		painting = "xingzuo_2",
+		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 16,
 		lip_smoothing = 0,
@@ -2637,7 +2638,7 @@ pg.base.ship_skin_template_3 = {
 		prefab = "xingzuo_2",
 		l2d_se = "",
 		main_UI_FX = "",
-		shop_id = 70938,
+		special_effects = "",
 		desc = "欢迎光临，指挥官。如果选择星座帮您点单，可以附赠本月的星座运势。开个玩笑……只要是指挥官想知道的，星座都会告诉你。",
 		voice_actor = 390,
 		gyro = 0,
@@ -2726,23 +2727,12 @@ pg.base.ship_skin_template_3 = {
 		},
 		spine_offset = {
 			{
-				47,
-				-506,
+				17,
+				-577,
 				0
 			},
 			{
-				0.8
-			}
-		},
-		special_effects = {
-			"lihui_xingzuo_2",
-			{
-				-64,
-				-142,
-				0
-			},
-			{
-				0.8
+				1.14
 			}
 		}
 	},

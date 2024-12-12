@@ -922,7 +922,7 @@ pg.world_item_data_template = {
 		item_transform_item_type = 0,
 		name = "档案坐标记录仪8",
 		item_transform_item_id = 0,
-		display = "解析后可以获得一系列档案任务，前往对应海域完成任务可回收总计12份档案（116-1至116-9、144-11至144-12、146-9）。<color=#ff5c5c>该物品仅能购买1次，不会随大型作战周期性重置而重置，购买后将会自动使用。档案任务同一时间只能接取一组。</color>",
+		display = "解析后可以获得一系列档案任务，前往对应海域完成任务可回收总计11份档案（116-1至116-9、144-11、146-9）。<color=#ff5c5c>该物品仅能购买1次，不会随大型作战周期性重置而重置，购买后将会自动使用。档案任务同一时间只能接取一组。</color>",
 		log_text = "",
 		sort_priority = 1,
 		usage = "usage_undefined",

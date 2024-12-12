@@ -136,11 +136,11 @@ end
 
 function var_0_0.getColor(arg_15_0, arg_15_1, arg_15_2)
 	if arg_15_1 == var_0_0.TXT_DESC then
-		return arg_15_2 == 1 and "#63573c" or "#a1976e"
+		return arg_15_2 == 1 and "#393a3c" or "#ffffff"
 	elseif arg_15_1 == var_0_0.TXT_CURRENT_NUM then
-		return arg_15_2 == 1 and "#219215" or "#65D559"
+		return "#30ec80"
 	elseif arg_15_1 == var_0_0.TXT_TARGET_NUM then
-		return arg_15_2 == 1 and "#5c4212" or "#ae9363"
+		return "#393a3c"
 	end
 end
 
