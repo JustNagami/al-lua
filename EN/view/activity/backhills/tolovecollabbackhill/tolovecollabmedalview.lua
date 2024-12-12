@@ -78,9 +78,15 @@ function var_0_0.AddListener(arg_5_0)
 		end
 	end, SFX_PANEL)
 	onButton(arg_5_0, arg_5_0.taskBtnGo, function()
-		local var_8_0 = arg_5_0.taskList[arg_5_0.contextData.ChipIndex]
+		local var_8_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.TOLOVE_TASK_ID)
 
-		arg_5_0:emit(MedalCollectionTemplateMediator.MEMORYBOOK_GO, var_8_0)
+		if var_8_0 and not var_8_0:isEnd() then
+			local var_8_1 = arg_5_0.taskList[arg_5_0.contextData.ChipIndex]
+
+			arg_5_0:emit(MedalCollectionTemplateMediator.MEMORYBOOK_GO, var_8_1)
+		else
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
+		end
 	end, SFX_PANEL)
 
 	for iter_5_0 = 1, 6 do

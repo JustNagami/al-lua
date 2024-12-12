@@ -76,9 +76,9 @@ pg.voice_bgm = {
 		bgm = "main"
 	},
 	LoginScene = {
-		default_bgm = "tl-theme-1",
+		default_bgm = "login",
 		special_bgm = "",
-		bgm = "tl-theme-1"
+		bgm = "login"
 	},
 	NewMainScene = {
 		default_bgm = "main",
@@ -136,14 +136,14 @@ pg.voice_bgm = {
 		bgm = "idol-BlueSpirit-inst"
 	},
 	NewShopsScene = {
-		default_bgm = "story-richang-light",
+		default_bgm = "main",
 		special_bgm = "",
-		bgm = "story-richang-light"
+		bgm = "main"
 	},
 	BuildShipScene = {
-		default_bgm = "story-richang-light",
+		default_bgm = "main",
 		special_bgm = "",
-		bgm = "story-richang-light"
+		bgm = "main"
 	},
 	VolleyballGameView = {
 		default_bgm = "doa_minigame",
@@ -1726,14 +1726,14 @@ pg.voice_bgm = {
 		bgm = "story-richang-light"
 	},
 	BlackFridaySalesScene = {
-		default_bgm = "story-musicanniversary-gorgeous",
+		default_bgm = "theme-warmwinter-daily",
 		special_bgm = "",
-		bgm = "story-musicanniversary-gorgeous"
+		bgm = "theme-warmwinter-daily"
 	},
 	BlackFridayWithManualSignPage_2024 = {
-		default_bgm = "story-musicanniversary-gorgeous",
+		default_bgm = "theme-warmwinter-daily",
 		special_bgm = "",
-		bgm = "story-musicanniversary-gorgeous"
+		bgm = "theme-warmwinter-daily"
 	},
 	CryptolaliaScene = {
 		default_bgm = "story-richang-quiet",
@@ -1776,9 +1776,9 @@ pg.voice_bgm = {
 		bgm = "story-richang-rosy-short"
 	},
 	ToLoveCollabBackHillScene = {
-		default_bgm = "tl-battle",
+		default_bgm = "main",
 		special_bgm = "",
-		bgm = "tl-battle"
+		bgm = "main"
 	},
 	PuzzleConnectLayer = {
 		default_bgm = "story-richang-refreshing",
@@ -1789,5 +1789,20 @@ pg.voice_bgm = {
 		default_bgm = "story-richang-refreshing",
 		special_bgm = "",
 		bgm = "story-richang-refreshing"
+	},
+	DeXiV6TaskPage = {
+		default_bgm = "theme-akagi-meta",
+		special_bgm = "",
+		bgm = "theme-akagi-meta"
+	},
+	DexiV6FramePage = {
+		default_bgm = "story-ironblood-strong",
+		special_bgm = "",
+		bgm = "story-ironblood-strong"
+	},
+	NewPlymouthTecCatchupPage = {
+		default_bgm = "theme-designshipVI",
+		special_bgm = "",
+		bgm = "theme-designshipVI"
 	}
 }

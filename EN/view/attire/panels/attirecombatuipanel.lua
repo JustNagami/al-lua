@@ -37,6 +37,9 @@ local function var_0_2(arg_1_0)
 			setActive(arg_4_0.empty, true)
 
 			return
+		else
+			setActive(arg_4_0.info, true)
+			setActive(arg_4_0.empty, false)
 		end
 
 		LoadImageSpriteAsync("combatuistyle/" .. arg_4_1:getConfig("icon"), arg_4_0.icon, true)

@@ -253,6 +253,10 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		{
 			LivingAreaCoverProxy,
 			true
+		},
+		{
+			GMTProxy,
+			true
 		}
 	})
 	pg.ConnectionMgr.GetInstance():setPacketIdx(1)
@@ -316,6 +320,8 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		if MainCheckShipNumSequence.New():Check(arg_2_0.ship_count) then
 			arg_1_0:sendNotification(GAME.LOAD_PLAYER_DATA_DONE)
 		end
+
+		pg.GameTrackerMgr.GetInstance():FetchCache()
 
 		if Dorm3dRoomTemplateScene.FirstDefaultSetting then
 			arg_1_0:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGraphics(Dorm3dRoomTemplateScene.FirstDefaultSetting))

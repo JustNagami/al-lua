@@ -3583,7 +3583,7 @@ _G.pg.base.gametip.world_boss_help_meta = {
 			info = [[
 - META Showdown Overview -
 
-From <color=#92fc63>9/5/24 to 12/12/24</color>, challengeNagato METAto earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Nagato META</color> as well as other great rewards.
+From <color=#92fc63>12/12/24 to 3/13/25</color>, challenge Taihou META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Taihou META</color> as well as other great rewards.
 <color=#ff5c5c>Note: Sync Points will expire after the event period ends.</color>
 
 - Acquiring and Analyzing META Coordinates -
@@ -3595,9 +3595,7 @@ From <color=#92fc63>9/5/24 to 12/12/24</color>, challengeNagato METAto earn Sync
 · Your first time challenging a META boss that you spawned will not require Oil. From the second attempt onwards, cost of each attempt will gradually drop from <color=#92fc63>40</color> Oil to <color=#92fc63>0</color> Oil. (Will not consume a challenge attempt).
 · When a META Showdown boss reaches 0 HP, they will be defeated. Participants will be able to collect rewards, including a large amount of Sync Points.
 · Each META Showdown will only last for <color=#92fc63>24 hours</color>, after which it will disappear. Use Request Support if you need help.
-· After defeating a META boss, the difficulty
-of subsequent META Showdowns will increase by
-1 level, up to a maximum of 15.
+· After defeating a META boss, the difficulty of subsequent META Showdowns will increase by 1 level, up to a maximum of 15.
 
 - Fighting Others' Bosses -
 · In the Boss List menu, you can see requests that other Commanders have sent. When fighting another Commander's boss, you will immediately gain Sync Points based upon the <color=#92fc63>amount of DMG</color> you dealt.
@@ -14582,10 +14580,10 @@ _G.pg.base.gametip.meta_help = {
 			info = "Sync Points obtained through META Showdown in Operation Siren can be used to recruit certain META ships."
 		},
 		{
-			info = "Obtainable rewards from accumulating Sync Points can be viewed and claimed on each corresponding META ship’s tab in the META Lab. Furthermore, upon obtaining enough Sync Points, you’ll be able to recruit a META ship.\n\n"
+			info = "Obtainable rewards from accumulating Sync Points can be viewed and claimed on each corresponding META ship's tab in the META Lab. Furthermore, upon obtaining enough Sync Points, you'll be able to recruit a META ship.\n\n"
 		},
 		{
-			info = "From <color=#92fc63>9/5/24 to 12/12/24</color>, challenge Nagato META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Nagato META</color> as well as other great rewards.\n\n"
+			info = "From <color=#92fc63>12/12/24 to 3/13/25</color>, challenge Taihou META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Taihou META</color> as well as other great rewards.\n\n"
 		},
 		{
 			info = "2. About Rigging Fortification:"
@@ -14612,10 +14610,10 @@ _G.pg.base.gametip.meta_help = {
 			info = "4. About Tactical Research:"
 		},
 		{
-			info = "The skills of META ships can only be leveled in the META Lab. You can head to a META ship’s skill menu through the Somatic Activation screen."
+			info = "The skills of META ships can only be leveled in the META Lab. You can head to a META ship's skill menu through the Somatic Activation screen."
 		},
 		{
-			info = "Leveling a META ship’s skills requires specific materials and are fed EXP through the completion of special META ship skill missions."
+			info = "Leveling a META ship's skills requires specific materials and are fed EXP through the completion of special META ship skill missions."
 		},
 		{
 			info = "Note that there is a limit to how much EXP can be gained in a single day, and that only 1 skill per META ship can be leveled at a time."
@@ -25366,7 +25364,7 @@ Any purchased Cruise Mission Vouchers will remain even after the campaign season
 	}
 }
 _G.pg.base.gametip.cruise_title_2412 = {
-	tip = "Seasonal Missions - Season 20"
+	tip = "Seasonal Missions – S20"
 }
 _G.pg.base.gametip.cruise_tip_skin = {
 	tip = "Seasonal Missions"
@@ -25567,4 +25565,22 @@ _G.pg.base.gametip.tolovegame_puzzle_line_tip = {
 }
 _G.pg.base.gametip.tolovegame_puzzle_puzzle_tip = {
 	tip = "Assemble all the parts and put them on the circuits"
+}
+_G.pg.base.gametip.item_assigned_type_limit_error = {
+	tip = "Unable to exchange; you cannot hold any more of this item."
+}
+_G.pg.base.gametip.maintenance_message_text = {
+	tip = "The server will undergo maintenance in $1. You will be unable to play the game during the maintenance. Please plan accordingly, and thank you for your understanding."
+}
+_G.pg.base.gametip.maintenance_message_stop_text = {
+	tip = "Server down."
+}
+_G.pg.base.gametip.task_get = {
+	tip = "Collect"
+}
+_G.pg.base.gametip.notify_clock_tip = {
+	tip = "Alarm not enabled yet, please enable to allow notification"
+}
+_G.pg.base.gametip.notify_clock_button = {
+	tip = "Enable alarm"
 }

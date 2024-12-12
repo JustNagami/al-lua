@@ -2005,7 +2005,7 @@ end
 
 function var_0_0.CheckFleetChange(arg_152_0)
 	local var_152_0 = arg_152_0.contextData.chapterVO
-	local var_152_1 = var_152_0.fleet
+	local var_152_1 = var_152_0:GetActiveFleet()
 	local var_152_2 = _.detect(var_152_0.fleets, function(arg_153_0)
 		return not arg_153_0:isValid()
 	end)
@@ -2015,6 +2015,10 @@ function var_0_0.CheckFleetChange(arg_152_0)
 			type = ChapterConst.OpRetreat,
 			id = var_152_2.id
 		})
+
+		if var_152_2:getFleetType() == TeamType.Normal then
+			getProxy(ChapterProxy):StopAutoFight(ChapterConst.AUTOFIGHT_STOP_REASON.BATTLE_FAILED)
+		end
 	end
 
 	if not var_152_1:isValid() then

@@ -81,9 +81,9 @@ function var_0_0.setShip(arg_9_0, arg_9_1)
 	arg_9_0.isSpBg = var_9_1.rarity_bg and var_9_1.rarity_bg ~= ""
 
 	arg_9_0:updatePreference(arg_9_1)
-	arg_9_0.shipDetailView:ActionInvoke("UpdateUI")
-	arg_9_0.shipFashionView:ActionInvoke("UpdateUI")
-	arg_9_0.shipEquipView:ActionInvoke("UpdateUI")
+	arg_9_0.shipDetailView:ActionInvokeExclusive("UpdateUI")
+	arg_9_0.shipFashionView:ActionInvokeExclusive("UpdateUI")
+	arg_9_0.shipEquipView:ActionInvokeExclusive("UpdateUI")
 end
 
 function var_0_0.equipmentChange(arg_10_0)

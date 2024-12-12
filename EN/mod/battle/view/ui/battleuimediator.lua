@@ -47,6 +47,18 @@ end
 function var_0_7.EnableJoystick(arg_6_0, arg_6_1)
 	arg_6_0._stickController.enabled = arg_6_1
 
+	local var_6_0 = arg_6_0._joystick:GetComponent(typeof(Animation))
+
+	if var_6_0 then
+		var_6_0.enabled = arg_6_1
+	end
+
+	local var_6_1 = arg_6_0._joystick:GetComponent(typeof(Animator))
+
+	if var_6_1 then
+		var_6_1.enabled = arg_6_1
+	end
+
 	setActive(arg_6_0._joystick, arg_6_1)
 end
 

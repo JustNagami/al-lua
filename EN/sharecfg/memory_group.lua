@@ -209,6 +209,7 @@ pg.memory_group = setmetatable({
 		309,
 		310,
 		311,
+		312,
 		501,
 		502,
 		503,
@@ -311,6 +312,7 @@ pg.memory_group = setmetatable({
 		602,
 		603,
 		604,
+		605,
 		1000,
 		1001,
 		1002
@@ -4966,6 +4968,25 @@ pg.base.memory_group = {
 			4058
 		}
 	},
+	[312] = {
+		id = 312,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 5699,
+		title = "Return From the Beyond",
+		memories = {
+			4071,
+			4072,
+			4073,
+			4074,
+			4075,
+			4076,
+			4077,
+			4078,
+			4079
+		}
+	},
 	[501] = {
 		id = 501,
 		subtype = 0,
@@ -6711,6 +6732,23 @@ pg.base.memory_group = {
 			3995,
 			3996,
 			3997
+		}
+	},
+	[605] = {
+		id = 605,
+		subtype = 0,
+		icon = "title_chara_lvzuofu",
+		type = 3,
+		link_event = 0,
+		title = "Sweet Dreams, Come Back to Me",
+		memories = {
+			4061,
+			4062,
+			4063,
+			4064,
+			4065,
+			4066,
+			4067
 		}
 	},
 	[1000] = {

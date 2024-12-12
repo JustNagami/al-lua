@@ -31,6 +31,12 @@ function var_0_0.initUI(arg_4_0)
 		arg_4_0:findTF("pagefooter/dailyPacks"),
 		arg_4_0:findTF("pagefooter/specialPacks")
 	}
+
+	setText(arg_4_0:findTF("pagefooter/dailyPacks/Text"), i18n("blackfriday_dailypack"))
+	setText(arg_4_0:findTF("pagefooter/dailyPacks/mark"), i18n("blackfriday_dailypack"))
+	setText(arg_4_0:findTF("pagefooter/specialPacks/Text"), i18n("blackfriday_specialpack"))
+	setText(arg_4_0:findTF("pagefooter/specialPacks/mark"), i18n("blackfriday_specialpack"))
+
 	arg_4_0.pagefooterWid = arg_4_0.pagefooters[1].rect.width
 	arg_4_0.pagefooterStartPosX = arg_4_0.pagefooters[1].anchoredPosition.x
 	arg_4_0.giftItemList = UIItemList.New(arg_4_0.content, arg_4_0:findTF("gift_tpl"))

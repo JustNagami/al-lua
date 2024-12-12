@@ -32930,8 +32930,8 @@ _G.pg.base.shop_template[70728] = {
 		{
 			{
 				2024,
-				11,
-				14
+				12,
+				12
 			},
 			{
 				0,
@@ -32943,7 +32943,7 @@ _G.pg.base.shop_template[70728] = {
 			{
 				2024,
 				12,
-				4
+				18
 			},
 			{
 				23,
@@ -37835,8 +37835,8 @@ _G.pg.base.shop_template[70845] = {
 		{
 			{
 				2024,
-				11,
-				14
+				12,
+				12
 			},
 			{
 				0,
@@ -37848,7 +37848,7 @@ _G.pg.base.shop_template[70845] = {
 			{
 				2024,
 				12,
-				4
+				18
 			},
 			{
 				23,
@@ -41558,8 +41558,8 @@ _G.pg.base.shop_template[70937] = {
 		{
 			{
 				2024,
-				11,
-				14
+				12,
+				12
 			},
 			{
 				0,
@@ -41569,9 +41569,9 @@ _G.pg.base.shop_template[70937] = {
 		},
 		{
 			{
-				2024,
-				12,
-				4
+				2025,
+				1,
+				1
 			},
 			{
 				23,
@@ -41609,8 +41609,8 @@ _G.pg.base.shop_template[70938] = {
 		{
 			{
 				2024,
-				11,
-				14
+				12,
+				12
 			},
 			{
 				0,
@@ -41620,9 +41620,9 @@ _G.pg.base.shop_template[70938] = {
 		},
 		{
 			{
-				2024,
-				12,
-				4
+				2025,
+				1,
+				1
 			},
 			{
 				23,
@@ -60871,7 +60871,7 @@ _G.pg.base.shop_template[71026] = {
 	tag = 2,
 	limit_args2 = "",
 	time_second = 0,
-	order = 2,
+	order = 6,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -60922,7 +60922,7 @@ _G.pg.base.shop_template[71027] = {
 	tag = 2,
 	limit_args2 = "",
 	time_second = 0,
-	order = 2,
+	order = 6,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -60973,7 +60973,7 @@ _G.pg.base.shop_template[71028] = {
 	tag = 2,
 	limit_args2 = "",
 	time_second = 0,
-	order = 2,
+	order = 6,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -61024,7 +61024,7 @@ _G.pg.base.shop_template[71029] = {
 	tag = 2,
 	limit_args2 = "",
 	time_second = 0,
-	order = 3,
+	order = 6,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -61075,7 +61075,7 @@ _G.pg.base.shop_template[71030] = {
 	tag = 2,
 	limit_args2 = "",
 	time_second = 0,
-	order = 1,
+	order = 6,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -61126,7 +61126,7 @@ _G.pg.base.shop_template[71031] = {
 	tag = 2,
 	limit_args2 = "",
 	time_second = 0,
-	order = 2,
+	order = 6,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -61177,7 +61177,7 @@ _G.pg.base.shop_template[71032] = {
 	tag = 2,
 	limit_args2 = "",
 	time_second = 0,
-	order = 3,
+	order = 6,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -67677,5 +67677,37 @@ _G.pg.base.shop_template[260302] = {
 	},
 	effect_args = {
 		2022002
+	}
+}
+_G.pg.base.shop_template[100107] = {
+	type_order = 0,
+	collaboration_skin_time = "",
+	resource_type = 3002,
+	type = 20,
+	genre = "world_collection_task",
+	desc = "档案坐标记录仪8",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	time_second = 0,
+	order = 1,
+	time = "always",
+	group = 0,
+	num = 1,
+	discount = 0,
+	group_type = 0,
+	id = 100107,
+	resource_num = 800,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			1
+		}
+	},
+	effect_args = {
+		2057,
+		10070
 	}
 }

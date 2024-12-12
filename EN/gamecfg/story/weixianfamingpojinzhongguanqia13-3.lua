@@ -8,7 +8,7 @@
 			side = 2,
 			bgName = "star_level_bg_504",
 			say = "However, finding a way out of the encirclement proved difficult.",
-			bgm = "tl-battle-inst",
+			bgm = "story-richang-refreshing",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -156,7 +156,7 @@
 			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_504",
-			say = "It happened in an instant. Haruna and Sairenji were surrounded by doppelgangers and spirited away in what seemed like no time.",
+			say = "It happened in an instant. Haruna and Yui were surrounded by doppelgangers and spirited away in what seemed like no time.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

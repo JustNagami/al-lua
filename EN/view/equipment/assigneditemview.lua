@@ -116,85 +116,123 @@ function var_0_0.updateValue(arg_14_0)
 		end
 
 		setText(arg_15_1:Find("item/icon_bg/count"), arg_14_0.count * arg_14_0.displayDrops[arg_15_0 + 1].count)
-	end)
-end
 
-local function var_0_1(arg_16_0)
-	local var_16_0 = pg.ship_data_template[arg_16_0].group_type
+		local var_15_0 = arg_14_0:isOverLimit(arg_15_0 + 1, arg_14_0.count)
 
-	return getProxy(CollectionProxy):getShipGroup(var_16_0) ~= nil
-end
+		setActive(arg_15_1:Find("block_mask"), var_15_0)
 
-function var_0_0.update(arg_17_0, arg_17_1)
-	arg_17_0.count = 1
-	arg_17_0.selectedIndex = nil
-	arg_17_0.selectedItem = nil
-	arg_17_0.itemVO = arg_17_1
-	arg_17_0.displayDrops = underscore.map(arg_17_1:getConfig("display_icon"), function(arg_18_0)
-		return Drop.Create(arg_18_0)
-	end)
-
-	local var_17_0 = arg_17_1:getConfig("time_limit") == 1
-
-	arg_17_0.ulist:make(function(arg_19_0, arg_19_1, arg_19_2)
-		arg_19_1 = arg_19_1 + 1
-
-		if arg_19_0 == UIItemList.EventUpdate then
-			local var_19_0 = arg_17_0.displayDrops[arg_19_1]
-
-			updateDrop(arg_19_2:Find("item"), var_19_0)
-			onToggle(arg_17_0, arg_19_2, function(arg_20_0)
-				if arg_20_0 then
-					arg_17_0.selectedIndex = arg_19_1
-					arg_17_0.selectedItem = arg_19_2
-				end
-			end, SFX_PANEL)
-			triggerToggle(arg_19_2, false)
-			setScrollText(arg_19_2:Find("name_bg/Text"), arg_17_0.displayDrops[arg_19_1]:getConfig("name"))
-
-			arg_17_0.selectedItem = arg_17_0.selectedItem or arg_19_2
-
-			local var_19_1 = var_17_0 and var_19_0.type == DROP_TYPE_SHIP and var_0_1(var_19_0.id)
-
-			if var_19_1 then
-				setText(arg_19_2:Find("item/tip/Text"), i18n("tech_character_get"))
-			end
-
-			setActive(arg_19_2:Find("item/tip"), var_19_1)
+		if var_15_0 and arg_14_0.selectedIndex == arg_15_0 + 1 then
+			triggerToggle(arg_15_1, false)
 		end
 	end)
-	arg_17_0.ulist:align(#arg_17_0.displayDrops)
-	triggerToggle(arg_17_0.selectedItem, true)
-	arg_17_0:updateValue()
-
-	local var_17_1 = Drop.New({
-		type = DROP_TYPE_ITEM,
-		id = arg_17_1.id,
-		count = arg_17_1.count
-	})
-
-	updateDrop(arg_17_0.itemTF:Find("left/IconTpl"), setmetatable({
-		count = 0
-	}, {
-		__index = var_17_1
-	}))
-	UpdateOwnDisplay(arg_17_0.itemTF:Find("left/own"), var_17_1)
-
-	if underscore.any(arg_17_0.displayDrops, function(arg_21_0)
-		return arg_21_0.type == DROP_TYPE_ITEM and arg_21_0:getConfig("type") == Item.SKIN_ASSIGNED_TYPE
-	end) or var_17_1.type == DROP_TYPE_ITEM and var_17_1:getConfig("type") == Item.ASSIGNED_TYPE then
-		RegisterDetailButton(arg_17_0, arg_17_0.itemTF:Find("left/detail"), var_17_1)
-	else
-		removeOnButton(arg_17_0.itemTF:Find("left/detail"))
-	end
-
-	setText(arg_17_0.nameTF, arg_17_1:getConfig("name"))
-	setText(arg_17_0.descTF, arg_17_1:getConfig("display"))
 end
 
-function var_0_0.OnDestroy(arg_22_0)
-	if arg_22_0:isShowing() then
-		arg_22_0:Hide()
+function var_0_0.isOverLimit(arg_16_0, arg_16_1, arg_16_2)
+	local var_16_0 = arg_16_0.displayDrops[arg_16_1]
+	local var_16_1 = underscore.detect(arg_16_0.itemVO:getConfig("limit"), function(arg_17_0)
+		local var_17_0, var_17_1, var_17_2 = unpack(arg_17_0)
+
+		return var_17_0 == var_16_0.type and var_17_1 == var_16_0.id
+	end)
+	local var_16_2
+
+	var_16_2 = var_16_1 and var_16_1[3] or nil
+
+	if not var_16_2 then
+		return false
+	else
+		return var_16_2 < var_16_0:getOwnedCount() + var_16_0.count * arg_16_0.count
+	end
+end
+
+local function var_0_1(arg_18_0)
+	local var_18_0 = pg.ship_data_template[arg_18_0].group_type
+
+	return getProxy(CollectionProxy):getShipGroup(var_18_0) ~= nil
+end
+
+function var_0_0.update(arg_19_0, arg_19_1)
+	arg_19_0.count = 1
+	arg_19_0.selectedIndex = nil
+	arg_19_0.selectedItem = nil
+	arg_19_0.itemVO = arg_19_1
+	arg_19_0.displayDrops = underscore.map(arg_19_1:getConfig("display_icon"), function(arg_20_0)
+		return Drop.Create(arg_20_0)
+	end)
+
+	local var_19_0 = arg_19_1:getConfig("time_limit") == 1
+
+	arg_19_0.ulist:make(function(arg_21_0, arg_21_1, arg_21_2)
+		arg_21_1 = arg_21_1 + 1
+
+		if arg_21_0 == UIItemList.EventUpdate then
+			local var_21_0 = arg_19_0.displayDrops[arg_21_1]
+
+			updateDrop(arg_21_2:Find("item"), var_21_0)
+			onToggle(arg_19_0, arg_21_2, function(arg_22_0)
+				if arg_22_0 then
+					arg_19_0.selectedIndex = arg_21_1
+					arg_19_0.selectedItem = arg_21_2
+				elseif arg_19_0.selectedIndex == arg_21_1 then
+					arg_19_0.selectedIndex = nil
+					arg_19_0.selectedItem = nil
+				end
+			end, SFX_PANEL)
+			triggerToggle(arg_21_2, false)
+			setScrollText(arg_21_2:Find("name_bg/Text"), var_21_0:getConfig("name"))
+
+			local var_21_1 = var_19_0 and var_21_0.type == DROP_TYPE_SHIP and var_0_1(var_21_0.id)
+
+			if var_21_1 then
+				setText(arg_21_2:Find("item/tip/Text"), i18n("tech_character_get"))
+			end
+
+			setActive(arg_21_2:Find("item/tip"), var_21_1)
+			onButton(arg_19_0, arg_21_2:Find("block_mask"), function()
+				pg.TipsMgr.GetInstance():ShowTips(i18n("item_assigned_type_limit_error"))
+			end, SFX_CANCEL)
+
+			if not arg_19_0.selectedItem and not arg_19_0:isOverLimit(arg_21_1, arg_19_0.count) then
+				arg_19_0.selectedItem = arg_21_2
+			end
+		end
+	end)
+	arg_19_0.ulist:align(#arg_19_0.displayDrops)
+
+	if arg_19_0.selectedItem then
+		triggerToggle(arg_19_0.selectedItem, true)
+	end
+
+	arg_19_0:updateValue()
+
+	local var_19_1 = Drop.New({
+		type = DROP_TYPE_ITEM,
+		id = arg_19_1.id,
+		count = arg_19_1.count
+	})
+
+	updateDrop(arg_19_0.itemTF:Find("left/IconTpl"), setmetatable({
+		count = 0
+	}, {
+		__index = var_19_1
+	}))
+	UpdateOwnDisplay(arg_19_0.itemTF:Find("left/own"), var_19_1)
+
+	if underscore.any(arg_19_0.displayDrops, function(arg_24_0)
+		return arg_24_0.type == DROP_TYPE_ITEM and arg_24_0:getConfig("type") == Item.SKIN_ASSIGNED_TYPE
+	end) or var_19_1.type == DROP_TYPE_ITEM and var_19_1:getConfig("type") == Item.ASSIGNED_TYPE then
+		RegisterDetailButton(arg_19_0, arg_19_0.itemTF:Find("left/detail"), var_19_1)
+	else
+		removeOnButton(arg_19_0.itemTF:Find("left/detail"))
+	end
+
+	setText(arg_19_0.nameTF, arg_19_1:getConfig("name"))
+	setText(arg_19_0.descTF, arg_19_1:getConfig("display"))
+end
+
+function var_0_0.OnDestroy(arg_25_0)
+	if arg_25_0:isShowing() then
+		arg_25_0:Hide()
 	end
 end
 
