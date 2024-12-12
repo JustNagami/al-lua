@@ -45,7 +45,7 @@ function var_0_0.GetSequence(arg_4_0)
 		local var_4_2 = var_4_1 and arg_4_0:ReplacePlayerName(iter_4_1[1]) or iter_4_1[1]
 
 		table.insert(var_4_0, {
-			var_4_2,
+			HXSet.hxLan(var_4_2),
 			iter_4_1[2]
 		})
 	end

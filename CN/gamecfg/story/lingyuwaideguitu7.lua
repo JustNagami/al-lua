@@ -649,7 +649,7 @@
 			side = 2,
 			bgName = "bg_canghongzhiyan_1",
 			hidePaintObj = true,
-			say = "{namecode:9:涟}漪消散后，少女的身影随之消失了。",
+			say = "涟漪消散后，少女的身影随之消失了。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

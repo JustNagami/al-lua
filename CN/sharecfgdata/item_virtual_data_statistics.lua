@@ -194959,7 +194959,7 @@ _G.pg.base.item_virtual_data_statistics[65061] = {
 	combination_display = {}
 }
 _G.pg.base.item_virtual_data_statistics[65062] = {
-	display = "用于「2024冬至 {namecode:98}的大促销」活动兑换，活动结束后将会消失",
+	display = "用于「2024冬至{namecode:98}的大促销」活动兑换，活动结束后将会消失",
 	name = "促销PT",
 	drop_oil_max = 0,
 	type = 0,

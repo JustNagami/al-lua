@@ -11468,7 +11468,7 @@ pg.base.ship_skin_template_18 = {
 	},
 	[9703050] = {
 		ship_group = 970305,
-		name = "希佩尔海军上将·META",
+		name = "{namecode:425}·META",
 		hand_id = 13,
 		bgm = "",
 		l2d_drag_rate = "",
