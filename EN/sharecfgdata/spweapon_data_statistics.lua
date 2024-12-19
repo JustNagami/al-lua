@@ -20407,6 +20407,986 @@ _G.pg.base.spweapon_data_statistics[13390] = {
 		}
 	}
 }
+_G.pg.base.spweapon_data_statistics[13400] = {
+	tech = 0,
+	name = "Neptune's Trident",
+	value_2_random = 5,
+	type = 2,
+	value_1_random = 10,
+	value_1 = 13,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "A custom-designed piece of gear made from an Augment Module core.",
+	uncraftable = 0,
+	next = 13401,
+	upgrade_id = 101,
+	value_2 = 6,
+	icon = "13400",
+	effect_id = 901010,
+	attribute_2 = "dodge",
+	id = 13400,
+	rarity = 4,
+	unique = 29901,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		2
+	},
+	skill_upgrade = {
+		{
+			0,
+			1019020
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13401] = {
+	prev = 13400,
+	base = 13400,
+	next = 13402,
+	upgrade_id = 102,
+	id = 13401,
+	value_2 = 6,
+	value_1 = 14,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13402] = {
+	prev = 13401,
+	base = 13400,
+	next = 13403,
+	upgrade_id = 103,
+	id = 13402,
+	value_2 = 7,
+	value_1 = 15,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13403] = {
+	prev = 13402,
+	base = 13400,
+	next = 13404,
+	upgrade_id = 104,
+	id = 13403,
+	value_2 = 8,
+	value_1 = 16,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13404] = {
+	prev = 13403,
+	base = 13400,
+	next = 13405,
+	upgrade_id = 105,
+	id = 13404,
+	value_2 = 9,
+	value_1 = 17,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13405] = {
+	prev = 13404,
+	base = 13400,
+	next = 13406,
+	upgrade_id = 106,
+	id = 13405,
+	value_2 = 10,
+	value_1 = 18,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13406] = {
+	prev = 13405,
+	base = 13400,
+	next = 13407,
+	upgrade_id = 107,
+	id = 13406,
+	value_2 = 11,
+	value_1 = 19,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13407] = {
+	prev = 13406,
+	base = 13400,
+	next = 13408,
+	upgrade_id = 108,
+	id = 13407,
+	value_2 = 12,
+	value_1 = 20,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13408] = {
+	prev = 13407,
+	base = 13400,
+	next = 13409,
+	upgrade_id = 109,
+	id = 13408,
+	value_2 = 13,
+	value_1 = 21,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13409] = {
+	prev = 13408,
+	base = 13400,
+	next = 13410,
+	upgrade_id = 110,
+	id = 13409,
+	value_2 = 14,
+	value_1 = 23,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13410] = {
+	base = 13400,
+	prev = 13409,
+	next = 0,
+	upgrade_id = 111,
+	id = 13410,
+	value_2 = 15,
+	value_1 = 25,
+	level = 11,
+	skill_upgrade = {
+		{
+			19020,
+			1019020
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[13420] = {
+	tech = 0,
+	name = "Watch Your Head!",
+	value_2_random = 5,
+	type = 1,
+	value_1_random = 10,
+	value_1 = 11,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "A custom-designed piece of gear made from an Augment Module core.",
+	uncraftable = 0,
+	next = 13421,
+	upgrade_id = 101,
+	value_2 = 10,
+	icon = "13420",
+	effect_id = 901010,
+	attribute_2 = "reload",
+	id = 13420,
+	rarity = 4,
+	unique = 30113,
+	important = 2,
+	prev = 0,
+	attribute_1 = "torpedo",
+	usability = {
+		1
+	},
+	skill_upgrade = {
+		{
+			0,
+			1090330
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13421] = {
+	prev = 13420,
+	base = 13420,
+	next = 13422,
+	upgrade_id = 102,
+	id = 13421,
+	value_2 = 11,
+	value_1 = 12,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13422] = {
+	prev = 13421,
+	base = 13420,
+	next = 13423,
+	upgrade_id = 103,
+	id = 13422,
+	value_2 = 12,
+	value_1 = 13,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13423] = {
+	prev = 13422,
+	base = 13420,
+	next = 13424,
+	upgrade_id = 104,
+	id = 13423,
+	value_2 = 13,
+	value_1 = 14,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13424] = {
+	prev = 13423,
+	base = 13420,
+	next = 13425,
+	upgrade_id = 105,
+	id = 13424,
+	value_2 = 14,
+	value_1 = 15,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13425] = {
+	prev = 13424,
+	base = 13420,
+	next = 13426,
+	upgrade_id = 106,
+	id = 13425,
+	value_2 = 15,
+	value_1 = 16,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13426] = {
+	prev = 13425,
+	base = 13420,
+	next = 13427,
+	upgrade_id = 107,
+	id = 13426,
+	value_2 = 16,
+	value_1 = 17,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13427] = {
+	prev = 13426,
+	base = 13420,
+	next = 13428,
+	upgrade_id = 108,
+	id = 13427,
+	value_2 = 17,
+	value_1 = 18,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13428] = {
+	prev = 13427,
+	base = 13420,
+	next = 13429,
+	upgrade_id = 109,
+	id = 13428,
+	value_2 = 18,
+	value_1 = 19,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13429] = {
+	prev = 13428,
+	base = 13420,
+	next = 13430,
+	upgrade_id = 110,
+	id = 13429,
+	value_2 = 19,
+	value_1 = 20,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13430] = {
+	base = 13420,
+	prev = 13429,
+	next = 0,
+	upgrade_id = 111,
+	id = 13430,
+	value_2 = 20,
+	value_1 = 22,
+	level = 11,
+	skill_upgrade = {
+		{
+			1013,
+			1090330
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[13440] = {
+	tech = 0,
+	name = "Upgrade Tool Pro Max",
+	value_2_random = 5,
+	type = 2,
+	value_1_random = 10,
+	value_1 = 8,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "A custom-designed piece of gear made from an Augment Module core.",
+	uncraftable = 0,
+	next = 13441,
+	upgrade_id = 101,
+	value_2 = 10,
+	icon = "13440",
+	effect_id = 901010,
+	attribute_2 = "torpedo",
+	id = 13440,
+	rarity = 4,
+	unique = 30201,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		2
+	},
+	skill_upgrade = {
+		{
+			0,
+			1090350
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13441] = {
+	prev = 13440,
+	base = 13440,
+	next = 13442,
+	upgrade_id = 102,
+	id = 13441,
+	value_2 = 11,
+	value_1 = 9,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13442] = {
+	prev = 13441,
+	base = 13440,
+	next = 13443,
+	upgrade_id = 103,
+	id = 13442,
+	value_2 = 13,
+	value_1 = 10,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13443] = {
+	prev = 13442,
+	base = 13440,
+	next = 13444,
+	upgrade_id = 104,
+	id = 13443,
+	value_2 = 14,
+	value_1 = 11,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13444] = {
+	prev = 13443,
+	base = 13440,
+	next = 13445,
+	upgrade_id = 105,
+	id = 13444,
+	value_2 = 16,
+	value_1 = 12,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13445] = {
+	prev = 13444,
+	base = 13440,
+	next = 13446,
+	upgrade_id = 106,
+	id = 13445,
+	value_2 = 17,
+	value_1 = 14,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13446] = {
+	prev = 13445,
+	base = 13440,
+	next = 13447,
+	upgrade_id = 107,
+	id = 13446,
+	value_2 = 19,
+	value_1 = 15,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13447] = {
+	prev = 13446,
+	base = 13440,
+	next = 13448,
+	upgrade_id = 108,
+	id = 13447,
+	value_2 = 20,
+	value_1 = 16,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13448] = {
+	prev = 13447,
+	base = 13440,
+	next = 13449,
+	upgrade_id = 109,
+	id = 13448,
+	value_2 = 22,
+	value_1 = 17,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13449] = {
+	prev = 13448,
+	base = 13440,
+	next = 13450,
+	upgrade_id = 110,
+	id = 13449,
+	value_2 = 23,
+	value_1 = 18,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13450] = {
+	base = 13440,
+	prev = 13449,
+	next = 0,
+	upgrade_id = 111,
+	id = 13450,
+	value_2 = 25,
+	value_1 = 20,
+	level = 11,
+	skill_upgrade = {
+		{
+			2011,
+			1090350
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[13460] = {
+	tech = 0,
+	name = "Purse of Everyday Items",
+	value_2_random = 5,
+	type = 4,
+	value_1_random = 10,
+	value_1 = 13,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "A custom-designed piece of gear made from an Augment Module core.",
+	uncraftable = 0,
+	next = 13461,
+	upgrade_id = 101,
+	value_2 = 1,
+	icon = "13460",
+	effect_id = 901010,
+	attribute_2 = "dodge",
+	id = 13460,
+	rarity = 4,
+	unique = 49901,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		3
+	},
+	skill_upgrade = {
+		{
+			0,
+			1019090
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13461] = {
+	prev = 13460,
+	base = 13460,
+	next = 13462,
+	upgrade_id = 102,
+	id = 13461,
+	value_2 = 1,
+	value_1 = 14,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13462] = {
+	prev = 13461,
+	base = 13460,
+	next = 13463,
+	upgrade_id = 103,
+	id = 13462,
+	value_2 = 2,
+	value_1 = 15,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13463] = {
+	prev = 13462,
+	base = 13460,
+	next = 13464,
+	upgrade_id = 104,
+	id = 13463,
+	value_2 = 3,
+	value_1 = 16,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13464] = {
+	prev = 13463,
+	base = 13460,
+	next = 13465,
+	upgrade_id = 105,
+	id = 13464,
+	value_2 = 4,
+	value_1 = 17,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13465] = {
+	prev = 13464,
+	base = 13460,
+	next = 13466,
+	upgrade_id = 106,
+	id = 13465,
+	value_2 = 5,
+	value_1 = 18,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13466] = {
+	prev = 13465,
+	base = 13460,
+	next = 13467,
+	upgrade_id = 107,
+	id = 13466,
+	value_2 = 6,
+	value_1 = 19,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13467] = {
+	prev = 13466,
+	base = 13460,
+	next = 13468,
+	upgrade_id = 108,
+	id = 13467,
+	value_2 = 7,
+	value_1 = 20,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13468] = {
+	prev = 13467,
+	base = 13460,
+	next = 13469,
+	upgrade_id = 109,
+	id = 13468,
+	value_2 = 8,
+	value_1 = 21,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13469] = {
+	prev = 13468,
+	base = 13460,
+	next = 13470,
+	upgrade_id = 110,
+	id = 13469,
+	value_2 = 9,
+	value_1 = 23,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13470] = {
+	base = 13460,
+	prev = 13469,
+	next = 0,
+	upgrade_id = 111,
+	id = 13470,
+	value_2 = 10,
+	value_1 = 25,
+	level = 11,
+	skill_upgrade = {
+		{
+			19090,
+			1019090
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[13480] = {
+	tech = 0,
+	name = "Holy Lance of Judgment",
+	value_2_random = 5,
+	type = 4,
+	value_1_random = 10,
+	value_1 = 13,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "A custom-designed piece of gear made from an Augment Module core.",
+	uncraftable = 0,
+	next = 13481,
+	upgrade_id = 101,
+	value_2 = 1,
+	icon = "13480",
+	effect_id = 901010,
+	attribute_2 = "hit",
+	id = 13480,
+	rarity = 4,
+	unique = 89901,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		3
+	},
+	skill_upgrade = {
+		{
+			0,
+			1019110
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13481] = {
+	prev = 13480,
+	base = 13480,
+	next = 13482,
+	upgrade_id = 102,
+	id = 13481,
+	value_2 = 1,
+	value_1 = 14,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13482] = {
+	prev = 13481,
+	base = 13480,
+	next = 13483,
+	upgrade_id = 103,
+	id = 13482,
+	value_2 = 2,
+	value_1 = 15,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13483] = {
+	prev = 13482,
+	base = 13480,
+	next = 13484,
+	upgrade_id = 104,
+	id = 13483,
+	value_2 = 3,
+	value_1 = 16,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13484] = {
+	prev = 13483,
+	base = 13480,
+	next = 13485,
+	upgrade_id = 105,
+	id = 13484,
+	value_2 = 4,
+	value_1 = 17,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13485] = {
+	prev = 13484,
+	base = 13480,
+	next = 13486,
+	upgrade_id = 106,
+	id = 13485,
+	value_2 = 5,
+	value_1 = 18,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13486] = {
+	prev = 13485,
+	base = 13480,
+	next = 13487,
+	upgrade_id = 107,
+	id = 13486,
+	value_2 = 6,
+	value_1 = 19,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13487] = {
+	prev = 13486,
+	base = 13480,
+	next = 13488,
+	upgrade_id = 108,
+	id = 13487,
+	value_2 = 7,
+	value_1 = 20,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13488] = {
+	prev = 13487,
+	base = 13480,
+	next = 13489,
+	upgrade_id = 109,
+	id = 13488,
+	value_2 = 8,
+	value_1 = 21,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13489] = {
+	prev = 13488,
+	base = 13480,
+	next = 13490,
+	upgrade_id = 110,
+	id = 13489,
+	value_2 = 9,
+	value_1 = 23,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13490] = {
+	base = 13480,
+	prev = 13489,
+	next = 0,
+	upgrade_id = 111,
+	id = 13490,
+	value_2 = 10,
+	value_1 = 25,
+	level = 11,
+	skill_upgrade = {
+		{
+			19110,
+			1019110
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[13500] = {
+	tech = 0,
+	name = "One More Ball!",
+	value_2_random = 5,
+	type = 7,
+	value_1_random = 10,
+	value_1 = 22,
+	effect_id_display = 902060,
+	level = 1,
+	descrip = "A custom-designed piece of gear made from an Augment Module core.",
+	uncraftable = 0,
+	next = 13501,
+	upgrade_id = 101,
+	value_2 = 4,
+	icon = "13500",
+	effect_id = 902060,
+	attribute_2 = "hit",
+	id = 13500,
+	rarity = 4,
+	unique = 10602,
+	important = 2,
+	prev = 0,
+	attribute_1 = "air",
+	usability = {
+		6
+	},
+	skill_upgrade = {
+		{
+			0,
+			1090340
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13501] = {
+	prev = 13500,
+	base = 13500,
+	next = 13502,
+	upgrade_id = 102,
+	id = 13501,
+	value_2 = 5,
+	value_1 = 22,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13502] = {
+	prev = 13501,
+	base = 13500,
+	next = 13503,
+	upgrade_id = 103,
+	id = 13502,
+	value_2 = 5,
+	value_1 = 23,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13503] = {
+	prev = 13502,
+	base = 13500,
+	next = 13504,
+	upgrade_id = 104,
+	id = 13503,
+	value_2 = 6,
+	value_1 = 23,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13504] = {
+	prev = 13503,
+	base = 13500,
+	next = 13505,
+	upgrade_id = 105,
+	id = 13504,
+	value_2 = 6,
+	value_1 = 24,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13505] = {
+	prev = 13504,
+	base = 13500,
+	next = 13506,
+	upgrade_id = 106,
+	id = 13505,
+	value_2 = 7,
+	value_1 = 25,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13506] = {
+	prev = 13505,
+	base = 13500,
+	next = 13507,
+	upgrade_id = 107,
+	id = 13506,
+	value_2 = 7,
+	value_1 = 26,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13507] = {
+	prev = 13506,
+	base = 13500,
+	next = 13508,
+	upgrade_id = 108,
+	id = 13507,
+	value_2 = 8,
+	value_1 = 27,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13508] = {
+	prev = 13507,
+	base = 13500,
+	next = 13509,
+	upgrade_id = 109,
+	id = 13508,
+	value_2 = 8,
+	value_1 = 28,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13509] = {
+	prev = 13508,
+	base = 13500,
+	next = 13510,
+	upgrade_id = 110,
+	id = 13509,
+	value_2 = 9,
+	value_1 = 29,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13510] = {
+	base = 13500,
+	prev = 13509,
+	next = 0,
+	upgrade_id = 111,
+	id = 13510,
+	value_2 = 10,
+	value_1 = 30,
+	level = 11,
+	skill_upgrade = {
+		{
+			3001,
+			1090340
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[13520] = {
+	tech = 0,
+	name = "Resplendent Flower Hairpin",
+	value_2_random = 5,
+	type = 7,
+	value_1_random = 10,
+	value_1 = 22,
+	effect_id_display = 902060,
+	level = 1,
+	descrip = "A custom-designed piece of gear made from an Augment Module core.",
+	uncraftable = 0,
+	next = 13521,
+	upgrade_id = 101,
+	value_2 = 6,
+	icon = "13520",
+	effect_id = 902060,
+	attribute_2 = "reload",
+	id = 13520,
+	rarity = 4,
+	unique = 30603,
+	important = 2,
+	prev = 0,
+	attribute_1 = "air",
+	usability = {
+		6
+	},
+	skill_upgrade = {
+		{
+			0,
+			1090360
+		}
+	},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[13521] = {
+	prev = 13520,
+	base = 13520,
+	next = 13522,
+	upgrade_id = 102,
+	id = 13521,
+	value_2 = 6,
+	value_1 = 22,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[13522] = {
+	prev = 13521,
+	base = 13520,
+	next = 13523,
+	upgrade_id = 103,
+	id = 13522,
+	value_2 = 7,
+	value_1 = 23,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[13523] = {
+	prev = 13522,
+	base = 13520,
+	next = 13524,
+	upgrade_id = 104,
+	id = 13523,
+	value_2 = 8,
+	value_1 = 23,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[13524] = {
+	prev = 13523,
+	base = 13520,
+	next = 13525,
+	upgrade_id = 105,
+	id = 13524,
+	value_2 = 9,
+	value_1 = 24,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[13525] = {
+	prev = 13524,
+	base = 13520,
+	next = 13526,
+	upgrade_id = 106,
+	id = 13525,
+	value_2 = 10,
+	value_1 = 25,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[13526] = {
+	prev = 13525,
+	base = 13520,
+	next = 13527,
+	upgrade_id = 107,
+	id = 13526,
+	value_2 = 11,
+	value_1 = 26,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[13527] = {
+	prev = 13526,
+	base = 13520,
+	next = 13528,
+	upgrade_id = 108,
+	id = 13527,
+	value_2 = 12,
+	value_1 = 27,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[13528] = {
+	prev = 13527,
+	base = 13520,
+	next = 13529,
+	upgrade_id = 109,
+	id = 13528,
+	value_2 = 13,
+	value_1 = 28,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[13529] = {
+	prev = 13528,
+	base = 13520,
+	next = 13530,
+	upgrade_id = 110,
+	id = 13529,
+	value_2 = 14,
+	value_1 = 29,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[13530] = {
+	base = 13520,
+	prev = 13529,
+	next = 0,
+	upgrade_id = 111,
+	id = 13530,
+	value_2 = 15,
+	value_1 = 30,
+	level = 11,
+	skill_upgrade = {
+		{
+			3041,
+			1090360
+		}
+	}
+}
 _G.pg.base.spweapon_data_statistics[13560] = {
 	tech = 0,
 	name = "Inhuman Heart",
@@ -21099,286 +22079,6 @@ _G.pg.base.spweapon_data_statistics[13650] = {
 		{
 			150640,
 			10150640
-		}
-	}
-}
-_G.pg.base.spweapon_data_statistics[13400] = {
-	tech = 0,
-	name = "Neptune's Trident",
-	value_2_random = 5,
-	type = 2,
-	value_1_random = 10,
-	value_1 = 13,
-	effect_id_display = 901010,
-	level = 1,
-	descrip = "A custom-designed piece of gear made from an Augment Module core.",
-	uncraftable = 0,
-	next = 13401,
-	upgrade_id = 101,
-	value_2 = 6,
-	icon = "13400",
-	effect_id = 901010,
-	attribute_2 = "dodge",
-	id = 13400,
-	rarity = 4,
-	unique = 29901,
-	important = 2,
-	prev = 0,
-	attribute_1 = "cannon",
-	usability = {
-		2
-	},
-	skill_upgrade = {
-		{
-			0,
-			1019020
-		}
-	},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[13401] = {
-	prev = 13400,
-	base = 13400,
-	next = 13402,
-	upgrade_id = 102,
-	id = 13401,
-	value_2 = 6,
-	value_1 = 14,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[13402] = {
-	prev = 13401,
-	base = 13400,
-	next = 13403,
-	upgrade_id = 103,
-	id = 13402,
-	value_2 = 7,
-	value_1 = 15,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[13403] = {
-	prev = 13402,
-	base = 13400,
-	next = 13404,
-	upgrade_id = 104,
-	id = 13403,
-	value_2 = 8,
-	value_1 = 16,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[13404] = {
-	prev = 13403,
-	base = 13400,
-	next = 13405,
-	upgrade_id = 105,
-	id = 13404,
-	value_2 = 9,
-	value_1 = 17,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[13405] = {
-	prev = 13404,
-	base = 13400,
-	next = 13406,
-	upgrade_id = 106,
-	id = 13405,
-	value_2 = 10,
-	value_1 = 18,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[13406] = {
-	prev = 13405,
-	base = 13400,
-	next = 13407,
-	upgrade_id = 107,
-	id = 13406,
-	value_2 = 11,
-	value_1 = 19,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[13407] = {
-	prev = 13406,
-	base = 13400,
-	next = 13408,
-	upgrade_id = 108,
-	id = 13407,
-	value_2 = 12,
-	value_1 = 20,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[13408] = {
-	prev = 13407,
-	base = 13400,
-	next = 13409,
-	upgrade_id = 109,
-	id = 13408,
-	value_2 = 13,
-	value_1 = 21,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[13409] = {
-	prev = 13408,
-	base = 13400,
-	next = 13410,
-	upgrade_id = 110,
-	id = 13409,
-	value_2 = 14,
-	value_1 = 23,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[13410] = {
-	base = 13400,
-	prev = 13409,
-	next = 0,
-	upgrade_id = 111,
-	id = 13410,
-	value_2 = 15,
-	value_1 = 25,
-	level = 11,
-	skill_upgrade = {
-		{
-			19020,
-			1019020
-		}
-	}
-}
-_G.pg.base.spweapon_data_statistics[13420] = {
-	tech = 0,
-	name = "Watch Your Head!",
-	value_2_random = 5,
-	type = 1,
-	value_1_random = 10,
-	value_1 = 11,
-	effect_id_display = 901010,
-	level = 1,
-	descrip = "A custom-designed piece of gear made from an Augment Module core.",
-	uncraftable = 0,
-	next = 13421,
-	upgrade_id = 101,
-	value_2 = 10,
-	icon = "13420",
-	effect_id = 901010,
-	attribute_2 = "reload",
-	id = 13420,
-	rarity = 4,
-	unique = 30113,
-	important = 2,
-	prev = 0,
-	attribute_1 = "torpedo",
-	usability = {
-		1
-	},
-	skill_upgrade = {
-		{
-			0,
-			1090330
-		}
-	},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[13421] = {
-	prev = 13420,
-	base = 13420,
-	next = 13422,
-	upgrade_id = 102,
-	id = 13421,
-	value_2 = 11,
-	value_1 = 12,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[13422] = {
-	prev = 13421,
-	base = 13420,
-	next = 13423,
-	upgrade_id = 103,
-	id = 13422,
-	value_2 = 12,
-	value_1 = 13,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[13423] = {
-	prev = 13422,
-	base = 13420,
-	next = 13424,
-	upgrade_id = 104,
-	id = 13423,
-	value_2 = 13,
-	value_1 = 14,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[13424] = {
-	prev = 13423,
-	base = 13420,
-	next = 13425,
-	upgrade_id = 105,
-	id = 13424,
-	value_2 = 14,
-	value_1 = 15,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[13425] = {
-	prev = 13424,
-	base = 13420,
-	next = 13426,
-	upgrade_id = 106,
-	id = 13425,
-	value_2 = 15,
-	value_1 = 16,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[13426] = {
-	prev = 13425,
-	base = 13420,
-	next = 13427,
-	upgrade_id = 107,
-	id = 13426,
-	value_2 = 16,
-	value_1 = 17,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[13427] = {
-	prev = 13426,
-	base = 13420,
-	next = 13428,
-	upgrade_id = 108,
-	id = 13427,
-	value_2 = 17,
-	value_1 = 18,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[13428] = {
-	prev = 13427,
-	base = 13420,
-	next = 13429,
-	upgrade_id = 109,
-	id = 13428,
-	value_2 = 18,
-	value_1 = 19,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[13429] = {
-	prev = 13428,
-	base = 13420,
-	next = 13430,
-	upgrade_id = 110,
-	id = 13429,
-	value_2 = 19,
-	value_1 = 20,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[13430] = {
-	base = 13420,
-	prev = 13429,
-	next = 0,
-	upgrade_id = 111,
-	id = 13430,
-	value_2 = 20,
-	value_1 = 22,
-	level = 11,
-	skill_upgrade = {
-		{
-			1013,
-			1090330
 		}
 	}
 }
@@ -22219,706 +22919,6 @@ _G.pg.base.spweapon_data_statistics[13770] = {
 		{
 			111160,
 			111170
-		}
-	}
-}
-_G.pg.base.spweapon_data_statistics[13440] = {
-	tech = 0,
-	name = "Upgrade Tool Pro Max",
-	value_2_random = 5,
-	type = 2,
-	value_1_random = 10,
-	value_1 = 8,
-	effect_id_display = 901010,
-	level = 1,
-	descrip = "A custom-designed piece of gear made from an Augment Module core.",
-	uncraftable = 0,
-	next = 13441,
-	upgrade_id = 101,
-	value_2 = 10,
-	icon = "13440",
-	effect_id = 901010,
-	attribute_2 = "torpedo",
-	id = 13440,
-	rarity = 4,
-	unique = 30201,
-	important = 2,
-	prev = 0,
-	attribute_1 = "cannon",
-	usability = {
-		2
-	},
-	skill_upgrade = {
-		{
-			0,
-			1090350
-		}
-	},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[13441] = {
-	prev = 13440,
-	base = 13440,
-	next = 13442,
-	upgrade_id = 102,
-	id = 13441,
-	value_2 = 11,
-	value_1 = 9,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[13442] = {
-	prev = 13441,
-	base = 13440,
-	next = 13443,
-	upgrade_id = 103,
-	id = 13442,
-	value_2 = 13,
-	value_1 = 10,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[13443] = {
-	prev = 13442,
-	base = 13440,
-	next = 13444,
-	upgrade_id = 104,
-	id = 13443,
-	value_2 = 14,
-	value_1 = 11,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[13444] = {
-	prev = 13443,
-	base = 13440,
-	next = 13445,
-	upgrade_id = 105,
-	id = 13444,
-	value_2 = 16,
-	value_1 = 12,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[13445] = {
-	prev = 13444,
-	base = 13440,
-	next = 13446,
-	upgrade_id = 106,
-	id = 13445,
-	value_2 = 17,
-	value_1 = 14,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[13446] = {
-	prev = 13445,
-	base = 13440,
-	next = 13447,
-	upgrade_id = 107,
-	id = 13446,
-	value_2 = 19,
-	value_1 = 15,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[13447] = {
-	prev = 13446,
-	base = 13440,
-	next = 13448,
-	upgrade_id = 108,
-	id = 13447,
-	value_2 = 20,
-	value_1 = 16,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[13448] = {
-	prev = 13447,
-	base = 13440,
-	next = 13449,
-	upgrade_id = 109,
-	id = 13448,
-	value_2 = 22,
-	value_1 = 17,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[13449] = {
-	prev = 13448,
-	base = 13440,
-	next = 13450,
-	upgrade_id = 110,
-	id = 13449,
-	value_2 = 23,
-	value_1 = 18,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[13450] = {
-	base = 13440,
-	prev = 13449,
-	next = 0,
-	upgrade_id = 111,
-	id = 13450,
-	value_2 = 25,
-	value_1 = 20,
-	level = 11,
-	skill_upgrade = {
-		{
-			2011,
-			1090350
-		}
-	}
-}
-_G.pg.base.spweapon_data_statistics[13460] = {
-	tech = 0,
-	name = "Purse of Everyday Items",
-	value_2_random = 5,
-	type = 4,
-	value_1_random = 10,
-	value_1 = 13,
-	effect_id_display = 901010,
-	level = 1,
-	descrip = "A custom-designed piece of gear made from an Augment Module core.",
-	uncraftable = 0,
-	next = 13461,
-	upgrade_id = 101,
-	value_2 = 1,
-	icon = "13460",
-	effect_id = 901010,
-	attribute_2 = "dodge",
-	id = 13460,
-	rarity = 4,
-	unique = 49901,
-	important = 2,
-	prev = 0,
-	attribute_1 = "cannon",
-	usability = {
-		3
-	},
-	skill_upgrade = {
-		{
-			0,
-			1019090
-		}
-	},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[13461] = {
-	prev = 13460,
-	base = 13460,
-	next = 13462,
-	upgrade_id = 102,
-	id = 13461,
-	value_2 = 1,
-	value_1 = 14,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[13462] = {
-	prev = 13461,
-	base = 13460,
-	next = 13463,
-	upgrade_id = 103,
-	id = 13462,
-	value_2 = 2,
-	value_1 = 15,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[13463] = {
-	prev = 13462,
-	base = 13460,
-	next = 13464,
-	upgrade_id = 104,
-	id = 13463,
-	value_2 = 3,
-	value_1 = 16,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[13464] = {
-	prev = 13463,
-	base = 13460,
-	next = 13465,
-	upgrade_id = 105,
-	id = 13464,
-	value_2 = 4,
-	value_1 = 17,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[13465] = {
-	prev = 13464,
-	base = 13460,
-	next = 13466,
-	upgrade_id = 106,
-	id = 13465,
-	value_2 = 5,
-	value_1 = 18,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[13466] = {
-	prev = 13465,
-	base = 13460,
-	next = 13467,
-	upgrade_id = 107,
-	id = 13466,
-	value_2 = 6,
-	value_1 = 19,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[13467] = {
-	prev = 13466,
-	base = 13460,
-	next = 13468,
-	upgrade_id = 108,
-	id = 13467,
-	value_2 = 7,
-	value_1 = 20,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[13468] = {
-	prev = 13467,
-	base = 13460,
-	next = 13469,
-	upgrade_id = 109,
-	id = 13468,
-	value_2 = 8,
-	value_1 = 21,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[13469] = {
-	prev = 13468,
-	base = 13460,
-	next = 13470,
-	upgrade_id = 110,
-	id = 13469,
-	value_2 = 9,
-	value_1 = 23,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[13470] = {
-	base = 13460,
-	prev = 13469,
-	next = 0,
-	upgrade_id = 111,
-	id = 13470,
-	value_2 = 10,
-	value_1 = 25,
-	level = 11,
-	skill_upgrade = {
-		{
-			19090,
-			1019090
-		}
-	}
-}
-_G.pg.base.spweapon_data_statistics[13480] = {
-	tech = 0,
-	name = "Holy Lance of Judgment",
-	value_2_random = 5,
-	type = 4,
-	value_1_random = 10,
-	value_1 = 13,
-	effect_id_display = 901010,
-	level = 1,
-	descrip = "A custom-designed piece of gear made from an Augment Module core.",
-	uncraftable = 0,
-	next = 13481,
-	upgrade_id = 101,
-	value_2 = 1,
-	icon = "13480",
-	effect_id = 901010,
-	attribute_2 = "hit",
-	id = 13480,
-	rarity = 4,
-	unique = 89901,
-	important = 2,
-	prev = 0,
-	attribute_1 = "cannon",
-	usability = {
-		3
-	},
-	skill_upgrade = {
-		{
-			0,
-			1019110
-		}
-	},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[13481] = {
-	prev = 13480,
-	base = 13480,
-	next = 13482,
-	upgrade_id = 102,
-	id = 13481,
-	value_2 = 1,
-	value_1 = 14,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[13482] = {
-	prev = 13481,
-	base = 13480,
-	next = 13483,
-	upgrade_id = 103,
-	id = 13482,
-	value_2 = 2,
-	value_1 = 15,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[13483] = {
-	prev = 13482,
-	base = 13480,
-	next = 13484,
-	upgrade_id = 104,
-	id = 13483,
-	value_2 = 3,
-	value_1 = 16,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[13484] = {
-	prev = 13483,
-	base = 13480,
-	next = 13485,
-	upgrade_id = 105,
-	id = 13484,
-	value_2 = 4,
-	value_1 = 17,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[13485] = {
-	prev = 13484,
-	base = 13480,
-	next = 13486,
-	upgrade_id = 106,
-	id = 13485,
-	value_2 = 5,
-	value_1 = 18,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[13486] = {
-	prev = 13485,
-	base = 13480,
-	next = 13487,
-	upgrade_id = 107,
-	id = 13486,
-	value_2 = 6,
-	value_1 = 19,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[13487] = {
-	prev = 13486,
-	base = 13480,
-	next = 13488,
-	upgrade_id = 108,
-	id = 13487,
-	value_2 = 7,
-	value_1 = 20,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[13488] = {
-	prev = 13487,
-	base = 13480,
-	next = 13489,
-	upgrade_id = 109,
-	id = 13488,
-	value_2 = 8,
-	value_1 = 21,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[13489] = {
-	prev = 13488,
-	base = 13480,
-	next = 13490,
-	upgrade_id = 110,
-	id = 13489,
-	value_2 = 9,
-	value_1 = 23,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[13490] = {
-	base = 13480,
-	prev = 13489,
-	next = 0,
-	upgrade_id = 111,
-	id = 13490,
-	value_2 = 10,
-	value_1 = 25,
-	level = 11,
-	skill_upgrade = {
-		{
-			19110,
-			1019110
-		}
-	}
-}
-_G.pg.base.spweapon_data_statistics[13500] = {
-	tech = 0,
-	name = "One More Ball!",
-	value_2_random = 5,
-	type = 7,
-	value_1_random = 10,
-	value_1 = 22,
-	effect_id_display = 902060,
-	level = 1,
-	descrip = "A custom-designed piece of gear made from an Augment Module core.",
-	uncraftable = 0,
-	next = 13501,
-	upgrade_id = 101,
-	value_2 = 4,
-	icon = "13500",
-	effect_id = 902060,
-	attribute_2 = "hit",
-	id = 13500,
-	rarity = 4,
-	unique = 10602,
-	important = 2,
-	prev = 0,
-	attribute_1 = "air",
-	usability = {
-		6
-	},
-	skill_upgrade = {
-		{
-			0,
-			1090340
-		}
-	},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[13501] = {
-	prev = 13500,
-	base = 13500,
-	next = 13502,
-	upgrade_id = 102,
-	id = 13501,
-	value_2 = 5,
-	value_1 = 22,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[13502] = {
-	prev = 13501,
-	base = 13500,
-	next = 13503,
-	upgrade_id = 103,
-	id = 13502,
-	value_2 = 5,
-	value_1 = 23,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[13503] = {
-	prev = 13502,
-	base = 13500,
-	next = 13504,
-	upgrade_id = 104,
-	id = 13503,
-	value_2 = 6,
-	value_1 = 23,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[13504] = {
-	prev = 13503,
-	base = 13500,
-	next = 13505,
-	upgrade_id = 105,
-	id = 13504,
-	value_2 = 6,
-	value_1 = 24,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[13505] = {
-	prev = 13504,
-	base = 13500,
-	next = 13506,
-	upgrade_id = 106,
-	id = 13505,
-	value_2 = 7,
-	value_1 = 25,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[13506] = {
-	prev = 13505,
-	base = 13500,
-	next = 13507,
-	upgrade_id = 107,
-	id = 13506,
-	value_2 = 7,
-	value_1 = 26,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[13507] = {
-	prev = 13506,
-	base = 13500,
-	next = 13508,
-	upgrade_id = 108,
-	id = 13507,
-	value_2 = 8,
-	value_1 = 27,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[13508] = {
-	prev = 13507,
-	base = 13500,
-	next = 13509,
-	upgrade_id = 109,
-	id = 13508,
-	value_2 = 8,
-	value_1 = 28,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[13509] = {
-	prev = 13508,
-	base = 13500,
-	next = 13510,
-	upgrade_id = 110,
-	id = 13509,
-	value_2 = 9,
-	value_1 = 29,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[13510] = {
-	base = 13500,
-	prev = 13509,
-	next = 0,
-	upgrade_id = 111,
-	id = 13510,
-	value_2 = 10,
-	value_1 = 30,
-	level = 11,
-	skill_upgrade = {
-		{
-			3001,
-			1090340
-		}
-	}
-}
-_G.pg.base.spweapon_data_statistics[13520] = {
-	tech = 0,
-	name = "Resplendent Flower Hairpin",
-	value_2_random = 5,
-	type = 7,
-	value_1_random = 10,
-	value_1 = 22,
-	effect_id_display = 902060,
-	level = 1,
-	descrip = "A custom-designed piece of gear made from an Augment Module core.",
-	uncraftable = 0,
-	next = 13521,
-	upgrade_id = 101,
-	value_2 = 6,
-	icon = "13520",
-	effect_id = 902060,
-	attribute_2 = "reload",
-	id = 13520,
-	rarity = 4,
-	unique = 30603,
-	important = 2,
-	prev = 0,
-	attribute_1 = "air",
-	usability = {
-		6
-	},
-	skill_upgrade = {
-		{
-			0,
-			1090360
-		}
-	},
-	label = {}
-}
-_G.pg.base.spweapon_data_statistics[13521] = {
-	prev = 13520,
-	base = 13520,
-	next = 13522,
-	upgrade_id = 102,
-	id = 13521,
-	value_2 = 6,
-	value_1 = 22,
-	level = 2
-}
-_G.pg.base.spweapon_data_statistics[13522] = {
-	prev = 13521,
-	base = 13520,
-	next = 13523,
-	upgrade_id = 103,
-	id = 13522,
-	value_2 = 7,
-	value_1 = 23,
-	level = 3
-}
-_G.pg.base.spweapon_data_statistics[13523] = {
-	prev = 13522,
-	base = 13520,
-	next = 13524,
-	upgrade_id = 104,
-	id = 13523,
-	value_2 = 8,
-	value_1 = 23,
-	level = 4
-}
-_G.pg.base.spweapon_data_statistics[13524] = {
-	prev = 13523,
-	base = 13520,
-	next = 13525,
-	upgrade_id = 105,
-	id = 13524,
-	value_2 = 9,
-	value_1 = 24,
-	level = 5
-}
-_G.pg.base.spweapon_data_statistics[13525] = {
-	prev = 13524,
-	base = 13520,
-	next = 13526,
-	upgrade_id = 106,
-	id = 13525,
-	value_2 = 10,
-	value_1 = 25,
-	level = 6
-}
-_G.pg.base.spweapon_data_statistics[13526] = {
-	prev = 13525,
-	base = 13520,
-	next = 13527,
-	upgrade_id = 107,
-	id = 13526,
-	value_2 = 11,
-	value_1 = 26,
-	level = 7
-}
-_G.pg.base.spweapon_data_statistics[13527] = {
-	prev = 13526,
-	base = 13520,
-	next = 13528,
-	upgrade_id = 108,
-	id = 13527,
-	value_2 = 12,
-	value_1 = 27,
-	level = 8
-}
-_G.pg.base.spweapon_data_statistics[13528] = {
-	prev = 13527,
-	base = 13520,
-	next = 13529,
-	upgrade_id = 109,
-	id = 13528,
-	value_2 = 13,
-	value_1 = 28,
-	level = 9
-}
-_G.pg.base.spweapon_data_statistics[13529] = {
-	prev = 13528,
-	base = 13520,
-	next = 13530,
-	upgrade_id = 110,
-	id = 13529,
-	value_2 = 14,
-	value_1 = 29,
-	level = 10
-}
-_G.pg.base.spweapon_data_statistics[13530] = {
-	base = 13520,
-	prev = 13529,
-	next = 0,
-	upgrade_id = 111,
-	id = 13530,
-	value_2 = 15,
-	value_1 = 30,
-	level = 11,
-	skill_upgrade = {
-		{
-			3041,
-			1090360
 		}
 	}
 }

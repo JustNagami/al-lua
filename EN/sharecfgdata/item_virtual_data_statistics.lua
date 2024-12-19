@@ -1761,6 +1761,134 @@ _G.pg.base.item_virtual_data_statistics[52072] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
+_G.pg.base.item_virtual_data_statistics[52081] = {
+	display = "You can acquire a number of the following Blueprints at random:",
+	name = "Random Blueprint",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/52001",
+	id = 52081,
+	order = 0,
+	display_icon = {
+		{
+			2,
+			42061,
+			1
+		},
+		{
+			2,
+			42062,
+			1
+		},
+		{
+			2,
+			42063,
+			1
+		},
+		{
+			2,
+			42064,
+			1
+		},
+		{
+			2,
+			42065,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[52082] = {
+	display = "Chance to receive following designs",
+	name = "Random Gear Design",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/55000",
+	id = 52082,
+	order = 0,
+	display_icon = {
+		{
+			2,
+			13043,
+			1
+		},
+		{
+			2,
+			13044,
+			1
+		},
+		{
+			2,
+			13045,
+			1
+		},
+		{
+			2,
+			13046,
+			1
+		},
+		{
+			2,
+			13047,
+			1
+		},
+		{
+			2,
+			13048,
+			1
+		},
+		{
+			2,
+			13024,
+			1
+		},
+		{
+			2,
+			13007,
+			1
+		},
+		{
+			2,
+			13010,
+			1
+		},
+		{
+			2,
+			13009,
+			1
+		},
+		{
+			2,
+			13011,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
 _G.pg.base.item_virtual_data_statistics[53000] = {
 	display = "Chance to receive following gear and designs",
 	name = "Mystery Gear Design",
@@ -145678,6 +145806,382 @@ _G.pg.base.item_virtual_data_statistics[58995] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
+_G.pg.base.item_virtual_data_statistics[58996] = {
+	display = "Contains a random End of Summer-themed gear skin.",
+	name = "Gear Skin Box (End of Summer)",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/equipskin_drop_display",
+	id = 58996,
+	order = 0,
+	display_icon = {
+		{
+			9,
+			101,
+			1
+		},
+		{
+			9,
+			102,
+			1
+		},
+		{
+			9,
+			103,
+			1
+		},
+		{
+			9,
+			104,
+			1
+		},
+		{
+			9,
+			105,
+			1
+		},
+		{
+			9,
+			106,
+			1
+		},
+		{
+			9,
+			107,
+			1
+		},
+		{
+			9,
+			108,
+			1
+		},
+		{
+			9,
+			109,
+			1
+		},
+		{
+			9,
+			110,
+			1
+		},
+		{
+			9,
+			111,
+			1
+		},
+		{
+			9,
+			112,
+			1
+		},
+		{
+			9,
+			113,
+			1
+		},
+		{
+			9,
+			114,
+			1
+		},
+		{
+			9,
+			115,
+			1
+		},
+		{
+			9,
+			116,
+			1
+		},
+		{
+			9,
+			117,
+			1
+		},
+		{
+			9,
+			118,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[58997] = {
+	display = "Can be used to obtain 1 random Halloween Horrors-themed gear skin.",
+	name = "Gear Skin Box (Halloween Horrors)",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/equipskin_drop_display",
+	id = 58997,
+	order = 0,
+	display_icon = {
+		{
+			9,
+			4059,
+			1
+		},
+		{
+			9,
+			4060,
+			1
+		},
+		{
+			9,
+			4061,
+			1
+		},
+		{
+			9,
+			4062,
+			1
+		},
+		{
+			9,
+			4063,
+			1
+		},
+		{
+			9,
+			4064,
+			1
+		},
+		{
+			9,
+			4065,
+			1
+		},
+		{
+			9,
+			4066,
+			1
+		},
+		{
+			9,
+			4067,
+			1
+		},
+		{
+			9,
+			4068,
+			1
+		},
+		{
+			9,
+			4069,
+			1
+		},
+		{
+			9,
+			4070,
+			1
+		},
+		{
+			9,
+			4071,
+			1
+		},
+		{
+			9,
+			4072,
+			1
+		},
+		{
+			9,
+			4073,
+			1
+		},
+		{
+			9,
+			4074,
+			1
+		},
+		{
+			9,
+			4075,
+			1
+		},
+		{
+			9,
+			4076,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[58998] = {
+	display = "Contains 1x Skin Discount Coupon (300 Gems Off), 10x Wisdom Cubes. The Skin Discount Coupon can be used to get a one-time 300-Gem discount when purchasing an eligible skin with Gems. After 12/04 23:59:59, this coupon can still be used when purchasing an eligible permanent skin added before 11/14. This coupon expires on 12/11, 23:59:59.",
+	name = "Black Friday Coupon & Cubes (2024)",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skin_300_pack",
+	id = 58998,
+	order = 0,
+	display_icon = {
+		{
+			2,
+			65045,
+			1
+		},
+		{
+			2,
+			20001,
+			10
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[58999] = {
+	display = "Use to obtain a random gear skin.",
+	name = "Gear Skin (To LOVE-Ru)",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/equipskin_drop_display",
+	id = 58999,
+	order = 0,
+	display_icon = {
+		{
+			9,
+			1450,
+			1
+		},
+		{
+			9,
+			1451,
+			1
+		},
+		{
+			9,
+			1452,
+			1
+		},
+		{
+			9,
+			1453,
+			1
+		},
+		{
+			9,
+			1454,
+			1
+		},
+		{
+			9,
+			1455,
+			1
+		},
+		{
+			9,
+			1456,
+			1
+		},
+		{
+			9,
+			1457,
+			1
+		},
+		{
+			9,
+			1458,
+			1
+		},
+		{
+			9,
+			1459,
+			1
+		},
+		{
+			9,
+			1460,
+			1
+		},
+		{
+			9,
+			1461,
+			1
+		},
+		{
+			9,
+			1462,
+			1
+		},
+		{
+			9,
+			1463,
+			1
+		},
+		{
+			9,
+			1464,
+			1
+		},
+		{
+			9,
+			1465,
+			1
+		},
+		{
+			9,
+			1466,
+			1
+		},
+		{
+			9,
+			1467,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
 _G.pg.base.item_virtual_data_statistics[59000] = {
 	display = "EXP is required to level up",
 	name = "Ship EXP",
@@ -154238,6 +154742,512 @@ _G.pg.base.item_virtual_data_statistics[59577] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
+_G.pg.base.item_virtual_data_statistics[59578] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	name = "Rental Outfit Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 59578,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59579] = {
+	display = "\"Light of the Martyrium\" event currency. Removed after the event ends.",
+	name = "Golden Crystal Fragments",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/huiguang_pt1",
+	id = 59579,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59580] = {
+	display = "Can be used to claim the UR shipgirl Mogador from the event page or the shop. Removed after the event ends.",
+	name = "UR Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 3,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/huiguang_pt2",
+	id = 59580,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59581] = {
+	display = "Used to exchange for items in \"Headquarters Mobilization Request\" Will be removed after the event ends.",
+	name = "Returnee Points",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/union_pt",
+	id = 59581,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59582] = {
+	display = "Obtained by clearing the \"Manjuu Plumbing\" minigame. Collect 7 to receive an Early Summer Invitation.",
+	name = "Cruise Commemoration Ticket",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 3,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 99,
+	is_world = 0,
+	icon = "Props/59582",
+	id = 59582,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59583] = {
+	display = "A currency earned from completing Cruise Missions during the seasonal campaign (6/1/2024 – 7/31/2024), used to obtain milestone rewards. Will disappear after the campaign season ends.",
+	name = "Progress Point",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 7017,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "props/battlepass_pt",
+	id = 59583,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59584] = {
+	display = "",
+	name = "通行证十七期礼包商店购买支付标记",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 7017,
+	virtual_type = 21,
+	is_world = 0,
+	icon = "props/summer_stamp",
+	id = 59584,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59585] = {
+	display = "\"Today's Conducting Practice\" event item. Removed after the event ends.",
+	name = "Trust - Little Friedrich",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xiaofeitelie_pt",
+	id = 59585,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59586] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	name = "Rental Outfit Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 59586,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59587] = {
+	display = "Exchange currency used in the \"Rondo at Rainbow's End\" event. Will disappear after the event period ends.",
+	name = "Shattered Crest",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/gonghai_pt",
+	id = 59587,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59588] = {
+	display = "Used to exchange for a portrait frame. Removed after the event ends.",
+	name = "Training Points",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xunliandianshu_d",
+	id = 59588,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59589] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	name = "Rental Outfit Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 59589,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59590] = {
+	display = "A limited construction ticket for use during the \"Rondo at Rainbow's End\" event. Removed after the event ends.",
+	name = "Shipbuilding Support Ticket",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5370,
+	virtual_type = 22,
+	is_world = 0,
+	icon = "Props/buildTicket",
+	id = 59590,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59591] = {
+	display = "\"Welcome to Little Academy\" event item. Removed after the event ends.",
+	name = "Colorful Doodles",
+	drop_oil_max = 0,
+	type = 98,
+	virtual_type = 0,
+	id = 59591,
+	shop_id = -1,
+	replace_item = 0,
+	link_id = 0,
+	icon = "Props/59591",
+	order = 0,
+	rarity = 2,
+	max_num = 0,
+	display_icon = "",
+	time_limit = 0,
+	drop_gold_max = 0,
+	is_world = 0,
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59592] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	name = "Rental Outfit Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 59592,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59593] = {
+	display = "Used to raise building levels in the \"Welcome to Little Academy\" event. Removed after the event ends.",
+	name = "Little Star Construction Voucher",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5409,
+	virtual_type = 24,
+	is_world = 0,
+	icon = "Props/59593",
+	id = 59593,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59594] = {
+	display = "Used to exchange for items in \"Pledge of the Radiant Court.\" Will be removed after the event ends.",
+	name = "Star of Loyalty",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/qianwei_pt",
+	id = 59594,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59595] = {
+	display = "Used to exchange for a portrait frame. Removed after the event ends.",
+	name = "Training Points",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xunliandianshu_yv3",
+	id = 59595,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59596] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	name = "Rental Outfit Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 59596,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59597] = {
+	display = "A limited construction ticket for use during the \"Rondo at Rainbow's End\" event. Removed after the event ends.",
+	name = "Shipbuilding Support Ticket",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5423,
+	virtual_type = 22,
+	is_world = 0,
+	icon = "Props/buildTicket",
+	id = 59597,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59598] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	name = "Rental Outfit Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 59598,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59599] = {
+	display = "A currency earned from completing Cruise Missions during the seasonal campaign, used to obtain milestone rewards. Will disappear after the campaign season ends.",
+	name = "Progress Pts",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 26,
+	is_world = 0,
+	icon = "props/battlepass_pt",
+	id = 59599,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
 _G.pg.base.item_virtual_data_statistics[59601] = {
 	display = "One of Mikasa's scale models. This one is of the destroyer Kawakaze.",
 	name = "Kawakaze Ship Model",
@@ -159912,6 +160922,1294 @@ _G.pg.base.item_virtual_data_statistics[60485] = {
 	is_world = 0,
 	icon = "Props/60485",
 	id = 60485,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[60486] = {
+	display = "A Clef to Paradise collectible item. Removed after the event ends.",
+	name = "Dreamland Renovation Plans",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 99,
+	is_world = 0,
+	icon = "Props/60486",
+	id = 60486,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65001] = {
+	display = "",
+	name = "通行证十八期对应虚拟道具",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 7018,
+	virtual_type = 21,
+	is_world = 0,
+	icon = "props/battlepass_pt",
+	id = 65001,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65002] = {
+	display = "Used to move forward on the board in Manjuu Grand Prix. Removed after the event ends.",
+	name = "Accelerations",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5460,
+	virtual_type = 9,
+	is_world = 0,
+	icon = "props/monopoly_dice",
+	id = 65002,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65003] = {
+	display = "Used to exchange for items in \"Interlude of Illusions.\" Will be removed after the event ends.",
+	name = "Joint Exercise Coin",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "props/sitelasibao_pt",
+	id = 65003,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65004] = {
+	display = "Used to exchange for a portrait frame. Removed after the event ends.",
+	name = "Training Pts",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xunliandianshu_mv5",
+	id = 65004,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65010] = {
+	display = "Wild West Vacation Log event item used to raise the town's level.",
+	name = "Prosperity",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5523,
+	virtual_type = 27,
+	is_world = 0,
+	icon = "Props/65010",
+	id = 65010,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65011] = {
+	display = "Wild West Vacation Log collectible item.",
+	name = "Ingots",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5523,
+	virtual_type = 28,
+	is_world = 0,
+	icon = "Props/65011",
+	id = 65011,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65012] = {
+	display = "Windborne Steel Wings collectible item. Removed after the event ends.",
+	name = "Incident Record",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/65012",
+	id = 65012,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65013] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	name = "Rental Outfit Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65013,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65014] = {
+	display = "Used to unlock the story in the Wild West Vacation Log event.",
+	name = "Vacation Log",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5535,
+	virtual_type = 101,
+	is_world = 0,
+	icon = "Props/65014",
+	id = 65014,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65015] = {
+	display = "Whence Flowers Bear No Fruit event points. Used to gain accumulative rewards.",
+	name = "Ephemeral Flowers",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "props/ruifeng_pt",
+	id = 65015,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65016] = {
+	display = "Used to exchange for a portrait frame. Removed after the event ends.",
+	name = "Training Pts",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xunliandianshu_20240905",
+	id = 65016,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65019] = {
+	display = "Ode of Everblooming Crimson event currency. Removed after the event ends.",
+	name = "Naraka Crystal",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/65019",
+	id = 65019,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65020] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	name = "Rental Outfit Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65020,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65024] = {
+	display = "This item will automatically be applied when obtained. Upon use, you will obtain all 6 pieces of \"Joyous Moments with Sirius\" chat sticker pack.\nYou can find these stickers in the default tab of the chat stickers menu.",
+	name = "Joyous Moments with Sirius",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/65024",
+	id = 65024,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65028] = {
+	display = "不该被看到",
+	name = "通行证十九期对应虚拟道具",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 7019,
+	virtual_type = 21,
+	is_world = 0,
+	icon = "props/battlepass_pt",
+	id = 65028,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65031] = {
+	display = "Used to exchange for items in \"Aquilifer's Ballade Rerun.\" Will be removed after the event ends.",
+	name = "Expo Commemorative Coin",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/yidaliv3_pt",
+	id = 65031,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65032] = {
+	display = "Used to exchange for a portrait frame. Removed after the event ends.",
+	name = "Training Pts",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xunliandianshu_yv2",
+	id = 65032,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65033] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	name = "Rental Outfit Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65033,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65034] = {
+	display = "A limited construction ticket for use during the \"Aquilifer's Ballade Rerun\" event. Removed after the event ends.",
+	name = "Shipbuilding Support Ticket",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5594,
+	virtual_type = 22,
+	is_world = 0,
+	icon = "Props/buildTicket",
+	id = 65034,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65035] = {
+	display = "Used to exchange for items in \"Tempesta and the Sleeping Sea.\" Will be removed after the event ends.",
+	name = "Sea Map Piece",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/65035",
+	id = 65035,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65036] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	name = "Rental Outfit Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65036,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65037] = {
+	display = "Used to unlock story chapters in the Sails and Spooks event.",
+	name = "Halloween Pages",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5623,
+	virtual_type = 101,
+	is_world = 0,
+	icon = "Props/65037",
+	id = 65037,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65041] = {
+	display = "Used to exchange for items in \"Violet Tempest, Blooming Lycoris Rerun\" Will be removed after the event ends.",
+	name = "Violet Go Stone",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/rixiv3_pt",
+	id = 65041,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65042] = {
+	display = "Used to exchange for a portrait frame. Removed after the event ends.",
+	name = "Training Pts",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 99,
+	is_world = 0,
+	icon = "Props/xunliandianshu_s",
+	id = 65042,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65043] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	name = "Rental Outfit Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65043,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65044] = {
+	display = "A limited construction ticket for use during the \"Violet Tempest, Blooming Lycoris Rerun\" event. Removed after the event ends.",
+	name = "Shipbuilding Support Ticket",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5639,
+	virtual_type = 22,
+	is_world = 0,
+	icon = "Props/buildTicket",
+	id = 65044,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65045] = {
+	display = "During the Black Friday event (11/14-12/04), this coupon can be used to get a one-time 300-Gem discount when purchasing an eligible skin with Gems. After 12/04 23:59:59, this coupon can still be used when purchasing an eligible permanent skin added before 11/14. This coupon expires on 12/11, 23:59:59.",
+	name = "Skin Discount Coupon (300 Gems Off)",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5652,
+	virtual_type = 13,
+	is_world = 0,
+	icon = "Props/skin_300",
+	id = 65045,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65046] = {
+	display = "Event currency of 2024 Black Friday Akashi's Fire Sale. Removed after the event ends.",
+	name = "Black Friday PT",
+	drop_oil_max = 0,
+	type = 0,
+	virtual_type = 0,
+	id = 65046,
+	shop_id = -1,
+	replace_item = 0,
+	link_id = 0,
+	icon = "Props/65046",
+	price = "",
+	order = 0,
+	rarity = 2,
+	max_num = 0,
+	time_limit = 0,
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65047] = {
+	display = "Dangerous Inventions Incoming! event currency. Will be removed after the event ends.",
+	name = "Energy Stone",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/tolove_pt",
+	id = 65047,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65048] = {
+	display = "Crystal fragments with mysterious power inside. Used to unlock Help me, Miss Lala! requests.",
+	name = "Energy Fragment",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/tolove_jigsaw_pt",
+	id = 65048,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65049] = {
+	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
+	name = "Data Chip L",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_lala",
+	id = 65049,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65050] = {
+	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
+	name = "Data Chip N",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_nana",
+	id = 65050,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65051] = {
+	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
+	name = "Data Chip M",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_momo",
+	id = 65051,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65052] = {
+	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
+	name = "Data Chip K",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_yami",
+	id = 65052,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65053] = {
+	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
+	name = "Data Chip H",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_haruna",
+	id = 65053,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65054] = {
+	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
+	name = "Data Chip Y",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_yui",
+	id = 65054,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65055] = {
+	display = "Newcomers' Support Campaign shop currency. Removed after the campaign ends.",
+	name = "Campaign Pts",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/newserver_pt",
+	id = 65055,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65056] = {
+	display = "Can be used to build shipgirls in the Campaign pool. Acquired through the Newcomers' Support Campaign.",
+	name = "Newcomers' Build Ticket",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 8081,
+	virtual_type = 22,
+	is_world = 0,
+	icon = "Props/buildTicket_newserver",
+	id = 65056,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65057] = {
+	display = "",
+	name = "巡游点数",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 7020,
+	virtual_type = 21,
+	is_world = 0,
+	icon = "props/battlepass_pt",
+	id = 65057,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65058] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	name = "Rental Outfit Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65058,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65061] = {
+	display = "Used to exchange for a portrait frame. Removed after the event ends.",
+	name = "Training Pts",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xunliandianshu_20241212",
+	id = 65061,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65063] = {
+	display = "用于「星光下的余晖」活动的常规兑换，活动结束后将会消失",
+	name = "Extradimensional Specimen",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/65063",
+	id = 65063,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65064] = {
+	display = "Can be exchanged for the UR shipgirl Z52 in the event shop. Will be removed after the event ends.",
+	name = "UR Voucher",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 3,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/65064",
+	id = 65064,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65065] = {
+	display = "美服圣诞网页活动道具展示",
+	name = "美服圣诞网页活动道具展示",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5731,
+	virtual_type = 101,
+	is_world = 0,
+	icon = "props/battlepass_pt",
+	id = 65065,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65066] = {
+	display = "Collect 7 to receive the New Year's Invitation (2025).",
+	name = "New Year's Blessings",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "props/xinniandezhufu",
+	id = 65066,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65067] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	name = "Rental Outfit Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65067,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65500] = {
+	display = "A commemorative medal issued by the Iron Blood Resistance celebrating your triumph over the Star Beast.\n—Our world shall not perish. Not today, not ever.",
+	name = "Stellar Resistance Medal",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 5,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Medal/9001",
+	id = 65500,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65501] = {
+	display = "The exacting leader of the Iron Blood Resistance. \"I am always watching you.\"",
+	name = "Sticker: Rumey",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/571101",
+	id = 65501,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65502] = {
+	display = "A mysterious entity that appeared from beyond the stars. Its true nature is still unknown.",
+	name = "Sticker: Star Beast",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/571102",
+	id = 65502,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65503] = {
+	display = "On the night the Star Beast descended, the cosmos shone more radiantly than ever before.",
+	name = "Sticker: Starlight",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/571103",
+	id = 65503,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65504] = {
+	display = "Strange tissue collected from the remains of an extradimensional beast. Classification: Scientific research material. Do not eat.",
+	name = "Sticker: Specimen From Beyond",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/571104",
+	id = 65504,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65505] = {
+	display = "The Resistance's HQ, protected by a Mirror Sea and Eternal Star. Not exactly an ideal getaway resort, but it IS well-defended.",
+	name = "Sticker: HQ At Sunset",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/571105",
+	id = 65505,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65506] = {
+	display = "The extradimensional beasts are mighty, but our preparations are even mightier. As long as we survive this turbulent night, we shall walk proudly into hope's light.",
+	name = "Sticker: Night For Survival",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/571106",
+	id = 65506,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65507] = {
+	display = "\"P HT AOL ZAHY ILHZA. NBPKPUN AOL ZAHYZ KV P HWWLHY, ILHYPUN AOL ZAHYZ KV P SLHCL, IVD KVDU ILMVYL TL, ZPUN OFTUZ AV TF UHTL, OLLK TF JVTTHUKZ HUK VILF.\"",
+	name = "Sticker: From The Stars They Came",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/571107",
+	id = 65507,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65508] = {
+	display = "This is your target! Look carefully at the diagram, and get curlin'!",
+	name = "Sticker: Manjuu Curling",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/571108",
+	id = 65508,
 	order = 0,
 	display_icon = {},
 	price = {},
@@ -166895,6 +169193,290 @@ _G.pg.base.item_virtual_data_statistics[86203] = {
 		}
 	}
 }
+_G.pg.base.item_virtual_data_statistics[86204] = {
+	display = "不会被看到",
+	name = "Random 2024 Swimsuit",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86204,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			805031,
+			1000
+		},
+		{
+			901071,
+			1000
+		},
+		{
+			102134,
+			1000
+		},
+		{
+			402073,
+			1000
+		},
+		{
+			599012,
+			1000
+		},
+		{
+			803021,
+			1800
+		},
+		{
+			901051,
+			1600
+		},
+		{
+			901061,
+			1600
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86205] = {
+	display = "不会被看到",
+	name = "Random 2024 Summer Outfit",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86205,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			299034,
+			1200
+		},
+		{
+			403102,
+			1200
+		},
+		{
+			701043,
+			1200
+		},
+		{
+			305082,
+			1200
+		},
+		{
+			202332,
+			1500
+		},
+		{
+			703022,
+			1400
+		},
+		{
+			302062,
+			1200
+		},
+		{
+			137031,
+			1100
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86206] = {
+	display = "不会被看到",
+	name = "Random Dreamland Skin A",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86206,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			302251,
+			1200
+		},
+		{
+			307151,
+			1200
+		},
+		{
+			202127,
+			1200
+		},
+		{
+			302261,
+			1200
+		},
+		{
+			207025,
+			1310
+		},
+		{
+			301911,
+			1310
+		},
+		{
+			401353,
+			1310
+		},
+		{
+			202085,
+			1270
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86207] = {
+	display = "不会被看到",
+	name = "Random Dreamland Skin B",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86207,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			305102,
+			1200
+		},
+		{
+			202204,
+			1200
+		},
+		{
+			103245,
+			1200
+		},
+		{
+			319014,
+			1200
+		},
+		{
+			202102,
+			1200
+		},
+		{
+			499072,
+			1430
+		},
+		{
+			306063,
+			1300
+		},
+		{
+			519012,
+			1270
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86208] = {
+	display = "不会被看到",
+	name = "Game Night Skin A",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86208,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			407041,
+			850
+		},
+		{
+			405013,
+			850
+		},
+		{
+			499053,
+			850
+		},
+		{
+			401521,
+			850
+		},
+		{
+			402111,
+			850
+		},
+		{
+			207054,
+			850
+		},
+		{
+			201354,
+			1900
+		},
+		{
+			401091,
+			1500
+		},
+		{
+			401111,
+			1500
+		}
+	}
+}
 _G.pg.base.item_virtual_data_statistics[86400] = {
 	display = "不会被看到",
 	name = "Random Skin",
@@ -167058,6 +169640,436 @@ _G.pg.base.item_virtual_data_statistics[86402] = {
 			1130
 		}
 	}
+}
+_G.pg.base.item_virtual_data_statistics[86403] = {
+	display = "不会被看到",
+	name = "Random Skin",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86403,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			207037,
+			1200
+		},
+		{
+			404061,
+			1200
+		},
+		{
+			205074,
+			1200
+		},
+		{
+			101266,
+			1700
+		},
+		{
+			401471,
+			1600
+		},
+		{
+			408131,
+			1550
+		},
+		{
+			401431,
+			1550
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86404] = {
+	display = "不会被看到",
+	name = "Random Skin",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86404,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			904021,
+			1200
+		},
+		{
+			907013,
+			1200
+		},
+		{
+			408093,
+			1200
+		},
+		{
+			307063,
+			1750
+		},
+		{
+			901141,
+			1650
+		},
+		{
+			903031,
+			1500
+		},
+		{
+			101255,
+			1500
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86405] = {
+	display = "不会被看到",
+	name = "Random Skin",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86405,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			103281,
+			800
+		},
+		{
+			105151,
+			800
+		},
+		{
+			102331,
+			800
+		},
+		{
+			236032,
+			1300
+		},
+		{
+			108091,
+			1300
+		},
+		{
+			101521,
+			1300
+		},
+		{
+			901042,
+			800
+		},
+		{
+			408042,
+			1300
+		},
+		{
+			807022,
+			800
+		},
+		{
+			499022,
+			800
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86406] = {
+	display = "不会被看到",
+	name = "Random Skin",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86406,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			305132,
+			1200
+		},
+		{
+			9600071,
+			1200
+		},
+		{
+			9600091,
+			1200
+		},
+		{
+			303125,
+			1200
+		},
+		{
+			9600081,
+			1400
+		},
+		{
+			101492,
+			1400
+		},
+		{
+			9600101,
+			1200
+		},
+		{
+			9600111,
+			1200
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86407] = {
+	display = [[
+Contains a random unowned Live2D skin of from the list. Commanders that have owned all Live2D skins will get 1080 Gems instead.
+The probability of acquiring any unowned skin is the same. The list is as followed:
+Roma - White Heron of Darkest Night (L2D);
+Ulrich von Hutten - Ignition Matrician (L2D);
+Albion - Scent of Spring in the Red Pavilion (L2D);
+Anchorage - Moonlit Boat Ride (L2D);
+Cheshire - The Cat in the Magic Hat (L2D);
+Reno - Reno Bunnino (L2D);
+North Carolina - The Heart's Desire (L2D);
+Kronshtadt - Begin the Rush! (L2D);
+Kirov - Drifting Justice (L2D);
+Emden - White-Black Partita (L2D);
+Lützow - Everlasting Blood Banquet (L2D);
+Vanguard - Half-Hearted Masquerade (L2D);
+Prinz Eugen - Kindred Evening Spirits (L2D);
+Ägir - Iron Blood's Dragon Maid (L2D);
+Taihou - Sweet Time After School (L2D);
+Sakawa - The Colors of Love (L2D);
+Bremerton - Relaxation Consultation (L2D);
+Northampton II - Swimming Star (L2D);
+Brest - Marine Muse (L2D);
+Prinz Heinrich - Rabbit on Watch (L2D);
+Noshiro - Unwinding in the Sunshine (L2D);
+Prinz Rupprecht - The Gate Dragon's Advent (L2D);
+Ägir - Golden Dragon Among Auspicious Clouds (L2D);
+Kursk - Lone Wolf Amid the Steam (L2D);
+Regensburg - Dark Dragon, Brilliant Beach (L2D);
+New Jersey - Midsummer Leisure (L2D);
+Taihou - Seaside Daydreams (L2D);
+Anchorage - Dolphins and Swim Lessons (L2D);
+Amagi - Red Kite Respite (L2D);
+Gorizia - Unrequited Office Love? (L2D);
+Clemenceau - Splendid Breeze (L2D);
+Enterprise - Diving Under Blue Skies (L2D);
+Hakuryuu - Flash of Silk and Strings (L2D);
+Hatsuzuki - August's First Romance (L2D);
+Shinano - Dreamy White Sands (L2D);
+Unzen - Sojourn Through Clear Seas (L2D);
+Golden Hind - Forlorn Femme Fatale (L2D);
+Guam - Stage-Setting Charmer (L2D);
+Laffey II - Sleepy on a Busy Day (L2D);
+Kazagumo - Diligent Domestic Discipline (L2D);
+Kearsarge - All-Night Charge (L2D);
+Hindenburg - Delirious Duel (L2D);
+Perseus - Spring's Lackadaisical Leisure (L2D);
+Sovetsky Soyuz - Skyfall Agent (L2D);
+Formidable - The Lover's Heart Flutters On Duty (L2D);
+Alsace - Heat-Beating Summer Sacrament (L2D);
+Mogador - Locker Room Lechery (L2D);
+Prinz Adalbert - Bathroom Slip-Up (L2D);
+Aurora - Heritage of Yu City (L2D);
+Lung Wu - Ascendant Dragon's Spring Feast (L2D);
+Honolulu - Among the Stalls (L2D);
+Vampire - Night Princess's Regalia (L2D);
+Abercrombie - Mischief on the Rocks (L2D);
+Grozny - Shadowy Syndicate Showdown (L2D);
+Ying Swei - Frolicking Flowers, Verse I (L2D);
+Chao Ho - Frolicking Flowers, Verse II (L2D);
+Elbe - Pure-Hearted Bad Girl (L2D);
+Grozny - Bunny in the Banya (L2D);
+Helena - Shimmering Triangle Wave (L2D);
+Kashino - Robust Floral Strings (L2D);
+Cleveland - Knight of the Pop-Up Shop;
+Devonshire - Sadistic Demon;
+St. Louis - An Afternoon on the Lido Deck.]],
+	name = "Random Skin",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86407,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[86408] = {
+	display = "不会被看到",
+	name = "Random Skin",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86408,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			307083,
+			840
+		},
+		{
+			303191,
+			840
+		},
+		{
+			805031,
+			830
+		},
+		{
+			499091,
+			840
+		},
+		{
+			901071,
+			830
+		},
+		{
+			102134,
+			830
+		},
+		{
+			118021,
+			830
+		},
+		{
+			137060,
+			830
+		},
+		{
+			102053,
+			830
+		},
+		{
+			301891,
+			830
+		},
+		{
+			319013,
+			830
+		},
+		{
+			199041,
+			840
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86409] = {
+	display = "Obtained from the Christmas Gachapon event, can be used to pull 1 time from the gacha machine.",
+	name = "Gacha Token",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 30891,
+	virtual_type = 101,
+	is_world = 0,
+	icon = "props/Gacha_Token",
+	id = 86409,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[86410] = {
+	display = "用于「美服圣诞扭蛋活动",
+	name = "圣诞扭蛋pt",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/rixiv3_pt",
+	id = 86410,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
 }
 _G.pg.base.item_virtual_data_statistics[100000] = {
 	display = "Contains information on a META ship's coordinates. Can be analyzed to begin a META showdown.",
@@ -176833,177 +179845,6 @@ _G.pg.base.item_virtual_data_statistics[200134] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
-_G.pg.base.item_virtual_data_statistics[59578] = {
-	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
-	name = "Rental Outfit Voucher",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 59578,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59579] = {
-	display = "\"Light of the Martyrium\" event currency. Removed after the event ends.",
-	name = "Golden Crystal Fragments",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/huiguang_pt1",
-	id = 59579,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59580] = {
-	display = "Can be used to claim the UR shipgirl Mogador from the event page or the shop. Removed after the event ends.",
-	name = "UR Voucher",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 3,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/huiguang_pt2",
-	id = 59580,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59581] = {
-	display = "Used to exchange for items in \"Headquarters Mobilization Request\" Will be removed after the event ends.",
-	name = "Returnee Points",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/union_pt",
-	id = 59581,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59582] = {
-	display = "Obtained by clearing the \"Manjuu Plumbing\" minigame. Collect 7 to receive an Early Summer Invitation.",
-	name = "Cruise Commemoration Ticket",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 3,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 99,
-	is_world = 0,
-	icon = "Props/59582",
-	id = 59582,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86204] = {
-	display = "不会被看到",
-	name = "Random 2024 Swimsuit",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86204,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
-		{
-			805031,
-			1000
-		},
-		{
-			901071,
-			1000
-		},
-		{
-			102134,
-			1000
-		},
-		{
-			402073,
-			1000
-		},
-		{
-			599012,
-			1000
-		},
-		{
-			803021,
-			1800
-		},
-		{
-			901051,
-			1600
-		},
-		{
-			901061,
-			1600
-		}
-	}
-}
 _G.pg.base.item_virtual_data_statistics[200135] = {
 	display = "Chance to receive following designs",
 	name = "Mystery Design",
@@ -180005,367 +182846,6 @@ _G.pg.base.item_virtual_data_statistics[200173] = {
 		}
 	}
 }
-_G.pg.base.item_virtual_data_statistics[59583] = {
-	display = "A currency earned from completing Cruise Missions during the seasonal campaign (6/1/2024 – 7/31/2024), used to obtain milestone rewards. Will disappear after the campaign season ends.",
-	name = "Progress Point",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 7017,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "props/battlepass_pt",
-	id = 59583,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59584] = {
-	display = "",
-	name = "通行证十七期礼包商店购买支付标记",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 7017,
-	virtual_type = 21,
-	is_world = 0,
-	icon = "props/summer_stamp",
-	id = 59584,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59585] = {
-	display = "\"Today's Conducting Practice\" event item. Removed after the event ends.",
-	name = "Trust - Little Friedrich",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/xiaofeitelie_pt",
-	id = 59585,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59586] = {
-	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
-	name = "Rental Outfit Voucher",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 59586,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86205] = {
-	display = "不会被看到",
-	name = "Random 2024 Summer Outfit",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86205,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
-		{
-			299034,
-			1200
-		},
-		{
-			403102,
-			1200
-		},
-		{
-			701043,
-			1200
-		},
-		{
-			305082,
-			1200
-		},
-		{
-			202332,
-			1500
-		},
-		{
-			703022,
-			1400
-		},
-		{
-			302062,
-			1200
-		},
-		{
-			137031,
-			1100
-		}
-	}
-}
-_G.pg.base.item_virtual_data_statistics[59587] = {
-	display = "Exchange currency used in the \"Rondo at Rainbow's End\" event. Will disappear after the event period ends.",
-	name = "Shattered Crest",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/gonghai_pt",
-	id = 59587,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59588] = {
-	display = "Used to exchange for a portrait frame. Removed after the event ends.",
-	name = "Training Points",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/xunliandianshu_d",
-	id = 59588,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59589] = {
-	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
-	name = "Rental Outfit Voucher",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 59589,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59590] = {
-	display = "A limited construction ticket for use during the \"Rondo at Rainbow's End\" event. Removed after the event ends.",
-	name = "Shipbuilding Support Ticket",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5370,
-	virtual_type = 22,
-	is_world = 0,
-	icon = "Props/buildTicket",
-	id = 59590,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59591] = {
-	display = "\"Welcome to Little Academy\" event item. Removed after the event ends.",
-	name = "Colorful Doodles",
-	drop_oil_max = 0,
-	type = 98,
-	virtual_type = 0,
-	id = 59591,
-	shop_id = -1,
-	replace_item = 0,
-	link_id = 0,
-	icon = "Props/59591",
-	order = 0,
-	rarity = 2,
-	max_num = 0,
-	display_icon = "",
-	time_limit = 0,
-	drop_gold_max = 0,
-	is_world = 0,
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59592] = {
-	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
-	name = "Rental Outfit Voucher",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 59592,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59593] = {
-	display = "Used to raise building levels in the \"Welcome to Little Academy\" event. Removed after the event ends.",
-	name = "Little Star Construction Voucher",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5409,
-	virtual_type = 24,
-	is_world = 0,
-	icon = "Props/59593",
-	id = 59593,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86403] = {
-	display = "不会被看到",
-	name = "Random Skin",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86403,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
-		{
-			207037,
-			1200
-		},
-		{
-			404061,
-			1200
-		},
-		{
-			205074,
-			1200
-		},
-		{
-			101266,
-			1700
-		},
-		{
-			401471,
-			1600
-		},
-		{
-			408131,
-			1550
-		},
-		{
-			401431,
-			1550
-		}
-	}
-}
 _G.pg.base.item_virtual_data_statistics[200174] = {
 	display = "Chance to receive following designs",
 	name = "Mystery Design",
@@ -180561,507 +183041,6 @@ _G.pg.base.item_virtual_data_statistics[200177] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[52081] = {
-	display = "You can acquire a number of the following Blueprints at random:",
-	name = "Random Blueprint",
-	max_num = 0,
-	type = 99,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/52001",
-	id = 52081,
-	order = 0,
-	display_icon = {
-		{
-			2,
-			42061,
-			1
-		},
-		{
-			2,
-			42062,
-			1
-		},
-		{
-			2,
-			42063,
-			1
-		},
-		{
-			2,
-			42064,
-			1
-		},
-		{
-			2,
-			42065,
-			1
-		}
-	},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[52082] = {
-	display = "Chance to receive following designs",
-	name = "Random Gear Design",
-	max_num = 0,
-	type = 99,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/55000",
-	id = 52082,
-	order = 0,
-	display_icon = {
-		{
-			2,
-			13043,
-			1
-		},
-		{
-			2,
-			13044,
-			1
-		},
-		{
-			2,
-			13045,
-			1
-		},
-		{
-			2,
-			13046,
-			1
-		},
-		{
-			2,
-			13047,
-			1
-		},
-		{
-			2,
-			13048,
-			1
-		},
-		{
-			2,
-			13024,
-			1
-		},
-		{
-			2,
-			13007,
-			1
-		},
-		{
-			2,
-			13010,
-			1
-		},
-		{
-			2,
-			13009,
-			1
-		},
-		{
-			2,
-			13011,
-			1
-		}
-	},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59599] = {
-	display = "A currency earned from completing Cruise Missions during the seasonal campaign, used to obtain milestone rewards. Will disappear after the campaign season ends.",
-	name = "Progress Pts",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 26,
-	is_world = 0,
-	icon = "props/battlepass_pt",
-	id = 59599,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[58996] = {
-	display = "Contains a random End of Summer-themed gear skin.",
-	name = "Gear Skin Box (End of Summer)",
-	max_num = 0,
-	type = 99,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/equipskin_drop_display",
-	id = 58996,
-	order = 0,
-	display_icon = {
-		{
-			9,
-			101,
-			1
-		},
-		{
-			9,
-			102,
-			1
-		},
-		{
-			9,
-			103,
-			1
-		},
-		{
-			9,
-			104,
-			1
-		},
-		{
-			9,
-			105,
-			1
-		},
-		{
-			9,
-			106,
-			1
-		},
-		{
-			9,
-			107,
-			1
-		},
-		{
-			9,
-			108,
-			1
-		},
-		{
-			9,
-			109,
-			1
-		},
-		{
-			9,
-			110,
-			1
-		},
-		{
-			9,
-			111,
-			1
-		},
-		{
-			9,
-			112,
-			1
-		},
-		{
-			9,
-			113,
-			1
-		},
-		{
-			9,
-			114,
-			1
-		},
-		{
-			9,
-			115,
-			1
-		},
-		{
-			9,
-			116,
-			1
-		},
-		{
-			9,
-			117,
-			1
-		},
-		{
-			9,
-			118,
-			1
-		}
-	},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59594] = {
-	display = "Used to exchange for items in \"Pledge of the Radiant Court.\" Will be removed after the event ends.",
-	name = "Star of Loyalty",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/qianwei_pt",
-	id = 59594,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59595] = {
-	display = "Used to exchange for a portrait frame. Removed after the event ends.",
-	name = "Training Points",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/xunliandianshu_yv3",
-	id = 59595,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59596] = {
-	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
-	name = "Rental Outfit Voucher",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 59596,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59597] = {
-	display = "A limited construction ticket for use during the \"Rondo at Rainbow's End\" event. Removed after the event ends.",
-	name = "Shipbuilding Support Ticket",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5423,
-	virtual_type = 22,
-	is_world = 0,
-	icon = "Props/buildTicket",
-	id = 59597,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59598] = {
-	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
-	name = "Rental Outfit Voucher",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 59598,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65001] = {
-	display = "",
-	name = "通行证十八期对应虚拟道具",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 7018,
-	virtual_type = 21,
-	is_world = 0,
-	icon = "props/battlepass_pt",
-	id = 65001,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65002] = {
-	display = "Used to move forward on the board in Manjuu Grand Prix. Removed after the event ends.",
-	name = "Accelerations",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5460,
-	virtual_type = 9,
-	is_world = 0,
-	icon = "props/monopoly_dice",
-	id = 65002,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65003] = {
-	display = "Used to exchange for items in \"Interlude of Illusions.\" Will be removed after the event ends.",
-	name = "Joint Exercise Coin",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "props/sitelasibao_pt",
-	id = 65003,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86404] = {
-	display = "不会被看到",
-	name = "Random Skin",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86404,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
-		{
-			904021,
-			1200
-		},
-		{
-			907013,
-			1200
-		},
-		{
-			408093,
-			1200
-		},
-		{
-			307063,
-			1750
-		},
-		{
-			901141,
-			1650
-		},
-		{
-			903031,
-			1500
-		},
-		{
-			101255,
-			1500
-		}
-	}
 }
 _G.pg.base.item_virtual_data_statistics[200178] = {
 	display = "Chance to receive following designs",
@@ -182684,208 +184663,6 @@ _G.pg.base.item_virtual_data_statistics[200198] = {
 			4,
 			105021,
 			1
-		}
-	}
-}
-_G.pg.base.item_virtual_data_statistics[65004] = {
-	display = "Used to exchange for a portrait frame. Removed after the event ends.",
-	name = "Training Pts",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/xunliandianshu_mv5",
-	id = 65004,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65010] = {
-	display = "Wild West Vacation Log event item used to raise the town's level.",
-	name = "Prosperity",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5523,
-	virtual_type = 27,
-	is_world = 0,
-	icon = "Props/65010",
-	id = 65010,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65011] = {
-	display = "Wild West Vacation Log collectible item.",
-	name = "Ingots",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5523,
-	virtual_type = 28,
-	is_world = 0,
-	icon = "Props/65011",
-	id = 65011,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65012] = {
-	display = "Windborne Steel Wings collectible item. Removed after the event ends.",
-	name = "Incident Record",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/65012",
-	id = 65012,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65013] = {
-	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
-	name = "Rental Outfit Voucher",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 65013,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65014] = {
-	display = "Used to unlock the story in the Wild West Vacation Log event.",
-	name = "Vacation Log",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5535,
-	virtual_type = 101,
-	is_world = 0,
-	icon = "Props/65014",
-	id = 65014,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86405] = {
-	display = "不会被看到",
-	name = "Random Skin",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86405,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
-		{
-			103281,
-			800
-		},
-		{
-			105151,
-			800
-		},
-		{
-			102331,
-			800
-		},
-		{
-			236032,
-			1300
-		},
-		{
-			108091,
-			1300
-		},
-		{
-			101521,
-			1300
-		},
-		{
-			901042,
-			800
-		},
-		{
-			408042,
-			1300
-		},
-		{
-			807022,
-			800
-		},
-		{
-			499022,
-			800
 		}
 	}
 }
@@ -185890,29 +187667,6 @@ _G.pg.base.item_virtual_data_statistics[200237] = {
 		}
 	}
 }
-_G.pg.base.item_virtual_data_statistics[65015] = {
-	display = "Whence Flowers Bear No Fruit event points. Used to gain accumulative rewards.",
-	name = "Ephemeral Flowers",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "props/ruifeng_pt",
-	id = 65015,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
 _G.pg.base.item_virtual_data_statistics[200238] = {
 	display = "Chance to receive following designs",
 	name = "Mystery Design",
@@ -186601,154 +188355,6 @@ _G.pg.base.item_virtual_data_statistics[200246] = {
 			4,
 			206011,
 			1
-		}
-	}
-}
-_G.pg.base.item_virtual_data_statistics[60486] = {
-	display = "A Clef to Paradise collectible item. Removed after the event ends.",
-	name = "Dreamland Renovation Plans",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 99,
-	is_world = 0,
-	icon = "Props/60486",
-	id = 60486,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65016] = {
-	display = "Used to exchange for a portrait frame. Removed after the event ends.",
-	name = "Training Pts",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/xunliandianshu_20240905",
-	id = 65016,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65019] = {
-	display = "Ode of Everblooming Crimson event currency. Removed after the event ends.",
-	name = "Naraka Crystal",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/65019",
-	id = 65019,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65020] = {
-	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
-	name = "Rental Outfit Voucher",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 65020,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86206] = {
-	display = "不会被看到",
-	name = "Random Dreamland Skin A",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86206,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
-		{
-			302251,
-			1200
-		},
-		{
-			307151,
-			1200
-		},
-		{
-			202127,
-			1200
-		},
-		{
-			302261,
-			1200
-		},
-		{
-			207025,
-			1310
-		},
-		{
-			301911,
-			1310
-		},
-		{
-			401353,
-			1310
-		},
-		{
-			202085,
-			1270
 		}
 	}
 }
@@ -189753,439 +191359,6 @@ _G.pg.base.item_virtual_data_statistics[200285] = {
 		}
 	}
 }
-_G.pg.base.item_virtual_data_statistics[65024] = {
-	display = "This item will automatically be applied when obtained. Upon use, you will obtain all 6 pieces of \"Joyous Moments with Sirius\" chat sticker pack.\nYou can find these stickers in the default tab of the chat stickers menu.",
-	name = "Joyous Moments with Sirius",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/65024",
-	id = 65024,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86207] = {
-	display = "不会被看到",
-	name = "Random Dreamland Skin B",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86207,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
-		{
-			305102,
-			1200
-		},
-		{
-			202204,
-			1200
-		},
-		{
-			103245,
-			1200
-		},
-		{
-			319014,
-			1200
-		},
-		{
-			202102,
-			1200
-		},
-		{
-			499072,
-			1430
-		},
-		{
-			306063,
-			1300
-		},
-		{
-			519012,
-			1270
-		}
-	}
-}
-_G.pg.base.item_virtual_data_statistics[65028] = {
-	display = "不该被看到",
-	name = "通行证十九期对应虚拟道具",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 7019,
-	virtual_type = 21,
-	is_world = 0,
-	icon = "props/battlepass_pt",
-	id = 65028,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65031] = {
-	display = "Used to exchange for items in \"Aquilifer's Ballade Rerun.\" Will be removed after the event ends.",
-	name = "Expo Commemorative Coin",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/yidaliv3_pt",
-	id = 65031,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65032] = {
-	display = "Used to exchange for a portrait frame. Removed after the event ends.",
-	name = "Training Pts",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/xunliandianshu_yv2",
-	id = 65032,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65033] = {
-	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
-	name = "Rental Outfit Voucher",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 65033,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65034] = {
-	display = "A limited construction ticket for use during the \"Aquilifer's Ballade Rerun\" event. Removed after the event ends.",
-	name = "Shipbuilding Support Ticket",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5594,
-	virtual_type = 22,
-	is_world = 0,
-	icon = "Props/buildTicket",
-	id = 65034,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[58997] = {
-	display = "Can be used to obtain 1 random Halloween Horrors-themed gear skin.",
-	name = "Gear Skin Box (Halloween Horrors)",
-	max_num = 0,
-	type = 99,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/equipskin_drop_display",
-	id = 58997,
-	order = 0,
-	display_icon = {
-		{
-			9,
-			4059,
-			1
-		},
-		{
-			9,
-			4060,
-			1
-		},
-		{
-			9,
-			4061,
-			1
-		},
-		{
-			9,
-			4062,
-			1
-		},
-		{
-			9,
-			4063,
-			1
-		},
-		{
-			9,
-			4064,
-			1
-		},
-		{
-			9,
-			4065,
-			1
-		},
-		{
-			9,
-			4066,
-			1
-		},
-		{
-			9,
-			4067,
-			1
-		},
-		{
-			9,
-			4068,
-			1
-		},
-		{
-			9,
-			4069,
-			1
-		},
-		{
-			9,
-			4070,
-			1
-		},
-		{
-			9,
-			4071,
-			1
-		},
-		{
-			9,
-			4072,
-			1
-		},
-		{
-			9,
-			4073,
-			1
-		},
-		{
-			9,
-			4074,
-			1
-		},
-		{
-			9,
-			4075,
-			1
-		},
-		{
-			9,
-			4076,
-			1
-		}
-	},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65035] = {
-	display = "Used to exchange for items in \"Tempesta and the Sleeping Sea.\" Will be removed after the event ends.",
-	name = "Sea Map Piece",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/65035",
-	id = 65035,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65036] = {
-	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
-	name = "Rental Outfit Voucher",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 65036,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65037] = {
-	display = "Used to unlock story chapters in the Sails and Spooks event.",
-	name = "Halloween Pages",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5623,
-	virtual_type = 101,
-	is_world = 0,
-	icon = "Props/65037",
-	id = 65037,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86406] = {
-	display = "不会被看到",
-	name = "Random Skin",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86406,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
-		{
-			305132,
-			1200
-		},
-		{
-			9600071,
-			1200
-		},
-		{
-			9600091,
-			1200
-		},
-		{
-			303125,
-			1200
-		},
-		{
-			9600081,
-			1400
-		},
-		{
-			101492,
-			1400
-		},
-		{
-			9600101,
-			1200
-		},
-		{
-			9600111,
-			1200
-		}
-	}
-}
 _G.pg.base.item_virtual_data_statistics[200286] = {
 	display = "Chance to receive following designs",
 	name = "Mystery Design",
@@ -191805,728 +192978,6 @@ _G.pg.base.item_virtual_data_statistics[200306] = {
 		}
 	}
 }
-_G.pg.base.item_virtual_data_statistics[58998] = {
-	display = "Contains 1x Skin Discount Coupon (300 Gems Off), 10x Wisdom Cubes. The Skin Discount Coupon can be used to get a one-time 300-Gem discount when purchasing an eligible skin with Gems. After 12/04 23:59:59, this coupon can still be used when purchasing an eligible permanent skin added before 11/14. This coupon expires on 12/11, 23:59:59.",
-	name = "Black Friday Coupon & Cubes (2024)",
-	max_num = 0,
-	type = 99,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skin_300_pack",
-	id = 58998,
-	order = 0,
-	display_icon = {
-		{
-			2,
-			65045,
-			1
-		},
-		{
-			2,
-			20001,
-			10
-		}
-	},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65041] = {
-	display = "Used to exchange for items in \"Violet Tempest, Blooming Lycoris Rerun\" Will be removed after the event ends.",
-	name = "Violet Go Stone",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/rixiv3_pt",
-	id = 65041,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65042] = {
-	display = "Used to exchange for a portrait frame. Removed after the event ends.",
-	name = "Training Pts",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 99,
-	is_world = 0,
-	icon = "Props/xunliandianshu_s",
-	id = 65042,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65043] = {
-	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
-	name = "Rental Outfit Voucher",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 65043,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65044] = {
-	display = "A limited construction ticket for use during the \"Violet Tempest, Blooming Lycoris Rerun\" event. Removed after the event ends.",
-	name = "Shipbuilding Support Ticket",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5639,
-	virtual_type = 22,
-	is_world = 0,
-	icon = "Props/buildTicket",
-	id = 65044,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65045] = {
-	display = "During the Black Friday event (11/14-12/04), this coupon can be used to get a one-time 300-Gem discount when purchasing an eligible skin with Gems. After 12/04 23:59:59, this coupon can still be used when purchasing an eligible permanent skin added before 11/14. This coupon expires on 12/11, 23:59:59.",
-	name = "Skin Discount Coupon (300 Gems Off)",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5652,
-	virtual_type = 13,
-	is_world = 0,
-	icon = "Props/skin_300",
-	id = 65045,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65046] = {
-	display = "Event currency of 2024 Black Friday Akashi's Fire Sale. Removed after the event ends.",
-	name = "Black Friday PT",
-	drop_oil_max = 0,
-	type = 0,
-	virtual_type = 0,
-	id = 65046,
-	shop_id = -1,
-	replace_item = 0,
-	link_id = 0,
-	icon = "Props/65046",
-	price = "",
-	order = 0,
-	rarity = 2,
-	max_num = 0,
-	time_limit = 0,
-	drop_gold_max = 0,
-	is_world = 0,
-	display_icon = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86407] = {
-	display = [[
-Contains a random unowned Live2D skin of from the list. Commanders that have owned all Live2D skins will get 1080 Gems instead.
-The probability of acquiring any unowned skin is the same. The list is as followed:
-Roma - White Heron of Darkest Night (L2D);
-Ulrich von Hutten - Ignition Matrician (L2D);
-Albion - Scent of Spring in the Red Pavilion (L2D);
-Anchorage - Moonlit Boat Ride (L2D);
-Cheshire - The Cat in the Magic Hat (L2D);
-Reno - Reno Bunnino (L2D);
-North Carolina - The Heart's Desire (L2D);
-Kronshtadt - Begin the Rush! (L2D);
-Kirov - Drifting Justice (L2D);
-Emden - White-Black Partita (L2D);
-Lützow - Everlasting Blood Banquet (L2D);
-Vanguard - Half-Hearted Masquerade (L2D);
-Prinz Eugen - Kindred Evening Spirits (L2D);
-Ägir - Iron Blood's Dragon Maid (L2D);
-Taihou - Sweet Time After School (L2D);
-Sakawa - The Colors of Love (L2D);
-Bremerton - Relaxation Consultation (L2D);
-Northampton II - Swimming Star (L2D);
-Brest - Marine Muse (L2D);
-Prinz Heinrich - Rabbit on Watch (L2D);
-Noshiro - Unwinding in the Sunshine (L2D);
-Prinz Rupprecht - The Gate Dragon's Advent (L2D);
-Ägir - Golden Dragon Among Auspicious Clouds (L2D);
-Kursk - Lone Wolf Amid the Steam (L2D);
-Regensburg - Dark Dragon, Brilliant Beach (L2D);
-New Jersey - Midsummer Leisure (L2D);
-Taihou - Seaside Daydreams (L2D);
-Anchorage - Dolphins and Swim Lessons (L2D);
-Amagi - Red Kite Respite (L2D);
-Gorizia - Unrequited Office Love? (L2D);
-Clemenceau - Splendid Breeze (L2D);
-Enterprise - Diving Under Blue Skies (L2D);
-Hakuryuu - Flash of Silk and Strings (L2D);
-Hatsuzuki - August's First Romance (L2D);
-Shinano - Dreamy White Sands (L2D);
-Unzen - Sojourn Through Clear Seas (L2D);
-Golden Hind - Forlorn Femme Fatale (L2D);
-Guam - Stage-Setting Charmer (L2D);
-Laffey II - Sleepy on a Busy Day (L2D);
-Kazagumo - Diligent Domestic Discipline (L2D);
-Kearsarge - All-Night Charge (L2D);
-Hindenburg - Delirious Duel (L2D);
-Perseus - Spring's Lackadaisical Leisure (L2D);
-Sovetsky Soyuz - Skyfall Agent (L2D);
-Formidable - The Lover's Heart Flutters On Duty (L2D);
-Alsace - Heat-Beating Summer Sacrament (L2D);
-Mogador - Locker Room Lechery (L2D);
-Prinz Adalbert - Bathroom Slip-Up (L2D);
-Aurora - Heritage of Yu City (L2D);
-Lung Wu - Ascendant Dragon's Spring Feast (L2D);
-Honolulu - Among the Stalls (L2D);
-Vampire - Night Princess's Regalia (L2D);
-Abercrombie - Mischief on the Rocks (L2D);
-Grozny - Shadowy Syndicate Showdown (L2D);
-Ying Swei - Frolicking Flowers, Verse I (L2D);
-Chao Ho - Frolicking Flowers, Verse II (L2D);
-Elbe - Pure-Hearted Bad Girl (L2D);
-Grozny - Bunny in the Banya (L2D);
-Helena - Shimmering Triangle Wave (L2D);
-Kashino - Robust Floral Strings (L2D);
-Cleveland - Knight of the Pop-Up Shop;
-Devonshire - Sadistic Demon;
-St. Louis - An Afternoon on the Lido Deck.]],
-	name = "Random Skin",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86407,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86408] = {
-	display = "不会被看到",
-	name = "Random Skin",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86408,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
-		{
-			307083,
-			840
-		},
-		{
-			303191,
-			840
-		},
-		{
-			805031,
-			830
-		},
-		{
-			499091,
-			840
-		},
-		{
-			901071,
-			830
-		},
-		{
-			102134,
-			830
-		},
-		{
-			118021,
-			830
-		},
-		{
-			137060,
-			830
-		},
-		{
-			102053,
-			830
-		},
-		{
-			301891,
-			830
-		},
-		{
-			319013,
-			830
-		},
-		{
-			199041,
-			840
-		}
-	}
-}
-_G.pg.base.item_virtual_data_statistics[58999] = {
-	display = "Use to obtain a random gear skin.",
-	name = "Gear Skin (To LOVE-Ru)",
-	max_num = 0,
-	type = 99,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/equipskin_drop_display",
-	id = 58999,
-	order = 0,
-	display_icon = {
-		{
-			9,
-			1450,
-			1
-		},
-		{
-			9,
-			1451,
-			1
-		},
-		{
-			9,
-			1452,
-			1
-		},
-		{
-			9,
-			1453,
-			1
-		},
-		{
-			9,
-			1454,
-			1
-		},
-		{
-			9,
-			1455,
-			1
-		},
-		{
-			9,
-			1456,
-			1
-		},
-		{
-			9,
-			1457,
-			1
-		},
-		{
-			9,
-			1458,
-			1
-		},
-		{
-			9,
-			1459,
-			1
-		},
-		{
-			9,
-			1460,
-			1
-		},
-		{
-			9,
-			1461,
-			1
-		},
-		{
-			9,
-			1462,
-			1
-		},
-		{
-			9,
-			1463,
-			1
-		},
-		{
-			9,
-			1464,
-			1
-		},
-		{
-			9,
-			1465,
-			1
-		},
-		{
-			9,
-			1466,
-			1
-		},
-		{
-			9,
-			1467,
-			1
-		}
-	},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65047] = {
-	display = "Dangerous Inventions Incoming! event currency. Will be removed after the event ends.",
-	name = "Energy Stone",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/tolove_pt",
-	id = 65047,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65048] = {
-	display = "Crystal fragments with mysterious power inside. Used to unlock Help me, Miss Lala! requests.",
-	name = "Energy Fragment",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/tolove_jigsaw_pt",
-	id = 65048,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65049] = {
-	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
-	name = "Data Chip L",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5689,
-	virtual_type = 1,
-	is_world = 0,
-	icon = "Props/tolove_source_lala",
-	id = 65049,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65050] = {
-	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
-	name = "Data Chip N",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5689,
-	virtual_type = 1,
-	is_world = 0,
-	icon = "Props/tolove_source_nana",
-	id = 65050,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65051] = {
-	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
-	name = "Data Chip M",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5689,
-	virtual_type = 1,
-	is_world = 0,
-	icon = "Props/tolove_source_momo",
-	id = 65051,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65052] = {
-	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
-	name = "Data Chip K",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5689,
-	virtual_type = 1,
-	is_world = 0,
-	icon = "Props/tolove_source_yami",
-	id = 65052,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65053] = {
-	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
-	name = "Data Chip H",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5689,
-	virtual_type = 1,
-	is_world = 0,
-	icon = "Props/tolove_source_haruna",
-	id = 65053,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65054] = {
-	display = "Collect all six data chips and tap the medal on the event homepage to trade them for the limited Deviluke Commemorative Medal furniture.",
-	name = "Data Chip Y",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5689,
-	virtual_type = 1,
-	is_world = 0,
-	icon = "Props/tolove_source_yui",
-	id = 65054,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65055] = {
-	display = "Newcomers' Support Campaign shop currency. Removed after the campaign ends.",
-	name = "Campaign Pts",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/newserver_pt",
-	id = 65055,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65056] = {
-	display = "Can be used to build shipgirls in the Campaign pool. Acquired through the Newcomers' Support Campaign.",
-	name = "Newcomers' Build Ticket",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 8081,
-	virtual_type = 22,
-	is_world = 0,
-	icon = "Props/buildTicket_newserver",
-	id = 65056,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65057] = {
-	display = "",
-	name = "巡游点数",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 7020,
-	virtual_type = 21,
-	is_world = 0,
-	icon = "props/battlepass_pt",
-	id = 65057,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65058] = {
-	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
-	name = "Rental Outfit Voucher",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 65058,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
 _G.pg.base.item_virtual_data_statistics[200307] = {
 	display = "Chance to receive following designs",
 	name = "Mystery Design",
@@ -193919,26 +194370,3004 @@ _G.pg.base.item_virtual_data_statistics[200324] = {
 		}
 	}
 }
-_G.pg.base.item_virtual_data_statistics[65061] = {
-	display = "Used to exchange for a portrait frame. Removed after the event ends.",
-	name = "Training Pts",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
+_G.pg.base.item_virtual_data_statistics[200326] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
 	drop_oil_max = 0,
-	link_id = 0,
+	shop_id = -1,
+	replace_item = 0,
 	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/xunliandianshu_20241212",
-	id = 65061,
+	id = 200326,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
 	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10015,
+			1
+		},
+		{
+			2,
+			1,
+			1
+		},
+		{
+			2,
+			27,
+			1
+		},
+		{
+			2,
+			45,
+			1
+		},
+		{
+			2,
+			3,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200327] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200327,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10055,
+			1
+		},
+		{
+			2,
+			10018,
+			1
+		},
+		{
+			2,
+			10072,
+			1
+		},
+		{
+			2,
+			33,
+			1
+		},
+		{
+			2,
+			46,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200328] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200328,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10074,
+			1
+		},
+		{
+			2,
+			10056,
+			1
+		},
+		{
+			2,
+			10059,
+			1
+		},
+		{
+			2,
+			10081,
+			1
+		},
+		{
+			2,
+			5,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200329] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200329,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10076,
+			1
+		},
+		{
+			2,
+			10057,
+			1
+		},
+		{
+			2,
+			10065,
+			1
+		},
+		{
+			2,
+			10001,
+			1
+		},
+		{
+			2,
+			4,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200330] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200330,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10085,
+			1
+		},
+		{
+			2,
+			10086,
+			1
+		},
+		{
+			2,
+			10077,
+			1
+		},
+		{
+			2,
+			10003,
+			1
+		},
+		{
+			2,
+			10007,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200331] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200331,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10041,
+			1
+		},
+		{
+			2,
+			10078,
+			1
+		},
+		{
+			2,
+			10075,
+			1
+		},
+		{
+			2,
+			10002,
+			1
+		},
+		{
+			2,
+			10011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200332] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200332,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10015,
+			1
+		},
+		{
+			2,
+			10083,
+			1
+		},
+		{
+			2,
+			10062,
+			1
+		},
+		{
+			2,
+			10010,
+			1
+		},
+		{
+			2,
+			10005,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200333] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200333,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			11019,
+			1
+		},
+		{
+			2,
+			10055,
+			1
+		},
+		{
+			2,
+			10072,
+			1
+		},
+		{
+			2,
+			10079,
+			1
+		},
+		{
+			2,
+			10092,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200334] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200334,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			11025,
+			1
+		},
+		{
+			2,
+			10074,
+			1
+		},
+		{
+			2,
+			10059,
+			1
+		},
+		{
+			2,
+			10081,
+			1
+		},
+		{
+			2,
+			10006,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200335] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200335,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			11026,
+			1
+		},
+		{
+			2,
+			10076,
+			1
+		},
+		{
+			2,
+			10065,
+			1
+		},
+		{
+			2,
+			10001,
+			1
+		},
+		{
+			2,
+			10009,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200336] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200336,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			11031,
+			1
+		},
+		{
+			2,
+			10085,
+			1
+		},
+		{
+			2,
+			10077,
+			1
+		},
+		{
+			2,
+			10003,
+			1
+		},
+		{
+			2,
+			10007,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200337] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200337,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			13013,
+			1
+		},
+		{
+			2,
+			10078,
+			1
+		},
+		{
+			2,
+			10075,
+			1
+		},
+		{
+			2,
+			10002,
+			1
+		},
+		{
+			2,
+			10011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200338] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200338,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			13013,
+			1
+		},
+		{
+			2,
+			10078,
+			1
+		},
+		{
+			2,
+			10075,
+			1
+		},
+		{
+			2,
+			10002,
+			1
+		},
+		{
+			2,
+			10011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200339] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200339,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10015,
+			1
+		},
+		{
+			2,
+			1,
+			1
+		},
+		{
+			2,
+			27,
+			1
+		},
+		{
+			2,
+			45,
+			1
+		},
+		{
+			2,
+			3,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200340] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200340,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10055,
+			1
+		},
+		{
+			2,
+			10018,
+			1
+		},
+		{
+			2,
+			10072,
+			1
+		},
+		{
+			2,
+			33,
+			1
+		},
+		{
+			2,
+			46,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200341] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200341,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10074,
+			1
+		},
+		{
+			2,
+			10056,
+			1
+		},
+		{
+			2,
+			10059,
+			1
+		},
+		{
+			2,
+			10081,
+			1
+		},
+		{
+			2,
+			5,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200342] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200342,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10076,
+			1
+		},
+		{
+			2,
+			10057,
+			1
+		},
+		{
+			2,
+			10065,
+			1
+		},
+		{
+			2,
+			10001,
+			1
+		},
+		{
+			2,
+			4,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200343] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200343,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10085,
+			1
+		},
+		{
+			2,
+			10086,
+			1
+		},
+		{
+			2,
+			10077,
+			1
+		},
+		{
+			2,
+			10003,
+			1
+		},
+		{
+			2,
+			10007,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200344] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200344,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10041,
+			1
+		},
+		{
+			2,
+			10078,
+			1
+		},
+		{
+			2,
+			10075,
+			1
+		},
+		{
+			2,
+			10002,
+			1
+		},
+		{
+			2,
+			10011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200345] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200345,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10015,
+			1
+		},
+		{
+			2,
+			10083,
+			1
+		},
+		{
+			2,
+			10062,
+			1
+		},
+		{
+			2,
+			10010,
+			1
+		},
+		{
+			2,
+			10005,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200346] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200346,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10055,
+			1
+		},
+		{
+			2,
+			10072,
+			1
+		},
+		{
+			2,
+			10079,
+			1
+		},
+		{
+			2,
+			10092,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200347] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200347,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10074,
+			1
+		},
+		{
+			2,
+			10059,
+			1
+		},
+		{
+			2,
+			10081,
+			1
+		},
+		{
+			2,
+			10006,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200348] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200348,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10076,
+			1
+		},
+		{
+			2,
+			10065,
+			1
+		},
+		{
+			2,
+			10001,
+			1
+		},
+		{
+			2,
+			10009,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200349] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200349,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10085,
+			1
+		},
+		{
+			2,
+			10077,
+			1
+		},
+		{
+			2,
+			10003,
+			1
+		},
+		{
+			2,
+			10007,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200350] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200350,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10078,
+			1
+		},
+		{
+			2,
+			10075,
+			1
+		},
+		{
+			2,
+			10002,
+			1
+		},
+		{
+			2,
+			10011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200351] = {
+	display = "Chance to receive following designs",
+	name = "Mystery Design",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = -1,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200351,
+	link_id = 0,
+	icon = "Props/55000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			2,
+			10078,
+			1
+		},
+		{
+			2,
+			10075,
+			1
+		},
+		{
+			2,
+			10002,
+			1
+		},
+		{
+			2,
+			10011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200352] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200352,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			301151,
+			1
+		},
+		{
+			4,
+			401011,
+			1
+		},
+		{
+			4,
+			306051,
+			1
+		},
+		{
+			4,
+			305021,
+			1
+		},
+		{
+			4,
+			101051,
+			1
+		},
+		{
+			4,
+			106011,
+			1
+		},
+		{
+			4,
+			103031,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			102011,
+			1
+		},
+		{
+			4,
+			201081,
+			1
+		},
+		{
+			4,
+			201091,
+			1
+		},
+		{
+			4,
+			101061,
+			1
+		},
+		{
+			4,
+			402031,
+			1
+		},
+		{
+			4,
+			301181,
+			1
+		},
+		{
+			4,
+			303031,
+			1
+		},
+		{
+			4,
+			401201,
+			1
+		},
+		{
+			4,
+			303041,
+			1
+		},
+		{
+			4,
+			107041,
+			1
+		},
+		{
+			4,
+			106021,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200353] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200353,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			103051,
+			1
+		},
+		{
+			4,
+			102051,
+			1
+		},
+		{
+			4,
+			306051,
+			1
+		},
+		{
+			4,
+			305021,
+			1
+		},
+		{
+			4,
+			101051,
+			1
+		},
+		{
+			4,
+			106011,
+			1
+		},
+		{
+			4,
+			103031,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			102011,
+			1
+		},
+		{
+			4,
+			201081,
+			1
+		},
+		{
+			4,
+			201091,
+			1
+		},
+		{
+			4,
+			101061,
+			1
+		},
+		{
+			4,
+			402031,
+			1
+		},
+		{
+			4,
+			301181,
+			1
+		},
+		{
+			4,
+			303031,
+			1
+		},
+		{
+			4,
+			401201,
+			1
+		},
+		{
+			4,
+			303041,
+			1
+		},
+		{
+			4,
+			107041,
+			1
+		},
+		{
+			4,
+			106021,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200354] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200354,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			403011,
+			1
+		},
+		{
+			4,
+			103071,
+			1
+		},
+		{
+			4,
+			306051,
+			1
+		},
+		{
+			4,
+			305021,
+			1
+		},
+		{
+			4,
+			101051,
+			1
+		},
+		{
+			4,
+			106011,
+			1
+		},
+		{
+			4,
+			103031,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			102011,
+			1
+		},
+		{
+			4,
+			201081,
+			1
+		},
+		{
+			4,
+			201091,
+			1
+		},
+		{
+			4,
+			101061,
+			1
+		},
+		{
+			4,
+			402031,
+			1
+		},
+		{
+			4,
+			301181,
+			1
+		},
+		{
+			4,
+			303031,
+			1
+		},
+		{
+			4,
+			401201,
+			1
+		},
+		{
+			4,
+			303041,
+			1
+		},
+		{
+			4,
+			107041,
+			1
+		},
+		{
+			4,
+			106021,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200355] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200355,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			403041,
+			1
+		},
+		{
+			4,
+			404021,
+			1
+		},
+		{
+			4,
+			306051,
+			1
+		},
+		{
+			4,
+			305021,
+			1
+		},
+		{
+			4,
+			101051,
+			1
+		},
+		{
+			4,
+			106011,
+			1
+		},
+		{
+			4,
+			103031,
+			1
+		},
+		{
+			4,
+			102111,
+			1
+		},
+		{
+			4,
+			101031,
+			1
+		},
+		{
+			4,
+			101131,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			103011,
+			1
+		},
+		{
+			4,
+			402011,
+			1
+		},
+		{
+			4,
+			402021,
+			1
+		},
+		{
+			4,
+			402031,
+			1
+		},
+		{
+			4,
+			303011,
+			1
+		},
+		{
+			4,
+			302091,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		},
+		{
+			4,
+			107041,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200356] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200356,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			107071,
+			1
+		},
+		{
+			4,
+			107021,
+			1
+		},
+		{
+			4,
+			306051,
+			1
+		},
+		{
+			4,
+			305021,
+			1
+		},
+		{
+			4,
+			101051,
+			1
+		},
+		{
+			4,
+			106011,
+			1
+		},
+		{
+			4,
+			103031,
+			1
+		},
+		{
+			4,
+			102111,
+			1
+		},
+		{
+			4,
+			101031,
+			1
+		},
+		{
+			4,
+			101131,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			103011,
+			1
+		},
+		{
+			4,
+			402011,
+			1
+		},
+		{
+			4,
+			402021,
+			1
+		},
+		{
+			4,
+			402031,
+			1
+		},
+		{
+			4,
+			303011,
+			1
+		},
+		{
+			4,
+			302091,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		},
+		{
+			4,
+			107041,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200357] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200357,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			9703051,
+			1
+		},
+		{
+			4,
+			107031,
+			1
+		},
+		{
+			4,
+			105041,
+			1
+		},
+		{
+			4,
+			306051,
+			1
+		},
+		{
+			4,
+			305021,
+			1
+		},
+		{
+			4,
+			101051,
+			1
+		},
+		{
+			4,
+			106011,
+			1
+		},
+		{
+			4,
+			103031,
+			1
+		},
+		{
+			4,
+			102111,
+			1
+		},
+		{
+			4,
+			101031,
+			1
+		},
+		{
+			4,
+			101131,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			103011,
+			1
+		},
+		{
+			4,
+			402011,
+			1
+		},
+		{
+			4,
+			402021,
+			1
+		},
+		{
+			4,
+			402031,
+			1
+		},
+		{
+			4,
+			303011,
+			1
+		},
+		{
+			4,
+			302091,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		},
+		{
+			4,
+			107041,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200358] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200358,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			301151,
+			1
+		},
+		{
+			4,
+			401011,
+			1
+		},
+		{
+			4,
+			203051,
+			1
+		},
+		{
+			4,
+			101241,
+			1
+		},
+		{
+			4,
+			301131,
+			1
+		},
+		{
+			4,
+			202141,
+			1
+		},
+		{
+			4,
+			105071,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			102011,
+			1
+		},
+		{
+			4,
+			201081,
+			1
+		},
+		{
+			4,
+			201091,
+			1
+		},
+		{
+			4,
+			101061,
+			1
+		},
+		{
+			4,
+			402031,
+			1
+		},
+		{
+			4,
+			301181,
+			1
+		},
+		{
+			4,
+			303031,
+			1
+		},
+		{
+			4,
+			401201,
+			1
+		},
+		{
+			4,
+			303041,
+			1
+		},
+		{
+			4,
+			107041,
+			1
+		},
+		{
+			4,
+			106021,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200359] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200359,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			103051,
+			1
+		},
+		{
+			4,
+			102051,
+			1
+		},
+		{
+			4,
+			203051,
+			1
+		},
+		{
+			4,
+			101241,
+			1
+		},
+		{
+			4,
+			301131,
+			1
+		},
+		{
+			4,
+			202141,
+			1
+		},
+		{
+			4,
+			105071,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			102011,
+			1
+		},
+		{
+			4,
+			201081,
+			1
+		},
+		{
+			4,
+			201091,
+			1
+		},
+		{
+			4,
+			101061,
+			1
+		},
+		{
+			4,
+			402031,
+			1
+		},
+		{
+			4,
+			301181,
+			1
+		},
+		{
+			4,
+			303031,
+			1
+		},
+		{
+			4,
+			401201,
+			1
+		},
+		{
+			4,
+			303041,
+			1
+		},
+		{
+			4,
+			107041,
+			1
+		},
+		{
+			4,
+			106021,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200360] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200360,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			403011,
+			1
+		},
+		{
+			4,
+			103071,
+			1
+		},
+		{
+			4,
+			203051,
+			1
+		},
+		{
+			4,
+			101241,
+			1
+		},
+		{
+			4,
+			301131,
+			1
+		},
+		{
+			4,
+			202141,
+			1
+		},
+		{
+			4,
+			105071,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			102011,
+			1
+		},
+		{
+			4,
+			201081,
+			1
+		},
+		{
+			4,
+			201091,
+			1
+		},
+		{
+			4,
+			101061,
+			1
+		},
+		{
+			4,
+			402031,
+			1
+		},
+		{
+			4,
+			301181,
+			1
+		},
+		{
+			4,
+			303031,
+			1
+		},
+		{
+			4,
+			401201,
+			1
+		},
+		{
+			4,
+			303041,
+			1
+		},
+		{
+			4,
+			107041,
+			1
+		},
+		{
+			4,
+			106021,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200361] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200361,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			403041,
+			1
+		},
+		{
+			4,
+			404021,
+			1
+		},
+		{
+			4,
+			203051,
+			1
+		},
+		{
+			4,
+			101241,
+			1
+		},
+		{
+			4,
+			301131,
+			1
+		},
+		{
+			4,
+			202141,
+			1
+		},
+		{
+			4,
+			105071,
+			1
+		},
+		{
+			4,
+			102111,
+			1
+		},
+		{
+			4,
+			101031,
+			1
+		},
+		{
+			4,
+			101131,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			103011,
+			1
+		},
+		{
+			4,
+			402011,
+			1
+		},
+		{
+			4,
+			402021,
+			1
+		},
+		{
+			4,
+			402031,
+			1
+		},
+		{
+			4,
+			303011,
+			1
+		},
+		{
+			4,
+			302091,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		},
+		{
+			4,
+			107041,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200362] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200362,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			107071,
+			1
+		},
+		{
+			4,
+			107021,
+			1
+		},
+		{
+			4,
+			203051,
+			1
+		},
+		{
+			4,
+			101241,
+			1
+		},
+		{
+			4,
+			301131,
+			1
+		},
+		{
+			4,
+			202141,
+			1
+		},
+		{
+			4,
+			105071,
+			1
+		},
+		{
+			4,
+			102111,
+			1
+		},
+		{
+			4,
+			101031,
+			1
+		},
+		{
+			4,
+			101131,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			103011,
+			1
+		},
+		{
+			4,
+			402011,
+			1
+		},
+		{
+			4,
+			402021,
+			1
+		},
+		{
+			4,
+			402031,
+			1
+		},
+		{
+			4,
+			303011,
+			1
+		},
+		{
+			4,
+			302091,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		},
+		{
+			4,
+			107041,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200363] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200363,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			9703051,
+			1
+		},
+		{
+			4,
+			107031,
+			1
+		},
+		{
+			4,
+			105041,
+			1
+		},
+		{
+			4,
+			203051,
+			1
+		},
+		{
+			4,
+			101241,
+			1
+		},
+		{
+			4,
+			301131,
+			1
+		},
+		{
+			4,
+			202141,
+			1
+		},
+		{
+			4,
+			105071,
+			1
+		},
+		{
+			4,
+			102111,
+			1
+		},
+		{
+			4,
+			101031,
+			1
+		},
+		{
+			4,
+			101131,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			103011,
+			1
+		},
+		{
+			4,
+			402011,
+			1
+		},
+		{
+			4,
+			402021,
+			1
+		},
+		{
+			4,
+			402031,
+			1
+		},
+		{
+			4,
+			303011,
+			1
+		},
+		{
+			4,
+			302091,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		},
+		{
+			4,
+			107041,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105011,
+			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[200364] = {
+	display = "Chance to receive following ships from this stage",
+	name = "Mystery Ship",
+	combination_display = "",
+	type = 99,
+	index = "",
+	drop_oil_max = 0,
+	shop_id = 0,
+	replace_item = 0,
+	virtual_type = 0,
+	id = 200364,
+	link_id = 0,
+	icon = "Props/54000",
+	price = "",
+	order = 0,
+	rarity = 1,
+	max_num = 0,
+	time_limit = 0,
+	shiptrans_id = "",
+	drop_gold_max = 0,
+	is_world = 0,
+	display_icon = {
+		{
+			4,
+			9703051,
+			1
+		},
+		{
+			4,
+			107031,
+			1
+		},
+		{
+			4,
+			105041,
+			1
+		},
+		{
+			4,
+			203051,
+			1
+		},
+		{
+			4,
+			101241,
+			1
+		},
+		{
+			4,
+			301131,
+			1
+		},
+		{
+			4,
+			202141,
+			1
+		},
+		{
+			4,
+			105071,
+			1
+		},
+		{
+			4,
+			102111,
+			1
+		},
+		{
+			4,
+			101031,
+			1
+		},
+		{
+			4,
+			101131,
+			1
+		},
+		{
+			4,
+			201061,
+			1
+		},
+		{
+			4,
+			101141,
+			1
+		},
+		{
+			4,
+			103011,
+			1
+		},
+		{
+			4,
+			402011,
+			1
+		},
+		{
+			4,
+			402021,
+			1
+		},
+		{
+			4,
+			402031,
+			1
+		},
+		{
+			4,
+			303011,
+			1
+		},
+		{
+			4,
+			302091,
+			1
+		},
+		{
+			4,
+			105021,
+			1
+		},
+		{
+			4,
+			107041,
+			1
+		},
+		{
+			4,
+			206011,
+			1
+		},
+		{
+			4,
+			105011,
+			1
+		}
+	}
 }

@@ -1195,6 +1195,9 @@ _G.pg.base.gametip.battle_battleMediator_goOnFight = {
 _G.pg.base.gametip.battle_battleMediator_existFight = {
 	tip = "Leave"
 }
+_G.pg.base.gametip.battle_battleMediator_remainTime = {
+	tip = "Time Remaining"
+}
 _G.pg.base.gametip.battle_battleMediator_clear_warning = {
 	tip = "Are you sure you wish to retreat? Your Challenge Mode progress will be reset, and your score will be finalized based upon the previous cleared stage. "
 }
@@ -2019,6 +2022,126 @@ _G.pg.base.gametip.mail_confirm_set_important_flag = {
 _G.pg.base.gametip.mail_confirm_cancel_important_flag = {
 	tip = "Unmark as important"
 }
+_G.pg.base.gametip.mail_confirm_delete_important_flag = {
+	tip = "Important mail cannot be deleted."
+}
+_G.pg.base.gametip.mail_mail_page = {
+	tip = "Mail"
+}
+_G.pg.base.gametip.mail_storeroom_page = {
+	tip = "Storage"
+}
+_G.pg.base.gametip.mail_boxroom_page = {
+	tip = "Archive"
+}
+_G.pg.base.gametip.mail_all_page = {
+	tip = "All"
+}
+_G.pg.base.gametip.mail_important_page = {
+	tip = "Important"
+}
+_G.pg.base.gametip.mail_rare_page = {
+	tip = "Special"
+}
+_G.pg.base.gametip.mail_reward_got = {
+	tip = "Claimed"
+}
+_G.pg.base.gametip.mail_reward_tips = {
+	tip = "* Any attached Oil and Coins will be sent to your Storage."
+}
+_G.pg.base.gametip.mail_boxroom_extend_title = {
+	tip = "Expand Storage"
+}
+_G.pg.base.gametip.mail_boxroom_extend_tips = {
+	tip = "Storage Capacity Increase"
+}
+_G.pg.base.gametip.mail_buy_button = {
+	tip = "Buy"
+}
+_G.pg.base.gametip.mail_manager_title = {
+	tip = "Manage Mail"
+}
+_G.pg.base.gametip.mail_manager_tips_2 = {
+	tip = "* Any attached Oil and Coins will be sent to your Storage."
+}
+_G.pg.base.gametip.mail_manager_all = {
+	tip = "All Attached Items"
+}
+_G.pg.base.gametip.mail_manager_rare = {
+	tip = "Mail Containing Only These Items"
+}
+_G.pg.base.gametip.mail_get_oneclick = {
+	tip = "Batch Claim"
+}
+_G.pg.base.gametip.mail_read_oneclick = {
+	tip = "Batch Read"
+}
+_G.pg.base.gametip.mail_delete_oneclick = {
+	tip = "Batch Delete"
+}
+_G.pg.base.gametip.mail_search_new = {
+	tip = "Tap to Search"
+}
+_G.pg.base.gametip.mail_receive_time = {
+	tip = "Received At"
+}
+_G.pg.base.gametip.mail_move_oneclick = {
+	tip = "Batch Move"
+}
+_G.pg.base.gametip.mail_deleteread_button = {
+	tip = "Delete Read"
+}
+_G.pg.base.gametip.mail_manage_button = {
+	tip = "Manage Mail"
+}
+_G.pg.base.gametip.mail_move_button = {
+	tip = "Batch Move"
+}
+_G.pg.base.gametip.mail_delet_button = {
+	tip = "Delete"
+}
+_G.pg.base.gametip.mail_delet_button_1 = {
+	tip = "Delete Mail"
+}
+_G.pg.base.gametip.mail_moveone_button = {
+	tip = "Move Mail"
+}
+_G.pg.base.gametip.mail_getone_button = {
+	tip = "Claim Rewards"
+}
+_G.pg.base.gametip.mail_take_all_mail_msgbox = {
+	tip = "* Would you like to claim the items of all selected mail?"
+}
+_G.pg.base.gametip.mail_take_maildetail_msgbox = {
+	tip = "Mail Details"
+}
+_G.pg.base.gametip.mail_take_canget_msgbox = {
+	tip = "You will obtain the following:"
+}
+_G.pg.base.gametip.mail_getbox_title = {
+	tip = "Claim Mail"
+}
+_G.pg.base.gametip.mail_title_new = {
+	tip = "Mail"
+}
+_G.pg.base.gametip.mail_boxtitle_information = {
+	tip = "Info"
+}
+_G.pg.base.gametip.mail_box_confirm = {
+	tip = "Confirm"
+}
+_G.pg.base.gametip.mail_box_cancel = {
+	tip = "Cancel"
+}
+_G.pg.base.gametip.mail_title_English = {
+	tip = "Mailbox"
+}
+_G.pg.base.gametip.mail_toggle_on = {
+	tip = "On"
+}
+_G.pg.base.gametip.mail_toggle_off = {
+	tip = "Off"
+}
 _G.pg.base.gametip.main_mailLayer_mailBoxClear = {
 	tip = "Mailbox has been cleared"
 }
@@ -2037,6 +2160,9 @@ _G.pg.base.gametip.main_mailLayer_attachTaken = {
 _G.pg.base.gametip.main_mailLayer_quest_clear = {
 	tip = "Would you like to delete all your read mail? <color=#238c40>(Mail with unclaimed items will not be deleted.)</color>"
 }
+_G.pg.base.gametip.main_mailLayer_quest_clear_choice = {
+	tip = "Would you like to delete all your selected mail? <color=#238c40>(Mail with unclaimed items will not be deleted.)</color>"
+}
 _G.pg.base.gametip.main_mailLayer_quest_deleteNotTakeAttach = {
 	tip = "<color=#92fc63>There are uncollected rewards.</color> Are you sure you want to delete this message?"
 }
@@ -2048,6 +2174,12 @@ _G.pg.base.gametip.main_mailMediator_mailDelete = {
 }
 _G.pg.base.gametip.main_mailMediator_attachTaken = {
 	tip = "Rewards collected"
+}
+_G.pg.base.gametip.main_mailMediator_mailread = {
+	tip = "Your mail has been set to read."
+}
+_G.pg.base.gametip.main_mailMediator_mailmove = {
+	tip = "Your mail was moved to your Archive."
 }
 _G.pg.base.gametip.main_mailMediator_notingToTake = {
 	tip = "No rewards available."
@@ -3844,6 +3976,9 @@ _G.pg.base.gametip.quota_shop_good_limit = {
 _G.pg.base.gametip.quota_shop_limit_error = {
 	tip = "Unable to exchange; you cannot hold any more of this item."
 }
+_G.pg.base.gametip.item_assigned_type_limit_error = {
+	tip = "Unable to exchange; you cannot hold any more of this item."
+}
 _G.pg.base.gametip.event_start_success = {
 	tip = "Commission has begun!"
 }
@@ -4287,6 +4422,9 @@ _G.pg.base.gametip.word_shipNation_meta_index = {
 }
 _G.pg.base.gametip.word_shipNation_senran = {
 	tip = "Senran Kagura"
+}
+_G.pg.base.gametip.word_shipNation_tolove = {
+	tip = "To LOVE-Ru"
 }
 _G.pg.base.gametip.word_reset = {
 	tip = "Reset"
@@ -6311,6 +6449,15 @@ _G.pg.base.gametip.ship_remould_selecte_exceed = {
 _G.pg.base.gametip.ship_remould_sueecss = {
 	tip = "Improved!"
 }
+_G.pg.base.gametip.ship_remould_warning_101994 = {
+	tip = [[
+Completing the retrofit will have the following effects:
+<color=#92fc63>This ship will gain +1 Anti-Air Gun base and receive special ASW gear.</color>
+The skill <color=#92fc63>Operation Rainbow</color> will be upgraded into <color=#92fc63>Operation Rainbow+</color>.
+The skill <color=#92fc63>All Out Assault II</color> will be upgraded into <color=#92fc63>All Out Assault III</color>.
+Completing the retrofit will spend your <color=#92fc63>Wattage Amplifier</color>.
+Proceed with retrofit?]]
+}
 _G.pg.base.gametip.ship_remould_warning_102174 = {
 	tip = "The <color=#92fc63>Sparkling Mic</color> will be used to complete the retrofit.\nWould you like to continue? "
 }
@@ -6324,6 +6471,12 @@ Completing the retrofit will have the following effects:
 <color=#92fc63>Main Gun mount +1</color>.
 The skill <color=#92fc63>Martyr</color> will change into <color=#92fc63>Martyr+</color>.
 This ship's <color=#92fc63>All Out Assault</color> skill will be upgraded.]]
+}
+_G.pg.base.gametip.ship_remould_warning_105214 = {
+	tip = "Completing the retrofit will upgrade the skill <color=#92fc63>Big Seven</color> into <color=#92fc63>Big Seven - Colorado</color>."
+}
+_G.pg.base.gametip.ship_remould_warning_105224 = {
+	tip = "Completing the retrofit will change the skill <color=#92fc63>Big Seven</color> into <color=#92fc63>Big Seven - Maryland</color>."
 }
 _G.pg.base.gametip.ship_remould_warning_105234 = {
 	tip = "Completing the retrofit will upgrade this ship's <color=#92fc63>Big Seven</color> skill into\n<color=#92fc63>Big Seven - West Virginia</color>."
@@ -8303,7 +8456,7 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "This Meowfficer does not have any Talent Points."
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Rate UP for Lala Satalin Deviluke, Golden Darkness, and more!"
+	tip = "Get Fritz Rumey guaranteed with every 200 event builds (can be done up to 4 times)!"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
 	tip = "Ulrich von Hutten, Prinz Adalbert added to standard build pool!"
@@ -9815,6 +9968,56 @@ Triple 152mm Mle 1930 Main Gun Mount
 Twin 40mm Bofors AA Gun Mount
 </color></size>]]
 }
+_G.pg.base.gametip.blueprint_simulation_confirm_19905 = {
+	tip = [[
+<size=28>
+Would you like to start a Battle Simulation?
+(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)
+Equipment: <color=#92fc63>
+Single 127mm Main Gun
+533mm Quintuple Torpedo Mount
+Prototype F8F Bearcat (Float)</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_39907 = {
+	tip = [[
+<size=28>
+Would you like to start a Battle Simulation?
+(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)
+Equipment: <color=#92fc63>
+Prototype Twin 410mm mod.A Main Gun Mount
+Single 140mm Naval Gun
+Twin 40mm Bofors Type 5 AA Gun Mount</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_69902 = {
+	tip = [[
+<size=28>
+Would you like to start a Battle Simulation?
+(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)
+Equipment: <color=#92fc63>
+Prototype Triple 254mm Model 1939 Main Gun Mount
+Prototype Triple 152mm Model 1936 Main Gun Mount
+Prototype Twin 90mm Model 1939 High Angle Gun</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_89904 = {
+	tip = [[
+<size=28>
+Would you like to start a Battle Simulation?
+(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)
+Equipment: <color=#92fc63>
+Triple 152mm Mle1930 Main Gun Mount (HE)
+550mm Triple Torpedo Mount
+Twin 57mm/L60 Bofors Mle 1951 AA Gun Mount</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_79902 = {
+	tip = [[
+<size=28>
+Would you like to start a Battle Simulation?
+(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)
+Equipment: <color=#92fc63>
+Prototype Carrier-Based La-9
+Prototype Carrier-Based La-9
+Prototype VIT-2 (Mode Change)</color></size>]]
+}
 _G.pg.base.gametip.electrotherapy_wanning = {
 	tip = "The electrified area is about to expand"
 }
@@ -9911,6 +10114,128 @@ _G.pg.base.gametip.warning_mail_max_1 = {
 }
 _G.pg.base.gametip.warning_mail_max_2 = {
 	tip = "Your mailbox is full!"
+}
+_G.pg.base.gametip.warning_mail_max_3 = {
+	tip = "Your mailbox is full (<color=#FF5C5C>$1</color>/100) and you cannot receive new mail. Please manage your mailbox."
+}
+_G.pg.base.gametip.warning_mail_max_4 = {
+	tip = "Your mailbox is full (<color=#FF5C5C>$1</color>/100) and you cannot receive any new mail. Would you like to close your inbox?"
+}
+_G.pg.base.gametip.warning_mail_max_5 = {
+	tip = "* You cannot receive new mail once you reach the capacity."
+}
+_G.pg.base.gametip.mail_moveto_markroom_1 = {
+	tip = "Would you like to move your mail to your <color=#238c40>Archive</color>? \nMoving your mail will automatically claim any attached items."
+}
+_G.pg.base.gametip.mail_moveto_markroom_2 = {
+	tip = "Would you like to move your important mail to your <color=#238c40>Archive</color>? \nMoving your mail will automatically claim any attached items."
+}
+_G.pg.base.gametip.mail_moveto_markroom_max = {
+	tip = "Your <color=#92fc63>Archive</color> has reached its mail capacity. You cannot move any more mail."
+}
+_G.pg.base.gametip.mail_markroom_delete = {
+	tip = "Would you like to fully delete the mail <color=#238c40>\"$1\"</color>?"
+}
+_G.pg.base.gametip.mail_markroom_tip = {
+	tip = "* The capacity is influenced by your Commander Level."
+}
+_G.pg.base.gametip.mail_manage_1 = {
+	tip = "All"
+}
+_G.pg.base.gametip.mail_manage_2 = {
+	tip = "Mail Containing Only These Items"
+}
+_G.pg.base.gametip.mail_manage_3 = {
+	tip = "No mail found meeting these conditions."
+}
+_G.pg.base.gametip.mail_manage_tip_1 = {
+	tip = "* Batch delete will only delete mail whose rewards you've already claimed."
+}
+_G.pg.base.gametip.mail_storeroom_tips = {
+	tip = "* Attached Coins and Oil will be moved to your Storage."
+}
+_G.pg.base.gametip.mail_storeroom_noextend = {
+	tip = "Your Storage has reached its holding capacity. You cannot expand it any further."
+}
+_G.pg.base.gametip.mail_storeroom_extend = {
+	tip = "Storage Capacity Increase:"
+}
+_G.pg.base.gametip.mail_storeroom_extend_1 = {
+	tip = "Storage expanded."
+}
+_G.pg.base.gametip.mail_storeroom_taken_1 = {
+	tip = "Resources claimed."
+}
+_G.pg.base.gametip.mail_storeroom_max_1 = {
+	tip = "Your Storage has reached its holding capacity. The following resources will be discarded. \nContinue?"
+}
+_G.pg.base.gametip.mail_storeroom_max_2 = {
+	tip = "Please input <color=#238c40>$1</color> to continue."
+}
+_G.pg.base.gametip.mail_storeroom_max_3 = {
+	tip = "Claiming this Oil will put you over your max capacity."
+}
+_G.pg.base.gametip.mail_storeroom_max_4 = {
+	tip = "Claiming these Coins will put you over your max capacity."
+}
+_G.pg.base.gametip.mail_storeroom_addgold = {
+	tip = "Stockpiled Coins:"
+}
+_G.pg.base.gametip.mail_storeroom_addoil = {
+	tip = "Stockpiled Oil:"
+}
+_G.pg.base.gametip.mail_storeroom_collect = {
+	tip = "After claiming you will receive the following items:"
+}
+_G.pg.base.gametip.mail_search = {
+	tip = "Tap to Write"
+}
+_G.pg.base.gametip.mail_storeroom_resourcetaken = {
+	tip = "Claim Resources"
+}
+_G.pg.base.gametip.resource_max_tip_storeroom = {
+	tip = "You have reached your resource capacity."
+}
+_G.pg.base.gametip.mail_tip = {
+	tip = {
+		{
+			info = [[
+<color=#92fc63>- Mailbox Overview -</color>
+1. Your mailbox capacity is 100 mail (this includes mail marked as important or special).
+2. You can batch manage your mail and display mail matching certain criteria: 
+· Batch read: all your displayed mail will be set to already read. 
+· Batch claim: claims the attached items from all your displayed mail (Oil and Coins will be sent to your Storage). 
+· Batch delete: deletes all your displayed mail if their rewards have been claimed. 
+3. You can categorize mail by marking ordinary mail as important. Important mail won't be deleted with Batch Delete.
+4. Mail containing rewards other than Coins, Oil, Merits, or Wisdom Cubes are given the "special" category. 
+
+<color=#92fc63>- Storage -</color>
+1. Coins and Oil, unlike other items claimed via mail, are saved in your Storage. 
+2. You can claim your resources from the Storage at any time. 
+
+<color=#92fc63>- Archive -</color>
+1. You can move mail to your Archive. When moving mail, any attached items will be automatically claimed. Mail saved in the Archive do not count toward your mailbox total. Any claimed Oil and Coins will be transferred to your Storage. 
+2. The capacity of your Archive depends on your Commander Level.]]
+		}
+	}
+}
+_G.pg.base.gametip.mail_page_1 = {
+	tip = "Mail"
+}
+_G.pg.base.gametip.mail_page_2 = {
+	tip = "Storage"
+}
+_G.pg.base.gametip.mail_page_3 = {
+	tip = "Archive"
+}
+_G.pg.base.gametip.mail_gold_res = {
+	tip = "Coins"
+}
+_G.pg.base.gametip.mail_oil_res = {
+	tip = "Oil"
+}
+_G.pg.base.gametip.mail_all_price = {
+	tip = "Total:"
 }
 _G.pg.base.gametip.return_award_bind_success = {
 	tip = "UID entry successful."
@@ -10047,6 +10372,9 @@ _G.pg.base.gametip.pray_build_help = {
 			info = "11. Wishing Well builds count toward the standard UR Exchange following the same rules as other standard build pools."
 		}
 	}
+}
+_G.pg.base.gametip.pray_build_UR_warning = {
+	tip = "You may only select 1 shipgirl of <color=#ff5e39>Ultra Rare</color> rarity."
 }
 _G.pg.base.gametip.bismarck_award_tip = {
 	tip = "Complete all tasks to earn an award."
@@ -10221,6 +10549,15 @@ _G.pg.base.gametip.list_empty_tip_taskscene = {
 }
 _G.pg.base.gametip.empty_tip_mailboxui = {
 	tip = "You haven't received any mail yet."
+}
+_G.pg.base.gametip.emptymarkroom_tip_mailboxui = {
+	tip = "You haven't saved any mail yet."
+}
+_G.pg.base.gametip.empty_tip_mailboxui_en = {
+	tip = "COMMANDER, YOUR INBOX IS EMPTY"
+}
+_G.pg.base.gametip.emptymarkroom_tip_mailboxui_en = {
+	tip = "COMMANDER, YOUR ARCHIVE IS EMPTY"
 }
 _G.pg.base.gametip.words_settings_unlock_ship = {
 	tip = "Unlocking ships"
@@ -13573,6 +13910,9 @@ _G.pg.base.gametip.destory_ship_before_tip = {
 _G.pg.base.gametip.destory_ship_input_erro = {
 	tip = "Please input the numbers on the screen. "
 }
+_G.pg.base.gametip.mail_input_erro = {
+	tip = "Write the correct text to claim your items."
+}
 _G.pg.base.gametip.destroy_ur_rarity_tip = {
 	tip = "You have selected a ship of <color=#92fc63>UR</color> rarity. \nPlease enter the following into the box below: <color=#92fc63>$1</color> "
 }
@@ -15732,6 +16072,9 @@ _G.pg.base.gametip.ship_exp_item_label_confirm = {
 _G.pg.base.gametip.player_expResource_mail_fullBag = {
 	tip = "You won't be able to collect resources that exceed the storage limit. Are you sure you want to continue?"
 }
+_G.pg.base.gametip.player_expResource_mail_overflow = {
+	tip = "You won't be able to collect $1 that exceed the storage limit. Are you sure you want to continue? "
+}
 _G.pg.base.gametip.tec_nation_award_finish = {
 	tip = "-Collected-"
 }
@@ -16481,14 +16824,14 @@ _G.pg.base.gametip.CurlingGame_tips1 = {
 			info = [[
 - Overview -
 · Strategically position the swole Meowfficer and slide the curling stone as close to the red circle as you can to score points.
-· A new round of Manjuu Curling will be unlocked every day at midnight up to December 21st. Complete them all to obtain Southampton's Afternoon Impromptu skin.
+· A new round of Manjuu Curling will be unlocked every day at midnight up to December 25th.
 
 - How to Play -
 · Every round of Manjuu Curling consists of 3 curling stone slides. One new round a day is unlocked during the event period.
-· Press and hold the Meowfficer to change the curling stone's launch speed. The longer you press, the faster it will go. Let go when you wish to launch the curling stone.
-· While your finger is on the Meowfficer, you move it up and down on the screen to change the curling stone's course.
+· Press and hold the Meowfficer to change the curling stone's launch speed. The longer you hold, the faster it will go. Let go when you wish to launch the curling stone.
+· While your finger is on the Meowfficer, move it up and down on the screen to change the curling stone's course.
 · The curling stone's course will change if it bumps into an object.
-· When the curling stone comes to a stop, you will score points based on which circle it stopped inside. Stopping in the blue circle gives you 300 points, the yellow circle gives you 500 points, and the red circle gives you 1,000 points.]]
+· When the curling stone comes to a stop, you will score points based on which circle it stopped inside. Stopping in the blue circle gives you 1,000 points, the yellow circle gives you 2,000 points, and the red circle gives you 3,000 points.]]
 		}
 	}
 }
@@ -17623,6 +17966,234 @@ _G.pg.base.gametip.cruise_task_help_2404 = {
 - Regarding Cruise Missions - 
 · Two types of missions will be released at the same time at the start of the campaign season:
 a) Weekly Missions - Missions unlocked at midnight on every Monday during the campaign season, for a total of 8 batches.
+b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
+
+· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
+
+· You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
+We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
+Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
+		}
+	}
+}
+_G.pg.base.gametip.battlepass_main_tip_2406 = {
+	tip = "During the campaign season (6/1 - 7/31), complete Cruise Missions to get great rewards, including Foch META!"
+}
+_G.pg.base.gametip.battlepass_main_help_2406 = {
+	tip = {
+		{
+			info = [[
+Cruise Missions Seasonal Campaign
+6/1/2024 00:00 – 7/31/2024 23:59
+
+- Overview -
+"Cruise Missions" is a seasonal campaign where you can complete special missions, collect Progress Pts., and obtain great rewards for reaching certain Progress milestones.
+Additionally, you can unlock an additional set of "Fair Winds Cruise" rewards by purchasing the "Fair Winds Cruise Pass" item from Akashi's shop.
+Foch META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfits for Attilio Regolo, "Angel from Above"
+
+- How to Play -
+· Two types of missions will be released at the same time at the start of the campaign season:
+a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
+b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
+· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
+· If you purchase a Fair Winds Cruise Pass, you will automatically receive 15 levels worth of progress (1500 Progress Pts).
+· You can receive rewards for reaching certain Progress milestones. There are two types of rewards:
+a) Cruise Rewards - Rewards that can be obtained based on the total number of accumulated Progress Pts. There are a total of 100 levels.
+b) Fair Winds Rewards - An additional set of rewards that will be unlocked when you purchase a Fair Winds Cruise Pass. As with the regular Cruise Rewards, there are a total of 100 levels, and they can be collected alongside Cruise Rewards at the same Progress level.
+· When the campaign season ends, your Progress Pts will be reset.
+
+- Tips - 
+· Play at your own pace
+Cruise Missions have a total of 100 Progress levels, and are not meant to be cleared in one session. We recommend that you complete them at your own pace.
+
+· Fair Winds Cruise Pass
+If. you purchase a Fair Winds Cruise Pass from Akashi's shop, you will automatically earn 1500 Progress Pts and unlock access to valuable rewards. Furthermore, there is an exclusive outfit available only through the Fair Winds rewards, so please plan accordingly.
+
+· Skipping Missions (not recommended)
+You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
+We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
+Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2406 = {
+	tip = {
+		{
+			info = [[
+- Regarding Cruise Missions - 
+· Two types of missions will be released at the same time at the start of the campaign season:
+a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
+b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
+
+· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
+
+· You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
+We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
+Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
+		}
+	}
+}
+_G.pg.base.gametip.battlepass_main_tip_2408 = {
+	tip = "Complete Cruise Missions between 8/1/2024 00:00 – 9/30/2024 23:59 to receive <color=#854747>Kasumi META</color> and other rewards!"
+}
+_G.pg.base.gametip.battlepass_main_help_2408 = {
+	tip = {
+		{
+			info = [[
+Cruise Missions Seasonal Campaign
+8/1/2024 00:00 – 9/30/2024 23:59
+
+- Overview -
+"Cruise Missions" is a seasonal campaign where you can complete special missions, collect Progress Pts., and obtain great rewards for reaching certain Progress milestones.
+Additionally, you can unlock an additional set of "Fair Winds Cruise" rewards by purchasing the "Fair Winds Cruise Pass" item from Akashi's shop.
+Kasumi META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfit for Roma, "Vacation Upon the Tiber."
+
+- How to Play -
+· Two types of missions will be released at the same time at the start of the campaign season:
+a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
+b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
+· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
+· If you purchase a Fair Winds Cruise Pass, you will automatically receive 15 levels worth of progress (1500 Progress Pts).
+· You can receive rewards for reaching certain Progress milestones. There are two types of rewards:
+a) Cruise Rewards - Rewards that can be obtained based on the total number of accumulated Progress Pts. There are a total of 100 levels.
+b) Fair Winds Rewards - An additional set of rewards that will be unlocked when you purchase a Fair Winds Cruise Pass. As with the regular Cruise Rewards, there are a total of 100 levels, and they can be collected alongside Cruise Rewards at the same Progress level.
+· When the campaign season ends, your Progress Pts will be reset.
+
+- Tips - 
+· Play at your own pace
+Cruise Missions have a total of 100 Progress levels, and are not meant to be cleared in one session. We recommend that you complete them at your own pace.
+
+· Fair Winds Cruise Pass
+If. you purchase a Fair Winds Cruise Pass from Akashi's shop, you will automatically earn 1500 Progress Pts and unlock access to valuable rewards. Furthermore, there is an exclusive outfit available only through the Fair Winds rewards, so please plan accordingly.
+
+· Skipping Missions (not recommended)
+You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
+We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
+Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2408 = {
+	tip = {
+		{
+			info = [[
+- Regarding Cruise Missions - 
+· Two types of missions will be released at the same time at the start of the campaign season:
+a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
+b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
+
+· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
+
+· You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
+We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
+Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
+		}
+	}
+}
+_G.pg.base.gametip.battlepass_main_tip_2410 = {
+	tip = "Complete seasonal missions <icon name=pt w=0.5 h=0.5/> during the 2024.10.1 - 2024.11.30 Cruise Mission season and obtain rewards such as <color=#854747>Houshou META</color> and more!"
+}
+_G.pg.base.gametip.battlepass_main_help_2410 = {
+	tip = {
+		{
+			info = [[
+Cruise Missions Seasonal Campaign
+10/1/2024 00:00 – 11/30/2024 23:59
+
+- Overview -
+"Cruise Missions" is a seasonal campaign where you can complete special missions, collect Progress Pts., and obtain great rewards for reaching certain Progress milestones.
+Additionally, you can unlock an additional set of "Fair Winds Cruise" rewards by purchasing the "Fair Winds Cruise Pass" item from Akashi's shop.
+Houshou META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfit for Suffren, "Unrivaled Winsomeness."
+
+- How to Play -
+· Two types of missions will be released at the same time at the start of the campaign season:
+a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
+b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
+· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
+· If you purchase a Fair Winds Cruise Pass, you will automatically receive 15 levels worth of progress (1500 Progress Pts).
+· You can receive rewards for reaching certain Progress milestones. There are two types of rewards:
+a) Cruise Rewards - Rewards that can be obtained based on the total number of accumulated Progress Pts. There are a total of 100 levels.
+b) Fair Winds Rewards - An additional set of rewards that will be unlocked when you purchase a Fair Winds Cruise Pass. As with the regular Cruise Rewards, there are a total of 100 levels, and they can be collected alongside Cruise Rewards at the same Progress level.
+· When the campaign season ends, your Progress Pts will be reset.
+
+- Tips - 
+· Play at your own pace
+Cruise Missions have a total of 100 Progress levels, and are not meant to be cleared in one session. We recommend that you complete them at your own pace.
+
+· Fair Winds Cruise Pass
+If you purchase a Fair Winds Cruise Pass from Akashi's shop, you will automatically earn 1500 Progress Pts and unlock access to valuable rewards. Furthermore, there is an exclusive outfit available only through the Fair Winds rewards, so please plan accordingly.
+
+· Skipping Missions (not recommended)
+You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
+We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
+Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2410 = {
+	tip = {
+		{
+			info = [[
+- Regarding Cruise Missions - 
+· Two types of missions will be released at the same time at the start of the campaign season:
+a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
+b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
+
+· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
+
+· You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
+We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
+Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
+		}
+	}
+}
+_G.pg.base.gametip.battlepass_main_tip_2412 = {
+	tip = "Complete Cruise Missions between 12/1/2024 00:00 – 1/31/2025 23:59 to receive <color=#854747>Giulio Cesare META</color> and other rewards!"
+}
+_G.pg.base.gametip.battlepass_main_help_2412 = {
+	tip = {
+		{
+			info = [[
+Cruise Missions Seasonal Campaign
+12/1/2024 00:00 – 1/31/2025 23:59
+
+- Overview -
+"Cruise Missions" is a seasonal campaign where you can complete special missions, collect Progress Pts., and obtain great rewards for reaching certain Progress milestones.
+Additionally, you can unlock an additional set of "Fair Winds Cruise" rewards by purchasing the "Fair Winds Cruise Pass" item from Akashi's shop.
+Giulio Cesare META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfit for Weser, "Offtime Cafe."
+
+- How to Play -
+· Two types of missions will be released at the same time at the start of the campaign season:
+a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
+b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
+· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
+· If you purchase a Fair Winds Cruise Pass, you will automatically receive 15 levels worth of progress (1500 Progress Pts).
+· You can receive rewards for reaching certain Progress milestones. There are two types of rewards:
+a) Cruise Rewards - Rewards that can be obtained based on the total number of accumulated Progress Pts. There are a total of 100 levels.
+b) Fair Winds Rewards - An additional set of rewards that will be unlocked when you purchase a Fair Winds Cruise Pass. As with the regular Cruise Rewards, there are a total of 100 levels, and they can be collected alongside Cruise Rewards at the same Progress level.
+· When the campaign season ends, your Progress Pts will be reset.
+
+- Tips - 
+· Play at your own pace
+Cruise Missions have a total of 100 Progress levels, and are not meant to be cleared in one session. We recommend that you complete them at your own pace.
+
+· Fair Winds Cruise Pass
+If you purchase a Fair Winds Cruise Pass from Akashi's shop, you will automatically earn 1500 Progress Pts and unlock access to valuable rewards. Furthermore, there is an exclusive outfit available only through the Fair Winds rewards, so please plan accordingly.
+
+· Skipping Missions (not recommended)
+You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
+We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
+Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2412 = {
+	tip = {
+		{
+			info = [[
+- Regarding Cruise Missions - 
+· Two types of missions will be released at the same time at the start of the campaign season:
+a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
 b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
 
 · All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
@@ -19887,6 +20458,42 @@ _G.pg.base.gametip.loveletter_exchange_button = {
 _G.pg.base.gametip.loveletter_exchange_tip3 = {
 	tip = "Replacement successful. Please check your Inbox to receive your new items."
 }
+_G.pg.base.gametip.loveletter_recover_tip1 = {
+	tip = "You need to scan your mail before you can use the resend feature."
+}
+_G.pg.base.gametip.loveletter_recover_tip2 = {
+	tip = "Incorrect character."
+}
+_G.pg.base.gametip.loveletter_recover_tip3 = {
+	tip = "This Valentine's mail already exists in your mailbox or Archive."
+}
+_G.pg.base.gametip.loveletter_recover_tip4 = {
+	tip = "This character was not available during the year selected."
+}
+_G.pg.base.gametip.loveletter_recover_tip5 = {
+	tip = "Your Archive is full. You need to manage your Archive before you can resend mail."
+}
+_G.pg.base.gametip.loveletter_recover_tip6 = {
+	tip = "Your mail has been scanned. You can resend Valentine's mail from $1."
+}
+_G.pg.base.gametip.loveletter_recover_tip7 = {
+	tip = "Your mail has been scanned. Your Valentine's mail already exists in your mailbox or Archive."
+}
+_G.pg.base.gametip.loveletter_recover_bottom1 = {
+	tip = "Scan"
+}
+_G.pg.base.gametip.loveletter_recover_bottom2 = {
+	tip = "Resend"
+}
+_G.pg.base.gametip.loveletter_recover_bottom3 = {
+	tip = "$1"
+}
+_G.pg.base.gametip.loveletter_recover_text1 = {
+	tip = "You can use the <color=#ffde38>resend mail</color> feature to resend <color=#ffde38>$2</color>'s Valentine's Mail from <color=#ffde38>$1</color> to your Archive (without any of the attached items). \n* You can only use the mail resend feature once per commemorative item."
+}
+_G.pg.base.gametip.loveletter_recover_text2 = {
+	tip = "Select the <color=#ffde38>year</color> of the mail you'd like to resend. <color=#ffde38>$1</color>'s Valentine mail from the selected year will be sent to your Archive (without any of the attached items). \n* You can only use the mail resend feature once "
+}
 _G.pg.base.gametip.battle_text_common_1 = {
 	tip = "The enemy is charging up a powerful attack! <color=#f1f102>Focus fire to interrupt it!</color>"
 }
@@ -19895,6 +20502,9 @@ _G.pg.base.gametip.battle_text_common_2 = {
 }
 _G.pg.base.gametip.battle_text_common_3 = {
 	tip = "<color=#f1f102>The enemy's DMG dealt is greatly increased, but their DMG taken increases over time.</color>"
+}
+_G.pg.base.gametip.battle_text_common_4 = {
+	tip = "<color=#f1f102>Enemies deal significantly more DMG. Their shells ignore shields and penetrate through targets.</color>"
 }
 _G.pg.base.gametip.battle_text_yingxiv4_1 = {
 	tip = "The Horseman is charging <color=#f1f102>left</color>!"
@@ -19982,6 +20592,24 @@ _G.pg.base.gametip.battle_text_luodeni_2 = {
 }
 _G.pg.base.gametip.battle_text_luodeni_3 = {
 	tip = "Rodney META <color=#ffc038>cannot use the skill Rodney's Demise</color> while she still has phantoms."
+}
+_G.pg.base.gametip.battle_text_pizibao_1 = {
+	tip = "Support has arrived! <color=#f1f102>Draw the enemy's fire</color> and protect your allies!"
+}
+_G.pg.base.gametip.battle_text_pizibao_2 = {
+	tip = "The supporting fleet <color=#f1f102>has been destroyed</color>! The battle will get tougher!"
+}
+_G.pg.base.gametip.battle_text_tianchengCV_1 = {
+	tip = "\"<color=#ff8800>Crimson flame</color> and <color=#5cccff>azure blossom</color>, descend upon the world!\""
+}
+_G.pg.base.gametip.battle_text_tianchengCV_2 = {
+	tip = "\"Ahahahaha! <color=#ff1800>Red spider lilies</color>, bloom and burn them to ashes!\""
+}
+_G.pg.base.gametip.battle_text_tianchengCV_3 = {
+	tip = "A powerful attack is coming! Activate the <color=#f1f102>magic circle</color> and call for support!"
+}
+_G.pg.base.gametip.battle_text_lumei_1 = {
+	tip = "\"Don't just stand there! Follow me!\""
 }
 _G.pg.base.gametip.series_enemy_mood = {
 	tip = "Low Morale"
@@ -22727,6 +23355,24 @@ You can also claim the Elite collaboration character Murasaki as a milestone rew
 		}
 	}
 }
+_G.pg.base.gametip.dorm3d_furnitrue_type_wallpaper = {
+	tip = "Wallpapers"
+}
+_G.pg.base.gametip.dorm3d_furnitrue_type_floor = {
+	tip = "Flooring"
+}
+_G.pg.base.gametip.dorm3d_furnitrue_type_decoration = {
+	tip = "Decorations"
+}
+_G.pg.base.gametip.dorm3d_furnitrue_type_bed = {
+	tip = "Beds"
+}
+_G.pg.base.gametip.dorm3d_furnitrue_type_couch = {
+	tip = "Couches"
+}
+_G.pg.base.gametip.dorm3d_furnitrue_type_table = {
+	tip = "Tables"
+}
 _G.pg.base.gametip.vote_lable_not_start = {
 	tip = "Locked"
 }
@@ -23385,6 +24031,12 @@ _G.pg.base.gametip.vote_2023_reward_word_3 = {
 _G.pg.base.gametip.voting_page_reward = {
 	tip = "Claim"
 }
+_G.pg.base.gametip.backyard_shipAddInimacy_ships_ok = {
+	tip = "<color=#92fc63>$1 and others'</color> Affinity <color=#92fc63>increased</color>."
+}
+_G.pg.base.gametip.backyard_shipAddMoney_ships_ok = {
+	tip = "<color=#92fc63>$1 and others</color> made a surprising discovery! Decor Tokens <color=#92fc63>+$2</color>."
+}
 _G.pg.base.gametip.idol3rd_houshan = {
 	tip = {
 		{
@@ -23460,23 +24112,62 @@ If you're not sure what your current rehearsal level is, you can check it from t
 		}
 	}
 }
-_G.pg.base.gametip.liner_sign_cnt_tip = {
-	tip = "Currently Obtainable:"
+_G.pg.base.gametip.dorm3d_furniture_window_acesses = {
+	tip = "Obtained By"
 }
-_G.pg.base.gametip.liner_sign_unlock_tip = {
-	tip = "Unlocks on 5/21"
+_G.pg.base.gametip.dorm3d_furniture_count = {
+	tip = "Amount: $1"
 }
-_G.pg.base.gametip.ship_remould_warning_105214 = {
-	tip = "Completing the retrofit will upgrade the skill <color=#92fc63>Big Seven</color> into <color=#92fc63>Big Seven - Colorado</color>."
+_G.pg.base.gametip.dorm3d_furniture_used = {
+	tip = "<color=#00a3ef>[Placed]</color>"
 }
-_G.pg.base.gametip.pray_build_UR_warning = {
-	tip = "You may only select 1 shipgirl of <color=#ff5e39>Ultra Rare</color> rarity."
+_G.pg.base.gametip.dorm3d_furniture_lack = {
+	tip = "[Unobtained]"
 }
-_G.pg.base.gametip.backyard_shipAddInimacy_ships_ok = {
-	tip = "<color=#92fc63>$1 and others'</color> Affinity <color=#92fc63>increased</color>."
+_G.pg.base.gametip.dorm3d_furniture_unfit = {
+	tip = "Unusable"
 }
-_G.pg.base.gametip.backyard_shipAddMoney_ships_ok = {
-	tip = "<color=#92fc63>$1 and others</color> made a surprising discovery! Decor Tokens <color=#92fc63>+$2</color>."
+_G.pg.base.gametip.dorm3d_waiting = {
+	tip = "Setting Up"
+}
+_G.pg.base.gametip.dorm3d_daily_favor = {
+	tip = "Daily Bonus Intimacy"
+}
+_G.pg.base.gametip.dorm3d_favor_level = {
+	tip = "Intimacy Lv.:"
+}
+_G.pg.base.gametip.dorm3d_time_choose = {
+	tip = "Select Time"
+}
+_G.pg.base.gametip.dorm3d_now_time = {
+	tip = "Current Time"
+}
+_G.pg.base.gametip.dorm3d_is_auto_time = {
+	tip = "Day & Night Auto-Switch"
+}
+_G.pg.base.gametip.dorm3d_clothing_choose = {
+	tip = "Select Clothes"
+}
+_G.pg.base.gametip.dorm3d_now_clothing = {
+	tip = "Current"
+}
+_G.pg.base.gametip.dorm3d_talk = {
+	tip = "Talk"
+}
+_G.pg.base.gametip.dorm3d_touch = {
+	tip = "Interact"
+}
+_G.pg.base.gametip.dorm3d_gift = {
+	tip = "Gift"
+}
+_G.pg.base.gametip.dorm3d_gift_owner_num = {
+	tip = "Amount: "
+}
+_G.pg.base.gametip.dorm3d_unlock_tips = {
+	tip = "Unlocked at Intimacy $1"
+}
+_G.pg.base.gametip.dorm3d_daily_favor_tips = {
+	tip = "Daily Bonus Intimacy"
 }
 _G.pg.base.gametip.main_silent_tip_1 = {
 	tip = "team(s) back from commission"
@@ -23513,6 +24204,12 @@ _G.pg.base.gametip.specialshipyard_tip = {
 }
 _G.pg.base.gametip.specialshipyard_name = {
 	tip = "Special Dock:"
+}
+_G.pg.base.gametip.liner_sign_cnt_tip = {
+	tip = "Currently Obtainable:"
+}
+_G.pg.base.gametip.liner_sign_unlock_tip = {
+	tip = "Unlocks on 5/21"
 }
 _G.pg.base.gametip.liner_target_type1 = {
 	tip = "Fixed Event"
@@ -23674,314 +24371,6 @@ _G.pg.base.gametip.UrExchange_Pt_help = {
 		}
 	}
 }
-_G.pg.base.gametip.mail_mail_page = {
-	tip = "Mail"
-}
-_G.pg.base.gametip.mail_storeroom_page = {
-	tip = "Storage"
-}
-_G.pg.base.gametip.mail_boxroom_page = {
-	tip = "Archive"
-}
-_G.pg.base.gametip.mail_all_page = {
-	tip = "All"
-}
-_G.pg.base.gametip.mail_important_page = {
-	tip = "Important"
-}
-_G.pg.base.gametip.mail_rare_page = {
-	tip = "Special"
-}
-_G.pg.base.gametip.mail_reward_got = {
-	tip = "Claimed"
-}
-_G.pg.base.gametip.mail_reward_tips = {
-	tip = "* Any attached Oil and Coins will be sent to your Storage."
-}
-_G.pg.base.gametip.mail_boxroom_extend_title = {
-	tip = "Expand Storage"
-}
-_G.pg.base.gametip.mail_boxroom_extend_tips = {
-	tip = "Storage Capacity Increase"
-}
-_G.pg.base.gametip.mail_buy_button = {
-	tip = "Buy"
-}
-_G.pg.base.gametip.mail_manager_title = {
-	tip = "Manage Mail"
-}
-_G.pg.base.gametip.mail_manager_tips_2 = {
-	tip = "* Any attached Oil and Coins will be sent to your Storage."
-}
-_G.pg.base.gametip.mail_manager_all = {
-	tip = "All Attached Items"
-}
-_G.pg.base.gametip.mail_manager_rare = {
-	tip = "Mail Containing Only These Items"
-}
-_G.pg.base.gametip.mail_get_oneclick = {
-	tip = "Batch Claim"
-}
-_G.pg.base.gametip.mail_read_oneclick = {
-	tip = "Batch Read"
-}
-_G.pg.base.gametip.mail_delete_oneclick = {
-	tip = "Batch Delete"
-}
-_G.pg.base.gametip.mail_search_new = {
-	tip = "Tap to Search"
-}
-_G.pg.base.gametip.mail_receive_time = {
-	tip = "Received At"
-}
-_G.pg.base.gametip.mail_move_oneclick = {
-	tip = "Batch Move"
-}
-_G.pg.base.gametip.mail_deleteread_button = {
-	tip = "Delete Read"
-}
-_G.pg.base.gametip.mail_manage_button = {
-	tip = "Manage Mail"
-}
-_G.pg.base.gametip.mail_move_button = {
-	tip = "Batch Move"
-}
-_G.pg.base.gametip.mail_delet_button = {
-	tip = "Delete"
-}
-_G.pg.base.gametip.mail_moveone_button = {
-	tip = "Move Mail"
-}
-_G.pg.base.gametip.mail_getone_button = {
-	tip = "Claim Rewards"
-}
-_G.pg.base.gametip.mail_take_all_mail_msgbox = {
-	tip = "* Would you like to claim the items of all selected mail?"
-}
-_G.pg.base.gametip.mail_take_maildetail_msgbox = {
-	tip = "Mail Details"
-}
-_G.pg.base.gametip.mail_take_canget_msgbox = {
-	tip = "You will obtain the following:"
-}
-_G.pg.base.gametip.mail_getbox_title = {
-	tip = "Claim Mail"
-}
-_G.pg.base.gametip.mail_title_new = {
-	tip = "Mail"
-}
-_G.pg.base.gametip.mail_boxtitle_information = {
-	tip = "Info"
-}
-_G.pg.base.gametip.mail_box_confirm = {
-	tip = "Confirm"
-}
-_G.pg.base.gametip.mail_box_cancel = {
-	tip = "Cancel"
-}
-_G.pg.base.gametip.mail_title_English = {
-	tip = "Mailbox"
-}
-_G.pg.base.gametip.mail_toggle_on = {
-	tip = "On"
-}
-_G.pg.base.gametip.mail_toggle_off = {
-	tip = "Off"
-}
-_G.pg.base.gametip.main_mailLayer_quest_clear_choice = {
-	tip = "Would you like to delete all your selected mail? <color=#238c40>(Mail with unclaimed items will not be deleted.)</color>"
-}
-_G.pg.base.gametip.main_mailMediator_mailread = {
-	tip = "Your mail has been set to read."
-}
-_G.pg.base.gametip.main_mailMediator_mailmove = {
-	tip = "Your mail was moved to your Archive."
-}
-_G.pg.base.gametip.warning_mail_max_3 = {
-	tip = "Your mailbox is full (<color=#FF5C5C>$1</color>/100) and you cannot receive new mail. Please manage your mailbox."
-}
-_G.pg.base.gametip.warning_mail_max_4 = {
-	tip = "Your mailbox is full (<color=#FF5C5C>$1</color>/100) and you cannot receive any new mail. Would you like to close your inbox?"
-}
-_G.pg.base.gametip.warning_mail_max_5 = {
-	tip = "* You cannot receive new mail once you reach the capacity."
-}
-_G.pg.base.gametip.mail_moveto_markroom_1 = {
-	tip = "Would you like to move your mail to your <color=#238c40>Archive</color>? \nMoving your mail will automatically claim any attached items."
-}
-_G.pg.base.gametip.mail_moveto_markroom_2 = {
-	tip = "Would you like to move your important mail to your <color=#238c40>Archive</color>? \nMoving your mail will automatically claim any attached items."
-}
-_G.pg.base.gametip.mail_moveto_markroom_max = {
-	tip = "Your <color=#92fc63>Archive</color> has reached its mail capacity. You cannot move any more mail."
-}
-_G.pg.base.gametip.mail_markroom_delete = {
-	tip = "Would you like to fully delete the mail <color=#238c40>\"$1\"</color>?"
-}
-_G.pg.base.gametip.mail_markroom_tip = {
-	tip = "* The capacity is influenced by your Commander Level."
-}
-_G.pg.base.gametip.mail_manage_1 = {
-	tip = "All"
-}
-_G.pg.base.gametip.mail_manage_2 = {
-	tip = "Mail Containing Only These Items"
-}
-_G.pg.base.gametip.mail_manage_3 = {
-	tip = "No mail found meeting these conditions."
-}
-_G.pg.base.gametip.mail_manage_tip_1 = {
-	tip = "* Batch delete will only delete mail whose rewards you've already claimed."
-}
-_G.pg.base.gametip.mail_storeroom_tips = {
-	tip = "* Attached Coins and Oil will be moved to your Storage."
-}
-_G.pg.base.gametip.mail_storeroom_noextend = {
-	tip = "Your Storage has reached its holding capacity. You cannot expand it any further."
-}
-_G.pg.base.gametip.mail_storeroom_extend = {
-	tip = "Storage Capacity Increase:"
-}
-_G.pg.base.gametip.mail_storeroom_extend_1 = {
-	tip = "Storage expanded."
-}
-_G.pg.base.gametip.mail_storeroom_taken_1 = {
-	tip = "Resources claimed."
-}
-_G.pg.base.gametip.mail_storeroom_max_1 = {
-	tip = "Your Storage has reached its holding capacity. The following resources will be discarded. \nContinue?"
-}
-_G.pg.base.gametip.mail_storeroom_max_2 = {
-	tip = "Please input <color=#238c40>$1</color> to continue."
-}
-_G.pg.base.gametip.mail_storeroom_addgold = {
-	tip = "Stockpiled Coins:"
-}
-_G.pg.base.gametip.mail_storeroom_addoil = {
-	tip = "Stockpiled Oil:"
-}
-_G.pg.base.gametip.mail_search = {
-	tip = "Tap to Write"
-}
-_G.pg.base.gametip.mail_storeroom_resourcetaken = {
-	tip = "Claim Resources"
-}
-_G.pg.base.gametip.resource_max_tip_storeroom = {
-	tip = "You have reached your resource capacity."
-}
-_G.pg.base.gametip.mail_tip = {
-	tip = {
-		{
-			info = [[
-<color=#92fc63>- Mailbox Overview -</color>
-1. Your mailbox capacity is 100 mail (this includes mail marked as important or special).
-2. You can batch manage your mail and display mail matching certain criteria: 
-· Batch read: all your displayed mail will be set to already read. 
-· Batch claim: claims the attached items from all your displayed mail (Oil and Coins will be sent to your Storage). 
-· Batch delete: deletes all your displayed mail if their rewards have been claimed. 
-3. You can categorize mail by marking ordinary mail as important. Important mail won't be deleted with Batch Delete.
-4. Mail containing rewards other than Coins, Oil, Merits, or Wisdom Cubes are given the "special" category. 
-
-<color=#92fc63>- Storage -</color>
-1. Coins and Oil, unlike other items claimed via mail, are saved in your Storage. 
-2. You can claim your resources from the Storage at any time. 
-
-<color=#92fc63>- Archive -</color>
-1. You can move mail to your Archive. When moving mail, any attached items will be automatically claimed. Mail saved in the Archive do not count toward your mailbox total. Any claimed Oil and Coins will be transferred to your Storage. 
-2. The capacity of your Archive depends on your Commander Level.]]
-		}
-	}
-}
-_G.pg.base.gametip.mail_page_1 = {
-	tip = "Mail"
-}
-_G.pg.base.gametip.mail_page_2 = {
-	tip = "Storage"
-}
-_G.pg.base.gametip.mail_page_3 = {
-	tip = "Archive"
-}
-_G.pg.base.gametip.mail_gold_res = {
-	tip = "Coins"
-}
-_G.pg.base.gametip.mail_oil_res = {
-	tip = "Oil"
-}
-_G.pg.base.gametip.mail_all_price = {
-	tip = "Total:"
-}
-_G.pg.base.gametip.emptymarkroom_tip_mailboxui = {
-	tip = "You haven't saved any mail yet."
-}
-_G.pg.base.gametip.empty_tip_mailboxui_en = {
-	tip = "COMMANDER, YOUR INBOX IS EMPTY"
-}
-_G.pg.base.gametip.emptymarkroom_tip_mailboxui_en = {
-	tip = "COMMANDER, YOUR ARCHIVE IS EMPTY"
-}
-_G.pg.base.gametip.mail_input_erro = {
-	tip = "Write the correct text to claim your items."
-}
-_G.pg.base.gametip.player_expResource_mail_overflow = {
-	tip = "You won't be able to collect $1 that exceed the storage limit. Are you sure you want to continue? "
-}
-_G.pg.base.gametip.battlepass_main_tip_2406 = {
-	tip = "During the campaign season (6/1 - 7/31), complete Cruise Missions to get great rewards, including Foch META!"
-}
-_G.pg.base.gametip.battlepass_main_help_2406 = {
-	tip = {
-		{
-			info = [[
-Cruise Missions Seasonal Campaign
-6/1/2024 00:00 – 7/31/2024 23:59
-
-- Overview -
-"Cruise Missions" is a seasonal campaign where you can complete special missions, collect Progress Pts., and obtain great rewards for reaching certain Progress milestones.
-Additionally, you can unlock an additional set of "Fair Winds Cruise" rewards by purchasing the "Fair Winds Cruise Pass" item from Akashi's shop.
-Foch META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfits for Attilio Regolo, "Angel from Above"
-
-- How to Play -
-· Two types of missions will be released at the same time at the start of the campaign season:
-a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
-b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
-· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
-· If you purchase a Fair Winds Cruise Pass, you will automatically receive 15 levels worth of progress (1500 Progress Pts).
-· You can receive rewards for reaching certain Progress milestones. There are two types of rewards:
-a) Cruise Rewards - Rewards that can be obtained based on the total number of accumulated Progress Pts. There are a total of 100 levels.
-b) Fair Winds Rewards - An additional set of rewards that will be unlocked when you purchase a Fair Winds Cruise Pass. As with the regular Cruise Rewards, there are a total of 100 levels, and they can be collected alongside Cruise Rewards at the same Progress level.
-· When the campaign season ends, your Progress Pts will be reset.
-
-- Tips - 
-· Play at your own pace
-Cruise Missions have a total of 100 Progress levels, and are not meant to be cleared in one session. We recommend that you complete them at your own pace.
-
-· Fair Winds Cruise Pass
-If. you purchase a Fair Winds Cruise Pass from Akashi's shop, you will automatically earn 1500 Progress Pts and unlock access to valuable rewards. Furthermore, there is an exclusive outfit available only through the Fair Winds rewards, so please plan accordingly.
-
-· Skipping Missions (not recommended)
-You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
-We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
-Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_task_help_2406 = {
-	tip = {
-		{
-			info = [[
-- Regarding Cruise Missions - 
-· Two types of missions will be released at the same time at the start of the campaign season:
-a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
-b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
-
-· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
-
-· You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
-We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
-Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
-		}
-	}
-}
 _G.pg.base.gametip.xiaodadi_npc = {
 	tip = {
 		{
@@ -24074,167 +24463,6 @@ Complete missions, build your fleets, and clear the event stages to collect Colo
 · Use little star construction vouchers to upgrade the event buildings.]]
 		}
 	}
-}
-_G.pg.base.gametip.blueprint_simulation_confirm_19905 = {
-	tip = [[
-<size=28>
-Would you like to start a Battle Simulation?
-(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)
-Equipment: <color=#92fc63>
-Single 127mm Main Gun
-533mm Quintuple Torpedo Mount
-Prototype F8F Bearcat (Float)</color></size>]]
-}
-_G.pg.base.gametip.blueprint_simulation_confirm_39907 = {
-	tip = [[
-<size=28>
-Would you like to start a Battle Simulation?
-(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)
-Equipment: <color=#92fc63>
-Prototype Twin 410mm mod.A Main Gun Mount
-Single 140mm Naval Gun
-Twin 40mm Bofors Type 5 AA Gun Mount</color></size>]]
-}
-_G.pg.base.gametip.blueprint_simulation_confirm_69902 = {
-	tip = [[
-<size=28>
-Would you like to start a Battle Simulation?
-(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)
-Equipment: <color=#92fc63>
-Prototype Triple 254mm Model 1939 Main Gun Mount
-Prototype Triple 152mm Model 1936 Main Gun Mount
-Prototype Twin 90mm Model 1939 High Angle Gun</color></size>]]
-}
-_G.pg.base.gametip.blueprint_simulation_confirm_89904 = {
-	tip = [[
-<size=28>
-Would you like to start a Battle Simulation?
-(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)
-Equipment: <color=#92fc63>
-Triple 152mm Mle1930 Main Gun Mount (HE)
-550mm Triple Torpedo Mount
-Twin 57mm/L60 Bofors Mle 1951 AA Gun Mount</color></size>]]
-}
-_G.pg.base.gametip.blueprint_simulation_confirm_79902 = {
-	tip = [[
-<size=28>
-Would you like to start a Battle Simulation?
-(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)
-Equipment: <color=#92fc63>
-Prototype Carrier-Based La-9
-Prototype Carrier-Based La-9
-Prototype VIT-2 (Mode Change)</color></size>]]
-}
-_G.pg.base.gametip.mail_confirm_delete_important_flag = {
-	tip = "Important mail cannot be deleted."
-}
-_G.pg.base.gametip.mail_delet_button_1 = {
-	tip = "Delete Mail"
-}
-_G.pg.base.gametip.mail_storeroom_max_3 = {
-	tip = "Claiming this Oil will put you over your max capacity."
-}
-_G.pg.base.gametip.mail_storeroom_max_4 = {
-	tip = "Claiming these Coins will put you over your max capacity."
-}
-_G.pg.base.gametip.mail_storeroom_collect = {
-	tip = "After claiming you will receive the following items:"
-}
-_G.pg.base.gametip.battlepass_main_tip_2408 = {
-	tip = "Complete Cruise Missions between 8/1/2024 00:00 – 9/30/2024 23:59 to receive <color=#854747>Kasumi META</color> and other rewards!"
-}
-_G.pg.base.gametip.battlepass_main_help_2408 = {
-	tip = {
-		{
-			info = [[
-Cruise Missions Seasonal Campaign
-8/1/2024 00:00 – 9/30/2024 23:59
-
-- Overview -
-"Cruise Missions" is a seasonal campaign where you can complete special missions, collect Progress Pts., and obtain great rewards for reaching certain Progress milestones.
-Additionally, you can unlock an additional set of "Fair Winds Cruise" rewards by purchasing the "Fair Winds Cruise Pass" item from Akashi's shop.
-Kasumi META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfit for Roma, "Vacation Upon the Tiber."
-
-- How to Play -
-· Two types of missions will be released at the same time at the start of the campaign season:
-a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
-b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
-· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
-· If you purchase a Fair Winds Cruise Pass, you will automatically receive 15 levels worth of progress (1500 Progress Pts).
-· You can receive rewards for reaching certain Progress milestones. There are two types of rewards:
-a) Cruise Rewards - Rewards that can be obtained based on the total number of accumulated Progress Pts. There are a total of 100 levels.
-b) Fair Winds Rewards - An additional set of rewards that will be unlocked when you purchase a Fair Winds Cruise Pass. As with the regular Cruise Rewards, there are a total of 100 levels, and they can be collected alongside Cruise Rewards at the same Progress level.
-· When the campaign season ends, your Progress Pts will be reset.
-
-- Tips - 
-· Play at your own pace
-Cruise Missions have a total of 100 Progress levels, and are not meant to be cleared in one session. We recommend that you complete them at your own pace.
-
-· Fair Winds Cruise Pass
-If. you purchase a Fair Winds Cruise Pass from Akashi's shop, you will automatically earn 1500 Progress Pts and unlock access to valuable rewards. Furthermore, there is an exclusive outfit available only through the Fair Winds rewards, so please plan accordingly.
-
-· Skipping Missions (not recommended)
-You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
-We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
-Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_task_help_2408 = {
-	tip = {
-		{
-			info = [[
-- Regarding Cruise Missions - 
-· Two types of missions will be released at the same time at the start of the campaign season:
-a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
-b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
-
-· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
-
-· You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
-We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
-Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
-		}
-	}
-}
-_G.pg.base.gametip.loveletter_recover_tip1 = {
-	tip = "You need to scan your mail before you can use the resend feature."
-}
-_G.pg.base.gametip.loveletter_recover_tip2 = {
-	tip = "Incorrect character."
-}
-_G.pg.base.gametip.loveletter_recover_tip3 = {
-	tip = "This Valentine's mail already exists in your mailbox or Archive."
-}
-_G.pg.base.gametip.loveletter_recover_tip4 = {
-	tip = "This character was not available during the year selected."
-}
-_G.pg.base.gametip.loveletter_recover_tip5 = {
-	tip = "Your Archive is full. You need to manage your Archive before you can resend mail."
-}
-_G.pg.base.gametip.loveletter_recover_tip6 = {
-	tip = "Your mail has been scanned. You can resend Valentine's mail from $1."
-}
-_G.pg.base.gametip.loveletter_recover_tip7 = {
-	tip = "Your mail has been scanned. Your Valentine's mail already exists in your mailbox or Archive."
-}
-_G.pg.base.gametip.loveletter_recover_bottom1 = {
-	tip = "Scan"
-}
-_G.pg.base.gametip.loveletter_recover_bottom2 = {
-	tip = "Resend"
-}
-_G.pg.base.gametip.loveletter_recover_bottom3 = {
-	tip = "$1"
-}
-_G.pg.base.gametip.loveletter_recover_text1 = {
-	tip = "You can use the <color=#ffde38>resend mail</color> feature to resend <color=#ffde38>$2</color>'s Valentine's Mail from <color=#ffde38>$1</color> to your Archive (without any of the attached items). \n* You can only use the mail resend feature once per commemorative item."
-}
-_G.pg.base.gametip.loveletter_recover_text2 = {
-	tip = "Select the <color=#ffde38>year</color> of the mail you'd like to resend. <color=#ffde38>$1</color>'s Valentine mail from the selected year will be sent to your Archive (without any of the attached items). \n* You can only use the mail resend feature once "
-}
-_G.pg.base.gametip.battle_text_common_4 = {
-	tip = "<color=#f1f102>Enemies deal significantly more DMG. Their shells ignore shields and penetrate through targets.</color>"
 }
 _G.pg.base.gametip.MonopolyCar2024Game_title1 = {
 	tip = "Laps"
@@ -24338,21 +24566,6 @@ _G.pg.base.gametip.sitelasibao_expup_desc = {
 _G.pg.base.gametip.levelScene_tracking_error_pre_2 = {
 	tip = "Unlocked by clearing $1 or $2."
 }
-_G.pg.base.gametip.ship_remould_warning_101994 = {
-	tip = [[
-Completing the retrofit will have the following effects:
-<color=#92fc63>This ship will gain +1 Anti-Air Gun base and receive special ASW gear.</color>
-The skill <color=#92fc63>Operation Rainbow</color> will be upgraded into <color=#92fc63>Operation Rainbow+</color>.
-The skill <color=#92fc63>All Out Assault II</color> will be upgraded into <color=#92fc63>All Out Assault III</color>.
-Completing the retrofit will spend your <color=#92fc63>Wattage Amplifier</color>.
-Proceed with retrofit?]]
-}
-_G.pg.base.gametip.battle_text_pizibao_1 = {
-	tip = "Support has arrived! <color=#f1f102>Draw the enemy's fire</color> and protect your allies!"
-}
-_G.pg.base.gametip.battle_text_pizibao_2 = {
-	tip = "The supporting fleet <color=#f1f102>has been destroyed</color>! The battle will get tougher!"
-}
 _G.pg.base.gametip.town_lock_level = {
 	tip = "This will unlock after you read the story."
 }
@@ -24400,352 +24613,6 @@ _G.pg.base.gametip.town_gold_tip = {
 }
 _G.pg.base.gametip.award_max_warning_minigame = {
 	tip = "Any rewards that <color=#ff5c5c>exceed your max storage capacity</color> will be discarded if you claim them. Do you wish to continue?"
-}
-_G.pg.base.gametip.help_dorm3d_info = {
-	tip = {
-		{
-			icon = {
-				atlas = "helpbg/3ddorm_1",
-				path = ""
-			}
-		},
-		{
-			icon = {
-				atlas = "helpbg/3ddorm_2",
-				path = ""
-			}
-		},
-		{
-			icon = {
-				atlas = "helpbg/3ddorm_3",
-				path = ""
-			}
-		},
-		{
-			icon = {
-				atlas = "helpbg/3ddorm_4",
-				path = ""
-			}
-		},
-		{
-			icon = {
-				atlas = "helpbg/3ddorm_5",
-				path = ""
-			}
-		},
-		{
-			icon = {
-				atlas = "helpbg/3ddorm_6",
-				path = ""
-			}
-		},
-		disableScroll = true,
-		pageMode = true,
-		ImageMode = true,
-		defaultpage = 1,
-		windowSize = {
-			x = 1263,
-			y = 873
-		},
-		windowPos = {
-			y = -70
-		},
-		helpSize = {
-			x = 1176,
-			y = 1024
-		}
-	}
-}
-_G.pg.base.gametip.report_cannot_comment_level_1 = {
-	tip = "You may write comments after reaching Commander Level $1."
-}
-_G.pg.base.gametip.report_cannot_comment_level_2 = {
-	tip = "You currently cannot write comments."
-}
-_G.pg.base.gametip.commander_exp_limit = {
-	tip = "This Meowfficer has reached max level and cannot be added here."
-}
-_G.pg.base.gametip.ship_remould_warning_105224 = {
-	tip = "Completing the retrofit will change the skill <color=#92fc63>Big Seven</color> into <color=#92fc63>Big Seven - Maryland</color>."
-}
-_G.pg.base.gametip.battle_text_tianchengCV_1 = {
-	tip = "\"<color=#ff8800>Crimson flame</color> and <color=#5cccff>azure blossom</color>, descend upon the world!\""
-}
-_G.pg.base.gametip.battle_text_tianchengCV_2 = {
-	tip = "\"Ahahahaha! <color=#ff1800>Red spider lilies</color>, bloom and burn them to ashes!\""
-}
-_G.pg.base.gametip.battle_text_tianchengCV_3 = {
-	tip = "A powerful attack is coming! Activate the <color=#f1f102>magic circle</color> and call for support!"
-}
-_G.pg.base.gametip.dreamland_label_day = {
-	tip = "Day"
-}
-_G.pg.base.gametip.dreamland_label_dusk = {
-	tip = "Evening"
-}
-_G.pg.base.gametip.dreamland_label_night = {
-	tip = "Night"
-}
-_G.pg.base.gametip.dreamland_label_area = {
-	tip = "Area"
-}
-_G.pg.base.gametip.dreamland_label_explore = {
-	tip = "Explore"
-}
-_G.pg.base.gametip.dreamland_label_explore_award_tip = {
-	tip = "Area Exploration Reward"
-}
-_G.pg.base.gametip.dreamland_area_lock_tip = {
-	tip = "- Area unlocks after reading the story -"
-}
-_G.pg.base.gametip.dreamland_spring_lock_tip = {
-	tip = "Unlocks after reading story"
-}
-_G.pg.base.gametip.dreamland_spring_tip = {
-	tip = "Dream Park Morale Recovery: $1/h"
-}
-_G.pg.base.gametip.dream_land_tip = {
-	tip = {
-		{
-			info = [[
-- Overview -
-The Dreamy Day in Dream Park event is available between <color=#92fc63>September 12th and October 2nd</color>.
-
-· Explore the park to unlock new areas and receive rewards, including <color=#92fc63>limited furniture</color> and <color=#92fc63>gear skin boxes</color>!
-· Each area contains its own interactable elements. If you're unable to find them, you can check <color=#92fc63>the stars displayed on the map</color> or your <color=#92fc63>Dreamland Guidebook</color> to receive a hint.
-· Some elements can only be interacted with at the right time of day. Finish the event story to unlock the Change Time option, letting you alter the park's time at will.
-· Let your shipgirls relax under the Sweet Dreams tab and they'll both recover Morale faster and appear inside the park. You'll unlock more slots as you gain access to more areas to explore.]]
-		}
-	}
-}
-_G.pg.base.gametip.touch_cake_minigame_help = {
-	tip = {
-		{
-			icon = {
-				atlas = "helpbg/touchcake_help1",
-				path = ""
-			}
-		},
-		{
-			icon = {
-				atlas = "helpbg/touchcake_help2",
-				path = ""
-			}
-		},
-		disableScroll = true,
-		pageMode = true,
-		ImageMode = true,
-		defaultpage = 1,
-		windowSize = {
-			x = 1263,
-			y = 873
-		},
-		windowPos = {
-			y = -70
-		},
-		helpSize = {
-			x = 1176,
-			y = 1024
-		}
-	}
-}
-_G.pg.base.gametip.dreamland_main_desc = {
-	tip = "Obtain rewards between September 12th and October 2nd by <color=#85E7FF>exploring the park</color> and <color=#85E7FF>playing the minigame</color>!"
-}
-_G.pg.base.gametip.dreamland_main_tip = {
-	tip = {
-		{
-			info = [[
-- Overview -
-The Dreamy Day in Dream Park event is available between <color=#92fc63>September 12th and October 2nd</color>.
-
-- Exploring Dream Park -
-· Explore the park to unlock new areas and story chapters and receive rewards, including <color=#92fc63>limited furniture</color> and <color=#92fc63>gear skin boxes</color>!
-· Each area contains its own interactable elements. If you're unable to find them, you can check <color=#92fc63>the stars displayed on the map</color> or your <color=#92fc63>Dreamland Guidebook</color> to receive a hint.
-· Some elements can only be interacted with at the right time of day. Finish the event story to unlock the Change Time option, letting you alter the park's time at will.
-· Let your shipgirls relax under the Sweet Dreams tab and they'll both recover Morale faster and appear inside the park. You'll unlock more slots as you gain access to more areas to explore.]]
-		}
-	}
-}
-_G.pg.base.gametip.no_share_skin_gametip = {
-	tip = "*$1's skin cannot be applied to $2."
-}
-_G.pg.base.gametip.no_share_skin_tianchenghangmu = {
-	tip = "Amagi(CV)"
-}
-_G.pg.base.gametip.no_share_skin_tianchengzhanlie = {
-	tip = "Amagi(BC)"
-}
-_G.pg.base.gametip.no_share_skin_jiahezhanlie = {
-	tip = "Kaga(BB)"
-}
-_G.pg.base.gametip.no_share_skin_jiahehangmu = {
-	tip = "Kaga(CV)"
-}
-_G.pg.base.gametip.ui_pack_tip1 = {
-	tip = "* You can only choose to buy ONE version. The purchased item(s) will be sent to your mail."
-}
-_G.pg.base.gametip.ui_pack_tip2 = {
-	tip = "Basic"
-}
-_G.pg.base.gametip.ui_pack_tip3 = {
-	tip = "Premium"
-}
-_G.pg.base.gametip.battle_ui_unlock = {
-	tip = "Unlock Battle UI"
-}
-_G.pg.base.gametip.compensate_ui_expiration_hour = {
-	tip = "Expires in $1 hour(s)"
-}
-_G.pg.base.gametip.compensate_ui_expiration_day = {
-	tip = "Expires in $1 day(s)"
-}
-_G.pg.base.gametip.compensate_ui_title1 = {
-	tip = "Comp."
-}
-_G.pg.base.gametip.compensate_ui_title2 = {
-	tip = "compensate"
-}
-_G.pg.base.gametip.compensate_ui_nothing1 = {
-	tip = "No compensation received yet."
-}
-_G.pg.base.gametip.compensate_ui_nothing2 = {
-	tip = "No compensation received yet"
-}
-_G.pg.base.gametip.attire_combatui_preview = {
-	tip = "Preview"
-}
-_G.pg.base.gametip.attire_combatui_confirm = {
-	tip = "Apply"
-}
-_G.pg.base.gametip.battlepass_main_tip_2410 = {
-	tip = "Complete seasonal missions <icon name=pt w=0.5 h=0.5/> during the 2024.10.1 - 2024.11.30 Cruise Mission season and obtain rewards such as <color=#854747>Houshou META</color> and more!"
-}
-_G.pg.base.gametip.battlepass_main_help_2410 = {
-	tip = {
-		{
-			info = [[
-Cruise Missions Seasonal Campaign
-10/1/2024 00:00 – 11/30/2024 23:59
-
-- Overview -
-"Cruise Missions" is a seasonal campaign where you can complete special missions, collect Progress Pts., and obtain great rewards for reaching certain Progress milestones.
-Additionally, you can unlock an additional set of "Fair Winds Cruise" rewards by purchasing the "Fair Winds Cruise Pass" item from Akashi's shop.
-Houshou META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfit for Suffren, "Unrivaled Winsomeness."
-
-- How to Play -
-· Two types of missions will be released at the same time at the start of the campaign season:
-a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
-b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
-· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
-· If you purchase a Fair Winds Cruise Pass, you will automatically receive 15 levels worth of progress (1500 Progress Pts).
-· You can receive rewards for reaching certain Progress milestones. There are two types of rewards:
-a) Cruise Rewards - Rewards that can be obtained based on the total number of accumulated Progress Pts. There are a total of 100 levels.
-b) Fair Winds Rewards - An additional set of rewards that will be unlocked when you purchase a Fair Winds Cruise Pass. As with the regular Cruise Rewards, there are a total of 100 levels, and they can be collected alongside Cruise Rewards at the same Progress level.
-· When the campaign season ends, your Progress Pts will be reset.
-
-- Tips - 
-· Play at your own pace
-Cruise Missions have a total of 100 Progress levels, and are not meant to be cleared in one session. We recommend that you complete them at your own pace.
-
-· Fair Winds Cruise Pass
-If you purchase a Fair Winds Cruise Pass from Akashi's shop, you will automatically earn 1500 Progress Pts and unlock access to valuable rewards. Furthermore, there is an exclusive outfit available only through the Fair Winds rewards, so please plan accordingly.
-
-· Skipping Missions (not recommended)
-You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
-We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
-Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_task_help_2410 = {
-	tip = {
-		{
-			info = [[
-- Regarding Cruise Missions - 
-· Two types of missions will be released at the same time at the start of the campaign season:
-a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
-b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
-
-· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
-
-· You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
-We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
-Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
-		}
-	}
-}
-_G.pg.base.gametip.dorm3d_furnitrue_type_wallpaper = {
-	tip = "Wallpapers"
-}
-_G.pg.base.gametip.dorm3d_furnitrue_type_floor = {
-	tip = "Flooring"
-}
-_G.pg.base.gametip.dorm3d_furnitrue_type_decoration = {
-	tip = "Decorations"
-}
-_G.pg.base.gametip.dorm3d_furnitrue_type_bed = {
-	tip = "Beds"
-}
-_G.pg.base.gametip.dorm3d_furnitrue_type_couch = {
-	tip = "Couches"
-}
-_G.pg.base.gametip.dorm3d_furnitrue_type_table = {
-	tip = "Tables"
-}
-_G.pg.base.gametip.dorm3d_furniture_window_acesses = {
-	tip = "Obtained By"
-}
-_G.pg.base.gametip.dorm3d_furniture_count = {
-	tip = "Amount: $1"
-}
-_G.pg.base.gametip.dorm3d_furniture_used = {
-	tip = "<color=#00a3ef>[Placed]</color>"
-}
-_G.pg.base.gametip.dorm3d_furniture_unfit = {
-	tip = "Unusable"
-}
-_G.pg.base.gametip.dorm3d_waiting = {
-	tip = "Setting Up"
-}
-_G.pg.base.gametip.dorm3d_daily_favor = {
-	tip = "Daily Bonus Intimacy"
-}
-_G.pg.base.gametip.dorm3d_favor_level = {
-	tip = "Intimacy Lv.:"
-}
-_G.pg.base.gametip.dorm3d_time_choose = {
-	tip = "Select Time"
-}
-_G.pg.base.gametip.dorm3d_now_time = {
-	tip = "Current Time"
-}
-_G.pg.base.gametip.dorm3d_is_auto_time = {
-	tip = "Day & Night Auto-Switch"
-}
-_G.pg.base.gametip.dorm3d_clothing_choose = {
-	tip = "Select Clothes"
-}
-_G.pg.base.gametip.dorm3d_now_clothing = {
-	tip = "Current"
-}
-_G.pg.base.gametip.dorm3d_talk = {
-	tip = "Talk"
-}
-_G.pg.base.gametip.dorm3d_touch = {
-	tip = "Interact"
-}
-_G.pg.base.gametip.dorm3d_gift = {
-	tip = "Gift"
-}
-_G.pg.base.gametip.dorm3d_gift_owner_num = {
-	tip = "Amount: "
-}
-_G.pg.base.gametip.dorm3d_unlock_tips = {
-	tip = "Unlocked at Intimacy $1"
-}
-_G.pg.base.gametip.dorm3d_daily_favor_tips = {
-	tip = "Daily Bonus Intimacy"
 }
 _G.pg.base.gametip.dorm3d_photo_len = {
 	tip = "Camera"
@@ -24915,6 +24782,61 @@ _G.pg.base.gametip.dorm3d_photo_active_zone = {
 _G.pg.base.gametip.apartment_level_unenough = {
 	tip = "Unlocks at Intimacy Lv. $1"
 }
+_G.pg.base.gametip.help_dorm3d_info = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_1",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_2",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_3",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_4",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_5",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/3ddorm_6",
+				path = ""
+			}
+		},
+		disableScroll = true,
+		pageMode = true,
+		ImageMode = true,
+		defaultpage = 1,
+		windowSize = {
+			x = 1263,
+			y = 873
+		},
+		windowPos = {
+			y = -70
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024
+		}
+	}
+}
 _G.pg.base.gametip.dorm3d_shop_gift_already_given = {
 	tip = "You have already given this gift."
 }
@@ -24950,6 +24872,156 @@ _G.pg.base.gametip.dorm3d_furniture_save_success = {
 }
 _G.pg.base.gametip.dorm3d_removable = {
 	tip = "(Drag on the left side of the screen to move closer to the character.)"
+}
+_G.pg.base.gametip.report_cannot_comment_level_1 = {
+	tip = "You may write comments after reaching Commander Level $1."
+}
+_G.pg.base.gametip.report_cannot_comment_level_2 = {
+	tip = "You currently cannot write comments."
+}
+_G.pg.base.gametip.commander_exp_limit = {
+	tip = "This Meowfficer has reached max level and cannot be added here."
+}
+_G.pg.base.gametip.dreamland_label_day = {
+	tip = "Day"
+}
+_G.pg.base.gametip.dreamland_label_dusk = {
+	tip = "Evening"
+}
+_G.pg.base.gametip.dreamland_label_night = {
+	tip = "Night"
+}
+_G.pg.base.gametip.dreamland_label_area = {
+	tip = "Area"
+}
+_G.pg.base.gametip.dreamland_label_explore = {
+	tip = "Explore"
+}
+_G.pg.base.gametip.dreamland_label_explore_award_tip = {
+	tip = "Area Exploration Reward"
+}
+_G.pg.base.gametip.dreamland_area_lock_tip = {
+	tip = "- Area unlocks after reading the story -"
+}
+_G.pg.base.gametip.dreamland_spring_lock_tip = {
+	tip = "Unlocks after reading story"
+}
+_G.pg.base.gametip.dreamland_spring_tip = {
+	tip = "Dream Park Morale Recovery: $1/h"
+}
+_G.pg.base.gametip.dream_land_tip = {
+	tip = {
+		{
+			info = [[
+- Overview -
+The Dreamy Day in Dream Park event is available between <color=#92fc63>September 12th and October 2nd</color>.
+
+· Explore the park to unlock new areas and receive rewards, including <color=#92fc63>limited furniture</color> and <color=#92fc63>gear skin boxes</color>!
+· Each area contains its own interactable elements. If you're unable to find them, you can check <color=#92fc63>the stars displayed on the map</color> or your <color=#92fc63>Dreamland Guidebook</color> to receive a hint.
+· Some elements can only be interacted with at the right time of day. Finish the event story to unlock the Change Time option, letting you alter the park's time at will.
+· Let your shipgirls relax under the Sweet Dreams tab and they'll both recover Morale faster and appear inside the park. You'll unlock more slots as you gain access to more areas to explore.]]
+		}
+	}
+}
+_G.pg.base.gametip.touch_cake_minigame_help = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/touchcake_help1",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/touchcake_help2",
+				path = ""
+			}
+		},
+		disableScroll = true,
+		pageMode = true,
+		ImageMode = true,
+		defaultpage = 1,
+		windowSize = {
+			x = 1263,
+			y = 873
+		},
+		windowPos = {
+			y = -70
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024
+		}
+	}
+}
+_G.pg.base.gametip.dreamland_main_desc = {
+	tip = "Obtain rewards between September 12th and October 2nd by <color=#85E7FF>exploring the park</color> and <color=#85E7FF>playing the minigame</color>!"
+}
+_G.pg.base.gametip.dreamland_main_tip = {
+	tip = {
+		{
+			info = [[
+- Overview -
+The Dreamy Day in Dream Park event is available between <color=#92fc63>September 12th and October 2nd</color>.
+
+- Exploring Dream Park -
+· Explore the park to unlock new areas and story chapters and receive rewards, including <color=#92fc63>limited furniture</color> and <color=#92fc63>gear skin boxes</color>!
+· Each area contains its own interactable elements. If you're unable to find them, you can check <color=#92fc63>the stars displayed on the map</color> or your <color=#92fc63>Dreamland Guidebook</color> to receive a hint.
+· Some elements can only be interacted with at the right time of day. Finish the event story to unlock the Change Time option, letting you alter the park's time at will.
+· Let your shipgirls relax under the Sweet Dreams tab and they'll both recover Morale faster and appear inside the park. You'll unlock more slots as you gain access to more areas to explore.]]
+		}
+	}
+}
+_G.pg.base.gametip.no_share_skin_gametip = {
+	tip = "*$1's skin cannot be applied to $2."
+}
+_G.pg.base.gametip.no_share_skin_tianchenghangmu = {
+	tip = "Amagi(CV)"
+}
+_G.pg.base.gametip.no_share_skin_tianchengzhanlie = {
+	tip = "Amagi(BC)"
+}
+_G.pg.base.gametip.no_share_skin_jiahezhanlie = {
+	tip = "Kaga(BB)"
+}
+_G.pg.base.gametip.no_share_skin_jiahehangmu = {
+	tip = "Kaga(CV)"
+}
+_G.pg.base.gametip.ui_pack_tip1 = {
+	tip = "* You can only choose to buy ONE version. The purchased item(s) will be sent to your mail."
+}
+_G.pg.base.gametip.ui_pack_tip2 = {
+	tip = "Basic"
+}
+_G.pg.base.gametip.ui_pack_tip3 = {
+	tip = "Premium"
+}
+_G.pg.base.gametip.battle_ui_unlock = {
+	tip = "Unlock Battle UI"
+}
+_G.pg.base.gametip.compensate_ui_expiration_hour = {
+	tip = "Expires in $1 hour(s)"
+}
+_G.pg.base.gametip.compensate_ui_expiration_day = {
+	tip = "Expires in $1 day(s)"
+}
+_G.pg.base.gametip.compensate_ui_title1 = {
+	tip = "Comp."
+}
+_G.pg.base.gametip.compensate_ui_title2 = {
+	tip = "compensate"
+}
+_G.pg.base.gametip.compensate_ui_nothing1 = {
+	tip = "No compensation received yet."
+}
+_G.pg.base.gametip.compensate_ui_nothing2 = {
+	tip = "No compensation received yet"
+}
+_G.pg.base.gametip.attire_combatui_preview = {
+	tip = "Preview"
+}
+_G.pg.base.gametip.attire_combatui_confirm = {
+	tip = "Apply"
 }
 _G.pg.base.gametip.grapihcs3d_setting_quality = {
 	tip = "Graphics Quality"
@@ -25020,11 +25092,23 @@ _G.pg.base.gametip.dorm3d_purchase_confirm_free = {
 _G.pg.base.gametip.dorm3d_purchase_confirm_tip = {
 	tip = "Excl."
 }
+_G.pg.base.gametip.dorm3d_purchase_label_special = {
+	tip = "Bonus"
+}
+_G.pg.base.gametip.dorm3d_purchase_outtime = {
+	tip = "Not currently available."
+}
+_G.pg.base.gametip.dorm3d_collect_block_by_furniture = {
+	tip = "This item has been replaced by $1, and cannot be obtained now."
+}
 _G.pg.base.gametip.cruise_phase_title = {
 	tip = "Phase"
 }
 _G.pg.base.gametip.cruise_title_2410 = {
 	tip = "Cruise Missions S19"
+}
+_G.pg.base.gametip.cruise_title_2412 = {
+	tip = "Seasonal Missions – S20"
 }
 _G.pg.base.gametip.battlepass_main_time_title = {
 	tip = "Time Remaining:"
@@ -25052,6 +25136,15 @@ _G.pg.base.gametip.cruise_shop_title_equip_skin = {
 }
 _G.pg.base.gametip.cruise_shop_lock_tip = {
 	tip = "Reach Seasonal Cruise Mission Lv. 50"
+}
+_G.pg.base.gametip.cruise_tip_skin = {
+	tip = "Seasonal Missions"
+}
+_G.pg.base.gametip.cruise_tip_base = {
+	tip = "- Base Rewards -"
+}
+_G.pg.base.gametip.cruise_tip_upgrade = {
+	tip = "- Bonus Rewards -"
 }
 _G.pg.base.gametip.cruise_shop_limit_tip = {
 	tip = "Buyable This Month:"
@@ -25152,9 +25245,6 @@ _G.pg.base.gametip.dorm3d_favor_maximize = {
 _G.pg.base.gametip.dorm3d_purchase_weekly_limit = {
 	tip = "(Weekly purchase: $1/$2)"
 }
-_G.pg.base.gametip.battle_battleMediator_remainTime = {
-	tip = "Time Remaining"
-}
 _G.pg.base.gametip.world_file_tip = {
 	tip = "* Scroll the page by sliding the screen. Close the page by tapping the screen."
 }
@@ -25169,6 +25259,12 @@ _G.pg.base.gametip.levelscene_mapselect_sp = {
 }
 _G.pg.base.gametip.levelscene_mapselect_ex = {
 	tip = "EX"
+}
+_G.pg.base.gametip.levelscene_mapselect_normal = {
+	tip = "Normal"
+}
+_G.pg.base.gametip.levelscene_mapselect_advanced = {
+	tip = "Challenge"
 }
 _G.pg.base.gametip.juuschat_filter_title = {
 	tip = "Filter"
@@ -25302,84 +25398,6 @@ Every day until November 20th, a new Daily Free Pack and a new Daily Paid Pack a
 }
 _G.pg.base.gametip.blackfriday_shop_tip = {
 	tip = "Unlocks on $1 at $2"
-}
-_G.pg.base.gametip.word_shipNation_tolove = {
-	tip = "To LOVE-Ru"
-}
-_G.pg.base.gametip.battlepass_main_tip_2412 = {
-	tip = "Complete Cruise Missions between 12/1/2024 00:00 – 1/31/2025 23:59 to receive <color=#854747>Giulio Cesare META</color> and other rewards!"
-}
-_G.pg.base.gametip.battlepass_main_help_2412 = {
-	tip = {
-		{
-			info = [[
-Cruise Missions Seasonal Campaign
-12/1/2024 00:00 – 1/31/2025 23:59
-
-- Overview -
-"Cruise Missions" is a seasonal campaign where you can complete special missions, collect Progress Pts., and obtain great rewards for reaching certain Progress milestones.
-Additionally, you can unlock an additional set of "Fair Winds Cruise" rewards by purchasing the "Fair Winds Cruise Pass" item from Akashi's shop.
-Giulio Cesare META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfit for Weser, "Offtime Cafe."
-
-- How to Play -
-· Two types of missions will be released at the same time at the start of the campaign season:
-a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
-b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
-· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
-· If you purchase a Fair Winds Cruise Pass, you will automatically receive 15 levels worth of progress (1500 Progress Pts).
-· You can receive rewards for reaching certain Progress milestones. There are two types of rewards:
-a) Cruise Rewards - Rewards that can be obtained based on the total number of accumulated Progress Pts. There are a total of 100 levels.
-b) Fair Winds Rewards - An additional set of rewards that will be unlocked when you purchase a Fair Winds Cruise Pass. As with the regular Cruise Rewards, there are a total of 100 levels, and they can be collected alongside Cruise Rewards at the same Progress level.
-· When the campaign season ends, your Progress Pts will be reset.
-
-- Tips - 
-· Play at your own pace
-Cruise Missions have a total of 100 Progress levels, and are not meant to be cleared in one session. We recommend that you complete them at your own pace.
-
-· Fair Winds Cruise Pass
-If you purchase a Fair Winds Cruise Pass from Akashi's shop, you will automatically earn 1500 Progress Pts and unlock access to valuable rewards. Furthermore, there is an exclusive outfit available only through the Fair Winds rewards, so please plan accordingly.
-
-· Skipping Missions (not recommended)
-You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
-We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
-Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_task_help_2412 = {
-	tip = {
-		{
-			info = [[
-- Regarding Cruise Missions - 
-· Two types of missions will be released at the same time at the start of the campaign season:
-a) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.
-b) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.
-
-· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.
-
-· You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.
-We do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.
-Any purchased Cruise Mission Vouchers will remain even after the campaign season ends.]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_title_2412 = {
-	tip = "Seasonal Missions – S20"
-}
-_G.pg.base.gametip.cruise_tip_skin = {
-	tip = "Seasonal Missions"
-}
-_G.pg.base.gametip.cruise_tip_base = {
-	tip = "- Base Rewards -"
-}
-_G.pg.base.gametip.cruise_tip_upgrade = {
-	tip = "- Bonus Rewards -"
-}
-_G.pg.base.gametip.levelscene_mapselect_normal = {
-	tip = "Normal"
-}
-_G.pg.base.gametip.levelscene_mapselect_advanced = {
-	tip = "Challenge"
 }
 _G.pg.base.gametip.tolovegame_buff_name_1 = {
 	tip = "Shield Boost"
@@ -25566,9 +25584,6 @@ _G.pg.base.gametip.tolovegame_puzzle_line_tip = {
 _G.pg.base.gametip.tolovegame_puzzle_puzzle_tip = {
 	tip = "Assemble all the parts and put them on the circuits"
 }
-_G.pg.base.gametip.item_assigned_type_limit_error = {
-	tip = "Unable to exchange; you cannot hold any more of this item."
-}
 _G.pg.base.gametip.maintenance_message_text = {
 	tip = "The server will undergo maintenance in $1. You will be unable to play the game during the maintenance. Please plan accordingly, and thank you for your understanding."
 }
@@ -25583,4 +25598,32 @@ _G.pg.base.gametip.notify_clock_tip = {
 }
 _G.pg.base.gametip.notify_clock_button = {
 	tip = "Enable alarm"
+}
+_G.pg.base.gametip.help_starLightAlbum = {
+	tip = {
+		{
+			info = "- Commemorative Album -"
+		},
+		{
+			info = [[
+1.  The Commemorative Album tab has been added to the Memories screen. 
+2.  During the event, you can complete event missions to receive <color=#92fc63>commemorative stickers</color>. Finishing your collection will award you with the Resistance Headquarters Building, a limited furniture piece, and the Stellar Resistance Medal. 
+ Note:   While the event is available, tapping the <color=#92fc63>Commemoration button on the event banner or the Commemorative Album tab under Memories</color>will bring you to the commemorative stickers menu. 
+ Note:   Following the end of the event, <color=#92fc63>you can only access the stickers menu from the Commemorative Album tab under Memories</color>. 
+ Note:   Commemorative stickers are earned by completing event missions. 
+ Note:   Rewards may be claimed up to January 8th.]]
+		}
+	}
+}
+_G.pg.base.gametip.word_gain_date = {
+	tip = "获取时间："
+}
+_G.pg.base.gametip.word_limited_activity = {
+	tip = "限时活动"
+}
+_G.pg.base.gametip.word_show_expire_content = {
+	tip = "查看已无法获取的内容"
+}
+_G.pg.base.gametip.word_got_pt = {
+	tip = "已获得"
 }
