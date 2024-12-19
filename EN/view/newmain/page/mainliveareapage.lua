@@ -43,10 +43,6 @@ function var_0_0.OnLoaded(arg_4_0)
 	pg.redDotHelper:AddNode(SelfRefreshRedDotNode.New(arg_4_0._commanderBtn:Find("tip"), {
 		pg.RedDotMgr.TYPES.COMMANDER
 	}))
-	pg.redDotHelper:AddNode(RedDotNode.New(arg_4_0._dormBtn:Find("tip"), {
-		pg.RedDotMgr.TYPES.DORM3D_GIFT,
-		pg.RedDotMgr.TYPES.DORM3D_FURNITURE
-	}))
 end
 
 function var_0_0.OnInit(arg_7_0)
@@ -116,12 +112,22 @@ function var_0_0.Show(arg_16_0)
 		arg_16_0._educateBtn:GetComponent(typeof(Image)).color = Color(1, 1, 1, 1)
 	end
 
-	if not pg.SystemOpenMgr.GetInstance():isOpenSystem(var_16_0.level, "SelectDorm3DMediator") then
+	local var_16_1 = pg.SystemOpenMgr.GetInstance():isOpenSystem(var_16_0.level, "SelectDorm3DMediator")
+
+	if not var_16_1 then
 		arg_16_0._dormBtn:GetComponent(typeof(Image)).color = Color(0.5, 0.5, 0.5, 1)
 	else
 		arg_16_0._dormBtn:GetComponent(typeof(Image)).color = Color(1, 1, 1, 1)
 	end
 
+	;(function()
+		local var_17_0 = var_16_1 and Dorm3dGift.NeedViewTip()
+		local var_17_1 = var_16_1 and Dorm3dFurniture.NeedViewTip()
+		local var_17_2 = var_16_1 and Dorm3dFurniture.IsTimelimitShopTip()
+
+		setActive(arg_16_0._dormBtn:Find("tip"), not var_17_2 and (var_17_0 or var_17_1))
+		setActive(arg_16_0._dormBtn:Find("tagFurniture"), var_17_2)
+	end)()
 	arg_16_0:UpdateCover()
 	arg_16_0:UpdateCoverTip()
 	arg_16_0:UpdateTime()
@@ -133,107 +139,107 @@ function var_0_0.Show(arg_16_0)
 	arg_16_0.timer:Start()
 end
 
-function var_0_0.UpdateTime(arg_18_0)
-	local var_18_0 = pg.TimeMgr.GetInstance()
-	local var_18_1 = var_18_0:GetServerHour()
-	local var_18_2 = var_18_1 < 12
+function var_0_0.UpdateTime(arg_19_0)
+	local var_19_0 = pg.TimeMgr.GetInstance()
+	local var_19_1 = var_19_0:GetServerHour()
+	local var_19_2 = var_19_1 < 12
 
-	setActive(arg_18_0:findTF("AM", arg_18_0._bg), var_18_2)
-	setActive(arg_18_0:findTF("PM", arg_18_0._bg), not var_18_2)
+	setActive(arg_19_0:findTF("AM", arg_19_0._bg), var_19_2)
+	setActive(arg_19_0:findTF("PM", arg_19_0._bg), not var_19_2)
 
-	local var_18_3 = arg_18_0:getCoverType(var_18_1)
+	local var_19_3 = arg_19_0:getCoverType(var_19_1)
 
-	setActive(arg_18_0:findTF("day", arg_18_0._bg), var_18_3 == LivingAreaCover.TYPE_DAY)
-	setActive(arg_18_0:findTF("night", arg_18_0._bg), var_18_3 == LivingAreaCover.TYPE_NIGHT)
-	setActive(arg_18_0:findTF("day", arg_18_0._islandBtn), var_18_3 == LivingAreaCover.TYPE_DAY)
-	setActive(arg_18_0:findTF("night", arg_18_0._islandBtn), var_18_3 ~= LivingAreaCover.TYPE_DAY)
+	setActive(arg_19_0:findTF("day", arg_19_0._bg), var_19_3 == LivingAreaCover.TYPE_DAY)
+	setActive(arg_19_0:findTF("night", arg_19_0._bg), var_19_3 == LivingAreaCover.TYPE_NIGHT)
+	setActive(arg_19_0:findTF("day", arg_19_0._islandBtn), var_19_3 == LivingAreaCover.TYPE_DAY)
+	setActive(arg_19_0:findTF("night", arg_19_0._islandBtn), var_19_3 ~= LivingAreaCover.TYPE_DAY)
 
-	local var_18_4 = var_18_0:CurrentSTimeDesc("%Y/%m/%d", true)
+	local var_19_4 = var_19_0:CurrentSTimeDesc("%Y/%m/%d", true)
 
-	setText(arg_18_0:findTF("date", arg_18_0._bg), var_18_4)
+	setText(arg_19_0:findTF("date", arg_19_0._bg), var_19_4)
 
-	local var_18_5 = var_18_0:CurrentSTimeDesc(":%M", true)
+	local var_19_5 = var_19_0:CurrentSTimeDesc(":%M", true)
 
-	if var_18_1 > 12 then
-		var_18_1 = var_18_1 - 12
+	if var_19_1 > 12 then
+		var_19_1 = var_19_1 - 12
 	end
 
-	setText(arg_18_0:findTF("time", arg_18_0._bg), var_18_1 .. var_18_5)
+	setText(arg_19_0:findTF("time", arg_19_0._bg), var_19_1 .. var_19_5)
 
-	local var_18_6 = EducateHelper.GetWeekStrByNumber(var_18_0:GetServerWeek())
+	local var_19_6 = EducateHelper.GetWeekStrByNumber(var_19_0:GetServerWeek())
 
-	setText(arg_18_0:findTF("date/week", arg_18_0._bg), var_18_6)
+	setText(arg_19_0:findTF("date/week", arg_19_0._bg), var_19_6)
 end
 
-function var_0_0.getCoverType(arg_19_0, arg_19_1)
-	for iter_19_0, iter_19_1 in ipairs(arg_19_0.timeCfg) do
-		local var_19_0 = iter_19_1[1]
+function var_0_0.getCoverType(arg_20_0, arg_20_1)
+	for iter_20_0, iter_20_1 in ipairs(arg_20_0.timeCfg) do
+		local var_20_0 = iter_20_1[1]
 
-		if arg_19_1 >= var_19_0[1] and arg_19_1 < var_19_0[2] then
-			return iter_19_1[2]
+		if arg_20_1 >= var_20_0[1] and arg_20_1 < var_20_0[2] then
+			return iter_20_1[2]
 		end
 	end
 
 	return LivingAreaCover.TYPE_DAY
 end
 
-function var_0_0.UpdateCover(arg_20_0)
-	local var_20_0 = getProxy(LivingAreaCoverProxy):GetCurCover()
+function var_0_0.UpdateCover(arg_21_0)
+	local var_21_0 = getProxy(LivingAreaCoverProxy):GetCurCover()
 
-	if arg_20_0.cover and arg_20_0.cover.id == var_20_0.id then
+	if arg_21_0.cover and arg_21_0.cover.id == var_21_0.id then
 		return
 	end
 
-	arg_20_0.cover = var_20_0
-
-	arg_20_0:_loadBg()
-end
-
-function var_0_0.UpdateCoverTemp(arg_21_0, arg_21_1)
-	if arg_21_0.cover and arg_21_0.cover.id == arg_21_1.id then
-		return
-	end
-
-	arg_21_0.cover = arg_21_1
+	arg_21_0.cover = var_21_0
 
 	arg_21_0:_loadBg()
 end
 
-function var_0_0._loadBg(arg_22_0)
-	setImageSprite(arg_22_0:findTF("day", arg_22_0._bg), GetSpriteFromAtlas(arg_22_0.cover:GetBg(LivingAreaCover.TYPE_DAY), ""), true)
-	setImageSprite(arg_22_0:findTF("night", arg_22_0._bg), GetSpriteFromAtlas(arg_22_0.cover:GetBg(LivingAreaCover.TYPE_NIGHT), ""), true)
+function var_0_0.UpdateCoverTemp(arg_22_0, arg_22_1)
+	if arg_22_0.cover and arg_22_0.cover.id == arg_22_1.id then
+		return
+	end
+
+	arg_22_0.cover = arg_22_1
+
+	arg_22_0:_loadBg()
 end
 
-function var_0_0.UpdateCoverTip(arg_23_0)
-	setActive(arg_23_0:findTF("tip", arg_23_0._coverBtn), getProxy(LivingAreaCoverProxy):IsTip())
+function var_0_0._loadBg(arg_23_0)
+	setImageSprite(arg_23_0:findTF("day", arg_23_0._bg), GetSpriteFromAtlas(arg_23_0.cover:GetBg(LivingAreaCover.TYPE_DAY), ""), true)
+	setImageSprite(arg_23_0:findTF("night", arg_23_0._bg), GetSpriteFromAtlas(arg_23_0.cover:GetBg(LivingAreaCover.TYPE_NIGHT), ""), true)
 end
 
-function var_0_0.Hide(arg_24_0)
-	if arg_24_0.coverPage and arg_24_0.coverPage:GetLoaded() and arg_24_0.coverPage:isShowing() then
-		arg_24_0.coverPage:Hide()
+function var_0_0.UpdateCoverTip(arg_24_0)
+	setActive(arg_24_0:findTF("tip", arg_24_0._coverBtn), getProxy(LivingAreaCoverProxy):IsTip())
+end
+
+function var_0_0.Hide(arg_25_0)
+	if arg_25_0.coverPage and arg_25_0.coverPage:GetLoaded() and arg_25_0.coverPage:isShowing() then
+		arg_25_0.coverPage:Hide()
 
 		return
 	end
 
-	if arg_24_0:isShowing() then
-		var_0_0.super.Hide(arg_24_0)
-		pg.UIMgr.GetInstance():UnblurPanel(arg_24_0._tf, arg_24_0._parentTf)
+	if arg_25_0:isShowing() then
+		var_0_0.super.Hide(arg_25_0)
+		pg.UIMgr.GetInstance():UnblurPanel(arg_25_0._tf, arg_25_0._parentTf)
 	end
 
-	if arg_24_0.timer ~= nil then
-		arg_24_0.timer:Stop()
+	if arg_25_0.timer ~= nil then
+		arg_25_0.timer:Stop()
 
-		arg_24_0.timer = nil
+		arg_25_0.timer = nil
 	end
 end
 
-function var_0_0.OnDestroy(arg_25_0)
-	arg_25_0.coverPage:Destroy()
+function var_0_0.OnDestroy(arg_26_0)
+	arg_26_0.coverPage:Destroy()
 
-	arg_25_0.coverPage = nil
-	arg_25_0.cover = nil
+	arg_26_0.coverPage = nil
+	arg_26_0.cover = nil
 
-	arg_25_0:Hide()
+	arg_26_0:Hide()
 end
 
 return var_0_0

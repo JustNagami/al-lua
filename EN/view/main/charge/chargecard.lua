@@ -5,6 +5,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.tr = tf(arg_1_1)
 	arg_1_0.icon = arg_1_0.tr:Find("real_tpl/item_icon")
 	arg_1_0.iconTF = arg_1_0.icon:GetComponent(typeof(Image))
+	arg_1_0.shipIcon = arg_1_0.tr:Find("real_tpl/item_icon/ship")
 	arg_1_0.tipTF = arg_1_0.tr:Find("real_tpl/tip")
 	arg_1_0.tipText = arg_1_0.tipTF:GetComponent(typeof(Text))
 	arg_1_0.count = arg_1_0.tr:Find("real_tpl/count")
@@ -50,6 +51,10 @@ end
 
 function var_0_0.update(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 	arg_2_0.goods = arg_2_1
+
+	if not IsNil(arg_2_0.shipIcon) then
+		setActive(arg_2_0.shipIcon, false)
+	end
 
 	local var_2_0 = arg_2_1:isChargeType() and arg_2_1:getShowType() ~= ""
 
@@ -244,234 +249,288 @@ function var_0_0.updateCharge(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
 	setButtonEnabled(arg_3_0.tr, not isActive(arg_3_0.mask))
 end
 
-function var_0_0.updateGemItem(arg_6_0, arg_6_1, arg_6_2)
-	setActive(arg_6_0.mask, false)
-	setActive(arg_6_0.maskState, false)
-	setText(arg_6_0.limitText, "")
-
-	arg_6_0.tipText.text = ""
-
-	local var_6_0 = arg_6_1:getLimitCount()
-	local var_6_1 = arg_6_1.buyCount or 0
-
-	if var_6_0 > 0 then
-		setText(arg_6_0.limitText, i18n("charge_limit_all", var_6_0 - var_6_1, var_6_0))
-		setActive(arg_6_0.mask, var_6_0 <= var_6_1)
+function var_0_0.UpdateShipIcon(arg_6_0, arg_6_1)
+	if IsNil(arg_6_0.shipIcon) then
+		return
 	end
 
-	local var_6_2 = arg_6_1:getConfig("group_limit")
+	setActive(arg_6_0.shipIcon, true)
 
-	if var_6_2 > 0 then
-		local var_6_3 = arg_6_1:getConfig("group_type") or 0
+	local var_6_0 = arg_6_0.shipIcon:Find("icon"):GetComponent(typeof(Image))
+	local var_6_1 = arg_6_1:getConfigTable().usage_arg[1][1]
 
-		if var_6_3 == 1 then
-			setText(arg_6_0.limitText, i18n("charge_limit_daily", var_6_2 - arg_6_1.groupCount, var_6_2))
-		elseif var_6_3 == 2 then
-			setText(arg_6_0.limitText, i18n("charge_limit_weekly", var_6_2 - arg_6_1.groupCount, var_6_2))
-		elseif var_6_3 == 3 then
-			setText(arg_6_0.limitText, i18n("charge_limit_monthly", var_6_2 - arg_6_1.groupCount, var_6_2))
+	assert(var_6_1)
+
+	local var_6_2 = pg.shop_template[var_6_1].effect_args[1]
+
+	assert(var_6_2)
+
+	local var_6_3 = pg.ship_skin_template[var_6_2]
+
+	LoadSpriteAsync("qicon/" .. var_6_3.prefab, function(arg_7_0)
+		if arg_7_0 and not IsNil(arg_6_0.shipIcon) then
+			var_6_0.sprite = arg_7_0
+		end
+	end)
+end
+
+function var_0_0.updateGemItem(arg_8_0, arg_8_1, arg_8_2)
+	setActive(arg_8_0.mask, false)
+	setActive(arg_8_0.maskState, false)
+	setText(arg_8_0.limitText, "")
+
+	arg_8_0.tipText.text = ""
+
+	local var_8_0 = arg_8_1:getLimitCount()
+	local var_8_1 = arg_8_1.buyCount or 0
+
+	if var_8_0 > 0 then
+		setText(arg_8_0.limitText, i18n("charge_limit_all", var_8_0 - var_8_1, var_8_0))
+		setActive(arg_8_0.mask, var_8_0 <= var_8_1)
+	end
+
+	local var_8_2 = arg_8_1:getConfig("group_limit")
+
+	if var_8_2 > 0 then
+		local var_8_3 = arg_8_1:getConfig("group_type") or 0
+
+		if var_8_3 == 1 then
+			setText(arg_8_0.limitText, i18n("charge_limit_daily", var_8_2 - arg_8_1.groupCount, var_8_2))
+		elseif var_8_3 == 2 then
+			setText(arg_8_0.limitText, i18n("charge_limit_weekly", var_8_2 - arg_8_1.groupCount, var_8_2))
+		elseif var_8_3 == 3 then
+			setText(arg_8_0.limitText, i18n("charge_limit_monthly", var_8_2 - arg_8_1.groupCount, var_8_2))
 		end
 	end
 
-	arg_6_0.price.text = arg_6_1:getConfig("resource_num")
-	arg_6_0.tipText.text = ""
+	arg_8_0.price.text = arg_8_1:getConfig("resource_num")
+	arg_8_0.tipText.text = ""
 
-	setActive(arg_6_0.count, false)
-	setActive(arg_6_0.icon, true)
-	setText(arg_6_0.desc, "")
+	setActive(arg_8_0.count, false)
+	setActive(arg_8_0.icon, true)
+	setText(arg_8_0.desc, "")
 
-	local var_6_4 = arg_6_1:getConfig("tag")
+	local var_8_4 = arg_8_1:getConfig("tag")
 
-	setActive(arg_6_0.tag, var_6_4 > 0)
+	setActive(arg_8_0.tag, var_8_4 > 0)
 
-	if var_6_4 > 0 then
-		for iter_6_0, iter_6_1 in ipairs(arg_6_0.tags) do
-			setActive(iter_6_1, iter_6_0 == var_6_4)
+	if var_8_4 > 0 then
+		for iter_8_0, iter_8_1 in ipairs(arg_8_0.tags) do
+			setActive(iter_8_1, iter_8_0 == var_8_4)
 		end
 	end
 
-	setActive(arg_6_0.timeLeftTag, false)
+	setActive(arg_8_0.timeLeftTag, false)
 
-	local var_6_5, var_6_6 = arg_6_1:inTime()
+	local var_8_5, var_8_6 = arg_8_1:inTime()
 
-	if var_6_5 and not arg_6_1:isFree() and var_6_6 and var_6_6 > 0 then
-		local var_6_7, var_6_8, var_6_9 = pg.TimeMgr.GetInstance():parseTimeFrom(var_6_6)
+	if var_8_5 and not arg_8_1:isFree() and var_8_6 and var_8_6 > 0 then
+		local var_8_7, var_8_8, var_8_9 = pg.TimeMgr.GetInstance():parseTimeFrom(var_8_6)
 
-		if var_6_7 > 0 then
-			setActive(arg_6_0.timeLeftTag, true)
-			setActive(arg_6_0.dayLeftTag, true)
-			setActive(arg_6_0.hourLeftTag, false)
-			setActive(arg_6_0.minLeftTag, false)
-			setText(arg_6_0.numLeftText, var_6_7)
-		elseif var_6_8 > 0 then
-			setActive(arg_6_0.timeLeftTag, true)
-			setActive(arg_6_0.dayLeftTag, false)
-			setActive(arg_6_0.hourLeftTag, true)
-			setActive(arg_6_0.minLeftTag, false)
-			setText(arg_6_0.numLeftText, var_6_8)
-		elseif var_6_9 > 0 then
-			setActive(arg_6_0.timeLeftTag, true)
-			setActive(arg_6_0.dayLeftTag, false)
-			setActive(arg_6_0.hourLeftTag, false)
-			setActive(arg_6_0.minLeftTag, true)
-			setText(arg_6_0.numLeftText, var_6_9)
+		if var_8_7 > 0 then
+			setActive(arg_8_0.timeLeftTag, true)
+			setActive(arg_8_0.dayLeftTag, true)
+			setActive(arg_8_0.hourLeftTag, false)
+			setActive(arg_8_0.minLeftTag, false)
+			setText(arg_8_0.numLeftText, var_8_7)
+		elseif var_8_8 > 0 then
+			setActive(arg_8_0.timeLeftTag, true)
+			setActive(arg_8_0.dayLeftTag, false)
+			setActive(arg_8_0.hourLeftTag, true)
+			setActive(arg_8_0.minLeftTag, false)
+			setText(arg_8_0.numLeftText, var_8_8)
+		elseif var_8_9 > 0 then
+			setActive(arg_8_0.timeLeftTag, true)
+			setActive(arg_8_0.dayLeftTag, false)
+			setActive(arg_8_0.hourLeftTag, false)
+			setActive(arg_8_0.minLeftTag, true)
+			setText(arg_8_0.numLeftText, var_8_9)
 		else
-			setActive(arg_6_0.timeLeftTag, true)
-			setActive(arg_6_0.dayLeftTag, false)
-			setActive(arg_6_0.hourLeftTag, false)
-			setActive(arg_6_0.minLeftTag, true)
-			setText(arg_6_0.numLeftText, 0)
+			setActive(arg_8_0.timeLeftTag, true)
+			setActive(arg_8_0.dayLeftTag, false)
+			setActive(arg_8_0.hourLeftTag, false)
+			setActive(arg_8_0.minLeftTag, true)
+			setText(arg_8_0.numLeftText, 0)
 		end
 
-		local var_6_10 = 60
-		local var_6_11 = 3600
-		local var_6_12 = 86400
-		local var_6_13
+		local var_8_10 = 60
+		local var_8_11 = 3600
+		local var_8_12 = 86400
+		local var_8_13
 
-		if var_6_12 <= var_6_6 then
-			var_6_13 = var_6_6 % var_6_12
-		elseif var_6_11 <= var_6_6 then
-			var_6_13 = var_6_6 % var_6_11
-		elseif var_6_10 <= var_6_6 then
-			var_6_13 = var_6_6 % var_6_10
+		if var_8_12 <= var_8_6 then
+			var_8_13 = var_8_6 % var_8_12
+		elseif var_8_11 <= var_8_6 then
+			var_8_13 = var_8_6 % var_8_11
+		elseif var_8_10 <= var_8_6 then
+			var_8_13 = var_8_6 % var_8_10
 		end
 
-		if var_6_13 and var_6_13 > 0 then
-			if arg_6_0.countDownTimer then
-				arg_6_0.countDownTimer:Stop()
+		if var_8_13 and var_8_13 > 0 then
+			if arg_8_0.countDownTimer then
+				arg_8_0.countDownTimer:Stop()
 
-				arg_6_0.countDownTimer = nil
+				arg_8_0.countDownTimer = nil
 			end
 
-			arg_6_0.countDownTimer = Timer.New(function()
-				arg_6_0:updateGemItem(arg_6_1, arg_6_2)
-			end, var_6_13, 1)
+			arg_8_0.countDownTimer = Timer.New(function()
+				arg_8_0:updateGemItem(arg_8_1, arg_8_2)
+			end, var_8_13, 1)
 
-			arg_6_0.countDownTimer:Start()
+			arg_8_0.countDownTimer:Start()
 		end
 	end
 
-	setActive(arg_6_0.name, true)
+	setActive(arg_8_0.name, true)
 
-	local var_6_14 = arg_6_1:getConfig("effect_args")
+	local var_8_14 = arg_8_1:getConfig("effect_args")
 
-	if #var_6_14 > 0 then
-		local var_6_15 = Item.getConfigData(var_6_14[1])
+	if #var_8_14 > 0 then
+		local var_8_15 = Item.getConfigData(var_8_14[1])
 
-		if var_6_15 then
-			setScrollText(arg_6_0.name, var_6_15.name)
-			arg_6_0:updateImport(var_6_15.display_icon, var_6_15.display)
+		if var_8_15 then
+			setScrollText(arg_8_0.name, var_8_15.name)
+			arg_8_0:updateImport(var_8_15.display_icon, var_8_15.display)
+
+			local var_8_16 = arg_8_0:CheckSkinDiscounItem(var_8_15.display_icon)
+
+			if var_8_16 then
+				arg_8_0:UpdateShipIcon(var_8_16)
+			end
 		end
 
-		arg_6_0.iconTF.sprite = GetSpriteFromAtlas("chargeicon/1", "")
+		arg_8_0.iconTF.sprite = GetSpriteFromAtlas("chargeicon/1", "")
 
-		LoadSpriteAsync(var_6_15.icon, function(arg_8_0)
-			if arg_8_0 and not IsNil(arg_6_0.iconTF) then
-				arg_6_0.iconTF.sprite = arg_8_0
+		LoadSpriteAsync(var_8_15.icon, function(arg_10_0)
+			if arg_10_0 and not IsNil(arg_8_0.iconTF) then
+				arg_8_0.iconTF.sprite = arg_10_0
 
-				arg_6_0.iconTF:SetNativeSize()
+				arg_8_0.iconTF:SetNativeSize()
 			end
 		end)
 	end
 
-	setButtonEnabled(arg_6_0.tr, not isActive(arg_6_0.mask))
+	setButtonEnabled(arg_8_0.tr, not isActive(arg_8_0.mask))
 end
 
-function var_0_0.updateImport(arg_9_0, arg_9_1, arg_9_2)
-	setActive(arg_9_0.important, true)
+function var_0_0.CheckSkinDiscounItem(arg_11_0, arg_11_1)
+	for iter_11_0, iter_11_1 in pairs(arg_11_1) do
+		local var_11_0 = Drop.Create(iter_11_1)
+		local var_11_1 = var_11_0:getConfigTable()
 
-	local var_9_0 = {}
-
-	for iter_9_0, iter_9_1 in ipairs(arg_9_1) do
-		table.insert(var_9_0, Drop.Create(iter_9_1))
-	end
-
-	for iter_9_2 = 1, arg_9_0.grid.childCount do
-		local var_9_1 = arg_9_0.grid:GetChild(iter_9_2 - 1)
-
-		if iter_9_2 <= #var_9_0 then
-			setActive(var_9_1, true)
-			updateDrop(var_9_1, var_9_0[iter_9_2])
-		else
-			setActive(var_9_1, false)
+		if var_11_1.usage and var_11_1.usage == ItemUsage.USAGE_SHOP_DISCOUNT then
+			return var_11_0
 		end
 	end
 
-	setText(arg_9_0.importantTip, string.gsub(arg_9_2, "$1", #var_9_0))
+	return nil
 end
 
-function var_0_0.updateCountdown(arg_10_0, arg_10_1)
-	local var_10_0 = false
+local function var_0_1(arg_12_0)
+	local var_12_0 = arg_12_0:getConfigTable()
 
-	if arg_10_1 then
-		local var_10_1 = pg.TimeMgr.GetInstance()
-
-		var_10_0 = var_10_1:DiffDay(var_10_1:GetServerTime(), pg.TimeMgr.GetInstance():Table2ServerTime(arg_10_1)) < 365
+	if var_12_0.usage and var_12_0.usage == ItemUsage.USAGE_SKIN_EXP then
+		return false
 	end
 
-	setActive(arg_10_0.countDown, var_10_0)
+	return true
+end
 
-	local var_10_2 = pg.TimeMgr.GetInstance()
+function var_0_0.updateImport(arg_13_0, arg_13_1, arg_13_2)
+	setActive(arg_13_0.important, true)
 
-	local function var_10_3()
-		if arg_10_0.updateTimer then
-			arg_10_0.updateTimer:Stop()
+	local var_13_0 = {}
 
-			arg_10_0.updateTimer = nil
-		end
+	for iter_13_0, iter_13_1 in ipairs(arg_13_1) do
+		table.insert(var_13_0, Drop.Create(iter_13_1))
 	end
 
-	var_10_3()
+	for iter_13_2 = 1, arg_13_0.grid.childCount do
+		local var_13_1 = arg_13_0.grid:GetChild(iter_13_2 - 1)
 
-	local var_10_4 = var_10_2:Table2ServerTime(arg_10_1)
-
-	arg_10_0.updateTimer = Timer.New(function()
-		local var_12_0 = var_10_2:GetServerTime()
-
-		if var_12_0 > var_10_4 then
-			var_10_3()
-		end
-
-		local var_12_1 = var_10_4 - var_12_0
-
-		var_12_1 = var_12_1 < 0 and 0 or var_12_1
-
-		local var_12_2 = math.floor(var_12_1 / 86400)
-
-		if var_12_2 > 0 then
-			setText(arg_10_0.countDownTm, i18n("skin_remain_time") .. var_12_2 .. i18n("word_date"))
+		if iter_13_2 <= #var_13_0 then
+			setActive(var_13_1, var_0_1(var_13_0[iter_13_2]))
+			updateDrop(var_13_1, var_13_0[iter_13_2])
 		else
-			local var_12_3 = math.floor(var_12_1 / 3600)
+			setActive(var_13_1, false)
+		end
+	end
 
-			if var_12_3 > 0 then
-				setText(arg_10_0.countDownTm, i18n("skin_remain_time") .. var_12_3 .. i18n("word_hour"))
+	setText(arg_13_0.importantTip, string.gsub(arg_13_2, "$1", #var_13_0))
+end
+
+function var_0_0.updateCountdown(arg_14_0, arg_14_1)
+	local var_14_0 = false
+
+	if arg_14_1 then
+		local var_14_1 = pg.TimeMgr.GetInstance()
+
+		var_14_0 = var_14_1:DiffDay(var_14_1:GetServerTime(), pg.TimeMgr.GetInstance():Table2ServerTime(arg_14_1)) < 365
+	end
+
+	setActive(arg_14_0.countDown, var_14_0)
+
+	local var_14_2 = pg.TimeMgr.GetInstance()
+
+	local function var_14_3()
+		if arg_14_0.updateTimer then
+			arg_14_0.updateTimer:Stop()
+
+			arg_14_0.updateTimer = nil
+		end
+	end
+
+	var_14_3()
+
+	local var_14_4 = var_14_2:Table2ServerTime(arg_14_1)
+
+	arg_14_0.updateTimer = Timer.New(function()
+		local var_16_0 = var_14_2:GetServerTime()
+
+		if var_16_0 > var_14_4 then
+			var_14_3()
+		end
+
+		local var_16_1 = var_14_4 - var_16_0
+
+		var_16_1 = var_16_1 < 0 and 0 or var_16_1
+
+		local var_16_2 = math.floor(var_16_1 / 86400)
+
+		if var_16_2 > 0 then
+			setText(arg_14_0.countDownTm, i18n("skin_remain_time") .. var_16_2 .. i18n("word_date"))
+		else
+			local var_16_3 = math.floor(var_16_1 / 3600)
+
+			if var_16_3 > 0 then
+				setText(arg_14_0.countDownTm, i18n("skin_remain_time") .. var_16_3 .. i18n("word_hour"))
 			else
-				local var_12_4 = math.floor(var_12_1 / 60)
+				local var_16_4 = math.floor(var_16_1 / 60)
 
-				if var_12_4 > 0 then
-					setText(arg_10_0.countDownTm, i18n("skin_remain_time") .. var_12_4 .. i18n("word_minute"))
+				if var_16_4 > 0 then
+					setText(arg_14_0.countDownTm, i18n("skin_remain_time") .. var_16_4 .. i18n("word_minute"))
 				else
-					setText(arg_10_0.countDownTm, i18n("skin_remain_time") .. var_12_1 .. i18n("word_second"))
+					setText(arg_14_0.countDownTm, i18n("skin_remain_time") .. var_16_1 .. i18n("word_second"))
 				end
 			end
 		end
 	end, 1, -1)
 
-	arg_10_0.updateTimer:Start()
-	arg_10_0.updateTimer.func()
+	arg_14_0.updateTimer:Start()
+	arg_14_0.updateTimer.func()
 end
 
-function var_0_0.destoryTimer(arg_13_0)
-	if arg_13_0.updateTimer then
-		arg_13_0.updateTimer:Stop()
+function var_0_0.destoryTimer(arg_17_0)
+	if arg_17_0.updateTimer then
+		arg_17_0.updateTimer:Stop()
 
-		arg_13_0.updateTimer = nil
+		arg_17_0.updateTimer = nil
 	end
 
-	if arg_13_0.countDownTimer then
-		arg_13_0.countDownTimer:Stop()
+	if arg_17_0.countDownTimer then
+		arg_17_0.countDownTimer:Stop()
 
-		arg_13_0.countDownTimer = nil
+		arg_17_0.countDownTimer = nil
 	end
 end
 

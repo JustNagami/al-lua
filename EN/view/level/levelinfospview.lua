@@ -64,7 +64,7 @@ function var_0_0.set(arg_4_0, arg_4_1, arg_4_2)
 			if var_4_9 then
 				local var_4_10 = getProxy(ChapterProxy):getMapById(var_4_8:getConfig("map")):getConfig("type") == Map.ACTIVITY_HARD and "bonus_us_hard" or "bonus_us"
 
-				arg_4_0.loader:GetSprite("ui/levelmainscene_atlas", var_4_10, var_4_7)
+				arg_4_0.loader:GetSprite("ui/levelmainscene_atlas", var_4_10, var_4_7:Find("Image"))
 			end
 		end
 	end

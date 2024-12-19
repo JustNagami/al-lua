@@ -83,6 +83,13 @@ pg.benefit_buff_template = setmetatable({
 		79,
 		80,
 		81,
+		82,
+		83,
+		84,
+		85,
+		86,
+		87,
+		88,
 		101,
 		102,
 		103,
@@ -1526,6 +1533,125 @@ pg.base.benefit_buff_template = {
 		id = 81,
 		icon = "Props/60458",
 		benefit_type = "dorm_energy"
+	},
+	{
+		type_priority = 0,
+		name = "{namecode:437}的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "Graf Zeppelin's Blessings: Your ships take 3.0% less DMG from enemies in Story, Hard, Event, and War Archives battles.\nBuff duration: $1",
+		benefit_effect = "520",
+		id = 82,
+		icon = "Props/jianchuanqiyuan",
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			5720,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "贝尔法斯特的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "Belfast's Blessings: Your ships earn 3.0% more EXP from Story, Hard, Event, and War Archives battles.\nBuff duration: $1",
+		benefit_effect = "3",
+		id = 83,
+		icon = "Props/jianchuanqiyuan",
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			5720,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "南达科他的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "South Dakota's Blessings: Your ships gain 3.0% more EXP in the Dorm.\nBuff duration: $1",
+		benefit_effect = "3",
+		id = 84,
+		icon = "Props/jianchuanqiyuan",
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			5720,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "Formidable's Blessings",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "Formidable's Blessings: Your ships gain 3.0% more EXP in the Dorm.\nBuff duration: $1",
+		benefit_effect = "3",
+		id = 85,
+		icon = "Props/jianchuanqiyuan",
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			5720,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "{namecode:50}的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "Noshiro's Blessings: Your ships take 3.0% less DMG from enemies in Story, Hard, Event, and War Archives battles.\nBuff duration: $1",
+		benefit_effect = "520",
+		id = 86,
+		icon = "Props/jianchuanqiyuan",
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			5720,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "{namecode:435}的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "Bismarck's Blessings: Your ships take 3.0% less DMG from enemies in Story, Hard, Event, and War Archives battles.\nBuff duration: $1",
+		benefit_effect = "520",
+		id = 87,
+		icon = "Props/jianchuanqiyuan",
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			5720,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "Richelieu's Blessings",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "Richelieu's Blessings: Your ships earn 3.0% more EXP from Story, Hard, Event, and War Archives battles.\nBuff duration: $1",
+		benefit_effect = "3",
+		id = 88,
+		icon = "Props/jianchuanqiyuan",
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			5720,
+			0
+		}
 	},
 	[101] = {
 		type_priority = 1,

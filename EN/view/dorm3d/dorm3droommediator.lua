@@ -190,6 +190,8 @@ function var_0_0.register(arg_1_0)
 	else
 		PlayerPrefs.SetString(string.format("room%d_invite_list", arg_1_0.contextData.roomId), table.concat(arg_1_0.contextData.groupIds, "|"))
 	end
+
+	Dorm3dFurniture.RecordLastTimelimitShopFurniture()
 end
 
 function var_0_0.initNotificationHandleDic(arg_32_0)

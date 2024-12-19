@@ -1,5 +1,4 @@
 ﻿local var_0_0 = class("MainActBoatAdBtn", import(".MainBaseActivityBtn"))
-local var_0_1 = 58
 
 function var_0_0.GetEventName(arg_1_0)
 	return "event_boat_ad_game"
@@ -16,9 +15,10 @@ function var_0_0.GetActivityID(arg_3_0)
 end
 
 function var_0_0.IsShowTip(arg_4_0)
-	local var_4_0 = getProxy(MiniGameProxy):GetHubByHubId(var_0_1)
+	local var_4_0 = pg.mini_game[arg_4_0.config.param[1]].hub_id
+	local var_4_1 = getProxy(MiniGameProxy):GetHubByHubId(var_4_0)
 
-	if var_4_0 and var_4_0.count > 0 then
+	if var_4_1 and var_4_1.count > 0 then
 		return true
 	end
 

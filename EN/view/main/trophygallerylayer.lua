@@ -2,9 +2,10 @@
 
 var_0_0.Filter = {
 	"all",
-	"claimed",
-	"unclaim"
+	"claimed"
 }
+var_0_0.PAGE_COMMON = 1
+var_0_0.PAGE_LIMITED = 2
 
 function var_0_0.getUIName(arg_1_0)
 	return "TrophyGalleryUI"
@@ -34,6 +35,14 @@ function var_0_0.init(arg_4_0)
 	arg_4_0._filterBtn = arg_4_0:findTF("filter/toggle", arg_4_0._topPanel)
 	arg_4_0._trophyCounter = arg_4_0:findTF("filter/counter/Text", arg_4_0._topPanel)
 	arg_4_0._reminderRes = arg_4_0:findTF("bg/resource")
+	arg_4_0._pageToggle = {
+		arg_4_0:findTF("blur_panel/adapt/left_length/frame/root/common_toggle"),
+		arg_4_0:findTF("blur_panel/adapt/left_length/frame/root/limited_toggle")
+	}
+	arg_4_0._hideExpireBtn = arg_4_0:findTF("blur_panel/adapt/top/expireCheckBox")
+	arg_4_0._hideExpireCheck = arg_4_0._hideExpireBtn:Find("check")
+	arg_4_0._pageIndex = 1
+	arg_4_0._hideExpire = false
 	arg_4_0._trophyTFList = {}
 end
 
@@ -53,135 +62,170 @@ function var_0_0.didEnter(arg_5_0)
 			helps = pg.gametip.medal_help_tip.tip
 		})
 	end, SFX_PANEL)
+	onButton(arg_5_0, arg_5_0._hideExpireBtn, function()
+		arg_5_0._hideExpire = not arg_5_0._hideExpire
+
+		setActive(arg_5_0._hideExpireCheck, not arg_5_0._hideExpire)
+		arg_5_0:updateTrophyList()
+	end, SFX_PANEL)
+	triggerButton(arg_5_0._hideExpireBtn)
+
+	for iter_5_0 = 1, 2 do
+		local var_5_0 = arg_5_0._pageToggle[iter_5_0]
+
+		onButton(arg_5_0, var_5_0, function()
+			arg_5_0:updatePage(iter_5_0)
+		end, SFX_PANEL)
+	end
 
 	arg_5_0._filterIndex = 0
 
 	triggerButton(arg_5_0._filterBtn)
+	triggerButton(arg_5_0._pageToggle[arg_5_0._pageIndex])
 	arg_5_0:updateTrophyCounter()
 end
 
-function var_0_0.updateTrophyList(arg_9_0)
-	arg_9_0._trophyTFList = {}
+function var_0_0.updatePage(arg_11_0, arg_11_1)
+	for iter_11_0 = 1, #arg_11_0._pageToggle do
+		local var_11_0 = arg_11_0._pageToggle[iter_11_0]
 
-	removeAllChildren(arg_9_0._trophyContainer)
+		setActive(var_11_0:Find("selected"), iter_11_0 == arg_11_1)
+		setActive(var_11_0:Find("Image"), iter_11_0 ~= arg_11_1)
+	end
 
-	local var_9_0 = var_0_0.Filter[arg_9_0._filterIndex]
-	local var_9_1 = 0
+	arg_11_0._pageIndex = arg_11_1
 
-	for iter_9_0, iter_9_1 in pairs(arg_9_0.trophyGroups) do
-		local var_9_2
+	arg_11_0:updateTrophyList()
+	setActive(arg_11_0._hideExpireBtn, arg_11_1 == var_0_0.PAGE_LIMITED)
+end
 
-		if var_9_0 == "all" then
-			var_9_2 = true
-		elseif var_9_0 == "claimed" then
-			var_9_2 = iter_9_1:getMaxClaimedTrophy() ~= nil
-		elseif var_9_0 == "unclaim" then
-			var_9_2 = not iter_9_1:getProgressTrophy():isClaimed()
-		end
+function var_0_0.updateTrophyList(arg_12_0)
+	arg_12_0._trophyTFList = {}
 
-		if var_9_2 then
-			local var_9_3
+	removeAllChildren(arg_12_0._trophyContainer)
 
-			if math.fmod(var_9_1, 2) == 0 then
-				var_9_3 = arg_9_0._trophyUpperTpl
-			else
-				var_9_3 = arg_9_0._trophyLowerTpl
+	local var_12_0 = var_0_0.Filter[arg_12_0._filterIndex]
+	local var_12_1 = arg_12_0._pageIndex
+	local var_12_2 = 0
+
+	for iter_12_0, iter_12_1 in pairs(arg_12_0.trophyGroups) do
+		if iter_12_1:GetTrophyPage() == var_12_1 then
+			local var_12_3
+
+			if var_12_0 == "all" then
+				var_12_3 = true
+			elseif var_12_0 == "claimed" then
+				var_12_3 = iter_12_1:getMaxClaimedTrophy() ~= nil
 			end
 
-			local var_9_4 = cloneTplTo(var_9_3, arg_9_0._trophyContainer)
-			local var_9_5 = TrophyView.New(var_9_4)
-
-			if var_9_0 == "all" then
-				var_9_5:UpdateTrophyGroup(iter_9_1)
-			elseif var_9_0 == "claimed" then
-				var_9_5:ClaimForm(iter_9_1)
-			elseif var_9_0 == "unclaim" then
-				var_9_5:ProgressingForm(iter_9_1)
+			if var_12_1 == var_0_0.PAGE_LIMITED and arg_12_0._hideExpire and iter_12_1:IsExpire() == 1 and not iter_12_1:getProgressTrophy():isClaimed() then
+				var_12_3 = false
 			end
 
-			local var_9_6 = var_9_5:GetTrophyClaimTipsID()
+			if var_12_3 then
+				local var_12_4
 
-			var_9_5:SetTrophyReminder(Instantiate(arg_9_0._reminderRes:Find(var_9_6)))
-
-			arg_9_0._trophyTFList[iter_9_0] = var_9_5
-			var_9_1 = var_9_1 + 1
-
-			onButton(arg_9_0, var_9_4.transform:Find("frame"), function()
-				local var_10_0 = arg_9_0.trophyGroups[iter_9_0]
-				local var_10_1 = var_10_0:getProgressTrophy()
-
-				if var_10_1:canClaimed() and not var_10_1:isClaimed() then
-					if not var_9_5:IsPlaying() then
-						arg_9_0:emit(TrophyGalleryMediator.ON_TROPHY_CLAIM, var_10_1.id)
-					end
-				elseif not var_9_5:IsPlaying() then
-					arg_9_0:openTrophyDetail(var_10_0, var_10_1)
+				if math.fmod(var_12_2, 2) == 0 then
+					var_12_4 = arg_12_0._trophyUpperTpl
+				else
+					var_12_4 = arg_12_0._trophyLowerTpl
 				end
-			end)
+
+				local var_12_5 = cloneTplTo(var_12_4, arg_12_0._trophyContainer)
+				local var_12_6 = TrophyView.New(var_12_5)
+
+				if var_12_0 == "all" then
+					var_12_6:UpdateTrophyGroup(iter_12_1)
+				elseif var_12_0 == "claimed" then
+					var_12_6:ClaimForm(iter_12_1)
+				elseif var_12_0 == "unclaim" then
+					var_12_6:ProgressingForm(iter_12_1)
+				end
+
+				local var_12_7 = var_12_6:GetTrophyClaimTipsID()
+
+				var_12_6:SetTrophyReminder(Instantiate(arg_12_0._reminderRes:Find(var_12_7)))
+
+				arg_12_0._trophyTFList[iter_12_0] = var_12_6
+				var_12_2 = var_12_2 + 1
+
+				onButton(arg_12_0, var_12_5.transform:Find("frame"), function()
+					local var_13_0 = arg_12_0.trophyGroups[iter_12_0]
+					local var_13_1 = var_13_0:getProgressTrophy()
+
+					if var_13_1:canClaimed() and not var_13_1:isClaimed() then
+						if not var_12_6:IsPlaying() then
+							arg_12_0:emit(TrophyGalleryMediator.ON_TROPHY_CLAIM, var_13_1.id)
+						end
+					elseif not var_12_6:IsPlaying() then
+						arg_12_0:openTrophyDetail(var_13_0, var_13_1)
+					end
+				end)
+			end
 		end
 	end
 end
 
-function var_0_0.PlayTrophyClaim(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_0.trophyGroups[arg_11_1]
-	local var_11_1 = arg_11_0._trophyTFList[arg_11_1]
-	local var_11_2 = Instantiate(arg_11_0._reminderRes:Find("claim_fx"))
+function var_0_0.PlayTrophyClaim(arg_14_0, arg_14_1)
+	local var_14_0 = arg_14_0.trophyGroups[arg_14_1]
+	local var_14_1 = arg_14_0._trophyTFList[arg_14_1]
+	local var_14_2 = Instantiate(arg_14_0._reminderRes:Find("claim_fx"))
 
-	var_11_1:PlayClaimAnima(var_11_0, var_11_2, function()
-		arg_11_0:updateTrophyByGroup(arg_11_1)
-		arg_11_0:updateTrophyCounter()
+	var_14_1:PlayClaimAnima(var_14_0, var_14_2, function()
+		arg_14_0:updateTrophyByGroup(arg_14_1)
+		arg_14_0:updateTrophyCounter()
 	end)
 end
 
-function var_0_0.updateTrophyByGroup(arg_13_0, arg_13_1)
-	local var_13_0 = arg_13_0.trophyGroups[arg_13_1]
+function var_0_0.updateTrophyByGroup(arg_16_0, arg_16_1)
+	local var_16_0 = arg_16_0.trophyGroups[arg_16_1]
 
-	arg_13_0._trophyTFList[arg_13_1]:UpdateTrophyGroup(var_13_0)
+	arg_16_0._trophyTFList[arg_16_1]:UpdateTrophyGroup(var_16_0)
 end
 
-function var_0_0.openTrophyDetail(arg_14_0, arg_14_1, arg_14_2)
-	arg_14_0._trophyDetailPanel:SetTrophyGroup(arg_14_1)
-	arg_14_0._trophyDetailPanel:UpdateTrophy(arg_14_2)
-	arg_14_0._trophyDetailPanel:SetActive(true)
+function var_0_0.openTrophyDetail(arg_17_0, arg_17_1, arg_17_2)
+	arg_17_0._trophyDetailPanel:SetTrophyGroup(arg_17_1)
+	arg_17_0._trophyDetailPanel:UpdateTrophy(arg_17_2)
+	arg_17_0._trophyDetailPanel:SetActive(true)
 end
 
-function var_0_0.updateTrophyCounter(arg_15_0)
-	local var_15_0 = 0
+function var_0_0.updateTrophyCounter(arg_18_0)
+	local var_18_0 = 0
 
-	for iter_15_0, iter_15_1 in pairs(arg_15_0.trophyList) do
-		if iter_15_1:isClaimed() and not iter_15_1:isHide() then
-			var_15_0 = var_15_0 + 1
+	for iter_18_0, iter_18_1 in pairs(arg_18_0.trophyList) do
+		if iter_18_1:isClaimed() and not iter_18_1:isHide() then
+			var_18_0 = var_18_0 + 1
 		end
 	end
 
-	setText(arg_15_0._trophyCounter, var_15_0)
+	setText(arg_18_0._trophyCounter, var_18_0)
 end
 
-function var_0_0.onFilter(arg_16_0)
-	arg_16_0._filterIndex = arg_16_0._filterIndex + 1
+function var_0_0.onFilter(arg_19_0)
+	arg_19_0._filterIndex = arg_19_0._filterIndex + 1
 
-	if arg_16_0._filterIndex > #var_0_0.Filter then
-		arg_16_0._filterIndex = 1
+	if arg_19_0._filterIndex > #var_0_0.Filter then
+		arg_19_0._filterIndex = 1
 	end
 
-	for iter_16_0 = 1, #var_0_0.Filter do
-		setActive(arg_16_0._filterBtn:GetChild(iter_16_0 - 1), iter_16_0 == arg_16_0._filterIndex)
+	for iter_19_0 = 1, #var_0_0.Filter do
+		setActive(arg_19_0._filterBtn:GetChild(iter_19_0 - 1), iter_19_0 == arg_19_0._filterIndex)
 	end
 
-	arg_16_0:updateTrophyList()
+	arg_19_0:updateTrophyList()
 end
 
-function var_0_0.onBackPressed(arg_17_0)
-	if arg_17_0._trophyDetailPanel:IsActive() then
-		arg_17_0._trophyDetailPanel:SetActive(false)
+function var_0_0.onBackPressed(arg_20_0)
+	if arg_20_0._trophyDetailPanel:IsActive() then
+		arg_20_0._trophyDetailPanel:SetActive(false)
 	else
-		var_0_0.super.onBackPressed(arg_17_0)
+		var_0_0.super.onBackPressed(arg_20_0)
 	end
 end
 
-function var_0_0.willExit(arg_18_0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_18_0._blurPanel, arg_18_0._tf)
-	arg_18_0._trophyDetailPanel:Dispose()
+function var_0_0.willExit(arg_21_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_21_0._blurPanel, arg_21_0._tf)
+	arg_21_0._trophyDetailPanel:Dispose()
 end
 
 return var_0_0
