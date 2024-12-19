@@ -264,8 +264,8 @@ function var_0_0.getIconTip(arg_39_0, arg_39_1)
 		return "main"
 	elseif getProxy(ApartmentProxy):getApartmentGiftCount(arg_39_0.configId) then
 		return "gift"
-	elseif false then
-		return "furnitrue"
+	elseif Dorm3dFurniture.IsTimelimitShopTip(arg_39_1) then
+		return "furniture"
 	elseif false then
 		return "talk"
 	else

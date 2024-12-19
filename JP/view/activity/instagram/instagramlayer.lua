@@ -157,7 +157,11 @@ function var_0_0.InitList(arg_13_0)
 			return arg_15_0.order > arg_15_1.order
 		end
 	end)
-	arg_13_0.list:SetTotalCount(#arg_13_0.display)
+
+	if isActive(arg_13_0.listTF) then
+		arg_13_0.list:SetTotalCount(#arg_13_0.display)
+	end
+
 	setActive(arg_13_0.noMsgTF, #arg_13_0.display == 0)
 	setActive(arg_13_0.scrollBarTF, not #arg_13_0.display == 0)
 end

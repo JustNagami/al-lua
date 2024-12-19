@@ -161,6 +161,7 @@ pg.furniture_data_template = setmetatable({
 			288,
 			289,
 			292,
+			293,
 			100002,
 			100003,
 			100004,
@@ -3263,6 +3264,25 @@ pg.furniture_data_template = setmetatable({
 			316307,
 			316308,
 			316309
+		},
+		[117] = {
+			317001,
+			317002,
+			317101,
+			317102,
+			317103,
+			317104,
+			317105,
+			317106,
+			317107,
+			317108,
+			317109,
+			317110,
+			317111,
+			317301,
+			317302,
+			317303,
+			317304
 		}
 	},
 	get_id_list_by_tag = {
@@ -3493,7 +3513,8 @@ pg.furniture_data_template = setmetatable({
 			284,
 			287,
 			289,
-			292
+			292,
+			293
 		},
 		[7] = {
 			223,
@@ -3688,7 +3709,8 @@ pg.furniture_data_template = setmetatable({
 			313113,
 			314113,
 			315113,
-			316123
+			316123,
+			317111
 		},
 		[4] = {
 			1001,
@@ -3791,7 +3813,8 @@ pg.furniture_data_template = setmetatable({
 			313001,
 			314001,
 			315001,
-			316001
+			316001,
+			317001
 		},
 		[3] = {
 			1002,
@@ -3895,7 +3918,8 @@ pg.furniture_data_template = setmetatable({
 			313002,
 			314002,
 			315002,
-			316002
+			316002,
+			317002
 		},
 		{
 			1101,
@@ -5826,7 +5850,17 @@ pg.furniture_data_template = setmetatable({
 			316119,
 			316120,
 			316121,
-			316122
+			316122,
+			317101,
+			317102,
+			317103,
+			317104,
+			317105,
+			317106,
+			317107,
+			317108,
+			317109,
+			317110
 		},
 		{
 			1108,
@@ -6336,7 +6370,11 @@ pg.furniture_data_template = setmetatable({
 			316306,
 			316307,
 			316308,
-			316309
+			316309,
+			317301,
+			317302,
+			317303,
+			317304
 		}
 	},
 	get_id_list_by_type = {
@@ -6477,6 +6515,7 @@ pg.furniture_data_template = setmetatable({
 			288,
 			289,
 			292,
+			293,
 			100002,
 			100004,
 			100005,
@@ -8452,7 +8491,17 @@ pg.furniture_data_template = setmetatable({
 			316119,
 			316120,
 			316122,
-			316123
+			316123,
+			317101,
+			317102,
+			317103,
+			317104,
+			317105,
+			317106,
+			317108,
+			317109,
+			317110,
+			317111
 		},
 		[11] = {
 			143,
@@ -8503,7 +8552,8 @@ pg.furniture_data_template = setmetatable({
 			301105,
 			312115,
 			316112,
-			316121
+			316121,
+			317107
 		},
 		[14] = {
 			214,
@@ -8861,7 +8911,11 @@ pg.furniture_data_template = setmetatable({
 			316306,
 			316307,
 			316308,
-			316309
+			316309,
+			317301,
+			317302,
+			317303,
+			317304
 		},
 		[13] = {
 			100015,
@@ -8976,7 +9030,8 @@ pg.furniture_data_template = setmetatable({
 			313001,
 			314001,
 			315001,
-			316001
+			316001,
+			317001
 		},
 		{
 			1002,
@@ -9080,7 +9135,8 @@ pg.furniture_data_template = setmetatable({
 			313002,
 			314002,
 			315002,
-			316002
+			316002,
+			317002
 		},
 		[5] = {
 			1101,
@@ -9588,6 +9644,7 @@ pg.furniture_data_template = setmetatable({
 		288,
 		289,
 		292,
+		293,
 		100002,
 		100003,
 		100004,
@@ -12483,7 +12540,24 @@ pg.furniture_data_template = setmetatable({
 		316306,
 		316307,
 		316308,
-		316309
+		316309,
+		317001,
+		317002,
+		317101,
+		317102,
+		317103,
+		317104,
+		317105,
+		317106,
+		317107,
+		317108,
+		317109,
+		317110,
+		317111,
+		317301,
+		317302,
+		317303,
+		317304
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -20352,6 +20426,43 @@ pg.base.furniture_data_template = {
 				"tolovexunzhang",
 				"normal"
 			}
+		},
+		interAction_group = {}
+	},
+	[293] = {
+		spine_extra = "",
+		describe = "とある世界にある鉄血公国のレジスタンス本部ビルのミニチュア。電子回路が内包されており、夜になるとフロアライトとしても機能する",
+		gain_by = "星降る夕影の残光",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 5,
+		is_get_time_note = 1,
+		themeId = 0,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 8,
+		icon = "fulicixunzhangicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "レジスタンス本部ビル",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "chuanmo/fulicixunzhang",
+		canputon = 0,
+		id = 293,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
 		},
 		interAction_group = {}
 	},
@@ -149600,6 +149711,862 @@ pg.base.furniture_data_template = {
 		can_rotate = 0,
 		size = {
 			2,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[317001] = {
+		spine_extra = "",
+		describe = "倒れる前によく休みな",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 117,
+		belong = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		deblocking = 1,
+		level = 1,
+		name = "ラフシェルターの床",
+		effect = "",
+		advice = 0,
+		icon = "dibanfticon",
+		spine_action_replace = "",
+		picture = "ft/dibanft",
+		comfortable = 4,
+		canputon = 0,
+		id = 317001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[317002] = {
+		spine_extra = "",
+		describe = "倒れる前によく休みな",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 117,
+		belong = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		deblocking = 1,
+		level = 5,
+		name = "ラフシェルターの壁",
+		effect = "",
+		advice = 0,
+		icon = "qiangbifticon",
+		spine_action_replace = "",
+		picture = "ft/qiangbift",
+		comfortable = 4,
+		canputon = 0,
+		id = 317002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[317101] = {
+		spine_extra = "",
+		describe = "RUSTをかけてラスト…人生とはそういうものだ",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 117,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "chuangftcion",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ラストベッド",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "ft/chuangft",
+		canputon = 0,
+		id = 317101,
+		can_rotate = 0,
+		size = {
+			5,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sleep",
+				{
+					21,
+					28
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[317102] = {
+		spine_extra = "",
+		describe = "改造済みのキャンピングカー。家であり要塞でもある！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 117,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "fangchefticon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "キャンピングカー",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "ft/fangcheft",
+		canputon = 0,
+		id = 317102,
+		can_rotate = 0,
+		size = {
+			6,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-108.9,
+					-124
+				},
+				{
+					-1,
+					1
+				},
+				"ft/fangcheft_using"
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[317103] = {
+		spine_extra = "",
+		describe = "世界を救える武器だって作れるかもしれないが、光に目をやられるのに気をつけたほうがいい",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 117,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "gongzuotaifticon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "作業台",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 317103,
+		can_rotate = 0,
+		size = {
+			6,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"gongzuotaift",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[317104] = {
+		spine_extra = "",
+		describe = "煙。匂い。温かさ。まぶたが重くなっていく",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 117,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "gouhuofticon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ラフシェルターの篝火",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 317104,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"gouhuoft",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[317105] = {
+		spine_extra = "",
+		describe = "バネにおしりを刺されないように要注意！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 117,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "shafafticon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ラフシェルターのソファ",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "ft/shafaft",
+		canputon = 0,
+		id = 317105,
+		can_rotate = 0,
+		size = {
+			2,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-12,
+					-2.8
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[317106] = {
+		spine_extra = "",
+		describe = "どこでも見かける普通の椅子。武器としても使えるかも？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 117,
+		is_3d_obj = 0,
+		count = 3,
+		tag = 1,
+		icon = "yizifticon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ラフシェルターの椅子",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "ft/yizift",
+		canputon = 0,
+		id = 317106,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-15.7,
+					29.8
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[317107] = {
+		spine_extra = "",
+		describe = "燃料も武器もいっぱいのビークル。私の愛馬は凶暴だピョ…",
+		gain_by = "",
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "ウォー・ビークル",
+		themeId = 117,
+		icon = "yueyechefticon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 317107,
+		can_rotate = 0,
+		size = {
+			5,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yueyecheftB",
+				"normal",
+				nil,
+				true
+			},
+			{
+				"yueyecheftT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[317108] = {
+		spine_extra = "",
+		describe = "蓋を誰かに閉められたら……",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 117,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "zaotongfticon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ラフシェルターの風呂",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "ft/zaotongft",
+		canputon = 0,
+		id = 317108,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"wash",
+				{
+					-19.1,
+					-100.8
+				},
+				{
+					-1,
+					1
+				},
+				"ft/zaotongft_using",
+				0,
+				{
+					{
+						0.5,
+						143.7
+					},
+					{
+						232,
+						200
+					},
+					"ft/zaotongft_mask"
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[317109] = {
+		spine_extra = "",
+		describe = "なにかサプライズが入ってるかもしれないよ？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 117,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "zawuxiangfticon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ラフシェルターの物置",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "ft/zawuxiangft",
+		canputon = 0,
+		id = 317109,
+		can_rotate = 0,
+		size = {
+			3,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[317110] = {
+		spine_extra = "",
+		describe = "なにかサプライズが入ってるかもしれないよ？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "ラフシェルターの物置2",
+		themeId = 117,
+		icon = "zawuduifticon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 317110,
+		can_rotate = 0,
+		size = {
+			4,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zawuduift",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance1",
+						nil,
+						"dance"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				},
+				{
+					{
+						"dance1",
+						"dance2",
+						"dance3"
+					}
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[317111] = {
+		spine_extra = "",
+		describe = "周りの雰囲気と比べても異質な太陽光システム。何かの武器から外された装置らしい？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "ソーラー・ソー",
+		themeId = 117,
+		icon = "taiyangnengdianchifticon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 317111,
+		can_rotate = 0,
+		size = {
+			7,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"taiyangnengdianchiftB",
+				"normal"
+			},
+			{
+				"taiyangnengdianchiftT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[317301] = {
+		spine_extra = "",
+		describe = "サバイバルスキルを鍛えたいって？こいつを使いな！",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 2,
+		themeId = 117,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "bazi1fticon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "ダーツボード１",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 317301,
+		can_rotate = 0,
+		size = {
+			2,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"bazi1ft",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[317302] = {
+		spine_extra = "",
+		describe = "サバイバルスキルを鍛えたいって？こいつを使いな！",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 2,
+		themeId = 117,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "bazi2fticon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "ダーツボード2",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 317302,
+		can_rotate = 0,
+		size = {
+			2,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"bazi2ft",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[317303] = {
+		spine_extra = "",
+		describe = "サバイバルアイテムを整理できる棚。トモダチ！",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 117,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "gongjujiafticon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "サバイバルストレージ",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "ft/gongjujiaft",
+		canputon = 0,
+		id = 317303,
+		can_rotate = 0,
+		size = {
+			6,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[317304] = {
+		spine_extra = "",
+		describe = "落書きとボロボロのポスターは過去の時代を思い浮かべさせてくれる…かもしれない",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 117,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "haibaofticon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "落書き壁",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "ft/haibaoft",
+		canputon = 0,
+		id = 317304,
+		can_rotate = 0,
+		size = {
+			6,
 			0
 		},
 		offset = {},

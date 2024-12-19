@@ -797,6 +797,59 @@ pg.soundstory_template = {
 			}
 		}
 	},
+	{
+		story_pic = "",
+		name = "クリスマスサプライズ",
+		story_resource_CN = "",
+		audition_resource_CN = "",
+		CV_JP = "巽悠衣子",
+		audition_text = "んっ……もうちょっと力を入れてもいいわよ？別に痛くないから…",
+		id = 18,
+		ship_id = 10324,
+		audition_resource_JP = "ss-10324-1",
+		CV_CN = "",
+		overview = "聖夜に訪れたサンタ・ブレマートン…だが、不幸にも窓に挟まってしまう。\n 彼女を救い出すために指揮官が取った行動とは……",
+		captions_color = "#42342f",
+		story_resource_JP = "soundStory18_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					12,
+					19
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					12,
+					25
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -814,6 +867,7 @@ pg.soundstory_template = {
 		14,
 		15,
 		16,
-		17
+		17,
+		18
 	}
 }

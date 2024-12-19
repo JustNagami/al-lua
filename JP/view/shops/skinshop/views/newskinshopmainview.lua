@@ -32,10 +32,11 @@ local function var_0_12(arg_1_0)
 	return var_0_0.obtainBtnSpriteNames[arg_1_0]
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2)
+function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 	pg.DelegateInfo.New(arg_2_0)
 	var_0_0.super.Ctor(arg_2_0, arg_2_2)
 
+	arg_2_0.contextData = arg_2_3
 	arg_2_0._go = arg_2_1.gameObject
 	arg_2_0._tf = arg_2_1
 	arg_2_0.overlay = arg_2_0._tf:Find("overlay")
@@ -705,7 +706,7 @@ function var_0_0.GetObtainBtnState(arg_56_0, arg_56_1)
 		return var_0_4
 	elseif arg_56_1:isDisCount() and arg_56_1:IsItemDiscountType() then
 		return var_0_7
-	elseif arg_56_1:CanUseVoucherType() then
+	elseif arg_56_1:CanUseVoucherType() or arg_56_1:ExistExclusiveDiscountItem() then
 		return var_0_10
 	elseif #arg_56_1:GetGiftList() > 0 then
 		return var_0_11
@@ -714,176 +715,211 @@ function var_0_0.GetObtainBtnState(arg_56_0, arg_56_1)
 	end
 end
 
-function var_0_0.FlushPrice(arg_57_0, arg_57_1)
-	local var_57_0 = arg_57_1:getConfig("genre") == ShopArgs.SkinShopTimeLimit
-	local var_57_1 = arg_57_1.type == Goods.TYPE_ACTIVITY or arg_57_1.type == Goods.TYPE_ACTIVITY_EXTRA
+function var_0_0.GetMode(arg_57_0)
+	return arg_57_0.contextData.mode or NewSkinShopScene.MODE_OVERVIEW
+end
 
-	if var_57_0 then
-		arg_57_0:UpdateExperiencePrice(arg_57_1)
-	elseif arg_57_0.isPreviewFurniture then
-		arg_57_0:UpdateFurniturePrice(arg_57_1)
-	elseif var_57_1 then
+function var_0_0.FlushPrice(arg_58_0, arg_58_1)
+	local var_58_0 = arg_58_1:getConfig("genre") == ShopArgs.SkinShopTimeLimit
+	local var_58_1 = arg_58_1.type == Goods.TYPE_ACTIVITY or arg_58_1.type == Goods.TYPE_ACTIVITY_EXTRA
+
+	if var_58_0 then
+		if arg_58_0:GetMode() == NewSkinShopScene.MODE_EXPERIENCE_FOR_ITEM then
+			arg_58_0:UpdateExperiencePrice4Item(arg_58_1)
+		else
+			arg_58_0:UpdateExperiencePrice(arg_58_1)
+		end
+	elseif arg_58_0.isPreviewFurniture then
+		arg_58_0:UpdateFurniturePrice(arg_58_1)
+	elseif var_58_1 then
 		-- block empty
 	else
-		arg_57_0:UpdateCommodityPrice(arg_57_1)
+		arg_58_0:UpdateCommodityPrice(arg_58_1)
 	end
 
-	local var_57_2 = arg_57_1.type == Goods.TYPE_SKIN
+	local var_58_2 = arg_58_1.type == Goods.TYPE_SKIN
 
-	setActive(arg_57_0.experienceTr, var_57_0 and not var_57_1)
-	setActive(arg_57_0.consumeTr, var_57_2 and not var_57_0 and not var_57_1)
+	setActive(arg_58_0.experienceTr, var_58_0 and not var_58_1)
+	setActive(arg_58_0.consumeTr, var_58_2 and not var_58_0 and not var_58_1)
 end
 
-function var_0_0.UpdateExperiencePrice(arg_58_0, arg_58_1)
-	local var_58_0 = arg_58_1:getConfig("resource_num")
-	local var_58_1 = getProxy(PlayerProxy):getRawData():getSkinTicket()
-	local var_58_2 = (var_58_1 < var_58_0 and "<color=" .. COLOR_RED .. ">" or "") .. var_58_1 .. (var_58_1 < var_58_0 and "</color>" or "")
+function var_0_0.UpdateExperiencePrice4Item(arg_59_0, arg_59_1)
+	local var_59_0 = arg_59_1:getConfig("resource_num")
+	local var_59_1 = getProxy(BagProxy):GetSkinExperienceItems()
+	local var_59_2 = _.detect(var_59_1, function(arg_60_0)
+		return arg_60_0:CanUseForShop(arg_59_1.id)
+	end)
+	local var_59_3 = var_59_2 and var_59_2.count or 0
+	local var_59_4 = (var_59_3 < var_59_0 and "<color=" .. COLOR_RED .. ">" or "") .. var_59_3 .. (var_59_3 < var_59_0 and "</color>" or "")
 
-	arg_58_0.experienceTxt.text = var_58_2 .. "/" .. var_58_0
+	arg_59_0.experienceTxt.text = var_59_4 .. "/" .. var_59_0
 end
 
-function var_0_0.UpdateCommodityPrice(arg_59_0, arg_59_1)
-	local var_59_0 = arg_59_1:GetPrice()
-	local var_59_1 = arg_59_1:getConfig("resource_num")
+function var_0_0.UpdateExperiencePrice(arg_61_0, arg_61_1)
+	local var_61_0 = arg_61_1:getConfig("resource_num")
+	local var_61_1 = getProxy(PlayerProxy):getRawData():getSkinTicket()
+	local var_61_2 = (var_61_1 < var_61_0 and "<color=" .. COLOR_RED .. ">" or "") .. var_61_1 .. (var_61_1 < var_61_0 and "</color>" or "")
 
-	arg_59_0.consumeRealPriceTxt.text = var_59_0
-	arg_59_0.consumePriceTxt.text = var_59_1
-
-	setActive(tf(go(arg_59_0.consumePriceTxt)).parent, var_59_0 ~= var_59_1)
+	arg_61_0.experienceTxt.text = var_61_2 .. "/" .. var_61_0
 end
 
-function var_0_0.UpdateFurniturePrice(arg_60_0, arg_60_1)
-	local var_60_0 = Goods.Id2FurnitureId(arg_60_1.id)
-	local var_60_1 = Furniture.New({
-		id = var_60_0
+function var_0_0.UpdateCommodityPrice(arg_62_0, arg_62_1)
+	local var_62_0 = arg_62_1:GetPrice()
+	local var_62_1 = arg_62_1:getConfig("resource_num")
+
+	arg_62_0.consumeRealPriceTxt.text = var_62_0
+	arg_62_0.consumePriceTxt.text = var_62_1
+
+	setActive(tf(go(arg_62_0.consumePriceTxt)).parent, var_62_0 ~= var_62_1)
+end
+
+function var_0_0.UpdateFurniturePrice(arg_63_0, arg_63_1)
+	local var_63_0 = Goods.Id2FurnitureId(arg_63_1.id)
+	local var_63_1 = Furniture.New({
+		id = var_63_0
 	})
-	local var_60_2 = var_60_1:getConfig("gem_price")
+	local var_63_2 = var_63_1:getConfig("gem_price")
 
-	arg_60_0.consumePriceTxt.text = var_60_2
+	arg_63_0.consumePriceTxt.text = var_63_2
 
-	local var_60_3 = var_60_1:getPrice(PlayerConst.ResDiamond)
+	local var_63_3 = var_63_1:getPrice(PlayerConst.ResDiamond)
 
-	arg_60_0.consumeRealPriceTxt.text = var_60_3
+	arg_63_0.consumeRealPriceTxt.text = var_63_3
 
-	setActive(tf(go(arg_60_0.consumePriceTxt)).parent, var_60_2 ~= var_60_3)
+	setActive(tf(go(arg_63_0.consumePriceTxt)).parent, var_63_2 ~= var_63_3)
 end
 
-function var_0_0.FlushObtainBtn(arg_61_0, arg_61_1)
-	local var_61_0 = arg_61_0:GetObtainBtnState(arg_61_1)
-	local var_61_1 = arg_61_0.obtainBtnSprites[var_61_0]
+function var_0_0.FlushObtainBtn(arg_64_0, arg_64_1)
+	local var_64_0 = arg_64_0:GetObtainBtnState(arg_64_1)
+	local var_64_1 = arg_64_0.obtainBtnSprites[var_64_0]
 
-	if not var_61_1 then
-		var_61_1 = GetSpriteFromAtlas("ui/skinshopui_atlas", var_0_12(var_61_0))
-		arg_61_0.obtainBtnSprites[var_61_0] = var_61_1
+	if not var_64_1 then
+		var_64_1 = GetSpriteFromAtlas("ui/skinshopui_atlas", var_0_12(var_64_0))
+		arg_64_0.obtainBtnSprites[var_64_0] = var_64_1
 	end
 
-	arg_61_0.obtainBtnImg.sprite = var_61_1
+	arg_64_0.obtainBtnImg.sprite = var_64_1
 
-	arg_61_0.obtainBtnImg:SetNativeSize()
-	setActive(arg_61_0.giftTag, var_61_0 == var_0_11)
-	setActive(arg_61_0.giftItem, var_61_0 == var_0_11)
+	arg_64_0.obtainBtnImg:SetNativeSize()
+	setActive(arg_64_0.giftTag, var_64_0 == var_0_11)
+	setActive(arg_64_0.giftItem, var_64_0 == var_0_11)
 
-	if var_61_0 == var_0_11 then
-		arg_61_0:FlushGift(arg_61_1)
+	if var_64_0 == var_0_11 then
+		arg_64_0:FlushGift(arg_64_1)
 	else
-		arg_61_0.giftText.text = ""
+		arg_64_0.giftText.text = ""
 	end
 
-	onButton(arg_61_0, arg_61_0.obtainBtn, function()
-		if var_61_0 == var_0_5 or var_61_0 == var_0_7 or var_61_0 == var_0_11 then
-			arg_61_0.purchaseView:ExecuteAction("Show", arg_61_1)
+	onButton(arg_64_0, arg_64_0.obtainBtn, function()
+		if var_64_0 == var_0_5 or var_64_0 == var_0_7 or var_64_0 == var_0_11 then
+			arg_64_0.purchaseView:ExecuteAction("Show", arg_64_1)
 		else
-			arg_61_0:OnClickBtn(var_61_0, arg_61_1)
+			arg_64_0:OnClickBtn(var_64_0, arg_64_1)
 		end
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnClickBtn(arg_63_0, arg_63_1, arg_63_2)
-	if arg_63_1 == var_0_5 or arg_63_1 == var_0_7 or arg_63_1 == var_0_11 then
-		arg_63_0:OnPurchase(arg_63_2)
-	elseif arg_63_1 == var_0_10 then
-		arg_63_0:OnItemPurchase(arg_63_2)
-	elseif arg_63_1 == var_0_6 then
-		arg_63_0:OnActivity(arg_63_2)
-	elseif arg_63_1 == var_0_8 then
-		arg_63_0:OnBackyard(arg_63_2)
-	elseif arg_63_1 == var_0_9 then
-		arg_63_0:OnExperience(arg_63_2)
+function var_0_0.OnClickBtn(arg_66_0, arg_66_1, arg_66_2)
+	if arg_66_1 == var_0_5 or arg_66_1 == var_0_7 or arg_66_1 == var_0_11 then
+		arg_66_0:OnPurchase(arg_66_2)
+	elseif arg_66_1 == var_0_10 then
+		arg_66_0:OnItemPurchase(arg_66_2)
+	elseif arg_66_1 == var_0_6 then
+		arg_66_0:OnActivity(arg_66_2)
+	elseif arg_66_1 == var_0_8 then
+		arg_66_0:OnBackyard(arg_66_2)
+	elseif arg_66_1 == var_0_9 then
+		if arg_66_0:GetMode() == NewSkinShopScene.MODE_EXPERIENCE_FOR_ITEM then
+			arg_66_0:OnExperience4Item(arg_66_2)
+		else
+			arg_66_0:OnExperience(arg_66_2)
+		end
 	end
 end
 
-function var_0_0.FlushGift(arg_64_0, arg_64_1)
-	local var_64_0 = arg_64_1:GetGiftList()
-	local var_64_1 = var_64_0[1]
+function var_0_0.FlushGift(arg_67_0, arg_67_1)
+	local var_67_0 = arg_67_1:GetGiftList()
+	local var_67_1 = var_67_0[1]
 
-	updateDrop(arg_64_0.giftItem, {
-		type = var_64_1.type,
-		id = var_64_1.id,
-		count = var_64_1.count
+	updateDrop(arg_67_0.giftItem, {
+		type = var_67_1.type,
+		id = var_67_1.id,
+		count = var_67_1.count
 	})
 
-	local var_64_2 = #var_64_0 > 1 and "+" .. #var_64_0 - 1 .. "..." or ""
+	local var_67_2 = #var_67_0 > 1 and "+" .. #var_67_0 - 1 .. "..." or ""
 
-	arg_64_0.giftText.text = var_64_2
+	arg_67_0.giftText.text = var_67_2
 end
 
-function var_0_0.OnItemPurchase(arg_65_0, arg_65_1)
-	if arg_65_1.type ~= Goods.TYPE_SKIN then
+function var_0_0.OnItemPurchase(arg_68_0, arg_68_1)
+	if arg_68_1.type ~= Goods.TYPE_SKIN then
 		return
 	end
 
-	local var_65_0 = arg_65_1:GetVoucherIdList()
+	local var_68_0 = arg_68_1:GetVoucherIdList()
+	local var_68_1 = getProxy(BagProxy):GetExclusiveDiscountItem4Shop(arg_68_1.id)
 
-	if #var_65_0 <= 0 then
+	if #var_68_0 <= 0 and #var_68_1 <= 0 then
 		return
 	end
 
-	local var_65_1 = arg_65_1:getSkinId()
-	local var_65_2 = pg.ship_skin_template[var_65_1]
-	local var_65_3 = SwitchSpecialChar(var_65_2.name, true)
+	local var_68_2 = {}
 
-	arg_65_0.voucherMsgBox:ExecuteAction("Show", {
-		itemList = var_65_0,
-		skinId = var_65_1,
-		skinName = var_65_3,
-		price = arg_65_1:GetPrice(),
-		onYes = function(arg_66_0)
-			if arg_66_0 then
-				arg_65_0:emit(NewSkinShopMediator.ON_ITEM_PURCHASE, arg_66_0, arg_65_1.id)
+	for iter_68_0, iter_68_1 in ipairs(var_68_0) do
+		table.insert(var_68_2, iter_68_1)
+	end
+
+	for iter_68_2, iter_68_3 in ipairs(var_68_1) do
+		table.insert(var_68_2, iter_68_3.id)
+	end
+
+	local var_68_3 = arg_68_1:getSkinId()
+	local var_68_4 = pg.ship_skin_template[var_68_3]
+	local var_68_5 = SwitchSpecialChar(var_68_4.name, true)
+
+	arg_68_0.voucherMsgBox:ExecuteAction("Show", {
+		itemList = var_68_2,
+		skinId = var_68_3,
+		skinName = var_68_5,
+		price = arg_68_1:GetPrice(),
+		onYes = function(arg_69_0)
+			if arg_69_0 then
+				arg_68_0:emit(NewSkinShopMediator.ON_ITEM_PURCHASE, arg_69_0, arg_68_1.id)
 			else
-				arg_65_0:emit(NewSkinShopMediator.ON_SHOPPING, arg_65_1.id, 1)
+				arg_68_0:emit(NewSkinShopMediator.ON_SHOPPING, arg_68_1.id, 1)
 			end
 		end
 	})
 end
 
-function var_0_0.OnPurchase(arg_67_0, arg_67_1)
-	if arg_67_1.type ~= Goods.TYPE_SKIN then
+function var_0_0.OnPurchase(arg_70_0, arg_70_1)
+	if arg_70_1.type ~= Goods.TYPE_SKIN then
 		return
 	end
 
-	if arg_67_1:isDisCount() and arg_67_1:IsItemDiscountType() then
-		arg_67_0:emit(NewSkinShopMediator.ON_SHOPPING_BY_ACT, arg_67_1.id, 1)
+	if arg_70_1:isDisCount() and arg_70_1:IsItemDiscountType() then
+		arg_70_0:emit(NewSkinShopMediator.ON_SHOPPING_BY_ACT, arg_70_1.id, 1)
 	else
-		arg_67_0:emit(NewSkinShopMediator.ON_SHOPPING, arg_67_1.id, 1)
+		arg_70_0:emit(NewSkinShopMediator.ON_SHOPPING, arg_70_1.id, 1)
 	end
 end
 
-function var_0_0.OnActivity(arg_68_0, arg_68_1)
-	local var_68_0 = arg_68_1:getConfig("time")
-	local var_68_1 = arg_68_1:getConfig("activity")
-	local var_68_2 = getProxy(ActivityProxy):getActivityById(var_68_1)
+function var_0_0.OnActivity(arg_71_0, arg_71_1)
+	local var_71_0 = arg_71_1:getConfig("time")
+	local var_71_1 = arg_71_1:getConfig("activity")
+	local var_71_2 = getProxy(ActivityProxy):getActivityById(var_71_1)
 
-	if var_68_1 == 0 and pg.TimeMgr.GetInstance():inTime(var_68_0) or var_68_2 and not var_68_2:isEnd() then
-		if arg_68_1.type == Goods.TYPE_ACTIVITY then
-			arg_68_0:emit(NewSkinShopMediator.GO_SHOPS_LAYER, arg_68_1:getConfig("activity"))
-		elseif arg_68_1.type == Goods.TYPE_ACTIVITY_EXTRA then
-			local var_68_3 = arg_68_1:getConfig("scene")
+	if var_71_1 == 0 and pg.TimeMgr.GetInstance():inTime(var_71_0) or var_71_2 and not var_71_2:isEnd() then
+		if arg_71_1.type == Goods.TYPE_ACTIVITY then
+			arg_71_0:emit(NewSkinShopMediator.GO_SHOPS_LAYER, arg_71_1:getConfig("activity"))
+		elseif arg_71_1.type == Goods.TYPE_ACTIVITY_EXTRA then
+			local var_71_3 = arg_71_1:getConfig("scene")
 
-			if var_68_3 and #var_68_3 > 0 then
-				arg_68_0:emit(NewSkinShopMediator.OPEN_SCENE, var_68_3)
+			if var_71_3 and #var_71_3 > 0 then
+				arg_71_0:emit(NewSkinShopMediator.OPEN_SCENE, var_71_3)
 			else
-				arg_68_0:emit(NewSkinShopMediator.OPEN_ACTIVITY, var_68_1)
+				arg_71_0:emit(NewSkinShopMediator.OPEN_ACTIVITY, var_71_1)
 			end
 		end
 	else
@@ -891,216 +927,249 @@ function var_0_0.OnActivity(arg_68_0, arg_68_1)
 	end
 end
 
-function var_0_0.OnBackyard(arg_69_0, arg_69_1)
+function var_0_0.OnBackyard(arg_72_0, arg_72_1)
 	if not pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "BackYardMediator") then
-		local var_69_0 = pg.open_systems_limited[1]
+		local var_72_0 = pg.open_systems_limited[1]
 
-		pg.TipsMgr.GetInstance():ShowTips(i18n("no_open_system_tip", var_69_0.name, var_69_0.level))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("no_open_system_tip", var_72_0.name, var_72_0.level))
 
 		return
 	end
 
-	arg_69_0:emit(NewSkinShopMediator.ON_BACKYARD_SHOP)
+	arg_72_0:emit(NewSkinShopMediator.ON_BACKYARD_SHOP)
 end
 
-function var_0_0.OnExperience(arg_70_0, arg_70_1)
-	local var_70_0 = arg_70_1:getSkinId()
-	local var_70_1 = getProxy(ShipSkinProxy):getSkinById(var_70_0)
+function var_0_0.OnExperience(arg_73_0, arg_73_1)
+	local var_73_0 = arg_73_1:getSkinId()
+	local var_73_1 = getProxy(ShipSkinProxy):getSkinById(var_73_0)
 
-	if var_70_1 and not var_70_1:isExpireType() then
+	if var_73_1 and not var_73_1:isExpireType() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("already_have_the_skin"))
 
 		return
 	end
 
-	local var_70_2 = arg_70_1:getConfig("resource_num")
-	local var_70_3 = arg_70_1:getConfig("time_second") * var_70_2
-	local var_70_4, var_70_5, var_70_6, var_70_7 = pg.TimeMgr.GetInstance():parseTimeFrom(var_70_3)
-	local var_70_8 = pg.ship_skin_template[arg_70_1:getSkinId()].name
+	local var_73_2 = arg_73_1:getConfig("resource_num")
+	local var_73_3 = arg_73_1:getConfig("time_second") * var_73_2
+	local var_73_4, var_73_5, var_73_6, var_73_7 = pg.TimeMgr.GetInstance():parseTimeFrom(var_73_3)
+	local var_73_8 = pg.ship_skin_template[arg_73_1:getSkinId()].name
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
-		content = i18n("exchange_limit_skin_tip", var_70_2, var_70_8, var_70_4, var_70_5),
+		content = i18n("exchange_limit_skin_tip", var_73_2, var_73_8, var_73_4, var_73_5),
 		onYes = function()
-			if getProxy(PlayerProxy):getRawData():getSkinTicket() < var_70_2 then
+			if getProxy(PlayerProxy):getRawData():getSkinTicket() < var_73_2 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 				return
 			end
 
-			arg_70_0:emit(NewSkinShopMediator.ON_SHOPPING, arg_70_1.id, 1)
+			arg_73_0:emit(NewSkinShopMediator.ON_SHOPPING, arg_73_1.id, 1)
 		end
 	})
 end
 
-function var_0_0.FlushTag(arg_72_0, arg_72_1)
-	local var_72_0 = arg_72_1:getSkinId()
-	local var_72_1 = pg.ship_skin_template[var_72_0].tag
+function var_0_0.OnExperience4Item(arg_75_0, arg_75_1)
+	local var_75_0 = arg_75_1:getSkinId()
+	local var_75_1 = getProxy(ShipSkinProxy):getSkinById(var_75_0)
 
-	arg_72_0.uiTagList:make(function(arg_73_0, arg_73_1, arg_73_2)
-		if arg_73_0 == UIItemList.EventUpdate then
-			LoadSpriteAtlasAsync("SkinIcon", "type_" .. ShipSkin.Tag2Name(var_72_1[arg_73_1 + 1]), function(arg_74_0)
-				if arg_72_0.exited then
-					return
-				end
+	if var_75_1 and not var_75_1:isExpireType() then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("already_have_the_skin"))
 
-				local var_74_0 = arg_73_2:Find("icon"):GetComponent(typeof(Image))
-
-				var_74_0.sprite = arg_74_0
-
-				var_74_0:SetNativeSize()
-			end)
-		end
-	end)
-	arg_72_0.uiTagList:align(#var_72_1)
-end
-
-function var_0_0.FlushChar(arg_75_0, arg_75_1, arg_75_2)
-	if arg_75_0.prefabName and arg_75_0.prefabName == arg_75_1 then
 		return
 	end
 
-	arg_75_0:ReturnChar()
-	PoolMgr.GetInstance():GetSpineChar(arg_75_1, true, function(arg_76_0)
-		arg_75_0.spineChar = tf(arg_76_0)
-		arg_75_0.prefabName = arg_75_1
+	local var_75_2 = arg_75_1:getConfig("resource_num")
+	local var_75_3 = arg_75_1:getConfig("time_second") * var_75_2
+	local var_75_4, var_75_5, var_75_6, var_75_7 = pg.TimeMgr.GetInstance():parseTimeFrom(var_75_3)
+	local var_75_8 = pg.ship_skin_template[arg_75_1:getSkinId()].name
+	local var_75_9 = getProxy(BagProxy):GetSkinExperienceItems()
+	local var_75_10 = _.detect(var_75_9, function(arg_76_0)
+		return arg_76_0:CanUseForShop(arg_75_1.id)
+	end)
 
-		local var_76_0 = pg.skinshop_spine_scale[arg_75_2]
+	pg.MsgboxMgr.GetInstance():ShowMsgBox({
+		content = i18n("exchange_limit_skin_tip", var_75_2, var_75_8, var_75_4, var_75_5),
+		onYes = function()
+			if not var_75_10 or var_75_10.count < var_75_2 then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
-		if var_76_0 then
-			arg_75_0.spineChar.localScale = Vector3(var_76_0.skinshop_scale, var_76_0.skinshop_scale, 1)
+				return
+			end
+
+			arg_75_0:emit(NewSkinShopMediator.ON_ITEM_EXPERIENCE, var_75_10.id, arg_75_1.id, 1)
+		end
+	})
+end
+
+function var_0_0.FlushTag(arg_78_0, arg_78_1)
+	local var_78_0 = arg_78_1:getSkinId()
+	local var_78_1 = pg.ship_skin_template[var_78_0].tag
+
+	arg_78_0.uiTagList:make(function(arg_79_0, arg_79_1, arg_79_2)
+		if arg_79_0 == UIItemList.EventUpdate then
+			LoadSpriteAtlasAsync("SkinIcon", "type_" .. ShipSkin.Tag2Name(var_78_1[arg_79_1 + 1]), function(arg_80_0)
+				if arg_78_0.exited then
+					return
+				end
+
+				local var_80_0 = arg_79_2:Find("icon"):GetComponent(typeof(Image))
+
+				var_80_0.sprite = arg_80_0
+
+				var_80_0:SetNativeSize()
+			end)
+		end
+	end)
+	arg_78_0.uiTagList:align(#var_78_1)
+end
+
+function var_0_0.FlushChar(arg_81_0, arg_81_1, arg_81_2)
+	if arg_81_0.prefabName and arg_81_0.prefabName == arg_81_1 then
+		return
+	end
+
+	arg_81_0:ReturnChar()
+	PoolMgr.GetInstance():GetSpineChar(arg_81_1, true, function(arg_82_0)
+		arg_81_0.spineChar = tf(arg_82_0)
+		arg_81_0.prefabName = arg_81_1
+
+		local var_82_0 = pg.skinshop_spine_scale[arg_81_2]
+
+		if var_82_0 then
+			arg_81_0.spineChar.localScale = Vector3(var_82_0.skinshop_scale, var_82_0.skinshop_scale, 1)
 		else
-			arg_75_0.spineChar.localScale = Vector3(0.9, 0.9, 1)
+			arg_81_0.spineChar.localScale = Vector3(0.9, 0.9, 1)
 		end
 
-		arg_75_0.spineChar.localPosition = Vector3(0, 0, 0)
+		arg_81_0.spineChar.localPosition = Vector3(0, 0, 0)
 
-		pg.ViewUtils.SetLayer(arg_75_0.spineChar, Layer.UI)
-		setParent(arg_75_0.spineChar, arg_75_0.charContainer)
-		arg_76_0:GetComponent("SpineAnimUI"):SetAction("normal", 0)
+		pg.ViewUtils.SetLayer(arg_81_0.spineChar, Layer.UI)
+		setParent(arg_81_0.spineChar, arg_81_0.charContainer)
+		arg_82_0:GetComponent("SpineAnimUI"):SetAction("normal", 0)
 	end)
 end
 
-function var_0_0.FlushTimeline(arg_77_0, arg_77_1)
-	local var_77_0 = arg_77_1:getSkinId()
-	local var_77_1 = false
-	local var_77_2
+function var_0_0.FlushTimeline(arg_83_0, arg_83_1)
+	local var_83_0 = arg_83_1:getSkinId()
+	local var_83_1 = false
+	local var_83_2
 
-	if arg_77_1:IsActivityExtra() and arg_77_1:ShowMaintenanceTime() then
-		local var_77_3, var_77_4 = arg_77_1:GetMaintenanceMonthAndDay()
+	if arg_83_1:IsActivityExtra() and arg_83_1:ShowMaintenanceTime() then
+		local var_83_3, var_83_4 = arg_83_1:GetMaintenanceMonthAndDay()
 
-		function var_77_2()
-			return i18n("limit_skin_time_before_maintenance", var_77_3, var_77_4)
+		function var_83_2()
+			return i18n("limit_skin_time_before_maintenance", var_83_3, var_83_4)
 		end
 
-		var_77_1 = true
-	elseif arg_77_1:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
-		local var_77_5 = getProxy(ShipSkinProxy):getSkinById(var_77_0)
+		var_83_1 = true
+	elseif arg_83_1:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
+		local var_83_5 = getProxy(ShipSkinProxy):getSkinById(var_83_0)
 
-		var_77_1 = var_77_5 and var_77_5:isExpireType() and not var_77_5:isExpired()
+		var_83_1 = var_83_5 and var_83_5:isExpireType() and not var_83_5:isExpired()
 
-		if var_77_1 then
-			function var_77_2()
-				return skinTimeStamp(var_77_5:getRemainTime())
+		if var_83_1 then
+			function var_83_2()
+				return skinTimeStamp(var_83_5:getRemainTime())
 			end
 		end
 	else
-		local var_77_6, var_77_7 = pg.TimeMgr.GetInstance():inTime(arg_77_1:getConfig("time"))
+		local var_83_6, var_83_7 = pg.TimeMgr.GetInstance():inTime(arg_83_1:getConfig("time"))
 
-		var_77_1 = var_77_7
+		var_83_1 = var_83_7
 
-		if var_77_1 then
-			local var_77_8 = pg.TimeMgr.GetInstance():Table2ServerTime(var_77_7)
+		if var_83_1 then
+			local var_83_8 = pg.TimeMgr.GetInstance():Table2ServerTime(var_83_7)
 
-			function var_77_2()
-				return skinCommdityTimeStamp(var_77_8)
+			function var_83_2()
+				return skinCommdityTimeStamp(var_83_8)
 			end
 		end
 	end
 
-	setActive(arg_77_0.timeLimitTr, var_77_1)
-	arg_77_0:ClearTimer()
+	setActive(arg_83_0.timeLimitTr, var_83_1)
+	arg_83_0:ClearTimer()
 
-	if var_77_1 then
-		arg_77_0:AddTimer(var_77_2)
+	if var_83_1 then
+		arg_83_0:AddTimer(var_83_2)
 	end
 end
 
-function var_0_0.AddTimer(arg_81_0, arg_81_1)
-	arg_81_0.timer = Timer.New(function()
-		arg_81_0.timeLimitTxt.text = arg_81_1()
+function var_0_0.AddTimer(arg_87_0, arg_87_1)
+	arg_87_0.timer = Timer.New(function()
+		arg_87_0.timeLimitTxt.text = arg_87_1()
 	end, 1, -1)
 
-	arg_81_0.timer.func()
-	arg_81_0.timer:Start()
+	arg_87_0.timer.func()
+	arg_87_0.timer:Start()
 end
 
-function var_0_0.ClearTimer(arg_83_0)
-	if arg_83_0.timer then
-		arg_83_0.timer:Stop()
+function var_0_0.ClearTimer(arg_89_0)
+	if arg_89_0.timer then
+		arg_89_0.timer:Stop()
 
-		arg_83_0.timer = nil
-	end
-end
-
-function var_0_0.ReturnChar(arg_84_0)
-	if not IsNil(arg_84_0.spineChar) then
-		arg_84_0.spineChar.gameObject:GetComponent("SpineAnimUI"):SetActionCallBack(nil)
-		PoolMgr.GetInstance():ReturnSpineChar(arg_84_0.prefabName, arg_84_0.spineChar.gameObject)
-
-		arg_84_0.spineChar = nil
-		arg_84_0.prefabName = nil
+		arg_89_0.timer = nil
 	end
 end
 
-function var_0_0.ClosePurchaseView(arg_85_0)
-	if arg_85_0.purchaseView and arg_85_0.purchaseView:GetLoaded() then
-		arg_85_0.purchaseView:Hide()
+function var_0_0.ReturnChar(arg_90_0)
+	if not IsNil(arg_90_0.spineChar) then
+		arg_90_0.spineChar.gameObject:GetComponent("SpineAnimUI"):SetActionCallBack(nil)
+		PoolMgr.GetInstance():ReturnSpineChar(arg_90_0.prefabName, arg_90_0.spineChar.gameObject)
+
+		arg_90_0.spineChar = nil
+		arg_90_0.prefabName = nil
 	end
 end
 
-function var_0_0.Dispose(arg_86_0)
-	arg_86_0.exited = true
+function var_0_0.ClosePurchaseView(arg_91_0)
+	if arg_91_0.purchaseView and arg_91_0.purchaseView:GetLoaded() then
+		arg_91_0.purchaseView:Hide()
+	end
+end
 
-	pg.DelegateInfo.Dispose(arg_86_0)
-	arg_86_0:ClearSwitchBgAnim()
-	pg.DynamicBgMgr.GetInstance():ClearBg(arg_86_0:getUIName())
+function var_0_0.Dispose(arg_92_0)
+	arg_92_0.exited = true
 
-	if arg_86_0.voucherMsgBox then
-		arg_86_0.voucherMsgBox:Destroy()
+	pg.DelegateInfo.Dispose(arg_92_0)
+	arg_92_0:ClearSwitchBgAnim()
+	pg.DynamicBgMgr.GetInstance():ClearBg(arg_92_0:getUIName())
 
-		arg_86_0.voucherMsgBox = nil
+	if arg_92_0.voucherMsgBox then
+		arg_92_0.voucherMsgBox:Destroy()
+
+		arg_92_0.voucherMsgBox = nil
 	end
 
-	if arg_86_0.purchaseView then
-		arg_86_0.purchaseView:Destroy()
+	if arg_92_0.purchaseView then
+		arg_92_0.purchaseView:Destroy()
 
-		arg_86_0.purchaseView = nil
+		arg_92_0.purchaseView = nil
 	end
 
-	for iter_86_0, iter_86_1 in pairs(arg_86_0.downloads) do
-		iter_86_1:Dispose()
+	for iter_92_0, iter_92_1 in pairs(arg_92_0.downloads) do
+		iter_92_1:Dispose()
 	end
 
-	arg_86_0.downloads = {}
+	arg_92_0.downloads = {}
 
-	arg_86_0:ClearPainting()
+	arg_92_0:ClearPainting()
 
-	for iter_86_2, iter_86_3 in pairs(arg_86_0.obtainBtnSprites) do
-		arg_86_0.obtainBtnSprites[iter_86_3] = nil
+	for iter_92_2, iter_92_3 in pairs(arg_92_0.obtainBtnSprites) do
+		arg_92_0.obtainBtnSprites[iter_92_3] = nil
 	end
 
-	arg_86_0.obtainBtnSprites = nil
+	arg_92_0.obtainBtnSprites = nil
 
-	if arg_86_0.interactionPreview then
-		arg_86_0.interactionPreview:Dispose()
+	if arg_92_0.interactionPreview then
+		arg_92_0.interactionPreview:Dispose()
 
-		arg_86_0.interactionPreview = nil
+		arg_92_0.interactionPreview = nil
 	end
 
-	arg_86_0:ClearSwitchTween()
-	arg_86_0:disposeEvent()
-	arg_86_0:ClearTimer()
-	arg_86_0:ReturnChar()
+	arg_92_0:ClearSwitchTween()
+	arg_92_0:disposeEvent()
+	arg_92_0:ClearTimer()
+	arg_92_0:ReturnChar()
 end
 
 return var_0_0

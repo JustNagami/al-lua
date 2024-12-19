@@ -1663,5 +1663,21 @@ pg.voice_actor_CN = {
 	[434] = {
 		code = 434,
 		actor_name = "名塚佳織"
+	},
+	[435] = {
+		code = 435,
+		actor_name = "恒松あゆみ"
+	},
+	[436] = {
+		code = 436,
+		actor_name = "新井里美"
+	},
+	[437] = {
+		code = 437,
+		actor_name = "菅野真衣"
+	},
+	[438] = {
+		code = 438,
+		actor_name = "寺澤百花"
 	}
 }

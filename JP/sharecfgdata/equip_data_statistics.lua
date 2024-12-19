@@ -152473,3 +152473,231 @@ _G.pg.base.equip_data_statistics[150591] = {
 	base = 150580,
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[61121] = {
+	type = 99,
+	name = "航空攻击展示-弗里茨·鲁梅I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "航母空袭展示用",
+	id = 61121,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61121
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[61122] = {
+	id = 61122,
+	name = "航空攻击展示-弗里茨·鲁梅II",
+	base = 61121,
+	weapon_id = {
+		61122
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[61123] = {
+	id = 61123,
+	name = "航空攻击展示-弗里茨·鲁梅II",
+	base = 61121,
+	weapon_id = {
+		61123
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80401] = {
+	type = 1,
+	name = "专属弹幕-希佩尔METAI",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80401,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61701
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80402] = {
+	id = 80402,
+	name = "专属弹幕-希佩尔METAII",
+	base = 80401,
+	weapon_id = {
+		61702
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80411] = {
+	type = 1,
+	name = "专属弹幕-杜伊斯堡I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80411,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61711
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80412] = {
+	id = 80412,
+	name = "专属弹幕-杜伊斯堡II",
+	base = 80411,
+	weapon_id = {
+		61712
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[170651] = {
+	type = 1,
+	name = "专属弹幕-z52I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 170651,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170651
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[170652] = {
+	id = 170652,
+	name = "专属弹幕-z52II",
+	base = 170651,
+	weapon_id = {
+		170652
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[180000] = {
+	type = 3,
+	name = "弗里茨副炮",
+	speciality = "<[LOCK]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 3,
+	nationality = 4,
+	descrip = "默认装备",
+	id = 180000,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		1
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {}
+}

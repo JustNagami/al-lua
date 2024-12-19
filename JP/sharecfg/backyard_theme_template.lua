@@ -4444,6 +4444,38 @@ pg.backyard_theme_template = {
 			316305
 		}
 	},
+	[117] = {
+		Cfg_1 = 5,
+		name = "ラフシェルター",
+		hot = 1,
+		is_view = 1,
+		id = 117,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "危険溢れる荒野で、心休めるたった一つの場所",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "ftthemeicon",
+		deblocking = 1,
+		order = 118,
+		ids = {
+			317001,
+			317002,
+			317101,
+			317102,
+			317103,
+			317104,
+			317105,
+			317106,
+			317108,
+			317109,
+			317110,
+			317301,
+			317302,
+			317303
+		}
+	},
 	all = {
 		1,
 		2,
@@ -4547,6 +4579,7 @@ pg.backyard_theme_template = {
 		113,
 		114,
 		115,
-		116
+		116,
+		117
 	}
 }

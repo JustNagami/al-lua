@@ -9,6 +9,7 @@ function var_0_0.init(arg_2_0)
 	arg_2_0.cryptolaliaBtn = arg_2_0:findTF("Main/cryptolalia")
 	arg_2_0.archiveBtn = arg_2_0:findTF("Main/archive")
 	arg_2_0.recordBtn = arg_2_0:findTF("Main/record")
+	arg_2_0.albumBtn = arg_2_0:findTF("Main/album")
 	arg_2_0.optionBtn = arg_2_0:findTF("Top/blur_panel/adapt/top/option")
 	arg_2_0.backBtn = arg_2_0:findTF("Top/blur_panel/adapt/top/back_btn")
 
@@ -39,9 +40,12 @@ function var_0_0.didEnter(arg_3_0)
 	onButton(arg_3_0, arg_3_0.recordBtn, function()
 		arg_3_0:emit(WorldMediaCollectionEntranceMediator.OPEN_RECORD)
 	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.albumBtn, function()
+		arg_3_0:emit(WorldMediaCollectionEntranceMediator.OPEN_ALBUM)
+	end, SFX_PANEL)
 end
 
-function var_0_0.willExit(arg_10_0)
+function var_0_0.willExit(arg_11_0)
 	return
 end
 

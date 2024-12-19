@@ -890,10 +890,7 @@ function var_0_0.initData(arg_89_0)
 		var_89_0 = 60
 	end
 
-	if not Physics2D.autoSimulation then
-		arg_89_0.needManualSimulate = true
-	end
-
+	arg_89_0.needManualSimulate = true
 	arg_89_0.timer = Timer.New(function()
 		arg_89_0:onTimer()
 
@@ -918,6 +915,9 @@ function var_0_0.initUI(arg_91_0)
 	onButton(arg_91_0, arg_91_0:findTF("return_btn", arg_91_0.mainUI), function()
 		arg_91_0:emit(var_0_0.ON_BACK_PRESSED)
 	end, SFX_PANEL)
+	onButton(arg_91_0, arg_91_0:findTF("main_btn", arg_91_0.mainUI), function()
+		arg_91_0:emit(var_0_0.ON_HOME)
+	end, SFX_PANEL)
 	onButton(arg_91_0, arg_91_0:findTF("help_btn", arg_91_0.mainUI), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
@@ -927,6 +927,9 @@ function var_0_0.initUI(arg_91_0)
 	onButton(arg_91_0, arg_91_0:findTF("start_btn", arg_91_0.mainUI), function()
 		arg_91_0:readyStart()
 	end, SFX_PANEL)
+	onButton(arg_91_0, arg_91_0:findTF("rank_btn", arg_91_0.mainUI), function()
+		return
+	end, SFX_PANEL)
 
 	arg_91_0.totalTimes = arg_91_0:getGameTotalTime()
 
@@ -934,22 +937,22 @@ function var_0_0.initUI(arg_91_0)
 
 	scrollTo(arg_91_0.listScrollRect, 0, 1 - var_91_0 / (arg_91_0.totalTimes - 4))
 	onButton(arg_91_0, arg_91_0:findTF("right_panel/arrows_up", arg_91_0.mainUI), function()
-		local var_96_0 = arg_91_0.listScrollRect.normalizedPosition.y + 1 / (arg_91_0.totalTimes - 4)
+		local var_98_0 = arg_91_0.listScrollRect.normalizedPosition.y + 1 / (arg_91_0.totalTimes - 4)
 
-		if var_96_0 > 1 then
-			var_96_0 = 1
+		if var_98_0 > 1 then
+			var_98_0 = 1
 		end
 
-		scrollTo(arg_91_0.listScrollRect, 0, var_96_0)
+		scrollTo(arg_91_0.listScrollRect, 0, var_98_0)
 	end, SFX_PANEL)
 	onButton(arg_91_0, arg_91_0:findTF("right_panel/arrows_down", arg_91_0.mainUI), function()
-		local var_97_0 = arg_91_0.listScrollRect.normalizedPosition.y - 1 / (arg_91_0.totalTimes - 4)
+		local var_99_0 = arg_91_0.listScrollRect.normalizedPosition.y - 1 / (arg_91_0.totalTimes - 4)
 
-		if var_97_0 < 0 then
-			var_97_0 = 0
+		if var_99_0 < 0 then
+			var_99_0 = 0
 		end
 
-		scrollTo(arg_91_0.listScrollRect, 0, var_97_0)
+		scrollTo(arg_91_0.listScrollRect, 0, var_99_0)
 	end, SFX_PANEL)
 
 	local var_91_1 = arg_91_0:findTF("item_tpl", arg_91_0.mainUI)
@@ -967,8 +970,8 @@ function var_0_0.initUI(arg_91_0)
 
 		local var_91_4 = iter_91_0
 
-		GetSpriteFromAtlasAsync("ui/minigameui/curlinggameui_atlas", "text_" .. var_91_4, function(arg_98_0)
-			setImageSprite(arg_91_0:findTF("bg/text", var_91_3), arg_98_0, true)
+		GetSpriteFromAtlasAsync("ui/minigameui/curlinggameui_atlas", "text_" .. var_91_4, function(arg_100_0)
+			setImageSprite(arg_91_0:findTF("bg/text", var_91_3), arg_100_0, true)
 		end)
 		setActive(var_91_3, true)
 		table.insert(arg_91_0.itemList, var_91_3)
@@ -985,6 +988,28 @@ function var_0_0.initUI(arg_91_0)
 			arg_91_0:emit(BaseUI.ON_DROP, var_91_6)
 		end, SFX_PANEL)
 	end
+
+	arg_91_0.rankUI = findTF(arg_91_0._tf, "ui/rank_ui")
+
+	arg_91_0:openRankUI(false)
+	GetComponent(findTF(arg_91_0.rankUI, "ad/img/score"), typeof(Image)):SetNativeSize()
+
+	arg_91_0._rankImg = findTF(arg_91_0.rankUI, "ad/img")
+	arg_91_0._rankBtnClose = findTF(arg_91_0.rankUI, "ad/btnClose")
+	arg_91_0._rankContent = findTF(arg_91_0.rankUI, "ad/list/content")
+	arg_91_0._rankItemTpl = findTF(arg_91_0.rankUI, "ad/list/content/itemTpl")
+	arg_91_0._rankEmpty = findTF(arg_91_0.rankUI, "ad/empty")
+	arg_91_0._rankDesc = findTF(arg_91_0.rankUI, "ad/desc")
+	arg_91_0._rankItems = {}
+
+	setActive(arg_91_0._rankItemTpl, false)
+	onButton(arg_91_0._event, findTF(arg_91_0.rankUI, "ad/close"), function()
+		arg_91_0:openRankUI(false)
+	end, SFX_CANCEL)
+	onButton(arg_91_0._event, arg_91_0._rankBtnClose, function()
+		arg_91_0:openRankUI(false)
+	end, SFX_CANCEL)
+	setText(arg_91_0._rankDesc, i18n("pipe_minigame_rank"))
 
 	arg_91_0.countUI = arg_91_0:findTF("ui/count_ui")
 	arg_91_0.countAnimator = GetComponent(arg_91_0:findTF("count", arg_91_0.countUI), typeof(Animator))
@@ -1031,155 +1056,216 @@ function var_0_0.initUI(arg_91_0)
 	UpdateBeat:AddListener(arg_91_0.handle)
 end
 
-function var_0_0.initGameUI(arg_106_0)
-	arg_106_0.gameUI = arg_106_0:findTF("ui/game_ui")
-	arg_106_0.roundTF = arg_106_0:findTF("score_panel/round_text", arg_106_0.gameUI)
-	arg_106_0.scoreTF = arg_106_0:findTF("score_panel/score_text", arg_106_0.gameUI)
+function var_0_0.initGameUI(arg_110_0)
+	arg_110_0.gameUI = arg_110_0:findTF("ui/game_ui")
+	arg_110_0.roundTF = arg_110_0:findTF("score_panel/round_text", arg_110_0.gameUI)
+	arg_110_0.scoreTF = arg_110_0:findTF("score_panel/score_text", arg_110_0.gameUI)
 
-	onButton(arg_106_0, arg_106_0:findTF("pause_btn", arg_106_0.gameUI), function()
-		arg_106_0:pauseGame()
-		setActive(arg_106_0.pauseUI, true)
+	onButton(arg_110_0, arg_110_0:findTF("pause_btn", arg_110_0.gameUI), function()
+		arg_110_0:pauseGame()
+		setActive(arg_110_0.pauseUI, true)
 	end)
-	onButton(arg_106_0, arg_106_0:findTF("return_btn", arg_106_0.gameUI), function()
-		arg_106_0:pauseGame()
-		setActive(arg_106_0.returnUI, true)
+	onButton(arg_110_0, arg_110_0:findTF("return_btn", arg_110_0.gameUI), function()
+		arg_110_0:pauseGame()
+		setActive(arg_110_0.returnUI, true)
 	end)
 
-	arg_106_0.scoreGroup = arg_106_0:findTF("score_group", arg_106_0.gameUI)
+	arg_110_0.scoreGroup = arg_110_0:findTF("score_group", arg_110_0.gameUI)
 
-	setActive(arg_106_0:findTF("bg_front/wall"), var_0_39)
+	setActive(arg_110_0:findTF("bg_front/wall"), var_0_39)
 end
 
-function var_0_0.initController(arg_109_0)
-	arg_109_0.scene = arg_109_0:findTF("scene")
-	arg_109_0.gridTF = arg_109_0:findTF("ui/grid")
-	arg_109_0.player = var_0_48(arg_109_0:findTF("player", arg_109_0.scene), arg_109_0)
-	arg_109_0.phy = arg_109_0:findTF("Ayanami_phy", arg_109_0.scene)
-	arg_109_0.drawDot = arg_109_0:findTF("draw_dot", arg_109_0.scene)
-	arg_109_0.curlingTpls = arg_109_0:findTF("curling_Tpl", arg_109_0.scene)
-	arg_109_0.curling = var_0_49(arg_109_0.curlingTpls, arg_109_0.player._tf, arg_109_0)
-	arg_109_0.ofunya = var_0_50(arg_109_0:findTF("bg_back/07_Ofunya"), arg_109_0)
-	arg_109_0.manjuu = var_0_51(arg_109_0:findTF("bg_back/08_Manjuu"), arg_109_0)
-	arg_109_0.walker = var_0_53(arg_109_0:findTF("obstacle/walker", arg_109_0.scene), arg_109_0)
-	arg_109_0.obsTF = arg_109_0:findTF("scene/obstacle")
-	arg_109_0.obsCanvas = GetComponent(arg_109_0.obsTF, typeof(CanvasGroup))
-	arg_109_0.obsTpl = arg_109_0:findTF("scene/obstacle_Tpl")
-	arg_109_0.minerGroups = arg_109_0:findTF("miner_groups", arg_109_0.obsTF)
-	arg_109_0.oilGroups = arg_109_0:findTF("oil_groups", arg_109_0.obsTF)
-	arg_109_0.cubeGroups = arg_109_0:findTF("cube_groups", arg_109_0.obsTF)
+function var_0_0.initController(arg_113_0)
+	arg_113_0.scene = arg_113_0:findTF("scene")
+	arg_113_0.gridTF = arg_113_0:findTF("ui/grid")
+	arg_113_0.player = var_0_48(arg_113_0:findTF("player", arg_113_0.scene), arg_113_0)
+	arg_113_0.phy = arg_113_0:findTF("Ayanami_phy", arg_113_0.scene)
+	arg_113_0.drawDot = arg_113_0:findTF("draw_dot", arg_113_0.scene)
+	arg_113_0.curlingTpls = arg_113_0:findTF("curling_Tpl", arg_113_0.scene)
+	arg_113_0.curling = var_0_49(arg_113_0.curlingTpls, arg_113_0.player._tf, arg_113_0)
+	arg_113_0.ofunya = var_0_50(arg_113_0:findTF("bg_back/07_Ofunya"), arg_113_0)
+	arg_113_0.manjuu = var_0_51(arg_113_0:findTF("bg_back/08_Manjuu"), arg_113_0)
+	arg_113_0.walker = var_0_53(arg_113_0:findTF("obstacle/walker", arg_113_0.scene), arg_113_0)
+	arg_113_0.obsTF = arg_113_0:findTF("scene/obstacle")
+	arg_113_0.obsCanvas = GetComponent(arg_113_0.obsTF, typeof(CanvasGroup))
+	arg_113_0.obsTpl = arg_113_0:findTF("scene/obstacle_Tpl")
+	arg_113_0.minerGroups = arg_113_0:findTF("miner_groups", arg_113_0.obsTF)
+	arg_113_0.oilGroups = arg_113_0:findTF("oil_groups", arg_113_0.obsTF)
+	arg_113_0.cubeGroups = arg_113_0:findTF("cube_groups", arg_113_0.obsTF)
 end
 
-function var_0_0.updateMainUI(arg_110_0)
-	local var_110_0 = arg_110_0:getGameUsedTimes()
-	local var_110_1 = arg_110_0:getGameTimes()
+function var_0_0.updateMainUI(arg_114_0)
+	local var_114_0 = arg_114_0:getGameUsedTimes()
+	local var_114_1 = arg_114_0:getGameTimes()
 
-	for iter_110_0 = 1, #arg_110_0.itemList do
-		setActive(arg_110_0:findTF("lock", arg_110_0.itemList[iter_110_0]), false)
-		setActive(arg_110_0:findTF("finish", arg_110_0.itemList[iter_110_0]), false)
+	for iter_114_0 = 1, #arg_114_0.itemList do
+		setActive(arg_114_0:findTF("lock", arg_114_0.itemList[iter_114_0]), false)
+		setActive(arg_114_0:findTF("finish", arg_114_0.itemList[iter_114_0]), false)
 
-		if iter_110_0 <= var_110_0 then
-			setActive(arg_110_0:findTF("finish", arg_110_0.itemList[iter_110_0]), true)
-		elseif iter_110_0 == var_110_0 + 1 and var_110_1 >= 1 then
+		if iter_114_0 <= var_114_0 then
+			setActive(arg_114_0:findTF("finish", arg_114_0.itemList[iter_114_0]), true)
+		elseif iter_114_0 == var_114_0 + 1 and var_114_1 >= 1 then
 			-- block empty
-		elseif var_110_0 < iter_110_0 and iter_110_0 <= var_110_0 + var_110_1 then
+		elseif var_114_0 < iter_114_0 and iter_114_0 <= var_114_0 + var_114_1 then
 			-- block empty
 		else
-			setActive(arg_110_0:findTF("award", arg_110_0.itemList[iter_110_0]), false)
-			setActive(arg_110_0:findTF("lock", arg_110_0.itemList[iter_110_0]), true)
+			setActive(arg_114_0:findTF("lock", arg_114_0.itemList[iter_114_0]), true)
 		end
 	end
 
-	arg_110_0.totalTimes = arg_110_0:getGameTotalTime()
+	arg_114_0.totalTimes = arg_114_0:getGameTotalTime()
 
-	local var_110_2 = 1 - (arg_110_0:getGameUsedTimes() - 3 < 0 and 0 or arg_110_0:getGameUsedTimes() - 3) / (arg_110_0.totalTimes - 4)
+	local var_114_2 = 1 - (arg_114_0:getGameUsedTimes() - 3 < 0 and 0 or arg_114_0:getGameUsedTimes() - 3) / (arg_114_0.totalTimes - 4)
 
-	if var_110_2 > 1 then
-		var_110_2 = 1
+	if var_114_2 > 1 then
+		var_114_2 = 1
 	end
 
-	scrollTo(arg_110_0.listScrollRect, 0, var_110_2)
-	arg_110_0:checkGet()
+	scrollTo(arg_114_0.listScrollRect, 0, var_114_2)
+	arg_114_0:checkGet()
 end
 
-function var_0_0.checkGet(arg_111_0)
-	if arg_111_0:getUltimate() == 0 then
-		if arg_111_0:getGameTotalTime() > arg_111_0:getGameUsedTimes() then
+function var_0_0.updateRankUI(arg_115_0, arg_115_1)
+	for iter_115_0 = 1, #arg_115_1 do
+		local var_115_0
+
+		if iter_115_0 > #arg_115_0._rankItems then
+			local var_115_1 = tf(instantiate(arg_115_0._rankItemTpl))
+
+			setActive(var_115_1, false)
+			setParent(var_115_1, arg_115_0._rankContent)
+			table.insert(arg_115_0._rankItems, var_115_1)
+		end
+
+		local var_115_2 = arg_115_0._rankItems[iter_115_0]
+
+		arg_115_0:setRankItemData(var_115_2, arg_115_1[iter_115_0], iter_115_0)
+		setActive(var_115_2, true)
+	end
+
+	for iter_115_1 = #arg_115_1 + 1, #arg_115_0._rankItems do
+		setActive(arg_115_0._rankItems, false)
+	end
+
+	setActive(arg_115_0._rankEmpty, #arg_115_1 == 0)
+	setActive(arg_115_0._rankImg, #arg_115_1 > 0)
+end
+
+function var_0_0.checkGet(arg_116_0)
+	if arg_116_0:getUltimate() == 0 then
+		if arg_116_0:getGameTotalTime() > arg_116_0:getGameUsedTimes() then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = arg_111_0:GetMGHubData().id,
+			hubid = arg_116_0:GetMGHubData().id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
 	end
 end
 
-function var_0_0.openMainUI(arg_112_0)
-	setActive(arg_112_0.gameUI, false)
-	setActive(arg_112_0.mainUI, true)
-	arg_112_0:updateMainUI()
+function var_0_0.openMainUI(arg_117_0)
+	setActive(arg_117_0.gameUI, false)
+	setActive(arg_117_0.mainUI, true)
+	arg_117_0:updateMainUI()
 end
 
-function var_0_0.readyStart(arg_113_0)
-	setActive(arg_113_0.mainUI, false)
-	setActive(arg_113_0.countUI, true)
-	arg_113_0.countAnimator:Play("count")
+function var_0_0.openRankUI(arg_118_0, arg_118_1)
+	setActive(arg_118_0.rankUI, arg_118_1)
+
+	if arg_118_1 then
+		local var_118_0 = arg_118_0:GetMGData().id
+
+		pg.m02:sendNotification(GAME.MINI_GAME_FRIEND_RANK, {
+			id = var_118_0,
+			callback = function(arg_119_0)
+				local var_119_0 = {}
+
+				for iter_119_0 = 1, #arg_119_0 do
+					local var_119_1 = {}
+
+					for iter_119_1, iter_119_2 in pairs(arg_119_0[iter_119_0]) do
+						var_119_1[iter_119_1] = iter_119_2
+					end
+
+					table.insert(var_119_0, var_119_1)
+				end
+
+				table.sort(var_119_0, function(arg_120_0, arg_120_1)
+					if arg_120_0.score ~= arg_120_1.score then
+						return arg_120_0.score > arg_120_1.score
+					elseif arg_120_0.time_data ~= arg_120_1.time_data then
+						return arg_120_0.time_data > arg_120_1.time_data
+					else
+						return arg_120_0.player_id < arg_120_1.player_id
+					end
+				end)
+				arg_118_0:updateRankUI(var_119_0)
+			end
+		})
+	end
+end
+
+function var_0_0.readyStart(arg_121_0)
+	setActive(arg_121_0.mainUI, false)
+	setActive(arg_121_0.countUI, true)
+	arg_121_0.countAnimator:Play("count")
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_1)
-	arg_113_0:resetGame()
+	arg_121_0:resetGame()
 end
 
-function var_0_0.resetGame(arg_114_0)
-	arg_114_0.gameStartFlag = false
-	arg_114_0.gamePause = false
-	arg_114_0.gameEndFlag = false
-	arg_114_0.scoreNum = 0
-	arg_114_0.roundNum = 1
+function var_0_0.resetGame(arg_122_0)
+	arg_122_0.gameStartFlag = false
+	arg_122_0.gamePause = false
+	arg_122_0.gameEndFlag = false
+	arg_122_0.scoreNum = 0
+	arg_122_0.roundNum = 1
 
-	arg_114_0.player:Reset()
-	arg_114_0.curling:Reset()
-	arg_114_0.ofunya:Reset()
-	arg_114_0.manjuu:Reset()
-	arg_114_0.walker:Reset()
+	arg_122_0.player:Reset()
+	arg_122_0.curling:Reset()
+	arg_122_0.ofunya:Reset()
+	arg_122_0.manjuu:Reset()
+	arg_122_0.walker:Reset()
 end
 
-function var_0_0.startGame(arg_115_0)
-	setActive(arg_115_0.gameUI, true)
-	arg_115_0:CoordinateGrid(arg_115_0.gridTF)
+function var_0_0.startGame(arg_123_0)
+	setActive(arg_123_0.gameUI, true)
+	arg_123_0:CoordinateGrid(arg_123_0.gridTF)
 
-	arg_115_0.gameStartFlag = true
+	arg_123_0.gameStartFlag = true
 
-	arg_115_0.player:Start()
-	arg_115_0.curling:Start()
-	arg_115_0.ofunya:Start()
-	arg_115_0.manjuu:Start()
-	arg_115_0:staticObsStart()
-	arg_115_0:updateGameUI()
-	arg_115_0:timerStart()
+	arg_123_0.player:Start()
+	arg_123_0.curling:Start()
+	arg_123_0.ofunya:Start()
+	arg_123_0.manjuu:Start()
+	arg_123_0:staticObsStart()
+	arg_123_0:updateGameUI()
+	arg_123_0:timerStart()
 end
 
-function var_0_0.staticObsStart(arg_116_0)
-	setActive(arg_116_0.obsTF, true)
+function var_0_0.staticObsStart(arg_124_0)
+	setActive(arg_124_0.obsTF, true)
 
-	arg_116_0.obsCanvas.alpha = 1
+	arg_124_0.obsCanvas.alpha = 1
 
-	arg_116_0.walker:Reset()
+	arg_124_0.walker:Reset()
 
-	local var_116_0 = math.random()
-	local var_116_1 = var_0_37.walker
+	local var_124_0 = math.random()
+	local var_124_1 = var_0_37.walker
 
-	if var_116_0 <= var_116_1.appear then
-		setActive(arg_116_0.walker._tf, true)
-		setLocalScale(arg_116_0.walker._tf, Vector2(var_0_38.walker, var_0_38.walker))
+	if var_124_0 <= var_124_1.appear then
+		setActive(arg_124_0.walker._tf, true)
+		setLocalScale(arg_124_0.walker._tf, Vector2(var_0_38.walker, var_0_38.walker))
 
-		local var_116_2 = var_116_1.path[math.random(1, #var_116_1.path)]
+		local var_124_2 = var_124_1.path[math.random(1, #var_124_1.path)]
 
-		arg_116_0.walker:SetPath(var_116_2)
+		arg_124_0.walker:SetPath(var_124_2)
 
-		local var_116_3 = {}
+		local var_124_3 = {}
 
-		if var_116_2 == var_0_26 then
-			var_116_3 = {
+		if var_124_2 == var_0_26 then
+			var_124_3 = {
 				8,
 				11,
 				12,
@@ -1189,8 +1275,8 @@ function var_0_0.staticObsStart(arg_116_0)
 				17,
 				21
 			}
-		elseif var_116_2 == var_0_24 then
-			var_116_3 = {
+		elseif var_124_2 == var_0_24 then
+			var_124_3 = {
 				5,
 				9,
 				10,
@@ -1202,9 +1288,9 @@ function var_0_0.staticObsStart(arg_116_0)
 			}
 		end
 
-		local function var_116_4(arg_117_0)
-			for iter_117_0, iter_117_1 in ipairs(var_116_3) do
-				if arg_117_0 == iter_117_1 then
+		local function var_124_4(arg_125_0)
+			for iter_125_0, iter_125_1 in ipairs(var_124_3) do
+				if arg_125_0 == iter_125_1 then
 					return true
 				end
 			end
@@ -1212,94 +1298,94 @@ function var_0_0.staticObsStart(arg_116_0)
 			return false
 		end
 
-		local var_116_5 = {}
+		local var_124_5 = {}
 
-		for iter_116_0, iter_116_1 in ipairs(arg_116_0.grids) do
-			if not var_116_4(iter_116_0) then
-				table.insert(var_116_5, iter_116_1)
+		for iter_124_0, iter_124_1 in ipairs(arg_124_0.grids) do
+			if not var_124_4(iter_124_0) then
+				table.insert(var_124_5, iter_124_1)
 			end
 		end
 
-		arg_116_0.grids = var_116_5
+		arg_124_0.grids = var_124_5
 
-		arg_116_0.walker:Start()
+		arg_124_0.walker:Start()
 	end
 
-	removeAllChildren(arg_116_0.oilGroups)
+	removeAllChildren(arg_124_0.oilGroups)
 
-	for iter_116_2, iter_116_3 in ipairs(var_0_37.oil) do
-		if math.random() <= iter_116_3.appear then
-			for iter_116_4 = 1, iter_116_3.num do
-				local var_116_6 = cloneTplTo(arg_116_0:findTF("oil_Tpl", arg_116_0.obsTpl), arg_116_0.oilGroups, "oil")
+	for iter_124_2, iter_124_3 in ipairs(var_0_37.oil) do
+		if math.random() <= iter_124_3.appear then
+			for iter_124_4 = 1, iter_124_3.num do
+				local var_124_6 = cloneTplTo(arg_124_0:findTF("oil_Tpl", arg_124_0.obsTpl), arg_124_0.oilGroups, "oil")
 
-				setActive(var_116_6, true)
+				setActive(var_124_6, true)
 
-				local var_116_7 = math.random(1, #arg_116_0.grids)
+				local var_124_7 = math.random(1, #arg_124_0.grids)
 
-				setLocalPosition(var_116_6, Vector2(arg_116_0.grids[var_116_7].x, arg_116_0.grids[var_116_7].y))
-				setLocalScale(var_116_6, Vector2(var_0_38.oil, var_0_38.oil))
-				table.remove(arg_116_0.grids, var_116_7)
-			end
-		end
-	end
-
-	removeAllChildren(arg_116_0.cubeGroups)
-
-	for iter_116_5, iter_116_6 in ipairs(var_0_37.cube) do
-		if math.random() <= iter_116_6.appear then
-			for iter_116_7 = 1, iter_116_6.num do
-				local var_116_8 = cloneTplTo(arg_116_0:findTF("cube_Tpl", arg_116_0.obsTpl), arg_116_0.cubeGroups, "cube")
-
-				setActive(var_116_8, true)
-
-				local var_116_9 = math.random(1, #arg_116_0.grids)
-
-				setLocalPosition(var_116_8, Vector2(arg_116_0.grids[var_116_9].x, arg_116_0.grids[var_116_9].y))
-				setLocalScale(var_116_8, Vector2(var_0_38.cube, var_0_38.cube))
-				table.remove(arg_116_0.grids, var_116_9)
+				setLocalPosition(var_124_6, Vector2(arg_124_0.grids[var_124_7].x, arg_124_0.grids[var_124_7].y))
+				setLocalScale(var_124_6, Vector2(var_0_38.oil, var_0_38.oil))
+				table.remove(arg_124_0.grids, var_124_7)
 			end
 		end
 	end
 
-	removeAllChildren(arg_116_0.minerGroups)
+	removeAllChildren(arg_124_0.cubeGroups)
 
-	arg_116_0.minerControls = {}
+	for iter_124_5, iter_124_6 in ipairs(var_0_37.cube) do
+		if math.random() <= iter_124_6.appear then
+			for iter_124_7 = 1, iter_124_6.num do
+				local var_124_8 = cloneTplTo(arg_124_0:findTF("cube_Tpl", arg_124_0.obsTpl), arg_124_0.cubeGroups, "cube")
 
-	for iter_116_8, iter_116_9 in ipairs(var_0_37.miner) do
-		if math.random() <= iter_116_9.appear then
-			for iter_116_10 = 1, iter_116_9.num do
-				local var_116_10 = cloneTplTo(arg_116_0:findTF("miner_Tpl", arg_116_0.obsTpl), arg_116_0.minerGroups, "miner")
+				setActive(var_124_8, true)
 
-				setActive(var_116_10, true)
+				local var_124_9 = math.random(1, #arg_124_0.grids)
 
-				local var_116_11 = var_0_52(var_116_10, arg_116_0)
+				setLocalPosition(var_124_8, Vector2(arg_124_0.grids[var_124_9].x, arg_124_0.grids[var_124_9].y))
+				setLocalScale(var_124_8, Vector2(var_0_38.cube, var_0_38.cube))
+				table.remove(arg_124_0.grids, var_124_9)
+			end
+		end
+	end
 
-				table.insert(arg_116_0.minerControls, var_116_11)
+	removeAllChildren(arg_124_0.minerGroups)
 
-				local var_116_12 = math.random(1, #arg_116_0.grids)
+	arg_124_0.minerControls = {}
 
-				setLocalPosition(var_116_10, Vector2(arg_116_0.grids[var_116_12].x, arg_116_0.grids[var_116_12].y))
-				setLocalScale(var_116_10, Vector2(var_0_38.miner, var_0_38.miner))
-				table.remove(arg_116_0.grids, var_116_12)
+	for iter_124_8, iter_124_9 in ipairs(var_0_37.miner) do
+		if math.random() <= iter_124_9.appear then
+			for iter_124_10 = 1, iter_124_9.num do
+				local var_124_10 = cloneTplTo(arg_124_0:findTF("miner_Tpl", arg_124_0.obsTpl), arg_124_0.minerGroups, "miner")
+
+				setActive(var_124_10, true)
+
+				local var_124_11 = var_0_52(var_124_10, arg_124_0)
+
+				table.insert(arg_124_0.minerControls, var_124_11)
+
+				local var_124_12 = math.random(1, #arg_124_0.grids)
+
+				setLocalPosition(var_124_10, Vector2(arg_124_0.grids[var_124_12].x, arg_124_0.grids[var_124_12].y))
+				setLocalScale(var_124_10, Vector2(var_0_38.miner, var_0_38.miner))
+				table.remove(arg_124_0.grids, var_124_12)
 			end
 		end
 	end
 end
 
-function var_0_0.obsFadeOut(arg_118_0)
-	arg_118_0:managedTween(LeanTween.value, function()
-		setActive(arg_118_0.obsTF, false)
-	end, go(arg_118_0.obsTF), 1, 0, 0.5):setOnUpdate(System.Action_float(function(arg_120_0)
-		arg_118_0.obsCanvas.alpha = arg_120_0
+function var_0_0.obsFadeOut(arg_126_0)
+	arg_126_0:managedTween(LeanTween.value, function()
+		setActive(arg_126_0.obsTF, false)
+	end, go(arg_126_0.obsTF), 1, 0, 0.5):setOnUpdate(System.Action_float(function(arg_128_0)
+		arg_126_0.obsCanvas.alpha = arg_128_0
 	end))
 end
 
-function var_0_0.Update(arg_121_0)
-	arg_121_0:AddDebugInput()
+function var_0_0.Update(arg_129_0)
+	arg_129_0:AddDebugInput()
 end
 
-function var_0_0.AddDebugInput(arg_122_0)
-	if arg_122_0.gamePause or arg_122_0.gameEndFlag then
+function var_0_0.AddDebugInput(arg_130_0)
+	if arg_130_0.gamePause or arg_130_0.gameEndFlag then
 		return
 	end
 
@@ -1308,196 +1394,198 @@ function var_0_0.AddDebugInput(arg_122_0)
 	end
 end
 
-function var_0_0.changeSpeed(arg_123_0, arg_123_1)
+function var_0_0.changeSpeed(arg_131_0, arg_131_1)
 	return
 end
 
-function var_0_0.onTimer(arg_124_0)
-	arg_124_0.curling:Step()
-	arg_124_0.walker:Step()
-	arg_124_0:updateGameUI()
+function var_0_0.onTimer(arg_132_0)
+	arg_132_0.curling:Step()
+	arg_132_0.walker:Step()
+	arg_132_0:updateGameUI()
 end
 
-function var_0_0.timerStart(arg_125_0)
-	if not arg_125_0.timer.running then
-		arg_125_0.timer:Start()
+function var_0_0.timerStart(arg_133_0)
+	if not arg_133_0.timer.running then
+		arg_133_0.timer:Start()
 	end
 end
 
-function var_0_0.timerStop(arg_126_0)
-	if arg_126_0.timer.running then
-		arg_126_0.timer:Stop()
+function var_0_0.timerStop(arg_134_0)
+	if arg_134_0.timer.running then
+		arg_134_0.timer:Stop()
 	end
 end
 
-function var_0_0.updateGameUI(arg_127_0)
-	setText(arg_127_0.scoreTF, arg_127_0.scoreNum)
-	setText(arg_127_0.roundTF, "Round " .. arg_127_0.roundNum)
+function var_0_0.updateGameUI(arg_135_0)
+	setText(arg_135_0.scoreTF, arg_135_0.scoreNum)
+	setText(arg_135_0.roundTF, "Round " .. arg_135_0.roundNum)
 end
 
-function var_0_0.addScore(arg_128_0, arg_128_1, arg_128_2)
-	local var_128_0 = cloneTplTo(arg_128_0:findTF("score_tf", arg_128_0.gameUI), arg_128_0.scoreGroup)
+function var_0_0.addScore(arg_136_0, arg_136_1, arg_136_2)
+	local var_136_0 = cloneTplTo(arg_136_0:findTF("score_tf", arg_136_0.gameUI), arg_136_0.scoreGroup)
 
-	if arg_128_2 then
-		setLocalPosition(var_128_0, arg_128_2)
+	if arg_136_2 then
+		setLocalPosition(var_136_0, arg_136_2)
 	else
-		setLocalPosition(var_128_0, Vector2(432, 144))
+		setLocalPosition(var_136_0, Vector2(432, 144))
 	end
 
-	setActive(var_128_0, false)
-	setActive(var_128_0, true)
-	setText(var_128_0, "+" .. arg_128_1)
+	setActive(var_136_0, false)
+	setActive(var_136_0, true)
+	setText(var_136_0, "+" .. arg_136_1)
 
-	arg_128_0.scoreNum = arg_128_0.scoreNum + arg_128_1
+	arg_136_0.scoreNum = arg_136_0.scoreNum + arg_136_1
 end
 
-function var_0_0.pauseGame(arg_129_0)
-	arg_129_0.gamePause = true
+function var_0_0.pauseGame(arg_137_0)
+	arg_137_0.gamePause = true
 
-	arg_129_0:timerStop()
-	arg_129_0:changeSpeed(0)
-	arg_129_0:pauseManagedTween()
-	arg_129_0:emit(var_0_45)
+	arg_137_0:timerStop()
+	arg_137_0:changeSpeed(0)
+	arg_137_0:pauseManagedTween()
+	arg_137_0:emit(var_0_45)
 end
 
-function var_0_0.resumeGame(arg_130_0)
-	arg_130_0.gamePause = false
+function var_0_0.resumeGame(arg_138_0)
+	arg_138_0.gamePause = false
 
-	arg_130_0:changeSpeed(1)
-	arg_130_0:timerStart()
-	arg_130_0:resumeManagedTween()
-	arg_130_0:emit(var_0_46)
+	arg_138_0:changeSpeed(1)
+	arg_138_0:timerStart()
+	arg_138_0:resumeManagedTween()
+	arg_138_0:emit(var_0_46)
 end
 
-function var_0_0.nextRoundGame(arg_131_0)
-	removeAllChildren(arg_131_0.scoreGroup)
+function var_0_0.nextRoundGame(arg_139_0)
+	removeAllChildren(arg_139_0.scoreGroup)
 
-	if arg_131_0.roundNum == 3 then
-		arg_131_0:endGame()
+	if arg_139_0.roundNum == 3 then
+		arg_139_0:endGame()
 	else
-		arg_131_0.roundNum = arg_131_0.roundNum + 1
+		arg_139_0.roundNum = arg_139_0.roundNum + 1
 
-		arg_131_0:CoordinateGrid(arg_131_0.gridTF)
-		arg_131_0:staticObsStart()
-		arg_131_0:emit(var_0_44)
+		arg_139_0:CoordinateGrid(arg_139_0.gridTF)
+		arg_139_0:staticObsStart()
+		arg_139_0:emit(var_0_44)
 	end
 end
 
-function var_0_0.endGame(arg_132_0)
-	if arg_132_0.gameEndFlag then
+function var_0_0.endGame(arg_140_0)
+	if arg_140_0.gameEndFlag then
 		return
 	end
 
-	arg_132_0:timerStop()
+	arg_140_0:timerStop()
 
-	arg_132_0.gameEndFlag = true
+	arg_140_0.gameEndFlag = true
 
-	setActive(arg_132_0.clickMask, true)
-	arg_132_0:managedTween(LeanTween.delayedCall, function()
-		arg_132_0.gameEndFlag = false
-		arg_132_0.gameStartFlag = false
+	setActive(arg_140_0.clickMask, true)
+	arg_140_0:managedTween(LeanTween.delayedCall, function()
+		arg_140_0.gameEndFlag = false
+		arg_140_0.gameStartFlag = false
 
-		setActive(arg_132_0.clickMask, false)
-		arg_132_0:showEndUI()
+		setActive(arg_140_0.clickMask, false)
+		arg_140_0:showEndUI()
 	end, 0.1, nil)
 end
 
-function var_0_0.showEndUI(arg_134_0)
-	setActive(arg_134_0.endUI, true)
+function var_0_0.showEndUI(arg_142_0)
+	setActive(arg_142_0.endUI, true)
 
-	local var_134_0 = arg_134_0:GetMGData():GetRuntimeData("elements")
-	local var_134_1 = arg_134_0.scoreNum
-	local var_134_2 = var_134_0 and #var_134_0 > 0 and var_134_0[1] or 0
+	local var_142_0 = arg_142_0.scoreNum
+	local var_142_1 = getProxy(MiniGameProxy):GetHighScore(arg_142_0:GetMGData().id)
+	local var_142_2 = var_142_1 and #var_142_1 > 0 and var_142_1[1] or 0
+	local var_142_3 = var_142_1 and #var_142_1 > 1 and var_142_1[2] or 0
 
-	setActive(arg_134_0:findTF("ad/panel/cur_score/new", arg_134_0.endUI), var_134_2 < var_134_1)
+	setActive(arg_142_0:findTF("ad/panel/cur_score/new", arg_142_0.endUI), var_142_2 < var_142_0)
 
-	if var_134_2 <= var_134_1 then
-		var_134_2 = var_134_1
+	if var_142_2 <= var_142_0 then
+		var_142_2 = var_142_0
 
-		arg_134_0:StoreDataToServer({
-			var_134_2
+		getProxy(MiniGameProxy):UpdataHighScore(arg_142_0:GetMGData().id, {
+			var_142_2,
+			var_142_3
 		})
 	end
 
-	local var_134_3 = arg_134_0:findTF("ad/panel/highest_score", arg_134_0.endUI)
-	local var_134_4 = arg_134_0:findTF("ad/panel/cur_score", arg_134_0.endUI)
+	local var_142_4 = arg_142_0:findTF("ad/panel/highest_score", arg_142_0.endUI)
+	local var_142_5 = arg_142_0:findTF("ad/panel/cur_score", arg_142_0.endUI)
 
-	setText(var_134_3, var_134_2)
-	setText(var_134_4, var_134_1)
+	setText(var_142_4, var_142_2)
+	setText(var_142_5, var_142_0)
 
-	if arg_134_0:getGameTimes() and arg_134_0:getGameTimes() > 0 then
-		arg_134_0:SendSuccess(0)
+	if arg_142_0:getGameTimes() and arg_142_0:getGameTimes() > 0 then
+		arg_142_0:SendSuccess(0)
 	end
 end
 
-function var_0_0.CoordinateGrid(arg_135_0, arg_135_1)
-	local var_135_0 = Vector2(150, 150)
-	local var_135_1 = arg_135_1.rect.width
-	local var_135_2 = arg_135_1.rect.height
-	local var_135_3 = Vector2(arg_135_1.anchoredPosition.x - var_135_1 / 2, arg_135_1.anchoredPosition.y - var_135_2 / 2)
-	local var_135_4 = math.modf(var_135_2 / var_135_0.y)
-	local var_135_5 = var_135_2 % var_135_0.y / (var_135_4 + 1)
-	local var_135_6 = math.modf(var_135_1 / var_135_0.x)
-	local var_135_7 = var_135_1 % var_135_0.x / (var_135_6 + 1)
+function var_0_0.CoordinateGrid(arg_143_0, arg_143_1)
+	local var_143_0 = Vector2(150, 150)
+	local var_143_1 = arg_143_1.rect.width
+	local var_143_2 = arg_143_1.rect.height
+	local var_143_3 = Vector2(arg_143_1.anchoredPosition.x - var_143_1 / 2, arg_143_1.anchoredPosition.y - var_143_2 / 2)
+	local var_143_4 = math.modf(var_143_2 / var_143_0.y)
+	local var_143_5 = var_143_2 % var_143_0.y / (var_143_4 + 1)
+	local var_143_6 = math.modf(var_143_1 / var_143_0.x)
+	local var_143_7 = var_143_1 % var_143_0.x / (var_143_6 + 1)
 
-	arg_135_0.grids = {}
+	arg_143_0.grids = {}
 
-	for iter_135_0 = 1, var_135_6 do
-		for iter_135_1 = 1, var_135_4 do
-			local var_135_8 = var_135_3.x + iter_135_0 * (var_135_7 + var_135_0.x) - var_135_0.x / 2
-			local var_135_9 = var_135_3.y + iter_135_1 * (var_135_5 + var_135_0.y) - var_135_0.y / 2
+	for iter_143_0 = 1, var_143_6 do
+		for iter_143_1 = 1, var_143_4 do
+			local var_143_8 = var_143_3.x + iter_143_0 * (var_143_7 + var_143_0.x) - var_143_0.x / 2
+			local var_143_9 = var_143_3.y + iter_143_1 * (var_143_5 + var_143_0.y) - var_143_0.y / 2
 
-			table.insert(arg_135_0.grids, Vector2(var_135_8, var_135_9))
+			table.insert(arg_143_0.grids, Vector2(var_143_8, var_143_9))
 		end
 	end
 end
 
-function var_0_0.getGameTimes(arg_136_0)
-	return arg_136_0:GetMGHubData().count
+function var_0_0.getGameTimes(arg_144_0)
+	return arg_144_0:GetMGHubData().count
 end
 
-function var_0_0.getGameUsedTimes(arg_137_0)
-	return arg_137_0:GetMGHubData().usedtime
+function var_0_0.getGameUsedTimes(arg_145_0)
+	return arg_145_0:GetMGHubData().usedtime
 end
 
-function var_0_0.getUltimate(arg_138_0)
-	return arg_138_0:GetMGHubData().ultimate
+function var_0_0.getUltimate(arg_146_0)
+	return arg_146_0:GetMGHubData().ultimate
 end
 
-function var_0_0.getGameTotalTime(arg_139_0)
-	return (arg_139_0:GetMGHubData():getConfig("reward_need"))
+function var_0_0.getGameTotalTime(arg_147_0)
+	return (arg_147_0:GetMGHubData():getConfig("reward_need"))
 end
 
-function var_0_0.onBackPressed(arg_140_0)
-	if not arg_140_0.gameStartFlag then
-		arg_140_0:emit(var_0_0.ON_BACK_PRESSED)
+function var_0_0.onBackPressed(arg_148_0)
+	if not arg_148_0.gameStartFlag then
+		arg_148_0:emit(var_0_0.ON_BACK_PRESSED)
 	else
-		if arg_140_0.gameEndFlag then
+		if arg_148_0.gameEndFlag then
 			return
 		end
 
-		if isActive(arg_140_0.pauseUI) then
-			setActive(arg_140_0.pauseUI, false)
+		if isActive(arg_148_0.pauseUI) then
+			setActive(arg_148_0.pauseUI, false)
 		end
 
-		arg_140_0:pauseGame()
-		setActive(arg_140_0.returnUI, true)
+		arg_148_0:pauseGame()
+		setActive(arg_148_0.returnUI, true)
 	end
 end
 
-function var_0_0.willExit(arg_141_0)
-	if arg_141_0.handle then
-		UpdateBeat:RemoveListener(arg_141_0.handle)
+function var_0_0.willExit(arg_149_0)
+	if arg_149_0.handle then
+		UpdateBeat:RemoveListener(arg_149_0.handle)
 	end
 
-	arg_141_0:cleanManagedTween()
+	arg_149_0:cleanManagedTween()
 
-	if arg_141_0.timer and arg_141_0.timer.running then
-		arg_141_0.timer:Stop()
+	if arg_149_0.timer and arg_149_0.timer.running then
+		arg_149_0.timer:Stop()
 	end
 
 	Time.timeScale = 1
-	arg_141_0.timer = nil
+	arg_149_0.timer = nil
 end
 
 return var_0_0

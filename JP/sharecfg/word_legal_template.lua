@@ -120,6 +120,17 @@ function temp()
 					}
 				}
 			},
+			イ = {
+				ス = {
+					ブ = {
+						ル = {
+							ク = {
+								this = true
+							}
+						}
+					}
+				}
+			},
 			プ = {
 				レ = {
 					ク = {
@@ -1074,6 +1085,19 @@ function temp()
 									ん = {
 										this = true
 									}
+								}
+							}
+						}
+					}
+				}
+			},
+			ッ = {
+				ツ = {
+					・ = {
+						ル = {
+							メ = {
+								イ = {
+									this = true
 								}
 							}
 						}
@@ -7062,6 +7086,9 @@ function temp()
 	var_0_1.Z = {
 		["1"] = {
 			this = true,
+			["1"] = {
+				this = true
+			},
 			["6"] = {
 				this = true
 			},
@@ -7096,6 +7123,9 @@ function temp()
 				this = true
 			}
 		},
+		["9"] = {
+			this = true
+		},
 		["3"] = {
 			["5"] = {
 				this = true
@@ -7112,6 +7142,11 @@ function temp()
 				this = true
 			},
 			["7"] = {
+				this = true
+			}
+		},
+		["5"] = {
+			["2"] = {
 				this = true
 			}
 		}

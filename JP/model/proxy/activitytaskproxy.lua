@@ -38,11 +38,29 @@ function var_0_0.initActList(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 end
 
 function var_0_0.finishActTask(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = pg.task_data_template[arg_3_2].type
+
+	if not table.contains(TotalTaskProxy.act_task_onece_type, var_3_0) then
+		return
+	end
+
 	for iter_3_0 = 1, #arg_3_0.actTasks do
 		if arg_3_0.actTasks[iter_3_0].actId == arg_3_1 then
-			table.insert(arg_3_0.actTasks[iter_3_0].finish_tasks, arg_3_0:createTask(arg_3_1, {
-				id = arg_3_2
-			}))
+			local var_3_1 = true
+
+			for iter_3_1, iter_3_2 in ipairs(arg_3_0.actTasks[iter_3_0].finish_tasks) do
+				if iter_3_2.id == arg_3_2 then
+					var_3_1 = false
+
+					break
+				end
+			end
+
+			if var_3_1 then
+				table.insert(arg_3_0.actTasks[iter_3_0].finish_tasks, arg_3_0:createTask(arg_3_1, {
+					id = arg_3_2
+				}))
+			end
 		end
 	end
 end
@@ -123,12 +141,12 @@ function var_0_0.removeActList(arg_7_0, arg_7_1, arg_7_2)
 
 				for iter_7_3 = #var_7_0, 1, -1 do
 					if var_7_0[iter_7_3].id == iter_7_1.id then
-						if not var_7_0[iter_7_3]:isCircle() then
+						if var_7_0[iter_7_3]:isCircle() then
 							var_7_0[iter_7_3]:updateProgress(0)
-						end
+						else
+							local var_7_1 = table.remove(var_7_0, iter_7_3)
 
-						if not var_7_0[iter_7_3]:isCircle() then
-							table.remove(var_7_0, iter_7_3)
+							arg_7_0:finishActTask(arg_7_1, var_7_1.id)
 						end
 					end
 				end
