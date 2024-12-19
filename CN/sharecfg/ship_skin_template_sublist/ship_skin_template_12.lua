@@ -1,346 +1,6 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_12 = {
-	[402081] = {
-		ship_group = 40208,
-		name = "幻梦的普洛塞庇娜",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 1,
-		shop_id = 70686,
-		painting = "aierbin_2",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 18,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "156",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		id = 402081,
-		voice_actor_2 = -1,
-		prefab = "aierbin_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "以，以馆主之名下令，跪下吧——是啊，我就算下令也没有人会听从呢…果然我比起演大小姐，还是更适合演女仆呢…",
-		voice_actor = 312,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.576,
-					1.234,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.366,
-					1.191,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.303,
-					1.932,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.468,
-							2.387,
-							-0.568
-						}
-					}
-				}
-			}
-		}
-	},
-	[402082] = {
-		ship_group = 40208,
-		name = "不眠之夜的愿望",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "1102",
-		l2d_ignore_drag = 0,
-		group_index = 2,
-		shop_id = 70773,
-		painting = "aierbin_3",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 20,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		id = 402082,
-		voice_actor_2 = -1,
-		prefab = "aierbin_3",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "指挥官也睡不着吗？是，是啊…肯定是因为我刚才祈祷指挥官做个好梦才会这样的……不光是{namecode:449}自己，就连指挥官现在也睡不着了……呜呜……",
-		voice_actor = 312,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.79,
-					1.389,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.424,
-					1.191,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.303,
-					2.223,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.468,
-							2.999,
-							-0.568
-						}
-					}
-				}
-			}
-		}
-	},
-	[402083] = {
-		ship_group = 40208,
-		name = "春灯佳人",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 3,
-		shop_id = 70962,
-		painting = "aierbin_4",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 3,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "152",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		id = 402083,
-		voice_actor_2 = -1,
-		prefab = "aierbin_4",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "晚、晚安，指挥官……那个，{namecode:449}，已经准备好来当您的摄像模特了……呜、好复杂…我真的能做好么……",
-		voice_actor = 312,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					2.51,
-					0.65,
-					0
-				}
-			},
-			vicegun = {
-				{
-					2.55,
-					0.68,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.44,
-					2.17,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.62,
-							2.25,
-							-0.568
-						}
-					}
-				}
-			}
-		}
-	},
 	[402100] = {
 		ship_group = 40210,
 		name = "{namecode:516}",
@@ -600,6 +260,281 @@ pg.base.ship_skin_template_12 = {
 			ParamBodyAngleY = {
 				-5,
 				5
+			}
+		},
+		ship_l2d_id = {
+			4021011,
+			4021012
+		}
+	},
+	[402110] = {
+		ship_group = 40211,
+		name = "{namecode:541}",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "duyisibao",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 402110,
+		voice_actor_2 = -1,
+		prefab = "duyisibao",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "M级轻巡洋舰—{namecode:541}",
+		voice_actor = 338,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.879,
+					1.013,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.879,
+					1.013,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.88,
+					2.208,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.419,
+							2.163,
+							-0.568
+						}
+					}
+				}
+			}
+		}
+	},
+	[402111] = {
+		ship_group = 40211,
+		name = "两人的秘密特训！",
+		l2d_se = "",
+		hand_id = 1,
+		bgm = "",
+		illustrator2 = -1,
+		special_effects = "",
+		desc = "指、指挥官……已经到特训的时间，该改口叫主人了吗……主……主人，请不要一直盯着制服看了……我们快点开始吧……！",
+		group_index = 1,
+		l2d_drag_rate = "",
+		painting = "duyisibao_2",
+		gyro = 0,
+		rarity_bg = "",
+		l2d_ignore_drag = 0,
+		shop_type_id = 16,
+		prefab = "duyisibao_2",
+		main_UI_FX = "",
+		lip_smoothing = 0,
+		time = "",
+		voice_actor = 338,
+		illustrator = -1,
+		bg = "145",
+		bg_sp = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		lip_sync_gain = 0,
+		skin_type = 4,
+		live2d_offset_profile = "",
+		id = 402111,
+		voice_actor_2 = -1,
+		shop_id = 71082,
+		show_skin = "stand",
+		tag = {
+			6,
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.879,
+					1.013,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.879,
+					1.013,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.516,
+					2.242,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.401,
+							2.332,
+							-0.568
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			use_event = true
+		},
+		l2d_para_range = {
+			ParamAngleX = {
+				-20,
+				20
+			},
+			ParamEyeBallX = {
+				-0.6,
+				0.3
+			},
+			ParamEyeBallY = {
+				-0.5,
+				0.5
+			},
+			ParamBodyAngleX = {
+				-8,
+				8
+			},
+			ParamBodyAngleY = {
+				-5,
+				5
+			}
+		},
+		spine_offset = {
+			{
+				33.75,
+				-76.33,
+				0
+			},
+			{
+				0.99
 			}
 		},
 		ship_l2d_id = {
@@ -7734,6 +7669,158 @@ pg.base.ship_skin_template_12 = {
 			}
 		}
 	},
+	[405013] = {
+		ship_group = 40501,
+		name = "未完成的圣诞惊喜",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 3,
+		shop_id = 71079,
+		painting = "bisimai_4",
+		illustrator = -1,
+		shop_type_id = 1,
+		lip_smoothing = 0,
+		bg = "193",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		id = 405013,
+		voice_actor_2 = -1,
+		prefab = "bisimai_4",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "指、指挥官……？如你所见，我正在为你准备圣诞惊喜，不过目前看来这项行动已经失败了。嗯……这个时候应该先对你说圣诞快乐？",
+		voice_actor = 38,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		tag = {
+			1,
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.2,
+					1.02,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.19,
+					1.02,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.86,
+					2.11,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.32,
+							2.35,
+							-1.54
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			use_event = true
+		},
+		ship_l2d_id = {
+			40501301,
+			40501302,
+			40501303,
+			40501304,
+			40501305,
+			40501306,
+			40501307,
+			40501308,
+			40501309,
+			40501310,
+			40501311,
+			40501312,
+			40501313,
+			40501314,
+			40501315,
+			40501316,
+			40501317,
+			40501318,
+			40501319,
+			40501320,
+			40501321
+		}
+	},
 	[405018] = {
 		ship_group = 40501,
 		name = "Wedding Dominion",
@@ -11473,6 +11560,246 @@ pg.base.ship_skin_template_12 = {
 			}
 		}
 	},
+	[407040] = {
+		ship_group = 40704,
+		name = "{namecode:542}",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "fulici",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 407040,
+		voice_actor_2 = -1,
+		prefab = "fulici",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "大型飞机巡洋舰(Grossflugzeugkreuzer)A II型—{namecode:542}",
+		voice_actor = 435,
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					2.263,
+					1.372,
+					0
+				}
+			},
+			plane = {
+				{
+					1.454,
+					3,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.06,
+							2.28,
+							0
+						}
+					}
+				}
+			}
+		},
+		spine_offset = {
+			{
+				57,
+				-22.3,
+				0
+			},
+			{
+				0.84
+			}
+		}
+	},
+	[407041] = {
+		ship_group = 40704,
+		name = "Schwarzes Kaninchen",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 71078,
+		painting = "fulici_2",
+		illustrator = -1,
+		shop_type_id = 16,
+		lip_smoothing = 0,
+		bg = "145",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		id = 407041,
+		voice_actor_2 = -1,
+		prefab = "fulici_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "嗯……？是指挥官啊。我这副模样吓到你了么？呼……抱歉，我是在思考该如何整顿店内的纪律问题。总之，欢迎你的光临，指挥官。",
+		voice_actor = 435,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		tag = {
+			1,
+			2
+		},
+		live2d_offset = {
+			-98,
+			-74,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					2.271,
+					1.372,
+					0
+				}
+			},
+			plane = {
+				{
+					1.493,
+					3,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.12,
+							2.14,
+							-1.89
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			use_event = true
+		},
+		ship_l2d_id = {
+			40704101,
+			40704102,
+			40704103,
+			40704104,
+			40704105,
+			40704106,
+			40704107,
+			40704108,
+			40704109,
+			40704110,
+			40704111,
+			40704112,
+			40704113,
+			40704114,
+			40704115,
+			40704116
+		}
+	},
 	[408010] = {
 		ship_group = 40801,
 		name = "{namecode:414}",
@@ -13146,106 +13473,6 @@ pg.base.ship_skin_template_12 = {
 						{
 							-0.541,
 							2.497,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[408061] = {
-		ship_group = 40806,
-		name = "学园的Posaunist",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 1,
-		shop_id = 70204,
-		painting = "U101_2",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 4,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "103",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		id = 408061,
-		voice_actor_2 = -1,
-		prefab = "U101_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "指挥官，欢迎来到吹奏部~——为什么是吹奏部？很简单啊，因为学校里没有摩托部嘛！哈哈~开玩笑的，其实我也很喜欢音乐的呢，嘿嘿",
-		voice_actor = 189,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.211,
-					0.654,
-					0
-				}
-			},
-			torpedo = {
-				{
-					1.023,
-					0.09,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.51,
-							2.35,
 							0
 						}
 					}

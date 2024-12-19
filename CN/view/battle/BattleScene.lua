@@ -201,44 +201,57 @@ function var_0_0.SkillHrzPop(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4)
 
 	local var_7_6 = findTF(var_7_5, "skill/icon_mask/icon")
 	local var_7_7 = findTF(var_7_5, "skill/skill_name")
+	local var_7_8 = var_7_5:GetComponent(typeof(Animation))
+
+	if var_7_8 then
+		local var_7_9 = 1
+
+		while var_7_8:GetClip("anim_skinui_skill_" .. var_7_9) do
+			var_7_9 = var_7_9 + 1
+		end
+
+		if var_7_9 > 1 then
+			var_7_8:Play("anim_skinui_skill_" .. math.random(var_7_9 - 1))
+		end
+	end
 
 	var_7_6:GetComponent(typeof(Image)).sprite = var_7_2
 
-	local var_7_8, var_7_9 = arg_7_2:GetIFF()
+	local var_7_10, var_7_11 = arg_7_2:GetIFF()
 
 	if arg_7_2:GetIFF() == ys.Battle.BattleConfig.FRIENDLY_CODE then
-		var_7_9 = Color.New(1, 1, 1, 1)
+		var_7_11 = Color.New(1, 1, 1, 1)
 	else
-		var_7_9 = Color.New(1, 0.33, 0.33, 1)
+		var_7_11 = Color.New(1, 0.33, 0.33, 1)
 	end
 
-	var_7_7:GetComponent(typeof(Image)).color = var_7_9
-	findTF(var_7_5, "skill"):GetComponent(typeof(Image)).color = var_7_9
+	var_7_7:GetComponent(typeof(Image)).color = var_7_11
+	findTF(var_7_5, "skill"):GetComponent(typeof(Image)).color = var_7_11
 
 	if arg_7_3 then
 		arg_7_0:commanderSkillFloat(arg_7_3, arg_7_1, var_7_4)
 	else
-		local var_7_10 = var_0_1.CameraPosToUICamera(arg_7_2:GetPosition():Clone())
-		local var_7_11 = ys.Battle.BattleCameraUtil.GetInstance():GetCharacterArrowBarPosition(var_7_10)
-		local var_7_12 = table.contains(TeamType.SubShipType, arg_7_2:GetTemplate().type)
-		local var_7_13 = arg_7_2:GetMainUnitIndex()
+		local var_7_12 = var_0_1.CameraPosToUICamera(arg_7_2:GetPosition():Clone())
+		local var_7_13 = ys.Battle.BattleCameraUtil.GetInstance():GetCharacterArrowBarPosition(var_7_12)
+		local var_7_14 = table.contains(TeamType.SubShipType, arg_7_2:GetTemplate().type)
+		local var_7_15 = arg_7_2:GetMainUnitIndex()
 
-		if var_7_11 == nil or var_7_11 == nil and var_7_12 and not arg_7_2:IsMainFleetUnit() then
-			if var_7_8 == ys.Battle.BattleConfig.FRIENDLY_CODE then
-				var_7_10 = var_0_1.CameraPosToUICamera(arg_7_2:GetPosition():Clone():Add(var_0_0.IN_VIEW_FRIEND_SKILL_OFFSET))
+		if var_7_13 == nil or var_7_13 == nil and var_7_14 and not arg_7_2:IsMainFleetUnit() then
+			if var_7_10 == ys.Battle.BattleConfig.FRIENDLY_CODE then
+				var_7_12 = var_0_1.CameraPosToUICamera(arg_7_2:GetPosition():Clone():Add(var_0_0.IN_VIEW_FRIEND_SKILL_OFFSET))
 			else
-				var_7_10 = var_0_1.CameraPosToUICamera(arg_7_2:GetPosition():Clone():Add(var_0_0.IN_VIEW_FOE_SKILL_OFFSET))
+				var_7_12 = var_0_1.CameraPosToUICamera(arg_7_2:GetPosition():Clone():Add(var_0_0.IN_VIEW_FOE_SKILL_OFFSET))
 			end
 
-			var_7_5.position = Vector3(var_7_10.x, var_7_10.y, -2)
+			var_7_5.position = Vector3(var_7_12.x, var_7_12.y, -2)
 
-			local var_7_14 = rtf(var_7_5).rect.width * 0.5
-			local var_7_15 = var_7_5.anchoredPosition
-			local var_7_16 = var_7_15.x
+			local var_7_16 = rtf(var_7_5).rect.width * 0.5
+			local var_7_17 = var_7_5.anchoredPosition
+			local var_7_18 = var_7_17.x
 
-			if Screen.width * 0.5 < var_7_14 + var_7_16 then
-				var_7_15.x = var_7_16 - rtf(var_7_5).rect.width
-				var_7_5.anchoredPosition = var_7_15
+			if Screen.width * 0.5 < var_7_16 + var_7_18 then
+				var_7_17.x = var_7_18 - rtf(var_7_5).rect.width
+				var_7_5.anchoredPosition = var_7_17
 			end
 
 			if arg_7_0._preSkillTF then
@@ -253,37 +266,37 @@ function var_0_0.SkillHrzPop(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4)
 				var_7_1:Recycle(var_7_4)
 			end)
 		else
-			local var_7_17
-			local var_7_18 = var_0_0.SIDE_ALIGNMENT[var_7_13]
-			local var_7_19 = arg_7_0._sideSkillFloatStateList[var_7_8][var_7_13]
+			local var_7_19
+			local var_7_20 = var_0_0.SIDE_ALIGNMENT[var_7_15]
+			local var_7_21 = arg_7_0._sideSkillFloatStateList[var_7_10][var_7_15]
 
-			for iter_7_0 = 1, #var_7_19 do
-				if var_7_19[iter_7_0] then
-					var_7_17 = iter_7_0
+			for iter_7_0 = 1, #var_7_21 do
+				if var_7_21[iter_7_0] then
+					var_7_19 = iter_7_0
 
 					break
 				end
 			end
 
-			if var_7_17 == nil then
-				var_7_17 = #var_7_19 + 1
+			if var_7_19 == nil then
+				var_7_19 = #var_7_21 + 1
 			end
 
-			var_7_19[var_7_17] = false
-			var_7_5.position = var_7_11
+			var_7_21[var_7_19] = false
+			var_7_5.position = var_7_13
 
-			local var_7_20 = var_7_5.anchoredPosition
+			local var_7_22 = var_7_5.anchoredPosition
 
-			var_7_20.y = var_7_18[var_7_17]
+			var_7_22.y = var_7_20[var_7_19]
 
-			if var_7_8 == ys.Battle.BattleConfig.FOE_CODE then
-				var_7_20.x = var_0_0.FOE_SIDE_X_OFFSET
+			if var_7_10 == ys.Battle.BattleConfig.FOE_CODE then
+				var_7_22.x = var_0_0.FOE_SIDE_X_OFFSET
 			end
 
-			var_7_5.anchoredPosition = var_7_20
+			var_7_5.anchoredPosition = var_7_22
 
 			var_7_5:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_9_0)
-				var_7_19[var_7_17] = true
+				var_7_21[var_7_19] = true
 
 				var_7_1:Recycle(var_7_4)
 			end)
@@ -642,14 +655,14 @@ function var_0_0.initPauseWindow(arg_31_0)
 
 		local var_33_0 = arg_31_0.leaveBtn:GetComponent(typeof(Animation))
 
-		if var_33_0 then
+		if var_33_0 and var_33_0:GetClip("msgbox_btn_blink") then
 			var_33_0:Play("msgbox_btn_blink")
 		end
 	end)
 	onButton(arg_31_0, arg_31_0.continueBtn, function()
 		local var_34_0 = arg_31_0.continueBtn:GetComponent(typeof(Animation))
 
-		if var_34_0 then
+		if var_34_0 and var_34_0:GetClip("msgbox_btn_blink") then
 			var_34_0:Play("msgbox_btn_blink")
 		end
 

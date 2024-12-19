@@ -89,6 +89,9 @@ function var_0_1.ConfigSkin(arg_7_0, arg_7_1)
 	end)
 
 	arg_7_0._animtor = arg_7_1:GetComponent(typeof(Animator))
+	arg_7_0._bgEff = arg_7_1:Find("ActCtl/bg_eff")
+	arg_7_0._chargeEff = arg_7_1:Find("ActCtl/gizmos_1")
+	arg_7_0._fullChargeEff = arg_7_1:Find("ActCtl/gizmos_xue")
 end
 
 function var_0_1.GetSkin(arg_9_0)
@@ -134,43 +137,43 @@ function var_0_1.OnFilled(arg_14_0)
 	SetActive(arg_14_0._unfill, false)
 end
 
-function var_0_1.OnfilledEffect(arg_15_0)
-	SetActive(arg_15_0._filledEffect, true)
+function var_0_1.OnUnfill(arg_15_0)
+	SetActive(arg_15_0._filled, false)
+	SetActive(arg_15_0._unfill, true)
 end
 
-function var_0_1.OnOverLoadChange(arg_16_0, arg_16_1)
-	if arg_16_0._progressInfo:IsOverLoad() then
-		arg_16_0._block:SetActive(true)
-		arg_16_0:OnUnfill()
+function var_0_1.OnfilledEffect(arg_16_0)
+	SetActive(arg_16_0._filledEffect, true)
+end
+
+function var_0_1.OnOverLoadChange(arg_17_0, arg_17_1)
+	if arg_17_0._progressInfo:IsOverLoad() then
+		arg_17_0._block:SetActive(true)
+		arg_17_0:OnUnfill()
 	else
-		arg_16_0._block:SetActive(false)
-		arg_16_0:OnFilled()
+		arg_17_0._block:SetActive(false)
+		arg_17_0:OnFilled()
 
-		if arg_16_1 and arg_16_1.Data then
-			local var_16_0 = arg_16_1.Data.preCast
+		if arg_17_1 and arg_17_1.Data then
+			local var_17_0 = arg_17_1.Data.preCast
 
-			if var_16_0 then
-				if var_16_0 == 0 then
-					quickCheckAndPlayAnimator(arg_16_0._skin, "weapon_button_progress_filled")
-				elseif var_16_0 > 0 then
-					quickCheckAndPlayAnimator(arg_16_0._skin, "weapon_button_progress_charge")
+			if var_17_0 then
+				if var_17_0 == 0 then
+					quickCheckAndPlayAnimator(arg_17_0._skin, "weapon_button_progress_filled")
+				elseif var_17_0 > 0 then
+					quickCheckAndPlayAnimator(arg_17_0._skin, "weapon_button_progress_charge")
 				end
 			end
 		end
 	end
 
-	if arg_16_1 and arg_16_1.Data and arg_16_1.Data.postCast then
-		quickCheckAndPlayAnimator(arg_16_0._skin, "weapon_button_progress_use")
+	if arg_17_1 and arg_17_1.Data and arg_17_1.Data.postCast then
+		quickCheckAndPlayAnimator(arg_17_0._skin, "weapon_button_progress_use")
 	end
 
-	if arg_16_0._progressInfo:GetTotal() > 0 then
-		arg_16_0:updateProgressBar()
+	if arg_17_0._progressInfo:GetTotal() > 0 then
+		arg_17_0:updateProgressBar()
 	end
-end
-
-function var_0_1.OnUnfill(arg_17_0)
-	SetActive(arg_17_0._filled, false)
-	SetActive(arg_17_0._unfill, true)
 end
 
 function var_0_1.SetProgressActive(arg_18_0, arg_18_1)
@@ -204,6 +207,11 @@ function var_0_1.OnCountChange(arg_21_0)
 		arg_21_0:SwitchIcon(var_21_2)
 		arg_21_0:SwitchIconEffect(var_21_2)
 	end
+
+	if arg_21_0._chargeEff then
+		SetActive(arg_21_0._chargeEff, var_21_0 > 0)
+		SetActive(arg_21_0._fullChargeEff, var_21_0 == var_21_1)
+	end
 end
 
 function var_0_1.OnTotalChange(arg_22_0, arg_22_1)
@@ -211,6 +219,11 @@ function var_0_1.OnTotalChange(arg_22_0, arg_22_1)
 		arg_22_0._block:SetActive(true)
 
 		arg_22_0._progressBar.fillAmount = 0
+
+		if arg_22_0._bgEff then
+			arg_22_0._skin:Find("ActCtl/bg_eff"):GetComponent(typeof(CanvasGroup)).alpha = 0
+		end
+
 		arg_22_0._text:GetComponent(typeof(Text)).text = "0/0"
 
 		arg_22_0:SetControllerActive(false)
@@ -307,13 +320,33 @@ function var_0_1.SetToCombatUIPreview(arg_30_0, arg_30_1)
 		SetActive(arg_30_0._unfill, false)
 
 		arg_30_0._progressBar.fillAmount = 1
+
+		if arg_30_0._bgEff then
+			arg_30_0._skin:Find("ActCtl/bg_eff"):GetComponent(typeof(CanvasGroup)).alpha = 1
+		end
+
 		arg_30_0._countTxt.text = "1/1"
+
+		if arg_30_0._chargeEff then
+			SetActive(arg_30_0._chargeEff, true)
+			SetActive(arg_30_0._fullChargeEff, true)
+		end
 	else
 		SetActive(arg_30_0._unfill, true)
 		SetActive(arg_30_0._filled, false)
 
 		arg_30_0._progressBar.fillAmount = 0
+
+		if arg_30_0._bgEff then
+			arg_30_0._skin:Find("ActCtl/bg_eff"):GetComponent(typeof(CanvasGroup)).alpha = 0
+		end
+
 		arg_30_0._countTxt.text = "0/0"
+
+		if arg_30_0._chargeEff then
+			SetActive(arg_30_0._chargeEff, false)
+			SetActive(arg_30_0._fullChargeEff, false)
+		end
 	end
 end
 
@@ -321,6 +354,14 @@ function var_0_1.updateProgressBar(arg_31_0)
 	local var_31_0 = arg_31_0._progressInfo:GetCurrent() / arg_31_0._progressInfo:GetMax()
 
 	arg_31_0._progressBar.fillAmount = var_31_0
+
+	if arg_31_0._bgEff then
+		if arg_31_0._progressInfo:GetCount() > 0 then
+			arg_31_0._bgEff:GetComponent(typeof(CanvasGroup)).alpha = 1
+		else
+			arg_31_0._bgEff:GetComponent(typeof(CanvasGroup)).alpha = var_31_0
+		end
+	end
 end
 
 function var_0_1.Dispose(arg_32_0)

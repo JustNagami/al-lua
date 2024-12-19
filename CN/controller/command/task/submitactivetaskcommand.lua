@@ -138,11 +138,7 @@ function var_0_0.submitActivity(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4)
 end
 
 function var_0_0.updateTaskActivityData(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0 = pg.task_data_template[arg_6_1]
-	local var_6_1 = var_6_0.type
-	local var_6_2 = var_6_0.sub_type
-
-	if getProxy(ActivityProxy):getActivityById(arg_6_2) and var_6_1 == 6 then
+	if getProxy(ActivityProxy):getActivityById(arg_6_2) then
 		getProxy(ActivityTaskProxy):finishActTask(arg_6_2, arg_6_1)
 	end
 end

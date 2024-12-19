@@ -231,7 +231,8 @@ function var_0_0.listNotificationInterests(arg_16_0)
 		GAME.FRAG_SELL_DONE,
 		GAME.TRANSFORM_EQUIPMENT_AWARD_FINISHED,
 		EquipmentProxy.SPWEAPONS_UPDATED,
-		GAME.LOVE_ITEM_MAIL_REPAIR_DONE
+		GAME.LOVE_ITEM_MAIL_REPAIR_DONE,
+		GAME.SELL_ITEM_DONE
 	}
 end
 
@@ -317,10 +318,14 @@ function var_0_0.handleNotification(arg_17_0, arg_17_1)
 	elseif var_17_0 == EquipmentProxy.SPWEAPONS_UPDATED then
 		arg_17_0:UpdateSpWeapons()
 		arg_17_0.viewComponent:SetSpWeaponUpdate()
-	elseif var_17_0 == GAME.LOVE_ITEM_MAIL_REPAIR_DONE and #var_17_1.awards > 0 then
-		arg_17_0.viewComponent:emit(BaseUI.ON_AWARD, {
-			items = var_17_1.awards
-		})
+	elseif var_17_0 == GAME.LOVE_ITEM_MAIL_REPAIR_DONE then
+		if #var_17_1.awards > 0 then
+			arg_17_0.viewComponent:emit(BaseUI.ON_AWARD, {
+				items = var_17_1.awards
+			})
+		end
+	elseif var_17_0 == GAME.SELL_ITEM_DONE then
+		arg_17_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_17_1.awards)
 	end
 end
 

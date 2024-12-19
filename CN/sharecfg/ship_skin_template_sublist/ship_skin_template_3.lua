@@ -1,218 +1,6 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_3 = {
-	[103160] = {
-		ship_group = 10316,
-		name = "巴尔的摩",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "baerdimo",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 103160,
-		voice_actor_2 = -1,
-		prefab = "baerdimo",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "巴尔的摩级重巡洋舰—巴尔的摩，舷号CA-68",
-		voice_actor = 191,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.047,
-					0.794,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.024,
-					0.773,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.155,
-					0.041,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.625,
-							2.427,
-							0.14
-						}
-					}
-				}
-			}
-		}
-	},
-	[103161] = {
-		ship_group = 10316,
-		name = "放学后的ACE",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 1,
-		shop_id = 70207,
-		painting = "baerdimo_2",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 4,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "103",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		id = 103161,
-		voice_actor_2 = -1,
-		prefab = "baerdimo_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "啊，指挥官是来视察社团的吗？哈哈，如你所见，就是一个很单纯的运动系社团。可没有什么奇怪的东西哦？…",
-		voice_actor = 191,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.113,
-					0.721,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.097,
-					0.708,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.155,
-					0.012,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.567,
-							2.333,
-							0.14
-						}
-					}
-				}
-			}
-		}
-	},
 	[103162] = {
 		ship_group = 10316,
 		name = "Black Ace",
@@ -12976,6 +12764,322 @@ pg.base.ship_skin_template_3 = {
 						{
 							-0.41,
 							2.37,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[107120] = {
+		ship_group = 10712,
+		name = "大黄蜂II",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "dahuangfengII",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 107120,
+		voice_actor_2 = -1,
+		prefab = "dahuangfengII",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "埃塞克斯级航空母舰—大黄蜂II，舷号CV-12",
+		voice_actor = 24,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.483,
+					1.215,
+					0
+				}
+			},
+			plane = {
+				{
+					1.438,
+					1.01,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.41,
+							2.37,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[107121] = {
+		ship_group = 10712,
+		name = "驰骋于大海之上！",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		illustrator = -1,
+		painting = "dahuangfengII_2",
+		l2d_voice_calibrate = "",
+		shop_type_id = 6,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "133",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		id = 107121,
+		voice_actor_2 = -1,
+		prefab = "dahuangfengII_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		shop_id = 70776,
+		desc = "这下“港区最快”就是我的啦！…哈哈哈，指挥官！看到刚才大黄蜂的英姿了吗？虽然非常想给你看看，但没办法再来一次比赛……之后会来载你的，等着我哦♪",
+		voice_actor = 24,
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2,
+			6
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.483,
+					1.215,
+					0
+				}
+			},
+			plane = {
+				{
+					1.438,
+					1.01,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.34,
+							2.37,
+							0
+						}
+					}
+				}
+			}
+		},
+		spine_offset = {
+			{
+				-138,
+				-1223,
+				0
+			},
+			{
+				0.92
+			}
+		},
+		special_effects = {
+			"lihui_dahuangfengII_2",
+			{
+				2198,
+				-102,
+				0
+			},
+			{
+				1.7
+			}
+		}
+	},
+	[107140] = {
+		ship_group = 10714,
+		name = "{namecode:194}",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "tikangdeluojia",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 107140,
+		voice_actor_2 = -1,
+		prefab = "tikangdeluojia",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "埃塞克斯级航空母舰—{namecode:194}，舷号CV-14",
+		voice_actor = 179,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.15,
+					1.09,
+					0
+				}
+			},
+			plane = {
+				{
+					1.09,
+					1.07,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.67,
+							2.36,
 							0
 						}
 					}

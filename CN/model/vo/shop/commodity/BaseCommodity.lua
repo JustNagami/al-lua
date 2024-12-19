@@ -183,7 +183,11 @@ function var_0_0.CanUseVoucherType(arg_29_0)
 	return false
 end
 
-function var_0_0.StaticCanUseVoucherType(arg_30_0, arg_30_1)
+function var_0_0.ExistExclusiveDiscountItem(arg_30_0)
+	return false
+end
+
+function var_0_0.StaticCanUseVoucherType(arg_31_0, arg_31_1)
 	return false
 end
 
