@@ -18743,7 +18743,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 4
 	},
 	[1878] = {
-		param = "Sticker: Lazy",
+		param = "57",
 		ship_group = 0,
 		type = 4,
 		option = "",
@@ -19121,7 +19121,7 @@ pg.base.activity_ins_chat_language = {
 	},
 	[1919] = {
 		param = "With pleasure! You have no idea how happy I am that I get to cook for you!",
-		ship_group = 0,
+		ship_group = 40111,
 		type = 1,
 		option = "",
 		id = 1919,

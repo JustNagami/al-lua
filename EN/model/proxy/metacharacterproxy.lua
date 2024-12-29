@@ -12,6 +12,7 @@ function var_0_0.register(arg_1_0)
 	arg_1_0.metaSkillLevelMaxInfoList = nil
 	arg_1_0.lastMetaSkillExpInfoList = nil
 	arg_1_0.startRecordTag = false
+	arg_1_0.metaIDMark = {}
 
 	for iter_1_0, iter_1_1 in pairs(var_0_1.all) do
 		local var_1_0 = MetaProgress.New({
@@ -427,6 +428,16 @@ end
 
 function var_0_0.clearLastMetaSkillExpInfoList(arg_26_0)
 	arg_26_0.lastMetaSkillExpInfoList = nil
+end
+
+function var_0_0.setMetaIDMark(arg_27_0, arg_27_1)
+	local var_27_0 = arg_27_0.metaIDMark[arg_27_1] or -1
+
+	arg_27_0.metaIDMark[arg_27_1] = var_27_0 + 1
+end
+
+function var_0_0.getMetaIDMark(arg_28_0, arg_28_1)
+	return arg_28_0.metaIDMark[arg_28_1]
 end
 
 return var_0_0

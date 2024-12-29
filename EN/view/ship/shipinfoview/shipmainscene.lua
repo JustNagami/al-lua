@@ -69,11 +69,6 @@ function var_0_0.setShip(arg_9_0, arg_9_1)
 	arg_9_0.shipVO = arg_9_1
 
 	setActive(arg_9_0.npcFlagTF, arg_9_1:isActivityNpc())
-
-	if var_9_0 and not arg_9_0:checkToggleActive(ShipViewConst.currentPage) then
-		triggerToggle(arg_9_0.detailToggle, true)
-	end
-
 	arg_9_0:setToggleEnable()
 
 	local var_9_1 = pg.ship_skin_template[arg_9_0.shipVO.skinId]
@@ -84,6 +79,10 @@ function var_0_0.setShip(arg_9_0, arg_9_1)
 	arg_9_0.shipDetailView:ActionInvokeExclusive("UpdateUI")
 	arg_9_0.shipFashionView:ActionInvokeExclusive("UpdateUI")
 	arg_9_0.shipEquipView:ActionInvokeExclusive("UpdateUI")
+
+	if var_9_0 and not arg_9_0:checkToggleActive(ShipViewConst.currentPage) then
+		triggerToggle(arg_9_0.detailToggle, true)
+	end
 end
 
 function var_0_0.equipmentChange(arg_10_0)

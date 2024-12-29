@@ -76,9 +76,9 @@ pg.voice_bgm = {
 		bgm = "main"
 	},
 	LoginScene = {
-		default_bgm = "login",
+		default_bgm = "story-richang-partynight",
 		special_bgm = "",
-		bgm = "login"
+		bgm = "story-richang-partynight"
 	},
 	NewMainScene = {
 		default_bgm = "main",
@@ -1830,10 +1830,10 @@ pg.voice_bgm = {
 		special_bgm = "",
 		bgm = "story-richang-light"
 	},
-	["USChristmas2024Page "] = {
-		default_bgm = "main-christmas ",
+	USChristmas2024Page = {
+		default_bgm = "main-christmas",
 		special_bgm = "",
-		bgm = "main-christmas "
+		bgm = "main-christmas"
 	},
 	CurlingGameView = {
 		default_bgm = "bar-soft",
@@ -1844,5 +1844,15 @@ pg.voice_bgm = {
 		default_bgm = "story-newsakura",
 		special_bgm = "",
 		bgm = "story-newsakura"
+	},
+	NavalAcademyScene = {
+		default_bgm = "main-christmas",
+		special_bgm = "",
+		bgm = "main-christmas"
+	},
+	SkinMagazinePage7 = {
+		default_bgm = "story-richang-partynight",
+		special_bgm = "",
+		bgm = "story-richang-partynight"
 	}
 }

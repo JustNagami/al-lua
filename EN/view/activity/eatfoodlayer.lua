@@ -475,9 +475,11 @@ function var_0_0.addScore(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
 			var_29_1 = false
 		end
 
-		arg_29_0:emit(EatFoodMediator.GAME_HIT_AREA, {
+		arg_29_0:emit(Dorm3dMiniGameMediator.GAME_OPERATION, {
+			operationCode = "GAME_HIT_AREA",
 			success = var_29_1,
-			index = arg_29_3
+			index = arg_29_3,
+			miniGameId = var_0_5
 		})
 		setActive(arg_29_0.sceneScoreTf, true)
 	end
@@ -552,9 +554,11 @@ function var_0_0.onGameOver(arg_35_0, arg_35_1)
 end
 
 function var_0_0.showSettlement(arg_37_0)
-	arg_37_0:emit(EatFoodMediator.GAME_RESULT, {
+	arg_37_0:emit(Dorm3dMiniGameMediator.GAME_OPERATION, {
+		operationCode = "GAME_RESULT",
 		win = arg_37_0.scoreNum >= var_0_28,
-		score = arg_37_0.scoreNum
+		score = arg_37_0.scoreNum,
+		miniGameId = var_0_5
 	})
 	setActive(arg_37_0.settlementUI, true)
 
@@ -603,7 +607,11 @@ end
 
 function var_0_0.checkGameExit(arg_42_0)
 	if not arg_42_0.gameStartFlag then
-		arg_42_0:emit(EatFoodMediator.GAME_CLOSE, true)
+		arg_42_0:emit(Dorm3dMiniGameMediator.GAME_OPERATION, {
+			operationCode = "GAME_CLOSE",
+			doTrack = true,
+			miniGameId = var_0_5
+		})
 		arg_42_0:emit(var_0_0.ON_BACK_PRESSED)
 	else
 		if arg_42_0.gameStop then
@@ -616,7 +624,11 @@ function var_0_0.checkGameExit(arg_42_0)
 			pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_MSGBOX, {
 				contentText = i18n("mini_game_leave"),
 				onConfirm = function()
-					arg_42_0:emit(EatFoodMediator.GAME_CLOSE, false)
+					arg_42_0:emit(Dorm3dMiniGameMediator.GAME_OPERATION, {
+						operationCode = "GAME_CLOSE",
+						doTrack = false,
+						miniGameId = var_0_5
+					})
 					arg_42_0:emit(var_0_0.ON_BACK_PRESSED)
 				end,
 				onClose = function()
@@ -627,7 +639,11 @@ function var_0_0.checkGameExit(arg_42_0)
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("mini_game_leave"),
 				onYes = function()
-					arg_42_0:emit(EatFoodMediator.GAME_CLOSE, false)
+					arg_42_0:emit(Dorm3dMiniGameMediator.GAME_OPERATION, {
+						operationCode = "GAME_CLOSE",
+						doTrack = false,
+						miniGameId = var_0_5
+					})
 					arg_42_0:emit(var_0_0.ON_BACK_PRESSED)
 				end,
 				onNo = function()

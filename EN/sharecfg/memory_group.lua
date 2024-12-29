@@ -212,6 +212,7 @@ pg.memory_group = setmetatable({
 		312,
 		313,
 		314,
+		315,
 		501,
 		502,
 		503,
@@ -5038,7 +5039,7 @@ pg.base.memory_group = {
 		icon = "title_event",
 		type = 2,
 		link_event = 5721,
-		title = "港区时尚特刊·节日特辑",
+		title = "Port Fashion Collection: Holiday Special",
 		memories = {
 			4121,
 			4122,
@@ -5046,6 +5047,21 @@ pg.base.memory_group = {
 			4124,
 			4125,
 			4126
+		}
+	},
+	[315] = {
+		id = 315,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5735,
+		title = "Port Fashion Collection: Holiday Special",
+		memories = {
+			4131,
+			4132,
+			4133,
+			4134,
+			4135
 		}
 	},
 	[501] = {

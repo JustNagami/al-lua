@@ -24768,10 +24768,10 @@ _G.pg.base.gametip.dorm3d_role_assets_download = {
 	tip = "Would you like to unlock <color=#39bfff>$1</color>'s room? \nYou will need to <color=#848484>download $2 MB worth of assets</color>."
 }
 _G.pg.base.gametip.volleyball_end_tip = {
-	tip = "You had a nice evening with Sirius."
+	tip = "You had a good time with $1."
 }
 _G.pg.base.gametip.volleyball_end_award = {
-	tip = "Energy -1, Intimacy with Sirius +40"
+	tip = "AP -1, $1 Intimacy +40"
 }
 _G.pg.base.gametip.sure_exit_volleyball = {
 	tip = "Would you like to end the minigame?"
@@ -25192,7 +25192,7 @@ _G.pg.base.gametip.dorm3d_collection_title_en = {
 	tip = "Azur Lane"
 }
 _G.pg.base.gametip.dorm3d_collection_cost_tip = {
-	tip = "Accompanying her for 5 minutes will result in <icon name=stamina/>Energy -1 and Intimacy <color=#fc4670>+40</color>"
+	tip = "Spending 5 minutes together: <icon name=stamina/>AP -1, Intimacy <color=#fc4670>+40</color>"
 }
 _G.pg.base.gametip.dorm3d_gift_story_unlock = {
 	tip = "Special Story Unlocked"
@@ -25616,14 +25616,137 @@ _G.pg.base.gametip.help_starLightAlbum = {
 	}
 }
 _G.pg.base.gametip.word_gain_date = {
-	tip = "获取时间："
+	tip = "Date Obtained:"
 }
 _G.pg.base.gametip.word_limited_activity = {
-	tip = "限时活动"
+	tip = "Event"
 }
 _G.pg.base.gametip.word_show_expire_content = {
-	tip = "查看已无法获取的内容"
+	tip = "Show Unobtainable"
 }
 _G.pg.base.gametip.word_got_pt = {
-	tip = "已获得"
+	tip = "Granted"
+}
+_G.pg.base.gametip.dorm3d_accompany_not_download = {
+	tip = "You need to download the $1 assets first."
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day1 = {
+	tip = "Mon"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day2 = {
+	tip = "Tue"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day3 = {
+	tip = "Wed"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day4 = {
+	tip = "Thu"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day5 = {
+	tip = "Fri"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day6 = {
+	tip = "Sat"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day7 = {
+	tip = "Sun"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_remember = {
+	tip = "Remember today's schedule."
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_choose = {
+	tip = "Assign today's schedule."
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior1 = {
+	tip = "Reading"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior2 = {
+	tip = "Drawing"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior3 = {
+	tip = "Studying"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior4 = {
+	tip = "Dancing"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior5 = {
+	tip = "Volleyball"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior6 = {
+	tip = "Exercise"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior7 = {
+	tip = "Cleaning"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior8 = {
+	tip = "Cooking"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior9 = {
+	tip = "Laundry"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior10 = {
+	tip = "Games"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior11 = {
+	tip = "Walk"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior12 = {
+	tip = "Nap"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate1 = {
+	tip = "Expert"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate2 = {
+	tip = "Superhuman"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate3 = {
+	tip = "Passion"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate4 = {
+	tip = "Hobby"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate5 = {
+	tip = "Balanced"
+}
+_G.pg.base.gametip.skin_shop_nonuse_label = {
+	tip = "Do not apply discount"
+}
+_G.pg.base.gametip.skin_shop_use_label = {
+	tip = "Apply discount"
+}
+_G.pg.base.gametip.skin_shop_discount_item_link = {
+	tip = "<color=#92fc63>Discount coupon</color> <color=#ffea00>-$1</color>"
+}
+_G.pg.base.gametip.word_activity_not_open = {
+	tip = "Event has not started yet"
+}
+_G.pg.base.gametip.activity_shop_template_normaltext = {
+	tip = "活動常規道具兌換 "
+}
+_G.pg.base.gametip.activity_shop_template_extratext = {
+	tip = "活動追趕道具兌換 "
+}
+_G.pg.base.gametip.dorm3d_now_is_downloading = {
+	tip = "Downloading assets..."
+}
+_G.pg.base.gametip.dorm3d_resource_download_complete = {
+	tip = "Download complete."
+}
+_G.pg.base.gametip.dorm3d_delete_finish = {
+	tip = "Files deted."
+}
+_G.pg.base.gametip.dorm3d_guide_tip = {
+	tip = "Check out Sirius' quarters."
+}
+_G.pg.base.gametip.dorm3d_noshiro_table = {
+	tip = "Dining Area"
+}
+_G.pg.base.gametip.dorm3d_noshiro_chair = {
+	tip = "Living Area"
+}
+_G.pg.base.gametip.dorm3d_noshiro_bed = {
+	tip = "Bedroom"
+}
+_G.pg.base.gametip.dorm3d_guide_beach_tip = {
+	tip = "Please download assets for the corresponding character first "
 }

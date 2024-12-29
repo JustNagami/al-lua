@@ -161896,7 +161896,7 @@ _G.pg.base.item_virtual_data_statistics[65061] = {
 	combination_display = {}
 }
 _G.pg.base.item_virtual_data_statistics[65063] = {
-	display = "用于「星光下的余晖」活动的常规兑换，活动结束后将会消失",
+	display = "\"Substellar Crepuscule\" event currency. Will be removed after the event ends.",
 	name = "Extradimensional Specimen",
 	max_num = 0,
 	type = 0,
@@ -197368,6 +197368,108 @@ _G.pg.base.item_virtual_data_statistics[200364] = {
 			4,
 			105011,
 			1
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[65068] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	name = "Rental Outfit Voucher",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65068,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65509] = {
+	display = "A currency earned during the \"Commission Exchange Plan Ⅳ\" event. Removed after the event ends.",
+	name = "Commission Merits",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/commission_pt",
+	id = 65509,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[86209] = {
+	display = "不会被看到",
+	name = "Game Night Skin B",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86209,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			307084,
+			1000
+		},
+		{
+			699021,
+			1000
+		},
+		{
+			799021,
+			1000
+		},
+		{
+			199051,
+			1100
+		},
+		{
+			399071,
+			1100
+		},
+		{
+			899041,
+			1600
+		},
+		{
+			402102,
+			1600
+		},
+		{
+			303061,
+			1600
 		}
 	}
 }

@@ -145,9 +145,13 @@ function var_0_0.init(arg_10_0)
 	arg_10_0.skinBtn = arg_10_0:findTF("blur_panel/adapt/skin_btn")
 
 	local var_10_0 = arg_10_0:findTF("frame/bg/pages/scrollrect"):GetComponent("LScrollRect")
+	local var_10_1 = arg_10_0:findTF("frame/bg/pages/scrollRectSpecial")
+
+	setActive(go(var_10_0), true)
+	setActive(var_10_1, false)
 
 	arg_10_0.pages = {
-		[var_0_0.TYPE_ACTIVITY] = ActivityShopPage.New(arg_10_0.pageContainer, arg_10_0.event, arg_10_0.contextData, var_10_0),
+		[var_0_0.TYPE_ACTIVITY] = ActivityShopPage.New(arg_10_0.pageContainer, arg_10_0.event, arg_10_0.contextData, var_10_0, var_10_1),
 		[var_0_0.TYPE_SHOP_STREET] = StreetShopPage.New(arg_10_0.pageContainer, arg_10_0.event, arg_10_0.contextData, var_10_0),
 		[var_0_0.TYPE_MILITARY_SHOP] = MilitaryShopPage.New(arg_10_0.pageContainer, arg_10_0.event, arg_10_0.contextData, var_10_0),
 		[var_0_0.TYPE_GUILD] = GuildShopPage.New(arg_10_0.pageContainer, arg_10_0.event, arg_10_0.contextData, var_10_0),
