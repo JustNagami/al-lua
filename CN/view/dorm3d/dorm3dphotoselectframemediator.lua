@@ -3,11 +3,12 @@
 var_0_0.CONFIRMFRAME = "Dorm3dPhotoSelectFrameMediator:CONFIRMFRAME"
 
 function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.CONFIRMFRAME, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	arg_1_0:bind(var_0_0.CONFIRMFRAME, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
 		arg_1_0:sendNotification(var_0_0.CONFIRMFRAME, {
 			selectFrameId = arg_2_1,
 			imagePos = arg_2_2,
-			imageScale = arg_2_3
+			imageScale = arg_2_3,
+			specialPosDic = arg_2_4
 		})
 	end)
 end

@@ -3005,19 +3005,24 @@ end
 function updateCrusingActivityTask(arg_205_0)
 	local var_205_0 = getProxy(TaskProxy)
 	local var_205_1 = arg_205_0:getNDay()
+	local var_205_2 = pg.TimeMgr.GetInstance():GetServerOverWeek(arg_205_0:getStartTime())
 
 	for iter_205_0, iter_205_1 in ipairs(arg_205_0:getConfig("config_data")) do
-		local var_205_2 = pg.battlepass_task_group[iter_205_1]
+		local var_205_3 = pg.battlepass_task_group[iter_205_1]
 
-		if var_205_1 >= var_205_2.time and underscore.any(underscore.flatten(var_205_2.task_group), function(arg_206_0)
-			return var_205_0:getTaskVO(arg_206_0) == nil
-		end) then
-			pg.m02:sendNotification(GAME.CRUSING_CMD, {
-				cmd = 1,
-				activity_id = arg_205_0.id
-			})
+		if var_205_3 and var_205_2 >= var_205_3.group_mask then
+			if underscore.any(underscore.flatten(var_205_3.task_group), function(arg_206_0)
+				return var_205_0:getTaskVO(arg_206_0) == nil
+			end) then
+				pg.m02:sendNotification(GAME.CRUSING_CMD, {
+					cmd = 1,
+					activity_id = arg_205_0.id
+				})
 
-			return true
+				return true
+			end
+		elseif not var_205_3 then
+			warning("battlepass_task_group表中不存在 id = " .. iter_205_1)
 		end
 	end
 

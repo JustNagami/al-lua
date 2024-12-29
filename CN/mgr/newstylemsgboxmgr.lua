@@ -247,7 +247,7 @@ function var_0_1.DisplaySetting(arg_22_0, arg_22_1, arg_22_2)
 
 			updateDorm3dIcon(var_24_1:Find("Dorm3dIconTpl"), arg_24_0.drop)
 			setText(var_24_1:Find("info/name"), var_24_0:getName())
-			setText(var_24_1:Find("info/desc"), cancelColorRich(var_24_0.desc))
+			setText(var_24_1:Find("info/scroll/desc"), cancelColorRich(var_24_0.desc))
 
 			local var_24_2, var_24_3 = var_24_0:getOwnedCount()
 
@@ -267,7 +267,7 @@ function var_0_1.DisplaySetting(arg_22_0, arg_22_1, arg_22_2)
 			local var_25_1 = Dorm3dIconHelper.Data2Config(arg_25_0.data)
 
 			setText(var_25_0:Find("info/name"), var_25_1.name)
-			setText(var_25_0:Find("info/desc"), var_25_1.desc)
+			setText(var_25_0:Find("info/scroll/desc"), var_25_1.desc)
 		end,
 		[var_0_1.TYPE_COMMON_MSGBOX] = function(arg_26_0)
 			local var_26_0 = arg_22_0._tf:Find("window/middle/content")

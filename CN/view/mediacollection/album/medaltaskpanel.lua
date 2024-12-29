@@ -27,7 +27,7 @@ function var_0_0.SetMedalGroup(arg_4_0, arg_4_1)
 	local var_4_0 = arg_4_0._medalGroup:GetMedalGroupActivityConfig()[3]
 
 	for iter_4_0, iter_4_1 in ipairs(var_4_0) do
-		local var_4_1 = getProxy(TaskProxy):getTaskById(iter_4_1)
+		local var_4_1 = getProxy(TaskProxy):getTaskById(iter_4_1) or getProxy(TaskProxy):getFinishTaskById(iter_4_1)
 
 		table.insert(arg_4_0._taskList, var_4_1)
 	end

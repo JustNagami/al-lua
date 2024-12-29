@@ -136,7 +136,7 @@ function var_0_0.ShowSelectPanel(arg_11_0)
 					elseif var_11_4[var_12_0] == "room" then
 						pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_role_locked"))
 					elseif var_11_4[var_12_0] == "download" then
-						pg.TipsMgr.GetInstance():ShowTips("please exit and download character resource in build scene ~")
+						pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_guide_beach_tip"))
 					end
 				end, SFX_PANEL)
 				eachChild(arg_12_2:Find("base/operation"), function(arg_15_0)
@@ -168,29 +168,33 @@ function var_0_0.ShowSelectPanel(arg_11_0)
 end
 
 function var_0_0.UpdateSelectableCard(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
-	GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_%d_%d", arg_17_2, arg_17_0.contextData.roomId), "", arg_17_1:Find("Image"))
+	local var_17_0 = Apartment.New({
+		ship_group = arg_17_2
+	}):GetSkinModelID(arg_17_0.room:getConfig("tag"))
+
+	GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_%d", var_17_0), "", arg_17_1:Find("Image"))
 	GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_name_%d", arg_17_2), "", arg_17_1:Find("name"))
 
-	local var_17_0 = getProxy(ApartmentProxy):getApartment(arg_17_2)
-	local var_17_1 = not var_17_0 or var_17_0:needDownload()
+	local var_17_1 = getProxy(ApartmentProxy):getApartment(arg_17_2)
+	local var_17_2 = not var_17_1 or var_17_1:needDownload()
 
-	setActive(arg_17_1:Find("lock"), var_17_1)
-	setActive(arg_17_1:Find("mask"), var_17_1)
-	setActive(arg_17_1:Find("unlock"), not var_17_1)
-	setActive(arg_17_1:Find("favor_level"), var_17_0)
+	setActive(arg_17_1:Find("lock"), var_17_2)
+	setActive(arg_17_1:Find("mask"), var_17_2)
+	setActive(arg_17_1:Find("unlock"), not var_17_2)
+	setActive(arg_17_1:Find("favor_level"), var_17_1)
 
-	if var_17_0 then
-		setText(arg_17_1:Find("favor_level/Text"), var_17_0.level)
+	if var_17_1 then
+		setText(arg_17_1:Find("favor_level/Text"), var_17_1.level)
 	end
 
 	onToggle(arg_17_0, arg_17_1, function(arg_18_0)
 		arg_17_3(arg_18_0)
 
 		if arg_18_0 then
-			if not var_17_0 then
+			if not var_17_1 then
 				pg.TipsMgr.GetInstance():ShowTips(string.format("need unlock apartment{%d}", arg_17_2))
 				triggerToggle(arg_17_1, false)
-			elseif var_17_0:needDownload() then
+			elseif var_17_1:needDownload() then
 				pg.TipsMgr.GetInstance():ShowTips(string.format("need download resource{%d}", arg_17_2))
 				triggerToggle(arg_17_1, false)
 			end
@@ -203,32 +207,35 @@ function var_0_0.HideSelectPanel(arg_19_0)
 	setActive(arg_19_0.rtSelectPanel, false)
 end
 
-function var_0_0.didEnter(arg_20_0)
-	arg_20_0.room = getProxy(ApartmentProxy):getRoom(arg_20_0.contextData.roomId)
-	arg_20_0.selectIds = underscore.filter(arg_20_0.contextData.groupIds or {}, function(arg_21_0)
-		return arg_20_0.room.unlockCharacter[arg_21_0] and tobool(getProxy(ApartmentProxy):getApartment(arg_21_0)) and not Apartment.New({
-			ship_group = arg_21_0
-		}):needDownload()
-	end)
-	arg_20_0.contextData.groupIds = nil
-
-	arg_20_0:ShowInvitePanel()
+function var_0_0.UpdateRoom(arg_20_0, arg_20_1)
+	arg_20_0.room = arg_20_1
 end
 
-function var_0_0.onBackPressed(arg_22_0)
-	if isActive(arg_22_0.rtSelectPanel) then
-		arg_22_0:HideSelectPanel()
-		arg_22_0:ShowInvitePanel()
+function var_0_0.didEnter(arg_21_0)
+	arg_21_0.selectIds = underscore.filter(arg_21_0.contextData.groupIds or {}, function(arg_22_0)
+		return arg_21_0.room.unlockCharacter[arg_22_0] and tobool(getProxy(ApartmentProxy):getApartment(arg_22_0)) and not Apartment.New({
+			ship_group = arg_22_0
+		}):needDownload()
+	end)
+	arg_21_0.contextData.groupIds = nil
+
+	arg_21_0:ShowInvitePanel()
+end
+
+function var_0_0.onBackPressed(arg_23_0)
+	if isActive(arg_23_0.rtSelectPanel) then
+		arg_23_0:HideSelectPanel()
+		arg_23_0:ShowInvitePanel()
 	else
-		arg_22_0:closeView()
+		arg_23_0:closeView()
 	end
 end
 
-function var_0_0.willExit(arg_23_0)
-	if isActive(arg_23_0.rtSelectPanel) then
-		arg_23_0:HideSelectPanel()
+function var_0_0.willExit(arg_24_0)
+	if isActive(arg_24_0.rtSelectPanel) then
+		arg_24_0:HideSelectPanel()
 	else
-		arg_23_0:HideInvitePanel()
+		arg_24_0:HideInvitePanel()
 	end
 end
 

@@ -158,7 +158,7 @@ function var_0_0.OnUpdateFlush(arg_14_0)
 		arg_14_0.scrollCom:ScrollTo(math.clamp(arg_14_0.scrollCom:HeadIndexToValue(arg_14_0.ptData:GetLevel()) / arg_14_0.impTotalPos + var_14_0, 0, 1), true)
 	end
 
-	setText(arg_14_0.get, i18n("word_got"))
+	setText(arg_14_0.get, i18n("word_got_pt"))
 	setText(arg_14_0.ptCount, arg_14_0.ptData.count)
 	setActive(arg_14_0.getBtnGray, arg_14_0.ptData:GetMaxAvailableTargetIndex() == arg_14_0.ptData:GetLevel())
 	setActive(arg_14_0.getBtn, arg_14_0.ptData:GetMaxAvailableTargetIndex() ~= arg_14_0.ptData:GetLevel())

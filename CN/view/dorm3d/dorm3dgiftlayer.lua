@@ -308,10 +308,11 @@ function var_0_0.AfterGiveGift(arg_31_0, arg_31_1)
 
 	local var_31_3 = pg.dorm3d_gift[var_31_0]
 	local var_31_4 = {}
+	local var_31_5 = Apartment.getGroupConfig(arg_31_0.apartment.configId, var_31_3.reply_dialogue_id)
 
-	if var_31_3.reply_dialogue_id ~= 0 and ApartmentProxy.CheckUnlockConfig(pg.dorm3d_dialogue_group[var_31_3.reply_dialogue_id].unlock) then
+	if var_31_5 and ApartmentProxy.CheckUnlockConfig(pg.dorm3d_dialogue_group[var_31_5].unlock) then
 		table.insert(var_31_4, function(arg_32_0)
-			arg_31_0:emit(Dorm3dGiftMediator.DO_TALK, var_31_3.reply_dialogue_id, arg_32_0)
+			arg_31_0:emit(Dorm3dGiftMediator.DO_TALK, var_31_5, arg_32_0)
 		end)
 	end
 

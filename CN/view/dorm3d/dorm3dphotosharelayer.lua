@@ -77,7 +77,7 @@ function var_0_0.AfterSelectFrame(arg_11_0, arg_11_1)
 		setActive(iter_11_1, false)
 	end
 
-	arg_11_0:LoadFrame(arg_11_1.imagePos, arg_11_1.imageScale)
+	arg_11_0:LoadFrame(arg_11_1.imagePos, arg_11_1.imageScale, arg_11_1.specialPosDic)
 end
 
 function var_0_0.InitFrame(arg_12_0)
@@ -89,10 +89,12 @@ function var_0_0.InitFrame(arg_12_0)
 	})
 end
 
-function var_0_0.LoadFrame(arg_13_0, arg_13_1, arg_13_2)
+function var_0_0.LoadFrame(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
 	local var_13_0 = pg.dorm3d_camera_photo_frame[arg_13_0.selectFrameId]
+	local var_13_1 = var_13_0.frameTfName == "FilmFrame"
+	local var_13_2 = var_13_0.frameTfName == "InsFrame"
 
-	local function var_13_1(arg_14_0)
+	local function var_13_3(arg_14_0)
 		local var_14_0 = arg_14_0:Find("mask/realImage")
 		local var_14_1 = var_14_0:GetComponent(typeof(RawImage))
 
@@ -107,13 +109,60 @@ function var_0_0.LoadFrame(arg_13_0, arg_13_1, arg_13_2)
 		if arg_13_2 then
 			var_14_0.localScale = arg_13_2
 		end
+
+		if arg_13_3 then
+			local var_14_2 = {
+				"mask_up/realImage"
+			}
+
+			if var_13_1 then
+				table.insert(var_14_2, "mask_down/realImage")
+			end
+
+			local var_14_3 = {
+				"upPos",
+				"downPos"
+			}
+			local var_14_4 = {
+				"upScale",
+				"downScale"
+			}
+
+			for iter_14_0, iter_14_1 in ipairs(var_14_2) do
+				local var_14_5 = arg_14_0:Find(iter_14_1)
+				local var_14_6 = var_14_5:GetComponent(typeof(RawImage))
+
+				var_14_6.texture = arg_13_0.contextData.photoTex
+
+				local var_14_7 = GameObject.Find("OverlayCamera").transform:GetChild(0)
+
+				if var_13_2 and iter_14_1 == "mask_up/realImage" then
+					var_14_5.sizeDelta = Vector2(var_14_7.sizeDelta.x / 10, var_14_7.sizeDelta.y / 10)
+				else
+					var_14_5.sizeDelta = var_14_7.sizeDelta
+				end
+
+				local var_14_8 = var_14_3[iter_14_0]
+
+				setAnchoredPosition(var_14_6, {
+					x = arg_13_3[var_14_8].x,
+					y = arg_13_3[var_14_8].y
+				})
+
+				local var_14_9 = arg_13_3[var_14_4[iter_14_0]]
+
+				if var_14_9 then
+					var_14_5.localScale = var_14_9
+				end
+			end
+		end
 	end
 
-	local var_13_2 = arg_13_0.frameDic[arg_13_0.selectFrameId]
+	local var_13_4 = arg_13_0.frameDic[arg_13_0.selectFrameId]
 
-	if var_13_2 then
-		setActive(var_13_2, true)
-		var_13_1(var_13_2)
+	if var_13_4 then
+		setActive(var_13_4, true)
+		var_13_3(var_13_4)
 
 		return
 	end
@@ -122,17 +171,17 @@ function var_0_0.LoadFrame(arg_13_0, arg_13_1, arg_13_2)
 		return
 	end
 
-	local var_13_3 = arg_13_0.selectFrameId
+	local var_13_5 = arg_13_0.selectFrameId
 
 	ResourceMgr.Inst:getAssetAsync("ui/" .. var_13_0.frameTfName, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_15_0)
-		arg_13_0.loadingDic[var_13_3] = false
+		arg_13_0.loadingDic[var_13_5] = false
 
 		local var_15_0 = Object.Instantiate(arg_15_0, arg_13_0.photoAdapter).transform
 
-		arg_13_0.frameDic[var_13_3] = var_15_0
+		arg_13_0.frameDic[var_13_5] = var_15_0
 
-		if arg_13_0.selectFrameId == var_13_3 then
-			var_13_1(var_15_0)
+		if arg_13_0.selectFrameId == var_13_5 then
+			var_13_3(var_15_0)
 		else
 			setActive(var_15_0, false)
 		end
@@ -140,7 +189,18 @@ function var_0_0.LoadFrame(arg_13_0, arg_13_1, arg_13_2)
 		var_15_0:Find("mask/realImage"):GetComponent(typeof(ScrollRect)).enabled = false
 		var_15_0:Find("mask/realImage"):GetComponent(typeof(PinchZoom)).enabled = false
 
-		var_13_1(var_15_0)
+		local var_15_1 = var_15_0:Find("mask_up/realImage")
+		local var_15_2 = var_15_0:Find("mask_down/realImage")
+
+		if var_15_1 then
+			var_15_1:GetComponent(typeof(PinchZoom)).enabled = false
+		end
+
+		if var_15_2 then
+			var_15_2:GetComponent(typeof(PinchZoom)).enabled = false
+		end
+
+		var_13_3(var_15_0)
 	end), true, true)
 end
 

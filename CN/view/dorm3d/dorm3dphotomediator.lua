@@ -10,6 +10,7 @@ function var_0_0.register(arg_1_0)
 
 	arg_1_0.viewComponent:SetSceneRoot(var_1_0)
 	arg_1_0.viewComponent:SetRoom(var_1_0.room)
+	arg_1_0.viewComponent:SetGroupId(arg_1_0.contextData.groupId)
 	arg_1_0:bind(var_0_0.SHARE_PANEL, function(arg_2_0, arg_2_1, arg_2_2)
 		arg_1_0:addSubLayers(Context.New({
 			mediator = Dorm3dPhotoShareLayerMediator,

@@ -121,16 +121,21 @@ var_0_0.taskTypeDic = {
 		return var_13_1, var_13_0 ~= 1 and var_13_2 or nil
 	end,
 	[var_0_0.SP_DAILY] = function(arg_15_0, arg_15_1)
-		local function var_15_0()
-			arg_15_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.LEVEL, {
-				mapIdx = pg.chapter_template[arg_15_1[1]].map
-			})
+		local var_15_0 = getProxy(ChapterProxy):getChapterById(arg_15_1[1])
+
+		local function var_15_1()
+			if var_15_0:isUnlock() then
+				arg_15_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.LEVEL, {
+					mapIdx = pg.chapter_template[arg_15_1[1]].map
+				})
+			else
+				arg_15_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+			end
 		end
 
-		local var_15_1 = getProxy(ChapterProxy):getChapterById(arg_15_1[1])
-		local var_15_2 = var_15_1:isUnlock() and var_15_1:isPlayerLVUnlock() and not var_15_1:enoughTimes2Start()
+		local var_15_2 = var_15_0:isUnlock() and var_15_0:isPlayerLVUnlock() and not var_15_0:enoughTimes2Start()
 
-		return var_15_2 and "1/1" or "0/1", not var_15_2 and var_15_0 or nil
+		return var_15_2 and "1/1" or "0/1", not var_15_2 and var_15_1 or nil
 	end,
 	[var_0_0.RANDOM_DAILY] = function(arg_17_0, arg_17_1)
 		local var_17_0

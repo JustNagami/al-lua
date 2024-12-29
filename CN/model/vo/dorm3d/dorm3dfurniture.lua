@@ -135,6 +135,7 @@ function var_0_0.SetViewedFlag(arg_21_0)
 	local var_21_0 = getProxy(PlayerProxy):getRawData().id
 
 	PlayerPrefs.SetInt(var_21_0 .. "_dorm3dFurnitureViewed_" .. arg_21_0, 1)
+	PlayerPrefs.Save()
 
 	return true
 end
@@ -155,6 +156,59 @@ function var_0_0.IsTimelimitShopTip(arg_22_0)
 
 			return var_24_0:GetEndTime() > 0 and var_24_0:InShopTime() and not _.detect(var_23_0, function(arg_25_0)
 				return arg_25_0:GetConfigID() == arg_24_0
+			end)
+		end)
+	end)
+end
+
+function var_0_0.RecordLastTimelimitShopFurniture()
+	local var_26_0 = getProxy(PlayerProxy):getRawData().id
+	local var_26_1 = PlayerPrefs.GetInt(var_26_0 .. "_dorm3dTimelimitFurniture", 0)
+	local var_26_2 = var_26_1
+	local var_26_3 = underscore.values(getProxy(ApartmentProxy).roomData)
+
+	underscore.each(var_26_3, function(arg_27_0)
+		local var_27_0 = pg.dorm3d_furniture_template.get_id_list_by_room_id[arg_27_0:GetConfigID()] or {}
+
+		_.each(var_27_0, function(arg_28_0)
+			local var_28_0 = Dorm3dFurniture.New({
+				configId = arg_28_0
+			})
+
+			if var_28_0:GetEndTime() > 0 and var_28_0:InShopTime() then
+				var_26_2 = math.max(var_26_2, arg_28_0)
+			end
+		end)
+	end)
+
+	if var_26_2 <= var_26_1 then
+		return
+	end
+
+	PlayerPrefs.SetInt(var_26_0 .. "_dorm3dTimelimitFurniture", var_26_2)
+	PlayerPrefs.Save()
+end
+
+function var_0_0.IsOnceTimelimitShopTip()
+	local var_29_0 = getProxy(PlayerProxy):getRawData().id
+	local var_29_1 = PlayerPrefs.GetInt(var_29_0 .. "_dorm3dTimelimitFurniture", 0)
+	local var_29_2 = underscore.values(getProxy(ApartmentProxy).roomData)
+
+	return underscore.any(var_29_2, function(arg_30_0)
+		local var_30_0 = arg_30_0:GetFurnitures()
+		local var_30_1 = pg.dorm3d_furniture_template.get_id_list_by_room_id[arg_30_0:GetConfigID()] or {}
+
+		return _.any(var_30_1, function(arg_31_0)
+			if arg_31_0 <= var_29_1 then
+				return
+			end
+
+			local var_31_0 = Dorm3dFurniture.New({
+				configId = arg_31_0
+			})
+
+			return var_31_0:GetEndTime() > 0 and var_31_0:InShopTime() and not _.detect(var_30_0, function(arg_32_0)
+				return arg_32_0:GetConfigID() == arg_31_0
 			end)
 		end)
 	end)

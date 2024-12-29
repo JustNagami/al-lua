@@ -121,7 +121,15 @@ end
 function var_0_0.OnUpdateFlush(arg_11_0)
 	arg_11_0.nday = arg_11_0.activity:GetCurrentDay()
 
-	setText(arg_11_0.awardNum, arg_11_0.activity.data1)
+	local var_11_0 = 0
+	local var_11_1 = arg_11_0.activity:getConfig("config_client").link_act_id
+	local var_11_2 = getProxy(ActivityProxy):getActivityById(var_11_1)
+
+	if var_11_2 then
+		var_11_0 = var_11_2.data1
+	end
+
+	setText(arg_11_0.awardNum, var_11_0)
 	onButton(arg_11_0, arg_11_0.linkBtn, function()
 		Application.OpenURL(arg_11_0.activity:getConfig("config_client").url)
 	end, SFX_PANEL)

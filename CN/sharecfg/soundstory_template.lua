@@ -850,6 +850,59 @@ pg.soundstory_template = {
 			}
 		}
 	},
+	{
+		story_pic = "",
+		name = "乌冬面的制作方法？！",
+		story_resource_CN = "",
+		audition_resource_CN = "",
+		CV_JP = "泽田姬",
+		audition_text = "这些比较硬的地方……用脚仔细地按下去……如果不老实的话……就再按一按……",
+		id = 19,
+		ship_id = 39906,
+		audition_resource_JP = "ss-39906-1",
+		CV_CN = "",
+		overview = "体验着传统制作方式来开启新年的龙神大人，\n意外地无法驯服变得越发湿润柔软的面团，\n在如此胶着的状态下，似乎只能施以援手了……",
+		captions_color = "#2e2f31",
+		story_resource_JP = "soundStory19_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					12,
+					26
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					1,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -868,6 +921,7 @@ pg.soundstory_template = {
 		15,
 		16,
 		17,
-		18
+		18,
+		19
 	}
 }
