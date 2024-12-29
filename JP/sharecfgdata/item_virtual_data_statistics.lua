@@ -197594,3 +197594,105 @@ _G.pg.base.item_virtual_data_statistics[200364] = {
 		}
 	}
 }
+_G.pg.base.item_virtual_data_statistics[65068] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2025.1.8まで）で削除されます",
+	name = "試着貸出チケット（2025.1.8まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65068,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65509] = {
+	display = "「委託報酬計画」イベントで報酬と交換できるPtになります。イベント終了後に削除されます",
+	name = "軍事委託Pt",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/commission_pt",
+	id = 65509,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[86209] = {
+	display = "不会被看到",
+	name = "ランダム正月着せ替え2025B",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86209,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			307084,
+			1000
+		},
+		{
+			699021,
+			1000
+		},
+		{
+			799021,
+			1000
+		},
+		{
+			199051,
+			1100
+		},
+		{
+			399071,
+			1100
+		},
+		{
+			899041,
+			1600
+		},
+		{
+			402102,
+			1600
+		},
+		{
+			303061,
+			1600
+		}
+	}
+}

@@ -1,15 +1,24 @@
 ﻿pg = pg or {}
 pg.dorm3d_gift = {
 	[1021001] = {
-		name = "ウサウサぬいぐるみ",
-		display = "ピンク色のウサギのぬいぐるみ。柔らかい素材でふわふわで、抱き心地が最高。",
-		unlock_dialogue_id = 0,
-		reply_dialogue_id = 1501,
-		rarity = 2,
 		ship_group_id = 0,
-		favor_trigger_id = 1009,
+		display = "ピンク色のウサギのぬいぐるみ。柔らかい素材でふわふわで、抱き心地が最高。",
+		rarity = 2,
+		unlock_dialogue_id = 0,
 		id = 1021001,
 		icon = "dorm3dicon/3Ddrom_everyone_CommonGift3",
+		name = "ウサウサぬいぐるみ",
+		favor_trigger_id = 1009,
+		reply_dialogue_id = {
+			{
+				20220,
+				1501
+			},
+			{
+				30221,
+				20301
+			}
+		},
 		shop_id = {},
 		unlock_tips = {},
 		unlock_banners = {
@@ -17,15 +26,24 @@ pg.dorm3d_gift = {
 		}
 	},
 	[1021002] = {
-		name = "満点のロマンチック",
-		display = "奥ゆかしい魅惑的な香りを放つ花束。バラとその他の赤色を基調とした花々が、情熱とロマンスを際立たせている。",
-		unlock_dialogue_id = 0,
-		reply_dialogue_id = 1502,
-		rarity = 3,
 		ship_group_id = 0,
-		favor_trigger_id = 1010,
+		display = "奥ゆかしい魅惑的な香りを放つ花束。バラとその他の赤色を基調とした花々が、情熱とロマンスを際立たせている。",
+		rarity = 3,
+		unlock_dialogue_id = 0,
 		id = 1021002,
 		icon = "dorm3dicon/3Ddrom_everyone_CommonGift2",
+		name = "満点のロマンチック",
+		favor_trigger_id = 1010,
+		reply_dialogue_id = {
+			{
+				20220,
+				1502
+			},
+			{
+				30221,
+				20302
+			}
+		},
 		shop_id = {
 			260101,
 			260102,
@@ -39,15 +57,24 @@ pg.dorm3d_gift = {
 		}
 	},
 	[1021003] = {
-		name = "ケーキギフトボックス",
-		display = "精緻にラッピングされた箱と美味しいカットケーキの詰め合わせ。自分で食べるのはもちろん、人に贈るプレゼントとしても嬉しいものだ。",
-		unlock_dialogue_id = 0,
-		reply_dialogue_id = 1503,
-		rarity = 4,
 		ship_group_id = 0,
-		favor_trigger_id = 1019,
+		display = "精緻にラッピングされた箱と美味しいカットケーキの詰め合わせ。自分で食べるのはもちろん、人に贈るプレゼントとしても嬉しいものだ。",
+		rarity = 4,
+		unlock_dialogue_id = 0,
 		id = 1021003,
 		icon = "dorm3dicon/3Ddrom_everyone_CommonGift1",
+		name = "ケーキギフトボックス",
+		favor_trigger_id = 1019,
+		reply_dialogue_id = {
+			{
+				20220,
+				1503
+			},
+			{
+				30221,
+				20303
+			}
+		},
 		shop_id = {
 			260201,
 			260202
@@ -58,15 +85,20 @@ pg.dorm3d_gift = {
 		}
 	},
 	[2022001] = {
-		name = "清掃ツールボックス",
-		display = "家や職場の清掃・整理に欠かせないアイテム。丈夫で耐久性に優れたケースが、中のツールを損傷から守ってくれる。",
-		unlock_dialogue_id = 10060,
-		reply_dialogue_id = 1504,
-		rarity = 4,
 		ship_group_id = 20220,
-		favor_trigger_id = 1004,
+		display = "家や職場の清掃・整理に欠かせないアイテム。丈夫で耐久性に優れたケースが、中のツールを損傷から守ってくれる。",
+		rarity = 4,
+		unlock_dialogue_id = 10060,
 		id = 2022001,
 		icon = "dorm3dicon/3Ddrom_tianlangxing_FancyGift2",
+		name = "清掃ツールボックス",
+		favor_trigger_id = 1004,
+		reply_dialogue_id = {
+			{
+				20220,
+				1504
+			}
+		},
 		shop_id = {
 			260301
 		},
@@ -78,15 +110,20 @@ pg.dorm3d_gift = {
 		}
 	},
 	[2022002] = {
-		name = "ロイヤルティーセット",
-		display = "クラシックでエレガントなロイヤルティーセット。\n ゆったりした気持ちになる爽やかな「ブルー×ホワイト」のデザインで、ティータイムを優雅なひと時にしてくれる。",
-		unlock_dialogue_id = 10070,
-		reply_dialogue_id = 1505,
-		rarity = 4,
 		ship_group_id = 20220,
-		favor_trigger_id = 1004,
+		display = "クラシックでエレガントなロイヤルティーセット。\n ゆったりした気持ちになる爽やかな「ブルー×ホワイト」のデザインで、ティータイムを優雅なひと時にしてくれる。",
+		rarity = 4,
+		unlock_dialogue_id = 10070,
 		id = 2022002,
 		icon = "dorm3dicon/3Ddrom_tianlangxing_FancyGift1",
+		name = "ロイヤルティーセット",
+		favor_trigger_id = 1004,
+		reply_dialogue_id = {
+			{
+				20220,
+				1505
+			}
+		},
 		shop_id = {
 			260302
 		},
@@ -95,6 +132,31 @@ pg.dorm3d_gift = {
 		},
 		unlock_banners = {
 			"banner_gift2022002"
+		}
+	},
+	[3022101] = {
+		ship_group_id = 30221,
+		display = "シンプルなデザイン、シンプルな色。軽やかでいい履き心地。\n足裏にも快適にフィットし、日々に寄り添ってくれる。",
+		rarity = 4,
+		unlock_dialogue_id = 10060,
+		id = 3022101,
+		icon = "dorm3dicon/3Ddrom_nengdai_FancyGift1",
+		name = "素直ローファー",
+		favor_trigger_id = 1004,
+		reply_dialogue_id = {
+			{
+				30221,
+				20304
+			}
+		},
+		shop_id = {
+			260321
+		},
+		unlock_tips = {
+			4
+		},
+		unlock_banners = {
+			"banner_gift3022101"
 		}
 	},
 	get_id_list_by_ship_group_id = {
@@ -106,6 +168,9 @@ pg.dorm3d_gift = {
 		[20220] = {
 			2022001,
 			2022002
+		},
+		[30221] = {
+			3022101
 		}
 	},
 	all = {
@@ -113,6 +178,7 @@ pg.dorm3d_gift = {
 		1021002,
 		1021003,
 		2022001,
-		2022002
+		2022002,
+		3022101
 	}
 }

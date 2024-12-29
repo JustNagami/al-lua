@@ -31,6 +31,7 @@ function var_0_0.init(arg_2_0)
 	arg_2_0.frameDic = {}
 	arg_2_0.loadingDic = {}
 	arg_2_0.lateFuncDic = {}
+	arg_2_0.specialLateFuncDic = {}
 
 	UIItemList.StaticAlign(var_2_0, var_2_0:GetChild(0), #var_2_1, function(arg_5_0, arg_5_1, arg_5_2)
 		if arg_5_0 ~= UIItemList.EventUpdate then
@@ -67,11 +68,14 @@ function var_0_0.init(arg_2_0)
 
 			var_2_2()
 
+			local var_6_0 = var_5_0.frameTfName == "FilmFrame"
+			local var_6_1 = var_5_0.frameTfName == "InsFrame"
+
 			for iter_6_0, iter_6_1 in pairs(arg_2_0.frameDic) do
 				setActive(iter_6_1, false)
 			end
 
-			local function var_6_0(arg_7_0)
+			local function var_6_2(arg_7_0)
 				local var_7_0 = arg_7_0:Find("mask/realImage")
 
 				var_7_0:GetComponent(typeof(RawImage)).texture = arg_2_0.contextData.photoTex
@@ -83,13 +87,43 @@ function var_0_0.init(arg_2_0)
 				})
 
 				var_7_0.localScale = Vector3(1, 1, 1)
+
+				local var_7_1 = {}
+
+				if var_6_1 then
+					table.insert(var_7_1, "mask_up/realImage")
+				elseif var_6_0 then
+					table.insert(var_7_1, "mask_up/realImage")
+					table.insert(var_7_1, "mask_down/realImage")
+				end
+
+				for iter_7_0, iter_7_1 in ipairs(var_7_1) do
+					local var_7_2 = arg_7_0:Find(iter_7_1)
+
+					var_7_2:GetComponent(typeof(RawImage)).texture = arg_2_0.contextData.photoTex
+
+					local var_7_3 = GameObject.Find("OverlayCamera").transform:GetChild(0)
+
+					if var_6_1 and iter_7_1 == "mask_up/realImage" then
+						var_7_2.sizeDelta = Vector2(var_7_3.sizeDelta.x / 10, var_7_3.sizeDelta.y / 10)
+					else
+						var_7_2.sizeDelta = var_7_3.sizeDelta
+					end
+
+					setAnchoredPosition(var_7_2, {
+						x = 0,
+						y = 0
+					})
+
+					var_7_2.localScale = Vector3(1, 1, 1)
+				end
 			end
 
-			local var_6_1 = arg_2_0.frameDic[arg_2_0.selectIndex]
+			local var_6_3 = arg_2_0.frameDic[arg_2_0.selectIndex]
 
-			if var_6_1 then
-				setActive(var_6_1, true)
-				var_6_0(var_6_1)
+			if var_6_3 then
+				setActive(var_6_3, true)
+				var_6_2(var_6_3)
 
 				return
 			end
@@ -107,68 +141,103 @@ function var_0_0.init(arg_2_0)
 
 				arg_2_0.frameDic[arg_5_1] = var_8_0
 
+				local var_8_1 = {
+					"mask/realImage"
+				}
+				local var_8_2 = {
+					"mask"
+				}
+
+				if var_6_1 then
+					table.insert(var_8_1, "mask_up/realImage")
+					table.insert(var_8_2, "mask_up")
+				elseif var_6_0 then
+					table.insert(var_8_1, "mask_up/realImage")
+					table.insert(var_8_1, "mask_down/realImage")
+					table.insert(var_8_2, "mask_up")
+					table.insert(var_8_2, "mask_down")
+				end
+
 				;(function()
-					local var_9_0 = var_8_0:Find("mask/realImage")
-					local var_9_1 = GetOrAddComponent(var_8_0:Find("mask/realImage"), "PinchZoom")
-					local var_9_2 = GetOrAddComponent(var_8_0:Find("mask/realImage"), "EventTriggerListener")
-					local var_9_3 = true
+					for iter_9_0, iter_9_1 in ipairs(var_8_1) do
+						local var_9_0 = var_8_0:Find(iter_9_1)
+						local var_9_1 = GetOrAddComponent(var_8_0:Find(iter_9_1), "PinchZoom")
+						local var_9_2 = GetOrAddComponent(var_8_0:Find(iter_9_1), "EventTriggerListener")
+						local var_9_3 = true
 
-					var_9_2:AddPointDownFunc(function(arg_10_0)
-						if Input.touchCount == 1 or IsUnityEditor then
-							var_9_3 = true
-						elseif Input.touchCount >= 2 then
-							var_9_3 = false
-						end
-					end)
-					var_9_2:AddPointUpFunc(function(arg_11_0)
-						if Input.touchCount <= 2 then
-							var_9_3 = true
-						end
-					end)
+						var_9_2:AddPointDownFunc(function(arg_10_0)
+							if Input.touchCount == 1 or IsUnityEditor then
+								var_9_3 = true
+							elseif Input.touchCount >= 2 then
+								var_9_3 = false
+							end
+						end)
+						var_9_2:AddPointUpFunc(function(arg_11_0)
+							if Input.touchCount <= 2 then
+								var_9_3 = true
+							end
+						end)
 
-					local var_9_4 = GameObject.Find("OverlayCamera").transform:GetChild(0).sizeDelta
-					local var_9_5 = var_8_0:Find("mask").sizeDelta
+						local var_9_4 = GameObject.Find("OverlayCamera").transform:GetChild(0).sizeDelta
 
-					var_9_2:AddBeginDragFunc(function(arg_12_0, arg_12_1)
-						touchOffsetX = arg_12_1.position.x - var_9_0.localPosition.x
-						touchOffsetY = arg_12_1.position.y - var_9_0.localPosition.y
-					end)
-
-					local var_9_6 = LateUpdateBeat:CreateListener(function()
-						if var_9_1.processing then
-							local var_13_0 = var_9_0.localScale
-							local var_13_1 = (var_9_4.x * var_13_0.x - var_9_5.x) / 2
-							local var_13_2 = (var_9_4.y * var_13_0.x - var_9_5.y) / 2
-							local var_13_3 = math.clamp(var_9_0.localPosition.x, -var_13_1, var_13_1)
-							local var_13_4 = math.clamp(var_9_0.localPosition.y, -var_13_2, var_13_2)
-
-							var_9_0.localPosition = Vector3(var_13_3, var_13_4, 1)
-						end
-					end, arg_2_0)
-
-					LateUpdateBeat:AddListener(var_9_6)
-
-					arg_2_0.lateFuncDic[arg_5_1] = var_9_6
-
-					var_9_2:AddDragFunc(function(arg_14_0, arg_14_1)
-						if var_9_1.processing then
-							return
+						if var_6_1 and iter_9_1 == "mask_up/realImage" then
+							var_9_4 = Vector2(var_9_4.x / 10, var_9_4.y / 10)
 						end
 
-						if var_9_3 then
-							local var_14_0 = var_9_0.localScale
-							local var_14_1 = (var_9_4.x * var_14_0.x - var_9_5.x) / 2
-							local var_14_2 = (var_9_4.y * var_14_0.x - var_9_5.y) / 2
-							local var_14_3 = math.clamp(arg_14_1.position.x - touchOffsetX, -var_14_1, var_14_1)
-							local var_14_4 = math.clamp(arg_14_1.position.y - touchOffsetY, -var_14_2, var_14_2)
+						local var_9_5 = var_8_0:Find(var_8_2[iter_9_0]).sizeDelta
 
-							var_9_0.localPosition = Vector3(var_14_3, var_14_4, 1)
+						var_9_2:AddBeginDragFunc(function(arg_12_0, arg_12_1)
+							touchOffsetX = arg_12_1.position.x - var_9_0.localPosition.x
+							touchOffsetY = arg_12_1.position.y - var_9_0.localPosition.y
+						end)
+
+						local var_9_6 = math.max(var_9_5.x / var_9_4.x, var_9_5.y / var_9_4.y)
+						local var_9_7 = LateUpdateBeat:CreateListener(function()
+							if var_9_1.processing then
+								local var_13_0 = var_9_0.localScale
+
+								if var_13_0.x < var_9_6 then
+									var_9_0.localScale = Vector3(var_9_6, var_9_6, var_13_0.z)
+									var_13_0 = var_9_0.localScale
+								end
+
+								local var_13_1 = (var_9_4.x * var_13_0.x - var_9_5.x) / 2
+								local var_13_2 = (var_9_4.y * var_13_0.x - var_9_5.y) / 2
+								local var_13_3 = math.clamp(var_9_0.localPosition.x, -var_13_1, var_13_1)
+								local var_13_4 = math.clamp(var_9_0.localPosition.y, -var_13_2, var_13_2)
+
+								var_9_0.localPosition = Vector3(var_13_3, var_13_4, 1)
+							end
+						end, arg_2_0)
+
+						LateUpdateBeat:AddListener(var_9_7)
+
+						if var_6_0 or var_6_1 then
+							table.insert(arg_2_0.specialLateFuncDic, var_9_7)
+						else
+							arg_2_0.lateFuncDic[arg_5_1] = var_9_7
 						end
-					end)
+
+						var_9_2:AddDragFunc(function(arg_14_0, arg_14_1)
+							if var_9_1.processing then
+								return
+							end
+
+							if var_9_3 then
+								local var_14_0 = var_9_0.localScale
+								local var_14_1 = (var_9_4.x * var_14_0.x - var_9_5.x) / 2
+								local var_14_2 = (var_9_4.y * var_14_0.x - var_9_5.y) / 2
+								local var_14_3 = math.clamp(arg_14_1.position.x - touchOffsetX, -var_14_1, var_14_1)
+								local var_14_4 = math.clamp(arg_14_1.position.y - touchOffsetY, -var_14_2, var_14_2)
+
+								var_9_0.localPosition = Vector3(var_14_3, var_14_4, 1)
+							end
+						end)
+					end
 				end)()
 
 				if arg_2_0.selectIndex == arg_5_1 then
-					var_6_0(var_8_0)
+					var_6_2(var_8_0)
 				else
 					setActive(var_8_0, false)
 				end
@@ -196,8 +265,22 @@ function var_0_0.SelectFrame(arg_18_0)
 	local var_18_1 = arg_18_0.frameDic[arg_18_0.selectIndex]
 	local var_18_2 = var_18_1:Find("mask/realImage").anchoredPosition
 	local var_18_3 = var_18_1:Find("mask/realImage").localScale
+	local var_18_4
+	local var_18_5 = pg.dorm3d_camera_photo_frame[var_18_0].frameTfName
 
-	arg_18_0:emit(Dorm3dPhotoSelectFrameMediator.CONFIRMFRAME, var_18_0, var_18_2, var_18_3)
+	if var_18_5 == "FilmFrame" or var_18_5 == "InsFrame" then
+		var_18_4 = {
+			upPos = var_18_1:Find("mask_up/realImage").anchoredPosition,
+			upScale = var_18_1:Find("mask_up/realImage").localScale
+		}
+
+		if var_18_1:Find("mask_down/realImage") then
+			var_18_4.downPos = var_18_1:Find("mask_down/realImage").anchoredPosition
+			var_18_4.downScale = var_18_1:Find("mask_up/realImage").localScale
+		end
+	end
+
+	arg_18_0:emit(Dorm3dPhotoSelectFrameMediator.CONFIRMFRAME, var_18_0, var_18_2, var_18_3, var_18_4)
 end
 
 function var_0_0.willExit(arg_19_0)
@@ -205,6 +288,10 @@ function var_0_0.willExit(arg_19_0)
 
 	for iter_19_0, iter_19_1 in pairs(arg_19_0.lateFuncDic) do
 		LateUpdateBeat:RemoveListener(iter_19_1)
+	end
+
+	for iter_19_2, iter_19_3 in ipairs(arg_19_0.specialLateFuncDic) do
+		LateUpdateBeat:RemoveListener(iter_19_3)
 	end
 end
 

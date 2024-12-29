@@ -159,6 +159,12 @@ function var_0_0.InitIconTrigger(arg_15_0, arg_15_1)
 			return
 		end
 
+		if arg_15_1 ~= 1 and (not getProxy(ApartmentProxy):getRoom(1) or not pg.NewStoryMgr.GetInstance():IsPlayed("DORM3D_GUIDE_02")) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_guide_tip"))
+
+			return
+		end
+
 		local var_16_0 = getProxy(ApartmentProxy):getRoom(arg_15_1)
 		local var_16_1 = pg.dorm3d_rooms[arg_15_1].type
 
@@ -296,39 +302,53 @@ function var_0_0.InitCardTrigger(arg_31_0, arg_31_1)
 	assert(var_31_0)
 
 	local var_31_1 = arg_31_0.cardDic[arg_31_1]
-	local var_31_2 = var_31_0:getConfig("assets_prefix")
 
 	if var_31_0:isPersonalRoom() then
-		local var_31_3 = var_31_0:getPersonalGroupId()
+		local var_31_2 = var_31_0:getPersonalGroupId()
+		local var_31_3 = Apartment.New({
+			ship_group = var_31_2
+		}):GetSkinModelID(var_31_0:getConfig("tag"))
 
 		GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_%d", var_31_3), "", var_31_1:Find("Image"))
-		GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_name_%d", var_31_3), "", var_31_1:Find("name"))
-		onButton(arg_31_0, var_31_1, function()
-			arg_31_0:TryDownloadResource({
-				click = true,
-				roomId = arg_31_1
-			}, function()
-				pg.MsgboxMgr.GetInstance():ShowMsgBox({
-					content = i18n("dorm3d_role_assets_delete", ShipGroup.getDefaultShipNameByGroupID(var_31_3)),
-					onYes = function()
-						if IsUnityEditor then
-							pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_open"))
-
-							return
-						end
-
-						local var_34_0 = var_31_0:getConfig("resource_name")
-
-						DormGroupConst.DelDir("dorm3d/character/" .. string.lower(var_34_0))
-						pg.TipsMgr.GetInstance():ShowTips("アセット削除が完了しました!")
-					end
-				})
-			end)
-		end, SFX_PANEL)
+		GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_name_%d", var_31_2), "", var_31_1:Find("name"))
 	else
-		GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_%s", string.lower(var_31_2)), "", var_31_1:Find("Image"))
-		removeOnButton(var_31_1)
+		local var_31_4 = var_31_0:getConfig("assets_prefix")
+
+		GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_%s", string.lower(var_31_4)), "", var_31_1:Find("Image"))
 	end
+
+	onButton(arg_31_0, var_31_1, function()
+		arg_31_0:TryDownloadResource({
+			click = true,
+			roomId = arg_31_1
+		}, function()
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				content = i18n("dorm3d_role_assets_delete", var_31_0:getConfig("room")),
+				onYes = function()
+					if IsUnityEditor then
+						pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_open"))
+
+						return
+					end
+
+					if var_31_0:isPersonalRoom() then
+						DormGroupConst.DelRoom(string.lower(var_31_0:getConfig("resource_name")), {
+							"room",
+							"apartment"
+						})
+					else
+						DormGroupConst.DelRoom(string.lower(var_31_0:getConfig("resource_name")), {
+							"room"
+						})
+					end
+
+					pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_delete_finish"))
+					pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataDownload(var_31_0.id, 3))
+					arg_31_0:DownloadUpdate(arg_31_1, "delete")
+				end
+			})
+		end)
+	end, SFX_PANEL)
 end
 
 function var_0_0.UpdateCardState(arg_35_0, arg_35_1)
@@ -350,7 +370,6 @@ function var_0_0.UpdateCardState(arg_35_0, arg_35_1)
 	eachChild(var_35_4, function(arg_36_0)
 		setActive(arg_36_0, arg_36_0.name == var_35_2)
 	end)
-	setImageAlpha(var_35_4:Find("complete"), var_35_0:isPersonalRoom() and 1 or 0)
 
 	if DormGroupConst.DormDownloadLock and DormGroupConst.DormDownloadLock.roomId == arg_35_1 then
 		arg_35_0:UpdateCardProgess()
@@ -366,276 +385,243 @@ function var_0_0.UpdateCardProgess(arg_37_0)
 	setSlider(var_37_1:Find("operation/loading"), 0, var_37_0.totalSize, var_37_0.curSize)
 end
 
-function var_0_0.UpdateSelectableCard(arg_38_0, arg_38_1, arg_38_2, arg_38_3)
-	GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_%d", arg_38_2), "", arg_38_1:Find("Image"))
-	GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_name_%d", arg_38_2), "", arg_38_1:Find("name"))
-
-	local var_38_0 = getProxy(ApartmentProxy):getApartment(arg_38_2)
-	local var_38_1 = not var_38_0 or var_38_0:needDownload()
-
-	setActive(arg_38_1:Find("lock"), var_38_1)
-	setActive(arg_38_1:Find("mask"), var_38_1)
-	setActive(arg_38_1:Find("unlock"), not var_38_1)
-	setActive(arg_38_1:Find("favor_level"), var_38_0)
-
-	if var_38_0 then
-		setText(arg_38_1:Find("favor_level/Text"), var_38_0.level)
-	end
-
-	onToggle(arg_38_0, arg_38_1, function(arg_39_0)
-		arg_38_3(arg_39_0)
-
-		if arg_39_0 then
-			if not var_38_0 then
-				pg.TipsMgr.GetInstance():ShowTips(string.format("need unlock apartment{%d}", arg_38_2))
-				triggerToggle(arg_38_1, false)
-			elseif var_38_0:needDownload() then
-				pg.TipsMgr.GetInstance():ShowTips(string.format("need download resource{%d}", arg_38_2))
-				triggerToggle(arg_38_1, false)
-			end
-		end
-	end, SFX_UI_CLICK)
-end
-
-function var_0_0.DownloadUpdate(arg_40_0, arg_40_1, arg_40_2)
-	switch(arg_40_2, {
+function var_0_0.DownloadUpdate(arg_38_0, arg_38_1, arg_38_2)
+	switch(arg_38_2, {
 		start = function()
-			if arg_40_0.roomDic[arg_40_1] then
-				arg_40_0:UpdateIconState(arg_40_1)
+			if arg_38_0.roomDic[arg_38_1] then
+				arg_38_0:UpdateIconState(arg_38_1)
 			end
 
-			if arg_40_0.cardDic and arg_40_0.cardDic[arg_40_1] then
-				arg_40_0:UpdateCardState(arg_40_1)
+			if arg_38_0.cardDic and arg_38_0.cardDic[arg_38_1] then
+				arg_38_0:UpdateCardState(arg_38_1)
 			end
 		end,
 		loading = function()
-			if arg_40_0.roomDic[arg_40_1] then
-				local var_42_0 = DormGroupConst.DormDownloadLock
+			if arg_38_0.roomDic[arg_38_1] then
+				local var_40_0 = DormGroupConst.DormDownloadLock
 
-				setSlider(arg_40_0.roomDic[arg_40_1]:Find("front/loading/progress"), 0, var_42_0.totalSize, var_42_0.curSize)
+				setSlider(arg_38_0.roomDic[arg_38_1]:Find("front/loading/progress"), 0, var_40_0.totalSize, var_40_0.curSize)
 			end
 
-			if arg_40_0.cardDic and arg_40_0.cardDic[arg_40_1] then
-				arg_40_0:UpdateCardProgess()
+			if arg_38_0.cardDic and arg_38_0.cardDic[arg_38_1] then
+				arg_38_0:UpdateCardProgess()
 			end
 		end,
 		finish = function()
-			for iter_43_0, iter_43_1 in pairs(arg_40_0.roomDic) do
-				if iter_43_0 == arg_40_1 or pg.dorm3d_rooms[iter_43_0].type == 1 then
-					arg_40_0:UpdateIconState(iter_43_0)
-				end
+			for iter_41_0, iter_41_1 in pairs(arg_38_0.roomDic) do
+				arg_38_0:UpdateIconState(iter_41_0)
 			end
 
-			if arg_40_0.cardDic then
-				for iter_43_2, iter_43_3 in pairs(arg_40_0.cardDic) do
-					if iter_43_2 == arg_40_1 or pg.dorm3d_rooms[iter_43_2].type == 1 then
-						arg_40_0:UpdateCardState(iter_43_2)
-					end
+			if arg_38_0.cardDic then
+				for iter_41_2, iter_41_3 in pairs(arg_38_0.cardDic) do
+					arg_38_0:UpdateCardState(iter_41_2)
 				end
 			else
-				arg_40_0:CheckGuide("DORM3D_GUIDE_02")
+				arg_38_0:CheckGuide("DORM3D_GUIDE_02")
+			end
+		end,
+		delete = function()
+			if arg_38_0.roomDic[arg_38_1] then
+				arg_38_0:UpdateIconState(arg_38_1)
+			end
+
+			if arg_38_0.cardDic and arg_38_0.cardDic[arg_38_1] then
+				arg_38_0:UpdateCardState(arg_38_1)
 			end
 		end
 	})
 end
 
-function var_0_0.AfterRoomUnlock(arg_44_0, arg_44_1)
-	local var_44_0 = arg_44_1.roomId
+function var_0_0.AfterRoomUnlock(arg_43_0, arg_43_1)
+	local var_43_0 = arg_43_1.roomId
 
-	if isActive(arg_44_0.rtIconTip) then
-		arg_44_0:HideIconTipWindow()
+	if isActive(arg_43_0.rtIconTip) then
+		arg_43_0:HideIconTipWindow()
 	end
 
-	eachChild(arg_44_0.roomDic[var_44_0]:Find("icon/mask"), function(arg_45_0)
-		setActive(arg_45_0, true)
+	eachChild(arg_43_0.roomDic[var_43_0]:Find("icon/mask"), function(arg_44_0)
+		setActive(arg_44_0, true)
 	end)
-	quickPlayAnimation(arg_44_0.roomDic[var_44_0], "anim_Dorm3d_selectDorm_icon_unlock")
+	quickPlayAnimation(arg_43_0.roomDic[var_43_0], "anim_Dorm3d_selectDorm_icon_unlock")
 	pg.UIMgr.GetInstance():LoadingOn(false)
 	LeanTween.delayedCall(1.2333333333333334, System.Action(function()
 		pg.UIMgr.GetInstance():LoadingOff(false)
-		arg_44_0:UpdateIconState(var_44_0)
-		arg_44_0:TryDownloadResource(arg_44_1)
-		arg_44_0:CheckGuide("DORM3D_GUIDE_02")
+		arg_43_0:UpdateIconState(var_43_0)
+		arg_43_0:TryDownloadResource(arg_43_1)
+		arg_43_0:CheckGuide("DORM3D_GUIDE_02")
 	end))
 end
 
-function var_0_0.ShowIconTipWindow(arg_47_0, arg_47_1, arg_47_2)
-	setLocalPosition(arg_47_0.rtIconTip:Find("window"), arg_47_0.rtIconTip:InverseTransformPoint(arg_47_2.position))
-	removeAllChildren(arg_47_0.rtIconTip:Find("window/icon"))
+function var_0_0.ShowIconTipWindow(arg_46_0, arg_46_1, arg_46_2)
+	setLocalPosition(arg_46_0.rtIconTip:Find("window"), arg_46_0.rtIconTip:InverseTransformPoint(arg_46_2.position))
+	removeAllChildren(arg_46_0.rtIconTip:Find("window/icon"))
 
-	arg_47_2 = cloneTplTo(arg_47_2, arg_47_0.rtIconTip:Find("window/icon"))
+	arg_46_2 = cloneTplTo(arg_46_2, arg_46_0.rtIconTip:Find("window/icon"))
 
-	arg_47_0:UpdateShowIcon(arg_47_1, arg_47_2)
-	setAnchoredPosition(arg_47_2, Vector2.zero)
+	arg_46_0:UpdateShowIcon(arg_46_1, arg_46_2)
+	setAnchoredPosition(arg_46_2, Vector2.zero)
 
-	local var_47_0 = ApartmentRoom.New({
-		id = arg_47_1
+	local var_46_0 = ApartmentRoom.New({
+		id = arg_46_1
 	})
-	local var_47_1, var_47_2 = var_47_0:getDownloadNeedSize()
+	local var_46_1, var_46_2 = var_46_0:getDownloadNeedSize()
 
-	setText(arg_47_0.rtIconTip:Find("window/Text"), i18n("dorm3d_role_assets_download", ShipGroup.getDefaultShipNameByGroupID(var_47_0:getPersonalGroupId()), var_47_0:needDownload() and var_47_2 or "0B"))
-	onButton(arg_47_0, arg_47_0.rtIconTip:Find("window/btn_confirm"), function()
-		arg_47_0:emit(SelectDorm3DMediator.ON_UNLOCK_DORM_ROOM, arg_47_1)
+	setText(arg_46_0.rtIconTip:Find("window/Text"), i18n("dorm3d_role_assets_download", ShipGroup.getDefaultShipNameByGroupID(var_46_0:getPersonalGroupId()), var_46_0:needDownload() and var_46_2 or "0B"))
+	onButton(arg_46_0, arg_46_0.rtIconTip:Find("window/btn_confirm"), function()
+		arg_46_0:emit(SelectDorm3DMediator.ON_UNLOCK_DORM_ROOM, arg_46_1)
 	end, SFX_CONFIRM)
-	setActive(arg_47_0.rtIconTip, true)
+	setActive(arg_46_0.rtIconTip, true)
 end
 
-function var_0_0.HideIconTipWindow(arg_49_0)
-	setActive(arg_49_0.rtIconTip, false)
+function var_0_0.HideIconTipWindow(arg_48_0)
+	setActive(arg_48_0.rtIconTip, false)
 end
 
-function var_0_0.ShowMgrPanel(arg_50_0)
-	arg_50_0.cardDic = {}
-	arg_50_0.filterCharRoomIds = {}
-	arg_50_0.filterPublicRoomIds = {}
+function var_0_0.ShowMgrPanel(arg_49_0)
+	arg_49_0.cardDic = {}
+	arg_49_0.filterCharRoomIds = {}
+	arg_49_0.filterPublicRoomIds = {}
 
-	for iter_50_0, iter_50_1 in ipairs(underscore.filter(pg.dorm3d_rooms.all, function(arg_51_0)
-		return tobool(getProxy(ApartmentProxy):getRoom(arg_51_0))
+	for iter_49_0, iter_49_1 in ipairs(underscore.filter(pg.dorm3d_rooms.all, function(arg_50_0)
+		return tobool(getProxy(ApartmentProxy):getRoom(arg_50_0))
 	end)) do
-		local var_50_0 = pg.dorm3d_rooms[iter_50_1].type
+		local var_49_0 = pg.dorm3d_rooms[iter_49_1].type
 
-		if var_50_0 == 1 then
-			table.insert(arg_50_0.filterPublicRoomIds, iter_50_1)
-		elseif var_50_0 == 2 then
-			table.insert(arg_50_0.filterCharRoomIds, iter_50_1)
+		if var_49_0 == 1 then
+			table.insert(arg_49_0.filterPublicRoomIds, iter_49_1)
+		elseif var_49_0 == 2 then
+			table.insert(arg_49_0.filterCharRoomIds, iter_49_1)
 		else
 			assert(false)
 		end
 	end
 
-	arg_50_0.charRoomCardItemList:align(#arg_50_0.filterCharRoomIds)
-	arg_50_0.publicRoomCardItemList:align(#arg_50_0.filterPublicRoomIds)
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg_50_0.rtMgrPanel, {
+	arg_49_0.charRoomCardItemList:align(#arg_49_0.filterCharRoomIds)
+	arg_49_0.publicRoomCardItemList:align(#arg_49_0.filterPublicRoomIds)
+	pg.UIMgr.GetInstance():OverlayPanelPB(arg_49_0.rtMgrPanel, {
 		force = true,
 		pbList = {
-			arg_50_0.rtMgrPanel:Find("window")
+			arg_49_0.rtMgrPanel:Find("window")
 		}
 	})
-	setActive(arg_50_0.rtMgrPanel, true)
+	setActive(arg_49_0.rtMgrPanel, true)
 end
 
-function var_0_0.HideMgrPanel(arg_52_0)
-	arg_52_0.cardDic = nil
+function var_0_0.HideMgrPanel(arg_51_0)
+	arg_51_0.cardDic = nil
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg_52_0.rtMgrPanel, arg_52_0.rtLayer)
-	setActive(arg_52_0.rtMgrPanel, false)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_51_0.rtMgrPanel, arg_51_0.rtLayer)
+	setActive(arg_51_0.rtMgrPanel, false)
+	arg_51_0:CheckGuide("DORM3D_GUIDE_02")
 end
 
-function var_0_0.TryDownloadResource(arg_53_0, arg_53_1, arg_53_2)
+function var_0_0.TryDownloadResource(arg_52_0, arg_52_1, arg_52_2)
 	if DormGroupConst.IsDownloading() then
-		pg.TipsMgr.GetInstance():ShowTips("アセットダウンロード中です")
+		pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_now_is_downloading"))
 
 		return
 	end
 
-	local var_53_0 = getProxy(ApartmentProxy):getRoom(arg_53_1.roomId)
-	local var_53_1, var_53_2 = var_53_0:getDownloadNameList()
+	local var_52_0 = getProxy(ApartmentProxy):getRoom(arg_52_1.roomId)
+	local var_52_1 = var_52_0:getDownloadNameList()
 
-	if #var_53_1 > 0 or #var_53_2 > 0 then
-		local var_53_3 = {
+	if #var_52_1 > 0 then
+		local var_52_2 = {
 			isShowBox = true,
-			fileList = table.mergeArray(var_53_1, var_53_2),
-			finishFunc = function(arg_54_0)
-				if arg_54_0 then
-					pg.TipsMgr.GetInstance():ShowTips("宿舎アセットのダウンロードが完了しました!")
-				end
-
-				if arg_53_0.exited then
-					return
-				end
-
-				if arg_53_0.roomDic[var_53_0.configId] then
-					arg_53_0:UpdateIconState(var_53_0.configId)
+			fileList = var_52_1,
+			finishFunc = function(arg_53_0)
+				if arg_53_0 then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_resource_download_complete"))
 				end
 			end,
-			roomId = var_53_0.configId
+			roomId = var_52_0.configId
 		}
 
-		DormGroupConst.DormDownload(var_53_3)
+		DormGroupConst.DormDownload(var_52_2)
 	else
-		existCall(arg_53_2)
+		existCall(arg_52_2)
 	end
 end
 
-function var_0_0.InitResBar(arg_55_0)
-	arg_55_0.goldMax = arg_55_0.rtRes:Find("gold/max"):GetComponent(typeof(Text))
-	arg_55_0.goldValue = arg_55_0.rtRes:Find("gold/Text"):GetComponent(typeof(Text))
-	arg_55_0.oilMax = arg_55_0.rtRes:Find("oil/max"):GetComponent(typeof(Text))
-	arg_55_0.oilValue = arg_55_0.rtRes:Find("oil/Text"):GetComponent(typeof(Text))
-	arg_55_0.gemValue = arg_55_0.rtRes:Find("gem/Text"):GetComponent(typeof(Text))
+function var_0_0.InitResBar(arg_54_0)
+	arg_54_0.goldMax = arg_54_0.rtRes:Find("gold/max"):GetComponent(typeof(Text))
+	arg_54_0.goldValue = arg_54_0.rtRes:Find("gold/Text"):GetComponent(typeof(Text))
+	arg_54_0.oilMax = arg_54_0.rtRes:Find("oil/max"):GetComponent(typeof(Text))
+	arg_54_0.oilValue = arg_54_0.rtRes:Find("oil/Text"):GetComponent(typeof(Text))
+	arg_54_0.gemValue = arg_54_0.rtRes:Find("gem/Text"):GetComponent(typeof(Text))
 
-	onButton(arg_55_0, arg_55_0.rtRes:Find("gold"), function()
+	onButton(arg_54_0, arg_54_0.rtRes:Find("gold"), function()
 		warning("debug test")
 		pg.playerResUI:ClickGold()
 	end, SFX_PANEL)
-	onButton(arg_55_0, arg_55_0.rtRes:Find("oil"), function()
+	onButton(arg_54_0, arg_54_0.rtRes:Find("oil"), function()
 		pg.playerResUI:ClickOil()
 	end, SFX_PANEL)
-	onButton(arg_55_0, arg_55_0.rtRes:Find("gem"), function()
+	onButton(arg_54_0, arg_54_0.rtRes:Find("gem"), function()
 		pg.playerResUI:ClickGem()
 	end, SFX_PANEL)
-	arg_55_0:UpdateRes()
+	arg_54_0:UpdateRes()
 end
 
-function var_0_0.UpdateRes(arg_59_0)
-	local var_59_0 = getProxy(PlayerProxy):getRawData()
+function var_0_0.UpdateRes(arg_58_0)
+	local var_58_0 = getProxy(PlayerProxy):getRawData()
 
-	PlayerResUI.StaticFlush(var_59_0, arg_59_0.goldMax, arg_59_0.goldValue, arg_59_0.oilMax, arg_59_0.oilValue, arg_59_0.gemValue)
+	PlayerResUI.StaticFlush(var_58_0, arg_58_0.goldMax, arg_58_0.goldValue, arg_58_0.oilMax, arg_58_0.oilValue, arg_58_0.gemValue)
 end
 
-function var_0_0.UpdateWeekTask(arg_60_0)
-	local var_60_0 = getDorm3dGameset("drom3d_weekly_task")[1]
-	local var_60_1 = getProxy(TaskProxy):getTaskVO(var_60_0)
-	local var_60_2 = var_60_1:isReceive()
-	local var_60_3 = var_60_2 and 3 or var_60_1:getProgress()
-	local var_60_4 = arg_60_0.rtWeekTask:Find("content")
+function var_0_0.UpdateWeekTask(arg_59_0)
+	local var_59_0 = getDorm3dGameset("drom3d_weekly_task")[1]
+	local var_59_1 = getProxy(TaskProxy):getTaskVO(var_59_0)
+	local var_59_2 = var_59_1:isReceive()
+	local var_59_3 = var_59_2 and 3 or var_59_1:getProgress()
+	local var_59_4 = arg_59_0.rtWeekTask:Find("content")
 
-	for iter_60_0 = 1, 3 do
-		triggerToggle(var_60_4:Find("tpl_" .. iter_60_0), iter_60_0 <= var_60_3)
+	for iter_59_0 = 1, 3 do
+		triggerToggle(var_59_4:Find("tpl_" .. iter_59_0), iter_59_0 <= var_59_3)
 	end
 
-	local var_60_5 = Drop.Create(var_60_1:getConfig("award_display")[1])
+	local var_59_5 = Drop.Create(var_59_1:getConfig("award_display")[1])
 
-	updateDorm3dIcon(var_60_4:Find("Dorm3dIconTpl"), var_60_5)
-	onButton(arg_60_0, var_60_4:Find("Dorm3dIconTpl"), function()
-		if not var_60_2 and var_60_1:isFinish() then
-			arg_60_0:emit(SelectDorm3DMediator.ON_SUBMIT_TASK, var_60_0)
+	updateDorm3dIcon(var_59_4:Find("Dorm3dIconTpl"), var_59_5)
+	onButton(arg_59_0, var_59_4:Find("Dorm3dIconTpl"), function()
+		if not var_59_2 and var_59_1:isFinish() then
+			arg_59_0:emit(SelectDorm3DMediator.ON_SUBMIT_TASK, var_59_0)
 		else
-			arg_60_0:emit(BaseUI.ON_NEW_DROP, {
-				drop = var_60_5
+			arg_59_0:emit(BaseUI.ON_NEW_DROP, {
+				drop = var_59_5
 			})
 		end
 	end, SFX_CONFIRM)
-	setActive(var_60_4:Find("Dorm3dIconTpl/get"), not var_60_2 and var_60_1:isFinish())
-	setGray(var_60_4:Find("Dorm3dIconTpl"), var_60_2)
-	onButton(arg_60_0, arg_60_0._tf:Find("Main/task_done"), function()
-		setActive(arg_60_0.rtWeekTask, true)
-		setActive(arg_60_0._tf:Find("Main/task_done"), false)
+	setActive(var_59_4:Find("Dorm3dIconTpl/get"), not var_59_2 and var_59_1:isFinish())
+	setGray(var_59_4:Find("Dorm3dIconTpl"), var_59_2)
+	onButton(arg_59_0, arg_59_0._tf:Find("Main/task_done"), function()
+		setActive(arg_59_0.rtWeekTask, true)
+		setActive(arg_59_0._tf:Find("Main/task_done"), false)
 	end)
-	onButton(arg_60_0, arg_60_0.rtWeekTask:Find("title"), function()
-		if var_60_2 then
-			setActive(arg_60_0.rtWeekTask, false)
-			setActive(arg_60_0._tf:Find("Main/task_done"), true)
+	onButton(arg_59_0, arg_59_0.rtWeekTask:Find("title"), function()
+		if var_59_2 then
+			setActive(arg_59_0.rtWeekTask, false)
+			setActive(arg_59_0._tf:Find("Main/task_done"), true)
 		end
 	end)
 end
 
-function var_0_0.CheckGuide(arg_64_0, arg_64_1)
-	if pg.NewStoryMgr.GetInstance():IsPlayed(arg_64_1) then
+function var_0_0.CheckGuide(arg_63_0, arg_63_1)
+	if pg.NewStoryMgr.GetInstance():IsPlayed(arg_63_1) then
 		return
 	end
 
-	return switch(arg_64_1, {
+	return switch(arg_63_1, {
 		DORM3D_GUIDE_02 = function()
-			local var_65_0 = getProxy(ApartmentProxy):getApartment(20220)
+			local var_64_0 = getProxy(ApartmentProxy):getApartment(20220)
 
-			if var_65_0 and not var_65_0:needDownload() then
+			if var_64_0 and not var_64_0:needDownload() then
 				pg.m02:sendNotification(GAME.STORY_UPDATE, {
-					storyId = arg_64_1
+					storyId = arg_63_1
 				})
-				pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(1, pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg_64_1)))
-				pg.NewGuideMgr.GetInstance():Play(arg_64_1, nil, function()
-					pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(2, pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg_64_1)))
+				pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(1, pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg_63_1)))
+				pg.NewGuideMgr.GetInstance():Play(arg_63_1, nil, function()
+					pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(2, pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg_63_1)))
 				end)
 
 				return true
@@ -643,11 +629,11 @@ function var_0_0.CheckGuide(arg_64_0, arg_64_1)
 		end,
 		DORM3D_GUIDE_06 = function()
 			pg.m02:sendNotification(GAME.STORY_UPDATE, {
-				storyId = arg_64_1
+				storyId = arg_63_1
 			})
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(1, pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg_64_1)))
-			pg.NewGuideMgr.GetInstance():Play(arg_64_1, nil, function()
-				pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(2, pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg_64_1)))
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(1, pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg_63_1)))
+			pg.NewGuideMgr.GetInstance():Play(arg_63_1, nil, function()
+				pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(2, pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg_63_1)))
 			end)
 
 			return true
@@ -657,32 +643,32 @@ function var_0_0.CheckGuide(arg_64_0, arg_64_1)
 	end)
 end
 
-function var_0_0.onBackPressed(arg_70_0)
-	if isActive(arg_70_0.rtMgrPanel) then
-		arg_70_0:HideMgrPanel()
-	elseif isActive(arg_70_0.rtIconTip) then
-		arg_70_0:HideIconTipWindow()
+function var_0_0.onBackPressed(arg_69_0)
+	if isActive(arg_69_0.rtMgrPanel) then
+		arg_69_0:HideMgrPanel()
+	elseif isActive(arg_69_0.rtIconTip) then
+		arg_69_0:HideIconTipWindow()
 	else
-		var_0_0.super.onBackPressed(arg_70_0)
+		var_0_0.super.onBackPressed(arg_69_0)
 	end
 end
 
-function var_0_0.willExit(arg_71_0)
-	if isActive(arg_71_0.rtMgrPanel) then
-		arg_71_0:HideMgrPanel()
+function var_0_0.willExit(arg_70_0)
+	if isActive(arg_70_0.rtMgrPanel) then
+		arg_70_0:HideMgrPanel()
 	end
 
-	if isActive(arg_71_0.rtIconTip) then
-		arg_71_0:HideIconTipWindow()
+	if isActive(arg_70_0.rtIconTip) then
+		arg_70_0:HideIconTipWindow()
 	end
 
-	if arg_71_0.clearSceneCache then
+	if arg_70_0.clearSceneCache then
 		BLHX.Rendering.EngineCore.TryDispose(true)
 
-		local var_71_0 = typeof("BLHX.Rendering.Executor")
-		local var_71_1 = ReflectionHelp.RefGetProperty(var_71_0, "Instance", nil)
+		local var_70_0 = typeof("BLHX.Rendering.Executor")
+		local var_70_1 = ReflectionHelp.RefGetProperty(var_70_0, "Instance", nil)
 
-		ReflectionHelp.RefCallMethod(var_71_0, "TryHandleWaitLinkList", var_71_1)
+		ReflectionHelp.RefCallMethod(var_70_0, "TryHandleWaitLinkList", var_70_1)
 	end
 end
 

@@ -1,220 +1,6 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_3 = {
-	[103161] = {
-		ship_group = 10316,
-		name = "エースの放課後",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 1,
-		shop_id = 70207,
-		painting = "baerdimo_2",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 4,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "103",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 103161,
-		voice_actor_2 = -1,
-		prefab = "baerdimo_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "あ、指揮官は部活に視察か？はは、ご覧の通り汗をかくだけの、健全なスポーツサークルだ。怪しいものはなにもないよ？…",
-		voice_actor = 191,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.113,
-					0.721,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.097,
-					0.708,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.155,
-					0.012,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.567,
-							2.333,
-							0.14
-						}
-					}
-				}
-			}
-		}
-	},
-	[103162] = {
-		ship_group = 10316,
-		name = "ブラックエース",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 2,
-		shop_id = 70333,
-		painting = "baerdimo_4",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 13,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "132",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 103162,
-		voice_actor_2 = -1,
-		prefab = "baerdimo_4",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "やあ、今日は試合の観戦か？ふふ、通りすがりの助っ人重巡洋艦・ボルチモア、今日はクールに行こう！",
-		voice_actor = 191,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.185,
-					1.032,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.195,
-					1.089,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.009,
-					0.012,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.567,
-							2.333,
-							0.14
-						}
-					}
-				}
-			}
-		}
-	},
 	[103163] = {
 		ship_group = 10316,
 		name = "夜風Minuet",
@@ -12982,6 +12768,304 @@ pg.base.ship_skin_template_3 = {
 						{
 							-0.62,
 							2.43,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[107142] = {
+		ship_group = 10714,
+		name = "サンシャイン・プリンセス",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 2,
+		shop_id = 70853,
+		painting = "tikangdeluojia_3",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 6,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "168",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 107142,
+		voice_actor_2 = -1,
+		prefab = "tikangdeluojia_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Hi！指揮官、この水着どうかな？あなたの好みに合ってる？ふふ、よかった。それじゃ一言、コメントをどーぞ。……もうっ、焦らしなんてテクニック、どこで身につけたの？",
+		voice_actor = 179,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.1,
+					1.14,
+					0
+				}
+			},
+			plane = {
+				{
+					1.12,
+					1.11,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.62,
+							2.43,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[107170] = {
+		ship_group = 10717,
+		name = "バンカー・ヒル",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "bangkeshan",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 107170,
+		voice_actor_2 = -1,
+		prefab = "bangkeshan",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "エセックス級航空母艦・バンカー・ヒル（CV-17)",
+		voice_actor = 179,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.29,
+					1.03,
+					0
+				}
+			},
+			plane = {
+				{
+					1.41,
+					1.07,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.41,
+							2.37,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[107171] = {
+		ship_group = 10717,
+		name = "ミッション・プレイボード",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "1102",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70526,
+		painting = "bangkeshan_2",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 20,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "109",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 107171,
+		voice_actor_2 = -1,
+		prefab = "bangkeshan_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "ミッションコンプリート。次はロング・アイランドが勧めてくれた新作、っと…指揮官か？適当に寛いでいくがいい",
+		voice_actor = 179,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.29,
+					1.03,
+					0
+				}
+			},
+			plane = {
+				{
+					1.41,
+					1.07,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.49,
+							2.34,
 							0
 						}
 					}

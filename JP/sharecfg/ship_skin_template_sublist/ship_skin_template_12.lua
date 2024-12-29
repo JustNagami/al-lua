@@ -1,961 +1,6 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_12 = {
-	[402073] = {
-		ship_group = 40207,
-		name = "星導のツヴィゲザング",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 3,
-		shop_id = 71003,
-		painting = "aimudeng_4",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 23,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "539",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 402073,
-		voice_actor_2 = -1,
-		prefab = "aimudeng_4",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "いらっしゃい、可愛い人間さん。あなたの行き先を案内する、レセプションのエムデンですわ……貢物さえ捧げてくれれば、人間さんをどこにでも連れて差し上げます♡「ふふふ、たとえこの世に存在しない楽園浄土でも♥」",
-		voice_actor = 310,
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			6,
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					2.22,
-					1.97,
-					0
-				}
-			},
-			vicegun = {
-				{
-					2.22,
-					1.97,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					2.12,
-					2.49,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.4,
-							2.4,
-							-0.568
-						}
-					}
-				}
-			}
-		},
-		spine_offset = {
-			{
-				-17,
-				-76,
-				0
-			},
-			{
-				0.65
-			}
-		}
-	},
-	[402080] = {
-		ship_group = 40208,
-		name = "エルビング",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "aierbin",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 402080,
-		voice_actor_2 = -1,
-		prefab = "aierbin",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "ピラウ級軽巡洋艦-エルビング",
-		voice_actor = 312,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.493,
-					1.046,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.087,
-					1.386,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.203,
-					0.263,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.979,
-					1.481,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-1.009,
-							2.493,
-							-0.568
-						}
-					}
-				}
-			}
-		}
-	},
-	[402081] = {
-		ship_group = 40208,
-		name = "幻夢のプロセルピナ",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 1,
-		shop_id = 70686,
-		painting = "aierbin_2",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 18,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "156",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 402081,
-		voice_actor_2 = -1,
-		prefab = "aierbin_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "や、館の主の名において命じる、跪いて――そうだよね、私が命じると言っても誰も聞いてくれないよね…やっぱり私、お嬢様よりメイドのほうが適役なんだ…",
-		voice_actor = 312,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.576,
-					1.234,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.366,
-					1.191,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.303,
-					1.932,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.468,
-							2.387,
-							-0.568
-						}
-					}
-				}
-			}
-		}
-	},
-	[402082] = {
-		ship_group = 40208,
-		name = "眠れない夜の願い",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "1102",
-		l2d_ignore_drag = 0,
-		group_index = 2,
-		shop_id = 70773,
-		painting = "aierbin_3",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 20,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 402082,
-		voice_actor_2 = -1,
-		prefab = "aierbin_3",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "指揮官も眠れないの？そ、それは…きっと私がさっき指揮官がいい夢をみるようにって願っちゃったから…エルビングだけじゃなく、指揮官も眠れなくしたんだ…ああ…",
-		voice_actor = 312,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.79,
-					1.389,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.424,
-					1.191,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.303,
-					2.223,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.468,
-							2.999,
-							-0.568
-						}
-					}
-				}
-			}
-		}
-	},
-	[402083] = {
-		ship_group = 40208,
-		name = "春灯佳人",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 3,
-		shop_id = 70962,
-		painting = "aierbin_4",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 3,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "152",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 402083,
-		voice_actor_2 = -1,
-		prefab = "aierbin_4",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "こ、こんばんは、指揮官……ええと、エルビング、指揮官の被写――モデルの準備ができた…うぅ、可愛く撮って欲しいと思ったらきっとアクシデントが起きちゃうよね…頭を空っぽにしなきゃ…",
-		voice_actor = 312,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					2.51,
-					0.65,
-					0
-				}
-			},
-			vicegun = {
-				{
-					2.55,
-					0.68,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.44,
-					2.17,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.62,
-							2.25,
-							-0.568
-						}
-					}
-				}
-			}
-		}
-	},
-	[402100] = {
-		ship_group = 40210,
-		name = "レーゲンスブルク",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "leigensibao",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 402100,
-		voice_actor_2 = -1,
-		prefab = "leigensibao",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "M級軽巡洋艦-レーゲンスブルク",
-		voice_actor = 362,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.47,
-					1.03,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.45,
-					1.01,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.46,
-					3.24,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.16,
-							3.08,
-							-0.568
-						}
-					}
-				}
-			}
-		}
-	},
-	[402101] = {
-		ship_group = 40210,
-		name = "闇龍と光の海岸",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 1,
-		shop_id = 70844,
-		painting = "leigensibao_2",
-		illustrator = -1,
-		shop_type_id = 6,
-		lip_smoothing = 0,
-		bg = "168",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 402101,
-		voice_actor_2 = -1,
-		prefab = "leigensibao_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "貴様はこれが見たいのか？ふふふ、否定しても無駄よ。貴様のそのチンケな欲望など手に取るようにわかる――さっさと素直になって認めるのはどう？",
-		voice_actor = 362,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		tag = {
-			1,
-			2
-		},
-		live2d_offset = {
-			-75,
-			-30,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.47,
-					1.03,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.45,
-					1.01,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.46,
-					3.24,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.16,
-							3.08,
-							-0.568
-						}
-					}
-				}
-			}
-		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_special",
-			"touch_head"
-		},
-		l2d_voice_calibrate = {
-			use_event = true
-		},
-		l2d_para_range = {
-			ParamAngleX = {
-				-20,
-				20
-			},
-			ParamEyeBallX = {
-				-0.6,
-				0.3
-			},
-			ParamEyeBallY = {
-				-0.5,
-				0.5
-			},
-			ParamBodyAngleX = {
-				-8,
-				8
-			},
-			ParamBodyAngleY = {
-				-5,
-				5
-			}
-		},
-		ship_l2d_id = {
-			4021011,
-			4021012
-		}
-	},
-	[402110] = {
-		ship_group = 40211,
-		name = "デュイスブルク",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "duyisibao",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 402110,
-		voice_actor_2 = -1,
-		prefab = "duyisibao",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "M級軽巡洋艦-デュイスブルク",
-		voice_actor = 338,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.879,
-					1.013,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.879,
-					1.013,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.88,
-					2.208,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.419,
-							2.163,
-							-0.568
-						}
-					}
-				}
-			}
-		}
-	},
 	[402111] = {
 		ship_group = 40211,
 		name = "恥じらいの忍耐特訓",
@@ -13438,6 +12483,892 @@ pg.base.ship_skin_template_12 = {
 						{
 							-0.45,
 							2.25,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[408041] = {
+		ship_group = 40804,
+		name = "ハッピーナイト",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 0,
+		painting = "U556_2",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 7,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 408041,
+		voice_actor_2 = -1,
+		prefab = "U556_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "U-556、華麗にへんしん！へへへ、今日はパーティーを思いっきり楽しんじゃうぞー！指揮官も一緒に来てね！",
+		voice_actor = 38,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.84,
+					0.58,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.8,
+					0.09,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.51,
+							2.18,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[408042] = {
+		ship_group = 40804,
+		name = "クルーズラッシュ・ナイト",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 2,
+		shop_id = 71040,
+		painting = "u556_3",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 25,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "176",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 408042,
+		voice_actor_2 = -1,
+		prefab = "u556_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "「海のパーシヴァル」は陸に上がっても変わらないよ！アネキから預かった荷物、絶対に守りきってみせる！さあ、どこからでもかかってこーい！",
+		voice_actor = 38,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.84,
+					0.58,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.8,
+					0.09,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.51,
+							2.18,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[408050] = {
+		ship_group = 40805,
+		name = "U-73",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "U73",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 408050,
+		voice_actor_2 = -1,
+		prefab = "U73",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "鉄血ⅦB型潜水艦U-73",
+		voice_actor = 200,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.84,
+					0.58,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.8,
+					0.09,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.51,
+							2.35,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[408051] = {
+		ship_group = 40805,
+		name = "理科実験タイム！",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 0,
+		painting = "U73_3",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 4,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 408051,
+		voice_actor_2 = -1,
+		prefab = "U73_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "U-73の理科実験タイム、始まるよ～！指揮官、一緒に楽しく面白く、科学実験をやってみよう！",
+		voice_actor = 200,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.643,
+					0.58,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.51,
+							2.18,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[408052] = {
+		ship_group = 40805,
+		name = "初春の情熱ケミカルポーション",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 2,
+		shop_id = 0,
+		painting = "u73_4",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 3,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "144",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 408052,
+		voice_actor_2 = -1,
+		prefab = "u73_4",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "早春の寒さを凌げるお茶、それに入れればもっと美味しくなるケミカルポーション、その作り方をお姉ちゃんが教えて差し上げましょう！なんてね、指揮官、ちょっと試しに飲んでみない？",
+		voice_actor = 200,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			4
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.946,
+					0.571,
+					0
+				}
+			},
+			torpedo = {
+				{
+					1.359,
+					0.081,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.342,
+							2.385,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[408060] = {
+		ship_group = 40806,
+		name = "U-101",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "U101",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 408060,
+		voice_actor_2 = -1,
+		prefab = "U101",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "鉄血VIIB型潜水艦U-101",
+		voice_actor = 189,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.287,
+					0.619,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.997,
+					0.302,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.541,
+							2.497,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[408061] = {
+		ship_group = 40806,
+		name = "学園のPosaunist",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 1,
+		shop_id = 70204,
+		painting = "U101_2",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 4,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "103",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		id = 408061,
+		voice_actor_2 = -1,
+		prefab = "U101_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "指揮官、吹奏楽部へようこそ～――なんで吹奏楽部って？だって学園で大サメをいじれる部活ないもん…なーんてね！こう見えても私、音楽のことも好きなんだ！",
+		voice_actor = 189,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.211,
+					0.654,
+					0
+				}
+			},
+			torpedo = {
+				{
+					1.023,
+					0.09,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.51,
+							2.35,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[408070] = {
+		ship_group = 40807,
+		name = "U-522",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "U522",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 408070,
+		voice_actor_2 = -1,
+		prefab = "U522",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "鉄血IXC型潜水艦U-522",
+		voice_actor = 86,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.099,
+					0.335,
+					0
+				}
+			},
+			torpedo = {
+				{
+					1.261,
+					0.208,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.48,
+							2.43,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[408080] = {
+		ship_group = 40808,
+		name = "U-110",
+		hand_id = 5,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "U110",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 408080,
+		voice_actor_2 = -1,
+		prefab = "U110",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "鉄血IXB型潜水艦U-110",
+		voice_actor = 56,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.393,
+					0.92,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0.055,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.48,
+							2.43,
 							0
 						}
 					}

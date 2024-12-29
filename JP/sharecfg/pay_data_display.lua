@@ -76,6 +76,8 @@ pg.pay_data_display = setmetatable({
 		76,
 		82,
 		83,
+		84,
+		85,
 		1000,
 		1001,
 		1002,
@@ -8003,6 +8005,234 @@ pg.base.pay_data_display = {
 			{
 				2,
 				81200,
+				1
+			}
+		}
+	},
+	[84] = {
+		name = "新年福袋2025B",
+		limit_group = 0,
+		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
+		type = 1,
+		subject = "新年福袋2025B",
+		limit_arg = 1,
+		name_display = "新年福袋2025B",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 3800,
+		id = 84,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai20",
+		skin_inquire_relation = 86209,
+		id_str = "com.bilibili.blhx.zuanshi184",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "アイテム・資源とランダムな着せ替え衣装を入手可能",
+		airijp_id = "com.yostarjp.azurlane.diamond172",
+		extra_service_item = {
+			{
+				2,
+				86209,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					12,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					1,
+					8
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86209,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81209,
+				1
+			}
+		}
+	},
+	[85] = {
+		name = "新年福袋2024B(復刻)",
+		limit_group = 0,
+		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
+		type = 1,
+		subject = "新年福袋2024B(復刻)",
+		limit_arg = 1,
+		name_display = "新年福袋2024B(復刻)",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 3800,
+		id = 85,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai10",
+		skin_inquire_relation = 86201,
+		id_str = "com.bilibili.blhx.zuanshi185",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "アイテム・資源とランダムな着せ替え衣装を入手可能",
+		airijp_id = "com.yostarjp.azurlane.diamond173",
+		extra_service_item = {
+			{
+				2,
+				86201,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2024,
+					12,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					1,
+					8
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86201,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81201,
 				1
 			}
 		}

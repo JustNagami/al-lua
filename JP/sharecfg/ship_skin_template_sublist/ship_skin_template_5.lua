@@ -1,458 +1,6 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_5 = {
-	[201331] = {
-		ship_group = 20133,
-		name = "医療施設体験週？",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 1,
-		shop_id = 70396,
-		painting = "yikaluosi_3",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 15,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "1101",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 201331,
-		voice_actor_2 = -1,
-		prefab = "yikaluosi_3",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "母港の医療施設の稼働演習！だそうですけど、やっぱりちょっと変な感じですね…なんというかわたし、世話を焼かれるより焼くほうですから…",
-		voice_actor = 18,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.163,
-					1.072,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.22,
-					1.096,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.019,
-					0.003,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.238,
-					1.108,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.404,
-							2.417,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[201332] = {
-		ship_group = 20133,
-		name = "ネレウス・デスカバリー",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 2,
-		shop_id = 70414,
-		painting = "yikaluosi_2",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 6,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "134",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 201332,
-		voice_actor_2 = -1,
-		prefab = "yikaluosi_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "「イカルスと一緒に海の中の探検を始めましょう！今日はスペシャルな何かを見つけることができるかなー？」――ふふ、いかがですか？指揮官？",
-		voice_actor = 18,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.163,
-					1.072,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.22,
-					1.096,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.019,
-					0.003,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.238,
-					1.108,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.404,
-							2.417,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[201333] = {
-		ship_group = 20133,
-		name = "アイアムレディ",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "1101",
-		l2d_ignore_drag = 0,
-		group_index = 3,
-		shop_id = 70639,
-		painting = "yikaluosi_4",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 17,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "150",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		id = 201333,
-		voice_actor_2 = -1,
-		prefab = "yikaluosi_4",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "お疲れ様です、指揮官。仕事は終わらせておいたので今は猫ちゃんと遊んであげているんです。お疲れだったらそこに紅茶を淹れておいたのでどうぞ～",
-		voice_actor = 18,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.07,
-					1.05,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.18,
-					0.96,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.019,
-					0.003,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.13,
-					1.19,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.44,
-							2.39,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[201340] = {
-		ship_group = 20134,
-		name = "ジャーヴィス",
-		hand_id = 13,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "jiaweisi",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 201340,
-		voice_actor_2 = -1,
-		prefab = "jiaweisi",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "J級駆逐艦-ジャーヴィス",
-		voice_actor = 316,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.45,
-					1.169,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.5,
-					1.173,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.49,
-					1.185,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.32,
-							2.43,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
 	[201341] = {
 		ship_group = 20134,
 		name = "風になびかせて",
@@ -13485,6 +13033,585 @@ pg.base.ship_skin_template_5 = {
 			},
 			{
 				0.6
+			}
+		}
+	},
+	[203018] = {
+		ship_group = 20301,
+		name = "セレモニーオブプラチナ",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 8,
+		shop_id = 0,
+		painting = "lundun_h",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9998,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 1,
+		id = 203018,
+		voice_actor_2 = -1,
+		prefab = "lundun_h",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "「思い出になるこだわりのセレモニー」と注文したのは閣下なのに、ぼーっとしてどうしたんですか？ふふ、それ以上じっと見つめられるとこちらまで恥ずかしくなってしまうので、早く手を取っていただけますか？",
+		voice_actor = 16,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.25,
+					1.19,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.11,
+					0.89,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.08,
+					0.06,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.35,
+					1.13,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.48,
+							2.26,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[203019] = {
+		ship_group = 20301,
+		name = "ロンドン改",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 9,
+		shop_id = 0,
+		painting = "lundun_g",
+		illustrator = 15,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9997,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 2,
+		id = 203019,
+		voice_actor_2 = -1,
+		prefab = "lundun_g",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "あの…閣下、その「どちら様？」というような顔をされましても…私も改造でこんな格好になるなんて思っていませんでしたよ？でも、そうですね…閣下、この服、かわいいとは思いませんか？ふふふ",
+		voice_actor = 16,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.272,
+					0.355,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.11,
+					1.095,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.212,
+					0.002,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.056,
+					0.834,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.671,
+							2.082,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[203020] = {
+		ship_group = 20302,
+		name = "シュロップシャー",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "shiluopujun",
+		illustrator = 15,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 203020,
+		voice_actor_2 = -1,
+		prefab = "shiluopujun",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "ロンドン級重巡洋艦・シュロップシャー（ (HMS Shropshire）",
+		voice_actor = 66,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.96,
+					0.66,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.96,
+					0.66,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.47,
+					0.24,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.96,
+					0.66,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							-0.559,
+							0.272,
+							0
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							0.293,
+							2.52,
+							-0.98
+						}
+					}
+				}
+			}
+		}
+	},
+	[203029] = {
+		ship_group = 20302,
+		name = "シュロップシャー改",
+		hand_id = 1,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 9,
+		shop_id = 0,
+		painting = "shiluopujun_g",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9997,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 2,
+		id = 203029,
+		voice_actor_2 = -1,
+		prefab = "shiluopujun_g",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "改めまして、ロンドン級の末っ子シュロップシャー、よろしくお願いしまぁす！ふふん、これで結構有能そうな感じを出せているかな？もしかしたら指揮官に迷惑をかけちゃうこともちょっとだけ減ったかもしれませんよ？",
+		voice_actor = 66,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1,
+					1,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1,
+					1,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.146,
+					1.353,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.4,
+							2.4,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[203030] = {
+		ship_group = 20303,
+		name = "ケント",
+		hand_id = 13,
+		bgm = "",
+		l2d_drag_rate = "",
+		illustrator2 = -1,
+		bg_sp = "",
+		l2d_ignore_drag = 0,
+		group_index = 0,
+		shop_id = 0,
+		painting = "kente",
+		illustrator = 1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		id = 203030,
+		voice_actor_2 = -1,
+		prefab = "kente",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "ケント級重巡洋艦・ケント(HMS Kent）",
+		voice_actor = 77,
+		spine_offset = "",
+		gyro = 0,
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.281,
+					1.004,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.281,
+					1.004,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.212,
+					0.311,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							0.25,
+							0.89,
+							-0.34
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							-0.47,
+							2.68,
+							-0.09
+						}
+					}
+				}
 			}
 		}
 	}
