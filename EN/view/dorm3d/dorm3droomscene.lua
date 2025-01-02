@@ -1553,7 +1553,7 @@ function var_0_0.TouchModePointAction(arg_192_0, arg_192_1, arg_192_2, arg_192_3
 			end
 		end
 	}, function(...)
-		return arg_192_0:TouchModeAction(arg_192_1, ...)
+		return arg_192_0:TouchModeAction(arg_192_1, arg_192_3, ...)
 	end, ...)
 end
 

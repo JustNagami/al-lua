@@ -9658,20 +9658,6 @@ end
 temp()
 
 function temp()
-	var_0_1.镇 = {
-		海 = {
-			["."] = {
-				改 = {
-					this = true
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var_0_1.É = {
 		m = {
 			i = {

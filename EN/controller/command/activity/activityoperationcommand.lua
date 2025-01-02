@@ -720,6 +720,20 @@ function var_0_0.performance(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4)
 					end
 				end
 			end
+
+			local var_8_9 = getProxy(ActivityProxy)
+
+			var_8_9:updateActivity(arg_6_3)
+
+			local var_8_10 = arg_6_3:getConfig("config_client").ActID
+
+			if var_8_10 then
+				local var_8_11 = var_8_9:getActivityById(var_8_10)
+
+				if var_8_11 then
+					var_8_9:updateActivity(var_8_11)
+				end
+			end
 		end
 
 		if #arg_6_4 > 0 then
