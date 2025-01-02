@@ -35,7 +35,7 @@
 						},
 						{
 							id = 2002,
-							name = "ND_TD_beilu_dafu_01-start_item",
+							name = "ND_TD_beilu_dafu_01_item-start",
 							type = "item_action"
 						},
 						{

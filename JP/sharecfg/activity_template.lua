@@ -17910,7 +17910,7 @@ pg.activity_template = {
 		type = 115,
 		login_pop = 0,
 		config_id = 1,
-		is_show = 49,
+		is_show = 48,
 		config_data = {},
 		time = {
 			"timer",
@@ -18229,7 +18229,7 @@ pg.activity_template = {
 		type = 11,
 		login_pop = 0,
 		config_id = 0,
-		is_show = 30,
+		is_show = 49,
 		config_data = {},
 		time = {
 			"timer",
