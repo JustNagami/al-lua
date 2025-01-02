@@ -1930,38 +1930,13 @@ pg.login = {
 	},
 	[61] = {
 		id = 61,
-		op_play = 1,
 		login_static = "login",
+		op_play = 0,
+		op_time = "",
 		login_cri = "",
 		bgm = "",
 		date = {
 			"timer",
-			{
-				{
-					2024,
-					12,
-					19
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					1,
-					2
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		},
-		op_time = {
 			{
 				{
 					2024,

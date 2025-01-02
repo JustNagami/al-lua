@@ -218393,3 +218393,308 @@ _G.pg.base.task_data_template[21066] = {
 		}
 	}
 }
+_G.pg.base.task_data_template[500081] = {
+	name = "农家探索乐园",
+	guild_coin_award = 0,
+	award = 500081,
+	type = 5,
+	desc = "提交3个《鱼雷天妇罗》",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "longwu",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "50003",
+	next_task = "500082",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "LONGWU1",
+	id = 500081,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	},
+	scene = {
+		"BACKYARD"
+	}
+}
+_G.pg.base.task_data_template[500082] = {
+	name = "草莓与甜味",
+	guild_coin_award = 0,
+	award = 500082,
+	type = 5,
+	desc = "强化任意角色10次",
+	count_inherit = 0,
+	sub_type = 34,
+	target_id_2 = "",
+	story_icon = "longwu",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "LONGWU2",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500083",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 500082,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500083] = {
+	name = "贝壳与清凉",
+	guild_coin_award = 0,
+	award = 500083,
+	type = 5,
+	desc = "龙武上阵出击(关卡)胜利20次",
+	count_inherit = 0,
+	sub_type = 18,
+	target_id_2 = "",
+	story_icon = "longwu",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "LONGWU3",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500084",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "50105",
+	scene = "",
+	id = 500083,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500084] = {
+	name = "樱桃与拥抱",
+	guild_coin_award = 0,
+	award = 500084,
+	type = 5,
+	desc = "累计消耗石油500",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "longwu",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "LONGWU4",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500085",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 500084,
+	target_num = 500,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500085] = {
+	name = "备餐的意外",
+	guild_coin_award = 0,
+	award = 500085,
+	type = 5,
+	desc = "龙武好感度达到100",
+	count_inherit = 0,
+	sub_type = 1012,
+	target_id_2 = "",
+	story_icon = "longwu",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "LONGWU5",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500086",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "50105",
+	scene = "",
+	id = 500085,
+	target_num = 10000,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			5
+		},
+		{
+			2,
+			16002,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[500086] = {
+	name = "围炉煮茶",
+	guild_coin_award = 0,
+	award = 500086,
+	type = 5,
+	desc = "龙武突破至满星",
+	count_inherit = 0,
+	sub_type = 33,
+	target_id_2 = "",
+	story_icon = "longwu",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "LONGWU6",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500087",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "50105",
+	scene = "",
+	id = 500086,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			10
+		},
+		{
+			2,
+			18002,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[500087] = {
+	name = "分享美味与美好",
+	guild_coin_award = 0,
+	award = 500087,
+	type = 5,
+	desc = "龙武等级达到100",
+	count_inherit = 0,
+	sub_type = 1013,
+	target_id_2 = "",
+	story_icon = "longwu",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "LONGWU7",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "50105",
+	scene = "",
+	id = 500087,
+	target_num = 100,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			10
+		},
+		{
+			2,
+			18002,
+			2
+		}
+	}
+}

@@ -10,6 +10,15 @@ function var_0_0.init(arg_2_0)
 	arg_2_0.archiveBtn = arg_2_0:findTF("Main/archive")
 	arg_2_0.recordBtn = arg_2_0:findTF("Main/record")
 	arg_2_0.albumBtn = arg_2_0:findTF("Main/album")
+
+	setActive(arg_2_0.albumBtn, not LOCK_ALBUM)
+
+	local var_2_0 = arg_2_0._tf:Find("Main/empty")
+
+	SetCompomentEnabled(var_2_0, "Image", LOCK_ALBUM)
+	setActive(var_2_0:Find("Image"), not LOCK_ALBUM)
+	setActive(var_2_0:Find("Image1"), LOCK_ALBUM)
+
 	arg_2_0.optionBtn = arg_2_0:findTF("Top/blur_panel/adapt/top/option")
 	arg_2_0.backBtn = arg_2_0:findTF("Top/blur_panel/adapt/top/back_btn")
 

@@ -423,6 +423,10 @@ end
 
 function var_0_7.AddFleetAntiAirWeapon(arg_26_0, arg_26_1)
 	arg_26_0._fleetAAList[#arg_26_0._fleetAAList + 1] = arg_26_1
+
+	if arg_26_0._fleet and arg_26_0._fleet:GetFleetAntiAirWeapon() then
+		arg_26_0._fleet:GetFleetAntiAirWeapon():FlushCrewUnit(arg_26_0)
+	end
 end
 
 function var_0_7.RemoveFleetAntiAirWeapon(arg_27_0, arg_27_1)
@@ -433,6 +437,8 @@ function var_0_7.RemoveFleetAntiAirWeapon(arg_27_0, arg_27_1)
 			return
 		end
 	end
+
+	arg_27_0._fleet:GetFleetAntiAirWeapon():FlushCrewUnit(arg_27_0)
 end
 
 function var_0_7.AddFleetRangeAntiAirWeapon(arg_28_0, arg_28_1)

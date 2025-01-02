@@ -135,12 +135,17 @@ function var_0_0.SwitchReddotMemory(arg_16_0)
 	arg_16_0:GetGroupLayer().buffer:SwitchReddotMemory()
 end
 
-function var_0_0.ShowAlbum(arg_17_0, ...)
+function var_0_0.ShowAlbum(arg_17_0, arg_17_1)
+	local var_17_0 = arg_17_1.ui_prefab.scene
+	local var_17_1 = _G[var_17_0]
+	local var_17_2 = arg_17_1.ui_prefab.mediator
+	local var_17_3 = _G[var_17_2]
+
 	pg.m02:sendNotification(GAME.LOAD_LAYERS, {
 		parentContext = getProxy(ContextProxy):getCurrentContext(),
 		context = Context.New({
-			mediator = MedalAlbumTemplateMediator,
-			viewComponent = StarLightMedalAlbumView
+			mediator = var_17_3,
+			viewComponent = var_17_1
 		})
 	})
 end
