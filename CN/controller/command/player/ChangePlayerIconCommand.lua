@@ -70,7 +70,7 @@ function var_0_0.UpdayePlayerCharas(arg_3_0, arg_3_1)
 	arg_3_0.character = arg_3_1[1]
 	arg_3_0.characters = arg_3_1
 	arg_3_0.icon = var_3_0.configId
-	arg_3_0.skinId = var_3_0.skinId
+	arg_3_0.skinId = var_3_0:getSkinId()
 end
 
 return var_0_0

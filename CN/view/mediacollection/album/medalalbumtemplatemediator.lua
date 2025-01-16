@@ -9,6 +9,12 @@ function var_0_0.register(arg_1_0)
 	local var_1_0 = getProxy(PlayerProxy):getRawData():getActivityMedalGroup()
 
 	arg_1_0.viewComponent:SetMedalGroupData(var_1_0)
+
+	if arg_1_0:GetContext().parent.mediator.__cname == "WorldMediaCollectionMediator" then
+		arg_1_0.viewComponent:ShowPageBtn(true)
+	else
+		arg_1_0.viewComponent:ShowPageBtn(false)
+	end
 end
 
 function var_0_0.BindEvent(arg_2_0)

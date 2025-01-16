@@ -100,6 +100,12 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.rangeOffset = arg_1_0.range[2] - arg_1_0.range[1]
 	arg_1_0.offsetDragTargetX = arg_1_0.startValue
 	arg_1_0.offsetDragTargetY = arg_1_0.startValue
+	arg_1_0._relationFlag = false
+
+	if arg_1_0.relationParameter and arg_1_0.relationParameter.list then
+		arg_1_0._relationFlag = true
+	end
+
 	arg_1_0.extendActionFlag = false
 	arg_1_0.parameterComAdd = true
 	arg_1_0.reactConditionFlag = false
@@ -1264,26 +1270,38 @@ function var_0_0.checkClickAction(arg_63_0)
 end
 
 function var_0_0.saveData(arg_64_0)
+	local var_64_0 = arg_64_0.id
+	local var_64_1 = arg_64_0.live2dData:GetShipSkinConfig().id
+	local var_64_2 = arg_64_0.live2dData.ship.id
+
 	if arg_64_0.revert == -1 and arg_64_0.saveParameterFlag then
-		Live2dConst.SaveDragData(arg_64_0.id, arg_64_0.live2dData:GetShipSkinConfig().id, arg_64_0.live2dData.ship.id, arg_64_0.parameterTargetValue)
+		Live2dConst.SaveDragData(var_64_0, var_64_1, var_64_2, arg_64_0.parameterTargetValue)
 	end
 
 	if arg_64_0.actionTrigger.type == Live2D.DRAG_CLICK_MANY then
 		print("保存actionListIndex" .. arg_64_0.actionListIndex)
-		Live2dConst.SetDragActionIndex(arg_64_0.id, arg_64_0.live2dData:GetShipSkinConfig().id, arg_64_0.live2dData.ship.id, arg_64_0.actionListIndex)
+		Live2dConst.SetDragActionIndex(var_64_0, var_64_1, var_64_2, arg_64_0.actionListIndex)
+	end
+
+	if arg_64_0._relationFlag then
+		Live2dConst.SetRelationData(var_64_0, var_64_1, var_64_2, arg_64_0:getRelationSaveData())
 	end
 end
 
 function var_0_0.loadData(arg_65_0)
-	if arg_65_0.revert == -1 and arg_65_0.saveParameterFlag then
-		local var_65_0 = Live2dConst.GetDragData(arg_65_0.id, arg_65_0.live2dData:GetShipSkinConfig().id, arg_65_0.live2dData.ship.id)
+	local var_65_0 = arg_65_0.id
+	local var_65_1 = arg_65_0.live2dData:GetShipSkinConfig().id
+	local var_65_2 = arg_65_0.live2dData.ship.id
 
-		if var_65_0 then
-			arg_65_0:setParameterValue(var_65_0)
-			arg_65_0:setTargetValue(var_65_0)
+	if arg_65_0.revert == -1 and arg_65_0.saveParameterFlag then
+		local var_65_3 = Live2dConst.GetDragData(arg_65_0.id, arg_65_0.live2dData:GetShipSkinConfig().id, arg_65_0.live2dData.ship.id)
+
+		if var_65_3 then
+			arg_65_0:setParameterValue(var_65_3)
+			arg_65_0:setTargetValue(var_65_3)
 		end
 
-		if var_65_0 == arg_65_0.startValue and arg_65_0._relationParameterList and #arg_65_0._relationParameterList > 0 then
+		if var_65_3 == arg_65_0.startValue and arg_65_0._relationParameterList and #arg_65_0._relationParameterList > 0 then
 			arg_65_0:clearRelationValue()
 		end
 	end
@@ -1291,49 +1309,63 @@ function var_0_0.loadData(arg_65_0)
 	if arg_65_0.actionTrigger.type == Live2D.DRAG_CLICK_MANY then
 		arg_65_0.actionListIndex = Live2dConst.GetDragActionIndex(arg_65_0.id, arg_65_0.live2dData:GetShipSkinConfig().id, arg_65_0.live2dData.ship.id) or 1
 	end
+
+	if arg_65_0._relationFlag then
+		local var_65_4 = Live2dConst.GetRelationData(var_65_0, var_65_1, var_65_2)
+
+		arg_65_0.offsetDragX = var_65_4.drag_x and var_65_4.drag_x or arg_65_0.startValue
+		arg_65_0.offsetDragY = var_65_4.drag_y and var_65_4.drag_y or arg_65_0.startValue
+	end
 end
 
-function var_0_0.clearRelationValue(arg_66_0)
-	if arg_66_0._relationParameterList and #arg_66_0._relationParameterList > 0 then
-		for iter_66_0 = 1, #arg_66_0._relationParameterList do
-			local var_66_0 = arg_66_0._relationParameterList[iter_66_0]
+function var_0_0.getRelationSaveData(arg_66_0)
+	return {
+		[Live2dConst.RELATION_DRAG_X] = arg_66_0.offsetDragX,
+		[Live2dConst.RELATION_DRAG_Y] = arg_66_0.offsetDragY
+	}
+end
 
-			if var_66_0.data.type == Live2D.relation_type_drag_x or var_66_0.data.type == Live2D.relation_type_drag_y then
-				var_66_0.value = var_66_0.start or arg_66_0.startValue or 0
-				var_66_0.enable = true
+function var_0_0.clearRelationValue(arg_67_0)
+	if arg_67_0._relationParameterList and #arg_67_0._relationParameterList > 0 then
+		for iter_67_0 = 1, #arg_67_0._relationParameterList do
+			local var_67_0 = arg_67_0._relationParameterList[iter_67_0]
+
+			if var_67_0.data.type == Live2D.relation_type_drag_x or var_67_0.data.type == Live2D.relation_type_drag_y then
+				var_67_0.value = var_67_0.start or arg_67_0.startValue or 0
+				var_67_0.enable = true
 			end
 
-			arg_66_0.offsetDragX, arg_66_0.offsetDragY = arg_66_0.startValue, arg_66_0.startValue
+			arg_67_0.offsetDragX, arg_67_0.offsetDragY = arg_67_0.startValue, arg_67_0.startValue
 		end
 	end
 end
 
-function var_0_0.loadL2dFinal(arg_67_0)
-	arg_67_0.loadL2dStep = true
+function var_0_0.loadL2dFinal(arg_68_0)
+	arg_68_0.loadL2dStep = true
 end
 
-function var_0_0.clearData(arg_68_0)
-	if arg_68_0.revert == -1 then
-		arg_68_0.actionListIndex = 1
+function var_0_0.clearData(arg_69_0)
+	if arg_69_0.revert == -1 then
+		arg_69_0.actionListIndex = 1
 
-		arg_68_0:setParameterValue(arg_68_0.startValue)
-		arg_68_0:setTargetValue(arg_68_0.startValue)
-		arg_68_0:clearRelationValue()
+		arg_69_0:setParameterValue(arg_69_0.startValue)
+		arg_69_0:setTargetValue(arg_69_0.startValue)
+		arg_69_0:clearRelationValue()
 	end
 end
 
-function var_0_0.setTriggerActionFlag(arg_69_0, arg_69_1)
-	arg_69_0.isTriggerAtion = arg_69_1
+function var_0_0.setTriggerActionFlag(arg_70_0, arg_70_1)
+	arg_70_0.isTriggerAtion = arg_70_1
 end
 
-function var_0_0.dispose(arg_70_0)
-	arg_70_0._active = false
-	arg_70_0._parameterCom = nil
-	arg_70_0.parameterValue = arg_70_0.startValue
-	arg_70_0.parameterTargetValue = 0
-	arg_70_0.parameterSmooth = 0
-	arg_70_0.mouseInputDown = Vector2(0, 0)
-	arg_70_0.live2dData = nil
+function var_0_0.dispose(arg_71_0)
+	arg_71_0._active = false
+	arg_71_0._parameterCom = nil
+	arg_71_0.parameterValue = arg_71_0.startValue
+	arg_71_0.parameterTargetValue = 0
+	arg_71_0.parameterSmooth = 0
+	arg_71_0.mouseInputDown = Vector2(0, 0)
+	arg_71_0.live2dData = nil
 end
 
 return var_0_0

@@ -150,7 +150,8 @@ function var_0_0.listNotificationInterests(arg_16_0)
 		GAME.CHANGE_PLAYER_ICON_DONE,
 		PaintingGroupConst.NotifyPaintingDownloadFinish,
 		GAME.CHANGE_EDUCATE_DONE,
-		GAME.CLEAR_EDUCATE_TIP
+		GAME.CLEAR_EDUCATE_TIP,
+		GAME.CHANGE_SKIN_UPDATE
 	}
 end
 
@@ -178,8 +179,14 @@ function var_0_0.handleNotification(arg_17_0, arg_17_1)
 		if arg_17_0.viewComponent.shipsPage and arg_17_0.viewComponent.shipsPage:GetLoaded() then
 			arg_17_0.viewComponent.shipsPage:UpdateEducateChar()
 		end
-	elseif var_17_0 == GAME.CLEAR_EDUCATE_TIP and arg_17_0.viewComponent.shipsPage and arg_17_0.viewComponent.shipsPage:GetLoaded() then
-		arg_17_0.viewComponent.shipsPage:UpdateEducateCharTrTip()
+	elseif var_17_0 == GAME.CLEAR_EDUCATE_TIP then
+		if arg_17_0.viewComponent.shipsPage and arg_17_0.viewComponent.shipsPage:GetLoaded() then
+			arg_17_0.viewComponent.shipsPage:UpdateEducateCharTrTip()
+		end
+	elseif var_17_0 == GAME.CHANGE_SKIN_UPDATE then
+		arg_17_0.viewComponent:OnShipSkinChanged(var_17_1)
+		arg_17_0.viewComponent:RefreshShips()
+		arg_17_0.viewComponent:UpdatePainting(true)
 	end
 end
 

@@ -1,18 +1,1355 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_17 = {
+	[900251] = {
+		ship_group = 900251,
+		name = "华盛顿",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 900251,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "huashengdun",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "huashengdun",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "北卡罗来纳级战列舰—华盛顿，舷号BB-56",
+		voice_actor = -1,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.42,
+					1.4,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.42,
+					1.4,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.42,
+					1.4,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.29,
+							2.42,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[900252] = {
+		ship_group = 900252,
+		name = "企业",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 900252,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "qiye",
+		shop_id = 0,
+		illustrator = 8,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "qiye",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "约克城级航空母舰—企业，舷号CV-6",
+		voice_actor = -1,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					0.802,
+					0.53,
+					0
+				}
+			},
+			plane = {
+				{
+					-0.863,
+					0.643,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							-0.967,
+							0.38,
+							0
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							-0.14,
+							0.832,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[900253] = {
+		ship_group = 900253,
+		name = "约克公爵",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = 19,
+		l2d_drag_rate = "",
+		id = 900253,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "yuekegongjue",
+		shop_id = 0,
+		illustrator = 14,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "yuekegongjue",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "英王乔治五世级战列舰—约克公爵，舷号17",
+		voice_actor = -1,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.9,
+					1.55,
+					0
+				}
+			},
+			vicegun = {
+				{
+					-0.21,
+					1.4,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.19,
+					0.13,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.83,
+					1.38,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.45,
+							2.26,
+							0.53
+						}
+					}
+				}
+			}
+		}
+	},
+	[900254] = {
+		ship_group = 900254,
+		name = "胜利",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 900254,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "shengli",
+		shop_id = 0,
+		illustrator = 1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "shengli",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "光辉级航空母舰—胜利，舷号38",
+		voice_actor = -1,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1,
+					1.39,
+					0
+				}
+			},
+			plane = {
+				{
+					1.12,
+					1.44,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.41,
+							2.27,
+							-1.47
+						}
+					}
+				}
+			}
+		}
+	},
+	[900255] = {
+		ship_group = 900255,
+		name = "{namecode:82}",
+		hand_id = 2,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 900255,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "sanli",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "sanli",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "{namecode:136}级战列舰四番舰—{namecode:82}",
+		voice_actor = -1,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.029,
+					1.278,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.029,
+					1.278,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.154,
+					0.067,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.029,
+					1.278,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.221,
+							2.345,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[900256] = {
+		ship_group = 900256,
+		name = "马萨诸塞",
+		hand_id = 3,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 900256,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "masazhusai",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "masazhusai",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "南达科他级战列舰—马萨诸塞，舷号BB-59",
+		voice_actor = -1,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.11,
+					1.23,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.11,
+					1.24,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.17,
+					0.11,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.05,
+					1.23,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.45,
+							2.16,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[900257] = {
+		ship_group = 900257,
+		name = "胡德",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 900257,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "hude",
+		shop_id = 0,
+		illustrator = 11,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "hude",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "海军上将级战列巡洋舰—胡德，舷号51",
+		voice_actor = -1,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					-0.25,
+					1.291,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0,
+					0.585,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.65,
+					0.823,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							-0.5,
+							0.55,
+							0
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							0.3,
+							0.87,
+							-0.4
+						}
+					}
+				}
+			}
+		}
+	},
+	[900258] = {
+		ship_group = 900258,
+		name = "皇家方舟",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 900258,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "huangjiafangzhou",
+		shop_id = 0,
+		illustrator = 18,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "huangjiafangzhou",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "皇家方舟号航空母舰，舷号91",
+		voice_actor = -1,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					0.333,
+					1.037,
+					0
+				}
+			},
+			plane = {
+				{
+					-0.81,
+					0.757,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							-0.469,
+							0.402,
+							0
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							0.34,
+							0.854,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[900259] = {
+		ship_group = 900259,
+		name = "{namecode:91}",
+		hand_id = 2,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 900259,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "chicheng",
+		shop_id = 0,
+		illustrator = 8,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "chicheng",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "{namecode:91}号航空母舰",
+		voice_actor = -1,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					-0.931,
+					1.059,
+					0
+				}
+			},
+			plane = {
+				{
+					0.492,
+					0.393,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							0.478,
+							0.432,
+							0
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							-0.384,
+							0.853,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[900260] = {
+		ship_group = 900260,
+		name = "{namecode:92}",
+		hand_id = 2,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 900260,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "jiahe",
+		shop_id = 0,
+		illustrator = 8,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "jiahe",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "{namecode:92}号航空母舰",
+		voice_actor = -1,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					-1.059,
+					0.492,
+					0
+				}
+			},
+			plane = {
+				{
+					0.946,
+					0.204,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							0.799,
+							0.453,
+							0
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							-0.304,
+							0.977,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[900261] = {
+		ship_group = 900261,
+		name = "声望",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 900261,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "shengwang",
+		shop_id = 0,
+		illustrator = 11,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "shengwang",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "声望级战列巡洋舰—声望",
+		voice_actor = -1,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.015,
+					1.165,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.407,
+					0.613,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.407,
+					0.613,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							-0.832,
+							0.566,
+							0
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							0.608,
+							0.741,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[900262] = {
+		ship_group = 900262,
+		name = "英王乔治五世",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 900262,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "qiaozhiwushi",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "qiaozhiwushi",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "英王乔治五世级战列舰—英王乔治五世，舷号41",
+		voice_actor = -1,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand2",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					2.07,
+					1.4,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.99,
+					1.39,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.03,
+					0,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.5,
+							2.3,
+							0.4
+						}
+					}
+				}
+			}
+		}
+	},
 	[900263] = {
 		ship_group = 900263,
 		name = "厌战",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900263,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "yanzhan",
+		shop_id = 0,
 		illustrator = 19,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -22,7 +1359,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900263,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "yanzhan",
 		l2d_se = "",
@@ -31,7 +1368,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "伊丽莎白女王级战列舰—厌战，舷号03",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -134,13 +1471,14 @@ pg.base.ship_skin_template_17 = {
 		name = "光辉",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900264,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "guanghui",
+		shop_id = 0,
 		illustrator = 1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -150,7 +1488,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900264,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "guanghui",
 		l2d_se = "",
@@ -159,7 +1497,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "光辉级航空母舰—光辉，舷号87",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -245,13 +1583,14 @@ pg.base.ship_skin_template_17 = {
 		name = "可畏",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900265,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "kewei",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -261,7 +1600,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900265,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "kewei",
 		l2d_se = "",
@@ -270,7 +1609,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "光辉级航空母舰—可畏，舷号67",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -343,13 +1682,14 @@ pg.base.ship_skin_template_17 = {
 		name = "苏维埃罗西亚",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900266,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "suweiailuoxiya",
+		shop_id = 0,
 		illustrator = 1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -359,7 +1699,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900266,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "suweiailuoxiya",
 		l2d_se = "",
@@ -368,7 +1708,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "苏联级战列舰—苏维埃罗西亚",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -455,13 +1795,14 @@ pg.base.ship_skin_template_17 = {
 		name = "甘古特",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900267,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "gangute",
+		shop_id = 0,
 		illustrator = 1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -471,7 +1812,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900267,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "gangute",
 		l2d_se = "",
@@ -480,7 +1821,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "甘古特级战列舰—甘古特",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -567,13 +1908,14 @@ pg.base.ship_skin_template_17 = {
 		name = "萨拉托加",
 		hand_id = 5,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900268,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "salatuojia",
+		shop_id = 0,
 		illustrator = 10,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -583,7 +1925,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900268,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "salatuojia",
 		l2d_se = "",
@@ -592,7 +1934,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "列克星敦级航空母舰—萨拉托加，舷号CV-3",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -685,13 +2027,14 @@ pg.base.ship_skin_template_17 = {
 		name = "埃塞克斯",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900269,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "aisaikesi",
+		shop_id = 0,
 		illustrator = 8,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -701,7 +2044,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900269,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "aisaikesi",
 		l2d_se = "",
@@ -710,7 +2053,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "埃塞克斯级航空母舰—埃塞克斯，舷号CV-9",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -783,13 +2126,14 @@ pg.base.ship_skin_template_17 = {
 		name = "无畏",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900270,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "wuwei",
+		shop_id = 0,
 		illustrator = 8,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -799,7 +2143,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900270,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "wuwei",
 		l2d_se = "",
@@ -808,7 +2152,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "埃塞克斯级航空母舰—无畏，舷号CV-11",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -881,13 +2225,14 @@ pg.base.ship_skin_template_17 = {
 		name = "邦克山",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900271,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "bangkeshan",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -897,7 +2242,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900271,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "bangkeshan",
 		l2d_se = "",
@@ -906,7 +2251,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "埃塞克斯级航空母舰—邦克山，舷号CV-17",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -979,13 +2324,14 @@ pg.base.ship_skin_template_17 = {
 		name = "黎塞留",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900272,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "lisailiu",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -995,7 +2341,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900272,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "lisailiu",
 		l2d_se = "",
@@ -1004,7 +2350,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "自由鸢尾黎塞留级战列舰—黎塞留",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -1091,13 +2437,14 @@ pg.base.ship_skin_template_17 = {
 		name = "贝亚恩",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900273,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "beiyaen",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -1107,7 +2454,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900273,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "beiyaen",
 		l2d_se = "",
@@ -1116,7 +2463,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "自由鸢尾航空母舰—贝亚恩",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -1196,13 +2543,14 @@ pg.base.ship_skin_template_17 = {
 		name = "豪",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900274,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "hao",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -1212,7 +2560,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900274,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "hao",
 		l2d_se = "",
@@ -1221,7 +2569,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "英王乔治五世级战列舰—豪，舷号32",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -1308,13 +2656,14 @@ pg.base.ship_skin_template_17 = {
 		name = "英勇",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900275,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "yingyong",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -1324,7 +2673,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900275,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "yingyong",
 		l2d_se = "",
@@ -1333,7 +2682,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "伊丽莎白女王级战列舰—英勇，舷号02",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -1420,13 +2769,14 @@ pg.base.ship_skin_template_17 = {
 		name = "英仙座",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900276,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "yingxianzuo",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -1436,7 +2786,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900276,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "yingxianzuo",
 		l2d_se = "",
@@ -1445,7 +2795,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "巨像级航空母舰—英仙座",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -1539,13 +2889,14 @@ pg.base.ship_skin_template_17 = {
 		name = "鹰",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900277,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "ying",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -1555,7 +2906,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900277,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "ying",
 		l2d_se = "",
@@ -1564,7 +2915,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "航空母舰—鹰",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -1658,13 +3009,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:74}",
 		hand_id = 6,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900278,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "changmen",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -1674,7 +3026,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900278,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "changmen",
 		l2d_se = "",
@@ -1683,7 +3035,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "{namecode:74}级战列舰一番舰—{namecode:74}",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -1763,13 +3115,14 @@ pg.base.ship_skin_template_17 = {
 		name = "突击者",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900279,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "tujizhe",
+		shop_id = 0,
 		illustrator = 14,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -1779,7 +3132,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900279,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "tujizhe",
 		l2d_se = "",
@@ -1788,7 +3141,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "突击者级航空母舰—突击者，舷号CV-4",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -1874,13 +3227,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:92}",
 		hand_id = 2,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900280,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "jiahezhanlie",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -1890,7 +3244,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900280,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "jiahezhanlie",
 		l2d_se = "",
@@ -1899,7 +3253,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "{namecode:92}级战列舰一番舰—{namecode:92}",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -1979,13 +3333,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:89}",
 		hand_id = 2,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900281,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "fengxiang",
+		shop_id = 0,
 		illustrator = 23,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -1995,7 +3350,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900281,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "fengxiang",
 		l2d_se = "",
@@ -2004,7 +3359,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "{namecode:89}号航空母舰",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -2097,13 +3452,14 @@ pg.base.ship_skin_template_17 = {
 		name = "罗德尼",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = 19,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900282,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "luodeni",
+		shop_id = 0,
 		illustrator = 1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -2113,7 +3469,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900282,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "luodeni",
 		l2d_se = "",
@@ -2122,7 +3478,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "纳尔逊级战列舰—罗德尼，舷号29",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -2215,13 +3571,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:79}",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900283,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "shancheng",
+		shop_id = 0,
 		illustrator = 22,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -2231,7 +3588,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900283,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "shancheng",
 		l2d_se = "",
@@ -2240,7 +3597,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "{namecode:78}级战列舰二番舰—{namecode:79}",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -2340,13 +3697,14 @@ pg.base.ship_skin_template_17 = {
 		name = "领航员-TB",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900284,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "tbniang",
+		shop_id = 0,
 		illustrator = 22,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -2356,7 +3714,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900284,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "tbniang",
 		l2d_se = "",
@@ -2365,7 +3723,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "领航员-TB",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -2465,13 +3823,14 @@ pg.base.ship_skin_template_17 = {
 		name = "仲裁者·司特莲库斯·VIII",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900285,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "strength",
+		shop_id = 0,
 		illustrator = 22,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -2481,7 +3840,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900285,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "strength",
 		l2d_se = "",
@@ -2490,7 +3849,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "仲裁者·司特莲库斯·VIII",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -2590,13 +3949,14 @@ pg.base.ship_skin_template_17 = {
 		name = "仲裁者·天帕岚斯·XIV",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900286,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "temperance",
+		shop_id = 0,
 		illustrator = 22,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -2606,7 +3966,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900286,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "temperance",
 		l2d_se = "",
@@ -2615,7 +3975,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "仲裁者·天帕岚斯·XIV",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -2715,13 +4075,14 @@ pg.base.ship_skin_template_17 = {
 		name = "仲裁者·赫米忒·IX",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900287,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "hermit",
+		shop_id = 0,
 		illustrator = 22,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -2731,7 +4092,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900287,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "hermit",
 		l2d_se = "",
@@ -2740,7 +4101,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "仲裁者·赫米忒·IX",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -2840,13 +4201,14 @@ pg.base.ship_skin_template_17 = {
 		name = "J-10",
 		hand_id = 0,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900290,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -2856,7 +4218,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900290,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "J-10",
 		l2d_se = "",
@@ -2865,7 +4227,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -2952,13 +4314,14 @@ pg.base.ship_skin_template_17 = {
 		name = "J-15",
 		hand_id = 0,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900291,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -2968,7 +4331,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900291,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "J-15",
 		l2d_se = "",
@@ -2977,7 +4340,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -3064,13 +4427,14 @@ pg.base.ship_skin_template_17 = {
 		name = "FC-1",
 		hand_id = 0,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900292,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -3080,7 +4444,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900292,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "FC-1",
 		l2d_se = "",
@@ -3089,7 +4453,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -3176,13 +4540,14 @@ pg.base.ship_skin_template_17 = {
 		name = "FC-31",
 		hand_id = 0,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900293,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -3192,7 +4557,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900293,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "FC-31",
 		l2d_se = "",
@@ -3201,7 +4566,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -3288,13 +4653,14 @@ pg.base.ship_skin_template_17 = {
 		name = "J-20",
 		hand_id = 0,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900294,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -3304,7 +4670,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900294,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "J-20",
 		l2d_se = "",
@@ -3313,7 +4679,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -3400,13 +4766,14 @@ pg.base.ship_skin_template_17 = {
 		name = "约克城",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900295,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "yuekecheng_hei",
+		shop_id = 0,
 		illustrator = 8,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -3416,7 +4783,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900295,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "yuekecheng",
 		l2d_se = "",
@@ -3425,7 +4792,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "约克城级航空母舰—约克城，舷号CV-5",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -3516,13 +4883,14 @@ pg.base.ship_skin_template_17 = {
 		name = "企业",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900296,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "qiye_hei",
+		shop_id = 0,
 		illustrator = 8,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -3532,7 +4900,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900296,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "qiye",
 		l2d_se = "",
@@ -3541,7 +4909,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "约克城级航空母舰—企业，舷号CV-6",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -3627,13 +4995,14 @@ pg.base.ship_skin_template_17 = {
 		name = "大黄蜂",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900297,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "dahuangfeng_hei",
+		shop_id = 0,
 		illustrator = 8,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -3643,7 +5012,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900297,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "dahuangfeng",
 		l2d_se = "",
@@ -3652,7 +5021,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "约克城级航空母舰—大黄蜂，舷号CV-8",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -3738,13 +5107,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:161}",
 		hand_id = 2,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900298,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "tiancheng_hei",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -3754,7 +5124,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900298,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "tiancheng",
 		l2d_se = "",
@@ -3763,7 +5133,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "{namecode:161}级战列巡洋舰一番舰—{namecode:161}",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -3850,13 +5220,14 @@ pg.base.ship_skin_template_17 = {
 		name = "玛莉萝丝",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900300,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "maliluosi_doa_wjz",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -3866,7 +5237,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900300,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "maliluosi_doa",
 		l2d_se = "",
@@ -3875,7 +5246,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "您好！那个…应该怎么称呼您呢？“指挥官”？我明白了！我是玛莉萝丝，叫我玛莉就可以了！请多指教，指挥官先生！",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -3955,13 +5326,14 @@ pg.base.ship_skin_template_17 = {
 		name = "穗香",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900301,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "suixiang_doa_wjz",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -3971,7 +5343,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900301,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "suixiang_doa",
 		l2d_se = "",
@@ -3980,7 +5352,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "请问，您就是“指挥官”吗？啊，太好了！初次见面，我是穗香！虽然不知道能帮忙到什么程度，不过我很擅长学习的~总之…请多指教！",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -4060,13 +5432,14 @@ pg.base.ship_skin_template_17 = {
 		name = "霞",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900302,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "xia_DOA_wjz",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -4076,7 +5449,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900302,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "xia_DOA",
 		l2d_se = "",
@@ -4085,7 +5458,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "你就是这个港口的主人，也就是“指挥官”是吧？初次见面，我是霞。今后可能要在这里打扰一段时间，还请多多指教了——",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -4165,13 +5538,14 @@ pg.base.ship_skin_template_17 = {
 		name = "海咲",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900303,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "haixiao_DOA_wjz",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -4181,7 +5555,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900303,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "haixiao_DOA",
 		l2d_se = "",
@@ -4190,7 +5564,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "初次见面，指挥官！嗯，我问了其它的人了，应该是叫“指挥官”没错吧？我是海咲，有过很多打工的经验，一定能给大家帮上忙的~请多多指教咯！",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -4270,13 +5644,14 @@ pg.base.ship_skin_template_17 = {
 		name = "凪咲",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900304,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "zhixiao_DOA_wjz",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -4286,7 +5661,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900304,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "zhixiao_DOA",
 		l2d_se = "",
@@ -4295,7 +5670,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "你就是把海咲带来这个港口的人吧？是叫“指挥官”对么…哼，虽然不知道你是怎么把海咲骗来的，身为姐姐的我可没那么好对付。敢乱来的话，要你好看！…我的名字？…叫我凪咲就好了，你这“大笨狗”！",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -4375,13 +5750,14 @@ pg.base.ship_skin_template_17 = {
 		name = "女天狗",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900305,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "nvtiangou_DOA_wjz",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -4391,7 +5767,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900305,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "nvtiangou_DOA",
 		l2d_se = "",
@@ -4400,7 +5776,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "哦？竟然不惧怕我。汝为何人？…这样啊，汝就是统率此处之人吗？今后就称呼汝为“指挥官殿下”吧。我乃女天狗，呼呼，汝可要好好招待我哦？",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -4494,13 +5870,14 @@ pg.base.ship_skin_template_17 = {
 		name = "莫妮卡",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900306,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "monika_DOA_wjz",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -4510,7 +5887,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900306,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "monika_DOA",
 		l2d_se = "",
@@ -4519,7 +5896,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "你就是负责这里的指挥官？我叫莫妮卡，是一名荷官。…虽然还在实习就是了。虽然有点突然…要不要和我来一场胜负呢~？",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -4606,13 +5983,14 @@ pg.base.ship_skin_template_17 = {
 		name = "奥斯塔",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900307,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "aosita_hei",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -4622,7 +6000,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900307,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "gin",
 		l2d_se = "",
@@ -4631,7 +6009,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "哦？竟然不惧怕我。汝为何人？…这样啊，汝就是统率此处之人吗？今后就称呼汝为“指挥官殿下”吧。我乃女天狗，呼呼，汝可要好好招待我哦？",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -4725,13 +6103,14 @@ pg.base.ship_skin_template_17 = {
 		name = "安洁",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900308,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "anjie_hei",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -4741,7 +6120,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900308,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "anjie",
 		l2d_se = "",
@@ -4750,7 +6129,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "你就是负责这里的指挥官？我叫莫妮卡，是一名荷官。…虽然还在实习就是了。虽然有点突然…要不要和我来一场胜负呢~？",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -4837,13 +6216,14 @@ pg.base.ship_skin_template_17 = {
 		name = "？？？",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900309,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "suweiaibeilaluosi_hei",
+		shop_id = 0,
 		illustrator = 1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -4853,7 +6233,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900309,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "suweiaibeilaluosi_hei",
 		l2d_se = "",
@@ -4862,7 +6242,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "苏维埃同盟级战列舰—苏维埃贝拉罗斯",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -4949,13 +6329,14 @@ pg.base.ship_skin_template_17 = {
 		name = "泛用型强化武装(工作用)",
 		hand_id = 5,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900310,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "gin_2",
+		shop_id = 0,
 		illustrator = 1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -4965,7 +6346,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900310,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "gin_2",
 		l2d_se = "",
@@ -4974,7 +6355,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "buli？人家好像得到了新的装备buli？这样布里也能战斗了buli！",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -5054,13 +6435,14 @@ pg.base.ship_skin_template_17 = {
 		name = "试作型布里MKII",
 		hand_id = 5,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900311,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "kin",
+		shop_id = 0,
 		illustrator = 1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -5070,7 +6452,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900311,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "kin",
 		l2d_se = "",
@@ -5079,7 +6461,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "试作型布里MKII，可以用于超稀有角色的突破",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -5172,13 +6554,14 @@ pg.base.ship_skin_template_17 = {
 		name = "萨福克",
 		hand_id = 0,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900312,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "safuke_xinshou",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -5188,7 +6571,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900312,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "safuke",
 		l2d_se = "",
@@ -5197,7 +6580,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -5297,13 +6680,14 @@ pg.base.ship_skin_template_17 = {
 		name = "？？？？？",
 		hand_id = 0,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900313,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "unknown1_xinshou",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -5313,7 +6697,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900313,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "unknown1",
 		l2d_se = "",
@@ -5322,7 +6706,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -5422,13 +6806,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:93}·META",
 		hand_id = 2,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900314,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "canglong_alter_hei",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -5438,7 +6823,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900314,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "canglong_alter_hei",
 		l2d_se = "",
@@ -5447,7 +6832,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "{namecode:93}·META",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -5534,13 +6919,14 @@ pg.base.ship_skin_template_17 = {
 		name = "海伦娜·META",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900315,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "hailunna_alter",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -5550,7 +6936,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900315,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "hailunna_alter",
 		l2d_se = "",
@@ -5559,7 +6945,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "海伦娜·META",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -5646,13 +7032,14 @@ pg.base.ship_skin_template_17 = {
 		name = "约克城·META",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900316,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "yuekecheng_alter",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -5662,7 +7049,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900316,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "yuekecheng_alter",
 		l2d_se = "",
@@ -5671,7 +7058,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "约克城·META",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -5758,13 +7145,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:195}",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900317,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "jiujinshan_wjz",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -5774,7 +7162,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900317,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "jiujinshan",
 		l2d_se = "",
@@ -5783,7 +7171,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "新奥尔良级重巡洋舰——{namecode:195}，舷号CA-38",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -5863,13 +7251,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:439}",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900318,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "luoen_3",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -5879,7 +7268,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900318,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "luoen",
 		l2d_se = "",
@@ -5888,7 +7277,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "罗恩校服",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -5975,13 +7364,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:478}",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900319,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "shaenhuosite_alter_hei",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -5991,7 +7381,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900319,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "shaenhuosite",
 		l2d_se = "",
@@ -6000,7 +7390,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "沙恩霍斯特",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -6100,13 +7490,14 @@ pg.base.ship_skin_template_17 = {
 		name = "仲裁者·拉沃斯·VI",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900320,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "lovers",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -6116,7 +7507,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900320,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "lovers",
 		l2d_se = "",
@@ -6125,7 +7516,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "仲裁者·拉沃斯·VI",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -6225,13 +7616,14 @@ pg.base.ship_skin_template_17 = {
 		name = "？？？",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900321,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "ailunsamuna_hei",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -6241,7 +7633,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900321,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "ailunsamuna",
 		l2d_se = "",
@@ -6250,7 +7642,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "艾伦萨姆纳黑脸",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -6350,13 +7742,14 @@ pg.base.ship_skin_template_17 = {
 		name = "好人理查德",
 		hand_id = 0,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900322,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "haorenlichade_alter",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -6366,7 +7759,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900322,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "haorenlichade_alter",
 		l2d_se = "",
@@ -6375,7 +7768,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "好人理查德",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -6475,13 +7868,14 @@ pg.base.ship_skin_template_17 = {
 		name = "？",
 		hand_id = 0,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900323,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "tbniang_hei",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -6491,7 +7885,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900323,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "tbniang_hei",
 		l2d_se = "",
@@ -6500,7 +7894,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "？",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -6600,13 +7994,14 @@ pg.base.ship_skin_template_17 = {
 		name = "试作型布里MKII",
 		hand_id = 0,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900324,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "kin",
+		shop_id = 0,
 		illustrator = 1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -6616,7 +8011,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900324,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "kin",
 		l2d_se = "",
@@ -6625,7 +8020,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "试作型布里MKII，可以用于超稀有角色的突破",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -6723,13 +8118,14 @@ pg.base.ship_skin_template_17 = {
 		name = "544845544F574552",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900325,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "sairenboss14_jz",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -6739,7 +8135,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900325,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "sairenboss14_jz",
 		l2d_se = "",
@@ -6748,7 +8144,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "544845544F574552",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -6828,13 +8224,14 @@ pg.base.ship_skin_template_17 = {
 		name = "声望·META",
 		hand_id = 0,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900326,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "shengwang_alter",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -6844,7 +8241,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900326,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "shengwang_alter",
 		l2d_se = "",
@@ -6853,7 +8250,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "声望·META",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -6953,13 +8350,14 @@ pg.base.ship_skin_template_17 = {
 		name = "反击·META",
 		hand_id = 0,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900327,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "fanji_alter",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -6969,7 +8367,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900327,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "fanji_alter",
 		l2d_se = "",
@@ -6978,7 +8376,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "反击·META",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -7078,13 +8476,14 @@ pg.base.ship_skin_template_17 = {
 		name = "雅努斯",
 		hand_id = 0,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900328,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "yanusi",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -7094,7 +8493,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900328,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "yanusi",
 		l2d_se = "",
@@ -7103,7 +8502,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "雅努斯",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -7203,13 +8602,14 @@ pg.base.ship_skin_template_17 = {
 		name = "罗马",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900329,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "luoma_ghost",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -7219,7 +8619,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900329,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "luoma_ghost",
 		l2d_se = "",
@@ -7228,7 +8628,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "罗马",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -7315,13 +8715,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:84}",
 		hand_id = 2,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900330,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "wuzang_s",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -7331,7 +8732,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900330,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "wuzang",
 		l2d_se = "",
@@ -7340,7 +8741,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "武藏",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -7427,13 +8828,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:39}·META",
 		hand_id = 2,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900331,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "shentong_alter",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -7443,7 +8845,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900331,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "shentong_alter",
 		l2d_se = "",
@@ -7452,7 +8854,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "神通·META",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -7539,13 +8941,14 @@ pg.base.ship_skin_template_17 = {
 		name = "安洁",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900332,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "anjie",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -7555,7 +8958,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900332,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "anjie",
 		l2d_se = "",
@@ -7564,7 +8967,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "安洁",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -7651,13 +9054,14 @@ pg.base.ship_skin_template_17 = {
 		name = "奥斯塔",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900333,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "aosita",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -7667,7 +9071,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900333,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "aosita",
 		l2d_se = "",
@@ -7676,7 +9080,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "奥斯塔",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -7776,13 +9180,14 @@ pg.base.ship_skin_template_17 = {
 		name = "拉菲II",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900334,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "lafeiII_n",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -7792,7 +9197,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900334,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "lafeiII_n",
 		l2d_se = "",
@@ -7801,7 +9206,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "拉菲II",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -7901,13 +9306,14 @@ pg.base.ship_skin_template_17 = {
 		name = "仲裁者·迪贝路·XV",
 		hand_id = 14,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900335,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "devil",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -7917,7 +9323,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900335,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "devil",
 		l2d_se = "",
@@ -7926,7 +9332,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "仲裁者·迪贝路·XV",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -8026,13 +9432,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:39}",
 		hand_id = 2,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900350,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "shentong",
+		shop_id = 0,
 		illustrator = 41,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -8042,7 +9449,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900350,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "shentong",
 		l2d_se = "",
@@ -8051,7 +9458,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "{namecode:38}级轻巡洋舰二番舰——{namecode:39}",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -8138,13 +9545,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:199}",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900351,
 		group_index = 0,
-		illustrator = -1,
+		l2d_ignore_drag = 0,
 		painting = "xinzexi",
+		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
 		lip_smoothing = 0,
@@ -8153,7 +9561,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900351,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "xinzexi",
 		l2d_se = "",
@@ -8161,7 +9569,7 @@ pg.base.ship_skin_template_17 = {
 		shop_id = 0,
 		desc = "{namecode:201}级战列舰—{namecode:199}，舷号BB-62",
 		voice_actor = -1,
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -8269,13 +9677,14 @@ pg.base.ship_skin_template_17 = {
 		name = "伊丽莎白女王·META ",
 		hand_id = 2,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900352,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "yilishabai_alter",
+		shop_id = 0,
 		illustrator = 41,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -8285,7 +9694,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900352,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "yilishabai_alter",
 		l2d_se = "",
@@ -8294,7 +9703,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "{namecode:38}级轻巡洋舰二番舰——{namecode:39}",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -8381,13 +9790,14 @@ pg.base.ship_skin_template_17 = {
 		name = "拉·加利索尼埃·META ",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900353,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "jialisuoniye_alter",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -8397,7 +9807,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900353,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "jialisuoniye_alter",
 		l2d_se = "",
@@ -8406,7 +9816,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "{namecode:201}级战列舰—{namecode:199}，舷号BB-62",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -8493,13 +9903,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:529}",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900354,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "suweiaitongmeng",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -8509,7 +9920,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900354,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "suweiaitongmeng",
 		l2d_se = "",
@@ -8518,7 +9929,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "苏维埃同盟（带舰装）",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -8598,13 +10009,14 @@ pg.base.ship_skin_template_17 = {
 		name = "仲裁者·赫米忒·IX",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900355,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "hermit_alter",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -8614,7 +10026,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900355,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "hermit_alter",
 		l2d_se = "",
@@ -8623,7 +10035,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "仲裁者·赫米忒·IX侵蚀版本",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -8703,13 +10115,14 @@ pg.base.ship_skin_template_17 = {
 		name = "仲裁者·托瓦·XVI",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900356,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "tower",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -8719,7 +10132,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900356,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "tower",
 		l2d_se = "",
@@ -8728,7 +10141,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "仲裁者·托瓦·XVI",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -8808,13 +10221,14 @@ pg.base.ship_skin_template_17 = {
 		name = "▅海▊▇洛▅■芬特▇▆▅",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900357,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "hierophant",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -8824,7 +10238,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900357,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "hierophant",
 		l2d_se = "",
@@ -8833,7 +10247,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "▅海▊▇洛▅■芬特▇▆▅",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -8913,13 +10327,14 @@ pg.base.ship_skin_template_17 = {
 		name = "圣女贞德",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900384,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "shengnvzhende",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -8929,7 +10344,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900384,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "shengnvzhende",
 		l2d_se = "",
@@ -8938,7 +10353,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "自由鸢尾轻巡洋舰—圣女贞德",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -9025,13 +10440,14 @@ pg.base.ship_skin_template_17 = {
 		name = "谢菲尔德",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900385,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "xiefeierde",
+		shop_id = 0,
 		illustrator = 20,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -9041,7 +10457,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900385,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "xiefeierde",
 		l2d_se = "",
@@ -9050,7 +10466,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "南安普顿级轻巡洋舰——谢菲尔德，舷号C24",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -9137,13 +10553,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:50}",
 		hand_id = 2,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900386,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "nengdai",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -9153,7 +10570,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900386,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "nengdai",
 		l2d_se = "",
@@ -9162,7 +10579,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "{namecode:49}级轻巡洋舰二番舰——{namecode:50}",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -9249,13 +10666,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:175}",
 		hand_id = 2,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900387,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "junhe",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -9265,7 +10683,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900387,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "junhe",
 		l2d_se = "",
@@ -9274,7 +10692,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "{namecode:80}级战列舰—{namecode:175}",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -9361,13 +10779,14 @@ pg.base.ship_skin_template_17 = {
 		name = "帝国",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900388,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "diguo",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -9377,7 +10796,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900388,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "diguo",
 		l2d_se = "",
@@ -9386,7 +10805,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "航空母舰—帝国",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -9459,13 +10878,14 @@ pg.base.ship_skin_template_17 = {
 		name = "里昂",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900389,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "liang",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -9475,7 +10895,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900389,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "liang",
 		l2d_se = "",
@@ -9484,7 +10904,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "里昂级战列舰—里昂",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -9571,13 +10991,14 @@ pg.base.ship_skin_template_17 = {
 		name = "孟菲斯·META",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900390,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "mengfeisi_alter",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -9587,7 +11008,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900390,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "mengfeisi_alter",
 		l2d_se = "",
@@ -9596,7 +11017,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "我是孟菲斯。指挥官，您可能对我感到陌生，但是我知道你……请放心，我不是什么奇怪的人，希望你能够相信我。接下来我会好好辅佐你，为你护航的。",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -9683,13 +11104,14 @@ pg.base.ship_skin_template_17 = {
 		name = "阿布鲁齐公爵",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900391,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "abuluqi",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -9699,7 +11121,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900391,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "abuluqi",
 		l2d_se = "",
@@ -9708,7 +11130,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "阿布鲁齐公爵级轻巡洋舰—阿布鲁齐公爵",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -9795,13 +11217,14 @@ pg.base.ship_skin_template_17 = {
 		name = "喀琅施塔得",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900392,
 		group_index = 0,
-		illustrator = -1,
+		l2d_ignore_drag = 0,
 		painting = "kalangshitade",
+		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
 		lip_smoothing = 0,
@@ -9810,7 +11233,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900392,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "kalangshitade",
 		l2d_se = "",
@@ -9818,7 +11241,7 @@ pg.base.ship_skin_template_17 = {
 		shop_id = 0,
 		desc = "69型重巡洋舰—喀琅施塔得",
 		voice_actor = -1,
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -9919,13 +11342,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:191}",
 		hand_id = 2,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900393,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "feilong_alter",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -9935,7 +11359,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900393,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "feilong_alter",
 		l2d_se = "",
@@ -9944,7 +11368,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "我是{namecode:94}，二航战的{namecode:94}。既然加入，那我便会听从你的指挥，希望…你是真正有资格指挥舰队之人吧。",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -10031,13 +11455,14 @@ pg.base.ship_skin_template_17 = {
 		name = "皇家方舟·META",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900394,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "huangjiafangzhou_alter",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -10047,7 +11472,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900394,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "huangjiafangzhou_alter",
 		l2d_se = "",
@@ -10056,7 +11481,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "航空母舰皇家方舟，加入你的麾下。只要阁下是心怀大志之人，我就会全力为你而战！",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -10143,13 +11568,14 @@ pg.base.ship_skin_template_17 = {
 		name = "光辉",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900395,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "guanghui",
+		shop_id = 0,
 		illustrator = 1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -10159,7 +11585,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900395,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "guanghui",
 		l2d_se = "",
@@ -10168,7 +11594,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "光辉级航空母舰—光辉，舷号87",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -10254,13 +11680,14 @@ pg.base.ship_skin_template_17 = {
 		name = "加斯科涅",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900396,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "jiasikenie",
+		shop_id = 0,
 		illustrator = 1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -10270,7 +11697,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900396,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "jiasikenie",
 		l2d_se = "",
@@ -10279,7 +11706,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "战列舰——加斯科涅",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -10359,13 +11786,14 @@ pg.base.ship_skin_template_17 = {
 		name = "香槟",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900397,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "xiangbin",
+		shop_id = 0,
 		illustrator = 1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -10375,7 +11803,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900397,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "xiangbin",
 		l2d_se = "",
@@ -10384,7 +11812,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "战列舰——香槟",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -10464,13 +11892,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:486}",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900398,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "aoding",
+		shop_id = 0,
 		illustrator = 1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -10480,7 +11909,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900398,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "aoding",
 		l2d_se = "",
@@ -10489,7 +11918,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "战列巡洋舰——{namecode:486}",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -10576,13 +12005,14 @@ pg.base.ship_skin_template_17 = {
 		name = "路易九世",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900399,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "luyijiushi",
+		shop_id = 0,
 		illustrator = 1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -10592,7 +12022,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900399,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "luyijiushi",
 		l2d_se = "",
@@ -10601,7 +12031,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "重巡洋舰-—路易九世",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -10681,13 +12111,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:484}",
 		hand_id = 13,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900400,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "lupuleixite",
+		shop_id = 0,
 		illustrator = 1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -10697,7 +12128,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900400,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "lupuleixite",
 		l2d_se = "",
@@ -10706,7 +12137,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "战列巡洋舰—{namecode:484}",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -10793,13 +12224,14 @@ pg.base.ship_skin_template_17 = {
 		name = "弗兰德尔",
 		hand_id = 5,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900401,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "fulandeer",
+		shop_id = 0,
 		illustrator = 1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -10809,7 +12241,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900401,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "fulandeer",
 		l2d_se = "",
@@ -10818,7 +12250,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "战列舰—弗兰德尔",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -10905,13 +12337,14 @@ pg.base.ship_skin_template_17 = {
 		name = "{namecode:88}",
 		hand_id = 5,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900402,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "ruifeng",
+		shop_id = 0,
 		illustrator = 1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -10921,7 +12354,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900402,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "ruifeng",
 		l2d_se = "",
@@ -10930,7 +12363,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -11017,13 +12450,14 @@ pg.base.ship_skin_template_17 = {
 		name = "「银狐」女士",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900403,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "silverfox_shadow",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -11033,7 +12467,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900403,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "silverfox_shadow",
 		l2d_se = "",
@@ -11042,7 +12476,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -11129,13 +12563,14 @@ pg.base.ship_skin_template_17 = {
 		name = "战争协议-堡垒",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900404,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "baolei1",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -11145,7 +12580,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900404,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "baolei1",
 		l2d_se = "",
@@ -11154,7 +12589,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -11241,13 +12676,14 @@ pg.base.ship_skin_template_17 = {
 		name = "战争协议-堡垒",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900405,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "baolei2",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -11257,7 +12693,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900405,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "baolei2",
 		l2d_se = "",
@@ -11266,7 +12702,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -11353,13 +12789,14 @@ pg.base.ship_skin_template_17 = {
 		name = "埃塞克斯·META",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900406,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "aisaikesi_alter",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -11369,7 +12806,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900406,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "aisaikesi_alter",
 		l2d_se = "",
@@ -11378,7 +12815,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -11465,13 +12902,14 @@ pg.base.ship_skin_template_17 = {
 		name = "「银狐」女士",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900407,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "silverfox",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -11481,7 +12919,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900407,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "silverfox",
 		l2d_se = "",
@@ -11490,7 +12928,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -11577,13 +13015,14 @@ pg.base.ship_skin_template_17 = {
 		name = "柯蕾",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900408,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "kelei",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -11593,7 +13032,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900408,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "kelei",
 		l2d_se = "",
@@ -11602,7 +13041,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -11689,13 +13128,14 @@ pg.base.ship_skin_template_17 = {
 		name = "拉菲-传说级魔法师",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900409,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "lafei_10",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -11705,7 +13145,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900409,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "lafei_10",
 		l2d_se = "",
@@ -11714,7 +13154,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -11794,13 +13234,14 @@ pg.base.ship_skin_template_17 = {
 		name = "标枪-传说级勇者",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900410,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "biaoqiang_8",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -11810,7 +13251,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900410,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "biaoqiang_8",
 		l2d_se = "",
@@ -11819,7 +13260,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -11899,13 +13340,14 @@ pg.base.ship_skin_template_17 = {
 		name = "Z23- 传说级战士",
 		hand_id = 1,
 		bgm = "",
-		l2d_drag_rate = "",
+		gyro = 0,
 		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
+		l2d_drag_rate = "",
+		id = 900411,
 		group_index = 0,
-		shop_id = 0,
+		l2d_ignore_drag = 0,
 		painting = "z23_10",
+		shop_id = 0,
 		illustrator = -1,
 		l2d_voice_calibrate = "",
 		shop_type_id = 0,
@@ -11915,7 +13357,7 @@ pg.base.ship_skin_template_17 = {
 		spine_use_live2d = 0,
 		spine_action_offset = false,
 		skin_type = -1,
-		id = 900411,
+		bg_sp = "",
 		voice_actor_2 = -1,
 		prefab = "z23_10",
 		l2d_se = "",
@@ -11924,7 +13366,7 @@ pg.base.ship_skin_template_17 = {
 		desc = "无描述",
 		voice_actor = -1,
 		spine_offset = "",
-		gyro = 0,
+		change_skin = "",
 		rarity_bg = "",
 		time = "",
 		l2d_para_range = "",
@@ -12000,1343 +13442,6 @@ pg.base.ship_skin_template_17 = {
 							-0.44,
 							2.23,
 							-0.27
-						}
-					}
-				}
-			}
-		}
-	},
-	[900412] = {
-		ship_group = 900412,
-		name = "绫波-传说级格斗家",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "lingbo_15",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 900412,
-		voice_actor_2 = -1,
-		prefab = "lingbo_15",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "无描述",
-		voice_actor = -1,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.92,
-					0.98,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.95,
-					1.03,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.008,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.14,
-					1.26,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.43,
-							2.24,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900413] = {
-		ship_group = 900413,
-		name = "抚顺-勇者",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "fushun",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 900413,
-		voice_actor_2 = -1,
-		prefab = "fushun",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "无描述",
-		voice_actor = -1,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.92,
-					0.98,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.95,
-					1.03,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.008,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.14,
-					1.26,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.43,
-							2.24,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900414] = {
-		ship_group = 900414,
-		name = "利物浦-神官",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "liwupu_2",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 900414,
-		voice_actor_2 = -1,
-		prefab = "liwupu_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "无描述",
-		voice_actor = -1,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.92,
-					0.98,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.95,
-					1.03,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.008,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.14,
-					1.26,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.43,
-							2.24,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900415] = {
-		ship_group = 900415,
-		name = "独角兽-见习神官",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "dujiaoshou_10",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 900415,
-		voice_actor_2 = -1,
-		prefab = "dujiaoshou_10",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "无描述",
-		voice_actor = -1,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.92,
-					0.98,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.95,
-					1.03,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.008,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.14,
-					1.26,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.43,
-							2.24,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900416] = {
-		ship_group = 900416,
-		name = "努比亚人-药剂师",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "nubiyaren_2",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 900416,
-		voice_actor_2 = -1,
-		prefab = "nubiyaren_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "无描述",
-		voice_actor = -1,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.92,
-					0.98,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.95,
-					1.03,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.008,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.14,
-					1.26,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.43,
-							2.24,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900417] = {
-		ship_group = 900417,
-		name = "鲁莽-王国军二级魔法师",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "lumang",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 900417,
-		voice_actor_2 = -1,
-		prefab = "lumang",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "无描述",
-		voice_actor = -1,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.95,
-					1.21,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.95,
-					1.18,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.35,
-					0.25,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.89,
-					1.16,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.6,
-							2.26,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900418] = {
-		ship_group = 900418,
-		name = "倔强-王国军二级魔法师",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "juejiang",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 900418,
-		voice_actor_2 = -1,
-		prefab = "juejiang",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "无描述",
-		voice_actor = -1,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.95,
-					0.587,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.95,
-					0.54,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.151,
-					0.051,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.89,
-					0.537,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.6,
-							2.26,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900419] = {
-		ship_group = 900419,
-		name = "阿尔及利亚-王国军方旗骑士",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "aerjiliya",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 900419,
-		voice_actor_2 = -1,
-		prefab = "aerjiliya",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "无描述",
-		voice_actor = -1,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.286,
-					1.192,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.212,
-					1.225,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0.019,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.165,
-					1.171,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.498,
-							2.279,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900420] = {
-		ship_group = 900420,
-		name = "不屈-王国军守护骑士",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "buqu",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 900420,
-		voice_actor_2 = -1,
-		prefab = "buqu",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "无描述",
-		voice_actor = -1,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.321,
-					1.034,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.152,
-					1.055,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.054,
-					0.027,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.213,
-					1.217,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.499,
-							2.186,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900421] = {
-		ship_group = 900421,
-		name = "圣女贞德-王国军圣女",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "shengnvzhende",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 900421,
-		voice_actor_2 = -1,
-		prefab = "shengnvzhende",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "无描述",
-		voice_actor = -1,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.699,
-					1.199,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.733,
-					1.208,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.661,
-					1.263,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.6,
-							2.26,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900422] = {
-		ship_group = 900422,
-		name = "前卫-王国军方旗骑士",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "qianwei",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 900422,
-		voice_actor_2 = -1,
-		prefab = "qianwei",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "无描述",
-		voice_actor = -1,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.11,
-					1.205,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.17,
-					1.255,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.23,
-					1.288,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.45,
-							2.415,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900423] = {
-		ship_group = 900423,
-		name = "霞飞-战斗天使",
-		hand_id = 1,
-		bgm = "",
-		l2d_drag_rate = "",
-		illustrator2 = -1,
-		bg_sp = "",
-		l2d_ignore_drag = 0,
-		group_index = 0,
-		shop_id = 0,
-		painting = "xiafei",
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		id = 900423,
-		voice_actor_2 = -1,
-		prefab = "xiafei",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "无描述",
-		voice_actor = -1,
-		spine_offset = "",
-		gyro = 0,
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.268,
-					1.035,
-					0
-				}
-			},
-			plane = {
-				{
-					1.312,
-					1.223,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.422,
-							2.117,
-							-1.85
 						}
 					}
 				}

@@ -2518,12 +2518,14 @@ pg.fleet_tech_ship_class = {
 	},
 	[50102] = {
 		shiptype = 1,
-		name = "飞云",
+		name = "长风级",
 		nation = 5,
 		id = 50102,
 		t_level_1 = 128,
 		t_level = 1,
 		ships = {
+			50108,
+			50109,
 			50107
 		}
 	},
@@ -2606,6 +2608,28 @@ pg.fleet_tech_ship_class = {
 		t_level = 1,
 		ships = {
 			50209
+		}
+	},
+	[50207] = {
+		shiptype = 2,
+		name = "海容级",
+		nation = 5,
+		id = 50207,
+		t_level_1 = 131,
+		t_level = 1,
+		ships = {
+			50210
+		}
+	},
+	[50301] = {
+		shiptype = 3,
+		name = "建武",
+		nation = 5,
+		id = 50301,
+		t_level_1 = 130,
+		t_level = 1,
+		ships = {
+			50301
 		}
 	},
 	[50401] = {
@@ -4240,6 +4264,8 @@ pg.fleet_tech_ship_class = {
 		50204,
 		50205,
 		50206,
+		50207,
+		50301,
 		50401,
 		50601,
 		50602,

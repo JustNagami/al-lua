@@ -222,6 +222,8 @@ pg.memory_group = setmetatable({
 		313,
 		314,
 		315,
+		316,
+		317,
 		501,
 		502,
 		503,
@@ -5255,6 +5257,35 @@ pg.base.memory_group = {
 			4133,
 			4134,
 			4135
+		}
+	},
+	[316] = {
+		id = 316,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5777,
+		title = "港区时尚特刊：新春合集[3]",
+		memories = {
+			4151,
+			4152,
+			4153,
+			4154
+		}
+	},
+	[317] = {
+		id = 317,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5772,
+		title = "华裳巧展喜事长",
+		memories = {
+			4161,
+			4162,
+			4163,
+			4164,
+			4165
 		}
 	},
 	[501] = {

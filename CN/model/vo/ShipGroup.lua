@@ -222,7 +222,7 @@ function var_0_0.getSkinList(arg_19_0)
 	return ShipSkin.GetAllSkinByGroup(arg_19_0)
 end
 
-function var_0_0.getDisplayableSkinList(arg_20_0)
+function var_0_0.GetDisplayableSkinList(arg_20_0)
 	local var_20_0 = {}
 
 	local function var_20_1(arg_21_0)
@@ -236,8 +236,16 @@ function var_0_0.getDisplayableSkinList(arg_20_0)
 	for iter_20_0, iter_20_1 in ipairs(pg.ship_skin_template.all) do
 		local var_20_3 = pg.ship_skin_template[iter_20_1]
 
-		if var_20_3.ship_group == arg_20_0.id and var_20_3.no_showing ~= "1" and not var_20_1(var_20_3) and var_20_2(var_20_3.id) then
+		if var_20_3.ship_group == arg_20_0 and var_20_3.no_showing ~= "1" and not var_20_1(var_20_3) and var_20_2(var_20_3.id) then
 			table.insert(var_20_0, var_20_3)
+		end
+	end
+
+	for iter_20_2 = #var_20_0, 1, -1 do
+		local var_20_4 = var_20_0[iter_20_2]
+
+		if ShipGroup.GetChangeSkinGroupId(var_20_4.id) and ShipGroup.GetChangeSkinIndex(var_20_4.id) ~= 1 then
+			table.remove(var_20_0, iter_20_2)
 		end
 	end
 
@@ -433,6 +441,125 @@ end
 
 function var_0_0.getEquipCodes(arg_45_0)
 	return arg_45_0.equipCodes
+end
+
+function var_0_0.IsChangeSkin(arg_46_0)
+	return var_0_0.GetChangeSkinData(arg_46_0)
+end
+
+function var_0_0.GetChangeSkinMainId(arg_47_0)
+	if not var_0_0.IsChangeSkin(arg_47_0) then
+		return arg_47_0
+	end
+
+	local var_47_0 = pg.ship_skin_template[arg_47_0].ship_group
+	local var_47_1 = var_0_0.GetChangeSkinGroupId(arg_47_0)
+
+	if var_0_0.GetChangeSkinIndex(arg_47_0) == 1 then
+		return arg_47_0
+	end
+
+	local var_47_2 = ShipSkin.GetAllSkinByGroup(var_47_0)
+
+	for iter_47_0, iter_47_1 in ipairs(var_47_2) do
+		if var_0_0.IsChangeSkin(iter_47_1.id) then
+			local var_47_3 = var_0_0.GetChangeSkinGroupId(iter_47_1.id)
+			local var_47_4 = var_0_0.GetChangeSkinIndex(iter_47_1.id)
+
+			if var_47_3 == var_47_1 and var_47_4 == 1 then
+				print("获得到了skinId :" .. arg_47_0 .. " 的A面皮肤id" .. iter_47_1.id)
+
+				return iter_47_1.id
+			end
+		end
+	end
+
+	return arg_47_0
+end
+
+function var_0_0.GetChangeSkinData(arg_48_0)
+	local var_48_0 = pg.ship_skin_template[arg_48_0]
+
+	if var_48_0 and var_48_0.change_skin and var_48_0.change_skin ~= "" and table.contains(var_48_0.tag, ShipSkin.WITH_CHANGE) then
+		return var_48_0.change_skin
+	end
+
+	return nil
+end
+
+function var_0_0.IsSameChangeSkinGroup(arg_49_0, arg_49_1)
+	if not ShipGroup.IsChangeSkin(arg_49_0) or not ShipGroup.IsChangeSkin(arg_49_1) then
+		return false
+	end
+
+	return ShipGroup.GetChangeSkinGroupId(arg_49_0) == ShipGroup.GetChangeSkinGroupId(arg_49_1)
+end
+
+function var_0_0.GetChangeSkinGroupId(arg_50_0)
+	return var_0_0.GetChangeSkinData(arg_50_0) and var_0_0.GetChangeSkinData(arg_50_0).group or nil
+end
+
+function var_0_0.GetChangeSkinNextId(arg_51_0)
+	return var_0_0.GetChangeSkinData(arg_51_0) and var_0_0.GetChangeSkinData(arg_51_0).next or nil
+end
+
+function var_0_0.GetChangeSkinIndex(arg_52_0)
+	return var_0_0.GetChangeSkinData(arg_52_0) and var_0_0.GetChangeSkinData(arg_52_0).index or nil
+end
+
+function var_0_0.GetChangeSkinState(arg_53_0)
+	return var_0_0.GetChangeSkinData(arg_53_0) and var_0_0.GetChangeSkinData(arg_53_0).state or nil
+end
+
+function var_0_0.GetChangeSkinAction(arg_54_0)
+	return var_0_0.GetChangeSkinData(arg_54_0) and var_0_0.GetChangeSkinData(arg_54_0).action or nil
+end
+
+function var_0_0.GetStoreChangeSkinId(arg_55_0, arg_55_1)
+	if not arg_55_1 or arg_55_1 == 0 then
+		return nil
+	end
+
+	print("尝试获取group_id = " .. tostring(arg_55_0) .. "ship id =" .. tostring(arg_55_1))
+
+	local var_55_0 = var_0_0.GetStoreChangeSkinPrefsName(arg_55_0, arg_55_1)
+	local var_55_1 = PlayerPrefs.GetInt(var_55_0)
+
+	if not var_55_1 or var_55_1 == 0 then
+		return nil
+	end
+
+	return var_55_1
+end
+
+function var_0_0.SetStoreChangeSkinId(arg_56_0, arg_56_1, arg_56_2)
+	local var_56_0 = var_0_0.GetStoreChangeSkinPrefsName(arg_56_0, arg_56_1)
+
+	PlayerPrefs.SetInt(var_56_0, arg_56_2)
+end
+
+function var_0_0.GetStoreChangeSkinPrefsName(arg_57_0, arg_57_1)
+	local var_57_0 = "change_skin_group_$1_$2"
+	local var_57_1 = string.gsub(var_57_0, "%$1", arg_57_1)
+
+	return (string.gsub(var_57_1, "%$2", arg_57_0))
+end
+
+function var_0_0.SetShipChangeSkin(arg_58_0, arg_58_1, arg_58_2, arg_58_3)
+	local var_58_0 = getProxy(BayProxy):getShipById(arg_58_0)
+
+	if not var_58_0 then
+		return
+	end
+
+	ShipGroup.SetStoreChangeSkinId(arg_58_1, arg_58_0, arg_58_2)
+
+	if var_58_0.id == arg_58_0 and arg_58_3 then
+		var_58_0:updateSkinId(arg_58_2)
+		getProxy(BayProxy):updateShip(var_58_0)
+	end
+
+	pg.m02:sendNotification(GAME.CHANGE_SKIN_UPDATE, var_58_0)
 end
 
 return var_0_0

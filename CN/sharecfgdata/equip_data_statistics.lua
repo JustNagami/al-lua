@@ -17294,7 +17294,7 @@ _G.pg.base.equip_data_statistics[3800] = {
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
-	descrip = "说明未填写",
+	descrip = "遥知不是雪，为有暗香来",
 	nationality = 5,
 	rarity = 5,
 	id = 3800,
@@ -154971,4 +154971,352 @@ _G.pg.base.equip_data_statistics[180000] = {
 	part_sub = {},
 	equip_parameters = {},
 	label = {}
+}
+_G.pg.base.equip_data_statistics[74033] = {
+	type = 1,
+	name = "全弹发射-朱雀III",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 74033,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		74033
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[74161] = {
+	type = 1,
+	name = "全弹发射-海容级I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 74161,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		74161
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[74162] = {
+	id = 74162,
+	name = "全弹发射-海容级II",
+	base = 74161,
+	weapon_id = {
+		74162
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[80421] = {
+	type = 1,
+	name = "专属弹幕-建武I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 80421,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170671
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[80422] = {
+	id = 80422,
+	name = "专属弹幕-建武II",
+	base = 80421,
+	weapon_id = {
+		170672
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150600] = {
+	type = 10,
+	name = "伏波的计划书",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "在标题《庆祝新春大冒险计划书》之下，隐约可以看到被涂掉的字迹：《打倒建武大魔王大冒险计划书》。 ",
+	nationality = 5,
+	rarity = 4,
+	id = 150600,
+	value_3 = 0,
+	attribute_1 = "durability",
+	icon = "150600",
+	value_1 = "200",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		60810
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"PRAN",
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150601] = {
+	id = 150601,
+	value_1 = "230",
+	base = 150600,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150602] = {
+	id = 150602,
+	value_1 = "260",
+	base = 150600,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150603] = {
+	id = 150603,
+	value_1 = "290",
+	base = 150600,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150604] = {
+	id = 150604,
+	value_1 = "320",
+	base = 150600,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150605] = {
+	id = 150605,
+	value_1 = "350",
+	base = 150600,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150606] = {
+	id = 150606,
+	value_1 = "380",
+	base = 150600,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150607] = {
+	id = 150607,
+	value_1 = "410",
+	base = 150600,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150608] = {
+	id = 150608,
+	value_1 = "440",
+	base = 150600,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150609] = {
+	id = 150609,
+	value_1 = "470",
+	base = 150600,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150610] = {
+	id = 150610,
+	value_1 = "500",
+	base = 150600,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150611] = {
+	id = 150611,
+	anti_siren = 100,
+	value_1 = "530",
+	base = 150600,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[170681] = {
+	type = 1,
+	name = "全弹发射-伏波I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 170681,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170681
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[170682] = {
+	id = 170682,
+	name = "全弹发射-伏波II",
+	base = 170681,
+	weapon_id = {
+		170682
+	},
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[170691] = {
+	type = 1,
+	name = "全弹发射-长风I",
+	speciality = "<[NA]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 10,
+	nationality = 0,
+	descrip = "技能弹幕",
+	id = 170691,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170691
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[170692] = {
+	id = 170692,
+	name = "全弹发射-长风II",
+	base = 170691,
+	weapon_id = {
+		170692
+	},
+	hidden_skill_id = {}
 }

@@ -140,14 +140,12 @@ function var_0_0.ShowAlbum(arg_17_0, arg_17_1)
 	local var_17_1 = _G[var_17_0]
 	local var_17_2 = arg_17_1.ui_prefab.mediator
 	local var_17_3 = _G[var_17_2]
-
-	pg.m02:sendNotification(GAME.LOAD_LAYERS, {
-		parentContext = getProxy(ContextProxy):getCurrentContext(),
-		context = Context.New({
-			mediator = var_17_3,
-			viewComponent = var_17_1
-		})
+	local var_17_4 = Context.New({
+		mediator = var_17_3,
+		viewComponent = var_17_1
 	})
+
+	arg_17_0.viewParent:emit(WorldMediaCollectionMediator.ON_ADD_SUBLAYER, var_17_4)
 end
 
 function var_0_0.Return2MemoryGroup(arg_18_0)

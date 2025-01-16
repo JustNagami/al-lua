@@ -30,18 +30,26 @@ function var_0_0.OnDestroy(arg_5_0)
 	end
 end
 
-function var_0_0.GetCalibrationBG(arg_6_0)
+function var_0_0.SetEffectPanelVisible(arg_6_0, arg_6_1)
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0.panels) do
+		if isa(iter_6_1, MainRightPanel) then
+			iter_6_1:SetVisible(arg_6_1)
+		end
+	end
+end
+
+function var_0_0.GetCalibrationBG(arg_7_0)
 	return "mainui_calibration"
 end
 
-function var_0_0.GetPbList(arg_7_0)
+function var_0_0.GetPbList(arg_8_0)
 	return {
-		arg_7_0:findTF("frame/chatPreview"),
-		arg_7_0:findTF("frame/eventPanel")
+		arg_8_0:findTF("frame/chatPreview"),
+		arg_8_0:findTF("frame/eventPanel")
 	}
 end
 
-function var_0_0.GetPaintingOffset(arg_8_0, arg_8_1)
+function var_0_0.GetPaintingOffset(arg_9_0, arg_9_1)
 	return MainPaintingShift.New({
 		-600,
 		-10,
@@ -55,94 +63,98 @@ function var_0_0.GetPaintingOffset(arg_8_0, arg_8_1)
 	})
 end
 
-function var_0_0.GetWordView(arg_9_0)
-	return MainWordView.New(arg_9_0:findTF("chat"), arg_9_0.event)
+function var_0_0.GetWordView(arg_10_0)
+	return MainWordView.New(arg_10_0:findTF("chat"), arg_10_0.event)
 end
 
-function var_0_0.GetTagView(arg_10_0)
-	return MainTagsView.New(arg_10_0:findTF("frame/bottom/tags"), arg_10_0.event)
+function var_0_0.GetTagView(arg_11_0)
+	return MainTagsView.New(arg_11_0:findTF("frame/bottom/tags"), arg_11_0.event)
 end
 
-function var_0_0.GetTopPanel(arg_11_0)
-	return MainTopPanel.New(arg_11_0:findTF("frame/top"), arg_11_0.event, arg_11_0.contextData)
+function var_0_0.GetTopPanel(arg_12_0)
+	return MainTopPanel.New(arg_12_0:findTF("frame/top"), arg_12_0.event, arg_12_0.contextData)
 end
 
-function var_0_0.GetRightPanel(arg_12_0)
-	return MainRightPanel.New(arg_12_0:findTF("frame/right"), arg_12_0.event, arg_12_0.contextData)
+function var_0_0.GetRightPanel(arg_13_0)
+	return MainRightPanel.New(arg_13_0:findTF("frame/right"), arg_13_0.event, arg_13_0.contextData)
 end
 
-function var_0_0.GetLeftPanel(arg_13_0)
-	return MainLeftPanel.New(arg_13_0:findTF("frame/left"), arg_13_0.event, arg_13_0.contextData)
+function var_0_0.GetLeftPanel(arg_14_0)
+	return MainLeftPanel.New(arg_14_0:findTF("frame/left"), arg_14_0.event, arg_14_0.contextData)
 end
 
-function var_0_0.GetBottomPanel(arg_14_0)
-	return MainBottomPanel.New(arg_14_0:findTF("frame/bottom"), arg_14_0.event, arg_14_0.contextData)
+function var_0_0.GetBottomPanel(arg_15_0)
+	return MainBottomPanel.New(arg_15_0:findTF("frame/bottom"), arg_15_0.event, arg_15_0.contextData)
 end
 
-function var_0_0.GetIconView(arg_15_0)
-	return MainIconView.New(arg_15_0:findTF("frame/char"))
+function var_0_0.GetIconView(arg_16_0)
+	return MainIconView.New(arg_16_0:findTF("frame/char"))
 end
 
-function var_0_0.GetChatRoomView(arg_16_0)
-	return MainChatRoomView.New(arg_16_0:findTF("frame/chatPreview"), arg_16_0.event)
+function var_0_0.GetChatRoomView(arg_17_0)
+	return MainChatRoomView.New(arg_17_0:findTF("frame/chatPreview"), arg_17_0.event)
 end
 
-function var_0_0.GetBannerView(arg_17_0)
-	return MainBannerView.New(arg_17_0:findTF("frame/eventPanel"), arg_17_0.event)
+function var_0_0.GetBannerView(arg_18_0)
+	return MainBannerView.New(arg_18_0:findTF("frame/eventPanel"), arg_18_0.event)
 end
 
-function var_0_0.GetActBtnView(arg_18_0)
-	return MainActivityBtnView.New(arg_18_0:findTF("frame/linkBtns"), arg_18_0.event)
+function var_0_0.GetActBtnView(arg_19_0)
+	return MainActivityBtnView.New(arg_19_0:findTF("frame/linkBtns"), arg_19_0.event)
 end
 
-function var_0_0.GetBuffView(arg_19_0)
-	return MainBuffView.New(arg_19_0:findTF("frame/buffs"), arg_19_0.event)
+function var_0_0.GetBuffView(arg_20_0)
+	return MainBuffView.New(arg_20_0:findTF("frame/buffs"), arg_20_0.event)
 end
 
-function var_0_0.GetCalibrationView(arg_20_0)
-	return MainCalibrationPage.New(arg_20_0._tf, arg_20_0.event)
+function var_0_0.GetCalibrationView(arg_21_0)
+	return MainCalibrationPage.New(arg_21_0._tf, arg_21_0.event)
 end
 
-function var_0_0.GetRedDots(arg_21_0)
+function var_0_0.GetChangeSkinView(arg_22_0)
+	return MainChangeSkinView.New(arg_22_0:findTF("frame/left/change_skin"), arg_22_0.event)
+end
+
+function var_0_0.GetRedDots(arg_23_0)
 	return {
-		RedDotNode.New(arg_21_0._tf:Find("frame/bottom/taskButton/tip"), {
+		RedDotNode.New(arg_23_0._tf:Find("frame/bottom/taskButton/tip"), {
 			pg.RedDotMgr.TYPES.TASK
 		}),
-		MailRedDotNode.New(arg_21_0._tf:Find("frame/right/mailButton")),
-		RedDotNode.New(arg_21_0._tf:Find("frame/bottom/buildButton/tip"), {
+		MailRedDotNode.New(arg_23_0._tf:Find("frame/right/mailButton")),
+		RedDotNode.New(arg_23_0._tf:Find("frame/bottom/buildButton/tip"), {
 			pg.RedDotMgr.TYPES.BUILD
 		}),
-		RedDotNode.New(arg_21_0._tf:Find("frame/bottom/guildButton/tip"), {
+		RedDotNode.New(arg_23_0._tf:Find("frame/bottom/guildButton/tip"), {
 			pg.RedDotMgr.TYPES.GUILD
 		}),
-		RedDotNode.New(arg_21_0._tf:Find("frame/top/tip"), {
+		RedDotNode.New(arg_23_0._tf:Find("frame/top/tip"), {
 			pg.RedDotMgr.TYPES.ATTIRE
 		}),
-		RedDotNode.New(arg_21_0._tf:Find("frame/right/memoryButton/tip"), {
+		RedDotNode.New(arg_23_0._tf:Find("frame/right/memoryButton/tip"), {
 			pg.RedDotMgr.TYPES.MEMORY_REVIEW
 		}),
-		RedDotNode.New(arg_21_0._tf:Find("frame/right/collectionButton/tip"), {
+		RedDotNode.New(arg_23_0._tf:Find("frame/right/collectionButton/tip"), {
 			pg.RedDotMgr.TYPES.COLLECTION
 		}),
-		RedDotNode.New(arg_21_0._tf:Find("frame/right/friendButton/tip"), {
+		RedDotNode.New(arg_23_0._tf:Find("frame/right/friendButton/tip"), {
 			pg.RedDotMgr.TYPES.FRIEND
 		}),
-		RedDotNode.New(arg_21_0._tf:Find("frame/left/commissionButton/tip"), {
+		RedDotNode.New(arg_23_0._tf:Find("frame/left/commissionButton/tip"), {
 			pg.RedDotMgr.TYPES.COMMISSION
 		}),
-		SettingsRedDotNode.New(arg_21_0._tf:Find("frame/right/settingButton/tip"), {
+		SettingsRedDotNode.New(arg_23_0._tf:Find("frame/right/settingButton/tip"), {
 			pg.RedDotMgr.TYPES.SETTTING
 		}),
-		RedDotNode.New(arg_21_0._tf:Find("frame/right/noticeButton/tip"), {
+		RedDotNode.New(arg_23_0._tf:Find("frame/right/noticeButton/tip"), {
 			pg.RedDotMgr.TYPES.SERVER
 		}),
-		RedDotNode.New(arg_21_0._tf:Find("frame/bottom/technologyButton/tip"), {
+		RedDotNode.New(arg_23_0._tf:Find("frame/bottom/technologyButton/tip"), {
 			pg.RedDotMgr.TYPES.BLUEPRINT
 		}),
-		RedDotNode.New(arg_21_0._tf:Find("frame/right/combatBtn/tip"), {
+		RedDotNode.New(arg_23_0._tf:Find("frame/right/combatBtn/tip"), {
 			pg.RedDotMgr.TYPES.EVENT
 		}),
-		RedDotNode.New(arg_21_0._tf:Find("frame/bottom/liveButton/tip"), {
+		RedDotNode.New(arg_23_0._tf:Find("frame/bottom/liveButton/tip"), {
 			pg.RedDotMgr.TYPES.COURTYARD,
 			pg.RedDotMgr.TYPES.SCHOOL,
 			pg.RedDotMgr.TYPES.COMMANDER

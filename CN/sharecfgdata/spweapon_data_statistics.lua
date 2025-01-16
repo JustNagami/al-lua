@@ -23064,7 +23064,7 @@ _G.pg.base.spweapon_data_statistics[13790] = {
 }
 _G.pg.base.spweapon_data_statistics[13800] = {
 	tech = 0,
-	name = "红梅轻舞 ",
+	name = "红梅轻舞",
 	value_2_random = 5,
 	type = 2,
 	value_1_random = 10,

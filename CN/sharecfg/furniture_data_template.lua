@@ -3475,6 +3475,30 @@ pg.furniture_data_template = setmetatable({
 			317302,
 			317303,
 			317304
+		},
+		[118] = {
+			318001,
+			318002,
+			318101,
+			318102,
+			318103,
+			318104,
+			318105,
+			318106,
+			318107,
+			318108,
+			318109,
+			318110,
+			318111,
+			318112,
+			318113,
+			318114,
+			318115,
+			318301,
+			318302,
+			318303,
+			318304,
+			318305
 		}
 	},
 	get_id_list_by_tag = {
@@ -3934,7 +3958,8 @@ pg.furniture_data_template = setmetatable({
 			314113,
 			315113,
 			316123,
-			317111
+			317111,
+			318305
 		},
 		[4] = {
 			1001,
@@ -4042,7 +4067,8 @@ pg.furniture_data_template = setmetatable({
 			314001,
 			315001,
 			316001,
-			317001
+			317001,
+			318001
 		},
 		[3] = {
 			1002,
@@ -4150,7 +4176,8 @@ pg.furniture_data_template = setmetatable({
 			314002,
 			315002,
 			316002,
-			317002
+			317002,
+			318002
 		},
 		{
 			1101,
@@ -6186,7 +6213,22 @@ pg.furniture_data_template = setmetatable({
 			317107,
 			317108,
 			317109,
-			317110
+			317110,
+			318101,
+			318102,
+			318103,
+			318104,
+			318105,
+			318106,
+			318107,
+			318108,
+			318109,
+			318110,
+			318111,
+			318112,
+			318113,
+			318114,
+			318115
 		},
 		{
 			1108,
@@ -6752,7 +6794,11 @@ pg.furniture_data_template = setmetatable({
 			317301,
 			317302,
 			317303,
-			317304
+			317304,
+			318301,
+			318302,
+			318303,
+			318304
 		}
 	},
 	get_id_list_by_type = {
@@ -9003,7 +9049,21 @@ pg.furniture_data_template = setmetatable({
 			317108,
 			317109,
 			317110,
-			317111
+			317111,
+			318101,
+			318102,
+			318103,
+			318104,
+			318105,
+			318106,
+			318107,
+			318108,
+			318109,
+			318111,
+			318112,
+			318113,
+			318114,
+			318115
 		},
 		[11] = {
 			131,
@@ -9432,7 +9492,12 @@ pg.furniture_data_template = setmetatable({
 			317301,
 			317302,
 			317303,
-			317304
+			317304,
+			318301,
+			318302,
+			318303,
+			318304,
+			318305
 		},
 		[15] = {
 			251,
@@ -9556,7 +9621,8 @@ pg.furniture_data_template = setmetatable({
 			314001,
 			315001,
 			316001,
-			317001
+			317001,
+			318001
 		},
 		{
 			1002,
@@ -9664,7 +9730,8 @@ pg.furniture_data_template = setmetatable({
 			314002,
 			315002,
 			316002,
-			317002
+			317002,
+			318002
 		},
 		[5] = {
 			1101,
@@ -10026,7 +10093,8 @@ pg.furniture_data_template = setmetatable({
 			97105,
 			97119,
 			307108,
-			314105
+			314105,
+			318110
 		},
 		[10] = {
 			28306,
@@ -13307,7 +13375,29 @@ pg.furniture_data_template = setmetatable({
 		317301,
 		317302,
 		317303,
-		317304
+		317304,
+		318001,
+		318002,
+		318101,
+		318102,
+		318103,
+		318104,
+		318105,
+		318106,
+		318107,
+		318108,
+		318109,
+		318110,
+		318111,
+		318112,
+		318113,
+		318114,
+		318115,
+		318301,
+		318302,
+		318303,
+		318304,
+		318305
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -159734,6 +159824,973 @@ pg.base.furniture_data_template = {
 		canputonGrid = {},
 		can_trigger = {
 			0
+		},
+		interAction_group = {}
+	},
+	[318001] = {
+		spine_extra = "",
+		describe = "踏雪寻梅，共赏春光~",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		deblocking = 1,
+		level = 1,
+		name = "踏雪寻梅地板",
+		effect = "",
+		advice = 0,
+		icon = "dibancj7icon",
+		spine_action_replace = "",
+		picture = "cj7/dibancj7",
+		comfortable = 4,
+		canputon = 0,
+		id = 318001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318002] = {
+		spine_extra = "",
+		describe = "踏雪寻梅，共赏春光~",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		deblocking = 1,
+		level = 5,
+		name = "踏雪寻梅墙纸",
+		effect = "",
+		advice = 0,
+		icon = "qiangbicj7icon",
+		spine_action_replace = "",
+		picture = "",
+		comfortable = 4,
+		canputon = 0,
+		id = 318002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbicj7",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[318101] = {
+		spine_extra = "",
+		describe = "沉稳厚重的气息，不如小坐片刻吧！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "baishiyicj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "玉雪凳子",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "cj7/baishiyicj7",
+		canputon = 0,
+		id = 318101,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-8.9,
+					47.8
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318102] = {
+		spine_extra = "",
+		describe = "黑玉般的石凳上，是否还留着谁驻足的痕迹？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "heishiyicj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "墨玉凳子",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "cj7/heishiyicj7",
+		canputon = 0,
+		id = 318102,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-8.9,
+					47.8
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318103] = {
+		spine_extra = "",
+		describe = "记录下新春的美好时光！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "canguanjiucj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "参观啾",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318103,
+		can_rotate = 0,
+		size = {
+			5,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"canguanjiucj7",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[318104] = {
+		spine_extra = "",
+		describe = "这身华服......莫非是在等待主人归来？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "jiaren1cj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "韵影展示台1",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "cj7/jiaren1cj7",
+		canputon = 0,
+		id = 318104,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318105] = {
+		spine_extra = "",
+		describe = "这身华服......莫非是在等待主人归来？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "jiaren2cj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "韵影展示台2",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "cj7/jiaren2cj7",
+		canputon = 0,
+		id = 318105,
+		can_rotate = 0,
+		size = {
+			0,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318106] = {
+		spine_extra = "",
+		describe = "这身华服......莫非是在等待主人归来？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "jiaren3cj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "韵影展示台3",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "cj7/jiaren3cj7",
+		canputon = 0,
+		id = 318106,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318107] = {
+		spine_extra = "",
+		describe = "吐出的泡泡宛如天上的明珠呢~",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "paopaojicj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "玉竹泡泡机",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318107,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"paopaojicj7",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[318108] = {
+		spine_extra = "",
+		describe = "可以为舞台提供绚丽的光影效果哦！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "yanhuajicj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "荷韵烟花机",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318108,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yanhuajicj7",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[318109] = {
+		spine_extra = "",
+		describe = "都说棋局里藏着无穷智慧，要不要来对弈一番呢？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "qipancj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "石质棋盘",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318109,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qipancj7",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[318110] = {
+		spine_extra = "",
+		describe = "穿过这扇门扉，还会遇见怎样的故事呢？",
+		gain_by = "",
+		type = 9,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "rukoumencj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "盛梅大门",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "cj7/rukoumencj7",
+		canputon = 1,
+		id = 318110,
+		can_rotate = 0,
+		size = {
+			6,
+			1
+		},
+		offset = {
+			0,
+			0
+		},
+		canputonGrid = {
+			{
+				1,
+				0
+			},
+			{
+				2,
+				0
+			},
+			{
+				3,
+				0
+			},
+			{
+				4,
+				0
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318111] = {
+		spine_extra = "",
+		describe = "这方天地里似乎藏着许多秘密哦！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "shanshuicj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "山居置景",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318111,
+		can_rotate = 0,
+		size = {
+			6,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shanshuicj7",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[318112] = {
+		spine_extra = "",
+		describe = "这些奇石，是否在诉说古老的传说？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "shitoujingcj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "奇石置景",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318112,
+		can_rotate = 0,
+		size = {
+			6,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shitoujingcj7",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[318113] = {
+		spine_extra = "",
+		describe = "披上红色装饰的树木，很有喜庆的氛围呢~",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "shucj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "喜绣青植",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "cj7/shucj7",
+		canputon = 0,
+		id = 318113,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318114] = {
+		spine_extra = "",
+		describe = "一曲流水潺潺~照亮这婉转的舞台~",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "梅韵流光舞台",
+		themeId = 118,
+		icon = "wutaicj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318114,
+		can_rotate = 0,
+		size = {
+			6,
+			12
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"wutaicj7",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[318115] = {
+		spine_extra = "",
+		describe = "在这里静静驻足……看看上面都写了什么吧~",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "zhantaicj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "梅韵流光展台",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "cj7/zhantaicj7",
+		canputon = 0,
+		id = 318115,
+		can_rotate = 0,
+		size = {
+			3,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318301] = {
+		spine_extra = "",
+		describe = "说不定，竹叶间藏着绣娘的心事哦？",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "fangzhiwucj7icon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "竹绣织物",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "cj7/fangzhiwucj7",
+		canputon = 0,
+		id = 318301,
+		can_rotate = 0,
+		size = {
+			4,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318302] = {
+		spine_extra = "",
+		describe = "墨韵晕染的荷花，真是雅致呢~",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "shuimohuacj7icon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "荷香水墨",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "cj7/shuimohuacj7",
+		canputon = 0,
+		id = 318302,
+		can_rotate = 0,
+		size = {
+			4,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318303] = {
+		spine_extra = "",
+		describe = "一树梅花绽放，像是等待春风的邀约~",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "weimucj7icon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "梅影流丹装饰",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "cj7/weimucj7",
+		canputon = 0,
+		id = 318303,
+		can_rotate = 0,
+		size = {
+			6,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318304] = {
+		spine_extra = "",
+		describe = "圆月之中……似乎有着跃动的身影哦！",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 2,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "yuanyuecj7icon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "玉兔明月装饰",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318304,
+		can_rotate = 0,
+		size = {
+			4,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yuanyuecj7",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[318305] = {
+		spine_extra = "",
+		describe = "缤纷祥云环绕，装满了美好祝愿~",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 2,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 7,
+		icon = "zhuangshiguahuacj7icon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "祥瑞装饰画",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318305,
+		can_rotate = 0,
+		size = {
+			8,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zhuangshiguahuacj7",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
 		},
 		interAction_group = {}
 	}

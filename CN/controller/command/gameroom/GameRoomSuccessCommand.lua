@@ -19,39 +19,31 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		if arg_2_0.result == 0 then
 			getProxy(GameRoomProxy):storeGameScore(var_1_1, var_1_3)
 
-			local var_2_0 = id2res(GameRoomProxy.coin_res_id)
+			local var_2_0 = getProxy(GameRoomProxy):lastTicketMax()
+			local var_2_1 = id2res(GameRoomProxy.coin_res_id)
 
 			getProxy(PlayerProxy):getRawData():consume({
-				[var_2_0] = var_1_2 or 0
+				[var_2_1] = var_1_2 or 0
 			})
 
-			local var_2_1 = PlayerConst.addTranDrop(arg_2_0.drop_list)
-			local var_2_2 = var_2_1[1].count
-			local var_2_3 = getProxy(GameRoomProxy):lastMonthlyTicket()
+			local var_2_2 = PlayerConst.addTranDrop(arg_2_0.drop_list)
+			local var_2_3 = var_2_2[1].count
+			local var_2_4 = getProxy(GameRoomProxy):lastMonthlyTicket()
 
-			if var_2_3 < var_2_2 then
-				var_2_2 = var_2_3
+			if var_2_4 < var_2_3 then
+				var_2_3 = var_2_4
 			end
 
-			local var_2_4 = getProxy(GameRoomProxy):lastTicketMax()
-
-			if var_2_4 < var_2_2 then
-				var_2_2 = var_2_4
+			if var_2_0 < var_2_3 then
+				var_2_3 = var_2_0
 			end
 
-			getProxy(GameRoomProxy):setMonthlyTicket(var_2_2)
+			getProxy(GameRoomProxy):setMonthlyTicket(var_2_3)
 
-			local var_2_5 = getProxy(GameRoomProxy):getTicket()
-			local var_2_6 = pg.gameset.game_room_remax.key_value - var_2_5
+			var_2_2[1].count = var_2_3
 
-			if var_2_6 < var_2_2 then
-				local var_2_7 = var_2_6
-
-				var_2_1[1].count = var_2_7
-			end
-
-			if var_2_1[1].count ~= 0 then
-				pg.m02:sendNotification(GAME.GAME_ROOM_AWARD_DONE, var_2_1)
+			if var_2_2[1].count ~= 0 then
+				pg.m02:sendNotification(GAME.GAME_ROOM_AWARD_DONE, var_2_2)
 			end
 		else
 			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)

@@ -29,8 +29,8 @@ function var_0_0.StartAnimtion(arg_3_0, arg_3_1, arg_3_2)
 	seriesAsync(var_3_1, arg_3_2)
 end
 
-function var_0_0.RegisetEvent(arg_5_0, arg_5_1)
-	var_0_0.super.RegisetEvent(arg_5_0, arg_5_1)
+function var_0_0.RegisetEvent(arg_5_0, arg_5_1, arg_5_2)
+	var_0_0.super.RegisetEvent(arg_5_0, arg_5_1, arg_5_2)
 	triggerButton(arg_5_0._go)
 end
 

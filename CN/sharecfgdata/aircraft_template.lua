@@ -253530,3 +253530,187 @@ _G.pg.base.aircraft_template[3236004] = {
 		}
 	}
 }
+_G.pg.base.aircraft_template[167231] = {
+	attack_power = 2,
+	name = "华甲改弹幕特殊舰载机Lv1",
+	type = 3,
+	accuracy = 23,
+	model_ID = "FBA19",
+	ACC_growth = 0,
+	crash_DMG = 208,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 5,
+	id = 167231,
+	icon = "FBA19",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1846,
+	speed = 48,
+	max_hp = 42,
+	scale = 1,
+	weapon_ID = {
+		167241,
+		167251
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0.64,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[167232] = {
+	id = 167232,
+	name = "华甲改弹幕特殊舰载机Lv2",
+	hp_growth = 2087,
+	base = 167231,
+	max_hp = 48,
+	spawn_brownian = 1,
+	weapon_ID = {
+		167242,
+		167252
+	}
+}
+_G.pg.base.aircraft_template[167233] = {
+	id = 167233,
+	name = "华甲改弹幕特殊舰载机Lv3",
+	hp_growth = 2327,
+	base = 167231,
+	max_hp = 54,
+	spawn_brownian = 1,
+	weapon_ID = {
+		167243,
+		167253
+	}
+}
+_G.pg.base.aircraft_template[167234] = {
+	id = 167234,
+	name = "华甲改弹幕特殊舰载机Lv4",
+	hp_growth = 2568,
+	base = 167231,
+	max_hp = 61,
+	spawn_brownian = 1,
+	weapon_ID = {
+		167244,
+		167254
+	}
+}
+_G.pg.base.aircraft_template[167235] = {
+	id = 167235,
+	name = "华甲改弹幕特殊舰载机Lv5",
+	hp_growth = 2809,
+	base = 167231,
+	max_hp = 67,
+	spawn_brownian = 1,
+	weapon_ID = {
+		167245,
+		167255
+	}
+}
+_G.pg.base.aircraft_template[167236] = {
+	id = 167236,
+	name = "华甲改弹幕特殊舰载机Lv6",
+	hp_growth = 3050,
+	base = 167231,
+	max_hp = 73,
+	spawn_brownian = 1,
+	weapon_ID = {
+		167246,
+		167256
+	}
+}
+_G.pg.base.aircraft_template[167237] = {
+	id = 167237,
+	name = "华甲改弹幕特殊舰载机Lv7",
+	hp_growth = 3290,
+	base = 167231,
+	max_hp = 79,
+	spawn_brownian = 1,
+	weapon_ID = {
+		167247,
+		167257
+	}
+}
+_G.pg.base.aircraft_template[167238] = {
+	id = 167238,
+	name = "华甲改弹幕特殊舰载机Lv8",
+	hp_growth = 3531,
+	base = 167231,
+	max_hp = 86,
+	spawn_brownian = 1,
+	weapon_ID = {
+		167248,
+		167258
+	}
+}
+_G.pg.base.aircraft_template[167239] = {
+	id = 167239,
+	name = "华甲改弹幕特殊舰载机Lv9",
+	hp_growth = 3772,
+	base = 167231,
+	max_hp = 92,
+	spawn_brownian = 1,
+	weapon_ID = {
+		167249,
+		167259
+	}
+}
+_G.pg.base.aircraft_template[167240] = {
+	id = 167240,
+	name = "华甲改弹幕特殊舰载机Lv10",
+	hp_growth = 4013,
+	base = 167231,
+	max_hp = 98,
+	spawn_brownian = 1,
+	weapon_ID = {
+		167250,
+		167260
+	}
+}

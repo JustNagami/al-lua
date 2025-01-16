@@ -215,18 +215,25 @@ end
 
 function var_0_0.didEnter(arg_22_0)
 	local var_22_0, var_22_1 = arg_22_0.apartment:getFavor()
+	local var_22_2 = arg_22_0.apartment:isMaxFavor()
 
 	setText(arg_22_0.rtLevelPanel:Find("bg/favor/level"), string.format("Lv.%d : ", arg_22_0.apartment.level))
-	setText(arg_22_0.rtLevelPanel:Find("bg/favor/level/Text"), string.format("%d/%d", var_22_0, var_22_1))
+
+	if var_22_2 then
+		setText(arg_22_0.rtLevelPanel:Find("bg/favor/level/Text"), "MAX")
+	else
+		setText(arg_22_0.rtLevelPanel:Find("bg/favor/level/Text"), string.format("%d/%d", var_22_0, var_22_1))
+	end
+
 	setSlider(arg_22_0.rtLevelPanel:Find("bg/favor/progressBg/progress"), 0, var_22_1, var_22_0)
 	arg_22_0.levelItemList:align(getDorm3dGameset("favor_level")[1])
 
 	arg_22_0.rtLevelContainer:GetComponent(typeof(ScrollRect)).horizontalNormalizedPosition = 0
 
-	local var_22_2 = arg_22_0.apartment.level >= getDorm3dGameset("drom3d_time_unlock")[1]
+	local var_22_3 = arg_22_0.apartment.level >= getDorm3dGameset("drom3d_time_unlock")[1]
 
-	setImageAlpha(arg_22_0.rtLevelPanel:Find("bg/bottom/btn_time"), not var_22_2 and 0.2 or 1)
-	setActive(arg_22_0.rtLevelPanel:Find("bg/bottom/btn_time/lock"), not var_22_2)
+	setImageAlpha(arg_22_0.rtLevelPanel:Find("bg/bottom/btn_time"), not var_22_3 and 0.2 or 1)
+	setActive(arg_22_0.rtLevelPanel:Find("bg/bottom/btn_time/lock"), not var_22_3)
 	setText(arg_22_0.rtLevelPanel:Find("bg/left/rot/Text"), i18n("dorm3d_appellation_title"))
 	setText(arg_22_0.rtRenameWindow:Find("panel/cancel/Text"), i18n("word_cancel"))
 	setText(arg_22_0.rtRenameWindow:Find("panel/confirm/Text"), i18n("word_ok"))

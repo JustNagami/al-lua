@@ -2082,13 +2082,11 @@ function var_0_0.HandleGameNotification(arg_246_0, arg_246_1, arg_246_2)
 
 						if arg_246_2.success then
 							var_249_0 = {
-								"shuohua_sikao_end",
 								"shuohua_wenhou",
 								"shuohua_sikao"
 							}
 						else
 							var_249_0 = {
-								"shuohua_sikao_end",
 								"shuohua_yaotou",
 								"shuohua_sikao"
 							}
@@ -2096,7 +2094,6 @@ function var_0_0.HandleGameNotification(arg_246_0, arg_246_1, arg_246_2)
 
 						seriesAsync(underscore.map(var_249_0, function(arg_250_0)
 							return function(arg_251_0)
-								warning(arg_250_0)
 								arg_246_0:PlaySingleAction(var_246_0, arg_250_0, arg_251_0)
 							end
 						end), function()
@@ -2111,9 +2108,7 @@ function var_0_0.HandleGameNotification(arg_246_0, arg_246_1, arg_246_2)
 						var_249_1.position = var_249_1.position + var_249_1.right * 0.11
 
 						local var_249_2 = {
-							"shuohua_sikao_end",
-							"shuohua_wenhou",
-							"shuohua_sikao"
+							"shuohua_gandong"
 						}
 
 						seriesAsync(underscore.map(var_249_2, function(arg_253_0)
@@ -2123,12 +2118,8 @@ function var_0_0.HandleGameNotification(arg_246_0, arg_246_1, arg_246_2)
 						end), function()
 							return
 						end)
-					elseif arg_246_2.operationCode == "GAME_CLOSE" then
-						arg_246_0:PlaySingleAction(var_246_0, "shuohua_sikao_end")
-
-						if arg_246_2.doTrack == false then
-							pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataMiniGame(3))
-						end
+					elseif arg_246_2.operationCode == "GAME_CLOSE" and arg_246_2.doTrack == false then
+						pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataMiniGame(3))
 					end
 				end
 			}, function()
@@ -2383,7 +2374,10 @@ function var_0_0.UpdateFavorDisplay(arg_294_0)
 		setText(arg_294_0.rtFavorLevel:Find("rank/Text"), arg_294_0.apartment.level)
 
 		local var_294_2, var_294_3 = arg_294_0.apartment:getFavor()
+		local var_294_4 = arg_294_0.apartment:isMaxFavor()
 
+		setActive(arg_294_0.rtFavorLevel:Find("Max"), var_294_4)
+		setActive(arg_294_0.rtFavorLevel:Find("Text"), not var_294_4)
 		setText(arg_294_0.rtFavorLevel:Find("Text"), string.format("<color=#ff6698>%d</color>/%d", var_294_2, var_294_3))
 	end
 
