@@ -29,6 +29,8 @@ function var_0_0.OnLoaded(arg_2_0)
 		ShipAtlasBgBtn.New(var_2_0, PlayerVitaeBaseBtn.HRZ_TYPE, arg_2_0.event, arg_2_0.bgFlag),
 		ShipAtlasLive2dBtn.New(var_2_0, PlayerVitaeBaseBtn.HRZ_TYPE, arg_2_0.event, arg_2_0.l2dFlag)
 	}
+	arg_2_0.changeSkinUI = arg_2_0:findTF("main/bottom/changeSkin")
+	arg_2_0.changeSkinToggle = ChangeSkinToggle.New(findTF(arg_2_0.changeSkinUI, "ChangeSkinToggleUI"))
 	arg_2_0.bgView = SkinAtlasBgView.New(arg_2_0:findTF("bg/bg"))
 	arg_2_0.paintingView = SkinAtlasPaintingView.New(arg_2_0:findTF("paint"))
 	arg_2_0.selectShipPage = ChangeShipSkinPage.New(arg_2_0._parentTf, arg_2_0.event)
@@ -86,13 +88,22 @@ function var_0_0.OnInit(arg_3_0)
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox(var_8_2)
 	end, SFX_PANEL)
-	arg_3_0:bind(var_0_0.ON_BG_SWITCH_DONE, function(arg_9_0, arg_9_1)
-		arg_3_0.bgFlag = arg_9_1
+	onButton(arg_3_0, arg_3_0.changeSkinUI, function()
+		if ShipGroup.GetChangeSkinData(arg_3_0.skin.id) then
+			local var_9_0 = ShipSkin.New({
+				id = ShipGroup.GetChangeSkinNextId(arg_3_0.skin.id)
+			})
+
+			arg_3_0:Flush(var_9_0, arg_3_0.index)
+		end
+	end, SFX_PANEL)
+	arg_3_0:bind(var_0_0.ON_BG_SWITCH_DONE, function(arg_10_0, arg_10_1)
+		arg_3_0.bgFlag = arg_10_1
 
 		arg_3_0.bgView:Init(arg_3_0.ship, arg_3_0.bgFlag)
 	end)
-	arg_3_0:bind(var_0_0.ON_L2D_SWITCH_DONE, function(arg_10_0, arg_10_1)
-		arg_3_0.l2dFlag = arg_10_1
+	arg_3_0:bind(var_0_0.ON_L2D_SWITCH_DONE, function(arg_11_0, arg_11_1)
+		arg_3_0.l2dFlag = arg_11_1
 
 		arg_3_0:UpdatePainting(arg_3_0.ship)
 	end)
@@ -103,196 +114,201 @@ function var_0_0.OnInit(arg_3_0)
 	end)
 end
 
-function var_0_0.OnNext(arg_13_0)
-	if arg_13_0.loading then
-		return
-	end
-
-	arg_13_0:emit(SkinAtlasScene.ON_NEXT_SKIN, arg_13_0.index)
-end
-
-function var_0_0.OnPrev(arg_14_0)
+function var_0_0.OnNext(arg_14_0)
 	if arg_14_0.loading then
 		return
 	end
 
-	arg_14_0:emit(SkinAtlasScene.ON_PREV_SKIN, arg_14_0.index)
+	arg_14_0:emit(SkinAtlasScene.ON_NEXT_SKIN, arg_14_0.index)
 end
 
-function var_0_0.Show(arg_15_0, arg_15_1, arg_15_2)
-	var_0_0.super.Show(arg_15_0)
-
-	arg_15_0.index = arg_15_2
-	arg_15_0.skin = arg_15_1
-	arg_15_0.bgFlag = true
-	arg_15_0.l2dFlag = false
-
-	local var_15_0 = arg_15_0.skin:ToShip()
-
-	assert(var_15_0)
-
-	arg_15_0.ship = var_15_0
-
-	arg_15_0:UpdateMain(var_15_0)
-
-	local var_15_1 = arg_15_0.skin:CantUse()
-
-	setActive(arg_15_0.changeBtnDis, var_15_1)
-	setActive(arg_15_0.changeBtnEn, not var_15_1)
-	setActive(arg_15_0.obtainBtn, not arg_15_0.skin:OwnShip())
-end
-
-function var_0_0.Flush(arg_16_0, arg_16_1, arg_16_2)
-	arg_16_0:Clear()
-	arg_16_0:Show(arg_16_1, arg_16_2)
-end
-
-function var_0_0.UpdateMain(arg_17_0, arg_17_1)
-	local var_17_0 = 0
-
-	for iter_17_0, iter_17_1 in ipairs(arg_17_0.btns) do
-		local var_17_1 = iter_17_1:IsActive(arg_17_1)
-
-		if var_17_1 then
-			var_17_0 = var_17_0 + 1
-		end
-
-		iter_17_1:Update(var_17_1, var_17_0, arg_17_1)
+function var_0_0.OnPrev(arg_15_0)
+	if arg_15_0.loading then
+		return
 	end
 
-	arg_17_0.nameTxt.text = arg_17_0.skin:getConfig("name")
-	arg_17_0.shipnameTxt.text = arg_17_1:getName()
-	arg_17_0.loading = true
+	arg_15_0:emit(SkinAtlasScene.ON_PREV_SKIN, arg_15_0.index)
+end
+
+function var_0_0.Show(arg_16_0, arg_16_1, arg_16_2)
+	var_0_0.super.Show(arg_16_0)
+
+	arg_16_0.index = arg_16_2
+	arg_16_0.skin = arg_16_1
+	arg_16_0.bgFlag = true
+	arg_16_0.l2dFlag = false
+
+	local var_16_0 = arg_16_0.skin:ToShip()
+
+	assert(var_16_0)
+
+	arg_16_0.ship = var_16_0
+
+	arg_16_0:UpdateMain(var_16_0)
+
+	local var_16_1 = arg_16_0.skin:CantUse()
+
+	setActive(arg_16_0.changeBtnDis, var_16_1)
+	setActive(arg_16_0.changeBtnEn, not var_16_1)
+
+	local var_16_2 = ShipGroup.GetChangeSkinData(arg_16_0.skin.id)
+
+	setActive(arg_16_0.changeSkinUI, var_16_2 and true or false)
+	arg_16_0.changeSkinToggle:setSkinData(arg_16_0.skin.id)
+	setActive(arg_16_0.obtainBtn, not arg_16_0.skin:OwnShip())
+end
+
+function var_0_0.Flush(arg_17_0, arg_17_1, arg_17_2)
+	arg_17_0:Clear()
+	arg_17_0:Show(arg_17_1, arg_17_2)
+end
+
+function var_0_0.UpdateMain(arg_18_0, arg_18_1)
+	local var_18_0 = 0
+
+	for iter_18_0, iter_18_1 in ipairs(arg_18_0.btns) do
+		local var_18_1 = iter_18_1:IsActive(arg_18_1)
+
+		if var_18_1 then
+			var_18_0 = var_18_0 + 1
+		end
+
+		iter_18_1:Update(var_18_1, var_18_0, arg_18_1)
+	end
+
+	arg_18_0.nameTxt.text = arg_18_0.skin:getConfig("name")
+	arg_18_0.shipnameTxt.text = arg_18_1:getName()
+	arg_18_0.loading = true
 
 	parallelAsync({
-		function(arg_18_0)
-			arg_17_0.bgView:Init(arg_17_1, arg_17_0.bgFlag, arg_18_0)
-		end,
 		function(arg_19_0)
-			arg_17_0:UpdatePainting(arg_17_1, arg_19_0)
+			arg_18_0.bgView:Init(arg_18_1, arg_18_0.bgFlag, arg_19_0)
 		end,
 		function(arg_20_0)
-			arg_17_0:UpdateChar(arg_17_1, arg_20_0)
+			arg_18_0:UpdatePainting(arg_18_1, arg_20_0)
+		end,
+		function(arg_21_0)
+			arg_18_0:UpdateChar(arg_18_1, arg_21_0)
 		end
 	}, function()
-		arg_17_0.loading = false
+		arg_18_0.loading = false
 	end)
 end
 
-function var_0_0.UpdatePainting(arg_22_0, arg_22_1, arg_22_2)
-	if arg_22_0.l2dFlag then
-		arg_22_0:InitL2D(arg_22_1, arg_22_2)
+function var_0_0.UpdatePainting(arg_23_0, arg_23_1, arg_23_2)
+	if arg_23_0.l2dFlag then
+		arg_23_0:InitL2D(arg_23_1, arg_23_2)
 	else
-		arg_22_0:InitPainting(arg_22_1, arg_22_2)
+		arg_23_0:InitPainting(arg_23_1, arg_23_2)
 	end
 end
 
-function var_0_0.InitPainting(arg_23_0, arg_23_1, arg_23_2)
-	arg_23_0:ClearPainting(arg_23_1)
-	setActive(arg_23_0.live2dContainer, false)
-
-	arg_23_0.painting = arg_23_1:getPainting()
-
-	setPaintingPrefabAsync(arg_23_0.paintingTr, arg_23_0.painting, "chuanwu", arg_23_2)
-end
-
-function var_0_0.InitL2D(arg_24_0, arg_24_1, arg_24_2)
+function var_0_0.InitPainting(arg_24_0, arg_24_1, arg_24_2)
 	arg_24_0:ClearPainting(arg_24_1)
+	setActive(arg_24_0.live2dContainer, false)
 
-	arg_24_0.live2d = SkinAtlasLive2dView.New(arg_24_1, arg_24_0.live2dContainer, arg_24_2)
+	arg_24_0.painting = arg_24_1:getPainting()
 
-	arg_24_0.live2d.live2dChar:changeTriggerFlag(false)
+	setPaintingPrefabAsync(arg_24_0.paintingTr, arg_24_0.painting, "chuanwu", arg_24_2)
 end
 
-function var_0_0.UpdateChar(arg_25_0, arg_25_1, arg_25_2)
-	local var_25_0 = arg_25_1:getPrefab()
+function var_0_0.InitL2D(arg_25_0, arg_25_1, arg_25_2)
+	arg_25_0:ClearPainting(arg_25_1)
 
-	PoolMgr.GetInstance():GetSpineChar(var_25_0, true, function(arg_26_0)
-		arg_25_0.modelTf = tf(arg_26_0)
-		arg_25_0.modelTf.localScale = Vector3(0.9, 0.9, 1)
-		arg_25_0.modelTf.localPosition = Vector3(0, -135, 0)
+	arg_25_0.live2d = SkinAtlasLive2dView.New(arg_25_1, arg_25_0.live2dContainer, arg_25_2)
 
-		pg.ViewUtils.SetLayer(arg_25_0.modelTf, Layer.UI)
-		setParent(arg_25_0.modelTf, arg_25_0.charParent)
-		arg_26_0:GetComponent("SpineAnimUI"):SetAction("normal", 0)
-		arg_25_2()
+	arg_25_0.live2d.live2dChar:changeTriggerFlag(false)
+end
+
+function var_0_0.UpdateChar(arg_26_0, arg_26_1, arg_26_2)
+	local var_26_0 = arg_26_1:getPrefab()
+
+	PoolMgr.GetInstance():GetSpineChar(var_26_0, true, function(arg_27_0)
+		arg_26_0.modelTf = tf(arg_27_0)
+		arg_26_0.modelTf.localScale = Vector3(0.9, 0.9, 1)
+		arg_26_0.modelTf.localPosition = Vector3(0, -135, 0)
+
+		pg.ViewUtils.SetLayer(arg_26_0.modelTf, Layer.UI)
+		setParent(arg_26_0.modelTf, arg_26_0.charParent)
+		arg_27_0:GetComponent("SpineAnimUI"):SetAction("normal", 0)
+		arg_26_2()
 	end)
 end
 
-function var_0_0.ClearPainting(arg_27_0, arg_27_1)
-	if arg_27_0.live2d then
-		arg_27_0.live2d:Dispose()
+function var_0_0.ClearPainting(arg_28_0, arg_28_1)
+	if arg_28_0.live2d then
+		arg_28_0.live2d:Dispose()
 
-		arg_27_0.live2d = nil
-	elseif arg_27_0.painting then
-		retPaintingPrefab(arg_27_0.paintingTr, arg_27_0.painting)
+		arg_28_0.live2d = nil
+	elseif arg_28_0.painting then
+		retPaintingPrefab(arg_28_0.paintingTr, arg_28_0.painting)
 
-		arg_27_0.painting = nil
+		arg_28_0.painting = nil
 	end
 end
 
-function var_0_0.ClearChar(arg_28_0, arg_28_1)
-	if arg_28_0.modelTf then
-		PoolMgr.GetInstance():ReturnSpineChar(arg_28_1:getPrefab(), arg_28_0.modelTf.gameObject)
+function var_0_0.ClearChar(arg_29_0, arg_29_1)
+	if arg_29_0.modelTf then
+		PoolMgr.GetInstance():ReturnSpineChar(arg_29_1:getPrefab(), arg_29_0.modelTf.gameObject)
 
-		arg_28_0.modelTf = nil
+		arg_29_0.modelTf = nil
 	end
 end
 
-function var_0_0.Clear(arg_29_0)
-	local var_29_0 = arg_29_0.ship
+function var_0_0.Clear(arg_30_0)
+	local var_30_0 = arg_30_0.ship
 
-	if var_29_0 then
-		arg_29_0:ClearPainting(var_29_0)
-		arg_29_0:ClearChar(var_29_0)
+	if var_30_0 then
+		arg_30_0:ClearPainting(var_30_0)
+		arg_30_0:ClearChar(var_30_0)
 
-		arg_29_0.ship = nil
+		arg_30_0.ship = nil
 	end
 end
 
-function var_0_0.Hide(arg_30_0)
-	var_0_0.super.Hide(arg_30_0)
-	arg_30_0:Clear()
+function var_0_0.Hide(arg_31_0)
+	var_0_0.super.Hide(arg_31_0)
+	arg_31_0:Clear()
 
-	arg_30_0.skin = nil
+	arg_31_0.skin = nil
 
-	arg_30_0.bgView:Clear()
+	arg_31_0.bgView:Clear()
 
-	if arg_30_0.paintingView:IsEnter() then
-		arg_30_0.paintingView:Exit()
+	if arg_31_0.paintingView:IsEnter() then
+		arg_31_0.paintingView:Exit()
 	end
 end
 
-function var_0_0.IsShowSelectShipView(arg_31_0)
-	return arg_31_0.selectShipPage and arg_31_0.selectShipPage:GetLoaded() and arg_31_0.selectShipPage:isShowing()
+function var_0_0.IsShowSelectShipView(arg_32_0)
+	return arg_32_0.selectShipPage and arg_32_0.selectShipPage:GetLoaded() and arg_32_0.selectShipPage:isShowing()
 end
 
-function var_0_0.CloseSelectShipView(arg_32_0)
-	arg_32_0.selectShipPage:Hide()
+function var_0_0.CloseSelectShipView(arg_33_0)
+	arg_33_0.selectShipPage:Hide()
 end
 
-function var_0_0.OnDestroy(arg_33_0)
-	if arg_33_0:isShowing() then
-		arg_33_0:Hide()
+function var_0_0.OnDestroy(arg_34_0)
+	if arg_34_0:isShowing() then
+		arg_34_0:Hide()
 	end
 
-	for iter_33_0, iter_33_1 in ipairs(arg_33_0.btns) do
-		iter_33_1:Dispose()
+	for iter_34_0, iter_34_1 in ipairs(arg_34_0.btns) do
+		iter_34_1:Dispose()
 	end
 
-	arg_33_0.btns = nil
+	arg_34_0.btns = nil
 
-	arg_33_0.bgView:Dispose()
+	arg_34_0.bgView:Dispose()
 
-	arg_33_0.bgView = nil
+	arg_34_0.bgView = nil
 
-	arg_33_0.selectShipPage:Destroy()
+	arg_34_0.selectShipPage:Destroy()
 
-	arg_33_0.selectShipPage = nil
+	arg_34_0.selectShipPage = nil
 
-	arg_33_0.paintingView:Dispose()
+	arg_34_0.paintingView:Dispose()
 
-	arg_33_0.paintingView = nil
+	arg_34_0.paintingView = nil
 end
 
 return var_0_0

@@ -261,14 +261,15 @@ end
 
 local function var_0_3(arg_21_0)
 	local var_21_0 = {}
-	local var_21_1 = getProxy(ShipSkinProxy):getSkinList()
-	local var_21_2 = getProxy(CollectionProxy):getShipGroup(arg_21_0)
+	local var_21_1 = getProxy(ShipSkinProxy)
+	local var_21_2 = var_21_1:getSkinList()
+	local var_21_3 = getProxy(CollectionProxy):getShipGroup(arg_21_0)
 
-	if var_21_2 then
-		local var_21_3 = ShipGroup.getSkinList(arg_21_0)
+	if var_21_3 then
+		local var_21_4 = ShipGroup.getSkinList(arg_21_0)
 
-		for iter_21_0, iter_21_1 in ipairs(var_21_3) do
-			if iter_21_1.skin_type == ShipSkin.SKIN_TYPE_DEFAULT or table.contains(var_21_1, iter_21_1.id) or iter_21_1.skin_type == ShipSkin.SKIN_TYPE_REMAKE and var_21_2.trans or iter_21_1.skin_type == ShipSkin.SKIN_TYPE_PROPOSE and var_21_2.married == 1 then
+		for iter_21_0, iter_21_1 in ipairs(var_21_4) do
+			if iter_21_1.skin_type == ShipSkin.SKIN_TYPE_DEFAULT or table.contains(var_21_2, iter_21_1.id) or iter_21_1.skin_type == ShipSkin.SKIN_TYPE_REMAKE and var_21_3.trans or iter_21_1.skin_type == ShipSkin.SKIN_TYPE_PROPOSE and var_21_3.married == 1 or var_21_1:hasSkin(iter_21_1.id) then
 				var_21_0[iter_21_1.id] = true
 			end
 		end

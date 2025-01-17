@@ -64,6 +64,8 @@ pg.pay_data_display = setmetatable({
 		83,
 		84,
 		85,
+		86,
+		88,
 		1000,
 		1001,
 		1002,
@@ -160,6 +162,7 @@ pg.pay_data_display = setmetatable({
 		2038,
 		2039,
 		2040,
+		2041,
 		5011,
 		5012,
 		5013,
@@ -6702,6 +6705,234 @@ pg.base.pay_data_display = {
 			}
 		}
 	},
+	[86] = {
+		name = "Spring Lucky Bag 2025 A",
+		limit_group = 0,
+		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
+		type = 1,
+		subject = "Spring Lucky Bag 2025 A",
+		limit_arg = 1,
+		name_display = "Spring Lucky Bag 2025 A",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 2999,
+		id = 86,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai21",
+		skin_inquire_relation = 86210,
+		id_str = "com.yostaren.azurlane.luckybag49",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a random character outfit, 2025 Gems, and a large amount of supplies.",
+		airijp_id = "com.yostaren.azurlane.luckybag49",
+		extra_service_item = {
+			{
+				2,
+				86210,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					1,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					2,
+					5
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86210,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81210,
+				1
+			}
+		}
+	},
+	[88] = {
+		name = "Spring Lucky Box 2024 A (Rerun)",
+		limit_group = 0,
+		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
+		type = 1,
+		subject = "Spring Lucky Box 2024 A (Rerun)",
+		limit_arg = 1,
+		name_display = "Spring Lucky Box 2024 A (Rerun)",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 2999,
+		id = 88,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai11",
+		skin_inquire_relation = 86202,
+		id_str = "com.yostaren.azurlane.luckybag50",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a random character outfit, 2024 Gems, and a large amount of supplies.",
+		airijp_id = "com.yostaren.azurlane.luckybag50",
+		extra_service_item = {
+			{
+				2,
+				86202,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					1,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					2,
+					5
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86202,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81202,
+				1
+			}
+		}
+	},
 	[1000] = {
 		name = "Fair Winds Cruise Pass",
 		limit_group = 0,
@@ -8155,7 +8386,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "Fair Winds Cruise Pass",
 		show_group = "",
-		type_order = 4,
+		type_order = 6,
 		extra_service = 4,
 		money = 999,
 		id = 1019,
@@ -15044,7 +15275,7 @@ pg.base.pay_data_display = {
 		limit_arg = 1,
 		name_display = "Premium Winter Gift Pack",
 		show_group = "",
-		type_order = 0,
+		type_order = 4,
 		extra_service = 3,
 		money = 3699,
 		id = 2040,
@@ -15140,6 +15371,105 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40053,
+				1
+			}
+		}
+	},
+	[2041] = {
+		name = "Outfit Pack (Kronshtadt)",
+		limit_group = 0,
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		subject = "Outfit Pack (Kronshtadt)",
+		limit_arg = 1,
+		name_display = "Outfit Pack (Kronshtadt)",
+		show_group = "",
+		type_order = 5,
+		extra_service = 3,
+		money = 1799,
+		id = 2041,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		sub_display = "",
+		picture = "huteng_package",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack19",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains an Outfit Voucher, Wisdom Cubes, T2 EXP Data Packs, and more.",
+		airijp_id = "com.yostaren.azurlane.pack19",
+		extra_service_item = {
+			{
+				2,
+				59561,
+				1
+			},
+			{
+				2,
+				20001,
+				40
+			},
+			{
+				1,
+				1,
+				30000
+			},
+			{
+				2,
+				16502,
+				50
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					1,
+					9
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					1,
+					15
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				59561,
+				1
+			},
+			{
+				2,
+				20001,
+				40
+			},
+			{
+				2,
+				16502,
+				50
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40050,
 				1
 			}
 		}

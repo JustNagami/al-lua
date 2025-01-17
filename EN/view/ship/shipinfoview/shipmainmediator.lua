@@ -562,6 +562,7 @@ function var_0_0.listNotificationInterests(arg_53_0)
 		GAME.HIDE_Ship_MAIN_SCENE_WORD,
 		GAME.PROPOSE_SHIP_DONE,
 		GAME.USE_ADD_SHIPEXP_ITEM_DONE,
+		GAME.CHANGE_SKIN_UPDATE,
 		EquipmentProxy.EQUIPMENT_UPDATED,
 		GAME.WILL_LOGOUT,
 		PaintingGroupConst.NotifyPaintingDownloadFinish
@@ -573,6 +574,12 @@ function var_0_0.handleNotification(arg_54_0, arg_54_1)
 	local var_54_1 = arg_54_1:getBody()
 
 	if var_54_0 == BayProxy.SHIP_UPDATED then
+		if var_54_1.id == arg_54_0.contextData.shipId then
+			arg_54_0.showTrans = var_54_1:isRemoulded()
+
+			arg_54_0.viewComponent:setShip(var_54_1)
+		end
+	elseif var_54_0 == GAME.CHANGE_SKIN_UPDATE then
 		if var_54_1.id == arg_54_0.contextData.shipId then
 			arg_54_0.showTrans = var_54_1:isRemoulded()
 

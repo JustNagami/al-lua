@@ -83,6 +83,7 @@ function var_0_0.init(arg_6_0)
 	setText(findTF(arg_6_0.changeRoomPanel, "frame/bg/label_recv"), i18n("notice_label_recv"))
 	setText(findTF(arg_6_0.changeRoomPanel, "frame/bg/label_room"), i18n("notice_label_room"))
 	setText(findTF(arg_6_0.changeRoomPanel, "frame/bg/label_tip"), i18n("notice_label_tip"))
+	setText(findTF(arg_6_0.changeRoomPanel, "frame/bg/InputField/Placeholder"), i18n("please_input_1_99"))
 	setText(findTF(arg_6_0.changeRoomPanel, "frame/cancel/Image"), i18n("word_cancel"))
 	setText(findTF(arg_6_0.changeRoomPanel, "frame/confirm/Image"), i18n("word_ok"))
 
