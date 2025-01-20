@@ -46,7 +46,8 @@ function var_0_0.listNotificationInterests(arg_6_0)
 		ShipSkinProxy.SHIP_SKINS_UPDATE,
 		GAME.SKIN_SHOPPIGN_DONE,
 		GAME.SKIN_COUPON_SHOPPING_DONE,
-		BayProxy.SHIP_UPDATED
+		BayProxy.SHIP_UPDATED,
+		GAME.CHANGE_SKIN_UPDATE
 	}
 end
 
@@ -71,12 +72,21 @@ function var_0_0.handleNotification(arg_7_0, arg_7_1)
 
 		arg_7_0.viewComponent:setSkinList(var_7_3)
 		arg_7_0.viewComponent:openSelectSkinPanel()
-	elseif var_7_0 == BayProxy.SHIP_UPDATED and var_7_1.id == arg_7_0.shipVO.id then
+	elseif var_7_0 == BayProxy.SHIP_UPDATED then
+		if var_7_1.id == arg_7_0.shipVO.id then
+			arg_7_0.viewComponent:setShip(var_7_1)
+
+			local var_7_4 = getProxy(ShipSkinProxy):getSkinList()
+
+			arg_7_0.viewComponent:setSkinList(var_7_4)
+			arg_7_0.viewComponent:openSelectSkinPanel()
+		end
+	elseif var_7_0 == GAME.CHANGE_SKIN_UPDATE and var_7_1.id == arg_7_0.shipVO.id then
 		arg_7_0.viewComponent:setShip(var_7_1)
 
-		local var_7_4 = getProxy(ShipSkinProxy):getSkinList()
+		local var_7_5 = getProxy(ShipSkinProxy):getSkinList()
 
-		arg_7_0.viewComponent:setSkinList(var_7_4)
+		arg_7_0.viewComponent:setSkinList(var_7_5)
 		arg_7_0.viewComponent:openSelectSkinPanel()
 	end
 end

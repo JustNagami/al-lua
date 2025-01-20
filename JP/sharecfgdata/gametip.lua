@@ -1202,6 +1202,9 @@ _G.pg.base.gametip.battle_battleMediator_goOnFight = {
 _G.pg.base.gametip.battle_battleMediator_existFight = {
 	tip = "戦闘中止"
 }
+_G.pg.base.gametip.battle_battleMediator_remainTime = {
+	tip = "残り時間"
+}
 _G.pg.base.gametip.battle_battleMediator_clear_warning = {
 	tip = "戦闘を中断すると、チャレンジ進捗がリセットされ、累計得点は一つ前のステージの得点まで計算されます。戦闘を中断しますか？"
 }
@@ -2026,6 +2029,126 @@ _G.pg.base.gametip.mail_confirm_set_important_flag = {
 _G.pg.base.gametip.mail_confirm_cancel_important_flag = {
 	tip = "メール保護を解除しますか？"
 }
+_G.pg.base.gametip.mail_confirm_delete_important_flag = {
+	tip = "重要メールは削除できません"
+}
+_G.pg.base.gametip.mail_mail_page = {
+	tip = "メール"
+}
+_G.pg.base.gametip.mail_storeroom_page = {
+	tip = "貯蔵庫"
+}
+_G.pg.base.gametip.mail_boxroom_page = {
+	tip = "保管庫"
+}
+_G.pg.base.gametip.mail_all_page = {
+	tip = "全て"
+}
+_G.pg.base.gametip.mail_important_page = {
+	tip = "重要"
+}
+_G.pg.base.gametip.mail_rare_page = {
+	tip = "特殊"
+}
+_G.pg.base.gametip.mail_reward_got = {
+	tip = "受取済"
+}
+_G.pg.base.gametip.mail_reward_tips = {
+	tip = "※メールに添付された資金と燃料は貯蔵庫に送られます"
+}
+_G.pg.base.gametip.mail_boxroom_extend_title = {
+	tip = "貯蔵庫拡張"
+}
+_G.pg.base.gametip.mail_boxroom_extend_tips = {
+	tip = "貯蔵庫容量アップ"
+}
+_G.pg.base.gametip.mail_buy_button = {
+	tip = "購入"
+}
+_G.pg.base.gametip.mail_manager_title = {
+	tip = "メール管理"
+}
+_G.pg.base.gametip.mail_manager_tips_2 = {
+	tip = "※メールに添付された資金と燃料は貯蔵庫に送られます"
+}
+_G.pg.base.gametip.mail_manager_all = {
+	tip = "全ての添付アイテム"
+}
+_G.pg.base.gametip.mail_manager_rare = {
+	tip = "下記アイテムのみ含まれるメール"
+}
+_G.pg.base.gametip.mail_get_oneclick = {
+	tip = "一括受取"
+}
+_G.pg.base.gametip.mail_read_oneclick = {
+	tip = "一括既読"
+}
+_G.pg.base.gametip.mail_delete_oneclick = {
+	tip = "一括削除"
+}
+_G.pg.base.gametip.mail_search_new = {
+	tip = "タップで検索"
+}
+_G.pg.base.gametip.mail_receive_time = {
+	tip = "受信時間"
+}
+_G.pg.base.gametip.mail_move_oneclick = {
+	tip = "一括移動"
+}
+_G.pg.base.gametip.mail_deleteread_button = {
+	tip = "既読削除"
+}
+_G.pg.base.gametip.mail_manage_button = {
+	tip = "メール管理"
+}
+_G.pg.base.gametip.mail_move_button = {
+	tip = "一括移動"
+}
+_G.pg.base.gametip.mail_delet_button = {
+	tip = "削除"
+}
+_G.pg.base.gametip.mail_delet_button_1 = {
+	tip = "メール削除"
+}
+_G.pg.base.gametip.mail_moveone_button = {
+	tip = "メール移動"
+}
+_G.pg.base.gametip.mail_getone_button = {
+	tip = "アイテム入手"
+}
+_G.pg.base.gametip.mail_take_all_mail_msgbox = {
+	tip = "※下記添付アイテムを一括で受け取ります"
+}
+_G.pg.base.gametip.mail_take_maildetail_msgbox = {
+	tip = "メール詳細"
+}
+_G.pg.base.gametip.mail_take_canget_msgbox = {
+	tip = "受け取ると下記を入手可能："
+}
+_G.pg.base.gametip.mail_getbox_title = {
+	tip = "メール受取"
+}
+_G.pg.base.gametip.mail_title_new = {
+	tip = "メール"
+}
+_G.pg.base.gametip.mail_boxtitle_information = {
+	tip = "情報"
+}
+_G.pg.base.gametip.mail_box_confirm = {
+	tip = "確定"
+}
+_G.pg.base.gametip.mail_box_cancel = {
+	tip = "戻る"
+}
+_G.pg.base.gametip.mail_title_English = {
+	tip = "MAIL BOX"
+}
+_G.pg.base.gametip.mail_toggle_on = {
+	tip = "ON"
+}
+_G.pg.base.gametip.mail_toggle_off = {
+	tip = "OFF"
+}
 _G.pg.base.gametip.main_mailLayer_mailBoxClear = {
 	tip = "メールボックスをクリアしました"
 }
@@ -2044,6 +2167,9 @@ _G.pg.base.gametip.main_mailLayer_attachTaken = {
 _G.pg.base.gametip.main_mailLayer_quest_clear = {
 	tip = "既読メールをすべて削除しますか？<color=#92fc63>（添付アイテム未受取のメールは削除されません）</color>"
 }
+_G.pg.base.gametip.main_mailLayer_quest_clear_choice = {
+	tip = "選択中の既読メールをすべて削除しますか？<color=#92fc63>（添付ファイルを未受取のメールは削除されません）</color>"
+}
 _G.pg.base.gametip.main_mailLayer_quest_deleteNotTakeAttach = {
 	tip = "<color=#92fc63>添付ファイルは受け取っていません</color>、本当に削除しますか?"
 }
@@ -2055,6 +2181,12 @@ _G.pg.base.gametip.main_mailMediator_mailDelete = {
 }
 _G.pg.base.gametip.main_mailMediator_attachTaken = {
 	tip = "添付アイテムを受け取りました"
+}
+_G.pg.base.gametip.main_mailMediator_mailread = {
+	tip = "メールが既読状態になりました"
+}
+_G.pg.base.gametip.main_mailMediator_mailmove = {
+	tip = "メールが保管庫に移動されました"
 }
 _G.pg.base.gametip.main_mailMediator_notingToTake = {
 	tip = "受け取れるアイテムはありません"
@@ -2188,13 +2320,13 @@ _G.pg.base.gametip.coloring_help_tip = {
 ・おえかき完成の報酬一覧：
 No.1 ランダム教科書T3×2
 No.2 年玉×2
-No.3 艦砲パーツT3×2
+No.3 限定家具「玉竹バブルマシン」
 No.4 年玉×2
-No.5 逸仙専用設備
+No.5 限定家具「玉竹バブルマシン」
 No.6 年玉×2
 No.7 艦船「鞍山」、年玉×1
 ・イベント終了後、未使用の絵の具はリセットされます
-・2月5日(月)まで毎日新しい絵が一枚ずつ解放され
+・1月22日(水)まで毎日新しい絵が一枚ずつ解放され
 ます。]]
 		}
 	}
@@ -3835,6 +3967,9 @@ _G.pg.base.gametip.quota_shop_good_limit = {
 _G.pg.base.gametip.quota_shop_limit_error = {
 	tip = "すでに所持数上限に達しているためこれ以上入手できません"
 }
+_G.pg.base.gametip.item_assigned_type_limit_error = {
+	tip = "すでに所持数上限に達しているため交換できません"
+}
 _G.pg.base.gametip.event_start_success = {
 	tip = "委託開始"
 }
@@ -4275,6 +4410,9 @@ _G.pg.base.gametip.word_shipNation_meta_index = {
 }
 _G.pg.base.gametip.word_shipNation_senran = {
 	tip = "閃乱カグラ"
+}
+_G.pg.base.gametip.word_shipNation_tolove = {
+	tip = "ToLOVEる"
 }
 _G.pg.base.gametip.word_reset = {
 	tip = "クリア"
@@ -6305,6 +6443,15 @@ _G.pg.base.gametip.ship_remould_selecte_exceed = {
 _G.pg.base.gametip.ship_remould_sueecss = {
 	tip = "改造に成功しました"
 }
+_G.pg.base.gametip.ship_remould_warning_101994 = {
+	tip = [[
+改造を行うと<color=#92fc63>「電気出力増幅装置」</color>が消費されます。
+続けますか？
+改造すると <color=#92fc63>【対空砲砲座+1】、【特殊対潜装備追加】</color>
+スキル<color=#92fc63>【レインボー・プラン】</color>が<color=#92fc63>【レインボー・プラン改】に強化</color>
+スキル<color=#92fc63>【特殊弾幕-エルドリッジⅡ】</color>
+が<color=#92fc63>【特殊弾幕-エルドリッジⅢ】</color>に強化されます]]
+}
 _G.pg.base.gametip.ship_remould_warning_102174 = {
 	tip = "近代化改修は<color=#92fc63>輝く☆マイク</color>を消費します。\n続けますか？"
 }
@@ -6313,6 +6460,12 @@ _G.pg.base.gametip.ship_remould_warning_102284 = {
 }
 _G.pg.base.gametip.ship_remould_warning_102304 = {
 	tip = "改造を行うと<color=#92fc63>【主砲砲座+1】</color>\nスキル<color=#92fc63>【戦争の悲劇】</color>が<color=#92fc63>【戦争の悲劇·改】</color>に変化\nスキル<color=#92fc63>【全弾発射II】</color>が<color=#92fc63>【全弾発射III】に変化</color>"
+}
+_G.pg.base.gametip.ship_remould_warning_105214 = {
+	tip = "改造（近代化改修）すると、スキル\n<color=#92fc63>【BIG SEVEN】</color>はスキル<color=#92fc63>【BIG SEVEN·コロラド】</color>に強化される"
+}
+_G.pg.base.gametip.ship_remould_warning_105224 = {
+	tip = "改造（近代化改修）を行うと<color=#92fc63>【BIG SEVEN】</color>スキルが\n<color=#92fc63>【BIG SEVEN·メリーランド】に強化されます</color>"
 }
 _G.pg.base.gametip.ship_remould_warning_105234 = {
 	tip = "改造(近代化改修)終了後、スキル<color=#92fc63>【BIG SEVEN】</color>が\n<color=#92fc63>【BIG SEVEN·ウェストバージニア】</color>に強化される"
@@ -6436,6 +6589,23 @@ _G.pg.base.gametip.ship_remould_warning_502114 = {
 }
 _G.pg.base.gametip.ship_remould_warning_506114 = {
 	tip = "改造（近代化改修）を行うと、<color=#92fc63>【1番兵装枠に戦闘機を装備可能】【1番兵装枠機数+2】</color>、<color=#92fc63>【2番兵装枠に任意の艦載機を装備可能】【2番兵装枠機数/砲座+1】</color>\n続けますか？"
+}
+_G.pg.base.gametip.ship_remould_warning_506124 = {
+	tip = "改造（近代化改修）を行うと<color=#92fc63>【1つ目の装備枠に戦闘機装備可能】【2つ目の装備枠に艦載機装備可能】</color>、<color=#92fc63>【1つ目と2つ目の装備枠の威力補正+10%】</color>\n改造を続けますか？"
+}
+_G.pg.base.gametip.ship_remould_warning_520024 = {
+	tip = [[
+改造（近代化改修）を行うと艦種は：
+ミサイル駆逐艦（前衛配置モード）に変更されます
+一部ステータスが変化します
+改造を続けますか？]]
+}
+_G.pg.base.gametip.ship_remould_warning_521024 = {
+	tip = [[
+改造（近代化改修）を行うと艦種は：
+ミサイル駆逐艦（主力配置モード）に変更されます
+一部ステータスが変化します
+改造を続けますか？]]
 }
 _G.pg.base.gametip.word_soundfiles_download_title = {
 	tip = "ボイス更新"
@@ -8237,16 +8407,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "アビリティPtが不足しています"
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "期間限定建造を累計200回行うと「フリッツ・ルメイ」を確定で入手可能！（最大4隻まで）"
+	tip = "期間限定建造を累計200回行うと「ヨークタウンⅡ」を確定で入手可能！（最大4隻まで）"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "「ウルリッヒ・フォン・フッテン」常設実装！"
+	tip = "「寰昌」常設実装！"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "「ジェーナス」「マンチェスター」常設実装！"
+	tip = "「済安」「龍武」「虎賁」常設実装！"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "「アルビオン」常設実装！"
+	tip = "「クロンシュタット」「ヴォルガ」常設実装！"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -8356,6 +8526,9 @@ _G.pg.base.gametip.tec_catchup_4 = {
 }
 _G.pg.base.gametip.tec_catchup_5 = {
 	tip = "Ⅴ期"
+}
+_G.pg.base.gametip.tec_catchup_6 = {
+	tip = "Ⅵ期"
 }
 _G.pg.base.gametip.tec_notice = {
 	tip = "科学研究$1任務すべてクリアで開放"
@@ -9085,11 +9258,11 @@ _G.pg.base.gametip.world_boss_help = {
 			info = "<color=#92fc63>★遊び方</color>"
 		},
 		{
-			info = "イベント「新春宴会狂騒曲」とは、<color=#92fc63>「演習Pt」</color>を集めて作戦進捗を進めると、個人累計Pt報酬と作戦進捗報酬が得られるイベントになります。"
+			info = "イベント「新春華裳協奏曲」とは、<color=#92fc63>「演習Pt」</color>を集めて作戦進捗を進めると、個人累計Pt報酬と作戦進捗報酬が得られるイベントになります。"
 		},
 		{
 			info = [[
-イベント期間中、アルビオンたちが率いる艦隊を相手に戦う「演習作戦」特別ステージが登場します。
+イベント期間中、敵艦隊を相手に戦う「演習作戦」特別ステージが登場します。
 作戦を完遂するには指揮官同士で協力し、「演習Pt」を集め、作戦進捗を進める<color=#92fc63>（演習ゲージを0%まで削る）</color>必要があります。
 作戦に成功した場合、作戦に参加した指揮官に報酬として特別兵装をメールで配布します。
 ※メール数が1000を超えると報酬メールを受け取れない場合がありますので、ご注意ください。
@@ -9771,6 +9944,52 @@ _G.pg.base.gametip.blueprint_simulation_confirm_99902 = {
 152mm三連装砲Mle1930
 二連装ボフォース40mm機関砲</color></size>]]
 }
+_G.pg.base.gametip.blueprint_simulation_confirm_19905 = {
+	tip = [[
+<size=28>弾幕確認機能（模擬戦）を起動しますか？
+(※実際の艦の性能とは異なります）
+使用兵装：<color=#ff5c5c>
+127mm単装砲
+五連装533mm魚雷
+試作型F8Fベアキャット（フロート）</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_39907 = {
+	tip = [[
+<size=28>弾幕確認機能（模擬戦）を起動しますか？
+(※実際の艦の性能とは異なります）
+使用兵装：<color=#ff5c5c>
+試作型410mm連装砲Mod.A
+140mm単装砲
+試作型五式40mm高射機関砲</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_69902 = {
+	tip = [[
+<size=28>弾幕確認機能（模擬戦）を起動しますか？
+(※実際の艦の性能とは異なります）
+使用兵装：<color=#ff5c5c>
+試作型254mm三連装砲Mod1939
+試作型152mm三連装砲Model1936
+試作型90mm連装高角砲Model1939</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_89904 = {
+	tip = [[
+<size=28>弾幕確認機能（模擬戦）を起動しますか？
+(※実際の艦の性能とは異なります）
+使用兵装：<color=#ff5c5c>
+152mm三連装砲Mle1930（榴弾）
+三連装550mm魚雷
+二連装57mm／L60ボフォース対空機関砲Mle1951</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_79902 = {
+	tip = [[
+<size=28>弾幕確認機能（模擬戦）を起動しますか？
+(※実際の艦の性能とは異なります）
+使用兵装：<color=#ff5c5c>
+試作型艦上式La-9
+試作型艦上式La-9
+試作型VIT-2（モードチェンジ）
+</color></size>]]
+}
 _G.pg.base.gametip.electrotherapy_wanning = {
 	tip = "鏡面海域化領域・接近中"
 }
@@ -9870,6 +10089,127 @@ _G.pg.base.gametip.warning_mail_max_1 = {
 }
 _G.pg.base.gametip.warning_mail_max_2 = {
 	tip = "メール所持数が上限に達しています。メールを整理してください"
+}
+_G.pg.base.gametip.warning_mail_max_3 = {
+	tip = "メールボックスのメール所持数が所持可能上限(<color=#FF5C5C>$1</color>/100)に達しているため、メールを新たに受信できません"
+}
+_G.pg.base.gametip.warning_mail_max_4 = {
+	tip = "メールボックスがいっぱいです。所持数が所持上限に達しているとメールを新たに受信できません。メールボックスを閉じますか？"
+}
+_G.pg.base.gametip.warning_mail_max_5 = {
+	tip = "※上限に達するとメールを受信できなくなります"
+}
+_G.pg.base.gametip.mail_moveto_markroom_1 = {
+	tip = "メールをメールボックスから<color=#92fc63>【保管庫】</color>に移動しますか？\n移動すると、メールの添付アイテムが自動で取り出されます"
+}
+_G.pg.base.gametip.mail_moveto_markroom_2 = {
+	tip = "重要メールをメールボックスから<color=#92fc63>【保管庫】</color>に移動しますか？\n移動すると、メールの添付アイテムが自動で取り出されます"
+}
+_G.pg.base.gametip.mail_moveto_markroom_max = {
+	tip = "<color=#92fc63>【保管庫】</color>のメール保管数上限に達しています。メールを移動できません"
+}
+_G.pg.base.gametip.mail_markroom_delete = {
+	tip = "メール<color=#92fc63>《$1》</color>を完全に削除しますか？"
+}
+_G.pg.base.gametip.mail_markroom_tip = {
+	tip = "※上限は指揮官レベルによって影響されます"
+}
+_G.pg.base.gametip.mail_manage_1 = {
+	tip = "すべて"
+}
+_G.pg.base.gametip.mail_manage_2 = {
+	tip = "下記アイテムのみ含まれるメール"
+}
+_G.pg.base.gametip.mail_manage_3 = {
+	tip = "条件を満たしたメールは存在しません"
+}
+_G.pg.base.gametip.mail_manage_tip_1 = {
+	tip = "※一括削除は添付アイテムを受取済みのメールのみ削除されます"
+}
+_G.pg.base.gametip.mail_storeroom_tips = {
+	tip = "※添付アイテムの資金・燃料は【貯蔵庫】に移動されます"
+}
+_G.pg.base.gametip.mail_storeroom_noextend = {
+	tip = "貯蔵庫の資源保管枠が上限に達しています。これ以上は拡張できません"
+}
+_G.pg.base.gametip.mail_storeroom_extend = {
+	tip = "貯蔵庫容量アップ："
+}
+_G.pg.base.gametip.mail_storeroom_extend_1 = {
+	tip = "貯蔵庫拡張成功"
+}
+_G.pg.base.gametip.mail_storeroom_taken_1 = {
+	tip = "資源を取り出しました"
+}
+_G.pg.base.gametip.mail_storeroom_max_1 = {
+	tip = "貯蔵庫の資源保管量が上限に達しているため、下記の資源が廃棄されます。続けますか？"
+}
+_G.pg.base.gametip.mail_storeroom_max_2 = {
+	tip = "<color=#238c40>$1</color>を入力して操作を続けてください"
+}
+_G.pg.base.gametip.mail_storeroom_max_3 = {
+	tip = "※受け取ると、燃料所持数が所持上限を超えてしまいます"
+}
+_G.pg.base.gametip.mail_storeroom_max_4 = {
+	tip = "※受け取ると、資金所持数が所持上限を超えてしまいます"
+}
+_G.pg.base.gametip.mail_storeroom_addgold = {
+	tip = "備蓄資金："
+}
+_G.pg.base.gametip.mail_storeroom_addoil = {
+	tip = "備蓄燃料："
+}
+_G.pg.base.gametip.mail_storeroom_collect = {
+	tip = "受け取ると下記のアイテムを入手できます："
+}
+_G.pg.base.gametip.mail_search = {
+	tip = "タップで入力"
+}
+_G.pg.base.gametip.mail_storeroom_resourcetaken = {
+	tip = "資源を取り出す"
+}
+_G.pg.base.gametip.resource_max_tip_storeroom = {
+	tip = "所持上限以上の資源は取り出せません"
+}
+_G.pg.base.gametip.mail_tip = {
+	tip = {
+		{
+			info = [[
+<color=#92fc63>メールボックスについて</color>
+ 1.メールボックスのメール所持数上限は100です（【重要】【特殊】メールを含む）
+ 2.【一括管理】でメールの表示を絞り込み、またメールを一括で管理する事ができます
+ 　一括既読：表示中のメールを全て既読にします
+ 　一括受取：表示中のメールの添付アイテムを一括で受け取ります（燃料と資金は貯蔵庫に送られます）
+ 　一括削除：表示中のメールの「添付アイテムを受け取り済みのメール」を一括で削除できます
+ 3.通常メールに【重要】を設定することで、【重要】メールに分類させることができます。【重要】に設定されたメールは一括削除では削除されません
+ 4.【資金】【燃料】【戦果Pt】【キューブ】以外のメールは【特殊】として分類されます
+
+  <color=#92fc63>貯蔵庫</color>
+ 1.メールから受け取った添付アイテムの中で、【資金】と【燃料】は貯蔵庫に保管されます
+ 2.貯蔵庫からはいつでも資源を取り出すことができます
+  <color=#92fc63>保管庫</color>
+ 1.一括移動機能でメールを保管庫に保管させることができます。移動させる際、メールの添付アイテムが自動で取り出されます。（保管庫に保管されるメールはメールボックスに含まれません。取り出された燃料と資金は貯蔵庫に移動されます）
+ 2.【保管庫】のメール保管数の上限は指揮官レベルによって変わります]]
+		}
+	}
+}
+_G.pg.base.gametip.mail_page_1 = {
+	tip = "メール"
+}
+_G.pg.base.gametip.mail_page_2 = {
+	tip = "貯蔵庫"
+}
+_G.pg.base.gametip.mail_page_3 = {
+	tip = "保管庫"
+}
+_G.pg.base.gametip.mail_gold_res = {
+	tip = "資金"
+}
+_G.pg.base.gametip.mail_oil_res = {
+	tip = "燃料"
+}
+_G.pg.base.gametip.mail_all_price = {
+	tip = "合計："
 }
 _G.pg.base.gametip.return_award_bind_success = {
 	tip = "UID入力成功"
@@ -9991,6 +10331,9 @@ _G.pg.base.gametip.pray_build_help = {
 			info = "7.「選べる特別建造」は通常建造同様に建造時に使用されるキューブ数に応じて、通常建造におけるUR艦船交換時の回数にカウントされます"
 		}
 	}
+}
+_G.pg.base.gametip.pray_build_UR_warning = {
+	tip = "UR艦船は1隻までしか選択できません"
 }
 _G.pg.base.gametip.bismarck_award_tip = {
 	tip = "実績達成で記念アイテムGET！"
@@ -10165,6 +10508,15 @@ _G.pg.base.gametip.list_empty_tip_taskscene = {
 }
 _G.pg.base.gametip.empty_tip_mailboxui = {
 	tip = "メールはありません"
+}
+_G.pg.base.gametip.emptymarkroom_tip_mailboxui = {
+	tip = "まだメールを保管していません"
+}
+_G.pg.base.gametip.empty_tip_mailboxui_en = {
+	tip = "C O M M A N D E R ， N O  M A I L  H A S  B E E N  A C Q U I R E D  Y E T "
+}
+_G.pg.base.gametip.emptymarkroom_tip_mailboxui_en = {
+	tip = "C O M M A N D E R ， N O  M A I L  H A S  B E E N  A R C H I V E D  Y E T "
 }
 _G.pg.base.gametip.words_settings_unlock_ship = {
 	tip = "艦船保護解除"
@@ -11627,11 +11979,11 @@ _G.pg.base.gametip.help_chunjie_jiulou = {
 			info = [[
 ■饅頭年玉について
 ・「饅頭年玉」では、ミニゲームで手に入れた「年玉」を開封し、報酬を入手できます。
-・「年玉」は「撫順の大冒険Ⅴ」「おえかき」「花火迎新春」「飛雲の新春冒険」を遊ぶことで入手できます。
+・「年玉」は「撫順の大冒険」「おえかき」「伏波の完全作戦」「母港花火大会」を遊ぶことで入手できます。
 ・入手した「年玉」は15個目までは「年玉・大」になります。
 ・入手した「年玉」を開封する際は「年玉・大」から優先的に開封されます。
 開封すると、ダイヤなどの報酬をランダムで獲得できます。
-また、「年玉」を累計15個開封すると、<color=#92fc63>「撫順」の着せ替え（復刻）</color>を入手できます。「年玉」を累計25個開封すると、<color=#92fc63>「若月」の着せ替え（新規）</color>を入手できます]]
+また、「年玉」を累計15個開封すると、<color=#92fc63>「撫順」の着せ替え（復刻）</color>を入手できます。「年玉」を累計25個開封すると、<color=#92fc63>「若月」の着せ替え（復刻）</color>を入手できます]]
 		}
 	}
 }
@@ -13702,6 +14054,9 @@ _G.pg.base.gametip.destory_ship_before_tip = {
 }
 _G.pg.base.gametip.destory_ship_input_erro = {
 	tip = "表示されている数字を入力してください"
+}
+_G.pg.base.gametip.mail_input_erro = {
+	tip = "正しいテキストを入力すると受け取れます"
 }
 _G.pg.base.gametip.destroy_ur_rarity_tip = {
 	tip = "<color=#92fc63>UR艦船</color>が選択されています、下の枠に<color=#92fc63>「$1」</color>を入力してください"
@@ -15895,6 +16250,9 @@ _G.pg.base.gametip.ship_exp_item_label_confirm = {
 _G.pg.base.gametip.player_expResource_mail_fullBag = {
 	tip = "上限超過分の資源が受け取りできません。続きますか？"
 }
+_G.pg.base.gametip.player_expResource_mail_overflow = {
+	tip = "$1所持数が上限になっています。続けると一部のアイテムが入手できなくなります。続けますか？"
+}
 _G.pg.base.gametip.tec_nation_award_finish = {
 	tip = "-受取済"
 }
@@ -17934,6 +18292,258 @@ _G.pg.base.gametip.cruise_task_help_2404 = {
 		}
 	}
 }
+_G.pg.base.gametip.battlepass_main_tip_2406 = {
+	tip = "<size=23> 2024.6.1-2024.7.31キャンペーン期間中、シーズン任務報酬で<color=#854747>「フォッシュ(META)」</color>などを入手可能！</size>"
+}
+_G.pg.base.gametip.battlepass_main_help_2406 = {
+	tip = {
+		{
+			info = [[
+■キャンペーン開催期間
+ 2024.6.1（土）0:00～2024.7.31（水）23:59
+
+■概要
+「シーズン任務」とは、キャンペーン開催中の任務をクリアし「進捗Pt」を集め、入手した進捗Ptに応じた累計獲得数報酬が手に入るキャンペーンになります。
+また、通常の累計獲得数報酬に追加する形で「SP報酬」が存在し、ショップアイテム「クルーズパス」を購入すると、SP報酬も入手可能となります。
+通常報酬からは艦船「フォッシュ(META)」、SP報酬からは駆逐艦「アッティリオ・レゴロ」の限定着せ替え「アンジェラ・フロム・スカイ」を入手できます。
+
+■遊び方
+・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
+　①週次開放任務
+　キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
+　②全期間任務
+　最初から全開放される任務。全1グループ
+・上記「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
+　さらに「クルーズパス」を購入すると、15段階分の報酬（進捗Pt1500）が入手可能となります。
+・「進捗Pt」の累計入手数に応じて、進捗Pt累計獲得数報酬を入手できます。累計獲得数報酬は2種類存在します。
+　①通常報酬
+　「進捗Pt」の入手数に応じて獲得できる報酬。全100段階となります
+　②SP報酬
+　「クルーズパス」を購入すると開放される追加報酬。通常報酬と同じく全100段階存在し、通常報酬と同じ段階のSP報酬が入手入手できます。
+・キャンペーンが終了すると、入手済みの進捗Ptはリセットされます。
+
+■Tips
+・プレイスタイル
+　シーズン任務は全100段階あり、いきなり最後まではクリアできない仕様になっております。いつものクエストをくりしながら任務をこなしていくか、狙いの報酬を決めて最短ペースでクリアしていくかなど、自分のプレイスタイルに合わせてプレイすることをオススメします。
+
+・クルーズパス
+　ショップで「クルーズパス」を購入すると、お得なアイテムとともに「進捗Pt」を1500Pt入手できます。また、追加の限定着せ替えは「クルーズパス」を購入して開放される「SP報酬」でのみ入手できます。要注意。
+
+・任務のスキップ（オススメしません）
+　「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
+　ダイヤを消費しますので、オススメしません厖
+　「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2406 = {
+	tip = {
+		{
+			info = [[
+■シーズン任務について
+・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
+　①週次開放任務
+　キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
+　②全期間任務
+　最初から全開放される任務。全1グループ
+
+・「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
+
+・「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
+　ダイヤを消費しますので、オススメしません……
+　「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
+		}
+	}
+}
+_G.pg.base.gametip.battlepass_main_tip_2408 = {
+	tip = "<size=23> 2024.8.1-2024.9.30キャンペーン期間中、シーズン任務報酬で<color=#854747>「霞(META)」</color>などを入手可能！</size>"
+}
+_G.pg.base.gametip.battlepass_main_help_2408 = {
+	tip = {
+		{
+			info = [[
+■キャンペーン開催期間
+ 2024.8.1（木）0:00～2024.9.30（月）23:59
+
+■概要
+「シーズン任務」とは、キャンペーン開催中の任務をクリアし「進捗Pt」を集め、入手した進捗Ptに応じた累計獲得数報酬が手に入るキャンペーンになります。
+また、通常の累計獲得数報酬に追加する形で「SP報酬」が存在し、ショップアイテム「クルーズパス」を購入すると、SP報酬も入手可能となります。
+通常報酬からは艦船「霞(META)」、SP報酬からは戦艦「ローマ」の限定着せ替え「デヴェレの休日」を入手できます。
+
+■遊び方
+・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
+　①週次開放任務
+　キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
+　②全期間任務
+　最初から全開放される任務。全1グループ
+・上記「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
+　さらに「クルーズパス」を購入すると、15段階分の報酬（進捗Pt1500）が入手可能となります。
+・「進捗Pt」の累計入手数に応じて、進捗Pt累計獲得数報酬を入手できます。累計獲得数報酬は2種類存在します。
+　①通常報酬
+　「進捗Pt」の入手数に応じて獲得できる報酬。全100段階となります
+　②SP報酬
+　「クルーズパス」を購入すると開放される追加報酬。通常報酬と同じく全100段階存在し、通常報酬と同じ段階のSP報酬が入手入手できます。
+・キャンペーンが終了すると、入手済みの進捗Ptはリセットされます。
+
+■Tips
+・プレイスタイル
+　シーズン任務は全100段階あり、いきなり最後まではクリアできない仕様になっております。いつものクエストをくりしながら任務をこなしていくか、狙いの報酬を決めて最短ペースでクリアしていくかなど、自分のプレイスタイルに合わせてプレイすることをオススメします。
+
+・クルーズパス
+　ショップで「クルーズパス」を購入すると、お得なアイテムとともに「進捗Pt」を1500Pt入手できます。また、追加の限定着せ替えは「クルーズパス」を購入して開放される「SP報酬」でのみ入手できます。要注意。
+
+・任務のスキップ（オススメしません）
+　「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
+　ダイヤを消費しますので、オススメしません。
+　「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2408 = {
+	tip = {
+		{
+			info = [[
+■シーズン任務について
+・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
+　①週次開放任務
+　キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
+　②全期間任務
+　最初から全開放される任務。全1グループ
+
+・「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
+
+・「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
+　ダイヤを消費しますので、オススメしません……
+　「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
+		}
+	}
+}
+_G.pg.base.gametip.battlepass_main_tip_2410 = {
+	tip = "2024/10/1-2024/11/30キャンペーン期間中、シーズン任務累計<icon name=pt w=0.5 h=0.5/>入手報酬で<color=#854747>「鳳翔(META)」</color>などを入手可能"
+}
+_G.pg.base.gametip.battlepass_main_help_2410 = {
+	tip = {
+		{
+			info = [[
+■キャンペーン開催期間
+ 2024.10.1（火）0:00～2024.11.30（土）23:59
+
+■概要
+「シーズン任務」とは、キャンペーン開催中の任務をクリアし「進捗Pt」を集め、入手した進捗Ptに応じた累計獲得数報酬が手に入るキャンペーンになります。
+また、通常の累計獲得数報酬に追加する形で「SP報酬」が存在し、ショップアイテム「クルーズパス」を購入すると、SP報酬も入手可能となります。
+通常報酬からは艦船「鳳翔(META)」、SP報酬からは戦艦「シュフラン」の限定着せ替え「華やかに極まれ」を入手できます。
+
+■遊び方
+・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
+　①週次開放任務
+　キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
+　②全期間任務
+　最初から全開放される任務。全1グループ
+・上記「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
+　さらに「クルーズパス」を購入すると、15段階分の報酬（進捗Pt1500）が入手可能となります。
+・「進捗Pt」の累計入手数に応じて、進捗Pt累計獲得数報酬を入手できます。累計獲得数報酬は2種類存在します。
+　①通常報酬
+　「進捗Pt」の入手数に応じて獲得できる報酬。全100段階となります
+　②SP報酬
+　「クルーズパス」を購入すると開放される追加報酬。通常報酬と同じく全100段階存在し、通常報酬と同じ段階のSP報酬が入手できます。
+・キャンペーンが終了すると、入手済みの進捗Ptはリセットされます。
+
+■Tips
+・プレイスタイル
+　シーズン任務は全100段階あり、いきなり最後まではクリアできない仕様になっております。いつものクエストをくり返しながら任務をこなしていくか、狙いの報酬を決めて最短ペースでクリアしていくかなど、自分のプレイスタイルに合わせてプレイすることをオススメします。
+
+・クルーズパス
+　ショップで「クルーズパス」を購入すると、お得なアイテムとともに「進捗Pt」を1500Pt入手できます。また、追加の限定着せ替えは「クルーズパス」を購入して開放される「SP報酬」でのみ入手できます。要注意。
+
+・任務のスキップ（オススメしません）
+　「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
+　ダイヤを消費しますので、オススメしません。
+　「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2410 = {
+	tip = {
+		{
+			info = [[
+■シーズン任務について
+・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
+　①週次開放任務
+　キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
+　②全期間任務
+　最初から全開放される任務。全1グループ
+
+・「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
+
+・「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
+　ダイヤを消費しますので、オススメしません……
+　「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
+		}
+	}
+}
+_G.pg.base.gametip.battlepass_main_tip_2412 = {
+	tip = "2024/12/1-2025/1/31キャンペーン期間中、シーズン任務累計<icon name=pt w=0.5 h=0.5/>入手報酬で<color=#854747>「ジュリオ・チェザーレ(META)」</color>などを入手可能"
+}
+_G.pg.base.gametip.battlepass_main_help_2412 = {
+	tip = {
+		{
+			info = [[
+■キャンペーン開催期間
+ 2024.12.1（日）0:00～2025.1.31（金）23:59
+
+■概要
+「シーズン任務」とは、キャンペーン開催中の任務をクリアし「進捗Pt」を集め、入手した進捗Ptに応じた累計獲得数報酬が手に入るキャンペーンになります。
+また、通常の累計獲得数報酬に追加する形で「SP報酬」が存在し、ショップアイテム「クルーズパス」を購入すると、SP報酬も入手可能となります。
+通常報酬からは艦船「ジュリオ・チェザーレ(META)」、SP報酬からは軽空母「ヴェーザー」の限定着せ替え「オフタイム・カフェ」を入手できます。
+
+■遊び方
+・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
+ ①週次開放任務
+ キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
+ ②全期間任務
+ 最初から全開放される任務。全1グループ
+・上記「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
+ さらに「クルーズパス」を購入すると、15段階分の報酬（進捗Pt1500）が入手可能となります。
+・「進捗Pt」の累計入手数に応じて、進捗Pt累計獲得数報酬を入手できます。累計獲得数報酬は2種類存在します。
+ ①通常報酬
+ 「進捗Pt」の入手数に応じて獲得できる報酬。全100段階となります
+ ②SP報酬
+ 「クルーズパス」を購入すると開放される追加報酬。通常報酬と同じく全100段階存在し、通常報酬と同じ段階のSP報酬が入手できます。
+・キャンペーンが終了すると、入手済みの進捗Ptはリセットされます。
+
+■Tips
+・プレイスタイル
+ シーズン任務は全100段階あり、いきなり最後まではクリアできない仕様になっております。いつものクエストをくり返しながら任務をこなしていくか、狙いの報酬を決めて最短ペースでクリアしていくかなど、自分のプレイスタイルに合わせてプレイすることをオススメします。
+
+・クルーズパス
+ ショップで「クルーズパス」を購入すると、お得なアイテムとともに「進捗Pt」を1500Pt入手できます。また、追加の限定着せ替えは「クルーズパス」を購入して開放される「SP報酬」でのみ入手できます。要注意。
+
+・任務のスキップ（オススメしません）
+ 「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
+ ダイヤを消費しますので、オススメしません。
+ 「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2412 = {
+	tip = {
+		{
+			info = [[
+■シーズン任務について
+・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
+ ①週次開放任務
+ キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
+ ②全期間任務
+ 最初から全開放される任務。全1グループ
+
+・「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
+
+・「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
+ ダイヤを消費しますので、オススメしません……
+ 「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
+		}
+	}
+}
 _G.pg.base.gametip.attrset_reset = {
 	tip = "リセット"
 }
@@ -19932,7 +20542,7 @@ _G.pg.base.gametip["2023spring_minigame_help"] = {
 			info = [[
 概要：
 「撫順の大冒険Ⅳ」とは、SDキャラを操作し、年獣饅頭を避けながら画面上の料理などのアイテムを集めてスコアを稼ぐミニゲームになります。
-<color=#92fc63>1.24（火）</color>まで毎日1ステージ開放されます。7ステージ全部クリアすると、駆逐艦「撫順」を入手できます。
+<color=#92fc63>1.22（日）</color>まで毎日1ステージ開放されます。7ステージ全部クリアすると、駆逐艦「撫順」と「撫順」の改造アイテム「朱雀の印」を入手できます。
 
 遊び方：
 1.画面左下のボタンを操作することで撫順を移動させることができます。また画面右下のボタンで開放されたアイテムやスキルを使用できます。
@@ -20081,6 +20691,42 @@ _G.pg.base.gametip.loveletter_exchange_button = {
 _G.pg.base.gametip.loveletter_exchange_tip3 = {
 	tip = "補填メールをメールボックスにてご確認ください"
 }
+_G.pg.base.gametip.loveletter_recover_tip1 = {
+	tip = "メール再送機能を使用するには「メール確認」を先に行う必要があります"
+}
+_G.pg.base.gametip.loveletter_recover_tip2 = {
+	tip = "キャラクターが間違っています"
+}
+_G.pg.base.gametip.loveletter_recover_tip3 = {
+	tip = "既にバレンタインメールがメールボックス/保管庫に存在しています"
+}
+_G.pg.base.gametip.loveletter_recover_tip4 = {
+	tip = "その年にはまだ未実装だったキャラです"
+}
+_G.pg.base.gametip.loveletter_recover_tip5 = {
+	tip = "メール保管庫がいっぱいです。保管庫を整理するとメールを再送できます"
+}
+_G.pg.base.gametip.loveletter_recover_tip6 = {
+	tip = "メール確認が終了しました。$1年のバレンタインメールを再送できます"
+}
+_G.pg.base.gametip.loveletter_recover_tip7 = {
+	tip = "メール確認が終了しました。既にバレンタインメールがメールボックス/保管庫に存在しています"
+}
+_G.pg.base.gametip.loveletter_recover_bottom1 = {
+	tip = "メール確認"
+}
+_G.pg.base.gametip.loveletter_recover_bottom2 = {
+	tip = "メール再送"
+}
+_G.pg.base.gametip.loveletter_recover_bottom3 = {
+	tip = "$1年"
+}
+_G.pg.base.gametip.loveletter_recover_text1 = {
+	tip = "<color=#ffde38>メール再送</color>を行うと、メール保管庫に<color=#ffde38>$1</color>年の<color=#ffde38>$2</color>からのバレンタインメール（添付アイテムは含まれない）が再送されます\n*メール再送機能は記念アイテム毎に1回しか使用できません"
+}
+_G.pg.base.gametip.loveletter_recover_text2 = {
+	tip = "再送してほしい<color=#ffde38>年</color>を選択してください。再送すると、メール保管庫に<color=#ffde38>$1</color>からのバレンタインメール（添付アイテムは含まれない）が再送されます\n*メール再送機能は記念アイテム毎に1回しか使用できません"
+}
 _G.pg.base.gametip.battle_text_common_1 = {
 	tip = "敵は大技を繰り出そうとしている！<color=#f1f102>攻撃を集中してチャージを止めよう</color>！"
 }
@@ -20089,6 +20735,9 @@ _G.pg.base.gametip.battle_text_common_2 = {
 }
 _G.pg.base.gametip.battle_text_common_3 = {
 	tip = "<color=#f1f102>敵の与ダメージが大幅上昇・被ダメージが時間経過とともに上昇する</color>"
+}
+_G.pg.base.gametip.battle_text_common_4 = {
+	tip = "<color=#f1f102>敵が与えるダメージが大幅に上昇。敵弾がシールドを無視し、射線上の全ての味方艦船にダメージを与える</color>"
 }
 _G.pg.base.gametip.battle_text_yingxiv4_1 = {
 	tip = "騎士はチャージをしている（左）"
@@ -20176,6 +20825,24 @@ _G.pg.base.gametip.battle_text_luodeni_2 = {
 }
 _G.pg.base.gametip.battle_text_luodeni_3 = {
 	tip = "「ロドニー」がいる限り、<color=#ffc038>「ロドニー」の終焉</color>は使用できない"
+}
+_G.pg.base.gametip.battle_text_pizibao_1 = {
+	tip = "支援艦隊到着！<color=#f1f102>敵の攻撃を引きつけて</color>味方を守ろう！"
+}
+_G.pg.base.gametip.battle_text_pizibao_2 = {
+	tip = "支援艦隊が<color=#f1f102>撃破された</color>！厳しい戦いになりそうだ…！"
+}
+_G.pg.base.gametip.battle_text_tianchengCV_1 = {
+	tip = "「<color=#ff8800>紅き炎</color>、<color=#5cccff>青き華</color>、此岸に降臨せん！」"
+}
+_G.pg.base.gametip.battle_text_tianchengCV_2 = {
+	tip = "「あはははは！<color=#ff1800>彼岸の華</color>よ、咲き誇れ、燃やし尽くせ！」"
+}
+_G.pg.base.gametip.battle_text_tianchengCV_3 = {
+	tip = "敵が大技を使ってきます！法陣を起動して支援攻撃を呼び出しましょう！"
+}
+_G.pg.base.gametip.battle_text_lumei_1 = {
+	tip = "「ついて来てっての！」"
 }
 _G.pg.base.gametip.series_enemy_mood = {
 	tip = "戦意低下"
@@ -23604,6 +24271,12 @@ _G.pg.base.gametip.vote_2023_reward_word_3 = {
 _G.pg.base.gametip.voting_page_reward = {
 	tip = "受け取り"
 }
+_G.pg.base.gametip.backyard_shipAddInimacy_ships_ok = {
+	tip = "<color=#92fc63>$1たち</color>の親密度が<color=#92fc63>アップ</color>しました"
+}
+_G.pg.base.gametip.backyard_shipAddMoney_ships_ok = {
+	tip = "<color=#92fc63>$1たち</color>は意外な発見をしました！家具コイン<color=#92fc63>+$2</color>"
+}
 _G.pg.base.gametip.idol3rd_houshan = {
 	tip = {
 		{
@@ -23695,6 +24368,9 @@ _G.pg.base.gametip.dorm3d_furniture_count = {
 _G.pg.base.gametip.dorm3d_furniture_used = {
 	tip = "<color=#00a3ef>[配置済み]</color>"
 }
+_G.pg.base.gametip.dorm3d_furniture_lack = {
+	tip = "[未所持]"
+}
 _G.pg.base.gametip.dorm3d_furniture_unfit = {
 	tip = "適用不可"
 }
@@ -23734,23 +24410,11 @@ _G.pg.base.gametip.dorm3d_gift = {
 _G.pg.base.gametip.dorm3d_gift_owner_num = {
 	tip = "数量："
 }
-_G.pg.base.gametip.liner_sign_cnt_tip = {
-	tip = "現在入手可能数"
+_G.pg.base.gametip.dorm3d_unlock_tips = {
+	tip = "親愛度$1で開放"
 }
-_G.pg.base.gametip.liner_sign_unlock_tip = {
-	tip = "5.21メンテ後開放"
-}
-_G.pg.base.gametip.ship_remould_warning_105214 = {
-	tip = "改造（近代化改修）すると、スキル\n<color=#92fc63>【BIG SEVEN】</color>はスキル<color=#92fc63>【BIG SEVEN·コロラド】</color>に強化される"
-}
-_G.pg.base.gametip.pray_build_UR_warning = {
-	tip = "UR艦船は1隻までしか選択できません"
-}
-_G.pg.base.gametip.backyard_shipAddInimacy_ships_ok = {
-	tip = "<color=#92fc63>$1たち</color>の親密度が<color=#92fc63>アップ</color>しました"
-}
-_G.pg.base.gametip.backyard_shipAddMoney_ships_ok = {
-	tip = "<color=#92fc63>$1たち</color>は意外な発見をしました！家具コイン<color=#92fc63>+$2</color>"
+_G.pg.base.gametip.dorm3d_daily_favor_tips = {
+	tip = "本日ボーナス親愛度"
 }
 _G.pg.base.gametip.main_silent_tip_1 = {
 	tip = "個の艦隊が委託を完了し帰還しました"
@@ -23787,6 +24451,12 @@ _G.pg.base.gametip.specialshipyard_tip = {
 }
 _G.pg.base.gametip.specialshipyard_name = {
 	tip = "特殊ドック："
+}
+_G.pg.base.gametip.liner_sign_cnt_tip = {
+	tip = "現在入手可能数"
+}
+_G.pg.base.gametip.liner_sign_unlock_tip = {
+	tip = "5.21メンテ後開放"
 }
 _G.pg.base.gametip.liner_target_type1 = {
 	tip = "固定イベント"
@@ -23948,316 +24618,6 @@ _G.pg.base.gametip.UrExchange_Pt_help = {
 		}
 	}
 }
-_G.pg.base.gametip.mail_mail_page = {
-	tip = "メール"
-}
-_G.pg.base.gametip.mail_storeroom_page = {
-	tip = "貯蔵庫"
-}
-_G.pg.base.gametip.mail_boxroom_page = {
-	tip = "保管庫"
-}
-_G.pg.base.gametip.mail_all_page = {
-	tip = "全て"
-}
-_G.pg.base.gametip.mail_important_page = {
-	tip = "重要"
-}
-_G.pg.base.gametip.mail_rare_page = {
-	tip = "特殊"
-}
-_G.pg.base.gametip.mail_reward_got = {
-	tip = "受取済"
-}
-_G.pg.base.gametip.mail_reward_tips = {
-	tip = "※メールに添付された資金と燃料は貯蔵庫に送られます"
-}
-_G.pg.base.gametip.mail_boxroom_extend_title = {
-	tip = "貯蔵庫拡張"
-}
-_G.pg.base.gametip.mail_boxroom_extend_tips = {
-	tip = "貯蔵庫容量アップ"
-}
-_G.pg.base.gametip.mail_buy_button = {
-	tip = "購入"
-}
-_G.pg.base.gametip.mail_manager_title = {
-	tip = "メール管理"
-}
-_G.pg.base.gametip.mail_manager_tips_2 = {
-	tip = "※メールに添付された資金と燃料は貯蔵庫に送られます"
-}
-_G.pg.base.gametip.mail_manager_all = {
-	tip = "全ての添付アイテム"
-}
-_G.pg.base.gametip.mail_manager_rare = {
-	tip = "下記アイテムのみ含まれるメール"
-}
-_G.pg.base.gametip.mail_get_oneclick = {
-	tip = "一括受取"
-}
-_G.pg.base.gametip.mail_read_oneclick = {
-	tip = "一括既読"
-}
-_G.pg.base.gametip.mail_delete_oneclick = {
-	tip = "一括削除"
-}
-_G.pg.base.gametip.mail_search_new = {
-	tip = "タップで検索"
-}
-_G.pg.base.gametip.mail_receive_time = {
-	tip = "受信時間"
-}
-_G.pg.base.gametip.mail_move_oneclick = {
-	tip = "一括移動"
-}
-_G.pg.base.gametip.mail_deleteread_button = {
-	tip = "既読削除"
-}
-_G.pg.base.gametip.mail_manage_button = {
-	tip = "メール管理"
-}
-_G.pg.base.gametip.mail_move_button = {
-	tip = "一括移動"
-}
-_G.pg.base.gametip.mail_delet_button = {
-	tip = "削除"
-}
-_G.pg.base.gametip.mail_moveone_button = {
-	tip = "メール移動"
-}
-_G.pg.base.gametip.mail_getone_button = {
-	tip = "アイテム入手"
-}
-_G.pg.base.gametip.mail_take_all_mail_msgbox = {
-	tip = "※下記添付アイテムを一括で受け取ります"
-}
-_G.pg.base.gametip.mail_take_maildetail_msgbox = {
-	tip = "メール詳細"
-}
-_G.pg.base.gametip.mail_take_canget_msgbox = {
-	tip = "受け取ると下記を入手可能："
-}
-_G.pg.base.gametip.mail_getbox_title = {
-	tip = "メール受取"
-}
-_G.pg.base.gametip.mail_title_new = {
-	tip = "メール"
-}
-_G.pg.base.gametip.mail_boxtitle_information = {
-	tip = "情報"
-}
-_G.pg.base.gametip.mail_box_confirm = {
-	tip = "確定"
-}
-_G.pg.base.gametip.mail_box_cancel = {
-	tip = "戻る"
-}
-_G.pg.base.gametip.mail_title_English = {
-	tip = "MAIL BOX"
-}
-_G.pg.base.gametip.mail_toggle_on = {
-	tip = "ON"
-}
-_G.pg.base.gametip.mail_toggle_off = {
-	tip = "OFF"
-}
-_G.pg.base.gametip.main_mailLayer_quest_clear_choice = {
-	tip = "選択中の既読メールをすべて削除しますか？<color=#92fc63>（添付ファイルを未受取のメールは削除されません）</color>"
-}
-_G.pg.base.gametip.main_mailMediator_mailread = {
-	tip = "メールが既読状態になりました"
-}
-_G.pg.base.gametip.main_mailMediator_mailmove = {
-	tip = "メールが保管庫に移動されました"
-}
-_G.pg.base.gametip.warning_mail_max_3 = {
-	tip = "メールボックスのメール所持数が所持可能上限(<color=#FF5C5C>$1</color>/100)に達しているため、メールを新たに受信できません"
-}
-_G.pg.base.gametip.warning_mail_max_4 = {
-	tip = "メールボックスがいっぱいです。所持数が所持上限に達しているとメールを新たに受信できません。メールボックスを閉じますか？"
-}
-_G.pg.base.gametip.warning_mail_max_5 = {
-	tip = "※上限に達するとメールを受信できなくなります"
-}
-_G.pg.base.gametip.mail_moveto_markroom_1 = {
-	tip = "メールをメールボックスから<color=#92fc63>【保管庫】</color>に移動しますか？\n移動すると、メールの添付アイテムが自動で取り出されます"
-}
-_G.pg.base.gametip.mail_moveto_markroom_2 = {
-	tip = "重要メールをメールボックスから<color=#92fc63>【保管庫】</color>に移動しますか？\n移動すると、メールの添付アイテムが自動で取り出されます"
-}
-_G.pg.base.gametip.mail_moveto_markroom_max = {
-	tip = "<color=#92fc63>【保管庫】</color>のメール保管数上限に達しています。メールを移動できません"
-}
-_G.pg.base.gametip.mail_markroom_delete = {
-	tip = "メール<color=#92fc63>《$1》</color>を完全に削除しますか？"
-}
-_G.pg.base.gametip.mail_markroom_tip = {
-	tip = "※上限は指揮官レベルによって影響されます"
-}
-_G.pg.base.gametip.mail_manage_1 = {
-	tip = "すべて"
-}
-_G.pg.base.gametip.mail_manage_2 = {
-	tip = "下記アイテムのみ含まれるメール"
-}
-_G.pg.base.gametip.mail_manage_3 = {
-	tip = "条件を満たしたメールは存在しません"
-}
-_G.pg.base.gametip.mail_manage_tip_1 = {
-	tip = "※一括削除は添付アイテムを受取済みのメールのみ削除されます"
-}
-_G.pg.base.gametip.mail_storeroom_tips = {
-	tip = "※添付アイテムの資金・燃料は【貯蔵庫】に移動されます"
-}
-_G.pg.base.gametip.mail_storeroom_noextend = {
-	tip = "貯蔵庫の資源保管枠が上限に達しています。これ以上は拡張できません"
-}
-_G.pg.base.gametip.mail_storeroom_extend = {
-	tip = "貯蔵庫容量アップ："
-}
-_G.pg.base.gametip.mail_storeroom_extend_1 = {
-	tip = "貯蔵庫拡張成功"
-}
-_G.pg.base.gametip.mail_storeroom_taken_1 = {
-	tip = "資源を取り出しました"
-}
-_G.pg.base.gametip.mail_storeroom_max_1 = {
-	tip = "貯蔵庫の資源保管量が上限に達しているため、下記の資源が廃棄されます。続けますか？"
-}
-_G.pg.base.gametip.mail_storeroom_max_2 = {
-	tip = "<color=#238c40>$1</color>を入力して操作を続けてください"
-}
-_G.pg.base.gametip.mail_storeroom_addgold = {
-	tip = "備蓄資金："
-}
-_G.pg.base.gametip.mail_storeroom_addoil = {
-	tip = "備蓄燃料："
-}
-_G.pg.base.gametip.mail_search = {
-	tip = "タップで入力"
-}
-_G.pg.base.gametip.mail_storeroom_resourcetaken = {
-	tip = "資源を取り出す"
-}
-_G.pg.base.gametip.resource_max_tip_storeroom = {
-	tip = "所持上限以上の資源は取り出せません"
-}
-_G.pg.base.gametip.mail_tip = {
-	tip = {
-		{
-			info = [[
-<color=#92fc63>メールボックスについて</color>
- 1.メールボックスのメール所持数上限は100です（【重要】【特殊】メールを含む）
- 2.【一括管理】でメールの表示を絞り込み、またメールを一括で管理する事ができます
- 　一括既読：表示中のメールを全て既読にします
- 　一括受取：表示中のメールの添付アイテムを一括で受け取ります（燃料と資金は貯蔵庫に送られます）
- 　一括削除：表示中のメールの「添付アイテムを受け取り済みのメール」を一括で削除できます
- 3.通常メールに【重要】を設定することで、【重要】メールに分類させることができます。【重要】に設定されたメールは一括削除では削除されません
- 4.【資金】【燃料】【戦果Pt】【キューブ】以外のメールは【特殊】として分類されます
-
-  <color=#92fc63>貯蔵庫</color>
- 1.メールから受け取った添付アイテムの中で、【資金】と【燃料】は貯蔵庫に保管されます
- 2.貯蔵庫からはいつでも資源を取り出すことができます
-  <color=#92fc63>保管庫</color>
- 1.一括移動機能でメールを保管庫に保管させることができます。移動させる際、メールの添付アイテムが自動で取り出されます。（保管庫に保管されるメールはメールボックスに含まれません。取り出された燃料と資金は貯蔵庫に移動されます）
- 2.【保管庫】のメール保管数の上限は指揮官レベルによって変わります]]
-		}
-	}
-}
-_G.pg.base.gametip.mail_page_1 = {
-	tip = "メール"
-}
-_G.pg.base.gametip.mail_page_2 = {
-	tip = "貯蔵庫"
-}
-_G.pg.base.gametip.mail_page_3 = {
-	tip = "保管庫"
-}
-_G.pg.base.gametip.mail_gold_res = {
-	tip = "資金"
-}
-_G.pg.base.gametip.mail_oil_res = {
-	tip = "燃料"
-}
-_G.pg.base.gametip.mail_all_price = {
-	tip = "合計："
-}
-_G.pg.base.gametip.emptymarkroom_tip_mailboxui = {
-	tip = "まだメールを保管していません"
-}
-_G.pg.base.gametip.empty_tip_mailboxui_en = {
-	tip = "C O M M A N D E R ， N O  M A I L  H A S  B E E N  A C Q U I R E D  Y E T "
-}
-_G.pg.base.gametip.emptymarkroom_tip_mailboxui_en = {
-	tip = "C O M M A N D E R ， N O  M A I L  H A S  B E E N  A R C H I V E D  Y E T "
-}
-_G.pg.base.gametip.mail_input_erro = {
-	tip = "正しいテキストを入力すると受け取れます"
-}
-_G.pg.base.gametip.battlepass_main_tip_2406 = {
-	tip = "<size=23> 2024.6.1-2024.7.31キャンペーン期間中、シーズン任務報酬で<color=#854747>「フォッシュ(META)」</color>などを入手可能！</size>"
-}
-_G.pg.base.gametip.battlepass_main_help_2406 = {
-	tip = {
-		{
-			info = [[
-■キャンペーン開催期間
- 2024.6.1（土）0:00～2024.7.31（水）23:59
-
-■概要
-「シーズン任務」とは、キャンペーン開催中の任務をクリアし「進捗Pt」を集め、入手した進捗Ptに応じた累計獲得数報酬が手に入るキャンペーンになります。
-また、通常の累計獲得数報酬に追加する形で「SP報酬」が存在し、ショップアイテム「クルーズパス」を購入すると、SP報酬も入手可能となります。
-通常報酬からは艦船「フォッシュ(META)」、SP報酬からは駆逐艦「アッティリオ・レゴロ」の限定着せ替え「アンジェラ・フロム・スカイ」を入手できます。
-
-■遊び方
-・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
-　①週次開放任務
-　キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
-　②全期間任務
-　最初から全開放される任務。全1グループ
-・上記「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
-　さらに「クルーズパス」を購入すると、15段階分の報酬（進捗Pt1500）が入手可能となります。
-・「進捗Pt」の累計入手数に応じて、進捗Pt累計獲得数報酬を入手できます。累計獲得数報酬は2種類存在します。
-　①通常報酬
-　「進捗Pt」の入手数に応じて獲得できる報酬。全100段階となります
-　②SP報酬
-　「クルーズパス」を購入すると開放される追加報酬。通常報酬と同じく全100段階存在し、通常報酬と同じ段階のSP報酬が入手入手できます。
-・キャンペーンが終了すると、入手済みの進捗Ptはリセットされます。
-
-■Tips
-・プレイスタイル
-　シーズン任務は全100段階あり、いきなり最後まではクリアできない仕様になっております。いつものクエストをくりしながら任務をこなしていくか、狙いの報酬を決めて最短ペースでクリアしていくかなど、自分のプレイスタイルに合わせてプレイすることをオススメします。
-
-・クルーズパス
-　ショップで「クルーズパス」を購入すると、お得なアイテムとともに「進捗Pt」を1500Pt入手できます。また、追加の限定着せ替えは「クルーズパス」を購入して開放される「SP報酬」でのみ入手できます。要注意。
-
-・任務のスキップ（オススメしません）
-　「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
-　ダイヤを消費しますので、オススメしません厖
-　「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_task_help_2406 = {
-	tip = {
-		{
-			info = [[
-■シーズン任務について
-・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
-　①週次開放任務
-　キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
-　②全期間任務
-　最初から全開放される任務。全1グループ
-
-・「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
-
-・「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
-　ダイヤを消費しますので、オススメしません……
-　「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
-		}
-	}
-}
 _G.pg.base.gametip.xiaodadi_npc = {
 	tip = {
 		{
@@ -24282,9 +24642,6 @@ _G.pg.base.gametip.xiaodadi_npc = {
 			info = "6.仮加入状態の【フリードリヒちゃん】は大艦隊作戦には参加できません。"
 		}
 	}
-}
-_G.pg.base.gametip.player_expResource_mail_overflow = {
-	tip = "$1所持数が上限になっています。続けると一部のアイテムが入手できなくなります。続けますか？"
 }
 _G.pg.base.gametip.words_lock_ship_label = {
 	tip = "新登録艦船自動ロック"
@@ -24344,169 +24701,6 @@ _G.pg.base.gametip["202406_main_help"] = {
  ⑤「遊び場」に艦船を配置すると、配置された艦船のコンディション回復速度を上げることができます。イベントで入手できる「リトルスター増築チケット」を消費すると、配置枠を増やすことができます]]
 		}
 	}
-}
-_G.pg.base.gametip.mail_confirm_delete_important_flag = {
-	tip = "重要メールは削除できません"
-}
-_G.pg.base.gametip.mail_delet_button_1 = {
-	tip = "メール削除"
-}
-_G.pg.base.gametip.blueprint_simulation_confirm_19905 = {
-	tip = [[
-<size=28>弾幕確認機能（模擬戦）を起動しますか？
-(※実際の艦の性能とは異なります）
-使用兵装：<color=#ff5c5c>
-127mm単装砲
-五連装533mm魚雷
-試作型F8Fベアキャット（フロート）</color></size>]]
-}
-_G.pg.base.gametip.blueprint_simulation_confirm_39907 = {
-	tip = [[
-<size=28>弾幕確認機能（模擬戦）を起動しますか？
-(※実際の艦の性能とは異なります）
-使用兵装：<color=#ff5c5c>
-試作型410mm連装砲Mod.A
-140mm単装砲
-試作型五式40mm高射機関砲</color></size>]]
-}
-_G.pg.base.gametip.blueprint_simulation_confirm_69902 = {
-	tip = [[
-<size=28>弾幕確認機能（模擬戦）を起動しますか？
-(※実際の艦の性能とは異なります）
-使用兵装：<color=#ff5c5c>
-試作型254mm三連装砲Mod1939
-試作型152mm三連装砲Model1936
-試作型90mm連装高角砲Model1939</color></size>]]
-}
-_G.pg.base.gametip.blueprint_simulation_confirm_89904 = {
-	tip = [[
-<size=28>弾幕確認機能（模擬戦）を起動しますか？
-(※実際の艦の性能とは異なります）
-使用兵装：<color=#ff5c5c>
-152mm三連装砲Mle1930（榴弾）
-三連装550mm魚雷
-二連装57mm／L60ボフォース対空機関砲Mle1951</color></size>]]
-}
-_G.pg.base.gametip.blueprint_simulation_confirm_79902 = {
-	tip = [[
-<size=28>弾幕確認機能（模擬戦）を起動しますか？
-(※実際の艦の性能とは異なります）
-使用兵装：<color=#ff5c5c>
-試作型艦上式La-9
-試作型艦上式La-9
-試作型VIT-2（モードチェンジ）
-</color></size>]]
-}
-_G.pg.base.gametip.mail_storeroom_max_3 = {
-	tip = "※受け取ると、燃料所持数が所持上限を超えてしまいます"
-}
-_G.pg.base.gametip.mail_storeroom_max_4 = {
-	tip = "※受け取ると、資金所持数が所持上限を超えてしまいます"
-}
-_G.pg.base.gametip.mail_storeroom_collect = {
-	tip = "受け取ると下記のアイテムを入手できます："
-}
-_G.pg.base.gametip.battlepass_main_tip_2408 = {
-	tip = "<size=23> 2024.8.1-2024.9.30キャンペーン期間中、シーズン任務報酬で<color=#854747>「霞(META)」</color>などを入手可能！</size>"
-}
-_G.pg.base.gametip.battlepass_main_help_2408 = {
-	tip = {
-		{
-			info = [[
-■キャンペーン開催期間
- 2024.8.1（木）0:00～2024.9.30（月）23:59
-
-■概要
-「シーズン任務」とは、キャンペーン開催中の任務をクリアし「進捗Pt」を集め、入手した進捗Ptに応じた累計獲得数報酬が手に入るキャンペーンになります。
-また、通常の累計獲得数報酬に追加する形で「SP報酬」が存在し、ショップアイテム「クルーズパス」を購入すると、SP報酬も入手可能となります。
-通常報酬からは艦船「霞(META)」、SP報酬からは戦艦「ローマ」の限定着せ替え「デヴェレの休日」を入手できます。
-
-■遊び方
-・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
-　①週次開放任務
-　キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
-　②全期間任務
-　最初から全開放される任務。全1グループ
-・上記「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
-　さらに「クルーズパス」を購入すると、15段階分の報酬（進捗Pt1500）が入手可能となります。
-・「進捗Pt」の累計入手数に応じて、進捗Pt累計獲得数報酬を入手できます。累計獲得数報酬は2種類存在します。
-　①通常報酬
-　「進捗Pt」の入手数に応じて獲得できる報酬。全100段階となります
-　②SP報酬
-　「クルーズパス」を購入すると開放される追加報酬。通常報酬と同じく全100段階存在し、通常報酬と同じ段階のSP報酬が入手入手できます。
-・キャンペーンが終了すると、入手済みの進捗Ptはリセットされます。
-
-■Tips
-・プレイスタイル
-　シーズン任務は全100段階あり、いきなり最後まではクリアできない仕様になっております。いつものクエストをくりしながら任務をこなしていくか、狙いの報酬を決めて最短ペースでクリアしていくかなど、自分のプレイスタイルに合わせてプレイすることをオススメします。
-
-・クルーズパス
-　ショップで「クルーズパス」を購入すると、お得なアイテムとともに「進捗Pt」を1500Pt入手できます。また、追加の限定着せ替えは「クルーズパス」を購入して開放される「SP報酬」でのみ入手できます。要注意。
-
-・任務のスキップ（オススメしません）
-　「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
-　ダイヤを消費しますので、オススメしません。
-　「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_task_help_2408 = {
-	tip = {
-		{
-			info = [[
-■シーズン任務について
-・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
-　①週次開放任務
-　キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
-　②全期間任務
-　最初から全開放される任務。全1グループ
-
-・「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
-
-・「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
-　ダイヤを消費しますので、オススメしません……
-　「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
-		}
-	}
-}
-_G.pg.base.gametip.loveletter_recover_tip1 = {
-	tip = "メール再送機能を使用するには「メール確認」を先に行う必要があります"
-}
-_G.pg.base.gametip.loveletter_recover_tip2 = {
-	tip = "キャラクターが間違っています"
-}
-_G.pg.base.gametip.loveletter_recover_tip3 = {
-	tip = "既にバレンタインメールがメールボックス/保管庫に存在しています"
-}
-_G.pg.base.gametip.loveletter_recover_tip4 = {
-	tip = "その年にはまだ未実装だったキャラです"
-}
-_G.pg.base.gametip.loveletter_recover_tip5 = {
-	tip = "メール保管庫がいっぱいです。保管庫を整理するとメールを再送できます"
-}
-_G.pg.base.gametip.loveletter_recover_tip6 = {
-	tip = "メール確認が終了しました。$1年のバレンタインメールを再送できます"
-}
-_G.pg.base.gametip.loveletter_recover_tip7 = {
-	tip = "メール確認が終了しました。既にバレンタインメールがメールボックス/保管庫に存在しています"
-}
-_G.pg.base.gametip.loveletter_recover_bottom1 = {
-	tip = "メール確認"
-}
-_G.pg.base.gametip.loveletter_recover_bottom2 = {
-	tip = "メール再送"
-}
-_G.pg.base.gametip.loveletter_recover_bottom3 = {
-	tip = "$1年"
-}
-_G.pg.base.gametip.loveletter_recover_text1 = {
-	tip = "<color=#ffde38>メール再送</color>を行うと、メール保管庫に<color=#ffde38>$1</color>年の<color=#ffde38>$2</color>からのバレンタインメール（添付アイテムは含まれない）が再送されます\n*メール再送機能は記念アイテム毎に1回しか使用できません"
-}
-_G.pg.base.gametip.loveletter_recover_text2 = {
-	tip = "再送してほしい<color=#ffde38>年</color>を選択してください。再送すると、メール保管庫に<color=#ffde38>$1</color>からのバレンタインメール（添付アイテムは含まれない）が再送されます\n*メール再送機能は記念アイテム毎に1回しか使用できません"
-}
-_G.pg.base.gametip.battle_text_common_4 = {
-	tip = "<color=#f1f102>敵が与えるダメージが大幅に上昇。敵弾がシールドを無視し、射線上の全ての味方艦船にダメージを与える</color>"
 }
 _G.pg.base.gametip.MonopolyCar2024Game_title1 = {
 	tip = "クリア回数"
@@ -24613,21 +24807,6 @@ _G.pg.base.gametip.sitelasibao_expup_desc = {
 _G.pg.base.gametip.levelScene_tracking_error_pre_2 = {
 	tip = "$1か$2クリアで開放"
 }
-_G.pg.base.gametip.ship_remould_warning_101994 = {
-	tip = [[
-改造を行うと<color=#92fc63>「電気出力増幅装置」</color>が消費されます。
-続けますか？
-改造すると <color=#92fc63>【対空砲砲座+1】、【特殊対潜装備追加】</color>
-スキル<color=#92fc63>【レインボー・プラン】</color>が<color=#92fc63>【レインボー・プラン改】に強化</color>
-スキル<color=#92fc63>【特殊弾幕-エルドリッジⅡ】</color>
-が<color=#92fc63>【特殊弾幕-エルドリッジⅢ】</color>に強化されます]]
-}
-_G.pg.base.gametip.battle_text_pizibao_1 = {
-	tip = "支援艦隊到着！<color=#f1f102>敵の攻撃を引きつけて</color>味方を守ろう！"
-}
-_G.pg.base.gametip.battle_text_pizibao_2 = {
-	tip = "支援艦隊が<color=#f1f102>撃破された</color>！厳しい戦いになりそうだ…！"
-}
 _G.pg.base.gametip.town_lock_level = {
 	tip = "タウンレベル$1達成"
 }
@@ -24675,252 +24854,6 @@ _G.pg.base.gametip.town_gold_tip = {
 }
 _G.pg.base.gametip.award_max_warning_minigame = {
 	tip = "報酬を入手する際、<color=#ff5c5c>所持数上限を超えた部分</color>の報酬アイテムは破棄されます。続けますか？"
-}
-_G.pg.base.gametip.report_cannot_comment_level_1 = {
-	tip = "指揮官レベル$1達成でコメントを書き込めます"
-}
-_G.pg.base.gametip.report_cannot_comment_level_2 = {
-	tip = "現在コメントを書き込むことができません"
-}
-_G.pg.base.gametip.commander_exp_limit = {
-	tip = "オフニャのレベルが上限に達しています。これ以上オフニャを追加できません"
-}
-_G.pg.base.gametip.ship_remould_warning_105224 = {
-	tip = "改造（近代化改修）を行うと<color=#92fc63>【BIG SEVEN】</color>スキルが\n<color=#92fc63>【BIG SEVEN·メリーランド】に強化されます</color>"
-}
-_G.pg.base.gametip.battle_text_tianchengCV_1 = {
-	tip = "「<color=#ff8800>紅き炎</color>、<color=#5cccff>青き華</color>、此岸に降臨せん！」"
-}
-_G.pg.base.gametip.battle_text_tianchengCV_2 = {
-	tip = "「あはははは！<color=#ff1800>彼岸の華</color>よ、咲き誇れ、燃やし尽くせ！」"
-}
-_G.pg.base.gametip.battle_text_tianchengCV_3 = {
-	tip = "敵が大技を使ってきます！法陣を起動して支援攻撃を呼び出しましょう！"
-}
-_G.pg.base.gametip.dreamland_label_day = {
-	tip = "昼"
-}
-_G.pg.base.gametip.dreamland_label_dusk = {
-	tip = "夕方"
-}
-_G.pg.base.gametip.dreamland_label_night = {
-	tip = "夜"
-}
-_G.pg.base.gametip.dreamland_label_area = {
-	tip = "エリア"
-}
-_G.pg.base.gametip.dreamland_label_explore = {
-	tip = "探索"
-}
-_G.pg.base.gametip.dreamland_label_explore_award_tip = {
-	tip = "探索完了で入手"
-}
-_G.pg.base.gametip.dreamland_area_lock_tip = {
-	tip = "- エリアはストーリー閲覧後に開放されます -"
-}
-_G.pg.base.gametip.dreamland_spring_lock_tip = {
-	tip = "ストーリー閲覧後に開放されます"
-}
-_G.pg.base.gametip.dreamland_spring_tip = {
-	tip = "楽園でのコンディション回復 $1/h"
-}
-_G.pg.base.gametip.dream_land_tip = {
-	tip = {
-		{
-			info = [[
-遊び方：
- ·<color=#92fc63>9.12-10.2 23:59</color>期間限定裏山イベント「ドリームランド・ドリームデイズ」開催！
-
-  ·楽園を探索しストーリーと新たなエリアを解放して、<color=#92fc63>限定家具</color>・<color=#92fc63>装備外装箱</color>などの報酬を入手可能！
- ·それぞれのエリアではタップなどの操作で探索可能なポイントがあります。うまく見つからない場合はマップ上に表示される<color=#92fc63>「星」</color>や<color=#92fc63>「楽園手帳」</color>に表示されるヒントを確認しよう！楽園を探索すると、報酬として<color=#92fc63>限定家具</color>、<color=#92fc63>装備外装箱</color>などの報酬を入手可能！
- ·一部の探索ポイントは「時間」を調整しないと出現しません。ストーリーを全部解放すると解禁される機能「時間変更」で、楽園の時間を変更できます！
- ·「安眠の夢」に艦船を配置すると、艦船が楽園に出現できるようになり、さらにコンディション回復速度がUP！配置枠は探索エリアが増えるとともに自動的に拡張されます！]]
-		}
-	}
-}
-_G.pg.base.gametip.touch_cake_minigame_help = {
-	tip = {
-		{
-			icon = {
-				atlas = "helpbg/touchcake_help1",
-				path = ""
-			}
-		},
-		{
-			icon = {
-				atlas = "helpbg/touchcake_help2",
-				path = ""
-			}
-		},
-		disableScroll = true,
-		pageMode = true,
-		ImageMode = true,
-		defaultpage = 1,
-		windowSize = {
-			x = 1263,
-			y = 873
-		},
-		windowPos = {
-			y = -70
-		},
-		helpSize = {
-			x = 1176,
-			y = 1024
-		}
-	}
-}
-_G.pg.base.gametip.dreamland_main_desc = {
-	tip = "9.10-10.2、<color=#85E7FF>楽園探索</color>と<color=#85E7FF>ミニゲーム</color>で報酬を入手可能！"
-}
-_G.pg.base.gametip.dreamland_main_tip = {
-	tip = {
-		{
-			info = [[
-遊び方：
- ·<color=#92fc63>9.12-10.2 23:59</color>期間限定裏山イベント「ドリームランド・ドリームデイズ」開催！
-
-  ★ミニゲームと招待状について
- ·9.18まで毎日、ミニゲームのゲーム回数が加算されます。ゲーム回数を所持している状態でミニゲーム「饅頭ケーキ」をクリアすると、ゲーム回数が1回消費され、「夢のケーキ券」を1枚入手できます。
- ·「夢のケーキ券」を7枚入手すると、イベントバナーで「七周年の招待状」を入手できます。招待状を倉庫で使用すると、下記SSR艦船から選んで入手できます：
- 　ベルファスト
- 　ブレマートン
- 　シリアス
- 　ペーター・シュトラッサー
- 　能代
- 　長門
- 　ソビエツカヤ・ロシア
- 　ジャンヌ・ダルク
-
-  ★楽園探索について
- ·楽園を探索しストーリーと新たなエリアを解放すると、<color=#92fc63>限定家具</color>・<color=#92fc63>装備外装箱</color>などの報酬を入手可能！
- ·それぞれのエリアではタップなどの操作で探索可能なポイントがあります。うまく見つからない場合はマップ上に表示される<color=#92fc63>「星」</color>や<color=#92fc63>「楽園手帳」</color>に表示されるヒントを確認しよう！楽園を探索すると、報酬として<color=#92fc63>限定家具</color>、<color=#92fc63>装備外装箱</color>などの報酬を入手可能！
- ·一部の探索ポイントは「時間」を調整しないと出現しません。ストーリーを全部解放すると解禁される機能「時間変更」で、楽園の時間を変更できます！
- ·「安眠の夢」に艦船を配置すると、艦船が楽園に出現できるようになり、さらにコンディション回復速度がUP！配置枠は探索エリアが増えるとともに自動的に拡張されます！]]
-		}
-	}
-}
-_G.pg.base.gametip.no_share_skin_gametip = {
-	tip = "*$1の着せ替えは$2に適用できません"
-}
-_G.pg.base.gametip.no_share_skin_tianchenghangmu = {
-	tip = "天城(空母)"
-}
-_G.pg.base.gametip.no_share_skin_tianchengzhanlie = {
-	tip = "天城(巡洋戦艦)"
-}
-_G.pg.base.gametip.no_share_skin_jiahezhanlie = {
-	tip = "加賀(戦艦)"
-}
-_G.pg.base.gametip.no_share_skin_jiahehangmu = {
-	tip = "加賀(空母)"
-}
-_G.pg.base.gametip.ui_pack_tip1 = {
-	tip = "どれか一つしか購入できません。購入されたアイテムはメールボックスに送られます"
-}
-_G.pg.base.gametip.ui_pack_tip2 = {
-	tip = "単品"
-}
-_G.pg.base.gametip.ui_pack_tip3 = {
-	tip = "セット"
-}
-_G.pg.base.gametip.battle_ui_unlock = {
-	tip = "装飾開放"
-}
-_G.pg.base.gametip.compensate_ui_expiration_hour = {
-	tip = "$1時間後無効になります"
-}
-_G.pg.base.gametip.compensate_ui_expiration_day = {
-	tip = "$1日後無効になります"
-}
-_G.pg.base.gametip.compensate_ui_title1 = {
-	tip = "補填"
-}
-_G.pg.base.gametip.compensate_ui_title2 = {
-	tip = "Compensation"
-}
-_G.pg.base.gametip.compensate_ui_nothing1 = {
-	tip = "受け取れる補填アイテムはありません"
-}
-_G.pg.base.gametip.compensate_ui_nothing2 = {
-	tip = "No compensation received yet"
-}
-_G.pg.base.gametip.attire_combatui_preview = {
-	tip = "プレビュー"
-}
-_G.pg.base.gametip.attire_combatui_confirm = {
-	tip = "装飾"
-}
-_G.pg.base.gametip.battle_battleMediator_remainTime = {
-	tip = "残り時間"
-}
-_G.pg.base.gametip.battlepass_main_tip_2410 = {
-	tip = "2024/10/1-2024/11/30キャンペーン期間中、シーズン任務累計<icon name=pt w=0.5 h=0.5/>入手報酬で<color=#854747>「鳳翔(META)」</color>などを入手可能"
-}
-_G.pg.base.gametip.battlepass_main_help_2410 = {
-	tip = {
-		{
-			info = [[
-■キャンペーン開催期間
- 2024.10.1（火）0:00～2024.11.30（土）23:59
-
-■概要
-「シーズン任務」とは、キャンペーン開催中の任務をクリアし「進捗Pt」を集め、入手した進捗Ptに応じた累計獲得数報酬が手に入るキャンペーンになります。
-また、通常の累計獲得数報酬に追加する形で「SP報酬」が存在し、ショップアイテム「クルーズパス」を購入すると、SP報酬も入手可能となります。
-通常報酬からは艦船「鳳翔(META)」、SP報酬からは戦艦「シュフラン」の限定着せ替え「華やかに極まれ」を入手できます。
-
-■遊び方
-・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
-　①週次開放任務
-　キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
-　②全期間任務
-　最初から全開放される任務。全1グループ
-・上記「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
-　さらに「クルーズパス」を購入すると、15段階分の報酬（進捗Pt1500）が入手可能となります。
-・「進捗Pt」の累計入手数に応じて、進捗Pt累計獲得数報酬を入手できます。累計獲得数報酬は2種類存在します。
-　①通常報酬
-　「進捗Pt」の入手数に応じて獲得できる報酬。全100段階となります
-　②SP報酬
-　「クルーズパス」を購入すると開放される追加報酬。通常報酬と同じく全100段階存在し、通常報酬と同じ段階のSP報酬が入手できます。
-・キャンペーンが終了すると、入手済みの進捗Ptはリセットされます。
-
-■Tips
-・プレイスタイル
-　シーズン任務は全100段階あり、いきなり最後まではクリアできない仕様になっております。いつものクエストをくり返しながら任務をこなしていくか、狙いの報酬を決めて最短ペースでクリアしていくかなど、自分のプレイスタイルに合わせてプレイすることをオススメします。
-
-・クルーズパス
-　ショップで「クルーズパス」を購入すると、お得なアイテムとともに「進捗Pt」を1500Pt入手できます。また、追加の限定着せ替えは「クルーズパス」を購入して開放される「SP報酬」でのみ入手できます。要注意。
-
-・任務のスキップ（オススメしません）
-　「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
-　ダイヤを消費しますので、オススメしません。
-　「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_task_help_2410 = {
-	tip = {
-		{
-			info = [[
-■シーズン任務について
-・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
-　①週次開放任務
-　キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
-　②全期間任務
-　最初から全開放される任務。全1グループ
-
-・「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
-
-・「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
-　ダイヤを消費しますので、オススメしません……
-　「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
-		}
-	}
-}
-_G.pg.base.gametip.dorm3d_unlock_tips = {
-	tip = "親愛度$1で開放"
-}
-_G.pg.base.gametip.dorm3d_daily_favor_tips = {
-	tip = "本日ボーナス親愛度"
 }
 _G.pg.base.gametip.dorm3d_photo_len = {
 	tip = "カメラ"
@@ -25181,6 +25114,168 @@ _G.pg.base.gametip.dorm3d_furniture_save_success = {
 _G.pg.base.gametip.dorm3d_removable = {
 	tip = "（画面左側ドラッグで移動し、キャラに近づいてください）"
 }
+_G.pg.base.gametip.report_cannot_comment_level_1 = {
+	tip = "指揮官レベル$1達成でコメントを書き込めます"
+}
+_G.pg.base.gametip.report_cannot_comment_level_2 = {
+	tip = "現在コメントを書き込むことができません"
+}
+_G.pg.base.gametip.commander_exp_limit = {
+	tip = "オフニャのレベルが上限に達しています。これ以上オフニャを追加できません"
+}
+_G.pg.base.gametip.dreamland_label_day = {
+	tip = "昼"
+}
+_G.pg.base.gametip.dreamland_label_dusk = {
+	tip = "夕方"
+}
+_G.pg.base.gametip.dreamland_label_night = {
+	tip = "夜"
+}
+_G.pg.base.gametip.dreamland_label_area = {
+	tip = "エリア"
+}
+_G.pg.base.gametip.dreamland_label_explore = {
+	tip = "探索"
+}
+_G.pg.base.gametip.dreamland_label_explore_award_tip = {
+	tip = "探索完了で入手"
+}
+_G.pg.base.gametip.dreamland_area_lock_tip = {
+	tip = "- エリアはストーリー閲覧後に開放されます -"
+}
+_G.pg.base.gametip.dreamland_spring_lock_tip = {
+	tip = "ストーリー閲覧後に開放されます"
+}
+_G.pg.base.gametip.dreamland_spring_tip = {
+	tip = "楽園でのコンディション回復 $1/h"
+}
+_G.pg.base.gametip.dream_land_tip = {
+	tip = {
+		{
+			info = [[
+遊び方：
+ ·<color=#92fc63>9.12-10.2 23:59</color>期間限定裏山イベント「ドリームランド・ドリームデイズ」開催！
+
+  ·楽園を探索しストーリーと新たなエリアを解放して、<color=#92fc63>限定家具</color>・<color=#92fc63>装備外装箱</color>などの報酬を入手可能！
+ ·それぞれのエリアではタップなどの操作で探索可能なポイントがあります。うまく見つからない場合はマップ上に表示される<color=#92fc63>「星」</color>や<color=#92fc63>「楽園手帳」</color>に表示されるヒントを確認しよう！楽園を探索すると、報酬として<color=#92fc63>限定家具</color>、<color=#92fc63>装備外装箱</color>などの報酬を入手可能！
+ ·一部の探索ポイントは「時間」を調整しないと出現しません。ストーリーを全部解放すると解禁される機能「時間変更」で、楽園の時間を変更できます！
+ ·「安眠の夢」に艦船を配置すると、艦船が楽園に出現できるようになり、さらにコンディション回復速度がUP！配置枠は探索エリアが増えるとともに自動的に拡張されます！]]
+		}
+	}
+}
+_G.pg.base.gametip.touch_cake_minigame_help = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/touchcake_help1",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/touchcake_help2",
+				path = ""
+			}
+		},
+		disableScroll = true,
+		pageMode = true,
+		ImageMode = true,
+		defaultpage = 1,
+		windowSize = {
+			x = 1263,
+			y = 873
+		},
+		windowPos = {
+			y = -70
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024
+		}
+	}
+}
+_G.pg.base.gametip.dreamland_main_desc = {
+	tip = "9.10-10.2、<color=#85E7FF>楽園探索</color>と<color=#85E7FF>ミニゲーム</color>で報酬を入手可能！"
+}
+_G.pg.base.gametip.dreamland_main_tip = {
+	tip = {
+		{
+			info = [[
+遊び方：
+ ·<color=#92fc63>9.12-10.2 23:59</color>期間限定裏山イベント「ドリームランド・ドリームデイズ」開催！
+
+  ★ミニゲームと招待状について
+ ·9.18まで毎日、ミニゲームのゲーム回数が加算されます。ゲーム回数を所持している状態でミニゲーム「饅頭ケーキ」をクリアすると、ゲーム回数が1回消費され、「夢のケーキ券」を1枚入手できます。
+ ·「夢のケーキ券」を7枚入手すると、イベントバナーで「七周年の招待状」を入手できます。招待状を倉庫で使用すると、下記SSR艦船から選んで入手できます：
+ 　ベルファスト
+ 　ブレマートン
+ 　シリアス
+ 　ペーター・シュトラッサー
+ 　能代
+ 　長門
+ 　ソビエツカヤ・ロシア
+ 　ジャンヌ・ダルク
+
+  ★楽園探索について
+ ·楽園を探索しストーリーと新たなエリアを解放すると、<color=#92fc63>限定家具</color>・<color=#92fc63>装備外装箱</color>などの報酬を入手可能！
+ ·それぞれのエリアではタップなどの操作で探索可能なポイントがあります。うまく見つからない場合はマップ上に表示される<color=#92fc63>「星」</color>や<color=#92fc63>「楽園手帳」</color>に表示されるヒントを確認しよう！楽園を探索すると、報酬として<color=#92fc63>限定家具</color>、<color=#92fc63>装備外装箱</color>などの報酬を入手可能！
+ ·一部の探索ポイントは「時間」を調整しないと出現しません。ストーリーを全部解放すると解禁される機能「時間変更」で、楽園の時間を変更できます！
+ ·「安眠の夢」に艦船を配置すると、艦船が楽園に出現できるようになり、さらにコンディション回復速度がUP！配置枠は探索エリアが増えるとともに自動的に拡張されます！]]
+		}
+	}
+}
+_G.pg.base.gametip.no_share_skin_gametip = {
+	tip = "*$1の着せ替えは$2に適用できません"
+}
+_G.pg.base.gametip.no_share_skin_tianchenghangmu = {
+	tip = "天城(空母)"
+}
+_G.pg.base.gametip.no_share_skin_tianchengzhanlie = {
+	tip = "天城(巡洋戦艦)"
+}
+_G.pg.base.gametip.no_share_skin_jiahezhanlie = {
+	tip = "加賀(戦艦)"
+}
+_G.pg.base.gametip.no_share_skin_jiahehangmu = {
+	tip = "加賀(空母)"
+}
+_G.pg.base.gametip.ui_pack_tip1 = {
+	tip = "どれか一つしか購入できません。購入されたアイテムはメールボックスに送られます"
+}
+_G.pg.base.gametip.ui_pack_tip2 = {
+	tip = "単品"
+}
+_G.pg.base.gametip.ui_pack_tip3 = {
+	tip = "セット"
+}
+_G.pg.base.gametip.battle_ui_unlock = {
+	tip = "装飾開放"
+}
+_G.pg.base.gametip.compensate_ui_expiration_hour = {
+	tip = "$1時間後無効になります"
+}
+_G.pg.base.gametip.compensate_ui_expiration_day = {
+	tip = "$1日後無効になります"
+}
+_G.pg.base.gametip.compensate_ui_title1 = {
+	tip = "補填"
+}
+_G.pg.base.gametip.compensate_ui_title2 = {
+	tip = "Compensation"
+}
+_G.pg.base.gametip.compensate_ui_nothing1 = {
+	tip = "受け取れる補填アイテムはありません"
+}
+_G.pg.base.gametip.compensate_ui_nothing2 = {
+	tip = "No compensation received yet"
+}
+_G.pg.base.gametip.attire_combatui_preview = {
+	tip = "プレビュー"
+}
+_G.pg.base.gametip.attire_combatui_confirm = {
+	tip = "装飾"
+}
 _G.pg.base.gametip.grapihcs3d_setting_quality = {
 	tip = "グラフィック設定"
 }
@@ -25250,11 +25345,23 @@ _G.pg.base.gametip.dorm3d_purchase_confirm_free = {
 _G.pg.base.gametip.dorm3d_purchase_confirm_tip = {
 	tip = "専用"
 }
+_G.pg.base.gametip.dorm3d_purchase_label_special = {
+	tip = "特典"
+}
+_G.pg.base.gametip.dorm3d_purchase_outtime = {
+	tip = "販売期間外です"
+}
+_G.pg.base.gametip.dorm3d_collect_block_by_furniture = {
+	tip = "アイテムは家具$1に入れ替えられたため、現在入手できません"
+}
 _G.pg.base.gametip.cruise_phase_title = {
 	tip = "段階"
 }
 _G.pg.base.gametip.cruise_title_2410 = {
 	tip = "シーズン任務・19期"
+}
+_G.pg.base.gametip.cruise_title_2412 = {
+	tip = "シーズン任務・20期"
 }
 _G.pg.base.gametip.battlepass_main_time_title = {
 	tip = "今期残り時間："
@@ -25282,6 +25389,15 @@ _G.pg.base.gametip.cruise_shop_title_equip_skin = {
 }
 _G.pg.base.gametip.cruise_shop_lock_tip = {
 	tip = "開催中シーズン任務Lv50達成"
+}
+_G.pg.base.gametip.cruise_tip_skin = {
+	tip = "シーズン任務へ"
+}
+_G.pg.base.gametip.cruise_tip_base = {
+	tip = "-基本報酬-"
+}
+_G.pg.base.gametip.cruise_tip_upgrade = {
+	tip = "-追加報酬-"
 }
 _G.pg.base.gametip.cruise_shop_limit_tip = {
 	tip = "今月残り購入可能回数："
@@ -25397,6 +25513,12 @@ _G.pg.base.gametip.levelscene_mapselect_sp = {
 _G.pg.base.gametip.levelscene_mapselect_ex = {
 	tip = "EX"
 }
+_G.pg.base.gametip.levelscene_mapselect_normal = {
+	tip = "普通"
+}
+_G.pg.base.gametip.levelscene_mapselect_advanced = {
+	tip = "挑戦"
+}
 _G.pg.base.gametip.juuschat_filter_title = {
 	tip = "絞り込み"
 }
@@ -25472,6 +25594,87 @@ _G.pg.base.gametip.dorm3d_appellation_waring4 = {
 _G.pg.base.gametip.dorm3d_shop_gift_owned = {
 	tip = "これ以上は購入できません"
 }
+_G.pg.base.gametip.dorm3d_accompany_not_download = {
+	tip = "$1のアセットを先にDLする必要があります"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day1 = {
+	tip = "月"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day2 = {
+	tip = "火"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day3 = {
+	tip = "水"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day4 = {
+	tip = "木"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day5 = {
+	tip = "金"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day6 = {
+	tip = "土"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day7 = {
+	tip = "日"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_remember = {
+	tip = "今日の予定を覚えてね"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_choose = {
+	tip = "今日の予定を教えてね："
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior1 = {
+	tip = "読書"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior2 = {
+	tip = "絵描き"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior3 = {
+	tip = "勉強"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior4 = {
+	tip = "舞踊"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior5 = {
+	tip = "球技"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior6 = {
+	tip = "運動"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior7 = {
+	tip = "掃除"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior8 = {
+	tip = "料理"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior9 = {
+	tip = "洗濯"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior10 = {
+	tip = "ゲーム"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior11 = {
+	tip = "散歩"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior12 = {
+	tip = "睡眠"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate1 = {
+	tip = "達人"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate2 = {
+	tip = "超人"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate3 = {
+	tip = "好き"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate4 = {
+	tip = "嗜好"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate5 = {
+	tip = "バランス"
+}
 _G.pg.base.gametip.BoatAdGame_minigame_help = {
 	tip = {
 		{
@@ -25508,90 +25711,6 @@ _G.pg.base.gametip.juuschat_background_tip1 = {
 }
 _G.pg.base.gametip.juuschat_background_tip2 = {
 	tip = "着せ替え未所持"
-}
-_G.pg.base.gametip.word_shipNation_tolove = {
-	tip = "ToLOVEる"
-}
-_G.pg.base.gametip.battlepass_main_tip_2412 = {
-	tip = "2024/12/1-2025/1/31キャンペーン期間中、シーズン任務累計<icon name=pt w=0.5 h=0.5/>入手報酬で<color=#854747>「ジュリオ・チェザーレ(META)」</color>などを入手可能"
-}
-_G.pg.base.gametip.battlepass_main_help_2412 = {
-	tip = {
-		{
-			info = [[
-■キャンペーン開催期間
- 2024.12.1（日）0:00～2025.1.31（金）23:59
-
-■概要
-「シーズン任務」とは、キャンペーン開催中の任務をクリアし「進捗Pt」を集め、入手した進捗Ptに応じた累計獲得数報酬が手に入るキャンペーンになります。
-また、通常の累計獲得数報酬に追加する形で「SP報酬」が存在し、ショップアイテム「クルーズパス」を購入すると、SP報酬も入手可能となります。
-通常報酬からは艦船「ジュリオ・チェザーレ(META)」、SP報酬からは軽空母「ヴェーザー」の限定着せ替え「オフタイム・カフェ」を入手できます。
-
-■遊び方
-・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
- ①週次開放任務
- キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
- ②全期間任務
- 最初から全開放される任務。全1グループ
-・上記「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
- さらに「クルーズパス」を購入すると、15段階分の報酬（進捗Pt1500）が入手可能となります。
-・「進捗Pt」の累計入手数に応じて、進捗Pt累計獲得数報酬を入手できます。累計獲得数報酬は2種類存在します。
- ①通常報酬
- 「進捗Pt」の入手数に応じて獲得できる報酬。全100段階となります
- ②SP報酬
- 「クルーズパス」を購入すると開放される追加報酬。通常報酬と同じく全100段階存在し、通常報酬と同じ段階のSP報酬が入手できます。
-・キャンペーンが終了すると、入手済みの進捗Ptはリセットされます。
-
-■Tips
-・プレイスタイル
- シーズン任務は全100段階あり、いきなり最後まではクリアできない仕様になっております。いつものクエストをくり返しながら任務をこなしていくか、狙いの報酬を決めて最短ペースでクリアしていくかなど、自分のプレイスタイルに合わせてプレイすることをオススメします。
-
-・クルーズパス
- ショップで「クルーズパス」を購入すると、お得なアイテムとともに「進捗Pt」を1500Pt入手できます。また、追加の限定着せ替えは「クルーズパス」を購入して開放される「SP報酬」でのみ入手できます。要注意。
-
-・任務のスキップ（オススメしません）
- 「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
- ダイヤを消費しますので、オススメしません。
- 「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_task_help_2412 = {
-	tip = {
-		{
-			info = [[
-■シーズン任務について
-・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
- ①週次開放任務
- キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
- ②全期間任務
- 最初から全開放される任務。全1グループ
-
-・「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
-
-・「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
- ダイヤを消費しますので、オススメしません……
- 「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_title_2412 = {
-	tip = "シーズン任務・20期"
-}
-_G.pg.base.gametip.cruise_tip_skin = {
-	tip = "シーズン任務へ"
-}
-_G.pg.base.gametip.cruise_tip_base = {
-	tip = "-基本報酬-"
-}
-_G.pg.base.gametip.cruise_tip_upgrade = {
-	tip = "-追加報酬-"
-}
-_G.pg.base.gametip.levelscene_mapselect_normal = {
-	tip = "普通"
-}
-_G.pg.base.gametip.levelscene_mapselect_advanced = {
-	tip = "挑戦"
 }
 _G.pg.base.gametip.airforce_title_1 = {
 	tip = "航电系统"
@@ -25811,9 +25930,6 @@ _G.pg.base.gametip.tolovegame_puzzle_line_tip = {
 _G.pg.base.gametip.tolovegame_puzzle_puzzle_tip = {
 	tip = "パーツはジョイントポイントに合わせて配置可能"
 }
-_G.pg.base.gametip.item_assigned_type_limit_error = {
-	tip = "すでに所持数上限に達しているため交換できません"
-}
 _G.pg.base.gametip.maintenance_message_text = {
 	tip = "$1後にメンテナンスが開始します。メンテ中はゲームをプレイできません。ご注意ください"
 }
@@ -25828,21 +25944,6 @@ _G.pg.base.gametip.notify_clock_tip = {
 }
 _G.pg.base.gametip.notify_clock_button = {
 	tip = "アラーム権限を許可する"
-}
-_G.pg.base.gametip.battle_text_lumei_1 = {
-	tip = "「ついて来てっての！」"
-}
-_G.pg.base.gametip.dorm3d_furniture_lack = {
-	tip = "[未所持]"
-}
-_G.pg.base.gametip.dorm3d_purchase_label_special = {
-	tip = "特典"
-}
-_G.pg.base.gametip.dorm3d_purchase_outtime = {
-	tip = "販売期間外です"
-}
-_G.pg.base.gametip.dorm3d_collect_block_by_furniture = {
-	tip = "アイテムは家具$1に入れ替えられたため、現在入手できません"
 }
 _G.pg.base.gametip.skin_shop_nonuse_label = {
 	tip = "割引適用しない"
@@ -25861,11 +25962,11 @@ _G.pg.base.gametip.help_starLightAlbum = {
 		{
 			info = [[
 1. 「思い出」画面に「作戦実績」が新規追加されます。
-2. イベント開催時、当該イベントの任務をクリアすると<color=#92fc63>「記念ステッカー」</color>を入手でき、さらにステッカーを集めると、記念章家具「レジスタンス本部ビル」と勲章「レジスタンス記念勲章」を入手できます。
+2. イベント開催時、当該イベントの任務をクリアすると<color=#92fc63>「記念ステッカー」</color>を入手でき、さらにステッカーを集めると、記念章家具と勲章を入手できます。
  ※ イベント開催中、<color=#92fc63>イベントバナーの「実績」か、「思い出」の「作戦実績」</color>から「記念ステッカー」ページに移動できます；
  ※ イベント終了後、<color=#92fc63>「思い出」の「作戦実績」</color>でのみ「記念ステッカー」を確認できます；
  ※ 「記念ステッカー」はイベント任務クリアで入手できます；
- ※ 報酬受け取り画面の開放期間は1月8日（水）23:59まで；]]
+ ※ 報酬受け取り画面はイベント終了後でも一定期間開放されます；]]
 		}
 	}
 }
@@ -25880,87 +25981,6 @@ _G.pg.base.gametip.word_show_expire_content = {
 }
 _G.pg.base.gametip.word_got_pt = {
 	tip = "入手済"
-}
-_G.pg.base.gametip.dorm3d_accompany_not_download = {
-	tip = "$1のアセットを先にDLする必要があります"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_day1 = {
-	tip = "月"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_day2 = {
-	tip = "火"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_day3 = {
-	tip = "水"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_day4 = {
-	tip = "木"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_day5 = {
-	tip = "金"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_day6 = {
-	tip = "土"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_day7 = {
-	tip = "日"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_remember = {
-	tip = "今日の予定を覚えてね"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_choose = {
-	tip = "今日の予定を教えてね："
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior1 = {
-	tip = "読書"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior2 = {
-	tip = "絵描き"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior3 = {
-	tip = "勉強"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior4 = {
-	tip = "舞踊"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior5 = {
-	tip = "球技"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior6 = {
-	tip = "運動"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior7 = {
-	tip = "掃除"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior8 = {
-	tip = "料理"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior9 = {
-	tip = "洗濯"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior10 = {
-	tip = "ゲーム"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior11 = {
-	tip = "散歩"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior12 = {
-	tip = "睡眠"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate1 = {
-	tip = "達人"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate2 = {
-	tip = "超人"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate3 = {
-	tip = "好き"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate4 = {
-	tip = "嗜好"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate5 = {
-	tip = "バランス"
 }
 _G.pg.base.gametip.word_activity_not_open = {
 	tip = "開催期間外"
@@ -25994,4 +26014,10 @@ _G.pg.base.gametip.dorm3d_noshiro_bed = {
 }
 _G.pg.base.gametip.dorm3d_guide_beach_tip = {
 	tip = "対応キャラのアセットをDLする必要があります"
+}
+_G.pg.base.gametip.dorm3d_gift_favor_max = {
+	tip = "親愛度が上限に達しています。プレゼントを贈っても親愛度は上昇しません。プレゼントを贈りますか？"
+}
+_G.pg.base.gametip.please_input_1_99 = {
+	tip = "1～99を入力"
 }

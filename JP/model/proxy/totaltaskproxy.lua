@@ -22,6 +22,9 @@ function var_0_0.register(arg_1_0)
 	arg_1_0.actTasks = {}
 
 	arg_1_0:on(20201, function(arg_2_0)
+		getProxy(AvatarFrameProxy):clearData()
+		getProxy(ActivityTaskProxy):clearData()
+
 		for iter_2_0, iter_2_1 in ipairs(arg_2_0.info) do
 			local var_2_0 = iter_2_1.act_id
 			local var_2_1 = iter_2_1.tasks

@@ -4185,7 +4185,7 @@ pg.activity_shop_extra = {
 		commodity_type = 7,
 		activity = 7020,
 		commodity_id = 406014,
-		order = 7,
+		order = 14,
 		id = 126,
 		num = 1,
 		num_limit = 1,
@@ -4212,6 +4212,84 @@ pg.activity_shop_extra = {
 					2025,
 					1,
 					31
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[127] = {
+		commodity_type = 7,
+		activity = 5779,
+		commodity_id = 501021,
+		order = 12,
+		id = 127,
+		num = 1,
+		num_limit = 1,
+		end_by_maintenance = 0,
+		scene = {
+			"scene RED PACKEY"
+		},
+		time = {
+			{
+				{
+					2025,
+					1,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					2,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[128] = {
+		commodity_type = 7,
+		activity = 5779,
+		commodity_id = 301882,
+		order = 12,
+		id = 128,
+		num = 1,
+		num_limit = 1,
+		end_by_maintenance = 0,
+		scene = {
+			"scene RED PACKEY"
+		},
+		time = {
+			{
+				{
+					2025,
+					1,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					2,
+					6
 				},
 				{
 					23,
@@ -4341,7 +4419,9 @@ pg.activity_shop_extra = {
 			123,
 			124,
 			125,
-			126
+			126,
+			127,
+			128
 		}
 	},
 	all = {
@@ -4463,6 +4543,8 @@ pg.activity_shop_extra = {
 		123,
 		124,
 		125,
-		126
+		126,
+		127,
+		128
 	}
 }

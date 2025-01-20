@@ -461,13 +461,12 @@
 			}
 		},
 		{
-			expression = 1,
+			actor = 101260,
 			side = 2,
 			bgName = "bg_story_task",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#a9f548",
-			actor = 101260,
 			say = "指揮官……次の研究……エルドリッジ、時間を知らせに来た……",
 			typewriter = {
 				speed = 0.05,
@@ -479,13 +478,12 @@
 			}
 		},
 		{
-			expression = 1,
+			actor = 101260,
 			side = 2,
 			bgName = "bg_story_task",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#a9f548",
-			actor = 101260,
 			say = "……？今、サラトガの声が聞こえたような……",
 			typewriter = {
 				speed = 0.05,
@@ -550,14 +548,13 @@
 			}
 		},
 		{
-			expression = 1,
+			paintingNoise = false,
 			side = 2,
 			bgName = "bg_story_task",
-			paintingNoise = false,
-			dir = 1,
-			actor = 101260,
-			nameColor = "#a9f548",
 			hidePaintObj = true,
+			dir = 1,
+			nameColor = "#a9f548",
+			actor = 101260,
 			say = "指揮官……疲れた？",
 			typewriter = {
 				speed = 0.05,
@@ -569,13 +566,12 @@
 			}
 		},
 		{
-			expression = 1,
+			actor = 101260,
 			side = 2,
 			bgName = "bg_story_task",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#a9f548",
-			actor = 101260,
 			say = "疲れたら…休む？エルドリッジの…時間の変更…してくる？",
 			typewriter = {
 				speed = 0.05,

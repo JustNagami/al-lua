@@ -189,7 +189,7 @@
 			},
 			options = {
 				{
-					content = "よく木を登る…？",
+					content = "よく木に登る…？",
 					flag = 1
 				}
 			}

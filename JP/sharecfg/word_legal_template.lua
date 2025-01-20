@@ -5927,6 +5927,9 @@ function temp()
 			改 = {
 				this = true
 			}
+		},
+		風 = {
+			this = true
 		}
 	}
 end
@@ -5969,6 +5972,9 @@ function temp()
 			this = true
 		},
 		圻 = {
+			this = true
+		},
+		容 = {
 			this = true
 		},
 		伦 = {
@@ -7348,6 +7354,16 @@ end
 temp()
 
 function temp()
+	var_0_1.伏 = {
+		波 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.逸 = {
 		仙 = {
 			this = true,
@@ -7411,6 +7427,16 @@ end
 temp()
 
 function temp()
+	var_0_1.建 = {
+		武 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.寰 = {
 		昌 = {
 			this = true
@@ -7444,9 +7470,37 @@ end
 temp()
 
 function temp()
+	var_0_1.华 = {
+		甲 = {
+			· = {
+				改 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.定 = {
 		安 = {
 			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.抚 = {
+		顺 = {
+			["."] = {
+				改 = {
+					this = true
+				}
+			}
 		}
 	}
 end

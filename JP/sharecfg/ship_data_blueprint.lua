@@ -1871,7 +1871,7 @@ pg.ship_data_blueprint = {
 		unlock_word = "重桜陣営技術Pt<color=#92fc63>950</color>以上",
 		id = 39905,
 		price = 6000,
-		is_pursuing = 0,
+		is_pursuing = 1,
 		unlock_task_open_condition = {
 			60191
 		},
@@ -1976,7 +1976,7 @@ pg.ship_data_blueprint = {
 		unlock_word = "鉄血陣営技術Pt<color=#92fc63>700</color>以上",
 		id = 49905,
 		price = 6000,
-		is_pursuing = 0,
+		is_pursuing = 1,
 		unlock_task_open_condition = {
 			60201
 		},
@@ -2363,7 +2363,7 @@ pg.ship_data_blueprint = {
 		unlock_word = "鉄血陣営技術Pt<color=#92fc63>700</color>以上",
 		id = 49907,
 		price = 1500,
-		is_pursuing = 0,
+		is_pursuing = 1,
 		unlock_task_open_condition = {
 			60241
 		},
@@ -2464,7 +2464,7 @@ pg.ship_data_blueprint = {
 		unlock_word = "東煌陣営技術Pt<color=#92fc63>160</color>以上",
 		id = 59901,
 		price = 1500,
-		is_pursuing = 0,
+		is_pursuing = 1,
 		unlock_task_open_condition = {
 			60251
 		},
@@ -2565,7 +2565,7 @@ pg.ship_data_blueprint = {
 		unlock_word = "ユニオン陣営技術Pt<color=#92fc63>760</color>以上、サディア陣営技術Pt<color=#92fc63>300</color>以上",
 		id = 79901,
 		price = 1500,
-		is_pursuing = 0,
+		is_pursuing = 1,
 		unlock_task_open_condition = {
 			60260,
 			60261

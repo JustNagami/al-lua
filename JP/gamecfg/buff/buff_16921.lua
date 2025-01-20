@@ -290,7 +290,7 @@
 			}
 		}
 	},
-	time = 8,
+	time = 0,
 	name = "",
 	init_effect = "jinengchufared",
 	color = "red",

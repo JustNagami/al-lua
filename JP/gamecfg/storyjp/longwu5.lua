@@ -278,7 +278,7 @@
 			actor = 305130,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "もちろんにゃ！ なるほど、その手があったね！",
+			say = " なるほど、その手があったね！もちろんにゃ！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

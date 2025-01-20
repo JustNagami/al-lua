@@ -1761,6 +1761,134 @@ _G.pg.base.item_virtual_data_statistics[52072] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
+_G.pg.base.item_virtual_data_statistics[52081] = {
+	display = "ランダムで下記の強化ユニットを入手できます。",
+	name = "強化ユニット(ランダム)",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/52001",
+	id = 52081,
+	order = 0,
+	display_icon = {
+		{
+			2,
+			42061,
+			1
+		},
+		{
+			2,
+			42062,
+			1
+		},
+		{
+			2,
+			42063,
+			1
+		},
+		{
+			2,
+			42064,
+			1
+		},
+		{
+			2,
+			42065,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[52082] = {
+	display = "ランダムで下記の設計図を入手できます。",
+	name = "兵装設計図(ランダム)",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/55000",
+	id = 52082,
+	order = 0,
+	display_icon = {
+		{
+			2,
+			13043,
+			1
+		},
+		{
+			2,
+			13044,
+			1
+		},
+		{
+			2,
+			13045,
+			1
+		},
+		{
+			2,
+			13046,
+			1
+		},
+		{
+			2,
+			13047,
+			1
+		},
+		{
+			2,
+			13048,
+			1
+		},
+		{
+			2,
+			13024,
+			1
+		},
+		{
+			2,
+			13007,
+			1
+		},
+		{
+			2,
+			13010,
+			1
+		},
+		{
+			2,
+			13009,
+			1
+		},
+		{
+			2,
+			13011,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
 _G.pg.base.item_virtual_data_statistics[53000] = {
 	display = "下記の装備・設計図をランダムで入手できる",
 	name = "装備＆設計図（ランダム）",
@@ -146975,6 +147103,348 @@ _G.pg.base.item_virtual_data_statistics[58995] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
+_G.pg.base.item_virtual_data_statistics[58996] = {
+	display = "一定の確率で下記の装備外装を入手できます",
+	name = "装備外装箱（晩夏）",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/equipskin_drop_display",
+	id = 58996,
+	order = 0,
+	display_icon = {
+		{
+			9,
+			101,
+			1
+		},
+		{
+			9,
+			102,
+			1
+		},
+		{
+			9,
+			103,
+			1
+		},
+		{
+			9,
+			104,
+			1
+		},
+		{
+			9,
+			105,
+			1
+		},
+		{
+			9,
+			106,
+			1
+		},
+		{
+			9,
+			107,
+			1
+		},
+		{
+			9,
+			108,
+			1
+		},
+		{
+			9,
+			109,
+			1
+		},
+		{
+			9,
+			110,
+			1
+		},
+		{
+			9,
+			111,
+			1
+		},
+		{
+			9,
+			112,
+			1
+		},
+		{
+			9,
+			113,
+			1
+		},
+		{
+			9,
+			114,
+			1
+		},
+		{
+			9,
+			115,
+			1
+		},
+		{
+			9,
+			116,
+			1
+		},
+		{
+			9,
+			117,
+			1
+		},
+		{
+			9,
+			118,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[58997] = {
+	display = "一定の確率で下記の装備外装を入手できます",
+	name = "装備外装箱（ハロウィンホラー）",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/equipskin_drop_display",
+	id = 58997,
+	order = 0,
+	display_icon = {
+		{
+			9,
+			4059,
+			1
+		},
+		{
+			9,
+			4060,
+			1
+		},
+		{
+			9,
+			4061,
+			1
+		},
+		{
+			9,
+			4062,
+			1
+		},
+		{
+			9,
+			4063,
+			1
+		},
+		{
+			9,
+			4064,
+			1
+		},
+		{
+			9,
+			4065,
+			1
+		},
+		{
+			9,
+			4066,
+			1
+		},
+		{
+			9,
+			4067,
+			1
+		},
+		{
+			9,
+			4068,
+			1
+		},
+		{
+			9,
+			4069,
+			1
+		},
+		{
+			9,
+			4070,
+			1
+		},
+		{
+			9,
+			4071,
+			1
+		},
+		{
+			9,
+			4072,
+			1
+		},
+		{
+			9,
+			4073,
+			1
+		},
+		{
+			9,
+			4074,
+			1
+		},
+		{
+			9,
+			4075,
+			1
+		},
+		{
+			9,
+			4076,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[58999] = {
+	display = "一定の確率で下記の装備外装を入手できます",
+	name = "装備外装箱（コラボ）",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/equipskin_drop_display",
+	id = 58999,
+	order = 0,
+	display_icon = {
+		{
+			9,
+			1450,
+			1
+		},
+		{
+			9,
+			1451,
+			1
+		},
+		{
+			9,
+			1452,
+			1
+		},
+		{
+			9,
+			1453,
+			1
+		},
+		{
+			9,
+			1454,
+			1
+		},
+		{
+			9,
+			1455,
+			1
+		},
+		{
+			9,
+			1456,
+			1
+		},
+		{
+			9,
+			1457,
+			1
+		},
+		{
+			9,
+			1458,
+			1
+		},
+		{
+			9,
+			1459,
+			1
+		},
+		{
+			9,
+			1460,
+			1
+		},
+		{
+			9,
+			1461,
+			1
+		},
+		{
+			9,
+			1462,
+			1
+		},
+		{
+			9,
+			1463,
+			1
+		},
+		{
+			9,
+			1464,
+			1
+		},
+		{
+			9,
+			1465,
+			1
+		},
+		{
+			9,
+			1466,
+			1
+		},
+		{
+			9,
+			1467,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
 _G.pg.base.item_virtual_data_statistics[59000] = {
 	display = "参加キャラは経験値を獲得できます",
 	name = "経験値",
@@ -155719,6 +156189,512 @@ _G.pg.base.item_virtual_data_statistics[59577] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
+_G.pg.base.item_virtual_data_statistics[59578] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.6.12メンテナンスまで）で削除されます",
+	name = "試着貸出チケット（2024.6.12まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 59578,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59579] = {
+	display = "「赫輝のマルティリウム」の収集Pt。イベント終了時に削除される",
+	name = "輝きのクリスタル破片",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/huiguang_pt1",
+	id = 59579,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59580] = {
+	display = "イベントページ・ショップにてUR艦船「モガドール」と交換できる特殊Pt。イベント終了後に削除される",
+	name = "URチケット",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 3,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/huiguang_pt2",
+	id = 59580,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59581] = {
+	display = "「カムバックミッション」で入手できるイベントPt。イベント終了後に削除されます",
+	name = "カムバックPt",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/union_pt",
+	id = 59581,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59582] = {
+	display = "「饅頭配管工」クリアで入手できるチケット。7枚集めると招待状アイテムを入手可能",
+	name = "クルーズ記念チケット",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 3,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 99,
+	is_world = 0,
+	icon = "Props/59582",
+	id = 59582,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59583] = {
+	display = "キャンペーン「シーズン任務」(2024.6.1~2024.7.31)で累計獲得数報酬を入手するための任務Ptアイテム。キャンペーン終了後に削除されます",
+	name = "進捗Pt",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "props/battlepass_pt",
+	id = 59583,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59584] = {
+	display = "不该被看到",
+	name = "通行证十七期礼包商店购买支付标记",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 7017,
+	virtual_type = 21,
+	is_world = 0,
+	icon = "props/summer_stamp",
+	id = 59584,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59585] = {
+	display = "イベント「ママの演奏練習」・友好度",
+	name = "友好度-フリードリヒちゃん",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xiaofeitelie_pt",
+	id = 59585,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59586] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.6.12メンテナンスまで）で削除されます",
+	name = "試着貸出チケット（2024.6.12まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 59586,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59587] = {
+	display = "『吟ずる瑠璃の楽章』のイベント報酬交換に使用する。イベント終了後に削除される",
+	name = "楽章の栞",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/gonghai_pt",
+	id = 59587,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59588] = {
+	display = "「作戦準備・鉄血」報酬交換用アイテム。イベント終了後に削除される。",
+	name = "訓練Pt",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xunliandianshu_d",
+	id = 59588,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59589] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.6.26メンテナンスまで）で削除されます",
+	name = "試着貸出チケット（2024.6.26まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 59589,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59590] = {
+	display = "イベント「吟ずる瑠璃の楽章」で入手できる期間限定建造チケット。イベント終了後に削除されます",
+	name = "建造支援チケット",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5370,
+	virtual_type = 22,
+	is_world = 0,
+	icon = "Props/buildTicket",
+	id = 59590,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59591] = {
+	display = "「リトル学園へようこそ」の収集Ptアイテム。イベント終了後に削除されます",
+	name = "カラフルらくがき",
+	drop_oil_max = 0,
+	type = 98,
+	virtual_type = 0,
+	id = 59591,
+	shop_id = -1,
+	replace_item = 0,
+	link_id = 0,
+	icon = "Props/59591",
+	order = 0,
+	rarity = 2,
+	max_num = 0,
+	display_icon = "",
+	time_limit = 0,
+	drop_gold_max = 0,
+	is_world = 0,
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59592] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.7.10メンテナンスまで）で削除されます",
+	name = "試着貸出チケット（2024.7.10まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 59592,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59593] = {
+	display = "「リトル学園へようこそ」の施設増築アイテム。イベント終了後に削除されます",
+	name = "リトルスター増築チケット",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5409,
+	virtual_type = 24,
+	is_world = 0,
+	icon = "Props/59593",
+	id = 59593,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59594] = {
+	display = "『誠閃の剣　搖光の城』のイベント報酬交換に使用する。イベント終了後に削除される",
+	name = "栄光の星",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/qianwei_pt",
+	id = 59594,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59595] = {
+	display = "「作戦準備・ロイヤル」報酬交換用アイテム。イベント終了後に削除される。",
+	name = "訓練Pt",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xunliandianshu_yv3",
+	id = 59595,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59596] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.7.24メンテナンスまで）で削除されます",
+	name = "試着貸出チケット（2024.7.24まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 59596,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59597] = {
+	display = "イベント「誠閃の剣　搖光の城」で入手できる期間限定建造チケット。イベント終了後に削除されます",
+	name = "建造支援チケット",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5423,
+	virtual_type = 22,
+	is_world = 0,
+	icon = "Props/buildTicket",
+	id = 59597,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59598] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.8.7メンテナンスまで）で削除されます",
+	name = "試着貸出チケット（2024.8.7まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 59598,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[59599] = {
+	display = "キャンペーン「シーズン任務」で累計獲得数報酬を入手するための任務Ptアイテム。キャンペーン終了後に削除されます",
+	name = "進捗Pt",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 26,
+	is_world = 0,
+	icon = "props/battlepass_pt",
+	id = 59599,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
 _G.pg.base.item_virtual_data_statistics[59601] = {
 	display = "三笠大先輩の蒐集品の一つ。駆逐艦「江風」のモデル",
 	name = "江風モデル",
@@ -159353,6 +160329,29 @@ _G.pg.base.item_virtual_data_statistics[60025] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
+_G.pg.base.item_virtual_data_statistics[60026] = {
+	display = "「饅頭の年玉」で開封可能",
+	name = "年玉",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5779,
+	virtual_type = 11,
+	is_world = 0,
+	icon = "props/red_packet2",
+	id = 60026,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
 _G.pg.base.item_virtual_data_statistics[60030] = {
 	display = "「黄金の秘宝」イベントアイテム",
 	name = "ヒント「M」",
@@ -161308,6 +162307,167 @@ _G.pg.base.item_virtual_data_statistics[60339] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
+_G.pg.base.item_virtual_data_statistics[60340] = {
+	display = "絵の具A",
+	name = "絵の具A",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5780,
+	virtual_type = 4,
+	is_world = 0,
+	icon = "props/draw_a",
+	id = 60340,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[60341] = {
+	display = "絵の具B",
+	name = "絵の具B",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5780,
+	virtual_type = 4,
+	is_world = 0,
+	icon = "props/draw_b",
+	id = 60341,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[60342] = {
+	display = "絵の具C",
+	name = "絵の具C",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5780,
+	virtual_type = 4,
+	is_world = 0,
+	icon = "props/draw_c",
+	id = 60342,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[60343] = {
+	display = "絵の具D",
+	name = "絵の具D",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5780,
+	virtual_type = 4,
+	is_world = 0,
+	icon = "props/draw_d",
+	id = 60343,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[60344] = {
+	display = "絵の具E",
+	name = "絵の具E",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5780,
+	virtual_type = 4,
+	is_world = 0,
+	icon = "props/draw_e",
+	id = 60344,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[60345] = {
+	display = "絵の具F",
+	name = "絵の具F",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5780,
+	virtual_type = 4,
+	is_world = 0,
+	icon = "props/draw_f",
+	id = 60345,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[60346] = {
+	display = "絵の具G",
+	name = "絵の具G",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5780,
+	virtual_type = 4,
+	is_world = 0,
+	icon = "props/draw_g",
+	id = 60346,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
 _G.pg.base.item_virtual_data_statistics[60401] = {
 	display = "前端不显示，道具看不到",
 	name = "海天活动道具1",
@@ -161993,6 +163153,1779 @@ _G.pg.base.item_virtual_data_statistics[60485] = {
 	id = 60485,
 	order = 0,
 	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[60486] = {
+	display = "イベント「出航の前準備」の収集アイテム。イベント終了後に削除されます",
+	name = "楽園改修案",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 99,
+	is_world = 0,
+	icon = "Props/60486",
+	id = 60486,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[60487] = {
+	display = "イベント「新春華裳協奏曲」で得られるイベントポイント。イベントバナーで「累計Pt報酬」を入手可能",
+	name = "特製生地",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "props/jianwu_pt",
+	id = 60487,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[60488] = {
+	display = "「新春華裳協奏曲」EXステージ出撃、もしくはボーナス出撃回数回復時に使用可能",
+	name = "特別戦闘券",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/nvpu_ticket",
+	id = 60488,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65001] = {
+	display = "不该被看到",
+	name = "通行证十八期对应虚拟道具",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 7018,
+	virtual_type = 21,
+	is_world = 0,
+	icon = "props/battlepass_pt",
+	id = 65001,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65002] = {
+	display = "「饅頭レース」で使用する前進回数。イベント終了後に削除されます",
+	name = "前進回数",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5460,
+	virtual_type = 9,
+	is_world = 0,
+	icon = "props/monopoly_dice",
+	id = 65002,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65003] = {
+	display = "『夢幻の間奏曲』のイベント報酬交換に使用する。イベント終了後に削除される",
+	name = "共同演習記念コイン",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "props/sitelasibao_pt",
+	id = 65003,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65004] = {
+	display = "「作戦準備・大洋」報酬交換用アイテム。イベント終了後に削除される。",
+	name = "訓練Pt",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xunliandianshu_mv5",
+	id = 65004,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65010] = {
+	display = "「荒野休日開拓記」の「開拓タウン」で、バカンスタウンレベルを上げるのに使用するアイテム",
+	name = "タウン繁栄度",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5523,
+	virtual_type = 27,
+	is_world = 0,
+	icon = "Props/65010",
+	id = 65010,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65011] = {
+	display = "「荒野休日開拓記」の収集アイテム",
+	name = "開拓コイン",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5523,
+	virtual_type = 28,
+	is_world = 0,
+	icon = "Props/65011",
+	id = 65011,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65012] = {
+	display = "「錬翼空翔」イベントの収集アイテム。イベント終了時に削除されます",
+	name = "異状事件調査",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/65012",
+	id = 65012,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65013] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.8.28メンテナンスまで）で削除されます",
+	name = "試着貸出チケット（2024.8.28まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65013,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65014] = {
+	display = "「荒野休日開拓記」の「思い出」で、艦船たちとの思い出ストーリーを開放できるアイテム",
+	name = "思い出",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5535,
+	virtual_type = 101,
+	is_world = 0,
+	icon = "Props/65014",
+	id = 65014,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65015] = {
+	display = "イベント「徒花咲かす彼岸」で入手できるイベントPt。累計獲得数報酬を入手可能",
+	name = "此岸の花",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "props/ruifeng_pt",
+	id = 65015,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65016] = {
+	display = "「作戦準備・ナラク」報酬交換用アイテム。イベント終了後に削除される。",
+	name = "訓練Pt",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xunliandianshu_20240905",
+	id = 65016,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65017] = {
+	display = "「饅頭ケーキ」プレイで入手できる記念チケット。7枚集めるとイベントバナーにてアイテム七周年の招待状を入手可能",
+	name = "夢のケーキ券",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 3,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 99,
+	is_world = 0,
+	icon = "Props/65017",
+	id = 65017,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65018] = {
+	display = "「カムバックミッション」で入手できるイベントPt。イベント終了後に削除されます",
+	name = "カムバックPt",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/union_pt",
+	id = 65018,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65019] = {
+	display = "イベント「絳染む丹華の詠歌」での収集Ptアイテム、イベント終了後に削除される",
+	name = "ナラク晶石",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/65019",
+	id = 65019,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65020] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.10.2メンテナンスまで）で削除されます",
+	name = "試着貸出チケット（2024.10.2まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65020,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65024] = {
+	display = "入手するとチャットスタンプ「シリアスの多彩多様」（全6種類）を開放できます。\n チャットの「スタンプ-デフォルト」で使\n用することができます",
+	name = "スタンプシリーズ「シリアスの多彩多様」",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/65024",
+	id = 65024,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65028] = {
+	display = "不该被看到",
+	name = "通行证十九期对应虚拟道具",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 7019,
+	virtual_type = 21,
+	is_world = 0,
+	icon = "props/battlepass_pt",
+	id = 65028,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65031] = {
+	display = "「鋼鷲の冒険譚」報酬交換用。イベント終了後に削除されます",
+	name = "博覧会記念コイン",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/yidaliv3_pt",
+	id = 65031,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65032] = {
+	display = "「作戦準備・サディア」報酬交換用アイテム。イベント終了後に削除される。",
+	name = "訓練Pt",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xunliandianshu_yv2",
+	id = 65032,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65033] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.10.23まで）で削除されます",
+	name = "試着貸出チケット（2024.10.23まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65033,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65034] = {
+	display = "イベント「鋼鷲の冒険譚」で入手できる期間限定建造チケット。イベント終了後に削除されます",
+	name = "建造支援チケット",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5594,
+	virtual_type = 22,
+	is_world = 0,
+	icon = "Props/buildTicket",
+	id = 65034,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65035] = {
+	display = "イベント「テンペスタと眠りし海」で入手できる期間限定建造チケット。イベント終了後に削除されます",
+	name = "海図の断片",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/65035",
+	id = 65035,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65036] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.11.6まで）で削除されます",
+	name = "試着貸出チケット（2024.11.6まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65036,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65037] = {
+	display = "「母港休日ハロウィン」のストーリー開放に使用できます",
+	name = "ハロウィンページ",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5623,
+	virtual_type = 101,
+	is_world = 0,
+	icon = "Props/65037",
+	id = 65037,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65041] = {
+	display = "「赫の涙月　菫の暁風」報酬交換用。イベント終了後に削除されます",
+	name = "紫華の碁石",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/rixiv3_pt",
+	id = 65041,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65042] = {
+	display = "「作戦準備・重桜」報酬交換用アイテム。イベント終了後に削除される。",
+	name = "訓練Pt",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 99,
+	is_world = 0,
+	icon = "Props/xunliandianshu_s",
+	id = 65042,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65043] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.11.20まで）で削除されます",
+	name = "試着貸出チケット（2024.11.20まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65043,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65044] = {
+	display = "イベント「赫の涙月　菫の暁風」で入手できる期間限定建造チケット。イベント終了後に削除されます",
+	name = "建造支援チケット",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5639,
+	virtual_type = 22,
+	is_world = 0,
+	icon = "Props/buildTicket",
+	id = 65044,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65047] = {
+	display = "イベント「危険発明接近中」での収集Ptアイテム、イベント終了後に削除される",
+	name = "エナジーストーン",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/tolove_pt",
+	id = 65047,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65048] = {
+	display = "不思議な力を宿っているクリスタル状欠片。「助けて、ララさん」において、依頼を開放するのに使用されます",
+	name = "エネルギーの欠片",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/tolove_jigsaw_pt",
+	id = 65048,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65049] = {
+	display = "6つのデータチップを集め、イベントメイン画面の「記念章」をタップすると、コラボ限定家具「デビルーク風記念章」と交換できます",
+	name = "データチップL",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_lala",
+	id = 65049,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65050] = {
+	display = "6つのデータチップを集め、イベントメイン画面の「記念章」をタップすると、コラボ限定家具「デビルーク風記念章」と交換できます",
+	name = "データチップN",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_nana",
+	id = 65050,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65051] = {
+	display = "6つのデータチップを集め、イベントメイン画面の「記念章」をタップすると、コラボ限定家具「デビルーク風記念章」と交換できます",
+	name = "データチップM",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_momo",
+	id = 65051,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65052] = {
+	display = "6つのデータチップを集め、イベントメイン画面の「記念章」をタップすると、コラボ限定家具「デビルーク風記念章」と交換できます",
+	name = "データチップK",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_yami",
+	id = 65052,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65053] = {
+	display = "6つのデータチップを集め、イベントメイン画面の「記念章」をタップすると、コラボ限定家具「デビルーク風記念章」と交換できます",
+	name = "データチップH",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_haruna",
+	id = 65053,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65054] = {
+	display = "6つのデータチップを集め、イベントメイン画面の「記念章」をタップすると、コラボ限定家具「デビルーク風記念章」と交換できます",
+	name = "データチップY",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5689,
+	virtual_type = 1,
+	is_world = 0,
+	icon = "Props/tolove_source_yui",
+	id = 65054,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65057] = {
+	display = "キャンペーン「シーズン任務」で累計獲得数報酬を入手するための任務Ptアイテム。キャンペーン終了後に削除されます",
+	name = "進捗Pt",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 7020,
+	virtual_type = 21,
+	is_world = 0,
+	icon = "props/battlepass_pt",
+	id = 65057,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65058] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.12.4まで）で削除されます",
+	name = "試着貸出チケット（2024.12.4まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65058,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65061] = {
+	display = "「作戦準備 ？？？」報酬交換用アイテム。イベント終了後に削除される。",
+	name = "訓練Pt",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xunliandianshu_20241212",
+	id = 65061,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65063] = {
+	display = "イベント「星降る夕影の残光」で入手できる期間限定建造チケット。イベント終了後に削除されます",
+	name = "外なる獣のサンプル",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/65063",
+	id = 65063,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65064] = {
+	display = "イベントページ・ショップにてUR艦船「Z52」と交換できる特殊Pt。イベント終了後に削除される",
+	name = "URチケット",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 3,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/65064",
+	id = 65064,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65066] = {
+	display = "7個集めると、艦船と交換できる「正月招待状2025」を入手可能！",
+	name = "正月オリヅル",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "props/xinniandezhufu",
+	id = 65066,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65067] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2025.1.1まで）で削除されます",
+	name = "試着貸出チケット（2025.1.1まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65067,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65068] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2025.1.8まで）で削除されます",
+	name = "試着貸出チケット（2025.1.8まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65068,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65069] = {
+	display = "「作戦準備・星の海」報酬交換用アイテム。イベント終了後に削除される。",
+	name = "訓練Pt",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xunliandianshu_mv2",
+	id = 65069,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65070] = {
+	display = "イベント「積重なる事象の幻界」で入手できる期間限定建造チケット。イベント終了後に削除されます",
+	name = "建造支援チケット",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 5747,
+	virtual_type = 22,
+	is_world = 0,
+	icon = "Props/buildTicket",
+	id = 65070,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65071] = {
+	display = "「積重なる事象の幻界」報酬交換用。イベント終了後に削除されます",
+	name = "追想の造花",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/meixi_ii_pt",
+	id = 65071,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65072] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2025.1.15まで）で削除されます",
+	name = "試着貸出チケット（2025.1.15まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65072,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65073] = {
+	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2025.2.5まで）で削除されます",
+	name = "試着貸出チケット（2025.2.5まで）",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/skinTicket",
+	id = 65073,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65500] = {
+	display = "「星の獣」に対する偉大なる勝利を記念する、鉄血レジスタンスの記念勲章。\n—— 我々の世界は滅びぬ。今日も。明日も。",
+	name = "レジスタンス記念勲章",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 5,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Medal/9001",
+	id = 65500,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65501] = {
+	display = "几帳面な性格の鉄血レジスタンスのリーダー。「我は常に貴殿を見ているとも」",
+	name = "ステッカー：ルメイ",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/571101",
+	id = 65501,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65502] = {
+	display = "遥かな星空より出でしもの。その正体は謎に包まれている。",
+	name = "ステッカー：星の獣",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/571102",
+	id = 65502,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65503] = {
+	display = "星の獣が現れし夜、仄かな夜空はいつもよりも輝かしく見えた。",
+	name = "ステッカー：星空",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/571103",
+	id = 65503,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65504] = {
+	display = "外なる獣の残骸から収集したサンプル。化学原料として扱われるため、食用にはならない。",
+	name = "ステッカー：サンプル",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/571104",
+	id = 65504,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65505] = {
+	display = "鏡面海域と「エターナル・スター」によって守られているレジスタンス基地。居住性がいいとは言えないが守りが堅い。",
+	name = "ステッカー：夕日の基地",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/571105",
+	id = 65505,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65506] = {
+	display = "外なる獣の勢力は強大だが、こっちも十分準備した。乱戦の夜さえ乗り切れば、希望の曙光が見えてくるはずだ。",
+	name = "ステッカー：乱戦の夜",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/571106",
+	id = 65506,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65507] = {
+	display = "「私は星の獣。星を導きて現れ、星を携え去り行く。私にひれ伏せ、私の名を讃え、私の命に従え」",
+	name = "ステッカー：星よりもたらされしもの",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/571107",
+	id = 65507,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65508] = {
+	display = "こっちはハウスだピョ！ストーンはハウスを狙うピョ！",
+	name = "ステッカー：饅頭カーリング",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/571108",
+	id = 65508,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65509] = {
+	display = "「委託報酬計画」イベントで報酬と交換できるPtになります。イベント終了後に削除されます",
+	name = "軍事委託Pt",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/commission_pt",
+	id = 65509,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65510] = {
+	display = "波乱あれど祈願成就。霓裳絢爛、一夜に咲き誇る",
+	name = "新春華裳記念章",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 5,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Medal/9011",
+	id = 65510,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65511] = {
+	display = "「刺繍羅裳晩春を照らし、輝かせば金孔雀に銀麒麟」",
+	name = "ステッカー；風華霓裳",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/576901",
+	id = 65511,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65512] = {
+	display = "「空ゆく雁は鳴きわたり、朝の日は初めて昇る。士もし妻をめとらば、氷のいまだとけぬまに」",
+	name = "ステッカー：旭日東天",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/576902",
+	id = 65512,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65513] = {
+	display = "「詩を推敲すは雪月風花の夜、絵をしたためるは江湖煙雨の空」",
+	name = "ステッカー：掛け軸",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/576903",
+	id = 65513,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65514] = {
+	display = "「梅は須く雪に三分の白を遜るべく、雪は却って梅に一段の香を輸す」",
+	name = "ステッカー：雪中観梅",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/576904",
+	id = 65514,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65515] = {
+	display = "大冒険はもっと派手に！もっと熱く！",
+	name = "ステッカー：朱雀乗風",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/576905",
+	id = 65515,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65516] = {
+	display = "「行いては到る、水の窮まるところ。 坐しては看る、雲の起こるとき」",
+	name = "ステッカー：捲き雲",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/576906",
+	id = 65516,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65517] = {
+	display = "「折に穫る同心の蓮、繋ぐ縁糸はいと長し」",
+	name = "ステッカー：縁糸",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/576907",
+	id = 65517,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65518] = {
+	display = "建武大魔王を打倒し（削除線が引かれている）、新春大冒険を祝う計画書！",
+	name = "ステッカー：秘密計画書",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "ActivityMedal/576908",
+	id = 65518,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65519] = {
+	display = "「新春祝福」イベントの交換アイテム。イベント終了後に削除される",
+	name = "東煌結び",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/donghuangjie",
+	id = 65519,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65520] = {
+	{
+		{
+			9,
+			4107,
+			1
+		},
+		{
+			9,
+			4108,
+			1
+		},
+		{
+			9,
+			4109,
+			1
+		},
+		{
+			9,
+			4110,
+			1
+		},
+		{
+			9,
+			4111,
+			1
+		},
+		{
+			9,
+			4112,
+			1
+		}
+	},
+	name = "装備外装箱（瑞光迎春）",
+	display = "一定の確率で下記の装備外装を入手できます",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/equipskin_drop_display",
+	id = 65520,
+	order = 0,
+	display_icon = {
+		{
+			9,
+			4095,
+			1
+		},
+		{
+			9,
+			4096,
+			1
+		},
+		{
+			9,
+			4097,
+			1
+		},
+		{
+			9,
+			4098,
+			1
+		},
+		{
+			9,
+			4099,
+			1
+		},
+		{
+			9,
+			4100,
+			1
+		},
+		{
+			9,
+			4101,
+			1
+		},
+		{
+			9,
+			4102,
+			1
+		},
+		{
+			9,
+			4103,
+			1
+		},
+		{
+			9,
+			4104,
+			1
+		},
+		{
+			9,
+			4105,
+			1
+		},
+		{
+			9,
+			4106,
+			1
+		},
+		1
+	},
 	price = {},
 	index = {},
 	shiptrans_id = {},
@@ -167835,6 +170768,394 @@ _G.pg.base.item_virtual_data_statistics[86203] = {
 		{
 			204011,
 			2870
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86204] = {
+	display = "不会被看到",
+	name = "ランダム2024夏水着シリーズ",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86204,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			805031,
+			1000
+		},
+		{
+			901071,
+			1000
+		},
+		{
+			102134,
+			1000
+		},
+		{
+			402073,
+			1000
+		},
+		{
+			599012,
+			1000
+		},
+		{
+			803021,
+			1800
+		},
+		{
+			901051,
+			1600
+		},
+		{
+			901061,
+			1600
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86205] = {
+	display = "不会被看到",
+	name = "ランダム2024夏衣装",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86205,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			299034,
+			1200
+		},
+		{
+			403102,
+			1200
+		},
+		{
+			701043,
+			1200
+		},
+		{
+			305082,
+			1200
+		},
+		{
+			202332,
+			1500
+		},
+		{
+			703022,
+			1400
+		},
+		{
+			302062,
+			1200
+		},
+		{
+			137031,
+			1100
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86206] = {
+	display = "不会被看到",
+	name = "ランダム7周年衣装Ⅰ",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86206,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			302251,
+			1200
+		},
+		{
+			307151,
+			1200
+		},
+		{
+			202127,
+			1200
+		},
+		{
+			302261,
+			1200
+		},
+		{
+			207025,
+			1310
+		},
+		{
+			301911,
+			1310
+		},
+		{
+			401353,
+			1310
+		},
+		{
+			202085,
+			1270
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86207] = {
+	display = "不会被看到",
+	name = "ランダム7周年衣装Ⅱ",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86207,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			305102,
+			1200
+		},
+		{
+			202204,
+			1200
+		},
+		{
+			103245,
+			1200
+		},
+		{
+			319014,
+			1200
+		},
+		{
+			202102,
+			1200
+		},
+		{
+			499072,
+			1430
+		},
+		{
+			306063,
+			1300
+		},
+		{
+			519012,
+			1270
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86208] = {
+	display = "不会被看到",
+	name = "ランダム正月着せ替え2025A",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86208,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			407041,
+			850
+		},
+		{
+			405013,
+			850
+		},
+		{
+			499053,
+			850
+		},
+		{
+			401521,
+			850
+		},
+		{
+			402111,
+			850
+		},
+		{
+			207054,
+			850
+		},
+		{
+			201354,
+			1900
+		},
+		{
+			401091,
+			1500
+		},
+		{
+			401111,
+			1500
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86209] = {
+	display = "不会被看到",
+	name = "ランダム正月着せ替え2025B",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86209,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			307084,
+			1000
+		},
+		{
+			699021,
+			1000
+		},
+		{
+			799021,
+			1000
+		},
+		{
+			199051,
+			1100
+		},
+		{
+			399071,
+			1100
+		},
+		{
+			899041,
+			1600
+		},
+		{
+			402102,
+			1600
+		},
+		{
+			303061,
+			1600
+		}
+	}
+}
+_G.pg.base.item_virtual_data_statistics[86210] = {
+	display = "不会被看到",
+	name = "ランダム衣装",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86210,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			899032,
+			1500
+		},
+		{
+			199042,
+			1550
+		},
+		{
+			305055,
+			1550
+		},
+		{
+			502101,
+			1800
+		},
+		{
+			501081,
+			1800
+		},
+		{
+			501091,
+			1800
 		}
 	}
 }
@@ -177589,177 +180910,6 @@ _G.pg.base.item_virtual_data_statistics[200134] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
-_G.pg.base.item_virtual_data_statistics[59578] = {
-	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.6.12メンテナンスまで）で削除されます",
-	name = "試着貸出チケット（2024.6.12まで）",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 59578,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59579] = {
-	display = "「赫輝のマルティリウム」の収集Pt。イベント終了時に削除される",
-	name = "輝きのクリスタル破片",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/huiguang_pt1",
-	id = 59579,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59580] = {
-	display = "イベントページ・ショップにてUR艦船「モガドール」と交換できる特殊Pt。イベント終了後に削除される",
-	name = "URチケット",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 3,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/huiguang_pt2",
-	id = 59580,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59581] = {
-	display = "「カムバックミッション」で入手できるイベントPt。イベント終了後に削除されます",
-	name = "カムバックPt",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/union_pt",
-	id = 59581,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59582] = {
-	display = "「饅頭配管工」クリアで入手できるチケット。7枚集めると招待状アイテムを入手可能",
-	name = "クルーズ記念チケット",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 3,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 99,
-	is_world = 0,
-	icon = "Props/59582",
-	id = 59582,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86204] = {
-	display = "不会被看到",
-	name = "ランダム2024夏水着シリーズ",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86204,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
-		{
-			805031,
-			1000
-		},
-		{
-			901071,
-			1000
-		},
-		{
-			102134,
-			1000
-		},
-		{
-			402073,
-			1000
-		},
-		{
-			599012,
-			1000
-		},
-		{
-			803021,
-			1800
-		},
-		{
-			901051,
-			1600
-		},
-		{
-			901061,
-			1600
-		}
-	}
-}
 _G.pg.base.item_virtual_data_statistics[200135] = {
 	display = "一定の確率で下記の設計図を入手できます",
 	name = "ランダム設計図",
@@ -180761,315 +183911,6 @@ _G.pg.base.item_virtual_data_statistics[200173] = {
 		}
 	}
 }
-_G.pg.base.item_virtual_data_statistics[59583] = {
-	display = "キャンペーン「シーズン任務」(2024.6.1~2024.7.31)で累計獲得数報酬を入手するための任務Ptアイテム。キャンペーン終了後に削除されます",
-	name = "進捗Pt",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "props/battlepass_pt",
-	id = 59583,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59584] = {
-	display = "不该被看到",
-	name = "通行证十七期礼包商店购买支付标记",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 7017,
-	virtual_type = 21,
-	is_world = 0,
-	icon = "props/summer_stamp",
-	id = 59584,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59585] = {
-	display = "イベント「ママの演奏練習」・友好度",
-	name = "友好度-フリードリヒちゃん",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/xiaofeitelie_pt",
-	id = 59585,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59586] = {
-	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.6.12メンテナンスまで）で削除されます",
-	name = "試着貸出チケット（2024.6.12まで）",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 59586,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86205] = {
-	display = "不会被看到",
-	name = "ランダム2024夏衣装",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86205,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
-		{
-			299034,
-			1200
-		},
-		{
-			403102,
-			1200
-		},
-		{
-			701043,
-			1200
-		},
-		{
-			305082,
-			1200
-		},
-		{
-			202332,
-			1500
-		},
-		{
-			703022,
-			1400
-		},
-		{
-			302062,
-			1200
-		},
-		{
-			137031,
-			1100
-		}
-	}
-}
-_G.pg.base.item_virtual_data_statistics[59587] = {
-	display = "『吟ずる瑠璃の楽章』のイベント報酬交換に使用する。イベント終了後に削除される",
-	name = "楽章の栞",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/gonghai_pt",
-	id = 59587,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59588] = {
-	display = "「作戦準備・鉄血」報酬交換用アイテム。イベント終了後に削除される。",
-	name = "訓練Pt",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/xunliandianshu_d",
-	id = 59588,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59589] = {
-	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.6.26メンテナンスまで）で削除されます",
-	name = "試着貸出チケット（2024.6.26まで）",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 59589,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59590] = {
-	display = "イベント「吟ずる瑠璃の楽章」で入手できる期間限定建造チケット。イベント終了後に削除されます",
-	name = "建造支援チケット",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5370,
-	virtual_type = 22,
-	is_world = 0,
-	icon = "Props/buildTicket",
-	id = 59590,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59591] = {
-	display = "「リトル学園へようこそ」の収集Ptアイテム。イベント終了後に削除されます",
-	name = "カラフルらくがき",
-	drop_oil_max = 0,
-	type = 98,
-	virtual_type = 0,
-	id = 59591,
-	shop_id = -1,
-	replace_item = 0,
-	link_id = 0,
-	icon = "Props/59591",
-	order = 0,
-	rarity = 2,
-	max_num = 0,
-	display_icon = "",
-	time_limit = 0,
-	drop_gold_max = 0,
-	is_world = 0,
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59592] = {
-	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.7.10メンテナンスまで）で削除されます",
-	name = "試着貸出チケット（2024.7.10まで）",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 59592,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59593] = {
-	display = "「リトル学園へようこそ」の施設増築アイテム。イベント終了後に削除されます",
-	name = "リトルスター増築チケット",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5409,
-	virtual_type = 24,
-	is_world = 0,
-	icon = "Props/59593",
-	id = 59593,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
 _G.pg.base.item_virtual_data_statistics[200174] = {
 	display = "一定の確率で下記の設計図を入手できます",
 	name = "ランダム設計図",
@@ -181261,455 +184102,6 @@ _G.pg.base.item_virtual_data_statistics[200177] = {
 			1
 		}
 	},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[52081] = {
-	display = "ランダムで下記の強化ユニットを入手できます。",
-	name = "強化ユニット(ランダム)",
-	max_num = 0,
-	type = 99,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/52001",
-	id = 52081,
-	order = 0,
-	display_icon = {
-		{
-			2,
-			42061,
-			1
-		},
-		{
-			2,
-			42062,
-			1
-		},
-		{
-			2,
-			42063,
-			1
-		},
-		{
-			2,
-			42064,
-			1
-		},
-		{
-			2,
-			42065,
-			1
-		}
-	},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[52082] = {
-	display = "ランダムで下記の設計図を入手できます。",
-	name = "兵装設計図(ランダム)",
-	max_num = 0,
-	type = 99,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/55000",
-	id = 52082,
-	order = 0,
-	display_icon = {
-		{
-			2,
-			13043,
-			1
-		},
-		{
-			2,
-			13044,
-			1
-		},
-		{
-			2,
-			13045,
-			1
-		},
-		{
-			2,
-			13046,
-			1
-		},
-		{
-			2,
-			13047,
-			1
-		},
-		{
-			2,
-			13048,
-			1
-		},
-		{
-			2,
-			13024,
-			1
-		},
-		{
-			2,
-			13007,
-			1
-		},
-		{
-			2,
-			13010,
-			1
-		},
-		{
-			2,
-			13009,
-			1
-		},
-		{
-			2,
-			13011,
-			1
-		}
-	},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[58996] = {
-	display = "一定の確率で下記の装備外装を入手できます",
-	name = "装備外装箱（晩夏）",
-	max_num = 0,
-	type = 99,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/equipskin_drop_display",
-	id = 58996,
-	order = 0,
-	display_icon = {
-		{
-			9,
-			101,
-			1
-		},
-		{
-			9,
-			102,
-			1
-		},
-		{
-			9,
-			103,
-			1
-		},
-		{
-			9,
-			104,
-			1
-		},
-		{
-			9,
-			105,
-			1
-		},
-		{
-			9,
-			106,
-			1
-		},
-		{
-			9,
-			107,
-			1
-		},
-		{
-			9,
-			108,
-			1
-		},
-		{
-			9,
-			109,
-			1
-		},
-		{
-			9,
-			110,
-			1
-		},
-		{
-			9,
-			111,
-			1
-		},
-		{
-			9,
-			112,
-			1
-		},
-		{
-			9,
-			113,
-			1
-		},
-		{
-			9,
-			114,
-			1
-		},
-		{
-			9,
-			115,
-			1
-		},
-		{
-			9,
-			116,
-			1
-		},
-		{
-			9,
-			117,
-			1
-		},
-		{
-			9,
-			118,
-			1
-		}
-	},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59594] = {
-	display = "『誠閃の剣　搖光の城』のイベント報酬交換に使用する。イベント終了後に削除される",
-	name = "栄光の星",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/qianwei_pt",
-	id = 59594,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59595] = {
-	display = "「作戦準備・ロイヤル」報酬交換用アイテム。イベント終了後に削除される。",
-	name = "訓練Pt",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/xunliandianshu_yv3",
-	id = 59595,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59596] = {
-	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.7.24メンテナンスまで）で削除されます",
-	name = "試着貸出チケット（2024.7.24まで）",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 59596,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59597] = {
-	display = "イベント「誠閃の剣　搖光の城」で入手できる期間限定建造チケット。イベント終了後に削除されます",
-	name = "建造支援チケット",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5423,
-	virtual_type = 22,
-	is_world = 0,
-	icon = "Props/buildTicket",
-	id = 59597,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59598] = {
-	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.8.7メンテナンスまで）で削除されます",
-	name = "試着貸出チケット（2024.8.7まで）",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 59598,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[59599] = {
-	display = "キャンペーン「シーズン任務」で累計獲得数報酬を入手するための任務Ptアイテム。キャンペーン終了後に削除されます",
-	name = "進捗Pt",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 26,
-	is_world = 0,
-	icon = "props/battlepass_pt",
-	id = 59599,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65001] = {
-	display = "不该被看到",
-	name = "通行证十八期对应虚拟道具",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 7018,
-	virtual_type = 21,
-	is_world = 0,
-	icon = "props/battlepass_pt",
-	id = 65001,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65002] = {
-	display = "「饅頭レース」で使用する前進回数。イベント終了後に削除されます",
-	name = "前進回数",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5460,
-	virtual_type = 9,
-	is_world = 0,
-	icon = "props/monopoly_dice",
-	id = 65002,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65003] = {
-	display = "『夢幻の間奏曲』のイベント報酬交換に使用する。イベント終了後に削除される",
-	name = "共同演習記念コイン",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "props/sitelasibao_pt",
-	id = 65003,
-	order = 0,
-	display_icon = {},
 	price = {},
 	index = {},
 	shiptrans_id = {},
@@ -183338,144 +185730,6 @@ _G.pg.base.item_virtual_data_statistics[200198] = {
 			1
 		}
 	}
-}
-_G.pg.base.item_virtual_data_statistics[65004] = {
-	display = "「作戦準備・大洋」報酬交換用アイテム。イベント終了後に削除される。",
-	name = "訓練Pt",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/xunliandianshu_mv5",
-	id = 65004,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65010] = {
-	display = "「荒野休日開拓記」の「開拓タウン」で、バカンスタウンレベルを上げるのに使用するアイテム",
-	name = "タウン繁栄度",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5523,
-	virtual_type = 27,
-	is_world = 0,
-	icon = "Props/65010",
-	id = 65010,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65011] = {
-	display = "「荒野休日開拓記」の収集アイテム",
-	name = "開拓コイン",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5523,
-	virtual_type = 28,
-	is_world = 0,
-	icon = "Props/65011",
-	id = 65011,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65012] = {
-	display = "「錬翼空翔」イベントの収集アイテム。イベント終了時に削除されます",
-	name = "異状事件調査",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/65012",
-	id = 65012,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65013] = {
-	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.8.28メンテナンスまで）で削除されます",
-	name = "試着貸出チケット（2024.8.28まで）",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 65013,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65014] = {
-	display = "「荒野休日開拓記」の「思い出」で、艦船たちとの思い出ストーリーを開放できるアイテム",
-	name = "思い出",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5535,
-	virtual_type = 101,
-	is_world = 0,
-	icon = "Props/65014",
-	id = 65014,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
 }
 _G.pg.base.item_virtual_data_statistics[200199] = {
 	display = "一定の確率で下記の設計図を入手できます",
@@ -186478,29 +188732,6 @@ _G.pg.base.item_virtual_data_statistics[200237] = {
 		}
 	}
 }
-_G.pg.base.item_virtual_data_statistics[65015] = {
-	display = "イベント「徒花咲かす彼岸」で入手できるイベントPt。累計獲得数報酬を入手可能",
-	name = "此岸の花",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "props/ruifeng_pt",
-	id = 65015,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
 _G.pg.base.item_virtual_data_statistics[200238] = {
 	display = "一定の確率で下記の設計図を入手できます",
 	name = "ランダム設計図",
@@ -187189,200 +189420,6 @@ _G.pg.base.item_virtual_data_statistics[200246] = {
 			4,
 			206011,
 			1
-		}
-	}
-}
-_G.pg.base.item_virtual_data_statistics[60486] = {
-	display = "イベント「出航の前準備」の収集アイテム。イベント終了後に削除されます",
-	name = "楽園改修案",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 99,
-	is_world = 0,
-	icon = "Props/60486",
-	id = 60486,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65016] = {
-	display = "「作戦準備・ナラク」報酬交換用アイテム。イベント終了後に削除される。",
-	name = "訓練Pt",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/xunliandianshu_20240905",
-	id = 65016,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65017] = {
-	display = "「饅頭ケーキ」プレイで入手できる記念チケット。7枚集めるとイベントバナーにてアイテム七周年の招待状を入手可能",
-	name = "夢のケーキ券",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 3,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 99,
-	is_world = 0,
-	icon = "Props/65017",
-	id = 65017,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65018] = {
-	display = "「カムバックミッション」で入手できるイベントPt。イベント終了後に削除されます",
-	name = "カムバックPt",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/union_pt",
-	id = 65018,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65019] = {
-	display = "イベント「絳染む丹華の詠歌」での収集Ptアイテム、イベント終了後に削除される",
-	name = "ナラク晶石",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/65019",
-	id = 65019,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65020] = {
-	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.10.2メンテナンスまで）で削除されます",
-	name = "試着貸出チケット（2024.10.2まで）",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 65020,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86206] = {
-	display = "不会被看到",
-	name = "ランダム7周年衣装Ⅰ",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86206,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
-		{
-			302251,
-			1200
-		},
-		{
-			307151,
-			1200
-		},
-		{
-			202127,
-			1200
-		},
-		{
-			302261,
-			1200
-		},
-		{
-			207025,
-			1310
-		},
-		{
-			301911,
-			1310
-		},
-		{
-			401353,
-			1310
-		},
-		{
-			202085,
-			1270
 		}
 	}
 }
@@ -190387,383 +192424,6 @@ _G.pg.base.item_virtual_data_statistics[200285] = {
 		}
 	}
 }
-_G.pg.base.item_virtual_data_statistics[65024] = {
-	display = "入手するとチャットスタンプ「シリアスの多彩多様」（全6種類）を開放できます。\n チャットの「スタンプ-デフォルト」で使\n用することができます",
-	name = "スタンプシリーズ「シリアスの多彩多様」",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/65024",
-	id = 65024,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86207] = {
-	display = "不会被看到",
-	name = "ランダム7周年衣装Ⅱ",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86207,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
-		{
-			305102,
-			1200
-		},
-		{
-			202204,
-			1200
-		},
-		{
-			103245,
-			1200
-		},
-		{
-			319014,
-			1200
-		},
-		{
-			202102,
-			1200
-		},
-		{
-			499072,
-			1430
-		},
-		{
-			306063,
-			1300
-		},
-		{
-			519012,
-			1270
-		}
-	}
-}
-_G.pg.base.item_virtual_data_statistics[58997] = {
-	display = "一定の確率で下記の装備外装を入手できます",
-	name = "装備外装箱（ハロウィンホラー）",
-	max_num = 0,
-	type = 99,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/equipskin_drop_display",
-	id = 58997,
-	order = 0,
-	display_icon = {
-		{
-			9,
-			4059,
-			1
-		},
-		{
-			9,
-			4060,
-			1
-		},
-		{
-			9,
-			4061,
-			1
-		},
-		{
-			9,
-			4062,
-			1
-		},
-		{
-			9,
-			4063,
-			1
-		},
-		{
-			9,
-			4064,
-			1
-		},
-		{
-			9,
-			4065,
-			1
-		},
-		{
-			9,
-			4066,
-			1
-		},
-		{
-			9,
-			4067,
-			1
-		},
-		{
-			9,
-			4068,
-			1
-		},
-		{
-			9,
-			4069,
-			1
-		},
-		{
-			9,
-			4070,
-			1
-		},
-		{
-			9,
-			4071,
-			1
-		},
-		{
-			9,
-			4072,
-			1
-		},
-		{
-			9,
-			4073,
-			1
-		},
-		{
-			9,
-			4074,
-			1
-		},
-		{
-			9,
-			4075,
-			1
-		},
-		{
-			9,
-			4076,
-			1
-		}
-	},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65028] = {
-	display = "不该被看到",
-	name = "通行证十九期对应虚拟道具",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 7019,
-	virtual_type = 21,
-	is_world = 0,
-	icon = "props/battlepass_pt",
-	id = 65028,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65031] = {
-	display = "「鋼鷲の冒険譚」報酬交換用。イベント終了後に削除されます",
-	name = "博覧会記念コイン",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/yidaliv3_pt",
-	id = 65031,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65032] = {
-	display = "「作戦準備・サディア」報酬交換用アイテム。イベント終了後に削除される。",
-	name = "訓練Pt",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/xunliandianshu_yv2",
-	id = 65032,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65033] = {
-	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.10.23まで）で削除されます",
-	name = "試着貸出チケット（2024.10.23まで）",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 65033,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65034] = {
-	display = "イベント「鋼鷲の冒険譚」で入手できる期間限定建造チケット。イベント終了後に削除されます",
-	name = "建造支援チケット",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5594,
-	virtual_type = 22,
-	is_world = 0,
-	icon = "Props/buildTicket",
-	id = 65034,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65035] = {
-	display = "イベント「テンペスタと眠りし海」で入手できる期間限定建造チケット。イベント終了後に削除されます",
-	name = "海図の断片",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/65035",
-	id = 65035,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65036] = {
-	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.11.6まで）で削除されます",
-	name = "試着貸出チケット（2024.11.6まで）",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 65036,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65037] = {
-	display = "「母港休日ハロウィン」のストーリー開放に使用できます",
-	name = "ハロウィンページ",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5623,
-	virtual_type = 101,
-	is_world = 0,
-	icon = "Props/65037",
-	id = 65037,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
 _G.pg.base.item_virtual_data_statistics[200286] = {
 	display = "一定の確率で下記の設計図を入手できます",
 	name = "ランダム設計図",
@@ -192383,442 +194043,6 @@ _G.pg.base.item_virtual_data_statistics[200306] = {
 		}
 	}
 }
-_G.pg.base.item_virtual_data_statistics[58999] = {
-	display = "一定の確率で下記の装備外装を入手できます",
-	name = "装備外装箱（コラボ）",
-	max_num = 0,
-	type = 99,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/equipskin_drop_display",
-	id = 58999,
-	order = 0,
-	display_icon = {
-		{
-			9,
-			1450,
-			1
-		},
-		{
-			9,
-			1451,
-			1
-		},
-		{
-			9,
-			1452,
-			1
-		},
-		{
-			9,
-			1453,
-			1
-		},
-		{
-			9,
-			1454,
-			1
-		},
-		{
-			9,
-			1455,
-			1
-		},
-		{
-			9,
-			1456,
-			1
-		},
-		{
-			9,
-			1457,
-			1
-		},
-		{
-			9,
-			1458,
-			1
-		},
-		{
-			9,
-			1459,
-			1
-		},
-		{
-			9,
-			1460,
-			1
-		},
-		{
-			9,
-			1461,
-			1
-		},
-		{
-			9,
-			1462,
-			1
-		},
-		{
-			9,
-			1463,
-			1
-		},
-		{
-			9,
-			1464,
-			1
-		},
-		{
-			9,
-			1465,
-			1
-		},
-		{
-			9,
-			1466,
-			1
-		},
-		{
-			9,
-			1467,
-			1
-		}
-	},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65041] = {
-	display = "「赫の涙月　菫の暁風」報酬交換用。イベント終了後に削除されます",
-	name = "紫華の碁石",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/rixiv3_pt",
-	id = 65041,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65042] = {
-	display = "「作戦準備・重桜」報酬交換用アイテム。イベント終了後に削除される。",
-	name = "訓練Pt",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 99,
-	is_world = 0,
-	icon = "Props/xunliandianshu_s",
-	id = 65042,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65043] = {
-	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.11.20まで）で削除されます",
-	name = "試着貸出チケット（2024.11.20まで）",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 65043,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65044] = {
-	display = "イベント「赫の涙月　菫の暁風」で入手できる期間限定建造チケット。イベント終了後に削除されます",
-	name = "建造支援チケット",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5639,
-	virtual_type = 22,
-	is_world = 0,
-	icon = "Props/buildTicket",
-	id = 65044,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65047] = {
-	display = "イベント「危険発明接近中」での収集Ptアイテム、イベント終了後に削除される",
-	name = "エナジーストーン",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/tolove_pt",
-	id = 65047,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65048] = {
-	display = "不思議な力を宿っているクリスタル状欠片。「助けて、ララさん」において、依頼を開放するのに使用されます",
-	name = "エネルギーの欠片",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/tolove_jigsaw_pt",
-	id = 65048,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65049] = {
-	display = "6つのデータチップを集め、イベントメイン画面の「記念章」をタップすると、コラボ限定家具「デビルーク風記念章」と交換できます",
-	name = "データチップL",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5689,
-	virtual_type = 1,
-	is_world = 0,
-	icon = "Props/tolove_source_lala",
-	id = 65049,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65050] = {
-	display = "6つのデータチップを集め、イベントメイン画面の「記念章」をタップすると、コラボ限定家具「デビルーク風記念章」と交換できます",
-	name = "データチップN",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5689,
-	virtual_type = 1,
-	is_world = 0,
-	icon = "Props/tolove_source_nana",
-	id = 65050,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65051] = {
-	display = "6つのデータチップを集め、イベントメイン画面の「記念章」をタップすると、コラボ限定家具「デビルーク風記念章」と交換できます",
-	name = "データチップM",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5689,
-	virtual_type = 1,
-	is_world = 0,
-	icon = "Props/tolove_source_momo",
-	id = 65051,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65052] = {
-	display = "6つのデータチップを集め、イベントメイン画面の「記念章」をタップすると、コラボ限定家具「デビルーク風記念章」と交換できます",
-	name = "データチップK",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5689,
-	virtual_type = 1,
-	is_world = 0,
-	icon = "Props/tolove_source_yami",
-	id = 65052,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65053] = {
-	display = "6つのデータチップを集め、イベントメイン画面の「記念章」をタップすると、コラボ限定家具「デビルーク風記念章」と交換できます",
-	name = "データチップH",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5689,
-	virtual_type = 1,
-	is_world = 0,
-	icon = "Props/tolove_source_haruna",
-	id = 65053,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65054] = {
-	display = "6つのデータチップを集め、イベントメイン画面の「記念章」をタップすると、コラボ限定家具「デビルーク風記念章」と交換できます",
-	name = "データチップY",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 5689,
-	virtual_type = 1,
-	is_world = 0,
-	icon = "Props/tolove_source_yui",
-	id = 65054,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65057] = {
-	display = "キャンペーン「シーズン任務」で累計獲得数報酬を入手するための任務Ptアイテム。キャンペーン終了後に削除されます",
-	name = "進捗Pt",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 7020,
-	virtual_type = 21,
-	is_world = 0,
-	icon = "props/battlepass_pt",
-	id = 65057,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65058] = {
-	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2024.12.4まで）で削除されます",
-	name = "試着貸出チケット（2024.12.4まで）",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 65058,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
 _G.pg.base.item_virtual_data_statistics[200307] = {
 	display = "一定の確率で下記の設計図を入手できます",
 	name = "ランダム設計図",
@@ -194208,388 +195432,6 @@ _G.pg.base.item_virtual_data_statistics[200324] = {
 			4,
 			107011,
 			1
-		}
-	}
-}
-_G.pg.base.item_virtual_data_statistics[65061] = {
-	display = "「作戦準備 ？？？」報酬交換用アイテム。イベント終了後に削除される。",
-	name = "訓練Pt",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/xunliandianshu_20241212",
-	id = 65061,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65063] = {
-	display = "イベント「星降る夕影の残光」で入手できる期間限定建造チケット。イベント終了後に削除されます",
-	name = "外なる獣のサンプル",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/65063",
-	id = 65063,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65064] = {
-	display = "イベントページ・ショップにてUR艦船「Z52」と交換できる特殊Pt。イベント終了後に削除される",
-	name = "URチケット",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 3,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/65064",
-	id = 65064,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65066] = {
-	display = "7個集めると、艦船と交換できる「正月招待状2025」を入手可能！",
-	name = "正月オリヅル",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 2,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "props/xinniandezhufu",
-	id = 65066,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65067] = {
-	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2025.1.1まで）で削除されます",
-	name = "試着貸出チケット（2025.1.1まで）",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 65067,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65500] = {
-	display = "「星の獣」に対する偉大なる勝利を記念する、鉄血レジスタンスの記念勲章。\n—— 我々の世界は滅びぬ。今日も。明日も。",
-	name = "レジスタンス記念勲章",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 5,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Medal/9001",
-	id = 65500,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65501] = {
-	display = "几帳面な性格の鉄血レジスタンスのリーダー。「我は常に貴殿を見ているとも」",
-	name = "ステッカー：ルメイ",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "ActivityMedal/571101",
-	id = 65501,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65502] = {
-	display = "遥かな星空より出でしもの。その正体は謎に包まれている。",
-	name = "ステッカー：星の獣",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "ActivityMedal/571102",
-	id = 65502,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65503] = {
-	display = "星の獣が現れし夜、仄かな夜空はいつもよりも輝かしく見えた。",
-	name = "ステッカー：星空",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "ActivityMedal/571103",
-	id = 65503,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65504] = {
-	display = "外なる獣の残骸から収集したサンプル。化学原料として扱われるため、食用にはならない。",
-	name = "ステッカー：サンプル",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "ActivityMedal/571104",
-	id = 65504,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65505] = {
-	display = "鏡面海域と「エターナル・スター」によって守られているレジスタンス基地。居住性がいいとは言えないが守りが堅い。",
-	name = "ステッカー：夕日の基地",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "ActivityMedal/571105",
-	id = 65505,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65506] = {
-	display = "外なる獣の勢力は強大だが、こっちも十分準備した。乱戦の夜さえ乗り切れば、希望の曙光が見えてくるはずだ。",
-	name = "ステッカー：乱戦の夜",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "ActivityMedal/571106",
-	id = 65506,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65507] = {
-	display = "「私は星の獣。星を導きて現れ、星を携え去り行く。私にひれ伏せ、私の名を讃え、私の命に従え」",
-	name = "ステッカー：星よりもたらされしもの",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "ActivityMedal/571107",
-	id = 65507,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65508] = {
-	display = "こっちはハウスだピョ！ストーンはハウスを狙うピョ！",
-	name = "ステッカー：饅頭カーリング",
-	max_num = 0,
-	type = 0,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "ActivityMedal/571108",
-	id = 65508,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86208] = {
-	display = "不会被看到",
-	name = "ランダム正月着せ替え2025A",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86208,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
-		{
-			407041,
-			850
-		},
-		{
-			405013,
-			850
-		},
-		{
-			499053,
-			850
-		},
-		{
-			401521,
-			850
-		},
-		{
-			402111,
-			850
-		},
-		{
-			207054,
-			850
-		},
-		{
-			201354,
-			1900
-		},
-		{
-			401091,
-			1500
-		},
-		{
-			401111,
-			1500
 		}
 	}
 }
@@ -197594,36 +198436,13 @@ _G.pg.base.item_virtual_data_statistics[200364] = {
 		}
 	}
 }
-_G.pg.base.item_virtual_data_statistics[65068] = {
-	display = "「試着貸出」対象になった着せ替えを一定時間内使用可能にするチケット。イベント終了（2025.1.8まで）で削除されます",
-	name = "試着貸出チケット（2025.1.8まで）",
+_G.pg.base.item_virtual_data_statistics[200365] = {
+	display = "有几率获得以下设计图",
+	name = "ランダム設計図",
 	max_num = 0,
-	type = 98,
+	type = 99,
 	time_limit = 0,
-	rarity = 4,
-	shop_id = 1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/skinTicket",
-	id = 65068,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[65509] = {
-	display = "「委託報酬計画」イベントで報酬と交換できるPtになります。イベント終了後に削除されます",
-	name = "軍事委託Pt",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 2,
+	rarity = 1,
 	shop_id = -1,
 	replace_item = 0,
 	drop_gold_max = 0,
@@ -197631,68 +198450,136 @@ _G.pg.base.item_virtual_data_statistics[65509] = {
 	link_id = 0,
 	virtual_type = 0,
 	is_world = 0,
-	icon = "Props/commission_pt",
-	id = 65509,
+	icon = "Props/55000",
+	id = 200365,
 	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {}
-}
-_G.pg.base.item_virtual_data_statistics[86209] = {
-	display = "不会被看到",
-	name = "ランダム正月着せ替え2025B",
-	max_num = 0,
-	type = 98,
-	time_limit = 0,
-	rarity = 4,
-	shop_id = -1,
-	replace_item = 0,
-	drop_gold_max = 0,
-	drop_oil_max = 0,
-	link_id = 0,
-	virtual_type = 0,
-	is_world = 0,
-	icon = "Props/clothIcon",
-	id = 86209,
-	order = 0,
-	display_icon = {},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {
+	display_icon = {
 		{
-			307084,
-			1000
+			2,
+			5,
+			1
 		},
 		{
-			699021,
-			1000
+			2,
+			2,
+			1
 		},
 		{
-			799021,
-			1000
+			2,
+			83,
+			1
 		},
 		{
-			199051,
-			1100
+			2,
+			10014,
+			1
 		},
 		{
-			399071,
-			1100
-		},
-		{
-			899041,
-			1600
-		},
-		{
-			402102,
-			1600
-		},
-		{
-			303061,
-			1600
+			2,
+			10120,
+			1
 		}
-	}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[200366] = {
+	display = "有几率获得以下设计图",
+	name = "ランダム設計図",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 1,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/55000",
+	id = 200366,
+	order = 0,
+	display_icon = {
+		{
+			2,
+			10003,
+			1
+		},
+		{
+			2,
+			10011,
+			1
+		},
+		{
+			2,
+			10037,
+			1
+		},
+		{
+			2,
+			10014,
+			1
+		},
+		{
+			2,
+			10120,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[200367] = {
+	display = "有几率获得以下设计图",
+	name = "ランダム設計図",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 1,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/55000",
+	id = 200367,
+	order = 0,
+	display_icon = {
+		{
+			2,
+			10003,
+			1
+		},
+		{
+			2,
+			10037,
+			1
+		},
+		{
+			2,
+			10014,
+			1
+		},
+		{
+			2,
+			10120,
+			1
+		},
+		{
+			2,
+			13010,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
 }

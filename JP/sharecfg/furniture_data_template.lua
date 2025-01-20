@@ -3284,6 +3284,30 @@ pg.furniture_data_template = setmetatable({
 			317302,
 			317303,
 			317304
+		},
+		[118] = {
+			318001,
+			318002,
+			318101,
+			318102,
+			318103,
+			318104,
+			318105,
+			318106,
+			318107,
+			318108,
+			318109,
+			318110,
+			318111,
+			318112,
+			318113,
+			318114,
+			318115,
+			318301,
+			318302,
+			318303,
+			318304,
+			318305
 		}
 	},
 	get_id_list_by_tag = {
@@ -3712,7 +3736,8 @@ pg.furniture_data_template = setmetatable({
 			314113,
 			315113,
 			316123,
-			317111
+			317111,
+			318305
 		},
 		[4] = {
 			1001,
@@ -3816,7 +3841,8 @@ pg.furniture_data_template = setmetatable({
 			314001,
 			315001,
 			316001,
-			317001
+			317001,
+			318001
 		},
 		[3] = {
 			1002,
@@ -3921,7 +3947,8 @@ pg.furniture_data_template = setmetatable({
 			314002,
 			315002,
 			316002,
-			317002
+			317002,
+			318002
 		},
 		{
 			1101,
@@ -5862,7 +5889,22 @@ pg.furniture_data_template = setmetatable({
 			317107,
 			317108,
 			317109,
-			317110
+			317110,
+			318101,
+			318102,
+			318103,
+			318104,
+			318105,
+			318106,
+			318107,
+			318108,
+			318109,
+			318110,
+			318111,
+			318112,
+			318113,
+			318114,
+			318115
 		},
 		{
 			1108,
@@ -6376,7 +6418,11 @@ pg.furniture_data_template = setmetatable({
 			317301,
 			317302,
 			317303,
-			317304
+			317304,
+			318301,
+			318302,
+			318303,
+			318304
 		}
 	},
 	get_id_list_by_type = {
@@ -8504,7 +8550,21 @@ pg.furniture_data_template = setmetatable({
 			317108,
 			317109,
 			317110,
-			317111
+			317111,
+			318101,
+			318102,
+			318103,
+			318104,
+			318105,
+			318106,
+			318107,
+			318108,
+			318109,
+			318111,
+			318112,
+			318113,
+			318114,
+			318115
 		},
 		[11] = {
 			143,
@@ -8918,7 +8978,12 @@ pg.furniture_data_template = setmetatable({
 			317301,
 			317302,
 			317303,
-			317304
+			317304,
+			318301,
+			318302,
+			318303,
+			318304,
+			318305
 		},
 		[13] = {
 			100015,
@@ -9034,7 +9099,8 @@ pg.furniture_data_template = setmetatable({
 			314001,
 			315001,
 			316001,
-			317001
+			317001,
+			318001
 		},
 		{
 			1002,
@@ -9139,7 +9205,8 @@ pg.furniture_data_template = setmetatable({
 			314002,
 			315002,
 			316002,
-			317002
+			317002,
+			318002
 		},
 		[5] = {
 			1101,
@@ -9465,7 +9532,8 @@ pg.furniture_data_template = setmetatable({
 			97105,
 			97119,
 			307108,
-			314105
+			314105,
+			318110
 		},
 		[10] = {
 			28306,
@@ -12561,7 +12629,29 @@ pg.furniture_data_template = setmetatable({
 		317301,
 		317302,
 		317303,
-		317304
+		317304,
+		318001,
+		318002,
+		318101,
+		318102,
+		318103,
+		318104,
+		318105,
+		318106,
+		318107,
+		318108,
+		318109,
+		318110,
+		318111,
+		318112,
+		318113,
+		318114,
+		318115,
+		318301,
+		318302,
+		318303,
+		318304,
+		318305
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -150624,6 +150714,973 @@ pg.base.furniture_data_template = {
 		canputonGrid = {},
 		can_trigger = {
 			0
+		},
+		interAction_group = {}
+	},
+	[318001] = {
+		spine_extra = "",
+		describe = "雪を踏み梅を尋ね、春の息吹を共に楽しもう",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		deblocking = 1,
+		level = 1,
+		name = "雪中観梅の床",
+		effect = "",
+		advice = 0,
+		icon = "dibancj7icon",
+		spine_action_replace = "",
+		picture = "cj7/dibancj7",
+		comfortable = 4,
+		canputon = 0,
+		id = 318001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318002] = {
+		spine_extra = "",
+		describe = "雪を踏み梅を尋ね、春の息吹を共に楽しもう",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		deblocking = 1,
+		level = 5,
+		name = "雪中観梅の壁",
+		effect = "",
+		advice = 0,
+		icon = "qiangbicj7icon",
+		spine_action_replace = "",
+		picture = "",
+		comfortable = 4,
+		canputon = 0,
+		id = 318002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbicj7",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[318101] = {
+		spine_extra = "",
+		describe = "どこか重厚さを感じさせる椅子。ちょっとだけ座ってみよう！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "baishiyicj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "玉雪の椅子",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "cj7/baishiyicj7",
+		canputon = 0,
+		id = 318101,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-8.9,
+					47.8
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318102] = {
+		spine_extra = "",
+		describe = "黒玉のような質感の上に、誰かの足跡と思わしきものが…？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "heishiyicj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "墨雪の椅子",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "cj7/heishiyicj7",
+		canputon = 0,
+		id = 318102,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-8.9,
+					47.8
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318103] = {
+		spine_extra = "",
+		describe = "新春の風景を記録するピョ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "canguanjiucj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "観光饅頭",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318103,
+		can_rotate = 0,
+		size = {
+			5,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"canguanjiucj7",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[318104] = {
+		spine_extra = "",
+		describe = "華やかな衣装……主の帰りを待っているのかな？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "jiaren1cj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "韻影ショーケース1",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "cj7/jiaren1cj7",
+		canputon = 0,
+		id = 318104,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318105] = {
+		spine_extra = "",
+		describe = "華やかな衣装……主の帰りを待っているのかな？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "jiaren2cj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "韻影ショーケース2",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "cj7/jiaren2cj7",
+		canputon = 0,
+		id = 318105,
+		can_rotate = 0,
+		size = {
+			0,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318106] = {
+		spine_extra = "",
+		describe = "華やかな衣装……主の帰りを待っているのかな？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "jiaren3cj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "韻影ショーケース3",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "cj7/jiaren3cj7",
+		canputon = 0,
+		id = 318106,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318107] = {
+		spine_extra = "",
+		describe = "泡々が、空にかかる宝珠のよう",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "paopaojicj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "玉竹バブルマシン",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318107,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"paopaojicj7",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[318108] = {
+		spine_extra = "",
+		describe = "ステージのライトパフォーマンスを盛り上げるピョ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "yanhuajicj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "蓮の花火マシン",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318108,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yanhuajicj7",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[318109] = {
+		spine_extra = "",
+		describe = "無窮の叡智が隠されていると言われる終盤。一局いかが？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "qipancj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "石の碁盤",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318109,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qipancj7",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[318110] = {
+		spine_extra = "",
+		describe = "扉をくぐったその先に、どんな出会いが待っているのだろう？",
+		gain_by = "",
+		type = 9,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "rukoumencj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "梅飾りの扉",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "cj7/rukoumencj7",
+		canputon = 1,
+		id = 318110,
+		can_rotate = 0,
+		size = {
+			6,
+			1
+		},
+		offset = {
+			0,
+			0
+		},
+		canputonGrid = {
+			{
+				1,
+				0
+			},
+			{
+				2,
+				0
+			},
+			{
+				3,
+				0
+			},
+			{
+				4,
+				0
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318111] = {
+		spine_extra = "",
+		describe = "数多の秘密が宿っている盤上の天地、らしい！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "shanshuicj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "山水のオブジェクト",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318111,
+		can_rotate = 0,
+		size = {
+			6,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shanshuicj7",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[318112] = {
+		spine_extra = "",
+		describe = "奇石群が古の伝説を語りゆく？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "shitoujingcj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "奇石のモニュメント",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318112,
+		can_rotate = 0,
+		size = {
+			6,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shitoujingcj7",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[318113] = {
+		spine_extra = "",
+		describe = "赤い飾りが飾られた植木。めでたいめでたい～",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "shucj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "めでたい植木",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "cj7/shucj7",
+		canputon = 0,
+		id = 318113,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318114] = {
+		spine_extra = "",
+		describe = "流るる水の旋律は、紆曲のランウェイを照らし出す",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "梅韻流光のステージ",
+		themeId = 118,
+		icon = "wutaicj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318114,
+		can_rotate = 0,
+		size = {
+			6,
+			12
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"wutaicj7",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[318115] = {
+		spine_extra = "",
+		describe = "静かに足を止め、何が書いてあるか確かめてみよう",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "zhantaicj7icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "梅韻流光の掲示板",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "cj7/zhantaicj7",
+		canputon = 0,
+		id = 318115,
+		can_rotate = 0,
+		size = {
+			3,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318301] = {
+		spine_extra = "",
+		describe = "笹の葉に端折られているのは、織子の秘めた想いなのかもしれない",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "fangzhiwucj7icon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "竹繡の織物",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "cj7/fangzhiwucj7",
+		canputon = 0,
+		id = 318301,
+		can_rotate = 0,
+		size = {
+			4,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318302] = {
+		spine_extra = "",
+		describe = "墨に彩られる蓮の華。優雅ですわ～",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "shuimohuacj7icon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "蓮香の墨絵",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "cj7/shuimohuacj7",
+		canputon = 0,
+		id = 318302,
+		can_rotate = 0,
+		size = {
+			4,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318303] = {
+		spine_extra = "",
+		describe = "咲き誇る丹朱の梅木、春風の誘いを待ち遠しく思うが如し",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 118,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "weimucj7icon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "丹朱の飾り梅",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "cj7/weimucj7",
+		canputon = 0,
+		id = 318303,
+		can_rotate = 0,
+		size = {
+			6,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[318304] = {
+		spine_extra = "",
+		describe = "一輪の円月の中に……何かが跳んでいる？！",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 2,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "yuanyuecj7icon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "玉兎の飾り鏡",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318304,
+		can_rotate = 0,
+		size = {
+			4,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yuanyuecj7",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[318305] = {
+		spine_extra = "",
+		describe = "彩りある瑞雲は良き願い事でいっぱい！",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 2,
+		themeId = 118,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 7,
+		icon = "zhuangshiguahuacj7icon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "吉祥の飾り絵",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 318305,
+		can_rotate = 0,
+		size = {
+			8,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zhuangshiguahuacj7",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
 		},
 		interAction_group = {}
 	}

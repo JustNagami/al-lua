@@ -156,20 +156,16 @@ function var_0_7.InitJoystick(arg_15_0)
 
 	local var_15_0 = var_0_5.JOY_STICK_DEFAULT_PREFERENCE
 	local var_15_1 = arg_15_0._joystick
-	local var_15_2 = Screen.dpi / CameraMgr.instance.finalWidth * 5
-
-	originalPrint("DPI: ", Screen.dpi, CameraMgr.instance.finalWidth, var_15_2)
-
-	if PLATFORM == PLATFORM_WINDOWSEDITOR or var_15_2 <= 0 then
-		var_15_2 = 1
-	end
-
+	local var_15_2 = 1
 	local var_15_3 = PlayerPrefs.GetFloat("joystick_scale", var_15_0.scale)
 	local var_15_4 = PlayerPrefs.GetFloat("joystick_anchorX", var_15_0.x)
 	local var_15_5 = PlayerPrefs.GetFloat("joystick_anchorY", var_15_0.y)
 	local var_15_6 = var_15_2 * var_15_3
 
 	arg_15_0._joystick.localScale = Vector3(var_15_6, var_15_6, 1)
+
+	originalPrint("scale: ", arg_15_0._joystick.localScale)
+
 	var_15_1.anchoredPosition = var_15_1.anchoredPosition * var_15_6
 	arg_15_0._joystick.anchorMin = Vector2(var_15_4, var_15_5)
 	arg_15_0._joystick.anchorMax = Vector2(var_15_4, var_15_5)
