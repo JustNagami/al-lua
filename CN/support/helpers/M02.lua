@@ -4676,3 +4676,23 @@ function checkABExist(arg_332_0)
 		return PathMgr.FileExists(PathMgr.getAssetBundle(arg_332_0))
 	end
 end
+
+function compareNumber(arg_333_0, arg_333_1, arg_333_2)
+	return switch(arg_333_1, {
+		[">"] = function()
+			return arg_333_0 > arg_333_2
+		end,
+		[">="] = function()
+			return arg_333_0 >= arg_333_2
+		end,
+		["="] = function()
+			return arg_333_0 == arg_333_2
+		end,
+		["<"] = function()
+			return arg_333_0 < arg_333_2
+		end,
+		["<="] = function()
+			return arg_333_0 <= arg_333_2
+		end
+	})
+end

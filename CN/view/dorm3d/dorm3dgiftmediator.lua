@@ -13,11 +13,11 @@ function var_0_0.register(arg_1_0)
 			groupId = arg_2_1
 		})
 	end)
-	arg_1_0:bind(var_0_0.GIVE_GIFT, function(arg_3_0, arg_3_1)
+	arg_1_0:bind(var_0_0.GIVE_GIFT, function(arg_3_0, arg_3_1, arg_3_2)
 		arg_1_0:sendNotification(GAME.APARTMENT_GIVE_GIFT, {
-			count = 1,
 			groupId = arg_1_0.viewComponent.apartment.configId,
-			giftId = arg_3_1
+			giftId = arg_3_1,
+			count = arg_3_2
 		})
 	end)
 	arg_1_0:bind(var_0_0.DO_TALK, function(arg_4_0, arg_4_1, arg_4_2)

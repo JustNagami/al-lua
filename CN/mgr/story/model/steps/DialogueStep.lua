@@ -144,10 +144,20 @@ function var_0_0.SetDefaultSide(arg_3_0)
 end
 
 function var_0_0.GetBgName(arg_4_0)
-	if arg_4_0.dynamicBgType and arg_4_0.dynamicBgType == var_0_0.ACTOR_TYPE_TB and getProxy(EducateProxy) and not pg.NewStoryMgr.GetInstance():IsReView() then
-		local var_4_0, var_4_1, var_4_2 = getProxy(EducateProxy):GetStoryInfo()
+	if arg_4_0.dynamicBgType and arg_4_0.dynamicBgType == var_0_0.ACTOR_TYPE_TB and getProxy(EducateProxy) and getProxy(NewEducateProxy) and not pg.NewStoryMgr.GetInstance():IsReView() then
+		local var_4_0 = ""
 
-		return (arg_4_0:Convert2StoryBg(var_4_2))
+		if not getProxy(NewEducateProxy):GetCurChar() then
+			local var_4_1, var_4_2, var_4_3 = getProxy(EducateProxy):GetStoryInfo()
+
+			var_4_0 = var_4_3
+		else
+			local var_4_4, var_4_5, var_4_6 = getProxy(NewEducateProxy):GetStoryInfo()
+
+			var_4_0 = var_4_6
+		end
+
+		return (arg_4_0:Convert2StoryBg(var_4_0))
 	else
 		return var_0_0.super.GetBgName(arg_4_0)
 	end
@@ -547,6 +557,8 @@ function var_0_0.GetPaintingAndName(arg_50_0)
 
 			var_50_0 = var_50_5.name or ""
 			var_50_1 = var_50_5.prefab
+		elseif getProxy(NewEducateProxy) and getProxy(NewEducateProxy):GetCurChar() then
+			var_50_1, var_50_0 = getProxy(NewEducateProxy):GetStoryInfo()
 		elseif EducateProxy and getProxy(EducateProxy) then
 			var_50_1, var_50_0 = getProxy(EducateProxy):GetStoryInfo()
 		else

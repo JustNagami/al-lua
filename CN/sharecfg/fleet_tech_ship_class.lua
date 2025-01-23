@@ -3781,10 +3781,21 @@ pg.fleet_tech_ship_class = {
 		name = "希佩尔海军上将·META",
 		nation = 97,
 		id = 970305,
-		t_level_1 = 6,
+		t_level_1 = 13,
 		t_level = 3,
 		ships = {
 			970305
+		}
+	},
+	[970306] = {
+		shiptype = 3,
+		name = "博尔扎诺·META",
+		nation = 97,
+		id = 970306,
+		t_level_1 = 14,
+		t_level = 3,
+		ships = {
+			970306
 		}
 	},
 	[970401] = {
@@ -4368,6 +4379,7 @@ pg.fleet_tech_ship_class = {
 		970303,
 		970304,
 		970305,
+		970306,
 		970401,
 		970402,
 		970403,

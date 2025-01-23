@@ -244,6 +244,8 @@ function var_0_0.updateActivityData(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 			arg_3_3.data1 = 1
 		elseif arg_3_1.cmd == PuzzleActivity.CMD_EARN_EXTRA then
 			arg_3_3.data1 = 2
+		elseif arg_3_1.cmd == PuzzleActivity.CMD_ACTIVATE then
+			table.insert(arg_3_3.data2_list, arg_3_1.arg1)
 		end
 
 		getProxy(ActivityProxy):updateActivity(arg_3_3)

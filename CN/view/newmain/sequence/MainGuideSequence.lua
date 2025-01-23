@@ -157,7 +157,7 @@ local var_0_1 = {
 	{
 		id = "tb_20",
 		condition = function()
-			return not LOCK_EDUCATE_SYSTEM and getProxy(EducateProxy):IsUnlockSecretary()
+			return not LOCK_EDUCATE_SYSTEM and NewEducateHelper.HasAnyUnlockShip()
 		end,
 		args = function()
 			return {}

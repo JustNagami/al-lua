@@ -220140,15 +220140,14 @@ _G.pg.base.task_data_template[21121] = {
 	ryza_type = 0,
 	quick_finish = 0,
 	level = 1,
-	story_id = "",
-	priority_type = 0,
 	ryza_icon = "",
+	priority_type = 0,
 	fix_task = 0,
+	target_id = "0",
 	next_task = "0",
 	auto_commit = 0,
 	story_icon_shift = "",
-	target_id = "0",
-	scene = "",
+	story_id = "",
 	id = 21121,
 	target_num = 10,
 	activity_client_config = "",
@@ -220160,6 +220159,9 @@ _G.pg.base.task_data_template[21121] = {
 			65514,
 			1
 		}
+	},
+	scene = {
+		"GETBOAT"
 	}
 }
 _G.pg.base.task_data_template[21122] = {
@@ -220218,14 +220220,13 @@ _G.pg.base.task_data_template[21123] = {
 	ryza_type = 0,
 	quick_finish = 0,
 	level = 1,
-	story_id = "",
-	priority_type = 0,
 	ryza_icon = "",
+	priority_type = 0,
 	fix_task = 0,
 	next_task = "0",
 	auto_commit = 0,
 	story_icon_shift = "",
-	scene = "",
+	story_id = "",
 	id = 21123,
 	target_num = 3,
 	activity_client_config = "",
@@ -220244,6 +220245,9 @@ _G.pg.base.task_data_template[21123] = {
 			65516,
 			1
 		}
+	},
+	scene = {
+		"ACT_BOSS_BATTLE"
 	}
 }
 _G.pg.base.task_data_template[21124] = {
@@ -223578,5 +223582,731 @@ _G.pg.base.task_data_template[51220] = {
 	},
 	scene = {
 		"SELTECHNOLOGY"
+	}
+}
+_G.pg.base.task_data_template[21191] = {
+	name = "每日",
+	guild_coin_award = 0,
+	award = 904977,
+	type = 36,
+	desc = "登录游戏",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21191,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			466,
+			150
+		}
+	}
+}
+_G.pg.base.task_data_template[21192] = {
+	name = "每日",
+	guild_coin_award = 0,
+	award = 904978,
+	type = 36,
+	desc = "通关1次任意主线困难关卡",
+	count_inherit = 0,
+	sub_type = 182,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "10101",
+	scene = "",
+	id = 21192,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			466,
+			150
+		}
+	}
+}
+_G.pg.base.task_data_template[21193] = {
+	name = "出击",
+	guild_coin_award = 0,
+	award = 904979,
+	type = 6,
+	desc = "(1/6)舰队出征，获得10次胜利",
+	count_inherit = 21194,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "21194",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21193,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			466,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21194] = {
+	name = "出击",
+	guild_coin_award = 0,
+	award = 904980,
+	type = 6,
+	desc = "(2/6)舰队出征，获得20次胜利",
+	count_inherit = 21195,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "21195",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21194,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			466,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21195] = {
+	name = "出击",
+	guild_coin_award = 0,
+	award = 904981,
+	type = 6,
+	desc = "(3/6)舰队出征，获得30次胜利",
+	count_inherit = 21196,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "21196",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21195,
+	target_num = 30,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			466,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21196] = {
+	name = "出击",
+	guild_coin_award = 0,
+	award = 904982,
+	type = 6,
+	desc = "(4/6)舰队出征，获得50次胜利",
+	count_inherit = 21197,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "21197",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21196,
+	target_num = 50,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			466,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21197] = {
+	name = "出击",
+	guild_coin_award = 0,
+	award = 904983,
+	type = 6,
+	desc = "(5/6)舰队出征，获得70次胜利",
+	count_inherit = 21198,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "21198",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21197,
+	target_num = 70,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			466,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21198] = {
+	name = "出击",
+	guild_coin_award = 0,
+	award = 904984,
+	type = 6,
+	desc = "(6/6)舰队出征，获得100次胜利",
+	count_inherit = 0,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21198,
+	target_num = 100,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			466,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21199] = {
+	name = "耗油",
+	guild_coin_award = 0,
+	award = 904985,
+	type = 6,
+	desc = "(1/6)累计消耗石油1000",
+	count_inherit = 21200,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "21200",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21199,
+	target_num = 1000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			466,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21200] = {
+	name = "耗油",
+	guild_coin_award = 0,
+	award = 904986,
+	type = 6,
+	desc = "(2/6)累计消耗石油2000",
+	count_inherit = 21201,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "21201",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21200,
+	target_num = 2000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			466,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21201] = {
+	name = "耗油",
+	guild_coin_award = 0,
+	award = 904987,
+	type = 6,
+	desc = "(3/6)累计消耗石油3000",
+	count_inherit = 21202,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "21202",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21201,
+	target_num = 3000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			466,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21202] = {
+	name = "耗油",
+	guild_coin_award = 0,
+	award = 904988,
+	type = 6,
+	desc = "(4/6)累计消耗石油5000",
+	count_inherit = 21203,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "21203",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21202,
+	target_num = 5000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			466,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21203] = {
+	name = "耗油",
+	guild_coin_award = 0,
+	award = 904989,
+	type = 6,
+	desc = "(5/6)累计消耗石油7000",
+	count_inherit = 21204,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "21204",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21203,
+	target_num = 7000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			466,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21204] = {
+	name = "耗油",
+	guild_coin_award = 0,
+	award = 904990,
+	type = 6,
+	desc = "(6/6)累计消耗石油10000",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21204,
+	target_num = 10000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			466,
+			1000
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21221] = {
+	name = "『2025春节』皮肤剧情签到活动第一弹1",
+	guild_coin_award = 0,
+	award = 904875,
+	type = 14,
+	desc = "登录游戏",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21221,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65520,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21222] = {
+	name = "『2025春节』皮肤剧情签到活动第一弹2",
+	guild_coin_award = 0,
+	award = 904876,
+	type = 14,
+	desc = "登录游戏",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21222,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65520,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21223] = {
+	name = "『2025春节』皮肤剧情签到活动第一弹3",
+	guild_coin_award = 0,
+	award = 904877,
+	type = 14,
+	desc = "登录游戏",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21223,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65520,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21224] = {
+	name = "『2025春节』皮肤剧情签到活动第一弹4",
+	guild_coin_award = 0,
+	award = 904878,
+	type = 14,
+	desc = "登录游戏",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21224,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65520,
+			1
+		}
 	}
 }

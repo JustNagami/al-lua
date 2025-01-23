@@ -379,11 +379,11 @@ function var_0_0.Ctor(arg_40_0, arg_40_1)
 
 	local var_40_1 = arg_40_1.state or {}
 
-	arg_40_0.state = var_40_1.state
-	arg_40_0.state_info_1 = var_40_1.state_info_1
-	arg_40_0.state_info_2 = var_40_1.state_info_2
-	arg_40_0.state_info_3 = var_40_1.state_info_3
-	arg_40_0.state_info_4 = var_40_1.state_info_4
+	arg_40_0.state = var_40_1.state or 0
+	arg_40_0.state_info_1 = var_40_1.state_info_1 or 0
+	arg_40_0.state_info_2 = var_40_1.state_info_2 or 0
+	arg_40_0.state_info_3 = var_40_1.state_info_3 or 0
+	arg_40_0.state_info_4 = var_40_1.state_info_4 or 0
 	arg_40_0.equipmentSkins = {}
 	arg_40_0.equipments = {}
 

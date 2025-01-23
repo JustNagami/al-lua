@@ -84,69 +84,23 @@
 		{
 			alpha = 0.4,
 			style = {
-				text = "在这里可以将已解锁的领航员-TB更换为秘书舰。除默认状态外，其它个性的领航员-TB需要通关相应的个性结局解锁。",
+				text = "在这里可以将已解锁的角色更换为秘书舰。",
 				mode = 2,
 				posY = -59.66,
 				char = 1,
 				dir = -1,
 				posX = 90.1
-			},
-			ui = {
-				path = "/UICamera/Canvas/UIMain/EducateCharDockUI(Clone)/adapt/pages/groupPage/main/list/tpl/anim_root",
-				pathIndex = -1,
-				fingerPos = {
-					posY = -121.3,
-					posX = 85.9
-				}
-			}
-		},
-		{
-			delay = 1,
-			alpha = 0,
-			style = {
-				text = "更多外形可通过在「养成计划」中收集一定数量的“瞬间”解锁。",
-				mode = 2,
-				posY = -147.2,
-				char = 1,
-				dir = 1,
-				posX = -469.33
 			}
 		},
 		{
 			alpha = 0.4,
 			style = {
-				text = "选择特殊秘书舰对应形态。",
+				text = "更多角色外形可通过在「养成计划」中达成不同条件解锁。",
 				mode = 2,
-				posY = -76,
+				posY = -59.66,
 				char = 1,
-				dir = -1,
-				posX = 230
-			},
-			ui = {
-				path = "/UICamera/Canvas/UIMain/EducateCharDockUI(Clone)/adapt/pages/EducateCharDockSelectUI(Clone)/list/content",
-				pathIndex = 0,
-				fingerPos = {
-					posY = -115,
-					posX = 52
-				}
-			}
-		},
-		{
-			alpha = 0.4,
-			style = {
-				text = "点击“确定”按钮后可更换特殊秘书舰至主界面。",
-				mode = 2,
 				dir = 1,
-				char = 1,
-				posY = -244.8,
-				posX = 624.4,
-				uiset = {
-					{
-						lineMode = 2,
-						path = "/UICamera/Canvas/UIMain/EducateCharDockUI(Clone)/adapt/pages/EducateCharDockSelectUI(Clone)/confirm_btn",
-						pathIndex = -1
-					}
-				}
+				posX = 90.1
 			}
 		}
 	}

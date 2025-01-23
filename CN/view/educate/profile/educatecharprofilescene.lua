@@ -12,6 +12,7 @@ function var_0_0.init(arg_2_0)
 	arg_2_0.chatTxt = arg_2_0.chatTf:Find("Text"):GetComponent(typeof(Text))
 	arg_2_0.toggleUIItemList = UIItemList.New(arg_2_0:findTF("main/tag"), arg_2_0:findTF("main/tag/tpl"))
 	arg_2_0.wordUIItemList = UIItemList.New(arg_2_0:findTF("main/list/content"), arg_2_0:findTF("main/list/content/tpl"))
+	arg_2_0.tabItemList = UIItemList.New(arg_2_0:findTF("tab/list"), arg_2_0:findTF("tab/list/tpl"))
 	arg_2_0.cvLoader = EducateCharCvLoader.New()
 	arg_2_0.animation = arg_2_0._tf:GetComponent(typeof(Animation))
 	arg_2_0.timers = {}
@@ -24,228 +25,262 @@ function var_0_0.didEnter(arg_3_0)
 	onButton(arg_3_0, arg_3_0.homeBtn, function()
 		arg_3_0:emit(var_0_0.ON_HOME)
 	end, SFX_PANEL)
+	arg_3_0:InitTabs()
 	arg_3_0:InitToggles()
 end
 
-function var_0_0.InitToggles(arg_6_0)
-	local var_6_0 = getProxy(EducateProxy):GetEducateGroupList()
+function var_0_0.InitTabs(arg_6_0)
+	arg_6_0.characterList = NewEducateHelper.GetEducateCharacterList()
+	arg_6_0.selectedCharacterId = arg_6_0.contextData.selectedCharacterId
 
-	table.sort(var_6_0, function(arg_7_0, arg_7_1)
-		return arg_7_0:GetSortWeight() < arg_7_1:GetSortWeight()
+	arg_6_0.tabItemList:make(function(arg_7_0, arg_7_1, arg_7_2)
+		local var_7_0 = arg_7_1 + 1
+		local var_7_1 = arg_6_0.characterList[var_7_0]
+
+		if arg_7_0 == UIItemList.EventUpdate then
+			setActive(arg_7_2:Find("lock"), var_7_1:IsLock())
+			setActive(arg_7_2:Find("border/selected"), var_7_0 == arg_6_0.selectedCharacterId)
+			setActive(arg_7_2:Find("border/normal"), var_7_0 ~= arg_6_0.selectedCharacterId)
+		elseif arg_7_0 == UIItemList.EventInit then
+			GetImageSpriteFromAtlasAsync("qicon/" .. var_7_1:GetDefaultFrame(), "", arg_7_2:Find("frame"))
+			onButton(arg_6_0, arg_7_2, function()
+				if var_7_1:IsLock() then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("secretary_special_character_unlock"))
+
+					return
+				end
+
+				if var_7_0 ~= arg_6_0.selectedCharacterId then
+					arg_6_0.selectedCharacterId = var_7_0
+
+					arg_6_0.tabItemList:align(#arg_6_0.characterList)
+					arg_6_0:InitToggles()
+				end
+			end)
+		end
 	end)
-	arg_6_0.toggleUIItemList:make(function(arg_8_0, arg_8_1, arg_8_2)
-		if arg_8_0 == UIItemList.EventUpdate then
-			arg_6_0:UpdateToggle(arg_8_2, var_6_0[arg_8_1 + 1])
+	arg_6_0.tabItemList:align(#arg_6_0.characterList)
+end
 
-			if arg_8_1 == 0 then
-				arg_6_0.isInit = true
+function var_0_0.InitToggles(arg_9_0)
+	local var_9_0 = arg_9_0.characterList[arg_9_0.selectedCharacterId]:GetGroupList()
 
-				triggerToggle(arg_8_2, true)
+	table.sort(var_9_0, function(arg_10_0, arg_10_1)
+		return arg_10_0:GetSortWeight() < arg_10_1:GetSortWeight()
+	end)
+	arg_9_0.toggleUIItemList:make(function(arg_11_0, arg_11_1, arg_11_2)
+		if arg_11_0 == UIItemList.EventUpdate then
+			arg_9_0:UpdateToggle(arg_11_2, var_9_0[arg_11_1 + 1])
+
+			if arg_11_1 == 0 then
+				arg_9_0.isInit = true
+
+				triggerToggle(arg_11_2, true)
 			end
 		end
 	end)
-	arg_6_0.toggleUIItemList:align(#var_6_0)
+	arg_9_0.toggleUIItemList:align(#var_9_0)
 
-	arg_6_0.isInit = false
+	arg_9_0.isInit = false
 end
 
-function var_0_0.UpdateToggle(arg_9_0, arg_9_1, arg_9_2)
-	setImageSprite(arg_9_1:Find("sel/Text"), GetSpriteFromAtlas("ui/EducateCharProfileUI_atlas", arg_9_2:GetSpriteName()), true)
-	setImageSprite(arg_9_1:Find("Text"), GetSpriteFromAtlas("ui/EducateCharProfileUI_atlas", arg_9_2:GetSpriteName()), true)
-	setActive(arg_9_1:Find("lock"), arg_9_2:IsLock())
-	onToggle(arg_9_0, arg_9_1, function(arg_10_0)
-		if arg_10_0 then
-			if not arg_9_0.isInit then
-				arg_9_0.animation:Play("anim_educate_profile_change")
+function var_0_0.UpdateToggle(arg_12_0, arg_12_1, arg_12_2)
+	setImageSprite(arg_12_1:Find("sel/Text"), GetSpriteFromAtlas("ui/EducateCharProfileUI_atlas", arg_12_2:GetSpriteName()), true)
+	setImageSprite(arg_12_1:Find("Text"), GetSpriteFromAtlas("ui/EducateCharProfileUI_atlas", arg_12_2:GetSpriteName()), true)
+	setActive(arg_12_1:Find("lock"), arg_12_2:IsLock())
+	onToggle(arg_12_0, arg_12_1, function(arg_13_0)
+		if arg_13_0 then
+			if not arg_12_0.isInit then
+				arg_12_0.animation:Play("anim_educate_profile_change")
 
-				arg_9_0.isInit = nil
+				arg_12_0.isInit = nil
 			end
 
-			local var_10_0 = arg_9_2:GetShowId()
+			local var_13_0 = arg_12_2:GetShowId()
 
-			arg_9_0:ClearCurrentWord()
-			arg_9_0:InitPainting(var_10_0)
-			arg_9_0:InitWordList(var_10_0)
+			arg_12_0:ClearCurrentWord()
+			arg_12_0:InitPainting(var_13_0)
+			arg_12_0:InitWordList(var_13_0)
 		end
 	end, SFX_PANEL)
 end
 
-function var_0_0.GetWordList(arg_11_0, arg_11_1)
-	local var_11_0 = {}
+function var_0_0.GetWordList(arg_14_0, arg_14_1)
+	local var_14_0 = {}
 
-	for iter_11_0, iter_11_1 in pairs(pg.character_voice_special.all) do
-		local var_11_1 = iter_11_1
+	for iter_14_0, iter_14_1 in pairs(pg.character_voice_special.all) do
+		local var_14_1 = iter_14_1
 
-		if string.find(iter_11_1, ShipWordHelper.WORD_TYPE_MAIN) then
-			local var_11_2 = string.gsub(iter_11_1, ShipWordHelper.WORD_TYPE_MAIN, "")
+		if string.find(iter_14_1, ShipWordHelper.WORD_TYPE_MAIN) then
+			local var_14_2 = string.gsub(iter_14_1, ShipWordHelper.WORD_TYPE_MAIN, "")
 
-			var_11_1 = ShipWordHelper.WORD_TYPE_MAIN .. "_" .. var_11_2
+			var_14_1 = ShipWordHelper.WORD_TYPE_MAIN .. "_" .. var_14_2
 		end
 
-		if EducateCharWordHelper.ExistWord(arg_11_1, var_11_1) then
-			table.insert(var_11_0, iter_11_1)
+		if EducateCharWordHelper.ExistWord(arg_14_1, var_14_1) then
+			table.insert(var_14_0, iter_14_1)
 		end
 	end
 
-	return var_11_0
+	return var_14_0
 end
 
-function var_0_0.InitWordList(arg_12_0, arg_12_1)
-	local var_12_0 = arg_12_0:GetWordList(arg_12_1)
-	local var_12_1 = pg.secretary_special_ship[arg_12_1]
+function var_0_0.InitWordList(arg_15_0, arg_15_1)
+	local var_15_0 = arg_15_0:GetWordList(arg_15_1)
+	local var_15_1 = pg.secretary_special_ship[arg_15_1]
 
-	arg_12_0:RemoveAllTimer()
-	arg_12_0.wordUIItemList:make(function(arg_13_0, arg_13_1, arg_13_2)
-		if arg_13_0 == UIItemList.EventUpdate then
-			arg_12_0:UpdateWordCard(arg_13_2, arg_12_1, var_12_0[arg_13_1 + 1], arg_13_1)
+	arg_15_0:RemoveAllTimer()
+	arg_15_0.wordUIItemList:make(function(arg_16_0, arg_16_1, arg_16_2)
+		if arg_16_0 == UIItemList.EventUpdate then
+			arg_15_0:UpdateWordCard(arg_16_2, arg_15_1, var_15_0[arg_16_1 + 1], arg_16_1)
 		end
 	end)
-	arg_12_0.wordUIItemList:align(#var_12_0)
+	arg_15_0.wordUIItemList:align(#var_15_0)
 end
 
-function var_0_0.UpdateWordCard(arg_14_0, arg_14_1, arg_14_2, arg_14_3, arg_14_4)
-	local var_14_0 = arg_14_1:Find("bg")
-	local var_14_1 = pg.character_voice_special[arg_14_3]
+function var_0_0.UpdateWordCard(arg_17_0, arg_17_1, arg_17_2, arg_17_3, arg_17_4)
+	local var_17_0 = arg_17_1:Find("bg")
+	local var_17_1 = pg.character_voice_special[arg_17_3]
 
-	setText(var_14_0:Find("Text"), var_14_1.voice_name)
+	setText(var_17_0:Find("Text"), var_17_1.voice_name)
 
-	local var_14_2 = -1
+	local var_17_2 = -1
 
-	onButton(arg_14_0, var_14_0, function()
-		if arg_14_0.chatting then
+	onButton(arg_17_0, var_17_0, function()
+		if arg_17_0.chatting then
 			return
 		end
 
-		local var_15_0, var_15_1, var_15_2, var_15_3 = EducateCharWordHelper.GetWordAndCV(arg_14_2, var_14_1.resource_key)
+		local var_18_0, var_18_1, var_18_2, var_18_3 = EducateCharWordHelper.GetWordAndCV(arg_17_2, var_17_1.resource_key)
 
 		seriesAsync({
-			function(arg_16_0)
-				arg_14_0:OnChatStart(var_14_0, var_15_2, arg_16_0)
+			function(arg_19_0)
+				arg_17_0:OnChatStart(var_17_0, var_18_2, arg_19_0)
 			end,
-			function(arg_17_0)
-				arg_14_0:UpdateExpression(arg_14_2, var_14_1.resource_key)
-				arg_14_0:PlayCV(var_15_3, var_15_0, function(arg_18_0)
-					var_14_2 = arg_18_0
+			function(arg_20_0)
+				arg_17_0:UpdateExpression(arg_17_2, var_17_1.resource_key)
+				arg_17_0:PlayCV(var_18_3, var_18_0, function(arg_21_0)
+					var_17_2 = arg_21_0
 
-					arg_17_0()
+					arg_20_0()
 				end)
 			end,
-			function(arg_19_0)
-				arg_14_0:StartCharAnimation(var_14_2, arg_19_0)
+			function(arg_22_0)
+				arg_17_0:StartCharAnimation(var_17_2, arg_22_0)
 			end
 		}, function()
-			arg_14_0:OnChatEnd()
+			arg_17_0:OnChatEnd()
 		end)
 	end, SFX_PANEL)
-	setActive(var_14_0, false)
+	setActive(var_17_0, false)
 
-	arg_14_0.timers[arg_14_4] = Timer.New(function()
-		setActive(var_14_0, true)
-		arg_14_1:GetComponent(typeof(Animation)):Play("anim_educate_profile_tpl")
-	end, math.max(1e-05, arg_14_4 * 0.066), 1)
+	arg_17_0.timers[arg_17_4] = Timer.New(function()
+		setActive(var_17_0, true)
+		arg_17_1:GetComponent(typeof(Animation)):Play("anim_educate_profile_tpl")
+	end, math.max(1e-05, arg_17_4 * 0.066), 1)
 
-	arg_14_0.timers[arg_14_4]:Start()
+	arg_17_0.timers[arg_17_4]:Start()
 end
 
-function var_0_0.RemoveAllTimer(arg_22_0)
-	for iter_22_0, iter_22_1 in pairs(arg_22_0.timers) do
-		iter_22_1:Stop()
+function var_0_0.RemoveAllTimer(arg_25_0)
+	for iter_25_0, iter_25_1 in pairs(arg_25_0.timers) do
+		iter_25_1:Stop()
 
-		iter_22_1 = nil
+		iter_25_1 = nil
 	end
 
-	arg_22_0.timers = {}
+	arg_25_0.timers = {}
 end
 
-function var_0_0.OnChatStart(arg_23_0, arg_23_1, arg_23_2, arg_23_3)
-	arg_23_0.chatting = true
-	arg_23_0.chatTxt.text = arg_23_2
+function var_0_0.OnChatStart(arg_26_0, arg_26_1, arg_26_2, arg_26_3)
+	arg_26_0.chatting = true
+	arg_26_0.chatTxt.text = arg_26_2
 
-	triggerToggle(arg_23_1:Find("state"), true)
+	triggerToggle(arg_26_1:Find("state"), true)
 
-	arg_23_0.selectedCard = arg_23_1
+	arg_26_0.selectedCard = arg_26_1
 
-	arg_23_3()
+	arg_26_3()
 end
 
-function var_0_0.UpdateExpression(arg_24_0, arg_24_1, arg_24_2)
-	local var_24_0 = EducateCharWordHelper.GetExpression(arg_24_1, arg_24_2)
+function var_0_0.UpdateExpression(arg_27_0, arg_27_1, arg_27_2)
+	local var_27_0 = EducateCharWordHelper.GetExpression(arg_27_1, arg_27_2)
 
-	if var_24_0 and var_24_0 ~= "" then
-		ShipExpressionHelper.UpdateExpression(findTF(arg_24_0.paintingTr, "fitter"):GetChild(0), arg_24_0.paintingName, var_24_0)
+	if var_27_0 and var_27_0 ~= "" then
+		ShipExpressionHelper.UpdateExpression(findTF(arg_27_0.paintingTr, "fitter"):GetChild(0), arg_27_0.paintingName, var_27_0)
 	else
-		ShipExpressionHelper.UpdateExpression(findTF(arg_24_0.paintingTr, "fitter"):GetChild(0), arg_24_0.paintingName, "")
+		ShipExpressionHelper.UpdateExpression(findTF(arg_27_0.paintingTr, "fitter"):GetChild(0), arg_27_0.paintingName, "")
 	end
 end
 
-function var_0_0.OnChatEnd(arg_25_0)
-	arg_25_0:ClearCurrentWord()
+function var_0_0.OnChatEnd(arg_28_0)
+	arg_28_0:ClearCurrentWord()
 end
 
-function var_0_0.PlayCV(arg_26_0, arg_26_1, arg_26_2, arg_26_3)
-	arg_26_0.cvLoader:Play(arg_26_1, arg_26_2, 0, arg_26_3)
+function var_0_0.PlayCV(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
+	arg_29_0.cvLoader:Play(arg_29_1, arg_29_2, 0, arg_29_3)
 end
 
-function var_0_0.StartCharAnimation(arg_27_0, arg_27_1, arg_27_2)
-	local var_27_0 = 0.3
-	local var_27_1 = arg_27_1 > 0 and arg_27_1 or 3
+function var_0_0.StartCharAnimation(arg_30_0, arg_30_1, arg_30_2)
+	local var_30_0 = 0.3
+	local var_30_1 = arg_30_1 > 0 and arg_30_1 or 3
 
-	LeanTween.scale(rtf(arg_27_0.chatTf.gameObject), Vector3.New(1, 1, 1), var_27_0):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
-		LeanTween.scale(rtf(arg_27_0.chatTf.gameObject), Vector3.New(0, 0, 1), var_27_0):setEase(LeanTweenType.easeInBack):setDelay(var_27_0 + var_27_1):setOnComplete(System.Action(arg_27_2))
+	LeanTween.scale(rtf(arg_30_0.chatTf.gameObject), Vector3.New(1, 1, 1), var_30_0):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
+		LeanTween.scale(rtf(arg_30_0.chatTf.gameObject), Vector3.New(0, 0, 1), var_30_0):setEase(LeanTweenType.easeInBack):setDelay(var_30_0 + var_30_1):setOnComplete(System.Action(arg_30_2))
 	end))
 end
 
-function var_0_0.InitPainting(arg_29_0, arg_29_1)
-	arg_29_0:ReturnPainting()
+function var_0_0.InitPainting(arg_32_0, arg_32_1)
+	arg_32_0:ReturnPainting()
 
-	local var_29_0 = pg.secretary_special_ship[arg_29_1]
+	local var_32_0 = pg.secretary_special_ship[arg_32_1]
 
-	setPaintingPrefab(arg_29_0.paintingTr, var_29_0.prefab, "tb3")
+	setPaintingPrefabAsync(arg_32_0.paintingTr, var_32_0.painting, "tb3")
 
-	arg_29_0.paintingName = var_29_0.prefab
+	arg_32_0.paintingName = var_32_0.painting
 end
 
-function var_0_0.ReturnPainting(arg_30_0)
-	if arg_30_0.paintingName then
-		retPaintingPrefab(arg_30_0.paintingTr, arg_30_0.paintingName)
+function var_0_0.ReturnPainting(arg_33_0)
+	if arg_33_0.paintingName then
+		retPaintingPrefab(arg_33_0.paintingTr, arg_33_0.paintingName)
 
-		arg_30_0.paintingName = nil
+		arg_33_0.paintingName = nil
 	end
 end
 
-function var_0_0.ClearCurrentWord(arg_31_0)
-	arg_31_0.chatting = nil
+function var_0_0.ClearCurrentWord(arg_34_0)
+	arg_34_0.chatting = nil
 
-	LeanTween.cancel(arg_31_0.chatTf.gameObject)
+	LeanTween.cancel(arg_34_0.chatTf.gameObject)
 
-	arg_31_0.chatTf.localScale = Vector3.zero
+	arg_34_0.chatTf.localScale = Vector3.zero
 
-	arg_31_0.cvLoader:Stop()
+	arg_34_0.cvLoader:Stop()
 
-	if not arg_31_0.selectedCard then
+	if not arg_34_0.selectedCard then
 		return
 	end
 
-	local var_31_0 = arg_31_0.selectedCard
+	local var_34_0 = arg_34_0.selectedCard
 
-	arg_31_0.selectedCard = nil
+	arg_34_0.selectedCard = nil
 
-	triggerToggle(var_31_0:Find("state"), false)
+	triggerToggle(var_34_0:Find("state"), false)
 end
 
-function var_0_0.onBackPressed(arg_32_0)
-	var_0_0.super.onBackPressed(arg_32_0)
+function var_0_0.onBackPressed(arg_35_0)
+	var_0_0.super.onBackPressed(arg_35_0)
 end
 
-function var_0_0.willExit(arg_33_0)
-	arg_33_0:ClearCurrentWord()
-	arg_33_0:RemoveAllTimer()
-	arg_33_0:ReturnPainting()
+function var_0_0.willExit(arg_36_0)
+	arg_36_0:ClearCurrentWord()
+	arg_36_0:RemoveAllTimer()
+	arg_36_0:ReturnPainting()
 
-	if arg_33_0.cvLoader then
-		arg_33_0.cvLoader:Dispose()
+	if arg_36_0.cvLoader then
+		arg_36_0.cvLoader:Dispose()
 
-		arg_33_0.cvLoader = nil
+		arg_36_0.cvLoader = nil
 	end
 end
 

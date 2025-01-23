@@ -30,6 +30,7 @@ var_0_0.TYPES = {
 	NEW_SERVER = 20,
 	DORM3D_SHOP_TIMELIMIT = 25,
 	TASK = 2,
+	EDUCATE_NEW_CHILD = 26,
 	BUILD = 4,
 	MAIL = 3,
 	GUILD = 5,
@@ -153,121 +154,124 @@ function var_0_0.BindConditions(arg_3_0)
 	arg_3_0:BindCondition(var_0_0.TYPES.DORM3D_SHOP_TIMELIMIT, function()
 		return pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "SelectDorm3DMediator") and Dorm3dFurniture.IsOnceTimelimitShopTip()
 	end)
+	arg_3_0:BindCondition(var_0_0.TYPES.EDUCATE_NEW_CHILD, function()
+		return NewEducateHelper.IsShowNewChildTip()
+	end)
 end
 
-function var_0_0.BindCondition(arg_29_0, arg_29_1, arg_29_2)
-	arg_29_0.conditions[arg_29_1] = arg_29_2
+function var_0_0.BindCondition(arg_30_0, arg_30_1, arg_30_2)
+	arg_30_0.conditions[arg_30_1] = arg_30_2
 end
 
-function var_0_0.RegisterRedDotNodes(arg_30_0, arg_30_1)
-	for iter_30_0, iter_30_1 in ipairs(arg_30_1) do
-		arg_30_0:RegisterRedDotNode(iter_30_1)
+function var_0_0.RegisterRedDotNodes(arg_31_0, arg_31_1)
+	for iter_31_0, iter_31_1 in ipairs(arg_31_1) do
+		arg_31_0:RegisterRedDotNode(iter_31_1)
 	end
 
-	arg_30_0:_NotifyAll()
+	arg_31_0:_NotifyAll()
 end
 
-function var_0_0.RegisterRedDotNode(arg_31_0, arg_31_1)
-	local var_31_0 = arg_31_1:GetTypes()
+function var_0_0.RegisterRedDotNode(arg_32_0, arg_32_1)
+	local var_32_0 = arg_32_1:GetTypes()
 
-	for iter_31_0, iter_31_1 in ipairs(var_31_0) do
-		if not arg_31_0.nodeList[iter_31_1] then
-			arg_31_0.nodeList[iter_31_1] = {}
+	for iter_32_0, iter_32_1 in ipairs(var_32_0) do
+		if not arg_32_0.nodeList[iter_32_1] then
+			arg_32_0.nodeList[iter_32_1] = {}
 		end
 
-		table.insert(arg_31_0.nodeList[iter_31_1], arg_31_1)
+		table.insert(arg_32_0.nodeList[iter_32_1], arg_32_1)
 	end
 
-	arg_31_1:Init()
+	arg_32_1:Init()
 end
 
-function var_0_0.UnRegisterRedDotNodes(arg_32_0, arg_32_1)
-	for iter_32_0, iter_32_1 in ipairs(arg_32_1) do
-		arg_32_0:UnRegisterRedDotNode(iter_32_1)
+function var_0_0.UnRegisterRedDotNodes(arg_33_0, arg_33_1)
+	for iter_33_0, iter_33_1 in ipairs(arg_33_1) do
+		arg_33_0:UnRegisterRedDotNode(iter_33_1)
 	end
 
 	var_0_0.cache = {}
 end
 
-function var_0_0.UnRegisterRedDotNode(arg_33_0, arg_33_1)
-	local var_33_0 = arg_33_1:GetTypes()
+function var_0_0.UnRegisterRedDotNode(arg_34_0, arg_34_1)
+	local var_34_0 = arg_34_1:GetTypes()
 
-	for iter_33_0, iter_33_1 in ipairs(var_33_0) do
-		local var_33_1 = arg_33_0.nodeList[iter_33_1] or {}
+	for iter_34_0, iter_34_1 in ipairs(var_34_0) do
+		local var_34_1 = arg_34_0.nodeList[iter_34_1] or {}
 
-		for iter_33_2, iter_33_3 in ipairs(var_33_1) do
-			if iter_33_3 == arg_33_1 then
-				iter_33_3:Remove()
-				table.remove(var_33_1, iter_33_2)
+		for iter_34_2, iter_34_3 in ipairs(var_34_1) do
+			if iter_34_3 == arg_34_1 then
+				iter_34_3:Remove()
+				table.remove(var_34_1, iter_34_2)
 			end
 		end
 	end
 end
 
-local function var_0_3(arg_34_0, arg_34_1)
-	for iter_34_0, iter_34_1 in ipairs(arg_34_1) do
-		local var_34_0
+local function var_0_3(arg_35_0, arg_35_1)
+	for iter_35_0, iter_35_1 in ipairs(arg_35_1) do
+		local var_35_0
 
-		if var_0_0.cache[iter_34_1] ~= nil then
-			var_34_0 = var_0_0.cache[iter_34_1]
+		if var_0_0.cache[iter_35_1] ~= nil then
+			var_35_0 = var_0_0.cache[iter_35_1]
 		else
-			var_34_0 = arg_34_0.conditions[iter_34_1]()
-			var_0_0.cache[iter_34_1] = var_34_0
+			var_35_0 = arg_35_0.conditions[iter_35_1]()
+			var_0_0.cache[iter_35_1] = var_35_0
 		end
 
-		if var_34_0 then
-			return var_34_0
+		if var_35_0 then
+			return var_35_0
 		end
 	end
 
 	return false
 end
 
-function var_0_0.NotifyAll(arg_35_0, arg_35_1)
+function var_0_0.NotifyAll(arg_36_0, arg_36_1)
 	var_0_0.cache = {}
 
-	for iter_35_0, iter_35_1 in ipairs(arg_35_0.nodeList[arg_35_1] or {}) do
-		local var_35_0 = iter_35_1:GetTypes()
-		local var_35_1 = var_0_3(arg_35_0, var_35_0)
+	for iter_36_0, iter_36_1 in ipairs(arg_36_0.nodeList[arg_36_1] or {}) do
+		local var_36_0 = iter_36_1:GetTypes()
+		local var_36_1 = var_0_3(arg_36_0, var_36_0)
 
-		iter_35_1:SetData(var_35_1)
+		iter_36_1:SetData(var_36_1)
 	end
 
 	var_0_0.cache = {}
 end
 
-function var_0_0._NotifyAll(arg_36_0)
+function var_0_0._NotifyAll(arg_37_0)
 	var_0_0.cache = {}
 
-	local var_36_0 = {}
+	local var_37_0 = {}
 
-	local function var_36_1(arg_37_0, arg_37_1)
-		local var_37_0 = arg_37_0:GetTypes()
-		local var_37_1 = var_0_3(arg_36_0, var_37_0)
+	local function var_37_1(arg_38_0, arg_38_1)
+		local var_38_0 = arg_38_0:GetTypes()
+		local var_38_1 = var_0_3(arg_37_0, var_38_0)
 
-		arg_37_0:SetData(var_37_1)
-		onNextTick(arg_37_1)
+		arg_38_0:SetData(var_38_1)
+		onNextTick(arg_38_1)
 	end
 
-	for iter_36_0, iter_36_1 in pairs(arg_36_0.nodeList) do
-		for iter_36_2, iter_36_3 in ipairs(iter_36_1) do
-			table.insert(var_36_0, function(arg_38_0)
-				var_36_1(iter_36_3, arg_38_0)
+	for iter_37_0, iter_37_1 in pairs(arg_37_0.nodeList) do
+		for iter_37_2, iter_37_3 in ipairs(iter_37_1) do
+			table.insert(var_37_0, function(arg_39_0)
+				var_37_1(iter_37_3, arg_39_0)
 			end)
 		end
 	end
 
-	seriesAsync(var_36_0, function()
+	seriesAsync(var_37_0, function()
 		var_0_0.cache = {}
 	end)
 end
 
-function var_0_0.DebugNodes(arg_40_0)
-	for iter_40_0, iter_40_1 in pairs(arg_40_0.nodeList) do
-		var_0_2("type : ", iter_40_0)
+function var_0_0.DebugNodes(arg_41_0)
+	for iter_41_0, iter_41_1 in pairs(arg_41_0.nodeList) do
+		var_0_2("type : ", iter_41_0)
 
-		for iter_40_2, iter_40_3 in ipairs(iter_40_1) do
-			var_0_2(" ", iter_40_3:GetName())
+		for iter_41_2, iter_41_3 in ipairs(iter_41_1) do
+			var_0_2(" ", iter_41_3:GetName())
 		end
 	end
 end

@@ -17,9 +17,9 @@
 	},
 	effect_list = {
 		{
-			type = "BattleBuffAddAttr",
+			type = "BattleBuffAddBulletAttr",
 			trigger = {
-				"onAttach"
+				"onBulletCreate"
 			},
 			arg_list = {
 				attr = "damageToArmorRateEnhance_1",
@@ -30,9 +30,9 @@
 			}
 		},
 		{
-			type = "BattleBuffAddAttr",
+			type = "BattleBuffAddBulletAttr",
 			trigger = {
-				"onAttach"
+				"onBulletCreate"
 			},
 			arg_list = {
 				attr = "damageToArmorRateEnhance_3",

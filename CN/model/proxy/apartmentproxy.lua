@@ -98,15 +98,17 @@ function var_0_0.updateRoom(arg_10_0, arg_10_1)
 	arg_10_0:sendNotification(var_0_0.UPDATE_ROOM, arg_10_1)
 end
 
-function var_0_0.triggerFavor(arg_11_0, arg_11_1, arg_11_2)
+function var_0_0.triggerFavor(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
+	arg_11_3 = arg_11_3 or 1
+
 	local var_11_0 = arg_11_0.data[arg_11_1]
 	local var_11_1 = pg.dorm3d_favor_trigger[arg_11_2]
 	local var_11_2 = 0
 	local var_11_3 = 0
 
 	if arg_11_0.stamina >= var_11_1.is_daily_max and not var_11_0:isMaxFavor() then
-		var_11_3 = var_11_1.is_daily_max
-		var_11_2 = math.min(var_11_1.num, var_11_0:getMaxFavor())
+		var_11_3 = var_11_1.is_daily_max * arg_11_3
+		var_11_2 = math.min(var_11_1.num * arg_11_3, var_11_0:getMaxFavor() - var_11_0.favor)
 	end
 
 	arg_11_0.stamina = arg_11_0.stamina - var_11_3

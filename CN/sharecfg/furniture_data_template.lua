@@ -259,6 +259,7 @@ pg.furniture_data_template = setmetatable({
 			100067,
 			100068,
 			100069,
+			100070,
 			200001,
 			200002,
 			200003,
@@ -3697,6 +3698,7 @@ pg.furniture_data_template = setmetatable({
 			100067,
 			100068,
 			100069,
+			100070,
 			31101,
 			54101,
 			54102,
@@ -7034,6 +7036,7 @@ pg.furniture_data_template = setmetatable({
 			242,
 			291,
 			100060,
+			100070,
 			200001,
 			200002,
 			200003,
@@ -10374,6 +10377,7 @@ pg.furniture_data_template = setmetatable({
 		100067,
 		100068,
 		100069,
+		100070,
 		200001,
 		200002,
 		200003,
@@ -27681,6 +27685,43 @@ pg.base.furniture_data_template = {
 		followBone = {
 			"char",
 			-1
+		},
+		interAction_group = {}
+	},
+	[100070] = {
+		spine_extra = "",
+		describe = "一起来感受尼罗河文明的魅力吧！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 0,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "yingtouebaijianicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "鹰头鳄鱼像",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "chuanmo/yingtouebaijian",
+		canputon = 0,
+		id = 100070,
+		can_rotate = 0,
+		size = {
+			1,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
 		},
 		interAction_group = {}
 	},
@@ -160108,8 +160149,8 @@ pg.base.furniture_data_template = {
 		id = 318105,
 		can_rotate = 0,
 		size = {
-			0,
-			0
+			2,
+			2
 		},
 		offset = {},
 		canputonGrid = {},
