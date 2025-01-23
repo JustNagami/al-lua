@@ -117,13 +117,13 @@ end
 local function var_0_17(arg_8_0, arg_8_1, arg_8_2)
 	local var_8_0 = var_0_6.struct_unpack
 
-	local function var_8_1(arg_9_0, arg_9_1)
+	function InnerDecode(arg_9_0, arg_9_1)
 		local var_9_0 = arg_9_1 + arg_8_1
 
 		return var_8_0(arg_8_2, arg_9_0, arg_9_1), var_9_0
 	end
 
-	return var_0_15(arg_8_0, var_8_1)
+	return var_0_15(arg_8_0, InnerDecode)
 end
 
 local function var_0_18(arg_10_0)
@@ -387,7 +387,7 @@ function _RaiseInvalidWireType(arg_24_0, arg_24_1, arg_24_2)
 end
 
 function _FieldSkipper()
-	local var_25_0 = {
+	WIRETYPE_TO_SKIPPER = {
 		_SkipVarint,
 		_SkipFixed64,
 		_SkipLengthDelimited,
@@ -397,13 +397,14 @@ function _FieldSkipper()
 		_RaiseInvalidWireType,
 		_RaiseInvalidWireType
 	}
-	local var_25_1 = var_0_0.byte
-	local var_25_2 = var_0_0.sub
+
+	local var_25_0 = var_0_0.byte
+	local var_25_1 = var_0_0.sub
 
 	return function(arg_26_0, arg_26_1, arg_26_2, arg_26_3)
-		local var_26_0 = var_25_1(var_25_2(arg_26_3, 1, 1)) % 8 + 1
+		local var_26_0 = var_25_0(var_25_1(arg_26_3, 1, 1)) % 8 + 1
 
-		return var_25_0[var_26_0](arg_26_0, arg_26_1, arg_26_2)
+		return WIRETYPE_TO_SKIPPER[var_26_0](arg_26_0, arg_26_1, arg_26_2)
 	end
 end
 

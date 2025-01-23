@@ -69,9 +69,14 @@ function var_0_0.OnInit(arg_7_0)
 			return
 		end
 
-		arg_7_0:emit(NewMainMediator.GO_SCENE, SCENE.EDUCATE, {
-			isMainEnter = true
-		})
+		if LOCK_NEW_EDUCATE_SYSTEM then
+			arg_7_0:emit(NewMainMediator.GO_SCENE, SCENE.EDUCATE, {
+				isMainEnter = true
+			})
+		else
+			arg_7_0:emit(NewMainMediator.GO_SCENE, SCENE.NEW_EDUCATE_SELECT)
+		end
+
 		arg_7_0:Hide()
 	end, SFX_MAIN)
 	onButton(arg_7_0, arg_7_0._islandBtn, function()
@@ -106,24 +111,28 @@ function var_0_0.Show(arg_16_0)
 		arg_16_0._haremBtn:GetComponent(typeof(Image)).color = Color(1, 1, 1, 1)
 	end
 
-	if not pg.SystemOpenMgr.GetInstance():isOpenSystem(var_16_0.level, "EducateMediator") then
+	local var_16_1 = LOCK_NEW_EDUCATE_SYSTEM and "EducateMediator" or "NewEducateSelectMediator"
+
+	if not pg.SystemOpenMgr.GetInstance():isOpenSystem(var_16_0.level, var_16_1) then
 		arg_16_0._educateBtn:GetComponent(typeof(Image)).color = Color(0.5, 0.5, 0.5, 1)
 	else
 		arg_16_0._educateBtn:GetComponent(typeof(Image)).color = Color(1, 1, 1, 1)
 	end
 
-	local var_16_1 = pg.SystemOpenMgr.GetInstance():isOpenSystem(var_16_0.level, "SelectDorm3DMediator")
+	setActive(arg_16_0._educateBtn:Find("tip"), NewEducateHelper.IsShowNewChildTip())
 
-	if not var_16_1 then
+	local var_16_2 = pg.SystemOpenMgr.GetInstance():isOpenSystem(var_16_0.level, "SelectDorm3DMediator")
+
+	if not var_16_2 then
 		arg_16_0._dormBtn:GetComponent(typeof(Image)).color = Color(0.5, 0.5, 0.5, 1)
 	else
 		arg_16_0._dormBtn:GetComponent(typeof(Image)).color = Color(1, 1, 1, 1)
 	end
 
 	;(function()
-		local var_17_0 = var_16_1 and Dorm3dGift.NeedViewTip()
-		local var_17_1 = var_16_1 and Dorm3dFurniture.NeedViewTip()
-		local var_17_2 = var_16_1 and Dorm3dFurniture.IsTimelimitShopTip()
+		local var_17_0 = var_16_2 and Dorm3dGift.NeedViewTip()
+		local var_17_1 = var_16_2 and Dorm3dFurniture.NeedViewTip()
+		local var_17_2 = var_16_2 and Dorm3dFurniture.IsTimelimitShopTip()
 
 		setActive(arg_16_0._dormBtn:Find("tip"), not var_17_2 and (var_17_0 or var_17_1))
 		setActive(arg_16_0._dormBtn:Find("tagFurniture"), var_17_2)

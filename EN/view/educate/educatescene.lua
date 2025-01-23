@@ -526,7 +526,7 @@ function var_0_0.FlushView(arg_73_0)
 end
 
 function var_0_0.onBackPressed(arg_74_0)
-	arg_74_0:emit(EducateBaseUI.ON_HOME)
+	arg_74_0:emit(var_0_0.EDUCATE_GO_SCENE, SCENE.NEW_EDUCATE_SELECT)
 end
 
 function var_0_0.willExit(arg_75_0)

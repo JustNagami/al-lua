@@ -1,4 +1,4 @@
-﻿local var_0_0 = class("ShoppingCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("SkinShoppingCommand", pm.SimpleCommand)
 
 function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_0 = arg_1_1:getBody()

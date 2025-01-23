@@ -32,64 +32,67 @@ function var_0_0.OnInit(arg_2_0)
 			viewComponent = EducateNewsLayer
 		}))
 	end, SFX_PANEL)
+	onButton(arg_2_0, arg_2_0._tf:Find("content/back"), function()
+		arg_2_0:emit(EducateBaseUI.ON_BACK)
+	end, SFX_PANEL)
 
 	arg_2_0.targetSetDays = getProxy(EducateProxy):GetTaskProxy():GetTargetSetDays()
 
 	arg_2_0:Flush()
 end
 
-function var_0_0.Flush(arg_4_0)
-	if not arg_4_0:GetLoaded() then
-		return
-	end
-
-	arg_4_0.curTime = getProxy(EducateProxy):GetCurTime()
-	arg_4_0.status = getProxy(EducateProxy):GetGameStatus()
-
-	setActive(arg_4_0.homeTF, arg_4_0:isHomeShow())
-	setActive(arg_4_0.schoolTF, arg_4_0:isSchoolShow())
-	setActive(arg_4_0.upgradeTF, arg_4_0:isUpgradeShow())
-	setActive(arg_4_0.dataTF, arg_4_0.status == EducateConst.STATUES_RESET)
-
-	local var_4_0 = arg_4_0:isTimeShow()
-
-	setActive(arg_4_0.timeTF, var_4_0)
-
-	if var_4_0 then
-		local var_4_1 = arg_4_0.curTime.month
-		local var_4_2 = EducateHelper.GetShowMonthNumber(var_4_1) .. i18n("word_month") .. i18n("word_which_week", arg_4_0.curTime.week)
-
-		setText(arg_4_0.weekTF, var_4_2)
-		setText(arg_4_0.dayTF, EducateHelper.GetWeekStrByNumber(arg_4_0.curTime.day))
-	end
-end
-
-function var_0_0.UpdateWeekDay(arg_5_0, arg_5_1)
+function var_0_0.Flush(arg_5_0)
 	if not arg_5_0:GetLoaded() then
 		return
 	end
 
-	local var_5_0 = EducateHelper.GetTimeAfterWeeks(getProxy(EducateProxy):GetCurTime(), 1)
-	local var_5_1 = EducateHelper.GetShowMonthNumber(var_5_0.month) .. i18n("word_month") .. i18n("word_which_week", var_5_0.week)
+	arg_5_0.curTime = getProxy(EducateProxy):GetCurTime()
+	arg_5_0.status = getProxy(EducateProxy):GetGameStatus()
 
-	setText(arg_5_0.weekTF, var_5_1)
-	setText(arg_5_0.dayTF, EducateHelper.GetWeekStrByNumber(arg_5_1))
+	setActive(arg_5_0.homeTF, arg_5_0:isHomeShow())
+	setActive(arg_5_0.schoolTF, arg_5_0:isSchoolShow())
+	setActive(arg_5_0.upgradeTF, arg_5_0:isUpgradeShow())
+	setActive(arg_5_0.dataTF, arg_5_0.status == EducateConst.STATUES_RESET)
+
+	local var_5_0 = arg_5_0:isTimeShow()
+
+	setActive(arg_5_0.timeTF, var_5_0)
+
+	if var_5_0 then
+		local var_5_1 = arg_5_0.curTime.month
+		local var_5_2 = EducateHelper.GetShowMonthNumber(var_5_1) .. i18n("word_month") .. i18n("word_which_week", arg_5_0.curTime.week)
+
+		setText(arg_5_0.weekTF, var_5_2)
+		setText(arg_5_0.dayTF, EducateHelper.GetWeekStrByNumber(arg_5_0.curTime.day))
+	end
 end
 
-function var_0_0.isHomeShow(arg_6_0)
-	return EducateHelper.IsSameDay(arg_6_0.curTime, arg_6_0.targetSetDays[1])
+function var_0_0.UpdateWeekDay(arg_6_0, arg_6_1)
+	if not arg_6_0:GetLoaded() then
+		return
+	end
+
+	local var_6_0 = EducateHelper.GetTimeAfterWeeks(getProxy(EducateProxy):GetCurTime(), 1)
+	local var_6_1 = EducateHelper.GetShowMonthNumber(var_6_0.month) .. i18n("word_month") .. i18n("word_which_week", var_6_0.week)
+
+	setText(arg_6_0.weekTF, var_6_1)
+	setText(arg_6_0.dayTF, EducateHelper.GetWeekStrByNumber(arg_6_1))
 end
 
-function var_0_0.isSchoolShow(arg_7_0)
-	return EducateHelper.IsSameDay(arg_7_0.curTime, arg_7_0.targetSetDays[2])
+function var_0_0.isHomeShow(arg_7_0)
+	return EducateHelper.IsSameDay(arg_7_0.curTime, arg_7_0.targetSetDays[1])
 end
 
-function var_0_0.isUpgradeShow(arg_8_0)
-	return EducateHelper.IsSameDay(arg_8_0.curTime, arg_8_0.targetSetDays[3]) or EducateHelper.IsSameDay(arg_8_0.curTime, arg_8_0.targetSetDays[4])
+function var_0_0.isSchoolShow(arg_8_0)
+	return EducateHelper.IsSameDay(arg_8_0.curTime, arg_8_0.targetSetDays[2])
 end
 
-function var_0_0.isTimeShow(arg_9_0)
-	return not isActive(arg_9_0.homeTF) and not isActive(arg_9_0.schoolTF) and not isActive(arg_9_0.upgradeTF) and not isActive(arg_9_0.dataTF)
+function var_0_0.isUpgradeShow(arg_9_0)
+	return EducateHelper.IsSameDay(arg_9_0.curTime, arg_9_0.targetSetDays[3]) or EducateHelper.IsSameDay(arg_9_0.curTime, arg_9_0.targetSetDays[4])
+end
+
+function var_0_0.isTimeShow(arg_10_0)
+	return not isActive(arg_10_0.homeTF) and not isActive(arg_10_0.schoolTF) and not isActive(arg_10_0.upgradeTF) and not isActive(arg_10_0.dataTF)
 end
 
 return var_0_0

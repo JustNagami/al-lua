@@ -7,6 +7,11 @@ end
 function var_0_0.OnInit(arg_2_0)
 	arg_2_0.helpBtn = arg_2_0:findTF("content/btns/help")
 	arg_2_0.homeBtn = arg_2_0:findTF("content/btns/home")
+
+	local var_2_0 = arg_2_0.contextData and arg_2_0.contextData.hideBack
+
+	setActive(arg_2_0.homeBtn, not var_2_0)
+
 	arg_2_0.refresh = arg_2_0:findTF("content/btns/refresh")
 
 	arg_2_0:addListener()

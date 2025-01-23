@@ -121,6 +121,7 @@ end
 
 function var_0_0.UpdateStamina(arg_12_0)
 	setText(arg_12_0.rtStamina:Find("Text"), string.format("%d/%d", getProxy(ApartmentProxy):getStamina()))
+	setActive(arg_12_0.rtStamina:Find("vfx_ui_stamina01"), getProxy(ApartmentProxy):getStamina() > 0)
 end
 
 function var_0_0.SetFloor(arg_13_0, arg_13_1)

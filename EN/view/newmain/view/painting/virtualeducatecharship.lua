@@ -2,13 +2,21 @@
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.educateCharId = arg_1_1
+	arg_1_0.templateConfig = pg.secretary_special_ship[arg_1_1]
+
+	local var_1_0
+
+	if arg_1_0.templateConfig.unlock_type == EducateConst.SECRETARY_UNLCOK_TYPE_SHOP then
+		var_1_0 = arg_1_0.templateConfig.unlock[1]
+	end
 
 	var_0_0.super.Ctor(arg_1_0, {
-		id = 99999999,
-		configId = 999024
+		configId = 999024,
+		id = var_1_0 or 99999999
 	})
 
-	arg_1_0.templateConfig = pg.secretary_special_ship[arg_1_1]
+	arg_1_0.skinId = var_1_0 or arg_1_0.skinId
+	arg_1_0.name = arg_1_0.templateConfig.name
 end
 
 function var_0_0.getPainting(arg_2_0)

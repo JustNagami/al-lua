@@ -96801,3 +96801,147 @@ _G.pg.base.item_data_statistics[81210] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
+_G.pg.base.item_data_statistics[21043] = {
+	open_directly = 0,
+	name = "META Crystal – Bolzano META",
+	display = "An item that increases the potential of Bolzano META. Used in the META Lab during Somatic Activation.",
+	type = 4,
+	display_effect = "",
+	id = 21043,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_undefined",
+	link_id = 0,
+	icon = "Props/21043",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[30426] = {
+	open_directly = 1,
+	name = "Gear Skin Box (Cruise Missions)",
+	display = "Contains 1 random Cruise Mission gear skin.",
+	type = 11,
+	display_effect = "",
+	id = 30426,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "Props/appearanceboxshijiexunyou",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "30426",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			9,
+			2089,
+			1
+		},
+		{
+			9,
+			2090,
+			1
+		},
+		{
+			9,
+			2091,
+			1
+		},
+		{
+			9,
+			2092,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[81211] = {
+	open_directly = 1,
+	name = "Spring Lucky Bag 2025 B",
+	display = "Contains 1x random skin (Spring Lucky Bag 2025 B), 2x Special General Blueprints - Series 7, 2025x Gems, 50x Cognitive Chips, 20x Wisdom Cubes, 100x Decor Tokens, and 10x Quick Finishers.",
+	type = 17,
+	display_effect = "",
+	id = 81211,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "Props/fudai22",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	limit = "[]",
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "998313",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			86211,
+			1
+		},
+		{
+			1,
+			14,
+			2025
+		},
+		{
+			2,
+			42066,
+			2
+		},
+		{
+			2,
+			15008,
+			50
+		},
+		{
+			2,
+			20001,
+			20
+		},
+		{
+			2,
+			15003,
+			10
+		},
+		{
+			1,
+			6,
+			100
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}

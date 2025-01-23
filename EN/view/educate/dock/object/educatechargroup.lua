@@ -27,7 +27,7 @@ end
 function var_0_0.GetTitle(arg_4_0)
 	local var_4_0 = arg_4_0:GetShowId()
 
-	if pg.secretary_special_ship[var_4_0].type == 1 then
+	if pg.secretary_special_ship[var_4_0].genghuan_word == 1 then
 		return i18n("secretary_special_title_age")
 	else
 		return i18n("secretary_special_title_physiognomy")
@@ -53,38 +53,42 @@ function var_0_0.GetShowId(arg_7_0)
 	end))
 end
 
-function var_0_0.GetShowPainting(arg_9_0)
-	local var_9_0 = arg_9_0:GetShowId()
-
-	assert(var_9_0)
-
-	return pg.secretary_special_ship[var_9_0].prefab
+function var_0_0.IsSp(arg_9_0)
+	return pg.secretary_special_ship[arg_9_0:GetShowId()].type == EducateConst.SECRETARY_TYPE_SP
 end
 
-function var_0_0.IsSelected(arg_10_0, arg_10_1)
-	return _.any(arg_10_0.charIdList, function(arg_11_0)
-		return arg_10_1 == arg_11_0
+function var_0_0.GetShowPainting(arg_10_0)
+	local var_10_0 = arg_10_0:GetShowId()
+
+	assert(var_10_0)
+
+	return pg.secretary_special_ship[var_10_0].painting
+end
+
+function var_0_0.IsSelected(arg_11_0, arg_11_1)
+	return _.any(arg_11_0.charIdList, function(arg_12_0)
+		return arg_11_1 == arg_12_0
 	end)
 end
 
-function var_0_0.IsLock(arg_12_0)
-	local var_12_0 = getProxy(EducateProxy):GetSecretaryIDs()
-	local var_12_1 = {}
+function var_0_0.IsLock(arg_13_0)
+	local var_13_0 = NewEducateHelper.GetAllUnlockSecretaryIds()
+	local var_13_1 = {}
 
-	for iter_12_0, iter_12_1 in ipairs(var_12_0) do
-		var_12_1[iter_12_1] = true
+	for iter_13_0, iter_13_1 in ipairs(var_13_0) do
+		var_13_1[iter_13_1] = true
 	end
 
-	return _.all(arg_12_0.charIdList, function(arg_13_0)
-		return not var_12_1[arg_13_0]
+	return _.all(arg_13_0.charIdList, function(arg_14_0)
+		return not var_13_1[arg_14_0]
 	end)
 end
 
-function var_0_0.ShouldTip(arg_14_0)
-	local var_14_0 = getProxy(SettingsProxy)
+function var_0_0.ShouldTip(arg_15_0)
+	local var_15_0 = getProxy(SettingsProxy)
 
-	return _.any(arg_14_0.charIdList, function(arg_15_0)
-		return var_14_0:_ShouldEducateCharTip(arg_15_0)
+	return _.any(arg_15_0.charIdList, function(arg_16_0)
+		return var_15_0:_ShouldEducateCharTip(arg_16_0)
 	end)
 end
 

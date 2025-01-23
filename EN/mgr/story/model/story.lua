@@ -43,7 +43,7 @@ var_0_0.PlaceholderMap = {
 	dorm3d = var_0_0.DORM
 }
 
-function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5)
+function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5, arg_2_6)
 	arg_2_0.name = arg_2_1.id
 	arg_2_0.mode = arg_2_1.mode
 	arg_2_0.once = arg_2_1.once
@@ -83,35 +83,37 @@ function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5)
 		local var_2_4 = iter_2_3.mode or arg_2_0.mode
 		local var_2_5 = var_0_0.GetStoryStepCls(var_2_4).New(iter_2_3)
 
-		if var_2_5:IsDialogueMode() and arg_2_0:IsDialogueStyle2() then
-			var_2_5:SetDefaultSide()
+		if var_2_5:IsVaild(arg_2_6) then
+			if var_2_5:IsDialogueMode() and arg_2_0:IsDialogueStyle2() then
+				var_2_5:SetDefaultSide()
+			end
+
+			var_2_5:SetId(iter_2_2)
+			var_2_5:SetPlaceholderType(arg_2_0:GetPlaceholder())
+			var_2_5:SetDefaultTb(arg_2_0.defaultTb)
+
+			if var_2_5:ExistOption() then
+				var_2_1 = var_2_1 + 1
+
+				var_2_5:SetOptionIndex(var_2_1)
+
+				if var_2_2[var_2_1] then
+					var_2_5:SetOptionSelCodes(var_2_2[var_2_1])
+				end
+
+				if arg_2_4 then
+					var_2_5.important = true
+				end
+
+				table.insert(var_2_3, iter_2_2)
+
+				if arg_2_5 then
+					var_2_5:AutoShowOption()
+				end
+			end
+
+			table.insert(arg_2_0.steps, var_2_5)
 		end
-
-		var_2_5:SetId(iter_2_2)
-		var_2_5:SetPlaceholderType(arg_2_0:GetPlaceholder())
-		var_2_5:SetDefaultTb(arg_2_0.defaultTb)
-
-		if var_2_5:ExistOption() then
-			var_2_1 = var_2_1 + 1
-
-			var_2_5:SetOptionIndex(var_2_1)
-
-			if var_2_2[var_2_1] then
-				var_2_5:SetOptionSelCodes(var_2_2[var_2_1])
-			end
-
-			if arg_2_4 then
-				var_2_5.important = true
-			end
-
-			table.insert(var_2_3, iter_2_2)
-
-			if arg_2_5 then
-				var_2_5:AutoShowOption()
-			end
-		end
-
-		table.insert(arg_2_0.steps, var_2_5)
 	end
 
 	if #arg_2_0.steps > 0 then

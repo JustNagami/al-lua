@@ -77,6 +77,13 @@ function var_0_0.findUI(arg_10_0)
 	arg_10_0.backBtn = arg_10_0:findTF("back_button", arg_10_0.topTF)
 	arg_10_0.menuTF = arg_10_0:findTF("menu_screen")
 	arg_10_0.skinShopBtn = arg_10_0:findTF("skin_shop", arg_10_0.menuTF)
+	arg_10_0.skinLockIcon = arg_10_0:findTF("skin_lock", arg_10_0.menuTF)
+
+	local var_10_0 = LOCK_SKIN_SHOP_ENTER and getProxy(PlayerProxy):getData().level < LOCK_SKIN_SHOP_ENTER_LEVEL
+
+	setActive(arg_10_0.skinShopBtn, not var_10_0)
+	setActive(arg_10_0.skinLockIcon, var_10_0)
+
 	arg_10_0.diamondShopBtn = arg_10_0:findTF("dimond_shop", arg_10_0.menuTF)
 	arg_10_0.itemShopBtn = arg_10_0:findTF("props", arg_10_0.menuTF)
 	arg_10_0.giftShopBtn = arg_10_0:findTF("gift_shop", arg_10_0.menuTF)
