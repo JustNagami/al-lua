@@ -1306,7 +1306,7 @@ local var_0_1 = {
 		local var_220_0 = arg_220_0.context.data
 
 		if not var_220_0.timeIndex then
-			if var_220_0.roomId == 1 then
+			if pg.dorm3d_rooms[var_220_0.roomId].type == 2 then
 				local var_220_1 = PlayerPrefs.GetInt(ApartmentProxy.GetTimePPName(), 1)
 
 				if var_220_1 == 0 then

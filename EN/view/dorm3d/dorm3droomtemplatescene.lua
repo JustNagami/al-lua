@@ -1469,7 +1469,7 @@ function var_0_0.Update(arg_114_0)
 			end)()
 
 			if arg_114_0.enableIKTip then
-				local var_117_0 = Time.time > arg_114_0.nextTipIKTime
+				local var_117_0 = not arg_114_0.blockIK and Time.time > arg_114_0.nextTipIKTime
 
 				if var_117_0 then
 					local var_117_1 = arg_117_0.ikConfig
