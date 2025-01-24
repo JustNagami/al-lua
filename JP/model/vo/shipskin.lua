@@ -7,6 +7,7 @@ var_0_0.SKIN_TYPE_REMAKE = 2
 var_0_0.SKIN_TYPE_OLD = 3
 var_0_0.SKIN_TYPE_NOT_HAVE_HIDE = 4
 var_0_0.SKIN_TYPE_SHOW_IN_TIME = 5
+var_0_0.SKIN_TYPE_TB = 6
 var_0_0.WITH_LIVE2D = 1
 var_0_0.WITH_BG = 2
 var_0_0.WITH_EFFECT = 3
@@ -119,10 +120,15 @@ function var_0_0.Ctor(arg_7_0, arg_7_1)
 	arg_7_0.endTime = arg_7_1.end_time or arg_7_1.time or 0
 	arg_7_0.isNew = true
 
-	local var_7_0 = arg_7_0:getConfig("ship_group")
-	local var_7_1 = ShipGroup.getDefaultShipConfig(var_7_0)
+	if arg_7_0:getConfig("skin_type") == var_0_0.SKIN_TYPE_TB then
+		arg_7_0.shipName = NewEducateHelper.GetShipNameBySecId(NewEducateHelper.GetSecIdBySkinId(arg_7_0.id))
+	else
+		local var_7_0 = arg_7_0:getConfig("ship_group")
+		local var_7_1 = ShipGroup.getDefaultShipConfig(var_7_0)
 
-	arg_7_0.shipName = var_7_1 and var_7_1.name or ""
+		arg_7_0.shipName = var_7_1 and var_7_1.name or ""
+	end
+
 	arg_7_0.skinName = arg_7_0:getConfig("name")
 end
 

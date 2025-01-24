@@ -55378,42 +55378,6 @@ pg.furniture_shop_template = {
 			}
 		}
 	},
-	[318107] = {
-		id = 318107,
-		gem_price = 240,
-		collaboration_furniture_time = "",
-		dorm_icon_price = 80,
-		not_for_sale = 0,
-		discount = 0,
-		new = 1,
-		discount_time = "",
-		time = {
-			{
-				{
-					2024,
-					1,
-					16
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					2,
-					5
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
 	[318108] = {
 		id = 318108,
 		gem_price = 240,
@@ -58556,7 +58520,6 @@ pg.furniture_shop_template = {
 		318104,
 		318105,
 		318106,
-		318107,
 		318108,
 		318109,
 		318110,

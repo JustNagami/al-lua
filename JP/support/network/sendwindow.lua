@@ -157,15 +157,17 @@ function var_0_1.Send(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4, arg_9_5, arg_
 
 	local function var_9_5(arg_13_0, arg_13_1)
 		for iter_13_0, iter_13_1 in pairs(arg_13_1) do
-			assert(arg_13_0[iter_13_0] ~= nil, "key does not exist: " .. iter_13_0)
-
 			if type(iter_13_1) == "table" then
-				for iter_13_2, iter_13_3 in ipairs(iter_13_1) do
-					if arg_13_0[iter_13_0].add then
+				if arg_13_0[iter_13_0].add then
+					for iter_13_2, iter_13_3 in ipairs(iter_13_1) do
 						var_9_5(arg_13_0[iter_13_0]:add(), iter_13_3)
-					else
-						arg_13_0[iter_13_0]:append(iter_13_3)
 					end
+				elseif arg_13_0[iter_13_0].append then
+					for iter_13_4, iter_13_5 in ipairs(iter_13_1) do
+						arg_13_0[iter_13_0]:append(iter_13_5)
+					end
+				else
+					var_9_5(arg_13_0[iter_13_0], iter_13_1)
 				end
 			else
 				arg_13_0[iter_13_0] = iter_13_1

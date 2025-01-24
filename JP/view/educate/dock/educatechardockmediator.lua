@@ -9,8 +9,10 @@ function var_0_0.register(arg_1_0)
 			id = arg_2_1
 		})
 	end)
-	arg_1_0:bind(var_0_0.GO_PROFILE, function(arg_3_0)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.EDUCATE_PROFILE)
+	arg_1_0:bind(var_0_0.GO_PROFILE, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.EDUCATE_PROFILE, {
+			selectedCharacterId = arg_3_1
+		})
 	end)
 end
 

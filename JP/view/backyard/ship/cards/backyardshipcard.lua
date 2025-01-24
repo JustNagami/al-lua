@@ -44,15 +44,27 @@ function var_0_0.OnFlush(arg_4_0)
 		end
 	end)
 
-	local var_4_6 = 0
+	local var_4_6 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING_2)
+
+	table.Foreach(var_4_6, function(arg_7_0, arg_7_1)
+		if arg_7_1 and not arg_7_1:isEnd() then
+			local var_7_0 = arg_7_1:getConfig("config_data")[1]
+
+			_.each(arg_7_1:getData1List(), function(arg_8_0)
+				var_4_4[arg_8_0] = (var_4_4[arg_8_0] or 0) + var_7_0
+			end)
+		end
+	end)
+
 	local var_4_7 = 0
+	local var_4_8 = 0
 
 	for iter_4_0, iter_4_1 in ipairs(getProxy(ActivityProxy):getBackyardEnergyActivityBuffs()) do
-		var_4_7 = var_4_7 + tonumber(iter_4_1:getConfig("benefit_effect"))
+		var_4_8 = var_4_8 + tonumber(iter_4_1:getConfig("benefit_effect"))
 	end
 
 	if arg_4_0.type == Ship.STATE_TRAIN then
-		local var_4_8 = var_4_0:getRecoverEnergyPoint() + Ship.BACKYARD_1F_ENERGY_ADDITION + (var_4_4[var_4_0.id] or 0)
+		local var_4_9 = var_4_0:getRecoverEnergyPoint() + Ship.BACKYARD_1F_ENERGY_ADDITION + (var_4_4[var_4_0.id] or 0)
 
 		var_4_1:updateProps({
 			{
@@ -73,11 +85,11 @@ function var_0_0.OnFlush(arg_4_0)
 			},
 			{
 				i18n("word_energy_recov_speed"),
-				10 * var_4_8 .. (var_4_7 > 0 and setColorStr("+" .. 10 * var_4_7, COLOR_GREEN) or "") .. "/h"
+				10 * var_4_9 .. (var_4_8 > 0 and setColorStr("+" .. 10 * var_4_8, COLOR_GREEN) or "") .. "/h"
 			}
 		})
 	elseif arg_4_0.type == Ship.STATE_REST then
-		local var_4_9 = var_4_0:getRecoverEnergyPoint() + Ship.BACKYARD_2F_ENERGY_ADDITION + (var_4_4[var_4_0.id] or 0)
+		local var_4_10 = var_4_0:getRecoverEnergyPoint() + Ship.BACKYARD_2F_ENERGY_ADDITION + (var_4_4[var_4_0.id] or 0)
 
 		var_4_1:updateProps1({
 			{
@@ -90,7 +102,7 @@ function var_0_0.OnFlush(arg_4_0)
 			},
 			{
 				i18n("word_energy_recov_speed"),
-				10 * var_4_9 .. (var_4_7 > 0 and setColorStr("+" .. 10 * var_4_7, COLOR_GREEN) or "") .. "/h"
+				10 * var_4_10 .. (var_4_8 > 0 and setColorStr("+" .. 10 * var_4_8, COLOR_GREEN) or "") .. "/h"
 			}
 		})
 	end
@@ -99,48 +111,48 @@ function var_0_0.OnFlush(arg_4_0)
 	setActive(var_4_1.propsTr1, arg_4_0.type == Ship.STATE_REST)
 end
 
-function var_0_0.CalcShipAddExpSpeed(arg_7_0)
-	local var_7_0 = 0
-	local var_7_1 = getProxy(DormProxy):getRawData()
-	local var_7_2 = arg_7_0:GetBaseExp(var_7_1)
+function var_0_0.CalcShipAddExpSpeed(arg_9_0)
+	local var_9_0 = 0
+	local var_9_1 = getProxy(DormProxy):getRawData()
+	local var_9_2 = arg_9_0:GetBaseExp(var_9_1)
 
-	return (math.floor(var_7_2 * 3600 / pg.dorm_data_template[var_7_1.id].time))
+	return (math.floor(var_9_2 * 3600 / pg.dorm_data_template[var_9_1.id].time))
 end
 
-function var_0_0.GetBaseExp(arg_8_0, arg_8_1)
-	local var_8_0 = getProxy(PlayerProxy):getRawData()
-	local var_8_1 = arg_8_1:GetStateShipCnt(Ship.STATE_TRAIN)
+function var_0_0.GetBaseExp(arg_10_0, arg_10_1)
+	local var_10_0 = getProxy(PlayerProxy):getRawData()
+	local var_10_1 = arg_10_1:GetStateShipCnt(Ship.STATE_TRAIN)
 
-	if var_8_1 <= 0 then
+	if var_10_1 <= 0 then
 		return 0
 	end
 
-	local var_8_2 = pg.dorm_data_template[arg_8_1.id]
-	local var_8_3 = BuffHelper.GetBackYardExpBuffs()
-	local var_8_4 = 1
+	local var_10_2 = pg.dorm_data_template[arg_10_1.id]
+	local var_10_3 = BuffHelper.GetBackYardExpBuffs()
+	local var_10_4 = 1
 
-	for iter_8_0, iter_8_1 in pairs(var_8_3) do
-		if iter_8_1:isActivate() then
-			local var_8_5 = iter_8_1:getConfig("benefit_effect")
+	for iter_10_0, iter_10_1 in pairs(var_10_3) do
+		if iter_10_1:isActivate() then
+			local var_10_5 = iter_10_1:getConfig("benefit_effect")
 
-			var_8_4 = tonumber(var_8_5) / 100 + var_8_4
+			var_10_4 = tonumber(var_10_5) / 100 + var_10_4
 		end
 	end
 
-	local var_8_6 = pg.gameset.dorm_exp_base.key_value
-	local var_8_7 = pg.gameset.dorm_exp_ratio_comfort_degree.key_value
-	local var_8_8 = pg.gameset["dorm_exp_ratio_by_" .. var_8_1].key_value / 100
-	local var_8_9 = arg_8_1:getComfortable()
+	local var_10_6 = pg.gameset.dorm_exp_base.key_value
+	local var_10_7 = pg.gameset.dorm_exp_ratio_comfort_degree.key_value
+	local var_10_8 = pg.gameset["dorm_exp_ratio_by_" .. var_10_1].key_value / 100
+	local var_10_9 = arg_10_1:getComfortable()
 
-	return var_8_8 * (var_8_6 + var_8_2.exp * (var_8_9 / (var_8_9 + var_8_7))) * var_8_4 * (1 + 0.05 * var_8_0.level)
+	return var_10_8 * (var_10_6 + var_10_2.exp * (var_10_9 / (var_10_9 + var_10_7))) * var_10_4 * (1 + 0.05 * var_10_0.level)
 end
 
-function var_0_0.OnDispose(arg_9_0)
-	arg_9_0.press.onLongPressed:RemoveAllListeners()
-	arg_9_0.press.onLongPressed:AddListener(nil)
+function var_0_0.OnDispose(arg_11_0)
+	arg_11_0.press.onLongPressed:RemoveAllListeners()
+	arg_11_0.press.onLongPressed:AddListener(nil)
 
-	if arg_9_0.info then
-		arg_9_0.info:clear()
+	if arg_11_0.info then
+		arg_11_0.info:clear()
 	end
 end
 

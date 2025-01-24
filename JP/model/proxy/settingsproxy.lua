@@ -1070,16 +1070,18 @@ end
 
 function var_0_0.UpdateEducateCharTip(arg_118_0, arg_118_1)
 	local var_118_0 = getProxy(PlayerProxy):getRawData().id
-	local var_118_1 = getProxy(EducateProxy):GetSecretaryIDs()
+	local var_118_1 = NewEducateHelper.GetAllUnlockSecretaryIds()
 	local var_118_2 = {}
 
-	for iter_118_0, iter_118_1 in ipairs(arg_118_1) do
+	for iter_118_0, iter_118_1 in ipairs(arg_118_1 or {}) do
 		var_118_2[iter_118_1] = true
 	end
 
-	for iter_118_2, iter_118_3 in ipairs(var_118_1) do
+	for iter_118_2, iter_118_3 in ipairs(var_118_1 or {}) do
+		local var_118_3 = var_118_0 .. "educate_char_tip" .. iter_118_3
+
 		if var_118_2[iter_118_3] ~= true then
-			PlayerPrefs.SetInt(var_118_0 .. "educate_char_tip" .. iter_118_3, 1)
+			PlayerPrefs.SetInt(var_118_3, 1)
 			PlayerPrefs.Save()
 		end
 	end
@@ -1096,7 +1098,7 @@ function var_0_0.RefillEducateCharTipList(arg_119_0)
 		return
 	end
 
-	local var_119_1 = getProxy(EducateProxy):GetSecretaryIDs()
+	local var_119_1 = NewEducateHelper.GetAllUnlockSecretaryIds()
 
 	for iter_119_0, iter_119_1 in ipairs(var_119_1 or {}) do
 		if PlayerPrefs.GetInt(var_119_0 .. "educate_char_tip" .. iter_119_1, 0) == 1 then
@@ -1106,47 +1108,53 @@ function var_0_0.RefillEducateCharTipList(arg_119_0)
 end
 
 function var_0_0.ShouldEducateCharTip(arg_120_0)
+	if NewEducateHelper.GetEducateCharSlotMaxCnt() == 0 then
+		return false
+	end
+
 	if not arg_120_0.educateCharTipList or #arg_120_0.educateCharTipList == 0 then
 		arg_120_0:RefillEducateCharTipList()
 	end
 
-	return #arg_120_0.educateCharTipList > 0
+	return _.any(arg_120_0.educateCharTipList, function(arg_121_0)
+		return NewEducateHelper.IsUnlockDefaultShip(arg_121_0)
+	end)
 end
 
-function var_0_0._ShouldEducateCharTip(arg_121_0, arg_121_1)
-	if not arg_121_0.educateCharTipList or #arg_121_0.educateCharTipList == 0 then
-		arg_121_0:RefillEducateCharTipList()
+function var_0_0._ShouldEducateCharTip(arg_122_0, arg_122_1)
+	if not arg_122_0.educateCharTipList or #arg_122_0.educateCharTipList == 0 then
+		arg_122_0:RefillEducateCharTipList()
 	end
 
-	if table.contains(arg_121_0.educateCharTipList, arg_121_1) then
+	if table.contains(arg_122_0.educateCharTipList, arg_122_1) and NewEducateHelper.IsUnlockDefaultShip(arg_122_1) then
 		return true
 	end
 
 	return false
 end
 
-function var_0_0.ClearEducateCharTip(arg_122_0, arg_122_1)
-	if not arg_122_0:_ShouldEducateCharTip(arg_122_1) then
+function var_0_0.ClearEducateCharTip(arg_123_0, arg_123_1)
+	if not arg_123_0:_ShouldEducateCharTip(arg_123_1) then
 		return false
 	end
 
-	table.removebyvalue(arg_122_0.educateCharTipList, arg_122_1)
+	table.removebyvalue(arg_123_0.educateCharTipList, arg_123_1)
 
-	local var_122_0 = getProxy(PlayerProxy):getRawData().id .. "educate_char_tip" .. arg_122_1
+	local var_123_0 = getProxy(PlayerProxy):getRawData().id .. "educate_char_tip" .. arg_123_1
 
-	if PlayerPrefs.HasKey(var_122_0) then
-		PlayerPrefs.DeleteKey(var_122_0)
+	if PlayerPrefs.HasKey(var_123_0) then
+		PlayerPrefs.DeleteKey(var_123_0)
 		PlayerPrefs.Save()
 	end
 
 	pg.m02:sendNotification(GAME.CLEAR_EDUCATE_TIP, {
-		id = arg_122_1
+		id = arg_123_1
 	})
 
 	return true
 end
 
-function var_0_0.GetMainSceneThemeStyle(arg_123_0)
+function var_0_0.GetMainSceneThemeStyle(arg_124_0)
 	if PlayerPrefs.GetInt(USAGE_NEW_MAINUI, 1) == 1 then
 		return NewMainScene.THEME_MELLOW
 	else
@@ -1154,44 +1162,44 @@ function var_0_0.GetMainSceneThemeStyle(arg_123_0)
 	end
 end
 
-function var_0_0.IsMellowStyle(arg_124_0)
-	local var_124_0 = arg_124_0:GetMainSceneThemeStyle()
+function var_0_0.IsMellowStyle(arg_125_0)
+	local var_125_0 = arg_125_0:GetMainSceneThemeStyle()
 
-	return NewMainScene.THEME_MELLOW == var_124_0
+	return NewMainScene.THEME_MELLOW == var_125_0
 end
 
-function var_0_0.GetMainSceneScreenSleepTime(arg_125_0)
+function var_0_0.GetMainSceneScreenSleepTime(arg_126_0)
 	if pg.NewGuideMgr.GetInstance():IsBusy() then
 		return SleepTimeout.SystemSetting
 	end
 
-	local var_125_0 = pg.settings_other_template[20].name
+	local var_126_0 = pg.settings_other_template[20].name
 
-	if PlayerPrefs.GetInt(var_125_0, 1) == 1 then
+	if PlayerPrefs.GetInt(var_126_0, 1) == 1 then
 		return SleepTimeout.NeverSleep
 	else
 		return SleepTimeout.SystemSetting
 	end
 end
 
-function var_0_0.ShowL2dResetInMainScene(arg_126_0)
-	local var_126_0 = pg.settings_other_template[21].name
+function var_0_0.ShowL2dResetInMainScene(arg_127_0)
+	local var_127_0 = pg.settings_other_template[21].name
 
-	return PlayerPrefs.GetInt(var_126_0, 0) == 1
+	return PlayerPrefs.GetInt(var_127_0, 0) == 1
 end
 
-function var_0_0.Reset(arg_127_0)
-	arg_127_0:resetEquipSceneIndex()
-	arg_127_0:resetActivityLayerIndex()
+function var_0_0.Reset(arg_128_0)
+	arg_128_0:resetEquipSceneIndex()
+	arg_128_0:resetActivityLayerIndex()
 
-	arg_127_0.isStopBuildSpeedupReamind = false
+	arg_128_0.isStopBuildSpeedupReamind = false
 
-	arg_127_0:RestoreFrameRate()
+	arg_128_0:RestoreFrameRate()
 
-	arg_127_0.randomFlagShipList = nil
-	arg_127_0.prevRandomFlagShipTime = nil
-	arg_127_0.randomFlagShipMap = nil
-	arg_127_0.educateCharTipList = {}
+	arg_128_0.randomFlagShipList = nil
+	arg_128_0.prevRandomFlagShipTime = nil
+	arg_128_0.randomFlagShipMap = nil
+	arg_128_0.educateCharTipList = {}
 end
 
 return var_0_0

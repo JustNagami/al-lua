@@ -247,6 +247,10 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 			not LOCK_EDUCATE_SYSTEM
 		},
 		{
+			NewEducateProxy,
+			true
+		},
+		{
 			ApartmentProxy,
 			true
 		},
@@ -304,6 +308,10 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 
 		if not LOCK_EDUCATE_SYSTEM then
 			arg_1_0:sendNotification(GAME.EDUCATE_REQUEST)
+		end
+
+		if not LOCK_NEW_EDUCATE_SYSTEM then
+			getProxy(NewEducateProxy):ReqDataCheck()
 		end
 
 		arg_1_0:sendNotification(GAME.ACT_INSTAGRAM_CHAT, {

@@ -9,6 +9,7 @@ var_0_0.WORD_KEY_ALLHALLOWSDAY = "wansheng"
 var_0_0.WORD_KEY_TELL_TIME = "chime_"
 var_0_0.WORD_KEY_ACT = "huodong"
 var_0_0.WORD_KEY_CHANGE_TB = "genghuan"
+var_0_0.WORD_KEY_LOGIN = "login"
 
 local var_0_1 = pg.secretary_special_ship
 local var_0_2 = pg.character_voice_special

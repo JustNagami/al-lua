@@ -70,7 +70,7 @@ function var_0_0.handleNotification(arg_9_0, arg_9_1)
 	if var_9_0 == ApartmentProxy.UPDATE_ROOM then
 		-- block empty
 	elseif var_9_0 == Dorm3dRoomMediator.ON_CLICK_FURNITURE_SLOT then
-		arg_9_0.viewComponent:OnClickFurnitureSlot(var_9_1)
+		-- block empty
 	elseif var_9_0 == GAME.APARTMENT_REPLACE_FURNITURE_DONE then
 		arg_9_0.viewComponent:OnReplaceFurnitureDone()
 	elseif var_9_0 == GAME.APARTMENT_REPLACE_FURNITURE_ERROR then

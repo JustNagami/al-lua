@@ -29,7 +29,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 			var_1_4:changeGiftCount(var_1_2, -var_1_3)
 
 			local var_2_0 = pg.dorm3d_gift[var_1_2].favor_trigger_id
-			local var_2_1, var_2_2 = var_1_4:triggerFavor(var_1_1, var_2_0)
+			local var_2_1, var_2_2 = var_1_4:triggerFavor(var_1_1, var_2_0, var_1_3)
 
 			arg_1_0:sendNotification(GAME.APARTMENT_TRIGGER_FAVOR_DONE, {
 				isGift = true,

@@ -7,7 +7,7 @@ end
 function var_0_0.OnLoaded(arg_2_0)
 	arg_2_0.titleTxt = arg_2_0:findTF("title/Text"):GetComponent(typeof(Text))
 	arg_2_0.labelTxt = arg_2_0:findTF("left/label/icon"):GetComponent(typeof(Image))
-	arg_2_0.paintingTr = arg_2_0:findTF("left/print/painting")
+	arg_2_0.paintingTr = arg_2_0:findTF("left/print/mask/painting")
 	arg_2_0.scrollrect = arg_2_0:findTF("list")
 	arg_2_0.uiItemList = UIItemList.New(arg_2_0:findTF("list/content"), arg_2_0:findTF("list/content/tpl"))
 	arg_2_0.dotUIItemList = UIItemList.New(arg_2_0:findTF("list/dots"), arg_2_0:findTF("list/dots/tpl"))
@@ -29,6 +29,8 @@ function var_0_0.OnInit(arg_3_0)
 		if not arg_3_0.selectedId then
 			return
 		end
+
+		arg_3_0:emit(EducateCharDockScene.ON_SELECTED, arg_3_0.selectedId)
 
 		arg_3_0.doAnim = true
 
@@ -84,7 +86,7 @@ end
 
 function var_0_0.FlushPainting(arg_12_0, arg_12_1)
 	arg_12_0:ReturnPainting()
-	setPaintingPrefab(arg_12_0.paintingTr, arg_12_1, "tb1")
+	setPaintingPrefabAsync(arg_12_0.paintingTr, arg_12_1, "tb1")
 
 	arg_12_0.paintingName = arg_12_1
 end
@@ -131,7 +133,7 @@ function var_0_0.UpdateDots(arg_15_0)
 end
 
 function var_0_0.IsLockCard(arg_17_0, arg_17_1)
-	local var_17_0 = getProxy(EducateProxy):GetSecretaryIDs()
+	local var_17_0 = NewEducateHelper.GetAllUnlockSecretaryIds()
 
 	return not table.contains(var_17_0, arg_17_1)
 end
@@ -142,7 +144,7 @@ function var_0_0.UpdateCard(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
 
 	setPaintingPrefab(var_18_0:Find("mask/painting"), var_18_1.prefab, "tb")
 	setActive(var_18_0:Find("lock"), arg_18_0:IsLockCard(var_18_1.id))
-	setText(var_18_0:Find("lock/desc/Text"), var_18_1.unlock_desc)
+	setScrollText(var_18_0:Find("lock/desc/Text"), var_18_1.unlock_desc)
 
 	local function var_18_2()
 		setActive(var_18_0:Find("tip"), getProxy(SettingsProxy):_ShouldEducateCharTip(arg_18_2))
@@ -156,7 +158,7 @@ function var_0_0.UpdateCard(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
 		arg_18_0.selectedId = arg_18_2
 
 		arg_18_0:UpdateDots()
-		arg_18_0:FlushPainting(var_18_1.prefab)
+		arg_18_0:FlushPainting(var_18_1.painting)
 
 		arg_18_0.prevSelected = var_18_0
 

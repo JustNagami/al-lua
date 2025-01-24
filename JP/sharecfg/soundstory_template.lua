@@ -29,9 +29,9 @@ pg.soundstory_template = {
 			"timer",
 			{
 				{
-					2023,
-					11,
-					3
+					2025,
+					1,
+					23
 				},
 				{
 					12,
@@ -41,9 +41,9 @@ pg.soundstory_template = {
 			},
 			{
 				{
-					2023,
-					11,
-					10
+					2025,
+					1,
+					30
 				},
 				{
 					23,
@@ -82,21 +82,21 @@ pg.soundstory_template = {
 			"timer",
 			{
 				{
-					2023,
-					7,
-					13
+					2025,
+					1,
+					23
 				},
 				{
-					0,
+					12,
 					0,
 					0
 				}
 			},
 			{
 				{
-					2023,
-					7,
-					20
+					2025,
+					1,
+					30
 				},
 				{
 					23,
@@ -903,6 +903,112 @@ pg.soundstory_template = {
 			}
 		}
 	},
+	{
+		story_pic = "",
+		name = "あんたとの海辺デート",
+		story_resource_CN = "",
+		audition_resource_CN = "ss-59901-1",
+		CV_JP = "法元明菜",
+		audition_text = "満足しなかったら、遠慮なく言ってくれてもいいぞ？",
+		id = 20,
+		ship_id = 59901,
+		audition_resource_JP = "ss-59901-2",
+		CV_CN = "",
+		overview = "日光浴から水遊びまで甘々海辺デート、\n夜の帳が降りれば二人のラブロマンス",
+		captions_color = "#7f574e",
+		story_resource_JP = "soundStory20_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					1,
+					23
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					1,
+					30
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		story_pic = "",
+		name = "禁じられし真夜中告解室",
+		story_resource_CN = "",
+		audition_resource_CN = "",
+		CV_JP = "ゆかな",
+		audition_text = "ふふふ、物わかりのいい子は好きよ。それこそ…一緒に堕ちちゃいたいぐらい♥",
+		id = 21,
+		ship_id = 20707,
+		audition_resource_JP = "ss-20707-1",
+		CV_CN = "",
+		overview = "月の光がステンガラスを照らす中、聖なるシスター服に身を包んだ彼女は迷える仔羊を待ちわびている。\n真夜中の告解は救済か、それとも誘惑か…",
+		captions_color = "#694348",
+		story_resource_JP = "soundStory21_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					1,
+					23
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					1,
+					30
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -922,6 +1028,8 @@ pg.soundstory_template = {
 		16,
 		17,
 		18,
-		19
+		19,
+		20,
+		21
 	}
 }

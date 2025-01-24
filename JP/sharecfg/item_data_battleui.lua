@@ -60,6 +60,18 @@ pg.item_data_battleui = {
 		icon = "104",
 		scene = {}
 	},
+	[105] = {
+		key = "SkinNormal_20250123",
+		name = "ライト",
+		desc = "神聖、重厚、煌びやか。指揮官の全ての戦闘をよりエピックに",
+		display_icon = "ui_105",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "クルーズパス21期報酬",
+		id = 105,
+		icon = "105",
+		scene = {}
+	},
 	[201] = {
 		key = "SkinNormal_20241209",
 		name = "クリスマス",
@@ -78,6 +90,7 @@ pg.item_data_battleui = {
 		102,
 		103,
 		104,
+		105,
 		201
 	}
 }

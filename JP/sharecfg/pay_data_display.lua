@@ -79,7 +79,9 @@ pg.pay_data_display = setmetatable({
 		84,
 		85,
 		86,
+		87,
 		88,
+		89,
 		1000,
 		1001,
 		1002,
@@ -100,6 +102,7 @@ pg.pay_data_display = setmetatable({
 		1017,
 		1018,
 		1019,
+		1020,
 		2001,
 		2002,
 		2003,
@@ -8355,6 +8358,120 @@ pg.base.pay_data_display = {
 			}
 		}
 	},
+	[87] = {
+		name = "春節福袋2025B",
+		limit_group = 0,
+		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
+		type = 1,
+		subject = "春節福袋2025B",
+		limit_arg = 1,
+		name_display = "春節福袋2025B",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 3800,
+		id = 87,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai22",
+		skin_inquire_relation = 86211,
+		id_str = "com.bilibili.blhx.zuanshi187",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "アイテム・資源とランダムな着せ替え衣装を入手可能",
+		airijp_id = "com.yostarjp.azurlane.diamond175",
+		extra_service_item = {
+			{
+				2,
+				86211,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					1,
+					23
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					2,
+					5
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86211,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81211,
+				1
+			}
+		}
+	},
 	[88] = {
 		name = "春節福袋2024A(復刻)",
 		limit_group = 0,
@@ -8465,6 +8582,120 @@ pg.base.pay_data_display = {
 			{
 				2,
 				81202,
+				1
+			}
+		}
+	},
+	[89] = {
+		name = "春節福袋2024B(復刻)",
+		limit_group = 0,
+		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
+		type = 1,
+		subject = "春節福袋2024B(復刻)",
+		limit_arg = 1,
+		name_display = "春節福袋2024B(復刻)",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 3800,
+		id = 89,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai12",
+		skin_inquire_relation = 86203,
+		id_str = "com.bilibili.blhx.zuanshi189",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "アイテム・資源とランダムな着せ替え衣装を入手可能",
+		airijp_id = "com.yostarjp.azurlane.diamond177",
+		extra_service_item = {
+			{
+				2,
+				86203,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					1,
+					23
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					2,
+					5
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86203,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81203,
 				1
 			}
 		}
@@ -9983,6 +10214,82 @@ pg.base.pay_data_display = {
 		},
 		sub_display = {
 			7020,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[1020] = {
+		name = "クルーズパス(25冬)",
+		limit_group = 0,
+		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
+		type = 0,
+		subject = "クルーズパス(25冬)",
+		limit_arg = 1,
+		name_display = "クルーズパス(25冬)",
+		show_group = "",
+		type_order = 6,
+		extra_service = 4,
+		money = 1200,
+		id = 1020,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "battlepass_1",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.battlepass22",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "購入すると、シーズン任務進捗Pt1500を入手し、さらにSP報酬を開放",
+		airijp_id = "com.yostarjp.azurlane.seasonpass21",
+		extra_service_item = {
+			{
+				1,
+				4021,
+				1500
+			},
+			{
+				8,
+				65074,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					2,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					3,
+					31
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				8,
+				59599,
+				1500
+			}
+		},
+		sub_display = {
+			7021,
 			1500
 		},
 		ignorePlatform = {},

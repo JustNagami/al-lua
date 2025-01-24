@@ -168,4 +168,8 @@ function var_0_0.BuildDorm3d(arg_15_0)
 	return var_0_3(arg_15_0.track_typ, arg_15_0.int_args, arg_15_0.str_args)
 end
 
+function var_0_0.BuildNewEducate(arg_16_0)
+	return var_0_3(arg_16_0.track_typ, arg_16_0.int_args, arg_16_0.str_args)
+end
+
 return var_0_0

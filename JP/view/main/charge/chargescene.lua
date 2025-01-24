@@ -86,25 +86,30 @@ function var_0_0.init(arg_11_0)
 	arg_11_0.chatText = arg_11_0:findTF("Text", arg_11_0.chat)
 	arg_11_0.switchBtn = arg_11_0:findTF("blur_panel/adapt/switch_btn")
 	arg_11_0.skinShopBtn = arg_11_0:findTF("blur_panel/adapt/skin_btn")
+
+	local var_11_0 = LOCK_SKIN_SHOP_ENTER and getProxy(PlayerProxy):getData().level < LOCK_SKIN_SHOP_ENTER_LEVEL
+
+	setActive(arg_11_0.skinShopBtn, not var_11_0)
+
 	arg_11_0.itemToggle = arg_11_0:findTF("toggle_list/item_toggle", arg_11_0.viewContainer)
 	arg_11_0.giftToggle = arg_11_0:findTF("toggle_list/gift_toggle", arg_11_0.viewContainer)
 	arg_11_0.diamondToggle = arg_11_0:findTF("toggle_list/diamond_toggle", arg_11_0.viewContainer)
 	arg_11_0.giftTip = arg_11_0:findTF("tip", arg_11_0.giftToggle)
 	arg_11_0.chargeTipWindow = ChargeTipWindow.New(arg_11_0._tf, arg_11_0.event)
 
-	local var_11_0 = arg_11_0:findTF("light/title", arg_11_0.diamondToggle)
-	local var_11_1 = arg_11_0:findTF("dark/title", arg_11_0.diamondToggle)
-	local var_11_2 = arg_11_0:findTF("light/title", arg_11_0.giftToggle)
-	local var_11_3 = arg_11_0:findTF("dark/title", arg_11_0.giftToggle)
-	local var_11_4 = arg_11_0:findTF("light/title", arg_11_0.itemToggle)
-	local var_11_5 = arg_11_0:findTF("dark/title", arg_11_0.itemToggle)
+	local var_11_1 = arg_11_0:findTF("light/title", arg_11_0.diamondToggle)
+	local var_11_2 = arg_11_0:findTF("dark/title", arg_11_0.diamondToggle)
+	local var_11_3 = arg_11_0:findTF("light/title", arg_11_0.giftToggle)
+	local var_11_4 = arg_11_0:findTF("dark/title", arg_11_0.giftToggle)
+	local var_11_5 = arg_11_0:findTF("light/title", arg_11_0.itemToggle)
+	local var_11_6 = arg_11_0:findTF("dark/title", arg_11_0.itemToggle)
 
-	setText(var_11_0, i18n("shop_diamond_title"))
 	setText(var_11_1, i18n("shop_diamond_title"))
-	setText(var_11_2, i18n("shop_gift_title"))
+	setText(var_11_2, i18n("shop_diamond_title"))
 	setText(var_11_3, i18n("shop_gift_title"))
-	setText(var_11_4, i18n("shop_item_title"))
+	setText(var_11_4, i18n("shop_gift_title"))
 	setText(var_11_5, i18n("shop_item_title"))
+	setText(var_11_6, i18n("shop_item_title"))
 
 	arg_11_0.linkTitle = {
 		arg_11_0:findTF("title/title_diamond", arg_11_0.top),
