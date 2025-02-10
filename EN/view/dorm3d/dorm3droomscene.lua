@@ -2076,6 +2076,9 @@ function var_0_0.HandleGameNotification(arg_246_0, arg_246_1, arg_246_2)
 				end,
 				[70] = function()
 					if arg_246_2.operationCode == "GAME_READY" then
+						arg_246_0.cameras[var_0_0.CAMERA.TALK].Follow = nil
+						arg_246_0.cameras[var_0_0.CAMERA.TALK].LookAt = nil
+
 						arg_246_0:PlaySingleAction(var_246_0, "shuohua_sikao")
 					elseif arg_246_2.operationCode == "ROUND_RESULT" then
 						local var_249_0
@@ -2100,9 +2103,6 @@ function var_0_0.HandleGameNotification(arg_246_0, arg_246_1, arg_246_2)
 							return
 						end)
 					elseif arg_246_2.operationCode == "GAME_RESULT" then
-						arg_246_0.cameras[var_0_0.CAMERA.TALK].Follow = nil
-						arg_246_0.cameras[var_0_0.CAMERA.TALK].LookAt = nil
-
 						local var_249_1 = arg_246_0.cameras[var_0_0.CAMERA.TALK].transform
 
 						var_249_1.position = var_249_1.position + var_249_1.right * 0.11

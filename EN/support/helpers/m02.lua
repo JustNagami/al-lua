@@ -2080,7 +2080,7 @@ function GetNextHour(arg_148_0)
 	return var_148_1 * 86400 + (var_148_2 + arg_148_0) * 3600
 end
 
-function GetPerceptualSize(arg_149_0)
+function GetPerceptualSize(arg_149_0, arg_149_1)
 	local function var_149_0(arg_150_0)
 		if not arg_150_0 then
 			return 0, 1
@@ -2091,7 +2091,7 @@ function GetPerceptualSize(arg_149_0)
 		elseif arg_150_0 > 192 then
 			return 2, 1
 		elseif arg_150_0 < 126 then
-			return 1, 0.5
+			return 1, arg_149_1 or 0.5
 		else
 			return 1, 1
 		end
@@ -2117,7 +2117,7 @@ function GetPerceptualSize(arg_149_0)
 	return var_149_2
 end
 
-function shortenString(arg_151_0, arg_151_1)
+function shortenString(arg_151_0, arg_151_1, arg_151_2)
 	local var_151_0 = 1
 	local var_151_1 = 0
 	local var_151_2 = 0
@@ -2125,7 +2125,7 @@ function shortenString(arg_151_0, arg_151_1)
 
 	while var_151_0 <= var_151_3 do
 		local var_151_4 = string.byte(arg_151_0, var_151_0)
-		local var_151_5, var_151_6 = GetPerceptualSize(var_151_4)
+		local var_151_5, var_151_6 = GetPerceptualSize(var_151_4, arg_151_2)
 
 		var_151_0 = var_151_0 + var_151_5
 		var_151_1 = var_151_1 + var_151_6
