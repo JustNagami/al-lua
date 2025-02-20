@@ -3078,39 +3078,6 @@ function temp()
 				}
 			}
 		},
-		ン = {
-			ソ = {
-				ン = {
-					this = true
-				}
-			},
-			ド = {
-				レ = {
-					ア = {
-						・ = {
-							ド = {
-								ー = {
-									リ = {
-										ア = {
-											this = true
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			},
-			カ = {
-				レ = {
-					ッ = {
-						ジ = {
-							this = true
-						}
-					}
-				}
-			}
-		},
 		バ = {
 			ー = {
 				ク = {
@@ -3233,6 +3200,34 @@ function temp()
 									}
 								}
 							}
+						}
+					}
+				}
+			}
+		},
+		ン = {
+			ド = {
+				レ = {
+					ア = {
+						・ = {
+							ド = {
+								ー = {
+									リ = {
+										ア = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			カ = {
+				レ = {
+					ッ = {
+						ジ = {
+							this = true
 						}
 					}
 				}
@@ -7675,31 +7670,6 @@ end
 temp()
 
 function temp()
-	var_0_1["2"] = {
-		["2"] = {
-			this = true
-		},
-		代 = {
-			目 = {
-				this = true
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1["3"] = {
-		["3"] = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var_0_1.と = {
 		き = {
 			の = {
@@ -7920,6 +7890,18 @@ function temp()
 	var_0_1.南 = {
 		夢 = {
 			芽 = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1["2"] = {
+		代 = {
+			目 = {
 				this = true
 			}
 		}

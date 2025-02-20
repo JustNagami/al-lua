@@ -81,7 +81,7 @@ function var_0_0.RefreshLevels(arg_13_0)
 
 	arg_13_0.levelList:make(function(arg_14_0, arg_14_1, arg_14_2)
 		if arg_14_0 == UIItemList.EventUpdate then
-			arg_14_2:Find("Text"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/FushunAdventureGame_atlas", "level_" .. arg_14_1 + 1)
+			arg_14_2:Find("Text"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/minigameui/FushunAdventureGame_atlas", "level_" .. arg_14_1 + 1)
 
 			local var_14_0 = arg_13_0.gameData.count > 0 and 1 or 0
 			local var_14_1 = arg_14_1 >= arg_13_0.gameData.usedtime + var_14_0
@@ -327,7 +327,7 @@ function var_0_0.LoadScene(arg_29_0, arg_29_1)
 					arg_29_0:EnterAnimation(arg_34_0)
 				end,
 				function(arg_35_0)
-					arg_29_0:loadPrefab("FushunAdventure/fushun", function(arg_36_0)
+					arg_29_0:loadPrefab("ui/fa_fushun", function(arg_36_0)
 						arg_29_0.fushun = FushunChar.New(arg_36_0)
 
 						arg_29_0.fushun:SetPosition(FushunAdventureGameConst.FUSHUN_INIT_POSITION)
@@ -520,7 +520,7 @@ function var_0_0.AddHitEffect(arg_48_0, arg_48_1)
 	local var_48_3 = arg_48_0.gameUI.transform:InverseTransformPoint(var_48_2)
 	local var_48_4 = Vector3(var_48_3.x, var_48_1.y, 0)
 
-	arg_48_0:loadPrefab("FushunAdventure/attack_effect", function(arg_49_0)
+	arg_48_0:loadPrefab("ui/fa_attack_effect", function(arg_49_0)
 		arg_49_0.transform:SetParent(arg_48_0.gameUI.transform, false)
 
 		arg_49_0.transform.localPosition = var_48_4

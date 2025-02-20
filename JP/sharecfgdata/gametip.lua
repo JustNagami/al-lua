@@ -10085,7 +10085,7 @@ _G.pg.base.gametip.index_rare6 = {
 	tip = "Uレア"
 }
 _G.pg.base.gametip.warning_mail_max_1 = {
-	tip = "メール所持件数が上限(<color=#FF5C5C>$1</color>/1000)に近づいています。メールを整理してください"
+	tip = "メール所持件数が上限(<color=#FF5C5C>$1</color>/$2)に近づいています。メールを整理してください"
 }
 _G.pg.base.gametip.warning_mail_max_2 = {
 	tip = "メール所持数が上限に達しています。メールを整理してください"
@@ -20661,15 +20661,6 @@ _G.pg.base.gametip["2023Valentine_minigame_b"] = {
 _G.pg.base.gametip["2023Valentine_minigame_c"] = {
 	tip = "ほ、本当に召し上がるのですか？？やっぱり作り直した方が……"
 }
-_G.pg.base.gametip["2023Valentine_minigame_label1"] = {
-	tip = "スコア"
-}
-_G.pg.base.gametip["2023Valentine_minigame_label2"] = {
-	tip = "報酬開放ステージ："
-}
-_G.pg.base.gametip["2023Valentine_minigame_label3"] = {
-	tip = "クリア済ステージ："
-}
 _G.pg.base.gametip.sort_energy = {
 	tip = "ｺﾝﾃﾞｨｼｮﾝ"
 }
@@ -26395,4 +26386,25 @@ _G.pg.base.gametip.child2_schedule_target = {
 }
 _G.pg.base.gametip.child2_shop_point_sure = {
 	tip = "行動力は上限までしか所持できません（上限を超えた行動力は自動で破棄されます）。続けますか？"
+}
+_G.pg.base.gametip.Valentine_minigame_label1 = {
+	tip = "スコア"
+}
+_G.pg.base.gametip.Valentine_minigame_label2 = {
+	tip = "報酬開放ステージ："
+}
+_G.pg.base.gametip.Valentine_minigame_label3 = {
+	tip = "クリア済ステージ："
+}
+_G.pg.base.gametip["2025Valentine_minigame_s"] = {
+	tip = "やったー！新しい作り方だけど、今回は大成功～！指揮官、この気持ちをたっぷり込めたチョコを早く味見してみて！えへへ～ハッピーバレンタイン☆"
+}
+_G.pg.base.gametip["2025Valentine_minigame_a"] = {
+	tip = "わぁ、こんなに綺麗にできるなんて！やっぱり指揮官がいると全然ちがうね～。指揮官、早く食べてみて♪一緒に作った成果だよ！"
+}
+_G.pg.base.gametip["2025Valentine_minigame_b"] = {
+	tip = "やっとできた！想像してたのとちょっと違うわね……でも指揮官がたくさん手伝ってくれたから、そんなに悪くないはずだよね？えへへ☆"
+}
+_G.pg.base.gametip["2025Valentine_minigame_c"] = {
+	tip = "えっと……この味、本当に大丈夫かしら？ロイヤルメイドなのにこんな出来栄えじゃ……指揮官、もう一度作り直させて！"
 }
