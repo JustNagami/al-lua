@@ -159,9 +159,11 @@ function var_0_2.Deactive(arg_12_0)
 		arg_12_0._unit:DispatchEvent(var_0_0.Event.New(var_0_0.Battle.BattleUnitEvent.DEACTIVE_EFFECT, var_12_0))
 	end
 
-	arg_12_0._unit:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_SHIELD_BROKEN, {
-		shieldBuffID = arg_12_0._buffID
-	})
+	if arg_12_0._unit:IsAlive() then
+		arg_12_0._unit:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_SHIELD_BROKEN, {
+			shieldBuffID = arg_12_0._buffID
+		})
+	end
 end
 
 function var_0_2.Clear(arg_13_0)

@@ -96,7 +96,11 @@ function var_0_0.updateData(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
 
 		local var_6_0 = ShipGroup.GetChangeSkinData(arg_6_0.skin.id)
 
-		setActive(arg_6_0.changeSkinTF, var_6_0 and true or false)
+		if arg_6_3 and var_6_0 then
+			setActive(arg_6_0.changeSkinTF, true)
+		else
+			setActive(arg_6_0.changeSkinTF, false)
+		end
 
 		if var_6_0 then
 			arg_6_0.changeSkinToggle:setShipData(arg_6_0.skin.id, arg_6_0.ship.id)

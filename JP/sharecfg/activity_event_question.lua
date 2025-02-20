@@ -1,159 +1,159 @@
 ﻿pg = pg or {}
 pg.activity_event_question = {
-	[57] = {
-		answer_right = "急上昇爆撃",
-		answer_false1 = "反跳爆撃",
-		question = "爆撃機の爆撃方法に含まれないのは？",
+	[71] = {
+		answer_right = "<size=26>南十字星</size>",
+		answer_false1 = "<size=26>南極星</size>",
+		question = "北極星が見えない南半球で、船乗りが位置測定に利用する星座は？",
 		type = 1,
-		id = 57,
-		answer_false3 = "水平爆撃",
+		id = 71,
+		answer_false3 = "<size=24>ケンタウルス座α星</size>",
 		wrong_time = 30,
-		answer_false2 = "急降下爆撃"
+		answer_false2 = "<size=26>いて座</size>"
 	},
-	[58] = {
-		answer_right = "<size=26>目標との距離を表示</size>",
-		answer_false1 = "<size=26>装填時間を表示</size>",
-		question = "戦艦の示数盤の役割に含まれるのは？",
+	[72] = {
+		answer_right = "じゃがいも",
+		answer_false1 = "七面鳥",
+		question = "対潜水艦攻撃に役に立った食材は？",
 		type = 1,
-		id = 58,
-		answer_false3 = "<size=26>食事時間を表示する</size>",
+		id = 72,
+		answer_false3 = "ピーマン",
 		wrong_time = 30,
-		answer_false2 = "<size=26>現在時刻を表示</size>"
+		answer_false2 = "ほうれん草"
 	},
-	[59] = {
-		answer_right = "アーガス",
-		answer_false1 = "ラングレー",
-		question = "世界初の全通式甲板を持つ空母は？",
+	[73] = {
+		answer_right = "船酔い",
+		answer_false1 = "火災",
+		question = "ダメージコントロールの担当範囲外なのは？",
 		type = 1,
-		id = 59,
-		answer_false3 = "ボーグ",
+		id = 73,
+		answer_false3 = "機械の故障",
 		wrong_time = 30,
-		answer_false2 = "鎮海"
+		answer_false2 = "浸水"
 	},
-	[60] = {
-		answer_right = "He-178",
-		answer_false1 = "Me-262",
-		question = "世界初のジェット機は？",
+	[74] = {
+		answer_right = "長波無線通信",
+		answer_false1 = "伝書鳩",
+		question = "海上航行中、陸地との通信で最も信頼できる手段は？",
 		type = 1,
-		id = 60,
-		answer_false3 = "MiG-9",
+		id = 74,
+		answer_false3 = "泳ぎの達人",
 		wrong_time = 30,
-		answer_false2 = "F9F"
+		answer_false2 = "伝書入り砲弾"
 	},
-	[61] = {
-		answer_right = "24",
-		answer_false1 = "28",
-		question = "エセックス級空母の「完成数」は？",
+	[75] = {
+		answer_right = "<size=24>砲弾の発射薬</size>",
+		answer_false1 = "<size=24>ボタンを外した制服</size>",
+		question = "いかなる時でも蒸気ボイラーに燃料として投入してはいけないのは？",
 		type = 1,
-		id = 61,
-		answer_false3 = "25",
+		id = 75,
+		answer_false3 = "<size=22>料理人が持ってきた脂身</size>",
 		wrong_time = 30,
-		answer_false2 = "17"
+		answer_false2 = "<size=24>取っ手を外したドア板</size>"
 	},
-	[62] = {
-		answer_right = "<size=26>吊り下げバスケット</size>",
-		answer_false1 = "<size=26>パラグライダー</size>",
-		question = "軍艦間の海上での人員移動に使用される機材は？",
+	[76] = {
+		answer_right = "<size=24>パラベーン曳航航行</size>",
+		answer_false1 = "<size=26>全方位ソナー探知</size>",
+		question = "潜水艦の攻撃から商船を守るのにあまり有効的でないのは？",
 		type = 1,
-		id = 62,
-		answer_false3 = "魚雷管",
+		id = 76,
+		answer_false3 = "<size=26>断続的な針路変更</size>",
 		wrong_time = 30,
-		answer_false2 = "<size=26>爆弾ジョイント</size>"
+		answer_false2 = "<size=26>偵察機による索敵</size>"
 	},
-	[63] = {
-		answer_right = "<size=26>アイスクリーム</size>",
-		answer_false1 = "<size=26>かぼちゃスープ</size>",
-		question = "単座式の艦載機が空中で「作れた」食べ物は？",
+	[77] = {
+		answer_right = "<size=24>左赤右緑マスト白</size>",
+		answer_false1 = "<size=24>左赤右黄</size>",
+		question = "船舶の航海灯の配置方法は？",
 		type = 1,
-		id = 63,
-		answer_false3 = "アップルパイ",
+		id = 77,
+		answer_false3 = "<size=24>前赤後青</size>",
 		wrong_time = 30,
-		answer_false2 = "ステーキ"
+		answer_false2 = "<size=22>前緑後オレンジ上ピンク</size>"
 	},
-	[64] = {
-		answer_right = "9",
-		answer_false1 = "7",
-		question = "セイレーン作戦での特殊オーダー「偵察命令」の最大消費行動力は？",
+	[78] = {
+		answer_right = "<size=26>ナビゲーター</size>",
+		answer_false1 = "<size=26>インストラクター</size>",
+		question = "「TB育成」に最近追加された育成キャラクターは？",
 		type = 2,
-		id = 64,
-		answer_false3 = "10",
+		id = 78,
+		answer_false3 = "<size=26>サブマリーナー</size>",
 		wrong_time = 30,
-		answer_false2 = "8"
+		answer_false2 = "<size=26>エクスプローラー</size>"
 	},
-	[65] = {
-		answer_right = "5000",
-		answer_false1 = "4000",
-		question = "イベント以外で毎月入手可能な特装コアの上限は？",
+	[79] = {
+		answer_right = "50%",
+		answer_false1 = "30%",
+		question = "弾薬切れ状態では艦隊が与えるダメージは通常時の何割になりますか？",
 		type = 2,
-		id = 65,
-		answer_false3 = "2000",
+		id = 79,
+		answer_false3 = "70%",
 		wrong_time = 30,
-		answer_false2 = "3000"
+		answer_false2 = "60%"
 	},
-	[66] = {
-		answer_right = "輪形陣",
-		answer_false1 = "複縦陣",
-		question = "海域に出撃時、艦隊の対空を上げる陣形は？",
+	[80] = {
+		answer_right = "60",
+		answer_false1 = "50",
+		question = "作戦履歴の常設イベントを解放するためのデータキーの最大所持数は？",
 		type = 2,
-		id = 66,
-		answer_false3 = "梯形陣",
+		id = 80,
+		answer_false3 = "70",
 		wrong_time = 30,
-		answer_false2 = "単縦陣"
+		answer_false2 = "40"
 	},
-	[67] = {
-		answer_right = "戦士の心得",
-		answer_false1 = "輝く☆マイク",
-		question = "ウォースパイトの改造素材アイテムの名前は？",
+	[81] = {
+		answer_right = "<size=26>メイン海域に出撃</size>",
+		answer_false1 = "<size=24>ミニゲームをプレイ</size>",
+		question = "下記の行動で燃料を消費するのは？",
 		type = 2,
-		id = 67,
-		answer_false3 = "女王の号令",
+		id = 81,
+		answer_false3 = "<size=26>演習に参加</size>",
 		wrong_time = 30,
-		answer_false2 = "<size=26>ミート・パフューム</size>"
+		answer_false2 = "<size=24>限界チャレンジに出撃</size>"
 	},
-	[68] = {
-		answer_right = "<size=26>特殊装備を装備する</size>",
-		answer_false1 = "<size=26>レア度を上げる</size>",
-		question = "下記の行動で出撃時の燃料消費に影響しないのは？",
+	[82] = {
+		answer_right = "200",
+		answer_false1 = "100",
+		question = "現在の指揮官レベルの上限は？",
 		type = 2,
-		id = 68,
-		answer_false3 = "<size=26>限界突破を行う</size>",
+		id = 82,
+		answer_false3 = "180",
 		wrong_time = 30,
-		answer_false2 = "<size=26>艦船レベルを上げる</size>"
+		answer_false2 = "150"
 	},
-	[69] = {
-		answer_right = "TB",
-		answer_false1 = "TA",
-		question = "セイレーン作戦におけるナビキャラの名前は？",
+	[83] = {
+		answer_right = "3",
+		answer_false1 = "1",
+		question = "寮舎の拡張可能回数は？",
 		type = 2,
-		id = 69,
-		answer_false3 = "TD",
+		id = 83,
+		answer_false3 = "5",
 		wrong_time = 30,
-		answer_false2 = "TC"
+		answer_false2 = "2"
 	},
-	[70] = {
-		answer_right = "<size=26>戦闘時の航空支援</size>",
-		answer_false1 = "<size=26>索敵値を上げる</size>",
-		question = "メイン海域機能「支援艦隊」の効果に含まれるのは？",
+	[84] = {
+		answer_right = "回避",
+		answer_false1 = "火力",
+		question = "単縦陣で戦闘を行う場合、下記ステータスでダウンするのは？",
 		type = 2,
-		id = 70,
-		answer_false3 = "耐久を上げる",
+		id = 84,
+		answer_false3 = "対空",
 		wrong_time = 30,
-		answer_false2 = "<size=26>制空値を上昇させる</size>"
+		answer_false2 = "雷装"
 	},
 	all = {
-		57,
-		58,
-		59,
-		60,
-		61,
-		62,
-		63,
-		64,
-		65,
-		66,
-		67,
-		68,
-		69,
-		70
+		71,
+		72,
+		73,
+		74,
+		75,
+		76,
+		77,
+		78,
+		79,
+		80,
+		81,
+		82,
+		83,
+		84
 	}
 }

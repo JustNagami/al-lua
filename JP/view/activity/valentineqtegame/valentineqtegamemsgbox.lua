@@ -15,6 +15,10 @@ end
 function var_0_0.OnInit(arg_2_0)
 	arg_2_0.confirmBtn = arg_2_0._tf:Find("frame/btns/confirm_btn")
 	arg_2_0.cancelBtn = arg_2_0._tf:Find("frame/btns/cancel_btn")
+
+	GetComponent(arg_2_0._tf:Find("frame/exit"), typeof(Image)):SetNativeSize()
+	GetComponent(arg_2_0._tf:Find("frame/puase"), typeof(Image)):SetNativeSize()
+
 	arg_2_0.texts = {
 		[var_0_0.EXIT_TXT] = arg_2_0._tf:Find("frame/exit"),
 		[var_0_0.PAUSE_TXT] = arg_2_0._tf:Find("frame/puase")

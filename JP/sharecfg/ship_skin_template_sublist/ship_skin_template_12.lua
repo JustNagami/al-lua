@@ -1,6 +1,257 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_12 = {
+	[403022] = {
+		ship_group = 40302,
+		name = "直上へとバーニングハート",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 403022,
+		group_index = 2,
+		l2d_ignore_drag = 0,
+		painting = "bulvxieer_3",
+		shop_id = 70992,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 24,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "176",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "bulvxieer_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "にゃは☆魔王軍所属のドラゴンナイト、ブリュッヒャーだよ～…ドラゴンを操ってるというより引っ張られてる？そうだけど…ってわあああ！ドラゴンが言うことを聞かないよ！指揮官助けてー！",
+		voice_actor = 132,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.751,
+					1.133,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.736,
+					1.133,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.001,
+					0.004,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.317,
+					1.414,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.365,
+							2.31,
+							-0.081
+						}
+					}
+				}
+			}
+		}
+	},
+	[403030] = {
+		ship_group = 40303,
+		name = "プリンツ・オイゲン",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 403030,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "ougen",
+		shop_id = 0,
+		illustrator = 7,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "ougen",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "アドミラル・ヒッパー級重巡洋艦・プリンツオイゲン",
+		voice_actor = 21,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					-0.53,
+					0.802,
+					0
+				}
+			},
+			vicegun = {
+				{
+					-0.235,
+					0.484,
+					0
+				},
+				{
+					0.847,
+					0.34,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.227,
+					0.408,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					-0.235,
+					0.484,
+					0
+				},
+				{
+					0.847,
+					0.34,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							-0.531,
+							0.427,
+							0
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							0.711,
+							0.361,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[403031] = {
 		ship_group = 40303,
 		name = "色褪せないエガオ",
@@ -13245,208 +13496,6 @@ pg.base.ship_skin_template_12 = {
 						{
 							-0.48,
 							2.43,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[408091] = {
-		ship_group = 40809,
-		name = "秘密の遊戯タイム",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 408091,
-		group_index = 1,
-		l2d_ignore_drag = 0,
-		painting = "U96_2",
-		shop_id = 70404,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 20,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "109",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "U96_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "いいタイミングで来たじゃないか。今ちょうど「戦闘終了」したところだぜ。結果は…？ふん、アタシの勝ちに決まっているだろう。どうだ？お前もアタシとやってみないか？",
-		voice_actor = 246,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.341,
-					0.473,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					-0.25,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.48,
-							2.43,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[408092] = {
-		ship_group = 40809,
-		name = "バーベルは何キロまで？",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 408092,
-		group_index = 2,
-		l2d_ignore_drag = 0,
-		painting = "u96_3",
-		shop_id = 70730,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 13,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "112",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "u96_3",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "んんん…くっ…はぁー！こいつは思ってたよりも強敵だったぜ…お、来たな。お前も筋トレか？冷やかしじゃなかったらいつでも歓迎するぜ",
-		voice_actor = 246,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.639,
-					0.717,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					-0.023,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.755,
-							2.025,
 							0
 						}
 					}

@@ -12,177 +12,185 @@ function var_0_3.Ctor(arg_1_0, arg_1_1)
 	var_0_3.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function var_0_3.Repeater(arg_2_0)
-	return arg_2_0._keepRestCount
+function var_0_3.GetEffectType(arg_2_0)
+	return var_0_0.Battle.BattleBuffEffect.FX_TYPE_COUNTER
 end
 
-function var_0_3.SetArgs(arg_3_0, arg_3_1, arg_3_2)
-	local var_3_0 = arg_3_0._tempData.arg_list
-
-	arg_3_0._countTarget = var_3_0.countTarget or 1
-	arg_3_0._countType = var_3_0.countType
-	arg_3_0._weaponType = var_3_0.weaponType
-	arg_3_0._index = var_3_0.index
-	arg_3_0._maxHPRatio = var_3_0.maxHPRatio or 0
-	arg_3_0._casterMaxHPRatio = var_3_0.casterMaxHPRatio or 0
-	arg_3_0._clock = arg_3_0._tempData.arg_list.clock
-	arg_3_0._interrupt = arg_3_0._tempData.arg_list.interrupt
-	arg_3_0._iconType = arg_3_0._tempData.arg_list.iconType or 1
-	arg_3_0._gunnerBonus = var_3_0.gunnerBonus
-	arg_3_0._keepRestCount = var_3_0.keep
-
-	arg_3_0:ResetCount()
-
-	if arg_3_0._clock then
-		arg_3_1:DispatchCastClock(true, arg_3_0, arg_3_0._iconType, arg_3_0._interrupt)
-	end
+function var_0_3.Repeater(arg_3_0)
+	return arg_3_0._keepRestCount
 end
 
-function var_0_3.onRemove(arg_4_0, arg_4_1, arg_4_2)
+function var_0_3.SetArgs(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = arg_4_0._tempData.arg_list
+
+	arg_4_0._countTarget = var_4_0.countTarget or 1
+	arg_4_0._countType = var_4_0.countType
+	arg_4_0._weaponType = var_4_0.weaponType
+	arg_4_0._index = var_4_0.index
+	arg_4_0._maxHPRatio = var_4_0.maxHPRatio or 0
+	arg_4_0._casterMaxHPRatio = var_4_0.casterMaxHPRatio or 0
+	arg_4_0._clock = arg_4_0._tempData.arg_list.clock
+	arg_4_0._interrupt = arg_4_0._tempData.arg_list.interrupt
+	arg_4_0._iconType = arg_4_0._tempData.arg_list.iconType or 1
+	arg_4_0._gunnerBonus = var_4_0.gunnerBonus
+	arg_4_0._keepRestCount = var_4_0.keep
+
+	arg_4_0:ResetCount()
+
 	if arg_4_0._clock then
-		local var_4_0 = arg_4_0._interrupt and arg_4_0._count < arg_4_0._countTarget
-
-		arg_4_1:DispatchCastClock(false, arg_4_0, nil, var_4_0)
+		arg_4_1:DispatchCastClock(true, arg_4_0, arg_4_0._iconType, arg_4_0._interrupt)
 	end
 end
 
-function var_0_3.onTrigger(arg_5_0, arg_5_1, arg_5_2)
-	var_0_3.super.onTrigger(arg_5_0, arg_5_1, arg_5_2)
+function var_0_3.onRemove(arg_5_0, arg_5_1, arg_5_2)
+	if arg_5_0._clock then
+		local var_5_0 = arg_5_0._interrupt and arg_5_0._count < arg_5_0._countTarget
 
-	arg_5_0._count = arg_5_0._count + 1
-
-	arg_5_0:checkCount(arg_5_1)
+		arg_5_1:DispatchCastClock(false, arg_5_0, nil, var_5_0)
+	end
 end
 
-function var_0_3.onFire(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-	if not arg_6_0:equipIndexRequire(arg_6_3.equipIndex) then
-		return
-	end
+function var_0_3.onTrigger(arg_6_0, arg_6_1, arg_6_2)
+	var_0_3.super.onTrigger(arg_6_0, arg_6_1, arg_6_2)
 
 	arg_6_0._count = arg_6_0._count + 1
 
-	arg_6_0:checkModCount(arg_6_1)
+	arg_6_0:checkCount(arg_6_1)
 end
 
-function var_0_3.onUpdate(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
-	local var_7_0 = arg_7_3.timeStamp
+function var_0_3.onFire(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	if not arg_7_0:equipIndexRequire(arg_7_3.equipIndex) then
+		return
+	end
 
-	arg_7_0._count = var_7_0 - (arg_7_0._lastTriggerTime or arg_7_2:GetBuffStartTime())
+	arg_7_0._count = arg_7_0._count + 1
 
-	if arg_7_0._count >= arg_7_0._countTarget then
-		arg_7_0._lastTriggerTime = var_7_0
+	arg_7_0:checkModCount(arg_7_1)
+end
 
-		arg_7_0:ResetCount()
-		arg_7_1:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_BATTLE_BUFF_COUNT, {
-			buffFX = arg_7_0
+function var_0_3.onUpdate(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
+	local var_8_0 = arg_8_3.timeStamp
+
+	arg_8_0._count = var_8_0 - (arg_8_0._lastTriggerTime or arg_8_2:GetBuffStartTime())
+
+	if arg_8_0._count >= arg_8_0._countTarget then
+		arg_8_0._lastTriggerTime = var_8_0
+
+		arg_8_0:ResetCount()
+		arg_8_1:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_BATTLE_BUFF_COUNT, {
+			buffFX = arg_8_0
 		})
 	end
 end
 
-function var_0_3.onTakeDamage(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
-	if arg_8_0:damageCheck(arg_8_3) then
-		local var_8_0 = arg_8_3.damage
+function var_0_3.onTakeDamage(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
+	if arg_9_0:damageCheck(arg_9_3) then
+		local var_9_0 = arg_9_3.damage
 
-		arg_8_0._count = arg_8_0._count + var_8_0
+		arg_9_0._count = arg_9_0._count + var_9_0
 
-		arg_8_0:checkHPCount(arg_8_1)
+		arg_9_0:checkHPCount(arg_9_1)
 	end
 end
 
-function var_0_3.onTakeHealing(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
-	local var_9_0 = arg_9_3.damage
-
-	arg_9_0._count = arg_9_0._count + var_9_0
-
-	arg_9_0:checkHPCount(arg_9_1)
-end
-
-function var_0_3.onHPRatioUpdate(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
-	local var_10_0 = math.abs(arg_10_3.validDHP)
+function var_0_3.onTakeHealing(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
+	local var_10_0 = arg_10_3.damage
 
 	arg_10_0._count = arg_10_0._count + var_10_0
 
 	arg_10_0:checkHPCount(arg_10_1)
 end
 
-function var_0_3.onStack(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
-	arg_11_0._count = arg_11_2:GetStack()
+function var_0_3.onHPRatioUpdate(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
+	local var_11_0 = math.abs(arg_11_3.validDHP)
 
-	arg_11_0:checkCount(arg_11_1)
+	arg_11_0._count = arg_11_0._count + var_11_0
+
+	arg_11_0:checkHPCount(arg_11_1)
 end
 
-function var_0_3.onBulletHit(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
-	if not arg_12_0:equipIndexRequire(arg_12_3.equipIndex) then
-		return
-	end
-
-	arg_12_0._count = arg_12_0._count + arg_12_3.damage
+function var_0_3.onStack(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
+	arg_12_0._count = arg_12_2:GetStack()
 
 	arg_12_0:checkCount(arg_12_1)
 end
 
-function var_0_3.checkCount(arg_13_0, arg_13_1)
-	if arg_13_0._count >= arg_13_0._countTarget then
-		arg_13_1:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_BATTLE_BUFF_COUNT, {
-			buffFX = arg_13_0
-		})
+function var_0_3.onBulletHit(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
+	if not arg_13_0:equipIndexRequire(arg_13_3.equipIndex) then
+		return
 	end
+
+	arg_13_0._count = arg_13_0._count + arg_13_3.damage
+
+	arg_13_0:checkCount(arg_13_1)
 end
 
-function var_0_3.checkModCount(arg_14_0, arg_14_1)
-	if arg_14_0._count >= arg_14_0:getCount(arg_14_1) then
+function var_0_3.checkCount(arg_14_0, arg_14_1)
+	if arg_14_0._count >= arg_14_0._countTarget then
 		arg_14_1:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_BATTLE_BUFF_COUNT, {
 			buffFX = arg_14_0
 		})
 	end
 end
 
-function var_0_3.getCount(arg_15_0, arg_15_1)
-	local var_15_0 = arg_15_0._countTarget
-	local var_15_1 = var_0_2.GetCurrent(arg_15_1, "barrageCounterMod")
-
-	if arg_15_0._gunnerBonus then
-		var_15_0 = math.ceil(var_15_0 / var_15_1)
-	end
-
-	return var_15_0
-end
-
-function var_0_3.checkHPCount(arg_16_0, arg_16_1)
-	if not arg_16_0._hpCountTarget then
-		arg_16_0:calcHPCount(arg_16_1)
-	end
-
-	if arg_16_0._count >= arg_16_0._hpCountTarget then
-		arg_16_1:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_BATTLE_BUFF_COUNT, {
-			buffFX = arg_16_0
+function var_0_3.checkModCount(arg_15_0, arg_15_1)
+	if arg_15_0._count >= arg_15_0:getCount(arg_15_1) then
+		arg_15_1:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_BATTLE_BUFF_COUNT, {
+			buffFX = arg_15_0
 		})
 	end
 end
 
-function var_0_3.calcHPCount(arg_17_0, arg_17_1)
-	local var_17_0, var_17_1 = arg_17_1:GetHP()
-	local var_17_2, var_17_3 = arg_17_0._caster:GetHP()
+function var_0_3.getCount(arg_16_0, arg_16_1)
+	local var_16_0 = arg_16_0._countTarget
+	local var_16_1 = var_0_2.GetCurrent(arg_16_1, "barrageCounterMod")
 
-	arg_17_0._hpCountTarget = math.floor(arg_17_0._casterMaxHPRatio * var_17_3 + arg_17_0._maxHPRatio * var_17_1 + arg_17_0._countTarget)
+	if arg_16_0._gunnerBonus then
+		var_16_0 = math.ceil(var_16_0 / var_16_1)
+	end
+
+	return var_16_0
 end
 
-function var_0_3.GetCountType(arg_18_0)
-	return arg_18_0._countType
+function var_0_3.checkHPCount(arg_17_0, arg_17_1)
+	if not arg_17_0._hpCountTarget then
+		arg_17_0:calcHPCount(arg_17_1)
+	end
+
+	if arg_17_0._count >= arg_17_0._hpCountTarget then
+		arg_17_1:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_BATTLE_BUFF_COUNT, {
+			buffFX = arg_17_0
+		})
+	end
 end
 
-function var_0_3.GetCountProgress(arg_19_0)
-	local var_19_0 = arg_19_0._hpCountTarget or arg_19_0._countTarget
+function var_0_3.calcHPCount(arg_18_0, arg_18_1)
+	local var_18_0, var_18_1 = arg_18_1:GetHP()
+	local var_18_2, var_18_3 = arg_18_0._caster:GetHP()
 
-	return arg_19_0._count / var_19_0
+	arg_18_0._hpCountTarget = math.floor(arg_18_0._casterMaxHPRatio * var_18_3 + arg_18_0._maxHPRatio * var_18_1 + arg_18_0._countTarget)
 end
 
-function var_0_3.ResetCount(arg_20_0)
-	arg_20_0._count = 0
+function var_0_3.GetCountType(arg_19_0)
+	return arg_19_0._countType
 end
 
-function var_0_3.ConsumeCount(arg_21_0)
-	local var_21_0 = arg_21_0._hpCountTarget or arg_21_0._countTarget
+function var_0_3.GetCountProgress(arg_20_0)
+	local var_20_0 = arg_20_0._hpCountTarget or arg_20_0._countTarget
 
-	arg_21_0._count = math.max(arg_21_0._count - var_21_0)
+	return arg_20_0._count / var_20_0
+end
+
+function var_0_3.SetCount(arg_21_0, arg_21_1)
+	arg_21_0._count = arg_21_1
+end
+
+function var_0_3.ResetCount(arg_22_0)
+	arg_22_0._count = 0
+end
+
+function var_0_3.ConsumeCount(arg_23_0)
+	local var_23_0 = arg_23_0._hpCountTarget or arg_23_0._countTarget
+
+	arg_23_0._count = math.max(arg_23_0._count - var_23_0)
 end

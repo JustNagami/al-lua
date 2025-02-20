@@ -2754,6 +2754,21 @@ pg.painting_filte_map = {
 			"painting/changbo_4"
 		}
 	},
+	changbo_5 = {
+		key = "changbo_5",
+		res_list = {
+			"painting/changbo_5_tex",
+			"painting/changbo_5_rw_tex",
+			"painting/changbo_5_rw_hx_tex",
+			"painting/changbo_5_n_tex",
+			"painting/changbo_5_n_hx_tex",
+			"painting/changbo_5_n_hx",
+			"painting/changbo_5_n",
+			"painting/changbo_5_hx_tex",
+			"painting/changbo_5_hx",
+			"painting/changbo_5"
+		}
+	},
 	changbo_h = {
 		key = "changbo_h",
 		res_list = {
@@ -9115,8 +9130,6 @@ pg.painting_filte_map = {
 		res_list = {
 			"painting/lingyangzhe3_2_tex",
 			"painting/lingyangzhe3_2_rw_tex",
-			"painting/lingyangzhe3_2_n_tex",
-			"painting/lingyangzhe3_2_n",
 			"painting/lingyangzhe3_2"
 		}
 	},
@@ -11131,6 +11144,19 @@ pg.painting_filte_map = {
 			"painting/npcjianye_5_n"
 		}
 	},
+	npcmeiyinci_3 = {
+		key = "npcmeiyinci_3",
+		res_list = {
+			"painting/npcmeiyinci_3_tex",
+			"painting/npcmeiyinci_3_n_tex",
+			"painting/npcmeiyinci_3_n_hx_tex",
+			"painting/npcmeiyinci_3_n_hx",
+			"painting/npcmeiyinci_3_n",
+			"painting/npcmeiyinci_3_hx_tex",
+			"painting/npcmeiyinci_3_hx",
+			"painting/npcmeiyinci_3"
+		}
+	},
 	npcpucimaosi_2 = {
 		key = "npcpucimaosi_2",
 		res_list = {
@@ -11200,6 +11226,16 @@ pg.painting_filte_map = {
 			"painting/nubiyaren_2_hx_tex",
 			"painting/nubiyaren_2_hx",
 			"painting/nubiyaren_2"
+		}
+	},
+	nubiyaren_3 = {
+		key = "nubiyaren_3",
+		res_list = {
+			"painting/nubiyaren_3_tex",
+			"painting/nubiyaren_3_rw_tex",
+			"painting/nubiyaren_3_n_tex",
+			"painting/nubiyaren_3_n",
+			"painting/nubiyaren_3"
 		}
 	},
 	nuofuke = {

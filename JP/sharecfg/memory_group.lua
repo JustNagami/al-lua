@@ -327,6 +327,7 @@ pg.memory_group = setmetatable({
 		604,
 		605,
 		606,
+		607,
 		1000,
 		1001,
 		1002,
@@ -7061,6 +7062,23 @@ pg.base.memory_group = {
 			4145,
 			4146,
 			4147
+		}
+	},
+	[607] = {
+		id = 607,
+		subtype = 0,
+		icon = "title_chara_jian",
+		type = 3,
+		link_event = 0,
+		title = "指揮官、ご飯の時間ですよ！",
+		memories = {
+			4181,
+			4182,
+			4183,
+			4184,
+			4185,
+			4186,
+			4187
 		}
 	},
 	[1000] = {

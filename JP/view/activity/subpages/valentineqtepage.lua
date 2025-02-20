@@ -52,8 +52,8 @@ function var_0_0.ShowAwards(arg_7_0)
 	local var_7_1 = arg_7_0:GetDropList()
 	local var_7_2 = var_7_0:GetHubByHubId(var_0_0.MINIGAME_HUB_ID).usedtime
 	local var_7_3 = {
-		i18n("2023Valentine_minigame_label3"),
-		i18n("2023Valentine_minigame_label2")
+		i18n("Valentine_minigame_label3"),
+		i18n("Valentine_minigame_label2")
 	}
 
 	arg_7_0:emit(ActivityMediator.ON_AWARD_WINDOW, var_7_1, var_7_2, var_7_3)

@@ -1,6 +1,132 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_6 = {
+	[203060] = {
+		ship_group = 20306,
+		name = "ドーセットシャー",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 203060,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "duosaitejun",
+		shop_id = 0,
+		illustrator = 1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "duosaitejun",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "ノーフォーク級重巡洋艦・ドーセットシャー（ HMS Dorsetshire）\n<color=#ffde38>図鑑報酬入手で通常建造開放</color>",
+		voice_actor = 85,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					-0.57,
+					1.03,
+					0
+				}
+			},
+			vicegun = {
+				{
+					-0.57,
+					1.03,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.33,
+					0.29,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					-0.57,
+					1.03,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							0.63,
+							0.61,
+							0.13
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							-0.559,
+							1.16,
+							-0.52
+						}
+					}
+				}
+			}
+		}
+	},
 	[203070] = {
 		ship_group = 20307,
 		name = "ヨーク",
@@ -13747,107 +13873,6 @@ pg.base.ship_skin_template_6 = {
 						{
 							-0.41,
 							2.27,
-							-1.47
-						}
-					}
-				}
-			}
-		}
-	},
-	[207042] = {
-		ship_group = 20704,
-		name = "女神の導き",
-		hand_id = 1,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 207042,
-		group_index = 2,
-		l2d_ignore_drag = 0,
-		painting = "shengli_3",
-		shop_id = 70486,
-		illustrator = 1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 3,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "144",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "shengli_3",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "母港行事の準備？ふふふ、手伝ってあげようじゃない。安心して、この美しい私がいればイベントでもなんでもうまくいくに決まってるわ！",
-		voice_actor = 94,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			antiaircraft = {
-				{
-					1.322,
-					1.002,
-					0
-				}
-			},
-			plane = {
-				{
-					1.318,
-					1.008,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.366,
-							2.461,
 							-1.47
 						}
 					}
