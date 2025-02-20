@@ -48016,7 +48016,7 @@ _G.pg.base.shop_template[70966] = {
 	tag = 1,
 	limit_args2 = "",
 	time_second = 0,
-	order = 11,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -48032,8 +48032,8 @@ _G.pg.base.shop_template[70966] = {
 		{
 			{
 				2025,
-				1,
-				16
+				2,
+				20
 			},
 			{
 				0,
@@ -48045,7 +48045,7 @@ _G.pg.base.shop_template[70966] = {
 			{
 				2025,
 				2,
-				5
+				26
 			},
 			{
 				23,
@@ -72114,5 +72114,57 @@ _G.pg.base.shop_template[71113] = {
 				59
 			}
 		}
+	}
+}
+_G.pg.base.shop_template[31060] = {
+	type_order = 0,
+	collaboration_skin_time = "",
+	resource_type = 1,
+	type = 2,
+	genre = "shopping_street",
+	desc = "900物资兑换1个撒丁装备研发支援箱",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	time_second = 0,
+	order = 0,
+	time = "always",
+	group = 0,
+	num = 1,
+	discount = 0,
+	group_type = 0,
+	id = 31060,
+	resource_num = 900,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30207
+	}
+}
+_G.pg.base.shop_template[33060] = {
+	type_order = 0,
+	collaboration_skin_time = "",
+	resource_type = 3,
+	type = 2,
+	genre = "arena_shop",
+	desc = "400功勋兑换1个撒丁装备研发支援箱",
+	group_limit = 0,
+	group_buy_count = 0,
+	tag = 0,
+	limit_args2 = "",
+	time_second = 0,
+	order = 9,
+	time = "always",
+	group = 0,
+	num = 1,
+	discount = 0,
+	group_type = 0,
+	id = 33060,
+	resource_num = 400,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		30207
 	}
 }

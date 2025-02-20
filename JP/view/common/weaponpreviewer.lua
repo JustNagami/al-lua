@@ -293,8 +293,9 @@ function var_0_0.onWeaponUpdate(arg_16_0)
 
 			if var_16_1 then
 				local var_16_2 = Equipment.getConfigData(var_16_1).skill_id[1]
+				local var_16_3 = var_16_2 and var_16_2[1]
 
-				arg_16_0:MakeBuff(var_16_2)
+				arg_16_0:MakeBuff(var_16_3)
 			end
 		end
 	end

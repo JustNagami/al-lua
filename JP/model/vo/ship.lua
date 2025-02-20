@@ -1333,7 +1333,7 @@ function var_0_0.getEquipmentSkillEffects(arg_103_0)
 
 	for iter_103_0, iter_103_1 in ipairs(var_103_1) do
 		local var_103_2
-		local var_103_3 = iter_103_1 and iter_103_1:getConfig("skill_id")[1]
+		local var_103_3 = iter_103_1 and iter_103_1:getConfig("skill_id")[1] and iter_103_1:getConfig("skill_id")[1][1]
 
 		if var_103_3 then
 			var_103_2 = pg.buffCfg["buff_" .. var_103_3]
@@ -1918,15 +1918,13 @@ function var_0_0.GetEquipmentSkills(arg_149_0)
 	local var_149_1 = arg_149_0:getActiveEquipments()
 
 	for iter_149_0, iter_149_1 in ipairs(var_149_1) do
-		if iter_149_1 then
-			local var_149_2 = iter_149_1:getConfig("skill_id")[1]
+		if iter_149_1 and iter_149_1:getConfig("skill_id")[1] then
+			local var_149_2, var_149_3 = unpack(iter_149_1:getConfig("skill_id")[1])
 
-			if var_149_2 then
-				var_149_0[var_149_2] = {
-					level = 1,
-					id = var_149_2
-				}
-			end
+			var_149_0[var_149_2] = {
+				id = var_149_2,
+				level = var_149_3
+			}
 		end
 	end
 

@@ -603,7 +603,7 @@ end
 
 function var_0_0.GetSkill(arg_51_0)
 	local var_51_0
-	local var_51_1 = arg_51_0:getConfig("skill_id")[1]
+	local var_51_1 = arg_51_0:getConfig("skill_id")[1] and arg_51_0:getConfig("skill_id")[1][1]
 
 	if var_51_1 then
 		var_51_0 = getSkillConfig(var_51_1)

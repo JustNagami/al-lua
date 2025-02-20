@@ -163,15 +163,25 @@ function var_0_33.GetEquipSkill(arg_3_0, arg_3_1)
 
 			if var_3_4 then
 				for iter_3_2, iter_3_3 in ipairs(var_3_4.skill_id) do
-					iter_3_3 = arg_3_1 and var_0_33.SkillTranform(arg_3_1, iter_3_3) or iter_3_3
+					local var_3_5 = arg_3_1 and var_0_33.SkillTranform(arg_3_1, iter_3_3[1]) or iter_3_3[1]
+					local var_3_6 = iter_3_3[2] or 1
+					local var_3_7 = {
+						buffID = var_3_5,
+						buffLV = var_3_6
+					}
 
-					table.insert(var_3_1, iter_3_3)
+					table.insert(var_3_1, var_3_7)
 				end
 
 				for iter_3_4, iter_3_5 in ipairs(var_3_4.hidden_skill_id) do
-					iter_3_5 = arg_3_1 and var_0_33.SkillTranform(arg_3_1, iter_3_5) or iter_3_5
+					local var_3_8 = arg_3_1 and var_0_33.SkillTranform(arg_3_1, iter_3_5[1]) or iter_3_5[1]
+					local var_3_9 = iter_3_5[2] or 1
+					local var_3_10 = {
+						buffID = var_3_8,
+						buffLV = var_3_9
+					}
 
-					table.insert(var_3_1, iter_3_5)
+					table.insert(var_3_1, var_3_10)
 				end
 			end
 		end
@@ -256,7 +266,7 @@ function var_0_33.InitEquipSkill(arg_6_0, arg_6_1, arg_6_2)
 	local var_6_0 = var_0_33.GetEquipSkill(arg_6_0, arg_6_2)
 
 	for iter_6_0, iter_6_1 in ipairs(var_6_0) do
-		local var_6_1 = var_0_0.Battle.BattleBuffUnit.New(iter_6_1, 1, arg_6_1)
+		local var_6_1 = var_0_0.Battle.BattleBuffUnit.New(iter_6_1.buffID, iter_6_1.buffLV, arg_6_1)
 
 		arg_6_1:AddBuff(var_6_1)
 	end

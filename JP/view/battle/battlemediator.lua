@@ -453,10 +453,11 @@ local function var_0_1(arg_31_0, arg_31_1, arg_31_2, arg_31_3)
 	local var_31_6 = ys.Battle.BattleDataFunction.GetEquipSkill(var_31_0)
 
 	for iter_31_6, iter_31_7 in ipairs(var_31_6) do
-		local var_31_7 = {}
+		local var_31_7 = {
+			level = iter_31_7.buffLV,
+			id = ys.Battle.BattleDataFunction.SkillTranform(arg_31_0, iter_31_7.buffID)
+		}
 
-		var_31_7.level = 1
-		var_31_7.id = ys.Battle.BattleDataFunction.SkillTranform(arg_31_0, iter_31_7)
 		var_31_1[var_31_7.id] = var_31_7
 	end
 
