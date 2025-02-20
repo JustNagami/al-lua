@@ -118,11 +118,7 @@ function var_0_0.updateSingle(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 
 	local var_3_11 = var_3_7:getName() or "??"
 
-	if string.match(var_3_11, "(%d+)") then
-		setText(arg_3_0.nameTxt, shortenString(var_3_11, 5))
-	else
-		setText(arg_3_0.nameTxt, shortenString(var_3_11, 6))
-	end
+	setText(arg_3_0.nameTxt, shortenString(var_3_11, 6, 1))
 
 	local var_3_12 = arg_3_1:getConfig("num_limit")
 
@@ -179,11 +175,7 @@ function var_0_0.updateSelectable(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4)
 
 	local var_7_1 = var_7_0:getName() or "??"
 
-	if string.match(var_7_1, "(%d+)") then
-		setText(arg_7_0.nameTxt, shortenString(var_7_1, 5))
-	else
-		setText(arg_7_0.nameTxt, shortenString(var_7_1, 6))
-	end
+	setText(arg_7_0.nameTxt, shortenString(var_7_1, 6, 1))
 
 	local var_7_2 = arg_7_1:getConfig("num_limit")
 
@@ -245,11 +237,7 @@ function var_0_0.StaticUpdate(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
 
 	var_10_6.text = arg_10_1:getConfig("resource_num")
 
-	if string.match(var_10_13, "(%d+)") then
-		setText(var_10_2, shortenString(var_10_13, 5))
-	else
-		setText(var_10_2, shortenString(var_10_13, 6))
-	end
+	setText(var_10_2, shortenString(var_10_13, 6, 1))
 
 	var_10_3.sprite = GetSpriteFromAtlas(Drop.New({
 		type = arg_10_1:getConfig("resource_category"),

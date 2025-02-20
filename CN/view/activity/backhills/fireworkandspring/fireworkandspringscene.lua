@@ -16,12 +16,12 @@ var_0_0.Id2EffectName = {
 	[65528] = "yanhua_jiezhi",
 	[70175] = "yanhua_2024",
 	[65527] = "yanhua_huangji",
-	[65524] = "yanhua_mofang",
+	[65524] = "yanhua_denglong",
 	[65526] = "yanhua_chuanmao",
 	[65523] = "yanhua_maomao",
-	[65525] = "yanhua_long",
-	[65532] = "yanhua_hongbao",
-	[65531] = "yanhua_Azurlane",
+	[65525] = "yanhua_2025",
+	[65532] = "yanhua_she",
+	[65531] = "yanhua_hongbao",
 	[70178] = "yanhua_denglong"
 }
 var_0_0.FireworkRange = Vector2(300, 300)
@@ -117,18 +117,23 @@ function var_0_0.didEnter(arg_3_0)
 	end)
 	onButton(arg_3_0, arg_3_0.subPanel, function()
 		arg_3_0:CloseSubPanel()
+		arg_3_0:PlayFireworks()
 	end)
 	onButton(arg_3_0, arg_3_0:findTF("btnClose", arg_3_0.ptPanel), function()
 		arg_3_0:CloseSubPanel()
+		arg_3_0:PlayFireworks()
 	end)
 	onButton(arg_3_0, arg_3_0:findTF("btnClose", arg_3_0.taskPanel), function()
 		arg_3_0:CloseSubPanel()
+		arg_3_0:PlayFireworks()
 	end)
 	onButton(arg_3_0, arg_3_0:findTF("btnClose", arg_3_0.fireworkPanel), function()
 		arg_3_0:CloseSubPanel()
+		arg_3_0:PlayFireworks()
 	end)
 	onButton(arg_3_0, arg_3_0:findTF("btnClose", arg_3_0.springPanel), function()
 		arg_3_0:CloseSubPanel()
+		arg_3_0:PlayFireworks()
 	end)
 	onButton(arg_3_0, arg_3_0.subPtBtn, function()
 		arg_3_0:SetSubPanel(arg_3_0.ptPanel)
@@ -721,6 +726,7 @@ function var_0_0.CreateSpringUI(arg_60_0)
 
 				local var_62_1 = arg_60_0.springUnlockSlotCount
 
+				arg_60_0:StopPlayFireworks()
 				arg_60_0:emit(FireworkAndSpringMediator.OPEN_CHUANWU, arg_60_0.springActId, arg_61_1 + 1, var_62_0, arg_60_0.springUnlockSlotCount)
 			end, SFX_PANEL)
 
@@ -774,8 +780,10 @@ end
 function var_0_0.PlayerOneFirework(arg_68_0)
 	if arg_68_0.fireworkIndex == #arg_68_0.fireworks then
 		arg_68_0:managedTween(LeanTween.delayedCall, function()
-			arg_68_0:StopPlayFireworks()
-			arg_68_0:PlayFireworks()
+			if arg_68_0.fireworks then
+				arg_68_0:StopPlayFireworks()
+				arg_68_0:PlayFireworks()
+			end
 		end, var_0_0.DelayPop, nil)
 	end
 
@@ -1033,49 +1041,49 @@ function var_0_0.IsShowMainTip(arg_85_0)
 
 	for iter_85_2, iter_85_3 in pairs(var_85_9) do
 		if iter_85_3:getTaskStatus() == 1 then
-			local var_85_12 = true
+			var_85_11 = true
 
 			break
 		end
 	end
 
-	local var_85_13 = var_85_4:getActivityById(var_85_2)
-	local var_85_14 = var_85_13.data1_list
-	local var_85_15 = var_85_13.data2_list
-	local var_85_16 = #var_85_14 ~= #var_85_15
-	local var_85_17 = var_85_4:getActivityById(var_85_3)
-	local var_85_18 = _.map(var_85_17:GetShipIds(), function(arg_86_0)
+	local var_85_12 = var_85_4:getActivityById(var_85_2)
+	local var_85_13 = var_85_12.data1_list
+	local var_85_14 = var_85_12.data2_list
+	local var_85_15 = #var_85_13 ~= #var_85_14
+	local var_85_16 = var_85_4:getActivityById(var_85_3)
+	local var_85_17 = _.map(var_85_16:GetShipIds(), function(arg_86_0)
 		if getProxy(BayProxy):RawGetShipById(arg_86_0) then
 			return arg_86_0
 		else
 			return 0
 		end
 	end)
-	local var_85_19 = var_85_17:GetSlotCount()
-	local var_85_20 = {}
-	local var_85_21 = var_85_17:getConfig("config_client").initialCount
+	local var_85_18 = var_85_16:GetSlotCount()
+	local var_85_19 = {}
+	local var_85_20 = var_85_16:getConfig("config_client").initialCount
 
-	for iter_85_4, iter_85_5 in ipairs(var_85_17:getConfig("config_client").unlockPt) do
+	for iter_85_4, iter_85_5 in ipairs(var_85_16:getConfig("config_client").unlockPt) do
 		if iter_85_5 <= var_85_6.count then
-			var_85_21 = var_85_21 + 1
+			var_85_20 = var_85_20 + 1
 		end
 	end
 
-	for iter_85_6 = 1, var_85_19 do
-		var_85_20[iter_85_6] = var_85_21 < iter_85_6
+	for iter_85_6 = 1, var_85_18 do
+		var_85_19[iter_85_6] = var_85_20 < iter_85_6
 	end
 
-	local var_85_22 = false
+	local var_85_21 = false
 
-	for iter_85_7 = 1, var_85_21 do
-		if var_85_18[iter_85_7] == 0 then
-			var_85_22 = true
+	for iter_85_7 = 1, var_85_20 do
+		if var_85_17[iter_85_7] == 0 then
+			var_85_21 = true
 
 			break
 		end
 	end
 
-	return var_85_7 or var_85_11 or var_85_16 or var_85_22
+	return var_85_7 or var_85_11 or var_85_15 or var_85_21
 end
 
 return var_0_0

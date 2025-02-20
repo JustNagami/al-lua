@@ -104,7 +104,7 @@ function var_0_0.UpdateAttr(arg_12_0, arg_12_1, arg_12_2)
 	local var_12_0 = arg_12_0.attrIds[arg_12_1 + 1]
 	local var_12_1 = pg.child2_attr[var_12_0]
 
-	setImageSprite(arg_12_2:Find("icon_bg/icon"), LoadSprite("neweducateicon/" .. var_12_1.icon))
+	LoadImageSpriteAsync("neweducateicon/" .. var_12_1.icon, arg_12_2:Find("icon_bg/icon"))
 	setScrollText(arg_12_2:Find("name_mask/name"), var_12_1.name)
 
 	local var_12_2 = arg_12_0.attrIds[arg_12_1 + 1]
@@ -137,7 +137,7 @@ end
 function var_0_0.UpdateRes(arg_13_0, arg_13_1, arg_13_2)
 	local var_13_0 = arg_13_0.resIds[arg_13_1 + 1]
 
-	setImageSprite(arg_13_2:Find("icon"), LoadSprite("neweducateicon/" .. pg.child2_resource[var_13_0].icon))
+	LoadImageSpriteAsync("neweducateicon/" .. pg.child2_resource[var_13_0].icon, arg_13_2:Find("icon"))
 	setText(arg_13_2:Find("name"), pg.child2_resource[var_13_0].name)
 
 	local var_13_1 = arg_13_0.contextData.char:GetRes(var_13_0)

@@ -1,6 +1,232 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_10 = {
+	[305028] = {
+		ship_group = 30502,
+		name = "花嫁攻势！",
+		hand_id = 14,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 305028,
+		group_index = 8,
+		l2d_ignore_drag = 0,
+		painting = "shancheng_h",
+		shop_id = 0,
+		illustrator = 22,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9998,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "shancheng_h",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "殿下殿下，我换好啦！怎么样怎么样，殿下喜欢这样子的{namecode:79}吗？",
+		voice_actor = 71,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.555,
+					0.538,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.494,
+					0.51,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.12,
+					0.15,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.494,
+					0.44,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.41,
+							2.36,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[305029] = {
+		ship_group = 30502,
+		name = "{namecode:79}.改",
+		hand_id = 14,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 305029,
+		group_index = 9,
+		l2d_ignore_drag = 0,
+		painting = "shancheng_g",
+		shop_id = 0,
+		illustrator = 22,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9997,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 2,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "shancheng_g",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "殿下！现在的{namecode:79}，炮击也好、航空也好，什么都能做！所以、所以，多依赖依赖我嘛，殿下！殿下——！！",
+		voice_actor = 71,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.31,
+					1.3,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.31,
+					1.16,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.1,
+					0.1,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.31,
+					1.16,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.41,
+							2.48,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[305030] = {
 		ship_group = 30503,
 		name = "{namecode:76}",
@@ -11187,7 +11413,13 @@ pg.base.ship_skin_template_10 = {
 			30708449,
 			30708450,
 			30708451,
-			30708452
+			30708452,
+			30708453,
+			30708454,
+			30708455,
+			30708456,
+			30708457,
+			30708458
 		}
 	},
 	[307090] = {
@@ -12941,204 +13173,6 @@ pg.base.ship_skin_template_10 = {
 						{
 							-0.64,
 							2.45,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[308030] = {
-		ship_group = 30803,
-		name = "{namecode:156}",
-		hand_id = 14,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 308030,
-		group_index = 0,
-		l2d_ignore_drag = 0,
-		painting = "I58",
-		shop_id = 0,
-		illustrator = 14,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "I58",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "{namecode:283}型潜艇{namecode:156}",
-		voice_actor = 129,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.7,
-					0.21,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.7,
-					0.25,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.55,
-							2.21,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[308040] = {
-		ship_group = 30804,
-		name = "{namecode:252}",
-		hand_id = 14,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 308040,
-		group_index = 0,
-		l2d_ignore_drag = 0,
-		painting = "I25",
-		shop_id = 0,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "I25",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "{namecode:280}潜艇{namecode:252}",
-		voice_actor = 121,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.9,
-					0.15,
-					0
-				}
-			},
-			torpedo = {
-				{
-					1.209,
-					0.03,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.42,
-							2.388,
 							0
 						}
 					}

@@ -1,6 +1,232 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_15 = {
+	[801020] = {
+		ship_group = 80102,
+		name = "福尔班",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 801020,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "fuerban",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "fuerban",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "自由鸢尾机敏级驱逐舰—福尔班",
+		voice_actor = 124,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					-0.22,
+					1.06,
+					0
+				}
+			},
+			vicegun = {
+				{
+					-0.24,
+					1.05,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.07,
+					0.12,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					-0.29,
+					1.01,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.6,
+							2.26,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[801021] = {
+		ship_group = 80102,
+		name = "纯白花语",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 801021,
+		group_index = 1,
+		l2d_ignore_drag = 0,
+		painting = "Fuerban_2",
+		shop_id = 70087,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "Fuerban_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "偶尔像这样呼吸一下外面的新鲜空气感觉也不错呢…那个…指挥官，能陪我多走一段路吗？",
+		voice_actor = 124,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					-0.395,
+					1.165,
+					0
+				}
+			},
+			vicegun = {
+				{
+					-0.395,
+					1.165,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.256,
+					0.266,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.467,
+					0.826,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.6,
+							2.26,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[801022] = {
 		ship_group = 80102,
 		name = "学园的见习骑士",
@@ -11836,7 +12062,6 @@ pg.base.ship_skin_template_15 = {
 		change_skin = "",
 		rarity_bg = "",
 		time = "",
-		l2d_para_range = "",
 		lip_sync_gain = 0,
 		show_skin = "stand",
 		tag = {
@@ -11936,6 +12161,16 @@ pg.base.ship_skin_template_15 = {
 		},
 		l2d_voice_calibrate = {
 			use_event = true
+		},
+		l2d_para_range = {
+			ParamBodyAngleY = {
+				-15,
+				15
+			},
+			ParamBodyAngleX = {
+				-15,
+				15
+			}
 		},
 		ship_l2d_id = {
 			90501401,
@@ -13947,268 +14182,6 @@ pg.base.ship_skin_template_15 = {
 						{
 							0.711,
 							0.361,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900010] = {
-		ship_group = 900010,
-		name = "{namecode:435}",
-		hand_id = 0,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = 0,
-		l2d_drag_rate = "",
-		id = 900010,
-		group_index = 0,
-		l2d_ignore_drag = 0,
-		painting = "bisimai",
-		shop_id = 0,
-		illustrator = 0,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "bisimai",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "无描述",
-		voice_actor = 0,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					-0.295,
-					0.507,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0,
-					1.12,
-					0
-				},
-				{
-					1.377,
-					0.87,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.795,
-					0.03,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0,
-					1.12,
-					0
-				},
-				{
-					1.377,
-					0.87,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				70,
-				{
-					{
-						"smoke",
-						{
-							-0.81,
-							0.402,
-							0
-						}
-					}
-				}
-			},
-			{
-				30,
-				{
-					{
-						"smoke",
-						{
-							0.63,
-							0.433,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900011] = {
-		ship_group = 900011,
-		name = "？？？？？",
-		hand_id = 0,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = 0,
-		l2d_drag_rate = "",
-		id = 900011,
-		group_index = 0,
-		l2d_ignore_drag = 0,
-		painting = "unknown1",
-		shop_id = 0,
-		illustrator = 0,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "unknown1",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "无描述",
-		voice_actor = 0,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0,
-					0,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				70,
-				{
-					{
-						"smoke",
-						{
-							-0.81,
-							0.402,
-							0
-						}
-					}
-				}
-			},
-			{
-				30,
-				{
-					{
-						"smoke",
-						{
-							0.63,
-							0.433,
 							0
 						}
 					}

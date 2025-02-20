@@ -1071,8 +1071,8 @@ end
 
 function var_0_0.SetCameraLady(arg_85_0, arg_85_1)
 	arg_85_0.cameraAim2.LookAt = arg_85_1.ladyInterestRoot
-	arg_85_0.cameras[var_0_0.CAMERA.TALK].Follow = arg_85_0.ladyInterest
-	arg_85_0.cameras[var_0_0.CAMERA.TALK].LookAt = arg_85_0.ladyInterest
+	arg_85_0.cameras[var_0_0.CAMERA.TALK].Follow = arg_85_1.ladyInterestRoot
+	arg_85_0.cameras[var_0_0.CAMERA.TALK].LookAt = arg_85_1.ladyInterestRoot
 	arg_85_0.cameraGift.Follow = arg_85_0.ladyInterest
 	arg_85_0.cameraGift.LookAt = arg_85_0.ladyInterest
 	arg_85_0.cameraRole2.LookAt = arg_85_1.ladyInterestRoot
@@ -1469,7 +1469,7 @@ function var_0_0.Update(arg_114_0)
 			end)()
 
 			if arg_114_0.enableIKTip then
-				local var_117_0 = Time.time > arg_114_0.nextTipIKTime
+				local var_117_0 = not arg_114_0.blockIK and Time.time > arg_114_0.nextTipIKTime
 
 				if var_117_0 then
 					local var_117_1 = arg_117_0.ikConfig

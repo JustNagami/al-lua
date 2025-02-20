@@ -782,6 +782,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			400011
+		},
+		show_content = {
+			400011
 		}
 	},
 	[40002] = {
@@ -796,6 +799,9 @@ pg.base.child2_benefit_list = {
 		id = 40002,
 		item_icon = "buff_colours_1",
 		content = {
+			400021
+		},
+		show_content = {
 			400021
 		}
 	},
@@ -812,6 +818,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			400111
+		},
+		show_content = {
+			400111
 		}
 	},
 	[40012] = {
@@ -826,6 +835,9 @@ pg.base.child2_benefit_list = {
 		id = 40012,
 		item_icon = "buff_colours_1",
 		content = {
+			400121
+		},
+		show_content = {
 			400121
 		}
 	},
@@ -842,6 +854,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			400131
+		},
+		show_content = {
+			400131
 		}
 	},
 	[40014] = {
@@ -856,6 +871,9 @@ pg.base.child2_benefit_list = {
 		id = 40014,
 		item_icon = "buff_colours_1",
 		content = {
+			400141
+		},
+		show_content = {
 			400141
 		}
 	},
@@ -872,6 +890,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_all_1",
 		content = {
 			400151
+		},
+		show_content = {
+			400151
 		}
 	},
 	[40021] = {
@@ -886,6 +907,9 @@ pg.base.child2_benefit_list = {
 		id = 40021,
 		item_icon = "buff_colours_1",
 		content = {
+			400211
+		},
+		show_content = {
 			400211
 		}
 	},
@@ -902,6 +926,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			400221
+		},
+		show_content = {
+			400221
 		}
 	},
 	[40023] = {
@@ -916,6 +943,9 @@ pg.base.child2_benefit_list = {
 		id = 40023,
 		item_icon = "buff_colours_1",
 		content = {
+			400231
+		},
+		show_content = {
 			400231
 		}
 	},
@@ -932,6 +962,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			400241
+		},
+		show_content = {
+			400241
 		}
 	},
 	[40025] = {
@@ -946,6 +979,9 @@ pg.base.child2_benefit_list = {
 		id = 40025,
 		item_icon = "benefit_2_all_1",
 		content = {
+			400251
+		},
+		show_content = {
 			400251
 		}
 	},
@@ -962,6 +998,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			400311
+		},
+		show_content = {
+			400311
 		}
 	},
 	[40032] = {
@@ -976,6 +1015,9 @@ pg.base.child2_benefit_list = {
 		id = 40032,
 		item_icon = "buff_colours_1",
 		content = {
+			400321
+		},
+		show_content = {
 			400321
 		}
 	},
@@ -992,6 +1034,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			400331
+		},
+		show_content = {
+			400331
 		}
 	},
 	[40034] = {
@@ -1006,6 +1051,9 @@ pg.base.child2_benefit_list = {
 		id = 40034,
 		item_icon = "buff_colours_1",
 		content = {
+			400341
+		},
+		show_content = {
 			400341
 		}
 	},
@@ -1022,6 +1070,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_all_1",
 		content = {
 			400351
+		},
+		show_content = {
+			400351
 		}
 	},
 	[40041] = {
@@ -1036,6 +1087,9 @@ pg.base.child2_benefit_list = {
 		id = 40041,
 		item_icon = "buff_colours_1",
 		content = {
+			400411
+		},
+		show_content = {
 			400411
 		}
 	},
@@ -1052,6 +1106,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			400421
+		},
+		show_content = {
+			400421
 		}
 	},
 	[40043] = {
@@ -1066,6 +1123,9 @@ pg.base.child2_benefit_list = {
 		id = 40043,
 		item_icon = "buff_colours_1",
 		content = {
+			400431
+		},
+		show_content = {
 			400431
 		}
 	},
@@ -1082,6 +1142,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			400441
+		},
+		show_content = {
+			400441
 		}
 	},
 	[40045] = {
@@ -1097,6 +1160,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_all_1",
 		content = {
 			400451
+		},
+		show_content = {
+			400451
 		}
 	},
 	[41011] = {
@@ -1110,7 +1176,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 41011,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[41021] = {
 		rare = 1,
@@ -1124,6 +1191,9 @@ pg.base.child2_benefit_list = {
 		id = 41021,
 		item_icon = "buff_colours_1",
 		content = {
+			410211
+		},
+		show_content = {
 			410211
 		}
 	},
@@ -1140,6 +1210,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			410221
+		},
+		show_content = {
+			410221
 		}
 	},
 	[41023] = {
@@ -1154,6 +1227,9 @@ pg.base.child2_benefit_list = {
 		id = 41023,
 		item_icon = "buff_colours_1",
 		content = {
+			410231
+		},
+		show_content = {
 			410231
 		}
 	},
@@ -1170,6 +1246,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			410241
+		},
+		show_content = {
+			410241
 		}
 	},
 	[41031] = {
@@ -1183,7 +1262,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 41031,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[41041] = {
 		rare = 1,
@@ -1196,7 +1276,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 41041,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[41051] = {
 		rare = 1,
@@ -1209,7 +1290,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 41051,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[41061] = {
 		rare = 1,
@@ -1223,6 +1305,9 @@ pg.base.child2_benefit_list = {
 		id = 41061,
 		item_icon = "buff_colours_1",
 		content = {
+			410611
+		},
+		show_content = {
 			410611
 		}
 	},
@@ -1239,6 +1324,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			410621
+		},
+		show_content = {
+			410621
 		}
 	},
 	[41063] = {
@@ -1253,6 +1341,9 @@ pg.base.child2_benefit_list = {
 		id = 41063,
 		item_icon = "buff_colours_1",
 		content = {
+			410631
+		},
+		show_content = {
 			410631
 		}
 	},
@@ -1269,6 +1360,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			410641
+		},
+		show_content = {
+			410641
 		}
 	},
 	[41071] = {
@@ -1283,6 +1377,9 @@ pg.base.child2_benefit_list = {
 		id = 41071,
 		item_icon = "buff_colours_1",
 		content = {
+			410711
+		},
+		show_content = {
 			410711
 		}
 	},
@@ -1299,6 +1396,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			410721
+		},
+		show_content = {
+			410721
 		}
 	},
 	[41073] = {
@@ -1313,6 +1413,9 @@ pg.base.child2_benefit_list = {
 		id = 41073,
 		item_icon = "buff_colours_1",
 		content = {
+			410731
+		},
+		show_content = {
 			410731
 		}
 	},
@@ -1329,6 +1432,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			410741
+		},
+		show_content = {
+			410741
 		}
 	},
 	[41081] = {
@@ -1343,6 +1449,9 @@ pg.base.child2_benefit_list = {
 		id = 41081,
 		item_icon = "buff_colours_1",
 		content = {
+			410811
+		},
+		show_content = {
 			410811
 		}
 	},
@@ -1359,6 +1468,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			410821
+		},
+		show_content = {
+			410821
 		}
 	},
 	[41091] = {
@@ -1373,6 +1485,9 @@ pg.base.child2_benefit_list = {
 		id = 41091,
 		item_icon = "buff_colours_1",
 		content = {
+			410911
+		},
+		show_content = {
 			410911
 		}
 	},
@@ -1389,6 +1504,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			410921
+		},
+		show_content = {
+			410921
 		}
 	},
 	[41093] = {
@@ -1403,6 +1521,9 @@ pg.base.child2_benefit_list = {
 		id = 41093,
 		item_icon = "buff_colours_1",
 		content = {
+			410931
+		},
+		show_content = {
 			410931
 		}
 	},
@@ -1419,6 +1540,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			411011
+		},
+		show_content = {
+			411011
 		}
 	},
 	[41102] = {
@@ -1433,6 +1557,9 @@ pg.base.child2_benefit_list = {
 		id = 41102,
 		item_icon = "buff_colours_1",
 		content = {
+			411021
+		},
+		show_content = {
 			411021
 		}
 	},
@@ -1449,6 +1576,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			411111
+		},
+		show_content = {
+			411111
 		}
 	},
 	[41112] = {
@@ -1463,6 +1593,9 @@ pg.base.child2_benefit_list = {
 		id = 41112,
 		item_icon = "buff_colours_1",
 		content = {
+			411121
+		},
+		show_content = {
 			411121
 		}
 	},
@@ -1479,6 +1612,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			411131
+		},
+		show_content = {
+			411131
 		}
 	},
 	[41114] = {
@@ -1494,6 +1630,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			411141
+		},
+		show_content = {
+			411141
 		}
 	},
 	[41115] = {
@@ -1507,7 +1646,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 41115,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[41121] = {
 		rare = 1,
@@ -1521,6 +1661,9 @@ pg.base.child2_benefit_list = {
 		id = 41121,
 		item_icon = "buff_colours_1",
 		content = {
+			411211
+		},
+		show_content = {
 			411211
 		}
 	},
@@ -1537,6 +1680,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			411221
+		},
+		show_content = {
+			411221
 		}
 	},
 	[41131] = {
@@ -1551,6 +1697,9 @@ pg.base.child2_benefit_list = {
 		id = 41131,
 		item_icon = "buff_colours_1",
 		content = {
+			411311
+		},
+		show_content = {
 			411311
 		}
 	},
@@ -1567,6 +1716,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			411321
+		},
+		show_content = {
+			411321
 		}
 	},
 	[41133] = {
@@ -1581,6 +1733,9 @@ pg.base.child2_benefit_list = {
 		id = 41133,
 		item_icon = "buff_colours_1",
 		content = {
+			411331
+		},
+		show_content = {
 			411331
 		}
 	},
@@ -1597,6 +1752,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			411341
+		},
+		show_content = {
+			411341
 		}
 	},
 	[41135] = {
@@ -1610,7 +1768,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 41135,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[41141] = {
 		rare = 1,
@@ -1624,6 +1783,9 @@ pg.base.child2_benefit_list = {
 		id = 41141,
 		item_icon = "buff_colours_1",
 		content = {
+			411411
+		},
+		show_content = {
 			411411
 		}
 	},
@@ -1640,6 +1802,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			411421
+		},
+		show_content = {
+			411421
 		}
 	},
 	[41151] = {
@@ -1654,6 +1819,9 @@ pg.base.child2_benefit_list = {
 		id = 41151,
 		item_icon = "buff_colours_1",
 		content = {
+			411511
+		},
+		show_content = {
 			411511
 		}
 	},
@@ -1670,6 +1838,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_1",
 		content = {
 			411611
+		},
+		show_content = {
+			411611
 		}
 	},
 	[41162] = {
@@ -1684,6 +1855,9 @@ pg.base.child2_benefit_list = {
 		id = 41162,
 		item_icon = "buff_colours_1",
 		content = {
+			411621
+		},
+		show_content = {
 			411621
 		}
 	},
@@ -1700,6 +1874,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_1",
 		content = {
 			411711
+		},
+		show_content = {
+			411711
 		}
 	},
 	[41172] = {
@@ -1715,12 +1892,15 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			411721
+		},
+		show_content = {
+			411721
 		}
 	},
 	[41181] = {
 		rare = 1,
 		name = "突破极限",
-		desc = "3回合内，<color=#ff9829>「体能」</color>最终获取量 x 1.2\n<color=#ff9829>「知识」</color>最终获取量 x 0.8",
+		desc = "3回合内，<color=#ff9829>「体能」</color>最终获取量 x 1.5\n<color=#ff9829>「知识」</color>最终获取量 x 0.8",
 		type = 2,
 		is_tip = 0,
 		item_icon_little = "",
@@ -1729,6 +1909,9 @@ pg.base.child2_benefit_list = {
 		id = 41181,
 		item_icon = "benefit_2_tinengzhishi_1",
 		content = {
+			411811
+		},
+		show_content = {
 			411811
 		}
 	},
@@ -1745,6 +1928,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			411821
+		},
+		show_content = {
+			411821
 		}
 	},
 	[41191] = {
@@ -1759,6 +1945,9 @@ pg.base.child2_benefit_list = {
 		id = 41191,
 		item_icon = "benefit_2_tineng_1",
 		content = {
+			411911
+		},
+		show_content = {
 			411911
 		}
 	},
@@ -1775,6 +1964,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			411921
+		},
+		show_content = {
+			411921
 		}
 	},
 	[41201] = {
@@ -1789,6 +1981,9 @@ pg.base.child2_benefit_list = {
 		id = 41201,
 		item_icon = "benefit_2_zhishi_3",
 		content = {
+			412011
+		},
+		show_content = {
 			412011
 		}
 	},
@@ -1805,6 +2000,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_ganzhi_3",
 		content = {
 			412021
+		},
+		show_content = {
+			412021
 		}
 	},
 	[41203] = {
@@ -1819,6 +2017,9 @@ pg.base.child2_benefit_list = {
 		id = 41203,
 		item_icon = "benefit_2_tineng_3",
 		content = {
+			412031
+		},
+		show_content = {
 			412031
 		}
 	},
@@ -1835,6 +2036,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_3",
 		content = {
 			412041
+		},
+		show_content = {
+			412041
 		}
 	},
 	[41211] = {
@@ -1849,6 +2053,9 @@ pg.base.child2_benefit_list = {
 		id = 41211,
 		item_icon = "benefit_2_chaopin",
 		content = {
+			412111
+		},
+		show_content = {
 			412111
 		}
 	},
@@ -1865,6 +2072,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			412121
+		},
+		show_content = {
+			412121
 		}
 	},
 	[41221] = {
@@ -1879,6 +2089,9 @@ pg.base.child2_benefit_list = {
 		id = 41221,
 		item_icon = "buff_colours_1",
 		content = {
+			412211
+		},
+		show_content = {
 			412211
 		}
 	},
@@ -1895,6 +2108,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			412221
+		},
+		show_content = {
+			412221
 		}
 	},
 	[41231] = {
@@ -1909,6 +2125,9 @@ pg.base.child2_benefit_list = {
 		id = 41231,
 		item_icon = "benefit_2_tineng_2",
 		content = {
+			412311
+		},
+		show_content = {
 			412311
 		}
 	},
@@ -1925,6 +2144,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			412321
+		},
+		show_content = {
+			412321
 		}
 	},
 	[41233] = {
@@ -1939,6 +2161,9 @@ pg.base.child2_benefit_list = {
 		id = 41233,
 		item_icon = "buff_colours_1",
 		content = {
+			412331
+		},
+		show_content = {
 			412331
 		}
 	},
@@ -1955,6 +2180,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			412341
+		},
+		show_content = {
+			412341
 		}
 	},
 	[41241] = {
@@ -1969,6 +2197,9 @@ pg.base.child2_benefit_list = {
 		id = 41241,
 		item_icon = "benefit_2_zhishi_2",
 		content = {
+			412411
+		},
+		show_content = {
 			412411
 		}
 	},
@@ -1985,6 +2216,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			412421
+		},
+		show_content = {
+			412421
 		}
 	},
 	[41243] = {
@@ -1999,6 +2233,9 @@ pg.base.child2_benefit_list = {
 		id = 41243,
 		item_icon = "buff_colours_1",
 		content = {
+			412431
+		},
+		show_content = {
 			412431
 		}
 	},
@@ -2015,6 +2252,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			412441
+		},
+		show_content = {
+			412441
 		}
 	},
 	[41251] = {
@@ -2029,6 +2269,9 @@ pg.base.child2_benefit_list = {
 		id = 41251,
 		item_icon = "benefit_2_shijian_2",
 		content = {
+			412511
+		},
+		show_content = {
 			412511
 		}
 	},
@@ -2045,6 +2288,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			412521
+		},
+		show_content = {
+			412521
 		}
 	},
 	[41253] = {
@@ -2059,6 +2305,9 @@ pg.base.child2_benefit_list = {
 		id = 41253,
 		item_icon = "buff_colours_1",
 		content = {
+			412531
+		},
+		show_content = {
 			412531
 		}
 	},
@@ -2075,6 +2324,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			412541
+		},
+		show_content = {
+			412541
 		}
 	},
 	[41261] = {
@@ -2089,6 +2341,9 @@ pg.base.child2_benefit_list = {
 		id = 41261,
 		item_icon = "benefit_2_ganzhi_2",
 		content = {
+			412611
+		},
+		show_content = {
 			412611
 		}
 	},
@@ -2105,6 +2360,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			412621
+		},
+		show_content = {
+			412621
 		}
 	},
 	[41263] = {
@@ -2119,6 +2377,9 @@ pg.base.child2_benefit_list = {
 		id = 41263,
 		item_icon = "buff_colours_1",
 		content = {
+			412631
+		},
+		show_content = {
 			412631
 		}
 	},
@@ -2135,6 +2396,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			412641
+		},
+		show_content = {
+			412641
 		}
 	},
 	[41271] = {
@@ -2149,6 +2413,9 @@ pg.base.child2_benefit_list = {
 		id = 41271,
 		item_icon = "buff_colours_1",
 		content = {
+			412711
+		},
+		show_content = {
 			412711
 		}
 	},
@@ -2165,6 +2432,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			412721
+		},
+		show_content = {
+			412721
 		}
 	},
 	[41281] = {
@@ -2179,6 +2449,9 @@ pg.base.child2_benefit_list = {
 		id = 41281,
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
+			412811
+		},
+		show_content = {
 			412811
 		}
 	},
@@ -2195,6 +2468,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			412821
+		},
+		show_content = {
+			412821
 		}
 	},
 	[41291] = {
@@ -2209,6 +2485,9 @@ pg.base.child2_benefit_list = {
 		id = 41291,
 		item_icon = "benefit_2_jinqian_1",
 		content = {
+			412911
+		},
+		show_content = {
 			412911
 		}
 	},
@@ -2225,6 +2504,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_jinqian_1",
 		content = {
 			412921
+		},
+		show_content = {
+			412921
 		}
 	},
 	[41293] = {
@@ -2239,6 +2521,9 @@ pg.base.child2_benefit_list = {
 		id = 41293,
 		item_icon = "buff_colours_1",
 		content = {
+			412931
+		},
+		show_content = {
 			412931
 		}
 	},
@@ -2255,6 +2540,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_minruiganguan",
 		content = {
 			413011
+		},
+		show_content = {
+			413011
 		}
 	},
 	[41302] = {
@@ -2269,6 +2557,9 @@ pg.base.child2_benefit_list = {
 		id = 41302,
 		item_icon = "buff_colours_1",
 		content = {
+			413021
+		},
+		show_content = {
 			413021
 		}
 	},
@@ -2285,6 +2576,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_chengmingxinjing",
 		content = {
 			413111
+		},
+		show_content = {
+			413111
 		}
 	},
 	[41312] = {
@@ -2299,6 +2593,9 @@ pg.base.child2_benefit_list = {
 		id = 41312,
 		item_icon = "buff_colours_1",
 		content = {
+			413121
+		},
+		show_content = {
 			413121
 		}
 	},
@@ -2315,6 +2612,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_xinqing_1",
 		content = {
 			413211
+		},
+		show_content = {
+			413211
 		}
 	},
 	[41322] = {
@@ -2329,6 +2629,9 @@ pg.base.child2_benefit_list = {
 		id = 41322,
 		item_icon = "benefit_2_xinqing_1",
 		content = {
+			413221
+		},
+		show_content = {
 			413221
 		}
 	},
@@ -2345,6 +2648,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			413231
+		},
+		show_content = {
+			413231
 		}
 	},
 	[41331] = {
@@ -2359,6 +2665,9 @@ pg.base.child2_benefit_list = {
 		id = 41331,
 		item_icon = "buff_colours_1",
 		content = {
+			413311
+		},
+		show_content = {
 			413311
 		}
 	},
@@ -2375,6 +2684,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			413321
+		},
+		show_content = {
+			413321
 		}
 	},
 	[41341] = {
@@ -2389,6 +2701,9 @@ pg.base.child2_benefit_list = {
 		id = 41341,
 		item_icon = "buff_colours_1",
 		content = {
+			413411
+		},
+		show_content = {
 			413411
 		}
 	},
@@ -2405,6 +2720,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			413421
+		},
+		show_content = {
+			413421
 		}
 	},
 	[41351] = {
@@ -2419,6 +2737,9 @@ pg.base.child2_benefit_list = {
 		id = 41351,
 		item_icon = "benefit_2_xinqing_2",
 		content = {
+			413511
+		},
+		show_content = {
 			413511
 		}
 	},
@@ -2435,6 +2756,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			413611
+		},
+		show_content = {
+			413611
 		}
 	},
 	[41362] = {
@@ -2449,6 +2773,9 @@ pg.base.child2_benefit_list = {
 		id = 41362,
 		item_icon = "buff_colours_1",
 		content = {
+			413621
+		},
+		show_content = {
 			413621
 		}
 	},
@@ -2465,6 +2792,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			413631
+		},
+		show_content = {
+			413631
 		}
 	},
 	[41364] = {
@@ -2479,6 +2809,9 @@ pg.base.child2_benefit_list = {
 		id = 41364,
 		item_icon = "buff_colours_1",
 		content = {
+			413641
+		},
+		show_content = {
 			413641
 		}
 	},
@@ -2495,6 +2828,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_mijingganzhi",
 		content = {
 			413651
+		},
+		show_content = {
+			413651
 		}
 	},
 	[41366] = {
@@ -2509,6 +2845,9 @@ pg.base.child2_benefit_list = {
 		id = 41366,
 		item_icon = "buff_colours_1",
 		content = {
+			413661
+		},
+		show_content = {
 			413661
 		}
 	},
@@ -2525,6 +2864,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_jieneng",
 		content = {
 			413711
+		},
+		show_content = {
+			413711
 		}
 	},
 	[41372] = {
@@ -2539,6 +2881,9 @@ pg.base.child2_benefit_list = {
 		id = 41372,
 		item_icon = "buff_colours_1",
 		content = {
+			413721
+		},
+		show_content = {
 			413721
 		}
 	},
@@ -2555,6 +2900,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
 			413811
+		},
+		show_content = {
+			413811
 		}
 	},
 	[41382] = {
@@ -2569,6 +2917,9 @@ pg.base.child2_benefit_list = {
 		id = 41382,
 		item_icon = "benefit_2_tizhiqianghua",
 		content = {
+			413821
+		},
+		show_content = {
 			413821
 		}
 	},
@@ -2585,6 +2936,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
 			413831
+		},
+		show_content = {
+			413831
 		}
 	},
 	[41384] = {
@@ -2599,6 +2953,9 @@ pg.base.child2_benefit_list = {
 		id = 41384,
 		item_icon = "benefit_2_tizhiqianghua",
 		content = {
+			413841
+		},
+		show_content = {
 			413841
 		}
 	},
@@ -2615,6 +2972,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
 			413851
+		},
+		show_content = {
+			413851
 		}
 	},
 	[41386] = {
@@ -2629,6 +2989,9 @@ pg.base.child2_benefit_list = {
 		id = 41386,
 		item_icon = "benefit_2_tizhiqianghua",
 		content = {
+			413861
+		},
+		show_content = {
 			413861
 		}
 	},
@@ -2645,6 +3008,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
 			413871
+		},
+		show_content = {
+			413871
 		}
 	},
 	[41388] = {
@@ -2659,6 +3025,9 @@ pg.base.child2_benefit_list = {
 		id = 41388,
 		item_icon = "benefit_2_tizhiqianghua",
 		content = {
+			413881
+		},
+		show_content = {
 			413881
 		}
 	},
@@ -2675,6 +3044,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_all_1",
 		content = {
 			413891
+		},
+		show_content = {
+			413891
 		}
 	},
 	[41391] = {
@@ -2689,6 +3061,9 @@ pg.base.child2_benefit_list = {
 		id = 41391,
 		item_icon = "buff_colours_1",
 		content = {
+			413911
+		},
+		show_content = {
 			413911
 		}
 	},
@@ -2705,6 +3080,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			413921
+		},
+		show_content = {
+			413921
 		}
 	},
 	[41401] = {
@@ -2720,6 +3098,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			414011
+		},
+		show_content = {
+			414011
 		}
 	},
 	[41402] = {
@@ -2734,6 +3115,9 @@ pg.base.child2_benefit_list = {
 		id = 41402,
 		item_icon = "buff_colours_1",
 		content = {
+			414021
+		},
+		show_content = {
 			414021
 		}
 	},
@@ -2754,6 +3138,13 @@ pg.base.child2_benefit_list = {
 			414113,
 			414114,
 			414115
+		},
+		show_content = {
+			414111,
+			414112,
+			414113,
+			414114,
+			414115
 		}
 	},
 	[41412] = {
@@ -2768,6 +3159,9 @@ pg.base.child2_benefit_list = {
 		id = 41412,
 		item_icon = "buff_colours_1",
 		content = {
+			414121
+		},
+		show_content = {
 			414121
 		}
 	},
@@ -2784,6 +3178,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			414211
+		},
+		show_content = {
+			414211
 		}
 	},
 	[41422] = {
@@ -2798,6 +3195,9 @@ pg.base.child2_benefit_list = {
 		id = 41422,
 		item_icon = "buff_colours_1",
 		content = {
+			414221
+		},
+		show_content = {
 			414221
 		}
 	},
@@ -2814,6 +3214,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			414311
+		},
+		show_content = {
+			414311
 		}
 	},
 	[41432] = {
@@ -2828,6 +3231,9 @@ pg.base.child2_benefit_list = {
 		id = 41432,
 		item_icon = "buff_colours_1",
 		content = {
+			414321
+		},
+		show_content = {
 			414321
 		}
 	},
@@ -2848,6 +3254,13 @@ pg.base.child2_benefit_list = {
 			414413,
 			414414,
 			414415
+		},
+		show_content = {
+			414411,
+			414412,
+			414413,
+			414414,
+			414415
 		}
 	},
 	[41442] = {
@@ -2862,6 +3275,9 @@ pg.base.child2_benefit_list = {
 		id = 41442,
 		item_icon = "buff_colours_1",
 		content = {
+			414421
+		},
+		show_content = {
 			414421
 		}
 	},
@@ -2878,6 +3294,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			414511
+		},
+		show_content = {
+			414511
 		}
 	},
 	[41452] = {
@@ -2892,6 +3311,9 @@ pg.base.child2_benefit_list = {
 		id = 41452,
 		item_icon = "buff_colours_1",
 		content = {
+			414521
+		},
+		show_content = {
 			414521
 		}
 	},
@@ -2908,6 +3330,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			414611
+		},
+		show_content = {
+			414611
 		}
 	},
 	[41462] = {
@@ -2922,6 +3347,9 @@ pg.base.child2_benefit_list = {
 		id = 41462,
 		item_icon = "benefit_2_xinqing_3",
 		content = {
+			414621
+		},
+		show_content = {
 			414621
 		}
 	},
@@ -2938,6 +3366,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			414631
+		},
+		show_content = {
+			414631
 		}
 	},
 	[41464] = {
@@ -2952,6 +3383,9 @@ pg.base.child2_benefit_list = {
 		id = 41464,
 		item_icon = "buff_colours_1",
 		content = {
+			414641
+		},
+		show_content = {
 			414641
 		}
 	},
@@ -2968,6 +3402,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			414651
+		},
+		show_content = {
+			414651
 		}
 	},
 	[41466] = {
@@ -2982,6 +3419,9 @@ pg.base.child2_benefit_list = {
 		id = 41466,
 		item_icon = "buff_colours_1",
 		content = {
+			414661
+		},
+		show_content = {
 			414661
 		}
 	},
@@ -2998,6 +3438,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_5",
 		content = {
 			414671
+		},
+		show_content = {
+			414671
 		}
 	},
 	[41468] = {
@@ -3012,6 +3455,9 @@ pg.base.child2_benefit_list = {
 		id = 41468,
 		item_icon = "benefit_2_zhishi_5",
 		content = {
+			414681
+		},
+		show_content = {
 			414681
 		}
 	},
@@ -3028,6 +3474,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_5",
 		content = {
 			414691
+		},
+		show_content = {
+			414691
 		}
 	},
 	[41470] = {
@@ -3042,6 +3491,9 @@ pg.base.child2_benefit_list = {
 		id = 41470,
 		item_icon = "benefit_2_ganzhi_5",
 		content = {
+			414701
+		},
+		show_content = {
 			414701
 		}
 	},
@@ -3058,6 +3510,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_5",
 		content = {
 			414711
+		},
+		show_content = {
+			414711
 		}
 	},
 	[41472] = {
@@ -3072,6 +3527,9 @@ pg.base.child2_benefit_list = {
 		id = 41472,
 		item_icon = "benefit_2_zhishi_5",
 		content = {
+			414721
+		},
+		show_content = {
 			414721
 		}
 	},
@@ -3088,6 +3546,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_5",
 		content = {
 			414731
+		},
+		show_content = {
+			414731
 		}
 	},
 	[41474] = {
@@ -3103,6 +3564,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_ganzhi_5",
 		content = {
 			414741
+		},
+		show_content = {
+			414741
 		}
 	},
 	[42011] = {
@@ -3116,7 +3580,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 42011,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[42021] = {
 		rare = 1,
@@ -3130,6 +3595,9 @@ pg.base.child2_benefit_list = {
 		id = 42021,
 		item_icon = "buff_colours_1",
 		content = {
+			420211
+		},
+		show_content = {
 			420211
 		}
 	},
@@ -3146,6 +3614,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			420221
+		},
+		show_content = {
+			420221
 		}
 	},
 	[42023] = {
@@ -3160,6 +3631,9 @@ pg.base.child2_benefit_list = {
 		id = 42023,
 		item_icon = "buff_colours_1",
 		content = {
+			420231
+		},
+		show_content = {
 			420231
 		}
 	},
@@ -3176,6 +3650,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			420241
+		},
+		show_content = {
+			420241
 		}
 	},
 	[42031] = {
@@ -3189,7 +3666,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 42031,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[42041] = {
 		rare = 1,
@@ -3202,7 +3680,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 42041,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[42051] = {
 		rare = 1,
@@ -3215,7 +3694,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 42051,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[42061] = {
 		rare = 1,
@@ -3229,6 +3709,9 @@ pg.base.child2_benefit_list = {
 		id = 42061,
 		item_icon = "buff_colours_1",
 		content = {
+			420611
+		},
+		show_content = {
 			420611
 		}
 	},
@@ -3245,6 +3728,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			420621
+		},
+		show_content = {
+			420621
 		}
 	},
 	[42063] = {
@@ -3259,6 +3745,9 @@ pg.base.child2_benefit_list = {
 		id = 42063,
 		item_icon = "buff_colours_1",
 		content = {
+			420631
+		},
+		show_content = {
 			420631
 		}
 	},
@@ -3275,6 +3764,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			420641
+		},
+		show_content = {
+			420641
 		}
 	},
 	[42071] = {
@@ -3289,6 +3781,9 @@ pg.base.child2_benefit_list = {
 		id = 42071,
 		item_icon = "buff_colours_1",
 		content = {
+			420711
+		},
+		show_content = {
 			420711
 		}
 	},
@@ -3305,6 +3800,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			420721
+		},
+		show_content = {
+			420721
 		}
 	},
 	[42073] = {
@@ -3319,6 +3817,9 @@ pg.base.child2_benefit_list = {
 		id = 42073,
 		item_icon = "buff_colours_1",
 		content = {
+			420731
+		},
+		show_content = {
 			420731
 		}
 	},
@@ -3335,6 +3836,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			420741
+		},
+		show_content = {
+			420741
 		}
 	},
 	[42081] = {
@@ -3349,6 +3853,9 @@ pg.base.child2_benefit_list = {
 		id = 42081,
 		item_icon = "buff_colours_1",
 		content = {
+			420811
+		},
+		show_content = {
 			420811
 		}
 	},
@@ -3365,6 +3872,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			420821
+		},
+		show_content = {
+			420821
 		}
 	},
 	[42091] = {
@@ -3379,6 +3889,9 @@ pg.base.child2_benefit_list = {
 		id = 42091,
 		item_icon = "buff_colours_1",
 		content = {
+			420911
+		},
+		show_content = {
 			420911
 		}
 	},
@@ -3395,6 +3908,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			420921
+		},
+		show_content = {
+			420921
 		}
 	},
 	[42093] = {
@@ -3409,6 +3925,9 @@ pg.base.child2_benefit_list = {
 		id = 42093,
 		item_icon = "buff_colours_1",
 		content = {
+			420931
+		},
+		show_content = {
 			420931
 		}
 	},
@@ -3425,6 +3944,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			421011
+		},
+		show_content = {
+			421011
 		}
 	},
 	[42102] = {
@@ -3439,6 +3961,9 @@ pg.base.child2_benefit_list = {
 		id = 42102,
 		item_icon = "buff_colours_1",
 		content = {
+			421021
+		},
+		show_content = {
 			421021
 		}
 	},
@@ -3455,6 +3980,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			421111
+		},
+		show_content = {
+			421111
 		}
 	},
 	[42112] = {
@@ -3469,6 +3997,9 @@ pg.base.child2_benefit_list = {
 		id = 42112,
 		item_icon = "buff_colours_1",
 		content = {
+			421121
+		},
+		show_content = {
 			421121
 		}
 	},
@@ -3485,6 +4016,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			421131
+		},
+		show_content = {
+			421131
 		}
 	},
 	[42114] = {
@@ -3500,6 +4034,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			421141
+		},
+		show_content = {
+			421141
 		}
 	},
 	[42115] = {
@@ -3513,7 +4050,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 42115,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[42121] = {
 		rare = 1,
@@ -3527,6 +4065,9 @@ pg.base.child2_benefit_list = {
 		id = 42121,
 		item_icon = "buff_colours_1",
 		content = {
+			421211
+		},
+		show_content = {
 			421211
 		}
 	},
@@ -3543,6 +4084,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			421221
+		},
+		show_content = {
+			421221
 		}
 	},
 	[42131] = {
@@ -3557,6 +4101,9 @@ pg.base.child2_benefit_list = {
 		id = 42131,
 		item_icon = "buff_colours_1",
 		content = {
+			421311
+		},
+		show_content = {
 			421311
 		}
 	},
@@ -3573,6 +4120,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			421321
+		},
+		show_content = {
+			421321
 		}
 	},
 	[42133] = {
@@ -3587,6 +4137,9 @@ pg.base.child2_benefit_list = {
 		id = 42133,
 		item_icon = "buff_colours_1",
 		content = {
+			421331
+		},
+		show_content = {
 			421331
 		}
 	},
@@ -3603,6 +4156,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			421341
+		},
+		show_content = {
+			421341
 		}
 	},
 	[42135] = {
@@ -3616,7 +4172,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 42135,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[42141] = {
 		rare = 1,
@@ -3630,6 +4187,9 @@ pg.base.child2_benefit_list = {
 		id = 42141,
 		item_icon = "buff_colours_1",
 		content = {
+			421411
+		},
+		show_content = {
 			421411
 		}
 	},
@@ -3646,6 +4206,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			421421
+		},
+		show_content = {
+			421421
 		}
 	},
 	[42151] = {
@@ -3660,6 +4223,9 @@ pg.base.child2_benefit_list = {
 		id = 42151,
 		item_icon = "buff_colours_1",
 		content = {
+			421511
+		},
+		show_content = {
 			421511
 		}
 	},
@@ -3676,6 +4242,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_1",
 		content = {
 			421611
+		},
+		show_content = {
+			421611
 		}
 	},
 	[42162] = {
@@ -3690,6 +4259,9 @@ pg.base.child2_benefit_list = {
 		id = 42162,
 		item_icon = "buff_colours_1",
 		content = {
+			421621
+		},
+		show_content = {
 			421621
 		}
 	},
@@ -3706,6 +4278,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_1",
 		content = {
 			421711
+		},
+		show_content = {
+			421711
 		}
 	},
 	[42172] = {
@@ -3720,6 +4295,9 @@ pg.base.child2_benefit_list = {
 		id = 42172,
 		item_icon = "buff_colours_1",
 		content = {
+			421721
+		},
+		show_content = {
 			421721
 		}
 	},
@@ -3736,6 +4314,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tinengzhishi_1",
 		content = {
 			421811
+		},
+		show_content = {
+			421811
 		}
 	},
 	[42182] = {
@@ -3750,6 +4331,9 @@ pg.base.child2_benefit_list = {
 		id = 42182,
 		item_icon = "buff_colours_1",
 		content = {
+			421821
+		},
+		show_content = {
 			421821
 		}
 	},
@@ -3766,6 +4350,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_1",
 		content = {
 			421911
+		},
+		show_content = {
+			421911
 		}
 	},
 	[42192] = {
@@ -3780,6 +4367,9 @@ pg.base.child2_benefit_list = {
 		id = 42192,
 		item_icon = "buff_colours_1",
 		content = {
+			421921
+		},
+		show_content = {
 			421921
 		}
 	},
@@ -3796,6 +4386,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_3",
 		content = {
 			422011
+		},
+		show_content = {
+			422011
 		}
 	},
 	[42202] = {
@@ -3810,6 +4403,9 @@ pg.base.child2_benefit_list = {
 		id = 42202,
 		item_icon = "benefit_2_ganzhi_3",
 		content = {
+			422021
+		},
+		show_content = {
 			422021
 		}
 	},
@@ -3826,6 +4422,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_3",
 		content = {
 			422031
+		},
+		show_content = {
+			422031
 		}
 	},
 	[42204] = {
@@ -3840,6 +4439,9 @@ pg.base.child2_benefit_list = {
 		id = 42204,
 		item_icon = "benefit_2_shijian_3",
 		content = {
+			422041
+		},
+		show_content = {
 			422041
 		}
 	},
@@ -3856,6 +4458,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_chaopin",
 		content = {
 			422111
+		},
+		show_content = {
+			422111
 		}
 	},
 	[42212] = {
@@ -3870,6 +4475,9 @@ pg.base.child2_benefit_list = {
 		id = 42212,
 		item_icon = "buff_colours_1",
 		content = {
+			422121
+		},
+		show_content = {
 			422121
 		}
 	},
@@ -3886,6 +4494,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			422211
+		},
+		show_content = {
+			422211
 		}
 	},
 	[42222] = {
@@ -3900,6 +4511,9 @@ pg.base.child2_benefit_list = {
 		id = 42222,
 		item_icon = "buff_colours_1",
 		content = {
+			422221
+		},
+		show_content = {
 			422221
 		}
 	},
@@ -3916,6 +4530,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_2",
 		content = {
 			422311
+		},
+		show_content = {
+			422311
 		}
 	},
 	[42232] = {
@@ -3930,6 +4547,9 @@ pg.base.child2_benefit_list = {
 		id = 42232,
 		item_icon = "benefit_2_tineng_2",
 		content = {
+			422321
+		},
+		show_content = {
 			422321
 		}
 	},
@@ -3946,6 +4566,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_1",
 		content = {
 			422331
+		},
+		show_content = {
+			422331
 		}
 	},
 	[42234] = {
@@ -3960,6 +4583,9 @@ pg.base.child2_benefit_list = {
 		id = 42234,
 		item_icon = "buff_colours_1",
 		content = {
+			422341
+		},
+		show_content = {
 			422341
 		}
 	},
@@ -3976,6 +4602,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_2",
 		content = {
 			422411
+		},
+		show_content = {
+			422411
 		}
 	},
 	[42242] = {
@@ -3990,6 +4619,9 @@ pg.base.child2_benefit_list = {
 		id = 42242,
 		item_icon = "benefit_2_zhishi_2",
 		content = {
+			422421
+		},
+		show_content = {
 			422421
 		}
 	},
@@ -4006,6 +4638,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_1",
 		content = {
 			422431
+		},
+		show_content = {
+			422431
 		}
 	},
 	[42244] = {
@@ -4020,6 +4655,9 @@ pg.base.child2_benefit_list = {
 		id = 42244,
 		item_icon = "buff_colours_1",
 		content = {
+			422441
+		},
+		show_content = {
 			422441
 		}
 	},
@@ -4036,6 +4674,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_2",
 		content = {
 			422511
+		},
+		show_content = {
+			422511
 		}
 	},
 	[42252] = {
@@ -4050,6 +4691,9 @@ pg.base.child2_benefit_list = {
 		id = 42252,
 		item_icon = "benefit_2_shijian_2",
 		content = {
+			422521
+		},
+		show_content = {
 			422521
 		}
 	},
@@ -4066,6 +4710,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_1",
 		content = {
 			422531
+		},
+		show_content = {
+			422531
 		}
 	},
 	[42254] = {
@@ -4080,6 +4727,9 @@ pg.base.child2_benefit_list = {
 		id = 42254,
 		item_icon = "buff_colours_1",
 		content = {
+			422541
+		},
+		show_content = {
 			422541
 		}
 	},
@@ -4096,6 +4746,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_ganzhi_2",
 		content = {
 			422611
+		},
+		show_content = {
+			422611
 		}
 	},
 	[42262] = {
@@ -4110,6 +4763,9 @@ pg.base.child2_benefit_list = {
 		id = 42262,
 		item_icon = "benefit_2_ganzhi_2",
 		content = {
+			422621
+		},
+		show_content = {
 			422621
 		}
 	},
@@ -4126,6 +4782,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_ganzhi_1",
 		content = {
 			422631
+		},
+		show_content = {
+			422631
 		}
 	},
 	[42264] = {
@@ -4140,6 +4799,9 @@ pg.base.child2_benefit_list = {
 		id = 42264,
 		item_icon = "buff_colours_1",
 		content = {
+			422641
+		},
+		show_content = {
 			422641
 		}
 	},
@@ -4156,6 +4818,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			422711
+		},
+		show_content = {
+			422711
 		}
 	},
 	[42272] = {
@@ -4170,6 +4835,9 @@ pg.base.child2_benefit_list = {
 		id = 42272,
 		item_icon = "buff_colours_1",
 		content = {
+			422721
+		},
+		show_content = {
 			422721
 		}
 	},
@@ -4186,6 +4854,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
 			422811
+		},
+		show_content = {
+			422811
 		}
 	},
 	[42282] = {
@@ -4200,6 +4871,9 @@ pg.base.child2_benefit_list = {
 		id = 42282,
 		item_icon = "buff_colours_1",
 		content = {
+			422821
+		},
+		show_content = {
 			422821
 		}
 	},
@@ -4216,6 +4890,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_jinqian_1",
 		content = {
 			422911
+		},
+		show_content = {
+			422911
 		}
 	},
 	[42292] = {
@@ -4230,6 +4907,9 @@ pg.base.child2_benefit_list = {
 		id = 42292,
 		item_icon = "benefit_2_jinqian_1",
 		content = {
+			422921
+		},
+		show_content = {
 			422921
 		}
 	},
@@ -4246,6 +4926,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			422931
+		},
+		show_content = {
+			422931
 		}
 	},
 	[42301] = {
@@ -4260,6 +4943,9 @@ pg.base.child2_benefit_list = {
 		id = 42301,
 		item_icon = "benefit_2_minruiganguan",
 		content = {
+			423011
+		},
+		show_content = {
 			423011
 		}
 	},
@@ -4276,6 +4962,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			423021
+		},
+		show_content = {
+			423021
 		}
 	},
 	[42311] = {
@@ -4290,6 +4979,9 @@ pg.base.child2_benefit_list = {
 		id = 42311,
 		item_icon = "benefit_2_chengmingxinjing",
 		content = {
+			423111
+		},
+		show_content = {
 			423111
 		}
 	},
@@ -4306,6 +4998,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			423121
+		},
+		show_content = {
+			423121
 		}
 	},
 	[42321] = {
@@ -4320,6 +5015,9 @@ pg.base.child2_benefit_list = {
 		id = 42321,
 		item_icon = "benefit_2_xinqing_1",
 		content = {
+			423211
+		},
+		show_content = {
 			423211
 		}
 	},
@@ -4336,6 +5034,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_xinqing_1",
 		content = {
 			423221
+		},
+		show_content = {
+			423221
 		}
 	},
 	[42323] = {
@@ -4350,6 +5051,9 @@ pg.base.child2_benefit_list = {
 		id = 42323,
 		item_icon = "buff_colours_1",
 		content = {
+			423231
+		},
+		show_content = {
 			423231
 		}
 	},
@@ -4366,6 +5070,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			423311
+		},
+		show_content = {
+			423311
 		}
 	},
 	[42332] = {
@@ -4380,6 +5087,9 @@ pg.base.child2_benefit_list = {
 		id = 42332,
 		item_icon = "buff_colours_1",
 		content = {
+			423321
+		},
+		show_content = {
 			423321
 		}
 	},
@@ -4396,6 +5106,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			423411
+		},
+		show_content = {
+			423411
 		}
 	},
 	[42342] = {
@@ -4410,6 +5123,9 @@ pg.base.child2_benefit_list = {
 		id = 42342,
 		item_icon = "buff_colours_1",
 		content = {
+			423421
+		},
+		show_content = {
 			423421
 		}
 	},
@@ -4426,6 +5142,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_xinqing_1",
 		content = {
 			423511
+		},
+		show_content = {
+			423511
 		}
 	},
 	[42361] = {
@@ -4440,6 +5159,9 @@ pg.base.child2_benefit_list = {
 		id = 42361,
 		item_icon = "buff_colours_1",
 		content = {
+			423611
+		},
+		show_content = {
 			423611
 		}
 	},
@@ -4456,6 +5178,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			423621
+		},
+		show_content = {
+			423621
 		}
 	},
 	[42363] = {
@@ -4470,6 +5195,9 @@ pg.base.child2_benefit_list = {
 		id = 42363,
 		item_icon = "buff_colours_1",
 		content = {
+			423631
+		},
+		show_content = {
 			423631
 		}
 	},
@@ -4486,6 +5214,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			423641
+		},
+		show_content = {
+			423641
 		}
 	},
 	[42365] = {
@@ -4500,6 +5231,9 @@ pg.base.child2_benefit_list = {
 		id = 42365,
 		item_icon = "benefit_2_mijingganzhi",
 		content = {
+			423651
+		},
+		show_content = {
 			423651
 		}
 	},
@@ -4516,6 +5250,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			423661
+		},
+		show_content = {
+			423661
 		}
 	},
 	[42371] = {
@@ -4530,6 +5267,9 @@ pg.base.child2_benefit_list = {
 		id = 42371,
 		item_icon = "benefit_2_jieneng",
 		content = {
+			423711
+		},
+		show_content = {
 			423711
 		}
 	},
@@ -4546,6 +5286,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			423721
+		},
+		show_content = {
+			423721
 		}
 	},
 	[42381] = {
@@ -4560,6 +5303,9 @@ pg.base.child2_benefit_list = {
 		id = 42381,
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
+			423811
+		},
+		show_content = {
 			423811
 		}
 	},
@@ -4576,6 +5322,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tizhiqianghua",
 		content = {
 			423821
+		},
+		show_content = {
+			423821
 		}
 	},
 	[42383] = {
@@ -4590,6 +5339,9 @@ pg.base.child2_benefit_list = {
 		id = 42383,
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
+			423831
+		},
+		show_content = {
 			423831
 		}
 	},
@@ -4606,6 +5358,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tizhiqianghua",
 		content = {
 			423841
+		},
+		show_content = {
+			423841
 		}
 	},
 	[42385] = {
@@ -4620,6 +5375,9 @@ pg.base.child2_benefit_list = {
 		id = 42385,
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
+			423851
+		},
+		show_content = {
 			423851
 		}
 	},
@@ -4636,6 +5394,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tizhiqianghua",
 		content = {
 			423861
+		},
+		show_content = {
+			423861
 		}
 	},
 	[42387] = {
@@ -4650,6 +5411,9 @@ pg.base.child2_benefit_list = {
 		id = 42387,
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
+			423871
+		},
+		show_content = {
 			423871
 		}
 	},
@@ -4666,6 +5430,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tizhiqianghua",
 		content = {
 			423881
+		},
+		show_content = {
+			423881
 		}
 	},
 	[42389] = {
@@ -4680,6 +5447,9 @@ pg.base.child2_benefit_list = {
 		id = 42389,
 		item_icon = "benefit_2_all_1",
 		content = {
+			423891
+		},
+		show_content = {
 			423891
 		}
 	},
@@ -4696,6 +5466,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			423911
+		},
+		show_content = {
+			423911
 		}
 	},
 	[42392] = {
@@ -4710,6 +5483,9 @@ pg.base.child2_benefit_list = {
 		id = 42392,
 		item_icon = "buff_colours_1",
 		content = {
+			423921
+		},
+		show_content = {
 			423921
 		}
 	},
@@ -4726,6 +5502,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			424011
+		},
+		show_content = {
+			424011
 		}
 	},
 	[42402] = {
@@ -4740,6 +5519,9 @@ pg.base.child2_benefit_list = {
 		id = 42402,
 		item_icon = "buff_colours_1",
 		content = {
+			424021
+		},
+		show_content = {
 			424021
 		}
 	},
@@ -4760,6 +5542,13 @@ pg.base.child2_benefit_list = {
 			424113,
 			424114,
 			424115
+		},
+		show_content = {
+			424111,
+			424112,
+			424113,
+			424114,
+			424115
 		}
 	},
 	[42412] = {
@@ -4774,6 +5563,9 @@ pg.base.child2_benefit_list = {
 		id = 42412,
 		item_icon = "buff_colours_1",
 		content = {
+			424121
+		},
+		show_content = {
 			424121
 		}
 	},
@@ -4790,6 +5582,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			424211
+		},
+		show_content = {
+			424211
 		}
 	},
 	[42422] = {
@@ -4804,6 +5599,9 @@ pg.base.child2_benefit_list = {
 		id = 42422,
 		item_icon = "buff_colours_1",
 		content = {
+			424221
+		},
+		show_content = {
 			424221
 		}
 	},
@@ -4820,6 +5618,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			424311
+		},
+		show_content = {
+			424311
 		}
 	},
 	[42432] = {
@@ -4834,6 +5635,9 @@ pg.base.child2_benefit_list = {
 		id = 42432,
 		item_icon = "buff_colours_1",
 		content = {
+			424321
+		},
+		show_content = {
 			424321
 		}
 	},
@@ -4854,6 +5658,13 @@ pg.base.child2_benefit_list = {
 			424413,
 			424414,
 			424415
+		},
+		show_content = {
+			424411,
+			424412,
+			424413,
+			424414,
+			424415
 		}
 	},
 	[42442] = {
@@ -4868,6 +5679,9 @@ pg.base.child2_benefit_list = {
 		id = 42442,
 		item_icon = "buff_colours_1",
 		content = {
+			424421
+		},
+		show_content = {
 			424421
 		}
 	},
@@ -4884,6 +5698,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			424511
+		},
+		show_content = {
+			424511
 		}
 	},
 	[42452] = {
@@ -4898,6 +5715,9 @@ pg.base.child2_benefit_list = {
 		id = 42452,
 		item_icon = "buff_colours_1",
 		content = {
+			424521
+		},
+		show_content = {
 			424521
 		}
 	},
@@ -4914,6 +5734,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			424611
+		},
+		show_content = {
+			424611
 		}
 	},
 	[42462] = {
@@ -4928,6 +5751,9 @@ pg.base.child2_benefit_list = {
 		id = 42462,
 		item_icon = "benefit_2_xinqing_3",
 		content = {
+			424621
+		},
+		show_content = {
 			424621
 		}
 	},
@@ -4944,6 +5770,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			424631
+		},
+		show_content = {
+			424631
 		}
 	},
 	[42464] = {
@@ -4958,6 +5787,9 @@ pg.base.child2_benefit_list = {
 		id = 42464,
 		item_icon = "buff_colours_1",
 		content = {
+			424641
+		},
+		show_content = {
 			424641
 		}
 	},
@@ -4974,6 +5806,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			424651
+		},
+		show_content = {
+			424651
 		}
 	},
 	[42466] = {
@@ -4988,6 +5823,9 @@ pg.base.child2_benefit_list = {
 		id = 42466,
 		item_icon = "buff_colours_1",
 		content = {
+			424661
+		},
+		show_content = {
 			424661
 		}
 	},
@@ -5004,6 +5842,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_5",
 		content = {
 			424671
+		},
+		show_content = {
+			424671
 		}
 	},
 	[42468] = {
@@ -5018,6 +5859,9 @@ pg.base.child2_benefit_list = {
 		id = 42468,
 		item_icon = "benefit_2_zhishi_5",
 		content = {
+			424681
+		},
+		show_content = {
 			424681
 		}
 	},
@@ -5034,6 +5878,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_5",
 		content = {
 			424691
+		},
+		show_content = {
+			424691
 		}
 	},
 	[42470] = {
@@ -5048,6 +5895,9 @@ pg.base.child2_benefit_list = {
 		id = 42470,
 		item_icon = "benefit_2_ganzhi_5",
 		content = {
+			424701
+		},
+		show_content = {
 			424701
 		}
 	},
@@ -5064,6 +5914,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_5",
 		content = {
 			424711
+		},
+		show_content = {
+			424711
 		}
 	},
 	[42472] = {
@@ -5078,6 +5931,9 @@ pg.base.child2_benefit_list = {
 		id = 42472,
 		item_icon = "benefit_2_zhishi_5",
 		content = {
+			424721
+		},
+		show_content = {
 			424721
 		}
 	},
@@ -5094,6 +5950,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_5",
 		content = {
 			424731
+		},
+		show_content = {
+			424731
 		}
 	},
 	[42474] = {
@@ -5109,6 +5968,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_ganzhi_5",
 		content = {
 			424741
+		},
+		show_content = {
+			424741
 		}
 	},
 	[43011] = {
@@ -5122,7 +5984,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 43011,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[43021] = {
 		rare = 1,
@@ -5136,6 +5999,9 @@ pg.base.child2_benefit_list = {
 		id = 43021,
 		item_icon = "buff_colours_1",
 		content = {
+			430211
+		},
+		show_content = {
 			430211
 		}
 	},
@@ -5152,6 +6018,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			430221
+		},
+		show_content = {
+			430221
 		}
 	},
 	[43023] = {
@@ -5166,6 +6035,9 @@ pg.base.child2_benefit_list = {
 		id = 43023,
 		item_icon = "buff_colours_1",
 		content = {
+			430231
+		},
+		show_content = {
 			430231
 		}
 	},
@@ -5182,6 +6054,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			430241
+		},
+		show_content = {
+			430241
 		}
 	},
 	[43031] = {
@@ -5195,7 +6070,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 43031,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[43041] = {
 		rare = 1,
@@ -5208,7 +6084,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 43041,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[43051] = {
 		rare = 1,
@@ -5221,7 +6098,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 43051,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[43061] = {
 		rare = 1,
@@ -5235,6 +6113,9 @@ pg.base.child2_benefit_list = {
 		id = 43061,
 		item_icon = "buff_colours_1",
 		content = {
+			430611
+		},
+		show_content = {
 			430611
 		}
 	},
@@ -5251,6 +6132,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			430621
+		},
+		show_content = {
+			430621
 		}
 	},
 	[43063] = {
@@ -5265,6 +6149,9 @@ pg.base.child2_benefit_list = {
 		id = 43063,
 		item_icon = "buff_colours_1",
 		content = {
+			430631
+		},
+		show_content = {
 			430631
 		}
 	},
@@ -5281,6 +6168,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			430641
+		},
+		show_content = {
+			430641
 		}
 	},
 	[43071] = {
@@ -5295,6 +6185,9 @@ pg.base.child2_benefit_list = {
 		id = 43071,
 		item_icon = "buff_colours_1",
 		content = {
+			430711
+		},
+		show_content = {
 			430711
 		}
 	},
@@ -5311,6 +6204,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			430721
+		},
+		show_content = {
+			430721
 		}
 	},
 	[43073] = {
@@ -5325,6 +6221,9 @@ pg.base.child2_benefit_list = {
 		id = 43073,
 		item_icon = "buff_colours_1",
 		content = {
+			430731
+		},
+		show_content = {
 			430731
 		}
 	},
@@ -5341,6 +6240,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			430741
+		},
+		show_content = {
+			430741
 		}
 	},
 	[43081] = {
@@ -5355,6 +6257,9 @@ pg.base.child2_benefit_list = {
 		id = 43081,
 		item_icon = "buff_colours_1",
 		content = {
+			430811
+		},
+		show_content = {
 			430811
 		}
 	},
@@ -5371,6 +6276,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			430821
+		},
+		show_content = {
+			430821
 		}
 	},
 	[43091] = {
@@ -5385,6 +6293,9 @@ pg.base.child2_benefit_list = {
 		id = 43091,
 		item_icon = "buff_colours_1",
 		content = {
+			430911
+		},
+		show_content = {
 			430911
 		}
 	},
@@ -5401,6 +6312,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			430921
+		},
+		show_content = {
+			430921
 		}
 	},
 	[43093] = {
@@ -5415,6 +6329,9 @@ pg.base.child2_benefit_list = {
 		id = 43093,
 		item_icon = "buff_colours_1",
 		content = {
+			430931
+		},
+		show_content = {
 			430931
 		}
 	},
@@ -5431,6 +6348,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			431011
+		},
+		show_content = {
+			431011
 		}
 	},
 	[43102] = {
@@ -5445,6 +6365,9 @@ pg.base.child2_benefit_list = {
 		id = 43102,
 		item_icon = "buff_colours_1",
 		content = {
+			431021
+		},
+		show_content = {
 			431021
 		}
 	},
@@ -5461,6 +6384,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			431111
+		},
+		show_content = {
+			431111
 		}
 	},
 	[43112] = {
@@ -5475,6 +6401,9 @@ pg.base.child2_benefit_list = {
 		id = 43112,
 		item_icon = "buff_colours_1",
 		content = {
+			431121
+		},
+		show_content = {
 			431121
 		}
 	},
@@ -5491,6 +6420,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			431131
+		},
+		show_content = {
+			431131
 		}
 	},
 	[43114] = {
@@ -5506,6 +6438,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			431141
+		},
+		show_content = {
+			431141
 		}
 	},
 	[43115] = {
@@ -5519,7 +6454,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 43115,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[43121] = {
 		rare = 1,
@@ -5533,6 +6469,9 @@ pg.base.child2_benefit_list = {
 		id = 43121,
 		item_icon = "buff_colours_1",
 		content = {
+			431211
+		},
+		show_content = {
 			431211
 		}
 	},
@@ -5549,6 +6488,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			431221
+		},
+		show_content = {
+			431221
 		}
 	},
 	[43131] = {
@@ -5563,6 +6505,9 @@ pg.base.child2_benefit_list = {
 		id = 43131,
 		item_icon = "buff_colours_1",
 		content = {
+			431311
+		},
+		show_content = {
 			431311
 		}
 	},
@@ -5579,6 +6524,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			431321
+		},
+		show_content = {
+			431321
 		}
 	},
 	[43133] = {
@@ -5593,6 +6541,9 @@ pg.base.child2_benefit_list = {
 		id = 43133,
 		item_icon = "buff_colours_1",
 		content = {
+			431331
+		},
+		show_content = {
 			431331
 		}
 	},
@@ -5609,6 +6560,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			431341
+		},
+		show_content = {
+			431341
 		}
 	},
 	[43135] = {
@@ -5622,7 +6576,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 43135,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[43141] = {
 		rare = 1,
@@ -5636,6 +6591,9 @@ pg.base.child2_benefit_list = {
 		id = 43141,
 		item_icon = "buff_colours_1",
 		content = {
+			431411
+		},
+		show_content = {
 			431411
 		}
 	},
@@ -5652,6 +6610,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			431421
+		},
+		show_content = {
+			431421
 		}
 	},
 	[43151] = {
@@ -5666,6 +6627,9 @@ pg.base.child2_benefit_list = {
 		id = 43151,
 		item_icon = "buff_colours_1",
 		content = {
+			431511
+		},
+		show_content = {
 			431511
 		}
 	},
@@ -5682,6 +6646,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_1",
 		content = {
 			431611
+		},
+		show_content = {
+			431611
 		}
 	},
 	[43162] = {
@@ -5696,6 +6663,9 @@ pg.base.child2_benefit_list = {
 		id = 43162,
 		item_icon = "buff_colours_1",
 		content = {
+			431621
+		},
+		show_content = {
 			431621
 		}
 	},
@@ -5712,6 +6682,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_1",
 		content = {
 			431711
+		},
+		show_content = {
+			431711
 		}
 	},
 	[43172] = {
@@ -5726,6 +6699,9 @@ pg.base.child2_benefit_list = {
 		id = 43172,
 		item_icon = "buff_colours_1",
 		content = {
+			431721
+		},
+		show_content = {
 			431721
 		}
 	},
@@ -5742,6 +6718,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tinengzhishi_1",
 		content = {
 			431811
+		},
+		show_content = {
+			431811
 		}
 	},
 	[43182] = {
@@ -5756,6 +6735,9 @@ pg.base.child2_benefit_list = {
 		id = 43182,
 		item_icon = "buff_colours_1",
 		content = {
+			431821
+		},
+		show_content = {
 			431821
 		}
 	},
@@ -5772,6 +6754,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_1",
 		content = {
 			431911
+		},
+		show_content = {
+			431911
 		}
 	},
 	[43192] = {
@@ -5786,6 +6771,9 @@ pg.base.child2_benefit_list = {
 		id = 43192,
 		item_icon = "buff_colours_1",
 		content = {
+			431921
+		},
+		show_content = {
 			431921
 		}
 	},
@@ -5802,6 +6790,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_3",
 		content = {
 			432011
+		},
+		show_content = {
+			432011
 		}
 	},
 	[43202] = {
@@ -5816,6 +6807,9 @@ pg.base.child2_benefit_list = {
 		id = 43202,
 		item_icon = "benefit_2_ganzhi_3",
 		content = {
+			432021
+		},
+		show_content = {
 			432021
 		}
 	},
@@ -5832,6 +6826,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_3",
 		content = {
 			432031
+		},
+		show_content = {
+			432031
 		}
 	},
 	[43204] = {
@@ -5846,6 +6843,9 @@ pg.base.child2_benefit_list = {
 		id = 43204,
 		item_icon = "benefit_2_shijian_3",
 		content = {
+			432041
+		},
+		show_content = {
 			432041
 		}
 	},
@@ -5862,6 +6862,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_chaopin",
 		content = {
 			432111
+		},
+		show_content = {
+			432111
 		}
 	},
 	[43212] = {
@@ -5876,6 +6879,9 @@ pg.base.child2_benefit_list = {
 		id = 43212,
 		item_icon = "buff_colours_1",
 		content = {
+			432121
+		},
+		show_content = {
 			432121
 		}
 	},
@@ -5892,6 +6898,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			432211
+		},
+		show_content = {
+			432211
 		}
 	},
 	[43222] = {
@@ -5906,6 +6915,9 @@ pg.base.child2_benefit_list = {
 		id = 43222,
 		item_icon = "buff_colours_1",
 		content = {
+			432221
+		},
+		show_content = {
 			432221
 		}
 	},
@@ -5922,6 +6934,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_3",
 		content = {
 			432311
+		},
+		show_content = {
+			432311
 		}
 	},
 	[43232] = {
@@ -5936,6 +6951,9 @@ pg.base.child2_benefit_list = {
 		id = 43232,
 		item_icon = "benefit_2_tineng_2",
 		content = {
+			432321
+		},
+		show_content = {
 			432321
 		}
 	},
@@ -5952,6 +6970,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_1",
 		content = {
 			432331
+		},
+		show_content = {
+			432331
 		}
 	},
 	[43234] = {
@@ -5966,6 +6987,9 @@ pg.base.child2_benefit_list = {
 		id = 43234,
 		item_icon = "buff_colours_1",
 		content = {
+			432341
+		},
+		show_content = {
 			432341
 		}
 	},
@@ -5982,6 +7006,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_3",
 		content = {
 			432411
+		},
+		show_content = {
+			432411
 		}
 	},
 	[43242] = {
@@ -5996,6 +7023,9 @@ pg.base.child2_benefit_list = {
 		id = 43242,
 		item_icon = "benefit_2_zhishi_2",
 		content = {
+			432421
+		},
+		show_content = {
 			432421
 		}
 	},
@@ -6012,6 +7042,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_1",
 		content = {
 			432431
+		},
+		show_content = {
+			432431
 		}
 	},
 	[43244] = {
@@ -6026,6 +7059,9 @@ pg.base.child2_benefit_list = {
 		id = 43244,
 		item_icon = "buff_colours_1",
 		content = {
+			432441
+		},
+		show_content = {
 			432441
 		}
 	},
@@ -6042,6 +7078,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_3",
 		content = {
 			432511
+		},
+		show_content = {
+			432511
 		}
 	},
 	[43252] = {
@@ -6056,6 +7095,9 @@ pg.base.child2_benefit_list = {
 		id = 43252,
 		item_icon = "benefit_2_shijian_2",
 		content = {
+			432521
+		},
+		show_content = {
 			432521
 		}
 	},
@@ -6072,6 +7114,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_1",
 		content = {
 			432531
+		},
+		show_content = {
+			432531
 		}
 	},
 	[43254] = {
@@ -6086,6 +7131,9 @@ pg.base.child2_benefit_list = {
 		id = 43254,
 		item_icon = "buff_colours_1",
 		content = {
+			432541
+		},
+		show_content = {
 			432541
 		}
 	},
@@ -6102,6 +7150,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_ganzhi_3",
 		content = {
 			432611
+		},
+		show_content = {
+			432611
 		}
 	},
 	[43262] = {
@@ -6116,6 +7167,9 @@ pg.base.child2_benefit_list = {
 		id = 43262,
 		item_icon = "benefit_2_ganzhi_2",
 		content = {
+			432621
+		},
+		show_content = {
 			432621
 		}
 	},
@@ -6132,6 +7186,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_ganzhi_1",
 		content = {
 			432631
+		},
+		show_content = {
+			432631
 		}
 	},
 	[43264] = {
@@ -6146,6 +7203,9 @@ pg.base.child2_benefit_list = {
 		id = 43264,
 		item_icon = "buff_colours_1",
 		content = {
+			432641
+		},
+		show_content = {
 			432641
 		}
 	},
@@ -6162,6 +7222,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			432711
+		},
+		show_content = {
+			432711
 		}
 	},
 	[43272] = {
@@ -6176,6 +7239,9 @@ pg.base.child2_benefit_list = {
 		id = 43272,
 		item_icon = "buff_colours_1",
 		content = {
+			432721
+		},
+		show_content = {
 			432721
 		}
 	},
@@ -6192,6 +7258,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
 			432811
+		},
+		show_content = {
+			432811
 		}
 	},
 	[43282] = {
@@ -6206,6 +7275,9 @@ pg.base.child2_benefit_list = {
 		id = 43282,
 		item_icon = "buff_colours_1",
 		content = {
+			432821
+		},
+		show_content = {
 			432821
 		}
 	},
@@ -6222,6 +7294,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_jinqian_1",
 		content = {
 			432911
+		},
+		show_content = {
+			432911
 		}
 	},
 	[43292] = {
@@ -6236,6 +7311,9 @@ pg.base.child2_benefit_list = {
 		id = 43292,
 		item_icon = "benefit_2_jinqian_1",
 		content = {
+			432921
+		},
+		show_content = {
 			432921
 		}
 	},
@@ -6252,6 +7330,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			432931
+		},
+		show_content = {
+			432931
 		}
 	},
 	[43301] = {
@@ -6266,6 +7347,9 @@ pg.base.child2_benefit_list = {
 		id = 43301,
 		item_icon = "benefit_2_minruiganguan",
 		content = {
+			433011
+		},
+		show_content = {
 			433011
 		}
 	},
@@ -6282,6 +7366,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			433021
+		},
+		show_content = {
+			433021
 		}
 	},
 	[43311] = {
@@ -6296,6 +7383,9 @@ pg.base.child2_benefit_list = {
 		id = 43311,
 		item_icon = "benefit_2_chengmingxinjing",
 		content = {
+			433111
+		},
+		show_content = {
 			433111
 		}
 	},
@@ -6312,6 +7402,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			433121
+		},
+		show_content = {
+			433121
 		}
 	},
 	[43321] = {
@@ -6326,6 +7419,9 @@ pg.base.child2_benefit_list = {
 		id = 43321,
 		item_icon = "benefit_2_xinqing_1",
 		content = {
+			433211
+		},
+		show_content = {
 			433211
 		}
 	},
@@ -6342,6 +7438,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_xinqing_1",
 		content = {
 			433221
+		},
+		show_content = {
+			433221
 		}
 	},
 	[43323] = {
@@ -6356,6 +7455,9 @@ pg.base.child2_benefit_list = {
 		id = 43323,
 		item_icon = "buff_colours_1",
 		content = {
+			433231
+		},
+		show_content = {
 			433231
 		}
 	},
@@ -6372,6 +7474,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			433311
+		},
+		show_content = {
+			433311
 		}
 	},
 	[43332] = {
@@ -6386,6 +7491,9 @@ pg.base.child2_benefit_list = {
 		id = 43332,
 		item_icon = "buff_colours_1",
 		content = {
+			433321
+		},
+		show_content = {
 			433321
 		}
 	},
@@ -6402,6 +7510,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			433411
+		},
+		show_content = {
+			433411
 		}
 	},
 	[43342] = {
@@ -6416,6 +7527,9 @@ pg.base.child2_benefit_list = {
 		id = 43342,
 		item_icon = "buff_colours_1",
 		content = {
+			433421
+		},
+		show_content = {
 			433421
 		}
 	},
@@ -6432,6 +7546,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_xinqing_1",
 		content = {
 			433511
+		},
+		show_content = {
+			433511
 		}
 	},
 	[43361] = {
@@ -6446,6 +7563,9 @@ pg.base.child2_benefit_list = {
 		id = 43361,
 		item_icon = "buff_colours_1",
 		content = {
+			433611
+		},
+		show_content = {
 			433611
 		}
 	},
@@ -6462,6 +7582,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			433621
+		},
+		show_content = {
+			433621
 		}
 	},
 	[43363] = {
@@ -6476,6 +7599,9 @@ pg.base.child2_benefit_list = {
 		id = 43363,
 		item_icon = "buff_colours_1",
 		content = {
+			433631
+		},
+		show_content = {
 			433631
 		}
 	},
@@ -6492,6 +7618,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			433641
+		},
+		show_content = {
+			433641
 		}
 	},
 	[43365] = {
@@ -6506,6 +7635,9 @@ pg.base.child2_benefit_list = {
 		id = 43365,
 		item_icon = "benefit_2_mijingganzhi",
 		content = {
+			433651
+		},
+		show_content = {
 			433651
 		}
 	},
@@ -6522,6 +7654,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			433661
+		},
+		show_content = {
+			433661
 		}
 	},
 	[43371] = {
@@ -6536,6 +7671,9 @@ pg.base.child2_benefit_list = {
 		id = 43371,
 		item_icon = "benefit_2_jieneng",
 		content = {
+			433711
+		},
+		show_content = {
 			433711
 		}
 	},
@@ -6552,6 +7690,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			433721
+		},
+		show_content = {
+			433721
 		}
 	},
 	[43381] = {
@@ -6566,6 +7707,9 @@ pg.base.child2_benefit_list = {
 		id = 43381,
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
+			433811
+		},
+		show_content = {
 			433811
 		}
 	},
@@ -6582,6 +7726,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tizhiqianghua",
 		content = {
 			433821
+		},
+		show_content = {
+			433821
 		}
 	},
 	[43383] = {
@@ -6596,6 +7743,9 @@ pg.base.child2_benefit_list = {
 		id = 43383,
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
+			433831
+		},
+		show_content = {
 			433831
 		}
 	},
@@ -6612,6 +7762,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tizhiqianghua",
 		content = {
 			433841
+		},
+		show_content = {
+			433841
 		}
 	},
 	[43385] = {
@@ -6626,6 +7779,9 @@ pg.base.child2_benefit_list = {
 		id = 43385,
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
+			433851
+		},
+		show_content = {
 			433851
 		}
 	},
@@ -6642,6 +7798,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tizhiqianghua",
 		content = {
 			433861
+		},
+		show_content = {
+			433861
 		}
 	},
 	[43387] = {
@@ -6656,6 +7815,9 @@ pg.base.child2_benefit_list = {
 		id = 43387,
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
+			433871
+		},
+		show_content = {
 			433871
 		}
 	},
@@ -6672,6 +7834,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tizhiqianghua",
 		content = {
 			433881
+		},
+		show_content = {
+			433881
 		}
 	},
 	[43389] = {
@@ -6686,6 +7851,9 @@ pg.base.child2_benefit_list = {
 		id = 43389,
 		item_icon = "benefit_2_all_1",
 		content = {
+			433891
+		},
+		show_content = {
 			433891
 		}
 	},
@@ -6702,6 +7870,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			433911
+		},
+		show_content = {
+			433911
 		}
 	},
 	[43392] = {
@@ -6716,6 +7887,9 @@ pg.base.child2_benefit_list = {
 		id = 43392,
 		item_icon = "buff_colours_1",
 		content = {
+			433921
+		},
+		show_content = {
 			433921
 		}
 	},
@@ -6732,6 +7906,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			434011
+		},
+		show_content = {
+			434011
 		}
 	},
 	[43402] = {
@@ -6746,6 +7923,9 @@ pg.base.child2_benefit_list = {
 		id = 43402,
 		item_icon = "buff_colours_1",
 		content = {
+			434021
+		},
+		show_content = {
 			434021
 		}
 	},
@@ -6766,6 +7946,13 @@ pg.base.child2_benefit_list = {
 			434113,
 			434114,
 			434115
+		},
+		show_content = {
+			434111,
+			434112,
+			434113,
+			434114,
+			434115
 		}
 	},
 	[43412] = {
@@ -6780,6 +7967,9 @@ pg.base.child2_benefit_list = {
 		id = 43412,
 		item_icon = "buff_colours_1",
 		content = {
+			434121
+		},
+		show_content = {
 			434121
 		}
 	},
@@ -6796,6 +7986,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			434211
+		},
+		show_content = {
+			434211
 		}
 	},
 	[43422] = {
@@ -6810,6 +8003,9 @@ pg.base.child2_benefit_list = {
 		id = 43422,
 		item_icon = "buff_colours_1",
 		content = {
+			434221
+		},
+		show_content = {
 			434221
 		}
 	},
@@ -6826,6 +8022,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			434311
+		},
+		show_content = {
+			434311
 		}
 	},
 	[43432] = {
@@ -6840,6 +8039,9 @@ pg.base.child2_benefit_list = {
 		id = 43432,
 		item_icon = "buff_colours_1",
 		content = {
+			434321
+		},
+		show_content = {
 			434321
 		}
 	},
@@ -6860,6 +8062,13 @@ pg.base.child2_benefit_list = {
 			434413,
 			434414,
 			434415
+		},
+		show_content = {
+			434411,
+			434412,
+			434413,
+			434414,
+			434415
 		}
 	},
 	[43442] = {
@@ -6874,6 +8083,9 @@ pg.base.child2_benefit_list = {
 		id = 43442,
 		item_icon = "buff_colours_1",
 		content = {
+			434421
+		},
+		show_content = {
 			434421
 		}
 	},
@@ -6890,6 +8102,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			434511
+		},
+		show_content = {
+			434511
 		}
 	},
 	[43452] = {
@@ -6904,6 +8119,9 @@ pg.base.child2_benefit_list = {
 		id = 43452,
 		item_icon = "buff_colours_1",
 		content = {
+			434521
+		},
+		show_content = {
 			434521
 		}
 	},
@@ -6920,6 +8138,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			434611
+		},
+		show_content = {
+			434611
 		}
 	},
 	[43462] = {
@@ -6934,6 +8155,9 @@ pg.base.child2_benefit_list = {
 		id = 43462,
 		item_icon = "benefit_2_xinqing_3",
 		content = {
+			434621
+		},
+		show_content = {
 			434621
 		}
 	},
@@ -6950,6 +8174,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			434631
+		},
+		show_content = {
+			434631
 		}
 	},
 	[43464] = {
@@ -6964,6 +8191,9 @@ pg.base.child2_benefit_list = {
 		id = 43464,
 		item_icon = "buff_colours_1",
 		content = {
+			434641
+		},
+		show_content = {
 			434641
 		}
 	},
@@ -6980,6 +8210,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			434651
+		},
+		show_content = {
+			434651
 		}
 	},
 	[43466] = {
@@ -6994,6 +8227,9 @@ pg.base.child2_benefit_list = {
 		id = 43466,
 		item_icon = "buff_colours_1",
 		content = {
+			434661
+		},
+		show_content = {
 			434661
 		}
 	},
@@ -7010,6 +8246,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_5",
 		content = {
 			434671
+		},
+		show_content = {
+			434671
 		}
 	},
 	[43468] = {
@@ -7024,6 +8263,9 @@ pg.base.child2_benefit_list = {
 		id = 43468,
 		item_icon = "benefit_2_zhishi_5",
 		content = {
+			434681
+		},
+		show_content = {
 			434681
 		}
 	},
@@ -7040,6 +8282,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_5",
 		content = {
 			434691
+		},
+		show_content = {
+			434691
 		}
 	},
 	[43470] = {
@@ -7054,6 +8299,9 @@ pg.base.child2_benefit_list = {
 		id = 43470,
 		item_icon = "benefit_2_ganzhi_5",
 		content = {
+			434701
+		},
+		show_content = {
 			434701
 		}
 	},
@@ -7070,6 +8318,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_5",
 		content = {
 			434711
+		},
+		show_content = {
+			434711
 		}
 	},
 	[43472] = {
@@ -7084,6 +8335,9 @@ pg.base.child2_benefit_list = {
 		id = 43472,
 		item_icon = "benefit_2_zhishi_5",
 		content = {
+			434721
+		},
+		show_content = {
 			434721
 		}
 	},
@@ -7100,6 +8354,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_5",
 		content = {
 			434731
+		},
+		show_content = {
+			434731
 		}
 	},
 	[43474] = {
@@ -7115,6 +8372,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_ganzhi_5",
 		content = {
 			434741
+		},
+		show_content = {
+			434741
 		}
 	},
 	[44011] = {
@@ -7128,7 +8388,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 44011,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[44021] = {
 		rare = 1,
@@ -7142,6 +8403,9 @@ pg.base.child2_benefit_list = {
 		id = 44021,
 		item_icon = "buff_colours_1",
 		content = {
+			440211
+		},
+		show_content = {
 			440211
 		}
 	},
@@ -7158,6 +8422,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			440221
+		},
+		show_content = {
+			440221
 		}
 	},
 	[44023] = {
@@ -7172,6 +8439,9 @@ pg.base.child2_benefit_list = {
 		id = 44023,
 		item_icon = "buff_colours_1",
 		content = {
+			440231
+		},
+		show_content = {
 			440231
 		}
 	},
@@ -7188,6 +8458,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			440241
+		},
+		show_content = {
+			440241
 		}
 	},
 	[44031] = {
@@ -7201,7 +8474,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 44031,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[44041] = {
 		rare = 1,
@@ -7214,7 +8488,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 44041,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[44051] = {
 		rare = 1,
@@ -7227,7 +8502,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 44051,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[44061] = {
 		rare = 1,
@@ -7241,6 +8517,9 @@ pg.base.child2_benefit_list = {
 		id = 44061,
 		item_icon = "buff_colours_1",
 		content = {
+			440611
+		},
+		show_content = {
 			440611
 		}
 	},
@@ -7257,6 +8536,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			440621
+		},
+		show_content = {
+			440621
 		}
 	},
 	[44063] = {
@@ -7271,6 +8553,9 @@ pg.base.child2_benefit_list = {
 		id = 44063,
 		item_icon = "buff_colours_1",
 		content = {
+			440631
+		},
+		show_content = {
 			440631
 		}
 	},
@@ -7287,6 +8572,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			440641
+		},
+		show_content = {
+			440641
 		}
 	},
 	[44071] = {
@@ -7301,6 +8589,9 @@ pg.base.child2_benefit_list = {
 		id = 44071,
 		item_icon = "buff_colours_1",
 		content = {
+			440711
+		},
+		show_content = {
 			440711
 		}
 	},
@@ -7317,6 +8608,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			440721
+		},
+		show_content = {
+			440721
 		}
 	},
 	[44073] = {
@@ -7331,6 +8625,9 @@ pg.base.child2_benefit_list = {
 		id = 44073,
 		item_icon = "buff_colours_1",
 		content = {
+			440731
+		},
+		show_content = {
 			440731
 		}
 	},
@@ -7347,6 +8644,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			440741
+		},
+		show_content = {
+			440741
 		}
 	},
 	[44081] = {
@@ -7361,6 +8661,9 @@ pg.base.child2_benefit_list = {
 		id = 44081,
 		item_icon = "buff_colours_1",
 		content = {
+			440811
+		},
+		show_content = {
 			440811
 		}
 	},
@@ -7377,6 +8680,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			440821
+		},
+		show_content = {
+			440821
 		}
 	},
 	[44091] = {
@@ -7391,6 +8697,9 @@ pg.base.child2_benefit_list = {
 		id = 44091,
 		item_icon = "buff_colours_1",
 		content = {
+			440911
+		},
+		show_content = {
 			440911
 		}
 	},
@@ -7407,6 +8716,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			440921
+		},
+		show_content = {
+			440921
 		}
 	},
 	[44093] = {
@@ -7421,6 +8733,9 @@ pg.base.child2_benefit_list = {
 		id = 44093,
 		item_icon = "buff_colours_1",
 		content = {
+			440931
+		},
+		show_content = {
 			440931
 		}
 	},
@@ -7437,6 +8752,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			441011
+		},
+		show_content = {
+			441011
 		}
 	},
 	[44102] = {
@@ -7451,6 +8769,9 @@ pg.base.child2_benefit_list = {
 		id = 44102,
 		item_icon = "buff_colours_1",
 		content = {
+			441021
+		},
+		show_content = {
 			441021
 		}
 	},
@@ -7467,6 +8788,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			441111
+		},
+		show_content = {
+			441111
 		}
 	},
 	[44112] = {
@@ -7481,6 +8805,9 @@ pg.base.child2_benefit_list = {
 		id = 44112,
 		item_icon = "buff_colours_1",
 		content = {
+			441121
+		},
+		show_content = {
 			441121
 		}
 	},
@@ -7497,6 +8824,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			441131
+		},
+		show_content = {
+			441131
 		}
 	},
 	[44114] = {
@@ -7512,6 +8842,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			441141
+		},
+		show_content = {
+			441141
 		}
 	},
 	[44115] = {
@@ -7525,7 +8858,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 44115,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[44121] = {
 		rare = 1,
@@ -7539,6 +8873,9 @@ pg.base.child2_benefit_list = {
 		id = 44121,
 		item_icon = "buff_colours_1",
 		content = {
+			441211
+		},
+		show_content = {
 			441211
 		}
 	},
@@ -7555,6 +8892,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			441221
+		},
+		show_content = {
+			441221
 		}
 	},
 	[44131] = {
@@ -7569,6 +8909,9 @@ pg.base.child2_benefit_list = {
 		id = 44131,
 		item_icon = "buff_colours_1",
 		content = {
+			441311
+		},
+		show_content = {
 			441311
 		}
 	},
@@ -7585,6 +8928,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			441321
+		},
+		show_content = {
+			441321
 		}
 	},
 	[44133] = {
@@ -7599,6 +8945,9 @@ pg.base.child2_benefit_list = {
 		id = 44133,
 		item_icon = "buff_colours_1",
 		content = {
+			441331
+		},
+		show_content = {
 			441331
 		}
 	},
@@ -7615,6 +8964,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			441341
+		},
+		show_content = {
+			441341
 		}
 	},
 	[44135] = {
@@ -7628,7 +8980,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 44135,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[44141] = {
 		rare = 1,
@@ -7642,6 +8995,9 @@ pg.base.child2_benefit_list = {
 		id = 44141,
 		item_icon = "buff_colours_1",
 		content = {
+			441411
+		},
+		show_content = {
 			441411
 		}
 	},
@@ -7658,6 +9014,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			441421
+		},
+		show_content = {
+			441421
 		}
 	},
 	[44151] = {
@@ -7672,6 +9031,9 @@ pg.base.child2_benefit_list = {
 		id = 44151,
 		item_icon = "buff_colours_1",
 		content = {
+			441511
+		},
+		show_content = {
 			441511
 		}
 	},
@@ -7688,6 +9050,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_1",
 		content = {
 			441611
+		},
+		show_content = {
+			441611
 		}
 	},
 	[44162] = {
@@ -7702,6 +9067,9 @@ pg.base.child2_benefit_list = {
 		id = 44162,
 		item_icon = "buff_colours_1",
 		content = {
+			441621
+		},
+		show_content = {
 			441621
 		}
 	},
@@ -7718,6 +9086,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_1",
 		content = {
 			441711
+		},
+		show_content = {
+			441711
 		}
 	},
 	[44172] = {
@@ -7732,6 +9103,9 @@ pg.base.child2_benefit_list = {
 		id = 44172,
 		item_icon = "buff_colours_1",
 		content = {
+			441721
+		},
+		show_content = {
 			441721
 		}
 	},
@@ -7748,6 +9122,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tinengzhishi_1",
 		content = {
 			441811
+		},
+		show_content = {
+			441811
 		}
 	},
 	[44182] = {
@@ -7762,6 +9139,9 @@ pg.base.child2_benefit_list = {
 		id = 44182,
 		item_icon = "buff_colours_1",
 		content = {
+			441821
+		},
+		show_content = {
 			441821
 		}
 	},
@@ -7778,6 +9158,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_1",
 		content = {
 			441911
+		},
+		show_content = {
+			441911
 		}
 	},
 	[44192] = {
@@ -7792,6 +9175,9 @@ pg.base.child2_benefit_list = {
 		id = 44192,
 		item_icon = "buff_colours_1",
 		content = {
+			441921
+		},
+		show_content = {
 			441921
 		}
 	},
@@ -7808,6 +9194,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_3",
 		content = {
 			442011
+		},
+		show_content = {
+			442011
 		}
 	},
 	[44202] = {
@@ -7822,6 +9211,9 @@ pg.base.child2_benefit_list = {
 		id = 44202,
 		item_icon = "benefit_2_ganzhi_3",
 		content = {
+			442021
+		},
+		show_content = {
 			442021
 		}
 	},
@@ -7838,6 +9230,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_3",
 		content = {
 			442031
+		},
+		show_content = {
+			442031
 		}
 	},
 	[44204] = {
@@ -7852,6 +9247,9 @@ pg.base.child2_benefit_list = {
 		id = 44204,
 		item_icon = "benefit_2_shijian_3",
 		content = {
+			442041
+		},
+		show_content = {
 			442041
 		}
 	},
@@ -7868,6 +9266,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_chaopin",
 		content = {
 			442111
+		},
+		show_content = {
+			442111
 		}
 	},
 	[44212] = {
@@ -7882,6 +9283,9 @@ pg.base.child2_benefit_list = {
 		id = 44212,
 		item_icon = "buff_colours_1",
 		content = {
+			442121
+		},
+		show_content = {
 			442121
 		}
 	},
@@ -7898,6 +9302,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			442211
+		},
+		show_content = {
+			442211
 		}
 	},
 	[44222] = {
@@ -7912,6 +9319,9 @@ pg.base.child2_benefit_list = {
 		id = 44222,
 		item_icon = "buff_colours_1",
 		content = {
+			442221
+		},
+		show_content = {
 			442221
 		}
 	},
@@ -7928,6 +9338,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_3",
 		content = {
 			442311
+		},
+		show_content = {
+			442311
 		}
 	},
 	[44232] = {
@@ -7942,6 +9355,9 @@ pg.base.child2_benefit_list = {
 		id = 44232,
 		item_icon = "benefit_2_tineng_3",
 		content = {
+			442321
+		},
+		show_content = {
 			442321
 		}
 	},
@@ -7958,6 +9374,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_2",
 		content = {
 			442331
+		},
+		show_content = {
+			442331
 		}
 	},
 	[44234] = {
@@ -7972,6 +9391,9 @@ pg.base.child2_benefit_list = {
 		id = 44234,
 		item_icon = "buff_colours_1",
 		content = {
+			442341
+		},
+		show_content = {
 			442341
 		}
 	},
@@ -7988,6 +9410,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_3",
 		content = {
 			442411
+		},
+		show_content = {
+			442411
 		}
 	},
 	[44242] = {
@@ -8002,6 +9427,9 @@ pg.base.child2_benefit_list = {
 		id = 44242,
 		item_icon = "benefit_2_zhishi_3",
 		content = {
+			442421
+		},
+		show_content = {
 			442421
 		}
 	},
@@ -8018,6 +9446,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_2",
 		content = {
 			442431
+		},
+		show_content = {
+			442431
 		}
 	},
 	[44244] = {
@@ -8032,6 +9463,9 @@ pg.base.child2_benefit_list = {
 		id = 44244,
 		item_icon = "buff_colours_1",
 		content = {
+			442441
+		},
+		show_content = {
 			442441
 		}
 	},
@@ -8048,6 +9482,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_3",
 		content = {
 			442511
+		},
+		show_content = {
+			442511
 		}
 	},
 	[44252] = {
@@ -8062,6 +9499,9 @@ pg.base.child2_benefit_list = {
 		id = 44252,
 		item_icon = "benefit_2_shijian_3",
 		content = {
+			442521
+		},
+		show_content = {
 			442521
 		}
 	},
@@ -8078,6 +9518,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_2",
 		content = {
 			442531
+		},
+		show_content = {
+			442531
 		}
 	},
 	[44254] = {
@@ -8092,6 +9535,9 @@ pg.base.child2_benefit_list = {
 		id = 44254,
 		item_icon = "buff_colours_1",
 		content = {
+			442541
+		},
+		show_content = {
 			442541
 		}
 	},
@@ -8108,6 +9554,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_ganzhi_3",
 		content = {
 			442611
+		},
+		show_content = {
+			442611
 		}
 	},
 	[44262] = {
@@ -8122,6 +9571,9 @@ pg.base.child2_benefit_list = {
 		id = 44262,
 		item_icon = "benefit_2_ganzhi_3",
 		content = {
+			442621
+		},
+		show_content = {
 			442621
 		}
 	},
@@ -8138,6 +9590,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_ganzhi_2",
 		content = {
 			442631
+		},
+		show_content = {
+			442631
 		}
 	},
 	[44264] = {
@@ -8152,6 +9607,9 @@ pg.base.child2_benefit_list = {
 		id = 44264,
 		item_icon = "buff_colours_1",
 		content = {
+			442641
+		},
+		show_content = {
 			442641
 		}
 	},
@@ -8168,6 +9626,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			442711
+		},
+		show_content = {
+			442711
 		}
 	},
 	[44272] = {
@@ -8182,6 +9643,9 @@ pg.base.child2_benefit_list = {
 		id = 44272,
 		item_icon = "buff_colours_1",
 		content = {
+			442721
+		},
+		show_content = {
 			442721
 		}
 	},
@@ -8198,6 +9662,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
 			442811
+		},
+		show_content = {
+			442811
 		}
 	},
 	[44282] = {
@@ -8212,6 +9679,9 @@ pg.base.child2_benefit_list = {
 		id = 44282,
 		item_icon = "buff_colours_1",
 		content = {
+			442821
+		},
+		show_content = {
 			442821
 		}
 	},
@@ -8228,6 +9698,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_jinqian_1",
 		content = {
 			442911
+		},
+		show_content = {
+			442911
 		}
 	},
 	[44292] = {
@@ -8242,6 +9715,9 @@ pg.base.child2_benefit_list = {
 		id = 44292,
 		item_icon = "benefit_2_jinqian_1",
 		content = {
+			442921
+		},
+		show_content = {
 			442921
 		}
 	},
@@ -8258,6 +9734,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			442931
+		},
+		show_content = {
+			442931
 		}
 	},
 	[44301] = {
@@ -8272,6 +9751,9 @@ pg.base.child2_benefit_list = {
 		id = 44301,
 		item_icon = "benefit_2_minruiganguan",
 		content = {
+			443011
+		},
+		show_content = {
 			443011
 		}
 	},
@@ -8288,6 +9770,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			443021
+		},
+		show_content = {
+			443021
 		}
 	},
 	[44311] = {
@@ -8302,6 +9787,9 @@ pg.base.child2_benefit_list = {
 		id = 44311,
 		item_icon = "benefit_2_chengmingxinjing",
 		content = {
+			443111
+		},
+		show_content = {
 			443111
 		}
 	},
@@ -8318,6 +9806,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			443121
+		},
+		show_content = {
+			443121
 		}
 	},
 	[44321] = {
@@ -8332,6 +9823,9 @@ pg.base.child2_benefit_list = {
 		id = 44321,
 		item_icon = "benefit_2_xinqing_1",
 		content = {
+			443211
+		},
+		show_content = {
 			443211
 		}
 	},
@@ -8348,6 +9842,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_xinqing_1",
 		content = {
 			443221
+		},
+		show_content = {
+			443221
 		}
 	},
 	[44323] = {
@@ -8362,6 +9859,9 @@ pg.base.child2_benefit_list = {
 		id = 44323,
 		item_icon = "buff_colours_1",
 		content = {
+			443231
+		},
+		show_content = {
 			443231
 		}
 	},
@@ -8378,6 +9878,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			443311
+		},
+		show_content = {
+			443311
 		}
 	},
 	[44332] = {
@@ -8392,6 +9895,9 @@ pg.base.child2_benefit_list = {
 		id = 44332,
 		item_icon = "buff_colours_1",
 		content = {
+			443321
+		},
+		show_content = {
 			443321
 		}
 	},
@@ -8408,6 +9914,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			443411
+		},
+		show_content = {
+			443411
 		}
 	},
 	[44342] = {
@@ -8422,6 +9931,9 @@ pg.base.child2_benefit_list = {
 		id = 44342,
 		item_icon = "buff_colours_1",
 		content = {
+			443421
+		},
+		show_content = {
 			443421
 		}
 	},
@@ -8438,6 +9950,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_xinqing_3",
 		content = {
 			443511
+		},
+		show_content = {
+			443511
 		}
 	},
 	[44361] = {
@@ -8452,6 +9967,9 @@ pg.base.child2_benefit_list = {
 		id = 44361,
 		item_icon = "buff_colours_1",
 		content = {
+			443611
+		},
+		show_content = {
 			443611
 		}
 	},
@@ -8468,6 +9986,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			443621
+		},
+		show_content = {
+			443621
 		}
 	},
 	[44363] = {
@@ -8482,6 +10003,9 @@ pg.base.child2_benefit_list = {
 		id = 44363,
 		item_icon = "buff_colours_1",
 		content = {
+			443631
+		},
+		show_content = {
 			443631
 		}
 	},
@@ -8498,6 +10022,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			443641
+		},
+		show_content = {
+			443641
 		}
 	},
 	[44365] = {
@@ -8512,6 +10039,9 @@ pg.base.child2_benefit_list = {
 		id = 44365,
 		item_icon = "benefit_2_mijingganzhi",
 		content = {
+			443651
+		},
+		show_content = {
 			443651
 		}
 	},
@@ -8528,6 +10058,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			443661
+		},
+		show_content = {
+			443661
 		}
 	},
 	[44371] = {
@@ -8542,6 +10075,9 @@ pg.base.child2_benefit_list = {
 		id = 44371,
 		item_icon = "benefit_2_jieneng",
 		content = {
+			443711
+		},
+		show_content = {
 			443711
 		}
 	},
@@ -8558,6 +10094,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			443721
+		},
+		show_content = {
+			443721
 		}
 	},
 	[44381] = {
@@ -8572,6 +10111,9 @@ pg.base.child2_benefit_list = {
 		id = 44381,
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
+			443811
+		},
+		show_content = {
 			443811
 		}
 	},
@@ -8588,6 +10130,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tizhiqianghua",
 		content = {
 			443821
+		},
+		show_content = {
+			443821
 		}
 	},
 	[44383] = {
@@ -8602,6 +10147,9 @@ pg.base.child2_benefit_list = {
 		id = 44383,
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
+			443831
+		},
+		show_content = {
 			443831
 		}
 	},
@@ -8618,6 +10166,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tizhiqianghua",
 		content = {
 			443841
+		},
+		show_content = {
+			443841
 		}
 	},
 	[44385] = {
@@ -8632,6 +10183,9 @@ pg.base.child2_benefit_list = {
 		id = 44385,
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
+			443851
+		},
+		show_content = {
 			443851
 		}
 	},
@@ -8648,6 +10202,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tizhiqianghua",
 		content = {
 			443861
+		},
+		show_content = {
+			443861
 		}
 	},
 	[44387] = {
@@ -8662,6 +10219,9 @@ pg.base.child2_benefit_list = {
 		id = 44387,
 		item_icon = "benefit_2_shiganqianghua",
 		content = {
+			443871
+		},
+		show_content = {
 			443871
 		}
 	},
@@ -8678,6 +10238,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tizhiqianghua",
 		content = {
 			443881
+		},
+		show_content = {
+			443881
 		}
 	},
 	[44389] = {
@@ -8692,6 +10255,9 @@ pg.base.child2_benefit_list = {
 		id = 44389,
 		item_icon = "benefit_2_all_1",
 		content = {
+			443891
+		},
+		show_content = {
 			443891
 		}
 	},
@@ -8708,6 +10274,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			443911
+		},
+		show_content = {
+			443911
 		}
 	},
 	[44392] = {
@@ -8722,6 +10291,9 @@ pg.base.child2_benefit_list = {
 		id = 44392,
 		item_icon = "buff_colours_1",
 		content = {
+			443921
+		},
+		show_content = {
 			443921
 		}
 	},
@@ -8738,6 +10310,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			444011
+		},
+		show_content = {
+			444011
 		}
 	},
 	[44402] = {
@@ -8752,6 +10327,9 @@ pg.base.child2_benefit_list = {
 		id = 44402,
 		item_icon = "buff_colours_1",
 		content = {
+			444021
+		},
+		show_content = {
 			444021
 		}
 	},
@@ -8772,6 +10350,13 @@ pg.base.child2_benefit_list = {
 			444113,
 			444114,
 			444115
+		},
+		show_content = {
+			444111,
+			444112,
+			444113,
+			444114,
+			444115
 		}
 	},
 	[44412] = {
@@ -8786,6 +10371,9 @@ pg.base.child2_benefit_list = {
 		id = 44412,
 		item_icon = "buff_colours_1",
 		content = {
+			444121
+		},
+		show_content = {
 			444121
 		}
 	},
@@ -8802,6 +10390,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			444211
+		},
+		show_content = {
+			444211
 		}
 	},
 	[44422] = {
@@ -8816,6 +10407,9 @@ pg.base.child2_benefit_list = {
 		id = 44422,
 		item_icon = "buff_colours_1",
 		content = {
+			444221
+		},
+		show_content = {
 			444221
 		}
 	},
@@ -8832,6 +10426,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			444311
+		},
+		show_content = {
+			444311
 		}
 	},
 	[44432] = {
@@ -8846,6 +10443,9 @@ pg.base.child2_benefit_list = {
 		id = 44432,
 		item_icon = "buff_colours_1",
 		content = {
+			444321
+		},
+		show_content = {
 			444321
 		}
 	},
@@ -8866,6 +10466,13 @@ pg.base.child2_benefit_list = {
 			444413,
 			444414,
 			444415
+		},
+		show_content = {
+			444411,
+			444412,
+			444413,
+			444414,
+			444415
 		}
 	},
 	[44442] = {
@@ -8880,6 +10487,9 @@ pg.base.child2_benefit_list = {
 		id = 44442,
 		item_icon = "buff_colours_1",
 		content = {
+			444421
+		},
+		show_content = {
 			444421
 		}
 	},
@@ -8896,6 +10506,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			444511
+		},
+		show_content = {
+			444511
 		}
 	},
 	[44452] = {
@@ -8910,6 +10523,9 @@ pg.base.child2_benefit_list = {
 		id = 44452,
 		item_icon = "buff_colours_1",
 		content = {
+			444521
+		},
+		show_content = {
 			444521
 		}
 	},
@@ -8926,6 +10542,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			444611
+		},
+		show_content = {
+			444611
 		}
 	},
 	[44462] = {
@@ -8940,6 +10559,9 @@ pg.base.child2_benefit_list = {
 		id = 44462,
 		item_icon = "benefit_2_xinqing_3",
 		content = {
+			444621
+		},
+		show_content = {
 			444621
 		}
 	},
@@ -8956,6 +10578,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			444631
+		},
+		show_content = {
+			444631
 		}
 	},
 	[44464] = {
@@ -8970,6 +10595,9 @@ pg.base.child2_benefit_list = {
 		id = 44464,
 		item_icon = "buff_colours_1",
 		content = {
+			444641
+		},
+		show_content = {
 			444641
 		}
 	},
@@ -8986,6 +10614,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			444651
+		},
+		show_content = {
+			444651
 		}
 	},
 	[44466] = {
@@ -9001,11 +10632,14 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			444661
+		},
+		show_content = {
+			444661
 		}
 	},
 	[44467] = {
 		rare = 1,
-		name = "",
+		name = "抽王牌惩罚",
 		desc = "下个回合开始时，获得状态「抽王牌惩罚 – 体能惩罚」：<color=#ff9829>「体能」</color>获取量 – 50%",
 		type = 2,
 		is_tip = 0,
@@ -9015,6 +10649,9 @@ pg.base.child2_benefit_list = {
 		id = 44467,
 		item_icon = "benefit_2_tineng_5",
 		content = {
+			444671
+		},
+		show_content = {
 			444671
 		}
 	},
@@ -9031,6 +10668,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_5",
 		content = {
 			444681
+		},
+		show_content = {
+			444681
 		}
 	},
 	[44469] = {
@@ -9045,6 +10685,9 @@ pg.base.child2_benefit_list = {
 		id = 44469,
 		item_icon = "benefit_2_shijian_5",
 		content = {
+			444691
+		},
+		show_content = {
 			444691
 		}
 	},
@@ -9061,6 +10704,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_ganzhi_5",
 		content = {
 			444701
+		},
+		show_content = {
+			444701
 		}
 	},
 	[44471] = {
@@ -9075,6 +10721,9 @@ pg.base.child2_benefit_list = {
 		id = 44471,
 		item_icon = "benefit_2_tineng_5",
 		content = {
+			444711
+		},
+		show_content = {
 			444711
 		}
 	},
@@ -9091,6 +10740,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_5",
 		content = {
 			444721
+		},
+		show_content = {
+			444721
 		}
 	},
 	[44473] = {
@@ -9105,6 +10757,9 @@ pg.base.child2_benefit_list = {
 		id = 44473,
 		item_icon = "benefit_2_shijian_5",
 		content = {
+			444731
+		},
+		show_content = {
 			444731
 		}
 	},
@@ -9121,6 +10776,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_ganzhi_5",
 		content = {
 			444741
+		},
+		show_content = {
+			444741
 		}
 	},
 	[1001] = {
@@ -9135,6 +10793,9 @@ pg.base.child2_benefit_list = {
 		id = 1001,
 		item_icon = "benefit_1_1001",
 		content = {
+			1001
+		},
+		show_content = {
 			1001
 		}
 	},
@@ -9151,6 +10812,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1002",
 		content = {
 			1002
+		},
+		show_content = {
+			1002
 		}
 	},
 	[1003] = {
@@ -9165,6 +10829,9 @@ pg.base.child2_benefit_list = {
 		id = 1003,
 		item_icon = "benefit_1_1003",
 		content = {
+			1003
+		},
+		show_content = {
 			1003
 		}
 	},
@@ -9181,6 +10848,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1004",
 		content = {
 			1004
+		},
+		show_content = {
+			1004
 		}
 	},
 	[1005] = {
@@ -9195,6 +10865,9 @@ pg.base.child2_benefit_list = {
 		id = 1005,
 		item_icon = "benefit_1_1005",
 		content = {
+			1005
+		},
+		show_content = {
 			1005
 		}
 	},
@@ -9211,6 +10884,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1006",
 		content = {
 			1006
+		},
+		show_content = {
+			1006
 		}
 	},
 	[1007] = {
@@ -9225,6 +10901,9 @@ pg.base.child2_benefit_list = {
 		id = 1007,
 		item_icon = "benefit_1_1007",
 		content = {
+			1007
+		},
+		show_content = {
 			1007
 		}
 	},
@@ -9241,12 +10920,15 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1008",
 		content = {
 			1008
+		},
+		show_content = {
+			1008
 		}
 	},
 	[1009] = {
 		rare = 4,
 		name = "金库盈满",
-		desc = "回合开始时，若<color=#ff9829>「金钱」</color>>600，<color=#ff9829>「金钱」</color> + 120",
+		desc = "回合开始时，若<color=#ff9829>「金钱」</color>>300，<color=#ff9829>「心情」</color> + 10，<color=#ff9829>「金钱」</color> + 200",
 		type = 1,
 		is_tip = 0,
 		item_icon_little = "benefit_1_1009_l",
@@ -9256,12 +10938,15 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1009",
 		content = {
 			1009
+		},
+		show_content = {
+			1009
 		}
 	},
 	[1010] = {
 		rare = 4,
 		name = "聚宝盆",
-		desc = "回合开始时，若<color=#ff9829>「金钱」</color>>300，额外获得当前15%的<color=#ff9829>「金钱」</color>",
+		desc = "回合开始时，若<color=#ff9829>「金钱」</color>>150，额外获得当前50%的<color=#ff9829>「金钱」</color>",
 		type = 1,
 		is_tip = 0,
 		item_icon_little = "benefit_1_1009_l",
@@ -9270,6 +10955,9 @@ pg.base.child2_benefit_list = {
 		id = 1010,
 		item_icon = "benefit_1_1009",
 		content = {
+			1010
+		},
+		show_content = {
 			1010
 		}
 	},
@@ -9286,6 +10974,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1011",
 		content = {
 			1011
+		},
+		show_content = {
+			1011
 		}
 	},
 	[1012] = {
@@ -9300,6 +10991,9 @@ pg.base.child2_benefit_list = {
 		id = 1012,
 		item_icon = "benefit_1_1012",
 		content = {
+			1012
+		},
+		show_content = {
 			1012
 		}
 	},
@@ -9316,6 +11010,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1013",
 		content = {
 			1013
+		},
+		show_content = {
+			1013
 		}
 	},
 	[1014] = {
@@ -9330,6 +11027,9 @@ pg.base.child2_benefit_list = {
 		id = 1014,
 		item_icon = "benefit_1_1014",
 		content = {
+			1014
+		},
+		show_content = {
 			1014
 		}
 	},
@@ -9346,6 +11046,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1041",
 		content = {
 			1041
+		},
+		show_content = {
+			1041
 		}
 	},
 	[1042] = {
@@ -9360,6 +11063,9 @@ pg.base.child2_benefit_list = {
 		id = 1042,
 		item_icon = "benefit_1_1042",
 		content = {
+			1042
+		},
+		show_content = {
 			1042
 		}
 	},
@@ -9376,6 +11082,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1043",
 		content = {
 			1043
+		},
+		show_content = {
+			1043
 		}
 	},
 	[1044] = {
@@ -9390,6 +11099,9 @@ pg.base.child2_benefit_list = {
 		id = 1044,
 		item_icon = "benefit_1_1044",
 		content = {
+			1044
+		},
+		show_content = {
 			1044
 		}
 	},
@@ -9406,6 +11118,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1045",
 		content = {
 			1045
+		},
+		show_content = {
+			1045
 		}
 	},
 	[1046] = {
@@ -9420,6 +11135,9 @@ pg.base.child2_benefit_list = {
 		id = 1046,
 		item_icon = "benefit_1_1046",
 		content = {
+			1046
+		},
+		show_content = {
 			1046
 		}
 	},
@@ -9436,6 +11154,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1047",
 		content = {
 			1047
+		},
+		show_content = {
+			1047
 		}
 	},
 	[1048] = {
@@ -9450,6 +11171,9 @@ pg.base.child2_benefit_list = {
 		id = 1048,
 		item_icon = "benefit_1_1048",
 		content = {
+			1048
+		},
+		show_content = {
 			1048
 		}
 	},
@@ -9466,6 +11190,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1049",
 		content = {
 			1049
+		},
+		show_content = {
+			1049
 		}
 	},
 	[1050] = {
@@ -9480,6 +11207,9 @@ pg.base.child2_benefit_list = {
 		id = 1050,
 		item_icon = "benefit_1_1050",
 		content = {
+			1050
+		},
+		show_content = {
 			1050
 		}
 	},
@@ -9496,6 +11226,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1051",
 		content = {
 			1051
+		},
+		show_content = {
+			1051
 		}
 	},
 	[1052] = {
@@ -9510,6 +11243,9 @@ pg.base.child2_benefit_list = {
 		id = 1052,
 		item_icon = "benefit_1_1052",
 		content = {
+			1052
+		},
+		show_content = {
 			1052
 		}
 	},
@@ -9526,6 +11262,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1053",
 		content = {
 			1053
+		},
+		show_content = {
+			1053
 		}
 	},
 	[1054] = {
@@ -9540,6 +11279,9 @@ pg.base.child2_benefit_list = {
 		id = 1054,
 		item_icon = "benefit_1_1054",
 		content = {
+			1054
+		},
+		show_content = {
 			1054
 		}
 	},
@@ -9556,6 +11298,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1055",
 		content = {
 			1055
+		},
+		show_content = {
+			1055
 		}
 	},
 	[1056] = {
@@ -9570,6 +11315,9 @@ pg.base.child2_benefit_list = {
 		id = 1056,
 		item_icon = "benefit_2_tineng_2",
 		content = {
+			1056
+		},
+		show_content = {
 			1056
 		}
 	},
@@ -9586,6 +11334,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_2",
 		content = {
 			1057
+		},
+		show_content = {
+			1057
 		}
 	},
 	[1058] = {
@@ -9600,6 +11351,9 @@ pg.base.child2_benefit_list = {
 		id = 1058,
 		item_icon = "benefit_2_ganzhi_2",
 		content = {
+			1058
+		},
+		show_content = {
 			1058
 		}
 	},
@@ -9616,6 +11370,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_2",
 		content = {
 			1059
+		},
+		show_content = {
+			1059
 		}
 	},
 	[1060] = {
@@ -9630,6 +11387,9 @@ pg.base.child2_benefit_list = {
 		id = 1060,
 		item_icon = "benefit_2_tineng_3",
 		content = {
+			1060
+		},
+		show_content = {
 			1060
 		}
 	},
@@ -9646,6 +11406,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_3",
 		content = {
 			1061
+		},
+		show_content = {
+			1061
 		}
 	},
 	[1062] = {
@@ -9660,6 +11423,9 @@ pg.base.child2_benefit_list = {
 		id = 1062,
 		item_icon = "benefit_2_ganzhi_3",
 		content = {
+			1062
+		},
+		show_content = {
 			1062
 		}
 	},
@@ -9676,6 +11442,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_3",
 		content = {
 			1063
+		},
+		show_content = {
+			1063
 		}
 	},
 	[1064] = {
@@ -9690,6 +11459,9 @@ pg.base.child2_benefit_list = {
 		id = 1064,
 		item_icon = "benefit_1_1064",
 		content = {
+			1064
+		},
+		show_content = {
 			1064
 		}
 	},
@@ -9706,6 +11478,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1065",
 		content = {
 			1065
+		},
+		show_content = {
+			1065
 		}
 	},
 	[1066] = {
@@ -9720,6 +11495,9 @@ pg.base.child2_benefit_list = {
 		id = 1066,
 		item_icon = "benefit_1_1066",
 		content = {
+			1066
+		},
+		show_content = {
 			1066
 		}
 	},
@@ -9736,6 +11514,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1067",
 		content = {
 			1067
+		},
+		show_content = {
+			1067
 		}
 	},
 	[1068] = {
@@ -9751,6 +11532,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1068",
 		content = {
 			1068
+		},
+		show_content = {
+			1068
 		}
 	},
 	[1069] = {
@@ -9765,6 +11549,9 @@ pg.base.child2_benefit_list = {
 		id = 1069,
 		item_icon = "benefit_1_1069",
 		content = {
+			1069
+		},
+		show_content = {
 			1069
 		}
 	},
@@ -9785,6 +11572,9 @@ pg.base.child2_benefit_list = {
 			10703,
 			10704,
 			10705
+		},
+		show_content = {
+			10701
 		}
 	},
 	[1071] = {
@@ -9804,6 +11594,9 @@ pg.base.child2_benefit_list = {
 			10713,
 			10714,
 			10715
+		},
+		show_content = {
+			10711
 		}
 	},
 	[1072] = {
@@ -9823,6 +11616,9 @@ pg.base.child2_benefit_list = {
 			10723,
 			10724,
 			10725
+		},
+		show_content = {
+			10721
 		}
 	},
 	[1073] = {
@@ -9842,6 +11638,9 @@ pg.base.child2_benefit_list = {
 			10733,
 			10734,
 			10735
+		},
+		show_content = {
+			10731
 		}
 	},
 	[1074] = {
@@ -9861,6 +11660,9 @@ pg.base.child2_benefit_list = {
 			10743,
 			10744,
 			10745
+		},
+		show_content = {
+			10741
 		}
 	},
 	[1075] = {
@@ -9880,6 +11682,9 @@ pg.base.child2_benefit_list = {
 			10753,
 			10754,
 			10755
+		},
+		show_content = {
+			10751
 		}
 	},
 	[1076] = {
@@ -9899,6 +11704,9 @@ pg.base.child2_benefit_list = {
 			10763,
 			10764,
 			10765
+		},
+		show_content = {
+			10761
 		}
 	},
 	[1077] = {
@@ -9918,6 +11726,9 @@ pg.base.child2_benefit_list = {
 			10773,
 			10774,
 			10775
+		},
+		show_content = {
+			10771
 		}
 	},
 	[1078] = {
@@ -9932,6 +11743,9 @@ pg.base.child2_benefit_list = {
 		id = 1078,
 		item_icon = "benefit_1_1078",
 		content = {
+			1078
+		},
+		show_content = {
 			1078
 		}
 	},
@@ -9948,6 +11762,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1079",
 		content = {
 			1079
+		},
+		show_content = {
+			1079
 		}
 	},
 	[1080] = {
@@ -9963,6 +11780,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1080",
 		content = {
 			1080
+		},
+		show_content = {
+			1080
 		}
 	},
 	[1081] = {
@@ -9977,6 +11797,10 @@ pg.base.child2_benefit_list = {
 		id = 1081,
 		item_icon = "benefit_1_1081",
 		content = {
+			1081,
+			1082
+		},
+		show_content = {
 			1081,
 			1082
 		}
@@ -9995,6 +11819,10 @@ pg.base.child2_benefit_list = {
 		content = {
 			1083,
 			1084
+		},
+		show_content = {
+			1083,
+			1084
 		}
 	},
 	[1084] = {
@@ -10008,7 +11836,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 1084,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[1085] = {
 		rare = 3,
@@ -10021,7 +11850,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 1085,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[1086] = {
 		rare = 3,
@@ -10034,7 +11864,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 1086,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[1087] = {
 		rare = 3,
@@ -10047,7 +11878,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 1087,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[1088] = {
 		rare = 2,
@@ -10061,6 +11893,13 @@ pg.base.child2_benefit_list = {
 		id = 1088,
 		item_icon = "benefit_1_1088",
 		content = {
+			10881,
+			10882,
+			10883,
+			10884,
+			10885
+		},
+		show_content = {
 			10881,
 			10882,
 			10883,
@@ -10085,6 +11924,13 @@ pg.base.child2_benefit_list = {
 			10893,
 			10894,
 			10895
+		},
+		show_content = {
+			10891,
+			10892,
+			10893,
+			10894,
+			10895
 		}
 	},
 	[1090] = {
@@ -10099,6 +11945,13 @@ pg.base.child2_benefit_list = {
 		id = 1090,
 		item_icon = "benefit_1_1090",
 		content = {
+			10901,
+			10902,
+			10903,
+			10904,
+			10905
+		},
+		show_content = {
 			10901,
 			10902,
 			10903,
@@ -10123,6 +11976,13 @@ pg.base.child2_benefit_list = {
 			10913,
 			10914,
 			10915
+		},
+		show_content = {
+			10911,
+			10912,
+			10913,
+			10914,
+			10915
 		}
 	},
 	[1092] = {
@@ -10136,7 +11996,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 1092,
 		item_icon = "benefit_1_1092",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[1093] = {
 		rare = 3,
@@ -10149,7 +12010,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 1093,
 		item_icon = "benefit_1_1093",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[1094] = {
 		rare = 3,
@@ -10162,7 +12024,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 1094,
 		item_icon = "benefit_1_1094",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[1095] = {
 		rare = 3,
@@ -10175,7 +12038,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 1095,
 		item_icon = "benefit_1_1095",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[1096] = {
 		rare = 2,
@@ -10189,6 +12053,9 @@ pg.base.child2_benefit_list = {
 		id = 1096,
 		item_icon = "benefit_1_1096",
 		content = {
+			10961
+		},
+		show_content = {
 			10961
 		}
 	},
@@ -10205,6 +12072,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1097",
 		content = {
 			10971
+		},
+		show_content = {
+			10971
 		}
 	},
 	[1098] = {
@@ -10219,6 +12089,9 @@ pg.base.child2_benefit_list = {
 		id = 1098,
 		item_icon = "benefit_1_1098",
 		content = {
+			10981
+		},
+		show_content = {
 			10981
 		}
 	},
@@ -10235,6 +12108,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_1_1099",
 		content = {
 			10991
+		},
+		show_content = {
+			10991
 		}
 	},
 	[1100] = {
@@ -10248,7 +12124,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 1100,
 		item_icon = "benefit_1_1100",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[1101] = {
 		rare = 2,
@@ -10261,7 +12138,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 1101,
 		item_icon = "benefit_1_1101",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[1102] = {
 		rare = 3,
@@ -10274,7 +12152,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 1102,
 		item_icon = "benefit_1_1102",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[2001] = {
 		rare = 1,
@@ -10288,6 +12167,9 @@ pg.base.child2_benefit_list = {
 		id = 2001,
 		item_icon = "benefit_2_tineng_1",
 		content = {
+			2001
+		},
+		show_content = {
 			2001
 		}
 	},
@@ -10304,6 +12186,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishi_1",
 		content = {
 			2002
+		},
+		show_content = {
+			2002
 		}
 	},
 	[2003] = {
@@ -10318,6 +12203,9 @@ pg.base.child2_benefit_list = {
 		id = 2003,
 		item_icon = "benefit_2_shijian_1",
 		content = {
+			2003
+		},
+		show_content = {
 			2003
 		}
 	},
@@ -10334,6 +12222,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_ganzhi_1",
 		content = {
 			2004
+		},
+		show_content = {
+			2004
 		}
 	},
 	[2005] = {
@@ -10348,6 +12239,9 @@ pg.base.child2_benefit_list = {
 		id = 2005,
 		item_icon = "buff_2005",
 		content = {
+			2005
+		},
+		show_content = {
 			2005
 		}
 	},
@@ -10364,6 +12258,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_1",
 		content = {
 			2006
+		},
+		show_content = {
+			2006
 		}
 	},
 	[2007] = {
@@ -10378,6 +12275,9 @@ pg.base.child2_benefit_list = {
 		id = 2007,
 		item_icon = "benefit_2_zhishi_1",
 		content = {
+			2007
+		},
+		show_content = {
 			2007
 		}
 	},
@@ -10394,6 +12294,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_1",
 		content = {
 			2008
+		},
+		show_content = {
+			2008
 		}
 	},
 	[2009] = {
@@ -10408,6 +12311,9 @@ pg.base.child2_benefit_list = {
 		id = 2009,
 		item_icon = "benefit_2_ganzhi_1",
 		content = {
+			2009
+		},
+		show_content = {
 			2009
 		}
 	},
@@ -10424,6 +12330,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_2",
 		content = {
 			2010
+		},
+		show_content = {
+			2010
 		}
 	},
 	[2011] = {
@@ -10438,6 +12347,9 @@ pg.base.child2_benefit_list = {
 		id = 2011,
 		item_icon = "benefit_2_zhishi_2",
 		content = {
+			2011
+		},
+		show_content = {
 			2011
 		}
 	},
@@ -10454,6 +12366,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_2",
 		content = {
 			2012
+		},
+		show_content = {
+			2012
 		}
 	},
 	[2013] = {
@@ -10468,6 +12383,9 @@ pg.base.child2_benefit_list = {
 		id = 2013,
 		item_icon = "benefit_2_ganzhi_2",
 		content = {
+			2013
+		},
+		show_content = {
 			2013
 		}
 	},
@@ -10484,6 +12402,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_3",
 		content = {
 			2014
+		},
+		show_content = {
+			2014
 		}
 	},
 	[2015] = {
@@ -10498,6 +12419,9 @@ pg.base.child2_benefit_list = {
 		id = 2015,
 		item_icon = "benefit_2_zhishi_3",
 		content = {
+			2015
+		},
+		show_content = {
 			2015
 		}
 	},
@@ -10514,6 +12438,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_3",
 		content = {
 			2016
+		},
+		show_content = {
+			2016
 		}
 	},
 	[2017] = {
@@ -10528,6 +12455,9 @@ pg.base.child2_benefit_list = {
 		id = 2017,
 		item_icon = "benefit_2_ganzhi_3",
 		content = {
+			2017
+		},
+		show_content = {
 			2017
 		}
 	},
@@ -10544,6 +12474,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_xinqing_1",
 		content = {
 			2018
+		},
+		show_content = {
+			2018
 		}
 	},
 	[2019] = {
@@ -10558,6 +12491,9 @@ pg.base.child2_benefit_list = {
 		id = 2019,
 		item_icon = "benefit_2_xinqing_2",
 		content = {
+			2019
+		},
+		show_content = {
 			2019
 		}
 	},
@@ -10574,6 +12510,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_xinqing_3",
 		content = {
 			2020
+		},
+		show_content = {
+			2020
 		}
 	},
 	[2021] = {
@@ -10588,6 +12527,9 @@ pg.base.child2_benefit_list = {
 		id = 2021,
 		item_icon = "benefit_2_xinqing_3",
 		content = {
+			2021
+		},
+		show_content = {
 			2021
 		}
 	},
@@ -10604,6 +12546,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			2022
+		},
+		show_content = {
+			2022
 		}
 	},
 	[2023] = {
@@ -10618,6 +12563,9 @@ pg.base.child2_benefit_list = {
 		id = 2023,
 		item_icon = "buff_colours_1",
 		content = {
+			2023
+		},
+		show_content = {
 			2023
 		}
 	},
@@ -10634,6 +12582,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			2024
+		},
+		show_content = {
+			2024
 		}
 	},
 	[2025] = {
@@ -10648,6 +12599,9 @@ pg.base.child2_benefit_list = {
 		id = 2025,
 		item_icon = "buff_colours_1",
 		content = {
+			2025
+		},
+		show_content = {
 			2025
 		}
 	},
@@ -10664,6 +12618,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			2026
+		},
+		show_content = {
+			2026
 		}
 	},
 	[2027] = {
@@ -10678,6 +12635,9 @@ pg.base.child2_benefit_list = {
 		id = 2027,
 		item_icon = "buff_colours_1",
 		content = {
+			2027
+		},
+		show_content = {
 			2027
 		}
 	},
@@ -10694,6 +12654,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			2028
+		},
+		show_content = {
+			2028
 		}
 	},
 	[2029] = {
@@ -10708,6 +12671,9 @@ pg.base.child2_benefit_list = {
 		id = 2029,
 		item_icon = "buff_colours_1",
 		content = {
+			2029
+		},
+		show_content = {
 			2029
 		}
 	},
@@ -10724,6 +12690,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			2030
+		},
+		show_content = {
+			2030
 		}
 	},
 	[2031] = {
@@ -10738,6 +12707,9 @@ pg.base.child2_benefit_list = {
 		id = 2031,
 		item_icon = "buff_colours_1",
 		content = {
+			2031
+		},
+		show_content = {
 			2031
 		}
 	},
@@ -10754,6 +12726,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			2032
+		},
+		show_content = {
+			2032
 		}
 	},
 	[2033] = {
@@ -10768,6 +12743,9 @@ pg.base.child2_benefit_list = {
 		id = 2033,
 		item_icon = "buff_colours_1",
 		content = {
+			2033
+		},
+		show_content = {
 			2033
 		}
 	},
@@ -10784,6 +12762,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			2034
+		},
+		show_content = {
+			2034
 		}
 	},
 	[2035] = {
@@ -10798,6 +12779,9 @@ pg.base.child2_benefit_list = {
 		id = 2035,
 		item_icon = "buff_colours_1",
 		content = {
+			2035
+		},
+		show_content = {
 			2035
 		}
 	},
@@ -10814,6 +12798,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			2036
+		},
+		show_content = {
+			2036
 		}
 	},
 	[2037] = {
@@ -10828,6 +12815,9 @@ pg.base.child2_benefit_list = {
 		id = 2037,
 		item_icon = "benefit_2_tinengzhishiz",
 		content = {
+			2037
+		},
+		show_content = {
 			2037
 		}
 	},
@@ -10844,6 +12834,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_zhishitinengz",
 		content = {
 			2038
+		},
+		show_content = {
+			2038
 		}
 	},
 	[2039] = {
@@ -10858,6 +12851,9 @@ pg.base.child2_benefit_list = {
 		id = 2039,
 		item_icon = "benefit_2_shijianganzhiz",
 		content = {
+			2039
+		},
+		show_content = {
 			2039
 		}
 	},
@@ -10874,6 +12870,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_ganzhishijianz",
 		content = {
 			2040
+		},
+		show_content = {
+			2040
 		}
 	},
 	[2041] = {
@@ -10888,6 +12887,10 @@ pg.base.child2_benefit_list = {
 		id = 2041,
 		item_icon = "benefit_2_shijianq_1",
 		content = {
+			2041,
+			2065
+		},
+		show_content = {
 			2041,
 			2065
 		}
@@ -10906,6 +12909,10 @@ pg.base.child2_benefit_list = {
 		content = {
 			2042,
 			2066
+		},
+		show_content = {
+			2042,
+			2066
 		}
 	},
 	[2043] = {
@@ -10920,6 +12927,10 @@ pg.base.child2_benefit_list = {
 		id = 2043,
 		item_icon = "benefit_2_shijianq_1",
 		content = {
+			2043,
+			2067
+		},
+		show_content = {
 			2043,
 			2067
 		}
@@ -10938,6 +12949,10 @@ pg.base.child2_benefit_list = {
 		content = {
 			2044,
 			2068
+		},
+		show_content = {
+			2044,
+			2068
 		}
 	},
 	[2045] = {
@@ -10952,6 +12967,10 @@ pg.base.child2_benefit_list = {
 		id = 2045,
 		item_icon = "benefit_2_shijianq_1",
 		content = {
+			2045,
+			2069
+		},
+		show_content = {
 			2045,
 			2069
 		}
@@ -10970,6 +12989,10 @@ pg.base.child2_benefit_list = {
 		content = {
 			2046,
 			2070
+		},
+		show_content = {
+			2046,
+			2070
 		}
 	},
 	[2047] = {
@@ -10984,6 +13007,10 @@ pg.base.child2_benefit_list = {
 		id = 2047,
 		item_icon = "benefit_2_tinengq_1",
 		content = {
+			2047,
+			2071
+		},
+		show_content = {
 			2047,
 			2071
 		}
@@ -11002,6 +13029,10 @@ pg.base.child2_benefit_list = {
 		content = {
 			2048,
 			2072
+		},
+		show_content = {
+			2048,
+			2072
 		}
 	},
 	[2049] = {
@@ -11016,6 +13047,10 @@ pg.base.child2_benefit_list = {
 		id = 2049,
 		item_icon = "benefit_2_tinengq_1",
 		content = {
+			2049,
+			2073
+		},
+		show_content = {
 			2049,
 			2073
 		}
@@ -11034,6 +13069,10 @@ pg.base.child2_benefit_list = {
 		content = {
 			2050,
 			2074
+		},
+		show_content = {
+			2050,
+			2074
 		}
 	},
 	[2051] = {
@@ -11048,6 +13087,10 @@ pg.base.child2_benefit_list = {
 		id = 2051,
 		item_icon = "benefit_2_tinengq_1",
 		content = {
+			2051,
+			2075
+		},
+		show_content = {
 			2051,
 			2075
 		}
@@ -11066,6 +13109,10 @@ pg.base.child2_benefit_list = {
 		content = {
 			2052,
 			2076
+		},
+		show_content = {
+			2052,
+			2076
 		}
 	},
 	[2053] = {
@@ -11080,6 +13127,10 @@ pg.base.child2_benefit_list = {
 		id = 2053,
 		item_icon = "benefit_2_ganzhiq_1",
 		content = {
+			2053,
+			2077
+		},
+		show_content = {
 			2053,
 			2077
 		}
@@ -11098,6 +13149,10 @@ pg.base.child2_benefit_list = {
 		content = {
 			2054,
 			2078
+		},
+		show_content = {
+			2054,
+			2078
 		}
 	},
 	[2055] = {
@@ -11112,6 +13167,10 @@ pg.base.child2_benefit_list = {
 		id = 2055,
 		item_icon = "benefit_2_ganzhiq_1",
 		content = {
+			2055,
+			2079
+		},
+		show_content = {
 			2055,
 			2079
 		}
@@ -11130,6 +13189,10 @@ pg.base.child2_benefit_list = {
 		content = {
 			2056,
 			2080
+		},
+		show_content = {
+			2056,
+			2080
 		}
 	},
 	[2057] = {
@@ -11144,6 +13207,10 @@ pg.base.child2_benefit_list = {
 		id = 2057,
 		item_icon = "benefit_2_ganzhiq_1",
 		content = {
+			2057,
+			2081
+		},
+		show_content = {
 			2057,
 			2081
 		}
@@ -11162,6 +13229,10 @@ pg.base.child2_benefit_list = {
 		content = {
 			2058,
 			2082
+		},
+		show_content = {
+			2058,
+			2082
 		}
 	},
 	[2059] = {
@@ -11176,6 +13247,10 @@ pg.base.child2_benefit_list = {
 		id = 2059,
 		item_icon = "benefit_2_zhishiq_1",
 		content = {
+			2059,
+			2083
+		},
+		show_content = {
 			2059,
 			2083
 		}
@@ -11194,6 +13269,10 @@ pg.base.child2_benefit_list = {
 		content = {
 			2060,
 			2084
+		},
+		show_content = {
+			2060,
+			2084
 		}
 	},
 	[2061] = {
@@ -11208,6 +13287,10 @@ pg.base.child2_benefit_list = {
 		id = 2061,
 		item_icon = "benefit_2_zhishiq_1",
 		content = {
+			2061,
+			2085
+		},
+		show_content = {
 			2061,
 			2085
 		}
@@ -11226,6 +13309,10 @@ pg.base.child2_benefit_list = {
 		content = {
 			2062,
 			2086
+		},
+		show_content = {
+			2062,
+			2086
 		}
 	},
 	[2063] = {
@@ -11240,6 +13327,10 @@ pg.base.child2_benefit_list = {
 		id = 2063,
 		item_icon = "benefit_2_zhishiq_1",
 		content = {
+			2063,
+			2087
+		},
+		show_content = {
 			2063,
 			2087
 		}
@@ -11258,6 +13349,10 @@ pg.base.child2_benefit_list = {
 		content = {
 			2064,
 			2088
+		},
+		show_content = {
+			2064,
+			2088
 		}
 	},
 	[2089] = {
@@ -11272,6 +13367,9 @@ pg.base.child2_benefit_list = {
 		id = 2089,
 		item_icon = "benefit_2_xingcheng1_1",
 		content = {
+			2089
+		},
+		show_content = {
 			2089
 		}
 	},
@@ -11288,6 +13386,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_xingcheng1_2",
 		content = {
 			2090
+		},
+		show_content = {
+			2090
 		}
 	},
 	[2091] = {
@@ -11302,6 +13403,9 @@ pg.base.child2_benefit_list = {
 		id = 2091,
 		item_icon = "benefit_2_xingcheng1_3",
 		content = {
+			2091
+		},
+		show_content = {
 			2091
 		}
 	},
@@ -11318,6 +13422,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_xingchengji_1",
 		content = {
 			2092
+		},
+		show_content = {
+			2092
 		}
 	},
 	[2093] = {
@@ -11332,6 +13439,9 @@ pg.base.child2_benefit_list = {
 		id = 2093,
 		item_icon = "benefit_2_xingchengji_2",
 		content = {
+			2093
+		},
+		show_content = {
 			2093
 		}
 	},
@@ -11348,6 +13458,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_xingchengji_3",
 		content = {
 			2094
+		},
+		show_content = {
+			2094
 		}
 	},
 	[2095] = {
@@ -11362,6 +13475,9 @@ pg.base.child2_benefit_list = {
 		id = 2095,
 		item_icon = "benefit_2_xingchengou_1",
 		content = {
+			2095
+		},
+		show_content = {
 			2095
 		}
 	},
@@ -11378,6 +13494,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_xingchengou_2",
 		content = {
 			2096
+		},
+		show_content = {
+			2096
 		}
 	},
 	[2097] = {
@@ -11392,6 +13511,9 @@ pg.base.child2_benefit_list = {
 		id = 2097,
 		item_icon = "benefit_2_xingchengou_3",
 		content = {
+			2097
+		},
+		show_content = {
 			2097
 		}
 	},
@@ -11408,6 +13530,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_tineng_3",
 		content = {
 			2098
+		},
+		show_content = {
+			2098
 		}
 	},
 	[2099] = {
@@ -11422,6 +13547,9 @@ pg.base.child2_benefit_list = {
 		id = 2099,
 		item_icon = "benefit_2_zhishi_3",
 		content = {
+			2099
+		},
+		show_content = {
 			2099
 		}
 	},
@@ -11438,6 +13566,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "benefit_2_shijian_3",
 		content = {
 			2100
+		},
+		show_content = {
+			2100
 		}
 	},
 	[2101] = {
@@ -11452,6 +13583,9 @@ pg.base.child2_benefit_list = {
 		id = 2101,
 		item_icon = "benefit_2_ganzhi_3",
 		content = {
+			2101
+		},
+		show_content = {
 			2101
 		}
 	},
@@ -11468,6 +13602,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			30011
+		},
+		show_content = {
+			30011
 		}
 	},
 	[3002] = {
@@ -11482,6 +13619,9 @@ pg.base.child2_benefit_list = {
 		id = 3002,
 		item_icon = "buff_colours_1",
 		content = {
+			30021
+		},
+		show_content = {
 			30021
 		}
 	},
@@ -11502,6 +13642,9 @@ pg.base.child2_benefit_list = {
 			30033,
 			30034,
 			30035
+		},
+		show_content = {
+			30031
 		}
 	},
 	[3004] = {
@@ -11516,6 +13659,9 @@ pg.base.child2_benefit_list = {
 		id = 3004,
 		item_icon = "buff_colours_1",
 		content = {
+			30041
+		},
+		show_content = {
 			30041
 		}
 	},
@@ -11532,6 +13678,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			30051
+		},
+		show_content = {
+			30051
 		}
 	},
 	[3006] = {
@@ -11546,6 +13695,9 @@ pg.base.child2_benefit_list = {
 		id = 3006,
 		item_icon = "benefit_2_haitian",
 		content = {
+			30061
+		},
+		show_content = {
 			30061
 		}
 	},
@@ -11562,6 +13714,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			30071
+		},
+		show_content = {
+			30071
 		}
 	},
 	[3008] = {
@@ -11576,6 +13731,9 @@ pg.base.child2_benefit_list = {
 		id = 3008,
 		item_icon = "buff_colours_1",
 		content = {
+			30081
+		},
+		show_content = {
 			30081
 		}
 	},
@@ -11593,6 +13751,10 @@ pg.base.child2_benefit_list = {
 		content = {
 			30091,
 			30092
+		},
+		show_content = {
+			30091,
+			30092
 		}
 	},
 	[3010] = {
@@ -11608,6 +13770,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			30101
+		},
+		show_content = {
+			30101
 		}
 	},
 	[3011] = {
@@ -11622,6 +13787,9 @@ pg.base.child2_benefit_list = {
 		id = 3011,
 		item_icon = "buff_colours_1",
 		content = {
+			30111
+		},
+		show_content = {
 			30111
 		}
 	},
@@ -11642,6 +13810,9 @@ pg.base.child2_benefit_list = {
 			30123,
 			30124,
 			30125
+		},
+		show_content = {
+			30121
 		}
 	},
 	[3013] = {
@@ -11657,6 +13828,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			30131
+		},
+		show_content = {
+			30131
 		}
 	},
 	[3014] = {
@@ -11671,6 +13845,9 @@ pg.base.child2_benefit_list = {
 		id = 3014,
 		item_icon = "buff_colours_1",
 		content = {
+			30141
+		},
+		show_content = {
 			30141
 		}
 	},
@@ -11691,6 +13868,9 @@ pg.base.child2_benefit_list = {
 			30153,
 			30154,
 			30155
+		},
+		show_content = {
+			30151
 		}
 	},
 	[3016] = {
@@ -11706,6 +13886,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			30161
+		},
+		show_content = {
+			30161
 		}
 	},
 	[3017] = {
@@ -11720,6 +13903,9 @@ pg.base.child2_benefit_list = {
 		id = 3017,
 		item_icon = "buff_colours_1",
 		content = {
+			30171
+		},
+		show_content = {
 			30171
 		}
 	},
@@ -11740,6 +13926,9 @@ pg.base.child2_benefit_list = {
 			30183,
 			30184,
 			30185
+		},
+		show_content = {
+			30181
 		}
 	},
 	[3051] = {
@@ -11754,6 +13943,9 @@ pg.base.child2_benefit_list = {
 		id = 3051,
 		item_icon = "buff_colours_1",
 		content = {
+			30511
+		},
+		show_content = {
 			30511
 		}
 	},
@@ -11770,6 +13962,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			30521
+		},
+		show_content = {
+			30521
 		}
 	},
 	[3053] = {
@@ -11784,6 +13979,9 @@ pg.base.child2_benefit_list = {
 		id = 3053,
 		item_icon = "buff_colours_1",
 		content = {
+			30531
+		},
+		show_content = {
 			30531
 		}
 	},
@@ -11800,6 +13998,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			30541
+		},
+		show_content = {
+			30541
 		}
 	},
 	[3501] = {
@@ -11814,6 +14015,9 @@ pg.base.child2_benefit_list = {
 		id = 3501,
 		item_icon = "buff_colours_1",
 		content = {
+			35011
+		},
+		show_content = {
 			35011
 		}
 	},
@@ -11830,6 +14034,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			35021
+		},
+		show_content = {
+			35021
 		}
 	},
 	[3503] = {
@@ -11844,6 +14051,9 @@ pg.base.child2_benefit_list = {
 		id = 3503,
 		item_icon = "buff_colours_1",
 		content = {
+			35031
+		},
+		show_content = {
 			35031
 		}
 	},
@@ -11860,6 +14070,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			35041
+		},
+		show_content = {
+			35041
 		}
 	},
 	[3505] = {
@@ -11874,6 +14087,9 @@ pg.base.child2_benefit_list = {
 		id = 3505,
 		item_icon = "buff_colours_1",
 		content = {
+			35051
+		},
+		show_content = {
 			35051
 		}
 	},
@@ -11890,6 +14106,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			35061
+		},
+		show_content = {
+			35061
 		}
 	},
 	[3507] = {
@@ -11904,6 +14123,9 @@ pg.base.child2_benefit_list = {
 		id = 3507,
 		item_icon = "buff_colours_1",
 		content = {
+			35071
+		},
+		show_content = {
 			35071
 		}
 	},
@@ -11920,6 +14142,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			35081
+		},
+		show_content = {
+			35081
 		}
 	},
 	[3509] = {
@@ -11934,6 +14159,9 @@ pg.base.child2_benefit_list = {
 		id = 3509,
 		item_icon = "buff_colours_1",
 		content = {
+			35091
+		},
+		show_content = {
 			35091
 		}
 	},
@@ -11950,6 +14178,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			35101
+		},
+		show_content = {
+			35101
 		}
 	},
 	[3511] = {
@@ -11964,6 +14195,9 @@ pg.base.child2_benefit_list = {
 		id = 3511,
 		item_icon = "buff_colours_1",
 		content = {
+			35111
+		},
+		show_content = {
 			35111
 		}
 	},
@@ -11980,6 +14214,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			35121
+		},
+		show_content = {
+			35121
 		}
 	},
 	[3513] = {
@@ -11994,6 +14231,9 @@ pg.base.child2_benefit_list = {
 		id = 3513,
 		item_icon = "buff_colours_1",
 		content = {
+			35131
+		},
+		show_content = {
 			35131
 		}
 	},
@@ -12010,6 +14250,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			35141
+		},
+		show_content = {
+			35141
 		}
 	},
 	[3515] = {
@@ -12024,6 +14267,9 @@ pg.base.child2_benefit_list = {
 		id = 3515,
 		item_icon = "buff_colours_1",
 		content = {
+			35151
+		},
+		show_content = {
 			35151
 		}
 	},
@@ -12040,6 +14286,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			35161
+		},
+		show_content = {
+			35161
 		}
 	},
 	[3521] = {
@@ -12053,7 +14302,8 @@ pg.base.child2_benefit_list = {
 		during_time = -1,
 		id = 3521,
 		item_icon = "buff_colours_1",
-		content = {}
+		content = {},
+		show_content = {}
 	},
 	[3601] = {
 		rare = 3,
@@ -12067,6 +14317,9 @@ pg.base.child2_benefit_list = {
 		id = 3601,
 		item_icon = "buff_colours_1",
 		content = {
+			36011
+		},
+		show_content = {
 			36011
 		}
 	},
@@ -12083,6 +14336,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			36021
+		},
+		show_content = {
+			36021
 		}
 	},
 	[3603] = {
@@ -12097,6 +14353,9 @@ pg.base.child2_benefit_list = {
 		id = 3603,
 		item_icon = "buff_colours_1",
 		content = {
+			36031
+		},
+		show_content = {
 			36031
 		}
 	},
@@ -12113,6 +14372,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			36041
+		},
+		show_content = {
+			36041
 		}
 	},
 	[41] = {
@@ -12127,6 +14389,9 @@ pg.base.child2_benefit_list = {
 		id = 41,
 		item_icon = "buff_colours_1",
 		content = {
+			41
+		},
+		show_content = {
 			41
 		}
 	},
@@ -12143,6 +14408,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			42
+		},
+		show_content = {
+			42
 		}
 	},
 	[43] = {
@@ -12157,6 +14425,9 @@ pg.base.child2_benefit_list = {
 		id = 43,
 		item_icon = "buff_colours_1",
 		content = {
+			43
+		},
+		show_content = {
 			43
 		}
 	},
@@ -12173,6 +14444,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			44
+		},
+		show_content = {
+			44
 		}
 	},
 	[45] = {
@@ -12187,6 +14461,9 @@ pg.base.child2_benefit_list = {
 		id = 45,
 		item_icon = "buff_colours_1",
 		content = {
+			45
+		},
+		show_content = {
 			45
 		}
 	},
@@ -12203,6 +14480,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			46
+		},
+		show_content = {
+			46
 		}
 	},
 	[60] = {
@@ -12217,6 +14497,9 @@ pg.base.child2_benefit_list = {
 		id = 60,
 		item_icon = "buff_colours_1",
 		content = {
+			62
+		},
+		show_content = {
 			62
 		}
 	},
@@ -12234,6 +14517,10 @@ pg.base.child2_benefit_list = {
 		content = {
 			1001,
 			60
+		},
+		show_content = {
+			1001,
+			60
 		}
 	},
 	[62] = {
@@ -12249,6 +14536,9 @@ pg.base.child2_benefit_list = {
 		item_icon = "buff_colours_1",
 		content = {
 			61
+		},
+		show_content = {
+			61
 		}
 	},
 	[10000] = {
@@ -12263,6 +14553,12 @@ pg.base.child2_benefit_list = {
 		id = 10000,
 		item_icon = "592",
 		content = {
+			10001,
+			10002,
+			10003,
+			10004
+		},
+		show_content = {
 			10001,
 			10002,
 			10003,

@@ -145,7 +145,7 @@ function var_0_0.UpdateUnlock(arg_19_0, arg_19_1)
 		return
 	end
 
-	arg_19_0.data[arg_19_1]:GetPermanentData():UpdateSecretaryIDs()
+	arg_19_0.data[arg_19_1]:GetPermanentData():UpdateSecretaryIDs(true)
 end
 
 function var_0_0.Costs(arg_20_0, arg_20_1)

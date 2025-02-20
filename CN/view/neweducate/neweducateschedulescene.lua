@@ -190,7 +190,7 @@ function var_0_0.InitRightPanel(arg_19_0)
 			local var_20_0 = arg_19_0.attrIds[arg_20_1 + 1]
 			local var_20_1 = pg.child2_attr[var_20_0]
 
-			setImageSprite(arg_20_2:Find("icon_bg/icon"), LoadSprite("neweducateicon/" .. var_20_1.icon))
+			LoadImageSpriteAsync("neweducateicon/" .. var_20_1.icon, arg_20_2:Find("icon_bg/icon"))
 			setScrollText(arg_20_2:Find("name_mask/name"), var_20_1.name)
 		elseif arg_20_0 == UIItemList.EventUpdate then
 			arg_19_0:UpdateAttr(arg_20_1, arg_20_2)

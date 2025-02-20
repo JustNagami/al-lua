@@ -1,6 +1,204 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_11 = {
+	[308030] = {
+		ship_group = 30803,
+		name = "{namecode:156}",
+		hand_id = 14,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 308030,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "I58",
+		shop_id = 0,
+		illustrator = 14,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "I58",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "{namecode:283}型潜艇{namecode:156}",
+		voice_actor = 129,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.7,
+					0.21,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.7,
+					0.25,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.55,
+							2.21,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[308040] = {
+		ship_group = 30804,
+		name = "{namecode:252}",
+		hand_id = 14,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 308040,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "I25",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "I25",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "{namecode:280}潜艇{namecode:252}",
+		voice_actor = 121,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.9,
+					0.15,
+					0
+				}
+			},
+			torpedo = {
+				{
+					1.209,
+					0.03,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.42,
+							2.388,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[308041] = {
 		ship_group = 30804,
 		name = "兔兔与珊瑚礁",
@@ -13674,279 +13872,6 @@ pg.base.ship_skin_template_11 = {
 					}
 				}
 			}
-		}
-	},
-	[403034] = {
-		ship_group = 40303,
-		name = "Final Lap",
-		hand_id = 1,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 403034,
-		group_index = 4,
-		l2d_ignore_drag = 0,
-		painting = "ougen_5",
-		shop_id = 70614,
-		illustrator = -1,
-		shop_type_id = 14,
-		lip_smoothing = 0,
-		bg = "132",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "ougen_5",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Viel Glück~指挥官玩得开心吗？我的应援是只给你的哦~嘻嘻~",
-		voice_actor = 21,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			1,
-			4
-		},
-		live2d_offset = {
-			70,
-			160,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.47,
-					1.25,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.42,
-					1.27,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.344,
-					1.4,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.72,
-							2.38,
-							0
-						}
-					}
-				}
-			}
-		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_head"
-		},
-		l2d_voice_calibrate = {
-			use_event = true
-		}
-	},
-	[403035] = {
-		ship_group = 40303,
-		name = "沉醉于夜",
-		hand_id = 1,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 403035,
-		group_index = 5,
-		l2d_ignore_drag = 0,
-		painting = "ougen_6",
-		shop_id = 70700,
-		illustrator = -1,
-		shop_type_id = 17,
-		lip_smoothing = 0,
-		bg = "145",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		bg_sp = "1102",
-		voice_actor_2 = -1,
-		prefab = "ougen_6",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Guten Abend~怎么样？景色不错吧？呵呵呵，我指的是窗外的夜景哦？",
-		voice_actor = 21,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		tag = {
-			1,
-			2
-		},
-		live2d_offset = {
-			-35,
-			80,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.47,
-					1.25,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.42,
-					1.27,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.344,
-					1.4,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.53,
-							2.38,
-							0
-						}
-					}
-				}
-			}
-		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_head"
-		},
-		l2d_voice_calibrate = {
-			use_event = true
-		},
-		l2d_para_range = {
-			ParamEyeBallX = {
-				-0.7,
-				0.7
-			},
-			ParamEyeBallY = {
-				-0.7,
-				0.7
-			}
-		},
-		ship_l2d_id = {
-			206
 		}
 	}
 }

@@ -61,7 +61,7 @@ function var_0_0.OnInit(arg_4_0)
 			local var_7_0 = arg_4_0.attrIds[arg_7_1 + 1]
 			local var_7_1 = pg.child2_attr[var_7_0]
 
-			setImageSprite(arg_7_2:Find("icon_bg/icon"), LoadSprite("neweducateicon/" .. var_7_1.icon))
+			LoadImageSpriteAsync("neweducateicon/" .. var_7_1.icon, arg_7_2:Find("icon_bg/icon"))
 			setScrollText(arg_7_2:Find("name_mask/name"), var_7_1.name)
 		elseif arg_7_0 == UIItemList.EventUpdate then
 			arg_4_0:OnUpdateAttrItem(arg_7_1, arg_7_2)

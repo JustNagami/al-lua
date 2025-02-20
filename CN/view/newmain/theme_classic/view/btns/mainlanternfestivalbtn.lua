@@ -1,7 +1,5 @@
 ﻿local var_0_0 = class("MainLanternFestivalBtn", import(".MainBaseActivityBtn"))
 
-var_0_0.LANTERNFESTIVAL_MINIGAME_ID = 64
-
 function var_0_0.GetEventName(arg_1_0)
 	return "event_LanternFestival"
 end
@@ -26,8 +24,10 @@ function var_0_0.OnInit(arg_3_0)
 end
 
 function var_0_0.CustomOnClick(arg_4_0)
-	if getProxy(ActivityProxy):getActivityById(ActivityConst.LANTERNFESTIVAL) then
-		pg.m02:sendNotification(GAME.GO_MINI_GAME, var_0_0.LANTERNFESTIVAL_MINIGAME_ID)
+	local var_4_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.LANTERNFESTIVAL)
+
+	if var_4_0 then
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, var_4_0:getConfig("config_client").miniGame)
 	end
 end
 

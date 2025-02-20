@@ -46,6 +46,8 @@ function var_0_0.OnLoaded(arg_2_0)
 	arg_2_0.optionsHandler = NewEducateOptionsHandler.New(arg_2_0._tf:Find("options"))
 	arg_2_0.scheduleTF = arg_2_0._tf:Find("scheduleBg")
 
+	setText(arg_2_0.scheduleTF:Find("root/window/left/title/Text"), i18n("child_plan_perform_title"))
+
 	local var_2_0 = arg_2_0.scheduleTF:Find("root/window/left/content")
 
 	arg_2_0.planUIList = UIItemList.New(var_2_0, var_2_0:Find("tpl"))

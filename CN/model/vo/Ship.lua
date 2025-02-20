@@ -2416,7 +2416,7 @@ function var_0_0.hasAvailiableSkin(arg_206_0)
 	local var_206_3 = 0
 
 	for iter_206_0, iter_206_1 in ipairs(var_206_1) do
-		if arg_206_0:proposeSkinOwned(iter_206_1) or var_206_2[iter_206_1.id] then
+		if arg_206_0:proposeSkinOwned(iter_206_1) or var_206_2[iter_206_1.id] or var_206_0:hasSkin(iter_206_1.id) then
 			var_206_3 = var_206_3 + 1
 		end
 	end

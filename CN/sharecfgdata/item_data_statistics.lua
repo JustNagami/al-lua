@@ -107387,7 +107387,7 @@ _G.pg.base.item_data_statistics[68027] = {
 _G.pg.base.item_data_statistics[68028] = {
 	open_directly = 1,
 	name = "换装抵扣礼包(灯映星展)",
-	display = "购买后可获得<color=#92fc63FF>让巴尔</color>换装<color=#92fc63FF>灯映星展</color>的钻石抵扣券等道具",
+	display = "购买后可获得<color=#92fc63FF>{namecode:523}</color>换装<color=#92fc63FF>灯映星展</color>的钻石抵扣券等道具",
 	type = 17,
 	display_effect = "",
 	id = 68028,
@@ -107504,7 +107504,7 @@ _G.pg.base.item_data_statistics[68030] = {
 _G.pg.base.item_data_statistics[68031] = {
 	open_directly = 0,
 	name = "换装抵扣券(灯映星展)",
-	display = "持有此道具时，购买<color=#92fc63FF>让巴尔</color>换装<color=#92fc63FF>灯映星展</color>时可消耗此道具，并抵扣300钻石\n<color=#ff5c5c>道具有效期：自获得后～2025年1月30日23:59，过期后此道具将消失，并自动转化为300钻石</color>",
+	display = "持有此道具时，购买<color=#92fc63FF>{namecode:523}</color>换装<color=#92fc63FF>灯映星展</color>时可消耗此道具，并抵扣300钻石\n<color=#ff5c5c>道具有效期：自获得后～2025年1月30日23:59，过期后此道具将消失，并自动转化为300钻石</color>",
 	type = 1,
 	display_effect = "",
 	id = 68031,
@@ -107612,7 +107612,7 @@ _G.pg.base.item_data_statistics[68033] = {
 _G.pg.base.item_data_statistics[68034] = {
 	open_directly = 0,
 	name = "换装体验券(灯映星展)",
-	display = "使用后可前往换装体验兑换界面，界面内可以选择兑换<color=#92fc63FF>让巴尔</color>换装<color=#92fc63FF>灯映星展</color>的2天换装体验资格\n<color=#ff5c5c>道具有效期：自获得后～2025年1月30日23:59，过期后此道具将消失</color>",
+	display = "使用后可前往换装体验兑换界面，界面内可以选择兑换<color=#92fc63FF>{namecode:523}</color>换装<color=#92fc63FF>灯映星展</color>的2天换装体验资格\n<color=#ff5c5c>道具有效期：自获得后～2025年1月30日23:59，过期后此道具将消失</color>",
 	type = 1,
 	display_effect = "",
 	id = 68034,
@@ -107741,4 +107741,33 @@ _G.pg.base.item_data_statistics[81211] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {}
+}
+_G.pg.base.item_data_statistics[44003] = {
+	open_directly = 0,
+	name = "情人节礼物",
+	display = "$1赠送的情人节礼物",
+	type = 23,
+	display_effect = "",
+	id = 44003,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_undefined",
+	link_id = 0,
+	icon = "Props/manhanquanxi ",
+	price = "",
+	order = 0,
+	rarity = 8,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
 }

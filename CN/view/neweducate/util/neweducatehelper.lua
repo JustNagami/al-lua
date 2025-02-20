@@ -316,13 +316,16 @@ end
 
 function var_0_0.GetAllUnlockSecretaryIds()
 	local var_50_0 = getProxy(EducateProxy):GetSecretaryIDs() or {}
-	local var_50_1 = getProxy(NewEducateProxy)
 
-	for iter_50_0, iter_50_1 in ipairs(pg.child2_data.all) do
-		if var_50_1:GetChar(iter_50_1) and var_50_1:GetChar(iter_50_1):GetPermanentData() then
-			local var_50_2 = var_50_1:GetChar(iter_50_1):GetPermanentData():GetUnlockSecretaryIds()
+	if not LOCK_NEW_EDUCATE_SYSTEM then
+		local var_50_1 = getProxy(NewEducateProxy)
 
-			var_50_0 = table.mergeArray(var_50_0, var_50_2)
+		for iter_50_0, iter_50_1 in ipairs(pg.child2_data.all) do
+			if var_50_1:GetChar(iter_50_1) and var_50_1:GetChar(iter_50_1):GetPermanentData() then
+				local var_50_2 = var_50_1:GetChar(iter_50_1):GetPermanentData():GetUnlockSecretaryIds()
+
+				var_50_0 = table.mergeArray(var_50_0, var_50_2)
+			end
 		end
 	end
 
@@ -333,7 +336,9 @@ function var_0_0.GetEducateCharacterList()
 	local var_51_0 = {}
 
 	for iter_51_0, iter_51_1 in pairs(pg.secretary_special_ship.get_id_list_by_character_id) do
-		table.insert(var_51_0, EducateCharCharacter.New(iter_51_0))
+		if not LOCK_NEW_EDUCATE_SYSTEM or iter_51_0 == 1000 then
+			table.insert(var_51_0, EducateCharCharacter.New(iter_51_0))
+		end
 	end
 
 	return var_51_0
@@ -375,7 +380,7 @@ function var_0_0.UpdateUnlockBySkinId(arg_57_0)
 	local var_57_1 = pg.secretary_special_ship[var_57_0].tb_id
 
 	if var_57_1 == 0 then
-		getProxy(EducateProxy):updateSecretaryIDs()
+		getProxy(EducateProxy):updateSecretaryIDs(true)
 	else
 		getProxy(NewEducateProxy):UpdateUnlock(var_57_1)
 	end

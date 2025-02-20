@@ -9132,7 +9132,7 @@ _G.pg.base.gametip.world_boss_help = {
 8.当「演习据点」耐久下降至<color=#92fc63>75%</color>、<color=#92fc63>50%</color>、<color=#92fc63>25%</color>以及<color=#92fc63>完全耗尽</color>后，会记录本服达成的里程碑时间，同时，在演习中获得过「贡献值」的玩家可以获得相应奖励
 9.奖励将在「演习据点」完全耗尽后，通过邮件发放，如果活动结束时耐久未被耗尽，则会根据据点推进进度，为在演习中获得过「贡献值」的玩家发放对应进度的奖励
 10.活动期间，可以领取个人贡献奖励，个人贡献奖励需要当据点攻略进度和拥有的「贡献值」达到指定要求后才能领取
-11.1月16日维护后-2月6日维护前可以参与演习战斗，奖励领取的截止时间为2月6日维护]]
+11.1月16日维护后-2月6日维护前可以参与演习战斗，奖励领取的截止时间为2月12日24时]]
 		},
 		{
 			info = [[
@@ -11753,7 +11753,7 @@ _G.pg.base.gametip.lanternRiddles_gametip = {
 第四次答对：T3防御教材*2，100石油 
 第五次答对：T3通用改造部件*3，300物资 
 第六次答对：T3攻击教材*2，100石油 
-第七次答对：<color=#92fc63>高级定向蓝图六期*2</color>，300物资]]
+第七次答对：<color=#92fc63>高级定向蓝图七期*2</color>，300物资]]
 		}
 	}
 }
@@ -20138,15 +20138,6 @@ _G.pg.base.gametip["2023Valentine_minigame_b"] = {
 _G.pg.base.gametip["2023Valentine_minigame_c"] = {
 	tip = "……指挥官，你真的要品尝这一份么？是不是重新做一份比较好……"
 }
-_G.pg.base.gametip["2023Valentine_minigame_label1"] = {
-	tip = "最终得分："
-}
-_G.pg.base.gametip["2023Valentine_minigame_label2"] = {
-	tip = "完成次数"
-}
-_G.pg.base.gametip["2023Valentine_minigame_label3"] = {
-	tip = "当前完成："
-}
 _G.pg.base.gametip.sort_energy = {
 	tip = "心情值"
 }
@@ -26101,4 +26092,28 @@ _G.pg.base.gametip.child2_schedule_target = {
 }
 _G.pg.base.gametip.child2_shop_point_sure = {
 	tip = "购买后行动力将超出上限，是否继续购买"
+}
+_G.pg.base.gametip.Valentine_minigame_label1 = {
+	tip = "最终得分："
+}
+_G.pg.base.gametip.Valentine_minigame_label2 = {
+	tip = "完成次数"
+}
+_G.pg.base.gametip.Valentine_minigame_label3 = {
+	tip = "当前完成："
+}
+_G.pg.base.gametip.dorm3d_gift_favor_exceed = {
+	tip = "赠送后会溢出$1点契合度，是否确定赠送"
+}
+_G.pg.base.gametip["2025Valentine_minigame_s"] = {
+	tip = "太棒了！虽然是新式做法，不过这次大成功哦~指挥官，这份满载心意的巧克力，请快品尝看看吧！欸嘿~情人节快乐☆"
+}
+_G.pg.base.gametip["2025Valentine_minigame_a"] = {
+	tip = "啊，居然做得这么漂亮！果然有指挥官在就不一样呢~指挥官，快来尝尝看，这可是我们一起的成果哦！"
+}
+_G.pg.base.gametip["2025Valentine_minigame_b"] = {
+	tip = "总算是完成了呢！虽然和想象中的有点差距……但是指挥官帮了我这么多，应该不会太糟糕吧？欸嘿☆"
+}
+_G.pg.base.gametip["2025Valentine_minigame_c"] = {
+	tip = "欸……这个味道真的可以吗？作为皇家女仆做成这样，实在是太失态了……指挥官，让我重新做一份吧！"
 }

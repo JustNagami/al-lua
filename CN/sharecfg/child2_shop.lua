@@ -549,7 +549,7 @@ pg.child2_shop = {
 	{
 		goods_type = 1,
 		name = "实践增益(切换)",
-		resource_num = 50,
+		resource_num = 120,
 		is_refresh = 1,
 		limit_num = 1,
 		goods_id = 2041,
@@ -562,7 +562,7 @@ pg.child2_shop = {
 	{
 		goods_type = 1,
 		name = "实践增益(切换)+",
-		resource_num = 180,
+		resource_num = 240,
 		is_refresh = 1,
 		limit_num = 1,
 		goods_id = 2043,
@@ -575,7 +575,7 @@ pg.child2_shop = {
 	{
 		goods_type = 1,
 		name = "实践增益(切换)++",
-		resource_num = 200,
+		resource_num = 400,
 		is_refresh = 1,
 		limit_num = 1,
 		goods_id = 2045,
@@ -588,7 +588,7 @@ pg.child2_shop = {
 	{
 		goods_type = 1,
 		name = "体能增益(切换)",
-		resource_num = 50,
+		resource_num = 120,
 		is_refresh = 1,
 		limit_num = 1,
 		goods_id = 2047,
@@ -601,7 +601,7 @@ pg.child2_shop = {
 	{
 		goods_type = 1,
 		name = "体能增益(切换)+",
-		resource_num = 180,
+		resource_num = 240,
 		is_refresh = 1,
 		limit_num = 1,
 		goods_id = 2049,
@@ -614,7 +614,7 @@ pg.child2_shop = {
 	{
 		goods_type = 1,
 		name = "体能增益(切换)++",
-		resource_num = 200,
+		resource_num = 400,
 		is_refresh = 1,
 		limit_num = 1,
 		goods_id = 2051,
@@ -627,7 +627,7 @@ pg.child2_shop = {
 	{
 		goods_type = 1,
 		name = "感知增益(切换)",
-		resource_num = 50,
+		resource_num = 120,
 		is_refresh = 1,
 		limit_num = 1,
 		goods_id = 2053,
@@ -640,7 +640,7 @@ pg.child2_shop = {
 	{
 		goods_type = 1,
 		name = "感知增益(切换)+",
-		resource_num = 180,
+		resource_num = 240,
 		is_refresh = 1,
 		limit_num = 1,
 		goods_id = 2055,
@@ -653,7 +653,7 @@ pg.child2_shop = {
 	{
 		goods_type = 1,
 		name = "感知增益(切换)++",
-		resource_num = 200,
+		resource_num = 400,
 		is_refresh = 1,
 		limit_num = 1,
 		goods_id = 2057,
@@ -666,7 +666,7 @@ pg.child2_shop = {
 	{
 		goods_type = 1,
 		name = "知识增益(切换)",
-		resource_num = 50,
+		resource_num = 120,
 		is_refresh = 1,
 		limit_num = 1,
 		goods_id = 2059,
@@ -679,7 +679,7 @@ pg.child2_shop = {
 	{
 		goods_type = 1,
 		name = "知识增益(切换)+",
-		resource_num = 180,
+		resource_num = 240,
 		is_refresh = 1,
 		limit_num = 1,
 		goods_id = 2061,
@@ -692,7 +692,7 @@ pg.child2_shop = {
 	{
 		goods_type = 1,
 		name = "知识增益(切换)++",
-		resource_num = 200,
+		resource_num = 400,
 		is_refresh = 1,
 		limit_num = 1,
 		goods_id = 2063,

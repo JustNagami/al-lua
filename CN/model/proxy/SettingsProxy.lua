@@ -1080,7 +1080,7 @@ function var_0_0.UpdateEducateCharTip(arg_118_0, arg_118_1)
 	for iter_118_2, iter_118_3 in ipairs(var_118_1 or {}) do
 		local var_118_3 = var_118_0 .. "educate_char_tip" .. iter_118_3
 
-		if var_118_2[iter_118_3] ~= true and PlayerPrefs.GetInt(var_118_3, 1) == 1 then
+		if var_118_2[iter_118_3] ~= true then
 			PlayerPrefs.SetInt(var_118_3, 1)
 			PlayerPrefs.Save()
 		end
@@ -1143,7 +1143,7 @@ function var_0_0.ClearEducateCharTip(arg_123_0, arg_123_1)
 	local var_123_0 = getProxy(PlayerProxy):getRawData().id .. "educate_char_tip" .. arg_123_1
 
 	if PlayerPrefs.HasKey(var_123_0) then
-		PlayerPrefs.SetInt(var_123_0, 0)
+		PlayerPrefs.DeleteKey(var_123_0)
 		PlayerPrefs.Save()
 	end
 

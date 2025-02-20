@@ -53,7 +53,10 @@ function var_0_0.register(arg_1_0)
 			onRemoved = arg_8_2
 		}))
 	end)
-	arg_1_0.viewComponent:SetApartment(arg_1_0.contextData.apartment)
+
+	local var_1_0 = getProxy(ApartmentProxy):getApartment(arg_1_0.contextData.groupId)
+
+	arg_1_0.viewComponent:SetApartment(var_1_0)
 end
 
 function var_0_0.initNotificationHandleDic(arg_9_0)

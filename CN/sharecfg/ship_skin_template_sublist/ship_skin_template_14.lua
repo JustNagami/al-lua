@@ -1,6 +1,261 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_14 = {
+	[603020] = {
+		ship_group = 60302,
+		name = "{namecode:526}",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 603020,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "zhala",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "zhala",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "{namecode:526}级重巡洋舰—{namecode:526}",
+		voice_actor = 146,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.08,
+					0.73,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.09,
+					0.73,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.03,
+					0.03,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.13,
+					0.826,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.67,
+							2.13,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[603021] = {
+		ship_group = 60302,
+		name = "泳池边的“偶遇”",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 603021,
+		group_index = 1,
+		l2d_ignore_drag = 0,
+		painting = "zhala_2",
+		shop_id = 70229,
+		illustrator = -1,
+		shop_type_id = 6,
+		lip_smoothing = 0,
+		bg = "117",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "zhala_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "呼…这样的天气果然还是最适合游泳了~哦？真巧呀，指挥官也是来游泳的吗？还是说…有什么别的目的呢？呵呵~",
+		voice_actor = 146,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			1,
+			2
+		},
+		live2d_offset = {
+			-22,
+			-79,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.26,
+					0.72,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.29,
+					0.72,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.04,
+					0.01,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.26,
+					0.69,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.69,
+							2.12,
+							0
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			propose = 3,
+			login = 14.17,
+			main_1 = 0.5,
+			mission_complete = 0.5,
+			expedition = 0.5,
+			main_2 = 0.5,
+			home = 0.5,
+			mission = 0.5,
+			touch2 = 0.5,
+			mail = 0.5,
+			touch = 0.5,
+			main_3 = 0.5
+		}
+	},
 	[603030] = {
 		ship_group = 60303,
 		name = "波拉",
@@ -10197,7 +10452,7 @@ pg.base.ship_skin_template_14 = {
 				0
 			},
 			{
-				1.071
+				0.535
 			}
 		}
 	},
@@ -13584,232 +13839,6 @@ pg.base.ship_skin_template_14 = {
 				{
 					1.06,
 					1.26,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.6,
-							2.26,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[801020] = {
-		ship_group = 80102,
-		name = "福尔班",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 801020,
-		group_index = 0,
-		l2d_ignore_drag = 0,
-		painting = "fuerban",
-		shop_id = 0,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "fuerban",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "自由鸢尾机敏级驱逐舰—福尔班",
-		voice_actor = 124,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					-0.22,
-					1.06,
-					0
-				}
-			},
-			vicegun = {
-				{
-					-0.24,
-					1.05,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.07,
-					0.12,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					-0.29,
-					1.01,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.6,
-							2.26,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[801021] = {
-		ship_group = 80102,
-		name = "纯白花语",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 801021,
-		group_index = 1,
-		l2d_ignore_drag = 0,
-		painting = "Fuerban_2",
-		shop_id = 70087,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 9,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "Fuerban_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "偶尔像这样呼吸一下外面的新鲜空气感觉也不错呢…那个…指挥官，能陪我多走一段路吗？",
-		voice_actor = 124,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					-0.395,
-					1.165,
-					0
-				}
-			},
-			vicegun = {
-				{
-					-0.395,
-					1.165,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.256,
-					0.266,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.467,
-					0.826,
 					0
 				}
 			}

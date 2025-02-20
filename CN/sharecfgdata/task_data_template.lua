@@ -223667,7 +223667,7 @@ _G.pg.base.task_data_template[21193] = {
 	guild_coin_award = 0,
 	award = 904979,
 	type = 6,
-	desc = "(1/6)舰队出征，获得10次胜利",
+	desc = "(1/7)舰队出征，获得10次胜利",
 	count_inherit = 21194,
 	sub_type = 20,
 	target_id_2 = "",
@@ -223708,7 +223708,7 @@ _G.pg.base.task_data_template[21194] = {
 	guild_coin_award = 0,
 	award = 904980,
 	type = 6,
-	desc = "(2/6)舰队出征，获得20次胜利",
+	desc = "(2/7)舰队出征，获得20次胜利",
 	count_inherit = 21195,
 	sub_type = 20,
 	target_id_2 = "",
@@ -223749,7 +223749,7 @@ _G.pg.base.task_data_template[21195] = {
 	guild_coin_award = 0,
 	award = 904981,
 	type = 6,
-	desc = "(3/6)舰队出征，获得30次胜利",
+	desc = "(3/7)舰队出征，获得30次胜利",
 	count_inherit = 21196,
 	sub_type = 20,
 	target_id_2 = "",
@@ -223790,7 +223790,7 @@ _G.pg.base.task_data_template[21196] = {
 	guild_coin_award = 0,
 	award = 904982,
 	type = 6,
-	desc = "(4/6)舰队出征，获得50次胜利",
+	desc = "(4/7)舰队出征，获得50次胜利",
 	count_inherit = 21197,
 	sub_type = 20,
 	target_id_2 = "",
@@ -223831,7 +223831,7 @@ _G.pg.base.task_data_template[21197] = {
 	guild_coin_award = 0,
 	award = 904983,
 	type = 6,
-	desc = "(5/6)舰队出征，获得70次胜利",
+	desc = "(5/7)舰队出征，获得70次胜利",
 	count_inherit = 21198,
 	sub_type = 20,
 	target_id_2 = "",
@@ -223872,8 +223872,8 @@ _G.pg.base.task_data_template[21198] = {
 	guild_coin_award = 0,
 	award = 904984,
 	type = 6,
-	desc = "(6/6)舰队出征，获得100次胜利",
-	count_inherit = 0,
+	desc = "(6/7)舰队出征，获得100次胜利",
+	count_inherit = 21205,
 	sub_type = 20,
 	target_id_2 = "",
 	story_icon = "",
@@ -223888,7 +223888,7 @@ _G.pg.base.task_data_template[21198] = {
 	priority_type = 0,
 	fix_task = 0,
 	target_id = "0",
-	next_task = "0",
+	next_task = "21205",
 	auto_commit = 0,
 	story_icon_shift = "",
 	story_id = "",
@@ -223913,7 +223913,7 @@ _G.pg.base.task_data_template[21199] = {
 	guild_coin_award = 0,
 	award = 904985,
 	type = 6,
-	desc = "(1/6)累计消耗石油1000",
+	desc = "(1/7)累计消耗石油1000",
 	count_inherit = 21200,
 	sub_type = 121,
 	target_id_2 = "",
@@ -223954,7 +223954,7 @@ _G.pg.base.task_data_template[21200] = {
 	guild_coin_award = 0,
 	award = 904986,
 	type = 6,
-	desc = "(2/6)累计消耗石油2000",
+	desc = "(2/7)累计消耗石油2000",
 	count_inherit = 21201,
 	sub_type = 121,
 	target_id_2 = "",
@@ -223995,7 +223995,7 @@ _G.pg.base.task_data_template[21201] = {
 	guild_coin_award = 0,
 	award = 904987,
 	type = 6,
-	desc = "(3/6)累计消耗石油3000",
+	desc = "(3/7)累计消耗石油3000",
 	count_inherit = 21202,
 	sub_type = 121,
 	target_id_2 = "",
@@ -224036,7 +224036,7 @@ _G.pg.base.task_data_template[21202] = {
 	guild_coin_award = 0,
 	award = 904988,
 	type = 6,
-	desc = "(4/6)累计消耗石油5000",
+	desc = "(4/7)累计消耗石油5000",
 	count_inherit = 21203,
 	sub_type = 121,
 	target_id_2 = "",
@@ -224077,7 +224077,7 @@ _G.pg.base.task_data_template[21203] = {
 	guild_coin_award = 0,
 	award = 904989,
 	type = 6,
-	desc = "(5/6)累计消耗石油7000",
+	desc = "(5/7)累计消耗石油7000",
 	count_inherit = 21204,
 	sub_type = 121,
 	target_id_2 = "",
@@ -224118,8 +224118,8 @@ _G.pg.base.task_data_template[21204] = {
 	guild_coin_award = 0,
 	award = 904990,
 	type = 6,
-	desc = "(6/6)累计消耗石油10000",
-	count_inherit = 0,
+	desc = "(6/7)累计消耗石油10000",
+	count_inherit = 21206,
 	sub_type = 121,
 	target_id_2 = "",
 	story_icon = "",
@@ -224134,7 +224134,7 @@ _G.pg.base.task_data_template[21204] = {
 	priority_type = 0,
 	fix_task = 0,
 	target_id = "0",
-	next_task = "0",
+	next_task = "21206",
 	auto_commit = 0,
 	story_icon_shift = "",
 	story_id = "",
@@ -224307,6 +224307,1138 @@ _G.pg.base.task_data_template[21224] = {
 			2,
 			65520,
 			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21205] = {
+	name = "出击",
+	guild_coin_award = 0,
+	award = 904992,
+	type = 6,
+	desc = "(7/7)舰队出征，获得150次胜利",
+	count_inherit = 0,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21205,
+	target_num = 150,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			466,
+			2000
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21206] = {
+	name = "耗油",
+	guild_coin_award = 0,
+	award = 904993,
+	type = 6,
+	desc = "(7/7)累计消耗石油15000",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21206,
+	target_num = 15000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			466,
+			2000
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21226] = {
+	name = "『远汇点作战复刻』日常建造",
+	guild_coin_award = 0,
+	award = 905002,
+	type = 36,
+	desc = "建造舰船3次。",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21226,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65076,
+			300
+		}
+	}
+}
+_G.pg.base.task_data_template[21227] = {
+	name = "『远汇点作战复刻』日常出击",
+	guild_coin_award = 0,
+	award = 905003,
+	type = 36,
+	desc = "舰队出征，获得15次胜利。",
+	count_inherit = 0,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21227,
+	target_num = 15,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65076,
+			300
+		},
+		{
+			2,
+			65078,
+			1
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21228] = {
+	name = "『远汇点作战复刻』日常困难本",
+	guild_coin_award = 0,
+	award = 905004,
+	type = 36,
+	desc = "通关1次任意困难关卡 ",
+	count_inherit = 0,
+	sub_type = 182,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "10101",
+	scene = "",
+	id = 21228,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65076,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[21229] = {
+	name = "『远汇点作战复刻』日常活动关卡",
+	guild_coin_award = 0,
+	award = 905005,
+	type = 36,
+	desc = "通过1次任意活动关卡 ",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21229,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1670001,
+		1670002,
+		1670003,
+		1670004,
+		1670041,
+		1670051
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65076,
+			300
+		},
+		{
+			2,
+			54006,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5802
+		}
+	}
+}
+_G.pg.base.task_data_template[21230] = {
+	name = "『远汇点作战复刻』通关SP1",
+	guild_coin_award = 0,
+	award = 905006,
+	type = 6,
+	desc = "击败SP1旗舰1次",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21230,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1670001
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			2,
+			65078,
+			1
+		},
+		{
+			1,
+			1,
+			600
+		},
+		{
+			2,
+			65076,
+			200
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5802
+		}
+	}
+}
+_G.pg.base.task_data_template[21231] = {
+	name = "『远汇点作战复刻』通关SP2",
+	guild_coin_award = 0,
+	award = 905007,
+	type = 6,
+	desc = "击败SP2旗舰1次",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21231,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1670002
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			2,
+			65078,
+			1
+		},
+		{
+			1,
+			1,
+			600
+		},
+		{
+			2,
+			65076,
+			400
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5802
+		}
+	}
+}
+_G.pg.base.task_data_template[21232] = {
+	name = "『远汇点作战复刻』通关SP3",
+	guild_coin_award = 0,
+	award = 905008,
+	type = 6,
+	desc = "击败SP3旗舰1次",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21232,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1670003
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			2,
+			65078,
+			1
+		},
+		{
+			1,
+			1,
+			600
+		},
+		{
+			2,
+			65076,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5802
+		}
+	}
+}
+_G.pg.base.task_data_template[21233] = {
+	name = "『远汇点作战复刻』通关SP4",
+	guild_coin_award = 0,
+	award = 905009,
+	type = 6,
+	desc = "击败SP4旗舰1次",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21233,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1670004
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			2,
+			65078,
+			1
+		},
+		{
+			1,
+			1,
+			1500
+		},
+		{
+			2,
+			65076,
+			800
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5802
+		}
+	}
+}
+_G.pg.base.task_data_template[21234] = {
+	name = "『远汇点作战复刻』通关ESP",
+	guild_coin_award = 0,
+	award = 905010,
+	type = 6,
+	desc = "击败ESP旗舰1次",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21234,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1670041
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			2,
+			65078,
+			1
+		},
+		{
+			1,
+			1,
+			1500
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1670002,
+			chapterId = 1670041
+		}
+	}
+}
+_G.pg.base.task_data_template[21235] = {
+	name = "『远汇点作战复刻』SP1三星",
+	guild_coin_award = 0,
+	award = 905011,
+	type = 6,
+	desc = "完成SP1的3星收集",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1670001",
+	next_task = "21236",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21235,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			2,
+			500
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1670001,
+			chapterId = 1670001
+		}
+	}
+}
+_G.pg.base.task_data_template[21236] = {
+	name = "『远汇点作战复刻』SP2三星",
+	guild_coin_award = 0,
+	award = 905012,
+	type = 6,
+	desc = "完成SP2的3星收集",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1670002",
+	next_task = "21237",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21236,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			4,
+			100001,
+			1
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1670001,
+			chapterId = 1670002
+		}
+	}
+}
+_G.pg.base.task_data_template[21237] = {
+	name = "『远汇点作战复刻』SP3三星",
+	guild_coin_award = 0,
+	award = 905013,
+	type = 6,
+	desc = "完成SP3的3星收集",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1670003",
+	next_task = "21238",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21237,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			18023,
+			1
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1670001,
+			chapterId = 1670003
+		}
+	}
+}
+_G.pg.base.task_data_template[21238] = {
+	name = "『远汇点作战复刻』SP4三星",
+	guild_coin_award = 0,
+	award = 905014,
+	type = 6,
+	desc = "完成SP4的3星收集",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1670004",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21238,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			4,
+			100011,
+			1
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1670001,
+			chapterId = 1670004
+		}
+	}
+}
+_G.pg.base.task_data_template[21239] = {
+	name = "『远汇点作战复刻』通关EX",
+	guild_coin_award = 0,
+	award = 905015,
+	type = 6,
+	desc = "通关EX关卡",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1670051",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21239,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			15008,
+			500
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1670003,
+			chapterId = 1670051
+		}
+	}
+}
+_G.pg.base.task_data_template[21240] = {
+	name = "『远汇点作战复刻』外观装备箱保底",
+	guild_coin_award = 0,
+	award = 905016,
+	type = 6,
+	desc = "通过「活动商店」兑换或「补给商店-军火」购买20个 [外观装备箱(铁血之志)]",
+	count_inherit = 0,
+	sub_type = 52,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "30337",
+	scene = "",
+	id = 21240,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30509,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[500091] = {
+	name = "爱的美食疗愈",
+	guild_coin_award = 0,
+	award = 500091,
+	type = 5,
+	desc = "提交3个《鱼雷天妇罗》",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "jian",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "50003",
+	next_task = "500092",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "JIAN1",
+	id = 500091,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	},
+	scene = {
+		"BACKYARD"
+	}
+}
+_G.pg.base.task_data_template[500092] = {
+	name = "指挥官，该动筷了",
+	guild_coin_award = 0,
+	award = 500092,
+	type = 5,
+	desc = "强化任意角色10次",
+	count_inherit = 0,
+	sub_type = 34,
+	target_id_2 = "",
+	story_icon = "jian",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "JIAN2",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500093",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 500092,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500093] = {
+	name = "制作美食的方法！",
+	guild_coin_award = 0,
+	award = 500093,
+	type = 5,
+	desc = "济安上阵出击(关卡)胜利20次",
+	count_inherit = 0,
+	sub_type = 18,
+	target_id_2 = "",
+	story_icon = "jian",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "JIAN3",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500094",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "50209",
+	scene = "",
+	id = 500093,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500094] = {
+	name = "厨艺特训！",
+	guild_coin_award = 0,
+	award = 500094,
+	type = 5,
+	desc = "累计消耗石油500",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "jian",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "JIAN4",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500095",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 500094,
+	target_num = 500,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500095] = {
+	name = "无法轻言放弃",
+	guild_coin_award = 0,
+	award = 500095,
+	type = 5,
+	desc = "济安好感度达到100",
+	count_inherit = 0,
+	sub_type = 1012,
+	target_id_2 = "",
+	story_icon = "jian",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "JIAN5",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500096",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "50209",
+	scene = "",
+	id = 500095,
+	target_num = 10000,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			5
+		},
+		{
+			2,
+			16022,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[500096] = {
+	name = "美食攻心的谋略",
+	guild_coin_award = 0,
+	award = 500096,
+	type = 5,
+	desc = "济安突破至满星",
+	count_inherit = 0,
+	sub_type = 33,
+	target_id_2 = "",
+	story_icon = "jian",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "JIAN6",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500097",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "50209",
+	scene = "",
+	id = 500096,
+	target_num = 5,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			10
+		},
+		{
+			2,
+			18012,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[500097] = {
+	name = "其名为爱",
+	guild_coin_award = 0,
+	award = 500097,
+	type = 5,
+	desc = "济安等级达到100",
+	count_inherit = 0,
+	sub_type = 1013,
+	target_id_2 = "",
+	story_icon = "jian",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "JIAN7",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "50209",
+	scene = "",
+	id = 500097,
+	target_num = 100,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			10
+		},
+		{
+			2,
+			18012,
+			2
 		}
 	}
 }

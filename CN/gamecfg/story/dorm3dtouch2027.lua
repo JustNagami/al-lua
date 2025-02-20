@@ -17,7 +17,7 @@
 			hidePaintObj = true,
 			dir = 1,
 			say = "嗯？哪里奇怪吗？",
-			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_Noshiro_ik_furniture1_tone1",
+			voice = "event:/dorm/drom3d_noshiro_other/drom3d_Noshiro_ik_furniture1_tone1",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

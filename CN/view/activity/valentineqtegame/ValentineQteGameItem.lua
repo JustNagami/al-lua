@@ -20,7 +20,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0.bound = getBounds(arg_1_0._tf)
 
 	local var_1_0 = math.random(1, #var_0_1)
-	local var_1_1 = GetSpriteFromAtlas("ui/valentineqtegame_atlas", var_0_1[var_1_0])
+	local var_1_1 = GetSpriteFromAtlas("ui/minigameui/valentineqtegame_atlas", var_0_1[var_1_0])
 
 	arg_1_0.image.sprite = var_1_1
 

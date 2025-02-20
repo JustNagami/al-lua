@@ -36,7 +36,7 @@ end
 function var_0_0.GetBenefitIdsByEffectType(arg_5_0, arg_5_1)
 	local var_5_0 = {}
 
-	for iter_5_0, iter_5_1 in ipairs(arg_5_0:getConfig("content")) do
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0:getConfig("show_content")) do
 		if underscore.any(pg.child2_benefit[iter_5_1].effect, function(arg_6_0)
 			assert(type(arg_6_0) == "table", "请检查effect配置的括号,benefit id:" .. iter_5_1)
 

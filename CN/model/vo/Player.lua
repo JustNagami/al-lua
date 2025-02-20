@@ -346,7 +346,7 @@ function var_0_0.getPainting(arg_22_0)
 		local var_22_1 = ShipGroup.GetChangeSkinGroupId(arg_22_0.skinId)
 		local var_22_2 = ShipGroup.GetStoreChangeSkinId(var_22_1, arg_22_0.character)
 
-		var_22_0 = pg.ship_skin_template[var_22_2]
+		var_22_0 = var_22_2 and pg.ship_skin_template[var_22_2] or pg.ship_skin_template[arg_22_0.skinId]
 	else
 		var_22_0 = pg.ship_skin_template[arg_22_0.skinId]
 	end

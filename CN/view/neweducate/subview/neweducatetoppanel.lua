@@ -159,7 +159,7 @@ function var_0_0.OnInitRes(arg_15_0, arg_15_1, arg_15_2)
 
 	local var_15_1 = pg.child2_resource[var_15_0]
 
-	setImageSprite(arg_15_2:Find("icon"), LoadSprite("neweducateicon/" .. var_15_1.icon))
+	LoadImageSpriteAsync("neweducateicon/" .. var_15_1.icon, arg_15_2:Find("icon"))
 	onButton(arg_15_0, arg_15_2, function()
 		arg_15_0:emit(NewEducateBaseUI.ON_ITEM, {
 			drop = {

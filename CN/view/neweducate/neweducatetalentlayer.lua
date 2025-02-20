@@ -65,7 +65,7 @@ function var_0_0.UpdateItem(arg_11_0, arg_11_1, arg_11_2)
 	setText(arg_11_2:Find("name/Text"), var_11_0.name)
 	setText(arg_11_2:Find("desc/Text"), var_11_0.desc)
 	LoadImageSpriteAtlasAsync("ui/neweducatetalentui_atlas", arg_11_0:GetRarityBg(var_11_0.rare), arg_11_2, true)
-	setImageSprite(arg_11_2:Find("icon"), LoadSprite("neweducateicon/" .. var_11_0.item_icon), true)
+	LoadImageSpriteAsync("neweducateicon/" .. var_11_0.item_icon, arg_11_2:Find("icon"), true)
 
 	local var_11_1 = not table.contains(arg_11_0.reTalentList, arg_11_1)
 

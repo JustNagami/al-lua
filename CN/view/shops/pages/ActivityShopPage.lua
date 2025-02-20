@@ -386,6 +386,8 @@ function var_0_0.InitCommodities(arg_32_0)
 	if var_32_0 and var_32_0.config_client and var_32_0.config_client.category then
 		arg_32_0.splitCommodities = arg_32_0.shop:GetSplitCommodities()
 		arg_32_0.spiltNameCodes = arg_32_0.shop:GetSplitNameCodes()
+
+		arg_32_0.groupList:align(#arg_32_0.splitCommodities)
 	else
 		var_0_0.super.InitCommodities(arg_32_0)
 	end

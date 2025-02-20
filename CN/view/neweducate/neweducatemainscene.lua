@@ -294,10 +294,15 @@ function var_0_0.CheckNewChar(arg_30_0, arg_30_1)
 		table.insert(var_30_1, function(arg_33_0)
 			NewEducateHelper.PlaySpecialStoryList(var_30_0.after_name, arg_33_0, true)
 		end)
+
+		arg_30_0.lockBackPressed = true
+
 		seriesAsync(var_30_1, function()
 			setActive(arg_30_0._tf, true)
 			arg_30_0:_loadSubViews()
 			arg_30_1()
+
+			arg_30_0.lockBackPressed = false
 		end)
 	else
 		arg_30_0:_loadSubViews()
@@ -699,6 +704,10 @@ function var_0_0.OnNextRound(arg_97_0)
 end
 
 function var_0_0.OnNodeStart(arg_98_0, arg_98_1)
+	if arg_98_1 == 0 then
+		return
+	end
+
 	assert(pg.child2_node[arg_98_1], "child2_node缺少id:" .. arg_98_1)
 	arg_98_0.nodePanel:ExecuteAction("StartNode", arg_98_1)
 
@@ -721,6 +730,10 @@ function var_0_0.UpdateCallName(arg_100_0)
 end
 
 function var_0_0.onBackPressed(arg_101_0)
+	if arg_101_0.lockBackPressed then
+		return
+	end
+
 	if arg_101_0.assessPanel:isShowing() then
 		return
 	end

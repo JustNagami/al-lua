@@ -1,6 +1,206 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_13 = {
+	[408111] = {
+		ship_group = 40811,
+		name = "寒梅映春",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 408111,
+		group_index = 1,
+		l2d_ignore_drag = 0,
+		painting = "U410_2",
+		shop_id = 70501,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 3,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "144",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		bg_sp = "1102",
+		voice_actor_2 = -1,
+		prefab = "U410_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "新年好呀，指挥官~春节的准备都做好了吗？红包准备了吗？春联贴了吗？…对春节意外地了解？呵呵，我都已经提前做好功课了哦~",
+		voice_actor = 261,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			4
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					2.304,
+					0.061,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					-0.435,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.51,
+							2.523,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[408112] = {
+		ship_group = 40811,
+		name = "悠然应援练习",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 408112,
+		group_index = 2,
+		l2d_ignore_drag = 0,
+		painting = "u410_3",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 13,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "112",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "u410_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "最后一个动作……差不多就这样？呵呵，指挥官，从你那边的角度看起来怎么样？",
+		voice_actor = 261,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.578,
+					0.498,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					-0.037,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.924,
+							2.32,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[408120] = {
 		ship_group = 40812,
 		name = "{namecode:476}",
@@ -8868,7 +9068,9 @@ pg.base.ship_skin_template_13 = {
 			50301117,
 			50301118,
 			50301119,
-			50301120
+			50301120,
+			50301121,
+			50301122
 		}
 	},
 	[503012] = {
@@ -13592,261 +13794,6 @@ pg.base.ship_skin_template_13 = {
 					}
 				}
 			}
-		}
-	},
-	[603020] = {
-		ship_group = 60302,
-		name = "{namecode:526}",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 603020,
-		group_index = 0,
-		l2d_ignore_drag = 0,
-		painting = "zhala",
-		shop_id = 0,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "zhala",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "{namecode:526}级重巡洋舰—{namecode:526}",
-		voice_actor = 146,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.08,
-					0.73,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.09,
-					0.73,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.03,
-					0.03,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.13,
-					0.826,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.67,
-							2.13,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[603021] = {
-		ship_group = 60302,
-		name = "泳池边的“偶遇”",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 603021,
-		group_index = 1,
-		l2d_ignore_drag = 0,
-		painting = "zhala_2",
-		shop_id = 70229,
-		illustrator = -1,
-		shop_type_id = 6,
-		lip_smoothing = 0,
-		bg = "117",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "zhala_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "呼…这样的天气果然还是最适合游泳了~哦？真巧呀，指挥官也是来游泳的吗？还是说…有什么别的目的呢？呵呵~",
-		voice_actor = 146,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			1,
-			2
-		},
-		live2d_offset = {
-			-22,
-			-79,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.26,
-					0.72,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.29,
-					0.72,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.04,
-					0.01,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.26,
-					0.69,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.69,
-							2.12,
-							0
-						}
-					}
-				}
-			}
-		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_head"
-		},
-		l2d_voice_calibrate = {
-			propose = 3,
-			login = 14.17,
-			main_1 = 0.5,
-			mission_complete = 0.5,
-			expedition = 0.5,
-			main_2 = 0.5,
-			home = 0.5,
-			mission = 0.5,
-			touch2 = 0.5,
-			mail = 0.5,
-			touch = 0.5,
-			main_3 = 0.5
 		}
 	}
 }

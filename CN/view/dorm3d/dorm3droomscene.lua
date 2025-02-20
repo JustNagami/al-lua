@@ -442,7 +442,7 @@ function var_0_0.init(arg_4_0)
 			arg_4_0:emit(arg_4_0.HIDE_BLOCK)
 		end)
 		arg_4_0:emit(Dorm3dRoomMediator.OPEN_GIFT_LAYER, {
-			apartment = arg_4_0.apartment,
+			groupId = arg_4_0.apartment:GetConfigID(),
 			baseCamera = arg_4_0.mainCameraTF
 		})
 	end, "ui-dorm_click_v2")
@@ -1586,8 +1586,6 @@ function var_0_0.OnTriggerIK(arg_196_0, arg_196_1)
 	arg_196_0.blockIK = true
 
 	arg_196_0:TouchModeAction(var_196_0, unpack(var_196_3))(function()
-		arg_196_0.enableIKTip = true
-
 		arg_196_0:ResetIKTipTimer()
 
 		arg_196_0.blockIK = nil
@@ -1598,6 +1596,10 @@ function var_0_0.OnTouchCharacterBody(arg_198_0, arg_198_1)
 	local var_198_0 = arg_198_0.ladyDict[arg_198_0.apartment:GetConfigID()]
 
 	if not var_198_0.ikConfig then
+		return
+	end
+
+	if type(var_198_0.ikConfig.touch_data) ~= "table" then
 		return
 	end
 
@@ -1635,8 +1637,6 @@ function var_0_0.OnTouchCharacterBody(arg_198_0, arg_198_1)
 			arg_198_0.blockIK = true
 
 			arg_198_0:TouchModeAction(var_198_0, unpack(var_198_3))(function()
-				arg_198_0.enableIKTip = true
-
 				arg_198_0:ResetIKTipTimer()
 
 				arg_198_0.blockIK = nil
@@ -2076,6 +2076,9 @@ function var_0_0.HandleGameNotification(arg_246_0, arg_246_1, arg_246_2)
 				end,
 				[70] = function()
 					if arg_246_2.operationCode == "GAME_READY" then
+						arg_246_0.cameras[var_0_0.CAMERA.TALK].Follow = nil
+						arg_246_0.cameras[var_0_0.CAMERA.TALK].LookAt = nil
+
 						arg_246_0:PlaySingleAction(var_246_0, "shuohua_sikao")
 					elseif arg_246_2.operationCode == "ROUND_RESULT" then
 						local var_249_0
@@ -2100,9 +2103,6 @@ function var_0_0.HandleGameNotification(arg_246_0, arg_246_1, arg_246_2)
 							return
 						end)
 					elseif arg_246_2.operationCode == "GAME_RESULT" then
-						arg_246_0.cameras[var_0_0.CAMERA.TALK].Follow = nil
-						arg_246_0.cameras[var_0_0.CAMERA.TALK].LookAt = nil
-
 						local var_249_1 = arg_246_0.cameras[var_0_0.CAMERA.TALK].transform
 
 						var_249_1.position = var_249_1.position + var_249_1.right * 0.11

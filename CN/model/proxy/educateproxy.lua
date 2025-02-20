@@ -148,7 +148,7 @@ end
 function var_0_0.SetEndings(arg_13_0, arg_13_1)
 	arg_13_0.endings = arg_13_1
 
-	arg_13_0:updateSecretaryIDs()
+	arg_13_0:updateSecretaryIDs(false)
 end
 
 function var_0_0.GetSelectInfo(arg_14_0)
@@ -317,7 +317,7 @@ function var_0_0.AddEnding(arg_39_0, arg_39_1)
 	end
 
 	table.insert(arg_39_0.endings, arg_39_1)
-	arg_39_0:updateSecretaryIDs()
+	arg_39_0:updateSecretaryIDs(true)
 	arg_39_0:sendNotification(var_0_0.ENDING_ADDED)
 end
 
@@ -536,7 +536,7 @@ function var_0_0.AddPolaroid(arg_67_0, arg_67_1)
 	})
 
 	EducateTipHelper.SetNewTip(EducateTipHelper.NEW_POLAROID)
-	arg_67_0:updateSecretaryIDs()
+	arg_67_0:updateSecretaryIDs(true)
 	arg_67_0:sendNotification(var_0_0.POLAROID_ADDED)
 end
 
@@ -642,14 +642,14 @@ end
 function var_0_0.SetSecretaryUnlock(arg_81_0)
 	arg_81_0.isUnlockSecretary = true
 
-	arg_81_0:updateSecretaryIDs()
+	arg_81_0:updateSecretaryIDs(false)
 end
 
 function var_0_0.CheckNewSecretaryTip(arg_82_0)
 	local var_82_0 = arg_82_0:GetPolaroidGroupCnt()
 
 	if table.contains(arg_82_0.unlcokTipByPolaroidCnt, var_82_0) then
-		arg_82_0:updateSecretaryIDs()
+		arg_82_0:updateSecretaryIDs(false)
 		arg_82_0:sendNotification(var_0_0.UNLCOK_NEW_SECRETARY_BY_CNT)
 
 		return true
@@ -680,14 +680,18 @@ function var_0_0.checkSecretaryID(arg_83_0, arg_83_1, arg_83_2)
 	return false
 end
 
-function var_0_0.updateSecretaryIDs(arg_84_0)
+function var_0_0.updateSecretaryIDs(arg_84_0, arg_84_1)
 	if not arg_84_0:IsUnlockSecretary() then
 		arg_84_0.unlockSecretaryIds = {}
 
 		return
 	end
 
-	local var_84_0 = Clone(NewEducateHelper.GetAllUnlockSecretaryIds())
+	local var_84_0
+
+	if arg_84_1 then
+		var_84_0 = Clone(NewEducateHelper.GetAllUnlockSecretaryIds())
+	end
 
 	arg_84_0.unlockSecretaryIds = {}
 
@@ -730,7 +734,9 @@ function var_0_0.updateSecretaryIDs(arg_84_0)
 		})
 	end
 
-	getProxy(SettingsProxy):UpdateEducateCharTip(var_84_0)
+	if arg_84_1 then
+		getProxy(SettingsProxy):UpdateEducateCharTip(var_84_0)
+	end
 end
 
 function var_0_0.GetEducateGroupList(arg_90_0)

@@ -240,14 +240,13 @@
 			}
 		},
 		{
-			expression = 1,
+			paintingNoise = true,
 			side = 2,
 			bgName = "bg_zhuiluo_2",
-			paintingNoise = true,
-			dir = 1,
-			actorName = "獒·META",
-			actor = 900192,
 			nameColor = "#ffa500",
+			dir = 1,
+			actor = 900192,
+			actorName = "獒·META",
 			say = "……没想到这么胡来的计划真能成功。",
 			painting = {
 				alpha = 0.3,

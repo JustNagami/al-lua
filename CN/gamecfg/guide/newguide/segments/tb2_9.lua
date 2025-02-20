@@ -46,7 +46,7 @@
 				dir = 1,
 				char = 1,
 				posY = 0,
-				posX = 0,
+				posX = -100,
 				uiset = {
 					{
 						lineMode = 1,

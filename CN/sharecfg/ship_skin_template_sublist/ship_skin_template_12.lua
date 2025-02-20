@@ -1,6 +1,279 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_12 = {
+	[403034] = {
+		ship_group = 40303,
+		name = "Final Lap",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 403034,
+		group_index = 4,
+		l2d_ignore_drag = 0,
+		painting = "ougen_5",
+		shop_id = 70614,
+		illustrator = -1,
+		shop_type_id = 14,
+		lip_smoothing = 0,
+		bg = "132",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "ougen_5",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Viel Glück~指挥官玩得开心吗？我的应援是只给你的哦~嘻嘻~",
+		voice_actor = 21,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			1,
+			4
+		},
+		live2d_offset = {
+			70,
+			160,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.47,
+					1.25,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.42,
+					1.27,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.344,
+					1.4,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.72,
+							2.38,
+							0
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			use_event = true
+		}
+	},
+	[403035] = {
+		ship_group = 40303,
+		name = "沉醉于夜",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 403035,
+		group_index = 5,
+		l2d_ignore_drag = 0,
+		painting = "ougen_6",
+		shop_id = 70700,
+		illustrator = -1,
+		shop_type_id = 17,
+		lip_smoothing = 0,
+		bg = "145",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		bg_sp = "1102",
+		voice_actor_2 = -1,
+		prefab = "ougen_6",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Guten Abend~怎么样？景色不错吧？呵呵呵，我指的是窗外的夜景哦？",
+		voice_actor = 21,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		tag = {
+			1,
+			2
+		},
+		live2d_offset = {
+			-35,
+			80,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.47,
+					1.25,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.42,
+					1.27,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.344,
+					1.4,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.53,
+							2.38,
+							0
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			use_event = true
+		},
+		l2d_para_range = {
+			ParamEyeBallX = {
+				-0.7,
+				0.7
+			},
+			ParamEyeBallY = {
+				-0.7,
+				0.7
+			}
+		},
+		ship_l2d_id = {
+			206
+		}
+	},
 	[403036] = {
 		ship_group = 40303,
 		name = "闪耀达阵！",
@@ -13209,206 +13482,6 @@ pg.base.ship_skin_template_12 = {
 						{
 							-0.51,
 							2.409,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[408111] = {
-		ship_group = 40811,
-		name = "寒梅映春",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 408111,
-		group_index = 1,
-		l2d_ignore_drag = 0,
-		painting = "U410_2",
-		shop_id = 70501,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 3,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "144",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		bg_sp = "1102",
-		voice_actor_2 = -1,
-		prefab = "U410_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "新年好呀，指挥官~春节的准备都做好了吗？红包准备了吗？春联贴了吗？…对春节意外地了解？呵呵，我都已经提前做好功课了哦~",
-		voice_actor = 261,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					2.304,
-					0.061,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					-0.435,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.51,
-							2.523,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[408112] = {
-		ship_group = 40811,
-		name = "悠然应援练习",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 408112,
-		group_index = 2,
-		l2d_ignore_drag = 0,
-		painting = "u410_3",
-		shop_id = 0,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 13,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "112",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "u410_3",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "最后一个动作……差不多就这样？呵呵，指挥官，从你那边的角度看起来怎么样？",
-		voice_actor = 261,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.578,
-					0.498,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					-0.037,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.924,
-							2.32,
 							0
 						}
 					}

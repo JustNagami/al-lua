@@ -12,7 +12,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 
 	arg_1_0:InitStroyName2Id()
 	arg_1_0:InitSecretary()
-	arg_1_0:UpdateSecretaryIDs()
+	arg_1_0:UpdateSecretaryIDs(false)
 end
 
 function var_0_0.AddGameCnt(arg_2_0)
@@ -96,7 +96,7 @@ function var_0_0.AddPolaroid(arg_15_0, arg_15_1)
 
 	if not table.contains(arg_15_0.unlockPolaroidGroups, var_15_0) then
 		table.insert(arg_15_0.unlockPolaroidGroups, var_15_0)
-		arg_15_0:UpdateSecretaryIDs()
+		arg_15_0:UpdateSecretaryIDs(true)
 	end
 end
 
@@ -123,7 +123,7 @@ end
 function var_0_0.AddActivatedEndings(arg_20_0, arg_20_1)
 	arg_20_0.activatedEndings = table.mergeArray(arg_20_0.activatedEndings, arg_20_1, true)
 
-	arg_20_0:UpdateSecretaryIDs()
+	arg_20_0:UpdateSecretaryIDs(true)
 end
 
 function var_0_0.InitSecretary(arg_21_0)
@@ -164,8 +164,12 @@ function var_0_0.CheckSecretaryID(arg_22_0, arg_22_1, arg_22_2)
 	return false
 end
 
-function var_0_0.UpdateSecretaryIDs(arg_23_0)
-	local var_23_0 = Clone(NewEducateHelper.GetAllUnlockSecretaryIds())
+function var_0_0.UpdateSecretaryIDs(arg_23_0, arg_23_1)
+	local var_23_0
+
+	if arg_23_1 then
+		var_23_0 = Clone(NewEducateHelper.GetAllUnlockSecretaryIds())
+	end
 
 	arg_23_0.unlockSecretaryIds = {}
 
@@ -208,7 +212,9 @@ function var_0_0.UpdateSecretaryIDs(arg_23_0)
 		})
 	end
 
-	getProxy(SettingsProxy):UpdateEducateCharTip(var_23_0)
+	if arg_23_1 then
+		getProxy(SettingsProxy):UpdateEducateCharTip(var_23_0)
+	end
 end
 
 function var_0_0.GetUnlockSecretaryIds(arg_29_0)
