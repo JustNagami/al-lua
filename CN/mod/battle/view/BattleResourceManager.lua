@@ -1063,11 +1063,11 @@ function var_0_5.GetEquipResource(arg_72_0, arg_72_1, arg_72_2)
 	local var_72_8 = var_72_5.skill_id
 
 	for iter_72_4, iter_72_5 in ipairs(var_72_8) do
-		iter_72_5 = arg_72_2 and var_0_0.Battle.BattleDataFunction.SkillTranform(arg_72_2, iter_72_5) or iter_72_5
+		local var_72_9 = arg_72_2 and var_0_0.Battle.BattleDataFunction.SkillTranform(arg_72_2, iter_72_5[1]) or iter_72_5[1]
+		local var_72_10 = iter_72_5[2] or 1
+		local var_72_11 = var_0_0.Battle.BattleDataFunction.GetResFromBuff(var_72_9, var_72_10, {})
 
-		local var_72_9 = var_0_0.Battle.BattleDataFunction.GetResFromBuff(iter_72_5, 1, {})
-
-		for iter_72_6, iter_72_7 in ipairs(var_72_9) do
+		for iter_72_6, iter_72_7 in ipairs(var_72_11) do
 			var_72_0[#var_72_0 + 1] = iter_72_7
 		end
 	end

@@ -297,8 +297,9 @@ local function var_0_2(arg_22_0, arg_22_1)
 	local var_22_2 = underscore.filter(var_22_1, function(arg_24_0)
 		return not arg_24_0.type or arg_24_0.type ~= AttributeType.AntiSiren
 	end)
-	local var_22_3 = arg_22_1:getConfig("skill_id")[1]
-	local var_22_4 = var_22_3 and arg_22_1:isDevice() and {
+	local var_22_3 = arg_22_1:getConfig("skill_id")
+	local var_22_4 = var_22_3[1] and var_22_3[1][1]
+	local var_22_5 = var_22_4 and arg_22_1:isDevice() and {
 		1,
 		2,
 		5
@@ -309,25 +310,25 @@ local function var_0_2(arg_22_0, arg_22_1)
 		3
 	}
 
-	for iter_22_0, iter_22_1 in ipairs(var_22_4) do
-		local var_22_5 = var_22_0:Find("attr_" .. iter_22_1)
+	for iter_22_0, iter_22_1 in ipairs(var_22_5) do
+		local var_22_6 = var_22_0:Find("attr_" .. iter_22_1)
 
-		setActive(var_22_5, true)
+		setActive(var_22_6, true)
 
 		if iter_22_1 == 5 then
-			setText(var_22_5:Find("value"), getSkillName(var_22_3))
+			setText(var_22_6:Find("value"), getSkillName(var_22_4))
 		else
-			local var_22_6 = ""
 			local var_22_7 = ""
+			local var_22_8 = ""
 
 			if #var_22_2 > 0 then
-				local var_22_8 = table.remove(var_22_2, 1)
+				local var_22_9 = table.remove(var_22_2, 1)
 
-				var_22_6, var_22_7 = Equipment.GetInfoTrans(var_22_8)
+				var_22_7, var_22_8 = Equipment.GetInfoTrans(var_22_9)
 			end
 
-			setText(var_22_5:Find("tag"), var_22_6)
-			setText(var_22_5:Find("value"), var_22_7)
+			setText(var_22_6:Find("tag"), var_22_7)
+			setText(var_22_6:Find("value"), var_22_8)
 		end
 	end
 end

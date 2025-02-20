@@ -9509,7 +9509,9 @@ _G.pg.base.spweapon_data_statistics[10940] = {
 	important = 2,
 	prev = 0,
 	attribute_1 = "torpedo",
-	usability = {},
+	usability = {
+		2
+	},
 	skill_upgrade = {
 		{
 			0,
