@@ -20,6 +20,9 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.gridsTF = arg_1_0._tf:Find("grids")
 	arg_1_0.childsTF = arg_1_0._tf:Find("childs")
 	arg_1_0.interactionTF = arg_1_0._tf:Find("interaction")
+
+	arg_1_0.mat:SetAsFirstSibling()
+
 	arg_1_0.bones = {}
 
 	local var_1_0 = arg_1_0.data:GetDirection()
