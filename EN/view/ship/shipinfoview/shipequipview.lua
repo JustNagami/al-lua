@@ -279,8 +279,9 @@ function var_0_0.UpdateEquipmentPanel(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
 		local var_13_22 = underscore.filter(var_13_21, function(arg_15_0)
 			return not arg_15_0.type or arg_15_0.type ~= AttributeType.AntiSiren
 		end)
-		local var_13_23 = arg_13_2:getConfig("skill_id")[1]
-		local var_13_24 = var_13_23 and arg_13_2:isDevice() and {
+		local var_13_23 = arg_13_2:getConfig("skill_id")
+		local var_13_24 = var_13_23[1] and var_13_23[1][1]
+		local var_13_25 = var_13_24 and arg_13_2:isDevice() and {
 			1,
 			2,
 			5
@@ -291,51 +292,51 @@ function var_0_0.UpdateEquipmentPanel(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
 			3
 		}
 
-		for iter_13_8, iter_13_9 in ipairs(var_13_24) do
-			local var_13_25 = var_13_20:Find("attr_" .. iter_13_9)
-			local var_13_26 = findTF(var_13_25, "panel")
-			local var_13_27 = findTF(var_13_25, "lock")
+		for iter_13_8, iter_13_9 in ipairs(var_13_25) do
+			local var_13_26 = var_13_20:Find("attr_" .. iter_13_9)
+			local var_13_27 = findTF(var_13_26, "panel")
+			local var_13_28 = findTF(var_13_26, "lock")
 
-			setActive(var_13_25, true)
+			setActive(var_13_26, true)
 
 			if iter_13_9 == 5 then
-				setText(var_13_26:Find("values/value"), "")
+				setText(var_13_27:Find("values/value"), "")
 
-				local var_13_28 = getSkillName(var_13_23)
+				local var_13_29 = getSkillName(var_13_24)
 
-				if PLATFORM_CODE == PLATFORM_US and string.len(var_13_28) > 15 then
-					GetComponent(var_13_26:Find("values/value_1"), typeof(Text)).fontSize = 24
+				if PLATFORM_CODE == PLATFORM_US and string.len(var_13_29) > 15 then
+					GetComponent(var_13_27:Find("values/value_1"), typeof(Text)).fontSize = 24
 				end
 
-				setText(var_13_26:Find("values/value_1"), getSkillName(var_13_23))
-				setActive(var_13_27, false)
+				setText(var_13_27:Find("values/value_1"), getSkillName(var_13_24))
+				setActive(var_13_28, false)
 			elseif #var_13_22 > 0 then
-				local var_13_29 = table.remove(var_13_22, 1)
+				local var_13_30 = table.remove(var_13_22, 1)
 
-				if arg_13_2:isAircraft() and var_13_29.type == AttributeType.CD then
-					var_13_29 = var_13_4:getAircraftReloadCD()
+				if arg_13_2:isAircraft() and var_13_30.type == AttributeType.CD then
+					var_13_30 = var_13_4:getAircraftReloadCD()
 				end
 
-				local var_13_30, var_13_31 = Equipment.GetInfoTrans(var_13_29, var_13_4)
+				local var_13_31, var_13_32 = Equipment.GetInfoTrans(var_13_30, var_13_4)
 
-				setText(var_13_26:Find("tag"), var_13_30)
+				setText(var_13_27:Find("tag"), var_13_31)
 
-				local var_13_32 = string.split(tostring(var_13_31), "/")
+				local var_13_33 = string.split(tostring(var_13_32), "/")
 
-				if #var_13_32 >= 2 then
-					setText(var_13_26:Find("values/value"), var_13_32[1] .. "/")
-					setText(var_13_26:Find("values/value_1"), var_13_32[2])
+				if #var_13_33 >= 2 then
+					setText(var_13_27:Find("values/value"), var_13_33[1] .. "/")
+					setText(var_13_27:Find("values/value_1"), var_13_33[2])
 				else
-					setText(var_13_26:Find("values/value"), var_13_31)
-					setText(var_13_26:Find("values/value_1"), "")
+					setText(var_13_27:Find("values/value"), var_13_32)
+					setText(var_13_27:Find("values/value_1"), "")
 				end
 
-				setActive(var_13_27, false)
+				setActive(var_13_28, false)
 			else
-				setText(var_13_26:Find("tag"), "")
-				setText(var_13_26:Find("values/value"), "")
-				setText(var_13_26:Find("values/value_1"), "")
-				setActive(var_13_27, true)
+				setText(var_13_27:Find("tag"), "")
+				setText(var_13_27:Find("values/value"), "")
+				setText(var_13_27:Find("values/value_1"), "")
+				setActive(var_13_28, true)
 			end
 		end
 

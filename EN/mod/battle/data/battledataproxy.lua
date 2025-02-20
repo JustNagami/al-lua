@@ -326,9 +326,9 @@ function var_0_9.initBGM(arg_19_0)
 				local var_20_1 = var_0_5.GetEquipSkill(iter_20_1.equipment, arg_19_0._battleInitData.battleType)
 
 				for iter_20_4, iter_20_5 in ipairs(var_20_1) do
-					var_20_0[iter_20_5] = {
-						level = 1,
-						id = iter_20_5
+					var_20_0[iter_20_5.buffID] = {
+						id = iter_20_5.buffID,
+						level = iter_20_5.buffLV
 					}
 				end
 			end

@@ -71,6 +71,18 @@
 					return Vector3(0, arg_4_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST - 90, 0)
 				end
 			}
+		},
+		{
+			type = "BattleBuffCleanse",
+			trigger = {
+				"onRemove"
+			},
+			arg_list = {
+				target = "TargetSelf",
+				buff_id_list = {
+					801542
+				}
+			}
 		}
 	},
 	{
