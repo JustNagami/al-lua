@@ -2,7 +2,7 @@
 
 function var_0_0.OnInit(arg_1_0)
 	var_0_0.super.OnInit(arg_1_0)
-	setActive(arg_1_0.shopBtn, false)
+	setActive(arg_1_0.shopBtn, true)
 	setText(arg_1_0._tf:Find("AD/signMask/Image/Text"), i18n("challenge_end_tip"))
 end
 

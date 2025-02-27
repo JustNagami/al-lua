@@ -13,6 +13,7 @@ local var_0_6 = 9997
 local var_0_7 = 9998
 
 var_0_0.PAGE_ALL = var_0_1
+var_0_0.PAGE_RETURN = var_0_3
 var_0_0.optionsPath = {
 	"overlay/blur_panel/adapt/top/option"
 }
@@ -80,7 +81,7 @@ function var_0_0.GetSkinClassify(arg_7_0, arg_7_1, arg_7_2)
 	end
 
 	if underscore.any(arg_7_1, function(arg_8_0)
-		return var_7_4[arg_8_0]
+		return var_7_4[arg_8_0.id]
 	end) then
 		table.insert(var_7_0, var_0_3)
 	end
@@ -370,7 +371,7 @@ function var_0_0.SetUp(arg_36_0)
 		getProxy(SettingsProxy):SetNextTipTimeLimitSkinShop()
 	end
 
-	arg_36_0.skinPageID = var_0_8(var_36_0)
+	arg_36_0.skinPageID = arg_36_0.contextData.warp or var_0_8(var_36_0)
 
 	parallelAsync({
 		function(arg_37_0)

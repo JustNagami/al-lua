@@ -144,12 +144,16 @@ function var_0_0.Update(arg_19_0)
 	end
 end
 
-function var_0_0.OnDragBegin(arg_22_0, arg_22_1, arg_22_2)
+function var_0_0.OnDragBegin(arg_22_0, arg_22_1, arg_22_2, arg_22_3)
 	local var_22_0 = _.detect(arg_22_0.readyIKLayers, function(arg_23_0)
 		return arg_23_0:GetTriggerName() == arg_22_1
 	end)
 
 	if not var_22_0 then
+		return
+	end
+
+	if not arg_22_3 and var_22_0:IsIgnoreDrag() then
 		return
 	end
 
@@ -371,53 +375,141 @@ function var_0_0.PlayIKRevert(arg_28_0, arg_28_1, arg_28_2)
 	arg_28_0.ikRevertHandler()
 end
 
-function var_0_0.ResetActiveIKs(arg_32_0)
-	table.insertto(arg_32_0.activeIKLayers, _.keys(arg_32_0.holdingStatus))
-	table.clear(arg_32_0.holdingStatus)
-	_.each(arg_32_0.activeIKLayers, function(arg_33_0)
-		local var_33_0 = arg_33_0:GetControllerPath()
-		local var_33_1 = arg_32_0.ladyIKRoot:Find(var_33_0):GetComponent(typeof(RootMotion.FinalIK.IKExecutionOrder))
-
-		setActive(var_33_1, false)
-
-		local var_33_2 = arg_32_0.cacheIKInfos[arg_33_0].solvers
-		local var_33_3 = arg_32_0.cacheIKInfos[arg_33_0].weights
-
-		table.Foreach(var_33_2, function(arg_34_0, arg_34_1)
-			arg_34_1.IKPositionWeight = var_33_3[arg_34_0]
-		end)
+function var_0_0.ResetIK(arg_32_0, arg_32_1)
+	local var_32_0 = _.detect(arg_32_0.readyIKLayers, function(arg_33_0)
+		return arg_33_0:GetTriggerName() == arg_32_1
 	end)
-	table.clear(arg_32_0.activeIKLayers)
+
+	if not var_32_0 then
+		return
+	end
+
+	local var_32_1 = var_32_0:GetControllerPath()
+	local var_32_2 = arg_32_0.ladyIKRoot:Find(var_32_1):GetComponent(typeof(RootMotion.FinalIK.IKExecutionOrder))
+
+	setActive(var_32_2, false)
+
+	local var_32_3 = arg_32_0.cacheIKInfos[var_32_0].solvers
+	local var_32_4 = arg_32_0.cacheIKInfos[var_32_0].weights
+
+	table.Foreach(var_32_3, function(arg_34_0, arg_34_1)
+		arg_34_1.IKPositionWeight = var_32_4[arg_34_0]
+
+		arg_34_1:FixTransforms()
+	end)
+
+	arg_32_0.holdingStatus[var_32_0] = nil
+
+	if arg_32_0.moveTimer then
+		arg_32_0.moveTimer:Stop()
+
+		arg_32_0.moveTimer = nil
+	end
 end
 
-function var_0_0.PlayIKAction(arg_35_0, arg_35_1)
-	warning("Trigger IK", arg_35_1.ikData:GetControllerPath())
+function var_0_0.ResetActiveIKs(arg_35_0)
+	table.insertto(arg_35_0.activeIKLayers, _.keys(arg_35_0.holdingStatus))
+	table.clear(arg_35_0.holdingStatus)
+	_.each(arg_35_0.activeIKLayers, function(arg_36_0)
+		local var_36_0 = arg_36_0:GetControllerPath()
+		local var_36_1 = arg_35_0.ladyIKRoot:Find(var_36_0):GetComponent(typeof(RootMotion.FinalIK.IKExecutionOrder))
+
+		setActive(var_36_1, false)
+
+		local var_36_2 = arg_35_0.cacheIKInfos[arg_36_0].solvers
+		local var_36_3 = arg_35_0.cacheIKInfos[arg_36_0].weights
+
+		table.Foreach(var_36_2, function(arg_37_0, arg_37_1)
+			arg_37_1.IKPositionWeight = var_36_3[arg_37_0]
+		end)
+	end)
+	table.clear(arg_35_0.activeIKLayers)
+
+	if arg_35_0.moveTimer then
+		arg_35_0.moveTimer:Stop()
+
+		arg_35_0.moveTimer = nil
+	end
+end
+
+function var_0_0.PlayIKAction(arg_38_0, arg_38_1)
+	warning("Trigger IK", arg_38_1.ikData:GetControllerPath())
 	seriesAsync({
-		function(arg_36_0)
-			table.insertto(arg_35_0.activeIKLayers, _.keys(arg_35_0.holdingStatus))
-			table.clear(arg_35_0.holdingStatus)
-			arg_35_0:PlayIKRevert(arg_35_1.ikData:GetActionRevertTime(), arg_36_0)
+		function(arg_39_0)
+			table.insertto(arg_38_0.activeIKLayers, _.keys(arg_38_0.holdingStatus))
+			table.clear(arg_38_0.holdingStatus)
+			arg_38_0:PlayIKRevert(arg_38_1.ikData:GetActionRevertTime(), arg_39_0)
 		end,
-		function(arg_37_0)
-			existCall(arg_35_0.onIKLayerAction, arg_35_1)
+		function(arg_40_0)
+			existCall(arg_38_0.onIKLayerAction, arg_38_1)
 		end
 	})
 end
 
-function var_0_0.TransformMesh(arg_38_0)
-	local var_38_0 = arg_38_0.sharedMesh
-	local var_38_1 = {}
-	local var_38_2 = arg_38_0.transform:TransformPoint(var_38_0.vertices[0])
-	local var_38_3 = arg_38_0.transform:TransformPoint(var_38_0.vertices[1])
-	local var_38_4 = arg_38_0.transform:TransformPoint(var_38_0.vertices[2])
+function var_0_0.PlayIKMove(arg_41_0, arg_41_1, arg_41_2, arg_41_3, arg_41_4, arg_41_5, arg_41_6)
+	local var_41_0 = _.detect(arg_41_0.readyIKLayers, function(arg_42_0)
+		return arg_42_0:GetTriggerName() == arg_41_2
+	end)
 
-	var_38_1.horizontal = var_38_3 - var_38_2
-	var_38_1.verticle = var_38_4 - var_38_2
-	var_38_1.origin = var_38_2
+	if not var_41_0 then
+		return
+	end
 
-	return var_38_1
+	warning("PLAY IKMOVE", var_41_0:GetControllerPath())
+	arg_41_0:OnDragBegin(arg_41_2, arg_41_1, true)
+
+	if not arg_41_0.ikHandler then
+		return
+	end
+
+	local var_41_1 = Time.time + arg_41_5
+	local var_41_2 = arg_41_1
+	local var_41_3 = arg_41_0.ikHandler.originScreenPosition + arg_41_0.ikHandler.rect:NormalizedToPoint(arg_41_3) * arg_41_4
+
+	local function var_41_4()
+		if not arg_41_0.ikHandler or Time.time > var_41_1 then
+			arg_41_0:ReleaseDrag()
+			arg_41_0.moveTimer:Stop()
+
+			arg_41_0.moveTimer = nil
+
+			existCall(arg_41_6)
+
+			return
+		end
+
+		local var_43_0 = math.max(0, var_41_1 - Time.time) / arg_41_5
+		local var_43_1 = Vector2.Lerp(var_41_3, var_41_2, var_43_0)
+		local var_43_2 = pg.UIMgr.GetInstance().uiCamera:Find("Canvas").rect
+		local var_43_3 = Vector2.New(var_43_1.x / var_43_2.width * Screen.width, var_43_1.y / var_43_2.height * Screen.height)
+
+		arg_41_0:HandleBodyDrag(var_43_3)
+	end
+
+	if arg_41_0.moveTimer then
+		arg_41_0.moveTimer:Stop()
+	end
+
+	arg_41_0.moveTimer = FrameTimer.New(var_41_4, 1, -1)
+
+	arg_41_0.moveTimer:Start()
+	var_41_4()
 end
 
-function var_0_0.GetPostionByRatio(arg_39_0, arg_39_1)
-	return arg_39_0.horizontal * arg_39_1.x + arg_39_0.verticle * arg_39_1.y + arg_39_0.origin
+function var_0_0.TransformMesh(arg_44_0)
+	local var_44_0 = arg_44_0.sharedMesh
+	local var_44_1 = {}
+	local var_44_2 = arg_44_0.transform:TransformPoint(var_44_0.vertices[0])
+	local var_44_3 = arg_44_0.transform:TransformPoint(var_44_0.vertices[1])
+	local var_44_4 = arg_44_0.transform:TransformPoint(var_44_0.vertices[2])
+
+	var_44_1.horizontal = var_44_3 - var_44_2
+	var_44_1.verticle = var_44_4 - var_44_2
+	var_44_1.origin = var_44_2
+
+	return var_44_1
+end
+
+function var_0_0.GetPostionByRatio(arg_45_0, arg_45_1)
+	return arg_45_0.horizontal * arg_45_1.x + arg_45_0.verticle * arg_45_1.y + arg_45_0.origin
 end

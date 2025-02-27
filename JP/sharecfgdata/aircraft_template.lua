@@ -254334,14 +254334,14 @@ _G.pg.base.aircraft_template[84200] = {
 	name = "试作舰载型FW-190 G-3/R1",
 	type = 1,
 	accuracy = 23,
-	model_ID = "Fw190A6",
+	model_ID = "Fw190g3",
 	ACC_growth = 0,
 	crash_DMG = 65,
 	dodge = 0.315,
 	funnel_behavior = "",
 	nationality = 4,
 	id = 84200,
-	icon = "Fw190A6",
+	icon = "Fw190g3",
 	spawn_brownian = 1,
 	AP_growth = 2000,
 	dodge_limit = 10,
@@ -254532,5 +254532,574 @@ _G.pg.base.aircraft_template[84213] = {
 	spawn_brownian = 1,
 	weapon_ID = {
 		59173
+	}
+}
+_G.pg.base.aircraft_template[3246070] = {
+	id = 3246070,
+	name = "【2025拉斐尔活动】撒丁尼亚联盟航空母舰 轰炸机 Lv1",
+	base = 3076070,
+	model_ID = "feiji_jiaotang_white",
+	icon = "feiji_jiaotang_white",
+	spawn_brownian = 1,
+	weapon_ID = {
+		3246080
+	}
+}
+_G.pg.base.aircraft_template[3246071] = {
+	id = 3246071,
+	name = "【2025拉斐尔活动】撒丁尼亚联盟航空母舰 轰炸机 Lv2",
+	base = 3076071,
+	model_ID = "feiji_jiaotang_white",
+	icon = "feiji_jiaotang_white",
+	spawn_brownian = 1,
+	weapon_ID = {
+		3246081
+	}
+}
+_G.pg.base.aircraft_template[3246072] = {
+	id = 3246072,
+	name = "【2025拉斐尔活动】撒丁尼亚联盟航空母舰 轰炸机 Lv3",
+	base = 3076072,
+	model_ID = "feiji_jiaotang_white",
+	icon = "feiji_jiaotang_white",
+	spawn_brownian = 1,
+	weapon_ID = {
+		3246082
+	}
+}
+_G.pg.base.aircraft_template[3246073] = {
+	id = 3246073,
+	name = "【2025拉斐尔活动】撒丁尼亚联盟航空母舰 轰炸机 Lv4",
+	base = 3076073,
+	model_ID = "feiji_jiaotang_white",
+	icon = "feiji_jiaotang_white",
+	spawn_brownian = 1,
+	weapon_ID = {
+		3246083
+	}
+}
+_G.pg.base.aircraft_template[3246074] = {
+	id = 3246074,
+	name = "【2025拉斐尔活动】撒丁尼亚联盟航空母舰 轰炸机 Lv5",
+	base = 3076074,
+	model_ID = "feiji_jiaotang_white",
+	icon = "feiji_jiaotang_white",
+	spawn_brownian = 1,
+	weapon_ID = {
+		3246084
+	}
+}
+_G.pg.base.aircraft_template[3246075] = {
+	id = 3246075,
+	name = "【2025拉斐尔活动】撒丁尼亚联盟航空母舰 战斗机 Lv1",
+	base = 3076075,
+	model_ID = "feiji_jiaotang_white",
+	icon = "feiji_jiaotang_white",
+	spawn_brownian = 1,
+	weapon_ID = {
+		3246085,
+		1100750
+	}
+}
+_G.pg.base.aircraft_template[3246076] = {
+	id = 3246076,
+	name = "【2025拉斐尔活动】撒丁尼亚联盟航空母舰 战斗机 Lv2",
+	base = 3076076,
+	model_ID = "feiji_jiaotang_white",
+	icon = "feiji_jiaotang_white",
+	spawn_brownian = 1,
+	weapon_ID = {
+		3246086,
+		1100751
+	}
+}
+_G.pg.base.aircraft_template[3246077] = {
+	id = 3246077,
+	name = "【2025拉斐尔活动】撒丁尼亚联盟航空母舰 战斗机 Lv3",
+	base = 3076077,
+	model_ID = "feiji_jiaotang_white",
+	icon = "feiji_jiaotang_white",
+	spawn_brownian = 1,
+	weapon_ID = {
+		3246087,
+		1100752
+	}
+}
+_G.pg.base.aircraft_template[3246078] = {
+	id = 3246078,
+	name = "【2025拉斐尔活动】撒丁尼亚联盟航空母舰 战斗机 Lv4",
+	base = 3076078,
+	model_ID = "feiji_jiaotang_white",
+	icon = "feiji_jiaotang_white",
+	spawn_brownian = 1,
+	weapon_ID = {
+		3246088,
+		1100753
+	}
+}
+_G.pg.base.aircraft_template[3246079] = {
+	id = 3246079,
+	name = "【2025拉斐尔活动】撒丁尼亚联盟航空母舰 战斗机 Lv5",
+	base = 3076079,
+	model_ID = "feiji_jiaotang_white",
+	icon = "feiji_jiaotang_white",
+	spawn_brownian = 1,
+	weapon_ID = {
+		3246089,
+		1100754
+	}
+}
+_G.pg.base.aircraft_template[3246160] = {
+	type = 1,
+	name = "【2024同盟活动B1】精英蛋船 教皇侵蚀航母 战斗机",
+	dodge_limit = 0,
+	accuracy = 23,
+	model_ID = "feiji_jiaotang_white",
+	ACC_growth = 0,
+	crash_DMG = 78,
+	dodge = 1,
+	max_hp = 136,
+	AP_growth = 2000,
+	base = 1100795,
+	id = 3246160,
+	icon = "feiji_jiaotang_white",
+	spawn_brownian = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	hp_growth = 2520,
+	speed = 33,
+	attack_power = 2,
+	scale = 0.75,
+	weapon_ID = {
+		3246085,
+		1100750
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0
+			},
+			{
+				0.48,
+				0.99,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3246161] = {
+	type = 3,
+	name = "【2024同盟活动B1】精英蛋船 教皇侵蚀航母 轰炸机",
+	dodge_limit = 0,
+	accuracy = 23,
+	model_ID = "feiji_jiaotang_white",
+	ACC_growth = 0,
+	crash_DMG = 140,
+	dodge = 1,
+	max_hp = 170,
+	AP_growth = 2000,
+	base = 1100805,
+	id = 3246161,
+	icon = "feiji_jiaotang_white",
+	spawn_brownian = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	hp_growth = 3420,
+	speed = 30,
+	attack_power = 2,
+	scale = 0.75,
+	weapon_ID = {
+		3246080
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0
+			},
+			{
+				0.48,
+				0.99,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3246180] = {
+	type = 1,
+	name = "【2024同盟活动D1】精英蛋船 教皇侵蚀航母 战斗机",
+	dodge_limit = 0,
+	accuracy = 23,
+	model_ID = "feiji_jiaotang_white",
+	ACC_growth = 0,
+	crash_DMG = 78,
+	dodge = 1,
+	max_hp = 136,
+	AP_growth = 2000,
+	base = 1100795,
+	id = 3246180,
+	icon = "feiji_jiaotang_white",
+	spawn_brownian = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	hp_growth = 2520,
+	speed = 33,
+	attack_power = 2,
+	scale = 0.75,
+	weapon_ID = {
+		3246087,
+		1100752
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0
+			},
+			{
+				0.48,
+				0.99,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3246181] = {
+	type = 3,
+	name = "【2024同盟活动D1】精英蛋船 教皇侵蚀航母 轰炸机",
+	dodge_limit = 0,
+	accuracy = 23,
+	model_ID = "feiji_jiaotang_white",
+	ACC_growth = 0,
+	crash_DMG = 140,
+	dodge = 1,
+	max_hp = 170,
+	AP_growth = 2000,
+	base = 1100805,
+	id = 3246181,
+	icon = "feiji_jiaotang_white",
+	spawn_brownian = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	hp_growth = 3420,
+	speed = 30,
+	attack_power = 2,
+	scale = 0.75,
+	weapon_ID = {
+		3246082
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0
+			},
+			{
+				0.48,
+				0.99,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3246201] = {
+	attack_power = 2,
+	name = "【2025拉斐尔活动】我方支援弹幕 飞空艇 飞机",
+	type = 3,
+	accuracy = 23,
+	model_ID = "feiji_feikongchuan",
+	ACC_growth = 0,
+	crash_DMG = 10,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3246201,
+	icon = "feiji_feikongchuan",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1680,
+	speed = 60,
+	max_hp = 80,
+	scale = 0.75,
+	weapon_ID = {
+		3246203
+	},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
+	}
+}
+_G.pg.base.aircraft_template[3246202] = {
+	attack_power = 2,
+	name = "【2025拉斐尔活动】我方支援弹幕 飞空艇 飞机（装饰用陪飞的，无挂载武器）",
+	type = 3,
+	accuracy = 23,
+	model_ID = "feiji_feikongchuan",
+	ACC_growth = 0,
+	crash_DMG = 10,
+	dodge = 1,
+	funnel_behavior = "",
+	nationality = 3,
+	id = 3246202,
+	icon = "feiji_feikongchuan",
+	spawn_brownian = 1,
+	AP_growth = 2000,
+	dodge_limit = 0,
+	hp_growth = 1680,
+	speed = 60,
+	max_hp = 80,
+	scale = 0.75,
+	weapon_ID = {},
+	position_offset = {
+		0,
+		5,
+		0
+	},
+	cld_box = {
+		1,
+		1,
+		1
+	},
+	cld_offset = {
+		0,
+		0,
+		0
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0
+			},
+			{
+				0.82,
+				2.04,
+				0
+			}
+		}
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		},
+		{
+			0,
+			0,
+			0
+		}
 	}
 }

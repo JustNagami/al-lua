@@ -2480,6 +2480,690 @@ pg.activity_sp_story = {
 			}
 		}
 	},
+	[141] = {
+		story_type = 1,
+		pre_event = "",
+		name = "EP1-1 一難去って",
+		unlock_conditions = "",
+		change_prefab = "",
+		change_background = "star_level_bg_501",
+		story = "FANLONGNEIDESHENGUANG1",
+		change_bgm = "story-theme-sardinia",
+		id = 141,
+		lock = ""
+	},
+	[142] = {
+		story_type = 1,
+		name = "EP1-2 サルデーニャ同盟",
+		unlock_conditions = "EP1-1をクリア",
+		change_bgm = "story-theme-sardinia",
+		change_prefab = "",
+		change_background = "star_level_bg_530",
+		id = 142,
+		story = "FANLONGNEIDESHENGUANG2",
+		pre_event = {
+			141
+		},
+		lock = {
+			{
+				4,
+				141
+			}
+		}
+	},
+	[143] = {
+		story_type = 1,
+		name = "EP1-3 信仰？心象？",
+		unlock_conditions = "EP1-2をクリア",
+		change_bgm = "battle-shenguang-holy",
+		change_prefab = "",
+		change_background = "star_level_bg_539",
+		id = 143,
+		story = "FANLONGNEIDESHENGUANG3",
+		pre_event = {
+			142
+		},
+		lock = {
+			{
+				4,
+				142
+			}
+		}
+	},
+	[144] = {
+		story_type = 1,
+		name = "EP1-4 選ばれし者の門",
+		unlock_conditions = "EP1-3をクリア",
+		change_bgm = "story-theme-sardinia",
+		change_prefab = "",
+		change_background = "star_level_bg_305",
+		id = 144,
+		story = "FANLONGNEIDESHENGUANG4",
+		pre_event = {
+			143
+		},
+		lock = {
+			{
+				4,
+				143
+			}
+		}
+	},
+	[145] = {
+		story_type = 1,
+		name = "EPS1-1 夜への第一歩",
+		unlock_conditions = "EP1-4をクリア",
+		change_bgm = "theme-underheaven",
+		change_prefab = "",
+		change_background = "star_level_bg_505",
+		id = 145,
+		story = "FANLONGNEIDESHENGUANG5",
+		pre_event = {
+			144
+		},
+		lock = {
+			{
+				4,
+				144
+			}
+		}
+	},
+	[146] = {
+		story_type = 1,
+		name = "EPS1-2 門Ⅱ",
+		unlock_conditions = "EPS1-1をクリア",
+		change_bgm = "story-theme-sardinia",
+		change_prefab = "",
+		change_background = "star_level_bg_546",
+		id = 146,
+		story = "FANLONGNEIDESHENGUANG6",
+		pre_event = {
+			144
+		},
+		lock = {
+			{
+				4,
+				145
+			}
+		}
+	},
+	[147] = {
+		story_type = 1,
+		name = "EP2-1 マルコ・ポーロの夢",
+		unlock_conditions = "EPS1-2をクリア",
+		change_bgm = "theme-underheaven",
+		change_prefab = "",
+		change_background = "star_level_bg_505",
+		id = 147,
+		story = "FANLONGNEIDESHENGUANG7",
+		pre_event = {
+			145,
+			146
+		},
+		lock = {
+			{
+				4,
+				146
+			}
+		}
+	},
+	[148] = {
+		story_type = 1,
+		name = "EPS2-1 門Ⅲ",
+		unlock_conditions = "EP2-1をクリア",
+		change_bgm = "story-theme-sardinia",
+		change_prefab = "",
+		change_background = "bg_shenguang_cg_1",
+		id = 148,
+		story = "FANLONGNEIDESHENGUANG8",
+		pre_event = {
+			147
+		},
+		lock = {
+			{
+				4,
+				147
+			}
+		}
+	},
+	[149] = {
+		story_type = 1,
+		name = "EP2-2 法聖の午後",
+		unlock_conditions = "EPS2-1をクリア",
+		change_bgm = "battle-shenguang-holy",
+		change_prefab = "",
+		change_background = "bg_story_task",
+		id = 149,
+		story = "FANLONGNEIDESHENGUANG9",
+		pre_event = {
+			147
+		},
+		lock = {
+			{
+				4,
+				148
+			}
+		}
+	},
+	[150] = {
+		story_type = 1,
+		name = "EP2-3 影の破壊者",
+		unlock_conditions = "EP2-2をクリア",
+		change_bgm = "story-shenguang-holy",
+		change_prefab = "",
+		change_background = "star_level_bg_506",
+		id = 150,
+		story = "FANLONGNEIDESHENGUANG10",
+		pre_event = {
+			148,
+			149
+		},
+		lock = {
+			{
+				4,
+				149
+			}
+		}
+	},
+	[151] = {
+		story_type = 1,
+		name = "EPS2-2 夜への第二歩",
+		unlock_conditions = "EP2-3をクリア",
+		change_bgm = "theme-underheaven",
+		change_prefab = "",
+		change_background = "star_level_bg_505",
+		id = 151,
+		story = "FANLONGNEIDESHENGUANG11",
+		pre_event = {
+			150
+		},
+		lock = {
+			{
+				4,
+				150
+			}
+		}
+	},
+	[152] = {
+		story_type = 1,
+		name = "EPS2-3 門Ⅳ",
+		unlock_conditions = "EPS2-2をクリア",
+		change_bgm = "battle-shenguang-freely",
+		change_prefab = "",
+		change_background = "bg_shenguang_cg_4",
+		id = 152,
+		story = "FANLONGNEIDESHENGUANG12",
+		pre_event = {
+			150
+		},
+		lock = {
+			{
+				4,
+				151
+			}
+		}
+	},
+	[153] = {
+		story_type = 1,
+		name = "EP2-4 宣戦布告",
+		unlock_conditions = "EPS2-3をクリア",
+		change_bgm = "battle-shenguang-freely",
+		change_prefab = "",
+		change_background = "bg_shenguang_3",
+		id = 153,
+		story = "FANLONGNEIDESHENGUANG13",
+		pre_event = {
+			150
+		},
+		lock = {
+			{
+				4,
+				152
+			}
+		}
+	},
+	[154] = {
+		story_type = 2,
+		name = "EP3-1 アルノ川迎撃戦",
+		unlock_conditions = "EP2-4をクリア",
+		change_bgm = "story-shenguang-holy",
+		change_prefab = "",
+		change_background = "bg_shenguang_1",
+		id = 154,
+		story = "1896001",
+		pre_event = {
+			151,
+			152,
+			153
+		},
+		lock = {
+			{
+				4,
+				153
+			}
+		}
+	},
+	[155] = {
+		story_type = 1,
+		name = "EPS3-1 夜への第三歩",
+		unlock_conditions = "EP3-1をクリア",
+		change_bgm = "battle-shenguang-holy",
+		change_prefab = "",
+		change_background = "star_level_bg_500",
+		id = 155,
+		story = "FANLONGNEIDESHENGUANG15",
+		pre_event = {
+			154
+		},
+		lock = {
+			{
+				4,
+				154
+			}
+		}
+	},
+	[156] = {
+		story_type = 1,
+		name = "EP3-2 最終審判の儀式",
+		unlock_conditions = "EPS3-1をクリア",
+		change_bgm = "theme-underheaven",
+		change_prefab = "",
+		change_background = "star_level_bg_505",
+		id = 156,
+		story = "FANLONGNEIDESHENGUANG16",
+		pre_event = {
+			154
+		},
+		lock = {
+			{
+				4,
+				155
+			}
+		}
+	},
+	[157] = {
+		story_type = 1,
+		name = "EPS3-2 門V-VI",
+		unlock_conditions = "EP3-2をクリア",
+		change_bgm = "theme-marcopolo",
+		change_prefab = "",
+		change_background = "bg_shenguang_1",
+		id = 157,
+		story = "FANLONGNEIDESHENGUANG17",
+		pre_event = {
+			154
+		},
+		lock = {
+			{
+				4,
+				156
+			}
+		}
+	},
+	[158] = {
+		story_type = 1,
+		name = "EP3-3 大胆な計画",
+		unlock_conditions = "EPS3-2をクリア",
+		change_bgm = "story-shenguang-holy",
+		change_prefab = "",
+		change_background = "bg_shenguang_cg_7",
+		id = 158,
+		story = "FANLONGNEIDESHENGUANG18",
+		pre_event = {
+			155,
+			156,
+			157
+		},
+		lock = {
+			{
+				4,
+				157
+			}
+		}
+	},
+	[159] = {
+		story_type = 2,
+		name = "EP3-4 光と闇の対決？",
+		unlock_conditions = "EP3-3をクリア",
+		change_bgm = "theme-thehierophantV",
+		change_prefab = "",
+		change_background = "bg_shenguang_cg_10",
+		id = 159,
+		story = "1896002",
+		pre_event = {
+			158
+		},
+		lock = {
+			{
+				4,
+				158
+			}
+		}
+	},
+	[160] = {
+		story_type = 1,
+		name = "EP3-5 物言わぬ石像",
+		unlock_conditions = "EP3-4をクリア",
+		change_bgm = "battle-shenguang-freely",
+		change_prefab = "",
+		change_background = "bg_shenguang_1",
+		id = 160,
+		story = "FANLONGNEIDESHENGUANG20",
+		pre_event = {
+			158
+		},
+		lock = {
+			{
+				4,
+				159
+			}
+		}
+	},
+	[161] = {
+		story_type = 1,
+		name = "EP4-1 異変",
+		unlock_conditions = "EP3-5をクリア",
+		change_bgm = "theme-underheaven",
+		change_prefab = "",
+		change_background = "star_level_bg_505",
+		id = 161,
+		story = "FANLONGNEIDESHENGUANG21",
+		pre_event = {
+			159,
+			160
+		},
+		lock = {
+			{
+				4,
+				160
+			}
+		}
+	},
+	[162] = {
+		story_type = 1,
+		name = "EPS4-1 門VII",
+		unlock_conditions = "EP4-1をクリア",
+		change_bgm = "battle-thechariotVII",
+		change_prefab = "",
+		change_background = "bg_shenguang_4",
+		id = 162,
+		story = "FANLONGNEIDESHENGUANG22",
+		pre_event = {
+			161
+		},
+		lock = {
+			{
+				4,
+				161
+			}
+		}
+	},
+	[163] = {
+		story_type = 1,
+		name = "EP4-2 双方向干渉",
+		unlock_conditions = "EPS4-1をクリア",
+		change_bgm = "theme-underheaven",
+		change_prefab = "",
+		change_background = "star_level_bg_505",
+		id = 163,
+		story = "FANLONGNEIDESHENGUANG23",
+		pre_event = {
+			162
+		},
+		lock = {
+			{
+				4,
+				162
+			}
+		}
+	},
+	[164] = {
+		story_type = 1,
+		name = "EP4-3 門VIII-X",
+		unlock_conditions = "EP4-2をクリア",
+		change_bgm = "battle-thechariotVII",
+		change_prefab = "",
+		change_background = "bg_shenguang_4",
+		id = 164,
+		story = "FANLONGNEIDESHENGUANG24",
+		pre_event = {
+			163
+		},
+		lock = {
+			{
+				4,
+				163
+			}
+		}
+	},
+	[165] = {
+		story_type = 1,
+		name = "EP5-1 誘い込み作戦",
+		unlock_conditions = "EP4-3をクリア",
+		change_bgm = "theme-underheaven",
+		change_prefab = "",
+		change_background = "star_level_bg_505",
+		id = 165,
+		story = "FANLONGNEIDESHENGUANG25",
+		pre_event = {
+			164
+		},
+		lock = {
+			{
+				4,
+				164
+			}
+		}
+	},
+	[166] = {
+		story_type = 1,
+		name = "EP5-2 門Ⅺ",
+		unlock_conditions = "EP5-1をクリア",
+		change_bgm = "battle-thechariotVII",
+		change_prefab = "",
+		change_background = "bg_shenguang_5",
+		id = 166,
+		story = "FANLONGNEIDESHENGUANG26",
+		pre_event = {
+			165
+		},
+		lock = {
+			{
+				4,
+				165
+			}
+		}
+	},
+	[167] = {
+		story_type = 2,
+		name = "EP5-3 EP5-3",
+		unlock_conditions = "EP5-2をクリア",
+		change_bgm = "battle-thechariotVII",
+		change_prefab = "",
+		change_background = "star_level_bg_595",
+		id = 167,
+		story = "1896003",
+		pre_event = {
+			166
+		},
+		lock = {
+			{
+				4,
+				166
+			}
+		}
+	},
+	[168] = {
+		story_type = 2,
+		name = "EPS5-1 決戦Ⅱ",
+		unlock_conditions = "EP5-3をクリア",
+		change_bgm = "theme-underheaven",
+		change_prefab = "",
+		change_background = "bg_underheaven_0",
+		id = 168,
+		story = "1896004",
+		pre_event = {
+			167
+		},
+		lock = {
+			{
+				4,
+				167
+			}
+		}
+	},
+	[169] = {
+		story_type = 2,
+		name = "EP6-1 決戦Ⅲ",
+		unlock_conditions = "EPS5-1をクリア",
+		change_bgm = "theme-thehierophantV",
+		change_prefab = "",
+		change_background = "bg_story_tower",
+		id = 169,
+		story = "1896005",
+		pre_event = {
+			168
+		},
+		lock = {
+			{
+				4,
+				168
+			}
+		}
+	},
+	[170] = {
+		story_type = 1,
+		name = "EP6-2 神と共に",
+		unlock_conditions = "EP6-1をクリア",
+		change_bgm = "story-theme-sardinia",
+		change_prefab = "",
+		change_background = "bg_shenguang_cg_11",
+		id = 170,
+		story = "FANLONGNEIDESHENGUANG30",
+		pre_event = {
+			169
+		},
+		lock = {
+			{
+				4,
+				169
+			}
+		}
+	},
+	[171] = {
+		story_type = 1,
+		name = "EP6-3 エピローグ",
+		unlock_conditions = "EP6-2をクリア",
+		change_bgm = "battle-eagleunion",
+		change_prefab = "",
+		change_background = "star_level_bg_595",
+		id = 171,
+		story = "FANLONGNEIDESHENGUANG31",
+		pre_event = {
+			170
+		},
+		lock = {
+			{
+				4,
+				170
+			}
+		}
+	},
+	[172] = {
+		story_type = 1,
+		name = "EX-1 引き継ぎ",
+		unlock_conditions = "EP6-3をクリア",
+		change_bgm = "theme-underheaven",
+		change_prefab = "",
+		change_background = "star_level_bg_499",
+		id = 172,
+		story = "FANLONGNEIDESHENGUANG32",
+		pre_event = {
+			171
+		},
+		lock = {
+			{
+				4,
+				171
+			}
+		}
+	},
+	[173] = {
+		story_type = 1,
+		name = "EX-2 いつかまた会える日",
+		unlock_conditions = "EX-1をクリア",
+		change_bgm = "story-richang-light",
+		change_prefab = "",
+		change_background = "star_level_bg_541",
+		id = 173,
+		story = "FANLONGNEIDESHENGUANG33",
+		pre_event = {
+			172
+		},
+		lock = {
+			{
+				4,
+				172
+			}
+		}
+	},
+	[174] = {
+		story_type = 1,
+		name = "EX-3 チュリッパの新芽",
+		unlock_conditions = "EX-2をクリア",
+		change_bgm = "story-startravel",
+		change_prefab = "",
+		change_background = "star_level_bg_589",
+		id = 174,
+		story = "FANLONGNEIDESHENGUANG34",
+		pre_event = {
+			173
+		},
+		lock = {
+			{
+				4,
+				173
+			}
+		}
+	},
+	[175] = {
+		story_type = 1,
+		name = "EX-4 トラブル",
+		unlock_conditions = "EX-3をクリア",
+		change_bgm = "theme-dailyfuture",
+		change_prefab = "",
+		change_background = "star_level_bg_147",
+		id = 175,
+		story = "FANLONGNEIDESHENGUANG35",
+		pre_event = {
+			174
+		},
+		lock = {
+			{
+				4,
+				174
+			}
+		}
+	},
+	[176] = {
+		story_type = 1,
+		name = "EX-5 「ぼく」",
+		unlock_conditions = "EX-4をクリア",
+		change_bgm = "story-theme-sardinia",
+		change_prefab = "",
+		change_background = "bg_shenguang_6",
+		id = 176,
+		story = "FANLONGNEIDESHENGUANG36",
+		pre_event = {
+			175
+		},
+		lock = {
+			{
+				4,
+				175
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -2612,6 +3296,42 @@ pg.activity_sp_story = {
 		136,
 		137,
 		138,
-		139
+		139,
+		141,
+		142,
+		143,
+		144,
+		145,
+		146,
+		147,
+		148,
+		149,
+		150,
+		151,
+		152,
+		153,
+		154,
+		155,
+		156,
+		157,
+		158,
+		159,
+		160,
+		161,
+		162,
+		163,
+		164,
+		165,
+		166,
+		167,
+		168,
+		169,
+		170,
+		171,
+		172,
+		173,
+		174,
+		175,
+		176
 	}
 }

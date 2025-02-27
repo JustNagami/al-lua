@@ -192,6 +192,102 @@ pg.activity_medal_template = {
 		id = 576908,
 		activity_medal_desc = "建武大魔王を打倒し（削除線が引かれている）、新春大冒険を祝う計画書！"
 	},
+	[581201] = {
+		prefab_node = "1",
+		next_medal = 0,
+		item = 65541,
+		remake_task_id = 0,
+		group = 5812,
+		task_id = 21278,
+		medal_asset = "ActivityMedal/581201",
+		activity_medal_name = "ステッカー：聖翼の心象",
+		id = 581201,
+		activity_medal_desc = "「永久なりし大地、サルデーニャ。神の光が輝く限り、かの繁栄は永久に続くものなり」"
+	},
+	[581202] = {
+		prefab_node = "2",
+		next_medal = 0,
+		item = 65542,
+		remake_task_id = 0,
+		group = 5812,
+		task_id = 21279,
+		medal_asset = "ActivityMedal/581202",
+		activity_medal_name = "ステッカー：神光の織網",
+		id = 581202,
+		activity_medal_desc = "「信仰の心象こそ私たちをつなげているから」"
+	},
+	[581203] = {
+		prefab_node = "3",
+		next_medal = 0,
+		item = 65543,
+		remake_task_id = 0,
+		group = 5812,
+		task_id = 21280,
+		medal_asset = "ActivityMedal/581203",
+		activity_medal_name = "ステッカー：偽神機の凝視",
+		id = 581203,
+		activity_medal_desc = "「あれが偽神機ドロイドよ。いまあなたのことを見つめているから」"
+	},
+	[581204] = {
+		prefab_node = "4",
+		next_medal = 0,
+		item = 65544,
+		remake_task_id = 0,
+		group = 5812,
+		task_id = 21281,
+		medal_asset = "ActivityMedal/581204",
+		activity_medal_name = "ステッカー：お絵かきラフ",
+		id = 581204,
+		activity_medal_desc = "「あたし絵を書くのが大好きだよぉん☆」"
+	},
+	[581205] = {
+		prefab_node = "5",
+		next_medal = 0,
+		item = 65545,
+		remake_task_id = 0,
+		group = 5812,
+		task_id = 21282,
+		medal_asset = "ActivityMedal/581205",
+		activity_medal_name = "ステッカー：カウントダウン",
+		id = 581205,
+		activity_medal_desc = "「時間が刻一刻と過ぎているわ。一体いつになったら籠檻から抜け出せるのかしら」"
+	},
+	[581206] = {
+		prefab_node = "6",
+		next_medal = 0,
+		item = 65546,
+		remake_task_id = 0,
+		group = 5812,
+		task_id = 21283,
+		medal_asset = "ActivityMedal/581206",
+		activity_medal_name = "ステッカー：戦車の審判機",
+		id = 581206,
+		activity_medal_desc = "「力と圧迫感。そいつがメカアービトレイター・戦車だ」"
+	},
+	[581207] = {
+		prefab_node = "7",
+		next_medal = 0,
+		item = 65547,
+		remake_task_id = 0,
+		group = 5812,
+		task_id = 21284,
+		medal_asset = "ActivityMedal/581207",
+		activity_medal_name = "ステッカー：永夜の冠",
+		id = 581207,
+		activity_medal_desc = "「冠を戴く者はその重さを覚悟せねばならない」"
+	},
+	[581208] = {
+		prefab_node = "8",
+		next_medal = 0,
+		item = 65548,
+		remake_task_id = 0,
+		group = 5812,
+		task_id = 21285,
+		medal_asset = "ActivityMedal/581208",
+		activity_medal_name = "ステッカー：偽神機の触腕",
+		id = 581208,
+		activity_medal_desc = "「広くて長い、ノリのような触感。食用禁止」"
+	},
 	all = {
 		571101,
 		571102,
@@ -208,6 +304,14 @@ pg.activity_medal_template = {
 		576905,
 		576906,
 		576907,
-		576908
+		576908,
+		581201,
+		581202,
+		581203,
+		581204,
+		581205,
+		581206,
+		581207,
+		581208
 	}
 }

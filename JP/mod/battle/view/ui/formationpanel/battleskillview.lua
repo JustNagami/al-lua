@@ -223,22 +223,29 @@ function var_0_2.InitBtns(arg_6_0)
 end
 
 function var_0_2.generateCommonButton(arg_22_0, arg_22_1)
-	local var_22_0 = var_0_0.Battle.BattleWeaponButton.New()
+	local var_22_0 = var_0_0.Battle.BattleState.GetCombatSkinKey()
+	local var_22_1
+
+	if var_0_0.Battle["BattleWeaponButton" .. var_22_0] then
+		var_22_1 = var_0_0.Battle["BattleWeaponButton" .. var_22_0].New()
+	else
+		var_22_1 = var_0_0.Battle.BattleWeaponButton.New()
+	end
 
 	arg_22_0._progressSkin = arg_22_0._progressSkin or arg_22_0._ui:findTF("Weapon_button_progress")
 
-	local var_22_1 = cloneTplTo(arg_22_0._progressSkin, arg_22_0._buttonContainer)
+	local var_22_2 = cloneTplTo(arg_22_0._progressSkin, arg_22_0._buttonContainer)
 
-	var_22_1.name = "Skill_" .. arg_22_1
+	var_22_2.name = "Skill_" .. arg_22_1
 
-	arg_22_0.SetSkillButtonPreferences(var_22_1, arg_22_1)
-	var_22_0:ConfigSkin(var_22_1)
-	var_22_0:SwitchIcon(arg_22_1)
-	var_22_0:SwitchIconEffect(arg_22_1)
-	var_22_0:SetTextActive(true)
-	table.insert(arg_22_0._skillBtnList, var_22_0)
+	arg_22_0.SetSkillButtonPreferences(var_22_2, arg_22_1)
+	var_22_1:ConfigSkin(var_22_2)
+	var_22_1:SwitchIcon(arg_22_1)
+	var_22_1:SwitchIconEffect(arg_22_1)
+	var_22_1:SetTextActive(true)
+	table.insert(arg_22_0._skillBtnList, var_22_1)
 
-	return var_22_0
+	return var_22_1
 end
 
 function var_0_2.generateSubmarineFuncButton(arg_23_0, arg_23_1)

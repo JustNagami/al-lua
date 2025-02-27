@@ -18,6 +18,7 @@ function var_0_5.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._owner = arg_1_1
 	arg_1_0._blinkIDList = {}
 	arg_1_0._buffLastEffects = {}
+	arg_1_0._currentLastFXID = nil
 	arg_1_0._effectIndex = 0
 	arg_1_0._effectList = {}
 end
@@ -130,16 +131,20 @@ function var_0_5.DoWhenStackBuff(arg_16_0, arg_16_1)
 
 	arg_16_0:addInitFX(var_16_0)
 
-	local var_16_1 = var_0_0.Battle.BattleDataFunction.GetBuffTemplate(var_16_0)
+	local var_16_1 = arg_16_1.Data.stack_count
+	local var_16_2 = var_0_0.Battle.BattleDataFunction.GetBuffTemplate(var_16_0)
 
-	if var_16_1.last_effect ~= "" and var_16_1.last_effect_stack then
-		local var_16_2 = arg_16_1.Data.stack_count
+	if var_16_2.last_effect_stack_list and arg_16_0:checkLastFXID(var_16_0, var_16_1) ~= arg_16_0._currentLastFXID then
+		arg_16_0:switchLastFX(var_16_0, var_16_1)
+	end
+
+	if var_16_2.last_effect ~= "" and var_16_2.last_effect_stack then
 		local var_16_3 = #arg_16_0._buffLastEffects[var_16_0]
 
-		if var_16_3 < var_16_2 then
+		if var_16_3 < var_16_1 then
 			arg_16_0:addLastFX(var_16_0)
-		elseif var_16_2 < var_16_3 then
-			local var_16_4 = var_16_3 - var_16_2
+		elseif var_16_1 < var_16_3 then
+			local var_16_4 = var_16_3 - var_16_1
 
 			while var_16_4 > 0 do
 				arg_16_0:removeLastFX(var_16_0)
@@ -196,163 +201,202 @@ function var_0_5.removeLastFX(arg_19_0, arg_19_1)
 	end
 end
 
-function var_0_5.addLastFX(arg_20_0, arg_20_1)
+function var_0_5.switchLastFX(arg_20_0, arg_20_1, arg_20_2)
 	local var_20_0 = var_0_0.Battle.BattleDataFunction.GetBuffTemplate(arg_20_1)
+	local var_20_1 = arg_20_0:checkLastFXID(arg_20_1, arg_20_2)
 
-	if var_20_0.last_effect ~= nil and var_20_0.last_effect ~= "" then
-		local var_20_1 = arg_20_0._owner:AddFX(var_20_0.last_effect)
-		local var_20_2 = arg_20_0._buffLastEffects[arg_20_1] or {}
+	if arg_20_0._currentLastFXID then
+		arg_20_0:removeLastFX(arg_20_1)
+	end
 
-		table.insert(var_20_2, var_20_1)
+	if var_20_1 then
+		local var_20_2 = arg_20_0:generateLastFX(var_20_0, var_20_1)
+		local var_20_3 = arg_20_0._buffLastEffects[arg_20_1] or {}
 
-		arg_20_0._buffLastEffects[arg_20_1] = var_20_2
+		table.insert(var_20_3, var_20_2)
 
-		if var_20_0.last_effect_cld_scale or var_20_0.last_effect_cld_angle then
-			local var_20_3
-			local var_20_4 = var_20_0[buffLv] or var_20_0.effect_list
+		arg_20_0._buffLastEffects[arg_20_1] = var_20_3
+	end
+end
 
-			for iter_20_0, iter_20_1 in ipairs(var_20_4) do
-				if iter_20_1.arg_list.cld_data then
-					var_20_3 = iter_20_1
+function var_0_5.checkLastFXID(arg_21_0, arg_21_1, arg_21_2)
+	local var_21_0 = var_0_0.Battle.BattleDataFunction.GetBuffTemplate(arg_21_1)
+	local var_21_1
 
-					break
-				end
-			end
+	for iter_21_0, iter_21_1 in pairs(var_21_0.last_effect_stack_list) do
+		if iter_21_0 <= arg_21_2 then
+			var_21_1 = iter_21_1
+		end
+	end
 
-			if var_20_3 then
-				if var_20_0.last_effect_cld_scale then
-					local var_20_5 = var_20_3.arg_list.cld_data.box
-					local var_20_6 = var_20_1.transform.localScale
+	return var_21_1
+end
 
-					if var_20_5.range then
-						var_20_6.x = var_20_6.x * var_20_5.range
-						var_20_6.y = var_20_6.y * var_20_5.range
-						var_20_6.z = var_20_6.z * var_20_5.range
-					else
-						var_20_6.x = var_20_6.x * var_20_5[1]
-						var_20_6.y = var_20_6.y * var_20_5[2]
-						var_20_6.z = var_20_6.z * var_20_5[3]
-					end
+function var_0_5.addLastFX(arg_22_0, arg_22_1)
+	local var_22_0 = var_0_0.Battle.BattleDataFunction.GetBuffTemplate(arg_22_1)
 
-					var_20_1.transform.localScale = var_20_6
-				end
+	if var_22_0.last_effect ~= nil and var_22_0.last_effect ~= "" then
+		local var_22_1 = arg_22_0:generateLastFX(var_22_0, var_22_0.last_effect)
+		local var_22_2 = arg_22_0._buffLastEffects[arg_22_1] or {}
 
-				if var_20_0.last_effect_cld_angle then
-					local var_20_7 = var_20_3.arg_list.cld_data.angle
-					local var_20_8 = var_20_1.transform:Find("scale/sector"):GetComponent(typeof(Renderer)).material
-					local var_20_9 = (360 - var_20_7) * 0.5 - 5
+		table.insert(var_22_2, var_22_1)
 
-					var_20_8:SetInt("_AngleControl", var_20_9)
-				end
+		arg_22_0._buffLastEffects[arg_22_1] = var_22_2
+	end
+end
 
-				if var_20_0.last_effect_bound_bone then
-					local var_20_10 = arg_20_0._owner:GetBoneList()[var_20_0.last_effect_bound_bone]
+function var_0_5.generateLastFX(arg_23_0, arg_23_1, arg_23_2)
+	arg_23_0._currentLastFXID = arg_23_2
 
-					if var_20_10 then
-						var_20_1.transform.localPosition = var_20_10[1]
-					end
-				end
+	local var_23_0 = arg_23_0._owner:AddFX(arg_23_2)
+
+	if arg_23_1.last_effect_cld_scale or arg_23_1.last_effect_cld_angle then
+		local var_23_1
+		local var_23_2 = arg_23_1[buffLv] or arg_23_1.effect_list
+
+		for iter_23_0, iter_23_1 in ipairs(var_23_2) do
+			if iter_23_1.arg_list.cld_data then
+				var_23_1 = iter_23_1
+
+				break
 			end
 		end
 
-		var_20_1:SetActive(true)
+		if var_23_1 then
+			if arg_23_1.last_effect_cld_scale then
+				local var_23_3 = var_23_1.arg_list.cld_data.box
+				local var_23_4 = var_23_0.transform.localScale
+
+				if var_23_3.range then
+					var_23_4.x = var_23_4.x * var_23_3.range
+					var_23_4.y = var_23_4.y * var_23_3.range
+					var_23_4.z = var_23_4.z * var_23_3.range
+				else
+					var_23_4.x = var_23_4.x * var_23_3[1]
+					var_23_4.y = var_23_4.y * var_23_3[2]
+					var_23_4.z = var_23_4.z * var_23_3[3]
+				end
+
+				var_23_0.transform.localScale = var_23_4
+			end
+
+			if arg_23_1.last_effect_cld_angle then
+				local var_23_5 = var_23_1.arg_list.cld_data.angle
+				local var_23_6 = var_23_0.transform:Find("scale/sector"):GetComponent(typeof(Renderer)).material
+				local var_23_7 = (360 - var_23_5) * 0.5 - 5
+
+				var_23_6:SetInt("_AngleControl", var_23_7)
+			end
+
+			if arg_23_1.last_effect_bound_bone then
+				local var_23_8 = arg_23_0._owner:GetBoneList()[arg_23_1.last_effect_bound_bone]
+
+				if var_23_8 then
+					var_23_0.transform.localPosition = var_23_8[1]
+				end
+			end
+		end
+	end
+
+	var_23_0:SetActive(true)
+
+	return var_23_0
+end
+
+function var_0_5.addBlink(arg_24_0, arg_24_1)
+	local var_24_0 = var_0_0.Battle.BattleDataFunction.GetBuffTemplate(arg_24_1)
+
+	if var_24_0.blink then
+		local var_24_1 = var_24_0.blink
+		local var_24_2 = arg_24_0._owner:AddBlink(var_24_1[1], var_24_1[2], var_24_1[3], var_24_1[4], var_24_1[5])
+
+		arg_24_0._blinkIDList[arg_24_1] = var_24_2
 	end
 end
 
-function var_0_5.addBlink(arg_21_0, arg_21_1)
-	local var_21_0 = var_0_0.Battle.BattleDataFunction.GetBuffTemplate(arg_21_1)
+function var_0_5.addEffect(arg_25_0, arg_25_1)
+	local var_25_0 = arg_25_1.index or arg_25_0:getIndex()
+	local var_25_1 = arg_25_0._effectList[var_25_0]
 
-	if var_21_0.blink then
-		local var_21_1 = var_21_0.blink
-		local var_21_2 = arg_21_0._owner:AddBlink(var_21_1[1], var_21_1[2], var_21_1[3], var_21_1[4], var_21_1[5])
+	if var_25_1 then
+		local var_25_2 = var_25_1.effect_tf.localScale
 
-		arg_21_0._blinkIDList[arg_21_1] = var_21_2
-	end
-end
+		var_25_1.effect_go:SetActive(true)
 
-function var_0_5.addEffect(arg_22_0, arg_22_1)
-	local var_22_0 = arg_22_1.index or arg_22_0:getIndex()
-	local var_22_1 = arg_22_0._effectList[var_22_0]
-
-	if var_22_1 then
-		local var_22_2 = var_22_1.effect_tf.localScale
-
-		var_22_1.effect_go:SetActive(true)
-
-		var_22_1.effect_tf.localScale = var_22_2
+		var_25_1.effect_tf.localScale = var_25_2
 	else
-		local var_22_3 = arg_22_0._owner:AddFX(arg_22_1.effect)
-		local var_22_4 = {
+		local var_25_3 = arg_25_0._owner:AddFX(arg_25_1.effect)
+		local var_25_4 = {
 			currentTime = 0,
-			effect_go = var_22_3,
-			effect_tf = var_22_3.transform,
-			posFun = arg_22_1.posFun,
-			rotationFun = arg_22_1.rotationFun,
+			effect_go = var_25_3,
+			effect_tf = var_25_3.transform,
+			posFun = arg_25_1.posFun,
+			rotationFun = arg_25_1.rotationFun,
 			startTime = pg.TimeMgr.GetInstance():GetCombatTime(),
-			fillFunc = arg_22_1.fillFunc
+			fillFunc = arg_25_1.fillFunc
 		}
 
-		arg_22_0._effectList[var_22_0] = var_22_4
+		arg_25_0._effectList[var_25_0] = var_25_4
 
-		arg_22_0:updateEffect(var_22_4)
-		pg.EffectMgr.GetInstance():PlayBattleEffect(var_22_3, var_22_3.transform.localPosition, false, function(arg_23_0)
-			arg_22_0._owner:RemoveFX(var_22_3)
+		arg_25_0:updateEffect(var_25_4)
+		pg.EffectMgr.GetInstance():PlayBattleEffect(var_25_3, var_25_3.transform.localPosition, false, function(arg_26_0)
+			arg_25_0._owner:RemoveFX(var_25_3)
 
-			arg_22_0._effectList[var_22_0] = nil
+			arg_25_0._effectList[var_25_0] = nil
 		end)
 	end
 end
 
-function var_0_5.cancelEffect(arg_24_0, arg_24_1)
-	local var_24_0 = arg_24_1.index
-	local var_24_1 = arg_24_0._effectList[var_24_0]
+function var_0_5.cancelEffect(arg_27_0, arg_27_1)
+	local var_27_0 = arg_27_1.index
+	local var_27_1 = arg_27_0._effectList[var_27_0]
 
-	if var_24_1 then
-		arg_24_0._owner:RemoveFX(var_24_1.effect_go)
+	if var_27_1 then
+		arg_27_0._owner:RemoveFX(var_27_1.effect_go)
 
-		arg_24_0._effectList[var_24_0] = nil
+		arg_27_0._effectList[var_27_0] = nil
 	end
 end
 
-function var_0_5.deactiveEffect(arg_25_0, arg_25_1)
-	local var_25_0 = arg_25_1.index
-	local var_25_1 = arg_25_0._effectList[var_25_0]
+function var_0_5.deactiveEffect(arg_28_0, arg_28_1)
+	local var_28_0 = arg_28_1.index
+	local var_28_1 = arg_28_0._effectList[var_28_0]
 
-	if var_25_1 then
-		var_25_1.effect_go:SetActive(false)
+	if var_28_1 then
+		var_28_1.effect_go:SetActive(false)
 	end
 end
 
-function var_0_5.getIndex(arg_26_0)
-	arg_26_0._effectIndex = arg_26_0._effectIndex + 1
+function var_0_5.getIndex(arg_29_0)
+	arg_29_0._effectIndex = arg_29_0._effectIndex + 1
 
-	return arg_26_0._effectIndex
+	return arg_29_0._effectIndex
 end
 
-function var_0_5.updateEffect(arg_27_0, arg_27_1)
-	if arg_27_1.posFun then
-		local var_27_0 = arg_27_1.posFun(arg_27_1.currentTime)
+function var_0_5.updateEffect(arg_30_0, arg_30_1)
+	if arg_30_1.posFun then
+		local var_30_0 = arg_30_1.posFun(arg_30_1.currentTime)
 
-		arg_27_1.effect_tf.localPosition = var_27_0
+		arg_30_1.effect_tf.localPosition = var_30_0
 	end
 
-	if arg_27_1.rotationFun then
-		local var_27_1 = arg_27_1.rotationFun(arg_27_1.currentTime)
+	if arg_30_1.rotationFun then
+		local var_30_1 = arg_30_1.rotationFun(arg_30_1.currentTime)
 
-		if arg_27_0._dir == var_0_0.Battle.BattleConst.UnitDir.LEFT then
-			var_27_1.y = var_27_1.y - 180
+		if arg_30_0._dir == var_0_0.Battle.BattleConst.UnitDir.LEFT then
+			var_30_1.y = var_30_1.y - 180
 		end
 
-		arg_27_1.effect_tf.localEulerAngles = var_27_1
+		arg_30_1.effect_tf.localEulerAngles = var_30_1
 	end
 
-	if arg_27_1.fillFunc then
-		arg_27_0._characterScaleX = arg_27_0._characterScaleX or arg_27_0._owner:GetTf().localScale.x
-		arg_27_0._characterScaleZ = arg_27_0._characterScaleZ or arg_27_0._owner:GetTf().localScale.z
+	if arg_30_1.fillFunc then
+		arg_30_0._characterScaleX = arg_30_0._characterScaleX or arg_30_0._owner:GetTf().localScale.x
+		arg_30_0._characterScaleZ = arg_30_0._characterScaleZ or arg_30_0._owner:GetTf().localScale.z
 
-		local var_27_2, var_27_3, var_27_4 = arg_27_1.fillFunc()
+		local var_30_2, var_30_3, var_30_4 = arg_30_1.fillFunc()
 
-		arg_27_1.effect_tf.position = var_27_2
-		arg_27_1.effect_tf.localScale = Vector3(var_27_3 / arg_27_0._characterScaleX, 0, var_27_4 / arg_27_0._characterScaleZ)
+		arg_30_1.effect_tf.position = var_30_2
+		arg_30_1.effect_tf.localScale = Vector3(var_30_3 / arg_30_0._characterScaleX, 0, var_30_4 / arg_30_0._characterScaleZ)
 	end
 end

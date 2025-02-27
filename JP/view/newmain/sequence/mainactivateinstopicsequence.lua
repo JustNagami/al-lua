@@ -90,6 +90,7 @@ function var_0_0.Execute(arg_1_0, arg_1_1)
 	end
 
 	var_1_1:UpdateAllChatBackGrounds()
+	getProxy(Dorm3dChatProxy):UpdateAllChatBackGrounds()
 	arg_1_1()
 end
 

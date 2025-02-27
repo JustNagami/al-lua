@@ -160,9 +160,11 @@ pg.furniture_data_template = setmetatable({
 			287,
 			288,
 			289,
+			291,
 			292,
 			293,
 			294,
+			295,
 			100002,
 			100003,
 			100004,
@@ -231,6 +233,7 @@ pg.furniture_data_template = setmetatable({
 			100067,
 			100068,
 			100069,
+			100070,
 			200001,
 			200002,
 			200003,
@@ -3310,6 +3313,31 @@ pg.furniture_data_template = setmetatable({
 			318303,
 			318304,
 			318305
+		},
+		[119] = {
+			319001,
+			319002,
+			319101,
+			319102,
+			319103,
+			319104,
+			319105,
+			319106,
+			319107,
+			319108,
+			319109,
+			319110,
+			319111,
+			319112,
+			319113,
+			319114,
+			319115,
+			319116,
+			319117,
+			319301,
+			319302,
+			319303,
+			319304
 		}
 	},
 	get_id_list_by_tag = {
@@ -3411,6 +3439,7 @@ pg.furniture_data_template = setmetatable({
 			282,
 			285,
 			288,
+			291,
 			294,
 			100002,
 			100003,
@@ -3480,6 +3509,7 @@ pg.furniture_data_template = setmetatable({
 			100067,
 			100068,
 			100069,
+			100070,
 			31101,
 			54104,
 			54105
@@ -3544,7 +3574,8 @@ pg.furniture_data_template = setmetatable({
 			287,
 			289,
 			292,
-			293
+			293,
+			295
 		},
 		[7] = {
 			223,
@@ -3741,7 +3772,8 @@ pg.furniture_data_template = setmetatable({
 			315113,
 			316123,
 			317111,
-			318305
+			318305,
+			319117
 		},
 		[4] = {
 			1001,
@@ -3846,7 +3878,8 @@ pg.furniture_data_template = setmetatable({
 			315001,
 			316001,
 			317001,
-			318001
+			318001,
+			319001
 		},
 		[3] = {
 			1002,
@@ -3952,7 +3985,8 @@ pg.furniture_data_template = setmetatable({
 			315002,
 			316002,
 			317002,
-			318002
+			318002,
+			319002
 		},
 		{
 			1101,
@@ -5908,7 +5942,23 @@ pg.furniture_data_template = setmetatable({
 			318112,
 			318113,
 			318114,
-			318115
+			318115,
+			319101,
+			319102,
+			319103,
+			319104,
+			319105,
+			319106,
+			319107,
+			319108,
+			319109,
+			319110,
+			319111,
+			319112,
+			319113,
+			319114,
+			319115,
+			319116
 		},
 		{
 			1108,
@@ -6426,7 +6476,11 @@ pg.furniture_data_template = setmetatable({
 			318301,
 			318302,
 			318303,
-			318304
+			318304,
+			319301,
+			319302,
+			319303,
+			319304
 		}
 	},
 	get_id_list_by_type = {
@@ -6569,6 +6623,7 @@ pg.furniture_data_template = setmetatable({
 			292,
 			293,
 			294,
+			295,
 			100002,
 			100004,
 			100005,
@@ -6637,7 +6692,9 @@ pg.furniture_data_template = setmetatable({
 			238,
 			240,
 			242,
+			291,
 			100060,
+			100070,
 			200001,
 			200002,
 			200003,
@@ -8570,7 +8627,24 @@ pg.furniture_data_template = setmetatable({
 			318112,
 			318113,
 			318114,
-			318115
+			318115,
+			319101,
+			319102,
+			319103,
+			319104,
+			319105,
+			319106,
+			319107,
+			319108,
+			319109,
+			319110,
+			319111,
+			319112,
+			319113,
+			319114,
+			319115,
+			319116,
+			319117
 		},
 		[11] = {
 			143,
@@ -8989,7 +9063,10 @@ pg.furniture_data_template = setmetatable({
 			318302,
 			318303,
 			318304,
-			318305
+			318305,
+			319302,
+			319303,
+			319304
 		},
 		[13] = {
 			100015,
@@ -9106,7 +9183,8 @@ pg.furniture_data_template = setmetatable({
 			315001,
 			316001,
 			317001,
-			318001
+			318001,
+			319001
 		},
 		{
 			1002,
@@ -9212,7 +9290,8 @@ pg.furniture_data_template = setmetatable({
 			315002,
 			316002,
 			317002,
-			318002
+			318002,
+			319002
 		},
 		[5] = {
 			1101,
@@ -9554,7 +9633,8 @@ pg.furniture_data_template = setmetatable({
 			310303,
 			310304,
 			310305,
-			312301
+			312301,
+			319301
 		},
 		[12] = {
 			46131
@@ -9720,9 +9800,11 @@ pg.furniture_data_template = setmetatable({
 		287,
 		288,
 		289,
+		291,
 		292,
 		293,
 		294,
+		295,
 		100002,
 		100003,
 		100004,
@@ -9791,6 +9873,7 @@ pg.furniture_data_template = setmetatable({
 		100067,
 		100068,
 		100069,
+		100070,
 		200001,
 		200002,
 		200003,
@@ -12659,7 +12742,30 @@ pg.furniture_data_template = setmetatable({
 		318302,
 		318303,
 		318304,
-		318305
+		318305,
+		319001,
+		319002,
+		319101,
+		319102,
+		319103,
+		319104,
+		319105,
+		319106,
+		319107,
+		319108,
+		319109,
+		319110,
+		319111,
+		319112,
+		319113,
+		319114,
+		319115,
+		319116,
+		319117,
+		319301,
+		319302,
+		319303,
+		319304
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -20485,6 +20591,86 @@ pg.base.furniture_data_template = {
 		},
 		interAction_group = {}
 	},
+	[291] = {
+		spine_extra = "",
+		describe = "ハンドルを回せば大当たりが出るかもしれないピョ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "饅頭抽選カー",
+		themeId = 0,
+		icon = "choujiangtuicheicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 6,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 291,
+		can_rotate = 0,
+		size = {
+			4,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"choujiangtuiche",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance1",
+						nil,
+						"dance"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				},
+				{
+					{
+						"dance1",
+						"dance2",
+						"dance3"
+					}
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
 	[292] = {
 		spine_extra = "",
 		describe = "宇宙船に乗り込み、いざ新たな冒険へ！",
@@ -20646,6 +20832,49 @@ pg.base.furniture_data_template = {
 		followBone = {
 			"char",
 			-1
+		},
+		interAction_group = {}
+	},
+	[295] = {
+		spine_extra = "",
+		describe = "永夜の冠のレプリカ。輝きが同じでもMETAの侵食が除去されているので、安心して鑑賞できる",
+		gain_by = "籠檻に囚われし神光",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 5,
+		is_get_time_note = 1,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 8,
+		icon = "lafeierxunzhangicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "永夜の冠",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 295,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"lafeierxunzhang",
+				"normal"
+			}
 		},
 		interAction_group = {}
 	},
@@ -21929,7 +22158,9 @@ pg.base.furniture_data_template = {
 					nil,
 					{
 						"action",
-						"tuozhuai2"
+						"tuozhuai2",
+						false,
+						true
 					},
 					"tuozhuai2"
 				},
@@ -23714,7 +23945,9 @@ pg.base.furniture_data_template = {
 					nil,
 					{
 						"sit1",
-						"sit"
+						"sit",
+						false,
+						true
 					},
 					"sit"
 				},
@@ -25303,7 +25536,9 @@ pg.base.furniture_data_template = {
 					1,
 					{
 						"walk1",
-						"walk"
+						"walk",
+						false,
+						true
 					}
 				},
 				{
@@ -25440,6 +25675,43 @@ pg.base.furniture_data_template = {
 		followBone = {
 			"char",
 			-1
+		},
+		interAction_group = {}
+	},
+	[100070] = {
+		spine_extra = "",
+		describe = "ナイル文明の魅力を見よ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 0,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "yingtouebaijianicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ワニのナイル像",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "chuanmo/yingtouebaijian",
+		canputon = 0,
+		id = 100070,
+		can_rotate = 0,
+		size = {
+			1,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
 		},
 		interAction_group = {}
 	},
@@ -76832,7 +77104,9 @@ pg.base.furniture_data_template = {
 				{
 					[3] = {
 						"sit0",
-						"sit"
+						"sit",
+						false,
+						true
 					}
 				},
 				{
@@ -98163,7 +98437,9 @@ pg.base.furniture_data_template = {
 				{
 					[3] = {
 						"action",
-						"dance"
+						"dance",
+						false,
+						true
 					}
 				},
 				{
@@ -142190,7 +142466,9 @@ pg.base.furniture_data_template = {
 					nil,
 					{
 						"sit1",
-						"sit"
+						"sit",
+						false,
+						true
 					},
 					"sit"
 				},
@@ -151834,6 +152112,983 @@ pg.base.furniture_data_template = {
 		spine = {
 			{
 				"zhuangshiguahuacj7",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[319001] = {
+		spine_extra = "",
+		describe = "金色の大地に足を踏み入れれば、遠い昔の残響が聞こえてくるくるくる",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 119,
+		belong = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		deblocking = 1,
+		level = 1,
+		name = "ファラオの床",
+		effect = "",
+		advice = 0,
+		icon = "dibanajicon",
+		spine_action_replace = "",
+		picture = "aj/dibanaj",
+		comfortable = 4,
+		canputon = 0,
+		id = 319001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319002] = {
+		spine_extra = "",
+		describe = "金色の大地に足を踏み入れれば、遠い昔の残響が聞こえてくるくるくる",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		themeId = 119,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		deblocking = 1,
+		level = 5,
+		name = "ファラオの壁",
+		effect = "",
+		advice = 0,
+		icon = "qiangbiajicon",
+		spine_action_replace = "",
+		picture = "",
+		comfortable = 4,
+		canputon = 0,
+		id = 319002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbiaj",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[319101] = {
+		spine_extra = "",
+		describe = "かわいらしい小さなプールだが、聖なる力で身を祝福しとても洗浄力が高い",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 119,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "chitangajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ファラオプール",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "aj/chitangaj",
+		canputon = 0,
+		id = 319101,
+		can_rotate = 0,
+		size = {
+			11,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"wash",
+				{
+					-19.1,
+					-100.8
+				},
+				{
+					-1,
+					1
+				},
+				"aj/chitangaj_using",
+				0,
+				{
+					{
+						0.5,
+						2
+					},
+					{
+						662,
+						399
+					},
+					"aj/chitangaj_mask"
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319102] = {
+		spine_extra = "",
+		describe = "古の書籍と果物が並んだカーペットで寝そべれば、不思議な夢が見られるかもしれない",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 119,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "ditanajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ファラオカーペット",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "aj/ditanaj",
+		canputon = 0,
+		id = 319102,
+		can_rotate = 0,
+		size = {
+			6,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sleep",
+				{
+					13.9,
+					12.5
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319103] = {
+		spine_extra = "",
+		describe = "神殿を守る聖なる衛兵饅頭。たとえ裏返されても能力は発揮できる",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 119,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "jiudiaoxiang1ajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "衛兵饅頭像",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "aj/jiudiaoxiang1aj",
+		canputon = 0,
+		id = 319103,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319104] = {
+		spine_extra = "",
+		describe = "神殿を守る聖なる衛兵饅頭。たとえ裏返されても能力は発揮できる",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 119,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "jiudiaoxiang2ajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "衛兵饅頭像2",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "aj/jiudiaoxiang2aj",
+		canputon = 0,
+		id = 319104,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319105] = {
+		spine_extra = "",
+		describe = "千年の秘密を守るスフィンクス像。種類は意外に多いらしい",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 119,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "shishendiaoxiang1ajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "獅子饅頭像",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "aj/shishendiaoxiang1aj",
+		canputon = 0,
+		id = 319105,
+		can_rotate = 0,
+		size = {
+			3,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319106] = {
+		spine_extra = "",
+		describe = "千年の秘密を守るスフィンクス像。種類は意外に多いらしい",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 119,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "shishendiaoxiang2ajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "獅子饅頭像2",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "aj/shishendiaoxiang2aj",
+		canputon = 0,
+		id = 319106,
+		can_rotate = 0,
+		size = {
+			3,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319107] = {
+		spine_extra = "",
+		describe = "異国フルーツの豊かな香りが漂っている。次の客が待ち遠しいピョ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 119,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "xiaotanajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ファラオ市場饅頭",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "aj/xiaotanaj",
+		canputon = 0,
+		id = 319107,
+		can_rotate = 0,
+		size = {
+			4,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319108] = {
+		spine_extra = "",
+		describe = "お宝が埋もれているかどうか⋯⋯確かめてみるピョ？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 119,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "shaduiajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "古の砂堆",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "aj/shaduiaj",
+		canputon = 0,
+		id = 319108,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319109] = {
+		spine_extra = "",
+		describe = "高くそびえるオフニャ像。なにかを偉そうに指図しているようだ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 119,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "maoshixiangajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "見張りオフニャ像",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "aj/maoshixiangaj",
+		canputon = 0,
+		id = 319109,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319110] = {
+		spine_extra = "",
+		describe = "謎の品一つ一つに物語が隠されている。一つ選んでみようか？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 119,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "guangchangajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ファラオ市場饅頭",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "aj/guangchangaj",
+		canputon = 0,
+		id = 319110,
+		can_rotate = 0,
+		size = {
+			8,
+			8
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319111] = {
+		spine_extra = "",
+		describe = "一見普通の壺に見えるが⋯あまり叩かない方がよさそうだ",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 119,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "taoqiajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "眠り蛇の壺",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 319111,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"taoqiaj",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[319112] = {
+		spine_extra = "",
+		describe = "神殿を支える巨大な石柱。刻まれた模様はパンとビールとニンニクから！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 119,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "hengliangajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "神殿の柱",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "aj/hengliangaj",
+		canputon = 0,
+		id = 319112,
+		can_rotate = 0,
+		size = {
+			9,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319113] = {
+		spine_extra = "",
+		describe = "包帯を巻かれた饅頭。不滅なるファラオの呪い⋯か？！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 119,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "bengdaijiuajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "マミー饅頭",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "aj/bengdaijiuaj",
+		canputon = 0,
+		id = 319113,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319114] = {
+		spine_extra = "",
+		describe = "謎の金ピカの棺。開けないほうがよさそうだ⋯",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 119,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "guanmuajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ファラオの棺",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "aj/guanmuaj",
+		canputon = 0,
+		id = 319114,
+		can_rotate = 0,
+		size = {
+			3,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"guanmuaj",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[319115] = {
+		spine_extra = "",
+		describe = "無数の謎の古代文字が刻まれたオベリスク。天地を揺るがす全能たる知恵が勝利をもたらすという",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 119,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "fangjianbeiajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "オベリスク",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "aj/fangjianbeiaj",
+		canputon = 0,
+		id = 319115,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319116] = {
+		spine_extra = "",
+		describe = "きれいに列をなす緑の作物たちは、熱い砂漠に生命の輝きと希望を届けている",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 119,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 4,
+		tag = 1,
+		icon = "huatanajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ファラオの花壇",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "aj/huatanaj",
+		canputon = 0,
+		id = 319116,
+		can_rotate = 0,
+		size = {
+			3,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319117] = {
+		spine_extra = "",
+		describe = "玉座に座り天を舞え！黄金纏いし翼神となりて！ただし、あまり高く飛びすぎないように",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "翼神王の玉座",
+		themeId = 119,
+		icon = "baozuoajicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 319117,
+		can_rotate = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"baozuoajB",
+				"normal"
+			},
+			{
+				"baozuoajT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					},
+					{
+						"tuozhuai2"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[319301] = {
+		spine_extra = "",
+		describe = "回廊を守る像は来訪者を品定めている――",
+		gain_by = "",
+		type = 10,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 119,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "jianzhuqiangajicon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "王墓の壁",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "aj/jianzhuqiangaj",
+		canputon = 0,
+		id = 319301,
+		can_rotate = 0,
+		size = {
+			12,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319302] = {
+		spine_extra = "",
+		describe = "千年の扉の向こうに、何が待ってるんだろう⋯にゃ？",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 2,
+		themeId = 119,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "shixiangdamenajicon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "パステトの扉",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 319302,
+		can_rotate = 0,
+		size = {
+			8,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shixiangdamenaj",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[319303] = {
+		spine_extra = "",
+		describe = "その金色の模様も古代の呪文⋯かもしれない",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 119,
+		belong = 2,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "jinzitaqiangshiajicon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "ピラミッドの壁飾り",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "aj/jinzitaqiangshiaj",
+		canputon = 0,
+		id = 319303,
+		can_rotate = 0,
+		size = {
+			10,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[319304] = {
+		spine_extra = "",
+		describe = "時の砂に金色に染め上げられたスラブ。違う次元に通じる秘密が秘められているという",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 2,
+		themeId = 119,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 5,
+		icon = "feiniaoajicon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "黄金鷹の石板絵",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 319304,
+		can_rotate = 0,
+		size = {
+			4,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"feiniaoaj",
 				"normal",
 				{
 					"action",
