@@ -107800,3 +107800,774 @@ _G.pg.base.item_data_statistics[30207] = {
 	combination_display = {},
 	limit = {}
 }
+_G.pg.base.item_data_statistics[21044] = {
+	open_directly = 0,
+	name = "结晶：安德烈亚·多利亚·META",
+	display = "安德烈亚·多利亚·META的专用性能提升装置，可在「META研究室」-「能量激活」中使用。",
+	type = 4,
+	display_effect = "",
+	id = 21044,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_undefined",
+	link_id = 0,
+	icon = "Props/21044",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[30365] = {
+	open_directly = 1,
+	name = "外观装备箱(法老的黄金秘器)",
+	display = "可以获得一件随机的法老的黄金秘器风格外观装备",
+	type = 11,
+	display_effect = "",
+	id = 30365,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "Props/appearanceboxaiji",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "30365",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			9,
+			4113,
+			1
+		},
+		{
+			9,
+			4114,
+			1
+		},
+		{
+			9,
+			4115,
+			1
+		},
+		{
+			9,
+			4116,
+			1
+		},
+		{
+			9,
+			4117,
+			1
+		},
+		{
+			9,
+			4118,
+			1
+		},
+		{
+			9,
+			4119,
+			1
+		},
+		{
+			9,
+			4120,
+			1
+		},
+		{
+			9,
+			4121,
+			1
+		},
+		{
+			9,
+			4122,
+			1
+		},
+		{
+			9,
+			4123,
+			1
+		},
+		{
+			9,
+			4124,
+			1
+		},
+		{
+			9,
+			4125,
+			1
+		},
+		{
+			9,
+			4126,
+			1
+		},
+		{
+			9,
+			4127,
+			1
+		},
+		{
+			9,
+			4128,
+			1
+		},
+		{
+			9,
+			4129,
+			1
+		},
+		{
+			9,
+			4130,
+			1
+		}
+	},
+	price = {
+		1,
+		7000
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[30552] = {
+	open_directly = 0,
+	name = "定向外观装备箱(法老的黄金秘器)",
+	display = "使用后可从「法老的黄金秘器」主题外观装备中任意选择一种获得1个",
+	type = 13,
+	display_effect = "",
+	id = 30552,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop_appointed",
+	link_id = 0,
+	icon = "Props/appearanceboxaijizixuan",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			9,
+			4113,
+			1
+		},
+		{
+			9,
+			4114,
+			1
+		},
+		{
+			9,
+			4115,
+			1
+		},
+		{
+			9,
+			4116,
+			1
+		},
+		{
+			9,
+			4117,
+			1
+		},
+		{
+			9,
+			4118,
+			1
+		},
+		{
+			9,
+			4119,
+			1
+		},
+		{
+			9,
+			4120,
+			1
+		},
+		{
+			9,
+			4121,
+			1
+		},
+		{
+			9,
+			4122,
+			1
+		},
+		{
+			9,
+			4123,
+			1
+		},
+		{
+			9,
+			4124,
+			1
+		},
+		{
+			9,
+			4125,
+			1
+		},
+		{
+			9,
+			4126,
+			1
+		},
+		{
+			9,
+			4127,
+			1
+		},
+		{
+			9,
+			4128,
+			1
+		},
+		{
+			9,
+			4129,
+			1
+		},
+		{
+			9,
+			4130,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			9,
+			4113,
+			1
+		},
+		{
+			9,
+			4114,
+			1
+		},
+		{
+			9,
+			4115,
+			1
+		},
+		{
+			9,
+			4116,
+			1
+		},
+		{
+			9,
+			4117,
+			1
+		},
+		{
+			9,
+			4118,
+			1
+		},
+		{
+			9,
+			4119,
+			1
+		},
+		{
+			9,
+			4120,
+			1
+		},
+		{
+			9,
+			4121,
+			1
+		},
+		{
+			9,
+			4122,
+			1
+		},
+		{
+			9,
+			4123,
+			1
+		},
+		{
+			9,
+			4124,
+			1
+		},
+		{
+			9,
+			4125,
+			1
+		},
+		{
+			9,
+			4126,
+			1
+		},
+		{
+			9,
+			4127,
+			1
+		},
+		{
+			9,
+			4128,
+			1
+		},
+		{
+			9,
+			4129,
+			1
+		},
+		{
+			9,
+			4130,
+			1
+		}
+	},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[40055] = {
+	open_directly = 1,
+	name = "圣砂之约主题礼包（基础版）",
+	display = "购买礼包可获得战斗界面主题 埃及*1",
+	type = 17,
+	display_effect = "OpenBox",
+	id = 40055,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "ChargeIcon/ui3",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "4056",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			31,
+			202,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[40056] = {
+	open_directly = 1,
+	name = "圣砂之约主题礼包（豪华版）",
+	display = "购买礼包可获得战斗界面主题 埃及*1,3060钻石",
+	type = 17,
+	display_effect = "OpenBox",
+	id = 40056,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "ChargeIcon/ui3",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "4057",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			31,
+			202,
+			1
+		},
+		{
+			1,
+			14,
+			3060
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[68036] = {
+	open_directly = 1,
+	name = "换装抵扣礼包(爱与美的秘密珍藏)",
+	display = "购买后可获得<color=#92fc63FF>拉斐尔</color>换装<color=#92fc63FF>爱与美的秘密珍藏</color>的钻石抵扣券等道具",
+	type = 17,
+	display_effect = "",
+	id = 68036,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "ChargeIcon/skin_ticket_package",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "905078",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			68039,
+			1
+		},
+		{
+			2,
+			68042,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[68037] = {
+	open_directly = 1,
+	name = "换装抵扣礼包(异域绮梦)",
+	display = "购买后可获得<color=#92fc63FF>济安</color>换装<color=#92fc63FF>异域绮梦</color>的钻石抵扣券等道具",
+	type = 17,
+	display_effect = "",
+	id = 68037,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "ChargeIcon/skin_ticket_package",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "905079",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			68040,
+			1
+		},
+		{
+			2,
+			68043,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[68038] = {
+	open_directly = 1,
+	name = "换装抵扣礼包(死亡之神的戏谑)",
+	display = "购买后可获得<color=#92fc63FF>巴拉卡少校</color>换装<color=#92fc63FF>死亡之神的戏谑</color>的钻石抵扣券等道具",
+	type = 17,
+	display_effect = "",
+	id = 68038,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "ChargeIcon/skin_ticket_package",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "905080",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			68041,
+			1
+		},
+		{
+			2,
+			68044,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[68039] = {
+	open_directly = 0,
+	name = "换装抵扣券(爱与美的秘密珍藏)",
+	display = "持有此道具时，购买<color=#92fc63FF>拉斐尔</color>换装<color=#92fc63FF>爱与美的秘密珍藏</color>时可消耗此道具，并抵扣300钻石\n<color=#ff5c5c>道具有效期：自获得后～2025年3月2日23:59，过期后此道具将消失，并自动转化为300钻石</color>",
+	type = 1,
+	display_effect = "",
+	id = 68039,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_shop_discount",
+	link_id = 0,
+	icon = "Props/limit_skin_300",
+	order = 1,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 1,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {
+		14,
+		300
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			71114
+		},
+		300
+	},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[68040] = {
+	open_directly = 0,
+	name = "换装抵扣券(异域绮梦)",
+	display = "持有此道具时，购买<color=#92fc63FF>济安</color>换装<color=#92fc63FF>异域绮梦</color>时可消耗此道具，并抵扣300钻石\n<color=#ff5c5c>道具有效期：自获得后～2025年3月2日23:59，过期后此道具将消失，并自动转化为300钻石</color>",
+	type = 1,
+	display_effect = "",
+	id = 68040,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_shop_discount",
+	link_id = 0,
+	icon = "Props/limit_skin_300",
+	order = 1,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 1,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {
+		14,
+		300
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			71118
+		},
+		300
+	},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[68041] = {
+	open_directly = 0,
+	name = "换装抵扣券(死亡之神的戏谑)",
+	display = "持有此道具时，购买<color=#92fc63FF>巴拉卡少校</color>换装<color=#92fc63FF>死亡之神的戏谑</color>时可消耗此道具，并抵扣300钻石\n<color=#ff5c5c>道具有效期：自获得后～2025年3月2日23:59，过期后此道具将消失，并自动转化为300钻石</color>",
+	type = 1,
+	display_effect = "",
+	id = 68041,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_shop_discount",
+	link_id = 0,
+	icon = "Props/limit_skin_300",
+	order = 1,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 1,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {
+		14,
+		300
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			71115
+		},
+		300
+	},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[68042] = {
+	open_directly = 0,
+	name = "换装体验券(爱与美的秘密珍藏)",
+	display = "使用后可前往换装体验兑换界面，界面内可以选择兑换<color=#92fc63FF>拉斐尔</color>换装<color=#92fc63FF>爱与美的秘密珍藏</color>的2天换装体验资格\n<color=#ff5c5c>道具有效期：自获得后～2025年3月2日23:59，过期后此道具将消失</color>",
+	type = 1,
+	display_effect = "",
+	id = 68042,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_skin_exp",
+	link_id = 0,
+	icon = "Props/limit_skinticket",
+	order = 1,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 1,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {
+		1,
+		0
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		90324
+	},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[68043] = {
+	open_directly = 0,
+	name = "换装体验券(异域绮梦)",
+	display = "使用后可前往换装体验兑换界面，界面内可以选择兑换<color=#92fc63FF>济安</color>换装<color=#92fc63FF>异域绮梦</color>的2天换装体验资格\n<color=#ff5c5c>道具有效期：自获得后～2025年3月2日23:59，过期后此道具将消失</color>",
+	type = 1,
+	display_effect = "",
+	id = 68043,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_skin_exp",
+	link_id = 0,
+	icon = "Props/limit_skinticket",
+	order = 1,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 1,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {
+		1,
+		0
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		90325
+	},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[68044] = {
+	open_directly = 0,
+	name = "换装体验券(死亡之神的戏谑)",
+	display = "使用后可前往换装体验兑换界面，界面内可以选择兑换<color=#92fc63FF>巴拉卡少校</color>换装<color=#92fc63FF>死亡之神的戏谑</color>的2天换装体验资格\n<color=#ff5c5c>道具有效期：自获得后～2025年3月2日23:59，过期后此道具将消失</color>",
+	type = 1,
+	display_effect = "",
+	id = 68044,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_skin_exp",
+	link_id = 0,
+	icon = "Props/limit_skinticket",
+	order = 1,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 1,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {
+		1,
+		0
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		90326
+	},
+	limit = {}
+}

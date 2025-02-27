@@ -225992,3 +225992,1648 @@ _G.pg.base.task_data_template[21254] = {
 		"LEVEL"
 	}
 }
+_G.pg.base.task_data_template[21255] = {
+	name = "『拉斐尔活动』-日常建造",
+	guild_coin_award = 0,
+	award = 905081,
+	type = 36,
+	desc = "建造舰船3次。",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21255,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65081,
+			300
+		}
+	}
+}
+_G.pg.base.task_data_template[21256] = {
+	name = "『拉斐尔活动』-日常出击",
+	guild_coin_award = 0,
+	award = 905082,
+	type = 36,
+	desc = "舰队出征，获得15次胜利。",
+	count_inherit = 0,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21256,
+	target_num = 15,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65081,
+			300
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21257] = {
+	name = "『拉斐尔活动』-日常困难本",
+	guild_coin_award = 0,
+	award = 905083,
+	type = 36,
+	desc = "通关1次任意困难关卡 ",
+	count_inherit = 0,
+	sub_type = 182,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "10101",
+	scene = "",
+	id = 21257,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65081,
+			150
+		}
+	}
+}
+_G.pg.base.task_data_template[21258] = {
+	name = "『拉斐尔活动』通关A1/C1",
+	guild_coin_award = 0,
+	award = 905084,
+	type = 6,
+	desc = "通关A1或C1",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "21259",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21258,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1890001,
+		1890021
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			1,
+			600
+		},
+		{
+			2,
+			65081,
+			200
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5821
+		}
+	}
+}
+_G.pg.base.task_data_template[21259] = {
+	name = "『拉斐尔活动』通关A2/C2",
+	guild_coin_award = 0,
+	award = 905085,
+	type = 6,
+	desc = "通关A2或C2",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "21260",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21259,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1890002,
+		1890022
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			1,
+			600
+		},
+		{
+			2,
+			65081,
+			400
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5821
+		}
+	}
+}
+_G.pg.base.task_data_template[21260] = {
+	name = "『拉斐尔活动』通关A3/C3",
+	guild_coin_award = 0,
+	award = 905086,
+	type = 6,
+	desc = "通关A3或C3",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "21261",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21260,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1890003,
+		1890023
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			1,
+			1,
+			1500
+		},
+		{
+			2,
+			65081,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5821
+		}
+	}
+}
+_G.pg.base.task_data_template[21261] = {
+	name = "『拉斐尔活动』通关B1/D1",
+	guild_coin_award = 0,
+	award = 905087,
+	type = 6,
+	desc = "通关B1或D1",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "21262",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21261,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1890004,
+		1890024
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			1,
+			600
+		},
+		{
+			2,
+			65081,
+			400
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5822
+		}
+	}
+}
+_G.pg.base.task_data_template[21262] = {
+	name = "『拉斐尔活动』通关B2/D2",
+	guild_coin_award = 0,
+	award = 905088,
+	type = 6,
+	desc = "通关B2或D2",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "21263",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21262,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1890005,
+		1890025
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			1,
+			600
+		},
+		{
+			2,
+			65081,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5822
+		}
+	}
+}
+_G.pg.base.task_data_template[21263] = {
+	name = "『拉斐尔活动』通关B3/D3",
+	guild_coin_award = 0,
+	award = 905089,
+	type = 6,
+	desc = "通关B3或D3",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "21264",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21263,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1890006,
+		1890026
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			1,
+			1,
+			1500
+		},
+		{
+			2,
+			65081,
+			800
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5822
+		}
+	}
+}
+_G.pg.base.task_data_template[21264] = {
+	name = "『拉斐尔活动』通关SP",
+	guild_coin_award = 0,
+	award = 905090,
+	type = 6,
+	desc = "通关SP",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1890041",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21264,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			1,
+			1,
+			1500
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1890025,
+			chapterId = 1890041
+		}
+	}
+}
+_G.pg.base.task_data_template[21265] = {
+	name = "『拉斐尔活动』通关EX",
+	guild_coin_award = 0,
+	award = 905091,
+	type = 6,
+	desc = "通关EX关卡",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1890051",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21265,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			15008,
+			500
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1890026,
+			chapterId = 1890051
+		}
+	}
+}
+_G.pg.base.task_data_template[21267] = {
+	name = "『拉斐尔活动』A1/C1的3星",
+	guild_coin_award = 0,
+	award = 905093,
+	type = 6,
+	desc = "完成A1或C1的3星收集",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "21268",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21267,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1890001,
+		1890021
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			2,
+			500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5821
+		}
+	}
+}
+_G.pg.base.task_data_template[21268] = {
+	name = "『拉斐尔活动』A2/C2的3星",
+	guild_coin_award = 0,
+	award = 905094,
+	type = 6,
+	desc = "完成A2或C2的3星收集",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "21269",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21268,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1890002,
+		1890022
+	},
+	open_need = {},
+	award_display = {
+		{
+			4,
+			100001,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5821
+		}
+	}
+}
+_G.pg.base.task_data_template[21269] = {
+	name = "『拉斐尔活动』A3/C3的3星",
+	guild_coin_award = 0,
+	award = 905095,
+	type = 6,
+	desc = "完成A3或C3的3星收集",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "21270",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21269,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1890003,
+		1890023
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			18023,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5821
+		}
+	}
+}
+_G.pg.base.task_data_template[21270] = {
+	name = "『拉斐尔活动』B1/D1的3星",
+	guild_coin_award = 0,
+	award = 905096,
+	type = 6,
+	desc = "完成B1或D1的3星收集",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "21271",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21270,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1890004,
+		1890024
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			2,
+			500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5822
+		}
+	}
+}
+_G.pg.base.task_data_template[21271] = {
+	name = "『拉斐尔活动』B2/D2的3星",
+	guild_coin_award = 0,
+	award = 905097,
+	type = 6,
+	desc = "完成B2或D2的3星收集",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "21272",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21271,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1890005,
+		1890025
+	},
+	open_need = {},
+	award_display = {
+		{
+			4,
+			100011,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5822
+		}
+	}
+}
+_G.pg.base.task_data_template[21272] = {
+	name = "『拉斐尔活动』B3/D3的3星",
+	guild_coin_award = 0,
+	award = 905098,
+	type = 6,
+	desc = "完成B3或D3的3星收集",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21272,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1890006,
+		1890026
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			18023,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5822
+		}
+	}
+}
+_G.pg.base.task_data_template[21273] = {
+	name = "『拉斐尔活动』通关任务10次",
+	guild_coin_award = 0,
+	award = 905099,
+	type = 6,
+	desc = "通关10次『樊笼内的神光』特别作战关卡",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 21273,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1890001,
+		1890002,
+		1890003,
+		1890004,
+		1890005,
+		1890006,
+		1890021,
+		1890022,
+		1890023,
+		1890024,
+		1890025,
+		1890026,
+		1890041
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65081,
+			500
+		}
+	}
+}
+_G.pg.base.task_data_template[21274] = {
+	name = "『拉斐尔活动』通关任务30次",
+	guild_coin_award = 0,
+	award = 905100,
+	type = 6,
+	desc = "通关30次『樊笼内的神光』特别作战关卡",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 21274,
+	target_num = 30,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1890001,
+		1890002,
+		1890003,
+		1890004,
+		1890005,
+		1890006,
+		1890021,
+		1890022,
+		1890023,
+		1890024,
+		1890025,
+		1890026,
+		1890041
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65081,
+			1500
+		}
+	}
+}
+_G.pg.base.task_data_template[21275] = {
+	name = "『拉斐尔活动』通关任务60次",
+	guild_coin_award = 0,
+	award = 905101,
+	type = 6,
+	desc = "通关60次『樊笼内的神光』特别作战关卡",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 21275,
+	target_num = 60,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1890001,
+		1890002,
+		1890003,
+		1890004,
+		1890005,
+		1890006,
+		1890021,
+		1890022,
+		1890023,
+		1890024,
+		1890025,
+		1890026,
+		1890041
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			65081,
+			3000
+		}
+	}
+}
+_G.pg.base.task_data_template[21276] = {
+	name = "『拉斐尔活动』外观装备箱保底",
+	guild_coin_award = 0,
+	award = 905102,
+	type = 6,
+	desc = "通过「活动商店」兑换或「补给商店-军火」购买20个 [外观装备箱(黄金法老的秘器)]",
+	count_inherit = 0,
+	sub_type = 52,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "30365",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21276,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30552,
+			1
+		}
+	},
+	scene = {
+		"SHOP",
+		{
+			warp = "shopstreet"
+		}
+	}
+}
+_G.pg.base.task_data_template[21278] = {
+	name = "『拉斐尔活动』纪念贴纸获取1",
+	guild_coin_award = 0,
+	award = 905104,
+	type = 26,
+	desc = "收集7个「樊笼内的神光」纪念贴纸",
+	count_inherit = 0,
+	sub_type = 131,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "5812",
+	scene = "",
+	id = 21278,
+	target_num = 7,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65541,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21279] = {
+	name = "『拉斐尔活动』纪念贴纸获取2",
+	guild_coin_award = 0,
+	award = 905105,
+	type = 26,
+	desc = "通关SP",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1890041",
+	scene = "",
+	id = 21279,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65542,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21280] = {
+	name = "『拉斐尔活动』纪念贴纸获取3",
+	guild_coin_award = 0,
+	award = 905106,
+	type = 26,
+	desc = "完成「樊笼内的神光」剧情模式",
+	count_inherit = 0,
+	sub_type = 1005,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 21280,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		6675
+	},
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65543,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21281] = {
+	name = "『拉斐尔活动』纪念贴纸获取4",
+	guild_coin_award = 0,
+	award = 905107,
+	type = 26,
+	desc = "累计获取10000个「绘画草稿」",
+	count_inherit = 0,
+	sub_type = 1001,
+	target_id_2 = "5824",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "476",
+	scene = "",
+	id = 21281,
+	target_num = 10000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65544,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21282] = {
+	name = "『拉斐尔活动』纪念贴纸获取5",
+	guild_coin_award = 0,
+	award = 905108,
+	type = 26,
+	desc = "完成C3的3星收集",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1890023",
+	scene = "",
+	id = 21282,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65545,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21283] = {
+	name = "『拉斐尔活动』纪念贴纸获取6",
+	guild_coin_award = 0,
+	award = 905109,
+	type = 26,
+	desc = "完成D3的3星收集",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1890026",
+	scene = "",
+	id = 21283,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65546,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21284] = {
+	name = "『拉斐尔活动』纪念贴纸获取7",
+	guild_coin_award = 0,
+	award = 905110,
+	type = 26,
+	desc = "通关40次「樊笼内的神光」特别作战关卡",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 21284,
+	target_num = 40,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1890001,
+		1890002,
+		1890003,
+		1890004,
+		1890005,
+		1890006,
+		1890021,
+		1890022,
+		1890023,
+		1890024,
+		1890025,
+		1890026,
+		1890041
+	},
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65547,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21285] = {
+	name = "『拉斐尔活动』纪念贴纸获取8",
+	guild_coin_award = 0,
+	award = 905111,
+	type = 26,
+	desc = "累计击沉「神光型量产型」敌人100次",
+	count_inherit = 0,
+	sub_type = 12,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 21285,
+	target_num = 100,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		16700001,
+		16700002,
+		16700003,
+		16700004,
+		16700005,
+		16700006,
+		16700007,
+		16701001,
+		16701002,
+		16701003,
+		16701004,
+		16701005,
+		16701006,
+		16701007,
+		16702001,
+		16702002,
+		16702003,
+		16702004,
+		16702005,
+		16702006,
+		16702007,
+		16703001,
+		16703002,
+		16703003,
+		16703004,
+		16703005,
+		16703006,
+		16703007
+	},
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65548,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21286] = {
+	name = "『拉斐尔活动』纪念任务1",
+	guild_coin_award = 0,
+	award = 905112,
+	type = 26,
+	desc = "收集8个「樊笼内的神光」纪念贴纸",
+	count_inherit = 0,
+	sub_type = 131,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "5812",
+	scene = "",
+	id = 21286,
+	target_num = 8,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			5,
+			295,
+			1
+		},
+		{
+			8,
+			65540,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21287] = {
+	name = "『拉斐尔活动』皮肤剧情签到活动1",
+	guild_coin_award = 0,
+	award = 905244,
+	type = 14,
+	desc = "登录游戏",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21287,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65535,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21288] = {
+	name = "『拉斐尔活动』皮肤剧情签到活动2",
+	guild_coin_award = 0,
+	award = 905244,
+	type = 14,
+	desc = "登录游戏",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21288,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65535,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21289] = {
+	name = "『拉斐尔活动』皮肤剧情签到活动3",
+	guild_coin_award = 0,
+	award = 905244,
+	type = 14,
+	desc = "登录游戏",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21289,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65535,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21290] = {
+	name = "『拉斐尔活动』皮肤剧情签到活动4",
+	guild_coin_award = 0,
+	award = 905244,
+	type = 14,
+	desc = "登录游戏",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21290,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65535,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21291] = {
+	name = "『拉斐尔活动』剧情模式通关",
+	guild_coin_award = 0,
+	award = 903339,
+	type = 6,
+	desc = "完成「剧情模式」 ",
+	count_inherit = 0,
+	sub_type = 1005,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21291,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		6675
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			5
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1890001,
+			displayMode = 2
+		}
+	}
+}

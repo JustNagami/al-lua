@@ -386,8 +386,6 @@ function var_0_0.changeSpecialIdle(arg_40_0, arg_40_1)
 end
 
 function var_0_0.SetAction(arg_41_0, arg_41_1, arg_41_2, arg_41_3)
-	print("播放动作1" .. arg_41_1)
-
 	local var_41_0, var_41_1 = arg_41_0:getMultipFaceFlag()
 
 	if var_41_0 then
@@ -402,19 +400,15 @@ function var_0_0.SetAction(arg_41_0, arg_41_1, arg_41_2, arg_41_3)
 		return
 	end
 
-	print("播放动作2" .. arg_41_1)
-
 	arg_41_1 = arg_41_1 == arg_41_0:getNormalName() and arg_41_0._idleName and arg_41_0._idleName or arg_41_1
 
 	if arg_41_0.shipEffectActionAble and arg_41_0._effectsTf then
 		if table.contains(arg_41_0.shipEffectActionAble, arg_41_1) then
 			if isActive(arg_41_0._effectsTf) then
 				setActive(arg_41_0._effectsTf, false)
-				print("特效层级隐藏生效")
 			end
 		elseif not isActive(arg_41_0._effectsTf) then
 			setActive(arg_41_0._effectsTf, true)
-			print("特效层级显示生效")
 		end
 	end
 

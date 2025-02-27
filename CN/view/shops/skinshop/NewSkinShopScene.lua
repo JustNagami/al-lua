@@ -80,7 +80,7 @@ function var_0_0.GetSkinClassify(arg_7_0, arg_7_1, arg_7_2)
 	end
 
 	if underscore.any(arg_7_1, function(arg_8_0)
-		return var_7_4[arg_8_0]
+		return var_7_4[arg_8_0.id]
 	end) then
 		table.insert(var_7_0, var_0_3)
 	end

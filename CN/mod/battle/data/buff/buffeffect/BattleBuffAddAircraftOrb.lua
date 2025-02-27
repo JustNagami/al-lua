@@ -12,9 +12,12 @@ function var_0_1.Ctor(arg_1_0, arg_1_1)
 end
 
 function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0._buffID = arg_2_0._tempData.arg_list.buff_id
-	arg_2_0._rant = arg_2_0._tempData.arg_list.rant or 10000
-	arg_2_0._level = arg_2_0._tempData.arg_list.level or 1
+	local var_2_0 = arg_2_0._tempData.arg_list
+
+	arg_2_0._buffID = var_2_0.buff_id
+	arg_2_0._rant = var_2_0.rant or 10000
+	arg_2_0._level = var_2_0.level or 1
+	arg_2_0._buffLevel = var_2_0.buff_level or 1
 end
 
 function var_0_1.onAircraftCreate(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
@@ -25,7 +28,8 @@ function var_0_1.onAircraftCreate(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
 	local var_3_0 = {
 		buffID = arg_3_0._buffID,
 		rant = arg_3_0._rant,
-		level = arg_3_0._level
+		level = arg_3_0._level,
+		buff_level = arg_3_0._buffLevel
 	}
 	local var_3_1 = arg_3_3.aircraft:GetWeapon()
 

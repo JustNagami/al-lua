@@ -455,10 +455,7 @@ function var_0_0.UpdateView(arg_47_0)
 			if _.detect(var_47_10, function(arg_61_0)
 				return arg_61_0:GetSlotID() == var_47_9:GetConfigID()
 			end) then
-				var_47_8 = true
-				arg_47_0.labelSettings = {
-					slotId = var_47_9:GetConfigID()
-				}
+				arg_47_0:CleanSlot()
 			end
 		end
 	end

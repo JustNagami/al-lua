@@ -1230,31 +1230,43 @@ function var_0_5.GetStageResource(arg_76_0)
 	local var_76_2 = {}
 
 	for iter_76_0, iter_76_1 in ipairs(var_76_0.stages) do
-		for iter_76_2, iter_76_3 in ipairs(iter_76_1.waves) do
-			if iter_76_3.triggerType == var_0_0.Battle.BattleConst.WaveTriggerType.NORMAL then
-				for iter_76_4, iter_76_5 in ipairs(iter_76_3.spawn) do
-					local var_76_3 = var_0_5.GetMonsterRes(iter_76_5)
+		if iter_76_1.stageBuff then
+			for iter_76_2, iter_76_3 in ipairs(iter_76_1.stageBuff) do
+				local var_76_3 = var_0_0.Battle.BattleDataFunction.GetResFromBuff(iter_76_3.id, iter_76_3.level, {})
 
-					for iter_76_6, iter_76_7 in ipairs(var_76_3) do
-						table.insert(var_76_1, iter_76_7)
+				for iter_76_4, iter_76_5 in ipairs(var_76_3) do
+					print(iter_76_5)
+
+					var_76_1[#var_76_1 + 1] = iter_76_5
+				end
+			end
+		end
+
+		for iter_76_6, iter_76_7 in ipairs(iter_76_1.waves) do
+			if iter_76_7.triggerType == var_0_0.Battle.BattleConst.WaveTriggerType.NORMAL then
+				for iter_76_8, iter_76_9 in ipairs(iter_76_7.spawn) do
+					local var_76_4 = var_0_5.GetMonsterRes(iter_76_9)
+
+					for iter_76_10, iter_76_11 in ipairs(var_76_4) do
+						table.insert(var_76_1, iter_76_11)
 					end
 				end
 
-				if iter_76_3.reinforcement then
-					for iter_76_8, iter_76_9 in ipairs(iter_76_3.reinforcement) do
-						local var_76_4 = var_0_5.GetMonsterRes(iter_76_9)
+				if iter_76_7.reinforcement then
+					for iter_76_12, iter_76_13 in ipairs(iter_76_7.reinforcement) do
+						local var_76_5 = var_0_5.GetMonsterRes(iter_76_13)
 
-						for iter_76_10, iter_76_11 in ipairs(var_76_4) do
-							table.insert(var_76_1, iter_76_11)
+						for iter_76_14, iter_76_15 in ipairs(var_76_5) do
+							table.insert(var_76_1, iter_76_15)
 						end
 					end
 				end
-			elseif iter_76_3.triggerType == var_0_0.Battle.BattleConst.WaveTriggerType.AID then
-				local var_76_5 = iter_76_3.triggerParams.vanguard_unitList
-				local var_76_6 = iter_76_3.triggerParams.main_unitList
-				local var_76_7 = iter_76_3.triggerParams.sub_unitList
+			elseif iter_76_7.triggerType == var_0_0.Battle.BattleConst.WaveTriggerType.AID then
+				local var_76_6 = iter_76_7.triggerParams.vanguard_unitList
+				local var_76_7 = iter_76_7.triggerParams.main_unitList
+				local var_76_8 = iter_76_7.triggerParams.sub_unitList
 
-				local function var_76_8(arg_77_0)
+				local function var_76_9(arg_77_0)
 					local var_77_0 = var_0_5.GetAidUnitsRes(arg_77_0)
 
 					for iter_77_0, iter_77_1 in ipairs(var_77_0) do
@@ -1266,35 +1278,35 @@ function var_0_5.GetStageResource(arg_76_0)
 					end
 				end
 
-				if var_76_5 then
-					var_76_8(var_76_5)
-				end
-
 				if var_76_6 then
-					var_76_8(var_76_6)
+					var_76_9(var_76_6)
 				end
 
 				if var_76_7 then
-					var_76_8(var_76_7)
+					var_76_9(var_76_7)
 				end
-			elseif iter_76_3.triggerType == var_0_0.Battle.BattleConst.WaveTriggerType.ENVIRONMENT then
-				for iter_76_12, iter_76_13 in ipairs(iter_76_3.spawn) do
-					var_0_5.GetEnvironmentRes(var_76_1, iter_76_13)
-				end
-			elseif iter_76_3.triggerType == var_0_0.Battle.BattleConst.WaveTriggerType.CARD_PUZZLE then
-				local var_76_9 = var_0_0.Battle.BattleDataFunction.GetCardRes(iter_76_3.triggerParams.card_id)
 
-				for iter_76_14, iter_76_15 in ipairs(var_76_9) do
-					table.insert(var_76_1, iter_76_15)
+				if var_76_8 then
+					var_76_9(var_76_8)
+				end
+			elseif iter_76_7.triggerType == var_0_0.Battle.BattleConst.WaveTriggerType.ENVIRONMENT then
+				for iter_76_16, iter_76_17 in ipairs(iter_76_7.spawn) do
+					var_0_5.GetEnvironmentRes(var_76_1, iter_76_17)
+				end
+			elseif iter_76_7.triggerType == var_0_0.Battle.BattleConst.WaveTriggerType.CARD_PUZZLE then
+				local var_76_10 = var_0_0.Battle.BattleDataFunction.GetCardRes(iter_76_7.triggerParams.card_id)
+
+				for iter_76_18, iter_76_19 in ipairs(var_76_10) do
+					table.insert(var_76_1, iter_76_19)
 				end
 			end
 
-			if iter_76_3.airFighter ~= nil then
-				for iter_76_16, iter_76_17 in pairs(iter_76_3.airFighter) do
-					local var_76_10 = var_0_5.GetAircraftResource(iter_76_17.templateID, iter_76_17.weaponID)
+			if iter_76_7.airFighter ~= nil then
+				for iter_76_20, iter_76_21 in pairs(iter_76_7.airFighter) do
+					local var_76_11 = var_0_5.GetAircraftResource(iter_76_21.templateID, iter_76_21.weaponID)
 
-					for iter_76_18, iter_76_19 in ipairs(var_76_10) do
-						var_76_1[#var_76_1 + 1] = iter_76_19
+					for iter_76_22, iter_76_23 in ipairs(var_76_11) do
+						var_76_1[#var_76_1 + 1] = iter_76_23
 					end
 				end
 			end

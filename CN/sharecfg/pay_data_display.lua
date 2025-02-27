@@ -149,6 +149,9 @@ pg.pay_data_display = setmetatable({
 		2039,
 		2040,
 		2041,
+		2042,
+		2043,
+		2044,
 		5001,
 		5002,
 		5003,
@@ -13944,6 +13947,232 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40050,
+				1
+			}
+		}
+	},
+	[2042] = {
+		name = "圣砂之约主题礼包",
+		limit_group = 103,
+		descrip_extra = "此处不会被看到",
+		type = 0,
+		subject = "埃及主题礼包",
+		limit_arg = 0,
+		name_display = "圣砂之约主题礼包",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 78,
+		id = 2042,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui3",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.ui6",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "可获得战斗界面主题 圣砂之约*1",
+		airijp_id = "com.yostarjp.azurlane.ui6",
+		extra_service_item = {
+			{
+				31,
+				202,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					2,
+					27
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					3,
+					12
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				202,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[2043] = {
+		name = "圣砂之约主题礼包（基础版）",
+		limit_group = 103,
+		descrip_extra = "*礼包将发送到邮箱，请注意查收。",
+		type = 0,
+		subject = "埃及主题礼包（基础版）",
+		limit_arg = 1,
+		name_display = "圣砂之约主题礼包（基础版）",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 78,
+		id = 2043,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui3",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.ui7",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "可获得战斗界面主题 圣砂之约*1",
+		airijp_id = "com.yostarjp.azurlane.ui7",
+		extra_service_item = {
+			{
+				31,
+				202,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					2,
+					27
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					3,
+					12
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				202,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40055,
+				1
+			}
+		}
+	},
+	[2044] = {
+		name = "圣砂之约主题礼包（豪华版）",
+		limit_group = 103,
+		descrip_extra = "*礼包将发送到邮箱，请注意查收。",
+		type = 0,
+		subject = "埃及主题礼包（豪华版）",
+		limit_arg = 1,
+		name_display = "圣砂之约主题礼包（豪华版）",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 258,
+		id = 2044,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui3",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.ui8",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "可获得战斗界面主题 圣砂之约*1,3060钻石",
+		airijp_id = "com.yostarjp.azurlane.ui8",
+		extra_service_item = {
+			{
+				31,
+				202,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					2,
+					27
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					3,
+					12
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				202,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40056,
 				1
 			}
 		}
