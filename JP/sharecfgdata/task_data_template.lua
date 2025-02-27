@@ -205792,7 +205792,6 @@ _G.pg.base.task_data_template[21265] = {
 	ryza_icon = "",
 	priority_type = 0,
 	fix_task = 0,
-	target_id = "1890051",
 	next_task = "0",
 	auto_commit = 0,
 	story_icon_shift = "",
@@ -205801,6 +205800,10 @@ _G.pg.base.task_data_template[21265] = {
 	target_num = 1,
 	activity_client_config = "",
 	added_tip = 0,
+	target_id = {
+		1890051,
+		1890052
+	},
 	open_need = {},
 	award_display = {
 		{
