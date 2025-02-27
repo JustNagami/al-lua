@@ -14020,13 +14020,13 @@ pg.base.pay_data_display = {
 		drop_item = {}
 	},
 	[2043] = {
-		name = "圣砂之约主题礼包（基础版）",
+		name = "圣砂之约主题礼包(基础版)",
 		limit_group = 103,
 		descrip_extra = "*礼包将发送到邮箱，请注意查收。",
 		type = 0,
-		subject = "埃及主题礼包（基础版）",
+		subject = "圣砂之约主题礼包(基础版)",
 		limit_arg = 1,
-		name_display = "圣砂之约主题礼包（基础版）",
+		name_display = "圣砂之约主题礼包(基础版)",
 		show_group = "uigift",
 		type_order = 4,
 		extra_service = 3,
@@ -14094,13 +14094,13 @@ pg.base.pay_data_display = {
 		}
 	},
 	[2044] = {
-		name = "圣砂之约主题礼包（豪华版）",
+		name = "圣砂之约主题礼包(豪华版)",
 		limit_group = 103,
 		descrip_extra = "*礼包将发送到邮箱，请注意查收。",
 		type = 0,
-		subject = "埃及主题礼包（豪华版）",
+		subject = "圣砂之约主题礼包(豪华版)",
 		limit_arg = 1,
-		name_display = "圣砂之约主题礼包（豪华版）",
+		name_display = "圣砂之约主题礼包(豪华版)",
 		show_group = "uigift",
 		type_order = 4,
 		extra_service = 3,
