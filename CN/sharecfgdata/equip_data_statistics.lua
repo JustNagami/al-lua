@@ -157780,7 +157780,7 @@ _G.pg.base.equip_data_statistics[150620] = {
 	},
 	equip_parameters = {},
 	label = {
-		"PRAN",
+		"RN",
 		"DEV"
 	}
 }

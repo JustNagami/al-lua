@@ -488,7 +488,7 @@ pg.item_data_frame = {
 	},
 	[334] = {
 		time_limit_type = 0,
-		name = "笔下神光",
+		name = "笔下神光：圣翼之庇",
 		gain_by = "",
 		id = 334,
 		time_second = 0,
