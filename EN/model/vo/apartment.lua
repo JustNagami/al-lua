@@ -9,6 +9,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.callName = arg_1_1.name
 	arg_1_0.setCallCd = arg_1_1.name_cd
 	arg_1_0.setCallTimeStamp = pg.TimeMgr.GetInstance():GetServerTime()
+	arg_1_0.visitTime = arg_1_1.visit_time
 	arg_1_0.skinList = {}
 
 	table.insert(arg_1_0.skinList, arg_1_0:getConfig("skin_model"))

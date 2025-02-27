@@ -16,6 +16,7 @@ function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
 	arg_2_0._buffID = var_2_0.buff_id
 	arg_2_0._rant = var_2_0.rant or 10000
 	arg_2_0._level = var_2_0.level or 1
+	arg_2_0._buffLevel = var_2_0.buff_level or 1
 	arg_2_0._type = var_2_0.type
 end
 
@@ -34,7 +35,8 @@ function var_0_1.attachOrb(arg_4_0, arg_4_1)
 	local var_4_0 = {
 		buff_id = arg_4_0._buffID,
 		rant = arg_4_0._rant,
-		level = arg_4_0._level
+		level = arg_4_0._level,
+		buff_level = arg_4_0._buffLevel
 	}
 
 	arg_4_1:AppendAttachBuff(var_4_0)

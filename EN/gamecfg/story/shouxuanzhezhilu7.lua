@@ -323,6 +323,12 @@
 					1,
 					0
 				}
+			},
+			effects = {
+				{
+					active = true,
+					name = "heimutexiao1"
+				}
 			}
 		},
 		{

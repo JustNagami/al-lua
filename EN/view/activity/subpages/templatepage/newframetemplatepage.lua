@@ -63,7 +63,7 @@ function var_0_0.OnUpdateFlush(arg_7_0)
 
 	local var_7_2 = var_7_0 / var_7_1
 
-	setText(arg_7_0.cur, var_7_2 >= 1 and setColorStr(var_7_0, COLOR_GREEN) or var_7_0)
+	setText(arg_7_0.cur, var_7_2 >= 1 and var_7_0 or var_7_0)
 	setText(arg_7_0.target, "/" .. var_7_1)
 	setFillAmount(arg_7_0.bar, var_7_2)
 

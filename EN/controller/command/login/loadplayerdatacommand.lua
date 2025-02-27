@@ -259,6 +259,14 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 			true
 		},
 		{
+			Dorm3dChatProxy,
+			true
+		},
+		{
+			Dorm3dInsProxy,
+			true
+		},
+		{
 			GMTProxy,
 			true
 		}
