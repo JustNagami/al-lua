@@ -26154,7 +26154,7 @@ _G.pg.base.gametip.dorm3d_privatechat_no_visit_time = {
 	tip = "未入住"
 }
 _G.pg.base.gametip.dorm3d_privatechat_gift = {
-	tip = "拥有礼物"
+	tip = "专属礼物"
 }
 _G.pg.base.gametip.dorm3d_privatechat_chat = {
 	tip = "短信"
@@ -26233,4 +26233,7 @@ _G.pg.base.gametip.dorm3d_ins_no_topics = {
 }
 _G.pg.base.gametip.rps_game_take_card = {
 	tip = "确认出牌"
+}
+_G.pg.base.gametip.drom3d_beach_memory_limit_tip = {
+	tip = "检测到手机性能不足，同时邀请3名角色可能会出现游戏崩溃，是否确定邀请？"
 }

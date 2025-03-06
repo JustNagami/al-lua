@@ -144,6 +144,10 @@
 				{
 					content = "是在参观的时候闻到了奇妙的香味。",
 					flag = 1
+				},
+				{
+					content = "是在参观的时候不小心迷路了。",
+					flag = 2
 				}
 			}
 		},
@@ -221,12 +225,6 @@
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
-			},
-			options = {
-				{
-					content = "是在参观的时候不小心迷路了。",
-					flag = 1
-				}
 			}
 		},
 		{
@@ -235,7 +233,7 @@
 			bgName = "star_level_bg_303",
 			spine = true,
 			nameColor = "#A9F548FF",
-			optionFlag = 1,
+			optionFlag = 2,
 			hideRecordIco = true,
 			actor = 608031,
 			actorName = "{playername}",
@@ -251,7 +249,7 @@
 			bgName = "star_level_bg_303",
 			spine = true,
 			nameColor = "#A9F548FF",
-			optionFlag = 1,
+			optionFlag = 2,
 			hideRecordIco = true,
 			actor = 608031,
 			actorName = "{playername}",
@@ -267,7 +265,7 @@
 			bgName = "star_level_bg_303",
 			spine = true,
 			dir = 1,
-			optionFlag = 1,
+			optionFlag = 2,
 			actor = 608031,
 			nameColor = "#A9F548FF",
 			say = "当然。",
@@ -282,7 +280,7 @@
 			bgName = "star_level_bg_303",
 			spine = true,
 			dir = 1,
-			optionFlag = 1,
+			optionFlag = 2,
 			nameColor = "#A9F548FF",
 			say = "能提前来到这里……说明指挥官和我有着冥冥注定的缘分呢~",
 			typewriter = {
@@ -295,7 +293,7 @@
 			bgName = "star_level_bg_303",
 			spine = true,
 			withoutActorName = true,
-			optionFlag = 1,
+			optionFlag = 2,
 			hideRecordIco = true,
 			actor = 608031,
 			nameColor = "#A9F548FF",

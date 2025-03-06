@@ -568,6 +568,202 @@ pg.dorm3d_furniture_template = {
 			"fbx/no_bake_pay_prop/livingroom"
 		}
 	},
+	[301] = {
+		name = "海盐曲奇木床",
+		rarity = 3,
+		unlock_tips = "",
+		type = 4,
+		is_special = 0,
+		room_id = 3,
+		icon = "dorm3dIcon/3Ddrom_ankeleiqi_CommonFurniture2",
+		desc = "小熊曲奇饼干形状的床头，简洁又不失童趣。\n躺在这张床上，仿佛能嗅到海盐曲奇的香气，让人忘却疲惫，进入甜蜜的梦乡。",
+		unlock_banners = "",
+		acesses = "",
+		model = "",
+		id = 301,
+		is_exclusive = 0,
+		scene_hides = "",
+		target_slots = {
+			130103
+		},
+		touch_id = {
+			{
+				19903,
+				1990330
+			}
+		},
+		shop_id = {}
+	},
+	[302] = {
+		name = "湛蓝奇趣",
+		rarity = 3,
+		unlock_tips = "",
+		type = 6,
+		is_special = 0,
+		room_id = 3,
+		icon = "dorm3dIcon/3Ddrom_ankeleiqi_CommonFurniture3",
+		desc = "彩色的装饰与此刻绽放的想象力都让这一方湛蓝的小天地布满了奇妙的气息。在这片小角落，即使下着雨也会有好心情",
+		unlock_banners = "",
+		acesses = "",
+		model = "",
+		id = 302,
+		is_exclusive = 0,
+		scene_hides = "",
+		target_slots = {
+			130202
+		},
+		touch_id = {
+			{
+				19903,
+				1990320
+			}
+		},
+		shop_id = {}
+	},
+	[303] = {
+		name = "曲奇沙发",
+		rarity = 3,
+		unlock_tips = "",
+		type = 5,
+		is_special = 0,
+		room_id = 3,
+		icon = "dorm3dIcon/3Ddrom_ankeleiqi_CommonFurniture1",
+		desc = "仿佛刚刚出炉的曲奇饼干，散发出温暖的香气。\n每一处弧线都充满了童趣与甜蜜，打造最治愈的角落。",
+		unlock_banners = "",
+		acesses = "",
+		model = "",
+		id = 303,
+		is_exclusive = 0,
+		scene_hides = "",
+		target_slots = {
+			130302
+		},
+		touch_id = {
+			{
+				19903,
+				1990310
+			}
+		},
+		shop_id = {}
+	},
+	[304] = {
+		name = "海洋生物玩偶",
+		rarity = 2,
+		unlock_tips = "",
+		type = 3,
+		is_exclusive = 0,
+		room_id = 3,
+		is_special = 0,
+		desc = "造型可爱的海洋生物玩偶，采用柔软织物填充。\n抱在怀中十分舒适。",
+		icon = "dorm3dIcon/3Ddrom_ankeleiqi_CommonFurniture5",
+		acesses = "",
+		model = "Pay_Anchoragehostel/pre_db_ah_toy05",
+		unlock_banners = "",
+		id = 304,
+		touch_id = "",
+		scene_hides = "",
+		target_slots = {
+			130101
+		},
+		shop_id = {}
+	},
+	[305] = {
+		name = "自然之息",
+		rarity = 2,
+		unlock_tips = "",
+		type = 3,
+		is_exclusive = 0,
+		room_id = 3,
+		is_special = 0,
+		desc = "小小的绿意。层层叠叠。\n无论是放在哪里，都能为你的空间增添一份自然的治愈。",
+		icon = "dorm3dIcon/3Ddrom_ankeleiqi_CommonFurniture4",
+		acesses = "",
+		model = "Pay_Anchoragehostel/pre_db_ah_pottedplant01",
+		unlock_banners = "",
+		id = 305,
+		touch_id = "",
+		scene_hides = "",
+		target_slots = {
+			130102
+		},
+		shop_id = {}
+	},
+	[306] = {
+		name = "时光印记",
+		rarity = 2,
+		unlock_tips = "",
+		type = 3,
+		is_exclusive = 0,
+		room_id = 3,
+		is_special = 0,
+		desc = "一组清新风格的画框，装点着充满童趣风格的画作。\n或许有一天，画框中会被放入最珍贵的回忆。",
+		icon = "dorm3dIcon/3Ddrom_ankeleiqi_CommonFurniture6",
+		acesses = "",
+		model = "Pay_Anchoragehostel/pre_db_ah_billboard01_group01",
+		unlock_banners = "",
+		id = 306,
+		touch_id = "",
+		scene_hides = "",
+		target_slots = {
+			130201
+		},
+		shop_id = {}
+	},
+	[307] = {
+		name = "海洋奇遇",
+		rarity = 2,
+		unlock_tips = "",
+		type = 3,
+		is_exclusive = 0,
+		room_id = 3,
+		is_special = 0,
+		desc = "不仅是一件装饰品，更像是一个开关。\n轻轻一按就让窗户变成了通往海洋的魔法窗口。",
+		icon = "dorm3dIcon/3Ddrom_ankeleiqi_CommonFurniture7",
+		acesses = "",
+		model = "Pay_Anchoragehostel/pre_db_ah_decoration02",
+		unlock_banners = "",
+		id = 307,
+		touch_id = "",
+		scene_hides = "",
+		target_slots = {
+			130301
+		},
+		shop_id = {}
+	},
+	[321] = {
+		name = "童心下午茶",
+		rarity = 4,
+		is_special = 0,
+		type = 6,
+		icon = "dorm3dIcon/3Ddrom_ankeleiqi_PremiumFurniture1",
+		room_id = 3,
+		desc = "咖啡杯中盛着的是属于幻想时刻的自得与惬意，童话故事中的下午茶时光，属于在这方天地中的每一个人。",
+		acesses = "",
+		model = "Pay_Anchoragehostel/pre_db_ah_entertainmentarea01",
+		id = 321,
+		is_exclusive = 1,
+		target_slots = {
+			130202
+		},
+		touch_id = {
+			{
+				19903,
+				1990340
+			}
+		},
+		shop_id = {
+			270301
+		},
+		unlock_tips = {
+			3
+		},
+		unlock_banners = {
+			"banner_furniture321"
+		},
+		scene_hides = {
+			"fbx/no_bake_pay_prop/entertainmentarea"
+		}
+	},
 	get_id_list_by_room_id = {
 		{
 			1,
@@ -594,6 +790,16 @@ pg.dorm3d_furniture_template = {
 			221,
 			222,
 			251
+		},
+		{
+			301,
+			302,
+			303,
+			304,
+			305,
+			306,
+			307,
+			321
 		}
 	},
 	all = {
@@ -618,6 +824,14 @@ pg.dorm3d_furniture_template = {
 		221,
 		222,
 		151,
-		251
+		251,
+		301,
+		302,
+		303,
+		304,
+		305,
+		306,
+		307,
+		321
 	}
 }

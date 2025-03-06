@@ -1084,18 +1084,6 @@
 					1,
 					0
 				}
-			}
-		},
-		{
-			nameColor = "#A9F548FF",
-			side = 2,
-			bgName = "star_level_bg_305",
-			hidePaintObj = true,
-			actorName = "特效",
-			say = "海洛芬特的黑影闪一下",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
 			},
 			effects = {
 				{

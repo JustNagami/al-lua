@@ -15,8 +15,9 @@ var_0_0.assetPath = {
 var_0_0.settings = {
 	{
 		CsharpValue = "enableGPUDriver",
-		playerPrefsname = "allowGpGpu",
+		specialIos = true,
 		cfgId = 1,
+		playerPrefsname = "allowGpGpu",
 		tips = i18n("grapihcs3d_setting_gpgpu_warning")
 	},
 	{
@@ -190,49 +191,72 @@ function var_0_0.HandleCustomSetting()
 	local var_1_0 = PlayerPrefs.GetInt("dorm3d_graphics_settings", 2)
 	local var_1_1 = var_0_0.assetPath[var_1_0]
 	local var_1_2 = LoadAny("three3dquaitysettings/defaultsettings", var_1_1)
+	local var_1_3 = PLATFORM == PLATFORM_IPHONEPLAYER
+
+	if var_1_3 and var_1_0 == 3 then
+		return var_0_0.HandleIosSettings(var_1_2)
+	end
 
 	if var_1_0 ~= 4 then
 		return var_1_2
 	end
 
 	for iter_1_0, iter_1_1 in ipairs(var_0_0.settings) do
-		local var_1_3 = pg.dorm3d_graphic_setting[iter_1_1.cfgId]
-		local var_1_4 = PlayerPrefs.GetInt(iter_1_1.playerPrefsname, 0)
+		local var_1_4 = pg.dorm3d_graphic_setting[iter_1_1.cfgId]
+		local var_1_5 = PlayerPrefs.GetInt(iter_1_1.playerPrefsname, 0)
 
-		if var_1_4 ~= 0 then
-			if var_1_3.displayType == var_0_1.toggle then
-				var_1_4 = var_1_4 == 2 and true or false
+		if var_1_5 ~= 0 then
+			if var_1_4.displayType == var_0_1.toggle then
+				var_1_5 = var_1_5 == 2 and true or false
 			end
 		else
-			var_1_4 = ReflectionHelp.RefGetField(var_1_2:GetType(), iter_1_1.CsharpValue, var_1_2)
+			var_1_5 = ReflectionHelp.RefGetField(var_1_2:GetType(), iter_1_1.CsharpValue, var_1_2)
 		end
 
-		if var_1_3.displayType == var_0_1.select then
-			if iter_1_1.childList ~= nil and var_1_4 == 1 then
+		if var_1_4.displayType == var_0_1.select then
+			if iter_1_1.childList ~= nil and var_1_5 == 1 then
 				print(123)
 			else
 				if iter_1_1.special then
-					var_1_4 = 1
+					var_1_5 = 1
 				end
 
 				for iter_1_2, iter_1_3 in pairs(iter_1_1.Enum) do
-					if iter_1_3 == var_1_4 then
-						var_1_4 = iter_1_2
+					if iter_1_3 == var_1_5 then
+						var_1_5 = iter_1_2
 
 						break
 					end
 				end
 
-				local var_1_5 = ReflectionHelp.RefGetField(typeof("BLHX.Rendering." .. iter_1_1.EnumType), tostring(var_1_4), nil)
+				local var_1_6 = ReflectionHelp.RefGetField(typeof("BLHX.Rendering." .. iter_1_1.EnumType), tostring(var_1_5), nil)
 
-				ReflectionHelp.RefSetField(var_1_2:GetType(), iter_1_1.CsharpValue, var_1_2, var_1_5)
+				ReflectionHelp.RefSetField(var_1_2:GetType(), iter_1_1.CsharpValue, var_1_2, var_1_6)
 			end
 		else
-			ReflectionHelp.RefSetField(var_1_2:GetType(), iter_1_1.CsharpValue, var_1_2, var_1_4)
+			if iter_1_1.specialIos and var_1_3 then
+				var_1_5 = false
+			end
+
+			ReflectionHelp.RefSetField(var_1_2:GetType(), iter_1_1.CsharpValue, var_1_2, var_1_5)
 		end
 	end
 
 	return var_1_2
+end
+
+function var_0_0.HandleIosSettings(arg_2_0)
+	for iter_2_0, iter_2_1 in ipairs(var_0_0.settings) do
+		local var_2_0 = ReflectionHelp.RefGetField(arg_2_0:GetType(), iter_2_1.CsharpValue, arg_2_0)
+
+		if iter_2_1.specialIos then
+			local var_2_1 = false
+
+			ReflectionHelp.RefSetField(arg_2_0:GetType(), iter_2_1.CsharpValue, arg_2_0, var_2_1)
+		end
+	end
+
+	return arg_2_0
 end
 
 return var_0_0

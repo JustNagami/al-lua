@@ -50,27 +50,26 @@ function var_0_0.setCombatUI(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 	arg_3_0.buttonContainer = var_3_0:Find("Weapon_button_container")
 
 	for iter_3_0 = 1, 3 do
-		local var_3_1 = ys.Battle.BattleState.GetCombatSkinKey()
-		local var_3_2
+		local var_3_1
 
-		if ys.Battle["BattleWeaponButton" .. var_3_1] then
-			var_3_2 = ys.Battle["BattleWeaponButton" .. var_3_1].New()
+		if ys.Battle["BattleWeaponButton" .. arg_3_4] then
+			var_3_1 = ys.Battle["BattleWeaponButton" .. arg_3_4].New()
 		else
-			var_3_2 = ys.Battle.BattleWeaponButton.New()
+			var_3_1 = ys.Battle.BattleWeaponButton.New()
 		end
 
-		local var_3_3 = cloneTplTo(var_3_0:Find("Weapon_button_progress"), arg_3_0.buttonContainer)
+		local var_3_2 = cloneTplTo(var_3_0:Find("Weapon_button_progress"), arg_3_0.buttonContainer)
 
 		skinName = "Skill_" .. iter_3_0
 
-		local var_3_4 = {}
+		local var_3_3 = {}
 
-		ys.Battle.BattleSkillView.SetSkillButtonPreferences(var_3_3, iter_3_0)
-		var_3_2:ConfigSkin(var_3_3)
-		var_3_2:SwitchIcon(iter_3_0, arg_3_4)
-		var_3_2:SwitchIconEffect(iter_3_0, arg_3_4)
-		var_3_2:SetTextActive(true)
-		var_3_2:SetToCombatUIPreview(iter_3_0 > 1)
+		ys.Battle.BattleSkillView.SetSkillButtonPreferences(var_3_2, iter_3_0)
+		var_3_1:ConfigSkin(var_3_2)
+		var_3_1:SwitchIcon(iter_3_0, arg_3_4)
+		var_3_1:SwitchIconEffect(iter_3_0, arg_3_4)
+		var_3_1:SetTextActive(true)
+		var_3_1:SetToCombatUIPreview(iter_3_0 > 1)
 	end
 
 	arg_3_0.heroBar = arg_3_2.transform
@@ -99,21 +98,21 @@ function var_0_0.setCombatUI(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 
 	setActive(arg_3_0.bossHPBar, true)
 
-	local var_3_5 = arg_3_0.bossHPBar:Find("bloodBarContainer")
-	local var_3_6 = var_3_5.childCount - 1
+	local var_3_4 = arg_3_0.bossHPBar:Find("bloodBarContainer")
+	local var_3_5 = var_3_4.childCount - 1
 
-	for iter_3_1 = 0, var_3_6 do
-		var_3_5:GetChild(iter_3_1):GetComponent(typeof(Image)).fillAmount = 1
+	for iter_3_1 = 0, var_3_5 do
+		var_3_4:GetChild(iter_3_1):GetComponent(typeof(Image)).fillAmount = 1
 		iter_3_1 = iter_3_1 + 1
 	end
 
 	arg_3_0.skillContainer = var_3_0:Find("Skill_Activation/Root")
 	arg_3_0.skill = var_3_0:Find("Skill_Activation/mask")
 
-	local var_3_7 = var_3_0:Find("Stick/Area/BG/spine")
+	local var_3_6 = var_3_0:Find("Stick/Area/BG/spine")
 
-	if var_3_7 then
-		var_3_7:GetComponent(typeof(SpineAnimUI)):SetAction("normal", 0)
+	if var_3_6 then
+		var_3_6:GetComponent(typeof(SpineAnimUI)):SetAction("normal", 0)
 	end
 end
 
