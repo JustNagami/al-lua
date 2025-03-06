@@ -18,6 +18,10 @@ function var_0_1.OnTotalChange(arg_1_0, arg_1_1)
 		arg_1_0:OnUnfill()
 		arg_1_0:OnUnSelect()
 	else
+		if arg_1_0._progressInfo:GetTotal() == arg_1_0._progressInfo:GetCount() then
+			SetActive(arg_1_0._filled:Find("gizmos/animroot"))
+		end
+
 		arg_1_0:OnCountChange()
 		arg_1_0:SetControllerActive(true)
 
@@ -31,42 +35,58 @@ function var_0_1.OnTotalChange(arg_1_0, arg_1_1)
 	end
 end
 
-function var_0_1.SetToCombatUIPreview(arg_2_0, arg_2_1)
-	if arg_2_1 then
-		SetActive(arg_2_0._filled, true)
-		SetActive(arg_2_0._unfill, false)
+function var_0_1.ConfigSkin(arg_2_0, arg_2_1)
+	var_0_1.super.ConfigSkin(arg_2_0, arg_2_1)
 
-		arg_2_0._progressBar.fillAmount = 1
-		arg_2_0._bgEff:GetComponent(typeof(CanvasGroup)).alpha = 0
-		arg_2_0._countTxt.text = "1/1"
+	arg_2_0._glowEff = arg_2_0._filled:Find("gizmos/animroot")
+end
 
-		if arg_2_0._chargeEff then
-			SetActive(arg_2_0._chargeEff, true)
-			SetActive(arg_2_0._fullChargeEff, true)
+function var_0_1.OnCountChange(arg_3_0)
+	var_0_1.super.OnCountChange(arg_3_0)
+	SetActive(arg_3_0._glowEff, arg_3_0._progressInfo:GetTotal() == arg_3_0._progressInfo:GetCount())
+end
+
+function var_0_1.SetToCombatUIPreview(arg_4_0, arg_4_1)
+	if arg_4_1 then
+		SetActive(arg_4_0._filled, true)
+		SetActive(arg_4_0._unfill, false)
+
+		arg_4_0._progressBar.fillAmount = 1
+		arg_4_0._bgEff:GetComponent(typeof(CanvasGroup)).alpha = 0
+		arg_4_0._countTxt.text = "1/1"
+
+		if arg_4_0._chargeEff then
+			SetActive(arg_4_0._chargeEff, true)
+			SetActive(arg_4_0._fullChargeEff, true)
 		end
+
+		SetActive(arg_4_0._glowEff, true)
+		quickCheckAndPlayAnimator(arg_4_0._skin, "weapon_button_progress_filled")
 	else
-		SetActive(arg_2_0._unfill, true)
-		SetActive(arg_2_0._filled, false)
+		SetActive(arg_4_0._unfill, true)
+		SetActive(arg_4_0._filled, false)
 
-		arg_2_0._progressBar.fillAmount = 0
-		arg_2_0._bgEff:GetComponent(typeof(CanvasGroup)).alpha = 1
-		arg_2_0._countTxt.text = "0/0"
+		arg_4_0._progressBar.fillAmount = 0
+		arg_4_0._bgEff:GetComponent(typeof(CanvasGroup)).alpha = 1
+		arg_4_0._countTxt.text = "0/0"
 
-		if arg_2_0._chargeEff then
-			SetActive(arg_2_0._chargeEff, false)
-			SetActive(arg_2_0._fullChargeEff, false)
+		SetActive(arg_4_0._glowEff, false)
+
+		if arg_4_0._chargeEff then
+			SetActive(arg_4_0._chargeEff, false)
+			SetActive(arg_4_0._fullChargeEff, false)
 		end
 	end
 end
 
-function var_0_1.updateProgressBar(arg_3_0)
-	local var_3_0 = arg_3_0._progressInfo:GetCurrent() / arg_3_0._progressInfo:GetMax()
+function var_0_1.updateProgressBar(arg_5_0)
+	local var_5_0 = arg_5_0._progressInfo:GetCurrent() / arg_5_0._progressInfo:GetMax()
 
-	arg_3_0._progressBar.fillAmount = var_3_0
+	arg_5_0._progressBar.fillAmount = var_5_0
 
-	if arg_3_0._progressInfo.GetCount and arg_3_0._progressInfo:GetCount() > 0 then
-		arg_3_0._bgEff:GetComponent(typeof(CanvasGroup)).alpha = 0
+	if arg_5_0._progressInfo.GetCount and arg_5_0._progressInfo:GetCount() > 0 then
+		arg_5_0._bgEff:GetComponent(typeof(CanvasGroup)).alpha = 0
 	else
-		arg_3_0._bgEff:GetComponent(typeof(CanvasGroup)).alpha = 1 - var_3_0
+		arg_5_0._bgEff:GetComponent(typeof(CanvasGroup)).alpha = 1 - var_5_0
 	end
 end

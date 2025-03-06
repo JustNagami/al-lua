@@ -110,7 +110,7 @@ function var_0_0.HandleDamage(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4)
 		attr = var_7_10,
 		font = var_7_7,
 		cldPos = arg_7_1:GetPosition(),
-		srcID = var_7_1.battleUID
+		srcID = var_7_1.hostUID or var_7_1.battleUID
 	}
 
 	arg_7_1:GetWeapon():WeaponStatistics(var_7_5, var_7_9, var_7_8)

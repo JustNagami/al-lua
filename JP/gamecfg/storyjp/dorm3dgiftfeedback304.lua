@@ -13,7 +13,7 @@
 		{
 			actorName = 19903,
 			nameColor = "#FFFFFF",
-			say = "これは…？アンカレッジのえ……なかにいれる？よくわからない…",
+			say = "えのぐ……！アンカレッジ……しっかりつかう…！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -48,7 +48,7 @@
 		{
 			actorName = 19903,
 			nameColor = "#FFFFFF",
-			say = "{dorm3d}、アンカレッジに……おしえて！",
+			say = "うん！アンカレッジ……だいすきな{dorm3d}をかく！えへへ……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

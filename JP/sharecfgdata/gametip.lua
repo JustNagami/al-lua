@@ -26463,7 +26463,7 @@ _G.pg.base.gametip.dorm3d_Ankeleiqi_entertainmentarea = {
 	tip = "娯楽エリア"
 }
 _G.pg.base.gametip.dorm3d_Ankeleiqi_chair = {
-	tip = "居間"
+	tip = "リビング"
 }
 _G.pg.base.gametip.dorm3d_Ankeleiqi_bed = {
 	tip = "寝室"
@@ -26566,4 +26566,7 @@ _G.pg.base.gametip.dorm3d_ins_no_topics = {
 }
 _G.pg.base.gametip.rps_game_take_card = {
 	tip = "カード確定"
+}
+_G.pg.base.gametip.drom3d_beach_memory_limit_tip = {
+	tip = "端末スペックが不足しているため、キャラを3人配置するとプレイ中ゲームがクラッシュする可能性があります。配置を確定しますか？"
 }

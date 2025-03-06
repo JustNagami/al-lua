@@ -62,10 +62,23 @@ function var_0_0.ShowInvitePanel(arg_6_0)
 			return
 		end
 
-		arg_6_0:emit(Dorm3dInviteMediator.ON_DORM, {
-			roomId = arg_6_0.room.id,
-			groupIds = underscore.rest(arg_6_0.selectIds, 1)
-		})
+		local var_9_0 = {}
+
+		if #arg_6_0.selectIds >= 3 and not ApartmentProxy.CheckDeviceRAMEnough() then
+			table.insert(var_9_0, function(arg_10_0)
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					content = i18n("drom3d_beach_memory_limit_tip"),
+					onYes = arg_10_0
+				})
+			end)
+		end
+
+		seriesAsync(var_9_0, function()
+			arg_6_0:emit(Dorm3dInviteMediator.ON_DORM, {
+				roomId = arg_6_0.room.id,
+				groupIds = underscore.rest(arg_6_0.selectIds, 1)
+			})
+		end)
 	end, SFX_CONFIRM)
 	pg.UIMgr.GetInstance():OverlayPanel(arg_6_0.rtInvitePanel, {
 		force = true,
@@ -75,167 +88,167 @@ function var_0_0.ShowInvitePanel(arg_6_0)
 	pg.CriMgr.GetInstance():PlaySE_V3("ui-dorm_sidebar")
 end
 
-function var_0_0.HideInvitePanel(arg_10_0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_10_0.rtInvitePanel, arg_10_0._tf)
-	setActive(arg_10_0.rtInvitePanel, false)
+function var_0_0.HideInvitePanel(arg_12_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_12_0.rtInvitePanel, arg_12_0._tf)
+	setActive(arg_12_0.rtInvitePanel, false)
 end
 
-function var_0_0.ShowSelectPanel(arg_11_0)
-	local var_11_0 = arg_11_0.room:getInviteList()
-	local var_11_1, var_11_2 = arg_11_0.room:getInteractRange()
-	local var_11_3 = {}
-	local var_11_4 = {}
+function var_0_0.ShowSelectPanel(arg_13_0)
+	local var_13_0 = arg_13_0.room:getInviteList()
+	local var_13_1, var_13_2 = arg_13_0.room:getInteractRange()
+	local var_13_3 = {}
+	local var_13_4 = {}
 
-	for iter_11_0, iter_11_1 in ipairs(var_11_0) do
-		if not arg_11_0.room.unlockCharacter[iter_11_1] then
-			var_11_4[iter_11_1] = "lock"
-		elseif not getProxy(ApartmentProxy):getApartment(iter_11_1) then
-			var_11_4[iter_11_1] = "room"
+	for iter_13_0, iter_13_1 in ipairs(var_13_0) do
+		if not arg_13_0.room.unlockCharacter[iter_13_1] then
+			var_13_4[iter_13_1] = "lock"
+		elseif not getProxy(ApartmentProxy):getApartment(iter_13_1) then
+			var_13_4[iter_13_1] = "room"
 		elseif Apartment.New({
-			ship_group = iter_11_1
+			ship_group = iter_13_1
 		}):needDownload() then
-			var_11_4[iter_11_1] = "download"
+			var_13_4[iter_13_1] = "download"
 		else
-			var_11_4[iter_11_1] = nil
+			var_13_4[iter_13_1] = nil
 		end
 	end
 
-	local var_11_5 = arg_11_0.rtSelectPanel:Find("window/character/container")
+	local var_13_5 = arg_13_0.rtSelectPanel:Find("window/character/container")
 
-	UIItemList.StaticAlign(var_11_5, var_11_5:GetChild(0), #var_11_0, function(arg_12_0, arg_12_1, arg_12_2)
-		arg_12_1 = arg_12_1 + 1
+	UIItemList.StaticAlign(var_13_5, var_13_5:GetChild(0), #var_13_0, function(arg_14_0, arg_14_1, arg_14_2)
+		arg_14_1 = arg_14_1 + 1
 
-		if arg_12_0 == UIItemList.EventUpdate then
-			local var_12_0 = var_11_0[arg_12_1]
+		if arg_14_0 == UIItemList.EventUpdate then
+			local var_14_0 = var_13_0[arg_14_1]
 
-			setActive(arg_12_2:Find("base"), var_12_0)
-			setActive(arg_12_2:Find("empty"), not var_12_0)
+			setActive(arg_14_2:Find("base"), var_14_0)
+			setActive(arg_14_2:Find("empty"), not var_14_0)
 
-			if not var_12_0 then
-				arg_12_2.name = "null"
+			if not var_14_0 then
+				arg_14_2.name = "null"
 
-				setText(arg_12_2:Find("empty/Text"), i18n("dorm3d_waiting"))
+				setText(arg_14_2:Find("empty/Text"), i18n("dorm3d_waiting"))
 			else
-				arg_12_2.name = tostring(var_12_0)
+				arg_14_2.name = tostring(var_14_0)
 
-				arg_11_0:UpdateSelectableCard(arg_12_2:Find("base"), var_12_0, function(arg_13_0)
-					table.removebyvalue(var_11_3, var_12_0, true)
+				arg_13_0:UpdateSelectableCard(arg_14_2:Find("base"), var_14_0, function(arg_15_0)
+					table.removebyvalue(var_13_3, var_14_0, true)
 
-					if arg_13_0 then
-						table.insert(var_11_3, var_12_0)
+					if arg_15_0 then
+						table.insert(var_13_3, var_14_0)
 					end
 
-					setText(arg_11_0.rtSelectPanel:Find("window/bottom/title/Text"), i18n("dorm3d_select_tip") .. #var_11_3 .. "/" .. var_11_2)
+					setText(arg_13_0.rtSelectPanel:Find("window/bottom/title/Text"), i18n("dorm3d_select_tip") .. #var_13_3 .. "/" .. var_13_2)
 				end)
-				triggerToggle(arg_12_2:Find("base"), table.contains(arg_11_0.selectIds, var_12_0))
-				setActive(arg_12_2:Find("base/mask"), var_11_4[var_12_0])
-				onButton(arg_11_0, arg_12_2:Find("base/mask"), function()
-					if var_11_4[var_12_0] == "lock" then
-						arg_11_0:HideSelectPanel()
-						arg_11_0:emit(Dorm3dInviteMediator.OPEN_ROOM_UNLOCK_WINDOW, arg_11_0.room:GetConfigID(), var_12_0)
-					elseif var_11_4[var_12_0] == "room" then
+				triggerToggle(arg_14_2:Find("base"), table.contains(arg_13_0.selectIds, var_14_0))
+				setActive(arg_14_2:Find("base/mask"), var_13_4[var_14_0])
+				onButton(arg_13_0, arg_14_2:Find("base/mask"), function()
+					if var_13_4[var_14_0] == "lock" then
+						arg_13_0:HideSelectPanel()
+						arg_13_0:emit(Dorm3dInviteMediator.OPEN_ROOM_UNLOCK_WINDOW, arg_13_0.room:GetConfigID(), var_14_0)
+					elseif var_13_4[var_14_0] == "room" then
 						pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_role_locked"))
-					elseif var_11_4[var_12_0] == "download" then
+					elseif var_13_4[var_14_0] == "download" then
 						pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_guide_beach_tip"))
 					end
 				end, SFX_PANEL)
-				eachChild(arg_12_2:Find("base/operation"), function(arg_15_0)
-					setActive(arg_15_0, arg_15_0.name == var_11_4[var_12_0])
+				eachChild(arg_14_2:Find("base/operation"), function(arg_17_0)
+					setActive(arg_17_0, arg_17_0.name == var_13_4[var_14_0])
 				end)
 			end
 		end
 	end)
-	onButton(arg_11_0, arg_11_0.rtSelectPanel:Find("window/bottom/container/btn_confirm"), function()
-		if #var_11_3 > var_11_2 then
+	onButton(arg_13_0, arg_13_0.rtSelectPanel:Find("window/bottom/container/btn_confirm"), function()
+		if #var_13_3 > var_13_2 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_data_Invite_lack"))
 
 			return
 		end
 
-		arg_11_0.selectIds = var_11_3
+		arg_13_0.selectIds = var_13_3
 
-		arg_11_0:HideSelectPanel()
-		arg_11_0:ShowInvitePanel()
+		arg_13_0:HideSelectPanel()
+		arg_13_0:ShowInvitePanel()
 	end, SFX_CONFIRM)
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg_11_0.rtSelectPanel, {
+	pg.UIMgr.GetInstance():OverlayPanelPB(arg_13_0.rtSelectPanel, {
 		force = true,
 		weight = LayerWeightConst.SECOND_LAYER,
 		pbList = {
-			arg_11_0.rtSelectPanel:Find("window")
+			arg_13_0.rtSelectPanel:Find("window")
 		}
 	})
-	setActive(arg_11_0.rtSelectPanel, true)
+	setActive(arg_13_0.rtSelectPanel, true)
 end
 
-function var_0_0.UpdateSelectableCard(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
-	local var_17_0 = Apartment.New({
-		ship_group = arg_17_2
-	}):GetSkinModelID(arg_17_0.room:getConfig("tag"))
+function var_0_0.UpdateSelectableCard(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
+	local var_19_0 = Apartment.New({
+		ship_group = arg_19_2
+	}):GetSkinModelID(arg_19_0.room:getConfig("tag"))
 
-	GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_%d", var_17_0), "", arg_17_1:Find("Image"))
-	GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_name_%d", arg_17_2), "", arg_17_1:Find("name"))
+	GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_%d", var_19_0), "", arg_19_1:Find("Image"))
+	GetImageSpriteFromAtlasAsync(string.format("dorm3dselect/room_card_apartment_name_%d", arg_19_2), "", arg_19_1:Find("name"))
 
-	local var_17_1 = getProxy(ApartmentProxy):getApartment(arg_17_2)
-	local var_17_2 = not var_17_1 or var_17_1:needDownload()
+	local var_19_1 = getProxy(ApartmentProxy):getApartment(arg_19_2)
+	local var_19_2 = not var_19_1 or var_19_1:needDownload()
 
-	setActive(arg_17_1:Find("lock"), var_17_2)
-	setActive(arg_17_1:Find("mask"), var_17_2)
-	setActive(arg_17_1:Find("unlock"), not var_17_2)
-	setActive(arg_17_1:Find("favor_level"), var_17_1)
+	setActive(arg_19_1:Find("lock"), var_19_2)
+	setActive(arg_19_1:Find("mask"), var_19_2)
+	setActive(arg_19_1:Find("unlock"), not var_19_2)
+	setActive(arg_19_1:Find("favor_level"), var_19_1)
 
-	if var_17_1 then
-		setText(arg_17_1:Find("favor_level/Text"), var_17_1.level)
+	if var_19_1 then
+		setText(arg_19_1:Find("favor_level/Text"), var_19_1.level)
 	end
 
-	onToggle(arg_17_0, arg_17_1, function(arg_18_0)
-		arg_17_3(arg_18_0)
+	onToggle(arg_19_0, arg_19_1, function(arg_20_0)
+		arg_19_3(arg_20_0)
 
-		if arg_18_0 then
-			if not var_17_1 then
-				pg.TipsMgr.GetInstance():ShowTips(string.format("need unlock apartment{%d}", arg_17_2))
-				triggerToggle(arg_17_1, false)
-			elseif var_17_1:needDownload() then
-				pg.TipsMgr.GetInstance():ShowTips(string.format("need download resource{%d}", arg_17_2))
-				triggerToggle(arg_17_1, false)
+		if arg_20_0 then
+			if not var_19_1 then
+				pg.TipsMgr.GetInstance():ShowTips(string.format("need unlock apartment{%d}", arg_19_2))
+				triggerToggle(arg_19_1, false)
+			elseif var_19_1:needDownload() then
+				pg.TipsMgr.GetInstance():ShowTips(string.format("need download resource{%d}", arg_19_2))
+				triggerToggle(arg_19_1, false)
 			end
 		end
 	end, SFX_UI_CLICK)
 end
 
-function var_0_0.HideSelectPanel(arg_19_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_19_0.rtSelectPanel, arg_19_0._tf)
-	setActive(arg_19_0.rtSelectPanel, false)
+function var_0_0.HideSelectPanel(arg_21_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_21_0.rtSelectPanel, arg_21_0._tf)
+	setActive(arg_21_0.rtSelectPanel, false)
 end
 
-function var_0_0.UpdateRoom(arg_20_0, arg_20_1)
-	arg_20_0.room = arg_20_1
+function var_0_0.UpdateRoom(arg_22_0, arg_22_1)
+	arg_22_0.room = arg_22_1
 end
 
-function var_0_0.didEnter(arg_21_0)
-	arg_21_0.selectIds = underscore.filter(arg_21_0.contextData.groupIds or {}, function(arg_22_0)
-		return arg_21_0.room.unlockCharacter[arg_22_0] and tobool(getProxy(ApartmentProxy):getApartment(arg_22_0)) and not Apartment.New({
-			ship_group = arg_22_0
+function var_0_0.didEnter(arg_23_0)
+	arg_23_0.selectIds = underscore.filter(arg_23_0.contextData.groupIds or {}, function(arg_24_0)
+		return arg_23_0.room.unlockCharacter[arg_24_0] and tobool(getProxy(ApartmentProxy):getApartment(arg_24_0)) and not Apartment.New({
+			ship_group = arg_24_0
 		}):needDownload()
 	end)
-	arg_21_0.contextData.groupIds = nil
+	arg_23_0.contextData.groupIds = nil
 
-	arg_21_0:ShowInvitePanel()
+	arg_23_0:ShowInvitePanel()
 end
 
-function var_0_0.onBackPressed(arg_23_0)
-	if isActive(arg_23_0.rtSelectPanel) then
-		arg_23_0:HideSelectPanel()
-		arg_23_0:ShowInvitePanel()
+function var_0_0.onBackPressed(arg_25_0)
+	if isActive(arg_25_0.rtSelectPanel) then
+		arg_25_0:HideSelectPanel()
+		arg_25_0:ShowInvitePanel()
 	else
-		arg_23_0:closeView()
+		arg_25_0:closeView()
 	end
 end
 
-function var_0_0.willExit(arg_24_0)
-	if isActive(arg_24_0.rtSelectPanel) then
-		arg_24_0:HideSelectPanel()
+function var_0_0.willExit(arg_26_0)
+	if isActive(arg_26_0.rtSelectPanel) then
+		arg_26_0:HideSelectPanel()
 	else
-		arg_24_0:HideInvitePanel()
+		arg_26_0:HideInvitePanel()
 	end
 end
 

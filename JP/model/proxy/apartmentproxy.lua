@@ -336,4 +336,11 @@ function var_0_0.PendingRandom(arg_42_0, arg_42_1)
 	return var_42_3
 end
 
+function var_0_0.CheckDeviceRAMEnough()
+	local var_44_0 = SystemInfo.systemMemorySize
+	local var_44_1 = getDorm3dGameset("drom3d_memory_limit")[1]
+
+	return var_44_0 == 0 or var_44_1 < var_44_0
+end
+
 return var_0_0

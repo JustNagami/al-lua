@@ -7,12 +7,17 @@
 	id = "DORM3DDAILYCONVERSATION3024",
 	hideSkip = true,
 	hideAuto = true,
+	placeholder = {
+		"dorm3d"
+	},
 	scripts = {
 		{
-			actorName = "19903",
 			side = 2,
+			actorName = 19903,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
 			say = "せんせー……アンカレッジ……ひみつきち…ほしい！",
-			hidePaintObj = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -22,9 +27,11 @@
 				data = {
 					op_list = {
 						{
-							skip = true,
+							param = "Play",
 							name = "ab_shuohua_jidong_01",
-							type = "action"
+							time = 0,
+							type = "action",
+							skip = true
 						},
 						{
 							skip = true,
@@ -32,6 +39,7 @@
 							type = "action"
 						},
 						{
+							skip = false,
 							time = 1.5,
 							type = "wait"
 						}
@@ -44,30 +52,36 @@
 			}
 		},
 		{
-			actorName = "19903",
 			side = 2,
+			actorName = 19903,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
 			say = "だれもしらない……せんせーとアンカレッジのおはなし、いっぱい！",
-			hidePaintObj = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actorName = "19903",
 			side = 2,
+			actorName = 19903,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
 			say = "どこがいい？べっどのした……テント…？",
-			hidePaintObj = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actorName = "19903",
 			side = 2,
-			say = "うん……おおきいツリーハウス、つくる！",
+			actorName = 19903,
+			nameColor = "#FFFFFF",
 			hidePaintObj = true,
+			dir = 1,
+			say = "うん……おおきいツリーハウス、つくる！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -77,9 +91,11 @@
 				data = {
 					op_list = {
 						{
-							skip = true,
-							name = "ab_shuohua_lianxudiantou_01",
-							type = "action"
+							param = "Play",
+							name = "ab_shuohua_gandong_01",
+							time = 0,
+							type = "action",
+							skip = true
 						},
 						{
 							skip = true,
@@ -87,6 +103,7 @@
 							type = "action"
 						},
 						{
+							skip = false,
 							time = 1.5,
 							type = "wait"
 						}
@@ -99,10 +116,12 @@
 			}
 		},
 		{
-			actorName = "19903",
 			side = 2,
-			say = "アンカレッジとせんせー、ないしょで……なんでもできる！えへへ",
+			actorName = 19903,
+			nameColor = "#FFFFFF",
 			hidePaintObj = true,
+			dir = 1,
+			say = "アンカレッジとせんせー、ないしょで……なんでもできる！えへへ",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

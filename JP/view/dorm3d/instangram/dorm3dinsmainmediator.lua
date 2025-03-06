@@ -6,8 +6,6 @@ var_0_0.CLOSE_CHAT = "Dorm3dInsMainMediator:CLOSE_CHAT"
 var_0_0.CLOSE_JUUS = "Dorm3dInsMainMediator:CLOSE_JUUS"
 var_0_0.CHANGE_JUUS_TIP = "Dorm3dInsMainMediator:CHANGE_JUUS_TIP"
 var_0_0.CHANGE_CHAT_TIP = "Dorm3dInsMainMediator:CHANGE_CHAT_TIP"
-var_0_0.CLOSE_JUUS_DETAIL = "Dorm3dInsMainMediator.CLOSE_JUUS_DETAIL"
-var_0_0.JUUS_BACK_PRESSED = "Dorm3dInsMainMediator.JUUS_BACK_PRESSED"
 var_0_0.NotifyDormDelete = "Dorm3dInsMainMediator.NotifyDormDelete"
 var_0_0.ON_UNLOCK_DORM_ROOM = "Dorm3dInsMainMediator.ON_UNLOCK_DORM_ROOM"
 var_0_0.OPEN_INVITE_LAYER = "Dorm3dInsMainMediator.OPEN_INVITE_LAYER"
@@ -62,29 +60,24 @@ function var_0_0.register(arg_1_0)
 		arg_1_0:removeSubLayers(Dorm3dChatMediator)
 	end)
 	arg_1_0:bind(var_0_0.CLOSE_JUUS, function(arg_10_0)
+		arg_1_0:sendNotification(Dorm3dInstagramMediator.BACK_PRESSED)
 		arg_1_0:removeSubLayers(Dorm3dInstagramMediator)
 	end)
-	arg_1_0:bind(var_0_0.CLOSE_JUUS_DETAIL, function(arg_11_0)
-		arg_1_0:sendNotification(Dorm3dInstagramMediator.CLOSE_DETAIL)
+	arg_1_0:bind(var_0_0.NotifyDormDelete, function(arg_11_0, arg_11_1)
+		arg_1_0:sendNotification(var_0_0.NotifyDormDelete, arg_11_1)
 	end)
-	arg_1_0:bind(var_0_0.JUUS_BACK_PRESSED, function(arg_12_0)
-		arg_1_0:sendNotification(Dorm3dInstagramMediator.BACK_PRESSED)
-	end)
-	arg_1_0:bind(var_0_0.NotifyDormDelete, function(arg_13_0, arg_13_1)
-		arg_1_0:sendNotification(var_0_0.NotifyDormDelete, arg_13_1)
-	end)
-	arg_1_0:bind(var_0_0.ON_UNLOCK_DORM_ROOM, function(arg_14_0, arg_14_1)
+	arg_1_0:bind(var_0_0.ON_UNLOCK_DORM_ROOM, function(arg_12_0, arg_12_1)
 		arg_1_0:sendNotification(GAME.APARTMENT_ROOM_UNLOCK, {
-			roomId = arg_14_1
+			roomId = arg_12_1
 		})
 	end)
-	arg_1_0:bind(var_0_0.OPEN_ROOM_UNLOCK_WINDOW, function(arg_15_0, arg_15_1, arg_15_2)
+	arg_1_0:bind(var_0_0.OPEN_ROOM_UNLOCK_WINDOW, function(arg_13_0, arg_13_1, arg_13_2)
 		arg_1_0:addSubLayers(Context.New({
 			viewComponent = Dorm3dRoomUnlockWindow,
 			mediator = Dorm3dRoomUnlockWindowMediator,
 			data = {
-				roomId = arg_15_1,
-				groupId = arg_15_2
+				roomId = arg_13_1,
+				groupId = arg_13_2
 			},
 			onRemoved = function()
 				arg_1_0.viewComponent:Flush()
@@ -93,23 +86,29 @@ function var_0_0.register(arg_1_0)
 	end)
 end
 
-function var_0_0.initNotificationHandleDic(arg_17_0)
-	arg_17_0.handleDic = {
-		[DormGroupConst.NotifyDormDownloadStart] = function(arg_18_0, arg_18_1)
-			local var_18_0 = arg_18_1:getBody()
+function var_0_0.initNotificationHandleDic(arg_15_0)
+	arg_15_0.handleDic = {
+		[DormGroupConst.NotifyDormDownloadStart] = function(arg_16_0, arg_16_1)
+			local var_16_0 = arg_16_1:getBody()
 
-			arg_18_0.viewComponent:DownloadUpdate(DormGroupConst.DormDownloadLock.roomId, "start")
+			arg_16_0.viewComponent:DownloadUpdate(DormGroupConst.DormDownloadLock.roomId, "start")
 		end,
-		[DormGroupConst.NotifyDormDownloadProgress] = function(arg_19_0, arg_19_1)
-			local var_19_0 = arg_19_1:getBody()
+		[DormGroupConst.NotifyDormDownloadProgress] = function(arg_17_0, arg_17_1)
+			local var_17_0 = arg_17_1:getBody()
 
-			arg_19_0.viewComponent:DownloadUpdate(DormGroupConst.DormDownloadLock.roomId, "loading")
+			arg_17_0.viewComponent:DownloadUpdate(DormGroupConst.DormDownloadLock.roomId, "loading")
 		end,
-		[DormGroupConst.NotifyDormDownloadFinish] = function(arg_20_0, arg_20_1)
-			arg_20_0.viewComponent:DownloadUpdate(arg_20_1:getBody(), "finish")
+		[DormGroupConst.NotifyDormDownloadFinish] = function(arg_18_0, arg_18_1)
+			arg_18_0.viewComponent:DownloadUpdate(arg_18_1:getBody(), "finish")
 		end,
-		[Dorm3dInsMainMediator.NotifyDormDelete] = function(arg_21_0, arg_21_1)
-			arg_21_0.viewComponent:DownloadUpdate(arg_21_1:getBody(), "delete")
+		[Dorm3dInsMainMediator.NotifyDormDelete] = function(arg_19_0, arg_19_1)
+			arg_19_0.viewComponent:DownloadUpdate(arg_19_1:getBody(), "delete")
+		end,
+		[GAME.APARTMENT_CHAT_OP_DONE] = function(arg_20_0)
+			arg_20_0.viewComponent:FlushLeft()
+		end,
+		[GAME.APARTMENT_INS_OP_DONE] = function(arg_21_0)
+			arg_21_0.viewComponent:FlushLeft()
 		end
 	}
 end

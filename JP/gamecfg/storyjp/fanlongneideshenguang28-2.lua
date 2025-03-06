@@ -76,6 +76,13 @@
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "改めて！作戦段階「殲滅」、「クエンチング」を始めるわ！",
+			effects = {
+				{
+					active = false,
+					name = "miwu_dark",
+					center = true
+				}
+			},
 			flashout = {
 				black = true,
 				dur = 1,

@@ -84,6 +84,42 @@ pg.livingarea_cover = {
 		icon = "Props/drom3d_camera1003",
 		get_tips = "親愛度壁紙を入手しました"
 	},
+	[100301] = {
+		rarity = 3,
+		name = "美味しい楽しみ",
+		nighttime_res = "100301_bg_night",
+		id = 100301,
+		icon_res = "100301_icon",
+		desc = "入手すると「母港」の壁紙を「美味しい楽しみ」にすることが可能",
+		unlock_text = "アンカレッジ親愛度Lv2で開放",
+		daytime_res = "100301_bg_day",
+		icon = "Props/drom3d_camera1003",
+		get_tips = "親愛度壁紙を入手しました"
+	},
+	[100302] = {
+		rarity = 3,
+		name = "おとぎ話の時間",
+		nighttime_res = "100302_bg_night",
+		id = 100302,
+		icon_res = "100302_icon",
+		desc = "入手すると「母港」の壁紙を「おとぎ話の時間」にすることが可能",
+		unlock_text = "アンカレッジ親愛度Lv9で開放",
+		daytime_res = "100302_bg_day",
+		icon = "Props/drom3d_camera1003",
+		get_tips = "親愛度壁紙を入手しました"
+	},
+	[100303] = {
+		rarity = 3,
+		name = "おえかきの世界",
+		nighttime_res = "100303_bg_night",
+		id = 100303,
+		icon_res = "100303_icon",
+		desc = "入手すると「母港」の壁紙を「おえかきの世界」にすることが可能",
+		unlock_text = "アンカレッジ親愛度Lv13で開放",
+		daytime_res = "100303_bg_day",
+		icon = "Props/drom3d_camera1003",
+		get_tips = "親愛度壁紙を入手しました"
+	},
 	all = {
 		0,
 		100101,
@@ -91,6 +127,9 @@ pg.livingarea_cover = {
 		100103,
 		100201,
 		100202,
-		100203
+		100203,
+		100301,
+		100302,
+		100303
 	}
 }
