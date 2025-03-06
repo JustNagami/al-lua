@@ -4223,6 +4223,9 @@ end
 
 function quickCheckAndPlayAnimator(arg_291_0, arg_291_1)
 	local var_291_0 = arg_291_0:GetComponent(typeof(Animator))
+
+	var_291_0.enabled = true
+
 	local var_291_1 = Animator.StringToHash(arg_291_1)
 
 	if var_291_0:HasState(0, var_291_1) then

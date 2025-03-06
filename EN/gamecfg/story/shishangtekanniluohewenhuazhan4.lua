@@ -177,6 +177,10 @@
 				{
 					content = "(Accept her judgment.)",
 					flag = 1
+				},
+				{
+					content = "(Ask what's behind the door.)",
+					flag = 2
 				}
 			}
 		},
@@ -224,12 +228,6 @@
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
-			},
-			options = {
-				{
-					content = "(Ask what's behind the door.)",
-					flag = 1
-				}
 			}
 		},
 		{
@@ -238,7 +236,7 @@
 			bgName = "star_level_bg_303",
 			spine = true,
 			nameColor = "#A9F548FF",
-			optionFlag = 1,
+			optionFlag = 2,
 			hideRecordIco = true,
 			actor = 202333,
 			actorName = "{playername}",
@@ -254,7 +252,7 @@
 			bgName = "star_level_bg_303",
 			spine = true,
 			dir = 1,
-			optionFlag = 1,
+			optionFlag = 2,
 			actor = 202333,
 			nameColor = "#A9F548FF",
 			say = "You wish to know?",
@@ -269,7 +267,7 @@
 			bgName = "star_level_bg_303",
 			spine = true,
 			dir = 1,
-			optionFlag = 1,
+			optionFlag = 2,
 			actor = 202333,
 			nameColor = "#A9F548FF",
 			say = "Perhaps what lies beyond is Heaven. Or perhaps it's Hell.",
@@ -284,7 +282,7 @@
 			bgName = "star_level_bg_303",
 			spine = true,
 			dir = 1,
-			optionFlag = 1,
+			optionFlag = 2,
 			actor = 202333,
 			nameColor = "#A9F548FF",
 			say = "If you wish to know in advance, I suggest you allow me to judge you. Heehee.",
@@ -298,7 +296,7 @@
 			bgName = "star_level_bg_303",
 			spine = true,
 			withoutActorName = true,
-			optionFlag = 1,
+			optionFlag = 2,
 			hideRecordIco = true,
 			actor = 202333,
 			nameColor = "#A9F548FF",
@@ -314,7 +312,7 @@
 			bgName = "star_level_bg_303",
 			spine = true,
 			nameColor = "#A9F548FF",
-			optionFlag = 1,
+			optionFlag = 2,
 			hideRecordIco = true,
 			actor = 202333,
 			actorName = "{playername}",

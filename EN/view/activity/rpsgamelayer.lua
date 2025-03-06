@@ -39,6 +39,8 @@ local function var_0_21(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 			arg_2_0._bottomCardTpl = arg_1_2
 
 			setActive(arg_2_0._tf, false)
+			GetComponent(findTF(arg_2_0._tf, "top/bg/desc/img"), typeof(Image)):SetNativeSize()
+			GetComponent(findTF(arg_2_0._tf, "bottom/bg/desc/img"), typeof(Image)):SetNativeSize()
 
 			arg_2_0._topContent = findTF(arg_2_0._tf, "top/content")
 			arg_2_0._bottomContent = findTF(arg_2_0._tf, "bottom/content")
@@ -58,8 +60,8 @@ local function var_0_21(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 			end
 		end,
 		setCardData = function(arg_3_0, arg_3_1)
-			local var_3_0 = arg_3_1.my_cards
-			local var_3_1 = arg_3_1.other_cards
+			local var_3_0 = arg_3_1.other_cards
+			local var_3_1 = arg_3_1.my_cards
 
 			for iter_3_0 = 1, var_0_8 do
 				arg_3_0:setCardChildsVisible(findTF(arg_3_0.topCards[iter_3_0], "ad"), false)

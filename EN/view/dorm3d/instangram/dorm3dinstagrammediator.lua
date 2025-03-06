@@ -5,6 +5,7 @@ var_0_0.ON_READ = "Dorm3dInstagramMediator:ON_READ"
 var_0_0.ON_LIKE = "Dorm3dInstagramMediator:ON_LIKE"
 var_0_0.ON_SHARE = "Dorm3dInstagramMediator:ON_SHARE"
 var_0_0.ON_EXIT = "Dorm3dInstagramMediator:ON_EXIT"
+var_0_0.BACK_PRESSED = "Dorm3dInstagramMediator:BACK_PRESSED"
 
 function var_0_0.register(arg_1_0)
 	arg_1_0:bind(var_0_0.ON_DISCUSS, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
@@ -48,7 +49,8 @@ end
 
 function var_0_0.listNotificationInterests(arg_7_0)
 	return {
-		GAME.APARTMENT_INS_OP_DONE
+		GAME.APARTMENT_INS_OP_DONE,
+		var_0_0.BACK_PRESSED
 	}
 end
 
@@ -68,6 +70,8 @@ function var_0_0.handleNotification(arg_8_0, arg_8_1)
 		elseif var_8_1.op == Instagram3Dorm.OP_EXIT then
 			-- block empty
 		end
+	elseif var_8_0 == var_0_0.BACK_PRESSED then
+		arg_8_0.viewComponent:onBackPressed()
 	end
 end
 

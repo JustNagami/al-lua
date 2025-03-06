@@ -498,10 +498,10 @@ pg.item_data_frame = {
 	[334] = {
 		time_limit_type = 0,
 		name = "A Stroke of Divine Light: Bastion of Saintly Wings",
-		gain_by = "樊笼内的神光",
+		gain_by = "Paradiso of Shackled Light",
 		id = 334,
 		time_second = 0,
-		desc = "Obtained from an event.",
+		desc = "<color=#ffffff>\"Pick up the brush, and paint your own light.\"</color>\nGiven to Commanders who participated in the Paradiso of Shackled Light.",
 		scene = {}
 	},
 	[406] = {
@@ -664,6 +664,24 @@ pg.item_data_frame = {
 		id = 1004,
 		time_second = 0,
 		desc = "<color=#ffffff>From underneath the Sakuran parasol, a pair of eyes gazes at you lovingly.</color>\nReward for raising Noshiro's Intimacy in the Private Quarters.",
+		scene = {}
+	},
+	[1005] = {
+		time_limit_type = 0,
+		name = "Angelic Light",
+		gain_by = "0",
+		id = 1005,
+		time_second = 0,
+		desc = "<color=#ffffff>The pure light of the stars makes an angel's halo shine.</color>\nReward for raising Anchorage's Intimacy in the Private Quarters.",
+		scene = {}
+	},
+	[1006] = {
+		time_limit_type = 0,
+		name = "Adventure on the Blue Seas",
+		gain_by = "0",
+		id = 1006,
+		time_second = 0,
+		desc = "<color=#ffffff>Chase the waves and dive into a joyous new quest.</color>\nReward for raising Anchorage's Intimacy in the Private Quarters.",
 		scene = {}
 	},
 	[10001] = {
@@ -849,6 +867,8 @@ pg.item_data_frame = {
 		1002,
 		1003,
 		1004,
+		1005,
+		1006,
 		10001,
 		10002,
 		10003,

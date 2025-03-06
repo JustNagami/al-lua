@@ -144,6 +144,10 @@
 				{
 					content = "I was drawn here by the aroma...",
 					flag = 1
+				},
+				{
+					content = "I'm a bit lost at the moment...",
+					flag = 2
 				}
 			}
 		},
@@ -221,12 +225,6 @@
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
-			},
-			options = {
-				{
-					content = "I'm a bit lost at the moment...",
-					flag = 1
-				}
 			}
 		},
 		{
@@ -235,7 +233,7 @@
 			bgName = "star_level_bg_303",
 			spine = true,
 			nameColor = "#A9F548FF",
-			optionFlag = 1,
+			optionFlag = 2,
 			hideRecordIco = true,
 			actor = 608031,
 			actorName = "{playername}",
@@ -251,7 +249,7 @@
 			bgName = "star_level_bg_303",
 			spine = true,
 			nameColor = "#A9F548FF",
-			optionFlag = 1,
+			optionFlag = 2,
 			hideRecordIco = true,
 			actor = 608031,
 			actorName = "{playername}",
@@ -267,7 +265,7 @@
 			bgName = "star_level_bg_303",
 			spine = true,
 			dir = 1,
-			optionFlag = 1,
+			optionFlag = 2,
 			actor = 608031,
 			nameColor = "#A9F548FF",
 			say = "Correct.",
@@ -282,7 +280,7 @@
 			bgName = "star_level_bg_303",
 			spine = true,
 			dir = 1,
-			optionFlag = 1,
+			optionFlag = 2,
 			nameColor = "#A9F548FF",
 			say = "And you got here sooner than you should have... I suppose the invisible thread that connects us guided you here♪",
 			typewriter = {
@@ -295,7 +293,7 @@
 			bgName = "star_level_bg_303",
 			spine = true,
 			withoutActorName = true,
-			optionFlag = 1,
+			optionFlag = 2,
 			hideRecordIco = true,
 			actor = 608031,
 			nameColor = "#A9F548FF",

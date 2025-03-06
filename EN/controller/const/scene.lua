@@ -1312,7 +1312,7 @@ local var_0_1 = {
 
 		if not var_221_0.timeIndex then
 			if pg.dorm3d_rooms[var_221_0.roomId].type == 2 then
-				local var_221_1 = PlayerPrefs.GetInt(ApartmentProxy.GetTimePPName(), 1)
+				local var_221_1 = PlayerPrefs.GetInt(ApartmentProxy.GetTimePPName(var_221_0.roomId), 1)
 
 				if var_221_1 == 0 then
 					var_221_1 = ApartmentProxy.GetTimeIndex(tonumber(pg.TimeMgr.GetInstance():CurrentSTimeDesc("%H")))

@@ -46,7 +46,7 @@
 		},
 		{
 			side = 2,
-			actorName = "？？？",
+			actorName = "???",
 			bgName = "star_level_bg_303",
 			nameColor = "#A9F548FF",
 			dir = 1,
@@ -59,7 +59,7 @@
 		},
 		{
 			side = 2,
-			actorName = "？？？",
+			actorName = "???",
 			bgName = "star_level_bg_303",
 			nameColor = "#A9F548FF",
 			dir = 1,
@@ -215,6 +215,10 @@
 				{
 					content = "(Beg for forgiveness.)",
 					flag = 1
+				},
+				{
+					content = "(Point out the flaw in the exhibition's tour route.)",
+					flag = 2
 				}
 			}
 		},
@@ -277,12 +281,6 @@
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
-			},
-			options = {
-				{
-					content = "(Point out the flaw in the exhibition's tour route.)",
-					flag = 1
-				}
 			}
 		},
 		{
@@ -290,7 +288,7 @@
 			side = 2,
 			bgName = "star_level_bg_303",
 			nameColor = "#A9F548FF",
-			optionFlag = 1,
+			optionFlag = 2,
 			hideRecordIco = true,
 			actor = 605081,
 			actorName = "{playername}",
@@ -306,7 +304,7 @@
 			side = 2,
 			bgName = "star_level_bg_303",
 			nameColor = "#A9F548FF",
-			optionFlag = 1,
+			optionFlag = 2,
 			hideRecordIco = true,
 			actor = 605081,
 			actorName = "{playername}",
@@ -322,7 +320,7 @@
 			side = 2,
 			bgName = "star_level_bg_303",
 			dir = 1,
-			optionFlag = 1,
+			optionFlag = 2,
 			actor = 605081,
 			nameColor = "#A9F548FF",
 			live2d = "mission",
@@ -337,7 +335,7 @@
 			side = 2,
 			bgName = "star_level_bg_303",
 			dir = 1,
-			optionFlag = 1,
+			optionFlag = 2,
 			actor = 605081,
 			nameColor = "#A9F548FF",
 			live2d = true,

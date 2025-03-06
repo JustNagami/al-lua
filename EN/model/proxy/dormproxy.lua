@@ -499,13 +499,4 @@ function var_0_0.IsShowRedDot(arg_57_0)
 	return var_57_1 and (var_57_3 or var_57_4 or getProxy(SettingsProxy):IsTipNewTheme() or getProxy(SettingsProxy):IsTipNewGemFurniture())
 end
 
-function var_0_0.CheckDeviceRAMEnough()
-	local var_58_0 = SystemInfo.systemMemorySize
-	local var_58_1 = getDorm3dGameset("drom3d_memory_limit")[1]
-
-	if var_58_0 ~= 0 and var_58_0 < var_58_1 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("drom3d_memory_limit_tip"))
-	end
-end
-
 return var_0_0

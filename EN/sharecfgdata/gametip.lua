@@ -19130,7 +19130,7 @@ _G.pg.base.gametip.rename_input = {
 	tip = "Enter a new name."
 }
 _G.pg.base.gametip.avatar_task_level = {
-	tip = "Defeat the Boss Fleet of $3 $4 times with a $1 $2 in your fleet. $2 must remain afloat."
+	tip = "Defeat the Boss Fleet of $3 $4 times with $1$2 in your fleet. $2 must remain afloat."
 }
 _G.pg.base.gametip.avatar_upgrad_1 = {
 	tip = "Limit Break 1"
@@ -19139,7 +19139,7 @@ _G.pg.base.gametip.avatar_upgrad_2 = {
 	tip = "Limit Break 2"
 }
 _G.pg.base.gametip.avatar_upgrad_3 = {
-	tip = "max Limit Break"
+	tip = "max Limit Break "
 }
 _G.pg.base.gametip.avatar_task_ship_1 = {
 	tip = "Obtain $1."
@@ -26180,7 +26180,7 @@ _G.pg.base.gametip.dorm3d_privatechat_favor = {
 	tip = "Intimacy"
 }
 _G.pg.base.gametip.dorm3d_privatechat_furniture = {
-	tip = "Owned Furniture"
+	tip = "Furniture"
 }
 _G.pg.base.gametip.dorm3d_privatechat_visit = {
 	tip = "Last Visit"
@@ -26271,4 +26271,7 @@ _G.pg.base.gametip.dorm3d_ins_no_topics = {
 }
 _G.pg.base.gametip.rps_game_take_card = {
 	tip = "Confirm Card"
+}
+_G.pg.base.gametip.drom3d_beach_memory_limit_tip = {
+	tip = "Insufficient device performance detected. Placing 3 characters at the same time might lead to game crash, continue anyway?"
 }
