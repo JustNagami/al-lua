@@ -1,5 +1,103 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_50 = {
+	[805200] = {
+		cannon = 394,
+		name = "イカヅチ",
+		antiaircraft_growth = 0,
+		speed_growth = 0,
+		fog_fx = "",
+		air = 0,
+		air_growth = 0,
+		dodge = 100,
+		speed = 37,
+		luck = 0,
+		id = 805200,
+		reload_growth = 0,
+		dodge_growth = 0,
+		reload = 150,
+		star = 4,
+		hit = 31,
+		antisub_growth = 0,
+		rarity = 3,
+		cannon_growth = 0,
+		base = 90163,
+		durability = 34652,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		antiaircraft = 235,
+		hit_growth = 0,
+		armor = 0,
+		torpedo = 742,
+		durability_growth = 0,
+		antisub = 0,
+		luck_growth = 0,
+		battle_unit_type = 95,
+		bound_bone = {
+			cannon = {
+				{
+					0.61,
+					0.49,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.61,
+					0.49,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.31,
+					0.17,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.61,
+					0.49,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							0.23,
+							0.486,
+							-0.481
+						}
+					}
+				}
+			},
+			{
+				40,
+				{
+					{
+						"smoke",
+						{
+							-0.56,
+							2.91,
+							-0.14
+						}
+					}
+				}
+			}
+		},
+		equipment_list = {
+			100223,
+			100432,
+			317007,
+			317012,
+			318102
+		}
+	},
 	[805300] = {
 		cannon = 646,
 		name = "ナチ",
@@ -1252,51 +1350,6 @@ pg.enemy_data_statistics_50 = {
 			318074,
 			318075,
 			318093
-		},
-		buff_list = {
-			{
-				ID = 50510,
-				LV = 3
-			}
-		}
-	},
-	[9027] = {
-		cannon = 360,
-		name = "ムツ",
-		antiaircraft_growth = 3680,
-		speed_growth = 0,
-		fog_fx = "",
-		air = 0,
-		air_growth = 0,
-		dodge = 7,
-		luck = 0,
-		id = 9027,
-		cannon_growth = 3400,
-		reload_growth = 0,
-		dodge_growth = 102,
-		speed = 14,
-		star = 6,
-		hit = 20,
-		antisub_growth = 0,
-		rarity = 5,
-		reload = 150,
-		base = 90231,
-		durability = 9600,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		antiaircraft = 160,
-		hit_growth = 210,
-		armor = 0,
-		torpedo = 0,
-		durability_growth = 82000,
-		antisub = 0,
-		luck_growth = 0,
-		battle_unit_type = 65,
-		equipment_list = {
-			318076,
-			318077,
-			318078,
-			318094
 		},
 		buff_list = {
 			{

@@ -231,4 +231,8 @@ function PayFailed(arg_32_0, arg_32_1)
 	end
 end
 
+function var_0_0.Survey(arg_33_0)
+	Application.OpenURL(arg_33_0)
+end
+
 return var_0_0

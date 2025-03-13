@@ -10,9 +10,17 @@ function var_0_0.register(arg_1_0)
 	arg_1_0.insPhoneData = arg_1_0:BuildPhoneData()
 
 	arg_1_0:on(28000, function(arg_2_0)
+		if DORM_LOCK_INS then
+			return
+		end
+
 		arg_1_0:HandleInsData(arg_2_0.ins)
 	end)
 	arg_1_0:on(28025, function(arg_3_0)
+		if DORM_LOCK_INS then
+			return
+		end
+
 		for iter_3_0, iter_3_1 in ipairs(arg_3_0.list) do
 			switch(iter_3_1.type, {
 				[var_0_0.UNLOCK_TYPE_CHAT] = function()

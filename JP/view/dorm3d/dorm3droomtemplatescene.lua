@@ -495,9 +495,11 @@ function var_0_0.initScene(arg_39_0)
 
 	setActive(arg_39_0.restrictedBox, false)
 
+	local var_39_5 = arg_39_0.cameras[var_0_0.CAMERA.PHOTO_FREE]:GetComponent(typeof(CharacterController)).radius
+
 	arg_39_0.restrictedHeightRange = {
-		arg_39_0.restrictedBox:Find("Floor").position.y,
-		arg_39_0.restrictedBox:Find("Celling").position.y
+		arg_39_0.restrictedBox:Find("Floor").position.y + var_39_5,
+		arg_39_0.restrictedBox:Find("Celling").position.y - var_39_5
 	}
 	arg_39_0.ladyInterest = GameObject.Find("InterestProxy").transform
 	arg_39_0.daynightCtrlComp = GameObject.Find("[MainBlock]").transform:GetComponent(typeof(DayNightCtrl))
@@ -2947,6 +2949,7 @@ function var_0_0.EnterPhotoMode(arg_256_0, arg_256_1, arg_256_2)
 
 			arg_256_0:RegisterOrbits(arg_256_0.cameras[var_0_0.CAMERA.PHOTO])
 			arg_256_0:SetCameraObrits()
+			setActive(arg_256_0.restrictedBox, true)
 			arg_256_0:RegisterCameraBlendFinished(var_259_2, arg_259_0)
 			arg_256_0:ActiveCamera(var_259_2)
 		end,
@@ -2978,10 +2981,11 @@ function var_0_0.ExitPhotoMode(arg_262_0)
 
 			if arg_262_0.contextData.photoFreeMode then
 				arg_262_0:EnablePOVLayer(false)
-				setActive(arg_262_0.restrictedBox, false)
 
 				arg_262_0.contextData.photoFreeMode = nil
 			end
+
+			setActive(arg_262_0.restrictedBox, false)
 
 			local var_264_1 = arg_262_0.cameras[var_0_0.CAMERA.POV]
 
@@ -3047,12 +3051,8 @@ function var_0_0.SwitchPhotoCamera(arg_275_0)
 	if not arg_275_0.contextData.photoFreeMode then
 		arg_275_0:EnableJoystick(false)
 		arg_275_0:EnablePOVLayer(true)
-		setActive(arg_275_0.restrictedBox, true)
 
 		local var_275_0 = arg_275_0.cameras[var_0_0.CAMERA.PHOTO_FREE]
-
-		var_275_0.transform.position = arg_275_0.mainCameraTF.position
-
 		local var_275_1 = arg_275_0.cameras[var_0_0.CAMERA.PHOTO_FREE]:Find("PhotoFree Camera"):GetComponent(typeof(Cinemachine.CinemachineVirtualCamera)):GetCinemachineComponent(Cinemachine.CinemachineCore.Stage.Aim)
 		local var_275_2 = arg_275_0.mainCameraTF.rotation:ToEulerAngles()
 		local var_275_3 = var_275_1.m_HorizontalAxis
@@ -3065,14 +3065,17 @@ function var_0_0.SwitchPhotoCamera(arg_275_0)
 		var_275_4.Value = arg_275_0:GetNearestAngle(var_275_2.x, var_275_4.m_MinValue, var_275_4.m_MaxValue)
 		var_275_1.m_VerticalAxis = var_275_4
 
-		local var_275_5 = math.InverseLerp(arg_275_0.restrictedHeightRange[1], arg_275_0.restrictedHeightRange[2], var_275_0.position.y)
+		local var_275_5 = arg_275_0.mainCameraTF.position
+		local var_275_6 = math.InverseLerp(arg_275_0.restrictedHeightRange[1], arg_275_0.restrictedHeightRange[2], var_275_5.y)
 
-		arg_275_0:emit(Dorm3dPhotoMediator.CAMERA_LIFT_CHANGED, var_275_5)
+		var_275_5.y = math.clamp(var_275_5.y, arg_275_0.restrictedHeightRange[1], arg_275_0.restrictedHeightRange[2])
+		var_275_0.transform.position = var_275_5
+
+		arg_275_0:emit(Dorm3dPhotoMediator.CAMERA_LIFT_CHANGED, var_275_6)
 		arg_275_0:ActiveCamera(arg_275_0.cameras[var_0_0.CAMERA.PHOTO_FREE])
 	else
 		arg_275_0:EnableJoystick(true)
 		arg_275_0:EnablePOVLayer(false)
-		setActive(arg_275_0.restrictedBox, false)
 		arg_275_0:ActiveCamera(arg_275_0.cameras[var_0_0.CAMERA.PHOTO])
 	end
 

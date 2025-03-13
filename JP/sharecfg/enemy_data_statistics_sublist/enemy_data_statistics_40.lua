@@ -1,5 +1,53 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_40 = {
+	[70012] = {
+		cannon = 165,
+		reload = 150,
+		speed_growth = 0,
+		cannon_growth = 0,
+		battle_unit_type = 95,
+		air = 0,
+		base = 90251,
+		dodge = 20,
+		durability_growth = 0,
+		antiaircraft = 225,
+		speed = 18,
+		reload_growth = 0,
+		dodge_growth = 0,
+		luck = 0,
+		antiaircraft_growth = 0,
+		hit = 100,
+		antisub_growth = 0,
+		air_growth = 0,
+		antisub = 0,
+		torpedo = 0,
+		durability = 1000000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		hit_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		id = 70012,
+		appear_fx = {
+			"bossguangxiao",
+			"appearQ"
+		},
+		equipment_list = {
+			200401,
+			200402,
+			200403,
+			200404,
+			200405,
+			200406
+		},
+		buff_list = {
+			{
+				ID = 50510,
+				LV = 5
+			}
+		}
+	},
 	[70013] = {
 		cannon = 225,
 		name = "テスター(?)",
@@ -1233,50 +1281,6 @@ pg.enemy_data_statistics_40 = {
 			311048,
 			311049,
 			311051
-		}
-	},
-	[1022] = {
-		cannon = 0,
-		name = "ソウリュウ",
-		antiaircraft_growth = 2500,
-		speed_growth = 0,
-		pilot_ai_template_id = 10001,
-		air = 28,
-		air_growth = 2308,
-		dodge = 5,
-		luck = 0,
-		id = 1022,
-		cannon_growth = 0,
-		reload_growth = 0,
-		dodge_growth = 72,
-		reload = 150,
-		star = 5,
-		hit = 14,
-		antisub_growth = 0,
-		rarity = 4,
-		fog_fx = "",
-		base = 90241,
-		durability = 330,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		antiaircraft = 35,
-		hit_growth = 210,
-		armor = 0,
-		speed = 17,
-		torpedo = 0,
-		antisub = 0,
-		durability_growth = 14000,
-		luck_growth = 0,
-		battle_unit_type = 70,
-		appear_fx = {
-			"appearQ"
-		},
-		equipment_list = {
-			100201,
-			311050,
-			311051,
-			311052,
-			311053
 		}
 	}
 }

@@ -1,5 +1,112 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_86 = {
+	[10042021] = {
+		cannon = 25,
+		name = "ユキカゼ",
+		antiaircraft_growth = 1638,
+		speed_growth = 0,
+		pilot_ai_template_id = 10001,
+		air = 0,
+		air_growth = 0,
+		dodge = 15,
+		speed = 33,
+		luck = 0,
+		id = 10042021,
+		reload_growth = 0,
+		dodge_growth = 222,
+		fog_fx = "",
+		star = 3,
+		hit = 14,
+		antisub_growth = 0,
+		rarity = 5,
+		cannon_growth = 468,
+		base = 90172,
+		durability = 2000,
+		armor_growth = 0,
+		torpedo_growth = 4491,
+		antiaircraft = 85,
+		hit_growth = 210,
+		armor = 0,
+		reload = 150,
+		torpedo = 120,
+		antisub = 0,
+		durability_growth = 32500,
+		luck_growth = 0,
+		battle_unit_type = 50,
+		bound_bone = {
+			cannon = {
+				{
+					0.088,
+					0.917,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.694,
+					0.853,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.088,
+					0.917,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.096,
+					3.156,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							-0.26,
+							0.686,
+							-0.081
+						}
+					}
+				}
+			},
+			{
+				40,
+				{
+					{
+						"smoke",
+						{
+							-0.46,
+							0.486,
+							-0.481
+						}
+					},
+					{
+						"smoke",
+						{
+							0.54,
+							0.486,
+							-0.481
+						}
+					}
+				}
+			}
+		},
+		appear_fx = {
+			"appearQ"
+		},
+		equipment_list = {
+			511019,
+			511020
+		}
+	},
 	[10042022] = {
 		cannon = 25,
 		name = "ノワキ",
@@ -1191,49 +1298,6 @@ pg.enemy_data_statistics_86 = {
 				ID = 50510,
 				LV = 2
 			}
-		}
-	},
-	[10042050] = {
-		cannon = 20,
-		name = "リュウジョウ",
-		antiaircraft_growth = 3168,
-		speed_growth = 0,
-		fog_fx = "",
-		air = 120,
-		air_growth = 2574,
-		dodge = 9,
-		luck = 0,
-		id = 10042050,
-		cannon_growth = 0,
-		reload_growth = 0,
-		dodge_growth = 132,
-		speed = 22,
-		star = 5,
-		hit = 14,
-		antisub_growth = 0,
-		rarity = 4,
-		reload = 150,
-		base = 90235,
-		durability = 2600,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		antiaircraft = 235,
-		hit_growth = 210,
-		armor = 0,
-		torpedo = 0,
-		durability_growth = 57000,
-		antisub = 0,
-		luck_growth = 0,
-		battle_unit_type = 60,
-		appear_fx = {
-			"appearQ"
-		},
-		equipment_list = {
-			511100,
-			511101,
-			511800,
-			511801,
-			511802
 		}
 	}
 }

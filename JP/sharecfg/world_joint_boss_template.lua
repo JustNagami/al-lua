@@ -363,7 +363,7 @@ pg.world_joint_boss_template = {
 		}
 	},
 	{
-		state = "stop",
+		state = "always",
 		name = "神通(META)",
 		painting = "shentong",
 		boss_level_id = 166,
@@ -543,12 +543,13 @@ pg.world_joint_boss_template = {
 		}
 	},
 	{
-		item_id = 100000,
+		state = "stop",
 		name = "大鳳(META)",
 		painting = "dafeng",
 		boss_level_id = 241,
 		id = 17,
 		meta_id = 970705,
+		item_id = 100000,
 		description = {
 			{
 				"彼岸の境界",
@@ -559,32 +560,6 @@ pg.world_joint_boss_template = {
 				"百鬼ノ影",
 				1,
 				"戦闘中、大鳳(META)は一定の間隔で「幻形ノ影」を召喚し戦闘に参加させる、<color=#92fc63>「幻形ノ影」にダメージを与えた場合、大鳳(META)にも同等のダメージを与える</color>。\n「幻形ノ影」は一定時間後に戦場から消滅する。"
-			}
-		},
-		state = {
-			{
-				{
-					2024,
-					12,
-					12
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					3,
-					13
-				},
-				{
-					23,
-					59,
-					59
-				}
 			}
 		},
 		p_offset = {
@@ -598,6 +573,64 @@ pg.world_joint_boss_template = {
 			676,
 			1,
 			1
+		}
+	},
+	{
+		item_id = 100000,
+		name = "ホーネット(META)",
+		painting = "dahuangfeng",
+		boss_level_id = 256,
+		id = 18,
+		meta_id = 970706,
+		description = {
+			{
+				"低軌道強襲",
+				2,
+				"戦闘中、低軌道衛星による支援攻撃を繰り出す。"
+			},
+			{
+				"ゴースト・オペレーション",
+				1,
+				"戦闘中18秒毎に自身に「光学カモフラージュ」を付与する（最大3つまで）。「光学カモフラージュ」は1つにつき<color=#92fc63>自身の回避率が6%アップ</color>。\n「光学カモフラージュ」が3つになった時、電磁インパルス攻撃を行い、<color=#92fc63>5秒間味方に視界不良効果を与える（視野が狭くなり、主砲攻撃・航空攻撃を使用できなくなる）</color>。"
+			}
+		},
+		state = {
+			{
+				{
+					2025,
+					3,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					5
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		p_offset = {
+			-16,
+			580,
+			1,
+			1
+		},
+		p_offset_other = {
+			472,
+			562,
+			0.9,
+			0.9
 		}
 	},
 	all = {
@@ -617,6 +650,7 @@ pg.world_joint_boss_template = {
 		14,
 		15,
 		16,
-		17
+		17,
+		18
 	}
 }

@@ -95,7 +95,9 @@ function var_0_0.NeedRedeem(arg_6_0)
 			var_6_0 = false
 		end
 	elseif PLATFORM_CODE == PLATFORM_US then
-		var_6_0 = false
+		if PLATFORM == PLATFORM_IPHONEPLAYER then
+			var_6_0 = false
+		end
 	elseif PLATFORM_CODE == PLATFORM_CHT and PLATFORM == PLATFORM_IPHONEPLAYER then
 		var_6_0 = false
 	end
