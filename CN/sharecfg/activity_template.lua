@@ -20140,12 +20140,13 @@ pg.activity_template = {
 	},
 	[5821] = {
 		mark = 20250227,
-		id = 5821,
 		title_res_tag = "raffaello_main",
+		time = "stop",
 		type = 12,
 		login_pop = 0,
 		config_id = 0,
 		is_show = 50,
+		id = 5821,
 		config_data = {
 			1890001,
 			1890002,
@@ -20153,33 +20154,6 @@ pg.activity_template = {
 			1890021,
 			1890022,
 			1890023
-		},
-		time = {
-			"timer",
-			{
-				{
-					2025,
-					2,
-					27
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					3,
-					13
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		},
 		page_info = {
 			class_name = "CagePage",
@@ -20192,12 +20166,13 @@ pg.activity_template = {
 	},
 	[5822] = {
 		mark = 20250227,
-		title_res_tag = "",
+		time = "stop",
 		page_info = "",
 		type = 12,
 		login_pop = 0,
 		config_id = 0,
 		is_show = 0,
+		title_res_tag = "",
 		id = 5822,
 		config_data = {
 			1890004,
@@ -20210,33 +20185,6 @@ pg.activity_template = {
 			1890051,
 			1890052
 		},
-		time = {
-			"timer",
-			{
-				{
-					2025,
-					2,
-					27
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					3,
-					13
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		},
 		config_client = {
 			entrance_bg = "activitybanner/temp10",
 			task_id = 21291
@@ -20244,12 +20192,13 @@ pg.activity_template = {
 	},
 	[5823] = {
 		mark = 20250227,
-		title_res_tag = "",
+		time = "stop",
 		page_info = "",
 		type = 13,
 		login_pop = 0,
 		config_id = 0,
 		is_show = 0,
+		title_res_tag = "",
 		config_client = "",
 		id = 5823,
 		config_data = {
@@ -20275,33 +20224,6 @@ pg.activity_template = {
 			21275,
 			21276,
 			21291
-		},
-		time = {
-			"timer",
-			{
-				{
-					2025,
-					2,
-					27
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					3,
-					13
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	},
 	[5824] = {
@@ -20391,7 +20313,7 @@ pg.activity_template = {
 	},
 	[5827] = {
 		mark = 20250227,
-		title_res_tag = "",
+		time = "stop",
 		page_info = "",
 		type = 27,
 		login_pop = 0,
@@ -20399,34 +20321,8 @@ pg.activity_template = {
 		is_show = 0,
 		config_data = "[{31938,100}]",
 		config_client = "",
-		id = 5827,
-		time = {
-			"timer",
-			{
-				{
-					2025,
-					2,
-					27
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					3,
-					12
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
+		title_res_tag = "",
+		id = 5827
 	},
 	[5828] = {
 		mark = 20250227,
@@ -20560,44 +20456,18 @@ pg.activity_template = {
 	},
 	[5830] = {
 		mark = 20250227,
-		id = 5830,
 		title_res_tag = "theNileRiverSkin",
+		time = "stop",
 		type = 86,
 		login_pop = 0,
 		config_id = 2,
 		is_show = 48,
+		id = 5830,
 		config_data = {
 			21287,
 			21288,
 			21289,
 			21290
-		},
-		time = {
-			"timer",
-			{
-				{
-					2025,
-					2,
-					27
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					3,
-					2
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		},
 		page_info = {
 			class_name = "TheNileRiverSkinMagazinePage1",
@@ -20622,12 +20492,13 @@ pg.activity_template = {
 	},
 	[5845] = {
 		mark = 20250227,
-		title_res_tag = "",
+		time = "stop",
 		page_info = "",
 		type = 60,
 		login_pop = 0,
 		config_id = 0,
 		is_show = 0,
+		title_res_tag = "",
 		config_client = "",
 		id = 5845,
 		config_data = {
@@ -20637,73 +20508,20 @@ pg.activity_template = {
 			544,
 			545,
 			546
-		},
-		time = {
-			"timer",
-			{
-				{
-					2025,
-					2,
-					27
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					3,
-					13
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	},
 	[5846] = {
 		mark = 20250227,
-		title_res_tag = "",
+		time = "stop",
 		page_info = "",
 		type = 1,
 		login_pop = 0,
 		config_id = 10,
 		is_show = 0,
+		title_res_tag = "",
 		config_client = "",
 		id = 5846,
-		config_data = {},
-		time = {
-			"timer",
-			{
-				{
-					2025,
-					2,
-					27
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					3,
-					13
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
+		config_data = {}
 	},
 	[5847] = {
 		mark = 20250227,
@@ -20735,6 +20553,51 @@ pg.activity_template = {
 					2025,
 					3,
 					19
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[5848] = {
+		mark = 20250313,
+		title_res_tag = "",
+		page_info = "",
+		type = 13,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_client = "",
+		id = 5848,
+		config_data = {
+			10190,
+			10191,
+			10192,
+			10193,
+			10194
+		},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					3,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					3,
+					20
 				},
 				{
 					23,
@@ -28153,6 +28016,7 @@ pg.activity_template = {
 			5792,
 			5812,
 			5823,
+			5848,
 			1079,
 			1080,
 			1081,
@@ -29544,6 +29408,7 @@ pg.activity_template = {
 		5845,
 		5846,
 		5847,
+		5848,
 		7011,
 		7012,
 		7013,

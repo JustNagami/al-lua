@@ -7,7 +7,9 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1.id
 	arg_1_0.date = arg_1_1.date
 	arg_1_0.title, arg_1_0.sender = unpack(string.split(HXSet.hxLan(arg_1_1.title), "||"))
-	arg_1_0.sender = arg_1_0.sender or i18n("mail_sender_default")
+	arg_1_0.sender = arg_1_0.sender and string.gsub(arg_1_0.sender or "", "{ship_statistics:(%d+).-}", function(arg_2_0)
+		return pg.ship_data_statistics[tonumber(arg_2_0)].name
+	end) or i18n("mail_sender_default")
 	arg_1_0.content = string.gsub(HXSet.hxLan(arg_1_1.content), "\\n", "\n")
 	arg_1_0.attachments = {}
 
@@ -22,18 +24,18 @@ end
 
 local var_0_1
 
-function var_0_0.IsRare(arg_2_0)
+function var_0_0.IsRare(arg_3_0)
 	if not var_0_1 then
 		var_0_1 = {}
 
-		for iter_2_0, iter_2_1 in ipairs({
+		for iter_3_0, iter_3_1 in ipairs({
 			PlayerConst.ResGold,
 			PlayerConst.ResOil,
 			PlayerConst.ResExploit
 		}) do
 			table.insert(var_0_1, Drop.New({
 				type = DROP_TYPE_RESOURCE,
-				id = iter_2_1
+				id = iter_3_1
 			}))
 		end
 
@@ -43,9 +45,9 @@ function var_0_0.IsRare(arg_2_0)
 		}))
 	end
 
-	return #arg_2_0.attachments > 0 and underscore.any(arg_2_0.attachments, function(arg_3_0)
-		for iter_3_0, iter_3_1 in ipairs(var_0_1) do
-			if arg_3_0.type == iter_3_1.type and arg_3_0.id == iter_3_1.id then
+	return #arg_3_0.attachments > 0 and underscore.any(arg_3_0.attachments, function(arg_4_0)
+		for iter_4_0, iter_4_1 in ipairs(var_0_1) do
+			if arg_4_0.type == iter_4_1.type and arg_4_0.id == iter_4_1.id then
 				return false
 			end
 		end
@@ -54,20 +56,20 @@ function var_0_0.IsRare(arg_2_0)
 	end)
 end
 
-function var_0_0.IsMatchKey(arg_4_0, arg_4_1)
-	if not arg_4_1 or arg_4_1 == "" then
+function var_0_0.IsMatchKey(arg_5_0, arg_5_1)
+	if not arg_5_1 or arg_5_1 == "" then
 		return true
 	end
 
-	arg_4_1 = string.lower(string.gsub(arg_4_1, "%.", "%%."))
-	arg_4_1 = string.lower(string.gsub(arg_4_1, "%-", "%%-"))
+	arg_5_1 = string.lower(string.gsub(arg_5_1, "%.", "%%."))
+	arg_5_1 = string.lower(string.gsub(arg_5_1, "%-", "%%-"))
 
 	return underscore.any({
-		arg_4_0.title,
-		arg_4_0.sender,
-		arg_4_0.content
-	}, function(arg_5_0)
-		return string.find(string.lower(arg_5_0), arg_4_1)
+		arg_5_0.title,
+		arg_5_0.sender,
+		arg_5_0.content
+	}, function(arg_6_0)
+		return string.find(string.lower(arg_6_0), arg_5_1)
 	end)
 end
 

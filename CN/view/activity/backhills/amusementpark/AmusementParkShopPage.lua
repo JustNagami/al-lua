@@ -151,7 +151,7 @@ function var_0_0.CheckRes(arg_21_0, arg_21_1, arg_21_2)
 		return false
 	end
 
-	if ({
+	if Drop.New({
 		type = arg_21_1:getConfig("resource_category"),
 		id = arg_21_1:getConfig("resource_type")
 	}):getOwnedCount() < arg_21_1:getConfig("resource_num") * arg_21_2 then

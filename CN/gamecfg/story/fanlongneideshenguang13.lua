@@ -8,7 +8,7 @@
 			side = 2,
 			bgName = "star_level_bg_305",
 			hidePaintObj = true,
-			say = "经过了一夜地追调查，马可波罗一行人追踪线索来到了一片城市广场。",
+			say = "经过了一夜追查，马可波罗一行人追踪线索来到了一片城市广场。",
 			bgm = "battle-shenguang-freely",
 			flashout = {
 				black = true,

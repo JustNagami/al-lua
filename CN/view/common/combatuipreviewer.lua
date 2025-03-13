@@ -50,26 +50,27 @@ function var_0_0.setCombatUI(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 	arg_3_0.buttonContainer = var_3_0:Find("Weapon_button_container")
 
 	for iter_3_0 = 1, 3 do
-		local var_3_1
+		local var_3_1 = ys.Battle.BattleState.GetCombatSkinKey()
+		local var_3_2
 
-		if ys.Battle["BattleWeaponButton" .. arg_3_4] then
-			var_3_1 = ys.Battle["BattleWeaponButton" .. arg_3_4].New()
+		if ys.Battle["BattleWeaponButton" .. var_3_1] then
+			var_3_2 = ys.Battle["BattleWeaponButton" .. var_3_1].New()
 		else
-			var_3_1 = ys.Battle.BattleWeaponButton.New()
+			var_3_2 = ys.Battle.BattleWeaponButton.New()
 		end
 
-		local var_3_2 = cloneTplTo(var_3_0:Find("Weapon_button_progress"), arg_3_0.buttonContainer)
+		local var_3_3 = cloneTplTo(var_3_0:Find("Weapon_button_progress"), arg_3_0.buttonContainer)
 
 		skinName = "Skill_" .. iter_3_0
 
-		local var_3_3 = {}
+		local var_3_4 = {}
 
-		ys.Battle.BattleSkillView.SetSkillButtonPreferences(var_3_2, iter_3_0)
-		var_3_1:ConfigSkin(var_3_2)
-		var_3_1:SwitchIcon(iter_3_0, arg_3_4)
-		var_3_1:SwitchIconEffect(iter_3_0, arg_3_4)
-		var_3_1:SetTextActive(true)
-		var_3_1:SetToCombatUIPreview(iter_3_0 > 1)
+		ys.Battle.BattleSkillView.SetSkillButtonPreferences(var_3_3, iter_3_0)
+		var_3_2:ConfigSkin(var_3_3)
+		var_3_2:SwitchIcon(iter_3_0, arg_3_4)
+		var_3_2:SwitchIconEffect(iter_3_0, arg_3_4)
+		var_3_2:SetTextActive(true)
+		var_3_2:SetToCombatUIPreview(iter_3_0 > 1)
 	end
 
 	arg_3_0.heroBar = arg_3_2.transform
@@ -98,22 +99,25 @@ function var_0_0.setCombatUI(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 
 	setActive(arg_3_0.bossHPBar, true)
 
-	local var_3_4 = arg_3_0.bossHPBar:Find("bloodBarContainer")
-	local var_3_5 = var_3_4.childCount - 1
+	local var_3_5 = arg_3_0.bossHPBar:Find("bloodBarContainer")
+	local var_3_6 = var_3_5.childCount - 1
 
-	for iter_3_1 = 0, var_3_5 do
-		var_3_4:GetChild(iter_3_1):GetComponent(typeof(Image)).fillAmount = 1
+	for iter_3_1 = 0, var_3_6 do
+		var_3_5:GetChild(iter_3_1):GetComponent(typeof(Image)).fillAmount = 1
 		iter_3_1 = iter_3_1 + 1
 	end
 
 	arg_3_0.skillContainer = var_3_0:Find("Skill_Activation/Root")
 	arg_3_0.skill = var_3_0:Find("Skill_Activation/mask")
 
-	local var_3_6 = var_3_0:Find("Stick/Area/BG/spine")
+	local var_3_7 = var_3_0:Find("Stick/Area/BG/spine")
 
-	if var_3_6 then
-		var_3_6:GetComponent(typeof(SpineAnimUI)):SetAction("normal", 0)
+	if var_3_7 then
+		var_3_7:GetComponent(typeof(SpineAnimUI)):SetAction("normal", 0)
 	end
+
+	arg_3_0.stick = var_3_0:Find("Stick/Area/Stick")
+	arg_3_0.stickTail = arg_3_0.stick:Find("tailGizmos")
 end
 
 function var_0_0.load(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4_5)
@@ -402,90 +406,160 @@ function var_0_0.updateHPPop(arg_25_0)
 	var_25_2:Play()
 end
 
-function var_0_0.SeaUpdate(arg_26_0)
-	local var_26_0 = -20
-	local var_26_1 = 60
-	local var_26_2 = 0
-	local var_26_3 = 60
-	local var_26_4 = ys.Battle.BattleConfig
-	local var_26_5 = ys.Battle.BattleConst
+local var_0_10 = 250
+local var_0_11 = 50
+local var_0_12 = 1000
+local var_0_13 = 2
+local var_0_14 = 3
 
-	local function var_26_6()
-		arg_26_0:updateBarPos()
+function var_0_0.updateStick(arg_26_0)
+	if arg_26_0._stickMoveCount and arg_26_0._stickMoveCount <= var_0_10 then
+		arg_26_0._stickMoveCount = arg_26_0._stickMoveCount + 1
+
+		local var_26_0 = arg_26_0.stickVX + arg_26_0.stick.localPosition.x
+		local var_26_1 = arg_26_0.stickVY + arg_26_0.stick.localPosition.y
+
+		if var_26_0 * var_26_0 + var_26_1 * var_26_1 > var_0_12 * 2 then
+			local var_26_2 = math.atan2(var_26_1, var_26_0)
+			local var_26_3
+			local var_26_4
+			local var_26_5 = var_0_12 * math.cos(var_26_2)
+			local var_26_6 = var_0_12 * math.sin(var_26_2)
+			local var_26_7 = var_26_5 / var_0_12
+			local var_26_8 = var_26_6 / var_0_12
+			local var_26_9 = math.random() * 2 * math.pi
+			local var_26_10 = math.random(var_0_13, var_0_14)
+
+			arg_26_0.stickVX = math.cos(var_26_9) * var_26_10
+			arg_26_0.stickVY = math.sin(var_26_9) * var_26_10
+
+			if arg_26_0.stickVX * var_26_7 + arg_26_0.stickVY * var_26_8 > 0 then
+				arg_26_0.stickVX = -arg_26_0.stickVX
+				arg_26_0.stickVY = -arg_26_0.stickVY
+			end
+		else
+			arg_26_0.stickPos.x = var_26_0
+			arg_26_0.stickPos.y = var_26_1
+			arg_26_0.stick.localPosition = arg_26_0.stickPos
+		end
+
+		if arg_26_0._stickMoveCount >= var_0_10 then
+			setActive(arg_26_0.stickTail, false)
+
+			arg_26_0.stick.localPosition = Vector3.zero
+			arg_26_0._stickMoveCount = nil
+			arg_26_0._stickStopCount = 0
+		end
+	elseif arg_26_0._stickStopCount and arg_26_0._stickStopCount <= var_0_11 then
+		arg_26_0._stickStopCount = arg_26_0._stickStopCount + 1
+
+		if arg_26_0._stickStopCount >= var_0_11 then
+			setActive(arg_26_0.stickTail, true)
+
+			local var_26_11 = math.random() * 2 * math.pi
+			local var_26_12 = math.random(var_0_13, var_0_14)
+
+			arg_26_0.stickVX = math.cos(var_26_11) * var_26_12
+			arg_26_0.stickVY = math.cos(var_26_11) * var_26_12
+			arg_26_0._stickStopCount = nil
+			arg_26_0._stickMoveCount = 0
+		end
 	end
-
-	pg.TimeMgr.GetInstance():AddBattleTimer("barrageUpdateTimer", -1, 0.033, var_26_6)
-
-	local function var_26_7()
-		arg_26_0:updatePopUp()
-	end
-
-	pg.TimeMgr.GetInstance():AddBattleTimer("popupUpdateTimer", -1, 10, var_26_7)
-
-	local function var_26_8()
-		arg_26_0:updateSkillFloat()
-	end
-
-	pg.TimeMgr.GetInstance():AddBattleTimer("skillFloatUpdateTimer", -1, 10, var_26_8)
-
-	local function var_26_9()
-		arg_26_0:updateHPPop()
-	end
-
-	pg.TimeMgr.GetInstance():AddBattleTimer("HPPopUpdateTimer", -1, 3, var_26_9)
 end
 
-function var_0_0.clear(arg_31_0)
+function var_0_0.SeaUpdate(arg_27_0)
+	local var_27_0 = -20
+	local var_27_1 = 60
+	local var_27_2 = 0
+	local var_27_3 = 60
+	local var_27_4 = ys.Battle.BattleConfig
+	local var_27_5 = ys.Battle.BattleConst
+
+	local function var_27_6()
+		arg_27_0:updateBarPos()
+	end
+
+	pg.TimeMgr.GetInstance():AddBattleTimer("barrageUpdateTimer", -1, 0.033, var_27_6)
+
+	arg_27_0._stickStopCount = 0
+	arg_27_0.stickPos = Vector2.New(0, 0)
+
+	local function var_27_7()
+		arg_27_0:updateStick()
+	end
+
+	pg.TimeMgr.GetInstance():AddBattleTimer("stickUpdateTimer", -1, 0.033, var_27_7)
+
+	local function var_27_8()
+		arg_27_0:updatePopUp()
+	end
+
+	pg.TimeMgr.GetInstance():AddBattleTimer("popupUpdateTimer", -1, 10, var_27_8)
+
+	local function var_27_9()
+		arg_27_0:updateSkillFloat()
+	end
+
+	pg.TimeMgr.GetInstance():AddBattleTimer("skillFloatUpdateTimer", -1, 10, var_27_9)
+
+	local function var_27_10()
+		arg_27_0:updateHPPop()
+	end
+
+	pg.TimeMgr.GetInstance():AddBattleTimer("HPPopUpdateTimer", -1, 3, var_27_10)
+end
+
+function var_0_0.clear(arg_33_0)
 	pg.TimeMgr.GetInstance():RemoveAllBattleTimer()
-	Destroy(arg_31_0.seaCharacter)
-	Destroy(arg_31_0.seaEnemy)
-	Destroy(arg_31_0.uiGO)
-	Destroy(arg_31_0.hpBarGO)
-	Destroy(arg_31_0.enemyBarGO)
+	Destroy(arg_33_0.seaCharacter)
+	Destroy(arg_33_0.seaEnemy)
+	Destroy(arg_33_0.uiGO)
+	Destroy(arg_33_0.hpBarGO)
+	Destroy(arg_33_0.enemyBarGO)
 
-	if arg_31_0.seaView then
-		arg_31_0.seaView:Dispose()
+	if arg_33_0.seaView then
+		arg_33_0.seaView:Dispose()
 
-		arg_31_0.seaView = nil
+		arg_33_0.seaView = nil
 	end
 
-	if arg_31_0._popNumMgr then
-		arg_31_0._popNumMgr:Clear()
+	if arg_33_0._popNumMgr then
+		arg_33_0._popNumMgr:Clear()
 	end
 
-	if arg_31_0.weaponList then
-		for iter_31_0, iter_31_1 in ipairs(arg_31_0.weaponList) do
-			for iter_31_2, iter_31_3 in ipairs(iter_31_1.emitterList) do
-				iter_31_3:Destroy()
+	if arg_33_0.weaponList then
+		for iter_33_0, iter_33_1 in ipairs(arg_33_0.weaponList) do
+			for iter_33_2, iter_33_3 in ipairs(iter_33_1.emitterList) do
+				iter_33_3:Destroy()
 			end
 		end
 
-		arg_31_0.weaponList = nil
+		arg_33_0.weaponList = nil
 	end
 
-	if arg_31_0.seaFXPool then
-		arg_31_0.seaFXPool:Clear()
+	if arg_33_0.seaFXPool then
+		arg_33_0.seaFXPool:Clear()
 
-		arg_31_0.seaFXPool = nil
+		arg_33_0.seaFXPool = nil
 	end
 
-	if arg_31_0.seaFXContainersPool then
-		arg_31_0.seaFXContainersPool:Clear()
+	if arg_33_0.seaFXContainersPool then
+		arg_33_0.seaFXContainersPool:Clear()
 
-		arg_31_0.seaFXContainersPool = nil
+		arg_33_0.seaFXContainersPool = nil
 	end
 
 	ys.Battle.BattleResourceManager.GetInstance():Clear()
 
-	arg_31_0.seaCameraGO.tag = "Untagged"
-	arg_31_0.seaCameraGO = nil
-	arg_31_0.seaCamera = nil
+	arg_33_0.seaCameraGO.tag = "Untagged"
+	arg_33_0.seaCameraGO = nil
+	arg_33_0.seaCamera = nil
 
-	arg_31_0.mainCameraGO:SetActive(true)
+	arg_33_0.mainCameraGO:SetActive(true)
 
-	arg_31_0.mainCameraGO = nil
-	arg_31_0.loading = false
-	arg_31_0.loaded = false
+	arg_33_0.mainCameraGO = nil
+	arg_33_0.loading = false
+	arg_33_0.loaded = false
 end
 
 return var_0_0

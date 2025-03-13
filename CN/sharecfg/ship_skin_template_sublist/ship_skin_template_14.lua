@@ -2843,37 +2843,35 @@ pg.base.ship_skin_template_14 = {
 	[605081] = {
 		ship_group = 60508,
 		name = "爱与美的秘密珍藏",
+		l2d_se = "",
 		hand_id = 1,
 		bgm = "",
-		gyro = 0,
 		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 605081,
-		group_index = 1,
-		l2d_ignore_drag = 0,
-		painting = "lafeier_2",
-		shop_id = 71114,
-		illustrator = -1,
-		shop_type_id = 27,
-		lip_smoothing = 0,
-		bg = "303",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "lafeier_2",
-		l2d_se = "",
-		main_UI_FX = "",
 		special_effects = "",
 		desc = "哼哼~作为此处的守护者，我要给不速之客一点小惩罚……啊，等等！从这个角度看过去……轮廓实在是太完美了！把这样的你变成雕像什么的太可惜了。不如就永远留在这里，让我好好观察记录你的一举一动吧~",
-		voice_actor = 441,
-		spine_offset = "",
+		group_index = 1,
+		gyro = 0,
+		painting = "lafeier_2",
 		change_skin = "",
 		rarity_bg = "",
+		l2d_ignore_drag = 0,
+		shop_type_id = 27,
+		prefab = "lafeier_2",
+		main_UI_FX = "",
+		lip_smoothing = 0,
 		time = "",
-		l2d_para_range = "",
+		voice_actor = 441,
+		spine_offset = "",
+		bg = "303",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
 		lip_sync_gain = 0,
+		skin_type = 4,
+		shop_id = 71114,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		id = 605081,
 		show_skin = "stand",
 		tag = {
 			1,
@@ -2973,6 +2971,16 @@ pg.base.ship_skin_template_14 = {
 		l2d_voice_calibrate = {
 			use_event = true
 		},
+		l2d_para_range = {
+			ParamAngleX = {
+				-15,
+				20
+			},
+			ParamAngleY = {
+				-20,
+				20
+			}
+		},
 		ship_l2d_id = {
 			60508101,
 			60508102,
@@ -2996,6 +3004,11 @@ pg.base.ship_skin_template_14 = {
 			60508120,
 			60508121,
 			60508122
+		},
+		l2d_drag_rate = {
+			0.75,
+			1,
+			1
 		}
 	},
 	[607010] = {
