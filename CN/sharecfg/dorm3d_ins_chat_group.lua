@@ -105,7 +105,7 @@ pg.base.dorm3d_ins_chat_group = {
 		name = "恢复精神",
 		id = 20220103,
 		type = "1",
-		unlock_desc = "和天狼星互动10次",
+		unlock_desc = "进入10次天狼星的触摸模式",
 		content = {
 			33,
 			34,
@@ -152,7 +152,7 @@ pg.base.dorm3d_ins_chat_group = {
 		name = "实现愿望",
 		id = 20220105,
 		type = "1",
-		unlock_desc = "在夜晚和天狼星互动",
+		unlock_desc = "在夜晚触摸天狼星1次",
 		content = {
 			62,
 			63,
@@ -250,7 +250,7 @@ pg.base.dorm3d_ins_chat_group = {
 		name = "向着未来",
 		id = 30221104,
 		type = "1",
-		unlock_desc = "和{namecode:50}互动10次",
+		unlock_desc = "进入10次{namecode:50}的触摸模式",
 		content = {
 			124,
 			125,
@@ -414,7 +414,7 @@ pg.base.dorm3d_ins_chat_group = {
 		name = "需要更多…",
 		id = 19903105,
 		type = "1",
-		unlock_desc = "和安克雷奇互动10次",
+		unlock_desc = "进入10次安克雷奇的触摸模式",
 		content = {
 			234,
 			235,

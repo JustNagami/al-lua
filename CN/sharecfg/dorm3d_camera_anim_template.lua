@@ -1306,7 +1306,7 @@ pg.dorm3d_camera_anim_template = {
 		finish_anim = 3001
 	},
 	[3101] = {
-		anim_time = 7,
+		anim_time = 0,
 		unlock = "",
 		ship_group = 19903,
 		state = "ab_chuang_idle_01",
@@ -1426,7 +1426,7 @@ pg.dorm3d_camera_anim_template = {
 		finish_anim = 3201
 	},
 	[3301] = {
-		anim_time = 7,
+		anim_time = 0,
 		unlock = "",
 		ship_group = 19903,
 		state = "ab_ditan_idle_01",
@@ -1486,7 +1486,7 @@ pg.dorm3d_camera_anim_template = {
 		finish_anim = 3301
 	},
 	[3401] = {
-		anim_time = 7,
+		anim_time = 0,
 		unlock = "",
 		ship_group = 19903,
 		state = "ab_FF_ditan_1_idle_1",
@@ -1711,7 +1711,7 @@ pg.dorm3d_camera_anim_template = {
 		finish_anim = 4201
 	},
 	[4401] = {
-		anim_time = 5,
+		anim_time = 0,
 		unlock = "",
 		ship_group = 19903,
 		state = "Idle",
