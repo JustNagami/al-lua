@@ -160,6 +160,10 @@ function var_0_0.ShouldShowShipTip(arg_18_0, arg_18_1)
 end
 
 function var_0_0.TriggerEvent(arg_19_0, arg_19_1)
+	if DORM_LOCK_INS then
+		return
+	end
+
 	arg_19_0:sendNotification(GAME.APARTMENT_CHAT_OP, {
 		operation = Dorm3dChatProxy.APARTMENT_CHAT_TRIGGER_EVENT,
 		eventList = arg_19_1
