@@ -16,6 +16,7 @@ function var_0_0.register(arg_1_0)
 end
 
 function var_0_0.BindEvent(arg_2_0)
+	arg_2_0.super.BindEvent(arg_2_0)
 	arg_2_0:bind(var_0_0.ACTIVITY_OPERATION, function(arg_3_0, arg_3_1)
 		assert(arg_2_0.activity, "Cant Initialize Activity")
 

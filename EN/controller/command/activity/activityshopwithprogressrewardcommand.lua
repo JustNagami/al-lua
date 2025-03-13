@@ -78,7 +78,7 @@ function var_0_0.getAwards(arg_3_0, arg_3_1, arg_3_2)
 		local var_3_1 = {
 			type = iter_3_1.type,
 			id = iter_3_1.id,
-			count = iter_3_1.number
+			number = iter_3_1.number
 		}
 
 		table.insert(var_3_0, var_3_1)
