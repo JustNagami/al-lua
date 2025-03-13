@@ -744,8 +744,6 @@ function var_0_0.UpdateActionPanel(arg_68_0)
 				arg_68_0.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "ResetCurrentCharPoint", var_77_7)
 			end
 
-			arg_68_0.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "SyncCurrentInterestSmooth")
-
 			if var_77_0.index > #var_77_0.animPlayList then
 				var_73_6()
 				arg_68_0.timerAnim:Stop()
