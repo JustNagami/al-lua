@@ -509,7 +509,7 @@
 			side = 2,
 			bgName = "bg_shenguang_4",
 			hidePaintObj = true,
-			say = "与此同时，已经转移至撒丁岛的撒丁尼亚联盟合作战司令部中，安德烈亚也提出了同样的问题。",
+			say = "与此同时，已经转移至撒丁岛的撒丁尼亚联盟作战司令部中，安德烈亚也提出了同样的问题。",
 			bgm = "battle-shenguang-freely",
 			typewriter = {
 				speed = 0.05,

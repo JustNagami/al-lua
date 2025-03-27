@@ -576,6 +576,13 @@ function temp()
 	var_0_1.富 = {
 		特 = {
 			this = true
+		},
+		兰 = {
+			克 = {
+				林 = {
+					this = true
+				}
+			}
 		}
 	}
 end
@@ -1417,6 +1424,19 @@ end
 temp()
 
 function temp()
+	var_0_1.米 = {
+		勒 = {
+			this = true
+		},
+		兹 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.罗 = {
 		利 = {
 			this = true
@@ -1716,6 +1736,11 @@ function temp()
 		},
 		胡 = {
 			安 = {
+				this = true
+			}
+		},
+		塔 = {
+			菲 = {
 				this = true
 			}
 		},
@@ -7102,7 +7127,18 @@ function temp()
 						多 = {
 							利 = {
 								亚 = {
-									this = true
+									this = true,
+									· = {
+										M = {
+											E = {
+												T = {
+													A = {
+														this = true
+													}
+												}
+											}
+										}
+									}
 								}
 							}
 						}
@@ -8307,16 +8343,6 @@ function temp()
 			茨 = {
 				this = true
 			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.米 = {
-		兹 = {
-			this = true
 		}
 	}
 end

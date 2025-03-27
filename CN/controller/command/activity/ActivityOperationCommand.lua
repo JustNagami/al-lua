@@ -596,6 +596,13 @@ function var_0_0.updateActivityData(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 		end
 
 		var_3_46:updateActivity(arg_3_3)
+	elseif var_3_0 == ActivityConst.ACTIVITY_TYPE_SKIN_COUPON_COUNTING then
+		local var_3_54 = getProxy(ActivityProxy)
+
+		arg_3_3.data2 = arg_3_3.data2 + arg_3_3.data1
+		arg_3_3.data1 = 0
+
+		var_3_54:updateActivity(arg_3_3)
 	end
 
 	return arg_3_3

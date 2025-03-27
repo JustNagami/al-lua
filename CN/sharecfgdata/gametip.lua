@@ -790,6 +790,9 @@ _G.pg.base.gametip.battle_battleMediator_goOnFight = {
 _G.pg.base.gametip.battle_battleMediator_existFight = {
 	tip = "退出战斗"
 }
+_G.pg.base.gametip.battle_battleMediator_remainTime = {
+	tip = "剩余作战时间"
+}
 _G.pg.base.gametip.battle_battleMediator_clear_warning = {
 	tip = "是否要退出挑战模式？\n退出后将<color=#92fc63>重置挑战</color>，\n积分结算统计至本关开始前"
 }
@@ -1614,6 +1617,9 @@ _G.pg.base.gametip.mail_confirm_set_important_flag = {
 _G.pg.base.gametip.mail_confirm_cancel_important_flag = {
 	tip = "是否取消设定为重要邮件？"
 }
+_G.pg.base.gametip.mail_confirm_delete_important_flag = {
+	tip = "无法删除重要邮件"
+}
 _G.pg.base.gametip.mail_mail_page = {
 	tip = "邮件"
 }
@@ -1688,6 +1694,9 @@ _G.pg.base.gametip.mail_move_button = {
 }
 _G.pg.base.gametip.mail_delet_button = {
 	tip = "删除"
+}
+_G.pg.base.gametip.mail_delet_button_1 = {
+	tip = "删除邮件"
 }
 _G.pg.base.gametip.mail_moveone_button = {
 	tip = "邮件转移"
@@ -3534,6 +3543,9 @@ _G.pg.base.gametip.quota_shop_good_limit = {
 _G.pg.base.gametip.quota_shop_limit_error = {
 	tip = "该道具已经达到持有上限，无法兑换"
 }
+_G.pg.base.gametip.item_assigned_type_limit_error = {
+	tip = "该道具已经达到持有上限，无法兑换"
+}
 _G.pg.base.gametip.event_start_success = {
 	tip = "开始委托成功"
 }
@@ -3977,6 +3989,9 @@ _G.pg.base.gametip.word_shipNation_meta_index = {
 }
 _G.pg.base.gametip.word_shipNation_senran = {
 	tip = "闪乱神乐"
+}
+_G.pg.base.gametip.word_shipNation_tolove = {
+	tip = "To LOVE-Ru"
 }
 _G.pg.base.gametip.word_reset = {
 	tip = "重置"
@@ -5983,6 +5998,15 @@ _G.pg.base.gametip.ship_remould_selecte_exceed = {
 _G.pg.base.gametip.ship_remould_sueecss = {
 	tip = "改造成功"
 }
+_G.pg.base.gametip.ship_remould_warning_101994 = {
+	tip = [[
+此次改造操作将消耗<color=#92fc63>电气增幅装置</color>
+是否确认继续操作？
+改造后 <color=#92fc63>【防空炮底座+1】、【装备特殊反潜武器】</color>
+技能<color=#92fc63>【彩虹计划】</color>将升级为<color=#92fc63>【彩虹计划·改】</color>
+技能<color=#92fc63>【专属弹幕-埃尔德里奇II】</color>
+将升级为<color=#92fc63>【专属弹幕-埃尔德里奇III】</color>]]
+}
 _G.pg.base.gametip.ship_remould_warning_102174 = {
 	tip = "此次改造操作将消耗<color=#92fc63>闪耀的麦克风</color>\n是否确认继续操作？"
 }
@@ -5994,6 +6018,9 @@ _G.pg.base.gametip.ship_remould_warning_102304 = {
 }
 _G.pg.base.gametip.ship_remould_warning_105214 = {
 	tip = "此次改造操作后<color=#92fc63>【BIG SEVEN】</color>技能\n将升级为<color=#92fc63>【BIG SEVEN·科罗拉多】</color>"
+}
+_G.pg.base.gametip.ship_remould_warning_105224 = {
+	tip = "此次改造操作后<color=#92fc63>【BIG SEVEN】</color>技能\n将升级为<color=#92fc63>【BIG SEVEN·马里兰】</color>"
 }
 _G.pg.base.gametip.ship_remould_warning_105234 = {
 	tip = "此次改造操作后<color=#92fc63>【BIG SEVEN】</color>技能\n将升级为<color=#92fc63>【BIG SEVEN·西弗吉尼亚】</color>"
@@ -6125,6 +6152,23 @@ _G.pg.base.gametip.ship_remould_warning_502114 = {
 }
 _G.pg.base.gametip.ship_remould_warning_506114 = {
 	tip = "此次改造操作后<color=#92fc63>【第一武器栏位可以装备战斗机】【第一武器栏位舰载机数量+2】</color>、<color=#92fc63>【第二武器栏位可以装备任意类型舰载机】【第二武器栏位舰载机数量/底座数量+1】</color>\n是否确认继续操作？"
+}
+_G.pg.base.gametip.ship_remould_warning_506124 = {
+	tip = "此次改造操作后<color=#92fc63>【第一武器栏位可以装备战斗机】【第二武器栏位可装备任意类型舰载机】</color>、<color=#92fc63>【第一武器栏位、第二武器栏位位武器效率+10%】</color>\n是否确认继续操作？"
+}
+_G.pg.base.gametip.ship_remould_warning_520024 = {
+	tip = [[
+此次改造操作后舰艇类型变化为：
+导弹驱逐舰（先锋舰队模式）
+舰船数值及特性将有部分调整
+是否确认继续操作？]]
+}
+_G.pg.base.gametip.ship_remould_warning_521024 = {
+	tip = [[
+此次改造操作后舰艇类型变化为：
+导弹驱逐舰（主力舰队模式）
+舰船数值及特性将有部分调整
+是否确认继续操作？]]
 }
 _G.pg.base.gametip.word_soundfiles_download_title = {
 	tip = "语音包下载"
@@ -8260,16 +8304,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "天赋点不足"
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "每累计建造200次可获得海上传奇舰船 拉斐尔(最多4次)"
+	tip = "每累计建造200次可获得海上传奇舰船 怨仇(最多4次)"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "寰昌 建造追加！"
+	tip = "的里雅斯特 建造追加！"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "济安、龙武、虎贲 建造追加！"
+	tip = "庞培·马格诺 建造追加！"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "喀琅施塔得、伏尔加 建造追加！"
+	tip = "帝国 建造追加！"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -8386,6 +8430,9 @@ _G.pg.base.gametip.tec_catchup_4 = {
 }
 _G.pg.base.gametip.tec_catchup_5 = {
 	tip = "五期"
+}
+_G.pg.base.gametip.tec_catchup_6 = {
+	tip = "六期"
 }
 _G.pg.base.gametip.tec_notice = {
 	tip = "完成科研$1研发加速所有任务后解锁"
@@ -9814,6 +9861,61 @@ _G.pg.base.gametip.blueprint_simulation_confirm_99902 = {
 双联40mm博福斯对空机炮
 </color></size>]]
 }
+_G.pg.base.gametip.blueprint_simulation_confirm_19905 = {
+	tip = [[
+<size=28>
+是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，
+<color=#ff5c5c>实际性能以获得舰船为准</color>）
+使用装备：<color=#92fc63>
+127mm单装炮
+五联装533mm鱼雷
+试作型F8F熊猫（浮筒型）
+</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_39907 = {
+	tip = [[
+<size=28>
+是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，
+<color=#ff5c5c>实际性能以获得舰船为准</color>）
+使用装备：<color=#92fc63>
+试作型双联装410mm主炮Mod.A
+140mm单装炮
+试作型五式40mm高射机关炮
+</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_69902 = {
+	tip = [[
+<size=28>
+是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，
+<color=#ff5c5c>实际性能以获得舰船为准</color>）
+使用装备：<color=#92fc63>
+试作型三联装254mm主炮Model1939
+试作型三联装152mm主炮Model1936
+试作型双联90mm高角炮Model1939
+</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_89904 = {
+	tip = [[
+<size=28>
+是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，
+<color=#ff5c5c>实际性能以获得舰船为准</color>）
+使用装备：<color=#92fc63>
+三联装152mm主炮Mle1930(高爆弹)
+三联装550mm鱼雷
+双联装57mm/L60博福斯对空机炮Mle1951
+</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_79902 = {
+	tip = [[
+<size=28>
+是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，
+<color=#ff5c5c>实际性能以获得舰船为准</color>）
+使用装备：<color=#92fc63>
+试作舰载型La-9
+试作舰载型La-9
+试作型VIT-2（模式调整）
+</color></size>]]
+}
 _G.pg.base.gametip.electrotherapy_wanning = {
 	tip = "镜面海域扩展中"
 }
@@ -9971,11 +10073,20 @@ _G.pg.base.gametip.mail_storeroom_max_1 = {
 _G.pg.base.gametip.mail_storeroom_max_2 = {
 	tip = "请输入<color=#238c40>$1</color>进行确认"
 }
+_G.pg.base.gametip.mail_storeroom_max_3 = {
+	tip = "※本次领取后，将无法领取来自食堂的石油"
+}
+_G.pg.base.gametip.mail_storeroom_max_4 = {
+	tip = "※本次领取后，将无法领取来自小卖部的物资"
+}
 _G.pg.base.gametip.mail_storeroom_addgold = {
 	tip = "储藏物资："
 }
 _G.pg.base.gametip.mail_storeroom_addoil = {
 	tip = "储藏石油："
+}
+_G.pg.base.gametip.mail_storeroom_collect = {
+	tip = "本次领取将会获得以下资源："
 }
 _G.pg.base.gametip.mail_search = {
 	tip = "点击输入"
@@ -18092,6 +18203,376 @@ _G.pg.base.gametip.cruise_task_help_2406 = {
 		}
 	}
 }
+_G.pg.base.gametip.battlepass_main_tip_2408 = {
+	tip = "2024/8/1-2024/9/30期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「蕸·META」</color>在内的丰富奖励"
+}
+_G.pg.base.gametip.battlepass_main_help_2408 = {
+	tip = {
+		{
+			info = [[
+世界巡游(2024.8.1-2024.9.30)
+
+·<color=#92fc63>开放时间</color>
+    2024.8.1 0点 ~ 2024.9.30 23:59:59
+
+·<color=#92fc63>巡游进度说明</color>
+（1）活动期间，指挥官通过完成巡游任务，可获取「巡游点数」。
+（2）巡游任务随时间开放解锁。
+（3）每获取100点「巡游点数」即可增加1巡游进度
+（4）巡游进度提升后可以获取相应等级的奖励，巡游进度最高可达100。
+
+·<color=#92fc63>奖励规则</color>
+巡游进度奖励分为两种：
+（1）基础巡游奖励：包含<color=#ff5c5c>「蕸·META」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·七期</color>等奖励；
+    当巡游达到指定进度时，指挥官可以直接领取相应的基础巡游奖励。
+（2）特许巡游奖励：包含<color=#ff5c5c>罗马换装「罗马的假日 </color>」、<color=#ff5c5c>钻石</color>等奖励；
+    购买「特许巡游凭证」，且巡游达到指定进度时，可以领取特许巡游奖励。
+    注：购买「特许巡游凭证」后，不会影响基础巡游奖励的领取。
+
+·<color=#92fc63>「特许巡游凭证」说明</color>
+（1）「特许巡游凭证」可于「商店」-「优惠礼包」中购买，购买后可立刻获得<color=#ff5c5c>1500点</color>「巡游点数」同时解锁特许巡游奖励。
+（2）「特许巡游凭证」将于<color=#ff5c5c>活动结束前一小时</color>停止售卖(即9.30 22:59:59停止)，请指挥官注意购买时间。
+
+·<color=#92fc63>任务说明</color>
+巡游任务分为两种：
+（1）每周任务 
+    巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务
+（2）S.P.任务
+    S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
+（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励。
+
+·<color=#92fc63>「巡游任务快速完成券」说明</color>
+（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成大部分巡游任务
+（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
+（3）每个巡游任务需要消耗的完成券数量固定，与当前任务进度无关
+（4）「巡游任务快速完成券」不会随本期活动结束而消失
+
+·<color=#ff5c5c>特别提示</color>
+（1）在本期世界巡游活动结束后，所有巡游任务将会无法继续完成，所有巡游奖励将会无法继续领取，请各位指挥官务必注意活动结束时间，提前领取奖励。
+（2）巡游进度、[特许巡游凭证]仅对本期世界巡游活动生效]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2408 = {
+	tip = {
+		{
+			info = [[
+巡游任务说明
+
+·<color=#92fc63>开放时间</color>
+    2024.7.31 0点 ~ 2024.9.31 23:59:59
+
+·<color=#92fc63>巡游任务分为两种</color>
+（1）每周任务
+    巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务。
+（2）S.P.任务
+    S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
+（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励
+
+·<color=#92fc63>「巡游任务快速完成券」说明</color>
+（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成每周巡游任务
+（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
+（3）每个巡游任务需要消耗的「巡游任务快速完成券」数量和其提供的「巡游点数」相关，与当前任务进度无关
+（4）「巡游任务快速完成券」<color=#92fc63>不会随本期活动结束而消失</color>]]
+		}
+	}
+}
+_G.pg.base.gametip.battlepass_main_tip_2410 = {
+	tip = "2024/10/1-2024/11/30期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「{namecode:237}」</color>在内的丰富奖励"
+}
+_G.pg.base.gametip.battlepass_main_help_2410 = {
+	tip = {
+		{
+			info = [[
+世界巡游(2024.10.1-2024.11.30)
+
+·<color=#92fc63>开放时间</color>
+    2024.10.1 0点 ~ 2024.11.30 23:59:59
+
+·<color=#92fc63>巡游进度说明</color>
+（1）活动期间，指挥官通过完成巡游任务，可获取「巡游点数」。
+（2）巡游任务随时间开放解锁。
+（3）每获取100点「巡游点数」即可增加1巡游进度
+（4）巡游进度提升后可以获取相应等级的奖励，巡游进度最高可达100。
+
+·<color=#92fc63>奖励规则</color>
+巡游进度奖励分为两种：
+（1）基础巡游奖励：包含<color=#ff5c5c>「{namecode:237}」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·七期</color>等奖励；
+    当巡游达到指定进度时，指挥官可以直接领取相应的基础巡游奖励。
+（2）特许巡游奖励：包含<color=#ff5c5c>絮弗伦换装「华美无双 </color>」、<color=#ff5c5c>钻石</color>等奖励；
+    购买「特许巡游凭证」，且巡游达到指定进度时，可以领取特许巡游奖励。
+    注：购买「特许巡游凭证」后，不会影响基础巡游奖励的领取。
+
+·<color=#92fc63>「特许巡游凭证」说明</color>
+（1）「特许巡游凭证」可于「商店」-「优惠礼包」中购买，购买后可立刻获得<color=#ff5c5c>1500点</color>「巡游点数」同时解锁特许巡游奖励。
+（2）「特许巡游凭证」将于<color=#ff5c5c>活动结束前一小时</color>停止售卖(即11.30 22:59:59停止)，请指挥官注意购买时间。
+
+·<color=#92fc63>任务说明</color>
+巡游任务分为两种：
+（1）每周任务 
+    巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务
+（2）S.P.任务
+    S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
+（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励。
+
+·<color=#92fc63>「巡游任务快速完成券」说明</color>
+（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成大部分巡游任务
+（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
+（3）每个巡游任务需要消耗的完成券数量固定，与当前任务进度无关
+（4）「巡游任务快速完成券」不会随本期活动结束而消失
+
+·<color=#ff5c5c>特别提示</color>
+（1）在本期世界巡游活动结束后，所有巡游任务将会无法继续完成，所有巡游奖励将会无法继续领取，请各位指挥官务必注意活动结束时间，提前领取奖励。
+（2）巡游进度、[特许巡游凭证]仅对本期世界巡游活动生效]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2410 = {
+	tip = {
+		{
+			info = [[
+巡游任务说明
+
+·<color=#92fc63>开放时间</color>
+    2024.10.1 0点 ~ 2024.11.30 23:59:59
+
+·<color=#92fc63>巡游任务分为两种</color>
+（1）每周任务
+    巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务。
+（2）S.P.任务
+    S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
+（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励
+
+·<color=#92fc63>「巡游任务快速完成券」说明</color>
+（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成每周巡游任务
+（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
+（3）每个巡游任务需要消耗的「巡游任务快速完成券」数量和其提供的「巡游点数」相关，与当前任务进度无关
+（4）「巡游任务快速完成券」<color=#92fc63>不会随本期活动结束而消失</color>]]
+		}
+	}
+}
+_G.pg.base.gametip.battlepass_main_tip_2412 = {
+	tip = "2024/12/1-2025/1/31期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「朱利奥·凯撒·META」</color>在内的丰富奖励"
+}
+_G.pg.base.gametip.battlepass_main_help_2412 = {
+	tip = {
+		{
+			info = [[
+世界巡游(2024.12.1-2025.1.31)
+
+·<color=#92fc63>开放时间</color>
+ 2024.12.1 0点 ~ 2025.1.31 23:59:59
+
+·<color=#92fc63>巡游进度说明</color>
+（1）活动期间，指挥官通过完成巡游任务，可获取「巡游点数」。
+（2）巡游任务随时间开放解锁。
+（3）每获取100点「巡游点数」即可增加1巡游进度
+（4）巡游进度提升后可以获取相应等级的奖励，巡游进度最高可达100。
+
+·<color=#92fc63>奖励规则</color>
+巡游进度奖励分为两种：
+（1）基础巡游奖励：包含<color=#ff5c5c>「朱利奥凯撒·META」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·七期</color>等奖励；
+ 当巡游达到指定进度时，指挥官可以直接领取相应的基础巡游奖励。
+（2）特许巡游奖励：包含<color=#ff5c5c>威悉换装「Offtime Cafe </color>」、<color=#ff5c5c>钻石</color>等奖励；
+ 购买「特许巡游凭证」，且巡游达到指定进度时，可以领取特许巡游奖励。
+ 注：购买「特许巡游凭证」后，不会影响基础巡游奖励的领取。
+
+·<color=#92fc63>「特许巡游凭证」说明</color>
+（1）「特许巡游凭证」可于「商店」-「优惠礼包」中购买，购买后可立刻获得<color=#ff5c5c>1500点</color>「巡游点数」同时解锁特许巡游奖励。
+（2）「特许巡游凭证」将于<color=#ff5c5c>活动结束前一小时</color>停止售卖(即1.31 22:59:59停止)，请指挥官注意购买时间。
+
+·<color=#92fc63>任务说明</color>
+巡游任务分为两种：
+（1）每周任务 
+ 巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务
+（2）S.P.任务
+ S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
+（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励。
+
+·<color=#92fc63>「巡游任务快速完成券」说明</color>
+（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成大部分巡游任务
+（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
+（3）每个巡游任务需要消耗的完成券数量固定，与当前任务进度无关
+（4）「巡游任务快速完成券」不会随本期活动结束而消失
+
+·<color=#ff5c5c>特别提示</color>
+（1）在本期世界巡游活动结束后，所有巡游任务将会无法继续完成，所有巡游奖励将会无法继续领取，请各位指挥官务必注意活动结束时间，提前领取奖励。
+（2）巡游进度、[特许巡游凭证]仅对本期世界巡游活动生效]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2412 = {
+	tip = {
+		{
+			info = [[
+巡游任务说明
+
+·<color=#92fc63>开放时间</color>
+ 2024.12.1 0点 ~ 2025.1.31 23:59:59
+
+·<color=#92fc63>巡游任务分为两种</color>
+（1）每周任务
+ 巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务。
+（2）S.P.任务
+ S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
+（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励
+
+·<color=#92fc63>「巡游任务快速完成券」说明</color>
+（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成每周巡游任务
+（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
+（3）每个巡游任务需要消耗的「巡游任务快速完成券」数量和其提供的「巡游点数」相关，与当前任务进度无关
+（4）「巡游任务快速完成券」<color=#92fc63>不会随本期活动结束而消失</color>]]
+		}
+	}
+}
+_G.pg.base.gametip.battlepass_main_tip_2502 = {
+	tip = "2025/2/1-2025/3/31期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「博尔扎诺·META」</color>在内的丰富奖励"
+}
+_G.pg.base.gametip.battlepass_main_help_2502 = {
+	tip = {
+		{
+			info = [[
+世界巡游(2025.2.1-2025.3.31)
+
+·<color=#92fc63>开放时间</color>
+ 2025.2.1 0点 ~ 2025.3.31 23:59:59
+
+·<color=#92fc63>巡游进度说明</color>
+（1）活动期间，指挥官通过完成巡游任务，可获取「巡游点数」。
+（2）巡游任务随时间开放解锁。
+（3）每获取100点「巡游点数」即可增加1巡游进度
+（4）巡游进度提升后可以获取相应等级的奖励，巡游进度最高可达100。
+
+·<color=#92fc63>奖励规则</color>
+巡游进度奖励分为两种：
+（1）基础巡游奖励：包含<color=#ff5c5c>「博尔扎诺·META」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·七期</color>等奖励；
+ 当巡游达到指定进度时，指挥官可以直接领取相应的基础巡游奖励。
+（2）特许巡游奖励：包含<color=#ff5c5c>反击换装「武韵春华 </color>」、<color=#ff5c5c>钻石</color>等奖励；
+ 购买「特许巡游凭证」，且巡游达到指定进度时，可以领取特许巡游奖励。
+ 注：购买「特许巡游凭证」后，不会影响基础巡游奖励的领取。
+
+·<color=#92fc63>「特许巡游凭证」说明</color>
+（1）「特许巡游凭证」可于「商店」-「优惠礼包」中购买，购买后可立刻获得<color=#ff5c5c>1500点</color>「巡游点数」同时解锁特许巡游奖励。
+（2）「特许巡游凭证」将于<color=#ff5c5c>活动结束前一小时</color>停止售卖(即3.31 22:59:59停止)，请指挥官注意购买时间。
+
+·<color=#92fc63>任务说明</color>
+巡游任务分为两种：
+（1）每周任务 
+ 巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务
+（2）S.P.任务
+ S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
+（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励。
+
+·<color=#92fc63>「巡游任务快速完成券」说明</color>
+（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成大部分巡游任务
+（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
+（3）每个巡游任务需要消耗的完成券数量固定，与当前任务进度无关
+（4）「巡游任务快速完成券」不会随本期活动结束而消失
+
+·<color=#ff5c5c>特别提示</color>
+（1）在本期世界巡游活动结束后，所有巡游任务将会无法继续完成，所有巡游奖励将会无法继续领取，请各位指挥官务必注意活动结束时间，提前领取奖励。
+（2）巡游进度、[特许巡游凭证]仅对本期世界巡游活动生效]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2502 = {
+	tip = {
+		{
+			info = [[
+巡游任务说明
+
+·<color=#92fc63>开放时间</color>
+ 2025.2.1 0点 ~ 2025.5.31 23:59:59
+
+·<color=#92fc63>巡游任务分为两种</color>
+（1）每周任务
+ 巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务。
+（2）S.P.任务
+ S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
+（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励
+
+·<color=#92fc63>「巡游任务快速完成券」说明</color>
+（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成每周巡游任务
+（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
+（3）每个巡游任务需要消耗的「巡游任务快速完成券」数量和其提供的「巡游点数」相关，与当前任务进度无关
+（4）「巡游任务快速完成券」<color=#92fc63>不会随本期活动结束而消失</color>]]
+		}
+	}
+}
+_G.pg.base.gametip.battlepass_main_tip_2504 = {
+	tip = "2025/4/1-2025/5/31期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「内华达·META」</color>在内的丰富奖励"
+}
+_G.pg.base.gametip.battlepass_main_help_2504 = {
+	tip = {
+		{
+			info = [[
+世界巡游(2025.4.1-2025.5.31)
+
+·<color=#92fc63>开放时间</color>
+ 2025.4.1 0点 ~ 2025.5.31 23:59:59
+
+·<color=#92fc63>巡游进度说明</color>
+（1）活动期间，指挥官通过完成巡游任务，可获取「巡游点数」。
+（2）巡游任务随时间开放解锁。
+（3）每获取100点「巡游点数」即可增加1巡游进度
+（4）巡游进度提升后可以获取相应等级的奖励，巡游进度最高可达100。
+
+·<color=#92fc63>奖励规则</color>
+巡游进度奖励分为两种：
+（1）基础巡游奖励：包含<color=#ff5c5c>「内华达·META」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·七期</color>等奖励；
+ 当巡游达到指定进度时，指挥官可以直接领取相应的基础巡游奖励。
+（2）特许巡游奖励：包含<color=#ff5c5c>神速换装「夜班护士诊疗中 </color>」、<color=#ff5c5c>钻石</color>等奖励；
+ 购买「特许巡游凭证」，且巡游达到指定进度时，可以领取特许巡游奖励。
+ 注：购买「特许巡游凭证」后，不会影响基础巡游奖励的领取。
+
+·<color=#92fc63>「特许巡游凭证」说明</color>
+（1）「特许巡游凭证」可于「商店」-「优惠礼包」中购买，购买后可立刻获得<color=#ff5c5c>1500点</color>「巡游点数」同时解锁特许巡游奖励。
+（2）「特许巡游凭证」将于<color=#ff5c5c>活动结束前一小时</color>停止售卖(即5.31 22:59:59停止)，请指挥官注意购买时间。
+
+·<color=#92fc63>任务说明</color>
+巡游任务分为两种：
+（1）每周任务 
+ 巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务
+（2）S.P.任务
+ S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
+（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励。
+
+·<color=#92fc63>「巡游任务快速完成券」说明</color>
+（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成大部分巡游任务
+（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
+（3）每个巡游任务需要消耗的完成券数量固定，与当前任务进度无关
+（4）「巡游任务快速完成券」不会随本期活动结束而消失
+
+·<color=#ff5c5c>特别提示</color>
+（1）在本期世界巡游活动结束后，所有巡游任务将会无法继续完成，所有巡游奖励将会无法继续领取，请各位指挥官务必注意活动结束时间，提前领取奖励。
+（2）巡游进度、[特许巡游凭证]仅对本期世界巡游活动生效]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2504 = {
+	tip = {
+		{
+			info = [[
+巡游任务说明
+
+·<color=#92fc63>开放时间</color>
+ 2025.4.1 0点 ~ 2025.5.31 23:59:59
+
+·<color=#92fc63>巡游任务分为两种</color>
+（1）每周任务
+ 巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务。
+（2）S.P.任务
+ S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
+（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励
+
+·<color=#92fc63>「巡游任务快速完成券」说明</color>
+（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成每周巡游任务
+（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
+（3）每个巡游任务需要消耗的「巡游任务快速完成券」数量和其提供的「巡游点数」相关，与当前任务进度无关
+（4）「巡游任务快速完成券」<color=#92fc63>不会随本期活动结束而消失</color>]]
+		}
+	}
+}
 _G.pg.base.gametip.attrset_reset = {
 	tip = "全部重置"
 }
@@ -20138,6 +20619,24 @@ _G.pg.base.gametip["2023Valentine_minigame_b"] = {
 _G.pg.base.gametip["2023Valentine_minigame_c"] = {
 	tip = "……指挥官，你真的要品尝这一份么？是不是重新做一份比较好……"
 }
+_G.pg.base.gametip["2023Valentine_minigame_label1"] = {
+	tip = "最终得分："
+}
+_G.pg.base.gametip["2023Valentine_minigame_label2"] = {
+	tip = "完成次数"
+}
+_G.pg.base.gametip["2023Valentine_minigame_label3"] = {
+	tip = "当前完成："
+}
+_G.pg.base.gametip.Valentine_minigame_label1 = {
+	tip = "最终得分："
+}
+_G.pg.base.gametip.Valentine_minigame_label2 = {
+	tip = "完成次数"
+}
+_G.pg.base.gametip.Valentine_minigame_label3 = {
+	tip = "当前完成："
+}
 _G.pg.base.gametip.sort_energy = {
 	tip = "心情值"
 }
@@ -20159,6 +20658,42 @@ _G.pg.base.gametip.loveletter_exchange_button = {
 _G.pg.base.gametip.loveletter_exchange_tip3 = {
 	tip = "更换成功，请前往邮件查看"
 }
+_G.pg.base.gametip.loveletter_recover_tip1 = {
+	tip = "需要检查邮箱/收藏室内是否存在对应邮件后使用恢复功能"
+}
+_G.pg.base.gametip.loveletter_recover_tip2 = {
+	tip = "角色错误"
+}
+_G.pg.base.gametip.loveletter_recover_tip3 = {
+	tip = "邮箱内已有该年份的情人节邮件"
+}
+_G.pg.base.gametip.loveletter_recover_tip4 = {
+	tip = "该角色不在该年份情人节邮件列表内"
+}
+_G.pg.base.gametip.loveletter_recover_tip5 = {
+	tip = "邮箱收藏室已满，请整理收藏室后进行恢复邮件"
+}
+_G.pg.base.gametip.loveletter_recover_tip6 = {
+	tip = "检查完毕，可以进行$1年的情人节邮件恢复"
+}
+_G.pg.base.gametip.loveletter_recover_tip7 = {
+	tip = "检查完毕，邮箱中已有对应的情人节邮件，不可使用恢复功能。"
+}
+_G.pg.base.gametip.loveletter_recover_bottom1 = {
+	tip = "检查邮件"
+}
+_G.pg.base.gametip.loveletter_recover_bottom2 = {
+	tip = "恢复邮件"
+}
+_G.pg.base.gametip.loveletter_recover_bottom3 = {
+	tip = "$1年"
+}
+_G.pg.base.gametip.loveletter_recover_text1 = {
+	tip = "是否确认使用<color=#ffde38>恢复邮件</color>功能，使用后邮箱收藏室将获得一封<color=#ffde38>$1</color>年由<color=#ffde38>$2</color>角色向您发送的情人节邮件（不包含附件内容）\n*每件情人节礼物的恢复邮件功能仅能使用一次"
+}
+_G.pg.base.gametip.loveletter_recover_text2 = {
+	tip = "请选择<color=#ffde38>恢复年份</color>。选择后，邮箱收藏室将获得一封由<color=#ffde38>$1</color>角色向您发送的所选年份情人节邮件（不包含附件内容）\n*每件情人节礼物的恢复邮件功能仅能使用一次"
+}
 _G.pg.base.gametip.battle_text_common_1 = {
 	tip = "敌人正在准备着某种强大的攻击，请<color=#f1f102>集中火力将其打断</color>！"
 }
@@ -20167,6 +20702,9 @@ _G.pg.base.gametip.battle_text_common_2 = {
 }
 _G.pg.base.gametip.battle_text_common_3 = {
 	tip = "<color=#f1f102>敌方伤害大幅度提高，同时会随时间流逝增加其受到的伤害。</color>"
+}
+_G.pg.base.gametip.battle_text_common_4 = {
+	tip = "<color=#f1f102>敌方伤害大幅度提高，同时所有子弹获得穿透能力。</color>"
 }
 _G.pg.base.gametip.battle_text_yingxiv4_1 = {
 	tip = "战争骑士似乎在向<color=#f1f102>左前方</color>向蓄势"
@@ -20254,6 +20792,24 @@ _G.pg.base.gametip.battle_text_luodeni_2 = {
 }
 _G.pg.base.gametip.battle_text_luodeni_3 = {
 	tip = "尚有「罗德尼」留存，无法释放<color=#ffc038>「我们」的终结</color>。"
+}
+_G.pg.base.gametip.battle_text_pizibao_1 = {
+	tip = "支援舰队已就位，<color=#f1f102>引开敌方火力</color>避免其被高威力攻击命中！"
+}
+_G.pg.base.gametip.battle_text_pizibao_2 = {
+	tip = "支援舰队<color=#f1f102>已被摧毁</color>，这场战斗将变得更加艰辛！"
+}
+_G.pg.base.gametip.battle_text_tianchengCV_1 = {
+	tip = "「<color=#ff8800>苍红之风</color>，<color=#5cccff>青蓝之花</color>，一同降临于此岸吧！」"
+}
+_G.pg.base.gametip.battle_text_tianchengCV_2 = {
+	tip = "「啊——<color=#ff1800>彼岸之花</color>，尽情燃烧吧！」"
+}
+_G.pg.base.gametip.battle_text_tianchengCV_3 = {
+	tip = "敌人正在积蓄力量，请依次<color=#f1f102>触碰场上的阵法</color>为我方充能"
+}
+_G.pg.base.gametip.battle_text_lumei_1 = {
+	tip = "「还愣着干嘛，跟紧我！」"
 }
 _G.pg.base.gametip.series_enemy_mood = {
 	tip = "心情不足"
@@ -23609,6 +24165,9 @@ _G.pg.base.gametip.dorm3d_furniture_count = {
 _G.pg.base.gametip.dorm3d_furniture_used = {
 	tip = "<color=#00a3ef>[已摆放]</color>"
 }
+_G.pg.base.gametip.dorm3d_furniture_lack = {
+	tip = "[未拥有]"
+}
 _G.pg.base.gametip.dorm3d_furniture_unfit = {
 	tip = "不可使用"
 }
@@ -23647,6 +24206,12 @@ _G.pg.base.gametip.dorm3d_gift = {
 }
 _G.pg.base.gametip.dorm3d_gift_owner_num = {
 	tip = "数量："
+}
+_G.pg.base.gametip.dorm3d_unlock_tips = {
+	tip = "契合度达到$1级解锁"
+}
+_G.pg.base.gametip.dorm3d_daily_favor_tips = {
+	tip = "今日互动契合度:"
 }
 _G.pg.base.gametip.main_silent_tip_1 = {
 	tip = "支舰队已归航  "
@@ -23932,189 +24497,6 @@ _G.pg.base.gametip["202406_main_help"] = {
 		}
 	}
 }
-_G.pg.base.gametip.blueprint_simulation_confirm_19905 = {
-	tip = [[
-<size=28>
-是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，
-<color=#ff5c5c>实际性能以获得舰船为准</color>）
-使用装备：<color=#92fc63>
-127mm单装炮
-五联装533mm鱼雷
-试作型F8F熊猫（浮筒型）
-</color></size>]]
-}
-_G.pg.base.gametip.blueprint_simulation_confirm_39907 = {
-	tip = [[
-<size=28>
-是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，
-<color=#ff5c5c>实际性能以获得舰船为准</color>）
-使用装备：<color=#92fc63>
-试作型双联装410mm主炮Mod.A
-140mm单装炮
-试作型五式40mm高射机关炮
-</color></size>]]
-}
-_G.pg.base.gametip.blueprint_simulation_confirm_69902 = {
-	tip = [[
-<size=28>
-是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，
-<color=#ff5c5c>实际性能以获得舰船为准</color>）
-使用装备：<color=#92fc63>
-试作型三联装254mm主炮Model1939
-试作型三联装152mm主炮Model1936
-试作型双联90mm高角炮Model1939
-</color></size>]]
-}
-_G.pg.base.gametip.blueprint_simulation_confirm_89904 = {
-	tip = [[
-<size=28>
-是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，
-<color=#ff5c5c>实际性能以获得舰船为准</color>）
-使用装备：<color=#92fc63>
-三联装152mm主炮Mle1930(高爆弹)
-三联装550mm鱼雷
-双联装57mm/L60博福斯对空机炮Mle1951
-</color></size>]]
-}
-_G.pg.base.gametip.blueprint_simulation_confirm_79902 = {
-	tip = [[
-<size=28>
-是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，
-<color=#ff5c5c>实际性能以获得舰船为准</color>）
-使用装备：<color=#92fc63>
-试作舰载型La-9
-试作舰载型La-9
-试作型VIT-2（模式调整）
-</color></size>]]
-}
-_G.pg.base.gametip.mail_confirm_delete_important_flag = {
-	tip = "无法删除重要邮件"
-}
-_G.pg.base.gametip.mail_delet_button_1 = {
-	tip = "删除邮件"
-}
-_G.pg.base.gametip.mail_storeroom_max_3 = {
-	tip = "※本次领取后，将无法领取来自食堂的石油"
-}
-_G.pg.base.gametip.mail_storeroom_max_4 = {
-	tip = "※本次领取后，将无法领取来自小卖部的物资"
-}
-_G.pg.base.gametip.mail_storeroom_collect = {
-	tip = "本次领取将会获得以下资源："
-}
-_G.pg.base.gametip.loveletter_recover_tip1 = {
-	tip = "需要检查邮箱/收藏室内是否存在对应邮件后使用恢复功能"
-}
-_G.pg.base.gametip.loveletter_recover_tip2 = {
-	tip = "角色错误"
-}
-_G.pg.base.gametip.loveletter_recover_tip3 = {
-	tip = "邮箱内已有该年份的情人节邮件"
-}
-_G.pg.base.gametip.loveletter_recover_tip4 = {
-	tip = "该角色不在该年份情人节邮件列表内"
-}
-_G.pg.base.gametip.loveletter_recover_tip5 = {
-	tip = "邮箱收藏室已满，请整理收藏室后进行恢复邮件"
-}
-_G.pg.base.gametip.loveletter_recover_tip6 = {
-	tip = "检查完毕，可以进行$1年的情人节邮件恢复"
-}
-_G.pg.base.gametip.loveletter_recover_tip7 = {
-	tip = "检查完毕，邮箱中已有对应的情人节邮件，不可使用恢复功能。"
-}
-_G.pg.base.gametip.loveletter_recover_bottom1 = {
-	tip = "检查邮件"
-}
-_G.pg.base.gametip.loveletter_recover_bottom2 = {
-	tip = "恢复邮件"
-}
-_G.pg.base.gametip.loveletter_recover_bottom3 = {
-	tip = "$1年"
-}
-_G.pg.base.gametip.loveletter_recover_text1 = {
-	tip = "是否确认使用<color=#ffde38>恢复邮件</color>功能，使用后邮箱收藏室将获得一封<color=#ffde38>$1</color>年由<color=#ffde38>$2</color>角色向您发送的情人节邮件（不包含附件内容）\n*每件情人节礼物的恢复邮件功能仅能使用一次"
-}
-_G.pg.base.gametip.loveletter_recover_text2 = {
-	tip = "请选择<color=#ffde38>恢复年份</color>。选择后，邮箱收藏室将获得一封由<color=#ffde38>$1</color>角色向您发送的所选年份情人节邮件（不包含附件内容）\n*每件情人节礼物的恢复邮件功能仅能使用一次"
-}
-_G.pg.base.gametip.battlepass_main_tip_2408 = {
-	tip = "2024/8/1-2024/9/30期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「蕸·META」</color>在内的丰富奖励"
-}
-_G.pg.base.gametip.battlepass_main_help_2408 = {
-	tip = {
-		{
-			info = [[
-世界巡游(2024.8.1-2024.9.30)
-
-·<color=#92fc63>开放时间</color>
-    2024.8.1 0点 ~ 2024.9.30 23:59:59
-
-·<color=#92fc63>巡游进度说明</color>
-（1）活动期间，指挥官通过完成巡游任务，可获取「巡游点数」。
-（2）巡游任务随时间开放解锁。
-（3）每获取100点「巡游点数」即可增加1巡游进度
-（4）巡游进度提升后可以获取相应等级的奖励，巡游进度最高可达100。
-
-·<color=#92fc63>奖励规则</color>
-巡游进度奖励分为两种：
-（1）基础巡游奖励：包含<color=#ff5c5c>「蕸·META」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·七期</color>等奖励；
-    当巡游达到指定进度时，指挥官可以直接领取相应的基础巡游奖励。
-（2）特许巡游奖励：包含<color=#ff5c5c>罗马换装「罗马的假日 </color>」、<color=#ff5c5c>钻石</color>等奖励；
-    购买「特许巡游凭证」，且巡游达到指定进度时，可以领取特许巡游奖励。
-    注：购买「特许巡游凭证」后，不会影响基础巡游奖励的领取。
-
-·<color=#92fc63>「特许巡游凭证」说明</color>
-（1）「特许巡游凭证」可于「商店」-「优惠礼包」中购买，购买后可立刻获得<color=#ff5c5c>1500点</color>「巡游点数」同时解锁特许巡游奖励。
-（2）「特许巡游凭证」将于<color=#ff5c5c>活动结束前一小时</color>停止售卖(即9.30 22:59:59停止)，请指挥官注意购买时间。
-
-·<color=#92fc63>任务说明</color>
-巡游任务分为两种：
-（1）每周任务 
-    巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务
-（2）S.P.任务
-    S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
-（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励。
-
-·<color=#92fc63>「巡游任务快速完成券」说明</color>
-（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成大部分巡游任务
-（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
-（3）每个巡游任务需要消耗的完成券数量固定，与当前任务进度无关
-（4）「巡游任务快速完成券」不会随本期活动结束而消失
-
-·<color=#ff5c5c>特别提示</color>
-（1）在本期世界巡游活动结束后，所有巡游任务将会无法继续完成，所有巡游奖励将会无法继续领取，请各位指挥官务必注意活动结束时间，提前领取奖励。
-（2）巡游进度、[特许巡游凭证]仅对本期世界巡游活动生效]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_task_help_2408 = {
-	tip = {
-		{
-			info = [[
-巡游任务说明
-
-·<color=#92fc63>开放时间</color>
-    2024.7.31 0点 ~ 2024.9.31 23:59:59
-
-·<color=#92fc63>巡游任务分为两种</color>
-（1）每周任务
-    巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务。
-（2）S.P.任务
-    S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
-（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励
-
-·<color=#92fc63>「巡游任务快速完成券」说明</color>
-（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成每周巡游任务
-（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
-（3）每个巡游任务需要消耗的「巡游任务快速完成券」数量和其提供的「巡游点数」相关，与当前任务进度无关
-（4）「巡游任务快速完成券」<color=#92fc63>不会随本期活动结束而消失</color>]]
-		}
-	}
-}
-_G.pg.base.gametip.battle_text_common_4 = {
-	tip = "<color=#f1f102>敌方伤害大幅度提高，同时所有子弹获得穿透能力。</color>"
-}
 _G.pg.base.gametip.MonopolyCar2024Game_title1 = {
 	tip = "完成次数"
 }
@@ -24220,21 +24602,6 @@ _G.pg.base.gametip.sitelasibao_expup_desc = {
 _G.pg.base.gametip.levelScene_tracking_error_pre_2 = {
 	tip = "通关$1或$2后开启 "
 }
-_G.pg.base.gametip.ship_remould_warning_101994 = {
-	tip = [[
-此次改造操作将消耗<color=#92fc63>电气增幅装置</color>
-是否确认继续操作？
-改造后 <color=#92fc63>【防空炮底座+1】、【装备特殊反潜武器】</color>
-技能<color=#92fc63>【彩虹计划】</color>将升级为<color=#92fc63>【彩虹计划·改】</color>
-技能<color=#92fc63>【专属弹幕-埃尔德里奇II】</color>
-将升级为<color=#92fc63>【专属弹幕-埃尔德里奇III】</color>]]
-}
-_G.pg.base.gametip.battle_text_pizibao_1 = {
-	tip = "支援舰队已就位，<color=#f1f102>引开敌方火力</color>避免其被高威力攻击命中！"
-}
-_G.pg.base.gametip.battle_text_pizibao_2 = {
-	tip = "支援舰队<color=#f1f102>已被摧毁</color>，这场战斗将变得更加艰辛！"
-}
 _G.pg.base.gametip.town_lock_level = {
 	tip = "小镇等级达到$1"
 }
@@ -24280,247 +24647,6 @@ _G.pg.base.gametip.town_gold_tip = {
 }
 _G.pg.base.gametip.award_max_warning_minigame = {
 	tip = "游戏奖励因超出上限而<color=#ff5c5c>无法获得</color>，是否仍要开始游戏？"
-}
-_G.pg.base.gametip.dorm3d_unlock_tips = {
-	tip = "契合度达到$1级解锁"
-}
-_G.pg.base.gametip.dorm3d_daily_favor_tips = {
-	tip = "今日互动契合度:"
-}
-_G.pg.base.gametip.report_cannot_comment_level_1 = {
-	tip = "指挥官等级达到$1级后，才可以发送评论哦。 "
-}
-_G.pg.base.gametip.report_cannot_comment_level_2 = {
-	tip = "当前处于评论受限状态，无法发送评论！"
-}
-_G.pg.base.gametip.commander_exp_limit = {
-	tip = "该指挥喵已达最大等级，无法添加指挥喵"
-}
-_G.pg.base.gametip.ship_remould_warning_105224 = {
-	tip = "此次改造操作后<color=#92fc63>【BIG SEVEN】</color>技能\n将升级为<color=#92fc63>【BIG SEVEN·马里兰】</color>"
-}
-_G.pg.base.gametip.battle_text_tianchengCV_1 = {
-	tip = "「<color=#ff8800>苍红之风</color>，<color=#5cccff>青蓝之花</color>，一同降临于此岸吧！」"
-}
-_G.pg.base.gametip.battle_text_tianchengCV_2 = {
-	tip = "「啊——<color=#ff1800>彼岸之花</color>，尽情燃烧吧！」"
-}
-_G.pg.base.gametip.battle_text_tianchengCV_3 = {
-	tip = "敌人正在积蓄力量，请依次<color=#f1f102>触碰场上的阵法</color>为我方充能"
-}
-_G.pg.base.gametip.dreamland_label_day = {
-	tip = "白天"
-}
-_G.pg.base.gametip.dreamland_label_dusk = {
-	tip = "傍晚"
-}
-_G.pg.base.gametip.dreamland_label_night = {
-	tip = "夜晚"
-}
-_G.pg.base.gametip.dreamland_label_area = {
-	tip = "区域"
-}
-_G.pg.base.gametip.dreamland_label_explore = {
-	tip = "探索"
-}
-_G.pg.base.gametip.dreamland_label_explore_award_tip = {
-	tip = "完成该区域探索奖励"
-}
-_G.pg.base.gametip.dreamland_area_lock_tip = {
-	tip = "- 该区域尚未解锁 请继续阅读剧情 -"
-}
-_G.pg.base.gametip.dreamland_spring_lock_tip = {
-	tip = "阅读后续剧情解锁"
-}
-_G.pg.base.gametip.dreamland_spring_tip = {
-	tip = "邀请角色入梦恢复心情 $1/h"
-}
-_G.pg.base.gametip.dream_land_tip = {
-	tip = {
-		{
-			info = [[
-活动规则：
-·<color=#92fc63>9.12-10.2</color>期间开启限时活动「梦幻乐园的梦幻假日」
-·随剧情解锁梦幻乐园的各个区域，获得<color=#92fc63>限定家具</color>、<color=#92fc63>外观装备箱</color>等奖励
-·梦幻乐园各区域地图上均有可交互的探索点。指挥官在享受梦幻假日的同时，可通过留意地图上的<color=#92fc63>「星星」</color>指引及<color=#92fc63>乐园手册</color>中的探索指引，进行梦幻乐园探索，获得<color=#92fc63>限定家具</color>、<color=#92fc63>外观装备箱</color>等奖励
-·部分探索仅在特殊时间内触发，在完成「梦幻乐园的梦幻假日」全部剧情后，可以通过<color=#92fc63>时间转换</color>调整梦幻乐园时间
-·邀请角色进入安眠梦境，加快心情回复。安眠梦境随梦幻乐园区域解锁扩展]]
-		}
-	}
-}
-_G.pg.base.gametip.touch_cake_minigame_help = {
-	tip = {
-		{
-			icon = {
-				atlas = "helpbg/touchcake_help1",
-				path = ""
-			}
-		},
-		{
-			icon = {
-				atlas = "helpbg/touchcake_help2",
-				path = ""
-			}
-		},
-		disableScroll = true,
-		pageMode = true,
-		ImageMode = true,
-		defaultpage = 1,
-		windowSize = {
-			x = 1263,
-			y = 873
-		},
-		windowPos = {
-			y = -70
-		},
-		helpSize = {
-			x = 1176,
-			y = 1024
-		}
-	}
-}
-_G.pg.base.gametip.dreamland_main_desc = {
-	tip = "9.12~10.2，活动期间完成<color=#85E7FF>梦幻乐园探索</color>与<color=#85E7FF>啾啾蛋糕塔</color>获得丰厚奖励"
-}
-_G.pg.base.gametip.dreamland_main_tip = {
-	tip = {
-		{
-			info = [[
-活动规则：
-·<color=#92fc63>9.12-10.2</color>期间开启限时活动「梦幻乐园的梦幻假日」
-·随剧情解锁梦幻乐园的各个区域，获得<color=#92fc63>限定家具</color>、<color=#92fc63>外观装备箱</color>等奖励
-·梦幻乐园各区域地图上均有可交互的探索点。指挥官在享受梦幻假日的同时，可通过留意地图上的<color=#92fc63>「星星」</color>指引及<color=#92fc63>乐园手册</color>中的探索指引，进行梦幻乐园探索，获得<color=#92fc63>限定家具</color>、<color=#92fc63>外观装备箱</color>等奖励
-·部分探索仅在特殊时间内触发，在完成「梦幻乐园的梦幻假日」全部剧情后，可以通过<color=#92fc63>时间转换</color>调整梦幻乐园时间
-·邀请角色进入安眠梦境，加快心情回复。安眠梦境随梦幻乐园区域解锁扩展
-·9.18为止，每日可获得一次「啾啾蛋糕塔」游戏次数，参与游戏可获取「梦幻蛋糕券」
-·累计7张「梦幻蛋糕券」可获得限定道具<color=#92fc63>「庆典邀请函」</color>]]
-		}
-	}
-}
-_G.pg.base.gametip.no_share_skin_gametip = {
-	tip = "*该换装为$1换装，无法与$2共享使用"
-}
-_G.pg.base.gametip.no_share_skin_tianchenghangmu = {
-	tip = "{namecode:161}(航母)"
-}
-_G.pg.base.gametip.no_share_skin_tianchengzhanlie = {
-	tip = "{namecode:161}(战列)"
-}
-_G.pg.base.gametip.no_share_skin_jiahezhanlie = {
-	tip = "{namecode:92}(战列)"
-}
-_G.pg.base.gametip.no_share_skin_jiahehangmu = {
-	tip = "{namecode:92}(航母)"
-}
-_G.pg.base.gametip.ui_pack_tip1 = {
-	tip = "只能购买一个档位，礼包将发送到邮箱请注意查收"
-}
-_G.pg.base.gametip.ui_pack_tip2 = {
-	tip = "基础版"
-}
-_G.pg.base.gametip.ui_pack_tip3 = {
-	tip = "豪华版"
-}
-_G.pg.base.gametip.battle_ui_unlock = {
-	tip = "装扮解锁"
-}
-_G.pg.base.gametip.compensate_ui_expiration_hour = {
-	tip = "$1时后过期"
-}
-_G.pg.base.gametip.compensate_ui_expiration_day = {
-	tip = "$1天后过期"
-}
-_G.pg.base.gametip.compensate_ui_title1 = {
-	tip = "补偿"
-}
-_G.pg.base.gametip.compensate_ui_title2 = {
-	tip = "compensate"
-}
-_G.pg.base.gametip.compensate_ui_nothing1 = {
-	tip = "暂未收到任何补偿"
-}
-_G.pg.base.gametip.compensate_ui_nothing2 = {
-	tip = "No compensation received yet"
-}
-_G.pg.base.gametip.attire_combatui_preview = {
-	tip = "前往预览"
-}
-_G.pg.base.gametip.attire_combatui_confirm = {
-	tip = "装扮"
-}
-_G.pg.base.gametip.battlepass_main_tip_2410 = {
-	tip = "2024/10/1-2024/11/30期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「{namecode:237}」</color>在内的丰富奖励"
-}
-_G.pg.base.gametip.battlepass_main_help_2410 = {
-	tip = {
-		{
-			info = [[
-世界巡游(2024.10.1-2024.11.30)
-
-·<color=#92fc63>开放时间</color>
-    2024.10.1 0点 ~ 2024.11.30 23:59:59
-
-·<color=#92fc63>巡游进度说明</color>
-（1）活动期间，指挥官通过完成巡游任务，可获取「巡游点数」。
-（2）巡游任务随时间开放解锁。
-（3）每获取100点「巡游点数」即可增加1巡游进度
-（4）巡游进度提升后可以获取相应等级的奖励，巡游进度最高可达100。
-
-·<color=#92fc63>奖励规则</color>
-巡游进度奖励分为两种：
-（1）基础巡游奖励：包含<color=#ff5c5c>「{namecode:237}」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·七期</color>等奖励；
-    当巡游达到指定进度时，指挥官可以直接领取相应的基础巡游奖励。
-（2）特许巡游奖励：包含<color=#ff5c5c>絮弗伦换装「华美无双 </color>」、<color=#ff5c5c>钻石</color>等奖励；
-    购买「特许巡游凭证」，且巡游达到指定进度时，可以领取特许巡游奖励。
-    注：购买「特许巡游凭证」后，不会影响基础巡游奖励的领取。
-
-·<color=#92fc63>「特许巡游凭证」说明</color>
-（1）「特许巡游凭证」可于「商店」-「优惠礼包」中购买，购买后可立刻获得<color=#ff5c5c>1500点</color>「巡游点数」同时解锁特许巡游奖励。
-（2）「特许巡游凭证」将于<color=#ff5c5c>活动结束前一小时</color>停止售卖(即11.30 22:59:59停止)，请指挥官注意购买时间。
-
-·<color=#92fc63>任务说明</color>
-巡游任务分为两种：
-（1）每周任务 
-    巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务
-（2）S.P.任务
-    S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
-（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励。
-
-·<color=#92fc63>「巡游任务快速完成券」说明</color>
-（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成大部分巡游任务
-（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
-（3）每个巡游任务需要消耗的完成券数量固定，与当前任务进度无关
-（4）「巡游任务快速完成券」不会随本期活动结束而消失
-
-·<color=#ff5c5c>特别提示</color>
-（1）在本期世界巡游活动结束后，所有巡游任务将会无法继续完成，所有巡游奖励将会无法继续领取，请各位指挥官务必注意活动结束时间，提前领取奖励。
-（2）巡游进度、[特许巡游凭证]仅对本期世界巡游活动生效]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_task_help_2410 = {
-	tip = {
-		{
-			info = [[
-巡游任务说明
-
-·<color=#92fc63>开放时间</color>
-    2024.10.1 0点 ~ 2024.11.30 23:59:59
-
-·<color=#92fc63>巡游任务分为两种</color>
-（1）每周任务
-    巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务。
-（2）S.P.任务
-    S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
-（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励
-
-·<color=#92fc63>「巡游任务快速完成券」说明</color>
-（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成每周巡游任务
-（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
-（3）每个巡游任务需要消耗的「巡游任务快速完成券」数量和其提供的「巡游点数」相关，与当前任务进度无关
-（4）「巡游任务快速完成券」<color=#92fc63>不会随本期活动结束而消失</color>]]
-		}
-	}
 }
 _G.pg.base.gametip.dorm3d_photo_len = {
 	tip = "镜头"
@@ -24781,6 +24907,155 @@ _G.pg.base.gametip.dorm3d_furniture_save_success = {
 _G.pg.base.gametip.dorm3d_removable = {
 	tip = "(拖动屏幕左侧移动，靠近角色吧）"
 }
+_G.pg.base.gametip.report_cannot_comment_level_1 = {
+	tip = "指挥官等级达到$1级后，才可以发送评论哦。 "
+}
+_G.pg.base.gametip.report_cannot_comment_level_2 = {
+	tip = "当前处于评论受限状态，无法发送评论！"
+}
+_G.pg.base.gametip.commander_exp_limit = {
+	tip = "该指挥喵已达最大等级，无法添加指挥喵"
+}
+_G.pg.base.gametip.dreamland_label_day = {
+	tip = "白天"
+}
+_G.pg.base.gametip.dreamland_label_dusk = {
+	tip = "傍晚"
+}
+_G.pg.base.gametip.dreamland_label_night = {
+	tip = "夜晚"
+}
+_G.pg.base.gametip.dreamland_label_area = {
+	tip = "区域"
+}
+_G.pg.base.gametip.dreamland_label_explore = {
+	tip = "探索"
+}
+_G.pg.base.gametip.dreamland_label_explore_award_tip = {
+	tip = "完成该区域探索奖励"
+}
+_G.pg.base.gametip.dreamland_area_lock_tip = {
+	tip = "- 该区域尚未解锁 请继续阅读剧情 -"
+}
+_G.pg.base.gametip.dreamland_spring_lock_tip = {
+	tip = "阅读后续剧情解锁"
+}
+_G.pg.base.gametip.dreamland_spring_tip = {
+	tip = "邀请角色入梦恢复心情 $1/h"
+}
+_G.pg.base.gametip.dream_land_tip = {
+	tip = {
+		{
+			info = [[
+活动规则：
+·<color=#92fc63>9.12-10.2</color>期间开启限时活动「梦幻乐园的梦幻假日」
+·随剧情解锁梦幻乐园的各个区域，获得<color=#92fc63>限定家具</color>、<color=#92fc63>外观装备箱</color>等奖励
+·梦幻乐园各区域地图上均有可交互的探索点。指挥官在享受梦幻假日的同时，可通过留意地图上的<color=#92fc63>「星星」</color>指引及<color=#92fc63>乐园手册</color>中的探索指引，进行梦幻乐园探索，获得<color=#92fc63>限定家具</color>、<color=#92fc63>外观装备箱</color>等奖励
+·部分探索仅在特殊时间内触发，在完成「梦幻乐园的梦幻假日」全部剧情后，可以通过<color=#92fc63>时间转换</color>调整梦幻乐园时间
+·邀请角色进入安眠梦境，加快心情回复。安眠梦境随梦幻乐园区域解锁扩展]]
+		}
+	}
+}
+_G.pg.base.gametip.touch_cake_minigame_help = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/touchcake_help1",
+				path = ""
+			}
+		},
+		{
+			icon = {
+				atlas = "helpbg/touchcake_help2",
+				path = ""
+			}
+		},
+		disableScroll = true,
+		pageMode = true,
+		ImageMode = true,
+		defaultpage = 1,
+		windowSize = {
+			x = 1263,
+			y = 873
+		},
+		windowPos = {
+			y = -70
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024
+		}
+	}
+}
+_G.pg.base.gametip.dreamland_main_desc = {
+	tip = "9.12~10.2，活动期间完成<color=#85E7FF>梦幻乐园探索</color>与<color=#85E7FF>啾啾蛋糕塔</color>获得丰厚奖励"
+}
+_G.pg.base.gametip.dreamland_main_tip = {
+	tip = {
+		{
+			info = [[
+活动规则：
+·<color=#92fc63>9.12-10.2</color>期间开启限时活动「梦幻乐园的梦幻假日」
+·随剧情解锁梦幻乐园的各个区域，获得<color=#92fc63>限定家具</color>、<color=#92fc63>外观装备箱</color>等奖励
+·梦幻乐园各区域地图上均有可交互的探索点。指挥官在享受梦幻假日的同时，可通过留意地图上的<color=#92fc63>「星星」</color>指引及<color=#92fc63>乐园手册</color>中的探索指引，进行梦幻乐园探索，获得<color=#92fc63>限定家具</color>、<color=#92fc63>外观装备箱</color>等奖励
+·部分探索仅在特殊时间内触发，在完成「梦幻乐园的梦幻假日」全部剧情后，可以通过<color=#92fc63>时间转换</color>调整梦幻乐园时间
+·邀请角色进入安眠梦境，加快心情回复。安眠梦境随梦幻乐园区域解锁扩展
+·9.18为止，每日可获得一次「啾啾蛋糕塔」游戏次数，参与游戏可获取「梦幻蛋糕券」
+·累计7张「梦幻蛋糕券」可获得限定道具<color=#92fc63>「庆典邀请函」</color>]]
+		}
+	}
+}
+_G.pg.base.gametip.no_share_skin_gametip = {
+	tip = "*该换装为$1换装，无法与$2共享使用"
+}
+_G.pg.base.gametip.no_share_skin_tianchenghangmu = {
+	tip = "{namecode:161}(航母)"
+}
+_G.pg.base.gametip.no_share_skin_tianchengzhanlie = {
+	tip = "{namecode:161}(战列)"
+}
+_G.pg.base.gametip.no_share_skin_jiahezhanlie = {
+	tip = "{namecode:92}(战列)"
+}
+_G.pg.base.gametip.no_share_skin_jiahehangmu = {
+	tip = "{namecode:92}(航母)"
+}
+_G.pg.base.gametip.ui_pack_tip1 = {
+	tip = "只能购买一个档位，礼包将发送到邮箱请注意查收"
+}
+_G.pg.base.gametip.ui_pack_tip2 = {
+	tip = "基础版"
+}
+_G.pg.base.gametip.ui_pack_tip3 = {
+	tip = "豪华版"
+}
+_G.pg.base.gametip.battle_ui_unlock = {
+	tip = "装扮解锁"
+}
+_G.pg.base.gametip.compensate_ui_expiration_hour = {
+	tip = "$1时后过期"
+}
+_G.pg.base.gametip.compensate_ui_expiration_day = {
+	tip = "$1天后过期"
+}
+_G.pg.base.gametip.compensate_ui_title1 = {
+	tip = "补偿"
+}
+_G.pg.base.gametip.compensate_ui_title2 = {
+	tip = "compensate"
+}
+_G.pg.base.gametip.compensate_ui_nothing1 = {
+	tip = "暂未收到任何补偿"
+}
+_G.pg.base.gametip.compensate_ui_nothing2 = {
+	tip = "No compensation received yet"
+}
+_G.pg.base.gametip.attire_combatui_preview = {
+	tip = "前往预览"
+}
+_G.pg.base.gametip.attire_combatui_confirm = {
+	tip = "装扮"
+}
 _G.pg.base.gametip.grapihcs3d_setting_quality = {
 	tip = "画质品质"
 }
@@ -24850,11 +25125,29 @@ _G.pg.base.gametip.dorm3d_purchase_confirm_free = {
 _G.pg.base.gametip.dorm3d_purchase_confirm_tip = {
 	tip = "专属"
 }
+_G.pg.base.gametip.dorm3d_purchase_label_special = {
+	tip = "特典"
+}
+_G.pg.base.gametip.dorm3d_purchase_outtime = {
+	tip = "该家具已下架"
+}
+_G.pg.base.gametip.dorm3d_collect_block_by_furniture = {
+	tip = "该物品被家具”$1“替换，暂时无法收集"
+}
 _G.pg.base.gametip.cruise_phase_title = {
 	tip = "阶段"
 }
 _G.pg.base.gametip.cruise_title_2410 = {
 	tip = "世界巡游·十九期"
+}
+_G.pg.base.gametip.cruise_title_2412 = {
+	tip = "世界巡游·二十期"
+}
+_G.pg.base.gametip.cruise_title_2502 = {
+	tip = "世界巡游·二十一期"
+}
+_G.pg.base.gametip.cruise_title_2504 = {
+	tip = "世界巡游·二十二期"
 }
 _G.pg.base.gametip.battlepass_main_time_title = {
 	tip = "本期剩余时间："
@@ -24882,6 +25175,15 @@ _G.pg.base.gametip.cruise_shop_title_equip_skin = {
 }
 _G.pg.base.gametip.cruise_shop_lock_tip = {
 	tip = "当期世界巡游等级达到50"
+}
+_G.pg.base.gametip.cruise_tip_skin = {
+	tip = "前往世界巡游"
+}
+_G.pg.base.gametip.cruise_tip_base = {
+	tip = "-基础巡游奖励-"
+}
+_G.pg.base.gametip.cruise_tip_upgrade = {
+	tip = "-特许巡游奖励-"
 }
 _G.pg.base.gametip.cruise_shop_limit_tip = {
 	tip = "本月剩余可购买数量："
@@ -24981,811 +25283,6 @@ _G.pg.base.gametip.dorm3d_favor_maximize = {
 }
 _G.pg.base.gametip.dorm3d_purchase_weekly_limit = {
 	tip = "（本周购买$1/$2）"
-}
-_G.pg.base.gametip.battle_battleMediator_remainTime = {
-	tip = "剩余作战时间"
-}
-_G.pg.base.gametip.world_file_tip = {
-	tip = "※上下滑动查看，点击空白处关闭"
-}
-_G.pg.base.gametip.levelscene_mapselect_part1 = {
-	tip = "上篇"
-}
-_G.pg.base.gametip.levelscene_mapselect_part2 = {
-	tip = "下篇"
-}
-_G.pg.base.gametip.levelscene_mapselect_sp = {
-	tip = "SP"
-}
-_G.pg.base.gametip.levelscene_mapselect_ex = {
-	tip = "EX"
-}
-_G.pg.base.gametip.juuschat_filter_title = {
-	tip = "筛选"
-}
-_G.pg.base.gametip.juuschat_filter_tip1 = {
-	tip = "全部"
-}
-_G.pg.base.gametip.juuschat_filter_tip2 = {
-	tip = "已回复"
-}
-_G.pg.base.gametip.juuschat_filter_tip3 = {
-	tip = "未回复"
-}
-_G.pg.base.gametip.juuschat_filter_tip4 = {
-	tip = "私人聊天"
-}
-_G.pg.base.gametip.juuschat_filter_tip5 = {
-	tip = "频道聊天"
-}
-_G.pg.base.gametip.juuschat_label1 = {
-	tip = "使用中"
-}
-_G.pg.base.gametip.juuschat_label2 = {
-	tip = "查看中"
-}
-_G.pg.base.gametip.juuschat_chattip1 = {
-	tip = "[语音消息]"
-}
-_G.pg.base.gametip.juuschat_chattip2 = {
-	tip = "[红包]"
-}
-_G.pg.base.gametip.juuschat_chattip3 = {
-	tip = "[等待回复]"
-}
-_G.pg.base.gametip.juuschat_reddot_title = {
-	tip = "啾信功能"
-}
-_G.pg.base.gametip.juuschat_filter_subtitle1 = {
-	tip = "查看"
-}
-_G.pg.base.gametip.juuschat_filter_subtitle2 = {
-	tip = "类型"
-}
-_G.pg.base.gametip.juuschat_filter_subtitle3 = {
-	tip = "阵营"
-}
-_G.pg.base.gametip.juuschat_redpacket_detail = {
-	tip = "领取详情"
-}
-_G.pg.base.gametip.juuschat_filter_empty = {
-	tip = "筛选结果为空"
-}
-_G.pg.base.gametip.dorm3d_appellation_title = {
-	tip = "你希望她称呼你为"
-}
-_G.pg.base.gametip.dorm3d_appellation_cd = {
-	tip = "$1后可以再次修改专属称呼"
-}
-_G.pg.base.gametip.dorm3d_appellation_interval = {
-	tip = "专属称呼每48小时可以修改一次"
-}
-_G.pg.base.gametip.dorm3d_appellation_waring1 = {
-	tip = "当前称呼存在屏蔽字"
-}
-_G.pg.base.gametip.dorm3d_appellation_waring2 = {
-	tip = "当前称呼过长"
-}
-_G.pg.base.gametip.dorm3d_appellation_waring3 = {
-	tip = "当前称呼过短"
-}
-_G.pg.base.gametip.dorm3d_appellation_waring4 = {
-	tip = "修改冷却中"
-}
-_G.pg.base.gametip.dorm3d_shop_gift_owned = {
-	tip = "购买次数已达上限"
-}
-_G.pg.base.gametip.BoatAdGame_minigame_help = {
-	tip = {
-		{
-			icon = {
-				atlas = "helpbg/boatadgame_minigame_help",
-				path = ""
-			}
-		},
-		disableScroll = true,
-		pageMode = true,
-		ImageMode = true,
-		defaultpage = 1,
-		windowSize = {
-			x = 1263,
-			y = 873
-		},
-		windowPos = {
-			y = -70
-		},
-		helpSize = {
-			x = 1176,
-			y = 1024
-		}
-	}
-}
-_G.pg.base.gametip.activity_1024_memory = {
-	tip = "道具数量不足，完成活动任务可获取「鬼怪故事页」"
-}
-_G.pg.base.gametip.activity_1024_memory_get = {
-	tip = " - 已领取 -"
-}
-_G.pg.base.gametip.word_shipNation_tolove = {
-	tip = "To LOVE-Ru"
-}
-_G.pg.base.gametip.battlepass_main_tip_2412 = {
-	tip = "2024/12/1-2025/1/31期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「朱利奥·凯撒·META」</color>在内的丰富奖励"
-}
-_G.pg.base.gametip.battlepass_main_help_2412 = {
-	tip = {
-		{
-			info = [[
-世界巡游(2024.12.1-2025.1.31)
-
-·<color=#92fc63>开放时间</color>
- 2024.12.1 0点 ~ 2025.1.31 23:59:59
-
-·<color=#92fc63>巡游进度说明</color>
-（1）活动期间，指挥官通过完成巡游任务，可获取「巡游点数」。
-（2）巡游任务随时间开放解锁。
-（3）每获取100点「巡游点数」即可增加1巡游进度
-（4）巡游进度提升后可以获取相应等级的奖励，巡游进度最高可达100。
-
-·<color=#92fc63>奖励规则</color>
-巡游进度奖励分为两种：
-（1）基础巡游奖励：包含<color=#ff5c5c>「朱利奥·凯撒·META」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·七期</color>售卖(即1.31 22:59:59停止)，请指挥官注意购买时间。
-
-·<color=#92fc63>任务说明</color>
-巡游任务分为两种：
-（1）每周任务 
- 巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务
-（2）S.P.任务
- S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
-（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励。
-
-·<color=#92fc63>「巡游任务快速完成券」说明</color>
-（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成大部分巡游任务
-（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
-（3）每个巡游任务需要消耗的完成券数量固定，与当前任务进度无关
-（4）「巡游任务快速完成券」不会随本期活动结束而消失
-
-·<color=#ff5c5c>特别提示</color>
-（1）在本期世界巡游活动结束后，所有巡游任务将会无法继续完成，所有巡游奖励将会无法继续领取，请各位指挥官务必注意活动结束时间，提前领取奖励。
-（2）巡游进度、[特许巡游凭证]仅对本期世界巡游活动生效]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_task_help_2412 = {
-	tip = {
-		{
-			info = [[
-巡游任务说明
-
-·<color=#92fc63>开放时间</color>
- 2024.12.1 0点 ~ 2025.1.31 23:59:59
-
-·<color=#92fc63>巡游任务分为两种</color>
-（1）每周任务
- 巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务。
-（2）S.P.任务
- S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
-（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励
-
-·<color=#92fc63>「巡游任务快速完成券」说明</color>
-（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成每周巡游任务
-（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
-（3）每个巡游任务需要消耗的「巡游任务快速完成券」数量和其提供的「巡游点数」相关，与当前任务进度无关
-（4）「巡游任务快速完成券」<color=#92fc63>不会随本期活动结束而消失</color>]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_title_2412 = {
-	tip = "世界巡游·二十期"
-}
-_G.pg.base.gametip.cruise_tip_skin = {
-	tip = "前往世界巡游"
-}
-_G.pg.base.gametip.cruise_tip_base = {
-	tip = "-基础巡游奖励-"
-}
-_G.pg.base.gametip.cruise_tip_upgrade = {
-	tip = "-特许巡游奖励-"
-}
-_G.pg.base.gametip.levelscene_mapselect_normal = {
-	tip = "常规"
-}
-_G.pg.base.gametip.levelscene_mapselect_advanced = {
-	tip = "进阶"
-}
-_G.pg.base.gametip.juuschat_background_tip1 = {
-	tip = "未拥有"
-}
-_G.pg.base.gametip.juuschat_background_tip2 = {
-	tip = "暂未拥有此换装"
-}
-_G.pg.base.gametip.airforce_title_1 = {
-	tip = "航电系统"
-}
-_G.pg.base.gametip.airforce_title_2 = {
-	tip = "相控阵雷达"
-}
-_G.pg.base.gametip.airforce_title_3 = {
-	tip = "涡轮发动机"
-}
-_G.pg.base.gametip.airforce_title_4 = {
-	tip = "无附面层隔板进气道"
-}
-_G.pg.base.gametip.airforce_title_5 = {
-	tip = "吸波隐身涂层"
-}
-_G.pg.base.gametip.airforce_desc_1 = {
-	tip = "航电系统是现代作战飞机中最为关键的系统之一，它涵盖了探测系统、火力控制系统、飞行控制系统、推力控制系统、电子战系统、通信系统、导航系统、座舱显示系统、自检系统等。"
-}
-_G.pg.base.gametip.airforce_desc_2 = {
-	tip = "歼-20战斗机搭载的相控阵雷达系统代表了当今航空电子技术的顶尖水平，采用了氮化镓有源相控阵雷达技术，有探测距离远、散热性能优越、多功能性强等诸多优点。"
-}
-_G.pg.base.gametip.airforce_desc_3 = {
-	tip = "涡扇15“峨眉” 涡扇发动机，是为我国第五代战斗机研制的小涵道比推力矢量涡扇发动机"
-}
-_G.pg.base.gametip.airforce_desc_4 = {
-	tip = "无附面层隔板进气道，全称无附面层隔道超音速进气道，它采用一个固定的鼓包来模拟常规进气道中的一、二级可调斜板，并能够达到对气流的压缩，以及简化结构、隐形的目的。"
-}
-_G.pg.base.gametip.airforce_desc_5 = {
-	tip = "歼-20机身表面使用了一种低观测反射的涂料材质，表面采用了类似微型山峰的设计，能够反弹并散射掉雷达信号，使得敌方雷达难以发现并锁定目标。"
-}
-_G.pg.base.gametip.fighterplane_J20_tip = {
-	tip = "歼20由航空工业集团研制，是一款具备高隐身性、高态势感知、高机动性等能力的战斗机。 歼20于1997年正式立项，经过工程技术人员的奋发努力和国家的大力支持，首架技术工程验证机于2009年制造成功，并于2011年1月11日在成都实现首飞。歼20采用了单座、双发、全动双垂尾、DSI进气道、上反鸭翼带尖拱边条的鸭式气动布局。头部、机身呈菱形，垂直尾翼向外倾斜。"
-}
-_G.pg.base.gametip.drom3d_memory_limit_tip = {
-	tip = "当前机型内存小于推荐配置，可能存在闪退风险。"
-}
-_G.pg.base.gametip.blackfriday_main_tip = {
-	tip = {
-		{
-			info = [[
-活动规则：
-·<color=#92fc63>12.12-12.19 维护</color>期间开启限时活动「茗的促销活动」
-·限时任务
-完成任务获得促销PT
-·特设商店
-使用促销PT在特设商店中兑换奖励
-·促销礼包
-截止12.18 0点为止，每日解锁一组免费礼包与付费礼包]]
-		}
-	}
-}
-_G.pg.base.gametip.blackfriday_shop_tip = {
-	tip = "$1日$2时解锁"
-}
-_G.pg.base.gametip.tolovegame_buff_name_1 = {
-	tip = "护盾up！"
-}
-_G.pg.base.gametip.tolovegame_buff_name_2 = {
-	tip = "得分up！"
-}
-_G.pg.base.gametip.tolovegame_buff_name_3 = {
-	tip = "时限 up！"
-}
-_G.pg.base.gametip.tolovegame_buff_name_4 = {
-	tip = "护盾超级upup！"
-}
-_G.pg.base.gametip.tolovegame_buff_name_5 = {
-	tip = "得分超级upup！"
-}
-_G.pg.base.gametip.tolovegame_buff_name_6 = {
-	tip = "时限超级upup！"
-}
-_G.pg.base.gametip.tolovegame_buff_name_7 = {
-	tip = "全能upup！"
-}
-_G.pg.base.gametip.tolovegame_buff_desc_1 = {
-	tip = "游戏开始时携带1层护盾，每层护盾可抵挡一次爆炸。"
-}
-_G.pg.base.gametip.tolovegame_buff_desc_2 = {
-	tip = "游戏结算时最终得分*1.2倍。"
-}
-_G.pg.base.gametip.tolovegame_buff_desc_3 = {
-	tip = "游戏开始时计时延长10秒。"
-}
-_G.pg.base.gametip.tolovegame_buff_desc_4 = {
-	tip = "游戏开始时携带1层护盾，局内每成功躲避5次额外获得1层护盾，最多累积2层护盾，每层护盾可抵挡一次爆炸。"
-}
-_G.pg.base.gametip.tolovegame_buff_desc_5 = {
-	tip = "游戏结算时最终得分*1.2倍。在游戏中每经过5轮分数倍率额外增加+0.01。"
-}
-_G.pg.base.gametip.tolovegame_buff_desc_6 = {
-	tip = "游戏开始时计时延长10秒。每次倒计时归零时有50%概率再延长10秒。"
-}
-_G.pg.base.gametip.tolovegame_buff_desc_7 = {
-	tip = "游戏开始时携带1层护盾，游戏计时延长10秒，结算时最终得分*1.2倍。"
-}
-_G.pg.base.gametip.tolovegame_join_reward = {
-	tip = "参与奖励"
-}
-_G.pg.base.gametip.tolovegame_score = {
-	tip = "得分"
-}
-_G.pg.base.gametip.tolovegame_rank_tip = {
-	tip = "仅显示好友与大舰队成员 "
-}
-_G.pg.base.gametip.tolovegame_lock_1 = {
-	tip = "$1天$2小时后解锁 "
-}
-_G.pg.base.gametip.tolovegame_lock_2 = {
-	tip = "$1小时后解锁 "
-}
-_G.pg.base.gametip.tolovegame_buff_switch_1 = {
-	tip = "启用修正 "
-}
-_G.pg.base.gametip.tolovegame_buff_switch_2 = {
-	tip = "停止修正"
-}
-_G.pg.base.gametip.tolovegame_proceed = {
-	tip = "前往"
-}
-_G.pg.base.gametip.tolovegame_collect = {
-	tip = "领取"
-}
-_G.pg.base.gametip.tolovegame_collected = {
-	tip = "已领取"
-}
-_G.pg.base.gametip.tolovegame_tutorial = {
-	tip = {
-		{
-			info = "异世界的王女为指挥官专门制作的特训装置！\n"
-		},
-		{
-			info = "1. 游戏开始后，指挥官需要记下角色上方依次出现的方向箭头；"
-		},
-		{
-			info = "2. 箭头不久之后就会消失，爆炸即将开始！不过好在只要按照刚刚记下的顺序依次按下方向键即可躲避炸弹；"
-		},
-		{
-			info = "3. 躲避的轮次越高，可获得越高分数；"
-		},
-		{
-			info = "4. 充分利用「特训修正」中的强化效果，在有限的时间内取得高分吧！ "
-		}
-	}
-}
-_G.pg.base.gametip.tolovegame_awards = {
-	tip = "参与奖励"
-}
-_G.pg.base.gametip.tolovemainpage_skin_countdown = {
-	tip = "剩余$1小时"
-}
-_G.pg.base.gametip.tolovemainpage_build_countdown = {
-	tip = "即将结束"
-}
-_G.pg.base.gametip.tolovegame_puzzle_title = {
-	tip = "订单需求确认"
-}
-_G.pg.base.gametip.tolovegame_puzzle_ship_need = {
-	tip = "$1的需求"
-}
-_G.pg.base.gametip.tolovegame_puzzle_task_need = {
-	tip = "所需素材："
-}
-_G.pg.base.gametip.tolovegame_puzzle_detail_collect = {
-	tip = "前往收集"
-}
-_G.pg.base.gametip.tolovegame_puzzle_detail_puzzle = {
-	tip = "拼接元器件"
-}
-_G.pg.base.gametip.tolovegame_puzzle_detail_connection = {
-	tip = "绘制电路"
-}
-_G.pg.base.gametip.tolovegame_puzzle_ship_unknown = {
-	tip = "???"
-}
-_G.pg.base.gametip.tolovegame_puzzle_lock_by_front = {
-	tip = "需要完成前置订单"
-}
-_G.pg.base.gametip.tolovegame_puzzle_lock_by_time = {
-	tip = "$1天$2小时后解锁"
-}
-_G.pg.base.gametip.tolovegame_puzzle_cheat = {
-	tip = "这个轻松，就交给我吧！"
-}
-_G.pg.base.gametip.tolovegame_puzzle_open_detail = {
-	tip = "查看订单"
-}
-_G.pg.base.gametip.tolove_main_help = {
-	tip = {
-		{
-			info = "活动简介："
-		},
-		{
-			info = "<color=#92fc63>11.21~12.05 维护前</color>开启限时活动「危险发明迫近中！」"
-		},
-		{
-			info = "<color=#7D7D7D>纪念章奖励领取、作战收获累计奖励领取、活动商店奖励兑换时间将延长至12.11 24时</color>\n"
-		},
-		{
-			info = "<color=#FCD400>出击</color>\n通过特别作战获取「能量石」，在「作战收获累计中！」和「补给商店」处兑换丰厚奖励。\n"
-		},
-		{
-			info = "<color=#FCD400>「帮帮我吧，菈菈小姐！」</color>\n活动期间通过作战获得「能量晶屑」，在「帮帮我吧，菈菈小姐！」玩法中开启港区角色的发明委托订单，完成元器件拼接和电路绘制后可领取「嘻嘻加班君」等限定设备。\n"
-		},
-		{
-			info = "<color=#FCD400>「滴滴特训君」</color>\n活动期间完成7日小游戏，可获得「王女的画作」等限定家具奖励；完成特训任务更可获得额外奖励。\n"
-		},
-		{
-			info = "<color=#FCD400>「纪念章」</color>\n活动期间限定活动任务可获得「数据芯片」，集齐「数据芯片」可在「纪念章」弹窗内兑换活动纪念家具「戴比路克风纪念章」。\n"
-		}
-	}
-}
-_G.pg.base.gametip.tolovegame_puzzle_finished = {
-	tip = "已完成"
-}
-_G.pg.base.gametip.tolovegame_puzzle_title_desc = {
-	tip = "订单需求确认"
-}
-_G.pg.base.gametip.tolovegame_puzzle_pop_next = {
-	tip = "下 一 步"
-}
-_G.pg.base.gametip.tolovegame_puzzle_pop_finish = {
-	tip = "完 成"
-}
-_G.pg.base.gametip.tolovegame_puzzle_pop_save = {
-	tip = "发明进度已记录"
-}
-_G.pg.base.gametip.tolovegame_puzzle_unlock = {
-	tip = "委托订单 "
-}
-_G.pg.base.gametip.tolovegame_puzzle_lock = {
-	tip = "神秘订单"
-}
-_G.pg.base.gametip.tolovegame_puzzle_line_tip = {
-	tip = "绘制电路需要一笔连通所有元器件哦"
-}
-_G.pg.base.gametip.tolovegame_puzzle_puzzle_tip = {
-	tip = "所有元器件都需要放在点位上哦"
-}
-_G.pg.base.gametip.maintenance_message_text = {
-	tip = "服务器将于$1后进行维护，届时将强制下线，请指挥官合理安排游戏规划。"
-}
-_G.pg.base.gametip.maintenance_message_stop_text = {
-	tip = "服务器正在关闭中"
-}
-_G.pg.base.gametip.task_get = {
-	tip = "领取"
-}
-_G.pg.base.gametip.notify_clock_tip = {
-	tip = "未开启闹钟权限，无法进行通知"
-}
-_G.pg.base.gametip.notify_clock_button = {
-	tip = "开启闹钟权限"
-}
-_G.pg.base.gametip.item_assigned_type_limit_error = {
-	tip = "该道具已经达到持有上限，无法兑换"
-}
-_G.pg.base.gametip.ship_task_lottery_title = {
-	tip = "星海逐光活动期间累计通关「星海逐光」关卡，可获取<color=#66b9ff>单次建造券</color>奖励"
-}
-_G.pg.base.gametip.blackfriday_gift = {
-	tip = "促销礼包"
-}
-_G.pg.base.gametip.blackfriday_shop = {
-	tip = "特设商店"
-}
-_G.pg.base.gametip.blackfriday_task = {
-	tip = "限时任务"
-}
-_G.pg.base.gametip.blackfriday_coinshop = {
-	tip = "物资商店"
-}
-_G.pg.base.gametip.blackfriday_dailypack = {
-	tip = "每日礼包"
-}
-_G.pg.base.gametip.blackfriday_gemshop = {
-	tip = "钻石商店"
-}
-_G.pg.base.gametip.blackfriday_ptshop = {
-	tip = "PT商店"
-}
-_G.pg.base.gametip.blackfriday_specialpack = {
-	tip = "特惠礼包"
-}
-_G.pg.base.gametip.battle_text_lumei_1 = {
-	tip = "「还愣着干嘛，跟紧我！」"
-}
-_G.pg.base.gametip.dorm3d_furniture_lack = {
-	tip = "[未拥有]"
-}
-_G.pg.base.gametip.dorm3d_purchase_label_special = {
-	tip = "特典"
-}
-_G.pg.base.gametip.dorm3d_purchase_outtime = {
-	tip = "该家具已下架"
-}
-_G.pg.base.gametip.dorm3d_collect_block_by_furniture = {
-	tip = "该物品被家具”$1“替换，暂时无法收集"
-}
-_G.pg.base.gametip.skin_discount_item_tran_tip = {
-	tip = "指挥官不在的时间里，有以下道具已经过期并转换"
-}
-_G.pg.base.gametip.skin_discount_item_expired_tip = {
-	tip = "以下道具的有效期不足24小时"
-}
-_G.pg.base.gametip.skin_discount_item_repeat_remind_label = {
-	tip = "今日不再提示"
-}
-_G.pg.base.gametip.skin_discount_item_return_tip = {
-	tip = "换装抵扣券可返还为300钻石"
-}
-_G.pg.base.gametip.skin_discount_item_extra_bounds = {
-	tip = "额外赠送："
-}
-_G.pg.base.gametip.recycle_btn_label = {
-	tip = "转化为钻石"
-}
-_G.pg.base.gametip.go_skinshop_btn_label = {
-	tip = "前往使用"
-}
-_G.pg.base.gametip.skin_shop_nonuse_label = {
-	tip = "不使用优惠"
-}
-_G.pg.base.gametip.skin_shop_use_label = {
-	tip = "使用优惠"
-}
-_G.pg.base.gametip.skin_shop_discount_item_link = {
-	tip = "<color=#92fc63>抵扣券</color><color=#ffea00>-$1</color>"
-}
-_G.pg.base.gametip.go_skinexperienceshop_btn_label = {
-	tip = "前往"
-}
-_G.pg.base.gametip.skin_discount_item_notice = {
-	tip = {
-		{
-			info = "说明："
-		},
-		{
-			info = "1.当仓库内有特定换装的换装体验券、换装抵扣券的有效期不足24小时时，会弹出道具即将超时的预告弹窗。"
-		},
-		{
-			info = "2.特定换装的换装体验券过期后将消失，特定换装的换装抵扣券过期后将兑换为指定数量的钻石。"
-		},
-		{
-			info = "3.各道具实际过期时间与详情请在道具描述中确认。"
-		}
-	}
-}
-_G.pg.base.gametip.skin_discount_item_recycle_tip = {
-	tip = "抵扣券可转化为钻石，\n是否消耗<color=#92fc63>$1*1</color>兑换为<color=#92fc63>钻石*$2</color>"
-}
-_G.pg.base.gametip.help_starLightAlbum = {
-	tip = {
-		{
-			info = "纪念手册："
-		},
-		{
-			info = [[
-1. 回忆页面内新增「纪念手册」系统入口。
-2. 活动期间，指挥官可通过完成活动任务收集对应<color=#92fc63>「纪念贴纸」</color>兑换获得活动纪念章家具和活动勋章。
- ※ 活动进行时，指挥官可在<color=#92fc63>活动页面或回忆界面</color>通过指定入口进入「纪念贴纸」收集页面；
- ※ 活动结束后指挥官将只能通过<color=#92fc63>回忆界面</color>指定入口进入「纪念贴纸」收集页面；
- ※ 「纪念贴纸」可以通过完成对应活动任务获取；
- ※ 奖励领取界面将延长至3月19日24时；]]
-		}
-	}
-}
-_G.pg.base.gametip.word_gain_date = {
-	tip = "获取时间："
-}
-_G.pg.base.gametip.word_limited_activity = {
-	tip = "限时活动"
-}
-_G.pg.base.gametip.word_show_expire_content = {
-	tip = "查看已无法获取的内容"
-}
-_G.pg.base.gametip.dorm3d_accompany_not_download = {
-	tip = "请先下载$1相关资源"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_day1 = {
-	tip = "周一"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_day2 = {
-	tip = "周二"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_day3 = {
-	tip = "周三"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_day4 = {
-	tip = "周四"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_day5 = {
-	tip = "周五"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_day6 = {
-	tip = "周六"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_day7 = {
-	tip = "周日"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_remember = {
-	tip = "请记住角色今日的行程 "
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_choose = {
-	tip = "请选择角色今日的行程： "
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior1 = {
-	tip = "阅读"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior2 = {
-	tip = "画画 "
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior3 = {
-	tip = "学习 "
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior4 = {
-	tip = "舞蹈 "
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior5 = {
-	tip = "排球 "
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior6 = {
-	tip = "跑步 "
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior7 = {
-	tip = "打扫"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior8 = {
-	tip = "做饭"
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior9 = {
-	tip = "洗衣服 "
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior10 = {
-	tip = "游戏 "
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior11 = {
-	tip = "散步 "
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior12 = {
-	tip = "睡觉 "
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate1 = {
-	tip = "达人 "
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate2 = {
-	tip = "超人 "
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate3 = {
-	tip = "热爱 "
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate4 = {
-	tip = "痴迷 "
-}
-_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate5 = {
-	tip = "均衡发展 "
-}
-_G.pg.base.gametip.word_got_pt = {
-	tip = "已获得"
-}
-_G.pg.base.gametip.word_activity_not_open = {
-	tip = "活动未开启"
-}
-_G.pg.base.gametip.activity_shop_template_normaltext = {
-	tip = "活動常規道具兌換 "
-}
-_G.pg.base.gametip.activity_shop_template_extratext = {
-	tip = "活動追趕道具兌換 "
-}
-_G.pg.base.gametip.dorm3d_now_is_downloading = {
-	tip = "资源下载中"
-}
-_G.pg.base.gametip.dorm3d_resource_download_complete = {
-	tip = "下载完成"
-}
-_G.pg.base.gametip.dorm3d_delete_finish = {
-	tip = "删除成功"
-}
-_G.pg.base.gametip.dorm3d_guide_tip = {
-	tip = "先去天狼星的房间看看吧"
-}
-_G.pg.base.gametip.dorm3d_noshiro_table = {
-	tip = "餐厅"
-}
-_G.pg.base.gametip.dorm3d_noshiro_chair = {
-	tip = "客厅"
-}
-_G.pg.base.gametip.dorm3d_noshiro_bed = {
-	tip = "卧室"
-}
-_G.pg.base.gametip.dorm3d_guide_beach_tip = {
-	tip = "请先下载相应角色资源 "
-}
-_G.pg.base.gametip.ship_remould_warning_506124 = {
-	tip = "此次改造操作后<color=#92fc63>【第一武器栏位可以装备战斗机】【第二武器栏位可装备任意类型舰载机】</color>、<color=#92fc63>【第一武器栏位、第二武器栏位位武器效率+10%】</color>\n是否确认继续操作？"
-}
-_G.pg.base.gametip.ship_remould_warning_520024 = {
-	tip = [[
-此次改造操作后舰艇类型变化为：
-导弹驱逐舰（先锋舰队模式）
-舰船数值及特性将有部分调整
-是否确认继续操作？]]
-}
-_G.pg.base.gametip.ship_remould_warning_521024 = {
-	tip = [[
-此次改造操作后舰艇类型变化为：
-导弹驱逐舰（主力舰队模式）
-舰船数值及特性将有部分调整
-是否确认继续操作？]]
-}
-_G.pg.base.gametip.tec_catchup_6 = {
-	tip = "六期"
-}
-_G.pg.base.gametip.dorm3d_gift_favor_max = {
-	tip = "契合度已经到达上限，送礼将不会获得契合度，是否确认赠送？"
-}
-_G.pg.base.gametip.please_input_1_99 = {
-	tip = "请输入1~99"
-}
-_G.pg.base.gametip.battlepass_main_tip_2502 = {
-	tip = "2025/2/1-2025/3/31期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「博尔扎诺·META」</color>在内的丰富奖励"
-}
-_G.pg.base.gametip.battlepass_main_help_2502 = {
-	tip = {
-		{
-			info = [[
-世界巡游(2025.2.1-2025.3.31)
-
-·<color=#92fc63>开放时间</color>
- 2025.2.1 0点 ~ 2025.3.31 23:59:59
-
-·<color=#92fc63>巡游进度说明</color>
-（1）活动期间，指挥官通过完成巡游任务，可获取「巡游点数」。
-（2）巡游任务随时间开放解锁。
-（3）每获取100点「巡游点数」即可增加1巡游进度
-（4）巡游进度提升后可以获取相应等级的奖励，巡游进度最高可达100。
-
-·<color=#92fc63>奖励规则</color>
-巡游进度奖励分为两种：
-（1）基础巡游奖励：包含<color=#ff5c5c>「博尔扎诺·META」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·七期</color>售卖(即3.31 22:59:59停止)，请指挥官注意购买时间。
-
-·<color=#92fc63>任务说明</color>
-巡游任务分为两种：
-（1）每周任务 
- 巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务
-（2）S.P.任务
- S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
-（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励。
-
-·<color=#92fc63>「巡游任务快速完成券」说明</color>
-（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成大部分巡游任务
-（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
-（3）每个巡游任务需要消耗的完成券数量固定，与当前任务进度无关
-（4）「巡游任务快速完成券」不会随本期活动结束而消失
-
-·<color=#ff5c5c>特别提示</color>
-（1）在本期世界巡游活动结束后，所有巡游任务将会无法继续完成，所有巡游奖励将会无法继续领取，请各位指挥官务必注意活动结束时间，提前领取奖励。
-（2）巡游进度、[特许巡游凭证]仅对本期世界巡游活动生效]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_task_help_2502 = {
-	tip = {
-		{
-			info = [[
-巡游任务说明
-
-·<color=#92fc63>开放时间</color>
- 2025.2.1 0点 ~ 2025.5.31 23:59:59
-
-·<color=#92fc63>巡游任务分为两种</color>
-（1）每周任务
- 巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务。
-（2）S.P.任务
- S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。
-（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励
-
-·<color=#92fc63>「巡游任务快速完成券」说明</color>
-（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成每周巡游任务
-（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐
-（3）每个巡游任务需要消耗的「巡游任务快速完成券」数量和其提供的「巡游点数」相关，与当前任务进度无关
-（4）「巡游任务快速完成券」<color=#92fc63>不会随本期活动结束而消失</color>]]
-		}
-	}
-}
-_G.pg.base.gametip.cruise_title_2502 = {
-	tip = "世界巡游·二十一期"
 }
 _G.pg.base.gametip.child2_cur_round = {
 	tip = "第$1回合"
@@ -26011,120 +25508,619 @@ _G.pg.base.gametip.child2_shop_benefit_sure = {
 _G.pg.base.gametip.child2_shop_benefit_sure2 = {
 	tip = "目前已持有此状态，继续购买不会产生效果，是否继续？"
 }
+_G.pg.base.gametip.world_file_tip = {
+	tip = "※上下滑动查看，点击空白处关闭"
+}
+_G.pg.base.gametip.levelscene_mapselect_part1 = {
+	tip = "上篇"
+}
+_G.pg.base.gametip.levelscene_mapselect_part2 = {
+	tip = "下篇"
+}
+_G.pg.base.gametip.levelscene_mapselect_sp = {
+	tip = "SP"
+}
+_G.pg.base.gametip.levelscene_mapselect_ex = {
+	tip = "EX"
+}
+_G.pg.base.gametip.levelscene_mapselect_normal = {
+	tip = "常规"
+}
+_G.pg.base.gametip.levelscene_mapselect_advanced = {
+	tip = "进阶"
+}
+_G.pg.base.gametip.juuschat_filter_title = {
+	tip = "筛选"
+}
+_G.pg.base.gametip.juuschat_filter_tip1 = {
+	tip = "全部"
+}
+_G.pg.base.gametip.juuschat_filter_tip2 = {
+	tip = "已回复"
+}
+_G.pg.base.gametip.juuschat_filter_tip3 = {
+	tip = "未回复"
+}
+_G.pg.base.gametip.juuschat_filter_tip4 = {
+	tip = "私人聊天"
+}
+_G.pg.base.gametip.juuschat_filter_tip5 = {
+	tip = "频道聊天"
+}
+_G.pg.base.gametip.juuschat_label1 = {
+	tip = "使用中"
+}
+_G.pg.base.gametip.juuschat_label2 = {
+	tip = "查看中"
+}
+_G.pg.base.gametip.juuschat_chattip1 = {
+	tip = "[语音消息]"
+}
+_G.pg.base.gametip.juuschat_chattip2 = {
+	tip = "[红包]"
+}
+_G.pg.base.gametip.juuschat_chattip3 = {
+	tip = "[等待回复]"
+}
+_G.pg.base.gametip.juuschat_reddot_title = {
+	tip = "啾信功能"
+}
+_G.pg.base.gametip.juuschat_filter_subtitle1 = {
+	tip = "查看"
+}
+_G.pg.base.gametip.juuschat_filter_subtitle2 = {
+	tip = "类型"
+}
+_G.pg.base.gametip.juuschat_filter_subtitle3 = {
+	tip = "阵营"
+}
 _G.pg.base.gametip.juuschat_redpacket_show_detail = {
 	tip = "查看领取详情"
 }
-_G.pg.base.gametip.child2_empty_plan = {
-	tip = "暂无行程"
+_G.pg.base.gametip.juuschat_redpacket_detail = {
+	tip = "领取详情"
 }
-_G.pg.base.gametip.child2_replay_tip = {
-	tip = "检测到游戏中断，请确认是否继续？（如果出现卡死情况可选择取消）"
+_G.pg.base.gametip.juuschat_filter_empty = {
+	tip = "筛选结果为空"
 }
-_G.pg.base.gametip.child2_replay_clear = {
-	tip = "取消"
+_G.pg.base.gametip.dorm3d_appellation_title = {
+	tip = "你希望她称呼你为"
 }
-_G.pg.base.gametip.child2_replay_continue = {
-	tip = "继续"
+_G.pg.base.gametip.dorm3d_appellation_cd = {
+	tip = "$1后可以再次修改专属称呼"
 }
-_G.pg.base.gametip.firework_2025_level = {
-	tip = "$1级"
+_G.pg.base.gametip.dorm3d_appellation_interval = {
+	tip = "专属称呼每48小时可以修改一次"
 }
-_G.pg.base.gametip.firework_2025_pt = {
-	tip = "氛围值："
+_G.pg.base.gametip.dorm3d_appellation_waring1 = {
+	tip = "当前称呼存在屏蔽字"
 }
-_G.pg.base.gametip.firework_2025_get = {
-	tip = "可领取"
+_G.pg.base.gametip.dorm3d_appellation_waring2 = {
+	tip = "当前称呼过长"
 }
-_G.pg.base.gametip.firework_2025_got = {
+_G.pg.base.gametip.dorm3d_appellation_waring3 = {
+	tip = "当前称呼过短"
+}
+_G.pg.base.gametip.dorm3d_appellation_waring4 = {
+	tip = "修改冷却中"
+}
+_G.pg.base.gametip.dorm3d_shop_gift_owned = {
+	tip = "购买次数已达上限"
+}
+_G.pg.base.gametip.dorm3d_accompany_not_download = {
+	tip = "请先下载$1相关资源"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day1 = {
+	tip = "周一"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day2 = {
+	tip = "周二"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day3 = {
+	tip = "周三"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day4 = {
+	tip = "周四"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day5 = {
+	tip = "周五"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day6 = {
+	tip = "周六"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_day7 = {
+	tip = "周日"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_remember = {
+	tip = "请记住角色今日的行程 "
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_choose = {
+	tip = "请选择角色今日的行程： "
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior1 = {
+	tip = "阅读"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior2 = {
+	tip = "画画 "
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior3 = {
+	tip = "学习 "
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior4 = {
+	tip = "舞蹈 "
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior5 = {
+	tip = "排球 "
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior6 = {
+	tip = "跑步 "
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior7 = {
+	tip = "打扫"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior8 = {
+	tip = "做饭"
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior9 = {
+	tip = "洗衣服 "
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior10 = {
+	tip = "游戏 "
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior11 = {
+	tip = "散步 "
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_behavior12 = {
+	tip = "睡觉 "
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate1 = {
+	tip = "达人 "
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate2 = {
+	tip = "超人 "
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate3 = {
+	tip = "热爱 "
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate4 = {
+	tip = "痴迷 "
+}
+_G.pg.base.gametip.dorm3d_nengdai_minigame_evaluate5 = {
+	tip = "均衡发展 "
+}
+_G.pg.base.gametip.BoatAdGame_minigame_help = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/boatadgame_minigame_help",
+				path = ""
+			}
+		},
+		disableScroll = true,
+		pageMode = true,
+		ImageMode = true,
+		defaultpage = 1,
+		windowSize = {
+			x = 1263,
+			y = 873
+		},
+		windowPos = {
+			y = -70
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024
+		}
+	}
+}
+_G.pg.base.gametip.activity_1024_memory = {
+	tip = "道具数量不足，完成活动任务可获取「鬼怪故事页」"
+}
+_G.pg.base.gametip.activity_1024_memory_get = {
+	tip = " - 已领取 -"
+}
+_G.pg.base.gametip.juuschat_background_tip1 = {
+	tip = "未拥有"
+}
+_G.pg.base.gametip.juuschat_background_tip2 = {
+	tip = "暂未拥有此换装"
+}
+_G.pg.base.gametip.airforce_title_1 = {
+	tip = "航电系统"
+}
+_G.pg.base.gametip.airforce_title_2 = {
+	tip = "相控阵雷达"
+}
+_G.pg.base.gametip.airforce_title_3 = {
+	tip = "涡轮发动机"
+}
+_G.pg.base.gametip.airforce_title_4 = {
+	tip = "无附面层隔板进气道"
+}
+_G.pg.base.gametip.airforce_title_5 = {
+	tip = "吸波隐身涂层"
+}
+_G.pg.base.gametip.airforce_desc_1 = {
+	tip = "航电系统是现代作战飞机中最为关键的系统之一，它涵盖了探测系统、火力控制系统、飞行控制系统、推力控制系统、电子战系统、通信系统、导航系统、座舱显示系统、自检系统等。"
+}
+_G.pg.base.gametip.airforce_desc_2 = {
+	tip = "歼-20战斗机搭载的相控阵雷达系统代表了当今航空电子技术的顶尖水平，采用了氮化镓有源相控阵雷达技术，有探测距离远、散热性能优越、多功能性强等诸多优点。"
+}
+_G.pg.base.gametip.airforce_desc_3 = {
+	tip = "涡扇15“峨眉” 涡扇发动机，是为我国第五代战斗机研制的小涵道比推力矢量涡扇发动机"
+}
+_G.pg.base.gametip.airforce_desc_4 = {
+	tip = "无附面层隔板进气道，全称无附面层隔道超音速进气道，它采用一个固定的鼓包来模拟常规进气道中的一、二级可调斜板，并能够达到对气流的压缩，以及简化结构、隐形的目的。"
+}
+_G.pg.base.gametip.airforce_desc_5 = {
+	tip = "歼-20机身表面使用了一种低观测反射的涂料材质，表面采用了类似微型山峰的设计，能够反弹并散射掉雷达信号，使得敌方雷达难以发现并锁定目标。"
+}
+_G.pg.base.gametip.fighterplane_J20_tip = {
+	tip = "歼20由航空工业集团研制，是一款具备高隐身性、高态势感知、高机动性等能力的战斗机。 歼20于1997年正式立项，经过工程技术人员的奋发努力和国家的大力支持，首架技术工程验证机于2009年制造成功，并于2011年1月11日在成都实现首飞。歼20采用了单座、双发、全动双垂尾、DSI进气道、上反鸭翼带尖拱边条的鸭式气动布局。头部、机身呈菱形，垂直尾翼向外倾斜。"
+}
+_G.pg.base.gametip.drom3d_memory_limit_tip = {
+	tip = "当前机型内存小于推荐配置，可能存在闪退风险。"
+}
+_G.pg.base.gametip.drom3d_beach_memory_limit_tip = {
+	tip = "检测到手机性能不足，同时邀请3名角色可能会出现游戏崩溃，是否确定邀请？"
+}
+_G.pg.base.gametip.blackfriday_main_tip = {
+	tip = {
+		{
+			info = [[
+活动规则：
+·<color=#92fc63>12.12-12.19 维护</color>期间开启限时活动「茗的促销活动」
+·限时任务
+完成任务获得促销PT
+·特设商店
+使用促销PT在特设商店中兑换奖励
+·促销礼包
+截止12.18 0点为止，每日解锁一组免费礼包与付费礼包]]
+		}
+	}
+}
+_G.pg.base.gametip.blackfriday_shop_tip = {
+	tip = "$1日$2时解锁"
+}
+_G.pg.base.gametip.tolovegame_buff_name_1 = {
+	tip = "护盾up！"
+}
+_G.pg.base.gametip.tolovegame_buff_name_2 = {
+	tip = "得分up！"
+}
+_G.pg.base.gametip.tolovegame_buff_name_3 = {
+	tip = "时限 up！"
+}
+_G.pg.base.gametip.tolovegame_buff_name_4 = {
+	tip = "护盾超级upup！"
+}
+_G.pg.base.gametip.tolovegame_buff_name_5 = {
+	tip = "得分超级upup！"
+}
+_G.pg.base.gametip.tolovegame_buff_name_6 = {
+	tip = "时限超级upup！"
+}
+_G.pg.base.gametip.tolovegame_buff_name_7 = {
+	tip = "全能upup！"
+}
+_G.pg.base.gametip.tolovegame_buff_desc_1 = {
+	tip = "游戏开始时携带1层护盾，每层护盾可抵挡一次爆炸。"
+}
+_G.pg.base.gametip.tolovegame_buff_desc_2 = {
+	tip = "游戏结算时最终得分*1.2倍。"
+}
+_G.pg.base.gametip.tolovegame_buff_desc_3 = {
+	tip = "游戏开始时计时延长10秒。"
+}
+_G.pg.base.gametip.tolovegame_buff_desc_4 = {
+	tip = "游戏开始时携带1层护盾，局内每成功躲避5次额外获得1层护盾，最多累积2层护盾，每层护盾可抵挡一次爆炸。"
+}
+_G.pg.base.gametip.tolovegame_buff_desc_5 = {
+	tip = "游戏结算时最终得分*1.2倍。在游戏中每经过5轮分数倍率额外增加+0.01。"
+}
+_G.pg.base.gametip.tolovegame_buff_desc_6 = {
+	tip = "游戏开始时计时延长10秒。每次倒计时归零时有50%概率再延长10秒。"
+}
+_G.pg.base.gametip.tolovegame_buff_desc_7 = {
+	tip = "游戏开始时携带1层护盾，游戏计时延长10秒，结算时最终得分*1.2倍。"
+}
+_G.pg.base.gametip.tolovegame_join_reward = {
+	tip = "参与奖励"
+}
+_G.pg.base.gametip.tolovegame_score = {
+	tip = "得分"
+}
+_G.pg.base.gametip.tolovegame_rank_tip = {
+	tip = "仅显示好友与大舰队成员 "
+}
+_G.pg.base.gametip.tolovegame_lock_1 = {
+	tip = "$1天$2小时后解锁 "
+}
+_G.pg.base.gametip.tolovegame_lock_2 = {
+	tip = "$1小时后解锁 "
+}
+_G.pg.base.gametip.tolovegame_buff_switch_1 = {
+	tip = "启用修正 "
+}
+_G.pg.base.gametip.tolovegame_buff_switch_2 = {
+	tip = "停止修正"
+}
+_G.pg.base.gametip.tolovegame_proceed = {
+	tip = "前往"
+}
+_G.pg.base.gametip.tolovegame_collect = {
+	tip = "领取"
+}
+_G.pg.base.gametip.tolovegame_collected = {
 	tip = "已领取"
 }
-_G.pg.base.gametip.firework_2025_tip1 = {
-	tip = "完成关卡有概率掉落烟花"
+_G.pg.base.gametip.tolovegame_tutorial = {
+	tip = {
+		{
+			info = "异世界的王女为指挥官专门制作的特训装置！\n"
+		},
+		{
+			info = "1. 游戏开始后，指挥官需要记下角色上方依次出现的方向箭头；"
+		},
+		{
+			info = "2. 箭头不久之后就会消失，爆炸即将开始！不过好在只要按照刚刚记下的顺序依次按下方向键即可躲避炸弹；"
+		},
+		{
+			info = "3. 躲避的轮次越高，可获得越高分数；"
+		},
+		{
+			info = "4. 充分利用「特训修正」中的强化效果，在有限的时间内取得高分吧！ "
+		}
+	}
 }
-_G.pg.base.gametip.firework_2025_tip2 = {
-	tip = "当前心情恢复速度:"
+_G.pg.base.gametip.tolovegame_awards = {
+	tip = "参与奖励"
 }
-_G.pg.base.gametip.firework_2025_unlock_tip1 = {
-	tip = "氛围值达到"
+_G.pg.base.gametip.tolovemainpage_skin_countdown = {
+	tip = "剩余$1小时"
 }
-_G.pg.base.gametip.firework_2025_unlock_tip2 = {
-	tip = "$1点"
+_G.pg.base.gametip.tolovemainpage_build_countdown = {
+	tip = "即将结束"
 }
-_G.pg.base.gametip.firework_2025_tip = {
+_G.pg.base.gametip.tolovegame_puzzle_title = {
+	tip = "订单需求确认"
+}
+_G.pg.base.gametip.tolovegame_puzzle_ship_need = {
+	tip = "$1的需求"
+}
+_G.pg.base.gametip.tolovegame_puzzle_task_need = {
+	tip = "所需素材："
+}
+_G.pg.base.gametip.tolovegame_puzzle_detail_collect = {
+	tip = "前往收集"
+}
+_G.pg.base.gametip.tolovegame_puzzle_detail_puzzle = {
+	tip = "拼接元器件"
+}
+_G.pg.base.gametip.tolovegame_puzzle_detail_connection = {
+	tip = "绘制电路"
+}
+_G.pg.base.gametip.tolovegame_puzzle_ship_unknown = {
+	tip = "???"
+}
+_G.pg.base.gametip.tolovegame_puzzle_lock_by_front = {
+	tip = "需要完成前置订单"
+}
+_G.pg.base.gametip.tolovegame_puzzle_lock_by_time = {
+	tip = "$1天$2小时后解锁"
+}
+_G.pg.base.gametip.tolovegame_puzzle_cheat = {
+	tip = "这个轻松，就交给我吧！"
+}
+_G.pg.base.gametip.tolovegame_puzzle_open_detail = {
+	tip = "查看订单"
+}
+_G.pg.base.gametip.tolove_main_help = {
+	tip = {
+		{
+			info = "活动简介："
+		},
+		{
+			info = "<color=#92fc63>11.21~12.05 维护前</color>开启限时活动「危险发明迫近中！」"
+		},
+		{
+			info = "<color=#7D7D7D>纪念章奖励领取、作战收获累计奖励领取、活动商店奖励兑换时间将延长至12.11 24时</color>\n"
+		},
+		{
+			info = "<color=#FCD400>出击</color>\n通过特别作战获取「能量石」，在「作战收获累计中！」和「补给商店」处兑换丰厚奖励。\n"
+		},
+		{
+			info = "<color=#FCD400>「帮帮我吧，菈菈小姐！」</color>\n活动期间通过作战获得「能量晶屑」，在「帮帮我吧，菈菈小姐！」玩法中开启港区角色的发明委托订单，完成元器件拼接和电路绘制后可领取「嘻嘻加班君」等限定设备。\n"
+		},
+		{
+			info = "<color=#FCD400>「滴滴特训君」</color>\n活动期间完成7日小游戏，可获得「王女的画作」等限定家具奖励；完成特训任务更可获得额外奖励。\n"
+		},
+		{
+			info = "<color=#FCD400>「纪念章」</color>\n活动期间限定活动任务可获得「数据芯片」，集齐「数据芯片」可在「纪念章」弹窗内兑换活动纪念家具「戴比路克风纪念章」。\n"
+		}
+	}
+}
+_G.pg.base.gametip.tolovegame_puzzle_finished = {
+	tip = "已完成"
+}
+_G.pg.base.gametip.tolovegame_puzzle_title_desc = {
+	tip = "订单需求确认"
+}
+_G.pg.base.gametip.tolovegame_puzzle_pop_next = {
+	tip = "下 一 步"
+}
+_G.pg.base.gametip.tolovegame_puzzle_pop_finish = {
+	tip = "完 成"
+}
+_G.pg.base.gametip.tolovegame_puzzle_pop_save = {
+	tip = "发明进度已记录"
+}
+_G.pg.base.gametip.tolovegame_puzzle_unlock = {
+	tip = "委托订单 "
+}
+_G.pg.base.gametip.tolovegame_puzzle_lock = {
+	tip = "神秘订单"
+}
+_G.pg.base.gametip.tolovegame_puzzle_line_tip = {
+	tip = "绘制电路需要一笔连通所有元器件哦"
+}
+_G.pg.base.gametip.tolovegame_puzzle_puzzle_tip = {
+	tip = "所有元器件都需要放在点位上哦"
+}
+_G.pg.base.gametip.maintenance_message_text = {
+	tip = "服务器将于$1后进行维护，届时将强制下线，请指挥官合理安排游戏规划。"
+}
+_G.pg.base.gametip.maintenance_message_stop_text = {
+	tip = "服务器正在关闭中"
+}
+_G.pg.base.gametip.task_get = {
+	tip = "领取"
+}
+_G.pg.base.gametip.notify_clock_tip = {
+	tip = "未开启闹钟权限，无法进行通知"
+}
+_G.pg.base.gametip.notify_clock_button = {
+	tip = "开启闹钟权限"
+}
+_G.pg.base.gametip.ship_task_lottery_title = {
+	tip = "星海逐光活动期间累计通关「星海逐光」关卡，可获取<color=#66b9ff>单次建造券</color>奖励"
+}
+_G.pg.base.gametip.blackfriday_gift = {
+	tip = "促销礼包"
+}
+_G.pg.base.gametip.blackfriday_shop = {
+	tip = "特设商店"
+}
+_G.pg.base.gametip.blackfriday_task = {
+	tip = "限时任务"
+}
+_G.pg.base.gametip.blackfriday_coinshop = {
+	tip = "物资商店"
+}
+_G.pg.base.gametip.blackfriday_dailypack = {
+	tip = "每日礼包"
+}
+_G.pg.base.gametip.blackfriday_gemshop = {
+	tip = "钻石商店"
+}
+_G.pg.base.gametip.blackfriday_ptshop = {
+	tip = "PT商店"
+}
+_G.pg.base.gametip.blackfriday_specialpack = {
+	tip = "特惠礼包"
+}
+_G.pg.base.gametip.skin_discount_item_tran_tip = {
+	tip = "指挥官不在的时间里，有以下道具已经过期并转换"
+}
+_G.pg.base.gametip.skin_discount_item_expired_tip = {
+	tip = "以下道具的有效期不足24小时"
+}
+_G.pg.base.gametip.skin_discount_item_repeat_remind_label = {
+	tip = "今日不再提示"
+}
+_G.pg.base.gametip.skin_discount_item_return_tip = {
+	tip = "换装抵扣券可返还为300钻石"
+}
+_G.pg.base.gametip.skin_discount_item_extra_bounds = {
+	tip = "额外赠送："
+}
+_G.pg.base.gametip.recycle_btn_label = {
+	tip = "转化为钻石"
+}
+_G.pg.base.gametip.go_skinshop_btn_label = {
+	tip = "前往使用"
+}
+_G.pg.base.gametip.skin_shop_nonuse_label = {
+	tip = "不使用优惠"
+}
+_G.pg.base.gametip.skin_shop_use_label = {
+	tip = "使用优惠"
+}
+_G.pg.base.gametip.skin_shop_discount_item_link = {
+	tip = "<color=#92fc63>抵扣券</color><color=#ffea00>-$1</color>"
+}
+_G.pg.base.gametip.go_skinexperienceshop_btn_label = {
+	tip = "前往"
+}
+_G.pg.base.gametip.skin_discount_item_notice = {
 	tip = {
 		{
 			info = "说明："
 		},
 		{
-			info = "1.完成庆典任务可以获得「新春烟花会氛围值」，累计「新春烟花会氛围值」可获得限定装备外观「瑞蛇焰火盒」、「红包」等奖励。"
+			info = "1.当仓库内有特定换装的换装体验券、换装抵扣券的有效期不足24小时时，会弹出道具即将超时的预告弹窗。"
 		},
 		{
-			info = "2.通关主线普通海域·第3章及后续主线关卡、参与特别演习有概率掉落「新春烟花」，于庆典烟花界面解锁新春烟花可以获得「新春烟花会氛围值」与随机奖励。"
+			info = "2.特定换装的换装体验券过期后将消失，特定换装的换装抵扣券过期后将兑换为指定数量的钻石。"
 		},
 		{
-			info = "3.活动期间，指挥官可于「庆典广场」邀请角色，可提升对应角色的心情回复速度。「庆典广场」初始可邀请4位角色，通过累计「新春烟花会氛围值」可最多邀请10位角色。"
+			info = "3.各道具实际过期时间与详情请在道具描述中确认。"
 		}
 	}
 }
-_G.pg.base.gametip.secretary_special_character_unlock = {
-	tip = "参与此角色的<color=#39bfff>「养成计划」</color>后即可解锁"
+_G.pg.base.gametip.skin_discount_item_recycle_tip = {
+	tip = "抵扣券可转化为钻石，\n是否消耗<color=#92fc63>$1*1</color>兑换为<color=#92fc63>钻石*$2</color>"
 }
-_G.pg.base.gametip.secretary_special_character_buy_unlock = {
-	tip = "尚未获得此角色，参与此角色的<color=#39bfff>「养成计划」</color>后即可解锁"
+_G.pg.base.gametip.help_starLightAlbum = {
+	tip = {
+		{
+			info = "纪念手册："
+		},
+		{
+			info = [[
+1. 回忆页面内新增「纪念手册」系统入口。
+2. 活动期间，指挥官可通过完成活动任务收集对应<color=#92fc63>「纪念贴纸」</color>兑换获得活动纪念章家具和活动勋章。
+ ※ 活动进行时，指挥官可在<color=#92fc63>活动页面或回忆界面</color>通过指定入口进入「纪念贴纸」收集页面；
+ ※ 活动结束后指挥官将只能通过<color=#92fc63>回忆界面</color>指定入口进入「纪念贴纸」收集页面；
+ ※ 「纪念贴纸」可以通过完成对应活动任务获取；
+ ※ 奖励领取界面将延长至3月19日24时；]]
+		}
+	}
 }
-_G.pg.base.gametip.child2_mood_desc1 = {
-	tip = "当前心情阶段：郁郁寡欢  <color=#ee4a4a>收益减少40%%</color>"
+_G.pg.base.gametip.word_gain_date = {
+	tip = "获取时间："
 }
-_G.pg.base.gametip.child2_mood_desc2 = {
-	tip = "当前心情阶段：心情不佳  <color=#ff6767>收益减少20%%</color>"
+_G.pg.base.gametip.word_limited_activity = {
+	tip = "限时活动"
 }
-_G.pg.base.gametip.child2_mood_desc3 = {
-	tip = "当前心情阶段：心平气和  没有额外效果"
+_G.pg.base.gametip.word_show_expire_content = {
+	tip = "查看已无法获取的内容"
 }
-_G.pg.base.gametip.child2_mood_desc4 = {
-	tip = "当前心情阶段：心花怒放  <color=#00c79b>收益增加40%%</color>"
+_G.pg.base.gametip.word_got_pt = {
+	tip = "已获得"
 }
-_G.pg.base.gametip.child2_mood_desc5 = {
-	tip = "当前心情阶段：心花怒放  <color=#00c79b>收益增加40%%</color>"
+_G.pg.base.gametip.word_activity_not_open = {
+	tip = "活动未开启"
 }
-_G.pg.base.gametip.child2_schedule_target = {
-	tip = "总属性需求："
+_G.pg.base.gametip.activity_shop_template_normaltext = {
+	tip = "活動常規道具兌換 "
 }
-_G.pg.base.gametip.child2_shop_point_sure = {
-	tip = "购买后行动力将超出上限，是否继续购买"
+_G.pg.base.gametip.activity_shop_template_extratext = {
+	tip = "活動追趕道具兌換 "
 }
-_G.pg.base.gametip.Valentine_minigame_label1 = {
-	tip = "最终得分："
+_G.pg.base.gametip.dorm3d_now_is_downloading = {
+	tip = "资源下载中"
 }
-_G.pg.base.gametip.Valentine_minigame_label2 = {
-	tip = "完成次数"
+_G.pg.base.gametip.dorm3d_resource_download_complete = {
+	tip = "下载完成"
 }
-_G.pg.base.gametip.Valentine_minigame_label3 = {
-	tip = "当前完成："
+_G.pg.base.gametip.dorm3d_delete_finish = {
+	tip = "删除成功"
 }
-_G.pg.base.gametip.dorm3d_gift_favor_exceed = {
-	tip = "赠送后会溢出$1点契合度，是否确定赠送"
+_G.pg.base.gametip.dorm3d_guide_tip = {
+	tip = "先去天狼星的房间看看吧"
 }
-_G.pg.base.gametip["2025Valentine_minigame_s"] = {
-	tip = "太棒了！虽然是新式做法，不过这次大成功哦~指挥官，这份满载心意的巧克力，请快品尝看看吧！欸嘿~情人节快乐☆"
+_G.pg.base.gametip.dorm3d_noshiro_table = {
+	tip = "餐厅"
 }
-_G.pg.base.gametip["2025Valentine_minigame_a"] = {
-	tip = "啊，居然做得这么漂亮！果然有指挥官在就不一样呢~指挥官，快来尝尝看，这可是我们一起的成果哦！"
+_G.pg.base.gametip.dorm3d_noshiro_chair = {
+	tip = "客厅"
 }
-_G.pg.base.gametip["2025Valentine_minigame_b"] = {
-	tip = "总算是完成了呢！虽然和想象中的有点差距……但是指挥官帮了我这么多，应该不会太糟糕吧？欸嘿☆"
+_G.pg.base.gametip.dorm3d_noshiro_bed = {
+	tip = "卧室"
 }
-_G.pg.base.gametip["2025Valentine_minigame_c"] = {
-	tip = "欸……这个味道真的可以吗？作为皇家女仆做成这样，实在是太失态了……指挥官，让我重新做一份吧！"
-}
-_G.pg.base.gametip["2023Valentine_minigame_label1"] = {
-	tip = "最终得分："
-}
-_G.pg.base.gametip["2023Valentine_minigame_label2"] = {
-	tip = "完成次数"
-}
-_G.pg.base.gametip["2023Valentine_minigame_label3"] = {
-	tip = "当前完成："
+_G.pg.base.gametip.dorm3d_guide_beach_tip = {
+	tip = "请先下载相应角色资源 "
 }
 _G.pg.base.gametip.dorm3d_Ankeleiqi_entertainmentarea = {
 	tip = "娱乐区"
@@ -26134,6 +26130,9 @@ _G.pg.base.gametip.dorm3d_Ankeleiqi_chair = {
 }
 _G.pg.base.gametip.dorm3d_Ankeleiqi_bed = {
 	tip = "卧室"
+}
+_G.pg.base.gametip.dorm3d_gift_favor_max = {
+	tip = "契合度已经到达上限，送礼将不会获得契合度，是否确认赠送？"
 }
 _G.pg.base.gametip.dorm3d_VIDEO_CHAT_LABEL = {
 	tip = "$1的视频邀请"
@@ -26216,6 +26215,9 @@ _G.pg.base.gametip.dorm3d_privatechat_telephone = {
 _G.pg.base.gametip.dorm3d_privatechat_welcome = {
 	tip = "邀请角色"
 }
+_G.pg.base.gametip.dorm3d_gift_favor_exceed = {
+	tip = "赠送后会溢出$1点契合度，是否确定赠送"
+}
 _G.pg.base.gametip.dorm3d_privatechat_telephone_calllog = {
 	tip = "通话记录"
 }
@@ -26231,9 +26233,215 @@ _G.pg.base.gametip.dorm3d_ins_no_msg = {
 _G.pg.base.gametip.dorm3d_ins_no_topics = {
 	tip = "暂无新好友圈状态"
 }
+_G.pg.base.gametip.please_input_1_99 = {
+	tip = "请输入1~99"
+}
+_G.pg.base.gametip.child2_empty_plan = {
+	tip = "暂无行程"
+}
+_G.pg.base.gametip.child2_replay_tip = {
+	tip = "检测到游戏中断，请确认是否继续？（如果出现卡死情况可选择取消）"
+}
+_G.pg.base.gametip.child2_replay_clear = {
+	tip = "取消"
+}
+_G.pg.base.gametip.child2_replay_continue = {
+	tip = "继续"
+}
+_G.pg.base.gametip.firework_2025_level = {
+	tip = "$1级"
+}
+_G.pg.base.gametip.firework_2025_pt = {
+	tip = "氛围值："
+}
+_G.pg.base.gametip.firework_2025_get = {
+	tip = "可领取"
+}
+_G.pg.base.gametip.firework_2025_got = {
+	tip = "已领取"
+}
+_G.pg.base.gametip.firework_2025_tip1 = {
+	tip = "完成关卡有概率掉落烟花"
+}
+_G.pg.base.gametip.firework_2025_tip2 = {
+	tip = "当前心情恢复速度:"
+}
+_G.pg.base.gametip.firework_2025_unlock_tip1 = {
+	tip = "氛围值达到"
+}
+_G.pg.base.gametip.firework_2025_unlock_tip2 = {
+	tip = "$1点"
+}
+_G.pg.base.gametip.firework_2025_tip = {
+	tip = {
+		{
+			info = "说明："
+		},
+		{
+			info = "1.完成庆典任务可以获得「新春烟花会氛围值」，累计「新春烟花会氛围值」可获得限定装备外观「瑞蛇焰火盒」、「红包」等奖励。"
+		},
+		{
+			info = "2.通关主线普通海域·第3章及后续主线关卡、参与特别演习有概率掉落「新春烟花」，于庆典烟花界面解锁新春烟花可以获得「新春烟花会氛围值」与随机奖励。"
+		},
+		{
+			info = "3.活动期间，指挥官可于「庆典广场」邀请角色，可提升对应角色的心情回复速度。「庆典广场」初始可邀请4位角色，通过累计「新春烟花会氛围值」可最多邀请10位角色。"
+		}
+	}
+}
+_G.pg.base.gametip.secretary_special_character_unlock = {
+	tip = "参与此角色的<color=#39bfff>「养成计划」</color>后即可解锁"
+}
+_G.pg.base.gametip.secretary_special_character_buy_unlock = {
+	tip = "尚未获得此角色，参与此角色的<color=#39bfff>「养成计划」</color>后即可解锁"
+}
+_G.pg.base.gametip.child2_mood_desc1 = {
+	tip = "当前心情阶段：郁郁寡欢  <color=#ee4a4a>收益减少40%%</color>"
+}
+_G.pg.base.gametip.child2_mood_desc2 = {
+	tip = "当前心情阶段：心情不佳  <color=#ff6767>收益减少20%%</color>"
+}
+_G.pg.base.gametip.child2_mood_desc3 = {
+	tip = "当前心情阶段：心平气和  没有额外效果"
+}
+_G.pg.base.gametip.child2_mood_desc4 = {
+	tip = "当前心情阶段：心花怒放  <color=#00c79b>收益增加40%%</color>"
+}
+_G.pg.base.gametip.child2_mood_desc5 = {
+	tip = "当前心情阶段：心花怒放  <color=#00c79b>收益增加40%%</color>"
+}
+_G.pg.base.gametip.child2_schedule_target = {
+	tip = "总属性需求："
+}
+_G.pg.base.gametip.child2_shop_point_sure = {
+	tip = "购买后行动力将超出上限，是否继续购买"
+}
+_G.pg.base.gametip["2025Valentine_minigame_s"] = {
+	tip = "太棒了！虽然是新式做法，不过这次大成功哦~指挥官，这份满载心意的巧克力，请快品尝看看吧！欸嘿~情人节快乐☆"
+}
+_G.pg.base.gametip["2025Valentine_minigame_a"] = {
+	tip = "啊，居然做得这么漂亮！果然有指挥官在就不一样呢~指挥官，快来尝尝看，这可是我们一起的成果哦！"
+}
+_G.pg.base.gametip["2025Valentine_minigame_b"] = {
+	tip = "总算是完成了呢！虽然和想象中的有点差距……但是指挥官帮了我这么多，应该不会太糟糕吧？欸嘿☆"
+}
+_G.pg.base.gametip["2025Valentine_minigame_c"] = {
+	tip = "欸……这个味道真的可以吗？作为皇家女仆做成这样，实在是太失态了……指挥官，让我重新做一份吧！"
+}
 _G.pg.base.gametip.rps_game_take_card = {
 	tip = "确认出牌"
 }
-_G.pg.base.gametip.drom3d_beach_memory_limit_tip = {
-	tip = "检测到手机性能不足，同时邀请3名角色可能会出现游戏崩溃，是否确定邀请？"
+_G.pg.base.gametip.SkinDiscountHelp_School = {
+	tip = {
+		{
+			info = "1.活动期间，以<color=#92fc63>原价</color>（不使用换装折扣券）购买一件「校园生活」系列换装或一个换装礼盒(校园生活)时，可领取一张<color=#92fc63>换装折扣券（校园生活）</color>\n2.<color=#92fc63>换装折扣券（校园生活）</color>可用于购买「校园生活」系列内任意换装时抵扣300钻石（购买福袋时不可抵扣）\n3.未使用的<color=#92fc63>换装折扣券（校园生活）</color>将会在活动结束后（2025年4月9日23:59:59）消失"
+		}
+	}
+}
+_G.pg.base.gametip.SkinDiscount_Hint = {
+	tip = "当前有未领取的换装折扣券，是否前往领取？"
+}
+_G.pg.base.gametip.SkinDiscount_Got = {
+	tip = "已拥有:$1"
+}
+_G.pg.base.gametip.skin_original_price = {
+	tip = "原价"
+}
+_G.pg.base.gametip.clue_title_1 = {
+	tip = "地点情报"
+}
+_G.pg.base.gametip.clue_title_2 = {
+	tip = "人物情报"
+}
+_G.pg.base.gametip.clue_title_3 = {
+	tip = "破局记录"
+}
+_G.pg.base.gametip.clue_title_4 = {
+	tip = "秘密档案"
+}
+_G.pg.base.gametip.clue_task_goto = {
+	tip = "前往调查"
+}
+_G.pg.base.gametip.clue_lock_tip1 = {
+	tip = "解锁相关角色线索"
+}
+_G.pg.base.gametip.clue_lock_tip2 = {
+	tip = "解锁$1"
+}
+_G.pg.base.gametip.clue_get = {
+	tip = "领取"
+}
+_G.pg.base.gametip.clue_got = {
+	tip = "已领取"
+}
+_G.pg.base.gametip.clue_unselect_tip = {
+	tip = "前往探索笔记选定调查目标"
+}
+_G.pg.base.gametip.clue_close_tip = {
+	tip = "点击空白处关闭"
+}
+_G.pg.base.gametip.clue_pt_tip = {
+	tip = "累计 x"
+}
+_G.pg.base.gametip.clue_buff_research = {
+	tip = "调查目标"
+}
+_G.pg.base.gametip.clue_buff_pt_boost = {
+	tip = "每选择1项，PT产出增加5%"
+}
+_G.pg.base.gametip.clue_buff_stage_loot = {
+	tip = "关卡产出"
+}
+_G.pg.base.gametip.clue_task_tip = {
+	tip = "（当前完成次数：$1）"
+}
+_G.pg.base.gametip.clue_buff_reach_max = {
+	tip = "当前选择调查目标已达上限"
+}
+_G.pg.base.gametip.clue_buff_unselect = {
+	tip = "-尚未选择调查目标-"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_1 = {
+	tip = "T1 住院大楼(正午)"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_2 = {
+	tip = "T2 疗养中心(正午)"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_3 = {
+	tip = "T3 后勤中心(正午)"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_4 = {
+	tip = "T4 研究中心(正午)"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_5 = {
+	tip = "T1 住院大楼(黄昏)"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_6 = {
+	tip = "T2 疗养中心(黄昏)"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_7 = {
+	tip = "T3 后勤中心(黄昏)"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_8 = {
+	tip = "T4 研究中心(黄昏)"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_9 = {
+	tip = "T1 住院大楼(夜晚)"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_10 = {
+	tip = "T2 疗养中心(夜晚)"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_11 = {
+	tip = "T3 后勤中心(夜晚)"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_12 = {
+	tip = "T4 研究中心(夜晚)"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_13 = {
+	tip = "ESP 诊疗中心"
+}
+_G.pg.base.gametip.clue_buff_ticket_tips = {
+	tip = "勾选使用道具，通关后可以获得一份额外掉落"
+}
+_G.pg.base.gametip.clue_buff_empty_ticket = {
+	tip = "道具数量不足，前往调查任务获取"
 }

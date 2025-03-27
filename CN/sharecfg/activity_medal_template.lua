@@ -288,6 +288,102 @@ pg.activity_medal_template = {
 		id = 581208,
 		activity_medal_desc = "宽广，绵长，像海带，但请勿食用。"
 	},
+	[587501] = {
+		prefab_node = "1",
+		next_medal = 0,
+		item = 65571,
+		remake_task_id = 0,
+		group = 5875,
+		task_id = 21651,
+		medal_asset = "ActivityMedal/587501",
+		activity_medal_name = "纪念贴：深谷病院",
+		id = 587501,
+		activity_medal_desc = "深谷病院是一座……（后省略五千字）"
+	},
+	[587502] = {
+		prefab_node = "2",
+		next_medal = 0,
+		item = 65572,
+		remake_task_id = 0,
+		group = 5875,
+		task_id = 21652,
+		medal_asset = "ActivityMedal/587502",
+		activity_medal_name = "纪念贴：爪爪！",
+		id = 587502,
+		activity_medal_desc = "这是世界上最锋利的爪爪，你能承受一击么？"
+	},
+	[587503] = {
+		prefab_node = "3",
+		next_medal = 0,
+		item = 65573,
+		remake_task_id = 0,
+		group = 5875,
+		task_id = 21653,
+		medal_asset = "ActivityMedal/587503",
+		activity_medal_name = "纪念贴：可疑的药",
+		id = 587503,
+		activity_medal_desc = "可疑的药，仅限没有生病的人服用。"
+	},
+	[587504] = {
+		prefab_node = "4",
+		next_medal = 0,
+		item = 65574,
+		remake_task_id = 0,
+		group = 5875,
+		task_id = 21654,
+		medal_asset = "ActivityMedal/587504",
+		activity_medal_name = "纪念贴：病院秘档",
+		id = 587504,
+		activity_medal_desc = "你想知道深谷病院的秘密么？"
+	},
+	[587505] = {
+		prefab_node = "5",
+		next_medal = 0,
+		item = 65575,
+		remake_task_id = 0,
+		group = 5875,
+		task_id = 21655,
+		medal_asset = "ActivityMedal/587505",
+		activity_medal_name = "纪念贴：天狐发饰",
+		id = 587505,
+		activity_medal_desc = "你能承受住这枚发饰的重量么？"
+	},
+	[587506] = {
+		prefab_node = "6",
+		next_medal = 0,
+		item = 65576,
+		remake_task_id = 0,
+		group = 5875,
+		task_id = 21656,
+		medal_asset = "ActivityMedal/587506",
+		activity_medal_name = "纪念贴：千头万绪",
+		id = 587506,
+		activity_medal_desc = "你能从纷乱的情报中找出事件的真相么？"
+	},
+	[587507] = {
+		prefab_node = "7",
+		next_medal = 0,
+		item = 65577,
+		remake_task_id = 0,
+		group = 5875,
+		task_id = 21657,
+		medal_asset = "ActivityMedal/587507",
+		activity_medal_name = "纪念贴：甜蜜一针",
+		id = 587507,
+		activity_medal_desc = "如果觉得不够甜蜜的话，可以再来一针。"
+	},
+	[587508] = {
+		prefab_node = "8",
+		next_medal = 0,
+		item = 65578,
+		remake_task_id = 0,
+		group = 5875,
+		task_id = 21658,
+		medal_asset = "ActivityMedal/587508",
+		activity_medal_name = "纪念贴：血族玩偶",
+		id = 587508,
+		activity_medal_desc = "据说不努力的人会被做成血族的玩偶，真可怕。"
+	},
 	all = {
 		571101,
 		571102,
@@ -312,6 +408,14 @@ pg.activity_medal_template = {
 		581205,
 		581206,
 		581207,
-		581208
+		581208,
+		587501,
+		587502,
+		587503,
+		587504,
+		587505,
+		587506,
+		587507,
+		587508
 	}
 }

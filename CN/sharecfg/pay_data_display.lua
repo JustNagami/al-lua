@@ -87,6 +87,7 @@ pg.pay_data_display = setmetatable({
 		87,
 		88,
 		89,
+		90,
 		1000,
 		1001,
 		1002,
@@ -108,6 +109,7 @@ pg.pay_data_display = setmetatable({
 		1018,
 		1019,
 		1020,
+		1021,
 		2001,
 		2002,
 		2003,
@@ -152,6 +154,9 @@ pg.pay_data_display = setmetatable({
 		2042,
 		2043,
 		2044,
+		2045,
+		2046,
+		2047,
 		5001,
 		5002,
 		5003,
@@ -9132,6 +9137,105 @@ pg.base.pay_data_display = {
 			}
 		}
 	},
+	[90] = {
+		name = "换装礼盒(校园生活)",
+		limit_group = 0,
+		descrip_extra = "*礼盒将发送到邮箱，请注意查收。\n*拥有列表中的所有换装则转换为获得680钻石。",
+		type = 1,
+		subject = "换装礼盒(校园生活)",
+		limit_arg = 2,
+		name_display = "换装礼盒(校园生活)",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 48,
+		id = 90,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai23",
+		skin_inquire_relation = 86212,
+		id_str = "com.bilibili.blhx.zuanshi190",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "可获得列表中未拥有的换装*1（拥有列表中所有换装则转换为获得钻石）和其他奖励",
+		airijp_id = "com.yostarjp.azurlane.diamond178",
+		extra_service_item = {
+			{
+				2,
+				86212,
+				1
+			},
+			{
+				1,
+				1,
+				2000
+			},
+			{
+				1,
+				2,
+				1000
+			},
+			{
+				2,
+				15008,
+				20
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					3,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					4,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86212,
+				1
+			},
+			{
+				1,
+				2,
+				1000
+			},
+			{
+				2,
+				15008,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81212,
+				1
+			}
+		}
+	},
 	[1000] = {
 		name = "特许巡游凭证",
 		limit_group = 0,
@@ -10722,6 +10826,82 @@ pg.base.pay_data_display = {
 		},
 		sub_display = {
 			7021,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[1021] = {
+		name = "特许巡游凭证(2025.4)",
+		limit_group = 0,
+		descrip_extra = "*需要通过任务达成对应巡游进度后才可获取",
+		type = 0,
+		subject = "特许巡游凭证",
+		limit_arg = 1,
+		name_display = "特许巡游凭证",
+		show_group = "",
+		type_order = 6,
+		extra_service = 4,
+		money = 68,
+		id = 1021,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "battlepass_1",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.battlepass23",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "可获得1500巡游点数，同时解锁特许巡游奖励·反击限定换装和其他奖励",
+		airijp_id = "com.yostarjp.azurlane.seasonpass22",
+		extra_service_item = {
+			{
+				1,
+				4022,
+				1500
+			},
+			{
+				8,
+				65086,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					4,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					5,
+					31
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				8,
+				59599,
+				1500
+			}
+		},
+		sub_display = {
+			7022,
 			1500
 		},
 		ignorePlatform = {},
@@ -14173,6 +14353,232 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40056,
+				1
+			}
+		}
+	},
+	[2045] = {
+		name = "基因之源主题礼包",
+		limit_group = 104,
+		descrip_extra = "此处不会被看到",
+		type = 0,
+		subject = "基因之源主题礼包",
+		limit_arg = 0,
+		name_display = "基因之源主题礼包",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 78,
+		id = 2045,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui4",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.ui9",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "可获得战斗界面主题 基因之源*1",
+		airijp_id = "com.yostarjp.azurlane.ui9",
+		extra_service_item = {
+			{
+				31,
+				203,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					3,
+					27
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					4,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				203,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[2046] = {
+		name = "基因之源主题礼包(基础版)",
+		limit_group = 104,
+		descrip_extra = "*礼包将发送到邮箱，请注意查收。",
+		type = 0,
+		subject = "基因之源主题礼包(基础版)",
+		limit_arg = 1,
+		name_display = "基因之源主题礼包(基础版)",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 78,
+		id = 2046,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui4",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.ui10",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "可获得战斗界面主题 基因之源*1",
+		airijp_id = "com.yostarjp.azurlane.ui10",
+		extra_service_item = {
+			{
+				31,
+				203,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					3,
+					27
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					4,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				203,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40057,
+				1
+			}
+		}
+	},
+	[2047] = {
+		name = "基因之源主题礼包(豪华版)",
+		limit_group = 104,
+		descrip_extra = "*礼包将发送到邮箱，请注意查收。",
+		type = 0,
+		subject = "基因之源主题礼包(豪华版)",
+		limit_arg = 1,
+		name_display = "基因之源主题礼包(豪华版)",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 258,
+		id = 2047,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui4",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.ui11",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "可获得战斗界面主题 基因之源*1,3060钻石",
+		airijp_id = "com.yostarjp.azurlane.ui11",
+		extra_service_item = {
+			{
+				31,
+				203,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					3,
+					27
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					4,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				203,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40058,
 				1
 			}
 		}

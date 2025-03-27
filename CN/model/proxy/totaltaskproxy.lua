@@ -70,6 +70,10 @@ function var_0_0.register(arg_1_0)
 			elseif table.contains(TotalTaskProxy.normal_task_type, var_4_2) then
 				getProxy(TaskProxy):addActData(var_4_0, var_4_1)
 			end
+
+			local var_4_3 = getProxy(ActivityProxy):getActivityById(var_4_0)
+
+			arg_1_0:sendNotification(ActivityProxy.ACTIVITY_UPDATED, var_4_3:clone())
 		end
 
 		arg_1_0.facade:sendNotification(GAME.TOTAL_TASK_UPDATED)

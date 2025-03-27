@@ -25,7 +25,7 @@
 			side = 2,
 			bgName = "star_level_bg_499",
 			hidePaintObj = true,
-			say = "齐颂之音消了，而我依然漫步在纯白之中。",
+			say = "齐颂之音消失了，而我依然漫步在纯白之中。",
 			bgm = "theme-underheaven",
 			typewriter = {
 				speed = 0.05,

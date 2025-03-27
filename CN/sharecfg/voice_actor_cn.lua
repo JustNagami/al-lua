@@ -1771,5 +1771,17 @@ pg.voice_actor_CN = {
 	{
 		code = 443,
 		actor_name = "藤本侑里"
+	},
+	{
+		code = 444,
+		actor_name = "永濑安娜"
+	},
+	{
+		code = 445,
+		actor_name = "平塚纱依"
+	},
+	{
+		code = 446,
+		actor_name = "橘杏咲"
 	}
 }

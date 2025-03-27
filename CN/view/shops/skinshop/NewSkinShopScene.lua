@@ -8,6 +8,9 @@ local var_0_1 = -1
 local var_0_2 = -2
 local var_0_3 = -3
 local var_0_4 = -4
+
+var_0_0.PAGE_RETURN = var_0_3
+
 local var_0_5 = 9999
 local var_0_6 = 9997
 local var_0_7 = 9998
@@ -278,20 +281,14 @@ end
 function var_0_0.UpdateCouponBtn(arg_29_0)
 	local var_29_0 = SkinCouponActivity.StaticExistActivityAndCoupon() and (not arg_29_0.contextData.mode or arg_29_0.contextData.mode == var_0_0.MODE_OVERVIEW)
 
-	if arg_29_0.isFilterCoupon and not var_29_0 then
-		arg_29_0.isFilterCoupon = false
-	end
-
+	arg_29_0.isFilterCoupon = tobool(arg_29_0.isFilterCoupon) and var_29_0
 	arg_29_0.couponTr.localScale = var_29_0 and Vector3(1, 1, 1) or Vector3(0, 0, 0)
 end
 
 function var_0_0.UpdateVoucherBtn(arg_30_0)
 	local var_30_0 = #getProxy(BagProxy):GetSkinShopDiscountItemList() > 0 and (not arg_30_0.contextData.mode or arg_30_0.contextData.mode == var_0_0.MODE_OVERVIEW)
 
-	if arg_30_0.isFilterVoucher and not var_30_0 then
-		arg_30_0.isFilterVoucher = false
-	end
-
+	arg_30_0.isFilterVoucher = tobool(arg_30_0.isFilterVoucher) and var_30_0
 	arg_30_0.voucherTr.localScale = var_30_0 and Vector3(1, 1, 1) or Vector3(0, 0, 0)
 end
 
@@ -342,13 +339,13 @@ function var_0_0.OnSearch(arg_34_0)
 	end
 end
 
-local function var_0_8(arg_35_0)
-	if arg_35_0 == var_0_0.MODE_EXPERIENCE then
+function var_0_0.GetDefaultPage(arg_35_0, arg_35_1)
+	if arg_35_1 == var_0_0.MODE_EXPERIENCE then
 		return var_0_2
-	elseif arg_35_0 == var_0_0.MODE_EXPERIENCE_FOR_ITEM then
+	elseif arg_35_1 == var_0_0.MODE_EXPERIENCE_FOR_ITEM then
 		return var_0_4
 	else
-		return var_0_1
+		return arg_35_0.contextData.page and arg_35_0.contextData.page or var_0_1
 	end
 end
 
@@ -370,7 +367,7 @@ function var_0_0.SetUp(arg_36_0)
 		getProxy(SettingsProxy):SetNextTipTimeLimitSkinShop()
 	end
 
-	arg_36_0.skinPageID = var_0_8(var_36_0)
+	arg_36_0.skinPageID = arg_36_0:GetDefaultPage(var_36_0)
 
 	parallelAsync({
 		function(arg_37_0)
@@ -418,7 +415,7 @@ function var_0_0.UpdateTitle(arg_42_0, arg_42_1)
 	arg_42_0.titleEn:SetNativeSize()
 end
 
-local function var_0_9(arg_43_0, arg_43_1)
+local function var_0_8(arg_43_0, arg_43_1)
 	local var_43_0 = pg.skin_page_template
 	local var_43_1 = arg_43_1:GetID()
 	local var_43_2
@@ -469,7 +466,7 @@ function var_0_0.InitSkinClassify(arg_46_0, arg_46_1, arg_46_2, arg_46_3)
 
 			local var_47_0 = arg_46_0.rollingCircleRect:AddItem(iter_46_1)
 
-			var_0_9(arg_46_0, var_47_0)
+			var_0_8(arg_46_0, var_47_0)
 
 			if (iter_46_0 - 1) % 5 == 0 or iter_46_0 == #var_46_0 then
 				onNextTick(arg_47_0)
@@ -489,7 +486,7 @@ function var_0_0.InitSkinClassify(arg_46_0, arg_46_1, arg_46_2, arg_46_3)
 	end)
 end
 
-local function var_0_10(arg_49_0)
+local function var_0_9(arg_49_0)
 	if not var_0_0.cacheSkinExperienceItems then
 		var_0_0.cacheSkinExperienceItems = getProxy(BagProxy):GetSkinExperienceItems()
 	end
@@ -502,7 +499,7 @@ end
 function var_0_0.IsType(arg_51_0, arg_51_1, arg_51_2)
 	if arg_51_2:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
 		if arg_51_0.mode == var_0_0.MODE_EXPERIENCE_FOR_ITEM then
-			return arg_51_1 == var_0_4 and var_0_10(arg_51_2.id)
+			return arg_51_1 == var_0_4 and var_0_9(arg_51_2.id)
 		else
 			return arg_51_1 == var_0_2
 		end
@@ -585,7 +582,7 @@ function var_0_0.IsSearchType(arg_59_0, arg_59_1, arg_59_2)
 	}):IsMatchKey(arg_59_1)
 end
 
-local function var_0_11(arg_60_0, arg_60_1, arg_60_2)
+local function var_0_10(arg_60_0, arg_60_1, arg_60_2)
 	local var_60_0 = arg_60_2[arg_60_0.id]
 	local var_60_1 = arg_60_2[arg_60_1.id]
 
@@ -605,7 +602,7 @@ function var_0_0.Sort(arg_61_0, arg_61_1, arg_61_2, arg_61_3)
 		local var_61_3 = arg_61_2:getConfig("order")
 
 		if var_61_2 == var_61_3 then
-			return var_0_11(arg_61_1, arg_61_2, arg_61_3)
+			return var_0_10(arg_61_1, arg_61_2, arg_61_3)
 		else
 			return var_61_2 < var_61_3
 		end

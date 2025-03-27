@@ -1288,9 +1288,9 @@ end
 
 function var_0_0.ClearEffectInterlayer(arg_107_0, arg_107_1)
 	if arg_107_0.activeInterLayer == arg_107_1 then
+		RemoveComponent(arg_107_0.frontTr, "GraphicRaycaster")
 		RemoveComponent(arg_107_0.actorTr, "Canvas")
 		RemoveComponent(arg_107_0.frontTr, "Canvas")
-		RemoveComponent(arg_107_0.frontTr, "GraphicRaycaster")
 
 		arg_107_0.activeInterLayer = nil
 	end

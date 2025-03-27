@@ -561,6 +561,14 @@ function var_0_0.GetEncoreSkins(arg_42_0)
 		end
 	end
 
+	local var_42_2 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SKIN_COUPON_COUNTING)
+
+	for iter_42_2, iter_42_3 in ipairs(var_42_2) do
+		if iter_42_3 and not iter_42_3:isEnd() then
+			return iter_42_3:getConfig("config_data")[2]
+		end
+	end
+
 	return {}
 end
 
