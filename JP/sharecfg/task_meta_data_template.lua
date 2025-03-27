@@ -292,6 +292,11 @@ pg.task_meta_data_template = setmetatable({
 		100403,
 		100404,
 		100405,
+		100411,
+		100412,
+		100413,
+		100414,
+		100415,
 		200001,
 		200002,
 		200003,
@@ -415,7 +420,11 @@ pg.task_meta_data_template = setmetatable({
 		200311,
 		200312,
 		200313,
-		200314
+		200314,
+		200321,
+		200322,
+		200323,
+		200324
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2740,6 +2749,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100411] = {
+		target_id_2 = "970509",
+		sub_type = 180,
+		desc = "ネバダ(META)を編成した艦隊で1回戦闘を勝利する",
+		id = 100411,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100412] = {
+		target_id_2 = "970509",
+		sub_type = 180,
+		desc = "ネバダ(META)を編成した艦隊でLv30+の敵艦隊を撃破する",
+		id = 100412,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100413] = {
+		target_id_2 = "970509",
+		sub_type = 180,
+		desc = "ネバダ(META)を編成した艦隊でLv55+の敵艦隊を撃破する",
+		id = 100413,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100414] = {
+		target_id_2 = "970509",
+		sub_type = 180,
+		desc = "ネバダ(META)を編成した艦隊でLv80+の敵艦隊を撃破する",
+		id = 100414,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100415] = {
+		target_id_2 = "970509",
+		sub_type = 180,
+		desc = "ネバダ(META)を編成した艦隊でLv100+の敵艦隊を撃破する",
+		id = 100415,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -3729,6 +3778,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "セイレーン作戦でホーネット(META)を含めた艦隊でLv100+の敵を撃破",
 		id = 200314,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200321] = {
+		target_id_2 = "970509",
+		sub_type = 302,
+		desc = "セイレーン作戦でネバダ(META)を含めた艦隊で1回勝利する",
+		id = 200321,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200322] = {
+		target_id_2 = "970509",
+		sub_type = 302,
+		desc = "セイレーン作戦でネバダ(META)を含めた艦隊でLv70+の敵を撃破",
+		id = 200322,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200323] = {
+		target_id_2 = "970509",
+		sub_type = 302,
+		desc = "セイレーン作戦でネバダ(META)を含めた艦隊でLv90+の敵を撃破",
+		id = 200323,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200324] = {
+		target_id_2 = "970509",
+		sub_type = 302,
+		desc = "セイレーン作戦でネバダ(META)を含めた艦隊でLv100+の敵を撃破",
+		id = 200324,
 		target_num = 1,
 		target_id = "100"
 	}

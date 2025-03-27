@@ -87,6 +87,7 @@ pg.pay_data_display = setmetatable({
 		87,
 		88,
 		89,
+		90,
 		1000,
 		1001,
 		1002,
@@ -108,6 +109,7 @@ pg.pay_data_display = setmetatable({
 		1018,
 		1019,
 		1020,
+		1021,
 		2001,
 		2002,
 		2003,
@@ -150,6 +152,9 @@ pg.pay_data_display = setmetatable({
 		2042,
 		2043,
 		2044,
+		2045,
+		2046,
+		2047,
 		5001,
 		5002,
 		5003,
@@ -9250,6 +9255,105 @@ pg.base.pay_data_display = {
 			}
 		}
 	},
+	[90] = {
+		name = "着せ替えパック(学園)",
+		limit_group = 0,
+		descrip_extra = "※福袋はメールボックスに送られます\n※全部所持している場合自動でダイヤ×680に変換されます",
+		type = 1,
+		subject = "着せ替えパック(学園)",
+		limit_arg = 2,
+		name_display = "着せ替えパック(学園)",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 1000,
+		id = 90,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai23",
+		skin_inquire_relation = 86212,
+		id_str = "com.bilibili.blhx.zuanshi190",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "<size=18>下記着せ替え中の未所持着せ替えをランダムで1着（全部所持している場合自動でダイヤに変換されます）とその他アイテムを入手できます</size>",
+		airijp_id = "com.yostarjp.azurlane.diamond178",
+		extra_service_item = {
+			{
+				2,
+				86212,
+				1
+			},
+			{
+				1,
+				1,
+				2000
+			},
+			{
+				1,
+				2,
+				1000
+			},
+			{
+				2,
+				15008,
+				20
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					3,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					4,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86212,
+				1
+			},
+			{
+				1,
+				2,
+				1000
+			},
+			{
+				2,
+				15008,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81212,
+				1
+			}
+		}
+	},
 	[1000] = {
 		name = "クルーズパス",
 		limit_group = 0,
@@ -10840,6 +10944,82 @@ pg.base.pay_data_display = {
 		},
 		sub_display = {
 			7021,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[1021] = {
+		name = "クルーズパス(25春)",
+		limit_group = 0,
+		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
+		type = 0,
+		subject = "クルーズパス(25春)",
+		limit_arg = 1,
+		name_display = "クルーズパス(25春)",
+		show_group = "",
+		type_order = 6,
+		extra_service = 4,
+		money = 1200,
+		id = 1021,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "battlepass_1",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.battlepass23",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "購入すると、シーズン任務進捗Pt1500を入手し、さらにSP報酬を開放",
+		airijp_id = "com.yostarjp.azurlane.seasonpass22",
+		extra_service_item = {
+			{
+				1,
+				4022,
+				1500
+			},
+			{
+				8,
+				65086,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					4,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					5,
+					31
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				8,
+				59599,
+				1500
+			}
+		},
+		sub_display = {
+			7022,
 			1500
 		},
 		ignorePlatform = {},
@@ -14073,6 +14253,232 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40056,
+				1
+			}
+		}
+	},
+	[2045] = {
+		name = "戦闘UI・ジーン",
+		limit_group = 104,
+		descrip_extra = "※購入したアイテムはメールボックスに送られます",
+		type = 0,
+		subject = "戦闘UI・ジーン",
+		limit_arg = 0,
+		name_display = "戦闘UI・ジーン",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 1600,
+		id = 2045,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui4",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.ui9",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "戦闘UI・ジーンを入手できます",
+		airijp_id = "com.yostarjp.azurlane.ui9",
+		extra_service_item = {
+			{
+				31,
+				203,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					3,
+					27
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					4,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				203,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[2046] = {
+		name = "戦闘UI・ジーン（単品）",
+		limit_group = 104,
+		descrip_extra = "※購入したアイテムはメールボックスに送られます",
+		type = 0,
+		subject = "戦闘UI・ジーン（単品）",
+		limit_arg = 1,
+		name_display = "戦闘UI・ジーン（単品）",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 1600,
+		id = 2046,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui4",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.ui10",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "戦闘UI・ジーンを入手できます",
+		airijp_id = "com.yostarjp.azurlane.ui10",
+		extra_service_item = {
+			{
+				31,
+				203,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					3,
+					27
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					4,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				203,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40057,
+				1
+			}
+		}
+	},
+	[2047] = {
+		name = "戦闘UI・ジーン（セット）",
+		limit_group = 104,
+		descrip_extra = "※購入したアイテムはメールボックスに送られます",
+		type = 0,
+		subject = "戦闘UI・ジーン（セット）",
+		limit_arg = 1,
+		name_display = "戦闘UI・ジーン（セット）",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 4700,
+		id = 2047,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui4",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.ui11",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "戦闘UI・ジーン,ダイヤ×3060を入手できます",
+		airijp_id = "com.yostarjp.azurlane.ui11",
+		extra_service_item = {
+			{
+				31,
+				203,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					3,
+					27
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					4,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				203,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40058,
 				1
 			}
 		}

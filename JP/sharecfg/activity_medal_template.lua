@@ -288,6 +288,102 @@ pg.activity_medal_template = {
 		id = 581208,
 		activity_medal_desc = "「広くて長い、ノリのような触感。食用禁止」"
 	},
+	[587501] = {
+		prefab_node = "1",
+		next_medal = 0,
+		item = 65571,
+		remake_task_id = 0,
+		group = 5875,
+		task_id = 21651,
+		medal_asset = "ActivityMedal/587501",
+		activity_medal_name = "ステッカー：バレー病院",
+		id = 587501,
+		activity_medal_desc = "バレー病院とは……（略）"
+	},
+	[587502] = {
+		prefab_node = "2",
+		next_medal = 0,
+		item = 65572,
+		remake_task_id = 0,
+		group = 5875,
+		task_id = 21652,
+		medal_asset = "ActivityMedal/587502",
+		activity_medal_name = "ステッカー：猫パンチ！",
+		id = 587502,
+		activity_medal_desc = "世界で最も鋭いパンチよ。一撃を受けきれる？"
+	},
+	[587503] = {
+		prefab_node = "3",
+		next_medal = 0,
+		item = 65573,
+		remake_task_id = 0,
+		group = 5875,
+		task_id = 21653,
+		medal_asset = "ActivityMedal/587503",
+		activity_medal_name = "ステッカー：怪しい錠剤",
+		id = 587503,
+		activity_medal_desc = "怪しい錠剤。病気にかかってない人のみ使用可能。"
+	},
+	[587504] = {
+		prefab_node = "4",
+		next_medal = 0,
+		item = 65574,
+		remake_task_id = 0,
+		group = 5875,
+		task_id = 21654,
+		medal_asset = "ActivityMedal/587504",
+		activity_medal_name = "ステッカー：病院の秘密",
+		id = 587504,
+		activity_medal_desc = "バレー病院の秘密を知りたい？"
+	},
+	[587505] = {
+		prefab_node = "5",
+		next_medal = 0,
+		item = 65575,
+		remake_task_id = 0,
+		group = 5875,
+		task_id = 21655,
+		medal_asset = "ActivityMedal/587505",
+		activity_medal_name = "ステッカー：天狐の髪飾り",
+		id = 587505,
+		activity_medal_desc = "髪飾りの「重さ」を背負えるかしら？"
+	},
+	[587506] = {
+		prefab_node = "6",
+		next_medal = 0,
+		item = 65576,
+		remake_task_id = 0,
+		group = 5875,
+		task_id = 21656,
+		medal_asset = "ActivityMedal/587506",
+		activity_medal_name = "ステッカー：手がかり",
+		id = 587506,
+		activity_medal_desc = "絡み合った情報から事件の真実を突き止められるか？"
+	},
+	[587507] = {
+		prefab_node = "7",
+		next_medal = 0,
+		item = 65577,
+		remake_task_id = 0,
+		group = 5875,
+		task_id = 21657,
+		medal_asset = "ActivityMedal/587507",
+		activity_medal_name = "ステッカー：お注射の時間",
+		id = 587507,
+		activity_medal_desc = "もう一丁、チクッとしますわ"
+	},
+	[587508] = {
+		prefab_node = "8",
+		next_medal = 0,
+		item = 65578,
+		remake_task_id = 0,
+		group = 5875,
+		task_id = 21658,
+		medal_asset = "ActivityMedal/587508",
+		activity_medal_name = "ステッカー：ファミリーぬい",
+		id = 587508,
+		activity_medal_desc = "頑張らないとファミリーのぬいぐるみにされるらしい。怖い。"
+	},
 	all = {
 		571101,
 		571102,
@@ -312,6 +408,14 @@ pg.activity_medal_template = {
 		581205,
 		581206,
 		581207,
-		581208
+		581208,
+		587501,
+		587502,
+		587503,
+		587504,
+		587505,
+		587506,
+		587507,
+		587508
 	}
 }

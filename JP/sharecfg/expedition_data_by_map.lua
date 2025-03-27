@@ -258,7 +258,8 @@ pg.expedition_data_by_map = setmetatable({
 		2200090,
 		2200100,
 		2200110,
-		2200120
+		2200120,
+		2200130
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -3497,7 +3498,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4701,
+		on_activity = 5860,
 		ui_type = 1,
 		bg = "Map_1710001",
 		story_id = "",
@@ -3547,7 +3548,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4701,
+		on_activity = 5860,
 		ui_type = 1,
 		bg = "Map_1710002",
 		story_id = "",
@@ -3597,7 +3598,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4701,
+		on_activity = 5860,
 		ui_type = 1,
 		bg = "Map_1710003",
 		story_id = "",
@@ -3647,7 +3648,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4701,
+		on_activity = 5860,
 		ui_type = 1,
 		bg = "Map_1710004",
 		story_id = "",
@@ -3697,7 +3698,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4701,
+		on_activity = 5860,
 		ui_type = 1,
 		bg = "Map_1710005",
 		story_id = "",
@@ -3747,7 +3748,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4701,
+		on_activity = 5860,
 		ui_type = 1,
 		bg = "Map_1710005",
 		story_id = "",
@@ -15258,6 +15259,85 @@ pg.base.expedition_data_by_map = {
 			{
 				0,
 				-465
+			}
+		}
+	},
+	[2200130] = {
+		map = 2200130,
+		name = "幻像の塔·発見編|| ||CHAPTER SP||S.P.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "theme-arbitrator-tower",
+		enter_story = "",
+		ani_name = "Map_1620001",
+		guide_id = "",
+		map_name = "",
+		cloud_suffix = "",
+		default_background = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1620001",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 0,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		ani_controller = {
+			{
+				1,
+				{
+					2200131,
+					"jianzhu01"
+				}
+			},
+			{
+				1,
+				{
+					2200132,
+					"jianzhu02"
+				}
+			},
+			{
+				1,
+				{
+					2200133,
+					"jianzhu03"
+				}
+			},
+			{
+				1,
+				{
+					2200134,
+					"jianzhu04"
+				}
 			}
 		}
 	}

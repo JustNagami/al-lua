@@ -1,6 +1,114 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_2 = {
+	[102052] = {
+		ship_group = 10205,
+		name = "君と踊りを",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 102052,
+		group_index = 2,
+		l2d_ignore_drag = 0,
+		painting = "hailunna_3",
+		shop_id = 70188,
+		illustrator = 7,
+		l2d_voice_calibrate = "",
+		shop_type_id = 7,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "115",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "hailunna_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "あの、指揮官、私と…一曲踊ってみない？私、指揮官に伝えたいことがあって……",
+		voice_actor = 34,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.06,
+					0.975,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.029,
+					1.029,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.045,
+					0.96,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.627,
+							2.291,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[102053] = {
 		ship_group = 10205,
 		name = "光輝のトライアングルウェーブ",
@@ -9325,6 +9433,229 @@ pg.base.ship_skin_template_2 = {
 			}
 		}
 	},
+	[102340] = {
+		ship_group = 10234,
+		name = "サンタフェ",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 102340,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "shengtafei",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "shengtafei",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "クリーブランド級軽巡洋艦-サンタフェ",
+		voice_actor = 445,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.204,
+					0.738,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.64,
+					2.277,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.45,
+							2.39,
+							-0.15
+						}
+					}
+				}
+			}
+		}
+	},
+	[102341] = {
+		ship_group = 10234,
+		name = "風のウワサはナイトタイムも！",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 102341,
+		group_index = 1,
+		l2d_ignore_drag = 0,
+		painting = "shengtafei_2",
+		shop_id = 71121,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 15,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "309",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "shengtafei_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "え？まだこんな時間なのにもう寝ちゃったの？ほら、深夜はウワサのフィーバータイムなんだよ～？にゃははは！さあ指揮官、早くあたしと一緒に布団の中でとことん話そうよ♪",
+		voice_actor = 445,
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.204,
+					0.738,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.64,
+					2.277,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.45,
+							2.39,
+							-0.15
+						}
+					}
+				}
+			}
+		},
+		spine_offset = {
+			{
+				5,
+				10,
+				0
+			},
+			{
+				0.58
+			}
+		}
+	},
 	[103010] = {
 		ship_group = 10301,
 		name = "ペンサコーラ",
@@ -13448,239 +13779,6 @@ pg.base.ship_skin_template_2 = {
 						{
 							-0.433,
 							2.437,
-							0.14
-						}
-					}
-				}
-			}
-		}
-	},
-	[103165] = {
-		ship_group = 10316,
-		name = "スプレンディッド・ギア",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 103165,
-		group_index = 5,
-		l2d_ignore_drag = 0,
-		painting = "baerdimo_6",
-		shop_id = 70758,
-		illustrator = -1,
-		shop_type_id = 14,
-		lip_smoothing = 0,
-		bg = "132",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "baerdimo_6",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "やあ指揮官、今日は試合の観戦か？思いっきり楽しんでいってくれよ。…私のこれか？ああ、これはレースクイーンの助っ人を頼まれていてな。うまくこの試合を盛り上げられればいいんだが――",
-		voice_actor = 191,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		tag = {
-			1,
-			4
-		},
-		live2d_offset = {
-			0,
-			-40,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.15,
-					0.87,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.13,
-					0.94,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.009,
-					0.004,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.433,
-							2.34,
-							0.14
-						}
-					}
-				}
-			}
-		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_special",
-			"touch_head"
-		},
-		l2d_voice_calibrate = {
-			use_event = true
-		},
-		ship_l2d_id = {
-			1031651
-		}
-	},
-	[103240] = {
-		ship_group = 10324,
-		name = "ブレマートン",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 103240,
-		group_index = 0,
-		l2d_ignore_drag = 0,
-		painting = "bulaimodun",
-		shop_id = 0,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "bulaimodun",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "ボルチモア級重巡洋艦「ブレマートン」（CA-130)",
-		voice_actor = 134,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.202,
-					1.03,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.22,
-					1.132,
-					0
-				}
-			},
-			torpedo = {
-				{
-					-0.009,
-					-0.004,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.625,
-							2.427,
 							0.14
 						}
 					}

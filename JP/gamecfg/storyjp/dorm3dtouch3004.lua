@@ -17,7 +17,8 @@
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "安克雷奇……不懂！",
+			say = "アンカレッジ…わからない！",
+			voice = "event:/dorm/drom3d_Anchorage_other/drom3d_Anchorage_ik_furniture1_tone4",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -28,7 +29,7 @@
 					op_list = {
 						{
 							param = "Play",
-							name = "ab_shuohua_gandong_01",
+							name = "ab_FF_chuang_2_tui_01",
 							time = 0,
 							type = "action",
 							skip = true

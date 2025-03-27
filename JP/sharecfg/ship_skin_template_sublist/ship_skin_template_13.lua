@@ -1,452 +1,6 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_13 = {
-	[408131] = {
-		ship_group = 40813,
-		name = "共に帰路につく前に",
-		hand_id = 16,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 408131,
-		group_index = 1,
-		l2d_ignore_drag = 0,
-		painting = "u31_2",
-		shop_id = 71021,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 4,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "185",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "u31_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "放課後にどうして先に帰らなかったかって？もちろん指揮官が迎えに来るのを待ってたからよ～。すごーーく待ってたんだからね？えへへ、もうほかに誰もいないし……指揮官となにか楽しいことができちゃうかも～",
-		voice_actor = 364,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.08,
-					0.21,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.38,
-					0.01,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.46,
-							2.4,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[431230] = {
-		ship_group = 40123,
-		name = "秘密のお世話ルーム",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 431230,
-		group_index = 10,
-		l2d_ignore_drag = 0,
-		painting = "z23_9",
-		shop_id = 0,
-		illustrator = 1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 20,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "109",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "z23_9",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "はぁ…このオフニャたちの世話は意外と疲れますね…指揮官をサポートする子なのにどうして…指揮官はこの子たちみたいに世話を焼かせてはダメですよ",
-		voice_actor = 3,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.005,
-					0.998,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.005,
-					0.998,
-					0
-				}
-			},
-			torpedo = {
-				{
-					-0.007,
-					-0.002,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.998,
-					1.012,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.399,
-							2.475,
-							-0.27
-						}
-					}
-				}
-			}
-		}
-	},
-	[431232] = {
-		ship_group = 40123,
-		name = "エンハンス失敗？！",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 431232,
-		group_index = 12,
-		l2d_ignore_drag = 0,
-		painting = "z23_10",
-		shop_id = 70760,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 24,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "158",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "1102",
-		voice_actor_2 = -1,
-		prefab = "z23_10",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "そ、そんな…せっかくの装備が強化失敗でロスト、おまけに所持金もゼロ……あぅぅ、もう一回ダンジョンに入ってお金を稼ぎ直さないと……",
-		voice_actor = 3,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.98,
-					0.87,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.97,
-					0.92,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.3,
-					1.36,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.44,
-							2.23,
-							-0.27
-						}
-					}
-				}
-			}
-		}
-	},
-	[431233] = {
-		ship_group = 40123,
-		name = "タンツ・デ・ブルーメン",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 431233,
-		group_index = 13,
-		l2d_ignore_drag = 0,
-		painting = "z23_12",
-		shop_id = 70912,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 7,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "136",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "z23_12",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "以前と同じ黒基調のドレスですけど、オイゲンさんのアドバイスで少し白と赤の要素を取り入れていますね。うん、これなら指揮官とのダンスでも――し、指揮官？！今来たばかりですか？ええと、今日のドレスは…どうですか？",
-		voice_actor = 3,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.98,
-					0.87,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.97,
-					0.92,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.95,
-					0.92,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.44,
-							2.33,
-							-0.27
-						}
-					}
-				}
-			}
-		}
-	},
 	[501010] = {
 		ship_group = 50101,
 		name = "鞍山",
@@ -13954,6 +13508,614 @@ pg.base.ship_skin_template_13 = {
 			mail = 0.5,
 			touch = 0.5,
 			main_3 = 0.5
+		}
+	},
+	[603030] = {
+		ship_group = 60303,
+		name = "ポーラ",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 603030,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "bola",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "bola",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "ザラ級重巡洋艦・ポーラ",
+		voice_actor = 146,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.482,
+					0.941,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.449,
+					0.947,
+					0
+				}
+			},
+			torpedo = {
+				{
+					-0.002,
+					-0.007,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.463,
+					0.927,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.564,
+							2.415,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[603031] = {
+		ship_group = 60303,
+		name = "水辺のハプニング？",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 603031,
+		group_index = 1,
+		l2d_ignore_drag = 0,
+		painting = "bola_2",
+		shop_id = 70528,
+		illustrator = -1,
+		shop_type_id = 6,
+		lip_smoothing = 0,
+		bg = "117",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "bola_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "ザラ、今スパイクするなんて卑怯すぎて――きゃぅ！？指揮官！？なんでここにいるの？",
+		voice_actor = 146,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			1,
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.26,
+					1.001,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.29,
+					1.001,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.04,
+					0.01,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.26,
+					0.997,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.507,
+							2.381,
+							0
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_special",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			use_event = true
+		}
+	},
+	[603040] = {
+		ship_group = 60304,
+		name = "トリエステ",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 603040,
+		group_index = 0,
+		l2d_ignore_drag = 0,
+		painting = "diliyasite",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = -1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "diliyasite",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "トレント級重巡洋艦・トリエステ",
+		voice_actor = 224,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.25,
+					1.15,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.07,
+					1.04,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.23,
+					1.14,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.58,
+							2.44,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[603041] = {
+		ship_group = 60304,
+		name = "今日の弁当当番は…？",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 603041,
+		group_index = 1,
+		l2d_ignore_drag = 0,
+		painting = "diliyasite_2",
+		shop_id = 70678,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 4,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "147",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "diliyasite_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "あら、もう授業が終わったの？まさかとは思うけど、指揮官は弁当食べたさにサボったんじゃ……疑って悪かったわ。ほら、行きましょ？トレントが待っているわ",
+		voice_actor = 224,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.08,
+					1.07,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.1,
+					1.12,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.99,
+					1.06,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.54,
+							2.415,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[603042] = {
+		ship_group = 60304,
+		name = "湯浴のイナモラメント",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 603042,
+		group_index = 2,
+		l2d_ignore_drag = 0,
+		painting = "diliyasite_3",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 22,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "167",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "1102",
+		voice_actor_2 = -1,
+		prefab = "diliyasite_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		shop_id = 70835,
+		desc = "ふぅ……すこしのぼせちゃったみたい…ちょっと風にでも当たってみるわ。指揮官は大丈夫？無理してはダメよ？ほら、心配しちゃう子が出るから…",
+		voice_actor = 224,
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2,
+			6
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.62,
+					1.64,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.54,
+					1.71,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.56,
+					1.67,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.54,
+							2.415,
+							0
+						}
+					}
+				}
+			}
+		},
+		spine_offset = {
+			{
+				90,
+				-983,
+				0
+			},
+			{
+				0.8
+			}
+		},
+		special_effects = {
+			"lihui_diliyasite_3",
+			{
+				600,
+				994,
+				0
+			},
+			{
+				1.4
+			}
 		}
 	}
 }

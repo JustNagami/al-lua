@@ -169,78 +169,100 @@ local function var_0_9(arg_10_0, arg_10_1)
 	end
 end
 
-function var_0_0.GetCommanderList(arg_11_0)
-	local var_11_0 = getProxy(CommanderProxy):getData()
+local function var_0_10(arg_11_0, arg_11_1)
+	local var_11_0 = getProxy(FleetProxy)
+	local var_11_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSSSINGLE_VARIABLE)
 
-	if CommanderCatScene.FLEET_TYPE_COMMON == arg_11_0.fleetType then
-		var_0_1(arg_11_0, var_11_0)
-	elseif CommanderCatScene.FLEET_TYPE_ACTBOSS == arg_11_0.fleetType then
-		var_0_2(arg_11_0, var_11_0)
-	elseif CommanderCatScene.FLEET_TYPE_HARD_CHAPTER == arg_11_0.fleetType then
-		var_0_3(arg_11_0, var_11_0)
-	elseif CommanderCatScene.FLEET_TYPE_CHALLENGE == arg_11_0.fleetType then
-		var_0_4(arg_11_0, var_11_0)
-	elseif CommanderCatScene.FLEET_TYPE_GUILDBOSS == arg_11_0.fleetType then
-		var_0_5(arg_11_0, var_11_0)
-	elseif CommanderCatScene.FLEET_TYPE_WORLD == arg_11_0.fleetType then
-		var_0_6(arg_11_0, var_11_0)
-	elseif CommanderCatScene.FLEET_TYPE_BOSSRUSH == arg_11_0.fleetType then
-		var_0_7(arg_11_0, var_11_0)
-	elseif CommanderCatScene.FLEET_TYPE_LIMIT_CHALLENGE == arg_11_0.fleetType then
-		var_0_8(arg_11_0, var_11_0)
-	elseif CommanderCatScene.FLEET_TYPE_BOSSSINGLE == arg_11_0.fleetType then
-		var_0_9(arg_11_0, var_11_0)
+	assert(var_11_1 and not var_11_1:isEnd())
+
+	local var_11_2 = var_11_0:getActivityFleets()[var_11_1.id]
+
+	for iter_11_0, iter_11_1 in pairs(var_11_2) do
+		local var_11_3 = iter_11_1:isSubmarineFleet()
+		local var_11_4 = iter_11_1.id % 10
+
+		for iter_11_2, iter_11_3 in pairs(iter_11_1:getCommanders()) do
+			arg_11_1[iter_11_3.id].sub = var_11_3
+			arg_11_1[iter_11_3.id].fleetId = var_11_4
+			arg_11_1[iter_11_3.id].inFleet = true
+		end
+	end
+end
+
+function var_0_0.GetCommanderList(arg_12_0)
+	local var_12_0 = getProxy(CommanderProxy):getData()
+
+	if CommanderCatScene.FLEET_TYPE_COMMON == arg_12_0.fleetType then
+		var_0_1(arg_12_0, var_12_0)
+	elseif CommanderCatScene.FLEET_TYPE_ACTBOSS == arg_12_0.fleetType then
+		var_0_2(arg_12_0, var_12_0)
+	elseif CommanderCatScene.FLEET_TYPE_HARD_CHAPTER == arg_12_0.fleetType then
+		var_0_3(arg_12_0, var_12_0)
+	elseif CommanderCatScene.FLEET_TYPE_CHALLENGE == arg_12_0.fleetType then
+		var_0_4(arg_12_0, var_12_0)
+	elseif CommanderCatScene.FLEET_TYPE_GUILDBOSS == arg_12_0.fleetType then
+		var_0_5(arg_12_0, var_12_0)
+	elseif CommanderCatScene.FLEET_TYPE_WORLD == arg_12_0.fleetType then
+		var_0_6(arg_12_0, var_12_0)
+	elseif CommanderCatScene.FLEET_TYPE_BOSSRUSH == arg_12_0.fleetType then
+		var_0_7(arg_12_0, var_12_0)
+	elseif CommanderCatScene.FLEET_TYPE_LIMIT_CHALLENGE == arg_12_0.fleetType then
+		var_0_8(arg_12_0, var_12_0)
+	elseif CommanderCatScene.FLEET_TYPE_BOSSSINGLE == arg_12_0.fleetType then
+		var_0_9(arg_12_0, var_12_0)
+	elseif CommanderCatScene.FLEET_TYPE_BOSSSINGLE_VARIABLE == arg_12_0.fleetType then
+		var_0_10(arg_12_0, var_12_0)
 	end
 
-	local var_11_1 = getProxy(ChapterProxy):getActiveChapter()
+	local var_12_1 = getProxy(ChapterProxy):getActiveChapter()
 
-	if var_11_1 then
-		_.each(var_11_1.fleets, function(arg_12_0)
-			local var_12_0 = arg_12_0:getCommanders()
+	if var_12_1 then
+		_.each(var_12_1.fleets, function(arg_13_0)
+			local var_13_0 = arg_13_0:getCommanders()
 
-			for iter_12_0, iter_12_1 in pairs(arg_12_0:getCommanders()) do
-				var_11_0[iter_12_1.id].inBattle = true
+			for iter_13_0, iter_13_1 in pairs(arg_13_0:getCommanders()) do
+				var_12_0[iter_13_1.id].inBattle = true
 			end
 		end)
 	end
 
-	local var_11_2 = {}
+	local var_12_2 = {}
 
-	for iter_11_0, iter_11_1 in ipairs(arg_11_0.ignoredIds or {}) do
-		var_11_2[iter_11_1] = true
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0.ignoredIds or {}) do
+		var_12_2[iter_12_1] = true
 	end
 
-	local var_11_3 = {}
+	local var_12_3 = {}
 
-	for iter_11_2, iter_11_3 in pairs(var_11_0) do
-		if not var_11_2[iter_11_2] then
-			table.insert(var_11_3, iter_11_3)
+	for iter_12_2, iter_12_3 in pairs(var_12_0) do
+		if not var_12_2[iter_12_2] then
+			table.insert(var_12_3, iter_12_3)
 		end
 	end
 
-	return var_11_3
+	return var_12_3
 end
 
-function var_0_0.GetSkillExpAndCommanderExp(arg_13_0, arg_13_1)
-	local var_13_0 = 0
-	local var_13_1 = 0
-	local var_13_2 = getProxy(CommanderProxy)
+function var_0_0.GetSkillExpAndCommanderExp(arg_14_0, arg_14_1)
+	local var_14_0 = 0
+	local var_14_1 = 0
+	local var_14_2 = getProxy(CommanderProxy)
 
-	for iter_13_0, iter_13_1 in pairs(arg_13_1) do
-		local var_13_3 = var_13_2:getCommanderById(iter_13_1)
+	for iter_14_0, iter_14_1 in pairs(arg_14_1) do
+		local var_14_3 = var_14_2:getCommanderById(iter_14_1)
 
-		var_13_1 = var_13_1 + var_13_3:getDestoryedExp(arg_13_0.groupId)
-		var_13_0 = var_13_0 + var_13_3:getDestoryedSkillExp(arg_13_0.groupId)
+		var_14_1 = var_14_1 + var_14_3:getDestoryedExp(arg_14_0.groupId)
+		var_14_0 = var_14_0 + var_14_3:getDestoryedSkillExp(arg_14_0.groupId)
 	end
 
-	return math.floor(var_13_1), math.floor(var_13_0)
+	return math.floor(var_14_1), math.floor(var_14_0)
 end
 
-function var_0_0.AnySSRCommander(arg_14_0)
-	local var_14_0 = getProxy(CommanderProxy)
+function var_0_0.AnySSRCommander(arg_15_0)
+	local var_15_0 = getProxy(CommanderProxy)
 
-	if _.any(arg_14_0, function(arg_15_0)
-		return var_14_0:RawGetCommanderById(arg_15_0):getRarity() >= 5
+	if _.any(arg_15_0, function(arg_16_0)
+		return var_15_0:RawGetCommanderById(arg_16_0):getRarity() >= 5
 	end) then
 		return true
 	end
@@ -248,39 +270,39 @@ function var_0_0.AnySSRCommander(arg_14_0)
 	return false
 end
 
-function var_0_0.CalcCommanderConsume(arg_16_0)
-	local var_16_0 = getProxy(CommanderProxy)
-	local var_16_1 = 0
+function var_0_0.CalcCommanderConsume(arg_17_0)
+	local var_17_0 = getProxy(CommanderProxy)
+	local var_17_1 = 0
 
-	for iter_16_0, iter_16_1 in ipairs(arg_16_0) do
-		local var_16_2 = var_16_0:RawGetCommanderById(iter_16_1)
+	for iter_17_0, iter_17_1 in ipairs(arg_17_0) do
+		local var_17_2 = var_17_0:RawGetCommanderById(iter_17_1)
 
-		assert(var_16_2, iter_16_1)
+		assert(var_17_2, iter_17_1)
 
-		var_16_1 = var_16_1 + var_16_2:getUpgradeConsume()
+		var_17_1 = var_17_1 + var_17_2:getUpgradeConsume()
 	end
 
-	return math.floor(var_16_1)
+	return math.floor(var_17_1)
 end
 
-function var_0_0.SetActive(arg_17_0, arg_17_1)
-	local var_17_0 = GetOrAddComponent(arg_17_0, typeof(CanvasGroup))
+function var_0_0.SetActive(arg_18_0, arg_18_1)
+	local var_18_0 = GetOrAddComponent(arg_18_0, typeof(CanvasGroup))
 
-	var_17_0.alpha = arg_17_1 and 1 or 0
-	var_17_0.blocksRaycasts = arg_17_1
+	var_18_0.alpha = arg_18_1 and 1 or 0
+	var_18_0.blocksRaycasts = arg_18_1
 end
 
-function var_0_0.CommanderInChapter(arg_18_0)
-	local var_18_0 = getProxy(ChapterProxy):getActiveChapter()
+function var_0_0.CommanderInChapter(arg_19_0)
+	local var_19_0 = getProxy(ChapterProxy):getActiveChapter()
 
-	if var_18_0 then
-		local var_18_1 = var_18_0.fleets
+	if var_19_0 then
+		local var_19_1 = var_19_0.fleets
 
-		for iter_18_0, iter_18_1 in pairs(var_18_1) do
-			local var_18_2 = iter_18_1:getCommanders()
+		for iter_19_0, iter_19_1 in pairs(var_19_1) do
+			local var_19_2 = iter_19_1:getCommanders()
 
-			if _.any(_.values(var_18_2), function(arg_19_0)
-				return arg_19_0.id == arg_18_0.id
+			if _.any(_.values(var_19_2), function(arg_20_0)
+				return arg_20_0.id == arg_19_0.id
 			end) then
 				return true
 			end
@@ -291,71 +313,71 @@ function var_0_0.CommanderInChapter(arg_18_0)
 end
 
 function var_0_0.GetAllTalentNames()
-	local var_20_0 = {}
+	local var_21_0 = {}
 
-	for iter_20_0, iter_20_1 in ipairs(pg.commander_ability_group.all) do
-		local var_20_1 = pg.commander_ability_group[iter_20_1]
+	for iter_21_0, iter_21_1 in ipairs(pg.commander_ability_group.all) do
+		local var_21_1 = pg.commander_ability_group[iter_21_1]
 
-		if var_20_1.ability_list and #var_20_1.ability_list > 0 then
-			local var_20_2 = var_20_1.ability_list[1]
-			local var_20_3 = pg.commander_ability_template[var_20_2].name
+		if var_21_1.ability_list and #var_21_1.ability_list > 0 then
+			local var_21_2 = var_21_1.ability_list[1]
+			local var_21_3 = pg.commander_ability_template[var_21_2].name
 
-			table.insert(var_20_0, {
-				id = var_20_1.id,
-				name = var_20_3
+			table.insert(var_21_0, {
+				id = var_21_1.id,
+				name = var_21_3
 			})
 		end
 	end
 
-	return var_20_0
+	return var_21_0
 end
 
-function var_0_0.ShortenString(arg_21_0, arg_21_1)
-	local function var_21_0(arg_22_0)
-		if not arg_22_0 then
+function var_0_0.ShortenString(arg_22_0, arg_22_1)
+	local function var_22_0(arg_23_0)
+		if not arg_23_0 then
 			return 0, 1
-		elseif arg_22_0 > 240 then
+		elseif arg_23_0 > 240 then
 			return 4, 1
-		elseif arg_22_0 > 225 then
+		elseif arg_23_0 > 225 then
 			return 3, 1
-		elseif arg_22_0 > 192 then
+		elseif arg_23_0 > 192 then
 			return 2, 1
-		elseif arg_22_0 < 126 then
+		elseif arg_23_0 < 126 then
 			return 1, 0.75
 		else
 			return 1, 1
 		end
 	end
 
-	local var_21_1 = 1
-	local var_21_2 = 0
-	local var_21_3 = 0
-	local var_21_4 = #arg_21_0
-	local var_21_5 = false
+	local var_22_1 = 1
+	local var_22_2 = 0
+	local var_22_3 = 0
+	local var_22_4 = #arg_22_0
+	local var_22_5 = false
 
-	while var_21_1 <= var_21_4 do
-		local var_21_6 = string.byte(arg_21_0, var_21_1)
-		local var_21_7, var_21_8 = var_21_0(var_21_6)
+	while var_22_1 <= var_22_4 do
+		local var_22_6 = string.byte(arg_22_0, var_22_1)
+		local var_22_7, var_22_8 = var_22_0(var_22_6)
 
-		var_21_1 = var_21_1 + var_21_7
-		var_21_2 = var_21_2 + var_21_8
+		var_22_1 = var_22_1 + var_22_7
+		var_22_2 = var_22_2 + var_22_8
 
-		local var_21_9 = math.ceil(var_21_2)
+		local var_22_9 = math.ceil(var_22_2)
 
-		if var_21_9 == arg_21_1 - 1 then
-			var_21_3 = var_21_1
-		elseif arg_21_1 < var_21_9 then
-			var_21_5 = true
+		if var_22_9 == arg_22_1 - 1 then
+			var_22_3 = var_22_1
+		elseif arg_22_1 < var_22_9 then
+			var_22_5 = true
 
 			break
 		end
 	end
 
-	if var_21_3 == 0 or var_21_4 < var_21_3 or not var_21_5 then
-		return arg_21_0
+	if var_22_3 == 0 or var_22_4 < var_22_3 or not var_22_5 then
+		return arg_22_0
 	end
 
-	return string.sub(arg_21_0, 1, var_21_3 - 1) .. ".."
+	return string.sub(arg_22_0, 1, var_22_3 - 1) .. ".."
 end
 
 return var_0_0

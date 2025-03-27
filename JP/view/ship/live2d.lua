@@ -21,8 +21,6 @@ var_0_0.DRAG_CLICK_PARAMETER = 9
 var_0_0.DRAG_ANIMATION_PLAY = 10
 var_0_0.DRAG_CLICK_RANGE = 11
 var_0_0.DRAG_EXTEND_ACTION_RULE = 12
-var_0_0.DRAG_ANIMATION_PLAY = 10
-var_0_0.DRAG_CLICK_RANGE = 11
 var_0_0.ON_ACTION_PLAY = 1
 var_0_0.ON_ACTION_DRAG_CLICK = 2
 var_0_0.ON_ACTION_CHANGE_IDLE = 3
@@ -248,7 +246,7 @@ local function var_0_14(arg_14_0, arg_14_1, arg_14_2)
 		local var_14_6 = arg_14_2.react
 		local var_14_7 = var_14_4.idle_focus
 		local var_14_8 = var_0_9(arg_14_0)
-		local var_14_9 = var_14_8
+		local var_14_9
 		local var_14_10 = false
 
 		if not var_14_1 or var_14_1 == "" then
@@ -266,7 +264,9 @@ local function var_0_14(arg_14_0, arg_14_1, arg_14_2)
 				arg_14_0:changeIdleIndex(var_14_4.idle and var_14_4.idle or 0)
 			end
 
-			if var_0_11(arg_14_0, var_14_1, var_14_5 or false) then
+			var_14_9 = var_0_11(arg_14_0, var_14_1, var_14_5 or false)
+
+			if var_14_9 then
 				print("id = " .. var_14_0 .. " 触发成功")
 				arg_14_0:onListenerHandle(Live2D.ON_ACTION_PLAY, {
 					action = var_14_1
@@ -282,8 +282,6 @@ local function var_0_14(arg_14_0, arg_14_1, arg_14_2)
 			elseif var_14_1 == "idle" then
 				arg_14_0:live2dActionChange(false)
 			end
-
-			var_14_9 = actionPlaySuccess
 		end
 
 		if var_14_2 then
@@ -362,10 +360,6 @@ local function var_0_15(arg_15_0, arg_15_1)
 		for iter_15_0, iter_15_1 in ipairs(arg_15_0._listenerParameters) do
 			arg_15_0._listenerParametersValue[iter_15_1.name] = iter_15_1.Value
 		end
-
-		arg_15_0:onListenerHandle(Live2D.ON_ACTION_PARAMETER, {
-			values = arg_15_0._listenerParametersValue
-		})
 	else
 		arg_15_0._listenerStepIndex = arg_15_0._listenerStepIndex - 1
 	end
@@ -443,7 +437,7 @@ local function var_0_16(arg_16_0)
 				var_0_14(arg_16_0, arg_17_0, arg_17_1)
 				var_0_13(arg_16_0, arg_17_0, arg_17_1)
 			end)
-			arg_16_0.liveCom:AddParameterValue(var_16_1.parameterName, var_16_1.startValue, var_0_6[var_16_0.mode])
+			arg_16_0.liveCom:AddParameterValue(var_16_1.parameterName, var_16_1.startValue, var_0_6[var_16_1.mode])
 
 			if var_16_0.relation_parameter and var_16_0.relation_parameter.list then
 				local var_16_3 = var_16_0.relation_parameter.list
@@ -738,7 +732,7 @@ function var_0_0.SetVisible(arg_36_0, arg_36_1)
 			arg_36_0._physics.enabled = true
 		end
 
-		arg_36_0:setReactPos(true)
+		arg_36_0:setReactPos(false)
 
 		arg_36_0.cubismModelCom.enabled = true
 	else
@@ -1135,70 +1129,80 @@ function var_0_0.changeParamaterValue(arg_61_0, arg_61_1, arg_61_2)
 	end
 end
 
-function var_0_0.Dispose(arg_62_0)
-	if arg_62_0.state == var_0_0.STATE_INITED then
-		if arg_62_0._go then
-			Destroy(arg_62_0._go)
-		end
-
-		arg_62_0.liveCom.FinishAction = nil
-		arg_62_0.liveCom.EventAction = nil
-	end
-
-	arg_62_0:saveLive2dData()
-	arg_62_0.liveCom:SetMouseInputActions(nil, nil)
-
-	arg_62_0._readlyToStop = false
-	arg_62_0.state = var_0_0.STATE_DISPOSE
-
-	pg.Live2DMgr.GetInstance():StopLoadingLive2d(arg_62_0.live2dRequestId)
-
-	arg_62_0.live2dRequestId = nil
-
-	if arg_62_0.drags then
+function var_0_0.changeDragParameter(arg_62_0, arg_62_1, arg_62_2)
+	if arg_62_0:IsLoaded() and arg_62_0.drags then
 		for iter_62_0 = 1, #arg_62_0.drags do
-			arg_62_0.drags[iter_62_0]:dispose()
+			if arg_62_0.drags[iter_62_0].parameterName and arg_62_0.drags[iter_62_0].parameterName == arg_62_1 then
+				arg_62_0.drags[iter_62_0]:setTargetValue(arg_62_2)
+			end
+		end
+	end
+end
+
+function var_0_0.Dispose(arg_63_0)
+	if arg_63_0.state == var_0_0.STATE_INITED then
+		if arg_63_0._go then
+			Destroy(arg_63_0._go)
 		end
 
-		arg_62_0.drags = {}
+		arg_63_0.liveCom.FinishAction = nil
+		arg_63_0.liveCom.EventAction = nil
 	end
 
-	if arg_62_0.live2dData.gyro == 1 then
+	arg_63_0:saveLive2dData()
+	arg_63_0.liveCom:SetMouseInputActions(nil, nil)
+
+	arg_63_0._readlyToStop = false
+	arg_63_0.state = var_0_0.STATE_DISPOSE
+
+	pg.Live2DMgr.GetInstance():StopLoadingLive2d(arg_63_0.live2dRequestId)
+
+	arg_63_0.live2dRequestId = nil
+
+	if arg_63_0.drags then
+		for iter_63_0 = 1, #arg_63_0.drags do
+			arg_63_0.drags[iter_63_0]:dispose()
+		end
+
+		arg_63_0.drags = {}
+	end
+
+	if arg_63_0.live2dData.gyro == 1 then
 		Input.gyro.enabled = false
 	end
 
-	if arg_62_0.live2dData then
-		arg_62_0.live2dData:Clear()
+	if arg_63_0.live2dData then
+		arg_63_0.live2dData:Clear()
 
-		arg_62_0.live2dData = nil
+		arg_63_0.live2dData = nil
 	end
 
-	arg_62_0:live2dActionChange(false)
+	arg_63_0:live2dActionChange(false)
 
-	if arg_62_0.timer then
-		arg_62_0.timer:Stop()
+	if arg_63_0.timer then
+		arg_63_0.timer:Stop()
 
-		arg_62_0.timer = nil
-	end
-end
-
-function var_0_0.UpdateAtomSource(arg_63_0)
-	arg_63_0.updateAtom = true
-end
-
-function var_0_0.AtomSouceFresh(arg_64_0)
-	local var_64_0 = pg.CriMgr.GetInstance():getAtomSource(pg.CriMgr.C_VOICE)
-	local var_64_1 = arg_64_0._go:GetComponent("CubismCriSrcMouthInput")
-	local var_64_2 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Framework.MouthMovement.CubismCriSrcMouthInput"), "Analyzer", var_64_1)
-
-	var_64_0:AttachToAnalyzer(var_64_2)
-
-	if arg_64_0.updateAtom then
-		arg_64_0.updateAtom = false
+		arg_63_0.timer = nil
 	end
 end
 
-function var_0_0.addKeyBoard(arg_65_0)
+function var_0_0.UpdateAtomSource(arg_64_0)
+	arg_64_0.updateAtom = true
+end
+
+function var_0_0.AtomSouceFresh(arg_65_0)
+	local var_65_0 = pg.CriMgr.GetInstance():getAtomSource(pg.CriMgr.C_VOICE)
+	local var_65_1 = arg_65_0._go:GetComponent("CubismCriSrcMouthInput")
+	local var_65_2 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Framework.MouthMovement.CubismCriSrcMouthInput"), "Analyzer", var_65_1)
+
+	var_65_0:AttachToAnalyzer(var_65_2)
+
+	if arg_65_0.updateAtom then
+		arg_65_0.updateAtom = false
+	end
+end
+
+function var_0_0.addKeyBoard(arg_66_0)
 	return
 end
 

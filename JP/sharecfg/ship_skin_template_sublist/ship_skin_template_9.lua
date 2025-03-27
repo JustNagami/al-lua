@@ -1,119 +1,6 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_9 = {
-	[302089] = {
-		ship_group = 30208,
-		name = "鬼怒改",
-		hand_id = 2,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 302089,
-		group_index = 9,
-		l2d_ignore_drag = 0,
-		painting = "guinu_g",
-		shop_id = 0,
-		illustrator = -1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 9997,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 2,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "guinu_g",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "改造終了だ。…昇華した鬼の力を楽しみにしてろ。失望はさせん",
-		voice_actor = 214,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.09,
-					0.8,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.09,
-					0.8,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.19,
-					0.09,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.09,
-					0.8,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.25,
-							2.31,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
 	[302090] = {
 		ship_group = 30209,
 		name = "阿武隈",
@@ -8612,6 +8499,121 @@ pg.base.ship_skin_template_9 = {
 			}
 		}
 	},
+	[303172] = {
+		ship_group = 30317,
+		name = "ミッドナイト・ケア",
+		hand_id = 2,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 303172,
+		group_index = 2,
+		l2d_ignore_drag = 0,
+		painting = "linggu_3",
+		shop_id = 71125,
+		illustrator = 21,
+		l2d_voice_calibrate = "",
+		shop_type_id = 15,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "138",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "linggu_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "最上型重巡、鈴谷、本日はナースとしてお世話をさせていただきます。ふふふ、指揮官、今夜の検査の時はよろしくお願いしますね♡",
+		voice_actor = 181,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.249,
+					0.807,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.251,
+					0.805,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.789,
+					2.202,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				40,
+				{
+					{
+						"smoke",
+						{
+							-0.314,
+							2.259,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[303180] = {
 		ship_group = 30318,
 		name = "熊野",
@@ -14035,6 +14037,119 @@ pg.base.ship_skin_template_9 = {
 						{
 							-0.6,
 							2.4,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[305049] = {
+		ship_group = 30504,
+		name = "日向改",
+		hand_id = 2,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 305049,
+		group_index = 9,
+		l2d_ignore_drag = 0,
+		painting = "rixiang_g",
+		shop_id = 0,
+		illustrator = 20,
+		l2d_voice_calibrate = "",
+		shop_type_id = 9997,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 2,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "rixiang_g",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "航空戦艦日向、新たな力とともに参上したぞ！指揮官、心配無用、今すぐ改造後の私の実力を見せてやる！",
+		voice_actor = 68,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					-0.26,
+					1.21,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.78,
+					0.99,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.17,
+					0.12,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.78,
+					0.99,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.43,
+							2.37,
 							0
 						}
 					}

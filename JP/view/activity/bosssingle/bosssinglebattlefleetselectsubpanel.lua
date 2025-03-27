@@ -225,8 +225,10 @@ function var_0_0.updateFleet(arg_17_0, arg_17_1, arg_17_2)
 		setActive(var_17_6, var_17_0 and var_17_1)
 	end
 
+	local var_17_11 = arg_17_0.viewParent.contextData.bossActivity:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE_VARIABLE and Fleet.DEFAULT_NAME_BOSS_SINGLE_VARIABLE_ACT or Fleet.DEFAULT_NAME_BOSS_SINGLE_ACT
+
 	if var_17_0 and var_17_1 then
-		setText(var_17_3, Fleet.DEFAULT_NAME_BOSS_SINGLE_ACT[var_17_1.id] or "")
+		setText(var_17_3, var_17_11[var_17_1.id] or "")
 
 		if arg_17_1 == FleetType.Submarine then
 			arg_17_0:updateShips(var_17_6, var_17_1.subShips, var_17_1.id, TeamType.Submarine)
@@ -392,12 +394,7 @@ function var_0_0.updatePropetyLimit(arg_30_0)
 end
 
 function var_0_0.OnShow(arg_32_0)
-	local var_32_0 = #getProxy(ContextProxy):getCurrentContext().children > 0 and LayerWeightConst.LOWER_LAYER or nil
-
-	pg.UIMgr.GetInstance():BlurPanel(arg_32_0._tf, nil, {
-		groupName = LayerWeightConst.GROUP_FORMATION_PAGE,
-		weight = var_32_0
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg_32_0._tf)
 end
 
 function var_0_0.OnHide(arg_33_0)

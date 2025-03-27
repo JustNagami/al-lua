@@ -2485,6 +2485,27 @@ pg.medal_template = {
 		target_num = 8,
 		target_id = "5812"
 	},
+	[200031] = {
+		explain1 = "「病院探訪」",
+		name = "バレー病院調査記念章",
+		explain2 = "イベント",
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "おめでとう。あなたはバレー病院の秘密を解き明かし、最高の結末に辿り着いた。十分に楽しめたかしら？",
+		next = 0,
+		icon = "9031",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9031",
+		condition = "「病院探訪」記念ステッカーを8つ集める",
+		rank = 1,
+		id = 200031,
+		target_num = 8,
+		target_id = "5875"
+	},
 	all = {
 		10011,
 		10012,
@@ -2598,6 +2619,7 @@ pg.medal_template = {
 		100935,
 		200001,
 		200011,
-		200021
+		200021,
+		200031
 	}
 }

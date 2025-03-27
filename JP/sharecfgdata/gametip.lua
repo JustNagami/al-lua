@@ -8407,16 +8407,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "アビリティPtが不足しています"
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "期間限定建造を累計200回行うと「ラファエロ」を確定で入手可能！（最大4隻まで）"
+	tip = "期間限定建造を累計200回行うと「インプラカブル」を確定で入手可能！（最大4隻まで）"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "「寰昌」常設実装！"
+	tip = "「トリエステ」常設実装！"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "「済安」「龍武」「虎賁」常設実装！"
+	tip = "「ポンペオ・マーニョ」常設実装！"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "「クロンシュタット」「ヴォルガ」常設実装！"
+	tip = "「インペロ」常設実装！"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -23318,7 +23318,7 @@ _G.pg.base.gametip.skin_exchange_confirm = {
 	tip = "<color=#92fc63>$1*1</color>を消費して<color=#92fc63>$2</color>と交換しますか"
 }
 _G.pg.base.gametip.skin_purchase_confirm = {
-	tip = "<size=32><color=#92fc63>$1*1</color>を消費し、割引価格\n<icon name=gem w=0.6 h=0.6/><color=#FFDE38FF>$2</color>で<color=#92fc63>$3</color>着せ替えを購入しますか？</size>"
+	tip = "<size=30><color=#92fc63>$1*1</color>を消費し、割引価格<icon name=gem w=0.6 h=0.6/><color=#FFDE38FF>$2</color>で\n<color=#92fc63>$3</color>着せ替えを購入しますか？</size>"
 }
 _G.pg.base.gametip.blackfriday_pack_lock = {
 	tip = "$1解放後に購入できます"
@@ -26569,4 +26569,185 @@ _G.pg.base.gametip.rps_game_take_card = {
 }
 _G.pg.base.gametip.drom3d_beach_memory_limit_tip = {
 	tip = "端末スペックが不足しているため、キャラを3人配置するとプレイ中ゲームがクラッシュする可能性があります。配置を確定しますか？"
+}
+_G.pg.base.gametip.battlepass_main_tip_2504 = {
+	tip = "2025/4/1-2025/5/31キャンペーン期間中、シーズン任務累計<icon name=pt w=0.5 h=0.5/>入手報酬で<color=#854747>「ネバダ(META)」</color>などを入手可能"
+}
+_G.pg.base.gametip.battlepass_main_help_2504 = {
+	tip = {
+		{
+			info = [[
+■キャンペーン開催期間
+ 2025.4.1（火）0:00～2025.5.31（土）23:59
+
+■概要
+「シーズン任務」とは、キャンペーン開催中の任務をクリアし「進捗Pt」を集め、入手した進捗Ptに応じた累計獲得数報酬が手に入るキャンペーンになります。
+また、通常の累計獲得数報酬に追加する形で「SP報酬」が存在し、ショップアイテム「クルーズパス」を購入すると、SP報酬も入手可能となります。
+通常報酬からは艦船「ネバダ(META)」、SP報酬からは駆逐艦「ストレミテルヌイ」の限定着せ替え「夜間看護当直中」を入手できます。
+
+■遊び方
+・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
+ ①週次開放任務
+ キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
+ ②全期間任務
+ 最初から全開放される任務。全1グループ
+・上記「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
+ さらに「クルーズパス」を購入すると、15段階分の報酬（進捗Pt1500）が入手可能となります。
+・「進捗Pt」の累計入手数に応じて、進捗Pt累計獲得数報酬を入手できます。累計獲得数報酬は2種類存在します。
+ ①通常報酬
+ 「進捗Pt」の入手数に応じて獲得できる報酬。全100段階となります
+ ②SP報酬
+ 「クルーズパス」を購入すると開放される追加報酬。通常報酬と同じく全100段階存在し、通常報酬と同じ段階のSP報酬が入手できます。
+・キャンペーンが終了すると、入手済みの進捗Ptはリセットされます。
+
+■Tips
+・プレイスタイル
+ シーズン任務は全100段階あり、いきなり最後まではクリアできない仕様になっております。いつものクエストをくり返しながら任務をこなしていくか、狙いの報酬を決めて最短ペースでクリアしていくかなど、自分のプレイスタイルに合わせてプレイすることをオススメします。
+
+・クルーズパス
+ ショップで「クルーズパス」を購入すると、お得なアイテムとともに「進捗Pt」を1500Pt入手できます。また、追加の限定着せ替えは「クルーズパス」を購入して開放される「SP報酬」でのみ入手できます。要注意。
+
+・任務のスキップ（オススメしません）
+ 「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
+ ダイヤを消費しますので、オススメしません。
+ 「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_task_help_2504 = {
+	tip = {
+		{
+			info = [[
+■シーズン任務について
+・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。
+ ①週次開放任務
+ キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ
+ ②全期間任務
+ 最初から全開放される任務。全1グループ
+
+・「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。
+
+・「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。
+ ダイヤを消費しますので、オススメしません……
+ 「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。]]
+		}
+	}
+}
+_G.pg.base.gametip.cruise_title_2504 = {
+	tip = "シーズン任務・22期"
+}
+_G.pg.base.gametip.SkinDiscountHelp_School = {
+	tip = {
+		{
+			info = "1.キャンペーン期間中、<color=#92fc63>クーポンを使用せずに</color>「学園」シリーズ着せ替えを購入するか、着せ替えパック（学園）を購入した場合、キャンペーンページにて<color=#92fc63>着せ替えクーポン（学園）</color>を入手できます\n2.<color=#92fc63>着せ替えクーポン（学園）</color>は「学園」シリーズの着せ替えを購入する際に、ダイヤ×300分割引になります（お得パックを購入する時には使用できません）\n3.キャンペーン終了時【2025年4月9日（水）23:59:59】、未使用の<color=#92fc63>着せ替えクーポン（学園）</color>は削除されます"
+		}
+	}
+}
+_G.pg.base.gametip.SkinDiscount_Hint = {
+	tip = "未受取の着せ替えクーポンがあります。クーポン受け取りページに移動しますか？"
+}
+_G.pg.base.gametip.SkinDiscount_Got = {
+	tip = "所持中:$1"
+}
+_G.pg.base.gametip.skin_original_price = {
+	tip = "通常"
+}
+_G.pg.base.gametip.clue_title_1 = {
+	tip = "場所情報"
+}
+_G.pg.base.gametip.clue_title_2 = {
+	tip = "キャラ情報"
+}
+_G.pg.base.gametip.clue_title_3 = {
+	tip = "重要情報"
+}
+_G.pg.base.gametip.clue_title_4 = {
+	tip = "ストーリー"
+}
+_G.pg.base.gametip.clue_task_goto = {
+	tip = "調査開始"
+}
+_G.pg.base.gametip.clue_lock_tip1 = {
+	tip = "キャラ情報を開放"
+}
+_G.pg.base.gametip.clue_lock_tip2 = {
+	tip = "$1を開放"
+}
+_G.pg.base.gametip.clue_get = {
+	tip = "受取"
+}
+_G.pg.base.gametip.clue_got = {
+	tip = "受取済"
+}
+_G.pg.base.gametip.clue_unselect_tip = {
+	tip = "調査攻略で調査目標を選択"
+}
+_G.pg.base.gametip.clue_close_tip = {
+	tip = "画面タップで戻る"
+}
+_G.pg.base.gametip.clue_pt_tip = {
+	tip = "累計 x"
+}
+_G.pg.base.gametip.clue_buff_research = {
+	tip = "調査内容"
+}
+_G.pg.base.gametip.clue_buff_pt_boost = {
+	tip = "1つ追加する度にPt入手+5%"
+}
+_G.pg.base.gametip.clue_buff_stage_loot = {
+	tip = "クリア報酬"
+}
+_G.pg.base.gametip.clue_task_tip = {
+	tip = "（進捗：$1回）"
+}
+_G.pg.base.gametip.clue_buff_reach_max = {
+	tip = "これ以上調査内容を追加できません"
+}
+_G.pg.base.gametip.clue_buff_unselect = {
+	tip = "-調査内容が選択されていません-"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_1 = {
+	tip = "T1 入院棟（正午）"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_2 = {
+	tip = "T2 療養センター（正午）"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_3 = {
+	tip = "T3 物流センター（正午）"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_4 = {
+	tip = "T4 研究センター（正午）"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_5 = {
+	tip = "T1 入院棟（黄昏）"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_6 = {
+	tip = "T2 療養センター（黄昏）"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_7 = {
+	tip = "T3 物流センター（黄昏）"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_8 = {
+	tip = "T4 研究センター（黄昏）"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_9 = {
+	tip = "T1 入院棟（夜）"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_10 = {
+	tip = "T2 療養センター（夜）"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_11 = {
+	tip = "T3 物流センター（夜）"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_12 = {
+	tip = "T4 研究センター（夜）"
+}
+_G.pg.base.gametip.ship_formationUI_fleetName_13 = {
+	tip = "ESP 診療センター"
+}
+_G.pg.base.gametip.clue_buff_ticket_tips = {
+	tip = "チェックボックスをタップし「天狐グループバッジ」を使用と報酬を追加入手可能"
+}
+_G.pg.base.gametip.clue_buff_empty_ticket = {
+	tip = "「天狐グループバッジ」は限定任務で入手できます"
 }
