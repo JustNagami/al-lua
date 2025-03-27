@@ -613,7 +613,7 @@ function var_0_0.initPauseWindow(arg_31_0)
 
 		setText(var_31_2, var_31_5.chapter_name)
 		setText(var_31_3, string.split(var_31_5.name, "|")[1])
-	elseif var_31_4 == SYSTEM_ROUTINE or var_31_4 == SYSTEM_DUEL or var_31_4 == SYSTEM_HP_SHARE_ACT_BOSS or var_31_4 == SYSTEM_BOSS_EXPERIMENT or var_31_4 == SYSTEM_ACT_BOSS or var_31_4 == SYSTEM_ACT_BOSS_SP or var_31_4 == SYSTEM_BOSS_RUSH or var_31_4 == SYSTEM_BOSS_RUSH_EX or var_31_4 == SYSTEM_LIMIT_CHALLENGE or var_31_4 == SYSTEM_BOSS_SINGLE then
+	elseif var_31_4 == SYSTEM_ROUTINE or var_31_4 == SYSTEM_DUEL or var_31_4 == SYSTEM_HP_SHARE_ACT_BOSS or var_31_4 == SYSTEM_BOSS_EXPERIMENT or var_31_4 == SYSTEM_ACT_BOSS or var_31_4 == SYSTEM_ACT_BOSS_SP or var_31_4 == SYSTEM_BOSS_RUSH or var_31_4 == SYSTEM_BOSS_RUSH_EX or var_31_4 == SYSTEM_LIMIT_CHALLENGE or var_31_4 == SYSTEM_BOSS_SINGLE or var_31_4 == SYSTEM_BOSS_SINGLE_VARIABLE then
 		setText(var_31_2, "SP")
 
 		local var_31_6 = var_31_1:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetInitData().StageTmpId

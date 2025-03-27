@@ -14,6 +14,7 @@ function var_0_0.OnLoaded(arg_2_0)
 
 	setText(arg_2_0.cancelBtn:Find("pic"), i18n("msgbox_text_cancel"))
 	setText(arg_2_0.confirmBtn:Find("pic"), i18n("msgbox_text_confirm"))
+	setText(arg_2_0:findTF("window/top/bg/infomation/title"), i18n("words_information"))
 end
 
 function var_0_0.OnInit(arg_3_0)
@@ -49,20 +50,20 @@ function var_0_0.RegisterBtn(arg_8_0, arg_8_1)
 end
 
 function var_0_0.UpdateContent(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_1.itemConfig
+	local var_10_0 = arg_10_1.drop
 	local var_10_1 = arg_10_1.skinName
 	local var_10_2 = arg_10_1.price
 
-	arg_10_0.label1.text = i18n("skin_purchase_confirm", var_10_0.name, var_10_2, var_10_1)
-	arg_10_0.nameTxt.text = var_10_0.name
+	arg_10_0.label1.text = i18n("skin_purchase_confirm", var_10_0:getName(), var_10_2, var_10_1)
+
+	setActive(arg_10_0.label1, false)
+	setActive(arg_10_0.label1, true)
+
+	arg_10_0.nameTxt.text = var_10_0:getName()
 end
 
 function var_0_0.UpdateItem(arg_11_0, arg_11_1)
-	updateDrop(arg_11_0.leftItemTr, {
-		count = 1,
-		type = DROP_TYPE_ITEM,
-		id = arg_11_1.itemConfig.id
-	})
+	updateDrop(arg_11_0.leftItemTr, arg_11_1.drop)
 end
 
 function var_0_0.Hide(arg_12_0)

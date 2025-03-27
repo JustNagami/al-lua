@@ -187,12 +187,10 @@ end
 function var_0_0.UpdateAwardPage(arg_23_0)
 	arg_23_0:UpdateAwardTip()
 	arg_23_0.pages[var_0_0.PAGE_AWARD]:ExecuteAction("UpdateActivity", arg_23_0.activity)
-	arg_23_0:UpdateView()
 end
 
 function var_0_0.UpdateTaskPage(arg_24_0)
 	arg_24_0.pages[var_0_0.PAGE_TASK]:ExecuteAction("UpdateActivity", arg_24_0.activity)
-	arg_24_0:UpdateView()
 end
 
 function var_0_0.UpdateShopPage(arg_25_0)

@@ -181,7 +181,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 				for iter_4_0, iter_4_1 in pairs(var_1_37) do
 					local var_4_0 = var_1_33 ~= iter_4_0
 
-					if var_1_39 == ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2 or var_1_39 == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE then
+					if var_1_39 == ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2 or var_1_39 == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE or var_1_39 == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE_VARIABLE then
 						var_4_0 = iter_4_0 == ActivityBossMediatorTemplate.GetPairedFleetIndex(var_1_33)
 					end
 

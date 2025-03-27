@@ -25205,7 +25205,7 @@ _G.pg.base.item_data_statistics[30422] = {
 	time_limit = 0,
 	virtual_type = 0,
 	other_item_cost = "[]",
-	usage_arg = "30422",
+	usage_arg = "111218",
 	is_world = 0,
 	compose_number = 0,
 	target_id = 0,
@@ -25255,7 +25255,7 @@ _G.pg.base.item_data_statistics[30423] = {
 	time_limit = 0,
 	virtual_type = 0,
 	other_item_cost = "[]",
-	usage_arg = "30423",
+	usage_arg = "111219",
 	is_world = 0,
 	compose_number = 0,
 	target_id = 0,
@@ -25315,7 +25315,7 @@ _G.pg.base.item_data_statistics[30424] = {
 	time_limit = 0,
 	virtual_type = 0,
 	other_item_cost = "[]",
-	usage_arg = "30424",
+	usage_arg = "111719",
 	is_world = 0,
 	compose_number = 0,
 	target_id = 0,
@@ -25360,7 +25360,7 @@ _G.pg.base.item_data_statistics[30425] = {
 	time_limit = 0,
 	virtual_type = 0,
 	other_item_cost = "[]",
-	usage_arg = "30425",
+	usage_arg = "111220",
 	is_world = 0,
 	compose_number = 0,
 	target_id = 0,
@@ -95775,51 +95775,6 @@ _G.pg.base.item_data_statistics[100025] = {
 	combination_display = {},
 	limit = {}
 }
-_G.pg.base.item_data_statistics[80003] = {
-	open_directly = 1,
-	name = "舰船教材T3捆绑包*1 ",
-	display = "使用后可获得舰艇攻击教材T3*1、舰艇防御教材T3*1、舰艇辅助教材T3*1",
-	type = 17,
-	display_effect = "",
-	id = 80003,
-	other_resource_cost = "[]",
-	replace_item = 0,
-	usage = "usage_drop",
-	link_id = 0,
-	icon = "Props/54002",
-	order = 0,
-	rarity = 4,
-	max_num = 0,
-	time_limit = 0,
-	virtual_type = 0,
-	other_item_cost = "[]",
-	usage_arg = "998000",
-	is_world = 0,
-	compose_number = 0,
-	target_id = 0,
-	display_icon = {
-		{
-			2,
-			16003,
-			1
-		},
-		{
-			2,
-			16013,
-			1
-		},
-		{
-			2,
-			16023,
-			1
-		}
-	},
-	price = {},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {},
-	limit = {}
-}
 _G.pg.base.item_data_statistics[81209] = {
 	open_directly = 1,
 	name = "Game Night Lucky Bag B",
@@ -96848,7 +96803,7 @@ _G.pg.base.item_data_statistics[30426] = {
 	time_limit = 0,
 	virtual_type = 0,
 	other_item_cost = "[]",
-	usage_arg = "30426",
+	usage_arg = "111221",
 	is_world = 0,
 	compose_number = 0,
 	target_id = 0,
@@ -97563,4 +97518,689 @@ _G.pg.base.item_data_statistics[21918] = {
 	shiptrans_id = {},
 	combination_display = {},
 	limit = {}
+}
+_G.pg.base.item_data_statistics[21046] = {
+	open_directly = 0,
+	name = "META Crystal – Nevada META",
+	display = "An item that increases the potential of Nevada META. Used in the META Lab during Somatic Activation.",
+	type = 4,
+	display_effect = "",
+	id = 21046,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_undefined",
+	link_id = 0,
+	icon = "Props/21046",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[30366] = {
+	open_directly = 1,
+	name = "Gear Skin Box (Medical)",
+	display = "Contains a random Medical-themed gear skin.",
+	type = 11,
+	display_effect = "",
+	id = 30366,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "Props/appearanceboxbingyuan",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "30366",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			9,
+			4131,
+			1
+		},
+		{
+			9,
+			4132,
+			1
+		},
+		{
+			9,
+			4133,
+			1
+		},
+		{
+			9,
+			4134,
+			1
+		},
+		{
+			9,
+			4135,
+			1
+		},
+		{
+			9,
+			4136,
+			1
+		},
+		{
+			9,
+			4137,
+			1
+		},
+		{
+			9,
+			4138,
+			1
+		},
+		{
+			9,
+			4139,
+			1
+		},
+		{
+			9,
+			4140,
+			1
+		},
+		{
+			9,
+			4141,
+			1
+		},
+		{
+			9,
+			4142,
+			1
+		},
+		{
+			9,
+			4143,
+			1
+		},
+		{
+			9,
+			4144,
+			1
+		},
+		{
+			9,
+			4145,
+			1
+		},
+		{
+			9,
+			4146,
+			1
+		},
+		{
+			9,
+			4147,
+			1
+		},
+		{
+			9,
+			4148,
+			1
+		}
+	},
+	price = {
+		1,
+		7000
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[30427] = {
+	open_directly = 1,
+	name = "Gear Skin Box (Cruise Missions)",
+	display = "Contains 1 random Cruise Mission gear skin.",
+	type = 11,
+	display_effect = "",
+	id = 30427,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "Props/appearanceboxshijiexunyou",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "111222",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			9,
+			2093,
+			1
+		},
+		{
+			9,
+			2094,
+			1
+		},
+		{
+			9,
+			2095,
+			1
+		},
+		{
+			9,
+			2096,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[30553] = {
+	open_directly = 0,
+	name = "Selection Gear Skin Box (Medical)",
+	display = "Can be opened to receive 1 Medical-themed gear skin of your choosing.",
+	type = 13,
+	display_effect = "",
+	id = 30553,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop_appointed",
+	link_id = 0,
+	icon = "Props/appearanceboxbingyuanzixuan",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			9,
+			4131,
+			1
+		},
+		{
+			9,
+			4132,
+			1
+		},
+		{
+			9,
+			4133,
+			1
+		},
+		{
+			9,
+			4134,
+			1
+		},
+		{
+			9,
+			4135,
+			1
+		},
+		{
+			9,
+			4136,
+			1
+		},
+		{
+			9,
+			4137,
+			1
+		},
+		{
+			9,
+			4138,
+			1
+		},
+		{
+			9,
+			4139,
+			1
+		},
+		{
+			9,
+			4140,
+			1
+		},
+		{
+			9,
+			4141,
+			1
+		},
+		{
+			9,
+			4142,
+			1
+		},
+		{
+			9,
+			4143,
+			1
+		},
+		{
+			9,
+			4144,
+			1
+		},
+		{
+			9,
+			4145,
+			1
+		},
+		{
+			9,
+			4146,
+			1
+		},
+		{
+			9,
+			4147,
+			1
+		},
+		{
+			9,
+			4148,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			9,
+			4131,
+			1
+		},
+		{
+			9,
+			4132,
+			1
+		},
+		{
+			9,
+			4133,
+			1
+		},
+		{
+			9,
+			4134,
+			1
+		},
+		{
+			9,
+			4135,
+			1
+		},
+		{
+			9,
+			4136,
+			1
+		},
+		{
+			9,
+			4137,
+			1
+		},
+		{
+			9,
+			4138,
+			1
+		},
+		{
+			9,
+			4139,
+			1
+		},
+		{
+			9,
+			4140,
+			1
+		},
+		{
+			9,
+			4141,
+			1
+		},
+		{
+			9,
+			4142,
+			1
+		},
+		{
+			9,
+			4143,
+			1
+		},
+		{
+			9,
+			4144,
+			1
+		},
+		{
+			9,
+			4145,
+			1
+		},
+		{
+			9,
+			4146,
+			1
+		},
+		{
+			9,
+			4147,
+			1
+		},
+		{
+			9,
+			4148,
+			1
+		}
+	},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[40057] = {
+	open_directly = 1,
+	name = "Battle UI Pack - Genetic Origin (Basic)",
+	display = "Contains the Battle UI - Genetic Origin theme.",
+	type = 17,
+	display_effect = "OpenBox",
+	id = 40057,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "ChargeIcon/ui4",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "4058",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			31,
+			203,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[40058] = {
+	open_directly = 1,
+	name = "Battle UI Pack - Genetic Origin (Premium)",
+	display = "Contains the Battle UI - Genetic Origin theme and 3,060 Gems.",
+	type = 17,
+	display_effect = "OpenBox",
+	id = 40058,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "ChargeIcon/ui4",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "4059",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			31,
+			203,
+			1
+		},
+		{
+			1,
+			14,
+			3060
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[81212] = {
+	open_directly = 1,
+	name = "School Return Lucky Box",
+	display = "Purchase to obtain 1 random unowned skin available in the School Girl Series Rerun Campaign (if you already own all the skins, you will receive Gems x680 instead), Coins x2,000, Oil x1,000, and Cognitive Chips x20.",
+	type = 17,
+	display_effect = "",
+	id = 81212,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop_random_skin",
+	link_id = 0,
+	icon = "Props/fudai23",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			86212,
+			1
+		},
+		{
+			1,
+			1,
+			2000
+		},
+		{
+			1,
+			2,
+			1000
+		},
+		{
+			2,
+			15008,
+			20
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		998314,
+		680,
+		{
+			101031,
+			101041,
+			101262,
+			101266,
+			101314,
+			101361,
+			101371,
+			102101,
+			102121,
+			102163,
+			102231,
+			102274,
+			103061,
+			103071,
+			103081,
+			103102,
+			103131,
+			103161,
+			107221,
+			107232,
+			108031,
+			108062,
+			201031,
+			201352,
+			201361,
+			202032,
+			202111,
+			202231,
+			202261,
+			202331,
+			203071,
+			205141,
+			206021,
+			207053,
+			207061,
+			207071,
+			301011,
+			301021,
+			301153,
+			301232,
+			301472,
+			301592,
+			301611,
+			301631,
+			301644,
+			301801,
+			301812,
+			301861,
+			303114,
+			303123,
+			304013,
+			304031,
+			304041,
+			305026,
+			305142,
+			306062,
+			307032,
+			307041,
+			307074,
+			308011,
+			308021,
+			308041,
+			401011,
+			401431,
+			401471,
+			403051,
+			403093,
+			405033,
+			408061,
+			408081,
+			408131,
+			501012,
+			601071,
+			603041,
+			607021,
+			801022,
+			901012
+		}
+	},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[81423] = {
+	open_directly = 1,
+	name = "Hospital Adventure Lucky Bag",
+	display = "Contains 1x random skin, 2x Special General Blueprints - Series 7, 2025x Gems, 50x Cognitive Chips, 20x Wisdom Cubes, 100x Decor Tokens, and 10x Quick Finishers.",
+	type = 17,
+	display_effect = "",
+	id = 81423,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "Props/fudai94",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	limit = "[]",
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "998551",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			86414,
+			1
+		},
+		{
+			1,
+			14,
+			2025
+		},
+		{
+			2,
+			42066,
+			2
+		},
+		{
+			2,
+			15008,
+			50
+		},
+		{
+			2,
+			20001,
+			20
+		},
+		{
+			2,
+			15003,
+			10
+		},
+		{
+			1,
+			6,
+			100
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
 }
