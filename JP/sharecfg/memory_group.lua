@@ -227,6 +227,7 @@ pg.memory_group = setmetatable({
 		320,
 		321,
 		322,
+		323,
 		501,
 		502,
 		503,
@@ -5384,6 +5385,19 @@ pg.base.memory_group = {
 			4269,
 			4270,
 			4271
+		}
+	},
+	[323] = {
+		id = 323,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5879,
+		title = "ブリ戦隊と母港暗黒コーポ",
+		memories = {
+			4281,
+			4282,
+			4283
 		}
 	},
 	[501] = {

@@ -156010,3 +156010,81 @@ _G.pg.base.equip_data_statistics[170722] = {
 	},
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[630081] = {
+	type = 11,
+	name = "【愚人节活动2025】彩布里 锤子主炮（正常威力）",
+	speciality = "<[VOL]>",
+	tech = 3,
+	rarity = 4,
+	ammo = 1,
+	nationality = 1,
+	descrip = "说明未填写",
+	id = 630081,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "12100",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {
+		{
+			6
+		}
+	},
+	weapon_id = {
+		630081
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		2
+	},
+	part_sub = {
+		5
+	},
+	equip_parameters = {},
+	label = {}
+}
+_G.pg.base.equip_data_statistics[630082] = {
+	type = 2,
+	name = "【愚人节活动2025】彩布里 兵装效果（正常威力）",
+	speciality = "<[VOL]>",
+	tech = 3,
+	rarity = 4,
+	ammo = 1,
+	nationality = 1,
+	descrip = "说明未填写",
+	id = 630082,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "12100",
+	value_1 = "0",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		3
+	},
+	ammo_info = {},
+	equip_info = {
+		{
+			6
+		}
+	},
+	weapon_id = {
+		630082
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		2
+	},
+	part_sub = {
+		5
+	},
+	equip_parameters = {},
+	label = {}
+}
