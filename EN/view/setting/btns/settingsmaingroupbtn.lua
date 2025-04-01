@@ -92,7 +92,7 @@ function var_0_0.updateUI(arg_10_0)
 		setActive(arg_10_0.newIcon, true)
 		setActive(arg_10_0.finishIcon, false)
 	elseif var_10_0 == DownloadState.CheckOver then
-		setText(arg_10_0.btnText, "无需更新")
+		setText(arg_10_0.btnText, "No Update")
 		setActive(arg_10_0.loadingIcon, false)
 		setActive(arg_10_0.newIcon, false)
 		setActive(arg_10_0.finishIcon, false)
