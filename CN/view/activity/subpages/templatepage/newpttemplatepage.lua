@@ -2,6 +2,7 @@
 
 var_0_0.OFFSET = 0.00042
 var_0_0.SHOW_COUNT = 8
+var_0_0.AWARD_OFFSET = 1e-05
 
 function var_0_0.OnInit(arg_1_0)
 	arg_1_0.bg = arg_1_0:findTF("AD")
@@ -121,7 +122,7 @@ function var_0_0.UpdateNextAward(arg_11_0, arg_11_1)
 	arg_11_1 = math.min(arg_11_1, 1)
 
 	for iter_11_0, iter_11_1 in pairs(arg_11_0.importantPos) do
-		if arg_11_1 < iter_11_1.pos then
+		if arg_11_1 + var_0_0.AWARD_OFFSET < iter_11_1.pos then
 			setActive(arg_11_0.sptf, true)
 			arg_11_0:UpdateAward(iter_11_1.index - 1, arg_11_0.spAward)
 

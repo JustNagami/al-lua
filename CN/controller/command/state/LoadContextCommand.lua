@@ -87,10 +87,6 @@ function var_0_0.loadScene(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
 			end
 		end,
 		function(arg_11_0)
-			if arg_5_2 and arg_5_2.cleanChild then
-				arg_5_2.children = {}
-			end
-
 			if arg_5_1.cleanStack then
 				var_5_0:cleanContext()
 			end
@@ -99,6 +95,10 @@ function var_0_0.loadScene(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
 			arg_11_0()
 		end,
 		function(arg_12_0)
+			if arg_5_1 and arg_5_1.cleanChild then
+				arg_5_1.children = {}
+			end
+
 			seriesAsync({
 				function(arg_13_0)
 					var_5_1:prepare(arg_5_0.facade, arg_5_1, function(arg_14_0)
