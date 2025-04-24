@@ -38,7 +38,7 @@ function var_0_0.init(arg_6_0)
 		arg_6_0:closeView()
 	end, SFX_CANCEL)
 
-	local var_6_0 = arg_6_0._tf:Find("select/container")
+	local var_6_0 = arg_6_0._tf:Find("select/view/container")
 
 	arg_6_0.iconList = UIItemList.New(var_6_0, var_6_0:Find("tpl"))
 
@@ -104,15 +104,28 @@ function var_0_0.setSelectedShip(arg_13_0, arg_13_1)
 	setPaintingPrefabAsync(arg_13_0.rtPaint, arg_13_1:getPainting(), "huode")
 end
 
-function var_0_0.didEnter(arg_14_0)
+function var_0_0.flush(arg_14_0)
+	mergeSort(arg_14_0.ids, CompareFuncs({
+		function(arg_15_0)
+			local var_15_0 = Ship.New({
+				configId = arg_15_0
+			})
+
+			return getProxy(CollectionProxy):getShipGroup(var_15_0:getGroupId()) and 1 or 0
+		end
+	}, true))
 	arg_14_0.iconList:align(#arg_14_0.ids)
 end
 
-function var_0_0.willExit(arg_15_0)
-	arg_15_0.iconSprites = nil
+function var_0_0.didEnter(arg_16_0)
+	arg_16_0:flush()
+end
 
-	if arg_15_0.shipVO then
-		retPaintingPrefab(arg_15_0.rtPaint, arg_15_0.shipVO:getPainting())
+function var_0_0.willExit(arg_17_0)
+	arg_17_0.iconSprites = nil
+
+	if arg_17_0.shipVO then
+		retPaintingPrefab(arg_17_0.rtPaint, arg_17_0.shipVO:getPainting())
 	end
 end
 

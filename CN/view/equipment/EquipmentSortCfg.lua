@@ -182,7 +182,8 @@
 		{
 			types = {
 				Nation.CM,
-				Nation.MOT
+				Nation.MOT,
+				Nation.NL
 			}
 		}
 	},

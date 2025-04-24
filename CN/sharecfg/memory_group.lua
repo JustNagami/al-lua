@@ -230,6 +230,8 @@ pg.memory_group = setmetatable({
 		321,
 		322,
 		323,
+		324,
+		325,
 		501,
 		502,
 		503,
@@ -336,6 +338,7 @@ pg.memory_group = setmetatable({
 		606,
 		607,
 		608,
+		609,
 		1000,
 		1001,
 		1002,
@@ -5424,6 +5427,38 @@ pg.base.memory_group = {
 			4283
 		}
 	},
+	[324] = {
+		id = 324,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 0,
+		title = "港区时尚特刊：春日慵懒",
+		memories = {
+			4301,
+			4302,
+			4303,
+			4304
+		}
+	},
+	[325] = {
+		id = 325,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 5921,
+		title = "扬起郁金之旗",
+		memories = {
+			4311,
+			4312,
+			4313,
+			4314,
+			4315,
+			4316,
+			4317,
+			4318
+		}
+	},
 	[501] = {
 		id = 501,
 		subtype = 0,
@@ -7237,6 +7272,23 @@ pg.base.memory_group = {
 			4255,
 			4256,
 			4257
+		}
+	},
+	[609] = {
+		id = 609,
+		subtype = 0,
+		icon = "title_chara_qiabayefu",
+		type = 3,
+		link_event = 0,
+		title = "独占时光",
+		memories = {
+			4291,
+			4292,
+			4293,
+			4294,
+			4295,
+			4296,
+			4297
 		}
 	},
 	[1000] = {

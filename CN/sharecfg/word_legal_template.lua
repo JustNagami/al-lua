@@ -541,6 +541,11 @@ function temp()
 				}
 			}
 		},
+		列 = {
+			格 = {
+				this = true
+			}
+		},
 		丁 = {
 			this = true
 		},
@@ -874,6 +879,11 @@ function temp()
 						}
 					}
 				}
+			}
+		},
+		佛 = {
+			森 = {
+				this = true
 			}
 		},
 		吉 = {
@@ -1922,6 +1932,15 @@ function temp()
 			戴 = {
 				安 = {
 					娜 = {
+						this = true
+					}
+				}
+			}
+		},
+		安 = {
+			克 = {
+				雷 = {
+					奇 = {
 						this = true
 					}
 				}
@@ -7381,6 +7400,9 @@ temp()
 
 function temp()
 	var_0_1.喀 = {
+		山 = {
+			this = true
+		},
 		琅 = {
 			施 = {
 				塔 = {
@@ -7792,6 +7814,16 @@ function temp()
 					}
 				}
 			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.七 = {
+		省 = {
+			this = true
 		}
 	}
 end

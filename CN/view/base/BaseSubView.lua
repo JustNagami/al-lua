@@ -229,43 +229,49 @@ function var_0_0.getUIName(arg_25_0)
 	return nil
 end
 
-function var_0_0.OnLoaded(arg_26_0)
+function var_0_0.preloadUIList(arg_26_0)
+	return {
+		arg_26_0:getUIName()
+	}
+end
+
+function var_0_0.OnLoaded(arg_27_0)
 	return
 end
 
-function var_0_0.OnInit(arg_27_0)
+function var_0_0.OnInit(arg_28_0)
 	return
 end
 
-function var_0_0.OnDestroy(arg_28_0)
+function var_0_0.OnDestroy(arg_29_0)
 	return
 end
 
-function var_0_0.ResUISettings(arg_29_0)
+function var_0_0.ResUISettings(arg_30_0)
 	return nil
 end
 
-function var_0_0.ShowOrHideResUI(arg_30_0, arg_30_1)
-	local var_30_0 = arg_30_0:ResUISettings()
+function var_0_0.ShowOrHideResUI(arg_31_0, arg_31_1)
+	local var_31_0 = arg_31_0:ResUISettings()
 
-	if not var_30_0 then
+	if not var_31_0 then
 		return
 	end
 
-	if var_30_0 == true then
-		var_30_0 = {
+	if var_31_0 == true then
+		var_31_0 = {
 			anim = true,
 			showType = PlayerResUI.TYPE_ALL
 		}
 	end
 
 	pg.playerResUI:SetActive(setmetatable({
-		active = arg_30_1,
-		weight = var_30_0.weight,
-		groupName = var_30_0.groupName,
-		canvasOrder = var_30_0.order or false
+		active = arg_31_1,
+		weight = var_31_0.weight,
+		groupName = var_31_0.groupName,
+		canvasOrder = var_31_0.order or false
 	}, {
-		__index = var_30_0
+		__index = var_31_0
 	}))
 end
 

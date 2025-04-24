@@ -243,7 +243,7 @@
 			}
 		},
 		{
-			actor = 100011,
+			actor = 100020,
 			side = 0,
 			bgName = "star_level_bg_148",
 			actorName = "泛用型布里&特装型布里MKIII",

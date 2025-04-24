@@ -8209,6 +8209,1360 @@ pg.newserver_shop_template = {
 			1
 		}
 	},
+	[701] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 1,
+		type = 4,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "SquareIcon/changmen",
+		goods_name = "鲨",
+		resource_type = 497,
+		id = 701,
+		resource_num = 1000,
+		goods_rarity = 4,
+		goods = {
+			305051
+		}
+	},
+	[702] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 40,
+		type = 8,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "Props/buildTicket_newserver",
+		goods_name = "新手单次建造券",
+		resource_type = 497,
+		id = 702,
+		resource_num = 100,
+		goods_rarity = 4,
+		goods = {
+			65093
+		}
+	},
+	[703] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 29,
+		type = 3,
+		goods_type = 4,
+		num = 1,
+		goods_icon = "Props/newserver_equip4",
+		goods_name = "装备补给T4",
+		resource_type = 497,
+		id = 703,
+		resource_num = 200,
+		goods_rarity = 4,
+		goods = {
+			11240,
+			31040,
+			90140,
+			32240,
+			43040,
+			95240,
+			44140,
+			24340,
+			5240,
+			35240,
+			45140,
+			15140,
+			35540,
+			45440,
+			16440,
+			26240,
+			26540,
+			46340,
+			17340,
+			27140,
+			37340,
+			47140,
+			28140,
+			38240,
+			19240,
+			39140,
+			1540,
+			2620,
+			1440
+		}
+	},
+	[704] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 50,
+		type = 3,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/newserver_equip3",
+		goods_name = "装备补给T3",
+		resource_type = 497,
+		id = 704,
+		resource_num = 60,
+		goods_rarity = 3,
+		goods = {
+			42240,
+			14340,
+			45120,
+			26520,
+			17240,
+			38140,
+			19140,
+			2240,
+			1240,
+			580,
+			2600,
+			2440,
+			1340,
+			2140,
+			4140,
+			2540
+		}
+	},
+	[705] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 20,
+		type = 2,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "Props/20001",
+		goods_name = "心智魔方",
+		resource_type = 497,
+		id = 705,
+		resource_num = 100,
+		goods_rarity = 4,
+		goods = {
+			20001
+		}
+	},
+	[706] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 60,
+		type = 2,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "Props/15003",
+		goods_name = "快速完成工具",
+		resource_type = 497,
+		id = 706,
+		resource_num = 10,
+		goods_rarity = 3,
+		goods = {
+			15003
+		}
+	},
+	[707] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 4,
+		type = 4,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "SquareIcon/kin",
+		goods_name = "试作型布里MKII",
+		resource_type = 497,
+		id = 707,
+		resource_num = 500,
+		goods_rarity = 4,
+		goods = {
+			100011
+		}
+	},
+	[708] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 4,
+		type = 4,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "SquareIcon/gin",
+		goods_name = "泛用型布里",
+		resource_type = 497,
+		id = 708,
+		resource_num = 100,
+		goods_rarity = 3,
+		goods = {
+			100001
+		}
+	},
+	[709] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 5,
+		type = 2,
+		goods_type = 1,
+		num = 50,
+		goods_icon = "Props/16502",
+		goods_name = "舰艇演习数据T2",
+		resource_type = 497,
+		id = 709,
+		resource_num = 400,
+		goods_rarity = 3,
+		goods = {
+			16502
+		}
+	},
+	[710] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 10,
+		type = 2,
+		goods_type = 1,
+		num = 200,
+		goods_icon = "Props/15008",
+		goods_name = "心智单元I",
+		resource_type = 497,
+		id = 710,
+		resource_num = 500,
+		goods_rarity = 4,
+		goods = {
+			15008
+		}
+	},
+	[711] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 15,
+		type = 2,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "Props/tebiezuozhan",
+		goods_name = "高效作战指令书",
+		resource_type = 497,
+		id = 711,
+		resource_num = 50,
+		goods_rarity = 3,
+		goods = {
+			61001
+		}
+	},
+	[712] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 100,
+		type = 2,
+		goods_type = 2,
+		num = 10,
+		goods_icon = "Props/54013",
+		goods_name = "强化部件T3",
+		resource_type = 497,
+		id = 712,
+		resource_num = 50,
+		goods_rarity = 3,
+		goods = {
+			17003,
+			17013,
+			17023,
+			17033,
+			17043
+		}
+	},
+	[713] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 50,
+		type = 2,
+		goods_type = 2,
+		num = 10,
+		goods_icon = "Props/54012",
+		goods_name = "强化部件T2",
+		resource_type = 497,
+		id = 713,
+		resource_num = 25,
+		goods_rarity = 2,
+		goods = {
+			17002,
+			17012,
+			17022,
+			17032,
+			17042
+		}
+	},
+	[714] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 20,
+		type = 2,
+		goods_type = 2,
+		num = 10,
+		goods_icon = "Props/54011",
+		goods_name = "强化部件T1",
+		resource_type = 497,
+		id = 714,
+		resource_num = 10,
+		goods_rarity = 1,
+		goods = {
+			17001,
+			17011,
+			17021,
+			17031,
+			17041
+		}
+	},
+	[715] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 15,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54004",
+		goods_name = "舰艇教材T4",
+		resource_type = 497,
+		id = 715,
+		resource_num = 200,
+		goods_rarity = 5,
+		goods = {
+			16004,
+			16014,
+			16024
+		}
+	},
+	[716] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 25,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54003",
+		goods_name = "舰艇教材T3",
+		resource_type = 497,
+		id = 716,
+		resource_num = 50,
+		goods_rarity = 4,
+		goods = {
+			16003,
+			16013,
+			16023
+		}
+	},
+	[717] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 50,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54002",
+		goods_name = "舰艇教材T2",
+		resource_type = 497,
+		id = 717,
+		resource_num = 25,
+		goods_rarity = 3,
+		goods = {
+			16002,
+			16012,
+			16022
+		}
+	},
+	[718] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 100,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54001",
+		goods_name = "舰艇教材T1",
+		resource_type = 497,
+		id = 718,
+		resource_num = 10,
+		goods_rarity = 2,
+		goods = {
+			16001,
+			16011,
+			16021
+		}
+	},
+	[719] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 10,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54033",
+		goods_name = "改造图纸T3",
+		resource_type = 497,
+		id = 719,
+		resource_num = 100,
+		goods_rarity = 4,
+		goods = {
+			18003,
+			18013,
+			18023,
+			18033
+		}
+	},
+	[720] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 20,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54032",
+		goods_name = "改造图纸T2",
+		resource_type = 497,
+		id = 720,
+		resource_num = 30,
+		goods_rarity = 3,
+		goods = {
+			18002,
+			18012,
+			18022,
+			18032
+		}
+	},
+	[721] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 20,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54031",
+		goods_name = "改造图纸T1",
+		resource_type = 497,
+		id = 721,
+		resource_num = 5,
+		goods_rarity = 2,
+		goods = {
+			18001,
+			18011,
+			18021,
+			18031
+		}
+	},
+	[722] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 120,
+		type = 2,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "Props/42000",
+		goods_name = "定向蓝图·一期",
+		resource_type = 497,
+		id = 722,
+		resource_num = 30,
+		goods_rarity = 4,
+		goods = {
+			42000
+		}
+	},
+	[723] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 120,
+		type = 2,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "Props/42010",
+		goods_name = "定向蓝图·二期",
+		resource_type = 497,
+		id = 723,
+		resource_num = 30,
+		goods_rarity = 4,
+		goods = {
+			42010
+		}
+	},
+	[724] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 10,
+		type = 1,
+		goods_type = 1,
+		num = 3000,
+		goods_icon = "Props/gold",
+		goods_name = "物资",
+		resource_type = 497,
+		id = 724,
+		resource_num = 100,
+		goods_rarity = 1,
+		goods = {
+			1
+		}
+	},
+	[725] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 5,
+		type = 1,
+		goods_type = 1,
+		num = 1000,
+		goods_icon = "Props/oil",
+		goods_name = "石油",
+		resource_type = 497,
+		id = 725,
+		resource_num = 300,
+		goods_rarity = 1,
+		goods = {
+			2
+		}
+	},
+	[726] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 10,
+		type = 1,
+		goods_type = 1,
+		num = 500,
+		goods_icon = "Props/exploit",
+		goods_name = "功勋",
+		resource_type = 497,
+		id = 726,
+		resource_num = 100,
+		goods_rarity = 1,
+		goods = {
+			3
+		}
+	},
+	[727] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 10,
+		type = 2,
+		goods_type = 1,
+		num = 100,
+		goods_icon = "Props/shuju",
+		goods_name = "核心数据",
+		resource_type = 497,
+		id = 727,
+		resource_num = 100,
+		goods_rarity = 2,
+		goods = {
+			59900
+		}
+	},
+	[728] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 20,
+		type = 2,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "Props/20001",
+		goods_name = "心智魔方",
+		resource_type = 497,
+		id = 728,
+		resource_num = 100,
+		goods_rarity = 4,
+		goods = {
+			20001
+		}
+	},
+	[729] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 4,
+		type = 4,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "SquareIcon/kin",
+		goods_name = "试作型布里MKII",
+		resource_type = 497,
+		id = 729,
+		resource_num = 500,
+		goods_rarity = 4,
+		goods = {
+			100011
+		}
+	},
+	[730] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 4,
+		type = 4,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "SquareIcon/gin",
+		goods_name = "泛用型布里",
+		resource_type = 497,
+		id = 730,
+		resource_num = 100,
+		goods_rarity = 3,
+		goods = {
+			100001
+		}
+	},
+	[731] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 5,
+		type = 2,
+		goods_type = 1,
+		num = 50,
+		goods_icon = "Props/16502",
+		goods_name = "舰艇演习数据T2",
+		resource_type = 497,
+		id = 731,
+		resource_num = 400,
+		goods_rarity = 3,
+		goods = {
+			16502
+		}
+	},
+	[732] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 10,
+		type = 2,
+		goods_type = 1,
+		num = 200,
+		goods_icon = "Props/15008",
+		goods_name = "心智单元I",
+		resource_type = 497,
+		id = 732,
+		resource_num = 500,
+		goods_rarity = 4,
+		goods = {
+			15008
+		}
+	},
+	[733] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 15,
+		type = 2,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "Props/tebiezuozhan",
+		goods_name = "高效作战指令书",
+		resource_type = 497,
+		id = 733,
+		resource_num = 50,
+		goods_rarity = 3,
+		goods = {
+			61001
+		}
+	},
+	[734] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 100,
+		type = 2,
+		goods_type = 2,
+		num = 10,
+		goods_icon = "Props/54013",
+		goods_name = "强化部件T3",
+		resource_type = 497,
+		id = 734,
+		resource_num = 50,
+		goods_rarity = 3,
+		goods = {
+			17003,
+			17013,
+			17023,
+			17033,
+			17043
+		}
+	},
+	[735] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 50,
+		type = 2,
+		goods_type = 2,
+		num = 10,
+		goods_icon = "Props/54012",
+		goods_name = "强化部件T2",
+		resource_type = 497,
+		id = 735,
+		resource_num = 25,
+		goods_rarity = 2,
+		goods = {
+			17002,
+			17012,
+			17022,
+			17032,
+			17042
+		}
+	},
+	[736] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 20,
+		type = 2,
+		goods_type = 2,
+		num = 10,
+		goods_icon = "Props/54011",
+		goods_name = "强化部件T1",
+		resource_type = 497,
+		id = 736,
+		resource_num = 10,
+		goods_rarity = 1,
+		goods = {
+			17001,
+			17011,
+			17021,
+			17031,
+			17041
+		}
+	},
+	[737] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 15,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54004",
+		goods_name = "舰艇教材T4",
+		resource_type = 497,
+		id = 737,
+		resource_num = 200,
+		goods_rarity = 5,
+		goods = {
+			16004,
+			16014,
+			16024
+		}
+	},
+	[738] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 25,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54003",
+		goods_name = "舰艇教材T3",
+		resource_type = 497,
+		id = 738,
+		resource_num = 50,
+		goods_rarity = 4,
+		goods = {
+			16003,
+			16013,
+			16023
+		}
+	},
+	[739] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 50,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54002",
+		goods_name = "舰艇教材T2",
+		resource_type = 497,
+		id = 739,
+		resource_num = 25,
+		goods_rarity = 3,
+		goods = {
+			16002,
+			16012,
+			16022
+		}
+	},
+	[740] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 100,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54001",
+		goods_name = "舰艇教材T1",
+		resource_type = 497,
+		id = 740,
+		resource_num = 10,
+		goods_rarity = 2,
+		goods = {
+			16001,
+			16011,
+			16021
+		}
+	},
+	[741] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 10,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54033",
+		goods_name = "改造图纸T3",
+		resource_type = 497,
+		id = 741,
+		resource_num = 100,
+		goods_rarity = 4,
+		goods = {
+			18003,
+			18013,
+			18023,
+			18033
+		}
+	},
+	[742] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 20,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54032",
+		goods_name = "改造图纸T2",
+		resource_type = 497,
+		id = 742,
+		resource_num = 30,
+		goods_rarity = 3,
+		goods = {
+			18002,
+			18012,
+			18022,
+			18032
+		}
+	},
+	[743] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 20,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54031",
+		goods_name = "改造图纸T1",
+		resource_type = 497,
+		id = 743,
+		resource_num = 5,
+		goods_rarity = 2,
+		goods = {
+			18001,
+			18011,
+			18021,
+			18031
+		}
+	},
+	[744] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 120,
+		type = 2,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "Props/42000",
+		goods_name = "定向蓝图·一期",
+		resource_type = 497,
+		id = 744,
+		resource_num = 30,
+		goods_rarity = 4,
+		goods = {
+			42000
+		}
+	},
+	[745] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 120,
+		type = 2,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "Props/42010",
+		goods_name = "定向蓝图·二期",
+		resource_type = 497,
+		id = 745,
+		resource_num = 30,
+		goods_rarity = 4,
+		goods = {
+			42010
+		}
+	},
+	[746] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 10,
+		type = 1,
+		goods_type = 1,
+		num = 3000,
+		goods_icon = "Props/gold",
+		goods_name = "物资",
+		resource_type = 497,
+		id = 746,
+		resource_num = 100,
+		goods_rarity = 1,
+		goods = {
+			1
+		}
+	},
+	[747] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 5,
+		type = 1,
+		goods_type = 1,
+		num = 1000,
+		goods_icon = "Props/oil",
+		goods_name = "石油",
+		resource_type = 497,
+		id = 747,
+		resource_num = 300,
+		goods_rarity = 1,
+		goods = {
+			2
+		}
+	},
+	[748] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 10,
+		type = 1,
+		goods_type = 1,
+		num = 500,
+		goods_icon = "Props/exploit",
+		goods_name = "功勋",
+		resource_type = 497,
+		id = 748,
+		resource_num = 100,
+		goods_rarity = 1,
+		goods = {
+			3
+		}
+	},
+	[749] = {
+		unlock_time = 604800,
+		resource_category = 1,
+		goods_purchase_limit = 10,
+		type = 2,
+		goods_type = 1,
+		num = 100,
+		goods_icon = "Props/shuju",
+		goods_name = "核心数据",
+		resource_type = 497,
+		id = 749,
+		resource_num = 100,
+		goods_rarity = 2,
+		goods = {
+			59900
+		}
+	},
+	[750] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 20,
+		type = 2,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "Props/20001",
+		goods_name = "心智魔方",
+		resource_type = 497,
+		id = 750,
+		resource_num = 100,
+		goods_rarity = 4,
+		goods = {
+			20001
+		}
+	},
+	[751] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 4,
+		type = 4,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "SquareIcon/kin",
+		goods_name = "试作型布里MKII",
+		resource_type = 497,
+		id = 751,
+		resource_num = 500,
+		goods_rarity = 4,
+		goods = {
+			100011
+		}
+	},
+	[752] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 4,
+		type = 4,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "SquareIcon/gin",
+		goods_name = "泛用型布里",
+		resource_type = 497,
+		id = 752,
+		resource_num = 100,
+		goods_rarity = 3,
+		goods = {
+			100001
+		}
+	},
+	[753] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 5,
+		type = 2,
+		goods_type = 1,
+		num = 50,
+		goods_icon = "Props/16502",
+		goods_name = "舰艇演习数据T2",
+		resource_type = 497,
+		id = 753,
+		resource_num = 400,
+		goods_rarity = 3,
+		goods = {
+			16502
+		}
+	},
+	[754] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 10,
+		type = 2,
+		goods_type = 1,
+		num = 200,
+		goods_icon = "Props/15008",
+		goods_name = "心智单元I",
+		resource_type = 497,
+		id = 754,
+		resource_num = 500,
+		goods_rarity = 4,
+		goods = {
+			15008
+		}
+	},
+	[755] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 15,
+		type = 2,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "Props/tebiezuozhan",
+		goods_name = "高效作战指令书",
+		resource_type = 497,
+		id = 755,
+		resource_num = 50,
+		goods_rarity = 3,
+		goods = {
+			61001
+		}
+	},
+	[756] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 100,
+		type = 2,
+		goods_type = 2,
+		num = 10,
+		goods_icon = "Props/54013",
+		goods_name = "强化部件T3",
+		resource_type = 497,
+		id = 756,
+		resource_num = 50,
+		goods_rarity = 3,
+		goods = {
+			17003,
+			17013,
+			17023,
+			17033,
+			17043
+		}
+	},
+	[757] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 50,
+		type = 2,
+		goods_type = 2,
+		num = 10,
+		goods_icon = "Props/54012",
+		goods_name = "强化部件T2",
+		resource_type = 497,
+		id = 757,
+		resource_num = 25,
+		goods_rarity = 2,
+		goods = {
+			17002,
+			17012,
+			17022,
+			17032,
+			17042
+		}
+	},
+	[758] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 20,
+		type = 2,
+		goods_type = 2,
+		num = 10,
+		goods_icon = "Props/54011",
+		goods_name = "强化部件T1",
+		resource_type = 497,
+		id = 758,
+		resource_num = 10,
+		goods_rarity = 1,
+		goods = {
+			17001,
+			17011,
+			17021,
+			17031,
+			17041
+		}
+	},
+	[759] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 15,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54004",
+		goods_name = "舰艇教材T4",
+		resource_type = 497,
+		id = 759,
+		resource_num = 200,
+		goods_rarity = 5,
+		goods = {
+			16004,
+			16014,
+			16024
+		}
+	},
+	[760] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 25,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54003",
+		goods_name = "舰艇教材T3",
+		resource_type = 497,
+		id = 760,
+		resource_num = 50,
+		goods_rarity = 4,
+		goods = {
+			16003,
+			16013,
+			16023
+		}
+	},
+	[761] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 50,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54002",
+		goods_name = "舰艇教材T2",
+		resource_type = 497,
+		id = 761,
+		resource_num = 25,
+		goods_rarity = 3,
+		goods = {
+			16002,
+			16012,
+			16022
+		}
+	},
+	[762] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 100,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54001",
+		goods_name = "舰艇教材T1",
+		resource_type = 497,
+		id = 762,
+		resource_num = 10,
+		goods_rarity = 2,
+		goods = {
+			16001,
+			16011,
+			16021
+		}
+	},
+	[763] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 10,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54033",
+		goods_name = "改造图纸T3",
+		resource_type = 497,
+		id = 763,
+		resource_num = 100,
+		goods_rarity = 4,
+		goods = {
+			18003,
+			18013,
+			18023,
+			18033
+		}
+	},
+	[764] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 20,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54032",
+		goods_name = "改造图纸T2",
+		resource_type = 497,
+		id = 764,
+		resource_num = 30,
+		goods_rarity = 3,
+		goods = {
+			18002,
+			18012,
+			18022,
+			18032
+		}
+	},
+	[765] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 20,
+		type = 2,
+		goods_type = 2,
+		num = 1,
+		goods_icon = "Props/54031",
+		goods_name = "改造图纸T1",
+		resource_type = 497,
+		id = 765,
+		resource_num = 5,
+		goods_rarity = 2,
+		goods = {
+			18001,
+			18011,
+			18021,
+			18031
+		}
+	},
+	[766] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 120,
+		type = 2,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "Props/42000",
+		goods_name = "定向蓝图·一期",
+		resource_type = 497,
+		id = 766,
+		resource_num = 30,
+		goods_rarity = 4,
+		goods = {
+			42000
+		}
+	},
+	[767] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 120,
+		type = 2,
+		goods_type = 1,
+		num = 1,
+		goods_icon = "Props/42010",
+		goods_name = "定向蓝图·二期",
+		resource_type = 497,
+		id = 767,
+		resource_num = 30,
+		goods_rarity = 4,
+		goods = {
+			42010
+		}
+	},
+	[768] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 10,
+		type = 1,
+		goods_type = 1,
+		num = 3000,
+		goods_icon = "Props/gold",
+		goods_name = "物资",
+		resource_type = 497,
+		id = 768,
+		resource_num = 100,
+		goods_rarity = 1,
+		goods = {
+			1
+		}
+	},
+	[769] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 5,
+		type = 1,
+		goods_type = 1,
+		num = 1000,
+		goods_icon = "Props/oil",
+		goods_name = "石油",
+		resource_type = 497,
+		id = 769,
+		resource_num = 300,
+		goods_rarity = 1,
+		goods = {
+			2
+		}
+	},
+	[770] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 10,
+		type = 1,
+		goods_type = 1,
+		num = 500,
+		goods_icon = "Props/exploit",
+		goods_name = "功勋",
+		resource_type = 497,
+		id = 770,
+		resource_num = 100,
+		goods_rarity = 1,
+		goods = {
+			3
+		}
+	},
+	[771] = {
+		unlock_time = 1209600,
+		resource_category = 1,
+		goods_purchase_limit = 10,
+		type = 2,
+		goods_type = 1,
+		num = 100,
+		goods_icon = "Props/shuju",
+		goods_name = "核心数据",
+		resource_type = 497,
+		id = 771,
+		resource_num = 100,
+		goods_rarity = 2,
+		goods = {
+			59900
+		}
+	},
+	[9907] = {
+		unlock_time = 0,
+		resource_category = 1,
+		goods_purchase_limit = 100,
+		type = 1,
+		goods_type = 1,
+		num = 1000,
+		goods_icon = "Props/gold",
+		goods_name = "物资",
+		resource_type = 497,
+		id = 9907,
+		resource_num = 100,
+		goods_rarity = 1,
+		goods = {
+			1
+		}
+	},
 	get_id_list_by_unlock_time = {
 		[0] = {
 			1,
@@ -8377,7 +9731,35 @@ pg.newserver_shop_template = {
 			625,
 			626,
 			627,
-			9906
+			9906,
+			701,
+			702,
+			703,
+			704,
+			705,
+			706,
+			707,
+			708,
+			709,
+			710,
+			711,
+			712,
+			713,
+			714,
+			715,
+			716,
+			717,
+			718,
+			719,
+			720,
+			721,
+			722,
+			723,
+			724,
+			725,
+			726,
+			727,
+			9907
 		},
 		[604800] = {
 			101,
@@ -8514,7 +9896,29 @@ pg.newserver_shop_template = {
 			646,
 			647,
 			648,
-			649
+			649,
+			728,
+			729,
+			730,
+			731,
+			732,
+			733,
+			734,
+			735,
+			736,
+			737,
+			738,
+			739,
+			740,
+			741,
+			742,
+			743,
+			744,
+			745,
+			746,
+			747,
+			748,
+			749
 		},
 		[1209600] = {
 			201,
@@ -8651,7 +10055,29 @@ pg.newserver_shop_template = {
 			668,
 			669,
 			670,
-			671
+			671,
+			750,
+			751,
+			752,
+			753,
+			754,
+			755,
+			756,
+			757,
+			758,
+			759,
+			760,
+			761,
+			762,
+			763,
+			764,
+			765,
+			766,
+			767,
+			768,
+			769,
+			770,
+			771
 		}
 	},
 	all = {
@@ -9091,6 +10517,78 @@ pg.newserver_shop_template = {
 		669,
 		670,
 		671,
-		9906
+		9906,
+		701,
+		702,
+		703,
+		704,
+		705,
+		706,
+		707,
+		708,
+		709,
+		710,
+		711,
+		712,
+		713,
+		714,
+		715,
+		716,
+		717,
+		718,
+		719,
+		720,
+		721,
+		722,
+		723,
+		724,
+		725,
+		726,
+		727,
+		728,
+		729,
+		730,
+		731,
+		732,
+		733,
+		734,
+		735,
+		736,
+		737,
+		738,
+		739,
+		740,
+		741,
+		742,
+		743,
+		744,
+		745,
+		746,
+		747,
+		748,
+		749,
+		750,
+		751,
+		752,
+		753,
+		754,
+		755,
+		756,
+		757,
+		758,
+		759,
+		760,
+		761,
+		762,
+		763,
+		764,
+		765,
+		766,
+		767,
+		768,
+		769,
+		770,
+		771,
+		9907
 	}
 }

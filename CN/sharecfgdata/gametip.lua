@@ -8304,16 +8304,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "天赋点不足"
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "每累计建造200次可获得海上传奇舰船 怨仇(最多4次)"
+	tip = "七省、埃佛森 建造概率UP！"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "的里雅斯特 建造追加！"
+	tip = "前卫、复仇 建造追加！"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "庞培·马格诺 建造追加！"
+	tip = "贾维斯 建造追加！"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "帝国 建造追加！"
+	tip = "前卫、不挠 建造追加！"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -20850,7 +20850,7 @@ _G.pg.base.gametip.series_enemy_storyreward = {
 _G.pg.base.gametip.series_enemy_help = {
 	tip = [[
 活动规则：
-<color=#92fc63>2023.3.23-2023.4.6维护</color>期间开启限时活动「极地风暴」
+<color=#92fc63>2025.4.17-2025.4.24维护</color>期间开启限时复刻活动「极地风暴」
 1. 本次活分为「作战模式」、「故事模式」，在「作战模式」中通关关卡可获得PT值，逐步解锁「故事模式」中阶段剧情。
 2. 「作战模式」中采用连战玩法，即上阵多只队伍逐一挑战多个小关，全部获胜后整个关卡通关，获得奖励
 3. 部分关卡可通过切换「多队出击」、「单队连战」两种模式，「单队连战」可使用单个队伍挑战所有小关，「多队出击」为不同队伍挑战各个关卡，「多队出击」可获得额外奖励
@@ -26073,7 +26073,7 @@ _G.pg.base.gametip.help_starLightAlbum = {
  ※ 活动进行时，指挥官可在<color=#92fc63>活动页面或回忆界面</color>通过指定入口进入「纪念贴纸」收集页面；
  ※ 活动结束后指挥官将只能通过<color=#92fc63>回忆界面</color>指定入口进入「纪念贴纸」收集页面；
  ※ 「纪念贴纸」可以通过完成对应活动任务获取；
- ※ 奖励领取界面将延长至4月16日24时；]]
+ ※ 奖励领取界面将延长至5月14日24时；]]
 		}
 	}
 }
@@ -26487,4 +26487,71 @@ _G.pg.base.gametip.SuperBulin2_help = {
 }
 _G.pg.base.gametip.SuperBulin2_lock_tip = {
 	tip = "线索收集完成即可解锁特别关卡~"
+}
+_G.pg.base.gametip.word_shipNation_yujinwangguo = {
+	tip = "郁金王国"
+}
+_G.pg.base.gametip.word_maingroup_idle = {
+	tip = "无状态"
+}
+_G.pg.base.gametip.word_maingroup_latest = {
+	tip = "无需更新"
+}
+_G.pg.base.gametip.levelscene_mapselect_tp = {
+	tip = "TP"
+}
+_G.pg.base.gametip.dorm3d_shop_buy_tips = {
+	tip = "是否消耗$1<color=#169fff>$2</color>（总计$1<color=#169fff>$3</color>）购买<color=#169fff>$4</color> "
+}
+_G.pg.base.gametip.dorm3d_shop_title = {
+	tip = "宿舍商店"
+}
+_G.pg.base.gametip.dorm3d_shop_limit = {
+	tip = "限购"
+}
+_G.pg.base.gametip.dorm3d_shop_sold_out = {
+	tip = "已售罄"
+}
+_G.pg.base.gametip.dorm3d_shop_all = {
+	tip = "全部"
+}
+_G.pg.base.gametip.dorm3d_shop_gift1 = {
+	tip = "礼物"
+}
+_G.pg.base.gametip.dorm3d_shop_furniture = {
+	tip = "家具"
+}
+_G.pg.base.gametip.dorm3d_shop_others = {
+	tip = "其他"
+}
+_G.pg.base.gametip.dorm3d_shop_limit1 = {
+	tip = "本周限购"
+}
+_G.pg.base.gametip.xiaoankeleiqi_npc = {
+	tip = {
+		{
+			info = "「画出漫天小星星」活动说明："
+		},
+		{
+			info = "1. 活动期间，玩家可获得临时 npc 角色「小安克雷奇」，临时角色不可誓约、不可退役、不可被选为强化突破材料。"
+		},
+		{
+			info = "2. 活动期间，通关指定关卡可累积临时 npc 角色「小安克雷奇」的友好度。"
+		},
+		{
+			info = "3.5 月 1 日为止，每日解锁 1 个可达成的友好度阶段。"
+		},
+		{
+			info = "4. 在活动结束前累计获得 1000 点友好度，可领取奖励并将临时角色「小安克雷奇」转化为永久角色。"
+		},
+		{
+			info = "5. 在活动结束后，未完成转化的临时角色「小安克雷奇」将离开港区，不返还已经消耗的强化、突破等培养材料。"
+		},
+		{
+			info = "6.npc 角色无法参与大型作战。"
+		},
+		{
+			info = "7.npc 角色无法参与大舰队作战中的事件派遣、攻坚队和首领战。"
+		}
+	}
 }

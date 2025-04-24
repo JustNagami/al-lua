@@ -12,7 +12,7 @@
 			bgName = "bg_yuanhuidian",
 			hidePaintObj = true,
 			stopbgm = true,
-			say = "铁血实验场·休息区 一段时间后",
+			say = "铁血试验场·休息区 一段时间后",
 			bgm = "bsm-7",
 			flashout = {
 				black = true,

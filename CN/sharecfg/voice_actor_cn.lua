@@ -1783,5 +1783,21 @@ pg.voice_actor_CN = {
 	{
 		code = 446,
 		actor_name = "橘杏咲"
+	},
+	{
+		code = 447,
+		actor_name = "花岩香奈"
+	},
+	{
+		code = 448,
+		actor_name = "寺崎裕香"
+	},
+	{
+		code = 449,
+		actor_name = "三川华月"
+	},
+	{
+		code = 450,
+		actor_name = "内田爱美"
 	}
 }

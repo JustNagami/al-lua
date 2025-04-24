@@ -97,33 +97,51 @@ function var_0_0.loadScene(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
 		function(arg_12_0)
 			if arg_5_1 and arg_5_1.cleanChild then
 				arg_5_1.children = {}
+				arg_5_1.cleanChild = false
 			end
 
-			seriesAsync({
+			local var_12_0 = {
 				function(arg_13_0)
-					var_5_1:prepare(arg_5_0.facade, arg_5_1, function(arg_14_0)
-						arg_5_0:sendNotification(GAME.START_LOAD_SCENE, arg_14_0)
+					local var_13_0 = {}
 
-						var_5_3 = arg_14_0
+					for iter_13_0, iter_13_1 in ipairs(arg_5_1:GetHierarchy()) do
+						local var_13_1 = iter_13_1.viewComponent.New()
 
-						arg_13_0()
+						table.insertto(var_13_0, var_13_1:preloadUIList())
+					end
+
+					parallelAsync(underscore.map(var_13_0, function(arg_14_0)
+						return function(arg_15_0)
+							PoolMgr.GetInstance():PreloadUI(arg_14_0, arg_15_0)
+						end
+					end), arg_13_0)
+				end,
+				function(arg_16_0)
+					var_5_1:prepare(arg_5_0.facade, arg_5_1, function(arg_17_0)
+						arg_5_0:sendNotification(GAME.START_LOAD_SCENE, arg_17_0)
+
+						var_5_3 = arg_17_0
+
+						arg_16_0()
 					end)
 				end,
-				function(arg_15_0)
-					var_5_1:prepareLayer(arg_5_0.facade, nil, arg_5_1, function(arg_16_0)
-						arg_5_0:sendNotification(GAME.WILL_LOAD_LAYERS, #arg_16_0)
+				function(arg_18_0)
+					var_5_1:prepareLayer(arg_5_0.facade, nil, arg_5_1, function(arg_19_0)
+						arg_5_0:sendNotification(GAME.WILL_LOAD_LAYERS, #arg_19_0)
 
-						var_5_4 = arg_16_0
+						var_5_4 = arg_19_0
 
-						arg_15_0()
+						arg_18_0()
 					end)
 				end
-			}, arg_12_0)
+			}
+
+			seriesAsync(var_12_0, arg_12_0)
 		end,
-		function(arg_17_0)
+		function(arg_20_0)
 			var_5_1:enter(table.mergeArray({
 				var_5_3
-			}, var_5_4), arg_17_0)
+			}, var_5_4), arg_20_0)
 		end
 	}
 
@@ -141,8 +159,8 @@ function var_0_0.loadScene(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
 		4,
 		2,
 		5
-	}, function(arg_18_0)
-		return var_5_6[arg_18_0]
+	}, function(arg_21_0)
+		return var_5_6[arg_21_0]
 	end)
 
 	seriesAsync(var_5_7, function()
@@ -152,81 +170,81 @@ function var_0_0.loadScene(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
 	end)
 end
 
-function var_0_0.loadLayer(arg_20_0, arg_20_1, arg_20_2, arg_20_3, arg_20_4)
-	assert(isa(arg_20_1, Context), "should be an instance of Context")
+function var_0_0.loadLayer(arg_23_0, arg_23_1, arg_23_2, arg_23_3, arg_23_4)
+	assert(isa(arg_23_1, Context), "should be an instance of Context")
 
-	local var_20_0 = pg.SceneMgr.GetInstance()
-	local var_20_1 = {}
-	local var_20_2
+	local var_23_0 = pg.SceneMgr.GetInstance()
+	local var_23_1 = {}
+	local var_23_2
 
 	seriesAsync({
-		function(arg_21_0)
+		function(arg_24_0)
 			pg.UIMgr.GetInstance():LoadingOn()
 
-			if arg_20_3 ~= nil then
-				table.ParallelIpairsAsync(arg_20_3, function(arg_22_0, arg_22_1, arg_22_2)
-					var_20_0:removeLayerMediator(arg_20_0.facade, arg_22_1, function(arg_23_0)
-						var_20_2 = var_20_2 or {}
+			if arg_23_3 ~= nil then
+				table.ParallelIpairsAsync(arg_23_3, function(arg_25_0, arg_25_1, arg_25_2)
+					var_23_0:removeLayerMediator(arg_23_0.facade, arg_25_1, function(arg_26_0)
+						var_23_2 = var_23_2 or {}
 
-						table.insertto(var_20_2, arg_23_0)
-						arg_22_2()
+						table.insertto(var_23_2, arg_26_0)
+						arg_25_2()
 					end)
-				end, arg_21_0)
+				end, arg_24_0)
 			else
-				arg_21_0()
+				arg_24_0()
 			end
 		end,
-		function(arg_24_0)
-			var_20_0:prepareLayer(arg_20_0.facade, arg_20_2, arg_20_1, function(arg_25_0)
-				for iter_25_0, iter_25_1 in ipairs(arg_25_0) do
-					table.insert(var_20_1, iter_25_1)
+		function(arg_27_0)
+			var_23_0:prepareLayer(arg_23_0.facade, arg_23_2, arg_23_1, function(arg_28_0)
+				for iter_28_0, iter_28_1 in ipairs(arg_28_0) do
+					table.insert(var_23_1, iter_28_1)
 				end
 
-				arg_24_0()
+				arg_27_0()
 			end)
 		end,
-		function(arg_26_0)
-			if var_20_2 then
-				table.SerialIpairsAsync(var_20_2, function(arg_27_0, arg_27_1, arg_27_2)
-					var_20_0:remove(arg_27_1.mediator, function()
-						arg_27_1.context:onContextRemoved()
-						arg_27_2()
+		function(arg_29_0)
+			if var_23_2 then
+				table.SerialIpairsAsync(var_23_2, function(arg_30_0, arg_30_1, arg_30_2)
+					var_23_0:remove(arg_30_1.mediator, function()
+						arg_30_1.context:onContextRemoved()
+						arg_30_2()
 					end)
-				end, arg_26_0)
+				end, arg_29_0)
 			else
-				arg_26_0()
+				arg_29_0()
 			end
 		end,
-		function(arg_29_0)
-			arg_20_0:sendNotification(GAME.WILL_LOAD_LAYERS, #var_20_1)
-			var_20_0:enter(var_20_1, arg_29_0)
+		function(arg_32_0)
+			arg_23_0:sendNotification(GAME.WILL_LOAD_LAYERS, #var_23_1)
+			var_23_0:enter(var_23_1, arg_32_0)
 		end,
 		function()
-			if arg_20_4 then
-				arg_20_4()
+			if arg_23_4 then
+				arg_23_4()
 			end
 
 			pg.UIMgr.GetInstance():LoadingOff()
-			arg_20_0:sendNotification(GAME.LOAD_LAYER_DONE, arg_20_1)
+			arg_23_0:sendNotification(GAME.LOAD_LAYER_DONE, arg_23_1)
 		end
 	})
 end
 
-function var_0_0.LoadLayerOnTopContext(arg_31_0)
-	local var_31_0 = getProxy(ContextProxy):getCurrentContext()
+function var_0_0.LoadLayerOnTopContext(arg_34_0)
+	local var_34_0 = getProxy(ContextProxy):getCurrentContext()
 
 	pg.m02:sendNotification(GAME.LOAD_LAYERS, {
-		parentContext = var_31_0,
-		context = arg_31_0
+		parentContext = var_34_0,
+		context = arg_34_0
 	})
 end
 
-function var_0_0.RemoveLayerByMediator(arg_32_0)
-	local var_32_0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(arg_32_0)
+function var_0_0.RemoveLayerByMediator(arg_35_0)
+	local var_35_0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(arg_35_0)
 
-	if var_32_0 then
+	if var_35_0 then
 		pg.m02:sendNotification(GAME.REMOVE_LAYERS, {
-			context = var_32_0
+			context = var_35_0
 		})
 
 		return true

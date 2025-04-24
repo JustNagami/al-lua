@@ -12,7 +12,7 @@
 			bgName = "bg_yuanhuidian",
 			hidePaintObj = true,
 			stopbgm = true,
-			say = "铁血实验场·休息区",
+			say = "铁血试验场·休息区",
 			bgm = "bsm-7",
 			flashout = {
 				black = true,
@@ -213,7 +213,7 @@
 			actor = 404050,
 			nameColor = "#A9F548FF",
 			paintingNoise = true,
-			say = "没错。作战时间是由实验场主机根据上一次作战情况进行决定的。",
+			say = "没错。作战时间是由试验场主机根据上一次作战情况进行决定的。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

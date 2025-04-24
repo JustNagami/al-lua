@@ -11,7 +11,7 @@
 			side = 2,
 			bgName = "bg_yuanhuidian",
 			stopbgm = true,
-			say = "铁血实验场·战场区块H8",
+			say = "铁血试验场·战场区块H8",
 			bgm = "story-6",
 			flashout = {
 				black = true,

@@ -1,1236 +1,1358 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_399 = {
-	[295118] = {
-		cannon = 326,
-		name = "声望·META(Tier.13)",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 23,
-		base = 90675,
-		durability_growth = 0,
-		antiaircraft = 335,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 23,
-		hit = 95,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 1000000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
+	[296241] = {
+		cannon = 323,
 		fog_fx = "",
-		id = 295118,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50500,
-				LV = 5
-			}
-		}
-	},
-	[295119] = {
-		cannon = 345,
-		name = "声望·META(Tier.14)",
-		reload = 150,
-		cannon_growth = 0,
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 24,
-		base = 90675,
-		durability_growth = 0,
-		antiaircraft = 348,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 24,
-		hit = 100,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 1240000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295119,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50500,
-				LV = 5
-			}
-		}
-	},
-	[295120] = {
-		cannon = 381,
-		name = "声望·META(Tier.15)",
-		reload = 150,
+		luck = 0,
+		dodge = 0,
 		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 25,
-		base = 90675,
-		durability_growth = 0,
-		antiaircraft = 368,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 25,
-		hit = 110,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 1480000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295120,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50500,
-				LV = 5
-			}
-		}
-	},
-	[295121] = {
-		cannon = 149,
-		name = "亚利桑那·META(Tier.1)",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 11,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 166,
-		reload_growth = 0,
-		dodge_growth = 0,
 		speed = 20,
-		luck = 15,
-		hit = 35,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 54000,
+		id = 296241,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295121,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
+				ID = 201050,
 				LV = 1
 			}
 		}
 	},
-	[295122] = {
-		cannon = 162,
-		name = "亚利桑那·META(Tier.2)",
-		reload = 150,
-		cannon_growth = 0,
+	[296242] = {
+		cannon = 342,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 12,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 175,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 15,
-		hit = 40,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 58000,
+		id = 296242,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295122,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
+				ID = 201050,
 				LV = 1
 			}
 		}
 	},
-	[295123] = {
-		cannon = 175,
-		name = "亚利桑那·META(Tier.3)",
-		reload = 150,
-		cannon_growth = 0,
+	[296243] = {
+		cannon = 361,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 13,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 186,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 15,
-		hit = 45,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 63000,
+		id = 296243,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295123,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
+				ID = 201050,
 				LV = 1
 			}
 		}
 	},
-	[295124] = {
-		cannon = 188,
-		name = "亚利桑那·META(Tier.4)",
-		reload = 150,
-		cannon_growth = 0,
+	[296244] = {
+		cannon = 380,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 14,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 196,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 15,
-		hit = 50,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 76000,
+		id = 296244,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295124,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 2
+				ID = 201050,
+				LV = 1
 			}
 		}
 	},
-	[295125] = {
-		cannon = 203,
-		name = "亚利桑那·META(Tier.5)",
-		reload = 150,
-		cannon_growth = 0,
+	[296245] = {
+		cannon = 400,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 15,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 207,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 15,
-		hit = 55,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 120000,
+		id = 296245,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295125,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 2
+				ID = 201050,
+				LV = 1
 			}
 		}
 	},
-	[295126] = {
-		cannon = 217,
-		name = "亚利桑那·META(Tier.6)",
-		reload = 150,
-		cannon_growth = 0,
+	[296246] = {
+		cannon = 133,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		speed = 20,
 		air = 0,
-		hit_growth = 0,
-		dodge = 16,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 218,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296246,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 16,
-		hit = 60,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
 		torpedo = 0,
-		durability = 160000,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295126,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 2
+				ID = 201057,
+				LV = 1
 			}
 		}
 	},
-	[295127] = {
-		cannon = 232,
-		name = "亚利桑那·META(Tier.7)",
-		reload = 150,
-		cannon_growth = 0,
+	[296247] = {
+		cannon = 152,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		speed = 20,
 		air = 0,
-		hit_growth = 0,
-		dodge = 17,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 230,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296247,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 17,
-		hit = 65,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
 		torpedo = 0,
-		durability = 250000,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295127,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 3
+				ID = 201057,
+				LV = 1
 			}
 		}
 	},
-	[295128] = {
-		cannon = 248,
-		name = "亚利桑那·META(Tier.8)",
-		reload = 150,
-		cannon_growth = 0,
+	[296248] = {
+		cannon = 171,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		speed = 20,
 		air = 0,
-		hit_growth = 0,
-		dodge = 18,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 242,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296248,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 18,
-		hit = 70,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
 		torpedo = 0,
-		durability = 340000,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295128,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 3
+				ID = 201057,
+				LV = 1
 			}
 		}
 	},
-	[295129] = {
-		cannon = 264,
-		name = "亚利桑那·META(Tier.9)",
-		reload = 150,
-		cannon_growth = 0,
+	[296249] = {
+		cannon = 190,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		speed = 20,
 		air = 0,
-		hit_growth = 0,
-		dodge = 19,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 255,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296249,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 19,
-		hit = 75,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
 		torpedo = 0,
-		durability = 420000,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295129,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 3
+				ID = 201057,
+				LV = 1
 			}
 		}
 	},
-	[295130] = {
-		cannon = 280,
-		name = "亚利桑那·META(Tier.10)",
-		reload = 150,
-		cannon_growth = 0,
+	[296250] = {
+		cannon = 209,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		speed = 20,
 		air = 0,
-		hit_growth = 0,
-		dodge = 20,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 267,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296250,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 20,
-		hit = 80,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
 		torpedo = 0,
-		durability = 520000,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295130,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 4
+				ID = 201057,
+				LV = 1
 			}
 		}
 	},
-	[295131] = {
-		cannon = 298,
-		name = "亚利桑那·META(Tier.11)",
-		reload = 150,
-		cannon_growth = 0,
+	[296251] = {
+		cannon = 228,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		speed = 20,
 		air = 0,
-		hit_growth = 0,
-		dodge = 21,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 281,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296251,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 21,
-		hit = 85,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
 		torpedo = 0,
-		durability = 650000,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295131,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 4
+				ID = 201057,
+				LV = 1
 			}
 		}
 	},
-	[295132] = {
-		cannon = 315,
-		name = "亚利桑那·META(Tier.12)",
-		reload = 150,
-		cannon_growth = 0,
+	[296252] = {
+		cannon = 247,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		speed = 20,
 		air = 0,
-		hit_growth = 0,
-		dodge = 22,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 294,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296252,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 22,
-		hit = 90,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
 		torpedo = 0,
-		durability = 840000,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295132,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 4
+				ID = 201057,
+				LV = 1
 			}
 		}
 	},
-	[295133] = {
-		cannon = 334,
-		name = "亚利桑那·META(Tier.13)",
-		reload = 150,
-		cannon_growth = 0,
+	[296253] = {
+		cannon = 266,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		speed = 20,
 		air = 0,
-		hit_growth = 0,
-		dodge = 23,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 308,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296253,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 23,
-		hit = 95,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
 		torpedo = 0,
-		durability = 1080000,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295133,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 5
+				ID = 201057,
+				LV = 1
 			}
 		}
 	},
-	[295134] = {
-		cannon = 353,
-		name = "亚利桑那·META(Tier.14)",
-		reload = 150,
-		cannon_growth = 0,
+	[296254] = {
+		cannon = 285,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		speed = 20,
 		air = 0,
-		hit_growth = 0,
-		dodge = 24,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 323,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296254,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 24,
-		hit = 100,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
 		torpedo = 0,
-		durability = 1340000,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295134,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 5
+				ID = 201057,
+				LV = 1
 			}
 		}
 	},
-	[295135] = {
-		cannon = 390,
-		name = "亚利桑那·META(Tier.15)",
-		reload = 150,
-		cannon_growth = 0,
+	[296255] = {
+		cannon = 304,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		speed = 20,
 		air = 0,
-		hit_growth = 0,
-		dodge = 25,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 352,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296255,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 25,
-		hit = 110,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
 		torpedo = 0,
-		durability = 1600000,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295135,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 5
+				ID = 201057,
+				LV = 1
 			}
 		}
 	},
-	[295136] = {
+	[296256] = {
+		cannon = 323,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296256,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296257] = {
+		cannon = 342,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296257,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296258] = {
+		cannon = 361,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296258,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296259] = {
+		cannon = 380,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296259,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296260] = {
+		cannon = 400,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296260,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296261] = {
 		cannon = 135,
-		name = "伊丽莎白·META(Tier.1)",
-		reload = 150,
-		cannon_growth = 0,
+		battle_unit_type = 15,
+		fog_fx = "",
 		speed_growth = 0,
+		pilot_ai_template_id = 20006,
 		air = 0,
-		hit_growth = 0,
-		dodge = 25,
-		base = 90748,
-		durability_growth = 0,
-		antiaircraft = 124,
+		speed = 25,
+		dodge = 0,
+		id = 296261,
+		cannon_growth = 0,
+		rarity = 1,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 30,
-		luck = 15,
-		hit = 35,
+		armor = 0,
+		star = 1,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 54000,
+		reload = 150,
+		base = 90977,
+		durability = 9333,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
+		hit_growth = 0,
+		luck = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295136,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 1
-			},
-			{
-				ID = 200380,
-				LV = 1
-			}
-		}
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		equipment_list = {},
+		buff_list = {}
 	},
-	[295137] = {
+	[296262] = {
 		cannon = 155,
-		name = "伊丽莎白·META(Tier.2)",
-		reload = 150,
-		cannon_growth = 0,
+		battle_unit_type = 15,
+		fog_fx = "",
 		speed_growth = 0,
+		pilot_ai_template_id = 20006,
 		air = 0,
-		hit_growth = 0,
-		dodge = 28,
-		base = 90748,
-		durability_growth = 0,
-		antiaircraft = 141,
+		speed = 25,
+		dodge = 0,
+		id = 296262,
+		cannon_growth = 0,
+		rarity = 1,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 30,
-		luck = 15,
-		hit = 40,
+		armor = 0,
+		star = 1,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 58000,
+		reload = 150,
+		base = 90977,
+		durability = 10666,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
+		hit_growth = 0,
+		luck = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295137,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 1
-			},
-			{
-				ID = 200380,
-				LV = 1
-			}
-		}
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		equipment_list = {},
+		buff_list = {}
 	},
-	[295138] = {
+	[296263] = {
 		cannon = 174,
-		name = "伊丽莎白·META(Tier.3)",
-		reload = 150,
-		cannon_growth = 0,
+		battle_unit_type = 15,
+		fog_fx = "",
 		speed_growth = 0,
+		pilot_ai_template_id = 20006,
 		air = 0,
-		hit_growth = 0,
-		dodge = 32,
-		base = 90748,
-		durability_growth = 0,
-		antiaircraft = 159,
+		speed = 25,
+		dodge = 0,
+		id = 296263,
+		cannon_growth = 0,
+		rarity = 1,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 30,
-		luck = 15,
-		hit = 45,
+		armor = 0,
+		star = 1,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 63000,
+		reload = 150,
+		base = 90977,
+		durability = 12000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
+		hit_growth = 0,
+		luck = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295138,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 1
-			},
-			{
-				ID = 200380,
-				LV = 1
-			}
-		}
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		equipment_list = {},
+		buff_list = {}
 	},
-	[295139] = {
+	[296264] = {
 		cannon = 193,
-		name = "伊丽莎白·META(Tier.4)",
-		reload = 150,
-		cannon_growth = 0,
+		battle_unit_type = 15,
+		fog_fx = "",
 		speed_growth = 0,
+		pilot_ai_template_id = 20006,
 		air = 0,
-		hit_growth = 0,
-		dodge = 35,
-		base = 90748,
-		durability_growth = 0,
-		antiaircraft = 177,
+		speed = 25,
+		dodge = 0,
+		id = 296264,
+		cannon_growth = 0,
+		rarity = 1,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 30,
-		luck = 15,
-		hit = 50,
+		armor = 0,
+		star = 1,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 76000,
+		reload = 150,
+		base = 90977,
+		durability = 13333,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
+		hit_growth = 0,
+		luck = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295139,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 2
-			},
-			{
-				ID = 200380,
-				LV = 1
-			}
-		}
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		equipment_list = {},
+		buff_list = {}
 	},
-	[295140] = {
+	[296265] = {
 		cannon = 213,
-		name = "伊丽莎白·META(Tier.5)",
-		reload = 150,
-		cannon_growth = 0,
+		battle_unit_type = 15,
+		fog_fx = "",
 		speed_growth = 0,
+		pilot_ai_template_id = 20006,
 		air = 0,
-		hit_growth = 0,
-		dodge = 39,
-		base = 90748,
-		durability_growth = 0,
-		antiaircraft = 194,
+		speed = 25,
+		dodge = 0,
+		id = 296265,
+		cannon_growth = 0,
+		rarity = 1,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 30,
-		luck = 15,
-		hit = 55,
+		armor = 0,
+		star = 1,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 120000,
+		reload = 150,
+		base = 90977,
+		durability = 14666,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
+		hit_growth = 0,
+		luck = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295140,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 2
-			},
-			{
-				ID = 200380,
-				LV = 1
-			}
-		}
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		equipment_list = {},
+		buff_list = {}
 	},
-	[295141] = {
+	[296266] = {
 		cannon = 232,
-		name = "伊丽莎白·META(Tier.6)",
-		reload = 150,
-		cannon_growth = 0,
+		battle_unit_type = 15,
+		fog_fx = "",
 		speed_growth = 0,
+		pilot_ai_template_id = 20006,
 		air = 0,
-		hit_growth = 0,
-		dodge = 42,
-		base = 90748,
-		durability_growth = 0,
-		antiaircraft = 212,
+		speed = 25,
+		dodge = 0,
+		id = 296266,
+		cannon_growth = 0,
+		rarity = 1,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 30,
-		luck = 16,
-		hit = 60,
+		armor = 0,
+		star = 1,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 160000,
+		reload = 150,
+		base = 90977,
+		durability = 16000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
+		hit_growth = 0,
+		luck = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295141,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 2
-			},
-			{
-				ID = 200380,
-				LV = 1
-			}
-		}
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		equipment_list = {},
+		buff_list = {}
 	},
-	[295142] = {
+	[296267] = {
 		cannon = 251,
-		name = "伊丽莎白·META(Tier.7)",
-		reload = 150,
-		cannon_growth = 0,
+		battle_unit_type = 15,
+		fog_fx = "",
 		speed_growth = 0,
+		pilot_ai_template_id = 20006,
 		air = 0,
-		hit_growth = 0,
-		dodge = 46,
-		base = 90748,
-		durability_growth = 0,
-		antiaircraft = 230,
+		speed = 25,
+		dodge = 0,
+		id = 296267,
+		cannon_growth = 0,
+		rarity = 1,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 30,
-		luck = 17,
-		hit = 65,
+		armor = 0,
+		star = 1,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 250000,
+		reload = 150,
+		base = 90977,
+		durability = 17333,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
+		hit_growth = 0,
+		luck = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295142,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 3
-			},
-			{
-				ID = 200380,
-				LV = 1
-			}
-		}
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		equipment_list = {},
+		buff_list = {}
 	},
-	[295143] = {
+	[296268] = {
 		cannon = 271,
-		name = "伊丽莎白·META(Tier.8)",
-		reload = 150,
-		cannon_growth = 0,
+		battle_unit_type = 15,
+		fog_fx = "",
 		speed_growth = 0,
+		pilot_ai_template_id = 20006,
 		air = 0,
-		hit_growth = 0,
-		dodge = 50,
-		base = 90748,
-		durability_growth = 0,
-		antiaircraft = 248,
+		speed = 25,
+		dodge = 0,
+		id = 296268,
+		cannon_growth = 0,
+		rarity = 1,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 30,
-		luck = 18,
-		hit = 70,
+		armor = 0,
+		star = 1,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 340000,
+		reload = 150,
+		base = 90977,
+		durability = 18666,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
+		hit_growth = 0,
+		luck = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295143,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 3
-			},
-			{
-				ID = 200380,
-				LV = 1
-			}
-		}
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		equipment_list = {},
+		buff_list = {}
 	},
-	[295144] = {
+	[296269] = {
 		cannon = 290,
-		name = "伊丽莎白·META(Tier.9)",
-		reload = 150,
-		cannon_growth = 0,
+		battle_unit_type = 15,
+		fog_fx = "",
 		speed_growth = 0,
+		pilot_ai_template_id = 20006,
 		air = 0,
-		hit_growth = 0,
-		dodge = 53,
-		base = 90748,
-		durability_growth = 0,
-		antiaircraft = 265,
+		speed = 25,
+		dodge = 0,
+		id = 296269,
+		cannon_growth = 0,
+		rarity = 1,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 30,
-		luck = 19,
-		hit = 75,
+		armor = 0,
+		star = 1,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 420000,
+		reload = 150,
+		base = 90977,
+		durability = 20000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
+		hit_growth = 0,
+		luck = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295144,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 3
-			},
-			{
-				ID = 200380,
-				LV = 1
-			}
-		}
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		equipment_list = {},
+		buff_list = {}
 	},
-	[295145] = {
+	[296270] = {
 		cannon = 310,
-		name = "伊丽莎白·META(Tier.10)",
-		reload = 150,
-		cannon_growth = 0,
+		battle_unit_type = 15,
+		fog_fx = "",
 		speed_growth = 0,
+		pilot_ai_template_id = 20006,
 		air = 0,
-		hit_growth = 0,
-		dodge = 57,
-		base = 90748,
-		durability_growth = 0,
-		antiaircraft = 283,
+		speed = 25,
+		dodge = 0,
+		id = 296270,
+		cannon_growth = 0,
+		rarity = 1,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 30,
-		luck = 20,
-		hit = 80,
+		armor = 0,
+		star = 1,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 520000,
+		reload = 150,
+		base = 90977,
+		durability = 21333,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295145,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 4
-			},
-			{
-				ID = 200380,
-				LV = 1
-			}
-		}
-	},
-	[295146] = {
-		cannon = 329,
-		name = "伊丽莎白·META(Tier.11)",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
 		hit_growth = 0,
-		dodge = 60,
-		base = 90748,
-		durability_growth = 0,
-		antiaircraft = 301,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 30,
-		luck = 21,
-		hit = 85,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
+		luck = 0,
 		torpedo = 0,
-		durability = 650000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295146,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 4
-			},
-			{
-				ID = 200380,
-				LV = 1
-			}
-		}
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		equipment_list = {},
+		buff_list = {}
 	}
 }
