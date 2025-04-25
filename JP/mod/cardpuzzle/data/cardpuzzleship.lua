@@ -327,112 +327,108 @@ function var_0_0.getRarity(arg_29_0)
 	assert(false)
 end
 
-function var_0_0.getExchangePrice(arg_30_0)
+function var_0_0.upgrade(arg_30_0)
 	assert(false)
 end
 
-function var_0_0.upgrade(arg_31_0)
-	assert(false)
+function var_0_0.getTeamType(arg_31_0)
+	return TeamType.GetTeamFromShipType(arg_31_0:getShipType())
 end
 
-function var_0_0.getTeamType(arg_32_0)
-	return TeamType.GetTeamFromShipType(arg_32_0:getShipType())
-end
+function var_0_0.getMaxConfigId(arg_32_0)
+	local var_32_0 = pg.ship_data_template
+	local var_32_1
 
-function var_0_0.getMaxConfigId(arg_33_0)
-	local var_33_0 = pg.ship_data_template
-	local var_33_1
+	for iter_32_0 = 4, 1, -1 do
+		local var_32_2 = tonumber(arg_32_0.groupId .. iter_32_0)
 
-	for iter_33_0 = 4, 1, -1 do
-		local var_33_2 = tonumber(arg_33_0.groupId .. iter_33_0)
-
-		if var_33_0[var_33_2] then
-			var_33_1 = var_33_2
+		if var_32_0[var_32_2] then
+			var_32_1 = var_32_2
 
 			break
 		end
 	end
 
-	return var_33_1
+	return var_32_1
 end
 
-function var_0_0.fateSkillChange(arg_34_0, arg_34_1)
-	if not arg_34_0.skillChangeList then
-		arg_34_0.skillChangeList = arg_34_0:isBluePrintShip() and arg_34_0:getBluePrint():getChangeSkillList() or {}
+function var_0_0.fateSkillChange(arg_33_0, arg_33_1)
+	if not arg_33_0.skillChangeList then
+		arg_33_0.skillChangeList = arg_33_0:isBluePrintShip() and arg_33_0:getBluePrint():getChangeSkillList() or {}
 	end
 
-	for iter_34_0, iter_34_1 in ipairs(arg_34_0.skillChangeList) do
-		if iter_34_1[1] == arg_34_1 and arg_34_0.skills[iter_34_1[2]] then
-			return iter_34_1[2]
+	for iter_33_0, iter_33_1 in ipairs(arg_33_0.skillChangeList) do
+		if iter_33_1[1] == arg_33_1 and arg_33_0.skills[iter_33_1[2]] then
+			return iter_33_1[2]
 		end
 	end
 
-	return arg_34_1
+	return arg_33_1
 end
 
-function var_0_0.getSkillList(arg_35_0)
-	local var_35_0 = pg.ship_data_template[arg_35_0.configId]
-	local var_35_1 = Clone(var_35_0.buff_list_display)
-	local var_35_2 = Clone(var_35_0.buff_list)
-	local var_35_3 = pg.ship_data_trans[arg_35_0.groupId]
-	local var_35_4 = 0
+function var_0_0.getSkillList(arg_34_0)
+	local var_34_0 = pg.ship_data_template[arg_34_0.configId]
+	local var_34_1 = Clone(var_34_0.buff_list_display)
+	local var_34_2 = Clone(var_34_0.buff_list)
+	local var_34_3 = pg.ship_data_trans[arg_34_0.groupId]
+	local var_34_4 = 0
 
-	if var_35_3 and var_35_3.skill_id ~= 0 then
-		local var_35_5 = var_35_3.skill_id
-		local var_35_6 = pg.transform_data_template[var_35_5]
+	if var_34_3 and var_34_3.skill_id ~= 0 then
+		local var_34_5 = var_34_3.skill_id
+		local var_34_6 = pg.transform_data_template[var_34_5]
 
-		if arg_35_0.transforms[var_35_5] and var_35_6.skill_id ~= 0 then
-			table.insert(var_35_2, var_35_6.skill_id)
+		if arg_34_0.transforms[var_34_5] and var_34_6.skill_id ~= 0 then
+			table.insert(var_34_2, var_34_6.skill_id)
 		end
 	end
 
-	local var_35_7 = {}
+	local var_34_7 = {}
 
-	for iter_35_0, iter_35_1 in ipairs(var_35_1) do
-		for iter_35_2, iter_35_3 in ipairs(var_35_2) do
-			if iter_35_1 == iter_35_3 then
-				table.insert(var_35_7, arg_35_0:fateSkillChange(iter_35_1))
+	for iter_34_0, iter_34_1 in ipairs(var_34_1) do
+		for iter_34_2, iter_34_3 in ipairs(var_34_2) do
+			if iter_34_1 == iter_34_3 then
+				table.insert(var_34_7, arg_34_0:fateSkillChange(iter_34_1))
 			end
 		end
 	end
 
-	return var_35_7
+	return var_34_7
 end
 
-function var_0_0.getDisplaySkillIds(arg_36_0)
-	return _.map(pg.ship_data_template[arg_36_0.configId].buff_list_display, function(arg_37_0)
-		return arg_36_0:fateSkillChange(arg_37_0)
+function var_0_0.getDisplaySkillIds(arg_35_0)
+	return _.map(pg.ship_data_template[arg_35_0.configId].buff_list_display, function(arg_36_0)
+		return arg_35_0:fateSkillChange(arg_36_0)
 	end)
 end
 
-function var_0_0.getSkillIndex(arg_38_0, arg_38_1)
-	local var_38_0 = arg_38_0:getSkillList()
+function var_0_0.getSkillIndex(arg_37_0, arg_37_1)
+	local var_37_0 = arg_37_0:getSkillList()
 
-	for iter_38_0, iter_38_1 in ipairs(var_38_0) do
-		if arg_38_1 == iter_38_1 then
-			return iter_38_0
+	for iter_37_0, iter_37_1 in ipairs(var_37_0) do
+		if arg_37_1 == iter_37_1 then
+			return iter_37_0
 		end
 	end
 end
 
-function var_0_0.IsBgmSkin(arg_39_0)
-	local var_39_0 = arg_39_0:GetSkinConfig()
+function var_0_0.IsBgmSkin(arg_38_0)
+	local var_38_0 = arg_38_0:GetSkinConfig()
 
-	return table.contains(var_39_0.tag, ShipSkin.WITH_BGM)
+	return table.contains(var_38_0.tag, ShipSkin.WITH_BGM)
 end
 
-function var_0_0.GetSkinBgm(arg_40_0)
-	if arg_40_0:IsBgmSkin() then
-		return arg_40_0:GetSkinConfig().bgm
+function var_0_0.GetSkinBgm(arg_39_0)
+	if arg_39_0:IsBgmSkin() then
+		return arg_39_0:GetSkinConfig().bgm
 	end
 end
 
-function var_0_0.GetConfigId(arg_41_0)
-	return arg_41_0.configId
+function var_0_0.GetConfigId(arg_40_0)
+	return arg_40_0.configId
 end
 
-function var_0_0.GetDefaultCards(arg_42_0)
-	return arg_42_0:getConfig("default_card")
+function var_0_0.GetDefaultCards(arg_41_0)
+	return arg_41_0:getConfig("default_card")
 end
 
 return var_0_0

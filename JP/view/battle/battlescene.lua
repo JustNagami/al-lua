@@ -705,104 +705,113 @@ function var_0_0.initPauseWindow(arg_31_0)
 	onButton(arg_31_0, arg_31_0.pauseWindow, function()
 		triggerButton(arg_31_0.continueBtn)
 	end)
+	onButton(arg_31_0, arg_31_0.pauseWindow, function()
+		local var_39_0 = arg_31_0.pauseWindow:GetComponent(typeof(Animation))
+
+		if var_39_0 and var_39_0:IsPlaying("msgbox_out") then
+			-- block empty
+		else
+			triggerButton(arg_31_0.continueBtn)
+		end
+	end)
 	setActive(arg_31_0.pauseWindow, false)
 end
 
-function var_0_0.updatePauseWindow(arg_39_0)
-	if not arg_39_0.pauseWindow then
+function var_0_0.updatePauseWindow(arg_40_0)
+	if not arg_40_0.pauseWindow then
 		return
 	end
 
-	setActive(arg_39_0.pauseWindow, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg_39_0.pauseWindow, nil, {
+	setActive(arg_40_0.pauseWindow, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_40_0.pauseWindow, nil, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 
-	local var_39_0 = ys.Battle.BattleState.GetInstance():GetProxyByName(ys.Battle.BattleDataProxy.__name)
-	local var_39_1 = var_39_0:GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE)
-	local var_39_2 = var_39_1:GetMainList()
-	local var_39_3 = var_39_1:GetScoutList()
+	local var_40_0 = ys.Battle.BattleState.GetInstance():GetProxyByName(ys.Battle.BattleDataProxy.__name)
+	local var_40_1 = var_40_0:GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE)
+	local var_40_2 = var_40_1:GetMainList()
+	local var_40_3 = var_40_1:GetScoutList()
 
-	local function var_39_4(arg_40_0, arg_40_1, arg_40_2)
-		if not arg_40_0 then
+	local function var_40_4(arg_41_0, arg_41_1, arg_41_2)
+		if not arg_41_0 then
 			return
 		end
 
-		for iter_40_0 = 1, #arg_40_0 do
-			local var_40_0 = arg_40_0[iter_40_0].id
+		for iter_41_0 = 1, #arg_41_0 do
+			local var_41_0 = arg_41_0[iter_41_0].id
 
-			if var_39_1:GetFreezeShipByID(var_40_0) then
-				local var_40_1 = var_39_1:GetFreezeShipByID(var_40_0)
+			if var_40_1:GetFreezeShipByID(var_41_0) then
+				local var_41_1 = var_40_1:GetFreezeShipByID(var_41_0)
 
-				setSlider(arg_40_2[iter_40_0]:Find("blood"), 0, 1, var_40_1:GetHPRate())
-				SetActive(arg_40_2[iter_40_0]:Find("mask"), false)
-			elseif var_39_1:GetShipByID(var_40_0) then
-				local var_40_2 = var_39_1:GetShipByID(var_40_0)
+				setSlider(arg_41_2[iter_41_0]:Find("blood"), 0, 1, var_41_1:GetHPRate())
+				SetActive(arg_41_2[iter_41_0]:Find("mask"), false)
+			elseif var_40_1:GetShipByID(var_41_0) then
+				local var_41_2 = var_40_1:GetShipByID(var_41_0)
 
-				setSlider(arg_40_2[iter_40_0]:Find("blood"), 0, 1, var_40_2:GetHPRate())
-				SetActive(arg_40_2[iter_40_0]:Find("mask"), false)
+				setSlider(arg_41_2[iter_41_0]:Find("blood"), 0, 1, var_41_2:GetHPRate())
+				SetActive(arg_41_2[iter_41_0]:Find("mask"), false)
 			else
-				setSlider(arg_40_2[iter_40_0]:Find("blood"), 0, 1, 0)
-				SetActive(arg_40_2[iter_40_0]:Find("mask"), true)
+				setSlider(arg_41_2[iter_41_0]:Find("blood"), 0, 1, 0)
+				SetActive(arg_41_2[iter_41_0]:Find("mask"), true)
 			end
 		end
 	end
 
-	var_39_4(arg_39_0._mainShipVOs, var_39_2, arg_39_0.mainTFs)
-	var_39_4(arg_39_0._vanShipVOs, var_39_3, arg_39_0.vanTFs)
-	setText(arg_39_0.LeftTime, ys.Battle.BattleTimerView.formatTime(math.floor(var_39_0:GetCountDown())))
+	var_40_4(arg_40_0._mainShipVOs, var_40_2, arg_40_0.mainTFs)
+	var_40_4(arg_40_0._vanShipVOs, var_40_3, arg_40_0.vanTFs)
+	setText(arg_40_0.LeftTime, ys.Battle.BattleTimerView.formatTime(math.floor(var_40_0:GetCountDown())))
 end
 
-function var_0_0.AddUIFX(arg_41_0, arg_41_1, arg_41_2)
-	arg_41_2 = arg_41_2 or 1
+function var_0_0.AddUIFX(arg_42_0, arg_42_1, arg_42_2)
+	arg_42_2 = arg_42_2 or 1
 
-	local var_41_0 = arg_41_2 > 0
+	local var_42_0 = arg_42_2 > 0
 
-	arg_41_1 = tf(arg_41_1)
+	arg_42_1 = tf(arg_42_1)
 
-	local var_41_1 = var_41_0 and arg_41_0._fxContainerUpper or arg_41_0._fxContainerBottom
+	local var_42_1 = var_42_0 and arg_42_0._fxContainerUpper or arg_42_0._fxContainerBottom
 
-	arg_41_1:SetParent(var_41_1)
-	pg.ViewUtils.SetSortingOrder(arg_41_1, arg_41_0._canvasOrder + arg_41_2)
-	pg.ViewUtils.SetLayer(arg_41_1, Layer.UI)
+	arg_42_1:SetParent(var_42_1)
+	pg.ViewUtils.SetSortingOrder(arg_42_1, arg_42_0._canvasOrder + arg_42_2)
+	pg.ViewUtils.SetLayer(arg_42_1, Layer.UI)
 
-	return var_41_1.localScale
+	return var_42_1.localScale
 end
 
-function var_0_0.OnCloseChat(arg_42_0)
-	local var_42_0 = ys.Battle.BattleState.GetInstance():IsBotActive()
-	local var_42_1 = arg_42_0._chatBtn:GetComponent(typeof(Animation))
+function var_0_0.OnCloseChat(arg_43_0)
+	local var_43_0 = ys.Battle.BattleState.GetInstance():IsBotActive()
+	local var_43_1 = arg_43_0._chatBtn:GetComponent(typeof(Animation))
 
-	if var_42_0 then
-		setActive(arg_42_0._chatBtn, true)
+	if var_43_0 then
+		setActive(arg_43_0._chatBtn, true)
 
-		if var_42_1 then
-			var_42_1:Play("chatbtn_in")
+		if var_43_1 then
+			var_43_1:Play("chatbtn_in")
 		end
-	elseif var_42_1 then
-		var_42_1:Play("chatbtn_out")
+	elseif var_43_1 then
+		var_43_1:Play("chatbtn_out")
 	else
-		setActive(arg_42_0._chatBtn, false)
+		setActive(arg_43_0._chatBtn, false)
 	end
 end
 
-function var_0_0.clear(arg_43_0)
-	arg_43_0._preSkillTF = nil
-	arg_43_0._preCommanderSkillTF = nil
-	arg_43_0._commanderSkillList = nil
-	arg_43_0._skillPaintings = nil
-	arg_43_0._currentPainting = nil
+function var_0_0.clear(arg_44_0)
+	arg_44_0._preSkillTF = nil
+	arg_44_0._preCommanderSkillTF = nil
+	arg_44_0._commanderSkillList = nil
+	arg_44_0._skillPaintings = nil
+	arg_44_0._currentPainting = nil
 
-	Destroy(arg_43_0._paintingUI)
+	Destroy(arg_44_0._paintingUI)
 end
 
-function var_0_0.willExit(arg_44_0)
-	arg_44_0._skillFloatPool:Dispose()
-	arg_44_0._skillFloatCMDPool:Dispose()
+function var_0_0.willExit(arg_45_0)
+	arg_45_0._skillFloatPool:Dispose()
+	arg_45_0._skillFloatCMDPool:Dispose()
 	ys.Battle.BattleState.GetInstance():ExitBattle()
-	pg.UIMgr.GetInstance():UnblurPanel(arg_44_0.pauseWindow, arg_44_0._tf)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_45_0.pauseWindow, arg_45_0._tf)
 	ys.Battle.BattleCameraUtil.GetInstance().ActiveMainCemera(false)
-	pg.CameraFixMgr.GetInstance():disconnect(arg_44_0.camEventId)
+	pg.CameraFixMgr.GetInstance():disconnect(arg_45_0.camEventId)
 end
 
 return var_0_0

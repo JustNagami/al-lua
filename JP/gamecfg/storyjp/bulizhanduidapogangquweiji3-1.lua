@@ -243,7 +243,7 @@
 			}
 		},
 		{
-			actor = 100011,
+			actor = 100020,
 			side = 0,
 			bgName = "star_level_bg_148",
 			actorName = "二人",

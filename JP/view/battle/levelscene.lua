@@ -637,7 +637,7 @@ function var_0_0.didEnter(arg_36_0)
 	local var_36_0 = getProxy(ActivityProxy):getEnterReadyActivity()
 
 	setActive(arg_36_0.entranceLayer:Find("enters/enter_ready/nothing"), not tobool(var_36_0))
-	setActive(arg_36_0.entranceLayer:Find("enters/enter_ready/activity"), true)
+	setActive(arg_36_0.entranceLayer:Find("enters/enter_ready/activity"), tobool(var_36_0))
 
 	if tobool(var_36_0) then
 		local var_36_1 = var_36_0:getConfig("config_client").entrance_bg

@@ -136,9 +136,9 @@ pg.voice_bgm = {
 		bgm = "idol-BlueSpirit-inst"
 	},
 	NewShopsScene = {
-		default_bgm = "theme-vichy-church",
+		default_bgm = "story-tulipa",
 		special_bgm = "",
-		bgm = "theme-vichy-church"
+		bgm = "story-tulipa"
 	},
 	BuildShipScene = {
 		default_bgm = "main",
@@ -2064,5 +2064,45 @@ pg.voice_bgm = {
 		default_bgm = "story-battle-16bit",
 		special_bgm = "",
 		bgm = "story-battle-16bit"
+	},
+	XiaoKeWeiPtRePage = {
+		default_bgm = "qe-ova-10",
+		special_bgm = "",
+		bgm = "qe-ova-10"
+	},
+	KurskSPPtRePage = {
+		default_bgm = "battle-deepecho",
+		special_bgm = "",
+		bgm = "battle-deepecho"
+	},
+	LoginSign1Page = {
+		default_bgm = "battle-deepecho",
+		special_bgm = "",
+		bgm = "battle-deepecho"
+	},
+	HeLanMainPage = {
+		default_bgm = "theme-tulipa",
+		special_bgm = "",
+		bgm = "theme-tulipa"
+	},
+	HeLanPtPage = {
+		default_bgm = "story-tulipa-pv",
+		special_bgm = "",
+		bgm = "story-tulipa-pv"
+	},
+	XiaoAnKeLeiPtPage = {
+		default_bgm = "story-richang-flexible",
+		special_bgm = "",
+		bgm = "story-richang-flexible"
+	},
+	SpringMagazinePage = {
+		default_bgm = "story-tulipa",
+		special_bgm = "",
+		bgm = "story-tulipa"
+	},
+	TulipKingdomMedalAlbumView = {
+		default_bgm = "story-tulipa",
+		special_bgm = "",
+		bgm = "story-tulipa"
 	}
 }

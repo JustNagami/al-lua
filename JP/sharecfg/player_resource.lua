@@ -1735,6 +1735,61 @@ pg.player_resource = {
 		name = "skinTicket90",
 		itemid = 65087
 	},
+	[487] = {
+		id = 487,
+		name = "xiaokewei_pt_2",
+		itemid = 65590
+	},
+	[488] = {
+		id = 488,
+		name = "jidifengbao_pt2",
+		itemid = 65090
+	},
+	[489] = {
+		id = 489,
+		name = "skinTicket91",
+		itemid = 65089
+	},
+	[490] = {
+		id = 490,
+		name = "helansp_pt",
+		itemid = 65092
+	},
+	[491] = {
+		id = 491,
+		name = "skinTicket92",
+		itemid = 65091
+	},
+	[492] = {
+		id = 492,
+		name = "xiaoankeleiqi_pt",
+		itemid = 65591
+	},
+	[493] = {
+		id = 493,
+		name = "limit_skinticket19",
+		itemid = 68051
+	},
+	[494] = {
+		id = 494,
+		name = "limit_skinticket20",
+		itemid = 68052
+	},
+	[495] = {
+		id = 495,
+		name = "limit_skinticket21",
+		itemid = 68053
+	},
+	[496] = {
+		id = 496,
+		name = "activity_xunzhang5",
+		itemid = 65593
+	},
+	[497] = {
+		id = 497,
+		name = "newserver_pt_250424",
+		itemid = 65094
+	},
 	[950] = {
 		id = 950,
 		name = "yisegefuke_pt1",
@@ -3207,6 +3262,39 @@ pg.player_resource = {
 		skinTicket90 = {
 			486
 		},
+		xiaokewei_pt_2 = {
+			487
+		},
+		jidifengbao_pt2 = {
+			488
+		},
+		skinTicket91 = {
+			489
+		},
+		helansp_pt = {
+			490
+		},
+		skinTicket92 = {
+			491
+		},
+		xiaoankeleiqi_pt = {
+			492
+		},
+		limit_skinticket19 = {
+			493
+		},
+		limit_skinticket20 = {
+			494
+		},
+		limit_skinticket21 = {
+			495
+		},
+		activity_xunzhang5 = {
+			496
+		},
+		newserver_pt_250424 = {
+			497
+		},
 		yisegefuke_pt1 = {
 			950
 		},
@@ -3814,6 +3902,17 @@ pg.player_resource = {
 		484,
 		485,
 		486,
+		487,
+		488,
+		489,
+		490,
+		491,
+		492,
+		493,
+		494,
+		495,
+		496,
+		497,
 		950,
 		951,
 		952,

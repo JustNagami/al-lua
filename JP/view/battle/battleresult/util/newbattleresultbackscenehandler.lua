@@ -83,7 +83,7 @@ function var_0_0.ExitRoutineSystem(arg_5_0, arg_5_1)
 end
 
 function var_0_0.ExitScenarioSystem(arg_6_0, arg_6_1)
-	if arg_6_1.needHelpMessage then
+	if arg_6_1.needHelpMessage or arg_6_1.score == ys.Battle.BattleConst.BattleScore.C then
 		getProxy(ChapterProxy):StopAutoFight(ChapterConst.AUTOFIGHT_STOP_REASON.BATTLE_FAILED)
 	end
 
@@ -159,17 +159,17 @@ function var_0_0.ExitWorldSystem(arg_10_0, arg_10_1)
 end
 
 function var_0_0.ResultRushBossSystem(arg_11_0, arg_11_1)
-	local var_11_0 = getProxy(ContextProxy):GetPrevContext(1)
-	local var_11_1 = var_11_0:getContextByMediator(BossRushPreCombatMediator)
+	local var_11_0 = getProxy(ContextProxy)
+	local var_11_1, var_11_2 = var_11_0:getContextByMediator(BossRushPreCombatMediator)
 
 	if var_11_1 then
-		var_11_0:removeChild(var_11_1)
+		var_11_2:removeChild(var_11_1)
 	end
 
-	local var_11_2 = var_11_0:getContextByMediator(BossRushFleetSelectMediator)
+	local var_11_3, var_11_4 = var_11_0:getContextByMediator(BossRushFleetSelectMediator)
 
-	if var_11_2 then
-		var_11_0:removeChild(var_11_2)
+	if var_11_3 then
+		var_11_4:removeChild(var_11_3)
 	end
 
 	if not (arg_11_1.score > ys.Battle.BattleConst.BattleScore.C) and arg_11_1.system == SYSTEM_BOSS_RUSH_EX then

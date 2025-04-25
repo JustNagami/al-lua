@@ -75,11 +75,11 @@ function var_0_0.didEnter(arg_7_0)
 	local var_7_0
 
 	if arg_7_0.contextData.content.cost == 0 then
-		var_7_0 = i18n("dorm3d_purchase_confirm_free", arg_7_0.contextData.content.icon, arg_7_0.contextData.content.cost, arg_7_0.contextData.content.name)
+		var_7_0 = i18n("dorm3d_purchase_confirm_free", arg_7_0.contextData.content.icon, "x" .. arg_7_0.contextData.content.cost, arg_7_0.contextData.content.name)
 	elseif arg_7_0.contextData.content.off > 0 then
-		var_7_0 = i18n("dorm3d_purchase_confirm_discount", arg_7_0.contextData.content.icon, arg_7_0.contextData.content.cost, arg_7_0.contextData.content.old, arg_7_0.contextData.content.name)
+		var_7_0 = i18n("dorm3d_purchase_confirm_discount", arg_7_0.contextData.content.icon, "x" .. arg_7_0.contextData.content.cost, arg_7_0.contextData.content.old, arg_7_0.contextData.content.name)
 	else
-		var_7_0 = i18n("dorm3d_purchase_confirm_original", arg_7_0.contextData.content.icon, arg_7_0.contextData.content.cost, arg_7_0.contextData.content.name)
+		var_7_0 = i18n("dorm3d_purchase_confirm_original", arg_7_0.contextData.content.icon, "x" .. arg_7_0.contextData.content.cost, arg_7_0.contextData.content.name)
 	end
 
 	switch(arg_7_0.contextData.drop.__cname, {

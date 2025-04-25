@@ -3164,6 +3164,151 @@ pg.activity_sp_story = {
 			}
 		}
 	},
+	[181] = {
+		story_type = 1,
+		pre_event = "",
+		name = "EPS-1 晩餐会",
+		unlock_conditions = "",
+		change_prefab = "",
+		change_background = "star_level_bg_541",
+		story = "YANGQIYUJINZHIQI1",
+		change_bgm = "story-richang-light",
+		id = 181,
+		lock = ""
+	},
+	[182] = {
+		story_type = 1,
+		name = "EPS-2 NA海域浄化作戦",
+		unlock_conditions = "EPS-1をクリア",
+		change_bgm = "story-tulipa",
+		change_prefab = "",
+		change_background = "star_level_bg_188",
+		id = 182,
+		story = "YANGQIYUJINZHIQI2",
+		pre_event = {
+			181
+		},
+		lock = {
+			{
+				4,
+				181
+			}
+		}
+	},
+	[183] = {
+		story_type = 1,
+		name = "EPS-3 「新港」基地",
+		unlock_conditions = "EPS-2をクリア",
+		change_bgm = "theme-tulipa",
+		change_prefab = "",
+		change_background = "bg_yujin_1",
+		id = 183,
+		story = "YANGQIYUJINZHIQI3",
+		pre_event = {
+			182
+		},
+		lock = {
+			{
+				4,
+				182
+			}
+		}
+	},
+	[184] = {
+		story_type = 1,
+		name = "EPS-4 補足情報",
+		unlock_conditions = "EPS-3をクリア",
+		change_bgm = "story-tulipa",
+		change_prefab = "",
+		change_background = "bg_yujin_2",
+		id = 184,
+		story = "YANGQIYUJINZHIQI4",
+		pre_event = {
+			183
+		},
+		lock = {
+			{
+				4,
+				183
+			}
+		}
+	},
+	[185] = {
+		story_type = 1,
+		name = "EPS-5 出航",
+		unlock_conditions = "EPS-4をクリア",
+		change_bgm = "battle-tulipa",
+		change_prefab = "",
+		change_background = "bg_yujin_cg1",
+		id = 185,
+		story = "YANGQIYUJINZHIQI5",
+		pre_event = {
+			184
+		},
+		lock = {
+			{
+				4,
+				184
+			}
+		}
+	},
+	[186] = {
+		story_type = 2,
+		name = "EPS-6 チュリッパ艦船の初陣・1",
+		unlock_conditions = "EPS-5をクリア",
+		change_bgm = "battle-tulipa",
+		change_prefab = "",
+		change_background = "bg_yujin_3",
+		id = 186,
+		story = "1916001",
+		pre_event = {
+			185
+		},
+		lock = {
+			{
+				4,
+				185
+			}
+		}
+	},
+	[187] = {
+		story_type = 2,
+		name = "EPS-7 チュリッパ艦船の初陣・2",
+		unlock_conditions = "EPS-6をクリア",
+		change_bgm = "story-tulipa",
+		change_prefab = "",
+		change_background = "bg_yujin_cg2",
+		id = 187,
+		story = "1916002",
+		pre_event = {
+			186
+		},
+		lock = {
+			{
+				4,
+				186
+			}
+		}
+	},
+	[188] = {
+		story_type = 1,
+		name = "EPS-8 烈火と新芽",
+		unlock_conditions = "EPS-7をクリア",
+		change_bgm = "theme-tulipa",
+		change_prefab = "",
+		change_background = "bg_yujin_2",
+		id = 188,
+		story = "YANGQIYUJINZHIQI8",
+		pre_event = {
+			187
+		},
+		lock = {
+			{
+				4,
+				187
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -3332,6 +3477,14 @@ pg.activity_sp_story = {
 		173,
 		174,
 		175,
-		176
+		176,
+		181,
+		182,
+		183,
+		184,
+		185,
+		186,
+		187,
+		188
 	}
 }

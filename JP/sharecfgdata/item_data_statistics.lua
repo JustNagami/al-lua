@@ -105680,3 +105680,430 @@ _G.pg.base.item_data_statistics[81212] = {
 	},
 	limit = {}
 }
+_G.pg.base.item_data_statistics[30367] = {
+	open_directly = 1,
+	name = "装備外装箱(チュリッパ牧歌)",
+	display = "ランダムの装備外装を入手可能",
+	type = 11,
+	display_effect = "",
+	id = 30367,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "Props/appearanceboxyujin",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "30367",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			9,
+			4149,
+			1
+		},
+		{
+			9,
+			4150,
+			1
+		},
+		{
+			9,
+			4151,
+			1
+		},
+		{
+			9,
+			4152,
+			1
+		},
+		{
+			9,
+			4153,
+			1
+		},
+		{
+			9,
+			4154,
+			1
+		},
+		{
+			9,
+			4155,
+			1
+		},
+		{
+			9,
+			4156,
+			1
+		},
+		{
+			9,
+			4157,
+			1
+		},
+		{
+			9,
+			4158,
+			1
+		},
+		{
+			9,
+			4159,
+			1
+		},
+		{
+			9,
+			4160,
+			1
+		},
+		{
+			9,
+			4161,
+			1
+		},
+		{
+			9,
+			4162,
+			1
+		},
+		{
+			9,
+			4163,
+			1
+		},
+		{
+			9,
+			4164,
+			1
+		},
+		{
+			9,
+			4165,
+			1
+		},
+		{
+			9,
+			4166,
+			1
+		}
+	},
+	price = {
+		1,
+		7000
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[30554] = {
+	open_directly = 0,
+	name = "選択装備外装箱（チュリッパ牧歌）",
+	display = "使用すると、装備外装（チュリッパ牧歌）から任意の装備外装を1個選択して入手できます",
+	type = 13,
+	display_effect = "",
+	id = 30554,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop_appointed",
+	link_id = 0,
+	icon = "Props/appearanceboxyujinzixuan",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			9,
+			4149,
+			1
+		},
+		{
+			9,
+			4150,
+			1
+		},
+		{
+			9,
+			4151,
+			1
+		},
+		{
+			9,
+			4152,
+			1
+		},
+		{
+			9,
+			4153,
+			1
+		},
+		{
+			9,
+			4154,
+			1
+		},
+		{
+			9,
+			4155,
+			1
+		},
+		{
+			9,
+			4156,
+			1
+		},
+		{
+			9,
+			4157,
+			1
+		},
+		{
+			9,
+			4158,
+			1
+		},
+		{
+			9,
+			4159,
+			1
+		},
+		{
+			9,
+			4160,
+			1
+		},
+		{
+			9,
+			4161,
+			1
+		},
+		{
+			9,
+			4162,
+			1
+		},
+		{
+			9,
+			4163,
+			1
+		},
+		{
+			9,
+			4164,
+			1
+		},
+		{
+			9,
+			4165,
+			1
+		},
+		{
+			9,
+			4166,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			9,
+			4149,
+			1
+		},
+		{
+			9,
+			4150,
+			1
+		},
+		{
+			9,
+			4151,
+			1
+		},
+		{
+			9,
+			4152,
+			1
+		},
+		{
+			9,
+			4153,
+			1
+		},
+		{
+			9,
+			4154,
+			1
+		},
+		{
+			9,
+			4155,
+			1
+		},
+		{
+			9,
+			4156,
+			1
+		},
+		{
+			9,
+			4157,
+			1
+		},
+		{
+			9,
+			4158,
+			1
+		},
+		{
+			9,
+			4159,
+			1
+		},
+		{
+			9,
+			4160,
+			1
+		},
+		{
+			9,
+			4161,
+			1
+		},
+		{
+			9,
+			4162,
+			1
+		},
+		{
+			9,
+			4163,
+			1
+		},
+		{
+			9,
+			4164,
+			1
+		},
+		{
+			9,
+			4165,
+			1
+		},
+		{
+			9,
+			4166,
+			1
+		}
+	},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[40059] = {
+	open_directly = 1,
+	name = "選べるUR着せ替え福袋E",
+	display = "大量のアイテムを入手できます",
+	type = 17,
+	display_effect = "OpenBox",
+	id = 40059,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "ChargeIcon/huteng_package",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "4060",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			59564,
+			1
+		},
+		{
+			2,
+			20001,
+			40
+		},
+		{
+			1,
+			1,
+			30000
+		},
+		{
+			2,
+			16502,
+			50
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[59564] = {
+	open_directly = 0,
+	name = "選べる着せ替えチケット（ヴァンガード）",
+	display = "倉庫で使用でき、着せ替えを1着選んで入手可能。\n（<color=#ff5c5c>指定された一部の着せ替えのみ入手可能。すでにすべての入手可能着せ替えを所持している場合、入手アイテムは自動で「着せ替えクーポン」に変換されます</color>）",
+	type = 26,
+	display_effect = "",
+	id = 59564,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop_appointed_skinexchange",
+	link_id = 0,
+	icon = "Props/skin_exchange_huteng",
+	order = 1,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			7,
+			205131,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		0,
+		{},
+		{
+			205131
+		},
+		0,
+		59552
+	},
+	limit = {}
+}

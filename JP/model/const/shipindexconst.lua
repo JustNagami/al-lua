@@ -216,32 +216,34 @@ function var_0_0.filterByType(arg_25_0, arg_25_1)
 	return false
 end
 
-var_0_0.CampUS = bit.lshift(1, 0)
-var_0_0.CampEN = bit.lshift(1, 1)
-var_0_0.CampJP = bit.lshift(1, 2)
-var_0_0.CampDE = bit.lshift(1, 3)
-var_0_0.CampCN = bit.lshift(1, 4)
-var_0_0.CampITA = bit.lshift(1, 5)
-var_0_0.CampSN = bit.lshift(1, 6)
-var_0_0.CampFF = bit.lshift(1, 7)
-var_0_0.CampMNF = bit.lshift(1, 8)
-var_0_0.CampMETA = bit.lshift(1, 9)
-var_0_0.CampMot = bit.lshift(1, 10)
-var_0_0.CampOther = bit.lshift(1, 11)
-var_0_0.CampIndexs = {
-	var_0_0.CampUS,
-	var_0_0.CampEN,
-	var_0_0.CampJP,
-	var_0_0.CampDE,
-	var_0_0.CampCN,
-	var_0_0.CampITA,
-	var_0_0.CampSN,
-	var_0_0.CampFF,
-	var_0_0.CampMNF,
-	var_0_0.CampMETA,
-	var_0_0.CampMot,
-	var_0_0.CampOther
+local var_0_1 = {
+	"CampUS",
+	"CampEN",
+	"CampJP",
+	"CampDE",
+	"CampCN",
+	"CampITA",
+	"CampSN",
+	"CampFF",
+	"CampMNF",
+	"CampNL",
+	"CampMETA",
+	"CampMot",
+	"CampOther"
 }
+
+if LOCK_NATION_HNLMS then
+	table.removebyvalue(var_0_1, "CampNL")
+end
+
+var_0_0.CampIndexs = {}
+
+for iter_0_0, iter_0_1 in ipairs(var_0_1) do
+	var_0_0[iter_0_1] = bit.lshift(1, iter_0_0 - 1)
+
+	table.insert(var_0_0.CampIndexs, var_0_0[iter_0_1])
+end
+
 var_0_0.CampAll = IndexConst.BitAll(var_0_0.CampIndexs)
 
 table.insert(var_0_0.CampIndexs, 1, var_0_0.CampAll)
@@ -257,10 +259,15 @@ var_0_0.CampNames = {
 	"word_shipNation_beiLian",
 	"word_shipNation_ziyou",
 	"word_shipNation_weixi",
+	"word_shipNation_yujinwangguo",
 	"word_shipNation_meta_index",
 	"word_shipNation_mot",
 	"word_shipNation_other"
 }
+
+if LOCK_NATION_HNLMS then
+	table.removebyvalue(var_0_0.CampNames, "word_shipNation_yujinwangguo")
+end
 
 function var_0_0.filterByCamp(arg_26_0, arg_26_1)
 	if not arg_26_1 or arg_26_1 == var_0_0.CampAll then

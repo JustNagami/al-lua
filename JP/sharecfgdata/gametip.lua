@@ -8407,16 +8407,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "アビリティPtが不足しています"
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "期間限定建造を累計200回行うと「インプラカブル」を確定で入手可能！（最大4隻まで）"
+	tip = "「エヴァーツェン」「デ・ゼーヴェン・プロヴィンシェン」出現率UP！"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "「トリエステ」常設実装！"
+	tip = "「ヴァンガード」「リヴェンジ」常設実装！"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "「ポンペオ・マーニョ」常設実装！"
+	tip = "「ジャーヴィス」常設実装！"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "「インペロ」常設実装！"
+	tip = "「ヴァンガード」「インドミタブル」常設実装！"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -20874,7 +20874,7 @@ _G.pg.base.gametip.series_enemy_storyreward = {
 _G.pg.base.gametip.series_enemy_help = {
 	tip = [[
 連戦イベント「星霜嵐海」
-開催期間：<color=#92fc63>2023.3.23-2023.4.6メンテナンスまで</color>
+開催期間：<color=#92fc63>2025.4.17-2025.4.24メンテナンスまで</color>
 
 概要：
 イベント「星霜嵐海」とは、艦隊を編成し特別ステージに出撃することでイベントPtを入手し、イベント報酬を獲得するイベントです。
@@ -21113,7 +21113,7 @@ _G.pg.base.gametip.gametip_xiaokewei = {
 			info = "4.イベント終了までにイベントページの「友好度報酬」を最後まで受け取ると、【リトル・フォーミダブル】を「正式加入」させることができます（友好度が1000必要）。イベント終了時、「正式加入」していない【リトル・フォーミダブル】は母港からいなくなります。"
 		},
 		{
-			info = "5.友好度報酬は5/3（水）まで毎日1段階ずつ解放されます。"
+			info = "5.友好度報酬は4/16（水）まで毎日1段階ずつ解放されます。"
 		},
 		{
 			info = "6.仮加入状態の【リトル・フォーミダブル】はセイレーン作戦（META戦含む）に参加できず、またセイレーン作戦では友好度を獲得できません。"
@@ -26793,4 +26793,71 @@ _G.pg.base.gametip.SuperBulin2_help = {
 }
 _G.pg.base.gametip.SuperBulin2_lock_tip = {
 	tip = "ヒントをすべて集めると限定ステージを可能！"
+}
+_G.pg.base.gametip.word_shipNation_yujinwangguo = {
+	tip = "チュリッパ"
+}
+_G.pg.base.gametip.word_maingroup_idle = {
+	tip = "更新情報無効"
+}
+_G.pg.base.gametip.word_maingroup_latest = {
+	tip = "更新不要"
+}
+_G.pg.base.gametip.levelscene_mapselect_tp = {
+	tip = "TP"
+}
+_G.pg.base.gametip.dorm3d_shop_buy_tips = {
+	tip = "$1<color=#169fff>$2</color>消費（合計$1<color=#169fff>$3</color>）し、<color=#169fff>$4</color> を購入しますか？"
+}
+_G.pg.base.gametip.dorm3d_shop_title = {
+	tip = "宿舎ショップ"
+}
+_G.pg.base.gametip.dorm3d_shop_limit = {
+	tip = "限定"
+}
+_G.pg.base.gametip.dorm3d_shop_sold_out = {
+	tip = "売切れ"
+}
+_G.pg.base.gametip.dorm3d_shop_all = {
+	tip = "全て"
+}
+_G.pg.base.gametip.dorm3d_shop_gift1 = {
+	tip = "プレゼント"
+}
+_G.pg.base.gametip.dorm3d_shop_furniture = {
+	tip = "家具"
+}
+_G.pg.base.gametip.dorm3d_shop_others = {
+	tip = "その他"
+}
+_G.pg.base.gametip.dorm3d_shop_limit1 = {
+	tip = "今週限定"
+}
+_G.pg.base.gametip.xiaoankeleiqi_npc = {
+	tip = {
+		{
+			info = "■概要\n「星々を描いて」は、イベント開始時に仮加入した【リトル・アンカレッジ】の「友好度」を海域に出撃することで貯め、【リトル・アンカレッジ】を正式加入させるイベントになります。"
+		},
+		{
+			info = "■遊び方\n1.イベント期間中、特定のステージの敵中枢艦隊を撃破すると、「友好度」を獲得する事ができます。獲得した「友好度」が一定の数値に到達すると、「友好度報酬」を入手することができます"
+		},
+		{
+			info = "2.【リトル・アンカレッジ】は、友好度報酬（7段階目）の「正式加入」を達成しない限り、ケッコンすることができず、また退役や強化・限界突破素材への選択をすることができません。"
+		},
+		{
+			info = "3.【リトル・アンカレッジ】を編成に入れている艦隊で上記ステージの敵中枢艦隊を撃破し、かつ勝利時【リトル・アンカレッジ】が戦闘可能な状態の場合、獲得できる「友好度」が2倍になります。"
+		},
+		{
+			info = "4.イベント終了までにイベントページの「友好度報酬」を最後まで受け取ると、【リトル・アンカレッジ】を「正式加入」させることができます（友好度が1000必要）。イベント終了時、「正式加入」していない【リトル・アンカレッジ】は母港からいなくなります。"
+		},
+		{
+			info = "5.友好度報酬は5/1（木）まで毎日1段階ずつ解放されます。"
+		},
+		{
+			info = "6.仮加入状態の【リトル・アンカレッジ】はセイレーン作戦（META戦含む）に参加できず、またセイレーン作戦では友好度を獲得できません。"
+		},
+		{
+			info = "7.仮加入状態の【リトル・アンカレッジ】は大艦隊作戦には参加できません。"
+		}
+	}
 }

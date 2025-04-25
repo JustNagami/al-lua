@@ -216483,3 +216483,2361 @@ _G.pg.base.task_data_template[21670] = {
 		}
 	}
 }
+_G.pg.base.task_data_template[21671] = {
+	name = "小可畏npc临时加入",
+	guild_coin_award = 0,
+	award = 905431,
+	type = 6,
+	desc = "不该看到",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21671,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			4,
+			207131,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21672] = {
+	name = "『北联SP轻量化复刻』登录送皮肤体验券活动",
+	guild_coin_award = 0,
+	award = 905455,
+	type = 6,
+	desc = "ゲームにログインせよ！",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21672,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			489,
+			3
+		}
+	}
+}
+_G.pg.base.task_data_template[21673] = {
+	name = "『北联SP轻量化复刻』日常建造",
+	guild_coin_award = 0,
+	award = 905487,
+	type = 36,
+	desc = "3回建造する",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21673,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			488,
+			300
+		}
+	}
+}
+_G.pg.base.task_data_template[21674] = {
+	name = "『北联SP轻量化复刻』日常出击",
+	guild_coin_award = 0,
+	award = 905488,
+	type = 36,
+	desc = "艦隊を出撃させ、15回勝利せよ！",
+	count_inherit = 0,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21674,
+	target_num = 15,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			488,
+			300
+		},
+		{
+			2,
+			65088,
+			1
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21675] = {
+	name = "『北联SP轻量化复刻』日常困难本",
+	guild_coin_award = 0,
+	award = 905489,
+	type = 36,
+	desc = "通常海域ハードを１回クリアする",
+	count_inherit = 0,
+	sub_type = 182,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "10101",
+	scene = "",
+	id = 21675,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			488,
+			150
+		}
+	}
+}
+_G.pg.base.task_data_template[21676] = {
+	name = "『北联SP轻量化复刻』日常活动关卡",
+	guild_coin_award = 0,
+	award = 905490,
+	type = 36,
+	desc = "任意のイベントステージを1回クリア",
+	count_inherit = 0,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21676,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1719101,
+		1719202,
+		1719303,
+		1719404,
+		1719505
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			488,
+			300
+		},
+		{
+			2,
+			54006,
+			1
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[21677] = {
+	name = "『北联SP轻量化复刻』多队出击挑战1",
+	guild_coin_award = 0,
+	award = 905491,
+	type = 26,
+	desc = "ミサイル駆逐艦/駆逐艦がいない編成で、協同出撃で「HARD」をクリア",
+	count_inherit = 0,
+	sub_type = 107,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21677,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			1,
+			20,
+			21
+		},
+		1003
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			42046,
+			1
+		},
+		{
+			2,
+			15008,
+			200
+		},
+		{
+			2,
+			65088,
+			2
+		},
+		{
+			2,
+			17023,
+			20
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[21678] = {
+	name = "『北联SP轻量化复刻』多队出击挑战2",
+	guild_coin_award = 0,
+	award = 905492,
+	type = 26,
+	desc = "軽巡洋艦がいない編成で、協同出撃で「HARD」をクリア",
+	count_inherit = 0,
+	sub_type = 107,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21678,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			2
+		},
+		1003
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			42046,
+			1
+		},
+		{
+			2,
+			15008,
+			200
+		},
+		{
+			2,
+			65088,
+			2
+		},
+		{
+			2,
+			17033,
+			20
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[21679] = {
+	name = "『北联SP轻量化复刻』多队出击挑战3",
+	guild_coin_award = 0,
+	award = 905493,
+	type = 26,
+	desc = "重巡/超巡がいない編成で、協同出撃で「HARD」をクリア",
+	count_inherit = 0,
+	sub_type = 107,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21679,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			3,
+			18
+		},
+		1003
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			42046,
+			1
+		},
+		{
+			2,
+			15008,
+			200
+		},
+		{
+			2,
+			65088,
+			2
+		},
+		{
+			2,
+			17003,
+			20
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[21680] = {
+	name = "『北联SP轻量化复刻』多队出击挑战4",
+	guild_coin_award = 0,
+	award = 905494,
+	type = 26,
+	desc = "空母/軽空母がいない編成で、協同出撃で「HARD」をクリア",
+	count_inherit = 0,
+	sub_type = 107,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21680,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			6,
+			7
+		},
+		1003
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			42046,
+			2
+		},
+		{
+			2,
+			15012,
+			20
+		},
+		{
+			2,
+			65088,
+			2
+		},
+		{
+			2,
+			17043,
+			20
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[21681] = {
+	name = "『北联SP轻量化复刻』多队出击挑战5",
+	guild_coin_award = 0,
+	award = 905495,
+	type = 26,
+	desc = "戦艦/巡洋戦艦/砲艦がいない編成で、協同出撃で「HARD」をクリア",
+	count_inherit = 0,
+	sub_type = 107,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21681,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		{
+			4,
+			5,
+			13
+		},
+		1003
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			42046,
+			2
+		},
+		{
+			2,
+			15012,
+			20
+		},
+		{
+			2,
+			65088,
+			2
+		},
+		{
+			2,
+			17013,
+			20
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[21682] = {
+	name = "『北联SP轻量化复刻』EX挑战",
+	guild_coin_award = 0,
+	award = 905496,
+	type = 26,
+	desc = "EXステージの一戦目に勝利する",
+	count_inherit = 0,
+	sub_type = 108,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21682,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			15008,
+			500
+		}
+	},
+	scene = {
+		"BOSSRUSH_MAIN"
+	}
+}
+_G.pg.base.task_data_template[21683] = {
+	name = "『北联SP轻量化复刻』剧情送装备",
+	guild_coin_award = 0,
+	award = 905497,
+	type = 6,
+	desc = "故事模式奖励",
+	count_inherit = 0,
+	sub_type = 1005,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 21683,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		405300
+	},
+	open_need = {},
+	award_display = {
+		{
+			3,
+			3880,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21684] = {
+	name = "『荷兰SP』登录送皮肤体验券活动",
+	guild_coin_award = 0,
+	award = 905515,
+	type = 6,
+	desc = "ゲームにログインせよ！",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21684,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			491,
+			3
+		}
+	}
+}
+_G.pg.base.task_data_template[21685] = {
+	name = "『荷兰SP』-日常建造",
+	guild_coin_award = 0,
+	award = 905516,
+	type = 36,
+	desc = "3回建造する",
+	count_inherit = 0,
+	sub_type = 30,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21685,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			490,
+			300
+		}
+	}
+}
+_G.pg.base.task_data_template[21686] = {
+	name = "『荷兰SP』-日常出击",
+	guild_coin_award = 0,
+	award = 905517,
+	type = 36,
+	desc = "艦隊を出撃させ、15回勝利せよ！",
+	count_inherit = 0,
+	sub_type = 20,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "0",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21686,
+	target_num = 15,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			490,
+			300
+		}
+	},
+	scene = {
+		"LEVEL"
+	}
+}
+_G.pg.base.task_data_template[21687] = {
+	name = "『荷兰SP』-日常困难本",
+	guild_coin_award = 0,
+	award = 905518,
+	type = 36,
+	desc = "通常海域ハードを１回クリアする",
+	count_inherit = 0,
+	sub_type = 182,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "10101",
+	scene = "",
+	id = 21687,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			490,
+			150
+		}
+	}
+}
+_G.pg.base.task_data_template[21688] = {
+	name = "『荷兰SP』通关T1/HT1",
+	guild_coin_award = 0,
+	award = 905519,
+	type = 6,
+	desc = "イベントステージT1かHT1をクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "21689",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21688,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1910001,
+		1910021
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			1,
+			600
+		},
+		{
+			1,
+			490,
+			400
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5901
+		}
+	}
+}
+_G.pg.base.task_data_template[21689] = {
+	name = "『荷兰SP』通关T2/HT2",
+	guild_coin_award = 0,
+	award = 905520,
+	type = 6,
+	desc = "イベントステージT2かHT2をクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "21690",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21689,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1910002,
+		1910022
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			1
+		},
+		{
+			1,
+			1,
+			600
+		},
+		{
+			1,
+			490,
+			600
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5901
+		}
+	}
+}
+_G.pg.base.task_data_template[21690] = {
+	name = "『荷兰SP』通关T3/HT3",
+	guild_coin_award = 0,
+	award = 905521,
+	type = 6,
+	desc = "イベントステージT3かHT3をクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "21691",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21690,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1910003,
+		1910023
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			1,
+			1,
+			1500
+		},
+		{
+			1,
+			490,
+			800
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5901
+		}
+	}
+}
+_G.pg.base.task_data_template[21691] = {
+	name = "『荷兰SP』通关SP",
+	guild_coin_award = 0,
+	award = 905522,
+	type = 6,
+	desc = "イベントステージSPをクリア",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "1910041",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21691,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			20001,
+			2
+		},
+		{
+			1,
+			1,
+			1500
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1910001,
+			chapterId = 1910041
+		}
+	}
+}
+_G.pg.base.task_data_template[21692] = {
+	name = "『荷兰SP』T1/HT1的3星",
+	guild_coin_award = 0,
+	award = 905523,
+	type = 6,
+	desc = "T1かHT1の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "21693",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21692,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1910001,
+		1910021
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			2,
+			500
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5901
+		}
+	}
+}
+_G.pg.base.task_data_template[21693] = {
+	name = "『荷兰SP』T2/HT2的3星",
+	guild_coin_award = 0,
+	award = 905524,
+	type = 6,
+	desc = "T2かHT2の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "21694",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21693,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1910002,
+		1910022
+	},
+	open_need = {},
+	award_display = {
+		{
+			4,
+			100011,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5901
+		}
+	}
+}
+_G.pg.base.task_data_template[21694] = {
+	name = "『荷兰SP』T3/HT3的3星",
+	guild_coin_award = 0,
+	award = 905525,
+	type = 6,
+	desc = "T3かHT3の作戦目標(星3つ)を全て達成!",
+	count_inherit = 0,
+	sub_type = 1021,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21694,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1910003,
+		1910023
+	},
+	open_need = {},
+	award_display = {
+		{
+			2,
+			18013,
+			1
+		}
+	},
+	scene = {
+		"ACTIVITY_MAP",
+		{
+			5901
+		}
+	}
+}
+_G.pg.base.task_data_template[21695] = {
+	name = "『荷兰SP』通关任务10次",
+	guild_coin_award = 0,
+	award = 905526,
+	type = 6,
+	desc = "『チュリッパの海へ』特別ステージ10回クリア",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 21695,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1910001,
+		1910002,
+		1910003,
+		1910021,
+		1910022,
+		1910023,
+		1910041
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			490,
+			500
+		}
+	}
+}
+_G.pg.base.task_data_template[21696] = {
+	name = "『荷兰SP』通关任务30次",
+	guild_coin_award = 0,
+	award = 905527,
+	type = 6,
+	desc = "『チュリッパの海へ』特別ステージ30回クリア",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 21696,
+	target_num = 30,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1910001,
+		1910002,
+		1910003,
+		1910021,
+		1910022,
+		1910023,
+		1910041
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			490,
+			1500
+		}
+	}
+}
+_G.pg.base.task_data_template[21697] = {
+	name = "『荷兰SP』通关任务60次",
+	guild_coin_award = 0,
+	award = 905528,
+	type = 6,
+	desc = "『チュリッパの海へ』特別ステージ60回クリア",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 21697,
+	target_num = 60,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1910001,
+		1910002,
+		1910003,
+		1910021,
+		1910022,
+		1910023,
+		1910041
+	},
+	open_need = {},
+	award_display = {
+		{
+			1,
+			490,
+			3000
+		}
+	}
+}
+_G.pg.base.task_data_template[21698] = {
+	name = "小安克雷奇npc临时加入",
+	guild_coin_award = 0,
+	award = 905529,
+	type = 6,
+	desc = "不该看到",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21698,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			4,
+			103291,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21699] = {
+	name = "『荷兰SP』皮肤剧情签到活动1",
+	guild_coin_award = 0,
+	award = 905550,
+	type = 14,
+	desc = "ゲームにログインせよ！",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21699,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65592,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21700] = {
+	name = "『荷兰SP』皮肤剧情签到活动2",
+	guild_coin_award = 0,
+	award = 905550,
+	type = 14,
+	desc = "ゲームにログインせよ！",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21700,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65592,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21701] = {
+	name = "『荷兰SP』皮肤剧情签到活动3",
+	guild_coin_award = 0,
+	award = 905550,
+	type = 14,
+	desc = "ゲームにログインせよ！",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21701,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65592,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21702] = {
+	name = "『荷兰SP』皮肤剧情签到活动4",
+	guild_coin_award = 0,
+	award = 905550,
+	type = 14,
+	desc = "ゲームにログインせよ！",
+	count_inherit = 0,
+	sub_type = 1011,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 0,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 21702,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65592,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21703] = {
+	name = "『荷兰SP』纪念贴纸获取1",
+	guild_coin_award = 0,
+	award = 905597,
+	type = 26,
+	desc = "「チュリッパの海へ」記念ステッカーを7つ集める",
+	count_inherit = 0,
+	sub_type = 131,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "5913",
+	scene = "",
+	id = 21703,
+	target_num = 7,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65594,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21704] = {
+	name = "『荷兰SP』纪念贴纸获取2",
+	guild_coin_award = 0,
+	award = 905598,
+	type = 26,
+	desc = "「チュリッパの海へ」ストーリーをすべて開放する",
+	count_inherit = 0,
+	sub_type = 1005,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 21704,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		6763
+	},
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65595,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21705] = {
+	name = "『荷兰SP』纪念贴纸获取3",
+	guild_coin_award = 0,
+	award = 905599,
+	type = 26,
+	desc = "「チュリッパの海へ」ステージの敵を100体撃破する",
+	count_inherit = 0,
+	sub_type = 12,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 21705,
+	target_num = 100,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		16720001,
+		16720002,
+		16720003,
+		16720004,
+		16720005,
+		16720006,
+		16720007,
+		16720101,
+		16720102,
+		16720103,
+		16720104,
+		16720105,
+		16720201,
+		16720202,
+		16720301,
+		16721001,
+		16721002,
+		16721003,
+		16721004,
+		16721005,
+		16721006,
+		16721007,
+		16721101,
+		16721102,
+		16721103,
+		16721104,
+		16721105,
+		16721201,
+		16721202,
+		16721203,
+		16721301,
+		16721302,
+		16722001,
+		16722002,
+		16722003,
+		16722004,
+		16722005,
+		16722006,
+		16722007,
+		16722101,
+		16722102,
+		16722103,
+		16722104,
+		16722105,
+		16722201,
+		16722202,
+		16722301,
+		16723001,
+		16723002,
+		16723003,
+		16723004,
+		16723005,
+		16723006,
+		16723007,
+		16723101,
+		16723102,
+		16723103,
+		16723104,
+		16723105,
+		16723201,
+		16723202,
+		16723203,
+		16723301,
+		16723302,
+		16724001,
+		16724002,
+		16724003,
+		16724004,
+		16724005,
+		16724006,
+		16724007,
+		16724101,
+		16724102,
+		16724103,
+		16724104,
+		16724105,
+		16724201,
+		16724301,
+		16726001,
+		16726002,
+		16726003,
+		16726004,
+		16726005,
+		16726101,
+		16726102,
+		16726103,
+		16726104,
+		16726105,
+		16726201,
+		16726202,
+		16726301,
+		16726302
+	},
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65596,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21706] = {
+	name = "『荷兰SP』纪念贴纸获取4",
+	guild_coin_award = 0,
+	award = 905600,
+	type = 26,
+	desc = "「チュリッパの海へ」T3をクリアする",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1910003",
+	scene = "",
+	id = 21706,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65597,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21707] = {
+	name = "『荷兰SP』纪念贴纸获取5",
+	guild_coin_award = 0,
+	award = 905601,
+	type = 26,
+	desc = "「チュリッパの海へ」HT3をクリアする",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1910023",
+	scene = "",
+	id = 21707,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65598,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21708] = {
+	name = "『荷兰SP』纪念贴纸获取6",
+	guild_coin_award = 0,
+	award = 905602,
+	type = 26,
+	desc = "「チュリッパの海へ」SPをクリアする",
+	count_inherit = 0,
+	sub_type = 1020,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "1910041",
+	scene = "",
+	id = 21708,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65599,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21709] = {
+	name = "『荷兰SP』纪念贴纸获取7",
+	guild_coin_award = 0,
+	award = 905603,
+	type = 26,
+	desc = "「チュリッパの海へ」イベントステージを40回クリアする",
+	count_inherit = 0,
+	sub_type = 21,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	scene = "",
+	id = 21709,
+	target_num = 40,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		1910001,
+		1910002,
+		1910003,
+		1910021,
+		1910022,
+		1910023,
+		1910041
+	},
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65600,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21710] = {
+	name = "『荷兰SP』纪念贴纸获取8",
+	guild_coin_award = 0,
+	award = 905604,
+	type = 26,
+	desc = "「チュリッパの栞」を累計10000個集める",
+	count_inherit = 0,
+	sub_type = 1001,
+	target_id_2 = "5904",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "490",
+	scene = "",
+	id = 21710,
+	target_num = 10000,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			8,
+			65601,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21711] = {
+	name = "『荷兰SP』纪念任务1",
+	guild_coin_award = 0,
+	award = 905605,
+	type = 26,
+	desc = "「チュリッパの海へ」記念ステッカーを8つ集める",
+	count_inherit = 0,
+	sub_type = 131,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 1,
+	story_icon_shift = "",
+	target_id = "5913",
+	scene = "",
+	id = 21711,
+	target_num = 8,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			5,
+			302,
+			1
+		},
+		{
+			8,
+			65593,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[21712] = {
+	name = "『荷兰SP』外观装备箱保底",
+	guild_coin_award = 0,
+	award = 905624,
+	type = 6,
+	desc = "イベントショップか購買部で装備外装箱（チュリッパ牧歌）を20個購入する",
+	count_inherit = 0,
+	sub_type = 52,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "30367",
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21712,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 0,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30554,
+			1
+		}
+	},
+	scene = {
+		"SHOP",
+		{
+			warp = "shopstreet"
+		}
+	}
+}
+_G.pg.base.task_data_template[21713] = {
+	name = "『荷兰SP』剧情模式通关",
+	guild_coin_award = 0,
+	award = 905625,
+	type = 6,
+	desc = "ストーリーモードですべてのストーリーを読む",
+	count_inherit = 0,
+	sub_type = 1005,
+	target_id_2 = "",
+	story_icon = "",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "",
+	id = 21713,
+	target_num = 1,
+	activity_client_config = "",
+	added_tip = 0,
+	target_id = {
+		6763
+	},
+	open_need = {},
+	award_display = {
+		{
+			3,
+			150640,
+			1
+		}
+	},
+	scene = {
+		"LEVEL",
+		{
+			mapIdx = 1910001,
+			displayMode = 2
+		}
+	}
+}
+_G.pg.base.task_data_template[500111] = {
+	name = "リードさせて",
+	guild_coin_award = 0,
+	award = 500111,
+	type = 5,
+	desc = "魚雷天ぷらを3個準備する（消費）",
+	count_inherit = 0,
+	sub_type = 1000,
+	target_id_2 = "",
+	story_icon = "qiabayefu",
+	is_head = 1,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	ryza_icon = "",
+	priority_type = 0,
+	fix_task = 0,
+	target_id = "50003",
+	next_task = "500112",
+	auto_commit = 0,
+	story_icon_shift = "",
+	story_id = "QIABAYEFU1",
+	id = 500111,
+	target_num = 3,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	},
+	scene = {
+		"BACKYARD"
+	}
+}
+_G.pg.base.task_data_template[500112] = {
+	name = "忠誠心と独占欲",
+	guild_coin_award = 0,
+	award = 500112,
+	type = 5,
+	desc = "任意の艦を10回強化する",
+	count_inherit = 0,
+	sub_type = 34,
+	target_id_2 = "",
+	story_icon = "qiabayefu",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "QIABAYEFU2",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500113",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 500112,
+	target_num = 10,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500113] = {
+	name = "ペンギンの贈り物",
+	guild_coin_award = 0,
+	award = 500113,
+	type = 5,
+	desc = "チャパエフを含めた艦隊で出撃し、20回勝利する",
+	count_inherit = 0,
+	sub_type = 18,
+	target_id_2 = "",
+	story_icon = "qiabayefu",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "QIABAYEFU3",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500114",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "70203",
+	scene = "",
+	id = 500113,
+	target_num = 20,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500114] = {
+	name = "引き止められた指揮官",
+	guild_coin_award = 0,
+	award = 500114,
+	type = 5,
+	desc = "燃料を500消費する",
+	count_inherit = 0,
+	sub_type = 121,
+	target_id_2 = "",
+	story_icon = "qiabayefu",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "QIABAYEFU4",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500115",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "0",
+	scene = "",
+	id = 500114,
+	target_num = 500,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		}
+	}
+}
+_G.pg.base.task_data_template[500115] = {
+	name = "着せ替え難題",
+	guild_coin_award = 0,
+	award = 500115,
+	type = 5,
+	desc = "チャパエフの親密度が100に到達",
+	count_inherit = 0,
+	sub_type = 1012,
+	target_id_2 = "",
+	story_icon = "qiabayefu",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "QIABAYEFU5",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500116",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "70203",
+	scene = "",
+	id = 500115,
+	target_num = 10000,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			5
+		},
+		{
+			2,
+			16002,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[500116] = {
+	name = "夜の送別",
+	guild_coin_award = 0,
+	award = 500116,
+	type = 5,
+	desc = "チャパエフを3回限界突破する",
+	count_inherit = 0,
+	sub_type = 33,
+	target_id_2 = "",
+	story_icon = "qiabayefu",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "QIABAYEFU6",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "500117",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "70203",
+	scene = "",
+	id = 500116,
+	target_num = 6,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			10
+		},
+		{
+			2,
+			18012,
+			1
+		}
+	}
+}
+_G.pg.base.task_data_template[500117] = {
+	name = "独占の証明",
+	guild_coin_award = 0,
+	award = 500117,
+	type = 5,
+	desc = "チャパエフのレベルが100に到達",
+	count_inherit = 0,
+	sub_type = 1013,
+	target_id_2 = "",
+	story_icon = "qiabayefu",
+	is_head = 0,
+	task_fold = 0,
+	award_choice = "",
+	visibility = 1,
+	ryza_type = 0,
+	quick_finish = 0,
+	level = 1,
+	story_id = "QIABAYEFU7",
+	priority_type = 0,
+	ryza_icon = "",
+	fix_task = 0,
+	next_task = "0",
+	auto_commit = 0,
+	story_icon_shift = "",
+	target_id = "70203",
+	scene = "",
+	id = 500117,
+	target_num = 100,
+	activity_client_config = "",
+	added_tip = 1,
+	open_need = {},
+	award_display = {
+		{
+			1,
+			1,
+			100
+		},
+		{
+			1,
+			6,
+			10
+		},
+		{
+			2,
+			18013,
+			1
+		}
+	}
+}

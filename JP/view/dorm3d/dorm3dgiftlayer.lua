@@ -201,7 +201,7 @@ function var_0_0.UpdateGift(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
 				content = {
 					icon = "<icon name=" .. var_19_8:GetResIcon() .. " w=1.1 h=1.1/>",
 					off = var_19_10,
-					cost = "x" .. var_19_12.count,
+					cost = var_19_12.count,
 					old = var_19_11,
 					name = var_19_1:getConfig("name"),
 					weekLimit = var_19_13

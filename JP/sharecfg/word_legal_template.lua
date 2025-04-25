@@ -180,6 +180,37 @@ function temp()
 					}
 				}
 			}
+		},
+		・ = {
+			ゼ = {
+				ー = {
+					ヴ = {
+						ェ = {
+							ン = {
+								・ = {
+									プ = {
+										ロ = {
+											ヴ = {
+												ィ = {
+													ン = {
+														シ = {
+															ェ = {
+																ン = {
+																	this = true
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 end
@@ -280,6 +311,11 @@ function temp()
 						}
 					}
 				}
+			}
+		},
+		ザ = {
+			ン = {
+				this = true
 			}
 		}
 	}
@@ -1449,6 +1485,11 @@ function temp()
 					}
 				}
 			}
+		},
+		レ = {
+			グ = {
+				this = true
+			}
 		}
 	}
 end
@@ -2228,6 +2269,19 @@ function temp()
 		},
 		ペ = {
 			this = true
+		},
+		ヴ = {
+			ァ = {
+				ー = {
+					ツ = {
+						ェ = {
+							ン = {
+								this = true
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 end
@@ -3800,6 +3854,19 @@ function temp()
 								ィ = {
 									エ = {
 										ゴ = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					},
+					ア = {
+						ン = {
+							カ = {
+								レ = {
+									ッ = {
+										ジ = {
 											this = true
 										}
 									}
@@ -7882,6 +7949,50 @@ function temp()
 					}
 				}
 			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.七 = {
+		省 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.埃 = {
+		佛 = {
+			森 = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.奥 = {
+		列 = {
+			格 = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.喀 = {
+		山 = {
+			this = true
 		}
 	}
 end

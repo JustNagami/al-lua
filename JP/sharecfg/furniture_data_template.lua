@@ -171,6 +171,7 @@ pg.furniture_data_template = setmetatable({
 			299,
 			300,
 			301,
+			302,
 			100002,
 			100003,
 			100004,
@@ -241,6 +242,7 @@ pg.furniture_data_template = setmetatable({
 			100069,
 			100070,
 			100071,
+			100072,
 			200001,
 			200002,
 			200003,
@@ -3370,6 +3372,28 @@ pg.furniture_data_template = setmetatable({
 			320304,
 			320305,
 			320306
+		},
+		[121] = {
+			321001,
+			321002,
+			321101,
+			321102,
+			321103,
+			321104,
+			321105,
+			321106,
+			321107,
+			321108,
+			321109,
+			321110,
+			321111,
+			321112,
+			321113,
+			321114,
+			321115,
+			321116,
+			321117,
+			321118
 		}
 	},
 	get_id_list_by_tag = {
@@ -3548,6 +3572,7 @@ pg.furniture_data_template = setmetatable({
 			100069,
 			100070,
 			100071,
+			100072,
 			31101,
 			54104,
 			54105
@@ -3614,7 +3639,8 @@ pg.furniture_data_template = setmetatable({
 			292,
 			293,
 			295,
-			296
+			296,
+			302
 		},
 		[7] = {
 			223,
@@ -3813,7 +3839,8 @@ pg.furniture_data_template = setmetatable({
 			317111,
 			318305,
 			319117,
-			320115
+			320115,
+			321114
 		},
 		[4] = {
 			1001,
@@ -3920,7 +3947,8 @@ pg.furniture_data_template = setmetatable({
 			317001,
 			318001,
 			319001,
-			320001
+			320001,
+			321001
 		},
 		[3] = {
 			1002,
@@ -4028,7 +4056,8 @@ pg.furniture_data_template = setmetatable({
 			317002,
 			318002,
 			319002,
-			320002
+			320002,
+			321002
 		},
 		{
 			1101,
@@ -6014,7 +6043,24 @@ pg.furniture_data_template = setmetatable({
 			320111,
 			320112,
 			320113,
-			320114
+			320114,
+			321101,
+			321102,
+			321103,
+			321104,
+			321105,
+			321106,
+			321107,
+			321108,
+			321109,
+			321110,
+			321111,
+			321112,
+			321113,
+			321115,
+			321116,
+			321117,
+			321118
 		},
 		{
 			1108,
@@ -6692,6 +6738,7 @@ pg.furniture_data_template = setmetatable({
 			299,
 			300,
 			301,
+			302,
 			100002,
 			100004,
 			100005,
@@ -6743,7 +6790,8 @@ pg.furniture_data_template = setmetatable({
 			100065,
 			100067,
 			100068,
-			100069
+			100069,
+			100072
 		},
 		[2] = {
 			120,
@@ -8727,7 +8775,23 @@ pg.furniture_data_template = setmetatable({
 			320112,
 			320113,
 			320114,
-			320115
+			320115,
+			321101,
+			321102,
+			321103,
+			321104,
+			321105,
+			321106,
+			321107,
+			321108,
+			321109,
+			321110,
+			321111,
+			321112,
+			321113,
+			321114,
+			321117,
+			321118
 		},
 		[11] = {
 			143,
@@ -8788,7 +8852,8 @@ pg.furniture_data_template = setmetatable({
 			100037,
 			100048,
 			303103,
-			303113
+			303113,
+			321116
 		},
 		[15] = {
 			251
@@ -9275,7 +9340,8 @@ pg.furniture_data_template = setmetatable({
 			317001,
 			318001,
 			319001,
-			320001
+			320001,
+			321001
 		},
 		{
 			1002,
@@ -9383,7 +9449,8 @@ pg.furniture_data_template = setmetatable({
 			317002,
 			318002,
 			319002,
-			320002
+			320002,
+			321002
 		},
 		[5] = {
 			1101,
@@ -9533,7 +9600,8 @@ pg.furniture_data_template = setmetatable({
 			308104,
 			309105,
 			310101,
-			316107
+			316107,
+			321115
 		},
 		[3] = {
 			1108,
@@ -9903,6 +9971,7 @@ pg.furniture_data_template = setmetatable({
 		299,
 		300,
 		301,
+		302,
 		100002,
 		100003,
 		100004,
@@ -9973,6 +10042,7 @@ pg.furniture_data_template = setmetatable({
 		100069,
 		100070,
 		100071,
+		100072,
 		200001,
 		200002,
 		200003,
@@ -12887,7 +12957,27 @@ pg.furniture_data_template = setmetatable({
 		320303,
 		320304,
 		320305,
-		320306
+		320306,
+		321001,
+		321002,
+		321101,
+		321102,
+		321103,
+		321104,
+		321105,
+		321106,
+		321107,
+		321108,
+		321109,
+		321110,
+		321111,
+		321112,
+		321113,
+		321114,
+		321115,
+		321116,
+		321117,
+		321118
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -21228,6 +21318,43 @@ pg.base.furniture_data_template = {
 		},
 		interAction_group = {}
 	},
+	[302] = {
+		spine_extra = "",
+		describe = "チュリッパ王国の王家からの記念章。チュリッパの勝利を記念して",
+		gain_by = "チュリッパの海へ",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 5,
+		is_get_time_note = 1,
+		themeId = 0,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 8,
+		icon = "helanxunzhangicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "チュリッパ王家記念章。",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "chuanmo/helanxunzhang",
+		canputon = 0,
+		id = 302,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		interAction_group = {}
+	},
 	[100002] = {
 		belong = 1,
 		describe = "ゆゆゆ友情パワーだぴょぴょぴょぴょ………",
@@ -26142,6 +26269,56 @@ pg.base.furniture_data_template = {
 		followBone = {
 			"char",
 			-1
+		},
+		interAction_group = {}
+	},
+	[100072] = {
+		spine_extra = "",
+		describe = "枕投げのために設計された、動力付きの枕！",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "zhentoudazhanicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ウォーフェアピロ―",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 100072,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zhentoudazhan",
+				"normal",
+				{
+					"action",
+					true,
+					nil,
+					nil,
+					"houzhai_yumao01"
+				}
+			}
 		},
 		interAction_group = {}
 	},
@@ -154648,6 +154825,920 @@ pg.base.furniture_data_template = {
 				"chuang5yi2",
 				"normal"
 			}
+		},
+		interAction_group = {}
+	},
+	[321001] = {
+		spine_extra = "",
+		describe = "優しい風に馨しい花の香り、これぞ田園生活の素晴らしさ！",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 121,
+		belong = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		deblocking = 1,
+		level = 1,
+		name = "チュリッパ田園の床",
+		effect = "",
+		advice = 0,
+		icon = "dibanxc2icon",
+		spine_action_replace = "",
+		picture = "xc2/dibanxc2",
+		comfortable = 4,
+		canputon = 0,
+		id = 321001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[321002] = {
+		spine_extra = "",
+		describe = "優しい風に馨しい花の香り、これぞ田園生活の素晴らしさ！",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		themeId = 121,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		deblocking = 1,
+		level = 5,
+		name = "チュリッパ田園の床",
+		effect = "",
+		advice = 0,
+		icon = "qiangbixc2icon",
+		spine_action_replace = "",
+		picture = "",
+		comfortable = 4,
+		canputon = 0,
+		id = 321002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbixc2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[321101] = {
+		spine_extra = "",
+		describe = "木陰は涼を取るのに最適な場所",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 121,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 3,
+		tag = 1,
+		icon = "shuxc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "田園の木々",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "xc2/shuxc2",
+		canputon = 0,
+		id = 321101,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[321102] = {
+		spine_extra = "",
+		describe = "風で回るがままの、風車の気ままな生活",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 121,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "fengchexc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "田園の風車",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 321102,
+		can_rotate = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"fengchexc2",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[321103] = {
+		spine_extra = "",
+		describe = "郷土の野菜と果物は、新鮮で美味しい！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 121,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "xiangziduixc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "田園の青果",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 321103,
+		can_rotate = 0,
+		size = {
+			2,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"xiangziduixc2",
+				"normal",
+				{
+					"action1",
+					false,
+					{
+						"action2"
+					}
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[321104] = {
+		spine_extra = "",
+		describe = "風に揺れるチューリップの花壇。淡い香りが漂う",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 121,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "yujinxiang1xc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "チューリップ花壇1",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 321104,
+		can_rotate = 0,
+		size = {
+			2,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yujinxiang1xc2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[321105] = {
+		spine_extra = "",
+		describe = "風に揺れるチューリップの花壇。淡い香りが漂う",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 121,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "yujinxiang2xc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "チューリップ花壇2",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 321105,
+		can_rotate = 0,
+		size = {
+			2,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yujinxiang2xc2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[321106] = {
+		spine_extra = "",
+		describe = "風に揺れるチューリップの花壇。淡い香りが漂う",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 121,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "yujinxiang3xc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "チューリップ花壇3",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 321106,
+		can_rotate = 0,
+		size = {
+			2,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yujinxiang3xc2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[321107] = {
+		spine_extra = "",
+		describe = "パストラル画家饅頭もまた、独特の風情があるピョ～",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 121,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "huahuajiuxc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "郷土画家饅頭",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 321107,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"huahuajiuxc2",
+				"normal",
+				{
+					"action1",
+					false,
+					{
+						"action2",
+						"action3"
+					}
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[321108] = {
+		spine_extra = "",
+		describe = "田園風の籐テーブルは、スイーツとアフタヌーンティーにぴったり",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 121,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "zhuozixc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "田園の籐テーブル",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "xc2/zhuozixc2",
+		canputon = 0,
+		id = 321108,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[321109] = {
+		spine_extra = "",
+		describe = "田園風の籐椅子。柔らかいクッション付きで座り心地抜群！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 121,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "yizi1xc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "田園の籐椅子1",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "xc2/yizi1xc2",
+		canputon = 0,
+		id = 321109,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					23.2,
+					18.3
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[321110] = {
+		spine_extra = "",
+		describe = "田園風の籐椅子。柔らかいクッション付きで座り心地抜群！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 121,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "yizi2xc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "田園の籐椅子2",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "xc2/yizi2xc2",
+		canputon = 0,
+		id = 321110,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[321111] = {
+		spine_extra = "",
+		describe = "チュリッパ郷里の小屋。煙突からゆらめく煙は生活の息吹",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 121,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "xiaowuxc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "チュリッパ民家",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 321111,
+		can_rotate = 0,
+		size = {
+			6,
+			9
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"xiaowuxc2",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[321112] = {
+		spine_extra = "",
+		describe = "日常の運搬作業にとっても便利。たくさんの花を載せられるピョ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "田園の猫車",
+		themeId = 121,
+		icon = "tuichexc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 321112,
+		can_rotate = 0,
+		size = {
+			3,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"tuichexc2",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sleep"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[321113] = {
+		spine_extra = "",
+		describe = "田園の低木。粗野さの中に洗練さが光る",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 121,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 3,
+		tag = 1,
+		icon = "guanmuxc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "田園の低木",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "xc2/guanmuxc2",
+		canputon = 0,
+		id = 321113,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[321114] = {
+		spine_extra = "",
+		describe = "チュリッパ名物の花船。航行中にひらひらと舞う花びらがロマンチック",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "チュリッパ花船",
+		themeId = 121,
+		icon = "chuanxc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 321114,
+		can_rotate = 0,
+		size = {
+			24,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"chuanxc2B",
+				"normal"
+			},
+			{
+				"chuanxc2T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sleep2",
+						nil,
+						"sleep"
+					}
+				},
+				{
+					nil,
+					1,
+					{
+						"sleep1",
+						"sleep",
+						false,
+						true
+					}
+				},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[321115] = {
+		spine_extra = "",
+		describe = "柔らかい花びら柄の絨毯。雲のようなふわふわとした感触がいい踏み心地",
+		gain_by = "",
+		type = 5,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 121,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "ditanxc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "花びらのカーペット",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "xc2/ditanxc2",
+		canputon = 0,
+		id = 321115,
+		can_rotate = 0,
+		size = {
+			8,
+			8
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[321116] = {
+		spine_extra = "",
+		describe = "ガーガーガ～。ガーガーガ～",
+		gain_by = "",
+		type = 14,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 121,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "xiaoyaxc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "小さなアヒル",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 321116,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"xiaoyaxc2",
+				"normal"
+			},
+			[3] = {
+				{
+					-161,
+					9
+				},
+				"walk"
+			}
+		},
+		interAction_group = {}
+	},
+	[321117] = {
+		spine_extra = "",
+		describe = "花台にはさまざまな花鉢が並び、色とりどりのチューリップが美しく咲き誇っている",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 121,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "huajiaxc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "チュリッパ花台",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "xc2/huajiaxc2",
+		canputon = 0,
+		id = 321117,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[321118] = {
+		spine_extra = "",
+		describe = "フェンスの上の花飾りこそが点睛の一筆！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 121,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 3,
+		tag = 1,
+		icon = "langanxc2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "チュリッパフェンス",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "xc2/langanxc2",
+		canputon = 0,
+		id = 321118,
+		can_rotate = 0,
+		size = {
+			5,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
 		},
 		interAction_group = {}
 	}

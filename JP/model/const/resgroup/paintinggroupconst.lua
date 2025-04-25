@@ -86,10 +86,26 @@ end
 
 function var_0_0.AddPaintingNameBySkinID(arg_8_0, arg_8_1)
 	if var_0_0.IsPaintingNeedCheck() then
-		local var_8_0 = pg.ship_skin_template[arg_8_1].painting
+		local var_8_0 = {
+			arg_8_1
+		}
 
-		if #var_8_0 > 0 then
-			var_0_0.AddPaintingNameWithFilteMap(arg_8_0, var_8_0)
+		if ShipGroup.IsChangeSkin(arg_8_1) then
+			local var_8_1 = ShipGroup.GetAllChangeSkinIds(arg_8_1)
+
+			for iter_8_0, iter_8_1 in ipairs(var_8_1) do
+				if not table.contains(var_8_0, iter_8_1) then
+					table.insert(var_8_0, iter_8_1)
+				end
+			end
+		end
+
+		for iter_8_2, iter_8_3 in ipairs(var_8_0) do
+			local var_8_2 = pg.ship_skin_template[iter_8_3].painting
+
+			if #var_8_2 > 0 then
+				var_0_0.AddPaintingNameWithFilteMap(arg_8_0, var_8_2)
+			end
 		end
 	end
 end
