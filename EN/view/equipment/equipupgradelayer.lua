@@ -349,6 +349,7 @@ function var_0_0.updateMaterials(arg_17_0)
 			return
 		end
 
+		arg_17_0:updateMaterials()
 		arg_17_0:emit(EquipUpgradeMediator.EQUIPMENT_UPGRDE)
 	end, SFX_UI_DOCKYARD_REINFORCE)
 	setButtonEnabled(arg_17_0.startBtn, var_17_13)

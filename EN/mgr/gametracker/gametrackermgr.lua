@@ -100,6 +100,15 @@ function var_0_0.Cache(arg_9_0)
 		return GameTrackerBuilder.SerializedItem(arg_10_0)
 	end)
 	local var_9_2 = table.concat(var_9_1, var_0_4)
+
+	if not getProxy(PlayerProxy) then
+		return
+	end
+
+	if not getProxy(PlayerProxy):getRawData() then
+		return
+	end
+
 	local var_9_3 = getProxy(PlayerProxy):getRawData().id
 
 	PlayerPrefs.SetString(var_0_3 .. var_9_3, var_9_2)

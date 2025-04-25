@@ -12,12 +12,18 @@ function var_0_0.register(arg_1_0)
 end
 
 function var_0_0.listNotificationInterests(arg_3_0)
-	return {}
+	return {
+		GAME.REGULAR_BUILD_POOL_EXCHANGE_DONE
+	}
 end
 
 function var_0_0.handleNotification(arg_4_0, arg_4_1)
 	local var_4_0 = arg_4_1:getName()
 	local var_4_1 = arg_4_1:getBody()
+
+	if var_4_0 == GAME.REGULAR_BUILD_POOL_EXCHANGE_DONE then
+		arg_4_0.viewComponent:flush()
+	end
 end
 
 return var_0_0

@@ -98204,3 +98204,495 @@ _G.pg.base.item_data_statistics[81423] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
+_G.pg.base.item_data_statistics[30367] = {
+	open_directly = 1,
+	name = "Gear Skin Box (Tulipan Poems)",
+	display = "Use to obtain a random gear skin.",
+	type = 11,
+	display_effect = "",
+	id = 30367,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "Props/appearanceboxyujin",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "30367",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			9,
+			4149,
+			1
+		},
+		{
+			9,
+			4150,
+			1
+		},
+		{
+			9,
+			4151,
+			1
+		},
+		{
+			9,
+			4152,
+			1
+		},
+		{
+			9,
+			4153,
+			1
+		},
+		{
+			9,
+			4154,
+			1
+		},
+		{
+			9,
+			4155,
+			1
+		},
+		{
+			9,
+			4156,
+			1
+		},
+		{
+			9,
+			4157,
+			1
+		},
+		{
+			9,
+			4158,
+			1
+		},
+		{
+			9,
+			4159,
+			1
+		},
+		{
+			9,
+			4160,
+			1
+		},
+		{
+			9,
+			4161,
+			1
+		},
+		{
+			9,
+			4162,
+			1
+		},
+		{
+			9,
+			4163,
+			1
+		},
+		{
+			9,
+			4164,
+			1
+		},
+		{
+			9,
+			4165,
+			1
+		},
+		{
+			9,
+			4166,
+			1
+		}
+	},
+	price = {
+		1,
+		7000
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[30554] = {
+	open_directly = 0,
+	name = "Selection Gear Skin Box (Tulipan Poems)",
+	display = "Can be opened to receive 1 Tulipan Poems-themed gear skin of your choosing.",
+	type = 13,
+	display_effect = "",
+	id = 30554,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop_appointed",
+	link_id = 0,
+	icon = "Props/appearanceboxyujinzixuan",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			9,
+			4149,
+			1
+		},
+		{
+			9,
+			4150,
+			1
+		},
+		{
+			9,
+			4151,
+			1
+		},
+		{
+			9,
+			4152,
+			1
+		},
+		{
+			9,
+			4153,
+			1
+		},
+		{
+			9,
+			4154,
+			1
+		},
+		{
+			9,
+			4155,
+			1
+		},
+		{
+			9,
+			4156,
+			1
+		},
+		{
+			9,
+			4157,
+			1
+		},
+		{
+			9,
+			4158,
+			1
+		},
+		{
+			9,
+			4159,
+			1
+		},
+		{
+			9,
+			4160,
+			1
+		},
+		{
+			9,
+			4161,
+			1
+		},
+		{
+			9,
+			4162,
+			1
+		},
+		{
+			9,
+			4163,
+			1
+		},
+		{
+			9,
+			4164,
+			1
+		},
+		{
+			9,
+			4165,
+			1
+		},
+		{
+			9,
+			4166,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			9,
+			4149,
+			1
+		},
+		{
+			9,
+			4150,
+			1
+		},
+		{
+			9,
+			4151,
+			1
+		},
+		{
+			9,
+			4152,
+			1
+		},
+		{
+			9,
+			4153,
+			1
+		},
+		{
+			9,
+			4154,
+			1
+		},
+		{
+			9,
+			4155,
+			1
+		},
+		{
+			9,
+			4156,
+			1
+		},
+		{
+			9,
+			4157,
+			1
+		},
+		{
+			9,
+			4158,
+			1
+		},
+		{
+			9,
+			4159,
+			1
+		},
+		{
+			9,
+			4160,
+			1
+		},
+		{
+			9,
+			4161,
+			1
+		},
+		{
+			9,
+			4162,
+			1
+		},
+		{
+			9,
+			4163,
+			1
+		},
+		{
+			9,
+			4164,
+			1
+		},
+		{
+			9,
+			4165,
+			1
+		},
+		{
+			9,
+			4166,
+			1
+		}
+	},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[40059] = {
+	open_directly = 1,
+	name = "Outfit Pack (Vanguard)",
+	display = "Contains loads of valuable rewards.",
+	type = 17,
+	display_effect = "OpenBox",
+	id = 40059,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "ChargeIcon/huteng_package",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "4060",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			59564,
+			1
+		},
+		{
+			2,
+			20001,
+			40
+		},
+		{
+			1,
+			1,
+			30000
+		},
+		{
+			2,
+			16502,
+			50
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[59564] = {
+	open_directly = 0,
+	name = "Outfit Voucher (Vanguard)",
+	display = "Can be used from your Depot to select 1 skin of your choosing.\n(<color=#ff5c5c>You may only choose from the skins presented. If you already own all the skins, you will instead receive a Skin Voucher.</color>)",
+	type = 26,
+	display_effect = "",
+	id = 59564,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop_appointed_skinexchange",
+	link_id = 0,
+	icon = "Props/skin_exchange_huteng",
+	order = 1,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			7,
+			205131,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		0,
+		{},
+		{
+			205131
+		},
+		0,
+		59552
+	},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[81424] = {
+	open_directly = 1,
+	name = "Pajama Party Lucky Bag",
+	display = "Contains 1x random skin, 2x Special General Blueprints - Series 7, 2025x Gems, 50x Cognitive Chips, 20x Wisdom Cubes, 100x Decor Tokens, and 10x Quick Finishers.",
+	type = 17,
+	display_effect = "",
+	id = 81424,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "Props/fudai95",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	limit = "[]",
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "998552",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			86415,
+			1
+		},
+		{
+			1,
+			14,
+			2025
+		},
+		{
+			2,
+			42066,
+			2
+		},
+		{
+			2,
+			15008,
+			50
+		},
+		{
+			2,
+			20001,
+			20
+		},
+		{
+			2,
+			15003,
+			10
+		},
+		{
+			1,
+			6,
+			100
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}

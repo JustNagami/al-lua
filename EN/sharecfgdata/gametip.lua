@@ -8456,16 +8456,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "This Meowfficer does not have any Talent Points."
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Get Implacable guaranteed with every 200 event builds (can be done up to 4 times)!"
+	tip = "Rate UP for Evertsen and De Zeven Provinciën!"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "Trieste added to standard build pool!"
+	tip = "Vanguard, Revenge added to standard build pool!"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "Pompeo Magno added to standard build pool!"
+	tip = "Jervis added to standard build pool!"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "Impero added to standard build pool!"
+	tip = "Vanguard, Indomitable added to standard build pool!"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -20638,8 +20638,8 @@ _G.pg.base.gametip.series_enemy_storyreward = {
 }
 _G.pg.base.gametip.series_enemy_help = {
 	tip = [[
-Coalition Battle Event: Frostfall
-Event Period: <color=#92fc63>3/23/2023 - 4/5/2023</color>
+Coalition Battle Event: Frostfall Rerun
+Event Period: <color=#92fc63>4/17/2025 - 4/23/2025</color>
 
 Overview:
 During the "Frostfall" event, you will form multiple fleets to challenge special event stages, and collect event points to earn great rewards.
@@ -20877,7 +20877,7 @@ _G.pg.base.gametip.gametip_xiaokewei = {
 			info = "· If Little Formidable has not been formally recruited by the end of the event, she will leave the port."
 		},
 		{
-			info = "· Rewards for reaching certain amounts of Trust will unlock in phases, one phase per day up to May 3rd."
+			info = "· Rewards for reaching certain amounts of Trust will unlock in phases, one phase per day up to April 16th."
 		},
 		{
 			info = "· Little Formidable cannot participate in Operation Siren or META Showdowns until she has been formally recruited."
@@ -26491,4 +26491,72 @@ Note: Clues can only be unlocked this way once every 10 minutes.
 }
 _G.pg.base.gametip.SuperBulin2_lock_tip = {
 	tip = "Collect all the clues to unlock a secret stage!"
+}
+_G.pg.base.gametip.word_shipNation_yujinwangguo = {
+	tip = "Tulipa"
+}
+_G.pg.base.gametip.word_maingroup_idle = {
+	tip = "No Info"
+}
+_G.pg.base.gametip.word_maingroup_latest = {
+	tip = "No Update Needed"
+}
+_G.pg.base.gametip.levelscene_mapselect_tp = {
+	tip = "TP"
+}
+_G.pg.base.gametip.dorm3d_shop_buy_tips = {
+	tip = "Would you like to spend <color=#169fff>$2</color> $1  (total: $1  <color=#169fff>$3</color>) and purchase <color=#169fff>$4</color>?"
+}
+_G.pg.base.gametip.dorm3d_shop_title = {
+	tip = "Quarters Shop"
+}
+_G.pg.base.gametip.dorm3d_shop_limit = {
+	tip = "Limited"
+}
+_G.pg.base.gametip.dorm3d_shop_sold_out = {
+	tip = "Sold Out"
+}
+_G.pg.base.gametip.dorm3d_shop_all = {
+	tip = "All"
+}
+_G.pg.base.gametip.dorm3d_shop_gift1 = {
+	tip = "Gifts"
+}
+_G.pg.base.gametip.dorm3d_shop_furniture = {
+	tip = "Furniture"
+}
+_G.pg.base.gametip.dorm3d_shop_others = {
+	tip = "Misc."
+}
+_G.pg.base.gametip.dorm3d_shop_limit1 = {
+	tip = "Weekly Limited"
+}
+_G.pg.base.gametip.xiaoankeleiqi_npc = {
+	tip = {
+		{
+			info = "- Overview -\nDuring the event, Little Anchorage will provisionally join your fleet. Fight boss fleets to earn Trust. Collect enough Trust to have Little Anchorage permanently join your fleet!"
+		},
+		{
+			info = [[
+- How to Play -
+· Collect Trust during the event period to have Little Anchorage will permanently join your fleet.
+· Trust can be gathered by defeating the boss fleet of campaign maps starting from Chapter 3 on normal difficulty and event maps (not including War Archives). If Little Anchorage is in the fleet that defeats the boss and she is still afloat, you'll receive double the amount of Trust.
+· The Trust you've collected can be turned in for additional rewards on the event banner.]]
+		},
+		{
+			info = "· You will not be able to give a Promise Ring to Little Anchorage until you have formally recruited her to the fleet. You will also not be able to Retire her or use her as Enhancement or Limit Break material."
+		},
+		{
+			info = "· If Little Anchorage has not been formally recruited by the end of the event, she will leave the port."
+		},
+		{
+			info = "· Rewards for reaching certain amounts of Trust will unlock in phases, one phase per day up to May 1st."
+		},
+		{
+			info = "· Little Anchorage cannot participate in Operation Siren or META Showdowns until she has been formally recruited."
+		},
+		{
+			info = "· Little Anchorage cannot participate in Guild Bosses until she has been formally recruited."
+		}
+	}
 }

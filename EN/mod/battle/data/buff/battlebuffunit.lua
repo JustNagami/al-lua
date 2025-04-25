@@ -29,6 +29,7 @@ function var_0_4.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0._triggerSearchTable = {}
 	arg_1_0._level = arg_1_2
 	arg_1_0._caster = arg_1_3
+	arg_1_0._forceStack = arg_1_0._tempData.force_stack
 
 	for iter_1_0, iter_1_1 in ipairs(arg_1_0._tempData.effect_list) do
 		local var_1_0 = var_0_0.Battle[iter_1_1.type].New(iter_1_1)
@@ -340,17 +341,21 @@ function var_0_4.GetStack(arg_32_0)
 	return arg_32_0._stack or 1
 end
 
-function var_0_4.SetToCancel(arg_33_0, arg_33_1)
-	if arg_33_1 then
-		if not arg_33_0._cancelTime then
-			arg_33_0._cancelTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg_33_1
+function var_0_4.IsForceStack(arg_33_0)
+	return arg_33_0._forceStack
+end
+
+function var_0_4.SetToCancel(arg_34_0, arg_34_1)
+	if arg_34_1 then
+		if not arg_34_0._cancelTime then
+			arg_34_0._cancelTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg_34_1
 		end
 	else
-		arg_33_0._isCancel = true
+		arg_34_0._isCancel = true
 	end
 end
 
-function var_0_4.Dispose(arg_34_0)
-	arg_34_0._triggerSearchTable = nil
-	arg_34_0._commander = nil
+function var_0_4.Dispose(arg_35_0)
+	arg_35_0._triggerSearchTable = nil
+	arg_35_0._commander = nil
 end
