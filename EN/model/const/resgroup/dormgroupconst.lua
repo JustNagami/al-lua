@@ -216,7 +216,7 @@ function var_0_0.GetDownloadResourceDic()
 		for iter_18_0, iter_18_1 in ipairs(pg.dorm3d_rooms.all) do
 			local var_18_0 = pg.dorm3d_rooms[iter_18_1]
 
-			if var_18_0.is_common then
+			if var_18_0.is_common == 1 then
 				-- block empty
 			else
 				local var_18_1 = string.lower(var_18_0.resource_name)

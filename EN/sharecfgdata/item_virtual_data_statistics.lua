@@ -203843,7 +203843,7 @@ _G.pg.base.item_virtual_data_statistics[65591] = {
 }
 _G.pg.base.item_virtual_data_statistics[65592] = {
 	display = "Chance to receive following gear skins",
-	name = "Tulipan Poems",
+	name = "Gear Skin(Tulipan Poems)",
 	max_num = 0,
 	type = 99,
 	time_limit = 0,
