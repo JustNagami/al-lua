@@ -5,11 +5,17 @@ function var_0_0.GetEventName(arg_1_0)
 end
 
 function var_0_0.GetActivity(arg_2_0)
-	local var_2_0 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_ZPROJECT)
+	if arg_2_0.config.time and arg_2_0.config.time[1] == "default" then
+		local var_2_0 = arg_2_0.config.time[2]
+		local var_2_1 = pg.activity_template[var_2_0].type
+		local var_2_2 = getProxy(ActivityProxy):getActivitiesByType(var_2_1)
 
-	return (_.detect(var_2_0, function(arg_3_0)
-		return not arg_3_0:isEnd()
-	end))
+		return (_.detect(var_2_2, function(arg_3_0)
+			return not arg_3_0:isEnd()
+		end))
+	end
+
+	return nil
 end
 
 function var_0_0.GetActivityID(arg_4_0)
@@ -34,7 +40,13 @@ function var_0_0.CustomOnClick(arg_7_0)
 	local var_7_0 = arg_7_0:GetActivity()
 
 	if var_7_0 then
-		arg_7_0:emit(NewMainMediator.SKIP_ACTIVITY_MAP, var_7_0.id)
+		local var_7_1 = var_7_0:getConfig("type")
+
+		if var_7_1 == ActivityConst.ACTIVITY_TYPE_BOSSRUSH then
+			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.BOSSRUSH_MAIN)
+		elseif var_7_1 == ActivityConst.ACTIVITY_TYPE_ZPROJECT then
+			arg_7_0:emit(NewMainMediator.SKIP_ACTIVITY_MAP, var_7_0.id)
+		end
 	end
 end
 
