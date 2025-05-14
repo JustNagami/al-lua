@@ -67,10 +67,10 @@ end
 function var_0_0.AddCanvasOrder(arg_12_0, arg_12_1, arg_12_2)
 	arg_12_1 = tf(arg_12_1)
 
-	local var_12_0 = arg_12_1:GetComponents(typeof(Renderer))
+	local var_12_0 = arg_12_1:GetComponents(typeof(Renderer)):ToTable()
 
-	for iter_12_0 = 0, var_12_0.Length - 1 do
-		var_12_0[iter_12_0].sortingOrder = (arg_12_0.orderTable[var_12_0[iter_12_0]] or 0) + arg_12_2
+	for iter_12_0, iter_12_1 in ipairs(var_12_0) do
+		iter_12_1.sortingOrder = (arg_12_0.orderTable[iter_12_1] or 0) + arg_12_2
 	end
 
 	local var_12_1 = arg_12_1:GetComponent(typeof(Canvas))
@@ -79,30 +79,28 @@ function var_0_0.AddCanvasOrder(arg_12_0, arg_12_1, arg_12_2)
 		var_12_1.sortingOrder = (arg_12_0.orderTable[var_12_1] or 0) + arg_12_2
 	end
 
-	for iter_12_1 = 0, arg_12_1.childCount - 1 do
-		arg_12_0:AddCanvasOrder(arg_12_1:GetChild(iter_12_1), arg_12_2)
+	for iter_12_2 = 0, arg_12_1.childCount - 1 do
+		arg_12_0:AddCanvasOrder(arg_12_1:GetChild(iter_12_2), arg_12_2)
 	end
 end
 
 function var_0_0.RecordCanvasOrder(arg_13_0, arg_13_1)
 	arg_13_1 = tf(arg_13_1)
 
-	local var_13_0 = arg_13_1:GetComponents(typeof(Renderer))
+	local var_13_0 = arg_13_1:GetComponents(typeof(Renderer)):ToTable()
 
-	for iter_13_0 = 0, var_13_0.Length - 1 do
-		local var_13_1 = var_13_0[iter_13_0]
-
-		arg_13_0.orderTable[var_13_0[iter_13_0]] = var_13_0[iter_13_0].sortingOrder
+	for iter_13_0, iter_13_1 in ipairs(var_13_0) do
+		arg_13_0.orderTable[iter_13_1] = iter_13_1.sortingOrder
 	end
 
-	local var_13_2 = arg_13_1:GetComponent(typeof(Canvas))
+	local var_13_1 = arg_13_1:GetComponent(typeof(Canvas))
 
-	if var_13_2 then
-		arg_13_0.orderTable[var_13_2] = var_13_2.sortingOrder
+	if var_13_1 then
+		arg_13_0.orderTable[var_13_1] = var_13_1.sortingOrder
 	end
 
-	for iter_13_1 = 0, arg_13_1.childCount - 1 do
-		arg_13_0:RecordCanvasOrder(arg_13_1:GetChild(iter_13_1))
+	for iter_13_2 = 0, arg_13_1.childCount - 1 do
+		arg_13_0:RecordCanvasOrder(arg_13_1:GetChild(iter_13_2))
 	end
 end
 

@@ -37,6 +37,13 @@ function var_0_0.FixPlayerPrefsKey(arg_3_0)
 	local var_3_0 = getProxy(PlayerProxy):getRawData()
 
 	USAGE_NEW_MAINUI = "USAGE_NEW_MAINUI" .. var_3_0.id
+
+	local var_3_1 = PlayerPrefs.GetInt(USAGE_NEW_MAINUI, 1)
+
+	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildNewMainUI({
+		isLogin = 1,
+		isNewMainUI = var_3_1
+	}))
 end
 
 return var_0_0

@@ -188,15 +188,14 @@ function var_0_0.HideSpineEffect(arg_9_0, arg_9_1)
 	arg_9_0.spineEffectOrderCaches = {}
 
 	local function var_9_0(arg_10_0)
-		local var_10_0 = arg_10_0:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer"))
+		local var_10_0 = arg_10_0:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer")):ToTable()
 
-		for iter_10_0 = 1, var_10_0.Length do
-			local var_10_1 = var_10_0[iter_10_0 - 1]
-			local var_10_2 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", var_10_1)
+		for iter_10_0, iter_10_1 in ipairs(var_10_0) do
+			local var_10_1 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", iter_10_1)
 
-			ReflectionHelp.RefSetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", var_10_1, -1)
+			ReflectionHelp.RefSetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", iter_10_1, -1)
 
-			arg_9_0.spineEffectOrderCaches[var_10_1] = var_10_2
+			arg_9_0.spineEffectOrderCaches[iter_10_1] = var_10_1
 		end
 	end
 
@@ -213,13 +212,12 @@ function var_0_0.RevertSpineEffect(arg_11_0, arg_11_1, arg_11_2)
 	end
 
 	local function var_11_0(arg_12_0)
-		local var_12_0 = arg_12_0:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer"))
+		local var_12_0 = arg_12_0:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer")):ToTable()
 
-		for iter_12_0 = 1, var_12_0.Length do
-			local var_12_1 = var_12_0[iter_12_0 - 1]
-			local var_12_2 = arg_11_2[var_12_1] or 950
+		for iter_12_0, iter_12_1 in ipairs(var_12_0) do
+			local var_12_1 = arg_11_2[iter_12_1] or 950
 
-			ReflectionHelp.RefSetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", var_12_1, var_12_2)
+			ReflectionHelp.RefSetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", iter_12_1, var_12_1)
 		end
 	end
 
@@ -581,30 +579,26 @@ function var_0_0.AddHeadMask(arg_49_0, arg_49_1)
 	local var_49_2 = var_49_1:Find("face")
 	local var_49_3 = cloneTplTo(var_49_2, var_49_2.parent, "head_mask")
 	local var_49_4 = var_49_1:Find("layers")
-	local var_49_5 = arg_49_1:GetComponentsInChildren(typeof(Image))
+	local var_49_5 = arg_49_1:GetComponentsInChildren(typeof(Image)):ToTable()
 
 	if var_49_4 then
-		for iter_49_0 = 0, var_49_5.Length - 1 do
-			local var_49_6 = var_49_5[iter_49_0]
-
-			if var_49_6.gameObject.name == "head_mask" then
-				var_49_6.material = arg_49_0.headMaskMat
-			elseif var_49_6.gameObject.name == "face" then
+		for iter_49_0, iter_49_1 in ipairs(var_49_5) do
+			if iter_49_1.gameObject.name == "head_mask" then
+				iter_49_1.material = arg_49_0.headMaskMat
+			elseif iter_49_1.gameObject.name == "face" then
 				-- block empty
-			elseif var_49_6.gameObject.transform.parent == var_49_4 then
-				var_49_6.material = arg_49_0.headObjectMat
+			elseif iter_49_1.gameObject.transform.parent == var_49_4 then
+				iter_49_1.material = arg_49_0.headObjectMat
 			end
 		end
 	else
-		for iter_49_1 = 0, var_49_5.Length - 1 do
-			local var_49_7 = var_49_5[iter_49_1]
-
-			if var_49_7.gameObject.name == "head_mask" then
-				var_49_7.material = arg_49_0.headMaskMat
-			elseif var_49_7.gameObject.name == "face" then
+		for iter_49_2, iter_49_3 in ipairs(var_49_5) do
+			if iter_49_3.gameObject.name == "head_mask" then
+				iter_49_3.material = arg_49_0.headMaskMat
+			elseif iter_49_3.gameObject.name == "face" then
 				-- block empty
 			else
-				var_49_7.material = arg_49_0.headObjectMat
+				iter_49_3.material = arg_49_0.headObjectMat
 			end
 		end
 	end
@@ -621,12 +615,10 @@ function var_0_0.ClearHeadMask(arg_50_0, arg_50_1)
 
 	Destroy(var_50_1.gameObject)
 
-	local var_50_2 = arg_50_1:GetComponentsInChildren(typeof(Image))
+	local var_50_2 = arg_50_1:GetComponentsInChildren(typeof(Image)):ToTable()
 
-	for iter_50_0 = 0, var_50_2.Length - 1 do
-		local var_50_3 = var_50_2[iter_50_0]
-
-		var_50_3.material = var_50_3.defaultGraphicMaterial
+	for iter_50_0, iter_50_1 in ipairs(var_50_2) do
+		iter_50_1.material = iter_50_1.defaultGraphicMaterial
 	end
 end
 
@@ -732,21 +724,21 @@ function var_0_0.UpdateLive2dPainting(arg_53_0, arg_53_1, arg_53_2, arg_53_3, ar
 end
 
 local function var_0_7(arg_57_0, arg_57_1, arg_57_2)
-	local var_57_0 = arg_57_0:GetComponentsInChildren(typeof(Canvas))
+	local var_57_0 = arg_57_0:GetComponentsInChildren(typeof(Canvas)):ToTable()
 	local var_57_1
 
-	for iter_57_0 = 1, var_57_0.Length do
-		var_57_1 = var_57_0[iter_57_0 - 1].sortingOrder
+	for iter_57_0, iter_57_1 in ipairs(var_57_0) do
+		var_57_1 = iter_57_1.sortingOrder
 	end
 
 	local var_57_2 = math.huge
-	local var_57_3 = arg_57_1:GetComponentsInChildren(typeof(Canvas))
+	local var_57_3 = arg_57_1:GetComponentsInChildren(typeof(Canvas)):ToTable()
 
-	if var_57_3.Length == 0 then
+	if #var_57_3 == 0 then
 		var_57_2 = 0
 	else
-		for iter_57_1 = 1, var_57_3.Length do
-			local var_57_4 = var_57_3[iter_57_1 - 1].sortingOrder - var_57_1
+		for iter_57_2, iter_57_3 in ipairs(var_57_3) do
+			local var_57_4 = iter_57_3.sortingOrder - var_57_1
 
 			if var_57_4 < var_57_2 then
 				var_57_2 = var_57_4
@@ -754,65 +746,62 @@ local function var_0_7(arg_57_0, arg_57_1, arg_57_2)
 		end
 	end
 
-	local var_57_5 = arg_57_1:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer"))
+	local var_57_5 = arg_57_1:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer")):ToTable()
 	local var_57_6 = {}
 
-	for iter_57_2 = 1, var_57_5.Length do
-		local var_57_7 = var_57_5[iter_57_2 - 1]
-		local var_57_8 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", var_57_7)
+	for iter_57_4, iter_57_5 in ipairs(var_57_5) do
+		local var_57_7 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", iter_57_5)
 
-		var_57_6[iter_57_2] = var_57_8
+		var_57_6[iter_57_4] = var_57_7
 
-		local var_57_9 = var_57_8 - var_57_1
+		local var_57_8 = var_57_7 - var_57_1
 
-		if var_57_9 < var_57_2 then
-			var_57_2 = var_57_9
+		if var_57_8 < var_57_2 then
+			var_57_2 = var_57_8
 		end
 	end
 
-	local var_57_10 = arg_57_2 - var_57_2 + 1
+	local var_57_9 = arg_57_2 - var_57_2 + 1
 
-	for iter_57_3 = 1, var_57_0.Length do
-		var_57_0[iter_57_3 - 1].sortingOrder = var_57_10 + (iter_57_3 - 1)
+	for iter_57_6, iter_57_7 in ipairs(var_57_0) do
+		iter_57_7.sortingOrder = var_57_9 + (iter_57_6 - 1)
 	end
 
-	local var_57_11 = var_57_10 + 1
+	local var_57_10 = var_57_9 + 1
 
-	for iter_57_4 = 1, var_57_3.Length do
-		local var_57_12 = var_57_3[iter_57_4 - 1]
-		local var_57_13 = var_57_10 + (var_57_12.sortingOrder - var_57_1)
+	for iter_57_8, iter_57_9 in ipairs(var_57_3) do
+		local var_57_11 = var_57_9 + (iter_57_9.sortingOrder - var_57_1)
 
-		var_57_12.sortingOrder = var_57_13
+		iter_57_9.sortingOrder = var_57_11
 
-		if var_57_10 < var_57_13 then
-			var_57_11 = var_57_13
+		if var_57_9 < var_57_11 then
+			var_57_10 = var_57_11
 		end
 	end
 
-	for iter_57_5 = 1, var_57_5.Length do
-		local var_57_14 = var_57_5[iter_57_5 - 1]
-		local var_57_15 = var_57_10 + (var_57_6[iter_57_5] - var_57_1)
+	for iter_57_10, iter_57_11 in ipairs(var_57_5) do
+		local var_57_12 = var_57_9 + (var_57_6[iter_57_10] - var_57_1)
 
-		ReflectionHelp.RefSetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", var_57_14, var_57_15)
+		ReflectionHelp.RefSetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", iter_57_11, var_57_12)
 
-		if var_57_10 < var_57_15 then
-			var_57_11 = var_57_15
+		if var_57_9 < var_57_12 then
+			var_57_10 = var_57_12
 		end
 	end
 
-	return var_57_11
+	return var_57_10
 end
 
 local function var_0_8(arg_58_0, arg_58_1, arg_58_2)
-	local var_58_0 = arg_58_0:GetComponentsInChildren(typeof(Canvas))
-	local var_58_1 = arg_58_0:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer"))
+	local var_58_0 = arg_58_0:GetComponentsInChildren(typeof(Canvas)):ToTable()
+	local var_58_1 = arg_58_0:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer")):ToTable()
 	local var_58_2 = math.huge
 
-	if var_58_0.Length == 0 then
+	if #var_58_0 == 0 then
 		var_58_2 = 0
 	else
-		for iter_58_0 = 1, var_58_0.Length do
-			local var_58_3 = var_58_0[iter_58_0 - 1].sortingOrder
+		for iter_58_0, iter_58_1 in ipairs(var_58_0) do
+			local var_58_3 = iter_58_1.sortingOrder
 
 			if var_58_3 < var_58_2 then
 				var_58_2 = var_58_3
@@ -822,43 +811,40 @@ local function var_0_8(arg_58_0, arg_58_1, arg_58_2)
 
 	local var_58_4 = {}
 
-	for iter_58_1 = 1, var_58_1.Length do
-		local var_58_5 = var_58_1[iter_58_1 - 1]
-		local var_58_6 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", var_58_5)
+	for iter_58_2, iter_58_3 in ipairs(var_58_1) do
+		local var_58_5 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", iter_58_3)
 
-		var_58_4[iter_58_1] = var_58_6
+		var_58_4[iter_58_2] = var_58_5
 
-		if var_58_6 < var_58_2 then
-			var_58_2 = var_58_6
+		if var_58_5 < var_58_2 then
+			var_58_2 = var_58_5
 		end
 	end
 
-	local var_58_7 = arg_58_2 + 1
-	local var_58_8 = var_58_7 - var_58_2
+	local var_58_6 = arg_58_2 + 1
+	local var_58_7 = var_58_6 - var_58_2
 
-	for iter_58_2 = 1, var_58_0.Length do
-		local var_58_9 = var_58_0[iter_58_2 - 1]
-		local var_58_10 = var_58_8 + var_58_9.sortingOrder
+	for iter_58_4, iter_58_5 in ipairs(var_58_0) do
+		local var_58_8 = var_58_7 + iter_58_5.sortingOrder
 
-		var_58_9.sortingOrder = var_58_10
+		iter_58_5.sortingOrder = var_58_8
 
-		if var_58_7 < var_58_10 then
-			var_58_7 = var_58_10
+		if var_58_6 < var_58_8 then
+			var_58_6 = var_58_8
 		end
 	end
 
-	for iter_58_3 = 1, var_58_1.Length do
-		local var_58_11 = var_58_1[iter_58_3 - 1]
-		local var_58_12 = var_58_8 + var_58_4[iter_58_3]
+	for iter_58_6, iter_58_7 in ipairs(var_58_1) do
+		local var_58_9 = var_58_7 + var_58_4[iter_58_6]
 
-		ReflectionHelp.RefSetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", var_58_11, var_58_12)
+		ReflectionHelp.RefSetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", iter_58_7, var_58_9)
 
-		if var_58_12 < var_58_7 then
-			var_58_7 = var_58_12
+		if var_58_9 < var_58_6 then
+			var_58_6 = var_58_9
 		end
 	end
 
-	return var_58_7
+	return var_58_6
 end
 
 function var_0_0.UpdateSpinePainting(arg_59_0, arg_59_1, arg_59_2, arg_59_3, arg_59_4)
@@ -1325,25 +1311,23 @@ function var_0_0.StartMovePrevPaintingToSide(arg_97_0, arg_97_1, arg_97_2, arg_9
 end
 
 local function var_0_10(arg_99_0, arg_99_1, arg_99_2, arg_99_3, arg_99_4)
-	local var_99_0 = arg_99_1:GetComponentsInChildren(typeof(Image))
+	local var_99_0 = arg_99_1:GetComponentsInChildren(typeof(Image)):ToTable()
 
-	for iter_99_0 = 0, var_99_0.Length - 1 do
-		local var_99_1 = var_99_0[iter_99_0]
-
-		if var_99_1.gameObject.name == "temp_mask" then
-			var_99_1.material = arg_99_4 and arg_99_0.maskMaterial or arg_99_0.maskMaterialForWithLayer
-		elseif var_99_1.gameObject.name == "face" then
-			var_99_1.material = arg_99_0.glitchArtMaterial
-		elseif arg_99_3.hasPaintbg and var_99_1.gameObject == arg_99_2.gameObject then
-			var_99_1.material = arg_99_0.glitchArtMaterialForPaintingBg
+	for iter_99_0, iter_99_1 in ipairs(var_99_0) do
+		if iter_99_1.gameObject.name == "temp_mask" then
+			iter_99_1.material = arg_99_4 and arg_99_0.maskMaterial or arg_99_0.maskMaterialForWithLayer
+		elseif iter_99_1.gameObject.name == "face" then
+			iter_99_1.material = arg_99_0.glitchArtMaterial
+		elseif arg_99_3.hasPaintbg and iter_99_1.gameObject == arg_99_2.gameObject then
+			iter_99_1.material = arg_99_0.glitchArtMaterialForPaintingBg
 		else
-			var_99_1.material = arg_99_0.glitchArtMaterialForPainting
+			iter_99_1.material = arg_99_0.glitchArtMaterialForPainting
 		end
 	end
 end
 
 local function var_0_11(arg_100_0, arg_100_1, arg_100_2, arg_100_3, arg_100_4)
-	local var_100_0 = arg_100_1:GetComponentsInChildren(typeof(Image))
+	local var_100_0 = arg_100_1:GetComponentsInChildren(typeof(Image)):ToTable()
 	local var_100_1 = {}
 	local var_100_2 = arg_100_2:GetComponent(typeof(Image))
 
@@ -1357,17 +1341,15 @@ local function var_0_11(arg_100_0, arg_100_1, arg_100_2, arg_100_3, arg_100_4)
 		table.insert(var_100_1, var_100_3.gameObject)
 	end
 
-	for iter_100_1 = 0, var_100_0.Length - 1 do
-		local var_100_4 = var_100_0[iter_100_1]
-
-		if var_100_4.gameObject.name == "temp_mask" then
-			var_100_4.material = arg_100_0.maskMaterial
-		elseif var_100_4.gameObject.name == "face" then
-			var_100_4.material = arg_100_0.glitchArtMaterial
-		elseif table.contains(var_100_1, var_100_4.gameObject) then
-			var_100_4.material = arg_100_0.glitchArtMaterialForPaintingBg
+	for iter_100_1, iter_100_2 in ipairs(var_100_0) do
+		if iter_100_2.gameObject.name == "temp_mask" then
+			iter_100_2.material = arg_100_0.maskMaterial
+		elseif iter_100_2.gameObject.name == "face" then
+			iter_100_2.material = arg_100_0.glitchArtMaterial
+		elseif table.contains(var_100_1, iter_100_2.gameObject) then
+			iter_100_2.material = arg_100_0.glitchArtMaterialForPaintingBg
 		else
-			var_100_4.material = arg_100_0.glitchArtMaterialForPainting
+			iter_100_2.material = arg_100_0.glitchArtMaterialForPainting
 		end
 	end
 end
@@ -1390,10 +1372,10 @@ function var_0_0.AddGlitchArtEffectForPating(arg_101_0, arg_101_1, arg_101_2, ar
 			var_0_10(arg_101_0, arg_101_1, arg_101_2, arg_101_3, var_101_4)
 		end
 	elseif var_101_0 then
-		local var_101_5 = arg_101_1:GetComponentsInChildren(typeof(Image))
+		local var_101_5 = arg_101_1:GetComponentsInChildren(typeof(Image)):ToTable()
 
-		for iter_101_0 = 0, var_101_5.Length - 1 do
-			var_101_5[iter_101_0].material = arg_101_0.glitchArtMaterial
+		for iter_101_0, iter_101_1 in ipairs(var_101_5) do
+			iter_101_1.material = arg_101_0.glitchArtMaterial
 		end
 	end
 
@@ -1512,26 +1494,25 @@ local function var_0_12(arg_108_0)
 			setActive(var_108_1, false)
 		end
 
-		local var_108_2 = arg_108_0:GetComponentsInChildren(typeof(Image))
+		local var_108_2 = arg_108_0:GetComponentsInChildren(typeof(Image)):ToTable()
 
-		for iter_108_0 = 0, var_108_2.Length - 1 do
-			local var_108_3 = var_108_2[iter_108_0]
-			local var_108_4 = Color.white
+		for iter_108_0, iter_108_1 in ipairs(var_108_2) do
+			local var_108_3 = Color.white
 
-			if var_108_3.material ~= var_108_3.defaultGraphicMaterial then
-				var_108_3.material = var_108_3.defaultGraphicMaterial
+			if iter_108_1.material ~= iter_108_1.defaultGraphicMaterial then
+				iter_108_1.material = iter_108_1.defaultGraphicMaterial
 			end
 
-			var_108_3.material:SetColor("_Color", var_108_4)
+			iter_108_1.material:SetColor("_Color", var_108_3)
 		end
 
 		setGray(var_108_0, false, true)
 		retPaintingPrefab(arg_108_0, var_108_0.name)
 
-		local var_108_5 = var_108_0:Find("temp_mask")
+		local var_108_4 = var_108_0:Find("temp_mask")
 
-		if var_108_5 then
-			Destroy(var_108_5.gameObject)
+		if var_108_4 then
+			Destroy(var_108_4.gameObject)
 		end
 	end
 end
@@ -1564,27 +1545,26 @@ function var_0_0.ResetMeshPainting(arg_110_0, arg_110_1)
 			setActive(var_110_1, false)
 		end
 
-		local var_110_2 = arg_110_1:GetComponentsInChildren(typeof(Image))
+		local var_110_2 = arg_110_1:GetComponentsInChildren(typeof(Image)):ToTable()
 
-		for iter_110_0 = 0, var_110_2.Length - 1 do
-			local var_110_3 = var_110_2[iter_110_0]
-			local var_110_4 = Color.white
+		for iter_110_0, iter_110_1 in ipairs(var_110_2) do
+			local var_110_3 = Color.white
 
-			if var_110_3.material ~= var_110_3.defaultGraphicMaterial then
-				var_110_3.material = var_110_3.defaultGraphicMaterial
+			if iter_110_1.material ~= iter_110_1.defaultGraphicMaterial then
+				iter_110_1.material = iter_110_1.defaultGraphicMaterial
 
-				var_110_3.material:SetColor("_Color", var_110_4)
+				iter_110_1.material:SetColor("_Color", var_110_3)
 			else
-				var_110_3.material = nil
+				iter_110_1.material = nil
 			end
 		end
 
 		setGray(var_110_0, false, true)
 
-		local var_110_5 = var_110_0:Find("temp_mask")
+		local var_110_4 = var_110_0:Find("temp_mask")
 
-		if var_110_5 then
-			Destroy(var_110_5.gameObject)
+		if var_110_4 then
+			Destroy(var_110_4.gameObject)
 		end
 	end
 end

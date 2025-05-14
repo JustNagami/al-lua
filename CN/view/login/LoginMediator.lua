@@ -85,7 +85,7 @@ function var_0_0.loginProcessHandler(arg_11_0)
 			var_12_0 = getProxy(UserProxy):getLastLoginUser()
 
 			arg_11_0.viewComponent:setLastLogin(var_12_0)
-		elseif var_11_1 == LoginType.PLATFORM_AIRIJP or var_11_1 == LoginType.PLATFORM_AIRIUS then
+		elseif var_11_1 == LoginType.PLATFORM_YOSTARJP or var_11_1 == LoginType.PLATFORM_YOSTARUS then
 			arg_11_0.viewComponent:switchToAiriLogin()
 		end
 
@@ -256,14 +256,14 @@ function var_0_0.handleNotification(arg_19_0, arg_19_1)
 				elseif var_19_1 == 3 or var_19_1 == 6 then
 					arg_19_0.viewComponent:switchToServer()
 				elseif var_19_1 == 1 or var_19_1 == 9 or var_19_1 == 11 or var_19_1 == 12 then
-					if var_21_0 == LoginType.PLATFORM_AIRIJP or var_21_0 == LoginType.PLATFORM_AIRIUS then
+					if var_21_0 == LoginType.PLATFORM_YOSTARJP or var_21_0 == LoginType.PLATFORM_YOSTARUS then
 						arg_19_0.viewComponent:switchToAiriLogin()
 					else
 						arg_19_0.viewComponent:switchToLogin()
 					end
 				elseif var_21_0 == LoginType.PLATFORM or var_21_0 == LoginType.PLATFORM_TENCENT then
 					arg_19_0.viewComponent:switchToServer()
-				elseif var_21_0 == LoginType.PLATFORM_AIRIJP or var_21_0 == LoginType.PLATFORM_AIRIUS then
+				elseif var_21_0 == LoginType.PLATFORM_YOSTARJP or var_21_0 == LoginType.PLATFORM_YOSTARUS then
 					arg_19_0.viewComponent:switchToAiriLogin()
 				else
 					arg_19_0.viewComponent:switchToLogin()
@@ -280,7 +280,7 @@ function var_0_0.handleNotification(arg_19_0, arg_19_1)
 
 				if var_22_0 == LoginType.PLATFORM or LoginType.PLATFORM_TENCENT then
 					arg_19_0.viewComponent:switchToServer()
-				elseif var_22_0 == LoginType.PLATFORM_AIRIJP or var_22_0 == LoginType.PLATFORM_AIRIUS then
+				elseif var_22_0 == LoginType.PLATFORM_YOSTARJP or var_22_0 == LoginType.PLATFORM_YOSTARUS then
 					arg_19_0.viewComponent:switchToAiriLogin()
 				else
 					arg_19_0.viewComponent:switchToLogin()
@@ -324,18 +324,35 @@ function var_0_0.checkPaintingRes(arg_23_0)
 		arg_23_0.viewComponent.isNeedResCheck = true
 	end
 
+	local function var_23_2()
+		local var_26_0 = {
+			groupName = "L2D",
+			fileNameList = {
+				"live2d/mingshi"
+			}
+		}
+		local var_26_1 = {
+			dataList = {
+				var_26_0
+			},
+			onFinish = var_23_0
+		}
+
+		pg.FileDownloadMgr.GetInstance():Main(var_26_1)
+	end
+
 	pg.FileDownloadMgr.GetInstance():SetRemind(false)
 
-	local var_23_2 = PaintingGroupConst.GetPaintingNameListInLogin()
-	local var_23_3 = {
+	local var_23_3 = PaintingGroupConst.GetPaintingNameListInLogin()
+	local var_23_4 = {
 		isShowBox = true,
-		paintingNameList = var_23_2,
-		finishFunc = var_23_0,
+		paintingNameList = var_23_3,
+		finishFunc = var_23_2,
 		onNo = var_23_1,
 		onClose = var_23_1
 	}
 
-	PaintingGroupConst.PaintingDownload(var_23_3)
+	PaintingGroupConst.PaintingDownload(var_23_4)
 end
 
 return var_0_0

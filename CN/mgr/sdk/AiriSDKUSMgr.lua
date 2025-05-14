@@ -299,7 +299,7 @@ function AiriLogin(arg_41_0)
 	local function var_41_0()
 		local var_42_0 = User.New({
 			type = 1,
-			arg1 = PLATFORM_AIRIUS,
+			arg1 = PLATFORM_YOSTARUS,
 			arg2 = arg_41_0.UID,
 			arg3 = arg_41_0.ACCESS_TOKEN
 		})

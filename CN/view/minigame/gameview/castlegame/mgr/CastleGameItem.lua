@@ -242,20 +242,17 @@ function var_0_0.step(arg_4_0)
 	for iter_4_7 = #arg_4_0.booms, 1, -1 do
 		local var_4_10 = arg_4_0.booms[iter_4_7]
 		local var_4_11 = arg_4_0.booms[iter_4_7].tf.anchoredPosition
-		local var_4_12 = var_4_10.bound.points
-		local var_4_13 = {}
+		local var_4_12 = {}
 
-		for iter_4_8 = 0, var_4_12.Length - 1 do
-			local var_4_14 = var_4_12[iter_4_8]
+		for iter_4_8, iter_4_9 in ipairs(var_4_10.bound.points:ToTable()) do
+			findTF(var_4_10.tf, "zPos/" .. iter_4_8 + 1).anchoredPosition = Vector2(iter_4_9.x, iter_4_9.y)
 
-			findTF(var_4_10.tf, "zPos/" .. iter_4_8 + 1).anchoredPosition = Vector2(var_4_14.x, var_4_14.y)
+			local var_4_13 = Vector2(var_4_11.x + iter_4_9.x, var_4_11.y + iter_4_9.y)
 
-			local var_4_15 = Vector2(var_4_11.x + var_4_14.x, var_4_11.y + var_4_14.y)
-
-			table.insert(var_4_13, var_4_15)
+			table.insert(var_4_12, var_4_13)
 		end
 
-		var_4_10.boundPoints = var_4_13
+		var_4_10.boundPoints = var_4_12
 
 		if var_4_10.ready and var_4_10.ready > 0 then
 			var_4_10.ready = var_4_10.ready - CastleGameVo.deltaTime
@@ -278,9 +275,9 @@ function var_0_0.step(arg_4_0)
 
 				setActive(var_4_10.tf, false)
 
-				local var_4_16 = table.remove(arg_4_0.booms, iter_4_7)
+				local var_4_14 = table.remove(arg_4_0.booms, iter_4_7)
 
-				arg_4_0:returnItem(var_4_16, arg_4_0.boomPool)
+				arg_4_0:returnItem(var_4_14, arg_4_0.boomPool)
 			end
 		end
 	end

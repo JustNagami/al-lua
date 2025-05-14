@@ -158569,3 +158569,107 @@ _G.pg.base.equip_data_statistics[150651] = {
 	base = 150640,
 	hidden_skill_id = {}
 }
+_G.pg.base.equip_data_statistics[150660] = {
+	type = 10,
+	name = "我的宝贝鲸鱼",
+	speciality = "<[NA]>",
+	tech = 0,
+	value_2 = 0,
+	ammo = 10,
+	descrip = "珍藏的简笔涂鸦画，画的是自己见过的最漂亮的大鲸鱼",
+	nationality = 0,
+	rarity = 4,
+	id = 150660,
+	value_3 = 0,
+	attribute_1 = "durability",
+	icon = "150660",
+	value_1 = "200",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			60850,
+			1
+		}
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV"
+	}
+}
+_G.pg.base.equip_data_statistics[150661] = {
+	id = 150661,
+	value_1 = "230",
+	base = 150660,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150662] = {
+	id = 150662,
+	value_1 = "260",
+	base = 150660,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150663] = {
+	id = 150663,
+	value_1 = "290",
+	base = 150660,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150664] = {
+	id = 150664,
+	value_1 = "320",
+	base = 150660,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150665] = {
+	id = 150665,
+	value_1 = "350",
+	base = 150660,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150666] = {
+	id = 150666,
+	value_1 = "380",
+	base = 150660,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150667] = {
+	id = 150667,
+	value_1 = "410",
+	base = 150660,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150668] = {
+	id = 150668,
+	value_1 = "440",
+	base = 150660,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150669] = {
+	id = 150669,
+	value_1 = "470",
+	base = 150660,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150670] = {
+	id = 150670,
+	value_1 = "500",
+	base = 150660,
+	hidden_skill_id = {}
+}
+_G.pg.base.equip_data_statistics[150671] = {
+	id = 150671,
+	anti_siren = 100,
+	value_1 = "530",
+	base = 150660,
+	hidden_skill_id = {}
+}

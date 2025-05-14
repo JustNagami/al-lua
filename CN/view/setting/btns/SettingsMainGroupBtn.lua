@@ -19,7 +19,11 @@ function var_0_0.Dispose(arg_2_0)
 end
 
 function var_0_0.initData(arg_3_0)
-	arg_3_0.mgr = pg.MainGroupMgr:GetInstance()
+	arg_3_0.mgr = pg.SettingsGroupMgr:GetInstance()
+	arg_3_0.infoName = "MainGroup"
+	arg_3_0.groupNameList = {
+		PaintingGroupConst.PaintingGroupName
+	}
 end
 
 function var_0_0.findUI(arg_4_0, arg_4_1)
@@ -40,20 +44,16 @@ end
 
 function var_0_0.addListener(arg_5_0)
 	onButton(arg_5_0, arg_5_0._tf, function()
-		local var_6_0 = arg_5_0.mgr:GetState()
-
-		if var_6_0 == DownloadState.CheckFailure then
-			arg_5_0.mgr:StartCheckD()
-		elseif var_6_0 == DownloadState.CheckToUpdate or var_6_0 == DownloadState.UpdateFailure then
-			local var_6_1 = arg_5_0.mgr:GetTotalSize()
-			local var_6_2 = HashUtil.BytesToString(var_6_1)
+		if arg_5_0.mgr:GetState(arg_5_0.infoName) ~= pg.SettingsGroupMgr.State.Updating then
+			local var_6_0 = arg_5_0.mgr:GetTotalSize(arg_5_0.groupNameList)
+			local var_6_1 = HashUtil.BytesToString(var_6_0)
 
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_NORMAL,
-				content = string.format(i18n("main_group_msgbox_content", var_6_2)),
+				content = string.format(i18n("main_group_msgbox_content", var_6_1)),
 				onYes = function()
 					GroupMainHelper.SavePrefs(DMFileChecker.Prefs.Max)
-					arg_5_0.mgr:StartUpdateD()
+					arg_5_0.mgr:StartDownload(arg_5_0.infoName, arg_5_0.groupNameList)
 				end
 			})
 		end
@@ -61,10 +61,6 @@ function var_0_0.addListener(arg_5_0)
 end
 
 function var_0_0.check(arg_8_0)
-	if arg_8_0.mgr:GetState() == DownloadState.None then
-		arg_8_0.mgr:StartCheckD()
-	end
-
 	arg_8_0.timer = Timer.New(function()
 		arg_8_0:updateUI()
 	end, 0.5, -1)
@@ -74,49 +70,29 @@ function var_0_0.check(arg_8_0)
 end
 
 function var_0_0.updateUI(arg_10_0)
-	local var_10_0 = arg_10_0.mgr:GetState()
+	local var_10_0 = arg_10_0.mgr:GetState(arg_10_0.infoName)
 
-	if var_10_0 == DownloadState.None then
-		setText(arg_10_0.btnText, i18n("word_maingroup_idle"))
-		setActive(arg_10_0.loadingIcon, false)
-		setActive(arg_10_0.newIcon, false)
-		setActive(arg_10_0.finishIcon, false)
-	elseif var_10_0 == DownloadState.Checking then
-		setText(arg_10_0.btnText, i18n("word_maingroup_checking"))
-		setActive(arg_10_0.loadingIcon, false)
-		setActive(arg_10_0.newIcon, false)
-		setActive(arg_10_0.finishIcon, false)
-	elseif var_10_0 == DownloadState.CheckToUpdate then
+	if var_10_0 == pg.SettingsGroupMgr.State.None then
 		setText(arg_10_0.btnText, i18n("word_maingroup_checktoupdate"))
 		setActive(arg_10_0.loadingIcon, false)
 		setActive(arg_10_0.newIcon, true)
 		setActive(arg_10_0.finishIcon, false)
-	elseif var_10_0 == DownloadState.CheckOver then
-		setText(arg_10_0.btnText, i18n("word_maingroup_latest"))
-		setActive(arg_10_0.loadingIcon, false)
-		setActive(arg_10_0.newIcon, false)
-		setActive(arg_10_0.finishIcon, false)
-	elseif var_10_0 == DownloadState.CheckFailure then
-		setText(arg_10_0.btnText, i18n("word_maingroup_checkfailure"))
-		setActive(arg_10_0.loadingIcon, false)
-		setActive(arg_10_0.newIcon, false)
-		setActive(arg_10_0.finishIcon, false)
-	elseif var_10_0 == DownloadState.Updating then
+	elseif var_10_0 == pg.SettingsGroupMgr.State.Updating then
 		setText(arg_10_0.btnText, i18n("word_maingroup_updating"))
 		setActive(arg_10_0.loadingIcon, true)
 		setActive(arg_10_0.newIcon, false)
 		setActive(arg_10_0.finishIcon, false)
 
-		local var_10_1, var_10_2 = arg_10_0.mgr:GetCountProgress()
+		local var_10_1, var_10_2 = arg_10_0.mgr:GetCountProgress(arg_10_0.infoName)
 
 		setSlider(arg_10_0.progressBar, 0, var_10_2, var_10_1)
 		setText(arg_10_0.btnText, var_10_1 .. "/" .. var_10_2)
-	elseif var_10_0 == DownloadState.UpdateSuccess then
+	elseif var_10_0 == pg.SettingsGroupMgr.State.Success then
 		setText(arg_10_0.btnText, i18n("word_maingroup_updatesuccess"))
 		setActive(arg_10_0.loadingIcon, false)
 		setActive(arg_10_0.newIcon, false)
 		setActive(arg_10_0.finishIcon, true)
-	elseif var_10_0 == DownloadState.UpdateFailure then
+	elseif var_10_0 == pg.SettingsGroupMgr.State.Fail then
 		setText(arg_10_0.btnText, i18n("word_maingroup_updatefailure"))
 		setActive(arg_10_0.loadingIcon, false)
 		setActive(arg_10_0.newIcon, false)

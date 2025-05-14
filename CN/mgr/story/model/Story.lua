@@ -8,6 +8,7 @@ var_0_0.MODE_VEDIO = 5
 var_0_0.MODE_CAST = 6
 var_0_0.MODE_SPANIM = 7
 var_0_0.MODE_BLINK = 8
+var_0_0.MODE_TDDIALOGUE = 9
 var_0_0.STORY_AUTO_SPEED = {
 	-9,
 	0,
@@ -30,7 +31,8 @@ function var_0_0.GetStoryStepCls(arg_1_0)
 		VedioStep,
 		CastStep,
 		SpAnimStep,
-		BlinkStep
+		BlinkStep,
+		TDDialogueStep
 	})[arg_1_0]
 end
 
@@ -42,16 +44,20 @@ var_0_0.PlaceholderMap = {
 	tb = var_0_0.TB,
 	dorm3d = var_0_0.DORM
 }
+var_0_0.PLAY_TYPE_STORY = 1
+var_0_0.PLAY_TYPE_BUBBLE = 2
 
 function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5, arg_2_6)
 	arg_2_0.name = arg_2_1.id
 	arg_2_0.mode = arg_2_1.mode
+	arg_2_0.playType = arg_2_1.playType or var_0_0.PLAY_TYPE_STORY
 	arg_2_0.once = arg_2_1.once
 	arg_2_0.fadeOut = arg_2_1.fadeOut
 	arg_2_0.hideSkip = defaultValue(arg_2_1.hideSkip, false)
 	arg_2_0.skipTip = defaultValue(arg_2_1.skipTip, true)
 	arg_2_0.noWaitFade = defaultValue(arg_2_1.noWaitFade, false)
 	arg_2_0.dialogueBox = arg_2_1.dialogbox or 1
+	arg_2_0.interaction = defaultValue(arg_2_1.interaction, false)
 	arg_2_0.defaultTb = arg_2_1.defaultTb
 	arg_2_0.placeholder = 0
 
@@ -65,7 +71,12 @@ function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5, arg_
 
 	arg_2_0.hideRecord = defaultValue(arg_2_1.hideRecord, false)
 	arg_2_0.hideAutoBtn = defaultValue(arg_2_1.hideAuto, false)
-	arg_2_0.storyAlpha = defaultValue(arg_2_1.alpha, 0.568)
+
+	if arg_2_0:IsTDDMode() then
+		arg_2_0.storyAlpha = defaultValue(arg_2_1.alpha, 0)
+	else
+		arg_2_0.storyAlpha = defaultValue(arg_2_1.alpha, 0.568)
+	end
 
 	if UnGamePlayState then
 		arg_2_0.speedData = arg_2_1.speed or 0
@@ -137,107 +148,123 @@ function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5, arg_
 	arg_2_0.speed = 0
 end
 
-function var_0_0.HandleRecallOptions(arg_3_0, arg_3_1)
-	local function var_3_0(arg_4_0, arg_4_1)
-		local var_4_0 = arg_3_0.steps[arg_4_0]
-		local var_4_1 = {}
+function var_0_0.IsTDDMode(arg_3_0)
+	return arg_3_0.mode and arg_3_0.mode == var_0_0.MODE_TDDIALOGUE
+end
 
-		for iter_4_0 = arg_4_0, arg_4_1 do
-			local var_4_2 = arg_3_0.steps[iter_4_0]
+function var_0_0.GetPlayType(arg_4_0)
+	return arg_4_0.playType
+end
 
-			table.insert(var_4_1, var_4_2)
+function var_0_0.IsBubbleType(arg_5_0)
+	return arg_5_0.playType == var_0_0.PLAY_TYPE_BUBBLE
+end
+
+function var_0_0.CanInteraction(arg_6_0)
+	return arg_6_0.interaction
+end
+
+function var_0_0.HandleRecallOptions(arg_7_0, arg_7_1)
+	local function var_7_0(arg_8_0, arg_8_1)
+		local var_8_0 = arg_7_0.steps[arg_8_0]
+		local var_8_1 = {}
+
+		for iter_8_0 = arg_8_0, arg_8_1 do
+			local var_8_2 = arg_7_0.steps[iter_8_0]
+
+			table.insert(var_8_1, var_8_2)
 		end
 
-		local var_4_3 = var_4_0:GetOptionCnt()
+		local var_8_3 = var_8_0:GetOptionCnt()
 
 		return {
-			var_4_1,
-			var_4_3,
-			arg_4_1,
-			arg_4_0
+			var_8_1,
+			var_8_3,
+			arg_8_1,
+			arg_8_0
 		}
 	end
 
-	local function var_3_1(arg_5_0)
-		for iter_5_0 = arg_5_0, 1, -1 do
-			local var_5_0 = arg_3_0.steps[iter_5_0]
+	local function var_7_1(arg_9_0)
+		for iter_9_0 = arg_9_0, 1, -1 do
+			local var_9_0 = arg_7_0.steps[iter_9_0]
 
-			if var_5_0 and var_5_0.branchCode ~= nil then
-				return iter_5_0
+			if var_9_0 and var_9_0.branchCode ~= nil then
+				return iter_9_0
 			end
 		end
 
 		assert(false)
 	end
 
-	local var_3_2 = {}
+	local var_7_2 = {}
 
-	for iter_3_0, iter_3_1 in ipairs(arg_3_1) do
-		if arg_3_0.steps[iter_3_1]:IsRecallOption() then
-			local var_3_3 = iter_3_1
-			local var_3_4 = arg_3_1[iter_3_0 + 1]
+	for iter_7_0, iter_7_1 in ipairs(arg_7_1) do
+		if arg_7_0.steps[iter_7_1]:IsRecallOption() then
+			local var_7_3 = iter_7_1
+			local var_7_4 = arg_7_1[iter_7_0 + 1]
 
-			if var_3_3 and var_3_4 then
-				local var_3_5 = var_3_1(var_3_4)
+			if var_7_3 and var_7_4 then
+				local var_7_5 = var_7_1(var_7_4)
 
-				table.insert(var_3_2, var_3_0(var_3_3, var_3_5))
+				table.insert(var_7_2, var_7_0(var_7_3, var_7_5))
 			end
 		end
 	end
 
-	local var_3_6 = 0
+	local var_7_6 = 0
 
-	for iter_3_2, iter_3_3 in ipairs(var_3_2) do
-		local var_3_7 = iter_3_3[1]
-		local var_3_8 = iter_3_3[2]
-		local var_3_9 = iter_3_3[3]
-		local var_3_10 = iter_3_3[4]
+	for iter_7_2, iter_7_3 in ipairs(var_7_2) do
+		local var_7_7 = iter_7_3[1]
+		local var_7_8 = iter_7_3[2]
+		local var_7_9 = iter_7_3[3]
+		local var_7_10 = iter_7_3[4]
 
-		for iter_3_4 = 1, var_3_8 - 1 do
-			local var_3_11 = var_3_9 + var_3_6
+		for iter_7_4 = 1, var_7_8 - 1 do
+			local var_7_11 = var_7_9 + var_7_6
 
-			for iter_3_5, iter_3_6 in ipairs(var_3_7) do
-				local var_3_12 = Clone(iter_3_6)
+			for iter_7_5, iter_7_6 in ipairs(var_7_7) do
+				local var_7_12 = Clone(iter_7_6)
 
-				var_3_12:SetId(var_3_10)
-				table.insert(arg_3_0.steps, var_3_11 + iter_3_5, var_3_12)
+				var_7_12:SetId(var_7_10)
+				table.insert(arg_7_0.steps, var_7_11 + iter_7_5, var_7_12)
 			end
 		end
 
-		var_3_6 = var_3_6 + (var_3_8 - 1) * #var_3_7
+		var_7_6 = var_7_6 + (var_7_8 - 1) * #var_7_7
 	end
 end
 
-function var_0_0.GetPlaceholder(arg_6_0)
-	return arg_6_0.placeholder
+function var_0_0.GetPlaceholder(arg_10_0)
+	return arg_10_0.placeholder
 end
 
-function var_0_0.ShouldReplaceContent(arg_7_0)
-	return arg_7_0.placeholder > 0
+function var_0_0.ShouldReplaceContent(arg_11_0)
+	return arg_11_0.placeholder > 0
 end
 
-function var_0_0.GetStoryAlpha(arg_8_0)
-	return arg_8_0.storyAlpha
+function var_0_0.GetStoryAlpha(arg_12_0)
+	return arg_12_0.storyAlpha
 end
 
-function var_0_0.ShouldHideAutoBtn(arg_9_0)
-	return arg_9_0.hideAutoBtn
+function var_0_0.ShouldHideAutoBtn(arg_13_0)
+	return arg_13_0.hideAutoBtn
 end
 
-function var_0_0.ShouldHideRecord(arg_10_0)
-	return arg_10_0.hideRecord
+function var_0_0.ShouldHideRecord(arg_14_0)
+	return arg_14_0.hideRecord
 end
 
-function var_0_0.GetDialogueStyleName(arg_11_0)
-	return arg_11_0.dialogueBox
+function var_0_0.GetDialogueStyleName(arg_15_0)
+	return arg_15_0.dialogueBox
 end
 
-function var_0_0.IsDialogueStyle2(arg_12_0)
-	return arg_12_0:GetDialogueStyleName() == 2
+function var_0_0.IsDialogueStyle2(arg_16_0)
+	return arg_16_0:GetDialogueStyleName() == 2
 end
 
-function var_0_0.GetAnimPrefix(arg_13_0)
-	return switch(arg_13_0:GetDialogueStyleName(), {
+function var_0_0.GetAnimPrefix(arg_17_0)
+	return switch(arg_17_0:GetDialogueStyleName(), {
 		function()
 			return "anim_storydialogue_optiontpl_"
 		end,
@@ -247,196 +274,196 @@ function var_0_0.GetAnimPrefix(arg_13_0)
 	})
 end
 
-function var_0_0.GetTriggerDelayTime(arg_16_0)
-	local var_16_0 = table.indexof(var_0_0.STORY_AUTO_SPEED, arg_16_0.speed)
+function var_0_0.GetTriggerDelayTime(arg_20_0)
+	local var_20_0 = table.indexof(var_0_0.STORY_AUTO_SPEED, arg_20_0.speed)
 
-	if var_16_0 then
-		return var_0_0.TRIGGER_DELAY_TIME[var_16_0] or 0
+	if var_20_0 then
+		return var_0_0.TRIGGER_DELAY_TIME[var_20_0] or 0
 	end
 
 	return 0
 end
 
-function var_0_0.SetAutoPlay(arg_17_0)
-	arg_17_0.isAuto = true
+function var_0_0.SetAutoPlay(arg_21_0)
+	arg_21_0.isAuto = true
 
-	arg_17_0:SetPlaySpeed(arg_17_0.speedData)
+	arg_21_0:SetPlaySpeed(arg_21_0.speedData)
 end
 
-function var_0_0.UpdatePlaySpeed(arg_18_0)
-	local var_18_0 = getProxy(SettingsProxy):GetStorySpeed() or 0
+function var_0_0.UpdatePlaySpeed(arg_22_0)
+	local var_22_0 = getProxy(SettingsProxy):GetStorySpeed() or 0
 
-	arg_18_0:SetPlaySpeed(var_18_0)
-end
-
-function var_0_0.GetPlaySpeed(arg_19_0)
-	return arg_19_0.speed
-end
-
-function var_0_0.StopAutoPlay(arg_20_0)
-	arg_20_0.isAuto = false
-
-	arg_20_0:ResetSpeed()
-end
-
-function var_0_0.SetPlaySpeed(arg_21_0, arg_21_1)
-	arg_21_0.speed = arg_21_1
-end
-
-function var_0_0.ResetSpeed(arg_22_0)
-	arg_22_0.speed = 0
+	arg_22_0:SetPlaySpeed(var_22_0)
 end
 
 function var_0_0.GetPlaySpeed(arg_23_0)
 	return arg_23_0.speed
 end
 
-function var_0_0.GetAutoPlayFlag(arg_24_0)
-	return arg_24_0.isAuto
+function var_0_0.StopAutoPlay(arg_24_0)
+	arg_24_0.isAuto = false
+
+	arg_24_0:ResetSpeed()
 end
 
-function var_0_0.ShowSkipTip(arg_25_0)
-	return arg_25_0.skipTip
+function var_0_0.SetPlaySpeed(arg_25_0, arg_25_1)
+	arg_25_0.speed = arg_25_1
 end
 
-function var_0_0.ShouldWaitFadeout(arg_26_0)
-	return not arg_26_0.noWaitFade
+function var_0_0.ResetSpeed(arg_26_0)
+	arg_26_0.speed = 0
 end
 
-function var_0_0.ShouldHideSkip(arg_27_0)
-	return arg_27_0.hideSkip
+function var_0_0.GetPlaySpeed(arg_27_0)
+	return arg_27_0.speed
 end
 
-function var_0_0.CanPlay(arg_28_0)
-	return arg_28_0.force or not arg_28_0.isPlayed
+function var_0_0.GetAutoPlayFlag(arg_28_0)
+	return arg_28_0.isAuto
 end
 
-function var_0_0.GetId(arg_29_0)
-	return arg_29_0.name
+function var_0_0.ShowSkipTip(arg_29_0)
+	return arg_29_0.skipTip
 end
 
-function var_0_0.GetName(arg_30_0)
-	return arg_30_0.name
+function var_0_0.ShouldWaitFadeout(arg_30_0)
+	return not arg_30_0.noWaitFade
 end
 
-function var_0_0.GetStepByIndex(arg_31_0, arg_31_1)
-	local var_31_0 = arg_31_0.steps[arg_31_1]
+function var_0_0.ShouldHideSkip(arg_31_0)
+	return arg_31_0.hideSkip
+end
 
-	if not var_31_0 or arg_31_0.branchCode and not var_31_0:IsSameBranch(arg_31_0.branchCode) then
+function var_0_0.CanPlay(arg_32_0)
+	return arg_32_0.force or not arg_32_0.isPlayed
+end
+
+function var_0_0.GetId(arg_33_0)
+	return arg_33_0.name
+end
+
+function var_0_0.GetName(arg_34_0)
+	return arg_34_0.name
+end
+
+function var_0_0.GetStepByIndex(arg_35_0, arg_35_1)
+	local var_35_0 = arg_35_0.steps[arg_35_1]
+
+	if not var_35_0 or arg_35_0.branchCode and not var_35_0:IsSameBranch(arg_35_0.branchCode) then
 		return nil
 	end
 
-	return var_31_0
+	return var_35_0
 end
 
-function var_0_0.GetNextStep(arg_32_0, arg_32_1)
-	if arg_32_1 >= #arg_32_0.steps then
+function var_0_0.GetNextStep(arg_36_0, arg_36_1)
+	if arg_36_1 >= #arg_36_0.steps then
 		return nil
 	end
 
-	local var_32_0 = arg_32_1 + 1
-	local var_32_1 = arg_32_0:GetStepByIndex(var_32_0)
+	local var_36_0 = arg_36_1 + 1
+	local var_36_1 = arg_36_0:GetStepByIndex(var_36_0)
 
-	if not var_32_1 and var_32_0 < #arg_32_0.steps then
-		return arg_32_0:GetNextStep(var_32_0)
+	if not var_36_1 and var_36_0 < #arg_36_0.steps then
+		return arg_36_0:GetNextStep(var_36_0)
 	else
-		return var_32_1
+		return var_36_1
 	end
 end
 
-function var_0_0.GetPrevStep(arg_33_0, arg_33_1)
-	if arg_33_1 <= 1 then
+function var_0_0.GetPrevStep(arg_37_0, arg_37_1)
+	if arg_37_1 <= 1 then
 		return nil
 	end
 
-	local var_33_0 = arg_33_1 - 1
-	local var_33_1 = arg_33_0:GetStepByIndex(var_33_0)
+	local var_37_0 = arg_37_1 - 1
+	local var_37_1 = arg_37_0:GetStepByIndex(var_37_0)
 
-	if not var_33_1 and var_33_0 > 1 then
-		return arg_33_0:GetPrevStep(var_33_0)
+	if not var_37_1 and var_37_0 > 1 then
+		return arg_37_0:GetPrevStep(var_37_0)
 	else
-		return var_33_1
+		return var_37_1
 	end
 end
 
-function var_0_0.ShouldFadeout(arg_34_0)
-	return arg_34_0.fadeOut ~= nil
+function var_0_0.ShouldFadeout(arg_38_0)
+	return arg_38_0.fadeOut ~= nil
 end
 
-function var_0_0.GetFadeoutTime(arg_35_0)
-	return arg_35_0.fadeOut
+function var_0_0.GetFadeoutTime(arg_39_0)
+	return arg_39_0.fadeOut
 end
 
-function var_0_0.IsPlayed(arg_36_0)
-	return arg_36_0.isPlayed
+function var_0_0.IsPlayed(arg_40_0)
+	return arg_40_0.isPlayed
 end
 
-function var_0_0.SetBranchCode(arg_37_0, arg_37_1)
-	arg_37_0.branchCode = arg_37_1
+function var_0_0.SetBranchCode(arg_41_0, arg_41_1)
+	arg_41_0.branchCode = arg_41_1
 end
 
-function var_0_0.GetBranchCode(arg_38_0)
-	return arg_38_0.branchCode
+function var_0_0.GetBranchCode(arg_42_0)
+	return arg_42_0.branchCode
 end
 
-function var_0_0.GetNextScriptName(arg_39_0)
-	return arg_39_0.nextScriptName
+function var_0_0.GetNextScriptName(arg_43_0)
+	return arg_43_0.nextScriptName
 end
 
-function var_0_0.SetNextScriptName(arg_40_0, arg_40_1)
-	arg_40_0.nextScriptName = arg_40_1
+function var_0_0.SetNextScriptName(arg_44_0, arg_44_1)
+	arg_44_0.nextScriptName = arg_44_1
 end
 
-function var_0_0.SkipAll(arg_41_0)
-	arg_41_0.skipAll = true
+function var_0_0.SkipAll(arg_45_0)
+	arg_45_0.skipAll = true
 end
 
-function var_0_0.StopSkip(arg_42_0)
-	arg_42_0.skipAll = false
+function var_0_0.StopSkip(arg_46_0)
+	arg_46_0.skipAll = false
 end
 
-function var_0_0.ShouldSkipAll(arg_43_0)
-	return arg_43_0.skipAll
+function var_0_0.ShouldSkipAll(arg_47_0)
+	return arg_47_0.skipAll
 end
 
-function var_0_0.GetUsingPaintingNames(arg_44_0)
-	local var_44_0 = {}
+function var_0_0.GetUsingPaintingNames(arg_48_0)
+	local var_48_0 = {}
 
-	for iter_44_0, iter_44_1 in ipairs(arg_44_0.steps) do
-		local var_44_1 = iter_44_1:GetUsingPaintingNames()
+	for iter_48_0, iter_48_1 in ipairs(arg_48_0.steps) do
+		local var_48_1 = iter_48_1:GetUsingPaintingNames()
 
-		for iter_44_2, iter_44_3 in ipairs(var_44_1) do
-			var_44_0[iter_44_3] = true
+		for iter_48_2, iter_48_3 in ipairs(var_48_1) do
+			var_48_0[iter_48_3] = true
 		end
 	end
 
-	local var_44_2 = {}
+	local var_48_2 = {}
 
-	for iter_44_4, iter_44_5 in pairs(var_44_0) do
-		table.insert(var_44_2, iter_44_4)
+	for iter_48_4, iter_48_5 in pairs(var_48_0) do
+		table.insert(var_48_2, iter_48_4)
 	end
 
-	return var_44_2
+	return var_48_2
 end
 
-function var_0_0.GetAllStepDispatcherRecallName(arg_45_0)
-	local var_45_0 = {}
+function var_0_0.GetAllStepDispatcherRecallName(arg_49_0)
+	local var_49_0 = {}
 
-	for iter_45_0, iter_45_1 in ipairs(arg_45_0.steps) do
-		local var_45_1 = iter_45_1:GetDispatcherRecallName()
+	for iter_49_0, iter_49_1 in ipairs(arg_49_0.steps) do
+		local var_49_1 = iter_49_1:GetDispatcherRecallName()
 
-		if var_45_1 then
-			var_45_0[var_45_1] = true
+		if var_49_1 then
+			var_49_0[var_49_1] = true
 		end
 	end
 
-	local var_45_2 = {}
+	local var_49_2 = {}
 
-	for iter_45_2, iter_45_3 in pairs(var_45_0) do
-		table.insert(var_45_2, iter_45_2)
+	for iter_49_2, iter_49_3 in pairs(var_49_0) do
+		table.insert(var_49_2, iter_49_2)
 	end
 
-	return var_45_2
+	return var_49_2
 end
 
 return var_0_0

@@ -21,7 +21,7 @@ end
 
 function var_0_0.LoadScene(arg_2_0, arg_2_1)
 	gcAll(true)
-	SceneOpMgr.Inst:LoadSceneAsync("scenes/worldoverview", "worldoverview", LoadSceneMode.Additive, function(arg_3_0, arg_3_1)
+	SceneOpMgr.Inst:LoadSceneAsync("scenes/worldoverview", "WorldOverview", LoadSceneMode.Additive, function(arg_3_0, arg_3_1)
 		arg_2_0.transform = tf(arg_3_0:GetRootGameObjects()[0])
 
 		setActive(arg_2_0.transform, false)
@@ -59,7 +59,7 @@ end
 
 function var_0_0.ReturnScene(arg_5_0)
 	if arg_5_0.tfEntity then
-		SceneOpMgr.Inst:UnloadSceneAsync("scenes/worldoverview", "worldoverview")
+		SceneOpMgr.Inst:UnloadSceneAsync("scenes/worldoverview", "WorldOverview")
 
 		arg_5_0.cmPointer = nil
 	end

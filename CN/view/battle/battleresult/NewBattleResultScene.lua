@@ -69,7 +69,7 @@ function var_0_0.InitData(arg_7_0)
 end
 
 function var_0_0.CloseCamera(arg_8_0)
-	ys.Battle.BattleCameraUtil.GetInstance().ActiveMainCemera(false)
+	ys.Battle.BattleCameraUtil.GetInstance().ActiveMainCamera(false)
 end
 
 function var_0_0.Vibrate(arg_9_0)

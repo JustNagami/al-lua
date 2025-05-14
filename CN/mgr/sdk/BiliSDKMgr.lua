@@ -154,20 +154,26 @@ function var_0_0.ShowLicence()
 	end
 end
 
+function var_0_0.OpenMiniProgram()
+	if LuaHelper.GetCHPackageType() == PACKAGE_TYPE_BILI and not IsUnityEditor then
+		var_0_1:OpenMiniProgram("gh_c18eea57d6d7", "pages/schoolAuthentication/index")
+	end
+end
+
 function var_0_0.GetBiliServerId()
-	local var_23_0 = var_0_1.serverId
+	local var_24_0 = var_0_1.serverId
 
-	originalPrint("serverId : " .. var_23_0)
+	originalPrint("serverId : " .. var_24_0)
 
-	return var_23_0
+	return var_24_0
 end
 
 function var_0_0.GetChannelUID()
-	local var_24_0 = var_0_1.channelUID
+	local var_25_0 = var_0_1.channelUID
 
-	originalPrint("channelUID : " .. var_24_0)
+	originalPrint("channelUID : " .. var_25_0)
 
-	return var_24_0
+	return var_25_0
 end
 
 function var_0_0.GetLoginType()
@@ -178,29 +184,29 @@ function var_0_0.GetIsPlatform()
 	return var_0_1.isPlatform
 end
 
-function var_0_0.GameShare(arg_27_0, arg_27_1)
-	var_0_1:ShareWithImage("Azur Lane", arg_27_0, arg_27_1)
+function var_0_0.GameShare(arg_28_0, arg_28_1)
+	var_0_1:ShareWithImage("Azur Lane", arg_28_0, arg_28_1)
 end
 
 function var_0_0.Service()
-	local var_28_0 = getProxy(PlayerProxy)
+	local var_29_0 = getProxy(PlayerProxy)
 
-	if not var_28_0 then
+	if not var_29_0 then
 		return
 	end
 
-	local var_28_1 = var_28_0:getRawData()
-	local var_28_2 = var_28_1.id
-	local var_28_3 = var_28_1:GetName()
-	local var_28_4 = ""
-	local var_28_5 = ""
-	local var_28_6 = PLATFORM == PLATFORM_IPHONEPLAYER and "portrai" or "portrait"
+	local var_29_1 = var_29_0:getRawData()
+	local var_29_2 = var_29_1.id
+	local var_29_3 = var_29_1:GetName()
+	local var_29_4 = ""
+	local var_29_5 = ""
+	local var_29_6 = PLATFORM == PLATFORM_IPHONEPLAYER and "portrai" or "portrait"
 
-	var_0_1:Service(var_28_2, var_28_3, var_28_4, var_28_6)
+	var_0_1:Service(var_29_2, var_29_3, var_29_4, var_29_6)
 end
 
-function var_0_0.Survey(arg_29_0)
-	var_0_1:OpenWeb(arg_29_0)
+function var_0_0.Survey(arg_30_0)
+	var_0_1:OpenWeb(arg_30_0)
 end
 
 function var_0_0.IsHuaweiPackage()
@@ -223,33 +229,33 @@ function GoLoginScene()
 	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LOGIN)
 end
 
-function SDKLogined(arg_34_0, arg_34_1, arg_34_2, arg_34_3)
+function SDKLogined(arg_35_0, arg_35_1, arg_35_2, arg_35_3)
 	if not pg.m02 then
 		originalPrint("game is not start")
 
 		return
 	end
 
-	local var_34_0 = User.New({
+	local var_35_0 = User.New({
 		type = 1,
-		arg1 = arg_34_0,
-		arg2 = arg_34_1,
-		arg3 = arg_34_2,
-		arg4 = arg_34_3
+		arg1 = arg_35_0,
+		arg2 = arg_35_1,
+		arg3 = arg_35_2,
+		arg4 = arg_35_3
 	})
 
 	if LuaHelper.GetCHPackageType() == PACKAGE_TYPE_UNION then
 		pg.m02:sendNotification(GAME.PLATFORM_LOGIN_DONE, {
-			user = var_34_0
+			user = var_35_0
 		})
 	else
 		pg.m02:sendNotification(GAME.SERVER_INTERCOMMECTION, {
-			user = var_34_0
+			user = var_35_0
 		})
 	end
 end
 
-function SDKLogouted(arg_35_0)
+function SDKLogouted(arg_36_0)
 	if not pg.m02 then
 		originalPrint("game is not start")
 
@@ -257,11 +263,11 @@ function SDKLogouted(arg_35_0)
 	end
 
 	pg.m02:sendNotification(GAME.LOGOUT, {
-		code = arg_35_0
+		code = arg_36_0
 	})
 end
 
-function PaySuccess(arg_36_0, arg_36_1)
+function PaySuccess(arg_37_0, arg_37_1)
 	if not pg.m02 then
 		originalPrint("game is not start")
 
@@ -270,12 +276,12 @@ function PaySuccess(arg_36_0, arg_36_1)
 
 	getProxy(ShopsProxy):removeWaitTimer()
 	pg.m02:sendNotification(GAME.CHARGE_CONFIRM, {
-		payId = arg_36_0,
-		bsId = arg_36_1
+		payId = arg_37_0,
+		bsId = arg_37_1
 	})
 end
 
-function PayFailed(arg_37_0, arg_37_1)
+function PayFailed(arg_38_0, arg_38_1)
 	if not pg.m02 then
 		originalPrint("game is not start")
 
@@ -284,47 +290,47 @@ function PayFailed(arg_37_0, arg_37_1)
 
 	getProxy(ShopsProxy):removeWaitTimer()
 
-	arg_37_1 = tonumber(arg_37_1)
+	arg_38_1 = tonumber(arg_38_1)
 
-	if not arg_37_1 then
+	if not arg_38_1 then
 		return
 	end
 
 	pg.m02:sendNotification(GAME.CHARGE_FAILED, {
-		payId = arg_37_0,
-		code = arg_37_1
+		payId = arg_38_0,
+		code = arg_38_1
 	})
 
 	if PLATFORM == PLATFORM_IPHONEPLAYER then
-		pg.TipsMgr.GetInstance():ShowTips(i18n1("支付失败" .. arg_37_1))
-	elseif arg_37_1 == -5 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n1("订单签名异常" .. arg_37_1))
-	elseif arg_37_1 > 0 then
-		if arg_37_1 > 1000 and arg_37_1 < 2000 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n1("数据格式验证错误" .. arg_37_1))
-		elseif arg_37_1 >= 2000 and arg_37_1 < 3000 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n1("服务器返回异常" .. arg_37_1))
-		elseif arg_37_1 >= 3000 and arg_37_1 < 4000 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n1("未登录或者会话已超时" .. arg_37_1))
-		elseif arg_37_1 == 4000 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n1("系统错误" .. arg_37_1))
-		elseif arg_37_1 == 6001 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n1("用户中途取消" .. arg_37_1))
-		elseif arg_37_1 == 7005 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n1("支付失败" .. arg_37_1))
-		elseif arg_37_1 == 7004 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n1("支付失败" .. arg_37_1))
+		pg.TipsMgr.GetInstance():ShowTips(i18n1("支付失败" .. arg_38_1))
+	elseif arg_38_1 == -5 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n1("订单签名异常" .. arg_38_1))
+	elseif arg_38_1 > 0 then
+		if arg_38_1 > 1000 and arg_38_1 < 2000 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n1("数据格式验证错误" .. arg_38_1))
+		elseif arg_38_1 >= 2000 and arg_38_1 < 3000 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n1("服务器返回异常" .. arg_38_1))
+		elseif arg_38_1 >= 3000 and arg_38_1 < 4000 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n1("未登录或者会话已超时" .. arg_38_1))
+		elseif arg_38_1 == 4000 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n1("系统错误" .. arg_38_1))
+		elseif arg_38_1 == 6001 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n1("用户中途取消" .. arg_38_1))
+		elseif arg_38_1 == 7005 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n1("支付失败" .. arg_38_1))
+		elseif arg_38_1 == 7004 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n1("支付失败" .. arg_38_1))
 		end
-	elseif arg_37_1 == -201 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n1("生成订单失败" .. arg_37_1))
-	elseif arg_37_1 == -202 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n1("支付取消" .. arg_37_1))
-	elseif arg_37_1 == -203 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n1("支付失败" .. arg_37_1))
+	elseif arg_38_1 == -201 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n1("生成订单失败" .. arg_38_1))
+	elseif arg_38_1 == -202 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n1("支付取消" .. arg_38_1))
+	elseif arg_38_1 == -203 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n1("支付失败" .. arg_38_1))
 	end
 end
 
-function OnSDKInitFailed(arg_38_0)
+function OnSDKInitFailed(arg_39_0)
 	if not pg.m02 then
 		originalPrint("game is not start")
 
@@ -333,12 +339,12 @@ function OnSDKInitFailed(arg_38_0)
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		hideNo = true,
-		content = arg_38_0,
+		content = arg_39_0,
 		onYes = var_0_0.InitSDK
 	})
 end
 
-function ShowMsgBox(arg_39_0)
+function ShowMsgBox(arg_40_0)
 	if not pg.m02 then
 		originalPrint("game is not start")
 
@@ -347,7 +353,7 @@ function ShowMsgBox(arg_39_0)
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		hideNo = true,
-		content = arg_39_0
+		content = arg_40_0
 	})
 end
 

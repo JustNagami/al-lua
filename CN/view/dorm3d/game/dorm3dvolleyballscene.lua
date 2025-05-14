@@ -78,7 +78,7 @@ function var_0_0.preload(arg_8_0, arg_8_1)
 	arg_8_0.sceneRootName = "beach"
 	arg_8_0.sceneName = "map_beach_01"
 	arg_8_0.timelineSceneRootName = pg.dorm3d_dorm_template[var_8_0].asset_name
-	arg_8_0.timelineSceneName = string.lower(arg_8_0.volleyballCfg.scene_name)
+	arg_8_0.timelineSceneName = arg_8_0.volleyballCfg.scene_name
 
 	seriesAsync({
 		function(arg_9_0)
@@ -260,8 +260,6 @@ function var_0_0.initScene(arg_26_0)
 
 	arg_26_0.totalDirectorList = {}
 
-	local var_26_2 = tolua.createinstance(typeof("BLHX.Rendering.FinalBlit"))
-
 	table.IpairsCArray(var_26_1, function(arg_28_0, arg_28_1)
 		local var_28_0 = tf(arg_28_1):Find("[sequence]")
 
@@ -269,27 +267,23 @@ function var_0_0.initScene(arg_26_0)
 			return
 		end
 
-		local var_28_1 = tf(arg_28_1):Find("[camera]/MainCamera"):GetComponent("BLHX.Rendering.BuiltinAdditionalCameraData")
+		local var_28_1 = var_28_0:GetComponent(typeof(UnityEngine.Playables.PlayableDirector))
 
-		ReflectionHelp.RefSetField(typeof("BLHX.Rendering.BuiltinAdditionalCameraData"), "m_FinalBlit", var_28_1, var_26_2)
+		var_28_1.playOnAwake = false
 
-		local var_28_2 = var_28_0:GetComponent(typeof(UnityEngine.Playables.PlayableDirector))
+		var_28_1:Stop()
 
-		var_28_2.playOnAwake = false
+		local var_28_2 = var_28_0:GetComponentsInChildren(typeof(UnityEngine.Playables.PlayableDirector)):ToTable()
 
-		var_28_2:Stop()
+		for iter_28_0, iter_28_1 in ipairs(var_28_2) do
+			iter_28_1.playOnAwake = false
 
-		local var_28_3 = var_28_0:GetComponentsInChildren(typeof(UnityEngine.Playables.PlayableDirector), true)
-
-		for iter_28_0 = 0, var_28_3.Length - 1 do
-			var_28_3[iter_28_0].playOnAwake = false
-
-			var_28_3[iter_28_0]:Stop()
+			iter_28_1:Stop()
 		end
 
 		table.insert(arg_26_0.totalDirectorList, {
 			name = arg_28_1.name,
-			director = var_28_2
+			director = var_28_1
 		})
 		setActive(arg_28_1, false)
 	end)
@@ -846,28 +840,25 @@ end
 
 function var_0_0.DoTimelineRandomTrack(arg_91_0, arg_91_1)
 	local var_91_0 = {}
-	local var_91_1 = TimelineHelper.GetTimelineTracks(arg_91_1)
 
-	for iter_91_0 = 0, var_91_1.Length - 1 do
-		local var_91_2 = var_91_1[iter_91_0]
+	for iter_91_0, iter_91_1 in ipairs(TimelineHelper.GetTimelineTracks(arg_91_1):ToTable()) do
+		if iter_91_1.name ~= "Markers" then
+			iter_91_1.muted = true
 
-		if var_91_2.name ~= "Markers" then
-			var_91_2.muted = true
-
-			table.insert(var_91_0, var_91_2)
+			table.insert(var_91_0, iter_91_1)
 		end
 	end
 
 	if #var_91_0 > 0 then
-		local var_91_3 = var_91_0[math.random(#var_91_0)]
+		local var_91_1 = var_91_0[math.random(#var_91_0)]
 
 		underscore.each(var_91_0, function(arg_92_0)
-			if arg_92_0.name == var_91_3.name then
+			if arg_92_0.name == var_91_1.name then
 				arg_92_0.muted = false
 			end
 		end)
 
-		arg_91_0.debugTrackName.text = var_91_3.name
+		arg_91_0.debugTrackName.text = var_91_1.name
 	else
 		arg_91_0.debugTrackName.text = "track cnt 0"
 	end

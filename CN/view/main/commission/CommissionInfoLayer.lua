@@ -155,7 +155,7 @@ function var_0_0.didEnter(arg_11_0)
 
 		arg_11_0.isPaying = true
 
-		arg_11_0:PlayExitAnimation(function()
+		arg_11_0:PlayUIAnimation(arg_11_0._tf, "exit", function()
 			arg_11_0:emit(var_0_0.ON_CLOSE)
 
 			arg_11_0.isPaying = false

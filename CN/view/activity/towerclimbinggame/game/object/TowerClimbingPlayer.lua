@@ -48,11 +48,7 @@ function var_0_0.OnLoaded(arg_4_0, arg_4_1)
 		end
 	end)
 	arg_4_0.physics2DItem.CollisionStay:AddListener(function(arg_6_0)
-		local var_6_0 = {}
-
-		for iter_6_0 = 1, arg_6_0.contacts.Length do
-			table.insert(var_6_0, arg_6_0.contacts[iter_6_0 - 1])
-		end
+		local var_6_0 = arg_6_0.contacts:ToTable()
 
 		if arg_6_0.collider.name == TowerClimbingGameSettings.BLOCK_NAME then
 			arg_4_0.map:SendEvent("StayBlock", var_6_0, arg_4_0.rigbody.velocity)

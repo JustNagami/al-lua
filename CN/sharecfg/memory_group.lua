@@ -232,6 +232,8 @@ pg.memory_group = setmetatable({
 		323,
 		324,
 		325,
+		326,
+		327,
 		501,
 		502,
 		503,
@@ -339,6 +341,7 @@ pg.memory_group = setmetatable({
 		607,
 		608,
 		609,
+		610,
 		1000,
 		1001,
 		1002,
@@ -5432,7 +5435,7 @@ pg.base.memory_group = {
 		subtype = 3,
 		icon = "title_event",
 		type = 2,
-		link_event = 0,
+		link_event = 5911,
 		title = "港区时尚特刊：春日慵懒",
 		memories = {
 			4301,
@@ -5446,7 +5449,7 @@ pg.base.memory_group = {
 		subtype = 1,
 		icon = "title_event",
 		type = 2,
-		link_event = 5921,
+		link_event = 5901,
 		title = "扬起郁金之旗",
 		memories = {
 			4311,
@@ -5457,6 +5460,38 @@ pg.base.memory_group = {
 			4316,
 			4317,
 			4318
+		}
+	},
+	[326] = {
+		id = 326,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5924,
+		title = "假日别墅筹备中",
+		memories = {
+			4331,
+			4332,
+			4333,
+			4334,
+			4335
+		}
+	},
+	[327] = {
+		id = 327,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 5924,
+		title = "日不落的远征",
+		memories = {
+			4341,
+			4342,
+			4343,
+			4344,
+			4345,
+			4346,
+			4347
 		}
 	},
 	[501] = {
@@ -7289,6 +7324,23 @@ pg.base.memory_group = {
 			4295,
 			4296,
 			4297
+		}
+	},
+	[610] = {
+		id = 610,
+		subtype = 0,
+		icon = "title_chara_bunao",
+		type = 3,
+		link_event = 0,
+		title = "无效节能",
+		memories = {
+			4321,
+			4322,
+			4323,
+			4324,
+			4325,
+			4326,
+			4327
 		}
 	},
 	[1000] = {

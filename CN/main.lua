@@ -16,6 +16,7 @@ require("Include")
 require("tolua.reflection")
 tolua.loadassembly("Assembly-CSharp")
 tolua.loadassembly("UnityEngine.UI")
+tolua.loadassembly("Live2D.Cubism")
 math.randomseed(os.time())
 
 CSharpVersion = NetConst.GatewayState
@@ -34,9 +35,9 @@ end
 QualitySettings.vSyncCount = 0
 QualitySettings.skinWeights = ReflectionHelp.RefGetField(typeof("UnityEngine.SkinWeights"), "Unlimited", nil)
 
-tolua.loadassembly("com.blhx.builtin-pipeline.runtime")
-Dorm3dRoomTemplateScene.InitDefautQuality()
-Dorm3dRoomTemplateScene.SettingQuality()
+GraphicSettingConst.ClearPlayerPrefs()
+GraphicSettingConst.InitDefautQuality()
+GraphicSettingConst.SettingQuality()
 ReflectionHelp.RefSetField(typeof("ResourceMgr"), "_asyncMax", ResourceMgr.Inst, 30)
 
 tf(GameObject.Find("EventSystem")):GetComponent(typeof(EventSystem)).sendNavigationEvents = false
@@ -51,10 +52,12 @@ if IsUnityEditor then
 	end
 end
 
-ResourceMgr.Inst.enableAssetNameFinder = false
-
 if (PLATFORM_CODE == PLATFORM_CH and CSharpVersion < 48 or PLATFORM_CODE == PLATFORM_CHT) and PLATFORM == 8 then
 	pg.SdkMgr.GetInstance():InitSDK()
+end
+
+if PLATFORM_CODE == PLATFORM_CH then
+	BilibiliSdkMgr.checkSimulator = false
 end
 
 pg.TimeMgr.GetInstance():Init()
@@ -313,6 +316,7 @@ local function var_0_1(arg_12_0)
 			pg.BgmMgr.GetInstance():Init(arg_33_0)
 		end,
 		function(arg_34_0)
+			pg.SettingsGroupMgr.GetInstance():Init()
 			pg.FileDownloadMgr.GetInstance():Init(arg_34_0)
 		end,
 		function(arg_35_0)
@@ -351,14 +355,25 @@ seriesAsync({
 	var_0_0,
 	var_0_1
 }, function(arg_44_0)
+	require("HybridCLRConst")
+
+	local var_44_0 = Application.streamingAssetsPath .. "/AssetBundles/hybridclr/patch/"
+	local var_44_1 = HybridCLRConst.PatchDllList
+
+	Sandystar.HybridCLRTool.HybridCLRHelper.LoadPatchDLL(var_44_0, var_44_1)
+
+	local var_44_2 = Application.persistentDataPath .. "/AssetBundles/hybridclr/hotfix/"
+	local var_44_3 = HybridCLRConst.HotfixDllList
+
+	Sandystar.HybridCLRTool.HybridCLRHelper.LoadHotfixDLL(var_44_2, var_44_3)
 	pg.SdkMgr.GetInstance():QueryWithProduct()
 	print("loading cost: " .. os.clock() - var_0_2)
 	VersionMgr.Inst:DestroyUI()
 
-	local var_44_0 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
+	local var_44_4 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
 
-	if not IsNil(var_44_0) then
-		Object.Destroy(var_44_0)
+	if not IsNil(var_44_4) then
+		Object.Destroy(var_44_4)
 	end
 
 	Screen.sleepTimeout = SleepTimeout.SystemSetting

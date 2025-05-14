@@ -89,11 +89,12 @@ function var_0_0.LoadTimelineScene(arg_9_0, arg_9_1, arg_9_2)
 				local var_13_0 = GameObject.Find("[sequence]").transform:GetComponent(typeof(UnityEngine.Playables.PlayableDirector))
 
 				var_13_0:Stop()
+
+				local var_13_1 = GameObject.Find("[camera]").transform:GetComponentInChildren(typeof(Camera))
+
+				setActive(var_13_1, false)
 				TimelineSupport.InitTimeline(var_13_0)
 				TimelineSupport.InitSubtitle(var_13_0, arg_9_1.callName)
-
-				arg_9_1.unloadDirector = var_13_0
-
 				arg_12_0()
 			end)
 		end)
@@ -117,10 +118,6 @@ function var_0_0.UnloadTimelineScene(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
 
 	if tobool(arg_15_2) == tobool(var_15_0.isCache) then
 		local var_15_1 = var_15_0.assetRootName
-
-		if var_15_0.unloadDirector then
-			TimelineSupport.UnloadPlayable(var_15_0.unloadDirector)
-		end
 
 		SceneOpMgr.Inst:UnloadSceneAsync(string.lower("dorm3d/character/scenes/" .. var_15_1 .. "/timeline/" .. arg_15_1 .. "/" .. arg_15_1 .. "_scene"), arg_15_1, function()
 			arg_15_0.cacheSceneDic[arg_15_1] = nil
@@ -210,8 +207,6 @@ function var_0_0.ChangeArtScene(arg_17_0, arg_17_1, arg_17_2)
 end
 
 function var_0_0.ChangeSubScene(arg_26_0, arg_26_1, arg_26_2)
-	arg_26_1 = string.lower(arg_26_1)
-
 	warning(arg_26_0.subSceneInfo, "->", arg_26_1, arg_26_1 == arg_26_0.subSceneInfo)
 
 	if arg_26_1 == arg_26_0.subSceneInfo then

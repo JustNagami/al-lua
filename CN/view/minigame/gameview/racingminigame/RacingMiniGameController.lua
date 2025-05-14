@@ -8,23 +8,23 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 end
 
 local function var_0_1(arg_2_0, arg_2_1)
-	local var_2_0 = arg_2_0:GetComponentsInChildren(typeof(Animator), true)
+	local var_2_0 = arg_2_0:GetComponentsInChildren(typeof(Animator), true):ToTable()
 
-	for iter_2_0 = 0, var_2_0.Length - 1 do
-		var_2_0[iter_2_0].speed = arg_2_1
+	for iter_2_0, iter_2_1 in ipairs(var_2_0) do
+		iter_2_1.speed = arg_2_1
 	end
 end
 
 local function var_0_2(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_0:GetComponentsInChildren(typeof(SpineAnimUI), true)
+	local var_3_0 = arg_3_0:GetComponentsInChildren(typeof(SpineAnimUI), true):ToTable()
 
-	for iter_3_0 = 0, var_3_0.Length - 1 do
-		if IsNil(var_3_0[iter_3_0]) then
+	for iter_3_0, iter_3_1 in ipairs(var_3_0) do
+		if IsNil(iter_3_1) then
 			-- block empty
 		elseif arg_3_1 then
-			var_3_0[iter_3_0]:Pause()
+			iter_3_1:Pause()
 		else
-			var_3_0[iter_3_0]:Resume()
+			iter_3_1:Resume()
 		end
 	end
 end

@@ -5,9 +5,7 @@ function var_0_0.OnClick(arg_1_0)
 end
 
 function var_0_0.Flush(arg_2_0, arg_2_1)
-	local var_2_0 = pg.SdkMgr.GetInstance():IsAUPackage()
-
-	setActive(arg_2_0._tf, not var_2_0)
+	setActive(arg_2_0._tf, true)
 end
 
 function var_0_0.OpenCamera(arg_3_0)
@@ -25,14 +23,14 @@ function var_0_0.OpenCamera(arg_3_0)
 	end
 
 	local function var_3_3()
-		if CameraHelper.IsAndroid() then
+		if PermissionHelper.IsAndroid() then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("apply_permission_camera_tip3"),
 				onYes = function()
-					CameraHelper.RequestCamera(var_3_2, var_3_3)
+					PermissionHelper.RequestCamera(var_3_2, var_3_3)
 				end
 			})
-		elseif CameraHelper.IsIOS() then
+		elseif PermissionHelper.IsIOS() then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("apply_permission_camera_tip2")
 			})
@@ -42,7 +40,7 @@ function var_0_0.OpenCamera(arg_3_0)
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		content = i18n("apply_permission_camera_tip1"),
 		onYes = function()
-			CameraHelper.RequestCamera(var_3_2, var_3_3)
+			PermissionHelper.RequestCamera(var_3_2, var_3_3)
 		end
 	})
 end

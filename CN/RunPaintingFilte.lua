@@ -422,11 +422,7 @@ function SpecialFilteForConst()
 end
 
 function SpecialFilterForWorldStory(arg_34_0)
-	local var_34_0 = {}
-
-	for iter_34_0 = arg_34_0.Length, 1, -1 do
-		table.insert(var_34_0, arg_34_0[iter_34_0 - 1])
-	end
+	local var_34_0 = arg_34_0:ToTable()
 
 	return pg.NewStoryMgr.GetInstance():GetStoryPaintingsByNameList(var_34_0)
 end
