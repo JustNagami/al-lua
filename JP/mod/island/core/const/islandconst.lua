@@ -1,0 +1,87 @@
+﻿local var_0_0 = class("IslandConst")
+local var_0_1 = require("Framework.toLua.UnityEngine.Vector3")
+
+var_0_0.TAG_PLAYER = "Player"
+var_0_0.TAG_NPC = "Npc"
+var_0_0.TAG_CHAIR = "Chair"
+var_0_0.SPEED_FLAG_HASH = Animator.StringToHash("speed")
+var_0_0.SIT_HASH = Animator.StringToHash("sit")
+var_0_0.JUMP_FLAG = Animator.StringToHash("jump")
+var_0_0.GROUD_FLAG = Animator.StringToHash("groud")
+var_0_0.ANIM_JUMP_HASH = Animator.StringToHash("jump")
+var_0_0.ANIM_MOVE_HASH = Animator.StringToHash("movement")
+var_0_0.jumpState = Animator.StringToHash("jumpstart")
+var_0_0.RUN_FLAG = Animator.StringToHash("sprint")
+var_0_0.SprintState = Animator.StringToHash("sprint_s2")
+var_0_0.GRAVITY = -9.8
+var_0_0.UNIT_TYPE_ITEM = 0
+var_0_0.UNIT_TYPE_CHAR = 1
+var_0_0.UNIT_TYPE_PLAYER = 2
+var_0_0.UNIT_TYPE_ITEM_INTERACT = 3
+var_0_0.UNIT_TYPE_VISITOR = 10
+var_0_0.UNIT_TYPE_SYSTEM = 11
+var_0_0.SYNC_TYPE_PLAYER = 1
+var_0_0.SYNC_TYPE_UNIT_MOVE = 2
+var_0_0.SYNC_TYPE_UNIT_STATIC = 3
+var_0_0.SYNC_TYPE_AGORA = 4
+var_0_0.GRAVITYACC = 30
+var_0_0.GRAVITYDIR = var_0_1.down
+var_0_0.HEART_BEAT_INTERVAL = 10
+var_0_0.SYNC_TIME_INTERVAL = 0.1
+var_0_0.SYNC_TIME_DELAY = 110
+var_0_0.SYNC_TYPE_INTERACTION_SPEED = 1.5
+var_0_0.SYNC_TYPE_INTERACTION_TIME = 2000
+var_0_0.SYNC_TYPE_INTERACTION_TEST = 10010042
+var_0_0.SYNC_TEST_DELAY_L = 100
+var_0_0.SYNC_TEST_DELAY_R = 200
+var_0_0.SYNC_TEST_DELAY_ON = true
+var_0_0.SPAWN_PLAYER_ID = 0
+var_0_0.SPAWN_PLAYER_ID_OTHER = 299030
+var_0_0.ACCESS_TYPE_CLOSE = 0
+var_0_0.ACCESS_TYPE_OPEN = 1
+var_0_0.ACCESS_OP_SET_WHITELIST = 1
+var_0_0.ACCESS_OP_SET_BLACKLIST = 2
+var_0_0.ACCESS_OP_KICK = 3
+var_0_0.ACCESS_OP_KICKANDBLACKLIST = 4
+var_0_0.PLAYER_DATA_STATE_EMPTY = 0
+var_0_0.PLAYER_DATA_STATE_ENTER = 1
+var_0_0.PLAYER_DATA_STATE_EXIT = 2
+var_0_0.AGORA_MAP_ID = 1003
+var_0_0.SEEK_GAME_MAP_ID = 1009
+var_0_0.FOLLOW_CAMERA_NAME = "FollowCamera"
+var_0_0.INTERACTION_CAMERA_NAME = "InterActionCamera"
+var_0_0.AGORA_CAMERA_NAME = "AgoraCamera"
+var_0_0.ROLEDELEGATION_CAMERA_NAME = "RoleDelegationCamera"
+var_0_0.PLAYER_INPUT_INDEX = 0
+var_0_0.AGORA_INPUT_INDEX = 1
+var_0_0.LAYER_AGORA = "Agora"
+var_0_0.AGORA_ITEM_DIR_0 = 0
+var_0_0.AGORA_ITEM_DIR_90 = 1
+var_0_0.AGORA_ITEM_DIR_180 = 2
+var_0_0.AGORA_ITEM_DIR_270 = 3
+var_0_0.AGORA_LEVEL_2_SIZE = {
+	54,
+	66,
+	78
+}
+var_0_0.SHOP_GET_DATA = 1
+var_0_0.SHOP_BUY_COMMODITY = 2
+var_0_0.SHOP_REFRESH_BY_PLAYER = 3
+var_0_0.SHOP_TYPE_RECOMMENDATION = 1
+var_0_0.SHOP_TYPE_2D = 2
+var_0_0.SHOP_TYPE_3D = 3
+var_0_0.SHOP_TYPE_FURNITURE = 4
+var_0_0.SHOP_TYPE_SKIN = 5
+var_0_0.COMMODITY_SHOW_ITEM_FULL = 1
+var_0_0.COMMODITY_SHOW_ITEM_HALF = 2
+var_0_0.COMMODITY_SHOW_SKIN = 3
+var_0_0.COMMODITY_SHOW_FURNITURE = 4
+var_0_0.COMMODITY_SHOW_SKIN_PACK = 5
+var_0_0.COMMODITY_SHOW_FURNITURE_PACK = 6
+var_0_0.STORY_TYPE_BUBBLE = 1
+var_0_0.STORY_TYPE_DIALOGUE = 2
+var_0_0.BANNER_TYPE_OPEN_URL = 1
+var_0_0.BANNER_TYPE_SWITCH_MAP = 2
+var_0_0.BANNER_TYPE_OPEN_PAGE = 3
+
+return var_0_0

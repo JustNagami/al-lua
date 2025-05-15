@@ -162,7 +162,7 @@ function var_0_0.InitCustoms(arg_12_0, arg_12_1)
 		local var_12_9 = var_12_3[iter_12_2]
 
 		setText(findTF(iter_12_3, "Image"), i18n(var_12_1.names[iter_12_2]))
-		setImageSprite(iter_12_3, arg_12_0.greySprite)
+		arg_12_0:UpdateBtnStyle(iter_12_3, arg_12_0.greySprite)
 		onButton(arg_12_0, iter_12_3, function()
 			switch(var_12_4, {
 				[var_0_0.Mode.AND] = function()
@@ -213,14 +213,14 @@ function var_0_0.InitCustoms(arg_12_0, arg_12_1)
 						local var_18_0 = var_12_3[iter_18_0] == var_12_3[1]
 						local var_18_1 = findTF(iter_18_1, "Image")
 
-						setImageSprite(iter_18_1, var_18_0 and var_12_6 or arg_12_0.greySprite)
+						arg_12_0:UpdateBtnStyle(iter_18_1, var_18_0 and var_12_6 or arg_12_0.greySprite)
 					end
 				else
 					for iter_18_2, iter_18_3 in ipairs(var_12_8) do
 						local var_18_2 = var_12_3[iter_18_2] ~= var_12_3[1] and bit.band(arg_12_0.contextData.indexDatas[var_12_0], var_12_3[iter_18_2]) > 0
 						local var_18_3 = findTF(iter_18_3, "Image")
 
-						setImageSprite(iter_18_3, var_18_2 and var_12_6 or arg_12_0.greySprite)
+						arg_12_0:UpdateBtnStyle(iter_18_3, var_18_2 and var_12_6 or arg_12_0.greySprite)
 					end
 				end
 			end,
@@ -229,7 +229,7 @@ function var_0_0.InitCustoms(arg_12_0, arg_12_1)
 					local var_19_0 = var_12_3[iter_19_0] == arg_12_0.contextData.indexDatas[var_12_0]
 					local var_19_1 = findTF(iter_19_1, "Image")
 
-					setImageSprite(iter_19_1, var_19_0 and var_12_6 or arg_12_0.greySprite)
+					arg_12_0:UpdateBtnStyle(iter_19_1, var_19_0 and var_12_6 or arg_12_0.greySprite)
 				end
 			end,
 			[var_0_0.Mode.NUM] = function()
@@ -237,7 +237,7 @@ function var_0_0.InitCustoms(arg_12_0, arg_12_1)
 					local var_20_0 = bit.band(arg_12_0.contextData.indexDatas[var_12_0], var_12_3[iter_20_0]) > 0
 					local var_20_1 = findTF(iter_20_1, "Image")
 
-					setImageSprite(iter_20_1, var_20_0 and var_12_6 or arg_12_0.greySprite)
+					arg_12_0:UpdateBtnStyle(iter_20_1, var_20_0 and var_12_6 or arg_12_0.greySprite)
 				end
 			end
 		})
@@ -282,83 +282,87 @@ function var_0_0.InitCustoms(arg_12_0, arg_12_1)
 	end
 end
 
-function var_0_0.OnDatasChange(arg_22_0, arg_22_1)
-	local var_22_0 = arg_22_0.contextData.dropdownLimit or {}
+function var_0_0.UpdateBtnStyle(arg_22_0, arg_22_1, arg_22_2)
+	setImageSprite(arg_22_1, arg_22_2)
+end
 
-	for iter_22_0, iter_22_1 in pairs(arg_22_0.dropdownDic) do
-		if var_22_0[iter_22_0] ~= nil then
-			local var_22_1 = var_22_0[iter_22_0].include
-			local var_22_2 = var_22_0[iter_22_0].exclude
+function var_0_0.OnDatasChange(arg_23_0, arg_23_1)
+	local var_23_0 = arg_23_0.contextData.dropdownLimit or {}
 
-			if var_22_2[arg_22_1] ~= nil or var_22_1[arg_22_1] ~= nil then
-				local var_22_3 = arg_22_0.contextData.indexDatas[arg_22_1]
-				local var_22_4 = false
+	for iter_23_0, iter_23_1 in pairs(arg_23_0.dropdownDic) do
+		if var_23_0[iter_23_0] ~= nil then
+			local var_23_1 = var_23_0[iter_23_0].include
+			local var_23_2 = var_23_0[iter_23_0].exclude
 
-				if var_22_2[arg_22_1] ~= nil and var_22_3 == var_22_2[arg_22_1] then
-					var_22_4 = false
-				elseif var_22_1[arg_22_1] ~= nil then
-					var_22_4 = bit.band(var_22_3, var_22_1[arg_22_1]) > 0
+			if var_23_2[arg_23_1] ~= nil or var_23_1[arg_23_1] ~= nil then
+				local var_23_3 = arg_23_0.contextData.indexDatas[arg_23_1]
+				local var_23_4 = false
+
+				if var_23_2[arg_23_1] ~= nil and var_23_3 == var_23_2[arg_23_1] then
+					var_23_4 = false
+				elseif var_23_1[arg_23_1] ~= nil then
+					var_23_4 = bit.band(var_23_3, var_23_1[arg_23_1]) > 0
 				end
 
-				setActive(arg_22_0.dropdownDic[iter_22_0].virtualBtn, var_22_4)
+				setActive(arg_23_0.dropdownDic[iter_23_0].virtualBtn, var_23_4)
 
-				if not arg_22_0.onInit then
-					arg_22_0.contextData.indexDatas[iter_22_0] = arg_22_0.contextData.customPanels[iter_22_0].options[1]
+				if not arg_23_0.onInit then
+					arg_23_0.contextData.indexDatas[iter_23_0] = arg_23_0.contextData.customPanels[iter_23_0].options[1]
 				end
 
-				arg_22_0.dropdownDic[iter_22_0]:UpdateVirtualBtn()
-				arg_22_0.dropdownDic[iter_22_0]:ActionInvoke("SelectLast")
+				arg_23_0.dropdownDic[iter_23_0]:UpdateVirtualBtn()
+				arg_23_0.dropdownDic[iter_23_0]:ActionInvoke("SelectLast")
 			end
 		end
 	end
 end
 
-function var_0_0.willExit(arg_23_0)
-	LeanTween.cancel(go(arg_23_0.panel))
+function var_0_0.willExit(arg_24_0)
+	LeanTween.cancel(go(arg_24_0.panel))
 
-	for iter_23_0, iter_23_1 in pairs(arg_23_0.dropdownDic) do
-		iter_23_1:Destroy()
+	for iter_24_0, iter_24_1 in pairs(arg_24_0.dropdownDic) do
+		iter_24_1:Destroy()
 	end
 
-	for iter_23_2, iter_23_3 in pairs(arg_23_0.simpleDropdownDic) do
-		for iter_23_4, iter_23_5 in pairs(iter_23_3) do
-			iter_23_5:Destroy()
+	for iter_24_2, iter_24_3 in pairs(arg_24_0.simpleDropdownDic) do
+		for iter_24_4, iter_24_5 in pairs(iter_24_3) do
+			iter_24_5:Destroy()
 		end
 	end
 
-	arg_23_0.updateList = nil
+	arg_24_0.updateList = nil
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg_23_0._tf)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_24_0._tf)
 end
 
-function var_0_0.Clone2Full(arg_24_0, arg_24_1)
-	local var_24_0 = {}
-	local var_24_1 = arg_24_0:GetChild(0)
-	local var_24_2 = arg_24_0.childCount
+function var_0_0.Clone2Full(arg_25_0, arg_25_1)
+	local var_25_0 = {}
+	local var_25_1 = arg_25_0:GetChild(0)
+	local var_25_2 = arg_25_0.childCount
 
-	for iter_24_0 = 0, var_24_2 - 1 do
-		table.insert(var_24_0, arg_24_0:GetChild(iter_24_0))
+	for iter_25_0 = 0, var_25_2 - 1 do
+		table.insert(var_25_0, arg_25_0:GetChild(iter_25_0))
 	end
 
-	for iter_24_1 = var_24_2, arg_24_1 - 1 do
-		local var_24_3 = cloneTplTo(var_24_1, arg_24_0)
+	for iter_25_1 = var_25_2, arg_25_1 - 1 do
+		local var_25_3 = cloneTplTo(var_25_1, arg_25_0)
 
-		var_24_3.name = iter_24_1
+		var_25_3.name = iter_25_1
 
-		table.insert(var_24_0, tf(var_24_3))
+		table.insert(var_25_0, tf(var_25_3))
 	end
 
-	local var_24_4 = arg_24_0.childCount
+	local var_25_4 = arg_25_0.childCount
 
-	for iter_24_2 = 0, var_24_4 - 1 do
-		setActive(arg_24_0:GetChild(iter_24_2), iter_24_2 < arg_24_1)
+	for iter_25_2 = 0, var_25_4 - 1 do
+		setActive(arg_25_0:GetChild(iter_25_2), iter_25_2 < arg_25_1)
 	end
 
-	for iter_24_3 = var_24_4, arg_24_1 + 1, -1 do
-		table.remove(var_24_0)
+	for iter_25_3 = var_25_4, arg_25_1 + 1, -1 do
+		table.remove(var_25_0)
 	end
 
-	return var_24_0
+	return var_25_0
 end
 
 return var_0_0

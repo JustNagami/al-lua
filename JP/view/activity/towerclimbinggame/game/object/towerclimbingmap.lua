@@ -219,31 +219,26 @@ function var_0_0.OnCreateBlock(arg_22_0, arg_22_1, arg_22_2)
 
 		setActive(arg_23_0, true)
 
-		local var_23_0 = arg_23_0:GetComponentsInChildren(typeof(UnityEngine.Collider2D))
-		local var_23_1 = {}
-
-		for iter_23_0 = 1, var_23_0.Length do
-			table.insert(var_23_1, var_23_0[iter_23_0 - 1])
-		end
+		local var_23_0 = arg_23_0:GetComponentsInChildren(typeof(UnityEngine.Collider2D)):ToTable()
 
 		table.insert(arg_22_0.blocks, {
 			go = arg_23_0,
 			block = arg_22_1,
-			colliders = var_23_1
+			colliders = var_23_0
 		})
 		arg_22_0:OnActiveBlock(arg_22_1)
 
-		local var_23_2 = TowerClimbingGameSettings.FIRE_TIME[1]
-		local var_23_3 = TowerClimbingGameSettings.FIRE_TIME[2]
-		local var_23_4 = math.random(var_23_2, var_23_3)
-		local var_23_5 = arg_23_0.transform:Find("firer")
+		local var_23_1 = TowerClimbingGameSettings.FIRE_TIME[1]
+		local var_23_2 = TowerClimbingGameSettings.FIRE_TIME[2]
+		local var_23_3 = math.random(var_23_1, var_23_2)
+		local var_23_4 = arg_23_0.transform:Find("firer")
 
-		if var_23_5 then
-			local var_23_6 = var_23_5:GetComponent(typeof(Animation))
+		if var_23_4 then
+			local var_23_5 = var_23_4:GetComponent(typeof(Animation))
 
 			arg_22_0.timers[arg_22_1.level] = Timer.New(function()
-				var_23_6:Play("action")
-			end, var_23_4, -1)
+				var_23_5:Play("action")
+			end, var_23_3, -1)
 
 			arg_22_0.timers[arg_22_1.level]:Start()
 		end

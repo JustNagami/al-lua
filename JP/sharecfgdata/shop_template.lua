@@ -40739,7 +40739,7 @@ _G.pg.base.shop_template[70773] = {
 	tag = 1,
 	limit_args2 = "",
 	time_second = 0,
-	order = 10,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -40755,8 +40755,8 @@ _G.pg.base.shop_template[70773] = {
 		{
 			{
 				2025,
-				2,
-				27
+				5,
+				14
 			},
 			{
 				0,
@@ -40767,8 +40767,8 @@ _G.pg.base.shop_template[70773] = {
 		{
 			{
 				2025,
-				3,
-				12
+				5,
+				19
 			},
 			{
 				23,
@@ -45701,7 +45701,7 @@ _G.pg.base.shop_template[70912] = {
 	tag = 1,
 	limit_args2 = "",
 	time_second = 0,
-	order = 10,
+	order = 1,
 	group = 0,
 	num = 1,
 	discount = 0,
@@ -45716,9 +45716,9 @@ _G.pg.base.shop_template[70912] = {
 	time = {
 		{
 			{
-				2024,
-				9,
-				12
+				2025,
+				5,
+				14
 			},
 			{
 				0,
@@ -45728,9 +45728,9 @@ _G.pg.base.shop_template[70912] = {
 		},
 		{
 			{
-				2024,
-				10,
-				2
+				2025,
+				5,
+				19
 			},
 			{
 				23,

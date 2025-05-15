@@ -65,10 +65,10 @@ function var_0_0.Init(arg_7_0)
 		var_7_0.raycastTarget = false
 	end
 
-	local var_7_1 = arg_7_0.moduleTF:GetComponentsInChildren(typeof(UnityEngine.UI.Graphic), true)
+	local var_7_1 = arg_7_0.moduleTF:GetComponentsInChildren(typeof(UnityEngine.UI.Graphic), true):ToTable()
 
-	for iter_7_0 = 0, var_7_1.Length - 1 do
-		var_7_1[iter_7_0].raycastTarget = false
+	for iter_7_0, iter_7_1 in ipairs(var_7_1) do
+		iter_7_1.raycastTarget = false
 	end
 
 	local var_7_2 = Vector2.zero

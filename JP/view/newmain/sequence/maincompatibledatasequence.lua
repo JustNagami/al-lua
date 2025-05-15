@@ -3,7 +3,7 @@
 function var_0_0.Execute(arg_1_0, arg_1_1)
 	seriesAsync({
 		function(arg_2_0)
-			getProxy(IslandProxy):CheckAndRequest(arg_2_0)
+			getProxy(SixthAnniversaryIslandProxy):CheckAndRequest(arg_2_0)
 		end,
 		function(arg_3_0)
 			arg_1_0:CheckSpecialDayForEducateChar(arg_3_0)

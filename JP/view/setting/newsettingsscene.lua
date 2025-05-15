@@ -121,7 +121,7 @@ function var_0_0.didEnter(arg_13_0)
 		end, SFX_PANEL)
 	end
 
-	setActive(arg_13_0.otherTip, PlayerPrefs.GetFloat("firstIntoOtherPanel") == 0)
+	setActive(arg_13_0.otherTip, PlayerPrefs.GetInt("firstIntoOtherPanel", 0) == 0)
 	arg_13_0:EnterDefaultPage()
 end
 
@@ -157,6 +157,10 @@ function var_0_0.SwitchPage(arg_21_0, arg_21_1)
 	var_21_0:ExecuteAction("Show")
 
 	arg_21_0.page = var_21_0
+
+	if isa(var_21_0, Settings3DPage) then
+		arg_21_0.hasShow3d = true
+	end
 
 	if isa(var_21_0, SettingsOtherPage) and isActive(arg_21_0.otherTip) then
 		setActive(arg_21_0.otherTip, false)
@@ -194,7 +198,9 @@ function var_0_0.onBackPressed(arg_24_0)
 end
 
 function var_0_0.willExit(arg_25_0)
-	Dorm3dRoomTemplateScene.SettingQuality()
+	if arg_25_0.hasShow3d then
+		GraphicSettingConst.SettingQuality()
+	end
 
 	for iter_25_0, iter_25_1 in pairs(arg_25_0.pages) do
 		iter_25_1:Destroy()

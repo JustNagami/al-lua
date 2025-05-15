@@ -150,7 +150,13 @@ function var_0_0.init(arg_9_0)
 
 	arg_9_0.loginPanelView:SetShareData(arg_9_0.shareData)
 
-	arg_9_0.airiLoginPanelView = AiriLoginPanelView.New(arg_9_0._tf, arg_9_0.event, arg_9_0.contextData)
+	arg_9_0.airiLoginPanelView = nil
+
+	if PLATFORM_CODE == PLATFORM_US then
+		arg_9_0.airiLoginPanelView = AiriUSLoginPanelView.New(arg_9_0._tf, arg_9_0.event, arg_9_0.contextData)
+	else
+		arg_9_0.airiLoginPanelView = AiriLoginPanelView.New(arg_9_0._tf, arg_9_0.event, arg_9_0.contextData)
+	end
 
 	arg_9_0.loginPanelView:SetShareData(arg_9_0.shareData)
 

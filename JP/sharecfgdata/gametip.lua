@@ -16549,7 +16549,7 @@ _G.pg.base.gametip.Settings_title_Other = {
 	tip = "ゲーム設定"
 }
 _G.pg.base.gametip.Settings_title_LoginJP = {
-	tip = "引継コード"
+	tip = "アカウント"
 }
 _G.pg.base.gametip.Settings_title_Redeem = {
 	tip = "特典コード"
@@ -24444,7 +24444,7 @@ _G.pg.base.gametip.specialshipyard_name = {
 	tip = "特殊ドック："
 }
 _G.pg.base.gametip.liner_sign_cnt_tip = {
-	tip = "現在入手可能数"
+	tip = "入手まであと："
 }
 _G.pg.base.gametip.liner_sign_unlock_tip = {
 	tip = "5.21メンテ後開放"
@@ -26860,4 +26860,124 @@ _G.pg.base.gametip.xiaoankeleiqi_npc = {
 			info = "7.仮加入状態の【リトル・アンカレッジ】は大艦隊作戦には参加できません。"
 		}
 	}
+}
+_G.pg.base.gametip.destroy_importantequipment_tip = {
+	tip = "<color=#92fc63>重要</color>"
+}
+_G.pg.base.gametip.yostar_login_btn = {
+	tip = "ログイン"
+}
+_G.pg.base.gametip.yostar_trans_btn = {
+	tip = "復旧&連携ページ"
+}
+_G.pg.base.gametip.yostar_account_btn = {
+	tip = "アカウント管理"
+}
+_G.pg.base.gametip.grapihcs3d_setting_enable_gup_driver = {
+	tip = "GPUPUを許可"
+}
+_G.pg.base.gametip.grapihcs3d_setting_resolution = {
+	tip = "最大解像度"
+}
+_G.pg.base.gametip.grapihcs3d_setting_resolution_optionname0 = {
+	tip = "720P"
+}
+_G.pg.base.gametip.grapihcs3d_setting_resolution_optionname1 = {
+	tip = "1080P"
+}
+_G.pg.base.gametip.grapihcs3d_setting_resolution_optionname2 = {
+	tip = "2K"
+}
+_G.pg.base.gametip.grapihcs3d_setting_rendering_quality = {
+	tip = "レンダリング精度"
+}
+_G.pg.base.gametip.grapihcs3d_setting_rendering_quality_optionname0 = {
+	tip = "低"
+}
+_G.pg.base.gametip.grapihcs3d_setting_rendering_quality_optionname1 = {
+	tip = "高"
+}
+_G.pg.base.gametip.grapihcs3d_setting_shader_quality = {
+	tip = "シェーダー精度"
+}
+_G.pg.base.gametip.grapihcs3d_setting_shader_quality_optionname0 = {
+	tip = "低"
+}
+_G.pg.base.gametip.grapihcs3d_setting_shader_quality_optionname1 = {
+	tip = "高"
+}
+_G.pg.base.gametip.grapihcs3d_setting_shadow_quality = {
+	tip = "影の品質"
+}
+_G.pg.base.gametip.grapihcs3d_setting_shadow_quality_optionname0 = {
+	tip = "オフ"
+}
+_G.pg.base.gametip.grapihcs3d_setting_shadow_quality_optionname1 = {
+	tip = "低"
+}
+_G.pg.base.gametip.grapihcs3d_setting_shadow_quality_optionname2 = {
+	tip = "中"
+}
+_G.pg.base.gametip.grapihcs3d_setting_shadow_quality_optionname3 = {
+	tip = "高"
+}
+_G.pg.base.gametip.grapihcs3d_setting_shadow_update_mode = {
+	tip = "影の更新頻度"
+}
+_G.pg.base.gametip.grapihcs3d_setting_shadow_update_mode_optionname0 = {
+	tip = "低"
+}
+_G.pg.base.gametip.grapihcs3d_setting_shadow_update_mode_optionname1 = {
+	tip = "中"
+}
+_G.pg.base.gametip.grapihcs3d_setting_shadow_update_mode_optionname2 = {
+	tip = "高"
+}
+_G.pg.base.gametip.grapihcs3d_setting_shadow_update_mode_optionname3 = {
+	tip = "毎フレーム"
+}
+_G.pg.base.gametip.grapihcs3d_setting_terrain_layer_quality = {
+	tip = "環境の品質"
+}
+_G.pg.base.gametip.grapihcs3d_setting_terrain_layer_quality_optionname0 = {
+	tip = "低"
+}
+_G.pg.base.gametip.grapihcs3d_setting_terrain_layer_quality_optionname1 = {
+	tip = "中"
+}
+_G.pg.base.gametip.grapihcs3d_setting_terrain_layer_quality_optionname2 = {
+	tip = "高"
+}
+_G.pg.base.gametip.grapihcs3d_setting_enable_additional_lights = {
+	tip = "マルチライト"
+}
+_G.pg.base.gametip.grapihcs3d_setting_enable_reflection = {
+	tip = "リフレクション"
+}
+_G.pg.base.gametip.grapihcs3d_setting_character_quality = {
+	tip = "キャラの品質"
+}
+_G.pg.base.gametip.grapihcs3d_setting_character_quality_optionname0 = {
+	tip = "低"
+}
+_G.pg.base.gametip.grapihcs3d_setting_character_quality_optionname1 = {
+	tip = "中"
+}
+_G.pg.base.gametip.grapihcs3d_setting_character_quality_optionname2 = {
+	tip = "高"
+}
+_G.pg.base.gametip.grapihcs3d_setting_enable_post_process = {
+	tip = "ポストプロセス"
+}
+_G.pg.base.gametip.grapihcs3d_setting_enable_post_antialiasing = {
+	tip = "アンチエイリアス"
+}
+_G.pg.base.gametip.grapihcs3d_setting_enable_hdr = {
+	tip = "HDR"
+}
+_G.pg.base.gametip.grapihcs3d_setting_enable_distort = {
+	tip = "ディストーション"
+}
+_G.pg.base.gametip.grapihcs3d_setting_enable_dof = {
+	tip = "DOF"
 }

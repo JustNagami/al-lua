@@ -187,30 +187,27 @@ end
 
 function var_0_0.AdjustMapEffect(arg_17_0, arg_17_1)
 	local var_17_0 = -math.huge
-	local var_17_1 = arg_17_1:GetComponentsInChildren(typeof(Canvas))
+	local var_17_1 = arg_17_1:GetComponentsInChildren(typeof(Canvas)):ToTable()
 
-	for iter_17_0 = 1, var_17_1.Length do
-		local var_17_2 = var_17_1[iter_17_0 - 1]
-
-		if var_17_0 < var_17_2.sortingOrder then
-			var_17_0 = var_17_2.sortingOrder
+	for iter_17_0, iter_17_1 in ipairs(var_17_1) do
+		if var_17_0 < iter_17_1.sortingOrder then
+			var_17_0 = iter_17_1.sortingOrder
 		end
 	end
 
-	local var_17_3 = arg_17_1:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer"))
+	local var_17_2 = arg_17_1:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer")):ToTable()
 
-	for iter_17_1 = 1, var_17_3.Length do
-		local var_17_4 = var_17_3[iter_17_1 - 1]
-		local var_17_5 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", var_17_4)
+	for iter_17_2, iter_17_3 in ipairs(var_17_2) do
+		local var_17_3 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", iter_17_3)
 
-		if var_17_0 < var_17_5 then
-			var_17_0 = var_17_5
+		if var_17_0 < var_17_3 then
+			var_17_0 = var_17_3
 		end
 	end
 
-	for iter_17_2, iter_17_3 in ipairs(arg_17_0.paintingCanvases) do
-		iter_17_3.overrideSorting = true
-		iter_17_3.sortingOrder = var_17_0 + (iter_17_2 == 3 and 2 or 1)
+	for iter_17_4, iter_17_5 in ipairs(arg_17_0.paintingCanvases) do
+		iter_17_5.overrideSorting = true
+		iter_17_5.sortingOrder = var_17_0 + (iter_17_4 == 3 and 2 or 1)
 	end
 end
 

@@ -29,37 +29,37 @@ function var_0_0.Tracking(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 	if arg_2_1 == TRACKING_USER_LEVELUP then
 		originalPrint("tracking lvl:" .. arg_2_3)
 
-		local var_2_1 = AiriUserEvent.New(var_2_0)
+		local var_2_1 = YongshiUserEvent.New(var_2_0)
 
 		var_2_1:AddParam("lvl", arg_2_3)
 		var_2_1:AddParam("user_id", arg_2_2)
 		pg.SdkMgr.GetInstance():UserEventUpload(var_2_1)
 	elseif arg_2_1 == TRACKING_PURCHASE_CLICK then
-		local var_2_2 = AiriUserEvent.New(var_2_0)
+		local var_2_2 = YongshiUserEvent.New(var_2_0)
 
 		var_2_2:AddParam("user_id", arg_2_2)
 		pg.SdkMgr.GetInstance():UserEventUpload(var_2_2)
 	elseif arg_2_1 == TRACKING_PURCHASE_FIRST then
 		originalPrint("order id : " .. arg_2_3)
 
-		local var_2_3 = AiriUserEvent.New(var_2_0)
+		local var_2_3 = YongshiUserEvent.New(var_2_0)
 
 		var_2_3:AddParam("user_id", arg_2_2)
 		var_2_3:AddParam("order_id", arg_2_3)
 		pg.SdkMgr.GetInstance():UserEventUpload(var_2_3)
 	elseif arg_2_1 == TRACKING_2D_RETENTION or arg_2_1 == TRACKING_7D_RETENTION then
-		local var_2_4 = AiriUserEvent.New(var_2_0)
+		local var_2_4 = YongshiUserEvent.New(var_2_0)
 
 		var_2_4:AddParam("user_id", arg_2_2)
 		pg.SdkMgr.GetInstance():UserEventUpload(var_2_4)
 	elseif arg_2_1 == TRACKING_ROLE_LOGIN then
-		local var_2_5 = AiriUserEvent.New(var_2_0)
+		local var_2_5 = YongshiUserEvent.New(var_2_0)
 
 		var_2_5:AddParam("user_id", arg_2_2)
 		var_2_5:AddParam("airi_uid", pg.SdkMgr.GetInstance().airi_uid)
 		pg.SdkMgr.GetInstance():UserEventUpload(var_2_5)
 	else
-		local var_2_6 = AiriUserEvent.New(var_2_0)
+		local var_2_6 = YongshiUserEvent.New(var_2_0)
 
 		var_2_6:AddParam("user_id", arg_2_2)
 		pg.SdkMgr.GetInstance():UserEventUpload(var_2_6)

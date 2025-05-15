@@ -2,13 +2,13 @@
 
 function var_0_0.OnShowTranscode(arg_1_0, arg_1_1)
 	if PLATFORM_CODE == PLATFORM_JP then
-		arg_1_0:GetPanel(SettingsAccountJPPanle):showTranscode(arg_1_1)
+		-- block empty
 	end
 end
 
 function var_0_0.OnCheckAllAccountState(arg_2_0)
 	if PLATFORM_CODE == PLATFORM_JP then
-		arg_2_0:GetPanel(SettingsAccountJPPanle):checkAllAccountState()
+		-- block empty
 	elseif PLATFORM_CODE == PLATFORM_US then
 		arg_2_0:GetPanel(SettingsAccountUSPanle):checkAllAccountState_US()
 	end
@@ -76,7 +76,7 @@ function var_0_0.GetPanels(arg_5_0)
 		end
 	end
 
-	if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
+	if PLATFORM_CODE == PLATFORM_US then
 		table.insert(var_5_0, SettingsAccountSpecialPanel)
 	end
 
@@ -106,11 +106,12 @@ function var_0_0.NeedRedeem(arg_6_0)
 end
 
 function var_0_0.OnInitPanle(arg_7_0)
-	if PlayerPrefs.GetFloat("firstIntoOtherPanel") == 0 then
+	if PlayerPrefs.GetInt("firstIntoOtherPanel", 0) == 0 then
 		local var_7_0 = arg_7_0:GetPanel(SettingsSecondPasswordPanle)
 
 		arg_7_0:ScrollToPanel(var_7_0)
-		PlayerPrefs.SetFloat("firstIntoOtherPanel", 1)
+		PlayerPrefs.DeleteKey("firstIntoOtherPanel")
+		PlayerPrefs.SetInt("firstIntoOtherPanel", 1)
 		PlayerPrefs.Save()
 	end
 end

@@ -249,6 +249,8 @@ function var_0_0.CheckNeedUserAgreement(arg_28_0)
 		return false
 	elseif PLATFORM_CODE == PLATFORM_CH then
 		return false
+	elseif PLATFORM_CODE == PLATFORM_JP then
+		return false
 	else
 		return arg_28_0:GetUserAgreementFlag() > arg_28_0._userAgreement
 	end

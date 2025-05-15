@@ -5,7 +5,7 @@ function var_0_0.GetEventName(arg_1_0)
 end
 
 function var_0_0.GetActivity(arg_2_0)
-	if arg_2_0.config.time and arg_2_0.config.time[1] == "default" then
+	if arg_2_0.config and arg_2_0.config.time and arg_2_0.config.time[1] == "default" then
 		local var_2_0 = arg_2_0.config.time[2]
 		local var_2_1 = pg.activity_template[var_2_0].type
 		local var_2_2 = getProxy(ActivityProxy):getActivitiesByType(var_2_1)

@@ -227,7 +227,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 			true
 		},
 		{
-			IslandProxy,
+			SixthAnniversaryIslandProxy,
 			true
 		},
 		{
@@ -268,6 +268,10 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		},
 		{
 			GMTProxy,
+			true
+		},
+		{
+			IslandProxy,
 			true
 		}
 	})
@@ -344,6 +348,8 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 
 			Dorm3dRoomTemplateScene.FirstDefaultSetting = nil
 		end
+
+		pg.SdkMgr.GetInstance():QueryPendingTransaction()
 	end, nil, 60)
 end
 

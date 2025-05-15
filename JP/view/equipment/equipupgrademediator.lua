@@ -15,6 +15,7 @@ function var_0_0.register(arg_1_0)
 
 	arg_1_0.viewComponent:updateRes(var_1_1:getData())
 	arg_1_0:bind(var_0_0.EQUIPMENT_UPGRDE, function(arg_2_0)
+		pg.UIMgr.GetInstance():LoadingOn()
 		arg_1_0:sendNotification(GAME.UPGRADE_EQUIPMENTS, {
 			shipId = arg_1_0.contextData.shipId,
 			pos = arg_1_0.contextData.pos,
@@ -76,6 +77,7 @@ function var_0_0.handleNotification(arg_5_0, arg_5_1)
 
 		arg_5_0.viewComponent:updateAll()
 		arg_5_0.viewComponent:upgradeFinish(var_5_3, var_5_4)
+		pg.UIMgr.GetInstance():LoadingOff()
 	elseif var_5_0 == BagProxy.ITEM_UPDATED then
 		arg_5_0.viewComponent:setItems(arg_5_0.bagProxy:getData())
 	elseif var_5_0 == PlayerProxy.UPDATED then

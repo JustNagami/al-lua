@@ -1,8 +1,9 @@
 ﻿local var_0_0 = class("StoryRecorder")
 local var_0_1 = "#5ce6ff"
-local var_0_2 = "#70747F"
-local var_0_3 = "#BCBCBC"
-local var_0_4 = "#FFFFFF"
+local var_0_2 = "#39BFFF"
+local var_0_3 = "#70747F"
+local var_0_4 = "#BCBCBC"
+local var_0_5 = "#FFFFFF"
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.recordList = {}
@@ -41,14 +42,14 @@ function var_0_0.Convert(arg_4_0)
 	return var_4_0
 end
 
-local function var_0_5(arg_5_0)
+function var_0_0.FormatContent(arg_5_0, arg_5_1)
 	local var_5_0 = {
 		"<size=%d+>",
 		"</size>",
 		"<color=%w+>",
 		"</color>"
 	}
-	local var_5_1 = arg_5_0
+	local var_5_1 = arg_5_1
 
 	for iter_5_0, iter_5_1 in ipairs(var_5_0) do
 		var_5_1 = string.gsub(var_5_1, iter_5_1, "")
@@ -62,7 +63,7 @@ function var_0_0.CollectAsideContent(arg_6_0, arg_6_1, arg_6_2)
 	local var_6_1 = {}
 
 	for iter_6_0, iter_6_1 in ipairs(var_6_0) do
-		table.insert(var_6_1, var_0_5(iter_6_1[1]))
+		table.insert(var_6_1, arg_6_0:FormatContent(iter_6_1[1]))
 	end
 
 	table.insert(arg_6_1, {
@@ -85,7 +86,7 @@ function var_0_0.CollectDialogueContent(arg_7_0, arg_7_1, arg_7_2)
 	local function var_7_4()
 		local var_8_0 = arg_7_2:GetNameColor()
 
-		return var_7_3 and var_0_1 or var_8_0 or var_0_3
+		return var_7_3 and var_0_1 or var_8_0 or var_0_4
 	end
 
 	local var_7_5 = arg_7_2:GetContent()
@@ -95,7 +96,7 @@ function var_0_0.CollectDialogueContent(arg_7_0, arg_7_1, arg_7_2)
 		name = var_7_1,
 		nameColor = var_7_4(),
 		list = {
-			setColorStr(var_0_5(var_7_5), var_7_3 and var_0_1 or var_0_4)
+			setColorStr(arg_7_0:FormatContent(var_7_5), var_7_3 and var_0_1 or var_0_5)
 		},
 		isPlayer = var_7_3
 	})
@@ -106,7 +107,7 @@ function var_0_0.CollectDialogueContent(arg_7_0, arg_7_1, arg_7_2)
 
 		for iter_7_0, iter_7_1 in ipairs(arg_7_2:GetOptions()) do
 			local var_7_8 = iter_7_1[2] == var_7_6
-			local var_7_9 = setColorStr("[ " .. var_0_5(iter_7_1[1]) .. " ]", var_7_8 and var_0_1 or var_0_2)
+			local var_7_9 = setColorStr("[ " .. arg_7_0:FormatContent(iter_7_1[1]) .. " ]", var_7_8 and var_0_1 or var_0_3)
 
 			table.insert(var_7_7, var_7_9)
 		end

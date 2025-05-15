@@ -142,7 +142,7 @@ function var_0_0.PlayCpkMovie(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4
 			arg_4_0._animator = arg_4_0._mainTF:GetComponent("Animator")
 
 			if arg_4_0._criUsm then
-				arg_4_0._criUsm.renderMode = ReflectionHelp.RefGetField(typeof("CriManaMovieMaterial+RenderMode"), "Always", nil)
+				arg_4_0._criUsm.renderMode = CriWare.CriManaMovieMaterialBase.RenderMode.Always
 			end
 
 			if arg_4_0._usmImg and arg_4_0._usmImg.color.a == 0 then

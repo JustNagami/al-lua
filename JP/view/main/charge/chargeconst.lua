@@ -60,10 +60,6 @@ function var_0_0.getGoodsLimitInfo(arg_3_0)
 end
 
 function var_0_0.isNeedSetBirth()
-	if PLATFORM_CODE == PLATFORM_JP and pg.SdkMgr.GetInstance():GetIsPlatform() and not pg.SdkMgr.GetInstance():GetIsBirthSet() then
-		return true
-	end
-
 	return false
 end
 

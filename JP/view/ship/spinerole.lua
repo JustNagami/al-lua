@@ -89,10 +89,10 @@ function var_0_0.AttachOrbit(arg_6_0, arg_6_1)
 					local var_7_1 = var_6_2[var_7_0][1]
 					local var_7_2 = var_6_2[var_7_0][2]
 					local var_7_3 = Object.Instantiate(arg_7_0)
-					local var_7_4 = var_7_3:GetComponentsInChildren(typeof(Spine.Unity.SkeletonGraphic))
+					local var_7_4 = var_7_3:GetComponentsInChildren(typeof(Spine.Unity.SkeletonGraphic)):ToTable()
 
-					for iter_7_0 = 1, var_7_4.Length do
-						var_7_4[iter_7_0 - 1].raycastTarget = false
+					for iter_7_0, iter_7_1 in ipairs(var_7_4) do
+						iter_7_1.raycastTarget = false
 					end
 
 					var_7_3.transform.localPosition = Vector2(var_7_2[1], var_7_2[2])

@@ -190,75 +190,92 @@ function var_0_0.UpdateEquipmentPanel(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
 
 	local var_13_4 = arg_13_0:GetShipVO()
 	local var_13_5 = {}
-
-	for iter_13_0, iter_13_1 in pairs(var_13_4.skills) do
-		local var_13_6 = ys.Battle.BattleDataFunction.GetBuffTemplate(iter_13_1.id, iter_13_1.level)
-
-		if var_13_6.shipInfoScene and var_13_6.shipInfoScene.equip then
-			for iter_13_2, iter_13_3 in ipairs(var_13_6.shipInfoScene.equip) do
-				table.insert(var_13_5, iter_13_3)
-			end
-		end
-	end
-
+	local var_13_6 = {}
 	local var_13_7 = var_13_4:GetSpWeapon()
 
-	if var_13_7 and var_13_7:GetEffect() ~= 0 then
-		local var_13_8 = var_13_7:GetEffect()
-		local var_13_9 = ys.Battle.BattleDataFunction.GetBuffTemplate(var_13_8, 1)
+	if var_13_7 and var_13_7:GetUpgradableSkillInfo().unlock then
+		local var_13_8 = var_13_7:GetUpgradableSkillInfo()
 
-		if var_13_9.shipInfoScene and var_13_9.shipInfoScene.equip then
-			for iter_13_4, iter_13_5 in ipairs(var_13_9.shipInfoScene.equip) do
-				table.insert(var_13_5, iter_13_5)
+		table.insert(var_13_6, var_13_7:GetUpgradableSkillIds()[1][1])
+
+		local var_13_9 = var_13_8.skillId
+		local var_13_10 = ys.Battle.BattleDataFunction.GetBuffTemplate(var_13_9, var_13_8.lv)
+
+		if var_13_10.shipInfoScene and var_13_10.shipInfoScene.equip then
+			for iter_13_0, iter_13_1 in ipairs(var_13_10.shipInfoScene.equip) do
+				table.insert(var_13_5, iter_13_1)
 			end
 		end
 	end
 
-	local var_13_10 = findTF(var_13_0, "panel_title/type")
-	local var_13_11 = findTF(var_13_0, "skin_icon")
+	for iter_13_2, iter_13_3 in pairs(var_13_4.skills) do
+		if not table.contains(var_13_6, iter_13_3.id) then
+			local var_13_11 = ys.Battle.BattleDataFunction.GetBuffTemplate(iter_13_3.id, iter_13_3.level)
 
-	if var_13_11 then
-		setActive(var_13_11, arg_13_2 and arg_13_2:hasSkin())
+			if var_13_11.shipInfoScene and var_13_11.shipInfoScene.equip then
+				for iter_13_4, iter_13_5 in ipairs(var_13_11.shipInfoScene.equip) do
+					table.insert(var_13_5, iter_13_5)
+				end
+			end
+		end
 	end
 
-	local var_13_12 = EquipType.Types2Title(arg_13_1, var_13_4.configId)
-	local var_13_13 = EquipType.LabelToName(var_13_12)
+	if var_13_7 and var_13_7:GetEffect() ~= 0 then
+		local var_13_12 = var_13_7:GetEffect()
+		local var_13_13 = ys.Battle.BattleDataFunction.GetBuffTemplate(var_13_12, 1)
 
-	var_13_10:GetComponent(typeof(Text)).text = var_13_13
+		if var_13_13.shipInfoScene and var_13_13.shipInfoScene.equip then
+			for iter_13_6, iter_13_7 in ipairs(var_13_13.shipInfoScene.equip) do
+				table.insert(var_13_5, iter_13_7)
+			end
+		end
+	end
+
+	local var_13_14 = findTF(var_13_0, "panel_title/type")
+	local var_13_15 = findTF(var_13_0, "skin_icon")
+
+	if var_13_15 then
+		setActive(var_13_15, arg_13_2 and arg_13_2:hasSkin())
+	end
+
+	local var_13_16 = EquipType.Types2Title(arg_13_1, var_13_4.configId)
+	local var_13_17 = EquipType.LabelToName(var_13_16)
+
+	var_13_14:GetComponent(typeof(Text)).text = var_13_17
 
 	if arg_13_2 then
 		setActive(var_13_3, not arg_13_2:isDevice())
 
 		if not arg_13_2:isDevice() then
-			local var_13_14 = pg.ship_data_statistics[var_13_4.configId]
-			local var_13_15 = var_13_4:getEquipProficiencyByPos(arg_13_1)
-			local var_13_16 = var_13_15 and var_13_15 * 100 or 0
-			local var_13_17 = false
+			local var_13_18 = pg.ship_data_statistics[var_13_4.configId]
+			local var_13_19 = var_13_4:getEquipProficiencyByPos(arg_13_1)
+			local var_13_20 = var_13_19 and var_13_19 * 100 or 0
+			local var_13_21 = false
 
 			if not (var_13_4:getFlag("inWorld") and arg_13_0.contextData.fromMediatorName == WorldMediator.__cname and WorldConst.FetchWorldShip(var_13_4.id):IsBroken()) then
-				for iter_13_6, iter_13_7 in ipairs(var_13_5) do
-					if arg_13_0:equipmentCheck(iter_13_7) and arg_13_0.equipmentEnhance(iter_13_7, arg_13_2) then
-						var_13_16 = var_13_16 + iter_13_7.number
-						var_13_17 = true
+				for iter_13_8, iter_13_9 in ipairs(var_13_5) do
+					if arg_13_0:equipmentCheck(iter_13_9) and arg_13_0.equipmentEnhance(iter_13_9, arg_13_2) then
+						var_13_20 = var_13_20 + iter_13_9.number
+						var_13_21 = true
 					end
 				end
 			end
 
-			if var_13_16 - calcFloor(var_13_16) > 1e-09 then
-				var_13_16 = string.format("%.1f", var_13_16)
+			if var_13_20 - calcFloor(var_13_20) > 1e-09 then
+				var_13_20 = string.format("%.1f", var_13_20)
 				GetComponent(findTF(var_13_3, "Text"), typeof(Text)).fontSize = 45
 			else
 				GetComponent(findTF(var_13_3, "Text"), typeof(Text)).fontSize = 50
 			end
 
-			setButtonText(var_13_3, var_13_17 and setColorStr(var_13_16 .. "%", COLOR_GREEN) or var_13_16 .. "%")
+			setButtonText(var_13_3, var_13_21 and setColorStr(var_13_20 .. "%", COLOR_GREEN) or var_13_20 .. "%")
 		end
 
-		local var_13_18 = arg_13_0:findTF("IconTpl", var_13_1)
+		local var_13_22 = arg_13_0:findTF("IconTpl", var_13_1)
 
-		updateEquipment(var_13_18, arg_13_2)
+		updateEquipment(var_13_22, arg_13_2)
 
-		local var_13_19 = arg_13_2:getConfig("name")
+		local var_13_23 = arg_13_2:getConfig("name")
 
 		if arg_13_2:getConfig("ammo_icon")[1] then
 			setActive(findTF(var_13_1, "cont/icon_ammo"), true)
@@ -267,21 +284,21 @@ function var_0_0.UpdateEquipmentPanel(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
 			setActive(findTF(var_13_1, "cont/icon_ammo"), false)
 		end
 
-		setScrollText(arg_13_0.equipmentPanels[arg_13_1]:Find("info/cont/name_mask/name"), var_13_19)
+		setScrollText(arg_13_0.equipmentPanels[arg_13_1]:Find("info/cont/name_mask/name"), var_13_23)
 
-		local var_13_20 = var_13_1:Find("attrs")
+		local var_13_24 = var_13_1:Find("attrs")
 
-		eachChild(var_13_20, function(arg_14_0)
+		eachChild(var_13_24, function(arg_14_0)
 			setActive(arg_14_0, false)
 		end)
 
-		local var_13_21 = arg_13_2:GetPropertiesInfo().attrs
-		local var_13_22 = underscore.filter(var_13_21, function(arg_15_0)
+		local var_13_25 = arg_13_2:GetPropertiesInfo().attrs
+		local var_13_26 = underscore.filter(var_13_25, function(arg_15_0)
 			return not arg_15_0.type or arg_15_0.type ~= AttributeType.AntiSiren
 		end)
-		local var_13_23 = arg_13_2:getConfig("skill_id")
-		local var_13_24 = var_13_23[1] and var_13_23[1][1]
-		local var_13_25 = var_13_24 and arg_13_2:isDevice() and {
+		local var_13_27 = arg_13_2:getConfig("skill_id")
+		local var_13_28 = var_13_27[1] and var_13_27[1][1]
+		local var_13_29 = var_13_28 and arg_13_2:isDevice() and {
 			1,
 			2,
 			5
@@ -292,51 +309,51 @@ function var_0_0.UpdateEquipmentPanel(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
 			3
 		}
 
-		for iter_13_8, iter_13_9 in ipairs(var_13_25) do
-			local var_13_26 = var_13_20:Find("attr_" .. iter_13_9)
-			local var_13_27 = findTF(var_13_26, "panel")
-			local var_13_28 = findTF(var_13_26, "lock")
+		for iter_13_10, iter_13_11 in ipairs(var_13_29) do
+			local var_13_30 = var_13_24:Find("attr_" .. iter_13_11)
+			local var_13_31 = findTF(var_13_30, "panel")
+			local var_13_32 = findTF(var_13_30, "lock")
 
-			setActive(var_13_26, true)
+			setActive(var_13_30, true)
 
-			if iter_13_9 == 5 then
-				setText(var_13_27:Find("values/value"), "")
+			if iter_13_11 == 5 then
+				setText(var_13_31:Find("values/value"), "")
 
-				local var_13_29 = getSkillName(var_13_24)
+				local var_13_33 = getSkillName(var_13_28)
 
-				if PLATFORM_CODE == PLATFORM_US and string.len(var_13_29) > 15 then
-					GetComponent(var_13_27:Find("values/value_1"), typeof(Text)).fontSize = 24
+				if PLATFORM_CODE == PLATFORM_US and string.len(var_13_33) > 15 then
+					GetComponent(var_13_31:Find("values/value_1"), typeof(Text)).fontSize = 24
 				end
 
-				setText(var_13_27:Find("values/value_1"), getSkillName(var_13_24))
-				setActive(var_13_28, false)
-			elseif #var_13_22 > 0 then
-				local var_13_30 = table.remove(var_13_22, 1)
+				setText(var_13_31:Find("values/value_1"), getSkillName(var_13_28))
+				setActive(var_13_32, false)
+			elseif #var_13_26 > 0 then
+				local var_13_34 = table.remove(var_13_26, 1)
 
-				if arg_13_2:isAircraft() and var_13_30.type == AttributeType.CD then
-					var_13_30 = var_13_4:getAircraftReloadCD()
+				if arg_13_2:isAircraft() and var_13_34.type == AttributeType.CD then
+					var_13_34 = var_13_4:getAircraftReloadCD()
 				end
 
-				local var_13_31, var_13_32 = Equipment.GetInfoTrans(var_13_30, var_13_4)
+				local var_13_35, var_13_36 = Equipment.GetInfoTrans(var_13_34, var_13_4)
 
-				setText(var_13_27:Find("tag"), var_13_31)
+				setText(var_13_31:Find("tag"), var_13_35)
 
-				local var_13_33 = string.split(tostring(var_13_32), "/")
+				local var_13_37 = string.split(tostring(var_13_36), "/")
 
-				if #var_13_33 >= 2 then
-					setText(var_13_27:Find("values/value"), var_13_33[1] .. "/")
-					setText(var_13_27:Find("values/value_1"), var_13_33[2])
+				if #var_13_37 >= 2 then
+					setText(var_13_31:Find("values/value"), var_13_37[1] .. "/")
+					setText(var_13_31:Find("values/value_1"), var_13_37[2])
 				else
-					setText(var_13_27:Find("values/value"), var_13_32)
-					setText(var_13_27:Find("values/value_1"), "")
+					setText(var_13_31:Find("values/value"), var_13_36)
+					setText(var_13_31:Find("values/value_1"), "")
 				end
 
-				setActive(var_13_28, false)
+				setActive(var_13_32, false)
 			else
-				setText(var_13_27:Find("tag"), "")
-				setText(var_13_27:Find("values/value"), "")
-				setText(var_13_27:Find("values/value_1"), "")
-				setActive(var_13_28, true)
+				setText(var_13_31:Find("tag"), "")
+				setText(var_13_31:Find("values/value"), "")
+				setText(var_13_31:Find("values/value_1"), "")
+				setActive(var_13_32, true)
 			end
 		end
 

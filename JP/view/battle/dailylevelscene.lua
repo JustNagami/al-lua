@@ -556,7 +556,7 @@ function var_0_0.DoSelectedAnimation(arg_42_0, arg_42_1, arg_42_2, arg_42_3)
 		function(arg_43_0)
 			arg_42_0.stageScrollRect.enabled = false
 
-			pg.UIMgr.GetInstance():BlurPanel(arg_42_0.selectedPanel, true, {
+			pg.UIMgr.GetInstance():BlurPanel(arg_42_0.selectedPanel, false, {
 				groupName = LayerWeightConst.GROUP_DAILY,
 				weight = LayerWeightConst.BASE_LAYER - 1
 			})

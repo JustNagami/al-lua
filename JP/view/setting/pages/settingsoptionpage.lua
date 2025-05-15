@@ -58,6 +58,10 @@ function var_0_0.GetPanels(arg_6_0)
 		table.insert(var_6_0, 1, SettingsAdjustScreenPanle)
 	end
 
+	if ServerChooseMgr.Inst:IsGatewayPackage() then
+		table.insert(var_6_0, 1, SettingsDebugPanel)
+	end
+
 	return var_6_0
 end
 

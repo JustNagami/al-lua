@@ -11,7 +11,7 @@ function var_0_0.Ctor(arg_1_0)
 	arg_1_0.isIninted = false
 
 	if arg_1_0.instance then
-		ReflectionHelp.RefSetField(typeof("OSSStarter"), "debug", arg_1_0.instance, false)
+		arg_1_0.instance.debug = false
 	end
 end
 

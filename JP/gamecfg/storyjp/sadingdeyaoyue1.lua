@@ -17,7 +17,7 @@
 			}
 		},
 		{
-			say = "サディア帝国・通信室",
+			say = "サディア帝国・作戦指揮室",
 			side = 2,
 			bgName = "bg_story_italy",
 			dir = 1,

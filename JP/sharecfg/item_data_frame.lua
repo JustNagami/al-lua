@@ -495,6 +495,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>「筆を取り、自分だけの光を描いてみよう☆」</color>――「籠檻に囚われし神光」イベントで入手可能",
 		scene = {}
 	},
+	[335] = {
+		time_limit_type = 0,
+		name = "薔薇の誓い",
+		gain_by = "",
+		id = 335,
+		time_second = 0,
+		desc = "今後開催するイベントで入手可能",
+		scene = {}
+	},
 	[401] = {
 		time_limit_type = 0,
 		name = "殿堂入り：エンタープライズ",
@@ -866,6 +875,7 @@ pg.item_data_frame = {
 		332,
 		333,
 		334,
+		335,
 		401,
 		402,
 		403,

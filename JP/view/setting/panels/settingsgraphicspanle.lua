@@ -25,9 +25,9 @@ function var_0_0.OnInit(arg_4_0)
 	for iter_4_0 = 1, 4 do
 		onToggle(arg_4_0, var_4_0[iter_4_0], function(arg_5_0)
 			if arg_5_0 then
-				if PlayerPrefs.GetInt("dorm3d_graphics_settings", 0) ~= iter_4_0 then
+				if PlayerPrefs.GetInt("dorm3d_graphics_settings_new", 0) ~= iter_4_0 then
 					pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGraphics(iter_4_0))
-					PlayerPrefs.SetInt("dorm3d_graphics_settings", iter_4_0)
+					PlayerPrefs.SetInt("dorm3d_graphics_settings_new", iter_4_0)
 				end
 
 				pg.m02:sendNotification(NewSettingsMediator.SelectGraphicSettingLevel)
@@ -42,7 +42,7 @@ function var_0_0.OnInit(arg_4_0)
 end
 
 function var_0_0.OnUpdate(arg_6_0)
-	local var_6_0 = PlayerPrefs.GetInt("dorm3d_graphics_settings", 2)
+	local var_6_0 = PlayerPrefs.GetInt("dorm3d_graphics_settings_new", 2)
 
 	if var_6_0 == 1 then
 		triggerToggle(arg_6_0.lowToggle, true)

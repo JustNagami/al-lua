@@ -235,7 +235,7 @@ function var_0_0.ShowSurvey(arg_30_0, arg_30_1)
 	if var_0_0.GetIsPlatform() then
 		local var_30_0 = getProxy(PlayerProxy):getData()
 
-		var_0_2:UserEventUpload(arg_30_0, tostring(var_30_0.id), arg_30_1)
+		var_0_2:ShowSurvey(arg_30_0, tostring(var_30_0.id), arg_30_1)
 	end
 end
 
@@ -317,7 +317,7 @@ function AiriLogin(arg_44_0)
 	local function var_44_0()
 		local var_45_0 = User.New({
 			type = 1,
-			arg1 = PLATFORM_AIRIJP,
+			arg1 = PLATFORM_YOSTARJP,
 			arg2 = arg_44_0.UID,
 			arg3 = arg_44_0.ACCESS_TOKEN
 		})

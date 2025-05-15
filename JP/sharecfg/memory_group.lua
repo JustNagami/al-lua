@@ -230,6 +230,8 @@ pg.memory_group = setmetatable({
 		323,
 		324,
 		325,
+		326,
+		327,
 		501,
 		502,
 		503,
@@ -337,6 +339,7 @@ pg.memory_group = setmetatable({
 		607,
 		608,
 		609,
+		610,
 		1000,
 		1001,
 		1002,
@@ -5408,7 +5411,7 @@ pg.base.memory_group = {
 		subtype = 3,
 		icon = "title_event",
 		type = 2,
-		link_event = 0,
+		link_event = 5911,
 		title = "母港着せ替え特集:春のんびり",
 		memories = {
 			4301,
@@ -5422,7 +5425,7 @@ pg.base.memory_group = {
 		subtype = 1,
 		icon = "title_event",
 		type = 2,
-		link_event = 5921,
+		link_event = 5901,
 		title = "チュリッパの海へ",
 		memories = {
 			4311,
@@ -5433,6 +5436,38 @@ pg.base.memory_group = {
 			4316,
 			4317,
 			4318
+		}
+	},
+	[326] = {
+		id = 326,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5924,
+		title = "リゾート準備中",
+		memories = {
+			4331,
+			4332,
+			4333,
+			4334,
+			4335
+		}
+	},
+	[327] = {
+		id = 327,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 5924,
+		title = "太陽未だ沈まぬ",
+		memories = {
+			4341,
+			4342,
+			4343,
+			4344,
+			4345,
+			4346,
+			4347
 		}
 	},
 	[501] = {
@@ -7265,6 +7300,23 @@ pg.base.memory_group = {
 			4295,
 			4296,
 			4297
+		}
+	},
+	[610] = {
+		id = 610,
+		subtype = 0,
+		icon = "title_chara_bunao",
+		type = 3,
+		link_event = 0,
+		title = "無効な省エネ",
+		memories = {
+			4321,
+			4322,
+			4323,
+			4324,
+			4325,
+			4326,
+			4327
 		}
 	},
 	[1000] = {
