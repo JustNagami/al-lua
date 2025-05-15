@@ -24444,7 +24444,7 @@ _G.pg.base.gametip.specialshipyard_name = {
 	tip = "特殊ドック："
 }
 _G.pg.base.gametip.liner_sign_cnt_tip = {
-	tip = "入手まであと："
+	tip = "タップ可能回数："
 }
 _G.pg.base.gametip.liner_sign_unlock_tip = {
 	tip = "5.21メンテ後開放"

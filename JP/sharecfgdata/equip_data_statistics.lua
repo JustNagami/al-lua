@@ -156297,12 +156297,12 @@ _G.pg.base.equip_data_statistics[150651] = {
 }
 _G.pg.base.equip_data_statistics[150660] = {
 	type = 10,
-	name = "あたしのクジラ",
+	name = "あたしの大事なクジラ",
 	speciality = "<[NA]>",
 	tech = 0,
 	value_2 = 0,
 	ammo = 10,
-	descrip = "大事にされているらくがき。これまで見たことのあるクジラの中でもっともキレイのが描かれている。",
+	descrip = "かわいいかわいいかわいいかわいいクジラ～！チュッ！",
 	nationality = 0,
 	rarity = 4,
 	id = 150660,
