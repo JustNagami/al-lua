@@ -11,11 +11,9 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	setActive(arg_1_0.rawImage, false)
 
 	arg_1_0.seaCameraGO = GameObject.Find("BarrageCamera")
-	arg_1_0.seaCameraGO.tag = "MainCamera"
 	arg_1_0.seaCamera = arg_1_0.seaCameraGO:GetComponent(typeof(Camera))
 	arg_1_0.seaCamera.targetTexture = arg_1_0.rawImage.texture
 	arg_1_0.seaCamera.enabled = true
-	arg_1_0.mainCameraGO = pg.UIMgr.GetInstance():GetMainCamera()
 	arg_1_0.displayFireFX = true
 	arg_1_0.displayHitFX = false
 end
@@ -48,7 +46,7 @@ function var_0_0.load(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4)
 	arg_6_0.loading = true
 	arg_6_0.shipVO = arg_6_2
 
-	ys.Battle.BattleVariable.Init()
+	ys.Battle.BattleVariable.Init(true)
 	ys.Battle.BattleFXPool.GetInstance():Init()
 
 	local var_6_0 = ys.Battle.BattleResourceManager.GetInstance()
@@ -153,7 +151,6 @@ function var_0_0.load(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4)
 			end
 
 			setActive(arg_6_0.rawImage, true)
-			arg_6_0.mainCameraGO:SetActive(false)
 			pg.TimeMgr.GetInstance():ResumeBattleTimer()
 			arg_6_0:onWeaponUpdate()
 			arg_6_4()
@@ -834,13 +831,9 @@ function var_0_0.clear(arg_50_0)
 
 	ys.Battle.BattleResourceManager.GetInstance():Clear()
 
-	arg_50_0.seaCameraGO.tag = "Untagged"
+	arg_50_0.seaCamera.enabled = false
 	arg_50_0.seaCameraGO = nil
 	arg_50_0.seaCamera = nil
-
-	arg_50_0.mainCameraGO:SetActive(true)
-
-	arg_50_0.mainCameraGO = nil
 	arg_50_0.loading = false
 	arg_50_0.loaded = false
 

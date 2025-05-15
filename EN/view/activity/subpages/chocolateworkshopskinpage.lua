@@ -84,15 +84,7 @@ function var_0_0.OnInit(arg_1_0)
 		}
 	}
 	arg_1_0.aniContainerTF = arg_1_0:findTF("AniContainer", arg_1_0.bg)
-
-	local var_1_0 = GetComponent(arg_1_0._tf, "ItemList").prefabItem
-
-	arg_1_0.tplList = {}
-
-	for iter_1_0 = 0, var_1_0.Length - 1 do
-		table.insert(arg_1_0.tplList, var_1_0[iter_1_0])
-	end
-
+	arg_1_0.tplList = GetComponent(arg_1_0._tf, "ItemList").prefabItem:ToTable()
 	arg_1_0.sdName = arg_1_0.sdNameList[math.random(#arg_1_0.sdNameList)]
 	arg_1_0.spine = nil
 	arg_1_0.spineLRQ = GetSpineRequestPackage.New(arg_1_0.sdName, function(arg_6_0)

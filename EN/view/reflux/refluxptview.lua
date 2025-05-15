@@ -97,10 +97,10 @@ function var_0_0.updateTpl(arg_11_0, arg_11_1, arg_11_2)
 	setActive(var_11_4, arg_11_2 < var_11_13)
 
 	local var_11_16 = arg_11_2 < var_11_13 and Color.gray or Color.white
-	local var_11_17 = arg_11_1:GetComponentsInChildren(typeof(Image))
+	local var_11_17 = arg_11_1:GetComponentsInChildren(typeof(Image)):ToTable()
 
-	for iter_11_0 = 0, var_11_17.Length - 1 do
-		var_11_17[iter_11_0].color = var_11_16
+	for iter_11_0, iter_11_1 in ipairs(var_11_17) do
+		iter_11_1.color = var_11_16
 	end
 
 	setImageColor(var_11_0, var_11_16)

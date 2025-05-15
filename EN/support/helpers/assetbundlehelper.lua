@@ -110,18 +110,21 @@ function var_0_0.BuildAssetNameDic(arg_17_0, arg_17_1)
 	local var_17_0 = {}
 
 	for iter_17_0, iter_17_1 in ipairs(arg_17_1) do
-		local var_17_1 = string.lower(iter_17_1)
+		local var_17_1 = iter_17_1
 
 		var_17_0[var_17_1] = iter_17_1
+		var_17_0[string.lower(var_17_1)] = iter_17_1
 
 		local var_17_2 = GetFileName(var_17_1)
 
 		var_17_0[var_17_2] = iter_17_1
+		var_17_0[string.lower(var_17_2)] = iter_17_1
 
 		local var_17_3 = string.split(var_17_2, ".")[1]
 
 		if var_17_3 then
 			var_17_0[var_17_3] = iter_17_1
+			var_17_0[string.lower(var_17_3)] = iter_17_1
 		end
 	end
 

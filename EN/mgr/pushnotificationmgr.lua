@@ -70,97 +70,102 @@ function var_0_1.isEnableShipName(arg_6_0)
 	return var_0_3
 end
 
+local var_0_4 = {}
+
 function var_0_1.Push(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
 	local var_7_0 = arg_7_3 - var_0_0.TimeMgr.GetInstance():GetServerTime()
 	local var_7_1 = os.time() + var_7_0
 
-	NotificationMgr.Inst:ScheduleLocalNotification(arg_7_1, arg_7_2, var_7_1)
 	arg_7_0:log(arg_7_1, arg_7_2, var_7_1)
+
+	local var_7_2 = {
+		title = arg_7_1,
+		content = arg_7_2,
+		offsetSecond = var_7_0
+	}
+
+	table.insert(var_0_4, var_7_2)
 end
 
-function var_0_1.cancelAll(arg_8_0)
-	NotificationMgr.Inst:CancelAllLocalNotifications()
+function var_0_1.PushCache(arg_8_0)
+	for iter_8_0, iter_8_1 in ipairs(var_0_4) do
+		local var_8_0 = iter_8_0
+		local var_8_1 = iter_8_1.title
+		local var_8_2 = iter_8_1.content
+		local var_8_3 = iter_8_1.offsetSecond * 1000
+
+		YSNormalTool.NotificationTool.ScheduleNotification(var_8_0, var_8_1, var_8_2, var_8_3)
+	end
 end
 
-function var_0_1.PushAll(arg_9_0)
-	local var_9_0 = getProxy(PlayerProxy)
+function var_0_1.cancelAll(arg_9_0)
+	originalPrint("取消通知")
+	YSNormalTool.NotificationTool.CancelAllNotification()
 
-	if var_9_0 and var_9_0:getInited() then
-		arg_9_0:cancelAll()
+	var_0_4 = {}
+end
+
+function var_0_1.PushAll(arg_10_0)
+	local var_10_0 = getProxy(PlayerProxy)
+
+	if var_10_0 and var_10_0:getInited() then
+		if not PUSH_NOTIFICATION_TEST_TAG then
+			arg_10_0:cancelAll()
+		end
 
 		if var_0_2[var_0_1.PUSH_TYPE_EVENT] then
-			arg_9_0:PushEvent()
+			arg_10_0:PushEvent()
 		end
 
 		if var_0_2[var_0_1.PUSH_TYPE_GOLD] then
-			arg_9_0:PushGold()
+			arg_10_0:PushGold()
 		end
 
 		if var_0_2[var_0_1.PUSH_TYPE_OIL] then
-			arg_9_0:PushOil()
+			arg_10_0:PushOil()
 		end
 
 		if var_0_2[var_0_1.PUSH_TYPE_BACKYARD] then
-			arg_9_0:PushBackyard()
+			arg_10_0:PushBackyard()
 		end
 
 		if var_0_2[var_0_1.PUSH_TYPE_SCHOOL] then
-			arg_9_0:PushSchool()
+			arg_10_0:PushSchool()
 		end
 
 		if var_0_2[var_0_1.PUSH_TYPE_TECHNOLOGY] then
-			arg_9_0:PushTechnlogy()
+			arg_10_0:PushTechnlogy()
 		end
 
 		if var_0_2[var_0_1.PUSH_TYPE_BLUEPRINT] then
-			arg_9_0:PushBluePrint()
+			arg_10_0:PushBluePrint()
 		end
 
 		if var_0_2[var_0_1.PUSH_TYPE_COMMANDER] then
-			arg_9_0:PushCommander()
+			arg_10_0:PushCommander()
 		end
 
 		if var_0_2[var_0_1.PUSH_TYPE_GUILD_MISSION_FORMATION] then
-			arg_9_0:PushGuildMissionFormation()
+			arg_10_0:PushGuildMissionFormation()
 		end
+
+		arg_10_0:PushCache()
 	end
 end
 
-function var_0_1.PushEvent(arg_10_0)
-	local var_10_0 = getProxy(EventProxy):getActiveEvents()
-	local var_10_1 = var_0_0.push_data_template[arg_10_0.PUSH_TYPE_EVENT]
+function var_0_1.PushEvent(arg_11_0)
+	local var_11_0 = getProxy(EventProxy):getActiveEvents()
+	local var_11_1 = var_0_0.push_data_template[arg_11_0.PUSH_TYPE_EVENT]
 
-	for iter_10_0, iter_10_1 in ipairs(var_10_0) do
-		local var_10_2 = string.gsub(var_10_1.content, "$1", iter_10_1.template.title)
+	for iter_11_0, iter_11_1 in ipairs(var_11_0) do
+		local var_11_2 = string.gsub(var_11_1.content, "$1", iter_11_1.template.title)
 
-		arg_10_0:Push(var_10_1.title, var_10_2, iter_10_1.finishTime)
+		arg_11_0:Push(var_11_1.title, var_11_2, iter_11_1.finishTime)
 	end
 end
 
-function var_0_1.PushGold(arg_11_0)
-	local var_11_0 = getProxy(NavalAcademyProxy):GetGoldVO()
-	local var_11_1 = var_11_0:bindConfigTable()
-	local var_11_2 = var_11_0:GetLevel()
-	local var_11_3 = var_11_1[var_11_2].store
-	local var_11_4 = var_11_1[var_11_2].production
-	local var_11_5 = var_11_1[var_11_2].hour_time
-	local var_11_6 = getProxy(PlayerProxy).data
-	local var_11_7 = var_11_6.resUpdateTm
-	local var_11_8 = var_11_6.goldField
-
-	if var_11_8 < var_11_3 then
-		local var_11_9 = var_11_7 + (var_11_3 - var_11_8) / var_11_4 * 60 * 60 / 3
-
-		if var_11_9 > var_0_0.TimeMgr.GetInstance():GetServerTime() then
-			local var_11_10 = var_0_0.push_data_template[arg_11_0.PUSH_TYPE_GOLD]
-
-			arg_11_0:Push(var_11_10.title, var_11_10.content, var_11_9)
-		end
-	end
-end
-
-function var_0_1.PushOil(arg_12_0)
-	local var_12_0 = getProxy(NavalAcademyProxy):GetOilVO()
+function var_0_1.PushGold(arg_12_0)
+	local var_12_0 = getProxy(NavalAcademyProxy):GetGoldVO()
 	local var_12_1 = var_12_0:bindConfigTable()
 	local var_12_2 = var_12_0:GetLevel()
 	local var_12_3 = var_12_1[var_12_2].store
@@ -168,85 +173,107 @@ function var_0_1.PushOil(arg_12_0)
 	local var_12_5 = var_12_1[var_12_2].hour_time
 	local var_12_6 = getProxy(PlayerProxy).data
 	local var_12_7 = var_12_6.resUpdateTm
-	local var_12_8 = var_12_6.oilField
+	local var_12_8 = var_12_6.goldField
 
 	if var_12_8 < var_12_3 then
 		local var_12_9 = var_12_7 + (var_12_3 - var_12_8) / var_12_4 * 60 * 60 / 3
 
 		if var_12_9 > var_0_0.TimeMgr.GetInstance():GetServerTime() then
-			local var_12_10 = var_0_0.push_data_template[arg_12_0.PUSH_TYPE_OIL]
+			local var_12_10 = var_0_0.push_data_template[arg_12_0.PUSH_TYPE_GOLD]
 
 			arg_12_0:Push(var_12_10.title, var_12_10.content, var_12_9)
 		end
 	end
 end
 
-function var_0_1.PushBackyard(arg_13_0)
-	local var_13_0 = getProxy(DormProxy):getRawData():getFoodLeftTime()
+function var_0_1.PushOil(arg_13_0)
+	local var_13_0 = getProxy(NavalAcademyProxy):GetOilVO()
+	local var_13_1 = var_13_0:bindConfigTable()
+	local var_13_2 = var_13_0:GetLevel()
+	local var_13_3 = var_13_1[var_13_2].store
+	local var_13_4 = var_13_1[var_13_2].production
+	local var_13_5 = var_13_1[var_13_2].hour_time
+	local var_13_6 = getProxy(PlayerProxy).data
+	local var_13_7 = var_13_6.resUpdateTm
+	local var_13_8 = var_13_6.oilField
 
-	if var_13_0 > var_0_0.TimeMgr.GetInstance():GetServerTime() then
-		local var_13_1 = var_0_0.push_data_template[arg_13_0.PUSH_TYPE_BACKYARD]
+	if var_13_8 < var_13_3 then
+		local var_13_9 = var_13_7 + (var_13_3 - var_13_8) / var_13_4 * 60 * 60 / 3
 
-		arg_13_0:Push(var_13_1.title, var_13_1.content, var_13_0)
-	end
-end
+		if var_13_9 > var_0_0.TimeMgr.GetInstance():GetServerTime() then
+			local var_13_10 = var_0_0.push_data_template[arg_13_0.PUSH_TYPE_OIL]
 
-function var_0_1.PushSchool(arg_14_0)
-	local var_14_0 = getProxy(NavalAcademyProxy):getStudents()
-	local var_14_1 = var_0_0.push_data_template[arg_14_0.PUSH_TYPE_SCHOOL]
-	local var_14_2 = getProxy(BayProxy):getData()
-
-	for iter_14_0, iter_14_1 in ipairs(var_14_0) do
-		if iter_14_1.finishTime > var_0_0.TimeMgr.GetInstance():GetServerTime() then
-			local var_14_3 = var_14_2[iter_14_1.shipId]
-			local var_14_4 = iter_14_1:getSkillId(var_14_3)
-			local var_14_5 = var_14_3.skills[var_14_4]
-			local var_14_6 = var_14_3:getName()
-			local var_14_7 = getSkillName(iter_14_1:getSkillId(var_14_3))
-			local var_14_8 = string.gsub(var_14_1.content, "$1", var_14_6)
-			local var_14_9 = string.gsub(var_14_8, "$2", var_14_7)
-
-			arg_14_0:Push(var_14_1.title, var_14_9, iter_14_1.finishTime)
+			arg_13_0:Push(var_13_10.title, var_13_10.content, var_13_9)
 		end
 	end
 end
 
-function var_0_1.PushTechnlogy(arg_15_0)
-	local var_15_0 = var_0_0.push_data_template[var_0_1.PUSH_TYPE_TECHNOLOGY]
-	local var_15_1 = getProxy(TechnologyProxy)
+function var_0_1.PushBackyard(arg_14_0)
+	local var_14_0 = getProxy(DormProxy):getRawData():getFoodLeftTime()
 
-	if var_15_0 and var_15_1 then
-		local var_15_2 = var_15_1:getPlanningTechnologys()
+	if var_14_0 > var_0_0.TimeMgr.GetInstance():GetServerTime() then
+		local var_14_1 = var_0_0.push_data_template[arg_14_0.PUSH_TYPE_BACKYARD]
 
-		if #var_15_2 > 0 and not var_15_2[#var_15_2]:isFinish() then
-			arg_15_0:Push(var_15_0.title, var_15_0.content, var_15_2[#var_15_2].time)
+		arg_14_0:Push(var_14_1.title, var_14_1.content, var_14_0)
+	end
+end
+
+function var_0_1.PushSchool(arg_15_0)
+	local var_15_0 = getProxy(NavalAcademyProxy):getStudents()
+	local var_15_1 = var_0_0.push_data_template[arg_15_0.PUSH_TYPE_SCHOOL]
+	local var_15_2 = getProxy(BayProxy):getData()
+
+	for iter_15_0, iter_15_1 in ipairs(var_15_0) do
+		if iter_15_1.finishTime > var_0_0.TimeMgr.GetInstance():GetServerTime() then
+			local var_15_3 = var_15_2[iter_15_1.shipId]
+			local var_15_4 = iter_15_1:getSkillId(var_15_3)
+			local var_15_5 = var_15_3.skills[var_15_4]
+			local var_15_6 = var_15_3:getName()
+			local var_15_7 = getSkillName(iter_15_1:getSkillId(var_15_3))
+			local var_15_8 = string.gsub(var_15_1.content, "$1", var_15_6)
+			local var_15_9 = string.gsub(var_15_8, "$2", var_15_7)
+
+			arg_15_0:Push(var_15_1.title, var_15_9, iter_15_1.finishTime)
 		end
 	end
 end
 
-function var_0_1.PushBluePrint(arg_16_0)
-	local var_16_0 = var_0_0.push_data_template[var_0_1.PUSH_TYPE_BLUEPRINT]
+function var_0_1.PushTechnlogy(arg_16_0)
+	local var_16_0 = var_0_0.push_data_template[var_0_1.PUSH_TYPE_TECHNOLOGY]
 	local var_16_1 = getProxy(TechnologyProxy)
-	local var_16_2 = getProxy(TaskProxy)
 
-	if var_16_0 and var_16_1 and var_16_2 then
-		local var_16_3 = var_16_1:getBuildingBluePrint()
+	if var_16_0 and var_16_1 then
+		local var_16_2 = var_16_1:getPlanningTechnologys()
 
-		if var_16_3 then
-			local var_16_4 = var_16_3:getTaskIds()
+		if #var_16_2 > 0 and not var_16_2[#var_16_2]:isFinish() then
+			arg_16_0:Push(var_16_0.title, var_16_0.content, var_16_2[#var_16_2].time)
+		end
+	end
+end
 
-			for iter_16_0, iter_16_1 in ipairs(var_16_4) do
-				local var_16_5 = var_16_3:getTaskOpenTimeStamp(iter_16_1)
+function var_0_1.PushBluePrint(arg_17_0)
+	local var_17_0 = var_0_0.push_data_template[var_0_1.PUSH_TYPE_BLUEPRINT]
+	local var_17_1 = getProxy(TechnologyProxy)
+	local var_17_2 = getProxy(TaskProxy)
 
-				if var_16_5 > var_0_0.TimeMgr.GetInstance():GetServerTime() then
-					local var_16_6 = var_16_2:getTaskById(iter_16_1) or var_16_2:getFinishTaskById(iter_16_1)
-					local var_16_7 = var_16_2:isFinishPrevTasks(iter_16_1)
+	if var_17_0 and var_17_1 and var_17_2 then
+		local var_17_3 = var_17_1:getBuildingBluePrint()
 
-					if not var_16_6 and var_16_7 then
-						local var_16_8 = var_16_3:getShipVO()
-						local var_16_9 = string.gsub(var_16_0.content, "$1", var_16_8:getConfig("name"))
+		if var_17_3 then
+			local var_17_4 = var_17_3:getTaskIds()
 
-						arg_16_0:Push(var_16_0.title, var_16_9, var_16_5)
+			for iter_17_0, iter_17_1 in ipairs(var_17_4) do
+				local var_17_5 = var_17_3:getTaskOpenTimeStamp(iter_17_1)
+
+				if var_17_5 > var_0_0.TimeMgr.GetInstance():GetServerTime() then
+					local var_17_6 = var_17_2:getTaskById(iter_17_1) or var_17_2:getFinishTaskById(iter_17_1)
+					local var_17_7 = var_17_2:isFinishPrevTasks(iter_17_1)
+
+					if not var_17_6 and var_17_7 then
+						local var_17_8 = var_17_3:getShipVO()
+						local var_17_9 = string.gsub(var_17_0.content, "$1", var_17_8:getConfig("name"))
+
+						arg_17_0:Push(var_17_0.title, var_17_9, var_17_5)
 					end
 				end
 			end
@@ -254,18 +281,18 @@ function var_0_1.PushBluePrint(arg_16_0)
 	end
 end
 
-function var_0_1.PushCommander(arg_17_0)
-	local var_17_0 = var_0_0.push_data_template[var_0_1.PUSH_TYPE_COMMANDER]
-	local var_17_1 = getProxy(CommanderProxy)
+function var_0_1.PushCommander(arg_18_0)
+	local var_18_0 = var_0_0.push_data_template[var_0_1.PUSH_TYPE_COMMANDER]
+	local var_18_1 = getProxy(CommanderProxy)
 
-	if var_17_0 and var_17_1 then
-		local var_17_2 = var_17_1:getBoxes()
+	if var_18_0 and var_18_1 then
+		local var_18_2 = var_18_1:getBoxes()
 
-		for iter_17_0, iter_17_1 in pairs(var_17_2) do
-			if iter_17_1:getState() == CommanderBox.STATE_STARTING then
-				local var_17_3 = var_17_0.content
+		for iter_18_0, iter_18_1 in pairs(var_18_2) do
+			if iter_18_1:getState() == CommanderBox.STATE_STARTING then
+				local var_18_3 = var_18_0.content
 
-				arg_17_0:Push(var_17_0.title, var_17_3, iter_17_1.finishTime)
+				arg_18_0:Push(var_18_0.title, var_18_3, iter_18_1.finishTime)
 
 				break
 			end
@@ -273,38 +300,39 @@ function var_0_1.PushCommander(arg_17_0)
 	end
 end
 
-function var_0_1.PushGuildMissionFormation(arg_18_0)
-	local var_18_0 = getProxy(GuildProxy):getRawData()
+function var_0_1.PushGuildMissionFormation(arg_19_0)
+	local var_19_0 = getProxy(GuildProxy):getRawData()
 
-	if not var_18_0 then
+	if not var_19_0 then
 		return
 	end
 
-	local var_18_1 = var_18_0:GetActiveEvent()
+	local var_19_1 = var_19_0:GetActiveEvent()
 
-	if not var_18_1 or var_18_1 and not var_18_1:IsParticipant() then
+	if not var_19_1 or var_19_1 and not var_19_1:IsParticipant() then
 		return
 	end
 
-	local var_18_2 = var_18_1:GetUnlockMission()
+	local var_19_2 = var_19_1:GetUnlockMission()
 
-	if not var_18_2 then
+	if not var_19_2 then
 		return
 	end
 
-	local var_18_3 = var_18_2:GetNextFormationTime()
+	local var_19_3 = var_19_2:GetNextFormationTime()
 
-	if var_18_3 <= var_0_0.TimeMgr.GetInstance():GetServerTime() then
+	if var_19_3 <= var_0_0.TimeMgr.GetInstance():GetServerTime() then
 		return
 	end
 
-	local var_18_4 = var_0_0.push_data_template[var_0_1.PUSH_TYPE_GUILD_MISSION_FORMATION]
+	local var_19_4 = var_0_0.push_data_template[var_0_1.PUSH_TYPE_GUILD_MISSION_FORMATION]
 
-	arg_18_0:Push(var_18_4.title, var_18_4.content, var_18_3)
+	arg_19_0:Push(var_19_4.title, var_19_4.content, var_19_3)
 end
 
-function var_0_1.log(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
-	local var_19_0 = arg_19_3 - os.time()
+function var_0_1.log(arg_20_0, arg_20_1, arg_20_2, arg_20_3)
+	local var_20_0 = arg_20_3 - os.time()
+	local var_20_1 = var_0_0.TimeMgr.GetInstance():CTimeDescC(arg_20_3)
 
-	originalPrint(arg_19_1, " - ", arg_19_2, " - ", var_19_0, "s后推送")
+	originalPrint(var_20_1, "-", arg_20_1, " - ", arg_20_2, " - ", var_20_0, "s后推送")
 end

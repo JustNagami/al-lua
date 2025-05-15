@@ -359,6 +359,7 @@ pg.skill_data_template = setmetatable({
 		60820,
 		60830,
 		60840,
+		60850,
 		7000,
 		9010,
 		9020,
@@ -2573,6 +2574,8 @@ pg.skill_data_template = setmetatable({
 		1010960,
 		1012400,
 		1011150,
+		1013050,
+		1012480,
 		1090010,
 		1090020,
 		1090030,
@@ -12926,6 +12929,20 @@ pg.base.skill_data_template = {
 		type = 0,
 		max_level = 0,
 		desc = "When the battle starts: the wearer's DMG taken is decreased by 5.0% for 40s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[60850] = {
+		desc_get = "",
+		name = "My Precious Whale",
+		id = 60850,
+		type = 0,
+		max_level = 0,
+		desc = "Changes the battle BGM when equipped. If there are several BGM-altering gear equipped at the same time, only one will apply at random.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -171508,6 +171525,308 @@ pg.base.skill_data_template = {
 				},
 				{
 					"12.0%"
+				}
+			}
+		}
+	},
+	[1013050] = {
+		desc_get = "",
+		name = "Long Live the Revolution!+",
+		id = 1013050,
+		type = 1,
+		max_level = 10,
+		desc = "When this ship fires her Main Guns: increases your Northern Parliament ships' FP, TRP, AVI, AA, and RLD by $1 for 12s. If this ship has the Triple 305mm M1907 Main Gun Mount equipped: increases this ship's Main Gun efficiency by $2 and decreases the reload time of this ship's first 4 Main Gun volleys by $3 and increases her Main Gun's DMG dealt against Medium and Heavy Armor enemies by $4.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"8.0%",
+				"18.0%"
+			},
+			{
+				"60.0%",
+				"90.0%"
+			},
+			{
+				"20.0%",
+				"35.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"8.0%",
+					"+1.1%"
+				},
+				{
+					"9.1%",
+					"+1.1%"
+				},
+				{
+					"10.2%",
+					"+1.1%"
+				},
+				{
+					"11.3%",
+					"+1.1%"
+				},
+				{
+					"12.4%",
+					"+1.1%"
+				},
+				{
+					"13.5%",
+					"+1.1%"
+				},
+				{
+					"14.6%",
+					"+1.1%"
+				},
+				{
+					"15.7%",
+					"+1.1%"
+				},
+				{
+					"16.8%",
+					"+1.2%"
+				},
+				{
+					"18.0%"
+				}
+			},
+			{
+				{
+					"60.0%",
+					"+3.0%"
+				},
+				{
+					"63.0%",
+					"+3.0%"
+				},
+				{
+					"66.0%",
+					"+4.0%"
+				},
+				{
+					"70.0%",
+					"+3.0%"
+				},
+				{
+					"73.0%",
+					"+3.0%"
+				},
+				{
+					"76.0%",
+					"+4.0%"
+				},
+				{
+					"80.0%",
+					"+3.0%"
+				},
+				{
+					"83.0%",
+					"+3.0%"
+				},
+				{
+					"86.0%",
+					"+4.0%"
+				},
+				{
+					"90.0%"
+				}
+			},
+			{
+				{
+					"20.0%",
+					"+1.6%"
+				},
+				{
+					"21.6%",
+					"+1.6%"
+				},
+				{
+					"23.2%",
+					"+1.6%"
+				},
+				{
+					"24.8%",
+					"+1.6%"
+				},
+				{
+					"26.4%",
+					"+1.6%"
+				},
+				{
+					"28.0%",
+					"+1.6%"
+				},
+				{
+					"29.6%",
+					"+1.8%"
+				},
+				{
+					"31.4%",
+					"+1.8%"
+				},
+				{
+					"33.2%",
+					"+1.8%"
+				},
+				{
+					"35.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			}
+		}
+	},
+	[1012480] = {
+		desc_get = "",
+		name = "APsolute Ammunition+",
+		id = 1012480,
+		type = 1,
+		max_level = 10,
+		desc = "This ship's Main Gun ammo type changes to $1 Special AP (DMG increase is based on the skill's level). When this Special AP hits an enemy: $2 chance to inflict that enemy with Weakness Exposed; Weakness Exposed lasts for 8s and increases that enemy's shelling DMG received by 8.0%.\n15s after the battle starts, and every 20s after that: this ship gains a stealth mode, evading all enemy attacks for 3s; when this mode ends: fires a $1 special barrage (DMG is based on the skill's level) that inflicts the Weakness Exposed debuff to enemies hit.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"1.0%",
+				"3.5%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+0.2%"
+				},
+				{
+					"1.2%",
+					"+0.2%"
+				},
+				{
+					"1.4%",
+					"+0.2%"
+				},
+				{
+					"1.6%",
+					"+0.2%"
+				},
+				{
+					"1.8%",
+					"+0.3%"
+				},
+				{
+					"2.1%",
+					"+0.3%"
+				},
+				{
+					"2.4%",
+					"+0.3%"
+				},
+				{
+					"2.7%",
+					"+0.4%"
+				},
+				{
+					"3.1%",
+					"+0.4%"
+				},
+				{
+					"3.5%"
 				}
 			}
 		}

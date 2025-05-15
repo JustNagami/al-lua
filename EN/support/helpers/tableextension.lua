@@ -149,23 +149,13 @@ function table.Ipairs(arg_12_0, arg_12_1)
 end
 
 function table.IpairsCArray(arg_13_0, arg_13_1)
-	local var_13_0
-
-	for iter_13_0 = 0, arg_13_0.Length - 1 do
-		local var_13_1 = arg_13_0[iter_13_0]
-
-		arg_13_1(iter_13_0, var_13_1)
+	for iter_13_0, iter_13_1 in ipairs(table.CArrayToArray(arg_13_0)) do
+		arg_13_1(iter_13_0 - 1, iter_13_1)
 	end
 end
 
 function table.CArrayToArray(arg_14_0)
-	local var_14_0 = {}
-
-	for iter_14_0 = 0, arg_14_0.Length - 1 do
-		table.insert(var_14_0, arg_14_0[iter_14_0])
-	end
-
-	return var_14_0
+	return arg_14_0:ToTable()
 end
 
 function table.SerialIpairsAsync(arg_15_0, arg_15_1, arg_15_2)

@@ -31,6 +31,8 @@ end
 function var_0_0.disconnect(arg_4_0, arg_4_1)
 	local var_4_0 = arg_4_0.eventStore[arg_4_1]
 
+	assert(var_4_0, arg_4_1)
+
 	if var_4_0 then
 		arg_4_0.event:disconnect(var_4_0.event, var_4_0.callback)
 

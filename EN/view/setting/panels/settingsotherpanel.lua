@@ -72,6 +72,15 @@ function var_0_0.OnItemSwitch(arg_10_0, arg_10_1, arg_10_2)
 	elseif arg_10_1.type == 1 then
 		arg_10_0:OnCommonServerItemSwitch(arg_10_1, arg_10_2)
 	end
+
+	if arg_10_1.id == 19 then
+		local var_10_0 = arg_10_2 and 1 or 0
+
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildNewMainUI({
+			isLogin = 0,
+			isNewMainUI = var_10_0
+		}))
+	end
 end
 
 function var_0_0.OnClickEffectItemSwitch(arg_11_0, arg_11_1, arg_11_2)

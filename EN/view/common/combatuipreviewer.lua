@@ -15,11 +15,9 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	setActive(arg_1_0.rawImage, false)
 
 	arg_1_0.seaCameraGO = GameObject.Find("BarrageCamera")
-	arg_1_0.seaCameraGO.tag = "MainCamera"
 	arg_1_0.seaCamera = arg_1_0.seaCameraGO:GetComponent(typeof(Camera))
 	arg_1_0.seaCamera.targetTexture = arg_1_0.rawImage.texture
 	arg_1_0.seaCamera.enabled = true
-	arg_1_0.mainCameraGO = pg.UIMgr.GetInstance():GetMainCamera()
 end
 
 function var_0_0.setDisplayWeapon(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
@@ -126,7 +124,7 @@ function var_0_0.load(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4_5)
 	arg_4_0.shipVO = arg_4_2
 	arg_4_0.enemyVO = arg_4_3
 
-	ys.Battle.BattleVariable.Init()
+	ys.Battle.BattleVariable.Init(true)
 	ys.Battle.BattleVariable.UpdateCameraPositionArgs()
 	ys.Battle.BattleFXPool.GetInstance():Init()
 
@@ -226,7 +224,6 @@ function var_0_0.load(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4_5)
 			setImageSprite(findTF(arg_4_0.bossHPBar, "BossIcon/icon"), var_6_6)
 			setText(findTF(arg_4_0.bossHPBar, "BossNameBG/BossName"), ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(arg_4_0.enemyVO.configId).name)
 			setActive(arg_4_0.rawImage, true)
-			arg_4_0.mainCameraGO:SetActive(false)
 			pg.TimeMgr.GetInstance():ResumeBattleTimer()
 			arg_4_5()
 		end
@@ -327,7 +324,8 @@ function var_0_0.updatePopUp(arg_21_0)
 	LeanTween.cancel(arg_21_0.chatPop)
 
 	if arg_21_0.chatPop.transform:GetComponent(typeof(Animation)) then
-		ys.Battle.BattleCharacter.ChatPopAnimation(arg_21_0.chatPop, pg.ship_skin_words[100000].skill, 4)
+		ys.Battle.BattleCharacter.ChatPopAnimation(arg_21_0.chatPop, 4)
+		ys.Battle.BattleCharacter.setChatText(arg_21_0.chatPop, pg.ship_skin_words[100000].skill)
 	else
 		LeanTween.scale(rtf(arg_21_0.chatPop.gameObject), Vector3.New(0, 0, 1), 0.1):setEase(LeanTweenType.easeInBack):setOnComplete(System.Action(function()
 			ys.Battle.BattleCharacter.ChatPop(arg_21_0.chatPop, 5)
@@ -555,13 +553,9 @@ function var_0_0.clear(arg_33_0)
 
 	ys.Battle.BattleResourceManager.GetInstance():Clear()
 
-	arg_33_0.seaCameraGO.tag = "Untagged"
+	arg_33_0.seaCamera.enabled = true
 	arg_33_0.seaCameraGO = nil
 	arg_33_0.seaCamera = nil
-
-	arg_33_0.mainCameraGO:SetActive(true)
-
-	arg_33_0.mainCameraGO = nil
 	arg_33_0.loading = false
 	arg_33_0.loaded = false
 end

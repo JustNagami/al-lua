@@ -62,12 +62,12 @@ end
 
 function var_0_0.updateBounds(arg_5_0)
 	for iter_5_0 = 1, #arg_5_0.floors do
-		local var_5_0 = arg_5_0.floors[iter_5_0].collider.points
+		local var_5_0 = arg_5_0.floors[iter_5_0].collider
 		local var_5_1 = arg_5_0.floors[iter_5_0].tf.anchoredPosition
 		local var_5_2 = {}
 
-		for iter_5_1 = 0, var_5_0.Length - 1 do
-			local var_5_3 = Vector2(var_5_1.x + var_5_0[iter_5_1].x, var_5_1.y + var_5_0[iter_5_1].y)
+		for iter_5_1, iter_5_2 in ipairs(var_5_0.points:ToTable()) do
+			local var_5_3 = Vector2(var_5_1.x + iter_5_2.x, var_5_1.y + iter_5_2.y)
 
 			table.insert(var_5_2, var_5_3)
 		end

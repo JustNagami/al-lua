@@ -4,6 +4,9 @@ local var_0_0 = pg
 local var_0_1 = singletonClass("BrightnessMgr")
 
 var_0_0.BrightnessMgr = var_0_1
+
+local var_0_2 = YSNormalTool.BrightnessTool
+
 var_0_1.AutoIntoDarkModeTime = 10
 var_0_1.DarkModeBrightness = 0.1
 var_0_1.BrightnessMode = {
@@ -36,7 +39,7 @@ function var_0_1.AwakeForAWhile(arg_3_0)
 		return
 	end
 
-	BrightnessHelper.SetScreenBrightness(arg_3_0.originalBrightnessValue)
+	var_0_2.SetBrightnessValue(arg_3_0.originalBrightnessValue)
 	arg_3_0:SetDelayTask()
 end
 
@@ -44,7 +47,7 @@ function var_0_1.SetDelayTask(arg_4_0)
 	arg_4_0:ClearTask()
 
 	arg_4_0.task = Timer.New(function()
-		BrightnessHelper.SetScreenBrightness(math.min(var_0_1.DarkModeBrightness, arg_4_0.originalBrightnessValue))
+		var_0_2.SetBrightnessValue(math.min(var_0_1.DarkModeBrightness, arg_4_0.originalBrightnessValue))
 	end, var_0_1.AutoIntoDarkModeTime)
 
 	arg_4_0.task:Start()
@@ -65,11 +68,11 @@ function var_0_1.EnterManualMode(arg_7_0)
 		return
 	end
 
-	local var_7_0 = BrightnessHelper.GetValue()
+	local var_7_0 = var_0_2.GetBrightnessValue()
 
 	arg_7_0.originalBrightnessValue = var_7_0
 
-	BrightnessHelper.SetScreenBrightness(math.min(var_0_1.DarkModeBrightness, var_7_0))
+	var_0_2.SetBrightnessValue(math.min(var_0_1.DarkModeBrightness, var_7_0))
 
 	arg_7_0.manulStatus = true
 end
@@ -79,43 +82,47 @@ function var_0_1.ExitManualMode(arg_8_0)
 		return
 	end
 
-	BrightnessHelper.SetScreenBrightness(arg_8_0.originalBrightnessValue)
+	var_0_2.SetBrightnessValue(arg_8_0.originalBrightnessValue)
 	arg_8_0:ClearTask()
 
 	arg_8_0.manulStatus = false
 end
 
 function var_0_1.IsPermissionGranted(arg_9_0)
-	return BrightnessHelper.IsHavePermission()
+	return var_0_2.CanWriteSetting()
 end
 
-function var_0_1.RequestPremission(arg_10_0, arg_10_1)
-	BrightnessHelper.SetScreenBrightness(BrightnessHelper.GetValue())
+function var_0_1.OpenPermissionSettings(arg_10_0)
+	YSNormalTool.OtherTool.OpenAndroidWriteSettings()
+end
 
-	if arg_10_1 then
+function var_0_1.RequestPremission(arg_11_0, arg_11_1)
+	arg_11_0:OpenPermissionSettings()
+
+	if arg_11_1 then
 		FrameTimer.New(function()
-			arg_10_1(arg_10_0:IsPermissionGranted())
+			arg_11_1(arg_11_0:IsPermissionGranted())
 		end, 2):Start()
 	end
 end
 
-function var_0_1.SetScreenNeverSleep(arg_12_0, arg_12_1)
-	arg_12_1 = tobool(arg_12_1)
+function var_0_1.SetScreenNeverSleep(arg_13_0, arg_13_1)
+	arg_13_1 = tobool(arg_13_1)
 
-	if arg_12_1 then
-		if arg_12_0.sleepTimeOutCounter == 0 then
+	if arg_13_1 then
+		if arg_13_0.sleepTimeOutCounter == 0 then
 			Screen.sleepTimeout = SleepTimeout.NeverSleep
 		end
 
-		arg_12_0.sleepTimeOutCounter = arg_12_0.sleepTimeOutCounter + 1
+		arg_13_0.sleepTimeOutCounter = arg_13_0.sleepTimeOutCounter + 1
 	else
-		arg_12_0.sleepTimeOutCounter = arg_12_0.sleepTimeOutCounter - 1
+		arg_13_0.sleepTimeOutCounter = arg_13_0.sleepTimeOutCounter - 1
 
-		assert(arg_12_0.sleepTimeOutCounter >= 0, "InCorrect Call of SetScreenNeverSleep")
+		assert(arg_13_0.sleepTimeOutCounter >= 0, "InCorrect Call of SetScreenNeverSleep")
 
-		arg_12_0.sleepTimeOutCounter = math.max(0, arg_12_0.sleepTimeOutCounter)
+		arg_13_0.sleepTimeOutCounter = math.max(0, arg_13_0.sleepTimeOutCounter)
 
-		if arg_12_0.sleepTimeOutCounter == 0 then
+		if arg_13_0.sleepTimeOutCounter == 0 then
 			Screen.sleepTimeout = SleepTimeout.SystemSetting
 		end
 	end

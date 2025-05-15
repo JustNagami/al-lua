@@ -29486,7 +29486,7 @@ _G.pg.base.shop_template[70529] = {
 	tag = 0,
 	limit_args2 = "",
 	time_second = 0,
-	order = 300,
+	order = 100,
 	time = "always",
 	group = 0,
 	num = 1,
@@ -37943,8 +37943,8 @@ _G.pg.base.shop_template[70773] = {
 	time = {
 		{
 			{
-				2024,
-				11,
+				2025,
+				5,
 				14
 			},
 			{
@@ -37955,9 +37955,9 @@ _G.pg.base.shop_template[70773] = {
 		},
 		{
 			{
-				2024,
-				12,
-				4
+				2025,
+				5,
+				19
 			},
 			{
 				23,
@@ -42905,8 +42905,8 @@ _G.pg.base.shop_template[70912] = {
 	time = {
 		{
 			{
-				2024,
-				11,
+				2025,
+				5,
 				14
 			},
 			{
@@ -42917,9 +42917,9 @@ _G.pg.base.shop_template[70912] = {
 		},
 		{
 			{
-				2024,
-				12,
-				4
+				2025,
+				5,
+				19
 			},
 			{
 				23,

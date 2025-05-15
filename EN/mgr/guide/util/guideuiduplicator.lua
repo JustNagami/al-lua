@@ -26,28 +26,24 @@ end
 
 local function var_0_2(arg_4_0)
 	local var_4_0 = arg_4_0:GetComponent(typeof(Button))
-	local var_4_1 = arg_4_0:GetComponentsInChildren(typeof(Button))
+	local var_4_1 = arg_4_0:GetComponentsInChildren(typeof(Button)):ToTable()
 
-	for iter_4_0 = 1, var_4_1.Length do
-		local var_4_2 = var_4_1[iter_4_0 - 1]
-
-		if var_4_0 ~= var_4_2 then
-			var_4_2.enabled = false
+	for iter_4_0, iter_4_1 in ipairs(var_4_1) do
+		if var_4_0 ~= iter_4_1 then
+			iter_4_1.enabled = false
 		end
 	end
 
-	local var_4_3 = arg_4_0:GetComponent(typeof(Toggle))
-	local var_4_4 = arg_4_0:GetComponentsInChildren(typeof(Toggle))
+	local var_4_2 = arg_4_0:GetComponent(typeof(Toggle))
+	local var_4_3 = arg_4_0:GetComponentsInChildren(typeof(Toggle)):ToTable()
 
-	for iter_4_1 = 1, var_4_4.Length do
-		local var_4_5 = var_4_4[iter_4_1 - 1]
-
-		if var_4_3 ~= var_4_5 then
-			var_4_5.enabled = false
+	for iter_4_2, iter_4_3 in ipairs(var_4_3) do
+		if var_4_2 ~= iter_4_3 then
+			iter_4_3.enabled = false
 		end
 	end
 
-	if var_4_3 then
+	if var_4_2 then
 		setToggleEnabled(arg_4_0, true)
 	end
 end
@@ -69,10 +65,10 @@ local function var_0_4(arg_7_0)
 		Animator,
 		Animation
 	}) do
-		local var_7_0 = arg_7_0:GetComponentsInChildren(typeof(iter_7_1))
+		local var_7_0 = arg_7_0:GetComponentsInChildren(typeof(iter_7_1)):ToTable()
 
-		for iter_7_2 = 1, var_7_0.Length do
-			var_7_0[iter_7_2 - 1].enabled = false
+		for iter_7_2, iter_7_3 in ipairs(var_7_0) do
+			iter_7_3.enabled = false
 		end
 	end
 end
@@ -103,12 +99,10 @@ function var_0_0.InitDuplication(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
 	var_0_3(arg_8_1)
 
 	if not arg_8_3.keepScrollTxt then
-		local var_8_2 = arg_8_1:GetComponentsInChildren(typeof(ScrollText))
+		local var_8_2 = arg_8_1:GetComponentsInChildren(typeof(ScrollText)):ToTable()
 
-		for iter_8_0 = 1, var_8_2.Length do
-			local var_8_3 = var_8_2[iter_8_0 - 1]
-
-			setActive(var_8_3.gameObject, false)
+		for iter_8_0, iter_8_1 in ipairs(var_8_2) do
+			setActive(iter_8_1.gameObject, false)
 		end
 	end
 

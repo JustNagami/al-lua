@@ -399,11 +399,11 @@ function var_0_0.ClearStoryPoint(arg_52_0)
 end
 
 function var_0_0.SetUpSpine(arg_53_0, arg_53_1)
-	local var_53_0 = arg_53_1:GetComponentsInChildren(typeof(Spine.Unity.SkeletonGraphic))
+	local var_53_0 = arg_53_1:GetComponentsInChildren(typeof(Spine.Unity.SkeletonGraphic)):ToTable()
 	local var_53_1 = {}
 
-	for iter_53_0 = 1, var_53_0.Length do
-		local var_53_2 = var_53_0[iter_53_0 - 1].gameObject
+	for iter_53_0, iter_53_1 in ipairs(var_53_0) do
+		local var_53_2 = iter_53_1.gameObject
 		local var_53_3 = GetOrAddComponent(var_53_2, typeof(SpineAnimUI))
 		local var_53_4 = string.split(var_53_2.gameObject.transform.parent.name, "#")
 		local var_53_5 = arg_53_0.gameData:GetExploreSubType(var_53_4[1])

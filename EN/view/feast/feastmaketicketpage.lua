@@ -313,10 +313,10 @@ function var_0_0.ClearEvent(arg_37_0, arg_37_1)
 	var_37_0:AddDragEndFunc(nil)
 	var_37_0:AddPointUpFunc(nil)
 
-	local var_37_1 = arg_37_1:GetComponentsInChildren(typeof(Image))
+	local var_37_1 = arg_37_1:GetComponentsInChildren(typeof(Image)):ToTable()
 
-	for iter_37_0 = 1, var_37_1.Length do
-		var_37_1[iter_37_0 - 1].raycastTarget = false
+	for iter_37_0, iter_37_1 in ipairs(var_37_1) do
+		iter_37_1.raycastTarget = false
 	end
 end
 

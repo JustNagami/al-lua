@@ -79,6 +79,8 @@ function var_0_0.stopLoadingAni(arg_12_0)
 end
 
 function var_0_0.willExit(arg_13_0)
+	arg_13_0.seaCamera.enabled = false
+
 	arg_13_0.UIMgr:UnblurPanel(arg_13_0._tf, arg_13_0.UIMain)
 
 	if arg_13_0.previewer then

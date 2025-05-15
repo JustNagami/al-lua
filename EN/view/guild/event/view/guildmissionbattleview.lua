@@ -57,11 +57,9 @@ function var_0_0.Ctor(arg_7_0, arg_7_1)
 	setActive(arg_7_0.rawImage, false)
 
 	arg_7_0.seaCameraGO = GameObject.Find("BarrageCamera")
-	arg_7_0.seaCameraGO.tag = "MainCamera"
 	arg_7_0.seaCamera = arg_7_0.seaCameraGO:GetComponent(typeof(Camera))
 	arg_7_0.seaCamera.targetTexture = arg_7_0.rawImage.texture
 	arg_7_0.seaCamera.enabled = true
-	arg_7_0.mainCameraGO = pg.UIMgr.GetInstance():GetMainCamera()
 end
 
 function var_0_0.configUI(arg_8_0, arg_8_1, arg_8_2)
@@ -76,7 +74,7 @@ function var_0_0.configUI(arg_8_0, arg_8_1, arg_8_2)
 end
 
 function var_0_0.load(arg_10_0, arg_10_1, arg_10_2)
-	ys.Battle.BattleVariable.Init()
+	ys.Battle.BattleVariable.Init(true)
 
 	local var_10_0 = ys.Battle.BattleResourceManager.GetInstance()
 
@@ -1161,13 +1159,9 @@ function var_0_0.clear(arg_89_0)
 
 	ys.Battle.BattleResourceManager.GetInstance():Clear()
 
-	arg_89_0.seaCameraGO.tag = "Untagged"
+	arg_89_0.seaCamera.enabled = false
 	arg_89_0.seaCameraGO = nil
 	arg_89_0.seaCamera = nil
-
-	arg_89_0.mainCameraGO:SetActive(true)
-
-	arg_89_0.mainCameraGO = nil
 	arg_89_0.loaded = false
 
 	if arg_89_0.palyAnimTimer then

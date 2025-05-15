@@ -224,38 +224,37 @@ function var_0_0.UpdatePainting(arg_13_0, arg_13_1, arg_13_2)
 end
 
 function var_0_0.AddGlitchArtEffectForPating(arg_14_0, arg_14_1)
-	local var_14_0 = arg_14_1:GetComponentsInChildren(typeof(Image))
+	local var_14_0 = arg_14_1:GetComponentsInChildren(typeof(Image)):ToTable()
 
-	for iter_14_0 = 0, var_14_0.Length - 1 do
-		var_14_0[iter_14_0].material = arg_14_0.glitchArtMaterial
+	for iter_14_0, iter_14_1 in ipairs(var_14_0) do
+		iter_14_1.material = arg_14_0.glitchArtMaterial
 	end
 end
 
 function var_0_0.RecyclePainting(arg_15_0, arg_15_1)
 	if arg_15_1:Find("fitter").childCount > 0 then
-		local var_15_0 = arg_15_1:GetComponentsInChildren(typeof(Image))
+		local var_15_0 = arg_15_1:GetComponentsInChildren(typeof(Image)):ToTable()
 
-		for iter_15_0 = 0, var_15_0.Length - 1 do
-			local var_15_1 = var_15_0[iter_15_0]
-			local var_15_2 = Color.white
+		for iter_15_0, iter_15_1 in ipairs(var_15_0) do
+			local var_15_1 = Color.white
 
-			if var_15_1.material ~= var_15_1.defaultGraphicMaterial then
-				var_15_1.material = var_15_1.defaultGraphicMaterial
+			if iter_15_1.material ~= iter_15_1.defaultGraphicMaterial then
+				iter_15_1.material = iter_15_1.defaultGraphicMaterial
 
-				var_15_1.material:SetColor("_Color", var_15_2)
+				iter_15_1.material:SetColor("_Color", var_15_1)
 			end
 		end
 
 		setGray(arg_15_1, false, true)
 
-		local var_15_3 = arg_15_1:Find("fitter"):GetChild(0)
+		local var_15_2 = arg_15_1:Find("fitter"):GetChild(0)
 
-		retPaintingPrefab(arg_15_1, var_15_3.name)
+		retPaintingPrefab(arg_15_1, var_15_2.name)
 
-		local var_15_4 = var_15_3:Find("temp_mask")
+		local var_15_3 = var_15_2:Find("temp_mask")
 
-		if var_15_4 then
-			Destroy(var_15_4)
+		if var_15_3 then
+			Destroy(var_15_3)
 		end
 	end
 end

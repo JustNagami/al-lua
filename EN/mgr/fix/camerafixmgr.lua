@@ -107,7 +107,11 @@ function var_0_0.AdaptTo(arg_6_0, arg_6_1, arg_6_2)
 		local var_6_4 = Mathf.Clamp01(var_6_3 * var_6_0 / arg_6_2)
 		local var_6_5 = Mathf.Clamp01((1 - var_6_4) * 0.5)
 
-		arg_6_1.rect = UnityEngine.Rect.New(var_6_2, var_6_5, var_6_3, var_6_4)
+		arg_6_0.sizeRate = var_6_3 / var_6_4
+
+		arg_6_0:SetCameraOrthographicSize(arg_6_1, arg_6_0:GetCameraOrthographicSize(arg_6_1))
+
+		arg_6_1.rect = UnityEngine.Rect.New(0, 0, 1, 1)
 		arg_6_0.actualWidth = arg_6_0.currentWidth
 		arg_6_0.actualHeight = arg_6_0.currentWidth / arg_6_2
 
@@ -123,7 +127,11 @@ function var_0_0.AdaptTo(arg_6_0, arg_6_1, arg_6_2)
 		local var_6_9 = Mathf.Clamp01(var_6_8 * arg_6_2 / var_6_0)
 		local var_6_10 = Mathf.Clamp01((1 - var_6_9) * 0.5)
 
-		arg_6_1.rect = UnityEngine.Rect.New(var_6_10, var_6_7, var_6_9, var_6_8)
+		arg_6_0.sizeRate = var_6_9 / var_6_8
+
+		arg_6_0:SetCameraOrthographicSize(arg_6_1, arg_6_0:GetCameraOrthographicSize(arg_6_1))
+
+		arg_6_1.rect = UnityEngine.Rect.New(0, 0, 1, 1)
 		arg_6_0.actualWidth = arg_6_0.currentHeight * arg_6_2
 		arg_6_0.actualHeight = arg_6_0.currentHeight
 
@@ -237,12 +245,27 @@ function var_0_0.GetCurrentHeight(arg_11_0)
 	return arg_11_0.currentHeight
 end
 
-function var_0_0.Clear(arg_12_0)
-	if arg_12_0.handle then
-		LateUpdateBeat:RemoveListener(arg_12_0.handle)
+local var_0_2 = {}
+
+function var_0_0.SetCameraOrthographicSize(arg_12_0, arg_12_1, arg_12_2)
+	if not arg_12_0.sizeRate or not arg_12_2 then
+		return
+	end
+
+	var_0_2[arg_12_1] = arg_12_2
+	arg_12_1.orthographicSize = arg_12_2 * arg_12_0.sizeRate
+end
+
+function var_0_0.GetCameraOrthographicSize(arg_13_0, arg_13_1)
+	return var_0_2[arg_13_1]
+end
+
+function var_0_0.Clear(arg_14_0)
+	if arg_14_0.handle then
+		LateUpdateBeat:RemoveListener(arg_14_0.handle)
 	end
 end
 
-function var_0_0.Dispose(arg_13_0)
-	arg_13_0:Clear()
+function var_0_0.Dispose(arg_15_0)
+	arg_15_0:Clear()
 end

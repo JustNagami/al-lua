@@ -251,10 +251,10 @@ function var_0_0.LoadPrefab(arg_22_0, arg_22_1)
 			return
 		end
 
-		local var_23_0 = arg_23_0:GetComponentsInChildren(typeof(Image))
+		local var_23_0 = arg_23_0:GetComponentsInChildren(typeof(Image)):ToTable()
 
-		for iter_23_0 = 0, var_23_0.Length - 1 do
-			var_23_0[iter_23_0].raycastTarget = false
+		for iter_23_0, iter_23_1 in ipairs(var_23_0) do
+			iter_23_1.raycastTarget = false
 		end
 
 		arg_23_0.transform:SetParent(arg_22_0.model, false)

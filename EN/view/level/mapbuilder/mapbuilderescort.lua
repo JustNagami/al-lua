@@ -101,10 +101,10 @@ function var_0_0.UpdateEscortItem(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
 		Color.yellow,
 		Color.red
 	})[var_10_7 or 1]
-	local var_10_9 = var_10_5:GetComponentsInChildren(typeof(Image))
+	local var_10_9 = var_10_5:GetComponentsInChildren(typeof(Image)):ToTable()
 
-	for iter_10_0 = 0, var_10_9.Length - 1 do
-		var_10_9[iter_10_0].color = var_10_8
+	for iter_10_0, iter_10_1 in ipairs(var_10_9) do
+		iter_10_1.color = var_10_8
 	end
 
 	setImageColor(arg_10_1, var_10_8)
