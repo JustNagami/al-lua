@@ -113,6 +113,7 @@ function var_0_0.didEnter(arg_10_0)
 	arg_10_0:bind(var_0_0.FLUSH_TABS, function()
 		arg_10_0:flushTabs()
 	end)
+	getProxy(CommanderManualProxy):TaskProgressAdd(2020, 1)
 end
 
 function var_0_0.setPlayer(arg_16_0, arg_16_1)

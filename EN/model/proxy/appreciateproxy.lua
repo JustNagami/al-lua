@@ -49,12 +49,14 @@ function var_0_0.checkMusicFileState(arg_4_0)
 	local var_4_0
 	local var_4_1
 
-	for iter_4_0, iter_4_1 in ipairs(pg.music_collect_config.all) do
-		local var_4_2 = pg.music_collect_config[iter_4_1].music
-		local var_4_3 = MusicCollectionConst.MUSIC_SONG_PATH_PREFIX .. var_4_2 .. ".b"
-		local var_4_4 = checkABExist(var_4_3)
+	for iter_4_0, iter_4_1 in pairs(pg.music_collect_config.get_id_list_by_album_name) do
+		for iter_4_2, iter_4_3 in ipairs(iter_4_1) do
+			local var_4_2 = pg.music_collect_config[iter_4_3].music
+			local var_4_3 = MusicCollectionConst.MUSIC_SONG_PATH_PREFIX .. var_4_2 .. ".b"
+			local var_4_4 = checkABExist(var_4_3)
 
-		arg_4_0.musicExistStateTable[iter_4_1] = var_4_4
+			arg_4_0.musicExistStateTable[iter_4_3] = var_4_4
+		end
 	end
 end
 
@@ -440,7 +442,49 @@ function var_0_0.isLikedByMusicID(arg_43_0, arg_43_1)
 	return table.contains(arg_43_0.musicLikeIDList, arg_43_1)
 end
 
-function var_0_0.isGalleryHaveNewRes(arg_44_0)
+function var_0_0.setMainPlayMusicAlbum(arg_44_0, arg_44_1)
+	arg_44_0.mainMarkMusicId = arg_44_1
+end
+
+function var_0_0.getMainPlayerAlbumName(arg_45_0)
+	if not arg_45_0.mainMarkMusicId or arg_45_0.mainMarkMusicId == 0 then
+		return "none"
+	elseif arg_45_0.mainMarkMusicId == 999 then
+		return "favor"
+	else
+		return pg.music_collect_config[arg_45_0.mainMarkMusicId].album_name
+	end
+end
+
+function var_0_0.setMusicPlayerLoopType(arg_46_0, arg_46_1)
+	arg_46_0.musicPlayerLoopType = arg_46_1
+end
+
+local var_0_1 = {
+	[0] = "list",
+	"random",
+	"one"
+}
+
+function var_0_0.getMusicPlayerLoopType(arg_47_0)
+	return var_0_1[arg_47_0.musicPlayerLoopType]
+end
+
+function var_0_0.getAlbumMusicList(arg_48_0, arg_48_1)
+	if arg_48_1 == "favor" then
+		return underscore.to_array(arg_48_0.musicLikeIDList)
+	else
+		return underscore.to_array(pg.music_collect_config.get_id_list_by_album_name[arg_48_1] or {})
+	end
+end
+
+function var_0_0.CanPlayMainMusicPlayer(arg_49_0)
+	local var_49_0 = getProxy(AppreciateProxy):getMainPlayerAlbumName()
+
+	return var_49_0 ~= "none" and #arg_49_0:getAlbumMusicList(var_49_0) > 0
+end
+
+function var_0_0.isGalleryHaveNewRes(arg_50_0)
 	if PlayerPrefs.GetInt("galleryVersion", 0) < GalleryConst.Version then
 		return true
 	else
@@ -448,7 +492,7 @@ function var_0_0.isGalleryHaveNewRes(arg_44_0)
 	end
 end
 
-function var_0_0.isMusicHaveNewRes(arg_45_0)
+function var_0_0.isMusicHaveNewRes(arg_51_0)
 	if PlayerPrefs.GetInt("musicVersion", 0) < MusicCollectionConst.Version then
 		return true
 	else
@@ -456,7 +500,7 @@ function var_0_0.isMusicHaveNewRes(arg_45_0)
 	end
 end
 
-function var_0_0.isMangaHaveNewRes(arg_46_0)
+function var_0_0.isMangaHaveNewRes(arg_52_0)
 	if PlayerPrefs.GetInt("mangaVersion", 0) < MangaConst.Version then
 		return true
 	else

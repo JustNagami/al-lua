@@ -37,9 +37,9 @@ function var_0_0.init(arg_6_0)
 	arg_6_0.proxy = getProxy(MailProxy)
 	arg_6_0.rtAdapt = arg_6_0._tf:Find("adapt")
 
-	setText(arg_6_0.rtAdapt:Find("top/title"), i18n("mail_title_new"))
-	setText(arg_6_0.rtAdapt:Find("top/title/Text"), i18n("mail_title_English"))
-	onButton(arg_6_0, arg_6_0.rtAdapt:Find("top/back_btn"), function()
+	setText(arg_6_0.rtAdapt:Find("CommonTitleAndBack/title"), i18n("mail_title_new"))
+	setText(arg_6_0.rtAdapt:Find("CommonTitleAndBack/title/en"), i18n("mail_title_English"))
+	onButton(arg_6_0, arg_6_0.rtAdapt:Find("CommonTitleAndBack/back_btn"), function()
 		local var_7_0 = {}
 
 		if arg_6_0.proxy.totalExist > MAIL_COUNT_LIMIT then
@@ -930,7 +930,7 @@ function var_0_0.onBackPressed(arg_84_0)
 	elseif arg_84_0.mailStoreroomRewardSubView:isShowing() then
 		arg_84_0.mailStoreroomRewardSubView:Hide()
 	else
-		triggerButton(arg_84_0.rtAdapt:Find("top/back_btn"))
+		triggerButton(arg_84_0.rtAdapt:Find("CommonTitleAndBack/back_btn"))
 	end
 end
 

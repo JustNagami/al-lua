@@ -1,5 +1,5 @@
 ﻿return {
-	id = 1880301,
+	id = 1921301,
 	stages = {
 		{
 			stageIndex = 1,
@@ -61,7 +61,7 @@
 					triggerParam = {},
 					spawn = {
 						{
-							monsterTemplateID = 16690201,
+							monsterTemplateID = 16691201,
 							reinforceDelay = 4,
 							delay = 1,
 							sickness = 0.1,
@@ -78,11 +78,11 @@
 					},
 					reinforcement = {
 						{
-							monsterTemplateID = 16690003,
+							monsterTemplateID = 16691002,
 							delay = 0,
 							sickness = 0.1,
 							corrdinate = {
-								-12,
+								-10,
 								0,
 								62
 							},
@@ -92,11 +92,11 @@
 							}
 						},
 						{
-							monsterTemplateID = 16690003,
+							monsterTemplateID = 16691002,
 							delay = 0,
 							sickness = 0.1,
 							corrdinate = {
-								-12,
+								-10,
 								0,
 								38
 							},
@@ -106,7 +106,7 @@
 							}
 						},
 						{
-							monsterTemplateID = 16690002,
+							monsterTemplateID = 16691001,
 							delay = 0,
 							sickness = 0.1,
 							corrdinate = {
@@ -120,7 +120,7 @@
 							}
 						},
 						{
-							monsterTemplateID = 16690002,
+							monsterTemplateID = 16691001,
 							delay = 0,
 							sickness = 0.1,
 							corrdinate = {
@@ -146,7 +146,7 @@
 					spawn = {},
 					reinforcement = {
 						{
-							monsterTemplateID = 16690007,
+							monsterTemplateID = 16691007,
 							moveCast = true,
 							delay = 8,
 							corrdinate = {
@@ -182,7 +182,7 @@
 					spawn = {},
 					reinforcement = {
 						{
-							monsterTemplateID = 16690006,
+							monsterTemplateID = 16691006,
 							delay = 4,
 							sickness = 0.1,
 							corrdinate = {
@@ -195,7 +195,7 @@
 							}
 						},
 						{
-							monsterTemplateID = 16690006,
+							monsterTemplateID = 16691006,
 							delay = 4,
 							sickness = 0.1,
 							corrdinate = {

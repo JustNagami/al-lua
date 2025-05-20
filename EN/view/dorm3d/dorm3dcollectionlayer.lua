@@ -29,11 +29,11 @@ function var_0_0.init(arg_4_0)
 
 	local var_4_1 = var_4_0:Find("content")
 
-	arg_4_0.memoryView = Dorm3dMemorySubView.New(nil, arg_4_0.event, arg_4_0.contextData)
+	arg_4_0.memoryView = Dorm3dMemorySubView.New(var_4_1, arg_4_0.event, arg_4_0.contextData)
 
 	arg_4_0.memoryView:SetExtra(var_4_1:Find("memory"))
 
-	arg_4_0.collectItemView = Dorm3dCollectionItemSubView.New(nil, arg_4_0.event, arg_4_0.contextData)
+	arg_4_0.collectItemView = Dorm3dCollectionItemSubView.New(var_4_1, arg_4_0.event, arg_4_0.contextData)
 
 	arg_4_0.collectItemView:SetExtra(var_4_1:Find("item"))
 	pg.UIMgr.GetInstance():BlurPanel(arg_4_0._tf, false, {

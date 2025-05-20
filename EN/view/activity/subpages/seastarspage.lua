@@ -1,7 +1,7 @@
 ﻿local var_0_0 = class("SeaStarsPage", import(".TemplatePage.NewFrameTemplatePage"))
 
 function var_0_0.OnFirstFlush(arg_1_0)
-	SetActive(arg_1_0.switchBtn, fasle)
+	SetActive(arg_1_0.switchBtn, false)
 
 	for iter_1_0, iter_1_1 in ipairs(arg_1_0.phases) do
 		setActive(iter_1_1, true)

@@ -1,4 +1,4 @@
-﻿local var_0_0 = class("BaseAssignedShipScene", import("...base.BaseUI"))
+﻿local var_0_0 = class("BaseAssignedShipScene", import("view.base.BaseUI"))
 
 var_0_0.TipWords = {
 	login_year = "nine_choose_one",

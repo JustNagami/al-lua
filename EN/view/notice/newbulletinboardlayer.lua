@@ -123,7 +123,7 @@ function var_0_0.updateRed(arg_7_0)
 end
 
 function var_0_0.checkNotice(arg_8_0, arg_8_1)
-	return arg_8_1.type and arg_8_1.type > 0 and arg_8_1.type < 4 and (arg_8_1.paramType == nil or arg_8_1.paramType == 1 and type(arg_8_1.param) == "string" or arg_8_1.paramType == 2 and type(arg_8_1.param) == "string" or arg_8_1.paramType == 3 and type(arg_8_1.param) == "number" or arg_8_1.paramType == 4 and type(arg_8_1.param) == "number" and pg.activity_banner_notice[arg_8_1.param] ~= nil)
+	return arg_8_1.type and arg_8_1.type > 0 and arg_8_1.type < 4 and (arg_8_1.paramType == nil or arg_8_1.paramType == 1 and type(arg_8_1.param) == "string" or arg_8_1.paramType == 2 and type(arg_8_1.param) == "string" or arg_8_1.paramType == 3 and type(arg_8_1.param) == "number" or arg_8_1.paramType == 4 and type(arg_8_1.param) == "number" and pg.activity_banner_notice[arg_8_1.param] ~= nil or arg_8_1.paramType == 5)
 end
 
 function var_0_0.initNotices(arg_9_0, arg_9_1)
@@ -316,6 +316,14 @@ function var_0_0.setNoticeDetail(arg_18_0, arg_18_1)
 				local var_22_0 = pg.activity_banner_notice[arg_18_1.param].param
 
 				arg_18_0:emit(NewBulletinBoardMediator.GO_SCENE, var_22_0[1], var_22_0[2])
+			elseif arg_18_1.paramType == 5 then
+				if not pg.NewStoryMgr.GetInstance():IsPlayed("JIARIBIESHUCHOUBEIZHONG5") then
+					arg_18_0:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.ACTIVITY, {
+						id = 5922
+					})
+				else
+					arg_18_0:emit(NewBulletinBoardMediator.GO_SCENE, SCENE.HOLIDAY_VILLA_MAP)
+				end
 			end
 
 			arg_18_0.contextData.defaultMainTab = arg_18_0.currentMainTab

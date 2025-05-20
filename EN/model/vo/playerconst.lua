@@ -59,8 +59,22 @@ local function var_0_2(arg_1_0)
 		end
 	}
 
-	switch(arg_1_0.type, var_0_1, function()
-		assert(false)
+	switch(arg_1_0.type, var_0_1, function(arg_5_0)
+		if arg_5_0.type > DROP_TYPE_USE_ACTIVITY_DROP then
+			local var_5_0 = getProxy(ActivityProxy):getActivityById(pg.activity_drop_type[arg_5_0.type].activity_id)
+
+			if var_5_0 and not var_5_0:isEnd() then
+				if arg_5_0.count > 0 then
+					var_5_0:addVitemNumber(arg_5_0.id, arg_5_0.count)
+				elseif arg_5_0.count < 0 then
+					var_5_0:subVitemNumber(arg_5_0.id, -arg_5_0.count)
+				end
+			end
+
+			getProxy(ActivityProxy):updateActivity(var_5_0)
+		else
+			assert(false, string.format("without drop_type_%d owner logic from id_%d", type, arg_5_0.id))
+		end
 	end, arg_1_0)
 end
 
@@ -73,6 +87,7 @@ end
 function reducePlayerOwn(arg_7_0)
 	arg_7_0.count = -math.max(arg_7_0.count, 0)
 
+	print(arg_7_0.count)
 	var_0_2(arg_7_0)
 end
 

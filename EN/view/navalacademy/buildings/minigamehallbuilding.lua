@@ -10,13 +10,21 @@ end
 
 function var_0_0.OnInit(arg_3_0)
 	setActive(arg_3_0._tf, not LOCK_MINIGAME_HALL)
+
+	local var_3_0 = arg_3_0:IsUnlock()
+
+	setActive(arg_3_0._tf:Find("name/lock"), not var_3_0)
 end
 
 function var_0_0.OnClick(arg_4_0)
 	arg_4_0:emit(NavalAcademyMediator.ON_OPEN_MINIGAMEHALL)
 end
 
-function var_0_0.IsTip(arg_5_0)
+function var_0_0.IsUnlock(arg_5_0)
+	return pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "GameHallMediator")
+end
+
+function var_0_0.IsTip(arg_6_0)
 	return false
 end
 

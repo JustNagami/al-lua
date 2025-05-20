@@ -22,7 +22,6 @@ end
 
 function var_0_0.SetExtra(arg_2_0, arg_2_1)
 	arg_2_0.extraGameObject = go(arg_2_1)
-	arg_2_0._parentTf = arg_2_1.parent
 end
 
 function var_0_0.Load(arg_3_0)
@@ -45,7 +44,7 @@ function var_0_0.Load(arg_3_0)
 			end
 		end
 	}, function(arg_5_0)
-		if arg_3_0._state == var_0_0.STATES.DESTROY and arg_3_0:getUIName() then
+		if arg_3_0._state == var_0_0.STATES.DESTROY and not arg_3_0.extraGameObject then
 			pg.UIMgr.GetInstance():LoadingOff()
 			var_3_0:ReturnUI(arg_3_0:getUIName(), arg_5_0)
 		else
@@ -68,7 +67,11 @@ function var_0_0.Loaded(arg_6_0, arg_6_1)
 
 	setActiveViaLayer(arg_6_0._tf, true)
 	pg.DelegateInfo.New(arg_6_0)
-	SetParent(arg_6_0._tf, arg_6_0._parentTf, false)
+
+	if arg_6_0._tf.parent ~= arg_6_0._parentTf then
+		SetParent(arg_6_0._tf, arg_6_0._parentTf, false)
+	end
+
 	arg_6_0:OnLoaded()
 end
 
@@ -103,13 +106,13 @@ function var_0_0.Destroy(arg_8_0)
 
 	arg_8_0._tf = nil
 
-	local var_8_0 = arg_8_0:getUIName()
-
-	if arg_8_0._go ~= nil and var_8_0 then
-		PoolMgr.GetInstance():ReturnUI(var_8_0, arg_8_0._go)
+	if arg_8_0._go ~= nil and not arg_8_0.extraGameObject then
+		PoolMgr.GetInstance():ReturnUI(arg_8_0:getUIName(), arg_8_0._go)
 
 		arg_8_0._go = nil
 	end
+
+	arg_8_0.extraGameObject = nil
 end
 
 function var_0_0.HandleFuncQueue(arg_9_0)
@@ -117,7 +120,7 @@ function var_0_0.HandleFuncQueue(arg_9_0)
 		while #arg_9_0._funcQueue > 0 do
 			local var_9_0 = table.remove(arg_9_0._funcQueue, 1)
 
-			var_9_0.func(unpack(var_9_0.params, 1, var_9_0.params.len))
+			var_9_0.func(unpackEx(var_9_0.params))
 		end
 	end
 end
@@ -132,11 +135,7 @@ function var_0_0.ActionInvoke(arg_11_0, arg_11_1, ...)
 	arg_11_0._funcQueue[#arg_11_0._funcQueue + 1] = {
 		funcName = arg_11_1,
 		func = arg_11_0[arg_11_1],
-		params = {
-			len = 1 + select("#", ...),
-			arg_11_0,
-			...
-		}
+		params = packEx(arg_11_0, ...)
 	}
 
 	arg_11_0:HandleFuncQueue()

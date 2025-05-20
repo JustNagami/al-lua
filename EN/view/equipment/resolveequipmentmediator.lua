@@ -31,16 +31,18 @@ function var_0_0.handleNotification(arg_4_0, arg_4_1)
 	local var_4_1 = arg_4_1:getBody()
 
 	if var_4_0 == GAME.DESTROY_EQUIPMENTS_DONE then
-		arg_4_0.viewComponent:OnResolveEquipDone()
+		arg_4_0.viewComponent:HideDestroyCondirm()
 
 		if table.getCount(var_4_1) ~= 0 then
 			arg_4_0.viewComponent:emit(BaseUI.ON_AWARD, {
 				items = var_4_1,
 				title = AwardInfoLayer.TITLE.ITEM,
 				removeFunc = function()
-					arg_4_0.viewComponent:emit(BaseUI.ON_CLOSE)
+					arg_4_0.viewComponent:OnResolveEquipDone()
 				end
 			})
+		else
+			arg_4_0.viewComponent:OnResolveEquipDone()
 		end
 	elseif var_4_0 == GAME.CANCEL_LIMITED_OPERATION then
 		-- block empty

@@ -543,12 +543,12 @@ function var_0_3.TargetFaintState(arg_31_0, arg_31_1, arg_31_2)
 	return var_31_0
 end
 
-function var_0_3.TargetHarmNearest(arg_32_0, arg_32_1, arg_32_2)
+function var_0_3.TargetNearest(arg_32_0, arg_32_1, arg_32_2)
 	arg_32_1 = arg_32_1 or {}
 
 	local var_32_0 = arg_32_1.range or 9999999999
 	local var_32_1
-	local var_32_2 = arg_32_2 and var_0_3.TargetFoeUncloak(arg_32_0, arg_32_1, arg_32_2) or var_0_3.TargetFoeUncloak(arg_32_0)
+	local var_32_2 = arg_32_2
 
 	for iter_32_0, iter_32_1 in ipairs(var_32_2) do
 		local var_32_3 = arg_32_0:GetDistance(iter_32_1)
@@ -564,18 +564,17 @@ function var_0_3.TargetHarmNearest(arg_32_0, arg_32_1, arg_32_2)
 	}
 end
 
-function var_0_3.TargetHarmFarthest(arg_33_0, arg_33_1, arg_33_2)
-	local var_33_0 = 0
-	local var_33_1
-
+function var_0_3.TargetHarmNearest(arg_33_0, arg_33_1, arg_33_2)
 	arg_33_1 = arg_33_1 or {}
 
+	local var_33_0 = arg_33_1.range or 9999999999
+	local var_33_1
 	local var_33_2 = arg_33_2 and var_0_3.TargetFoeUncloak(arg_33_0, arg_33_1, arg_33_2) or var_0_3.TargetFoeUncloak(arg_33_0)
 
 	for iter_33_0, iter_33_1 in ipairs(var_33_2) do
 		local var_33_3 = arg_33_0:GetDistance(iter_33_1)
 
-		if var_33_0 < var_33_3 then
+		if var_33_3 < var_33_0 then
 			var_33_0 = var_33_3
 			var_33_1 = iter_33_1
 		end
@@ -586,55 +585,48 @@ function var_0_3.TargetHarmFarthest(arg_33_0, arg_33_1, arg_33_2)
 	}
 end
 
-function var_0_3.TargetHarmRandom(arg_34_0, arg_34_1, arg_34_2)
+function var_0_3.TargetHarmFarthest(arg_34_0, arg_34_1, arg_34_2)
+	local var_34_0 = 0
+	local var_34_1
+
 	arg_34_1 = arg_34_1 or {}
 
-	local var_34_0 = arg_34_2 and var_0_3.TargetFoeUncloak(arg_34_0, arg_34_1, arg_34_2) or var_0_3.TargetFoeUncloak(arg_34_0)
+	local var_34_2 = arg_34_2 and var_0_3.TargetFoeUncloak(arg_34_0, arg_34_1, arg_34_2) or var_0_3.TargetFoeUncloak(arg_34_0)
 
-	if #var_34_0 > 0 then
-		local var_34_1 = math.random(#var_34_0)
+	for iter_34_0, iter_34_1 in ipairs(var_34_2) do
+		local var_34_3 = arg_34_0:GetDistance(iter_34_1)
 
-		return {
-			var_34_0[var_34_1]
-		}
-	else
-		return {}
-	end
-end
-
-function var_0_3.TargetHarmRandomByWeight(arg_35_0, arg_35_1, arg_35_2)
-	arg_35_1 = arg_35_1 or {}
-
-	local var_35_0 = arg_35_2 and var_0_3.TargetFoeUncloak(arg_35_0, arg_35_1, arg_35_2) or var_0_3.TargetFoeUncloak(arg_35_0)
-	local var_35_1 = {}
-	local var_35_2 = -9999
-
-	for iter_35_0, iter_35_1 in ipairs(var_35_0) do
-		local var_35_3 = iter_35_1:GetTargetedPriority() or 0
-
-		if var_35_3 == var_35_2 then
-			var_35_1[#var_35_1 + 1] = iter_35_1
-		elseif var_35_2 < var_35_3 then
-			var_35_1 = {
-				iter_35_1
-			}
-			var_35_2 = var_35_3
+		if var_34_0 < var_34_3 then
+			var_34_0 = var_34_3
+			var_34_1 = iter_34_1
 		end
 	end
 
-	if #var_35_1 > 0 then
-		local var_35_4 = math.random(#var_35_1)
+	return {
+		var_34_1
+	}
+end
+
+function var_0_3.TargetHarmRandom(arg_35_0, arg_35_1, arg_35_2)
+	arg_35_1 = arg_35_1 or {}
+
+	local var_35_0 = arg_35_2 and var_0_3.TargetFoeUncloak(arg_35_0, arg_35_1, arg_35_2) or var_0_3.TargetFoeUncloak(arg_35_0)
+
+	if #var_35_0 > 0 then
+		local var_35_1 = math.random(#var_35_0)
 
 		return {
-			var_35_1[var_35_4]
+			var_35_0[var_35_1]
 		}
 	else
 		return {}
 	end
 end
 
-function var_0_3.TargetWeightiest(arg_36_0, arg_36_1, arg_36_2)
-	local var_36_0 = arg_36_2 or var_0_3.TargetEntityUnit()
+function var_0_3.TargetHarmRandomByWeight(arg_36_0, arg_36_1, arg_36_2)
+	arg_36_1 = arg_36_1 or {}
+
+	local var_36_0 = arg_36_2 and var_0_3.TargetFoeUncloak(arg_36_0, arg_36_1, arg_36_2) or var_0_3.TargetFoeUncloak(arg_36_0)
 	local var_36_1 = {}
 	local var_36_2 = -9999
 
@@ -651,60 +643,75 @@ function var_0_3.TargetWeightiest(arg_36_0, arg_36_1, arg_36_2)
 		end
 	end
 
-	return var_36_1
+	if #var_36_1 > 0 then
+		local var_36_4 = math.random(#var_36_1)
+
+		return {
+			var_36_1[var_36_4]
+		}
+	else
+		return {}
+	end
 end
 
-function var_0_3.TargetRandom(arg_37_0, arg_37_1, arg_37_2)
+function var_0_3.TargetWeightiest(arg_37_0, arg_37_1, arg_37_2)
 	local var_37_0 = arg_37_2 or var_0_3.TargetEntityUnit()
-	local var_37_1 = arg_37_1.randomCount or 1
+	local var_37_1 = {}
+	local var_37_2 = -9999
 
-	return (Mathf.MultiRandom(var_37_0, var_37_1))
+	for iter_37_0, iter_37_1 in ipairs(var_37_0) do
+		local var_37_3 = iter_37_1:GetTargetedPriority() or 0
+
+		if var_37_3 == var_37_2 then
+			var_37_1[#var_37_1 + 1] = iter_37_1
+		elseif var_37_2 < var_37_3 then
+			var_37_1 = {
+				iter_37_1
+			}
+			var_37_2 = var_37_3
+		end
+	end
+
+	return var_37_1
 end
 
-function var_0_3.TargetInsideArea(arg_38_0, arg_38_1, arg_38_2)
-	local var_38_0 = arg_38_2 or var_0_3.TargetAllHarm(arg_38_0)
-	local var_38_1 = arg_38_1.dir or ys.Battle.BattleConst.UnitDir.RIGHT
-	local var_38_2 = arg_38_1.lineX
-	local var_38_3 = {}
+function var_0_3.TargetRandom(arg_38_0, arg_38_1, arg_38_2)
+	local var_38_0 = arg_38_2 or var_0_3.TargetEntityUnit()
+	local var_38_1 = arg_38_1.randomCount or 1
 
-	if var_38_1 == ys.Battle.BattleConst.UnitDir.RIGHT then
-		for iter_38_0, iter_38_1 in ipairs(var_38_0) do
-			if var_38_2 <= iter_38_1:GetPosition().x then
-				table.insert(var_38_3, iter_38_1)
+	return (Mathf.MultiRandom(var_38_0, var_38_1))
+end
+
+function var_0_3.TargetInsideArea(arg_39_0, arg_39_1, arg_39_2)
+	local var_39_0 = arg_39_2 or var_0_3.TargetAllHarm(arg_39_0)
+	local var_39_1 = arg_39_1.dir or ys.Battle.BattleConst.UnitDir.RIGHT
+	local var_39_2 = arg_39_1.lineX
+	local var_39_3 = {}
+
+	if var_39_1 == ys.Battle.BattleConst.UnitDir.RIGHT then
+		for iter_39_0, iter_39_1 in ipairs(var_39_0) do
+			if var_39_2 <= iter_39_1:GetPosition().x then
+				table.insert(var_39_3, iter_39_1)
 			end
 		end
-	elseif var_38_1 == ys.Battle.BattleConst.UnitDir.LEFT then
-		for iter_38_2, iter_38_3 in ipairs(var_38_0) do
-			if var_38_2 >= iter_38_3:GetPosition().x then
-				table.insert(var_38_3, iter_38_3)
+	elseif var_39_1 == ys.Battle.BattleConst.UnitDir.LEFT then
+		for iter_39_2, iter_39_3 in ipairs(var_39_0) do
+			if var_39_2 >= iter_39_3:GetPosition().x then
+				table.insert(var_39_3, iter_39_3)
 			end
 		end
 	end
 
-	return var_38_3
+	return var_39_3
 end
 
-function var_0_3.TargetAircraftHelp(arg_39_0)
-	local var_39_0 = ys.Battle.BattleDataProxy.GetInstance()
-	local var_39_1 = {}
-	local var_39_2 = arg_39_0:GetIFF()
-
-	for iter_39_0, iter_39_1 in pairs(var_39_0:GetAircraftList()) do
-		if var_39_2 == iter_39_1:GetIFF() then
-			var_39_1[#var_39_1 + 1] = iter_39_1
-		end
-	end
-
-	return var_39_1
-end
-
-function var_0_3.TargetAircraftHarm(arg_40_0)
+function var_0_3.TargetAircraftHelp(arg_40_0)
 	local var_40_0 = ys.Battle.BattleDataProxy.GetInstance()
 	local var_40_1 = {}
 	local var_40_2 = arg_40_0:GetIFF()
 
 	for iter_40_0, iter_40_1 in pairs(var_40_0:GetAircraftList()) do
-		if var_40_2 ~= iter_40_1:GetIFF() and iter_40_1:IsVisitable() then
+		if var_40_2 == iter_40_1:GetIFF() then
 			var_40_1[#var_40_1 + 1] = iter_40_1
 		end
 	end
@@ -712,13 +719,13 @@ function var_0_3.TargetAircraftHarm(arg_40_0)
 	return var_40_1
 end
 
-function var_0_3.TargetAircraftGB(arg_41_0)
+function var_0_3.TargetAircraftHarm(arg_41_0)
 	local var_41_0 = ys.Battle.BattleDataProxy.GetInstance()
 	local var_41_1 = {}
 	local var_41_2 = arg_41_0:GetIFF()
 
 	for iter_41_0, iter_41_1 in pairs(var_41_0:GetAircraftList()) do
-		if var_41_2 ~= iter_41_1:GetIFF() and iter_41_1:IsVisitable() and iter_41_1:GetMotherUnit() == nil then
+		if var_41_2 ~= iter_41_1:GetIFF() and iter_41_1:IsVisitable() then
 			var_41_1[#var_41_1 + 1] = iter_41_1
 		end
 	end
@@ -726,70 +733,70 @@ function var_0_3.TargetAircraftGB(arg_41_0)
 	return var_41_1
 end
 
-function var_0_3.TargetDiveState(arg_42_0, arg_42_1, arg_42_2)
-	local var_42_0 = arg_42_1 and arg_42_1.diveState or ys.Battle.BattleConst.OXY_STATE.DIVE
-	local var_42_1 = arg_42_2 or var_0_3.TargetEntityUnit()
-	local var_42_2 = {}
+function var_0_3.TargetAircraftGB(arg_42_0)
+	local var_42_0 = ys.Battle.BattleDataProxy.GetInstance()
+	local var_42_1 = {}
+	local var_42_2 = arg_42_0:GetIFF()
 
-	for iter_42_0, iter_42_1 in pairs(var_42_1) do
-		if var_42_0 == iter_42_1:GetCurrentOxyState() then
-			var_42_2[#var_42_2 + 1] = iter_42_1
+	for iter_42_0, iter_42_1 in pairs(var_42_0:GetAircraftList()) do
+		if var_42_2 ~= iter_42_1:GetIFF() and iter_42_1:IsVisitable() and iter_42_1:GetMotherUnit() == nil then
+			var_42_1[#var_42_1 + 1] = iter_42_1
 		end
 	end
 
-	return var_42_2
+	return var_42_1
 end
 
-function var_0_3.TargetDetectedUnit(arg_43_0, arg_43_1, arg_43_2)
-	local var_43_0 = arg_43_2 or var_0_3.TargetEntityUnit()
-	local var_43_1 = {}
+function var_0_3.TargetDiveState(arg_43_0, arg_43_1, arg_43_2)
+	local var_43_0 = arg_43_1 and arg_43_1.diveState or ys.Battle.BattleConst.OXY_STATE.DIVE
+	local var_43_1 = arg_43_2 or var_0_3.TargetEntityUnit()
+	local var_43_2 = {}
 
-	for iter_43_0, iter_43_1 in pairs(var_43_0) do
-		if iter_43_1:GetDiveDetected() then
-			var_43_1[#var_43_1 + 1] = iter_43_1
+	for iter_43_0, iter_43_1 in pairs(var_43_1) do
+		if var_43_0 == iter_43_1:GetCurrentOxyState() then
+			var_43_2[#var_43_2 + 1] = iter_43_1
 		end
 	end
 
-	return var_43_1
+	return var_43_2
 end
 
-function var_0_3.TargetFatalDamageSrc(arg_44_0, arg_44_1, arg_44_2)
+function var_0_3.TargetDetectedUnit(arg_44_0, arg_44_1, arg_44_2)
 	local var_44_0 = arg_44_2 or var_0_3.TargetEntityUnit()
-	local var_44_1 = arg_44_0:GetDeathSrcID()
-	local var_44_2 = {}
+	local var_44_1 = {}
 
-	if var_44_1 then
-		for iter_44_0, iter_44_1 in pairs(var_44_0) do
-			if var_44_1 == iter_44_1:GetUniqueID() and iter_44_1:IsAlive() then
-				var_44_2[#var_44_2 + 1] = iter_44_1
+	for iter_44_0, iter_44_1 in pairs(var_44_0) do
+		if iter_44_1:GetDiveDetected() then
+			var_44_1[#var_44_1 + 1] = iter_44_1
+		end
+	end
+
+	return var_44_1
+end
+
+function var_0_3.TargetFatalDamageSrc(arg_45_0, arg_45_1, arg_45_2)
+	local var_45_0 = arg_45_2 or var_0_3.TargetEntityUnit()
+	local var_45_1 = arg_45_0:GetDeathSrcID()
+	local var_45_2 = {}
+
+	if var_45_1 then
+		for iter_45_0, iter_45_1 in pairs(var_45_0) do
+			if var_45_1 == iter_45_1:GetUniqueID() and iter_45_1:IsAlive() then
+				var_45_2[#var_45_2 + 1] = iter_45_1
 			end
 		end
 	end
 
-	return var_44_2
+	return var_45_2
 end
 
-function var_0_3.TargetAllHarmBullet(arg_45_0)
-	local var_45_0 = ys.Battle.BattleDataProxy.GetInstance()
-	local var_45_1 = {}
-	local var_45_2 = arg_45_0:GetIFF()
-
-	for iter_45_0, iter_45_1 in pairs(var_45_0:GetBulletList()) do
-		if var_45_2 ~= iter_45_1:GetIFF() then
-			var_45_1[#var_45_1 + 1] = iter_45_1
-		end
-	end
-
-	return var_45_1
-end
-
-function var_0_3.TargetAllHarmBulletByType(arg_46_0, arg_46_1)
+function var_0_3.TargetAllHarmBullet(arg_46_0)
 	local var_46_0 = ys.Battle.BattleDataProxy.GetInstance()
 	local var_46_1 = {}
 	local var_46_2 = arg_46_0:GetIFF()
 
 	for iter_46_0, iter_46_1 in pairs(var_46_0:GetBulletList()) do
-		if var_46_2 ~= iter_46_1:GetIFF() and iter_46_1:GetType() == arg_46_1 then
+		if var_46_2 ~= iter_46_1:GetIFF() then
 			var_46_1[#var_46_1 + 1] = iter_46_1
 		end
 	end
@@ -797,98 +804,92 @@ function var_0_3.TargetAllHarmBulletByType(arg_46_0, arg_46_1)
 	return var_46_1
 end
 
-function var_0_3.TargetAllHarmTorpedoBullet(arg_47_0)
-	return var_0_3.TargetAllHarmBulletByType(arg_47_0, ys.Battle.BattleConst.BulletType.TORPEDO)
+function var_0_3.TargetAllHarmBulletByType(arg_47_0, arg_47_1)
+	local var_47_0 = ys.Battle.BattleDataProxy.GetInstance()
+	local var_47_1 = {}
+	local var_47_2 = arg_47_0:GetIFF()
+
+	for iter_47_0, iter_47_1 in pairs(var_47_0:GetBulletList()) do
+		if var_47_2 ~= iter_47_1:GetIFF() and iter_47_1:GetType() == arg_47_1 then
+			var_47_1[#var_47_1 + 1] = iter_47_1
+		end
+	end
+
+	return var_47_1
 end
 
-function var_0_3.TargetFleetIndex(arg_48_0, arg_48_1)
-	local var_48_0
+function var_0_3.TargetAllHarmTorpedoBullet(arg_48_0)
+	return var_0_3.TargetAllHarmBulletByType(arg_48_0, ys.Battle.BattleConst.BulletType.TORPEDO)
+end
 
-	if arg_48_0 then
-		var_48_0 = arg_48_0:GetIFF()
+function var_0_3.TargetFleetIndex(arg_49_0, arg_49_1)
+	local var_49_0
+
+	if arg_49_0 then
+		var_49_0 = arg_49_0:GetIFF()
 	else
-		var_48_0 = var_0_0.FRIENDLY_CODE
+		var_49_0 = var_0_0.FRIENDLY_CODE
 	end
 
-	local var_48_1 = ys.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(var_48_0)
-	local var_48_2 = TeamType.TeamPos
-	local var_48_3 = arg_48_1.fleetPos
-	local var_48_4 = {}
-	local var_48_5 = var_48_1:GetUnitList()
-	local var_48_6 = var_48_1:GetScoutList()
-	local var_48_7 = arg_48_1.exceptCaster
+	local var_49_1 = ys.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(var_49_0)
+	local var_49_2 = TeamType.TeamPos
+	local var_49_3 = arg_49_1.fleetPos
+	local var_49_4 = {}
+	local var_49_5 = var_49_1:GetUnitList()
+	local var_49_6 = var_49_1:GetScoutList()
+	local var_49_7 = arg_49_1.exceptCaster
 
-	if var_48_7 then
-		local var_48_8 = arg_48_0:GetUniqueID()
+	if var_49_7 then
+		local var_49_8 = arg_49_0:GetUniqueID()
 	end
 
-	for iter_48_0, iter_48_1 in ipairs(var_48_5) do
-		local var_48_9 = iter_48_1:GetUniqueID()
+	for iter_49_0, iter_49_1 in ipairs(var_49_5) do
+		local var_49_9 = iter_49_1:GetUniqueID()
 
-		if var_48_7 and var_48_9 == casterID then
+		if var_49_7 and var_49_9 == casterID then
 			-- block empty
-		elseif iter_48_1 == var_48_1:GetFlagShip() then
-			if var_48_3 == var_48_2.FLAG_SHIP then
-				table.insert(var_48_4, iter_48_1)
+		elseif iter_49_1 == var_49_1:GetFlagShip() then
+			if var_49_3 == var_49_2.FLAG_SHIP then
+				table.insert(var_49_4, iter_49_1)
 			end
-		elseif iter_48_1 == var_48_6[1] then
-			if var_48_3 == var_48_2.LEADER then
-				table.insert(var_48_4, iter_48_1)
+		elseif iter_49_1 == var_49_6[1] then
+			if var_49_3 == var_49_2.LEADER then
+				table.insert(var_49_4, iter_49_1)
 			end
-		elseif #var_48_6 == 3 and iter_48_1 == var_48_6[2] then
-			if var_48_3 == var_48_2.CENTER then
-				table.insert(var_48_4, iter_48_1)
+		elseif #var_49_6 == 3 and iter_49_1 == var_49_6[2] then
+			if var_49_3 == var_49_2.CENTER then
+				table.insert(var_49_4, iter_49_1)
 			end
-		elseif iter_48_1 == var_48_6[#var_48_6] then
-			if var_48_3 == var_48_2.REAR then
-				table.insert(var_48_4, iter_48_1)
+		elseif iter_49_1 == var_49_6[#var_49_6] then
+			if var_49_3 == var_49_2.REAR then
+				table.insert(var_49_4, iter_49_1)
 			end
-		elseif iter_48_1:IsMainFleetUnit() and iter_48_1:GetMainUnitIndex() == 2 then
-			if var_48_3 == var_48_2.UPPER_CONSORT then
-				table.insert(var_48_4, iter_48_1)
+		elseif iter_49_1:IsMainFleetUnit() and iter_49_1:GetMainUnitIndex() == 2 then
+			if var_49_3 == var_49_2.UPPER_CONSORT then
+				table.insert(var_49_4, iter_49_1)
 			end
-		elseif iter_48_1:IsMainFleetUnit() and iter_48_1:GetMainUnitIndex() == 3 and var_48_3 == var_48_2.LOWER_CONSORT then
-			table.insert(var_48_4, iter_48_1)
+		elseif iter_49_1:IsMainFleetUnit() and iter_49_1:GetMainUnitIndex() == 3 and var_49_3 == var_49_2.LOWER_CONSORT then
+			table.insert(var_49_4, iter_49_1)
 		end
 	end
 
-	local var_48_10 = var_48_1:GetSubList()
+	local var_49_10 = var_49_1:GetSubList()
 
-	for iter_48_2, iter_48_3 in ipairs(var_48_5) do
-		if iter_48_2 == 1 then
-			if var_48_3 == var_48_2.SUB_LEADER then
-				table.insert(var_48_4, iter_48_3)
+	for iter_49_2, iter_49_3 in ipairs(var_49_5) do
+		if iter_49_2 == 1 then
+			if var_49_3 == var_49_2.SUB_LEADER then
+				table.insert(var_49_4, iter_49_3)
 			end
-		elseif var_48_3 == var_48_2.SUB_CONSORT then
-			table.insert(var_48_4, iter_48_3)
+		elseif var_49_3 == var_49_2.SUB_CONSORT then
+			table.insert(var_49_4, iter_49_3)
 		end
 	end
 
-	return var_48_4
+	return var_49_4
 end
 
-function var_0_3.TargetPlayerVanguardFleet(arg_49_0, arg_49_1, arg_49_2)
-	local var_49_0 = ys.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(arg_49_0:GetIFF()):GetScoutList()
-
-	if not arg_49_2 then
-		return var_49_0
-	else
-		local var_49_1 = #arg_49_2
-
-		while var_49_1 > 0 do
-			if not table.contains(var_49_0, arg_49_2[var_49_1]) then
-				table.remove(arg_49_2, var_49_1)
-			end
-
-			var_49_1 = var_49_1 - 1
-		end
-
-		return arg_49_2
-	end
-end
-
-function var_0_3.TargetPlayerMainFleet(arg_50_0, arg_50_1, arg_50_2)
-	local var_50_0 = ys.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(arg_50_0:GetIFF()):GetMainList()
+function var_0_3.TargetPlayerVanguardFleet(arg_50_0, arg_50_1, arg_50_2)
+	local var_50_0 = ys.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(arg_50_0:GetIFF()):GetScoutList()
 
 	if not arg_50_2 then
 		return var_50_0
@@ -907,90 +908,97 @@ function var_0_3.TargetPlayerMainFleet(arg_50_0, arg_50_1, arg_50_2)
 	end
 end
 
-function var_0_3.TargetPlayerFlagShip(arg_51_0, arg_51_1, arg_51_2)
-	local var_51_0 = ys.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(arg_51_0:GetIFF())
+function var_0_3.TargetPlayerMainFleet(arg_51_0, arg_51_1, arg_51_2)
+	local var_51_0 = ys.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(arg_51_0:GetIFF()):GetMainList()
 
-	return {
-		var_51_0:GetFlagShip()
-	}
+	if not arg_51_2 then
+		return var_51_0
+	else
+		local var_51_1 = #arg_51_2
+
+		while var_51_1 > 0 do
+			if not table.contains(var_51_0, arg_51_2[var_51_1]) then
+				table.remove(arg_51_2, var_51_1)
+			end
+
+			var_51_1 = var_51_1 - 1
+		end
+
+		return arg_51_2
+	end
 end
 
-function var_0_3.TargetPlayerLeaderShip(arg_52_0, arg_52_1, arg_52_2)
+function var_0_3.TargetPlayerFlagShip(arg_52_0, arg_52_1, arg_52_2)
 	local var_52_0 = ys.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(arg_52_0:GetIFF())
 
 	return {
-		var_52_0:GetLeaderShip()
+		var_52_0:GetFlagShip()
 	}
 end
 
-function var_0_3.TargetEnemyLeaderShip(arg_53_0, arg_53_1, arg_53_2)
-	local var_53_0 = arg_53_0:GetIFF() * -1
-	local var_53_1 = ys.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(var_53_0)
+function var_0_3.TargetPlayerLeaderShip(arg_53_0, arg_53_1, arg_53_2)
+	local var_53_0 = ys.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(arg_53_0:GetIFF())
 
 	return {
-		var_53_1:GetLeaderShip()
+		var_53_0:GetLeaderShip()
 	}
 end
 
-function var_0_3.TargetPlayerByType(arg_54_0, arg_54_1)
-	local var_54_0 = ys.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(arg_54_0:GetIFF()):GetUnitList()
-	local var_54_1 = {}
-	local var_54_2 = arg_54_1.shipType
+function var_0_3.TargetEnemyLeaderShip(arg_54_0, arg_54_1, arg_54_2)
+	local var_54_0 = arg_54_0:GetIFF() * -1
+	local var_54_1 = ys.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(var_54_0)
 
-	for iter_54_0, iter_54_1 in ipairs(var_54_0) do
-		if iter_54_1:GetTemplate().type == var_54_2 then
-			var_54_1[#var_54_1 + 1] = iter_54_1
-		end
-	end
-
-	return var_54_1
+	return {
+		var_54_1:GetLeaderShip()
+	}
 end
 
-function var_0_3.TargetPlayerAidUnit(arg_55_0, arg_55_1)
-	local var_55_0 = ys.Battle.BattleDataProxy.GetInstance():GetAidUnit()
+function var_0_3.TargetPlayerByType(arg_55_0, arg_55_1)
+	local var_55_0 = ys.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(arg_55_0:GetIFF()):GetUnitList()
 	local var_55_1 = {}
+	local var_55_2 = arg_55_1.shipType
 
-	for iter_55_0, iter_55_1 in pairs(var_55_0) do
-		table.insert(var_55_1, iter_55_1)
+	for iter_55_0, iter_55_1 in ipairs(var_55_0) do
+		if iter_55_1:GetTemplate().type == var_55_2 then
+			var_55_1[#var_55_1 + 1] = iter_55_1
+		end
 	end
 
 	return var_55_1
 end
 
-function var_0_3.TargetDamageSource(arg_56_0, arg_56_1, arg_56_2)
-	local var_56_0 = arg_56_2 or var_0_3.TargetAllFoe(arg_56_0)
+function var_0_3.TargetPlayerAidUnit(arg_56_0, arg_56_1)
+	local var_56_0 = ys.Battle.BattleDataProxy.GetInstance():GetAidUnit()
 	local var_56_1 = {}
 
 	for iter_56_0, iter_56_1 in pairs(var_56_0) do
-		if iter_56_1:GetUniqueID() == arg_56_1.damageSourceID then
-			table.insert(var_56_1, iter_56_1)
-
-			break
-		end
+		table.insert(var_56_1, iter_56_1)
 	end
 
 	return var_56_1
 end
 
-function var_0_3.TargetRarity(arg_57_0, arg_57_1, arg_57_2)
-	local var_57_0 = arg_57_2 or var_0_3.TargetAllHelp(arg_57_0)
+function var_0_3.TargetDamageSource(arg_57_0, arg_57_1, arg_57_2)
+	local var_57_0 = arg_57_2 or var_0_3.TargetAllFoe(arg_57_0)
 	local var_57_1 = {}
 
-	for iter_57_0, iter_57_1 in ipairs(var_57_0) do
-		if iter_57_1:GetRarity() == arg_57_1.rarity then
+	for iter_57_0, iter_57_1 in pairs(var_57_0) do
+		if iter_57_1:GetUniqueID() == arg_57_1.damageSourceID then
 			table.insert(var_57_1, iter_57_1)
+
+			break
 		end
 	end
 
 	return var_57_1
 end
 
-function var_0_3.TargetIllustrator(arg_58_0, arg_58_1, arg_58_2)
+function var_0_3.TargetRarity(arg_58_0, arg_58_1, arg_58_2)
 	local var_58_0 = arg_58_2 or var_0_3.TargetAllHelp(arg_58_0)
 	local var_58_1 = {}
 
 	for iter_58_0, iter_58_1 in ipairs(var_58_0) do
-		if ys.Battle.BattleDataFunction.GetPlayerShipSkinDataFromID(iter_58_1:GetSkinID()).illustrator == arg_58_1.illustrator then
+		if iter_58_1:GetRarity() == arg_58_1.rarity then
 			table.insert(var_58_1, iter_58_1)
 		end
 	end
@@ -998,77 +1006,90 @@ function var_0_3.TargetIllustrator(arg_58_0, arg_58_1, arg_58_2)
 	return var_58_1
 end
 
-function var_0_3.TargetTeam(arg_59_0, arg_59_1, arg_59_2)
-	local var_59_0 = ys.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(arg_59_0:GetIFF())
+function var_0_3.TargetIllustrator(arg_59_0, arg_59_1, arg_59_2)
+	local var_59_0 = arg_59_2 or var_0_3.TargetAllHelp(arg_59_0)
 	local var_59_1 = {}
-	local var_59_2 = TeamType.TeamTypeIndex[arg_59_1.teamIndex]
 
-	if var_59_2 == TeamType.Vanguard then
-		var_59_1 = var_59_0:GetScoutList()
-	elseif var_59_2 == TeamType.Main then
-		var_59_1 = var_59_0:GetMainList()
-	elseif var_59_2 == TeamType.Submarine then
-		var_59_1 = var_59_0:GetSubList()
-	end
-
-	local var_59_3 = {}
-
-	for iter_59_0, iter_59_1 in ipairs(var_59_1) do
-		if not arg_59_2 or table.contains(arg_59_2, iter_59_1) then
-			table.insert(var_59_3, iter_59_1)
+	for iter_59_0, iter_59_1 in ipairs(var_59_0) do
+		if ys.Battle.BattleDataFunction.GetPlayerShipSkinDataFromID(iter_59_1:GetSkinID()).illustrator == arg_59_1.illustrator then
+			table.insert(var_59_1, iter_59_1)
 		end
 	end
 
-	return var_59_3
+	return var_59_1
 end
 
-function var_0_3.TargetGroup(arg_60_0, arg_60_1, arg_60_2)
-	local var_60_0 = arg_60_1.groupIDList
-	local var_60_1 = arg_60_2 or var_0_3.TargetAllHelp(arg_60_0)
-	local var_60_2 = {}
-	local var_60_3 = arg_60_0:GetIFF()
+function var_0_3.TargetTeam(arg_60_0, arg_60_1, arg_60_2)
+	local var_60_0 = ys.Battle.BattleDataProxy.GetInstance():GetFleetByIFF(arg_60_0:GetIFF())
+	local var_60_1 = {}
+	local var_60_2 = TeamType.TeamTypeIndex[arg_60_1.teamIndex]
+
+	if var_60_2 == TeamType.Vanguard then
+		var_60_1 = var_60_0:GetScoutList()
+	elseif var_60_2 == TeamType.Main then
+		var_60_1 = var_60_0:GetMainList()
+	elseif var_60_2 == TeamType.Submarine then
+		var_60_1 = var_60_0:GetSubList()
+	end
+
+	local var_60_3 = {}
 
 	for iter_60_0, iter_60_1 in ipairs(var_60_1) do
-		local var_60_4 = iter_60_1:GetTemplateID()
-		local var_60_5 = ys.Battle.BattleDataFunction.GetPlayerShipModelFromID(var_60_4).group_type
-		local var_60_6 = iter_60_1:GetIFF()
-
-		if table.contains(var_60_0, var_60_5) and var_60_3 == var_60_6 then
-			var_60_2[#var_60_2 + 1] = iter_60_1
+		if not arg_60_2 or table.contains(arg_60_2, iter_60_1) then
+			table.insert(var_60_3, iter_60_1)
 		end
 	end
 
-	return var_60_2
+	return var_60_3
 end
 
-function var_0_3.LegalTarget(arg_61_0)
-	local var_61_0 = {}
-	local var_61_1
-	local var_61_2 = ys.Battle.BattleDataProxy.GetInstance()
-	local var_61_3, var_61_4, var_61_5, var_61_6 = var_61_2:GetFieldBound()
-	local var_61_7 = var_61_2:GetUnitList()
-	local var_61_8 = arg_61_0:GetIFF()
+function var_0_3.TargetGroup(arg_61_0, arg_61_1, arg_61_2)
+	local var_61_0 = arg_61_1.groupIDList
+	local var_61_1 = arg_61_2 or var_0_3.TargetAllHelp(arg_61_0)
+	local var_61_2 = {}
+	local var_61_3 = arg_61_0:GetIFF()
 
-	for iter_61_0, iter_61_1 in pairs(var_61_7) do
-		if iter_61_1:IsAlive() and iter_61_1:GetIFF() ~= var_61_8 and var_61_6 > iter_61_1:GetPosition().x and not iter_61_1:IsSpectre() then
-			var_61_0[#var_61_0 + 1] = iter_61_1
+	for iter_61_0, iter_61_1 in ipairs(var_61_1) do
+		local var_61_4 = iter_61_1:GetTemplateID()
+		local var_61_5 = ys.Battle.BattleDataFunction.GetPlayerShipModelFromID(var_61_4).group_type
+		local var_61_6 = iter_61_1:GetIFF()
+
+		if table.contains(var_61_0, var_61_5) and var_61_3 == var_61_6 then
+			var_61_2[#var_61_2 + 1] = iter_61_1
 		end
 	end
 
-	return var_61_0
+	return var_61_2
 end
 
-function var_0_3.LegalWeaponTarget(arg_62_0)
+function var_0_3.LegalTarget(arg_62_0)
 	local var_62_0 = {}
 	local var_62_1
-	local var_62_2 = ys.Battle.BattleDataProxy.GetInstance():GetUnitList()
-	local var_62_3 = arg_62_0:GetIFF()
+	local var_62_2 = ys.Battle.BattleDataProxy.GetInstance()
+	local var_62_3, var_62_4, var_62_5, var_62_6 = var_62_2:GetFieldBound()
+	local var_62_7 = var_62_2:GetUnitList()
+	local var_62_8 = arg_62_0:GetIFF()
 
-	for iter_62_0, iter_62_1 in pairs(var_62_2) do
-		if iter_62_1:GetIFF() ~= var_62_3 and not iter_62_1:IsSpectre() then
+	for iter_62_0, iter_62_1 in pairs(var_62_7) do
+		if iter_62_1:IsAlive() and iter_62_1:GetIFF() ~= var_62_8 and var_62_6 > iter_62_1:GetPosition().x and not iter_62_1:IsSpectre() then
 			var_62_0[#var_62_0 + 1] = iter_62_1
 		end
 	end
 
 	return var_62_0
+end
+
+function var_0_3.LegalWeaponTarget(arg_63_0)
+	local var_63_0 = {}
+	local var_63_1
+	local var_63_2 = ys.Battle.BattleDataProxy.GetInstance():GetUnitList()
+	local var_63_3 = arg_63_0:GetIFF()
+
+	for iter_63_0, iter_63_1 in pairs(var_63_2) do
+		if iter_63_1:GetIFF() ~= var_63_3 and not iter_63_1:IsSpectre() then
+			var_63_0[#var_63_0 + 1] = iter_63_1
+		end
+	end
+
+	return var_63_0
 end

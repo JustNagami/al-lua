@@ -371,7 +371,7 @@ function eachChild(arg_45_0, arg_45_1)
 	local var_45_0 = tf(arg_45_0)
 
 	for iter_45_0 = var_45_0.childCount - 1, 0, -1 do
-		arg_45_1(var_45_0:GetChild(iter_45_0))
+		arg_45_1(var_45_0:GetChild(iter_45_0), iter_45_0)
 	end
 end
 

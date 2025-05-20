@@ -44,6 +44,7 @@ end
 function var_0_0.OnLoad(arg_4_0, arg_4_1)
 	local var_4_0 = arg_4_0:GetPaintingName()
 
+	arg_4_0:ClearScalePart()
 	LoadPaintingPrefabAsync(arg_4_0.container, arg_4_0.paintingName, var_4_0, "mainNormal", function()
 		if arg_4_0:IsExited() then
 			arg_4_0:UnLoad()
@@ -62,6 +63,7 @@ function var_0_0.OnLoad(arg_4_0, arg_4_1)
 		end
 
 		arg_4_0:Breath()
+		arg_4_0:InitScalePart()
 		arg_4_1()
 	end)
 end
@@ -377,49 +379,61 @@ function var_0_0.OnEnableOrDisableDragAndZoom(arg_37_0, arg_37_1)
 	end
 end
 
-function var_0_0.OnFold(arg_38_0, arg_38_1)
-	if not arg_38_1 then
-		arg_38_0:Breath()
+function var_0_0.GetPaintingTransform(arg_38_0)
+	return arg_38_0:GetMeshPainting()
+end
+
+function var_0_0.GetPartScaleData(arg_39_0)
+	return pg.ship_skin_template[arg_39_0.ship.skinId].part_scale.paint
+end
+
+function var_0_0.GetPartStateType(arg_40_0)
+	return MainPaintingView.STATE_PAINTING
+end
+
+function var_0_0.OnFold(arg_41_0, arg_41_1)
+	if not arg_41_1 then
+		arg_41_0:Breath()
 	end
 end
 
-function var_0_0.GetOffset(arg_39_0)
+function var_0_0.GetOffset(arg_42_0)
 	return MainPaintingView.MESH_POSITION_X_OFFSET
 end
 
-function var_0_0.OnPuase(arg_40_0)
-	arg_40_0:StopBreath()
-end
-
-function var_0_0.OnResume(arg_41_0)
-	checkCullResume(arg_41_0.container:Find("fitter"):GetChild(0))
-	arg_41_0:Breath()
-end
-
-function var_0_0.Unload(arg_42_0)
-	var_0_0.super.Unload(arg_42_0)
-
-	arg_42_0.expression = nil
-end
-
-function var_0_0.OnUnload(arg_43_0)
+function var_0_0.OnPuase(arg_43_0)
 	arg_43_0:StopBreath()
-	arg_43_0:ClearSpecialDrag()
+end
 
-	if arg_43_0.loadPaintingName then
-		retPaintingPrefab(arg_43_0.container, arg_43_0.loadPaintingName)
+function var_0_0.OnResume(arg_44_0)
+	checkCullResume(arg_44_0.container:Find("fitter"):GetChild(0))
+	arg_44_0:Breath()
+end
 
-		arg_43_0.loadPaintingName = nil
+function var_0_0.Unload(arg_45_0)
+	var_0_0.super.Unload(arg_45_0)
+
+	arg_45_0.expression = nil
+end
+
+function var_0_0.OnUnload(arg_46_0)
+	arg_46_0:StopBreath()
+	arg_46_0:ClearSpecialDrag()
+
+	if arg_46_0.loadPaintingName then
+		retPaintingPrefab(arg_46_0.container, arg_46_0.loadPaintingName)
+
+		arg_46_0.loadPaintingName = nil
 	end
 end
 
-function var_0_0.OnPuase(arg_44_0)
-	arg_44_0:ClearEffect()
+function var_0_0.OnPuase(arg_47_0)
+	arg_47_0:ClearEffect()
 end
 
-function var_0_0.Dispose(arg_45_0)
-	var_0_0.super.Dispose(arg_45_0)
-	arg_45_0:ClearEffect()
+function var_0_0.Dispose(arg_48_0)
+	var_0_0.super.Dispose(arg_48_0)
+	arg_48_0:ClearEffect()
 end
 
 return var_0_0

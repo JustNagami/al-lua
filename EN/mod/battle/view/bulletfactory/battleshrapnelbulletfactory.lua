@@ -14,6 +14,8 @@ local var_0_5 = var_0_0.Battle.BattleShrapnelBulletFactory
 var_0_5.INHERIT_NONE = 0
 var_0_5.INHERIT_ANGLE = 1
 var_0_5.INHERIT_SPEED_NORMALIZE = 2
+var_0_5.INHERIT_VELOCITY_TEMPLATE = 1
+var_0_5.INHERIT_VELOCITY_CURRENT = 2
 var_0_5.FRAGILE_DAMAGE_NOT_SPLIT = 1
 var_0_5.FRAGILE_NOT_DAMAGE_NOT_SPLIT = 2
 
@@ -140,16 +142,17 @@ function var_0_5.bulletSplit(arg_6_0, arg_6_1)
 			local var_6_11 = iter_6_1.bullet_ID
 			local var_6_12 = iter_6_1.emitterType or var_0_0.Battle.BattleWeaponUnit.EMITTER_SHOTGUN
 			local var_6_13 = iter_6_1.inheritAngle
-			local var_6_14 = iter_6_1.reaim
-			local var_6_15 = iter_6_1.rotateOffset
+			local var_6_14 = iter_6_1.inheritSpeed
+			local var_6_15 = iter_6_1.reaim
+			local var_6_16 = iter_6_1.rotateOffset
 
-			local function var_6_16(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+			local function var_6_17(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
 				local var_7_0 = var_6_1:CreateBulletUnit(var_6_11, var_6_4, var_6_5, Vector3.zero)
 
 				var_7_0:OverrideCorrectedDMG(iter_6_1.damage)
 				var_7_0:SetOffsetPriority(arg_7_3)
 
-				if var_6_15 then
+				if var_6_16 then
 					local var_7_1 = math.sqrt(arg_7_0 * arg_7_0 + arg_7_1 * arg_7_1)
 					local var_7_2 = math.atan2(arg_7_1, arg_7_0)
 					local var_7_3 = math.rad(var_6_0:GetYAngle())
@@ -170,15 +173,15 @@ function var_0_5.bulletSplit(arg_6_0, arg_6_1)
 					var_7_6 = var_6_0:GetCurrentYAngle()
 				end
 
-				if var_6_14 then
+				if var_6_15 then
 					local var_7_7
 					local var_7_8 = var_6_0:GetWeapon():GetHost()
 
-					if type(var_6_14) == "table" and var_7_8 then
+					if type(var_6_15) == "table" and var_7_8 then
 						local var_7_9 = iter_6_1.reaimParam
 						local var_7_10
 
-						for iter_7_0, iter_7_1 in ipairs(var_6_14) do
+						for iter_7_0, iter_7_1 in ipairs(var_6_15) do
 							var_7_10 = var_0_0.Battle.BattleTargetChoise[iter_7_1](var_7_8, var_7_9, var_7_10)
 						end
 
@@ -196,13 +199,19 @@ function var_0_5.bulletSplit(arg_6_0, arg_6_1)
 					var_7_0:SetRotateInfo(nil, var_7_6, arg_7_2)
 				end
 
+				if var_6_14 == var_0_5.INHERIT_VELOCITY_TEMPLATE then
+					var_7_0:ResetVelocity(var_6_0:GetVelocity())
+				elseif var_6_14 == var_0_5.INHERIT_VELOCITY_CURRENT then
+					var_7_0:InheritSpeed(var_6_0:GetSpeed())
+				end
+
 				var_0_5.GetFactoryList()[var_7_0:GetTemplate().type]:CreateBullet(arg_6_0:GetTf(), var_7_0, arg_6_0:GetPosition())
 			end
 
-			local var_6_17
+			local var_6_18
 
-			local function var_6_18()
-				var_6_17:Destroy()
+			local function var_6_19()
+				var_6_18:Destroy()
 				var_6_0:SplitFinishCount()
 
 				if var_6_0:IsAllSplitFinish() then
@@ -210,11 +219,11 @@ function var_0_5.bulletSplit(arg_6_0, arg_6_1)
 				end
 			end
 
-			var_6_17 = var_0_0.Battle[var_6_12].New(var_6_16, var_6_18, var_6_10)
+			var_6_18 = var_0_0.Battle[var_6_12].New(var_6_17, var_6_19, var_6_10)
 
-			var_6_0:CacheChildEimtter(var_6_17)
-			var_6_17:Ready()
-			var_6_17:Fire(nil, var_6_5:GetDirection(), var_0_0.Battle.BattleDataFunction.GetBarrageTmpDataFromID(var_6_10).angle)
+			var_6_0:CacheChildEimtter(var_6_18)
+			var_6_18:Ready()
+			var_6_18:Fire(nil, var_6_5:GetDirection(), var_0_0.Battle.BattleDataFunction.GetBarrageTmpDataFromID(var_6_10).angle)
 		end
 	end
 

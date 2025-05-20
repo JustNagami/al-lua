@@ -6,23 +6,25 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_2 = getProxy(ActivityProxy):getActivityById(var_1_1.activityId)
 	local var_1_3 = var_1_1:bindConfigTable()[var_1_0.arg1]
 	local var_1_4 = var_1_0.arg2 or 1
-	local var_1_5 = getProxy(PlayerProxy)
-	local var_1_6 = var_1_5:getData()
+	local var_1_5 = getProxy(PlayerProxy):getData()
+	local var_1_6 = var_1_1:GetCommodityById(var_1_0.arg1):GetConsume()
 
-	if var_1_6[id2res(var_1_3.resource_type)] < var_1_3.resource_num * var_1_4 then
+	var_1_6.count = var_1_6.count * var_1_4
+
+	if var_1_6:getOwnedCount() < var_1_6.count then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 		return
 	end
 
 	if var_1_3.commodity_type == DROP_TYPE_RESOURCE then
-		if var_1_3.commodity_id == 1 and var_1_6:GoldMax(var_1_3.num * var_1_4) then
+		if var_1_3.commodity_id == 1 and var_1_5:GoldMax(var_1_3.num * var_1_4) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 			return
 		end
 
-		if var_1_3.commodity_id == 2 and var_1_6:OilMax(var_1_3.num * var_1_4) then
+		if var_1_3.commodity_id == 2 and var_1_5:OilMax(var_1_3.num * var_1_4) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 			return
@@ -57,21 +59,14 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 				table.insert(var_1_2.data2_list, var_1_0.arg2)
 			end
 
-			local var_2_0 = var_1_1:bindConfigTable()[var_1_0.arg1]
-			local var_2_1 = var_2_0.resource_num * var_1_0.arg2
-			local var_2_2 = var_1_5:getData()
-
-			var_2_2:consume({
-				[id2res(var_2_0.resource_type)] = var_2_1
-			})
-			var_1_5:updatePlayer(var_2_2)
+			reducePlayerOwn(var_1_6)
 			var_1_1:getGoodsById(var_1_0.arg1):addBuyCount(var_1_0.arg2)
 			getProxy(ActivityProxy):updateActivity(var_1_2)
 
-			local var_2_3 = PlayerConst.GetTranAwards(var_1_0, arg_2_0)
+			local var_2_0 = PlayerConst.GetTranAwards(var_1_0, arg_2_0)
 
 			arg_1_0:sendNotification(GAME.ISLAND_SHOPPING_DONE, {
-				awards = var_2_3,
+				awards = var_2_0,
 				goodsId = var_1_0.arg1
 			})
 		else
