@@ -6,7 +6,7 @@
 				"onUpdate"
 			},
 			arg_list = {
-				quota = 6,
+				quota = 9,
 				initialCD = true,
 				time = 0.2,
 				target = "TargetSelf",

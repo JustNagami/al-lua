@@ -179,14 +179,24 @@ function var_0_0.BuildNewMainUI(arg_17_0)
 	}, {})
 end
 
-function var_0_0.BuildGuide(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
-	return var_0_3(29, {
-		arg_18_0,
-		arg_18_1,
-		arg_18_2
-	}, {
-		arg_18_3
-	})
+function var_0_0.BuildGuide(arg_18_0, arg_18_1, arg_18_2, arg_18_3, arg_18_4)
+	if arg_18_0 then
+		return var_0_3(30, {
+			arg_18_1,
+			arg_18_2,
+			arg_18_3
+		}, {
+			arg_18_4
+		})
+	else
+		return var_0_3(29, {
+			arg_18_1,
+			arg_18_2,
+			arg_18_3
+		}, {
+			arg_18_4
+		})
+	end
 end
 
 return var_0_0

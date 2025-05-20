@@ -165,6 +165,8 @@ function var_0_0.ShowCompletePage(arg_13_0)
 
 	local var_13_0 = GetOrAddComponent(arg_13_0:findTF("desc/Text", arg_13_0.transportCompletePage), typeof(Typewriter))
 
+	var_13_0:setSpeed(0.05)
+
 	function var_13_0.endFunc()
 		setActive(arg_13_0:findTF("desc/triangle", arg_13_0.transportCompletePage), true)
 	end

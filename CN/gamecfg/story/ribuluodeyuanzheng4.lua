@@ -622,13 +622,12 @@
 			}
 		},
 		{
-			actor = 900480,
-			nameColor = "#A9F548FF",
+			actor = 900481,
+			side = 2,
 			bgName = "star_level_bg_706",
 			hidePaintObj = true,
 			dir = 1,
-			actorName = "？？",
-			side = 2,
+			nameColor = "#A9F548FF",
 			say = "该走了。",
 			typewriter = {
 				speed = 0.05,
@@ -636,13 +635,12 @@
 			}
 		},
 		{
-			actor = 900480,
-			nameColor = "#A9F548FF",
+			actor = 900481,
+			side = 2,
 			bgName = "star_level_bg_706",
 			hidePaintObj = true,
 			dir = 1,
-			actorName = "？？",
-			side = 2,
+			nameColor = "#A9F548FF",
 			say = "时间太长了。",
 			typewriter = {
 				speed = 0.05,
@@ -779,13 +777,12 @@
 			}
 		},
 		{
-			actor = 900480,
-			nameColor = "#A9F548FF",
+			actor = 900481,
+			side = 2,
 			bgName = "star_level_bg_706",
 			hidePaintObj = true,
 			dir = 1,
-			actorName = "？？",
-			side = 2,
+			nameColor = "#A9F548FF",
 			say = "不对。",
 			typewriter = {
 				speed = 0.05,
@@ -807,13 +804,12 @@
 			}
 		},
 		{
-			actor = 900480,
-			nameColor = "#A9F548FF",
+			actor = 900481,
+			side = 2,
 			bgName = "star_level_bg_706",
 			hidePaintObj = true,
 			dir = 1,
-			actorName = "？？",
-			side = 2,
+			nameColor = "#A9F548FF",
 			say = "不要。",
 			typewriter = {
 				speed = 0.05,

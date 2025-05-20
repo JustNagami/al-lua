@@ -60620,7 +60620,7 @@ pg.ship_skin_expression = {
 		login = "7",
 		detail = ""
 	},
-	Npcfeiteliekaer_3 = {
+	npcfeiteliekaer_3 = {
 		default = "0",
 		feeling3 = "",
 		unlock = "",
@@ -60631,7 +60631,7 @@ pg.ship_skin_expression = {
 		mission = "",
 		touch2 = "",
 		feeling1 = "",
-		painting = "Npcfeiteliekaer_3",
+		painting = "npcfeiteliekaer_3",
 		lose = "",
 		feeling4 = "",
 		touch = "",

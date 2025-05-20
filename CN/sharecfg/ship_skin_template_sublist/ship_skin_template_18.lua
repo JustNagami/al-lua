@@ -4141,6 +4141,121 @@ pg.base.ship_skin_template_18 = {
 			}
 		}
 	},
+	[900481] = {
+		ship_group = 900481,
+		name = "？？",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		skin_type = -1,
+		group_index = 0,
+		id = 900481,
+		painting = "linghangyuan1_5",
+		l2d_ignore_drag = 0,
+		shop_id = 0,
+		illustrator = -1,
+		shop_type_id = 0,
+		l2d_para_range = "",
+		l2d_voice_calibrate = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		part_scale = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "linghangyuan1_5",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "无描述",
+		voice_actor = -1,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.742,
+					1.616,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.729,
+					1.626,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.634,
+					1.744,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.374,
+							2.451,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[900485] = {
 		ship_group = 900485,
 		name = "马可波罗 王座",
@@ -4603,7 +4718,7 @@ pg.base.ship_skin_template_18 = {
 	},
 	[900489] = {
 		ship_group = 900489,
-		name = "仲裁者·司答·XVII",
+		name = "？？？",
 		hand_id = 1,
 		bgm = "",
 		gyro = 0,
@@ -4612,7 +4727,7 @@ pg.base.ship_skin_template_18 = {
 		skin_type = -1,
 		group_index = 0,
 		id = 900489,
-		painting = "star",
+		painting = "unknownstar",
 		l2d_ignore_drag = 0,
 		shop_id = 0,
 		illustrator = -1,
@@ -4627,7 +4742,7 @@ pg.base.ship_skin_template_18 = {
 		part_scale = "",
 		bg_sp = "",
 		voice_actor_2 = -1,
-		prefab = "star",
+		prefab = "unknownstar",
 		l2d_se = "",
 		main_UI_FX = "",
 		special_effects = "",
@@ -5387,7 +5502,7 @@ pg.base.ship_skin_template_18 = {
 	},
 	[900509] = {
 		ship_group = 900509,
-		name = "腓特烈卡尔",
+		name = "{namecode:531}",
 		hand_id = 1,
 		bgm = "",
 		gyro = 0,
@@ -14056,107 +14171,6 @@ pg.base.ship_skin_template_18 = {
 						{
 							-0.42,
 							1.94,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[9712010] = {
-		ship_group = 971201,
-		name = "女灶神·META",
-		hand_id = 1,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		skin_type = -1,
-		group_index = 0,
-		id = 9712010,
-		painting = "zaoshen_alter",
-		l2d_ignore_drag = 0,
-		shop_id = 0,
-		illustrator = -1,
-		shop_type_id = 0,
-		l2d_para_range = "",
-		l2d_voice_calibrate = "",
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		part_scale = "",
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "zaoshen_alter",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "指挥官……是么？您看起来很健康，并没有生病。我是女灶神，如果有人生病或者受伤的话，我可以帮忙治疗以及修理……",
-		voice_actor = 365,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.02,
-					0.938,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.97,
-					0.938,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.56,
-							2.32,
 							0
 						}
 					}

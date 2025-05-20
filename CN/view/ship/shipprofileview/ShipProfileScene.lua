@@ -79,6 +79,7 @@ function var_0_0.init(arg_6_0)
 	arg_6_0.leftProfile = arg_6_0:findTF("adapt/profile_left_panel", arg_6_0.blurPanel)
 	arg_6_0.modelContainer = arg_6_0:findTF("model", arg_6_0.leftProfile)
 	arg_6_0.live2DBtn = ShipProfileLive2dBtn.New(arg_6_0:findTF("L2D_btn", arg_6_0.blurPanel))
+	arg_6_0.l2dBtnOn = false
 
 	GetComponent(arg_6_0:findTF("L2D_btn", arg_6_0.blurPanel), typeof(Image)):SetNativeSize()
 	GetComponent(arg_6_0:findTF("L2D_btn/img", arg_6_0.blurPanel), typeof(Image)):SetNativeSize()
@@ -162,6 +163,8 @@ function var_0_0.didEnter(arg_8_0)
 		if arg_17_0 then
 			arg_8_0:CreateLive2D()
 		end
+
+		arg_8_0.l2dBtnOn = arg_17_0
 
 		setActive(arg_8_0.viewBtn, not arg_17_0)
 		setActive(arg_8_0.rotateBtn, not arg_17_0)
@@ -644,7 +647,7 @@ function var_0_0.OnCVBtnClick(arg_52_0, arg_52_1)
 			var_53_0 = var_52_0.l2d_action
 		end
 
-		if arg_52_0.l2dChar and not arg_52_0.l2dChar:enablePlayAction(var_53_0) then
+		if arg_52_0.l2dBtnOn and arg_52_0.l2dChar and not arg_52_0.l2dChar:enablePlayAction(var_53_0) then
 			return
 		end
 

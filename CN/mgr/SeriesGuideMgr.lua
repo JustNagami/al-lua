@@ -176,7 +176,7 @@ end
 function var_0_0.Record(arg_26_0, arg_26_1, arg_26_2, arg_26_3, arg_26_4)
 	local var_26_0 = pg.TimeMgr.GetInstance():GetServerTime() - arg_26_3
 
-	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildGuide(arg_26_1, arg_26_2, var_26_0, arg_26_4))
+	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildGuide(arg_26_0:IsNewVersion(), arg_26_1, arg_26_2, var_26_0, arg_26_4))
 end
 
 function var_0_0.getSegmentIndex(arg_27_0)

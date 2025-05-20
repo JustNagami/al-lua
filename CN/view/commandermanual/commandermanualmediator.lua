@@ -57,7 +57,7 @@ function var_0_0.handleNotification(arg_8_0, arg_8_1)
 			local var_8_3 = var_8_2[1]
 			local var_8_4 = getProxy(CommanderManualProxy):GetPageById(arg_8_0.viewComponent.contextData.currentPageId)
 
-			if table.contains(var_8_4.taskIdList, var_8_3) then
+			if table.contains(var_8_4.taskIdList, var_8_3) and not var_8_4:IsTaskComplete(var_8_3) then
 				var_8_4:AddFinishedTaskId(var_8_3)
 				var_8_4:AddPt()
 			end

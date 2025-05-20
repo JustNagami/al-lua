@@ -79,6 +79,10 @@ function var_0_0.init(arg_2_0)
 
 	arg_2_0.detailView = arg_2_0.tf:Find("NodeDetail")
 	arg_2_0.gotoBtn = arg_2_0.detailView:Find("goto_btn")
+
+	setText(arg_2_0.detailView:Find("camp/label/text"), i18n("storyline_camp"))
+	setText(arg_2_0.gotoBtn:Find("text"), i18n("storyline_goto"))
+
 	arg_2_0.filterBtn = arg_2_0.tf:Find("Filter")
 
 	onButton(arg_2_0, arg_2_0.filterBtn, function()
@@ -167,6 +171,7 @@ end
 
 function var_0_0.ConfigData(arg_13_0)
 	arg_13_0.memoryNodeDict = {}
+	arg_13_0.chapterHead = {}
 
 	local var_13_0 = pg.memory_storyline
 
@@ -179,6 +184,12 @@ function var_0_0.ConfigData(arg_13_0)
 		arg_13_0.memoryNodeDict[var_13_2] = arg_13_0.memoryNodeDict[var_13_2] or {}
 
 		table.insert(arg_13_0.memoryNodeDict[var_13_2], var_13_1)
+
+		local var_13_3 = var_13_1:GetChapter()
+
+		if arg_13_0.chapterHead[var_13_3] == nil or var_13_1:GetColumn() < arg_13_0.chapterHead[var_13_3]:GetColumn() then
+			arg_13_0.chapterHead[var_13_3] = var_13_1
+		end
 	end
 end
 
@@ -237,390 +248,400 @@ function var_0_0.updateChapterProgress(arg_15_0)
 		setText(var_15_7, i18n("storyline_chapter" .. iter_15_2))
 		setActive(var_15_7, true)
 
+		local var_15_8 = var_15_7:Find("chapterWarpBtn")
+
+		onButton(arg_15_0, var_15_8, function()
+			local var_16_0 = arg_15_0.chapterHead[iter_15_2]:GetConfigID()
+			local var_16_1 = (arg_15_0.nodeDataDict[var_16_0].nodeTF.anchoredPosition.x - var_0_0.START_GAP) / arg_15_0.contentWidth
+
+			scrollTo(arg_15_0.scroll, var_16_1)
+		end)
+
 		arg_15_0.progressDict[iter_15_2] = var_15_5
 	end
 end
 
-function var_0_0.showFilter(arg_16_0)
-	pg.UIMgr.GetInstance():BlurPanel(arg_16_0.filter, false, {
+function var_0_0.showFilter(arg_17_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_17_0.filter, false, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 
-	for iter_16_0, iter_16_1 in ipairs(var_0_0.NATION_LIST) do
-		setActive(arg_16_0.filterTFDict[iter_16_1.key]:Find("on"), arg_16_0.filterDict[iter_16_1.key])
-		setActive(arg_16_0.filterTFDict[iter_16_1.key]:Find("off"), not arg_16_0.filterDict[iter_16_1.key])
+	for iter_17_0, iter_17_1 in ipairs(var_0_0.NATION_LIST) do
+		setActive(arg_17_0.filterTFDict[iter_17_1.key]:Find("on"), arg_17_0.filterDict[iter_17_1.key])
+		setActive(arg_17_0.filterTFDict[iter_17_1.key]:Find("off"), not arg_17_0.filterDict[iter_17_1.key])
 	end
 
-	setActive(arg_16_0.filter, true)
+	setActive(arg_17_0.filter, true)
 
-	arg_16_0.filterSnapShot = Clone(arg_16_0.filterDict)
+	arg_17_0.filterSnapShot = Clone(arg_17_0.filterDict)
 end
 
-function var_0_0.cancelFilter(arg_17_0)
-	arg_17_0.filterDict = arg_17_0.filterSnapShot
+function var_0_0.cancelFilter(arg_18_0)
+	arg_18_0.filterDict = arg_18_0.filterSnapShot
 
-	arg_17_0:closeFilter()
-end
-
-function var_0_0.confirmFilter(arg_18_0)
-	arg_18_0:updateNodes()
 	arg_18_0:closeFilter()
 end
 
-function var_0_0.closeFilter(arg_19_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_19_0.filter, arg_19_0.tf)
-
-	arg_19_0.filterSnapShot = nil
-
-	setActive(arg_19_0.filter, false)
+function var_0_0.confirmFilter(arg_19_0)
+	arg_19_0:updateNodes()
+	arg_19_0:closeFilter()
 end
 
-function var_0_0.refresh(arg_20_0)
-	arg_20_0.selectedID = nil
+function var_0_0.closeFilter(arg_20_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_20_0.filter, arg_20_0.tf)
 
-	arg_20_0:closeFilter()
-	arg_20_0:HideNodeDetail()
-	scrollTo(arg_20_0.scroll, 0)
+	arg_20_0.filterSnapShot = nil
+
+	setActive(arg_20_0.filter, false)
 end
 
-function var_0_0.ShowNodeDetail(arg_21_0, arg_21_1)
-	if arg_21_0.selectedID then
-		local var_21_0 = arg_21_0.nodeDataDict[arg_21_0.selectedID].nodeTF
+function var_0_0.refresh(arg_21_0)
+	arg_21_0.selectedID = nil
 
-		setActive(var_21_0:Find("info/selected"), false)
-		setActive(var_21_0:Find("info/selected_multi"), false)
+	arg_21_0:closeFilter()
+	arg_21_0:HideNodeDetail()
+	setActive(arg_21_0.detailView, false)
+	scrollTo(arg_21_0.scroll, 0)
+end
+
+function var_0_0.ShowNodeDetail(arg_22_0, arg_22_1)
+	if arg_22_0.selectedID then
+		local var_22_0 = arg_22_0.nodeDataDict[arg_22_0.selectedID].nodeTF
+
+		setActive(var_22_0:Find("info/selected"), false)
+		setActive(var_22_0:Find("info/selected_multi"), false)
 	end
 
-	arg_21_0.selectedID = arg_21_1
+	arg_22_0.selectedID = arg_22_1
 
-	local var_21_1 = arg_21_0.nodeDataDict[arg_21_1].VO
+	local var_22_1 = arg_22_0.nodeDataDict[arg_22_1].VO
 
-	setActive(arg_21_0.detailView, true)
-	quickPlayAnimation(arg_21_0.detailView, "anim_WorldMediaCollectionMemoryGroupUI_NodeDetail_enter")
-	setText(arg_21_0.detailView:Find("info/title"), var_21_1:GetName())
-	setText(arg_21_0.detailView:Find("info/desc"), var_21_1:GetDesc())
-	LoadImageSpriteAsync("memorystoryline/" .. var_21_1:GetIcon(), arg_21_0.detailView:Find("info/icon"), true)
-	LoadImageSpriteAtlasAsync("ui/worldmediacollectionmemoryui_atlas", var_21_1:GetMark(), arg_21_0.detailView:Find("info/icon/mark"), true)
+	setActive(arg_22_0.detailView, true)
+	quickPlayAnimation(arg_22_0.detailView, "anim_WorldMediaCollectionMemoryGroupUI_NodeDetail_enter")
+	setText(arg_22_0.detailView:Find("info/title"), var_22_1:GetName())
+	setText(arg_22_0.detailView:Find("info/desc"), var_22_1:GetDesc())
+	LoadImageSpriteAsync("memorystoryline/" .. var_22_1:GetIcon(), arg_22_0.detailView:Find("info/icon"), true)
+	LoadImageSpriteAtlasAsync("ui/worldmediacollectionmemoryui_atlas", var_22_1:GetMark(), arg_22_0.detailView:Find("info/icon/mark"), true)
 
-	local var_21_2 = arg_21_0.detailView:Find("camp/nations")
-	local var_21_3 = var_21_1:GetNations()
+	local var_22_2 = arg_22_0.detailView:Find("camp/nations")
+	local var_22_3 = var_22_1:GetNations()
 
-	eachChild(var_21_2, function(arg_22_0)
-		local var_22_0 = tonumber(arg_22_0.name)
+	eachChild(var_22_2, function(arg_23_0)
+		local var_23_0 = tonumber(arg_23_0.name)
 
-		setActive(arg_22_0, table.contains(var_21_3, var_22_0))
-		setActive(arg_22_0:Find("filter"), arg_21_0.filterDict[var_22_0])
+		setActive(arg_23_0, table.contains(var_22_3, var_23_0))
+		setActive(arg_23_0:Find("filter"), arg_22_0.filterDict[var_23_0])
 	end)
 
-	local var_21_4 = arg_21_0.nodeDataDict[arg_21_1].nodeTF
-	local var_21_5 = false
+	local var_22_4 = arg_22_0.nodeDataDict[arg_22_1].nodeTF
+	local var_22_5 = false
 
-	for iter_21_0, iter_21_1 in pairs(arg_21_0.filterDict) do
-		if table.contains(var_21_3, iter_21_0) then
-			var_21_5 = true
+	for iter_22_0, iter_22_1 in pairs(arg_22_0.filterDict) do
+		if table.contains(var_22_3, iter_22_0) then
+			var_22_5 = true
 
 			break
 		end
 	end
 
-	if var_21_5 then
-		setActive(var_21_4:Find("info/selected_multi"), true)
+	if var_22_5 then
+		setActive(var_22_4:Find("info/selected_multi"), true)
 	else
-		setActive(var_21_4:Find("info/selected"), true)
+		setActive(var_22_4:Find("info/selected"), true)
 	end
 
-	local var_21_6 = (var_21_4.anchoredPosition.x - var_0_0.START_GAP) / arg_21_0.contentWidth
+	local var_22_6 = (var_22_4.anchoredPosition.x - var_0_0.START_GAP) / arg_22_0.contentWidth
 
-	scrollTo(arg_21_0.scroll, var_21_6)
-	arg_21_0:TryPlayBGM()
+	scrollTo(arg_22_0.scroll, var_22_6)
+	arg_22_0:TryPlayBGM()
 end
 
-function var_0_0.TryPlayBGM(arg_23_0)
-	if arg_23_0.selectedID then
-		local var_23_0 = arg_23_0.nodeDataDict[arg_23_0.selectedID].VO
-
-		pg.BgmMgr.GetInstance():TempPlay(var_23_0:GetBGM())
-	end
-end
-
-function var_0_0.HideNodeDetail(arg_24_0)
+function var_0_0.TryPlayBGM(arg_24_0)
 	if arg_24_0.selectedID then
-		local var_24_0 = arg_24_0.nodeDataDict[arg_24_0.selectedID].nodeTF
+		local var_24_0 = arg_24_0.nodeDataDict[arg_24_0.selectedID].VO
 
-		setActive(var_24_0:Find("info/selected"), false)
-		setActive(var_24_0:Find("info/selected_multi"), false)
-		quickPlayAnimation(arg_24_0.detailView, "anim_WorldMediaCollectionMemoryGroupUI_NodeDetail_quit")
+		pg.BgmMgr.GetInstance():TempPlay(var_24_0:GetBGM())
+	end
+end
 
-		arg_24_0.selectedID = false
+function var_0_0.HideNodeDetail(arg_25_0)
+	if arg_25_0.selectedID then
+		local var_25_0 = arg_25_0.nodeDataDict[arg_25_0.selectedID].nodeTF
+
+		setActive(var_25_0:Find("info/selected"), false)
+		setActive(var_25_0:Find("info/selected_multi"), false)
+		quickPlayAnimation(arg_25_0.detailView, "anim_WorldMediaCollectionMemoryGroupUI_NodeDetail_quit")
+
+		arg_25_0.selectedID = false
 
 		pg.BgmMgr.GetInstance():ContinuePlay()
 	end
 end
 
-function var_0_0.onScroll(arg_25_0)
-	local var_25_0 = Mathf.Clamp(-arg_25_0.nodeContainer.anchoredPosition.x / arg_25_0.contentWidth, 0, 1)
-	local var_25_1 = arg_25_0.progressMark.anchoredPosition
+function var_0_0.onScroll(arg_26_0)
+	local var_26_0 = Mathf.Clamp(-arg_26_0.nodeContainer.anchoredPosition.x / arg_26_0.contentWidth, 0, 1)
+	local var_26_1 = arg_26_0.progressMark.anchoredPosition
 
-	var_25_1.x = var_25_0 * arg_25_0.chapterProgressTotalWidth
-	arg_25_0.progressMark.anchoredPosition = var_25_1
+	var_26_1.x = var_26_0 * arg_26_0.chapterProgressTotalWidth
+	arg_26_0.progressMark.anchoredPosition = var_26_1
 
-	local var_25_2 = 0
+	local var_26_2 = 0
 
-	for iter_25_0, iter_25_1 in pairs(arg_25_0.progressDict) do
-		if var_25_1.x >= iter_25_1.leftBound and var_25_1.x <= iter_25_1.rightBound then
-			var_25_2 = iter_25_0
+	for iter_26_0, iter_26_1 in pairs(arg_26_0.progressDict) do
+		if var_26_1.x >= iter_26_1.leftBound and var_26_1.x <= iter_26_1.rightBound then
+			var_26_2 = iter_26_0
 		end
 	end
 
-	arg_25_0:updateCurrentChapterMark(var_25_2)
+	arg_26_0:updateCurrentChapterMark(var_26_2)
 
-	local var_25_3 = -math.modf(arg_25_0.nodeContainer.anchoredPosition.x / var_0_0.HRZ_GAP) + 1
-	local var_25_4
-	local var_25_5
+	local var_26_3 = -math.modf(arg_26_0.nodeContainer.anchoredPosition.x / var_0_0.HRZ_GAP) + 1
+	local var_26_4
+	local var_26_5
 
-	for iter_25_2 = var_25_3 - 2, var_25_3 + 2 do
-		for iter_25_3, iter_25_4 in ipairs(arg_25_0.nodeDataDict) do
-			if iter_25_2 == iter_25_4.col then
-				if iter_25_4.row == 2 then
-					var_25_4 = true
-				elseif iter_25_4.row == -1 then
-					var_25_5 = true
+	for iter_26_2 = var_26_3 - 2, var_26_3 + 2 do
+		for iter_26_3, iter_26_4 in ipairs(arg_26_0.nodeDataDict) do
+			if iter_26_2 == iter_26_4.col then
+				if iter_26_4.row == 2 then
+					var_26_4 = true
+				elseif iter_26_4.row == -1 then
+					var_26_5 = true
 				end
 			end
 		end
 	end
 
-	local var_25_6
+	local var_26_6
 
-	if var_25_4 and not var_25_5 then
-		var_25_6 = 254
-	elseif not var_25_4 then
-		var_25_6 = 0
-	elseif var_25_4 and var_25_5 then
-		var_25_6 = 115
+	if var_26_4 and not var_26_5 then
+		var_26_6 = 254
+	elseif not var_26_4 then
+		var_26_6 = 0
+	elseif var_26_4 and var_26_5 then
+		var_26_6 = 115
 	end
 
-	if var_25_6 ~= arg_25_0.contentHeight then
-		arg_25_0.contentHeight = var_25_6
+	if var_26_6 ~= arg_26_0.contentHeight then
+		arg_26_0.contentHeight = var_26_6
 
-		if LeanTween.isTweening(arg_25_0.nodeContainer.gameObject) then
-			LeanTween.cancel(arg_25_0.nodeContainer.gameObject)
+		if LeanTween.isTweening(arg_26_0.nodeContainer.gameObject) then
+			LeanTween.cancel(arg_26_0.nodeContainer.gameObject)
 		end
 
-		LeanTween.moveY(rtf(arg_25_0.nodeContainer), var_25_6, 0.5)
+		LeanTween.moveY(rtf(arg_26_0.nodeContainer), var_26_6, 0.5)
 	end
 end
 
-function var_0_0.updateCurrentChapterMark(arg_26_0, arg_26_1)
-	if arg_26_0.currentChapter ~= arg_26_1 then
-		local var_26_0 = arg_26_0.progressDict[arg_26_1]
-		local var_26_1 = rtf(arg_26_0.progressCurrentMark).rect
+function var_0_0.updateCurrentChapterMark(arg_27_0, arg_27_1)
+	if arg_27_0.currentChapter ~= arg_27_1 then
+		local var_27_0 = arg_27_0.progressDict[arg_27_1]
+		local var_27_1 = rtf(arg_27_0.progressCurrentMark).rect
 
-		arg_26_0.progressCurrentMark.sizeDelta = Vector2(var_26_0.w, var_26_1.height)
+		arg_27_0.progressCurrentMark.sizeDelta = Vector2(var_27_0.w, var_27_1.height)
 
-		local var_26_2 = arg_26_0.progressCurrentMark.anchoredPosition
+		local var_27_2 = arg_27_0.progressCurrentMark.anchoredPosition
 
-		var_26_2.x = var_26_0.x
-		arg_26_0.progressCurrentMark.anchoredPosition = var_26_2
+		var_27_2.x = var_27_0.x
+		arg_27_0.progressCurrentMark.anchoredPosition = var_27_2
 	end
 
-	arg_26_0.currentChapter = arg_26_1
+	arg_27_0.currentChapter = arg_27_1
 end
 
-function var_0_0.gotoStory(arg_27_0)
+function var_0_0.gotoStory(arg_28_0)
 	pg.BgmMgr.GetInstance():ContinuePlay()
 
-	local var_27_0 = arg_27_0.nodeDataDict[arg_27_0.selectedID].VO
-	local var_27_1 = var_27_0:GetMemoryID()
-	local var_27_2 = var_27_0:GetWorldID()
+	local var_28_0 = arg_28_0.nodeDataDict[arg_28_0.selectedID].VO
+	local var_28_1 = var_28_0:GetMemoryID()
+	local var_28_2 = var_28_0:GetWorldID()
 
-	if var_27_1 ~= "" then
-		local var_27_3
-		local var_27_4
+	if var_28_1 ~= "" then
+		local var_28_3
+		local var_28_4
 
-		if var_27_1[1] == 1 then
-			var_27_3 = var_27_1[2]
-		elseif var_27_1[1] == 2 then
-			var_27_4 = var_27_1[2][1]
+		if var_28_1[1] == 1 then
+			var_28_3 = var_28_1[2]
+		elseif var_28_1[1] == 2 then
+			var_28_4 = var_28_1[2][1]
 
-			for iter_27_0, iter_27_1 in pairs(pg.memory_group) do
-				if table.contains(iter_27_1.memories, var_27_4) then
-					var_27_3 = iter_27_0
-
-					break
-				end
-			end
-		end
-
-		arg_27_0.storyJumpCallback(pg.memory_group[var_27_3], var_27_4)
-	elseif var_27_2 ~= "" then
-		local var_27_5
-		local var_27_6
-
-		if var_27_2[1] == 1 then
-			var_27_5 = var_27_2[2]
-		elseif var_27_2[1] == 2 then
-			var_27_6 = var_27_2[2][1]
-
-			for iter_27_2, iter_27_3 in pairs(pg.world_collection_record_group) do
-				if table.contains(iter_27_3.child, var_27_6) then
-					var_27_5 = iter_27_2
+			for iter_28_0, iter_28_1 in pairs(pg.memory_group) do
+				if table.contains(iter_28_1.memories, var_28_4) then
+					var_28_3 = iter_28_0
 
 					break
 				end
 			end
 		end
 
-		arg_27_0.recordJumpCallback(var_27_5, var_27_6, arg_27_0.selectedID)
+		arg_28_0.storyJumpCallback(pg.memory_group[var_28_3], var_28_4)
+	elseif var_28_2 ~= "" then
+		local var_28_5
+		local var_28_6
+
+		if var_28_2[1] == 1 then
+			var_28_5 = var_28_2[2]
+		elseif var_28_2[1] == 2 then
+			var_28_6 = var_28_2[2][1]
+
+			for iter_28_2, iter_28_3 in pairs(pg.world_collection_record_group) do
+				if table.contains(iter_28_3.child, var_28_6) then
+					var_28_5 = iter_28_2
+
+					break
+				end
+			end
+		end
+
+		arg_28_0.recordJumpCallback(var_28_5, var_28_6, arg_28_0.selectedID)
 	end
 end
 
-function var_0_0.updateNodes(arg_28_0)
-	for iter_28_0, iter_28_1 in pairs(arg_28_0.nodeDataDict) do
-		local var_28_0 = iter_28_1.nodeTF
-		local var_28_1 = iter_28_1.VO:GetNations()
-		local var_28_2 = false
+function var_0_0.updateNodes(arg_29_0)
+	for iter_29_0, iter_29_1 in pairs(arg_29_0.nodeDataDict) do
+		local var_29_0 = iter_29_1.nodeTF
+		local var_29_1 = iter_29_1.VO:GetNations()
+		local var_29_2 = false
 
-		for iter_28_2, iter_28_3 in pairs(arg_28_0.filterDict) do
-			if table.contains(var_28_1, iter_28_2) then
-				var_28_2 = true
+		for iter_29_2, iter_29_3 in pairs(arg_29_0.filterDict) do
+			if table.contains(var_29_1, iter_29_2) then
+				var_29_2 = true
 
 				break
 			end
 		end
 
-		setActive(var_28_0:Find("info/selected_filter"), var_28_2)
+		setActive(var_29_0:Find("info/selected_filter"), var_29_2)
 	end
 
-	if arg_28_0.selectedID then
-		local var_28_3 = arg_28_0.nodeDataDict[arg_28_0.selectedID]
-		local var_28_4 = var_28_3.nodeTF
-		local var_28_5 = var_28_3.VO:GetNations()
-		local var_28_6 = false
+	if arg_29_0.selectedID then
+		local var_29_3 = arg_29_0.nodeDataDict[arg_29_0.selectedID]
+		local var_29_4 = var_29_3.nodeTF
+		local var_29_5 = var_29_3.VO:GetNations()
+		local var_29_6 = false
 
-		for iter_28_4, iter_28_5 in pairs(arg_28_0.filterDict) do
-			if table.contains(var_28_5, iter_28_4) then
-				var_28_6 = true
+		for iter_29_4, iter_29_5 in pairs(arg_29_0.filterDict) do
+			if table.contains(var_29_5, iter_29_4) then
+				var_29_6 = true
 
 				break
 			end
 		end
 
-		if var_28_6 then
-			setActive(var_28_4:Find("info/selected_multi"), true)
-			setActive(var_28_4:Find("info/selected"), false)
+		if var_29_6 then
+			setActive(var_29_4:Find("info/selected_multi"), true)
+			setActive(var_29_4:Find("info/selected"), false)
 		else
-			setActive(var_28_4:Find("info/selected_multi"), false)
-			setActive(var_28_4:Find("info/selected"), true)
+			setActive(var_29_4:Find("info/selected_multi"), false)
+			setActive(var_29_4:Find("info/selected"), true)
 		end
 
-		local var_28_7 = arg_28_0.detailView:Find("camp/nations")
+		local var_29_7 = arg_29_0.detailView:Find("camp/nations")
 
-		eachChild(var_28_7, function(arg_29_0)
-			local var_29_0 = tonumber(arg_29_0.name)
+		eachChild(var_29_7, function(arg_30_0)
+			local var_30_0 = tonumber(arg_30_0.name)
 
-			setActive(arg_29_0, table.contains(var_28_5, var_29_0))
-			setActive(arg_29_0:Find("filter"), arg_28_0.filterDict[var_29_0])
+			setActive(arg_30_0, table.contains(var_29_5, var_30_0))
+			setActive(arg_30_0:Find("filter"), arg_29_0.filterDict[var_30_0])
 		end)
 	end
 end
 
-function var_0_0.updateNodeTree(arg_30_0)
-	arg_30_0.nodeDataDict = {}
-	arg_30_0.nodeMap = {}
+function var_0_0.updateNodeTree(arg_31_0)
+	arg_31_0.nodeDataDict = {}
+	arg_31_0.nodeMap = {}
 
-	local var_30_0
-	local var_30_1
-	local var_30_2
+	local var_31_0
+	local var_31_1
+	local var_31_2
 
-	for iter_30_0, iter_30_1 in pairs(arg_30_0.memoryNodeDict) do
-		for iter_30_2, iter_30_3 in ipairs(iter_30_1) do
-			local var_30_3 = {}
-			local var_30_4 = cloneTplTo(arg_30_0.nodeTpl, arg_30_0.nodeContainer)
+	for iter_31_0, iter_31_1 in pairs(arg_31_0.memoryNodeDict) do
+		for iter_31_2, iter_31_3 in ipairs(iter_31_1) do
+			local var_31_3 = {}
+			local var_31_4 = cloneTplTo(arg_31_0.nodeTpl, arg_31_0.nodeContainer)
 
-			setActive(var_30_4, true)
-			LoadImageSpriteAsync("memorystoryline/" .. iter_30_3:GetIcon(), var_30_4:Find("info/icon"), true)
-			setText(var_30_4:Find("info/name"), iter_30_3:GetName())
+			setActive(var_31_4, true)
+			LoadImageSpriteAsync("memorystoryline/" .. iter_31_3:GetIcon(), var_31_4:Find("info/icon"), true)
+			setText(var_31_4:Find("info/name"), iter_31_3:GetName())
 
-			var_30_1 = var_0_0.START_GAP + (iter_30_0 - 1) * var_0_0.HRZ_GAP
+			var_31_1 = var_0_0.START_GAP + (iter_31_0 - 1) * var_0_0.HRZ_GAP
 
-			local var_30_5 = iter_30_3:GetRow()
-			local var_30_6 = -var_30_5 * 254
+			local var_31_5 = iter_31_3:GetRow()
+			local var_31_6 = -var_31_5 * 254
 
-			var_30_4.anchoredPosition = Vector2(var_30_1, var_30_6)
-			var_30_0 = var_30_1 + var_0_0.END_GAP
-			var_30_3.nodeTF = var_30_4
-			var_30_3.row = var_30_5
-			var_30_3.col = iter_30_0
-			var_30_3.linkData = {}
-			var_30_3.VO = iter_30_3
-			arg_30_0.nodeMap[iter_30_0] = arg_30_0.nodeMap[iter_30_0] or {}
-			arg_30_0.nodeMap[iter_30_0][var_30_5] = true
+			var_31_4.anchoredPosition = Vector2(var_31_1, var_31_6)
+			var_31_0 = var_31_1 + var_0_0.END_GAP
+			var_31_3.nodeTF = var_31_4
+			var_31_3.row = var_31_5
+			var_31_3.col = iter_31_0
+			var_31_3.linkData = {}
+			var_31_3.VO = iter_31_3
+			arg_31_0.nodeMap[iter_31_0] = arg_31_0.nodeMap[iter_31_0] or {}
+			arg_31_0.nodeMap[iter_31_0][var_31_5] = true
 
-			LoadImageSpriteAtlasAsync("ui/worldmediacollectionmemoryui_atlas", iter_30_3:GetMark(), var_30_4:Find("info/mark"))
-			onButton(arg_30_0, var_30_4, function()
-				arg_30_0:ShowNodeDetail(iter_30_3:GetConfigID())
+			LoadImageSpriteAtlasAsync("ui/worldmediacollectionmemoryui_atlas", iter_31_3:GetMark(), var_31_4:Find("info/mark"))
+			onButton(arg_31_0, var_31_4, function()
+				arg_31_0:ShowNodeDetail(iter_31_3:GetConfigID())
 			end)
 
-			arg_30_0.nodeDataDict[iter_30_3:GetConfigID()] = var_30_3
+			arg_31_0.nodeDataDict[iter_31_3:GetConfigID()] = var_31_3
 		end
 	end
 
-	arg_30_0.nodeTail = arg_30_0.tf:Find("Story/NodeTail")
+	arg_31_0.nodeTail = arg_31_0.tf:Find("Story/NodeTail")
 
-	arg_30_0.nodeTail:SetParent(arg_30_0.nodeContainer, true)
+	arg_31_0.nodeTail:SetParent(arg_31_0.nodeContainer, true)
 
-	arg_30_0.nodeTail.anchoredPosition = Vector2(var_30_1 + var_0_0.HRZ_GAP, 0)
+	arg_31_0.nodeTail.anchoredPosition = Vector2(var_31_1 + var_0_0.HRZ_GAP, 0)
 
-	setActive(arg_30_0.nodeTail, true)
+	setActive(arg_31_0.nodeTail, true)
 
-	local var_30_7 = tf(Instantiate(arg_30_0.linkHrzTpl))
+	local var_31_7 = tf(Instantiate(arg_31_0.linkHrzTpl))
 
-	setActive(var_30_7, true)
-	var_30_7:SetParent(arg_30_0.nodeTail, false)
+	setActive(var_31_7, true)
+	var_31_7:SetParent(arg_31_0.nodeTail, false)
 
-	var_30_7.anchoredPosition = Vector2(-283.5, 0)
+	var_31_7.anchoredPosition = Vector2(-283.5, 0)
 
-	arg_30_0:sortLinkData()
+	arg_31_0:sortLinkData()
 
-	local var_30_8 = arg_30_0.nodeContainer.sizeDelta
+	local var_31_8 = arg_31_0.nodeContainer.sizeDelta
 
-	var_30_8.x = var_30_0
-	arg_30_0.nodeContainer.sizeDelta = var_30_8
-	arg_30_0.contentWidth = rtf(arg_30_0.nodeContainer).rect.width - rtf(arg_30_0.scroll).rect.width
+	var_31_8.x = var_31_0
+	arg_31_0.nodeContainer.sizeDelta = var_31_8
+	arg_31_0.contentWidth = rtf(arg_31_0.nodeContainer).rect.width - rtf(arg_31_0.scroll).rect.width
 end
 
-function var_0_0.sortLinkData(arg_32_0)
-	for iter_32_0, iter_32_1 in pairs(arg_32_0.nodeDataDict) do
-		if type(iter_32_1.VO:GetLinkEvent()) == "table" then
-			for iter_32_2, iter_32_3 in ipairs(iter_32_1.VO:GetLinkEvent()) do
-				local var_32_0 = arg_32_0.nodeDataDict[iter_32_3].linkData
+function var_0_0.sortLinkData(arg_33_0)
+	for iter_33_0, iter_33_1 in pairs(arg_33_0.nodeDataDict) do
+		if type(iter_33_1.VO:GetLinkEvent()) == "table" then
+			for iter_33_2, iter_33_3 in ipairs(iter_33_1.VO:GetLinkEvent()) do
+				local var_33_0 = arg_33_0.nodeDataDict[iter_33_3].linkData
 
-				if arg_32_0.nodeDataDict[iter_32_3].col < iter_32_1.col then
-					if not table.contains(var_32_0, iter_32_0) then
-						table.insert(var_32_0, iter_32_0)
+				if arg_33_0.nodeDataDict[iter_33_3].col < iter_33_1.col then
+					if not table.contains(var_33_0, iter_33_0) then
+						table.insert(var_33_0, iter_33_0)
 					end
 				else
-					table.insert(iter_32_1.linkData, iter_32_3)
+					table.insert(iter_33_1.linkData, iter_33_3)
 				end
 			end
 		end
 	end
 end
 
-function var_0_0.updateNodeLine(arg_33_0)
-	for iter_33_0, iter_33_1 in pairs(arg_33_0.nodeDataDict) do
-		local var_33_0 = iter_33_1.VO:GetColumn()
+function var_0_0.updateNodeLine(arg_34_0)
+	for iter_34_0, iter_34_1 in pairs(arg_34_0.nodeDataDict) do
+		local var_34_0 = iter_34_1.VO:GetColumn()
 
-		for iter_33_2, iter_33_3 in ipairs(iter_33_1.linkData) do
-			local var_33_1 = arg_33_0.nodeDataDict[iter_33_3]
+		for iter_34_2, iter_34_3 in ipairs(iter_34_1.linkData) do
+			local var_34_1 = arg_34_0.nodeDataDict[iter_34_3]
 
-			if var_33_1.VO:GetColumn() == var_33_0 then
-				arg_33_0:linkVRTLine(iter_33_1, var_33_1)
-			elseif iter_33_1.row == var_33_1.row then
-				arg_33_0:linkHRZLine(iter_33_1, var_33_1)
+			if var_34_1.VO:GetColumn() == var_34_0 then
+				arg_34_0:linkVRTLine(iter_34_1, var_34_1)
+			elseif iter_34_1.row == var_34_1.row then
+				arg_34_0:linkHRZLine(iter_34_1, var_34_1)
 			else
-				arg_33_0:linkBranchLine(iter_33_1, var_33_1)
+				arg_34_0:linkBranchLine(iter_34_1, var_34_1)
 			end
 		end
 	end
@@ -628,78 +649,78 @@ end
 
 var_0_0.VRT_LINE_POS = Vector2(0, -150)
 
-function var_0_0.linkVRTLine(arg_34_0, arg_34_1, arg_34_2)
-	local var_34_0 = arg_34_1.row < arg_34_2.row and arg_34_1 or arg_34_2
-	local var_34_1
-
-	var_34_1 = var_34_0 == arg_34_1 and arg_34_2 or arg_34_1
-
-	local var_34_2 = tf(Instantiate(arg_34_0.linkVrtTpl))
-
-	setActive(var_34_2, true)
-	var_34_2:SetParent(var_34_0.nodeTF, false)
-
-	var_34_2.anchoredPosition = var_0_0.VRT_LINE_POS
-end
-
-var_0_0.HRZ_LINE_POS = Vector2(185, 0)
-
-function var_0_0.linkHRZLine(arg_35_0, arg_35_1, arg_35_2)
-	local var_35_0 = arg_35_1.VO:GetColumn() < arg_35_2.VO:GetColumn() and arg_35_1 or arg_35_2
+function var_0_0.linkVRTLine(arg_35_0, arg_35_1, arg_35_2)
+	local var_35_0 = arg_35_1.row < arg_35_2.row and arg_35_1 or arg_35_2
 	local var_35_1
 
 	var_35_1 = var_35_0 == arg_35_1 and arg_35_2 or arg_35_1
 
-	local var_35_2 = tf(Instantiate(arg_35_0.linkHrzTpl))
+	local var_35_2 = tf(Instantiate(arg_35_0.linkVrtTpl))
 
 	setActive(var_35_2, true)
 	var_35_2:SetParent(var_35_0.nodeTF, false)
 
-	var_35_2.anchoredPosition = var_0_0.HRZ_LINE_POS
+	var_35_2.anchoredPosition = var_0_0.VRT_LINE_POS
+end
+
+var_0_0.HRZ_LINE_POS = Vector2(185, 0)
+
+function var_0_0.linkHRZLine(arg_36_0, arg_36_1, arg_36_2)
+	local var_36_0 = arg_36_1.VO:GetColumn() < arg_36_2.VO:GetColumn() and arg_36_1 or arg_36_2
+	local var_36_1
+
+	var_36_1 = var_36_0 == arg_36_1 and arg_36_2 or arg_36_1
+
+	local var_36_2 = tf(Instantiate(arg_36_0.linkHrzTpl))
+
+	setActive(var_36_2, true)
+	var_36_2:SetParent(var_36_0.nodeTF, false)
+
+	var_36_2.anchoredPosition = var_0_0.HRZ_LINE_POS
 end
 
 var_0_0.UP_POS = Vector2(-3.5, 100)
 var_0_0.DOWN_POS = Vector2(0, -105)
 var_0_0.RIGHT_POS = Vector2(185, 0)
 
-function var_0_0.linkBranchLine(arg_36_0, arg_36_1, arg_36_2)
-	local var_36_0
-	local var_36_1
-	local var_36_2
-	local var_36_3 = arg_36_1.VO:GetColumn()
-	local var_36_4 = arg_36_2.VO:GetColumn()
-	local var_36_5 = arg_36_1.row
-	local var_36_6 = arg_36_2.row
-	local var_36_7 = "Right"
-	local var_36_8 = var_36_6 < var_36_5 and "Up" or "Down"
+function var_0_0.linkBranchLine(arg_37_0, arg_37_1, arg_37_2)
+	local var_37_0
+	local var_37_1
+	local var_37_2
+	local var_37_3 = arg_37_1.VO:GetColumn()
+	local var_37_4 = arg_37_2.VO:GetColumn()
+	local var_37_5 = arg_37_1.row
+	local var_37_6 = arg_37_2.row
+	local var_37_7 = "Right"
+	local var_37_8 = var_37_6 < var_37_5 and "Up" or "Down"
 
-	if not arg_36_0.nodeMap[var_36_3 + 1][var_36_5] then
-		var_36_2 = var_36_7 .. var_36_8
-		var_36_1 = var_0_0.RIGHT_POS
-	elseif var_36_6 < var_36_5 and not arg_36_0.nodeMap[var_36_3][var_36_5 - 1] or var_36_5 < var_36_6 and not arg_36_0.nodeMap[var_36_3][var_36_5 + 1] then
-		var_36_2 = var_36_8 .. var_36_7
-		var_36_1 = var_36_6 < var_36_5 and var_0_0.UP_POS or var_0_0.DOWN_POS
+	if not arg_37_0.nodeMap[var_37_3 + 1][var_37_5] then
+		var_37_2 = var_37_7 .. var_37_8
+		var_37_1 = var_0_0.RIGHT_POS
+	elseif var_37_6 < var_37_5 and not arg_37_0.nodeMap[var_37_3][var_37_5 - 1] or var_37_5 < var_37_6 and not arg_37_0.nodeMap[var_37_3][var_37_5 + 1] then
+		var_37_2 = var_37_8 .. var_37_7
+		var_37_1 = var_37_6 < var_37_5 and var_0_0.UP_POS or var_0_0.DOWN_POS
 	else
-		var_36_2 = var_36_7 .. var_36_8 .. "Lite"
-		var_36_1 = var_0_0.RIGHT_POS
+		var_37_2 = var_37_7 .. var_37_8 .. "Lite"
+		var_37_1 = var_0_0.RIGHT_POS
 	end
 
-	var_36_2 = math.abs(var_36_5 - var_36_6) == 2 and var_36_2 .. "Extend" or var_36_2
+	var_37_2 = math.abs(var_37_5 - var_37_6) == 2 and var_37_2 .. "Extend" or var_37_2
 
-	local var_36_9 = Instantiate(arg_36_0.tf:Find("Story/" .. var_36_2))
-	local var_36_10 = tf(var_36_9)
+	local var_37_9 = Instantiate(arg_37_0.tf:Find("Story/" .. var_37_2))
+	local var_37_10 = tf(var_37_9)
 
-	setActive(var_36_10, true)
-	var_36_10:SetParent(arg_36_1.nodeTF, false)
+	setActive(var_37_10, true)
+	var_37_10:SetParent(arg_37_1.nodeTF, false)
 
-	var_36_10.anchoredPosition = var_36_1
+	var_37_10.anchoredPosition = var_37_1
 end
 
-function var_0_0.Dispose(arg_37_0)
-	pg.DelegateInfo.Dispose(arg_37_0)
+function var_0_0.Dispose(arg_38_0)
+	pg.DelegateInfo.Dispose(arg_38_0)
 
-	if LeanTween.isTweening(arg_37_0.nodeContainer.gameObject) then
-		LeanTween.cancel(arg_37_0.nodeContainer.gameObject)
+	if LeanTween.isTweening(arg_38_0.nodeContainer.gameObject) then
+		LeanTween.cancel(arg_38_0.nodeContainer.gameObject)
 	end
 end
 

@@ -1,5 +1,61 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_201 = {
+	[14602206] = {
+		cannon = 98,
+		hit_growth = 210,
+		bubble_fx = "",
+		speed_growth = 0,
+		pilot_ai_template_id = 10001,
+		air = 0,
+		rarity = 3,
+		dodge = 12,
+		luck = 15,
+		id = 14602206,
+		cannon_growth = 1700,
+		reload_growth = 0,
+		dodge_growth = 170,
+		reload = 150,
+		star = 4,
+		hit = 16,
+		antisub_growth = 0,
+		air_growth = 0,
+		fog_fx = "",
+		base = 90250,
+		durability = 13040,
+		armor_growth = 0,
+		torpedo_growth = 1500,
+		luck_growth = 0,
+		antiaircraft_growth = 3200,
+		armor = 0,
+		speed = 20,
+		torpedo = 75,
+		antisub = 0,
+		durability_growth = 270400,
+		antiaircraft = 155,
+		battle_unit_type = 90,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		specific_fx_scale = {},
+		appear_fx = {
+			"appearQ"
+		},
+		equipment_list = {
+			1000742,
+			1000747,
+			1000752,
+			1000757,
+			1000762,
+			1000767
+		},
+		buff_list = {}
+	},
 	[14602207] = {
 		cannon = 140,
 		hit_growth = 210,
@@ -1589,62 +1645,6 @@ pg.enemy_data_statistics_201 = {
 			773104,
 			773105,
 			773106
-		},
-		buff_list = {
-			{
-				ID = 50500,
-				LV = 4
-			}
-		}
-	},
-	[14603303] = {
-		cannon = 300,
-		battle_unit_type = 95,
-		bubble_fx = "",
-		speed_growth = 0,
-		pilot_ai_template_id = 10001,
-		air = 0,
-		speed = 18,
-		dodge = 16,
-		antisub = 0,
-		cannon_growth = 0,
-		fog_fx = "",
-		reload_growth = 0,
-		dodge_growth = 228,
-		luck = 25,
-		reload = 150,
-		hit = 30,
-		antisub_growth = 0,
-		air_growth = 0,
-		torpedo = 180,
-		base = 90519,
-		durability = 115000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		hit_growth = 210,
-		armor = 0,
-		durability_growth = 0,
-		antiaircraft = 460,
-		id = 14603303,
-		antiaircraft_growth = 0,
-		scale = 144,
-		world_enhancement = {
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		},
-		specific_fx_scale = {},
-		appear_fx = {
-			"bossguangxiao",
-			"appearQ"
-		},
-		equipment_list = {
-			773210
 		},
 		buff_list = {
 			{

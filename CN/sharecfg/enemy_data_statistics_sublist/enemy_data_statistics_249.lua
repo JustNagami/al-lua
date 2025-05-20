@@ -1,5 +1,51 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_249 = {
+	[16002007] = {
+		cannon = 5,
+		hit_growth = 120,
+		fog_fx = "",
+		speed_growth = 0,
+		pilot_ai_template_id = 10002,
+		air = 0,
+		speed = 12,
+		dodge = 0,
+		antisub = 0,
+		cannon_growth = 300,
+		base = 90663,
+		reload_growth = 0,
+		dodge_growth = 0,
+		luck = 0,
+		reload = 150,
+		hit = 8,
+		antisub_growth = 0,
+		air_growth = 0,
+		nationality = 6,
+		torpedo = 24,
+		durability = 200,
+		armor_growth = 0,
+		torpedo_growth = 2200,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 4000,
+		antiaircraft = 0,
+		id = 16002007,
+		battle_unit_type = 65,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		specific_fx_scale = {},
+		equipment_list = {
+			1100697,
+			1100712
+		}
+	},
 	[16002008] = {
 		cannon = 0,
 		reload = 150,
@@ -1209,54 +1255,6 @@ pg.enemy_data_statistics_249 = {
 			3004404,
 			3004405,
 			3004406
-		}
-	},
-	[16002302] = {
-		cannon = 81,
-		name = "天后~Incarnation Of Juno~",
-		type = 7,
-		speed_growth = 0,
-		hit_growth = 0,
-		air = 445,
-		durability = 46820,
-		armor = 0,
-		antisub = 0,
-		reload = 150,
-		luck_growth = 0,
-		battle_unit_type = 95,
-		dodge_growth = 0,
-		antisub_growth = 0,
-		air_growth = 0,
-		base = 90666,
-		icon_type = 7,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		speed = 18,
-		luck = 18,
-		id = 16002302,
-		scale = 180,
-		cannon_growth = 0,
-		pilot_ai_template_id = 10001,
-		fog_fx = "",
-		dodge = 20,
-		reload_growth = 0,
-		hit = 32,
-		torpedo = 0,
-		durability_growth = 0,
-		antiaircraft = 428,
-		antiaircraft_growth = 0,
-		armor_type = 2,
-		appear_fx = {
-			"bossguangxiao",
-			"appearQ"
-		},
-		equipment_list = {
-			3004501,
-			3004502,
-			3004503,
-			3004506,
-			3004507,
-			3004508
 		}
 	}
 }

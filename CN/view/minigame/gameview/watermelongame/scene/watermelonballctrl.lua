@@ -179,10 +179,13 @@ function var_0_0.createMegerBall(arg_13_0, arg_13_1, arg_13_2)
 	local var_13_0, var_13_1 = arg_13_0._gameVo:getTplItemFromPool("ball", arg_13_0._container)
 
 	var_13_0.position = Vector3(arg_13_2.x, arg_13_2.y, 0)
-	arg_13_0._megerEffect.position = var_13_0.position
 
-	setActive(arg_13_0._megerEffect, false)
-	setActive(arg_13_0._megerEffect, true)
+	if arg_13_0._megerEffect then
+		arg_13_0._megerEffect.position = var_13_0.position
+
+		setActive(arg_13_0._megerEffect, false)
+		setActive(arg_13_0._megerEffect, true)
+	end
 
 	local var_13_2 = arg_13_0:initBallData(var_13_0, arg_13_1)
 

@@ -32,11 +32,6 @@ function var_0_0.OnDataSetting(arg_2_0)
 end
 
 function var_0_0.OnFirstFlush(arg_3_0)
-	for iter_3_0 = 1, #arg_3_0.list do
-		setActive(arg_3_0:findTF("accomplish", arg_3_0.list[iter_3_0]), false)
-		setActive(arg_3_0:findTF("Check_point", arg_3_0.list[iter_3_0]), false)
-	end
-
 	onButton(arg_3_0, arg_3_0.getBtn, function()
 		if not arg_3_0.remainCnt or arg_3_0.remainCnt <= 0 then
 			return
@@ -70,12 +65,7 @@ function var_0_0.OnFirstFlush(arg_3_0)
 			return
 		end
 
-		local var_7_0 = Context.New({
-			mediator = HolidayVillaMapMediator,
-			viewComponent = HolidayVillaMapScene
-		})
-
-		arg_3_0:emit(ActivityMediator.OPEN_LAYER, var_7_0)
+		arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.HOLIDAY_VILLA_MAP)
 	end, SFX_PANEL)
 end
 
@@ -84,18 +74,8 @@ function var_0_0.OnUpdateFlush(arg_8_0)
 
 	local var_8_0 = arg_8_0:IsFinishSign()
 
-	arg_8_0.count = 0
-
-	for iter_8_0 = 1, #arg_8_0.taskGroup do
-		arg_8_0.curTaskVO = arg_8_0.taskProxy:getTaskVO(arg_8_0.taskGroup[iter_8_0])
-
-		if arg_8_0.curTaskVO ~= nil and arg_8_0.curTaskVO:getTaskStatus() == 2 then
-			arg_8_0.count = iter_8_0
-		end
-	end
-
 	setActive(arg_8_0.got, false)
-	setActive(arg_8_0.go, not arg_8_0:IsLockLiner() and arg_8_0.count >= 5)
+	setActive(arg_8_0.go, not arg_8_0:IsLockLiner() and var_8_0)
 	setActive(arg_8_0.Notbtn, arg_8_0:IsLockLiner())
 
 	if not var_8_0 then
@@ -121,19 +101,10 @@ function var_0_0.OnUpdateFlush(arg_8_0)
 		setActive(arg_8_0.getBtn, false)
 	end
 
-	for iter_8_1 = 1, #arg_8_0.list do
-		setActive(arg_8_0:findTF("accomplish", arg_8_0.list[iter_8_1]), false)
-		setActive(arg_8_0:findTF("Check_point", arg_8_0.list[iter_8_1]), false)
-
-		if arg_8_0.count > 0 and iter_8_1 <= arg_8_0.count then
-			setActive(arg_8_0:findTF("accomplish", arg_8_0.list[iter_8_1]), true)
-
-			arg_8_0.list[iter_8_1]:GetComponent(typeof(Image)).color = Color.New(1, 1, 1, 0)
-		end
-	end
-
-	if arg_8_0.count + 1 <= 5 then
-		setActive(arg_8_0:findTF("Check_point", arg_8_0.list[arg_8_0.count + 1]), true)
+	for iter_8_0, iter_8_1 in ipairs(arg_8_0.list) do
+		setActive(arg_8_0:findTF("accomplish", arg_8_0.list[iter_8_0]), var_8_0 or iter_8_0 < arg_8_0.nday)
+		setImageAlpha(iter_8_1, (var_8_0 or iter_8_0 < arg_8_0.nday) and 0 or 1)
+		setActive(arg_8_0:findTF("Check_point", arg_8_0.list[iter_8_0]), not var_8_0 and iter_8_0 == arg_8_0.nday)
 	end
 end
 

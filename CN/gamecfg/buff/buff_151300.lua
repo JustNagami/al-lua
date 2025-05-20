@@ -7,7 +7,11 @@
 			},
 			arg_list = {
 				skill_id = 151300,
-				target = "TargetSelf"
+				target = "TargetSelf",
+				streakRange = {
+					0,
+					3
+				}
 			}
 		}
 	},
