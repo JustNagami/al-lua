@@ -463,7 +463,7 @@ function var_0_0.SwitchTheme(arg_54_0, arg_54_1, arg_54_2, arg_54_3)
 			arg_54_0:SwitchAnim(1, 0, arg_58_0)
 		end
 	}, function()
-		setActive(arg_54_0.maskTr, fasle)
+		setActive(arg_54_0.maskTr, false)
 
 		if var_54_0 then
 			arg_54_0.cg.blocksRaycasts = true

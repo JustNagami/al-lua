@@ -79,6 +79,22 @@ function temp()
 				}
 			}
 		},
+		拉 = {
+			法 = {
+				尔 = {
+					加 = {
+						this = true
+					}
+				}
+			}
+		},
+		立 = {
+			尼 = {
+				达 = {
+					this = true
+				}
+			}
+		},
 		鲁 = {
 			德 = {
 				this = true
@@ -291,6 +307,15 @@ function temp()
 									}
 								}
 							}
+						}
+					}
+				}
+			},
+			奥 = {
+				佩 = {
+					特 = {
+						拉 = {
+							this = true
 						}
 					}
 				}
@@ -3449,7 +3474,12 @@ function temp()
 	var_0_1.萤 = {
 		火 = {
 			虫 = {
-				this = true
+				this = true,
+				["."] = {
+					改 = {
+						this = true
+					}
+				}
 			}
 		}
 	}
@@ -3459,6 +3489,9 @@ temp()
 
 function temp()
 	var_0_1.勇 = {
+		气 = {
+			this = true
+		},
 		敢 = {
 			this = true
 		}
@@ -4260,6 +4293,16 @@ end
 temp()
 
 function temp()
+	var_0_1.狮 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.竞 = {
 		技 = {
 			神 = {
@@ -4355,7 +4398,18 @@ function temp()
 			}
 		},
 		荣 = {
-			this = true
+			this = true,
+			· = {
+				M = {
+					E = {
+						T = {
+							A = {
+								this = true
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 end

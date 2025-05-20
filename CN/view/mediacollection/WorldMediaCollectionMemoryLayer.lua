@@ -156,23 +156,33 @@ function var_0_0.SwitchReddotMemory(arg_18_0)
 	arg_18_0:GetGroupLayer().buffer:SwitchReddotMemory()
 end
 
-function var_0_0.ShowSubMemories(arg_19_0, ...)
+function var_0_0.ShowSubMemories(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
 	local var_19_0 = arg_19_0:GetDetailLayer()
 
 	var_19_0.buffer:Show()
-	var_19_0.buffer:ShowSubMemories(...)
-	arg_19_0:HideGroupLayer()
+	var_19_0.buffer:ShowSubMemories(arg_19_1, arg_19_3)
+
+	if not arg_19_2 then
+		arg_19_0:HideGroupLayer()
+	end
 end
 
 function var_0_0.Return2MemoryGroup(arg_20_0)
-	if not arg_20_0.contextData.memoryGroup then
+	local var_20_0 = arg_20_0.contextData.memoryGroup
+	local var_20_1 = arg_20_0:GetGroupLayer()
+
+	if var_20_1:GetCurrentMode() == var_20_1.LINE_MODE then
+		if not var_20_0 then
+			var_20_1:SwitchStoryLineMode(var_20_1.FORM_MODE)
+		else
+			var_20_1.storyLineView:TryPlayBGM()
+		end
+	elseif not var_20_0 then
 		return
 	end
 
-	local var_20_0 = arg_20_0:GetGroupLayer()
-
-	var_20_0.buffer:Show()
-	var_20_0.buffer:Return2MemoryGroup()
+	var_20_1.buffer:Show()
+	var_20_1.buffer:Return2MemoryGroup()
 
 	arg_20_0.contextData.memoryGroup = nil
 
@@ -181,26 +191,37 @@ function var_0_0.Return2MemoryGroup(arg_20_0)
 	return true
 end
 
-function var_0_0.UpdateView(arg_21_0)
-	local var_21_0
+function var_0_0.Return2Line(arg_21_0)
+	return
+end
 
-	if arg_21_0.contextData.memoryGroup then
-		var_21_0 = arg_21_0.groupUI
+function var_0_0.UpdateView(arg_22_0)
+	local var_22_0
+
+	if arg_22_0.contextData.memoryGroup then
+		var_22_0 = arg_22_0.groupUI
 	else
-		var_21_0 = arg_21_0.detailUI
+		var_22_0 = arg_22_0.detailUI
 	end
 
-	if not var_21_0 then
+	if not var_22_0 then
 		return
 	end
 
-	var_21_0.buffer:UpdateView()
+	var_22_0.buffer:UpdateView()
 end
 
-function var_0_0.OnDestroy(arg_22_0)
-	arg_22_0:CloseDetailLayer()
-	arg_22_0:CloseGroupLayer()
-	var_0_0.super.OnDestroy(arg_22_0)
+function var_0_0.WrapToStoryLine(arg_23_0, arg_23_1)
+	local var_23_0 = arg_23_0:GetGroupLayer()
+
+	var_23_0:SwitchStoryLineMode(var_23_0.LINE_MODE)
+	var_23_0.storyLineView:ShowNodeDetail(arg_23_1)
+end
+
+function var_0_0.OnDestroy(arg_24_0)
+	arg_24_0:CloseDetailLayer()
+	arg_24_0:CloseGroupLayer()
+	var_0_0.super.OnDestroy(arg_24_0)
 end
 
 return var_0_0

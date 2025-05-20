@@ -39,6 +39,7 @@ function var_0_0.OnInit(arg_5_0)
 
 		arg_5_0:emit(BaseUI.ON_ITEM, var_8_0)
 	end, SFX_PANEL)
+	getProxy(CommanderManualProxy):TaskProgressAdd(2023, 1)
 end
 
 function var_0_0.OnUpdatePlayer(arg_9_0)

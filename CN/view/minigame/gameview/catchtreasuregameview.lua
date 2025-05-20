@@ -1,5 +1,5 @@
 ﻿local var_0_0 = class("CatchTreasureGameView", import("..BaseMiniGameView"))
-local var_0_1 = "blueocean-image"
+local var_0_1 = "story-richang-5"
 local var_0_2 = "event:/ui/ddldaoshu2"
 local var_0_3 = "event:/ui/taosheng"
 local var_0_4 = "event:/ui/zhuahuo"
@@ -2270,7 +2270,7 @@ function var_0_0.initEvent(arg_66_0)
 end
 
 function var_0_0.initData(arg_68_0)
-	arg_68_0.dropData = pg.mini_game[arg_68_0:GetMGData().id].simple_config_data.drop
+	arg_68_0.dropData = pg.mini_game[arg_68_0:GetMGData().id].simple_config_data.drop_ids
 
 	local var_68_0 = Application.targetFrameRate or 60
 
@@ -2303,9 +2303,10 @@ function var_0_0.initUI(arg_70_0)
 
 	arg_70_0.leaveUI = findTF(arg_70_0._tf, "pop/LeaveUI")
 
+	GetComponent(findTF(arg_70_0.leaveUI, "ad/desc"), typeof(Image)):SetNativeSize()
 	onButton(arg_70_0, findTF(arg_70_0.leaveUI, "ad/btnOk"), function()
 		arg_70_0:resumeGame()
-		arg_70_0:onGameOver()
+		arg_70_0:onGameOver(false)
 	end, SFX_CANCEL)
 	onButton(arg_70_0, findTF(arg_70_0.leaveUI, "ad/btnCancel"), function()
 		arg_70_0:resumeGame()
@@ -2314,6 +2315,7 @@ function var_0_0.initUI(arg_70_0)
 
 	arg_70_0.pauseUI = findTF(arg_70_0._tf, "pop/pauseUI")
 
+	GetComponent(findTF(arg_70_0.pauseUI, "ad/desc"), typeof(Image)):SetNativeSize()
 	onButton(arg_70_0, findTF(arg_70_0.pauseUI, "ad/btnOk"), function()
 		setActive(arg_70_0.pauseUI, false)
 		arg_70_0:resumeGame()
@@ -2370,42 +2372,50 @@ function var_0_0.initUI(arg_70_0)
 		setActive(arg_70_0.menuUI, false)
 		arg_70_0:readyStart()
 	end, SFX_CANCEL)
+	onButton(arg_70_0, findTF(arg_70_0.menuUI, "home"), function()
+		arg_70_0:emit(BaseUI.ON_HOME)
+	end, SFX_CANCEL)
 
 	local var_70_1 = findTF(arg_70_0.menuUI, "tplBattleItem")
 
 	arg_70_0.battleItems = {}
 	arg_70_0.dropItems = {}
 
+	local var_70_2 = arg_70_0.dropData
+
 	for iter_70_0 = 1, 7 do
-		local var_70_2 = tf(instantiate(var_70_1))
-
-		var_70_2.name = "battleItem_" .. iter_70_0
-
-		setParent(var_70_2, findTF(arg_70_0.menuUI, "battList/Viewport/Content"))
-
 		local var_70_3 = iter_70_0
+		local var_70_4 = tf(instantiate(var_70_1))
 
-		GetSpriteFromAtlasAsync(var_0_8, "buttomDesc" .. var_70_3, function(arg_82_0)
-			setImageSprite(findTF(var_70_2, "state_open/buttomDesc"), arg_82_0, true)
-			setImageSprite(findTF(var_70_2, "state_clear/buttomDesc"), arg_82_0, true)
-			setImageSprite(findTF(var_70_2, "state_current/buttomDesc"), arg_82_0, true)
-			setImageSprite(findTF(var_70_2, "state_closed/buttomDesc"), arg_82_0, true)
+		var_70_4.name = "battleItem_" .. iter_70_0
+
+		setParent(var_70_4, findTF(arg_70_0.menuUI, "battList/Viewport/Content"))
+
+		local var_70_5 = iter_70_0
+
+		GetSpriteFromAtlasAsync(var_0_8, "buttomDesc" .. var_70_5, function(arg_83_0)
+			if arg_83_0 then
+				setImageSprite(findTF(var_70_4, "state_open/bg"), arg_83_0, true)
+				setImageSprite(findTF(var_70_4, "state_clear/bg"), arg_83_0, true)
+				setImageSprite(findTF(var_70_4, "state_current/bg"), arg_83_0, true)
+				setImageSprite(findTF(var_70_4, "state_closed/bg"), arg_83_0, true)
+			end
 		end)
 
-		local var_70_4 = findTF(var_70_2, "icon")
-		local var_70_5 = {
-			type = arg_70_0.dropData[iter_70_0][1],
-			id = arg_70_0.dropData[iter_70_0][2],
-			count = arg_70_0.dropData[iter_70_0][3]
+		local var_70_6 = findTF(var_70_4, "icon")
+		local var_70_7 = {
+			type = var_70_2[iter_70_0][1],
+			id = var_70_2[iter_70_0][2],
+			count = var_70_2[iter_70_0][3]
 		}
 
-		updateDrop(var_70_4, var_70_5)
-		onButton(arg_70_0, var_70_4, function()
-			arg_70_0:emit(BaseUI.ON_DROP, var_70_5)
+		updateDrop(var_70_6, var_70_7)
+		onButton(arg_70_0._event, var_70_6, function()
+			arg_70_0:emit(BaseUI.ON_DROP, var_70_7)
 		end, SFX_PANEL)
-		table.insert(arg_70_0.dropItems, var_70_4)
-		setActive(var_70_2, true)
-		table.insert(arg_70_0.battleItems, var_70_2)
+		table.insert(arg_70_0.dropItems, var_70_6)
+		setActive(var_70_4, true)
+		table.insert(arg_70_0.battleItems, var_70_4)
 	end
 
 	if not arg_70_0.handle then
@@ -2415,44 +2425,44 @@ function var_0_0.initUI(arg_70_0)
 	UpdateBeat:AddListener(arg_70_0.handle)
 end
 
-function var_0_0.initGameUI(arg_84_0)
-	arg_84_0.gameUI = findTF(arg_84_0._tf, "ui/gameUI")
+function var_0_0.initGameUI(arg_85_0)
+	arg_85_0.gameUI = findTF(arg_85_0._tf, "ui/gameUI")
 
-	onButton(arg_84_0, findTF(arg_84_0.gameUI, "topRight/btnStop"), function()
-		arg_84_0:stopGame()
-		setActive(arg_84_0.pauseUI, true)
+	onButton(arg_85_0, findTF(arg_85_0.gameUI, "topRight/btnStop"), function()
+		arg_85_0:stopGame()
+		setActive(arg_85_0.pauseUI, true)
 	end)
-	onButton(arg_84_0, findTF(arg_84_0.gameUI, "btnLeave"), function()
-		arg_84_0:stopGame()
-		setActive(arg_84_0.leaveUI, true)
+	onButton(arg_85_0, findTF(arg_85_0.gameUI, "btnLeave"), function()
+		arg_85_0:stopGame()
+		setActive(arg_85_0.leaveUI, true)
 	end)
 
-	arg_84_0.dragDelegate = GetOrAddComponent(arg_84_0.sceneTf, "EventTriggerListener")
-	arg_84_0.dragDelegate.enabled = true
+	arg_85_0.dragDelegate = GetOrAddComponent(arg_85_0.sceneTf, "EventTriggerListener")
+	arg_85_0.dragDelegate.enabled = true
 
-	arg_84_0.dragDelegate:AddPointDownFunc(function(arg_87_0, arg_87_1)
-		if arg_84_0.boatController then
-			arg_84_0.boatController:throw()
+	arg_85_0.dragDelegate:AddPointDownFunc(function(arg_88_0, arg_88_1)
+		if arg_85_0.boatController then
+			arg_85_0.boatController:throw()
 		end
 	end)
 
-	arg_84_0.gameTimeS = findTF(arg_84_0.gameUI, "top/time/s")
-	arg_84_0.scoreTf = findTF(arg_84_0.gameUI, "top/score")
-	arg_84_0.boatController = var_0_56(arg_84_0.sceneTf, arg_84_0)
-	arg_84_0.itemController = var_0_57(arg_84_0.sceneTf, arg_84_0.backSceneTf, arg_84_0:getGameUsedTimes(), arg_84_0)
-	arg_84_0.catchController = var_0_58(arg_84_0.boatController, arg_84_0.itemController)
-	arg_84_0.charController = var_0_59(arg_84_0.backSceneTf, arg_84_0)
-	arg_84_0.sceneScoreTf = findTF(arg_84_0.sceneTf, "scoreTf")
+	arg_85_0.gameTimeS = findTF(arg_85_0.gameUI, "top/time/s")
+	arg_85_0.scoreTf = findTF(arg_85_0.gameUI, "top/score")
+	arg_85_0.boatController = var_0_56(arg_85_0.sceneTf, arg_85_0)
+	arg_85_0.itemController = var_0_57(arg_85_0.sceneTf, arg_85_0.backSceneTf, arg_85_0:getGameUsedTimes(), arg_85_0)
+	arg_85_0.catchController = var_0_58(arg_85_0.boatController, arg_85_0.itemController)
+	arg_85_0.charController = var_0_59(arg_85_0.backSceneTf, arg_85_0)
+	arg_85_0.sceneScoreTf = findTF(arg_85_0.sceneTf, "scoreTf")
 
-	setActive(arg_84_0.sceneScoreTf, false)
+	setActive(arg_85_0.sceneScoreTf, false)
 end
 
-function var_0_0.Update(arg_88_0)
-	arg_88_0:AddDebugInput()
+function var_0_0.Update(arg_89_0)
+	arg_89_0:AddDebugInput()
 end
 
-function var_0_0.AddDebugInput(arg_89_0)
-	if arg_89_0.gameStop or arg_89_0.settlementFlag then
+function var_0_0.AddDebugInput(arg_90_0)
+	if arg_90_0.gameStop or arg_90_0.settlementFlag then
 		return
 	end
 
@@ -2461,363 +2471,373 @@ function var_0_0.AddDebugInput(arg_89_0)
 	end
 end
 
-function var_0_0.updateMenuUI(arg_90_0)
-	local var_90_0 = arg_90_0:getGameUsedTimes()
-	local var_90_1 = arg_90_0:getGameTimes()
+function var_0_0.updateMenuUI(arg_91_0)
+	local var_91_0 = arg_91_0:getGameUsedTimes()
+	local var_91_1 = arg_91_0:getGameTimes()
 
-	for iter_90_0 = 1, #arg_90_0.battleItems do
-		setActive(findTF(arg_90_0.battleItems[iter_90_0], "state_open"), false)
-		setActive(findTF(arg_90_0.battleItems[iter_90_0], "state_closed"), false)
-		setActive(findTF(arg_90_0.battleItems[iter_90_0], "state_clear"), false)
-		setActive(findTF(arg_90_0.battleItems[iter_90_0], "state_current"), false)
+	for iter_91_0 = 1, 7 do
+		setActive(findTF(arg_91_0.battleItems[iter_91_0], "state_open"), false)
+		setActive(findTF(arg_91_0.battleItems[iter_91_0], "state_closed"), false)
+		setActive(findTF(arg_91_0.battleItems[iter_91_0], "state_clear"), false)
+		setActive(findTF(arg_91_0.battleItems[iter_91_0], "state_current"), false)
 
-		if iter_90_0 <= var_90_0 then
-			setActive(findTF(arg_90_0.battleItems[iter_90_0], "state_clear"), true)
-			SetParent(arg_90_0.dropItems[iter_90_0], findTF(arg_90_0.battleItems[iter_90_0], "state_clear/icon"))
-			setActive(arg_90_0.dropItems[iter_90_0], true)
-
-			arg_90_0.dropItems[iter_90_0].anchoredPosition = Vector2(0, 0)
-		elseif iter_90_0 == var_90_0 + 1 and var_90_1 >= 1 then
-			setActive(findTF(arg_90_0.battleItems[iter_90_0], "state_current"), true)
-			SetParent(arg_90_0.dropItems[iter_90_0], findTF(arg_90_0.battleItems[iter_90_0], "state_current/icon"))
-			setActive(arg_90_0.dropItems[iter_90_0], true)
-
-			arg_90_0.dropItems[iter_90_0].anchoredPosition = Vector2(0, 0)
-		elseif var_90_0 < iter_90_0 and iter_90_0 <= var_90_0 + var_90_1 then
-			setActive(findTF(arg_90_0.battleItems[iter_90_0], "state_open"), true)
-			SetParent(arg_90_0.dropItems[iter_90_0], findTF(arg_90_0.battleItems[iter_90_0], "state_open/icon"))
-			setActive(arg_90_0.dropItems[iter_90_0], true)
-
-			arg_90_0.dropItems[iter_90_0].anchoredPosition = Vector2(0, 0)
+		if iter_91_0 <= var_91_0 then
+			SetParent(arg_91_0.dropItems[iter_91_0], findTF(arg_91_0.battleItems[iter_91_0], "state_clear/icon"))
+			setActive(arg_91_0.dropItems[iter_91_0], true)
+			setActive(findTF(arg_91_0.battleItems[iter_91_0], "state_clear"), true)
+		elseif iter_91_0 == var_91_0 + 1 and var_91_1 >= 1 then
+			setActive(findTF(arg_91_0.battleItems[iter_91_0], "state_current"), true)
+			SetParent(arg_91_0.dropItems[iter_91_0], findTF(arg_91_0.battleItems[iter_91_0], "state_current/icon"))
+			setActive(arg_91_0.dropItems[iter_91_0], true)
+		elseif var_91_0 < iter_91_0 and iter_91_0 <= var_91_0 + var_91_1 then
+			setActive(findTF(arg_91_0.battleItems[iter_91_0], "state_open"), true)
+			SetParent(arg_91_0.dropItems[iter_91_0], findTF(arg_91_0.battleItems[iter_91_0], "state_open/icon"))
+			setActive(arg_91_0.dropItems[iter_91_0], true)
 		else
-			setActive(findTF(arg_90_0.battleItems[iter_90_0], "state_closed"), true)
-			setActive(arg_90_0.dropItems[iter_90_0], false)
+			setActive(findTF(arg_91_0.battleItems[iter_91_0], "state_closed"), true)
+			SetParent(arg_91_0.dropItems[iter_91_0], findTF(arg_91_0.battleItems[iter_91_0], "state_closed/icon"))
+			setActive(arg_91_0.dropItems[iter_91_0], true)
 		end
 	end
 
-	arg_90_0.totalTimes = arg_90_0:getGameTotalTime()
+	arg_91_0.totalTimes = arg_91_0:getGameTotalTime()
 
-	local var_90_2 = 1 - (arg_90_0:getGameUsedTimes() - 3 < 0 and 0 or arg_90_0:getGameUsedTimes() - 3) / (arg_90_0.totalTimes - 4)
+	local var_91_2 = 1 - (arg_91_0:getGameUsedTimes() - 3 < 0 and 0 or arg_91_0:getGameUsedTimes() - 3) / (arg_91_0.totalTimes - 4)
 
-	if var_90_2 > 1 then
-		var_90_2 = 1
+	if var_91_2 > 1 then
+		var_91_2 = 1
 	end
 
-	scrollTo(arg_90_0.battleScrollRect, 0, var_90_2)
-	setActive(findTF(arg_90_0.menuUI, "btnStart/tip"), var_90_1 > 0)
-	arg_90_0:CheckGet()
+	scrollTo(arg_91_0.battleScrollRect, 0, var_91_2)
+	setActive(findTF(arg_91_0.menuUI, "btnStart/tip"), var_91_1 > 0)
+	arg_91_0:CheckGet()
+
+	local var_91_3 = arg_91_0:GetMGData():GetRuntimeData("elements")
+	local var_91_4 = var_91_3 and #var_91_3 > 0 and var_91_3[1] or 0
+
+	setText(findTF(arg_91_0.menuUI, "high"), var_91_4)
 end
 
-function var_0_0.CheckGet(arg_91_0)
-	setActive(findTF(arg_91_0.menuUI, "got"), false)
+function var_0_0.CheckGet(arg_92_0)
+	setActive(findTF(arg_92_0.menuUI, "got"), false)
 
-	if arg_91_0:getUltimate() and arg_91_0:getUltimate() ~= 0 then
-		setActive(findTF(arg_91_0.menuUI, "got"), true)
+	if arg_92_0:getUltimate() and arg_92_0:getUltimate() ~= 0 then
+		setActive(findTF(arg_92_0.menuUI, "got"), true)
 	end
 
-	if arg_91_0:getUltimate() == 0 then
-		if arg_91_0:getGameTotalTime() > arg_91_0:getGameUsedTimes() then
+	if arg_92_0:getUltimate() == 0 then
+		if arg_92_0:getGameTotalTime() > arg_92_0:getGameUsedTimes() then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = arg_91_0:GetMGHubData().id,
+			hubid = arg_92_0:GetMGHubData().id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
-		setActive(findTF(arg_91_0.menuUI, "got"), true)
+		setActive(findTF(arg_92_0.menuUI, "got"), true)
 	end
 end
 
-function var_0_0.openMenuUI(arg_92_0)
-	setActive(findTF(arg_92_0._tf, "scene_container"), false)
-	setActive(findTF(arg_92_0.bgTf, "on"), true)
-	setActive(arg_92_0.gameUI, false)
-	setActive(arg_92_0.menuUI, true)
-	arg_92_0:updateMenuUI()
-end
-
-function var_0_0.clearUI(arg_93_0)
-	setActive(arg_93_0.sceneTf, false)
-	setActive(arg_93_0.settlementUI, false)
-	setActive(arg_93_0.countUI, false)
-	setActive(arg_93_0.menuUI, false)
+function var_0_0.openMenuUI(arg_93_0)
+	setActive(findTF(arg_93_0._tf, "scene_container"), false)
+	setActive(findTF(arg_93_0.bgTf, "on"), true)
 	setActive(arg_93_0.gameUI, false)
+	setActive(arg_93_0.menuUI, true)
+	arg_93_0:updateMenuUI()
 end
 
-function var_0_0.readyStart(arg_94_0)
-	setActive(arg_94_0.countUI, true)
-	arg_94_0.countAnimator:Play("count")
+function var_0_0.clearUI(arg_94_0)
+	setActive(arg_94_0.sceneTf, false)
+	setActive(arg_94_0.settlementUI, false)
+	setActive(arg_94_0.countUI, false)
+	setActive(arg_94_0.menuUI, false)
+	setActive(arg_94_0.gameUI, false)
+end
+
+function var_0_0.readyStart(arg_95_0)
+	setActive(arg_95_0.countUI, true)
+	arg_95_0.countAnimator:Play("count")
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_2)
 end
 
-function var_0_0.getGameTimes(arg_95_0)
-	return arg_95_0:GetMGHubData().count
+function var_0_0.getGameTimes(arg_96_0)
+	return arg_96_0:GetMGHubData().count
 end
 
-function var_0_0.getGameUsedTimes(arg_96_0)
-	return arg_96_0:GetMGHubData().usedtime
+function var_0_0.getGameUsedTimes(arg_97_0)
+	return arg_97_0:GetMGHubData().usedtime
 end
 
-function var_0_0.getUltimate(arg_97_0)
-	return arg_97_0:GetMGHubData().ultimate
+function var_0_0.getUltimate(arg_98_0)
+	return arg_98_0:GetMGHubData().ultimate
 end
 
-function var_0_0.getGameTotalTime(arg_98_0)
-	return (arg_98_0:GetMGHubData():getConfig("reward_need"))
+function var_0_0.getGameTotalTime(arg_99_0)
+	return (arg_99_0:GetMGHubData():getConfig("reward_need"))
 end
 
-function var_0_0.gameStart(arg_99_0)
-	setActive(findTF(arg_99_0._tf, "scene_container"), true)
-	setActive(findTF(arg_99_0.bgTf, "on"), false)
-	setActive(arg_99_0.gameUI, true)
+function var_0_0.gameStart(arg_100_0)
+	setActive(findTF(arg_100_0._tf, "scene_container"), true)
+	setActive(findTF(arg_100_0.bgTf, "on"), false)
+	setActive(arg_100_0.gameUI, true)
 
-	arg_99_0.gameStartFlag = true
-	arg_99_0.scoreNum = 0
-	arg_99_0.playerPosIndex = 2
-	arg_99_0.gameStepTime = 0
-	arg_99_0.heart = 3
-	arg_99_0.gameTime = var_0_7
+	arg_100_0.gameStartFlag = true
+	arg_100_0.scoreNum = 0
+	arg_100_0.playerPosIndex = 2
+	arg_100_0.gameStepTime = 0
+	arg_100_0.heart = 3
+	arg_100_0.gameTime = var_0_7
 
-	SetActive(arg_99_0.sceneScoreTf, false)
+	SetActive(arg_100_0.sceneScoreTf, false)
 
-	if arg_99_0.boatController then
-		arg_99_0.boatController:start()
+	if arg_100_0.boatController then
+		arg_100_0.boatController:start()
 	end
 
-	if arg_99_0.itemController then
-		arg_99_0.itemController:start()
+	if arg_100_0.itemController then
+		arg_100_0.itemController:start()
 	end
 
-	if arg_99_0.catchController then
-		arg_99_0.catchController:start()
+	if arg_100_0.catchController then
+		arg_100_0.catchController:start()
 	end
 
-	if arg_99_0.charController then
-		arg_99_0.charController:start()
+	if arg_100_0.charController then
+		arg_100_0.charController:start()
 	end
 
-	arg_99_0:updateGameUI()
-	arg_99_0:timerStart()
+	arg_100_0:updateGameUI()
+	arg_100_0:timerStart()
 end
 
-function var_0_0.transformColor(arg_100_0, arg_100_1)
-	local var_100_0 = tonumber(string.sub(arg_100_1, 1, 2), 16)
-	local var_100_1 = tonumber(string.sub(arg_100_1, 3, 4), 16)
-	local var_100_2 = tonumber(string.sub(arg_100_1, 5, 6), 16)
+function var_0_0.transformColor(arg_101_0, arg_101_1)
+	local var_101_0 = tonumber(string.sub(arg_101_1, 1, 2), 16)
+	local var_101_1 = tonumber(string.sub(arg_101_1, 3, 4), 16)
+	local var_101_2 = tonumber(string.sub(arg_101_1, 5, 6), 16)
 
-	return Color.New(var_100_0 / 255, var_100_1 / 255, var_100_2 / 255)
+	return Color.New(var_101_0 / 255, var_101_1 / 255, var_101_2 / 255)
 end
 
-function var_0_0.addScore(arg_101_0, arg_101_1, arg_101_2)
-	if arg_101_1 and arg_101_1 > 0 or arg_101_2 and arg_101_2 > 0 then
+function var_0_0.addScore(arg_102_0, arg_102_1, arg_102_2)
+	if arg_102_1 and arg_102_1 > 0 or arg_102_2 and arg_102_2 > 0 then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_5)
-	elseif arg_101_1 and arg_101_1 < 0 then
+	elseif arg_102_1 and arg_102_1 < 0 then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_6)
 	end
 
-	setActive(arg_101_0.sceneScoreTf, false)
+	setActive(arg_102_0.sceneScoreTf, false)
 
-	local var_101_0 = findTF(arg_101_0.sceneScoreTf, "img")
-	local var_101_1 = GetComponent(var_101_0, typeof(Text))
-	local var_101_2 = "6f1807"
+	local var_102_0 = findTF(arg_102_0.sceneScoreTf, "img")
+	local var_102_1 = GetComponent(var_102_0, typeof(Text))
+	local var_102_2 = "6f1807"
 
-	if arg_101_1 then
-		local var_101_3
+	if arg_102_1 then
+		local var_102_3
 
-		for iter_101_0 = 1, #var_0_47 do
-			if arg_101_1 and arg_101_1 >= var_0_47[iter_101_0].score then
-				var_101_2 = var_0_47[iter_101_0].color
-				var_101_3 = var_0_47[iter_101_0].font
+		for iter_102_0 = 1, #var_0_47 do
+			if arg_102_1 and arg_102_1 >= var_0_47[iter_102_0].score then
+				var_102_2 = var_0_47[iter_102_0].color
+				var_102_3 = var_0_47[iter_102_0].font
 
 				break
 			end
 		end
 
-		local var_101_4 = arg_101_0:transformColor(var_101_2)
+		local var_102_4 = arg_102_0:transformColor(var_102_2)
 
-		arg_101_0.scoreNum = arg_101_0.scoreNum + arg_101_1
+		arg_102_0.scoreNum = arg_102_0.scoreNum + arg_102_1
 
-		local var_101_5 = arg_101_1 >= 0 and "+" or ""
+		local var_102_5 = arg_102_1 >= 0 and "+" or ""
 
-		setText(var_101_0, var_101_5 .. arg_101_1)
+		setText(var_102_0, var_102_5 .. arg_102_1)
 
-		var_101_1.fontSize = var_101_3 or 40
+		var_102_1.fontSize = var_102_3 or 40
 
-		setTextColor(var_101_0, var_101_4)
-	elseif arg_101_2 then
-		local var_101_6 = arg_101_0:transformColor("66f2fb")
+		setTextColor(var_102_0, var_102_4)
+	end
 
-		var_101_1.fontSize = 40
+	if arg_102_2 then
+		local var_102_6 = arg_102_0:transformColor("66f2fb")
 
-		setTextColor(var_101_0, var_101_6)
+		var_102_1.fontSize = 40
 
-		if arg_101_0.gameTime > 0 then
-			arg_101_0.gameTime = arg_101_0.gameTime + arg_101_2
+		setTextColor(var_102_0, var_102_6)
+
+		if arg_102_0.gameTime > 0 then
+			arg_102_0.gameTime = arg_102_0.gameTime + arg_102_2
 		end
 
-		local var_101_7 = arg_101_2 > 0 and "+" or ""
+		local var_102_7 = arg_102_2 > 0 and "+" or ""
 
-		setText(var_101_0, var_101_7 .. arg_101_2 .. "s")
+		setText(var_102_0, var_102_7 .. arg_102_2 .. "s")
 	end
 
-	setActive(arg_101_0.sceneScoreTf, true)
+	setActive(arg_102_0.sceneScoreTf, true)
 end
 
-function var_0_0.onTimer(arg_102_0)
-	arg_102_0:gameStep()
+function var_0_0.onTimer(arg_103_0)
+	arg_103_0:gameStep()
 end
 
-function var_0_0.gameStep(arg_103_0)
-	arg_103_0.gameTime = arg_103_0.gameTime - Time.deltaTime
-	arg_103_0.gameStepTime = arg_103_0.gameStepTime + Time.deltaTime
+function var_0_0.gameStep(arg_104_0)
+	arg_104_0.gameTime = arg_104_0.gameTime - Time.deltaTime
+	arg_104_0.gameStepTime = arg_104_0.gameStepTime + Time.deltaTime
 
-	if arg_103_0.boatController then
-		arg_103_0.boatController:step()
+	if arg_104_0.boatController then
+		arg_104_0.boatController:step()
 	end
 
-	if arg_103_0.itemController then
-		arg_103_0.itemController:step()
+	if arg_104_0.itemController then
+		arg_104_0.itemController:step()
 	end
 
-	if arg_103_0.catchController then
-		arg_103_0.catchController:step()
+	if arg_104_0.catchController then
+		arg_104_0.catchController:step()
 	end
 
-	if arg_103_0.charController then
-		arg_103_0.charController:step()
+	if arg_104_0.charController then
+		arg_104_0.charController:step()
 	end
 
-	if arg_103_0.gameTime < 0 then
-		arg_103_0.gameTime = 0
+	if arg_104_0.gameTime < 0 then
+		arg_104_0.gameTime = 0
 	end
 
-	arg_103_0:updateGameUI()
+	arg_104_0:updateGameUI()
 
-	if arg_103_0.gameTime <= 0 then
-		arg_103_0:onGameOver()
+	if arg_104_0.gameTime <= 0 then
+		arg_104_0:onGameOver(true)
 
 		return
 	end
 end
 
-function var_0_0.timerStart(arg_104_0)
-	if not arg_104_0.timer.running then
-		arg_104_0.timer:Start()
+function var_0_0.timerStart(arg_105_0)
+	if not arg_105_0.timer.running then
+		arg_105_0.timer:Start()
 	end
 end
 
-function var_0_0.timerStop(arg_105_0)
-	if arg_105_0.timer.running then
-		arg_105_0.timer:Stop()
+function var_0_0.timerStop(arg_106_0)
+	if arg_106_0.timer.running then
+		arg_106_0.timer:Stop()
 	end
 end
 
-function var_0_0.updateGameUI(arg_106_0)
-	setText(arg_106_0.scoreTf, arg_106_0.scoreNum)
-	setText(arg_106_0.gameTimeS, math.ceil(arg_106_0.gameTime))
+function var_0_0.updateGameUI(arg_107_0)
+	setText(arg_107_0.scoreTf, arg_107_0.scoreNum)
+	setText(arg_107_0.gameTimeS, math.ceil(arg_107_0.gameTime))
 end
 
-function var_0_0.onGameOver(arg_107_0)
-	if arg_107_0.settlementFlag then
+function var_0_0.onGameOver(arg_108_0, arg_108_1)
+	if arg_108_0.settlementFlag then
 		return
 	end
 
-	arg_107_0:timerStop()
+	arg_108_0:timerStop()
 
-	arg_107_0.settlementFlag = true
+	arg_108_0.settlementFlag = true
 
-	setActive(arg_107_0.clickMask, true)
+	setActive(arg_108_0.clickMask, true)
 
-	if arg_107_0.boatController then
-		arg_107_0.boatController:gameOver()
+	if arg_108_0.boatController then
+		arg_108_0.boatController:gameOver()
 	end
 
-	LeanTween.delayedCall(go(arg_107_0._tf), 2, System.Action(function()
-		arg_107_0.settlementFlag = false
-		arg_107_0.gameStartFlag = false
+	LeanTween.delayedCall(go(arg_108_0._tf), 2, System.Action(function()
+		arg_108_0.settlementFlag = false
+		arg_108_0.gameStartFlag = false
 
-		setActive(arg_107_0.clickMask, false)
-		arg_107_0:showSettlement()
+		setActive(arg_108_0.clickMask, false)
+		arg_108_0:showSettlement()
 	end))
+
+	local var_108_0 = arg_108_1 and 1 or 0
+
+	arg_108_0:emit(BaseMiniGameMediator.GAME_FINISH_TRACKING, {
+		game_id = arg_108_0:GetMGData().id,
+		hub_id = arg_108_0:GetMGHubData().id,
+		isComplete = var_108_0
+	})
 end
 
-function var_0_0.showSettlement(arg_109_0)
-	setActive(arg_109_0.settlementUI, true)
-	GetComponent(findTF(arg_109_0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
+function var_0_0.showSettlement(arg_110_0)
+	setActive(arg_110_0.settlementUI, true)
+	GetComponent(findTF(arg_110_0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
-	local var_109_0 = arg_109_0:GetMGData():GetRuntimeData("elements")
-	local var_109_1 = arg_109_0.scoreNum
-	local var_109_2 = var_109_0 and #var_109_0 > 0 and var_109_0[1] or 0
+	local var_110_0 = arg_110_0:GetMGData():GetRuntimeData("elements")
+	local var_110_1 = arg_110_0.scoreNum
+	local var_110_2 = var_110_0 and #var_110_0 > 0 and var_110_0[1] or 0
 
-	setActive(findTF(arg_109_0.settlementUI, "ad/new"), var_109_2 < var_109_1)
+	setActive(findTF(arg_110_0.settlementUI, "ad/new"), var_110_2 < var_110_1)
 
-	if var_109_2 <= var_109_1 then
-		var_109_2 = var_109_1
+	if var_110_2 <= var_110_1 then
+		var_110_2 = var_110_1
 
-		arg_109_0:StoreDataToServer({
-			var_109_2
+		arg_110_0:StoreDataToServer({
+			var_110_2
 		})
 	end
 
-	local var_109_3 = findTF(arg_109_0.settlementUI, "ad/highText")
-	local var_109_4 = findTF(arg_109_0.settlementUI, "ad/currentText")
+	local var_110_3 = findTF(arg_110_0.settlementUI, "ad/highText")
+	local var_110_4 = findTF(arg_110_0.settlementUI, "ad/currentText")
 
-	setText(var_109_3, var_109_2)
-	setText(var_109_4, var_109_1)
+	setText(var_110_3, var_110_2)
+	setText(var_110_4, var_110_1)
 
-	if arg_109_0:getGameTimes() and arg_109_0:getGameTimes() > 0 then
-		arg_109_0.sendSuccessFlag = true
+	if arg_110_0:getGameTimes() and arg_110_0:getGameTimes() > 0 then
+		arg_110_0.sendSuccessFlag = true
 
-		arg_109_0:SendSuccess(0)
+		arg_110_0:SendSuccess(0)
 	end
 end
 
-function var_0_0.resumeGame(arg_110_0)
-	arg_110_0.gameStop = false
+function var_0_0.resumeGame(arg_111_0)
+	arg_111_0.gameStop = false
 
-	setActive(arg_110_0.leaveUI, false)
-	arg_110_0:timerStart()
+	setActive(arg_111_0.leaveUI, false)
+	arg_111_0:timerStart()
 end
 
-function var_0_0.stopGame(arg_111_0)
-	arg_111_0.gameStop = true
+function var_0_0.stopGame(arg_112_0)
+	arg_112_0.gameStop = true
 
-	arg_111_0:timerStop()
+	arg_112_0:timerStop()
 end
 
-function var_0_0.onBackPressed(arg_112_0)
-	if not arg_112_0.gameStartFlag then
-		arg_112_0:emit(var_0_0.ON_BACK_PRESSED)
+function var_0_0.onBackPressed(arg_113_0)
+	if not arg_113_0.gameStartFlag then
+		arg_113_0:emit(var_0_0.ON_BACK_PRESSED)
 	else
-		if arg_112_0.settlementFlag then
+		if arg_113_0.settlementFlag then
 			return
 		end
 
-		if isActive(arg_112_0.pauseUI) then
-			setActive(arg_112_0.pauseUI, false)
+		if isActive(arg_113_0.pauseUI) then
+			setActive(arg_113_0.pauseUI, false)
 		end
 
-		arg_112_0:stopGame()
-		setActive(arg_112_0.leaveUI, true)
+		arg_113_0:stopGame()
+		setActive(arg_113_0.leaveUI, true)
 	end
 end
 
-function var_0_0.willExit(arg_113_0)
-	if arg_113_0.handle then
-		UpdateBeat:RemoveListener(arg_113_0.handle)
+function var_0_0.willExit(arg_114_0)
+	if arg_114_0.handle then
+		UpdateBeat:RemoveListener(arg_114_0.handle)
 	end
 
-	if arg_113_0._tf and LeanTween.isTweening(go(arg_113_0._tf)) then
-		LeanTween.cancel(go(arg_113_0._tf))
+	if arg_114_0._tf and LeanTween.isTweening(go(arg_114_0._tf)) then
+		LeanTween.cancel(go(arg_114_0._tf))
 	end
 
-	if arg_113_0.timer and arg_113_0.timer.running then
-		arg_113_0.timer:Stop()
+	if arg_114_0.timer and arg_114_0.timer.running then
+		arg_114_0.timer:Stop()
 	end
 
 	Time.timeScale = 1
-	arg_113_0.timer = nil
+	arg_114_0.timer = nil
 end
 
 return var_0_0

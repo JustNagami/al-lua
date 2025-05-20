@@ -823,7 +823,7 @@
 			side = 2,
 			bgName = "bg_story_task_2",
 			hidePaintObj = true,
-			say = "于是，伴随着绿头猫咪闪电一般消失的身影，本次度假的目的地算是正式确定了下来—",
+			say = "于是，伴随着绿头猫咪闪电一般消失的身影，本次度假的目的地算是正式确定了下来——",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

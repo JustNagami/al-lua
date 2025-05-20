@@ -326,6 +326,11 @@ function var_0_0.InitShops(arg_22_0, arg_22_1)
 	arg_22_0.shopUIList:make(function(arg_23_0, arg_23_1, arg_23_2)
 		if arg_23_0 == UIItemList.EventUpdate then
 			local var_23_0 = var_22_1[arg_23_1 + 1]
+			local var_23_1 = arg_22_0.pages[var_23_0.type]:CanOpen(var_23_0, arg_22_0.player)
+
+			setActive(arg_23_2:Find("unsel/lock"), not var_23_1)
+
+			GetOrAddComponent(arg_23_2:Find("unsel/label"), "CanvasGroup").alpha = var_23_1 and 1 or 0.4
 
 			arg_22_0:UpdateShop(arg_23_2, var_23_0)
 
@@ -343,11 +348,11 @@ local function var_0_4(arg_24_0, arg_24_1)
 	local var_24_0 = var_0_0.TYPE2NAME[arg_24_1.type]
 
 	setText(arg_24_0:Find("selected/Text"), var_24_0)
-	setText(arg_24_0:Find("label"), var_24_0)
+	setText(arg_24_0:Find("unsel/label"), var_24_0)
 end
 
 local function var_0_5(arg_25_0, arg_25_1, arg_25_2)
-	local var_25_0 = arg_25_1:Find("label")
+	local var_25_0 = arg_25_1:Find("unsel")
 	local var_25_1 = arg_25_1:Find("selected")
 
 	onButton(arg_25_0, arg_25_1, function()
@@ -357,7 +362,7 @@ local function var_0_5(arg_25_0, arg_25_1, arg_25_2)
 
 		if arg_25_2() then
 			if arg_25_0.prevBtn then
-				setActive(arg_25_0.prevBtn:Find("label"), true)
+				setActive(arg_25_0.prevBtn:Find("unsel"), true)
 				setActive(arg_25_0.prevBtn:Find("selected"), false)
 			end
 
@@ -375,7 +380,7 @@ function var_0_0.UpdateShop(arg_27_0, arg_27_1, arg_27_2)
 	var_0_4(arg_27_1, arg_27_2)
 
 	local var_27_0 = arg_27_1:Find("selected")
-	local var_27_1 = arg_27_1:Find("label")
+	local var_27_1 = arg_27_1:Find("unsel")
 
 	var_0_5(arg_27_0, arg_27_1, function()
 		local var_28_0 = arg_27_0.shops[arg_27_2.type][arg_27_2.index]

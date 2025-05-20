@@ -23,6 +23,8 @@ var_0_0.ON_DROP = "NewMainMediator:ON_DROP"
 var_0_0.ON_AWRADS = "NewMainMediator:ON_AWRADS"
 var_0_0.CHANGE_SKIN_TOGGLE = "NewMainMediator:CHANGE_SKIN_TOGGLE"
 var_0_0.GO_ISLAND = "NewMainMediator:GO_ISLAND"
+var_0_0.FOLD_PANEL = "NewMainMediator:FOLD_PANEL"
+var_0_0.HIDE_PANEL = "NewMainMediator:HIDE_PANEL"
 
 function var_0_0.register(arg_1_0)
 	arg_1_0:bind(var_0_0.GO_ISLAND, function(arg_2_0, arg_2_1)
@@ -199,8 +201,12 @@ function var_0_0.listNotificationInterests(arg_22_0)
 		CompensateProxy.UPDATE_ATTACHMENT_COUNT,
 		CompensateProxy.All_Compensate_Remove,
 		GAME.ACT_INSTAGRAM_CHAT_DONE,
+		GAME.SERIES_GUIDE_END,
 		NewMainMediator.ON_DROP,
-		NewMainMediator.ON_AWRADS
+		NewMainMediator.ON_AWRADS,
+		NewMainMediator.FOLD_PANEL,
+		NewMainMediator.HIDE_PANEL,
+		MusicPlayer.NO_PLAY_MUSIC_NOTIFICATION
 	}
 
 	for iter_22_0, iter_22_1 in pairs(pg.redDotHelper:GetNotifyType()) do
@@ -259,20 +265,30 @@ function var_0_0.handleNotification(arg_23_0, arg_23_1)
 	elseif var_23_0 == NewMainMediator.ON_AWRADS then
 		arg_23_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_23_1.items, var_23_1.callback)
 	elseif var_23_0 == GAME.PLAY_CHANGE_SKIN_OUT then
-		arg_23_0.viewComponent:FoldPanels(true)
+		arg_23_0.viewComponent:HidePanel(true)
 		arg_23_0.viewComponent:SetEffectPanelVisible(false)
 		arg_23_0.viewComponent:PlayChangeSkinActionOut(var_23_1)
 	elseif var_23_0 == GAME.PLAY_CHANGE_SKIN_IN then
 		arg_23_0.viewComponent:PlayChangeSkinActionIn(var_23_1)
 	elseif var_23_0 == GAME.PLAY_CHANGE_SKIN_FINISH then
 		arg_23_0.viewComponent:SetEffectPanelVisible(true)
-		arg_23_0.viewComponent:FoldPanels(false)
+		arg_23_0.viewComponent:HidePanel(false)
 	elseif var_23_0 == GAME.CHANGE_SKIN_EXCHANGE then
 		local var_23_3 = arg_23_0.viewComponent:GetFlagShip()
 
 		if arg_23_0.viewComponent then
 			arg_23_0.viewComponent:UpdateFlagShip(var_23_3, var_23_1)
 		end
+	elseif var_23_0 == MusicPlayer.NO_PLAY_MUSIC_NOTIFICATION then
+		arg_23_0.viewComponent:CheckAndReplayBgm()
+	elseif var_23_0 == NewMainMediator.FOLD_PANEL then
+		arg_23_0.viewComponent:FoldPanels(var_23_1)
+	elseif var_23_0 == NewMainMediator.HIDE_PANEL then
+		arg_23_0.viewComponent:HidePanel(var_23_1)
+	elseif var_23_0 == GAME.SERIES_GUIDE_END then
+		MainAwakeGuideSequence.New():Execute(function()
+			return
+		end)
 	end
 
 	arg_23_0.viewComponent:emit(var_23_0, var_23_1)

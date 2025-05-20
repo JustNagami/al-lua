@@ -29,6 +29,10 @@ function var_0_0.OnLoaded(arg_2_0)
 	arg_2_0.chatTxt = arg_2_0.chatTr:GetComponent(typeof(Text))
 	arg_2_0.changeSkinBtn = MainChangeSkinBtn.New(arg_2_0.changeBtn, arg_2_0.event)
 	arg_2_0.systemTimeUtil = LocalSystemTimeUtil.New()
+	arg_2_0.musicPlayerView = MainMusicPlayerView.New(arg_2_0._tf:Find("adapt"), arg_2_0.event)
+
+	arg_2_0.musicPlayerView:SetExtra(arg_2_0._tf:Find("adapt/MusicPlayer"))
+
 	arg_2_0.playedList = {}
 end
 
@@ -147,6 +151,7 @@ function var_0_0.Show(arg_20_0)
 	arg_20_0:FlushBattery()
 	arg_20_0:FlushTime()
 	arg_20_0:FlushDate()
+	arg_20_0:FlushMusicPlayer()
 	arg_20_0:AddTimer()
 	arg_20_0:SetChatTxt("")
 
@@ -409,20 +414,36 @@ function var_0_0.FlushDate(arg_44_0)
 	arg_44_0.dateTxt.text = table.concat(var_44_6, " / ")
 end
 
-function var_0_0.OnDestroy(arg_45_0)
-	arg_45_0:RemoveChatTimer()
+function var_0_0.FlushMusicPlayer(arg_45_0)
+	local var_45_0 = pg.BgmMgr.GetInstance():GetNow() == "MainMusicPlayer"
 
-	arg_45_0.exited = true
+	if tobool(arg_45_0.musicPlayerView:isShowing()) ~= var_45_0 then
+		if var_45_0 then
+			arg_45_0.musicPlayerView:ExecuteAction("Show", true)
+		else
+			arg_45_0.musicPlayerView:ExecuteAction("Hide")
+		end
+	end
+end
 
-	arg_45_0.dftAniEvent:SetEndEvent(nil)
-	arg_45_0:RemoveTimer()
-	arg_45_0.changeSkinBtn:Dispose()
+function var_0_0.OnDestroy(arg_46_0)
+	arg_46_0:RemoveChatTimer()
 
-	arg_45_0.changeSkinBtn = nil
+	arg_46_0.exited = true
 
-	arg_45_0.systemTimeUtil:Dispose()
+	arg_46_0.dftAniEvent:SetEndEvent(nil)
+	arg_46_0:RemoveTimer()
+	arg_46_0.changeSkinBtn:Dispose()
 
-	arg_45_0.systemTimeUtil = nil
+	arg_46_0.changeSkinBtn = nil
+
+	arg_46_0.systemTimeUtil:Dispose()
+
+	arg_46_0.systemTimeUtil = nil
+
+	arg_46_0.musicPlayerView:Destroy()
+
+	arg_46_0.musicPlayerView = nil
 end
 
 return var_0_0

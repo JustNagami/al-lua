@@ -88,62 +88,74 @@ function var_0_0.EnterPage(arg_8_0, arg_8_1)
 	end
 end
 
-function var_0_0.Backward(arg_9_0)
-	local var_9_0 = arg_9_0.subViews[arg_9_0.contextData.page]
-	local var_9_1 = var_9_0 and var_9_0:OnBackward()
+function var_0_0.WarpToRecord(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
+	arg_9_0.contextData.recordGroup = arg_9_1
+	arg_9_0.contextData.storyNodeID = arg_9_3
 
-	if var_9_1 then
-		return var_9_1
+	arg_9_0:EnterPage(var_0_0.PAGE_FILE)
+end
+
+function var_0_0.WarpToStoryNode(arg_10_0, arg_10_1)
+	arg_10_0:EnterPage(var_0_0.PAGE_MEMORTY)
+	arg_10_0.subViews[var_0_0.PAGE_MEMORTY]:WrapToStoryLine(arg_10_1)
+end
+
+function var_0_0.Backward(arg_11_0)
+	local var_11_0 = arg_11_0.subViews[arg_11_0.contextData.page]
+	local var_11_1 = var_11_0 and var_11_0:OnBackward()
+
+	if var_11_1 then
+		return var_11_1
 	end
 
-	arg_9_0:closeView()
+	arg_11_0:closeView()
 end
 
-function var_0_0.onBackPressed(arg_10_0)
-	arg_10_0:Backward()
+function var_0_0.onBackPressed(arg_12_0)
+	arg_12_0:Backward()
 end
 
-function var_0_0.Add2LayerContainer(arg_11_0, arg_11_1)
-	setParent(arg_11_1, arg_11_0.viewContainer)
+function var_0_0.Add2LayerContainer(arg_13_0, arg_13_1)
+	setParent(arg_13_1, arg_13_0.viewContainer)
 end
 
-function var_0_0.Add2TopContainer(arg_12_0, arg_12_1)
-	setParent(arg_12_1, arg_12_0.top)
+function var_0_0.Add2TopContainer(arg_14_0, arg_14_1)
+	setParent(arg_14_1, arg_14_0.top)
 end
 
 function var_0_0.WorldRecordLock()
-	local function var_13_0()
-		local var_14_0 = getProxy(PlayerProxy):getRawData().level
+	local function var_15_0()
+		local var_16_0 = getProxy(PlayerProxy):getRawData().level
 
-		return pg.SystemOpenMgr.GetInstance():isOpenSystem(var_14_0, "WorldMediaCollectionRecordMediator")
+		return pg.SystemOpenMgr.GetInstance():isOpenSystem(var_16_0, "WorldMediaCollectionRecordMediator")
 	end
 
-	return LOCK_WORLD_COLLECTION or not var_13_0()
+	return LOCK_WORLD_COLLECTION or not var_15_0()
 end
 
-function var_0_0.UpdateView(arg_15_0)
-	local var_15_0 = arg_15_0.subViews[arg_15_0.contextData.page]
+function var_0_0.UpdateView(arg_17_0)
+	local var_17_0 = arg_17_0.subViews[arg_17_0.contextData.page]
 
-	if not var_15_0 then
+	if not var_17_0 then
 		return
 	end
 
-	var_15_0.buffer:UpdateView()
+	var_17_0.buffer:UpdateView()
 end
 
-function var_0_0.willExit(arg_16_0)
-	local var_16_0 = arg_16_0:GetCurrentPage()
+function var_0_0.willExit(arg_18_0)
+	local var_18_0 = arg_18_0:GetCurrentPage()
 
-	if var_16_0 then
-		var_16_0.buffer:Hide()
+	if var_18_0 then
+		var_18_0.buffer:Hide()
 	end
 
-	for iter_16_0, iter_16_1 in pairs(arg_16_0.subViews) do
-		iter_16_1:Destroy()
+	for iter_18_0, iter_18_1 in pairs(arg_18_0.subViews) do
+		iter_18_1:Destroy()
 	end
 
-	table.clear(arg_16_0.subViews)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_16_0.top, arg_16_0._tf)
+	table.clear(arg_18_0.subViews)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_18_0.top, arg_18_0._tf)
 end
 
 return var_0_0

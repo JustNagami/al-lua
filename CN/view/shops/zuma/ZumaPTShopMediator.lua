@@ -41,7 +41,7 @@ function var_0_0.handleNotification(arg_4_0, arg_4_1)
 			arg_4_0.viewComponent:updateTplByGoodID(var_4_2.goodsId)
 		end)
 	elseif var_4_0 == GAME.USE_ITEM_DONE then
-		local var_4_4 = arg_4_1:getBody()
+		local var_4_4 = arg_4_1:getBody().drops
 
 		if #var_4_4 > 0 then
 			arg_4_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_4_4)

@@ -659,308 +659,312 @@ function var_0_3.onDamageFix(arg_86_0, arg_86_1, arg_86_2, arg_86_3)
 	arg_86_0:onTrigger(arg_86_1, arg_86_2, arg_86_3)
 end
 
-function var_0_3.onOverHealing(arg_87_0, arg_87_1, arg_87_2, arg_87_3)
+function var_0_3.onDamageConclude(arg_87_0, arg_87_1, arg_87_2, arg_87_3)
 	arg_87_0:onTrigger(arg_87_1, arg_87_2, arg_87_3)
 end
 
-function var_0_3.onFleetAttrUpdate(arg_88_0, arg_88_1, arg_88_2, arg_88_3)
+function var_0_3.onOverHealing(arg_88_0, arg_88_1, arg_88_2, arg_88_3)
 	arg_88_0:onTrigger(arg_88_1, arg_88_2, arg_88_3)
 end
 
-function var_0_3.damageCheck(arg_89_0, arg_89_1)
-	return arg_89_0:damageAttrRequire(arg_89_1.damageAttr) and arg_89_0:damageReasonRequire(arg_89_1.damageReason)
+function var_0_3.onFleetAttrUpdate(arg_89_0, arg_89_1, arg_89_2, arg_89_3)
+	arg_89_0:onTrigger(arg_89_1, arg_89_2, arg_89_3)
 end
 
-function var_0_3.damageAttrRequire(arg_90_0, arg_90_1)
-	if not arg_90_0._damageAttrRequire or table.contains(arg_90_0._damageAttrRequire, arg_90_1) then
+function var_0_3.damageCheck(arg_90_0, arg_90_1)
+	return arg_90_0:damageAttrRequire(arg_90_1.damageAttr) and arg_90_0:damageReasonRequire(arg_90_1.damageReason)
+end
+
+function var_0_3.damageAttrRequire(arg_91_0, arg_91_1)
+	if not arg_91_0._damageAttrRequire or table.contains(arg_91_0._damageAttrRequire, arg_91_1) then
 		return true
 	else
 		return false
 	end
 end
 
-function var_0_3.damageReasonRequire(arg_91_0, arg_91_1)
-	if not arg_91_0._damageReasonRequire or table.contains(arg_91_0._damageReasonRequire, arg_91_1) then
+function var_0_3.damageReasonRequire(arg_92_0, arg_92_1)
+	if not arg_92_0._damageReasonRequire or table.contains(arg_92_0._damageReasonRequire, arg_92_1) then
 		return true
 	else
 		return false
 	end
 end
 
-function var_0_3.hpIntervalRequire(arg_92_0, arg_92_1, arg_92_2)
-	if arg_92_0._hpUpperBound == nil and arg_92_0._hpLowerBound == nil then
+function var_0_3.hpIntervalRequire(arg_93_0, arg_93_1, arg_93_2)
+	if arg_93_0._hpUpperBound == nil and arg_93_0._hpLowerBound == nil then
 		return true
 	end
 
-	if not arg_92_2 or arg_92_0._hpSigned == 0 then
+	if not arg_93_2 or arg_93_0._hpSigned == 0 then
 		-- block empty
-	elseif arg_92_2 * arg_92_0._hpSigned < 0 then
+	elseif arg_93_2 * arg_93_0._hpSigned < 0 then
 		return false
 	end
 
-	local var_92_0
+	local var_93_0
 
-	if arg_92_0._hpOutInterval then
-		if arg_92_1 >= arg_92_0._hpUpperBound or arg_92_1 <= arg_92_0._hpLowerBound then
-			var_92_0 = true
+	if arg_93_0._hpOutInterval then
+		if arg_93_1 >= arg_93_0._hpUpperBound or arg_93_1 <= arg_93_0._hpLowerBound then
+			var_93_0 = true
 		end
-	elseif arg_92_1 <= arg_92_0._hpUpperBound and arg_92_1 >= arg_92_0._hpLowerBound then
-		var_92_0 = true
+	elseif arg_93_1 <= arg_93_0._hpUpperBound and arg_93_1 >= arg_93_0._hpLowerBound then
+		var_93_0 = true
 	end
 
-	return var_92_0
+	return var_93_0
 end
 
-function var_0_3.dhpRequire(arg_93_0, arg_93_1, arg_93_2)
-	if arg_93_0._dHPGreater then
-		return arg_93_2 * arg_93_0._dHPGreater > 0 and math.abs(arg_93_2) > math.abs(arg_93_0._dHPGreater)
-	elseif arg_93_0._dHPGreaterMaxHP then
-		local var_93_0 = arg_93_0._dHPGreaterMaxHP * arg_93_1
+function var_0_3.dhpRequire(arg_94_0, arg_94_1, arg_94_2)
+	if arg_94_0._dHPGreater then
+		return arg_94_2 * arg_94_0._dHPGreater > 0 and math.abs(arg_94_2) > math.abs(arg_94_0._dHPGreater)
+	elseif arg_94_0._dHPGreaterMaxHP then
+		local var_94_0 = arg_94_0._dHPGreaterMaxHP * arg_94_1
 
-		return arg_93_2 * var_93_0 > 0 and math.abs(arg_93_2) > math.abs(var_93_0)
-	elseif arg_93_0._dhpSmaller then
-		return arg_93_2 * arg_93_0._dhpSmaller > 0 and math.abs(arg_93_2) < math.abs(arg_93_0._dhpSmaller)
-	elseif arg_93_0._dhpSmallerMaxhp then
-		local var_93_1 = arg_93_0._dhpSmallerMaxhp * arg_93_1
+		return arg_94_2 * var_94_0 > 0 and math.abs(arg_94_2) > math.abs(var_94_0)
+	elseif arg_94_0._dhpSmaller then
+		return arg_94_2 * arg_94_0._dhpSmaller > 0 and math.abs(arg_94_2) < math.abs(arg_94_0._dhpSmaller)
+	elseif arg_94_0._dhpSmallerMaxhp then
+		local var_94_1 = arg_94_0._dhpSmallerMaxhp * arg_94_1
 
-		return arg_93_2 * var_93_1 > 0 and math.abs(arg_93_2) < math.abs(var_93_1)
+		return arg_94_2 * var_94_1 > 0 and math.abs(arg_94_2) < math.abs(var_94_1)
 	else
 		return true
 	end
 end
 
-function var_0_3.attrIntervalRequire(arg_94_0, arg_94_1)
-	local var_94_0 = true
+function var_0_3.attrIntervalRequire(arg_95_0, arg_95_1)
+	local var_95_0 = true
 
-	if arg_94_0._attrUpperBound and arg_94_1 >= arg_94_0._attrUpperBound then
-		var_94_0 = false
+	if arg_95_0._attrUpperBound and arg_95_1 >= arg_95_0._attrUpperBound then
+		var_95_0 = false
 	end
 
-	if arg_94_0._attrLowerBound and arg_94_1 <= arg_94_0._attrLowerBound then
-		var_94_0 = false
+	if arg_95_0._attrLowerBound and arg_95_1 <= arg_95_0._attrLowerBound then
+		var_95_0 = false
 	end
 
-	return var_94_0
+	return var_95_0
 end
 
-function var_0_3.onHPRatioUpdate(arg_95_0, arg_95_1, arg_95_2, arg_95_3)
-	local var_95_0 = arg_95_1:GetHPRate()
-	local var_95_1 = arg_95_3.dHP
-
-	if arg_95_0:hpIntervalRequire(var_95_0, var_95_1) and arg_95_0:dhpRequire(arg_95_1:GetMaxHP(), var_95_1) then
-		arg_95_0:doOnHPRatioUpdate(arg_95_1, arg_95_2, arg_95_3)
-	end
-end
-
-function var_0_3.onFriendlyHpRatioUpdate(arg_96_0, arg_96_1, arg_96_2, arg_96_3)
-	local var_96_0 = arg_96_3.unit
+function var_0_3.onHPRatioUpdate(arg_96_0, arg_96_1, arg_96_2, arg_96_3)
+	local var_96_0 = arg_96_1:GetHPRate()
 	local var_96_1 = arg_96_3.dHP
-	local var_96_2 = var_96_0:GetHPRate()
 
-	if arg_96_0:hpIntervalRequire(var_96_2, var_96_1) and arg_96_0:dhpRequire(var_96_0:GetMaxHP(), var_96_1) then
+	if arg_96_0:hpIntervalRequire(var_96_0, var_96_1) and arg_96_0:dhpRequire(arg_96_1:GetMaxHP(), var_96_1) then
 		arg_96_0:doOnHPRatioUpdate(arg_96_1, arg_96_2, arg_96_3)
 	end
 end
 
-function var_0_3.onTeammateHpRatioUpdate(arg_97_0, arg_97_1, arg_97_2, arg_97_3)
-	arg_97_0:onFriendlyHpRatioUpdate(arg_97_1, arg_97_2, arg_97_3)
+function var_0_3.onFriendlyHpRatioUpdate(arg_97_0, arg_97_1, arg_97_2, arg_97_3)
+	local var_97_0 = arg_97_3.unit
+	local var_97_1 = arg_97_3.dHP
+	local var_97_2 = var_97_0:GetHPRate()
+
+	if arg_97_0:hpIntervalRequire(var_97_2, var_97_1) and arg_97_0:dhpRequire(var_97_0:GetMaxHP(), var_97_1) then
+		arg_97_0:doOnHPRatioUpdate(arg_97_1, arg_97_2, arg_97_3)
+	end
 end
 
-function var_0_3.onBulletKill(arg_98_0, arg_98_1, arg_98_2, arg_98_3)
-	if arg_98_0._tempData.arg_list.killer_weapon_id then
-		if arg_98_0:killerWeaponRequire(arg_98_0._tempData.arg_list.killer_weapon_id, arg_98_3.killer, arg_98_1) then
-			arg_98_0:onTrigger(arg_98_1, arg_98_2)
+function var_0_3.onTeammateHpRatioUpdate(arg_98_0, arg_98_1, arg_98_2, arg_98_3)
+	arg_98_0:onFriendlyHpRatioUpdate(arg_98_1, arg_98_2, arg_98_3)
+end
+
+function var_0_3.onBulletKill(arg_99_0, arg_99_1, arg_99_2, arg_99_3)
+	if arg_99_0._tempData.arg_list.killer_weapon_id then
+		if arg_99_0:killerWeaponRequire(arg_99_0._tempData.arg_list.killer_weapon_id, arg_99_3.killer, arg_99_1) then
+			arg_99_0:onTrigger(arg_99_1, arg_99_2)
 		end
 	else
-		arg_98_0:onTrigger(arg_98_1, arg_98_2)
+		arg_99_0:onTrigger(arg_99_1, arg_99_2)
 	end
 end
 
-function var_0_3.onBattleBuffCount(arg_99_0, arg_99_1, arg_99_2, arg_99_3)
-	local var_99_0 = arg_99_3.buffFX
+function var_0_3.onBattleBuffCount(arg_100_0, arg_100_1, arg_100_2, arg_100_3)
+	local var_100_0 = arg_100_3.buffFX
 
-	if var_99_0:GetCountType() == arg_99_0._countType then
-		if var_99_0:Repeater() then
-			while var_99_0:GetCountProgress() >= 1 do
-				arg_99_0:onTrigger(arg_99_1, arg_99_2)
-				var_99_0:ConsumeCount()
+	if var_100_0:GetCountType() == arg_100_0._countType then
+		if var_100_0:Repeater() then
+			while var_100_0:GetCountProgress() >= 1 do
+				arg_100_0:onTrigger(arg_100_1, arg_100_2)
+				var_100_0:ConsumeCount()
 			end
-		elseif arg_99_0:onTrigger(arg_99_1, arg_99_2) ~= "overheat" then
-			var_99_0:ResetCount()
+		elseif arg_100_0:onTrigger(arg_100_1, arg_100_2) ~= "overheat" then
+			var_100_0:ResetCount()
 		end
 	end
 end
 
-function var_0_3.onShieldBroken(arg_100_0, arg_100_1, arg_100_2, arg_100_3)
-	if arg_100_3.shieldBuffID == arg_100_0._tempData.arg_list.shieldBuffID then
-		arg_100_0:onTrigger(arg_100_1, arg_100_2)
+function var_0_3.onShieldBroken(arg_101_0, arg_101_1, arg_101_2, arg_101_3)
+	if arg_101_3.shieldBuffID == arg_101_0._tempData.arg_list.shieldBuffID then
+		arg_101_0:onTrigger(arg_101_1, arg_101_2)
 	end
 end
 
-function var_0_3.onTrigger(arg_101_0, arg_101_1, arg_101_2, arg_101_3)
-	if arg_101_0._quota > 0 then
-		arg_101_0._quota = arg_101_0._quota - 1
+function var_0_3.onTrigger(arg_102_0, arg_102_1, arg_102_2, arg_102_3)
+	if arg_102_0._quota > 0 then
+		arg_102_0._quota = arg_102_0._quota - 1
 	end
 end
 
-function var_0_3.doOnHPRatioUpdate(arg_102_0, arg_102_1, arg_102_2, arg_102_3)
-	arg_102_0:onTrigger(arg_102_1, arg_102_2, arg_102_3)
-end
-
-function var_0_3.doOnFriendlyHPRatioUpdate(arg_103_0, arg_103_1, arg_103_2, arg_103_3)
+function var_0_3.doOnHPRatioUpdate(arg_103_0, arg_103_1, arg_103_2, arg_103_3)
 	arg_103_0:onTrigger(arg_103_1, arg_103_2, arg_103_3)
 end
 
-function var_0_3.onSubmarineDive(arg_104_0, arg_104_1, arg_104_2, arg_104_3)
+function var_0_3.doOnFriendlyHPRatioUpdate(arg_104_0, arg_104_1, arg_104_2, arg_104_3)
 	arg_104_0:onTrigger(arg_104_1, arg_104_2, arg_104_3)
 end
 
-function var_0_3.onSubmarineRaid(arg_105_0, arg_105_1, arg_105_2, arg_105_3)
+function var_0_3.onSubmarineDive(arg_105_0, arg_105_1, arg_105_2, arg_105_3)
 	arg_105_0:onTrigger(arg_105_1, arg_105_2, arg_105_3)
 end
 
-function var_0_3.onSubmarineFloat(arg_106_0, arg_106_1, arg_106_2, arg_106_3)
+function var_0_3.onSubmarineRaid(arg_106_0, arg_106_1, arg_106_2, arg_106_3)
 	arg_106_0:onTrigger(arg_106_1, arg_106_2, arg_106_3)
 end
 
-function var_0_3.onSubmarineRetreat(arg_107_0, arg_107_1, arg_107_2, arg_107_3)
+function var_0_3.onSubmarineFloat(arg_107_0, arg_107_1, arg_107_2, arg_107_3)
 	arg_107_0:onTrigger(arg_107_1, arg_107_2, arg_107_3)
 end
 
-function var_0_3.onSubmarineAid(arg_108_0, arg_108_1, arg_108_2, arg_108_3)
+function var_0_3.onSubmarineRetreat(arg_108_0, arg_108_1, arg_108_2, arg_108_3)
 	arg_108_0:onTrigger(arg_108_1, arg_108_2, arg_108_3)
 end
 
-function var_0_3.onSubmarinFreeDive(arg_109_0, arg_109_1, arg_109_2, arg_109_3)
+function var_0_3.onSubmarineAid(arg_109_0, arg_109_1, arg_109_2, arg_109_3)
 	arg_109_0:onTrigger(arg_109_1, arg_109_2, arg_109_3)
 end
 
-function var_0_3.onSubmarinFreeFloat(arg_110_0, arg_110_1, arg_110_2, arg_110_3)
+function var_0_3.onSubmarinFreeDive(arg_110_0, arg_110_1, arg_110_2, arg_110_3)
 	arg_110_0:onTrigger(arg_110_1, arg_110_2, arg_110_3)
 end
 
-function var_0_3.onSubmarineFreeSpecial(arg_111_0, arg_111_1, arg_111_2, arg_111_3)
+function var_0_3.onSubmarinFreeFloat(arg_111_0, arg_111_1, arg_111_2, arg_111_3)
 	arg_111_0:onTrigger(arg_111_1, arg_111_2, arg_111_3)
 end
 
-function var_0_3.onSubDetected(arg_112_0, arg_112_1, arg_112_2, arg_112_3)
+function var_0_3.onSubmarineFreeSpecial(arg_112_0, arg_112_1, arg_112_2, arg_112_3)
 	arg_112_0:onTrigger(arg_112_1, arg_112_2, arg_112_3)
 end
 
-function var_0_3.onSubUnDetected(arg_113_0, arg_113_1, arg_113_2, arg_113_3)
+function var_0_3.onSubDetected(arg_113_0, arg_113_1, arg_113_2, arg_113_3)
 	arg_113_0:onTrigger(arg_113_1, arg_113_2, arg_113_3)
 end
 
-function var_0_3.onAntiSubHateChain(arg_114_0, arg_114_1, arg_114_2, arg_114_3)
-	arg_114_0:onTrigger(arg_114_1, arg_114_2, attach)
+function var_0_3.onSubUnDetected(arg_114_0, arg_114_1, arg_114_2, arg_114_3)
+	arg_114_0:onTrigger(arg_114_1, arg_114_2, arg_114_3)
 end
 
-function var_0_3.onRetreat(arg_115_0, arg_115_1, arg_115_2, arg_115_3)
-	arg_115_0:onTrigger(arg_115_1, arg_115_2, arg_115_3)
+function var_0_3.onAntiSubHateChain(arg_115_0, arg_115_1, arg_115_2, arg_115_3)
+	arg_115_0:onTrigger(arg_115_1, arg_115_2, attach)
 end
 
-function var_0_3.onCloakUpdate(arg_116_0, arg_116_1, arg_116_2, arg_116_3)
-	if arg_116_0:cloakStateRequire(arg_116_3.cloakState) then
-		arg_116_0:onTrigger(arg_116_1, arg_116_2, arg_116_3)
-	end
+function var_0_3.onRetreat(arg_116_0, arg_116_1, arg_116_2, arg_116_3)
+	arg_116_0:onTrigger(arg_116_1, arg_116_2, arg_116_3)
 end
 
-function var_0_3.onTeammateCloakUpdate(arg_117_0, arg_117_1, arg_117_2, arg_117_3)
+function var_0_3.onCloakUpdate(arg_117_0, arg_117_1, arg_117_2, arg_117_3)
 	if arg_117_0:cloakStateRequire(arg_117_3.cloakState) then
 		arg_117_0:onTrigger(arg_117_1, arg_117_2, arg_117_3)
 	end
 end
 
-function var_0_3.cloakStateRequire(arg_118_0, arg_118_1)
-	if not arg_118_0._cloakRequire then
-		return true
-	else
-		return arg_118_0._cloakRequire == arg_118_1
+function var_0_3.onTeammateCloakUpdate(arg_118_0, arg_118_1, arg_118_2, arg_118_3)
+	if arg_118_0:cloakStateRequire(arg_118_3.cloakState) then
+		arg_118_0:onTrigger(arg_118_1, arg_118_2, arg_118_3)
 	end
 end
 
-function var_0_3.Interrupt(arg_119_0)
+function var_0_3.cloakStateRequire(arg_119_0, arg_119_1)
+	if not arg_119_0._cloakRequire then
+		return true
+	else
+		return arg_119_0._cloakRequire == arg_119_1
+	end
+end
+
+function var_0_3.Interrupt(arg_120_0)
 	return
 end
 
-function var_0_3.Clear(arg_120_0)
-	arg_120_0._commander = nil
+function var_0_3.Clear(arg_121_0)
+	arg_121_0._commander = nil
 end
 
-function var_0_3.getTargetList(arg_121_0, arg_121_1, arg_121_2, arg_121_3, arg_121_4)
-	if type(arg_121_2) == "string" then
-		arg_121_2 = {
-			arg_121_2
+function var_0_3.getTargetList(arg_122_0, arg_122_1, arg_122_2, arg_122_3, arg_122_4)
+	if type(arg_122_2) == "string" then
+		arg_122_2 = {
+			arg_122_2
 		}
 	end
 
-	local var_121_0 = arg_121_3
+	local var_122_0 = arg_122_3
 
-	if table.contains(arg_121_2, "TargetDamageSource") then
-		var_121_0 = Clone(arg_121_3)
-		var_121_0.damageSourceID = arg_121_4.damageSrc
+	if table.contains(arg_122_2, "TargetDamageSource") then
+		var_122_0 = Clone(arg_122_3)
+		var_122_0.damageSourceID = arg_122_4.damageSrc
 	end
 
-	local var_121_1
+	local var_122_1
 
-	for iter_121_0, iter_121_1 in ipairs(arg_121_2) do
-		var_121_1 = var_0_0.Battle.BattleTargetChoise[iter_121_1](arg_121_1, var_121_0, var_121_1)
+	for iter_122_0, iter_122_1 in ipairs(arg_122_2) do
+		var_122_1 = var_0_0.Battle.BattleTargetChoise[iter_122_1](arg_122_1, var_122_0, var_122_1)
 	end
 
-	return var_121_1
+	return var_122_1
 end
 
-function var_0_3.commanderRequire(arg_122_0, arg_122_1)
-	if arg_122_0._tempData.arg_list.CMDBuff_id then
-		local var_122_0, var_122_1 = var_0_0.Battle.BattleDataProxy.GetInstance():GetCommanderBuff()
-		local var_122_2
-		local var_122_3 = arg_122_1:GetTemplate().type
+function var_0_3.commanderRequire(arg_123_0, arg_123_1)
+	if arg_123_0._tempData.arg_list.CMDBuff_id then
+		local var_123_0, var_123_1 = var_0_0.Battle.BattleDataProxy.GetInstance():GetCommanderBuff()
+		local var_123_2
+		local var_123_3 = arg_123_1:GetTemplate().type
 
-		if table.contains(TeamType.SubShipType, var_122_3) then
-			var_122_2 = var_122_1
+		if table.contains(TeamType.SubShipType, var_123_3) then
+			var_123_2 = var_123_1
 		else
-			var_122_2 = var_122_0
+			var_123_2 = var_123_0
 		end
 
-		local var_122_4 = {}
-		local var_122_5 = arg_122_0._tempData.arg_list.CMDBuff_id
+		local var_123_4 = {}
+		local var_123_5 = arg_123_0._tempData.arg_list.CMDBuff_id
 
-		for iter_122_0, iter_122_1 in ipairs(var_122_2) do
-			if iter_122_1.id == var_122_5 then
-				table.insert(var_122_4, iter_122_1)
+		for iter_123_0, iter_123_1 in ipairs(var_123_2) do
+			if iter_123_1.id == var_123_5 then
+				table.insert(var_123_4, iter_123_1)
 			end
 		end
 
-		return #var_122_4 > 0
+		return #var_123_4 > 0
 	else
 		return true
 	end
 end
 
-function var_0_3.IsActive(arg_123_0)
-	return arg_123_0._isActive
+function var_0_3.IsActive(arg_124_0)
+	return arg_124_0._isActive
 end
 
-function var_0_3.SetActive(arg_124_0)
-	arg_124_0._isActive = true
+function var_0_3.SetActive(arg_125_0)
+	arg_125_0._isActive = true
 end
 
-function var_0_3.NotActive(arg_125_0)
-	arg_125_0._isActive = false
+function var_0_3.NotActive(arg_126_0)
+	arg_126_0._isActive = false
 end
 
-function var_0_3.IsLock(arg_126_0)
-	return arg_126_0._isLock
+function var_0_3.IsLock(arg_127_0)
+	return arg_127_0._isLock
 end
 
-function var_0_3.SetLock(arg_127_0)
-	arg_127_0._isLock = true
+function var_0_3.SetLock(arg_128_0)
+	arg_128_0._isLock = true
 end
 
-function var_0_3.NotLock(arg_128_0)
-	arg_128_0._isLock = false
+function var_0_3.NotLock(arg_129_0)
+	arg_129_0._isLock = false
 end
 
-function var_0_3.Dispose(arg_129_0)
+function var_0_3.Dispose(arg_130_0)
 	return
 end

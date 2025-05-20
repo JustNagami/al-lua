@@ -37,17 +37,17 @@ function var_0_0.OnFirstFlush(arg_4_0)
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.SkinDiscountHelp_School.tip
 		})
-	end, SFX_PANEl)
+	end, SFX_PANEL)
 	onButton(arg_4_0, arg_4_0.btnShop, function()
 		arg_4_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP, {
 			page = NewSkinShopScene.PAGE_RETURN
 		})
-	end, SFX_PANEl)
+	end, SFX_PANEL)
 	onButton(arg_4_0, arg_4_0.btnGift, function()
 		arg_4_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CHARGE, {
 			wrap = ChargeScene.TYPE_GIFT
 		})
-	end, SFX_PANEl)
+	end, SFX_PANEL)
 
 	for iter_4_0, iter_4_1 in ipairs(arg_4_0.taskGroup) do
 		local var_4_0 = iter_4_1[1]

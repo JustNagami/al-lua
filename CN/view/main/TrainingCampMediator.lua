@@ -63,10 +63,10 @@ function var_0_0.handleNotification(arg_8_0, arg_8_1)
 		arg_8_0.viewComponent:updateSwitchBtnsTag()
 	elseif var_8_0 == GAME.SUBMIT_TASK_DONE then
 		arg_8_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_8_1)
-		arg_8_0.viewComponent:setPhrase()
+		arg_8_0.viewComponent:switchPageByMediator()
 		arg_8_0.viewComponent:updateSwitchBtnsTag()
 	elseif var_8_0 == ActivityProxy.ACTIVITY_OPERATION_DONE then
-		arg_8_0.viewComponent:tryShowTecFixTip()
+		arg_8_0.viewComponent:tryShowTecFixTip(var_8_1)
 		arg_8_0.viewComponent:switchPageByMediator()
 		arg_8_0.viewComponent:updateSwitchBtnsTag()
 	end

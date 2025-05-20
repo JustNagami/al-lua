@@ -276,6 +276,7 @@ function var_0_0.didEnter(arg_17_0)
 		arg_17_0:OnFilter(arg_17_0.defaultIndex)
 	end, SFX_PANEL)
 	arg_17_0:SetUp()
+	getProxy(CommanderManualProxy):TaskProgressAdd(2021, 1)
 end
 
 function var_0_0.UpdateCouponBtn(arg_29_0)

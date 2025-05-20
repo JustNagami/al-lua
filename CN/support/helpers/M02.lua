@@ -243,7 +243,10 @@ function GetImageSpriteFromAtlasAsync(arg_27_0, arg_27_1, arg_27_2, arg_27_3)
 end
 
 function SetAction(arg_29_0, arg_29_1, arg_29_2)
-	GetComponent(arg_29_0, "SkeletonGraphic").AnimationState:SetAnimation(0, arg_29_1, defaultValue(arg_29_2, true))
+	local var_29_0 = GetComponent(arg_29_0, "SkeletonGraphic").AnimationState
+
+	var_29_0:SetAnimation(0, arg_29_1, defaultValue(arg_29_2, true))
+	var_29_0:Update(Time.deltaTime)
 end
 
 function SetActionCallback(arg_30_0, arg_30_1)
@@ -4472,7 +4475,7 @@ function CheckOverflow(arg_308_0, arg_308_1)
 
 	local var_308_10 = getProxy(EquipmentProxy):getCapacity()
 
-	if var_308_3 > 0 and var_308_3 + var_308_10 > var_308_5:getMaxEquipmentBag() then
+	if var_308_3 > 0 and var_308_10 >= var_308_5:getMaxEquipmentBag() then
 		return false, "equip"
 	end
 

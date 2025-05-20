@@ -297,6 +297,8 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	arg_1_0.facade:registerCommand(GAME.APPRECIATE_MUSIC_LIKE, MusicLikeCommand)
 	arg_1_0.facade:registerCommand(GAME.APPRECIATE_MANGA_READ, MangaReadCommand)
 	arg_1_0.facade:registerCommand(GAME.APPRECIATE_MANGA_LIKE, MangaLikeCommand)
+	arg_1_0.facade:registerCommand(GAME.APPRECIATE_CHANGE_MAIN_PLAY_ALBUM, MusicMainPlayAlbumChangeCommand)
+	arg_1_0.facade:registerCommand(GAME.APPRECIATE_CHANGE_MUSIC_PLAY_LOOP_TYPE, MusicPlayLoopTypeChangeCommand)
 	arg_1_0.facade:registerCommand(GAME.TROPHY_CLAIM, TrophyClaimCommand)
 	arg_1_0.facade:registerCommand(GAME.EVENT_FINISH, EventFinishCommand)
 	arg_1_0.facade:registerCommand(GAME.EVENT_FLUSH_NIGHT, EventFlushCommand)
@@ -593,6 +595,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	arg_1_0.facade:registerCommand(GAME.ISLAND_USESPEEDUPCARD, IslandUseSpeedupCardCommand)
 	arg_1_0.facade:registerCommand(GAME.ISLAND_START_COLLECT, IslandSlotCollectCommand)
 	arg_1_0.facade:registerCommand(GAME.ISLAND_SHIP_ORDER_OP, IslandShipOrderOpCommand)
+	arg_1_0.facade:registerCommand(GAME.COMMANDER_MANUAL_OP, CommanderManualCommand)
 end
 
 return var_0_0

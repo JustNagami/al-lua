@@ -156,7 +156,7 @@ function var_0_0.updateSelectable(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4)
 
 	updateDrop(arg_7_0.itemTF, var_7_0)
 	setActive(arg_7_0.mask, false)
-	setActive(arg_7_0.selloutTag, fasle)
+	setActive(arg_7_0.selloutTag, false)
 
 	if arg_7_0.limitPassTag then
 		setActive(arg_7_0.limitPassTag, false)

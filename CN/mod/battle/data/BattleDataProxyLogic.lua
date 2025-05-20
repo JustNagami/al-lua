@@ -178,7 +178,7 @@ function var_0_0.HandleMeteoDamage(arg_8_0, arg_8_1, arg_8_2)
 	end
 end
 
-function var_0_0.HandleDirectDamage(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
+function var_0_0.HandleDirectDamage(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4, arg_9_5)
 	local var_9_0
 
 	if arg_9_3 then
@@ -190,7 +190,8 @@ function var_0_0.HandleDirectDamage(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
 		isCri = false,
 		isHeal = false,
 		damageReason = arg_9_4,
-		srcID = var_9_0
+		srcID = var_9_0,
+		isReflect = arg_9_5
 	}
 	local var_9_2 = arg_9_1:GetAttrByName("id")
 	local var_9_3 = arg_9_1:UpdateHP(arg_9_2 * -1, var_9_1)
@@ -343,6 +344,7 @@ function var_0_0.HandleBuffPlacer(arg_14_0, arg_14_1, arg_14_2)
 		local var_14_2 = arg_14_0.buff_level or arg_14_0.level
 		local var_14_3 = ys.Battle.BattleBuffUnit.New(arg_14_0.buff_id, var_14_2, arg_14_1)
 
+		var_14_3:SetGroupLevel(arg_14_0.group_level)
 		var_14_3:SetOrb(arg_14_1, arg_14_0.level)
 		arg_14_2:AddBuff(var_14_3)
 	end

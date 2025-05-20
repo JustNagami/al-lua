@@ -15,6 +15,7 @@ var_0_0.ACTIVITY_OPERATION_ERRO = "ActivityProxy ACTIVITY_OPERATION_ERRO"
 var_0_0.ACTIVITY_SHOW_LOTTERY_AWARD_RESULT = "ActivityProxy ACTIVITY_SHOW_LOTTERY_AWARD_RESULT"
 var_0_0.ACTIVITY_SHOW_RED_PACKET_AWARDS = "ActivityProxy ACTIVITY_SHOW_RED_PACKET_AWARDS"
 var_0_0.ACTIVITY_SHOW_SHAKE_BEADS_RESULT = "ActivityProxy ACTIVITY_SHOW_SHAKE_BEADS_RESULT"
+var_0_0.ACTIVITY_EXCHANGE_RESOURCES = "ActivityProxy ACTIVITY_EXCHANGE_RESOURCES"
 var_0_0.ACTIVITY_PT_ID = 110
 
 function var_0_0.register(arg_1_0)
@@ -811,7 +812,7 @@ function var_0_0.removeVitemById(arg_71_0, arg_71_1, arg_71_2)
 end
 
 function var_0_0.addVitemById(arg_72_0, arg_72_1, arg_72_2)
-	local var_72_0 = arg_72_0:getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
+	local var_72_0 = arg_72_0:getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG) or arg_72_0:getActivityByType(ActivityConst.ACTIVITY_TYPE_HOLIDAY_VILLA)
 
 	assert(var_72_0, "vbagType invalid")
 

@@ -88,6 +88,8 @@ pg.pay_data_display = setmetatable({
 		88,
 		89,
 		90,
+		91,
+		92,
 		1000,
 		1001,
 		1002,
@@ -159,6 +161,9 @@ pg.pay_data_display = setmetatable({
 		2047,
 		2048,
 		2049,
+		2050,
+		2051,
+		2052,
 		5001,
 		5002,
 		5003,
@@ -9238,6 +9243,234 @@ pg.base.pay_data_display = {
 			}
 		}
 	},
+	[91] = {
+		name = "八周年泳装礼盒·I",
+		limit_group = 0,
+		descrip_extra = "*礼盒将发送到邮箱，请注意查收。\n*重复获得已拥有的换装时，则自动置换成等价的钻石。",
+		type = 1,
+		subject = "八周年泳装礼盒·I",
+		limit_arg = 1,
+		name_display = "八周年泳装礼盒·I",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 198,
+		id = 91,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai24",
+		skin_inquire_relation = 86213,
+		id_str = "com.bilibili.blhx.zuanshi191",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "可获得一件角色换装，2025钻，和大量其他奖励",
+		airijp_id = "com.yostarjp.azurlane.diamond179",
+		extra_service_item = {
+			{
+				2,
+				86213,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86213,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81213,
+				1
+			}
+		}
+	},
+	[92] = {
+		name = "七周年泳装礼盒复刻",
+		limit_group = 0,
+		descrip_extra = "*礼盒将发送到邮箱，请注意查收。\n*重复获得已拥有的换装时，则自动置换成等价的钻石。",
+		type = 1,
+		subject = "七周年泳装礼盒复刻",
+		limit_arg = 1,
+		name_display = "七周年泳装礼盒复刻",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 198,
+		id = 92,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai13",
+		skin_inquire_relation = 86204,
+		id_str = "com.bilibili.blhx.zuanshi192",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "可获得一件角色换装，2024钻，和大量其他奖励",
+		airijp_id = "com.yostarjp.azurlane.diamond180",
+		extra_service_item = {
+			{
+				2,
+				86204,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86204,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81204,
+				1
+			}
+		}
+	},
 	[1000] = {
 		name = "特许巡游凭证",
 		limit_group = 0,
@@ -14789,6 +15022,242 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40023,
+				1
+			}
+		}
+	},
+	[2050] = {
+		name = "海滨假日主题礼包",
+		limit_group = 105,
+		descrip_extra = "此处不会被看到",
+		type = 0,
+		subject = "海滨假日主题礼包",
+		limit_arg = 0,
+		name_display = "海滨假日主题礼包",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 78,
+		id = 2050,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui5",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.ui12",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "可获得战斗界面主题 海滨假日*1",
+		airijp_id = "com.yostarjp.azurlane.ui12",
+		extra_service_item = {
+			{
+				31,
+				204,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				204,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[2051] = {
+		name = "海滨假日主题礼包(基础版)",
+		limit_group = 105,
+		descrip_extra = "*礼包将发送到邮箱，请注意查收。",
+		type = 0,
+		subject = "海滨假日主题礼包(基础版)",
+		limit_arg = 1,
+		name_display = "海滨假日主题礼包(基础版)",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 78,
+		id = 2051,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui5",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.ui13",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "可获得战斗界面主题 海滨假日*1,1000物资",
+		airijp_id = "com.yostarjp.azurlane.ui13",
+		extra_service_item = {
+			{
+				31,
+				204,
+				1
+			},
+			{
+				1,
+				1,
+				1000
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				204,
+				1
+			},
+			{
+				1,
+				1,
+				1000
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40060,
+				1
+			}
+		}
+	},
+	[2052] = {
+		name = "海滨假日主题礼包(豪华版)",
+		limit_group = 105,
+		descrip_extra = "*礼包将发送到邮箱，请注意查收。",
+		type = 0,
+		subject = "海滨假日主题礼包(豪华版)",
+		limit_arg = 1,
+		name_display = "海滨假日主题礼包(豪华版)",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 258,
+		id = 2052,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui5",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.ui14",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "可获得战斗界面主题 海滨假日*1,3060钻石",
+		airijp_id = "com.yostarjp.azurlane.ui14",
+		extra_service_item = {
+			{
+				31,
+				204,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				204,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40061,
 				1
 			}
 		}

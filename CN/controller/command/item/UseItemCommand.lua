@@ -10,6 +10,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_6 = var_1_5:getConfig("usage")
 	local var_1_7 = var_1_0.skip_check
 	local var_1_8 = var_1_0.callback
+	local var_1_9 = var_1_0.isEquipBox
 
 	if var_1_2 == 0 then
 		return
@@ -32,10 +33,10 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 			return
 		end
 	elseif var_1_6 == ItemUsage.SKIN_SHOP_DISCOUNT or var_1_6 == ItemUsage.USAGE_SHOP_DISCOUNT then
-		local var_1_9, var_1_10 = var_1_5:GetConsumeForSkinShopDiscount(var_1_3[1])
-		local var_1_11 = getProxy(PlayerProxy):getRawData():getResource(var_1_10)
+		local var_1_10, var_1_11 = var_1_5:GetConsumeForSkinShopDiscount(var_1_3[1])
+		local var_1_12 = getProxy(PlayerProxy):getRawData():getResource(var_1_11)
 
-		if var_1_9 > 0 and var_1_11 < var_1_9 then
+		if var_1_10 > 0 and var_1_12 < var_1_10 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 			return
@@ -129,7 +130,10 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 				var_1_8(var_2_0)
 			end
 
-			arg_1_0:sendNotification(GAME.USE_ITEM_DONE, var_2_0)
+			arg_1_0:sendNotification(GAME.USE_ITEM_DONE, {
+				drops = var_2_0,
+				isEquipBox = var_1_9
+			})
 		else
 			if var_1_8 then
 				var_1_8({})

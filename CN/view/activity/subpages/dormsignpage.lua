@@ -9,6 +9,7 @@ function var_0_0.OnInit(arg_2_0)
 	arg_2_0.items = arg_2_0:findTF("items", arg_2_0.bg)
 	arg_2_0.uilist = UIItemList.New(arg_2_0.items, arg_2_0:findTF("tpl", arg_2_0.items))
 	arg_2_0.goBtn = arg_2_0:findTF("btn_go", arg_2_0.bg)
+	arg_2_0.lockTF = arg_2_0:findTF("lock", arg_2_0.bg)
 end
 
 function var_0_0.OnDataSetting(arg_3_0)
@@ -64,6 +65,11 @@ function var_0_0.OnFirstFlush(arg_7_0)
 	onButton(arg_7_0, arg_7_0.goBtn, function()
 		arg_7_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.DORM3DSELECT)
 	end, SFX_PANEL)
+
+	local var_7_0 = pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "SelectDorm3DMediator")
+
+	setActive(arg_7_0.goBtn, var_7_0)
+	setActive(arg_7_0.lockTF, not var_7_0)
 	setActive(arg_7_0.goBtn:Find("tip"), var_0_0.IsShowGoRed())
 	PlayerPrefs.SetString("DormSignPage", var_0_0.GetDate())
 end

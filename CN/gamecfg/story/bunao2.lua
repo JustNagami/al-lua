@@ -450,7 +450,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 207120,
-			say = "没、没有，我是在养精蓄税。",
+			say = "没、没有，我是在养精蓄锐。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

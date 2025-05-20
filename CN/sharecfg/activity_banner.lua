@@ -2,6 +2,80 @@
 pg.activity_banner = {
 	{
 		id = 1,
+		pic = "temp1",
+		type = 2,
+		param = {
+			"scene charge",
+			{
+				wrap = 2
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 2,
+		pic = "temp2",
+		type = 2,
+		param = {
+			"scene charge",
+			{
+				wrap = 1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					12
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		}
+	},
+	{
+		id = 3,
 		pic = "temp3",
 		type = 2,
 		param = {
@@ -13,7 +87,7 @@ pg.activity_banner = {
 				{
 					2025,
 					5,
-					14
+					20
 				},
 				{
 					0,
@@ -25,7 +99,7 @@ pg.activity_banner = {
 				{
 					2025,
 					5,
-					19
+					24
 				},
 				{
 					23,
@@ -36,161 +110,13 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "5922",
-		id = 2,
-		pic = "temp4",
-		type = 3,
-		time = {
-			{
-				{
-					2025,
-					5,
-					14
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					5,
-					20
-				},
-				{
-					12,
-					0,
-					0
-				}
-			}
-		}
-	},
-	{
-		param = "5924",
-		id = 3,
-		pic = "temp5",
-		type = 3,
-		time = {
-			{
-				{
-					2025,
-					5,
-					14
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					5,
-					20
-				},
-				{
-					12,
-					0,
-					0
-				}
-			}
-		}
-	},
-	{
-		param = "5921",
 		id = 4,
-		pic = "temp6",
-		type = 3,
-		time = {
-			{
-				{
-					2025,
-					5,
-					14
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					5,
-					20
-				},
-				{
-					12,
-					0,
-					0
-				}
-			}
-		}
-	},
-	{
-		param = "5923",
-		id = 5,
-		pic = "temp7",
-		type = 3,
-		time = {
-			{
-				{
-					2025,
-					5,
-					14
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					5,
-					20
-				},
-				{
-					12,
-					0,
-					0
-				}
-			}
-		}
-	},
-	{
-		id = 6,
-		pic = "temp8",
-		time = "stop",
+		pic = "temp4",
 		type = 2,
 		param = {
-			"scene shop",
+			"scene charge",
 			{
-				warp = "shopstreet"
-			}
-		}
-	},
-	{
-		param = "5909",
-		time = "stop",
-		type = 3,
-		id = 7,
-		pic = "temp9"
-	},
-	{
-		id = 8,
-		pic = "temp1",
-		type = 2,
-		param = {
-			"scene equip",
-			{
-				designPage = 2,
-				warp = "WARP_TO_DESIGN"
+				wrap = 2
 			}
 		},
 		time = {
@@ -198,7 +124,7 @@ pg.activity_banner = {
 				{
 					2025,
 					5,
-					8
+					20
 				},
 				{
 					0,
@@ -209,8 +135,46 @@ pg.activity_banner = {
 			{
 				{
 					2025,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 5,
+		pic = "temp5",
+		type = 2,
+		param = {
+			"scene get boat",
+			{
+				projectName = "new",
+				page = 1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
 					5,
 					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					12
 				},
 				{
 					12,
@@ -221,16 +185,16 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "https://game.bilibili.com/blhx/2025-eighth-anniversary/?channel=AL",
-		id = 9,
-		pic = "temp2",
-		type = 1,
+		param = "5962",
+		id = 6,
+		pic = "temp6",
+		type = 3,
 		time = {
 			{
 				{
 					2025,
 					5,
-					8
+					20
 				},
 				{
 					0,
@@ -241,13 +205,116 @@ pg.activity_banner = {
 			{
 				{
 					2025,
-					5,
-					16
+					6,
+					12
 				},
 				{
-					18,
+					12,
+					0,
+					0
+				}
+			}
+		}
+	},
+	{
+		id = 7,
+		pic = "temp7",
+		type = 2,
+		param = {
+			"scene court yard"
+		},
+		time = {
+			{
+				{
+					2025,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					11
+				},
+				{
+					23,
 					59,
 					59
+				}
+			}
+		}
+	},
+	{
+		id = 8,
+		pic = "temp8",
+		type = 2,
+		param = {
+			"scene get boat",
+			{
+				goToPray = true
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					12
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		}
+	},
+	{
+		param = "5941",
+		id = 9,
+		pic = "temp9",
+		type = 3,
+		time = {
+			{
+				{
+					2025,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					12
+				},
+				{
+					12,
+					0,
+					0
 				}
 			}
 		}
@@ -262,7 +329,7 @@ pg.activity_banner = {
 				{
 					2025,
 					5,
-					14
+					20
 				},
 				{
 					0,
@@ -274,7 +341,7 @@ pg.activity_banner = {
 				{
 					2025,
 					5,
-					19
+					24
 				},
 				{
 					23,
@@ -343,17 +410,15 @@ pg.activity_banner = {
 	get_id_list_by_type = {
 		[2] = {
 			1,
-			6,
-			8
-		},
-		[3] = {
 			2,
 			3,
 			4,
 			5,
-			7
+			7,
+			8
 		},
-		{
+		[3] = {
+			6,
 			9
 		},
 		[9] = {

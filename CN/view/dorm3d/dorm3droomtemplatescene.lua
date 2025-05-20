@@ -4080,20 +4080,14 @@ function var_0_0.InitDefautQuality()
 	end
 end
 
-function var_0_0.SettingQuality()
-	local var_385_0 = GraphicSettingConst.HandleCustomSetting()
+function var_0_0.SetMagicaCollider(arg_385_0, arg_385_1, arg_385_2)
+	local var_385_0 = typeof("MagicaCloth2.MagicaCapsuleCollider")
+	local var_385_1 = arg_385_0:GetSize()
 
-	BLHX.Rendering.EngineCore.SetOverrideQualitySettings(var_385_0)
-end
+	var_385_1.x = arg_385_1
+	var_385_1.y = arg_385_2
 
-function var_0_0.SetMagicaCollider(arg_386_0, arg_386_1, arg_386_2)
-	local var_386_0 = typeof("MagicaCloth2.MagicaCapsuleCollider")
-	local var_386_1 = arg_386_0:GetSize()
-
-	var_386_1.x = arg_386_1
-	var_386_1.y = arg_386_2
-
-	arg_386_0:SetSize(var_386_1)
+	arg_385_0:SetSize(var_385_1)
 end
 
 return var_0_0
