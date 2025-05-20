@@ -76,7 +76,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 			elseif var_1_2 == 17 then
 				pg.TipsMgr.GetInstance():ShowTips("错误!:" .. arg_2_0.result)
 			elseif var_1_2 == ActivityConst.ACTIVITY_TYPE_FRESH_TEC_CATCHUP then
-				-- block empty
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("activity_op_error", arg_2_0.result))
 			elseif arg_2_0.result == 3 or arg_2_0.result == 4 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 			else
@@ -603,6 +603,44 @@ function var_0_0.updateActivityData(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 		arg_3_3.data1 = 0
 
 		var_3_54:updateActivity(arg_3_3)
+	elseif var_3_0 == ActivityConst.ACTIVITY_TYPE_FRESH_TEC_CATCHUP then
+		if arg_3_1.cmd == 1 then
+			if not table.contains(arg_3_3.data1_list, arg_3_3.data1) then
+				table.insert(arg_3_3.data1_list, arg_3_3.data1)
+			end
+
+			arg_3_3.data1 = arg_3_1.arg1
+		elseif arg_3_1.cmd == 2 then
+			-- block empty
+		elseif arg_3_1.cmd == 3 then
+			if not table.contains(arg_3_3.data1_list, arg_3_3.data1) then
+				table.insert(arg_3_3.data1_list, arg_3_3.data1)
+			end
+
+			arg_3_3.data1 = 1
+			arg_3_3.data2 = 1
+
+			getProxy(TaskProxy):removeFinishTaskById(arg_3_3:getConfig("config_data")[3][1][2])
+		else
+			assert(false)
+		end
+
+		getProxy(ActivityProxy):updateActivity(arg_3_3)
+	elseif var_3_0 == ActivityConst.ACTIVITY_TYPE_HOLIDAY_VILLA then
+		if arg_3_1.cmd == 1 then
+			arg_3_3.data1 = 1
+
+			arg_3_3:setVitemNumber(66001, 0)
+			arg_3_3:setVitemNumber(66002, 0)
+			arg_3_3:setVitemNumber(66003, 0)
+			arg_3_3:setVitemNumber(66004, 0)
+			arg_3_3:addVitemNumber(66005, arg_3_2.number[1])
+			getProxy(ActivityProxy):updateActivity(arg_3_3)
+			arg_3_0:sendNotification(ActivityProxy.ACTIVITY_EXCHANGE_RESOURCES, arg_3_1.activity_id)
+		elseif arg_3_1.cmd == 2 then
+			arg_3_3:updateDataList(arg_3_1.arg1)
+			getProxy(ActivityProxy):updateActivity(arg_3_3)
+		end
 	end
 
 	return arg_3_3

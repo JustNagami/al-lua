@@ -31,7 +31,8 @@ function var_0_0.InitBtns(arg_2_0)
 		MainActDreamlandBtn.New(arg_2_0.actBtnTpl, arg_2_0.event),
 		MainActBoatAdBtn.New(arg_2_0.actBtnTpl, arg_2_0.event),
 		MainActBlackFridaySalesBtn.New(arg_2_0.actBtnTpl, arg_2_0.event),
-		MainActToLoveBtn.New(arg_2_0.actBtnTpl, arg_2_0.event)
+		MainActToLoveBtn.New(arg_2_0.actBtnTpl, arg_2_0.event),
+		MainActHolidayVillaBtn.New(arg_2_0.actBtnTpl, arg_2_0.event)
 	}
 	arg_2_0.specailBtns = {
 		MainActInsBtn.New(arg_2_0._tf, arg_2_0.event),

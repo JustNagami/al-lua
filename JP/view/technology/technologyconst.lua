@@ -419,4 +419,97 @@ function var_0_0.GetShipTypeByGroupID(arg_17_0)
 	return pg.ship_data_group[var_17_0].type
 end
 
+function var_0_0.isNormalActOn()
+	local var_18_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_GUIDE_TASKS)
+	local var_18_1 = var_18_0 and not var_18_0:isEnd()
+	local var_18_2 = false
+	local var_18_3 = false
+
+	if var_18_1 then
+		local var_18_4 = var_18_0:getConfig("config_data")[1]
+		local var_18_5 = getProxy(ChapterProxy):getChapterById(var_18_4)
+
+		var_18_2 = var_18_5 and var_18_5:isClear()
+
+		local var_18_6 = _.flatten(var_18_0:getConfig("config_data")[3])
+		local var_18_7 = getProxy(TaskProxy)
+
+		var_18_3 = _.any(var_18_6, function(arg_19_0)
+			local var_19_0 = var_18_7:getTaskById(arg_19_0)
+
+			return var_19_0 and var_19_0:isFinish() and not var_19_0:isReceive()
+		end)
+	end
+
+	return var_18_1 and var_18_2, var_18_3
+end
+
+function var_0_0.isTecActOn()
+	local var_20_0 = getProxy(PlayerProxy):getRawData()
+
+	if not pg.SystemOpenMgr.GetInstance():isOpenSystem(var_20_0.level, "ShipBluePrintMediator") then
+		return false
+	end
+
+	local var_20_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FRESH_TEC_CATCHUP)
+
+	if not (var_20_1 and not var_20_1:isEnd()) then
+		return false
+	end
+
+	local var_20_2 = var_20_1:getConfig("config_data")[1]
+	local var_20_3 = getProxy(ChapterProxy):getChapterById(var_20_2)
+
+	if not (var_20_3 and var_20_3:isClear()) then
+		return false
+	end
+
+	local var_20_4 = getProxy(TaskProxy)
+
+	if var_20_1.data1 ~= 0 and var_20_1.data2 ~= 0 then
+		local var_20_5 = var_20_1:getConfig("config_data")[3][var_20_1.data1]
+		local var_20_6 = var_20_4:getTaskById(var_20_5[2])
+
+		if var_20_6 and var_20_6:isReceive() and #var_20_1.data1_list + var_20_1.data2 + 1 == #var_20_1:getConfig("config_data")[3] + 1 then
+			return false
+		end
+	end
+
+	local var_20_7 = false
+
+	if var_20_1.data1 == 0 then
+		var_20_7 = true
+	else
+		local var_20_8 = var_20_1:getConfig("config_data")[3][var_20_1.data1]
+
+		var_20_7 = underscore.any({
+			function()
+				return underscore.any(var_20_8[1], function(arg_22_0)
+					local var_22_0 = var_20_4:getTaskVO(arg_22_0)
+
+					return var_22_0 and var_22_0:getTaskStatus() == 1
+				end)
+			end,
+			function()
+				local var_23_0 = var_20_4:getTaskVO(var_20_8[2])
+
+				return var_23_0 and var_23_0:getTaskStatus() == 1
+			end,
+			function()
+				local var_24_0 = var_20_4:getTaskVO(var_20_8[2])
+
+				if var_24_0 and var_24_0:isReceive() then
+					return #var_20_1.data1_list + var_20_1.data2 + 1 < #var_20_1:getConfig("config_data")[3] + 1
+				else
+					return false
+				end
+			end
+		}, function(arg_25_0)
+			return arg_25_0()
+		end)
+	end
+
+	return true, var_20_7
+end
+
 return var_0_0

@@ -26,4 +26,14 @@ function var_0_0.IsTip(arg_4_0)
 	end
 end
 
+function var_0_0.OnInit(arg_5_0)
+	local var_5_0 = arg_5_0:IsUnlock()
+
+	setActive(arg_5_0._tf:Find("name/lock"), not var_5_0)
+end
+
+function var_0_0.IsUnlock(arg_6_0)
+	return pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommanderCatMediator")
+end
+
 return var_0_0

@@ -6,7 +6,7 @@ end
 
 function var_0_0.OnRegister(arg_2_0)
 	arg_2_0.redDot = RedDotNode.New(arg_2_0._tf:Find("tip"), {
-		pg.RedDotMgr.TYPES.ACT_NEWBIE
+		pg.RedDotMgr.TYPES.COMMANDER_MANUAL
 	})
 
 	pg.redDotHelper:AddNode(arg_2_0.redDot)

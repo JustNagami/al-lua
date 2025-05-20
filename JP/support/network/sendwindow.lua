@@ -37,7 +37,7 @@ function var_0_1.Queue(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4, arg_5_5, arg
 			table.remove(arg_5_0.toSends, 1)
 			arg_5_4(arg_6_0)
 
-			if arg_6_0 and arg_6_0.result and arg_6_0.result == 0 then
+			if arg_6_0 and arg_6_0.result and arg_6_0.result == 0 or arg_5_3 == 20012 then
 				var_0_0.SeriesGuideMgr.GetInstance():receiceProtocol(arg_5_3, arg_5_2, arg_6_0)
 			end
 		end,

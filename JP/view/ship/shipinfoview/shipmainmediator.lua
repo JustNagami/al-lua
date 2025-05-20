@@ -552,7 +552,6 @@ function var_0_0.listNotificationInterests(arg_53_0)
 		GAME.MOD_SHIP_DONE,
 		ShipSkinProxy.SHIP_SKINS_UPDATE,
 		ShipUpgradeMediator2.NEXTSHIP,
-		GAME.REMOVE_LAYERS,
 		ShipModMediator.LOADEND,
 		GAME.RENAME_SHIP_DONE,
 		GAME.RECORD_SHIP_EQUIPMENT_DONE,
@@ -658,10 +657,6 @@ function var_0_0.handleNotification(arg_54_0, arg_54_1)
 			arg_54_0:sendNotification(PlayerResUI.CHANGE_TOUCH_ABLE, true)
 			arg_54_0.viewComponent:showAwakenCompleteAni(i18n("upgrade_to_next_maxlevel_succeed", var_54_1.newShip:getMaxLevel()))
 		end)
-	elseif var_54_0 == GAME.REMOVE_LAYERS then
-		if var_54_1.context.mediator == ProposeMediator then
-			arg_54_0.viewComponent:SwitchToDefaultBGM()
-		end
 	elseif var_54_0 == GAME.HIDE_Ship_MAIN_SCENE_WORD then
 		arg_54_0.viewComponent:hideShipWord()
 	elseif var_54_0 == GAME.PROPOSE_SHIP_DONE then

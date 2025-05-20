@@ -19,6 +19,10 @@ local var_0_1 = {
 	{
 		id = "NG004",
 		condition = function()
+			if pg.SeriesGuideMgr.GetInstance():IsNewVersion() then
+				return false
+			end
+
 			local var_4_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_GUIDE_TASKS)
 			local var_4_1 = var_4_0 and not var_4_0:isEnd()
 			local var_4_2 = false
@@ -139,6 +143,10 @@ local var_0_1 = {
 	{
 		id = "NG0037",
 		condition = function()
+			if pg.SeriesGuideMgr.GetInstance():IsNewVersion() then
+				return false
+			end
+
 			return NewServerCarnivalScene.isShow()
 		end,
 		args = function()

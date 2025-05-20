@@ -15,7 +15,7 @@
 				"onUpdate"
 			},
 			arg_list = {
-				time = 40,
+				time = 20,
 				target = "TargetSelf",
 				skill_id = 7000
 			}
@@ -28,7 +28,7 @@
 			arg_list = {
 				buff_id = 7027,
 				target = "TargetSelf",
-				time = 40
+				time = 20
 			}
 		}
 	}

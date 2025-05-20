@@ -47,8 +47,21 @@ function var_0_0.OnClick(arg_6_0)
 	arg_6_0:emit(NavalAcademyMediator.ON_OPEN_CLASSROOM)
 end
 
-function var_0_0.GetResField(arg_7_0)
-	return arg_7_0.parent.classResField
+function var_0_0.OnInit(arg_7_0)
+	var_0_0.super.OnInit(arg_7_0)
+
+	local var_7_0 = arg_7_0:IsUnlock()
+
+	setActive(arg_7_0._tf:Find("name/level"), var_7_0)
+	setActive(arg_7_0._tf:Find("name/lock"), not var_7_0)
+end
+
+function var_0_0.IsUnlock(arg_8_0)
+	return pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "ClassMediator")
+end
+
+function var_0_0.GetResField(arg_9_0)
+	return arg_9_0.parent.classResField
 end
 
 return var_0_0

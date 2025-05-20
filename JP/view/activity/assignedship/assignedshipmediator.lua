@@ -24,7 +24,7 @@ function var_0_0.handleNotification(arg_4_0, arg_4_1)
 	local var_4_1 = arg_4_1:getBody()
 
 	if var_4_0 == GAME.USE_ITEM_DONE then
-		arg_4_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_4_1, function()
+		arg_4_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_4_1.drops, function()
 			triggerButton(arg_4_0.viewComponent.backBtn)
 		end)
 	end

@@ -69,7 +69,8 @@ function var_0_0.listNotificationInterests(arg_10_0)
 	return {
 		GAME.ACT_INSTAGRAM_OP_DONE,
 		var_0_0.CLOSE_DETAIL,
-		var_0_0.BACK_PRESSED
+		var_0_0.BACK_PRESSED,
+		MusicPlayer.NO_PLAY_MUSIC_NOTIFICATION
 	}
 end
 
@@ -106,6 +107,10 @@ function var_0_0.handleNotification(arg_11_0, arg_11_1)
 		arg_11_0.viewComponent:CloseDetail()
 	elseif var_11_0 == var_0_0.BACK_PRESSED then
 		arg_11_0.viewComponent:onBackPressed()
+	elseif var_11_0 == MusicPlayer.NO_PLAY_MUSIC_NOTIFICATION then
+		onNextTick(function()
+			arg_11_0.viewComponent:FlushMusicPlayer()
+		end)
 	end
 end
 

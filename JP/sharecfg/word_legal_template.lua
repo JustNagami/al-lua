@@ -89,6 +89,22 @@ function temp()
 					}
 				}
 			}
+		},
+		立 = {
+			尼 = {
+				达 = {
+					this = true
+				}
+			}
+		},
+		拉 = {
+			法 = {
+				尔 = {
+					加 = {
+						this = true
+					}
+				}
+			}
 		}
 	}
 end
@@ -446,7 +462,20 @@ function temp()
 			リ = {
 				ア = {
 					ス = {
-						this = true
+						this = true,
+						["("] = {
+							M = {
+								E = {
+									T = {
+										A = {
+											[")"] = {
+												this = true
+											}
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 			},
@@ -529,6 +558,15 @@ function temp()
 				ン = {
 					ト = {
 						this = true
+					}
+				}
+			},
+			オ = {
+				パ = {
+					ト = {
+						ラ = {
+							this = true
+						}
 					}
 				}
 			},
@@ -1720,6 +1758,11 @@ function temp()
 			}
 		},
 		イ = {
+			オ = {
+				ン = {
+					this = true
+				}
+			},
 			プ = {
 				ツ = {
 					ィ = {
@@ -5415,11 +5458,115 @@ end
 temp()
 
 function temp()
+	var_0_1.ギ = {
+		ャ = {
+			ラ = {
+				ン = {
+					ト = {
+						this = true
+					}
+				}
+			}
+		},
+		シ = {
+			ャ = {
+				ン = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.ヌ = {
 		ビ = {
 			ア = {
 				ン = {
 					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.ト = {
+		ラ = {
+			フ = {
+				ァ = {
+					ル = {
+						ガ = {
+							ー = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		リ = {
+			ニ = {
+				ダ = {
+					ー = {
+						ド = {
+							this = true
+						}
+					}
+				}
+			},
+			エ = {
+				ス = {
+					テ = {
+						this = true
+					}
+				}
+			},
+			チ = {
+				ェ = {
+					リ = {
+						this = true
+					}
+				}
+			}
+		},
+		レ = {
+			ン = {
+				ト = {
+					this = true,
+					["("] = {
+						M = {
+							E = {
+								T = {
+									A = {
+										[")"] = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.萤 = {
+		火 = {
+			虫 = {
+				["."] = {
+					改 = {
+						this = true
+					}
 				}
 			}
 		}
@@ -6961,6 +7108,17 @@ function temp()
 		},
 		吹 = {
 			this = true
+		},
+		丽 = {
+			莎 = {
+				白 = {
+					女 = {
+						王 = {
+							this = true
+						}
+					}
+				}
+			}
 		}
 	}
 end
@@ -7710,49 +7868,6 @@ end
 temp()
 
 function temp()
-	var_0_1.ト = {
-		レ = {
-			ン = {
-				ト = {
-					this = true,
-					["("] = {
-						M = {
-							E = {
-								T = {
-									A = {
-										[")"] = {
-											this = true
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		},
-		リ = {
-			エ = {
-				ス = {
-					テ = {
-						this = true
-					}
-				}
-			},
-			チ = {
-				ェ = {
-					リ = {
-						this = true
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var_0_1.ゴ = {
 		リ = {
 			ツ = {
@@ -7803,20 +7918,6 @@ function temp()
 		ジ = {
 			ナ = {
 				this = true
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.ギ = {
-		シ = {
-			ャ = {
-				ン = {
-					this = true
-				}
 			}
 		}
 	}
@@ -7993,6 +8094,84 @@ function temp()
 	var_0_1.喀 = {
 		山 = {
 			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.勇 = {
+		气 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.克 = {
+		利 = {
+			奥 = {
+				佩 = {
+					特 = {
+						拉 = {
+							this = true
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.狮 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.声 = {
+		望 = {
+			· = {
+				M = {
+					E = {
+						T = {
+							A = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.反 = {
+		击 = {
+			· = {
+				M = {
+					E = {
+						T = {
+							A = {
+								this = true
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 end

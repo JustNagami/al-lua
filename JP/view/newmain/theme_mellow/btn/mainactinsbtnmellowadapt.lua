@@ -23,6 +23,11 @@ function var_0_0.OnInit(arg_2_0)
 
 		arg_2_0._tf.localEulerAngles = Vector3.zero
 	end
+
+	local var_2_2 = getProxy(AppreciateProxy):CanPlayMainMusicPlayer()
+
+	setActive(arg_2_0._tf:Find("base"), not var_2_2)
+	setActive(arg_2_0._tf:Find("music"), var_2_2)
 end
 
 function var_0_0.AddTimer(arg_3_0)

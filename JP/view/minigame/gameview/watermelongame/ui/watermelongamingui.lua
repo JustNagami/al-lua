@@ -8,7 +8,36 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0.btnBack = findTF(arg_1_0._gameUI, "back")
 	arg_1_0.btnPause = findTF(arg_1_0._gameUI, "pause")
 	arg_1_0.gameTime = findTF(arg_1_0._gameUI, "time")
+	arg_1_0.touchUI = findTF(arg_1_0._gameUI, "touch")
+	arg_1_0.touchEvent = GetComponent(arg_1_0.touchUI, typeof(EventTriggerListener))
+	arg_1_0.uiCam = GameObject.Find("UICamera"):GetComponent("Camera")
 
+	arg_1_0.touchEvent:AddPointDownFunc(function(arg_2_0, arg_2_1)
+		local var_2_0 = arg_1_0.uiCam:ScreenToWorldPoint(arg_2_1.position)
+
+		arg_1_0._event:emit(WatermelonGameEvent.CLICK_MOVE, {
+			pos = var_2_0,
+			callback = function(arg_3_0)
+				arg_1_0.startDrag = arg_3_0
+			end
+		})
+	end)
+	arg_1_0.touchEvent:AddPointUpFunc(function(arg_4_0, arg_4_1)
+		local var_4_0 = arg_1_0.uiCam:ScreenToWorldPoint(arg_4_1.position)
+
+		if arg_1_0.startDrag then
+			arg_1_0._event:emit(WatermelonGameEvent.CLICK_DOWN, var_4_0)
+		end
+	end)
+	arg_1_0.touchEvent:AddDragFunc(function(arg_5_0, arg_5_1)
+		if arg_1_0.startDrag then
+			local var_5_0 = arg_1_0.uiCam:ScreenToWorldPoint(arg_5_1.position)
+
+			arg_1_0._event:emit(WatermelonGameEvent.CLICK_MOVE, {
+				pos = var_5_0
+			})
+		end
+	end)
 	onButton(arg_1_0._event, arg_1_0.btnBack, function()
 		if not arg_1_0._gameVo.startSettlement then
 			arg_1_0._event:emit(WatermelonGameEvent.PAUSE_GAME, true)
@@ -25,7 +54,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0.direct = Vector2(0, 0)
 	arg_1_0.joyStick = MiniGameJoyStick.New(findTF(arg_1_0._gameUI, "joyStick"))
 
-	arg_1_0.joyStick:setActiveCallback(function(arg_4_0)
+	arg_1_0.joyStick:setActiveCallback(function(arg_8_0)
 		return
 	end)
 
@@ -34,78 +63,74 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	onButton(arg_1_0._event, arg_1_0.btnDown, function()
 		arg_1_0._event:emit(WatermelonGameEvent.CLICK_DOWN)
 	end, SFX_CONFIRM)
+
+	arg_1_0.scoreHigh = findTF(arg_1_0._gameUI, "score/high")
+	arg_1_0.scoreCurrent = findTF(arg_1_0._gameUI, "score/current")
+	arg_1_0.nextBall = findTF(arg_1_0._gameUI, "next/ball")
 end
 
-function var_0_0.show(arg_6_0, arg_6_1)
-	setActive(arg_6_0._gameUI, arg_6_1)
+function var_0_0.show(arg_10_0, arg_10_1)
+	setActive(arg_10_0._gameUI, arg_10_1)
 end
 
-function var_0_0.update(arg_7_0)
+function var_0_0.update(arg_11_0)
 	return
 end
 
-function var_0_0.start(arg_8_0)
-	arg_8_0.subGameStepTime = 0
+function var_0_0.start(arg_12_0)
+	arg_12_0.subGameStepTime = 0
 
-	arg_8_0:show(true)
+	arg_12_0:show(true)
+
+	local var_12_0 = getProxy(MiniGameProxy):GetHighScore(arg_12_0._gameVo.gameId)
+	local var_12_1 = var_12_0 and #var_12_0 > 0 and var_12_0[1] or 0
+
+	setText(arg_12_0.scoreHigh, var_12_1)
+	setText(arg_12_0.scoreCurrent, 0)
+	arg_12_0:setChildVisible(arg_12_0.nextBall, false)
 end
 
-function var_0_0.addScore(arg_9_0, arg_9_1)
-	return
+function var_0_0.addScore(arg_13_0, arg_13_1)
+	setText(arg_13_0.scoreCurrent, arg_13_0._gameVo.scoreNum)
 end
 
-function var_0_0.step(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_0._gameVo.gameTime
+function var_0_0.step(arg_14_0, arg_14_1)
+	local var_14_0 = arg_14_0._gameVo.gameTime
 
-	setText(arg_10_0.gameTime, math.floor(var_10_0))
-	arg_10_0.joyStick:step()
-	arg_10_0.joyStick:setDirectTarget(arg_10_0.direct)
-	arg_10_0._gameVo:setJoyStickData(arg_10_0.joyStick:getValue())
+	setText(arg_14_0.gameTime, math.floor(var_14_0))
+	arg_14_0.joyStick:step()
+	arg_14_0.joyStick:setDirectTarget(arg_14_0.direct)
+	arg_14_0._gameVo:setJoyStickData(arg_14_0.joyStick:getValue())
 end
 
-function var_0_0.press(arg_11_0, arg_11_1, arg_11_2)
-	if arg_11_1 == KeyCode.W then
-		if arg_11_2 then
-			arg_11_0.direct.y = 1
-		elseif arg_11_0.direct.y == 1 then
-			arg_11_0.direct.y = 0
-		end
-	elseif arg_11_1 == KeyCode.S then
-		if arg_11_2 then
-			arg_11_0.direct.y = -1
-		elseif arg_11_0.direct.y == -1 then
-			arg_11_0.direct.y = 0
-		end
-	elseif arg_11_1 == KeyCode.A then
-		if arg_11_2 then
-			arg_11_0.direct.x = -1
-		elseif arg_11_0.direct.x == -1 then
-			arg_11_0.direct.x = 0
-		end
-	elseif arg_11_1 == KeyCode.D then
-		if arg_11_2 then
-			arg_11_0.direct.x = 1
-		elseif arg_11_0.direct.x == 1 then
-			arg_11_0.direct.x = 0
-		end
+function var_0_0.updateBallId(arg_15_0, arg_15_1)
+	arg_15_0:setChildVisible(arg_15_0.nextBall, false)
+	setActive(findTF(arg_15_0.nextBall, arg_15_1), true)
+end
+
+function var_0_0.setChildVisible(arg_16_0, arg_16_1, arg_16_2)
+	for iter_16_0 = 1, arg_16_1.childCount do
+		local var_16_0 = arg_16_1:GetChild(iter_16_0 - 1)
+
+		setActive(var_16_0, arg_16_2)
 	end
 end
 
-function var_0_0.press(arg_12_0, arg_12_1, arg_12_2)
-	if arg_12_1 == KeyCode.A then
-		if arg_12_2 then
-			arg_12_0.direct.x = -1
-		elseif arg_12_0.direct.x == -1 then
-			arg_12_0.direct.x = 0
+function var_0_0.press(arg_17_0, arg_17_1, arg_17_2)
+	if arg_17_1 == KeyCode.A then
+		if arg_17_2 then
+			arg_17_0.direct.x = -1
+		elseif arg_17_0.direct.x == -1 then
+			arg_17_0.direct.x = 0
 		end
-	elseif arg_12_1 == KeyCode.D then
-		if arg_12_2 then
-			arg_12_0.direct.x = 1
-		elseif arg_12_0.direct.x == 1 then
-			arg_12_0.direct.x = 0
+	elseif arg_17_1 == KeyCode.D then
+		if arg_17_2 then
+			arg_17_0.direct.x = 1
+		elseif arg_17_0.direct.x == 1 then
+			arg_17_0.direct.x = 0
 		end
-	elseif arg_12_1 == KeyCode.J then
-		arg_12_0._event:emit(WatermelonGameEvent.CLICK_DOWN)
+	elseif arg_17_1 == KeyCode.J then
+		arg_17_0._event:emit(WatermelonGameEvent.CLICK_DOWN)
 	end
 end
 

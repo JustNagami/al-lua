@@ -172,6 +172,8 @@ pg.furniture_data_template = setmetatable({
 			300,
 			301,
 			302,
+			303,
+			304,
 			100002,
 			100003,
 			100004,
@@ -3394,6 +3396,26 @@ pg.furniture_data_template = setmetatable({
 			321116,
 			321117,
 			321118
+		},
+		[122] = {
+			322001,
+			322002,
+			322101,
+			322102,
+			322103,
+			322104,
+			322105,
+			322106,
+			322107,
+			322108,
+			322109,
+			322110,
+			322111,
+			322112,
+			322113,
+			322114,
+			322115,
+			322116
 		}
 	},
 	get_id_list_by_tag = {
@@ -3640,7 +3662,9 @@ pg.furniture_data_template = setmetatable({
 			293,
 			295,
 			296,
-			302
+			302,
+			303,
+			304
 		},
 		[7] = {
 			223,
@@ -3840,7 +3864,8 @@ pg.furniture_data_template = setmetatable({
 			318305,
 			319117,
 			320115,
-			321114
+			321114,
+			322116
 		},
 		[4] = {
 			1001,
@@ -3948,7 +3973,8 @@ pg.furniture_data_template = setmetatable({
 			318001,
 			319001,
 			320001,
-			321001
+			321001,
+			322001
 		},
 		[3] = {
 			1002,
@@ -4057,7 +4083,8 @@ pg.furniture_data_template = setmetatable({
 			318002,
 			319002,
 			320002,
-			321002
+			321002,
+			322002
 		},
 		{
 			1101,
@@ -6060,7 +6087,22 @@ pg.furniture_data_template = setmetatable({
 			321115,
 			321116,
 			321117,
-			321118
+			321118,
+			322101,
+			322102,
+			322103,
+			322104,
+			322105,
+			322106,
+			322107,
+			322108,
+			322109,
+			322110,
+			322111,
+			322112,
+			322113,
+			322114,
+			322115
 		},
 		{
 			1108,
@@ -6739,6 +6781,8 @@ pg.furniture_data_template = setmetatable({
 			300,
 			301,
 			302,
+			303,
+			304,
 			100002,
 			100004,
 			100005,
@@ -8791,7 +8835,23 @@ pg.furniture_data_template = setmetatable({
 			321113,
 			321114,
 			321117,
-			321118
+			321118,
+			322101,
+			322102,
+			322103,
+			322104,
+			322105,
+			322106,
+			322107,
+			322108,
+			322109,
+			322110,
+			322111,
+			322112,
+			322113,
+			322114,
+			322115,
+			322116
 		},
 		[11] = {
 			143,
@@ -9341,7 +9401,8 @@ pg.furniture_data_template = setmetatable({
 			318001,
 			319001,
 			320001,
-			321001
+			321001,
+			322001
 		},
 		{
 			1002,
@@ -9450,7 +9511,8 @@ pg.furniture_data_template = setmetatable({
 			318002,
 			319002,
 			320002,
-			321002
+			321002,
+			322002
 		},
 		[5] = {
 			1101,
@@ -9972,6 +10034,8 @@ pg.furniture_data_template = setmetatable({
 		300,
 		301,
 		302,
+		303,
+		304,
 		100002,
 		100003,
 		100004,
@@ -12977,7 +13041,25 @@ pg.furniture_data_template = setmetatable({
 		321115,
 		321116,
 		321117,
-		321118
+		321118,
+		322001,
+		322002,
+		322101,
+		322102,
+		322103,
+		322104,
+		322105,
+		322106,
+		322107,
+		322108,
+		322109,
+		322110,
+		322111,
+		322112,
+		322113,
+		322114,
+		322115,
+		322116
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -21347,6 +21429,80 @@ pg.base.furniture_data_template = {
 		size = {
 			2,
 			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		interAction_group = {}
+	},
+	[303] = {
+		spine_extra = "",
+		describe = "エネルギー充填状態の「薔薇の塔」を模したミニチュア。電気回路が内蔵されており、フロアランプとしても使用できる",
+		gain_by = "高い塔の薔薇",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 5,
+		is_get_time_note = 1,
+		themeId = 0,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 8,
+		icon = "shixunzhangicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "薔薇の塔ミニチュア",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "chuanmo/shixunzhang",
+		canputon = 0,
+		id = 303,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		interAction_group = {}
+	},
+	[304] = {
+		spine_extra = "",
+		describe = "「共に再建し、一緒にバカンスを」というテーマで作られた像。特別なリゾートバカンスを記念して",
+		gain_by = "盛夏再び！リゾート再建計画！",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 5,
+		is_get_time_note = 1,
+		themeId = 0,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 8,
+		icon = "sanjiujiuxunzhangicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "リゾート再建彫像",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "chuanmo/sanjiujiuxunzhang",
+		canputon = 0,
+		id = 304,
+		can_rotate = 0,
+		size = {
+			2,
+			4
 		},
 		offset = {},
 		canputonGrid = {},
@@ -155739,6 +155895,913 @@ pg.base.furniture_data_template = {
 		canputonGrid = {},
 		can_trigger = {
 			0
+		},
+		interAction_group = {}
+	},
+	[322001] = {
+		spine_extra = "",
+		describe = "砂浜に白波、シーサイドバーケーションをのんびりと楽しもう！",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 122,
+		belong = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		deblocking = 1,
+		level = 1,
+		name = "シーサイド床",
+		effect = "",
+		advice = 0,
+		icon = "dibanhb2icon",
+		spine_action_replace = "",
+		picture = "hb2/dibanhb2",
+		comfortable = 4,
+		canputon = 0,
+		id = 322001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[322002] = {
+		spine_extra = "",
+		describe = "砂浜に白波、シーサイドバーケーションをのんびりと楽しもう！",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		themeId = 122,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		deblocking = 1,
+		level = 5,
+		name = "シーサイド壁",
+		effect = "",
+		advice = 0,
+		icon = "qiangbihb2icon",
+		spine_action_replace = "",
+		picture = "",
+		comfortable = 4,
+		canputon = 0,
+		id = 322002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbihb2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[322101] = {
+		spine_extra = "",
+		describe = "シーサイド名物の海小屋。シンプルで楽しいバケーションライフ",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 122,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "xiaowuhb2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "海小屋",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 322101,
+		can_rotate = 0,
+		size = {
+			9,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"xiaowuhb2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[322102] = {
+		spine_extra = "",
+		describe = "シーサイド名物のダブルチェア。二人でのんびりジュースなどを楽しもう",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 122,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "shuangrenyihb2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "シーサイドダブルチェア",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "hb2/shuangrenyihb2",
+		canputon = 0,
+		id = 322102,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-76,
+					10
+				},
+				{
+					1,
+					1
+				},
+				"hb2/shuangrenyihb2_using"
+			},
+			{
+				"sit",
+				{
+					49,
+					12
+				},
+				{
+					-1,
+					1
+				},
+				"hb2/shuangrenyihb2_using"
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[322103] = {
+		spine_extra = "",
+		describe = "日差し、白波、ゆらゆらハンモック――のんびりとした時間がここにはある",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 122,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "tangyihb2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "シーサイドハンモック",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "hb2/tangyihb2",
+		canputon = 0,
+		id = 322103,
+		can_rotate = 0,
+		size = {
+			2,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					32,
+					5
+				},
+				{
+					1,
+					1
+				},
+				"hb2/tangyihb2_using"
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[322104] = {
+		spine_extra = "",
+		describe = "小さなタコテーブル。ココナッツなどを置いたりしてバカンスの風情を味わおう",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 122,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "xiaozhuozihb2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "タコテーブル",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "hb2/xiaozhuozihb2",
+		canputon = 0,
+		id = 322104,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[322105] = {
+		spine_extra = "",
+		describe = "波を抱きしめるピョー！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 122,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "yongquanjiuhb2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "海員饅頭",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "hb2/yongquanjiuhb2",
+		canputon = 0,
+		id = 322105,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[322106] = {
+		spine_extra = "",
+		describe = "日差しを遮ってくれる避暑地。バカンスでの最高の居心地を約束してくれる",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "シーサイド涼亭",
+		themeId = 122,
+		icon = "liangtinghb2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 322106,
+		can_rotate = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"liangtinghb2B",
+				"normal"
+			},
+			{
+				"liangtinghb2T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[322107] = {
+		spine_extra = "",
+		describe = "シーサイド名物のパラソル。日陰の涼しさで、バカンスにゆったりとした時間を",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 122,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "zheyangsanhb2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "シーサイドパラソル",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 322107,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zheyangsanhb2",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[322108] = {
+		spine_extra = "",
+		describe = "シーサイド名物のタコカーペット。見た目に反して、歩いても全然滑らない！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 122,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "didianhb2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "タコカーペット",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "hb2/didianhb2",
+		canputon = 0,
+		id = 322108,
+		can_rotate = 0,
+		size = {
+			4,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[322109] = {
+		spine_extra = "",
+		describe = "クールなシーサイドプール。海風と水の輝きが織り成すパッションライフ",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "シーサイドプール",
+		themeId = 122,
+		icon = "yongchihb2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 322109,
+		can_rotate = 0,
+		size = {
+			9,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yongchihb2B",
+				"normal"
+			},
+			{
+				"yongchihb2T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"wash"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[322110] = {
+		spine_extra = "",
+		describe = "謎のさざなみ。その中に潜むものは一体…！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 122,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "lianyihb2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "謎のさざなみ",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 322110,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"lianyihb2",
+				"normal",
+				{
+					"action1",
+					false,
+					{
+						"action2",
+						"action3"
+					}
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[322111] = {
+		spine_extra = "",
+		describe = "潮風に吹かれながら、ゆりかごの中で眠りに落ちる",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "ハンギングチェア",
+		themeId = 122,
+		icon = "diaoyihb2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 322111,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"diaoyihb2B",
+				"normal"
+			},
+			{
+				"diaoyihb2T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[322112] = {
+		spine_extra = "",
+		describe = "生き生きとした緑の盆栽。自然の生命力を海辺の風景に飾る",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 122,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "penzaihb2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "緑の盆栽",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "hb2/penzaihb2",
+		canputon = 0,
+		id = 322112,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[322113] = {
+		spine_extra = "",
+		describe = "ピピピー！ ここは満杯だ……泊まることは……… できねーぜ………",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 122,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "gangkouhb2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "シーサイト桟橋",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "hb2/gangkouhb2",
+		canputon = 0,
+		id = 322113,
+		can_rotate = 0,
+		size = {
+			2,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[322114] = {
+		spine_extra = "",
+		describe = "海に入る際に使われる便利ハシゴ。使い終わったら元の場所に戻してね！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 122,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "futihb2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "便利ハシゴ",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "hb2/futihb2",
+		canputon = 0,
+		id = 322114,
+		can_rotate = 0,
+		size = {
+			1,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[322115] = {
+		spine_extra = "",
+		describe = "新鮮なココナッツでもいかが？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 122,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "yezishuhb2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "ココナッツツリー",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 322115,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yezishuhb2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[322116] = {
+		spine_extra = "",
+		describe = "シーサイド名物の滑り台。楽しさと面白さがまさにパーフェクト",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "シーサイド滑り台",
+		themeId = 122,
+		icon = "huatihb2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 322116,
+		can_rotate = 0,
+		size = {
+			13,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"huatihb2B",
+				"normal"
+			},
+			{
+				"huatihb2T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit",
+						1,
+						"sit"
+					},
+					{
+						"dance1",
+						nil,
+						"sit"
+					},
+					{
+						"dance2",
+						1,
+						"dance"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{
+				{
+					15,
+					176
+				},
+				{
+					405,
+					300
+				},
+				"hb2/huatihb2_mask"
+			},
+			{
+				-21.5,
+				-160.5
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
 		},
 		interAction_group = {}
 	}

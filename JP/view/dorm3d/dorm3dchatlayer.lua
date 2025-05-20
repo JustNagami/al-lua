@@ -300,7 +300,7 @@ function var_0_0.UpdateMessageList(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4)
 							end)
 							setActive(arg_11_2:Find("charaMessageCard/voiceBox/play/pause"), true)
 						elseif arg_8_0.playbackInfos[var_11_0.id].playback:IsPaused() then
-							arg_8_0.playbackInfos[var_11_0.id].playback:Resume(CriAtomEx.ResumeMode.PausedPlayback)
+							arg_8_0.playbackInfos[var_11_0.id].playback:Resume(CriWare.CriAtomEx.ResumeMode.PausedPlayback)
 							setActive(arg_11_2:Find("charaMessageCard/voiceBox/play/pause"), true)
 						else
 							arg_8_0.playbackInfos[var_11_0.id].playback:Pause()

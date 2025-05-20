@@ -710,7 +710,8 @@ function var_0_10.generateAttachBuffList(arg_83_0)
 			buff_id = iter_83_1.buff_id,
 			level = iter_83_1.buff_level,
 			rant = iter_83_1.rant,
-			hit_ignore = iter_83_1.hit_ignore
+			hit_ignore = iter_83_1.hit_ignore,
+			group_level = iter_83_1.group_level
 		}
 
 		table.insert(var_83_0, var_83_2)
@@ -866,78 +867,87 @@ function var_0_10.InitSpeed(arg_104_0, arg_104_1)
 	end
 end
 
-function var_0_10.calcSpeed(arg_105_0)
-	local var_105_0 = 1 + var_0_0.Battle.BattleAttr.GetCurrent(arg_105_0, "bulletSpeedRatio")
-	local var_105_1 = arg_105_0._velocity * var_105_0
-	local var_105_2 = var_0_2.ConvertBulletSpeed(var_105_1)
-	local var_105_3 = math.deg2Rad * arg_105_0._yAngle
-
-	arg_105_0._speed = Vector3(var_105_2 * math.cos(var_105_3), 0, var_105_2 * math.sin(var_105_3))
+function var_0_10.InheritSpeed(arg_105_0, arg_105_1)
+	arg_105_0._speed = Vector3(arg_105_1.x, arg_105_1.y, arg_105_1.z)
+	arg_105_0._speedInited = true
 end
 
-function var_0_10.updateBarrageTransform(arg_106_0, arg_106_1)
-	if not arg_106_0._barrageTransData or #arg_106_0._barrageTransData == 0 then
+function var_0_10.calcSpeed(arg_106_0)
+	if arg_106_0._speedInited then
 		return
 	end
 
-	local var_106_0 = arg_106_1 - arg_106_0._timeStamp
-	local var_106_1 = arg_106_0._barrageTransData[1]
+	local var_106_0 = 1 + var_0_0.Battle.BattleAttr.GetCurrent(arg_106_0, "bulletSpeedRatio")
+	local var_106_1 = arg_106_0._velocity * var_106_0
+	local var_106_2 = var_0_2.ConvertBulletSpeed(var_106_1)
+	local var_106_3 = math.deg2Rad * arg_106_0._yAngle
 
-	if var_106_0 >= var_106_1.transStartDelay then
-		if var_106_1.transAimAngle then
-			arg_106_0._yAngle = var_106_1.transAimAngle
+	arg_106_0._speed = Vector3(var_106_2 * math.cos(var_106_3), 0, var_106_2 * math.sin(var_106_3))
+end
+
+function var_0_10.updateBarrageTransform(arg_107_0, arg_107_1)
+	if not arg_107_0._barrageTransData or #arg_107_0._barrageTransData == 0 then
+		return
+	end
+
+	local var_107_0 = arg_107_1 - arg_107_0._timeStamp
+	local var_107_1 = arg_107_0._barrageTransData[1]
+
+	if var_107_0 >= var_107_1.transStartDelay then
+		if var_107_1.transAimAngle then
+			arg_107_0._yAngle = var_107_1.transAimAngle
 		else
-			arg_106_0._yAngle = math.rad2Deg * math.atan2(var_106_1.transAimPosZ - arg_106_0._position.z, var_106_1.transAimPosX - arg_106_0._position.x)
+			arg_107_0._yAngle = math.rad2Deg * math.atan2(var_107_1.transAimPosZ - arg_107_0._position.z, var_107_1.transAimPosX - arg_107_0._position.x)
 		end
 
-		arg_106_0:calcSpeed()
-		table.remove(arg_106_0._barrageTransData, 1)
+		arg_107_0:calcSpeed()
+		table.remove(arg_107_0._barrageTransData, 1)
 
-		local var_106_2 = arg_106_0._barrageTransData[1]
+		local var_107_2 = arg_107_0._barrageTransData[1]
 
-		if var_106_2 then
-			var_106_2.transStartDelay = var_106_2.transStartDelay + var_106_1.transStartDelay
+		if var_107_2 then
+			var_107_2.transStartDelay = var_107_2.transStartDelay + var_107_1.transStartDelay
 		end
 	end
 end
 
-function var_0_10.GetCurrentDistance(arg_107_0)
-	return Vector3.Distance(arg_107_0._spawnPos, arg_107_0._position)
+function var_0_10.GetCurrentDistance(arg_108_0)
+	return Vector3.Distance(arg_108_0._spawnPos, arg_108_0._position)
 end
 
-function var_0_10.SetOutRangeCallback(arg_108_0, arg_108_1)
-	arg_108_0._outRangeFunc = arg_108_1
+function var_0_10.SetOutRangeCallback(arg_109_0, arg_109_1)
+	arg_109_0._outRangeFunc = arg_109_1
 end
 
-function var_0_10.OutRange(arg_109_0)
-	arg_109_0:DispatchEvent(var_0_0.Event.New(var_0_1.OUT_RANGE, {}))
-	arg_109_0._outRangeFunc(arg_109_0)
+function var_0_10.OutRange(arg_110_0)
+	arg_110_0:DispatchEvent(var_0_0.Event.New(var_0_1.OUT_RANGE, {}))
+	arg_110_0._outRangeFunc(arg_110_0)
 end
 
-function var_0_10.FixRange(arg_110_0, arg_110_1, arg_110_2)
-	arg_110_1 = arg_110_1 or arg_110_0._tempData.range
-	arg_110_2 = arg_110_2 or 0
+function var_0_10.FixRange(arg_111_0, arg_111_1, arg_111_2)
+	arg_111_1 = arg_111_1 or arg_111_0._tempData.range
+	arg_111_2 = arg_111_2 or 0
 
-	local var_110_0 = arg_110_0._tempData.range_offset
+	local var_111_0 = arg_111_0._tempData.range_offset
 
-	if var_110_0 == 0 then
-		arg_110_0._range = arg_110_1
+	if var_111_0 == 0 then
+		arg_111_0._range = arg_111_1
 	else
-		arg_110_0._range = arg_110_1 + var_110_0 * (math.random() - 0.5)
+		arg_111_0._range = arg_111_1 + var_111_0 * (math.random() - 0.5)
 	end
 
-	arg_110_0._range = math.max(0, arg_110_0._range + arg_110_2)
-	arg_110_0._sqrRange = arg_110_0._range * arg_110_0._range
+	arg_111_0._range = math.max(0, arg_111_0._range + arg_111_2)
+	arg_111_0._sqrRange = arg_111_0._range * arg_111_0._range
 end
 
-function var_0_10.ImmuneBombCLS(arg_111_0)
-	return arg_111_0:GetTemplate().extra_param.ignoreB
+function var_0_10.ImmuneBombCLS(arg_112_0)
+	return arg_112_0:GetTemplate().extra_param.ignoreB
 end
 
-function var_0_10.ImmuneCLS(arg_112_0)
-	return arg_112_0._immuneCLS
+function var_0_10.ImmuneCLS(arg_113_0)
+	return arg_113_0._immuneCLS
 end
 
-function var_0_10.SetImmuneCLS(arg_113_0, arg_113_1)
-	arg_113_0._immuneCLS = arg_113_1
+function var_0_10.SetImmuneCLS(arg_114_0, arg_114_1)
+	arg_114_0._immuneCLS = arg_114_1
 end

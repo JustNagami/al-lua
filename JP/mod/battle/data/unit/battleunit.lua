@@ -198,10 +198,6 @@ function var_0_9.HandleDamageToDeath(arg_21_0)
 end
 
 function var_0_9.UpdateHP(arg_22_0, arg_22_1, arg_22_2)
-	if not arg_22_0:IsAlive() then
-		return 0
-	end
-
 	local var_22_0 = arg_22_0:IsAlive()
 
 	if not var_22_0 then
@@ -217,96 +213,105 @@ function var_0_9.UpdateHP(arg_22_0, arg_22_1, arg_22_2)
 	local var_22_7 = arg_22_2.font
 	local var_22_8 = arg_22_2.cldPos
 	local var_22_9 = arg_22_2.incorrupt
-	local var_22_10
+	local var_22_10 = arg_22_2.isReflect
+	local var_22_11
+	local var_22_12
 
 	if not var_22_3 then
-		local var_22_11 = {
+		var_22_12 = {
 			damage = -arg_22_1,
 			isShare = var_22_4,
 			miss = var_22_1,
 			cri = var_22_2,
 			damageSrc = arg_22_2.srcID,
 			damageAttr = var_22_5,
-			damageReason = var_22_6
+			damageReason = var_22_6,
+			isReflect = var_22_10
 		}
 
 		if not var_22_4 then
-			arg_22_0:TriggerBuff(var_0_3.BuffEffectType.ON_BEFORE_TAKE_DAMAGE, var_22_11)
+			arg_22_0:TriggerBuff(var_0_3.BuffEffectType.ON_BEFORE_TAKE_DAMAGE, var_22_12)
 
-			if var_22_11.capFlag then
-				arg_22_0:TriggerBuff(var_0_3.BuffEffectType.ON_DAMAGE_FIX, var_22_11)
+			if var_22_12.capFlag then
+				arg_22_0:TriggerBuff(var_0_3.BuffEffectType.ON_DAMAGE_FIX, var_22_12)
 			end
 		end
 
-		var_22_10 = -var_22_11.damage
+		var_22_11 = -var_22_12.damage
 
-		arg_22_0:TriggerBuff(var_0_3.BuffEffectType.ON_TAKE_DAMAGE, var_22_11)
+		arg_22_0:TriggerBuff(var_0_3.BuffEffectType.ON_TAKE_DAMAGE, var_22_12)
 
-		if arg_22_0._currentHP <= var_22_11.damage then
+		if arg_22_0._currentHP <= var_22_12.damage then
 			arg_22_0:TriggerBuff(var_0_3.BuffEffectType.ON_BEFORE_FATAL_DAMAGE, {})
 		end
 
-		arg_22_1 = -var_22_11.damage
+		arg_22_1 = -var_22_12.damage
 
-		if var_22_10 ~= arg_22_1 then
-			({}).absorb = var_22_10 - arg_22_1
+		if var_22_11 ~= arg_22_1 then
+			({}).absorb = var_22_11 - arg_22_1
 
-			arg_22_0:TriggerBuff(var_0_3.BuffEffectType.ON_SHIELD_ABSORB, var_22_11)
+			arg_22_0:TriggerBuff(var_0_3.BuffEffectType.ON_SHIELD_ABSORB, var_22_12)
 		end
 
 		if var_0_6.IsInvincible(arg_22_0) then
 			return 0
 		end
 	else
-		var_22_10 = arg_22_1
+		var_22_11 = arg_22_1
 
-		local var_22_12 = {
+		local var_22_13 = {
 			damage = arg_22_1,
 			isHeal = var_22_3,
 			incorrupt = var_22_9
 		}
 
-		arg_22_0:TriggerBuff(var_0_3.BuffEffectType.ON_TAKE_HEALING, var_22_12)
+		arg_22_0:TriggerBuff(var_0_3.BuffEffectType.ON_TAKE_HEALING, var_22_13)
 
-		var_22_3 = var_22_12.isHeal
-		arg_22_1 = var_22_12.damage
+		var_22_3 = var_22_13.isHeal
+		arg_22_1 = var_22_13.damage
 
-		local var_22_13 = math.max(0, arg_22_0._currentHP + arg_22_1 - arg_22_0:GetMaxHP())
+		local var_22_14 = math.max(0, arg_22_0._currentHP + arg_22_1 - arg_22_0:GetMaxHP())
 
-		if var_22_13 > 0 then
+		if var_22_14 > 0 then
 			arg_22_0:TriggerBuff(var_0_3.BuffEffectType.ON_OVER_HEALING, {
-				overHealing = var_22_13
+				overHealing = var_22_14
 			})
 		end
 	end
 
-	local var_22_14 = math.min(arg_22_0:GetMaxHP(), math.max(0, arg_22_0._currentHP + arg_22_1))
-	local var_22_15 = var_22_14 - arg_22_0._currentHP
+	local var_22_15 = math.min(arg_22_0:GetMaxHP(), math.max(0, arg_22_0._currentHP + arg_22_1))
+	local var_22_16 = var_22_15 - arg_22_0._currentHP
 
-	arg_22_0:SetCurrentHP(var_22_14)
+	arg_22_0:SetCurrentHP(var_22_15)
 
-	local var_22_16 = {
-		preShieldHP = var_22_10,
+	local var_22_17 = {
+		preShieldHP = var_22_11,
 		dHP = arg_22_1,
-		validDHP = var_22_15,
+		validDHP = var_22_16,
 		isMiss = var_22_1,
 		isCri = var_22_2,
 		isHeal = var_22_3,
 		font = var_22_7
 	}
 
-	if var_22_8 and not var_22_8:EqualZero() then
-		local var_22_17 = arg_22_0:GetPosition()
-		local var_22_18 = arg_22_0:GetBoxSize().x
-		local var_22_19 = var_22_17.x - var_22_18
-		local var_22_20 = var_22_17.x + var_22_18
-		local var_22_21 = var_22_8:Clone()
+	if not var_22_3 then
+		var_22_12.validDHP = var_22_16
 
-		var_22_21.x = Mathf.Clamp(var_22_21.x, var_22_19, var_22_20)
-		var_22_16.posOffset = var_22_17 - var_22_21
+		arg_22_0:TriggerBuff(var_0_3.BuffEffectType.ON_DAMAGE_CONCLUDE, var_22_12)
 	end
 
-	arg_22_0:UpdateHPAction(var_22_16)
+	if var_22_8 and not var_22_8:EqualZero() then
+		local var_22_18 = arg_22_0:GetPosition()
+		local var_22_19 = arg_22_0:GetBoxSize().x
+		local var_22_20 = var_22_18.x - var_22_19
+		local var_22_21 = var_22_18.x + var_22_19
+		local var_22_22 = var_22_8:Clone()
+
+		var_22_22.x = Mathf.Clamp(var_22_22.x, var_22_20, var_22_21)
+		var_22_17.posOffset = var_22_18 - var_22_22
+	end
+
+	arg_22_0:UpdateHPAction(var_22_17)
 
 	if not arg_22_0:IsAlive() and var_22_0 then
 		arg_22_0:SetDeathReason(arg_22_2.damageReason)
@@ -318,7 +323,7 @@ function var_0_9.UpdateHP(arg_22_0, arg_22_1, arg_22_2)
 		arg_22_0:TriggerBuff(var_0_3.BuffEffectType.ON_HP_RATIO_UPDATE, {
 			dHP = arg_22_1,
 			unit = arg_22_0,
-			validDHP = var_22_15
+			validDHP = var_22_16
 		})
 	end
 
@@ -1058,19 +1063,21 @@ function var_0_9.AddBuff(arg_134_0, arg_134_1, arg_134_2)
 	local var_134_2 = arg_134_0:GetBuff(var_134_0)
 
 	if var_134_2 then
-		local var_134_3 = var_134_2:GetLv()
-		local var_134_4 = arg_134_1:GetLv()
-
 		if arg_134_2 then
-			local var_134_5 = arg_134_0._buffStockList[var_134_0] or {}
+			local var_134_3 = arg_134_0._buffStockList[var_134_0] or {}
 
-			table.insert(var_134_5, arg_134_1)
+			table.insert(var_134_3, arg_134_1)
 
-			arg_134_0._buffStockList[var_134_0] = var_134_5
+			arg_134_0._buffStockList[var_134_0] = var_134_3
 		else
-			var_134_1.buff_level = math.max(var_134_3, var_134_4)
+			local var_134_4 = var_134_2:GetLv()
+			local var_134_5 = arg_134_1:GetLv()
+			local var_134_6 = var_134_2:GetGroupLevel()
+			local var_134_7 = arg_134_1:GetGroupLevel()
 
-			if var_134_2:IsForceStack() or var_134_4 <= var_134_3 then
+			var_134_1.buff_level = math.max(var_134_4, var_134_5)
+
+			if var_134_2:IsForceStack() or var_134_7 <= var_134_6 then
 				var_134_2:Stack(arg_134_0)
 
 				var_134_1.stack_count = var_134_2:GetStack()

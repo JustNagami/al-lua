@@ -6,7 +6,7 @@ local var_0_4
 
 var_0_0.MAX_SHIP_BAG = 4000
 var_0_0.MAX_EQUIP_BAG = 2000
-var_0_0.MAX_COMMANDER_BAG = 200
+var_0_0.MAX_COMMANDER_BAG = 400
 var_0_0.ASSISTS_TYPE_SHAM = 0
 var_0_0.ASSISTS_TYPE_GUILD = 1
 var_0_0.CHANGE_NAME_KEY = 1
@@ -115,6 +115,7 @@ function var_0_0.Ctor(arg_8_0, arg_8_1)
 	arg_8_0.pvp_win_count = arg_8_1.pvp_win_count or 0
 	arg_8_0.collect_attack_count = arg_8_1.collect_attack_count or 0
 	arg_8_0.guideIndex = arg_8_1.guide_index
+	arg_8_0.newGuideIndex = arg_8_1.new_guide_index
 	arg_8_0.buyOilCount = arg_8_1.buy_oil_count
 	arg_8_0.chatRoomId = arg_8_1.chat_room_id or 1
 	arg_8_0.score = arg_8_1.score or 0
@@ -143,6 +144,9 @@ function var_0_0.Ctor(arg_8_0, arg_8_1)
 		for iter_8_6, iter_8_7 in ipairs(arg_8_1.appreciation.favor_musics or {}) do
 			var_8_1:addMusicIDToLikeList(iter_8_7)
 		end
+
+		var_8_1:setMainPlayMusicAlbum(arg_8_1.appreciation.music_no)
+		var_8_1:setMusicPlayerLoopType(arg_8_1.appreciation.music_mode)
 
 		local var_8_2 = getProxy(AppreciateProxy)
 		local var_8_3 = var_8_2:getResultForVer()
@@ -1055,6 +1059,22 @@ end
 
 function var_0_0.getActivityMedalGroup(arg_105_0)
 	return arg_105_0.activityMedalGroupList
+end
+
+function var_0_0.GetGuideIndex(arg_106_0, arg_106_1)
+	if arg_106_1 then
+		return arg_106_0.newGuideIndex
+	else
+		return arg_106_0.guideIndex
+	end
+end
+
+function var_0_0.UpdateGuideIndex(arg_107_0, arg_107_1, arg_107_2)
+	if arg_107_1 then
+		arg_107_0.newGuideIndex = arg_107_2
+	else
+		arg_107_0.guideIndex = arg_107_2
+	end
 end
 
 return var_0_0

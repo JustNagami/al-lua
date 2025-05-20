@@ -53,15 +53,17 @@ function var_0_3.Update(arg_6_0, arg_6_1)
 end
 
 function var_0_3.DoWhenHit(arg_7_0, arg_7_1)
-	if arg_7_0._doWhenHit == "intercept" then
-		arg_7_1:Intercepted()
-		var_0_0.Battle.BattleDataProxy.GetInstance():RemoveBulletUnit(arg_7_1:GetUniqueID())
+	if not arg_7_1:GetIgnoreShield() then
+		if arg_7_0._doWhenHit == "intercept" then
+			arg_7_1:Intercepted()
+			var_0_0.Battle.BattleDataProxy.GetInstance():RemoveBulletUnit(arg_7_1:GetUniqueID())
 
-		arg_7_0._count = arg_7_0._count - 1
-	elseif arg_7_0._doWhenHit == "reflect" and arg_7_0:GetIFF() ~= arg_7_1:GetIFF() then
-		arg_7_1:Reflected()
+			arg_7_0._count = arg_7_0._count - 1
+		elseif arg_7_0._doWhenHit == "reflect" and arg_7_0:GetIFF() ~= arg_7_1:GetIFF() then
+			arg_7_1:Reflected()
 
-		arg_7_0._count = arg_7_0._count - 1
+			arg_7_0._count = arg_7_0._count - 1
+		end
 	end
 end
 

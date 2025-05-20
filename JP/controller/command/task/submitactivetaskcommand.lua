@@ -154,24 +154,54 @@ local var_0_2 = {
 		1006
 	}
 }
+local var_0_3 = {
+	{
+		6,
+		1007
+	},
+	{
+		16,
+		1007
+	}
+}
 
 function var_0_0.updateTaskBagData(arg_7_0, arg_7_1, arg_7_2)
 	local var_7_0 = pg.task_data_template[arg_7_1]
 	local var_7_1 = tonumber(var_7_0.target_id)
-	local var_7_2 = tonumber(var_7_0.target_id_2)
-	local var_7_3 = var_7_0.target_num
-	local var_7_4 = var_7_0.type
-	local var_7_5 = var_7_0.sub_type
+	local var_7_2 = var_7_0.type
+	local var_7_3 = var_7_0.sub_type
 
 	if pg.activity_drop_type[var_7_1] then
 		for iter_7_0, iter_7_1 in ipairs(var_0_2) do
-			if var_7_4 == iter_7_1[1] and var_7_5 == iter_7_1[2] then
+			if var_7_2 == iter_7_1[1] and var_7_3 == iter_7_1[2] then
+				local var_7_4 = tonumber(var_7_0.target_id_2)
+				local var_7_5 = var_7_0.target_num
 				local var_7_6 = pg.activity_drop_type[var_7_1].activity_id
 				local var_7_7 = getProxy(ActivityProxy):getActivityById(var_7_6)
 
 				if var_7_7 then
-					var_7_7:subVitemNumber(var_7_2, var_7_3)
+					var_7_7:subVitemNumber(var_7_4, var_7_5)
 					getProxy(ActivityProxy):updateActivity(var_7_7)
+				end
+			end
+		end
+
+		for iter_7_2, iter_7_3 in ipairs(var_0_3) do
+			if var_7_2 == iter_7_3[1] and var_7_3 == iter_7_3[2] then
+				local var_7_8 = pg.activity_drop_type[var_7_1].activity_id
+				local var_7_9 = getProxy(ActivityProxy):getActivityById(var_7_8)
+
+				if var_7_9 then
+					local var_7_10 = var_7_0.target_id_2
+
+					for iter_7_4, iter_7_5 in ipairs(var_7_10) do
+						local var_7_11 = iter_7_5[1]
+						local var_7_12 = iter_7_5[2]
+
+						var_7_9:subVitemNumber(var_7_11, var_7_12)
+					end
+
+					getProxy(ActivityProxy):updateActivity(var_7_9)
 				end
 			end
 		end

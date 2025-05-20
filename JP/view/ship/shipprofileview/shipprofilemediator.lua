@@ -3,6 +3,7 @@
 var_0_0.CLICK_ROTATE_BTN = "ShipProfileMediator:CLICK_ROTATE_BTN"
 var_0_0.OPEN_CRYPTOLALIA = "ShipProfileMediator:OPEN_CRYPTOLALIA"
 var_0_0.OPEN_EQUIP_CODE_SHARE = "ShipProfileMediator.OPEN_EQUIP_CODE_SHARE"
+var_0_0.OPEN_PAINTING_SHOW = "ShipProfileMediator.OPEN_PAINTING_SHOW"
 
 function var_0_0.register(arg_1_0)
 	local var_1_0 = getProxy(CollectionProxy)
@@ -78,9 +79,19 @@ function var_0_0.register(arg_1_0)
 			}
 		}))
 	end)
+	arg_1_0:bind(var_0_0.OPEN_PAINTING_SHOW, function(arg_10_0, arg_10_1, arg_10_2)
+		arg_1_0:addSubLayers(Context.New({
+			mediator = PaintingShowMediator,
+			viewComponent = PaintingShowScene,
+			data = {
+				skinId = arg_10_1,
+				callback = arg_10_2
+			}
+		}))
+	end)
 end
 
-function var_0_0.listNotificationInterests(arg_10_0)
+function var_0_0.listNotificationInterests(arg_11_0)
 	return {
 		GAME.FETCH_EVALUATION_DONE,
 		CollectionProxy.GROUP_INFO_UPDATE,
@@ -88,32 +99,32 @@ function var_0_0.listNotificationInterests(arg_10_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_1:getName()
-	local var_11_1 = arg_11_1:getBody()
+function var_0_0.handleNotification(arg_12_0, arg_12_1)
+	local var_12_0 = arg_12_1:getName()
+	local var_12_1 = arg_12_1:getBody()
 
-	if var_11_0 == GAME.FETCH_EVALUATION_DONE then
-		arg_11_0:addSubLayers(Context.New({
+	if var_12_0 == GAME.FETCH_EVALUATION_DONE then
+		arg_12_0:addSubLayers(Context.New({
 			mediator = ShipEvaluationMediator,
 			viewComponent = ShipEvaluationLayer,
 			data = {
-				groupId = var_11_1,
-				showTrans = arg_11_0.showTrans
+				groupId = var_12_1,
+				showTrans = arg_12_0.showTrans
 			}
 		}))
-	elseif var_11_0 == CollectionProxy.GROUP_INFO_UPDATE then
-		local var_11_2 = var_11_1
+	elseif var_12_0 == CollectionProxy.GROUP_INFO_UPDATE then
+		local var_12_2 = var_12_1
 
-		if arg_11_0.groupId == var_11_2 then
-			local var_11_3 = getProxy(CollectionProxy):getShipGroup(var_11_2)
+		if arg_12_0.groupId == var_12_2 then
+			local var_12_3 = getProxy(CollectionProxy):getShipGroup(var_12_2)
 
-			arg_11_0.viewComponent:setShipGroup(var_11_3)
-			arg_11_0.viewComponent:FlushHearts()
+			arg_12_0.viewComponent:setShipGroup(var_12_3)
+			arg_12_0.viewComponent:FlushHearts()
 		end
-	elseif var_11_0 == ShipSkinProxy.SHIP_SKINS_UPDATE then
-		local var_11_4 = getProxy(ShipSkinProxy)
+	elseif var_12_0 == ShipSkinProxy.SHIP_SKINS_UPDATE then
+		local var_12_4 = getProxy(ShipSkinProxy)
 
-		arg_11_0.viewComponent:setOwnedSkinList(var_11_4:getSkinList())
+		arg_12_0.viewComponent:setOwnedSkinList(var_12_4:getSkinList())
 	end
 end
 

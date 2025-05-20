@@ -1,5 +1,5 @@
 ﻿local var_0_0 = class("WatermelonGameVo")
-local var_0_1 = 2
+local var_0_1 = 1.4
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.gameId = arg_1_1
@@ -86,10 +86,12 @@ function var_0_0.getTplItemFromPool(arg_9_0, arg_9_1, arg_9_2)
 
 		setParent(var_9_0, arg_9_2)
 
-		return var_9_0
+		return var_9_0, true
 	else
-		return table.remove(arg_9_0.tplItemPool[arg_9_1], #arg_9_0.tplItemPool[arg_9_1])
+		return table.remove(arg_9_0.tplItemPool[arg_9_1], #arg_9_0.tplItemPool[arg_9_1]), false
 	end
+
+	return nil, nil
 end
 
 function var_0_0.returnTplItem(arg_10_0, arg_10_1, arg_10_2)

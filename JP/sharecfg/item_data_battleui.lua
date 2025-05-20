@@ -120,6 +120,18 @@ pg.item_data_battleui = {
 		icon = "203",
 		scene = {}
 	},
+	[204] = {
+		key = "SkinElite_20250520",
+		name = "シーサイド",
+		desc = "砂浜に立てられた木の板、貝殻に飾られる白波――海辺でのバカンスはゆったり、のんびり",
+		display_icon = "ui_204",
+		is_unlock = 1,
+		rare = 4,
+		unlock = "ショップ購入（戦闘UI・シーサイド）",
+		id = 204,
+		icon = "204",
+		scene = {}
+	},
 	all = {
 		0,
 		101,
@@ -130,6 +142,7 @@ pg.item_data_battleui = {
 		106,
 		201,
 		202,
-		203
+		203,
+		204
 	}
 }

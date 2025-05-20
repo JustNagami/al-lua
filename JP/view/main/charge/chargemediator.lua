@@ -161,9 +161,9 @@ function var_0_0.handleNotification(arg_16_0, arg_16_1)
 		arg_16_0.viewComponent:updateCurSubView()
 		arg_16_0.viewComponent:checkFreeGiftTag()
 	elseif var_16_0 == GAME.USE_ITEM_DONE then
-		if table.getCount(var_16_1) ~= 0 then
+		if #var_16_1.drops ~= 0 then
 			arg_16_0.viewComponent:emit(BaseUI.ON_AWARD, {
-				items = var_16_1
+				items = var_16_1.drops
 			})
 		end
 	elseif var_16_0 == GAME.GET_CHARGE_LIST_DONE then

@@ -442,6 +442,7 @@ function var_0_0.didEnter(arg_40_0)
 	end)
 	onButton(arg_40_0, arg_40_0.energyTF, function()
 		arg_40_0:showEnergyDesc()
+		getProxy(CommanderManualProxy):TaskProgressAdd(2022, 1)
 	end)
 	pg.UIMgr.GetInstance():OverlayPanel(arg_40_0.chat, {
 		groupName = LayerWeightConst.GROUP_SHIPINFOUI
