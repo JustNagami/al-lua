@@ -22653,10 +22653,8 @@ pg.activity_template = {
 			ui_name = "ExpeditionSkinPage"
 		},
 		config_client = {
+			firstStory = "RIBULUODEYUANZHENG1",
 			story = {
-				{
-					"RIBULUODEYUANZHENG1"
-				},
 				{
 					"RIBULUODEYUANZHENG2"
 				},
@@ -22760,12 +22758,13 @@ pg.activity_template = {
 	},
 	[5951] = {
 		mark = 20250520,
-		title_res_tag = "",
+		time = "stop",
 		page_info = "",
 		type = 125,
 		login_pop = 0,
 		config_id = 0,
 		is_show = 0,
+		title_res_tag = "",
 		id = 5951,
 		config_data = {
 			{
@@ -22782,33 +22781,6 @@ pg.activity_template = {
 			},
 			{
 				100
-			}
-		},
-		time = {
-			"timer",
-			{
-				{
-					2025,
-					5,
-					20
-				},
-				{
-					12,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					6,
-					12
-				},
-				{
-					12,
-					0,
-					0
-				}
 			}
 		},
 		config_client = {
