@@ -227,6 +227,19 @@ function temp()
 					}
 				}
 			}
+		},
+		ッ = {
+			ド = {
+				マ = {
+					ス = {
+						タ = {
+							ー = {
+								this = true
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 end
@@ -2710,6 +2723,25 @@ function temp()
 						ー = {
 							ト = {
 								this = true
+							}
+						}
+					},
+					★ = {
+						ロ = {
+							ッ = {
+								ク = {
+									シ = {
+										ュ = {
+											ー = {
+												タ = {
+													ー = {
+														this = true
+													}
+												}
+											}
+										}
+									}
+								}
 							}
 						}
 					}
@@ -6331,6 +6363,11 @@ function temp()
 			娜 = {
 				this = true
 			}
+		},
+		王 = {
+			星 = {
+				this = true
+			}
 		}
 	}
 end
@@ -8190,6 +8227,91 @@ function temp()
 							}
 						}
 					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.奇 = {
+		尔 = {
+			沙 = {
+				治 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.B = {
+		L = {
+			A = {
+				C = {
+					K = {
+						★ = {
+							R = {
+								O = {
+									C = {
+										K = {
+											[" "] = {
+												S = {
+													H = {
+														O = {
+															O = {
+																T = {
+																	E = {
+																		R = {
+																			（ = {
+																				后 = {
+																					排 = {
+																						） = {
+																							this = true
+																						}
+																					}
+																				},
+																				前 = {
+																					排 = {
+																						） = {
+																							this = true
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.死 = {
+		亡 = {
+			主 = {
+				宰 = {
+					this = true
 				}
 			}
 		}

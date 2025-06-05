@@ -210949,3 +210949,26 @@ _G.pg.base.item_virtual_data_statistics[86214] = {
 		}
 	}
 }
+_G.pg.base.item_virtual_data_statistics[65620] = {
+	display = "「幻影の迷い人」におけるコラボキャラの友好度。イベント終了後に削除される",
+	name = "友好度-ブラック★ロックシューター",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/65620",
+	id = 65620,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}

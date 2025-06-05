@@ -307,6 +307,11 @@ pg.task_meta_data_template = setmetatable({
 		100433,
 		100434,
 		100435,
+		100441,
+		100442,
+		100443,
+		100444,
+		100445,
 		200001,
 		200002,
 		200003,
@@ -442,7 +447,11 @@ pg.task_meta_data_template = setmetatable({
 		200341,
 		200342,
 		200343,
-		200344
+		200344,
+		200351,
+		200352,
+		200353,
+		200354
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2887,6 +2896,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100441] = {
+		target_id_2 = "970108",
+		sub_type = 180,
+		desc = "江風(META)を編成した艦隊で1回戦闘を勝利する",
+		id = 100441,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100442] = {
+		target_id_2 = "970108",
+		sub_type = 180,
+		desc = "江風(META)を編成した艦隊でLv30+の敵艦隊を撃破する",
+		id = 100442,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100443] = {
+		target_id_2 = "970108",
+		sub_type = 180,
+		desc = "江風(META)を編成した艦隊でLv55+の敵艦隊を撃破する",
+		id = 100443,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100444] = {
+		target_id_2 = "970108",
+		sub_type = 180,
+		desc = "江風(META)を編成した艦隊でLv80+の敵艦隊を撃破する",
+		id = 100444,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100445] = {
+		target_id_2 = "970108",
+		sub_type = 180,
+		desc = "江風(META)を編成した艦隊でLv100+の敵艦隊を撃破する",
+		id = 100445,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -3972,6 +4021,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "セイレーン作戦でグロリアス(META)を含めた艦隊でLv100+の敵を撃破",
 		id = 200344,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200351] = {
+		target_id_2 = "970108",
+		sub_type = 302,
+		desc = "セイレーン作戦で江風(META)を含めた艦隊で1回勝利する",
+		id = 200351,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200352] = {
+		target_id_2 = "970108",
+		sub_type = 302,
+		desc = "セイレーン作戦で江風(META)を含めた艦隊でLv70+の敵を撃破",
+		id = 200352,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200353] = {
+		target_id_2 = "970108",
+		sub_type = 302,
+		desc = "セイレーン作戦で江風(META)を含めた艦隊でLv90+の敵を撃破",
+		id = 200353,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200354] = {
+		target_id_2 = "970108",
+		sub_type = 302,
+		desc = "セイレーン作戦で江風(META)を含めた艦隊でLv100+の敵を撃破",
+		id = 200354,
 		target_num = 1,
 		target_id = "100"
 	}

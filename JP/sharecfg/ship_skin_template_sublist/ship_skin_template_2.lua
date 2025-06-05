@@ -13885,6 +13885,131 @@ pg.base.ship_skin_template_2 = {
 			1031651
 		}
 	},
+	[103168] = {
+		ship_group = 10316,
+		name = "そよ風が吹くとき",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		skin_type = 1,
+		group_index = 8,
+		id = 103168,
+		painting = "baerdimo_h",
+		l2d_ignore_drag = 0,
+		shop_id = 0,
+		illustrator = -1,
+		shop_type_id = 9998,
+		l2d_para_range = "",
+		lip_smoothing = 0,
+		bg = "530",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		part_scale = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "baerdimo_h",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "こういう日に一緒に景色を眺めると、もっと素敵に見えるな……え？どういう日かって……そ、それは私たちの、け、ケッコンの……指揮官、もうからかわないでくれ……！",
+		voice_actor = 191,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.15,
+					0.87,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.13,
+					0.94,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.009,
+					0.004,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.955,
+							2.152,
+							0.14
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			use_event = true
+		},
+		ship_l2d_id = {
+			1031651
+		}
+	},
 	[103240] = {
 		ship_group = 10324,
 		name = "ブレマートン",
@@ -14232,138 +14357,6 @@ pg.base.ship_skin_template_2 = {
 			ParamAngleX = {
 				-10,
 				10
-			}
-		}
-	},
-	[103243] = {
-		ship_group = 10324,
-		name = "ハッピーデーティング！",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		skin_type = 0,
-		group_index = 3,
-		id = 103243,
-		painting = "bulaimodun_2",
-		l2d_ignore_drag = 0,
-		shop_id = 70623,
-		illustrator = -1,
-		shop_type_id = 9,
-		lip_smoothing = 0,
-		bg = "108",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		part_scale = "",
-		bg_sp = "1102",
-		voice_actor_2 = -1,
-		prefab = "bulaimodun_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "今の所戦利品はこんなとこかな。よし、ちょっとここでいい雰囲気で休憩してからもう一回回ろ♪",
-		voice_actor = 134,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			1,
-			2
-		},
-		live2d_offset = {
-			10,
-			-90,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.229,
-					1.01,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.166,
-					0.998,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.463,
-							2.539,
-							0.14
-						}
-					}
-				}
-			}
-		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_special",
-			"touch_head"
-		},
-		l2d_voice_calibrate = {
-			use_event = true
-		},
-		l2d_para_range = {
-			ParamAngleY = {
-				-15,
-				15
 			}
 		}
 	}

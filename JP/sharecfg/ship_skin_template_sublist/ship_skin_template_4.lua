@@ -1,6 +1,107 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_4 = {
+	[107229] = {
+		ship_group = 10722,
+		name = "インディペンデンス改",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		skin_type = 2,
+		group_index = 9,
+		id = 107229,
+		painting = "duli_g",
+		l2d_ignore_drag = 0,
+		shop_id = 0,
+		illustrator = -1,
+		shop_type_id = 9997,
+		l2d_para_range = "",
+		l2d_voice_calibrate = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		part_scale = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "duli_g",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "軽空母インディペンデンス、改造完了だ。より重要な、困難な任務への準備は出来ている。安心して任せてほしい",
+		voice_actor = 130,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.1,
+					1.18,
+					0
+				}
+			},
+			plane = {
+				{
+					1.24,
+					1.17,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.63,
+							2.35,
+							-0.25
+						}
+					}
+				}
+			}
+		}
+	},
 	[107230] = {
 		ship_group = 10723,
 		name = "プリンストン",
@@ -13390,6 +13491,114 @@ pg.base.ship_skin_template_4 = {
 			}
 		}
 	},
+	[201358] = {
+		ship_group = 20135,
+		name = "朝焼けに輝く誓い",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		skin_type = 1,
+		group_index = 8,
+		id = 201358,
+		painting = "yanusi_h",
+		l2d_ignore_drag = 0,
+		shop_id = 0,
+		illustrator = -1,
+		shop_type_id = 9998,
+		l2d_para_range = "",
+		l2d_voice_calibrate = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "530",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		part_scale = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "yanusi_h",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "大丈夫よジェーナス…笑顔のままで…だって今日は一番大事で素敵な日……なのに……し、指揮官、やっぱり高いところはわたし、怖くて…はぅ…",
+		voice_actor = 345,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.858,
+					0.812,
+					0
+				}
+			},
+			torpedo = {
+				{
+					-0.277,
+					-0.139,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.819,
+					2.146,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.75,
+							2.37,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[201360] = {
 		ship_group = 20136,
 		name = "ヒーロー",
@@ -13650,226 +13859,6 @@ pg.base.ship_skin_template_4 = {
 		show_skin = "stand",
 		ship_l2d_id = "",
 		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.6,
-					1.01,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.48,
-					1.272,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.513,
-							2.111,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[201371] = {
-		ship_group = 20137,
-		name = "フツウの魔法薬学",
-		hand_id = 7,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		skin_type = 0,
-		group_index = 1,
-		id = 201371,
-		painting = "nubiyaren_2",
-		l2d_ignore_drag = 0,
-		shop_id = 70987,
-		illustrator = -1,
-		shop_type_id = 24,
-		l2d_para_range = "",
-		l2d_voice_calibrate = "",
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "500",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		part_scale = "",
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "nubiyaren_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "魔法薬精通の薬師、ヌビアンだ！指揮官はどんな魔法薬を調合したい？……え？釜で調合する普通のポーションなんて久しぶりすぎてどう注文すればいいかわかんない？……はい？",
-		voice_actor = 402,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.6,
-					1.01,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.48,
-					1.272,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.513,
-							2.111,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[201372] = {
-		ship_group = 20137,
-		name = "イマドキのドジっ子メイドチャレンジ？！",
-		hand_id = 7,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		skin_type = 0,
-		group_index = 2,
-		id = 201372,
-		painting = "nubiyaren_3",
-		l2d_ignore_drag = 0,
-		shop_id = 0,
-		illustrator = -1,
-		shop_type_id = 17,
-		l2d_para_range = "",
-		l2d_voice_calibrate = "",
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "166",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		part_scale = "",
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "nubiyaren_3",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "て、テヘッ～♪バレンタインのチョコを作ろうとしたらなぜか盛大に滑っちゃった☆……ちょ、ちょっと！どこが滑ってるのよ！イマドキのドジっ子はそんなことにならないって…ええ？！",
-		voice_actor = 402,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
 		live2d_offset = {
 			0,
 			0,

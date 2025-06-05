@@ -235,6 +235,8 @@ pg.memory_group = setmetatable({
 		328,
 		329,
 		330,
+		331,
+		332,
 		501,
 		502,
 		503,
@@ -5798,6 +5800,35 @@ pg.base.memory_group = {
 		group_id = "",
 		memories = {
 			4417
+		}
+	},
+	[331] = {
+		id = 331,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5985,
+		title = "幻影の迷い人",
+		group_id = "",
+		memories = {
+			4431,
+			4432,
+			4433,
+			4434,
+			4435
+		}
+	},
+	[332] = {
+		id = 332,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5985,
+		title = "幻影の迷い人",
+		group_id = "",
+		memories = {
+			4421,
+			4422
 		}
 	},
 	[501] = {
