@@ -158930,7 +158930,7 @@ _G.pg.base.equip_data_statistics[170762] = {
 }
 _G.pg.base.equip_data_statistics[170771] = {
 	type = 1,
-	name = "专属弹幕-克利奥佩特拉I",
+	name = "All Out Assault I",
 	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
@@ -158972,7 +158972,7 @@ _G.pg.base.equip_data_statistics[170771] = {
 }
 _G.pg.base.equip_data_statistics[170772] = {
 	id = 170772,
-	name = "专属弹幕-克利奥佩特拉II",
+	name = "All Out Assault II",
 	base = 170771,
 	weapon_id = {
 		61752
@@ -158981,7 +158981,7 @@ _G.pg.base.equip_data_statistics[170772] = {
 }
 _G.pg.base.equip_data_statistics[170781] = {
 	type = 1,
-	name = "专属弹幕-特拉法尔加",
+	name = "All Out Assault",
 	speciality = "<[NA]>",
 	tech = 1,
 	rarity = 1,
@@ -159023,7 +159023,7 @@ _G.pg.base.equip_data_statistics[170781] = {
 }
 _G.pg.base.equip_data_statistics[170782] = {
 	id = 170782,
-	name = "专属弹幕-特拉法尔加",
+	name = "All Out Assault",
 	base = 170781,
 	weapon_id = {
 		61762
@@ -159151,4 +159151,41 @@ _G.pg.base.equip_data_statistics[3276003] = {
 	},
 	equip_parameters = {},
 	label = {}
+}
+_G.pg.base.equip_data_statistics[180001] = {
+	type = 2,
+	name = "小埃吉尔自带强化型副炮",
+	speciality = "<[LOCK]>",
+	tech = 1,
+	rarity = 1,
+	ammo = 1,
+	nationality = 4,
+	descrip = "默认装备",
+	id = 180001,
+	value_3 = 0,
+	value_2 = 0,
+	icon = "1",
+	torpedo_ammo = 0,
+	property_rate = {},
+	ammo_icon = {
+		2
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		180001
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		3
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"KMS",
+		"DD",
+		"MG",
+		"AP"
+	}
 }

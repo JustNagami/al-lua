@@ -45843,7 +45843,7 @@ _G.pg.base.ship_data_breakout[201391] = {
 	breakout_id = 201392,
 	use_char_num = 1,
 	use_char = 20139,
-	breakout_view = "Unlock All Out Assault/Main gun efficiency +5%",
+	breakout_view = "Unlock All Out Assault I/Main gun efficiency +5%",
 	level = 10,
 	id = 201391,
 	icon = "10001",
@@ -45902,7 +45902,7 @@ _G.pg.base.ship_data_breakout[201521] = {
 	breakout_id = 201522,
 	use_char_num = 1,
 	use_char = 20114,
-	breakout_view = "Learns All Out Assault I/Main Gun efficiency +5%",
+	breakout_view = "Unlock All Out Assault I/Main Gun efficiency +5%",
 	level = 10,
 	id = 201521,
 	icon = "10001",
@@ -45933,7 +45933,7 @@ _G.pg.base.ship_data_breakout[201523] = {
 	breakout_id = 201524,
 	use_char_num = 2,
 	use_char = 20114,
-	breakout_view = "Improves All Out Assault I/All weapons' efficiency +5%",
+	breakout_view = "Improve All Out Assault/All weapons' efficiency +5%",
 	level = 70,
 	id = 201523,
 	icon = "10001",
@@ -45961,7 +45961,7 @@ _G.pg.base.ship_data_breakout[202351] = {
 	breakout_id = 202352,
 	use_char_num = 1,
 	use_char = 20235,
-	breakout_view = "Learns All Out Assault I/Main Gun efficiency +5%",
+	breakout_view = "Unlock All Out Assault I/Main Gun efficiency +5%",
 	level = 10,
 	id = 202351,
 	icon = "10001",
@@ -46134,6 +46134,67 @@ _G.pg.base.ship_data_breakout[205164] = {
 	id = 205164,
 	icon = "10001",
 	pre_id = 205163,
+	use_item = {},
+	weapon_ids = {}
+}
+_G.pg.base.ship_data_breakout[403161] = {
+	use_gold = 500,
+	breakout_id = 403162,
+	use_char_num = 1,
+	use_char = 40316,
+	breakout_view = "Main gun base +1/Main gun efficiency +10%/Gain special Secondary Gun",
+	level = 10,
+	id = 403161,
+	icon = "10001",
+	pre_id = 0,
+	use_item = {},
+	weapon_ids = {
+		44400,
+		44400
+	}
+}
+_G.pg.base.ship_data_breakout[403162] = {
+	use_gold = 1500,
+	breakout_id = 403163,
+	use_char_num = 1,
+	use_char = 40316,
+	breakout_view = "Torpedo preload +1/Torpedo efficiency +10%/AA gun efficiency +10%",
+	level = 30,
+	id = 403162,
+	icon = "10001",
+	pre_id = 403161,
+	use_item = {},
+	weapon_ids = {
+		106,
+		106
+	}
+}
+_G.pg.base.ship_data_breakout[403163] = {
+	use_gold = 2500,
+	breakout_id = 403164,
+	use_char_num = 2,
+	use_char = 40316,
+	breakout_view = "Main gun efficiency +20%",
+	level = 70,
+	id = 403163,
+	icon = "10001",
+	pre_id = 403162,
+	use_item = {},
+	weapon_ids = {
+		44400,
+		44400
+	}
+}
+_G.pg.base.ship_data_breakout[403164] = {
+	use_gold = 0,
+	breakout_id = 0,
+	use_char_num = 0,
+	use_char = 40316,
+	breakout_view = "None",
+	level = 0,
+	id = 403164,
+	icon = "10001",
+	pre_id = 403163,
 	use_item = {},
 	weapon_ids = {}
 }

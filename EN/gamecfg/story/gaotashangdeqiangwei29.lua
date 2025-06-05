@@ -124,7 +124,7 @@
 				speedUp = 0.01
 			},
 			location = {
-				"蔷薇塔·临时作战指挥大厅？",
+				"Rose Tower - Temporary operation command hall",
 				3
 			},
 			flashout = {
@@ -440,7 +440,7 @@
 				speedUp = 0.01
 			},
 			location = {
-				"蔷薇塔·女王之光号停泊地",
+				"Rose Tower - Queen's Light's stopping point",
 				3
 			},
 			flashout = {

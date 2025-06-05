@@ -300,6 +300,7 @@ function var_0_0.refresh(arg_21_0)
 
 	arg_21_0:closeFilter()
 	arg_21_0:HideNodeDetail()
+	setActive(arg_21_0.detailView, false)
 	scrollTo(arg_21_0.scroll, 0)
 end
 

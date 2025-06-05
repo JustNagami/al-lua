@@ -776,7 +776,7 @@
 				}
 			},
 			location = {
-				"皇家·目标满月之蕾周边",
+				"Near the Bud of the New Moon",
 				3
 			}
 		},

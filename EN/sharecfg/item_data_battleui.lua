@@ -84,6 +84,18 @@ pg.item_data_battleui = {
 		icon = "106",
 		scene = {}
 	},
+	[107] = {
+		key = "SkinNormal_20250529",
+		name = "Radiant Stars",
+		desc = "Brightly do the stars glow, projecting their mysterious patterns across the galaxy, their each and every detail speaking to a longing for space and adventure.",
+		display_icon = "ui_107",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "Cruise Missions S23",
+		id = 107,
+		icon = "107",
+		scene = {}
+	},
 	[201] = {
 		key = "SkinNormal_20241209",
 		name = "Christmas",
@@ -122,12 +134,12 @@ pg.item_data_battleui = {
 	},
 	[204] = {
 		key = "SkinElite_20250520",
-		name = "海滨假日",
-		desc = "贝壳图案点缀在海浪界面之间，辅以沙滩木牌等要素，营造出轻松悠闲的海滨度假氛围。",
+		name = "Battle UI - Seaside Splash",
+		desc = "Planks placed in the sand and white-crested waves adorned with seashells. A leisurely vacation on the beach.",
 		display_icon = "ui_204",
 		is_unlock = 1,
 		rare = 4,
-		unlock = "海滨假日战斗主题礼包获取",
+		unlock = "Buy the Battle UI Pack - Seaside Splash",
 		id = 204,
 		icon = "204",
 		scene = {}
@@ -140,6 +152,7 @@ pg.item_data_battleui = {
 		104,
 		105,
 		106,
+		107,
 		201,
 		202,
 		203,

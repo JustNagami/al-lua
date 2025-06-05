@@ -785,7 +785,7 @@ pg.fleet_tech_ship_class = {
 	},
 	[20114] = {
 		shiptype = 1,
-		name = "战斗级",
+		name = "Battle Class",
 		nation = 2,
 		id = 20114,
 		t_level_1 = 44,
@@ -1117,7 +1117,7 @@ pg.fleet_tech_ship_class = {
 	},
 	[20507] = {
 		shiptype = 5,
-		name = "狮级",
+		name = "Lion Class",
 		nation = 2,
 		id = 20507,
 		t_level_1 = 64,
@@ -3741,6 +3741,17 @@ pg.fleet_tech_ship_class = {
 			970106
 		}
 	},
+	[970107] = {
+		shiptype = 1,
+		name = "Grenville META",
+		nation = 97,
+		id = 970107,
+		t_level_1 = 16,
+		t_level = 3,
+		ships = {
+			970107
+		}
+	},
 	[970201] = {
 		shiptype = 2,
 		name = "Helena META",
@@ -4150,7 +4161,7 @@ pg.fleet_tech_ship_class = {
 	},
 	[970707] = {
 		shiptype = 7,
-		name = "光荣·META",
+		name = "Glorious META",
 		nation = 97,
 		id = 970707,
 		t_level_1 = 17,
@@ -4504,6 +4515,7 @@ pg.fleet_tech_ship_class = {
 		970104,
 		970105,
 		970106,
+		970107,
 		970201,
 		970202,
 		970203,

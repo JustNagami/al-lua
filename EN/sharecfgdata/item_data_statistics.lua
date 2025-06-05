@@ -98698,8 +98698,8 @@ _G.pg.base.item_data_statistics[81424] = {
 }
 _G.pg.base.item_data_statistics[21048] = {
 	open_directly = 0,
-	name = "结晶：光荣·META",
-	display = "光荣·META的专用性能提升装置，可在「META研究室」-「能量激活」中使用。",
+	name = "META Crystal – Glorious META",
+	display = "An item that increases the potential of Glorious META. Used in the META Lab during Somatic Activation.",
 	type = 4,
 	display_effect = "",
 	id = 21048,
@@ -98727,8 +98727,8 @@ _G.pg.base.item_data_statistics[21048] = {
 }
 _G.pg.base.item_data_statistics[30368] = {
 	open_directly = 1,
-	name = "外观装备箱(海滨假日)",
-	display = "可以获得一件随机的海滨假日风格外观装备",
+	name = "Gear Skin Box (Seaside)",
+	display = "Contains a random gear skin.",
 	type = 11,
 	display_effect = "",
 	id = 30368,
@@ -98850,8 +98850,8 @@ _G.pg.base.item_data_statistics[30368] = {
 }
 _G.pg.base.item_data_statistics[30555] = {
 	open_directly = 0,
-	name = "定向外观装备箱(海滨假日)",
-	display = "使用后可从「海滨假日」主题外观装备中任意选择一种获得1个",
+	name = "Selection Gear Skin Box (Seaside)",
+	display = "Can be opened to receive 1 Seaside-themed gear skin of your choosing.",
 	type = 13,
 	display_effect = "",
 	id = 30555,
@@ -99061,8 +99061,8 @@ _G.pg.base.item_data_statistics[30555] = {
 }
 _G.pg.base.item_data_statistics[40060] = {
 	open_directly = 1,
-	name = "海滨假日主题礼包(基础版)",
-	display = "购买礼包可获得战斗界面主题 海滨假日*1,1000物资",
+	name = "Battle UI Pack - Seaside Splash (Basic)",
+	display = "Contains the Battle UI - Seaside Splash theme and 1,000 Coins.",
 	type = 17,
 	display_effect = "OpenBox",
 	id = 40060,
@@ -99101,8 +99101,8 @@ _G.pg.base.item_data_statistics[40060] = {
 }
 _G.pg.base.item_data_statistics[40061] = {
 	open_directly = 1,
-	name = "海滨假日主题礼包(豪华版)",
-	display = "购买礼包可获得战斗界面主题 海滨假日*1,3060钻石",
+	name = "Battle UI Pack - Seaside Splash (Premium)",
+	display = "Contains the Battle UI - Seaside Splash theme and 3,060 Gems.",
 	type = 17,
 	display_effect = "OpenBox",
 	id = 40061,
@@ -99445,7 +99445,7 @@ _G.pg.base.item_data_statistics[60543] = {
 _G.pg.base.item_data_statistics[60544] = {
 	open_directly = 0,
 	name = "Rookie Mission Invitation",
-	display = "使用后可以邀请<color=#92fc63FF>{namecode:182}</color>或<color=#92fc63FF>{namecode:199}</color>中的一名角色进入港区",
+	display = "Use to choose between and receive either <color=#92fc63FF>Shinano</color> or <color=#92fc63FF>New Jersey</color>.",
 	type = 21,
 	display_effect = "",
 	id = 60544,
@@ -99628,6 +99628,150 @@ _G.pg.base.item_data_statistics[81425] = {
 			7,
 			237030,
 			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_data_statistics[21047] = {
+	open_directly = 0,
+	name = "META Crystal – Grenville META",
+	display = "An item that increases the potential of Grenville META. Used in the META Lab during Somatic Activation.",
+	type = 4,
+	display_effect = "",
+	id = 21047,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_undefined",
+	link_id = 0,
+	icon = "Props/21047",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[30428] = {
+	open_directly = 1,
+	name = "Gear Skin Box (Cruise Missions)",
+	display = "Contains 1 random Cruise Mission gear skin.",
+	type = 11,
+	display_effect = "",
+	id = 30428,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "Props/appearanceboxshijiexunyou",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "111223",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			9,
+			2097,
+			1
+		},
+		{
+			9,
+			2098,
+			1
+		},
+		{
+			9,
+			2099,
+			1
+		},
+		{
+			9,
+			2100,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[81214] = {
+	open_directly = 1,
+	name = "Swimsuit Lucky Bag 2025 B",
+	display = "Contains a random Swimsuit Lucky Bag 2025 B skin, Special General Blueprint - Series 7 x2, Gems x2025, Cognitive Chips x50, Wisdom Cubes x20, Decor Tokens x100, and Quick Finishers x10.",
+	type = 17,
+	display_effect = "",
+	id = 81214,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "Props/fudai25",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	limit = "[]",
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "998316",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			86214,
+			1
+		},
+		{
+			1,
+			14,
+			2025
+		},
+		{
+			2,
+			42066,
+			2
+		},
+		{
+			2,
+			15008,
+			50
+		},
+		{
+			2,
+			20001,
+			20
+		},
+		{
+			2,
+			15003,
+			10
+		},
+		{
+			1,
+			6,
+			100
 		}
 	},
 	price = {},

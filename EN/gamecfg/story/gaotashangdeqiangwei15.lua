@@ -10,7 +10,7 @@
 			say = "Elizabeth META wandered through the empty void.",
 			bgm = "story-startravel",
 			location = {
-				"？？？·？？？",
+				"Unknown location",
 				3
 			},
 			typewriter = {
@@ -1120,7 +1120,7 @@
 			say = "Elizabeth suddenly collapsed during her examination.",
 			bgm = "theme-shallowoftheworld",
 			location = {
-				"第五战区·女王之光号周边",
+				"5th combat sector - Near the Queen's Light",
 				3
 			},
 			typewriter = {
