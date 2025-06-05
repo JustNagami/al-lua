@@ -211470,3 +211470,101 @@ _G.pg.base.item_virtual_data_statistics[200479] = {
 		}
 	}
 }
+_G.pg.base.item_virtual_data_statistics[65100] = {
+	display = "参与「世界巡游」获得的点数，累计一定程度可以领取奖励，活动结束后将会消失 ",
+	name = "巡游点数",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 7023,
+	virtual_type = 21,
+	is_world = 0,
+	icon = "props/battlepass_pt",
+	id = 65100,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[68081] = {
+	display = "用于「「深渊之国」的缔造者」活动提升角色好感，活动结束后将会消失",
+	name = "友好度-{namecode:544}",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 2,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/xiaoaijierPT",
+	id = 68081,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[86214] = {
+	display = "不会被看到",
+	name = "随机换装",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86214,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			207055,
+			1400
+		},
+		{
+			403142,
+			1400
+		},
+		{
+			299024,
+			1400
+		},
+		{
+			502043,
+			1400
+		},
+		{
+			705042,
+			1580
+		},
+		{
+			105102,
+			1410
+		},
+		{
+			105093,
+			1410
+		}
+	}
+}
