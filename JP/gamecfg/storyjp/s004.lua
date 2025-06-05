@@ -46,6 +46,7 @@
 			actor = 900009,
 			side = 1,
 			nameColor = "#ff0000",
+			actorAlpha = 0,
 			say = "え～戦局は有利なのに、どうして？",
 			typewriter = {
 				speed = 0.05,
@@ -67,6 +68,7 @@
 			actorName = "プリンツ・オイゲン",
 			nameColor = "#ff0000",
 			side = 1,
+			actorAlpha = 0,
 			say = "あら、じゃあしょうがないわ。子猫ちゃんたち、また今度ね。",
 			typewriter = {
 				speed = 0.05,
@@ -129,7 +131,7 @@
 			}
 		},
 		{
-			actor = 900011,
+			actor = 900313,
 			side = 2,
 			nameColor = "#ff0000",
 			mode = 2,

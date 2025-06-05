@@ -82,12 +82,10 @@ function var_0_0.BugReport()
 end
 
 function var_0_0.StoreReview()
-	if var_0_0.GetIsPlatform() then
-		local var_13_0 = var_0_0.GetPNInfo()
-		local var_13_1 = var_0_0.GetClientVer()
+	local var_13_0 = var_0_0.GetPNInfo()
+	local var_13_1 = var_0_0.GetClientVer()
 
-		var_0_1:StoreReview(var_13_0.playerName, var_13_1, var_13_0.serverID, var_13_0.info)
-	end
+	var_0_1:StoreReview(var_13_0.playerName, var_13_1, var_13_0.serverID, var_13_0.info)
 end
 
 function var_0_0.ShareImg(arg_14_0)
@@ -111,7 +109,9 @@ function var_0_0.QueryWithProduct()
 end
 
 function var_0_0.QueryPendingTransaction()
-	var_0_1:SDK_QueryPendingTransaction()
+	if var_0_0.GetIsPlatform() then
+		var_0_1:SDK_QueryPendingTransaction()
+	end
 end
 
 function var_0_0.SdkPay(arg_20_0, arg_20_1, arg_20_2, arg_20_3, arg_20_4, arg_20_5, arg_20_6, arg_20_7, arg_20_8, arg_20_9)

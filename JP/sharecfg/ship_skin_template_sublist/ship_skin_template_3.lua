@@ -1,270 +1,6 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_3 = {
-	[103242] = {
-		ship_group = 10324,
-		name = "アクションクルーズ",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		skin_type = 0,
-		group_index = 2,
-		id = 103242,
-		painting = "bulaimodun_4",
-		l2d_ignore_drag = 0,
-		shop_id = 70482,
-		illustrator = -1,
-		shop_type_id = 3,
-		lip_smoothing = 0,
-		bg = "144",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		part_scale = "",
-		bg_sp = "1102",
-		voice_actor_2 = -1,
-		prefab = "bulaimodun_4",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "「そこまでよ悪党ども、ここで会ったが百年目、今までしてきた悪事を全部償ってもらうわ！」……んーやっぱりビシッと決めるのは難しいわね",
-		voice_actor = 134,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			1,
-			4
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.371,
-					1.01,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.383,
-					0.998,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.006,
-					-0.012,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.491,
-							2.587,
-							0.14
-						}
-					}
-				}
-			}
-		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_special",
-			"touch_head"
-		},
-		l2d_voice_calibrate = {
-			login = 2.17
-		},
-		l2d_para_range = {
-			ParamAngleX = {
-				-10,
-				10
-			}
-		}
-	},
-	[103243] = {
-		ship_group = 10324,
-		name = "ハッピーデーティング！",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		skin_type = 0,
-		group_index = 3,
-		id = 103243,
-		painting = "bulaimodun_2",
-		l2d_ignore_drag = 0,
-		shop_id = 70623,
-		illustrator = -1,
-		shop_type_id = 9,
-		lip_smoothing = 0,
-		bg = "108",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		part_scale = "",
-		bg_sp = "1102",
-		voice_actor_2 = -1,
-		prefab = "bulaimodun_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "今の所戦利品はこんなとこかな。よし、ちょっとここでいい雰囲気で休憩してからもう一回回ろ♪",
-		voice_actor = 134,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			1,
-			2
-		},
-		live2d_offset = {
-			10,
-			-90,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.229,
-					1.01,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.166,
-					0.998,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.463,
-							2.539,
-							0.14
-						}
-					}
-				}
-			}
-		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_special",
-			"touch_head"
-		},
-		l2d_voice_calibrate = {
-			use_event = true
-		},
-		l2d_para_range = {
-			ParamAngleY = {
-				-15,
-				15
-			}
-		}
-	},
 	[103244] = {
 		ship_group = 10324,
 		name = "ゆったりリラックスタイム",
@@ -3681,6 +3417,144 @@ pg.base.ship_skin_template_3 = {
 			}
 		}
 	},
+	[105093] = {
+		ship_group = 10509,
+		name = "夕日のカヴァティーナ",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		skin_type = 0,
+		group_index = 3,
+		id = 105093,
+		painting = "keluoladuo_4",
+		l2d_ignore_drag = 0,
+		shop_id = 71142,
+		illustrator = -1,
+		shop_type_id = 6,
+		l2d_voice_calibrate = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "179",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		part_scale = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "keluoladuo_4",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "皆と海に入らず、ここで私と一緒に日没を眺めることを選んだ…？せっかくの海なのに、本当に大丈夫？あ、いや、私は…お前がいいなら、それでいい…",
+		voice_actor = 152,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.824,
+					0.903,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.869,
+					0.916,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.786,
+					2.27,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.719,
+							2.256,
+							0
+						}
+					}
+				}
+			}
+		},
+		get_showing = {
+			show = 1,
+			data = {
+				{
+					-1031,
+					160,
+					2,
+					0,
+					100,
+					2
+				},
+				{
+					185,
+					370,
+					2,
+					100,
+					0,
+					2
+				},
+				{
+					-165,
+					-483,
+					2,
+					-70,
+					-70,
+					2
+				}
+			}
+		}
+	},
 	[105099] = {
 		ship_group = 10509,
 		name = "コロラド改",
@@ -3893,6 +3767,144 @@ pg.base.ship_skin_template_3 = {
 							0
 						}
 					}
+				}
+			}
+		}
+	},
+	[105102] = {
+		ship_group = 10510,
+		name = "真紅のドラムファイア",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		skin_type = 0,
+		group_index = 2,
+		id = 105102,
+		painting = "malilan_3",
+		l2d_ignore_drag = 0,
+		shop_id = 71141,
+		illustrator = -1,
+		shop_type_id = 6,
+		l2d_voice_calibrate = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "149",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		part_scale = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "malilan_3",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "おう指揮官、お前も気分転換か？大丈夫だ、ほかの連中にお前がここにいることは言わないから、落ち着いて花火でも見てな",
+		voice_actor = 162,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.719,
+					0.883,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.692,
+					0.883,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.664,
+					2.382,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.914,
+							2.328,
+							0
+						}
+					}
+				}
+			}
+		},
+		get_showing = {
+			show = 1,
+			data = {
+				{
+					-1324,
+					16,
+					2,
+					0,
+					100,
+					2
+				},
+				{
+					-491,
+					502,
+					2,
+					100,
+					0,
+					2
+				},
+				{
+					-209,
+					-433,
+					2,
+					0,
+					-100,
+					2
 				}
 			}
 		}
@@ -13919,6 +13931,107 @@ pg.base.ship_skin_template_3 = {
 						{
 							-0.421,
 							2.463,
+							-0.25
+						}
+					}
+				}
+			}
+		}
+	},
+	[107229] = {
+		ship_group = 10722,
+		name = "インディペンデンス改",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		skin_type = 2,
+		group_index = 9,
+		id = 107229,
+		painting = "duli_g",
+		l2d_ignore_drag = 0,
+		shop_id = 0,
+		illustrator = -1,
+		shop_type_id = 9997,
+		l2d_para_range = "",
+		l2d_voice_calibrate = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		part_scale = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "duli_g",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "軽空母インディペンデンス、改造完了だ。より重要な、困難な任務への準備は出来ている。安心して任せてほしい",
+		voice_actor = 130,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.1,
+					1.18,
+					0
+				}
+			},
+			plane = {
+				{
+					1.24,
+					1.17,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.63,
+							2.35,
 							-0.25
 						}
 					}

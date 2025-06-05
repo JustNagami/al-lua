@@ -414,7 +414,20 @@ function temp()
 				ヴ = {
 					ィ = {
 						ル = {
-							this = true
+							this = true,
+							["("] = {
+								M = {
+									E = {
+										T = {
+											A = {
+												[")"] = {
+													this = true
+												}
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}
@@ -2166,7 +2179,14 @@ function temp()
 			},
 			ギ = {
 				ル = {
-					this = true
+					this = true,
+					ち = {
+						ゃ = {
+							ん = {
+								this = true
+							}
+						}
+					}
 				}
 			}
 		},

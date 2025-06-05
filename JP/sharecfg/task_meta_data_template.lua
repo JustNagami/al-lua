@@ -297,6 +297,11 @@ pg.task_meta_data_template = setmetatable({
 		100413,
 		100414,
 		100415,
+		100421,
+		100422,
+		100423,
+		100424,
+		100425,
 		100431,
 		100432,
 		100433,
@@ -430,6 +435,10 @@ pg.task_meta_data_template = setmetatable({
 		200322,
 		200323,
 		200324,
+		200331,
+		200332,
+		200333,
+		200334,
 		200341,
 		200342,
 		200343,
@@ -2798,6 +2807,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100421] = {
+		target_id_2 = "970107",
+		sub_type = 180,
+		desc = "グレンヴィル(META)を編成した艦隊で1回戦闘を勝利する",
+		id = 100421,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100422] = {
+		target_id_2 = "970107",
+		sub_type = 180,
+		desc = "グレンヴィル(META)を編成した艦隊でLv30+の敵艦隊を撃破する",
+		id = 100422,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100423] = {
+		target_id_2 = "970107",
+		sub_type = 180,
+		desc = "グレンヴィル(META)を編成した艦隊でLv55+の敵艦隊を撃破する",
+		id = 100423,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100424] = {
+		target_id_2 = "970107",
+		sub_type = 180,
+		desc = "グレンヴィル(META)を編成した艦隊でLv80+の敵艦隊を撃破する",
+		id = 100424,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100425] = {
+		target_id_2 = "970107",
+		sub_type = 180,
+		desc = "グレンヴィル(META)を編成した艦隊でLv100+の敵艦隊を撃破する",
+		id = 100425,
+		target_num = 1,
+		target_id = "100"
+	},
 	[100431] = {
 		target_id_2 = "970707",
 		sub_type = 180,
@@ -3859,6 +3908,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "セイレーン作戦でネバダ(META)を含めた艦隊でLv100+の敵を撃破",
 		id = 200324,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200331] = {
+		target_id_2 = "970107",
+		sub_type = 302,
+		desc = "セイレーン作戦でグレンヴィル(META)を含めた艦隊で1回勝利する",
+		id = 200331,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200332] = {
+		target_id_2 = "970107",
+		sub_type = 302,
+		desc = "セイレーン作戦でグレンヴィル(META)を含めた艦隊でLv70+の敵を撃破",
+		id = 200332,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200333] = {
+		target_id_2 = "970107",
+		sub_type = 302,
+		desc = "セイレーン作戦でグレンヴィル(META)を含めた艦隊でLv90+の敵を撃破",
+		id = 200333,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200334] = {
+		target_id_2 = "970107",
+		sub_type = 302,
+		desc = "セイレーン作戦でグレンヴィル(META)を含めた艦隊でLv100+の敵を撃破",
+		id = 200334,
 		target_num = 1,
 		target_id = "100"
 	},

@@ -46448,7 +46448,7 @@ _G.pg.base.ship_data_breakout[205161] = {
 	breakout_id = 205162,
 	use_char_num = 1,
 	use_char = 20516,
-	breakout_view = "主炮底座+1/主炮效率提高5%",
+	breakout_view = "主砲砲座+1/主砲補正+5%",
 	level = 10,
 	id = 205161,
 	icon = "10001",
@@ -46464,7 +46464,7 @@ _G.pg.base.ship_data_breakout[205162] = {
 	breakout_id = 205163,
 	use_char_num = 1,
 	use_char = 20516,
-	breakout_view = "主炮装填上限+1/副炮底座+2/主炮效率提高10%",
+	breakout_view = "主砲装填上限+1/副砲砲座+2/主砲補正+10%",
 	level = 30,
 	id = 205162,
 	icon = "10001",
@@ -46481,7 +46481,7 @@ _G.pg.base.ship_data_breakout[205163] = {
 	breakout_id = 205164,
 	use_char_num = 2,
 	use_char = 20516,
-	breakout_view = "主炮底座+1/主炮效率提高15%",
+	breakout_view = "主砲砲座+1/主砲補正+15%",
 	level = 70,
 	id = 205163,
 	icon = "10001",
@@ -46498,11 +46498,72 @@ _G.pg.base.ship_data_breakout[205164] = {
 	breakout_id = 0,
 	use_char_num = 0,
 	use_char = 20516,
-	breakout_view = "无",
+	breakout_view = "なし",
 	level = 0,
 	id = 205164,
 	icon = "10001",
 	pre_id = 205163,
+	use_item = {},
+	weapon_ids = {}
+}
+_G.pg.base.ship_data_breakout[403161] = {
+	use_gold = 500,
+	breakout_id = 403162,
+	use_char_num = 1,
+	use_char = 40316,
+	breakout_view = "主砲砲座+1/主砲補正+10%/特殊副砲を追加",
+	level = 10,
+	id = 403161,
+	icon = "10001",
+	pre_id = 0,
+	use_item = {},
+	weapon_ids = {
+		44400,
+		44400
+	}
+}
+_G.pg.base.ship_data_breakout[403162] = {
+	use_gold = 1500,
+	breakout_id = 403163,
+	use_char_num = 1,
+	use_char = 40316,
+	breakout_view = "開始時魚雷+1/魚雷補正+10%/対空砲補正+10%",
+	level = 30,
+	id = 403162,
+	icon = "10001",
+	pre_id = 403161,
+	use_item = {},
+	weapon_ids = {
+		106,
+		106
+	}
+}
+_G.pg.base.ship_data_breakout[403163] = {
+	use_gold = 2500,
+	breakout_id = 403164,
+	use_char_num = 2,
+	use_char = 40316,
+	breakout_view = "主砲補正+20％",
+	level = 70,
+	id = 403163,
+	icon = "10001",
+	pre_id = 403162,
+	use_item = {},
+	weapon_ids = {
+		44400,
+		44400
+	}
+}
+_G.pg.base.ship_data_breakout[403164] = {
+	use_gold = 0,
+	breakout_id = 0,
+	use_char_num = 0,
+	use_char = 40316,
+	breakout_view = "なし",
+	level = 0,
+	id = 403164,
+	icon = "10001",
+	pre_id = 403163,
 	use_item = {},
 	weapon_ids = {}
 }

@@ -234,6 +234,7 @@ pg.memory_group = setmetatable({
 		327,
 		328,
 		329,
+		330,
 		501,
 		502,
 		503,
@@ -5785,6 +5786,18 @@ pg.base.memory_group = {
 			4414,
 			4415,
 			4416
+		}
+	},
+	[330] = {
+		id = 330,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 5979,
+		title = "碧玉勝りし天青",
+		group_id = "",
+		memories = {
+			4417
 		}
 	},
 	[501] = {

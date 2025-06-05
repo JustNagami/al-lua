@@ -641,13 +641,12 @@
 			}
 		},
 		{
-			expression = 1,
+			actor = 702010,
 			side = 2,
 			bgName = "bg_story_italy",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			actor = 702010,
 			say = "ええ、私とパーミャチ・メルクーリヤも",
 			painting = {
 				alpha = 0.3,
