@@ -3715,7 +3715,7 @@ _G.pg.base.gametip.world_boss_help_meta = {
 			info = [[
 - META Showdown Overview -
 
-From <color=#92fc63>3/13/25 to 6/4/25</color>, challenge Hornet META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Hornet META</color> as well as other great rewards.
+From <color=#92fc63>6/5/25 to 9/3/25</color>, challenge Kawakaze META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Kawakaze META</color> as well as other great rewards.
 <color=#ff5c5c>Note: Sync Points will expire after the event period ends.</color>
 
 - Acquiring and Analyzing META Coordinates -
@@ -14928,10 +14928,10 @@ _G.pg.base.gametip.meta_help = {
 			info = "Sync Points obtained through META Showdown in Operation Siren can be used to recruit certain META ships."
 		},
 		{
-			info = "Obtainable rewards from accumulating Sync Points can be viewed and claimed on each corresponding META ship's tab in the META Lab. Furthermore, upon obtaining enough Sync Points, you'll be able to recruit a META ship.\n\n"
+			info = "Obtainable rewards from accumulating Sync Points can be viewed and claimed on each corresponding META ship’s tab in the META Lab. Furthermore, upon obtaining enough Sync Points, you’ll be able to recruit a META ship.\n\n"
 		},
 		{
-			info = "From <color=#92fc63>3/13/25 to 6/4/25</color>, challenge Hornet META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Hornet META</color> as well as other great rewards.\n\n"
+			info = "From <color=#92fc63>6/5/25 to 9/3/25</color>, challenge Kawakaze META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Kawakaze META</color> as well as other great rewards.\n\n"
 		},
 		{
 			info = "2. About Rigging Fortification:"
@@ -14958,10 +14958,10 @@ _G.pg.base.gametip.meta_help = {
 			info = "4. About Tactical Research:"
 		},
 		{
-			info = "The skills of META ships can only be leveled in the META Lab. You can head to a META ship's skill menu through the Somatic Activation screen."
+			info = "The skills of META ships can only be leveled in the META Lab. You can head to a META ship’s skill menu through the Somatic Activation screen."
 		},
 		{
-			info = "Leveling a META ship's skills requires specific materials and are fed EXP through the completion of special META ship skill missions."
+			info = "Leveling a META ship’s skills requires specific materials and are fed EXP through the completion of special META ship skill missions."
 		},
 		{
 			info = "Note that there is a limit to how much EXP can be gained in a single day, and that only 1 skill per META ship can be leveled at a time."
@@ -26982,9 +26982,9 @@ Cruise Missions Seasonal Campaign
 2025/6/1 00:00 – 2025/7/31 23:59
 
 - Overview -
-\""Cruise Missions\"" is a seasonal campaign where you can complete special missions, collect Progress Pts., and obtain great rewards for reaching certain Progress milestones.
-Additionally, you can unlock an additional set of \""Fair Winds Cruise\"" rewards by purchasing the \""Fair Winds Cruise Pass\"" item from Akashi's shop.
-Grenville META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfit for Hatsuzuki, \""Luxurious Celebration Time.\""
+"Cruise Missions" is a seasonal campaign where you can complete special missions, collect Progress Pts., and obtain great rewards for reaching certain Progress milestones.
+Additionally, you can unlock an additional set of "Fair Winds Cruise" rewards by purchasing the "Fair Winds Cruise Pass" item from Akashi's shop.
+Grenville META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfit for Hatsuzuki, "Luxurious Celebration Time."
 
 - How to Play -
 · Two types of missions will be released at the same time at the start of the campaign season:
@@ -27128,4 +27128,22 @@ _G.pg.base.gametip.littleaijier_npc = {
 			info = "· Little Ägir cannot participate in Guild Bosses until she has been formally recruited.￼"
 		}
 	}
+}
+_G.pg.base.gametip.word_shipNation_brs = {
+	tip = "BLACK★ROCK SHOOTER"
+}
+_G.pg.base.gametip.brs_main_tip = {
+	tip = "Participate in the event to earn time-limited rewards!"
+}
+_G.pg.base.gametip.brs_expedition_tip = {
+	tip = "Beat the challenge stage to receive time-limited rewards!"
+}
+_G.pg.base.gametip.brs_dmact_tip = {
+	tip = "Total Destroyed"
+}
+_G.pg.base.gametip.brs_reward_tip_1 = {
+	tip = "How to Obtain"
+}
+_G.pg.base.gametip.brs_reward_tip_2 = {
+	tip = "Go"
 }
