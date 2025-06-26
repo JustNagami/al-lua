@@ -6,7 +6,7 @@
 		{
 			mode = 1,
 			asideType = 3,
-			bgm = "battle-ods-onstage",
+			bgm = "battle-DOS-onstage",
 			sequence = {
 				{
 					"虚像？？之塔",

@@ -8310,16 +8310,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "天赋点不足"
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "每累计建造200次可获得海上传奇舰船 狮(最多4次)"
+	tip = "{namecode:545}、{namecode:546} 建造概率UP！"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "前卫、复仇 建造追加！"
+	tip = "罗马、博尔扎诺 建造追加！"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "贾维斯 建造追加！"
+	tip = "朱塞佩·加里波第、阿尔弗雷多·奥里亚尼 建造追加！"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "前卫、不挠 建造追加！"
+	tip = "莱昂纳多·达·芬奇 建造追加！"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -21467,7 +21467,7 @@ _G.pg.base.gametip.littleTaihou_npc = {
 			info = "3.上阵「小鹩」参与战斗，且未被击沉，可获得双倍「练习情书」。"
 		},
 		{
-			info = "4.6月7日为止，每日解锁1个可达成的友好度阶段。"
+			info = "4.6月18日为止，每日解锁1个可达成的友好度阶段。"
 		},
 		{
 			info = "5.在活动结束前累计获得1000「练习情书」，达成7个友好度阶段，可领取奖励并将临时角色「小鹩」转化为永久角色。"
@@ -24774,7 +24774,7 @@ _G.pg.base.gametip.dorm3d_role_choose = {
 	tip = "选择宿舍"
 }
 _G.pg.base.gametip.dorm3d_beach_buy = {
-	tip = "是否消耗<color=#39bfff>$1</color> 解锁 <color=#169fff>沙滩</color>"
+	tip = "是否消耗<color=#39bfff>$1</color> 解锁 <color=#169fff>$2</color>"
 }
 _G.pg.base.gametip.dorm3d_beach_role = {
 	tip = "解锁后可以与<color=#39bfff>$1</color>进行互动"
@@ -26074,11 +26074,11 @@ _G.pg.base.gametip.help_starLightAlbum = {
 		{
 			info = [[
 1. 回忆页面内新增「纪念手册」系统入口。
-2. 活动期间，指挥官可通过完成活动任务收集对应<color=#92fc63>「纪念贴纸」</color>兑换获得活动纪念章家具和活动勋章。
+2. 活动期间，指挥官可通过完成活动任务收集对应<color=#92fc63>「纪念贴纸」</color>兑换获得活动勋章。
  ※ 活动进行时，指挥官可在<color=#92fc63>活动页面或回忆界面</color>通过指定入口进入「纪念贴纸」收集页面；
  ※ 活动结束后指挥官将只能通过<color=#92fc63>回忆界面</color>指定入口进入「纪念贴纸」收集页面；
  ※ 「纪念贴纸」可以通过完成对应活动任务获取；
- ※ 奖励领取界面将延长至6月18日24时；]]
+ ※ 奖励领取界面将延长至7月16日24时；]]
 		}
 	}
 }
@@ -26224,7 +26224,7 @@ _G.pg.base.gametip.dorm3d_gift_favor_exceed = {
 	tip = "赠送后会溢出$1点契合度，是否确定赠送"
 }
 _G.pg.base.gametip.dorm3d_privatechat_telephone_calllog = {
-	tip = "通话记录"
+	tip = "视频记录"
 }
 _G.pg.base.gametip.dorm3d_privatechat_telephone_call = {
 	tip = "语音通话"
@@ -27154,4 +27154,142 @@ _G.pg.base.gametip.brs_reward_tip_1 = {
 }
 _G.pg.base.gametip.brs_reward_tip_2 = {
 	tip = "前往"
+}
+_G.pg.base.gametip.l2d_32xbanned_warning = {
+	tip = "当前设备系统架构无法显示live2D资源，仅展示静态资源"
+}
+_G.pg.base.gametip.dorm3d_guide_tip2 = {
+	tip = "先去沙滩看看吧"
+}
+_G.pg.base.gametip.dorm3d_xinzexi_table = {
+	tip = "餐厅"
+}
+_G.pg.base.gametip.dorm3d_xinzexi_chair = {
+	tip = "客厅"
+}
+_G.pg.base.gametip.dorm3d_xinzexi_bed = {
+	tip = "卧室"
+}
+_G.pg.base.gametip.dorm3d_VIDEO_TELEPHONE_LABEL = {
+	tip = "$1的语音邀请"
+}
+_G.pg.base.gametip.dorm3d_privatechat_screen_floor_2 = {
+	tip = "汐语小筑"
+}
+_G.pg.base.gametip.dorm3d_privatechat_video_call = {
+	tip = "视频通话"
+}
+_G.pg.base.gametip.dorm3d_skin_confirm = {
+	tip = "确认更换"
+}
+_G.pg.base.gametip.dorm3d_skin_already = {
+	tip = "已装备"
+}
+_G.pg.base.gametip.dorm3d_skin_equip = {
+	tip = "是否立即给$1装备$2"
+}
+_G.pg.base.gametip.dorm3d_skin_unlock = {
+	tip = "公共房间无法更换服装"
+}
+_G.pg.base.gametip.dorm3d_room_floor_1 = {
+	tip = "听海之畔"
+}
+_G.pg.base.gametip.dorm3d_room_floor_2 = {
+	tip = "汐语小筑"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame1 = {
+	tip = "$1的即兴舞蹈"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame2 = {
+	tip = "抓拍$1期待的照片吧！"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame3 = {
+	tip = "拍摄完成"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame4 = {
+	tip = "再来一次"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame5 = {
+	tip = "离开舞台"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame6 = {
+	tip = "匹配度：$1"
+}
+_G.pg.base.gametip.dorm3d_dance_button = {
+	tip = "舞蹈 "
+}
+_G.pg.base.gametip.dorm3d_collection_cafe = {
+	tip = "咖啡馆"
+}
+_G.pg.base.gametip.zengke_series_help = {
+	tip = {
+		{
+			info = [[
+<b>活动时间：</b>
+·<color=#92fc63>6.26-7.10维护；</color>
+·活动期间开启限时活动「迷彩都市的寻踪者」。
+
+<b>活动说明：</b>
+·本次作战分为<color=#92fc63>【作战模式】</color>和<color=#92fc63>【剧情模式】</color>。
+·在【作战模式】中，指挥官可上阵多只队伍按照顺序分别挑战各个关卡，完成关卡内全部挑战后视为关卡通关并获得奖励。
+·同时，部分关卡可切换<color=#92fc63>「单队连战」</color>、<color=#92fc63>「多队出击」</color>两种模式：
+--「单队连战」为单只队伍挑战各个关卡。选择「单队连战」模式时，每个关卡开始前角色耐久值及各类状态均将重置。
+--「多队出击」为不同队伍挑战各个关卡。选择「多队出击」模式时，可获得额外奖励。
+
+·指挥官可以通过作战模式获取「都市电影票」，累计收集「都市电影票」可获得角色<color=#92fc63>「{namecode:498}」</color>、装备<color=#92fc63>「试作型三联装305mmSKC39主炮」</color>在内的大量奖励。
+
+·完成【剧情模式】的全部内容后，可获得限定纪念外观<color=#92fc63>「都市探照头罩」</color>。]]
+		}
+	}
+}
+_G.pg.base.gametip.zengke_series_pt = {
+	tip = "累积PT"
+}
+_G.pg.base.gametip.zengke_series_pt_small = {
+	tip = "PT REWARD"
+}
+_G.pg.base.gametip.zengke_series_rank = {
+	tip = "排行榜"
+}
+_G.pg.base.gametip.zengke_series_rank_small = {
+	tip = "RANKING"
+}
+_G.pg.base.gametip.zengke_series_task = {
+	tip = "活动任务"
+}
+_G.pg.base.gametip.zengke_series_task_small = {
+	tip = "TASK"
+}
+_G.pg.base.gametip.zengke_series_confirm = {
+	tip = "立即前往"
+}
+_G.pg.base.gametip.zengke_story_reward_count = {
+	tip = "通关全部剧情后可以获得限定纪念外观："
+}
+_G.pg.base.gametip.zengke_series_easy = {
+	tip = "简单"
+}
+_G.pg.base.gametip.zengke_series_normal = {
+	tip = "普通"
+}
+_G.pg.base.gametip.zengke_series_hard = {
+	tip = "困难"
+}
+_G.pg.base.gametip.zengke_series_sp = {
+	tip = "S.P"
+}
+_G.pg.base.gametip.zengke_series_ex = {
+	tip = "E.X"
+}
+_G.pg.base.gametip.zengke_series_ex_confirm = {
+	tip = "返回"
+}
+_G.pg.base.gametip.battleui_display1 = {
+	tip = "全新界面"
+}
+_G.pg.base.gametip.battleui_display2 = {
+	tip = "丰富特效"
+}
+_G.pg.base.gametip.battleui_display3 = {
+	tip = "暂停栏"
 }

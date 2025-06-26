@@ -1256,6 +1256,9 @@ pg.ship_data_group = setmetatable({
 		[40111] = {
 			673
 		},
+		[40113] = {
+			696
+		},
 		[40116] = {
 			564
 		},
@@ -1400,6 +1403,9 @@ pg.ship_data_group = setmetatable({
 		[40406] = {
 			648
 		},
+		[40407] = {
+			694
+		},
 		[40501] = {
 			250
 		},
@@ -1477,6 +1483,9 @@ pg.ship_data_group = setmetatable({
 		},
 		[40812] = {
 			528
+		},
+		[40814] = {
+			695
 		},
 		[50101] = {
 			253
@@ -2790,6 +2799,7 @@ pg.ship_data_group = setmetatable({
 			379,
 			672,
 			673,
+			696,
 			564,
 			346,
 			264,
@@ -2838,6 +2848,7 @@ pg.ship_data_group = setmetatable({
 			544,
 			566,
 			648,
+			694,
 			250,
 			251,
 			529,
@@ -2864,6 +2875,7 @@ pg.ship_data_group = setmetatable({
 			386,
 			344,
 			528,
+			695,
 			253,
 			254,
 			255,
@@ -3588,6 +3600,7 @@ pg.ship_data_group = setmetatable({
 		379,
 		672,
 		673,
+		696,
 		564,
 		346,
 		264,
@@ -3636,6 +3649,7 @@ pg.ship_data_group = setmetatable({
 		544,
 		566,
 		648,
+		694,
 		250,
 		251,
 		529,
@@ -3662,6 +3676,7 @@ pg.ship_data_group = setmetatable({
 		386,
 		344,
 		528,
+		695,
 		253,
 		254,
 		255,
@@ -22651,6 +22666,38 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
+	[696] = {
+		type = 1,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 4,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 421,
+		code = 696,
+		group_type = 40113,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"D",
+			"A",
+			"E",
+			"A",
+			"D",
+			"D"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"限时活动：迷彩都市的寻踪者",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
 	[564] = {
 		type = 1,
 		redirect_id = 101,
@@ -24574,6 +24621,38 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
+	[694] = {
+		type = 4,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 4,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 469,
+		code = 694,
+		group_type = 40407,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"C",
+			"E",
+			"D",
+			"C",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"限时活动：迷彩都市的寻踪者",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
 	[250] = {
 		type = 5,
 		redirect_id = 101,
@@ -25667,6 +25746,38 @@ pg.base.ship_data_group = {
 					{
 						warp = "supplies"
 					}
+				},
+				0
+			}
+		}
+	},
+	[695] = {
+		type = 8,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 4,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 497,
+		code = 695,
+		group_type = 40814,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"D",
+			"S",
+			"E",
+			"D",
+			"E",
+			"D"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"限时活动：迷彩都市的寻踪者",
+				{
+					""
 				},
 				0
 			}
@@ -26778,6 +26889,16 @@ pg.base.ship_data_group = {
 					""
 				},
 				0
+			},
+			{
+				"军需商店兑换",
+				{
+					"SHOP",
+					{
+						warp = "supplies"
+					}
+				},
+				0
 			}
 		}
 	},
@@ -26937,6 +27058,17 @@ pg.base.ship_data_group = {
 				"限时活动：雄鹰的叙事歌",
 				{
 					""
+				},
+				0
+			},
+			{
+				"进行轻型舰建造",
+				{
+					"GETBOAT",
+					{
+						projectName = "light",
+						page = 1
+					}
 				},
 				0
 			}
@@ -27119,6 +27251,17 @@ pg.base.ship_data_group = {
 				"限时活动：雄鹰的叙事歌",
 				{
 					""
+				},
+				0
+			},
+			{
+				"进行轻型舰建造",
+				{
+					"GETBOAT",
+					{
+						projectName = "light",
+						page = 1
+					}
 				},
 				0
 			}
@@ -27374,6 +27517,17 @@ pg.base.ship_data_group = {
 					""
 				},
 				0
+			},
+			{
+				"进行重型舰建造",
+				{
+					"GETBOAT",
+					{
+						projectName = "heavy",
+						page = 1
+					}
+				},
+				0
 			}
 		}
 	},
@@ -27521,6 +27675,17 @@ pg.base.ship_data_group = {
 				"限时活动：雄鹰的叙事歌",
 				{
 					""
+				},
+				0
+			},
+			{
+				"进行重型舰建造",
+				{
+					"GETBOAT",
+					{
+						projectName = "heavy",
+						page = 1
+					}
 				},
 				0
 			}
@@ -27839,6 +28004,17 @@ pg.base.ship_data_group = {
 				"限时活动：雄鹰的叙事歌",
 				{
 					""
+				},
+				0
+			},
+			{
+				"进行特型舰建造",
+				{
+					"GETBOAT",
+					{
+						projectName = "special",
+						page = 1
+					}
 				},
 				0
 			}
