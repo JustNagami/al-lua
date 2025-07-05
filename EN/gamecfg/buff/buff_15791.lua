@@ -17,6 +17,16 @@
 				"onRemove"
 			},
 			arg_list = {}
+		},
+		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				tag = "stuned"
+			}
 		}
 	},
 	{},

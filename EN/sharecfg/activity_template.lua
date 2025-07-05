@@ -31038,7 +31038,7 @@ pg.activity_template = {
 		type = 125,
 		login_pop = 0,
 		config_id = 0,
-		is_show = 45,
+		is_show = 43,
 		page_core = "",
 		config_data = {
 			{
@@ -31081,7 +31081,7 @@ pg.activity_template = {
 				{
 					2025,
 					6,
-					11
+					18
 				},
 				{
 					23,
@@ -31611,7 +31611,7 @@ pg.activity_template = {
 		type = 74,
 		login_pop = 0,
 		config_id = 5958,
-		is_show = 47,
+		is_show = 45,
 		page_core = "",
 		config_data = {},
 		time = {
@@ -31769,7 +31769,7 @@ pg.activity_template = {
 				{
 					2025,
 					6,
-					11
+					18
 				},
 				{
 					23,
@@ -31790,7 +31790,7 @@ pg.activity_template = {
 		type = 115,
 		login_pop = 0,
 		config_id = 1,
-		is_show = 48,
+		is_show = 46,
 		page_core = "",
 		config_data = {},
 		time = {
@@ -33326,7 +33326,7 @@ pg.activity_template = {
 		type = 18,
 		login_pop = 0,
 		config_id = 3,
-		is_show = 48,
+		is_show = 44,
 		page_core = "",
 		config_data = {
 			{
@@ -33479,6 +33479,1174 @@ pg.activity_template = {
 					2025,
 					6,
 					18
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[5993] = {
+		mark = 20250612,
+		title_res_tag = "",
+		page_info = "",
+		type = 13,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_client = "",
+		id = 5993,
+		page_core = "",
+		config_data = {
+			10195,
+			10196,
+			10197,
+			10198,
+			10199
+		},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					18
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[5994] = {
+		mark = 20250612,
+		title_res_tag = "xiaodafeng_pt",
+		time = "stop",
+		type = 74,
+		login_pop = 0,
+		config_id = 5994,
+		is_show = 42,
+		config_client = "",
+		id = 5994,
+		page_core = "",
+		config_data = {},
+		page_info = {
+			class_name = "LittleDaihoRePage",
+			ui_name = "LittleDaihoRePage"
+		}
+	},
+	[5995] = {
+		mark = 20250612,
+		time = "stop",
+		page_info = "",
+		type = 13,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		title_res_tag = "",
+		id = 5995,
+		page_core = "",
+		config_data = {
+			23845
+		},
+		config_client = {
+			npc = {
+				"",
+				23845
+			}
+		}
+	},
+	[5996] = {
+		mark = 20250619,
+		time = "stop",
+		page_info = "",
+		type = 1,
+		login_pop = 0,
+		config_id = 10,
+		is_show = 0,
+		title_res_tag = "",
+		config_client = "",
+		id = 5996,
+		page_core = "",
+		config_data = {}
+	},
+	[5997] = {
+		mark = 20250619,
+		title_res_tag = "",
+		page_info = "",
+		type = 10,
+		login_pop = 0,
+		config_id = 5996,
+		is_show = 0,
+		config_client = "",
+		id = 5997,
+		page_core = "",
+		config_data = {},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[5998] = {
+		mark = 20250619,
+		title_res_tag = "dexiV3_frame",
+		type = 87,
+		login_pop = 0,
+		config_id = 30,
+		is_show = 45,
+		config_client = "",
+		id = 5998,
+		page_core = "",
+		config_data = {},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "BisimaiFrameRePage",
+			ui_name = "BisimaiFrameRePage"
+		}
+	},
+	[5999] = {
+		mark = 20250619,
+		time = "stop",
+		page_info = "",
+		type = 58,
+		login_pop = 0,
+		config_id = 24,
+		is_show = 0,
+		title_res_tag = "",
+		config_client = "",
+		id = 5999,
+		page_core = "",
+		config_data = {}
+	},
+	[50000] = {
+		mark = 20250619,
+		title_res_tag = "bisimai_story",
+		time = "stop",
+		type = 18,
+		login_pop = 0,
+		config_id = 3,
+		is_show = 46,
+		id = 50000,
+		page_core = "",
+		config_data = {
+			{
+				23773,
+				23774
+			},
+			{
+				23775,
+				23776
+			},
+			{
+				23777,
+				23778
+			},
+			{
+				23779,
+				23780
+			},
+			{
+				23781,
+				23782
+			},
+			{
+				23783,
+				23784
+			},
+			{
+				23785,
+				23786
+			}
+		},
+		page_info = {
+			class_name = "BisimaiStoryActRePage",
+			ui_name = "BisimaiStoryActRePage"
+		},
+		config_client = {
+			story = {
+				{
+					"ZHIZHEYUZHIZHU1"
+				},
+				{
+					"ZHIZHEYUZHIZHU2"
+				},
+				{
+					"ZHIZHEYUZHIZHU3"
+				},
+				{
+					"ZHIZHEYUZHIZHU4"
+				},
+				{
+					"ZHIZHEYUZHIZHU5"
+				},
+				{
+					"ZHIZHEYUZHIZHU6"
+				},
+				{
+					"ZHIZHEYUZHIZHU7"
+				}
+			}
+		}
+	},
+	[50001] = {
+		mark = 20250619,
+		time = "stop",
+		page_info = "",
+		type = 80,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		title_res_tag = "",
+		id = 50001,
+		page_core = "",
+		config_data = {
+			10
+		},
+		config_client = {
+			65625
+		}
+	},
+	[50002] = {
+		mark = 20250619,
+		title_res_tag = "YidaliV2_login",
+		time = "stop",
+		type = 3,
+		login_pop = 0,
+		config_id = 74,
+		is_show = 43,
+		config_client = "",
+		id = 50002,
+		page_core = "",
+		config_data = {},
+		page_info = {
+			class_name = "BisimaiLoginPage",
+			ui_name = "BisimaiLoginPage"
+		}
+	},
+	[50003] = {
+		mark = 20250619,
+		title_res_tag = "dexiV5_main",
+		time = "stop",
+		type = 12,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 48,
+		id = 50003,
+		page_core = "",
+		config_data = {
+			1720001,
+			1720002,
+			1720003,
+			1720007,
+			1720021,
+			1720022,
+			1720023,
+			1720027
+		},
+		page_info = {
+			class_name = "DexiV7MainRePage",
+			ui_name = "DexiV7MainRePage"
+		},
+		config_client = {
+			entrance_bg = "activitybanner/temp10"
+		}
+	},
+	[50004] = {
+		mark = 20250619,
+		time = "stop",
+		page_info = "",
+		type = 12,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		title_res_tag = "",
+		id = 50004,
+		page_core = "",
+		config_data = {
+			1720004,
+			1720005,
+			1720006,
+			1720008,
+			1720024,
+			1720025,
+			1720026,
+			1720028,
+			1720041,
+			1720051
+		},
+		config_client = {
+			entrance_bg = "activitybanner/temp10"
+		}
+	},
+	[50005] = {
+		mark = 20250619,
+		time = "stop",
+		page_info = "",
+		type = 13,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		title_res_tag = "",
+		config_client = "",
+		id = 50005,
+		page_core = "",
+		config_data = {
+			23862,
+			23863,
+			23864,
+			23865,
+			23866,
+			23867,
+			23868,
+			23869,
+			23870,
+			23871,
+			23872,
+			23873,
+			23874,
+			23875,
+			23876,
+			23877,
+			23878,
+			23879,
+			23880,
+			23881
+		}
+	},
+	[50006] = {
+		mark = 20250619,
+		id = 50006,
+		title_res_tag = "dexiV5_pt",
+		type = 74,
+		login_pop = 0,
+		config_id = 50006,
+		is_show = 47,
+		page_core = "",
+		config_data = {},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "DexiV7PtRePage",
+			ui_name = "DexiV7PtRePage"
+		},
+		config_client = {
+			shopLinkActID = 50007,
+			highValueItemSort = {
+				13,
+				21,
+				23,
+				25,
+				28
+			}
+		}
+	},
+	[50007] = {
+		mark = 20250619,
+		title_res_tag = "",
+		page_info = "",
+		type = 14,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		id = 50007,
+		page_core = "",
+		config_data = {
+			3054,
+			3055,
+			3056,
+			3057,
+			3058,
+			3059,
+			3060,
+			3061,
+			3062,
+			3063,
+			3064,
+			3065,
+			3066,
+			3067,
+			3068,
+			3069,
+			3070,
+			3071,
+			3072,
+			3073,
+			3074,
+			3075,
+			3076,
+			3077,
+			3078,
+			3079,
+			3080
+		},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		config_client = {
+			"commonbg/bg_pt_bsmz",
+			{
+				1,
+				1,
+				1,
+				1
+			},
+			use_secretary = false,
+			painting = "u556_alter_pt",
+			pt_id = 514
+		}
+	},
+	[50008] = {
+		mark = 20250619,
+		title_res_tag = "",
+		page_info = "",
+		type = 36,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_client = "",
+		id = 50008,
+		page_core = "",
+		config_data = {
+			1725001,
+			5000,
+			50,
+			0.36,
+			0.6,
+			10
+		},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[50009] = {
+		mark = 20250619,
+		title_res_tag = "",
+		page_info = "",
+		type = 16,
+		login_pop = 0,
+		config_id = 514,
+		is_show = 0,
+		config_data = "100",
+		config_client = "",
+		id = 50009,
+		page_core = "",
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[50010] = {
+		mark = 20250619,
+		time = "stop",
+		page_info = "",
+		type = 27,
+		login_pop = 0,
+		config_id = 1,
+		is_show = 0,
+		config_data = "[{31957,100}]",
+		config_client = "",
+		title_res_tag = "",
+		id = 50010,
+		page_core = ""
+	},
+	[50011] = {
+		mark = 20250619,
+		time = "stop",
+		page_info = "",
+		type = 13,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		title_res_tag = "",
+		config_client = "",
+		id = 50011,
+		page_core = "",
+		config_data = {
+			23861
+		}
+	},
+	[50012] = {
+		mark = 20250626,
+		title_res_tag = "",
+		page_info = "",
+		type = 1,
+		login_pop = 0,
+		config_id = 4,
+		is_show = 0,
+		config_client = "",
+		id = 50012,
+		page_core = "",
+		config_data = {},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[50013] = {
+		mark = 20250626,
+		id = 50013,
+		title_res_tag = "zengke",
+		type = 93,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 48,
+		page_core = "",
+		config_data = {
+			3001,
+			3002,
+			3003,
+			3004,
+			3005
+		},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "ZengKeMainPage",
+			ui_name = "ZengKeMainPage"
+		},
+		config_client = {
+			scene = "BossRushVerZenkerScene",
+			entrance_bg = "activitybanner/temp10",
+			mediator = "BossRushVerZenkerMediator",
+			openStory = "MICAIDUSHIDEXUNZONGZHE1",
+			tasks = {
+				23889
+			},
+			storys = {
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47
+			},
+			storybg = {
+				{
+					"default",
+					"bg2"
+				},
+				{
+					"MICAIDUSHIDEXUNZONGZHE2",
+					"bg3"
+				},
+				{
+					"MICAIDUSHIDEXUNZONGZHE3",
+					"bg1"
+				},
+				{
+					"MICAIDUSHIDEXUNZONGZHE5",
+					"bg2"
+				},
+				{
+					"MICAIDUSHIDEXUNZONGZHE7",
+					"bg3"
+				},
+				{
+					"MICAIDUSHIDEXUNZONGZHE9",
+					"bg1"
+				}
+			},
+			levelbg = {
+				{
+					5,
+					"bg2"
+				},
+				{
+					9,
+					"bg1"
+				},
+				{
+					17,
+					"bg2"
+				},
+				{
+					20,
+					"bg3"
+				}
+			},
+			storybgm = {
+				{
+					5,
+					"story-antarctica-serious"
+				},
+				{
+					9,
+					"story-spycity-fashion"
+				},
+				{
+					17,
+					"story-antarctica-serious"
+				},
+				{
+					20,
+					"story-nonightcity"
+				}
+			}
+		}
+	},
+	[50014] = {
+		mark = 20250626,
+		title_res_tag = "",
+		page_info = "",
+		type = 94,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_data = "0",
+		config_client = "",
+		id = 50014,
+		page_core = "",
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					16
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[50015] = {
+		mark = 20250626,
+		id = 50015,
+		title_res_tag = "zengkept",
+		type = 74,
+		login_pop = 0,
+		config_id = 50015,
+		is_show = 47,
+		page_core = "",
+		config_data = {},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					16
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "ZengKePtPage",
+			ui_name = "ZengKePtPage"
+		},
+		config_client = {
+			highValueItemSort = {
+				11,
+				23,
+				29,
+				33,
+				37
+			}
+		}
+	},
+	[50016] = {
+		mark = 20250626,
+		title_res_tag = "",
+		page_info = "",
+		type = 60,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_client = "",
+		id = 50016,
+		page_core = "",
+		config_data = {
+			570,
+			571,
+			572,
+			573
+		},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[50017] = {
+		mark = 20250626,
+		title_res_tag = "",
+		page_info = "",
+		type = 13,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_client = "",
+		id = 50017,
+		page_core = "",
+		config_data = {
+			23882,
+			23883,
+			23884,
+			23885,
+			23886,
+			23887,
+			23889,
+			23890,
+			23891,
+			23892,
+			23893
+		},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[50018] = {
+		mark = 20250626,
+		title_res_tag = "",
+		page_info = "",
+		type = 13,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_client = "",
+		id = 50018,
+		page_core = "",
+		config_data = {
+			23888
+		},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[50019] = {
+		mark = 20250626,
+		title_res_tag = "",
+		page_info = "",
+		type = 16,
+		login_pop = 0,
+		config_id = 516,
+		is_show = 0,
+		config_data = "100",
+		config_client = "",
+		id = 50019,
+		page_core = "",
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					16
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[50020] = {
+		mark = 20250626,
+		title_res_tag = "",
+		page_info = "",
+		type = 27,
+		login_pop = 0,
+		config_id = 1,
+		is_show = 0,
+		config_data = "[{31934,100}]",
+		config_client = "",
+		id = 50020,
+		page_core = "",
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[50021] = {
+		mark = 20250626,
+		title_res_tag = "",
+		page_info = "",
+		type = 13,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_client = "",
+		id = 50021,
+		page_core = "",
+		config_data = {
+			21776,
+			21777,
+			21778,
+			21779,
+			21780,
+			21781,
+			21782,
+			21783,
+			21784
+		},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					16
 				},
 				{
 					23,
@@ -34631,6 +35799,52 @@ pg.activity_template = {
 			ui_name = "SurveyPage"
 		}
 	},
+	[7108] = {
+		mark = 20250612,
+		title_res_tag = "survey",
+		type = 101,
+		login_pop = 0,
+		config_id = 1007,
+		is_show = 35,
+		config_client = "",
+		id = 7108,
+		page_core = "",
+		config_data = {
+			1,
+			30
+		},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					18
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "SurveyPage",
+			ui_name = "SurveyPage"
+		}
+	},
 	[7501] = {
 		mark = 20240926,
 		title_res_tag = "dorm3D_Sign-in1",
@@ -34694,6 +35908,71 @@ pg.activity_template = {
 		page_info = {
 			class_name = "DormSignPage",
 			ui_name = "DormSignPage"
+		}
+	},
+	[7502] = {
+		mark = 20250612,
+		title_res_tag = "DormSignTwo",
+		type = 89,
+		login_pop = 99,
+		config_id = 0,
+		is_show = 44,
+		config_client = "",
+		id = 7502,
+		page_core = "",
+		config_data = {
+			{
+				23846
+			},
+			{
+				23847
+			},
+			{
+				23848
+			},
+			{
+				23849
+			},
+			{
+				23850
+			},
+			{
+				23851
+			},
+			{
+				23852
+			}
+		},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					6,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2034,
+					12,
+					27
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "DormSignTwoPage",
+			ui_name = "DormSignTwoPage"
 		}
 	},
 	[8009] = {
@@ -59733,6 +61012,8 @@ pg.activity_template = {
 			5887,
 			5905,
 			5965,
+			5996,
+			50012,
 			30006,
 			30014,
 			30024,
@@ -59795,6 +61076,7 @@ pg.activity_template = {
 			5859,
 			5895,
 			5960,
+			50002,
 			8009,
 			8050,
 			8053,
@@ -59978,6 +61260,9 @@ pg.activity_template = {
 			5981,
 			5984,
 			5986,
+			5994,
+			50006,
+			50015,
 			1086,
 			6006,
 			6010,
@@ -60170,6 +61455,13 @@ pg.activity_template = {
 			5985,
 			5987,
 			5991,
+			5993,
+			5995,
+			50005,
+			50011,
+			50017,
+			50018,
+			50021,
 			1079,
 			1080,
 			1081,
@@ -60329,6 +61621,7 @@ pg.activity_template = {
 			5906,
 			5964,
 			5967,
+			50007,
 			30013,
 			30042,
 			30056,
@@ -60404,6 +61697,7 @@ pg.activity_template = {
 			5979,
 			5982,
 			5990,
+			50000,
 			6000,
 			6001,
 			6002,
@@ -60534,6 +61828,7 @@ pg.activity_template = {
 			5825,
 			5866,
 			5954,
+			50008,
 			30019,
 			30046,
 			30053,
@@ -60596,6 +61891,8 @@ pg.activity_template = {
 			5894,
 			5904,
 			5953,
+			50009,
+			50019,
 			30015,
 			30023,
 			30044,
@@ -60681,6 +61978,8 @@ pg.activity_template = {
 			5901,
 			5941,
 			5942,
+			50003,
+			50004,
 			30012,
 			30020,
 			30021,
@@ -60774,6 +62073,8 @@ pg.activity_template = {
 			5874,
 			5908,
 			5975,
+			50010,
+			50020,
 			30003,
 			30033,
 			30045,
@@ -60805,6 +62106,7 @@ pg.activity_template = {
 			5799,
 			5858,
 			5896,
+			50001,
 			30861
 		},
 		[87] = {
@@ -60827,7 +62129,8 @@ pg.activity_template = {
 			5746,
 			5810,
 			5855,
-			5923
+			5923,
+			5998
 		},
 		[58] = {
 			4908,
@@ -60853,6 +62156,7 @@ pg.activity_template = {
 			5811,
 			5856,
 			5925,
+			5999,
 			30201,
 			30289,
 			30336,
@@ -60877,7 +62181,8 @@ pg.activity_template = {
 			5759,
 			5847,
 			5854,
-			5966
+			5966,
+			5997
 		},
 		[52] = {
 			4915,
@@ -60939,6 +62244,7 @@ pg.activity_template = {
 			5927,
 			5977,
 			5992,
+			50016,
 			30318,
 			30332,
 			30469,
@@ -61178,7 +62484,8 @@ pg.activity_template = {
 		},
 		[89] = {
 			5261,
-			7501
+			7501,
+			7502
 		},
 		[22] = {
 			5264,
@@ -61209,11 +62516,13 @@ pg.activity_template = {
 		},
 		[93] = {
 			5402,
-			5888
+			5888,
+			50013
 		},
 		[94] = {
 			5403,
-			5889
+			5889,
+			50014
 		},
 		[116] = {
 			5523
@@ -61267,7 +62576,8 @@ pg.activity_template = {
 			7101,
 			7103,
 			7106,
-			7107
+			7107,
+			7108
 		},
 		[119] = {
 			7104
@@ -62157,6 +63467,35 @@ pg.activity_template = {
 		5990,
 		5991,
 		5992,
+		5993,
+		5994,
+		5995,
+		5996,
+		5997,
+		5998,
+		5999,
+		50000,
+		50001,
+		50002,
+		50003,
+		50004,
+		50005,
+		50006,
+		50007,
+		50008,
+		50009,
+		50010,
+		50011,
+		50012,
+		50013,
+		50014,
+		50015,
+		50016,
+		50017,
+		50018,
+		50019,
+		50020,
+		50021,
 		7001,
 		7011,
 		7012,
@@ -62176,7 +63515,9 @@ pg.activity_template = {
 		7104,
 		7106,
 		7107,
+		7108,
 		7501,
+		7502,
 		8009,
 		8010,
 		8050,

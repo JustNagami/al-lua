@@ -1834,8 +1834,6 @@ pg.skill_data_display = setmetatable({
 		151180,
 		151191,
 		151192,
-		151200,
-		151210,
 		151211,
 		151224,
 		151262,
@@ -1847,6 +1845,16 @@ pg.skill_data_display = setmetatable({
 		151293,
 		151302,
 		151312,
+		151321,
+		151341,
+		151342,
+		151343,
+		151344,
+		151345,
+		151351,
+		151352,
+		151361,
+		151362,
 		18010,
 		18040,
 		18041,
@@ -2507,6 +2515,8 @@ pg.skill_data_display = setmetatable({
 		30442,
 		30461,
 		30462,
+		30485,
+		30486,
 		39000,
 		39001,
 		39002,
@@ -3207,6 +3217,14 @@ pg.skill_data_display = setmetatable({
 		1012401,
 		1013050,
 		1013051,
+		1010310,
+		1010311,
+		1010312,
+		1011870,
+		1011871,
+		1011872,
+		1011873,
+		1011874,
 		200002,
 		200005,
 		200008,
@@ -3504,6 +3522,7 @@ pg.skill_data_display = setmetatable({
 		1013021,
 		1013022,
 		1013023,
+		1013883,
 		1011560,
 		1011561,
 		1010960,
@@ -3515,6 +3534,10 @@ pg.skill_data_display = setmetatable({
 		1011154,
 		1012481,
 		1012482,
+		1010881,
+		1010883,
+		1011250,
+		1011251,
 		1090020,
 		1090042,
 		1090043,
@@ -5893,11 +5916,11 @@ pg.base.skill_data_display = {
 	},
 	[11870] = {
 		id = 11870,
-		name = "Divine Marksman+"
+		name = "Divine Marksman (R)"
 	},
 	[11871] = {
 		id = 11871,
-		name = "Divine Marksman+"
+		name = "Divine Marksman ®"
 	},
 	[11880] = {
 		id = 11880,
@@ -10919,14 +10942,6 @@ pg.base.skill_data_display = {
 		id = 151192,
 		name = "Glowworm Breakthrough!"
 	},
-	[151200] = {
-		id = 151200,
-		name = "禁!止!通!行!"
-	},
-	[151210] = {
-		id = 151210,
-		name = "Dogged Pursuit"
-	},
 	[151211] = {
 		id = 151211,
 		name = "Dogged Pursuit"
@@ -10970,6 +10985,46 @@ pg.base.skill_data_display = {
 	[151312] = {
 		id = 151312,
 		name = "By This Power, Shall Duty be Done"
+	},
+	[151321] = {
+		id = 151321,
+		name = "Threshold Computation"
+	},
+	[151341] = {
+		id = 151341,
+		name = "Bespoke Tactics!"
+	},
+	[151342] = {
+		id = 151342,
+		name = "Bespoke Tactics!"
+	},
+	[151343] = {
+		id = 151343,
+		name = "Bespoke Tactics!"
+	},
+	[151344] = {
+		id = 151344,
+		name = "Bespoke Tactics!"
+	},
+	[151345] = {
+		id = 151345,
+		name = "Bespoke Tactics!"
+	},
+	[151351] = {
+		id = 151351,
+		name = "Consultant's Gotta Strut!"
+	},
+	[151352] = {
+		id = 151352,
+		name = "Consultant's Gotta Strut!"
+	},
+	[151361] = {
+		id = 151361,
+		name = "Roter Teufel"
+	},
+	[151362] = {
+		id = 151362,
+		name = "Roter Teufel"
 	},
 	[18010] = {
 		id = 18010,
@@ -13610,6 +13665,14 @@ pg.base.skill_data_display = {
 	[30462] = {
 		id = 30462,
 		name = "All Out Assault II"
+	},
+	[30485] = {
+		id = 30485,
+		name = "All Out Assault – U-552 I"
+	},
+	[30486] = {
+		id = 30486,
+		name = "All Out Assault – U-552 II"
 	},
 	[39000] = {
 		id = 39000,
@@ -16411,6 +16474,38 @@ pg.base.skill_data_display = {
 		id = 1013051,
 		name = "Long Live the Revolution!+"
 	},
+	[1010310] = {
+		id = 1010310,
+		name = "Divine Marksman+"
+	},
+	[1010311] = {
+		id = 1010311,
+		name = "Royal Sword"
+	},
+	[1010312] = {
+		id = 1010312,
+		name = "Royal Sword"
+	},
+	[1011870] = {
+		id = 1011870,
+		name = "Divine Marksman (R)+"
+	},
+	[1011871] = {
+		id = 1011871,
+		name = "Divine Marksman (R)+"
+	},
+	[1011872] = {
+		id = 1011872,
+		name = "Divine Marksman (R)+"
+	},
+	[1011873] = {
+		id = 1011873,
+		name = "Divine Marksman (R)+"
+	},
+	[1011874] = {
+		id = 1011874,
+		name = "Divine Marksman (R)+"
+	},
 	[200002] = {
 		id = 200002,
 		name = "Air Armada Support"
@@ -17599,6 +17694,10 @@ pg.base.skill_data_display = {
 		id = 1013023,
 		name = "Lod Obstrel+"
 	},
+	[1013883] = {
+		id = 1013883,
+		name = "Iron Blood Falcon+"
+	},
 	[1011560] = {
 		id = 1011560,
 		name = "2,700 Pounds of Justice+"
@@ -17642,6 +17741,22 @@ pg.base.skill_data_display = {
 	[1012482] = {
 		id = 1012482,
 		name = "BALTIMORE!!!!!"
+	},
+	[1010881] = {
+		id = 1010881,
+		name = "Lucky Lou+"
+	},
+	[1010883] = {
+		id = 1010883,
+		name = "Lucky Lou+"
+	},
+	[1011250] = {
+		id = 1011250,
+		name = "Leyte Gulf's Blitz+"
+	},
+	[1011251] = {
+		id = 1011251,
+		name = "Leyte Gulf's Blitz+"
 	},
 	[1090020] = {
 		id = 1090020,

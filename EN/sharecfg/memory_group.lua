@@ -230,6 +230,7 @@ pg.memory_group = setmetatable({
 		330,
 		331,
 		332,
+		333,
 		501,
 		502,
 		503,
@@ -338,6 +339,7 @@ pg.memory_group = setmetatable({
 		608,
 		609,
 		610,
+		611,
 		1000,
 		1001,
 		1002,
@@ -5656,6 +5658,27 @@ pg.base.memory_group = {
 			4422
 		}
 	},
+	[333] = {
+		id = 333,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 50013,
+		title = "The Neon City Investigator",
+		group_id = "",
+		memories = {
+			4451,
+			4452,
+			4453,
+			4454,
+			4455,
+			4456,
+			4457,
+			4458,
+			4459,
+			4460
+		}
+	},
 	[501] = {
 		id = 501,
 		subtype = 0,
@@ -7822,6 +7845,26 @@ pg.base.memory_group = {
 			4325,
 			4326,
 			4327
+		},
+		group_id = {
+			10000
+		}
+	},
+	[611] = {
+		id = 611,
+		subtype = 0,
+		icon = "title_chara_aogusite",
+		type = 3,
+		link_event = 0,
+		title = "A Night with the Unhulde",
+		memories = {
+			4441,
+			4442,
+			4443,
+			4444,
+			4445,
+			4446,
+			4447
 		},
 		group_id = {
 			10000

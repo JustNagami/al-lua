@@ -76,9 +76,9 @@ pg.voice_bgm = {
 		bgm = "main"
 	},
 	LoginScene = {
-		default_bgm = "brs-1",
+		default_bgm = "login",
 		special_bgm = "",
-		bgm = "brs-1"
+		bgm = "login"
 	},
 	NewMainScene = {
 		default_bgm = "main",
@@ -2214,5 +2214,55 @@ pg.voice_bgm = {
 		default_bgm = "story-tulipa",
 		special_bgm = "",
 		bgm = "story-tulipa"
+	},
+	LittleDaihoRePage = {
+		default_bgm = "story-richang-7",
+		special_bgm = "",
+		bgm = "story-richang-7"
+	},
+	DormSignTwoPage = {
+		default_bgm = "story-room-newjersey",
+		special_bgm = "",
+		bgm = "story-room-newjersey"
+	},
+	BisimaiFrameRePage = {
+		default_bgm = "bsm-4",
+		special_bgm = "",
+		bgm = "bsm-4"
+	},
+	BisimaiStoryActRePage = {
+		default_bgm = "theme-ulrich",
+		special_bgm = "",
+		bgm = "theme-ulrich"
+	},
+	BisimaiLoginPage = {
+		default_bgm = "bsm-5",
+		special_bgm = "",
+		bgm = "bsm-5"
+	},
+	DexiV7MainRePage = {
+		default_bgm = "theme-bismark-reborn",
+		special_bgm = "",
+		bgm = "theme-bismark-reborn"
+	},
+	DexiV7PtRePage = {
+		default_bgm = "theme-bismark-reborn",
+		special_bgm = "",
+		bgm = "theme-bismark-reborn"
+	},
+	ZengKeMainPage = {
+		default_bgm = "story-spycity-fashion",
+		special_bgm = "",
+		bgm = "story-spycity-fashion"
+	},
+	ZengKePtPage = {
+		default_bgm = "story-spycity-fashion",
+		special_bgm = "",
+		bgm = "story-spycity-fashion"
+	},
+	CamouflageCityMedalAlbumView = {
+		default_bgm = "story-spycity-fashion",
+		special_bgm = "",
+		bgm = "story-spycity-fashion"
 	}
 }

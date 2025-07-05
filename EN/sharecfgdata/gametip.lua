@@ -8464,16 +8464,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "This Meowfficer does not have any Talent Points."
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Get Lion guaranteed with every 200 event builds (can be done up to 4 times)!"
+	tip = "Rate UP for Admiral Zenker and U-552!"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "Vanguard, Revenge added to standard build pool!"
+	tip = "Roma and Bolzano added to the standard build pool!"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "Jervis added to standard build pool!"
+	tip = "Giuseppe Garibaldi and Alfredo Oriani added to the standard build pool!"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "Vanguard, Indomitable added to standard build pool!"
+	tip = "Leonardo da Vinci added to the standard build pool!"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -13363,7 +13363,7 @@ _G.pg.base.gametip.guild_event_info_desc2 = {
 	tip = "Total combined $1: <color=$2>$3/$4</color>"
 }
 _G.pg.base.gametip.guild_join_member_cnt = {
-	tip = "Participants:"
+	tip = "participate:"
 }
 _G.pg.base.gametip.guild_total_effect = {
 	tip = "Total Efficiency:"
@@ -21301,31 +21301,29 @@ _G.pg.base.gametip.notice_label_tip = {
 _G.pg.base.gametip.littleTaihou_npc = {
 	tip = {
 		{
-			info = "- Overview -\nDuring the event, Taihou-chan will provisionally join your fleet. Complete missions during the event to earn Practice Love Letters, which can be redeemed for Trust. Collect enough Trust to have Taihou-chan permanently join your fleet!"
+			info = "- Overview -\nDuring the event, Taihou-chan will provisionally join your fleet. Fight boss fleets to earn Trust. Collect enough Trust to have Taihou-chan permanently join your fleet!"
 		},
 		{
-			info = "- How to Play -\n· During the event period, you can earn Practice Love Letters by defeating the boss fleet in stages at or after Chapter 3 of the Campaign, or in event stages (excluding War Archives). You will be able to unlock rewards by reaching certain Trust milestones."
+			info = [[
+- How to Play -
+· Collect Trust during the event period to have Taihou-chan permanently join your fleet.
+· Trust can be gathered by defeating the boss fleet of campaign maps starting from Chapter 3 on normal difficulty and event maps (not including War Archives). If Taihou-chan is in the fleet that defeats the boss and she is still afloat, you'll receive double the amount of Trust.
+· The Trust you've collected can be turned in for additional rewards on the event banner.]]
 		},
 		{
-			info = "· When you defeat the boss of a stage that drops Practice Love Letters, you will earn twice as many Practice Love Letters if Taihou-chan is still afloat in one of the fleets at that time."
+			info = "· You will not be able to give a Promise Ring to Taihou-chan until you have formally recruited her to the fleet. You will also not be able to Retire her or use her as Enhancement or Limit Break material."
 		},
 		{
-			info = " You can redeem Practice Love Letters for Trust by tapping the bottom right button on the Passionate Confession Practice event banner. You will be able to collect rewards for accumulating a certain amount of Trust."
+			info = "· If Taihou-chan has not been formally recruited by the end of the event, she will leave the port."
 		},
 		{
-			info = "· You will not be able to give a Promise Ring to Taihou-chan until you have formally recruited her to the fleet. You will also not be able to Retire or use her as Enhancement or Limit Break material."
-		},
-		{
-			info = "· If Taihou-chan has not been formally recruited by the end of the event, she will leave the Port."
-		},
-		{
-			info = "· Rewards for reaching certain amounts of Trust will unlock in phases, one phase per day until June 7th."
+			info = "· Rewards for reaching certain amounts of Trust will unlock in phases, one phase per day up to June 18th."
 		},
 		{
 			info = "· Taihou-chan cannot participate in Operation Siren or META Showdowns until she has been formally recruited."
 		},
 		{
-			info = "· Taihou-chan cannot participate in Guild Bosses until she has been formally recruited."
+			info = "· Taihou-chan cannot participate in Guild Bosses until she has been formally recruited.￼"
 		}
 	}
 }
@@ -24732,7 +24730,7 @@ _G.pg.base.gametip.dorm3d_role_choose = {
 	tip = "Choose Room"
 }
 _G.pg.base.gametip.dorm3d_beach_buy = {
-	tip = "Would you like to spend <color=#39bfff>$1</color> to unlock the <color=#169fff>beach</color>?"
+	tip = "Would you like to spend <color=#39bfff>$1</color> to unlock the <color=#169fff>$2</color>?"
 }
 _G.pg.base.gametip.dorm3d_beach_role = {
 	tip = "Unlocking this will let you move <color=#39bfff>$1</color> here."
@@ -25177,7 +25175,7 @@ _G.pg.base.gametip.dorm3d_accompany_locked = {
 	tip = "Unavailable"
 }
 _G.pg.base.gametip.dorm3d_role_locked = {
-	tip = "You must unlock this character first."
+	tip = "You must unlock related content first (including character and area)"
 }
 _G.pg.base.gametip.dorm3d_volleyball_button = {
 	tip = "Beach Volleyball"
@@ -25715,7 +25713,7 @@ _G.pg.base.gametip.skin_shop_discount_item_link = {
 	tip = "<color=#92fc63>Discount coupon</color> <color=#ffea00>-$1</color>"
 }
 _G.pg.base.gametip.word_activity_not_open = {
-	tip = "Event has not started yet"
+	tip = "Event unavailable"
 }
 _G.pg.base.gametip.activity_shop_template_normaltext = {
 	tip = "活動常規道具兌換 "
@@ -26263,7 +26261,7 @@ _G.pg.base.gametip.dorm3d_privatechat_welcome = {
 	tip = "Character Invitation"
 }
 _G.pg.base.gametip.dorm3d_privatechat_telephone_calllog = {
-	tip = "Voice Call History"
+	tip = "Video Call History"
 }
 _G.pg.base.gametip.dorm3d_privatechat_telephone_call = {
 	tip = "Voice Call"
@@ -27146,4 +27144,144 @@ _G.pg.base.gametip.brs_reward_tip_1 = {
 }
 _G.pg.base.gametip.brs_reward_tip_2 = {
 	tip = "Go"
+}
+_G.pg.base.gametip.l2d_32xbanned_warning = {
+	tip = "L2D content cannot be properly displayed on your device under the current circumstances."
+}
+_G.pg.base.gametip.dorm3d_guide_tip2 = {
+	tip = "Check out the beach first."
+}
+_G.pg.base.gametip.dorm3d_xinzexi_table = {
+	tip = "Dining Area"
+}
+_G.pg.base.gametip.dorm3d_xinzexi_chair = {
+	tip = "Living Area"
+}
+_G.pg.base.gametip.dorm3d_xinzexi_bed = {
+	tip = "Bedroom"
+}
+_G.pg.base.gametip.dorm3d_VIDEO_TELEPHONE_LABEL = {
+	tip = "Call from $1"
+}
+_G.pg.base.gametip.dorm3d_privatechat_screen_floor_2 = {
+	tip = "Loft"
+}
+_G.pg.base.gametip.dorm3d_privatechat_video_call = {
+	tip = "Video Call"
+}
+_G.pg.base.gametip.dorm3d_skin_confirm = {
+	tip = "Confirm Change"
+}
+_G.pg.base.gametip.dorm3d_skin_already = {
+	tip = "Current"
+}
+_G.pg.base.gametip.dorm3d_skin_equip = {
+	tip = "Apply $2 to $1?"
+}
+_G.pg.base.gametip.dorm3d_skin_unlock = {
+	tip = "You cannot change clothes in a public area."
+}
+_G.pg.base.gametip.dorm3d_room_floor_1 = {
+	tip = "Beach"
+}
+_G.pg.base.gametip.dorm3d_room_floor_2 = {
+	tip = "Loft"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame1 = {
+	tip = "$1's Impromptu Dance"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame2 = {
+	tip = "Snap a Pic of $1!"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame3 = {
+	tip = "Finish Shoot"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame4 = {
+	tip = "Again"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame5 = {
+	tip = "Exit"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame6 = {
+	tip = "Match: $1"
+}
+_G.pg.base.gametip.dorm3d_dance_button = {
+	tip = "Dance"
+}
+_G.pg.base.gametip.dorm3d_collection_cafe = {
+	tip = "Café"
+}
+_G.pg.base.gametip.zengke_series_help = {
+	tip = {
+		{
+			info = [[
+- Overview -
+The Neon City Investigator event is available between <color=#92fc63>June 26th and July 9th</color>!
+Complete missions, dispatch your fleets, and clear event stages to collect Neon City Movie Tickets and receive rewards!
+
+1. Tap the button in the bottom left corner to switch between Story Mode and Battle Mode.
+2. Battle Mode presents a series of stages which you can challenge with your fleets to earn Neon City Movie Tickets.
+Before going into battle, you can decide whether you'd like to fight in a joint sortie or a solo sortie.
+· In a solo sortie, you will challenge each stage with only a single fleet. In this mode, all your shipgirls recover all their health at the start of the battle.
+· In a joint sortie, you will instead send out multiple fleets to battle on each stage. Completing the challenge in this mode will grant you additional rewards.
+3. You will receive rewards for collecting enough Neon City Movie Tickets, including <color=#92fc63>Elite DD Z13</color> and a <color=#92fc63>Prototype Triple 305mm SK C/39 Main Gun Mount</color>.
+4. There are special missions available during the event. Complete these to receive additional rewards.
+5. There's a special story available in Story Mode. Read it in its entirety to receive a commemorative gear skin.
+]]
+		}
+	}
+}
+_G.pg.base.gametip.zengke_series_pt = {
+	tip = "Total"
+}
+_G.pg.base.gametip.zengke_series_pt_small = {
+	tip = "TOTAL"
+}
+_G.pg.base.gametip.zengke_series_rank = {
+	tip = "Ranking"
+}
+_G.pg.base.gametip.zengke_series_rank_small = {
+	tip = "RANKING"
+}
+_G.pg.base.gametip.zengke_series_task = {
+	tip = "Missions"
+}
+_G.pg.base.gametip.zengke_series_task_small = {
+	tip = "MISSIONS"
+}
+_G.pg.base.gametip.zengke_series_confirm = {
+	tip = "Sortie"
+}
+_G.pg.base.gametip.zengke_story_reward_count = {
+	tip = "Read the whole story to receive a limited gear skin:"
+}
+_G.pg.base.gametip.zengke_series_easy = {
+	tip = "Easy"
+}
+_G.pg.base.gametip.zengke_series_normal = {
+	tip = "Normal"
+}
+_G.pg.base.gametip.zengke_series_hard = {
+	tip = "Hard"
+}
+_G.pg.base.gametip.zengke_series_sp = {
+	tip = "SP"
+}
+_G.pg.base.gametip.zengke_series_ex = {
+	tip = "EX"
+}
+_G.pg.base.gametip.zengke_series_ex_confirm = {
+	tip = "Return"
+}
+_G.pg.base.gametip.battleui_display1 = {
+	tip = "Icon"
+}
+_G.pg.base.gametip.battleui_display2 = {
+	tip = "Effect"
+}
+_G.pg.base.gametip.battleui_display3 = {
+	tip = "Pause Bar"
+}
+_G.pg.base.gametip.zengke_series_serverinfo = {
+	tip = "Server:"
 }

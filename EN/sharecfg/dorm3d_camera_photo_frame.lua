@@ -1,12 +1,27 @@
 ﻿pg = pg or {}
-pg.dorm3d_camera_photo_frame = {
+pg.dorm3d_camera_photo_frame = setmetatable({
+	__name = "dorm3d_camera_photo_frame",
+	all = {
+		1001,
+		1002,
+		1003,
+		1004,
+		1005,
+		1006,
+		1007,
+		1008,
+		1009
+	}
+}, confHX)
+pg.base = pg.base or {}
+pg.base.dorm3d_camera_photo_frame = {
 	[1001] = {
 		rarity = 2,
 		name = "Default",
 		farme_path = "photo_frame_default",
 		frameTfName = "DefaultFrame",
 		desc = "Unlocks the Default frame for the camera feature.",
-		unlock_text = "Unlocked at Intimacy Lv. 1 with Sirius.",
+		unlock_text = "Reach Sirius Intimacy Lv. 1",
 		id = 1001,
 		icon = "Props/drom3d_camera1002",
 		farme_small_path = "photo_frame_default_small",
@@ -26,7 +41,7 @@ pg.dorm3d_camera_photo_frame = {
 		farme_path = "photo_frame_vcr",
 		frameTfName = "VcrFrame",
 		desc = "Unlocks the Video frame for the camera feature.",
-		unlock_text = "Unlocked at Intimacy Lv. 1 with Sirius.",
+		unlock_text = "Reach Sirius Intimacy Lv. 1",
 		id = 1002,
 		icon = "Props/drom3d_camera1002",
 		farme_small_path = "photo_frame_vcr_small",
@@ -46,7 +61,7 @@ pg.dorm3d_camera_photo_frame = {
 		farme_path = "photo_frame_counterfoil",
 		frameTfName = "CounterfoilFrame",
 		desc = "Unlocks the Stamp frame for the camera feature.",
-		unlock_text = "Unlocked at Intimacy Lv. 5 with Sirius.",
+		unlock_text = "Reach Sirius Intimacy Lv. 5",
 		id = 1003,
 		icon = "Props/drom3d_camera1002",
 		farme_small_path = "photo_frame_counterfoil_small",
@@ -66,7 +81,7 @@ pg.dorm3d_camera_photo_frame = {
 		farme_path = "photo_frame_polaroid",
 		frameTfName = "InstantFrame",
 		desc = "Unlocks the Photograph frame for the camera feature.",
-		unlock_text = "Unlocked at Intimacy Lv. 7 with Sirius.",
+		unlock_text = "Reach Sirius Intimacy Lv. 7",
 		id = 1004,
 		icon = "Props/drom3d_camera1002",
 		farme_small_path = "photo_frame_polaroid_small",
@@ -86,7 +101,7 @@ pg.dorm3d_camera_photo_frame = {
 		farme_path = "photo_frame_card",
 		frameTfName = "CardInstantFrame",
 		desc = "Unlocks the Card frame for the camera feature.",
-		unlock_text = "Unlocked at Intimacy Lv. 12 with Sirius.",
+		unlock_text = "Reach Sirius Intimacy Lv. 12",
 		id = 1005,
 		icon = "Props/drom3d_camera1002",
 		farme_small_path = "photo_frame_card_small",
@@ -106,7 +121,7 @@ pg.dorm3d_camera_photo_frame = {
 		farme_path = "photo_frame_ins",
 		frameTfName = "InsFrame",
 		desc = "Unlock to obtain the Trends frame for the camera function.",
-		unlock_text = "Unlocked at Intimacy Lv. 5 with Noshiro.",
+		unlock_text = "Reach Noshiro Intimacy Lv. 5",
 		id = 1006,
 		icon = "Props/drom3d_camera1002",
 		farme_small_path = "photo_frame_ins_small",
@@ -126,7 +141,7 @@ pg.dorm3d_camera_photo_frame = {
 		farme_path = "photo_frame_film",
 		frameTfName = "FilmFrame",
 		desc = "Unlock to obtain the Film frame for the camera function.",
-		unlock_text = "Unlocked at Intimacy Lv. 13 with Noshiro.",
+		unlock_text = "Reach Noshiro Intimacy Lv. 13",
 		id = 1007,
 		icon = "Props/drom3d_camera1002",
 		farme_small_path = "photo_frame_film_small",
@@ -140,13 +155,44 @@ pg.dorm3d_camera_photo_frame = {
 			0
 		}
 	},
-	all = {
-		1001,
-		1002,
-		1003,
-		1004,
-		1005,
-		1006,
-		1007
+	[1008] = {
+		rarity = 3,
+		name = "Walnut",
+		farme_path = "photo_frame_Wood",
+		frameTfName = "WoodFrame",
+		desc = "Unlocks the Walnut frame for the camera feature.",
+		unlock_text = "Reach New Jersey Intimacy Lv. 5",
+		id = 1008,
+		icon = "Props/drom3d_camera1002",
+		farme_small_path = "photo_frame_Wood_small",
+		unlock = {
+			1,
+			10517,
+			5
+		},
+		watermark_location = {
+			0,
+			0
+		}
+	},
+	[1009] = {
+		rarity = 3,
+		name = "Lens",
+		farme_path = "photo_frame_Focus",
+		frameTfName = "FocusFrame",
+		desc = "Unlocks the Lens frame for the camera feature.",
+		unlock_text = "Reach New Jersey Intimacy Lv. 13",
+		id = 1009,
+		icon = "Props/drom3d_camera1002",
+		farme_small_path = "photo_frame_Focus_small",
+		unlock = {
+			1,
+			10517,
+			13
+		},
+		watermark_location = {
+			0,
+			0
+		}
 	}
 }

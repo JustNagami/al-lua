@@ -23,6 +23,7 @@ _G.pg.base.spweapon_data_statistics[1010100] = {
 	attribute_1 = "cannon",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1010101] = {
@@ -148,6 +149,7 @@ _G.pg.base.spweapon_data_statistics[1010120] = {
 	attribute_1 = "cannon",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1010121] = {
@@ -275,6 +277,7 @@ _G.pg.base.spweapon_data_statistics[1010200] = {
 	attribute_1 = "torpedo",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1010201] = {
@@ -399,6 +402,7 @@ _G.pg.base.spweapon_data_statistics[1010220] = {
 	attribute_1 = "torpedo",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1010221] = {
@@ -524,6 +528,7 @@ _G.pg.base.spweapon_data_statistics[1020100] = {
 	attribute_1 = "hit",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1020101] = {
@@ -649,6 +654,7 @@ _G.pg.base.spweapon_data_statistics[1020120] = {
 	attribute_1 = "hit",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1020121] = {
@@ -776,6 +782,7 @@ _G.pg.base.spweapon_data_statistics[1030100] = {
 	attribute_1 = "cannon",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1030101] = {
@@ -902,6 +909,7 @@ _G.pg.base.spweapon_data_statistics[1030120] = {
 	attribute_1 = "cannon",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1030121] = {
@@ -1029,6 +1037,7 @@ _G.pg.base.spweapon_data_statistics[1040100] = {
 	attribute_1 = "cannon",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1040101] = {
@@ -1155,6 +1164,7 @@ _G.pg.base.spweapon_data_statistics[1040120] = {
 	attribute_1 = "cannon",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1040121] = {
@@ -1283,6 +1293,7 @@ _G.pg.base.spweapon_data_statistics[1050100] = {
 	attribute_1 = "hit",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1050101] = {
@@ -1409,6 +1420,7 @@ _G.pg.base.spweapon_data_statistics[1050120] = {
 	attribute_1 = "hit",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1050121] = {
@@ -1537,6 +1549,7 @@ _G.pg.base.spweapon_data_statistics[1060100] = {
 	attribute_1 = "hit",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1060101] = {
@@ -1663,6 +1676,7 @@ _G.pg.base.spweapon_data_statistics[1060120] = {
 	attribute_1 = "hit",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1060121] = {
@@ -1790,6 +1804,7 @@ _G.pg.base.spweapon_data_statistics[1060200] = {
 	attribute_1 = "cannon",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1060201] = {
@@ -1916,6 +1931,7 @@ _G.pg.base.spweapon_data_statistics[1060220] = {
 	attribute_1 = "cannon",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1060221] = {
@@ -2044,6 +2060,7 @@ _G.pg.base.spweapon_data_statistics[1070100] = {
 	attribute_1 = "air",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1070101] = {
@@ -2170,6 +2187,7 @@ _G.pg.base.spweapon_data_statistics[1070120] = {
 	attribute_1 = "air",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1070121] = {
@@ -2298,6 +2316,7 @@ _G.pg.base.spweapon_data_statistics[1070200] = {
 	attribute_1 = "air",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1070201] = {
@@ -2424,6 +2443,7 @@ _G.pg.base.spweapon_data_statistics[1070220] = {
 	attribute_1 = "air",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1070221] = {
@@ -2552,6 +2572,7 @@ _G.pg.base.spweapon_data_statistics[1080100] = {
 	attribute_1 = "hit",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1080101] = {
@@ -2674,6 +2695,7 @@ _G.pg.base.spweapon_data_statistics[1080120] = {
 	attribute_1 = "hit",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1080121] = {
@@ -2802,6 +2824,7 @@ _G.pg.base.spweapon_data_statistics[1080200] = {
 	attribute_1 = "torpedo",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1080201] = {
@@ -2926,6 +2949,7 @@ _G.pg.base.spweapon_data_statistics[1080220] = {
 	attribute_1 = "torpedo",
 	usability = {},
 	skill_upgrade = {},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[1080221] = {
@@ -3059,6 +3083,7 @@ _G.pg.base.spweapon_data_statistics[9000] = {
 			9037
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10000] = {
@@ -3093,6 +3118,7 @@ _G.pg.base.spweapon_data_statistics[10000] = {
 			1010410
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10001] = {
@@ -3233,6 +3259,7 @@ _G.pg.base.spweapon_data_statistics[10020] = {
 			1010610
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10021] = {
@@ -3373,6 +3400,7 @@ _G.pg.base.spweapon_data_statistics[10040] = {
 			1010390
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10041] = {
@@ -3513,6 +3541,7 @@ _G.pg.base.spweapon_data_statistics[10060] = {
 			1010140
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10061] = {
@@ -3653,6 +3682,7 @@ _G.pg.base.spweapon_data_statistics[10080] = {
 			1011380
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10081] = {
@@ -3793,6 +3823,7 @@ _G.pg.base.spweapon_data_statistics[10100] = {
 			1011540
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10101] = {
@@ -3930,6 +3961,7 @@ _G.pg.base.spweapon_data_statistics[10120] = {
 			1090010
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10121] = {
@@ -4069,6 +4101,7 @@ _G.pg.base.spweapon_data_statistics[10140] = {
 			1010690
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10141] = {
@@ -4208,6 +4241,7 @@ _G.pg.base.spweapon_data_statistics[10160] = {
 			1012670
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10161] = {
@@ -4348,6 +4382,7 @@ _G.pg.base.spweapon_data_statistics[10180] = {
 			1010730
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10181] = {
@@ -4488,6 +4523,7 @@ _G.pg.base.spweapon_data_statistics[10200] = {
 			1010340
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10201] = {
@@ -4627,6 +4663,7 @@ _G.pg.base.spweapon_data_statistics[10220] = {
 			1010580
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10221] = {
@@ -4767,6 +4804,7 @@ _G.pg.base.spweapon_data_statistics[10240] = {
 			1090020
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10241] = {
@@ -4907,6 +4945,7 @@ _G.pg.base.spweapon_data_statistics[10260] = {
 			1090030
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10261] = {
@@ -5047,6 +5086,7 @@ _G.pg.base.spweapon_data_statistics[10280] = {
 			1090040
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10281] = {
@@ -5187,6 +5227,7 @@ _G.pg.base.spweapon_data_statistics[10300] = {
 			1010510
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10301] = {
@@ -5327,6 +5368,7 @@ _G.pg.base.spweapon_data_statistics[10320] = {
 			1011700
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10321] = {
@@ -5467,6 +5509,7 @@ _G.pg.base.spweapon_data_statistics[10340] = {
 			1011620
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10341] = {
@@ -5606,6 +5649,7 @@ _G.pg.base.spweapon_data_statistics[10360] = {
 			109040
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10361] = {
@@ -5746,6 +5790,7 @@ _G.pg.base.spweapon_data_statistics[10380] = {
 			109080
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10381] = {
@@ -5885,6 +5930,7 @@ _G.pg.base.spweapon_data_statistics[10400] = {
 			109120
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10401] = {
@@ -6022,6 +6068,7 @@ _G.pg.base.spweapon_data_statistics[10420] = {
 			109200
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10421] = {
@@ -6162,6 +6209,7 @@ _G.pg.base.spweapon_data_statistics[10440] = {
 			109160
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10441] = {
@@ -6301,6 +6349,7 @@ _G.pg.base.spweapon_data_statistics[10460] = {
 			109240
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10461] = {
@@ -6441,6 +6490,7 @@ _G.pg.base.spweapon_data_statistics[10480] = {
 			1010530
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10481] = {
@@ -6581,6 +6631,7 @@ _G.pg.base.spweapon_data_statistics[10500] = {
 			1090050
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10501] = {
@@ -6722,6 +6773,7 @@ _G.pg.base.spweapon_data_statistics[10520] = {
 			1010290
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10521] = {
@@ -6859,6 +6911,7 @@ _G.pg.base.spweapon_data_statistics[10540] = {
 			1090060
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10541] = {
@@ -6999,6 +7052,7 @@ _G.pg.base.spweapon_data_statistics[10560] = {
 			1011670
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10561] = {
@@ -7139,6 +7193,7 @@ _G.pg.base.spweapon_data_statistics[10580] = {
 			1011900
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10581] = {
@@ -7278,6 +7333,7 @@ _G.pg.base.spweapon_data_statistics[10600] = {
 			1011500
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10601] = {
@@ -7418,6 +7474,7 @@ _G.pg.base.spweapon_data_statistics[10620] = {
 			1090070
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10621] = {
@@ -7558,6 +7615,7 @@ _G.pg.base.spweapon_data_statistics[10640] = {
 			1010600
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10641] = {
@@ -7698,6 +7756,7 @@ _G.pg.base.spweapon_data_statistics[10660] = {
 			1090090
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10661] = {
@@ -7838,6 +7897,7 @@ _G.pg.base.spweapon_data_statistics[10680] = {
 			1011710
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10681] = {
@@ -7978,6 +8038,7 @@ _G.pg.base.spweapon_data_statistics[10700] = {
 			1090080
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10701] = {
@@ -8118,6 +8179,7 @@ _G.pg.base.spweapon_data_statistics[10720] = {
 			1010250
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10721] = {
@@ -8258,6 +8320,7 @@ _G.pg.base.spweapon_data_statistics[10740] = {
 			1010670
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10741] = {
@@ -8398,6 +8461,7 @@ _G.pg.base.spweapon_data_statistics[10780] = {
 			1011520
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10781] = {
@@ -8538,6 +8602,7 @@ _G.pg.base.spweapon_data_statistics[10800] = {
 			1090100
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10801] = {
@@ -8678,6 +8743,7 @@ _G.pg.base.spweapon_data_statistics[10820] = {
 			106170
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10821] = {
@@ -8818,6 +8884,7 @@ _G.pg.base.spweapon_data_statistics[10840] = {
 			106210
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10841] = {
@@ -8958,6 +9025,7 @@ _G.pg.base.spweapon_data_statistics[10860] = {
 			106240
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10861] = {
@@ -9098,6 +9166,7 @@ _G.pg.base.spweapon_data_statistics[10880] = {
 			106360
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10881] = {
@@ -9238,6 +9307,7 @@ _G.pg.base.spweapon_data_statistics[10900] = {
 			106260
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10901] = {
@@ -9378,6 +9448,7 @@ _G.pg.base.spweapon_data_statistics[10920] = {
 			106280
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10921] = {
@@ -9518,6 +9589,7 @@ _G.pg.base.spweapon_data_statistics[10940] = {
 			106290
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10941] = {
@@ -9658,6 +9730,7 @@ _G.pg.base.spweapon_data_statistics[10960] = {
 			106340
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10961] = {
@@ -9798,6 +9871,7 @@ _G.pg.base.spweapon_data_statistics[10980] = {
 			106190
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[10981] = {
@@ -9938,6 +10012,7 @@ _G.pg.base.spweapon_data_statistics[11000] = {
 			1090110
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[11001] = {
@@ -10078,6 +10153,7 @@ _G.pg.base.spweapon_data_statistics[11020] = {
 			1011360
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[11021] = {
@@ -10218,6 +10294,7 @@ _G.pg.base.spweapon_data_statistics[11040] = {
 			1090120
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[11041] = {
@@ -10358,6 +10435,7 @@ _G.pg.base.spweapon_data_statistics[11060] = {
 			1090130
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[11061] = {
@@ -10498,6 +10576,7 @@ _G.pg.base.spweapon_data_statistics[11080] = {
 			1090140
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[11081] = {
@@ -10637,6 +10716,7 @@ _G.pg.base.spweapon_data_statistics[12000] = {
 			1012350
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12001] = {
@@ -10777,6 +10857,7 @@ _G.pg.base.spweapon_data_statistics[12020] = {
 			1012600
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12021] = {
@@ -10917,6 +10998,7 @@ _G.pg.base.spweapon_data_statistics[12040] = {
 			1010540
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12041] = {
@@ -11057,6 +11139,7 @@ _G.pg.base.spweapon_data_statistics[12060] = {
 			1010100
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12061] = {
@@ -11197,6 +11280,7 @@ _G.pg.base.spweapon_data_statistics[12080] = {
 			108240
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12081] = {
@@ -11337,6 +11421,7 @@ _G.pg.base.spweapon_data_statistics[12100] = {
 			108230
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12101] = {
@@ -11477,6 +11562,7 @@ _G.pg.base.spweapon_data_statistics[12120] = {
 			108250
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12121] = {
@@ -11617,6 +11703,7 @@ _G.pg.base.spweapon_data_statistics[12140] = {
 			108260
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12141] = {
@@ -11757,6 +11844,7 @@ _G.pg.base.spweapon_data_statistics[12160] = {
 			108270
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12161] = {
@@ -11897,6 +11985,7 @@ _G.pg.base.spweapon_data_statistics[12180] = {
 			108280
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12181] = {
@@ -12037,6 +12126,7 @@ _G.pg.base.spweapon_data_statistics[12200] = {
 			108290
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12201] = {
@@ -12177,6 +12267,7 @@ _G.pg.base.spweapon_data_statistics[12220] = {
 			108210
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12221] = {
@@ -12317,6 +12408,7 @@ _G.pg.base.spweapon_data_statistics[12240] = {
 			108220
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12241] = {
@@ -12457,6 +12549,7 @@ _G.pg.base.spweapon_data_statistics[12260] = {
 			1013270
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12261] = {
@@ -12597,6 +12690,7 @@ _G.pg.base.spweapon_data_statistics[12280] = {
 			1090150
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12281] = {
@@ -12737,6 +12831,7 @@ _G.pg.base.spweapon_data_statistics[12300] = {
 			1010160
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12301] = {
@@ -12877,6 +12972,7 @@ _G.pg.base.spweapon_data_statistics[12320] = {
 			1011970
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12321] = {
@@ -13017,6 +13113,7 @@ _G.pg.base.spweapon_data_statistics[12340] = {
 			1011440
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12341] = {
@@ -13156,6 +13253,7 @@ _G.pg.base.spweapon_data_statistics[12360] = {
 			1090160
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12361] = {
@@ -13296,6 +13394,7 @@ _G.pg.base.spweapon_data_statistics[12380] = {
 			1090170
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12381] = {
@@ -13435,6 +13534,7 @@ _G.pg.base.spweapon_data_statistics[12400] = {
 			1011120
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12401] = {
@@ -13576,6 +13676,7 @@ _G.pg.base.spweapon_data_statistics[12420] = {
 			1090180
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12421] = {
@@ -13713,6 +13814,7 @@ _G.pg.base.spweapon_data_statistics[12440] = {
 			1017200
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12441] = {
@@ -13853,6 +13955,7 @@ _G.pg.base.spweapon_data_statistics[12460] = {
 			1017270
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12461] = {
@@ -13993,6 +14096,7 @@ _G.pg.base.spweapon_data_statistics[12480] = {
 			1017250
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12481] = {
@@ -14132,6 +14236,7 @@ _G.pg.base.spweapon_data_statistics[12500] = {
 			1017160
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12501] = {
@@ -14271,6 +14376,7 @@ _G.pg.base.spweapon_data_statistics[12520] = {
 			1017210
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12521] = {
@@ -14410,6 +14516,7 @@ _G.pg.base.spweapon_data_statistics[12540] = {
 			1090190
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12541] = {
@@ -14550,6 +14657,7 @@ _G.pg.base.spweapon_data_statistics[12560] = {
 			1090200
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12561] = {
@@ -14690,6 +14798,7 @@ _G.pg.base.spweapon_data_statistics[12580] = {
 			110030
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {
 		"SRSPW"
 	}
@@ -14832,6 +14941,7 @@ _G.pg.base.spweapon_data_statistics[12600] = {
 			110060
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {
 		"SRSPW"
 	}
@@ -14974,6 +15084,7 @@ _G.pg.base.spweapon_data_statistics[12620] = {
 			110090
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {
 		"SRSPW"
 	}
@@ -15115,6 +15226,7 @@ _G.pg.base.spweapon_data_statistics[12640] = {
 			110120
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {
 		"SRSPW"
 	}
@@ -15257,6 +15369,7 @@ _G.pg.base.spweapon_data_statistics[12660] = {
 			110150
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {
 		"SRSPW"
 	}
@@ -15399,6 +15512,7 @@ _G.pg.base.spweapon_data_statistics[12680] = {
 			110180
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {
 		"SRSPW"
 	}
@@ -15540,6 +15654,7 @@ _G.pg.base.spweapon_data_statistics[12700] = {
 			110210
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {
 		"SRSPW"
 	}
@@ -15682,6 +15797,7 @@ _G.pg.base.spweapon_data_statistics[12720] = {
 			1012620
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12721] = {
@@ -15822,6 +15938,7 @@ _G.pg.base.spweapon_data_statistics[12740] = {
 			1011940
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12741] = {
@@ -15962,6 +16079,7 @@ _G.pg.base.spweapon_data_statistics[12760] = {
 			1090210
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12761] = {
@@ -16102,6 +16220,7 @@ _G.pg.base.spweapon_data_statistics[12780] = {
 			1010380
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12781] = {
@@ -16242,6 +16361,7 @@ _G.pg.base.spweapon_data_statistics[12800] = {
 			1090220
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12801] = {
@@ -16382,6 +16502,7 @@ _G.pg.base.spweapon_data_statistics[12820] = {
 			1012160
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12821] = {
@@ -16522,6 +16643,7 @@ _G.pg.base.spweapon_data_statistics[12840] = {
 			1090230
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12841] = {
@@ -16662,6 +16784,7 @@ _G.pg.base.spweapon_data_statistics[12860] = {
 			1010480
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12861] = {
@@ -16802,6 +16925,7 @@ _G.pg.base.spweapon_data_statistics[12880] = {
 			1010490
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12881] = {
@@ -16942,6 +17066,7 @@ _G.pg.base.spweapon_data_statistics[12900] = {
 			1011370
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12901] = {
@@ -17081,6 +17206,7 @@ _G.pg.base.spweapon_data_statistics[12920] = {
 			1090240
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12921] = {
@@ -17221,6 +17347,7 @@ _G.pg.base.spweapon_data_statistics[12940] = {
 			1012940
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12941] = {
@@ -17361,6 +17488,7 @@ _G.pg.base.spweapon_data_statistics[12960] = {
 			1005080
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12961] = {
@@ -17501,6 +17629,7 @@ _G.pg.base.spweapon_data_statistics[12980] = {
 			1010750
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[12981] = {
@@ -17641,6 +17770,7 @@ _G.pg.base.spweapon_data_statistics[13000] = {
 			1013000
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13001] = {
@@ -17781,6 +17911,7 @@ _G.pg.base.spweapon_data_statistics[13020] = {
 			1090250
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13021] = {
@@ -17921,6 +18052,7 @@ _G.pg.base.spweapon_data_statistics[13040] = {
 			1010980
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13041] = {
@@ -18061,6 +18193,7 @@ _G.pg.base.spweapon_data_statistics[13060] = {
 			1010660
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13061] = {
@@ -18201,6 +18334,7 @@ _G.pg.base.spweapon_data_statistics[13080] = {
 			1012320
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13081] = {
@@ -18341,6 +18475,7 @@ _G.pg.base.spweapon_data_statistics[13100] = {
 			1090260
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13101] = {
@@ -18481,6 +18616,7 @@ _G.pg.base.spweapon_data_statistics[13120] = {
 			1019080
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13121] = {
@@ -18621,6 +18757,7 @@ _G.pg.base.spweapon_data_statistics[13140] = {
 			1010090
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13141] = {
@@ -18761,6 +18898,7 @@ _G.pg.base.spweapon_data_statistics[13160] = {
 			1011170
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13161] = {
@@ -18901,6 +19039,7 @@ _G.pg.base.spweapon_data_statistics[13180] = {
 			1011590
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13181] = {
@@ -19040,6 +19179,7 @@ _G.pg.base.spweapon_data_statistics[13200] = {
 			1090270
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13201] = {
@@ -19180,6 +19320,7 @@ _G.pg.base.spweapon_data_statistics[13220] = {
 			1090280
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13221] = {
@@ -19319,6 +19460,7 @@ _G.pg.base.spweapon_data_statistics[13240] = {
 			1013550
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13241] = {
@@ -19459,6 +19601,7 @@ _G.pg.base.spweapon_data_statistics[13260] = {
 			1011490
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13261] = {
@@ -19599,6 +19742,7 @@ _G.pg.base.spweapon_data_statistics[13280] = {
 			1012990
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13281] = {
@@ -19739,6 +19883,7 @@ _G.pg.base.spweapon_data_statistics[13300] = {
 			1090290
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13301] = {
@@ -19879,6 +20024,7 @@ _G.pg.base.spweapon_data_statistics[13320] = {
 			1090310
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13321] = {
@@ -20019,6 +20165,7 @@ _G.pg.base.spweapon_data_statistics[13340] = {
 			1019060
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13341] = {
@@ -20159,6 +20306,7 @@ _G.pg.base.spweapon_data_statistics[13360] = {
 			1011000
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {
 		"BB56SP"
 	}
@@ -20301,6 +20449,7 @@ _G.pg.base.spweapon_data_statistics[13380] = {
 			1090320
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13381] = {
@@ -20441,6 +20590,7 @@ _G.pg.base.spweapon_data_statistics[13400] = {
 			1019020
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13401] = {
@@ -20581,6 +20731,7 @@ _G.pg.base.spweapon_data_statistics[13420] = {
 			1090330
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13421] = {
@@ -20721,6 +20872,7 @@ _G.pg.base.spweapon_data_statistics[13440] = {
 			1090350
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13441] = {
@@ -20861,6 +21013,7 @@ _G.pg.base.spweapon_data_statistics[13460] = {
 			1019090
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13461] = {
@@ -21001,6 +21154,7 @@ _G.pg.base.spweapon_data_statistics[13480] = {
 			1019110
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13481] = {
@@ -21141,6 +21295,7 @@ _G.pg.base.spweapon_data_statistics[13500] = {
 			1090340
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13501] = {
@@ -21281,6 +21436,7 @@ _G.pg.base.spweapon_data_statistics[13520] = {
 			1090360
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13521] = {
@@ -21421,6 +21577,7 @@ _G.pg.base.spweapon_data_statistics[13560] = {
 			10150570
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13561] = {
@@ -21560,6 +21717,7 @@ _G.pg.base.spweapon_data_statistics[13580] = {
 			10150530
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13581] = {
@@ -21699,6 +21857,7 @@ _G.pg.base.spweapon_data_statistics[13600] = {
 			10150580
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13601] = {
@@ -21838,6 +21997,7 @@ _G.pg.base.spweapon_data_statistics[13620] = {
 			10150600
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13621] = {
@@ -21977,6 +22137,7 @@ _G.pg.base.spweapon_data_statistics[13640] = {
 			10150640
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13641] = {
@@ -22116,6 +22277,7 @@ _G.pg.base.spweapon_data_statistics[13660] = {
 			111030
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13661] = {
@@ -22256,6 +22418,7 @@ _G.pg.base.spweapon_data_statistics[13680] = {
 			111060
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13681] = {
@@ -22396,6 +22559,7 @@ _G.pg.base.spweapon_data_statistics[13700] = {
 			111080
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13701] = {
@@ -22536,6 +22700,7 @@ _G.pg.base.spweapon_data_statistics[13720] = {
 			111110
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13721] = {
@@ -22676,6 +22841,7 @@ _G.pg.base.spweapon_data_statistics[13740] = {
 			111140
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13741] = {
@@ -22816,6 +22982,7 @@ _G.pg.base.spweapon_data_statistics[13760] = {
 			111170
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13761] = {
@@ -22956,6 +23123,7 @@ _G.pg.base.spweapon_data_statistics[13780] = {
 			1014070
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13781] = {
@@ -23096,6 +23264,7 @@ _G.pg.base.spweapon_data_statistics[13800] = {
 			1014090
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13801] = {
@@ -23236,6 +23405,7 @@ _G.pg.base.spweapon_data_statistics[13820] = {
 			1090390
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13821] = {
@@ -23376,6 +23546,7 @@ _G.pg.base.spweapon_data_statistics[13840] = {
 			1090380
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13841] = {
@@ -23516,6 +23687,7 @@ _G.pg.base.spweapon_data_statistics[13860] = {
 			1011560
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13861] = {
@@ -23656,6 +23828,7 @@ _G.pg.base.spweapon_data_statistics[13880] = {
 			1010260
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[13881] = {
@@ -23796,6 +23969,7 @@ _G.pg.base.spweapon_data_statistics[14000] = {
 			1010960
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[14001] = {
@@ -23936,6 +24110,7 @@ _G.pg.base.spweapon_data_statistics[14020] = {
 			1090400
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[14021] = {
@@ -24076,6 +24251,7 @@ _G.pg.base.spweapon_data_statistics[14040] = {
 			1013020
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[14041] = {
@@ -24216,6 +24392,7 @@ _G.pg.base.spweapon_data_statistics[14060] = {
 			1011150
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[14061] = {
@@ -24356,6 +24533,7 @@ _G.pg.base.spweapon_data_statistics[14080] = {
 			1012400
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[14081] = {
@@ -24496,6 +24674,7 @@ _G.pg.base.spweapon_data_statistics[14100] = {
 			1012480
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[14101] = {
@@ -24636,6 +24815,7 @@ _G.pg.base.spweapon_data_statistics[14120] = {
 			1013050
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[14121] = {
@@ -24776,6 +24956,7 @@ _G.pg.base.spweapon_data_statistics[14240] = {
 			112020
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[14241] = {
@@ -24916,6 +25097,7 @@ _G.pg.base.spweapon_data_statistics[14260] = {
 			112070
 		}
 	},
+	hide_buff_upgrade = {},
 	label = {}
 }
 _G.pg.base.spweapon_data_statistics[14261] = {
@@ -25021,6 +25203,719 @@ _G.pg.base.spweapon_data_statistics[14270] = {
 		{
 			112060,
 			112070
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[14140] = {
+	tech = 0,
+	name = "Lucky Lou",
+	value_2_random = 5,
+	type = 2,
+	value_1_random = 10,
+	value_1 = 5,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "A custom-designed piece of gear made from an Augment Module core.",
+	uncraftable = 0,
+	next = 14141,
+	upgrade_id = 101,
+	value_2 = 1,
+	icon = "14140",
+	effect_id = 901010,
+	attribute_2 = "dodge",
+	id = 14140,
+	rarity = 4,
+	unique = 10213,
+	important = 2,
+	prev = 0,
+	attribute_1 = "hit",
+	usability = {
+		2
+	},
+	skill_upgrade = {
+		{
+			0,
+			1010880
+		}
+	},
+	hide_buff_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[14141] = {
+	prev = 14140,
+	base = 14140,
+	next = 14142,
+	upgrade_id = 102,
+	id = 14141,
+	value_2 = 1,
+	value_1 = 6,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[14142] = {
+	prev = 14141,
+	base = 14140,
+	next = 14143,
+	upgrade_id = 103,
+	id = 14142,
+	value_2 = 2,
+	value_1 = 7,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[14143] = {
+	prev = 14142,
+	base = 14140,
+	next = 14144,
+	upgrade_id = 104,
+	id = 14143,
+	value_2 = 3,
+	value_1 = 8,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[14144] = {
+	prev = 14143,
+	base = 14140,
+	next = 14145,
+	upgrade_id = 105,
+	id = 14144,
+	value_2 = 4,
+	value_1 = 9,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[14145] = {
+	prev = 14144,
+	base = 14140,
+	next = 14146,
+	upgrade_id = 106,
+	id = 14145,
+	value_2 = 5,
+	value_1 = 10,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[14146] = {
+	prev = 14145,
+	base = 14140,
+	next = 14147,
+	upgrade_id = 107,
+	id = 14146,
+	value_2 = 6,
+	value_1 = 11,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[14147] = {
+	prev = 14146,
+	base = 14140,
+	next = 14148,
+	upgrade_id = 108,
+	id = 14147,
+	value_2 = 7,
+	value_1 = 12,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[14148] = {
+	prev = 14147,
+	base = 14140,
+	next = 14149,
+	upgrade_id = 109,
+	id = 14148,
+	value_2 = 8,
+	value_1 = 13,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[14149] = {
+	prev = 14148,
+	base = 14140,
+	next = 14150,
+	upgrade_id = 110,
+	id = 14149,
+	value_2 = 9,
+	value_1 = 14,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[14150] = {
+	base = 14140,
+	prev = 14149,
+	next = 0,
+	upgrade_id = 111,
+	id = 14150,
+	value_2 = 10,
+	value_1 = 15,
+	level = 11,
+	skill_upgrade = {
+		{
+			10880,
+			1010880
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[14160] = {
+	tech = 0,
+	name = "Old Lady's Royal Sword",
+	value_2_random = 5,
+	type = 6,
+	value_1_random = 10,
+	value_1 = 13,
+	effect_id_display = 902310,
+	level = 1,
+	descrip = "A custom-designed piece of gear made from an Augment Module core.",
+	uncraftable = 0,
+	next = 14161,
+	upgrade_id = 101,
+	value_2 = 6,
+	icon = "14160",
+	effect_id = 902310,
+	attribute_2 = "hit",
+	id = 14160,
+	rarity = 4,
+	unique = 20502,
+	important = 2,
+	prev = 0,
+	attribute_1 = "cannon",
+	usability = {
+		5
+	},
+	skill_upgrade = {
+		{
+			0,
+			1010310
+		},
+		{
+			0,
+			1011870
+		}
+	},
+	hide_buff_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[14161] = {
+	prev = 14160,
+	base = 14160,
+	next = 14162,
+	upgrade_id = 102,
+	id = 14161,
+	value_2 = 6,
+	value_1 = 14,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[14162] = {
+	prev = 14161,
+	base = 14160,
+	next = 14163,
+	upgrade_id = 103,
+	id = 14162,
+	value_2 = 7,
+	value_1 = 15,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[14163] = {
+	prev = 14162,
+	base = 14160,
+	next = 14164,
+	upgrade_id = 104,
+	id = 14163,
+	value_2 = 8,
+	value_1 = 16,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[14164] = {
+	prev = 14163,
+	base = 14160,
+	next = 14165,
+	upgrade_id = 105,
+	id = 14164,
+	value_2 = 9,
+	value_1 = 17,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[14165] = {
+	prev = 14164,
+	base = 14160,
+	next = 14166,
+	upgrade_id = 106,
+	id = 14165,
+	value_2 = 10,
+	value_1 = 18,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[14166] = {
+	prev = 14165,
+	base = 14160,
+	next = 14167,
+	upgrade_id = 107,
+	id = 14166,
+	value_2 = 11,
+	value_1 = 19,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[14167] = {
+	prev = 14166,
+	base = 14160,
+	next = 14168,
+	upgrade_id = 108,
+	id = 14167,
+	value_2 = 12,
+	value_1 = 20,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[14168] = {
+	prev = 14167,
+	base = 14160,
+	next = 14169,
+	upgrade_id = 109,
+	id = 14168,
+	value_2 = 13,
+	value_1 = 21,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[14169] = {
+	prev = 14168,
+	base = 14160,
+	next = 14170,
+	upgrade_id = 110,
+	id = 14169,
+	value_2 = 14,
+	value_1 = 23,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[14170] = {
+	base = 14160,
+	prev = 14169,
+	next = 0,
+	upgrade_id = 111,
+	id = 14170,
+	value_2 = 15,
+	value_1 = 25,
+	level = 11,
+	skill_upgrade = {
+		{
+			10310,
+			1010310
+		},
+		{
+			11870,
+			1011870
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[14180] = {
+	tech = 0,
+	name = "Hard and Soft",
+	value_2_random = 5,
+	type = 1,
+	value_1_random = 10,
+	value_1 = 13,
+	effect_id_display = 902300,
+	level = 1,
+	descrip = "A custom-designed piece of gear made from an Augment Module core.",
+	uncraftable = 0,
+	next = 14181,
+	upgrade_id = 101,
+	value_2 = 1,
+	icon = "14180",
+	effect_id = 902300,
+	attribute_2 = "dodge",
+	id = 14180,
+	rarity = 4,
+	unique = 20116,
+	important = 2,
+	prev = 0,
+	attribute_1 = "torpedo",
+	usability = {
+		1
+	},
+	skill_upgrade = {
+		{
+			0,
+			1011960
+		}
+	},
+	hide_buff_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[14181] = {
+	prev = 14180,
+	base = 14180,
+	next = 14182,
+	upgrade_id = 102,
+	id = 14181,
+	value_2 = 1,
+	value_1 = 14,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[14182] = {
+	prev = 14181,
+	base = 14180,
+	next = 14183,
+	upgrade_id = 103,
+	id = 14182,
+	value_2 = 2,
+	value_1 = 15,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[14183] = {
+	prev = 14182,
+	base = 14180,
+	next = 14184,
+	upgrade_id = 104,
+	id = 14183,
+	value_2 = 3,
+	value_1 = 16,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[14184] = {
+	prev = 14183,
+	base = 14180,
+	next = 14185,
+	upgrade_id = 105,
+	id = 14184,
+	value_2 = 4,
+	value_1 = 17,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[14185] = {
+	prev = 14184,
+	base = 14180,
+	next = 14186,
+	upgrade_id = 106,
+	id = 14185,
+	value_2 = 5,
+	value_1 = 18,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[14186] = {
+	prev = 14185,
+	base = 14180,
+	next = 14187,
+	upgrade_id = 107,
+	id = 14186,
+	value_2 = 6,
+	value_1 = 19,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[14187] = {
+	prev = 14186,
+	base = 14180,
+	next = 14188,
+	upgrade_id = 108,
+	id = 14187,
+	value_2 = 7,
+	value_1 = 20,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[14188] = {
+	prev = 14187,
+	base = 14180,
+	next = 14189,
+	upgrade_id = 109,
+	id = 14188,
+	value_2 = 8,
+	value_1 = 21,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[14189] = {
+	prev = 14188,
+	base = 14180,
+	next = 14190,
+	upgrade_id = 110,
+	id = 14189,
+	value_2 = 9,
+	value_1 = 23,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[14190] = {
+	base = 14180,
+	prev = 14189,
+	next = 0,
+	upgrade_id = 111,
+	id = 14190,
+	value_2 = 10,
+	value_1 = 25,
+	level = 11,
+	skill_upgrade = {
+		{
+			11960,
+			1011960
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[14200] = {
+	tech = 0,
+	name = "Hermit Dragon of Iwashimizu's Shingon Blade",
+	value_2_random = 10,
+	type = 4,
+	value_1_random = 5,
+	value_1 = 5,
+	effect_id_display = 901010,
+	level = 1,
+	descrip = "A custom-designed piece of gear made from an Augment Module core.",
+	uncraftable = 0,
+	next = 14201,
+	upgrade_id = 101,
+	value_2 = 15,
+	icon = "14200",
+	effect_id = 901010,
+	attribute_2 = "cannon",
+	id = 14200,
+	rarity = 4,
+	unique = 30314,
+	important = 2,
+	prev = 0,
+	attribute_1 = "dodge",
+	usability = {
+		3
+	},
+	skill_upgrade = {
+		{
+			0,
+			1011250
+		}
+	},
+	hide_buff_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[14201] = {
+	prev = 14200,
+	base = 14200,
+	next = 14202,
+	upgrade_id = 102,
+	id = 14201,
+	value_2 = 17,
+	value_1 = 6,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[14202] = {
+	prev = 14201,
+	base = 14200,
+	next = 14203,
+	upgrade_id = 103,
+	id = 14202,
+	value_2 = 19,
+	value_1 = 7,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[14203] = {
+	prev = 14202,
+	base = 14200,
+	next = 14204,
+	upgrade_id = 104,
+	id = 14203,
+	value_2 = 21,
+	value_1 = 8,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[14204] = {
+	prev = 14203,
+	base = 14200,
+	next = 14205,
+	upgrade_id = 105,
+	id = 14204,
+	value_2 = 23,
+	value_1 = 9,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[14205] = {
+	prev = 14204,
+	base = 14200,
+	next = 14206,
+	upgrade_id = 106,
+	id = 14205,
+	value_2 = 25,
+	value_1 = 10,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[14206] = {
+	prev = 14205,
+	base = 14200,
+	next = 14207,
+	upgrade_id = 107,
+	id = 14206,
+	value_2 = 27,
+	value_1 = 11,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[14207] = {
+	prev = 14206,
+	base = 14200,
+	next = 14208,
+	upgrade_id = 108,
+	id = 14207,
+	value_2 = 29,
+	value_1 = 12,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[14208] = {
+	prev = 14207,
+	base = 14200,
+	next = 14209,
+	upgrade_id = 109,
+	id = 14208,
+	value_2 = 31,
+	value_1 = 13,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[14209] = {
+	prev = 14208,
+	base = 14200,
+	next = 14210,
+	upgrade_id = 110,
+	id = 14209,
+	value_2 = 33,
+	value_1 = 14,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[14210] = {
+	base = 14200,
+	prev = 14209,
+	next = 0,
+	upgrade_id = 111,
+	id = 14210,
+	value_2 = 35,
+	value_1 = 15,
+	level = 11,
+	skill_upgrade = {
+		{
+			11250,
+			1011250
+		}
+	}
+}
+_G.pg.base.spweapon_data_statistics[14220] = {
+	tech = 0,
+	name = "The Punctualist's Ceremonial Needle",
+	value_2_random = 5,
+	type = 7,
+	value_1_random = 10,
+	value_1 = 20,
+	effect_id_display = 902060,
+	level = 1,
+	descrip = "A custom-designed piece of gear made from an Augment Module core.",
+	uncraftable = 0,
+	next = 14221,
+	upgrade_id = 101,
+	value_2 = 6,
+	icon = "14220",
+	effect_id = 902060,
+	attribute_2 = "reload",
+	id = 14220,
+	rarity = 4,
+	unique = 40703,
+	important = 2,
+	prev = 0,
+	attribute_1 = "air",
+	usability = {
+		7
+	},
+	skill_upgrade = {
+		{
+			0,
+			1013880
+		}
+	},
+	hide_buff_upgrade = {},
+	label = {}
+}
+_G.pg.base.spweapon_data_statistics[14221] = {
+	prev = 14220,
+	base = 14220,
+	next = 14222,
+	upgrade_id = 102,
+	id = 14221,
+	value_2 = 6,
+	value_1 = 21,
+	level = 2
+}
+_G.pg.base.spweapon_data_statistics[14222] = {
+	prev = 14221,
+	base = 14220,
+	next = 14223,
+	upgrade_id = 103,
+	id = 14222,
+	value_2 = 7,
+	value_1 = 22,
+	level = 3
+}
+_G.pg.base.spweapon_data_statistics[14223] = {
+	prev = 14222,
+	base = 14220,
+	next = 14224,
+	upgrade_id = 104,
+	id = 14223,
+	value_2 = 8,
+	value_1 = 23,
+	level = 4
+}
+_G.pg.base.spweapon_data_statistics[14224] = {
+	prev = 14223,
+	base = 14220,
+	next = 14225,
+	upgrade_id = 105,
+	id = 14224,
+	value_2 = 9,
+	value_1 = 24,
+	level = 5
+}
+_G.pg.base.spweapon_data_statistics[14225] = {
+	prev = 14224,
+	base = 14220,
+	next = 14226,
+	upgrade_id = 106,
+	id = 14225,
+	value_2 = 10,
+	value_1 = 25,
+	level = 6
+}
+_G.pg.base.spweapon_data_statistics[14226] = {
+	prev = 14225,
+	base = 14220,
+	next = 14227,
+	upgrade_id = 107,
+	id = 14226,
+	value_2 = 11,
+	value_1 = 26,
+	level = 7
+}
+_G.pg.base.spweapon_data_statistics[14227] = {
+	prev = 14226,
+	base = 14220,
+	next = 14228,
+	upgrade_id = 108,
+	id = 14227,
+	value_2 = 12,
+	value_1 = 27,
+	level = 8
+}
+_G.pg.base.spweapon_data_statistics[14228] = {
+	prev = 14227,
+	base = 14220,
+	next = 14229,
+	upgrade_id = 109,
+	id = 14228,
+	value_2 = 13,
+	value_1 = 28,
+	level = 9
+}
+_G.pg.base.spweapon_data_statistics[14229] = {
+	prev = 14228,
+	base = 14220,
+	next = 14230,
+	upgrade_id = 110,
+	id = 14229,
+	value_2 = 14,
+	value_1 = 29,
+	level = 10
+}
+_G.pg.base.spweapon_data_statistics[14230] = {
+	base = 14220,
+	prev = 14229,
+	next = 0,
+	upgrade_id = 111,
+	id = 14230,
+	value_2 = 15,
+	value_1 = 30,
+	level = 11,
+	skill_upgrade = {
+		{
+			13880,
+			1013880
 		}
 	}
 }
