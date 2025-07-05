@@ -660,6 +660,183 @@ pg.activity_medal_template = {
 		id = 597107,
 		activity_medal_desc = "もう一隻分を…あと一隻分物資をくれぇ……"
 	},
+	[5002101] = {
+		prefab_node = "1",
+		next_medal = 0,
+		item = 65632,
+		remake_task_id = 0,
+		group = 50021,
+		task_id = 21777,
+		medal_asset = "ActivityMedal/5002101",
+		activity_medal_name = "ステッカー：シティの探索者",
+		id = 5002101,
+		activity_medal_desc = "もしかして君が潜入者？"
+	},
+	[5002102] = {
+		prefab_node = "2",
+		next_medal = 0,
+		item = 65633,
+		remake_task_id = 0,
+		group = 50021,
+		task_id = 21778,
+		medal_asset = "ActivityMedal/5002102",
+		activity_medal_name = "ステッカー：手錠",
+		id = 5002102,
+		activity_medal_desc = "はいはい、分かったらこれ以上は署で聞くよ。"
+	},
+	[5002103] = {
+		prefab_node = "3",
+		next_medal = 0,
+		item = 65634,
+		remake_task_id = 0,
+		group = 50021,
+		task_id = 21779,
+		medal_asset = "ActivityMedal/5002103",
+		activity_medal_name = "ステッカー：手旗",
+		id = 5002103,
+		activity_medal_desc = "年間ノークレームの最優秀ツアーガイド……ってツアー数もゼロ！？"
+	},
+	[5002104] = {
+		prefab_node = "4",
+		next_medal = 0,
+		item = 65635,
+		remake_task_id = 0,
+		group = 50021,
+		task_id = 21780,
+		medal_asset = "ActivityMedal/5002104",
+		activity_medal_name = "ステッカー：巡回の相棒",
+		id = 5002104,
+		activity_medal_desc = "小型で軽い分、計り知れないスピードが出せる。まさに最高の相棒だ。"
+	},
+	[5002105] = {
+		prefab_node = "5",
+		next_medal = 0,
+		item = 65636,
+		remake_task_id = 0,
+		group = 50021,
+		task_id = 21781,
+		medal_asset = "ActivityMedal/5002105",
+		activity_medal_name = "ステッカー：ウサウサ警官",
+		id = 5002105,
+		activity_medal_desc = "ウサウサセキュリティが捜査中よ！"
+	},
+	[5002106] = {
+		prefab_node = "6",
+		next_medal = 0,
+		item = 65637,
+		remake_task_id = 0,
+		group = 50021,
+		task_id = 21782,
+		medal_asset = "ActivityMedal/5002106",
+		activity_medal_name = "ステッカー：秩序の帽子",
+		id = 5002106,
+		activity_medal_desc = "守ってこその秩序だ！"
+	},
+	[5002107] = {
+		prefab_node = "7",
+		next_medal = 0,
+		item = 65638,
+		remake_task_id = 0,
+		group = 50021,
+		task_id = 21783,
+		medal_asset = "ActivityMedal/5002107",
+		activity_medal_name = "ステッカー：注視",
+		id = 5002107,
+		activity_medal_desc = "……ずっとあなたのことを見ているよ……"
+	},
+	[5002108] = {
+		prefab_node = "8",
+		next_medal = 0,
+		item = 65639,
+		remake_task_id = 0,
+		group = 50021,
+		task_id = 21784,
+		medal_asset = "ActivityMedal/5002108",
+		activity_medal_name = "ステッカー：メタ視点",
+		id = 5002108,
+		activity_medal_desc = "悪くはないが、やっぱりもう一回撮ろう！"
+	},
+	get_id_list_by_group = {
+		[5711] = {
+			571101,
+			571102,
+			571103,
+			571104,
+			571105,
+			571106,
+			571107,
+			571108
+		},
+		[5769] = {
+			576901,
+			576902,
+			576903,
+			576904,
+			576905,
+			576906,
+			576907,
+			576908
+		},
+		[5812] = {
+			581201,
+			581202,
+			581203,
+			581204,
+			581205,
+			581206,
+			581207,
+			581208
+		},
+		[5875] = {
+			587501,
+			587502,
+			587503,
+			587504,
+			587505,
+			587506,
+			587507,
+			587508
+		},
+		[5913] = {
+			591301,
+			591302,
+			591303,
+			591304,
+			591305,
+			591306,
+			591307,
+			591308
+		},
+		[5970] = {
+			597001,
+			597002,
+			597003,
+			597004,
+			597005,
+			597006,
+			597007,
+			597008
+		},
+		[5971] = {
+			597101,
+			597102,
+			597103,
+			597104,
+			597105,
+			597106,
+			597107
+		},
+		[50021] = {
+			5002101,
+			5002102,
+			5002103,
+			5002104,
+			5002105,
+			5002106,
+			5002107,
+			5002108
+		}
+	},
 	all = {
 		571101,
 		571102,
@@ -715,6 +892,14 @@ pg.activity_medal_template = {
 		597104,
 		597105,
 		597106,
-		597107
+		597107,
+		5002101,
+		5002102,
+		5002103,
+		5002104,
+		5002105,
+		5002106,
+		5002107,
+		5002108
 	}
 }

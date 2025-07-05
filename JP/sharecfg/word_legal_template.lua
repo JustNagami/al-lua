@@ -465,7 +465,10 @@ function temp()
 					ォ = {
 						ー = {
 							ム = {
-								this = true
+								this = true,
+								改 = {
+									this = true
+								}
 							}
 						}
 					}
@@ -3378,6 +3381,17 @@ function temp()
 									}
 								}
 							},
+							ツ = {
+								ェ = {
+									ン = {
+										カ = {
+											ー = {
+												this = true
+											}
+										}
+									}
+								}
+							},
 							ナ = {
 								ヒ = {
 									ー = {
@@ -5612,22 +5626,6 @@ end
 temp()
 
 function temp()
-	var_0_1.萤 = {
-		火 = {
-			虫 = {
-				["."] = {
-					改 = {
-						this = true
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var_0_1.ガ = {
 		ラ = {
 			テ = {
@@ -7196,6 +7194,16 @@ end
 temp()
 
 function temp()
+	var_0_1.陸 = {
+		奥 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.土 = {
 		佐 = {
 			this = true
@@ -7512,6 +7520,9 @@ function temp()
 			["1"] = {
 				this = true
 			},
+			["3"] = {
+				this = true
+			},
 			["6"] = {
 				this = true
 			},
@@ -7673,6 +7684,9 @@ function temp()
 								}
 							}
 						}
+					},
+					["2"] = {
+						this = true
 					}
 				},
 				["2"] = {

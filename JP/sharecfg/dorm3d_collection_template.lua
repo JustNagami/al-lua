@@ -103,6 +103,47 @@ pg.dorm3d_collection_template = setmetatable({
 			126,
 			127,
 			128
+		},
+		[11] = {
+			1101,
+			1102,
+			1103,
+			1104,
+			1105,
+			1106,
+			1107,
+			1108,
+			1109,
+			1110,
+			1111,
+			1112,
+			1113,
+			1114,
+			1115,
+			1116,
+			1117,
+			1118,
+			1119,
+			1120,
+			1121,
+			1122,
+			1123,
+			1124,
+			1125,
+			1126,
+			1127,
+			1128
+		},
+		[16] = {
+			1601,
+			1602,
+			1603,
+			1604,
+			1605,
+			1606,
+			1607,
+			1608,
+			1609
 		}
 	},
 	all = {
@@ -199,7 +240,44 @@ pg.dorm3d_collection_template = setmetatable({
 		125,
 		126,
 		127,
-		128
+		128,
+		1101,
+		1102,
+		1103,
+		1104,
+		1105,
+		1106,
+		1107,
+		1108,
+		1109,
+		1110,
+		1111,
+		1112,
+		1113,
+		1114,
+		1115,
+		1116,
+		1117,
+		1118,
+		1119,
+		1120,
+		1121,
+		1122,
+		1123,
+		1124,
+		1125,
+		1126,
+		1127,
+		1128,
+		1601,
+		1602,
+		1603,
+		1604,
+		1605,
+		1606,
+		1607,
+		1608,
+		1609
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2176,6 +2254,783 @@ pg.base.dorm3d_collection_template = {
 		},
 		vfx_prefab = {
 			"fbx/litmap_02/night/pre_db_towel01_group01/vfx_wupintishi01"
+		}
+	},
+	[1101] = {
+		text = "dorm3d_xinzexi_table",
+		name = "キャラメルポップコーン",
+		award = 0,
+		time = 0,
+		id = 1101,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item1",
+		desc = "電子レンジから取り出したばかりのキャラメルポップコーン。\n琥珀色の甘いキャラメルがたっぷりかかっていて、\n彼女が映画を見るときに必携するおやつ。",
+		model = {
+			"fbx/litmap_01/pre_db_electrical18"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_electrical18/vfx_wupintishi01"
+		}
+	},
+	[1102] = {
+		text = "dorm3d_xinzexi_table",
+		name = "ハートエプロン",
+		award = 0,
+		time = 0,
+		id = 1102,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item2",
+		desc = "キッチンの隅に掛けられたエプロン。\n正面にはシンプルながらもポップで可愛いウサギが飾られている。\n料理も掃除も、彼女はいつも元気いっぱいの姿でこなしている。",
+		model = {
+			"fbx/litmap_01/pre_db_cloth05"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_cloth05/vfx_wupintishi01"
+		}
+	},
+	[1103] = {
+		text = "dorm3d_xinzexi_table",
+		name = "ジューサー",
+		award = 0,
+		time = 0,
+		id = 1103,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item3",
+		desc = "パワフルなジューサー。\n毎朝、彼女は色とりどりのフルーツを放り込み、\nあっという間にカラフルでフレッシュなジュースを作り出す。",
+		model = {
+			"fbx/litmap_01/pre_db_electrical13"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_electrical13/vfx_wupintishi01"
+		}
+	},
+	[1104] = {
+		text = "dorm3d_xinzexi_table",
+		name = "いちごのボウル",
+		award = 0,
+		time = 0,
+		id = 1104,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item4",
+		desc = "ボウルの中には、大粒で瑞々しいいちごがたっぷり。\n一粒一粒がキラキラとした雫をまとっている。\n彼女の指先がいちごへと伸び——\nひと口食べるその前に、ときめきをそっと収めておこう。",
+		model = {
+			"fbx/litmap_01/pre_db_fruit01"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_fruit01/vfx_wupintishi01"
+		}
+	},
+	[1105] = {
+		text = "dorm3d_xinzexi_table",
+		name = "レンジフード",
+		award = 0,
+		time = 0,
+		id = 1105,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item5",
+		desc = "キッチンに欠かせないレンジフード。\nあのおなじみのゴォーっという音は、\nニュージャージーが腕をふるっている証拠なのだ！",
+		model = {
+			"fbx/litmap_01/pre_db_newjerseyhostel01_cupboard01"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_newjerseyhostel01_cupboard01/vfx_wupintishi01"
+		}
+	},
+	[1106] = {
+		text = "dorm3d_xinzexi_table",
+		name = "レモンウォーター",
+		award = 0,
+		time = 0,
+		id = 1106,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item6",
+		desc = "ひんやり爽やかなレモンウォーター入りのピッチャー。\n甘さと酸っぱさがちょうどいいバランスで、\n角砂糖のような優しさがそっと溶け込んでいる。",
+		model = {
+			"no_bake_pay_prop/kitchen/pre_db_tableware28_group"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"no_bake_pay_prop/kitchen/pre_db_tableware28_group/vfx_wupintishi01"
+		}
+	},
+	[1107] = {
+		text = "dorm3d_xinzexi_table",
+		name = "デイリージャケット",
+		award = 0,
+		time = 0,
+		id = 1107,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item7",
+		desc = "ニュージャージーの普段着。軽くて上品なジャケット。\nジャケットを脱いで、椅子の背にさっとかける——\nそれこそ彼女のただいまの合図なのだ。",
+		model = {
+			"fbx/litmap_01/pre_db_cloth06"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_cloth06/vfx_wupintishi01"
+		}
+	},
+	[1108] = {
+		text = "dorm3d_xinzexi_table",
+		name = "トースター",
+		award = 0,
+		time = 0,
+		id = 1108,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item8",
+		desc = "キュートな柄が入ったトースター。\nスイッチをポンと押せば、きつね色のサクサクトーストがポンと飛び出す。\nジャム、はちみつ、バターをのせれば……\nパーフェクトな朝ごはんのできあがり！",
+		model = {
+			"fbx/litmap_01/pre_db_electrical10_01"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_electrical10_01/vfx_wupintishi01"
+		}
+	},
+	[1109] = {
+		text = "dorm3d_xinzexi_table",
+		name = "ジャングルブリーズ",
+		award = 0,
+		time = 0,
+		id = 1109,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item9",
+		desc = "すっと背を伸ばすサンスベリアの鉢植え。\n部屋の隅で静かに葉を広げ、\n深呼吸するたびに、みずみずしい生命の気配が感じられる。",
+		model = {
+			"fbx/litmap_01/pre_db_bonsai13"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_bonsai13/vfx_wupintishi01"
+		}
+	},
+	[1110] = {
+		text = "dorm3d_xinzexi_table",
+		name = "りんごタルト",
+		award = 0,
+		time = 0,
+		id = 1110,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item10",
+		desc = "ニュージャージーがティータイム用に用意したりんごタルト。\n「ハニーと一緒に食べる前に、まずは味見しないとね〜」\nそう言いながら、彼女は口元についたアイシングをペロッと舐めた。",
+		model = {
+			"fbx/litmap_01/pre_db_food16_group"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_food16_group/vfx_wupintishi01"
+		}
+	},
+	[1111] = {
+		text = "dorm3d_xinzexi_chair",
+		name = "掃除ロボット",
+		award = 0,
+		time = 0,
+		id = 1111,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item11",
+		desc = "部屋をきれいにしてくれる、かわいい掃除ロボット。\nホコリだけじゃなく、日々の暮らしの痕跡もまでもコツコツ集めてくれる。",
+		model = {
+			"fbx/litmap_01/pre_db_electrical17"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_electrical17/vfx_wupintishi01"
+		}
+	},
+	[1112] = {
+		text = "dorm3d_xinzexi_chair",
+		name = "ウルトラHDテレビ",
+		award = 0,
+		time = 0,
+		id = 1112,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item12",
+		desc = "55インチのスクリーンが光れば、\nそれは彼女にとって、どこへでも行けるドア。\n今日はド派手な爆発アクション？\nそれともユニオンの街角での、雨の中のキスシーン？",
+		model = {
+			"fbx/litmap_01/pre_db_appliances06"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_appliances06/vfx_wupintishi01"
+		}
+	},
+	[1113] = {
+		text = "dorm3d_xinzexi_chair",
+		name = "ファッション雑誌",
+		award = 0,
+		time = 0,
+		id = 1113,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item13",
+		desc = "何度も読み返されたような数冊のファッション雑誌が、\nリビングのテーブルの上で重なっている。\nここは彼女の「おしゃれ補給所」。\nインスピレーションはいつだって突然に。",
+		model = {
+			"no_bake_pay_prop/livingroom/pre_db_book05_group"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"no_bake_pay_prop/livingroom/pre_db_book05_group/vfx_wupintishi01"
+		}
+	},
+	[1114] = {
+		text = "dorm3d_xinzexi_chair",
+		name = "ハンドバッグ",
+		award = 0,
+		time = 0,
+		id = 1114,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item14",
+		desc = "無造作に置かれた上品なハンドバッグ。\n中には小物がぎっしり。\n今日もこの子と一緒に、たくさんの場所へ冒険に出かけたみたい。",
+		model = {
+			"no_bake_pay_prop/livingroom/pre_db_bag05"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"no_bake_pay_prop/livingroom/pre_db_bag05/vfx_wupintishi01"
+		}
+	},
+	[1115] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "アウトドアウェア",
+		award = 0,
+		time = 0,
+		id = 1115,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item15",
+		desc = "屋外スポーツウェア一式。\n元気いっぱいのニュージャージーは、\nすぐにでもハードな有酸素運動に挑む勢いだ！",
+		model = {
+			"fbx/litmap_01/pre_db_bag03_group"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_bag03_group/vfx_wupintishi01"
+		}
+	},
+	[1116] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "Big Jプレート",
+		award = 0,
+		time = 0,
+		id = 1116,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item16",
+		desc = "中にはドラゴンがいる！\n無許可での立ち入りは禁止だ！\n「……ん？ハニー、来てくれたの！？さ、早く入って入って〜！」",
+		model = {
+			"fbx/litmap_01/pre_db_newjerseyhostel01_billboard01_1"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_newjerseyhostel01_billboard01_1/vfx_wupintishi01"
+		}
+	},
+	[1117] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "ハンガーラック",
+		award = 0,
+		time = 0,
+		id = 1117,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item17",
+		desc = "デートのための服を選ぶ時、\nどの服も「あたしを選んで！」と訴えかけてくるようだ。\n甘い選択問題は、思ったよりもずっと難しい。",
+		model = {
+			"fbx/litmap_01/pre_db_cloth07_group"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_cloth07_group/vfx_wupintishi01"
+		}
+	},
+	[1118] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "クリアトートバッグ",
+		award = 0,
+		time = 0,
+		id = 1118,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item18",
+		desc = "コスメやメイクライトが入った透明なトートバッグ。\n彼女の日々の通勤や旅行でのマストアイテムであり、\nいつでもどこでもメイク直しをサポートしてくれる！",
+		model = {
+			"fbx/litmap_01/pre_db_bag06"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_bag06/vfx_wupintishi01"
+		}
+	},
+	[1119] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "ぴょこぴょこウサ耳",
+		award = 0,
+		time = 0,
+		id = 1119,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item19",
+		desc = "着ける人の気分にあわせて、ぴょこぴょこ動く個性的なウサ耳アクセ。\n彼女のお気に入りアクセサリーのひとつ。",
+		model = {
+			"fbx/litmap_01/pre_db_headgear01"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_headgear01/vfx_wupintishi01"
+		}
+	},
+	[1120] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "エアコン",
+		award = 0,
+		time = 0,
+		id = 1120,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item21",
+		desc = "人類史上、最高の発明のひとつと称される存在。\n室温を快適な温度に整え、\n心と体を癒す最高のくつろぎコーナーを作り出してくれる。",
+		model = {
+			"fbx/litmap_01/pre_db_appliances01"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_appliances01/vfx_wupintishi01"
+		}
+	},
+	[1121] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "空気清浄機",
+		award = 0,
+		time = 0,
+		id = 1121,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item22",
+		desc = "部屋の隅で静かに働く空気清浄機。\nその止まることのない安定した稼働で、\nひとつひとつの深呼吸が、贅沢な時間に変わる。",
+		model = {
+			"fbx/litmap_01/pre_db_appliances03"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_appliances03/vfx_wupintishi01"
+		}
+	},
+	[1122] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "クールドリンク",
+		award = 0,
+		time = 0,
+		id = 1122,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item23",
+		desc = "ひんやりと冷気をまとった2つのアイスとドリンク。\n一人でゆっくり味わっても、\n大切な人と分け合っても——\nその一口一口が、幸せのカタチ。",
+		model = {
+			"fbx/litmap_01/pre_db_food03_group"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_food03_group/vfx_wupintishi01"
+		}
+	},
+	[1123] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "オーディオ機器",
+		award = 0,
+		time = 0,
+		id = 1123,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item24",
+		desc = "スタイリッシュで持ち運びも楽々なスピーカー。\nクラシックからロックまで数々の音楽が内蔵されていて、\nいつでもどこでも、ぴったりなメロディがあなたを待っている。",
+		model = {
+			"fbx/litmap_01/pre_db_electrical03"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_electrical03/vfx_wupintishi01"
+		}
+	},
+	[1124] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "うさぎナイトライト",
+		award = 0,
+		time = 2,
+		id = 1124,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item25",
+		desc = "うさぎモチーフの小さなかわいいらしいナイトライト。\nほのかに青い光を灯しながら、\n暗がりの中でもニュージャージーの足元を優しく照らし、\n夜をそっと導いてくれる。",
+		model = {
+			"fbx/litmap_01/night/pre_db_newjerseyhostel01_lamp01a_on"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/night/pre_db_newjerseyhostel01_lamp01a_on/vfx_wupintishi01"
+		}
+	},
+	[1125] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "ダンベル",
+		award = 0,
+		time = 0,
+		id = 1125,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item26",
+		desc = "程よい重さのダンベル一組。\n彼女のトレーニングニーズにぴったりのアイテム。\nしたたる汗の一滴一滴に、\n昨日よりちょっと成長した自分の姿が見える。",
+		model = {
+			"no_bake_pay_prop/livingroom/pre_db_sportinggoods06_group"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"no_bake_pay_prop/livingroom/pre_db_sportinggoods06_group/vfx_wupintishi01"
+		}
+	},
+	[1126] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "カールアイロン",
+		award = 0,
+		time = 0,
+		id = 1126,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item27",
+		desc = "スタイリッシュなデザインのカールアイロン。\nヘアセット時の頼れる相棒。\n……使い終わったら、ちゃんと電源を抜くのを忘れずに！",
+		model = {
+			"fbx/litmap_01/pre_db_electrical15"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_electrical15/vfx_wupintishi01"
+		}
+	},
+	[1127] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "黒ストッキング",
+		award = 0,
+		time = 2,
+		id = 1127,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item28",
+		desc = "彼女の部屋には、行きたい場所を持つストッキングたちがいる。\nこれは今月、彼女がなくした「7足目」のストッキングらしい。",
+		model = {
+			"fbx/litmap_01/night/pre_db_sock01"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/night/pre_db_sock01/vfx_wupintishi01"
+		}
+	},
+	[1128] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "スキンケアセット",
+		award = 0,
+		time = 2,
+		id = 1128,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item29",
+		desc = "機能性バツグンのスキンケアアイテム一式。\nニュージャージーの美肌実験場とも言えるセット。\nいろんなアイテムを組み合わせて、\n思いがけないツヤ肌レシピが誕生することも。",
+		model = {
+			"fbx/litmap_01/night/pre_db_cosmetic17"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/night/pre_db_cosmetic17/vfx_wupintishi01"
+		}
+	},
+	[1601] = {
+		text = "dorm3d_collection_cafe",
+		name = "看板メニュー",
+		award = 0,
+		time = 0,
+		id = 1601,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item1",
+		desc = "多彩なドリンクメニューで、カフェの特色が一目瞭然。\nオリジナリティ溢れる心が込められた一杯は、独特な好みでも満足できる。",
+		model = {
+			"fbx/litmap_03/pre_db_billboard16_2"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_billboard16_2/vfx_wupintishi01"
+		}
+	},
+	[1602] = {
+		text = "dorm3d_collection_cafe",
+		name = "案内ボード",
+		award = 0,
+		time = 0,
+		id = 1602,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item2",
+		desc = "便利なシンボルが、カフェの温かい片隅へと案内してくれる。第一印象の演出は大事。",
+		model = {
+			"fbx/litmap_03/pre_db_billboard13"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_billboard13/vfx_wupintishi01"
+		}
+	},
+	[1603] = {
+		text = "dorm3d_collection_cafe",
+		name = "暖色キャンドル",
+		award = 0,
+		time = 0,
+		id = 1603,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item3",
+		desc = "柔らかく優しい光で、心温まるロマンチックな雰囲気をもつ。カフェタイムに「ほっと」なフィーリング。",
+		model = {
+			"fbx/litmap_03/pre_db_desklamp06_1"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_desklamp06_1/vfx_wupintishi01"
+		}
+	},
+	[1604] = {
+		text = "dorm3d_collection_cafe",
+		name = "レジカウンター",
+		award = 0,
+		time = 0,
+		id = 1604,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item4",
+		desc = "モニターはタッチパネル仕様で、シンプルながら機能的なデザイン。注文も会計もスピーディー。",
+		model = {
+			"fbx/litmap_03/pre_db_electrical19"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_electrical19/vfx_wupintishi01"
+		}
+	},
+	[1605] = {
+		text = "dorm3d_collection_cafe",
+		name = "幾何学ボトル",
+		award = 0,
+		time = 0,
+		id = 1605,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item5",
+		desc = "一本一本に匠の心が込められたボトル。見た目も実用性も、コーヒータイムをより上品に演出してくれる。",
+		model = {
+			"fbx/litmap_03/pre_db_drink03_1"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_drink03_1/vfx_wupintishi01"
+		}
+	},
+	[1606] = {
+		text = "dorm3d_collection_cafe",
+		name = "チョコドーナツ",
+		award = 0,
+		time = 0,
+		id = 1606,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item6",
+		desc = "サクサクもちもちのドーナツ。美味しい定番スイーツ。\n一口ごとに後を引く美味しさで、味覚に最高の喜びを与えてくれる。",
+		model = {
+			"fbx/litmap_03/pre_db_food07"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_food07/vfx_wupintishi01"
+		}
+	},
+	[1607] = {
+		text = "dorm3d_collection_cafe",
+		name = "カクテルセット",
+		award = 0,
+		time = 0,
+		id = 1607,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item7",
+		desc = "プロの道具で作られたカクテルは、ナイトタイムを彩らせる。",
+		model = {
+			"fbx/litmap_03/pre_db_frame23_group"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_frame23_group/vfx_wupintishi01"
+		}
+	},
+	[1608] = {
+		text = "dorm3d_collection_cafe",
+		name = "ナプキン",
+		award = 0,
+		time = 0,
+		id = 1608,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item8",
+		desc = "やわらかなナプキンで、いつでもニーズに答えてくれる。",
+		model = {
+			"fbx/litmap_03/pre_db_tableware30_4"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_tableware30_4/vfx_wupintishi01"
+		}
+	},
+	[1609] = {
+		text = "dorm3d_collection_cafe",
+		name = "マスコット彫刻",
+		award = 0,
+		time = 0,
+		id = 1609,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item9",
+		desc = "カフェのマスコットの彫刻。",
+		model = {
+			"fbx/litmap_03/pre_db_publiccafe01_statue01"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_publiccafe01_statue01/vfx_wupintishi01"
 		}
 	}
 }

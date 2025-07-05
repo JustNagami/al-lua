@@ -3391,7 +3391,7 @@ pg.backyard_theme_template = {
 	[91] = {
 		Cfg_1 = 5,
 		name = "饅頭ダンスルーム",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 91,
 		comfortable = 0,
@@ -4665,6 +4665,43 @@ pg.backyard_theme_template = {
 			322115
 		}
 	},
+	[123] = {
+		Cfg_1 = 5,
+		name = "鉄道の旅",
+		hot = 1,
+		is_view = 1,
+		id = 123,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "列車に乗って、レールのリズムと車窓の風景を感じよう",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "czthemeicon",
+		deblocking = 1,
+		order = 124,
+		ids = {
+			324001,
+			324002,
+			324101,
+			324102,
+			324103,
+			324104,
+			324105,
+			324106,
+			324107,
+			324108,
+			324109,
+			324110,
+			324111,
+			324112,
+			324113,
+			324114,
+			324115,
+			324116,
+			324117
+		}
+	},
 	all = {
 		1,
 		2,
@@ -4774,6 +4811,7 @@ pg.backyard_theme_template = {
 		119,
 		120,
 		121,
-		122
+		122,
+		123
 	}
 }

@@ -9,7 +9,7 @@
 			bgName = "star_level_bg_650",
 			hidePaintObj = true,
 			say = "TBが演算抑制のためのリソース調整を始めたのを察知してか、密集していた敵が一斉にこちらへと襲いかかってきた。",
-			bgm = "battle-ods-onstage",
+			bgm = "battle-DOS-onstage",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

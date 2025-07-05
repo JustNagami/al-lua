@@ -9,7 +9,7 @@
 			bgName = "star_level_bg_650",
 			hidePaintObj = true,
 			say = "ついに、TBから朗報が届いた。",
-			bgm = "battle-ods-onstage",
+			bgm = "battle-DOS-onstage",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

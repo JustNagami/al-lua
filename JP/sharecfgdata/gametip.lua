@@ -8414,16 +8414,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "アビリティPtが不足しています"
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "期間限定建造を累計200回行うと「ライオン」を確定で入手可能！（最大4隻まで）"
+	tip = "「アドミラル・ツェンカー」「U-552」出現確率UP！"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "「ヴァンガード」「リヴェンジ」常設実装！"
+	tip = "「ローマ」「ボルツァーノ」常設実装！"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "「ジャーヴィス」常設実装！"
+	tip = "「ジュゼッペ・ガリバルディ」「アルフレード・オリアーニ」常設実装！"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "「ヴァンガード」「インドミタブル」常設実装！"
+	tip = "「レオナルド・ダ・ヴィンチ」常設実装！"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -21554,7 +21554,7 @@ _G.pg.base.gametip.littleTaihou_npc = {
 			info = "4.イベント終了までにイベントページの「友好度報酬」を最後まで受け取ると、【大鳳ちゃん】を「正式加入」させることができます（友好度が1000必要）。イベント終了時、「正式加入」していない【大鳳ちゃん】は母港からいなくなります。"
 		},
 		{
-			info = "5.友好度報酬は6/7（水）まで毎日1段階ずつ解放されます。"
+			info = "5.友好度報酬は6/18（水）まで毎日1段階ずつ解放されます。"
 		},
 		{
 			info = "6.仮加入状態の【大鳳ちゃん】はセイレーン作戦（META戦含む）に参加できず、またセイレーン作戦では友好度を獲得できません。"
@@ -24974,7 +24974,7 @@ _G.pg.base.gametip.dorm3d_role_choose = {
 	tip = "部屋選択"
 }
 _G.pg.base.gametip.dorm3d_beach_buy = {
-	tip = "<color=#39bfff>$1</color>を消費して、 <color=#169fff>ビーチ</color>を開放しますか？"
+	tip = "<color=#39bfff>$1</color>を消費して、 <color=#169fff>$2</color>を開放しますか？"
 }
 _G.pg.base.gametip.dorm3d_beach_role = {
 	tip = "開放すると<color=#39bfff>$1</color>を配置することが可能です"
@@ -25431,7 +25431,7 @@ _G.pg.base.gametip.dorm3d_accompany_locked = {
 	tip = "未開放"
 }
 _G.pg.base.gametip.dorm3d_role_locked = {
-	tip = "キャラを開放しておく必要があります"
+	tip = "コンテンツを開放しておく必要があります"
 }
 _G.pg.base.gametip.dorm3d_volleyball_button = {
 	tip = "ビーチバレー"
@@ -26557,7 +26557,7 @@ _G.pg.base.gametip.dorm3d_privatechat_welcome = {
 	tip = "ｷｬﾗ配置"
 }
 _G.pg.base.gametip.dorm3d_privatechat_telephone_calllog = {
-	tip = "通話記録"
+	tip = "ビデオ記録"
 }
 _G.pg.base.gametip.dorm3d_privatechat_telephone_call = {
 	tip = "通話"
@@ -27457,4 +27457,144 @@ _G.pg.base.gametip.brs_reward_tip_1 = {
 }
 _G.pg.base.gametip.brs_reward_tip_2 = {
 	tip = "確認"
+}
+_G.pg.base.gametip.l2d_32xbanned_warning = {
+	tip = "現在の端末環境ではL2Dコンテンツを正常に表示できません"
+}
+_G.pg.base.gametip.dorm3d_guide_tip2 = {
+	tip = "まずはビーチを見てみよう"
+}
+_G.pg.base.gametip.dorm3d_xinzexi_table = {
+	tip = "ダイニング"
+}
+_G.pg.base.gametip.dorm3d_xinzexi_chair = {
+	tip = "リビング"
+}
+_G.pg.base.gametip.dorm3d_xinzexi_bed = {
+	tip = "寝室"
+}
+_G.pg.base.gametip.dorm3d_VIDEO_TELEPHONE_LABEL = {
+	tip = "$1からの通話"
+}
+_G.pg.base.gametip.dorm3d_privatechat_screen_floor_2 = {
+	tip = "ロフト"
+}
+_G.pg.base.gametip.dorm3d_privatechat_video_call = {
+	tip = "ビデオ通話"
+}
+_G.pg.base.gametip.dorm3d_skin_confirm = {
+	tip = "適用確定"
+}
+_G.pg.base.gametip.dorm3d_skin_already = {
+	tip = "適用中"
+}
+_G.pg.base.gametip.dorm3d_skin_equip = {
+	tip = "$1に$2を適用しますか？"
+}
+_G.pg.base.gametip.dorm3d_skin_unlock = {
+	tip = "公共エリアでは衣装を変更できません"
+}
+_G.pg.base.gametip.dorm3d_room_floor_1 = {
+	tip = "ビーチ"
+}
+_G.pg.base.gametip.dorm3d_room_floor_2 = {
+	tip = "ロフト"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame1 = {
+	tip = "$1の即興ダンス"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame2 = {
+	tip = "$1の期待の瞬間を収めよう！"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame3 = {
+	tip = "撮影完了"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame4 = {
+	tip = "もう一度"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame5 = {
+	tip = "終了"
+}
+_G.pg.base.gametip.dorm3d_cafe_minigame6 = {
+	tip = "マッチ度：$1"
+}
+_G.pg.base.gametip.dorm3d_dance_button = {
+	tip = "ダンス"
+}
+_G.pg.base.gametip.dorm3d_collection_cafe = {
+	tip = "カフェ"
+}
+_G.pg.base.gametip.zengke_series_help = {
+	tip = {
+		{
+			info = [[
+遊び方：
+<color=#92fc63>6.26-7.10メンテ</color>まで、期間限定イベント「ネオンシティの探索者」が開催されます！
+限定任務をこなし、艦隊を編成し限定ステージをクリアすることで、「シティ映画チケット」を集めて報酬を手に入れましょう！
+
+①画面左下のボタンで「探索物語（ストーリー）」と「特別戦闘」画面を切り替えることができます。
+②「特別戦闘」では、艦隊を編成しSPステージに挑戦でき、収集Ptアイテム「シティ映画チケット」を入手できます
+出撃の際に、出撃する艦隊数が異なる<color=#92fc63>「単独出撃」</color>、<color=#92fc63>「協同出撃」</color>を選択できます
+・単独出撃では、1個の艦隊のみで各ステージに連続して挑むことができます（戦闘開始時に艦隊の耐久が全回復します）
+・協同出撃では、ステージに応じてそれぞれ艦隊を編成し出撃させ、戦闘をそれぞれの艦隊で行います。協同出撃でクリアした場合、追加の報酬を入手できます
+
+③ 「シティ映画チケット」は累計入手数報酬でSR艦船<color=#92fc63>「Z13」</color>、<color=#92fc63>「試作型305mmSKC39三連装砲」</color>などを入手できます
+④「限定任務」では、イベント開催期間に登場するイベント任務を確認し報酬を受け取ることができます。
+④「探索物語」では特別ストーリーを読むことができます。ストーリーを全部読むと、記念装備外装を入手できます]]
+		}
+	}
+}
+_G.pg.base.gametip.zengke_series_pt = {
+	tip = "累計"
+}
+_G.pg.base.gametip.zengke_series_pt_small = {
+	tip = "PT REWARD"
+}
+_G.pg.base.gametip.zengke_series_rank = {
+	tip = "順位"
+}
+_G.pg.base.gametip.zengke_series_rank_small = {
+	tip = "RANKING"
+}
+_G.pg.base.gametip.zengke_series_task = {
+	tip = "限定任務"
+}
+_G.pg.base.gametip.zengke_series_task_small = {
+	tip = "TASK"
+}
+_G.pg.base.gametip.zengke_series_confirm = {
+	tip = "出撃へ"
+}
+_G.pg.base.gametip.zengke_story_reward_count = {
+	tip = "全てのストーリーを読むと限定装備外装を入手："
+}
+_G.pg.base.gametip.zengke_series_easy = {
+	tip = "簡単"
+}
+_G.pg.base.gametip.zengke_series_normal = {
+	tip = "普通"
+}
+_G.pg.base.gametip.zengke_series_hard = {
+	tip = "難しい"
+}
+_G.pg.base.gametip.zengke_series_sp = {
+	tip = "S.P"
+}
+_G.pg.base.gametip.zengke_series_ex = {
+	tip = "E.X"
+}
+_G.pg.base.gametip.zengke_series_ex_confirm = {
+	tip = "戻る"
+}
+_G.pg.base.gametip.battleui_display1 = {
+	tip = "アイコン"
+}
+_G.pg.base.gametip.battleui_display2 = {
+	tip = "エフェクト"
+}
+_G.pg.base.gametip.battleui_display3 = {
+	tip = "一時停止枠"
+}
+_G.pg.base.gametip.zengke_series_serverinfo = {
+	tip = "サーバー:"
 }

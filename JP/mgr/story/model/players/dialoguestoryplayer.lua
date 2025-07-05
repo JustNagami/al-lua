@@ -638,7 +638,7 @@ function var_0_0.LoadPainting(arg_52_0, arg_52_1, arg_52_2, arg_52_3)
 	local var_52_0, var_52_1, var_52_2, var_52_3 = arg_52_0:GetSideTF(arg_52_1:GetSide())
 	local var_52_4, var_52_5 = arg_52_1:GetPaintingAndName()
 
-	if arg_52_1:IsLive2dPainting() and checkABExist("live2d/" .. var_52_5) then
+	if arg_52_1:IsLive2dPainting() and checkABExist("live2d/" .. var_52_5) and not Live2dConst.GetLive2DArm32MatchAble() then
 		arg_52_0:UpdateLive2dPainting(arg_52_1, var_52_0, arg_52_2, arg_52_3)
 	elseif arg_52_1:IsSpinePainting() and checkABExist("spinepainting/" .. var_52_5) then
 		arg_52_0:UpdateSpinePainting(arg_52_1, var_52_0, arg_52_2, arg_52_3)
@@ -653,7 +653,12 @@ function var_0_0.UpdateLive2dPainting(arg_53_0, arg_53_1, arg_53_2, arg_53_3, ar
 		local var_54_1 = arg_53_1:GetLive2dPos()
 		local var_54_2 = Live2D.GenerateData({
 			ship = var_54_0,
-			scale = Vector3(70, 70, 70),
+			offset = {
+				0,
+				0,
+				0,
+				70
+			},
 			position = var_54_1 or Vector3(0, 0, 0),
 			parent = arg_53_2:Find("live2d")
 		})

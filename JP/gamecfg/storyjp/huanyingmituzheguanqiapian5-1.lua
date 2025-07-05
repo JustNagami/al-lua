@@ -11,7 +11,7 @@
 			actorName = "ピュリっち",
 			side = 2,
 			say = "ちょちょちょちょっと待って――っ！",
-			bgm = "battle-ods-onstage",
+			bgm = "battle-DOS-onstage",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

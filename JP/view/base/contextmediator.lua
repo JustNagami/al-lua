@@ -306,7 +306,8 @@ function var_0_0.onRegister(arg_5_0)
 		arg_5_0:addSubLayers(Context.New({
 			mediator = SpWeaponInfoMediator,
 			viewComponent = SpWeaponInfoLayer,
-			data = arg_36_1
+			data = arg_36_1,
+			onRemoved = arg_36_1 and arg_36_1.onRemoved or nil
 		}))
 	end)
 	arg_5_0:commonBind()
@@ -354,6 +355,14 @@ function var_0_0.commonBind(arg_37_0)
 					viewComponent = EmojiInfoLayer,
 					data = {
 						id = arg_38_2.cfg.id
+					}
+				}))
+			elseif arg_38_2.type == DROP_TYPE_COMBAT_UI_STYLE and not arg_38_2.notPlay then
+				arg_38_0:addSubLayers(Context.New({
+					mediator = CombatSkinInfoMediator,
+					viewComponent = CombatSkinInfoLayer,
+					data = {
+						skinID = arg_38_2:getConfig("id")
 					}
 				}))
 			else
@@ -440,7 +449,8 @@ function var_0_0.commonBind(arg_37_0)
 			arg_48_0:addSubLayers(Context.New({
 				mediator = EquipmentInfoMediator,
 				viewComponent = EquipmentInfoLayer,
-				data = arg_48_2
+				data = arg_48_2,
+				onRemoved = arg_48_2 and arg_48_2.onRemoved or nil
 			}))
 		end,
 		[BaseUI.ON_NEW_DROP] = function(arg_49_0, arg_49_1, arg_49_2)

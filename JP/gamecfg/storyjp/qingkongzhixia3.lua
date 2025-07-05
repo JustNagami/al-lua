@@ -1013,7 +1013,7 @@
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			actorName = "陸奧",
+			actorName = "陸奥",
 			say = "そうだよ！三笠さまが教えてくれてなきゃ長門姉がどこにいるかいつまで経ってもわからなかったもん！",
 			painting = {
 				alpha = 0.3,

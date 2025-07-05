@@ -489,6 +489,159 @@ pg.activity_series_enemy_story = {
 			37
 		}
 	},
+	[39] = {
+		name = "CH-1 不穏な爆発",
+		pos_x = "",
+		story = "MICAIDUSHIDEXUNZONGZHE2",
+		type = 1,
+		line = 0,
+		pos_y = "",
+		pass_awards = 0,
+		id = 39,
+		icon = "",
+		trigger_type = {
+			1
+		},
+		trigger_value = {
+			0
+		}
+	},
+	[40] = {
+		name = "CH-2 ウサウサ巡査調査中",
+		pos_x = "",
+		story = "MICAIDUSHIDEXUNZONGZHE3",
+		type = 1,
+		line = 0,
+		pos_y = "",
+		pass_awards = 0,
+		id = 40,
+		icon = "",
+		trigger_type = {
+			3
+		},
+		trigger_value = {
+			39
+		}
+	},
+	[41] = {
+		name = "CH-3 戦略的デート",
+		pos_x = "",
+		story = "MICAIDUSHIDEXUNZONGZHE4",
+		type = 1,
+		line = 0,
+		pos_y = "",
+		pass_awards = 0,
+		id = 41,
+		icon = "",
+		trigger_type = {
+			3
+		},
+		trigger_value = {
+			40
+		}
+	},
+	[42] = {
+		name = "CH-4 ロードセキュリティ",
+		pos_x = "",
+		story = "MICAIDUSHIDEXUNZONGZHE5",
+		type = 1,
+		line = 0,
+		pos_y = "",
+		pass_awards = 0,
+		id = 42,
+		icon = "",
+		trigger_type = {
+			3
+		},
+		trigger_value = {
+			41
+		}
+	},
+	[43] = {
+		name = "CH-5 問題の核心",
+		pos_x = "",
+		story = "MICAIDUSHIDEXUNZONGZHE6",
+		type = 1,
+		line = 0,
+		pos_y = "",
+		pass_awards = 0,
+		id = 43,
+		icon = "",
+		trigger_type = {
+			3
+		},
+		trigger_value = {
+			42
+		}
+	},
+	[44] = {
+		name = "CH-6 かくかくしかじか",
+		pos_x = "",
+		story = "MICAIDUSHIDEXUNZONGZHE7",
+		type = 1,
+		line = 0,
+		pos_y = "",
+		pass_awards = 0,
+		id = 44,
+		icon = "",
+		trigger_type = {
+			3
+		},
+		trigger_value = {
+			43
+		}
+	},
+	[45] = {
+		name = "CH-7 相談教室",
+		pos_x = "",
+		story = "MICAIDUSHIDEXUNZONGZHE8",
+		type = 1,
+		line = 0,
+		pos_y = "",
+		pass_awards = 0,
+		id = 45,
+		icon = "",
+		trigger_type = {
+			3
+		},
+		trigger_value = {
+			44
+		}
+	},
+	[46] = {
+		name = "CH-8 ネオンシティの夜",
+		pos_x = "",
+		story = "MICAIDUSHIDEXUNZONGZHE9",
+		type = 1,
+		line = 0,
+		pos_y = "",
+		pass_awards = 0,
+		id = 46,
+		icon = "",
+		trigger_type = {
+			3
+		},
+		trigger_value = {
+			45
+		}
+	},
+	[47] = {
+		name = "CH-9 潜伏者は誰だ？",
+		pos_x = "",
+		story = "MICAIDUSHIDEXUNZONGZHE10",
+		type = 1,
+		line = 0,
+		pos_y = "",
+		pass_awards = 0,
+		id = 47,
+		icon = "",
+		trigger_type = {
+			3
+		},
+		trigger_value = {
+			46
+		}
+	},
 	all = {
 		1,
 		2,
@@ -518,6 +671,15 @@ pg.activity_series_enemy_story = {
 		35,
 		36,
 		37,
-		38
+		38,
+		39,
+		40,
+		41,
+		42,
+		43,
+		44,
+		45,
+		46,
+		47
 	}
 }
