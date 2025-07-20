@@ -211349,3 +211349,207 @@ _G.pg.base.item_virtual_data_statistics[200483] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
+_G.pg.base.item_virtual_data_statistics[52091] = {
+	display = "You can acquire a number of the following Blueprints at random:",
+	name = "Random Blueprint",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/52001",
+	id = 52091,
+	order = 0,
+	display_icon = {
+		{
+			2,
+			42072,
+			1
+		},
+		{
+			2,
+			42075,
+			1
+		},
+		{
+			2,
+			42071,
+			1
+		},
+		{
+			2,
+			42073,
+			1
+		},
+		{
+			2,
+			42074,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[52092] = {
+	display = "Chance to receive following designs",
+	name = "Random Gear Design",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/55000",
+	id = 52092,
+	order = 0,
+	display_icon = {
+		{
+			2,
+			13049,
+			1
+		},
+		{
+			2,
+			13050,
+			1
+		},
+		{
+			2,
+			13051,
+			1
+		},
+		{
+			2,
+			13052,
+			1
+		},
+		{
+			2,
+			13053,
+			1
+		},
+		{
+			2,
+			13054,
+			1
+		},
+		{
+			2,
+			13024,
+			1
+		},
+		{
+			2,
+			13007,
+			1
+		},
+		{
+			2,
+			13010,
+			1
+		},
+		{
+			2,
+			13009,
+			1
+		},
+		{
+			2,
+			13011,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65551] = {
+	display = "During the campaign, this coupon can used to gain a discount of 300 Gems when buying a Bunny Girl series skin in the Shop.\nValid until 2025.8.13 23:59:59 (UTC-7).",
+	name = "Skin Coupon (Bunny Girl)",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 50034,
+	virtual_type = 13,
+	is_world = 0,
+	icon = "Props/skin_300_school",
+	id = 65551,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[86215] = {
+	display = [[
+Purchase to receive 1 of the following skins you do not yet own, chosen at random (if you already own all the listed skins, you will receive Gems x680 instead); all skins have an equal probability of being chosen:
+
+Astoria - Black Bunny Carnival;
+Stephen Potter - Chillaxation Station;
+Morrison - Sleeping Bunny;
+Acasta - Monochromatic Marvel;
+Kinu - Token and Ghost;
+San Francisco - Funny Bunny!;
+New Jersey - Exhilarating Steps!;
+Ticonderoga - Show Stopper!;
+Archerfish - Coquettish Bunny;
+I19 - Blossoming Bunny;
+Ardent - Master Ardent?;
+Ingraham - Fixin' for a Mixin';
+Nautilus - Afternoon Stretches;
+Umikaze - Soft and Fluffy Therapy;
+Yamakaze - Now for a Magic Trick!;
+Laffey II - Sleepy on a Busy Day;
+Black Prince - Addled Attendant?;
+Isuzu - Accidental Overheat?;
+Yura - We are Succubi?;
+Katsuragi - Night-Illuminating Festival;
+New Orleans - Evening Agricole;
+Houston II - Ready to Serve!;
+Louisville - An Order of Dreams;
+Constellation - Galaxy's Finest;
+San Jacinto - Flavor of the Day;
+Hindenburg - Delirious Duel;
+Fleuret - Up All Knight to Get Lucky;
+Épée - Poor, Lonely Knight;]],
+	name = "Random Skin",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86215,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}

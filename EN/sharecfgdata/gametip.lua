@@ -8467,10 +8467,10 @@ _G.pg.base.gametip.buildship_new_tip = {
 	tip = "Rate UP for Admiral Zenker and U-552!"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "Roma and Bolzano added to the standard build pool!"
+	tip = "Lützow, Seydlitz, and Yorck added to standard build pool!"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "Giuseppe Garibaldi and Alfredo Oriani added to the standard build pool!"
+	tip = "Emden and Elbing added to standard build pool!"
 }
 _G.pg.base.gametip.buildship_special_tip = {
 	tip = "Leonardo da Vinci added to the standard build pool!"
@@ -23089,7 +23089,7 @@ _G.pg.base.gametip.skin_exchange_confirm = {
 	tip = "Spend <color=#92fc63>1 $1</color> to exchange for <color=#92fc63>$2</color>?"
 }
 _G.pg.base.gametip.skin_purchase_confirm = {
-	tip = "Spend <color=#92fc63>1 $1</color> to purchase the following skin, <color=#FFDE38FF>$3</color>, at a discounted price of <icon name=gem w=0.7 h=0.7/>$2?"
+	tip = "Spend <color=#92fc63>1 $1</color> to purchase the following skin, <color=#FFDE38FF>$3</color>, at a discounted price of <icon name=gem w=0.5 h=0.5/>$2?"
 }
 _G.pg.base.gametip.blackfriday_pack_lock = {
 	tip = "This may be purchased after unlocking $1."
@@ -27284,4 +27284,84 @@ _G.pg.base.gametip.battleui_display3 = {
 }
 _G.pg.base.gametip.zengke_series_serverinfo = {
 	tip = "Server:"
+}
+_G.pg.base.gametip.dailyLevel_bonus_activity = {
+	tip = "Limited Bonus"
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_19906 = {
+	tip = [[
+<size=28>
+Would you like to start a Battle Simulation?
+(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)
+Equipment: <color=#92fc63>
+Prototype Triple 406mm/45 MK7 Main Gun Mount
+Twin 127mm Mk 12 Dual-Purpose Gun Mount
+Quadruple 40mm Bofors AA Gun Mount
+</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_49910 = {
+	tip = [[
+<size=28>
+Would you like to start a Battle Simulation?
+(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)
+Equipment: <color=#92fc63>
+Prototype Quadruple 305mm SKC39 Main Gun Mount
+Twin 127mm KM40 Main Gun Mount
+Prototype 55mm Gerät 58 AA Gun Mount
+</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_69903 = {
+	tip = [[
+<size=28>
+Would you like to start a Battle Simulation?
+(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)
+Equipment: <color=#92fc63>
+135mm Twin Main Gun Mount Model 1938
+Prototype Quadruple 533mm Si 270 Torpedo Mount
+Prototype Sextuple 20mm Scotti Model 1941 Anti-Air Gun
+</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_79903 = {
+	tip = [[
+<size=28>
+Would you like to start a Battle Simulation?
+(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)
+Equipment: <color=#92fc63>
+Prototype Triple 180mm B-1-P Model 1932 (Impr.) Main Gun Mount
+550mm Triple Torpedo Mount
+Twin 57mm/L60 Bofors Mle 1951 AA Gun Mount
+</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_119901 = {
+	tip = [[
+<size=28>
+Would you like to start a Battle Simulation?
+(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)
+Equipment: <color=#92fc63>
+Prototype Triple 283mm/54.5 Main Gun Mount
+Twin 100mm Type 98 Kai High-Angle Gun Mount
+Twin 57mm/L60 Bofors Mle 1951 AA Gun Mount
+</color></size>]]
+}
+_G.pg.base.gametip.grapihcs3d_setting_bloom = {
+	tip = "Visual Quality"
+}
+_G.pg.base.gametip.grapihcs3d_setting_bloom_optionname0 = {
+	tip = "High"
+}
+_G.pg.base.gametip.grapihcs3d_setting_bloom_optionname1 = {
+	tip = "Low"
+}
+_G.pg.base.gametip.SkinDiscountHelp_Carnival = {
+	tip = {
+		{
+			info = "1. During the campaign, if you purchase a Bunny Girl series skin rerun in this campaign <color=#92fc63>without using a coupon</color> or purchase the Bunny Girl Return Lucky Box, you may claim a <color=#92fc63>Skin Coupon (Bunny Girl)</color> from the campaign page.\n2. The <color=#92fc63>Skin Coupon (Bunny Girl)</color> gives you a discount of 300 Gems when purchasing a Bunny Girl series skin. This discount is not applicable to item packs.\n3. If you have not used this coupon before the campaign ends (at the server reset on August 13th, 2025), it will be removed automatically."
+		}
+	}
+}
+_G.pg.base.gametip.open_today = {
+	tip = "Open Today:"
+}
+_G.pg.base.gametip.daily_level_go = {
+	tip = "Go"
 }

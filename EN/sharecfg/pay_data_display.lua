@@ -73,6 +73,7 @@ pg.pay_data_display = setmetatable({
 		92,
 		93,
 		94,
+		95,
 		1000,
 		1001,
 		1002,
@@ -184,6 +185,10 @@ pg.pay_data_display = setmetatable({
 		2050,
 		2051,
 		2052,
+		2053,
+		2054,
+		2055,
+		2056,
 		5011,
 		5012,
 		5013,
@@ -8092,6 +8097,110 @@ pg.base.pay_data_display = {
 			{
 				2,
 				81205,
+				1
+			}
+		}
+	},
+	[95] = {
+		descrip = "Contains 1 of the following skins you do not yet own, chosen at random (if you already own all the listed skins, you will receive Gems instead), as well as other items.",
+		name = "Bunny Girl Return Lucky Box",
+		descrip_extra = "* The Lucky Box will be sent to your ingame Mail.\n* If you already own all the listed skins, you will receive Gems x680 instead.",
+		type = 1,
+		limit_group = 0,
+		type_order = 2,
+		subject = "Bunny Girl Return Lucky Box",
+		tip = "",
+		tip_open = 0,
+		id = 95,
+		money = 699,
+		name_display = "Bunny Girl Return Lucky Box",
+		tag = 2,
+		akashi_pick = 1,
+		gem = 0,
+		extra_service = 3,
+		show_group = "",
+		limit_type = 2,
+		package_tag_open = 0,
+		package_tag = "",
+		picture = "fudai26",
+		skin_inquire_relation = 86215,
+		id_str = "com.yostaren.azurlane.luckybag62",
+		first_pay_double = 0,
+		extra_gem = 0,
+		limit_arg = 2,
+		airijp_id = "com.yostaren.azurlane.luckybag62",
+		extra_service_item = {
+			{
+				2,
+				86215,
+				1
+			},
+			{
+				1,
+				1,
+				2000
+			},
+			{
+				1,
+				2,
+				1000
+			},
+			{
+				2,
+				15008,
+				20
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					7,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					8,
+					13
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86215,
+				1
+			},
+			{
+				1,
+				2,
+				1000
+			},
+			{
+				2,
+				15008,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81215,
 				1
 			}
 		}
@@ -18312,6 +18421,256 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40061,
+				1
+			}
+		}
+	},
+	[2053] = {
+		descrip = "Contains one PR Voucher - Series 5 and 343 General Blueprints - Series 5.",
+		name = "PR Construction Pack - Series 5",
+		descrip_extra = "",
+		type = 0,
+		limit_group = 5,
+		type_order = 0,
+		subject = "PR Construction Pack - Series 5",
+		tip = "",
+		tip_open = 0,
+		id = 2053,
+		money = 1599,
+		name_display = "PR Construction Pack - Series 5",
+		tag = 2,
+		akashi_pick = 1,
+		gem = 0,
+		extra_service = 3,
+		show_group = "tech",
+		limit_type = 3,
+		time = "always",
+		package_tag_open = 0,
+		package_tag = "",
+		picture = "tech5_display",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack30",
+		first_pay_double = 0,
+		extra_gem = 0,
+		limit_arg = 0,
+		airijp_id = "com.yostaren.azurlane.pack30",
+		extra_service_item = {
+			{
+				2,
+				40140,
+				1
+			},
+			{
+				2,
+				42040,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				40140,
+				1
+			},
+			{
+				2,
+				42040,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {}
+	},
+	[2054] = {
+		descrip = "Contains:",
+		name = "PR Voucher & Blueprint Bundle - Series 5",
+		descrip_extra = "If you've already built all Series 5 PRs, the contents will be exchanged for other items. Tap the icon to view the item table.",
+		type = 0,
+		limit_group = 5,
+		type_order = 0,
+		subject = "PR Voucher & Blueprint Bundle - Series 5",
+		tip = "",
+		tip_open = 0,
+		id = 2054,
+		money = 1599,
+		name_display = "PR Voucher & Blueprint \n         Bundle - Series 5",
+		tag = 2,
+		akashi_pick = 1,
+		gem = 0,
+		extra_service = 3,
+		show_group = "tech",
+		limit_type = 3,
+		time = "always",
+		package_tag_open = 0,
+		package_tag = "",
+		picture = "tech5_promotion",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack30",
+		first_pay_double = 0,
+		extra_gem = 0,
+		limit_arg = 1,
+		airijp_id = "com.yostaren.azurlane.pack30",
+		extra_service_item = {
+			{
+				2,
+				40140,
+				1
+			},
+			{
+				2,
+				42040,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				40140,
+				1
+			},
+			{
+				2,
+				42040,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40062,
+				1
+			}
+		}
+	},
+	[2055] = {
+		descrip = "Contains:",
+		name = "PR Voucher - Series 5",
+		descrip_extra = "If you've already built all Series 5 PRs, the contents will be exchanged for other items. Tap the icon to view the item table.",
+		type = 0,
+		limit_group = 5,
+		type_order = 0,
+		subject = "PR Voucher - Series 5",
+		tip = "",
+		tip_open = 0,
+		id = 2055,
+		money = 999,
+		name_display = "PR Voucher Pack - Series 5",
+		tag = 2,
+		akashi_pick = 1,
+		gem = 0,
+		extra_service = 3,
+		show_group = "tech",
+		limit_type = 3,
+		time = "always",
+		package_tag_open = 0,
+		package_tag = "",
+		picture = "tech5_normal",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack28",
+		first_pay_double = 0,
+		extra_gem = 0,
+		limit_arg = 2,
+		airijp_id = "com.yostaren.azurlane.pack28",
+		extra_service_item = {
+			{
+				2,
+				40140,
+				1
+			}
+		},
+		display = {
+			{
+				2,
+				40140,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40063,
+				1
+			}
+		}
+	},
+	[2056] = {
+		descrip = "Contains:",
+		name = "PR Blueprint Pack - Series 5",
+		descrip_extra = "Buy to receive 343 General Blueprints - Series 5.",
+		type = 0,
+		limit_group = 5,
+		type_order = 0,
+		subject = "PR Blueprint Pack - Series 5",
+		tip = "",
+		tip_open = 0,
+		id = 2056,
+		money = 699,
+		name_display = "PR Blueprint Pack - Series 5",
+		tag = 2,
+		akashi_pick = 1,
+		gem = 0,
+		extra_service = 3,
+		show_group = "tech",
+		limit_type = 3,
+		time = "always",
+		package_tag_open = 0,
+		package_tag = "",
+		picture = "tech5_promotion",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack29",
+		first_pay_double = 0,
+		extra_gem = 0,
+		limit_arg = 3,
+		airijp_id = "com.yostaren.azurlane.pack29",
+		extra_service_item = {
+			{
+				2,
+				42040,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				42040,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40064,
 				1
 			}
 		}
