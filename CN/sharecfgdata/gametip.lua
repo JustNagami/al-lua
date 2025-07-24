@@ -27541,7 +27541,7 @@ _G.pg.base.gametip.yumia_award_4 = {
 	tip = "特殊兵装"
 }
 _G.pg.base.gametip.yumia_pt_1 = {
-	tip = "活动期间，累计Pt可获取活动限定奖励。※领取时间延长至8月6日 24时"
+	tip = "活动期间，累计Pt可获取活动限定奖励。※领取时间延长至8月13日 24时"
 }
 _G.pg.base.gametip.yumia_pt_2 = {
 	tip = "全部领取"
@@ -27550,7 +27550,7 @@ _G.pg.base.gametip.yumia_pt_3 = {
 	tip = "兑换商店"
 }
 _G.pg.base.gametip.yumia_mana_battle_tip = {
-	tip = "环境玛娜达到100%时，所有Atelier Yumia联动角色进入【降临】状态，随后环境玛娜降至0%"
+	tip = "环境玛那达到100%时，所有Atelier Yumia联动角色进入【降临】状态，随后环境玛那降至0%"
 }
 _G.pg.base.gametip.yumia_buff_name_1 = {
 	tip = "核心：起始区段"
@@ -27719,4 +27719,7 @@ _G.pg.base.gametip.yumia_storymode_tip2 = {
 }
 _G.pg.base.gametip.yumia_pt_tip = {
 	tip = "已获得"
+}
+_G.pg.base.gametip.yumia_pt_4 = {
+	tip = "已获取"
 }

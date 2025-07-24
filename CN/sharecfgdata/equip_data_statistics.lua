@@ -162632,9 +162632,9 @@ _G.pg.base.equip_data_statistics[150800] = {
 	rarity = 5,
 	id = 150800,
 	value_3 = 0,
-	attribute_1 = "air",
+	attribute_1 = "durability",
 	icon = "150800",
-	value_1 = "40",
+	value_1 = "250",
 	torpedo_ammo = 0,
 	property_rate = {},
 	ammo_icon = {},
@@ -162659,82 +162659,82 @@ _G.pg.base.equip_data_statistics[150800] = {
 }
 _G.pg.base.equip_data_statistics[150801] = {
 	id = 150801,
-	value_1 = "46",
+	value_1 = "280",
 	base = 150800,
 	hidden_skill_id = {}
 }
 _G.pg.base.equip_data_statistics[150802] = {
 	id = 150802,
-	value_1 = "52",
+	value_1 = "310",
 	base = 150800,
 	hidden_skill_id = {}
 }
 _G.pg.base.equip_data_statistics[150803] = {
 	id = 150803,
-	value_1 = "58",
+	value_1 = "340",
 	base = 150800,
 	hidden_skill_id = {}
 }
 _G.pg.base.equip_data_statistics[150804] = {
 	id = 150804,
-	value_1 = "64",
+	value_1 = "370",
 	base = 150800,
 	hidden_skill_id = {}
 }
 _G.pg.base.equip_data_statistics[150805] = {
 	id = 150805,
-	value_1 = "70",
+	value_1 = "400",
 	base = 150800,
 	hidden_skill_id = {}
 }
 _G.pg.base.equip_data_statistics[150806] = {
 	id = 150806,
-	value_1 = "76",
+	value_1 = "430",
 	base = 150800,
 	hidden_skill_id = {}
 }
 _G.pg.base.equip_data_statistics[150807] = {
 	id = 150807,
-	value_1 = "82",
+	value_1 = "460",
 	base = 150800,
 	hidden_skill_id = {}
 }
 _G.pg.base.equip_data_statistics[150808] = {
 	id = 150808,
-	value_1 = "88",
+	value_1 = "490",
 	base = 150800,
 	hidden_skill_id = {}
 }
 _G.pg.base.equip_data_statistics[150809] = {
 	id = 150809,
-	value_1 = "94",
+	value_1 = "520",
 	base = 150800,
 	hidden_skill_id = {}
 }
 _G.pg.base.equip_data_statistics[150810] = {
 	id = 150810,
-	value_1 = "100",
+	value_1 = "550",
 	base = 150800,
 	hidden_skill_id = {}
 }
 _G.pg.base.equip_data_statistics[150811] = {
 	id = 150811,
 	anti_siren = 100,
-	value_1 = "106",
+	value_1 = "580",
 	base = 150800,
 	hidden_skill_id = {}
 }
 _G.pg.base.equip_data_statistics[150812] = {
 	id = 150812,
 	anti_siren = 200,
-	value_1 = "112",
+	value_1 = "610",
 	base = 150800,
 	hidden_skill_id = {}
 }
 _G.pg.base.equip_data_statistics[150813] = {
 	id = 150813,
 	anti_siren = 300,
-	value_1 = "118",
+	value_1 = "640",
 	base = 150800,
 	hidden_skill_id = {}
 }

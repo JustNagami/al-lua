@@ -26210,7 +26210,7 @@ _G.pg.base.spweapon_data_statistics[14320] = {
 	value_1 = 20,
 	effect_id_display = 112150,
 	level = 1,
-	descrip = "为了将射击与打击的威力发挥到极限而制作的枪杖。上面有着以凝缩的玛娜为光源的照明灯",
+	descrip = "为了将射击与打击的威力发挥到极限而制作的枪杖。上面有着以凝缩的玛那为光源的照明灯",
 	uncraftable = 1,
 	next = 14321,
 	upgrade_id = 10001,
@@ -26371,7 +26371,7 @@ _G.pg.base.spweapon_data_statistics[14340] = {
 	skill_upgrade = {
 		{
 			0,
-			112280
+			112290
 		}
 	},
 	hide_buff_upgrade = {},
