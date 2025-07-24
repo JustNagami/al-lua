@@ -347,6 +347,7 @@ pg.memory_group = setmetatable({
 		609,
 		610,
 		611,
+		612,
 		1000,
 		1001,
 		1002,
@@ -8040,6 +8041,26 @@ pg.base.memory_group = {
 			4445,
 			4446,
 			4447
+		},
+		group_id = {
+			10000
+		}
+	},
+	[612] = {
+		id = 612,
+		subtype = 0,
+		icon = "title_chara_dunkeerke",
+		type = 3,
+		link_event = 0,
+		title = "思い、酔いしれて",
+		memories = {
+			4471,
+			4472,
+			4473,
+			4474,
+			4475,
+			4476,
+			4477
 		},
 		group_id = {
 			10000

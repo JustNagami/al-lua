@@ -87,6 +87,7 @@ pg.pay_data_display = setmetatable({
 		92,
 		93,
 		94,
+		95,
 		1000,
 		1001,
 		1002,
@@ -160,6 +161,10 @@ pg.pay_data_display = setmetatable({
 		2050,
 		2051,
 		2052,
+		2053,
+		2054,
+		2055,
+		2056,
 		5001,
 		5002,
 		5003,
@@ -9705,6 +9710,110 @@ pg.base.pay_data_display = {
 			}
 		}
 	},
+	[95] = {
+		descrip = "<size=18>下記着せ替え中の未所持着せ替えをランダムで1着（全部所持している場合自動でダイヤに変換されます）とその他アイテムを入手できます</size>",
+		name = "着せ替えパック(バニー)",
+		descrip_extra = "※福袋はメールボックスに送られます\n※全部所持している場合自動でダイヤ×680に変換されます",
+		type = 1,
+		limit_group = 0,
+		type_order = 2,
+		subject = "着せ替えパック(バニー)",
+		tip = "",
+		tip_open = 0,
+		id = 95,
+		money = 1000,
+		name_display = "着せ替えパック(バニー)",
+		tag = 2,
+		akashi_pick = 1,
+		gem = 0,
+		extra_service = 3,
+		show_group = "",
+		limit_type = 2,
+		package_tag_open = 0,
+		package_tag = "",
+		picture = "fudai26",
+		skin_inquire_relation = 86215,
+		id_str = "com.bilibili.blhx.zuanshi195",
+		first_pay_double = 0,
+		extra_gem = 0,
+		limit_arg = 2,
+		airijp_id = "com.yostarjp.azurlane.diamond183",
+		extra_service_item = {
+			{
+				2,
+				86215,
+				1
+			},
+			{
+				1,
+				1,
+				2000
+			},
+			{
+				1,
+				2,
+				1000
+			},
+			{
+				2,
+				15008,
+				20
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					7,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					8,
+					13
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86215,
+				1
+			},
+			{
+				1,
+				2,
+				1000
+			},
+			{
+				2,
+				15008,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81215,
+				1
+			}
+		}
+	},
 	[1000] = {
 		descrip = "購入すると、シーズン任務進捗Pt1500を入手し、さらにSP報酬を開放",
 		name = "クルーズパス",
@@ -15715,6 +15824,256 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40061,
+				1
+			}
+		}
+	},
+	[2053] = {
+		descrip = "特別計画艦・Ⅴ期と交換できるアイテムなどを入手できます",
+		name = "PR特別計画艦パック·Ⅴ期",
+		descrip_extra = "此处不会被看到",
+		type = 0,
+		limit_group = 5,
+		type_order = 0,
+		subject = "PR特別計画艦パック・Ⅴ期",
+		tip = "",
+		tip_open = 0,
+		id = 2053,
+		money = 2000,
+		name_display = "PR特別計画艦パック·Ⅴ期",
+		tag = 2,
+		akashi_pick = 1,
+		gem = 0,
+		extra_service = 3,
+		show_group = "tech",
+		limit_type = 3,
+		time = "always",
+		package_tag_open = 0,
+		package_tag = "",
+		picture = "tech5_display",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.keyan",
+		first_pay_double = 0,
+		extra_gem = 0,
+		limit_arg = 0,
+		airijp_id = "com.yostarjp.azurlane.tech",
+		extra_service_item = {
+			{
+				2,
+				40140,
+				1
+			},
+			{
+				2,
+				42040,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				40140,
+				1
+			},
+			{
+				2,
+				42040,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {}
+	},
+	[2054] = {
+		descrip = "内容",
+		name = "PR艦船Ⅴ期交換アイテム＋強化ユニットセット",
+		descrip_extra = "*既にPR艦船・Ⅴ期をすべて所持している場合、使用時にアイテムに変換されます（アイコンタップで確認）",
+		type = 0,
+		limit_group = 5,
+		type_order = 0,
+		subject = "PR艦船Ⅴ期交換アイテム＋強化ユニットセット",
+		tip = "",
+		tip_open = 0,
+		id = 2054,
+		money = 2000,
+		name_display = "PR艦船Ⅴ期交換アイテム\n＋強化ユニットセット",
+		tag = 2,
+		akashi_pick = 1,
+		gem = 0,
+		extra_service = 3,
+		show_group = "tech",
+		limit_type = 3,
+		time = "always",
+		package_tag_open = 0,
+		package_tag = "",
+		picture = "tech5_promotion",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.keyan13",
+		first_pay_double = 0,
+		extra_gem = 0,
+		limit_arg = 1,
+		airijp_id = "com.yostarjp.azurlane.tech13",
+		extra_service_item = {
+			{
+				2,
+				40140,
+				1
+			},
+			{
+				2,
+				42040,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				40140,
+				1
+			},
+			{
+				2,
+				42040,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40062,
+				1
+			}
+		}
+	},
+	[2055] = {
+		descrip = "内容",
+		name = "PR艦船Ⅴ期交換アイテム",
+		descrip_extra = "*既にPR艦船・Ⅴ期をすべて所持している場合、使用時にアイテムに変換されます（アイコンタップで確認）",
+		type = 0,
+		limit_group = 5,
+		type_order = 0,
+		subject = "PR艦船Ⅴ期交換アイテム",
+		tip = "",
+		tip_open = 0,
+		id = 2055,
+		money = 1200,
+		name_display = "PR艦船Ⅴ期交換アイテム",
+		tag = 2,
+		akashi_pick = 1,
+		gem = 0,
+		extra_service = 3,
+		show_group = "tech",
+		limit_type = 3,
+		time = "always",
+		package_tag_open = 0,
+		package_tag = "",
+		picture = "tech5_normal",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.keyan14",
+		first_pay_double = 0,
+		extra_gem = 0,
+		limit_arg = 2,
+		airijp_id = "com.yostarjp.azurlane.tech14",
+		extra_service_item = {
+			{
+				2,
+				40140,
+				1
+			}
+		},
+		display = {
+			{
+				2,
+				40140,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40063,
+				1
+			}
+		}
+	},
+	[2056] = {
+		descrip = "内容",
+		name = "PR特別計画艦Ⅴ期強化ユニットセット",
+		descrip_extra = "購入すると指向型強化ユニット・Ⅴ期×343個を入手可能",
+		type = 0,
+		limit_group = 5,
+		type_order = 0,
+		subject = "強化ユニット",
+		tip = "",
+		tip_open = 0,
+		id = 2056,
+		money = 1000,
+		name_display = "強化ユニット",
+		tag = 2,
+		akashi_pick = 1,
+		gem = 0,
+		extra_service = 3,
+		show_group = "tech",
+		limit_type = 3,
+		time = "always",
+		package_tag_open = 0,
+		package_tag = "",
+		picture = "tech5_promotion",
+		skin_inquire_relation = 0,
+		id_str = "com.bilibili.blhx.keyan15",
+		first_pay_double = 0,
+		extra_gem = 0,
+		limit_arg = 3,
+		airijp_id = "com.yostarjp.azurlane.tech15",
+		extra_service_item = {
+			{
+				2,
+				42040,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				42040,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40064,
 				1
 			}
 		}

@@ -107656,3 +107656,1143 @@ _G.pg.base.item_data_statistics[30556] = {
 	},
 	limit = {}
 }
+_G.pg.base.item_data_statistics[13049] = {
+	open_directly = 0,
+	name = "試作型305mm四連装砲SKC39T0設計図",
+	display = "試作型305mm四連装砲SKC39T0設計図",
+	type = 9,
+	display_effect = "",
+	id = 13049,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_undefined",
+	link_id = 0,
+	icon = "Equips/44320",
+	order = 0,
+	rarity = 5,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[13050] = {
+	open_directly = 0,
+	name = "試作型283mm/54.5三連装砲T0設計図",
+	display = "試作型283mm/54.5三連装砲T0設計図",
+	type = 9,
+	display_effect = "",
+	id = 13050,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_undefined",
+	link_id = 0,
+	icon = "Equips/44420",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[13051] = {
+	open_directly = 0,
+	name = "試作型406mm/45三連装砲MK7T0設計図",
+	display = "試作型406mm/45三連装砲MK7T0設計図",
+	type = 9,
+	display_effect = "",
+	id = 13051,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_undefined",
+	link_id = 0,
+	icon = "Equips/14480",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[13052] = {
+	open_directly = 0,
+	name = "試作型20mm六連装Scotti機関砲Model1941T0設計図",
+	display = "試作型20mm六連装Scotti機関砲Model1941T0設計図",
+	type = 9,
+	display_effect = "",
+	id = 13052,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_undefined",
+	link_id = 0,
+	icon = "Equips/56260",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[13053] = {
+	open_directly = 0,
+	name = "試作型533mm四連装Si 270魚雷T0設計図",
+	display = "試作型533mm四連装Si 270魚雷T0設計図",
+	type = 9,
+	display_effect = "",
+	id = 13053,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_undefined",
+	link_id = 0,
+	icon = "Equips/56280",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[13054] = {
+	open_directly = 0,
+	name = "試作型180mm三連装砲B-1-P Model1932改T0設計図",
+	display = "試作型180mm三連装砲B-1-P Model1932改T0設計図",
+	type = 9,
+	display_effect = "",
+	id = 13054,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_undefined",
+	link_id = 0,
+	icon = "Equips/85640",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[40062] = {
+	open_directly = 1,
+	name = "PR艦船Ⅴ期交換アイテム＋強化ユニットセット",
+	display = "大量のアイテムを入手できます",
+	type = 17,
+	display_effect = "OpenBox",
+	id = 40062,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "ChargeIcon/tech5_promotion",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "4063",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			40140,
+			1
+		},
+		{
+			2,
+			42040,
+			343
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[40063] = {
+	open_directly = 1,
+	name = "PR艦船Ⅴ期交換アイテム",
+	display = "大量のアイテムを入手できます",
+	type = 17,
+	display_effect = "OpenBox",
+	id = 40063,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "ChargeIcon/tech5_normal",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "4064",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			40140,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[40064] = {
+	open_directly = 1,
+	name = "PR特別計画艦Ⅴ期強化ユニットセット",
+	display = "大量のアイテムを入手できます",
+	type = 17,
+	display_effect = "OpenBox",
+	id = 40064,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "ChargeIcon/tech5_promotion",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "4065",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			42040,
+			343
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[40140] = {
+	open_directly = 0,
+	name = "PR艦船Ⅴ期交換券",
+	display = [[
+使用すると下記のPR特別計画艦を1隻開放（入手·強化レベル1）可能。
+ プリンツ·ループレヒト、ハルビン、チカロフ 
+<color=#92fc63>上記艦船が全て入手済みの場合</color>倉庫で使用すると下記のアイテムを入手できます：
+戦術データパック·V期*300
+指向型改造図T3*5
+指向型改造図T2*10
+キューブ*5
+資金*20000]],
+	type = 17,
+	display_effect = "OpenBox",
+	id = 40140,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "Props/research5",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "4210",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			20105,
+			300
+		},
+		{
+			2,
+			30133,
+			5
+		},
+		{
+			2,
+			30132,
+			10
+		},
+		{
+			2,
+			20001,
+			5
+		},
+		{
+			1,
+			1,
+			20000
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {
+		{
+			ship_unlock,
+			49907
+		},
+		{
+			ship_unlock,
+			59901
+		},
+		{
+			ship_unlock,
+			79901
+		}
+	}
+}
+_G.pg.base.item_data_statistics[42070] = {
+	open_directly = 0,
+	name = "指向型強化ユニット·Ⅷ期",
+	display = "使用すると、特別計画艦Ⅰ～Ⅷ期のPR艦船の強化ユニットを1個選択して入手可能",
+	type = 13,
+	display_effect = "",
+	id = 42070,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop_appointed",
+	link_id = 0,
+	icon = "Props/42070",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			42071,
+			1
+		},
+		{
+			2,
+			42073,
+			1
+		},
+		{
+			2,
+			42074,
+			1
+		},
+		{
+			2,
+			42061,
+			1
+		},
+		{
+			2,
+			42062,
+			1
+		},
+		{
+			2,
+			42065,
+			1
+		},
+		{
+			2,
+			42052,
+			1
+		},
+		{
+			2,
+			42053,
+			1
+		},
+		{
+			2,
+			42055,
+			1
+		},
+		{
+			2,
+			42042,
+			1
+		},
+		{
+			2,
+			42043,
+			1
+		},
+		{
+			2,
+			42044,
+			1
+		},
+		{
+			2,
+			42031,
+			1
+		},
+		{
+			2,
+			42034,
+			1
+		},
+		{
+			2,
+			42035,
+			1
+		},
+		{
+			2,
+			42021,
+			1
+		},
+		{
+			2,
+			42023,
+			1
+		},
+		{
+			2,
+			42024,
+			1
+		},
+		{
+			2,
+			42025,
+			1
+		},
+		{
+			2,
+			42011,
+			1
+		},
+		{
+			2,
+			42012,
+			1
+		},
+		{
+			2,
+			42013,
+			1
+		},
+		{
+			2,
+			42016,
+			1
+		},
+		{
+			2,
+			42001,
+			1
+		},
+		{
+			2,
+			42002,
+			1
+		},
+		{
+			2,
+			42003,
+			1
+		},
+		{
+			2,
+			42004,
+			1
+		},
+		{
+			2,
+			42005,
+			1
+		},
+		{
+			2,
+			42006,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			2,
+			42071,
+			1
+		},
+		{
+			2,
+			42073,
+			1
+		},
+		{
+			2,
+			42074,
+			1
+		},
+		{
+			2,
+			42061,
+			1
+		},
+		{
+			2,
+			42062,
+			1
+		},
+		{
+			2,
+			42065,
+			1
+		},
+		{
+			2,
+			42052,
+			1
+		},
+		{
+			2,
+			42053,
+			1
+		},
+		{
+			2,
+			42055,
+			1
+		},
+		{
+			2,
+			42042,
+			1
+		},
+		{
+			2,
+			42043,
+			1
+		},
+		{
+			2,
+			42044,
+			1
+		},
+		{
+			2,
+			42031,
+			1
+		},
+		{
+			2,
+			42034,
+			1
+		},
+		{
+			2,
+			42035,
+			1
+		},
+		{
+			2,
+			42021,
+			1
+		},
+		{
+			2,
+			42023,
+			1
+		},
+		{
+			2,
+			42024,
+			1
+		},
+		{
+			2,
+			42025,
+			1
+		},
+		{
+			2,
+			42011,
+			1
+		},
+		{
+			2,
+			42012,
+			1
+		},
+		{
+			2,
+			42013,
+			1
+		},
+		{
+			2,
+			42016,
+			1
+		},
+		{
+			2,
+			42001,
+			1
+		},
+		{
+			2,
+			42002,
+			1
+		},
+		{
+			2,
+			42003,
+			1
+		},
+		{
+			2,
+			42004,
+			1
+		},
+		{
+			2,
+			42005,
+			1
+		},
+		{
+			2,
+			42006,
+			1
+		}
+	},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[42071] = {
+	open_directly = 0,
+	name = "強化ユニット：カンザス",
+	display = "ユニオン戦艦「カンザス」の強化ユニット。\n<color=#92fc63>「カンザス」開発完了後、「開発ドック」にて「カンザス」を強化可能。</color>",
+	type = 12,
+	display_effect = "",
+	id = 42071,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_blueprint",
+	link_id = 0,
+	icon = "Props/42071",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	limit = "[]",
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {
+		9,
+		5
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		10
+	}
+}
+_G.pg.base.item_data_statistics[42072] = {
+	open_directly = 0,
+	name = "強化ユニット：メークレンブルク",
+	display = "鉄血戦艦「メークレンブルク」の強化ユニット。\n<color=#92fc63>「メークレンブルク」開発完了後、「開発ドック」にて「メークレンブルク」を強化可能。</color>",
+	type = 12,
+	display_effect = "",
+	id = 42072,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_blueprint",
+	link_id = 0,
+	icon = "Props/42072",
+	order = 0,
+	rarity = 5,
+	max_num = 0,
+	time_limit = 0,
+	limit = "[]",
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {
+		9,
+		20
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		10
+	}
+}
+_G.pg.base.item_data_statistics[42073] = {
+	open_directly = 0,
+	name = "強化ユニット：ヴィットリオ・クニベルティ",
+	display = "サディア駆逐艦「ヴィットリオ・クニベルティ」の強化ユニット。\n<color=#92fc63>「ヴィットリオ・クニベルティ」開発完了後、「開発ドック」にて「ヴィットリオ・クニベルティ」を強化可能。</color>",
+	type = 12,
+	display_effect = "",
+	id = 42073,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_blueprint",
+	link_id = 0,
+	icon = "Props/42073",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	limit = "[]",
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {
+		9,
+		5
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		10
+	}
+}
+_G.pg.base.item_data_statistics[42074] = {
+	open_directly = 0,
+	name = "強化ユニット：ドミートリィ・ドンスコイ",
+	display = "北方連合巡洋艦「ドミートリィ・ドンスコイ」の強化ユニット。\n<color=#92fc63>「ドミートリィ・ドンスコイ」開発完了後、「開発ドック」にて「ドミートリィ・ドンスコイ」を強化可能。</color>",
+	type = 12,
+	display_effect = "",
+	id = 42074,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_blueprint",
+	link_id = 0,
+	icon = "Props/42074",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	limit = "[]",
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {
+		9,
+		5
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		10
+	}
+}
+_G.pg.base.item_data_statistics[42075] = {
+	open_directly = 0,
+	name = "強化ユニット：ハウデン・リーウ",
+	display = "チュリッパ巡洋艦「ハウデン・リーウ」の強化ユニット。\n<color=#92fc63>「ハウデン・リーウ」開発完了後、「開発ドック」にて「ハウデン・リーウ」を強化可能。</color>",
+	type = 12,
+	display_effect = "",
+	id = 42075,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_blueprint",
+	link_id = 0,
+	icon = "Props/42075",
+	order = 0,
+	rarity = 5,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {},
+	price = {
+		9,
+		20
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		10
+	},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[42076] = {
+	open_directly = 0,
+	name = "上級指向型強化ユニット·Ⅷ期",
+	display = "使用すると、特別計画艦Ⅱ～Ⅷ期のDR艦船の強化ユニットを1個選択して入手可能",
+	type = 13,
+	display_effect = "",
+	id = 42076,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop_appointed",
+	link_id = 0,
+	icon = "Props/42076",
+	order = 0,
+	rarity = 5,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			42072,
+			1
+		},
+		{
+			2,
+			42075,
+			1
+		},
+		{
+			2,
+			42063,
+			1
+		},
+		{
+			2,
+			42064,
+			1
+		},
+		{
+			2,
+			42051,
+			1
+		},
+		{
+			2,
+			42054,
+			1
+		},
+		{
+			2,
+			42041,
+			1
+		},
+		{
+			2,
+			42045,
+			1
+		},
+		{
+			2,
+			42032,
+			1
+		},
+		{
+			2,
+			42033,
+			1
+		},
+		{
+			2,
+			42022,
+			1
+		},
+		{
+			2,
+			42014,
+			1
+		},
+		{
+			2,
+			42015,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			2,
+			42072,
+			1
+		},
+		{
+			2,
+			42075,
+			1
+		},
+		{
+			2,
+			42063,
+			1
+		},
+		{
+			2,
+			42064,
+			1
+		},
+		{
+			2,
+			42051,
+			1
+		},
+		{
+			2,
+			42054,
+			1
+		},
+		{
+			2,
+			42041,
+			1
+		},
+		{
+			2,
+			42045,
+			1
+		},
+		{
+			2,
+			42032,
+			1
+		},
+		{
+			2,
+			42033,
+			1
+		},
+		{
+			2,
+			42022,
+			1
+		},
+		{
+			2,
+			42014,
+			1
+		},
+		{
+			2,
+			42015,
+			1
+		}
+	},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[81215] = {
+	open_directly = 1,
+	name = "着せ替えパック（バニー）",
+	display = "購入すると当該着せ替えの中からランダムで未所持の着せ替え1着（すべての着せ替えを所持している場合は自動でダイヤ×680に変換されます）、資金×2000、燃料×1000、メンタルユニット×20を入手できます",
+	type = 17,
+	display_effect = "",
+	id = 81215,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop_random_skin",
+	link_id = 0,
+	icon = "Props/fudai26",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			86215,
+			1
+		},
+		{
+			1,
+			1,
+			2000
+		},
+		{
+			1,
+			2,
+			1000
+		},
+		{
+			2,
+			15008,
+			20
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		998317,
+		680,
+		{
+			103082,
+			101461,
+			101471,
+			201023,
+			302082,
+			103141,
+			105171,
+			107141,
+			108061,
+			308013,
+			201032,
+			101481,
+			108071,
+			301471,
+			301481,
+			101511,
+			202244,
+			302053,
+			302071,
+			307121,
+			103121,
+			102311,
+			103271,
+			104011,
+			107301,
+			499091,
+			901051,
+			901061
+		}
+	},
+	limit = {}
+}
+_G.pg.base.item_data_statistics[81216] = {
+	open_directly = 1,
+	name = "お得パック（バニークーポン）",
+	display = "購入すると着せ替えクーポン（バニー）×1、特殊装備コア×15、特殊装備強化石T2×30を入手できます",
+	type = 17,
+	display_effect = "",
+	id = 81216,
+	other_resource_cost = "[]",
+	replace_item = 0,
+	usage = "usage_drop",
+	link_id = 0,
+	icon = "ChargeIcon/boxSkindiscount",
+	order = 0,
+	rarity = 4,
+	max_num = 0,
+	time_limit = 0,
+	virtual_type = 0,
+	other_item_cost = "[]",
+	usage_arg = "998557",
+	is_world = 0,
+	compose_number = 0,
+	target_id = 0,
+	display_icon = {
+		{
+			2,
+			65551,
+			1
+		},
+		{
+			2,
+			15014,
+			15
+		},
+		{
+			2,
+			15016,
+			30
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {}
+}

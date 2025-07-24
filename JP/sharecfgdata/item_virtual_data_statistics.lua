@@ -211536,3 +211536,206 @@ _G.pg.base.item_virtual_data_statistics[200483] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
+_G.pg.base.item_virtual_data_statistics[52091] = {
+	display = "ランダムで下記の強化ユニットを入手できます。",
+	name = "強化ユニット(ランダム)",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/52001",
+	id = 52091,
+	order = 0,
+	display_icon = {
+		{
+			2,
+			42072,
+			1
+		},
+		{
+			2,
+			42075,
+			1
+		},
+		{
+			2,
+			42071,
+			1
+		},
+		{
+			2,
+			42073,
+			1
+		},
+		{
+			2,
+			42074,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[52092] = {
+	display = "ランダムで下記の設計図を入手できます。",
+	name = "兵装設計図(ランダム)",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/55000",
+	id = 52092,
+	order = 0,
+	display_icon = {
+		{
+			2,
+			13049,
+			1
+		},
+		{
+			2,
+			13050,
+			1
+		},
+		{
+			2,
+			13051,
+			1
+		},
+		{
+			2,
+			13052,
+			1
+		},
+		{
+			2,
+			13053,
+			1
+		},
+		{
+			2,
+			13054,
+			1
+		},
+		{
+			2,
+			13024,
+			1
+		},
+		{
+			2,
+			13007,
+			1
+		},
+		{
+			2,
+			13010,
+			1
+		},
+		{
+			2,
+			13009,
+			1
+		},
+		{
+			2,
+			13011,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65551] = {
+	display = "キャンペーン期間中、ショップで「バニー」シリーズの着せ替えを購入時、ダイヤ×300分割引になります",
+	name = "着せ替えクーポン（バニー）",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 50034,
+	virtual_type = 13,
+	is_world = 0,
+	icon = "Props/skin_300_school",
+	id = 65551,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[86215] = {
+	display = [[
+購入すると当該着せ替えの中からランダムで未所持の着せ替え1着（すべての着せ替えを所持している場合は自動でダイヤ×680に変換されます）。各着せ替えは同じ確率で出現します;
+アストリア「黒うさかーにばる！」;
+ステフェン・ポッター「セーフハウス・ヘア」;
+モリソン「クマちゃんは整備中」;
+アカスタ「ラブリー・モノクロミック」;
+鬼怒「トークンとゴースト」;
+サンフランシスコ「Funny Bunny！」;
+ニュージャージー「リッピング・ステッピング！」;
+タイコンデロガ「グランドステージ・ショー！」;
+アーチャーフィッシュ「キャッツィバニィ！」;
+伊19「ブロッサム・バニー」;
+アーデント「マスター・アーデント？」;
+イングラハム「ドリンクもお手の物！」;
+ノーチラス「ちょっびり、背伸び～」;
+海風「もこもこふんわり」;
+山風「奇術タイムスタンバイ！」;
+ラフィーⅡ「うとうとビジーデー」;
+ブラック・プリンス「ぼんやり世話焼き？」;
+五十鈴「オーバーヒート？」;
+由良「ふたりはさきゅばす？」;
+葛城「夜明輝祭」;
+ニューオリンズ「アグリコールの夜」;
+ヒューストンⅡ「レディ・トゥ・サービス！」;
+ルイビル「オーダー・ディリュージョン」;
+コンステレーション「セレクト・ギャラクシー」;
+サン・ジャシント「レコメンデッド・テースト」;
+ヒンデンブルク「パラリティク・バーサス」;
+フルーレ「ラッキー・ホーリー・ナイト」;
+エペ「ひとりぼっちのロンリーナイト」;]],
+	name = "ランダム着せ替え",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86215,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}

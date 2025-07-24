@@ -1759,5 +1759,25 @@ pg.voice_actor_CN = {
 	[462] = {
 		code = 462,
 		actor_name = "引坂理絵"
+	},
+	[463] = {
+		code = 463,
+		actor_name = "井上喜久子"
+	},
+	[464] = {
+		code = 464,
+		actor_name = "伊瀬茉莉也"
+	},
+	[465] = {
+		code = 465,
+		actor_name = "根本京里"
+	},
+	[466] = {
+		code = 466,
+		actor_name = "松田利冴"
+	},
+	[467] = {
+		code = 467,
+		actor_name = "春咲暖"
 	}
 }
