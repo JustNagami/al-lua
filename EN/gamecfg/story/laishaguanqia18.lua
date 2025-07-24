@@ -12,7 +12,7 @@
 			bgName = "bg_ryza_2",
 			stopbgm = true,
 			say = "Mirror Sea Ruins - Desolate Capital",
-			bgm = "ryza-az-theme",
+			bgm = "ryza-9",
 			flashout = {
 				black = true,
 				dur = 1,
