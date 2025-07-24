@@ -212155,3 +212155,207 @@ _G.pg.base.item_virtual_data_statistics[200483] = {
 	shiptrans_id = {},
 	combination_display = {}
 }
+_G.pg.base.item_virtual_data_statistics[52091] = {
+	display = "有几率获得以下蓝图",
+	name = "未知蓝图",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/52001",
+	id = 52091,
+	order = 0,
+	display_icon = {
+		{
+			2,
+			42072,
+			1
+		},
+		{
+			2,
+			42075,
+			1
+		},
+		{
+			2,
+			42071,
+			1
+		},
+		{
+			2,
+			42073,
+			1
+		},
+		{
+			2,
+			42074,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[52092] = {
+	display = "有几率获得以下设计图",
+	name = "未知限定装备设计图",
+	max_num = 0,
+	type = 99,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/55000",
+	id = 52092,
+	order = 0,
+	display_icon = {
+		{
+			2,
+			13049,
+			1
+		},
+		{
+			2,
+			13050,
+			1
+		},
+		{
+			2,
+			13051,
+			1
+		},
+		{
+			2,
+			13052,
+			1
+		},
+		{
+			2,
+			13053,
+			1
+		},
+		{
+			2,
+			13054,
+			1
+		},
+		{
+			2,
+			13024,
+			1
+		},
+		{
+			2,
+			13007,
+			1
+		},
+		{
+			2,
+			13010,
+			1
+		},
+		{
+			2,
+			13009,
+			1
+		},
+		{
+			2,
+			13011,
+			1
+		}
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[65551] = {
+	display = "用于「换装商店」内购买所有「嘉年华」分类换装时享有300钻石优惠\n有效期至：2025年8月13日 23:59:59",
+	name = "换装折扣券（嘉年华）",
+	max_num = 0,
+	type = 0,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = 1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 50034,
+	virtual_type = 13,
+	is_world = 0,
+	icon = "Props/skin_300_school",
+	id = 65551,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}
+_G.pg.base.item_virtual_data_statistics[86215] = {
+	display = [[
+从如下换装中随机获得1件未拥有的换装(如果所有换装都已拥有，则会转化为获得680钻石) 
+各换装概率均等，包含换装如下：
+阿斯托利亚换装 黑兔嘉年华;
+史蒂芬·波特换装 粉红干物兔;
+莫里森换装 小熊整备中;
+阿卡司塔换装 「白」与「黑」;
+{namecode:181}换装 Token＆Ghost;
+{namecode:195}换装 Funny Bunny！;
+{namecode:199}换装 跃动的舞台时间！;
+{namecode:194}换装 黑兔的舞台秀;
+{namecode:196}换装 兔兔特调;
+{namecode:154}换装 粉红甜心兔;
+热心换装 Master·热心？;
+{namecode:525}换装 饮品研究员？;
+鹦鹉螺换装 黑兔休息中;
+{namecode:150}换装 软绵绵治愈系;
+{namecode:207}换装 魔术时间到！;
+拉菲II换装 睡意满满忙碌DAY;
+黑太子换装 迷糊的侍者？;
+{namecode:48}换装 过热事故？;
+{namecode:206}换装 二重吸引?;
+{namecode:208}换装 黎明辉祭;
+新奥尔良换装 沉醉的干杯之夜;
+休斯敦II换装 新晋女仆已就绪;
+路易斯维尔换装 梦幻推荐;
+星座换装 星选之夜;
+圣哈辛托换装 今日特别推荐;
+{namecode:521}换装 微醺胜负;
+花剑换装 幸运之夜;
+重剑换装 角落的小小骑士;]],
+	name = "随机换装",
+	max_num = 0,
+	type = 98,
+	time_limit = 0,
+	rarity = 4,
+	shop_id = -1,
+	replace_item = 0,
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	link_id = 0,
+	virtual_type = 0,
+	is_world = 0,
+	icon = "Props/clothIcon",
+	id = 86215,
+	order = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {}
+}

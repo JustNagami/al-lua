@@ -8313,10 +8313,10 @@ _G.pg.base.gametip.buildship_new_tip = {
 	tip = "{namecode:545}、{namecode:546} 建造概率UP！"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "罗马、博尔扎诺 建造追加！"
+	tip = "{namecode:461}、{namecode:460}、{namecode:457} 建造追加！"
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "朱塞佩·加里波第、阿尔弗雷多·奥里亚尼 建造追加！"
+	tip = "{namecode:448}、{namecode:449} 建造追加！"
 }
 _G.pg.base.gametip.buildship_special_tip = {
 	tip = "莱昂纳多·达·芬奇 建造追加！"
@@ -27295,4 +27295,84 @@ _G.pg.base.gametip.battleui_display3 = {
 }
 _G.pg.base.gametip.zengke_series_serverinfo = {
 	tip = "服务器："
+}
+_G.pg.base.gametip.dailyLevel_bonus_activity = {
+	tip = "限时up奖励"
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_19906 = {
+	tip = [[
+<size=28>
+是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，
+<color=#ff5c5c>实际性能以获得舰船为准</color>）
+使用装备：<color=#92fc63>
+试作型三联装406mm/45主炮Mk7
+双联装127mm高平两用炮Mk12
+四联40mm博福斯对空机炮
+</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_49910 = {
+	tip = [[
+<size=28>
+是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，
+<color=#ff5c5c>实际性能以获得舰船为准</color>）
+使用装备：<color=#92fc63>
+试作型四联装305mmSKC39主炮
+双联装127mmKM40主炮
+试作型55mm Gerät 58防空炮
+</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_69903 = {
+	tip = [[
+<size=28>
+是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，
+<color=#ff5c5c>实际性能以获得舰船为准</color>）
+使用装备：<color=#92fc63>
+双联装135mm主炮Model1938
+试作型四联装533毫米鱼雷Si 270
+试作型六联装Scotti20mm机炮Model1941
+</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_79903 = {
+	tip = [[
+<size=28>
+是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，
+<color=#ff5c5c>实际性能以获得舰船为准</color>）
+使用装备：<color=#92fc63>
+试作型B-1-P 三联装180mm主炮Model1932改
+三联装550mm鱼雷
+双联装57mm/L60博福斯对空机炮Mle1951
+</color></size>]]
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_119901 = {
+	tip = [[
+<size=28>
+是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，
+<color=#ff5c5c>实际性能以获得舰船为准</color>）
+使用装备：<color=#92fc63>
+试作型三联装283mm/54.5主炮
+双联100mm98式高射炮改
+双联装57mm/L60博福斯对空机炮Mle1951
+</color></size>]]
+}
+_G.pg.base.gametip.grapihcs3d_setting_bloom = {
+	tip = "画面质感"
+}
+_G.pg.base.gametip.grapihcs3d_setting_bloom_optionname0 = {
+	tip = "强"
+}
+_G.pg.base.gametip.grapihcs3d_setting_bloom_optionname1 = {
+	tip = "弱"
+}
+_G.pg.base.gametip.SkinDiscountHelp_Carnival = {
+	tip = {
+		{
+			info = "1.活动期间，以<color=#92fc63>原价</color>（不使用换装折扣券）购买一件「嘉年华」系列换装或一个换装礼盒(嘉年华)时，可领取一张<color=#92fc63>换装折扣券（嘉年华）</color>\n2.<color=#92fc63>换装折扣券（嘉年华）</color>可用于购买「嘉年华」系列内任意换装时抵扣300钻石（购买福袋时不可抵扣）\n3.未使用的<color=#92fc63>换装折扣券（嘉年华）</color>将会在活动结束后（2025年8月13日23:59:59）消失"
+		}
+	}
+}
+_G.pg.base.gametip.open_today = {
+	tip = "今日开放："
+}
+_G.pg.base.gametip.daily_level_go = {
+	tip = "前往"
 }

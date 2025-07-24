@@ -1219,20 +1219,9 @@ function var_0_0.updateModPanel(arg_98_0)
 	end, SFX_PANEL)
 	setActive(arg_98_0.calcMaxBtn, not var_98_4)
 
-	local var_98_14 = false
+	local var_98_14 = var_98_0:canFateSimulation()
 
-	if not pg.NewStoryMgr.GetInstance():IsPlayed("PHANTOM_HELP") then
-		var_98_14 = true
-
-		pg.NewGuideMgr.GetInstance():Play("PHANTOM_HELP")
-		pg.m02:sendNotification(GAME.STORY_UPDATE, {
-			storyId = "PHANTOM_HELP"
-		})
-	end
-
-	local var_98_15 = var_98_0:canFateSimulation()
-
-	if var_98_15 then
+	if var_98_14 then
 		onButton(arg_98_0, arg_98_0.fittingBtn, function()
 			if arg_98_0.isSwitchAnim then
 				return
@@ -1262,7 +1251,7 @@ function var_0_0.updateModPanel(arg_98_0)
 		end, SFX_PANEL)
 		arg_98_0:updateFittingPanel()
 
-		if not var_98_14 then
+		if not inGuide then
 			pg.NewStoryMgr.GetInstance():Play(var_98_0:getConfig("luck_story"), function(arg_112_0)
 				if arg_112_0 then
 					arg_98_0:buildStartAni("fateStartWindow", function()
@@ -1273,8 +1262,8 @@ function var_0_0.updateModPanel(arg_98_0)
 		end
 	end
 
-	setActive(arg_98_0.calcPanel, not var_98_15)
-	setActive(arg_98_0.fittingBtn, var_98_15)
+	setActive(arg_98_0.calcPanel, not var_98_14)
+	setActive(arg_98_0.fittingBtn, var_98_14)
 	setActive(arg_98_0.fittingBtnEffect, false)
 end
 
@@ -2027,8 +2016,8 @@ function var_0_0.updatePhantomQuest(arg_145_0)
 
 			local var_147_1 = string.format("%d", math.clamp(var_147_0.unlocked and var_147_0.config.target_num or var_147_0.progress, 0, var_147_0.config.target_num) * 100 / var_147_0.config.target_num)
 
-			setText(arg_147_2:Find("desc/info/Text/progress"), var_147_1 .. "%")
-			setText(arg_147_2:Find("desc/info/Text/progress/shadow"), var_147_1 .. "%")
+			setText(arg_147_2:Find("desc/info/progress"), var_147_1 .. "%")
+			setText(arg_147_2:Find("desc/info/progress/shadow"), var_147_1 .. "%")
 
 			local var_147_2 = ShipBluePrint.getPhantomQuestCostDrop(var_147_0)
 
@@ -2088,7 +2077,7 @@ end
 function var_0_0.createTask(arg_152_0, arg_152_1)
 	local var_152_0 = {
 		title = arg_152_0:findTF("title/name", arg_152_1),
-		desc = arg_152_0:findTF("desc/Text", arg_152_1),
+		desc = arg_152_0:findTF("desc/info/Text", arg_152_1),
 		timerTF = arg_152_0:findTF("title/timer", arg_152_1),
 		timerTFTxt = arg_152_0:findTF("title/timer/Text", arg_152_1),
 		timerOpen = arg_152_0:findTF("title/timer/open", arg_152_1),
@@ -2106,8 +2095,8 @@ function var_0_0.createTask(arg_152_0, arg_152_1)
 	var_152_0.progessSlider = var_152_0.progressTF:GetComponent(typeof(Slider))
 	var_152_0.lockBtn = arg_152_0:findTF("desc/commit_panel/lock_btn", arg_152_1)
 	var_152_0.itemCount = var_152_0.itemTpl:Find("award/icon_bg/count")
-	var_152_0.progres = arg_152_0:findTF("desc/Text/progress", arg_152_1)
-	var_152_0.progreshadow = arg_152_0:findTF("desc/Text/progress/shadow", arg_152_1)
+	var_152_0.progres = arg_152_0:findTF("desc/info/progress", arg_152_1)
+	var_152_0.progreshadow = arg_152_0:findTF("desc/info/progress/shadow", arg_152_1)
 	var_152_0.check = findTF(arg_152_1, "title/complete")
 	var_152_0.lock = findTF(arg_152_1, "title/lock")
 	var_152_0.working = findTF(arg_152_1, "title/working")
