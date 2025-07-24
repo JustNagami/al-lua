@@ -404,7 +404,7 @@
 			}
 		}
 	},
-	init_effect = "jinengchufared",
+	init_effect = "",
 	name = "",
 	time = 0.1,
 	color = "blue",
