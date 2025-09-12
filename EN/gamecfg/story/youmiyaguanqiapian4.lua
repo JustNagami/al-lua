@@ -30,7 +30,7 @@
 			bgName = "star_level_bg_539",
 			hidePaintObj = true,
 			say = "A cerulean sky, white clouds, blue sea, and yellow sands, with great mountains towering toward the heavens.",
-			bgm = "yumia-1",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -174,12 +174,13 @@
 			}
 		},
 		{
-			actor = 900519,
+			expression = 0,
 			side = 2,
 			bgName = "star_level_bg_539",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
+			actor = 900519,
 			say = "Um... Yumia!",
 			typewriter = {
 				speed = 0.05,
@@ -378,12 +379,13 @@
 			}
 		},
 		{
-			actor = 900519,
+			expression = 0,
 			side = 2,
 			bgName = "star_level_bg_539",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
+			actor = 900519,
 			say = "W-we have no idea what happened, and we know nothing about this place! I think we should run away for now!",
 			typewriter = {
 				speed = 0.05,

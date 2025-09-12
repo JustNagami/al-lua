@@ -30,7 +30,7 @@
 			bgName = "star_level_bg_307",
 			hidePaintObj = true,
 			say = "When the party took the elevator above the tower's entrance area, a gleaming blue lake came into view.",
-			bgm = "yumia-7",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -204,12 +204,13 @@
 			}
 		},
 		{
-			actor = 900519,
+			expression = 0,
 			side = 2,
 			bgName = "star_level_bg_307",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
+			actor = 900519,
 			say = "I'll help, too...",
 			typewriter = {
 				speed = 0.05,

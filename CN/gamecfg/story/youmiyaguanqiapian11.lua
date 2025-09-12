@@ -30,7 +30,7 @@
 			bgName = "star_level_bg_307",
 			hidePaintObj = true,
 			say = "乘坐电梯离开起始区段后，一片蔚蓝的大湖映入了众人的眼帘。",
-			bgm = "yumia-7",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -204,12 +204,13 @@
 			}
 		},
 		{
-			actor = 900519,
+			expression = 0,
 			side = 2,
 			bgName = "star_level_bg_307",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
+			actor = 900519,
 			say = "蕾妮雅……也来帮忙！",
 			typewriter = {
 				speed = 0.05,

@@ -41,9 +41,9 @@ pg.voice_bgm = {
 		bgm = "cw-level"
 	},
 	CourtYardScene = {
-		default_bgm = "yumia-61",
+		default_bgm = "backyard",
 		special_bgm = "",
-		bgm = "yumia-61"
+		bgm = "backyard"
 	},
 	BattleScene = {
 		default_bgm = "battle-1",
@@ -76,9 +76,9 @@ pg.voice_bgm = {
 		bgm = "main"
 	},
 	LoginScene = {
-		default_bgm = "yumia-79",
+		default_bgm = "login",
 		special_bgm = "",
-		bgm = "yumia-79"
+		bgm = "login"
 	},
 	NewMainScene = {
 		default_bgm = "main",
@@ -135,10 +135,10 @@ pg.voice_bgm = {
 		special_bgm = "",
 		bgm = "idol-BlueSpirit-inst"
 	},
-	NewShopsScene = {
-		default_bgm = "yumia-81",
+	ActivityShop50088 = {
+		default_bgm = "theme-fushun-adventure",
 		special_bgm = "",
-		bgm = "yumia-81"
+		bgm = "theme-fushun-adventure"
 	},
 	BuildShipScene = {
 		default_bgm = "main",
@@ -2340,9 +2340,64 @@ pg.voice_bgm = {
 		special_bgm = "",
 		bgm = "yumia-az-theme-pv"
 	},
-	NewSkinShopScene = {
-		default_bgm = "yumia-81",
+	KearsargeTecCatchUpPage = {
+		default_bgm = "theme-designshipVI",
 		special_bgm = "",
-		bgm = "yumia-81"
+		bgm = "theme-designshipVI"
+	},
+	Z46SkinRePage = {
+		default_bgm = "theme-tulipa",
+		special_bgm = "",
+		bgm = "theme-tulipa"
+	},
+	ForestVacationSkinPage = {
+		default_bgm = "story-tulipa",
+		special_bgm = "",
+		bgm = "story-tulipa"
+	},
+	SecretsAbyssMainPage = {
+		default_bgm = "story-enzecheng-theme",
+		special_bgm = "",
+		bgm = "story-enzecheng-theme"
+	},
+	SecretsAbyssPtPage = {
+		default_bgm = "theme-fushun-adventure",
+		special_bgm = "",
+		bgm = "theme-fushun-adventure"
+	},
+	SecretsAbyssSkinMagazinePage = {
+		default_bgm = "bar-soft",
+		special_bgm = "",
+		bgm = "bar-soft"
+	},
+	SecretsAbyssMGPage = {
+		default_bgm = "story-game-rhythm",
+		special_bgm = "",
+		bgm = "story-game-rhythm"
+	},
+	MassenaMedalAlbumView = {
+		default_bgm = "story-enzecheng-theme",
+		special_bgm = "",
+		bgm = "story-enzecheng-theme"
+	},
+	AierdeliqiAlterItemRePage = {
+		default_bgm = "story-masazhusai",
+		special_bgm = "",
+		bgm = "story-masazhusai"
+	},
+	ShimantoTecCatchupPage = {
+		default_bgm = "theme-designshipVI",
+		special_bgm = "",
+		bgm = "theme-designshipVI"
+	},
+	TianYuTianYuanFramePage = {
+		default_bgm = "theme-akagi-inside",
+		special_bgm = "",
+		bgm = "theme-akagi-inside"
+	},
+	TianYuTianYuanLoginPage = {
+		default_bgm = "story-newsakura",
+		special_bgm = "",
+		bgm = "story-newsakura"
 	}
 }

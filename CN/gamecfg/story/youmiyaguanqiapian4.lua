@@ -30,7 +30,7 @@
 			bgName = "star_level_bg_539",
 			hidePaintObj = true,
 			say = "蓝天、白云、碧海、沙滩，还有高耸入云的山脉。",
-			bgm = "yumia-1",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -174,12 +174,13 @@
 			}
 		},
 		{
-			actor = 900519,
+			expression = 0,
 			side = 2,
 			bgName = "star_level_bg_539",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
+			actor = 900519,
 			say = "那个……优米雅小姐！",
 			typewriter = {
 				speed = 0.05,
@@ -378,12 +379,13 @@
 			}
 		},
 		{
-			actor = 900519,
+			expression = 0,
 			side = 2,
 			bgName = "star_level_bg_539",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
+			actor = 900519,
 			say = "……我们还不熟悉此地的情况……！！先逃跑比较好！",
 			typewriter = {
 				speed = 0.05,

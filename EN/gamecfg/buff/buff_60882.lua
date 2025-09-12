@@ -22,6 +22,18 @@
 			}
 		},
 		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onBattleBuffCount"
+			},
+			arg_list = {
+				buff_id = 60883,
+				quota = 1,
+				target = "TargetSelf",
+				countType = 60880
+			}
+		},
+		{
 			type = "BattleBuffCastSkill",
 			trigger = {
 				"onBattleBuffCount"

@@ -26,6 +26,8 @@ pg.furniture_data_template = setmetatable({
 			26,
 			27,
 			28,
+			31,
+			32,
 			102,
 			104,
 			105,
@@ -167,6 +169,9 @@ pg.furniture_data_template = setmetatable({
 			307,
 			308,
 			311,
+			313,
+			314,
+			315,
 			100002,
 			100003,
 			100004,
@@ -228,6 +233,7 @@ pg.furniture_data_template = setmetatable({
 			100064,
 			100065,
 			100066,
+			100067,
 			100073,
 			100074,
 			100075,
@@ -3522,6 +3528,28 @@ pg.furniture_data_template = setmetatable({
 			327116,
 			327301,
 			327302
+		},
+		[127] = {
+			328001,
+			328002,
+			328101,
+			328102,
+			328103,
+			328104,
+			328105,
+			328106,
+			328107,
+			328108,
+			328109,
+			328110,
+			328111,
+			328112,
+			328113,
+			328114,
+			328115,
+			328116,
+			328117,
+			328118
 		}
 	},
 	get_id_list_by_tag = {
@@ -3549,6 +3577,8 @@ pg.furniture_data_template = setmetatable({
 			26,
 			27,
 			28,
+			31,
+			32,
 			102,
 			104,
 			105,
@@ -3623,6 +3653,8 @@ pg.furniture_data_template = setmetatable({
 			300,
 			301,
 			308,
+			313,
+			315,
 			100002,
 			100003,
 			100004,
@@ -3684,6 +3716,7 @@ pg.furniture_data_template = setmetatable({
 			100064,
 			100065,
 			100066,
+			100067,
 			100073,
 			100074,
 			100075,
@@ -3757,7 +3790,8 @@ pg.furniture_data_template = setmetatable({
 			303,
 			304,
 			307,
-			311
+			311,
+			314
 		},
 		[7] = {
 			211,
@@ -3965,7 +3999,8 @@ pg.furniture_data_template = setmetatable({
 			323102,
 			324118,
 			325110,
-			325126
+			325126,
+			328118
 		},
 		[4] = {
 			1001,
@@ -4080,7 +4115,8 @@ pg.furniture_data_template = setmetatable({
 			324001,
 			325001,
 			326001,
-			327001
+			327001,
+			328001
 		},
 		[3] = {
 			1002,
@@ -4196,7 +4232,8 @@ pg.furniture_data_template = setmetatable({
 			324002,
 			325002,
 			326002,
-			327002
+			327002,
+			328002
 		},
 		{
 			1101,
@@ -6293,7 +6330,24 @@ pg.furniture_data_template = setmetatable({
 			327113,
 			327114,
 			327115,
-			327116
+			327116,
+			328101,
+			328102,
+			328103,
+			328104,
+			328105,
+			328106,
+			328107,
+			328108,
+			328109,
+			328110,
+			328111,
+			328112,
+			328113,
+			328114,
+			328115,
+			328116,
+			328117
 		},
 		{
 			1108,
@@ -6860,6 +6914,8 @@ pg.furniture_data_template = setmetatable({
 			26,
 			27,
 			28,
+			31,
+			32,
 			102,
 			104,
 			105,
@@ -6976,6 +7032,9 @@ pg.furniture_data_template = setmetatable({
 			304,
 			307,
 			311,
+			313,
+			314,
+			315,
 			100002,
 			100004,
 			100005,
@@ -7021,6 +7080,7 @@ pg.furniture_data_template = setmetatable({
 			100061,
 			100062,
 			100065,
+			100067,
 			100074,
 			100075,
 			100076
@@ -9123,7 +9183,24 @@ pg.furniture_data_template = setmetatable({
 			327112,
 			327113,
 			327114,
-			327115
+			327115,
+			328101,
+			328102,
+			328103,
+			328105,
+			328106,
+			328107,
+			328108,
+			328109,
+			328110,
+			328111,
+			328112,
+			328113,
+			328114,
+			328115,
+			328116,
+			328117,
+			328118
 		},
 		[11] = {
 			131,
@@ -9317,7 +9394,8 @@ pg.furniture_data_template = setmetatable({
 			324001,
 			325001,
 			326001,
-			327001
+			327001,
+			328001
 		},
 		{
 			1002,
@@ -9433,7 +9511,8 @@ pg.furniture_data_template = setmetatable({
 			324002,
 			325002,
 			326002,
-			327002
+			327002,
+			328002
 		},
 		[5] = {
 			1101,
@@ -9587,7 +9666,8 @@ pg.furniture_data_template = setmetatable({
 			325104,
 			325105,
 			327104,
-			327116
+			327116,
+			328104
 		},
 		[3] = {
 			1108,
@@ -10184,6 +10264,8 @@ pg.furniture_data_template = setmetatable({
 		26,
 		27,
 		28,
+		31,
+		32,
 		102,
 		104,
 		105,
@@ -10327,6 +10409,9 @@ pg.furniture_data_template = setmetatable({
 		307,
 		308,
 		311,
+		313,
+		314,
+		315,
 		100002,
 		100003,
 		100004,
@@ -10388,6 +10473,7 @@ pg.furniture_data_template = setmetatable({
 		100064,
 		100065,
 		100066,
+		100067,
 		100073,
 		100074,
 		100075,
@@ -13453,7 +13539,27 @@ pg.furniture_data_template = setmetatable({
 		327115,
 		327116,
 		327301,
-		327302
+		327302,
+		328001,
+		328002,
+		328101,
+		328102,
+		328103,
+		328104,
+		328105,
+		328106,
+		328107,
+		328108,
+		328109,
+		328110,
+		328111,
+		328112,
+		328113,
+		328114,
+		328115,
+		328116,
+		328117,
+		328118
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -14301,6 +14407,80 @@ pg.base.furniture_data_template = {
 		size = {
 			1,
 			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[31] = {
+		effect = "",
+		name = "FFNF Maillé Brézé Model",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 0,
+		is_get_time_note = 0,
+		picture = "chuanmo/mayebuleize",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Special decoration: A 1:100 scale model of a Vauquelin class destroyer",
+		tag = 6,
+		icon = "mayebuleizeicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 31,
+		can_rotate = 0,
+		size = {
+			1,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[32] = {
+		effect = "",
+		name = "USS New Jersey Model",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 0,
+		is_get_time_note = 0,
+		picture = "chuanmo/xinzexi",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Special decoration: A 1:100 scale model of an Iowa class battleship",
+		tag = 6,
+		icon = "xinzexiicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 32,
+		can_rotate = 0,
+		size = {
+			2,
+			7
 		},
 		offset = {},
 		canputonGrid = {},
@@ -20449,7 +20629,7 @@ pg.base.furniture_data_template = {
 	[283] = {
 		effect = "",
 		name = "Mont-Saint-Michel Miniature",
-		gain_by = "",
+		gain_by = "Interlude of Illusions",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
@@ -20572,12 +20752,12 @@ pg.base.furniture_data_template = {
 	[286] = {
 		effect = "",
 		name = "Party for Pioneers",
-		gain_by = "",
+		gain_by = "Cursed Western Town",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
 		picture = "",
-		is_get_time_note = 0,
+		is_get_time_note = 1,
 		count = 1,
 		describe = "As the day comes to an end, we gather here to celebrate. Enjoy the feast and let the songs of joy fill the air!",
 		is_3d_obj = 0,
@@ -21110,12 +21290,12 @@ pg.base.furniture_data_template = {
 	[297] = {
 		effect = "",
 		name = "Logistics Center Miniature",
-		gain_by = "",
+		gain_by = "Letters from Valley Hospital",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
 		themeId = 0,
-		is_get_time_note = 0,
+		is_get_time_note = 1,
 		picture = "chuanmo/yiyuanhouqinzhongxin",
 		count = 1,
 		is_3d_obj = 0,
@@ -21147,12 +21327,12 @@ pg.base.furniture_data_template = {
 	[298] = {
 		effect = "",
 		name = "Recuperation Center Miniature",
-		gain_by = "",
+		gain_by = "Letters from Valley Hospital",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
 		themeId = 0,
-		is_get_time_note = 0,
+		is_get_time_note = 1,
 		picture = "chuanmo/yiyuanliaoyangzhongxin",
 		count = 1,
 		is_3d_obj = 0,
@@ -21184,12 +21364,12 @@ pg.base.furniture_data_template = {
 	[299] = {
 		effect = "",
 		name = "Research Center Miniature",
-		gain_by = "",
+		gain_by = "Letters from Valley Hospital",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
 		themeId = 0,
-		is_get_time_note = 0,
+		is_get_time_note = 1,
 		picture = "Chuanmo/yiyuanyanjiuzhongxin",
 		count = 1,
 		is_3d_obj = 0,
@@ -21221,12 +21401,12 @@ pg.base.furniture_data_template = {
 	[300] = {
 		effect = "",
 		name = "Medical Center Miniature",
-		gain_by = "",
+		gain_by = "Letters from Valley Hospital",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
 		themeId = 0,
-		is_get_time_note = 0,
+		is_get_time_note = 1,
 		picture = "chuanmo/yiyuanzhenliaozhongxin",
 		count = 1,
 		is_3d_obj = 0,
@@ -21258,12 +21438,12 @@ pg.base.furniture_data_template = {
 	[301] = {
 		effect = "",
 		name = "Inpatient Building Miniature",
-		gain_by = "",
+		gain_by = "Letters from Valley Hospital",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
 		themeId = 0,
-		is_get_time_note = 0,
+		is_get_time_note = 1,
 		picture = "chuanmo/yiyuanzhuyuandalou",
 		count = 1,
 		is_3d_obj = 0,
@@ -21572,6 +21752,226 @@ pg.base.furniture_data_template = {
 			{
 				"tianjitaxunzhang",
 				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[313] = {
+		effect = "",
+		name = "Banner of Benedictus",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 0,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "May swords and magic forever protect Benedictus.",
+		tag = 6,
+		icon = "enzechengqizhiicon",
+		spine_extra = "",
+		level = 5,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 2,
+		canputon = 0,
+		id = 313,
+		can_rotate = 0,
+		size = {
+			4,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"enzechengqizhi",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[314] = {
+		effect = "",
+		name = "Castle of Benedictus Miniature",
+		gain_by = "Secrets of the Abyss",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 0,
+		is_get_time_note = 1,
+		picture = "chuanmo/masainaxunzhang",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A miniature of the Castle of Benedictus (throne included!) to commemorate your great adventure through Aberrinth.",
+		tag = 8,
+		icon = "masainaxunzhangicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 5,
+		deblocking = 1,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 314,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		interAction_group = {}
+	},
+	[315] = {
+		effect = "",
+		name = "7th Anniversary Dessert Bar",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Recharge with a dash of sweetness for your adventure.",
+		is_3d_obj = 0,
+		advice = 0,
+		themeId = 0,
+		icon = "tianpinbataiicon",
+		deblocking = 1,
+		level = 1,
+		tag = 6,
+		rarity = 4,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 315,
+		can_rotate = 0,
+		size = {
+			7,
+			9
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"tianpinbataiB",
+				"normal"
+			},
+			{
+				"tianpinbataiT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit1",
+						nil,
+						"sit"
+					}
+				},
+				{
+					nil,
+					1,
+					{
+						{
+							"walk1"
+						},
+						"walk",
+						1
+					}
+				},
+				{
+					1
+				},
+				{
+					{
+						"sit1"
+					},
+					{
+						"sit2"
+					},
+					{
+						"sit3"
+					}
+				}
+			},
+			{
+				{
+					-40.1,
+					49.8
+				},
+				{
+					402.6,
+					317.4
+				},
+				"chuanmo/youeryuanxiaoche_mask1"
+			},
+			{
+				59.8,
+				-51.5
+			},
+			{
+				1,
+				1
+			}
+		},
+		spine_extra = {
+			{
+				{},
+				{
+					0,
+					0
+				},
+				{
+					1,
+					1
+				}
+			},
+			{
+				{},
+				{
+					0,
+					0
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		followBone = {
+			{
+				"char1",
+				1
+			},
+			{
+				"char3",
+				-1
+			},
+			{
+				"char2",
+				-1
 			}
 		},
 		interAction_group = {}
@@ -25887,6 +26287,96 @@ pg.base.furniture_data_template = {
 		},
 		interAction_group = {}
 	},
+	[100067] = {
+		effect = "",
+		name = "Fully-Automatic Anti-Fall Treadmill",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Low speed, high speed, it doesn't matter – you won't fall under any circumstance!",
+		themeId = 0,
+		icon = "paobujiicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 6,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 100067,
+		can_rotate = 0,
+		size = {
+			4,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"paobujiB",
+				"normal"
+			},
+			{
+				"paobujiT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"tuozhuai2",
+						nil,
+						"tuozhuai2"
+					},
+					{
+						"walk2",
+						nil,
+						"walk"
+					}
+				},
+				{
+					nil,
+					1,
+					{
+						"walk1",
+						"walk",
+						false,
+						true
+					}
+				},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
 	[100073] = {
 		effect = "",
 		name = "Manjuu Surfboard",
@@ -26115,7 +26605,7 @@ pg.base.furniture_data_template = {
 		themeId = 0,
 		count = 1,
 		is_3d_obj = 0,
-		describe = "Watch out for when the bubble bursts!",
+		describe = "Blub-blub-blub... Pop! Blub-blub-blub...",
 		tag = 6,
 		icon = "chuipaofenweijiicon",
 		spine_extra = "",
@@ -160896,6 +161386,1035 @@ pg.base.furniture_data_template = {
 		canputonGrid = {},
 		can_trigger = {
 			0
+		},
+		interAction_group = {}
+	},
+	[328001] = {
+		icon = "dibanwq2icon",
+		name = "Sylvan Spring Flooring",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		themeId = 127,
+		picture = "wq2/dibanwq2",
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		spine_extra = "",
+		level = 1,
+		describe = "Soak in the warm water and breathe in the forest air.",
+		rarity = 4,
+		advice = 0,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		id = 328001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328002] = {
+		icon = "qiangbiwq2icon",
+		name = "Sylvan Spring Wallpaper",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		themeId = 127,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		spine_extra = "",
+		level = 5,
+		describe = "Soak in the warm water and breathe in the forest air.",
+		rarity = 4,
+		advice = 0,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		id = 328002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbiwq2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[328101] = {
+		effect = "",
+		name = "Sylvan Bed",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 2,
+		is_3d_obj = 0,
+		describe = "Spent too long in the water? Come up for a while and have a break.",
+		themeId = 127,
+		icon = "chuangwq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328101,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"chuangwq2",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sleep1",
+						nil,
+						"sleep"
+					}
+				},
+				{
+					nil,
+					1,
+					{
+						"sleep2",
+						"sleep",
+						false,
+						true
+					}
+				},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[328102] = {
+		effect = "",
+		name = "Sylvan Pine Tub",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A spacious bathtub. The water's warm and inviting.",
+		is_3d_obj = 0,
+		advice = 0,
+		themeId = 127,
+		icon = "dayuchiwq2icon",
+		deblocking = 1,
+		level = 1,
+		tag = 1,
+		rarity = 3,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328102,
+		can_rotate = 0,
+		size = {
+			10,
+			10
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"dayuchiwq2B",
+				"normal"
+			},
+			{
+				"dayuchiwq2T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"wash"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{
+				{
+					-1.8,
+					140
+				},
+				{
+					180,
+					230
+				},
+				"wq2/yuantongwq2_mask"
+			},
+			{
+				-2.9,
+				-138.9
+			},
+			{
+				1,
+				1
+			}
+		},
+		spine_extra = {
+			{
+				{
+					{
+						-1.8,
+						140
+					},
+					{
+						180,
+						230
+					},
+					"wq2/yuantongwq2_mask"
+				},
+				{
+					-2.9,
+					-138.9
+				},
+				{
+					1,
+					1
+				}
+			},
+			{
+				{
+					{
+						-1.8,
+						140
+					},
+					{
+						180,
+						230
+					},
+					"wq2/yuantongwq2_mask"
+				},
+				{
+					-2.9,
+					-138.9
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		followBone = {
+			{
+				"char3",
+				-1
+			},
+			{
+				"char2",
+				-1
+			},
+			{
+				"char1",
+				1
+			}
+		},
+		interAction_group = {}
+	},
+	[328103] = {
+		effect = "",
+		name = "Sylvan Floor Lamp",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 127,
+		count = 3,
+		is_3d_obj = 0,
+		describe = "This lamp radiates a soft and warmly colored light. A true sight for sore eyes.",
+		tag = 1,
+		icon = "dengwq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		deblocking = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328103,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"dengwq2",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[328104] = {
+		effect = "",
+		name = "Sylvan Bath Mat",
+		gain_by = "",
+		type = 5,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 127,
+		is_get_time_note = 0,
+		picture = "wq2/didianwq2",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A soft bath mat. Stepping on it feels strangely like receiving a foot massage.",
+		tag = 1,
+		icon = "didianwq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328104,
+		can_rotate = 0,
+		size = {
+			2,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328105] = {
+		effect = "",
+		name = "Sylvan Bench",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "wq2/huacongyiziwq2",
+		is_get_time_note = 0,
+		themeId = 127,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A comfortable wooden bench. You smell the scent of bigleaf hydrangea when you sit on it.",
+		tag = 1,
+		icon = "huacongyiziwq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328105,
+		can_rotate = 0,
+		size = {
+			4,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-49,
+					-24
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328106] = {
+		effect = "",
+		name = "Sylvan Water Feature",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 127,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "The gentle sound of running water. So soothing and elegant.",
+		tag = 1,
+		icon = "jiashanliushuiwq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328106,
+		can_rotate = 0,
+		size = {
+			6,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jiashanliushuiwq2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[328107] = {
+		effect = "",
+		name = "Sylvan Stonescape",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 127,
+		is_get_time_note = 0,
+		picture = "wq2/jiashanwq2",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A pile of rocks stacked on top of each other into a majestic form.",
+		tag = 1,
+		icon = "jiashanwq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328107,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328108] = {
+		effect = "",
+		name = "Sylvan Flowerscape",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 127,
+		is_get_time_note = 0,
+		picture = "wq2/jingguanshitouwq2",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "The flowers sway in the wind and give off a faint aroma.",
+		tag = 1,
+		icon = "jingguanshitouwq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328108,
+		can_rotate = 0,
+		size = {
+			5,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328109] = {
+		effect = "",
+		name = "Sylvan Wisteria Tree",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 127,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "The purple wisterias hang freely and give off a fragrant aroma.",
+		tag = 1,
+		icon = "jingguanshuwq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328109,
+		can_rotate = 0,
+		size = {
+			4,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jingguanshuwq2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[328110] = {
+		effect = "",
+		name = "Sylvan Towel Rack",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 127,
+		is_get_time_note = 0,
+		picture = "wq2/maojinjiawq2",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A pretty practical place to put your towel.",
+		tag = 1,
+		icon = "maojinjiawq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328110,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328111] = {
+		effect = "",
+		name = "Sylvan Noren Entrance",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 127,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "The entrance to the spring features a short curtain and is adorned with beautiful designs.",
+		tag = 1,
+		icon = "menlianwq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328111,
+		can_rotate = 0,
+		size = {
+			1,
+			24
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"menlianwq2",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[328112] = {
+		effect = "",
+		name = "Sylvan Storage Bucket",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 127,
+		is_get_time_note = 0,
+		picture = "wq2/mupenwq2",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Keeps your belongings safe and sound.",
+		tag = 1,
+		icon = "mupenwq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328112,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328113] = {
+		effect = "",
+		name = "Sylvan Potted Plant 2",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 127,
+		is_get_time_note = 0,
+		picture = "wq2/rukouzhiwuwq2",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A bit of lush greenery to add some natural freshness to the spring.",
+		tag = 1,
+		icon = "rukouzhiwuwq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		deblocking = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328113,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328114] = {
+		effect = "",
+		name = "Sylvan Bathing Items",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 127,
+		is_get_time_note = 0,
+		picture = "wq2/tuopanwq2",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A collection of items for all your bathing needs.",
+		tag = 1,
+		icon = "tuopanwq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		deblocking = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328114,
+		can_rotate = 0,
+		size = {
+			1,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328115] = {
+		effect = "",
+		name = "Sylvan Stone Bath",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "If you're building an outdoor bath, it's got to be made of stone!",
+		themeId = 127,
+		icon = "yuchiwq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328115,
+		can_rotate = 0,
+		size = {
+			6,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yuchiwq2B",
+				"normal"
+			},
+			{
+				"yuchiwq2T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"wash"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[328116] = {
+		effect = "",
+		name = "Sylvan Potted Plant 1",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 127,
+		is_get_time_note = 0,
+		picture = "wq2/zhuangshihuapenwq2",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A bit of lush greenery to add some natural freshness to the spring.",
+		tag = 1,
+		icon = "zhuangshihuapenwq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328116,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328117] = {
+		effect = "",
+		name = "After-Bath Snacks",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 127,
+		is_get_time_note = 0,
+		picture = "wq2/zhuoziwq2",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Something to snack on after you're done soaking. Yum-yum!",
+		tag = 1,
+		icon = "zhuoziwq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		deblocking = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328117,
+		can_rotate = 0,
+		size = {
+			2,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328118] = {
+		effect = "",
+		name = "Premium Open Air Bath",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "The best bathing experience money can buy!",
+		themeId = 127,
+		icon = "yuantongwq2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 328118,
+		can_rotate = 0,
+		size = {
+			5,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yuantongwq2B",
+				"normal"
+			},
+			{
+				"yuantongwq2T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"wash",
+						nil,
+						"wash"
+					},
+					{
+						"walk",
+						1,
+						"walk"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{
+				{
+					31,
+					143.9
+				},
+				{
+					274,
+					274
+				},
+				"wq2/yuantongwq2_mask"
+			},
+			{
+				-24.9,
+				-153.6
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
 		},
 		interAction_group = {}
 	}

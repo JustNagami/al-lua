@@ -25,7 +25,7 @@
 			bgName = "star_level_bg_500",
 			hidePaintObj = true,
 			say = "It was a regular day, and the Aladiss Research Team was carrying out an important mission deep within a cave...",
-			bgm = "yumia-70",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -171,12 +171,13 @@
 			}
 		},
 		{
-			actor = 900519,
+			expression = 0,
 			side = 2,
 			bgName = "star_level_bg_500",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
+			actor = 900519,
 			say = "Yumia, Nina... I think we might... be nearing the exit...",
 			typewriter = {
 				speed = 0.05,

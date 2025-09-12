@@ -12021,6 +12021,28 @@ pg.fleet_tech_ship_template = {
 			21
 		}
 	},
+	[80105] = {
+		max_star = 6,
+		id = 80105,
+		pt_get = 18,
+		pt_upgrage = 36,
+		add_get_attr = 1,
+		add_level_value = 1,
+		class = 80102,
+		pt_level = 26,
+		add_get_value = 1,
+		add_level_attr = 2,
+		add_get_shiptype = {
+			1,
+			20,
+			21
+		},
+		add_level_shiptype = {
+			1,
+			20,
+			21
+		}
+	},
 	[80107] = {
 		max_star = 6,
 		id = 80107,
@@ -12119,6 +12141,24 @@ pg.fleet_tech_ship_template = {
 			2
 		}
 	},
+	[80204] = {
+		max_star = 5,
+		id = 80204,
+		pt_get = 10,
+		pt_upgrage = 20,
+		add_get_attr = 1,
+		add_level_value = 1,
+		class = 80205,
+		pt_level = 14,
+		add_get_value = 1,
+		add_level_attr = 2,
+		add_get_shiptype = {
+			2
+		},
+		add_level_shiptype = {
+			2
+		}
+	},
 	[89904] = {
 		max_star = 6,
 		id = 89904,
@@ -12179,6 +12219,48 @@ pg.fleet_tech_ship_template = {
 			3,
 			13,
 			18
+		}
+	},
+	[80303] = {
+		max_star = 5,
+		id = 80303,
+		pt_get = 18,
+		pt_upgrage = 38,
+		add_get_attr = 2,
+		add_level_value = 1,
+		class = 80304,
+		pt_level = 28,
+		add_get_value = 1,
+		add_level_attr = 9,
+		add_get_shiptype = {
+			3,
+			13,
+			18
+		},
+		add_level_shiptype = {
+			3,
+			13,
+			18
+		}
+	},
+	[80401] = {
+		max_star = 6,
+		id = 80401,
+		pt_get = 20,
+		pt_upgrage = 42,
+		add_get_attr = 1,
+		add_level_value = 1,
+		class = 80401,
+		pt_level = 32,
+		add_get_value = 1,
+		add_level_attr = 9,
+		add_get_shiptype = {
+			4,
+			5,
+			10
+		},
+		add_level_shiptype = {
+			4
 		}
 	},
 	[80501] = {
@@ -12245,6 +12327,25 @@ pg.fleet_tech_ship_template = {
 			4,
 			5,
 			10
+		}
+	},
+	[80601] = {
+		max_star = 6,
+		id = 80601,
+		pt_get = 18,
+		pt_upgrage = 38,
+		add_get_attr = 12,
+		add_level_value = 1,
+		class = 80601,
+		pt_level = 28,
+		add_get_value = 1,
+		add_level_attr = 8,
+		add_get_shiptype = {
+			6
+		},
+		add_level_shiptype = {
+			6,
+			7
 		}
 	},
 	[80701] = {
@@ -13309,6 +13410,28 @@ pg.fleet_tech_ship_template = {
 		add_get_attr = 8,
 		add_level_value = 1,
 		class = 970108,
+		pt_level = 19,
+		add_get_value = 1,
+		add_level_attr = 3,
+		add_get_shiptype = {
+			1,
+			20,
+			21
+		},
+		add_level_shiptype = {
+			1,
+			20,
+			21
+		}
+	},
+	[970109] = {
+		max_star = 6,
+		id = 970109,
+		pt_get = 13,
+		pt_upgrage = 26,
+		add_get_attr = 2,
+		add_level_value = 1,
+		class = 970109,
 		pt_level = 19,
 		add_get_value = 1,
 		add_level_attr = 3,
@@ -14756,17 +14879,22 @@ pg.fleet_tech_ship_template = {
 		80102,
 		80103,
 		80104,
+		80105,
 		80107,
 		80108,
 		80201,
 		80202,
 		80203,
+		80204,
 		89904,
 		80301,
 		80302,
+		80303,
+		80401,
 		80501,
 		80502,
 		80503,
+		80601,
 		80701,
 		80702,
 		80801,
@@ -14817,6 +14945,7 @@ pg.fleet_tech_ship_template = {
 		970106,
 		970107,
 		970108,
+		970109,
 		970201,
 		970202,
 		970203,

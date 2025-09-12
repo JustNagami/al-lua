@@ -9,7 +9,7 @@
 			bgName = "star_level_bg_500",
 			hidePaintObj = true,
 			say = "After following the poisonous river upstream, the party arrived at an abandoned settlement.",
-			bgm = "yumia-20",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -74,12 +74,13 @@
 			}
 		},
 		{
-			actor = 900519,
+			expression = 0,
 			side = 2,
 			bgName = "star_level_bg_500",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
+			actor = 900519,
 			say = "I think the corrosive water must be coming from there, too.",
 			typewriter = {
 				speed = 0.05,

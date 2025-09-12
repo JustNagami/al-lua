@@ -32,7 +32,7 @@
 		{
 			type = "BattleBuffCount",
 			trigger = {
-				"onTakeDamage"
+				"onBeforeTakeDamage"
 			},
 			arg_list = {
 				countTarget = 3,

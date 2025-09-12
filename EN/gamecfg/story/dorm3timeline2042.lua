@@ -24,7 +24,7 @@
 							time = 25.233,
 							type = "timeline",
 							skip = false,
-							scene = "map_noshirohostel_02",
+							scene = "map_noshirohostel_01",
 							options = {
 								{
 									{

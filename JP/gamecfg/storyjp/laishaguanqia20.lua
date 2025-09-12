@@ -12,7 +12,7 @@
 			bgName = "bg_ryza_2",
 			stopbgm = true,
 			say = "さらにしばらくの後――",
-			bgm = "ryza-9",
+			bgm = "ryza-az-theme",
 			flashout = {
 				black = true,
 				dur = 1,

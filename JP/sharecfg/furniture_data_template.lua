@@ -179,6 +179,9 @@ pg.furniture_data_template = setmetatable({
 			309,
 			310,
 			311,
+			313,
+			314,
+			315,
 			100002,
 			100003,
 			100004,
@@ -253,6 +256,7 @@ pg.furniture_data_template = setmetatable({
 			100073,
 			100074,
 			100075,
+			100076,
 			200001,
 			200002,
 			200003,
@@ -3520,6 +3524,28 @@ pg.furniture_data_template = setmetatable({
 			327116,
 			327301,
 			327302
+		},
+		[127] = {
+			328001,
+			328002,
+			328101,
+			328102,
+			328103,
+			328104,
+			328105,
+			328106,
+			328107,
+			328108,
+			328109,
+			328110,
+			328111,
+			328112,
+			328113,
+			328114,
+			328115,
+			328116,
+			328117,
+			328118
 		}
 	},
 	get_id_list_by_tag = {
@@ -3631,6 +3657,8 @@ pg.furniture_data_template = setmetatable({
 			308,
 			309,
 			310,
+			313,
+			315,
 			100002,
 			100003,
 			100004,
@@ -3705,6 +3733,7 @@ pg.furniture_data_template = setmetatable({
 			100073,
 			100074,
 			100075,
+			100076,
 			31101,
 			54104,
 			54105
@@ -3776,7 +3805,8 @@ pg.furniture_data_template = setmetatable({
 			303,
 			304,
 			307,
-			311
+			311,
+			314
 		},
 		[7] = {
 			223,
@@ -3982,7 +4012,8 @@ pg.furniture_data_template = setmetatable({
 			323102,
 			324118,
 			325110,
-			325126
+			325126,
+			328118
 		},
 		[4] = {
 			1001,
@@ -4096,7 +4127,8 @@ pg.furniture_data_template = setmetatable({
 			324001,
 			325001,
 			326001,
-			327001
+			327001,
+			328001
 		},
 		[3] = {
 			1002,
@@ -4211,7 +4243,8 @@ pg.furniture_data_template = setmetatable({
 			324002,
 			325002,
 			326002,
-			327002
+			327002,
+			328002
 		},
 		{
 			1101,
@@ -6297,7 +6330,24 @@ pg.furniture_data_template = setmetatable({
 			327113,
 			327114,
 			327115,
-			327116
+			327116,
+			328101,
+			328102,
+			328103,
+			328104,
+			328105,
+			328106,
+			328107,
+			328108,
+			328109,
+			328110,
+			328111,
+			328112,
+			328113,
+			328114,
+			328115,
+			328116,
+			328117
 		},
 		{
 			1108,
@@ -6987,6 +7037,9 @@ pg.furniture_data_template = setmetatable({
 			309,
 			310,
 			311,
+			313,
+			314,
+			315,
 			100002,
 			100004,
 			100005,
@@ -7041,7 +7094,8 @@ pg.furniture_data_template = setmetatable({
 			100069,
 			100072,
 			100074,
-			100075
+			100075,
+			100076
 		},
 		[2] = {
 			120,
@@ -9122,7 +9176,24 @@ pg.furniture_data_template = setmetatable({
 			327112,
 			327113,
 			327114,
-			327115
+			327115,
+			328101,
+			328102,
+			328103,
+			328105,
+			328106,
+			328107,
+			328108,
+			328109,
+			328110,
+			328111,
+			328112,
+			328113,
+			328114,
+			328115,
+			328116,
+			328117,
+			328118
 		},
 		[11] = {
 			143,
@@ -9686,7 +9757,8 @@ pg.furniture_data_template = setmetatable({
 			324001,
 			325001,
 			326001,
-			327001
+			327001,
+			328001
 		},
 		{
 			1002,
@@ -9801,7 +9873,8 @@ pg.furniture_data_template = setmetatable({
 			324002,
 			325002,
 			326002,
-			327002
+			327002,
+			328002
 		},
 		[5] = {
 			1101,
@@ -9958,7 +10031,8 @@ pg.furniture_data_template = setmetatable({
 			325104,
 			325105,
 			327104,
-			327116
+			327116,
+			328104
 		},
 		[3] = {
 			1108,
@@ -10337,6 +10411,9 @@ pg.furniture_data_template = setmetatable({
 		309,
 		310,
 		311,
+		313,
+		314,
+		315,
 		100002,
 		100003,
 		100004,
@@ -10411,6 +10488,7 @@ pg.furniture_data_template = setmetatable({
 		100073,
 		100074,
 		100075,
+		100076,
 		200001,
 		200002,
 		200003,
@@ -13451,7 +13529,27 @@ pg.furniture_data_template = setmetatable({
 		327115,
 		327116,
 		327301,
-		327302
+		327302,
+		328001,
+		328002,
+		328101,
+		328102,
+		328103,
+		328104,
+		328105,
+		328106,
+		328107,
+		328108,
+		328109,
+		328110,
+		328111,
+		328112,
+		328113,
+		328114,
+		328115,
+		328116,
+		328117,
+		328118
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -22192,7 +22290,7 @@ pg.base.furniture_data_template = {
 	[311] = {
 		spine_extra = "",
 		describe = "天穹の塔のエリア別に区切られたミニチュア、一定の周期で自ら外観を変える――「錬金術士と天空邂逅の塔」に参加した指揮官に贈る",
-		gain_by = "炼金术士与天际交汇之塔",
+		gain_by = "錬金術士と天空邂逅の塔",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
@@ -22228,6 +22326,226 @@ pg.base.furniture_data_template = {
 			{
 				"tianjitaxunzhang",
 				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[313] = {
+		spine_extra = "",
+		describe = "刃と魔法がアズィル城を永遠に守りますように",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 2,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "enzechengqizhiicon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		name = "アズィル城の旗",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 313,
+		can_rotate = 0,
+		size = {
+			4,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"enzechengqizhi",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[314] = {
+		spine_extra = "",
+		describe = "淵層界での大冒険を記念して作られたアズィル城のミニチュア（台座あり）",
+		gain_by = "淵層界の秘密",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 5,
+		is_get_time_note = 1,
+		themeId = 0,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 8,
+		icon = "masainaxunzhangicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "アズィル城ミニチュア",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "chuanmo/masainaxunzhang",
+		canputon = 0,
+		id = 314,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		interAction_group = {}
+	},
+	[315] = {
+		rarity = 4,
+		describe = "",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		belong = 1,
+		is_get_time_note = 0,
+		count = 1,
+		name = "甜品吧台",
+		is_3d_obj = 0,
+		advice = 0,
+		themeId = 0,
+		icon = "tianpinbataiicon",
+		deblocking = 1,
+		level = 1,
+		tag = 6,
+		effect = "",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 315,
+		can_rotate = 0,
+		size = {
+			7,
+			9
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"tianpinbataiB",
+				"normal"
+			},
+			{
+				"tianpinbataiT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit1",
+						nil,
+						"sit"
+					}
+				},
+				{
+					nil,
+					1,
+					{
+						{
+							"walk1"
+						},
+						"walk",
+						1
+					}
+				},
+				{
+					1
+				},
+				{
+					{
+						"sit1"
+					},
+					{
+						"sit2"
+					},
+					{
+						"sit3"
+					}
+				}
+			},
+			{
+				{
+					-40.1,
+					49.8
+				},
+				{
+					402.6,
+					317.4
+				},
+				"chuanmo/youeryuanxiaoche_mask1"
+			},
+			{
+				59.8,
+				-51.5
+			},
+			{
+				1,
+				1
+			}
+		},
+		spine_extra = {
+			{
+				{},
+				{
+					0,
+					0
+				},
+				{
+					1,
+					1
+				}
+			},
+			{
+				{},
+				{
+					0,
+					0
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		followBone = {
+			{
+				"char1",
+				1
+			},
+			{
+				"char3",
+				-1
+			},
+			{
+				"char2",
+				-1
 			}
 		},
 		interAction_group = {}
@@ -27410,6 +27728,57 @@ pg.base.furniture_data_template = {
 				{
 					"action",
 					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[100076] = {
+		spine_extra = "",
+		describe = "ぶくぶくぶくぶく――ピョ！…ぶくぶくぶくぶく……",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "chuipaofenweijiicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "饅頭バブルマシン",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 100076,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"chuipaofenweiji",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					"houzhai_paopao",
+					"action1"
 				}
 			}
 		},
@@ -161438,6 +161807,1035 @@ pg.base.furniture_data_template = {
 		canputonGrid = {},
 		can_trigger = {
 			0
+		},
+		interAction_group = {}
+	},
+	[328001] = {
+		spine_extra = "",
+		describe = "湯船に浸かって、くつろぎのひとときを楽しもう",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 127,
+		belong = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		deblocking = 1,
+		level = 1,
+		name = "林間秘湯の床",
+		effect = "",
+		advice = 0,
+		icon = "dibanwq2icon",
+		spine_action_replace = "",
+		picture = "wq2/dibanwq2",
+		comfortable = 4,
+		canputon = 0,
+		id = 328001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328002] = {
+		spine_extra = "",
+		describe = "湯船に浸かって、くつろぎのひとときを楽しもう",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		themeId = 127,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		deblocking = 1,
+		level = 5,
+		name = "林間秘湯の壁",
+		effect = "",
+		advice = 0,
+		icon = "qiangbiwq2icon",
+		spine_action_replace = "",
+		picture = "",
+		comfortable = 4,
+		canputon = 0,
+		id = 328002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbiwq2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[328101] = {
+		spine_extra = "",
+		describe = "長く浸かりすぎちゃった？一度出て休憩しよう",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 2,
+		is_3d_obj = 0,
+		name = "秘湯のスパシート",
+		themeId = 127,
+		icon = "chuangwq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 328101,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"chuangwq2",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sleep1",
+						nil,
+						"sleep"
+					}
+				},
+				{
+					nil,
+					1,
+					{
+						"sleep2",
+						"sleep",
+						false,
+						true
+					}
+				},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[328102] = {
+		rarity = 3,
+		describe = "広々とした檜浴槽。お湯が熱くて心地よい",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		belong = 1,
+		is_get_time_note = 0,
+		count = 1,
+		name = "秘湯の檜浴槽",
+		is_3d_obj = 0,
+		advice = 0,
+		themeId = 127,
+		icon = "dayuchiwq2icon",
+		deblocking = 1,
+		level = 1,
+		tag = 1,
+		effect = "",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 328102,
+		can_rotate = 0,
+		size = {
+			10,
+			10
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"dayuchiwq2B",
+				"normal"
+			},
+			{
+				"dayuchiwq2T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"wash"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{
+				{
+					-1.8,
+					140
+				},
+				{
+					180,
+					230
+				},
+				"wq2/yuantongwq2_mask"
+			},
+			{
+				-2.9,
+				-138.9
+			},
+			{
+				1,
+				1
+			}
+		},
+		spine_extra = {
+			{
+				{
+					{
+						-1.8,
+						140
+					},
+					{
+						180,
+						230
+					},
+					"wq2/yuantongwq2_mask"
+				},
+				{
+					-2.9,
+					-138.9
+				},
+				{
+					1,
+					1
+				}
+			},
+			{
+				{
+					{
+						-1.8,
+						140
+					},
+					{
+						180,
+						230
+					},
+					"wq2/yuantongwq2_mask"
+				},
+				{
+					-2.9,
+					-138.9
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		followBone = {
+			{
+				"char3",
+				-1
+			},
+			{
+				"char2",
+				-1
+			},
+			{
+				"char1",
+				1
+			}
+		},
+		interAction_group = {}
+	},
+	[328103] = {
+		spine_extra = "",
+		describe = "暖色のフロアライト、柔らかい光は目の保養になりそう",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 127,
+		is_3d_obj = 0,
+		count = 3,
+		tag = 1,
+		icon = "dengwq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "秘湯のフロアライト",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 328103,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"dengwq2",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[328104] = {
+		spine_extra = "",
+		describe = "柔らかい足拭きマット。踏むとマッサージ効果があるかも…？",
+		gain_by = "",
+		type = 5,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 127,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "didianwq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "秘湯の足拭きマット",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "wq2/didianwq2",
+		canputon = 0,
+		id = 328104,
+		can_rotate = 0,
+		size = {
+			2,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328105] = {
+		spine_extra = "",
+		describe = "快適な長椅子、腰を掛けるとアジサイの香りがする",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 127,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "huacongyiziwq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "秘湯の長椅子",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "wq2/huacongyiziwq2",
+		canputon = 0,
+		id = 328105,
+		can_rotate = 0,
+		size = {
+			4,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-49,
+					-24
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328106] = {
+		spine_extra = "",
+		describe = "穏やかな水の音。静寂で奥ゆかしい",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 127,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "jiashanliushuiwq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "秘湯の水景1",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 328106,
+		can_rotate = 0,
+		size = {
+			6,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jiashanliushuiwq2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[328107] = {
+		spine_extra = "",
+		describe = "石の山が重なり合い、雄大な造型になっている",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 127,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "jiashanwq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "秘湯の景石",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "wq2/jiashanwq2",
+		canputon = 0,
+		id = 328107,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328108] = {
+		spine_extra = "",
+		describe = "風とともに揺れる花。ほのかな香りを漂わせている",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 127,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "jingguanshitouwq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "秘湯の植栽",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "wq2/jingguanshitouwq2",
+		canputon = 0,
+		id = 328108,
+		can_rotate = 0,
+		size = {
+			5,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328109] = {
+		spine_extra = "",
+		describe = "紫の藤が垂れ下がり、花は繁茂して香り高い",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 127,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "jingguanshuwq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "秘湯の藤花",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 328109,
+		can_rotate = 0,
+		size = {
+			4,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jingguanshuwq2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[328110] = {
+		spine_extra = "",
+		describe = "実用的な木製タオル掛け。タオルを掛けやすいよう設置されている",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 127,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "maojinjiawq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "秘湯のタオル掛け",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "wq2/maojinjiawq2",
+		canputon = 0,
+		id = 328110,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328111] = {
+		spine_extra = "",
+		describe = "浴場ののれん。シンプルなデザインながら丁寧に装飾されている",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 127,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "menlianwq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "秘湯ののれん",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 328111,
+		can_rotate = 0,
+		size = {
+			1,
+			24
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"menlianwq2",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[328112] = {
+		spine_extra = "",
+		describe = "安心して盆の中に小物を入れておこう",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 127,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "mupenwq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "秘湯の物置盆",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "wq2/mupenwq2",
+		canputon = 0,
+		id = 328112,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328113] = {
+		spine_extra = "",
+		describe = "緑豊かで浴場に自然の爽やかさを",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 127,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "rukouzhiwuwq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "秘湯の盆栽2",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "wq2/rukouzhiwuwq2",
+		canputon = 0,
+		id = 328113,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328114] = {
+		spine_extra = "",
+		describe = "ニーズに応えたアイテムが一通り揃っている",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 127,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "tuopanwq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "秘湯のトリートメント",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "wq2/tuopanwq2",
+		canputon = 0,
+		id = 328114,
+		can_rotate = 0,
+		size = {
+			1,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328115] = {
+		spine_extra = "",
+		describe = "大浴場の外湯は石風呂が定番！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "秘湯の石風呂",
+		themeId = 127,
+		icon = "yuchiwq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 328115,
+		can_rotate = 0,
+		size = {
+			6,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yuchiwq2B",
+				"normal"
+			},
+			{
+				"yuchiwq2T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"wash"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[328116] = {
+		spine_extra = "",
+		describe = "緑豊かで浴場に自然の爽やかさを",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 127,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "zhuangshihuapenwq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "秘湯の盆栽1",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "wq2/zhuangshihuapenwq2",
+		canputon = 0,
+		id = 328116,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328117] = {
+		spine_extra = "",
+		describe = "湯上がりのお菓子。もぐもぐおいしい！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 127,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "zhuoziwq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "秘湯の湯上がり菓子",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "wq2/zhuoziwq2",
+		canputon = 0,
+		id = 328117,
+		can_rotate = 0,
+		size = {
+			2,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[328118] = {
+		spine_extra = "",
+		describe = "最高の秘湯をあなたに♪",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "プレミアム外湯",
+		themeId = 127,
+		icon = "yuantongwq2icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 328118,
+		can_rotate = 0,
+		size = {
+			5,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yuantongwq2B",
+				"normal"
+			},
+			{
+				"yuantongwq2T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"wash",
+						nil,
+						"wash"
+					},
+					{
+						"walk",
+						1,
+						"walk"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{
+				{
+					31,
+					143.9
+				},
+				{
+					274,
+					274
+				},
+				"wq2/yuantongwq2_mask"
+			},
+			{
+				-24.9,
+				-153.6
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
 		},
 		interAction_group = {}
 	}

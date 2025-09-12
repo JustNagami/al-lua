@@ -513,6 +513,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>「停驻在高塔上的蔷薇，守护着皇家最后的荣光」</color>\n「高塔上的蔷薇」活动获取",
 		scene = {}
 	},
+	[336] = {
+		time_limit_type = 0,
+		name = "凤鸣天原",
+		gain_by = "",
+		id = 336,
+		time_second = 0,
+		desc = "通过后续活动获得",
+		scene = {}
+	},
 	[401] = {
 		time_limit_type = 0,
 		name = "殿堂纪念：企业",
@@ -682,6 +691,15 @@ pg.item_data_frame = {
 		id = 610,
 		time_second = 0,
 		desc = "<color=#ffffff>在别墅岛上度过一个完美假期吧！</color>通过参与「夏日重建！海岛别墅度假计划！」活动获取",
+		scene = {}
+	},
+	[611] = {
+		time_limit_type = 0,
+		name = "林间清风",
+		gain_by = "",
+		id = 611,
+		time_second = 0,
+		desc = "<color=#ffffff>感受着林间的清风，来一场别样的度假体验吧~</color>通过参与「林间度假准备」活动获取",
 		scene = {}
 	},
 	[1001] = {
@@ -922,6 +940,7 @@ pg.item_data_frame = {
 		333,
 		334,
 		335,
+		336,
 		401,
 		402,
 		404,
@@ -941,6 +960,7 @@ pg.item_data_frame = {
 		607,
 		609,
 		610,
+		611,
 		1001,
 		1002,
 		1003,

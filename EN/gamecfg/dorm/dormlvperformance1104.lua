@@ -11,7 +11,7 @@
 		type = 8,
 		name = "other",
 		params = {
-			scene = "map_newjerseyhostel_02",
+			scene = "map_newjerseyhostel_01",
 			sceneRoot = "Xinzexi_DB/Newjerseyhostel"
 		}
 	},

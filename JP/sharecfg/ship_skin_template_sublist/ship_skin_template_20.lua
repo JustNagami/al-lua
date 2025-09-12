@@ -1,245 +1,6 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_20 = {
-	[11100050] = {
-		ship_group = 1110005,
-		name = "西連寺春菜",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 11100050,
-		group_index = 0,
-		purchase_offset = "",
-		painting = "xiliansi_tolove",
-		l2d_drag_rate = "",
-		part_scale = "",
-		prefab = "xiliansi_tolove",
-		shop_type_id = 0,
-		shop_id = 0,
-		illustrator = -1,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		l2d_para_range = "",
-		l2d_voice_calibrate = "",
-		bg = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = -1,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "はじめまして、指揮官くん。西連寺春菜っていいます。これからしばらく、ここでお世話になると思うけど、よろしくね。何か私に手伝えることがあったら、いつでも言ってね",
-		voice_actor = 214,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.085,
-					0.489,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.09,
-					0.48,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.685,
-					2.376,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.359,
-							2.441,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[11100051] = {
-		ship_group = 1110005,
-		name = "全ては静謐な夜に",
-		hand_id = 13,
-		bgm = "story-richang-refreshing",
-		gyro = 0,
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 11100051,
-		group_index = 1,
-		purchase_offset = "",
-		painting = "xiliansi_2_tolove",
-		l2d_drag_rate = "",
-		part_scale = "",
-		prefab = "xiliansi_2_tolove",
-		shop_type_id = 20,
-		shop_id = 71076,
-		illustrator = -1,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		l2d_para_range = "",
-		l2d_voice_calibrate = "",
-		bg = "109",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "指揮官くん、紅茶淹れたんだけど一緒にどう…かな？私のおすすめの茶葉なの。",
-		voice_actor = 214,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2,
-			5
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.04,
-					0.61,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.035,
-					0.592,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.761,
-					2.399,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.329,
-							2.418,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
 	[11100060] = {
 		ship_group = 1110006,
 		name = "古手川唯",
@@ -1976,7 +1737,6 @@ pg.base.ship_skin_template_20 = {
 		bg = "106",
 		spine_use_live2d = 0,
 		spine_action_offset = false,
-		spine_offset_profile = "",
 		skin_type = 0,
 		bg_sp = "",
 		voice_actor_2 = -1,
@@ -2003,6 +1763,12 @@ pg.base.ship_skin_template_20 = {
 			0,
 			0,
 			0
+		},
+		spine_offset_profile = {
+			72.5,
+			-714.7,
+			0,
+			0.85
 		},
 		fx_container = {
 			{
@@ -4415,6 +4181,162 @@ pg.base.ship_skin_template_20 = {
 			"mail",
 			"touch_body",
 			"touch_special",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			use_event = true
+		},
+		l2d_para_range = {
+			ParamAngleX = {
+				-20,
+				20
+			},
+			ParamAngleY = {
+				-20,
+				20
+			},
+			ParamEyeBallX = {
+				-0.7,
+				0.7
+			},
+			ParamEyeBallY = {
+				-0.7,
+				0.7
+			},
+			ParamBodyAngleX = {
+				-10,
+				5
+			}
+		}
+	},
+	[499018] = {
+		ship_group = 49901,
+		name = "抱擁のアップグルント",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 499018,
+		group_index = 8,
+		purchase_offset = "",
+		painting = "luoen_h",
+		l2d_drag_rate = "",
+		part_scale = "",
+		prefab = "luoen_h",
+		shop_type_id = 9998,
+		shop_id = 0,
+		illustrator = 1,
+		lip_smoothing = 0,
+		bg = "135",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = 1,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "指揮官…？ローンの心の隙間を埋めてくれるだけでなく、ローンの昂る感情すら包みこんでくれるなんて……ああ…指揮官ったら本当に…許せないぐらい、心を許したくなりますよね…",
+		voice_actor = 109,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.821,
+					2.381,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.659,
+					1.478,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.19,
+					0.05,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.62,
+					2.407,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				40,
+				{
+					{
+						"smoke",
+						{
+							-0.809,
+							2.352,
+							0
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
 			"touch_head"
 		},
 		l2d_voice_calibrate = {
@@ -10107,6 +10029,232 @@ pg.base.ship_skin_template_20 = {
 			0.5,
 			1,
 			1
+		}
+	},
+	[199033] = {
+		ship_group = 19903,
+		name = "おいしいイブニング・ミルク",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		id = 199033,
+		l2d_drag_rate = "",
+		group_index = 3,
+		part_scale = "",
+		painting = "ankeleiqi_4",
+		prefab = "ankeleiqi_4",
+		shop_id = 71173,
+		illustrator = -1,
+		shop_type_id = 20,
+		lip_smoothing = 0,
+		bg = "185",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "せんせい、みつかった……！アンカレッジ……ねむれなくて……あまいミルク、のみたい……いい？",
+		voice_actor = 59,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		lip_sync_gain = 0,
+		show_skin = "stand",
+		tag = {
+			9,
+			2
+		},
+		live2d_offset = {
+			0,
+			-181,
+			0,
+			60
+		},
+		shop_offset = {
+			0,
+			-181,
+			0,
+			60
+		},
+		purchase_offset = {
+			0,
+			-181,
+			0,
+			60
+		},
+		live2d_offset_profile = {
+			180,
+			-181,
+			0,
+			60
+		},
+		spine_offset_profile = {
+			0,
+			-181,
+			0,
+			60
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.641,
+					0.9829999,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.618,
+					1,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.796,
+					2.454,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.82,
+							2.366,
+							0
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_special",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			use_event = true
+		},
+		l2d_para_range = {
+			ParamAngleX = {
+				-15,
+				15
+			}
+		},
+		ship_l2d_id = {
+			19903301,
+			19903302,
+			19903303,
+			19903304,
+			19903305,
+			19903306,
+			19903307,
+			19903308,
+			19903309,
+			19903310,
+			19903311,
+			19903312,
+			19903313,
+			19903314,
+			19903315,
+			19903316,
+			19903317,
+			19903318,
+			19903319,
+			19903320,
+			19903321,
+			19903322,
+			19903323,
+			19903324,
+			19903325,
+			19903326,
+			19903327,
+			19903328,
+			19903329,
+			19903330,
+			19903331,
+			19903332,
+			19903333,
+			19903334
+		},
+		get_showing = {
+			show = 1,
+			data = {
+				{
+					1509,
+					222,
+					2,
+					0,
+					120,
+					2
+				},
+				{
+					40,
+					311,
+					2,
+					-100,
+					0,
+					2
+				},
+				{
+					359,
+					-311,
+					2,
+					0,
+					-100,
+					2
+				}
+			}
 		}
 	},
 	[199038] = {
@@ -16578,6 +16726,11 @@ pg.base.ship_skin_template_20 = {
 					2.152,
 					0
 				}
+			},
+			remote = {
+				-50,
+				0,
+				0
 			}
 		},
 		smoke = {
@@ -16698,6 +16851,11 @@ pg.base.ship_skin_template_20 = {
 					2.109,
 					0
 				}
+			},
+			remote = {
+				-50,
+				0,
+				0
 			}
 		},
 		smoke = {

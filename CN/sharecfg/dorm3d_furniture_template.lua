@@ -832,6 +832,67 @@ pg.dorm3d_furniture_template = {
 			"fbx/no_bake_pay_prop/bedroom"
 		}
 	},
+	[401] = {
+		name = "滨海欢愉 ",
+		rarity = 5,
+		is_exclusive = 0,
+		type = 3,
+		is_special = 1,
+		room_id = 4,
+		icon = "dorm3dIcon/3Ddrom_beach_PremiumFurniture1",
+		desc = "度假时间开始~！椰树下的阳光，海岸边的清凉。从高处直冲而下时，迎面扑来海风混合着飞溅的水珠。只是刹那间就跃入了一片假期的欢愉。",
+		acesses = "",
+		model = "pay_publicplace/slide",
+		id = 401,
+		touch_id = "",
+		scene_hides = "",
+		target_slots = {
+			140101
+		},
+		shop_id = {
+			270401
+		},
+		unlock_tips = {
+			7
+		},
+		unlock_banners = {
+			"banner_furniture401"
+		}
+	},
+	[323] = {
+		name = "云中甜梦",
+		rarity = 4,
+		is_special = 0,
+		type = 5,
+		icon = "dorm3dIcon/3Ddrom_ankeleiqi_PremiumFurniture8",
+		room_id = 3,
+		desc = "轻轻晃动的蓬松云朵，柔软细腻的触感，或许这就是坐进一团棉花糖的感觉，和她一起在诱人的香甜气息中享受轻松时光吧。 ",
+		acesses = "",
+		model = "Pay_Anchoragehostel/pre_db_ah_livingroom01",
+		id = 323,
+		is_exclusive = 1,
+		target_slots = {
+			130302
+		},
+		touch_id = {
+			{
+				19903,
+				1990360
+			}
+		},
+		shop_id = {
+			270303
+		},
+		unlock_tips = {
+			3
+		},
+		unlock_banners = {
+			"banner_furniture323"
+		},
+		scene_hides = {
+			"fbx/no_bake_pay_prop/livingroom"
+		}
+	},
 	[1101] = {
 		name = "兔兔摇篮",
 		rarity = 3,
@@ -1049,6 +1110,40 @@ pg.dorm3d_furniture_template = {
 			"no_bake_pay_prop/livingroom"
 		}
 	},
+	[1152] = {
+		name = "动感飞轮",
+		rarity = 5,
+		is_special = 1,
+		type = 5,
+		icon = "dorm3dIcon/3Ddrom_xinzexi_PremiumFurniture4",
+		room_id = 11,
+		desc = "专业的健身器材，甚至考虑到了使用者的精神娱乐需求。\n只要蹬上踏板，足不出户也能开启一段心跳加速的畅快旅途。",
+		acesses = "",
+		model = "Pay_Newjerseyhostel/pre_db_njh_entertainment01",
+		id = 1152,
+		is_exclusive = 1,
+		target_slots = {
+			1110303
+		},
+		touch_id = {
+			{
+				10517,
+				1051750
+			}
+		},
+		shop_id = {
+			270204
+		},
+		unlock_tips = {
+			3
+		},
+		unlock_banners = {
+			"banner_furniture1152"
+		},
+		scene_hides = {
+			"no_bake_pay_prop/livingroom"
+		}
+	},
 	get_id_list_by_room_id = {
 		{
 			1,
@@ -1086,7 +1181,11 @@ pg.dorm3d_furniture_template = {
 			306,
 			307,
 			321,
-			322
+			322,
+			323
+		},
+		{
+			401
 		},
 		[11] = {
 			1101,
@@ -1097,7 +1196,8 @@ pg.dorm3d_furniture_template = {
 			1106,
 			1107,
 			1108,
-			1151
+			1151,
+			1152
 		}
 	},
 	all = {
@@ -1133,6 +1233,8 @@ pg.dorm3d_furniture_template = {
 		307,
 		321,
 		322,
+		401,
+		323,
 		1101,
 		1102,
 		1103,
@@ -1141,6 +1243,7 @@ pg.dorm3d_furniture_template = {
 		1106,
 		1107,
 		1108,
-		1151
+		1151,
+		1152
 	}
 }

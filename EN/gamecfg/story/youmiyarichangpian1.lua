@@ -9,7 +9,7 @@
 			bgName = "star_level_bg_540",
 			hidePaintObj = true,
 			say = "Port - Research Department",
-			bgm = "yumia-79",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

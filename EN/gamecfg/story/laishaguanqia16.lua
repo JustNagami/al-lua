@@ -264,7 +264,7 @@
 			bgName = "bg_ryza_1",
 			say = "Having successfully retreated, the girls returned to the Land of Beginnings.",
 			bgmDelay = 2,
-			bgm = "ryza-12",
+			bgm = "ryza-az-theme",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

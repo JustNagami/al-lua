@@ -504,6 +504,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>「高い塔に佇む薔薇は、ロイヤルの最後の栄光を守り続ける」</color>――「高い塔の薔薇」イベントで入手可能",
 		scene = {}
 	},
+	[336] = {
+		time_limit_type = 0,
+		name = "鳳鳴アマハラ",
+		gain_by = "",
+		id = 336,
+		time_second = 0,
+		desc = "今後開催されるイベントで入手可能",
+		scene = {}
+	},
 	[401] = {
 		time_limit_type = 0,
 		name = "殿堂入り：エンタープライズ",
@@ -664,6 +673,15 @@ pg.item_data_frame = {
 		id = 610,
 		time_second = 0,
 		desc = "<color=#ffffff>リゾート島で完璧なバカンスを楽しもう！</color>「盛夏再び！リゾート再建計画！」参加で入手可能",
+		scene = {}
+	},
+	[611] = {
+		time_limit_type = 0,
+		name = "林間の清き風",
+		gain_by = "",
+		id = 611,
+		time_second = 0,
+		desc = "<color=#ffffff>森を吹き抜ける清き風を感じながら、いつもと違う休暇を楽しもう♪</color>「林間休暇準備」参加で入手可能",
 		scene = {}
 	},
 	[1001] = {
@@ -903,6 +921,7 @@ pg.item_data_frame = {
 		333,
 		334,
 		335,
+		336,
 		401,
 		402,
 		403,
@@ -921,6 +940,7 @@ pg.item_data_frame = {
 		607,
 		609,
 		610,
+		611,
 		1001,
 		1002,
 		1003,

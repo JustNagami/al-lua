@@ -832,6 +832,67 @@ pg.dorm3d_furniture_template = {
 			"fbx/no_bake_pay_prop/bedroom"
 		}
 	},
+	[401] = {
+		name = "シーサイドレジャー",
+		rarity = 5,
+		is_exclusive = 0,
+		type = 3,
+		is_special = 1,
+		room_id = 4,
+		icon = "dorm3dIcon/3Ddrom_beach_PremiumFurniture1",
+		desc = "バカンスの時間が始まる！ヤシの木の下の日差し、涼しい海岸沿い、水しぶきと潮風。心は一瞬でバカンスの歓びに包まれる。",
+		acesses = "",
+		model = "pay_publicplace/slide",
+		id = 401,
+		touch_id = "",
+		scene_hides = "",
+		target_slots = {
+			140101
+		},
+		shop_id = {
+			270401
+		},
+		unlock_tips = {
+			7
+		},
+		unlock_banners = {
+			"banner_furniture401"
+		}
+	},
+	[323] = {
+		name = "クラウドドリーム",
+		rarity = 4,
+		is_special = 0,
+		type = 5,
+		icon = "dorm3dIcon/3Ddrom_ankeleiqi_PremiumFurniture8",
+		room_id = 3,
+		desc = "ゆらゆらする雲、ふんわりと優しい感触、マシュマロを思わせる座り心地。一緒に甘い香りの中でのんびり過ごそう",
+		acesses = "",
+		model = "Pay_Anchoragehostel/pre_db_ah_livingroom01",
+		id = 323,
+		is_exclusive = 1,
+		target_slots = {
+			130302
+		},
+		touch_id = {
+			{
+				19903,
+				1990360
+			}
+		},
+		shop_id = {
+			270303
+		},
+		unlock_tips = {
+			3
+		},
+		unlock_banners = {
+			"banner_furniture323"
+		},
+		scene_hides = {
+			"fbx/no_bake_pay_prop/livingroom"
+		}
+	},
 	[1101] = {
 		name = "うさうさクレイドル",
 		rarity = 3,
@@ -1049,6 +1110,40 @@ pg.dorm3d_furniture_template = {
 			"no_bake_pay_prop/livingroom"
 		}
 	},
+	[1152] = {
+		name = "ダイナミックホイール",
+		rarity = 5,
+		is_special = 1,
+		type = 5,
+		icon = "dorm3dIcon/3Ddrom_xinzexi_PremiumFurniture4",
+		room_id = 11,
+		desc = "使用者のメンタルケアまでも配慮してくれる、本格的なフィットネスマシン。\nペダルを漕ぐだけで、自宅にいながらもワクワクする冒険の旅に出られる！",
+		acesses = "",
+		model = "Pay_Newjerseyhostel/pre_db_njh_entertainment01",
+		id = 1152,
+		is_exclusive = 1,
+		target_slots = {
+			1110303
+		},
+		touch_id = {
+			{
+				10517,
+				1051750
+			}
+		},
+		shop_id = {
+			270204
+		},
+		unlock_tips = {
+			3
+		},
+		unlock_banners = {
+			"banner_furniture1152"
+		},
+		scene_hides = {
+			"no_bake_pay_prop/livingroom"
+		}
+	},
 	get_id_list_by_room_id = {
 		{
 			1,
@@ -1086,7 +1181,11 @@ pg.dorm3d_furniture_template = {
 			306,
 			307,
 			321,
-			322
+			322,
+			323
+		},
+		{
+			401
 		},
 		[11] = {
 			1101,
@@ -1097,7 +1196,8 @@ pg.dorm3d_furniture_template = {
 			1106,
 			1107,
 			1108,
-			1151
+			1151,
+			1152
 		}
 	},
 	all = {
@@ -1133,6 +1233,8 @@ pg.dorm3d_furniture_template = {
 		307,
 		321,
 		322,
+		401,
+		323,
 		1101,
 		1102,
 		1103,
@@ -1141,6 +1243,7 @@ pg.dorm3d_furniture_template = {
 		1106,
 		1107,
 		1108,
-		1151
+		1151,
+		1152
 	}
 }

@@ -9,7 +9,7 @@
 			bgName = "star_level_bg_500",
 			hidePaintObj = true,
 			say = "沿着腐蚀河流逆流而上，众人来到了一片废弃的村落中。",
-			bgm = "yumia-20",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -74,12 +74,13 @@
 			}
 		},
 		{
-			actor = 900519,
+			expression = 0,
 			side = 2,
 			bgName = "star_level_bg_500",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
+			actor = 900519,
 			say = "这些具有腐蚀性的水流……应该是从更上方顺着瀑布流下来的。",
 			typewriter = {
 				speed = 0.05,

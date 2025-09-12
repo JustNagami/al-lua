@@ -12,7 +12,7 @@
 			bgName = "bg_ryza_1",
 			stopbgm = true,
 			say = "Mirror Sea - Underworld Grove",
-			bgm = "ryza-7",
+			bgm = "ryza-az-theme",
 			flashout = {
 				black = true,
 				dur = 1,
