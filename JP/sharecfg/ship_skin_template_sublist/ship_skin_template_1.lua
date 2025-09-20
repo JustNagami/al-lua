@@ -11972,6 +11972,163 @@ pg.base.ship_skin_template_1 = {
 			}
 		}
 	},
+	[101472] = {
+		ship_group = 10147,
+		name = "テクノロジー？忍術？",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		id = 101472,
+		l2d_drag_rate = "",
+		group_index = 2,
+		purchase_offset = "",
+		painting = "molisen_3",
+		part_scale = "",
+		prefab = "molisen_3",
+		shop_id = 71213,
+		shop_type_id = 28,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "320",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "ここって、忍者の修行シーンの撮影にピッタリですね……こほん！指揮官に忍術を披露させていただきます！……ど、どうかご覧ください…変化の術！やあ！",
+		voice_actor = 277,
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			7,
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		shop_offset = {
+			354,
+			-1050,
+			0,
+			1.16
+		},
+		spine_offset_profile = {
+			417,
+			-1066,
+			0,
+			1.17
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.697,
+					0.683,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.461,
+					0.938,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.822,
+							2.495,
+							0
+						}
+					}
+				}
+			}
+		},
+		spine_offset = {
+			-30,
+			-626,
+			0,
+			0.7
+		},
+		get_showing = {
+			show = 1,
+			data = {
+				{
+					-1350,
+					-873,
+					2,
+					0,
+					120,
+					2
+				},
+				{
+					-1038,
+					172,
+					2,
+					120,
+					0,
+					2
+				},
+				{
+					175,
+					32,
+					2,
+					0,
+					-120,
+					2
+				}
+			}
+		}
+	},
 	[101480] = {
 		ship_group = 10148,
 		name = "イングラハム",
@@ -13048,6 +13205,208 @@ pg.base.ship_skin_template_1 = {
 			10151120,
 			10151121,
 			10151122
+		}
+	},
+	[101512] = {
+		ship_group = 10151,
+		name = "ウサウサ城主の見回り休憩",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		id = 101512,
+		l2d_drag_rate = "",
+		group_index = 2,
+		purchase_offset = "",
+		painting = "lafeiII_4",
+		part_scale = "",
+		prefab = "lafeiII_4",
+		shop_id = 71216,
+		shop_type_id = 10,
+		illustrator = -1,
+		lip_smoothing = 0,
+		bg = "552",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "んぅ…おねむ……ウサウサ城主の偉いラフィーはちょっと休憩したい……指揮官…じゃなくて奉行……領地の見回りは…少し待ってから……",
+		voice_actor = 35,
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		tag = {
+			6,
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		shop_offset = {
+			-62.2,
+			-512.2,
+			0,
+			0.47
+		},
+		spine_offset_profile = {
+			-1.7,
+			-507.4,
+			0,
+			0.46
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.367,
+					1.057,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.477,
+					0.959,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.637,
+					2.247,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.833,
+							2.413,
+							0
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			use_event = true
+		},
+		spine_offset = {
+			40.6,
+			-598.5,
+			0,
+			0.526
+		},
+		ship_l2d_id = {
+			10151101,
+			10151102,
+			10151103,
+			10151104,
+			10151105,
+			10151106,
+			10151107,
+			10151108,
+			10151109,
+			10151110,
+			10151111,
+			10151112,
+			10151113,
+			10151114,
+			10151115,
+			10151116,
+			10151117,
+			10151118,
+			10151119,
+			10151120,
+			10151121,
+			10151122
+		},
+		get_showing = {
+			show = 1,
+			data = {
+				{
+					-730,
+					602,
+					2,
+					120,
+					0,
+					2
+				},
+				{
+					409.5,
+					132,
+					2,
+					0,
+					-156,
+					2
+				},
+				{
+					-519,
+					-577,
+					2,
+					-100,
+					0,
+					2
+				}
+			}
 		}
 	},
 	[101520] = {

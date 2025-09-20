@@ -182,6 +182,8 @@ pg.furniture_data_template = setmetatable({
 			313,
 			314,
 			315,
+			316,
+			317,
 			100002,
 			100003,
 			100004,
@@ -3546,6 +3548,30 @@ pg.furniture_data_template = setmetatable({
 			328116,
 			328117,
 			328118
+		},
+		[129] = {
+			329001,
+			329002,
+			329101,
+			329102,
+			329103,
+			329104,
+			329105,
+			329106,
+			329107,
+			329108,
+			329109,
+			329110,
+			329111,
+			329112,
+			329113,
+			329114,
+			329115,
+			329116,
+			329117,
+			329118,
+			329119,
+			329120
 		}
 	},
 	get_id_list_by_tag = {
@@ -3659,6 +3685,7 @@ pg.furniture_data_template = setmetatable({
 			310,
 			313,
 			315,
+			317,
 			100002,
 			100003,
 			100004,
@@ -3806,7 +3833,8 @@ pg.furniture_data_template = setmetatable({
 			304,
 			307,
 			311,
-			314
+			314,
+			316
 		},
 		[7] = {
 			223,
@@ -4013,7 +4041,8 @@ pg.furniture_data_template = setmetatable({
 			324118,
 			325110,
 			325126,
-			328118
+			328118,
+			329120
 		},
 		[4] = {
 			1001,
@@ -4128,7 +4157,8 @@ pg.furniture_data_template = setmetatable({
 			325001,
 			326001,
 			327001,
-			328001
+			328001,
+			329001
 		},
 		[3] = {
 			1002,
@@ -4244,7 +4274,8 @@ pg.furniture_data_template = setmetatable({
 			325002,
 			326002,
 			327002,
-			328002
+			328002,
+			329002
 		},
 		{
 			1101,
@@ -6347,7 +6378,26 @@ pg.furniture_data_template = setmetatable({
 			328114,
 			328115,
 			328116,
-			328117
+			328117,
+			329101,
+			329102,
+			329103,
+			329104,
+			329105,
+			329106,
+			329107,
+			329108,
+			329109,
+			329110,
+			329111,
+			329112,
+			329113,
+			329114,
+			329115,
+			329116,
+			329117,
+			329118,
+			329119
 		},
 		{
 			1108,
@@ -7040,6 +7090,8 @@ pg.furniture_data_template = setmetatable({
 			313,
 			314,
 			315,
+			316,
+			317,
 			100002,
 			100004,
 			100005,
@@ -9193,7 +9245,25 @@ pg.furniture_data_template = setmetatable({
 			328115,
 			328116,
 			328117,
-			328118
+			328118,
+			329101,
+			329102,
+			329104,
+			329105,
+			329106,
+			329107,
+			329109,
+			329110,
+			329111,
+			329112,
+			329113,
+			329114,
+			329115,
+			329116,
+			329117,
+			329118,
+			329119,
+			329120
 		},
 		[11] = {
 			143,
@@ -9758,7 +9828,8 @@ pg.furniture_data_template = setmetatable({
 			325001,
 			326001,
 			327001,
-			328001
+			328001,
+			329001
 		},
 		{
 			1002,
@@ -9874,7 +9945,8 @@ pg.furniture_data_template = setmetatable({
 			325002,
 			326002,
 			327002,
-			328002
+			328002,
+			329002
 		},
 		[5] = {
 			1101,
@@ -10032,7 +10104,9 @@ pg.furniture_data_template = setmetatable({
 			325105,
 			327104,
 			327116,
-			328104
+			328104,
+			329103,
+			329108
 		},
 		[3] = {
 			1108,
@@ -10414,6 +10488,8 @@ pg.furniture_data_template = setmetatable({
 		313,
 		314,
 		315,
+		316,
+		317,
 		100002,
 		100003,
 		100004,
@@ -13549,7 +13625,29 @@ pg.furniture_data_template = setmetatable({
 		328115,
 		328116,
 		328117,
-		328118
+		328118,
+		329001,
+		329002,
+		329101,
+		329102,
+		329103,
+		329104,
+		329105,
+		329106,
+		329107,
+		329108,
+		329109,
+		329110,
+		329111,
+		329112,
+		329113,
+		329114,
+		329115,
+		329116,
+		329117,
+		329118,
+		329119,
+		329120
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -22546,6 +22644,92 @@ pg.base.furniture_data_template = {
 			{
 				"char2",
 				-1
+			}
+		},
+		interAction_group = {}
+	},
+	[316] = {
+		spine_extra = "",
+		describe = "天域アマハラ中心区域の主殿をモチーフとしたミニチュア。3色の蝶による光輪は単なるライトエフェクトのようだ――「アマハラに舞い奉れ」に参加した指揮官に贈る",
+		gain_by = "アマハラに舞い奉れ",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 5,
+		is_get_time_note = 1,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 8,
+		icon = "baifengxunzhangicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "アマハラ主殿ミニチュア",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 316,
+		can_rotate = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"baifengxunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[317] = {
+		spine_extra = "",
+		describe = "不思議の桃源郷にある、不思議の城に収められた不思議な宝物――「激戦！忍びの城」に参加した指揮官に贈る",
+		gain_by = "激戦！忍びの城",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 6,
+		icon = "mofangjinheicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "忍者の城の秘法",
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 317,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"mofangjinhe",
+				"normal"
 			}
 		},
 		interAction_group = {}
@@ -162827,6 +163011,979 @@ pg.base.furniture_data_template = {
 			{
 				-24.9,
 				-153.6
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[329001] = {
+		spine_extra = "",
+		describe = "忍者の城で、ハラハラドキドキの忍者大冒険を楽しもう！",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		themeId = 129,
+		belong = 0,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		deblocking = 1,
+		level = 1,
+		name = "忍者の城の床",
+		effect = "",
+		advice = 0,
+		icon = "dibannjicon",
+		spine_action_replace = "",
+		picture = "nj/dibannj",
+		comfortable = 4,
+		canputon = 0,
+		id = 329001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329002] = {
+		spine_extra = "",
+		describe = "忍者の城で、ハラハラドキドキの忍者大冒険を楽しもう！",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		themeId = 129,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		deblocking = 1,
+		level = 5,
+		name = "忍者の城の壁",
+		effect = "",
+		advice = 0,
+		icon = "qiangbinjicon",
+		spine_action_replace = "",
+		picture = "",
+		comfortable = 4,
+		canputon = 0,
+		id = 329002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbinj",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[329101] = {
+		spine_extra = "",
+		describe = "修行で疲れたかい？座って休むといい",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "忍者の野点席",
+		themeId = 129,
+		icon = "changyinjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 329101,
+		can_rotate = 0,
+		size = {
+			3,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"changyinj",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[329102] = {
+		spine_extra = "",
+		describe = "水が澄んでいて、魚の泳いでいる姿がよく見える",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 129,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "chitangnjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "庭の池",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "nj/chitangnj",
+		canputon = 0,
+		id = 329102,
+		can_rotate = 0,
+		size = {
+			7,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"chitangnj",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[329103] = {
+		spine_extra = "",
+		describe = "白い砂が細かくて、踏むと独特のバランス感が楽しめる",
+		gain_by = "",
+		type = 5,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 129,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "ditannjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "庭の砂場",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "nj/ditannj",
+		canputon = 0,
+		id = 329103,
+		can_rotate = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329104] = {
+		spine_extra = "",
+		describe = "まっすぐな渡り廊下。時々人が通るのが見える",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		themeId = 129,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "langdaonjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "渡り廊下",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "nj/langdaonj",
+		canputon = 0,
+		id = 329104,
+		can_rotate = 0,
+		size = {
+			2,
+			10
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329105] = {
+		spine_extra = "",
+		describe = "水が流れる音が澄んでいて心地よい",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 129,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "liushuinjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "庭のししおどし",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 329105,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"liushuinj",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[329106] = {
+		spine_extra = "",
+		describe = "真ん中の円が見える？そこを狙って当てるのよ",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 129,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "muzhuangnjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "修行用木人",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "nj/muzhuangnj",
+		canputon = 0,
+		id = 329106,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329107] = {
+		spine_extra = "",
+		describe = "忍者を表す旗印。風になびく姿が威風堂々",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 129,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "qizhinjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "忍者の旗",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "nj/qizhinj",
+		canputon = 0,
+		id = 329107,
+		can_rotate = 0,
+		size = {
+			3,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329108] = {
+		spine_extra = "",
+		describe = "各エリアをつなぐ石畳の道。雨の日でも滑りやすくならない",
+		gain_by = "",
+		type = 5,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 129,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "shibanlunjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "忍者の石畳",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "nj/shibanlunj",
+		canputon = 0,
+		id = 329108,
+		can_rotate = 0,
+		size = {
+			2,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329109] = {
+		spine_extra = "",
+		describe = "忍術を使う時の基本姿勢。お手本にできる",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 129,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "shibeinjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "タヌキ忍者像",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "nj/shibeinj",
+		canputon = 0,
+		id = 329109,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329110] = {
+		spine_extra = "",
+		describe = "古風な石灯籠。夜になると温かい光で周囲を照らしてくれる",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 129,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "shidengnjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "庭の石灯籠",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 329110,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shidengnj",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[329111] = {
+		spine_extra = "",
+		describe = "定期的に修繕されている頑丈な壁。城内の安全を守っている",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 129,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "shiqiangnjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "忍者の城の壁",
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 329111,
+		can_rotate = 0,
+		size = {
+			24,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shiqiangnj",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[329112] = {
+		spine_extra = "",
+		describe = "石と白砂が美しく調和していて、山川と河流を表している",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 129,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "shitou1njicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "庭の石組1",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "nj/shitou1nj",
+		canputon = 0,
+		id = 329112,
+		can_rotate = 0,
+		size = {
+			2,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329113] = {
+		spine_extra = "",
+		describe = "石と白砂が美しく調和していて、山川と河流を表している",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		themeId = 129,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "shitou2njicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "庭の石組2",
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "nj/shitou2nj",
+		canputon = 0,
+		id = 329113,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329114] = {
+		spine_extra = "",
+		describe = "枝葉が茂った庭の木。木陰は休憩に最適",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 129,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "shumunjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "庭の大樹",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "nj/shumunj",
+		canputon = 0,
+		id = 329114,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329115] = {
+		spine_extra = "",
+		describe = "夏の涼みにもってこのな場所。時々風が竹の葉を揺らす音が聞こえる",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "庭の憩い場",
+		themeId = 129,
+		icon = "tingtainjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 329115,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"tingtainj",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[329116] = {
+		spine_extra = "",
+		describe = "様々な忍具が置いてあり、いつでも使える",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 129,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "wuqijianjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "忍者装備棚",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "nj/wuqijianj",
+		canputon = 0,
+		id = 329116,
+		can_rotate = 0,
+		size = {
+			3,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329117] = {
+		spine_extra = "",
+		describe = "咲いている桜が風に舞い散り、とてもロマンチック",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		themeId = 129,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "yinghuashunjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "忍者の城の桜",
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 329117,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yinghuashunj",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[329118] = {
+		spine_extra = "",
+		describe = "竹で編まれた柵。軽いがとても丈夫だ",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 129,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 2,
+		tag = 1,
+		icon = "zhalannjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "忍者の城の柵",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "nj/zhalannji",
+		canputon = 0,
+		id = 329118,
+		can_rotate = 0,
+		size = {
+			1,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329119] = {
+		spine_extra = "",
+		describe = "美しい模様が描かれている傘。実用品であり装飾品でもある",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		themeId = 129,
+		belong = 1,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 1,
+		icon = "zhisannjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		name = "忍者の紙傘",
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "nj/zhisannj",
+		canputon = 0,
+		id = 329119,
+		can_rotate = 0,
+		size = {
+			6,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329120] = {
+		spine_extra = "",
+		describe = "一見普通だが、様々な仕掛けが仕掛けられている忍者屋敷。影に隠れた暗器や罠に要注意",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "忍者屋敷",
+		themeId = 129,
+		icon = "fangwunjicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 329120,
+		can_rotate = 0,
+		size = {
+			8,
+			9
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"fangwunjB",
+				"normal"
+			},
+			{
+				"fangwunjT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"walk"
+					},
+					{
+						"tuozhuai2"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{},
+			{
+				0,
+				0
 			},
 			{
 				1,

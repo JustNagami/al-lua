@@ -852,6 +852,102 @@ pg.activity_medal_template = {
 		id = 5008708,
 		activity_medal_desc = "寒冬要塞よ、あなたたちの冬将軍が戻ってきた！"
 	},
+	[5013601] = {
+		prefab_node = "1",
+		next_medal = 0,
+		item = 65686,
+		remake_task_id = 0,
+		group = 50136,
+		task_id = 21836,
+		medal_asset = "ActivityMedal/5013601",
+		activity_medal_name = "ステッカー：天域アマハラ",
+		id = 5013601,
+		activity_medal_desc = "「天域は外域の屏なり。アマハラは天域に因りて定まる。たとえ地崩れ山潰え、浩劫来たるとも――天域アマハラ、永存を要す」"
+	},
+	[5013602] = {
+		prefab_node = "2",
+		next_medal = 0,
+		item = 65687,
+		remake_task_id = 0,
+		group = 50136,
+		task_id = 21837,
+		medal_asset = "ActivityMedal/5013602",
+		activity_medal_name = "ステッカー：鳳の影",
+		id = 5013602,
+		activity_medal_desc = "鳳の舞う影は麗しく、鳳の鳴き声がアマハラに響き渡る"
+	},
+	[5013603] = {
+		prefab_node = "3",
+		next_medal = 0,
+		item = 65688,
+		remake_task_id = 0,
+		group = 50136,
+		task_id = 21838,
+		medal_asset = "ActivityMedal/5013603",
+		activity_medal_name = "ステッカー：アマハラの舞",
+		id = 5013603,
+		activity_medal_desc = "雲に乗り、アマハラに舞い奉れ"
+	},
+	[5013604] = {
+		prefab_node = "4",
+		next_medal = 0,
+		item = 65689,
+		remake_task_id = 0,
+		group = 50136,
+		task_id = 21839,
+		medal_asset = "ActivityMedal/5013604",
+		activity_medal_name = "ステッカー：アマハラ絵巻",
+		id = 5013604,
+		activity_medal_desc = "絵巻に描かれしは、アマハラの景なり"
+	},
+	[5013605] = {
+		prefab_node = "5",
+		next_medal = 0,
+		item = 65690,
+		remake_task_id = 0,
+		group = 50136,
+		task_id = 21840,
+		medal_asset = "ActivityMedal/5013605",
+		activity_medal_name = "ステッカー：雲海の佳醸",
+		id = 5013605,
+		activity_medal_desc = "訪れし客人よ、佳醸を召し上がれ"
+	},
+	[5013606] = {
+		prefab_node = "6",
+		next_medal = 0,
+		item = 65691,
+		remake_task_id = 0,
+		group = 50136,
+		task_id = 21841,
+		medal_asset = "ActivityMedal/5013606",
+		activity_medal_name = "ステッカー：魘魔の息吹",
+		id = 5013606,
+		activity_medal_desc = "▂▃▆▂▃▆▇▂▃▇█▆▆▇▇▆▇"
+	},
+	[5013607] = {
+		prefab_node = "7",
+		next_medal = 0,
+		item = 65692,
+		remake_task_id = 0,
+		group = 50136,
+		task_id = 21842,
+		medal_asset = "ActivityMedal/5013607",
+		activity_medal_name = "ステッカー：霊狐",
+		id = 5013607,
+		activity_medal_desc = "ふわふわもこもこ、でも触れられない……"
+	},
+	[5013608] = {
+		prefab_node = "8",
+		next_medal = 0,
+		item = 65693,
+		remake_task_id = 0,
+		group = 50136,
+		task_id = 21843,
+		medal_asset = "ActivityMedal/5013608",
+		activity_medal_name = "ステッカー：幻夢石",
+		id = 5013608,
+		activity_medal_desc = "額に当てれば、幻夢が具現化する"
+	},
 	get_id_list_by_group = {
 		[5711] = {
 			571101,
@@ -941,6 +1037,16 @@ pg.activity_medal_template = {
 			5008706,
 			5008707,
 			5008708
+		},
+		[50136] = {
+			5013601,
+			5013602,
+			5013603,
+			5013604,
+			5013605,
+			5013606,
+			5013607,
+			5013608
 		}
 	},
 	all = {
@@ -1014,6 +1120,14 @@ pg.activity_medal_template = {
 		5008705,
 		5008706,
 		5008707,
-		5008708
+		5008708,
+		5013601,
+		5013602,
+		5013603,
+		5013604,
+		5013605,
+		5013606,
+		5013607,
+		5013608
 	}
 }

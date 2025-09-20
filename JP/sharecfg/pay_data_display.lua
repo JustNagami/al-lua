@@ -88,6 +88,10 @@ pg.pay_data_display = setmetatable({
 		93,
 		94,
 		95,
+		96,
+		97,
+		98,
+		99,
 		1000,
 		1001,
 		1002,
@@ -166,6 +170,9 @@ pg.pay_data_display = setmetatable({
 		2054,
 		2055,
 		2056,
+		2057,
+		2058,
+		2059,
 		5001,
 		5002,
 		5003,
@@ -10575,6 +10582,542 @@ pg.base.pay_data_display = {
 			}
 		}
 	},
+	[96] = {
+		limit_group = 0,
+		name = "八周年福袋A",
+		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
+		type = 1,
+		second_text = "大量な報酬",
+		type_order = 2,
+		subject = "八周年福袋A",
+		first_text = "ランダム着せ替え",
+		limit_arg = 1,
+		tip = "",
+		money = 3800,
+		tip_open = 0,
+		tag = 2,
+		id = 96,
+		gem = 0,
+		name_display = "八周年福袋A",
+		package_sort_id = 0,
+		limit_type = 2,
+		akashi_pick = 1,
+		extra_service = 3,
+		package_tag = "",
+		picture = "fudai27",
+		show_group = "",
+		skin_inquire_relation = 86217,
+		package_tag_open = 0,
+		id_str = "com.bilibili.blhx.zuanshi196",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "アイテム・資源とランダムな着せ替え衣装を入手可能",
+		airijp_id = "com.yostarjp.azurlane.diamond184",
+		extra_service_item = {
+			{
+				2,
+				86217,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					9,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81217,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86217,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			}
+		}
+	},
+	[97] = {
+		limit_group = 0,
+		name = "七周年福袋A(復刻)",
+		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
+		type = 1,
+		second_text = "大量な報酬",
+		type_order = 2,
+		subject = "七周年福袋A(復刻)",
+		first_text = "ランダム着せ替え",
+		limit_arg = 1,
+		tip = "",
+		money = 3800,
+		tip_open = 0,
+		tag = 2,
+		id = 97,
+		gem = 0,
+		name_display = "七周年福袋A(復刻)",
+		package_sort_id = 0,
+		limit_type = 2,
+		akashi_pick = 1,
+		extra_service = 3,
+		package_tag = "",
+		picture = "fudai15",
+		show_group = "",
+		skin_inquire_relation = 86206,
+		package_tag_open = 0,
+		id_str = "com.bilibili.blhx.zuanshi197",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "アイテム・資源とランダムな着せ替え衣装を入手可能",
+		airijp_id = "com.yostarjp.azurlane.diamond185",
+		extra_service_item = {
+			{
+				2,
+				86206,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					9,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81206,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86206,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			}
+		}
+	},
+	[98] = {
+		limit_group = 0,
+		name = "八周年福袋B",
+		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
+		type = 1,
+		second_text = "大量な報酬",
+		type_order = 2,
+		subject = "八周年福袋B",
+		first_text = "ランダム着せ替え",
+		limit_arg = 1,
+		tip = "",
+		money = 3800,
+		tip_open = 0,
+		tag = 2,
+		id = 98,
+		gem = 0,
+		name_display = "八周年福袋B",
+		package_sort_id = 0,
+		limit_type = 2,
+		akashi_pick = 1,
+		extra_service = 3,
+		package_tag = "",
+		picture = "fudai28",
+		show_group = "",
+		skin_inquire_relation = 86218,
+		package_tag_open = 0,
+		id_str = "com.bilibili.blhx.zuanshi198",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "アイテム・資源とランダムな着せ替え衣装を入手可能",
+		airijp_id = "com.yostarjp.azurlane.diamond186",
+		extra_service_item = {
+			{
+				2,
+				86218,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					9,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81218,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86218,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			}
+		}
+	},
+	[99] = {
+		limit_group = 0,
+		name = "七周年福袋B(復刻)",
+		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
+		type = 1,
+		second_text = "大量な報酬",
+		type_order = 2,
+		subject = "七周年福袋B(復刻)",
+		first_text = "ランダム着せ替え",
+		limit_arg = 1,
+		tip = "",
+		money = 3800,
+		tip_open = 0,
+		tag = 2,
+		id = 99,
+		gem = 0,
+		name_display = "七周年福袋B(復刻)",
+		package_sort_id = 0,
+		limit_type = 2,
+		akashi_pick = 1,
+		extra_service = 3,
+		package_tag = "",
+		picture = "fudai16",
+		show_group = "",
+		skin_inquire_relation = 86207,
+		package_tag_open = 0,
+		id_str = "com.bilibili.blhx.zuanshi199",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "アイテム・資源とランダムな着せ替え衣装を入手可能",
+		airijp_id = "com.yostarjp.azurlane.diamond187",
+		extra_service_item = {
+			{
+				2,
+				86207,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					9,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81207,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86207,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			}
+		}
+	},
 	[1000] = {
 		limit_group = 0,
 		name = "クルーズパス",
@@ -17234,6 +17777,269 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40064,
+				1
+			}
+		}
+	},
+	[2057] = {
+		limit_group = 106,
+		name = "戦闘UI・シノビ",
+		descrip_extra = "※購入したアイテムはメールボックスに送られます",
+		type = 0,
+		second_text = "",
+		type_order = 4,
+		subject = "戦闘UI・シノビ",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 0,
+		money = 1600,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 2057,
+		name_display = "戦闘UI・シノビ",
+		limit_type = 5,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "ui6",
+		extra_service = 3,
+		skin_inquire_relation = 0,
+		show_group = "uigift",
+		id_str = "com.bilibili.blhx.ui15",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "戦闘UI・シノビを入手できます",
+		package_tag_open = 0,
+		airijp_id = "com.yostarjp.azurlane.ui15",
+		extra_service_item = {
+			{
+				31,
+				205,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					9,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				205,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[2058] = {
+		limit_group = 106,
+		name = "戦闘UI・シノビ（単品）",
+		descrip_extra = "※購入したアイテムはメールボックスに送られます",
+		type = 0,
+		second_text = "",
+		type_order = 4,
+		subject = "戦闘UI・シノビ（単品）",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 1,
+		money = 1600,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 2058,
+		name_display = "戦闘UI・シノビ（単品）",
+		limit_type = 5,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "ui6",
+		extra_service = 3,
+		skin_inquire_relation = 0,
+		show_group = "uigift",
+		id_str = "com.bilibili.blhx.ui16",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "戦闘UI・シノビを入手できます",
+		package_tag_open = 0,
+		airijp_id = "com.yostarjp.azurlane.ui16",
+		extra_service_item = {
+			{
+				31,
+				205,
+				1
+			},
+			{
+				1,
+				1,
+				1000
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					9,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				205,
+				1
+			},
+			{
+				1,
+				1,
+				1000
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40065,
+				1
+			}
+		}
+	},
+	[2059] = {
+		limit_group = 106,
+		name = "戦闘UI・シノビ（セット）",
+		descrip_extra = "※購入したアイテムはメールボックスに送られます",
+		type = 0,
+		second_text = "",
+		type_order = 4,
+		subject = "戦闘UI・シノビ（セット）",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 1,
+		money = 4700,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 2059,
+		name_display = "戦闘UI・シノビ（セット）",
+		limit_type = 5,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "ui6",
+		extra_service = 3,
+		skin_inquire_relation = 0,
+		show_group = "uigift",
+		id_str = "com.bilibili.blhx.ui17",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "戦闘UI・シノビ,ダイヤ×3060を入手できます",
+		package_tag_open = 0,
+		airijp_id = "com.yostarjp.azurlane.ui17",
+		extra_service_item = {
+			{
+				31,
+				205,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					9,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				205,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40066,
 				1
 			}
 		}

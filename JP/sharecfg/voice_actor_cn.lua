@@ -1795,5 +1795,25 @@ pg.voice_actor_CN = {
 	[471] = {
 		code = 471,
 		actor_name = "橘茉莉花"
+	},
+	[472] = {
+		code = 472,
+		actor_name = "千菅春香"
+	},
+	[473] = {
+		code = 473,
+		actor_name = "小澤みのり"
+	},
+	[474] = {
+		code = 474,
+		actor_name = "高垣彩陽"
+	},
+	[475] = {
+		code = 475,
+		actor_name = "後藤彩佐"
+	},
+	[476] = {
+		code = 476,
+		actor_name = "新崎瑞季"
 	}
 }

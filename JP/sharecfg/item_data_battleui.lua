@@ -201,6 +201,23 @@ pg.item_data_battleui = {
 			3
 		}
 	},
+	[205] = {
+		key = "SkinElite_20250912",
+		name = "シノビ",
+		desc = "ニンジャ大好きな指揮官にお届け！スリケンとクナイでニンジャの城を大暴れ！",
+		display_icon = "ui_205",
+		is_unlock = 1,
+		rare = 4,
+		unlock = "ショップ購入（戦闘UI・シノビ）",
+		id = 205,
+		icon = "205",
+		scene = {},
+		rare_display = {
+			1,
+			2,
+			3
+		}
+	},
 	all = {
 		0,
 		101,
@@ -214,6 +231,7 @@ pg.item_data_battleui = {
 		201,
 		202,
 		203,
-		204
+		204,
+		205
 	}
 }

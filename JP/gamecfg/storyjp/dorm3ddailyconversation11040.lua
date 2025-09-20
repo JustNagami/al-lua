@@ -52,8 +52,8 @@
 			}
 		},
 		{
+			actor = 10517,
 			side = 2,
-			actorName = 10517,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			say = "ハニー、早く飲んでみて〜♪",
@@ -63,7 +63,7 @@
 			}
 		},
 		{
-			actor = 0,
+			actor = 10517,
 			side = 2,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,

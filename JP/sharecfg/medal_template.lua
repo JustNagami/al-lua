@@ -2611,6 +2611,27 @@ pg.medal_template = {
 		target_num = 8,
 		target_id = "50087"
 	},
+	[200091] = {
+		explain1 = "「アマハラに舞い奉れ」",
+		name = "天域アマハラ記念勲章",
+		explain2 = "イベント",
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "「天域は外域の屏なり。アマハラは天域に因りて定まる。たとえ地崩れ山潰え、浩劫来たるとも――天域アマハラ、永存を要す」\n——ようこそ、天域アマハラへ",
+		next = 0,
+		icon = "9091",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9091",
+		condition = "「アマハラに舞い奉れ」記念ステッカーを8つ集める",
+		rank = 1,
+		id = 200091,
+		target_num = 8,
+		target_id = "50136"
+	},
 	all = {
 		10011,
 		10012,
@@ -2730,6 +2751,7 @@ pg.medal_template = {
 		200051,
 		200061,
 		200071,
-		200081
+		200081,
+		200091
 	}
 }

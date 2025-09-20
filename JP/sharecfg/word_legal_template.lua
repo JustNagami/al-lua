@@ -7381,6 +7381,13 @@ function temp()
 		吹 = {
 			this = true
 		},
+		["4"] = {
+			["0"] = {
+				["4"] = {
+					this = true
+				}
+			}
+		},
 		丽 = {
 			莎 = {
 				白 = {
@@ -8682,6 +8689,24 @@ function temp()
 				弗 = {
 					里 = {
 						德 = {
+							this = true
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.云 = {
+		仙 = {
+			（ = {
+				后 = {
+					排 = {
+						） = {
 							this = true
 						}
 					}

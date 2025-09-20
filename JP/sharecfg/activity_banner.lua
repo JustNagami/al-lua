@@ -13,7 +13,7 @@ pg.activity_banner = {
 				{
 					2025,
 					9,
-					4
+					19
 				},
 				{
 					0,
@@ -24,8 +24,8 @@ pg.activity_banner = {
 			{
 				{
 					2025,
-					9,
-					11
+					10,
+					2
 				},
 				{
 					23,
@@ -38,13 +38,38 @@ pg.activity_banner = {
 	{
 		id = 2,
 		pic = "temp2",
-		time = "stop",
 		type = 2,
 		param = {
 			"scene get boat",
 			{
 				projectName = "new",
 				page = 1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					9,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
 			}
 		}
 	},
@@ -63,7 +88,7 @@ pg.activity_banner = {
 				{
 					2025,
 					9,
-					4
+					12
 				},
 				{
 					0,
@@ -74,13 +99,13 @@ pg.activity_banner = {
 			{
 				{
 					2025,
-					9,
-					12
+					10,
+					2
 				},
 				{
-					16,
-					0,
-					0
+					23,
+					59,
+					59
 				}
 			}
 		}
@@ -90,10 +115,9 @@ pg.activity_banner = {
 		pic = "temp4",
 		type = 2,
 		param = {
-			"scene equip",
+			"scene charge",
 			{
-				designPage = 2,
-				warp = "WARP_TO_DESIGN"
+				wrap = 4
 			}
 		},
 		time = {
@@ -101,7 +125,7 @@ pg.activity_banner = {
 				{
 					2025,
 					9,
-					4
+					19
 				},
 				{
 					0,
@@ -112,13 +136,13 @@ pg.activity_banner = {
 			{
 				{
 					2025,
-					9,
-					12
+					10,
+					2
 				},
 				{
-					16,
-					0,
-					0
+					23,
+					59,
+					59
 				}
 			}
 		}
@@ -128,17 +152,17 @@ pg.activity_banner = {
 		pic = "temp5",
 		type = 2,
 		param = {
-			"scene charge",
+			"scene core activity",
 			{
-				warp = 2
+				coreName = "EighthAnniversaryJpCoreActivityUI"
 			}
 		},
 		time = {
 			{
 				{
 					2025,
-					8,
-					28
+					9,
+					12
 				},
 				{
 					0,
@@ -150,7 +174,7 @@ pg.activity_banner = {
 				{
 					2025,
 					9,
-					11
+					30
 				},
 				{
 					23,
@@ -165,53 +189,12 @@ pg.activity_banner = {
 		pic = "temp6",
 		type = 2,
 		param = {
-			"scene dailylevel"
+			"scene charge",
+			{
+				wrap = 2
+			}
 		},
 		time = {
-			{
-				{
-					2025,
-					9,
-					4
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					9,
-					11
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		param = "50101",
-		id = 7,
-		pic = "temp7",
-		type = 3,
-		time = {
-			{
-				{
-					2025,
-					9,
-					4
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
 			{
 				{
 					2025,
@@ -219,9 +202,58 @@ pg.activity_banner = {
 					12
 				},
 				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					9,
+					25
+				},
+				{
 					16,
 					0,
 					0
+				}
+			}
+		}
+	},
+	{
+		id = 7,
+		pic = "temp7",
+		type = 2,
+		param = {
+			"scene shop",
+			{
+				warp = "shopstreet"
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					9,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
 				}
 			}
 		}
@@ -231,14 +263,14 @@ pg.activity_banner = {
 		pic = "temp8",
 		type = 2,
 		param = {
-			"metacharacter"
+			"scene court yard"
 		},
 		time = {
 			{
 				{
 					2025,
 					9,
-					4
+					12
 				},
 				{
 					0,
@@ -249,13 +281,13 @@ pg.activity_banner = {
 			{
 				{
 					2025,
-					9,
-					12
+					10,
+					2
 				},
 				{
-					16,
-					0,
-					0
+					23,
+					59,
+					59
 				}
 			}
 		}
@@ -265,14 +297,17 @@ pg.activity_banner = {
 		pic = "temp9",
 		type = 2,
 		param = {
-			"dorm 3d select"
+			"scene get boat",
+			{
+				goToPray = true
+			}
 		},
 		time = {
 			{
 				{
 					2025,
-					8,
-					28
+					9,
+					12
 				},
 				{
 					0,
@@ -284,12 +319,12 @@ pg.activity_banner = {
 				{
 					2025,
 					9,
-					11
+					25
 				},
 				{
-					23,
-					59,
-					59
+					16,
+					0,
+					0
 				}
 			}
 		}
@@ -317,10 +352,35 @@ pg.activity_banner = {
 	},
 	[99] = {
 		param = "",
-		time = "stop",
-		type = 12,
 		id = 99,
-		pic = "limit_skin"
+		pic = "limit_skin",
+		type = 12,
+		time = {
+			{
+				{
+					2025,
+					9,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					10,
+					2
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
 	},
 	[100] = {
 		param = "水餃子|東煌で有名な食べ物<color=#92fc63>（60分間寮舎経験値効率が5%アップ）</color>",
@@ -365,11 +425,9 @@ pg.activity_banner = {
 			4,
 			5,
 			6,
+			7,
 			8,
 			9
-		},
-		[3] = {
-			7
 		},
 		[9] = {
 			90,
