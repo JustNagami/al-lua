@@ -3988,6 +3988,743 @@ pg.activity_sp_story = {
 			}
 		}
 	},
+	[231] = {
+		story_type = 1,
+		pre_event = "",
+		name = "EPS-1 The Secret Realm of the Dragon Palace.",
+		unlock_conditions = "",
+		change_prefab = "",
+		change_background = "star_level_bg_490",
+		story = "QIWUYUTIANYUANZHISHANG1",
+		change_bgm = "story-amahara-stage2",
+		id = 231,
+		lock = ""
+	},
+	[232] = {
+		story_type = 1,
+		name = "EP1-1 Ama no Tobira",
+		unlock_conditions = "Clear EPS-1.",
+		change_bgm = "story-amahara-stage2",
+		change_prefab = "",
+		change_background = "star_level_bg_492",
+		id = 232,
+		story = "QIWUYUTIANYUANZHISHANG2",
+		pre_event = {
+			231
+		},
+		lock = {
+			{
+				4,
+				231
+			}
+		}
+	},
+	[233] = {
+		story_type = 1,
+		name = "EP1-2 Ride the Clouds",
+		unlock_conditions = "Clear EP1-1.",
+		change_bgm = "story-amahara-stage3",
+		change_prefab = "",
+		change_background = "bg_amahara_cg1",
+		id = 233,
+		story = "QIWUYUTIANYUANZHISHANG3",
+		pre_event = {
+			232
+		},
+		lock = {
+			{
+				4,
+				232
+			}
+		}
+	},
+	[234] = {
+		story_type = 1,
+		name = "EP1-3 A Table in the Sea of Clouds",
+		unlock_conditions = "Clear EP1-2.",
+		change_bgm = "story-amahara-stage1",
+		change_prefab = "",
+		change_background = "bg_amahara_1",
+		id = 234,
+		story = "QIWUYUTIANYUANZHISHANG4",
+		pre_event = {
+			233
+		},
+		lock = {
+			{
+				4,
+				233
+			}
+		}
+	},
+	[235] = {
+		story_type = 1,
+		name = "EP1-4 Amahara's Scenery",
+		unlock_conditions = "Clear EP1-3.",
+		change_bgm = "story-mayrain",
+		change_prefab = "",
+		change_background = "star_level_bg_492",
+		id = 235,
+		story = "QIWUYUTIANYUANZHISHANG5",
+		pre_event = {
+			234
+		},
+		lock = {
+			{
+				4,
+				234
+			}
+		}
+	},
+	[236] = {
+		story_type = 1,
+		name = "EP1-5 Dream Stones",
+		unlock_conditions = "Clear EP1-4.",
+		change_bgm = "story-amahara-stage2",
+		change_prefab = "",
+		change_background = "star_level_bg_490",
+		id = 236,
+		story = "QIWUYUTIANYUANZHISHANG6",
+		pre_event = {
+			235
+		},
+		lock = {
+			{
+				4,
+				235
+			}
+		}
+	},
+	[237] = {
+		story_type = 1,
+		name = "EP2-1 Cloudsea Wine",
+		unlock_conditions = "Clear EP1-5.",
+		change_bgm = "story-amahara-stage2",
+		change_prefab = "",
+		change_background = "bg_amahara_cg5",
+		id = 237,
+		story = "QIWUYUTIANYUANZHISHANG7",
+		pre_event = {
+			236
+		},
+		lock = {
+			{
+				4,
+				236
+			}
+		}
+	},
+	[238] = {
+		story_type = 1,
+		name = "EP2-2 Weaving Dreams",
+		unlock_conditions = "Clear EP2-1.",
+		change_bgm = "story-island-soft",
+		change_prefab = "",
+		change_background = "star_level_bg_539",
+		id = 238,
+		story = "QIWUYUTIANYUANZHISHANG8",
+		pre_event = {
+			237
+		},
+		lock = {
+			{
+				4,
+				237
+			}
+		}
+	},
+	[239] = {
+		story_type = 1,
+		name = "EP2-3 Peace?",
+		unlock_conditions = "Clear EP2-2.",
+		change_bgm = "battle-eagleunion",
+		change_prefab = "",
+		change_background = "bg_tieyiqingfeng_1",
+		id = 239,
+		story = "QIWUYUTIANYUANZHISHANG9",
+		pre_event = {
+			238
+		},
+		lock = {
+			{
+				4,
+				238
+			}
+		}
+	},
+	[240] = {
+		story_type = 1,
+		name = "EP2-4 Unfolding?",
+		unlock_conditions = "Clear EP2-3.",
+		change_bgm = "story-temepest-2",
+		change_prefab = "",
+		change_background = "star_level_bg_491",
+		id = 240,
+		story = "QIWUYUTIANYUANZHISHANG10",
+		pre_event = {
+			239
+		},
+		lock = {
+			{
+				4,
+				239
+			}
+		}
+	},
+	[241] = {
+		story_type = 1,
+		name = "EP2-5 Anxiety?",
+		unlock_conditions = "Clear EP2-4.",
+		change_bgm = "musashi-2",
+		change_prefab = "",
+		change_background = "bg_amahara_2",
+		id = 241,
+		story = "QIWUYUTIANYUANZHISHANG11",
+		pre_event = {
+			240
+		},
+		lock = {
+			{
+				4,
+				240
+			}
+		}
+	},
+	[242] = {
+		story_type = 1,
+		name = "EPS-2 All-Out Invasion",
+		unlock_conditions = "Clear EP2-5.",
+		change_bgm = "theme-starsea-core",
+		change_prefab = "",
+		change_background = "bg_port_chongdong",
+		id = 242,
+		story = "QIWUYUTIANYUANZHISHANG12",
+		pre_event = {
+			241
+		},
+		lock = {
+			{
+				4,
+				241
+			}
+		}
+	},
+	[243] = {
+		story_type = 1,
+		name = "EPS-3 The Web of a Bygone Day",
+		unlock_conditions = "Clear EPS-2.",
+		change_bgm = "battle-unzen-1",
+		change_prefab = "",
+		change_background = "bg_amahara_cg6",
+		id = 243,
+		story = "QIWUYUTIANYUANZHISHANG13",
+		pre_event = {
+			241
+		},
+		lock = {
+			{
+				4,
+				242
+			}
+		}
+	},
+	[244] = {
+		story_type = 2,
+		name = "EP3-1 Push Through the Dark Tide",
+		unlock_conditions = "Clear EPS-3.",
+		change_bgm = "theme-sakuraholyplace",
+		change_prefab = "",
+		change_background = "bg_amahara_cg7",
+		id = 244,
+		story = "1966001",
+		pre_event = {
+			242,
+			243
+		},
+		lock = {
+			{
+				4,
+				243
+			}
+		}
+	},
+	[245] = {
+		story_type = 1,
+		name = "EP3-2 Phase Shift",
+		unlock_conditions = "Clear EP3-1.",
+		change_bgm = "battle-boss-ucnf",
+		change_prefab = "",
+		change_background = "bg_amahara_3",
+		id = 245,
+		story = "QIWUYUTIANYUANZHISHANG15",
+		pre_event = {
+			244
+		},
+		lock = {
+			{
+				4,
+				244
+			}
+		}
+	},
+	[246] = {
+		story_type = 1,
+		name = "EP3-3 The Depths",
+		unlock_conditions = "Clear EP3-2.",
+		change_bgm = "bgm-waterwave",
+		change_prefab = "",
+		change_background = "star_level_bg_493",
+		id = 246,
+		story = "QIWUYUTIANYUANZHISHANG16",
+		pre_event = {
+			245
+		},
+		lock = {
+			{
+				4,
+				245
+			}
+		}
+	},
+	[247] = {
+		story_type = 1,
+		name = "EP-? Stepping Into Amahara - Part 1",
+		unlock_conditions = "Clear EP3-3.",
+		change_bgm = "bgm-waterwave",
+		change_prefab = "",
+		change_background = "star_level_bg_493",
+		id = 247,
+		story = "QIWUYUTIANYUANZHISHANG17",
+		pre_event = {
+			246
+		},
+		lock = {
+			{
+				4,
+				246
+			}
+		}
+	},
+	[248] = {
+		story_type = 1,
+		name = "EP-? Stepping Into Amahara - Part 2",
+		unlock_conditions = "Clear EP-?",
+		change_bgm = "story-worldα-brokenlight",
+		change_prefab = "",
+		change_background = "bg_xiangting_2",
+		id = 248,
+		story = "QIWUYUTIANYUANZHISHANG18",
+		pre_event = {
+			247
+		},
+		lock = {
+			{
+				4,
+				247
+			}
+		}
+	},
+	[249] = {
+		story_type = 1,
+		name = "EP4-1 The Long Island Defense Line, Again",
+		unlock_conditions = "Clear EP-?",
+		change_bgm = "story-worldα-grief",
+		change_prefab = "",
+		change_background = "star_level_bg_494",
+		id = 249,
+		story = "QIWUYUTIANYUANZHISHANG19",
+		pre_event = {
+			248
+		},
+		lock = {
+			{
+				4,
+				248
+			}
+		}
+	},
+	[250] = {
+		story_type = 1,
+		name = "EP4-2 Operation: Rescue Anzeel",
+		unlock_conditions = "Clear EP4-1",
+		change_bgm = "story-worldα-grief",
+		change_prefab = "",
+		change_background = "star_level_bg_170",
+		id = 250,
+		story = "QIWUYUTIANYUANZHISHANG20",
+		pre_event = {
+			249
+		},
+		lock = {
+			{
+				4,
+				249
+			}
+		}
+	},
+	[251] = {
+		story_type = 1,
+		name = "EP4-3 A Glimmer in the Strings",
+		unlock_conditions = "Clear EP4-2",
+		change_bgm = "story-worldα-brokenlight",
+		change_prefab = "",
+		change_background = "bg_zhedie_2",
+		id = 251,
+		story = "QIWUYUTIANYUANZHISHANG21",
+		pre_event = {
+			250
+		},
+		lock = {
+			{
+				4,
+				250
+			}
+		}
+	},
+	[252] = {
+		story_type = 1,
+		name = "EP4-4 Operation: Rescue Anzeel 2.0",
+		unlock_conditions = "Clear EP4-3",
+		change_bgm = "story-worldα-brokenlight",
+		change_prefab = "",
+		change_background = "star_level_bg_306",
+		id = 252,
+		story = "QIWUYUTIANYUANZHISHANG22",
+		pre_event = {
+			251
+		},
+		lock = {
+			{
+				4,
+				251
+			}
+		}
+	},
+	[253] = {
+		story_type = 1,
+		name = "EP4-5 Preliminary Prep",
+		unlock_conditions = "Clear EP4-4",
+		change_bgm = "story-worldα-brokenlight",
+		change_prefab = "",
+		change_background = "bg_zhedie_2",
+		id = 253,
+		story = "QIWUYUTIANYUANZHISHANG23",
+		pre_event = {
+			252
+		},
+		lock = {
+			{
+				4,
+				252
+			}
+		}
+	},
+	[254] = {
+		story_type = 1,
+		name = "EP4-6 Imprisoned",
+		unlock_conditions = "Clear EP4-5",
+		change_bgm = "battle-eagleunion",
+		change_prefab = "",
+		change_background = "bg_zhedie_2",
+		id = 254,
+		story = "QIWUYUTIANYUANZHISHANG24",
+		pre_event = {
+			253
+		},
+		lock = {
+			{
+				4,
+				253
+			}
+		}
+	},
+	[255] = {
+		story_type = 1,
+		name = "EP5-1 Preliminary Prep 2.0",
+		unlock_conditions = "Clear EP4-6",
+		change_bgm = "story-amahara-stage2",
+		change_prefab = "",
+		change_background = "bg_zhedie_2",
+		id = 255,
+		story = "QIWUYUTIANYUANZHISHANG25",
+		pre_event = {
+			254
+		},
+		lock = {
+			{
+				4,
+				254
+			}
+		}
+	},
+	[256] = {
+		story_type = 1,
+		name = "EP5-2 Defensive Area A",
+		unlock_conditions = "Clear EP5-1",
+		change_bgm = "theme-starsea-core",
+		change_prefab = "",
+		change_background = "bg_zhedie_2",
+		id = 256,
+		story = "QIWUYUTIANYUANZHISHANG26",
+		pre_event = {
+			255
+		},
+		lock = {
+			{
+				4,
+				255
+			}
+		}
+	},
+	[257] = {
+		story_type = 1,
+		name = "EP5-3 Defensive Area B",
+		unlock_conditions = "Clear EP5-2",
+		change_bgm = "theme-unzen",
+		change_prefab = "",
+		change_background = "bg_zhedie_2",
+		id = 257,
+		story = "QIWUYUTIANYUANZHISHANG27",
+		pre_event = {
+			255
+		},
+		lock = {
+			{
+				4,
+				256
+			}
+		}
+	},
+	[258] = {
+		story_type = 1,
+		name = "EP5-4 Defensive Area C",
+		unlock_conditions = "Clear EP5-3",
+		change_bgm = "theme-akagi-inside",
+		change_prefab = "",
+		change_background = "bg_zhedie_2",
+		id = 258,
+		story = "QIWUYUTIANYUANZHISHANG28",
+		pre_event = {
+			255
+		},
+		lock = {
+			{
+				4,
+				257
+			}
+		}
+	},
+	[259] = {
+		story_type = 1,
+		name = "EP5-5 A Dash of Crimson",
+		unlock_conditions = "Clear EP5-4",
+		change_bgm = "battle-unknown-approaching",
+		change_prefab = "",
+		change_background = "bg_zhedie_2",
+		id = 259,
+		story = "QIWUYUTIANYUANZHISHANG29",
+		pre_event = {
+			256,
+			257,
+			258
+		},
+		lock = {
+			{
+				4,
+				258
+			}
+		}
+	},
+	[260] = {
+		story_type = 1,
+		name = "EP6-1 The Black Wall",
+		unlock_conditions = "Clear EP5-5",
+		change_bgm = "theme-longgong-another",
+		change_prefab = "",
+		change_background = "bg_zhedie_2",
+		id = 260,
+		story = "QIWUYUTIANYUANZHISHANG30",
+		pre_event = {
+			259
+		},
+		lock = {
+			{
+				4,
+				259
+			}
+		}
+	},
+	[261] = {
+		story_type = 1,
+		name = "EP6-2 Not a Moment Too Soon",
+		unlock_conditions = "Clear EP6-1",
+		change_bgm = "theme-helena",
+		change_prefab = "",
+		change_background = "bg_amahara_cg10",
+		id = 261,
+		story = "QIWUYUTIANYUANZHISHANG31",
+		pre_event = {
+			260
+		},
+		lock = {
+			{
+				4,
+				260
+			}
+		}
+	},
+	[262] = {
+		story_type = 1,
+		name = "EP6-3 As Blue as the Sea",
+		unlock_conditions = "Clear EP6-2",
+		change_bgm = "theme-helena",
+		change_prefab = "",
+		change_background = "bg_underwater",
+		id = 262,
+		story = "QIWUYUTIANYUANZHISHANG32",
+		pre_event = {
+			261
+		},
+		lock = {
+			{
+				4,
+				261
+			}
+		}
+	},
+	[263] = {
+		story_type = 1,
+		name = "EP6-4 Farewell",
+		unlock_conditions = "Clear EP6-3",
+		change_bgm = "story-amahara-stage1",
+		change_prefab = "",
+		change_background = "bg_amahara_4",
+		id = 263,
+		story = "QIWUYUTIANYUANZHISHANG33",
+		pre_event = {
+			262
+		},
+		lock = {
+			{
+				4,
+				262
+			}
+		}
+	},
+	[264] = {
+		story_type = 1,
+		name = "EP6-5 Epilogue",
+		unlock_conditions = "Clear EP6-4",
+		change_bgm = "story-amahara-stage1",
+		change_prefab = "",
+		change_background = "star_level_bg_111",
+		id = 264,
+		story = "QIWUYUTIANYUANZHISHANG34",
+		pre_event = {
+			263
+		},
+		lock = {
+			{
+				4,
+				263
+			}
+		}
+	},
+	[265] = {
+		story_type = 1,
+		name = "EX-1 Amahara Forevermore",
+		unlock_conditions = "Clear EP6-5",
+		change_bgm = "theme-akagi-inside",
+		change_prefab = "",
+		change_background = "star_level_bg_492",
+		id = 265,
+		story = "QIWUYUTIANYUANZHISHANG35",
+		pre_event = {
+			264
+		},
+		lock = {
+			{
+				4,
+				264
+			}
+		}
+	},
+	[266] = {
+		story_type = 1,
+		name = "EX-2 A Crimson Farewell",
+		unlock_conditions = "Clear EX-1",
+		change_bgm = "theme-starsea-core",
+		change_prefab = "",
+		change_background = "bg_port_chongdong",
+		id = 266,
+		story = "QIWUYUTIANYUANZHISHANG36",
+		pre_event = {
+			265
+		},
+		lock = {
+			{
+				4,
+				265
+			}
+		}
+	},
+	[267] = {
+		story_type = 1,
+		name = "EX-3 Helena's Resolve",
+		unlock_conditions = "Clear EX-2",
+		change_bgm = "story-richang-light",
+		change_prefab = "",
+		change_background = "star_level_bg_170",
+		id = 267,
+		story = "QIWUYUTIANYUANZHISHANG37",
+		pre_event = {
+			266
+		},
+		lock = {
+			{
+				4,
+				266
+			}
+		}
+	},
+	[268] = {
+		story_type = 1,
+		name = "EX-4 Everything Will Be Fine",
+		unlock_conditions = "Clear EX-3",
+		change_bgm = "theme-starsea-core",
+		change_prefab = "",
+		change_background = "star_level_bg_589",
+		id = 268,
+		story = "QIWUYUTIANYUANZHISHANG38",
+		pre_event = {
+			267
+		},
+		lock = {
+			{
+				4,
+				267
+			}
+		}
+	},
+	[269] = {
+		story_type = 1,
+		name = "EX-5 Sweet Bait",
+		unlock_conditions = "Clear EX-4",
+		change_bgm = "story-amahara-stage1",
+		change_prefab = "Map_1960002",
+		change_background = "bg_amahara_4",
+		id = 269,
+		story = "QIWUYUTIANYUANZHISHANG39",
+		pre_event = {
+			268
+		},
+		lock = {
+			{
+				4,
+				268
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -4200,6 +4937,45 @@ pg.activity_sp_story = {
 		223,
 		224,
 		225,
-		226
+		226,
+		231,
+		232,
+		233,
+		234,
+		235,
+		236,
+		237,
+		238,
+		239,
+		240,
+		241,
+		242,
+		243,
+		244,
+		245,
+		246,
+		247,
+		248,
+		249,
+		250,
+		251,
+		252,
+		253,
+		254,
+		255,
+		256,
+		257,
+		258,
+		259,
+		260,
+		261,
+		262,
+		263,
+		264,
+		265,
+		266,
+		267,
+		268,
+		269
 	}
 }

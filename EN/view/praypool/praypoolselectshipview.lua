@@ -276,7 +276,9 @@ function var_0_0.updateMax(arg_15_0)
 			setPaintingPrefabAsync(var_15_4, Ship.getPaintingName(var_15_2), "biandui")
 
 			if iter_15_0 == 2 then
-				var_15_4.localEulerAngles = Vector3(0, 0, 180)
+				setLocalRotation(var_15_4, {
+					z = 180
+				})
 			end
 
 			setActive(var_15_5, false)

@@ -45,7 +45,7 @@
 				posX = 243.3
 			},
 			ui = {
-				path = "OverlayCamera/Overlay/UIMain/WorldInventoryUI(Clone)/topItems/bottom_back/types/material",
+				path = "OverlayCamera/Overlay/UIMain/WorldInventoryUI(Clone)/adapt/topItems/bottom_back/types/material",
 				triggerType = {
 					2
 				},
@@ -78,7 +78,7 @@
 				posX = 554.45
 			},
 			ui = {
-				path = "OverlayCamera/Overlay/UIMain/WorldInventoryUI(Clone)/topItems/bottom_back/types/siren_weapon",
+				path = "OverlayCamera/Overlay/UIMain/WorldInventoryUI(Clone)/adapt/topItems/bottom_back/types/siren_weapon",
 				triggerType = {
 					2
 				},
@@ -103,7 +103,7 @@
 				posX = 327.4
 			},
 			ui = {
-				path = "OverlayCamera/Overlay/UIMain/WorldInventoryUI(Clone)/blur_panel/adapt/top/buttons/index_button",
+				path = "OverlayCamera/Overlay/UIMain/WorldInventoryUI(Clone)/adapt/blur_panel/adapt/top/buttons/index_button",
 				triggerType = {
 					1
 				},
@@ -161,7 +161,7 @@
 			alpha = 0.3,
 			delay = 0.5,
 			ui = {
-				path = "OverlayCamera/Overlay/UIMain/WorldInventoryUI(Clone)/blur_panel/adapt/top/back_btn",
+				path = "OverlayCamera/Overlay/UIMain/WorldInventoryUI(Clone)/adapt/blur_panel/adapt/top/back_btn",
 				triggerType = {
 					1
 				},
