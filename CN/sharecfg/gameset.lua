@@ -3923,7 +3923,7 @@ pg.gameset = {
 	},
 	shop_banner_capacity = {
 		description = "",
-		key_value = 3
+		key_value = 9
 	},
 	WeChat_Mini_Program = {
 		description = "",
@@ -3978,7 +3978,7 @@ pg.gameset = {
 		key_value = 0
 	},
 	ninja_Param15 = {
-		description = "1.06",
+		description = "1.035",
 		key_value = 0
 	},
 	ninja_Param16 = {

@@ -388,14 +388,14 @@ pg.activity_ninja_building = {
 		},
 		story = {
 			"JIZHANRENZHEZHICHENG12",
-			"qicon/molisen_2",
+			"qicon/molisen_3",
 			{
 				-7.3845,
 				54.3171
 			},
 			"修复三御门外桥梁后解锁",
 			"忍术大失败",
-			"shipyardicon/molisen_2"
+			"shipyardicon/molisen_3"
 		},
 		handbook_pic = {
 			"ninjacityicon/icon_sanyumenwaiqiaoliang_b",
@@ -997,7 +997,7 @@ pg.activity_ninja_building = {
 		need_level = 0,
 		default_state = 1,
 		name = {
-			"厌战",
+			"可招募援军：厌战",
 			"厌战"
 		},
 		desc = {
@@ -1051,7 +1051,7 @@ pg.activity_ninja_building = {
 		need_level = 0,
 		default_state = 1,
 		name = {
-			"布伦努斯",
+			"可招募援军：布伦努斯",
 			"布伦努斯"
 		},
 		desc = {
@@ -1105,7 +1105,7 @@ pg.activity_ninja_building = {
 		need_level = 0,
 		default_state = 1,
 		name = {
-			"拉菲II",
+			"可招募援军：拉菲II",
 			"拉菲II"
 		},
 		desc = {
@@ -1144,7 +1144,7 @@ pg.activity_ninja_building = {
 				381.5325
 			},
 			"招募拉菲II后解锁",
-			"白免与梦乡",
+			"白兔与梦乡",
 			"shipyardicon/lafeiII_4"
 		},
 		handbook_pic = {
@@ -1159,7 +1159,7 @@ pg.activity_ninja_building = {
 		need_level = 0,
 		default_state = 1,
 		name = {
-			"加斯科涅",
+			"可招募援军：加斯科涅",
 			"加斯科涅"
 		},
 		desc = {

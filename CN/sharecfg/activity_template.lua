@@ -28548,11 +28548,13 @@ pg.activity_template = {
 					7,
 					"完成相关活动",
 					{
-						24331,
-						24332,
-						24333,
-						24334,
-						24335
+						24430,
+						24432,
+						24434,
+						24436,
+						24438,
+						24440,
+						24442
 					},
 					"city rebuild map"
 				},
@@ -28560,7 +28562,7 @@ pg.activity_template = {
 					6,
 					"Pt商店购买",
 					{
-						3164
+						3165
 					}
 				}
 			},
@@ -28602,7 +28604,8 @@ pg.activity_template = {
 			24348,
 			24349,
 			24350,
-			24464
+			24464,
+			24466
 		},
 		time = {
 			"timer",
@@ -28729,7 +28732,7 @@ pg.activity_template = {
 			ui_name = "TianYuTianYuanMainPage"
 		},
 		config_client = {
-			task_id = 24464,
+			task_id = 24466,
 			entrance_bg = "activitybanner/temp10",
 			PTID = 543
 		}
@@ -28784,7 +28787,7 @@ pg.activity_template = {
 		},
 		config_client = {
 			entrance_bg = "activitybanner/temp10",
-			task_id = 24464
+			task_id = 24466
 		}
 	},
 	[50116] = {
