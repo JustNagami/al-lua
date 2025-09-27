@@ -2,7 +2,7 @@
 
 function var_0_0.register(arg_1_0)
 	arg_1_0:on(50115, function(arg_2_0)
-		pg.GMTMgr:GetInstance():showGMT(arg_2_0.timestamp)
+		pg.GMTMgr.GetInstance():showGMT(arg_2_0.timestamp)
 	end)
 end
 
