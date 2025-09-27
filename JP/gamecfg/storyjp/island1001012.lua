@@ -19,10 +19,9 @@
 	},
 	scripts = {
 		{
-			subName = "订单管理员",
-			characterId = 100200,
-			animation = "nod",
-			say = "嗯，数量和质量都没问题，辛苦指挥官了~",
+			characterId = 0,
+			animation = "talk",
+			say = "――……これで全部かな？確認は取れた？",
 			face2Face = {
 				{
 					0,
@@ -35,18 +34,10 @@
 			}
 		},
 		{
-			characterId = 0,
-			say = "没问题就好。对了，你知道{namecode:98:明石}在哪里吗？",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			say = "{namecode:98:明石}么……指挥官看见那边的咖啡馆了吗？我经常在那附近遇到她的。",
+			say = "はい。質も量も問題なし。お疲れさま、指揮官",
 			characterId = 100200,
-			subName = "订单管理员",
-			animation = "doubt",
+			subName = "依頼管理人",
+			animation = "nod",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -54,17 +45,35 @@
 		},
 		{
 			characterId = 0,
-			say = "咖啡馆附近么……那我过去看看！",
+			say = "――それならよかった。ついでに聞くけど、明石がどこにいるか知ってる？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "呵呵，那指挥官可要小心些，别被她跑了哦~拜拜~",
+			say = "明石？あそこの饅頭カフェが見える？よくその辺で見かけるから、一度行ってみるといいかもよ",
 			characterId = 100200,
-			subName = "订单管理员",
-			animation = "hi",
+			subName = "依頼管理人",
+			animation = "think",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――饅頭カフェの近くか……じゃあ行ってくる！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "ふふ。それじゃあ指揮官、またね！",
+			characterId = 100200,
+			subName = "依頼管理人",
+			animation = "bye",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

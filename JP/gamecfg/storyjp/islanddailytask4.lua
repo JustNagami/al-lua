@@ -19,10 +19,10 @@
 	},
 	scripts = {
 		{
-			subName = "农田管理员",
+			animation = "talk",
 			characterId = 100400,
-			say = "嗯……指挥官，你送来的这些东西品质都很好。",
-			animation = "think",
+			subName = "畑管理人",
+			say = "指揮官、本当にお疲れさまでした……私も努力して農場をしっかり管理していきます",
 			face2Face = {
 				{
 					0,
@@ -35,29 +35,18 @@
 			}
 		},
 		{
-			animation = "nod",
+			subName = "畑管理人",
 			characterId = 100400,
-			subName = "农田管理员",
-			say = "谢谢~为了收集到这些东西一定很辛苦吧……",
+			say = "できるだけ早く、島の皆さんに新鮮で種類豊富なお野菜を食べてもらえるようにします",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			animation = "elation",
+			subName = "畑管理人",
 			characterId = 100400,
-			subName = "农田管理员",
-			say = "嗯，我也会加倍努力管理好农场的，让岛上的大家都吃上新鲜的蔬菜。",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			subName = "农田管理员",
-			characterId = 100400,
-			say = "这就是我唯一能做的事情了。",
+			say = "これが指揮官のために私ができる唯一のことですから。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

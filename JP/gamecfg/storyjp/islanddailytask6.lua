@@ -19,10 +19,9 @@
 	},
 	scripts = {
 		{
-			subName = "啾咖啡店员",
 			characterId = 101200,
-			say = "指挥官……您带来了我需要的食材呢。",
-			animation = "talk",
+			subName = "カフェ店員",
+			say = "指揮官……必要な食材を持ってきてくれたんだね",
 			face2Face = {
 				{
 					0,
@@ -37,27 +36,26 @@
 		{
 			animation = "think",
 			characterId = 101200,
-			subName = "啾咖啡店员",
-			say = "嗯……色泽、新鲜度、香味……都很完美。",
+			subName = "カフェ店員",
+			say = "うん……すごくいいね",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			animation = "nod",
+			subName = "カフェ店員",
 			characterId = 101200,
-			subName = "啾咖啡店员",
-			say = "这样就能为客人们做出更美味的点心和饮品了……指挥官，非常感谢。",
+			say = "これでお客さんたちに、もっと美味しいものを提供できる……指揮官、本当にありがとう",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "啾咖啡店员",
+			subName = "カフェ店員",
 			characterId = 101200,
-			say = "我会用心制作的。",
+			say = "心を込めて仕上げるからね",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

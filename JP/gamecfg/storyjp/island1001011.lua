@@ -20,8 +20,8 @@
 	scripts = {
 		{
 			characterId = 0,
-			say = "帕特莉，这里是你在管理的订单么？",
 			animation = "hi",
+			say = "――その忙しそうな様子…まさか港の依頼は全部パトリックが捌いてるのか？",
 			face2Face = {
 				{
 					0,
@@ -34,39 +34,38 @@
 			}
 		},
 		{
-			animation = "hi",
+			animation = "amaze",
 			characterId = 100200,
-			subName = "订单管理员",
-			say = "咦，是指挥官来了啊，港口的订单是我在管理！",
+			subName = "依頼管理人",
+			say = "指揮官？！そうだよ。港の依頼は私が管理してるの",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "你怎么突然来无人岛开发区了，提前说一声的话，大家都会来港口迎接你的哦~",
+			subName = "依頼管理人",
 			characterId = 100200,
-			subName = "订单管理员",
-			animation = "doubt",
+			say = "ところで、指揮官はどうして急にここに？先に教えてくれてれば、みんなで港まで迎えに行ったのに",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "那还是算了，我刚才看你忙得订单都快处理不过来了。",
-			characterId = 0,
 			animation = "shakehead",
+			characterId = 0,
+			say = "――みんな忙しそうだし、そんな余裕もないと思うから大丈夫",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "嗯，最近订单确实源源不断~港口也十分繁忙。",
+			say = "それは…そうだね。何たって依頼量が3倍に跳ね上がってるから",
 			characterId = 100200,
-			subName = "订单管理员",
-			animation = "talk",
+			subName = "依頼管理人",
+			animation = "sad",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -74,7 +73,7 @@
 		},
 		{
 			characterId = 0,
-			say = "（可我记得港区这周明明就没给{namecode:98:明石}下过订单的啊。）",
+			say = "（でも母港は今週、明石に何も依頼してなかったはず……）",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -82,44 +81,54 @@
 		},
 		{
 			characterId = 0,
-			say = "（那这些货都是运到哪里去了呢……）",
+			say = "（じゃあ、この荷物はどこに運ばれるのやら……）",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "指挥官也是来下单的吗？",
+			say = "え？指揮官、そんなにじっと見つめて……まさか帳簿を確認しに来たの？",
 			characterId = 100200,
-			subName = "订单管理员",
-			animation = "doubt",
+			subName = "依頼管理人",
+			animation = "curious",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
+			animation = "shakehead",
 			characterId = 0,
-			say = "啊，其实我是来提交订单的！这些都是乔安和奥布莱恩的货物。",
+			say = "――あ、いや、貨物を届けに来ただけさ。ジョンとオブラインが用意したものだ",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "订单管理员",
+			subName = "依頼管理人",
 			characterId = 100200,
-			say = "嗯，是今天就要发的货，真是多谢指挥官了~",
+			say = "あ、急ぎのものだ！指揮官、助かるよ！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "不过即使是指挥官送来的，我也会好好核对清楚的，接下来就麻烦指挥官挨个提交一下订单啦~",
+			say = "でも指揮官が運んでくれたものだとしても、きちんと確認を行わないと",
 			characterId = 100200,
-			subName = "订单管理员",
+			subName = "依頼管理人",
 			animation = "elation",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "依頼管理人",
+			characterId = 100200,
+			say = "指揮官、内容を報告してもらえない？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

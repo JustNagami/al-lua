@@ -4,9 +4,8 @@
 	map = {},
 	scripts = {
 		{
-			say = "被我抓住了吧——{namecode:98:明石}……？",
 			characterId = 0,
-			animation = "nod",
+			say = "――捕まえた！……って明……石……？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -14,7 +13,16 @@
 		},
 		{
 			characterId = 0,
-			say = "欸？我明明是看着她进来的啊……怎么不见了？！",
+			say = "――ん？確かここに入ったのを見たはずなのに……どこに行ったんだ？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			animation = "shakehaed",
+			characterId = 0,
+			say = "（もしかして今見たのは、幽霊……？いやいや、そんなバカな）",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -22,15 +30,7 @@
 		},
 		{
 			characterId = 0,
-			say = "（难道我刚看见的那个……）",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			characterId = 0,
-			say = "（众所周知，猫是不会凭空消失的，所以这里一定是有暗道……究竟在哪里呢？）",
+			say = "（急に消えたりしないはずだ。きっとどこかに隠し通路が……一体どこだ？）",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

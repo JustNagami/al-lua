@@ -52063,6 +52063,179 @@ pg.equip_skin_template = {
 		orbit_ui_bound = {
 			"face",
 			{
+				5.4,
+				96.8
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	},
+	[2105] = {
+		hit_sfx = "",
+		bullet_name = "zidan_moshuifeiniao",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		name = "驚鴻弾",
+		themeid = 108,
+		desc = "空舞う墨の羽根は、瞬く間に消えてなくなる",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		orbit_ui = "",
+		orbit_combat_anima_change = "",
+		icon = "96829",
+		orbit_combat = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		miss_sfx = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "zidan_moshuifeiniao_hit",
+		id = 2105,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			1,
+			2,
+			3
+		},
+		weapon_ids = {
+			101,
+			101
+		}
+	},
+	[2106] = {
+		hit_sfx = "",
+		bullet_name = "yulei_jinli",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		name = "墨鱗魚雷",
+		themeid = 108,
+		desc = "墨染まる赤色の鱗は、水底にて悠々と泳ぐ",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		orbit_ui = "",
+		orbit_combat_anima_change = "",
+		icon = "96830",
+		orbit_combat = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		miss_sfx = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "yulei_jinli_hit",
+		id = 2106,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			5,
+			13
+		},
+		weapon_ids = {
+			107,
+			107
+		}
+	},
+	[2107] = {
+		hit_sfx = "",
+		bullet_name = "paodan_lianhua",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		name = "清蓮砲弾",
+		themeid = 108,
+		desc = "泥に染まらぬ花は、ほのかな香りを漂わせていく",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		orbit_ui = "",
+		orbit_combat_anima_change = "",
+		icon = "96831",
+		orbit_combat = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		miss_sfx = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 2107,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	},
+	[2108] = {
+		hit_sfx = "",
+		bullet_name = "",
+		name = "紅梅一枝",
+		type = 1,
+		preview_hit_distance = 0,
+		themeid = 108,
+		orbit_ui = "shebei_meihuaui",
+		desc = "墨の石は静かで厳か、紅梅の一輪は霜をも抱く",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = false,
+		miss_sfx = "",
+		orbit_combat_anima_change = "",
+		icon = "96832",
+		orbit_combat = "shebei_meihua",
+		orbit_ui_back = 1,
+		mirror = 0,
+		rarity = 4,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 2108,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				-0.36,
+				-1.88,
+				-0.91
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
 				-10,
 				100
 			}
@@ -55406,6 +55579,10 @@ pg.equip_skin_template = {
 		2102,
 		2103,
 		2104,
+		2105,
+		2106,
+		2107,
+		2108,
 		3001,
 		3002,
 		3003,

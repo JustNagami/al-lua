@@ -1,14 +1,14 @@
 ﻿return {
 	id = "ISLAND1001037",
-	mode = 9,
+	mode = 10,
 	map = {
 		{
-			100800,
-			10060002
+			101100,
+			10050000
 		},
 		{
-			100200,
-			10060029
+			101400,
+			10050003
 		}
 	},
 	look_weight = {
@@ -23,19 +23,18 @@
 	},
 	scripts = {
 		{
-			subName = "商区管理员",
-			characterId = 100800,
-			say = "是啊指挥官，大家……看上去真的很开心。",
-			animation = "nod",
+			characterId = 0,
+			say = "――元気にしてる？",
+			animation = "hi",
 			face2Face = {
 				{
 					0,
-					100800
+					101100
 				}
 			},
 			turnto = {
 				{
-					100200,
+					101400,
 					0
 				}
 			},
@@ -45,9 +44,19 @@
 			}
 		},
 		{
-			say = "毕竟自从来到这里以后，大家已经很久没这样聚在一起了~",
-			characterId = 100200,
-			subName = "订单管理员",
+			say = "あっ、指揮官！えへへ、繁茂農園へようこそ！",
+			characterId = 101100,
+			subName = "果樹園管理人",
+			animation = "hi",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "あ……指揮官、こんにちは……",
+			characterId = 101400,
+			subName = "農園管理人",
 			animation = "amaze",
 			typewriter = {
 				speed = 0.05,
@@ -55,28 +64,151 @@
 			}
 		},
 		{
-			animation = "nod",
 			characterId = 0,
-			say = "比起数据上的增长，眼前这份纯粹的快乐和满足……才更能衡量一个地方是不是真正的繁荣。",
+			say = "――二人して浮かない顔をしてるが、どうかした？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "指挥官，这份投入并非没有回报哦~",
-			characterId = 100800,
-			subName = "商区管理员",
-			animation = "elation",
+			say = "えっと……実はリンゴの木のことで。果樹園はずっと前に完成してるんですが、花も実も全然ならなくて……",
+			characterId = 101100,
+			subName = "果樹園管理人",
+			animation = "sad",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "商区管理员",
-			characterId = 100800,
-			say = "正如您所预见的那样，商区的发展已经让整个开发区的经济都活络起来了呢！",
+			say = "うん……結局花が散って、果実は一つもないみたいな……",
+			characterId = 101400,
+			subName = "農園管理人",
+			animation = "doubt",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			animation = "talk",
+			characterId = 0,
+			say = "――なんと！港の店に新しい食材を届けられたらと思ったが……",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――果樹園がそんな状況じゃ難しそうか",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "うん……ちゃんと頑張ってお世話してきたのに！",
+			characterId = 101100,
+			subName = "果樹園管理人",
+			animation = "doubt",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "果樹園管理人",
+			characterId = 101100,
+			say = "水やりも丁寧にやってきたし、日当たりも十分のはず……葉っぱばかり茂って、他は全然……！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――花が少なく、実もならない……ルシタニア、ちゃんと受粉はさせたか？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "じゅ、受粉？",
+			characterId = 101100,
+			subName = "果樹園管理人",
+			animation = "amaze",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――……ほら、ミツバチが飛んでるのが見えるだろう？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――ミツバチが花粉を一つの花から別の花に運ぶ。それが受粉ってやつだ",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			animation = "talk",
+			characterId = 0,
+			say = "――受粉しないと実がならない。水や日光や養分だけじゃ足りないのさ",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "そうだったんですか？！……この前なんて、わざわざ果樹から追い払ってました……",
+			characterId = 101100,
+			subName = "果樹園管理人",
+			animation = "clap",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――今からでも遅くない。実らない原因さえわかれば対策は容易だ。この果樹園にミツバチを導入すればいい",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "ミツバチ？ここで……ミツバチを飼うってこと？",
+			characterId = 101400,
+			subName = "農園管理人",
+			animation = "doubt",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――ええと…まあ、そんなところだ。まずは巣と群れを用意しないと",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "――野生の巣を探してなんとか果樹園まで持ち帰って、このあたりに置いておけば……",
+			characterId = 0,
 			animation = "talk",
 			typewriter = {
 				speed = 0.05,
@@ -85,56 +217,53 @@
 		},
 		{
 			characterId = 0,
-			nameColor = "#A9F548FF",
-			say = "阿莫玛，暂且先将工作放下，先享受努力的成果吧。",
+			say = "――って、巣箱も必要だな",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "没错哦，我已经闻到食物的香气了~",
-			characterId = 100200,
-			subName = "订单管理员",
-			animation = "slap",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			characterId = 0,
-			nameColor = "#A9F548FF",
-			say = "帕特莉，还有阿莫玛——欢迎光临~港口商区！",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			characterId = 0,
-			say = "快去享受一下难得的休闲时光吧！",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			subName = "商区管理员",
-			nameColor = "#A9F548FF",
-			animation = "shy",
-			characterId = 100800,
-			say = "指挥官，谢谢您！",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			say = "我们一定会好好享受的！",
-			characterId = 100200,
-			subName = "订单管理员",
+			say = "巣箱！ミツバチを飼うならちゃんとした箱がないとね",
+			characterId = 101400,
+			subName = "農園管理人",
 			animation = "nod",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "農園管理人",
+			characterId = 101400,
+			say = "すぐに準備してくる！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――ラコニアは……ミツバチが好きなのか？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "そうなんですよ。ミツバチのことになるとすごく張り切るんです！",
+			characterId = 101100,
+			subName = "果樹園管理人",
+			animation = "nod",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			animation = "nod",
+			characterId = 0,
+			say = "――それなら心強いな。じゃあ野生の巣を探してくる",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

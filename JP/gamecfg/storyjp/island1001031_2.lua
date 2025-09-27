@@ -1,10 +1,10 @@
 ﻿return {
 	id = "ISLAND1001031_2",
-	mode = 9,
+	mode = 10,
 	map = {
 		{
 			3120100,
-			10090013
+			10090020
 		}
 	},
 	look_weight = {
@@ -20,7 +20,7 @@
 	scripts = {
 		{
 			characterId = 0,
-			say = "零件的位置都发给你了，你拿到了吗？",
+			say = "――明石、何か用？",
 			face2Face = {
 				{
 					0,
@@ -33,25 +33,9 @@
 			}
 		},
 		{
-			animation = "clap",
+			animation = "elation",
 			characterId = 3120100,
-			say = "指挥官！你来得正好喵！",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			characterId = 3120100,
-			say = "{namecode:98:明石}已经都带回来了，等下就可以开始修复了。",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			characterId = 3120100,
-			say = "零件归位，想要修复简直就是轻而易举喵！",
+			say = "指揮官、こっちにゃ！飛行装置を直す方法を見つけたにゃ！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -59,7 +43,90 @@
 		},
 		{
 			characterId = 0,
-			say = "你确定？那个状态可以轻而易举修好吗……",
+			say = "――飛行装置？まさか墜落したあの機体のこと？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 3120100,
+			say = "その通りにゃ！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "ただ、墜落した時に散らばった破片を集めてもらう必要があるにゃ",
+			characterId = 3120100,
+			animation = "embarrass",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――どうして急に飛行装置を直そうと？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 3120100,
+			say = "ふふん……指揮官、最近港で噂になってる宝の島は知ってるにゃ？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "宝の島？パトリックやステファンから聞いたけど……それと何の関係が？",
+			characterId = 0,
+			animation = "talk",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――まさか、明石もその宝とやらに興味が？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			animation = "nod",
+			characterId = 3120100,
+			say = "ムフフ、もちろん興味あるにゃ〜",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 3120100,
+			say = "でも……指揮官は最近明石にいっぱい贔屓してくれるから、明石だけ得するなんて恩知らずのことはできないにゃ！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 3120100,
+			say = "だからこのチャンス、指揮官に譲るにゃ！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――チャンス？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -68,15 +135,7 @@
 		{
 			animation = "elation",
 			characterId = 3120100,
-			say = "小小的瑕疵而已~在{namecode:98:明石}无敌的修复技术面前，都不是问题喵！分分钟搞定！",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			characterId = 0,
-			say = "行吧……你说了算，那大约要修多久？",
+			say = "宝の島の周りは怪しい霧や乱流だらけで、船で近づいてもグルグルと迷ってばかりで島にたどり着けないにゃ！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -84,9 +143,7 @@
 		},
 		{
 			characterId = 3120100,
-			nameColor = "#A9F548FF",
-			animation = "elation",
-			say = "给{namecode:98:明石}……嗯……一顿饭的功夫！不！一杯咖啡的时间！总之很快就好喵！",
+			say = "――明石、何か用？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -94,7 +151,7 @@
 		},
 		{
 			characterId = 0,
-			say = "你没在开玩笑？",
+			say = "――……まさか空から行くつもりか？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -103,7 +160,111 @@
 		{
 			animation = "clap",
 			characterId = 3120100,
-			say = "完全没有喵~指挥官，等会你直接来码头找我就好喵！",
+			say = "さすが指揮官、察しがいいにゃ。その通り、飛んで行くのにゃ！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――あの墜落してボロボロになった飛行装置で？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "もちろんにゃ。だから散らばった部品を全部集めて、明石がバッチリ直してみせるにゃ！",
+			characterId = 3120100,
+			animation = "nod",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――本当に大丈夫か…？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 3120100,
+			animation = "amaze",
+			say = "うにゃ！指揮官、どうして明石の腕を疑うにゃ！霧と乱流を突破するには空からしかないにゃ！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			},
+			options = {
+				{
+					content = "なんか怪しい……",
+					flag = 1
+				},
+				{
+					content = "宝か……",
+					flag = 2
+				}
+			}
+		},
+		{
+			characterId = 0,
+			optionFlag = 1,
+			animation = "nod",
+			say = "――とはいえ、今は開発エリアも軌道に乗ってきたし、成長につながる新しい突破口を探すのも悪くない",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			optionFlag = 2,
+			say = "――離島は着実に発展してるが、もし追加の起業資金が入れば……",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "（借金の重圧はまだあるが、進むべき方向ははっきりしているし、着実に前進できている……）",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――わかった",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			animation = "nod",
+			characterId = 3120100,
+			say = "ムフフフ、指揮官ならそう言ってくれると思ってたにゃ！だからもう準備しておいたにゃ！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 3120100,
+			say = "あとは肝心の部品だけ…多分風の原野、朝露農場、港の辺りにあるはずにゃ",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 3120100,
+			say = "部品を見つけたら、明石を呼べばいいにゃ〜。明石が何とかしてみせるにゃ！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

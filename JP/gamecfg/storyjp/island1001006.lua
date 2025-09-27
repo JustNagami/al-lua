@@ -4,7 +4,7 @@
 	map = {
 		{
 			100700,
-			10040002
+			10040060
 		}
 	},
 	look_weight = {
@@ -20,7 +20,8 @@
 	scripts = {
 		{
 			characterId = 0,
-			say = "呼……怎么样，这些木材够了吗？",
+			animation = "talk",
+			say = "――オブライン……どう？これで木材は足りた？",
 			face2Face = {
 				{
 					0,
@@ -33,10 +34,10 @@
 			}
 		},
 		{
-			say = "嗯嗯，辛苦指挥官啦~有了这些我们就能修复好交通线了。",
+			say = "はい！指揮官さん、ありがとうございます……木材はこれで十分です",
 			characterId = 100700,
-			subName = "林场管理员",
-			animation = "talk",
+			subName = "森の管理人",
+			animation = "clap",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -44,16 +45,16 @@
 		},
 		{
 			characterId = 0,
-			say = "那我们快去找乔安吧。",
+			say = "――じゃあ急いでジョンのところへ戻ろう",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "好，乔安应该正在通往港口的路上等我们。",
+			say = "はい……ジョンは港方面のバス停で待っていると思います",
 			characterId = 100700,
-			subName = "林场管理员",
+			subName = "森の管理人",
 			animation = "nod",
 			typewriter = {
 				speed = 0.05,
@@ -61,9 +62,9 @@
 			}
 		},
 		{
-			subName = "林场管理员",
+			subName = "森の管理人",
 			characterId = 100700,
-			say = "我们拿上木材一起过去吧~",
+			say = "一緒に向かいましょう",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

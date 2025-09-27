@@ -259,6 +259,7 @@ pg.furniture_data_template = setmetatable({
 			100074,
 			100075,
 			100076,
+			100077,
 			200001,
 			200002,
 			200003,
@@ -3761,6 +3762,7 @@ pg.furniture_data_template = setmetatable({
 			100074,
 			100075,
 			100076,
+			100077,
 			31101,
 			54104,
 			54105
@@ -9285,6 +9287,7 @@ pg.furniture_data_template = setmetatable({
 			100066,
 			100071,
 			100073,
+			100077,
 			30123,
 			35128,
 			36125,
@@ -10565,6 +10568,7 @@ pg.furniture_data_template = setmetatable({
 		100074,
 		100075,
 		100076,
+		100077,
 		200001,
 		200002,
 		200003,
@@ -27965,6 +27969,82 @@ pg.base.furniture_data_template = {
 					"action1"
 				}
 			}
+		},
+		interAction_group = {}
+	},
+	[100077] = {
+		spine_extra = "",
+		describe = "ニンジャ専用の乗り物。一人乗りだ！",
+		gain_by = "",
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		name = "フライング・シュリケン",
+		themeId = 0,
+		icon = "xuanzhuanshoulijianicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 6,
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		canputon = 0,
+		id = 100077,
+		can_rotate = 0,
+		size = {
+			6,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"xuanzhuanshoulijian",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			},
+			0.8
+		},
+		followBone = {
+			"char",
+			1
 		},
 		interAction_group = {}
 	},

@@ -20,7 +20,7 @@
 	scripts = {
 		{
 			characterId = 0,
-			say = "忙……目前看来的话，是一件好事情。",
+			say = "（パトリックは忙しそうだ）",
 			face2Face = {
 				{
 					0,
@@ -33,17 +33,25 @@
 			}
 		},
 		{
-			animation = "curious",
-			characterId = 100200,
-			subName = "订单管理员",
-			say = "指挥官？你怎么了？是还在为大家的工作操心吗？",
+			characterId = 0,
+			say = "――忙しいのは……今のところポジティブに捉えよう",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "……现在不止要为大家的工作操心了，还有整个无人岛开发计划的贷款。",
+			animation = "doubt",
+			characterId = 100200,
+			subName = "依頼管理人",
+			say = "指揮官？どうしたの？まだみんなの仕事のことで考え事？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "――……仕事だけじゃない。この離島全体の開発計画の借金も背負わされて……",
 			characterId = 0,
 			animation = "shakehead",
 			typewriter = {
@@ -53,43 +61,7 @@
 		},
 		{
 			characterId = 0,
-			say = "天文数字级别。",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			animation = "talk",
-			characterId = 100200,
-			subName = "订单管理员",
-			say = "呵呵呵，之前{namecode:98:明石}一个劲地造农场、扩港口、建商区……",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			subName = "订单管理员",
-			characterId = 100200,
-			say = "我还以为是得到了指挥官的支持呢~",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			say = "支持……虽迟但到，骗到的支持也是支持……接手的贷款也是贷款。",
-			characterId = 0,
-			animation = "nod",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			characterId = 0,
-			say = "只是再不想办法的话……整个开发区都会在还款日来临的时候一起破产。",
+			say = "――それも天文学的な額だ",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -98,15 +70,51 @@
 		{
 			animation = "sad",
 			characterId = 100200,
-			subName = "订单管理员",
-			say = "？这、这样吗？那指挥官来找我……我，也不能分担啊！",
+			subName = "依頼管理人",
+			say = "あはは…明石はすごい速さで農場を作ったり、港を拡張したり、商店街を建てたりしてたからね……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "咳咳……贷款不会分到大家头上的。",
+			subName = "依頼管理人",
+			characterId = 100200,
+			say = "てっきり指揮官の承認があってやってたんだと思ってたよ",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "――承認ね……今は借金を返さないと……",
+			characterId = 0,
+			animation = "talk",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――このまま手を打たなければ……開発エリアが一斉に破産しかねない",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			animation = "scare",
+			characterId = 100200,
+			subName = "依頼管理人",
+			say = "そ、そうなの？その話を聞かせたところで…私一人じゃどうにもできないよ",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "――コホン……なに、借金を皆に背負わせるつもりはないさ",
 			characterId = 0,
 			animation = "shakehead",
 			typewriter = {
@@ -116,7 +124,7 @@
 		},
 		{
 			characterId = 0,
-			say = "我只是想找你确认一下，作为订单管理员，你有没有总结出……来钱最快的方式。",
+			say = "――ただ、依頼管理を任されたパトリックなら……手っ取り早く稼げる方法もそのリストにあるんじゃないかと思ってな",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -125,53 +133,44 @@
 		{
 			animation = "think",
 			characterId = 100200,
-			subName = "订单管理员",
-			say = "……最简单、最稳妥的……应该是完成货运委托。",
+			subName = "依頼管理人",
+			say = "……一番簡単で、確実なのは……やっぱり輸送の委託だと思う",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			animation = "talk",
+			subName = "依頼管理人",
 			characterId = 100200,
-			subName = "订单管理员",
-			say = "只要把岛上的物资运到更需要它们的地方，就能赚得更多，只可惜开发区物产还不够丰富。",
+			say = "島の資材を届ける需要があるからね。ただ残念なことに開発エリアはまだそこまで産物がないから…",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "订单管理员",
+			subName = "依頼管理人",
 			characterId = 100200,
-			say = "至于快的问题……就要看指挥官怎么做了。",
+			say = "早く稼げるかどうかは……指揮官の行動次第かな",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
+			say = "――じゃあもっと複雑で、リスキーで……効率のいい方法はないか？",
 			characterId = 0,
-			say = "还有没有那种，更复杂，更冒险……更高效一点的办法……呢？",
+			animation = "talk",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "订单管理员",
+			say = "ふふふ、指揮官、欲が出てきたね……",
 			characterId = 100200,
-			say = "哼哼~指挥官的胃口不小嘛……",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			say = "不过既然你都问到了……那不知道你有没有留意过最近在港口流传的……",
-			characterId = 100200,
-			subName = "订单管理员",
+			subName = "依頼管理人",
 			animation = "elation",
 			typewriter = {
 				speed = 0.05,
@@ -179,9 +178,18 @@
 			}
 		},
 		{
-			subName = "订单管理员",
+			subName = "依頼管理人",
 			characterId = 100200,
-			say = "那个宝藏岛的传说？",
+			say = "それだったら……港で最近流行っている…",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "依頼管理人",
+			characterId = 100200,
+			say = "宝の島の伝説は聞いたことある？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -189,7 +197,7 @@
 		},
 		{
 			characterId = 0,
-			say = "什么宝藏岛？",
+			say = "――宝の島？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -198,17 +206,17 @@
 		{
 			animation = "talk",
 			characterId = 100200,
-			subName = "订单管理员",
-			say = "一个传言而已~说是在开发区附近的海域里，有一座时隐时现的神秘小岛。",
+			subName = "依頼管理人",
+			say = "何でも、開発エリアの近海に時々現れる謎の島があるらしいよ",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "订单管理员",
+			subName = "依頼管理人",
 			characterId = 100200,
-			say = "上面据说埋藏着数量庞大的宝藏……黄金、珠宝、失落的科技——",
+			say = "そこには大量の宝物が眠ってるって話……金銀財宝から失われた技術まで……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -216,40 +224,39 @@
 		},
 		{
 			characterId = 100200,
-			subName = "订单管理员",
-			say = "怎样~指挥官心动了吗？",
+			subName = "依頼管理人",
+			say = "どう？指揮官、気になってきた？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			},
 			options = {
 				{
-					content = "……还是聊聊货运委托的事吧。",
+					content = "……やはり輸送依頼の話を聞かせて",
 					flag = 1
 				},
 				{
-					content = "宝藏猎人心动中……",
+					content = "トレジャーハンターの血が騒ぐな……",
 					flag = 2
 				}
 			}
 		},
 		{
+			say = "ふーん、さすが指揮官、全然動じないね",
+			subName = "依頼管理人",
 			characterId = 100200,
 			optionFlag = 1,
-			subName = "订单管理员",
-			say = "欸，不愧是指挥官，完全不为所动呢~",
+			animation = "clap",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			animation = "talk",
-			subName = "订单管理员",
 			characterId = 100200,
-			dir = 1,
 			optionFlag = 1,
-			say = "不过负责货运委托的斯蒂芬妮就曾见过那个岛哦~",
+			subName = "依頼管理人",
+			say = "でも輸送委託を担当してるステファンは、その島を実際に見たことがあるそうだよ",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -258,38 +265,38 @@
 		{
 			characterId = 0,
 			optionFlag = 2,
-			say = "但这故事……听起来有点假。",
-			animation = "shakehead",
+			say = "――でもこの話、出来すぎてる気がする",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
+			say = "真偽はともかく……気になるならステファンに聞いてみたら？",
+			subName = "依頼管理人",
 			characterId = 100200,
 			optionFlag = 2,
-			subName = "订单管理员",
-			say = "不管是真是假……指挥官都可以去找斯蒂芬妮打听打听嘛~",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			characterId = 100200,
-			optionFlag = 2,
-			subName = "订单管理员",
-			say = "她负责管理货运委托，肯定听到过更多的消息。",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
 			animation = "talk",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
 			characterId = 100200,
-			subName = "订单管理员",
-			say = "指挥官可以去问一下斯蒂芬妮嘛，说不定会有大——收货哦！",
+			optionFlag = 2,
+			subName = "依頼管理人",
+			say = "輸送委託の管理をしているから、もっと詳しい情報を耳にしてると思う",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			animation = "clap",
+			characterId = 100200,
+			subName = "依頼管理人",
+			say = "もしかしたら大きな収穫に繋がるかも！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

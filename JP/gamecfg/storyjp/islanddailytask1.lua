@@ -19,10 +19,10 @@
 	},
 	scripts = {
 		{
-			subName = "林场管理员",
-			characterId = 100700,
 			animation = "nod",
-			say = "咦，是指挥官啊！你是特意来看我的吗？",
+			characterId = 100700,
+			subName = "森の管理人",
+			say = "指揮官さん、本当にありがとうございます……",
 			face2Face = {
 				{
 					0,
@@ -35,29 +35,18 @@
 			}
 		},
 		{
-			say = "嗯，这些东西……都是我要的没错！多谢指挥官啦~",
+			subName = "森の管理人",
 			characterId = 100700,
-			subName = "林场管理员",
-			animation = "talk",
+			say = "これからも伐採場をしっかりと管理しますね〜",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "好哦~看你着急的样子，一定还有很多事情吧。",
+			subName = "森の管理人",
 			characterId = 100700,
-			subName = "林场管理员",
-			animation = "clap",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			subName = "林场管理员",
-			characterId = 100700,
-			say = "那就等你忙完了再来陪奥布莱恩玩吧！我会在这里等你的~",
+			say = "これでもう皆さんが木材に困ることはなくなるはずです",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

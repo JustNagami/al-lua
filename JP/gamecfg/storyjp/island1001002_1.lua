@@ -4,8 +4,9 @@
 	map = {},
 	scripts = {
 		{
+			say = "（ん？そこにいるのは確か……明石のところのオブライン？）",
 			characterId = 0,
-			say = "（嗯？那里好像有人……）",
+			camera = "StoryCamera1",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

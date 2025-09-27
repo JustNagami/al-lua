@@ -1,6 +1,6 @@
 ﻿return {
 	id = "ISLAND1001033",
-	mode = 9,
+	mode = 10,
 	map = {
 		{
 			101000,
@@ -19,10 +19,9 @@
 	},
 	scripts = {
 		{
+			characterId = 0,
 			animation = "hi",
-			characterId = 101000,
-			subName = "集会岛接待员",
-			say = "指挥官来啦~我是集会岛的接待员莉莎，您有什么想喝的饮品吗？",
+			say = "――エリザベス",
 			face2Face = {
 				{
 					0,
@@ -35,19 +34,38 @@
 			}
 		},
 		{
-			say = "一杯红茶如何？可以为您驱散旅途的疲惫。",
+			say = "指揮官、ようこそ自由建設地へ。集会島の受付係、エリザベスです",
 			characterId = 101000,
-			animation = "think",
-			subName = "集会岛接待员",
+			animation = "hi",
+			subName = "集会島受付",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "不用了，莉莎。~",
-			characterId = 0,
+			subName = "集会島受付",
+			characterId = 101000,
+			say = "何かお飲みになりますか？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "よかったら紅茶などいかがですか？旅の疲れを癒やしてくれますよ",
+			characterId = 101000,
+			animation = "talk",
+			subName = "集会島受付",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
 			animation = "shakehead",
+			characterId = 0,
+			say = "――ありがとう。まだ大丈夫だ",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -55,27 +73,17 @@
 		},
 		{
 			characterId = 0,
-			say = "刚才玛丽给了我一份明石准备的礼物，我想把它种在自由建造区里。",
+			say = "――それよりさっきこのバス停の図面を手に入れたから、ここに置いてみたい",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "这样啊……没有问题，指挥官把位置定下来就好。",
+			say = "これは…メリーが渡したものでしょうか？この島に建てたいって何度も私にせがんできて…",
 			characterId = 101300,
 			animation = "think",
-			subName = "集会岛接待员",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			say = "剩下的就交给我吧。",
-			characterId = 101300,
-			animation = "clap",
-			subName = "集会岛接待员",
+			subName = "集会島受付",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -83,7 +91,16 @@
 		},
 		{
 			characterId = 0,
-			say = "那就麻烦你了。",
+			say = "――だからあんな張り切ってたんだ…何か手伝おうか？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "集会島受付",
+			characterId = 101300,
+			say = "配置を決めて教えていただければ、それで大丈夫です",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

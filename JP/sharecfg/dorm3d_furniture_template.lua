@@ -1144,6 +1144,229 @@ pg.dorm3d_furniture_template = {
 			"no_bake_pay_prop/livingroom"
 		}
 	},
+	[1201] = {
+		name = "ふんわりベッド",
+		rarity = 3,
+		unlock_tips = "",
+		type = 4,
+		is_special = 0,
+		room_id = 12,
+		icon = "dorm3dIcon/3Ddrom_dafeng_CommonFurniture1",
+		desc = "柔らかなダブルベッド。快適なマットレス、布団、枕が揃っている。布団の中に入ればいつでも一日の疲れを癒してくれる。",
+		acesses = "",
+		model = "",
+		id = 1201,
+		is_exclusive = 0,
+		scene_hides = "",
+		target_slots = {
+			1120103
+		},
+		touch_id = {
+			{
+				30707,
+				3070710
+			}
+		},
+		shop_id = {},
+		unlock_banners = {
+			"banner_furniture1151"
+		}
+	},
+	[1202] = {
+		name = "木製ダイニングテーブル",
+		rarity = 3,
+		unlock_tips = "",
+		type = 6,
+		is_special = 0,
+		room_id = 12,
+		icon = "dorm3dIcon/3Ddrom_dafeng_CommonFurniture2",
+		desc = "座面と背もたれだけのシンプルな座椅子。畳用のもので、柔らかい座布団と合わせれば、長時間座っても筋肉疲労の心配がない快適さを持つ。",
+		acesses = "",
+		model = "",
+		id = 1202,
+		is_exclusive = 0,
+		scene_hides = "",
+		target_slots = {
+			1120203
+		},
+		touch_id = {
+			{
+				30707,
+				3070720
+			}
+		},
+		shop_id = {},
+		unlock_banners = {
+			"banner_furniture1151"
+		}
+	},
+	[1203] = {
+		name = "シンプルな座椅子",
+		rarity = 3,
+		unlock_tips = "",
+		type = 5,
+		is_special = 0,
+		room_id = 12,
+		icon = "dorm3dIcon/3Ddrom_dafeng_CommonFurniture3",
+		desc = "頑丈で耐久性のある良質な木材で作られたテーブル。天板は滑らかで掃除がしやすく、濃い色合いが汚れを目立たなくし、紫檀の質感をそのまま生かしている。",
+		acesses = "",
+		model = "",
+		id = 1203,
+		is_exclusive = 0,
+		scene_hides = "",
+		target_slots = {
+			1120303
+		},
+		touch_id = {
+			{
+				30707,
+				3070730
+			}
+		},
+		shop_id = {},
+		unlock_banners = {
+			"banner_furniture1152"
+		}
+	},
+	[1211] = {
+		name = "古風の掛け軸",
+		rarity = 2,
+		unlock_tips = "",
+		type = 3,
+		is_exclusive = 0,
+		room_id = 12,
+		is_special = 0,
+		desc = "古風な掛け軸。控えめで禅の趣があり、室内の雰囲気と調和している。部屋に静けさと雅やかさを添える。",
+		icon = "dorm3dIcon/3Ddrom_dafeng_CommonFurniture4",
+		acesses = "",
+		model = "Pay_Dafenghostel/pre_db_df_wallscrolls01",
+		unlock_banners = "",
+		id = 1211,
+		touch_id = "",
+		scene_hides = "",
+		target_slots = {
+			1120301
+		},
+		shop_id = {}
+	},
+	[1212] = {
+		name = "恋慕のコンパニオン",
+		rarity = 2,
+		unlock_tips = "",
+		type = 3,
+		is_exclusive = 0,
+		room_id = 12,
+		is_special = 0,
+		desc = "軽やかで柔らかな素材を使った特別な衣装、身に着けるとまるで何もまとっていないかのように快適。",
+		icon = "dorm3dIcon/3Ddrom_dafeng_CommonFurniture5",
+		acesses = "",
+		model = "Pay_Dafenghostel/pre_db_df_cloth01",
+		unlock_banners = "",
+		id = 1212,
+		touch_id = "",
+		scene_hides = "",
+		target_slots = {
+			1120101
+		},
+		shop_id = {}
+	},
+	[1213] = {
+		name = "フロアランプ",
+		rarity = 2,
+		unlock_tips = "",
+		type = 3,
+		is_exclusive = 0,
+		room_id = 12,
+		is_special = 0,
+		desc = "床に置かれた背の高い木製ランプ。柔らかな光を放つそれは、彼女が心を込めて選んだインテリア用の光源だ。",
+		icon = "dorm3dIcon/3Ddrom_dafeng_CommonFurniture6",
+		acesses = "",
+		model = "Pay_Dafenghostel/pre_db_df_floorlamp01",
+		unlock_banners = "",
+		id = 1213,
+		touch_id = "",
+		scene_hides = "",
+		target_slots = {
+			1120302
+		},
+		shop_id = {}
+	},
+	[1214] = {
+		name = "半透明の屏風",
+		rarity = 2,
+		unlock_tips = "",
+		type = 3,
+		is_exclusive = 0,
+		room_id = 12,
+		is_special = 0,
+		desc = "精緻な柄が描かれている、半透明の屏風。大鳳はベッドの横に置くのが好きで、半透明のデザインで室内にほのかな艶めきを添えている。",
+		icon = "dorm3dIcon/3Ddrom_dafeng_CommonFurniture7",
+		acesses = "",
+		model = "Pay_Dafenghostel/pre_db_df_frame01",
+		unlock_banners = "",
+		id = 1214,
+		touch_id = "",
+		target_slots = {
+			1120102
+		},
+		shop_id = {},
+		scene_hides = {
+			"no_bake_prop_substitute/pre_db_frame32"
+		}
+	},
+	[1215] = {
+		name = "ナイトライト",
+		rarity = 2,
+		unlock_tips = "",
+		type = 3,
+		is_exclusive = 0,
+		room_id = 12,
+		is_special = 0,
+		desc = "可愛らしいデザインのナイトライト。内部には藤の枝をあしらった装飾があり、暖かく柔らかな灯りが部屋に温もりを与える。",
+		icon = "dorm3dIcon/3Ddrom_dafeng_CommonFurniture8",
+		acesses = "",
+		model = "Pay_Dafenghostel/pre_db_df_desklamp01",
+		unlock_banners = "",
+		id = 1215,
+		touch_id = "",
+		scene_hides = "",
+		target_slots = {
+			1120104
+		},
+		shop_id = {}
+	},
+	[1221] = {
+		name = "愛の巣",
+		rarity = 4,
+		unlock_tips = "",
+		type = 4,
+		is_special = 0,
+		room_id = 12,
+		icon = "dorm3dIcon/3Ddrom_dafeng_PremiumFurniture1",
+		desc = "シンプルなデザインのダブルベッド。高強度の素材を使用し、頑丈な金属フレームは大きな負荷にも耐えられる。厳選した低反発マットレスと組み合わせ、安全で快適な眠りを保証してくれる。",
+		acesses = "",
+		model = "Pay_Dafenghostel/pre_db_df_bedroom_01",
+		id = 1221,
+		is_exclusive = 1,
+		target_slots = {
+			1120103
+		},
+		touch_id = {
+			{
+				30707,
+				3070740
+			}
+		},
+		shop_id = {
+			270501
+		},
+		unlock_banners = {
+			"banner_furniture1221"
+		},
+		scene_hides = {
+			"no_bake_pay_prop/bedroom"
+		}
+	},
 	get_id_list_by_room_id = {
 		{
 			1,
@@ -1198,6 +1421,17 @@ pg.dorm3d_furniture_template = {
 			1108,
 			1151,
 			1152
+		},
+		[12] = {
+			1201,
+			1202,
+			1203,
+			1211,
+			1212,
+			1213,
+			1214,
+			1215,
+			1221
 		}
 	},
 	all = {
@@ -1244,6 +1478,15 @@ pg.dorm3d_furniture_template = {
 		1107,
 		1108,
 		1151,
-		1152
+		1152,
+		1201,
+		1202,
+		1203,
+		1211,
+		1212,
+		1213,
+		1214,
+		1215,
+		1221
 	}
 }

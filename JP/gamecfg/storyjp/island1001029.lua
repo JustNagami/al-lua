@@ -19,10 +19,8 @@
 	},
 	scripts = {
 		{
-			subName = "牧场管理员",
-			characterId = 100500,
-			say = "没错！是蛋哦！是我们牧场的——第一枚鸡蛋！",
-			animation = "happy",
+			characterId = 0,
+			say = "――これは……卵！",
 			face2Face = {
 				{
 					0,
@@ -35,8 +33,18 @@
 			}
 		},
 		{
+			animation = "nod",
+			characterId = 100500,
+			subName = "牧場管理人",
+			say = "そうだよ！あたしたちの牧場で生まれた卵！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
 			characterId = 0,
-			say = "看来你的努力没有白费，虽然只是个开始，但这也意味着牧场真的运转起来了。",
+			say = "――まだ始まりに過ぎないが、牧場がちゃんと回り始めた証拠だね",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -45,35 +53,26 @@
 		{
 			animation = "elation",
 			characterId = 100500,
-			subName = "牧场管理员",
-			say = "嗯嗯，虽然辛苦，但是看到它！就觉得一切都值得了！",
+			subName = "牧場管理人",
+			say = "うんうん、苦労したけど……これを見たら良かったなーって気になったよ！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "牧场管理员",
+			subName = "牧場管理人",
 			characterId = 100500,
-			say = "指挥官！这个！送给你！",
+			say = "お礼にこれは指揮官にあげる！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
+			animation = "talk",
 			characterId = 0,
-			say = "嗯？送给我……梅莉，这可是牧场的第一次的收获，应该好好保存起来，或者……",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			animation = "shakehead",
-			characterId = 100500,
-			subName = "牧场管理员",
-			say = "才不要，食物可不是用来收藏的哦~而且鸡蛋放久了也会坏掉的！",
+			say = "――え？くれるの？……牧場の初めての収穫だし、アメリゴが持っておけばいいのに",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -82,15 +81,24 @@
 		{
 			animation = "elation",
 			characterId = 100500,
-			subName = "牧场管理员",
-			say = "那可就成坏蛋了~梅莉不要坏蛋！",
+			subName = "牧場管理人",
+			say = "いいって！食べ物は飾りものじゃないし",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "好……那我收下了，谢谢你，梅莉。",
+			subName = "牧場管理人",
+			characterId = 100500,
+			say = "もらってもらって！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "――じゃあありがたくもらっておくよ。ありがとう",
 			characterId = 0,
 			animation = "nod",
 			typewriter = {
@@ -101,8 +109,8 @@
 		{
 			animation = "clap",
 			characterId = 100500,
-			subName = "牧场管理员",
-			say = "指挥官喜欢就好！",
+			subName = "牧場管理人",
+			say = "喜んでくれたら何よりだよ！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -110,16 +118,17 @@
 		},
 		{
 			characterId = 0,
-			say = "嗯，我们快去告诉赫莫这个好消息吧。",
+			say = "――うん、ホメリックにも知らせておこう",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "牧场管理员",
+			say = "うん！3、2、1……",
 			characterId = 100500,
-			say = "好哦！三、二、一……",
+			subName = "牧場管理人",
+			animation = "nod",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -127,16 +136,24 @@
 		},
 		{
 			characterId = 0,
-			say = "嗯？",
+			say = "――ん？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "牧场管理员",
+			subName = "牧場管理人",
 			characterId = 100500,
-			say = "我先走一步啦！指挥官——",
+			say = "指揮官、お先～",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――足元に気をつけなって！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

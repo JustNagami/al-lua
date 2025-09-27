@@ -19,10 +19,9 @@
 	},
 	scripts = {
 		{
-			subName = "农田管理员",
-			characterId = 100400,
-			animation = "talk",
-			say = "嗯，指挥官……对于刚才的那些种子，你有什么发现吗？",
+			characterId = 0,
+			animation = "hi",
+			say = "――これでよし！",
 			face2Face = {
 				{
 					0,
@@ -32,14 +31,24 @@
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
+			}
+		},
+		{
+			say = "それで指揮官……さっきの種で、何か気づいたことはありませんか？",
+			characterId = 100400,
+			subName = "畑管理人",
+			animation = "nod",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
 			},
 			options = {
 				{
-					content = "没错！",
+					content = "あったよ",
 					flag = 1
 				},
 				{
-					content = "额……",
+					content = "えっと……",
 					flag = 2
 				}
 			}
@@ -47,7 +56,7 @@
 		{
 			characterId = 0,
 			optionFlag = 1,
-			say = "不管是形态还是大小，都与普通小麦有着明显的区别……真是不可思议。",
+			say = "――形も大きさも、普通の小麦とはっきり違う……不思議だな",
 			animation = "nod",
 			typewriter = {
 				speed = 0.05,
@@ -57,56 +66,90 @@
 		{
 			characterId = 0,
 			optionFlag = 2,
-			say = "确实有很大的不同……比如……比如……",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			characterId = 100400,
-			optionFlag = 2,
-			subName = "农田管理员",
-			say = "盯——",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			characterId = 0,
-			optionFlag = 2,
-			say = "比如大了很多！",
-			animation = "nod",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			animation = "nod",
-			characterId = 100400,
-			subName = "农田管理员",
-			say = "嗯嗯~指挥官果然也注意到了。",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
+			say = "――言われてみれば違うような気が……たとえば……たとえば……",
 			animation = "talk",
-			characterId = 100400,
-			subName = "农田管理员",
-			say = "岛上的环境确实得天独厚，在这里种出来的作物品质都非常不错……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "听起来……这片田地的潜力似乎还没有被真正发掘出来。",
+			characterId = 100400,
+			optionFlag = 2,
+			subName = "畑管理人",
+			say = "じーっ",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
 			characterId = 0,
+			optionFlag = 2,
+			say = "――……こっちのが大きい！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
 			animation = "nod",
+			characterId = 100400,
+			subName = "畑管理人",
+			say = "お気づきになりましたか",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "畑管理人",
+			characterId = 100400,
+			say = "島の環境はやっぱり恵まれていて、ここで栽培した作物は質がとてもいいです……",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "図鑑と照らし合わせても……多くの作物に見ればわかる変化が出ています",
+			characterId = 100400,
+			subName = "畑管理人",
+			animation = "talk",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――聞いてる限り……この畑のポテンシャルはまだまだありそうだ",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "畑管理人",
+			characterId = 100400,
+			say = "はい。少し時間をかければ、この畑だけで開発エリア全体の食糧を賄えるようになるでしょう",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "――でも……栽培の規模を大きくするなら……",
+			characterId = 0,
+			animation = "talk",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――島内の供給を賄いつつ、外への出荷も増やす…というのはどうだ？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -115,64 +158,35 @@
 		{
 			animation = "think",
 			characterId = 100400,
-			subName = "农田管理员",
-			say = "嗯~指挥官，只要再有一段时间，这片农田就可以让整个开发区的食物实现自给自足。",
+			subName = "畑管理人",
+			say = "栽培の規模を大きくすれば……収穫量と成長サイクルは確かに強みになります……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			characterId = 0,
-			say = "可如果……我想扩大种植规模……",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			say = "最好能在供给岛内的同时还能满足更多的外销需求，你觉得可行吗？",
-			characterId = 0,
-			animation = "nod",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			animation = "think",
+			subName = "畑管理人",
 			characterId = 100400,
-			subName = "农田管理员",
-			say = "扩大规模……高产和生长速度快确实是优势……",
+			say = "ですが同時に、土壌の養分を大きく消耗させてしまうということでもあります",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "但指挥官，这也意味着土壤养分的消耗会非常快。",
+			subName = "畑管理人",
 			characterId = 100400,
-			subName = "农田管理员",
-			animation = "shakehead",
+			say = "今の輪作や基本的な堆肥だけじゃ……消耗がいずれ…",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			animation = "talk",
+			subName = "畑管理人",
 			characterId = 100400,
-			subName = "农田管理员",
-			say = "现有的轮作和基础堆肥……恐怕很难跟上这种强度的索取。",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			subName = "农田管理员",
-			characterId = 100400,
-			say = "你看，这块土壤虽然看着还行，但深层土壤的有机质含量已经开始下降了。",
+			say = "この畑は表面上は問題なさそうですが、土壌深部の有機質が既に減少し始めています",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -181,8 +195,8 @@
 		{
 			animation = "sad",
 			characterId = 100400,
-			subName = "农田管理员",
-			say = "如果不及时补充，下一季的产量和品质可能会明显下滑，这是不可持续的。",
+			subName = "畑管理人",
+			say = "補給を怠れば、次のシーズンには収穫量も質も明らかに落ちます……長期的には持ちません",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -190,33 +204,34 @@
 		},
 		{
 			characterId = 0,
-			say = "土壤肥力么……这是个问题……不过……",
+			say = "――保肥力か……確かに……なら……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "不过我们不能只向土地索取，还要有适当的回报。",
 			characterId = 0,
-			animation = "nod",
+			say = "――畑から奪うだけじゃなく、きちんと返したらどうだ？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "农田管理员",
+			say = "あ。そうですね…！さすが指揮官です！",
 			characterId = 100400,
-			say = "啊！是哦……不愧是指挥官！",
+			subName = "畑管理人",
+			animation = "amaze",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
+			say = "――例えば……エコ肥料を試してみるとか？ちょうど隣に牧場があるし",
 			characterId = 0,
-			say = "或许……我们可以试试生态肥料。刚好旁边不就是牧场吗？",
+			animation = "talk",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -225,62 +240,60 @@
 		{
 			animation = "think",
 			characterId = 100400,
-			subName = "农田管理员",
-			say = "唔，没错，如果用上稳定、安全、高效的有机肥……",
+			subName = "畑管理人",
+			say = "そうですね。安全かつ効率的なエコ肥料を使えれば……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "农田管理员",
+			subName = "畑管理人",
 			characterId = 100400,
-			say = "再根据土壤实际情况辅以不同的化学肥料。",
+			say = "さらに畑の状態に応じて、化学肥料を適宜に組み合わせると……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
+			subName = "畑管理人",
+			characterId = 100400,
+			say = "これなら土壌の養分と作物の質が両方維持できそうです！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "――よし！となると解決のカギは牧場にあるか",
+			characterId = 0,
 			animation = "clap",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "畑管理人",
 			characterId = 100400,
-			subName = "农田管理员",
-			say = "嗯，这样就能同时保证土壤的健康和作物的品质了！",
+			say = "もっとも……土壌の養分は何とかできても……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "很好！看来解决问题的关键就在牧场里了。",
-			characterId = 0,
-			animation = "nod",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			animation = "sad",
+			subName = "畑管理人",
 			characterId = 100400,
-			subName = "农田管理员",
-			say = "不过……土壤的肥力虽然有办法解决……",
+			say = "指揮官の望む規模となると、私一人では……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "农田管理员",
-			characterId = 100400,
-			say = "但要扩大到指挥官想要的那种规模，单凭我的话还是有些……",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			say = "人手不够对吧？放心吧~我又不是什么黑心资本家，会安排人来帮你的。",
+			say = "――人手の問題だな？大丈夫。ちゃんと助っ人を用意するさ",
 			characterId = 0,
 			animation = "nod",
 			typewriter = {
@@ -290,7 +303,7 @@
 		},
 		{
 			characterId = 0,
-			say = "不过现在，我得去看看牧场的“宝藏”了。",
+			say = "――さて、牧場の「宝物」を見に行くとしよう",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

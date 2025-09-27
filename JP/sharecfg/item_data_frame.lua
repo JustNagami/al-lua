@@ -765,6 +765,24 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>スタイリッシュな光が煌めく中で踊るウサギ、その存在とは一体…？</color>\n「交流宿舎」ニュージャージーの親愛度Lv報酬",
 		scene = {}
 	},
+	[1009] = {
+		time_limit_type = 0,
+		name = "桜の語り",
+		gain_by = "",
+		id = 1009,
+		time_second = 0,
+		desc = "<color=#ffffff>風とともに舞う桜の花びら。春の生命力と美しさを語りかけている。</color>「交流宿舎」大鳳の親愛度Lv報酬",
+		scene = {}
+	},
+	[1010] = {
+		time_limit_type = 0,
+		name = "鳳翎の輝き",
+		gain_by = "",
+		id = 1010,
+		time_second = 0,
+		desc = "<color=#ffffff>金色の翼を広げ、羽根が輝ききらめく。優雅にしてどこか神秘的</color>\n「交流宿舎」大鳳の親愛度Lv報酬",
+		scene = {}
+	},
 	[10001] = {
 		time_limit_type = 0,
 		name = "限界挑戦・ふたご座",
@@ -959,6 +977,8 @@ pg.item_data_frame = {
 		1006,
 		1007,
 		1008,
+		1009,
+		1010,
 		10001,
 		10002,
 		10003,

@@ -20,8 +20,8 @@
 	scripts = {
 		{
 			characterId = 0,
-			say = "你看我把谁带回来了？",
-			animation = "hi",
+			say = "――捕まえて来たよ",
+			animation = "talk",
 			face2Face = {
 				{
 					0,
@@ -36,8 +36,25 @@
 		{
 			animation = "amaze",
 			characterId = 100500,
-			subName = "牧场管理员",
-			say = "哇啊啊！指挥官！你真的抓到它了！太厉害了！",
+			subName = "牧場管理人",
+			say = "本当に捕まえてくれたの！すごいすごい！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "牧場管理人",
+			characterId = 100500,
+			say = "危うく牧場の危機だったから焦ったよ！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――にしてもこの子は隠れるのがうまくてな。ずっとあっちの木陰にこっそりと……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -46,8 +63,55 @@
 		{
 			animation = "nod",
 			characterId = 100500,
-			subName = "牧场管理员",
-			say = "可把我吓一跳！还以为自己的牧场才刚开始就要倒闭了呢！",
+			subName = "牧場管理人",
+			say = "うぅ、指揮官は本当に恩人だよ！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "――これぐらいで大袈裟だな。とは言え、今度はしっかり見張っておくんだぞ",
+			characterId = 0,
+			animation = "talk",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			animation = "sad",
+			characterId = 100500,
+			subName = "牧場管理人",
+			say = "もちろん！もう絶対に遠くへ行かせないよ。まったく、世話が焼けるんだから",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			actorName = "咯咯鸡",
+			withoutIcon = true,
+			say = "コッコッコー",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "牧場管理人",
+			characterId = 100500,
+			say = "はいはい、お腹空いてるでしょ？今すぐおいしい……",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			animation = "scare",
+			characterId = 100500,
+			subName = "牧場管理人",
+			say = "って、ええー？！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -55,7 +119,70 @@
 		},
 		{
 			characterId = 0,
-			say = "这家伙还挺能藏的，躲在那边的墙角里跟我捉迷藏……",
+			say = "――どうした、アメリゴ？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			animation = "embarrass",
+			characterId = 100500,
+			subName = "牧場管理人",
+			say = "え、餌が……底をついてる！からっぽだ！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "――次から次へとハプニングが絶えないな",
+			characterId = 0,
+			animation = "shakehead",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――普段の餌はどこから調達してるんだ？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			animation = "think",
+			characterId = 100500,
+			subName = "牧場管理人",
+			say = "うーん……いつもホメリックが定期的に持ってきてくれるんだけど",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "牧場管理人",
+			characterId = 100500,
+			say = "そうだ！小麦を製粉所で挽いて作ってるって言ってた！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "――製粉所……小麦粉か。わかった、ここで待ってて",
+			characterId = 0,
+			animation = "nod",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "――農場で新しい小麦が育った頃だろうし、製粉所に行ってみよう",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -64,46 +191,17 @@
 		{
 			animation = "clap",
 			characterId = 100500,
-			subName = "牧场管理员",
-			say = "指挥官！你就是梅莉的救命恩人！",
+			subName = "牧場管理人",
+			say = "指揮官…頼もしすぎる！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			characterId = 0,
-			say = "只是举手之劳，也算是为牧场做努力了。",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			animation = "nod",
+			subName = "牧場管理人",
 			characterId = 100500,
-			subName = "牧场管理员",
-			say = "之后我绝对不会让它跑太远了，真是让人担心。",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			animation = "doubt",
-			characterId = 100500,
-			subName = "牧场管理员",
-			say = "哦——指挥官！你听到什么声音了吗？",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			animation = "curious",
-			characterId = 100500,
-			subName = "牧场管理员",
-			say = "啊，是咯咯鸡下蛋了！我们快去看看！",
+			say = "ここでコッコートリと一緒に、待ってるからねー",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

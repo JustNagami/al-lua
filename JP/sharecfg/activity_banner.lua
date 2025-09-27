@@ -13,7 +13,7 @@ pg.activity_banner = {
 				{
 					2025,
 					9,
-					19
+					25
 				},
 				{
 					0,
@@ -25,7 +25,7 @@ pg.activity_banner = {
 				{
 					2025,
 					10,
-					2
+					22
 				},
 				{
 					23,
@@ -125,7 +125,7 @@ pg.activity_banner = {
 				{
 					2025,
 					9,
-					19
+					25
 				},
 				{
 					0,
@@ -137,12 +137,12 @@ pg.activity_banner = {
 				{
 					2025,
 					10,
-					2
+					9
 				},
 				{
-					23,
-					59,
-					59
+					16,
+					0,
+					0
 				}
 			}
 		}
@@ -152,17 +152,14 @@ pg.activity_banner = {
 		pic = "temp5",
 		type = 2,
 		param = {
-			"scene core activity",
-			{
-				coreName = "EighthAnniversaryJpCoreActivityUI"
-			}
+			"crusing"
 		},
 		time = {
 			{
 				{
 					2025,
-					9,
-					12
+					10,
+					1
 				},
 				{
 					0,
@@ -173,13 +170,13 @@ pg.activity_banner = {
 			{
 				{
 					2025,
-					9,
-					30
+					10,
+					9
 				},
 				{
-					23,
-					59,
-					59
+					16,
+					0,
+					0
 				}
 			}
 		}
@@ -199,7 +196,7 @@ pg.activity_banner = {
 				{
 					2025,
 					9,
-					12
+					25
 				},
 				{
 					0,
@@ -210,13 +207,13 @@ pg.activity_banner = {
 			{
 				{
 					2025,
-					9,
-					25
+					10,
+					8
 				},
 				{
-					16,
-					0,
-					0
+					23,
+					59,
+					59
 				}
 			}
 		}
@@ -226,100 +223,60 @@ pg.activity_banner = {
 		pic = "temp7",
 		type = 2,
 		param = {
-			"scene shop",
-			{
-				warp = "shopstreet"
-			}
+			"dorm 3d select"
 		},
 		time = {
-			{
-				{
-					2025,
-					9,
-					12
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					10,
-					2
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		id = 8,
-		pic = "temp8",
-		type = 2,
-		param = {
-			"scene court yard"
-		},
-		time = {
-			{
-				{
-					2025,
-					9,
-					12
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					10,
-					2
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		id = 9,
-		pic = "temp9",
-		type = 2,
-		param = {
-			"scene get boat",
-			{
-				goToPray = true
-			}
-		},
-		time = {
-			{
-				{
-					2025,
-					9,
-					12
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
 			{
 				{
 					2025,
 					9,
 					25
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					10,
+					9
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		}
+	},
+	[9] = {
+		id = 9,
+		pic = "temp9",
+		type = 2,
+		param = {
+			"scene dockyard"
+		},
+		time = {
+			{
+				{
+					2025,
+					9,
+					25
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					10,
+					9
 				},
 				{
 					16,
@@ -360,7 +317,7 @@ pg.activity_banner = {
 				{
 					2025,
 					9,
-					12
+					19
 				},
 				{
 					0,
@@ -396,6 +353,38 @@ pg.activity_banner = {
 		id = 101,
 		pic = "jingbing"
 	},
+	[102] = {
+		param = "桂花糯|「桂花糯…もぐもぐ～中秋節、良い祝日！」<<color=#92fc63>（60分間寮舎経験値効率が5%アップ）</color>",
+		id = 102,
+		pic = "guihuagao",
+		type = 10,
+		time = {
+			{
+				{
+					2025,
+					9,
+					25
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					10,
+					9
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		}
+	},
 	[200] = {
 		param = "",
 		time = "always",
@@ -426,7 +415,6 @@ pg.activity_banner = {
 			5,
 			6,
 			7,
-			8,
 			9
 		},
 		[9] = {
@@ -441,7 +429,8 @@ pg.activity_banner = {
 		},
 		[10] = {
 			100,
-			101
+			101,
+			102
 		},
 		[13] = {
 			200,
@@ -457,7 +446,6 @@ pg.activity_banner = {
 		5,
 		6,
 		7,
-		8,
 		9,
 		90,
 		91,
@@ -465,6 +453,7 @@ pg.activity_banner = {
 		99,
 		100,
 		101,
+		102,
 		200,
 		201,
 		202
