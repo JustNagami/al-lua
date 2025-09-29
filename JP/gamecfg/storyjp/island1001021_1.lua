@@ -7,20 +7,11 @@
 			10020013
 		}
 	},
-	look_weight = {
-		{
-			0.7,
-			0
-		},
-		{
-			0.3,
-			0
-		}
-	},
 	scripts = {
 		{
-			characterId = 0,
 			animation = "hi",
+			characterId = 0,
+			camera = "StoryCamera7",
 			say = "――明石、そのEXP教科書とやらはどうなったの？",
 			face2Face = {
 				{

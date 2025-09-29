@@ -10,7 +10,7 @@
 	scripts = {
 		{
 			hideTime = 3,
-			say = "好……放这边，我来看看成色。",
+			say = "今日の採掘量は……あれ！これだけ？！",
 			characterId = 100600,
 			hideType = 2
 		}

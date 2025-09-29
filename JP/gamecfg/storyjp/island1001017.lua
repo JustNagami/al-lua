@@ -3,29 +3,16 @@
 	mode = 10,
 	map = {
 		{
-			1014,
-			10070027
-		},
-		{
 			3120100,
 			10070005
 		}
 	},
-	look_weight = {
-		{
-			0.7,
-			0
-		},
-		{
-			0.3,
-			0
-		}
-	},
 	scripts = {
 		{
-			animation = "nod",
-			characterId = 0,
 			say = "――捕まえたぞ明石。まだ逃げるつもりか？",
+			characterId = 0,
+			camera = "StoryCamera6",
+			animation = "nod",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -167,7 +154,7 @@
 		{
 			animation = "nod",
 			characterId = 0,
-			say = "――捕まえたぞ明石。まだ逃げるつもりか？",
+			say = "――なるほど……こほん、明石",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

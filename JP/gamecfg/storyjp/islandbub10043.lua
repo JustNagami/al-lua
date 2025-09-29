@@ -13,7 +13,7 @@
 			characterId = 100400,
 			animation = "rest",
 			hideType = 2,
-			say = "汗水都洒在这田里了。"
+			say = "汗水垂らしてできたのがこの田んぼ。"
 		}
 	}
 }

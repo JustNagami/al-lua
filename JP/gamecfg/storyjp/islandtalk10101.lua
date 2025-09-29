@@ -21,8 +21,8 @@
 		{
 			animation = "hi",
 			characterId = 101000,
-			say = "您好，是有新的探索需求需要协助吗？",
-			subName = "集会岛接待员",
+			say = "こんにちは、新しい探索協力のご要望ですか？",
+			subName = "集会島受付",
 			face2Face = {
 				{
 					0,

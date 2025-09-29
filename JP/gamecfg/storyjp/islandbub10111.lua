@@ -13,7 +13,7 @@
 			characterId = 101100,
 			animation = "clap",
 			hideType = 2,
-			say = "小树苗快快长~♪"
+			say = "小さな苗木よ、早く大きくな～れ～♪"
 		}
 	}
 }

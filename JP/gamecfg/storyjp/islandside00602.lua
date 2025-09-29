@@ -7,26 +7,11 @@
 			10010003
 		}
 	},
-	look_weight = {
-		{
-			0.7,
-			0
-		},
-		{
-			0.3,
-			0
-		}
-	},
 	scripts = {
 		{
-			characterId = 0,
 			say = "――この辺りかな？かじった跡が新しい。きっと羊たちの仕業だ",
-			face2Face = {
-				{
-					0,
-					100500
-				}
-			},
+			camera = "StoryCameraSideTask3",
+			characterId = 0,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

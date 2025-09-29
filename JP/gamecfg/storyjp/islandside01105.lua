@@ -45,7 +45,7 @@
 		},
 		{
 			characterId = 0,
-			say = "どうしたの？何か問題が起きたのか？",
+			say = "――どうしたの？何か問題が起きたのか？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -199,6 +199,11 @@ pg.island_shop_template = {
 				0,
 				1,
 				14
+			},
+			{
+				0,
+				41,
+				1
 			}
 		},
 		goods_id = {
@@ -468,6 +473,219 @@ pg.island_shop_template = {
 			103004
 		}
 	},
+	[10022] = {
+		top_resource = "",
+		first_shop = 0,
+		goods_id = "",
+		top_jump = "",
+		second_shop = 0,
+		show_type = 2,
+		dress_type = 0,
+		shop_icon = "",
+		tag_type = 1,
+		shop_type = 0,
+		id = 10022,
+		order = 1,
+		tag_icon = {
+			"種",
+			"Seeds",
+			"IslandShopIcon/daoju"
+		}
+	},
+	[10023] = {
+		top_resource = "",
+		first_shop = 10022,
+		goods_id = "",
+		top_jump = "",
+		second_shop = 0,
+		show_type = 2,
+		dress_type = 0,
+		shop_icon = "",
+		tag_type = 2,
+		shop_type = 0,
+		id = 10023,
+		order = 1,
+		tag_icon = {
+			"種"
+		}
+	},
+	[10024] = {
+		tag_type = 3,
+		first_shop = 10022,
+		top_jump = "",
+		second_shop = 10023,
+		show_type = 2,
+		dress_type = 0,
+		shop_type = 1,
+		id = 10024,
+		order = 1,
+		shop_icon = {
+			"ショップ",
+			"Seed Shop"
+		},
+		tag_icon = {
+			"豊穣の畑"
+		},
+		top_resource = {
+			{
+				0,
+				41,
+				1
+			}
+		},
+		goods_id = {
+			411000,
+			411001,
+			411002,
+			411003,
+			411005,
+			411006,
+			411008,
+			411009
+		}
+	},
+	[10025] = {
+		top_resource = "",
+		first_shop = 0,
+		goods_id = "",
+		top_jump = "",
+		second_shop = 0,
+		show_type = 2,
+		dress_type = 0,
+		shop_icon = "",
+		tag_type = 1,
+		shop_type = 0,
+		id = 10025,
+		order = 1,
+		tag_icon = {
+			"種",
+			"Seeds",
+			"IslandShopIcon/daoju"
+		}
+	},
+	[10026] = {
+		top_resource = "",
+		first_shop = 10025,
+		goods_id = "",
+		top_jump = "",
+		second_shop = 0,
+		show_type = 2,
+		dress_type = 0,
+		shop_icon = "",
+		tag_type = 2,
+		shop_type = 0,
+		id = 10026,
+		order = 1,
+		tag_icon = {
+			"種"
+		}
+	},
+	[10027] = {
+		tag_type = 3,
+		first_shop = 10025,
+		top_jump = "",
+		second_shop = 10026,
+		show_type = 2,
+		dress_type = 0,
+		shop_type = 1,
+		id = 10027,
+		order = 1,
+		shop_icon = {
+			"ショップ",
+			"Seed Shop"
+		},
+		tag_icon = {
+			"薫る果樹園"
+		},
+		top_resource = {
+			{
+				0,
+				41,
+				1
+			}
+		},
+		goods_id = {
+			411016,
+			411017,
+			411018,
+			411019,
+			411020,
+			411021,
+			411022,
+			411023,
+			411024
+		}
+	},
+	[10028] = {
+		top_resource = "",
+		first_shop = 0,
+		goods_id = "",
+		top_jump = "",
+		second_shop = 0,
+		show_type = 2,
+		dress_type = 0,
+		shop_icon = "",
+		tag_type = 1,
+		shop_type = 0,
+		id = 10028,
+		order = 1,
+		tag_icon = {
+			"種",
+			"Seeds",
+			"IslandShopIcon/daoju"
+		}
+	},
+	[10029] = {
+		top_resource = "",
+		first_shop = 10028,
+		goods_id = "",
+		top_jump = "",
+		second_shop = 0,
+		show_type = 2,
+		dress_type = 0,
+		shop_icon = "",
+		tag_type = 2,
+		shop_type = 0,
+		id = 10029,
+		order = 1,
+		tag_icon = {
+			"種"
+		}
+	},
+	[10030] = {
+		tag_type = 3,
+		first_shop = 10028,
+		top_jump = "",
+		second_shop = 10029,
+		show_type = 2,
+		dress_type = 0,
+		shop_type = 1,
+		id = 10030,
+		order = 1,
+		shop_icon = {
+			"ショップ",
+			"Seed Shop"
+		},
+		tag_icon = {
+			"青々苗場"
+		},
+		top_resource = {
+			{
+				0,
+				41,
+				1
+			}
+		},
+		goods_id = {
+			411004,
+			411007,
+			411010,
+			411011,
+			411012,
+			411014,
+			411015
+		}
+	},
 	[50111] = {
 		top_resource = "",
 		first_shop = 0,
@@ -641,6 +859,9 @@ pg.island_shop_template = {
 			10130,
 			10010,
 			10019,
+			10022,
+			10025,
+			10028,
 			50111
 		},
 		[10109] = {
@@ -663,6 +884,18 @@ pg.island_shop_template = {
 			10020,
 			10021
 		},
+		[10022] = {
+			10023,
+			10024
+		},
+		[10025] = {
+			10026,
+			10027
+		},
+		[10028] = {
+			10029,
+			10030
+		},
 		[50111] = {
 			50121,
 			50131,
@@ -682,6 +915,12 @@ pg.island_shop_template = {
 			10011,
 			10019,
 			10020,
+			10022,
+			10023,
+			10025,
+			10026,
+			10028,
+			10029,
 			50111,
 			50121,
 			50122
@@ -701,6 +940,15 @@ pg.island_shop_template = {
 		},
 		[10020] = {
 			10021
+		},
+		[10023] = {
+			10024
+		},
+		[10026] = {
+			10027
+		},
+		[10029] = {
+			10030
 		},
 		[50121] = {
 			50131,
@@ -728,6 +976,15 @@ pg.island_shop_template = {
 		10019,
 		10020,
 		10021,
+		10022,
+		10023,
+		10024,
+		10025,
+		10026,
+		10027,
+		10028,
+		10029,
+		10030,
 		50111,
 		50121,
 		50131,

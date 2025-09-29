@@ -13,7 +13,11 @@
 	},
 	look_weight = {
 		{
-			0.7,
+			0.4,
+			0
+		},
+		{
+			0.4,
 			0
 		},
 		{
@@ -23,9 +27,10 @@
 	},
 	scripts = {
 		{
-			characterId = 1070300,
-			say = "サラトガちゃん――到着！",
 			animation = "hi",
+			characterId = 1070300,
+			camera = "StoryCamera7",
+			say = "サラトガちゃん――到着！",
 			face2Face = {
 				{
 					0,
@@ -72,7 +77,7 @@
 		{
 			animation = "elation",
 			characterId = 1070300,
-			say = "指揮官、サラトガちゃんに会いたかったでしょ？",
+			say = "指揮官、事情は全部把握したよ",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

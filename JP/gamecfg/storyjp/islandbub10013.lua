@@ -13,7 +13,7 @@
 			characterId = 100100,
 			animation = "slack",
 			hideType = 2,
-			say = "面粉都在袋子里……应该……没少吧……"
+			say = "小麦粉は全部袋の中に……多分……減ってないよね……"
 		}
 	}
 }

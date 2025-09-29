@@ -21,8 +21,8 @@
 		{
 			animation = "hi",
 			characterId = 100800,
-			say = "您好，我是商业广场餐饮区负责人，阿莫玛。",
-			subName = "商区管理员",
+			say = "こんにちは、商店街飲食エリア責任者のアムマーマーです。",
+			subName = "商店街管理人",
 			face2Face = {
 				{
 					0,

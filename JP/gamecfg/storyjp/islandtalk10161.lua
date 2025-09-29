@@ -21,8 +21,8 @@
 		{
 			animation = "curious",
 			characterId = 101600,
-			say = "有什么需要我帮忙的吗？",
-			subName = "开发季管理员",
+			say = "何か手伝えることはありますか？",
+			subName = "シーズン担当",
 			face2Face = {
 				{
 					0,

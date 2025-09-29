@@ -13,7 +13,7 @@
 			characterId = 100900,
 			animation = "shakehead",
 			hideType = 2,
-			say = "好像不是这边的问题。"
+			say = "こっちの問題じゃないみたい。"
 		}
 	}
 }

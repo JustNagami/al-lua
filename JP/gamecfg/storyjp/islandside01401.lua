@@ -5,7 +5,7 @@
 	scripts = {
 		{
 			characterId = 0,
-			say = "――また紙か……これで四枚目だ……",
+			say = "――また紙か……これで五枚目だ……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

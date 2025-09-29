@@ -1,7 +1,22 @@
 ﻿return {
 	id = "ISLANDSIDE00715",
 	mode = 10,
-	map = {},
+	map = {
+		{
+			101500,
+			10040069
+		}
+	},
+	look_weight = {
+		{
+			0.7,
+			0
+		},
+		{
+			0.3,
+			0
+		}
+	},
 	scripts = {
 		{
 			characterId = 0,

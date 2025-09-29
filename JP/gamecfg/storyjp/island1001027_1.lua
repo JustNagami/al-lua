@@ -4,8 +4,9 @@
 	map = {},
 	scripts = {
 		{
-			characterId = 0,
 			say = "――捕まえた！",
+			camera = "StoryCamera9",
+			characterId = 0,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -81,7 +81,7 @@
 		},
 		{
 			say = "これは…メリーが渡したものでしょうか？この島に建てたいって何度も私にせがんできて…",
-			characterId = 101300,
+			characterId = 101000,
 			animation = "think",
 			subName = "集会島受付",
 			typewriter = {
@@ -99,7 +99,7 @@
 		},
 		{
 			subName = "集会島受付",
-			characterId = 101300,
+			characterId = 101000,
 			say = "配置を決めて教えていただければ、それで大丈夫です",
 			typewriter = {
 				speed = 0.05,

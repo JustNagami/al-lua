@@ -3,7 +3,7 @@
 	mode = 10,
 	map = {
 		{
-			10070030,
+			3120100,
 			10070030
 		}
 	},
@@ -24,7 +24,7 @@
 			face2Face = {
 				{
 					0,
-					10070030
+					3120100
 				}
 			},
 			typewriter = {
@@ -34,7 +34,7 @@
 		},
 		{
 			animation = "amaze",
-			characterId = 10070030,
+			characterId = 3120100,
 			say = "むにゃ？もう戻ってきたにゃ？",
 			typewriter = {
 				speed = 0.05,
@@ -42,7 +42,7 @@
 			}
 		},
 		{
-			characterId = 10070030,
+			characterId = 3120100,
 			say = "材料は……全部揃ったにゃ？",
 			typewriter = {
 				speed = 0.05,
@@ -60,7 +60,7 @@
 		},
 		{
 			animation = "clap",
-			characterId = 10070030,
+			characterId = 3120100,
 			say = "すごいにゃ！これでラッセルの生産ラインがやっと稼働できるにゃ！",
 			typewriter = {
 				speed = 0.05,
@@ -77,7 +77,7 @@
 		},
 		{
 			animation = "elation",
-			characterId = 10070030,
+			characterId = 3120100,
 			say = "もちろんにゃ！こんな大掛かりな工事、技術の専門家なしじゃ進められないにゃ！",
 			typewriter = {
 				speed = 0.05,
@@ -85,7 +85,7 @@
 			}
 		},
 		{
-			characterId = 10070030,
+			characterId = 3120100,
 			say = "ラッセルならもう何日もずっと作業場にこもってるにゃ！さあさあ指揮官、奇跡の瞬間を見届けにいくにゃ！",
 			typewriter = {
 				speed = 0.05,

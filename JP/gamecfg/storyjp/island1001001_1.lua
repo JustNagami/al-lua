@@ -5,7 +5,7 @@
 	scripts = {
 		{
 			characterId = 0,
-			say = "（这里就是奇异点的内部了么，环境倒是十分稳定，看上去也没什么危险……）",
+			say = "（ここが特異点の内部か。環境が安定していて、危険もなさそうだが……）",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -13,14 +13,14 @@
 		},
 		{
 			characterId = 0,
-			say = "（虽然发生了些许意外，但既然进来了就去找{namecode:98:明石}她们问问情况吧。）",
+			say = "（多少のトラブルはあったけど、到着したからには、明石たちに事情を聞いてみようか）",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "嗯，前面好像就有一些建筑，过去看看。",
+			say = "――前方に建物がいくつか見えるな。ちょっと行こう",
 			characterId = 0,
 			animation = "nod",
 			typewriter = {

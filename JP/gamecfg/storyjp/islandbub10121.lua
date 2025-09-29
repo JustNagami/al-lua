@@ -13,7 +13,7 @@
 			characterId = 101200,
 			animation = "rest",
 			hideType = 2,
-			say = "完美的焦糖色，喜欢苹果的甜香。"
+			say = "完璧なキャラメル色。りんごの甘い香りが好みよ。"
 		}
 	}
 }

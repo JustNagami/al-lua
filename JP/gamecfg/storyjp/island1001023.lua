@@ -1,6 +1,8 @@
 ﻿return {
-	id = "ISLAND1001023",
+	fadeOut = 1.5,
 	mode = 10,
+	id = "ISLAND1001023",
+	fadeIn = 1,
 	map = {
 		{
 			100300,
@@ -19,9 +21,9 @@
 	},
 	scripts = {
 		{
-			subName = "货运管理员",
+			subName = "物流スタッフ",
 			characterId = 100300,
-			say = "呀？！指、指挥官——你怎么来了？",
+			say = "わわ？！し、指揮官？どうしてここに？",
 			animation = "scare",
 			face2Face = {
 				{
@@ -36,7 +38,7 @@
 		},
 		{
 			characterId = 0,
-			say = "来看看斯蒂芬妮是如何努力工作的……",
+			say = "――ステファンの働きぶりを拝みに来たよ",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -45,17 +47,17 @@
 		{
 			animation = "embarrass",
 			characterId = 100300,
-			subName = "货运管理员",
-			say = "啊哈哈……我、我很努力的哦！",
+			subName = "物流スタッフ",
+			say = "あはは……ちゃんと頑張ってるよ！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "货运管理员",
+			subName = "物流スタッフ",
 			characterId = 100300,
-			say = "只是中途有点……嗯……有点累了，来这里休息一下而已~",
+			say = "ただ途中でちょっと……その……疲れたから、ここで休んでただけ",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -63,7 +65,7 @@
 		},
 		{
 			characterId = 0,
-			say = "唔……劳逸结合确实是值得提倡的好习惯。",
+			say = "――確かに気分転換は大事だ",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -72,7 +74,7 @@
 		{
 			animation = "talk",
 			characterId = 0,
-			say = "只是你“逸”的时间，是不是稍微长了那么一点点？船上的货仓里空无一物。",
+			say = "――休憩がちょっとばかり長いんじゃないか？船倉が空っぽだぞ",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -81,17 +83,17 @@
 		{
 			animation = "amaze",
 			characterId = 100300,
-			subName = "货运管理员",
-			say = "空、空的？！天呐！",
+			subName = "物流スタッフ",
+			say = "か、空っぽ？！うそ……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "货运管理员",
+			subName = "物流スタッフ",
 			characterId = 100300,
-			say = "我之前……我之前居然完全没在工作吗？难道是在梦里……",
+			say = "え？……まったく仕事してなかった……？あれは夢の中だったの……？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -99,7 +101,7 @@
 		},
 		{
 			characterId = 0,
-			say = "…………梦里……",
+			say = "――…………夢の中って……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -107,7 +109,7 @@
 		},
 		{
 			characterId = 0,
-			say = "货运中心堆着的木材和矿石……不会还是我昨天送到港口的那一批吧？",
+			say = "――ってことは埠頭に積まれてた木材と鉱石は……ひょっとして昨日自分が港に運んだやつなんじゃ……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -116,15 +118,15 @@
 		{
 			animation = "embarrass",
 			characterId = 100300,
-			subName = "货运管理员",
-			say = "……应、应该……也许……可能……是？",
+			subName = "物流スタッフ",
+			say = "……た、多分……おそらく……そうかも……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "唉，你这都不是“逸”的时间长……完全就是一直逸。",
+			say = "――はぁ…休憩が長いというより、そもそも働いてなかったのか",
 			characterId = 0,
 			animation = "talk",
 			typewriter = {
@@ -135,24 +137,24 @@
 		{
 			animation = "weep",
 			characterId = 100300,
-			subName = "货运管理员",
-			say = "呜……指挥官，别说了……我知道错了啦~",
+			subName = "物流スタッフ",
+			say = "うぅ……指揮官、もうそれ以上は…反省してるから……~",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "货运管理员",
+			subName = "物流スタッフ",
 			characterId = 100300,
-			say = "我立刻劳动，立刻劳动！",
+			say = "今から働く！働いてくる！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "好了，现在目标明确——去把货运中心的资材尽快装船！我也来帮忙。",
+			say = "――よし、分かったなら貨物船埠頭の物資を急いで積み込むこと！手伝うから",
 			characterId = 0,
 			animation = "nod",
 			typewriter = {
@@ -163,17 +165,17 @@
 		{
 			animation = "nod",
 			characterId = 100300,
-			subName = "货运管理员",
-			say = "真、真的吗？！指挥官你真是太好了！",
+			subName = "物流スタッフ",
+			say = "ほ、本当に？！指揮官、優しい……！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "货运管理员",
+			subName = "物流スタッフ",
 			characterId = 100300,
-			say = "我、我这次一定会好好干的！看我的吧！",
+			say = "こ、今回はちゃんとやるから！任せて！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -181,7 +183,7 @@
 		},
 		{
 			characterId = 0,
-			say = "……慢点，斯蒂芬妮，安全第一，效率第二。",
+			say = "――……落ち着いて。まずは安全第一で",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

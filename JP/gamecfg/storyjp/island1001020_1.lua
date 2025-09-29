@@ -20,6 +20,7 @@
 	scripts = {
 		{
 			characterId = 0,
+			camera = "StoryCamera5",
 			say = "――ん？機械が止まった？もっと仲間を呼びたかったのに",
 			face2Face = {
 				{

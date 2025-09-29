@@ -13,7 +13,7 @@
 			characterId = 100700,
 			animation = "slack",
 			hideType = 2,
-			say = "这会儿都没人，偷下懒也不要紧吧？"
+			say = "さっき茂みが動いたような？い、いえ…見間違いだと思います…"
 		}
 	}
 }

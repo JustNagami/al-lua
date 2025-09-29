@@ -52,7 +52,7 @@
 		{
 			animation = "nod",
 			characterId = 0,
-			say = "――これでいいか？",
+			say = "――わかった。お疲れ様、明石",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

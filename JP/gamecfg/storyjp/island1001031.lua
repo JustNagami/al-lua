@@ -11,21 +11,12 @@
 			10090021
 		}
 	},
-	look_weight = {
-		{
-			0.7,
-			0
-		},
-		{
-			0.3,
-			0
-		}
-	},
 	scripts = {
 		{
-			characterId = 0,
-			say = "――よし、これでオムレツはラインナップに載せ終わった",
 			animation = "nod",
+			characterId = 0,
+			camera = "StoryCamera4",
+			say = "――よし、これでオムレツはラインナップに載せ終わった",
 			face2Face = {
 				{
 					0,
@@ -65,8 +56,8 @@
 			style = 2,
 			sequence = {
 				{
-					"<size=45>一段时间后……</size>",
-					1
+					"<size=45>しばらくして……</size>",
+					2
 				}
 			}
 		},
@@ -88,7 +79,7 @@
 		},
 		{
 			characterId = 0,
-			say = "――よし、これでオムレツはラインナップに載せ終わった",
+			say = "――明石じゃないか！",
 			face2Face = {
 				{
 					0,

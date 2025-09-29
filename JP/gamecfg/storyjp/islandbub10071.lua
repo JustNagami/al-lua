@@ -10,7 +10,7 @@
 	scripts = {
 		{
 			hideTime = 3,
-			say = "哈~密实又匀称！上等木料！",
+			say = "うん、しっかりしててバランスもいい、上等な木材ですね。",
 			characterId = 100700,
 			hideType = 2
 		}

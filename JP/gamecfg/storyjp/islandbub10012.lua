@@ -10,7 +10,7 @@
 	scripts = {
 		{
 			hideTime = 3,
-			say = "麦子香……闻着……好想打个盹……",
+			say = "麦の香り……嗅いでると……お昼寝したくなる……",
 			characterId = 100100,
 			hideType = 2
 		}

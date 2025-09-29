@@ -13,7 +13,7 @@
 			characterId = 100800,
 			animation = "note",
 			hideType = 2,
-			say = "补货单需要加急处理了。"
+			say = "補充の注文に急いで対応する必要がありますね。"
 		}
 	}
 }

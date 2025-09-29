@@ -3,7 +3,7 @@
 		type = 4,
 		show = false,
 		unitIdList = {
-			10050000
+			10060002
 		}
 	},
 	{
@@ -14,7 +14,7 @@
 		type = 4,
 		show = true,
 		unitIdList = {
-			10050000
+			10060002
 		}
 	}
 }

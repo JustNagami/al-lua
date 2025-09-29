@@ -116,20 +116,7 @@ function temp()
 		ュ = {
 			ー = {
 				イ = {
-					this = true,
-					["("] = {
-						M = {
-							E = {
-								T = {
-									A = {
-										[")"] = {
-											this = true
-										}
-									}
-								}
-							}
-						}
-					}
+					this = true
 				},
 				ク = {
 					・ = {
@@ -355,13 +342,6 @@ function temp()
 				}
 			}
 		},
-		ン = {
-			ザ = {
-				ス = {
-					this = true
-				}
-			}
-		},
 		ラ = {
 			ビ = {
 				ニ = {
@@ -389,6 +369,13 @@ function temp()
 		ザ = {
 			ン = {
 				this = true
+			}
+		},
+		ン = {
+			ザ = {
+				ス = {
+					this = true
+				}
 			}
 		}
 	}
@@ -912,24 +899,6 @@ function temp()
 				}
 			}
 		},
-		イ = {
-			ン = {
-				ツ = {
-					this = true
-				}
-			},
-			レ = {
-				・ = {
-					ブ = {
-						レ = {
-							ゼ = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
 		エ = {
 			ス = {
 				ト = {
@@ -943,23 +912,41 @@ function temp()
 				}
 			}
 		},
-		ル = {
-			コ = {
+		イ = {
+			レ = {
 				・ = {
-					ポ = {
-						ー = {
-							ロ = {
+					ブ = {
+						レ = {
+							ゼ = {
 								this = true
 							}
 						}
 					}
 				}
 			},
+			ン = {
+				ツ = {
+					this = true
+				}
+			}
+		},
+		ル = {
 			セ = {
 				イ = {
 					エ = {
 						ー = {
 							ズ = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			コ = {
+				・ = {
+					ポ = {
+						ー = {
+							ロ = {
 								this = true
 							}
 						}
@@ -1012,6 +999,15 @@ function temp()
 				}
 			}
 		},
+		ガ = {
+			ド = {
+				ー = {
+					ル = {
+						this = true
+					}
+				}
+			}
+		},
 		ナ = {
 			ー = {
 				ク = {
@@ -1038,15 +1034,6 @@ function temp()
 								}
 							}
 						}
-					}
-				}
-			}
-		},
-		ガ = {
-			ド = {
-				ー = {
-					ル = {
-						this = true
 					}
 				}
 			}
@@ -1870,31 +1857,6 @@ function temp()
 				}
 			}
 		},
-		ラ = {
-			・ = {
-				サ = {
-					タ = {
-						リ = {
-							ン = {
-								・ = {
-									デ = {
-										ビ = {
-											ル = {
-												ー = {
-													ク = {
-														this = true
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		},
 		・ = {
 			ガ = {
 				リ = {
@@ -1913,6 +1875,31 @@ function temp()
 																this = true
 															}
 														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		ラ = {
+			・ = {
+				サ = {
+					タ = {
+						リ = {
+							ン = {
+								・ = {
+									デ = {
+										ビ = {
+											ル = {
+												ー = {
+													ク = {
+														this = true
 													}
 												}
 											}
@@ -1985,13 +1972,6 @@ function temp()
 							}
 						}
 					}
-				}
-			}
-		},
-		ア = {
-			ト = {
-				ル = {
-					this = true
 				}
 			}
 		},
@@ -2104,6 +2084,13 @@ function temp()
 					}
 				}
 			}
+		},
+		ア = {
+			ト = {
+				ル = {
+					this = true
+				}
+			}
 		}
 	}
 end
@@ -2138,6 +2125,11 @@ function temp()
 					}
 				}
 			},
+			ビ = {
+				ン = {
+					this = true
+				}
+			},
 			フ = {
 				ォ = {
 					ー = {
@@ -2145,11 +2137,6 @@ function temp()
 							this = true
 						}
 					}
-				}
-			},
-			ビ = {
-				ン = {
-					this = true
 				}
 			}
 		},
@@ -2520,41 +2507,6 @@ function temp()
 				}
 			}
 		},
-		ョ = {
-			ー = {
-				ジ = {
-					ア = {
-						this = true
-					}
-				}
-			},
-			ズ = {
-				エ = {
-					・ = {
-						カ = {
-							ル = {
-								ド = {
-									ゥ = {
-										ッ = {
-											チ = {
-												this = true
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			},
-			ッ = {
-				フ = {
-					ル = {
-						this = true
-					}
-				}
-			}
-		},
 		ャ = {
 			ベ = {
 				リ = {
@@ -2603,6 +2555,41 @@ function temp()
 								this = true
 							}
 						}
+					}
+				}
+			}
+		},
+		ョ = {
+			ズ = {
+				エ = {
+					・ = {
+						カ = {
+							ル = {
+								ド = {
+									ゥ = {
+										ッ = {
+											チ = {
+												this = true
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			ッ = {
+				フ = {
+					ル = {
+						this = true
+					}
+				}
+			},
+			ー = {
+				ジ = {
+					ア = {
+						this = true
 					}
 				}
 			}
@@ -3058,15 +3045,6 @@ function temp()
 				}
 			}
 		},
-		ア = {
-			サ = {
-				ー = {
-					ジ = {
-						this = true
-					}
-				}
-			}
-		},
 		ュ = {
 			ラ = {
 				ソ = {
@@ -3097,6 +3075,15 @@ function temp()
 								}
 							}
 						}
+					}
+				}
+			}
+		},
+		ア = {
+			サ = {
+				ー = {
+					ジ = {
+						this = true
 					}
 				}
 			}
@@ -3387,47 +3374,6 @@ function temp()
 				}
 			}
 		},
-		ン = {
-			カ = {
-				レ = {
-					ッ = {
-						ジ = {
-							this = true
-						}
-					}
-				}
-			},
-			ド = {
-				レ = {
-					ア = {
-						・ = {
-							ド = {
-								ー = {
-									リ = {
-										ア = {
-											this = true,
-											["("] = {
-												M = {
-													E = {
-														T = {
-															A = {
-																[")"] = {
-																	this = true
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		},
 		マ = {
 			ゾ = {
 				ン = {
@@ -3573,37 +3519,6 @@ function temp()
 				}
 			}
 		},
-		ウ = {
-			グ = {
-				ス = {
-					ト = {
-						・ = {
-							フ = {
-								ォ = {
-									ン = {
-										・ = {
-											パ = {
-												ー = {
-													セ = {
-														ヴ = {
-															ァ = {
-																ル = {
-																	this = true
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		},
 		ッ = {
 			テ = {
 				ィ = {
@@ -3618,6 +3533,47 @@ function temp()
 									}
 								}
 							}
+						}
+					}
+				}
+			}
+		},
+		ン = {
+			ド = {
+				レ = {
+					ア = {
+						・ = {
+							ド = {
+								ー = {
+									リ = {
+										ア = {
+											this = true,
+											["("] = {
+												M = {
+													E = {
+														T = {
+															A = {
+																[")"] = {
+																	this = true
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			カ = {
+				レ = {
+					ッ = {
+						ジ = {
+							this = true
 						}
 					}
 				}
@@ -3659,6 +3615,37 @@ function temp()
 												ラ = {
 													ー = {
 														this = true
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		ウ = {
+			グ = {
+				ス = {
+					ト = {
+						・ = {
+							フ = {
+								ォ = {
+									ン = {
+										・ = {
+											パ = {
+												ー = {
+													セ = {
+														ヴ = {
+															ァ = {
+																ル = {
+																	this = true
+																}
+															}
+														}
 													}
 												}
 											}
@@ -4357,21 +4344,6 @@ function temp()
 				}
 			}
 		},
-		ー = {
-			ク = {
-				レ = {
-					ン = {
-						ブ = {
-							ル = {
-								ク = {
-									this = true
-								}
-							}
-						}
-					}
-				}
-			}
-		},
 		ア = {
 			リ = {
 				ー = {
@@ -4382,6 +4354,21 @@ function temp()
 									ト = {
 										this = true
 									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		ー = {
+			ク = {
+				レ = {
+					ン = {
+						ブ = {
+							ル = {
+								ク = {
+									this = true
 								}
 							}
 						}
@@ -5255,19 +5242,19 @@ function temp()
 			}
 		},
 		プ = {
-			チ = {
+			テ = {
 				ュ = {
 					ー = {
-						ン = {
+						ヌ = {
 							this = true
 						}
 					}
 				}
 			},
-			テ = {
+			チ = {
 				ュ = {
 					ー = {
-						ヌ = {
+						ン = {
 							this = true
 						}
 					}
@@ -5684,6 +5671,29 @@ end
 temp()
 
 function temp()
+	var_0_1.ギ = {
+		ャ = {
+			ラ = {
+				ン = {
+					ト = {
+						this = true
+					}
+				}
+			}
+		},
+		シ = {
+			ャ = {
+				ン = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.ヌ = {
 		ビ = {
 			ア = {
@@ -5754,29 +5764,6 @@ function temp()
 							}
 						}
 					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.ギ = {
-		ャ = {
-			ラ = {
-				ン = {
-					ト = {
-						this = true
-					}
-				}
-			}
-		},
-		シ = {
-			ャ = {
-				ン = {
-					this = true
 				}
 			}
 		}
@@ -5900,13 +5887,6 @@ function temp()
 				}
 			}
 		},
-		レ = {
-			イ = {
-				ク = {
-					this = true
-				}
-			}
-		},
 		イ = {
 			ッ = {
 				チ = {
@@ -5980,6 +5960,13 @@ function temp()
 					ン = {
 						this = true
 					}
+				}
+			}
+		},
+		レ = {
+			イ = {
+				ク = {
+					this = true
 				}
 			}
 		}
@@ -6148,9 +6135,6 @@ function temp()
 		露 = {
 			this = true
 		},
-		龍 = {
-			this = true
-		},
 		上 = {
 			フ = {
 				ブ = {
@@ -6159,6 +6143,9 @@ function temp()
 					}
 				}
 			}
+		},
+		龍 = {
+			this = true
 		}
 	}
 end
@@ -7751,48 +7738,6 @@ end
 temp()
 
 function temp()
-	var_0_1.出 = {
-		雲 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.北 = {
-		風 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.吾 = {
-		妻 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.四 = {
-		万 = {
-			十 = {
-				this = true
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var_0_1.Z = {
 		["1"] = {
 			this = true,
@@ -8293,18 +8238,6 @@ end
 temp()
 
 function temp()
-	var_0_1.ナ = {
-		ポ = {
-			リ = {
-				this = true
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var_0_1.ム = {
 		ル = {
 			マ = {
@@ -8319,6 +8252,18 @@ function temp()
 		},
 		ジ = {
 			ナ = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.四 = {
+		万 = {
+			十 = {
 				this = true
 			}
 		}
@@ -8774,6 +8719,18 @@ end
 temp()
 
 function temp()
+	var_0_1.ナ = {
+		ポ = {
+			リ = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.と = {
 		き = {
 			の = {
@@ -9037,6 +8994,36 @@ temp()
 function temp()
 	var_0_1.焔 = {
 		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.出 = {
+		雲 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.北 = {
+		風 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.吾 = {
+		妻 = {
 			this = true
 		}
 	}

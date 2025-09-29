@@ -13,7 +13,7 @@
 			characterId = 100500,
 			animation = "clap",
 			hideType = 2,
-			say = "一颗，两颗……今天收获真不错！"
+			say = "うんうん……今日の収穫はなかなかじゃない！"
 		}
 	}
 }

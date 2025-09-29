@@ -10,7 +10,7 @@
 	scripts = {
 		{
 			hideTime = 3,
-			say = "这些物资……很适合开发岛屿呢。",
+			say = "これらの物資は、島の開発にとても役立ちますね。",
 			characterId = 101600,
 			hideType = 2
 		}

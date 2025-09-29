@@ -143,7 +143,7 @@
 		},
 		{
 			characterId = 3120100,
-			say = "――明石、何か用？",
+			say = "でも！明石にはちゃんと手があるにゃ！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

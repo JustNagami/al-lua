@@ -13,7 +13,7 @@
 			characterId = 100600,
 			animation = "rest",
 			hideType = 2,
-			say = "最后一车……就快能歇口气了……"
+			say = "最後の一台！がんばれがんばれ～！もうすぐで終わりだよ！"
 		}
 	}
 }

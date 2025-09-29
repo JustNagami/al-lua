@@ -80,7 +80,7 @@
 		},
 		{
 			characterId = 0,
-			say = "――自分で書いてるんだ…それならなおさらいいな",
+			say = "――自分で描いてるんだ…それならなおさらいいな",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -13,7 +13,7 @@
 			characterId = 100400,
 			animation = "nod",
 			hideType = 2,
-			say = "长势真好……阳光都收在里面了。"
+			say = "いい感じ……太陽の恵みがぎゅっと詰まっていますね。"
 		}
 	}
 }

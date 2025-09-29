@@ -13,7 +13,7 @@
 			characterId = 101100,
 			animation = "nod",
 			hideType = 2,
-			say = "嗯~酸甜爆汁！"
+			say = "う～ん、甘酸っぱくて果汁たっぷり！"
 		}
 	}
 }

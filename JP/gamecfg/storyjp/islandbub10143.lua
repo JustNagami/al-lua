@@ -10,7 +10,7 @@
 	scripts = {
 		{
 			hideTime = 3,
-			say = "阳光的香味！就快能摘啦！",
+			say = "1匹……2匹……3匹……えーっと……何匹まで数えたっけ？",
 			characterId = 101400,
 			hideType = 2
 		}

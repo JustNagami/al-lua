@@ -75,7 +75,7 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		offset = {
-			0.071,
+			-0.01,
 			-0.466,
 			0.034
 		},
@@ -502,7 +502,7 @@ pg.island_dress_template = {
 		face_clip = ""
 	},
 	[1050001] = {
-		name = "冷静",
+		name = "上の空",
 		related_dress = 0,
 		exclusive_default_skin = "",
 		type = 5,
@@ -521,7 +521,7 @@ pg.island_dress_template = {
 		face_clip = "face_3"
 	},
 	[1050002] = {
-		name = "鋭い",
+		name = "歯ぎしり",
 		related_dress = 0,
 		exclusive_default_skin = "",
 		type = 5,
@@ -540,7 +540,7 @@ pg.island_dress_template = {
 		face_clip = "face_2"
 	},
 	[1050003] = {
-		name = "優しめ",
+		name = "猫笑い",
 		related_dress = 0,
 		exclusive_default_skin = "",
 		type = 5,
@@ -559,7 +559,7 @@ pg.island_dress_template = {
 		face_clip = "face_1"
 	},
 	[1050004] = {
-		name = "猫笑い",
+		name = "優しめ",
 		related_dress = 0,
 		exclusive_default_skin = "",
 		type = 5,
@@ -578,7 +578,7 @@ pg.island_dress_template = {
 		face_clip = ""
 	},
 	[1050005] = {
-		name = "歯ぎしり",
+		name = "鋭い",
 		related_dress = 0,
 		exclusive_default_skin = "",
 		type = 5,
@@ -597,7 +597,7 @@ pg.island_dress_template = {
 		face_clip = ""
 	},
 	[1050006] = {
-		name = "上の空",
+		name = "冷静",
 		related_dress = 0,
 		exclusive_default_skin = "",
 		type = 5,

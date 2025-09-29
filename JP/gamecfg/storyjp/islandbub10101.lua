@@ -13,7 +13,7 @@
 			characterId = 101000,
 			animation = "hi",
 			hideType = 2,
-			say = "您好，集会引导员莉莎为您服务。"
+			say = "こんにちは、集会案内のエリザベスがお相手します。"
 		}
 	}
 }

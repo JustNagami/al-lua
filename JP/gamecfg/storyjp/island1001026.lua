@@ -19,8 +19,9 @@
 	},
 	scripts = {
 		{
-			characterId = 0,
 			animation = "hi",
+			characterId = 0,
+			camera = "StoryCamera8",
 			say = "――ホメリック？",
 			face2Face = {
 				{

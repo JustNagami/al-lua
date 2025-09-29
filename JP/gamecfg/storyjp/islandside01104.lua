@@ -161,7 +161,7 @@
 		},
 		{
 			characterId = 0,
-			say = "じゃあ、こんな感じで行こうか",
+			say = "――じゃあ、こんな感じで行こうか",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

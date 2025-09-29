@@ -13,7 +13,7 @@
 			characterId = 101600,
 			animation = "note",
 			hideType = 2,
-			say = "林场的这批木材品质很好……"
+			say = "この木材、品質がすごく良いですね。"
 		}
 	}
 }

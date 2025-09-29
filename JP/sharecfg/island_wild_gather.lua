@@ -2,7 +2,7 @@
 pg.island_wild_gather = {
 	{
 		time_taked = 3,
-		name = "蜂巢",
+		name = "蜂の巣",
 		ability_id = 0,
 		type = 1,
 		refresh = 1,
@@ -18,7 +18,7 @@ pg.island_wild_gather = {
 	},
 	{
 		time_taked = 3,
-		name = "蜂巢",
+		name = "蜂の巣",
 		ability_id = 0,
 		type = 1,
 		refresh = 1,
@@ -33,7 +33,7 @@ pg.island_wild_gather = {
 	},
 	{
 		time_taked = 3,
-		name = "蜂巢",
+		name = "蜂の巣",
 		ability_id = 0,
 		type = 1,
 		refresh = 1,
@@ -49,7 +49,7 @@ pg.island_wild_gather = {
 	},
 	{
 		time_taked = 3,
-		name = "蜂蜜桶",
+		name = "ハチミツ樽",
 		ability_id = 32003,
 		type = 1,
 		refresh = 1,
@@ -63,7 +63,7 @@ pg.island_wild_gather = {
 	},
 	{
 		time_taked = 3,
-		name = "蜂巢",
+		name = "蜂の巣",
 		ability_id = 32001,
 		type = 1,
 		refresh = 1,
@@ -77,7 +77,7 @@ pg.island_wild_gather = {
 	},
 	{
 		time_taked = 3,
-		name = "蜂巢",
+		name = "蜂の巣",
 		ability_id = 32002,
 		type = 1,
 		refresh = 1,
@@ -91,7 +91,7 @@ pg.island_wild_gather = {
 	},
 	[1001] = {
 		time_taked = 3,
-		name = "秋菊花丛",
+		name = "アキギク",
 		ability_id = 0,
 		type = 2,
 		refresh = 1,
@@ -105,7 +105,7 @@ pg.island_wild_gather = {
 	},
 	[1002] = {
 		time_taked = 3,
-		name = "秋菊花丛",
+		name = "アキギク",
 		ability_id = 0,
 		type = 2,
 		refresh = 1,
@@ -119,7 +119,7 @@ pg.island_wild_gather = {
 	},
 	[1003] = {
 		time_taked = 3,
-		name = "芦苇丛",
+		name = "生い茂いている葦",
 		ability_id = 0,
 		type = 2,
 		refresh = 1,
@@ -133,7 +133,7 @@ pg.island_wild_gather = {
 	},
 	[1004] = {
 		time_taked = 3,
-		name = "芦苇丛",
+		name = "生い茂いている葦",
 		ability_id = 0,
 		type = 2,
 		refresh = 1,
@@ -147,7 +147,7 @@ pg.island_wild_gather = {
 	},
 	[1005] = {
 		time_taked = 3,
-		name = "花生",
+		name = "ピーナッツ",
 		ability_id = 0,
 		type = 2,
 		refresh = 1,
@@ -161,7 +161,7 @@ pg.island_wild_gather = {
 	},
 	[1006] = {
 		time_taked = 3,
-		name = "花生",
+		name = "ピーナッツ",
 		ability_id = 0,
 		type = 2,
 		refresh = 1,
@@ -175,7 +175,7 @@ pg.island_wild_gather = {
 	},
 	[1007] = {
 		time_taked = 3,
-		name = "松茸丛",
+		name = "マツタケ",
 		ability_id = 0,
 		type = 2,
 		refresh = 1,
@@ -189,7 +189,7 @@ pg.island_wild_gather = {
 	},
 	[1008] = {
 		time_taked = 3,
-		name = "松茸丛",
+		name = "マツタケ",
 		ability_id = 0,
 		type = 2,
 		refresh = 1,

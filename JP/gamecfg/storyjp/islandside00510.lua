@@ -34,7 +34,7 @@
 		},
 		{
 			characterId = 0,
-			say = "――待てよ…あのシルエット……",
+			say = "――明石？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

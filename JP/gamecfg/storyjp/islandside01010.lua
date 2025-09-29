@@ -81,7 +81,7 @@
 		},
 		{
 			characterId = 0,
-			say = "気分はどうだ？",
+			say = "――気分はどうだ？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -102,7 +102,10 @@ function var_0_3.RefreshTemp(arg_9_0)
 		local var_9_0 = IslandCameraMgr.instance._mainCamera.transform:TransformVector(arg_9_0.orginTargetDir)
 
 		arg_9_0.targetDir = var_0_0(var_9_0.x, 0, var_9_0.z).normalized
-		arg_9_0.targetRotation = Quaternion.LookRotation(arg_9_0.targetDir)
+
+		if arg_9_0.targetDir ~= Vector3.zero then
+			arg_9_0.targetRotation = Quaternion.LookRotation(arg_9_0.targetDir)
+		end
 	end
 end
 
@@ -304,8 +307,13 @@ function var_0_3.DeviceStateHandle(arg_21_0, arg_21_1)
 		return
 	end
 
+	if arg_21_0.view:GetController():IsPlayerInTimeline() then
+		return
+	end
+
 	if arg_21_1 then
 		arg_21_0.animator:SetTrigger(IslandConst.DEVICE_SHOW_FLAG)
+		arg_21_0.animator:ResetTrigger(IslandConst.UN_DEVICE_SHOW_FLAG)
 	else
 		arg_21_0.animator:SetTrigger(IslandConst.UN_DEVICE_SHOW_FLAG)
 	end

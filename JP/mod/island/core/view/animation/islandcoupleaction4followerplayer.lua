@@ -17,7 +17,9 @@ function var_0_0.EnableOrDisableUnitSyn(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 		var_1_0(arg_1_2, arg_1_3)
 	end
 
-	arg_1_0:EnableOrDisableNavMeshObstacle(arg_1_2, arg_1_3)
+	if PLATFORM ~= PLATFORM_IPHONEPLAYER then
+		arg_1_0:EnableOrDisableNavMeshObstacle(arg_1_2, arg_1_3)
+	end
 end
 
 function var_0_0.EnableOrDisableNavMeshObstacle(arg_3_0, arg_3_1, arg_3_2)

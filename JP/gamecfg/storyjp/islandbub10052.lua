@@ -10,7 +10,7 @@
 	scripts = {
 		{
 			hideTime = 3,
-			say = "乖~新鲜牧草来啦！",
+			say = "よしよし、新鮮な牧草だよ！",
 			characterId = 100500,
 			hideType = 2
 		}

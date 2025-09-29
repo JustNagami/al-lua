@@ -13,7 +13,7 @@
 			characterId = 101400,
 			animation = "nod",
 			hideType = 2,
-			say = "嗯~酸甜爆汁！"
+			say = "金色に輝く蜂蜜……きれい……"
 		}
 	}
 }
