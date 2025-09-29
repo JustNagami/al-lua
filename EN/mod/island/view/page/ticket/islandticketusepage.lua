@@ -388,7 +388,7 @@ function var_0_0.GetSelectedTickets(arg_41_0)
 			else
 				table.insert(var_41_0, IslandTicket.New(iter_41_3.id, iter_41_3.endTime, iter_41_3:GetCount()))
 
-				local var_41_5 = var_41_3 + iter_41_3:GetCount()
+				var_41_3 = var_41_3 + iter_41_3:GetCount()
 			end
 		end
 	end
@@ -456,6 +456,8 @@ function var_0_0.OnDisable(arg_52_0)
 end
 
 function var_0_0.OnDestroy(arg_53_0)
+	ClearLScrollrect(arg_53_0.scrollRect)
+
 	for iter_53_0, iter_53_1 in pairs(arg_53_0.cards) do
 		iter_53_1:Dispose()
 	end

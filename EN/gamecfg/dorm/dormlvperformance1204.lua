@@ -4,7 +4,7 @@
 		name = "load",
 		params = {
 			wait_timeline = false,
-			name = "FFliwu_01"
+			name = "FFliwu_30707_01"
 		}
 	},
 	{
@@ -40,7 +40,7 @@
 		name = "unload",
 		params = {
 			wait_timeline = false,
-			name = "FFliwu_01"
+			name = "FFliwu_30707_01"
 		}
 	}
 }
