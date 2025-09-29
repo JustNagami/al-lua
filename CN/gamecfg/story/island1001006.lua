@@ -4,7 +4,7 @@
 	map = {
 		{
 			100700,
-			10040002
+			10040060
 		}
 	},
 	look_weight = {
@@ -20,7 +20,8 @@
 	scripts = {
 		{
 			characterId = 0,
-			say = "呼……怎么样，这些木材够了吗？",
+			animation = "talk",
+			say = "奥布莱恩……怎么样，这些木材够了么？",
 			face2Face = {
 				{
 					0,
@@ -33,10 +34,10 @@
 			}
 		},
 		{
-			say = "嗯嗯，辛苦指挥官啦~有了这些我们就能修复好交通线了。",
+			say = "嗯！辛苦指挥官了……这些木材足够了。",
 			characterId = 100700,
 			subName = "林场管理员",
-			animation = "talk",
+			animation = "clap",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -51,7 +52,7 @@
 			}
 		},
 		{
-			say = "好，乔安应该正在通往港口的路上等我们。",
+			say = "好……乔安应该在通往港口的站台上等我们。",
 			characterId = 100700,
 			subName = "林场管理员",
 			animation = "nod",
@@ -63,7 +64,7 @@
 		{
 			subName = "林场管理员",
 			characterId = 100700,
-			say = "我们拿上木材一起过去吧~",
+			say = "我们拿上木材一起过去吧……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

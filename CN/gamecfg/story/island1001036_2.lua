@@ -1,6 +1,6 @@
 ﻿return {
 	id = "ISLAND1001036_2",
-	mode = 9,
+	mode = 10,
 	map = {
 		{
 			100800,
@@ -20,17 +20,7 @@
 	scripts = {
 		{
 			characterId = 0,
-			say = "所有的套餐都准备好了哦。",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			animation = "clap",
-			characterId = 100800,
-			subName = "商区管理员",
-			say = "辛苦指挥官了，放到这里的桌子上就好。",
+			say = "阿莫玛——所有的餐品都准备好了。",
 			face2Face = {
 				{
 					0,
@@ -43,17 +33,36 @@
 			}
 		},
 		{
+			say = "辛苦指挥官了，放到这里的桌子上就好。",
+			characterId = 100800,
+			animation = "note",
+			subName = "商区管理员",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
 			characterId = 0,
-			say = "咦，这里已经有这么多制作好的美食了么？",
+			say = "嗯……这样看着，总感觉餐品的种类还是有些单一。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "这些啊，大家一听说要举办聚会，就送来了不少好东西。",
+			animation = "nod",
+			characterId = 0,
+			say = "一家店铺还好……但如果是整个商区的话，还是远远不够。",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "商品的种类么……指挥官，听说现在开发区的农场和牧场都已经有不少产出了。",
 			characterId = 100800,
-			animation = "elation",
+			animation = "think",
 			subName = "商区管理员",
 			typewriter = {
 				speed = 0.05,
@@ -61,20 +70,9 @@
 			}
 		},
 		{
-			characterId = 100800,
-			nameColor = "#A9F548FF",
 			subName = "商区管理员",
-			say = "赫莫的蔬菜，梅莉的肉和奶牛，布莱梅的派……",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			say = "嗯！伙伴们的心意和指挥官的努力，都凝聚在这里面了！",
 			characterId = 100800,
-			animation = "talk",
-			subName = "商区管理员",
+			say = "不如你再去繁荫农圃那边看看如何？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -83,18 +81,17 @@
 		{
 			hidePaintObj = true,
 			characterId = 0,
-			animation = "nod",
-			say = "看来大家是很期待啊。",
+			say = "繁荫农圃？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "呵呵呵~指挥官，在聚会正式开始前，你可以去休息一下。",
+			say = "嗯，那边也建成好一段时间了，只是好像一直没什么动静……",
 			characterId = 100800,
 			subName = "商区管理员",
-			animation = "idea",
+			animation = "talk",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -103,23 +100,40 @@
 		{
 			subName = "商区管理员",
 			characterId = 100800,
-			say = "这里我来盯着就好。",
+			say = "可能是遇到了什么困难也说不一定。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "好，那就辛苦你了，阿莫玛。",
 			characterId = 0,
-			animation = "nod",
+			say = "这样么，那是要过去看看了，开发区可不能有人掉队。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "嗯，我保证今天的商区一定会香气四溢地等着大家光临！",
+			say = "那指挥官快去吧，这里我来盯着就好。",
+			characterId = 100800,
+			animation = "clap",
+			subName = "商区管理员",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "好，那就辛苦你了，阿莫玛。",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "嗯，我保证今天的商区一定会香气四溢地等着大家光临的。",
 			characterId = 100800,
 			animation = "nod",
 			subName = "商区管理员",

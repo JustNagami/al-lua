@@ -19,10 +19,9 @@
 	},
 	scripts = {
 		{
-			subName = "林场管理员",
-			characterId = 100700,
-			animation = "amaze",
-			say = "啊——突然出现的指挥官！真的假的？",
+			characterId = 0,
+			animation = "hi",
+			say = "你好，奥布莱恩。",
 			face2Face = {
 				{
 					0,
@@ -35,29 +34,37 @@
 			}
 		},
 		{
-			say = "当然是真的！",
+			say = "啊……指、指挥官？真、真的是您吗？",
+			characterId = 100700,
+			subName = "林场管理员",
+			animation = "amaze",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
 			characterId = 0,
-			animation = "nod",
+			say = "当然是真的！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "嘿嘿~好久不见，我还以为你都把我们忘了呢~",
+			say = "太好了……好久不见。我、我们都很想您，一直担心您把我们忘了……",
 			characterId = 100700,
 			subName = "林场管理员",
-			animation = "hi",
+			animation = "shy",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "这半年来，我们可是一直都在很努力地建设这里哦~没有偷懒的。",
-			characterId = 100700,
 			subName = "林场管理员",
-			animation = "elation",
+			characterId = 100700,
+			say = "这半年来，我们都在很努力地建设这里……没有偷懒的。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -72,34 +79,34 @@
 			}
 		},
 		{
-			say = "是啊，虽然这里看着是有些不明显，不过港口那边可是被我们建得超漂亮的，指挥官一定要去看看哦~",
+			say = "欸……这里是不太明显……不过我们有建起一整座港口的，您可以去海边看看~",
 			characterId = 100700,
 			subName = "林场管理员",
+			animation = "embarrass",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "（明明只是过了一周才对……是内外时间流速不同的原因么，这么大的差值也难怪飞行器会故障了。）",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
 			animation = "talk",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
 			characterId = 0,
-			say = "（是时间流速不同的原因么……这么大的差值也难怪飞行器会故障了。）",
+			say = "嗯……你们在这里待了这么久，就没有发现什么异常么？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "嗯……你们在这里待了这么久，就没有发现什么异常吗？",
-			characterId = 0,
-			animation = "nod",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			say = "异常么……之前岛屿上一直都很正常的。",
+			say = "异常么……之前半年一直都是很正常的。",
 			characterId = 100700,
 			subName = "林场管理员",
 			animation = "doubt",
@@ -109,10 +116,18 @@
 			}
 		},
 		{
-			say = "倒是指挥官你来之前，附近刚刚发生了大爆炸哦，好像是有一艘飞行器坠毁在这附近了！",
+			subName = "林场管理员",
+			characterId = 100700,
+			say = "倒是指挥官您来之前，附近……刚刚发生了很大的爆炸。",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
 			characterId = 100700,
 			subName = "林场管理员",
-			animation = "idea",
+			say = "好像……好像是一艘飞行器坠毁在这附近了。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -123,7 +138,7 @@
 					flag = 1
 				},
 				{
-					content = "有么？我怎么没听到。",
+					content = "有……有么？我怎么没听到。",
 					flag = 2
 				}
 			}
@@ -141,25 +156,24 @@
 			characterId = 100700,
 			optionFlag = 1,
 			subName = "林场管理员",
-			say = "欸？原来是指挥官的飞行器啊，爆炸时散落的零件把到港口交通线都给砸坏了呢。",
+			say = "欸？原来是指挥官的飞行器么……爆炸散落的零件，把通往港口的站台都砸坏了……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "肯定有啦！爆炸散落的零件把到港口交通线都破坏了。",
-			subName = "林场管理员",
 			characterId = 100700,
 			optionFlag = 2,
-			animation = "talk",
+			subName = "林场管理员",
+			say = "肯、肯定有的！爆炸散落的零件，把通往港口的站台都破坏了。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "因为是{namecode:98:明石}订单期限的最后一天，现在原材料运送受阻，乔安正在矿场那边发愁呢~",
+			say = "而且今天还是{namecode:98:明石}订单期限的最后一天……结果现在原材料运送受阻……唉……",
 			characterId = 100700,
 			subName = "林场管理员",
 			animation = "sad",
@@ -170,14 +184,14 @@
 		},
 		{
 			characterId = 0,
-			say = "{namecode:98:明石}的订单么……你知道她在哪吗？",
+			say = "{namecode:98:明石}的订单……你知道她人在哪么？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "她一般都会待在港口那边的，指挥官想去找她也得等交通线修复后哦~",
+			say = "嗯，她一般都会待在港口那边的……不过现在前往港口的站台被破坏了，指挥官得再等等才行。",
 			characterId = 100700,
 			subName = "林场管理员",
 			animation = "think",
@@ -187,16 +201,15 @@
 			},
 			options = {
 				{
-					content = "我过去看看。",
+					content = "站台么……那我也过去看看情况。",
 					flag = 1
 				}
 			}
 		},
 		{
-			say = "好哦~指挥官可以去矿场找乔安问问~车站的修复工作是她在负责的。",
-			characterId = 100700,
 			subName = "林场管理员",
-			animation = "nod",
+			characterId = 100700,
+			say = "好……好的，指挥官您可以去沉石矿山找乔安问问……车站的修复工作是她负责的。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

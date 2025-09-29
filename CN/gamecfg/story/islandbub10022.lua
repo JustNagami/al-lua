@@ -10,7 +10,7 @@
 	scripts = {
 		{
 			hideTime = 3,
-			say = "真是充满活力的港口~|",
+			say = "真是充满活力的港口~",
 			characterId = 100200,
 			hideType = 2
 		}

@@ -13,7 +13,7 @@
 			characterId = 100600,
 			animation = "nod",
 			hideType = 2,
-			say = "嗯……这块铁含量不错……杂质少……"
+			say = "嗯，这块矿石很不错嘛！杂质含量很少……"
 		}
 	}
 }

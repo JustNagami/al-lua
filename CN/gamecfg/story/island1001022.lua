@@ -20,7 +20,7 @@
 	scripts = {
 		{
 			characterId = 0,
-			say = "忙……目前看来的话，是一件好事情。",
+			say = "（帕特莉看起来很忙碌。）",
 			face2Face = {
 				{
 					0,
@@ -33,7 +33,15 @@
 			}
 		},
 		{
-			animation = "curious",
+			characterId = 0,
+			say = "忙……目前看来的话，是一件好事情。",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			animation = "doubt",
 			characterId = 100200,
 			subName = "订单管理员",
 			say = "指挥官？你怎么了？是还在为大家的工作操心吗？",
@@ -60,7 +68,7 @@
 			}
 		},
 		{
-			animation = "talk",
+			animation = "sad",
 			characterId = 100200,
 			subName = "订单管理员",
 			say = "呵呵呵，之前{namecode:98:明石}一个劲地造农场、扩港口、建商区……",
@@ -81,7 +89,7 @@
 		{
 			say = "支持……虽迟但到，骗到的支持也是支持……接手的贷款也是贷款。",
 			characterId = 0,
-			animation = "nod",
+			animation = "talk",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -96,7 +104,7 @@
 			}
 		},
 		{
-			animation = "sad",
+			animation = "scare",
 			characterId = 100200,
 			subName = "订单管理员",
 			say = "？这、这样吗？那指挥官来找我……我，也不能分担啊！",
@@ -133,9 +141,8 @@
 			}
 		},
 		{
-			animation = "talk",
-			characterId = 100200,
 			subName = "订单管理员",
+			characterId = 100200,
 			say = "只要把岛上的物资运到更需要它们的地方，就能赚得更多，只可惜开发区物产还不够丰富。",
 			typewriter = {
 				speed = 0.05,
@@ -152,27 +159,28 @@
 			}
 		},
 		{
+			say = "还有没有那种，更复杂，更冒险……更高效一点的办法？",
 			characterId = 0,
-			say = "还有没有那种，更复杂，更冒险……更高效一点的办法……呢？",
+			animation = "talk",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			subName = "订单管理员",
-			characterId = 100200,
 			say = "哼哼~指挥官的胃口不小嘛……",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			say = "不过既然你都问到了……那不知道你有没有留意过最近在港口流传的……",
 			characterId = 100200,
 			subName = "订单管理员",
 			animation = "elation",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "订单管理员",
+			characterId = 100200,
+			say = "不过既然你都问到了……那不知道你有没有留意过最近在港口流传的……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -234,21 +242,20 @@
 			}
 		},
 		{
+			say = "欸，不愧是指挥官，完全不为所动呢~",
+			subName = "订单管理员",
 			characterId = 100200,
 			optionFlag = 1,
-			subName = "订单管理员",
-			say = "欸，不愧是指挥官，完全不为所动呢~",
+			animation = "clap",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			animation = "talk",
-			subName = "订单管理员",
 			characterId = 100200,
-			dir = 1,
 			optionFlag = 1,
+			subName = "订单管理员",
 			say = "不过负责货运委托的斯蒂芬妮就曾见过那个岛哦~",
 			typewriter = {
 				speed = 0.05,
@@ -259,17 +266,17 @@
 			characterId = 0,
 			optionFlag = 2,
 			say = "但这故事……听起来有点假。",
-			animation = "shakehead",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
+			say = "不管是真是假……指挥官都可以去找斯蒂芬妮打听打听嘛~",
+			subName = "订单管理员",
 			characterId = 100200,
 			optionFlag = 2,
-			subName = "订单管理员",
-			say = "不管是真是假……指挥官都可以去找斯蒂芬妮打听打听嘛~",
+			animation = "talk",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -286,10 +293,10 @@
 			}
 		},
 		{
-			animation = "talk",
+			animation = "clap",
 			characterId = 100200,
 			subName = "订单管理员",
-			say = "指挥官可以去问一下斯蒂芬妮嘛，说不定会有大——收货哦！",
+			say = "指挥官可以去问一下斯蒂芬妮嘛，说不定会有大——收获哦！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

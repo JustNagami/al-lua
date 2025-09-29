@@ -20,7 +20,7 @@
 	scripts = {
 		{
 			characterId = 0,
-			say = "你要的东西，我都带来了。",
+			say = "布莱梅……好香的味道~难道是欧姆蛋好了？",
 			face2Face = {
 				{
 					0,
@@ -33,10 +33,10 @@
 			}
 		},
 		{
-			animation = "think",
+			animation = "elation",
 			characterId = 101200,
 			subName = "啾咖啡店员",
-			say = "嗯……鸡蛋色泽均匀，表面光滑，看起来很棒！",
+			say = "呼呼——刚刚出炉呢~指挥官……来，您的专属欧姆蛋，请趁热享用。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -45,14 +45,14 @@
 		{
 			subName = "啾咖啡店员",
 			characterId = 101200,
-			say = "面粉颗粒细腻，麦香纯正……哇，都是上好的原料，辛苦了，指挥官~",
+			say = "这是您应得的第一份成果。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "不错吧，这可都是岛上农场的第一批产品。",
+			say = "看着就很有食欲，只是这股香味都值得我特意跑一趟了。",
 			characterId = 0,
 			animation = "nod",
 			typewriter = {
@@ -61,10 +61,10 @@
 			}
 		},
 		{
-			animation = "doubt",
+			animation = "nod",
 			characterId = 101200,
 			subName = "啾咖啡店员",
-			say = "原来农场已经开始运作起来了，而且东西看起来不错……",
+			say = "嗯，除此之外，我还额外给刚才离开的斯蒂芬妮也做了一份……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -73,7 +73,25 @@
 		{
 			subName = "啾咖啡店员",
 			characterId = 101200,
-			say = "请放心，我会认真对待这些原料的。",
+			say = "指挥官能帮我给她送过去吗？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "啾咖啡店员",
+			characterId = 0,
+			say = "斯蒂芬妮么？正好！我也打算去看看她是不是又“逸”起来了。",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "啾咖啡店员",
+			characterId = 101200,
+			say = "嗯，打包工作已经完成，指挥官等会送过去就好。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -83,16 +101,7 @@
 			animation = "talk",
 			characterId = 101200,
 			subName = "啾咖啡店员",
-			say = "为您特制的苹果派很快就好，请指挥官稍等片刻。",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			say = "没问题。",
-			characterId = 0,
-			animation = "nod",
+			say = "现在，还请慢慢享用吧。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

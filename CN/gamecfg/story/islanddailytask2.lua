@@ -19,7 +19,7 @@
 	},
 	scripts = {
 		{
-			animation = "think",
+			animation = "nod",
 			characterId = 100600,
 			subName = "矿山管理员",
 			say = "啊！指挥官，这些东西送来得正是时候！",
@@ -35,10 +35,9 @@
 			}
 		},
 		{
-			say = "嗯……分量也够足！干得漂亮！",
-			characterId = 100600,
-			animation = "nod",
 			subName = "矿山管理员",
+			characterId = 100600,
+			say = "嗯……分量也够！干得漂亮！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -47,17 +46,7 @@
 		{
 			subName = "矿山管理员",
 			characterId = 100600,
-			say = "有了它们，我就能继续采矿了。",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			animation = "elation",
-			characterId = 100600,
-			subName = "矿山管理员",
-			say = "岛上的建设可离不开我挖的这些矿石！",
+			say = "有了它们，矿山的订单就不用愁啦！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

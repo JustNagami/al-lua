@@ -13,7 +13,7 @@
 			characterId = 100700,
 			animation = "rest",
 			hideType = 2,
-			say = "嗯~又截了一单！先休息会儿。"
+			say = "嗯……木材都处理好了，先休息会~"
 		}
 	}
 }

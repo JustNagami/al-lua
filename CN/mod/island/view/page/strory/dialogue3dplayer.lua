@@ -57,11 +57,11 @@ function var_0_0.CancelAuto(arg_3_0)
 end
 
 function var_0_0.OnStart(arg_4_0, arg_4_1)
-	arg_4_0:ActiveDefaultCamera(arg_4_1)
 	pg.DelegateInfo.New(arg_4_0)
 end
 
 function var_0_0.OnStartAction(arg_5_0, arg_5_1, arg_5_2)
+	arg_5_0:ActiveDefaultCamera(arg_5_1)
 	arg_5_0:StartFadeIn(arg_5_1)
 	arg_5_2()
 end
@@ -512,14 +512,23 @@ end
 
 function var_0_0.Face2Face(arg_63_0, arg_63_1, arg_63_2, arg_63_3)
 	local var_63_0 = arg_63_2.position - arg_63_1.position
-	local var_63_1 = Quaternion.LookRotation(var_63_0)
-	local var_63_2 = arg_63_1.position - arg_63_2.position
-	local var_63_3 = Quaternion.LookRotation(var_63_2)
+	local var_63_1 = arg_63_1.position - arg_63_2.position
 
-	arg_63_1.rotation = Quaternion.Euler(0, var_63_1.eulerAngles.y, 0)
-	arg_63_2.rotation = Quaternion.Euler(0, var_63_3.eulerAngles.y, 0)
+	if var_63_0.sqrMagnitude > 0.0001 then
+		local var_63_2 = Quaternion.LookRotation(var_63_0)
 
-	arg_63_3()
+		arg_63_1.rotation = Quaternion.Euler(0, var_63_2.eulerAngles.y, 0)
+	end
+
+	if var_63_1.sqrMagnitude > 0.0001 then
+		local var_63_3 = Quaternion.LookRotation(var_63_1)
+
+		arg_63_2.rotation = Quaternion.Euler(0, var_63_3.eulerAngles.y, 0)
+	end
+
+	if arg_63_3 then
+		arg_63_3()
+	end
 end
 
 function var_0_0.StartUIAnimations(arg_64_0, arg_64_1, arg_64_2)

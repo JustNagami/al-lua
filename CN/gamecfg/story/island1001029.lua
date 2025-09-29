@@ -19,16 +19,24 @@
 	},
 	scripts = {
 		{
-			subName = "牧场管理员",
-			characterId = 100500,
-			say = "没错！是蛋哦！是我们牧场的——第一枚鸡蛋！",
-			animation = "happy",
+			characterId = 0,
+			say = "梅莉，这是……鸡蛋？",
 			face2Face = {
 				{
 					0,
 					100500
 				}
 			},
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			animation = "nod",
+			characterId = 100500,
+			subName = "牧场管理员",
+			say = "没错！是蛋哦！是我们牧场产出的鸡蛋！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -62,18 +70,9 @@
 			}
 		},
 		{
+			animation = "talk",
 			characterId = 0,
 			say = "嗯？送给我……梅莉，这可是牧场的第一次的收获，应该好好保存起来，或者……",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			animation = "shakehead",
-			characterId = 100500,
-			subName = "牧场管理员",
-			say = "才不要，食物可不是用来收藏的哦~而且鸡蛋放久了也会坏掉的！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -83,6 +82,15 @@
 			animation = "elation",
 			characterId = 100500,
 			subName = "牧场管理员",
+			say = "才不要，食物可不是用来收藏的哦~而且鸡蛋放久了也会坏掉的！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "牧场管理员",
+			characterId = 100500,
 			say = "那可就成坏蛋了~梅莉不要坏蛋！",
 			typewriter = {
 				speed = 0.05,
@@ -117,9 +125,10 @@
 			}
 		},
 		{
-			subName = "牧场管理员",
-			characterId = 100500,
 			say = "好哦！三、二、一……",
+			characterId = 100500,
+			subName = "牧场管理员",
+			animation = "nod",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -137,6 +146,14 @@
 			subName = "牧场管理员",
 			characterId = 100500,
 			say = "我先走一步啦！指挥官——",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 0,
+			say = "跑慢点——梅莉！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

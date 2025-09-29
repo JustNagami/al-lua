@@ -314,7 +314,7 @@ pg.base.island_shop_goods = {
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
-		have_show = 1,
+		have_show = 0,
 		limited_num = 1,
 		limited_show = 1,
 		unlock = "",
@@ -2733,7 +2733,7 @@ pg.base.island_shop_goods = {
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
-		have_show = 1,
+		have_show = 0,
 		limited_num = 1,
 		limited_show = 0,
 		unlock = "",
@@ -2759,7 +2759,7 @@ pg.base.island_shop_goods = {
 		resource_consume = {
 			1,
 			14,
-			300
+			200
 		},
 		items = {
 			{
@@ -2774,7 +2774,7 @@ pg.base.island_shop_goods = {
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
-		have_show = 1,
+		have_show = 0,
 		limited_num = 1,
 		limited_show = 0,
 		unlock = "",
@@ -2800,7 +2800,7 @@ pg.base.island_shop_goods = {
 		resource_consume = {
 			1,
 			14,
-			300
+			200
 		},
 		items = {
 			{
@@ -2815,7 +2815,7 @@ pg.base.island_shop_goods = {
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
-		have_show = 1,
+		have_show = 0,
 		limited_num = 1,
 		limited_show = 0,
 		unlock = "",
@@ -2841,7 +2841,7 @@ pg.base.island_shop_goods = {
 		resource_consume = {
 			1,
 			14,
-			300
+			200
 		},
 		items = {
 			{
@@ -3403,13 +3403,14 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[411010] = {
-		pay_id = 0,
+		desc = "购买可获得亚麻种子",
 		goods_have = 0,
 		items_model = "",
+		pay_id = 0,
 		have_show = 0,
-		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得亚麻种子",
+		limited_show = 0,
+		unlock = "",
 		goods_name = "亚麻种子",
 		icon = "IslandProps/item_1010",
 		goods_detail_type = 1,
@@ -3440,9 +3441,6 @@ pg.base.island_shop_goods = {
 				1010,
 				1
 			}
-		},
-		unlock = {
-			3502001
 		}
 	},
 	[411011] = {
@@ -4098,12 +4096,12 @@ pg.base.island_shop_goods = {
 		pay_id = 0,
 		have_show = 0,
 		limited_num = 100,
-		limited_show = 0,
+		limited_show = 1,
 		unlock = "",
-		goods_name = "1分钟加速券（赛季）",
+		goods_name = "1分钟加速券（开发季）",
 		icon = "IslandGoodsIcon/item_speedup_ticket1",
 		goods_detail_type = 1,
-		remian_show = 0,
+		remian_show = 1,
 		pt_award = 0,
 		discount = 0,
 		groups_detail_type = "",
@@ -4164,12 +4162,12 @@ pg.base.island_shop_goods = {
 		pay_id = 0,
 		have_show = 0,
 		limited_num = 30,
-		limited_show = 0,
+		limited_show = 1,
 		unlock = "",
-		goods_name = "10分钟加速券（赛季）",
+		goods_name = "10分钟加速券（开发季）",
 		icon = "IslandGoodsIcon/item_speedup_ticket2",
 		goods_detail_type = 1,
-		remian_show = 0,
+		remian_show = 1,
 		pt_award = 0,
 		discount = 0,
 		groups_detail_type = "",
@@ -4230,12 +4228,12 @@ pg.base.island_shop_goods = {
 		pay_id = 0,
 		have_show = 0,
 		limited_num = 10,
-		limited_show = 0,
+		limited_show = 1,
 		unlock = "",
-		goods_name = "60分钟加速券（赛季）",
+		goods_name = "60分钟加速券（开发季）",
 		icon = "IslandGoodsIcon/item_speedup_ticket3",
 		goods_detail_type = 1,
-		remian_show = 0,
+		remian_show = 1,
 		pt_award = 0,
 		discount = 0,
 		groups_detail_type = "",

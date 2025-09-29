@@ -23,10 +23,9 @@
 	},
 	scripts = {
 		{
-			subName = "矿山管理员",
-			characterId = 100600,
-			say = "终于修好了，这样一来交通线就能恢复正常运转了。",
-			animation = "talk",
+			characterId = 0,
+			say = "这样就行了？",
+			animation = "hi",
 			face2Face = {
 				{
 					0,
@@ -45,17 +44,36 @@
 			}
 		},
 		{
-			say = "说不定还能赶在晚上前把货物送到呢。",
-			characterId = 100700,
-			subName = "林场管理员",
-			animation = "clap",
+			say = "搞定！终于修好啦！",
+			characterId = 100600,
+			subName = "矿山管理员",
+			animation = "rest",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "嗯嗯，真是多亏指挥官了。",
+			subName = "矿山管理员",
+			characterId = 100600,
+			say = "我们把站台完全修复，真是太不容易了！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "这样……应该能在晚上前把货物送过去了吧？",
+			characterId = 100700,
+			subName = "林场管理员",
+			animation = "rest",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			say = "嗯嗯，肯定能！真是多亏指挥官您及时帮忙！",
 			characterId = 100600,
 			subName = "矿山管理员",
 			animation = "nod",
@@ -65,9 +83,18 @@
 			}
 		},
 		{
+			subName = "矿山管理员",
+			characterId = 100600,
+			say = "对了！作为谢礼……啊，在这儿！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
 			characterId = 100600,
 			subName = "矿山管理员",
-			say = "对了，作为谢礼……啊，在这儿，这个送给你——",
+			say = "这个送给你——是我采矿时发现的，很特别吧！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -82,44 +109,44 @@
 		{
 			subName = "矿山管理员",
 			characterId = 100600,
-			say = "是我采矿时发现的。",
+			say = "对吧对吧！亮晶晶的，超漂亮！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "还有我的这份！是特别加工过的木材，上面的木纹是不是很像星星呀~",
+			say = "还、还有这个……",
 			characterId = 100700,
 			subName = "林场管理员",
+			animation = "shy",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "林场管理员",
+			characterId = 100700,
+			say = "是我……特别处理过的木材，上面的木纹……您看，像不像星星？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
 			animation = "nod",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
 			characterId = 0,
-			say = "谢谢~看来你们在这里待得还算开心。",
+			say = "谢谢~",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "哼哼，车来啦~不过上面好像装满了货物，指挥官不急的话可以等下一班的。",
+			say = "车来了——啊……不过上面好像装满了货物……",
 			characterId = 100700,
 			subName = "林场管理员",
-			animation = "elation",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			say = "因为交通瘫痪的原因，这里堆积了很多需要加急送往码头的货物。",
-			characterId = 100600,
-			subName = "矿山管理员",
 			animation = "embarrass",
 			typewriter = {
 				speed = 0.05,
@@ -127,6 +154,26 @@
 			}
 		},
 		{
+			say = "因为车站损坏，这里积压了好多要加急送往码头的货呢！",
+			characterId = 100600,
+			subName = "矿山管理员",
+			animation = "talk",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			subName = "矿山管理员",
+			characterId = 100600,
+			say = "指挥官您不急的话可以等下一班？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			animation = "shakehead",
 			characterId = 0,
 			say = "没关系，由我来带着这些货物一起去码头就好。",
 			typewriter = {
@@ -143,10 +190,19 @@
 			}
 		},
 		{
-			say = "那麻烦指挥官了，这是货物清单，等货物运到港口后帮忙交给帕特莉就好。",
+			say = "那麻烦你啦！这是货物清单，等到了港口，帮忙交给帕特莉就好！",
 			characterId = 100600,
 			subName = "矿山管理员",
-			animation = "talk",
+			animation = "clap",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			characterId = 100600,
+			subName = "矿山管理员",
+			say = "她肯定在码头盯着呢~",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -159,20 +215,20 @@
 			}
 		},
 		{
-			say = "指挥官，车来啦~一路顺风哦~",
+			say = "指挥官……一路顺风。",
 			characterId = 100700,
 			subName = "林场管理员",
-			animation = "hi",
+			animation = "bye",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			say = "一路顺风。",
+			say = "一路顺风指挥官！下次记得来坐矿车玩啊！",
 			characterId = 100600,
 			subName = "矿山管理员",
-			animation = "hi",
+			animation = "bye",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
