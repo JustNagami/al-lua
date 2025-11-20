@@ -14,7 +14,7 @@
 				dir = -1,
 				posX = -410,
 				ui = {
-					path = "OverlayCamera/Overlay/UIMain/PreCombatUI(Clone)/BuffContainer/Icon",
+					path = "OverlayCamera/Overlay/UIMain/PreCombatUI(Clone)/adapt/BuffContainer/Icon",
 					lineMode = true
 				}
 			}

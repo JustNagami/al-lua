@@ -521,4 +521,12 @@ function var_0_0.BlockCanWatch(arg_50_0, arg_50_1)
 	arg_50_0.blockCanWatch = arg_50_1
 end
 
+function var_0_0.SetPosition(arg_51_0, arg_51_1)
+	arg_51_0.lady.position = arg_51_1
+end
+
+function var_0_0.SetRotation(arg_52_0, arg_52_1)
+	arg_52_0.lady.rotation = arg_52_1
+end
+
 return var_0_0

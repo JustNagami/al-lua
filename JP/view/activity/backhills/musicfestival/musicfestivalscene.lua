@@ -7,12 +7,12 @@ end
 var_0_0.HUB_ID = 2
 
 function var_0_0.init(arg_2_0)
-	arg_2_0.top = arg_2_0:findTF("top")
-	arg_2_0._closeBtn = arg_2_0:findTF("top/back")
-	arg_2_0._helpBtn = arg_2_0:findTF("top/help")
+	arg_2_0.top = arg_2_0._tf:Find("top")
+	arg_2_0._closeBtn = arg_2_0._tf:Find("top/back")
+	arg_2_0._helpBtn = arg_2_0._tf:Find("top/help")
 	arg_2_0.btn_actskin = arg_2_0.top:Find("idol_jump")
 	arg_2_0.btn_ins = arg_2_0.top:Find("ins_jump")
-	arg_2_0._map = arg_2_0:findTF("scrollRect/map")
+	arg_2_0._map = arg_2_0._tf:Find("scrollRect/map")
 	arg_2_0.stage = arg_2_0._map:Find("stage")
 	arg_2_0.screen = arg_2_0._map:Find("screen")
 	arg_2_0.shop = arg_2_0._map:Find("shop")
@@ -275,13 +275,12 @@ function var_0_0.updateStageShip(arg_27_0)
 
 	if var_27_0 then
 		local var_27_2 = GetSpineRequestPackage.New(var_27_0, function(arg_28_0)
-			arg_28_0.transform.localScale = Vector3(0.5, 0.5, 1)
-			arg_28_0.transform.localPosition = Vector3.zero
-
-			arg_28_0.transform:SetParent(arg_27_0._stageShip, false)
-			arg_28_0.transform:SetSiblingIndex(1)
+			arg_28_0:SetLocalScale(Vector3(0.5, 0.5, 1))
+			arg_28_0:SetLocalPosition(Vector3.zero)
+			arg_28_0:SetParent(arg_27_0._stageShip)
+			arg_28_0:SetSiblingIndex(1)
 			setActive(arg_27_0._stageShip, true)
-			arg_28_0:GetComponent(typeof(SpineAnimUI)):SetAction(var_27_1, 0)
+			arg_28_0:SetAction(var_27_1, 0)
 
 			arg_27_0._loadingRequest[var_27_0] = nil
 			arg_27_0._ReturnRequest[var_27_0] = ReturnSpineRequestPackage.New(var_27_0, arg_28_0)

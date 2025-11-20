@@ -327,6 +327,11 @@ pg.task_meta_data_template = setmetatable({
 		100473,
 		100474,
 		100475,
+		100481,
+		100482,
+		100483,
+		100484,
+		100485,
 		200001,
 		200002,
 		200003,
@@ -478,7 +483,11 @@ pg.task_meta_data_template = setmetatable({
 		200381,
 		200382,
 		200383,
-		200384
+		200384,
+		200391,
+		200392,
+		200393,
+		200394
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -3083,6 +3092,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100481] = {
+		target_id_2 = "970208",
+		sub_type = 180,
+		desc = "ボイシ(META)を編成した艦隊で1回戦闘を勝利する",
+		id = 100481,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100482] = {
+		target_id_2 = "970208",
+		sub_type = 180,
+		desc = "ボイシ(META)を編成した艦隊でLv30+の敵艦隊を撃破する",
+		id = 100482,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100483] = {
+		target_id_2 = "970208",
+		sub_type = 180,
+		desc = "ボイシ(META)を編成した艦隊でLv55+の敵艦隊を撃破する",
+		id = 100483,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100484] = {
+		target_id_2 = "970208",
+		sub_type = 180,
+		desc = "ボイシ(META)を編成した艦隊でLv80+の敵艦隊を撃破する",
+		id = 100484,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100485] = {
+		target_id_2 = "970208",
+		sub_type = 180,
+		desc = "ボイシ(META)を編成した艦隊でLv100+の敵艦隊を撃破する",
+		id = 100485,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -4296,6 +4345,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "セイレーン作戦でデューイ(META)を含めた艦隊でLv100+の敵を撃破",
 		id = 200384,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200391] = {
+		target_id_2 = "970208",
+		sub_type = 302,
+		desc = "セイレーン作戦でボイシ(META)を含めた艦隊で1回勝利する",
+		id = 200391,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200392] = {
+		target_id_2 = "970208",
+		sub_type = 302,
+		desc = "セイレーン作戦でボイシ(META)を含めた艦隊でLv70+の敵を撃破",
+		id = 200392,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200393] = {
+		target_id_2 = "970208",
+		sub_type = 302,
+		desc = "セイレーン作戦でボイシ(META)を含めた艦隊でLv90+の敵を撃破",
+		id = 200393,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200394] = {
+		target_id_2 = "970208",
+		sub_type = 302,
+		desc = "セイレーン作戦でボイシ(META)を含めた艦隊でLv100+の敵を撃破",
+		id = 200394,
 		target_num = 1,
 		target_id = "100"
 	}

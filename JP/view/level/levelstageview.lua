@@ -66,17 +66,17 @@ end
 local var_0_1 = -300
 
 function var_0_0.InitUI(arg_8_0)
-	arg_8_0.topStage = arg_8_0:findTF("top_stage", arg_8_0._tf)
+	arg_8_0.topStage = arg_8_0._tf:Find("top_stage")
 
 	setActive(arg_8_0.topStage, true)
 
-	arg_8_0.bottomStage = arg_8_0:findTF("bottom_stage", arg_8_0._tf)
+	arg_8_0.bottomStage = arg_8_0._tf:Find("bottom_stage")
 	arg_8_0.normalRole = findTF(arg_8_0.bottomStage, "Normal")
-	arg_8_0.funcBtn = arg_8_0:findTF("func_button", arg_8_0.normalRole)
-	arg_8_0.retreatBtn = arg_8_0:findTF("retreat_button", arg_8_0.normalRole)
-	arg_8_0.switchBtn = arg_8_0:findTF("switch_button", arg_8_0.normalRole)
-	arg_8_0.helpBtn = arg_8_0:findTF("help_button", arg_8_0.normalRole)
-	arg_8_0.shengfuBtn = arg_8_0:findTF("shengfu/shengfu_button", arg_8_0.normalRole)
+	arg_8_0.funcBtn = arg_8_0.normalRole:Find("func_button")
+	arg_8_0.retreatBtn = arg_8_0.normalRole:Find("retreat_button")
+	arg_8_0.switchBtn = arg_8_0.normalRole:Find("switch_button")
+	arg_8_0.helpBtn = arg_8_0.normalRole:Find("help_button")
+	arg_8_0.shengfuBtn = arg_8_0.normalRole:Find("shengfu/shengfu_button")
 	arg_8_0.actionRole = findTF(arg_8_0.bottomStage, "Action")
 	arg_8_0.missileStrikeRole = findTF(arg_8_0.actionRole, "MissileStrike")
 	arg_8_0.airExpelRole = findTF(arg_8_0.actionRole, "AirExpel")
@@ -96,21 +96,21 @@ function var_0_0.InitUI(arg_8_0)
 		setActive(arg_9_0, false)
 	end)
 
-	arg_8_0.leftStage = arg_8_0:findTF("left_stage", arg_8_0._tf)
+	arg_8_0.leftStage = arg_8_0._tf:Find("left_stage")
 
 	setActive(arg_8_0.leftStage, true)
 
-	arg_8_0.rightStage = arg_8_0:findTF("right_stage", arg_8_0._tf)
+	arg_8_0.rightStage = arg_8_0._tf:Find("right_stage")
 	arg_8_0.bombPanel = arg_8_0.rightStage:Find("bomb_panel")
-	arg_8_0.panelBarrier = arg_8_0:findTF("panel_barrier", arg_8_0.rightStage)
-	arg_8_0.strategyPanelAnimator = arg_8_0:findTF("event", arg_8_0.rightStage):GetComponent(typeof(Animator))
-	arg_8_0.autoBattleBtn = arg_8_0:findTF("event/collapse/lock_fleet", arg_8_0.rightStage)
-	arg_8_0.showDetailBtn = arg_8_0:findTF("event/detail/show_detail", arg_8_0.rightStage)
+	arg_8_0.panelBarrier = arg_8_0.rightStage:Find("panel_barrier")
+	arg_8_0.strategyPanelAnimator = arg_8_0.rightStage:Find("event"):GetComponent(typeof(Animator))
+	arg_8_0.autoBattleBtn = arg_8_0.rightStage:Find("event/collapse/lock_fleet")
+	arg_8_0.showDetailBtn = arg_8_0.rightStage:Find("event/detail/show_detail")
 
 	setActive(arg_8_0.panelBarrier, false)
 	setActive(arg_8_0.rightStage, true)
 
-	arg_8_0.airSupremacy = arg_8_0:findTF("msg_panel/air_supremacy", arg_8_0.topStage)
+	arg_8_0.airSupremacy = arg_8_0.topStage:Find("msg_panel/air_supremacy")
 
 	setAnchoredPosition(arg_8_0.topStage, {
 		y = arg_8_0.topStage.rect.height
@@ -142,10 +142,10 @@ function var_0_0.AddListener(arg_10_0)
 	arg_10_0:bind(LevelUIConst.ON_CLICK_GRID_QUAD, function(arg_13_0, arg_13_1)
 		arg_10_0:ClickGridCellNormal(arg_13_1)
 	end)
-	onButton(arg_10_0, arg_10_0:findTF("option", arg_10_0.topStage), function()
+	onButton(arg_10_0, arg_10_0.topStage:Find("option"), function()
 		arg_10_0:emit(BaseUI.ON_HOME)
 	end, SFX_CANCEL)
-	onButton(arg_10_0, arg_10_0:findTF("back_button", arg_10_0.topStage), function()
+	onButton(arg_10_0, arg_10_0.topStage:Find("back_button"), function()
 		arg_10_0:emit(LevelUIConst.SWITCH_TO_MAP)
 	end, SFX_CANCEL)
 	onButton(arg_10_0, arg_10_0.retreatBtn, function()
@@ -1249,7 +1249,7 @@ function var_0_0.updateStageFleet(arg_82_0)
 	local var_82_0 = arg_82_0.contextData.chapterVO
 	local var_82_1 = findTF(arg_82_0.leftStage, "fleet")
 	local var_82_2 = findTF(var_82_1, "shiptpl")
-	local var_82_3 = arg_82_0:findTF("msg_panel/fleet_info/number", arg_82_0.topStage)
+	local var_82_3 = arg_82_0.topStage:Find("msg_panel/fleet_info/number")
 
 	setActive(var_82_2, false)
 	setText(var_82_3, var_82_0.fleet.id)
@@ -1418,7 +1418,7 @@ function var_0_0.SwitchSubTeleportBottomStage(arg_98_0)
 	setActive(arg_98_0.missileStrikeRole, true)
 	setText(findTF(arg_98_0.missileStrikeRole, "confirm_button/Text"), i18n("levelscene_deploy_submarine"))
 	setText(findTF(arg_98_0.missileStrikeRole, "cancel_button/Text"), i18n("levelscene_deploy_submarine_cancel"))
-	onButton(arg_98_0, arg_98_0:findTF("confirm_button", arg_98_0.missileStrikeRole), function()
+	onButton(arg_98_0, arg_98_0.missileStrikeRole:Find("confirm_button"), function()
 		local var_99_0 = arg_98_0.contextData.chapterVO
 		local var_99_1 = var_99_0:GetSubmarineFleet()
 		local var_99_2 = var_99_1.startPos
@@ -1445,7 +1445,7 @@ function var_0_0.SwitchSubTeleportBottomStage(arg_98_0)
 			end
 		})
 	end, SFX_UI_CLICK)
-	onButton(arg_98_0, arg_98_0:findTF("cancel_button", arg_98_0.missileStrikeRole), function()
+	onButton(arg_98_0, arg_98_0.missileStrikeRole:Find("cancel_button"), function()
 		arg_98_0:SwitchBottomStagePanel(false)
 		arg_98_0.grid:TurnOffSubTeleport()
 		arg_98_0.grid:updateQuadCells(ChapterConst.QuadStateNormal)
@@ -1456,7 +1456,7 @@ function var_0_0.SwitchMissileBottomStagePanel(arg_102_0)
 	setActive(arg_102_0.missileStrikeRole, true)
 	setText(findTF(arg_102_0.missileStrikeRole, "confirm_button/Text"), i18n("missile_attack_area_confirm"))
 	setText(findTF(arg_102_0.missileStrikeRole, "cancel_button/Text"), i18n("missile_attack_area_cancel"))
-	onButton(arg_102_0, arg_102_0:findTF("confirm_button", arg_102_0.missileStrikeRole), function()
+	onButton(arg_102_0, arg_102_0.missileStrikeRole:Find("confirm_button"), function()
 		local var_103_0 = arg_102_0.grid.missileStrikeTargetLine
 
 		if not var_103_0 then
@@ -1475,7 +1475,7 @@ function var_0_0.SwitchMissileBottomStagePanel(arg_102_0)
 			})
 		end)()
 	end, SFX_UI_CLICK)
-	onButton(arg_102_0, arg_102_0:findTF("cancel_button", arg_102_0.missileStrikeRole), function()
+	onButton(arg_102_0, arg_102_0.missileStrikeRole:Find("cancel_button"), function()
 		arg_102_0:SwitchBottomStagePanel(false)
 		arg_102_0.grid:HideMissileAimingMark()
 		arg_102_0.grid:updateQuadCells(ChapterConst.QuadStateNormal)
@@ -1486,7 +1486,7 @@ function var_0_0.SwitchAirSupportBottomStagePanel(arg_106_0)
 	setActive(arg_106_0.missileStrikeRole, true)
 	setText(findTF(arg_106_0.missileStrikeRole, "confirm_button/Text"), i18n("missile_attack_area_confirm"))
 	setText(findTF(arg_106_0.missileStrikeRole, "cancel_button/Text"), i18n("missile_attack_area_cancel"))
-	onButton(arg_106_0, arg_106_0:findTF("confirm_button", arg_106_0.missileStrikeRole), function()
+	onButton(arg_106_0, arg_106_0.missileStrikeRole:Find("confirm_button"), function()
 		local var_107_0 = arg_106_0.grid.missileStrikeTargetLine
 
 		if not var_107_0 then
@@ -1505,7 +1505,7 @@ function var_0_0.SwitchAirSupportBottomStagePanel(arg_106_0)
 			})
 		end)()
 	end, SFX_UI_CLICK)
-	onButton(arg_106_0, arg_106_0:findTF("cancel_button", arg_106_0.missileStrikeRole), function()
+	onButton(arg_106_0, arg_106_0.missileStrikeRole:Find("cancel_button"), function()
 		arg_106_0:SwitchBottomStagePanel(false)
 		arg_106_0.grid:HideAirSupportAimingMark()
 		arg_106_0.grid:updateQuadCells(ChapterConst.QuadStateNormal)
@@ -1515,7 +1515,7 @@ end
 function var_0_0.SwitchAirExpelBottomStagePanel(arg_110_0)
 	setActive(arg_110_0.airExpelRole, true)
 	setText(findTF(arg_110_0.airExpelRole, "cancel_button/Text"), i18n("levelscene_airexpel_cancel"))
-	onButton(arg_110_0, arg_110_0:findTF("cancel_button", arg_110_0.airExpelRole), function()
+	onButton(arg_110_0, arg_110_0.airExpelRole:Find("cancel_button"), function()
 		arg_110_0:SwitchBottomStagePanel(false)
 		arg_110_0.grid:HideAirExpelAimingMark()
 		arg_110_0.grid:CleanAirSupport()
@@ -2235,20 +2235,12 @@ function var_0_0.TryAutoFight(arg_165_0)
 	local var_165_3 = _.detect(var_165_2, function(arg_166_0)
 		return ChapterConst.IsBossCell(arg_166_0)
 	end)
-	local var_165_4
+	local var_165_4 = var_165_0:GetFleetOfDuty(tobool(var_165_3))
 
-	if ChapterConst.IsAtelierMap(var_165_1) then
-		var_165_4 = _.filter(var_165_0:findChapterCells(ChapterConst.AttachBox), function(arg_167_0)
-			return arg_167_0.flag ~= ChapterConst.CellFlagDisabled
-		end)
-	end
-
-	local var_165_5 = var_165_0:GetFleetofDuty(tobool(var_165_3))
-
-	if var_165_5 and var_165_5.id ~= var_165_0.fleet.id then
+	if var_165_4 and var_165_4.id ~= var_165_0.fleet.id then
 		arg_165_0:emit(LevelMediator2.ON_OP, {
 			type = ChapterConst.OpSwitch,
-			id = var_165_5.id
+			id = var_165_4.id
 		})
 		arg_165_0:tryAutoTrigger()
 
@@ -2261,91 +2253,123 @@ function var_0_0.TryAutoFight(arg_165_0)
 		return
 	end
 
-	if var_165_4 and #var_165_4 > 0 then
-		var_165_2 = _.map(var_165_4, function(arg_168_0)
-			local var_168_0, var_168_1 = var_165_0:findPath(ChapterConst.SubjectPlayer, var_165_5.line, arg_168_0)
+	local var_165_5
 
-			return {
-				target = arg_168_0,
-				priority = var_168_0,
-				path = var_168_1
-			}
+	for iter_165_0, iter_165_1 in ipairs(var_165_0:getConfig("box_auto_pick")) do
+		local var_165_6 = underscore.filter(switch(iter_165_1, {
+			[ChapterConst.AttachBox] = function()
+				return var_165_0:findChapterCells(iter_165_1)
+			end,
+			[ChapterConst.AttachSupply] = function()
+				local var_168_0, var_168_1 = var_165_0:getFleetAmmo(var_165_4)
+
+				if var_168_0 - var_168_1 < 3 then
+					return {}
+				else
+					return underscore.filter(var_165_0:findChapterCells(iter_165_1), function(arg_169_0)
+						return arg_169_0.attachmentId > 0
+					end)
+				end
+			end
+		}), function(arg_170_0)
+			return arg_170_0.flag ~= ChapterConst.CellFlagDisabled
 		end)
-	elseif var_165_3 then
-		local var_165_6, var_165_7 = var_165_0:FindBossPath(var_165_5.line, var_165_3)
-		local var_165_8 = {}
-		local var_165_9
 
-		for iter_165_0, iter_165_1 in ipairs(var_165_7) do
-			table.insert(var_165_8, iter_165_1)
+		for iter_165_2, iter_165_3 in ipairs(var_165_6) do
+			local var_165_7, var_165_8 = var_165_0:findPath(ChapterConst.SubjectPlayer, var_165_4.line, iter_165_3)
 
-			if var_165_0:existEnemy(ChapterConst.SubjectPlayer, iter_165_1.row, iter_165_1.column) then
-				var_165_6 = iter_165_0
-				var_165_9 = iter_165_1
+			if var_165_7 < PathFinding.PrioObstacle then
+				var_165_5 = var_165_5 or {}
 
-				break
+				table.insert(var_165_5, {
+					target = iter_165_3,
+					priority = var_165_7,
+					path = var_165_8
+				})
 			end
 		end
 
-		var_165_2 = {
-			{
-				target = var_165_9 or var_165_3,
-				priority = var_165_6 or 0,
-				path = var_165_8
-			}
-		}
-	else
-		var_165_2 = _.map(var_165_2, function(arg_169_0)
-			local var_169_0, var_169_1 = var_165_0:findPath(ChapterConst.SubjectPlayer, var_165_5.line, arg_169_0)
+		if var_165_5 then
+			table.sort(var_165_5, CompareFuncs({
+				function(arg_171_0)
+					return arg_171_0.priority
+				end
+			}))
 
-			return {
-				target = arg_169_0,
-				priority = var_169_0,
-				path = var_169_1
-			}
-		end)
-
-		local function var_165_10(arg_170_0)
-			local var_170_0 = arg_170_0.target
-			local var_170_1 = pg.expedition_data_template[var_170_0.attachmentId]
-
-			assert(var_170_1, "expedition_data_template not exist: " .. var_170_0.attachmentId)
-
-			if var_170_0.flag == ChapterConst.CellFlagDisabled then
-				return 0
-			end
-
-			return ChapterConst.EnemyPreference[var_170_1.type]
+			break
 		end
-
-		table.sort(var_165_2, function(arg_171_0, arg_171_1)
-			local var_171_0 = arg_171_0.priority >= PathFinding.PrioObstacle
-
-			if var_171_0 ~= (arg_171_1.priority >= PathFinding.PrioObstacle) then
-				return not var_171_0
-			end
-
-			local var_171_1 = var_165_10(arg_171_0)
-			local var_171_2 = var_165_10(arg_171_1)
-
-			if var_171_1 ~= var_171_2 then
-				return var_171_2 < var_171_1
-			end
-
-			return arg_171_0.priority < arg_171_1.priority
-		end)
 	end
 
-	local var_165_11 = var_165_2[1]
+	if not var_165_5 then
+		if var_165_3 then
+			local var_165_9, var_165_10 = var_165_0:FindBossPath(var_165_4.line, var_165_3)
+			local var_165_11 = {}
+			local var_165_12
 
-	if var_165_11 and var_165_11.priority < PathFinding.PrioObstacle then
-		local var_165_12 = var_165_11.target
+			for iter_165_4, iter_165_5 in ipairs(var_165_10) do
+				table.insert(var_165_11, iter_165_5)
+
+				if var_165_0:existEnemy(ChapterConst.SubjectPlayer, iter_165_5.row, iter_165_5.column) then
+					var_165_9 = iter_165_4
+					var_165_12 = iter_165_5
+
+					break
+				end
+			end
+
+			var_165_5 = {
+				{
+					target = var_165_12 or var_165_3,
+					priority = var_165_9 or 0,
+					path = var_165_11
+				}
+			}
+		else
+			var_165_5 = underscore.map(var_165_2, function(arg_172_0)
+				local var_172_0, var_172_1 = var_165_0:findPath(ChapterConst.SubjectPlayer, var_165_4.line, arg_172_0)
+
+				return {
+					target = arg_172_0,
+					priority = var_172_0,
+					path = var_172_1
+				}
+			end)
+
+			local function var_165_13(arg_173_0)
+				local var_173_0 = arg_173_0.target
+				local var_173_1 = pg.expedition_data_template[var_173_0.attachmentId]
+
+				assert(var_173_1, "expedition_data_template not exist: " .. var_173_0.attachmentId)
+
+				if var_173_0.flag == ChapterConst.CellFlagDisabled then
+					return 0
+				end
+
+				return ChapterConst.EnemyPreference[var_173_1.type]
+			end
+
+			table.sort(var_165_5, CompareFuncs({
+				function(arg_174_0)
+					return arg_174_0.priority < PathFinding.PrioObstacle and 0 or 1
+				end,
+				function(arg_175_0)
+					return -var_165_13(arg_175_0)
+				end,
+				function(arg_176_0)
+					return arg_176_0.priority
+				end
+			}))
+		end
+	end
+
+	if var_165_5 and #var_165_5 > 0 and var_165_5[1].priority < PathFinding.PrioObstacle then
+		local var_165_14 = var_165_5[1].target
 
 		arg_165_0:emit(LevelMediator2.ON_OP, {
 			type = ChapterConst.OpMove,
-			id = var_165_5.id,
-			arg1 = var_165_12.row,
-			arg2 = var_165_12.column
+			id = var_165_4.id,
+			arg1 = var_165_14.row,
+			arg2 = var_165_14.column
 		})
 	else
 		pg.TipsMgr.GetInstance():ShowTips(i18n("autofight_errors_tip"))
@@ -2353,80 +2377,80 @@ function var_0_0.TryAutoFight(arg_165_0)
 	end
 end
 
-function var_0_0.popStageStrategy(arg_172_0)
-	local var_172_0 = arg_172_0:findTF("event/collapse", arg_172_0.rightStage)
+function var_0_0.popStageStrategy(arg_177_0)
+	local var_177_0 = arg_177_0.rightStage:Find("event/collapse")
 
-	if var_172_0.anchoredPosition.x <= 1 then
-		triggerButton(var_172_0)
+	if var_177_0.anchoredPosition.x <= 1 then
+		triggerButton(var_177_0)
 	end
 end
 
-function var_0_0.UpdateAutoFightPanel(arg_173_0)
-	if arg_173_0.contextData.chapterVO:CanActivateAutoFight() then
-		if not arg_173_0.autoFightPanel then
-			arg_173_0.autoFightPanel = LevelStageAutoFightPanel.New(arg_173_0.rightStage:Find("event/collapse"), arg_173_0.event, arg_173_0.contextData)
+function var_0_0.UpdateAutoFightPanel(arg_178_0)
+	if arg_178_0.contextData.chapterVO:CanActivateAutoFight() then
+		if not arg_178_0.autoFightPanel then
+			arg_178_0.autoFightPanel = LevelStageAutoFightPanel.New(arg_178_0.rightStage:Find("event/collapse"), arg_178_0.event, arg_178_0.contextData)
 
-			arg_173_0.autoFightPanel:Load()
+			arg_178_0.autoFightPanel:Load()
 
-			arg_173_0.autoFightPanel.isFrozen = arg_173_0.isFrozen
+			arg_178_0.autoFightPanel.isFrozen = arg_178_0.isFrozen
 		end
 
-		arg_173_0.autoFightPanel.buffer:Show()
-	elseif arg_173_0.autoFightPanel then
-		arg_173_0.autoFightPanel.buffer:Hide()
+		arg_178_0.autoFightPanel.buffer:Show()
+	elseif arg_178_0.autoFightPanel then
+		arg_178_0.autoFightPanel.buffer:Hide()
 	end
 end
 
-function var_0_0.UpdateAutoFightMark(arg_174_0)
-	if not arg_174_0.autoFightPanel then
+function var_0_0.UpdateAutoFightMark(arg_179_0)
+	if not arg_179_0.autoFightPanel then
 		return
 	end
 
-	arg_174_0.autoFightPanel.buffer:UpdateAutoFightMark()
+	arg_179_0.autoFightPanel.buffer:UpdateAutoFightMark()
 end
 
-function var_0_0.DestroyAutoFightPanel(arg_175_0)
-	if not arg_175_0.autoFightPanel then
+function var_0_0.DestroyAutoFightPanel(arg_180_0)
+	if not arg_180_0.autoFightPanel then
 		return
 	end
 
-	arg_175_0.autoFightPanel:Destroy()
+	arg_180_0.autoFightPanel:Destroy()
 
-	arg_175_0.autoFightPanel = nil
+	arg_180_0.autoFightPanel = nil
 end
 
-function var_0_0.DestroyToast(arg_176_0)
-	if not arg_176_0.toastPanel then
+function var_0_0.DestroyToast(arg_181_0)
+	if not arg_181_0.toastPanel then
 		return
 	end
 
-	arg_176_0.toastPanel:Destroy()
+	arg_181_0.toastPanel:Destroy()
 
-	arg_176_0.toastPanel = nil
+	arg_181_0.toastPanel = nil
 end
 
-function var_0_0.Toast(arg_177_0)
-	arg_177_0:DestroyToast()
+function var_0_0.Toast(arg_182_0)
+	arg_182_0:DestroyToast()
 
-	local var_177_0 = table.remove(arg_177_0.toastQueue, 1)
+	local var_182_0 = table.remove(arg_182_0.toastQueue, 1)
 
-	if not var_177_0 then
+	if not var_182_0 then
 		return
 	end
 
-	arg_177_0.toastPanel = var_177_0.Class.New(arg_177_0)
+	arg_182_0.toastPanel = var_182_0.Class.New(arg_182_0)
 
-	arg_177_0.toastPanel:Load()
+	arg_182_0.toastPanel:Load()
 
-	arg_177_0.toastPanel.contextData.settings = var_177_0
+	arg_182_0.toastPanel.contextData.settings = var_182_0
 
-	arg_177_0.toastPanel.buffer:Play(function()
-		arg_177_0:Toast()
+	arg_182_0.toastPanel.buffer:Play(function()
+		arg_182_0:Toast()
 	end)
 end
 
-function var_0_0.HandleShowMsgBox(arg_179_0, arg_179_1)
-	pg.MsgboxMgr.GetInstance():ShowMsgBox(arg_179_1)
+function var_0_0.HandleShowMsgBox(arg_184_0, arg_184_1)
+	pg.MsgboxMgr.GetInstance():ShowMsgBox(arg_184_1)
 end
 
 return var_0_0

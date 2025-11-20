@@ -5,26 +5,26 @@ function var_0_0.getUIName(arg_1_0)
 end
 
 function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.closeBtn = arg_2_0:findTF("frame/close")
-	arg_2_0.descTxt = arg_2_0:findTF("frame/bottom/target/scrollrect/Text"):GetComponent(typeof(Text))
-	arg_2_0.awardList = UIItemList.New(arg_2_0:findTF("frame/bottom/award/list"), arg_2_0:findTF("frame/bottom/award/list/item"))
-	arg_2_0.titleTxt = arg_2_0:findTF("frame/title"):GetComponent(typeof(Text))
-	arg_2_0.goBtn = arg_2_0:findTF("frame/bottom/go")
-	arg_2_0.consumeTxt = arg_2_0:findTF("oil/Text", arg_2_0.goBtn):GetComponent(typeof(Text))
-	arg_2_0.recomBtn = arg_2_0:findTF("frame/recom")
-	arg_2_0.clearBtn = arg_2_0:findTF("frame/clear")
-	arg_2_0.grids = arg_2_0:findTF("frame/double")
-	arg_2_0.subGrids = arg_2_0:findTF("frame/single")
-	arg_2_0.nextBtn = arg_2_0:findTF("frame/next")
-	arg_2_0.prevBtn = arg_2_0:findTF("frame/prev")
-	arg_2_0._autoToggle = arg_2_0:findTF("frame/auto_toggle")
-	arg_2_0._autoSubToggle = arg_2_0:findTF("frame/sub_toggle")
-	arg_2_0.commanderPage = GuildCommanderFormationPage.New(arg_2_0:findTF("frame/commanders"), arg_2_0.event, arg_2_0.contextData)
+	arg_2_0.closeBtn = arg_2_0._tf:Find("frame/close")
+	arg_2_0.descTxt = arg_2_0._tf:Find("frame/bottom/target/scrollrect/Text"):GetComponent(typeof(Text))
+	arg_2_0.awardList = UIItemList.New(arg_2_0._tf:Find("frame/bottom/award/list"), arg_2_0._tf:Find("frame/bottom/award/list/item"))
+	arg_2_0.titleTxt = arg_2_0._tf:Find("frame/title"):GetComponent(typeof(Text))
+	arg_2_0.goBtn = arg_2_0._tf:Find("frame/bottom/go")
+	arg_2_0.consumeTxt = arg_2_0.goBtn:Find("oil/Text"):GetComponent(typeof(Text))
+	arg_2_0.recomBtn = arg_2_0._tf:Find("frame/recom")
+	arg_2_0.clearBtn = arg_2_0._tf:Find("frame/clear")
+	arg_2_0.grids = arg_2_0._tf:Find("frame/double")
+	arg_2_0.subGrids = arg_2_0._tf:Find("frame/single")
+	arg_2_0.nextBtn = arg_2_0._tf:Find("frame/next")
+	arg_2_0.prevBtn = arg_2_0._tf:Find("frame/prev")
+	arg_2_0._autoToggle = arg_2_0._tf:Find("frame/auto_toggle")
+	arg_2_0._autoSubToggle = arg_2_0._tf:Find("frame/sub_toggle")
+	arg_2_0.commanderPage = GuildCommanderFormationPage.New(arg_2_0._tf:Find("frame/commanders"), arg_2_0.event, arg_2_0.contextData)
 
-	setText(arg_2_0:findTF("oil/label", arg_2_0.goBtn), i18n("text_consume"))
+	setText(arg_2_0.goBtn:Find("oil/label"), i18n("text_consume"))
 
-	arg_2_0.flag = arg_2_0:findTF("frame/double/1/flag")
-	arg_2_0.subFlag = arg_2_0:findTF("frame/single/1/flag")
+	arg_2_0.flag = arg_2_0._tf:Find("frame/double/1/flag")
+	arg_2_0.subFlag = arg_2_0._tf:Find("frame/single/1/flag")
 	arg_2_0.shipCards = {}
 end
 
@@ -301,18 +301,19 @@ function var_0_0.UpdateShip(arg_33_0, arg_33_1, arg_33_2, arg_33_3, arg_33_4)
 	if arg_33_4 then
 		local var_33_1 = arg_33_4.ship
 		local var_33_2 = var_33_1:getPrefab()
+		local var_33_3 = SpineAnimChar.New()
 
-		PoolMgr.GetInstance():GetSpineChar(var_33_2, true, function(arg_34_0)
-			arg_34_0.name = var_33_2
-
-			SetParent(arg_34_0, arg_33_2.parent)
+		var_33_3:SetPaint(var_33_2)
+		var_33_3:Load(true, function(arg_34_0)
+			arg_34_0:SetName(var_33_2)
+			arg_34_0:SetParent(arg_33_2.parent)
 
 			local var_34_0 = GuildBossFormationShipCard.New(arg_34_0)
 
 			var_34_0:Update(var_33_1, arg_33_1)
-			SetAction(arg_34_0, "stand")
+			arg_34_0:SetAction("stand", 0)
 
-			local var_34_1 = GetOrAddComponent(arg_34_0, "EventTriggerListener")
+			local var_34_1 = GetOrAddComponent(arg_34_0:GetModel(), "EventTriggerListener")
 
 			var_34_1:AddPointClickFunc(function(arg_35_0, arg_35_1)
 				if arg_33_0.dragging then
@@ -325,7 +326,7 @@ function var_0_0.UpdateShip(arg_33_0, arg_33_1, arg_33_2, arg_33_3, arg_33_4)
 				arg_33_0.dragging = true
 
 				arg_36_0.transform:SetAsLastSibling()
-				SetAction(arg_36_0, "tuozhuai")
+				arg_34_0:SetAction("tuozhuai", 0)
 			end)
 			var_34_1:AddDragFunc(function(arg_37_0, arg_37_1)
 				local var_37_0 = var_0_0.Scr2Lpos(arg_33_2.parent, arg_37_1.position)
@@ -342,7 +343,7 @@ function var_0_0.UpdateShip(arg_33_0, arg_33_1, arg_33_2, arg_33_3, arg_33_4)
 				arg_33_0.dragging = false
 
 				var_34_0:RefreshPosition(var_34_0:GetSoltIndex(), true)
-				SetAction(arg_38_0, "stand")
+				arg_34_0:SetAction("stand", 0)
 				arg_33_0:RefreshFleet()
 			end)
 			table.insert(arg_33_0.shipCards, var_34_0)

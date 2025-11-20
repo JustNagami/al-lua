@@ -161,10 +161,10 @@ function var_0_0.onListenerEvent(arg_2_0, arg_2_1, arg_2_2)
 							if arg_2_0.actionTrigger.change_focus == false then
 								arg_2_0.prepareTargetValue = var_2_14
 
-								print(arg_2_0.parameterName .. "等待动作结束后的target赋值" .. arg_2_0.parameterTargetValue)
+								print(arg_2_0.id .. "=" .. arg_2_0.parameterName .. "等待动作结束后的target赋值" .. arg_2_0.parameterTargetValue)
 							else
 								arg_2_0:setTargetValue(var_2_14)
-								print(arg_2_0.parameterName .. "监听 数值变更为" .. arg_2_0.parameterTargetValue)
+								print(arg_2_0.id .. "=" .. arg_2_0.parameterName .. "监听 数值变更为" .. arg_2_0.parameterTargetValue)
 							end
 						end
 
@@ -434,7 +434,7 @@ function var_0_0.onEventCallback(arg_22_0, arg_22_1, arg_22_2, arg_22_3)
 			var_22_3 = arg_22_0.actionTrigger.target or nil
 			var_22_6 = arg_22_0.actionTrigger.target_focus == 1 and true or false
 
-			if (arg_22_0.actionTrigger.circle or nil) and var_22_3 and var_22_3 == arg_22_0.parameterTargetValue then
+			if (arg_22_0.actionTrigger.circle ~= nil and true or false) and var_22_3 and var_22_3 == arg_22_0.parameterTargetValue then
 				var_22_3 = arg_22_0.startValue
 			end
 
@@ -454,6 +454,11 @@ function var_0_0.onEventCallback(arg_22_0, arg_22_1, arg_22_2, arg_22_3)
 			end
 
 			var_22_2 = var_22_8.focus == 1 and true or false
+
+			if not var_22_2 and arg_22_0.actionTrigger.focus then
+				var_22_2 = arg_22_0.actionTrigger.focus == 1 and true or false
+			end
+
 			var_22_3 = var_22_8.target or nil
 			var_22_6 = var_22_8.target_focus == 1 and true or false
 			var_22_4 = var_22_8.react or nil
@@ -478,7 +483,7 @@ function var_0_0.onEventCallback(arg_22_0, arg_22_1, arg_22_2, arg_22_3)
 			var_22_3 = arg_22_0.actionTrigger.target or nil
 			var_22_6 = arg_22_0.actionTrigger.target_focus == 1 and true or false
 
-			local var_22_9 = arg_22_0.actionTrigger.circle or nil
+			local var_22_9 = arg_22_0.actionTrigger.circle ~= nil and true or false
 
 			var_22_4 = arg_22_0.actionTrigger.react or nil
 
@@ -1121,7 +1126,7 @@ function var_0_0.updateTrigger(arg_52_0)
 			local var_52_8 = var_52_3[1]
 			local var_52_9 = var_52_3[2]
 
-			if math.abs(var_52_6 - var_52_8) < math.abs(var_52_8) * 0.25 and math.abs(var_52_7 - var_52_9) < math.abs(var_52_9) * 0.25 then
+			if math.abs(var_52_6 - var_52_8) <= math.abs(var_52_8) * 0.25 and math.abs(var_52_7 - var_52_9) <= math.abs(var_52_9) * 0.25 then
 				arg_52_0.triggerActionTime = arg_52_0.triggerActionTime + Time.deltaTime
 
 				if var_52_2 < arg_52_0.triggerActionTime and not arg_52_0.l2dIsPlaying then

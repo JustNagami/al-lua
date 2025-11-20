@@ -1144,6 +1144,40 @@ pg.dorm3d_furniture_template = {
 			"no_bake_pay_prop/livingroom"
 		}
 	},
+	[1153] = {
+		name = "星外の隠れ家",
+		rarity = 4,
+		is_special = 0,
+		type = 4,
+		icon = "dorm3dIcon/3Ddrom_xinzexi_PremiumFurniture2",
+		room_id = 11,
+		desc = "テクノロジーと美的感覚が融合した、密やかなリラックススペース。 それはまるで、銀河の果てにある温もりのあるシェルター。\n 身をゆだねれば、日常を忘れて宇宙の夢に包まれる。",
+		acesses = "",
+		model = "Pay_Newjerseyhostel/pre_db_njh_bedroom01",
+		id = 1153,
+		is_exclusive = 1,
+		target_slots = {
+			1110102
+		},
+		touch_id = {
+			{
+				10517,
+				1051760
+			}
+		},
+		shop_id = {
+			270205
+		},
+		unlock_tips = {
+			3
+		},
+		unlock_banners = {
+			"banner_furniture1153"
+		},
+		scene_hides = {
+			"no_bake_pay_prop/bedroom"
+		}
+	},
 	[1201] = {
 		name = "ふんわりベッド",
 		rarity = 3,
@@ -1367,6 +1401,40 @@ pg.dorm3d_furniture_template = {
 			"no_bake_pay_prop/bedroom"
 		}
 	},
+	[1222] = {
+		name = "花楽の韻律",
+		rarity = 5,
+		is_special = 1,
+		type = 99,
+		icon = "dorm3dIcon/3Ddrom_dafeng_PremiumFurniture2",
+		room_id = 12,
+		desc = "柔らかな光が花弁をなで、彼女のシルエットを映し出す。花と音色が溶け合い、自然のささやきが流れていく。",
+		acesses = "",
+		model = "Pay_Dafenghostel/pre_db_df_tedian01",
+		id = 1222,
+		is_exclusive = 1,
+		target_slots = {
+			1120304
+		},
+		touch_id = {
+			{
+				30707,
+				3070750
+			}
+		},
+		shop_id = {
+			270502
+		},
+		unlock_tips = {
+			8
+		},
+		unlock_banners = {
+			"banner_furniture1222"
+		},
+		scene_hides = {
+			"no_bake_pay_prop/entertainment"
+		}
+	},
 	get_id_list_by_room_id = {
 		{
 			1,
@@ -1420,7 +1488,8 @@ pg.dorm3d_furniture_template = {
 			1107,
 			1108,
 			1151,
-			1152
+			1152,
+			1153
 		},
 		[12] = {
 			1201,
@@ -1431,7 +1500,8 @@ pg.dorm3d_furniture_template = {
 			1213,
 			1214,
 			1215,
-			1221
+			1221,
+			1222
 		}
 	},
 	all = {
@@ -1479,6 +1549,7 @@ pg.dorm3d_furniture_template = {
 		1108,
 		1151,
 		1152,
+		1153,
 		1201,
 		1202,
 		1203,
@@ -1487,6 +1558,7 @@ pg.dorm3d_furniture_template = {
 		1213,
 		1214,
 		1215,
-		1221
+		1221,
+		1222
 	}
 }

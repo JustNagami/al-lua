@@ -43,16 +43,16 @@
 			}
 		},
 		{
-			actor = 3120100,
-			say = "えへへ、すごいと思うにゃ？",
 			animation = "elation",
+			characterId = 3120100,
+			say = "えへへ、すごいと思うにゃ？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 3120100,
+			characterId = 3120100,
 			say = "これでもまだ一期目にゃ！ゆくゆくは生産ラインでいっぱいになって、昼夜を問わず稼働し続けるようになるにゃ！",
 			typewriter = {
 				speed = 0.05,
@@ -152,16 +152,16 @@
 			}
 		},
 		{
-			actor = 3120100,
-			say = "そうにゃ！開発エリアの取引量も一気に増えるにゃ！",
 			animation = "elation",
+			characterId = 3120100,
+			say = "そうにゃ！開発エリアの取引量も一気に増えるにゃ！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 3120100,
+			characterId = 3120100,
 			say = "余った小麦粉や飼料、将来的には加工した合金まで販売できるにゃ！",
 			typewriter = {
 				speed = 0.05,
@@ -178,16 +178,16 @@
 			}
 		},
 		{
-			actor = 3120100,
-			say = "そうにゃ！ここが回って行けば指揮官の借金も…",
 			animation = "nod",
+			characterId = 3120100,
+			say = "そうにゃ！ここが回って行けば指揮官の借金も…",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 3120100,
+			characterId = 3120100,
 			say = "こほん、島の資金繰りに一気に余裕ができるようになるにゃ！",
 			typewriter = {
 				speed = 0.05,
@@ -195,9 +195,9 @@
 			}
 		},
 		{
-			actor = 3120100,
-			say = "お金……じゃなかった、繁栄！はもう目の前にゃ！",
 			animation = "talk",
+			characterId = 3120100,
+			say = "お金……じゃなかった、繁栄！はもう目の前にゃ！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -240,9 +240,9 @@
 			}
 		},
 		{
-			actor = 3120100,
-			say = "ムフフ！そうなればもう食うに困らなくなるにゃ！",
 			animation = "clap",
+			characterId = 3120100,
+			say = "ムフフ！そうなればもう食うに困らなくなるにゃ！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -276,9 +276,9 @@
 			}
 		},
 		{
-			actor = 3120100,
-			say = "じゃあ約束にゃ！これからも一緒に頑張ろうにゃ！",
 			animation = "clap",
+			characterId = 3120100,
+			say = "じゃあ約束にゃ！これからも一緒に頑張ろうにゃ！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

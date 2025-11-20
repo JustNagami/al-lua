@@ -1815,5 +1815,49 @@ pg.voice_actor_CN = {
 	[476] = {
 		code = 476,
 		actor_name = "新崎瑞季"
+	},
+	[477] = {
+		code = 477,
+		actor_name = "天知遥"
+	},
+	[478] = {
+		code = 478,
+		actor_name = "矢野優美華"
+	},
+	[479] = {
+		code = 479,
+		actor_name = "逢坂成美"
+	},
+	[480] = {
+		code = 480,
+		actor_name = "小澤麗那"
+	},
+	[481] = {
+		code = 481,
+		actor_name = "山田美鈴"
+	},
+	[482] = {
+		code = 482,
+		actor_name = "本田貴子"
+	},
+	[483] = {
+		code = 483,
+		actor_name = "富樫美鈴"
+	},
+	[484] = {
+		code = 484,
+		actor_name = "竹達彩奈"
+	},
+	[485] = {
+		code = 485,
+		actor_name = "野水伊織"
+	},
+	[486] = {
+		code = 486,
+		actor_name = "真田アサミ"
+	},
+	[487] = {
+		code = 487,
+		actor_name = "内田真礼&ブリドカット セーラ 恵美"
 	}
 }

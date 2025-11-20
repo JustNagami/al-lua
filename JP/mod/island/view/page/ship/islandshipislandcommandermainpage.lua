@@ -5,10 +5,10 @@ function var_0_0.getUIName(arg_1_0)
 end
 
 function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.backBtn = arg_2_0:findTF("adapt/left_panel/back")
-	arg_2_0.homeBtn = arg_2_0:findTF("adapt/home")
+	arg_2_0.backBtn = arg_2_0._tf:Find("adapt/left_panel/back")
+	arg_2_0.homeBtn = arg_2_0._tf:Find("adapt/home")
 
-	setText(arg_2_0:findTF("adapt/left_panel/title/Text"), i18n("island_dressup_titile"))
+	setText(arg_2_0._tf:Find("adapt/left_panel/title/Text"), i18n("island_dressup_titile"))
 	setActive(arg_2_0.homeBtn, false)
 end
 
@@ -67,7 +67,7 @@ function var_0_0.Flush(arg_12_0)
 end
 
 function var_0_0.GetSmoothRotateObject(arg_13_0)
-	return arg_13_0:findTF("adapt/char")
+	return arg_13_0._tf:Find("adapt/char")
 end
 
 function var_0_0.OnCharLoaded(arg_14_0)
@@ -111,6 +111,24 @@ end
 
 function var_0_0.CheckDressIsDirty(arg_19_0)
 	return arg_19_0.currentChildPage:CheckDressIsDirty()
+end
+
+function var_0_0.CanEsc(arg_20_0)
+	if not arg_20_0:CheckDressIsDirty() then
+		return true
+	end
+
+	arg_20_0:ShowMsgBox({
+		type = IslandMsgBox.TYPE_COMMON,
+		content = i18n("island_dressup_tip_1"),
+		onYes = function()
+			arg_20_0.currentChildPage:SaveDressUpData()
+			arg_20_0:Hide()
+		end,
+		onNo = function()
+			arg_20_0:Hide()
+		end
+	})
 end
 
 return var_0_0

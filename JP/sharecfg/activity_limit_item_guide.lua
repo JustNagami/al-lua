@@ -2278,6 +2278,458 @@ pg.activity_limit_item_guide = {
 			}
 		}
 	},
+	[151] = {
+		id = 151,
+		activity = 50155,
+		count = 1,
+		type = 4,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 11400011,
+		order = 0,
+		link_params = {
+			{
+				3,
+				50153,
+				"「消えない聖火 」報酬"
+			}
+		}
+	},
+	[152] = {
+		id = 152,
+		activity = 50155,
+		count = 1,
+		type = 4,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 11400021,
+		order = 0,
+		link_params = {
+			{
+				3,
+				50151,
+				"「止まない疾風」報酬"
+			}
+		}
+	},
+	[153] = {
+		id = 153,
+		activity = 50155,
+		count = 1,
+		type = 9,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 1501,
+		order = 0,
+		link_params = {
+			{
+				3,
+				50151,
+				"「止まない疾風」報酬"
+			}
+		}
+	},
+	[154] = {
+		id = 154,
+		activity = 50155,
+		count = 1,
+		type = 9,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 1502,
+		order = 0,
+		link_params = {
+			{
+				3,
+				50153,
+				"「消えない聖火 」報酬"
+			}
+		}
+	},
+	[155] = {
+		id = 155,
+		activity = 50155,
+		count = 1,
+		type = 9,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 1503,
+		order = 0,
+		link_params = {
+			{
+				3,
+				50153,
+				"「消えない聖火 」報酬"
+			}
+		}
+	},
+	[156] = {
+		id = 156,
+		activity = 50155,
+		count = 1,
+		type = 9,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 1504,
+		order = 0,
+		link_params = {
+			{
+				3,
+				50153,
+				"「消えない聖火 」報酬"
+			}
+		}
+	},
+	[157] = {
+		id = 157,
+		activity = 50155,
+		count = 1,
+		type = 9,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 1505,
+		order = 0,
+		link_params = {
+			{
+				3,
+				50151,
+				"「止まない疾風」報酬"
+			}
+		}
+	},
+	[158] = {
+		id = 158,
+		activity = 50155,
+		count = 1,
+		type = 9,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 1506,
+		order = 0,
+		link_params = {
+			{
+				3,
+				50151,
+				"「止まない疾風」報酬"
+			}
+		}
+	},
+	[159] = {
+		id = 159,
+		activity = 50155,
+		count = 1,
+		type = 9,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 1507,
+		order = 0,
+		link_params = {
+			{
+				3,
+				50151,
+				"「止まない疾風」報酬"
+			}
+		}
+	},
+	[160] = {
+		id = 160,
+		activity = 50155,
+		count = 1,
+		type = 5,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 330102,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene court yard",
+					{}
+				},
+				"家具ショップ購入"
+			}
+		}
+	},
+	[161] = {
+		id = 161,
+		activity = 50155,
+		count = 1,
+		type = 21,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 14580,
+		order = 0,
+		link_params = {
+			{
+				3,
+				50153,
+				"「消えない聖火 」報酬"
+			}
+		}
+	},
+	[162] = {
+		id = 162,
+		activity = 50155,
+		count = 1,
+		type = 21,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 14600,
+		order = 0,
+		link_params = {
+			{
+				3,
+				50151,
+				"「止まない疾風」報酬"
+			}
+		}
+	},
+	[163] = {
+		id = 163,
+		activity = 50155,
+		count = 1,
+		type = 5,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 330001,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene court yard",
+					{}
+				},
+				"家具ショップ購入"
+			}
+		}
+	},
+	[164] = {
+		id = 164,
+		activity = 50155,
+		count = 1,
+		type = 5,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 330002,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene court yard",
+					{}
+				},
+				"家具ショップ購入"
+			}
+		}
+	},
+	[165] = {
+		id = 165,
+		activity = 50155,
+		count = 1,
+		type = 5,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 330101,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene court yard",
+					{}
+				},
+				"家具ショップ購入"
+			}
+		}
+	},
+	[171] = {
+		id = 171,
+		activity = 50249,
+		count = 1,
+		type = 3,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 150860,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene task"
+				},
+				"限定任務をクリア"
+			}
+		}
+	},
+	[172] = {
+		id = 172,
+		activity = 50249,
+		count = 1,
+		type = 3,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 150880,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene shop",
+					{
+						actId = 50246,
+						warp = 1
+					}
+				},
+				"ショップで交換"
+			}
+		}
+	},
+	[173] = {
+		id = 173,
+		activity = 50249,
+		count = 1,
+		type = 3,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 150900,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"scene shop",
+					{
+						actId = 50246,
+						warp = 1
+					}
+				},
+				"ショップで交換"
+			}
+		}
+	},
+	[174] = {
+		id = 174,
+		activity = 50249,
+		count = 1,
+		type = 21,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 14780,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"bossrush dal collab",
+					{}
+				},
+				"「異常海域·第1作戦エリア」完全制圧報酬"
+			}
+		}
+	},
+	[175] = {
+		id = 175,
+		activity = 50249,
+		count = 1,
+		type = 21,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 14760,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"bossrush dal collab",
+					{}
+				},
+				"「異常海域·第2作戦エリア」完全制圧報酬"
+			}
+		}
+	},
+	[176] = {
+		id = 176,
+		activity = 50249,
+		count = 1,
+		type = 21,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 14800,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"bossrush dal collab",
+					{}
+				},
+				"「異常海域·第3作戦エリア」完全制圧報酬"
+			}
+		}
+	},
+	[177] = {
+		id = 177,
+		activity = 50249,
+		count = 1,
+		type = 21,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 14840,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"bossrush dal collab",
+					{}
+				},
+				"「異常海域·第4作戦エリア」完全制圧報酬"
+			}
+		}
+	},
+	[178] = {
+		id = 178,
+		activity = 50249,
+		count = 1,
+		type = 21,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 14860,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"bossrush dal collab",
+					{}
+				},
+				"「異常海域·第5作戦エリア」完全制圧報酬"
+			}
+		}
+	},
+	[179] = {
+		id = 179,
+		activity = 50249,
+		count = 1,
+		type = 21,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 14820,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"bossrush dal collab",
+					{}
+				},
+				"「異常海域·第6作戦エリア」完全制圧報酬"
+			}
+		}
+	},
 	get_id_list_by_activity = {
 		[4937] = {
 			1,
@@ -2412,6 +2864,34 @@ pg.activity_limit_item_guide = {
 			141,
 			142,
 			143
+		},
+		[50155] = {
+			151,
+			152,
+			153,
+			154,
+			155,
+			156,
+			157,
+			158,
+			159,
+			160,
+			161,
+			162,
+			163,
+			164,
+			165
+		},
+		[50249] = {
+			171,
+			172,
+			173,
+			174,
+			175,
+			176,
+			177,
+			178,
+			179
 		}
 	},
 	all = {
@@ -2538,6 +3018,30 @@ pg.activity_limit_item_guide = {
 		140,
 		141,
 		142,
-		143
+		143,
+		151,
+		152,
+		153,
+		154,
+		155,
+		156,
+		157,
+		158,
+		159,
+		160,
+		161,
+		162,
+		163,
+		164,
+		165,
+		171,
+		172,
+		173,
+		174,
+		175,
+		176,
+		177,
+		178,
+		179
 	}
 }

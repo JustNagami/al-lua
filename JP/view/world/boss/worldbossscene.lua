@@ -17,7 +17,9 @@ function var_0_0.getUIName(arg_1_0)
 end
 
 function var_0_0.SetBossProxy(arg_2_0, arg_2_1, arg_2_2)
-	assert(not arg_2_0.bossProxy)
+	if arg_2_0.bossProxy then
+		return
+	end
 
 	arg_2_0.bossProxy = arg_2_1
 	arg_2_0.metaCharacterProxy = arg_2_2
@@ -131,8 +133,8 @@ function var_0_0.init(arg_15_0)
 		end
 	end
 
-	arg_15_0.backBtn = arg_15_0:findTF("back_btn")
-	arg_15_0.pagesTF = arg_15_0:findTF("pages")
+	arg_15_0.backBtn = arg_15_0._tf:Find("back_btn")
+	arg_15_0.pagesTF = arg_15_0._tf:Find("pages")
 
 	arg_15_0:AddListeners()
 end

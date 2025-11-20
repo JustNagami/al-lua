@@ -4725,6 +4725,830 @@ pg.activity_sp_story = {
 			}
 		}
 	},
+	[271] = {
+		story_type = 1,
+		pre_event = "",
+		name = "EPS-1 つまりそういうこと",
+		unlock_conditions = "",
+		change_prefab = "",
+		change_background = "",
+		story = "QINGKONGXIADEXIEHOUGUANQIA1",
+		change_bgm = "",
+		id = 271,
+		lock = ""
+	},
+	[272] = {
+		story_type = 1,
+		name = "EP1-1 ヘスティアの来訪",
+		unlock_conditions = "SPS-1をクリア",
+		change_bgm = "",
+		change_prefab = "",
+		change_background = "",
+		id = 272,
+		story = "QINGKONGXIADEXIEHOUGUANQIA2",
+		pre_event = {
+			271
+		},
+		lock = {
+			{
+				4,
+				271
+			}
+		}
+	},
+	[273] = {
+		story_type = 1,
+		name = "EP1-2 神とダンジョン",
+		unlock_conditions = "1-1をクリア",
+		change_bgm = "",
+		change_prefab = "",
+		change_background = "",
+		id = 273,
+		story = "QINGKONGXIADEXIEHOUGUANQIA3",
+		pre_event = {
+			272
+		},
+		lock = {
+			{
+				4,
+				272
+			}
+		}
+	},
+	[274] = {
+		story_type = 1,
+		name = "EP1-3 合流",
+		unlock_conditions = "1-2をクリア",
+		change_bgm = "",
+		change_prefab = "",
+		change_background = "",
+		id = 274,
+		story = "QINGKONGXIADEXIEHOUGUANQIA4",
+		pre_event = {
+			273
+		},
+		lock = {
+			{
+				4,
+				273
+			}
+		}
+	},
+	[275] = {
+		story_type = 1,
+		name = "EP2-1 リューの物語",
+		unlock_conditions = "1-3をクリア",
+		change_bgm = "",
+		change_prefab = "",
+		change_background = "",
+		id = 275,
+		story = "QINGKONGXIADEXIEHOUGUANQIA5",
+		pre_event = {
+			271
+		},
+		lock = {
+			{
+				4,
+				274
+			}
+		}
+	},
+	[276] = {
+		story_type = 1,
+		name = "EP2-2 神と冒険者",
+		unlock_conditions = "2-1をクリア",
+		change_bgm = "",
+		change_prefab = "",
+		change_background = "",
+		id = 276,
+		story = "QINGKONGXIADEXIEHOUGUANQIA6",
+		pre_event = {
+			275
+		},
+		lock = {
+			{
+				4,
+				275
+			}
+		}
+	},
+	[277] = {
+		story_type = 1,
+		name = "EP2-3 補給問題",
+		unlock_conditions = "2-2をクリア",
+		change_bgm = "",
+		change_prefab = "",
+		change_background = "",
+		id = 277,
+		story = "QINGKONGXIADEXIEHOUGUANQIA7",
+		pre_event = {
+			276
+		},
+		lock = {
+			{
+				4,
+				276
+			}
+		}
+	},
+	[278] = {
+		story_type = 1,
+		name = "EP3-1 料理",
+		unlock_conditions = "2-3をクリア",
+		change_bgm = "",
+		change_prefab = "",
+		change_background = "",
+		id = 278,
+		story = "QINGKONGXIADEXIEHOUGUANQIA8",
+		pre_event = {
+			274,
+			277
+		},
+		lock = {
+			{
+				4,
+				277
+			}
+		}
+	},
+	[279] = {
+		story_type = 1,
+		name = "EP3-2 冒険者の魔法",
+		unlock_conditions = "3-1をクリア",
+		change_bgm = "",
+		change_prefab = "",
+		change_background = "",
+		id = 279,
+		story = "QINGKONGXIADEXIEHOUGUANQIA9",
+		pre_event = {
+			278
+		},
+		lock = {
+			{
+				4,
+				278
+			}
+		}
+	},
+	[280] = {
+		story_type = 1,
+		name = "EP3-3 戦利品",
+		unlock_conditions = "3-2をクリア",
+		change_bgm = "",
+		change_prefab = "",
+		change_background = "",
+		id = 280,
+		story = "QINGKONGXIADEXIEHOUGUANQIA10",
+		pre_event = {
+			279
+		},
+		lock = {
+			{
+				4,
+				279
+			}
+		}
+	},
+	[281] = {
+		story_type = 1,
+		name = "EP4-1 艤装",
+		unlock_conditions = "3-3をクリア",
+		change_bgm = "",
+		change_prefab = "",
+		change_background = "",
+		id = 281,
+		story = "QINGKONGXIADEXIEHOUGUANQIA11",
+		pre_event = {
+			280
+		},
+		lock = {
+			{
+				4,
+				280
+			}
+		}
+	},
+	[282] = {
+		story_type = 1,
+		name = "EP4-2 自由に駆け巡る",
+		unlock_conditions = "4-1をクリア",
+		change_bgm = "",
+		change_prefab = "",
+		change_background = "",
+		id = 282,
+		story = "QINGKONGXIADEXIEHOUGUANQIA12",
+		pre_event = {
+			281
+		},
+		lock = {
+			{
+				4,
+				281
+			}
+		}
+	},
+	[283] = {
+		story_type = 2,
+		name = "EP4-3 初めての実戦",
+		unlock_conditions = "4-2をクリア",
+		change_bgm = "",
+		change_prefab = "",
+		change_background = "",
+		id = 283,
+		story = "1967001",
+		pre_event = {
+			282
+		},
+		lock = {
+			{
+				4,
+				282
+			}
+		}
+	},
+	[284] = {
+		story_type = 1,
+		name = "EP4-4 熟練な冒険者",
+		unlock_conditions = "4-3をクリア",
+		change_bgm = "",
+		change_prefab = "",
+		change_background = "",
+		id = 284,
+		story = "QINGKONGXIADEXIEHOUGUANQIA14",
+		pre_event = {
+			283
+		},
+		lock = {
+			{
+				4,
+				283
+			}
+		}
+	},
+	[285] = {
+		story_type = 1,
+		name = "EP4-5 母港へようこそ",
+		unlock_conditions = "4-4をクリア",
+		change_bgm = "",
+		change_prefab = "",
+		change_background = "",
+		id = 285,
+		story = "QINGKONGXIADEXIEHOUGUANQIA15",
+		pre_event = {
+			284
+		},
+		lock = {
+			{
+				4,
+				284
+			}
+		}
+	},
+	[291] = {
+		story_type = 1,
+		pre_event = "",
+		name = "EPS-1 宝物",
+		unlock_conditions = "",
+		change_prefab = "",
+		change_background = "star_level_bg_163",
+		story = "JUFENGYUZIYOUQUNDAO1",
+		change_bgm = "theme-SeaAndSun-image",
+		id = 291,
+		lock = ""
+	},
+	[292] = {
+		story_type = 1,
+		name = "EP1-1 招待状",
+		unlock_conditions = "EPS-1をクリア",
+		change_bgm = "theme-SeaAndSun-soft",
+		change_prefab = "",
+		change_background = "star_level_bg_163",
+		id = 292,
+		story = "JUFENGYUZIYOUQUNDAO2",
+		pre_event = {
+			291
+		},
+		lock = {
+			{
+				4,
+				291
+			}
+		}
+	},
+	[293] = {
+		story_type = 1,
+		name = "EP1-2 木製コンパス",
+		unlock_conditions = "EP1-1をクリア",
+		change_bgm = "danmachi-az-story",
+		change_prefab = "",
+		change_background = "star_level_bg_194",
+		id = 293,
+		story = "JUFENGYUZIYOUQUNDAO3",
+		pre_event = {
+			292
+		},
+		lock = {
+			{
+				4,
+				292
+			}
+		}
+	},
+	[294] = {
+		story_type = 1,
+		name = "EP1-3 灰岩の島",
+		unlock_conditions = "EP1-2をクリア",
+		change_bgm = "story-tempest-marching",
+		change_prefab = "",
+		change_background = "star_level_bg_598",
+		id = 294,
+		story = "JUFENGYUZIYOUQUNDAO4",
+		pre_event = {
+			293
+		},
+		lock = {
+			{
+				4,
+				293
+			}
+		}
+	},
+	[295] = {
+		story_type = 1,
+		name = "EP2-1 テンペスタの夢Ⅰ",
+		unlock_conditions = "EP1-3をクリア",
+		change_bgm = "story-tempest-marching",
+		change_prefab = "",
+		change_background = "star_level_bg_598",
+		id = 295,
+		story = "JUFENGYUZIYOUQUNDAO5",
+		pre_event = {
+			294
+		},
+		lock = {
+			{
+				4,
+				294
+			}
+		}
+	},
+	[296] = {
+		story_type = 1,
+		name = "EP2-2 星空のヴェール",
+		unlock_conditions = "EP2-1をクリア",
+		change_bgm = "theme-tempest-light",
+		change_prefab = "",
+		change_background = "bg_jufengv3_cg1",
+		id = 296,
+		story = "JUFENGYUZIYOUQUNDAO6",
+		pre_event = {
+			295
+		},
+		lock = {
+			{
+				4,
+				295
+			}
+		}
+	},
+	[297] = {
+		story_type = 1,
+		name = "EP2-3 群島に到着",
+		unlock_conditions = "EP2-2をクリア",
+		change_bgm = "theme-tempest-light",
+		change_prefab = "",
+		change_background = "star_level_bg_525",
+		id = 297,
+		story = "JUFENGYUZIYOUQUNDAO7",
+		pre_event = {
+			296
+		},
+		lock = {
+			{
+				4,
+				296
+			}
+		}
+	},
+	[298] = {
+		story_type = 1,
+		name = "EP2-4 宝探しの準備",
+		unlock_conditions = "EP2-3をクリア",
+		change_bgm = "theme-tempest-up",
+		change_prefab = "",
+		change_background = "star_level_bg_504",
+		id = 298,
+		story = "JUFENGYUZIYOUQUNDAO8",
+		pre_event = {
+			297
+		},
+		lock = {
+			{
+				4,
+				297
+			}
+		}
+	},
+	[299] = {
+		story_type = 1,
+		name = "EP3-1 魔群の海のハンター",
+		unlock_conditions = "EP2-4をクリア",
+		change_bgm = "theme-tempest-light",
+		change_prefab = "",
+		change_background = "star_level_bg_194",
+		id = 299,
+		story = "JUFENGYUZIYOUQUNDAO9",
+		pre_event = {
+			298
+		},
+		lock = {
+			{
+				4,
+				298
+			}
+		}
+	},
+	[300] = {
+		story_type = 1,
+		name = "EP3-2 全部掻っ攫って！",
+		unlock_conditions = "EP3-1をクリア",
+		change_bgm = "theme-tempest-light",
+		change_prefab = "",
+		change_background = "star_level_bg_162",
+		id = 300,
+		story = "JUFENGYUZIYOUQUNDAO10",
+		pre_event = {
+			298
+		},
+		lock = {
+			{
+				4,
+				299
+			}
+		}
+	},
+	[301] = {
+		story_type = 1,
+		name = "EP3-3 昔馴染みの来訪",
+		unlock_conditions = "EP3-2をクリア",
+		change_bgm = "theme-tempest-light",
+		change_prefab = "",
+		change_background = "bg_jufengv3_1",
+		id = 301,
+		story = "JUFENGYUZIYOUQUNDAO11",
+		pre_event = {
+			299,
+			300
+		},
+		lock = {
+			{
+				4,
+				300
+			}
+		}
+	},
+	[302] = {
+		story_type = 1,
+		name = "EP4-1 大灯台の調査",
+		unlock_conditions = "EP3-3をクリア",
+		change_bgm = "story-temepest-1",
+		change_prefab = "",
+		change_background = "star_level_bg_598",
+		id = 302,
+		story = "JUFENGYUZIYOUQUNDAO12",
+		pre_event = {
+			301
+		},
+		lock = {
+			{
+				4,
+				301
+			}
+		}
+	},
+	[303] = {
+		story_type = 1,
+		name = "EP4-2 招かれざる客",
+		unlock_conditions = "EP4-1をクリア",
+		change_bgm = "theme-tempest",
+		change_prefab = "",
+		change_background = "star_level_bg_598",
+		id = 303,
+		story = "JUFENGYUZIYOUQUNDAO13",
+		pre_event = {
+			302
+		},
+		lock = {
+			{
+				4,
+				302
+			}
+		}
+	},
+	[304] = {
+		story_type = 1,
+		name = "EP4-3 サン・マルチーニョの心配",
+		unlock_conditions = "EP4-2をクリア",
+		change_bgm = "theme-ganjisawai",
+		change_prefab = "",
+		change_background = "star_level_bg_598",
+		id = 304,
+		story = "JUFENGYUZIYOUQUNDAO14",
+		pre_event = {
+			303
+		},
+		lock = {
+			{
+				4,
+				303
+			}
+		}
+	},
+	[305] = {
+		story_type = 1,
+		name = "EP5-1 招かれざる客Ⅱ",
+		unlock_conditions = "EP4-3をクリア",
+		change_bgm = "story-tempest-marching",
+		change_prefab = "",
+		change_background = "star_level_bg_504",
+		id = 305,
+		story = "JUFENGYUZIYOUQUNDAO15",
+		pre_event = {
+			304
+		},
+		lock = {
+			{
+				4,
+				304
+			}
+		}
+	},
+	[306] = {
+		story_type = 1,
+		name = "EP5-2 早朝の残骸",
+		unlock_conditions = "EP5-1をクリア",
+		change_bgm = "battle-nightmare-theme",
+		change_prefab = "",
+		change_background = "bg_jufengv3_cg2",
+		id = 306,
+		story = "JUFENGYUZIYOUQUNDAO16",
+		pre_event = {
+			305
+		},
+		lock = {
+			{
+				4,
+				305
+			}
+		}
+	},
+	[307] = {
+		story_type = 2,
+		name = "EP5-3 臨機応変",
+		unlock_conditions = "EP5-2をクリア",
+		change_bgm = "theme-ganjisawai",
+		change_prefab = "",
+		change_background = "star_level_bg_524",
+		id = 307,
+		story = "1978001",
+		pre_event = {
+			306
+		},
+		lock = {
+			{
+				4,
+				306
+			}
+		}
+	},
+	[308] = {
+		story_type = 1,
+		name = "EP6-1 疑惑",
+		unlock_conditions = "EP5-3をクリア",
+		change_bgm = "theme-tempest-light",
+		change_prefab = "",
+		change_background = "bg_jufengv3_1",
+		id = 308,
+		story = "JUFENGYUZIYOUQUNDAO18",
+		pre_event = {
+			307
+		},
+		lock = {
+			{
+				4,
+				307
+			}
+		}
+	},
+	[309] = {
+		story_type = 1,
+		name = "EP6-2 遺跡殿堂の調査",
+		unlock_conditions = "EP6-1をクリア",
+		change_bgm = "story-tempest-marching",
+		change_prefab = "",
+		change_background = "star_level_bg_598",
+		id = 309,
+		story = "JUFENGYUZIYOUQUNDAO19",
+		pre_event = {
+			308
+		},
+		lock = {
+			{
+				4,
+				308
+			}
+		}
+	},
+	[310] = {
+		story_type = 1,
+		name = "EPS-2 テンペスタの夢Ⅱ",
+		unlock_conditions = "EP6-2をクリア",
+		change_bgm = "theme-SeaAndSun-soft",
+		change_prefab = "",
+		change_background = "star_level_bg_106",
+		id = 310,
+		story = "JUFENGYUZIYOUQUNDAO20",
+		pre_event = {
+			309
+		},
+		lock = {
+			{
+				4,
+				309
+			}
+		}
+	},
+	[311] = {
+		story_type = 1,
+		name = "EPS-3 再開",
+		unlock_conditions = "EPS-2をクリア",
+		change_bgm = "theme-tempest-light",
+		change_prefab = "",
+		change_background = "bg_jufengv3_1",
+		id = 311,
+		story = "JUFENGYUZIYOUQUNDAO21",
+		pre_event = {
+			310
+		},
+		lock = {
+			{
+				4,
+				310
+			}
+		}
+	},
+	[312] = {
+		story_type = 1,
+		name = "EP7-1 金属の岩窟調査",
+		unlock_conditions = "EPS-3をクリア",
+		change_bgm = "story-tempest-marching",
+		change_prefab = "",
+		change_background = "star_level_bg_598",
+		id = 312,
+		story = "JUFENGYUZIYOUQUNDAO22",
+		pre_event = {
+			311
+		},
+		lock = {
+			{
+				4,
+				311
+			}
+		}
+	},
+	[313] = {
+		story_type = 1,
+		name = "EP7-2 テンペスタの夢Ⅲ",
+		unlock_conditions = "EP7-1をクリア",
+		change_bgm = "theme-ganjisawai",
+		change_prefab = "",
+		change_background = "bg_jufengv3_cg3",
+		id = 313,
+		story = "JUFENGYUZIYOUQUNDAO23",
+		pre_event = {
+			312
+		},
+		lock = {
+			{
+				4,
+				312
+			}
+		}
+	},
+	[314] = {
+		story_type = 1,
+		name = "EP7-3 大灯台の調査Ⅱ",
+		unlock_conditions = "EP7-2をクリア",
+		change_bgm = "story-temepest-2",
+		change_prefab = "",
+		change_background = "bg_jufengv3_2",
+		id = 314,
+		story = "JUFENGYUZIYOUQUNDAO24",
+		pre_event = {
+			313
+		},
+		lock = {
+			{
+				4,
+				313
+			}
+		}
+	},
+	[315] = {
+		story_type = 2,
+		name = "EP7-4 勝利を掴む一撃",
+		unlock_conditions = "EP7-3をクリア",
+		change_bgm = "story-tempest-freedom",
+		change_prefab = "",
+		change_background = "star_level_bg_539",
+		id = 315,
+		story = "1978002",
+		pre_event = {
+			314
+		},
+		lock = {
+			{
+				4,
+				314
+			}
+		}
+	},
+	[316] = {
+		story_type = 1,
+		name = "EP7-5 フリーダムポリス",
+		unlock_conditions = "EP7-4をクリア",
+		change_bgm = "theme-ganjisawai",
+		change_prefab = "",
+		change_background = "star_level_bg_524",
+		id = 316,
+		story = "JUFENGYUZIYOUQUNDAO26",
+		pre_event = {
+			315
+		},
+		lock = {
+			{
+				4,
+				315
+			}
+		}
+	},
+	[317] = {
+		story_type = 1,
+		name = "EX-1 司祭と女神の使令II",
+		unlock_conditions = "EP7-5をクリア",
+		change_bgm = "theme-tempest-up",
+		change_prefab = "",
+		change_background = "star_level_bg_163",
+		id = 317,
+		story = "JUFENGYUZIYOUQUNDAO27",
+		pre_event = {
+			316
+		},
+		lock = {
+			{
+				4,
+				316
+			}
+		}
+	},
+	[318] = {
+		story_type = 1,
+		name = "EX-2 未定事項",
+		unlock_conditions = "EX-1をクリア",
+		change_bgm = "battle-eagleunion",
+		change_prefab = "",
+		change_background = "bg_story_task_3",
+		id = 318,
+		story = "JUFENGYUZIYOUQUNDAO28",
+		pre_event = {
+			317
+		},
+		lock = {
+			{
+				4,
+				317
+			}
+		}
+	},
+	[319] = {
+		story_type = 1,
+		name = "EX-3 世界の境界",
+		unlock_conditions = "EX-2をクリア",
+		change_bgm = "theme-tempest-light",
+		change_prefab = "Map_1970001",
+		change_background = "bg_jufengv3_1",
+		id = 319,
+		story = "JUFENGYUZIYOUQUNDAO29",
+		pre_event = {
+			318
+		},
+		lock = {
+			{
+				4,
+				318
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -4976,6 +5800,50 @@ pg.activity_sp_story = {
 		266,
 		267,
 		268,
-		269
+		269,
+		271,
+		272,
+		273,
+		274,
+		275,
+		276,
+		277,
+		278,
+		279,
+		280,
+		281,
+		282,
+		283,
+		284,
+		285,
+		291,
+		292,
+		293,
+		294,
+		295,
+		296,
+		297,
+		298,
+		299,
+		300,
+		301,
+		302,
+		303,
+		304,
+		305,
+		306,
+		307,
+		308,
+		309,
+		310,
+		311,
+		312,
+		313,
+		314,
+		315,
+		316,
+		317,
+		318,
+		319
 	}
 }

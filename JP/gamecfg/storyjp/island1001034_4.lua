@@ -19,10 +19,10 @@
 	},
 	scripts = {
 		{
-			subName = "工厂管理员",
+			subName = "工場管理人",
 			characterId = 100900,
 			animation = "doubt",
-			say = "……啧，这个耦合器……角度偏差一些？不对……好像不是这边的问题……",
+			say = "……このカプラー……角度がズレてる？いや違う……こっちの問題じゃない……",
 			face2Face = {
 				{
 					0,
@@ -35,9 +35,9 @@
 			}
 		},
 		{
-			subName = "工厂管理员",
+			subName = "工場管理人",
 			characterId = 100900,
-			say = "……扳手！我的内六角扳手去哪了？！刚才明明放在这儿的！",
+			say = "……レンチ！六角レンチはどこ！？さっきここに置いたのに！",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

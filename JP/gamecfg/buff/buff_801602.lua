@@ -17,7 +17,7 @@
 			},
 			arg_list = {
 				buff_id = 801603,
-				effect = "",
+				effect = "None",
 				cld_data = {
 					box = {
 						front_offset = 68

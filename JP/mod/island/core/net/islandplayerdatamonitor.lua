@@ -28,7 +28,7 @@ function var_0_0.register(arg_1_0)
 		arg_1_0:HandleTaskData(arg_5_0.task_list)
 	end)
 	arg_1_0:on(21043, function(arg_6_0)
-		arg_1_0:HandleRandomTaskData(arg_6_0.task_list_random)
+		arg_1_0:HandleRandomTaskData(arg_6_0)
 	end)
 	arg_1_0:on(21422, function(arg_7_0)
 		arg_1_0:HandleManageData(arg_7_0)
@@ -37,16 +37,11 @@ function var_0_0.register(arg_1_0)
 		arg_1_0:HandleAchievementData(arg_8_0.event_list)
 	end)
 	arg_1_0:on(21342, function(arg_9_0)
-		arg_1_0:HandleBookData(arg_9_0.item_ids)
+		arg_1_0:HandleBookData(arg_9_0.item_list)
 	end)
 	arg_1_0:on(21518, function(arg_10_0)
-		if arg_10_0.type == 1 or arg_10_0.type == 3 then
-			arg_1_0:HandleSlotFormulaData(arg_10_0)
-		end
-
-		if arg_10_0.type == 1 or arg_10_0.type == 2 then
-			getProxy(IslandProxy):GetIsland():GetBuildingAgency():AddFormulaNum(arg_10_0.formula_id, arg_10_0.num)
-		end
+		arg_1_0:HandleSlotFormulaData(arg_10_0)
+		getProxy(IslandProxy):GetIsland():GetBuildingAgency():AddFormulaNum(arg_10_0.formula_id, arg_10_0.comb_num)
 	end)
 	arg_1_0:on(21519, function(arg_11_0)
 		arg_1_0:HandleBuildUnlockData(arg_11_0)
@@ -227,7 +222,20 @@ function var_0_0.HandleTaskData(arg_32_0, arg_32_1)
 end
 
 function var_0_0.HandleRandomTaskData(arg_34_0, arg_34_1)
-	arg_34_0:GetIsland():GetTaskAgency():InitFutureTasks(arg_34_1 or {})
+	arg_34_0:GetIsland():GetTaskAgency():InitFutureTasks(arg_34_1.task_list_random or {})
+
+	local var_34_0 = arg_34_1.task_list or {}
+	local var_34_1 = arg_34_0:GetIsland():GetTaskAgency()
+
+	for iter_34_0, iter_34_1 in ipairs(var_34_0) do
+		local var_34_2 = IslandTask.New(iter_34_1)
+
+		var_34_1:AddTask(var_34_2)
+	end
+
+	if #var_34_0 > 0 then
+		var_34_1:TryAutoTrackTask()
+	end
 end
 
 function var_0_0.HandleManageData(arg_35_0, arg_35_1)
@@ -249,7 +257,7 @@ function var_0_0.HandleAchievementData(arg_36_0, arg_36_1)
 end
 
 function var_0_0.HandleBookData(arg_37_0, arg_37_1)
-	getProxy(IslandProxy):GetIsland():GetBookAgency():AddCanUnlockItems(arg_37_1)
+	getProxy(IslandProxy):GetIsland():GetBookAgency():HandlePushData(arg_37_1)
 end
 
 function var_0_0.HandleSlotFormulaData(arg_38_0, arg_38_1)

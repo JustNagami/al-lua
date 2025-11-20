@@ -140,9 +140,24 @@ pg.item_data_battleui = {
 		display_icon = "ui_109",
 		is_unlock = 1,
 		rare = 3,
-		unlock = "世界巡游二十五期获取",
+		unlock = "クルーズパス25期報酬",
 		id = 109,
 		icon = "109",
+		scene = {},
+		rare_display = {
+			1
+		}
+	},
+	[111] = {
+		key = "SkinNormal_20251120",
+		name = "影絵",
+		desc = "シンプルな影絵は無限の幻想を描き出し、簡単な物語は素晴らしい希望を与える",
+		display_icon = "ui_111",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "クルーズパス26期報酬",
+		id = 111,
+		icon = "111",
 		scene = {},
 		rare_display = {
 			1
@@ -244,6 +259,7 @@ pg.item_data_battleui = {
 		107,
 		108,
 		109,
+		111,
 		201,
 		202,
 		203,

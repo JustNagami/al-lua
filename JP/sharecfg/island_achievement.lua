@@ -87,8 +87,8 @@ pg.island_achievement = {
 		target_num = 60,
 		award = {
 			{
-				41,
-				200015,
+				44,
+				60802,
 				1
 			}
 		},
@@ -152,12 +152,12 @@ pg.island_achievement = {
 	},
 	[21] = {
 		target_type = 27,
-		name = "模範島民",
+		name = "未来に向けて",
 		stage = 1,
 		target_value1 = 0,
 		group = 2,
 		show_type = 1,
-		desc = "デイリー計画を<color=#cd7900><b>$2</b></color>回完了する",
+		desc = "離島技術を<color=#cd7900><b>$2</b></color>個研究する",
 		id = 21,
 		target_num = 60,
 		award = {
@@ -177,12 +177,12 @@ pg.island_achievement = {
 	},
 	[22] = {
 		target_type = 27,
-		name = "模範島民",
+		name = "未来に向けて",
 		stage = 2,
 		target_value1 = 0,
 		group = 2,
 		show_type = 1,
-		desc = "デイリー計画を<color=#cd7900><b>$2</b></color>回完了する",
+		desc = "離島技術を<color=#cd7900><b>$2</b></color>個研究する",
 		id = 22,
 		target_num = 80,
 		award = {
@@ -202,12 +202,12 @@ pg.island_achievement = {
 	},
 	[23] = {
 		target_type = 27,
-		name = "模範島民",
+		name = "未来に向けて",
 		stage = 3,
 		target_value1 = 0,
 		group = 2,
 		show_type = 1,
-		desc = "デイリー計画を<color=#cd7900><b>$2</b></color>回完了する",
+		desc = "離島技術を<color=#cd7900><b>$2</b></color>個研究する",
 		id = 23,
 		target_num = 100,
 		award = {
@@ -227,18 +227,18 @@ pg.island_achievement = {
 	},
 	[24] = {
 		target_type = 27,
-		name = "模範島民",
+		name = "未来に向けて",
 		stage = 4,
 		target_value1 = 0,
 		group = 2,
 		show_type = 1,
-		desc = "デイリー計画を<color=#cd7900><b>$2</b></color>回完了する",
+		desc = "離島技術を<color=#cd7900><b>$2</b></color>個研究する",
 		id = 24,
 		target_num = 120,
 		award = {
 			{
-				41,
-				200008,
+				44,
+				90111,
 				1
 			}
 		},
@@ -252,12 +252,12 @@ pg.island_achievement = {
 	},
 	[25] = {
 		target_type = 27,
-		name = "模範島民",
+		name = "未来に向けて",
 		stage = 5,
 		target_value1 = 0,
 		group = 2,
 		show_type = 1,
-		desc = "デイリー計画を<color=#cd7900><b>$2</b></color>回完了する",
+		desc = "離島技術を<color=#cd7900><b>$2</b></color>個研究する",
 		id = 25,
 		target_num = 150,
 		award = {
@@ -277,12 +277,12 @@ pg.island_achievement = {
 	},
 	[26] = {
 		target_type = 27,
-		name = "模範島民",
+		name = "未来に向けて",
 		stage = 6,
 		target_value1 = 0,
 		group = 2,
 		show_type = 1,
-		desc = "デイリー計画を<color=#cd7900><b>$2</b></color>回完了する",
+		desc = "離島技術を<color=#cd7900><b>$2</b></color>個研究する",
 		id = 26,
 		target_num = 180,
 		award = {
@@ -302,12 +302,12 @@ pg.island_achievement = {
 	},
 	[31] = {
 		target_type = 2,
-		name = "リズナブル開発エリア",
+		name = "模範島民",
 		stage = 1,
 		target_value1 = 3,
 		group = 3,
 		show_type = 1,
-		desc = "開発資金を<color=#cd7900><b>$2</b></color>受け取る",
+		desc = "デイリー計画を<color=#cd7900><b>$2</b></color>回完了する",
 		id = 31,
 		target_num = 50,
 		award = {
@@ -327,12 +327,12 @@ pg.island_achievement = {
 	},
 	[32] = {
 		target_type = 2,
-		name = "リズナブル開発エリア",
+		name = "模範島民",
 		stage = 2,
 		target_value1 = 3,
 		group = 3,
 		show_type = 1,
-		desc = "開発資金を<color=#cd7900><b>$2</b></color>受け取る",
+		desc = "デイリー計画を<color=#cd7900><b>$2</b></color>回完了する",
 		id = 32,
 		target_num = 150,
 		award = {
@@ -352,12 +352,12 @@ pg.island_achievement = {
 	},
 	[33] = {
 		target_type = 2,
-		name = "リズナブル開発エリア",
+		name = "模範島民",
 		stage = 3,
 		target_value1 = 3,
 		group = 3,
 		show_type = 1,
-		desc = "開発資金を<color=#cd7900><b>$2</b></color>受け取る",
+		desc = "デイリー計画を<color=#cd7900><b>$2</b></color>回完了する",
 		id = 33,
 		target_num = 300,
 		award = {
@@ -377,12 +377,12 @@ pg.island_achievement = {
 	},
 	[34] = {
 		target_type = 2,
-		name = "リズナブル開発エリア",
+		name = "模範島民",
 		stage = 4,
 		target_value1 = 3,
 		group = 3,
 		show_type = 1,
-		desc = "開発資金を<color=#cd7900><b>$2</b></color>受け取る",
+		desc = "デイリー計画を<color=#cd7900><b>$2</b></color>回完了する",
 		id = 34,
 		target_num = 500,
 		award = {
@@ -402,12 +402,12 @@ pg.island_achievement = {
 	},
 	[35] = {
 		target_type = 2,
-		name = "リズナブル開発エリア",
+		name = "模範島民",
 		stage = 5,
 		target_value1 = 3,
 		group = 3,
 		show_type = 1,
-		desc = "開発資金を<color=#cd7900><b>$2</b></color>受け取る",
+		desc = "デイリー計画を<color=#cd7900><b>$2</b></color>回完了する",
 		id = 35,
 		target_num = 1000,
 		award = {
@@ -427,12 +427,12 @@ pg.island_achievement = {
 	},
 	[36] = {
 		target_type = 2,
-		name = "リズナブル開発エリア",
+		name = "模範島民",
 		stage = 6,
 		target_value1 = 3,
 		group = 3,
 		show_type = 1,
-		desc = "開発資金を<color=#cd7900><b>$2</b></color>受け取る",
+		desc = "デイリー計画を<color=#cd7900><b>$2</b></color>回完了する",
 		id = 36,
 		target_num = 2000,
 		award = {
@@ -452,12 +452,12 @@ pg.island_achievement = {
 	},
 	[41] = {
 		target_type = 22,
-		name = "未来に向けて",
+		name = "リーズナブル開発エリア",
 		stage = 1,
 		target_value1 = 1,
 		group = 4,
 		show_type = 1,
-		desc = "離島技術を<color=#cd7900><b>$2</b></color>個研究する",
+		desc = "開発資金を<color=#cd7900><b>$2</b></color>受け取る",
 		id = 41,
 		target_num = 100000,
 		award = {
@@ -477,12 +477,12 @@ pg.island_achievement = {
 	},
 	[42] = {
 		target_type = 22,
-		name = "未来に向けて",
+		name = "リーズナブル開発エリア",
 		stage = 2,
 		target_value1 = 1,
 		group = 4,
 		show_type = 1,
-		desc = "離島技術を<color=#cd7900><b>$2</b></color>個研究する",
+		desc = "開発資金を<color=#cd7900><b>$2</b></color>受け取る",
 		id = 42,
 		target_num = 1000000,
 		award = {
@@ -502,12 +502,12 @@ pg.island_achievement = {
 	},
 	[43] = {
 		target_type = 22,
-		name = "未来に向けて",
+		name = "リーズナブル開発エリア",
 		stage = 3,
 		target_value1 = 1,
 		group = 4,
 		show_type = 1,
-		desc = "離島技術を<color=#cd7900><b>$2</b></color>個研究する",
+		desc = "開発資金を<color=#cd7900><b>$2</b></color>受け取る",
 		id = 43,
 		target_num = 5000000,
 		award = {
@@ -527,12 +527,12 @@ pg.island_achievement = {
 	},
 	[44] = {
 		target_type = 22,
-		name = "未来に向けて",
+		name = "リーズナブル開発エリア",
 		stage = 4,
 		target_value1 = 1,
 		group = 4,
 		show_type = 1,
-		desc = "離島技術を<color=#cd7900><b>$2</b></color>個研究する",
+		desc = "開発資金を<color=#cd7900><b>$2</b></color>受け取る",
 		id = 44,
 		target_num = 10000000,
 		award = {
@@ -552,12 +552,12 @@ pg.island_achievement = {
 	},
 	[45] = {
 		target_type = 22,
-		name = "未来に向けて",
+		name = "リーズナブル開発エリア",
 		stage = 5,
 		target_value1 = 1,
 		group = 4,
 		show_type = 1,
-		desc = "離島技術を<color=#cd7900><b>$2</b></color>個研究する",
+		desc = "開発資金を<color=#cd7900><b>$2</b></color>受け取る",
 		id = 45,
 		target_num = 20000000,
 		award = {
@@ -577,12 +577,12 @@ pg.island_achievement = {
 	},
 	[46] = {
 		target_type = 22,
-		name = "未来に向けて",
+		name = "リーズナブル開発エリア",
 		stage = 6,
 		target_value1 = 1,
 		group = 4,
 		show_type = 1,
-		desc = "離島技術を<color=#cd7900><b>$2</b></color>個研究する",
+		desc = "開発資金を<color=#cd7900><b>$2</b></color>受け取る",
 		id = 46,
 		target_num = 50000000,
 		award = {
@@ -2709,7 +2709,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "輸送委託を<color=#cd7900><b>$2</b></color>個完遂する",
 		id = 2021,
-		target_num = 20,
+		target_num = 10,
 		award = {
 			{
 				45,
@@ -2734,7 +2734,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "輸送委託を<color=#cd7900><b>$2</b></color>個完遂する",
 		id = 2022,
-		target_num = 100,
+		target_num = 50,
 		award = {
 			{
 				41,
@@ -2759,7 +2759,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "輸送委託を<color=#cd7900><b>$2</b></color>個完遂する",
 		id = 2023,
-		target_num = 250,
+		target_num = 180,
 		award = {
 			{
 				41,
@@ -2784,7 +2784,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "輸送委託を<color=#cd7900><b>$2</b></color>個完遂する",
 		id = 2024,
-		target_num = 500,
+		target_num = 350,
 		award = {
 			{
 				1,
@@ -2809,7 +2809,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "輸送委託を<color=#cd7900><b>$2</b></color>個完遂する",
 		id = 2025,
-		target_num = 1000,
+		target_num = 750,
 		award = {
 			{
 				41,
@@ -2834,7 +2834,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "輸送委託を<color=#cd7900><b>$2</b></color>個完遂する",
 		id = 2026,
-		target_num = 1500,
+		target_num = 1000,
 		award = {
 			{
 				1,
@@ -3151,7 +3151,7 @@ pg.island_achievement = {
 		}
 	},
 	[2051] = {
-		target_type = 31,
+		target_type = 38,
 		name = "星彩ライフ",
 		stage = 1,
 		target_value1 = 0,
@@ -3176,7 +3176,7 @@ pg.island_achievement = {
 		}
 	},
 	[2052] = {
-		target_type = 31,
+		target_type = 38,
 		name = "星彩ライフ",
 		stage = 2,
 		target_value1 = 0,
@@ -3201,7 +3201,7 @@ pg.island_achievement = {
 		}
 	},
 	[2053] = {
-		target_type = 31,
+		target_type = 38,
 		name = "星彩ライフ",
 		stage = 3,
 		target_value1 = 0,
@@ -3226,7 +3226,7 @@ pg.island_achievement = {
 		}
 	},
 	[2054] = {
-		target_type = 31,
+		target_type = 38,
 		name = "星彩ライフ",
 		stage = 4,
 		target_value1 = 0,
@@ -3251,7 +3251,7 @@ pg.island_achievement = {
 		}
 	},
 	[2055] = {
-		target_type = 31,
+		target_type = 38,
 		name = "星彩ライフ",
 		stage = 5,
 		target_value1 = 0,
@@ -3276,7 +3276,7 @@ pg.island_achievement = {
 		}
 	},
 	[2056] = {
-		target_type = 31,
+		target_type = 38,
 		name = "星彩ライフ",
 		stage = 6,
 		target_value1 = 0,

@@ -404,7 +404,8 @@ pg.island_interaction = setmetatable({
 			5818,
 			5819,
 			5820,
-			5821
+			5821,
+			5822
 		},
 		[59] = {
 			5901,
@@ -488,6 +489,18 @@ pg.island_interaction = setmetatable({
 		[77] = {
 			7701,
 			7702
+		},
+		[78] = {
+			7801,
+			7802,
+			7803,
+			7804
+		},
+		[79] = {
+			7901,
+			7902,
+			7903,
+			7904
 		}
 	},
 	all = {
@@ -777,6 +790,7 @@ pg.island_interaction = setmetatable({
 		5819,
 		5820,
 		5821,
+		5822,
 		5901,
 		5902,
 		6001,
@@ -821,7 +835,15 @@ pg.island_interaction = setmetatable({
 		7501,
 		7601,
 		7701,
-		7702
+		7702,
+		7801,
+		7802,
+		7803,
+		7804,
+		7901,
+		7902,
+		7903,
+		7904
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -1215,7 +1237,7 @@ pg.base.island_interaction = {
 		groupId = 12,
 		icon = 16,
 		param = {
-			"IslandRoleDelegationPage",
+			"IslandMallDelegationPage",
 			901
 		},
 		show_condition = {
@@ -1531,7 +1553,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[1301] = {
-		text = "座る",
+		text = "休む",
 		id = 1301,
 		only_self = 1,
 		type = 9,
@@ -2273,7 +2295,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[2202] = {
-		text = "ここが駅のようだ……",
+		text = "ここがバス停のようだ……",
 		id = 2202,
 		only_self = 0,
 		type = 21,
@@ -2588,7 +2610,7 @@ pg.base.island_interaction = {
 		text = "港に行く",
 		id = 2602,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 26,
 		icon = 5,
 		param = "10020021",
@@ -3347,7 +3369,7 @@ pg.base.island_interaction = {
 		text = "港に行く",
 		id = 3201,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 32,
 		icon = 5,
 		param = "10020001",
@@ -3362,7 +3384,7 @@ pg.base.island_interaction = {
 		text = "風の原野に行く",
 		id = 3202,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 32,
 		icon = 5,
 		param = "10040024",
@@ -3377,7 +3399,7 @@ pg.base.island_interaction = {
 		text = "繁茂農園に行く",
 		id = 3203,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 32,
 		icon = 5,
 		param = "10050001",
@@ -3481,7 +3503,7 @@ pg.base.island_interaction = {
 		text = "港に行く",
 		id = 3701,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 37,
 		icon = 5,
 		param = "10020011",
@@ -3491,7 +3513,7 @@ pg.base.island_interaction = {
 		text = "港に行く",
 		id = 3801,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 38,
 		icon = 5,
 		param = "10020001",
@@ -3506,7 +3528,7 @@ pg.base.island_interaction = {
 		text = "朝露農場へ向かう",
 		id = 3802,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 38,
 		icon = 5,
 		param = "10010064",
@@ -3521,7 +3543,7 @@ pg.base.island_interaction = {
 		text = "繁茂農園に行く",
 		id = 3803,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 38,
 		icon = 5,
 		param = "10050001",
@@ -3681,7 +3703,7 @@ pg.base.island_interaction = {
 		text = "風の原野に行く",
 		id = 4301,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 43,
 		icon = 5,
 		param = "10040024",
@@ -3696,7 +3718,7 @@ pg.base.island_interaction = {
 		text = "朝露農場へ向かう",
 		id = 4302,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 43,
 		icon = 5,
 		param = "10010064",
@@ -3711,7 +3733,7 @@ pg.base.island_interaction = {
 		text = "港商店街へ向かう",
 		id = 4303,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 43,
 		icon = 5,
 		param = "10060001",
@@ -5147,6 +5169,21 @@ pg.base.island_interaction = {
 			}
 		}
 	},
+	[5822] = {
+		text = "――料理？ピアリ？……あなたが？！",
+		id = 5822,
+		only_self = 0,
+		type = 1,
+		groupId = 58,
+		icon = 9,
+		param = "ISLANDSIDE01603",
+		show_condition = {
+			{
+				2,
+				50000001
+			}
+		}
+	},
 	[5901] = {
 		text = "またどんな悪だくみを？",
 		id = 5901,
@@ -5820,7 +5857,7 @@ pg.base.island_interaction = {
 		text = "港に行く",
 		id = 7601,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 76,
 		icon = 5,
 		param = "10020001",
@@ -5830,7 +5867,7 @@ pg.base.island_interaction = {
 		text = "風の原野に行く",
 		id = 7701,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 77,
 		icon = 5,
 		param = "10040024",
@@ -5845,7 +5882,7 @@ pg.base.island_interaction = {
 		text = "朝露農場へ向かう",
 		id = 7702,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 77,
 		icon = 5,
 		param = "10010064",
@@ -5853,6 +5890,126 @@ pg.base.island_interaction = {
 			{
 				11,
 				5001
+			}
+		}
+	},
+	[7801] = {
+		text = "会話",
+		id = 7801,
+		only_self = 0,
+		type = 1,
+		groupId = 78,
+		icon = 1,
+		param = "ISLANDTALK10131_1",
+		show_condition = {
+			{
+				4,
+				10002280
+			}
+		}
+	},
+	[7802] = {
+		text = "メリー……どうしてここに……",
+		id = 7802,
+		only_self = 0,
+		type = 21,
+		groupId = 78,
+		icon = 7,
+		param = "ISLANDPERFORMANCE10",
+		show_condition = {
+			{
+				2,
+				10002271
+			}
+		}
+	},
+	[7803] = {
+		text = "これがお宝？",
+		id = 7803,
+		only_self = 0,
+		type = 12,
+		groupId = 78,
+		icon = 7,
+		param = "10002280",
+		show_condition = {
+			{
+				3,
+				10002280
+			}
+		}
+	},
+	[7804] = {
+		text = "メリー、手に入れたよ",
+		id = 7804,
+		only_self = 0,
+		type = 12,
+		groupId = 78,
+		icon = 7,
+		param = "10002290",
+		show_condition = {
+			{
+				3,
+				10002290
+			}
+		}
+	},
+	[7901] = {
+		text = "会話",
+		id = 7901,
+		only_self = 0,
+		type = 1,
+		groupId = 79,
+		icon = 1,
+		param = "ISLANDTALK10131_2",
+		show_condition = {
+			{
+				4,
+				10002280
+			}
+		}
+	},
+	[7902] = {
+		text = "メリー……どうしてここに……",
+		id = 7902,
+		only_self = 0,
+		type = 21,
+		groupId = 79,
+		icon = 7,
+		param = "ISLANDPERFORMANCE10",
+		show_condition = {
+			{
+				2,
+				10002271
+			}
+		}
+	},
+	[7903] = {
+		text = "これがお宝？",
+		id = 7903,
+		only_self = 0,
+		type = 12,
+		groupId = 79,
+		icon = 7,
+		param = "10002280",
+		show_condition = {
+			{
+				3,
+				10002280
+			}
+		}
+	},
+	[7904] = {
+		text = "メリー、手に入れたよ",
+		id = 7904,
+		only_self = 0,
+		type = 12,
+		groupId = 79,
+		icon = 7,
+		param = "10002290",
+		show_condition = {
+			{
+				3,
+				10002290
 			}
 		}
 	}

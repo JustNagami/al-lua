@@ -245,6 +245,13 @@ pg.memory_group = setmetatable({
 		338,
 		339,
 		340,
+		341,
+		342,
+		343,
+		344,
+		345,
+		347,
+		348,
 		501,
 		502,
 		503,
@@ -357,6 +364,8 @@ pg.memory_group = setmetatable({
 		612,
 		613,
 		614,
+		615,
+		616,
 		1000,
 		1001,
 		1002,
@@ -6084,6 +6093,178 @@ pg.base.memory_group = {
 			4660
 		}
 	},
+	[341] = {
+		id = 341,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 50156,
+		title = "青空の下で出会いを-ステージ編",
+		group_id = "",
+		memories = {
+			4671,
+			4672,
+			4673,
+			4674,
+			4675,
+			4676,
+			4677,
+			4678,
+			4679,
+			4680,
+			4681,
+			4682,
+			4683,
+			4684,
+			4685
+		}
+	},
+	[342] = {
+		id = 342,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 50156,
+		title = "青空の下で出会いを-日常編",
+		group_id = "",
+		memories = {
+			4691,
+			4692
+		}
+	},
+	[343] = {
+		id = 343,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 50202,
+		title = "母港の休日怪談集Ⅱ",
+		group_id = "",
+		memories = {
+			4711,
+			4712,
+			4713,
+			4714,
+			4715,
+			4716,
+			4717,
+			4718
+		}
+	},
+	[344] = {
+		id = 344,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 50181,
+		title = "テンペスタと自由群島",
+		group_id = "",
+		memories = {
+			4721,
+			4722,
+			4723,
+			4724,
+			4725,
+			4726,
+			4727,
+			4728,
+			4729,
+			4730,
+			4731,
+			4732,
+			4733,
+			4734,
+			4735,
+			4736,
+			4737,
+			4738,
+			4739,
+			4740,
+			4741,
+			4742,
+			4743,
+			4744,
+			4745,
+			4746,
+			4747,
+			4748,
+			4749
+		}
+	},
+	[345] = {
+		id = 345,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 50235,
+		title = "母港ファッション：ピット・スタンバイ",
+		group_id = "",
+		memories = {
+			4761,
+			4762,
+			4763
+		}
+	},
+	[347] = {
+		id = 347,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 50256,
+		title = "DATE A LANE-「ステージ編」",
+		group_id = "",
+		memories = {
+			4781,
+			4782,
+			4783,
+			4784,
+			4785,
+			4786,
+			4787,
+			4788,
+			4789,
+			4790,
+			4791,
+			4792,
+			4793,
+			4794,
+			4795,
+			4796,
+			4797,
+			4798,
+			4799,
+			4800,
+			4801,
+			4802,
+			4803,
+			4804,
+			4805,
+			4806,
+			4807,
+			4808,
+			4809,
+			4810,
+			4811,
+			4812
+		}
+	},
+	[348] = {
+		id = 348,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 50256,
+		title = "DATE A LANE-「日常編」",
+		group_id = "",
+		memories = {
+			4821,
+			4822,
+			4823,
+			4824,
+			4825,
+			4826
+		}
+	},
 	[501] = {
 		id = 501,
 		subtype = 0,
@@ -8330,6 +8511,46 @@ pg.base.memory_group = {
 			4665,
 			4666,
 			4667
+		},
+		group_id = {
+			10000
+		}
+	},
+	[615] = {
+		id = 615,
+		subtype = 0,
+		icon = "title_chara_zhenzhuhao",
+		type = 3,
+		link_event = 0,
+		title = "大海の音",
+		memories = {
+			4701,
+			4702,
+			4703,
+			4704,
+			4705,
+			4706,
+			4707
+		},
+		group_id = {
+			10000
+		}
+	},
+	[616] = {
+		id = 616,
+		subtype = 0,
+		icon = "title_chara_qisheng",
+		type = 3,
+		link_event = 0,
+		title = "花咲く家電",
+		memories = {
+			4751,
+			4752,
+			4753,
+			4754,
+			4755,
+			4756,
+			4757
 		},
 		group_id = {
 			10000

@@ -15,9 +15,9 @@ function var_0_0.getGroupName(arg_2_0)
 end
 
 function var_0_0.init(arg_3_0)
-	arg_3_0.container = arg_3_0:findTF("main/bg/container")
-	arg_3_0.gridContainer = arg_3_0:findTF("grids", arg_3_0.container)
-	arg_3_0.gridTF = arg_3_0:findTF("grid_tpl", arg_3_0.gridContainer)
+	arg_3_0.container = arg_3_0._tf:Find("main/bg/container")
+	arg_3_0.gridContainer = arg_3_0.container:Find("grids")
+	arg_3_0.gridTF = arg_3_0.gridContainer:Find("grid_tpl")
 	arg_3_0.height = arg_3_0.gridTF.sizeDelta.y + var_0_5
 	arg_3_0.width = arg_3_0.gridTF.sizeDelta.x + var_0_4
 	arg_3_0.startPos = Vector2(-1 * ((var_0_2 / 2 - 0.5) * arg_3_0.width) + var_0_6.x, (var_0_1 / 2 - 0.5) * arg_3_0.height + var_0_6.y)
@@ -27,28 +27,28 @@ function var_0_0.init(arg_3_0)
 
 	setActive(arg_3_0.gridTF, false)
 
-	arg_3_0.infoPanel = arg_3_0:findTF("main/info_panel")
-	arg_3_0.itemContainer = arg_3_0:findTF("usages/items", arg_3_0.infoPanel)
-	arg_3_0.itemTF = arg_3_0:findTF("itemTF", arg_3_0.itemContainer)
-	arg_3_0.infoName = arg_3_0:findTF("name_container/Text", arg_3_0.infoPanel):GetComponent(typeof(Text))
-	arg_3_0.attrContainer = arg_3_0:findTF("align/attrs", arg_3_0.infoPanel)
+	arg_3_0.infoPanel = arg_3_0._tf:Find("main/info_panel")
+	arg_3_0.itemContainer = arg_3_0.infoPanel:Find("usages/items")
+	arg_3_0.itemTF = arg_3_0.itemContainer:Find("itemTF")
+	arg_3_0.infoName = arg_3_0.infoPanel:Find("name_container/Text"):GetComponent(typeof(Text))
+	arg_3_0.attrContainer = arg_3_0.infoPanel:Find("align/attrs")
 	arg_3_0.attrTpl = arg_3_0:getTpl("attr", arg_3_0.attrContainer)
 	arg_3_0.attrTplD = arg_3_0:getTpl("attrd", arg_3_0.attrContainer)
-	arg_3_0.confirmBtn = arg_3_0:findTF("confirm_btn/activity", arg_3_0.infoPanel)
-	arg_3_0.inactiveBtn = arg_3_0:findTF("confirm_btn/inactivity", arg_3_0.infoPanel)
-	arg_3_0.completedteBtn = arg_3_0:findTF("confirm_btn/complete", arg_3_0.infoPanel)
-	arg_3_0.shipTF = arg_3_0:findTF("main/info_panel/usages/shipTF")
-	arg_3_0.skillDesc = arg_3_0:findTF("align/skill_desc/text", arg_3_0.infoPanel)
-	arg_3_0.shipContainer = arg_3_0:findTF("char_container", arg_3_0.infoPanel)
-	arg_3_0.lineTpl = arg_3_0:findTF("resources/line")
-	arg_3_0.lineContainer = arg_3_0:findTF("grids/lines", arg_3_0.container)
+	arg_3_0.confirmBtn = arg_3_0.infoPanel:Find("confirm_btn/activity")
+	arg_3_0.inactiveBtn = arg_3_0.infoPanel:Find("confirm_btn/inactivity")
+	arg_3_0.completedteBtn = arg_3_0.infoPanel:Find("confirm_btn/complete")
+	arg_3_0.shipTF = arg_3_0._tf:Find("main/info_panel/usages/shipTF")
+	arg_3_0.skillDesc = arg_3_0.infoPanel:Find("align/skill_desc/text")
+	arg_3_0.shipContainer = arg_3_0.infoPanel:Find("char_container")
+	arg_3_0.lineTpl = arg_3_0._tf:Find("resources/line")
+	arg_3_0.lineContainer = arg_3_0.container:Find("grids/lines")
 	arg_3_0.helpBtn = GameObject.Find("/OverlayCamera/Overlay/UIMain/common/help_btn")
 
 	if not IsNil(arg_3_0.helpBtn) then
 		setActive(arg_3_0.helpBtn, false)
 	end
 
-	arg_3_0.tooltip = arg_3_0:findTF("tooltip")
+	arg_3_0.tooltip = arg_3_0._tf:Find("tooltip")
 
 	setActive(arg_3_0.tooltip, false)
 end
@@ -313,29 +313,25 @@ function var_0_0.initShipModel(arg_19_0)
 	local var_19_0 = arg_19_0.shipVO:getPrefab()
 
 	if arg_19_0.shipContainer.childCount ~= 0 then
-		PoolMgr.GetInstance():ReturnSpineChar(var_19_0, go(arg_19_0.shipModel))
+		arg_19_0.shipModel:Dispose()
 	end
 
 	local function var_19_1(arg_20_0)
 		if not IsNil(arg_19_0._tf) then
-			local var_20_0 = tf(arg_20_0)
+			arg_19_0.shipModel = arg_20_0
 
-			arg_19_0.shipModel = var_20_0
-			arg_19_0.spineAnimUI = var_20_0:GetComponent("SpineAnimUI")
-
-			pg.ViewUtils.SetLayer(var_20_0, Layer.UI)
-
-			var_20_0.localScale = Vector3(var_0_3, var_0_3, 1)
-
-			setParent(var_20_0, arg_19_0.shipContainer)
-
-			var_20_0.localPosition = Vector2(0, 10)
-
-			arg_19_0.spineAnimUI:SetAction("stand2", 0)
+			arg_20_0:SetLayer(Layer.UI)
+			arg_20_0:SetLocalScale(Vector3(var_0_3, var_0_3, 1))
+			arg_20_0:SetParent(arg_19_0.shipContainer)
+			arg_20_0:SetLocalPosition(Vector2(0, 10))
+			arg_20_0:SetAction("stand2", 0)
 		end
 	end
 
-	PoolMgr.GetInstance():GetSpineChar(var_19_0, true, function(arg_21_0)
+	local var_19_2 = SpineAnimChar.New()
+
+	var_19_2:SetPaint(var_19_0)
+	var_19_2:Load(true, function(arg_21_0)
 		var_19_1(arg_21_0)
 	end)
 end
@@ -395,7 +391,7 @@ function var_0_0.updateFinished(arg_23_0, arg_23_1)
 		setActive(var_23_4, iter_23_2 <= #var_23_2)
 
 		if iter_23_2 <= #var_23_2 then
-			updateDrop(arg_23_0:findTF("IconTpl", var_23_4), var_23_2[iter_23_2])
+			updateDrop(var_23_4:Find("IconTpl"), var_23_2[iter_23_2])
 			RemoveComponent(var_23_4, typeof(Button))
 		end
 	end
@@ -405,7 +401,7 @@ function var_0_0.updateFinished(arg_23_0, arg_23_1)
 	if var_23_1.use_ship > 0 then
 		setActive(arg_23_0.shipTF:Find("addTF"), false)
 		setActive(arg_23_0.shipTF:Find("IconTpl"), true)
-		updateDrop(arg_23_0:findTF("IconTpl", arg_23_0.shipTF), {
+		updateDrop(arg_23_0.shipTF:Find("IconTpl"), {
 			type = DROP_TYPE_SHIP,
 			id = arg_23_0.shipVO.configId
 		})
@@ -533,7 +529,7 @@ function var_0_0.updateProgress(arg_29_0, arg_29_1)
 		setActive(arg_29_0.shipTF:Find("addTF"), not var_29_7)
 
 		if var_29_7 then
-			updateDrop(arg_29_0:findTF("IconTpl", arg_29_0.shipTF), {
+			updateDrop(arg_29_0.shipTF:Find("IconTpl"), {
 				id = getProxy(BayProxy):getShipById(var_29_6[1]).configId,
 				type = DROP_TYPE_SHIP
 			})
@@ -604,7 +600,7 @@ function var_0_0.updateProgress(arg_29_0, arg_29_1)
 				end
 			end
 
-			updateDrop(arg_29_0:findTF("IconTpl", var_29_10), {
+			updateDrop(var_29_10:Find("IconTpl"), {
 				id = var_29_11[1],
 				type = DROP_TYPE_ITEM,
 				count = var_29_12

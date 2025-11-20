@@ -11,8 +11,8 @@ end
 function var_0_0.InitFashion(arg_3_0)
 	arg_3_0.mainPanel = arg_3_0._parentTf.parent
 	arg_3_0.stylePanel = arg_3_0._tf
-	arg_3_0.styleScroll = arg_3_0:findTF("style_scroll", arg_3_0.stylePanel)
-	arg_3_0.styleContainer = arg_3_0:findTF("view_port", arg_3_0.styleScroll)
+	arg_3_0.styleScroll = arg_3_0.stylePanel:Find("style_scroll")
+	arg_3_0.styleContainer = arg_3_0.styleScroll:Find("view_port")
 	arg_3_0.styleCard = arg_3_0._tf:GetComponent(typeof(ItemList)).prefabItem[0]
 	arg_3_0.hideObjToggleTF = findTF(arg_3_0._tf, "btns/hideObjToggle")
 
@@ -165,7 +165,7 @@ function var_0_0.UpdateAllFashion(arg_13_0, arg_13_1)
 			local var_13_10 = arg_13_0.styleContainer:GetChild(iter_13_4 - 1)
 			local var_13_11 = arg_13_0.fashionCellMap[var_13_10]
 			local var_13_12 = arg_13_0:GetShipVO():getRemouldSkinId() == iter_13_5.id and arg_13_0:GetShipVO():isRemoulded()
-			local var_13_13 = arg_13_0:GetShipVO():proposeSkinOwned(iter_13_5) or table.contains(arg_13_0.skinList, iter_13_5.id) or var_13_12 or iter_13_5.skin_type == ShipSkin.SKIN_TYPE_OLD
+			local var_13_13 = arg_13_0:GetShipVO():proposeSkinOwned(iter_13_5) or table.contains(arg_13_0.skinList, iter_13_5.id) or var_13_12 or iter_13_5.skin_type == ShipSkin.SKIN_TYPE_OLD or getProxy(ShipSkinProxy):hasSkin(iter_13_5.id)
 
 			var_13_11:updateData(arg_13_0:GetShipVO(), iter_13_5, var_13_13)
 		end
@@ -283,16 +283,18 @@ function var_0_0.UpdateFashionDetail(arg_20_0, arg_20_1)
 
 		local var_20_3 = var_20_0.prefab
 
-		PoolMgr.GetInstance():GetSpineChar(var_20_3, true, function(arg_21_0)
-			if var_20_0.prefab ~= var_20_3 then
-				PoolMgr.GetInstance():ReturnSpineChar(var_20_3, arg_21_0)
-			else
-				arg_21_0.name = var_20_3
-				arg_21_0.transform.localPosition = Vector3.zero
-				arg_21_0.transform.localScale = Vector3(0.5, 0.5, 1)
+		arg_20_0.spineChar = SpineAnimChar.New()
 
-				arg_21_0.transform:SetParent(var_20_0.character, false)
-				arg_21_0:GetComponent(typeof(SpineAnimUI)):SetAction(arg_20_1.show_skin or "stand", 0)
+		arg_20_0.spineChar:SetPaint(var_20_3)
+		arg_20_0.spineChar:Load(true, function(arg_21_0)
+			if var_20_0.prefab ~= var_20_3 then
+				arg_21_0:Dispose()
+			else
+				arg_21_0:SetName(var_20_3)
+				arg_21_0:SetLocalPosition(Vector3.zero)
+				arg_21_0:SetLocalScale(Vector3(0.5, 0.5, 1))
+				arg_21_0:SetParent(var_20_0.character)
+				arg_21_0:SetAction(arg_20_1.show_skin or "stand", 0)
 			end
 		end)
 	end
@@ -405,10 +407,11 @@ function var_0_0.OnDestroy(arg_28_0)
 
 	if arg_28_0.fashionDetailWrapper then
 		local var_28_0 = arg_28_0.fashionDetailWrapper
-		local var_28_1 = var_28_0.character:Find(var_28_0.prefab)
 
-		if not IsNil(var_28_1) then
-			PoolMgr.GetInstance():ReturnSpineChar(var_28_0.prefab, var_28_1.gameObject)
+		if var_28_0.character:Find(var_28_0.prefab) and arg_28_0.spineChar then
+			arg_28_0.spineChar:Dispose()
+
+			arg_28_0.spineChar = nil
 		end
 	end
 

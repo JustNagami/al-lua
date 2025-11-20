@@ -22,7 +22,7 @@ pg.activity_const = {
 		act_id = 10137
 	},
 	ACT_NPC_SHIP_ID = {
-		act_id = 5995
+		act_id = 50254
 	},
 	SANLI_7DAYS_LOGIN = {
 		act_id = 10232
@@ -1151,5 +1151,8 @@ pg.activity_const = {
 	},
 	NINJA_CITY_MAIN_ACTIVITY_ID = {
 		act_id = 50112
+	},
+	SAILING_SHIP_3_SKIN_ACT_ID = {
+		act_id = 50202
 	}
 }

@@ -2,6 +2,7 @@
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	var_0_0.super.Ctor(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
 
 	arg_1_0.view = arg_1_1
 	arg_1_0._tf = arg_1_1._tf
@@ -57,7 +58,7 @@ function var_0_0.CancelAuto(arg_3_0)
 end
 
 function var_0_0.OnStart(arg_4_0, arg_4_1)
-	pg.DelegateInfo.New(arg_4_0)
+	return
 end
 
 function var_0_0.OnStartAction(arg_5_0, arg_5_1, arg_5_2)
@@ -683,13 +684,14 @@ end
 function var_0_0.OnEnd(arg_72_0)
 	arg_72_0:DisactiveDefaultCamera()
 	arg_72_0:ClearCustomCameraBlend()
-	pg.DelegateInfo.Dispose(arg_72_0)
 end
 
 function var_0_0.Dispose(arg_73_0)
 	arg_73_0.asidePlayer:Dispose()
 
 	arg_73_0.asidePlayer = nil
+
+	pg.DelegateInfo.Dispose(arg_73_0)
 end
 
 return var_0_0

@@ -16,10 +16,6 @@ function var_0_0.EnableOrDisableUnitSyn(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	if isa(arg_1_2, IslandFollowNpcUnit) then
 		var_1_0(arg_1_2, arg_1_3)
 	end
-
-	if PLATFORM ~= PLATFORM_IPHONEPLAYER then
-		arg_1_0:EnableOrDisableNavMeshObstacle(arg_1_2, arg_1_3)
-	end
 end
 
 function var_0_0.EnableOrDisableNavMeshObstacle(arg_3_0, arg_3_1, arg_3_2)

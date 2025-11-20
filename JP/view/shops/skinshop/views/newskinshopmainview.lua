@@ -108,15 +108,15 @@ function var_0_0.RegisterEvent(arg_3_0)
 				local var_4_0 = pg.ship_skin_template[arg_3_0.skinId].purchase_offset
 
 				if var_4_0 and #var_4_0 >= 3 then
-					arg_3_0.spineChar.localPosition = Vector3(var_4_0[1], var_4_0[2], var_4_0[3])
+					arg_3_0.spineChar:SetLocalPosition(Vector3(var_4_0[1], var_4_0[2], var_4_0[3]))
 				end
 
 				if var_4_0 and #var_4_0 >= 4 then
-					arg_3_0.spineChar.localScale = Vector3(var_4_0[4], var_4_0[4], var_4_0[4])
+					arg_3_0.spineChar:SetLocalScale(Vector3(var_4_0[4], var_4_0[4], var_4_0[4]))
 				end
 			else
-				arg_3_0.spineChar.localScale = Vector3(0.9, 0.9, 1)
-				arg_3_0.spineChar.localPosition = Vector3(0, 0, 0)
+				arg_3_0.spineChar:SetLocalPosition(Vector3(0, 0, 0))
+				arg_3_0.spineChar:SetLocalScale(Vector3(0.9, 0.9, 1))
 			end
 		end
 	end)
@@ -943,16 +943,15 @@ function var_0_0.FlushObtainBtn(arg_66_0, arg_66_1)
 
 	onButton(arg_66_0, arg_66_0.obtainBtn, function()
 		local var_67_0 = {}
+		local var_67_1 = SkinCouponActivity.StaticEncoreActTip(arg_66_1.id)
 
-		if SkinCouponActivity.StaticEncoreActTip(arg_66_1.id) then
+		if tobool(var_67_1) then
 			table.insert(var_67_0, function(arg_68_0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("SkinDiscount_Hint"),
 					onYes = function()
-						local var_69_0 = SkinCouponActivity.GetSkinCouponEncoreAct(arg_66_1.id)
-
-						if var_69_0 then
-							arg_66_0:emit(NewSkinShopMediator.OPEN_ACTIVITY, var_69_0.id)
+						if var_67_1 and not var_67_1:isEnd() then
+							arg_66_0:emit(NewSkinShopMediator.OPEN_ACTIVITY, var_67_1.id)
 						end
 					end,
 					onNo = function()
@@ -1182,23 +1181,25 @@ function var_0_0.FlushChar(arg_87_0, arg_87_1, arg_87_2)
 	end
 
 	arg_87_0:ReturnChar()
-	PoolMgr.GetInstance():GetSpineChar(arg_87_1, true, function(arg_88_0)
-		arg_87_0.spineChar = tf(arg_88_0)
+
+	arg_87_0.spineChar = SpineAnimChar.New()
+
+	arg_87_0.spineChar:SetPaint(arg_87_1)
+	arg_87_0.spineChar:Load(true, function(arg_88_0)
 		arg_87_0.prefabName = arg_87_1
 
 		local var_88_0 = pg.skinshop_spine_scale[arg_87_2]
 
 		if var_88_0 then
-			arg_87_0.spineChar.localScale = Vector3(var_88_0.skinshop_scale, var_88_0.skinshop_scale, 1)
+			arg_87_0.spineChar:SetLocalScale(Vector3(var_88_0.skinshop_scale, var_88_0.skinshop_scale, 1))
 		else
-			arg_87_0.spineChar.localScale = Vector3(0.9, 0.9, 1)
+			arg_87_0.spineChar:SetLocalScale(Vector3(0.9, 0.9, 1))
 		end
 
-		arg_87_0.spineChar.localPosition = Vector3(0, 0, 0)
-
-		pg.ViewUtils.SetLayer(arg_87_0.spineChar, Layer.UI)
-		setParent(arg_87_0.spineChar, arg_87_0.charTf)
-		arg_88_0:GetComponent("SpineAnimUI"):SetAction("normal", 0)
+		arg_87_0.spineChar:SetLocalPosition(Vector3(0, 0, 0))
+		arg_87_0.spineChar:SetLayer(Layer.UI)
+		arg_87_0.spineChar:SetParent(arg_87_0.charTf)
+		arg_87_0.spineChar:SetAction("normal", 0)
 	end)
 end
 
@@ -1265,9 +1266,8 @@ function var_0_0.ClearTimer(arg_95_0)
 end
 
 function var_0_0.ReturnChar(arg_96_0)
-	if not IsNil(arg_96_0.spineChar) then
-		arg_96_0.spineChar.gameObject:GetComponent("SpineAnimUI"):SetActionCallBack(nil)
-		PoolMgr.GetInstance():ReturnSpineChar(arg_96_0.prefabName, arg_96_0.spineChar.gameObject)
+	if arg_96_0.spineChar then
+		arg_96_0.spineChar:Dispose()
 
 		arg_96_0.spineChar = nil
 		arg_96_0.prefabName = nil
